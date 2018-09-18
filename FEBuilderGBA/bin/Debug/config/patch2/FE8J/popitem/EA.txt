@@ -1,0 +1,14 @@
+#include "Extensions/Hack Installation.txt"
+//0xA0バイトほどを使用します
+PUSH
+
+ORG		0x278d8
+WORD	0x46874800
+POIN	hack1
+
+POP
+////
+
+ALIGN	4
+hack1:
+	#incbin "item2.dmp"

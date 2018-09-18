@@ -1,0 +1,15 @@
+NAME=売値拡張(導入)
+NAME.en=Sell Price expansion(install)
+INFO=売値を一律半額ではなく変動させます。
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xB9DEC=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_Sell_Price_expansion.txt
+EA=Sell_Price_expansion.event
+
+AUTHOR=7743
+INFO.en=Change the selling price not uniformly half price.
+NAME.zh=报价扩大（介绍）
+INFO.zh=我们将改变销售价格不一致半价。

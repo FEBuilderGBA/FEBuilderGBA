@@ -1,0 +1,23 @@
+
+NAME=進撃開始の背景 パレット02
+NAME.en=PreparationsBackground Palette 02
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0x2008C
+//非圧縮パレット
+PALETTE_ADDRESS=0xB1758C
+
+KEEPIMAGE=TRUE //only palette
+
+
+NAME.zh=攻击的背景调色板02

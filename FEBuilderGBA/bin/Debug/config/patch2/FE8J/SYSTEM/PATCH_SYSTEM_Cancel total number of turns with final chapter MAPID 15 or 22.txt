@@ -1,0 +1,27 @@
+﻿NAME=終章MAPID:15,22とのターン数合算をやめる
+NAME.en=Cancel total number of turns with final chapter MAPID:15,22
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xbc4ea
+COMBO=default|0x15|fix|0x7f
+
+COMBO.zh=默认|0x15|修复|0x7f
+
+AUTHOR=aeraさんの書き込みより
+
+NAME.zh=终章地图ID:15,停止与22的回合数合并
+
+AUTHOR.zh=从aera的写
+
+AUTHOR.en=From aera's write
+
+
+
+INFO=FE8では、MAPID:0x15と0x22は特別な章です。\r\n魔王と戦うための章です。\r\nこの章では、前の章のターン数を継承します。\r\nMAPID 0x14と0x15、0x21と0x22のクリアターン数がそれぞれ合計されます。\r\n\r\n終章ターン=MAPID.0x14のターン数 + MAPID.0x15のターン数\r\nor\r\n終章ターン=MAPID.0x21のターン数 + MAPID.0x22のターン数\r\n\r\nこれは、別の章として0x15と0x22を使用したい場合、邪魔になります。\r\nこのパッチは、この合算するプロセスを消去します。\r\n
+
+INFO.en=In FE8, MAPIDs 0x15 and 0x22 are special chapters in which the players fight the Demon King.\r\nThese chapters normally inherit the turn number from the previous chapter.\r\nIn other words, the final chapter's turn count will be (MAPID 0x14 turn count + MAPID 0x15 turn count) or (MAPID 0x21 turn count + MAPID 0x22 turn count).\r\nThis is an obstacle if you want to use maps 0x15 and 0x22 as separate chapters.\r\nThis patch prevents adding the turn numbers together.\r\n
+
+INFO.zh=在FE8中，MAPID:0x15和0x22是特殊章节。\r\n这是一个对抗魔王的章节。\r\n在本章中，我们将继承前一章中的回合数。\r\nMAPID 0x14和0x15，0x21和0x22的清除回合数分别合计。\r\n\r\n结束章节回合= MAPID。回合数0x14 + MAP ID。0x15的回合数。\r\n或\r\n结束章节回合= MAPID。打开0x21 + MAPID号码。回合数为0x22。\r\n\r\n如果你想使用0x15和0x22作为单独的章节，这将会阻碍你。\r\n这个补丁擦除了这个加法过程。\r\n

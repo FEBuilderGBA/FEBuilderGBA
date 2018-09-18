@@ -1,0 +1,17 @@
+NAME=難易度選択のパレット 難しいを非選択にした時の色
+NAME.en=Level Select:Palette at Difficult Inactive
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0x0AC188//0xA28A0C
+PALETTE_ADDRESS=0xA29538
+
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Fatih
+NAME.zh=选择难度的调色板当你做出困难的选择时，颜色不被选中

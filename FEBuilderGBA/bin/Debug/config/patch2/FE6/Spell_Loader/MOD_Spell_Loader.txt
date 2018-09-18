@@ -1,0 +1,8 @@
+IF:0x49dc8=0x00 0x4a 0x10 0x47
+
+FORM=ItemWeaponEffectForm
+J_6=遠距離エフェクトID
+L_6:VISIBLE=true
+
+J_6.en=Range Battle Animation
+J_6.zh=长距离效果ID

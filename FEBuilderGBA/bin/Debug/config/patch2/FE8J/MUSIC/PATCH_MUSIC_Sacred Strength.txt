@@ -1,0 +1,10 @@
+NAME=MUSIC_聖なる力
+NAME.zh=音乐_神圣之力
+
+NAME.en=MUSIC_Sacred Strength
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08074c62
+ADDRESS_TYPE=SONG

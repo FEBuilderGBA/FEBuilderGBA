@@ -1,0 +1,54 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+
+ORG	0x8eae8
+WORD	$469F4B00
+POIN	have_two
+
+ORG	0x8EAB4
+#incbin "SOUBI_FUKIDASHI.dmp"
+
+//////////////////////
+
+//パネル
+ORG	0x8e9c4
+BL(pop_warp)
+ORG	0x8e148
+BL(pop_warp)
+ORG	0x8f0a0
+BL(pop_warp)
+
+////フキダシ
+//ORG	0x8f2b4
+//BL(pop_warp)
+//ORG	0x8eb48
+//BL(pop_warp)
+
+ORG	0x8E660
+#incbin "8E660.dmp"
+pop_warp:
+WORD	$469F4B00	//r3
+POIN power_view
+
+ORG	0x8f3a8
+POIN menu_gazou
+
+
+
+
+ORG	0xA92514
+power_view:
+#incbin "power_view.dmp"
+ALIGN 4
+have_two:
+ #incbin "have_two.dmp"
+// POIN hasQuickenedPulse
+ WORD $08008E08            //スキルが入っているか不明なので、FEBuilderGBAから入れる場合は、常にfalseを返す関数を入れる
+
+POP
+
+menu_gazou:
+#incext Png2Dmp menu.png --lz77
+ALIGN 4
+

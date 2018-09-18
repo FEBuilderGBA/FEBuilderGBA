@@ -1,0 +1,11 @@
+NAME=MUSIC_メインテーマlyn
+NAME.en=MUSIC_Main theme song Winds across the Plains
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0809e110 0x0809e146 0x0809e15a 0x080a5366
+ADDRESS_TYPE=SONG
+
+NAME.zh=MUSIC_主题lyn

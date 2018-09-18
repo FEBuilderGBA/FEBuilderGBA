@@ -1,0 +1,16 @@
+NAME=拠点パッチ(拠点MapIDの変更)
+TYPE=ADDR
+TAG=#ENGINE
+NAME.en=BaseCamp Patch(Change MapID)
+
+//既に適応されたかどうか
+IF:0x00023cd8=0x11 0x4A 0x20 0x68 0x92 0x7B
+
+ADDRESS=0x023CDE
+ADDRESS_TYPE=MAP
+
+AUTHOR=aera
+INFO=支援会話ができる拠点マップを設定します。このマップ以外では支援会話ができません。
+INFO.en=Set a base camp map where you can support conversation.Support other than this map can not be supported.
+NAME.zh=基础补丁（更改基础mapID）
+INFO.zh=设置一个可以支持对话的基本地图。不支持此地图以外的支持。

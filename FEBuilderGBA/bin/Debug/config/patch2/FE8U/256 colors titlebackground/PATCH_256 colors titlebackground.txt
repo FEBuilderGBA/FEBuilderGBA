@@ -1,0 +1,29 @@
+NAME=OPタイトルに256色の画像を利用する。
+NAME.en=256 Color Title Background Editor
+NAME.zh=使用具有256种颜色的图像作为OP标题。
+
+IF:0xC5724=0x00 0x4B 0x18 0x47
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#ENGINE #IMAGE
+
+//幅と高さ
+WIDTH=240
+HEIGHT=160
+//利用パレット数
+PALETTE=16
+
+//圧縮画像
+Z256IMAGE_POINTER=$GREP4END 0x00 0x00 0x00 0x06 0x00 0x02 0x00 0x00 0xB8 0x0D 0x00 0x08 0x4C 0x1C 0x00 0x08 0x3D 0x58 0x0C 0x08
+//非圧縮パレット
+PALETTE_POINTER=$GREP4END+4 0x00 0x00 0x00 0x06 0x00 0x02 0x00 0x00 0xB8 0x0D 0x00 0x08 0x4C 0x1C 0x00 0x08 0x3D 0x58 0x0C 0x08
+
+WIDTH=240
+HEIGHT=160
+
+INFO=OPタイトルの背景に256色の画像を利用できるようにします。\r\nFEBuilderGBAの減色ツールで作る場合は、「種類」で、「05=TSAを利用しない256色」を利用してください。\r\n他の方法で用意する場合、256色、240x160の画像を用意してください。この時パレットの最初の色は利用してはいけません。
+INFO.en="256 Color Title Background Installer" must be patched onto the current ROM to use.\r\nEditor that allows for the insertion of 256 color title background images.\r\nWhen creating with the color reduction tool of FEBuilderGBA, use "05 = 256 colors not using TSA" in "type".\r\nWhen preparing by other methods, prepare 256 colors, 240 x 160 images.\r\nDo not use the first color of the palette at this time.\r\n
+INFO.zh=在OP标题的背景上提供256种颜色的图像。\r\n使用FEBuilderGBA的色彩还原工具创建时，请在“类型”中使用“05 =不使用TSA的256色”。\r\n使用其他方法准备时，请准备256色，240 x 160的图像。此时不要使用调色板的第一个颜色。
+
+AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10

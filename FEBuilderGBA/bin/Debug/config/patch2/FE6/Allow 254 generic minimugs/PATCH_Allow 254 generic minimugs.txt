@@ -1,0 +1,32 @@
+NAME=一般兵の顔画像を最大254個まで拡張する
+NAME.en=Allow 254 generic minimugs
+
+IF:0x008DB8=0x00 0xB5 0xFF 0x21 0x08 0x40 0xC0 0x00
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END Allow 254 generic minimugs_Graphics.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//データを定義します
+P0:PatchImage_IMAGE=Image
+P4:PatchImage_PALETTE=Palette
+
+WIDTH=32
+HEIGHT=32
+//利用パレット数
+PALETTE=1
+
+INFO=一般兵の顔の上限を増やします。\r\n画像を追加するときには、画像とパレットのポインタを0にしてください。そうしないと上書きになります。
+MAX_EXPLANDS_SIZE=0xFE
+INFO.en=Increase the upper limit of the face of general soldiers.\r\nWhen adding an image, please set the pointer of image and palette to 0.Otherwise it will be overwritten.
+NAME.zh=扩展一般士兵的面部图像，最多可达254
+INFO.zh=增加一般士兵面部的上限。\r\n添加图像时，请将图像和调色板的指针设置为0。否则它将被覆盖。

@@ -1,0 +1,27 @@
+#include "Extensions/Hack Installation.txt"
+#include EAstdlib.event
+
+PUSH
+ORG 0x5F6C
+#incbin "Allow 254 generic minimugs_Graphics.dmp"
+POIN MiniMags_Table
+POP
+
+PUSH
+ORG 0x5F9C
+#incbin "Allow 254 generic minimugs_Palette.dmp"
+POIN MiniMags_Table
+POP
+
+ALIGN 4
+MiniMags_Table:
+WORD $8599D34	$8599F34
+WORD $8599B34	$8599F54
+WORD $8599734	$8599F74
+WORD $8599734	$8599F54
+WORD $8599D34	$8599F54
+WORD $8599934	$8599F74
+WORD $8599934	$8599F54
+WORD $8599D34	$8599F34 //default size
+
+WORD 0	0 //extends

@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ユアン_影
+NAME.en=OP Anime Face: Ewan (Shadow)
+NAME.zh=OPANIME_FACE_元_影
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C8F64//0x08ADE080
+PALETTE_POINTER=0x000C8F60//0x08ADE47C
+
+INFO=Edit and import OP Anime Graphic for the Ewan Face (Shadow) image.

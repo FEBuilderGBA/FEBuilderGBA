@@ -1,0 +1,53 @@
+领域	1	2	3	5	0	Fields	{J}
+领域	1	2	3	5	0	Fields	{U}
+领域2	1	37	3	0	0	Fields	{J}
+领域2	1	38	3	0	0	Fields	{U}
+领域3	1	4B	3	5	0	Fields	{J}
+领域3	1	4C	3	5	0	Fields	{U}
+领域4	1	5A	3	5	0	Fields	{J}
+领域4	1	5B	3	5	0	Fields	{U}
+领域5	1	2	3	0	0	Fields	{J}
+领域5	1	2	3	0	0	Fields	{U}
+领域6	1	37	3	5	0	Fields	{J}
+领域6	1	38	3	5	0	Fields	{U}
+村	E	F	10	12	0	Village	{J}
+村	E	F	10	12	0	Village	{U}
+村2	E	71	10	12	0	Village	{J}
+村2	E	72	10	12	0	Village	{U}
+村3	E	E9	10	12	0	Village	{J}
+村3	E	EA	10	12	0	Village	{U}
+村4	E	71	10	D2	0	Village	{J}
+村4	E	72	10	D3	0	Village	{U}
+城	18	19	1A	1C	0	Castle	{J}
+城	18	19	1A	1C	0	Castle	{U}
+城2	18	47	1A	1C	0	Castle	{J}
+城2	18	48	1A	1C	0	Castle	{U}
+城3	18	56	1A	1C	0	Castle	{J}
+城3	18	57	1A	1C	0	Castle	{U}
+城4	18	B8	1A	1C	0	Castle	{J}
+城4	18	B9	1A	1C	0	Castle	{U}
+草原	2E	2F	30	0	0	Plains	{J}
+草原	2E	2F	30	0	0	Plains	{U}
+草原2	2E	34	30	0	0	Plains	{U}
+要塞	3B	3C	3D	0	0	Fort	{J}
+要塞	3C	3D	3E	0	0	Fort	{U}
+要塞2	3B	67	3D	0	0	Fort	{J}
+要塞2	3C	68	3E	0	0	Fort	{U}
+要塞3	3B	CD	3D	0	0	Fort	{J}
+要塞3	3C	CE	3E	0	0	Fort	{U}
+砂漠	41	42	43	5	0	Desert	{J}
+砂漠	42	43	44	5	0	Desert	{U}
+火山	4F	50	51	0	53	Lave Cave	{J}
+火山	50	51	52	0	54	Lave Cave	{U}
+暗寺院	5E	5F	60	0	0	Black Temple	{J}
+暗寺院	5F	60	61	0	0	Black Temple	{U}
+山	6B	6C	6D	5	0	Mountainous	{J}
+山	6C	6D	6E	5	0	Mountainous	{U}
+山2	6B	A2	6D	5	0	Mountainous	{J}
+山2	6C	A3	6E	5	0	Mountainous	{U}
+寺院	87	88	89	0	0	Temple	{J}
+寺院	88	89	8A	0	0	Temple	{U}
+敌据点	78	79	7A	7C	0	Stronghold	{J}
+敌据点	79	7A	7B	7D	0	Stronghold	{U}
+敌据点2	78	E5	7A	7C	0	Stronghold	{J}
+敌据点2	79	E6	7B	7D	0	Stronghold	{U}

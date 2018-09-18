@@ -1,0 +1,11 @@
+NAME=MUSIC_闘技場_勝敗はいかに
+NAME.en=MUSIC_Arena Colosseum Defeat
+NAME.zh=音乐_斗技场_胜败如何
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0804589c 0x080458c2
+ADDRESS_TYPE=SONG
+

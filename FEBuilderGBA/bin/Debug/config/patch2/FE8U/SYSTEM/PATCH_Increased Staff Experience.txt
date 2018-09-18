@@ -1,0 +1,15 @@
+NAME=回復の杖を利用した場合得られる経験値
+NAME.en=Set Staff Experience
+NAME.zh=使用恢复棒获得的经验值
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2C676
+DEFAULT=10
+HEX=FALSE
+
+INFO=回復の杖を際の基礎経験の量を定義します。
+INFO.en=Determines the minimum experience earned when healing with staffs.
+INFO.zh=确定恢复人员基本经验的数量。

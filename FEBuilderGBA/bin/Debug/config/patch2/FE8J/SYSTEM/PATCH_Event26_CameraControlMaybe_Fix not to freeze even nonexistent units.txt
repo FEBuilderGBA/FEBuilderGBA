@@ -1,0 +1,19 @@
+NAME=命令0x26_カメラをユニットへ移動_存在しないユニットでもフリーズさせない
+NAME.en=Event26_CameraControlMaybe_Fix not to freeze even nonexistent units
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xF468
+COMBO=ディフォルト|0x06 0x20|修正|0x00 0x20
+COMBO.en=Default|0x06 0x20|Fix|0x00 0x20
+COMBO.zh=默认|0x06 0x20|修正|0x00 0x20
+
+AUTHOR=7743
+
+INFO=存在しないキャラクターへカメラを移動しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。
+INFO.en=Trying to move the camera to a nonexistent character will solve the problem of freezing.\r\nIgnore commands to characters that do not exist.
+NAME.zh=指令0x26_将摄像机移动到设备_不要冻结甚至不存在的设备
+INFO.zh=试图将相机移至不存在的角色将解决冻结问题。\r\n忽略对不存在的字符的命令。

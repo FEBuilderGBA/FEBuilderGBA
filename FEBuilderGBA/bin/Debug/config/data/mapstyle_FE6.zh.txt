@@ -1,0 +1,31 @@
+场	0201	3	4	6	0	Fields
+字段2	0201	3	4	6	0	Fields
+领域3	0201	A0	4	6	0	Fields
+雪原	66	67	68	6A	6B	Snow
+雪场2	66	67	68	0	0	Snow
+雪地3	66	67	68	6A	0	Snow
+一个村庄	12	13	14	0	0	Village
+堡垒	21	22	23	0	0	Fort
+一座城堡	2C	2D	2E	0	0	Castle
+城堡2	2C	5D	2E	0	0	Castle
+城堡3	2C	C3	2E	C5	0	Castle
+城堡4	2C	D5	2E	C5	0	Castle
+西边	33	34	35	6	0	Frontier
+西武村	3E	3F	40	0	0	Frontier Village
+西堡垒	45	46	47	0	0	Frontier Castle
+一座桥	4C01	4D	4E	6	0	Bridge
+沙漠	53	54	55	0	0	Desert
+沙漠2	53	54	55	6	0	Desert
+雪堡垒	73	74	75	0	6B	Snow Castle
+雪堡2	73	CD	75	0	0	Snow Castle
+山	7A	7B	7C	6	0	Mountainous
+敌人总部	81	82	83	85	86	Stronghold
+一座寺庙	8E	8F	90	0	0	Temple
+庙2	8E	C9	90	0	0	Temple
+庙3	8E	8F	90	0	96	Temple
+草原	A5	A6	A7	6	0	Plains
+大草原2	A5	AB	AC	6	0	Plains
+Sakajo	B1	B2	B3	0	0	Plains Castle
+西方要塞2	45	B8	47	0	0	Frontier Castle
+西方要塞3	45	B8	47	0	BA	Frontier Castle
+一个洞穴	53	BD	BE	0	0	Cave

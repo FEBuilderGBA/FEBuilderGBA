@@ -1,0 +1,3 @@
+//Pointer=Name	GameType	comment(address)
+13930=Game Control	//5C4A34
+93458=EventScriptEngine	//68C648

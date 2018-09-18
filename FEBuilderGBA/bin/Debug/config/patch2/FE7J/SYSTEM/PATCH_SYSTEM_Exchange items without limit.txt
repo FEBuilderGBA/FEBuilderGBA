@@ -1,0 +1,20 @@
+
+NAME=アイテムの交換 無制限にする
+NAME.en=Exchange items without limit.
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x222a4
+COMBO=default|0x16 0xD1|fix|0xc0 0x46
+
+NAME.zh=交换项目使其无限
+
+
+
+INFO=GBA FEでは、アイテム交換を各ユニットごとに1ターンに付き1回しかりようできません。\r\nSFC FEは、無制限にアイテムを交換することができます。\r\nこのパッチは、SFC FEのように、何度でもアイテムを交換できるようにします。\r\nアーマーキラーなどの特殊武器を使いまわしやすくなります。\r\n
+INFO.zh=在GBA FE中，每个单位每回合不能进行一次物品交换。\r\nSFC FE可以无限期交换项目。\r\n该修补程序允许您以SFC FE的次数交换项目。\r\n扭转盔甲杀手等特殊武器变得容易。\r\n
+INFO.en=In GBA FE, item trading is restricted to once per turn for each unit.\r\nIn contrast, SNES FE games allow you to exchange items without limit.\r\nThis would allow, for example, an item to be relayed across the map like a baton.\r\nThis patch removes the item trading limits, making the system similar to SNES FE games.\r\n

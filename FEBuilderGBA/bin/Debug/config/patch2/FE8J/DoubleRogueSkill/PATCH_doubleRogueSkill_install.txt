@@ -1,0 +1,17 @@
+﻿NAME=複数の「かぎ開け」スキルパッチ 導入
+NAME.en=Multiple Classes with Lock Pick (Installer)
+
+INFO=複数クラスでの「かぎ開け」スキルを実装します
+INFO.en=Allows the Lock Pick skill to be assigned to multiple classes.
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x02 0x4B 0x18 0x47 0x00 0x4B 0x18 0x47 0x59 0x3E 0x02 0x08 0x51 0x3E 0x02 0x08=0x02 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_doubleRogueSkill.txt
+EA=Installer.event
+
+AUTHOR=kao Transport:7743 http://feuniverse.us/t/two-classes-able-to-use-the-pick-skill-rogues-skill/3348
+NAME.zh=技能开锁职业自由设置补丁引进
+INFO.zh=允许将“开锁”技能分配给多个职业
+

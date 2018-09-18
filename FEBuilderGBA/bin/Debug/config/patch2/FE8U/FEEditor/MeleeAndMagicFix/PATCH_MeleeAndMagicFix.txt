@@ -1,0 +1,16 @@
+NAME.en=Melee And Magic Menu Fix
+NAME.zh=MeleeAndMagicFix
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x18A58=0x00 0xB5 0xFE 0xF7
+
+BIN:0x18A58=18A58.bin
+
+INFO.en=Enables hybrid weapon/spell units.\r\nAdjusts status screen to display weapon ranks and MAG vs STR based on first weapon equipped.\r\nSeveral known bugs, including the STR display.\r\n
+
+AUTHOR=Hextator,Tequila  Compatability:7743
+AUTHOR.en=Hextator,Tequila Port:7743
+AUTHOR.zh=melee and magic fix  Hextator,Tequila  Transplant:7743

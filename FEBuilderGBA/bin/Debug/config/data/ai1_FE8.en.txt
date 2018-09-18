@@ -1,0 +1,27 @@
+00=Chance of Action 100%
+01=Chance of Action 80%
+02=Chance of Action 50%
+03=Chance of Action 100%, attack only when adjacent
+04=Chance of Action 80%, attack only when adjacent
+05=Chance of Action 50%, attack only when adjacent
+06=Do not act (AI 2=Move only) Other
+07=Do not attack [0x5D2908]	{J}
+07=Do not attack [0x5A8A00]	{U}
+08=Do not attack [0x5D2A44]	{J}
+08=Do not attack [0x5A8B3C]	{U}
+09=Do not attack [0x5D2086]	{J}
+09=Do not attack [0x5A817E]	{U}
+0A=Target [0x5D2AAC] only	{J}
+0A=Target [0x5A8BA4] only	{U}
+0B=Chance of Action 100% Attack
+0C=Attack if enemy is in half of unit's range
+0D=Attack if enemy is in the range of commander
+0E=Heal unit with HP is 50% or less
+0F=Heal with alternating AI of 0x0E and 0x03
+10=Stuff main
+11=Do not move until door is open
+12=Do not attack [0x5D292C]	{J}
+12=Do not attack [0x5A8A24]	{U}
+13=Do not attack [0x5D2954]	{J}
+13=Do not attack [0x5A8A4C]	{U}
+14=Summon

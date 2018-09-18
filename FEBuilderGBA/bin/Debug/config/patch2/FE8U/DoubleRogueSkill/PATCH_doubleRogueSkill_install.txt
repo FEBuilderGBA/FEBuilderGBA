@@ -1,0 +1,18 @@
+NAME=複数の「かぎ開け」スキルパッチ 導入
+NAME.en=Multi-Class Pick Skill Installer
+NAME.zh=多个“解锁”技能补丁引进
+
+TYPE=EA
+TAG=ENGINE
+EA=Installer.event
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x02 0x4B 0x18 0x47 0x00 0x4B 0x18 0x47 0x9D 0x3E 0x02 0x08 0x95 0x3E 0x02 0x08=0x02 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_doubleRogueSkill.txt
+
+INFO=複数クラスでの「かぎ開け」スキルを実装します
+INFO.en=Patches the ROM to allow the Rogue's "Pick" skill to be assigned to multiple classes.\r\nMust be installed to use the "Multi-Class Pick Skill Editor."\r\n
+INFO.zh=在多个班级中实施“解锁”技能
+
+AUTHOR=kao Compatability:7743 http://feuniverse.us/t/two-classes-able-to-use-the-pick-skill-rogues-skill/3348
+TAG=#ENGINE

@@ -1,0 +1,10 @@
+
+NAME=きずぐすりの回復量
+NAME.en=Recovery amount of Vulnerary
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2d6a2
+NAME.zh=责骂的回收量

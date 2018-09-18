@@ -1,0 +1,17 @@
+﻿
+NAME=最大命中率
+NAME.en=Maximum hit rate
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2ABE8 0x2ABEC
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より
+
+NAME.zh=最大命中率
+
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。
+
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.
+

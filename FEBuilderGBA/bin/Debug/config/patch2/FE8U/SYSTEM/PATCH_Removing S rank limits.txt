@@ -1,0 +1,19 @@
+NAME=Sランクの制限を解除して、複数の武器をSランクで利用できるようにする
+NAME.en=Modify S-Rank Limits
+NAME.zh=取消对S等级的限制，并为S等级制造多种武器
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=ディフォルト|OFF|Sランク制限の解除|ONN
+COMBO.en=Default: Limit of 1|OFF|No Limit|ONN
+COMBO.zh=默认|OFF|发布S等级限制|ONN
+
+DETERMINATION_ADDRESS=0x2C150
+
+ONN:0x2C150=0x11 0xE0
+OFF:0x2C150=0x99 0x42
+
+INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched).\r\n
+
+AUTHOR=Tequila

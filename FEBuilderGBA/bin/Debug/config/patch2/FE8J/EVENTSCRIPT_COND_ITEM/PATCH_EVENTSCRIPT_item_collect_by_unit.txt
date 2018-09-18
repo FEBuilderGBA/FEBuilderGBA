@@ -1,0 +1,39 @@
+NAME=アイテム没収(ユニット単位)
+NAME.en=Add Event: Lose Item(unit)
+NAME.zh=项目确认(人物)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x30 0xB5 0x84 0x6B 0x20 0x78 0x0F 0x21 0x08 0x40 0x01 0x28 0x08 0xD0 0x0B 0x28 0x08 0xD0 0x0F 0x28 0x01 0xD0 0xA0 0x78 0x05 0xE0 0x12 0x48 0x00 0x68 0x02 0xE0 0x11 0x48 0x00 0xE0 0x11 0x48 0x12 0x4B 0x9E 0x46 0x00 0xF8 0x00 0x28 0x18 0xD0 0xE4 0x78 0x02 0x1C 0x1E 0x32 0x15 0x1C 0x2B 0x1C 0x0A 0x35 0x10 0x78 0x51 0x78=0x30 0xB5 0x84 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_collect_by_unit.dmp
+
+INFO=特定のアイテムをユニットから没収します.
+INFO.en=Patches the ROM with a callable event that removes specified items from specified character they're in.\r\n
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DXXYY{$L1:item_collect_by_unit.dmp}	[XX:UNIT:ユニット][YY:ITEM:アイテム]特定のアイテムをユニットから没収します	{UNITPERSOLNAL}
+EVENTSCRIPT:2=410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:アイテム]SVAL1の特定のアイテムをユニットから没収します(LOW)	
+EVENTSCRIPT:3=4B0D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:アイテム]SVALBの座標の特定のアイテムをユニットから没収します(LOW)	
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:ITEM:アイテム]のアイテムをユニットから没収します
+EVENTSCRIPT:5=212E00002006C100410D00YY{$L1:item_collect_by_unit.dmp}	現在操作しているユニットの[YY:ITEM:アイテム]所持アイテムを没収します	{UNITPERSOLNAL}
+
+EVENTSCRIPT:1.en=400DXXYY{$L1:item_collect_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]Erase item from the unit	{UNITPERSOLNAL}
+EVENTSCRIPT:2.en=410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]Erase items of SVAL1 from the unit(LOW)
+EVENTSCRIPT:3.en=4B0D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]Erase items of SVALB coordinates will be confiscated from the unit(LOW)
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	Erase coordinates[ZZ:MAPX:X][WW:MAPY:Y]unit have Item[YY:ITEM:Item]
+EVENTSCRIPT:5.en=212E00002006C100410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:items]Erase item of the currently operating unit	{UNITPERSOLNAL}
+
+EVENTSCRIPT:1.zh=400DXXYY{$L1:item_collect_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]擦除本机中的项目	{UNITPERSOLNAL}
+EVENTSCRIPT:2.zh=410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]从设备中删除SVAL1的项目(LOW)
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]清除SVALB坐标的项目将从设备中删除
+(LOW)
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	擦除坐标[ZZ:MAPX:X][WW:MAPY:Y]单位具有项目[YY:ITEM:Item]
+EVENTSCRIPT:5.zh=4F0D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:items]擦除当前操作单元	{UNITPERSOLNAL}
+
+
+INFO.zh=我们将没收该单位的某些物品。

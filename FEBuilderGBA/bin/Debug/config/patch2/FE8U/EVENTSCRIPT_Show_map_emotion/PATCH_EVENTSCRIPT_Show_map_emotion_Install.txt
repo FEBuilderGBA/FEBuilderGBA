@@ -1,0 +1,20 @@
+NAME=マップに漫符を表示(導入)
+NAME.en=Add Event:Show emotion bubble on map(Install)
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x9E 0x46 0x00 0xF8 0x00 0x20 0xF0 0xBC 0x00 0xBD 0x00 0x00 0x50 0x4E 0x00 0x03 0xFF 0xFF 0xFF 0xFF 0x50 0xBC 0x00 0x08 0xE4 0x04 0x00 0x03 0xBC 0xBC 0x02 0x02 0x00 0x30 0x01 0x06 0x50 0x2F 0x01 0x08 0x7C 0x92 0x00 0x08 0x18 0x95 0x00 0x08 0x7C 0x2C 0x00 0x08 0xF0 0xBC 0x02 0x02 0xFC 0x01 0x0D 0x08=0x9E 0x46 0x00 0xF8
+
+EVENTSCRIPT:1=400DXXYY{$L1:Show_map_emotion.dmp}	マップに漫符を表示[XX:UNIT:ユニット][YY:MAPEMOTION:マークの種類]
+EVENTSCRIPT:3=40050B00XX00ZZ004B0D00YY{$L1:Show_map_emotion.dmp}	マップに漫符を表示[XX:MAPX:X][ZZ:MAPY:Y][YY:MAPEMOTION:マークの種類]
+
+EA=Show_map_emotion_Install.event
+EDIT_PATCH=PATCH_EVENTSCRIPT_Show_map_emotion.txt
+
+AUTHOR=7743, Kenpuku
+EVENTSCRIPT:1.en=400DXXYY{$L1:Show_map_emotion.dmp}	Show emotion bubble on map[XX:UNIT:Unit][YY:MAPEMOTION:Mark]
+EVENTSCRIPT:3.en=40050B00XX00ZZ004B0D00YY{$L1:Show_map_emotion.dmp}	Show emotion bubble on map[XX:MAPX:X][ZZ:MAPY:Y][YY:MAPEMOTION:Mark]
+NAME.zh=在地图中显示气球（介绍）
+EVENTSCRIPT:1.zh=400DXXYY{$L1:Show_map_emotion.dmp}	在地图上显示气球[XX:UNIT:Unit][YY:MAPEMOTION:标记类型]
+EVENTSCRIPT:3.zh=40050B00XX00ZZ004B0D00YY{$L1:Show_map_emotion.dmp}	在地图中显示气球[XX:MAPX:X][ZZ:MAPY:Y][YY:MAPEMOTION:标记类型]

@@ -1,0 +1,22 @@
+//0x668バイト+リスト分の容量を使用
+#include "transform.event"
+
+
+///////////////リスト開始
+
+WORD 1	//データの総数
+WORD 0 0 0
+
+//ミルラ
+
+BYTE	$3C	//変身させたいクラスID
+BYTE	$AA	//変身に使う武器ID
+BYTE	$C5 $C4 $C6 $C7 //変身中＞攻撃中＞解除＞解除後のアニメID
+SHORT	0
+SHORT	$DC $DE $DD	//変身開始＞変身完了＞変身解除の音ID
+SHORT	0
+
+
+
+///////////////リスト終了
+WORD $FFFFFFFF

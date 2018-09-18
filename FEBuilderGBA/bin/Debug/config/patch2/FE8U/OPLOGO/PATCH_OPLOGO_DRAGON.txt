@@ -1,0 +1,18 @@
+NAME=OPLOGOドラゴン
+NAME.en=OP Title Screen Dragon Foreground
+NAME.zh=OP界面龙
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+ZIMAGE_POINTER=0x0C57E4//0xAAB414
+ZTSA_POINTER=0x0C57EC //0xAAC2A4
+PALETTE_POINTER=0x0C57F4//0xAAC58C
+
+INFO=Edit and import the dragon foreground image of the Title Screen.

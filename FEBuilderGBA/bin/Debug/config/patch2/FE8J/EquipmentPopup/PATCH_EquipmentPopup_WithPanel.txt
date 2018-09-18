@@ -1,0 +1,17 @@
+NAME=ユニットウィンドウにパネルと吹き出しを同時に表示する
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|同時に表示する|ONN
+
+OFF:0x08F412=0x01
+ONN:0x08F412=0x00
+
+INFO=マップ上でユニットにカーソルを当てたときに、ユニットウィンドウにパネルと吹き出しを同時に表示します。\r\n(装備アイテムをポップアップ表示するパッチと一緒に利用してください)\r\nただし、現在は、パネルと吹き出しが重なってしまう問題点があります。
+
+NAME.en=Simultaneously display a panel and a balloon in the unit window
+INFO.en=When placing the cursor on the unit on the map, the panel and the balloon are displayed simultaneously in the unit window.\r\n(Please use it with a patch that pops up equipment items)\r\nHowever, there is a problem that the panel and the balloon overlap at present.
+COMBO.en=Default|OFF|Display at the same time|ONN
+NAME.zh=在单位窗口中同时显示面板和气球
+INFO.zh=将光标放在地图上的单位上时，面板和气球会同时显示在单位窗口中。\r\n（请使用带有弹出设备的补丁）\r\n然而，存在面板和气球目前重叠的问题。
+COMBO.zh=Default|OFF|同时显示|ONN

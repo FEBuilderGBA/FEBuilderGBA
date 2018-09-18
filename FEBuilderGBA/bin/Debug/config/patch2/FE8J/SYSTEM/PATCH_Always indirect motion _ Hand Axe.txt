@@ -1,0 +1,12 @@
+﻿NAME=常に間接モーション_ておの
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x59120 0x05910c
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+NAME.en=Always indirect motion_Hand Axe
+NAME.zh=始终间接运动_投斧

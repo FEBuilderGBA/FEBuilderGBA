@@ -1,0 +1,14 @@
+NAME=闘技場上限
+NAME.en=Upper Limit for Arena
+NAME.zh=体育场上限
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x031E40 0x031E50 0x031E60 0x031E70 0x031E80 0x031E90
+HEX=FALSE
+
+INFO=闘技場の敵のステータスの上限です。\r\nプレイヤーユニットのクラスのように、闘技場の敵にもステータスの上限が設定されています。\r\nこの値を変更するパッチです。\r\n
+INFO.zh=这是体育场敌人状态的上限。\r\n与玩家单位等级一样，状态的上限是为体育场的敌人设定的。\r\n这是修改此值的补丁。\r\n
+INFO.en=Sets the maximum stats for foes in the arena.

@@ -1,0 +1,21 @@
+﻿
+NAME=幸運上限
+NAME.en=Luck Stat Cap
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x89546 0x2bf5e 0x2bf64 0x17f64 0x17f68 0x949f4 0x9e41c 0x9e5e4
+HEX=FALSE
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#vf02332d
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#vf02332d
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#vf02332d
+
+
+INFO=幸運の上限値を設定します。\r\n幸運は全クラス共通です。\r\nディフォルトでは、30が設定されています。\r\n
+INFO.en=Specifies the cap for the luck stat, which is constant for all classes.\r\nNormally this is capped at 30.\r\n
+NAME.zh=运气上限
+INFO.zh=设定运气的上限。\r\n运气对所有班级都很常见。\r\n默认情况下，设置为30。\r\n
+

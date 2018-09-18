@@ -1,0 +1,38 @@
+NAME=章ごとに進撃準備の音楽変更
+NAME.en=Changing music preparations for each chapter
+NAME.zh=每章进击准备的音乐变更
+
+PATCHED_IF:0x988c2=0x9B 0xF7 0x03 0xFC
+TYPE=BIN
+TAG=#ENGINE #SOUND
+
+BIN:$FREEAREA:1=c0p.bin
+BIN:$FREEAREA:2=c1p.bin
+BIN:$FREEAREA:3=c2p.bin
+
+//JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行ているみたいです.
+JUMP:0x988c6:$B=0x9893a
+JUMP:0x988c8:$r0=c0p.bin
+
+JUMP:0x340cc:$BL=0x988c8
+JUMP:0x988c2:$BL=0x988c8
+JUMP:0xa46ee:$BL=0x988c8
+JUMP:0xa5738:$BL=0x988c8
+
+JUMP:0xb6910:$r0=c1p.bin
+
+JUMP:0xB692A:$B=0xB70BA
+JUMP:0xB692C:$r0=c2p.bin
+
+JUMP:0x9ef6e:$BL=0xB692C
+JUMP:0xd13d2:$BL=0xB692C
+
+INFO=進撃準備画面で再生される曲を章単位で変更できるようにします。
+INFO.en=Allows you to change the songs play on the Preparation screen in chapter units.
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/RePreparation
+AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/RePreparation。
+AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/RePreparation.
+
+
+INFO.zh=允许您以章节为单位更改在攻击提升屏幕上播放的歌曲。

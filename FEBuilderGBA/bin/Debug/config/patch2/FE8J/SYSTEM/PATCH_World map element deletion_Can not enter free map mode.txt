@@ -1,0 +1,23 @@
+﻿NAME=ワールドマップ要素削除_フリーマップモードにならない
+NAME.zh=世界地图要素删除_不成为自由地图模式
+NAME.en=World map element deletion_Can not enter free map mode
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+ONN:0x0C66B4=0xFB 0xF7 0xCE 0xFB
+OFF:0x0C66B4=0x00 0x00 0x00 0x00
+
+ONN:0xC1E74=0x70 0xB5 0x05 0x48
+OFF:0xC1E74=0x70 0xB5 0x05 0x48
+
+COMBO=ディフォルト|ONN|フリーマップ禁止|OFF
+COMBO.en=def|ONN|delete|OFF
+COMBO.zh=默认|ONN|自由地图禁止|OFF
+
+AUTHOR=出典元:http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e22e8d97
+AUTHOR.zh=来源:http://ngmansion。xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e22e8d97
+AUTHOR.en=Source: http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e22e8d97
+
+

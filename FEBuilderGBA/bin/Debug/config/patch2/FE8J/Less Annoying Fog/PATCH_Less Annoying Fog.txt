@@ -1,0 +1,14 @@
+﻿NAME.zh=雾中遇到敌人可以攻击和使用物品
+
+INFO=霧の中を移動して敵に遭遇した時に、待機させるのではなく、攻撃やアイテムを使用できるように修正します。
+INFO.en=When you move through the fog and encounter enemies, instead of letting you wait, modify the game so you can use attacks and items.
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x1D14E=0xC0 0x46
+
+EA=Less Annoying Fog Installer.event
+AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4 Transport:7743
+INFO.zh=当你在雾中移动并遇到敌人时，你可以修改它们，以便你可以使用攻击和物品而不是等待。

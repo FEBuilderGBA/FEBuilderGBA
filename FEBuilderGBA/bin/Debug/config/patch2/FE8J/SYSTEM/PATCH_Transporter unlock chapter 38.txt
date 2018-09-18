@@ -1,0 +1,23 @@
+﻿
+NAME=輸送体解禁38章
+NAME.en=Transporter unlock chapter 38
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x031594
+COMBO=禁止|0x38 0x28 0x01 0xD0|許可|0x00 0x00 0x00 0x00
+
+AUTHOR=出典:7743さんの書き込みより\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8
+
+NAME.zh=运输体解禁38章
+
+AUTHOR.zh=来源:7743的写作\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8。
+
+AUTHOR.en=From source: 7743's write\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8.
+
+
+
+COMBO.en=Ban|0x38 0x28 0x01 0xD0|Authorization|0x00 0x00 0x00 0x00
+COMBO.zh=禁止|0x38 0x28 0x01 0xD0|允许|0x00 0x00 0x00 0x00

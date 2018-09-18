@@ -1,0 +1,31 @@
+NAME=MODE SELECT 文字列構造体
+NAME.en=Stage select string structure
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0xA7660 //0xCE48C0へのポインタ
+
+//構造体のサイズ 12
+DATASIZE=12
+
+//データ個数
+DATACOUNT=3
+//最大拡張数
+MAX_EXPLANDS_SIZE=3
+
+//データを定義します
+D0:TEXT=名前
+D4:TEXT=詳細
+D8:TEXT=武器タイプ名
+
+INFO=ステージセレクトのテキストを変更します
+AUTHOR=Source: Tequila http://feuniverse.us/t/fe7-replace-hector-mode/3169/6
+
+NAME.zh=MODESELECT字符串结构
+INFO.zh=更改舞台选择文字
+
+
+INFO.en=Change Stage Select text

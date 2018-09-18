@@ -1,0 +1,6 @@
+0=None
+1=Poison Effect
+2=Nosferatu Effect
+3=Eclipse Effect
+4=Devil Effect
+5=Inflicts Stone

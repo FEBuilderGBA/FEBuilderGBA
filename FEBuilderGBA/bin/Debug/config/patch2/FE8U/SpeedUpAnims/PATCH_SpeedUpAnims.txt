@@ -1,0 +1,15 @@
+NAME=Aボタンを押していると、戦闘アニメーションを高速に再生します。
+INFO=Aボタンを押していると、戦闘アニメーションをウェイトなしで高速再生します。\r\nまた、Bボタンを押すと戦闘アニメーションを一時停止します。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x4e70=0x00 0x4B
+EA=Installer.event
+
+AUTHOR=Circles https://github.com/FireEmblemUniverse/SelfRandomizingRom-fe8/blob/920248ac5deecda17fae4f2709feb3f0d166d411/src/randomizer_a.c#L345
+NAME.en=If you press the A button, you will play battle animation at high speed.
+INFO.en=If you press the A button, battle animation will play at high speed without wait.\r\nAlso, push the B button to pause the battle animation.
+NAME.zh=如果按A按钮，您将高速播放战斗动画。
+INFO.zh=如果按A按钮，战斗动画将高速播放而无需等待。\r\n此外，按B按钮可暂停战斗动画。

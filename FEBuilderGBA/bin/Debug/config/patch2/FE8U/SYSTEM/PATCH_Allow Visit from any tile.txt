@@ -1,0 +1,15 @@
+NAME=「訪問」コマンドをすべてのタイルで許可する
+NAME.en=Allow Visit from any tile
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=Default|OFF|FIX|ONN
+
+DETERMINATION_ADDRESS=0x23072
+
+OFF:0x023072=0x0D 0xD0
+ONN:0x023072=0x0d 0xe0
+
+NAME.zh=允许所有图块的“访问”命令

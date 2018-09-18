@@ -1,0 +1,18 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+//ORG $576BC  //FE8U
+ORG $58608  //FE8J
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "MultiDancerFE8.dmp"
+
+POIN MultiDancerClassTable
+
+MultiDancerClassTable:
+BYTE 0x4d   //Class: Dancer
+//BYTE 0x4A //Class: Cleric
+
+BYTE 0x00   //term data

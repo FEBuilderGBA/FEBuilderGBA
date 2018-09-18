@@ -1,0 +1,15 @@
+NAME=専用武器Ex 導入
+NAME.en=Weapon Lock Ex Installer
+INFO=もっと細かく専用武器を定義します。\r\nその武器を装備できる条件を満たした後で、さらに追加の装備できるかどうかの判定を行います。\r\nユニットやクラス、レベル、フラグごとに追加判定します。
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x1673C=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_WeaponLockEx.txt
+EA=WeaponLockEx.event
+
+AUTHOR=7743
+INFO.en=Define more specialized weapons lock.\r\nAfter satisfying the conditions that can be equipped with that weapon, we will judge whether we can provide additional equipment.\r\nIt judges additionally for each unit, class, level, flag.
+NAME.zh=独家武器Ex引进
+INFO.zh=我们将定义更专业的武器。\r\n在满足可配备该武器的条件后，我们将判断是否可以提供额外的设备。\r\n它还为每个单元，级别，级别，标志进行判断。

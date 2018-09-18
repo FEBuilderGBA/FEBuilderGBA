@@ -1,0 +1,16 @@
+
+NAME=力に基づいて回復の杖の効果を決定する(回復量=(魔力/2)+杖の威力)
+NAME.en=Use Item Might for healing(Recovery HP=(Magic / 2) + Staff power)
+
+PATCHED_IF:0x16B68=0x10 0xB5 0x03 0x1C 0x0A 0x1C 0x24 0x24 0xFF 0x21 0x11 0x40 0x61 0x43 0x00 0x24 0x0B 0x48
+
+INFO=回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力\r\nこのパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。
+INFO.en=Normally, the base power of healing staff items is hardcoded. This patch uses the staff item's power instead.\r\nRecovered HP=(Magic / 2) + Staff power\r\nThis patch depends on the address of the item table, so please install it before extending the item table.
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:0x16B68=Use Item Might for healing.dmp
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
+NAME.zh=根据力量确定恢复手杖的效果（恢复量=（魔力/ 2）+手杖的力量）
+INFO.zh=而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔力/ 2）+手杖的力量\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
+

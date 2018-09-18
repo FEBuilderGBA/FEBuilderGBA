@@ -1,0 +1,8 @@
+{}	全部表示する
+{POSITION}	位置
+{MOVE_LOAD}	移動とロード
+{DISPLAY}	表示
+{CHOOSE}	選択子
+{SPEED}	速度
+{TOGGLE}	切替
+{LINEBREAK}	改行

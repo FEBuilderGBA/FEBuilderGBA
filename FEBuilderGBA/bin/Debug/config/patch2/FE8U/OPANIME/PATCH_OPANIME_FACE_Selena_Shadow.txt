@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_セライナ_影
+NAME.en=OP Anime Face: Selena (Shadow)
+NAME.zh=OPANIME_FACE_Seligna_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C96F8//0x08AED95C
+PALETTE_POINTER=0x000C9620//0x08AEA02C
+
+INFO=Edit and import OP Anime Graphic for the Selena Face (Shadow) image.

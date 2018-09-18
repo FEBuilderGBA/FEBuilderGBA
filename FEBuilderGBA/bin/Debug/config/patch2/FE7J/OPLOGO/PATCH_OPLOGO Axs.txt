@@ -1,0 +1,21 @@
+
+NAME=OPLOGO斧
+NAME.en=OPLOGO Axs
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xbb07c
+HEADERTSA_POINTER=0xbb088
+//非圧縮パレット
+PALETTE_POINTER=0xbb078
+
+NAME.zh=OPLOGO斧头

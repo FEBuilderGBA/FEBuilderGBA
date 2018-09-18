@@ -1,0 +1,442 @@
+//midi(Decimal)	midiname	fingerprint
+255	Dummy	SQ2d67b32ce7556c9736dab672a0cdd1a1
+
+//Nimap FE8
+//midi(Decimal)	midiname	fingerprint
+0	グランドピアノ	ecf854cbd791505ccf7c455f6f90b180
+1	アップライトピアノ	b24b8f8c47eb2ffaf05d03708a90a8bb
+2	電気・グランドピアノ	be1e9e181c70906bf610dcc8feab6a5c
+4	電気・ピアノ２（Rhodes系）	1c527d8a59bd3edaf255390344ac01c2
+6	ハープシコード（チェンバロ）	196a3bd207cfa7c6d9ca877bbadbc505
+8	チェレスタ	78be8d70fa9b2e8f81ccdede95bf75ee
+10	オルゴール	1d7e32e54b863df5899a5c4c74b1ef22
+11	ビブラフォン	a0ffa4b2e958aab25b9a03dbadecabb5
+12	マリンバ	215d7df651b0422fec0031b9d277c017
+13	シロフォン	100673381776f52326eb6e6847fff4b8
+14	チューブラベル	74efbf0bfdb870fd823c55483588ec50
+15	ダルシマー	5406ebaf2cd01856a437f7ed7f316064
+18	電気オルガン（ロック）	1ee735a527f401b68967006089d66953
+19	教会オルガン	e84b7ac7f10222e5688ce314ede33c7b
+20	リード・オルガン	10be4e00f61e49391e01f85bf6fbe443
+21	アコーディオン	baaa7443fbfa4b50bc219101eded9622
+23	タンゴ・アコーディオン	7681217ec25cde23b3fed09d3b5daa34
+24	生ギター（ナイロン）	67ca844421353175b7b7ad9dfa4a7e61
+28	電気ギター（ミュート）	51c47e67fc7a3534abd03ec5ad8c0603
+29	電気ギター（オーバードライブ）	82fc415dbc8ce17ef489760e3352dbc7
+30	電気ギター（ディストーション）	5147a06a0902b522202a6629c7244b2d
+31	ギター・共鳴音（ハーモニクス）	4c2a71b290dcf74d0360de6f6ed5d34d
+32	生ベース（ウッドベース）	287d17b15b12ad3a7bd504c22199f12a
+33	電気ベースギター（フィンガー）	169dc8763a2b46da5e5140026cb6f8d4
+34	電気ベースギター（ピック）	169dc8763a2b46da5e5140026cb6f8d4
+36	スラップベースギター１	9060cf344e45139d98a7e3e48d7a983f
+38	シンセ・ベース１	7f9101e918a0667117eaaa263daa2414
+39	シンセ・ベース２	c8ed9e6ab524e2e7f18aefbb67e76258
+40	バイオリン（ボーイング）	5982fbcd78893e405089f4b8c56e40b2
+41	ビオラ（ボーイング）	325dd5ad1c398073e6377f33c86abca3
+42	チェロ（ボーイング）	d80cc4926aed7570908be5523b745c51
+45	弦楽ピッチカート	3b67549fcce8b926b9e4856f607fa404
+46	オーケストラ・ハープ	bfdf6ac8c6295b9b12fd5c8a742996ce
+47	ティンパニー	30ab0ba0b1f13378ed34269ab7098a0d
+50	SynthStrings 1	8146978088c30bd6671be80be5c4f651
+51	SynthStrings 2	4bd74ec8153ef8f70e1411799d100092
+52	合唱（ボイス・アー）	bd57ac7b99e292e414ff37bcff02945b
+56	トランペット	bbf16ee1ea5faac20d4f8f60b5d91630
+57	トロンボーン	71549ac056cfc9102ba0a9bb41ab2117
+60	フレンチ・ホルン	5a264a8dfcb95b7a571946c47c6dd13b
+61	金管楽器・合奏	d939e17521de4b6a9c3052cdfd4d43f6
+62	SynthBrass 1	f6924b2dcb58611f1fe14b3aa22ad9b9
+63	SynthBrass 2	4712742ad714b27b325da7b2d5c03709
+67	バリトンサックス	557406e079f654703099cddb3f0e3cd9
+68	オーボエ	204c50e26ab74a4106064f3a7b8d7d0b
+69	イングリッシュ・ホルン 	27d759ce3bb0a879589d41cc38586711
+70	バスーン	5fb13bd51e85aabc808333fd6fa98672
+71	クラリネット	a10f4070ec98db0cf41a4066c6202d1c
+73	フルート	93ab6109caa7ebe421f734428022d68a
+74	リコーダ	60e8e2907be97c1ac1d59e8272f3eb80
+75	パン・フルート	986178240849e1ebe3ef4e3a3c96b5ce
+77	尺八	f64047ae222d1a9ca869c8b3a8f12af0
+78	口笛	28e51daa98b6a72598e63b220fa834f0
+79	オカリナ	ddf146e601527cc167ad94d831ea5fea
+80	Lead 1 矩形波	65a77c19add1ea576a95e5a8c83e2e8f
+81	Lead 2 鋸歯状波	2bd8613eb9a972d50600ea12cdc3720d
+85	Lead 6 voice	5738c883814317fd61ff9b5344edb7cc
+90	Pad 3 ポリシンセ	8c17edf46744c5d550f4ffd737a827cc
+91	Pad 4 人声	390b702215e67c645f1084742a7f6357
+92	Pad 5 bowed	f404f492272a074f767e1131bc7ae16c
+93	Pad 6 メタリック	f9af78284210d1a68b90ce9a098b4cd5
+94	Pad 7 halo	e8dc20b35d53265a3e5c3dad38d2d80f
+98	FX 4 アトモスフィア	f5f8fca242c8b75416839ebcee1af39e
+100	FX 5 ブライトネス	f6c871b1bfe10027d05fe57ed298dfe2
+102	FX 7 エコー	ae7f14b455ff0bd2eae8e7bbc34a7fdd
+103	FX 8 SF	3321d6e81218d794498a513f9209528c
+104	シタール	61463dac52c507fe37d0b5cdb19cb8d5
+105	バンジョー	e231a7352240fe1de3c63be3049f618d
+106	三味線	02a2f8f0d212959f0a62f541dc46b367
+107	琴	a24d2c58f1c8b79e578a7d6c5fe9af40
+108	カリンバ	dfbcf58942e9438ce419b19178b182fe
+109	バグ・パイプ	56d083a36236de695c9ff56f711bc5b6
+110	フィドル	509d40d6abbe772730caea2c4a088001
+111	シャナイ	37d1ae2ab123a18bbc1e04c243ee4922
+118	シンセ・ドラム	1df8222fec12ec6e76cb320bf2646197
+119	リバース・シンバル	2614e9bcf9ec3497a612bc9896e66cb5
+126	拍手喝采	340e795dfbe01f3b333cd0c727f70de6
+
+//NIMAP DRUMSET
+	Snare Drum Brush	00ed96379873058f59ce5cc18e06fb3b	//	Fs5	//90	//0x5A
+	Ocean Drum	38a1898afe8a04b561646584efa76d14	Fn5	//89	//0x59
+//	Snare Drum Rod	//En5	//88	//0x58	NONE
+	Surdu	Ds5 //87	//0x57	75e89fb088c8c17a6dc7d508328e498e	
+	Surdu Dead Stroke	c8c19c15e6f05481f59bb4f38aae9d85	//Dn5 //86	//0x56	
+	Castanets	b3fda146183f79403dfdc3ca5e1dee4c	//Cs5 //85	//0x55	
+	Bell Tree	b429872447b51e45139f86dc72d10c99	//Cn5 //84	//0x54
+	Sleigh Bell	0afd8b5b31704a930f63fc2e22720218	//Bn4 //83	//0x53
+	Shaker	e816cc34d2e1ed405502fcaa82111cb0	//As4 //82	//0x52	
+	Open triangle	63142b51ea46e86d5863e58d8e289182	//An4 //81 //0x51	
+	Mute triangle	6e098662b4633b329be2c4a8779f0adc	//Gs4 //80 //0x50	
+//	Open Cuica	Gn4 //79 //0x4F	NONE
+//	Mute Cuica	Fs4 //78 //0x4E	NONE
+	Low Wood Block	31aca546cc748058125a5cea4d65a339	//Fn4 //77 //0x4D	
+	High Wood Block	2b6eca15ac807dc4a5b81be41efd803f	//En4 //76 //0x4C	
+	Claves	7e4a1ed182054f8c871447035fd409a4	//Ds4 //75 //0x4B	
+	Long Guiro	b38ba32f96f5e98deb2a63e2d682e8aa	//Dn4 //74 //0x4A	
+	Short Guiro	a98e49a9b47f39dc1edf59cc96ee6e2c	//Cs4 //73 //0x49	
+//	Long Whistle	//Cn4 //72 //0x48	NONE
+//	Short Whistle	//Bn3 //71	//0x47	NONE
+//	Maracas	As3 //70	//0x46	NONE
+//	Cabassa	An3 //69	//0x45	NONE
+	Low Agogo	ce1282b2b4abaa9e06efb41f6f9adeac	//Gs3 //68	//0x44	
+	High Agogo	71f3adcaaa4da28439e4ac000cc6fedc	//Gn3 //67	//0x43	
+//	Low Timbale	//Fs3 //66	//0x42	NONE
+//	High Timbale	//Fn3 //65	//0x41	NONE
+	Low Conga	1cd63b420d7d0745e104d682c884a208	//En3 //64	//0x40
+	Open Hi Conga	a22d56614a30adc232d59468fb472431	//Ds3 //63	//0x3F	
+	Mute Hi Conga	9e23be21a647a7a02156d6cd976ff936	//Dn3 //62	//0x3E	
+	Low Bongo	275906d852e04fba615c6aaef4c12ff8	//Cs3 //61	//0x3D	
+	Hi BOngo	15021facfe0b1b7742b2945264a77f7a	//Cn3 //60	//0x3C	
+//	Ride Cymbal 2	//	Bn2 //59	//0x3B	NONE	
+	Vibraslap	59ab7468b5f2dc8b472f1f213a4c333b	//As2 //58	//0x3A	
+	Crash Cymbal 2	a24bd81a46512a1abeb4c8522a10579d	//An2 //57	//0x39	
+	Cowbell	431b587c1ac638e79676e97d74e54e24	//Gs2 //56	//0x38	
+	Splash Cymbal	0d5eab1f63cb5a5ee7e051e24122ab19	//Gn2 //55	//0x37	
+	Tambourine	823a1375cd40942f3151b2b55609e914	//Fs2 //54	//0x36	
+	Ride Bell1	805a16046e0080246b6d6f3875ceecea	//Fn2 //53	//0x35	
+	Chinise Cymbal	010311e114645af24ede0652afb058d5	//En2 //52	//0x34	
+	Ride Cymbal 1	7b3a8766e7addb7f240c59acbc8ad011	//Ds2 //51	//0x33	
+//	High Tom	//Dn2 //50	//0x32	NONE	
+	Crash Cymbal	ce69994344888385ae257e4c3861f002	//Cs2 //49	//0x31	
+	Hi Mid Tom1	Cn2 //48	//0x30	027ed7e1f71c5f6470ea42b009ac7933	
+//	Low Mid Tom	Bn1 //47	//0x2F	NONE	
+	Open Hi-Hat	As1 //46	//0x2E	aaca75b0c9f09e619ec8c7bdcbc338db	
+	Low Tom	An1	1dc51ea1130a60c2fbf9d28f54ba3c20	//45	//0x2D
+//	Pedal Hi-Hat	//Gs1 //44	//0x2C	NONE	
+//	High Floor Tom	//Gn1 //43	//0x2B	NONE	
+	Closed Hi-Hat	00ed96379873058f59ce5cc18e06fb3b	//Fs1 //42	//0x2A	
+	Low Floor Tom	38a1898afe8a04b561646584efa76d14	//Fn1 //41	//0x29
+	Electoric Snare	75e89fb088c8c17a6dc7d508328e498e	//En1 //40	//0x28
+	Hand Clap	70130b0f57d28cd18826bf4c79ca625c	//Ds1 //39	//0x27
+	Acoustic Snare	239f5cf146148ab202a3d98439fa94a1	//Dn1 //38	//0x26
+	Side Stick	39d39003651a7a9175cf055a5ccd5f17	//Cs1 //37	//0x25
+	Bass Drum 1	9200e7dba63ddf2eb851467a001f63eb	//Cn1 //36	//0x24	
+	Acou Bass Drum	0afd8b5b31704a930f63fc2e22720218	//Bn0 //35	//0x23
+	Metronome Bell	e816cc34d2e1ed405502fcaa82111cb0	//As0 //34	//0x22
+	Metronome Click	An0 //33	//0x21	63142b51ea46e86d5863e58d8e289182
+	Stick Click	6e098662b4633b329be2c4a8779f0adc	//	Gs0 //32	//0x20
+//Scratch Pull	Gn0 //31	//0x1F		NONE
+//Scratch Push	Fs0 //30	//0x1E		NONE
+	Whip	31aca546cc748058125a5cea4d65a339	//Fn0 //29	//0x1D
+	Laser	2b6eca15ac807dc4a5b81be41efd803f	//En0 //28	//0x1C
+
+//NIMAP2
+7	クラビコード	b41ac04efbd36c65d040dbf9f38bd1bc
+23	タンゴ・アコーディオン	10a6aba2095580e874e64f6ba61aef84
+28	電気ギター（ミュート）	4e0806b29a67c8726ab706b89bb0d68d
+31	ギター・共鳴音（ハーモニクス）	9545d09bc9dc4247ccb172ba917f33d0
+33	電気ベースギター（フィンガー）	b03a186720a8c8a48b05dac3e37db0fe
+34	電気ベースギター（ピック）		a213b19052a07d89f2d8b7e636a3dacc
+35	電気ベースギター（フレットレス）	ec34d5bb1ba95154eec46469d407c5dc
+36	スラップベースギター１	7bf67f3697356ee338bf0f00afad162c
+38	シンセ・ベース１	958d3d26961da81bfea59a989faf7e69
+40	バイオリン（ボーイング）	299d57b69b3e1d922f86e35bb0bac1d0
+46	オーケストラ・ハープ	2505fe44417a449ff3c50a15527aa0be
+48	弓弦楽器合奏音１	55d20c32feae12247684583e0e28f04e
+49	弓弦楽器合奏音２	6a2feb60bdbbdbba64635f268197b183
+50	合成弓弦楽器合奏音１	4b48e6c504c9f5b891b9e7f589e324f8
+51	合成弓弦楽器合奏音２		cdfe68e8da96f3bcd633dd1819d764b4
+54	合成人声	eee32b2c8f9f5d25da83bdb928f18760
+58	チューバ	65f9bd7bbd5b80b1782ed7dff3877c2f
+59	消音器付き・トランペット	ec12f2d67392c42319bceb93a89218f6
+60	フレンチ・ホルン	d1aa2cfbea46a7e57c15626a2cc07049
+61	金管楽器・合奏	461af8946078673b22872520261ec327
+62	合成音・ブラス１	73ca178e865af94d9b92ec092994172f
+64	ソプラノサックス	bc858e4d62a0ccf841bc8cf19c091441
+65	アルトサックス	9eb208b99902d30ab5e2d2930b75c468
+66	テナーサックス	8c11a1bb72239eaa541852857711e901
+75	パン・フルート	d6e20f3fc0a7c6a84e43f5674f683e71
+76	ビンに息を吹き込む音	b2effb64748cea85e3973c35cef200e2
+77	尺八	806c84219415fa577c5c2e129be274ab
+78	口笛	744e2ab4ced5792d3377af3e6377759e
+86	シンセ・ソロ音色７（５度）	e05da7589f6ff7ea974c583b03b42dc7
+88	シンセ・多声音色１（new age）	6f4ea30c0a4626ac23654fdd5c4953a1
+89	シンセ・多声音色２（Warm）	125a264c3fade53ed4b88ce2642815e0
+91	シンセ・多声音色４（人声）	272ba3ab817b30ff89ede6268e4dc5e7
+92	シンセ・多声音色５（bowed）	9576369d9b3e4514644d7b11c873bfaa
+93	シンセ・多声音色６（メタリック）	471f14246ce011537189b667430aabea
+94	シンセ・多声音色７（halo）	ee98d84f5355f313451f488e2daa6a57
+95	シンセ・多声音色８（スウィープ）	8048e2312b978630a5ad413a11b2416f
+98	シンセ・効果音色３（クリスタル）	a141a5564f04f28dceccdcaa1ac888e9
+99	シンセ・効果音色４（アトモスフィア）	b41e8e406c2d4b9d05994c3fb74bb34b
+100	シンセ・効果音色５（ブライトネス）	7ad886ae6cf2ef4e732ece3dc2add96b
+101	シンセ・効果音色６（ゴブリン）	9b830e6d98204e6061b95eea5c29cbef
+102	シンセ・効果音色７（エコー）	9cbebc66610c3b9463da5325aa2bf89a
+109	バグ・パイプ	bef99f06b3c711ef479d3924840a88ee
+112	ティンカ・ベル	3fd1c1dbc60688a3ef011a311aa0ed18
+116	和太鼓	9a3f1e82dc65d0a10e416178c7a391a9
+117	メロディック・タム	935387dcc202b7a6640c5e4c1994cf53
+118	シンセ・ドラム	add253ac8c0a4de95ae836f7441a264b
+125	ヘリコプター	c782bf47f86f6d5128b9d706820a2d0c
+
+
+
+//Nimap FE7
+0	グランドピアノ	2881652e65be3e396bddbf13f7ac9c11
+1	アップライトピアノ	55a04d87eec72aabe06d262a5130b6c9
+2	電気・グランドピアノ	c916e3ddd6325700b18218f67ff9a3d1
+3	ホンキー・トンク・ピアノ	13e9549e65c170126d746141ef90fd1f
+4	電気・ピアノ２（DX系）	366171f6838df15a872ab2466aa54a10
+5	電気・ピアノ２（Rhodes系）	bb864017a89a764b79547a0d7f5a7241
+6	ハープシコード（チェンバロ）	ed470adfbfe522eb3100ffa768fb07e7
+7	クラビコード	304f3a766d942ab3a9675c6deb19ecc7
+8	チェレスタ	3c22094e011cd3d252b5b9da8ebbb32b
+9	グロッケンシュピール	b5e2f3e33a8e8efbe45eeae7d4b7c4b7
+10	オルゴール	1d7e32e54b863df5899a5c4c74b1ef22
+11	ビブラフォン	de98ebbc8f57c7a250ddd309ea8cb30f
+12	マリンバ	0d27ecd209dbc1af383c1fa63468c2ae
+13	シロフォン	0e021a49d5ef328b6a63dc7997f32b98
+14	チューブラベル	74efbf0bfdb870fd823c55483588ec50
+15	ダルシマー	2b44f3652084e3af1e8ed32810076844
+16	電気オルガン（ドローバー）	10be4e00f61e49391e01f85bf6fbe443
+17	電気オルガン（パーカッシブ）	2b8105ab1cecc9857ee2602ffa97eeac
+18	電気オルガン（ロック）	ce6ad7fba9ca534e08a9186304f82cff
+19	教会オルガン	e84b7ac7f10222e5688ce314ede33c7b
+20	リード・オルガン	10be4e00f61e49391e01f85bf6fbe443
+21	アコーディオン	a92c2dac15ec86e177bc8c2119b62e74
+22	ハーモニカ	fd4df8f733864726f9a05e0dc4288a51
+23	タンゴ・アコーディオン	32fd0b331547ab2e44b52338abf8b46d
+27	電気ギター（クリーン）	331a4a2fa0139d4b871ac26c03cefdb0
+28	電気ギター（ミュート）	94fabcebcf9da6c6a54bdd86a5cc80f7
+29	電気ギター（オーバードライブ）	1101396773f19a1743b797de7738ca61
+30	電気ギター（ディストーション）	2192058c4c8b43769a42c7b12d7e7a10
+31	ギター・共鳴音（ハーモニクス）	89306485bfda500ae1ed89f1b6c29872
+32	生ベース（ウッドベース）	84f83ec9f6b2a8fbbdaadec0130836be
+33	電気ベースギター（フィンガー）	169dc8763a2b46da5e5140026cb6f8d4
+34	電気ベースギター（ピック）	a4bdd86816c77318a24f5d089db9c9af
+36	スラップベースギター１	7b1091971f8a4590a41b526bfcf44e48
+38	シンセ・ベース１	e66a350e9c699bebaad3da1c0a24274e
+39	シンセ・ベース２	044c4645ec33f93db5b9dd8ef1176e9c
+40	バイオリン（ボーイング）	5982fbcd78893e405089f4b8c56e40b2
+41	ビオラ（ボーイング）	325dd5ad1c398073e6377f33c86abca3
+42	チェロ（ボーイング）	77838145d87e26da3014ce8bc38e930d
+43	コントラバス（ボーイング）	93f2a8908412a281dea8832c4b433382
+44	トレモロ・ストリングス	cc8f31e6e63a4e0535b3a854a7ae7bc5
+45	弦楽ピッチカート	03958adeca03b30c1da34d8d216cbc32
+46	オーケストラ・ハープ	bfdf6ac8c6295b9b12fd5c8a742996ce
+47	ティンパニー	d706e91974f3dd737838276df3445fb5
+48	弓弦楽器合奏音１	8d7501f6e316afa5038152e160afb408
+49	弓弦楽器合奏音２	4bd74ec8153ef8f70e1411799d100092
+50	SynthStrings 1	8146978088c30bd6671be80be5c4f651
+51	SynthStrings 2	4bd74ec8153ef8f70e1411799d100092
+52	合唱（ボイス・アー）	ee88cadcbd2dab1ef7dd910d7af119b0
+53	人声（ボイス・ウー）	981bda578787f5ca5dfcf224b00bb595
+54	合成人声	7a6b6b4b00f11873b9774758cde866a0
+55	オーケストラ・ヒット	825e04f6bbd512813df4232e52d1ff7d
+56	トランペット	36c88eeea8859d45f391d0266261d18d
+57	トロンボーン	71549ac056cfc9102ba0a9bb41ab2117
+58	チューバ	067a6be49ba32b7200dd17bd8e1431f2
+59	消音器付き・トランペット	ad05037d7b88d123912df24d560b756b
+60	フレンチ・ホルン	cdec906bdb678f37c0bcd908d247edfc
+61	金管楽器・合奏	d939e17521de4b6a9c3052cdfd4d43f6
+62	SynthBrass 1	31432d582acf3fae6bdcc53f7fc1547a
+63	SynthBrass 2	4712742ad714b27b325da7b2d5c03709
+67	バリトンサックス	c5b1f5be2a3f3a6ef097932b7d3bbf7f
+68	オーボエ	204c50e26ab74a4106064f3a7b8d7d0b
+69	イングリッシュ・ホルン 	27d759ce3bb0a879589d41cc38586711
+70	バスーン	1e86e6ea800572fbe5cd97cba0c6a993
+71	クラリネット	4228609ba5802ad54a563a6a1db70d6a
+72	ピッコロ	2ac53a0f0131d9ee32c04d0f29a2e815
+73	フルート	93ab6109caa7ebe421f734428022d68a
+74	リコーダ	e95203484bb847f918448ec678f1e5b8
+75	パン・フルート	3d98ab759cf4c57e0687b96a8e13aaf6
+76	ビンに息を吹き込む音	151217b159751b130c40a609da8152f8
+78	口笛	28e51daa98b6a72598e63b220fa834f0
+79	オカリナ	a41410ccc75a173468aa0bc81d2227b0
+80	Lead 1 矩形波	219c3906cfabc1521e95aa6a3ad87db1
+81	Lead 2 鋸歯状波	2bd8613eb9a972d50600ea12cdc3720d
+85	Lead 6 voice	ea6b37de45f6ef55d6c6638f0fbaa5bb
+87	シンセ・ソロ音色８（ベース+リード）	46f8809a81e082d28b470d720a4fd460
+88	シンセ・多声音色１（new age）	518f0175a7fb9fd878aec285700fb9b6
+89	シンセ・多声音色２（Warm）	df1250d644559c5fc00978b350cd7204
+90	Pad 3 ポリシンセ	390b702215e67c645f1084742a7f6357
+91	Pad 4 人声	f404f492272a074f767e1131bc7ae16c
+92	Pad 5 bowed	f9af78284210d1a68b90ce9a098b4cd5
+93	Pad 6 メタリック	e8dc20b35d53265a3e5c3dad38d2d80f
+94	Pad 7 halo	3c7a244a97a0b6f5cd344ab2ec022d48
+95	シンセ・多声音色７（halo）	29af6f16b13d065f323c21051312cfd5
+97	シンセ・多声音色８（スウィープ）	bf80dee98011d2e1004c3300360afacc
+98	シンセ・効果音色３（クリスタル）	d7fe2352f2796d6dcbce7d41001e1ad3
+99	シンセ・効果音色４（アトモスフィア）	5fc76ec07915281c30b9869f295ee879
+100	FX 5 ブライトネス	4f3a44fcedcb179508abe7c89e03d659
+101	FX 6 ゴブリン	ae7f14b455ff0bd2eae8e7bbc34a7fdd
+102	FX 7 エコー	3321d6e81218d794498a513f9209528c
+103	FX 8 SF	61463dac52c507fe37d0b5cdb19cb8d5
+104	シタール	40f09e1acefb13d3fcc3d0aee0c40307
+105	バンジョー	29fc613e4a41bc446b10643c92071982
+106	三味線	c6716527b38d879b58fda44905300992
+107	琴	dfbcf58942e9438ce419b19178b182fe
+108	カリンバ	1a6d32e31e8f97635f56e6c9795a067d
+109	バグ・パイプ	509d40d6abbe772730caea2c4a088001
+110	フィドル	c87bf24e52707a268c7bca57d6da0d33
+126	拍手喝采	340e795dfbe01f3b333cd0c727f70de6
+
+//Nimap FE6
+0	生のグランドピアノ	082a0772e82673eb6e28e49dc5c8dd25
+1	明るい生ピアノ	c7c3fc3dcf9031f107637a3a37d7cb9e
+2	電気・グランドピアノ	3c8341d3c7e12e9a6407fe67695b404b
+3	ホンキー・トンク・ピアノ	aaf1896d788baa6a3eb965edc2f3a668
+4	電気・ピアノ１（ＤＸ系）	9b5c419ad1181f723f6ff3aff304702e
+5	電気・ピアノ２（Rhodes系）	1f132a0a29b00ab1bbe37f2ba6e24b2d
+6	ハープシコード（チェンバロ）	103222b87baefd82c3fe0ceb528bda13
+7	クラビコード	4f2145561a19b2281ac11761b1aaf9fd
+8	チェレスタ	eb8e3e35cf33a0b814edeaef47ae2ac3
+9	グロッケンシュピール	6ca53d9d362855aeb3002ff08ad13775
+10	オルゴール	3a5b22d53d8cc2602c4ce6bad10abe84
+11	ビブラフォン	4876ff210659fc63fa3d2aab24efba22
+12	マリンバ	1f7bc77f1dda38c0ccc2f726b630c55f
+13	シロフォン	2b52e2e45b01366ea607e1243cbf0349
+14	チューブラベル	dad94c956314497ea3b17ee7739dc01f
+15	ダルシマー	a51f0319d0cc5678e6bc245e94844edc
+16	電気オルガン（ドローバー）	7302ba9c4a529d16d21745abc93f9320
+17	電気オルガン（パーカッシブ）	be9bcbe0f3999e3f3de479ff6a849f46
+18	電気オルガン（ロック）	1580b369ea833d77e53343fcdd62b1eb
+19	生の教会オルガン	fcfeaa753672b5505414fb34c5a4b393
+20	生のリード・オルガン	50980733fb9194f5ab36e1df44d16579
+21	アコーディオン	43fe966fc7a48344a36493a72c0027d9
+22	ハーモニカ	8b383ae2e4c9afe3fcb1bd48e8079228
+24	生ギター（ナイロン）	90418e2b807117e795311b3d4a650571
+25	生ギター（スティール）	4164f8b2cd7552030900796750cf1cfb
+27	電気ギター（クリーン）	8500e36f079e3a630598c346a85440ff
+28	電気ギター（ミュート）	77843f643ca42eedae47da07856f5cc9
+29	電気ギター（オーバードライブ）	7ef1d0f14bcfa8350d7a67729cd93949
+30	電気ギター（ディストーション）	5af7fa496dfe8d4a37ce58eb2f492d26
+33	電気ベースギター（フィンガー）	7641f588b6ddb9a3ba79dac00b409465
+34	電気ベースギター（ピック）	fb61b6aa95379b292c4574bf785b5e93
+36	スラップベースギター１	bf855fb34c1ea8491cc4f869f3897412
+40	バイオリン（ボーイング）	082e719bf045861b9fbd9faba8ccfc85
+41	ビオラ（ボーイング）	65c91a5926a59c20238dab0e833ad60a
+44	トレモロ・ストリングス	9c678ef0f495c0aa5ccf4075fea1272e
+45	弦楽ピッチカート	34b63dbbe696ee1b0aaa84bc0872ad6f
+46	オーケストラ・ハープ	54d05d8a607e6431ff1e4f2f3ba5ec97
+47	ティンパニー	34d7762b030f76ee821e1189ca91b03b
+48	弓弦楽器合奏音１	c6dcf15a9081533bdb4bc87cccbd1025
+49	弓弦楽器合奏音２	7d2abbaf418e04548b31b838ee99255e
+50	合成弓弦楽器合奏音１	b265dc52941f2ace94f3d722b54da587
+51	合成弓弦楽器合奏音２	e768ec03f167b5dad4348bb2236ea649
+52	合唱（ボイス・アー）	9f31cf4c38a605b65bcf16c40a5330ad
+53	人声（ボイス・ウー）	e3f507a09cf52dbe892c641dc290d003
+54	合成人声	511d7334da2fbb642e16dc5264a6286d
+55	オーケストラ・ヒット	4103e5b0b4201b911e9432174179b469
+56	トランペット	3070103412170667107114345b952212
+57	トロンボーン	b564fabfbe56372eae15d891cdc32b51
+58	チューバ	03a6367a04e50577d01735cd7cab3001
+59	消音器付き・トランペット	cb12892a6bd2dabb90e6f0cb95797f97
+60	フレンチ・ホルン	32e2588408c1713d83242afa60b5090c
+61	金管楽器・合奏	b98656a7ea500520ff3482576d1c3064
+62	合成音・ブラス１	aa46ad22b771c6b9d952f5c7eced2d5d
+63	合成音・ブラス２	adcbc18bd430d88ef629710e6c35ff28
+64	ソプラノサックス	635254e440fe71d3b2406ab796809f5d
+65	アルトサックス	034670659801e01ed76850db9e8c937e
+66	テナーサックス	7ea55de67d667f6bc1f0f72d88c8615d
+68	オーボエ	14a016fb62723216082e9a41b147e5b8
+69	イングリッシュ・ホルン	eb61f777e54bc67598ed8db1bad2990d
+70	バスーン	1da3f07ae4c141bacedb96e5b31566e4
+71	クラリネット	f363d3018a33bf627828b4cd2cd53f8e
+72	ピッコロ	cbd326d4e11c0f24b992125cec01f6aa
+73	フルート	65e43de100bcd97a96a39ec90736977e
+79	オカリナ	36b645446d11abeef91cc26ae189be1c
+80	シンセ・ソロ音色１（矩形波）	89ac7aa257f195caaab7eb4ac3208977
+87	シンセ・ソロ音色８（ベース+リード）	fd62eb1bf483fd974fa624d8dad80001
+89	シンセ・多声音色２（Warm）	34d2111beddb02346592d88d2afc960d
+90	シンセ・多声音色３（ポリシンセ）	91d379f76fb948e9ec1e2f982e3333ee
+91	シンセ・多声音色４（人声）	dc7dfd9e4fa18329a8b8c477b14bcb19
+92	シンセ・多声音色５（bowed）	13a5410a6987bd997c65faab625c0b44
+94	シンセ・多声音色７（halo）	931e953c251f0d6d73c144705a1c1f5b
+98	シンセ・効果音色３（クリスタル）	43afe45cdce44a913840ddc2af1d1876
+100	シンセ・効果音色５（ブライトネス）	7ecd7677501115f28eb5d1f259456c12
+103	シンセ・効果音色８（ＳＦ）	6218ed3920dfdf41f381ceff72ec03e4
+104	シタール	6abb04d5d20c876674361eaff7c7dd20
+113	アゴゴ	b13f4c5ce9bb41f78a43c4df07427281
+117	メロディック・タム	6fd97c7db7c82a6908b9b6971eb0e22b
+118	シンセ・ドラム	0a604f32c896c00cdedc7ebd9ca38d51
+121	ブレス・ノイズ	62574709b4542139064846db526f66dc
+
+//FE7JIF
+24	ギター	6434ea28e9ea43816eefb730a5efa65e
+56	トランペット	c7ac78905fda5740231d0e0581ad503d
+41	ストレングス（弱）	fb7a62d6f2556fcfcd634b7c4081b2a2
+57	トロンボーン？	c684274d7c8c291211b71fa1e6ba7ca5
+47	ティンパニー	5f764a66b15710251fb10c095a169829
+4	ピアノ（重・低音）	d91a97fe0b1e3bbfb51c744a29b61296
+4	ピアノ（ギター）	d024a868df85feccac1ddfb715994315
+60	ホルン	1816d62e8478488bdc43709e2f85aeaa
+21	アコーディオン	12b553afa87181c4e338d9ae28dca878
+26	エレキギター	a339a0e8f66a3bc6750193f3c391ea36
+19	オルガン	9360b719288cd2fd54c189b348bdaada
+58	チューバ	39e40771ac170d620fcf8f4c8af04e07
+	?	ab24b662de7f369fcdd621edbaedf0ac
+73	フルート	2adbdf5bac14c228a9b325b701eae561
+	ピアノ（弱）	9cd4d1561ac2b11a081ff5ae449e22d4
+	クアイア?	0412e94eeffa054e656331fedf0daf64
+60	フレンチホルン?	8330a4ce239bd802da2e78ed9b17a424
+71	クラリネット?	cb94df3e8ebde43bdf2735e6013facdd
+68	オーボエ?	16ad5a78df5fd449134e08584da5e239
+40	ストレングス?	8b2f5b71a3bf7d9a1f3a5c7a43a003ce
+10	オルゴール?	a9d50aa37c66ecd8db2da45f5e9af37b
+24	エレキギター?	b56b9fcd8a97fb3a71eac98160db8d34
+	コーラス?	d504eb8588c5dfea941970f1a921cb17
+	コーラス?	c51fffb7ead60513e1b858c9bb873568
+55	オーケストラ?	69eaa865f6dc087ac8aea6563e6a1f8a
+36	スラップベース	d0e66092e9c272bd26e38abb7bf59d10
+55	オーケストラヒット	bba039de72955a6ead386e965a7d3781
+68	オーボエ	a4fabe5660b59215188bc91cbb0d8629
+62	ブラス（弱）?	f24a2b42e49d8bd478752fc4f2d0cc57
+71	クラリネット（高）?	9b25806a576ec774b6f19af320b4419c
+20	リードオルガン?	14338f21aff551da86c8f9c9257845cf
+	ソフトウェーブ	264cbc56e7f3de6a66f8e9f76675120c
+	?	006bdb5a2211cbf728f57ee2d00e6851
+36	スラップギター	a0b077828dc1092bab059159518897f9
+100	ブライトネス系?	4e5ea0fc0919ec38ab08b72aa7cea0ec
+	?	bba37023994901b2776210b9f184c50c
+100	ブライトネス（硬）	2a433c78cc705c1123f77fabbae40782
+74	フルート・リコーダー？	656996b47c988d9ac789f5aa28618ccd
+26	ギター？	44557a74582e01c9442d62c8c52655bd
+26	ギター？	36febb500a853cf51642f1eac34047c6
+	?	863e32ef4b83f4f4d8aa676bfb3c64b1
+63	ブラス?	c4db34fa0d8aa837b7aa1fb953e7b8be
+8	鉄琴	7186cec5187478a754035e04b2b254fa
+29	オーバードライブギター?	f18bfa0680323120504ec116f3a4064a
+	×ガンショット	6276e8a13ae7dc9918788c24d1038d8e
+	スクエアウェーブ	ec3860afc4943021f0416877097d22b9
+	スラップギター（途切れる）	fc79008a8d5d443eb0c391b5b1c714cb
+	スラップギター（途切れる）	27409df8b068c1e1d709923fbc374e56
+	?	e51839eb91652c31cfe7bf98c269b6c8
+8	鉄琴	ec01afbf4c959072c9c3c2f76097e287
+60	フレンチホルン？	437423e6ba1a57ca4c6cfeb19ad14506
+	×	51fd2e90b98cd46dddf9cc8a66ce566e
+11	ピアノ+コーラス（ストレングスギター？）鉄琴？	400920bb8b00da757639e9d466fd7741
+56	トランペット	6f3b4f7d82e5f983b2ed996c23e6feac
+	×	64783cd1c137efa14b9478e74772e78a
+63	ブラス	a85319ebbe0a3ad3906ee2a62b98ab00
+57	トロンボーン？	99f92ccc19d95ea3af5b4a653be24c5f
+26	ギター	5f25792163b98a8d4931ef7f476f556a
+	？	6d8719c89acb4ea109922fc4fea260f2
+	コーラス＋ピアノ	9cf4a1aa616b0e4e08c640cf2e9cbf01
+68	オーボエ？	28594b5c2857733357acd1cad0f603f1

@@ -1,0 +1,14 @@
+NAME=MUSIC_NAZO 0x6F
+NAME.en=MUSIC_Unknown 0x6F
+NAME.zh=音乐_资料 0x6F
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0806875c
+ADDRESS_TYPE=SONG
+
+INFO=曲を変更します。この曲はサウンドルームに登録されないため、曲名は不明です。
+INFO.en=Changes the music for an unknown song. It is not registered in the sound room.
+INFO.zh=我会改变这首歌。由于该歌曲未在音室中注册，歌曲标题未知。

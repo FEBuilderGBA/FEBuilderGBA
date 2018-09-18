@@ -1,0 +1,18 @@
+﻿NAME=召喚されるクラス
+NAME.en=Summon Class to be summoned
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07D118
+ADDRESS_TYPE=CLASS
+
+AUTHOR=出典:FE8 Summon editor by Nintenlord
+
+NAME.zh=被召唤的职业
+
+AUTHOR.zh=来源:FE8召唤编者由Nintenlord
+
+AUTHOR.en=Source: FE8SummoneditorbyNintenlord
+

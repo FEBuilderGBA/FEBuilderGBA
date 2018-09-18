@@ -1,0 +1,34 @@
+NAME=レベルアップの成長ステータス表示の高速化
+NAME.en=Faster Level Ups
+NAME.zh=加速升级成长状态显示
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: 20 frame sec|OFF|0 frame sec|ON0|1 frame sec|ON1|2 frame sec|ON2|5 frame sec|ON5|7 frame sec|ON7|10 frame sec|ONA|15 frame sec|ONF
+
+DETERMINATION_ADDRESS=0x07F464
+
+ONF:0x07F464=0x0F
+ONA:0x07F464=0x0A
+ON7:0x07F464=0x07
+ON5:0x07F464=0x05
+ON2:0x07F464=0x02
+ON1:0x07F464=0x01
+ON0:0x07F464=0x00
+OFF:0x07F464=0x14
+
+//+1するらしい
+ONF:0x0741E0=0x10
+ONA:0x0741E0=0x0B
+ON7:0x0741E0=0x08
+ON5:0x0741E0=0x06
+ON2:0x0741E0=0x03
+ON1:0x0741E0=0x02
+ON0:0x0741E0=0x01
+OFF:0x0741E0=0x14
+
+INFO.en=Patches the ROM to speed up the level up menu.\r\n
+
+AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/75

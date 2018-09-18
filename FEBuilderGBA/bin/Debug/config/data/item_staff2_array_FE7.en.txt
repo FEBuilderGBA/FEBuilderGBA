@@ -1,0 +1,6 @@
+0806862C=-	{J}
+08068624=Recover Staff	{J}
+08068628=Silence, Sleep, Berserk	{J}
+08067E40=-	{U}
+08067E38=Recover Staff	{U}
+08067E3C=Silence, Sleep, Berserk	{U}

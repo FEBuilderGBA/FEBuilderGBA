@@ -1,0 +1,12 @@
+NAME=MUSIC_風吹いて、気高まる
+NAME.en=MUSIC_Ride the Wind
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08068064
+ADDRESS_TYPE=SONG
+
+NAME.zh=MUSIC_风吹起来，我感觉自己像起来

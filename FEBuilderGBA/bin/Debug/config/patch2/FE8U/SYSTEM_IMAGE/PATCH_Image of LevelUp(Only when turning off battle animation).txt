@@ -1,0 +1,12 @@
+NAME=LevelUpの画像(バトルアニメをオフにした時のみ)
+NAME.en=Image of LevelUp(Only when turning off battle animation)
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x073DA8//0x5BB0C8
+PALETTE_POINTER=0x073DB4//0x5BB2DC
+NAME.zh=LevelUp图像（仅当关闭战斗动画时）

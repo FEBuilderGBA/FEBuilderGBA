@@ -1,0 +1,12 @@
+NAME=常に間接モーション_ておの
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x5356c 0x053558
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+NAME.en=Always indirect motion_Hand Axe
+NAME.zh=始终间接运动_ Toroona

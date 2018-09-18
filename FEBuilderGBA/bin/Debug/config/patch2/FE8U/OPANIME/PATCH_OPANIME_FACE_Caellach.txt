@@ -1,0 +1,14 @@
+NAME=OPANIME_FACE_ケセルダ
+NAME.en=OP Anime Face: Caellach
+NAME.zh=OPANIME_FACE_ Keserda
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x000C9998//0x08AEF8A0
+PALETTE_POINTER=0x000C99A0//0x08AF0130
+
+INFO=Edit and import OP Anime Graphic for the Caellach Face image.

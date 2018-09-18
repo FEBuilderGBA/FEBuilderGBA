@@ -1,0 +1,15 @@
+NAME=Improved Sound Mixer
+NAME.en=Improved Sound Mixer
+NAME.zh=Improved Sound Mixer
+
+PATCHED_IF:0xd01d0=0xb0 0x6c 0x00 0x03 0x18 0x02
+
+TYPE=EA
+TAG=#ENGINE
+EA=SoundMixer.txt
+
+INFO=改良されたSappyサウンドミキサーをROMに適用し、より高いサンプリングレートと低ノイズを実現します。
+INFO.en=Patches the ROM with an improved Sappy Sound Mixer, allowing for higher sampling rates and reduced noise.\r\nA component of the Event Assembler automatic adaptation patch.\r\n
+
+AUTHOR=ipatix http://feuniverse.us/t/improved-sound-mixer-by-ipatix/1107
+INFO.zh=将改进的Sappy混音器应用于ROM，以获得更高的采样率和更低的噪音。

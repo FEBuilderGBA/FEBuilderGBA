@@ -1,0 +1,20 @@
+TURN	回合条件
+TALK	对话指令的条件
+OBJECT	压制点，宝箱，门等的对象
+ALWAYS	范围条件及，胜利条件等的经常条件
+ALWAYS	(特别)选择一个友方单位的时刻
+ALWAYS	(特别)当我们决定移动友方单位时
+ALWAYS	(特别)当我的友军被移动的那一刻
+TUTORIAL	教程
+TRAP	弩车、蛇发女妖的卵、损坏的地板
+TRAP	陷阱2(只有破坏9F的地板？)
+PLAYER_UNIT	简单和普通时的自军配置
+PLAYER_UNIT	困难的自军配置
+FREEMAP_PLAYER_UNIT	魔物出现在地图时 自军配置1
+FREEMAP_PLAYER_UNIT	魔物出现在地图时 自军配置2
+FREEMAP_PLAYER_UNIT	魔物出现在地图时 自军配置3
+FREEMAP_ENEMY_UNIT	魔物出现在地图时 魔物配置1
+FREEMAP_ENEMY_UNIT	魔物出现在地图时 魔物配置2
+FREEMAP_ENEMY_UNIT	魔物出现在地图时 魔物配置3
+START_EVENT	章开始事件
+END_EVENT	章结束事件

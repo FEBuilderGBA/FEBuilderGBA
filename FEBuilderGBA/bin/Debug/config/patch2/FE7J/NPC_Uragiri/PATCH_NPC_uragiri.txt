@@ -1,0 +1,13 @@
+NAME=NPC(友軍)を第三勢力として機能させる。
+TYPE=EA
+
+PATCHED_IF:0x023D3C=0x00 0x4B 0x18 0x47
+EA=NPC_uragiri.event
+
+AUTHOR=7743
+INFO=ローカルフラグ0x27を有効にすると、NPC(ally)が第3勢力として動作するようになります。\r\nNPCは敵軍と、プレイヤーの両方を攻撃します。
+NAME.en=Make NPC (friendly) function as the third power.
+INFO.en=When local flag 0x27 is enabled, NPC (ally) will operate as the third power.\r\nNPC attacks both enemy troops and players.
+NAME.zh=使NPC（友好）功能成为第三种力量。
+INFO.zh=当启用本地标志0x27时，NPC（盟友）将作为第三个电源运行。\r\nNPC攻击敌军和玩家。
+USEFLAG=0x27

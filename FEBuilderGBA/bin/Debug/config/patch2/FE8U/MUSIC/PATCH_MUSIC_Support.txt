@@ -1,0 +1,12 @@
+NAME=MUSIC_支援_きずな
+NAME.en=Support Room BGM
+NAME.zh=MUSIC_支持_ KIZUNA
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+
+ADDRESS=0x080951F6 0x080960C0
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played during the Support Menu

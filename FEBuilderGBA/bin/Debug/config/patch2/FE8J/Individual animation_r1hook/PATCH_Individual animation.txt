@@ -1,0 +1,44 @@
+﻿NAME=(古)個別アニメ(r1でフックするバージョン)
+NAME.zh=(旧)个人动画(Version to be hooked on r1)
+NAME.en=(Old)Individual animation patch(custom animation)(Version to be hooked on r1)
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//パッチが適応されているか確認
+IF:0x58168=0x00 0x49 0x8f 0x46
+IF_COMMENT=個別アニメパッチを導入してください.
+
+//データへのポインタ ディフォルトは、0xE471C0
+POINTER=$GREP4END 0x08 0x33 0xF8 0xE7 0x59 0x68 0x1C 0xBC 0x70 0x47 0x00 0x00 0xFF 0xFF 0x00 0x00
+
+//ユニット クラス 0x00 0x00 アニメ設定ポインタ
+//データサイズ
+DATASIZE=8
+
+//データ個数 FF FF FF FF が出てくるまで
+DATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMEPOINTER=アニメ設定
+
+B0:UNIT.en=Unit
+B1:CLASS.en=Class
+P4:BATTLEANIMEPOINTER.en=Anime
+
+B0:UNIT.zh=人物
+B1:CLASS.zh=职业
+P4:BATTLEANIMEPOINTER.zh=战斗动画
+
+INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\nこのバージョンは、ルーチンをフックするのにr1レジスタを利用するバージョンです。(それ以外に違いは特にありません)\r\nユニット設定で、個別アニメフラグに1を立てるのを忘れないようにしてください。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
+
+INFO.en=Do not forget to set 1 for the individual animation flag in unit setting.\r\nIf you define a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new securing button appears.\r\n
+INFO.zh=不要忘记在单位设置中为个人动画标志设置1。\r\n如果您定义了新动画，请将动画设置指定为0。\r\n当为动画设置指定0时，会出现一个新的保护按钮。\r\n

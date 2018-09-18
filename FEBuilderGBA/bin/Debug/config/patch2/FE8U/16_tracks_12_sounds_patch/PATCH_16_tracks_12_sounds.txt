@@ -1,0 +1,14 @@
+TYPE=BIN
+TAG=#ENGINE #SOUND #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x22440c=0x10 0x00 0x00 0x00 0x50 0x66 0x00 0x03 0xB0 0x67 0x00 0x03 0x10
+
+BIN:0x2900=2900.bin
+BIN:0x2924=2924.bin
+BIN:0x22440c=0022440c.bin
+AUTHOR=16 Tracks/12 Sounds Fix (credit Agro/Brendor) http://feuniverse.us/t/fe7-fe8-16-tracks-12-sounds-patch/895
+
+INFO=16トラック、12音まで同時再生できるようにプログラムを修正します。\r\n8トラック以上のトラックを持つmidiを利用するときには必須となるパッチです。\r\n
+INFO.en=Patches the ROM's sound data to exceed the base limit of 8 tracks/8 notes per song.\r\nAfter patching, 16 tracks and 12 notes can be played simultaneously.\r\nThis patch must be applied in order to use Midis that exceed 8 tracks.\r\n
+INFO.zh=改正节目，以便可以同时播放16个音轨和12个音符。\r\n当使用midi和8首曲目或更多曲目时，这是一个重要的补丁。\r\n

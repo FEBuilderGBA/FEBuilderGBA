@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ギリアム_影
+NAME.en=OP Anime Face: Gilliam (Shadow)
+NAME.zh=OPANIME_FACE_ Gilliam_shadow
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C92A4//0x08AE3E54
+PALETTE_POINTER=0x000C91BC//0x08AE2BF4
+
+INFO=Edit and import OP Anime Graphic for the Gilliam Face (Shadow) image.

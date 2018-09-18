@@ -1,0 +1,28 @@
+NAME=章ごとに勝利近しの音楽変更
+NAME.en=Changing music close to victory for each chapter
+NAME.zh=每章的胜利的音乐变更
+
+//PATCHED_IF:0x160d0=0x00 0x49 0x8F 0x46
+PATCHED_IF:0x209f8=0x00 0x20 //昔のミスを直すために変更する
+TYPE=BIN
+TAG=#ENGINE #SOUND
+
+//JUMPコードを差し込む領域が足りないのでパズルみたいな展開を行います.
+BIN:$FREEAREA:1=music10change.bin
+
+JUMP:0x080160d0:$r1=music10change.bin
+
+//なんてこった。条件を満たすと章プロローグが有効になるらしい。
+//章プロローグを無効にする.
+BIN:0x20ca4=kill_chapter_prologue_bgm.bin
+BIN:0x209e8=kill_chapter_prologue_bgm2.bin
+BIN:0x20a7c=kill_chapter_prologue_bgm2.bin
+BIN:0x20a8c=kill_chapter_prologue_bgm3.bin
+BIN:0x209f8=kill_chapter_prologue_bgm3.bin
+
+
+INFO=敵が残り一体になったときに再生される勝利近しの曲を、章単位で変更できるようにします。
+INFO.en=Change the songs close to the victory that will be played when the enemies remain together in chapter units.
+AUTHOR=7743
+
+INFO.zh=使您能够将歌曲接近以敌人在章节单位中保持在一起时播放的胜利。

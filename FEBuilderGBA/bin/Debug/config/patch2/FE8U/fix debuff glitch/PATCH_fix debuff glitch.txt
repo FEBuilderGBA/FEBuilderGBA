@@ -1,0 +1,19 @@
+NAME=fix debuff glitch
+NAME.en=Skill System Debuff Glitch Fix
+//TYPE=EA
+TYPE=BIN
+TAG=#ENGINE
+
+IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1 0xA1 0xD8 0xB4 0x8
+PATCHED_IF:0xBA30=0x80 0xEE 0x03 0x02
+//EA=fix debuff glitch.event
+BIN:0x0000BA30=0000BA30.bin
+BIN:0x0000BA54=0000BA54.bin
+BIN:0x0000FA34=0000FA34.bin
+BIN:0x000D5B80=000D5B80.bin
+
+INFO=SkillSystemsのdebuff glitchを修正する
+INFO.en=Patches the ROM to remove the debuff glitch introduced with the Skill System Patch.\r\n
+INFO.zh=技能系统的衰退修复小故障
+
+AUTHOR=Kirb http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/239

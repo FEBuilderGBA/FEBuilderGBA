@@ -1,0 +1,17 @@
+﻿NAME=Spell Loader(アイテム間接効果を近接と遠距離で切り替える)
+NAME.en=Spell Loader: Different Magic Animations for Melee and Ranged Attacks
+
+TYPE=EA
+TAG=#ENGINE
+EA=Installer.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x58E74=0x00 0x4a 0x10 0x47
+
+AUTHOR=kao http://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/  transport 7743
+NAME.zh=拼加载程序（以近距离和远距离切换道具间接效果）
+
+
+INFO=アイテム間接効果テーブルを拡張し、魔法や投げ槍で使うアニメーションを、近接攻撃と遠距離攻撃とで、それぞれ切り替えるパッチです。
+INFO.en=It is a patch that extends the item indirect effect table and switches between animation to be used for magic and throwing spear with proximity attack and long range attack.
+INFO.zh=扩展项目间接效果表，用魔法和投枪使用的动画，是与近距离攻击和远距离攻击分别切换的补丁。

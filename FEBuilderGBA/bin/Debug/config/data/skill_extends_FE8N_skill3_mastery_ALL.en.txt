@@ -1,0 +1,8 @@
+00=None
+01=meteor
+02=moonlight
+03=solar
+04=sky
+05=Fortune
+06=Holy shield
+07=Shrine

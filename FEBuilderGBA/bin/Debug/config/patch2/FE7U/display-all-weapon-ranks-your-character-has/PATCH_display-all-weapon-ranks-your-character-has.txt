@@ -1,0 +1,13 @@
+NAME=Display all weapon ranks your character has
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x8154C=0x34 0x24 0xCC 0x08
+BIN:0x80440=FE7_weaponranks.dmp
+BIN:0xCC2434=FE7_weaponranks_fix.dmp
+BIN:0x8154C=8154C.bin
+
+//MeleeAndMagicFix
+BIN:0x184DC=184DC.bin
+
+AUTHOR=jjl2357\r\nhttp://feuniverse.us/t/fe7-fe8-display-all-weapon-ranks-your-character-has/744\r\nMeleeAndMagicFix:melee and magic fix  Hextator,Tequila

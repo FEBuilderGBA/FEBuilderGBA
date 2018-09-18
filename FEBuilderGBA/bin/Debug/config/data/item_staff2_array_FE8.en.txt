@@ -1,0 +1,6 @@
+080726A4=-	{U}
+0807269C=Recover Staff	{U}
+080726A0=Silence, Sleep, Berserk	{U}
+08074B80=-	{J}
+08074B78=Recover Staff	{J}
+08074B7C=Silence, Sleep, Berserk	{J}

@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ルーテ_影
+NAME.en=OP Anime Face: Lute (Shadow)
+NAME.zh=OPANIME_FACE_ Rute _ Shadow
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C95E0//0x08AE9364
+PALETTE_POINTER=0x000C9500//0x08AE7C2C
+
+INFO=Edit and import OP Anime Graphic for the Lute Face (Shadow) image.

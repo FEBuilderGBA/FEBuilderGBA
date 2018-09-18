@@ -1,0 +1,22 @@
+NAME=敵の杖の最低命中率
+NAME.en=Lowest accuracy of the enemy's staff
+NAME.zh=敌人杖的最低命中率
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0040292 0x0040538
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
+
+
+
+INFO=敵AIが杖を使うかどうかを判別するために利用する最低命中率を指定します。\r\n魔法防御が高いキャラクターは、杖の命中率が低くなるので、敵は杖を利用しません。
+INFO.en=Specifies a hit percentage value. Enemy units deciding who to target with a disabling staff will ignore units with hit percentages below this threshold.
+INFO.zh=指定用于确定敌方AI是否使用手杖的最低命中率。\r\n具有高魔法防御的角色不会使用手杖，因为手杖的命中率会更低。

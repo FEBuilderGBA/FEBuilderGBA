@@ -1,0 +1,103 @@
+//FE6 Droppable Items
+//By Tequila
+
+#ifdef _FE6_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+	#define Make_6C_Entry(type_of, s_arg, l_arg) "BYTE type_of 0; SHORT s_arg; POIN l_arg"
+	
+	PUSH
+	
+	//Drop last item after battle
+	ORG $2A358
+	POIN New_6C_Struct
+	ORG $2EEDC
+	POIN New_6C_Struct
+	
+	//Make dropped item use the glowy green palette on inventory screen
+	ORG $6F030
+	callHack_r3(Last_Item_Glows)
+	ORG $16878
+	SHORT 0x1C25 //mov r5,r4
+	ORG $16880
+	SHORT 0x2C01 //cmp r4,#1
+	ORG $168AC
+	SHORT 0x2501 0x46A 0x2A01 0xD000 0x2502 0x1C29 0x2216
+	BL(0x6E74)
+	
+	//Set the drop item flag with AI byte 4, 0x40
+	ORG $30AA4
+	jumpToHack(Set_Drop_Flag)
+	
+	//When a thief opens a chest, set the drop flag
+	ORG $12238
+	jumpToHack(Looting_Sets_Flag)
+	
+	//Onmi stuff
+	ORG $12136
+	BYTE $78 $68 $40 $6D
+
+	ORG $1c61c
+	WORD _giveItemFix + $08000000
+
+	ORG $1c5ba
+	BYTE $20 $1C $FA $F7 $76 $FF $00 $06 $00 $28 $1F $D1 $12 $48 $04 $60
+
+	POP
+	
+	ALIGN 4
+	New_6C_Struct:
+	Make_6C_Entry(0x2, 0, 0x25C7D)
+	Make_6C_Entry(0xE, 1, 0)
+	Make_6C_Entry(0x2, 0, 0x24225)
+	Make_6C_Entry(0x14, 0, 0x1C3C9)
+	Make_6C_Entry(0x2, 0, 0x2A6D9)
+	Make_6C_Entry(0x2, 0, 0x2A719)
+	Make_6C_Entry(0xE, 0x20, 0)
+	Make_6C_Entry(0x2, 0, 0x2A799)
+	Make_6C_Entry(0xB, 1, 0)
+	Make_6C_Entry(0x16, 0, Initialize_Drop|1)
+	Make_6C_Entry(0x2, 0, 0x2A7A5)
+	Make_6C_Entry(0xE, 0, 0)
+	Make_6C_Entry(0, 0, 0)
+	
+	ALIGN 4
+	Initialize_Drop:
+	#incbin "Initialize_Drop.dmp"
+	POIN Can_Drop_Item
+	
+	ALIGN 4
+	Can_Drop_Item:
+	#incbin "Can_Drop_Item.dmp"
+	
+	ALIGN 4
+	Last_Item_Glows:
+	#incbin "Last_Item_Glows.dmp"
+	POIN Can_Drop_Item
+	
+	ALIGN 4
+	Set_Drop_Flag:
+	#incbin "Set_Drop_Flag.dmp"
+	
+	ALIGN 4
+	Looting_Sets_Flag:
+	#incbin "Looting_Sets_Flag.dmp"
+	
+	ALIGN 4
+	_giveItemFix:
+	BYTE $16 $00 $00 $00 $41 $C5 $01 $08 $16 $00 $00 $00 $61 $C5 $01 $08
+	BYTE $0E $00 $01 $00 $00 $00 $00 $00 $16 $00 $00 $00 $8D $C5 $01 $08
+	BYTE $16 $00 $00 $00 $9D $C5 $01 $08 $0B $00 $63 $00 $00 $00 $00 $00
+	BYTE $02 $00 $00 $00
+	WORD $08000000 + _giveItemFix2 + 1
+	BYTE $0E $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00 $00
+	_giveItemFix2:
+	BYTE $00 $B5 $04 $48 $00 $7B $04 $4B $00 $F0 $0A $F8 $03 $49 $08 $60
+	BYTE $01 $BC $00 $47 $6C $95 $03 $02 $0D $86 $01 $08 $B0 $44 $00 $03
+	BYTE $18 $47 $00 $00
+	ALIGN 4
+
+#else
+	ERROR "You're not assembling FE6 events!"
+#endif

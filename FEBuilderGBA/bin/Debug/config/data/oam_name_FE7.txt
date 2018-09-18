@@ -1,0 +1,24 @@
+//特殊OAM	ROM内にある特殊なOAMデータです
+//アドレスは、ポインタリストで、最後は、 0x8000 00XX で終わります。
+//Special OAM data in special OAM ROM.
+//The address is a pointer list, and the end is 0x8000 00XX at the end.
+
+
+08B92DB0=nazo01	{U}
+08B94034=nazo02	{U}
+08BC1330=nazo03	{U}
+08BC140C=nazo04	{U}
+08BC1414=nazo05	{U}
+08BC4340=nazo06	{U}
+08BC43C4=nazo07	{U}
+08BD17C0=nazo08	{U}
+08BD17C8=nazo09	{U}
+08BD1874=nazo10	{U}
+08BD18B0=nazo11	{U}
+08BD6B00=nazo12	{U}
+08BD6BD4=nazo13	{U}
+08BD6C6C=nazo14	{U}
+08BD6D24=nazo15	{U}
+08BD6D94=nazo16	{U}
+08BD6DE4=nazo17	{U}
+08BDC2FC=nazo18	{U}

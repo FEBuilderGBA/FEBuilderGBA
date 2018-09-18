@@ -1,0 +1,40 @@
+
+PUSH
+ORG	$6A5A
+
+SHORT	 $46C0 $b001 $4b03
+SHORT $f000 $f806
+SHORT $bc10 $bc02 $4708
+SHORT	$46c0
+POIN	mug_exceed1+1
+SHORT	$4718
+
+
+ORG $7000
+SHORT	$B510 $4B03
+SHORT	$f000 $f806 //BL
+SHORT	$BC10 $BC02 $4708 $46C0
+POIN	mug_exceed2+1
+SHORT	$4718
+
+
+ORG $71DE
+SHORT	$46C0 $46C0
+
+
+POP
+
+mug_exceed1:
+#incbin "mug_exceed1.dmp"	//HINT=ASM
+WORD $08006C2D
+WORD $080068C5
+WORD $1010
+WORD $08BFF768
+BYTE $18 $47 $20 $47 $30 $47 $38 $47 $40 $47
+ALIGN 4
+
+mug_exceed2:
+#incbin "mug_exceed2J.bin"	//HINT=ASM
+#incbin "mug_exceed2.dmp"	//HINT=ASM
+
+ALIGN 4

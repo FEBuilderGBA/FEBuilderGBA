@@ -1,0 +1,36 @@
+#ifdef _FE7_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+/*
+This hack just plays a sound effect when you select a unit
+It's intended to be used with custom samples to get characters to say things when selected, like in echoes
+Also like in echoes, they will only say their line the first time you select them on each chapter, or if you reload
+You are meant to customize these with a character ID requirement, here's an exameple:
+*/
+
+PUSH
+ORG $18140
+jumpToHack(SelectSfxLoop)
+POP
+
+ALIGN 4
+SelectSfxLoop:
+#incbin "unit select sfx.dmp"
+POIN SelectSfx_Table
+#include "SelectSfx_Table.event"
+//struct data{
+//short sound      //play sound if 0x00 term
+//byte  unit       //if 0x00 ANY
+//byte  class      //if 0x00 ANY CLASS
+//byte  edition    //if 0xFF ANY edition
+//byte  map        //if 0xFF ANY MAP
+//short flags      //if 0x00 ANY   (Judgment only)
+//} //sizeof(8)
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

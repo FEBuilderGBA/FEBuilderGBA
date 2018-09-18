@@ -1,0 +1,27 @@
+
+NAME=編成準備店の値上げをやめさせる
+NAME.en=Remove Preparations Store Price Gouging
+NAME.zh=系统_编成准备店的涨价停止
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xb9dbb
+COMBO=値下げ|0xE0|値下げしない|0xD0
+COMBO.zh=降价|0xE0|不降价|0xD0
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#j7cd3959
+
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#j7cd3959
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#j7cd3959
+
+COMBO.en=Price cut|0xE0|Do not price|0xD0
+
+
+
+
+INFO=進撃準備店は、他の店よりも1.5倍高い価格でアイテムを販売しています。\r\n割増手数料を取られます。\r\nこのパッチは、その値上げをやめさせます。\r\n
+INFO.en=By default, the store accessed through the Preparations menu sells items at 1.5X the normal price. This patch removes that multiplier.\r\n
+INFO.zh=袭击准备商店出售物品的价格比其他商店高1.5倍。\r\n将收取额外费用。\r\n这个补丁将停止价格上涨。\r\n

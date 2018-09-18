@@ -1,0 +1,7 @@
+TURN	转动条件
+TALK	对话条件（说话命令）
+OBJECT	地图对象（控制点，宝箱，门，私人住宅，村庄）
+ALWAYS	总是条件（范围条件，胜利条件等）
+PLAYER_UNIT	盟友安排
+ENEMY_UNIT	敌人的安排
+END_EVENT	章节结束事件

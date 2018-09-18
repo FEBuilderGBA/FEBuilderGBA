@@ -1,0 +1,31 @@
+PUSH
+
+//ターゲットポイント？最大20
+ORG	0x3b604
+BL(0x18edc)
+ORG	0x3b60e 
+BL(0x18edc)
+
+//AIで最初に通っている(味方ばかり被ダメージ計算)
+ORG	0x3e388
+BL(0x18edc)
+
+//補正込み威力計算　謎
+ORG	0x3ec3c
+BL(0x18edc)
+//杖命中AI？TP計算っぽい
+ORG	0x402a2
+BL(0x18edc)
+
+//威力計算　謎
+ORG	0x4bb92
+BL(0x18edc)
+
+ORG	0x18edc
+WORD	$468F4900
+POIN	bunkey
+
+POP
+bunkey:
+#incbin "bunkey.bin"
+ALIGN 4

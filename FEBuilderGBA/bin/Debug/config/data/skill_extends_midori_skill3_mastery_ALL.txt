@@ -1,0 +1,8 @@
+00=None
+01=Resolve
+02=None
+03=None
+04=None
+05=Fortune
+06=None
+07=None

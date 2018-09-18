@@ -1,0 +1,14 @@
+
+NAME=MODE SELECT 顔画像 リン編
+NAME.en=MODE SELECT Portrait of the Lyn Editing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x418DB4
+ADDRESS_TYPE=PORTRAIT
+DATASIZE=4
+
+AUTHOR=Source: Tequila http://feuniverse.us/t/fe7-replace-hector-mode/3169/6
+NAME.zh=MODESELECT面部图像凛编

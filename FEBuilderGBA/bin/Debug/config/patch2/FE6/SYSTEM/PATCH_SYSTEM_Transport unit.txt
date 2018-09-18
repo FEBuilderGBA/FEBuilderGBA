@@ -1,0 +1,17 @@
+
+NAME=輸送隊ユニット
+NAME.en=Transport unit
+
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2020C
+ADDRESS_TYPE=UNIT
+
+AUTHOR=7743
+INFO=隣接すると輸送体メニューを出すユニットを設定します。\r\nキャラクター自分自身が輸送体メニューを出すには、特性で輸送体コマンドを設定してください。\r\n
+INFO.en=Set up units that will bring out the transporter menu when adjacent.\r\nFor the character himself to issue the transporter menu, please set the transporter command with characteristics.\r\n
+NAME.zh=运输单位
+INFO.zh=设置相邻时将显示转运菜单的单位。\r\n对于自己发出转运菜单的角色，请设置具有特征的转运指令。\r\n
+

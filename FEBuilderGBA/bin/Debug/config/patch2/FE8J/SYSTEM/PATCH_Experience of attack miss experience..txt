@@ -1,0 +1,18 @@
+﻿
+NAME=攻撃ミス経験値
+NAME.en=Attack Miss EXP
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2c4ac
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#b6b2bf66
+NAME.zh=攻击Miss的经验值
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#b6b2bf66
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#b6b2bf66
+

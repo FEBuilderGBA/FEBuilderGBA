@@ -1,0 +1,13 @@
+NAME=OPタイトルに256色の画像を利用する。(導入)
+NAME.en=The 256 colors titlebackground Installer
+
+TYPE=EA
+TAG=#ENGINE #IMAGE
+
+PATCHED_IF:0xCA4F4=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_256 colors titlebackground.txt
+EA=titlebackgroundinstaller.event
+
+
+AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10
+NAME.zh=使用具有256种颜色的图像作为OP标题引进。

@@ -1,0 +1,17 @@
+NAME=ユアン理消滅処理 ゼロにする武器種
+NAME.en=Ewan Weapon Rank Removal On Promotion
+NAME.zh=元推理灭绝处理武器类型为零
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2bd16
+
+COMBO=剣|0x28|槍|0x29|斧|0x2A|弓|0x2B|杖|0x2C|理|0x2D|光|0x2E|闇|0x2F
+COMBO.en=SWORD|0x28|LANCE|0x29|AX|0x2A|BOW|0x2B|STAFF|0x2C|Default: ANIMA|0x2D|LIGHT|0x2E|DARK|0x2F
+COMBO.zh=剑|0x28|枪|0x29|斧|0x2A|弓|0x2B|杖|0x2C|理|0x2D|光|0x2E|暗|0x2F
+
+INFO=ユアンが特定のクラスへCCした時に、忘れる武器の種類を設定します。
+INFO.zh=当元CC到某个职业时，设置忘记武器的种类。
+INFO.en=By default, when Ewan promotes from Pupil to Shaman he loses the ability to use Anima magic.\r\nThis patch specifies the weapon type that is removed when this promotion takes place.\r\n This can be used to create unique weapon type removing events.\r\n

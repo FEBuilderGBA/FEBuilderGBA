@@ -1,0 +1,32 @@
+NAME=離脱マップで全員離脱したかどうか確認するall_withdrawn
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x10 0x4A 0x00 0x23 0x10 0x68 0x00 0x28 0x14 0xD0 0x00 0x79 0x0E 0x49 0x49 0x68 0x88 0x42 0x0B 0xD0 0xD1 0x68 0x04 0x20 0x08 0x40 0x07 0xD1 0xC8 0x03 0x05 0xD4 0x20 0x20 0x08 0x40 0x02 0xD1 0x08 0x20 0x01 0x40 0x05 0xD0 0x48 0x32 0x01 0x33=0x10 0x4A 0x00 0x23
+
+
+EVENTSCRIPT=400D0000{$L1:all_withdrawn.bin}	離脱マップで全員離脱したかどうか確認する	{COND}
+
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=all_withdrawn.bin
+INFO=離脱マップで全員離脱したかどうかを判定します。\r\n全員離脱していれば、1を返します。まだ残っている場合は0を返します。\r\n結果はメモリスロットCに返されます。
+
+
+AUTHOR=aera 出典元:https://github.com/ngmansion/FE8/tree/master/escapemap
+NAME.en=COND Check whether all members have withdrawn
+INFO.en=Check whether all members have withdrawn from the withdrawal map.\r\nIf all members have withdrawn, 1 is returned.\r\nIt returns 0 if it is still there.\r\nThe result is returned in memory slot C.
+
+AUTHOR.en=Source: Source: https://github.com/ngmansion/FE8/tree/master/escapemap.
+
+EVENTSCRIPT.en=400D0000{$L1:all_withdrawn.bin}	Check whether all members have withdrawn	{COND}
+AUTHOR.zh=来源:来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
+
+EVENTSCRIPT.zh=400D0000{$L1:all_withdrawn.bin}	用于检查所有成员是否已从撤回地图中撤回。	{COND}
+
+
+
+NAME.zh=确认是否所有人都已离开出发地图all_withdrawn
+INFO.zh=确定是否所有成员都退出提款地图。\r\n如果删除所有这些，则返回1。如果它仍然存在则返回0。\r\n结果在内存插槽C中返回。

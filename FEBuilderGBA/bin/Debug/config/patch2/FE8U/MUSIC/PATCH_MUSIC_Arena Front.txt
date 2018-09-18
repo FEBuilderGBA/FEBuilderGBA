@@ -1,0 +1,11 @@
+NAME=MUSIC_闘技場_受付
+NAME.en=Arena Entrance BGM
+NAME.zh=音乐_体育场_接待
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08047C42 0x08047ED0 0x080B5D14 0x080B5D2E
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when visiting the Arena.

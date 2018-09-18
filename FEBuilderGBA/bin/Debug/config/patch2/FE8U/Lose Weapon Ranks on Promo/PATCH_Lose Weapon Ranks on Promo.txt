@@ -1,0 +1,15 @@
+NAME=CCで武器LVを利用できない場合は、武器LVを失う
+NAME.en=Lose Weapon Ranks on Promotion
+NAME.zh=如果武器LV不能和CC一起使用，我们会失去武器LV
+
+PATCHED_IF:0x2BE38=0x00 0x23 0x3C 0x1C 0xE2 0x18 0x11 0x78 0x68 0x68 0x2C 0x30 0xC0 0x18 0x00 0x78 0x00 0x28 0x01 0xD1 0x00 0x21 0x03 0xE0 0x09 0x18 0xFB 0x29 0x00 0xDD 0xFB 0x21
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:0x2BE38=FE8Promotion.dmp
+
+INFO=CC時に武器を利用できないランクがないクラスへCCした場合は、武器LVを忘れて利用できないようにします。\r\n例えば、理を使える魔道士が、理を使えないサマナーにCCした場合、理を忘れます。
+INFO.en=Patches the ROM so that upon promotion, if a unit has a weapon level that the promoted class doesn't have, they'll lose that weapon rank.\r\nFor example, if a mage capable of using anima magic promotes to a summoner that can not use anima, then anima ranks are lost.
+INFO.zh=你不能在CC上使用武器当你在CC上没有等级的职业时，我们会忘记武器LV，这样我们就不能使用武器LV。\r\n例如，如果一个法师可以使用CC的原因到一个不能使用理由的夏天，那就忘记原因。
+
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/4

@@ -1,0 +1,1079 @@
+//This data is made with the aim of being readable by machine fast.
+//
+//address	name	RET=return	r0=arg0	//Argument Return value is not yet used and should not trust so much.
+//address	@STRUCTNAME	name			//struct STRUCTNAME name;
+//address	@STRUCTNAME@[size]	name	//struct STRUCTNAME name[size];
+//address	:address2	name			//range data from address to address2
+//
+//@STRUCTNAME@OFFSET1	TYPE	name	//struct STRUCTNAME{   TYPE name
+//@STRUCTNAME@OFFSET2	TYPE	name	//                     TYPE name      };
+//
+08013ca4	LZ77 Decompression of compressed data	void	r0=Compressed data	r1=Extracted location	{J}
+0800105c	Palette adaptation.
+0202AA50	Gold	{J}
+0202AA56	MAP ID	{J}
+0202A404	The last displayed string ID	{J}
+
+//thank you Tiki
+//BIOS ARM(not thumb)
+080D6364	ArcTan2	{J}
+080D6368	BgAffineSet	{J}
+080D636C	CPUFastSet	{J}
+080D6370	CPUSet	{J}
+080D6374	Div	{J}
+080D637C	Mod	{J}
+080D638C	HuffUnComp	{J}
+080D6390	LZ77UnCompVram	{J}
+080D6394	LZ77UnCompWram	{J}
+080D6398	MultiBoot	{J}
+080D63A0	ObjAffineSet	{J}
+080D63A4	RLUnCompVram	{J}
+080D63A8	RLUnCompWram	{J}
+080D63C4	SoundBiasReset	{J}
+080D63CC	SoundBiasSet	{J}
+080D63D4	Sqrt	{J}
+080D63D8	VBlankIntrWait	{J}
+
+// Spell Anmations
+//thumb
+//08056BC8	NoneSpellAnimation	void	int a1	{J}
+//08056C40	ThrowingAxeSpellAnimation	void	int a1	{J}
+//08056F98	ArrowSpellAnimation	void	int a1	{J}
+//08057120	Javelin1SpellAnimation	void	int a1	{J}
+//0805717C	Javelin2SpellAnimation	void	int a1	{J}
+//080571D8	Javelin3SpellAnimation	void	int a1	{J}
+//08057234	Javelin4SpellAnimation	void	int a1	{J}
+//08057290	Javelin5SpellAnimation	void	int a1	{J}
+//080572EC	Javelin6SpellAnimation	void	int a1	{J}
+//08057348	Javelin7SpellAnimation	void	int a1	{J}
+//080573A4	Javelin8SpellAnimation	void	int a1	{J}
+//08057400	Javelin9SpellAnimation	void	int a1	{J}
+//0805745C	Javelin10SpellAnimation	void	int a1	{J}
+//080574B8	Javelin11SpellAnimation	void	int a1	{J}
+//08057664	DancePlay1SpellAnimation	void	int a1	{J}
+//08057924	DancePlay2SpellAnimation	void	int a1	{J}
+//08057A6C	BalistaArrowSpellAnimation	void	int a1	{J}
+//08057C24	ExaccusWaveSpellAnimation	void	int a1	{J}
+//08057F84	SoSFireSpellAnimation	void	int a1	{J}
+//08058120	FlametongueSpellAnimation	void	int a1	{J}
+//0805843C	FaHolyDragonStoneSpellAnimation	void	int a1	{J}
+//08058584	IdunDarkDragonStoneSpellAnimation	void	int a1	{J}
+//08058B28	FireSpellAnimation	void	int a1	{J}
+//08058B6C	ElfireSpellAnimation	void	int a1	{J}
+//0805ABD8	ForblazeSpellAnimation	void	int a1	{J}
+//0805882C	ThunderSpellAnimation	void	int a1	{J}
+//0805979C	BoltingSpellAnimation	void	int a1	{J}
+//08059138	FimbulvetrSpellAnimation	void	int a1	{J}
+//08059BF0	AircaliburSpellAnimation	void	int a1	{J}
+//08059BF4	FluxSpellAnimation	void	int a1	{J}
+//0805A090	NosferatuSpellAnimation	void	int a1	{J}
+//0805A60C	LightningSpellAnimation	void	int a1	{J}
+//0805A838	PurgeSpellAnimation	void	int a1	{J}
+//0805BA78	AureolaSpellAnimation	void	int a1	{J}
+//0805B678	DivineSpellAnimation	void	int a1	{J}
+//0805C3D4	ApocalypseSpellAnimation	void	int a1	{J}
+//0805C3D8	EclipseSpellAnimation	void	int a1	{J}
+//0805CA38	FenrirSpellAnimation	void	int a1	{J}
+//0805D1D8	HealSpellAnimation	void	int a1	{J}
+//0805D328	MendSpellAnimation	void	int a1	{J}
+//0805D4CC	RecoverSpellAnimation	void	int a1	{J}
+//0805D670	PhysicSpellAnimation	void	int a1	{J}
+//0805DEC0	FortifySpellAnimation	void	int a1	{J}
+//0805DEF0	FortifyGreenSpellAnimation	void	int a1	{J}
+//0805E3B0	RestoreSpellAnimation	void	int a1	{J}
+//0805E650	SilenceSpellAnimation	void	int a1	{J}
+//0805E8E8	SleepSpellAnimation	void	int a1	{J}
+//0805EC08	HammerneSpellAnimation	void	int a1	{J}
+//0805EE84	BerserkSpellAnimation	void	int a1	{J}
+//0805F48C	BarrierSpellAnimation	void	int a1	{J}
+//0805F6F8	ShineSpellAnimation	void	int a1	{J}
+//0805FBE8	LunaSpellAnimation	void	int a1	{J}
+//080605A4	ExcaliburSpellAnimation	void	int a1	{J}
+//08060E70	GespenstSpellAnimation	void	int a1	{J}
+//080615C4	AuraSpellAnimation	void	int a1	{J}
+//08061BE0	LuceSpellAnimation	void	int a1	{J}
+//08062350	ErishkigalAnimation	void	int a1	{J}
+//08062AAC	FillaMight1SpellAnimation	void	int a1	{J}
+//08062AE8	NinisGraceSpellAnimation	void	int a1	{J}
+//08062B24	ThorIreSpellAnimation	void	int a1	{J}
+//08062B60	SetLitanySpellAnimation	void	int a1	{J}
+
+// Spell Animation Engine
+//arm
+//8004370	SpellCallBack	void *funcSequence, signed int callNum	{J}
+//804EC74	ScrollScreen	int a1, unsigned __int16 a2	{J}
+//80689D0	PlaySFX		int SFXID, int a2, int a3, int a4	{J}
+//80017E8	memClear2K	void	void *mem, int num	{J}
+//8001188	LCDIOMapSync	{J}
+//8001320	GetBGnCNTBufferAddr	u16*	u16 *result	{J}
+//80016C4	BGMapBGPaletteSync	void	{J}
+//8000FD4	SetBGMapSyncFlag	void	u8 flag	{J}
+//8000FF0	EnableBGMapSync	void	u8 n	{J}
+//8001034	EnableBGPaletteSync	void	{J}
+//8001048	DisablePaletteSync	void	{J}
+//800105C	OutputToBGPaletteBuffer	void	void *src, signed int paletteOffset, signed int len	{J}
+//80010CC	OutputToBGPaletteBufferWithAlpha	void	_WORD *src, signed int paletteOffset, int len, int alpha	{J}
+//8003054	TileTransferInfoSync	void	{J}
+//8002EB8	TileTransferInfoClear	void	{J}
+//8002F54	TileTransferInfoAdd	void	void *src, void *dst, int len	{J}
+//8002FD8	TileIntializeInfoAdd	void	void *src, void *dst, int len	{J}
+//8003214	OAM1BufferSync	void	{J}
+//80031BC	OAM2BufferSync void	{J}
+//8003108	OAMBufferSyncInfoInitialize	void	int SpriteNum1	{J}
+//80031A4	GetSpriteNum1	int	{J}
+//8003264	SetOBJAttribute	void	int OBJIndex, __int16 Attribute0, __int16 Attribute1, __int16 Attribute2, __int16 RSParameter	{J}
+8012F94	OutputBitmapToVRAM	void	unsigned int *bitmap, void *dst	{J}
+8013008	AutoCopyOrDecompressImageToVRAM	void	_BYTE *src, int dst	{J}
+80131BC	writePlainTSA	void	u16 *TSABufferInWRAM, int tileIndexAndPaletteIndex, int height, int width	{J}
+80130AC	changeTiles	void	void *src, void *dst, int width, int height	{J}
+//80C0C28	writeTemplateTSA	_WORD	_WORD *TSABufferInWRAM, _WORD *TSATemplate, __int16 TSABaseValue	{J}
+8005330	AddSprite	void	int priorityInLinkedList, s16 x, s16 y, int templateAddr, s16 tileNo	{J}
+//8001D64	setBGnPosition	void	unsigned __int16 n, __int16 x, __int16 y	{J}
+805D0F4	loadArrowOBJ	void	void *AIS	{J}
+8055C78	loadSpellCast	void	{J}
+8056220	reduceHPBar	void	void *targetAIS, bool ifMiss	{J}
+80563C0	suckBloodAnimation	void	int a1, int ifMiss	{J}
+805AF2C	checkIfCritical	int	void *AIS	{J}
+806ED0C	criticalAttackEffect	void	int a1	{J}
+//8062E9C	normalAttackEffect	void	int a1	{J}
+//8068500	playHitSound	int	void *AIS	{J}
+80100CC	eventCodeFunc_DF	int	struct context *parent	{J}
+//807D314	loadIceCrystal	void	int a1	{J}
+//8C11370	efxResire	{J}
+//8C11388	efxResireBG	{J}
+//8C113B8	efxResireBG2	{J}
+//8C11568	efxResireRST	{J}
+805E9B4	loadResireBG2	void	int a1	{J}
+80605B0	loadResireBG	void	int a1, u8 ifMiss	{J}
+805C1A4	loadResireRST5	context*	int a1, int a2, int a3, int a4, int a5	{J}
+8060938	loadResireRST3	void	int a1, struct context *a2, u16 a3	{J}
+//8C108A0	efxRestWINH	{J}
+805C5D8	loadRestWINH	void	int a1, int a2, u16 a3, u32 a4	{J}
+805C6EC	loadRestWINH1	void	int a1, int a2, u32 a3	{J}
+
+//	8C11FA4	efxHazymoon	{J}
+//	8C11FBC	efxHazymoonBG	{J}
+//	8C120AC	efxHazymoonOBJ2	{J}
+//	8C120F4	efxHazymoonOBJ3	{J}
+//	8C12124	efxHazymoonOBJ3RND	{J}
+8061540	loadHazymoonBG1	void	void *AIS	{J}
+8060D90	loadHazymoonOBJ3	void	void *AIS	{J}
+//	805C624	loadHazymoonBG2	void	void *AIS	{J}
+8061614	loadHazymoonBG3	void	void *AIS	{J}
+80616E8	loadHazymoonOBJ2	void	void *AIS	{J}
+//	8000BB8	geneateRN65536	int	{J}
+//	8000DDC	geneateRN100	int	{J}
+//	8000E08	geneateRNRange	int	int range	{J}
+805B058	getTargetAIS	void	int a1	{J}
+80D63D8	loadFlashBG	{J}
+
+0806ed34	Status 1 parameter
+0806efe0	Status 2 possessed item
+0806f324	Status 3 Weapon Level
+0807030C	R menu settings
+08018A88	Map palette loading
+08018B00	Map palette load 2
+0809E0B4	divisionRound down (Div)
+0809DD00	RegisterRamReset
+0809DF4C	divisionRound down (Div)
+
+
+0809BB1C	umul3232H32
+0809BB2C	SoundMain
+0809BBB0	SoundMainRAM
+0809BF54	SoundMainBTM
+0809BF6C	RealClearChain
+0809BF8C	ply_fine
+0809BFBC	MPlayJumpTableCopy
+0809BFF0	ld_r3_tp_adr_i
+0809BFFC	ply_goto
+0809C01C	ply_patt
+0809C038	ply_pend
+0809C04C	ply_rept
+0809C07C	ply_prio
+0809C088	ply_tempo
+0809C09C	ply_keysh
+0809C0B0	ply_voice
+0809C0E0	ply_vol
+0809C0F4	ply_pan
+0809C108	ply_bend
+0809C11C	ply_bendr
+0809C130	ply_lfodl
+0809C13C	ply_modt
+0809C154	ply_tune
+0809C168	ply_port
+0809C180	m4aSoundVSync
+0809C1CC	MPlayMain
+0809C434	TrackStop
+0809C478	ChnVolSetAsm
+0809C4A8	ply_note
+0809C6A8	ply_endtie
+0809C6E8	clear_modM
+0809C710	ply_lfos
+0809C724	ply_mod
+0809C738	MidiKeyToFreq
+0809C79C	UnusedDummyFunc
+0809C7A0	MPlayContinue
+0809C7BC	MPlayFadeOut
+0809C7DC	m4aSoundInit
+0809C854	m4aSoundMain
+0809C860	m4aSongNumStart
+0809C88C	m4aSongNumStartOrChange
+0809C88C	m4aSongNumStartOrContinue
+0809C92C	m4aSongNumStop
+0809C92C	m4aSongNumContinue
+0809C994	m4aMPlayAllStop
+0809C9C0	m4aMPlayContinue
+0809C994	m4aMPlayAllContinue
+0809C9F8	m4aMPlayFadeOut
+0809CA08	m4aMPlayFadeOutTemporarily
+0809CA28	m4aMPlayFadeIn
+0809CA50	m4aMPlayImmInit
+0809CA98	MPlayExtender
+0809CBB0	MusicPlayerJumpTableCopy
+0809CBB4	ClearChain
+0809CBB4	Clear64byte
+0809CBDC	SoundInit
+0809CCD4	SampleFreqSet
+0809CD78	m4aSoundMode
+0809CE10	SoundClear
+0809CE64	m4aSoundVSyncOff
+0809CEE0	m4aSoundVSyncOn
+0809CF1C	MPlayOpen
+0809CF94	MPlayStart
+0809D078	m4aMPlayStop
+0809D0B8	FadeOutBody
+0809D180	TrkVolPitSet
+0809D234	MidiKeyToCgbFreq
+0809D2DC	CgbOscOff
+0809D394	CgbSound
+0809D7E0	m4aMPlayTempoControl
+0809D808	m4aMPlayVolumeControl
+0809D870	m4aMPlayPitchControl
+0809D8E4	m4aMPlayPanpotControl
+0809D94C	ClearModM
+0809D96C	m4aMPlayModDepthSet
+0809D9E0	m4aMPlayLFOSpeedSet
+0809DA54	ply_memacc
+0809DBAC	ply_xcmd
+0809DBCC	ply_xxx
+0809DBE0	ply_xwave
+0809DC28	ply_xtype
+0809DC3C	ply_xatta
+0809DC50	ply_xdeca
+0809DC64	ply_xsust
+0809DC78	ply_xrele
+0809DC8C	ply_xiecv
+0809DC98	ply_xiecl
+0809DCA4	ply_xleng
+0809DCB8	ply_xswee
+0809DBE0	ply_xcmd_0D
+0809DD04	SoftReset
+0809DD2C	Sqrt
+0809DF10	_call_via_r0
+0809DF14	_call_via_r1
+0809DF18	_call_via_r2
+0809DF1C	_call_via_r3
+0809DF20	_call_via_r4
+0809DF24	_call_via_r5
+0809DF28	_call_via_r6
+0809DF2C	_call_via_r7
+0809DF30	_call_via_r8
+0809DF34	_call_via_r9
+0809DF38	_call_via_sl
+0809DF3C	_call_via_fp
+0809DF40	_call_via_ip
+0809DF44	_call_via_sp
+0809DF48	_call_via_lr
+0809DF4C	__divsi3
+0801C134	__fixunssfsi
+0809DFE4	__modsi3
+0809F908	__muldi3
+0802C160	__udivdi3
+0809E0B4	__udivsi3
+0809E12C	__umodsi3
+0809E1EC	__pack_d
+0809E334	__unpack_d
+0809E678	__adddf3
+0809E6A8	__subdf3
+0809E6E0	__muldf3
+0809E988	__divdf3
+0809EB10	__fpcmp_parts_d
+0809EC10	__cmpdf2
+0809EC3C	__eqdf2
+0809EC88	__nedf2
+0809ECD4	__gtdf2
+0809ED20	__gedf2
+0809ED6C	__ltdf2
+0809EDB8	__ledf2
+0809EE04	__floatsidf
+0809EE80	__fixdfsi
+0809EEF4	__negdf2
+0809EF1C	__make_dp
+0809EF44	__truncdfsf2
+0809EF88	__pack_f
+0809F040	__unpack_f
+0809F238	__addsf3
+0809F264	__subsf3
+0809F298	__mulsf3
+0809F3FC	__divsf3
+0809F4E8	__fpcmp_parts_f
+0809F5CC	__cmpsf2
+0809F5F4	__eqsf2
+0809F63C	__nesf2
+0809F684	__gtsf2
+0809F6CC	__gesf2
+0809F714	__ltsf2
+0809F75C	__lesf2
+0809F7A4	__floatsisf
+0809F804	__fixsfsi
+0809F86C	__negsf2
+0809F890	__make_fp
+0809F8A8	__extendsfdf2
+0809F8D4	__lshrdi3
+0809F978	__negdi2
+0809F990	memcpy
+0809F9F0	memset
+
+
+@Unit@00	pointer	UnitPointer	
+@Unit@04	pointer	ClassPointer	
+@Unit@08	byte	Level	
+@Unit@09	byte	EXP	
+@Unit@0A	byte	Recovery mode	
+@Unit@0B	byte	UnitTableID	
+@Unit@0C	byte	State	+1=??,+2=acted,+4=death,+8=non sortie,+10=rescuing,+20=rescuing,+40=??,+80=??
+@Unit@0D	byte	State2	
+@Unit@0E	byte	X	coordinate
+@Unit@0F	byte	Y	coordinate
+@Unit@10	byte	MAX HP	
+@Unit@11	byte	Current HP	
+@Unit@12	byte	Power or Magic	
+@Unit@13	byte	Skil	
+@Unit@14	byte	Spd	
+@Unit@15	byte	Def	
+@Unit@16	byte	Ref	
+@Unit@17	byte	Luck	
+@Unit@18	byte	Physique correction(5bit)	
+@Unit@19	byte	Holds Unit ID	
+@Unit@1A	byte	?(tmp)	
+@Unit@1B	byte	Move correction(5bit)	
+@Unit@1C	byte	ItemID1	
+@Unit@1D	byte	ItemStock1	
+@Unit@1E	byte	ItemID2	
+@Unit@1F	byte	ItemStock2	
+@Unit@20	byte	ItemID3	
+@Unit@21	byte	ItemStock3	
+@Unit@22	byte	ItemID4	
+@Unit@23	byte	ItemStock4	
+@Unit@24	byte	ItemID5	
+@Unit@25	byte	ItemStock5	
+@Unit@26	byte	Sword EXP	
+@Unit@27	byte	Lance EXP	
+@Unit@28	byte	Axs EXP	
+@Unit@29	byte	Bow EXP	
+@Unit@2A	byte	Staff EXP	
+@Unit@2B	byte	Rule EXP	
+@Unit@2C	byte	Light EXP	
+@Unit@2D	byte	Dark EXP	
+@Unit@2E	byte	state and number of turns	
+@Unit@2F	byte	PureWaterTourch	
+@Unit@30	byte	Support1	
+@Unit@31	byte	Support2	
+@Unit@32	byte	Support3	
+@Unit@33	byte	Support4	
+@Unit@34	byte	Support5	
+@Unit@35	byte	Support6	
+@Unit@36	byte	Support7	
+@Unit@37	byte	Support8	
+@Unit@38	byte	Support9	
+@Unit@39	byte	Support10	
+@Unit@3A	byte	SupportFlag	
+@Unit@3B	byte	??	
+@Unit@3C	byte	??	
+@Unit@3D	byte	??	
+@Unit@3E	byte	??	
+@Unit@3F	byte	??	
+@Unit@40	byte	AI 3	
+@Unit@41	byte	AI 4	
+@Unit@42	byte	AI 1	
+@Unit@43	byte	AI 1 Counter	
+@Unit@44	byte	AI 2	
+@Unit@45	byte	AI 2 Counter	
+@Unit@46	byte	??	
+@Unit@47	byte	??	
+
+0202AA57	フェイズ 0=Your army, 0x40 = ally, 0x80 = enemy army
+0202AA58	Number of turns
+0809FA44	strcpy
+08036804	_malloc_trim_r
+
+
+@Unit@00	pointer	UnitPointer	
+@Unit@04	pointer	ClassPointer	
+@Unit@08	byte	Level	
+@Unit@09	byte	EXP	
+@Unit@0A	byte	Recovery mode	
+@Unit@0B	byte	UnitTableID	
+@Unit@0C	byte	State	+1=??,+2=acted,+4=death,+8=non sortie,+10=rescuing,+20=rescuing,+40=??,+80=??
+@Unit@0D	byte	State2	
+@Unit@0E	byte	X	coordinate
+@Unit@0F	byte	Y	coordinate
+@Unit@10	byte	MAX HP	
+@Unit@11	byte	Current HP	
+@Unit@12	byte	Power or Magic	
+@Unit@13	byte	Skil	
+@Unit@14	byte	Spd	
+@Unit@15	byte	Def	
+@Unit@16	byte	Ref	
+@Unit@17	byte	Luck	
+@Unit@18	byte	Physique correction(5bit)	
+@Unit@19	byte	Holds Unit ID	
+@Unit@1A	byte	?(tmp)	
+@Unit@1B	byte	Move correction(5bit)	
+@Unit@1C	byte	ItemID1	
+@Unit@1D	byte	ItemStock1	
+@Unit@1E	byte	ItemID2	
+@Unit@1F	byte	ItemStock2	
+@Unit@20	byte	ItemID3	
+@Unit@21	byte	ItemStock3	
+@Unit@22	byte	ItemID4	
+@Unit@23	byte	ItemStock4	
+@Unit@24	byte	ItemID5	
+@Unit@25	byte	ItemStock5	
+@Unit@26	byte	Sword EXP	
+@Unit@27	byte	Lance EXP	
+@Unit@28	byte	Axs EXP	
+@Unit@29	byte	Bow EXP	
+@Unit@2A	byte	Staff EXP	
+@Unit@2B	byte	Rule EXP	
+@Unit@2C	byte	Light EXP	
+@Unit@2D	byte	Dark EXP	
+@Unit@2E	byte	state and number of turns	
+@Unit@2F	byte	PureWaterTourch	
+@Unit@30	byte	Support1	
+@Unit@31	byte	Support2	
+@Unit@32	byte	Support3	
+@Unit@33	byte	Support4	
+@Unit@34	byte	Support5	
+@Unit@35	byte	Support6	
+@Unit@36	byte	Support7	
+@Unit@37	byte	Support8	
+@Unit@38	byte	Support9	
+@Unit@39	byte	Support10	
+@Unit@3A	byte	SupportFlag	
+@Unit@3B	byte	??	
+@Unit@3C	byte	??	
+@Unit@3D	byte	??	
+@Unit@3E	byte	??	
+@Unit@3F	byte	??	
+@Unit@40	byte	AI 3	
+@Unit@41	byte	AI 4	
+@Unit@42	byte	AI 1	
+@Unit@43	byte	AI 1 Counter	
+@Unit@44	byte	AI 2	
+@Unit@45	byte	AI 2 Counter	
+@Unit@46	byte	??	
+@Unit@47	byte	??	
+
+0202AB78	@Unit@[33]	Player
+0202BCE8	@Unit@[32]	Enemy
+
+030044B0	&Unit	Pointer to the work memory of the operation character
+08013AD0	Copy_Text_To_RAM
+02021B08	BG 0 wram buffer
+02021B88	BG 1 wram buffer
+02021C08	BG 2 wram buffer
+02021C88	BG 3 wram buffer
+02003108	Stat screen data
+@StatusMenuText@00	short	start tile index	(relative to Font root)
+@StatusMenuText@02	byte	current local x cursor	(in pixels)
+@StatusMenuText@03	byte	current text color id
+@StatusMenuText@04	byte	Text tile width	(usually only half the actual used tile amount!)
+@StatusMenuText@05	bool	Uses Double Buffer
+@StatusMenuText@06	byte	current buffer id	(0 or 1)
+@StatusMenuText@07	byte	idk	(maybe unused? initialized to 0)
+2003140	@StatusMenuText	Skill
+2003148	@StatusMenuText	Speed
+2003150	@StatusMenuText	Luck
+2003158	@StatusMenuText	Def
+2003160	@StatusMenuText	Ref
+2003168	@StatusMenuText	Mov
+2003170	@StatusMenuText	Con
+2003178	@StatusMenuText	Aid
+2003180	@StatusMenuText	Trv
+2003188	@StatusMenuText	Affin
+2003190	@StatusMenuText	Cond
+20031C8	@StatusMenuText	Atk
+20031D0	@StatusMenuText	Hit
+20031C0	@StatusMenuText	Rng
+20031D8	@StatusMenuText	Crit
+20031E0	@StatusMenuText	Avoid
+20031E8	@StatusMenuText	Weapon1
+20031F0	@StatusMenuText	Weapon2
+20031F8	@StatusMenuText	Weapon3
+2003200	@StatusMenuText	Weapon4
+@DrawFont@00	pointer	root output VRAM pointer
+@DrawFont@04	pointer	pointer to glyphs
+@DrawFont@08	pointer	pointer to glyph drawing routine (ex: 08004218+1, 08004268+1)
+@DrawFont@0C	pointer	pointer to current VRAM tile offset getter (ex: 080041E8+1)
+@DrawFont@10	short	base value for text tiles (containing base tile index & palette mask)
+@DrawFont@12	short	current tile index (local/relative to root)
+@DrawFont@14	short	palette index
+@DrawFont@16	byte	idk	 (set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
+@DrawFont@17	byte	idk
+@GameData@00	byte	nazo1
+@GameData@01	byte	6C Main 2 Skip Counted	(Main 2 6C Exec will be skipped if this is non 0)
+@GameData@02	byte	nazo2
+@GameData@03	byte	GameData State bitfield	&0x01:? &0x02:? &0x04:? &0x08:? &0x10:? &0x20:? &0x40:When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?) &0x80:?
+@GameData@04	short	VerticalCounter	(IOReg:04000006) state at the end of the last main loop iteration
+@GameData@0C	word	Current Real Camera Pos?
+@GameData@10	word	nazo3
+@GameData@14	word	Target Map Camera Pos?
+@GameData@18	word	nazo4
+@GameData@1C	word	Another Real Camera Pos?
+@GameData@20	word	ANOTHER Real Camera Pos.
+@GameData@24	word	Some Real Camera *Offset* (Used When Setting Up Backgrounds)
+0202AA08	@GameData	GameData	//maybe
+@KeyStatusBuffer@00	byte	FirstTickDelay
+@KeyStatusBuffer@01	byte	NextTickDelay
+@KeyStatusBuffer@02	byte	TickDownCounter	(decreased by one each frame, reset to FirstTickDelay when Presses change and NextTickDelay when reaches 0)
+@KeyStatusBuffer@03	byte	unused
+@KeyStatusBuffer@04	short	Current
+@KeyStatusBuffer@06	short	TickPresses	 1 For Press|Tick&Pressed, 0 Otherwise
+@KeyStatusBuffer@08	short	NewPresses:  1 For Press, 0 Otherwise
+@KeyStatusBuffer@0A	short	Previous
+@KeyStatusBuffer@0C	short	LastPressState: Current, but set only if NewPresses is not null
+@KeyStatusBuffer@0E	short	Release	1 for Release (A B L R Only), 0 Otherwise
+@KeyStatusBuffer@10	short	Another NewPresses?
+@KeyStatusBuffer@12	short	Time since last	Non-Start Non-Select Button was pressed
+02023B20	@KeyStatusBuffer	KeyStatusBuffer
+0858E578	KeyStatusBuffer Pointer
+@MapSize@0	short	Width
+@MapSize@2	short	Height
+0202D200	@MapSize	MapSize
+@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
+@AttackerBattleStruct@04	short	Damage	(Attack - defense)
+@AttackerBattleStruct@06	short	Attack
+@AttackerBattleStruct@08	short	Defense
+@AttackerBattleStruct@0A	short	Battle hit
+@AttackerBattleStruct@0C	short	Battle crit
+@AttackerBattleStruct@0E	short	Lethality chance
+02039200	@AttackerBattleStruct	AttackerBattleStruct	//maybe
+@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@DefenderBattleStruct@03	byte	Damage
+@ActionBattleStruct@06	byte	Apparently sometimes has the item id
+@ActionBattleStruct@0C	byte	Current character's allegiance
+@ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
+@ActionBattleStruct@0E	byte	moved-to X	Current character's moved-to x coordinate
+@ActionBattleStruct@0F	byte	moved-to Y	Current character's moved-to y coordinate
+@ActionBattleStruct@10	byte	Squares moved this turn
+@ActionBattleStruct@11	byte	Action taken this turn	0x01=Wait 0x02=Combat (Attack) 0x03=Staff 0x04=Dance/Play 0x05=Unused? 0x06=Steal 0x07=Summon 0x08=DK Summoning (I think) 0x09=Rescue 0x0A=Drop 0x0B=Take 0x0C=Give 0x0D=Unused? (I use this for auto-promotions) 0x0E=Talk 0x0F=Support 0x10=Visit 0x11=Seize 0x12=Door 0x13=Unused? 0x14=Chest 0x15=Pick 0x16=Unused? 0x17=Bought something from shop/armory/(presumably) secret shop 0x18=Unused? 0x19=Arena 0x1A=Use item 0x1B=Unused? (stored at 2D774) 0x1C=Unused? (stored at 9E3BA/9E8F2) 0x1D=Trade/Supply 0x1E=Wait due to finding an enemy in fog 0x1F=Backing out of an action, under certain circumstances 0x20=? 0x21=Ride (ballista) 0x22=Exit (ballista)
+@ActionBattleStruct@12	Inventory slot number (0-4)
+203956C	@ActionBattleStruct	ActionBattleStruct
+@ChapterData@08	word	Money
+@ChapterData@0D	byte	Vision Range	(0 if there's no fog)
+@ChapterData@0E	byte	Chapter ID
+@ChapterData@0F	byte	Phase	(0x0=player, 0x40=allied, 0x80=enemy)
+@ChapterData@10	short	Turn number
+@ChapterData@12	byte	Cursor x position	(only when displaying a menu?)
+@ChapterData@13	byte	Cursor y position	(only when displaying a menu?)
+@ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
+@ChapterData@15	byte	Weather	(0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
+@ChapterData@16	short	Number of support points gained this chapter?
+@ChapterData@1B	byte	Mode	(1=prologue-8, 2=Eirika 3=Ephraim)
+@ChapterData@40	byte	Option1	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
+&20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
+@ChapterData@41	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
+@ChapterData@42	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
+202AA48	@ChapterData	ChapterData
+@CharacterBattleStatistic@00	byte	Losses
+@CharacterBattleStatistic@01	short	Number of times a unit performs an action (seems to increase by 2) (non-aligned halfword)
+@CharacterBattleStatistic@03	byte	Number of times selected (caps at 199)
+@CharacterBattleStatistic@04	byte	Number of times viewed in stat screen (caps at 199)
+@CharacterBattleStatistic@05	short	Lower 4 bits are the (most recent) chapter number they died on, upper 4 bits (along with byte 0x6) are the turn number they died on
+@CharacterBattleStatistic@09	short	Top 4 bits, along with 0xA, is exp gained this chapter
+@CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
+@CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with the bottom 6 bits of 0xD, are battles
+@CharacterBattleStatistic@0E	byte	Character number of the most recent killer
+203D524	@CharacterBattleStatistic@[46]	Unit
+@ClearTurn@00	short	Chapter ID and number of turns	Number of turns<<7+Chapter ID
+@ClearTurn@02	short	Clear time seconds
+@ITEMSTOCK@00	byte	Item ID
+@ITEMSTOCK@01	byte	Number of items
+2039430	@ITEMSTOCK@[64]	Storage
+
+08029734	Pointer to the contents of the transport team
+0801860C	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte
+08017ABC	Get_Char_Data_From_ID	Searchs all factions	RET=Pointer to character data	r0=character id to search for
+08017358	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short
+080183E8	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr
+080184D0	Def_Getter	RET=Character's defense	r0=ram char data ptr
+080180FC	Aid_Getter	RET=Character's aid	r0=ram char data ptr
+080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
+08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
+08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
+08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
+0800105C	Write_Palette	r0=pointer to palette
+0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
+08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
+08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
+08018960	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with
+08016D0A	Unit_Has_Item		RET=inventory slot, or -1 if unit doesn't have said item	r0=char data ptr, r1=item id to search for
+
+//https://www.dropbox.com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions.txt
+0801860C	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte
+
+08017ABC	Get_Char_Data_From_ID	Searchs all factions	RET=Pointer to character data	r0=character id to search for
+08017358	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short
+
+080183E8	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr
+080184D0	Def_Getter	RET=Character's defense	r0=ram char data ptr
+080180FC	Aid_Getter	RET=Character's aid	r0=ram char data ptr
+080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
+
+08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
+08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
+
+08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
+0800105C	Write_Palette	r0=pointer to palette
+0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
+08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
+
+08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
+08018960	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with
+08016D0A	Unit_Has_Item		RET=inventory slot, or -1 if unit doesn't have said item	r0=char data ptr, r1=item id to search for
+
+086076A0	UnitsID:0
+
+
+//https://doc.feuniverse.us/static/stan/HiddenMapFlags.txt
+0202D218	maps to each tile a set of flags	&0x01 <=> A unit is hidden here	&0x02 <=> A trap is hidden here?
+
+//https://doc.feuniverse.us/static/stan/HardcodedChecks.txt
+0802B788	Item checks for Magic Swords
+080169B6	IsItemCoveringRange	Item Table is read directly for range
+0203CD80	RAM pointer to unit data to attacker (to 02039214)	{J}
+0203CD7C	RAM pointer to unit data to defenser (to 02039290)	{J}
+02039214	@Unit	Copy unit data of attacker
+02039290	@Unit	Copy unit data of attacker
+
+02003108	Stat Screens StatScreenStruct
+08056DB4	Battle animation scriptC26 (throw shield) / C27 (throw sword) command judgment
+080478DC	Special movement of tiles?Called from C26 / C27	r1=Pointer array 1	r2=Pointer array 1	r3=??
+08279d28	:08279e60	Japanese notation of terrain
+08279e60	:0827a924	The terrain and the name of the character are entered in ASCII
+0827a924	:0827B018	The staff role is entered in ASCIINot used
+0827B018	:0827b188	String of MAPIDNot used
+080417D4	LoadNewUIGraphics
+08016694	Drawing a sale item column in a store
+08026EB0	ApplyMapChangesById void r0=Map Change Id
+08026e18	Obtain address of designated map change	r0=Map Change Id
+0806BA48	Flag setting function	r0=Flag to set: FLAG
+0806BA74	Function to flag	void	r0=Declining flag: FLAG
+0806BA5C	Flag status confirmation function	RET=Result BOOL	r0=Flag to check: FLAG
+08049D98	Get indirect effect animation of weapons
+080731D8	Numbers and HPRead frequently used status images such as poison
+
+
+
+080003A8	ARM_FillRect	arm_func
+08001482	FlushBackgrounds
+08002A70	Call6C_02CallAndContinue
+08002912	Call6C_0ESleep
+08013C16	CopyString
+08013C30	CopyDirect
+08013CA4	UnLZ77Decompress
+08013CE4	FilterR0ForRawCopy
+08013D48	RegisterObjectTileGraphics
+08013D74	CopyTileGfxForObj
+080149B0	ContinueUntilSomeTransistion6CExists
+08014BAC	NewBlockingTimer
+08014BC8	Timer6C_Countdown
+08014D50	DeleteAllPaletteAnimator
+08014D60	NewPaletteAnimator
+08014DB4	NewPaletteAnimator_
+0801515C	FutureCall2_Loop
+08015180	FutureCall_Loop
+080151A8	SetupFutureCall2
+080151C4	SetupFutureCall
+080153CC	RerangeSomething
+080153F2	PlaySpacialSoundMaybe
+080158C0	GeneralVBlankHandler
+08015910	SomeUpdateRoutine
+08015A18	MakePhaseController6C
+08015A6C	NewPlayerPhase6C
+08015ACE	SetupBackgroundForWeatherMaybe
+08015B44	LoadObjUIGfx
+08015B80	LoadGameCoreGfx
+08015BA0	HandleCursorMovement
+08015CC4	MoveCameraByStepMaybe
+08015E44	GetSomeAdjustedCameraX
+08015E88	GetSomeAdjustedCameraY
+08015F1C	DisplayCursor
+080160AC	Init6C_GENS
+08016140	Loop6C_GENS
+080161C0	EnsureCameraOntoPosition
+08016250	ShouldMoveCameraPosSomething
+08016958	GetUnitEquippedWeapon
+08016988	GetUnitEquippedWeaponSlot
+08016B84	GetWRankText
+08016BAC	GetWTypeTextInStandardBuffer
+08016D0A	GetUnitItemSlot
+08016DA2	GetWeaponRangeMask
+08017364	ClearUnits
+08017394	ClearUnitStruct
+080173BC	CopyUnitStruct
+080173D8	GetNextFreeUnitStructPtr
+080174AA	UnitAddItem
+080174CC	RemoveUnitBlankItems
+0801751E	GetUnitItemCount
+08017578	LoadUnits
+08017868	IncreaseUnitStatsByLevelCount
+08017ABC	GetUnitByCharId
+08017AF8	CanUnitRescue
+08017BA8	UpdateRescueData
+08017C04	HandleAllegianceChange
+08017C5E	ApplyUnitMovement
+080180D8	ValidateUnitItem
+080180FC	GetUnitAid
+08018258	GetUnitUseFlags
+080183E8	GetUnitMaxHP
+080184D0	GetUnitDefense
+08018688	InitChapterMap
+08018920	SetupMapRowPointers
+08018960	ClearMapWith
+08018A28	LoadChapterMap
+08018A88	LoadChapterMapGfx
+08018B20	FlushTilesFromBuffer
+08018BE0	FlushTerrainData
+08018C6C	UpdateGameTileGfx
+08018D90	UpdateGameTilesGraphics
+080192C4	GetTerrainHealAmount
+080192D4	GetTerrainSomething
+08019384	FillMovementMapForUnitAndMovement
+08019454	FillMovementMapForUnitAt
+080194A4	FillMovementMap
+08019A34	MapAddInRange
+0801A564	FillRangeMap
+0801A7D4	DebugMapMenu_DisplayInfoIdle
+0801A822	DebugMapMenu_DisplayInfoEffect
+0801A826	DebugMenu_WeatherDraw
+0801AA70	DebugMenu_ClearEffect
+0801AAE2	DEBUGONLY_Startup
+0801AEB8	DebugMenu_FogEffect
+0801AEC8	DebugMenu_GNightEffect
+0801B366	DisplayUnitEffectRange
+0801B90C	TryMakeCantoUnit
+0801B9B0	RunPotentialWaitEvents
+0801B9CC	EnsureCameraOntoActiveUnitPosition
+0801BAF0	PlayerPhase_ApplyUnitMovement
+0801BD38	Load6CRangeDisplaySquareGfx
+0801BD88	Loop6C_MLVCHC
+0801BF68	Loop6C_MoveLimitView
+0801BFD4	DestructMoveLimitView
+0801C02C	DisplayMoveRangeGraphics
+0801C15E	GetSomeFacingDirection
+0801C188	Make6CMOVEUNITForUnitBeingRescued
+0801C264	Make6CKOIDOAMM
+0801C380	Destruct6CBMXFADE
+0801C39C	NewBMXFADE
+0801C39E	MakeNew6CBMXFADE2
+0801C620	SendToConvoyMenu_Draw
+0801C62C	MenuCommand_DrawExtraItem
+0801C6FE	FillWarpRangeMap
+0801D680	ChangeActiveUnitFacing
+0801EB38	GenericSelection_BackToUM
+0801EC1C	GenericSelection_BackToUM_CamWait
+0801ECCC	RescueEffect
+0801ED38	DropEffect
+0801ED58	DropSelection_OnSelect
+0801ED7C	TakeUsability
+0801ECCC	TakeEffect
+0801ED7C	GiveUsability
+0801ECCC	GiveEffect
+0801EE80	TakeSelection_OnSelect
+0801EE80	GiveSelection_OnSelect
+0801F6A8	ItemCommandEffect
+0801F7D0	ItemSelectMenu_Effect
+0801FD30	FillBallistaRange
+0801FEE8	StaffItemSelect_Usability
+0801FF20	StaffItemSelect_Effect
+0801FF60	StaffItemSelect_TextDraw
+0801FF6C	StaffItemSelect_OnHover
+08020438	StealCommandUsability
+08020794	StealTargetSelection_OnInit
+080205EC	StealItemMenuCommand_Draw
+080207B4	RescueSelection_OnChange
+080207D8	DropSelection_OnConstruction
+0802019A	RideCommandEffect
+08020A02	AreUnitsAllied
+08020A16	IsSameAllegience
+08020A98	ForEachUnitInRange
+08020B70	ForEachPosInRange
+08020BC8	ForEachAdjacentUnit
+08020BC8	ForEachAdjacentPosition
+08020C30	ForEachPosIn12Range
+08020D44	AddUnitToTargetListIfNotAllied
+08020E5C	MakeTradeTargetList
+08020F64	TryAddToDropTargetList
+08020FF0	TryAddRescuedUnitToTakeTargetList
+08021198	MakeTargetListForSupport
+08021278	FillBallistaRangeMaybe
+080212E0	TryAddClosedDoorToTargetList
+08021320	TryAddBridgeToTargetList
+08021360	MakeTargetListForDoorAndBridges
+080215E4	TryAddUnitToHealTargetList
+0802166C	MakeTargetListForRangedHeal
+080216B8	TryAddUnitToRestoreTargetList
+0802173C	TryAddUnitToBarrierTargetList
+080217C0	TryAddUnitToRescueStaffTargetList
+080217C0	TryAddUnitToWarpTargetList
+08021A1C	TryAddUnitToHammerneTargetList
+08021B98	SetupMapSpritesPalettes
+08021BD0	SMS_ClearUsageTable
+08021C3A	SMS_SomethingGmapUnit
+08021C38	SMS_RegisterUsage
+08021D08	SomethingSMS_16x16_0
+08021D9C	SomethingSMS_16x32
+08021E8C	SomethingSMS_32x32
+08021F80	SMS_FlushDirect
+08021FE8	SMS_FlushIndirect
+080221EC	SMS_GetNewInfoStruct
+08022378	DisplayUnitAdditionalBlinkingIcons
+08022A38	HideUnitSMS
+08022A92	GetROMUnitSupportingId
+08022AA6	GetUnitSupportingUnit
+08022B14	GetUnitTotalSupportLevels
+08022C0E	GetUnitStartingSupportValue
+08022C28	GetSupportDataIdForOtherUnit
+08022DD6	StoreAddedAffinityBonusesForSupportLevel
+08022E3C	GetUnitSupportBonuses
+08022FBC	CanUnitUseItem
+08023620	IsGeneratedTargetListEmpty
+08023634	CanUseHealingItem
+08023700	CanUseDoorKey
+08023714	CanOpenBridge
+080237F4	CanUseStatBooster
+080238C8	EndItemEffectSelectionThing
+08023914	PrepareTargetSelectionForRescueStaff
+08023912	SetupTargetSelectionForGenericStaff
+08023954	WarpTargetPosSelect_Init
+08023A08	WarpTargetPosSelect_Loop
+08023B34	WarpTargetPosSelect_Confirm
+08023BA4	WarpTargetPosSelect_Destruct
+08023BB8	WarpTargetSelection_OnSelect
+08023914	SetupWarpTargetSelection
+08023912	PrepareTargetSelectionForMineAndLightRune
+08023CA4	HammerneTargetSelection_OnSelect
+08023D4C	HammerneTargetSelection_OnChange
+08023D70	HammerneTargetSelection_OnInit
+080243F8	CopyUnitToBattleStruct
+0802440C	CopyUnitToBattleStructRawStats
+08024748	SetupBattleBallistaWeaponData
+08024790	FillPreBattleStats
+080247D0	FillBattleStats
+08024AB4	MakeBattle
+08024BBC	MakeBattleRound
+08024C18	GetBattleHitCount
+08024C50	CheckForTriangleAttack
+08024DF0	UpdateBattleTriangleAttackData
+08024E68	CurrentRound_ComputeWeaponEffects
+080250B0	GetStatIncrease
+080250D4	GetAutoleveledStat
+080254CC	SaveUnitsFromBattle
+08025608	BattleUnit_DidWRankGoUp
+0802593C	GetBattleUnitStaffExp
+08025C7C	BeginBattleAnimations
+08025E98	SaveInstigatorFromBattle
+08084414	GetSaveDataOffsetPointer
+08084628	SaveLocalEventIndexes
+08084648	SaveGlobalEventIndexes
+08084668	LoadLocalEventIds
+08084668	LoadGlobalEventIds
+0808483C	LoadBWLEntries
+08084884	SaveBWLEntries
+080848BC	GetChapterWinDataEntry
+08084F4C	BWL_GetEntry
+08093468	Make6C_savemenu2
+080946DA	FadeInOut_DisableGfx
+02023B08	an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.
+0202D204	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.
+086781D4	MMBStructType	This is the type of 0x6C struct used when drawing the box.
+085C5280	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM
+02003238	ERAMBGBuffer	This is the BG buffer dedicated to window  tilemaps, such as the tilemaps for the terrain window, goal window, and minimug box
+02003738	MMBTilemapRAMBuffer	This is where the box's tilemap is written to to accomplish the scrolling effect
+03006320	WRAMRoutinePointer
+08000540	CharSizeTable
+0801AB7C	MinimugGetter	Determines a unit's minimug
+085C39A0	:085C3BAF	OAMTable	This is a table of size/shape	data and number of sprites to draw
+0800043C	TilemapWriter	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile
+08085824	MMBPalSelect	Routine selects a palette and  writes it based on the unit's allegiance after ANDing the unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively
+020391F4	UnkEntryPtr
+02038D44	UnkOAMTablePtr
+02002770	When in the item menu
+0203D40C	When viewing character list, help functions, armories
+02000444	Main Menu
+02017640	In battles
+0203C758	Link Arena
+02001000	Link Arena point assignment
+02000468	Sound Room
+085C5234	Tutorial Text
+02027BB4	World Map menu
+080410CA	Cleared Japanese menu loading routine
+08279E48	:827AB5C	Cleared beta class list
+0827A924	:827B018	Cleared FE6 credits
+0831906C	:0831908B	MMBAllyPalette
+0831908C	:083190AB	MMBEnemyPalette
+083190AC	:083190CB	MMBNPCPal
+03004898	flag0x01 - 0x8
+03004899	flag0x09 - 0x10
+0300489A	flag0x11 - 0x18
+0300489B	flag0x19 - 0x20
+0300489C	flag0x21 - 0x 28
+03004890	flag0x65 - 0x6C
+03004891	flag0x6D - 0x74
+03004892	flag0x75 - 0x7C
+03004893	flag0x7D - 0x84
+03004894	flag0x85 - 0x8C
+03004895	flag0x8D - 0x94
+03004896	flag0x95 - 0x9C
+03004897	flag0x9D - 0xA4
+0202AA64	Terrain Window+ 00 = on+ 02 = off/Unit window + 00 = panel+ 04 = balloon+ 08 = off/ Auto cursor+ 00 = on+ 10 = off/Message speed+ 00 = slow+ 20 = normal+ 40 = Fast+ 60 = fastest/Game speed+ 00 = Fast+ 80 = normal
+0202AA65	BGM +00=on+ 01 = off/Sound effect+ 00 = on+ 02 = off/Window panel+ 00 = blue+ 04 = red+ 08 = ash+ 0 C = green/Auto turn end+ 00 = on+ 40 = off/Subtitle help+ 00 = on+ 80 = off
+0202AA66	アニメ設定+00=usually+ 01 = off+ 02 = individual+ 03 = with background/Combat Information Window+ 00 = simplified+ 04 = Details+ 08 = off
+0806C62C	Tutorial judgment
+0806C0B8	Determine whether to release a reeler
+0806BF38	Decide whether to issue Ginevia
+0806C0C8	Decide whether to issue Marcus
+0806C0D8	Decide whether to issue Marinas
+0805bf1a	sound of 85 command
+0806E278	Have you stabbed a stop with a seal sword?
+0806D17C	Make Karel's village a village
+0806D41C	ch 8 xArrangement of flame traps
+0806D568	ch 12 xPoison gas setting
+0806D6D8	ch21xArrangement of landmine traps
+0806C540	Whether the gold money is over 10000 gold
+0806C55C	Is there a possession of 6000 gold or more
+0806C578	Is there a possession of 5000 gold or more
+0806BAA0	Hard mode judgment
+0806CFD0	BGM at ASM: 2A playing
+08012798	Process to mute BGM (1)
+0806CFB8	BGM at ASM: 2 B playing
+08012780	Process to mute BGM (2)
+080127B0	Process to make BGM [2A] muted in the middle from playing
+0806D620	ch 14xSetting ups and downs scaffolds
+0806D000	Shed stormy BGS
+0806D01C	Stop BGS of sandstorm
+0806BFC0	Process to stop sandstorm
+0806DDD4	Processing to remove fog
+0806D648	ch16x	Setting of God's arrow
+0806D064	Something after leopards
+0806D3E0	ch 18Reinforcement from private houses with random numbers
+080146BC	Darken the screen
+0806C2F8	Defeat all(Rout) Condition
+08084798	ResetIconGraphics
+0809dcdc	CPUSet
+0800DEDC	EventEngine_Loop
+0804C898	StartSpellAnimation
+0805BE7C	Command85
+0858E62C	:0858EE2B	Font image for debugging
+08018AF0	LoadChapterMapPaletteOnly
+08028304	SetupGameVBlank6C_TileAnimations
+08028E44	LoadTitleAnimations2Only
+0802BB74	GetChapterMapChangesPointer
+0802BBA0	GetChapterEventDataPointer
+080930D4	LoadWorldMapEventPLIST
+0802BB30	Examine the address of the stage map  GetChapterMapPointer
+080F9798	:080F9D7F	mask_point HUFFMAN TREE
+08017128	GetItemIndex
+0866AC6C	&EVENT	EventGameOver
+08018388	GetUnitCurrentHP
+080183c8	GetUnitMaxHP
+0809dce0	Div
+08022A94	GetROMUnitSupportingId
+08022AA8	GetUnitSupportingUnit
+0203CCE0	TEMP VALUE
+0804254C	Get[0x0203CCE0]
+08021164	Something in supportive relationship	r0=&UNIT
+085C3A60	:085C3A79	Something about face image related OAM 1
+085C3A7A	:085C3A93	Something about face image related OAM 2
+085C3A94	:085C3AB9	Facial image OAM
+085C3ABA	:085C3ADF	Something about face image related OAM 3
+085C3AE0	:085C3B05	Something about face image related OAM 4
+085C3B06	:085C3B2B	Something about face image related OAM 5
+08008650	Decide which face image OAM to use
+
+020258CC	@6CPointer@[8]	MainArray
+@6CPointer@0	word	pointer
+
+08003e44	Exec6C (Wrapper) 
+08003db0	Exec6C
+0804a5dc	BattleAIS_ExecCommands 
+0809dd30	VBlankIntrWait
+02023CC4	@6CPointer@[40]	Lookup6C	//maybe
+080048a0	Run6CCode Routine Locations r0=Struct Pointer; Returns: nothing
+08002dc4	OAM1BufferSync void
+080010cc	LCDIOMapSync
+08001478	BGMapBGPaletteSync void
+08002c04	TileTransferInfoSync void
+08002d6c	OAM2BufferSync void
+08003908	Reset6CEngine Zeroes all 6C headers in Pool. Called on game startup.
+@BGMSTRUCT@00	byte	Music related flag 1
+@BGMSTRUCT@04	short	Playing BGM
+@BGMSTRUCT@06	byte	Music related flag 2
+@BGMSTRUCT@07	byte	Music related flag 3
+02023CBC	@BGMSTRUCT	BGM
+08017DF8	SetupActiveUnit
+08025780	NullSomeStuff
+08017E70	SetActiveUnit
+08017EDC	MoveActiveUnit
+08084c30	BWL_AddTilesMoved
+080163f4	StatBonusGetter GetItemHPBonus Gets the stat bonus pointer of an item returns 0 if none
+08017c60	ApplyUnitMovement
+080190f4	RefreshFogAndUnitMaps
+08022094	SMS_UpdateFromGameData
+0801809C	SetAllUnitNotBackSprite
+08016928	ValidateItem
+08018160	GetUnitMagBy2Range
+08017190	GetItemAttributes
+08016538	CanUnitUseAsWeapon
+08017190	GetItemAttributes
+08016644	CanUnitUseAsStaff
+085C3CE8	Pointer to RAM text buffer
+02029404	TextBufferOffset	This is the buffer text is written to.
+03000038	The next position to display with TextBufferOffset
+03000074	Numbers such as priceIn the sentence @0080@0005 Numbers you can get in
+0800C304	Write numbers where you can refer to in conversation @0080@0005	void	r0=Number you want to display	{J}
+08049bac	GetBattleAnimationId
+@BATTLE_ANIME@04	left	Battle animation ID-1
+@BATTLE_ANIME@06	Right	Battle animation ID-1
+0203CD76	@BATTLE_ANIME	Battle animation relation 1
+0203CD00	@BATTLE_ANIME	Battle animation relationship 2
+0804807C	ekrBattleStarting_8055FA0
+080425f0	NewEkrBattle
+08003c28	Delete6C(Wrapper) Calls Isolate6C then Delete6C
+08003e60	ClearLoop Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
+08003a04	Create6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
+08047500	Magical anime with frames and TSA images
+0203AB00	:0203AB0F	UnitSelectSFX patch	Use as patch to reproduce sound when unit is selected
+//Class Change (Promotion)
+08678E18	ccramify	PROCS	Promotion(Class Change)
+08678E18	CCRamifyMenuSelect	PROCS	Promotion(Class Change)
+08008DB8	Transfer facial images of general soldiers to memory
+080184F0	GetUnitPortraitId
+08018500	GetUnitMiniPortraitId
+08018528	GetUnitLeader
+08042704	MainUpdate_804FEE4
+08007cc4	ClearIntermediateOAMBuffer	DON'T CALL THIS YOURSELF (called in main loop); resets buffers
+0801599c	GetThread2SkipStack
+08007e78	FlushIntermediateOAMBuffer
+0800722c	AIS_ExecAll
+08008E00	Transfer pallet of face image of general soldier

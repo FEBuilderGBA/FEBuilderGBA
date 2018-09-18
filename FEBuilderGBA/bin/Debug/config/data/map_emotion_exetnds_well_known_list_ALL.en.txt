@@ -1,0 +1,15 @@
+00=!
+01=Umm
+02=Heart
+03=Anger
+04=Cold sweat
+05=Failed
+06=?
+07=Inspiration
+08=Lucky
+09=...
+0A=Zzz
+0B=WaiWai
+0C=Up↑
+0D=Down↓
+0E=Blush ///

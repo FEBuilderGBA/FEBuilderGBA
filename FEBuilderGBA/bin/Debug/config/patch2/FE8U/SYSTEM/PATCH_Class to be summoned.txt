@@ -1,0 +1,15 @@
+NAME=召喚されるクラス
+NAME.en=Summon Skill: Edit Summoned Class
+NAME.zh=被召唤的类
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07ADD0
+ADDRESS_TYPE=CLASS
+
+AUTHOR=出典:FE8 Summon editor by Nintenlord
+AUTHOR.zh=来源:FE8召唤编者由Nintenlord
+AUTHOR.en=Nintenlord http://feuniverse.us/t/nintenlords-utilities/52
+

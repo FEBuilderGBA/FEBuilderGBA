@@ -1,0 +1,14 @@
+
+NAME=フリーマップの魔物の配置LV20上限解除
+NAME.en=Unlock LV20 upper limit to Monster of world map skirmishes
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+HEX=FALSE
+ADDRESS=0x7A734 0x7A738
+
+AUTHOR=FE8Gilrs Chap
+
+NAME.zh=免费地图LV 20上限释放的恶魔安排

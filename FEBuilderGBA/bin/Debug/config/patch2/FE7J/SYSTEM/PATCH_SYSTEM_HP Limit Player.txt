@@ -1,0 +1,13 @@
+
+NAME=HP上限 自軍
+NAME.en=HP Limit Player
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+
+ADDRESS=0x0001806c 0x00018076 0x00029e46 0x00029e5c 0x0009545e 0x000955f0
+
+
+NAME.zh=惠普上限你的军队

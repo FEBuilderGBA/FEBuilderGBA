@@ -1,0 +1,17 @@
+NAME=難易度選択のパレット 簡単を選択した時の色
+NAME.en=Level Select:Palette at Easy Active
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0x0AC188//0xA28A0C
+PALETTE_ADDRESS=0xA29418
+
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Fatih
+NAME.zh=选择难度的调色板颜色选择简单

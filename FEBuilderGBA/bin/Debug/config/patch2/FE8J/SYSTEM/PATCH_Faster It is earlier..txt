@@ -1,0 +1,20 @@
+﻿
+NAME=はやい もっとはやい
+NAME.en=Faster It is earlier.
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x007b928
+COMBO=はやい|0x40|もっとはやい|0x80
+COMBO.en=fast|0x40|more fast|0x80
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#u66a06c8
+NAME.zh=更快更早???
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#u66a06c8
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#u66a06c8
+COMBO.zh=快速|0x40|更快速|0x80
+
+

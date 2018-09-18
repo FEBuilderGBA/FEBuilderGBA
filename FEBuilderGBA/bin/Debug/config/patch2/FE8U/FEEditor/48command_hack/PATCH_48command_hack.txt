@@ -1,0 +1,14 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IFNOT:0x0058d64=0x98 0x96 0x05 0x08
+
+BIN:0x058D64=00058D64.bin
+BIN:0x464400=00464400.bin
+
+AUTHOR=Hextator   Compatability:7743
+
+INFO=カスタム戦闘アニメーションで効果音を再生するのに必須となるパッチです。\r\nGBAFEではそれぞれの効果音はASMルーチンを書かないと鳴らすことができません。\r\nしかし、それはとても面倒なので、そのため、欧米のハッカーたちは、C48命令を改造することで対応しています。\r\nC48命令を改造し、効果音IDを引数と渡すことだけで、すべての効果音をできるようになっています。\r\nまた、C48命令を書く略化したSxx命令の表記方法もあります。\r\nカスタム戦闘アニメーションを支える重要なパッチです。
+INFO.en=Patches the ROM with the 48Command_Hack which is essential for custom battle animation sound effects.\r\nFE sound effects require ASM to play by default, but this hack circumvents that requirement.\r\nIt modifies the C48 instructions to pass all sound effects as an argument.\r\nThere is also a notation method for abbreviated Sxx instructions that writes C48 instructions.\r\nIt is a vital component for many custom battle animation.\r\n
+INFO.zh=这个补丁对于用自定义战斗动画播放音效至关重要。\r\n在GBAFE中，除非您编写ASM程序，否则无法播放每种音效。\r\n但是这非常麻烦，所以西方人和黑客通过重塑C48的顺序做出反应。\r\n通过修改C 48命令，将所有声音效果ID作为参数传递，所有声音效果都成为可能。\r\n对于写入C48指令的缩写Sxx指令，也有一种标记方法。\r\n这是支持自定义战斗动画的重要补丁。

@@ -1,0 +1,15 @@
+NAME=常に間接モーション_なげおの
+NAME.en=Always Ranged Animate: Hatchet
+NAME.zh=总是间接运动_运气
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0058324 0x0058310
+ADDRESS_TYPE=ITEM
+
+INFO=Sets a weapon that always uses the ranged attack, even at melee range.\r\n
+
+AUTHOR=7743
+

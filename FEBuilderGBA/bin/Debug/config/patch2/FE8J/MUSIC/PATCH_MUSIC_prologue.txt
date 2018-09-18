@@ -1,0 +1,10 @@
+NAME.en=MUSIC_prologue
+NAME.zh=音乐_序幕
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080c97c4
+ADDRESS_TYPE=SONG
+

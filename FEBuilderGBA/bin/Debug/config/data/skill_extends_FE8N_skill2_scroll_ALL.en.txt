@@ -1,0 +1,8 @@
+01=Continuous
+02=elite
+04=Re-act
+08=Slipping through
+10=recovery
+20=King's bowl
+40=Charisma
+80=Fear

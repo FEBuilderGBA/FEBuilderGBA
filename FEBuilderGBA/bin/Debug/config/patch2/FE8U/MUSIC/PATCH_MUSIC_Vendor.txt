@@ -1,0 +1,11 @@
+NAME=MUSIC_道具屋
+NAME.en=Shop BGM
+NAME.zh=MUSIC_工具店
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080B4C0C
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when visiting Shops.

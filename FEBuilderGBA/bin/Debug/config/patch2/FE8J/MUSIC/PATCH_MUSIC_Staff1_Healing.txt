@@ -1,0 +1,10 @@
+﻿NAME=MUSIC_杖1_Healing
+NAME.en=MUSIC_Staff1_Healing
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08074D52
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_杖 1_治疗

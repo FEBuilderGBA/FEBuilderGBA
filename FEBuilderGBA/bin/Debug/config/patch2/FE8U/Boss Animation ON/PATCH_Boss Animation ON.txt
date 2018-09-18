@@ -1,0 +1,16 @@
+NAME=敵将強制アニメON
+NAME.en=Boss Animation ON
+NAME.zh=敌将强制动画开启
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x057A7A=0x00 0x28 0x1A 0xD0 0x03 0x28 0x18 0xD0 0x01 0x28 0x16 0xD1 0x4D 0x46 0x28 0x68 0x00 0x8D 0x00 0x04 0xC0 0x0F 0x10 0xD1
+//BIN:0x000589c2=000589c2.bin //FE8J
+BIN:0x0057A7A=00057A7A.bin
+
+INFO=設定でアニメをオフにしても、ボスフラグを持つ敵と戦うときは、強制的にアニメーションをONにします。
+INFO.en=Even if you turn off animation in settings, when you fight an enemy with a boss flag, turn on animation forcibly.
+INFO.zh=即使您在设置中关闭动画，当您使用敌将标志与敌人战斗时，也会强行打开动画。
+
+
+AUTHOR=aera  Transport:7743

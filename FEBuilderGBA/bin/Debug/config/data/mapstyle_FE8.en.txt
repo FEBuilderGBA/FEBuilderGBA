@@ -1,0 +1,53 @@
+Fields	1	2	3	5	0	Fields	{J}
+Fields	1	2	3	5	0	Fields	{U}
+Fields2	1	37	3	0	0	Fields	{J}
+Fields2	1	38	3	0	0	Fields	{U}
+Fields3	1	4B	3	5	0	Fields	{J}
+Fields3	1	4C	3	5	0	Fields	{U}
+Fields4	1	5A	3	5	0	Fields	{J}
+Fields4	1	5B	3	5	0	Fields	{U}
+Fields5	1	2	3	0	0	Fields	{J}
+Fields5	1	2	3	0	0	Fields	{U}
+Fields6	1	37	3	5	0	Fields	{J}
+Fields6	1	38	3	5	0	Fields	{U}
+Village	E	F	10	12	0	Village	{J}
+Village	E	F	10	12	0	Village	{U}
+Village2	E	71	10	12	0	Village	{J}
+Village2	E	72	10	12	0	Village	{U}
+Village3	E	E9	10	12	0	Village	{J}
+Village3	E	EA	10	12	0	Village	{U}
+Village4	E	71	10	D2	0	Village	{J}
+Village4	E	72	10	D3	0	Village	{U}
+Castle	18	19	1A	1C	0	Castle	{J}
+Castle	18	19	1A	1C	0	Castle	{U}
+Castle2	18	47	1A	1C	0	Castle	{J}
+Castle2	18	48	1A	1C	0	Castle	{U}
+Castle3	18	56	1A	1C	0	Castle	{J}
+Castle3	18	57	1A	1C	0	Castle	{U}
+Castle4	18	B8	1A	1C	0	Castle	{J}
+Castle4	18	B9	1A	1C	0	Castle	{U}
+Plains	2E	2F	30	0	0	Plains	{J}
+Plains	2E	2F	30	0	0	Plains	{U}
+Plains2	2E	34	30	0	0	Plains	{U}
+Fort	3B	3C	3D	0	0	Fort	{J}
+Fort	3C	3D	3E	0	0	Fort	{U}
+Fort2	3B	67	3D	0	0	Fort	{J}
+Fort2	3C	68	3E	0	0	Fort	{U}
+Fort3	3B	CD	3D	0	0	Fort	{J}
+Fort3	3C	CE	3E	0	0	Fort	{U}
+Desert	41	42	43	5	0	Desert	{J}
+Desert	42	43	44	5	0	Desert	{U}
+Lave Cave	4F	50	51	0	53	Lave Cave	{J}
+Lave Cave	50	51	52	0	54	Lave Cave	{U}
+Black Temple	5E	5F	60	0	0	Black Temple	{J}
+Black Temple	5F	60	61	0	0	Black Temple	{U}
+Mountainous	6B	6C	6D	5	0	Mountainous	{J}
+Mountainous	6C	6D	6E	5	0	Mountainous	{U}
+Mountainous2	6B	A2	6D	5	0	Mountainous	{J}
+Mountainous2	6C	A3	6E	5	0	Mountainous	{U}
+Temple	87	88	89	0	0	Temple	{J}
+Temple	88	89	8A	0	0	Temple	{U}
+Stronghold	78	79	7A	7C	0	Stronghold	{J}
+Stronghold	79	7A	7B	7D	0	Stronghold	{U}
+Stronghold2	78	E5	7A	7C	0	Stronghold	{J}
+Stronghold2	79	E6	7B	7D	0	Stronghold	{U}

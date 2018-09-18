@@ -1,0 +1,8 @@
+{}	Show all
+{POSITION}	Position
+{MOVE_LOAD}	Move and Load
+{DISPLAY}	Display
+{CHOOSE}	Selector
+{SPEED}	Speed
+{TOGGLE}	Toggle
+{LINEBREAK}	New Line

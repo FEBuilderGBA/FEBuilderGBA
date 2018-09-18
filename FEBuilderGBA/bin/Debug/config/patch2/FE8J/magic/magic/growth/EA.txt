@@ -1,0 +1,55 @@
+PUSH
+
+//自軍成長
+ORG	0x2ba8c	//自軍成長処理追加
+WORD	$46874800
+POIN	grow
+
+ORG	0x2c1b0	//判定後能力加算追加
+WORD	$46874800
+POIN	result
+
+//初期ステ（ユニット成長読みなぞ無い）
+ORG	0x17b90
+WORD	$469F4B00
+POIN	shokichi
+
+ORG	0x17d74	//クラス成長読み
+WORD	$46974A00
+POIN	clazon
+
+//クラスチェンジ
+
+ORG	0x2bd44
+WORD	$46874800
+POIN	clanchan
+
+//上限チェック1
+ORG	0x2beb6
+SHORT	$46C0
+WORD	$46874800
+POIN	maxa
+//上限チェック2
+ORG	0x17f82
+#incbin "max.bin"
+
+POP
+
+maxa:
+ #incbin "maxa.bin"
+ALIGN 4
+grow:
+ #incbin "grow.bin"
+ALIGN 4
+result:
+ #incbin "result.bin"
+ALIGN 4
+shokichi:
+ #incbin "shokichi.bin"
+ALIGN 4
+clanchan:
+ #incbin "clanchan.bin"
+ALIGN 4
+clazon:
+ #incbin "clazon.bin"
+ALIGN 4

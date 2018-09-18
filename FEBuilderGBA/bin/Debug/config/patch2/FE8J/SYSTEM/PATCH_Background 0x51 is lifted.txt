@@ -1,0 +1,23 @@
+﻿
+NAME=背景0x51番を解放する
+NAME.en=Background 0x51 is lifted
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x00ea46
+COMBO=修正しない|0x04 0xD1|修正する|0x00 0x00
+
+AUTHOR=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d52d4614
+
+NAME.zh=背景0x51号解放
+
+COMBO.en=Do not modify|0x04 0xD1|To correct|0x00 0x00
+COMBO.zh=不要修正|0x04 0xD1|修正|0x00 0x00
+
+
+INFO=GBAFEでは、背景テーブルの上限値を超えたところに番兵がセットされています。\r\nそのため、背景テーブルを拡張した時に、特定のIDの背景を表示しようとすると、必ずID:0x00の背景が表示されます。\r\nFE8Uでは0x37番、FE8Jでは0x51番の背景がそれに該当します。\r\nこのパッチはその制限を修正します。
+INFO.en=In GBAFE, a sentinel is set where the upper limit of the background table is exceeded.\r\nTherefore, when you extend the background table, if you try to display the background of a specific ID, the background with ID: 0x00 will always be displayed.\r\nIt corresponds to 0x37 for FE8U and 0x51 for FE8J.\r\nThis patch will fix that limit.
+INFO.zh=在GBAFE中，标记被设置在超过背景表的上限的地方。\r\n因此，当您扩展背景表时，如果尝试显示特定ID的背景，将始终显示ID为0x00的背景。\r\n它对应于FE8U的0x37和FE8J的0x51。\r\n此修补程序将修复该限制。

@@ -1,0 +1,19 @@
+NAME=回転矢印
+NAME.en=Rotating Arrow Image
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=8
+
+ZIMAGE_POINTER=0x09773C//0xA19C0C
+PALETTE_POINTER=0x097738//0xA19CAC
+
+PALETTE=1
+
+INFO=回転矢印の画像を定義します
+INFO.en=Specify the image for the rotating arrow.
+NAME.zh=旋转箭头
+INFO.zh=定义旋转箭头的图像
+

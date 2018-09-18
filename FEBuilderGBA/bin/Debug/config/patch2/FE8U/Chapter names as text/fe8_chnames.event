@@ -1,0 +1,21 @@
+//include this under free space
+
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+PUSH
+ORG $89624
+jumpToHack(Chname)
+POP
+
+Chname:
+#incbin "ASM/fe8_chapter_names.dmp"
+ALIGN 4
+POIN ChFont
+POIN ChTable
+
+ChFont:
+#incbin "ASM/font.png.bin"	//HINT=BIN
+//#incext Png2Dmp "ASM/font.png" --lz77
+
+ChTable:
+#incbin "ASM/chartable.dmp"	//HINT=BIN

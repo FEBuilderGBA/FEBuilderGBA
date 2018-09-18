@@ -1,0 +1,17 @@
+//SoundMixer
+PUSH
+
+ORG	$D4EC4
+POIN	Mixer
+
+ORG	$D4EC8
+WORD	$03006CB0
+SHORT	$0218
+
+ORG $D4234
+WORD	$03006CB1
+
+POP
+
+Mixer:
+#incbin "FE8_Improved_Sound_Mixer.bin"	//HINT=BIN

@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_マリカ_影
+NAME.en=OP Anime Face: Marisa (Shadow)
+NAME.zh=OP动画_脸_玛莉卡_阴影
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C9010//0x08AE00E4
+PALETTE_POINTER=0x000C900C//0x08AE04D4
+
+INFO=Edit and import OP Anime Graphic for the Marisa Face (Shadow) image.

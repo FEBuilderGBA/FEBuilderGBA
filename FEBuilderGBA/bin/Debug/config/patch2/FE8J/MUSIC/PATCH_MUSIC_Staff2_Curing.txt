@@ -1,0 +1,10 @@
+﻿NAME=MUSIC_杖2_Curing
+NAME.en=MUSIC_Staff2_Curing
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08074D4E
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_杖 2_固化

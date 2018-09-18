@@ -1,0 +1,10 @@
+NAME=Base stat based promotion for reclassing
+NAME.en=Base stat based promotion for reclassing
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x2BD50=0xF0 0xB5 0x04 0x1C 0x08 0x1C 0xED 0xF7 0x75 0xFB 0x06 0x1C 0x65 0x68 0x0B 0x23
+EA=Class Base Promotion Gains.event
+
+AUTHOR=Crazycolorz5 http://feuniverse.us/t/fe8-base-stat-based-promotion-for-reclassing-request-solved/777/15

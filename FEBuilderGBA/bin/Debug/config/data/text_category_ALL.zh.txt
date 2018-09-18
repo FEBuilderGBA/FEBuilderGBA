@@ -1,0 +1,8 @@
+{}	全部显示
+{POSITION}	位置
+{MOVE_LOAD}	移动和加载
+{DISPLAY}	显示
+{CHOOSE}	选择
+{SPEED}	速度
+{TOGGLE}	开关
+{LINEBREAK}	换行

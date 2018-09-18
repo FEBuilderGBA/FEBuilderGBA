@@ -1,0 +1,19 @@
+//Installer
+
+#include "Extensions/Hack Installation.txt"
+
+#ifdef _FE8_
+
+ORG $323c2
+BYTE 0x00 0x00
+gotoHackWithR3(TalkFix)
+
+ORG $32438
+gotoHackWithR3(SupportFix)
+
+TalkFix:
+#incbin "TalkFix.dmp"
+SupportFix:
+#incbin "SupportFix.dmp"
+
+#endif

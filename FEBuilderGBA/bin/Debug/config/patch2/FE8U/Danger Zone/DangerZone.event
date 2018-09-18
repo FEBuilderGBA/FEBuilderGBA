@@ -1,0 +1,16 @@
+//Danger Zone
+PUSH
+  ORG $1cad8
+  #incbin "ASM/DZ_hook.dmp"
+  ORG $1caec
+  POIN DangerZone+1
+  ORG $1cf04
+  SHORT 0 $7804
+  ORG $1cf48
+  WORD $202be44
+POP
+ALIGN 4
+DangerZone:
+#incbin "ASM/DangerZone.dmp"
+// #incbin "ASM/dangerzone_sekrit.dmp" //for konami code
+// POIN SecretEvent

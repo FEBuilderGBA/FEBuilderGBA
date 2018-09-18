@@ -1,0 +1,16 @@
+
+NAME=MENU 支援の描画位置を下に下げる
+INFO=支援のメニューの位置を下に下げます。\r\n間違えてボタンを連打して支援をつけてしまわないように、支援をアイテム交換の下に設置します。
+
+TYPE=BIN
+TAG=#ENGINE
+
+SLIDE:0x59CC08:36:36=0x59CE00
+AUTHOR=7743
+
+PATCHED_IF:0x59CDE5=0x5B 0x00
+IF:0x59CC11=0x5B 0x00
+NAME.en=MENULower the support drawing position downward
+INFO.en=Lower the position of the support menu downward.\r\nAssistance will be set under the item exchange so that you will not hit the buttons repeatedly by mistake and will not give support.
+NAME.zh=MENU向下降低支撑拉伸位置
+INFO.zh=向下降低支持菜单的位置。\r\n将在项目交换下设置帮助，这样您就不会错误地反复按下按钮，也不会给予支持。

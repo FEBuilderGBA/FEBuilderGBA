@@ -1,0 +1,13 @@
+﻿TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x037838=0x07 0xE0
+BIN:0x37838=37838.bin
+AUTHOR=Enemy Control Glitch Fix (Credits to Brendor)   Transplant:7743
+NAME.en=Enemy Control Glitch Fix
+AUTHOR.en=Enemy Control Glitch Fix (Credits to Brendor)   Transplant:7743
+NAME.zh=敌人控制故障修复
+AUTHOR.zh=Enemy Control Glitch Fix (Credits to Brendor)   Transplant:7743
+INFO=フレイボムで敵を操作できるバグを修正します。(フレイボムバグ)
+INFO.en=Fix bug that you can operate enemies with Freiborm.

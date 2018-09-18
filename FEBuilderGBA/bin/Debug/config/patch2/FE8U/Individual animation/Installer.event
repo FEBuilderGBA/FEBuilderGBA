@@ -1,0 +1,27 @@
+#include "Extensions/Hack Installation.txt"
+
+//Hook with r0 for compatibility.
+#define jumpToHack_r0(offset) "BYTE 0x00 0x48 0x87 0x46; POIN (offset|0x1)"
+
+PUSH
+ORG $571E8  //FE8U
+jumpToHack_r0(HackLocation)
+POP
+
+HackLocation:
+#incbin "IndividualAnimation7743.dmp"
+
+POIN CustomAnimeTable
+
+CustomAnimeTable:
+BYTE 0x01  //Unit: Eirika
+BYTE 0x02  //Class: Load
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+WORD 0x088AEFFC //Eirika Master Load Battle Animation.
+
+BYTE 0x00  //Unit: term data
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+WORD 0x00  //dummy

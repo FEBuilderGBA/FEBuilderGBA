@@ -1,0 +1,14 @@
+NAME=支援画面に自分の属性を表示する
+
+PATCHED_IF:0xA72FFC=0x00 0x00 0x00 0x00 0x18 0x30 0xA7 0x08 0x70 0x2F 0xA7 0x08 0x00 0x00 0x00 0x00
+TYPE=EA
+TAG=#ENGINE
+EA=EA.txt
+
+INFO=支援画面に自分の属性を表示させるパッチ
+
+AUTHOR=aera
+NAME.en=Display your attributes on the support screen
+INFO.en=A patch that displays your attributes on the support screen
+NAME.zh=在支持屏幕上显示您的属性
+INFO.zh=在支持屏幕上显示属性的修补程序

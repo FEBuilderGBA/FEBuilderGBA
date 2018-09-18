@@ -1,0 +1,11 @@
+NAME=MUSIC_闘技場バトルBGM
+NAME.en=Arena Battle BGM
+NAME.zh=MUSIC_竞技场战斗BGM
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08072714
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played during Arena Battles.

@@ -1,0 +1,26 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $9C128		//FE8J
+jumpToHack(prep_shop_each_chapter)
+POP
+
+
+ALIGN 4
+prep_shop_each_chapter:
+#incbin "prep_shop_each_chapter.dmp"
+POIN prep_shop_each_chapter_table
+
+
+ALIGN 4
+prep_shop_each_chapter_table:
+#include "prep_shop_each_chapter_table.event"
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

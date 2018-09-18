@@ -1,0 +1,16 @@
+NAME=OPANIME_FACE_デュッセル_影
+NAME.en=OP Anime Face: Duessel (Shadow)
+NAME.zh=OPANIME_FACE_Düssel_阴影
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C96C4//0x08AED0A4
+PALETTE_POINTER=0x000C95DC//0x08AE9720
+
+
+INFO=Edit and import OP Anime Graphic for the Duessel Face (Shadow) image.

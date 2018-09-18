@@ -1,0 +1,8 @@
+PUSH
+ORG 0x205B2C
+POIN NewPage3|1
+POP
+
+NewPage3:
+#incbin "mss_page3_ranksonly.dmp"
+

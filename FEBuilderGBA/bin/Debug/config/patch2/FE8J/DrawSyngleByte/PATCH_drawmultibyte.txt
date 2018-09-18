@@ -1,0 +1,32 @@
+﻿
+NAME=DrawSingleByte
+NAME.en=DrawSingleByte
+
+PATCHED_IF:0x40c2=0x00 0x00 0x00 0x49 0x8F 0x46
+
+//BINパッチとして実装します
+TYPE=BIN
+TAG=#ENGINE
+
+BIN:$FREEAREA:1=drawsinglebyte_serif.bin
+JUMP:0x080040c2:$r1=drawsinglebyte_serif.bin
+
+BIN:$FREEAREA:2=drawsinglebyte_serif_width.bin
+JUMP:0x08003e74:$r3=drawsinglebyte_serif_width.bin
+
+
+BIN:$FREEAREA:3=drawsinglebyte_item.bin
+JUMP:0x08003f44:$r1=drawsinglebyte_item.bin
+
+BIN:$FREEAREA:4=drawsinglebyte_item_width.bin
+JUMP:0x08003e2c:$r3=drawsinglebyte_item_width.bin
+
+BIN:$FREEAREA:5=drawsinglebyte_nextline.bin
+JUMP:0x08003f12:$r1=drawsinglebyte_nextline.bin
+
+INFO=シングルバイトフォントを出力できるように修正します.
+INFO.en=Fix to be able to output singlebyte font.
+
+INFO.zh=修复能够输出单字节字体。
+NAME.zh=修复能够输出单字节字体
+

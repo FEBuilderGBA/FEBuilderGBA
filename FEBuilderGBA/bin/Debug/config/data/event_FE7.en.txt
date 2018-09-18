@@ -1,0 +1,566 @@
+0D000000XXXX000009000000	Show conversation[XXXX:CONVERSATION_TEXT:Conversation](TEXT)	{TEXT}	{J}
+0D000000XXXX000009000000	Show conversation[XXXX:CONVERSATION_TEXT:Conversation](TEXT)	{TEXT}	{U}
+0D000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Show conversation(TEXT)(LOW)	{TEXT}	{J}
+0D000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Show conversation(TEXT)(LOW)	{TEXT}	{U}
+0E000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Show conversation(TEX2)(LOW)	{TEXT}	{J}
+0E000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Show conversation(TEX2)(LOW)	{TEXT}	{U}
+0F000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Eliwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionHector's edited conversation display(TEXTIFEM)	{J}
+0F000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Elicwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionHector's edited conversation display(TEXTIFEM)	{U}
+11000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Continue to display conversation(MORETEXT)	{TEXT}	{J}
+11000000XXXX0000	[XXXX:CONVERSATION_TEXT:Talk]Continue to display conversation(MORETEXT)	{TEXT}	{U}
+12000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Eliwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionContinuous display of Hedoro's edited conversation(MORETEXTIFEM)	{J}
+12000000XXXX0000YYYY0000	[XXXX:CONVERSATION_TEXT:Eliwood's conversation][YYYY:CONVERSATION_TEXT:Hector's conversation]Eliwood EditionContinuous display of Hedoro's edited conversation(MORETEXTIFEM)	{U}
+14000000	Scroll_text(SCRO)	{J}
+14000000	Scroll_text(SCRO)	{U}
+17000000XXXX0000YYYY0000	Conversation branching by gender of military personnel[XXXX:CONVERSATION_TEXT:Male][YYYY:CONVERSATION_TEXT:female](TEXTIFTACTF)	{J}
+18000000XXXX0000YYYY0000	Conversation branching by gender of military personnel[XXXX:CONVERSATION_TEXT:Male][YYYY:CONVERSATION_TEXT:female](TEXTIFTACTF)	{U}
+1C000000	Erase message window(REBU)	{J}
+1E000000	Erase message window(REBU)	{U}
+3200000002000000XXXXXXXX	Normal mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{J}
+3400000002000000XXXXXXXX	Normal mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{U}
+3200000003000000XXXXXXXX	Hard mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{J}
+3400000003000000XXXXXXXX	Hard mode exclusive Load Units unit[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{U}
+3200000002000100XXXXXXXX	Normal mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{J}
+3400000002000100XXXXXXXX	Normal mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{U}
+3200000003000100XXXXXXXX	Hard mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{J}
+3400000003000100XXXXXXXX	Hard mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{U}
+3500000002000000XXXXXXXX	Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED2)	{J}
+3700000002000000XXXXXXXX	Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED2)	{U}
+3500000003000000XXXXXXXX	Load Units 3[XXXX:POINTER_UNIT:Units](LOUFILTERED2)	{J}
+3700000003000000XXXXXXXX	Load Units 3[XXXX:POINTER_UNIT:Units](LOUFILTERED2)	{U}
+30000000XXXXXXXX	Load Units, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1)	{LOADUNIT}	{J}
+32000000XXXXXXXX	Load Units, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1)	{LOADUNIT}	{U}
+30000000XXXXXXXX39000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1+ENUN)	{LOADUNIT}	{J}
+32000000XXXXXXXX3B000000	Load units and Move, If Player Unit,Join your party[XXXX:POINTER_UNIT:Units](LOU1+ENUN)	{LOADUNIT}	{U}
+31000000XXXXXXXX	Load Units[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
+33000000XXXXXXXX	Load Units[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
+31000000XXXXXXXX39000000	Load units and Move[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
+33000000XXXXXXXX3B000000	Load units and Move[XXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
+32000000XXXXXXXX	[XXXX:POINTER_UNIT:Units]Load Units (LOW)(LOUFILTERED)	{J}
+34000000XXXXXXXX	[XXXX:POINTER_UNIT:Units]Load Units (LOW)(LOUFILTERED)	{U}
+34000000XXXXXXXX	[XXXX:POINTER_UNIT:Units]Load Units (LOW)(LOU2)	{J}
+36000000XXXXXXXX	[XXXX:POINTER_UNIT:Units]Load Units (LOW)(LOU2)	{U}
+25000000ZZ000000XXXXYYYYSS000000	Move Settig[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{J}
+27000000ZZ000000XXXXYYYYSS000000	Move Settig[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{U}
+25000000ZZ000000XXXXYYYYSS00000039000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:DECIMAL:Speed](MOVE+ENUN)	{UNITMOVE}	{J}
+27000000ZZ000000XXXXYYYYSS0000003B000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:X][YY:MAPY:Y]with[SS:DECIMAL:Speed](MOVE+ENUN)	{UNITMOVE}	{U}
+25000000ZZ000200XXXXXXXX	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{J}
+27000000ZZ000200XXXXXXXX	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{U}
+25000000ZZ000200XXXXXXXX39000000	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:DECIMAL:Speed](MOVE+ENUN)	{UNITMOVE}	{J}
+27000000ZZ000200XXXXXXXX3B000000	Move Settig[ZZ:UNIT:Character]to[XXXXXXXX:POINTER:pointer]with[SS:DECIMAL:Speed](MOVE+ENUN)	{UNITMOVE}	{U}
+22000000XX00YY00WW00VV00SS000000	Move Settig[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{J}
+24000000XX00YY00WW00VV00SS000000	Move Settig[XX:MAPX:Original Location X][YY:MAPY:Original Location Y]to[WW:MAPX:New Location X][VV:MAPY:New Location Y]with[SS:DECIMAL:Speed](MOVE)	{UNITMOVE}	{U}
+64000000XX00YY00	[XX:MAPX:X][YY:MAPY:Y]Blink location in frame(CURF)	{WAKU}	{J}
+66000000XX00YY00	[XX:MAPX:X][YY:MAPY:Y]Blink location in frame(CURF)	{WAKU}	{U}
+56000000XXXXXXXX	[XXXXXXXX:POINTER_EVENT:event]Execute specified event (clear chapter) When chiefly speaking, use in chapter clear(JUMP)	{SUBROUTINE}	{J}
+58000000XXXXXXXX	[XXXXXXXX:POINTER_EVENT:event]Execute specified event (clear chapter) When chiefly speaking, use in chapter clear(JUMP)	{SUBROUTINE}	{U}
+6D000000XX000000	[XX:UNIT:Character]erase unit(REPA)	{UNITREMOVE}	{J}
+6F000000XX000000	[XX:UNIT:Character]erase unit(REPA)	{UNITREMOVE}	{U}
+73000000XX00YY0000cc0000	[XX:MAPX:X][YY:MAPY:Y][ZZ::AI]Change AI ​​of unit in this location(CHAI)	{UNITPERSOLNAL}	{J}
+75000000XX00YY0000cc0000	[XX:MAPX:X][YY:MAPY:Y][ZZ::AI]Change AI ​​of unit in this location(CHAI)	{UNITPERSOLNAL}	{U}
+2D000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{J}
+2F000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](REPOS)	{U}
+24000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{J}
+26000000ZZ000000XX00YY00	Move Setting[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE)	{UNITMOVE}	{U}
+24000000ZZ000000XX00YY0039000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE+ENUN)	{UNITMOVE}	{J}
+26000000ZZ000000XX00YY003B000000	Move Setting And Move immediately[ZZ:UNIT:Character]to[XX:MAPX:Moving place X][YY:MAPY:Moving place Y](MOVE+ENUN)	{UNITMOVE}	{U}
+37000000ZZ00WW00XX00YY00	Move Setting[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{J}
+39000000ZZ00WW00XX00YY00	Move Setting[WW:CLASS:Class][ZZ:UNIT:Character]to[XX:MAPX:display location X][YY:MAPY:display location Y](LOEV)	{UNITMOVE}	{U}
+21000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{J}
+23000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](MOVE)	{U}
+2C000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{J}
+2E000000XX00YY00WW00VV00	Move Setting[XX:MAPX:Original location X][YY:MAPY:Original location Y][WW:MAPX:New location X][VV:MAPY:New location Y](REPOS)	{U}
+69000000XX000000	[XX:UNIT:Character]erase unit(DISA)	{UNITREMOVE}	{J}
+6B000000XX000000	[XX:UNIT:Character]erase unit(DISA)	{UNITREMOVE}	{U}
+82000000XX000000	[XX:MAPCHAPTER:Map]Map change(LOMA)	{MAP}	{J}
+84000000XX000000	[XX:MAPCHAPTER:Map]Map change(LOMA)	{MAP}	{U}
+65000000XXXX0000	[XX:UNIT:Character]Blinking unit with frame(CURF)	{WAKU}	{J}
+67000000XXXX0000	[XX:UNIT:Character]Blinking unit with frame(CURF)	{WAKU}	{U}
+5D000080	Restore map change(MAC1)	{MAPCHANGE}	{J}
+5F000080	Restore map change(MAC1)	{MAPCHANGE}	{U}
+5D00XX00	[XX:MAPCHANGE:Map change]Make a map change(MAC1)	{MAPCHANGE}	{J}
+5F00XX00	[XX:MAPCHANGE:Map change]Make a map change(MAC1)	{MAPCHANGE}	{U}
+1E00XX00	Move screen to[XX:UNIT:Character](CAM1)	{CAMERA}	{J}
+2000XX00	Move screen to[XX:UNIT:Character](CAM1)	{CAMERA}	{U}
+1D00XXYY	[XX:MAPX:X][YY:MAPY:Y]Move screen(CAM2)	{CAMERA}	{J}
+1F00XXYY	[XX:MAPX:X][YY:MAPY:Y]Move screen(CAM2)	{CAMERA}	{U}
+39000000	Wait for end of unit movement(ENUN)	{WAIT}	{UNITMOVE}	{J}
+3B000000	Wait for end of unit movement(ENUN)	{WAIT}	{UNITMOVE}	{U}
+1E00XXXX	CAM1[XX:UNIT:Character]	{J}
+2000XXXX	CAM1[XX:UNIT:Character]	{U}
+1D00XXYY	Moves_camera_on_chapter_map[XX:MAPX:PositionX][YY:MAPY:PositionY](CAM2)	{CAMERA}	{J}
+1F00XXYY	Moves_camera_on_chapter_map[XX:MAPX:PositionX][YY:MAPY:PositionY](CAM2)	{CAMERA}	{U}
+3B000000	Chapter event start command(CMOF)	{J}
+3D000000	Chapter event start command(CMOF)	{U}
+53000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
+55000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
+4D000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{J}
+4F000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{U}
+4E000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNEM)	{COND} 	{J}
+50000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNEM)	{COND} 	{U}
+21000000XXXXYYYYZZZZWWWW	MOVE[XXXX:MAPX:Old_positionX],[YYYY:MAPY:Old_positionY][ZZZZ:MAPX:New_positionX][WWWW:MAPY:New_positionY]	{J}
+23000000XXXXYYYYZZZZWWWW	MOVE[XXXX:MAPX:Old_positionX],[YYYY:MAPY:Old_positionY][ZZZZ:MAPX:New_positionX][WWWW:MAPY:New_positionY]	{U}
+24000000XXXX0000YYYYZZZZ	MOVE[XX:UNIT:Character][YYYY:MAPX:New_positionX],[ZZZZ:MAPY:New_positionY]	{UNIT}	{J}
+26000000XXXX0000YYYYZZZZ	MOVE[XX:UNIT:Character][YYYY:MAPX:New_positionX],[ZZZZ:MAPY:New_positionY]	{UNIT}	{U}
+25000000XXXX0000YYYYZZZZWWWWWWWW	MOVE[XX:UNIT:Character][YY:MAPX:New_positionX],[ZZ:MAPY:New_positionY][WWWW:DECIMAL:speed]	{UNIT}	{J}
+27000000XXXX0000YYYYZZZZWWWWWWWW	MOVE[XX:UNIT:Character][YY:MAPX:New_positionX],[ZZ:MAPY:New_positionY][WWWW:DECIMAL:speed]	{UNIT}	{U}
+26000000XXXX0000YYYYYYYY	MOVE[XX:UNIT:Character][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{J}
+28000000XXXX0000YYYYYYYY	MOVE[XX:UNIT:Character][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{U}
+27000000XXXXXXXXYYYYYYYY	MOVENEXTTO[XXXX:UNIT:Character_to_move][YYYY:UNIT:Character_to_move_to]	{UNIT}	{J}
+29000000XXXXXXXXYYYYYYYY	MOVENEXTTO[XXXX:UNIT:Character_to_move][YYYY:UNIT:Character_to_move_to]	{UNIT}	{U}
+28000000XXXXYYYY	Move_main_character[XXXX:MAPX:PositionX],[YYYY:MAPY:PositionY](MOVEMAINC)	{UNIT}	{J}
+2A000000XXXXYYYY	Move_main_character[XXXX:MAPX:PositionX],[YYYY:MAPY:PositionY](MOVEMAINC)	{UNIT}	{U}
+29000000XX00YY00ZZZZWWWWVVVVVVVV	MOVE[X:UNIT:Character][Y:DECIMAL:speed][ZZZZ:MAPX:New_positionX],[WWWW:MAPY:New_positionY][VVVVVVVV:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{J}
+2B000000XX00YY00ZZZZWWWWVVVVVVVV	MOVE[X:UNIT:Character][Y:DECIMAL:speed][ZZZZ:MAPX:New_positionX],[WWWW:MAPY:New_positionY][VVVVVVVV:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{U}
+2C000000XXXXYYYYWWWWVVVV	Move_unit_witout_showing_movement_animations[XXXX:MAPX:Old_positionX][YYYY:MAPY:Old_positionY][WWWW:MAPX:New_positionX][VVVV:MAPY:New_positionY](REPOS)	{J}
+2E000000XXXXYYYYWWWWVVVV	Move_unit_witout_showing_movement_animations[XXXX:MAPX:Old_positionX][YYYY:MAPY:Old_positionY][WWWW:MAPX:New_positionX][VVVV:MAPY:New_positionY](REPOS)	{U}
+95000000XX000000YY000000ZZZZZZZZ00000000	Event battle[XX:UNIT:Attacker][YY:UNIT:counterattack side][ZZZZZZZZ:POINTER_EVENTBATTLEDATA:Combat content](FIGH)	{BATTLE}	{MAPEFFECT}	{J}
+97000000XX000000YY000000ZZZZZZZZ00000000	Event battle[XX:UNIT:Attacker][YY:UNIT:counterattack side][ZZZZZZZZ:POINTER_EVENTBATTLEDATA:Combat content](FIGH)	{BATTLE}	{MAPEFFECT}	{U}
+95000000XX000000YY000000ZZZZZZZZ00000100	Event Battle 2[XX:UNIT:Attacker][YY:UNIT:counterattack side][ZZZZZZZZ:POINTER_EVENTBATTLEDATA:Combat content](FIGH)	{BATTLE}	{J}
+97000000XX000000YY000000ZZZZZZZZ00000100	Event Battle 2[XX:UNIT:Attacker][YY:UNIT:counterattack side][ZZZZZZZZ:POINTER_EVENTBATTLEDATA:Combat content](FIGH)	{BATTLE}	{U}
+3D000000XXXXXXXX	_ASM0x3F[XXXX:POINTER_ASM:ASM_pointer]	{SUBROUTINE}	{J}
+3F000000XXXXXXXX	_ASM0x3F[XXXX:POINTER_ASM:ASM_pointer]	{SUBROUTINE}	{U}
+46000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
+48000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
+47000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
+49000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
+43000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional_ID]	{JUMP}	{J}
+45000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional_ID]	{JUMP}	{U}
+42000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]	{JUMP}	{J}
+44000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]	{JUMP}	{U}
+4A000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{J}
+4C000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{U}
+4B000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{J}
+4D000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{U}
+40000000210F0208	Call Preparation screen	{PREPARATION}	{MAP}	{J}
+42000000B90A0208	Call Preparation screen	{PREPARATION}	{MAP}	{U}
+3C000000B9A80708	Clear Units to the map	{UNITREMOVE}	{J}
+3E000000B9A80708	Clear Units to the map	{UNITREMOVE}	{U}
+5800XX00B9A30708	Call Preparation screen 3[XX::unk 1]	{PREPARATION}	{J}
+5A00XX00B9A30708	Call Preparation screen 3[XX::unk 1]	{PREPARATION}	{U}
+7400XX00	Flag ON[XX:FLAG:Flag](ENUT)	{FLAG}	{J}
+7600XX00	Flag ON[XX:FLAG:Flag](ENUT)	{FLAG}	{U}
+7500XX00	Flag OFF[XX:FLAG:Flag](ENUF)	{FLAG}	{J}
+7700XX00	Flag OFF[XX:FLAG:Flag](ENUF)	{FLAG}	{U}
+88000000A0000000XXXXXXXX	Tutorial function call[XXXX:POINTER_EVENT:Event_pointer]	{SUBROUTINE}	{J}
+8A000000A0000000XXXXXXXX	Tutorial function call[XXXX:POINTER_EVENT:Event_pointer]	{SUBROUTINE}	{U}
+3C000000XXXXXXXX	[XXXX:POINTER_ASM:ASM function]Assembler function call	{SUBROUTINE}	{J}
+3E000000XXXXXXXX	[XXXX:POINTER_ASM:ASM function]Assembler function call	{SUBROUTINE}	{U}
+40000000XXXXXXXX	[XXXX:POINTER_ASM:ASM function]Assembler function call	{SUBROUTINE}	{J}
+42000000XXXXXXXX	[XXXX:POINTER_ASM:ASM function]Assembler function call	{SUBROUTINE}	{U}
+3A000000	Fit camera to unit that started moving(CMON)	{CAMERA}	{J}
+3C000000	Fit camera to unit that started moving(CMON)	{CAMERA}	{U}
+47000000XX0000002DAE0708	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]Determining whether there is a martial player(GOTO_IFAF)	{COND}	{J}
+3C00000065DA0708	Map display command(slow)	{MAP}	{J}
+3E000000E5CF0708	Map display command(slow)	{MAP}	{U}
+3C000000D1B30708	Map display command(immediate)	{MAPEFFECT}	{J}
+3E0000005DA90708	Map display command(immediate)	{MAPEFFECT}	{U}
+580001002DAE0708	Determining if there is a military serviceer	{COND}	{J}
+5A000100F1A70708	Determining if there is a military serviceer	{COND}	{U}
+40000000813B0808	Do not shift to your own Phase until you see tutorial message	{J}
+26000000XX0000007CFCD608	Unit movement specification[XX:UNIT:Character](MOVE)	{J}
+28000000XX000000FC79CA08	Unit movement specification[XX:UNIT:Character](MOVE)	{U}
+40000000813B0808	Do not shift phase until tutorial is over	{J}
+4200000081310808	Do not shift phase until tutorial is over	{U}
+4000000029B20708	Delete cursor indicating destination	{J}
+42000000B5A70708	Delete cursor indicating destination	{U}
+A9000000D887D608	Specifying coordinates to be moved in tutorial	{J}
+A90000000808CA08	Specifying coordinates to be moved in tutorial	{U}
+3C00000055D10108	Move unit to action	{J}
+3E00000051CD0108	Move unit to action	{U}
+3C000000798C0108	Dead units will not let you appear	{J}
+3E00000089880108	Dead units will not let you appear	{U}
+4D000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{J}
+4F000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{U}
+52000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNTUTORIAL)	{COND}	{J}
+54000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNTUTORIAL)	{COND}	{U}
+97000000XXXXXXXX	ASMWORLDMAP[XXXXXXXX:POINTER_ASM:ASM]	{WMAP}	{J}
+99000000XXXXXXXX	ASMWORLDMAP[XXXXXXXX:POINTER_ASM:ASM]	{WMAP}	{U}
+A500XXXXYYYYWWWWZZZZ0000	Shows_text_with_specific_bubble_type_and_position[XX::Bubble_type_to_use][YYYY:SCREENX:X][WWWW:SCREENY:Y][ZZ:SYSTEM_TEXT:TEXT](TEX6)	{J}
+A700XXXXYYYYWWWWZZZZ0000	Shows_text_with_specific_bubble_type_and_position[XX::Bubble_type_to_use][YYYY:SCREENX:X][WWWW:SCREENY:Y][ZZ:SYSTEM_TEXT:TEXT](TEX6)	{U}
+8E00XX00	Fadesintowhite[XX:DECIMAL:speed](FAWI)	{J}
+9000XX00	Fadesintowhite[XX:DECIMAL:speed](FAWI)	{U}
+8F00XX00	Fadesintowhite[XX:DECIMAL:speed](FAWU)	{J}
+9100XX00	Fadesintowhite[XX:DECIMAL:speed](FAWU)	{U}
+
+3C000000ADB30708	Do not display unit image of map	{J}
+3E00000039A90708	Do not display unit image of map	{U}
+3C00000049B40708	Display message frame for CG scene	{J}
+3E000000D5A90708	Display message frame for CG scene	{U}
+3C000000BDEB0008	Disappear face grave and speech ball of conversation scene	{J}
+3E000000B1EC0008	Disappear face grave and speech ball of conversation scene	{U}
+3D000000C9F50708	Ancient fire dragon arrangement (in pixels)	{J}
+3F0000000DE80708	Ancient fire dragon arrangement (in pixels)	{U}
+3C000000A1B70708	End of shaking the screen (earthquake)	{MAPEFFECT}	{J}
+3E0000002DAD0708	End of shaking the screen (earthquake)	{MAPEFFECT}	{U}
+3C00000025F20008	Elimination of weather	{WEATHER}	{J}
+3E00000019F30008	Elimination of weather	{WEATHER}	{U}
+9F000000XXXXXXXX	Run tutorial[XXXX::Value]	{J}
+A1000000XXXXXXXX	Run tutorial[XXXX::Value]	{U}
+9F00000002010000	Return the operation to the player in the tutorial	{J}
+A100000002010000	Return the operation to the player in the tutorial	{U}
+9F0000000F303000	Prohibit players from moving in the tutorial	{J}
+A10000000F303000	Prohibit players from moving in the tutorial	{U}
+A0000000XXXXXXXX	Tutorial Battle[POINTER_EVENTBATTLEDATA:Battle Contents]	{BATTLE}	{J}
+A2000000XXXXXXXX	Tutorial Battle[POINTER_EVENTBATTLEDATA:Battle Contents]	{BATTLE}	{U}
+A1000000	Cancel command prohibition in tutorial	{J}
+A3000000	Cancel command prohibition in tutorial	{U}
+A2000000XX000000	Hide specific commands in the tutorial[XX:MENUCOMMAND:Command to hide]	{J}
+A4000000XX000000	Hide specific commands in the tutorial[XX:MENUCOMMAND:Command to hide]	{U}
+A3000000XX000000	Disable specific command in tutorial (gray)[XX:MENUCOMMAND:command to invalidate]	{J}
+A5000000XX000000	Disable specific command in tutorial (gray)[XX:MENUCOMMAND:command to invalidate]	{U}
+B2000000XX000000YY00000034050000VV000000	Portrait is displayed on the left side[X::ID_of_the_portrait][Y:REVPORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
+B1000000XX000000YY00000034050000VV000000	Portrait is displayed on the left side[X::ID_of_the_portrait][Y:REVPORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
+B2000000XX000000YY000000BC020000VV000000	Display Portrait on the right side[X::ID_of_the_portrait][Y:PORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
+B1000000XX000000YY000000BC020000VV000000	Display Portrait on the right side[X::ID_of_the_portrait][Y:PORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
+B2000000XX000000YY00000092020000VV000000	Display Portrait on the left side of the right[X::ID_of_the_portrait][Y:PORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
+B1000000XX000000YY00000092020000VV000000	Display Portrait on the left side of the right[X::ID_of_the_portrait][Y:PORTRAIT:Portrait][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
+B8000000XXXX0000YYYYSSSSZZWWVVUUUU00000002000000	Places_or_moves_a_map_sprite[XX::RegistID][YYYY:MAPX:X][SSSS:MAPY:Y][Z:CLASS:Class_of_the_sprite][W:WMAPAFFILIATION:Affiliation][V:WMSTYLE1:slide][UUUU::unk](PUTSPRITE)	{WMAPUNIT}	{J}
+B7000000XXXX0000YYYYSSSSZZWWVVUUUU00000002000000	Places_or_moves_a_map_sprite[XX::RegistID][YYYY:MAPX:X][SSSS:MAPY:Y][Z:CLASS:Class_of_the_sprite][W:WMAPAFFILIATION:Affiliation][V:WMSTYLE1:slide][UUUU::unk](PUTSPRITE)	{WMAPUNIT}	{U}
+B8000000XXXX0000YYYYSSSS00WWVVUUUU00000002000000	Move unit of world map[XX::RegistID][YYYY:MAPX:X][SSSS:MAPY:Y][W:WMAPAFFILIATION:Affiliation][V:WMSTYLE1:slide][UUUU::unk](PUTSPRITE)	{WMAPUNIT}	{J}
+B7000000XXXX0000YYYYSSSS00WWVVUUUU00000002000000	Move unit of world map[XX::RegistID][YYYY:MAPX:X][SSSS:MAPY:Y][W:WMAPAFFILIATION:Affiliation][V:WMSTYLE1:slide][UUUU::unk](PUTSPRITE)	{WMAPUNIT}	{U}
+B9000000XXXX0000YY000000	Removes_a_map_sprite[XX::RegistID][YY:DECIMAL:Delay](REMSPRITE)	{WMAPUNIT}	{J}
+B8000000XXXX0000YY000000	Removes_a_map_sprite[XX::RegistID][YY:DECIMAL:Delay](REMSPRITE)	{WMAPUNIT}	{U}
+BF000000XX000000	Erase the circle pointing to the area[XXXX::RegistMapID]	{J}
+BE000000XX000000	Erase the circle pointing to the area[XXXX::RegistMapID]	{U}
+C2000000XXXXYYYYWWWWWWWW00000000	Move screen[XXXX:WMAPX:X][YYYY:WMAPY:Y][WWWWWWWW:DECIMAL:Speed]	{J}
+C1000000XXXXYYYYWWWWWWWW00000000	Move screen[XXXX:WMAPX:X][YYYY:WMAPY:Y][WWWWWWWW:DECIMAL:Speed]	{U}
+C3000000XXXX0000YYYY0000	Make the unit image black[XXXX:WMAP2AFFILIATION:Affiliation][YYYY:DECIMAL:Delay]	{J}
+C2000000XXXX0000YYYY0000	Make the unit image black[XXXX:WMAP2AFFILIATION:Affiliation][YYYY:DECIMAL:Delay]	{U}
+C4000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affiliation][YYYY:DECIMAL:Delay]	{J}
+C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affiliation][YYYY:DECIMAL:Delay]	{U}
+3C00000069A50708	A forced Promotion of the hero	{UNITPERSOLNAL}	{CC}	{J}
+3E000000F59A0708	A forced Promotion of the hero	{UNITPERSOLNAL}	{CC}	{U}
+3C00000059AE0B08	Staff Roll Processing	{ENDING}	{J}
+3C000000CDAA0B08	Display of strategy turn	{ENDING}	{J}
+3C00000081040808	Epilogue save	{ENDING}	{J}
+3C000000BDFE0708	Ceremonial scene	{ENDING}	{J}
+3C000000D1A50708	Transport team level up judgment	{J}
+3C00000079E30708	To cause an earthquake	{MAPEFFECT}	{J}
+3C000000BDE30708	Stop an earthquake	{MAPEFFECT}	{J}
+3C000000C9B70708	Stop shaking	{J}
+3C000000F1E20708	White out mainly Sogna	{FADE}	{J}
+3C00000009EC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{J}
+3C0000001DE70708	Ninian goes back to people	{J}
+3C00000025E60708	Short flash	{FADE}	{J}
+3C0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{J}
+3C00000079CD0708	To turn out the mist	{J}
+3C000000ED980108	Barrier	{J}
+3C00000059E60708	Wait until the effect ends	{WAIT}	{J}
+3E00000051A30B08	Staff Roll Processing	{ENDING}	{U}
+3E000000C59F0B08	Display of strategy turn	{ENDING}	{U}
+3E000000C9F60708 	Epilogue save	{ENDING}	{U}
+3E000000F5F00708 	Ceremonial scene	{ENDING}	{U}
+3E0000005D9B0708	Transport team level up judgment	{U}
+3E00000044D60708	To cause an earthquake	{U}
+3E00000089D60708 	Stop an earthquake	{MAPEFFECT}	{U}
+3E00000055AD0708	Stop shaking	{MAPEFFECT}	{U}
+3E000000BDD50708	White out mainly Sogna	{FADE}	{U}
+3E000000FDEC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{U}
+3E000000CDD90708	Ninian goes back to people	{U}
+3E000000D5D80708	Short flash	{FADE}	{U}
+3E0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{U}
+3E00000005C30708 	To turn out the mist	{U}
+3E00000005950108	Barrier	{U}
+3E00000009D90708	Wait until the effect ends	{WAIT}	{U}
+330000000000000000000000XXXXXXXXYYYYYYYY	Special unit arrangement 1[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B](LOUMODE1)	{J}
+350000000000000000000000XXXXXXXXYYYYYYYY	Special unit arrangement 1[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B](LOUMODE1)	{U}
+3300000000000000XXXXXXXX00000000YYYYYYYY	Special unit arrangement 2[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B](LOUMODE1)	{J}
+3500000000000000XXXXXXXX00000000YYYYYYYY	Special unit arrangement 2[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B](LOUMODE1)	{U}
+33000000ZZZZZZZZXXXXXXXXWWWWWWWWYYYYYYYY	Special unit arrangement 3[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B][ZZZZ:POINTER_UNIT:Unit information C][WWWW:POINTER_UNIT:Unit information D](LOUMODE1)	{J}
+35000000ZZZZZZZZXXXXXXXXWWWWWWWWYYYYYYYY	Special unit arrangement 3[XXXX:POINTER_UNIT:Unit information A][YYYY:POINTER_UNIT:Unit information B][ZZZZ:POINTER_UNIT:Unit information C][WWWW:POINTER_UNIT:Unit information D](LOUMODE1)	{U}
+
+
+01000000	_01
+0200XX00	[XX:DECIMAL:frame seconds]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
+0400XXXX	Wait for CG scenes[XXXX:DECIMAL:Frame seconds](CGSTAL)	{WAIT}	{MAPEFFECT}
+0500XX00	Background change[XX:BG:BG](BACG)(LOW)	{BG}
+05005B007F000E000200010001000000	Chapter clear judgment
+08000000	Change the background and change BGM to 0x2C (in sorrow)
+09000000	Conversation end command(REMA)	{TEXT}
+0A00000000000000	ENDAEvent end command[TERM](ENDA)	{TERM}
+0B00000000000000	ENDB[TERM](ENDB)	{TERM}
+0C000000	Cancel the darkening of the screen at the start of the chapter(OOBB)
+15000000XXXXXXXX	Unit's speech when unworking[XXXX:POINTER_TALKGROUP:Talk group]	{J}
+15000000XXXXXXXX	Unit's speech when unworking[XXXX:POINTER_TALKGROUP:Talk group]	{U}
+16000000XXXXXXXX	Display of conversation by talk group[XXXX:POINTER_TALKGROUP:talk group]	{J}
+16000000XXXXXXXX	Display of conversation by talk group[XXXX:POINTER_TALKGROUP:talk group]	{U}
+1700XXXXYYYYYYYY	Conversation display by talk group 2[XX::Value][YYYY:POINTER_TALKGROUP:talk group]	{U}
+19000000XXXX0000YYYY0000	Conversation branch by military's gender 2[XX:CONVERSATION_TEXT:Male][YY:CONVERSATION_TEXT:female](MORETEXTIFTACTF)	{U}
+7600XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{J}
+7800XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{U}
+7700XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{J}
+7900XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{U}
+7800XXXX	[XX:DECIMAL:speed]fade music(MURE)	{MUSIC}	{J}
+7A00XXXX	[XX:DECIMAL:speed]fade music(MURE)	{MUSIC}	{U}
+7900XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:DECIMAL:speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{J}
+7B00XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:DECIMAL:speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{U}
+7A00XX00	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
+7B00XX00	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
+7B000000	Decrease the volume(MUSI)	{MUSIC}	{J}
+7D000000	Decrease the volume(MUSI)	{MUSIC}	{U}
+7C000000	Restore volume(MUNO)	{MUSIC}	{J}
+7E000000	Restore volume(MUNO)	{MUSIC}	{U}
+7D00XX00	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
+7F00XX00	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{U}
+63000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{J}
+65000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{U}
+7B0000008C001000900000000500XXXX8D001000910000000D000000YYYY0000090000007C000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{J}
+7D0000008E001000920000000500XXXX8F001000930000000D000000YYYY0000090000007E000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{U}
+84000000	_86(LOMA)
+86000000	_86
+840000009100000059000000XX000000	[XX:ITEM:Item]Get item	{ITEM}	{J}
+86000000930000005B000000XX000000	[XX:ITEM:Item]Get item	{ITEM}	{U}
+84000000910000005B000000XX000000	[XX:ITEM:Item]Obtain item 2	{J}
+86000000930000005D000000XX000000	[XX:ITEM:Item]Obtain item 2	{U}
+84000000910000005A000000XX000000YY000000	[XX:UNIT:Unit][YY:ITEM:Item]Unit obtains item	{J}
+86000000930000005C000000XX000000YY000000	[XX:UNIT:Unit][YY:ITEM:Item]Unit obtains item	{U}
+84000000910000005C000000XXXX0000	[XX:DECIMAL:Amount]Get Gold	{ITEM}	{GOLD}	{J}
+86000000930000005E000000XXXX0000	[XX:DECIMAL:Amount]Get Gold	{ITEM}	{GOLD}	{U}
+5A000000XXXX0000YYYY0000	[XX:UNIT:Unit][YY:ITEM:Item]Get item (LOW)(ITGC)	{J}
+5C000000XXXX0000YYYY0000	[XX:UNIT:Unit][YY:ITEM:Item]Get item (LOW)(ITGC)	{U}
+59000000XXXX0000	[XX:ITEM:Item]Get item (LOW)(ITGV)	{ITEM}	{J}
+5B000000XXXX0000	[XX:ITEM:Item]Get item (LOW)(ITGV)	{ITEM}	{U}
+5C00XXXXYYYY0000	[XX::Village_or_cutscene][YY:DECIMAL:Gold]Get Gold (LOW)(MONE)	{GOLD}	{J}
+5E00XXXXYYYY0000	[XX::Village_or_cutscene][YY:DECIMAL:Gold]Get Gold (LOW)(MONE)	{GOLD}	{U}
+51000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:condition ID](GOTO_IFYES)	{JUMP}	{J}
+53000000XXXX0000	Jump destination when YES is selected as selector[XX:IF_CONDITIONAL:condition ID](GOTO_IFYES)	{JUMP}	{U}
+66000000XXXXYYYY	_68[XXXX:MAPX:Position][YYYY:MAPY:Position](CUMO)	{J}
+68000000XXXXYYYY	_68[XXXX:MAPX:Position][YYYY:MAPY:Position](CUMO)	{U}
+81000000	End of Rin Hen(LYN_END)	{ENDING}	{J}
+83000000	End of Rin Hen(LYN_END)	{ENDING}	{U}
+7F00XXXX	Display the save screen and go to the next chapter[XX:MAPCHAPTER:Next chapter ID](MNCH)	{MAP}	{J}
+8100XXXX	Display the save screen and go to the next chapter[XX:MAPCHAPTER:Next chapter ID](MNCH)	{MAP}	{U}
+2A000000XXXX0000YYYYYYYYZZZZZZZZ	Unit movement specification 0x2C[XXXX:UNIT:Unit][YYYYYYY:POINTER_EVENTMOVEDATA:moveManual][ZZZZZZZZ:POINTER_EVENTMOVEDATA:moveManual]	{J}
+2C000000XXXX0000YYYYYYYYZZZZZZZZ	Unit movement specification 0x2C[XXXX:UNIT:Unit][YYYYYYY:POINTER_EVENTMOVEDATA:moveManual][ZZZZZZZZ:POINTER_EVENTMOVEDATA:moveManual]	{U}
+2D000000ZZZZZZZZXXXXYYYY	Unit movement setting (instantaneous movement)[ZZZZZZZZ:UNIT:Unit][XXXX:MAPX:New X][YYYY:MAPY:New Y](REPOS)	{UNIT}	{J}
+2F000000ZZZZZZZZXXXXYYYY	Unit movement setting (instantaneous movement)[ZZZZZZZZ:UNIT:Unit][XXXX:MAPX:New X][YYYY:MAPY:New Y](REPOS)	{UNIT}	{U}
+48000000XXXX0000	_4A[XX:IF_CONDITIONAL:condition ID]	{COND}	{J}
+4A000000XXXX0000	_4A[XX:IF_CONDITIONAL:condition ID]	{COND}	{U}
+49000000XXXX0000	_4B[XX::Value]	{J}
+4B000000XXXX0000	_4B[XX::Value]	{U}
+4F00XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:condition ID]	{J}
+5100XX00YY000000	_51[X::Stuff][Y:IF_CONDITIONAL:condition ID]	{U}
+5700XXXXYYYYYYYY	_ASM 0x59[XX::Value][YYYY:POINTER_ASM:ASM function]	{J}
+5900XXXXYYYYYYYY	_ASM 0x59[XX::Value][YYYY:POINTER_ASM:ASM function]	{U}
+5800XXXXYYYYYYYY	_ASM 0x5A[XX::Value][YYYY:POINTER_ASM:ASM function]	{J}
+5A00XXXXYYYYYYYY	_ASM 0x5A[XX::Value][YYYY:POINTER_ASM:ASM function]	{U}
+5F00XXXX	Map change execution without effect[XXXX:MAPCHANGE:Map change]	{MAP}	{J}
+6100XXXX	Map change execution without effect[XXXX:MAPCHANGE:Map change]	{MAP}	{U}
+6C000000XXXXYYYY	Erase unit[XXXX:MAPX:X][YYYY:MAPY:Y]	{UNITREMOVE}	{J}
+6E000000XXXXYYYY	Erase unit[XXXX:MAPX:X][YYYY:MAPY:Y]	{UNITREMOVE}	{U}
+8300XXXX	Move the map 2[XX:MAPCHAPTER:chapter ID]	{J}
+8500XXXX	Move the map 2[XX:MAPCHAPTER:chapter ID]	{U}
+80000000	THE_END	{ENDING}	{J}
+82000000	THE_END	{ENDING}	{U}
+81000000	LYN_ENDEnd of Phosphorus	{ENDING}	{J}
+83000000	LYN_ENDEnd of Phosphorus	{ENDING}	{U}
+85000000	Skip prohibition	{J}
+87000000	Skip prohibition	{U}
+87000000	Skip lifting	{J}
+89000000	Skip lifting	{U}
+88000000XXXXYYYYZZZZWWWW00000000	_8A[XXXX::unk1][YYYY::unk2][ZZZZ::unk3][WWWW::unk4]	{J}
+8A000000XXXXYYYYZZZZWWWW00000000	_8A[XXXX::unk1][YYYY::unk2][ZZZZ::unk3][WWWW::unk4]	{U}
+92000000	_94	{J}
+94000000	_94	{U}
+94000000XXXXXXXXYYYYYYYYZZZZZZZZ	_96[XXXX::Value1][YYYY::Value2][ZZZZ::Value3]	{J}
+96000000XXXXXXXXYYYYYYYYZZZZZZZZ	_96[XXXX::Value1][YYYY::Value2][ZZZZ::Value3]	{U}
+98000000	An instruction before an event call	{J}
+9A000000	An instruction before an event call	{U}
+98000000CC000000XXXXXXXX	Event call[XXXX:POINTER_EVENT:Event_pointer]	{JUMP}	{J}
+9A000000CB000000XXXXXXXX	Event call[XXXX:POINTER_EVENT:Event_pointer]	{JUMP}	{U}
+8C001000900000000500XX008D00100091000000	Background display[XX:BG:BG](FADI)	{BG}	{J}
+8E001000920000000500XX008F00100093000000	Background display[XX:BG:BG](FADI)	{BG}	{U}
+90000000	Hides_map_and_units(HIDEMAP)	{J}
+92000000	Hides_map_and_units(HIDEMAP)	{U}
+91000000	Shows_map_and_units_after_HIDEMAP(SHOWMAP)	{J}
+93000000	Shows_map_and_units_after_HIDEMAP(SHOWMAP)	{U}
+9900XX00	Change to[XX:WEATHER:Weather](skip disabled)(WEA1)		{J}
+9B00XX00	Change to[XX:WEATHER:Weather](skip disabled)(WEA1)		{U}
+9A00XX00	Change to[XX:WEATHER:Weather](WEA2)	{WEATHER}	{J}
+9C00XX00	Change to[XX:WEATHER:Weather](WEA2)	{WEATHER}	{U}
+9C00XX00	[XXXX:FOG:Mist concentration]Adjust the fog intensity (for events.Display map for a moment at run time).(VCBF)	{J}
+9E00XX00	[XXXX:FOG:Mist concentration]Adjust the fog intensity (for events.Display map for a moment at run time).(VCBF)	{U}
+9B00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{J}
+9D00XX00	[XXXX:FOG:Mist concentration]Adjust the fog density(VCWF)	{WEATHER}	{U}
+5500XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{J}
+5700XXXXYYYYZZZZ	Branch_if_unit_is_not_fielded[XX::Unknown][YY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFNUF)	{JUMP}	{U}
+45000000XXXX0000YYYYYYYY	Branch_if_ASM_function[XXXX:LABEL_CONDITIONAL:condition ID][YYYYYYYY:POINTER_ASM:ASM_pointer]	{JUMP}	{J}
+4C00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{J}
+4E00XXXXYYYYYYYYZZZZZZZZ	Branch_if_character_is_not_active[XX::Unknown][YYYY:IF_CONDITIONAL:condition ID][ZZ:UNIT:Unit](GOTO_IFCNA)	{JUMP}	{U}
+4100XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{J}
+4300XXXXYYYYZZZZ	_43[XXXX::Unknown1][YYYY::Unknown2][ZZZZ::Unknown3]	{U}
+5D00XXYY	Map change execution[XXXXXXXX:MAPCHANGE:Map change][YYYY::Apply_or_remove](MAC1)	{MAP}	{J}
+5F00XXYY	Map change execution[XXXXXXXX:MAPCHANGE:Map change][YYYY::Apply_or_remove](MAC1)	{MAP}	{U}
+5E00XXYY	Map change execution[XX:MAPX:X][YY:MAPY:Y](MACC)	{MAP}	{J}
+6000XXYY	Map change execution[XX:MAPX:X][YY:MAPY:Y](MACC)	{MAP}	{U}
+6000XXYY	Map change execution 2[X:MAPCHANGE:Map change][Y::Unknown](MAC2)	{J}
+6200XXYY	Map change execution 2[X:MAPCHANGE:Map change][Y::Unknown](MAC2)	{U}
+6100XXYY	Map change execution 3[X:MAPCHANGE:Map change][Y::Unknown](MACE)	{J}
+6300XXYY	Map change execution 3[X:MAPCHANGE:Map change][Y::Unknown](MACE)	{U}
+6200XXYY	Map change execution 4[X:MAPCHANGE:Map change][Y::Unknown](MAC3)	{J}
+6400XXYY	Map change execution 4[X:MAPCHANGE:Map change][Y::Unknown](MAC3)	{U}
+72000000XXXX0000YYYYYYYY	Change AI[XX:UNIT:Unit][YYYY::AI](CHAI)	{UNIT}	{J}
+74000000XXXX0000YYYYYYYY	Change AI[XX:UNIT:Unit][YYYY::AI](CHAI)	{UNIT}	{U}
+73000000XXXXZZZZYYYYYYYY	Change AI[XXXX:MAPX:X][WWWW:MAPY:Y][YYYY::AI](CHAI)	{UNIT}	{J}
+75000000XXXXZZZZYYYYYYYY	Change AI[XXXX:MAPX:X][WWWW:MAPY:Y][YYYY::AI](CHAI)	{UNIT}	{U}
+70000000XXXX0000YYYYYYYY	Causes unit condition to be turned on[XX:UNIT:Unit][YYYY:RAM_UNIT_STATE:Condition](UNCM)	{J}	{UNITPERSOLNAL}
+72000000XXXX0000YYYYYYYY	Causes unit condition to be turned on[XX:UNIT:Unit][YYYY:RAM_UNIT_STATE:Condition](UNCM)	{U}	{UNITPERSOLNAL}
+71000000XXXX0000YYYYYYYY	Reverses units condition[XX:UNIT:Unit][YYYY:RAM_UNIT_STATE:Condition](UNCR)	{J}	{UNITPERSOLNAL}
+73000000XXXX0000YYYYYYYY	Reverses units condition[XX:UNIT:Unit][YYYY:RAM_UNIT_STATE:Condition](UNCR)	{U}	{UNITPERSOLNAL}
+68000000XXXXYYYY	Erase unit[XXXX:MAPX:X][YYYY:MAPY:Y](DISA)	{UNITREMOVE}	{J}
+6A000000XXXXYYYY	Erase unit[XXXX:MAPX:X][YYYY:MAPY:Y](DISA)	{UNITREMOVE}	{U}
+69000000XXXX0000	Erase unit[XX:UNIT:Unit](DISA)	{UNITREMOVE}	{J}
+6B000000XXXX0000	Erase unit[XX:UNIT:Unit](DISA)	{UNITREMOVE}	{U}
+6A000000XXXXYYYY	Killing units[XXXX:MAPX:X][YYYY:MAPY:Y](KILL)	{UNITREMOVE}	{J}
+6C000000XXXXYYYY	Killing units[XXXX:MAPX:X][YYYY:MAPY:Y](KILL)	{UNITREMOVE}	{U}
+36000000XXXXXXXXYYYYYYYYZZZZZZZZWWWWWWWW	Loads_separate_unit_on_separate_modes[XXXX:POINTER_UNIT:ENM_unit information][YYYY:POINTER_UNIT:EHM_unit information][ZZZZ:POINTER_UNIT:HNM_unit information][WWW:POINTER_UNIT:HHM_unit information](LOUMODE2)	{J}
+38000000XXXXXXXXYYYYYYYYZZZZZZZZWWWWWWWW	Loads_separate_unit_on_separate_modes[XXXX:POINTER_UNIT:ENM_unit information][YYYY:POINTER_UNIT:EHM_unit information][ZZZZ:POINTER_UNIT:HNM_unit information][WWW:POINTER_UNIT:HHM_unit information](LOUMODE2)	{U}
+3200XXXXYYYYYYYY	Unit loading[XXXX::Filter_value][YYYY:POINTER_UNIT:Unit information](LOUFILTERED)	{J}
+3400XXXXYYYYYYYY	Unit loading[XXXX::Filter_value][YYYY:POINTER_UNIT:Unit information](LOUFILTERED)	{U}
+6D000000XXXX0000	Turn off the unit 2[XX:UNIT:Unit](REPA)	{UNITREMOVE}	{J}
+6F000000XXXX0000	Turn off the unit 2[XX:UNIT:Unit](REPA)	{UNITREMOVE}	{U}
+6E000000XXXXYYYY	Erase unit 2[XXXX:MAPX:X][YYYY:MAPY:Y](REPA)	{UNITREMOVE}	{J}
+70000000XXXXYYYY	Erase unit 2[XXXX:MAPX:X][YYYY:MAPY:Y](REPA)	{UNITREMOVE}	{U}
+3C0000000D5A0108	Instructions placed before the selector	{J}
+3E000000E5487B08	Instructions placed before the selector	{U}
+3C0000000D5A0108A500XXXXYYYYWWWWZZZZ000040000000813B0808	System message with selector[XX::Bubble_type_to_use][YYYY:SCREENX:X][WWWW:SCREENY:Y][ZZ:SYSTEM_TEXT:TEXT]	{TEXT}	{J}
+3E000000E5487B08A700XXXXYYYYWWWWZZZZ00004200000081310808	System message with selector[XX::Bubble_type_to_use][YYYY:SCREENX:X][WWWW:SCREENY:Y][ZZ:SYSTEM_TEXT:TEXT]	{TEXT}	{U}
+3C00000071920B08	Lynn editorial story later	{ENDING}	{J}
+3E000000E5BB0708	Lynn editorial story later	{ENDING}	{U}
+A600000020001000XXXX0000YYYY0000	Conversation branch by gendarmer's sex 3[XXXX:CONVERSATION_TEXT:Male][YYYY:CONVERSATION_TEXT:female]	{J}
+A800000020001000XXXX0000YYYY0000	Conversation branch by gendarmer's sex 3[XXXX:CONVERSATION_TEXT:Male][YYYY:CONVERSATION_TEXT:female]	{U}
+A6000000XXXXYYYYWWWWWWWWZZZZZZZZ	Conversation branch by military's gender 3[XXXX:X:PositionX][YYYY:Y:PositionY][WWWW:CONVERSATION_TEXT:Male][ZZZZ:CONVERSATION_TEXT:female]	{J}
+A8000000XXXXYYYYWWWWWWWWZZZZZZZZ	Conversation branch by military's gender 3[XXXX:X:PositionX][YYYY:Y:PositionY][WWWW:CONVERSATION_TEXT:Male][ZZZZ:CONVERSATION_TEXT:female]	{U}
+AB000000	_AA	{J}
+AA000000	_AA	{U}
+AC000000XXXXXXXX	Pointer_to_arrow_coordinates[XXXX:POINTER:Pointer]	{J}
+AB000000XXXXXXXX	Pointer_to_arrow_coordinates[XXXX:POINTER:Pointer]	{U}
+AD000000WWWW0000XXXXYYYYZZZZ0000	Display of map image[WWWW::degree of enlargement][XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZ::Waytoload](LOADWM)	{WMAPMOVE}	{J}
+AC000000WWWW0000XXXXYYYYZZZZ0000	Display of map image[WWWW::degree of enlargement][XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZ::Waytoload](LOADWM)	{WMAPMOVE}	{U}
+AE000000XXXX0000YYYYWWWW00000000	Loads_a_map_to_use[XX::Map_to_load][YYYY:MAPX:X][WWWW:MAPY:Y][MAPTERM]	{WMAPMOVE}	{MAPTERM}	{J}
+AD000000XXXX0000YYYYWWWW00000000	Loads_a_map_to_use[XX::Map_to_load][YYYY:MAPX:X][WWWW:MAPY:Y][MAPTERM]	{WMAPMOVE}	{MAPTERM}	{U}
+AE000000XXXX0000YYYYWWWWZZZZ0000	Loads_a_map_to_use[XX::Map_to_load][YYYY:MAPX:X][WWWW:MAPY:Y][ZZ::Way_to_load_the_map]	{WMAPMOVE}	{J}
+AD000000XXXX0000YYYYWWWWZZZZ0000	Loads_a_map_to_use[XX::Map_to_load][YYYY:MAPX:X][WWWW:MAPY:Y][ZZ::Way_to_load_the_map]	{WMAPMOVE}	{U}
+AE000000	World map fade out	{FADE}	{WMAP}	{J}
+AD000000	World map fade out	{FADE}	{WMAP}	{U}
+AF000000	Erase the image displayed on the world map	{WMAP}	{J}
+AE000000	Erase the image displayed on the world map	{WMAP}	{U}
+B2000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
+B1000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
+B3000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{J}
+B2000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{U}
+B4000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{J}
+B3000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{U}
+B6000000	Display message frame of world map (on screen)(TEXTBOXTOTOP)	{WMAPTEXT}	{J}
+B5000000	Display message frame of world map (on screen)(TEXTBOXTOTOP)	{WMAPTEXT}	{U}
+B5000000	Display of message frame of world map (bottom of screen)(TEXTBOXTOBOTTOM)	{WMAPTEXT}	{J}
+B4000000	Display of message frame of world map (bottom of screen)(TEXTBOXTOBOTTOM)	{WMAPTEXT}	{U}
+B7000000	Clear message frame of world map	{WMAPTEXT}	{J}
+B6000000	Clear message frame of world map	{WMAPTEXT}	{U}
+BA00000000000000XX00000000000000	Highlight the region of the world map[X:WMREGION:Area_to_light_up](HIGHLIGHT)	{WMAP}	{J}
+B900000000000000XX00000000000000	Highlight the region of the world map[X:WMREGION:Area_to_light_up](HIGHLIGHT)	{WMAP}	{U}
+BD00000000000000	Unlock the region's highlight of the world map(REMOVETEXTBOX)	{WMAP}	{J}
+BC00000000000000	Unlock the region's highlight of the world map(REMOVETEXTBOX)	{WMAP}	{U}
+BE000000XX000000YYYYWWWWZZ00000000000000	[X:RegistMapID][YYYY:WMAPX:X][WWWW:WMAPY:Y][Z:WMSTYLE 3:Palette](PLACEDOT)	{WMAP}	{J}
+BD000000XX000000YYYYWWWWZZ00000000000000	[X:RegistMapID][YYYY:WMAPX:X][WWWW:WMAPY:Y][Z:WMSTYLE 3:Palette](PLACEDOT)	{WMAP}	{U}
+CB000000	_CA	{J}
+CA000000	_CA	{U}
+C9000000XXXXVVVVYYYYZZZZWWWWWWWW	Expansion of the map of the world map[XXXX:MAPX:X][VVVV:MAPX:Y][YY:WMSTYLE 2:Map_to_fade_into][ZZ::Unknown][WWWW::Unknown 2](FADETOWM)	{WMAP}	{J}
+C8000000XXXXVVVVYYYYZZZZWWWWWWWW	Expansion of the map of the world map[XXXX:MAPX:X][VVVV:MAPX:Y][YY:WMSTYLE 2:Map_to_fade_into][ZZ::Unknown][WWWW::Unknown 2](FADETOWM)	{WMAP}	{U}
+CA000000XXXXYYYY	Add a wave-like effect around the circle of the world map[XXXX:MAPX:X][YYYY:MAPY:Y](RIPPLE)	{WMAP}	{J}
+C9000000XXXXYYYY	Add a wave-like effect around the circle of the world map[XXXX:MAPX:X][YYYY:MAPY:Y](RIPPLE)	{WMAP}	{U}
+CD000000XXXXYYYY01000000	[XX:MAPX:X][YY:MAPY:Y]Show warp to this location	{UNITMOVE}	{J}
+CC000000XXXXYYYY01000000	[XX:MAPX:X][YY:MAPY:Y]Show warp to this location(WARP)	{UNITMOVE}	{U}
+CD000000XXZZYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Show returning warp to this place	{UNITMOVE}	{J}
+CC000000XXZZYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Show returning warp to this place(WARP)	{UNITMOVE}	{U}
+CC000000XXXXXXXX	CALL[XXXX:POINTER_EVENT:Event_pointer](LOW)	{J}
+CB000000XXXXXXXX	CALL[XXXX:POINTER_EVENT:Event_pointer](LOW)	{U}
+D600XX00	[XX:CG:CG]CG display(SHCG)	{BG}	{J}
+D300XX00	[XX:CG:CG]CG display(SHCG)	{BG}	{U}
+E0000000XXXXXXXX	_DC[XXXX::Value]	{J}
+DC000000XXXXXXXX	_DC[XXXX::Value]	{U}
+E200000XXXXXXXXYYYYYYYY	_DF[XXXXXXXX::Value][YYYYYYYY::Value]	{J}
+DF00000XXXXXXXXYYYYYYYY	_DF[XXXXXXXX::Value][YYYYYYYY::Value]	{U}
+E3000000XXXXXXXXYYYYYYYYZZZZVVVVWWWWWWWW	Screen flash (strong)[XXXX::Value][YYYYYYYY::Value][ZZZZ:MAPX:ValueX][VVVV:MAPY:ValueY][WWWW::Value]	{J}
+E1000000XXXXXXXXYYYYYYYYZZZZVVVVWWWWWWWW	Screen flash (strong)[XXXX::Value][YYYYYYYY::Value][ZZZZ:MAPX:ValueX][VVVV:MAPY:ValueY][WWWW::Value]	{U}
+E4000000XX00000YY000000	Make Ninian appear with effect[XX:MAPX:X][XX:MAPY:Y]	{J}
+E2000000XX00000YY000000	Make Ninian appear with effect[XX:MAPX:X][XX:MAPY:Y]	{U}
+E5000000XXXXXXXXYYYYYYYYZZZZWWWW	_E0[XXXXXXXX::Value1][YYYYYYYY::Value2][ZZ::Value3][WW::Value4]	{J}
+E0000000XXXXXXXXYYYYYYYYZZZZWWWW	_E0[XXXXXXXX::Value1][YYYYYYYY::Value2][ZZ::Value3][WW::Value4]	{U}
+E6000000	_E1	{J}
+E1000000	_E1	{U}
+E7000000	_E2	{J}
+E2000000	_E2	{U}
+E8000000A8C3D708XXXXYYYY	Assassin Warp[XXXX:X:X][XXXX:Y:Y]	{J}
+E8000000147FD808XXXXYYYY	Ninian's chanting effect[XXXX:X:X][XXXX:Y:Y]	{J}
+E8000000444DD808XXXXYYYY	Dragon (Ninian) falls effect	{J}
+E8000000XXXXXXXXYYYYVVVV	_0xE3[XXXXXXXX:POINTER:Ptr][YYYY:X:LocationX][VVVV:Y:LocationY]	{J}
+E3000000XXXXXXXXYYYYVVVV	_0xE3[XXXXXXXX:POINTER:Ptr][YYYY:X:LocationX][VVVV:Y:LocationY]	{U}
+E9000000	_E4	{J}
+E4000000	_E4	{U}
+EA000000XXXXXXXXYYYYYYYYZZZZZZZZ	Palette_pointers[XXXX:POINTER:Ptr1][YYYY:POINTER:Ptr2][ZZZZ::Value]	{J}
+E5000000XXXXXXXXYYYYYYYYZZZZZZZZ	Palette_pointers[XXXX:POINTER:Ptr1][YYYY:POINTER:Ptr2][ZZZZ::Value]	{U}
+EB000000	_E6	{J}
+E6000000	_E6	{U}
+18000000XX000000YYYY0000ZZZZ0000	Switching the conversation with the flag to display[X:FLAG:Flag][YY:CONVERSATION_TEXT:when enabled][ZZ:CONVERSATION_TEXT:when disabled](TEXTIFEVENTID)	{TEXT}	{J}
+1A000000XX000000YYYY0000ZZZZ0000	Switching the conversation with the flag to display[X:FLAG:Flag][YY:CONVERSATION_TEXT:when enabled][ZZ:CONVERSATION_TEXT:when disabled](TEXTIFEVENTID)	{TEXT}	{U}
+19000000XXXXXXXXYYYY0000ZZZZ0000	Switching conversation with flag to display[X:FLAG:Flag][YY:CONVERSATION_TEXT:when enabled][ZZ:CONVERSATION_TEXT:when disabled](MORETEXTIFEVENTID)	{TEXT}	{J}
+1B000000XXXXXXXXYYYY0000ZZZZ0000	Switching conversation with flag to display[X:FLAG:Flag][YY:CONVERSATION_TEXT:when enabled][ZZ:CONVERSATION_TEXT:when disabled](MORETEXTIFEVENTID)	{TEXT}	{U}
+1A000000XXXXXXXXYYYY0000ZZZZ0000	Switch by switching the text with the flag[XXXX:POINTER_ASM:ASM][When YY:TEXT:Enabled][ZZ:TEXT:When disabled](TEXTIFASM)	{J}
+1C000000XXXXXXXXYYYY0000ZZZZ0000	Switch by switching the text with the flag[XXXX:POINTER_ASM:ASM][When YY:TEXT:Enabled][ZZ:TEXT:When disabled](TEXTIFASM)	{U}
+1B000000XXXXXXXXYYYY0000ZZZZ0000	Switch text with ASM[XXXX:POINTER_ASM:ASM][When YY:TEXT:Enabled][ZZ:TEXT:When disabled](MORETEXTIFASM)	{J}
+1D000000XXXXXXXXYYYY0000ZZZZ0000	Switch text with ASM[XXXX:POINTER_ASM:ASM][When YY:TEXT:Enabled][ZZ:TEXT:When disabled](MORETEXTIFASM)	{U}
+1F000000	_21	{J}
+21000000	_21	{U}
+DB000000	Removes_brown_text-boxes(RETB)	{J}
+D8000000	Removes_brown_text-boxes(RETB)	{U}
+DF000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
+DB000000XXYY0000	Fade_out_of_cutscene_to_map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{U}
+0200XXXX	[XX:DECIMAL:frame seconds]wait instruction(STAL)	{WAIT}	{MAPEFFECT}
+64000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{J}
+66000000XX00YY000200ZZZZ	[XX:MAPX:X][YY:MAPY:Y]Place the[ZZZZ:DECIMAL:frame seconds]frame (CURF)	{WAKU}	{U}
+65000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:unit]	{WAKU}	{J}
+67000000XXXX00000200YYYY	Display the[YYYY:DECIMAL:frame seconds]frame (CURF) in[XXXX:UNIT:unit]	{WAKU}	{U}
+7D00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
+1E00XX0065000000YYYY0000	Move the screen to[XX:UNIT:unit]and display a frame in[YYYY:UNIT:unit](CAM 1) (CURF)	{WAKU}	{J}
+2000XX0067000000YYYY0000	Move the screen to[XX:UNIT:unit]and display a frame in[YYYY:UNIT:unit](CAM 1) (CURF)	{WAKU}	{U}
+1E00XX0065000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:unit]	{WAKU}	{J}
+2000XX0067000000YYYY00000200ZZZZ	Move the screen to[XX:UNIT:unit]and display the[ZZZZ:DECIMAL:frame seconds]frame (CAM 1) (CURF) in[YYYY:UNIT:unit]	{WAKU}	{U}
+D2000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG (TEXTCG)	{TEXT}	{J}
+CF000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG (TEXTCG)	{TEXT}	{U}
+D4000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG 2 (MORETEXTCG)	{J}
+D1000000XXXXXXXXYYYYYYYY	[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2]Show conversation with CG 2 (MORETEXTCG)	{U}
+D800XXXX	Fade out cut scenes showing CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	{J}
+D500XXXX	Fade out cut scenes showing CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	{U}
+D900XXXX	Fade in the cut scene displaying CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	{J}
+D600XXXX	Fade in the cut scene displaying CG[XX:DECIMAL:Fade_time](FADUCG)	{BG}	{U}
+DA000000XXXX0000YYYYZZZZ	Place name display[XXXX:ONELINE_TEXT:Text][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{J}
+D7000000XXXX0000YYYYZZZZ	Place name display[XXXX:ONELINE_TEXT:Text][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](TEX8)	{TEXT}	{U}
+DC000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::Value 2](FROMCGTOBG)	{J}
+D9000000XXXXXXXXYYYYYYYY	Switch from CG to BG[XXXX:BG:Background][YYYY::Value 2](FROMCGTOBG)	{U}
+DD000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::Value 2](FROMBGTOCG)	{BG}	{J}
+DA000000XXXXXXXXYYYYYYYY	Switch from BG to CG[XXXX:CG:CG][YYYY::Value 2](FROMBGTOCG)	{BG}	{U}
+DE000000XXYY0000	Switch from CG to map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
+E1000000VVVVVVVVWWWWWWWXXXXYYYYYPPPPPPPP	_0xDE[XXXX:MAPX:X][YYYY:MAPY:Y][PPPPPPPP:POINTER:Pointer][VVVVVVVV::Value1][WWWWWWWW::Value2]	{J}
+DE000000VVVVVVVVWWWWWWWXXXXYYYYYPPPPPPPP	_0xDE[XXXX:MAPX:X][YYYY:MAPY:Y][PPPPPPPP:POINTER:Pointer][VVVVVVVV::Value1][WWWWWWWW::Value2]	{U}
+02000100010000000A00000000000000	ENDA 2Event end command 2[TERM]	{TERM}
+23000000XXXXZZZZYYYYYYYY	From this coordinate, specify unit movement[XX:MAPX:OldX][ZZ:MAPY:OldY][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{J}
+25000000XXXXZZZZYYYYYYYY	From this coordinate, specify unit movement[XX:MAPX:OldX][ZZ:MAPY:OldY][YYYY:POINTER_EVENTMOVEDATA:Move_manual]	{UNIT}	{U}
+65000000XX0000000000000000000000	[XX:MAPCHAPTER:chapter ID]Map change 2 (LOMA)	{MAP}	{J}
+84000000XX0000000000000000000000	[XX:MAPCHAPTER:chapter ID]Map change 2 (LOMA)	{MAP}	{U}
+82000000ZZ000000XXXXYYYY	[ZZ:MAPCHAPTER:chapter ID][XX:MAPX:initial position X][XX:MAPY:initial position Y]map switching (LOMA)	{MAP}	{J}
+84000000ZZ000000XXXXYYYY	[ZZ:MAPCHAPTER:chapter ID][XX:MAPX:initial position X][XX:MAPY:initial position Y]map switching (LOMA)	{MAP}	{U}
+CD000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Display the returning warp to this place (WARP)	{UNITMOVE}	{J}
+CC000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Display the returning warp to this place (WARP)	{UNITMOVE}	{U}
+8C00XXXX	Fade in the screen and make it dark[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
+8E00XXXX	Fade in the screen and make it dark[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
+8D00XXXX	Fade out the screen (return from pitch dark)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
+8F00XXXX	Fade out the screen (return from pitch dark)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
+8E00XXXX	White-in the screen and pure white[XX:DECIMAL:speed](FAWI)	{FADE}	{MAPEFFECT}	{J}
+9000XXXX	White-in the screen and pure white[XX:DECIMAL:speed](FAWI)	{FADE}	{MAPEFFECT}	{U}
+8F00XXXX	White out the screen (return from pure white)[XX:DECIMAL:Speed](FAWU)	{FADE}	{MAPEFFECT}	{J}
+9100XXXX	White out the screen (return from pure white)[XX:DECIMAL:Speed](FAWU)	{FADE}	{MAPEFFECT}	{U}
+0200010001000000	_2&_1
+88000000	Do not make the screen dark when skipping	{J}
+8A000000	Do not make the screen dark when skipping	{U}

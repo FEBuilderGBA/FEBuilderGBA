@@ -1,0 +1,4 @@
+auto=Automatic
+ja=Japanese
+en=English
+zh=Chinese

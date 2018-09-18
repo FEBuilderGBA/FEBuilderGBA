@@ -1,0 +1,23 @@
+NAME=瞬殺率_通常の瞬殺率
+NAME.en=Skill Silencer activation rate
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002ac8e
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c
+
+NAME.zh=瞬杀率_正常的瞬杀率
+
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c。
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c.
+
+
+
+INFO=一般兵に対する瞬殺が発動する確率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
+INFO.en=Changes the activation chance for the Silencer ability against most units.\r\nThe number given is the chance of a critical hit being converted into a Silencer hit.
+INFO.zh=设定对一般士兵发动瞬间杀戮的概率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。

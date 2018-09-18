@@ -1,0 +1,69 @@
+NAME.en=Double Maximum Possible Stats ver2 (Breaks Saves)
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x0A53E2=0x6B 0x46 0x5A 0x68 0x12 0x05 0x12 0x0D 0x38 0x7D 0x00 0x03 0x02 0x43 0x78 0x7D 0x80 0x04 0x02 0x43 0xB8 0x7D 0x00 0x06 0x02 0x43 0xF9 0x7D 0x88 0x07 0x02 0x43
+
+BIN:0x0A53E2=break_save_n.bin	//a9dfa
+BIN:0x0A5E8E=break_save_c.bin	//aa8a6
+BIN:0x0A6146=break_load_c.bin	//aab5e
+BIN:$FREEAREA:1=break_load_n.bin
+
+BIN:0x0A572A=data_46C0.bin //aa142
+BIN:0x0A5730=data_46C0.bin //aa148
+BIN:0x0A5976=data_46C0.bin //aa38e
+BIN:0x0A597C=data_46C0.bin //aa394
+BIN:0x0A6078=data_46C0.bin //aaa90
+BIN:0x0A607E=data_46C0.bin //aaa96
+JUMP:0xA57E8:$r0=break_load_n.bin	//aa200
+
+BIN:$FREEAREA:2=yuso_save_2.dmp
+BIN:$FREEAREA:3=yuso_load.bin
+JUMP:0x0A31E4:$r3=yuso_save_2.dmp //a7c28
+JUMP:0x0A326C:$r3=yuso_load.bin //a7cb0
+BIN:0xA324A=nya_A7C8E.bin  //A7C8E
+BIN:0xA32D2=nya_0a7d16.bin //a7d16
+
+BIN:0x01DFB2=data_c7.bin //1dc0e
+BIN:0x01E05A=data_c7.bin //1dcb6
+BIN:0x01E0EC=data_c7.bin //1dd48
+
+BIN:0x031504=data_203AB48.bin //31450
+BIN:0x031524=data_203AB48.bin //31470
+BIN:0x031590=data_203AB48.bin //314dc
+BIN:0x0315B4=data_203AB48.bin //31500
+BIN:0x0315E0=data_203AB48.bin //3152c
+BIN:0x031604=data_203AB48.bin //31550
+
+BIN:0x031528=data_c8.bin //31474
+BIN:0x031576=data_c7.bin //314c2
+BIN:0x0315BC=data_c7.bin //31508
+BIN:0x09828E=data_c7.bin //9a566
+BIN:0x09A550=data_c7.bin //9c81c
+BIN:0x09A56A=data_c7.bin //9c836
+BIN:0x09D676=data_c8.bin //9f912
+BIN:0x09D73E=data_c8.bin //9f9d6
+BIN:0x09D768=data_c8.bin //9fa00
+BIN:0x09DD10=data_c7.bin //9ffb0
+BIN:0x09E902=data_c8.bin //a0ba2
+BIN:0x0B4738=data_c7.bin //b92C0
+
+//Add the following to EA
+BIN:0xA4F84=A4F84.bin //SHORT 0x4650 0x3001    //mov r0,r10; add r0,#1
+BIN:0xA509C=A509C.bin //SHORT 0x4650 0x3001    //mov r0,r10; add r0,#1
+BIN:0xA5B22=A5B22.bin //SHORT 0x2000        //mov r0,#0
+
+
+INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を200アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
+INFO.en=Patches the ROM save game data to modify several stat caps.\r\nStats that normally cap at 31 can now reach up to 63.\r\nHP can increase up to 120 rather than 60. \r\nItem Storage space is expanded from 100 to 200.\r\nApplying this patch breaks existing Save Files, so the game must be started fresh.\r\n
+INFO.zh=该修补程序允许您重新保存数据并保存超过31个状态参数。\r\n我们还将运输车延伸至200个物品。\r\n由于保存数据的变化，与现有数据的兼容性将被打破，因此删除所有保存的数据并开始新的游戏。\r\n
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/break_save
+AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/break_save
+AUTHOR.en=Program https://github.com/ngmansion/FE8/tree/master/break_save
+
+CONFLICT_IF:0x0A575C=0x1F 0xFE 0xFF 0xFF
+CONFLICT_IF:0x0a533c=0x78 0x47 0xC0 0x46 0x00 0xC0 0x9F 0xE5
+CONFLICT_MESSAGE=Class Expansion

@@ -1,0 +1,36 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG $B369C		//FE8U
+jumpToHack(fe8u_class_reel_alt_class_name)
+POP
+
+PUSH
+ORG $CCB54		//FE8U
+jumpToHack(fe8u_class_reel_alt_class_name_cc)
+POP
+
+
+
+ALIGN 4
+fe8u_class_reel_alt_class_name:
+#incbin "fe8u_class_reel_alt_class_name.dmp"
+POIN fe8u_class_reel_alt_class_name_table
+
+ALIGN 4
+fe8u_class_reel_alt_class_name_cc:
+#incbin "fe8u_class_reel_alt_class_name_cc.dmp"
+POIN fe8u_class_reel_alt_class_name_table
+
+
+#include "fe8u_class_reel_alt_class_name_table.event"
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

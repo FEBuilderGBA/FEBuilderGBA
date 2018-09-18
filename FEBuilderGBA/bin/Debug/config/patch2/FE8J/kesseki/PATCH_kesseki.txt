@@ -1,0 +1,45 @@
+﻿
+NAME=出撃禁止パッチ
+NAME.en=Deny Deployment
+
+IF:0x97AD8=0x00 0x48
+IF_COMMENT=出撃禁止パッチを導入してください.
+IF_COMMENT.en=Please install Deny Deployment patch
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x01 0x20 0x02 0xE0 0x04 0x32 0xEA 0xE7 0x00 0x20 0x10 0xBC 0x02 0x49 0x8F 0x46 0xEC 0xBC 0x02 0x02
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=ユニット
+B1=ZERO
+B2:CHAPTORMODE_ANYFF=編(1=序盤/2=エイリーク編/3=エフラム編/FF=全編)
+B3:MAP_ANYFF=マップ(FF=全マップ禁止)
+
+B0:UNIT.zh=人物
+B1.zh=0
+B2:CHAPTORMODE_ANYFF.zh=篇(1=序章/2=艾瑞克篇/3=伊弗列姆篇/FF=全篇)
+B3:MAP_ANYFF.zh=地图(FF=全地图禁止)
+
+B0:UNIT.en=Unit
+B2:CHAPTORMODE_ANYFF.en=Editing(1=Prologue-Ch8,2=Eirika,3=Ephraim/FF=Any)
+B3:MAP_ANYFF.en=Chaptor(FF=All Chaptor)
+
+INFO=FE8にも出撃禁止機能を搭載する.
+AUTHOR=aera ,7743  FE8 kesseki patch
+INFO.en=It also has a sortie prohibition function on FE 8.
+NAME.zh=禁止出击补丁
+INFO.zh=FE 8具有禁止出击功能。
+

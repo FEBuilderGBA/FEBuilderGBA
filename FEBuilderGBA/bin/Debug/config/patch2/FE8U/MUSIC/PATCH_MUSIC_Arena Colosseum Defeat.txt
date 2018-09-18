@@ -1,0 +1,13 @@
+NAME=MUSIC_闘技場_勝敗はいかに
+NAME.en=Defeat in the Arena BGM
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+
+ADDRESS=0x080458FC 0x08045922
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when defeated during an Arena Battle.
+NAME.zh=MUSIC_ Stadium _如何赢/输

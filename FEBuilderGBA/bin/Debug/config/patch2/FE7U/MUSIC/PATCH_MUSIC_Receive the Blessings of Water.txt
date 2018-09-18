@@ -1,0 +1,12 @@
+NAME=MUSIC_水の恩恵を受け、おだやかに
+NAME.en=MUSIC_Receive the Blessings of Water
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0806802C
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_轻轻从水中受益

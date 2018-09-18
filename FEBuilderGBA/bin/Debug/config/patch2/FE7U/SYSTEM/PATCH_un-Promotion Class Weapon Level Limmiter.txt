@@ -1,0 +1,11 @@
+
+NAME=下級武器レベル制限
+NAME.en=un-Promotion Class Weapon Level Limmiter
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x29bd8 0x29bdc
+
+NAME.zh=较低的武器级别限制

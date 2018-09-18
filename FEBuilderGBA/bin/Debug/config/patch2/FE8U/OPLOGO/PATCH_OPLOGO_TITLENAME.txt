@@ -1,0 +1,21 @@
+
+NAME=OPLOGOタイトル名
+NAME.en=OP Title Screen Game Title
+NAME.zh=OP界面标题名
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=40
+//HEIGHT=64
+PALETTE=1
+
+TYPE=IMAGE
+
+ZIMAGE_POINTER=0x0C5830//0xAACEDC
+PALETTE_POINTER=0x0C5790//0xAAB3F4
+KEEPPALETTE=true
+
+INFO=Edit and import the Game Title image of the Title Screen.

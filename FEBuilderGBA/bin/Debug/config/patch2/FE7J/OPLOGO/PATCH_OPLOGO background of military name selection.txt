@@ -1,0 +1,24 @@
+
+NAME=OPLOGO軍師の名前選択の背景
+NAME.en=OPLOGO background of military name selection.
+
+
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xa76a8
+HEADERTSA_POINTER=0xa76b8
+//非圧縮パレット
+PALETTE_POINTER=0xa76b0
+
+
+NAME.zh=OPLOGO军事名称选择背景

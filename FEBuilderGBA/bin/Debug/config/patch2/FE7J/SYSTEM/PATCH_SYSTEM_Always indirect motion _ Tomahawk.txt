@@ -1,0 +1,12 @@
+NAME=常に間接モーション_トマホーク
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0053594 0x0053580
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+NAME.en=Always indirect motion_Tomahawk
+NAME.zh=始终间接运动_战斧

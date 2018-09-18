@@ -1,0 +1,11 @@
+NAME=攻撃ミス経験値
+NAME.en=Attack Miss EXP
+NAME.zh=进攻体验错过经验
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2C572
+
+INFO.en=Sets the experience gained for battles where the unit doesn't strike the foe.

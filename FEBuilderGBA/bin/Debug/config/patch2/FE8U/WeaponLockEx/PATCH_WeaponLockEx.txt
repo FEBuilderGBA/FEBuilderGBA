@@ -1,0 +1,45 @@
+NAME=専用武器Ex
+NAME.en=Weapon Lock Ex
+
+IF:0x1673C=0x00 0x4B 0x18 0x47
+
+INFO=もっと細かく専用武器を定義します。\r\nその武器を装備できる条件を満たした後で、さらに追加の装備できるかどうかの判定を行います。\r\nユニットやクラス、レベル、フラグごとに追加判定します。
+
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x00 0x28 0xDD 0xD0 0x0A 0xE0 0x09 0x4D 0x08 0x3D 0x08 0x35 0x28 0x78 0x00 0x28 0x04 0xD0 0xB0 0x42 0x00 0xD0 0xF8 0xE7 0x00 0x20 0x00 0xE0 0x01 0x20 0x40 0xBC 0x30 0xBC 0x02 0xBC 0x08 0x47 0x00 0x00 0xA8 0x3D 0x08 0x08
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=アイテム
+B1:UNIT=ユニット / ANY=0x00
+B2:CLASS=クラス / ANY=0x00
+B3:DECIMAL=Unit LV / ANY=0x00
+W4:FLAG=判定フラグ / ANY=0x00
+W6=00
+
+B0:ITEM.zh=Item
+B1:UNIT.zh=人物 / ANY=0x00
+B2:CLASS.zh=Class / ANY=0x00
+W4:FLAG.zh=确定标志 / ANY=0x00
+
+B0:ITEM.en=Item
+B1:UNIT.en=Unit / ANY=0x00
+B2:CLASS.en=Class / ANY=0x00
+W4:FLAG.en=Judgment flag / ANY=0x00
+INFO.en=Define more specialized weapons lock.\r\nAfter satisfying the conditions that can be equipped with that weapon, we will judge whether we can provide additional equipment.\r\nIt judges additionally for each unit, class, level, flag.
+NAME.zh=独家武器Ex
+INFO.zh=我们将定义更专业的武器。\r\n在满足可配备该武器的条件后，我们将判断是否可以提供额外的设备。\r\n它还为每个单元，级别，级别，标志进行判断。

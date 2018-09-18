@@ -1,0 +1,15 @@
+NAME=skip hand axe wait for return
+NAME.en=Skip Hand Axe Wait For Return
+NAME.zh=skip hand axe wait for return
+
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+PATCHED_IF:0x58C90=0xCC 0x96 0x05 0x08
+
+BIN:0x514E=0000514E.bin
+BIN:0x058C90=00058C90.bin
+
+
+
+

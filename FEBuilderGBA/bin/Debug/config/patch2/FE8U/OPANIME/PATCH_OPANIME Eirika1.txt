@@ -1,0 +1,19 @@
+NAME=OPANIMEエイリーク立ち絵
+NAME.en=OP Anime Eirika (Distant)
+NAME.zh=OPANIME Eliq的常设照片
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=16
+
+//圧縮画像
+ZIMAGE_POINTER=0xC7E74
+//圧縮TSA
+ZTSA_POINTER=0xC7E78
+//非圧縮パレット
+PALETTE_POINTER=0xC7E80

@@ -1,0 +1,40 @@
+#define TRANSPORTER_MAX $080B92C0
+
+//////////////統合システム
+PUSH
+ORG	0xA05C4	//受け取り
+WORD	$46974A00
+POIN	tougou_uk
+
+ORG	0xa0b38	////預け
+WORD	$468F4900
+POIN	tougou_az
+POP
+
+ALIGN 4
+tougou_uk:
+#incbin "IamN.dmp"
+
+tougou_az:
+#incbin "IamL.dmp"
+WORD TRANSPORTER_MAX
+ALIGN 4
+
+/////////////画像表示
+PUSH
+
+ORG	0x9fdb4
+WORD	$46874800
+POIN	tougou_fantasy
+
+POP
+
+tougou_fantasy:
+#incbin "fantasy.dmp"
+POIN	tougou_adr+1
+#incbin "fantasy2.dmp"
+ALIGN 4
+
+tougou_adr:
+#incbin "address.dmp"
+ALIGN 4

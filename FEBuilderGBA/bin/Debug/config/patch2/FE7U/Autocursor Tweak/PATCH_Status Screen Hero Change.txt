@@ -1,0 +1,16 @@
+NAME=ステータス画面に表示されるリーダーを名簿の一番上のユニットにする
+NAME.en=Leader displayed on the status screen the top unit of the deploy.
+
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x8681C=0x00 0x4A 0x97 0x46
+BIN:$FREEAREA=Status Screen.dmp
+JUMP:0x8681C:$r2=Status Screen.dmp
+
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+
+INFO=ステータス画面に表示されるリーダーの名前を主人公ではなく、名簿の一番上のユニットにする
+INFO.en=Make the name of the leader displayed on the status screen not the hero but the unit at the top of the roster
+NAME.zh=使领导者显示在名单顶部的单位上
+INFO.zh=使状态屏幕上显示的领导者的名字不是英雄，而是名单顶部的单位

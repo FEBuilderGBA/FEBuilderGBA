@@ -1,0 +1,23 @@
+﻿NAME=所持金を減らすイベント命令
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x00 0xB5 0x80 0x6B 0x42 0x88 0xC0 0x46 0x04 0x4B 0x19 0x68 0x00 0x20 0x91 0x42 0x00 0xDB 0x88 0x1A 0x18 0x60 0x00 0x20 0x00 0xBD 0x00 0x00 0xF4 0xBC 0x02 0x02=0x00 0xB5 0x80 0x6B
+
+
+
+EVENTSCRIPT=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:ゴールド]お金を没収 	{GOLD}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=gold_collect.bin
+
+INFO=所持金から指定金額を没収します.
+NAME.zh=事件命令_所持金没收
+INFO.zh=从所持有的钱上，被指定金额.
+NAME.en=possession confiscation gold_collect
+INFO.en=We will forfeit the specified amount from the possession money.
+
+EVENTSCRIPT.en=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold] confiscated money extended instructions.	{GOLD}
+EVENTSCRIPT.zh=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold]没收钱延长指示。	{GOLD}
+

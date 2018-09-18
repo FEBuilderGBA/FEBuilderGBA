@@ -1,0 +1,8 @@
+08028618=-	{J}
+080285F0=Stat Booster	{J}
+080285FA=Promotion Items	{J}
+08028608=Afa's Drops	{J}
+0802818C=-	{U}
+08028164=Stat Booster	{U}
+0802816E=Promotion Items	{U}
+0802817C=Afa's Drops	{U}

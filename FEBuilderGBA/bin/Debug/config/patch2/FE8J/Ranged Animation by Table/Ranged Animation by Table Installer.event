@@ -1,0 +1,16 @@
+#include "eastdlib.event"
+#include "Extensions\Hack Installation.txt"
+
+PUSH
+ORG $590DC
+jumpToHack(RangeAnimHack)
+POP
+
+RangeAnimHack:
+#incbin "rangecheck.dmp"
+POIN RangeAnimList
+
+RangeAnimList:
+//BYTE RuneSword Tomahawk HandAxe  RuneSword 0
+BYTE 0x11 0x28 0x29 0x2C 0x00
+ALIGN 4

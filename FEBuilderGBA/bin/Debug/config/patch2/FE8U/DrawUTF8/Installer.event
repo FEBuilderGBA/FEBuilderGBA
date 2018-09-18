@@ -1,0 +1,58 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+
+PUSH
+ORG $44D2		//FE8U
+BYTE 0x00 0x00
+jumpToHack(DrawUTF8Item)
+POP
+
+PUSH
+ORG $450C		//FE8U
+jumpToHack(DrawUTF8Serif)
+POP
+
+PUSH
+ORG $4540		//FE8U
+jumpToHack_r1(DrawUTF8WidthChar)
+POP
+
+PUSH
+ORG $4574		//FE8U
+jumpToHack(DrawUTF8WidthString)
+POP
+
+
+ALIGN 4
+DrawUTF8Item:
+#incbin "drawutf8_item.dmp"
+POIN DrawUTF8Common|1
+
+ALIGN 4
+DrawUTF8Serif:
+#incbin "drawutf8_serif.dmp"
+POIN DrawUTF8Common|1
+
+ALIGN 4
+DrawUTF8WidthChar:
+#incbin "drawutf8_widthchar.dmp"
+POIN DrawUTF8Common|1
+
+ALIGN 4
+DrawUTF8WidthString:
+#incbin "drawutf8_widthstring.dmp"
+POIN DrawUTF8Common|1
+
+ALIGN 4
+DrawUTF8Common:
+#incbin "drawutf8_common.dmp"
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

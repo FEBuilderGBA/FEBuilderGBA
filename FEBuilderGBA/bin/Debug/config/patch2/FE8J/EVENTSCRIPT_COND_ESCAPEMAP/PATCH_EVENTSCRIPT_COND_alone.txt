@@ -1,0 +1,31 @@
+﻿NAME=離脱マップで最後の一人かどうか確認するalone
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x0C 0x4A 0x00 0x23 0x10 0x68 0x00 0x28 0x0C 0xD0 0xD1 0x68 0x04 0x20 0x08 0x40 0x05 0xD1 0xC8 0x03 0x03 0xD4 0x08 0x20 0x01 0x40 0x05 0xD0 0x48 0x32 0x01 0x33 0x3E 0x2B 0xEF 0xDD 0x01 0x20 0x00 0xE0 0x00 0x20 0xC0 0x46 0x02 0x49 0x08 0x63=0x0C 0x4A 0x00 0x23
+
+EVENTSCRIPT=400D0000{$L1:alone.bin}	離脱マップで最後の一人になったかどうか確認する 	{COND}
+
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=alone.bin
+
+INFO=離脱マップで最後の一人になったかどうか確認する
+AUTHOR=aera 出典元:https://github.com/ngmansion/FE8/tree/master/escapemap
+NAME.en=Add Event Condition: Last Unit Retreating
+INFO.en=Enables a scripting condition to check if the character is the last one to leave a map with the escape victory condition. This can be used in a script to, for example, remove the unit if it is not the last one remaining, or to remove the unit and clear the stage if it is the last unit remaining.
+
+AUTHOR.en=Source: Source: https://github.com/ngmansion/FE8/tree/master/escapemap.
+
+EVENTSCRIPT.en=400D0000{$L1:alone.bin}	Last Unit Retreating	{COND}
+AUTHOR.zh=来源:来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
+
+EVENTSCRIPT.zh=400D0000{$L1:alone.bin}	来检查它是否是撤出映射中的最后一个。	{COND}
+
+
+
+NAME.zh=事件命令_确认您是否是退出地图上的最后一个
+INFO.zh=确认它是否是撤出地图上的最后一个
+

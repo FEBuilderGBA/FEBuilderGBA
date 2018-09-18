@@ -1,0 +1,21 @@
+
+NAME=OPANIMEエフラム立ち絵
+NAME.en=OPANIME Ephraim
+NAME.zh=OP动画伊弗列姆立画
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=16
+
+//圧縮画像
+ZIMAGE_POINTER=0xCC3EC
+//圧縮TSA
+ZTSA_POINTER=0xCC3F0
+//非圧縮パレット
+PALETTE_POINTER=0xCC3F8

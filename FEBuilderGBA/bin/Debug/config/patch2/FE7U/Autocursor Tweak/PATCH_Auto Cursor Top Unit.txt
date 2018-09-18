@@ -1,0 +1,17 @@
+NAME=オートカーソルを名簿の一番上のユニットにする
+NAME.en=Auto cursor the unit at the top of the deploy
+
+TYPE=BIN
+TAG=#ENGINE
+
+
+PATCHED_IF:0x1D64C=0x00 0x4A 0x97 0x46
+BIN:$FREEAREA=Cursor.dmp
+JUMP:0x1D64C:$r2=Cursor.dmp
+
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+
+INFO=ターン開始にカーソルを合わせるユニットを、主人公ではなく、名簿の一番上のユニットにします。
+INFO.en=Place the cursor on the beginning of the turn as the top unit of the roster, not the hero.
+NAME.zh=使自动光标成为名单顶部的单位
+INFO.zh=将光标放置在回合的开始位置，作为名单的首要单位，而不是英雄。

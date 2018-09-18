@@ -1,0 +1,128 @@
+
+
+PUSH
+
+//力が上がった強制
+ORG	0x2f852
+SHORT	$E000
+//魔力が上がった
+ORG	0x2f840
+WORD	$811
+
+//アップする矢印の位置
+//技
+ORG	0x9f0a2
+SHORT	$3133
+//速さ
+ORG	0x9f0ae
+SHORT	$3134
+//幸運
+ORG	0x9f0ba
+SHORT	$3135
+//守備
+ORG	0x9f0c6
+SHORT	$3136
+//魔防
+ORG	0x9f0d2
+SHORT	$3137
+//体格
+ORG	0x9f0e0
+SHORT	$6ae0
+BL(0x18ecc)
+SHORT	$1c39
+SHORT	$3132
+SHORT	$7008
+//技
+ORG	0x9f12e
+SHORT	$313b
+//速さ
+ORG	0x9f13a
+SHORT	$313c
+//幸運
+ORG	0x9f146
+SHORT	$313d
+//守備
+ORG	0x9f152
+SHORT	$313e
+//魔防
+ORG	0x9f15e
+SHORT	$313f
+//体格
+ORG	0x9f16c
+SHORT	$6ae0
+BL(0x18ecc)
+SHORT	$1c39
+SHORT	$313a
+SHORT	$7008
+
+//文字
+//魔力分岐潰し
+ORG	0x9e21e
+SHORT	$E015
+ORG	0x9e358
+WORD	$48E
+ORG	0x9e360
+WORD	$47B $47C $47D $47E $47F
+
+//その1
+
+//技
+ORG	0x9e3f0
+SHORT	$9006
+//速さ
+ORG	0x9e40c
+SHORT	$9007
+//幸運
+ORG	0x9e422
+SHORT	$9008
+//防御
+ORG	0x9e43e
+SHORT	$9009
+//魔防
+ORG	0x9e458
+SHORT	$900A
+//体格
+ORG	0x9e45a
+ #incbin	"taikaku1.bin"
+ORG	0x9e47c
+SHORT	$9005
+
+//その2
+//技
+ORG	0x9e590
+SHORT	$3780
+SHORT	$46C0
+
+//速さ
+ORG	0x9e5ac
+SHORT	$1C2F
+SHORT	$3F72
+SHORT	$46C0
+//幸運
+ORG	0x9e5d8
+SHORT	$1C2F
+SHORT	$370E
+//守備
+ORG	0x9e5fa
+SHORT	$1C2F
+SHORT	$378E
+//魔防
+ORG	0x9e624
+SHORT	$1C2F
+SHORT	$3787
+ORG	0x9e632
+SHORT	$3787
+SHORT	$46C0
+
+//体格
+ORG	0x9e64e
+SHORT	$1C2F
+SHORT	$3780
+
+ORG	0x9e662
+SHORT	$2100
+
+ORG	0x9e676
+SHORT	$1C38
+
+POP

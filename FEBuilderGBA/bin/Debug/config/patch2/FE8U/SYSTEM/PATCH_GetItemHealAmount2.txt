@@ -1,0 +1,13 @@
+NAME=リライブの杖の回復量
+NAME.en=Set HP Recovered By Mend Staff
+
+IF:0x16FBE=0x00 0x24
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16FF2
+DEFAULT=20
+HEX=FALSE
+NAME.zh=重温手杖的恢复量

@@ -1,0 +1,11 @@
+﻿NAME=MUSIC_メインテーマ
+NAME.en=MUSIC_Main theme song
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080cb356 0x080cb380 0x08009998 0x08009a0e
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_主题 0x43

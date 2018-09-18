@@ -1,0 +1,27 @@
+
+NAME=杖命中の基礎値
+NAME.en=Base Staff Accuracy
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002cc68
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ocfcd596
+
+NAME.zh=杖命中的基础值
+
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ocfcd596
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ocfcd596
+
+
+
+INFO=杖の命中率の基礎値となる値を定義します。\r\nバーサク、スリープ、サイレスなどで利用されます。
+INFO.en=Define the value that will be the base value of the staff's hit rate.\r\nIt is used for berserk, sleep, silent etc.
+
+
+
+INFO.zh=定义将成为魔杖命中率基值的值。\r\n它用于狂暴，睡眠，沉默等。

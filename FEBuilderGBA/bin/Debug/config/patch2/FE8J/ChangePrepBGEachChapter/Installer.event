@@ -1,0 +1,48 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $88EB8		//FE8J
+jumpToHack(ChangePrepBGEachChapter)
+POP
+
+PUSH
+ORG $88FC6		//FE8J
+BYTE 0 0
+jumpToHack(ChangePrepBGEachChapter_2)
+POP
+
+
+PUSH			//状況メニューでパレットを書き戻している部分があるので潰す.
+ORG $90428		//FE8J
+BYTE 0 0 0 0
+POP
+
+ALIGN 4
+ChangePrepBGEachChapter:
+#incbin "ChangePrepBGEachChapter.dmp"
+POIN ChangePrepBGEachChapter_Table
+
+ALIGN 4
+ChangePrepBGEachChapter_2:
+#incbin "ChangePrepBGEachChapter_2.dmp"
+POIN ChangePrepBGEachChapter_Table
+
+
+#include "ChangePrepBGEachChapter_Table.event"
+//@struct ChangePrepBGEachChapter_Table
+//@{
+//@	byte	map_id;		章			FF=ANY
+//@	byte	edition		編			FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@	void*	zimage
+//@	void*	palette
+//@}//sizeof(12bytes)
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

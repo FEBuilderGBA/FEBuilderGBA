@@ -1,0 +1,18 @@
+NAME=Unlock Sound Room songs
+TYPE=SWITCH
+TAG=#ENGINE
+
+ONN:0xA60EA=0x00 0x00
+OFF:0xA60EA=0x03 0x0D
+
+ONN:0xA60EE=0x02
+OFF:0xA60EE=0x20
+
+ONN:0xAAEBC=0x00 0x00
+OFF:0xAAEBC=0x0B 0xD0
+
+ONN:0xAAEA2=0x00 0x00
+OFF:0xAAEA2=0x18 0xD1
+
+COMBO=defualt|OFF|unlock|ONN
+AUTHOR=http://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37?source_topic_id=3290\r\nhttp://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37/8

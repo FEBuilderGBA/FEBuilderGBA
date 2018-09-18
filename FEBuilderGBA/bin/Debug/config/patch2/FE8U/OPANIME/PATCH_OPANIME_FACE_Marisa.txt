@@ -1,0 +1,14 @@
+NAME=OPANIME_FACE_マリカ
+NAME.en=OP Anime Face: Marisa
+NAME.zh=OP动画_脸_玛莉卡
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x000C9004//0x08ADFA28
+PALETTE_POINTER=0x000C900C//0x08AE04D4
+
+INFO=Edit and import OP Anime Graphic for the Marisa Face image.

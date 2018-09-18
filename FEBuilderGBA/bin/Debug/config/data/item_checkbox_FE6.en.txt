@@ -1,0 +1,37 @@
+﻿//特性1
+01=Weapon	Sets item as a weapon.
+02=Magic	Sets item as magic.\r\nBoth Weapon and Magic must be set for magic weapons like Tomes.\r\nAdjusts damage formula to:\r\nPower-Res:Damage
+03=Staff	Sets item as a staff.
+04=Unbreakable	Gives an item infinite uses.
+05=Unsellable	Prevents an item from being sold.
+06=Brave Effect	Attacks are followed up with a second attack.\r\nBy default, this is used by Brave Weapons.
+07=Magic Damage	Adjusts damage formula to:\r\nPower-Res:Damage\r\nNo weapon exp will be granted.\r\nBy default, this is used for magic swords like the Light Brand.
+08=Uncounterable	Prevents foe from counterattacking.\r\nBy default, this is used by long-range weapons like Ballistae and Bolting.
+//特性2
+11=Reaver Effect	Reverses the Weapon triangle.\r\nBy default, this is used by the Reaver weapons.
+12=Disable Hammerne	Disables Hammerne staff from being used on item.
+13=Manakete Lock	Restricts item use to only those with the Manakete Lock set.\r\nBy default, this is set for the Firestone, Magestone, and Divinestone.
+14=Roy Lock	Restricts item use to only those with the Roy Lock set.\r\nBy default, this is set for Rapier and Binding Blade.
+15=Myrmidon/Swordmaster Lock	Restricts item use to only those with the Myrmidon/Swordmaster lock set.\r\nBy default, this is set for Wo Dao.
+16=Hide Weapon Info	Hides all weapon info except for the Prf mark.
+17=Negate Flying Effectiveness	When equipped, negates Bow effectiveness against Flying units.\r\nBy default, this is set for the Delphi Shield.
+18=Negate Criticals	When equipped, prevents enemy critical hits.\r\nBy default, this is set for the Iron Rune.
+
+//特性3
+21=??
+22=??
+23=??
+24=??
+25=??
+26=??
+27=??
+28=??
+//特性4
+31=??
+32=??
+33=??
+34=??
+35=??
+36=??
+37=??
+38=??

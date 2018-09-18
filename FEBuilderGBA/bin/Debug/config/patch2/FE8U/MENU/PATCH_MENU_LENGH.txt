@@ -1,0 +1,16 @@
+
+NAME=MENU メニューウィンドウの長さ
+NAME.en=Menu Window Width
+NAME.zh=MENU菜单窗口的长度
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x059D216
+INFO.en=Patches the ROM to have a wider map menu window width.\r\nUse when editing map menu text to longer strings.\r\n
+
+
+AUTHOR=thank you Kirb http://feuniverse.us/t/fe8-kaitou-patch/2984/3?u=7743
+AUTHOR.en=Kirb http://feuniverse.us/t/fe8-kaitou-patch/2984/3?u=7743
+AUTHOR.zh=thank you Kirb http://feuniverse.us/t/fe8-kaitou-patch/2984/3?u=7743

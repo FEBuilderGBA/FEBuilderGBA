@@ -1,0 +1,14 @@
+﻿NAME=OPANIME_FACE_レナック
+NAME.en=OP Anime Face: Rennac
+NAME.zh=OP动画_脸_雷纳克
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x0C8E3C//0xADBE98
+PALETTE_POINTER=0x0C8E44//0xADC708
+
+INFO=Edit and import OP Anime Graphic for the Amelia Face image.

@@ -1,0 +1,56 @@
+@0080@0004	[LoadOverworldFaces]	{MOVE_LOAD}
+@0080@0005	显示金[G]	{DISPLAY}
+@0080@0016	启用闪烁[EnableBlinking]	{TOGGLE}
+@0080@0018	延迟闪烁[DelayBlinking]	{TOGGLE}
+@0080@0019	暂停闪烁[PauseBlinking]	{TOGGLE}
+@0080@001B	停止闪烁[DisableBlinking]	{TOGGLE}
+@0080@001C	睁开眼睛[OpenEyes]	{TOGGLE}
+@0080@001D	闭上眼睛[CloseEyes]	{TOGGLE}
+@0080@001E	中途闭上眼睛[HalfCloseEyes]	{TOGGLE}
+@0080@001F	眨眼[Wink]	{TOGGLE}
+@0080@0020	显示武术名称[Tact]	{DISPLAY}
+@0080@0021	使文本变为红色（仅限系统消息）[ToggleRed]	{TOGGLE}
+@0080@0022	显示项目名称[项目]	{DISPLAY}
+@0080@0023	输入名称[SetName]	{CHOOSE}
+@0080@0024	显示军事名称2 [Tact 2]	{DISPLAY}
+@0080@0025	反转颜色[ToggleColorInvert]	{TOGGLE}
+@0001	我会打破界限（它与输入键的含义相同）[NL]	{LINEBREAK}
+@0002	删除气球中的所有文字[清除]	{LINEBREAK}
+@0002	两条线断了[2NL]	{LINEBREAK}
+@0003	我们等待玩家对serif feed的输入[A]	{LINEBREAK}
+@0004	[....]	{LINEBREAK}
+@0005	[.....]	{LINEBREAK}
+@0006	[......]	{LINEBREAK}
+@0007	[.......]	{LINEBREAK}
+@0008	左后卫位置[OpenFarLeft]	{POSITION}
+@0009	左中间位置[OpenMidLeft]	{POSITION}
+@000A	左侧位置[OpenLeft]	{POSITION}
+@000B	正确位置[OpenRight]	{POSITION}
+@000C	正确的中心位置[OpenMidRight]	{POSITION}
+@000D	右后方位置[OpenFarRight]	{POSITION}
+@000E	左侧屏幕外的位置[OpenFarFarLeft]	{POSITION}
+@000F	右屏外的位置[OpenFarFarRight]	{POSITION}
+@0011	清除肖像[ClearFace]	{MOVE_LOAD}
+@0012	以正常速度显示字符串[NormalPrint]	{SPEED}
+@0013	快速显示字符串[FastPrint]	{SPEED}
+@0014	加油口[CloseSpeechFast]	{CHOOSE}
+@0015	慢喉舌[CloseSpeechSlow]	{CHOOSE}
+@0016	口腔运动[ToggleMouthMove]	{TOGGLE}
+@0017	在Huo上微笑[ToggleSmile]	{TOGGLE}
+@0018	选择器是[是]	{CHOOSE}
+@0019	选择号[否]	{CHOOSE}
+@001A	买家购买选择器出售[买/卖]	{CHOOSE}
+@001B	是否继续在商店进行交易[ShopContinue]	{CHOOSE}
+@001C	SendToBack[SendToBack]	{CHOOSE}
+@001D	快速显示字符串2 [FastPrint]	{SPEED}
+@001F	填写字符串边距（仅限英文版）[.]	{DISPLAY}
+@0040	显示@ [@]	{DISPLAY}
+@0010	加载下一张肖像[LoadFace]	{MOVE_LOAD}
+@0080@000A	移到最左边[MoveFarLeft]	{MOVE_LOAD}
+@0080@000B	移动到左中心[MoveMidLeft]	{MOVE_LOAD}
+@0080@000C	向左移动[MoveLeft]	{MOVE_LOAD}
+@0080@000D	向右移动[MoveRight]	{MOVE_LOAD}
+@0080@000E	移动到右侧中心[MoveMidRight]	{MOVE_LOAD}
+@0080@000F	移到最右边[MoveFarRight]	{MOVE_LOAD}
+@0080@0010	移动到左侧屏幕外[MoveFarFarLeft]	{MOVE_LOAD}
+@0080@0011	移动到右侧屏幕之外[MoveFarFarRight]	{MOVE_LOAD}

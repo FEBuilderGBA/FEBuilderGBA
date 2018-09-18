@@ -1,0 +1,15 @@
+
+PUSH
+ORG 0x0163F0
+#incbin "000163F0.bin"
+POIN Main|1
+POP
+
+PUSH
+ORG 0x016B40
+#incbin "00016B40.bin"
+POP
+
+ALIGN 4
+Main:
+#incbin "00B2A610.bin"

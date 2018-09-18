@@ -1,0 +1,16 @@
+
+NAME=オープニングとタイトルをスキップ（メニュー直行）
+NAME.en=Skipping the opening and title (direct to menu)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x000134a9
+COMBO=Def|0xD1|Skip|0xE0
+
+AUTHOR=出典:FE6解析資料
+AUTHOR.en=Source: FE 6 analysis material
+NAME.zh=跳过开头和标题（菜单直接）
+AUTHOR.zh=来源:FE 6分析资料
+

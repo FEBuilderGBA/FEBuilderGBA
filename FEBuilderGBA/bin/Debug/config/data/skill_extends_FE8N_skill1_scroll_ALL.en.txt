@@ -1,0 +1,8 @@
+01=Big shield
+02=prayer
+04=Abandonment
+08=Train
+10=Cancel
+20=anger
+40=Brave general
+80=ambush

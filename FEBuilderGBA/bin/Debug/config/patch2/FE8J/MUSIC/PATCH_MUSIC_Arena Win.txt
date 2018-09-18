@@ -1,0 +1,10 @@
+NAME=MUSIC_闘技場勝利
+NAME.en=MUSIC_Arena Win
+NAME.zh=音乐_竞技场胜利
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08045890 0x080ba87c
+ADDRESS_TYPE=SONG
+

@@ -1,0 +1,11 @@
+NAME=MUSIC_悲しみの中で
+NAME.zh=音乐_在悲伤中
+NAME.en=MUSIC_In Sorrow's Shroud
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08085960
+ADDRESS_TYPE=SONG
+

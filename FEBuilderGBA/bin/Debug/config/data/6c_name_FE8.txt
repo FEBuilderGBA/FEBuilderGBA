@@ -1,0 +1,9 @@
+//Pointer=Name	GameType	comment(address)
+C9640=ENDING STAFFROLL	{J}	//B3B414
+C4888=ENDING STAFFROLL	{U}	//AA2084
+71CF8=efxEvilEye(NoNameProc)	{J}	//604144
+6F748=efxEvilEye(NoNameProc)	{U}	//5D9A1C
+71E8C=efxStoneBG(NoNameProc)	{J}	//6042CC
+6F8DC=efxStoneBG(NoNameProc)	{U}	//5D9BA4
+691C=EventScriptEngine	{J}	//5B90F0
+89E4=EventScriptEngine	{U}	//591358

@@ -1,0 +1,18 @@
+NAME=ステータス画面に、ユニットが立っている台座を出さない
+NAME.en=Disable Stat Screen Platform
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=ディフォルト|OFF|台座を消去|ONN
+COMBO.en=Default|OFF|Hide the Platform|ONN
+COMBO.zh=默认|OFF|清除基座|ONN
+
+DETERMINATION_ADDRESS=0x8A5E0
+
+ONN:0x8A5E0=0x70 0x47
+OFF:0x8A5E0=0x00 0xB5
+
+AUTHOR=Leonarth
+
+NAME.zh=不要在设备状态屏幕上放置设备所在的基座

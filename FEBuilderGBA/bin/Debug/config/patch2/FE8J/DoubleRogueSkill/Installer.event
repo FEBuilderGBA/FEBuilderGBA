@@ -1,0 +1,14 @@
+#include "Extensions/Hack Installation.txt"
+PUSH
+//ORG $23E8C  //FE8U
+ORG $23E48  //FE8J
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "doubleRogueSkillFE8.dmp"
+
+POIN ClassTable
+
+ClassTable:
+BYTE 0x33 0x5E 0x00 

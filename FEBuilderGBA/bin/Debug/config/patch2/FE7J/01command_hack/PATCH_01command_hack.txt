@@ -1,0 +1,15 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x06642=0xC0 0x46 0xC0 0xF0
+
+BIN:0x06642=6642.bin
+BIN:0x0C6988=C6988.bin
+
+
+AUTHOR=Animation Hacks by Hextator  Transplant:7743
+
+INFO=カスタム戦闘アニメーションの再生に必須となるパッチです。\r\nGBA FEでは、魔法使いが魔法を使っている間にマントをはためかせる処理があります。\r\nこの命令は、C47 マントコマンド命令によって実装されていますが、その内容はとても難しくまだ解析されていません。\r\nそのため、欧米のハッカーたちは、HPゲージを減らすまで待機させるC01命令を改造し、ループ処理を実装することにしました。\r\nこの方法で、マントコマンドを利用しないで、マントをはためかせています。\r\nほぼすべてのカスタムアニメーションはこのパッチを利用して必要としています。\r\nとても重要なパッチです。
+INFO.en=This patch is essential for playing custom battle animation.\r\nIn GBA FE, there is a process to flaunt the cloak while the magician uses magic.\r\nThis instruction is implemented by the C47 cloak command command, but its content is very difficult and has not been analyzed yet.\r\nFor this reason, European and American hackers decided to modify the C 01 instruction to keep waiting until reducing the HP gauge and implement loop processing.\r\nIn this way, without using the cloak command, the cloak is flapping.\r\nNearly all custom animations are needed using this patch.\r\nIt is a very important patch.
+INFO.zh=这个补丁对于玩定制战斗动画是必不可少的。\r\n在GBA FE中，魔法师使用魔法时有一个标示披风的过程。\r\n该指令由C47斗篷命令执行，但其内容非常困难，尚未进行分析。\r\n出于这个原因，欧美黑客决定修改C 01指令，继续等待，直到降低HP标尺并执行循环处理。\r\n这样，在不使用斗篷命令的情况下，斗篷就会扑动。\r\n几乎所有的自定义动画都需要使用这个补丁。\r\n这是一个非常重要的补丁。

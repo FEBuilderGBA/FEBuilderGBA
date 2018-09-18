@@ -1,0 +1,8 @@
+01=ambush
+02=prayer
+04=None
+08=None
+10=Great Shield
+20=prayer
+40=None
+80=ambush

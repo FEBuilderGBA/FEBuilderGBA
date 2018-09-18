@@ -1,0 +1,10 @@
+NAME=ストーンのマップアニメーションが、no$gbaをクラッシュさせるバグの修正
+NAME.en=Fix Stone's map animation crashing no$ due to a bad decompression
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x7E2B4
+COMBO=Fix|0x08|Default|0x09
+
+NAME.zh=修正了石头地图动画崩溃没有$ gba的错误

@@ -1,0 +1,31 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $20022		//FE8U
+BYTE 0x00 0x00
+jumpToHack(ChangeChapterTitleBGEachChapter)
+POP
+
+ALIGN 4
+ChangeChapterTitleBGEachChapter:
+#incbin "ChangeChapterTitleBGEachChapter.dmp"
+POIN ChangeChapterTitleBGEachChapter_Table
+
+#include "ChangeChapterTitleBGEachChapter_Table.event"
+//@struct ChangeChapterTitleBGEachChapter_Table
+//@{
+//@	byte	map_id;		章			FF=ANY
+//@	byte	edition		編			FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@	void*	zimage
+//@	void*	palette
+//@}//sizeof(12bytes)
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

@@ -1,0 +1,37 @@
+NAME=章タイトルを表示する時のフレームなどの素材画像を章ごとに変更する
+NAME.en=Change material frames image when chapter titles for each chapter
+
+INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
+
+IF:0x20252=0x00 0x00 0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+//データへのポインタ
+POINTER=$GREP4END 0x07 0x4B 0x18 0x47 0xF0 0xBC 0x02 0x02 0xA8 0x3D 0x08 0x08 0xFF 0xFF 0xFF 0xFF 0x00 0x40 0x01 0x06 0x50 0x2F 0x01 0x08 0xB0 0x02 0x02 0x08 0xB8 0x02 0x02 0x08 0x5D 0x02 0x02 0x08
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはマップIDです
+LIST=$B0:MAP
+
+//データを定義します
+B0:MAP_ANYFF=MAPID(0xFF=ANY)
+B1=Edition(0xFF=ANY)
+W2:FLAG=Flag(0x00=ANY)
+P4:PatchImage_ZIMAGE=Image
+P8:PatchImage_PALETTE=Palette
+
+WIDTH=256
+HEIGHT=32
+//利用パレット数
+PALETTE=1
+INFO.en=To import a new image, please set the address, PALETTE to 0 or FFFFFFFF, then import it.\r\nOtherwise, overwrite the existing image and change it.
+NAME.zh=在为每个章节显示章节标题时，更改帧等素材图像
+INFO.zh=要导入新图像，请将地址PALETTE设置为0或FFFFFFFF，然后导入。\r\n否则，覆盖现有图像并进行更改。

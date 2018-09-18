@@ -1,0 +1,8 @@
+IF:0x58168=0x00 0x48 0x87 0x46
+
+FORM=UnitForm
+J_35=個別アニメ
+
+J_35.en=Individual animation
+
+J_35.zh=个人动画

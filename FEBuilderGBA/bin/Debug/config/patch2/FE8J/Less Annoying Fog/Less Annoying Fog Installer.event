@@ -1,0 +1,31 @@
+#ifdef _FE8_
+
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+//ORG $1A8C8 //FE8U //this is where bumped into fog last action (0x1E) was set
+ORG $1A5A4   //FE8J //this is where bumped into fog last action (0x1E) was set
+jumpToHack(AntiFog)	//move unit and update fog, hide map sprite of active unit
+
+//ORG $5631C //FE8U //this draws the sprite after the battle, and tries to do so for bumped into fog
+ORG $572A4   //FE8J //this draws the sprite after the battle, and tries to do so for bumped into fog
+jumpToHack(AntiFog2)	//don't draw sprite if bumped in the fog
+
+//ORG $3280C //FE8U //same as above but after killing a unit
+ORG $32758   //FE8J //same as above but after killing a unit
+jumpToHack(AntiFog3)
+
+//ORG $1D4EA //FE8U
+ORG $1D14E   //FE8J
+SHORT 0x46C0
+POP
+AntiFog:
+#incbin "antifog.dmp"
+AntiFog2:
+#incbin "antifog2.dmp"
+AntiFog3:
+#incbin "antifog3.dmp"
+
+#else
+    ERROR Less Annoying Fog is for FE8 only!
+#endif

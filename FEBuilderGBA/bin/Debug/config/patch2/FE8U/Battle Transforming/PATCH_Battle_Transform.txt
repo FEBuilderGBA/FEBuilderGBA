@@ -1,0 +1,49 @@
+
+NAME=戦闘変身パッチ
+NAME.en=Battle Transforming Editor
+NAME.zh=战斗转化补丁
+
+IF:$GREP4 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x4D 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x04 0xE1 0x03 0x02 0x00 0x00 0x00 0x02=0x87 0x55 0x03 0x21
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x4D 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x04 0xE1 0x03 0x02 0x00 0x00 0x00 0x02
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=クラス
+B1:ITEM=アイテム
+W2:BATTLEANIME=変身開始アニメ
+W4:BATTLEANIME=変身戦闘アニメ
+W6:BATTLEANIME=変身解除アニメ
+W8:BATTLEANIME=変身終了アニメ
+W10:SONG=変身開始時の音
+W12:SONG=変身完了時の音
+W14:SONG=変身解除の音
+
+B0:CLASS.en=Class ID
+B1:ITEM.en=Item ID
+W2:BATTLEANIME.en=Base Animation
+W4:BATTLEANIME.en=Transformed Animation
+W6:BATTLEANIME.en=Transform Back Animation
+W8:BATTLEANIME.en=Transform Finished Anim
+W10:SONG.en=Transform Start Sound
+W12:SONG.en=Transform Finish Sound
+W14:SONG.en=Untransform Sound
+
+INFO=戦闘時に、変身できるクラスとアイテムを増やします。
+INFO.en=Edits the list of which classes can transform and how.\r\nInvolves class, item, multiple animations, and sounds.\r\nIn order to use, "Battle Transform List Installer" must be installed.\r\n 
+INFO.zh=在战斗中，增加可以改变的课程和项目。
+
+AUTHOR=Tequila ,UNKNOWN ,Aera , circleseverywhere. Compatability: 7743 http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77

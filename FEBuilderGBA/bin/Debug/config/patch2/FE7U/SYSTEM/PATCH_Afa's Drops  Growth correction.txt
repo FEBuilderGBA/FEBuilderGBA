@@ -1,0 +1,11 @@
+
+NAME=アフアの滴　成長補正
+NAME.en=Afa's Drops  Growth correction
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x296B4
+
+
+NAME.zh=阿华下滑增长回落

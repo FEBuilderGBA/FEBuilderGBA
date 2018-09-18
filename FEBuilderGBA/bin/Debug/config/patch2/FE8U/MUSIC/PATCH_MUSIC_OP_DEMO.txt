@@ -1,0 +1,9 @@
+NAME.en=Opening Demo BGM
+NAME.zh=MUSIC_OP_DEMO
+//アドレスパッチとして実装します
+TYPE=ADDR
+
+ADDRESS=0x080C6DD4
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played during the Opening Cutscene post-bootup.

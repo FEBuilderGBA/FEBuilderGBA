@@ -1,0 +1,35 @@
+﻿NAME=ユニットを隣接させなくても支援ポイントが得られるようにする
+NAME.en=Gain support points by than adjacent
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default 隣接のみ|OFF|2マス|ON2|3マス|ON3|4マス|ON4|5マス|ON5|無限|INF
+COMBO.en=default Adjacent only|OFF|2 squares|ON2|3 squares|ON3|4 squares|ON4|5 squares|ON5|Infinity|INF
+COMBO.zh=默认邻接|OFF|2|ON2|3|ON3|4|ON4|5|ON5|无穷|INF
+
+
+DETERMINATION_ADDRESS=0x028478
+
+INF:0x028478=0x00 0x00 0x04 0xE0
+ON5:0x028478=0x05 0x28 0x04 0xDD
+ON4:0x028478=0x04 0x28 0x04 0xDD
+ON3:0x028478=0x03 0x28 0x04 0xDD
+ON2:0x028478=0x02 0x28 0x04 0xDD
+OFF:0x028478=0x01 0x28 0x04 0xD0
+
+INF:0x0283D6=0x6D 0xD1
+ON5:0x0283D6=0x6D 0xD0
+ON4:0x0283D6=0x6D 0xD0
+ON3:0x0283D6=0x6D 0xD0
+ON2:0x0283D6=0x6D 0xD0
+ON1:0x0283D6=0x6D 0xD0
+OFF:0x0283D6=0x6D 0xD0
+
+INFO=ユニットが隣接していなくても支援ポイントを得られるようにします。\r\nディフォルトは隣接のみです。\r\nまた、「無限」にすると、DS FE のように、ユニットを一緒に配備するだけで支援ポイントが得られるようになります。\r\n
+INFO.en=Even if the units are not adjacent, you will be able to get support points.\r\nThe default is adjacency only.\r\naddition, if you set it to "infinity", you can get support points just by deploying units together like DS FE.\r\n
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/46 Transport:7743
+NAME.zh=在没有邻接单位的情况下提供支援点
+INFO.zh=即使单位不相邻，我们也可以获得支持点。\r\n默认值只是相邻的。\r\n此外，如果设置为“无穷大”，您可以简单地通过像DS FE一样部署单位来获得支持点。\r\n
+

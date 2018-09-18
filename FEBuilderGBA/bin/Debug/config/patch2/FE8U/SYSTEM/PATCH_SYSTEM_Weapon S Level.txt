@@ -1,0 +1,10 @@
+NAME=武器Sレベルの武器レベル
+NAME.en=Weapon Exp Required for S Rank
+NAME.zh=武器S级武器级别
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2AD74
+
+INFO.en=Sets the weapon experience required to S Rank a weapon type in hex.\r\nConvert to decimal for the value.

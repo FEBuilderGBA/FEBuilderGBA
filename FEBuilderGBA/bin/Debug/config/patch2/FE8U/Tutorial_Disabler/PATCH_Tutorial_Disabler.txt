@@ -1,0 +1,19 @@
+NAME=チュートリアルを無効にする(Tutorial Disabler)
+NAME.en=Tutorial Disabler
+NAME.zh=禁用教程（教程功能停止）
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Enabled|OFF|Patched: Disabled|ONN
+
+OFF:0x0E120=0x22 0xd0
+ONN:0x0E120=0x00 0x00
+
+
+INFO=FE8 Tutorial Disabler
+INFO=難易度簡単を選択したとしても、チュートリアルイベントをすべて無効にします。
+INFO.en=Set whether to disable all tutorial events (including on Easy difficulty).
+INFO.zh=即使选择简单难度，也禁用所有教程事件。
+
+AUTHOR=7743

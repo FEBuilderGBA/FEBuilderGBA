@@ -1,0 +1,21 @@
+NAME=個別アニメ導入 by EA
+NAME.zh=个人动画补丁介绍 by EA
+NAME.en=Character Custom Animation by EA Table Installer
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x058158=0x00 0x4B 0x18 0x47
+EDIT_PATCH=PATCH_Individual animation_2018.txt
+EA=Installer.event
+
+INFO=このパッチは、FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n
+INFO.en=Patches a table into the ROM for custom animations by character like in FE7.\r\nMust be installed to use "Character Custom Animation Table Editor."\r\n
+INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定义动画）\r\n
+
+AUTHOR=7743
+
+CONFLICT_IF:0x58168=0x00 0x48 0x87 0x46
+CONFLICT_IF:0x58168=0x00 0x49 0x8f 0x46
+CONFLICT_MESSAGE=Individual animation patch

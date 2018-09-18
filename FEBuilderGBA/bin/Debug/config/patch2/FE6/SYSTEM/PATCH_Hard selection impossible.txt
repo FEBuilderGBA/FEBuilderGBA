@@ -1,0 +1,16 @@
+
+NAME=ハード選択不能
+NAME.en=Hard selection impossible
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x8874c
+COMBO=default|0x12 0xD0|fix|0x12 0xE0
+
+AUTHOR=出典:FE6解析資料
+AUTHOR.en=Source: FE 6 analysis material
+NAME.zh=艰难选择不可能
+AUTHOR.zh=来源:FE 6分析资料
+

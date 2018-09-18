@@ -1,0 +1,12 @@
+NAME=MUSIC_八神将の恵みあれⅠ
+NAME.en=MUSIC_Blessing of the 8 Generals I
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08067F4C
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐Yagami Makoto的优雅Ⅰ

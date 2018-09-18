@@ -1,0 +1,18 @@
+#ifdef _FE7_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+//#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+
+PUSH
+ORG $238B0		//FE7U
+jumpToHack(NPC_uragiri)
+POP
+
+NPC_uragiri:
+#incbin "NPC_uragiri.dmp"
+
+#else
+    ERROR This version of Selection Quotes is for FE7!
+#endif

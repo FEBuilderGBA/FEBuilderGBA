@@ -1,0 +1,36 @@
+﻿//特性1
+01=Mounted Aid Calc	Sets aid calculation for rescue to the mounted aid calculation.\r\nAid: 25 (male) or 20 (female) - unit's CON.
+02=Canto	Enables the use of any unused MOV after all actions except attacking.
+03=Steal	Grants the steal ability.
+04=Thief Skill	Grants extended vision in Fog.\r\nAllows the use of lockpicks.\r\nEnemies with this characteristic grant bonus experience in combat.
+05=Dance (Dancer)	Enables the Dance command.\r\nThe user must have magic battle animations set and use an acceptable move icon or the game may freeze.
+06=Play (Bard)	Enables the Play command.\r\nThe user must have magic battle animations set and use an acceptable move icon or the game may freeze.
+07=Critical Boost	Grants a critical hit% boost.\r\nDefault rate is 15% and set to the classes Swordmaster and Berserker.
+08=Ballista Access	Grants the ability to use ballistae.\r\nDefault granted to Archers and Snipers.
+//特性2
+11=Promoted Unit	Grants access to weapon level S and adjusts experience calculation.\r\nBy default is set for promoted classes.\r\nExp Calc:\r\nUnpromoted vs Promoted: Bonus\r\nPromoted vs Promoted: No Bonus\r\nPromoted vs Unpromoted: Penalty
+12=Supply (Merlinus)	Disables the trade command.\r\nSets unit as the Transport.
+13=Cavalry Unit Icon	Displays a Cavalry icon in the Rescue field on the Status menu.\r\nDefault set to horse-riding units.
+14=Wyvern Unit Icon	Displays a Wyvern icon in the Rescue field on the Status menu.\r\nDefault set to wyvern-riding units.
+15=Pegasus Unit Icon	Displays a Pegasus icon in the Rescue field on the Status menu.\r\nDefault set to pegasus-riding units.
+16=Lord Unit	Default set to Lords, Great Lords, Blade Lords, and Knight Lords.\r\nThis Flag is necessary to set it as a Main character.\r\nIn FE 7,UnitID: 0x01, 0x02 and 0x03 must be the class of the load unit.\r\nTo change the "Seize", adapt the patch rather than changing this flag.
+17=Female	Sets female status.\r\nDefault set to units and unused by classes.
+18=Boss	Flag	Sets importance and displays the boss marker on a unit's map sprite.\r\nIf set on an enemy, bonus experience will be earned in combat.
+//特性3
+21=Weapon Lock 1	Allows equipping of weapons locked to weapon lock 1.\r\nBy default, this is unused. Use for custom unique weapons.
+22=Myrmidon/Swordmaster	Allows equipping of Myrmidon/Swordmaster Weapons.\r\nBy default, this unlocks the Wo Dao.
+23=Manakete Lock	Allows equipping of Dragonstones.\r\nBy default, this is used only by the final boss.
+24=Morphs	Sets the unit as a Morph.\r\nAlso Vaida.
+25=Disable Unit Select	Disables a unit from being selected.\r\nBy default, this is used for fallen Nils.
+26=Triangle Attack 1	Enables participation in a three-Pegasus Triangle Attack.
+27=Triangle Attack 2	Enables participation in a three-Knight Triangle Attack.
+28=Usage prohibited	Bugs the game. Don't use without replacing default functionality.
+//特性4
+31=Disable Exp Gain	Prevents experience gain and disables the Silencer skill.\r\nBy default, set to final bosses.\r\nCan be set on any unit to meet user needs.
+32=Silencer/Lethality	Grants the Silencer / Lethality skill.\r\nActivation % is 1/2 on critical hit.\r\nDefault set to the Assassin class.
+33=Magic Seal	Grants a Magic Sealing area surrounding a unit.\r\nEnemy-only.
+34=Droppable Item	Sets the last item in inventory to be dropped upon defeat.
+35=Eliwood Lock	Allows equipping of weapons locked to the Eliwood lock.\r\nBy default this unlocks the Rapier and Durandal.
+36=Hector Lock	Allows equipping of weapons locked to the Hector lock.\r\nBy default this unlocks the Wolf Beil and Armads.
+37=Lyndis Lock	Allows equipping of weapons locked to the Lyn lock.\r\nBy default this unlocks the Mani Katti and Sol Katti.
+38=Athos Lock	Allows equipping of weapons locked to the Athos lock.\r\nBy default this unlocks the Forblaze.

@@ -1,0 +1,7 @@
+#define csvmacro000(arg000,arg001,arg002,arg003) "BYTE arg000 arg001 arg002 arg003; "
+
+TorchWeapons_Table:
+csvmacro000(0x09,0x05, 0x01,0x00)	//Rapier + 5 quare, +1 quare(if theif)
+csvmacro000(0x03,0x02, 0x01,0x00)	//Steel Sword + 2 quare , +1 quare(if theif)
+
+csvmacro000(0x00,0x00,0x00,0x00)	//Term

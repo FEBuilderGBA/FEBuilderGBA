@@ -1,0 +1,27 @@
+﻿0000000000000000	结束（删除自己）[TERM]	{TERM}	{CLEAR}
+00001000ZZZZZZZZ	结束2 [ZZZZZZZZ::Unk1] (删除自己)[TERM]	{TERM}	{CLEAR}
+01000000ZZZZZZZZ	设置名称指针 [ZZZZZZZZ:指针_文本:名称]	{GOLD}
+02000000ZZZZZZZZ	调用程序 [ZZZZZZZZ:指针_ASM:函数] (理由: r0=结构 Ptr)	{JUMP}
+03000000ZZZZZZZZ	设置循环程序 [ZZZZZZZZ:指针_ASM:函数] 和收益{JUMP}	{LOOP}
+04000000ZZZZZZZZ	设置析构函数 [ZZZZZZZZ:指针_ASM:函数]
+05000000ZZZZZZZZ	调用新的子程序 [ZZZZZZZZ:指针_特效:子程序]	{JUMP}
+06000100ZZZZZZZZ	调用新的子程序 [ZZZZZZZZ:指针_特效:子程序] 和收益	{JUMP}
+07000000ZZZZZZZZ	调用新的子程序 [ZZZZZZZZ:指针_特效:子程序]	{JUMP}
+08000000ZZZZZZZZ	只有在类型为struct的情况下继续 [ZZZZZZZZ:指针_特效:特效] 存在，产量没有转发，否则
+09000000ZZZZZZZZ	删除给定类型的所有结构 [ZZZZZZZZ:指针_特效:特效]	{CLEAR}
+0A000000ZZZZZZZZ	清除给定类型的所有结构的回调[ZZZZZZZZ:指针_特效:特效]
+0B00YYYY00000000	定义标签 [YYYY:标签_有条件:标签] (本身并没有做任何事情)	{COND}
+0C00YYYY00000000	转到标签 [YYYY:转到_有条件:标签]	{COND}
+0D000000ZZZZZZZZ	将代码跳转到 [ZZZZZZZZ:指针_ASM:函数]	{JUMP}
+0E00YYYY00000000	在给定的时间内睡眠 [YY::等待框架] (设置回调睡眠回调)	{WAIT}
+0F00YY0000000000	存储字节 [YY::字节] 到结构中的字段26 (还未知用途，可能是将数据传递给例程？)
+1000000000000000	收益 (停止执行，直到下一次给解释者打电话)	{WAIT}
+1100000000000000	如果存在至少一个相同类型的其他结构，则删除自身	{CLEAR}
+1200000000000000	在字段27中设置位4
+1300000000000000	继续（什么都不做）	{LOOP}
+14000000ZZZZZZZZ	调用程序 [ZZZZZZZZ:指针_ASM:函数].如果例程返回1，则不跳转，否则继续	{JUMP}
+1500000000000000	继续（什么都不做）{LOOP}
+16000000ZZZZZZZZ	调用程序 [ZZZZZZZZ:指针_ASM:函数]. 如果例程返回0，则收益，否则继续.	{JUMP}
+1700000000000000	删除所有其他相同类型的实例	{CLEAR}
+1800YYYYZZZZZZZZ	调用程序 [ZZZZZZZZ:指针_ASM:函数] 同 r0=sarg & r1=结构 (而不是 r0=结构)	{JUMP}
+1900000000000000	没有被000C识别，与000B相同 (加入0013和0015中有效无用)

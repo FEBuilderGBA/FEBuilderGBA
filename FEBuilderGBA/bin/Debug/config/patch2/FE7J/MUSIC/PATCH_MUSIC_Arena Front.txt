@@ -1,0 +1,10 @@
+NAME=MUSIC_闘技場_受付
+NAME.en=MUSIC_Arena Front
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08042c6a 0x08042f36 0x080b3d38
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_体育场_接待

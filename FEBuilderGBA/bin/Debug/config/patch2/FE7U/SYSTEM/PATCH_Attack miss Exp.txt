@@ -1,0 +1,12 @@
+
+NAME=攻撃ミス経験値
+NAME.en=Attack miss Exp
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x29f4e
+
+NAME.zh=进攻体验错过经验

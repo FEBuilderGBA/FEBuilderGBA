@@ -1,0 +1,28 @@
+﻿NAME=状態異常剣
+NAME.zh=状态异常剑
+NAME.en=status ailment sword
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x017680=0x30 0x30 0x0 0x29 0x4 0xD0 0xF0 0x22 0xA 0x40 0x1 0xD1 0x50 0x22 0x11 0x43 0x1 0x70 0x70 0x47 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+BIN:0x017680=00017680.bin
+BIN:0x02B58C=0002B58C.bin
+BIN:0x02B824=0002B824.bin
+BIN:0x0562E9=000562E9.bin
+BIN:0x07CCDA=0007CCDA.bin
+
+BIN:$FREEAREA:0x08FFFEC0=effect_noanime.bin
+BIN:$FREEAREA:0x08FFFF30=effect(nop)2.bin
+BIN:$FREEAREA:0x08FFFF80=aki.bin
+
+JUMP:0x7CCE0:$NONE=effect_noanime.bin
+JUMP:0x562EC:$NONE=effect(nop)2.bin
+JUMP:0x2B590:$NONE=aki.bin
+
+
+INFO=追加効果で、6=睡眠、 7=バーサク、8=サイレス、効果をそれぞれ与えることができる武器を作れるようになります。
+AUTHOR=aera,stein
+INFO.en=6=Sleeping, 7=Berserk, 8=Silence, we can make weapons that can give each effect.
+INFO.zh=6=睡眠，7=狂乱，8 =沉默，我们可以制造能产生各种效果的武器。
+
+

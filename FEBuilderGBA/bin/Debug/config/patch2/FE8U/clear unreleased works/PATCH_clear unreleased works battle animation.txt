@@ -1,0 +1,29 @@
+NAME=ボツデータのクリア 戦闘アニメーション
+NAME.en=clear unreleased works: battle animation
+
+PATCHED_IF:0xC258A4=0x00 0x00 0x00 0x00
+IF:0xC258A4=0x10 0x00 0x20 0x00
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xC258A4:974=08C25C72 //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xCBFAD8:974=08CBFEA6 //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xCBFEA8:974=08CC0276 //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xD2B5F0:974=08D2B9BE //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xD2D080:974=08D2D44E //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xD7E080:974=08D7E44E //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xD7E450:974=08D7E81E //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xD914A0:974=08D9186E //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xDCB4B0:974=08DCB87E //ボツデータ 空っぽの戦闘シート	 (974bytes)
+CLEAR:0xDD2CA8:3246=08DD3956 //ボツデータ スケルトン槍	 (3246bytes)
+CLEAR:0xDD8604:2006=08DD8DDA //ボツデータ スケルトン弓の待機モーション	 (2006bytes)
+CLEAR:0xDFB6D8:974=08DFBAA6 //ボツデータ 空っぽの戦闘シート	 (974bytes)
+
+
+
+INFO=ボツデータの戦闘アニメデータをゼロクリアします。\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\nこの領域は連続していないのですが、合計14992byte確保できます。
+
+INFO.en=Zero clear the battle animation data of the boots data.\r\nThis makes it possible to reuse this area when rebuilding.\r\nThis area is not continuous, but a total of 14992 bytes can be secured.
+NAME.zh=清除引导数据战斗动画
+INFO.zh=清零引导数据的战斗动画数据。\r\n这使得重建时可以重用该区域。\r\n该区域不连续，但总共可以保证14992个字节。

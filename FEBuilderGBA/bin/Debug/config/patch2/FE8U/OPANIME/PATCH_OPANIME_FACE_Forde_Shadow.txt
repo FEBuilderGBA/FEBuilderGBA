@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_フォルデ_影
+NAME.en=OP Anime Face: Forde (Shadow)
+NAME.zh=OPANIME_FACE_FOLD ___影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C9848//0x08AEBCEC
+PALETTE_POINTER=0x000C97DC//0x08AEAB50
+
+INFO=Edit and import OP Anime Graphic for the Forde Face (Shadow) image.

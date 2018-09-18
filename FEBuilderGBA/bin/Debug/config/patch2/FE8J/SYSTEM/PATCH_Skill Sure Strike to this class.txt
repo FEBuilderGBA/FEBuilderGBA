@@ -1,0 +1,17 @@
+﻿NAME=スキル必的_このクラスから
+NAME.en=Skill Sure Strike from this class
+NAME.zh=技能必中_这个职业前
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x802B19A
+ADDRESS_TYPE=CLASS
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

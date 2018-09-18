@@ -1,0 +1,11 @@
+﻿
+NAME=HP上限 敵軍
+NAME.en=HP Limit Enemy
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS=0x00017ef0 0x00017f08 0x0002be8e 0x0002bea8
+HEX=FALSE
+
+NAME.zh=敌军HP上限

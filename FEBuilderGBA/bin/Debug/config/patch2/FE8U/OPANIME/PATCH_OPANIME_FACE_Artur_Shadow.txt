@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_アスレイ_影
+NAME.en=OP Anime Face: Artur (Shadow)
+NAME.zh=OPANIME_FACE_ Asuray_shadow
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C9624//0x08AE9CA4
+PALETTE_POINTER=0x000C9544//0x08AE84BC
+
+INFO=Edit and import OP Anime Graphic for the Amelia Face (Shadow) image.

@@ -1,0 +1,20 @@
+﻿
+NAME=エクストラ 通信闘技場 削除
+NAME.en=Extra Link Arena removed.
+NAME.zh=系统_删除额外通信竞技场
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0B03C6
+COMBO=表示|0xF7 0xF7 0xB5 0xFC|削除|0x00 0x00 0x00 0x20
+COMBO.en=show|0xF7 0xF7 0xB5 0xFC|delete|0x00 0x00 0x00 0x20
+
+INFO=エクストラメニューにある、通信闘技場を削除します。\r\n通信闘技場で使われるリソースを潰してしまった場合などに利用します。
+
+COMBO.zh=显示|0xF7 0xF7 0xB5 0xFC|删除|0x00 0x00 0x00 0x20
+
+
+INFO.en=Delete the Link Arena in the extra menu.\r\nIt is used when collapsing resources used in the communication stadium.
+INFO.zh=删除额外菜单中的通讯竞技场。\r\n在通信竞技场使用的资源崩溃时使用。

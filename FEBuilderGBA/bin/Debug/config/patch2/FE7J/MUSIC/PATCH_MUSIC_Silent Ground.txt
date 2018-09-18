@@ -1,0 +1,10 @@
+NAME=MUSIC_ちりばめた希望
+NAME.en=MUSIC_Silent Ground
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080bab9a
+ADDRESS_TYPE=SONG
+
+NAME.zh=MUSIC_希望散布希望

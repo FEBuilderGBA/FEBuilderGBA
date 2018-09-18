@@ -1,0 +1,26 @@
+00=Behavior probability 100%
+01=Behavior probability 80%
+02=Action probability 50%
+03=Action probability 100%, attack only when adjacent
+04=Action probability 80%, Attack only when adjacent
+05=Action probability 50%, attack only when adjacent
+06=Do not act(AI 2=Movement only)
+07=Do not attack [0xC06CBC] units	{J}
+07=Do not attack units of [0xB979E8]	{U}
+08=Do not attack [0xC06D2C] units	{J}
+08=Do not attack units of [0xB97A58]	{U}
+09=Do not attack units of [0xC063CA]	{J}
+09=Do not attack [0xB970F6] units	{U}
+0A=Aim only at [0xC06D94]	{J}
+0A=Aim only at [0xB97AC0]	{U}
+0B=Behavior probability 100%
+0C=Attack when attacking with half movement
+0D=Attack if enemies are in the command range of the commander
+0E=If there are units with HP below 50% do recovery
+0F=Alternate 0x0E and 0x03 AI
+10=Seriously
+11=I will not attack until the key of the door is gone, or the door is all open
+12=Do not attack [0xC06CE0]	{J}
+12=Do not attack [0xB97A0C]	{U}
+13=Do not attack [0xC06D08]	{J}
+13=Do not attack [0xB97A34]	{U}

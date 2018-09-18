@@ -1,0 +1,11 @@
+﻿NAME=呼魔_魔王の一度に大量に召喚するを実行できるクラス
+NAME.en=Summons_Demon_King_Class_Can_Many_Summons
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0244B6
+ADDRESS_TYPE=CLASS
+
+NAME.zh=技能呼魔_可以召唤大量的职业

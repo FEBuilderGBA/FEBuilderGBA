@@ -1,0 +1,3 @@
+Up with Arch: Adjacent ally units gain[N]
+might equal to half this unit's might.[N]
+(Only if name starts with "Arch")[X]

@@ -1,0 +1,3 @@
+0805C518=-
+0805C510=Recover Staff
+0805C514=Silence, Sleep, Berserk

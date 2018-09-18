@@ -1,0 +1,31 @@
+フィールド	0201	3	4	6	0	Fields	
+フィールド2	0201	3	4	6	0	Fields	
+フィールド3	0201	A0	4	6	0	Fields	
+雪フィールド	66	67	68	6A	6B	Snow	
+雪フィールド2	66	67	68	0	0	Snow	
+雪フィールド3	66	67	68	6A	0	Snow	
+村	12	13	14	0	0	Village	
+要塞	21	22	23	0	0	Fort	
+城	2C	2D	2E	0	0	Castle	
+城2	2C	5D	2E	0	0	Castle	
+城3	2C	C3	2E	C5	0	Castle	
+城4	2C	D5	2E	C5	0	Castle	
+西方	33	34	35	6	0	Frontier	
+西方村	3E	3F	40	0	0	Frontier Village
+西方要塞	45	46	47	0	0	Frontier Castle
+橋	4C01	4D	4E	6	0	Bridge
+砂漠	53	54	55	0	0	Desert
+砂漠2	53	54	55	6	0	Desert
+雪要塞	73	74	75	0	6B	Snow Castle
+雪要塞2	73	CD	75	0	0	Snow Castle
+山	7A	7B	7C	6	0	Mountainous
+敵本拠地	81	82	83	85	86	Stronghold
+寺院	8E	8F	90	0	0	Temple
+寺院2	8E	C9	90	0	0	Temple
+寺院3	8E	8F	90	0	96	Temple
+草原	A5	A6	A7	6	0	Plains
+草原2	A5	AB	AC	6	0	Plains
+サカ城	B1	B2	B3	0	0	Plains Castle
+西方要塞2	45	B8	47	0	0	Frontier Castle
+西方要塞3	45	B8	47	0	BA	Frontier Castle
+洞窟	53	BD	BE	0	0	Cave

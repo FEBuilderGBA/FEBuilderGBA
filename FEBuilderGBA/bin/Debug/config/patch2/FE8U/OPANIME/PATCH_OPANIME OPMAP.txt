@@ -1,0 +1,23 @@
+NAME=OPANIME MAP
+NAME.en=OP Anime World Map
+NAME.zh=OPANIME MAP
+
+//画像パッチとして実装します
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=8
+
+//圧縮画像
+ZIMAGE_POINTER=0xC6DEC
+//圧縮TSA
+ZTSA_POINTER=0xC6DF0
+//非圧縮パレット
+PALETTE_POINTER=0xC7034
+
+INFO=Edit and import OP Anime Graphic for the world map image.\r\nAffects OP Anime image only.

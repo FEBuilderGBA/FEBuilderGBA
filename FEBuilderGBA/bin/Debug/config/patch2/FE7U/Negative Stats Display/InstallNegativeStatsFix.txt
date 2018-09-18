@@ -1,0 +1,19 @@
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+
+//Negative Stat Boosts
+  ORG $6242
+  SHORT 0
+  jumpToHack(NegStatBoosts)
+  ORG $B89688 //minus sign position fix
+  WORD 0 0 0 $3ff0 $eaac $3ff0
+  ORG $7F800 //drawing the bars
+  jumpToHack(NegativeStatBars)
+
+ORG $DF21D0  //Change to wherever your free space is
+  NegStatBoosts:
+  #incbin "negativestatboosts2.dmp" //change to wherever you put the files
+
+  ALIGN 4
+  NegativeStatBars:
+  #incbin "negativestatbar2.dmp" //change to wherever you put the files

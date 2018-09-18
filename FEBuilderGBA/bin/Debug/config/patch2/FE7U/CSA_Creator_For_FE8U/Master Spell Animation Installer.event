@@ -1,0 +1,27 @@
+//Master Animation Installer
+//Macros
+#define setCSATable(index, framedata, RTLFG, LTRFG, RTLBG, LTRBG) "PUSH; ORG CSATable+(index*20); POIN framedata RTLFG LTRFG RTLBG LTRBG; POP"
+#define setCustomSpell_dim(index) "PUSH; ORG SpellTable+(index*4); POIN CSAEngine_Dim|1; POP"
+#define setCustomSpell_nodim(index) "PUSH; ORG SpellTable+(index*4); POIN CSAEngine_NoDim|1; POP"
+
+#ifdef _FE7_
+  #define SpellTable $BA13D0
+  #define CSATable $0 //Ç«Ç§Çπóeó Ç™ë´ÇËÇ»Ç¢ÇÃÇ≈FEBuilderÇ≈çƒämï€Ç∑ÇÈ
+  
+  PUSH
+//  ORG CSATable
+//  #incbin BlankCSATable.dmp
+
+  ORG $CB680
+  CSAEngine:
+  #incbin "CSA System_fe7.dmp" //the custom spell engine. All custom spells point here. //HINT=ASM
+  POIN CSATable //needed for the routine
+  POP
+
+  #define CSAEngine_Dim $CB6EC
+  #define CSAEngine_NoDim $CB798 //the last word in the dmp, this should be updated if you edit the engine.
+#endif
+
+//animations go here
+
+//#include "My Spells/Some Spell.event" //for example

@@ -1,0 +1,30 @@
+IF:0x74ba6=0x00 0x00 0x00 0x4B 0x18 0x47
+
+FORM=MapSettingForm
+J_28=味方から攻撃時BGM
+J_30=敵から攻撃時BGM
+J_32=友軍から攻撃時BGM
+
+J_28.en=When attacking from a player BGM
+J_30.en=When attacking from an enemy BGM
+J_32.en=When attacking from an ally BGM
+J_28.zh=从自軍BGM进攻时
+
+J_30.zh=从敌方BGM进攻时
+
+J_32.zh=BGM从朋友进攻时
+
+
+
+
+J_28:HINT=戦闘BGMを切り替えます。
+J_28:HINT.en=Switch battle BGM.
+J_30:HINT=戦闘BGMを切り替えます。
+J_30:HINT.en=Switch battle BGM.
+J_32:HINT=戦闘BGMを切り替えます。
+J_32:HINT.en=Switch battle BGM.
+J_28:HINT.zh=切换战斗BGM。
+J_30:HINT.zh=切换战斗BGM。
+J_32:HINT.zh=切换战斗BGM。
+
+

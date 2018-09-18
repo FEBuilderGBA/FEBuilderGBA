@@ -1,0 +1,13 @@
+NAME=SetupNewWMRouteの修正 既に引いた道を再び引かない
+NAME.en=Fix SetupNewWMRoute. Do not draw the road again.
+
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+BINF:0xC16FC=SetupNewWMRoute_Fix.dmp
+PATCHED_IF:0xC16FC=0x70 0xB5 0x20 0x26 0x8D 0x5D
+
+INFO=カルチノとグラドの両方のルートに行くような、大陸を周回させるような大規模な改造をする場合発生する問題を解決するパッチです。\r\nSetupNewWMRoute関数にはバグがあり、一度描いた道を再び描くと使えるデータがどんどん減ります。\r\nその結果、道を描画するバッファが足りなくなり、終章への道を表示しようとすると、バッファが足りなくなってしまいます。\r\n初期のkaitou と midori で発生しました。(現在は両方とも解決済み)\r\n途中で一度でもリセットして、ロードしなおしていれば、メモリがクリアされ問題は発生しません。\r\nまた、イベントを調整して、道を重複して描画しないようにすれば解決できます。\r\n\r\nこのパッチは、SetupNewWMRoute関数自体を書き直して、重複した道を描画しても正しく動作するようにしています。
+INFO.en=This patch is solves problems that arise when doing a massive remodeling that will go around both continents, such as going to both routes the Carcino and Grado routes.\r\nThere is a bug in the SetupNewWMRoute function, and as you draw the route once drawn again, data that can be used decreases more and more.\r\nAs a result, there are not enough buffers to draw the roads, and trying to display the way to the final chapter will result in a buffer shortage.\r\nOccurred in early kaitou and midori. (Both are resolved now)\r\nIf you reset it even once in the middle and load again, the memory is cleared and the problem does not occur.\r\nYou can solve it by adjusting the event and do not draw the road duplicately.\r\n\r\nThis patch rewrite the SetupNewWMRoute function itself to make it work properly even if you draw duplicate roads.\r\n
+NAME.zh=修复了SetupNewWMRoute我不会画回我已经画过的路
+INFO.zh=它是一个补丁，可以解决在进行大规模改造时出现的问题，例如绕过两大洲，例如前往卡里诺和高兴的路线。\r\nSetupNewWMRoute函数中存在一个错误，当您再次绘制路径时，可以使用的数据会越来越多。\r\n因此，没有足够的缓冲区来绘制道路，并且尝试显示到最后一章的路径将导致缓冲区短缺。\r\n发生在早期的开头和midori（两者现已修复）\r\n如果您在中间重置一次并再次加载，则清除内存并且不会出现问题。\r\n您可以通过调整事件来解决它，而不是重复绘制道路。\r\n\r\n此补丁重写了SetupNewWMRoute函数本身，即使您绘制重复的道路也能正常工作。

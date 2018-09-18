@@ -1,0 +1,33 @@
+NAME=売値拡張
+NAME.en=Sell Price expansion
+
+IF:0xB9DEC=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x88 0x42 0x06 0xDB 0x08 0x1C 0x04 0xE0 0x30 0x1C 0xC1 0x0F 0x40 0x18 0xC0 0x03 0x00 0x0C 0x70 0xBC 0x02 0xBC 0x08 0x47 0xE4 0x73 0x01 0x08 0xD0 0x60 0x08 0x08 0x74 0x63 0x0D 0x08 0xFF 0xFF 0x00 0x00
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+B1:DECIMAL=Sell(%)
+W2:FLAG=Flag / ANY=0x00
+NAME.zh=扩张价格
+
+INFO=リストにあるアイテムは、売値を一律半額ではなく指定した売値(%)にします。\r\n100%で買値と同じになります。\r\n200%にすると買った時の倍で売れます。\r\n売値が上限の65535を超えた場合は自動的に補正されます。\r\n何も設定しない場合は、通常通りf50%を指定したことになります。\r\nフラグでどのレートを利用するかの設定も可能です。街ごとに変えて交易を作ってみるのも面白いでしょう。
+
+INFO.en=Items in the list will be sold price (%) specified instead of half price.\r\nIt is the same as the bid price at 100%.\r\nIf it is 200% it will sell at double the time you bought it.\r\nIf the selling price exceeds the upper limit of 65535, it will be automatically compensated.\r\nIf you do not set anything, you have specified 50% as usual.\r\nYou can also set which rate to use with the flag.It would be interesting to try to make trade by changing every town.
+INFO.zh=列表中的项目将是指定的售价（％）而不是半价。\r\n它与100％的出价相同。\r\n如果它是200％，它会以你购买它的两倍的价格出售。\r\n如果售价超过65535的上限，它将自动得到补偿。\r\n如果您没有设置任何内容，则照常指定f50％。\r\n您还可以设置标志使用的速率。尝试通过改变每个城镇来进行交易会很有趣。

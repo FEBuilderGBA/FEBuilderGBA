@@ -1,0 +1,3 @@
+//PATCHED_IF:0x2DC0D0=0x00 0x28 0x00 0xD0
+//BIN:0x2DC078=2DC078.bin
+//AUTHOR=Anti-Huffman Patch by Hextator   Transplant:7743

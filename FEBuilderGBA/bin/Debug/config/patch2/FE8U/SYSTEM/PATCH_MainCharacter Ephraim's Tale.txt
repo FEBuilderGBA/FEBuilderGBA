@@ -1,0 +1,16 @@
+NAME=主人公_エフラム編
+NAME.en=Main Character - Ephraim's Tale
+NAME.zh=主要人物_埃夫林故事
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x037B8A 0x037B96 0x33274 0x3327C
+ADDRESS_TYPE=UNIT
+
+AUTHOR=7743
+
+INFO=拠点を制圧できる主人公ユニットを設定します。
+INFO.en=Set the leading character unit that can seize.\r\n
+INFO.zh=设置一个可以控制基地的主角单位。

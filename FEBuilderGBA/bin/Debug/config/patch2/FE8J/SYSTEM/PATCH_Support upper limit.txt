@@ -1,0 +1,18 @@
+﻿
+NAME=支援会話回数の上限
+NAME.zh=支援对话上限
+NAME.en=Support upper limit
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+
+ADDRESS=0x0282D2 0x0282E2
+
+INFO=支援会話を行える数-1 を設定する。最大9(10回の支援会話をサポート)
+AUTHOR=Brendor http://feuniverse.us/t/changing-fe7-support-limits/519   transport:7743
+INFO.en=Set the number of support conversations to be -1.Up to 9 (Supports 10 support conversations).
+NAME.zh=支援对话限制
+INFO.zh=将支援对话的数量设置为-1。最多9个（支持10个支援对话）
+

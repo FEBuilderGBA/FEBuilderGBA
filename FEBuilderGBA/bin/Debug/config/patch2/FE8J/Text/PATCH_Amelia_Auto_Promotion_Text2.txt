@@ -1,0 +1,12 @@
+NAME=アメリア 見習いクラス自動CC セリフ2
+NAME.en=Amelia_Trainee_Auto_Promotion_Text2
+NAME.zh=阿米莉亚_见习职业_自动_CC_对话2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+DATASIZE=2
+TAG=#TEXT
+
+ADDRESS=0x081F6D3C
+ADDRESS_TYPE=TEXT
+

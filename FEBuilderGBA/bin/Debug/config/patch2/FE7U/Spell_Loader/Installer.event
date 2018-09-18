@@ -1,0 +1,8 @@
+PUSH
+ORG $52b38
+SHORT $4a00 $4710
+POIN HackLocation+1
+POP
+
+HackLocation:
+#incbin "_spellLoader_fe7.dmp"

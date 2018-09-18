@@ -1,0 +1,15 @@
+08023614=-
+0802358C=Heal, Mend, Recover, Tina Staff
+08023594=Physic
+0802360C=Fortify
+080235FC=Warp
+080235A4=Rescue
+080235B4=Restore
+080235C4=Silence
+080235CC=Sleep
+0802360C=Torch
+08023604=Hammerne
+080235D4=Berserk
+080235EC=Unlock
+080235E4=Barrier
+0802360C=Holy Maiden

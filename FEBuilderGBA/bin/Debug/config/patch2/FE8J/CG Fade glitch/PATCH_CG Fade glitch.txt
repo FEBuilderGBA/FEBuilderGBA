@@ -1,0 +1,14 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x0EFF4=0x0A 0x1C
+
+BIN:0xEDDE=EDDE.bin
+BIN:0xEFF4=EFF4.bin
+
+AUTHOR=Transplant:7743
+NAME.en=CG Fade glitch
+AUTHOR.en=Transplant:7743
+NAME.zh=CG淡入淡出
+AUTHOR.zh=Transplant:7743

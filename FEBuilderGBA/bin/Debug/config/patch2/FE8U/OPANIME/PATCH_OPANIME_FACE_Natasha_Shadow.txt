@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ナターシャ_影
+NAME.en=OP Anime Face: Natasha (Shadow)
+NAME.zh=OPANIME_FACE_ Natasha_shadow
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C94D0//0x08AE8AB8
+PALETTE_POINTER=0x000C93F4//0x08AE69EC
+
+INFO=Edit and import OP Anime Graphic for the Natasha Face (Shadow) image.

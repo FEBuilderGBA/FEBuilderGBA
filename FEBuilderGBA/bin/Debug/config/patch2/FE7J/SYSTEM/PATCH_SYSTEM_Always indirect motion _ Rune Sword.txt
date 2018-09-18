@@ -1,0 +1,12 @@
+NAME=常に間接モーション_ルーンソード
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0053540 0x0053528
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+NAME.en=Always indirect motion_Rune Sword
+NAME.zh=始终间接运动_符文剑

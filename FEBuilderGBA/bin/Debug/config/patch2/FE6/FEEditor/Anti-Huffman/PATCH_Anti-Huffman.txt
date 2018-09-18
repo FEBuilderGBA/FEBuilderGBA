@@ -1,0 +1,16 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x384c=0x03 0xB5 0x02 0xB0
+
+BIN:0x384c=384c.bin
+//無改造FE6用に、アドレスを変更します.
+//BIN:0xe00000=e00000.bin
+BIN:0x2dc460=2dc460.bin
+
+AUTHOR=Anti-Huffman Patch by Hextator   Transplant:7743
+
+INFO=FEのテキストは、サイズを減らすために、ハフマン符号化されています。\r\nそのためハフマン辞書にない文字を利用することができません。\r\nこのパッチは、それを解決するパッチです。\r\nハフマン符号化せずに直接データを格納できるようにします。\r\nこのパッチを利用することで、すべての文字を利用できるようになります。
+INFO.en=The text of FE is Huffman encoded to reduce size.\r\nTherefore, we can not use characters not in Huffman dictionary.\r\nThis patch is a patch that solves it.\r\nIt allows you to store data directly without Huffman coding.\r\nBy using this patch all characters will be available.
+INFO.zh=FE的文本是霍夫曼编码以减小尺寸。\r\n因此，我们不能使用不在霍夫曼词典中的字符。\r\n这个补丁是解决它的补丁。\r\n它允许你直接存储数据，而不需要霍夫曼编码。\r\n通过使用这个补丁，所有的角色都可以使用。

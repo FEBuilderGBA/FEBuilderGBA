@@ -1,0 +1,13 @@
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x188CC=0x00 0xB5 0xFE 0xF7
+
+BIN:0x188CC=188CC.bin
+
+AUTHOR=melee and magic fix  Hextator,Tequila,7743
+INFO=武器魔法を同時に利用できるパッチ
+
+INFO.zh=一个可以同时使用武器魔法的补丁
+INFO.en=A patch that can simultaneously use weapon magic

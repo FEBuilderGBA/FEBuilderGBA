@@ -1,0 +1,17 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $4e70		//FE8U
+jumpToHack(SpeedUpAnims)
+POP
+
+ALIGN 4
+SpeedUpAnims:
+#incbin "SpeedUpAnims.dmp"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

@@ -1,0 +1,17 @@
+NAME=敵ターンのディレイ削除
+NAME.en=Delay Deletion of Enemy Turn
+NAME.zh=删除敌方回合的延迟
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x039f1b
+
+COMBO=ディレイ削除 Delete delay|0xE0|ディレイする Delay|0xD1
+COMBO.en=Delete Delay|0xE0|Delay Delay|0xD1
+COMBO.zh=删除延迟删除延迟|0xE0|推迟延迟|0xD1
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e1690ea1
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e 1690 ea 1。
+AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#e1690ea1

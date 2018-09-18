@@ -1,0 +1,23 @@
+IF:0x89268=0x00 0x4B 0x9F 0x46
+
+FORM=UnitForm
+J_38=スキル1
+J_39=スキル2
+J_49=個人スキル
+J_38:NAME=J_38_SKILLASSIGNMENT_SCROLL1_B39
+J_39:NAME=J_39_SKILLASSIGNMENT_SCROLL2_B38
+J_49:NAME=J_49_SKILLASSIGNMENT_MASTERY
+
+J_38.en=Skill 1
+
+J_39.en=Skill 2
+
+J_49.en=Personal skills
+
+J_38.zh=技能1
+
+J_39.zh=技能2
+
+J_49.zh=个人技能
+
+

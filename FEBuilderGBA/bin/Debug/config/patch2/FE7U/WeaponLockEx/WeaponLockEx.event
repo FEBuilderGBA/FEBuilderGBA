@@ -1,0 +1,30 @@
+#ifdef _FE7_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $1636C
+jumpToHack(WeaponLockEx)
+POP
+
+ALIGN 4
+WeaponLockEx:
+#incbin "WeaponLockEx.dmp"
+POIN WeaponLockEx_Table
+
+#include "WeaponLockEx_Table.event"
+//@struct WeaponLockEx
+//@{
+//@	byte	item_id;	アイテム	00=ANY
+//@	byte	unit_id;	ユニット	00=ANY
+//@	byte	class_id;	クラス		00=ANY
+//@	byte	lv;			Unit LV		00=ANY
+//@	uhsort	flag;		フラグ		00=ANY
+//@	uhsort	00;			00			00=ANY
+//@}//sizeof(8bytes)
+
+
+#else
+    ERROR This version of Selection Quotes is for FE7!
+#endif

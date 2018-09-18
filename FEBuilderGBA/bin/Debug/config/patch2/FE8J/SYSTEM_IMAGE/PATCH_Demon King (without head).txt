@@ -1,0 +1,16 @@
+﻿NAME=魔王_頭なし
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=152
+PALETTE=1
+
+ZIMAGE_POINTER=0x078B9C//0x848CF0
+ZTSA_POINTER=0x079EB8//0x84C320
+PALETTE_POINTER=0x0728A8//0x84CB34
+
+
+AUTHOR=qps http://feuniverse.us/t/fe-builder-gba/2845/570
+NAME.en=Demon King Image (Headless)
+NAME.zh=魔王没有头

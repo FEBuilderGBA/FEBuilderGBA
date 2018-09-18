@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002,arg003,arg004,arg005,arg006,arg007,arg008) "BYTE arg000 arg001 ;SHORT arg002 arg003 arg004 arg005 arg006 arg007 arg008 "
+
+Transformation_Table:
+csvmacro000(0x3C,0xAA,0xC5,0xC4,0xC6,0xC7,0xDC,0xDE,0xDD)
+csvmacro000(0x0,0x0,0,0,0,0,0,0,0)

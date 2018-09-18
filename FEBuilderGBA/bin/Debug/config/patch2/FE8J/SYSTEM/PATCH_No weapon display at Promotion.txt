@@ -1,0 +1,26 @@
+
+NAME=CC時に武器表示無し
+NAME.en=No weapon display at Promotion
+NAME.zh=系统_在转职时没有武器显示
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=武器なし|ONN|武器あり|OFF
+COMBO.en=no weapons|ONN|with weapons|OFF
+COMBO.zh=没有武器|ONN|有武器|OFF
+
+ONN:0x0802F5C0=0x00 0x20 0x00 0x20
+ONN:0x080D1DE2=0x00 0x20 0x00 0x20
+
+OFF:0x0802F5C0=0xE7 0xF7 0x86 0xF9
+OFF:0x080D1DE2=0x44 0xF7 0x75 0xFD
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d7a92707
+
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d7a92707
+
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d7a92707
+
+
+

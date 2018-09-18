@@ -1,0 +1,19 @@
+
+NAME=デルフィが全特攻無効に
+NAME.en=Delphi Shield invalidates all special effects
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+ADDRESS=0x16a52
+COMBO=Default|OFF|fix|ONN
+
+AUTHOR=FE6解析資料
+
+ONN:0x016a52=0xC0 0x46
+OFF:0x016a52=0x15 0xD1
+AUTHOR.en=FE 6 analysis material
+NAME.zh=德尔福禁用所有特殊效果
+AUTHOR.zh=FE 6分析资料
+

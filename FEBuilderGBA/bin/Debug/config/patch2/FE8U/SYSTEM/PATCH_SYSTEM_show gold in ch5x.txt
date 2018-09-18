@@ -1,0 +1,14 @@
+NAME=ゴールドを表示 5x章
+NAME.en=Show gold in ch5x
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x024DF2
+
+COMBO=非表示|0x03 0xD0|解禁|0x00 0x00
+COMBO.en=Lock|0x03 0xD0|Unlock|0x00 0x00
+COMBO.zh=Lock|0x03 0xD0|Unlock|0x00 0x00
+
+NAME.zh=显示黄金第5x章

@@ -1,0 +1,12 @@
+NAME=MUSIC_いざ勝負
+NAME.en=MUSIC_Victory Now!
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080687de
+ADDRESS_TYPE=SONG
+
+NAME.zh=MUSIC_游戏

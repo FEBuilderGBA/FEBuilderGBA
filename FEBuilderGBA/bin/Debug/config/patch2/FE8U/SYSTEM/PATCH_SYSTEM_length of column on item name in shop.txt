@@ -1,0 +1,13 @@
+NAME=店でのアイテム名を表示する欄の長さ
+NAME.en=Modify Item Name Spacing In Shops
+NAME.zh=在商店中显示商品名称的列的长度
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16896
+
+INFO.en=Increase the hex value to expand the spacing for item name.\r\nAfter the value exceeds 19, 4-digit sale prices won't fit.\r\n
+
+AUTHOR=Tequila http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267

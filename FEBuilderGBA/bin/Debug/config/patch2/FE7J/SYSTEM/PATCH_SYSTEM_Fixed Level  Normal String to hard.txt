@@ -1,0 +1,15 @@
+
+NAME=難易度固定_ノーマル文字をハードに
+NAME.en=Fixed Level  Normal String to hard
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+COMBO=default|0xC4|Change|0xD0
+
+ADDRESS=0xA867C
+AUTHOR=スレ5章/ZxdcXp9氏 https://www58.atwiki.jp/fekai2/pages/58.html
+NAME.zh=固定难度_正常字符难
+AUTHOR.zh=线程5/ZxdcXp9 https://www58.atwiki.jp/fekai2/pages/58.HTML
+AUTHOR.en=Thread 5/ZxdcXp9 https://www58.atwiki.jp/fekai2/pages/58.html.
+

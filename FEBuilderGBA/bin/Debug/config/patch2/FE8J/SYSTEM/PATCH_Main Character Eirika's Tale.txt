@@ -1,0 +1,15 @@
+NAME=主人公_エイリーク編
+NAME.en=Main Character for Eirika's Tale
+NAME.zh=主要人物_艾瑞珂故事
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x037c1e 0x33180
+ADDRESS_TYPE=UNIT
+
+AUTHOR=7743
+INFO=拠点を制圧できる主人公ユニットを設定します。
+INFO.en=Set the leading character unit that can seize the base.
+INFO.zh=设置一个可以控制基地的主角单位。

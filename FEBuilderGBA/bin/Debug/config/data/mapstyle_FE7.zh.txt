@@ -1,0 +1,46 @@
+草原	1	2	3	5	0	Plains
+草原2	1	7	3	5	0	Plains
+一座城堡	A	B	C	0	0	Castle
+城堡2	A	29	C	0	0	Castle
+城堡3	A	3A	C	0	0	Castle
+城堡3	A	52	C	0	0	Castle
+城堡4	A	80	C	0	0	Castle
+城堡5	A	9B	C	0	0	Castle
+城堡6	A	9F	C	A1	0	Castle
+城堡7	A	DE	C	A1	0	Castle	{J}
+城堡7	A	DC	C	A1	0	Castle	{U}
+一个村庄	10	11	12	0	0	Village
+村2	10	22	12	0	0	Village
+村3	10	56	12	58	0	Village
+村4	10	73	12	58	0	Village
+村5	10	B7	12	58	0	Village
+村6	10	CD	12	0	0	Village	{J}
+村6	10	CB	12	0	0	Village	{U}
+村7	10	EC	12	0	0	Village	{J}
+村7	10	EA	12	0	0	Village	{U}
+村8	10	EC	12	58	0	Village	{J}
+村8	10	EA	12	58	0	Village	{U}
+领域	1D1C	1E	1F	5	0	Fields
+领域2	1D1C	33	1F	5	0	Fields
+领域3	1D1C	44	1F	5	0	Fields
+领域4	1D1C	48	1F	5	0	Fields
+领域5	1D1C	62	1F	5	0	Fields
+领域6	1D1C	66	1F	5	0	Fields
+领域7	1D1C	8A	1F	5	0	Fields
+领域8	1D1C	E5	1F	5	0	Fields	{J}
+领域8	1D1C	E3	1F	5	0	Fields	{U}
+山	6A	6B	6C	0	0	Mountainous
+山2	6A	6B	6C	5	0	Mountainous
+山3	6A	BD	6C	0	0	Mountainous
+山4	6A	D9	6C	0	0	Mountainous	{J}
+山4	6A	D7	6C	0	0	Mountainous	{U}
+要塞	16	77	18	0	0	Fort
+要塞2	16	17	18	0	0	Fort
+船	5B	5C	5D	5F	0	Ship
+沙漠	7B	7C	7D	0	0	Desert
+雪城堡	91	92	93	0	0	Snow Castle
+雪城堡2	91	92	93	0	98	Snow Castle
+火山	A7	A8	A9	0	AB	Lave Cave
+一个洞穴	AE	AF	B0	0	0	Cave
+龙的大门	C1	C2	C3	C5	0	Dragon Gate
+龙的大门2	C1	C2	C3	0	0	Dragon Gate

@@ -1,0 +1,17 @@
+NAME=Silence New Game music
+NAME.en=Toggle New Game Music On/Off
+NAME.zh=Silence New Game music
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xC4A0C
+COMBO=Silence|0x00|Default|0x03
+
+INFO.en=Edit field to toggle whether the music that plays after selecting a New Game mode plays or not.\r\nThis removes the music that would play during the first cutscene prior to the World Map Cutscene.\r\nThe ROM is default set to not skip.\r\n
+
+AUTHOR=circleseverywhere
+
+
+
+

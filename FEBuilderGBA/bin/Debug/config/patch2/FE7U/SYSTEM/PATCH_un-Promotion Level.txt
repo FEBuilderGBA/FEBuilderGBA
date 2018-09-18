@@ -1,0 +1,11 @@
+
+NAME=CC不可レベル
+NAME.en=un-Promotion Level
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002740A
+
+NAME.zh=CC不可用级别

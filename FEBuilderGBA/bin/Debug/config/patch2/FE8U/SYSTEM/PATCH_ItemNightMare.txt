@@ -1,0 +1,23 @@
+
+NAME=漆黒の悪夢
+NAME.en=Item Nightmare
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS_TYPE=ITEM
+ADDRESS=0x02FF78 0x032036 0x0322C6
+
+//Attack Item
+//0x02FF78 0x032036
+//
+//Use AI
+//0x0322C6
+
+AUTHOR=7743
+
+INFO=漆黒の悪夢のアイテムを変更します。\r\nこのアイテムで攻撃されると、そのユニットを中心に周囲のユニットがスリープ状態になります。
+INFO.en=Change the item of Nightmare.\r\nWhen attacked with this item, surrounding units will sleep, centering on that unit.
+NAME.zh=黑色的噩梦
+INFO.zh=改变喷黑噩梦项目。\r\n当受到这个项目的攻击时，周围的单位将在单位周围睡觉。

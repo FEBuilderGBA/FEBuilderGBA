@@ -1,0 +1,12 @@
+
+NAME=ソードマスター必殺補正
+NAME.en=Critical correction of sword master
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x080291E2
+HEX=false
+
+NAME.zh=剑法师特殊行动修正

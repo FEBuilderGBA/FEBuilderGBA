@@ -1,0 +1,14 @@
+﻿
+NAME=リライブの杖の回復量
+NAME.en=Recovery amount of Mend Staff
+
+IF:0x016D66=0x00 0x24
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16D9A
+DEFAULT=20
+HEX=FALSE
+NAME.zh=治疗之杖的恢复量

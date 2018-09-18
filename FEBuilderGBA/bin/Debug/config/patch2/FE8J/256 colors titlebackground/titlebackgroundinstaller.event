@@ -1,0 +1,36 @@
+#ifdef _FE8_
+
+	#include "Extensions/Hack Installation.txt" 
+
+//	ALIGN 4
+//	titlebackgroundimage:
+//	#incext compress "titlebackgroundimage.img.bin"
+//	
+//	ALIGN 4
+//	
+//	titlebackgroundpalette:
+//	#incext png2dmp "titlebackgroundimage.png" --palette-only
+//	
+	ALIGN 4
+	
+	titlebackgroundtsa:
+	#incbin "titlebackgroundtsa.bin"	//HINT=BIN
+	
+	ALIGN 4
+	
+//	PUSH; ORG $C5724; jumpToHack(titlebackgrounddrawer); POP
+	PUSH; ORG $CA4F4; jumpToHack(titlebackgrounddrawer); POP
+//	PUSH; ORG $C5738; SHORT 0xE030; POP
+//	PUSH; ORG $C57A8; SHORT 0xE048; POP
+	PUSH; ORG $CA508; SHORT 0xE030; POP
+	PUSH; ORG $CA578; SHORT 0xE048; POP
+
+	titlebackgrounddrawer:
+	#incbin "titlebackgroundasm.dmp"
+	WORD 0 //POIN titlebackgroundimage
+	WORD 0 //POIN titlebackgroundpalette
+	POIN titlebackgroundtsa
+
+#else
+	ERROR The 256 colors titlebackground installer is only for FE8!
+#endif

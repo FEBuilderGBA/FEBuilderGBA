@@ -1,0 +1,13 @@
+IF:0x19950=0x00 0x4A
+
+FORM=MapSettingForm
+J_146=第2パレット
+ADDRESS_TYPE=SONG
+
+J_146.en=Second Palette
+J_146.zh=第二个托盘
+
+
+J_146:HINT=フラグ0x28を有効にした時に、切り替えるパレットを指定します。
+J_146:HINT.en=When flag 0x28 is enabled, specify the new palette to use.
+J_146:HINT.zh=当标志0x28被启用时，指定要切换的调色板。

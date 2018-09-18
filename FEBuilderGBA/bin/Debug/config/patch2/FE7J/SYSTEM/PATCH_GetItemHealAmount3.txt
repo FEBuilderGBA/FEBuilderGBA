@@ -1,0 +1,15 @@
+
+NAME=リカバーの杖の回復量
+NAME.en=Recovery amount of Recover Staff
+
+IF:0x016FC2=0x00 0x24
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x1712C
+DEFAULT=80
+HEX=FALSE
+
+NAME.zh=恢复甘蔗的恢复量

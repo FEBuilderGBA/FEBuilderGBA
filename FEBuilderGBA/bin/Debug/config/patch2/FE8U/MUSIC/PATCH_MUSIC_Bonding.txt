@@ -1,0 +1,11 @@
+NAME=MUSIC_戦績
+NAME.en=Record Reel BGM
+NAME.zh=MUSIC_科斯
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08038232
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when defeated during an Arena Battle.

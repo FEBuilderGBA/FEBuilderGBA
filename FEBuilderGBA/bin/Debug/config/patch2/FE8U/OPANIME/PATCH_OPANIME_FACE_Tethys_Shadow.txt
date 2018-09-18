@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ティティス_影
+NAME.en=OP Anime Face: Tethys (Shadow)
+NAME.zh=OPANIME_FACE_ Titis ___影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C8F98//0x08ADF58C
+PALETTE_POINTER=0x000C8F94//0x08ADFA08
+
+INFO=Edit and import OP Anime Graphic for the Tethys Face (Shadow) image.

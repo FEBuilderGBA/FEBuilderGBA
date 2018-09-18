@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_グレン_影
+NAME.en=OP Anime Face: Glen (Shadow)
+NAME.zh=OPANIME_FACE_格伦_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C973C//0x08AEE218
+PALETTE_POINTER=0x000C96C0//0x08AED3E8
+
+INFO=Edit and import OP Anime Graphic for the Glen Face (Shadow) image.

@@ -1,0 +1,24 @@
+﻿
+NAME=輸送体解禁序章と1章
+NAME.en=Transporter unlock prologue and chapter 1
+NAME.zh=运输体解禁序章与1章
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x031590
+COMBO=禁止|0x01 0x28 0x03 0xDD|許可|0x00 0x00 0x00 0x00
+
+AUTHOR=出典:7743さんの書き込みより\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8
+
+
+AUTHOR.zh=来源:7743的写作\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8。
+
+AUTHOR.en=From source: 7743's write\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#f85b11f8.
+
+
+
+COMBO.en=Ban|0x01 0x28 0x03 0xDD|Authorization|0x00 0x00 0x00 0x00
+COMBO.zh=禁止|0x01 0x28 0x03 0xDD|允许|0x00 0x00 0x00 0x00

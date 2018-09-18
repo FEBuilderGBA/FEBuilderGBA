@@ -1,0 +1,12 @@
+IF:0x19950=0x00 0x49
+
+FORM=MapSettingForm
+J_45=第2パレット
+ADDRESS_TYPE=SONG
+
+J_45.en=Second Palette
+J_45.zh=第二个托盘
+
+J_45:HINT=フラグ0x28を有効にした時に、切り替えるパレットを指定します。
+J_45:HINT.en=When flag 0x28 is enabled, specify the new palette to use.
+J_45:HINT.zh=当标志0x28被启用时，指定要切换的调色板。

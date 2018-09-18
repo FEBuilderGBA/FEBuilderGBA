@@ -1,0 +1,14 @@
+
+NAME=ライブの杖の回復量
+NAME.en=Recovery amount of Heal Staff
+
+IF:0x016FC2=0x00 0x24
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17124
+DEFAULT=10
+HEX=FALSE
+NAME.zh=活藤的恢复量

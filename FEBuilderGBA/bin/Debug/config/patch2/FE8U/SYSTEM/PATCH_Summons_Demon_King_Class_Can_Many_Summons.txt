@@ -1,0 +1,10 @@
+NAME=呼魔_魔王の一度に大量に召喚するを実行できるクラス
+NAME.en=Demon King Multi-Summon Class
+NAME.zh=一个可以在Mutsugi_Maou一次性执行大量的类
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x024506
+ADDRESS_TYPE=CLASS

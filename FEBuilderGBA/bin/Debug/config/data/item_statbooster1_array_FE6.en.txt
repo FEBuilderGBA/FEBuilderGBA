@@ -1,0 +1,10 @@
+08027f62=-
+08027F10=Secret Book
+08027F18=Goddess Icon
+08027F20=Angelic Robe
+08027F28=Dragonshield
+08027F50=Energy Ring
+08027F30=Speedwing
+08027F38=Talisman
+08027F40=Boots
+08027F48=Body Ring

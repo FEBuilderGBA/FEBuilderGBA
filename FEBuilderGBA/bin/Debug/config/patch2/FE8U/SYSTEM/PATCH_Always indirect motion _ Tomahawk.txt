@@ -1,0 +1,15 @@
+NAME=常に間接モーション_トマホーク
+NAME.en=Always Ranged Animate: Tomahawk
+NAME.zh=始终间接运动_战斧
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x00582FC 0x00582E8
+ADDRESS_TYPE=ITEM
+
+INFO=Sets a weapon that always uses the ranged attack, even at melee range.\r\n
+
+AUTHOR=7743
+

@@ -1,0 +1,16 @@
+NAME=OPANIMEエフラム blur1
+NAME.en=OP Anime Ephraim (Blur 1)
+NAME.zh=OP动画伊弗列姆 blur1
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=160
+PALETTE=11
+
+ZIMAGE_POINTER=0x0C7744//0xABC22C
+ZTSA_POINTER=0x0C7768//0xABD174
+PALETTE_POINTER=0x0C74E8//0xAC1C8C
+
+INFO=Edit and import OP Anime Graphic for the Ephraim Blur 1 image.

@@ -1,0 +1,15 @@
+NAME=Hold A to speed up movement
+NAME.en=Enable Faster Movement By Holding A
+NAME.zh=Hold A to speed up movement
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x794ee
+COMBO=ON|0x00 0x00|Default|0x0B 0xD1
+
+INFO.en=Toggles whether game completion is required or not to allow for speeding up movement by holding A.\r\n
+
+AUTHOR=credit Gryz http://feuniverse.us/t/unit-movement-speed/920
+AUTHOR.en=Gryz http://feuniverse.us/t/unit-movement-speed/920
+AUTHOR.zh=credit Gryz http://feuniverse.us/t/unit-movement-speed/920

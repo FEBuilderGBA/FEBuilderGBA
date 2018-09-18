@@ -1,0 +1,8 @@
+01=Renewal
+02=Boon
+04=Miracle
+08=Wrath
+10=Luna
+20=Sol
+40=None
+80=Great Shield

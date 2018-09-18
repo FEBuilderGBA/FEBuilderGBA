@@ -1,0 +1,12 @@
+﻿NAME=章スタート時のライトエフェクト
+NAME.en=Light effect at chapter start
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=144
+HEIGHT=112
+
+Z256IMAGE_POINTER=0x01FF98//0xBB0BB8
+PALETTE_POINTER=0x01FFA0//0xBB1F28
+NAME.zh=章节开始时的光效果

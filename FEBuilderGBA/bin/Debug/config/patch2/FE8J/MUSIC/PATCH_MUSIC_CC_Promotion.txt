@@ -1,0 +1,10 @@
+﻿NAME.zh=音乐_转职
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08074c06
+ADDRESS_TYPE=SONG
+
+NAME.en=MUSIC_CC_Promotion

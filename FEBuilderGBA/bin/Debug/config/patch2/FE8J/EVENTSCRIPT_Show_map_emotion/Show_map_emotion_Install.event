@@ -1,0 +1,109 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+
+ALIGN 4
+Show_map_emotion_Install:
+#incbin "Show_map_emotion.dmp"
+POIN Show_map_emotion_Table
+
+
+ALIGN 4
+Show_map_emotion_Show_without_SE:
+#incbin "Show_map_emotion_Show_without_SE.dmp"
+
+ALIGN 4
+Show_map_emotion_Proc_without_SE:
+BYTE $02 $00 $00 $00; POIN Show_map_emotion_Show_without_SE+1;   //Call Routine
+BYTE $03 $00 $00 $00; WORD 0x0807AF1C+1 //Set Loop routine And Yield
+BYTE $03 $00 $00 $00; WORD 0x0807AFE0+1 //Set Loop routine And Yield
+BYTE $00 $00 $00 $00 $00 $00 $00 $00 //Deletes self
+
+emotion01_umm:
+#incext Png2Dmp 01_umm_7743.png --lz77
+
+emotion02_heart:
+#incext Png2Dmp 02_heart_kenpuku.png --lz77
+
+emotion03_nazo:
+#incext Png2Dmp 03_anger_kenpuku.png --lz77
+
+emotion04_cold_sweat:
+#incext Png2Dmp 04_cold_sweat_kenpuku.png --lz77
+
+emotion05_failed:
+#incext Png2Dmp 05_failed_kenpuku.png --lz77
+
+emotion06_hatena:
+#incext Png2Dmp 06_hatena_kenpuku.png --lz77
+
+emotion07_inspiration:
+#incext Png2Dmp 07_inspiration_kenpuku.png --lz77
+
+emotion08_lucky:
+#incext Png2Dmp 08_lucky_kenpuku.png --lz77
+
+emotion09_tenten:
+#incext Png2Dmp 09_tenten_kenpuku.png --lz77
+
+emotion10_zzz:
+#incext Png2Dmp 10_zzz_kenpuku.png --lz77
+
+emotion11_waiwai:
+#incext Png2Dmp 11_waiwai_kenpuku.png --lz77
+
+emotion12_age:
+#incext Png2Dmp 12_age_kenpuku.png --lz77
+
+emotion13_sage:
+#incext Png2Dmp 13_sage_kenpuku.png --lz77
+
+emotion14_blush:
+#incext Png2Dmp 14_blush_kenpuku.png --lz77
+
+emotion15_gaan:
+#incext Png2Dmp 15_gaan_kenpuku.png --lz77
+
+emotion16_dollmark:
+#incext Png2Dmp 16_dollmark_kenpuku.png --lz77
+
+emotion17_beer:
+#incext Png2Dmp 17_beer_kenpuku.png --lz77
+
+
+ALIGN 4
+Show_map_emotion_Table:
+WORD 0x08A1E3D4 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00   //0=!É}Å[ÉNå¯â âπ
+POIN emotion01_umm; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion02_heart; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion03_nazo; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion04_cold_sweat; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion05_failed; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion06_hatena; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion07_inspiration; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion08_lucky; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion09_tenten; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion10_zzz; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion11_waiwai; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion12_age; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion13_sage; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion14_blush; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion15_gaan; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion16_dollmark; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+POIN emotion17_beer; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
+
+WORD 0 0 0 0
+//struct {
+//	void*	image  32*8,  2*8
+//	void*   ROMTS
+//	void*	Procs
+//  ushort  Music
+//  ushort  padding
+//} //sizeof()==16 DisplayFogThingMaybe 
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

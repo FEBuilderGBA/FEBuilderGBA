@@ -1,0 +1,17 @@
+NAME=話すを選んだ後も行動できる
+NAME.en=Can act even after choosing to speak
+
+INFO=話すを選んだ後に完全に行動終了しなくなる(蒼炎の挙動になる)
+
+PATCHED_IF:0x32308=0x00 0x49 0x8F 0x46
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:$FREEAREA:1=TalkFixFE8J.bin
+JUMP:0x32308:$r1=TalkFixFE8J.bin
+
+AUTHOR=aera Original:Circleseverywhere
+
+INFO.en=After choosing to speak it will not completely end action (it will be the behavior of pheasant)
+NAME.zh=选择对话后，你还可以采取行动
+INFO.zh=选择对话后，它不会完全结束行动（这将是雉鸡的行为）

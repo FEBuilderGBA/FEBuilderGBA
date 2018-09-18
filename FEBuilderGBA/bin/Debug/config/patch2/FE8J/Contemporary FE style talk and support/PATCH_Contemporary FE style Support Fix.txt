@@ -1,0 +1,14 @@
+NAME=支援会話をしても行動済みにしない
+NAME.en=Contemporary FE style Support Fix
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x032384=0x00 0x4B
+BIN:$FREEAREA=Supportfix.dmp
+JUMP:0x032384:$r3=Supportfix.dmp
+
+AUTHOR=circleseverywhere Transport:7743 http://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13
+INFO=ユニットが支援会話をしても行動済みの状態にしません。\r\n支援会話後にもメニューを開いてアイテムを交換したりできるようになります。
+INFO.en=Even if the unit makes an assistance conversation, it does not make it in a state of action.\r\nAfter the support talk you can also open the menu and exchange items.
+NAME.zh=即使我提供支援对话，还可以打开菜单
+INFO.zh=即使该单位提供支援对话，也不会使其处于行动状态。\r\n支援对话后，您还可以打开菜单并交换道具。

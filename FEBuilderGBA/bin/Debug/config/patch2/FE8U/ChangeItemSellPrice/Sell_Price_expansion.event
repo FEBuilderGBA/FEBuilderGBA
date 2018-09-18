@@ -1,0 +1,27 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $B5268		//FE8U
+jumpToHack(Sell_Price_expansion)
+POP
+
+ALIGN 4
+Sell_Price_expansion:
+#incbin "Sell_Price_expansion.dmp"
+POIN SellPriceExpansion_Table
+
+#include "Sell_Price_expansion_Table.event"
+//@struct Sell_Price_expansion
+//@{
+//@	byte	item_id;	アイテム
+//@	byte	sell_parsent
+//@	uhsort	flag;		フラグ		00=ANY
+//@}//sizeof(4bytes)
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

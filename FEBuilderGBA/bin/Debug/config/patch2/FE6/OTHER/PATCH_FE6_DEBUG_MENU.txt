@@ -1,0 +1,19 @@
+NAME=FE6 DEBUG MENU
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=ON|ONN|OFF|OFF
+ONN:0x0AC6=0x1A 0xF0 0x0B 0xF8
+OFF:0x0AC6=0x12 0xF0 0x01 0xFF
+ONN:0x5C6728=0x00 0x00 0x00 0x00
+OFF:0x5C6728=0x61 0xA7 0x01 0x08
+ONN:0x5C7368=0x75 0xA6
+OFF:0x5C7368=0x6D 0xEA
+
+INFO=FE6のデバッグメニューを表示する
+AUTHOR=出典 http://feuniverse.us/t/fe6u-leftover-debug-stuff/3199
+INFO.en=Display FE6 debug menu
+AUTHOR.en=Source http: // feuniverse.us/t/FE6u - leftover - debug - stuff/3199.
+INFO.zh=显示FE6调试菜单
+AUTHOR.zh=来源http:// feuniverse。us/t/FE6u  - 剩下的 -  debug  -  stuff/3199。
+

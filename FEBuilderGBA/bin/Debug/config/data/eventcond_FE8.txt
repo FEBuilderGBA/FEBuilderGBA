@@ -1,0 +1,20 @@
+TURN	ターン条件
+TALK	会話条件(話すコマンド)
+OBJECT	マップオブジェクト(制圧ポイント、宝箱、扉、民家、村)
+ALWAYS	常時条件(範囲条件、勝利条件等)
+ALWAYS	(特殊)自軍ユニットを選択した瞬間
+ALWAYS	(特殊)自軍ユニットの移動先を決めた瞬間
+ALWAYS	(特殊)自軍ユニットを移動させた瞬間
+TUTORIAL	チュートリアル
+TRAP	トラップ(アーチ、ゴーゴンの卵、ダメージ床)
+TRAP	トラップ2(遺跡9Fのダメージ床のみ?)
+PLAYER_UNIT	初めて普通の時の自軍配置
+PLAYER_UNIT	難しい時の自軍配置
+FREEMAP_PLAYER_UNIT	魔物出現マップ時 自軍配置1
+FREEMAP_PLAYER_UNIT	魔物出現マップ時 自軍配置2
+FREEMAP_PLAYER_UNIT	魔物出現マップ時 自軍配置3
+FREEMAP_ENEMY_UNIT	魔物出現マップ時 魔物配置1
+FREEMAP_ENEMY_UNIT	魔物出現マップ時 魔物配置2
+FREEMAP_ENEMY_UNIT	魔物出現マップ時 魔物配置3
+START_EVENT	章開始イベント
+END_EVENT	章終了イベント

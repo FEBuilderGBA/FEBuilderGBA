@@ -1,0 +1,16 @@
+NAME=拠点パッチ
+TYPE=BIN
+TAG=#ENGINE
+NAME.en=BaseCamp Patch
+
+//既に適応されたかどうか
+PATCHED_IF:0x00023D16=0x12 0x4A 0x20 0x68 0x92 0x7B
+
+BIN:0x00023D16=00023D16.bin
+BIN:0x00023D5E=00023D5E.bin
+
+AUTHOR=aera
+INFO=拠点マップ(ディフォルトは、MAPID:0x39)以外では、支援をできないようにします。
+INFO.en=We will not be able to support other than the base camp (default: MAPID: 0x39).
+NAME.zh=基地补丁
+INFO.zh=我们将无法支持除基本映射之外的其他映射（默认值：MAPID：0x39）

@@ -1,0 +1,12 @@
+NAME=ロス 見習いクラス自動CC セリフ2
+NAME.en=Ross_Trainee_Auto_Promotion_Text2
+NAME.zh=罗斯_见习职业_自动_CC_对话2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+DATASIZE=2
+TAG=#TEXT
+
+ADDRESS=0x08207088
+ADDRESS_TYPE=TEXT
+

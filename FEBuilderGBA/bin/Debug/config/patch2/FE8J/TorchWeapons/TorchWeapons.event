@@ -1,0 +1,28 @@
+#ifdef _FE8_
+
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG $17672
+BYTE 0x00 0x00 //4byte margin
+jumpToHack_r1(TorchWeapons)
+POP
+
+ALIGN 4
+TorchWeapons:
+#incbin "TorchWeapons.dmp"
+POIN TorchWeapons_Table
+#include "TorchWeapons_Table.event"
+//struct TorchWeapons_Table
+//{
+//   byte    item_id;
+//   byte    add_range;
+//   byte    add_range_theif;
+//   byte    padding;
+//} //sizeof() == 4
+//
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

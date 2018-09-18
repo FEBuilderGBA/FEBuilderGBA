@@ -1,0 +1,28 @@
+NAME=誰かとの支援をもっているか判定する条件式を作成するイベント命令
+NAME.en=Add Event Condition: Support Check
+NAME.zh=协助检查support_check
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x30 0xB5 0xC0 0x46 0x08 0x48 0x05 0x68 0x32 0x24 0x28 0x5D 0x51 0x21 0x81 0x42 0x04 0xDD 0x01 0x34 0x38 0x2C 0xF8 0xDD 0x00 0x20 0x00 0xE0 0x01 0x20 0xC0 0x46 0x02 0x4A 0x10 0x63 0x00 0x20 0x30 0xBD 0x50 0x4E 0x00 0x03 0xB8 0x04 0x00 0x03=0x30 0xB5 0xC0 0x46
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=wakaresaseya_find_support_check.bin
+
+INFO=操作キャラが支援を持っているかという条件を作ります.
+INFO.en=Patches the game to set event conditions based on whether a character has support.\r\n
+INFO.zh=制定操作角色有支持的条件。
+
+AUTHOR=怪盗パッチ 7743
+AUTHOR.en=Kaito Port:7743
+AUTHOR.zh=Kaito补丁7743
+
+
+
+
+
+EVENTSCRIPT=400D0000{$L1:wakaresaseya_find_support_check.bin}	操作中のキャラの支援を確認 	{COND}
+EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_find_support_check.bin}	Confirm support of characters during operation Extended instructions.	{COND}
+EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_find_support_check.bin}	在操作期间确认字符的支持扩展说明。	{COND}

@@ -1,0 +1,14 @@
+NAME=OPANIME_FACE_ギリアム
+NAME.en=OP Anime Face: Gilliam
+NAME.zh=OPANIME_FACE_ Gilliam
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x000C9298//0x08AE3754
+PALETTE_POINTER=0x000C92A0//0x08AE41E4
+
+INFO=Edit and import OP Anime Graphic for the Gilliam Face image.

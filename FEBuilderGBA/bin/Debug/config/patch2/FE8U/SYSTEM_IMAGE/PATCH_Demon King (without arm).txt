@@ -1,0 +1,18 @@
+NAME=魔王 腕なし
+NAME.en=Demon King (without arm)
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=152
+PALETTE=1
+
+ZIMAGE_POINTER=0x07677C//0x7F4798
+ZTSA_POINTER=0x7F43F0//0x7F81D0
+PALETTE_POINTER=0x0702F8//0x7F85DC
+
+
+AUTHOR=qps http://feuniverse.us/t/fe-builder-gba/2845/570
+NAME.en=Demon King Image (Armless)
+NAME.zh=恶魔没有手臂

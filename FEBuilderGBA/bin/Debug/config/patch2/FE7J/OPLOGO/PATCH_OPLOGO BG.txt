@@ -1,0 +1,23 @@
+
+NAME=OPLOGO背景
+NAME.en=OPLOGO BG
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xb9d9c
+//無圧縮ヘッダーTSA
+HEADERTSA_POINTER=0xbb074
+//非圧縮パレット
+PALETTE_POINTER=0xbb064
+
+
+NAME.zh=OPLOGO背景

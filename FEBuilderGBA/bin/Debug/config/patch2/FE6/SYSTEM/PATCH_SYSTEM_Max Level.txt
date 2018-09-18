@@ -1,0 +1,20 @@
+
+NAME=最大レベル
+NAME.en=Maximum level
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+INFO=注意:最大31まで。それを超えるには上限突破パッチが必要です。
+
+ADDRESS=0x17754 0x025132
+HEX=false
+
+AUTHOR=Kao http://feuniverse.us/t/fe-builder-gba/2845/829
+INFO.zh=注意:最大31。要超过那个，需要上限突破补丁。
+INFO.en=Note: Up to 31.To exceed it we need a breakthrough patch.
+
+
+NAME.zh=最高等级

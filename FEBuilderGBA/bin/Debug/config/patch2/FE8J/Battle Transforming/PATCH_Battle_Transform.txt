@@ -1,0 +1,63 @@
+﻿
+NAME=戦闘変身パッチ
+NAME.en=Battle Transforming
+
+IF:$GREP4 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x51 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x00 0xE1 0x03 0x02 0x00 0x00 0x00 0x02=0x87 0x55 0x03 0x21
+IF_COMMENT=戦闘変身パッチを導入してください.
+IF_COMMENT.zh=请导入战斗变身补丁
+IF_COMMENT.en=Please install Battle Transforming patch
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x51 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x00 0xE1 0x03 0x02 0x00 0x00 0x00 0x02
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP16 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=クラス
+B1:ITEM=アイテム
+W2:BATTLEANIME=変身開始アニメ
+W4:BATTLEANIME=変身戦闘アニメ
+W6:BATTLEANIME=変身解除アニメ
+W8:BATTLEANIME=変身終了アニメ
+W10:SONG=変身開始時の音
+W12:SONG=変身完了時の音
+W14:SONG=変身解除の音
+
+B0:CLASS.zh=职业
+B1:ITEM.zh=道具
+W2:BATTLEANIME.zh=变身开始动画
+W4:BATTLEANIME.zh=变身战斗动画
+W6:BATTLEANIME.zh=变身解除动画
+W8:BATTLEANIME.zh=变身终了动画
+W10:SONG.zh=变身开始的音效
+W12:SONG.zh=变身完了的音效
+W14:SONG.zh=变身解除的音效
+
+B0:CLASS.en=Class ID
+B1:ITEM.en=Item ID
+W2:BATTLEANIME.en=Transform Beginning Anim
+W4:BATTLEANIME.en=Transformed Battle Anim
+W6:BATTLEANIME.en=Transform Back Anim
+W8:BATTLEANIME.en=Transform Finished Anim
+W10:SONG.en=Transform Start Sound
+W12:SONG.en=Transform Done Sound
+W14:SONG.en=Detransform Sound
+
+
+INFO=戦闘時に、変身できるクラスとアイテムを増やします。
+AUTHOR=Tequila ,UNKNOWN ,Aera , circleseverywhere. Transport by 7743 http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
+INFO.en=Allows adding additional classes and items that can transform. 
+NAME.zh=战斗変身补丁
+
+INFO.zh=在战斗中，增加可以改变的职业和道具。

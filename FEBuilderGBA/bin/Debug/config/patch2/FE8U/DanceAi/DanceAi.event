@@ -1,0 +1,26 @@
+#ifndef HAX_DANCEAI
+#define HAX_DANCEAI
+
+#ifndef _FE8_
+	ERROR DanceAi is for FE8
+#endif // _FE8_
+
+#include "Extensions/Hack Installation.txt"
+
+{
+
+PUSH
+	ORG $03A5AC // Dance Action Handler Pointer (replaces dummy handler)
+		POIN DanceAiDoAction
+
+	ORG $03FACA // At the end of the Staff Ai decision routine
+		SHORT $46C0 // align with nop
+		jumpToHack(DanceAiStaffHook)
+POP
+
+#include "src/DanceAi.lyn.event"
+#include "src/DanceAiStaffHook.lyn.event"
+
+}
+
+#endif // HAX_DANCEAI

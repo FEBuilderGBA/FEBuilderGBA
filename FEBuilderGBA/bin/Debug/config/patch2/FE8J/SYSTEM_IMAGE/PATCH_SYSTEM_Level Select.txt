@@ -1,0 +1,21 @@
+﻿
+NAME=難易度選択
+NAME.en=Level Select
+NAME.zh=系统_难易度选择背景
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xb0c34
+//非圧縮パレット
+PALETTE_POINTER=0xb0c3c
+
+

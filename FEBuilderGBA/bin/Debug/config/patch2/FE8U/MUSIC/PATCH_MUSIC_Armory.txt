@@ -1,0 +1,11 @@
+NAME=MUSIC_武器屋
+NAME.en=Armory BGM
+NAME.zh=MUSIC_武器商店
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080B4C02
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when visiting an Armory.

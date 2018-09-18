@@ -1,0 +1,36 @@
+//特性1
+01=Enable Door key	Enemy AI can use Door key.
+02=Enable Lockpick	Enemy AI can use lockpick.
+03=Enable Antitoxin	Enemy AI can use Antitoxin.
+04=?
+05=?
+06=?
+07=?
+08=?
+//特性2
+11=?
+12=?
+13=?
+14=?
+15=?
+16=?
+17=?
+18=?
+//特性3
+21=?
+22=?
+23=?
+24=?
+25=?
+26=?
+27=?
+28=?
+//特性4
+31=?
+32=?
+33=?
+34=?
+35=?
+36=?
+37=?
+38=?

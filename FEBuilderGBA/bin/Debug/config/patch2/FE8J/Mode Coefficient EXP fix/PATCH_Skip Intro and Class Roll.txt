@@ -1,0 +1,12 @@
+NAME=OPクラス紹介を無効にする
+NAME.en=Skip Intro and Class Roll
+NAME.zh=Skip Intro and Class Roll
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xCB2F9
+COMBO=Skip|0xe0|Default|0xD1
+
+INFO=Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
+

@@ -1,0 +1,21 @@
+NAME=移動の矢印を描画するときに乱数を使用しようしない
+NAME.en=Remove arrow wiggling advancing RN
+
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Remove|ONN|Default|OFF
+
+DETERMINATION_ADDRESS=0x01A774
+
+ONN:0x01A774=0x00 0x20 0x00 0x00
+OFF:0x01A774=0xE6 0xF7 0x84 0xFA
+
+
+AUTHOR=Crazycolorz5 http://feuniverse.us/t/fe8-remove-arrow-wiggling-advancing-rn/4049
+INFO=移動の矢印を描画するときに、乱数テーブルを進めないようにします。
+INFO.en=When rendering the arrow of movement, do not advance the random number table.
+NAME.zh=绘制运动箭头时不要使用随机数
+INFO.zh=渲染移动箭头时，不要前进随机数表。

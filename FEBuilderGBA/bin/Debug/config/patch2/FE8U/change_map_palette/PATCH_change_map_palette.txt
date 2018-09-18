@@ -1,0 +1,25 @@
+NAME=マップパレット変化(use 146)
+NAME.en=Add Event: Switch Map Palette (Byte 0x92/146)
+NAME.zh=地图调色板更改(use 146)
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x01 0xB4 0x28 0x20 0x08 0x4A 0x96 0x46 0x00 0xF8 0x01 0x28 0x01 0xD1 0x92 0x20 0x00 0xE0 0x06 0x20 0x02 0xBC 0x08 0x5C 0x80 0x00 0x40 0x19 0x00 0x68 0xA0 0x22=0x01 0xB4 0x28 0x20
+
+//本体をフリーエリアにいれる.
+//フラグが有効であれば第2パレットを見るようにする.
+BIN:$FREEAREA:1=change_map_palette.bin
+JUMP:0x08019950:$r2=change_map_palette.bin
+
+//もう一つのパレット変化
+BIN:$FREEAREA:2=change_map_palette2.bin
+JUMP:0x08019984:$r2=change_map_palette2.bin
+
+INFO=フラグ0x28を有効にすると、第2パレットとして、マップ設定+0x92 をパレットPLISTを利用するようにします。\r\nフラグ0x07で音楽を切り替えるように、マップパレットをフラグ0x28で切り替えられるようになります。
+INFO.en=Patches in a map event that triggers when flag 0x28 is set.\r\nThis event changes the palette of the map to byte 0x92 (146) in the "Chapter Editor."\r\nByte 0x92 must be set for each chapter that needs a palette swap.\r\nFlag 0x28 is used so that flag 0x07 can be used for music-switching events.\r\n
+INFO.zh=当启用标志0x28时，我们将使用调色板PLIST作为地图设置+ 0x92作为第二个调色板。\r\n地图调色板可以用标志0x28切换，这样音乐就可以用标志0x07切换。
+
+AUTHOR=7743
+USEFLAG=0x28

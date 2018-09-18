@@ -1,0 +1,11 @@
+
+NAME=支援の有効範囲
+NAME.en=Max Range For Support Gain
+NAME.zh=支持范围
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0028620
+DEFAULT=0x3

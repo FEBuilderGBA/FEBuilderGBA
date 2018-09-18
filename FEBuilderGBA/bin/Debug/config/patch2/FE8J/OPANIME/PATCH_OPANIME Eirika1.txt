@@ -1,0 +1,22 @@
+﻿
+NAME=OPANIMEエイリーク立ち絵
+NAME.en=OPANIME Eirika1
+NAME.zh=OP动画艾瑞珂立画
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=16
+
+//圧縮画像
+ZIMAGE_POINTER=0xCCDCC
+//圧縮TSA
+ZTSA_POINTER=0xCCDD0
+//非圧縮パレット
+PALETTE_POINTER=0xCCDD8
+

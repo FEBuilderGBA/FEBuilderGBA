@@ -1,0 +1,36 @@
+﻿//特性1
+01=Mounted Aid Calc	Sets aid calculation for rescue to the mounted aid calculation.\r\nAid: 25 (male) or 20 (female) - unit's CON.
+02=Canto	Enables the use of any unused MOV after all actions except attacking.
+03=Steal	Grants the steal ability.
+04=Thief Skill	Grants extended vision in Fog.\r\nAllows the use of lockpicks.\r\nEnemies with this characteristic grant bonus experience in combat.
+05=Dance (Dancer)	Enables the Dance command.\r\nThe user must have magic battle animations set and use an acceptable move icon or the game may freeze.
+06=Play (Bard)	Enables the Play command.\r\nThe user must have magic battle animations set and use an acceptable move icon or the game may freeze.
+07=Critical Boost	Grants a critical hit% boost.\r\nDefault rate is 30% and set to the classes Swordmaster and Berserker.
+08=Ballista Access	Grants the ability to use ballistae.\r\nDefault granted to Archers and Snipers.
+//特性2
+11=Promoted Unit	Grants access to weapon level S and adjusts experience calculation.\r\nBy default is set for promoted classes.\r\nExp Calc:\r\nUnpromoted vs Promoted: Bonus\r\nPromoted vs Promoted: No Bonus\r\nPromoted vs Unpromoted: Penalty
+12=Supply (Merlinus)	Disables the trade command.\r\nSets unit as the Transport.
+13=Cavalry Unit Icon	Displays a Cavalry icon in the Rescue field on the Status menu.\r\nDefault set to horse-riding units.
+14=Wyvern Unit Icon	Displays a Wyvern icon in the Rescue field on the Status menu.\r\nDefault set to wyvern-riding units.
+15=Pegasus Unit Icon	Displays a Pegasus icon in the Rescue field on the Status menu.\r\nDefault set to pegasus-riding units.
+16=Lord Unit	Lord unit.\r\nDefault set to the Lord and Master Lord class.
+17=Female	Sets female status.\r\nDefault set to units and unused by classes.
+18=Boss	Flag	Sets importance and displays the boss marker on a unit's map sprite.\r\nIf set on an enemy, bonus experience will be earned in combat.
+//特性3
+21=Roy Lock	Allows equipping of weapons locked to the Roy lock.\r\nBy default this unlocks the Rapier and Binding Blade.
+22=Myrmidon/Swordmaster	Allows equipping of Myrmidon/Swordmaster Weapons.\r\nBy default, this unlocks the Wo Dao.
+23=Manakete Lock	Allows equipping of Dragonstones.\r\nBy default, this is used by Manaketes.
+24=Zephiel Lock	Allows equipping of weapons locked to the Zephiel lock.\r\nBy default this unlocks the Echesachs.
+25=Disable Unit Select	Disables a unit from being selected.\r\nBy default, this is unused.
+26=Triangle Attack 1	Enables participation in a three-Pegasus Triangle Attack.
+27=Triangle Attack 2	Enables participation in a three-Knight Triangle Attack.
+28=NPC
+//特性4
+31=Disable Exp Gain	Prevents experience gain.\r\nBy default, set to final bosses.\r\nCan be set on any unit to meet user needs.
+32=??
+33=??
+34=??
+35=??
+36=??
+37=??
+38=??

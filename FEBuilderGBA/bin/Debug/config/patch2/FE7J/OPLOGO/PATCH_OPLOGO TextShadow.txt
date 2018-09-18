@@ -1,0 +1,22 @@
+
+NAME=OPLOGO文字影
+NAME.en=OPLOGO TextShadow
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+
+//圧縮画像
+ZIMAGE_POINTER=0xbb094
+HEADERTSA_POINTER=0xbb0a0
+//非圧縮パレット
+PALETTE_POINTER=0xbb090
+
+NAME.zh=OPLOGO字符阴影

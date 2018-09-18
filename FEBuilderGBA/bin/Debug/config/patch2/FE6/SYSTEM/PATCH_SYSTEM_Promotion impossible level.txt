@@ -1,0 +1,12 @@
+
+NAME=CC不可レベル
+NAME.en=Promotion impossible level
+AUTHOR=7743
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02377A
+AUTHOR=7743
+NAME.zh=CC不可用级别

@@ -1,0 +1,22 @@
+NAME=章タイトルを表示する時のフレームなどの素材画像を章ごとに変更する(導入)
+NAME.en=Change material frames image when chapter titles for each chapter Install
+
+
+章タイトルを表示する時のフレームなどの素材画像を章ごとに変更する
+
+
+
+INFO=章タイトルを表示する時のフレームなどの素材を章ごとに変更します。\r\n章とフラグごとに設定ができます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x1FF4A=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_ChangeChapterTilesMaterialEachChapter.txt
+EA=Installer.event
+
+AUTHOR=7743
+INFO.en=Change the material such as frame when chapter title is displayed for each chapter.\r\nIt can be set for each chapter and flag.
+NAME.zh=每章显示章节标题时更改材料图像（如框架）（介绍）
+INFO.zh=每章显示章节标题时，更改框架等材料。\r\n它可以为每个章节和标志设置。

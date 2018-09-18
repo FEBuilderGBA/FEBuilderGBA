@@ -1,0 +1,12 @@
+NAME=MUSIC_進撃準備
+NAME.en=Preparation Screen BGM
+NAME.zh=MUSIC_提前准备
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+
+ADDRESS=0x0804D3E0 0x080B1CEE 0x080341BE 0x080965D6 0x080A195A
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played on the Preparation Screen before chapters.

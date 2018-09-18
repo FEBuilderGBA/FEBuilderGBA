@@ -1,0 +1,47 @@
+NAME=ユニットを選択した時に音声を再生する
+NAME.en=unit select sfx
+
+IF:0x183C4=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x8E 0x46 0x00 0xF8 0x70 0xBC 0x01 0xBC 0x00 0x47 0x00 0x00 0xEC 0xBC 0x02 0x02 0xFE 0xAF 0x03 0x02 0xF0 0xAF 0x03 0x02 0xD0 0x60 0x08 0x08 0xF4 0x4E 0x0D 0x08
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B2:UNIT
+
+//データを定義します
+W0:SONG=音声
+B2:UNIT=ユニット / ANY=0x00
+B3:CLASS=クラス / ANY=0x00
+B4:CHAPTORMODE_ANYFF=編(1=序盤/2=エイリーク編/3=エフラム編/FF=全編)
+B5:MAP_ANYFF=マップ / ANY=0xFF
+W6:FLAG=判定フラグ / ANY=0x00
+
+W0:SONG.zh=声音
+B2:UNIT.zh=人物 / ANY=0x00
+B3:CLASS.zh=职业 / ANY=0x00
+B4:CHAPTORMODE_ANYFF.zh=篇(1=序章/2=艾瑞克篇/3=伊弗列姆篇/FF=全篇)
+B5:MAP_ANYFF.zh=地图 / ANY=0xFF
+W6:FLAG.zh=确定标志 / ANY=0x00
+
+W0:SONG.en=Voice
+B2:UNIT.en=UNIT / ANY=0x00
+B3:CLASS.en=CLASS / ANY=0x00
+B4:CHAPTORMODE_ANYFF.en=Editing(1=Prologue-Ch8,2=Eirika,3=Ephraim/FF=Any)
+B5:MAP_ANYFF.en=MAP / ANY=0xFF
+W6:FLAG.en=Judgment flag / ANY=0x00
+
+INFO=ユニットを選択した時に、音声を再生します。\r\nLeonarthのasmをベースに、条件を細かく設定できるようにしました。
+INFO.en=When you select a unit, play sound.\r\nBased on Leonarth's asm, I made it possible to set conditions finely.
+NAME.zh=选择人物时播放音频
+INFO.zh=当你选择一个人物时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。

@@ -1,0 +1,17 @@
+
+NAME=フレイボム(地雷)のダメージ量
+NAME.en=Change Mine Damage
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x34378 0x34362
+DEFAULT=10
+HEX=FALSE
+
+AUTHOR=Crazycolorz5
+
+
+
+NAME.zh=Freybom（地雷）的伤害

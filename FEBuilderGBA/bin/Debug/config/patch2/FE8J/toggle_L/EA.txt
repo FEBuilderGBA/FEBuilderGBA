@@ -1,0 +1,15 @@
+PUSH
+ORG	0x1c5bc
+#incbin "toggle_jump.bin"
+ORG	0x1c5e8
+POIN	toggle_L
+
+ORG	0x338a8
+#incbin "toggle_jump2.bin"
+ORG	0x338D4
+POIN	toggle_L
+POP
+
+toggle_L:
+#incbin "toggle_L.bin"
+ALIGN 4

@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ネイミー_影
+NAME.en=OP Anime Face: Neimi (Shadow)
+NAME.zh=OPANIME_FACE_NAMEy_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C93F8//0x08AE6648
+PALETTE_POINTER=0x000C9318//0x08AE5730
+
+INFO=Edit and import OP Anime Graphic for the Neimi Face (Shadow) image.

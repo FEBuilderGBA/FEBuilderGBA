@@ -1,0 +1,14 @@
+﻿NAME=Skip New Game text
+NAME.en=Skip New Game text
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xC96E0
+COMBO=SKIP|0x00 0x00|Default|0x06 0xD0
+COMBO.zh=跳过|0x00 0x00|默认|0x06 0xD0
+
+AUTHOR=
+
+NAME.zh=跳过新游戏文本
+
+INFO.zh=跳过新的游戏文本

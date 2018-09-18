@@ -1,0 +1,42 @@
+
+
+#include	"AI\EA.txt"//(wip?)
+#include	"alina\EA.txt"//(wip?)
+#include	"animation\EA.txt"
+#include	"atk\EA.txt"
+#include	"butai\EA.txt"
+#include	"doping\EA.txt"
+#include	"levelup\EA.txt"
+#include	"status\EA.txt"
+#include	"growth\EA.txt"//(wip?)
+#include	"_patched\EA.txt"
+
+//////////////////////////////
+PUSH
+//#26から兵種個人体格値除外＝魔力化
+ORG	0x2a542
+SHORT	$1C30
+BL(0x18ecc)
+//CC用？
+ORG	0x2a602
+SHORT	$7EA0
+
+//攻速計算の変更
+ORG	0x2aae4
+WORD	$468F4900
+POIN	kousoku
+
+///////////////////////////
+//OPデモで常に力表示
+
+ORG 0xb83d6
+BYTE	$8
+
+/////////////////////////////////
+POP
+
+kousoku:
+ #incbin "Atk_Spd.bin"
+ALIGN 4
+
+

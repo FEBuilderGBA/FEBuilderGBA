@@ -1,0 +1,13 @@
+IF:0x2a960=0x00 0x49 0x8F 0x46
+
+FORM=UnitForm
+J_37=指揮
+HEX=false
+
+J_37.en=Command
+J_37.zh=命令
+
+J_37:HINT=指揮パッチの設定をします。\r\nユニットの指揮能力を設定します。
+J_37:HINT.en=This is set the command patch.\r\nSet the command ability of the unit.
+
+J_37:HINT.zh=我们将设置命令补丁。\r\n设置本机的命令功能。

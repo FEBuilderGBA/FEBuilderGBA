@@ -1,0 +1,17 @@
+﻿
+NAME=ステータスケージMAX時の長さ
+NAME.en=Stat Bar Max Length
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x893ca 0x893da 0x893ec
+
+NAME.zh=状态菜单最大长度
+
+
+INFO=ステータスメニューに表示される棒グラフの最大値を変更します。\r\nFEでは、ステータス31以上は保存されません。\r\nしかし、ステータスの上限を変更するパッチにより31を超えることができるようになりました。\r\nただ、グラフは31を上限として描画されるため、高いパラメータを設定すると、グラフが突き抜けてしまいます。\r\nこれを修正するパッチです。\r\n
+INFO.en=Changes the maximum stat value that can be depicted by the yellow bars behind the numbers on the status screen.\r\nNormally the bars will only expand to depict 31 in any stat, but this patch allows it to expand up to 63 in each stat.\r\nNote that this can cause the yellow bar to expand beyond the normal box drawn for stats on the status screen.\r\n
+
+INFO.zh=更改状态菜单中显示的条形图的最大值。\r\n在FE中，不保存31或更高的状态。\r\n但是，现在可以使用修改状态上限的修补程序超过31个。\r\n但是，由于图形是以31作为上限绘制的，因此如果您设置了较高的参数，则图形会通过它。\r\n这是修复这个问题的补丁。\r\n

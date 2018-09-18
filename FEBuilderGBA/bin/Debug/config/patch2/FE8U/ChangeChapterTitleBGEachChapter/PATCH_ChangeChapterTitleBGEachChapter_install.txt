@@ -1,0 +1,17 @@
+NAME=章タイトルを表示する時の背景を章ごとに変更する(導入)
+NAME.en=Change the Chapter Title  background for each chapter Installer
+
+INFO=章タイトルを表示する時の背景を章ごとに変更します。\r\n章とフラグごとに設定ができます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x20022=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_ChangeChapterTitleBGEachChapter.txt
+EA=Installer.event
+
+AUTHOR=7743
+INFO.en=Change the background when chapter title is displayed for each chapter.\r\nIt can be set for each chapter and flag.
+NAME.zh=为每章章节标题显示时更改背景（介绍）
+INFO.zh=为每章显示章节标题时更改背景。\r\n它可以为每个章节和标志设置。

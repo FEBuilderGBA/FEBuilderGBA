@@ -1,0 +1,17 @@
+
+NAME=DSFEスタイルの成長(成長率=ユニット成長 + クラス成長)
+NAME.en=DSFE Growths(Total growth = character growth + class growth)
+
+PATCHED_IF:0x296B0=0xF0 0xB5 0x45 0x46 0x4E 0x46 0x60 0xB4 0x87 0xB0 0x07 0x1C 0xFF 0xF7 0xE2 0xFF
+
+INFO=このパッチでは、キャラクターの統計の成長率は、個人的な成長と、与えられた統計に対するクラスの成長の合計とみなされます。\r\nこれはゲームの自動レベルルーチンを変更しないので、成長率を変更する際にはこのことを念頭に置いてください。\r\n成長率=ユニット成長 + クラス成長\r\nこのパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。
+
+INFO.en=This patch makes the game consider a character's stat growth rates to be the sum of their personal growth and their class's growth for the given stat.\r\nNote that this does not alter the game's auto-level routines, so keep this in mind when changing growth rates.\r\nTotal growth = character growth + class growth\r\nThis patch depends on the address of the item table, please install it before extending the item table and redoing.
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:0x296B0=DSFE Growths.dmp
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/8
+NAME.zh=DSFE风格增长（增长率=单位增长+阶级增长）
+INFO.zh=在这个补丁中，角色的统计增长率被视为个人增长和类别增长对特定统计数据的总和。\r\n在改变增长率时请记住这一点，因为这不会改变游戏的自动等级例程。\r\n增长率=单位增长+班级成长\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
+

@@ -1,0 +1,10 @@
+#ifndef HACK_INSTALLATION
+#define HACK_INSTALLATION
+
+#define BLRange(pointer) "(pointer - CURRENTOFFSET - 4)>>1"
+#define BL(pointer) "SHORT (((BLRange(pointer)>>11)&0x7ff)|0xf000) ((BLRange(pointer)&0x7ff)|0xf800);"
+#endif
+
+#include "magic\EA.txt"
+
+

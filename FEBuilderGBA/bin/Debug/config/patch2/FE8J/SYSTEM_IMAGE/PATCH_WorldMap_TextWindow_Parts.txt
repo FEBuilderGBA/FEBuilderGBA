@@ -1,0 +1,12 @@
+NAME=ワールドマップのテキストウィンドウのパーツ
+NAME.en=WorldMap_TextWindow_Parts
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=104
+HEIGHT=8
+
+ZIMAGE_POINTER=0x0C4B48//0xB23DBC
+PALETTE_POINTER=0x0C4B44//0xB23E34
+NAME.zh=世界地图文本窗口部件

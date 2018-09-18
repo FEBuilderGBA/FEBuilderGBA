@@ -1,0 +1,28 @@
+
+NAME=塔及び遺跡でセーブ可能 その1
+NAME.en=It can be saved at the tower and ruins Part1
+NAME.zh=塔及遗址可保存的1
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=セーブ可能|ONN|セーブ不可|OFF
+COMBO.zh=可保存的|ONN|不可保存|OFF
+
+ONN:0x080335BC=0xC0 0x46
+ONN:0x08097350=0x04 0xE0
+ONN:0x08097888=0x00 0xE0
+
+OFF:0x080335BC=0x20 0xD0
+OFF:0x08097350=0x04 0xD1
+OFF:0x08097888=0x00 0xD1
+
+
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\n http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#n2d9453e
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#n2d9453e
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#n2d9453e
+
+COMBO.en=Saveable|ONN|Can not save|OFF
+
+

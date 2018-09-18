@@ -1,0 +1,14 @@
+﻿NAME=OPANIME_FACE_レナック_影
+NAME.en=OP Anime Face: Rennac (Shadow)
+NAME.zh=OP动画_脸_雷纳克_阴影
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x0C8E48//0xADC3C0
+PALETTE_POINTER=0x0C8E44//0xADC708
+
+INFO=Edit and import OP Anime Graphic for the Rennac Face (Shadow) image.

@@ -1,0 +1,14 @@
+NAME=制圧をエイリークでできるようにする 5x章
+NAME.en=unlock seize in ch5x
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x37C2D
+
+COMBO=Lock|0xD1|解禁|0xE0
+COMBO.en=Lock|0xD1|Unlock|0xE0
+COMBO.zh=Lock|0xD1|Unlock|0xE0
+
+NAME.zh=启用Eliq的抑制功能第5x章

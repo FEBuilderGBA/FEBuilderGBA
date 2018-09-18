@@ -1,0 +1,14 @@
+NAME=最大レベル
+NAME.en=Default Max Level
+NAME.zh=最高级别
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02BA78
+HEX=false
+
+INFO.en=Sets the default max level for all playable units.
+
+

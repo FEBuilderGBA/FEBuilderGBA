@@ -1,0 +1,11 @@
+//pointer	FRAMECOUNT	NAME
+0807FA88	014	Animation of purple circular appearance of Devil's appearance	//089A40AC	{U}
+08081DC8	014	Animation of purple circular appearance of Devil's appearance	//08A14734	{J}
+0807FB70	018	lightning	//089A419C	{U}
+08081EB0	018	lightning	//08A14824	{J}
+0807FFD8	00C	Floor shining Animation	//089A42BC	{U}
+08082318	00C	Floor shining Animation	//08A14944	{J}
+08080240	008	Animation of the invasion of the Holy Stone	//089A43D4	{U}
+08082580	008	Animation of the invasion of the Holy Stone	//08A14A5C	{J}
+08082988	01A	Animation to seal to the stone	//08A14B2C	32x23	{J}
+08080648	01A	Animation to seal to the stone	//089A44A4	32x23	{U}

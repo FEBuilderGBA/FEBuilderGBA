@@ -1,0 +1,11 @@
+NAME=toggle_L
+NAME.en=toggle_L
+TYPE=EA
+TAG=#ENGINE
+EA=EA.txt
+
+AUTHOR=aera
+AUTHOR.en=aera
+
+NAME.zh=索敌_L
+AUTHOR.zh=aera

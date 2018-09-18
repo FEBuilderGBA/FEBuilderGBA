@@ -1,0 +1,29 @@
+
+NAME=DrawMultiByte
+NAME.en=DrawMultiByte Text
+NAME.zh=DrawMultiByte
+
+PATCHED_IF:0x44D2=0x00 0x00 0x00 0x49 0x8F 0x46
+
+//BINパッチとして実装します
+TYPE=BIN
+TAG=#ENGINE
+
+BIN:$FREEAREA:1=drawmultibyte_serif.bin
+JUMP:0x0800450C:$r1=drawmultibyte_serif.bin
+
+BIN:$FREEAREA:2=drawmultibyte_serif_width.bin
+JUMP:0x08004540:$r1=drawmultibyte_serif_width.bin
+
+BIN:$FREEAREA:3=drawmultibyte_item.bin
+JUMP:0x080044D2:$r1=drawmultibyte_item.bin
+
+BIN:$FREEAREA:4=drawmultibyte_item_width.bin
+JUMP:0x08004576:$r3=drawmultibyte_item_width.bin
+
+INFO=マルチバイトフォントを出力できるように修正します.
+INFO.en=Patches the ROM to be able to output a multibyte font (such as Japanese).\r\nPrimarily used for translation purposes.
+INFO.zh=修复能够输出多字节字体。
+
+CONFLICT_IF:0x44D2=0x00 0x00 0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=DrawUTF8

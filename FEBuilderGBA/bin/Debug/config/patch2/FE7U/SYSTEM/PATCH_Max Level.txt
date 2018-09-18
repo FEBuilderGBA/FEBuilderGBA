@@ -1,0 +1,12 @@
+
+NAME=最大レベル
+NAME.en=Max Level
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x29692
+HEX=false
+
+NAME.zh=最高级别

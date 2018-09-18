@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ジスト_影
+NAME.en=OP Anime Face: Gerik (Shadow)
+NAME.zh=OPANIME_FACE_jist_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C8FCC//0x08ADEB1C
+PALETTE_POINTER=0x000C8FC8//0x08ADEED4
+
+INFO=Edit and import OP Anime Graphic for the Gerik Face (Shadow) image.

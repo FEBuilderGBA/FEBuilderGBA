@@ -1,0 +1,13 @@
+NAME=Skip Intro cutscene
+NAME.en=Toggle New Game Intro Cutscene
+NAME.zh=Skip Intro cutscene
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xC6714
+COMBO=SKIP|0x00 0x00|SKIP2|0xC0 0x46|Default|0x09 0xD0
+
+INFO=Edit field to toggle whether to skip the intro cutscene or not.\r\nThe ROM is default set to not skip.\r\n
+
+AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13

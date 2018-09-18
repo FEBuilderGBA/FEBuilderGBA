@@ -1,0 +1,10 @@
+IF:0x0846E4=0x00 0x4B 0x18 0x47
+
+FORM=EventHaikuForm
+J_1=殺害者
+J_1.en=Killer Unit
+J_1:NAME=J_1_UNIT
+ADDRESS_TYPE=UNIT
+L_1_UNIT:VISIBLE=true
+L_1_UNITICON:VISIBLE=true
+J_1.zh=凶手

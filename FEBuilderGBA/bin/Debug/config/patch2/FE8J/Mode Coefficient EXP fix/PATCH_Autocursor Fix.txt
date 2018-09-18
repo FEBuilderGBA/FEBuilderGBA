@@ -1,0 +1,17 @@
+﻿NAME=Autocursor Fix
+NAME.en=Autocursor Fix
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x3316A
+COMBO=Fix|0x21 0xe0|Default|0x04 0x48
+COMBO.zh=修复|0x21 0xe0|默认|0x04 0x48
+
+AUTHOR=credit Vennobennu
+
+
+AUTHOR.en=credit Vennobennu
+
+NAME.zh=自动光标修复
+INFO.zh=自动光标修复
+AUTHOR.zh=credit Vennobennu

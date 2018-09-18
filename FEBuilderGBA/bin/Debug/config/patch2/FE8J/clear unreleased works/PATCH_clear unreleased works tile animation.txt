@@ -1,0 +1,17 @@
+NAME=ボツデータのクリア タイルアニメーション
+NAME.en=clear unreleased works: tile animation
+
+PATCHED_IF:0x9F7D20=0x00 0x00 0x00 0x00
+IF:0x9F7D20=0x87 0x77 0x67 0x64
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0x9F7D20:0x10000=0xA07D1F
+CLEAR:0xA09920:0x2400=0xA0BD1F
+
+INFO=ボツデータのタイルアニメーションデータをゼロクリアします。\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x12400(74752)bytes の空き領域を確保できます。
+
+INFO.en=Clear the tile animation data of the boots data to zero.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x12400 (74752) bytes can be secured.
+NAME.zh=清除引导数据平铺动画
+INFO.zh=将引导数据的tile动画数据清零。\r\n这使得重建时可以重用该区域。\r\n可以保证0x12400（74752）字节的可用空间。

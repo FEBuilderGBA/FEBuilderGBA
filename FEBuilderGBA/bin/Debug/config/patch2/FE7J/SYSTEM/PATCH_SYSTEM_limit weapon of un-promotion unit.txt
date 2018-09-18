@@ -1,0 +1,13 @@
+
+NAME=下級武器レベル制限
+NAME.en=limit weapon of un-promotion unit
+
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2a088 0x2a08c
+NAME.zh=较低的武器级别限制

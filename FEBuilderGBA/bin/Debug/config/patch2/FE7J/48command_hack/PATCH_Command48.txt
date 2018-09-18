@@ -1,0 +1,20 @@
+NAME.en=Command48
+
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x08053DD4=0x70 0x69 0x0C 0x08
+
+//入れる場所が決まっているため淡々と入れる.
+BIN:0x080C6970=080C6970.bin
+BIN:0x08053DD4=08053DD4.bin
+
+AUTHOR=出典元:https://ux.getuploader.com/FE4/download/134
+
+INFO=カスタム戦闘アニメーションで効果音を再生するのに必須となるパッチです。\r\nGBAFEではそれぞれの効果音はASMルーチンを書かないと鳴らすことができません。\r\nしかし、それはとても面倒なので、そのため、欧米のハッカーたちは、C48命令を改造することで対応しています。\r\nC48命令を改造し、効果音IDを引数と渡すことだけで、すべての効果音をできるようになっています。\r\nまた、C48命令を書く略化したSxx命令の表記方法もあります。\r\nカスタム戦闘アニメーションを支える重要なパッチです。
+INFO.en=This patch is essential for playing sound effect with custom battle animation.\r\nIn GBAFE, each sound effect can not be played unless you write an ASM routine.\r\nBut it is very troublesome, so Westerners and hackers respond by remodeling the C48 order.\r\nBy modifying the C 48 command, passing all the sound effect ID as an argument makes it possible to make all sound effects.\r\nThere is also a notation method for abbreviated Sxx instructions that writes C48 instructions.\r\nIt is an important patch that supports custom battle animation.
+AUTHOR.en=Source: https: // ux.getuploader.com / FE 4 / download / 134.
+INFO.zh=这个补丁对于用自定义战斗动画播放音效至关重要。\r\n在GBAFE中，除非您编写ASM程序，否则无法播放每种音效。\r\n但是这非常麻烦，所以西方人和黑客通过重塑C48的顺序做出反应。\r\n通过修改C 48命令，将所有声音效果ID作为参数传递，所有声音效果都成为可能。\r\n对于写入C48指令的缩写Sxx指令，也有一种标记方法。\r\n这是支持自定义战斗动画的重要补丁。
+AUTHOR.zh=来源:https:// ux。getuploader。com / FE 4 / download / 134。
+

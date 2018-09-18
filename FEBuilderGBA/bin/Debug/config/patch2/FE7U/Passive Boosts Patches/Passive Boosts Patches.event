@@ -1,0 +1,17 @@
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG 0x016040
+#incbin "00016040.bin"
+POIN Main|1
+POP
+
+PUSH
+ORG 0x01677C
+#incbin "0001677C.bin"
+POP
+
+ALIGN 4
+Main:
+#incbin "00DF201C.bin"

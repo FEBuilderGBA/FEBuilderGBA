@@ -1,0 +1,13 @@
+//ステータス画面等にある ROM埋め込みテキスト
+08F684	{J}
+08F6EC	{J}
+08F760	{J}
+AC1A9C	{J}
+AC1A78	{J}
+AC1A54	{J}
+AC1A30	{J}
+AC1A0C	{J}
+AC1B78	{J}
+AC1B54	{J}
+AC1B30	{J}
+AC1B0C	{J}

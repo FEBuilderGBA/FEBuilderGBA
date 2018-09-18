@@ -1,0 +1,7 @@
+TURN	Turn Conditions
+TALK	Talk Condition (Talk Command)
+OBJECT	Map Objects (Seize, Chest, Door, Visit Village or Home)
+ALWAYS	Always Condition (Range Condition, Victory Condition etc)
+PLAYER_UNIT	Player arrangement
+ENEMY_UNIT	Enemy arrangement
+END_EVENT	Chapter end event

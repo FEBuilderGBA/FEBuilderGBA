@@ -1,0 +1,75 @@
+//FE8 Battle Transform stuff
+//By Tequila
+
+#ifdef _FE8_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+	
+	#define Transform_RAM_Loc 0x203AABE		//if there's issues with data getting overwritten, change this. This hack only needs 2 bytes.
+	
+	
+	PUSH
+	
+	ORG $70B3C //(1)
+	#incbin "Set_Background.dmp"
+	POIN Transformation_Table
+	WORD Transform_RAM_Loc
+	
+	ORG $70908 //(2)
+	callHack_r3(Transform1)
+	SHORT 0 0 0
+	
+	ORG $7096C //(3)
+	jumpToHack(Transform1_Sound)	//I guess this also calls the next step of the animation? idk
+	
+	ORG $70A70 //(4)
+	callHack_r3(Detransform1)
+	SHORT 0xE00F
+	
+	ORG $70AF8 //(5)
+	callHack_r3(Detransform2)
+	SHORT 0
+	
+	POP
+	
+	#include "Transformation_Table.event"
+	
+	ALIGN 4
+	Transform1:
+	#incbin "Transform1.dmp"
+	POIN Find_Anim_Entry|1
+	
+	ALIGN 4
+	Find_Anim_Entry:
+	#incbin "Find_Anim_Entry.dmp"
+	POIN Transformation_Table
+	WORD Transform_RAM_Loc
+	
+	ALIGN 4
+	Transform1_Sound:
+	#incbin "Transform1_Sound.dmp"
+	POIN Find_Anim_Entry|1
+	
+	ALIGN 4
+	Detransform1:
+	#incbin "Detransform1.dmp"
+	POIN Find_Anim_Entry|1
+	
+	ALIGN 4
+	Detransform2:
+	#incbin "Detransform2.dmp"
+	POIN Find_Anim_Entry|1
+	
+#else
+	ERROR "You're not assembling FE8 events!"
+#endif
+
+/*
+FE8J - FE8U - # of branches elsewhere in this function- notes:
+72EA4 - 708FC - 2 - gets animation id of first transformation (2)
+72F14 - 7096C - 5 - gets sound for first transformation, sound for main animation, and main animation id (3)
+72FBC - 70A14 - 4 - for transforming back (oddly enough, there's still a hardcoded animation 0xC6 (70A4A) but it doesn't seem to matter? (4) (that odd one is called when unit dies, but is overwritten, so it doesn't matter. Will just leave it alone.)
+7308C - 70AE4 - 1 - anim id of final transformation (same as initial, I guess) (5)
+730E4 - 70B3C - 5 - save class/item to ram, get first anim id, but holy crap this is long and complicated (1)
+*/

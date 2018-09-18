@@ -1,0 +1,14 @@
+﻿NAME=Hold A to speed up movement
+NAME.en=Hold A to speed up movement
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x7B902
+COMBO=ON|0x00 0x00|Default|0x0B 0xD1
+COMBO.zh=开启|0x00 0x00|默认|0x0B 0xD1
+
+AUTHOR=credit Gryz
+AUTHOR.en=credit Gryz
+NAME.zh=按住A加速移动
+INFO.zh=按住A加速移动
+AUTHOR.zh=credit Gryz

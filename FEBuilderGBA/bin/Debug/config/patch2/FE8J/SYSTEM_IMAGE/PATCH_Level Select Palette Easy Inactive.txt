@@ -1,0 +1,17 @@
+﻿NAME=難易度選択のパレット 簡単を非選択にした時の色
+NAME.en=Level Select:Palette at Easy Inactive
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0xb0c34
+PALETTE_ADDRESS=0xAA7134
+
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Fatih
+NAME.zh=选择难度 非选择简单时的颜色

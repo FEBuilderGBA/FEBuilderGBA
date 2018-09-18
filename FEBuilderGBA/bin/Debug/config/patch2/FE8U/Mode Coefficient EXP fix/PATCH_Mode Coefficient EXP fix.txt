@@ -1,0 +1,12 @@
+NAME=Adjusted Experience Gains for High-level Units
+NAME.en=Adjust Mode Coefficient Experience Gain
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x2C474
+COMBO=Fix|0x00|Default|0x01
+
+INFO.en=Edit field to toggle the high-level experience coefficient.\r\nBy default, higher level units gain more experience than lower level units during chapters 1-8.\r\n
+
+AUTHOR=Vennobennu http://feuniverse.us/t/exp-formula-mode-coefficient-fix/27/2 Compatability:7743

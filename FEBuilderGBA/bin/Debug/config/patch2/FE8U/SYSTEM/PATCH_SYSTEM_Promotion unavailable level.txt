@@ -1,0 +1,12 @@
+NAME=CC不可レベル
+NAME.en=Minimum Promotion Level
+NAME.zh=CC不可用级别
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x291f6
+DEFAULT=0x09
+
+INFO.en=Specifies the minimum level that units can promote at by using promotion items.\r\nMinimum level is value specified + 1. Default is (9+1) 10.

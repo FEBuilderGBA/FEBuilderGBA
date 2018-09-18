@@ -1,0 +1,8 @@
+#include "Extensions/Hack Installation.txt"
+PUSH
+ORG $846E4
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "new_haiku.dmp"

@@ -1,0 +1,13 @@
+TYPE=BIN
+TAG=#ENGINE #SOUND #ESSENTIALFIXES
+//既に適応されたかどうか
+PATCHED_IF:0x2140BC=0x10 0x00 0x00 0x00 0x40 0x66 0x00 0x03 0xA0 0x67 0x00 0x03 0x10
+BIN:0x2851=2851.bin
+BIN:0x2874=2874.bin
+BIN:0x2140BC=002140BC.bin
+AUTHOR=16 Tracks/12 Sounds Fix http://feuniverse.us/t/fe7-fe8-16-tracks-12-sounds-patch/895 (credit Agro/Brendor) for FE8J Transport:aera
+
+INFO=16トラック、12音まで同時再生できるようにプログラムを修正します。\r\n8トラック以上のトラックを持つmidiを利用するときには必須となるパッチです。\r\n
+INFO.en=Correct the program so that 16 tracks and 12 notes can be played simultaneously.\r\nIt is an essential patch when using midi with tracks of 8 tracks or more.\r\n
+NAME.zh=16_轨_12音
+INFO.zh=可以同时播放16个音轨和12个音符。\r\n当使用midi和8首曲目或更多曲目时，这是一个重要的补丁。\r\n

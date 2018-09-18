@@ -1,0 +1,20 @@
+NAME=Debug: Exec6C_
+INFO=このパッチは、デバッグ用の機能です。\r\n実行しているExe6C_のアドレスをスタックに必ず積むようにします。\r\nこれによりデバッカーで実行しているProcsの位置を特定しやすくします。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #DEBUG
+
+COMBO=Default: Off|OFF|Debug Mode|ONN
+
+DETERMINATION_ADDRESS=0x02DCE
+
+ONN:0x02D78=0x31
+OFF:0x02D78=0x30
+
+ONN:0x02DCE=0x31
+OFF:0x02DCE=0x30
+
+AUTHOR=7743
+INFO.en=This patch is a function for debugging.\r\nMake sure that the address of Exe6C_ being executed is loaded on the stack.\r\nThis makes it easier to locate the Procs running in the debugger.
+INFO.zh=该补丁是一个调试功能。\r\n确保正在执行的Exe6C_的地址已加载到堆栈中。\r\n这样可以更轻松地找到在调试器中运行的Procs。

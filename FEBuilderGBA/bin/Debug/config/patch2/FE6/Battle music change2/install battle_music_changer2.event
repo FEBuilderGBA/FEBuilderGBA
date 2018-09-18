@@ -1,0 +1,31 @@
+#ifdef _FE6_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+
+PUSH
+ORG $5C53E
+BYTE 0x00 0x00
+jumpToHack(BattleMusicChanger2)
+POP
+
+ALIGN 4
+BattleMusicChanger2:
+#incbin "battle_music_changer2.dmp"	//HINT=ASM
+POIN BattleBGM_Table
+#include "battle_music_changer2.event"
+//@struct BattleBGM
+//@{
+//@	ushort	song_id;	音楽		00=term
+//@	byte	unit_id;	ユニット	00=ANY
+//@	byte	map_id;		章			FF=ANY
+//@	ushort	battle_id	戦闘アニメ	00=ANY
+//@	uhsort	flag;		フラグ		00=ANY
+//@}//sizeof(8bytes)
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE6!
+#endif

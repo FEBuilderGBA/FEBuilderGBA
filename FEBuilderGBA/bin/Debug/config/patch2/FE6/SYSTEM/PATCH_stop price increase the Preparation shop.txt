@@ -1,0 +1,18 @@
+
+NAME=編成武器屋の値上げをやめさせる
+NAME.en=stop price increase the Preparation shop
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|fix|ONN
+
+AUTHOR=FE6解析資料
+
+ONN:0x097533=0xE0
+OFF:0x097533=0xD0
+AUTHOR.en=FE 6 analysis material
+NAME.zh=停止提高有组织的武器商店的价格
+AUTHOR.zh=FE 6分析资料
+

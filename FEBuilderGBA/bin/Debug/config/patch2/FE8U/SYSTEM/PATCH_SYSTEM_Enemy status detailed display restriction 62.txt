@@ -1,0 +1,17 @@
+NAME=敵ステータス詳細表示制限 2
+NAME.en=Disabled Status Screen On Map (2)
+NAME.zh=敌人状态详细表示限制 2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x01C92E 0x0879C6 0x0874AE
+ADDRESS_TYPE=CLASS
+
+INFO.en=Disables opening the Status menu to view detailed unit info for the selected class.\r\n
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g16a908b
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g16a908b
+AUTHOR.en=Chap@FE8_GIRLS 09.10.01 http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g16a908b
+

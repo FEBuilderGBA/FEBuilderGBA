@@ -1,0 +1,12 @@
+
+NAME=MODE SELECT 制圧可能な主人公 リン編
+NAME.en=MODE SELECT Hero who can seize the Lyn Editing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x348CE
+ADDRESS_TYPE=UNIT
+AUTHOR=Source: shin19 http://feuniverse.us/t/fe7-replace-hector-mode/3169/8
+NAME.zh=MODESELECT可以保护的英雄凛编

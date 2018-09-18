@@ -1,0 +1,16 @@
+
+NAME=難易度固定_ノーマルを選択してもハードモード
+NAME.en=Fixed Level  Hard mode even if you select Normal
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+COMBO=default|0x0D 0x1C|Change|0x01 0x25
+
+ADDRESS=0x0A5B24
+AUTHOR=スレ5章/ZxdcXp9氏 https://www58.atwiki.jp/fekai2/pages/58.html
+NAME.zh=固定难度级别_硬模式，即使你选择正常
+AUTHOR.zh=线程5/ZxdcXp9 https://www58.atwiki.jp/fekai2/pages/58.HTML
+AUTHOR.en=Thread 5/ZxdcXp9 https://www58.atwiki.jp/fekai2/pages/58.html.
+

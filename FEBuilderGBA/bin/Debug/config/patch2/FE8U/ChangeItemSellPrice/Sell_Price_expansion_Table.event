@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001; SHORT arg002; "
+
+SellPriceExpansion_Table:
+csvmacro000(0x1,200,0x00)  //“S‚ÌŒ•‚ÍA2”{‚Ì‰¿Ši‚Å”„‚ê‚é
+csvmacro000(0x0,0x0,0x0)

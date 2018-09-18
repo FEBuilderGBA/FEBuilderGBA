@@ -1,0 +1,15 @@
+00=Unknown
+01=I do not act occasionally (confused use?)
+02=?
+03=Do not move?
+04=?
+05=?
+06=Do not attack thieves / citizens
+07=Routh soldier
+08=Douglas
+09=1B Idina bow
+0A=?
+0B=Gail Roy only attack?
+0C=ghost of Bern
+0D=Can not you set up a Gail Corps attack?
+0E=monk

@@ -1,0 +1,15 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x02BA4=0x00 0xB5 0xC2 0x0F
+
+BIN:0x2BA4=2BA4.bin
+BIN:0xA24A=A24A.bin
+BIN:0x464470=464470.bin
+
+AUTHOR=Hextator   Compatability:7743
+
+INFO=FEのテキストは、サイズを減らすために、ハフマン符号化されています。\r\nそのためハフマン辞書にない文字を利用することができません。\r\nこのパッチは、それを解決するパッチです。\r\nハフマン符号化せずに直接データを格納できるようにします。\r\nこのパッチを利用することで、すべての文字を利用できるようになります。
+INFO.en=Patches the ROM to remove Huffman text encoding.\r\nThis is required because Huffman encoded text is harder to edit.\r\nIt allows text data to be stored directly without Huffman coding.\r\nBy using this patch all characters will be available.\r\n
+INFO.zh=FE的文本是霍夫曼编码以减小尺寸。\r\n因此，我们不能使用不在霍夫曼词典中的字符。\r\n这个补丁是解决它的补丁。\r\n它允许你直接存储数据，而不需要霍夫曼编码。\r\n通过使用这个补丁，所有的角色都可以使用。

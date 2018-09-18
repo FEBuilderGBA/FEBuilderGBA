@@ -1,0 +1,18 @@
+﻿NAME=戦闘変身パッチ 導入
+NAME.en=Battle Transforming (Installer)
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x87 0x55 0x03 0x21 0x04 0x48 0xF2 0x00 0x80 0x58 0xFE 0xF7 0x51 0xFF 0xF0 0xBC 0x01 0xBC 0x00 0x47 0x00 0xE1 0x03 0x02 0x00 0x00 0x00 0x02=0x87 0x55 0x03 0x21
+EDIT_PATCH=PATCH_Battle_Transform.txt
+
+EA=FE8-Battle Transform EA.txt
+
+INFO=戦闘時に、変身できるクラスとアイテムを増やします。
+AUTHOR=Tequila ,UNKNOWN ,Aera, circleseverywhere. Transport by 7743 http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
+
+INFO.en=Allows adding additional classes and items that can transform.
+NAME.zh=战斗変身补丁引进
+INFO.zh=在战斗中，增加可以改变的课程和项目。
+

@@ -1,0 +1,376 @@
+//midi(Decimal)	midiname	fingerprint
+255	Dummy	SQ2d67b32ce7556c9736dab672a0cdd1a1
+
+//Nimap FE8
+//midi(Decimal)	midiname	fingerprint
+0	Acoustic Grand Piano	ecf854cbd791505ccf7c455f6f90b180
+1	Bright Acoustic Piano	b24b8f8c47eb2ffaf05d03708a90a8bb
+2	Electric Grand Piano	be1e9e181c70906bf610dcc8feab6a5c
+4	Electric Piano1	1c527d8a59bd3edaf255390344ac01c2
+6	Harpsichord	196a3bd207cfa7c6d9ca877bbadbc505
+8	Celesta	78be8d70fa9b2e8f81ccdede95bf75ee
+10	Music Box	1d7e32e54b863df5899a5c4c74b1ef22
+11	Vibraphone	a0ffa4b2e958aab25b9a03dbadecabb5
+12	Marimba	215d7df651b0422fec0031b9d277c017
+13	Xylophone	100673381776f52326eb6e6847fff4b8
+14	Tubular Bells	74efbf0bfdb870fd823c55483588ec50
+15	Dulcimer	5406ebaf2cd01856a437f7ed7f316064
+18	Rock Organ	1ee735a527f401b68967006089d66953
+19	Church Organ	e84b7ac7f10222e5688ce314ede33c7b
+20	Reed Organ	10be4e00f61e49391e01f85bf6fbe443
+21	Accordion	baaa7443fbfa4b50bc219101eded9622
+23	Tango Accordion	7681217ec25cde23b3fed09d3b5daa34
+24	Acoustic Guitar (nylon)	67ca844421353175b7b7ad9dfa4a7e61
+28	Electric Guitar (muted)	51c47e67fc7a3534abd03ec5ad8c0603
+29	Overdriven Guitar	82fc415dbc8ce17ef489760e3352dbc7
+30	Distortion Guitar	5147a06a0902b522202a6629c7244b2d
+31	Guitar harmonics	4c2a71b290dcf74d0360de6f6ed5d34d
+32	Acoustic Bass	287d17b15b12ad3a7bd504c22199f12a
+33	Electric Bass (finger)	169dc8763a2b46da5e5140026cb6f8d4
+34	Electric Bass (pick)	169dc8763a2b46da5e5140026cb6f8d4
+36	Slap Bass 1	9060cf344e45139d98a7e3e48d7a983f
+38	Synth Bass 1	7f9101e918a0667117eaaa263daa2414
+39	Synth Bass 2	c8ed9e6ab524e2e7f18aefbb67e76258
+40	Violin	5982fbcd78893e405089f4b8c56e40b2
+41	Viola	325dd5ad1c398073e6377f33c86abca3
+42	Cello	d80cc4926aed7570908be5523b745c51
+45	Pizzicato Strings	3b67549fcce8b926b9e4856f607fa404
+46	Orchestral Harp	bfdf6ac8c6295b9b12fd5c8a742996ce
+47	Timpani	30ab0ba0b1f13378ed34269ab7098a0d
+50	SynthStrings 1	8146978088c30bd6671be80be5c4f651
+51	SynthStrings 2	4bd74ec8153ef8f70e1411799d100092
+52	Choir Aahs	bd57ac7b99e292e414ff37bcff02945b
+56	Trumpet	bbf16ee1ea5faac20d4f8f60b5d91630
+57	Trombone	71549ac056cfc9102ba0a9bb41ab2117
+60	French Horn	5a264a8dfcb95b7a571946c47c6dd13b
+61	Brass Section	d939e17521de4b6a9c3052cdfd4d43f6
+62	SynthBrass 1	f6924b2dcb58611f1fe14b3aa22ad9b9
+63	SynthBrass 2	4712742ad714b27b325da7b2d5c03709
+67	Baritone Sax	557406e079f654703099cddb3f0e3cd9
+68	Oboe	204c50e26ab74a4106064f3a7b8d7d0b
+69	English Horn 	27d759ce3bb0a879589d41cc38586711
+70	Bassoon	5fb13bd51e85aabc808333fd6fa98672
+71	Clarinet	a10f4070ec98db0cf41a4066c6202d1c
+73	Flute	93ab6109caa7ebe421f734428022d68a
+74	Recorder	60e8e2907be97c1ac1d59e8272f3eb80
+75	Pan Flute	986178240849e1ebe3ef4e3a3c96b5ce
+77	Shakuhachi	f64047ae222d1a9ca869c8b3a8f12af0
+78	Whistle	28e51daa98b6a72598e63b220fa834f0
+79	Ocarina	ddf146e601527cc167ad94d831ea5fea
+80	Lead 1 (square)	65a77c19add1ea576a95e5a8c83e2e8f
+81	Lead 2 (sawtooth)	2bd8613eb9a972d50600ea12cdc3720d
+85	Lead 6 voice	5738c883814317fd61ff9b5344edb7cc
+90	Pad 3 (polysynth)	8c17edf46744c5d550f4ffd737a827cc
+91	Pad 4 (choir)	390b702215e67c645f1084742a7f6357
+92	Pad 5 bowed	f404f492272a074f767e1131bc7ae16c
+93	Pad 6 (metallic)	f9af78284210d1a68b90ce9a098b4cd5
+94	Pad 7 halo	e8dc20b35d53265a3e5c3dad38d2d80f
+98	FX 4 (atmosphere)	f5f8fca242c8b75416839ebcee1af39e
+100	FX 5 (brightness)	5fc76ec07915281c30b9869f295ee879
+101	FX 6 (goblins)	f6c871b1bfe10027d05fe57ed298dfe2
+102	FX 7 (echoes)	ae7f14b455ff0bd2eae8e7bbc34a7fdd
+103	FX 8 SF	3321d6e81218d794498a513f9209528c
+104	Sitar	61463dac52c507fe37d0b5cdb19cb8d5
+105	Banjo	e231a7352240fe1de3c63be3049f618d
+106	Shamisen	02a2f8f0d212959f0a62f541dc46b367
+107	Koto	a24d2c58f1c8b79e578a7d6c5fe9af40
+108	Kalimba	dfbcf58942e9438ce419b19178b182fe
+109	Bag pipe	56d083a36236de695c9ff56f711bc5b6
+110	Fiddle	509d40d6abbe772730caea2c4a088001
+111	Shanai	37d1ae2ab123a18bbc1e04c243ee4922
+118	Synth Drum	1df8222fec12ec6e76cb320bf2646197
+119	Reverse Cymbal	2614e9bcf9ec3497a612bc9896e66cb5
+126	Applause	340e795dfbe01f3b333cd0c727f70de6
+
+//NIMAP2
+7	Electric Piano2	b41ac04efbd36c65d040dbf9f38bd1bc
+23	Accordion	10a6aba2095580e874e64f6ba61aef84
+28	Electric Guitar (jazz)	4e0806b29a67c8726ab706b89bb0d68d
+31	Overdriven Guitar	9545d09bc9dc4247ccb172ba917f33d0
+33	Electric Bass (finger)	b03a186720a8c8a48b05dac3e37db0fe
+34	Electric Bass (pick)	a213b19052a07d89f2d8b7e636a3dacc
+35	Fretless Bass	ec34d5bb1ba95154eec46469d407c5dc
+36	Slap Bass 1		7bf67f3697356ee338bf0f00afad162c
+38	Synth Bass 1	958d3d26961da81bfea59a989faf7e69
+40	Violin	299d57b69b3e1d922f86e35bb0bac1d0
+46	Tremolo Strings	2505fe44417a449ff3c50a15527aa0be
+48	Orchestral Harp	55d20c32feae12247684583e0e28f04e
+49	Timpani	6a2feb60bdbbdbba64635f268197b183
+50	String Ensemble 1		4b48e6c504c9f5b891b9e7f589e324f8
+51	String Ensemble 2	cdfe68e8da96f3bcd633dd1819d764b4
+54	Choir Aahs	eee32b2c8f9f5d25da83bdb928f18760
+58	Trumpet	65f9bd7bbd5b80b1782ed7dff3877c2f
+59	Trombone	ec12f2d67392c42319bceb93a89218f6
+60	Tuba	d1aa2cfbea46a7e57c15626a2cc07049
+61	Muted Trumpet		461af8946078673b22872520261ec327
+62	French Horn	73ca178e865af94d9b92ec092994172f
+64	SynthBrass 1		bc858e4d62a0ccf841bc8cf19c091441
+65	SynthBrass 2	9eb208b99902d30ab5e2d2930b75c468
+66	Soprano Sax		8c11a1bb72239eaa541852857711e901
+75	Flute	d6e20f3fc0a7c6a84e43f5674f683e71
+76	Recorder	b2effb64748cea85e3973c35cef200e2
+77	Pan Flute	806c84219415fa577c5c2e129be274ab
+78	Blown Bottle	744e2ab4ced5792d3377af3e6377759e
+86	Lead 5 (charang)	e05da7589f6ff7ea974c583b03b42dc7
+88	Lead 7 (fifths)	6f4ea30c0a4626ac23654fdd5c4953a1
+89	Lead 8 (bass + lead)	125a264c3fade53ed4b88ce2642815e0
+91	Pad 2 (warm)	272ba3ab817b30ff89ede6268e4dc5e7
+92	Pad 3 (polysynth)	9576369d9b3e4514644d7b11c873bfaa
+93	Pad 4 (choir)	471f14246ce011537189b667430aabea
+94	Pad 5 (bowed)	ee98d84f5355f313451f488e2daa6a57
+95	Pad 6 (metallic)		8048e2312b978630a5ad413a11b2416f
+98	FX 1 (ice rain)	a141a5564f04f28dceccdcaa1ac888e9
+99	FX 2 (soundtrack)	b41e8e406c2d4b9d05994c3fb74bb34b
+100	FX 3 (crystal)	7ad886ae6cf2ef4e732ece3dc2add96b
+101	FX 4 (atmosphere)	9b830e6d98204e6061b95eea5c29cbef
+102	FX 5 (brightness)	9cbebc66610c3b9463da5325aa2bf89a
+109	Koto	bef99f06b3c711ef479d3924840a88ee
+112	Fiddle	3fd1c1dbc60688a3ef011a311aa0ed18
+116	Steel Drums	9a3f1e82dc65d0a10e416178c7a391a9
+117	Woodblock	935387dcc202b7a6640c5e4c1994cf53
+118	Taiko Drum	add253ac8c0a4de95ae836f7441a264b
+125	Bird Tweet	c782bf47f86f6d5128b9d706820a2d0c
+
+//Nimap FE7
+0	Acoustic Grand Piano	2881652e65be3e396bddbf13f7ac9c11
+1	Bright Acoustic Piano	55a04d87eec72aabe06d262a5130b6c9
+2	Electric Grand Piano	c916e3ddd6325700b18218f67ff9a3d1
+3	Honky-tonk Piano	13e9549e65c170126d746141ef90fd1f
+4	Electric Piano1	366171f6838df15a872ab2466aa54a10
+5	Electric Piano1	bb864017a89a764b79547a0d7f5a7241
+6	Harpsichord	ed470adfbfe522eb3100ffa768fb07e7
+7	Clavi cord	304f3a766d942ab3a9675c6deb19ecc7
+8	Celesta	3c22094e011cd3d252b5b9da8ebbb32b
+9	Glockenspiel	b5e2f3e33a8e8efbe45eeae7d4b7c4b7
+10	Music Box	1d7e32e54b863df5899a5c4c74b1ef22
+11	Vibraphone	de98ebbc8f57c7a250ddd309ea8cb30f
+12	Marimba	0d27ecd209dbc1af383c1fa63468c2ae
+13	Xylophone	0e021a49d5ef328b6a63dc7997f32b98
+14	Tubular Bells	74efbf0bfdb870fd823c55483588ec50
+15	Dulcimer	2b44f3652084e3af1e8ed32810076844
+16	Drawbar Organ	10be4e00f61e49391e01f85bf6fbe443
+17	Percussive Organ	2b8105ab1cecc9857ee2602ffa97eeac
+18	Rock Organ	ce6ad7fba9ca534e08a9186304f82cff
+19	Church Organ	e84b7ac7f10222e5688ce314ede33c7b
+20	Reed Organ	10be4e00f61e49391e01f85bf6fbe443
+21	Accordion	a92c2dac15ec86e177bc8c2119b62e74
+22	Harmonica	fd4df8f733864726f9a05e0dc4288a51
+23	Tango Accordion	32fd0b331547ab2e44b52338abf8b46d
+27	Electric Guitar (clean)	331a4a2fa0139d4b871ac26c03cefdb0
+28	Electric Guitar (muted)	94fabcebcf9da6c6a54bdd86a5cc80f7
+29	Overdriven Guitar	1101396773f19a1743b797de7738ca61
+30	Distortion Guitar	2192058c4c8b43769a42c7b12d7e7a10
+31	Guitar harmonics	89306485bfda500ae1ed89f1b6c29872
+32	Acoustic Bass	84f83ec9f6b2a8fbbdaadec0130836be
+33	Electric Bass (finger)	169dc8763a2b46da5e5140026cb6f8d4
+34	Electric Bass (pick)	a4bdd86816c77318a24f5d089db9c9af
+36	Slap Bass 1	7b1091971f8a4590a41b526bfcf44e48
+38	Synth Bass 1	e66a350e9c699bebaad3da1c0a24274e
+39	Synth Bass 2	044c4645ec33f93db5b9dd8ef1176e9c
+40	Violin	5982fbcd78893e405089f4b8c56e40b2
+41	Viola	325dd5ad1c398073e6377f33c86abca3
+42	Cello	77838145d87e26da3014ce8bc38e930d
+43	Contrabass	93f2a8908412a281dea8832c4b433382
+44	Tremolo Strings	cc8f31e6e63a4e0535b3a854a7ae7bc5
+45	Pizzicato Strings	03958adeca03b30c1da34d8d216cbc32
+46	Orchestral Harp	bfdf6ac8c6295b9b12fd5c8a742996ce
+47	Timpani	d706e91974f3dd737838276df3445fb5
+48	String Ensemble 1	8d7501f6e316afa5038152e160afb408
+49	String Ensemble 2	4bd74ec8153ef8f70e1411799d100092
+50	SynthStrings 1	8146978088c30bd6671be80be5c4f651
+51	SynthStrings 2	4bd74ec8153ef8f70e1411799d100092
+52	Choir Aahs	ee88cadcbd2dab1ef7dd910d7af119b0
+53	Voice Oohs	981bda578787f5ca5dfcf224b00bb595
+54	Synth Voice	7a6b6b4b00f11873b9774758cde866a0
+55	Orchestra Hit	825e04f6bbd512813df4232e52d1ff7d
+56	Trumpet	36c88eeea8859d45f391d0266261d18d
+57	Trombone	71549ac056cfc9102ba0a9bb41ab2117
+58	Tuba	067a6be49ba32b7200dd17bd8e1431f2
+59	Muted Trumpet	ad05037d7b88d123912df24d560b756b
+60	French Horn	cdec906bdb678f37c0bcd908d247edfc
+61	Brass Section	d939e17521de4b6a9c3052cdfd4d43f6
+62	SynthBrass 1	31432d582acf3fae6bdcc53f7fc1547a
+63	SynthBrass 2	4712742ad714b27b325da7b2d5c03709
+67	Baritone Sax	c5b1f5be2a3f3a6ef097932b7d3bbf7f
+68	Oboe	204c50e26ab74a4106064f3a7b8d7d0b
+69	English Horn 	27d759ce3bb0a879589d41cc38586711
+70	Bassoon	1e86e6ea800572fbe5cd97cba0c6a993
+71	Clarinet	4228609ba5802ad54a563a6a1db70d6a
+72	Piccolo	2ac53a0f0131d9ee32c04d0f29a2e815
+73	Flute	93ab6109caa7ebe421f734428022d68a
+74	Recorder	e95203484bb847f918448ec678f1e5b8
+75	Pan Flute	3d98ab759cf4c57e0687b96a8e13aaf6
+76	Blown Bottle	151217b159751b130c40a609da8152f8
+78	Whistle	28e51daa98b6a72598e63b220fa834f0
+79	Ocarina	a41410ccc75a173468aa0bc81d2227b0
+80	Lead 1 (square)	219c3906cfabc1521e95aa6a3ad87db1
+81	Lead 2 (sawtooth)	2bd8613eb9a972d50600ea12cdc3720d
+85	Lead 6 voice	ea6b37de45f6ef55d6c6638f0fbaa5bb
+87	Lead 2 (sawtooth)	46f8809a81e082d28b470d720a4fd460
+88	Pad 1 (new age)	518f0175a7fb9fd878aec285700fb9b6
+89	Pad 2 (warm)	df1250d644559c5fc00978b350cd7204
+90	Pad 3 (polysynth)	390b702215e67c645f1084742a7f6357
+91	Pad 4 (choir)	f404f492272a074f767e1131bc7ae16c
+92	Pad 5 bowed	f9af78284210d1a68b90ce9a098b4cd5
+93	Pad 6 (metallic)	e8dc20b35d53265a3e5c3dad38d2d80f
+94	Pad 7 halo	3c7a244a97a0b6f5cd344ab2ec022d48
+95	Pad 7 (halo)	29af6f16b13d065f323c21051312cfd5
+97	FX 2 (soundtrack)	bf80dee98011d2e1004c3300360afacc
+98	FX 3 (crystal)	d7fe2352f2796d6dcbce7d41001e1ad3
+99	FX 4 (atmosphere)	5fc76ec07915281c30b9869f295ee879
+100	FX 5 (brightness)	4f3a44fcedcb179508abe7c89e03d659
+101	FX 6 (goblins)	ae7f14b455ff0bd2eae8e7bbc34a7fdd
+102	FX 7 (echoes)	3321d6e81218d794498a513f9209528c
+103	FX 8 SF	61463dac52c507fe37d0b5cdb19cb8d5
+104	Sitar	40f09e1acefb13d3fcc3d0aee0c40307
+105	Banjo	29fc613e4a41bc446b10643c92071982
+106	Shamisen	c6716527b38d879b58fda44905300992
+107	Koto	dfbcf58942e9438ce419b19178b182fe
+108	Kalimba	1a6d32e31e8f97635f56e6c9795a067d
+109	Bag pipe	509d40d6abbe772730caea2c4a088001
+110	Fiddle	c87bf24e52707a268c7bca57d6da0d33
+126	Applause	340e795dfbe01f3b333cd0c727f70de6
+
+//Nimap FE6
+0	Acoustic Grand Piano	082a0772e82673eb6e28e49dc5c8dd25
+1	Bright Acoustic Piano	c7c3fc3dcf9031f107637a3a37d7cb9e
+2	Electric Grand Piano	3c8341d3c7e12e9a6407fe67695b404b
+3	Honky-tonk Piano	aaf1896d788baa6a3eb965edc2f3a668
+4	Electric Piano1	9b5c419ad1181f723f6ff3aff304702e
+5	Electric Piano1	1f132a0a29b00ab1bbe37f2ba6e24b2d
+6	Harpsichord	103222b87baefd82c3fe0ceb528bda13
+7	Clavi cord	4f2145561a19b2281ac11761b1aaf9fd
+8	Celesta	eb8e3e35cf33a0b814edeaef47ae2ac3
+9	Glockenspiel	6ca53d9d362855aeb3002ff08ad13775
+10	Music Box	3a5b22d53d8cc2602c4ce6bad10abe84
+11	Vibraphone	4876ff210659fc63fa3d2aab24efba22
+12	Marimba	1f7bc77f1dda38c0ccc2f726b630c55f
+13	Xylophone	2b52e2e45b01366ea607e1243cbf0349
+14	Tubular Bells	dad94c956314497ea3b17ee7739dc01f
+15	Dulcimer	a51f0319d0cc5678e6bc245e94844edc
+16	Drawbar Organ	7302ba9c4a529d16d21745abc93f9320
+17	Percussive Organ	be9bcbe0f3999e3f3de479ff6a849f46
+18	Rock Organ	1580b369ea833d77e53343fcdd62b1eb
+19	Church Organ	fcfeaa753672b5505414fb34c5a4b393
+20	Reed Organ	50980733fb9194f5ab36e1df44d16579
+21	Accordion	43fe966fc7a48344a36493a72c0027d9
+22	Harmonica	8b383ae2e4c9afe3fcb1bd48e8079228
+24	Acoustic Guitar (nylon)	90418e2b807117e795311b3d4a650571
+25	Acoustic Guitar (steel)	4164f8b2cd7552030900796750cf1cfb
+27	Electric Guitar (clean)	8500e36f079e3a630598c346a85440ff
+28	Electric Guitar (muted)	77843f643ca42eedae47da07856f5cc9
+29	Overdriven Guitar	7ef1d0f14bcfa8350d7a67729cd93949
+30	Distortion Guitar	5af7fa496dfe8d4a37ce58eb2f492d26
+33	Electric Bass (finger)	7641f588b6ddb9a3ba79dac00b409465
+34	Electric Bass (pick)	fb61b6aa95379b292c4574bf785b5e93
+36	Slap Bass 1	bf855fb34c1ea8491cc4f869f3897412
+40	Violin	082e719bf045861b9fbd9faba8ccfc85
+41	Viola	65c91a5926a59c20238dab0e833ad60a
+44	Tremolo Strings	9c678ef0f495c0aa5ccf4075fea1272e
+45	Pizzicato Strings	34b63dbbe696ee1b0aaa84bc0872ad6f
+46	Orchestral Harp	54d05d8a607e6431ff1e4f2f3ba5ec97
+47	Timpani	34d7762b030f76ee821e1189ca91b03b
+48	String Ensemble 1	c6dcf15a9081533bdb4bc87cccbd1025
+49	String Ensemble 2	7d2abbaf418e04548b31b838ee99255e
+50	SynthStrings 1	b265dc52941f2ace94f3d722b54da587
+51	SynthStrings 2	e768ec03f167b5dad4348bb2236ea649
+52	Choir Aahs	9f31cf4c38a605b65bcf16c40a5330ad
+53	Voice Oohs	e3f507a09cf52dbe892c641dc290d003
+54	Synth Voice	511d7334da2fbb642e16dc5264a6286d
+55	Orchestra Hit	4103e5b0b4201b911e9432174179b469
+56	Trumpet	3070103412170667107114345b952212
+57	Trombone	b564fabfbe56372eae15d891cdc32b51
+58	Tuba	03a6367a04e50577d01735cd7cab3001
+59	Muted Trumpet	cb12892a6bd2dabb90e6f0cb95797f97
+60	French Horn	32e2588408c1713d83242afa60b5090c
+61	Brass Section	b98656a7ea500520ff3482576d1c3064
+62	SynthBrass 1	aa46ad22b771c6b9d952f5c7eced2d5d
+63	SynthBrass 2	adcbc18bd430d88ef629710e6c35ff28
+64	Soprano Sax	635254e440fe71d3b2406ab796809f5d
+65	Alto Sax	034670659801e01ed76850db9e8c937e
+66	Tenor Sax	7ea55de67d667f6bc1f0f72d88c8615d
+68	Oboe	14a016fb62723216082e9a41b147e5b8
+69	English Horn	eb61f777e54bc67598ed8db1bad2990d
+70	Bassoon	1da3f07ae4c141bacedb96e5b31566e4
+71	Clarinet	f363d3018a33bf627828b4cd2cd53f8e
+72	Piccolo	cbd326d4e11c0f24b992125cec01f6aa
+73	Flute	65e43de100bcd97a96a39ec90736977e
+79	Ocarina	36b645446d11abeef91cc26ae189be1c
+80	Lead 1 (square)	89ac7aa257f195caaab7eb4ac3208977
+87	Lead 2 (sawtooth)	fd62eb1bf483fd974fa624d8dad80001
+89	Pad 2 (warm)	34d2111beddb02346592d88d2afc960d
+90	Pad 3 (polysynth)	91d379f76fb948e9ec1e2f982e3333ee
+91	Pad 4 (choir)	dc7dfd9e4fa18329a8b8c477b14bcb19
+92	Pad 5 (bowed)	13a5410a6987bd997c65faab625c0b44
+94	Pad 7 (halo)	931e953c251f0d6d73c144705a1c1f5b
+98	FX 3 (crystal)	43afe45cdce44a913840ddc2af1d1876
+100	FX 5 (brightness)	7ecd7677501115f28eb5d1f259456c12
+103	FX 8 (sci-fi)	6218ed3920dfdf41f381ceff72ec03e4
+104	Sitar	6abb04d5d20c876674361eaff7c7dd20
+113	Agogo	b13f4c5ce9bb41f78a43c4df07427281
+117	Melodic Tom	6fd97c7db7c82a6908b9b6971eb0e22b
+118	Synth Drum	0a604f32c896c00cdedc7ebd9ca38d51
+121	Breath Noise	62574709b4542139064846db526f66dc
+
+//FE7JIF
+24	Guitar	6434ea28e9ea43816eefb730a5efa65e
+56	Trumpet	c7ac78905fda5740231d0e0581ad503d
+41	Strength（low）	fb7a62d6f2556fcfcd634b7c4081b2a2
+57	Trombone?	c684274d7c8c291211b71fa1e6ba7ca5
+47	Timpani	5f764a66b15710251fb10c095a169829
+4	Piano (heavy / bass)	d91a97fe0b1e3bbfb51c744a29b61296
+4	Piano (guitar)	d024a868df85feccac1ddfb715994315
+60	Horn	1816d62e8478488bdc43709e2f85aeaa
+21	Accordion	12b553afa87181c4e338d9ae28dca878
+26	Electric guitar	a339a0e8f66a3bc6750193f3c391ea36
+19	organ	9360b719288cd2fd54c189b348bdaada
+58	Tuba	39e40771ac170d620fcf8f4c8af04e07
+	?	ab24b662de7f369fcdd621edbaedf0ac
+73	Flute	2adbdf5bac14c228a9b325b701eae561
+	piano（low）	9cd4d1561ac2b11a081ff5ae449e22d4
+	Cuaia?	0412e94eeffa054e656331fedf0daf64
+60	French Horn?	8330a4ce239bd802da2e78ed9b17a424
+71	Clarinet?	cb94df3e8ebde43bdf2735e6013facdd
+68	Oboe?	16ad5a78df5fd449134e08584da5e239
+40	Strength?	8b2f5b71a3bf7d9a1f3a5c7a43a003ce
+10	Music Box?	a9d50aa37c66ecd8db2da45f5e9af37b
+24	Electric guitar?	b56b9fcd8a97fb3a71eac98160db8d34
+	Chorus?	d504eb8588c5dfea941970f1a921cb17
+	Chorus?	c51fffb7ead60513e1b858c9bb873568
+55	Orchestra?	69eaa865f6dc087ac8aea6563e6a1f8a
+36	Slap base	d0e66092e9c272bd26e38abb7bf59d10
+55	OrchestraHit	bba039de72955a6ead386e965a7d3781
+68	Oboe	a4fabe5660b59215188bc91cbb0d8629
+62	brass(low)?	f24a2b42e49d8bd478752fc4f2d0cc57
+71	Clarinet(hih)?	9b25806a576ec774b6f19af320b4419c
+20	Reed organ?	14338f21aff551da86c8f9c9257845cf
+	Soft wave	264cbc56e7f3de6a66f8e9f76675120c
+	?	006bdb5a2211cbf728f57ee2d00e6851
+36	Slap guitar	a0b077828dc1092bab059159518897f9
+100	Brightness system?	4e5ea0fc0919ec38ab08b72aa7cea0ec
+	?	bba37023994901b2776210b9f184c50c
+100	Brightness (hard)	2a433c78cc705c1123f77fabbae40782
+74	Flute or Recorder?	656996b47c988d9ac789f5aa28618ccd
+26	guitar?	44557a74582e01c9442d62c8c52655bd
+26	guitar?	36febb500a853cf51642f1eac34047c6
+	?	863e32ef4b83f4f4d8aa676bfb3c64b1
+63	brass?	c4db34fa0d8aa837b7aa1fb953e7b8be
+8	Glockenspiel	7186cec5187478a754035e04b2b254fa
+29	Overdrive guitar?	f18bfa0680323120504ec116f3a4064a
+	×Gunshot	6276e8a13ae7dc9918788c24d1038d8e
+	Square wave	ec3860afc4943021f0416877097d22b9
+	Slap guitar (cut off)	fc79008a8d5d443eb0c391b5b1c714cb
+	Slap guitar (cut off)	27409df8b068c1e1d709923fbc374e56
+	?	e51839eb91652c31cfe7bf98c269b6c8
+8	Glockenspiel	ec01afbf4c959072c9c3c2f76097e287
+60	French Horn?	437423e6ba1a57ca4c6cfeb19ad14506
+	×	51fd2e90b98cd46dddf9cc8a66ce566e
+11	Glockenspiel	400920bb8b00da757639e9d466fd7741
+56	Trumpet	6f3b4f7d82e5f983b2ed996c23e6feac
+	×	64783cd1c137efa14b9478e74772e78a
+63	brass	a85319ebbe0a3ad3906ee2a62b98ab00
+57	Trombone?	99f92ccc19d95ea3af5b4a653be24c5f
+26	guitar	5f25792163b98a8d4931ef7f476f556a
+	?	6d8719c89acb4ea109922fc4fea260f2
+	Chorus+piano	9cf4a1aa616b0e4e08c640cf2e9cbf01
+68	Oboe?	28594b5c2857733357acd1cad0f603f1

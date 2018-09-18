@@ -1,0 +1,17 @@
+NAME=AIが最大HPのユニットを回復させるのを停止させる
+NAME.en=stop them from healing max hp units(healer ai fix)
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=off|OFF|fix|ONN
+
+ONN:0x3AD35=0xD2
+OFF:0x3AD35=0xD8
+
+ONN:0x3AF0D=0xD2
+OFF:0x3AF0D=0xD8
+
+AUTHOR=Magrika is Now Canon Transport:7743
+NAME.zh=停止将AI恢复到最大HP单位

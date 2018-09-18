@@ -1,0 +1,12 @@
+﻿NAME=召喚時の武器2
+NAME.en=Summoned Creature Weapon 2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07d234
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+NAME.zh=召唤时的武器2

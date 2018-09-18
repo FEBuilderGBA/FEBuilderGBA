@@ -1,0 +1,26 @@
+{}	Show all
+{TEXT}	Text
+{CAMERA}	Camera
+{ITEM}	Item
+{BG}	Background
+{MUSIC}	Musics
+{WAKU}	Frame
+{LOADUNIT}	Unit Placer
+{UNITMOVE}	Unit movement
+{UNITREMOVE}	Unit erase
+{UNITPERSOLNAL}	Unit affiliation
+{UNIT}	Unit Other
+{WEATHER}	Weather
+{MAPCHANGE}	Tile Changes
+{MAPEFFECT}	Map production
+{MAP}	Map Other
+{BATTLE}	Event Battle
+{SUBROUTINE}	Subroutine
+{COND}	Conditions
+{JUMP}	Branch
+{FLAG}	Flag
+{WMAPMOVE}	World map move
+{WMAPTEXT}	World map text
+{WMAPUNIT}	World map unit
+{WMAP}	World map Other
+{ENDING}	Ending

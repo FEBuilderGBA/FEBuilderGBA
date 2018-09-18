@@ -1,0 +1,10 @@
+NAME=MUSIC_闘技場_勝利
+NAME.en=MUSIC_Arena Colosseum Defeat
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08040240
+ADDRESS_TYPE=SONG
+
+NAME.zh=音乐_体育场_胜利

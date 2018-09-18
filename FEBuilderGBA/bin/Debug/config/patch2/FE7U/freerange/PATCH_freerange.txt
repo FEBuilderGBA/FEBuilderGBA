@@ -1,0 +1,16 @@
+NAME=Range Display Fix (freerange / Implementation with Binary by icecube)
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x0168B2=0x2 0x49 0x38 0xC9 0x38 0xC2 0x18 0x32 0x1 0xE0 0xF0 0x3A 0x1C 0x8 0x89 0x69
+BIN:0x0168B2=000168B2.bin
+BIN:0x0168CE=000168CE.bin
+BIN:0x016DC4=00016DC4.bin
+BIN:0x016FBE=00016FBE.bin
+BIN:0x01A4EA=0001A4EA.bin
+BIN:0x01AC6C=0001AC6C.bin
+
+INFO=武器の攻撃レンジ4以上を正しく描画できるようにします。
+INFO.en=Make it possible to correctly draw weapon attack range 4 or more.
+AUTHOR=icecube  https://serenesforest.net/forums/index.php?/topic/48334-fe7fe8-range-patch-fix/
+INFO.zh=可以正确地绘制武器攻击范围4或更多。

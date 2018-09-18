@@ -1,0 +1,13 @@
+NAME=MODE SELECT 戦闘アニメ ヘクトル編
+NAME.en=MODE SELECT Battle Animation of the Hextor Editing
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x418DB0
+ADDRESS_TYPE=BATTLEANIME_PLUS1
+DATASIZE=4
+
+AUTHOR=Source: Tequila http://feuniverse.us/t/fe7-replace-hector-mode/3169/6
+NAME.zh=MODESELECT战斗动画赫克托编。

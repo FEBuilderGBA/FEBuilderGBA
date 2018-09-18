@@ -1,0 +1,2579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{38A744E7-842A-498B-A2DE-5FE514E26961}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FEBuilderGBA</RootNamespace>
+    <AssemblyName>FEBuilderGBA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="AIUnitsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIUnitsForm.Designer.cs">
+      <DependentUpon>AIUnitsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArenaClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArenaClassForm.Designer.cs">
+      <DependentUpon>ArenaClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsmMapFile.cs" />
+    <Compile Include="AsmMapFileAsmCache.cs" />
+    <Compile Include="CStringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CStringForm.Designer.cs">
+      <DependentUpon>CStringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomColorGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DecreaseColor.cs" />
+    <Compile Include="DevTranslateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevTranslateForm.Designer.cs">
+      <DependentUpon>DevTranslateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisASMDumpAllArgGrepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisASMDumpAllArgGrepForm.Designer.cs">
+      <DependentUpon>DisASMDumpAllArgGrepForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EAUtil.cs" />
+    <Compile Include="ErorrUnknownROM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErorrUnknownROM.Designer.cs">
+      <DependentUpon>ErorrUnknownROM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScriptTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventScriptTemplateForm.Designer.cs">
+      <DependentUpon>EventScriptTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTemplate1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTemplate1Form.Designer.cs">
+      <DependentUpon>EventTemplate1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindBackup.cs" />
+    <Compile Include="ImageRomAnimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageRomAnimeForm.Designer.cs">
+      <DependentUpon>ImageRomAnimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageTSAAnimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageTSAAnimeForm.Designer.cs">
+      <DependentUpon>ImageTSAAnimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilAP.cs" />
+    <Compile Include="ImageUtilMagic.cs" />
+    <Compile Include="ListBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MapSettingDifficultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSettingDifficultyForm.Designer.cs">
+      <DependentUpon>MapSettingDifficultyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapStyleEditorAppendPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapStyleEditorAppendPopupForm.Designer.cs">
+      <DependentUpon>MapStyleEditorAppendPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatchFilterExForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatchFilterExForm.Designer.cs">
+      <DependentUpon>PatchFilterExForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcsScriptInnerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProcsScriptInnerControl.Designer.cs">
+      <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAM.cs" />
+    <Compile Include="EmulatorMemoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmulatorMemoryForm.Designer.cs">
+      <DependentUpon>EmulatorMemoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EtcCache.cs" />
+    <Compile Include="EtcCacheFLag.cs" />
+    <Compile Include="RAMUnitStateFlagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RAMUnitStateFlagForm.Designer.cs">
+      <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecycleAddress.cs" />
+    <Compile Include="RegexCache.cs" />
+    <Compile Include="TextID.cs" />
+    <Compile Include="ToolAnimationCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolAnimationCreatorForm.Designer.cs">
+      <DependentUpon>ToolAnimationCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolAnimationCreatorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolAnimationCreatorUserControl.Designer.cs">
+      <DependentUpon>ToolAnimationCreatorUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolExportEAEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolExportEAEventForm.Designer.cs">
+      <DependentUpon>ToolExportEAEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FELint.cs" />
+    <Compile Include="MainSimpleMenuEventErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSimpleMenuEventErrorForm.Designer.cs">
+      <DependentUpon>MainSimpleMenuEventErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSimpleMenuEventErrorIgnoreErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSimpleMenuEventErrorIgnoreErrorForm.Designer.cs">
+      <DependentUpon>MainSimpleMenuEventErrorIgnoreErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatchMainFilter.cs" />
+    <Compile Include="RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SkillUtil.cs" />
+    <Compile Include="TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolASMInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolASMInsertForm.Designer.cs">
+      <DependentUpon>ToolASMInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDiffDebugSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDiffDebugSelectForm.Designer.cs">
+      <DependentUpon>ToolDiffDebugSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDiffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDiffForm.Designer.cs">
+      <DependentUpon>ToolDiffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisASMDumpAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisASMDumpAllForm.Designer.cs">
+      <DependentUpon>DisASMDumpAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPaletteShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorPaletteShowForm.Designer.cs">
+      <DependentUpon>ErrorPaletteShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorReportForm.Designer.cs">
+      <DependentUpon>ErrorReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventAssemblerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventAssemblerForm.Designer.cs">
+      <DependentUpon>EventAssemblerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScriptFormCategorySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventScriptFormCategorySelectForm.Designer.cs">
+      <DependentUpon>EventScriptFormCategorySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventUnitNewAllocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitNewAllocForm.Designer.cs">
+      <DependentUpon>EventUnitNewAllocForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsToolPatchMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicsToolPatchMakerForm.Designer.cs">
+      <DependentUpon>GraphicsToolPatchMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HexBox.Designer.cs">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexEditorForm.Designer.cs">
+      <DependentUpon>HexEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexEditorJump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexEditorJump.Designer.cs">
+      <DependentUpon>HexEditorJump.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexEditorMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexEditorMark.Designer.cs">
+      <DependentUpon>HexEditorMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageMagicFEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageMagicFEditorForm.Designer.cs">
+      <DependentUpon>ImageMagicFEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageCGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageCGForm.Designer.cs">
+      <DependentUpon>ImageCGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CCBranchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CCBranchForm.Designer.cs">
+      <DependentUpon>CCBranchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassForm.Designer.cs">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisASMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisASMForm.Designer.cs">
+      <DependentUpon>DisASMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisASMTrumb.cs" />
+    <Compile Include="EDSensekiCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDSensekiCommentForm.Designer.cs">
+      <DependentUpon>EDSensekiCommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBattleTerrainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBattleTerrainForm.Designer.cs">
+      <DependentUpon>ImageBattleTerrainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageFormRef.cs" />
+    <Compile Include="ImagePortraitImporterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePortraitImporterForm.Designer.cs">
+      <DependentUpon>ImagePortraitImporterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilAnimeGif.cs" />
+    <Compile Include="ImageUtilMagicCSACreator.cs" />
+    <Compile Include="ImageUtilMagicFEditor.cs" />
+    <Compile Include="InterpolatedPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ItemEtcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEtcForm.Designer.cs">
+      <DependentUpon>ItemEtcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LastSelectedFilename.cs" />
+    <Compile Include="ToolROMRebuildFreeArea.cs" />
+    <Compile Include="ToolROMRebuildMake.cs" />
+    <Compile Include="ToolFELintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFELintForm.Designer.cs">
+      <DependentUpon>ToolFELintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolFlagNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFlagNameForm.Designer.cs">
+      <DependentUpon>ToolFlagNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolLZ77Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolLZ77Form.Designer.cs">
+      <DependentUpon>ToolLZ77Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFE7Form.Designer.cs">
+      <DependentUpon>MainFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormUtil.cs" />
+    <Compile Include="MainSimpleMenuImageSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSimpleMenuImageSubForm.Designer.cs">
+      <DependentUpon>MainSimpleMenuImageSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapEditorMarSizeDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapEditorMarSizeDialogForm.Designer.cs">
+      <DependentUpon>MapEditorMarSizeDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapEditorResizeDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapEditorResizeDialogForm.Designer.cs">
+      <DependentUpon>MapEditorResizeDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapPointerNewPLISTPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapPointerNewPLISTPopupForm.Designer.cs">
+      <DependentUpon>MapPointerNewPLISTPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapSettingFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSettingFE7Form.Designer.cs">
+      <DependentUpon>MapSettingFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDefinitionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDefinitionForm.Designer.cs">
+      <DependentUpon>MenuDefinitionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod.cs" />
+    <Compile Include="MultiByteJPUtil.cs" />
+    <Compile Include="MyTranslateBuild.cs" />
+    <Compile Include="MyTranslateResource.cs" />
+    <Compile Include="NotifyPleaseWaitUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotifyPleaseWaitUserControl.Designer.cs">
+      <DependentUpon>NotifyPleaseWaitUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassDemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassDemoForm.Designer.cs">
+      <DependentUpon>OPClassDemoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassFontForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassFontForm.Designer.cs">
+      <DependentUpon>OPClassFontForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="EDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDForm.Designer.cs">
+      <DependentUpon>EDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EDStaffRollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDStaffRollForm.Designer.cs">
+      <DependentUpon>EDStaffRollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventBattleTalkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventBattleTalkForm.Designer.cs">
+      <DependentUpon>EventBattleTalkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventCondForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventCondForm.Designer.cs">
+      <DependentUpon>EventCondForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventForceSortieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForceSortieForm.Designer.cs">
+      <DependentUpon>EventForceSortieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHaikuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventHaikuForm.Designer.cs">
+      <DependentUpon>EventHaikuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventScriptForm.Designer.cs">
+      <DependentUpon>EventScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScriptPopupUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventScriptPopupUserControl.Designer.cs">
+      <DependentUpon>EventScriptPopupUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitForm.Designer.cs">
+      <DependentUpon>EventUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FETextDecode.cs" />
+    <Compile Include="FETextEncode.cs" />
+    <Compile Include="FontForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FontForm.Designer.cs">
+      <DependentUpon>FontForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicsToolForm.Designer.cs">
+      <DependentUpon>GraphicsToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrowSimulator.cs" />
+    <Compile Include="ImageUtilMap.cs" />
+    <Compile Include="ImageUtilOAM.cs" />
+    <Compile Include="ItemPromotionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemPromotionForm.Designer.cs">
+      <DependentUpon>ItemPromotionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemWeaponTriangleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemWeaponTriangleForm.Designer.cs">
+      <DependentUpon>ItemWeaponTriangleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemStatBonusesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemStatBonusesForm.Designer.cs">
+      <DependentUpon>ItemStatBonusesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEffectivenessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEffectivenessForm.Designer.cs">
+      <DependentUpon>ItemEffectivenessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemWeaponEffectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemWeaponEffectForm.Designer.cs">
+      <DependentUpon>ItemWeaponEffectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemShopForm.Designer.cs">
+      <DependentUpon>ItemShopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs" />
+    <Compile Include="LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFE8Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFE8Form.Designer.cs">
+      <DependentUpon>MainFE8Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageItemIconForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageItemIconForm.Designer.cs">
+      <DependentUpon>ImageItemIconForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtil.cs" />
+    <Compile Include="ImageBattleAnimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBattleAnimeForm.Designer.cs">
+      <DependentUpon>ImageBattleAnimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBGForm.Designer.cs">
+      <DependentUpon>ImageBGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageChapterTitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageChapterTitleForm.Designer.cs">
+      <DependentUpon>ImageChapterTitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUnitPaletteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageUnitPaletteForm.Designer.cs">
+      <DependentUpon>ImageUnitPaletteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePortraitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePortraitForm.Designer.cs">
+      <DependentUpon>ImagePortraitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUnitMoveIconFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageUnitMoveIconFrom.Designer.cs">
+      <DependentUpon>ImageUnitMoveIconFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUnitWaitIconFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageUnitWaitIconFrom.Designer.cs">
+      <DependentUpon>ImageUnitWaitIconFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputFormRef.cs" />
+    <Compile Include="ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LZ77.cs" />
+    <Compile Include="MapExitPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapExitPointForm.Designer.cs">
+      <DependentUpon>MapExitPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MapPictureBox.Designer.cs">
+      <DependentUpon>MapPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapPointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapPointerForm.Designer.cs">
+      <DependentUpon>MapPointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSettingForm.Designer.cs">
+      <DependentUpon>MapSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapTerrainNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTerrainNameForm.Designer.cs">
+      <DependentUpon>MapTerrainNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCommandForm.Designer.cs">
+      <DependentUpon>MenuCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonsterItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonsterItemForm.Designer.cs">
+      <DependentUpon>MonsterItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonsterProbabilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonsterProbabilityForm.Designer.cs">
+      <DependentUpon>MonsterProbabilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveCostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveCostForm.Designer.cs">
+      <DependentUpon>MoveCostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveToFreeSapceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveToFreeSapceForm.Designer.cs">
+      <DependentUpon>MoveToFreeSapceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveToUnuseSpace.cs" />
+    <Compile Include="EventScript.cs" />
+    <Compile Include="OpenLastSelectedFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenLastSelectedFileForm.Designer.cs">
+      <DependentUpon>OpenLastSelectedFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPPrologueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPPrologueForm.Designer.cs">
+      <DependentUpon>OPPrologueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaletteClipboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaletteClipboardForm.Designer.cs">
+      <DependentUpon>PaletteClipboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaletteFormRef.cs" />
+    <Compile Include="PaletteSwapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaletteSwapForm.Designer.cs">
+      <DependentUpon>PaletteSwapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatchForm.Designer.cs">
+      <DependentUpon>PatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointerToolCopyToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointerToolCopyToForm.Designer.cs">
+      <DependentUpon>PointerToolCopyToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointerToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointerToolForm.Designer.cs">
+      <DependentUpon>PointerToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolMagicEffectMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolMagicEffectMakerForm.Designer.cs">
+      <DependentUpon>ToolMagicEffectMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolPortraitMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolPortraitMakerForm.Designer.cs">
+      <DependentUpon>ToolPortraitMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="R.cs" />
+    <Compile Include="Rom.cs" />
+    <Compile Include="ROMFE6JP.cs" />
+    <Compile Include="ROMFE7JP.cs" />
+    <Compile Include="ROMFE7U.cs" />
+    <Compile Include="ROMFE8JP.cs" />
+    <Compile Include="ROMFE8U.cs" />
+    <Compile Include="SappyPlaying.cs" />
+    <Compile Include="SearchHelperControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchHelperControl.Designer.cs">
+      <DependentUpon>SearchHelperControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchSevenZip.cs" />
+    <Compile Include="SGMJump.cs" />
+    <Compile Include="SGMLoader.cs" />
+    <Compile Include="SkillAssignmentUnitFE8NForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillAssignmentUnitFE8NForm.Designer.cs">
+      <DependentUpon>SkillAssignmentUnitFE8NForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssignmentUnitSkillSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillAssignmentUnitSkillSystemForm.Designer.cs">
+      <DependentUpon>SkillAssignmentUnitSkillSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillConfigFE8NSkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillConfigFE8NSkillForm.Designer.cs">
+      <DependentUpon>SkillConfigFE8NSkillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillConfigSkillSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillConfigSkillSystemForm.Designer.cs">
+      <DependentUpon>SkillConfigSkillSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongExchangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongExchangeForm.Designer.cs">
+      <DependentUpon>SongExchangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTableForm.Designer.cs">
+      <DependentUpon>SongTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackChangeTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackChangeTrackForm.Designer.cs">
+      <DependentUpon>SongTrackChangeTrackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackForm.Designer.cs">
+      <DependentUpon>SongTrackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongInstrumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongInstrumentForm.Designer.cs">
+      <DependentUpon>SongInstrumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackImportSelectInstrumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackImportSelectInstrumentForm.Designer.cs">
+      <DependentUpon>SongTrackImportSelectInstrumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongUtil.cs" />
+    <Compile Include="SoundBossBGMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundBossBGMForm.Designer.cs">
+      <DependentUpon>SoundBossBGMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundFootStepsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundFootStepsForm.Designer.cs">
+      <DependentUpon>SoundFootStepsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundRoomForm.Designer.cs">
+      <DependentUpon>SoundRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAttributeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportAttributeForm.Designer.cs">
+      <DependentUpon>SupportAttributeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportTalkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportTalkForm.Designer.cs">
+      <DependentUpon>SupportTalkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSystemIconForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageSystemIconForm.Designer.cs">
+      <DependentUpon>ImageSystemIconForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemTextEncoderTBLEncodeClass.cs" />
+    <Compile Include="TextBadCharPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextBadCharPopupForm.Designer.cs">
+      <DependentUpon>TextBadCharPopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextCharCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextCharCodeForm.Designer.cs">
+      <DependentUpon>TextCharCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemTextEncoder.cs" />
+    <Compile Include="TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextForm.Designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinySegmenter.cs" />
+    <Compile Include="ToolProblemReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolProblemReportForm.Designer.cs">
+      <DependentUpon>ToolProblemReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolROMRebuildApply.cs" />
+    <Compile Include="ToolStripSeparatorEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolDiffDebugSelectMethodPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDiffDebugSelectMethodPopup.Designer.cs">
+      <DependentUpon>ToolDiffDebugSelectMethodPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolThreeMargeCloseAlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolThreeMargeCloseAlertForm.Designer.cs">
+      <DependentUpon>ToolThreeMargeCloseAlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolTranslateROM.cs" />
+    <Compile Include="ToolTranslateROMFont.cs" />
+    <Compile Include="ToolUndoPopupDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUndoPopupDialogForm.Designer.cs">
+      <DependentUpon>ToolUndoPopupDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranslateGoogle.cs" />
+    <Compile Include="ToolTranslateROMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolTranslateROMForm.Designer.cs">
+      <DependentUpon>ToolTranslateROMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranslateTextUtil.cs" />
+    <Compile Include="DecreaseColorTSAToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DecreaseColorTSAToolForm.Designer.cs">
+      <DependentUpon>DecreaseColorTSAToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Undo.cs" />
+    <Compile Include="ToolUndoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUndoForm.Designer.cs">
+      <DependentUpon>ToolUndoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitForm.designer.cs">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitIncreaseHeightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitIncreaseHeightForm.Designer.cs">
+      <DependentUpon>UnitIncreaseHeightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitPaletteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitPaletteForm.Designer.cs">
+      <DependentUpon>UnitPaletteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportUnitForm.Designer.cs">
+      <DependentUpon>SupportUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="U.cs" />
+    <Compile Include="UpdateCheck.cs" />
+    <Compile Include="ToolUpdateDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUpdateDialogForm.Designer.cs">
+      <DependentUpon>ToolUpdateDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ROMUpdateWatcher.cs" />
+    <Compile Include="UPSUtil.cs" />
+    <Compile Include="VersionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionForm.Designer.cs">
+      <DependentUpon>VersionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapEventPointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapEventPointerForm.Designer.cs">
+      <DependentUpon>WorldMapEventPointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapImageForm.Designer.cs">
+      <DependentUpon>WorldMapImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapPathEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapPathEditorForm.Designer.cs">
+      <DependentUpon>WorldMapPathEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapPointForm.Designer.cs">
+      <DependentUpon>WorldMapPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapPathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapPathForm.Designer.cs">
+      <DependentUpon>WorldMapPathForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyWriteUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotifyWriteUserControl.Designer.cs">
+      <DependentUpon>NotifyWriteUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitFE7Form.designer.cs">
+      <DependentUpon>UnitFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EDFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDFE7Form.Designer.cs">
+      <DependentUpon>EDFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventBattleTalkFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventBattleTalkFE7Form.Designer.cs">
+      <DependentUpon>EventBattleTalkFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHaikuFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventHaikuFE7Form.Designer.cs">
+      <DependentUpon>EventHaikuFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventUnitFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitFE7Form.Designer.cs">
+      <DependentUpon>EventUnitFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBattleBGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBattleBGForm.designer.cs">
+      <DependentUpon>ImageBattleBGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassDemoFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassDemoFE7Form.Designer.cs">
+      <DependentUpon>OPClassDemoFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapEventPointerFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapEventPointerFE7Form.Designer.cs">
+      <DependentUpon>WorldMapEventPointerFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFE6Form.Designer.cs">
+      <DependentUpon>MainFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassFE6Form.Designer.cs">
+      <DependentUpon>ClassFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportUnitFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportUnitFE6Form.Designer.cs">
+      <DependentUpon>SupportUnitFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitFE6Form.designer.cs">
+      <DependentUpon>UnitFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportTalkFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportTalkFE6Form.Designer.cs">
+      <DependentUpon>SupportTalkFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemFE6Form.Designer.cs">
+      <DependentUpon>ItemFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePortraitFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePortraitFE6Form.Designer.cs">
+      <DependentUpon>ImagePortraitFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoundRoomFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundRoomFE6Form.Designer.cs">
+      <DependentUpon>SoundRoomFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapSettingFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSettingFE6Form.Designer.cs">
+      <DependentUpon>MapSettingFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EDFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EDFE6Form.Designer.cs">
+      <DependentUpon>EDFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventBattleTalkFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventBattleTalkFE6Form.Designer.cs">
+      <DependentUpon>EventBattleTalkFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHaikuFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventHaikuFE6Form.Designer.cs">
+      <DependentUpon>EventHaikuFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventUnitFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitFE6Form.Designer.cs">
+      <DependentUpon>EventUnitFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapEventPointerFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapEventPointerFE6Form.Designer.cs">
+      <DependentUpon>WorldMapEventPointerFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveCostFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveCostFE6Form.Designer.cs">
+      <DependentUpon>MoveCostFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapChangeForm.Designer.cs">
+      <DependentUpon>MapChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapTerrainNameEngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTerrainNameEngForm.Designer.cs">
+      <DependentUpon>MapTerrainNameEngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassAlphaNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassAlphaNameForm.Designer.cs">
+      <DependentUpon>OPClassAlphaNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassDemoFE8UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassDemoFE8UForm.Designer.cs">
+      <DependentUpon>OPClassDemoFE8UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassFontFE8UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassFontFE8UForm.Designer.cs">
+      <DependentUpon>OPClassFontFE8UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageCGFE7UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageCGFE7UForm.Designer.cs">
+      <DependentUpon>ImageCGFE7UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPClassDemoFE7UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassDemoFE7UForm.Designer.cs">
+      <DependentUpon>OPClassDemoFE7UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageChapterTitleFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageChapterTitleFE7Form.Designer.cs">
+      <DependentUpon>ImageChapterTitleFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapSettingFE7UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSettingFE7UForm.Designer.cs">
+      <DependentUpon>MapSettingFE7UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapEditorForm.Designer.cs">
+      <DependentUpon>MapEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapStyleEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapStyleEditorForm.Designer.cs">
+      <DependentUpon>MapStyleEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapPathMoveEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapPathMoveEditorForm.Designer.cs">
+      <DependentUpon>WorldMapPathMoveEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCustomBattleAnimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitCustomBattleAnimeForm.Designer.cs">
+      <DependentUpon>UnitCustomBattleAnimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSimpleMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSimpleMenuForm.Designer.cs">
+      <DependentUpon>MainSimpleMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventForceSortieFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventForceSortieFE7Form.Designer.cs">
+      <DependentUpon>EventForceSortieFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapImageFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapImageFE7Form.Designer.cs">
+      <DependentUpon>WorldMapImageFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMapImageFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapImageFE6Form.Designer.cs">
+      <DependentUpon>WorldMapImageFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEtcFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEtcFE7Form.Designer.cs">
+      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageMagicCSACreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageMagicCSACreatorForm.Designer.cs">
+      <DependentUpon>ImageMagicCSACreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssignmentClassSkillSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillAssignmentClassSkillSystemForm.Designer.cs">
+      <DependentUpon>SkillAssignmentClassSkillSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexEditorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HexEditorSearch.Designer.cs">
+      <DependentUpon>HexEditorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBattleAnimePalletForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBattleAnimePalletForm.Designer.cs">
+      <DependentUpon>ImageBattleAnimePalletForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherTextForm.Designer.cs">
+      <DependentUpon>OtherTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SummonUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SummonUnitForm.Designer.cs">
+      <DependentUpon>SummonUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBattleScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageBattleScreenForm.Designer.cs">
+      <DependentUpon>ImageBattleScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantAnimationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantAnimationForm.Designer.cs">
+      <DependentUpon>MantAnimationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HowDoYouLikePatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowDoYouLikePatchForm.Designer.cs">
+      <DependentUpon>HowDoYouLikePatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackAllChangeTrackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackAllChangeTrackForm.Designer.cs">
+      <DependentUpon>SongTrackAllChangeTrackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackImportMidiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackImportMidiForm.Designer.cs">
+      <DependentUpon>SongTrackImportMidiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HowDoYouLikePatch2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowDoYouLikePatch2Form.Designer.cs">
+      <DependentUpon>HowDoYouLikePatch2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemIconPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImagePalletForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImagePalletForm.Designer.cs">
+      <DependentUpon>ImagePalletForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusRMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusRMenuForm.Designer.cs">
+      <DependentUpon>StatusRMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusParamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusParamForm.Designer.cs">
+      <DependentUpon>StatusParamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIScriptForm.Designer.cs">
+      <DependentUpon>AIScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AITargetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AITargetForm.Designer.cs">
+      <DependentUpon>AITargetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTranslateResourceLow.cs" />
+    <Compile Include="ItemUsagePointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemUsagePointerForm.Designer.cs">
+      <DependentUpon>ItemUsagePointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapLoadFunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapLoadFunctionForm.Designer.cs">
+      <DependentUpon>MapLoadFunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventBattleDataFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventBattleDataFE7Form.Designer.cs">
+      <DependentUpon>EventBattleDataFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportTalkFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportTalkFE7Form.Designer.cs">
+      <DependentUpon>SupportTalkFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSystemAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageSystemAreaForm.Designer.cs">
+      <DependentUpon>ImageSystemAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageTSAEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageTSAEditorForm.Designer.cs">
+      <DependentUpon>ImageTSAEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArenaEnemyWeaponForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArenaEnemyWeaponForm.Designer.cs">
+      <DependentUpon>ArenaEnemyWeaponForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointerToolBatchInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointerToolBatchInputForm.Designer.cs">
+      <DependentUpon>PointerToolBatchInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SummonsDemonKingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SummonsDemonKingForm.Designer.cs">
+      <DependentUpon>SummonsDemonKingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcsScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcsScriptForm.Designer.cs">
+      <DependentUpon>ProcsScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapTileAnimation1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTileAnimation1Form.Designer.cs">
+      <DependentUpon>MapTileAnimation1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapTileAnimation2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTileAnimation2Form.Designer.cs">
+      <DependentUpon>MapTileAnimation2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPaletteTransparentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorPaletteTransparentForm.Designer.cs">
+      <DependentUpon>ErrorPaletteTransparentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventMoveDataFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventMoveDataFE7Form.Designer.cs">
+      <DependentUpon>EventMoveDataFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumpStructSelectDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumpStructSelectDialogForm.Designer.cs">
+      <DependentUpon>DumpStructSelectDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumpStructSelectToTextDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumpStructSelectToTextDialogForm.Designer.cs">
+      <DependentUpon>DumpStructSelectToTextDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolUPSPatchSimpleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUPSPatchSimpleForm.Designer.cs">
+      <DependentUpon>ToolUPSPatchSimpleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolUPSOpenSimpleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUPSOpenSimpleForm.Designer.cs">
+      <DependentUpon>ToolUPSOpenSimpleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolThreeMargeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolThreeMargeForm.Designer.cs">
+      <DependentUpon>ToolThreeMargeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OAMSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OAMSPForm.Designer.cs">
+      <DependentUpon>OAMSPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPaletteMissMatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorPaletteMissMatchForm.Designer.cs">
+      <DependentUpon>ErrorPaletteMissMatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FontZHForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FontZHForm.Designer.cs">
+      <DependentUpon>FontZHForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilSkillSystemsAnimeCreator.cs" />
+    <Compile Include="SkillConfigFE8NVer2SkillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillConfigFE8NVer2SkillForm.Designer.cs">
+      <DependentUpon>SkillConfigFE8NVer2SkillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTalkGroupFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTalkGroupFE7Form.Designer.cs">
+      <DependentUpon>EventTalkGroupFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisASMInnerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisASMInnerControl.Designer.cs">
+      <DependentUpon>DisASMInnerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScriptInnerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventScriptInnerControl.Designer.cs">
+      <DependentUpon>EventScriptInnerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolClickWriteFloatControlPanelButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolClickWriteFloatControlPanelButtonForm.Designer.cs">
+      <DependentUpon>ToolClickWriteFloatControlPanelButtonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventFunctionPointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventFunctionPointerForm.Designer.cs">
+      <DependentUpon>EventFunctionPointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEffectPointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEffectPointerForm.Designer.cs">
+      <DependentUpon>ItemEffectPointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command85PointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command85PointerForm.Designer.cs">
+      <DependentUpon>Command85PointerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventFunctionPointerFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventFunctionPointerFE7Form.Designer.cs">
+      <DependentUpon>EventFunctionPointerFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemRandomChestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemRandomChestForm.Designer.cs">
+      <DependentUpon>ItemRandomChestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SongTrackImportWaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongTrackImportWaveForm.Designer.cs">
+      <DependentUpon>SongTrackImportWaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIScriptCategorySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIScriptCategorySelectForm.Designer.cs">
+      <DependentUpon>AIScriptCategorySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcsScriptCategorySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcsScriptCategorySelectForm.Designer.cs">
+      <DependentUpon>ProcsScriptCategorySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonsterWMapProbabilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonsterWMapProbabilityForm.Designer.cs">
+      <DependentUpon>MonsterWMapProbabilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolUnitTalkGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUnitTalkGroupForm.Designer.cs">
+      <DependentUpon>ToolUnitTalkGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextDicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextDicForm.Designer.cs">
+      <DependentUpon>TextDicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatchFormUninstallDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatchFormUninstallDialogForm.Designer.cs">
+      <DependentUpon>PatchFormUninstallDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AIStealItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIStealItemForm.Designer.cs">
+      <DependentUpon>AIStealItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIMapSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIMapSettingForm.Designer.cs">
+      <DependentUpon>AIMapSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorTSAErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorTSAErrorForm.Designer.cs">
+      <DependentUpon>ErrorTSAErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolROMRebuildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolROMRebuildForm.Designer.cs">
+      <DependentUpon>ToolROMRebuildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolROMRebuildOpenSimpleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolROMRebuildOpenSimpleForm.Designer.cs">
+      <DependentUpon>ToolROMRebuildOpenSimpleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraUnitForm.Designer.cs">
+      <DependentUpon>ExtraUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraUnitFE8UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraUnitFE8UForm.Designer.cs">
+      <DependentUpon>ExtraUnitFE8UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGenericEnemyPortraitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageGenericEnemyPortraitForm.Designer.cs">
+      <DependentUpon>ImageGenericEnemyPortraitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextScriptFormCategorySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextScriptFormCategorySelectForm.Designer.cs">
+      <DependentUpon>TextScriptFormCategorySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyDirectInjectionNotifyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotifyDirectInjectionNotifyUserControl.Designer.cs">
+      <DependentUpon>NotifyDirectInjectionNotifyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTemplate3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTemplate3Form.Designer.cs">
+      <DependentUpon>EventTemplate3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTemplate2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTemplate2Form.Designer.cs">
+      <DependentUpon>EventTemplate2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTemplate5Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTemplate5Form.Designer.cs">
+      <DependentUpon>EventTemplate5Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventTemplate4Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventTemplate4Form.Designer.cs">
+      <DependentUpon>EventTemplate4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuExtendSplitMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuExtendSplitMenuForm.Designer.cs">
+      <DependentUpon>MenuExtendSplitMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemStatBonusesVennoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemStatBonusesVennoForm.Designer.cs">
+      <DependentUpon>ItemStatBonusesVennoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkArenaDenyUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkArenaDenyUnitForm.Designer.cs">
+      <DependentUpon>LinkArenaDenyUnitForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FEBuilderGBA_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラー 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AIUnitsForm.resx">
+      <DependentUpon>AIUnitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArenaClassForm.resx">
+      <DependentUpon>ArenaClassForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CCBranchForm.resx">
+      <DependentUpon>CCBranchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassFE6Form.resx">
+      <DependentUpon>ClassFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassForm.resx">
+      <DependentUpon>ClassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CStringForm.resx">
+      <DependentUpon>CStringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevTranslateForm.resx">
+      <DependentUpon>DevTranslateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisASMDumpAllArgGrepForm.resx">
+      <DependentUpon>DisASMDumpAllArgGrepForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmulatorMemoryForm.resx">
+      <DependentUpon>EmulatorMemoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErorrUnknownROM.resx">
+      <DependentUpon>ErorrUnknownROM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScriptTemplateForm.resx">
+      <DependentUpon>EventScriptTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTemplate1Form.resx">
+      <DependentUpon>EventTemplate1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageRomAnimeForm.resx">
+      <DependentUpon>ImageRomAnimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageTSAAnimeForm.resx">
+      <DependentUpon>ImageTSAAnimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSettingDifficultyForm.resx">
+      <DependentUpon>MapSettingDifficultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapStyleEditorAppendPopupForm.resx">
+      <DependentUpon>MapStyleEditorAppendPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatchFilterExForm.resx">
+      <DependentUpon>PatchFilterExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcsScriptInnerControl.resx">
+      <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAMUnitStateFlagForm.resx">
+      <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolAnimationCreatorForm.resx">
+      <DependentUpon>ToolAnimationCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolAnimationCreatorUserControl.resx">
+      <DependentUpon>ToolAnimationCreatorUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolExportEAEventForm.resx">
+      <DependentUpon>ToolExportEAEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSimpleMenuEventErrorForm.resx">
+      <DependentUpon>MainSimpleMenuEventErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScriptInnerControl.resx">
+      <DependentUpon>EventScriptInnerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSimpleMenuEventErrorIgnoreErrorForm.resx">
+      <DependentUpon>MainSimpleMenuEventErrorIgnoreErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapExitPointForm.resx">
+      <DependentUpon>MapExitPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RichTextBoxEx.resx">
+      <DependentUpon>RichTextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolASMInsertForm.resx">
+      <DependentUpon>ToolASMInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDiffDebugSelectForm.resx">
+      <DependentUpon>ToolDiffDebugSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDiffForm.resx">
+      <DependentUpon>ToolDiffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisASMForm.resx">
+      <DependentUpon>DisASMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisASMDumpAllForm.resx">
+      <DependentUpon>DisASMDumpAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EDFE6Form.resx">
+      <DependentUpon>EDFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EDFE7Form.resx">
+      <DependentUpon>EDFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EDForm.resx">
+      <DependentUpon>EDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EDSensekiCommentForm.resx">
+      <DependentUpon>EDSensekiCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EDStaffRollForm.resx">
+      <DependentUpon>EDStaffRollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorPaletteShowForm.resx">
+      <DependentUpon>ErrorPaletteShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorReportForm.resx">
+      <DependentUpon>ErrorReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventAssemblerForm.resx">
+      <DependentUpon>EventAssemblerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventBattleTalkFE6Form.resx">
+      <DependentUpon>EventBattleTalkFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventBattleTalkFE7Form.resx">
+      <DependentUpon>EventBattleTalkFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventBattleTalkForm.resx">
+      <DependentUpon>EventBattleTalkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventCondForm.resx">
+      <DependentUpon>EventCondForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForceSortieFE7Form.resx">
+      <DependentUpon>EventForceSortieFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventForceSortieForm.resx">
+      <DependentUpon>EventForceSortieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventHaikuFE6Form.resx">
+      <DependentUpon>EventHaikuFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventHaikuFE7Form.resx">
+      <DependentUpon>EventHaikuFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventHaikuForm.resx">
+      <DependentUpon>EventHaikuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScriptForm.resx">
+      <DependentUpon>EventScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScriptFormCategorySelectForm.resx">
+      <DependentUpon>EventScriptFormCategorySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScriptPopupUserControl.resx">
+      <DependentUpon>EventScriptPopupUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitFE6Form.resx">
+      <DependentUpon>EventUnitFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitFE7Form.resx">
+      <DependentUpon>EventUnitFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitForm.resx">
+      <DependentUpon>EventUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitNewAllocForm.resx">
+      <DependentUpon>EventUnitNewAllocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FontForm.resx">
+      <DependentUpon>FontForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicsToolForm.resx">
+      <DependentUpon>GraphicsToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicsToolPatchMakerForm.resx">
+      <DependentUpon>GraphicsToolPatchMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexBox.resx">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexEditorForm.resx">
+      <DependentUpon>HexEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexEditorJump.resx">
+      <DependentUpon>HexEditorJump.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexEditorMark.resx">
+      <DependentUpon>HexEditorMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBattleAnimeForm.resx">
+      <DependentUpon>ImageBattleAnimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBattleAnimePalletForm.resx">
+      <DependentUpon>ImageBattleAnimePalletForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBattleBGForm.resx">
+      <DependentUpon>ImageBattleBGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBattleTerrainForm.resx">
+      <DependentUpon>ImageBattleTerrainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBGForm.resx">
+      <DependentUpon>ImageBGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageCGFE7UForm.resx">
+      <DependentUpon>ImageCGFE7UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageCGForm.resx">
+      <DependentUpon>ImageCGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageChapterTitleFE7Form.resx">
+      <DependentUpon>ImageChapterTitleFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageChapterTitleForm.resx">
+      <DependentUpon>ImageChapterTitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageItemIconForm.resx">
+      <DependentUpon>ImageItemIconForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageMagicCSACreatorForm.resx">
+      <DependentUpon>ImageMagicCSACreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageMagicFEditorForm.resx">
+      <DependentUpon>ImageMagicFEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePortraitFE6Form.resx">
+      <DependentUpon>ImagePortraitFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePortraitForm.resx">
+      <DependentUpon>ImagePortraitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePortraitImporterForm.resx">
+      <DependentUpon>ImagePortraitImporterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSystemIconForm.resx">
+      <DependentUpon>ImageSystemIconForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageUnitMoveIconFrom.resx">
+      <DependentUpon>ImageUnitMoveIconFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageUnitPaletteForm.resx">
+      <DependentUpon>ImageUnitPaletteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageUnitWaitIconFrom.resx">
+      <DependentUpon>ImageUnitWaitIconFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemFE6Form.resx">
+      <DependentUpon>ItemFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemPromotionForm.resx">
+      <DependentUpon>ItemPromotionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemShopForm.resx">
+      <DependentUpon>ItemShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemStatBonusesForm.resx">
+      <DependentUpon>ItemStatBonusesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemWeaponTriangleForm.resx">
+      <DependentUpon>ItemWeaponTriangleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemWeaponEffectForm.resx">
+      <DependentUpon>ItemWeaponEffectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEffectivenessForm.resx">
+      <DependentUpon>ItemEffectivenessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEtcFE7Form.resx">
+      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEtcForm.resx">
+      <DependentUpon>ItemEtcForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolFELintForm.resx">
+      <DependentUpon>ToolFELintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolFlagNameForm.resx">
+      <DependentUpon>ToolFlagNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolLZ77Form.resx">
+      <DependentUpon>ToolLZ77Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFE6Form.resx">
+      <DependentUpon>MainFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFE7Form.resx">
+      <DependentUpon>MainFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFE8Form.resx">
+      <DependentUpon>MainFE8Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSimpleMenuForm.resx">
+      <DependentUpon>MainSimpleMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSimpleMenuImageSubForm.resx">
+      <DependentUpon>MainSimpleMenuImageSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapChangeForm.resx">
+      <DependentUpon>MapChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEditorForm.resx">
+      <DependentUpon>MapEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEditorMarSizeDialogForm.resx">
+      <DependentUpon>MapEditorMarSizeDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEditorResizeDialogForm.resx">
+      <DependentUpon>MapEditorResizeDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapPictureBox.resx">
+      <DependentUpon>MapPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapPointerForm.resx">
+      <DependentUpon>MapPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapPointerNewPLISTPopupForm.resx">
+      <DependentUpon>MapPointerNewPLISTPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSettingFE6Form.resx">
+      <DependentUpon>MapSettingFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSettingFE7Form.resx">
+      <DependentUpon>MapSettingFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSettingFE7UForm.resx">
+      <DependentUpon>MapSettingFE7UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSettingForm.resx">
+      <DependentUpon>MapSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapStyleEditorForm.resx">
+      <DependentUpon>MapStyleEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTerrainNameEngForm.resx">
+      <DependentUpon>MapTerrainNameEngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTerrainNameForm.resx">
+      <DependentUpon>MapTerrainNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDefinitionForm.resx">
+      <DependentUpon>MenuDefinitionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCommandForm.resx">
+      <DependentUpon>MenuCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonsterItemForm.resx">
+      <DependentUpon>MonsterItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonsterProbabilityForm.resx">
+      <DependentUpon>MonsterProbabilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveCostFE6Form.resx">
+      <DependentUpon>MoveCostFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveCostForm.resx">
+      <DependentUpon>MoveCostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveToFreeSapceForm.resx">
+      <DependentUpon>MoveToFreeSapceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyPleaseWaitUserControl.resx">
+      <DependentUpon>NotifyPleaseWaitUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyWriteUserControl.resx">
+      <DependentUpon>NotifyWriteUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassAlphaNameForm.resx">
+      <DependentUpon>OPClassAlphaNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassDemoFE7Form.resx">
+      <DependentUpon>OPClassDemoFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassDemoFE7UForm.resx">
+      <DependentUpon>OPClassDemoFE7UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassDemoFE8UForm.resx">
+      <DependentUpon>OPClassDemoFE8UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassDemoForm.resx">
+      <DependentUpon>OPClassDemoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassFontFE8UForm.resx">
+      <DependentUpon>OPClassFontFE8UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassFontForm.resx">
+      <DependentUpon>OPClassFontForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenLastSelectedFileForm.resx">
+      <DependentUpon>OpenLastSelectedFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPPrologueForm.resx">
+      <DependentUpon>OPPrologueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionForm.resx">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaletteClipboardForm.resx">
+      <DependentUpon>PaletteClipboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaletteSwapForm.resx">
+      <DependentUpon>PaletteSwapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatchForm.resx">
+      <DependentUpon>PatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointerToolCopyToForm.resx">
+      <DependentUpon>PointerToolCopyToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointerToolForm.resx">
+      <DependentUpon>PointerToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillAssignmentClassSkillSystemForm.resx">
+      <DependentUpon>SkillAssignmentClassSkillSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillAssignmentUnitFE8NForm.resx">
+      <DependentUpon>SkillAssignmentUnitFE8NForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillAssignmentUnitSkillSystemForm.resx">
+      <DependentUpon>SkillAssignmentUnitSkillSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillConfigFE8NSkillForm.resx">
+      <DependentUpon>SkillConfigFE8NSkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillConfigSkillSystemForm.resx">
+      <DependentUpon>SkillConfigSkillSystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongExchangeForm.resx">
+      <DependentUpon>SongExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongInstrumentForm.resx">
+      <DependentUpon>SongInstrumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundBossBGMForm.resx">
+      <DependentUpon>SoundBossBGMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundFootStepsForm.resx">
+      <DependentUpon>SoundFootStepsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportAttributeForm.resx">
+      <DependentUpon>SupportAttributeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportTalkFE6Form.resx">
+      <DependentUpon>SupportTalkFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportTalkForm.resx">
+      <DependentUpon>SupportTalkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportUnitFE6Form.resx">
+      <DependentUpon>SupportUnitFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportUnitForm.resx">
+      <DependentUpon>SupportUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolMagicEffectMakerForm.resx">
+      <DependentUpon>ToolMagicEffectMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolPortraitMakerForm.resx">
+      <DependentUpon>ToolPortraitMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchHelperControl.resx">
+      <DependentUpon>SearchHelperControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTableForm.resx">
+      <DependentUpon>SongTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackChangeTrackForm.resx">
+      <DependentUpon>SongTrackChangeTrackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackForm.resx">
+      <DependentUpon>SongTrackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackImportSelectInstrumentForm.resx">
+      <DependentUpon>SongTrackImportSelectInstrumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundRoomFE6Form.resx">
+      <DependentUpon>SoundRoomFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundRoomForm.resx">
+      <DependentUpon>SoundRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummonUnitForm.resx">
+      <DependentUpon>SummonUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBadCharPopupForm.resx">
+      <DependentUpon>TextBadCharPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextCharCodeForm.resx">
+      <DependentUpon>TextCharCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextForm.resx">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDiffDebugSelectMethodPopup.resx">
+      <DependentUpon>ToolDiffDebugSelectMethodPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolProblemReportForm.resx">
+      <DependentUpon>ToolProblemReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolThreeMargeCloseAlertForm.resx">
+      <DependentUpon>ToolThreeMargeCloseAlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolTranslateROMForm.resx">
+      <DependentUpon>ToolTranslateROMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DecreaseColorTSAToolForm.resx">
+      <DependentUpon>DecreaseColorTSAToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUndoForm.resx">
+      <DependentUpon>ToolUndoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUndoPopupDialogForm.resx">
+      <DependentUpon>ToolUndoPopupDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitCustomBattleAnimeForm.resx">
+      <DependentUpon>UnitCustomBattleAnimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitFE6Form.resx">
+      <DependentUpon>UnitFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitFE7Form.resx">
+      <DependentUpon>UnitFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitForm.resx">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitIncreaseHeightForm.resx">
+      <DependentUpon>UnitIncreaseHeightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitPaletteForm.resx">
+      <DependentUpon>UnitPaletteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUpdateDialogForm.resx">
+      <DependentUpon>ToolUpdateDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionForm.resx">
+      <DependentUpon>VersionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HexEditorSearch.resx">
+      <DependentUpon>HexEditorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherTextForm.resx">
+      <DependentUpon>OtherTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapEventPointerFE6Form.resx">
+      <DependentUpon>WorldMapEventPointerFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapEventPointerFE7Form.resx">
+      <DependentUpon>WorldMapEventPointerFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapEventPointerForm.resx">
+      <DependentUpon>WorldMapEventPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapImageFE6Form.resx">
+      <DependentUpon>WorldMapImageFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapImageFE7Form.resx">
+      <DependentUpon>WorldMapImageFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapImageForm.resx">
+      <DependentUpon>WorldMapImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapPathEditorForm.resx">
+      <DependentUpon>WorldMapPathEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBattleScreenForm.resx">
+      <DependentUpon>ImageBattleScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantAnimationForm.resx">
+      <DependentUpon>MantAnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapPathForm.resx">
+      <DependentUpon>WorldMapPathForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowDoYouLikePatchForm.resx">
+      <DependentUpon>HowDoYouLikePatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackAllChangeTrackForm.resx">
+      <DependentUpon>SongTrackAllChangeTrackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackImportMidiForm.resx">
+      <DependentUpon>SongTrackImportMidiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowDoYouLikePatch2Form.resx">
+      <DependentUpon>HowDoYouLikePatch2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePalletForm.resx">
+      <DependentUpon>ImagePalletForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusRMenuForm.resx">
+      <DependentUpon>StatusRMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusParamForm.resx">
+      <DependentUpon>StatusParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIScriptForm.resx">
+      <DependentUpon>AIScriptForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AITargetForm.resx">
+      <DependentUpon>AITargetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemUsagePointerForm.resx">
+      <DependentUpon>ItemUsagePointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapLoadFunctionForm.resx">
+      <DependentUpon>MapLoadFunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventBattleDataFE7Form.resx">
+      <DependentUpon>EventBattleDataFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportTalkFE7Form.resx">
+      <DependentUpon>SupportTalkFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSystemAreaForm.resx">
+      <DependentUpon>ImageSystemAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageTSAEditorForm.resx">
+      <DependentUpon>ImageTSAEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArenaEnemyWeaponForm.resx">
+      <DependentUpon>ArenaEnemyWeaponForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointerToolBatchInputForm.resx">
+      <DependentUpon>PointerToolBatchInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummonsDemonKingForm.resx">
+      <DependentUpon>SummonsDemonKingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcsScriptForm.resx">
+      <DependentUpon>ProcsScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTileAnimation1Form.resx">
+      <DependentUpon>MapTileAnimation1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTileAnimation2Form.resx">
+      <DependentUpon>MapTileAnimation2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapPathMoveEditorForm.resx">
+      <DependentUpon>WorldMapPathMoveEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorPaletteTransparentForm.resx">
+      <DependentUpon>ErrorPaletteTransparentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventMoveDataFE7Form.resx">
+      <DependentUpon>EventMoveDataFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumpStructSelectDialogForm.resx">
+      <DependentUpon>DumpStructSelectDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumpStructSelectToTextDialogForm.resx">
+      <DependentUpon>DumpStructSelectToTextDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUPSPatchSimpleForm.resx">
+      <DependentUpon>ToolUPSPatchSimpleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUPSOpenSimpleForm.resx">
+      <DependentUpon>ToolUPSOpenSimpleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapPointForm.resx">
+      <DependentUpon>WorldMapPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolThreeMargeForm.resx">
+      <DependentUpon>ToolThreeMargeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OAMSPForm.resx">
+      <DependentUpon>OAMSPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorPaletteMissMatchForm.resx">
+      <DependentUpon>ErrorPaletteMissMatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FontZHForm.resx">
+      <DependentUpon>FontZHForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillConfigFE8NVer2SkillForm.resx">
+      <DependentUpon>SkillConfigFE8NVer2SkillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTalkGroupFE7Form.resx">
+      <DependentUpon>EventTalkGroupFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisASMInnerControl.resx">
+      <DependentUpon>DisASMInnerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolClickWriteFloatControlPanelButtonForm.resx">
+      <DependentUpon>ToolClickWriteFloatControlPanelButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventFunctionPointerForm.resx">
+      <DependentUpon>EventFunctionPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEffectPointerForm.resx">
+      <DependentUpon>ItemEffectPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command85PointerForm.resx">
+      <DependentUpon>Command85PointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventFunctionPointerFE7Form.resx">
+      <DependentUpon>EventFunctionPointerFE7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemRandomChestForm.resx">
+      <DependentUpon>ItemRandomChestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongTrackImportWaveForm.resx">
+      <DependentUpon>SongTrackImportWaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIScriptCategorySelectForm.resx">
+      <DependentUpon>AIScriptCategorySelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcsScriptCategorySelectForm.resx">
+      <DependentUpon>ProcsScriptCategorySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonsterWMapProbabilityForm.resx">
+      <DependentUpon>MonsterWMapProbabilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUnitTalkGroupForm.resx">
+      <DependentUpon>ToolUnitTalkGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextDicForm.resx">
+      <DependentUpon>TextDicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatchFormUninstallDialogForm.resx">
+      <DependentUpon>PatchFormUninstallDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelEx.resx">
+      <DependentUpon>PanelEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIStealItemForm.resx">
+      <DependentUpon>AIStealItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIMapSettingForm.resx">
+      <DependentUpon>AIMapSettingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorTSAErrorForm.resx">
+      <DependentUpon>ErrorTSAErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelEx.resx">
+      <DependentUpon>LabelEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolROMRebuildForm.resx">
+      <DependentUpon>ToolROMRebuildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolROMRebuildOpenSimpleForm.resx">
+      <DependentUpon>ToolROMRebuildOpenSimpleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraUnitForm.resx">
+      <DependentUpon>ExtraUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraUnitFE8UForm.resx">
+      <DependentUpon>ExtraUnitFE8UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageGenericEnemyPortraitForm.resx">
+      <DependentUpon>ImageGenericEnemyPortraitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextScriptFormCategorySelectForm.resx">
+      <DependentUpon>TextScriptFormCategorySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyDirectInjectionNotifyUserControl.resx">
+      <DependentUpon>NotifyDirectInjectionNotifyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTemplate3Form.resx">
+      <DependentUpon>EventTemplate3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTemplate2Form.resx">
+      <DependentUpon>EventTemplate2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTemplate5Form.resx">
+      <DependentUpon>EventTemplate5Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventTemplate4Form.resx">
+      <DependentUpon>EventTemplate4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuExtendSplitMenuForm.resx">
+      <DependentUpon>MenuExtendSplitMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemStatBonusesVennoForm.resx">
+      <DependentUpon>ItemStatBonusesVennoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkArenaDenyUnitForm.resx">
+      <DependentUpon>LinkArenaDenyUnitForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

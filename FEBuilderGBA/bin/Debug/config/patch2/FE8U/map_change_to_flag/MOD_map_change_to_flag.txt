@@ -1,0 +1,8 @@
+IF:0x2E5E6=0x00 0x00 0x00 0x48
+
+FORM=MapChangeForm
+N_J_5=設定するフラグ
+N_L_5:VISIBLE=true
+
+N_J_5.en=Flag to set
+N_J_5.zh=标志设置

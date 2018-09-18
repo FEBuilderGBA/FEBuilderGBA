@@ -1,0 +1,53 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+#endif
+
+PUSH
+ORG $192B8		//FE8U
+jumpToHack(ChangePortraitStatus)
+POP
+
+PUSH
+ORG $19308		//FE8U
+jumpToHack(ChangePortraitMiniMug)
+POP
+
+PUSH
+ORG $73DBC		//FE8U
+jumpToHack(ChangePortraitPormotion)
+POP
+
+ALIGN 4
+ChangePortraitStatus:
+#incbin "ChangePortraitStatus.dmp"
+POIN ChangePortrait_Table
+
+ALIGN 4
+ChangePortraitMiniMug:
+#incbin "ChangePortraitMiniMug.dmp"
+POIN ChangePortrait_Table
+
+ALIGN 4
+ChangePortraitPormotion:
+#incbin "ChangePortraitPormotion.dmp"
+//POINは不要です
+
+ChangePortrait_Table:
+#include "ChangePortrait_Table.event"
+//@struct ChangePortrait_Table
+//@{
+//@	short	portrait_id				require
+//@	byte	unit_id;				require
+//@	byte	class_id;				00=ANY or FF=any
+//@	byte	map_id;		章			FF=ANY
+//@	byte	editon		編			FF=ANY
+//@	ushort	flag_id;	Flag		00=ANY
+//@}//sizeof(16bytes)
+
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

@@ -1,0 +1,47 @@
+NAME=個別アニメ
+NAME.zh=个人动画
+NAME.en=Character Custom Animation Table Editor
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//パッチが適応されているか確認
+IF:0x0571E8=0x00 0x48 0x87 0x46
+IF:$P32+4 0x0571E8=0x00 0x2D 0x03 0xD0 0x4F 0x46 0x00 0xF0 0x0F 0xF8 0x0F 0x90 0x08 0x04 0x04 0x14
+IF_COMMENT=個別アニメパッチを導入してください.
+
+//データへのポインタ
+POINTER=$GREP4END 0x58 0x68 0x01 0xE0 0x78 0x68 0x40 0x6B 0x72 0x46 0x10 0x47 0x07 0x72 0x05 0x08
+
+//ユニット クラス 0x00 0x00 アニメ設定ポインタ
+//データサイズ
+DATASIZE=8
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=ユニット
+B1:CLASS=クラス
+B2=00
+B3=00
+P4:BATTLEANIMEPOINTER=アニメ設定
+
+B0:UNIT.en=Unit
+B1:CLASS.en=Class
+P4:BATTLEANIMEPOINTER.en=Anime
+
+B0:UNIT.zh=人物
+B1:CLASS.zh=职业
+P4:BATTLEANIMEPOINTER.zh=战斗动画
+
+
+INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
+INFO.en=Edit the custom animation table patched in by "Character Custom Animation Table Installer."\r\nWhen defining a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new secure button appears.\r\n
+INFO.zh=如果您定义了新动画，请将动画设置指定为0。\r\n当为动画设置指定0时，会出现一个新的保护按钮。\r\n
+
+AUTHOR=7743

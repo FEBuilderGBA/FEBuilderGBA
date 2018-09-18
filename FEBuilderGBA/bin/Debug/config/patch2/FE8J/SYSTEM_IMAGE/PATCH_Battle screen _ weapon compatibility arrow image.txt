@@ -1,0 +1,14 @@
+NAME=戦闘画面_武器相性の矢印画像
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=8
+PALETTE=1
+
+ZIMAGE_POINTER=0x051E60//0x856BF0
+PALETTE_POINTER=0x0156D4//0x5C7290
+
+NAME.en=Battle screen_weapon compatibility arrow image
+NAME.zh=战斗屏幕_武器兼容性箭头图像

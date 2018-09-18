@@ -1,0 +1,6 @@
+//This patch is broken
+//TYPE=BIN
+TAG=#ENGINE
+//PATCHED_IF:0xCB680=0x9C 0x17 0x00 0x08
+//BIN:0xCB680=CSA System.dmp
+//AUTHOR=Anti-Huffman Patch by Hextator   Transplant:7743

@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_カイル_影
+NAME.en=OP Anime Face: Kyle (Shadow)
+NAME.zh=OPANIME_FACE_凯尔_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C97E0//0x08AEA7A8
+PALETTE_POINTER=0x000C96F4//0x08AEDC80
+
+INFO=Edit and import OP Anime Graphic for the Kyle Face (Shadow) image.

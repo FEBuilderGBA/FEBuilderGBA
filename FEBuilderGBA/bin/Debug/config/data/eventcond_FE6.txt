@@ -1,0 +1,7 @@
+TURN	ターン条件
+TALK	会話条件(話すコマンド)
+OBJECT	マップオブジェクト(制圧ポイント、宝箱、扉、民家、村)
+ALWAYS	常時条件(範囲条件、勝利条件等)
+PLAYER_UNIT	味方配置
+ENEMY_UNIT	敵配置
+END_EVENT	章終了イベント

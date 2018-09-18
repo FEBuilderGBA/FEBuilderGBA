@@ -1,0 +1,19 @@
+NAME=FE8_DEBUG_MENU
+NAME.en=Toggle Debug Menu
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=ON|ONN|OFF|OFF
+
+ONN:0x0AD8=0x1B 0xF0 0xDA
+OFF:0x0AD8=0x09 0xF0 0x16
+ONN:0x59CEC0=0x49 0xF4 0x04 0x08 0x00 0x00 0x00 0x00 0x1D 0xBB 0x01
+OFF:0x59CEC0=0x61 0x26 0x02 0x08 0x79 0x26 0x02 0x08 0xE5 0x26 0x02
+
+INFO=FE8のデバッグメニューを表示する
+INFO.en=Enables or disables the debug menu of FE8. Replaces "Guide" with the Debug Menu.\r\nSeveral bugs that may crash the ROM, particularly on the map menu.\r\n
+INFO.zh=显示FE8的调试菜单
+
+AUTHOR=出典 http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+AUTHOR.en=StanH http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+AUTHOR.zh=来源 http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874

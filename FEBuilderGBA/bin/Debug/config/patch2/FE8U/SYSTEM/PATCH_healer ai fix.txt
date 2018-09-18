@@ -1,0 +1,20 @@
+NAME=AIが最大HPのユニットを回復させるのを停止させる
+NAME.en=AI: Prevent Healer Mistarget
+NAME.zh=停止将AI恢复到最大HP单位
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=off|OFF|fix|ONN
+COMBO.en=Default: Off|OFF|Patch|ONN
+
+ONN:0x3FC9D=0xD2
+OFF:0x3FC9D=0xD8
+
+ONN:0x3FE77=0xD2
+OFF:0x3FE77=0xD8
+
+INFO.en=Toggles whether to prevent healers from targeting full health units (patched) or not (default).\r\n
+
+AUTHOR=Magrika is Now Canon

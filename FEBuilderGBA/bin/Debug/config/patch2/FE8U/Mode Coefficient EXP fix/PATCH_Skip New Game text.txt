@@ -1,0 +1,15 @@
+NAME=Skip New Game text
+NAME.en=Toggle New Game Text
+NAME.zh=Skip New Game text
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xC4928
+COMBO=SKIP|0x00 0x00|SKIP2|0xC0 0x46|Default|0x06 0xD0
+
+INFO=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\n
+
+AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
+
+

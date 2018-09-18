@@ -1,0 +1,19 @@
+NAME=瞬殺率_対経験値ゼロ特性持ちの瞬殺率
+NAME.en=Silencer Activation Rate vs Exp 0
+NAME.zh=投篮率_对经验值瞬时比率的零点特征
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02AD4A
+HEX=false
+
+INFO.en=Modifies the Silencer activation rate vs Exp 0 foes in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c。
+AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c.
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

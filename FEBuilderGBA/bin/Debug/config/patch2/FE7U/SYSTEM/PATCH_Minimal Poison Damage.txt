@@ -1,0 +1,16 @@
+
+NAME=最低毒ダメージ
+NAME.en=Poison Damage Amount
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02440E
+HEX=false
+
+INFO=毒で受けるダメージを変更します。\r\nFEはHPが少ないゲームなので、ダメージ数を増やすと、序盤では毒が脅威になります。
+INFO.en=Changes the amount of damage dealt per turn by the poison status condition.\r\nSince FE is a game with few HP, increasing the number of damage will make poison a threat at the beginning.
+NAME.zh=最小的毒药伤害
+INFO.zh=我会改变毒药受到的伤害。\r\nFE是一款HP几乎没有的游戏，因此增加伤害次数会在开始时对毒药构成威胁。
+

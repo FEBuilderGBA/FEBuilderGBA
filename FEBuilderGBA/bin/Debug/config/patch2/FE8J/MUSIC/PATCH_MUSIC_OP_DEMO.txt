@@ -1,0 +1,10 @@
+NAME.zh=音乐_OP_DEMO
+NAME.en=MUSIC_OP_DEMO
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080cbce0
+ADDRESS_TYPE=SONG
+

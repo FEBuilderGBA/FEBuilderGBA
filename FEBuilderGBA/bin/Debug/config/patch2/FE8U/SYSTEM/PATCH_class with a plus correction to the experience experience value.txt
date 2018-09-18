@@ -1,0 +1,15 @@
+NAME=撃破経験値にプラス補正がかかる相手クラス
+NAME.zh=SYSTEM_Destroyed经验价值体验价值
+NAME.en=Enemy Class Grants Bonus EXP
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02C3FE
+ADDRESS_TYPE=CLASS
+
+AUTHOR=出典元:http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+AUTHOR.zh=来源:http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+AUTHOR.en=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+

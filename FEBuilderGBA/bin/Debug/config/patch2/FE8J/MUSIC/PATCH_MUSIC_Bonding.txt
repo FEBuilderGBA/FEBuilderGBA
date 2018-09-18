@@ -1,0 +1,9 @@
+NAME=MUSIC_戦績
+NAME.en=MUSIC_Bonding
+NAME.zh=音乐_战绩
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080bcb46 0x080bcbd6 0x0803835e
+ADDRESS_TYPE=SONG

@@ -1,0 +1,16 @@
+
+NAME=ステータス画面の上の方にあるアニメーション
+NAME.en=Animation in the upper part of the status screen
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=160
+
+ZIMAGE_POINTER=0x088620//0xA064E0
+ZHEADERTSA_POINTER=0x08862C//0xA071FC
+PALETTE_POINTER=0x088628//0xA0731C
+
+PALETTE=1
+NAME.zh=状态屏幕上部的动画

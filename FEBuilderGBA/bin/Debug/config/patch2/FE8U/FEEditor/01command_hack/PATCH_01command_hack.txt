@@ -1,0 +1,14 @@
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+//既に適応されたかどうか
+PATCHED_IF:0x05138=0x00 0x48 0x00 0x47
+
+BIN:0x5138=00005138.bin
+BIN:0x464420=00464420.bin
+
+AUTHOR=Hextator  Compatability:7743
+
+INFO=カスタム戦闘アニメーションの再生に必須となるパッチです。\r\nGBA FEでは、魔法使いが魔法を使っている間にマントをはためかせる処理があります。\r\nこの命令は、C47 マントコマンド命令によって実装されていますが、その内容はとても難しくまだ解析されていません。\r\nそのため、欧米のハッカーたちは、HPゲージを減らすまで待機させるC01命令を改造し、ループ処理を実装することにしました。\r\nこの方法で、マントコマンドを利用しないで、マントをはためかせています。\r\nほぼすべてのカスタムアニメーションはこのパッチを利用して必要としています。\r\nとても重要なパッチです。
+INFO.en=Patches the ROM with the 01Command_Hack which is essential for custom battle animations.\r\nMany FE animations utilize cloak movement which uses poorly understood C47 commands.\r\nWestern hackers modified the C01 instructions to wait to reduce HP and implement loop processing.\r\nThis enables cloaks to flap while bypassing the C47 cloak commands.\r\nNearly all custom animations require this patch. It is vital for custom animations.\r\n
+INFO.zh=这个补丁对于玩定制战斗动画是必不可少的。\r\n在GBA FE中，魔法师使用魔法时有一个标示披风的过程。\r\n该指令由C47斗篷命令执行，但其内容非常困难，尚未进行分析。\r\n出于这个原因，欧美黑客决定修改C 01指令，继续等待，直到降低HP标尺并执行循环处理。\r\n这样，在不使用斗篷命令的情况下，斗篷就会扑动。\r\n几乎所有的自定义动画都需要使用这个补丁。\r\n这是一个非常重要的补丁。

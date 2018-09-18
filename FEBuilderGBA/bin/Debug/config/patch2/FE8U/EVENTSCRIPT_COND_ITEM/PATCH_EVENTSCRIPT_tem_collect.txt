@@ -1,0 +1,28 @@
+NAME=アイテム没収(全ユニットと輸送体)
+NAME.en=Add Event: Lose Item(All units and transporters)
+NAME.zh=Add Event: Lose Item(All units and transporters)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0xF0 0xB5 0x80 0x6B 0x47 0x88 0xC0 0x46 0x1E 0x48 0x02 0x68 0x03 0x79 0x5B 0x00 0x9E 0x18 0x15 0x1C 0x14 0x1C 0x28 0x78 0x69 0x78 0x02 0x35 0xB8 0x42 0x05 0xD0=0xF0 0xB5 0x80 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_collect.bin
+
+INFO=特定のアイテムを輸送体を含めて全員からすべて没収します.
+INFO.en=Patches the ROM with a callable event that removes specified items from every player character inventory they're in.\r\n
+INFO.zh=我们没收每个人的某些物品，包括运输商。
+
+AUTHOR=怪盗パッチ 7743
+AUTHOR.en=Kaito Port:7743
+AUTHOR.zh=Kaito补丁7743
+
+
+
+
+
+EVENTSCRIPT=400DYYYY{$L1:item_collect.bin}	[YYYY:ITEM:アイテム]アイテム没収 
+EVENTSCRIPT.en=400DYYYY{$L1:item_collect.bin}	[YYYY:ITEM:ITEM]Item confiscated extension order.
+EVENTSCRIPT.zh=400DYYYY{$L1:item_collect.bin}	[YYYY:ITEM:ITEM]项目没收扩展订单。

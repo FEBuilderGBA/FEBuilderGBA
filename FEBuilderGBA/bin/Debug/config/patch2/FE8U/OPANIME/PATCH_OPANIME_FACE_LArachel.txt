@@ -1,0 +1,14 @@
+NAME=OPANIME_FACE_ラーチェル
+NAME.en=OP Anime Face: L'Arachel
+NAME.zh=OPANIME_FACE_ Rachel
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+
+ZIMAGE_POINTER=0x000C8E70//0x08ADC728
+PALETTE_POINTER=0x000C8E78//0x08ADD050
+
+INFO=Edit and import OP Anime Graphic for the L'Arachel Face image.

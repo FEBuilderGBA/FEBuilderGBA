@@ -1,0 +1,11 @@
+
+NAME=アフアのしずく成長率補正値
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x29B64
+
+
+NAME.zh=Aphia的下降增长更正值
+NAME.en=Afa's Drops Growth Bonus

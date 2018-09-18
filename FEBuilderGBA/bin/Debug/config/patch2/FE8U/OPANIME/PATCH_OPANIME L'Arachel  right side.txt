@@ -1,0 +1,18 @@
+NAME=OPANIMEラーチェル right side
+NAME.en=OP Anime L'Arachel (Right)
+NAME.zh=OPANIME L'Arachel  right side
+
+//画像パッチとして実装します
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=160
+PALETTE=11
+
+ZIMAGE_POINTER=0x000C88A0//0x08ACC540
+ZTSA_POINTER=0x000C88D4//0x08ACF200
+PALETTE_POINTER=0x000C9CA4//0x08ACF314
+
+INFO=Edit and import OP Anime Graphic for the L'Arachel right side image.

@@ -1,0 +1,24 @@
+﻿NAME=エイリーク編序盤の特殊経験値係数削除
+NAME.en=Deleted special experience value coefficient in the early Eirika edition.
+NAME.zh=艾瑞珂篇序章的特殊的经验值系数删除
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0002c3b2
+COMBO=特殊経験値係数あり|0x0B 0xD0|特殊経験値係数なし|0xc0 0x46
+COMBO.zh=有特殊经验值|0x0B 0xD0|无特殊经验值|0xc0 0x46
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#se1bbeb3
+
+
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#se1bbeb3。
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#se1bbeb3.
+
+
+COMBO.en=With special experience value coefficient|0x0B 0xD0|No special experience value coefficient|0xc0 0x46
+
+

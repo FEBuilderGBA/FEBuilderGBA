@@ -1,0 +1,33 @@
+NAME=特定の座標にいるユニットを別の座標に瞬間移動させるイベント命令
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x10 0xB5 0x84 0x6B 0x20 0x78 0x01 0x21 0x08 0x40 0x00 0x28 0x08 0xD0 0x0F 0x48 0x00 0x68 0xA1 0x78 0xE2 0x78 0x92 0x00 0x80 0x58 0x40 0x5C 0x00 0x28 0x12 0xD1 0x0B 0x48 0x0C 0x4B 0x9E 0x46 0x00 0xF8 0x00 0x28 0x0C 0xD0 0xA1 0x78 0xE2 0x78=0x10 0xB5 0x84 0x6B
+
+EVENTSCRIPT:1=40050B00ZZZZWWWW400DXXYY{$L1:repos.dmp}	座標[ZZ:MAPX:元X][WW:MAPY:元Y]のユニットを[XX:MAPX:転送先X][YY:MAPY:転送先Y]に瞬間移動	{UNIT}
+EVENTSCRIPT:2=40050B00ZZZZWWWW410DXXYY{$L1:repos.dmp}	座標[ZZ:MAPX:元X][WW:MAPY:元Y]のユニットを[XX:MAPX:転送先X][YY:MAPY:転送先Y]に瞬間移動。ただし、移動先が塞がれていたら移動しない。	{UNIT}
+EVENTSCRIPT:3=400DXXYY{$L1:repos_current_unit.dmp}	操作中のユニットの座標のユニットを[XX:MAPX:転送先X][YY:MAPY:転送先Y]に瞬間移動	{UNIT}
+EVENTSCRIPT:4=410DXXYY{$L1:repos_current_unit.dmp}	操作中のユニットの座標のユニットを[XX:MAPX:転送先X][YY:MAPY:転送先Y]に瞬間移動。ただし、移動先が塞がれていたら移動しない。	{UNIT}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=repos.dmp
+BIN:$FREEAREA:2=repos_current_unit.dmp
+
+AUTHOR=7743
+INFO=特定の場所にいるユニットを特定の場所へ瞬間移動させます。\r\n既存命令とは違い、ユニットが存在しない場合でも問題ありません。\r\nまた、転送先が塞がれている場合は転送しないなどの柔軟な設定ができます。\r\n操作中のユニットを飛ばす専用命令もあります。これは、範囲条件で実行した場合、操作中のユニットの座標はまだ確定していないためです。\r\nそのため専用の命令を用意しました。
+NAME.en=Add Event: Instantaneously moving a unit at a specific coordinate to another coordinate
+INFO.en=Move the unit at a specific location instantaneously to a specific place.\r\nUnlike existing instructions, there is no problem even if the unit does not exist.\r\nAlso, when the transfer destination is blocked, flexible setting such as not transfer can be done.\r\nThere is also a special instruction to skip the unit under operation.This is because the coordinate of the unit under operation has not yet been determined if it is executed under the range condition.\r\nTherefore, I prepared a dedicated instruction.
+
+EVENTSCRIPT:1.en=40050B00ZZZZWWWW400DXXYY{$L1:repos.dmp}	Move instantly, unit of coordinate [ZZ:MAPX:Src X][WW:MAPY:Src Y] to coordinate [XX:MAPX:Dest X][YY:MAPY:Dest Y]	{UNIT}
+EVENTSCRIPT:2.en=40050B00ZZZZWWWW410DXXYY{$L1:repos.dmp}	Move instantly, unit of coordinate [ZZ:MAPX:Src X][WW:MAPY:Src Y] to coordinate [XX:MAPX:Dest X][YY:MAPY:Dest Y].However, if the destination is blocked, it will not move.	{UNIT}
+EVENTSCRIPT:3.en=400DXXYY{$L1:repos_current_unit.dmp}	Move instantly, the unit under operation to [XX:MAPX:Dest X][YY:MAPY:Dest Y]	{UNIT}
+EVENTSCRIPT:4.en=410DXXYY{$L1:repos_current_unit.dmp}	Move instantly, the unit under operation to [XX:MAPX:Dest X][YY:MAPY:Dest Y].However, if the destination is blocked, it will not move.	{UNIT}
+
+
+NAME.zh=事件命令即时将特定坐标处的人物移动到另一个坐标
+INFO.zh=将设备瞬间移动到特定位置到特定位置。\r\n与现有说明不同，即使单元不存在也没有问题。\r\n此外，当传送目的地被阻止时，可以进行诸如不传送的灵活设置。\r\n还有一条特殊指令可以跳过正在运行的单元。这是因为如果在范围条件下执行，则尚未确定正在运行的单元的坐标。\r\n因此，我准备了专门的指导。
+EVENTSCRIPT:1.zh=40050B00ZZZZWWWW400DXXYY{$L1:repos.dmp}	立即移动，坐标人物[ZZ:MAPX:Src X][WW:MAPY:Src Y]坐标[XX:MAPX:Dest X][YY:MAPY:Dest Y]	{UNIT}
+EVENTSCRIPT:2.zh=40050B00ZZZZWWWW410DXXYY{$L1:repos.dmp}	立即移动，坐标人物[ZZ:MAPX:Src X][WW:MAPY:Src Y]坐标[XX:MAPX:Dest X][YY:MAPY:Dest Y]。但是，如果目的地被阻止，它将不会移动。	{UNIT}
+EVENTSCRIPT:3.zh=400DXXYY{$L1:repos_current_unit.dmp}	立即移动，正在运行的人物为[XX:MAPX:Dest X][YY:MAPY:Dest Y]。	{UNIT}
+EVENTSCRIPT:4.zh=410DXXYY{$L1:repos_current_unit.dmp}	立即移动，正在运行的人物为[XX:MAPX:Dest X][YY:MAPY:Dest Y]。但是，如果目的地被阻止，它将不会移动。	{UNIT}

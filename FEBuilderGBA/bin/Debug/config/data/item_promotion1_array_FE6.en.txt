@@ -1,0 +1,5 @@
+080237AC=Hero Crest
+080237B4=Knight Crest
+080237BC=Orion's Bolt
+080237C4=Elysian Whip
+080237D0=Guiding Ring

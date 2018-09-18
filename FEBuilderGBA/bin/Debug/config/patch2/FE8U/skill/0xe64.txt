@@ -1,0 +1,2 @@
+Rally Strength: +4 Str[N]
+to allies within 2 tiles.[X]

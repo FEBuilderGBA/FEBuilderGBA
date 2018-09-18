@@ -1,0 +1,11 @@
+NAME=MUSIC_悲しみの中で
+NAME.en=Unit Death BGM
+NAME.zh=MUSIC_悲伤
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x08083628
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played when a player character is defeated.

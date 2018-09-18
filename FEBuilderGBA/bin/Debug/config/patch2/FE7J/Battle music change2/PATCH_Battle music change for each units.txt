@@ -1,0 +1,46 @@
+NAME=ユニットごとに戦闘音楽変更
+NAME.en=Battle music change for each units
+NAME.zh=每人物战斗音乐变更
+
+IF:0x68656=0x00 0x00 0x00 0x4B 0x18 0x47
+
+INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。
+INFO.en=Allows you to change the music played during battle in units.
+
+AUTHOR=7743
+INFO.zh=允许您以人物节为单位更改战斗中播放的音乐。
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE #SOUND
+
+//データへのポインタ
+POINTER=$GREP4END 0xF4 0xBB 0x02 0x02 0xF0 0xDF 0x03 0x02 0xC8 0xA0 0x07 0x08 0xF8 0xDF 0x03 0x02 0xE4 0xDF 0x03 0x02 0x63 0x86 0x06 0x08 0x71 0x86 0x06 0x08
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B2:UNIT
+
+//データを定義します
+W0:SONG=BGM
+B2:UNIT=ユニット / ANY=0x00
+B3:MAP_ANYFF=マップ / ANY=0xFF
+W4:BATTLEANIME=戦闘アニメ / ANY=0x00
+W6:FLAG=判定フラグ / ANY=0x00
+
+W0:SONG.zh=BGM
+B2:UNIT.zh=人物 / ANY=0x00
+B3:MAP_ANYFF.zh=地图 / ANY=0xFF
+W4:BATTLEANIME.zh=动画 / ANY=0x00
+W6:FLAG.zh=确定标志 / ANY=0x00
+
+W0:SONG.en=BGM
+B2:UNIT.en=UNIT / ANY=0x00
+B3:MAP_ANYFF.en=MAP / ANY=0xFF
+W4:BATTLEANIME.en=BattleAnime / ANY=0x00
+W6:FLAG.en=Judgment flag / ANY=0x00

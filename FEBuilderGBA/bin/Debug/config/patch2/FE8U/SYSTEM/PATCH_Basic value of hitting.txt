@@ -1,0 +1,14 @@
+NAME=杖命中の基礎値
+NAME.en=Staff Basal Hit Value
+NAME.zh=打击的基本价值
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002cd30
+HEX=false
+
+INFO=杖の命中率の基礎値となる値を定義します。
+INFO.en=Define the value that will be the base value of the wand's hit rate.
+INFO.zh=定义将成为魔杖命中率基值的值。

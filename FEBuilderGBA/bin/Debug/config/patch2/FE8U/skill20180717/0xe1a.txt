@@ -1,0 +1,2 @@
+Move adjacent ally to this[N]
+unit's opposite side.[X]

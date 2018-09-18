@@ -1,0 +1,12 @@
+NAME=章タイトルを出す時の素材
+NAME.en=Material when chapter title are displayed
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x0001FFA8//0x08BB28C8
+PALETTE_POINTER=0x0001FFB0//0x08BB2E40
+NAME.zh=章节开始时的素材

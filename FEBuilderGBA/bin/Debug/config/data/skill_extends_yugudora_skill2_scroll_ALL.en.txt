@@ -1,0 +1,8 @@
+01=Continuous
+02=None
+04=None
+08=Slipping through
+10=Train
+20=None
+40=None
+80=None

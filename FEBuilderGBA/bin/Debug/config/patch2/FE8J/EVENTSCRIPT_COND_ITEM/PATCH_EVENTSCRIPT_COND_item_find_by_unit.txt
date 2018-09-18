@@ -1,0 +1,38 @@
+﻿NAME=アイテムチェック(ユニット単位)
+NAME.en=Add Event Condition: Item Check(Unit)
+NAME.zh=物品检查(人物)
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x30 0xB5 0x84 0x6B 0x20 0x78 0x0F 0x21 0x08 0x40 0x01 0x28 0x08 0xD0 0x0B 0x28 0x08 0xD0 0x0F 0x28 0x01 0xD0 0xA0 0x78 0x05 0xE0 0x0F 0x48 0x00 0x68 0x02 0xE0 0x0E 0x48 0x00 0xE0 0x0E 0x48 0x0F 0x4B 0x9E 0x46 0x00 0xF8 0x00 0x28 0x0D 0xD0 0xE4 0x78 0x02 0x1C 0x1E 0x32 0x15 0x1C 0x0A 0x35 0x10 0x78 0x51 0x78 0x02 0x32=0x30 0xB5 0x84 0x6B
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_find_by_unit.dmp
+
+INFO=特定のアイテムをユニットがもっているかという条件式を作る.
+INFO.en=Patches the ROM with an event conditional statement that search specific player character inventories for a specific item.\r\n
+INFO.zh=制作一个条件表达式，确定该人物是否具有特定项目
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DXXYY{$L1:item_find_by_unit.dmp}	[XX:UNIT:ユニット][YY:ITEM:アイテム]ユニットの所持アイテムチェック	{COND}
+EVENTSCRIPT:2=410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:アイテム]SVAL1のユニットの所持アイテムチェック(LOW)	{COND}
+EVENTSCRIPT:3=4B0D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:アイテム]SVALBの座標のユニットの所持アイテムチェック(LOW)	{COND}
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:item_find_by_unit.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:ITEM:アイテム]の所持アイテムチェック	{COND}
+EVENTSCRIPT:5=212E00002006C100410D00YY{$L1:item_find_by_unit.dmp}	現在操作しているユニットの[YY:ITEM:アイテム]所持アイテムチェック	{COND}
+
+EVENTSCRIPT:1.en=400DXXYY{$L1:item_find_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]Check Unit's item	{COND}
+EVENTSCRIPT:2.en=410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]Check SVAL1's Unit possessed item(LOW)	{COND}
+EVENTSCRIPT:3.en=4B0D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]Check SVALB's Unit coordinates has item(LOW)	{COND}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:item_find_by_unit.dmp}	[ZZ:MAPX:X][WW:MAPY:Y]Check Unit possessed item[YY:ITEM:Item]	{COND}
+EVENTSCRIPT:5.en=212E00002006C100410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]Check Item of the Unit currently operated	{COND}
+
+EVENTSCRIPT:1.zh=400DXXYY{$L1:item_find_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]检查人物的项目
+	{COND}
+EVENTSCRIPT:2.zh=410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查SVAL1的人物所拥有的项目(LOW)	{COND}
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查SVALB的人物坐标是否有项目(LOW)	{COND}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_find_by_unit.dmp}	[ZZ:MAPX:X][WW:MAPY:Y]检查人物拥有的项目[YY:ITEM:Item]	{COND}
+EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查当前操作的单元的项目	{COND}
+

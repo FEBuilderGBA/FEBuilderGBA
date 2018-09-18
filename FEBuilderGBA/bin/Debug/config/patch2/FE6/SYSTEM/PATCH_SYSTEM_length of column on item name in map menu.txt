@@ -1,0 +1,12 @@
+
+NAME=マップメニューでのアイテム名を表示する欄の長さ
+NAME.en=length of column on item name in map menu
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x5C7596
+AUTHOR=kirb http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267  transport:7743
+NAME.zh=在地图菜单上显示项目名称的列的长度

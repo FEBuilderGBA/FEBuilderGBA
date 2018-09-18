@@ -1,0 +1,15 @@
+NAME=アイテムドロップをする敵にアイコンを表示する
+
+PATCHED_IF:0x278d8=0x00 0x48 0x87 0x46
+
+TYPE=EA
+TAG=#ENGINE
+EA=EA.txt
+
+INFO=マップ上で、アイテムドロップする敵には、アイテムを落とすマークを表示します。
+
+AUTHOR=aera
+NAME.en=Display icons on enemies who drop items
+INFO.en=On the map, for an enemy who drops an item, a mark for dropping the item is displayed.
+NAME.zh=显示放下物品的敌人的图标
+INFO.zh=在地图上，对于放下物品的敌人，显示用于放下物品的标记。

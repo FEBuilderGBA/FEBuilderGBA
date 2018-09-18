@@ -1,0 +1,26 @@
+
+NAME=難易度固定2
+NAME.en=Fixed Level2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+COMBO=default|0x15 0x1C|リン|0x01 0x25|エリウッド|0x02 0x25|ヘクトル|0x03 0x25
+COMBO.en=default|0x15 0x1C|lyn|0x01 0x25|eliwood|0x02 0x25|hextor|0x03 0x25
+
+
+ADDRESS=0x0A06D0
+AUTHOR=http://feuniverse.us/t/fe7-force-the-game-to-start-in-a-mode/834
+
+NAME.zh=难度等级固定2
+
+
+AUTHOR.en=http://feuniverse.us/t/fe7-force-the-game-to-start-in-a-mode/834
+
+
+AUTHOR.zh=http://feuniverse.us/t/fe7-force-the-game-to-start-in-a-mode/834
+
+
+
+COMBO.zh=default|0x15 0x1C|磷的|0x01 0x25|Eriuddo|0x02 0x25|赫克托|0x03 0x25
+

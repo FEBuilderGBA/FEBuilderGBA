@@ -1,0 +1,8 @@
+//install
+ORG 0x2BD50
+#incbin "Class Base Promotion Gains.dmp" //HINT=ASM
+
+//This is the graphic that resets the level.
+//Change to ping to the new level (usually the same)
+ORG 0x736DA
+SHORT 0x7A18

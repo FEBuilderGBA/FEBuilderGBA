@@ -1,0 +1,17 @@
+NAME=会話をしても行動済みにしない
+NAME.en=Actions After Talk (Contemporary Style)
+NAME.zh=即使你说话，也不要激活它
+
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x0323c2=0x00 0x00
+
+BIN:$FREEAREA=TalkFix.dmp
+JUMP:0x0323c2:$r3=TalkFix.dmp
+
+INFO=ユニットが会話をしても行動済みの状態にしません。\r\n会話後にもメニューを開いてアイテムを交換したりできるようになります。
+INFO.en=Patches the ROM so that using "Talk" doesn't consume a unit's action.\r\nThe unit can attack, use the menu, support, and trade afterward.\r\n"Talk" supercedes "Support" if both options are available.\r\n 
+INFO.zh=即使单位进行对话，也不会处于行动状态。\r\n您也可以在对话后打开菜单并交换项目。
+
+AUTHOR=circleseverywhere Compatability:7743 http://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13

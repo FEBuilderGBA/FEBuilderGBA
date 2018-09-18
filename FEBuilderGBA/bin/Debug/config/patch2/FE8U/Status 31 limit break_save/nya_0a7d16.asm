@@ -1,0 +1,12 @@
+@thumb
+;@org 0xA7D16   ;FE8J
+@org 0xA32D2    ;FE8U
+
+CMP r6, #0xC7
+;BLE #0x080A7CCC ;FE8J
+BLE #0x080A3288 ;FE8U
+ADD SP, #0xB0
+ADD SP, #0xB0
+POP {r4,r5,r6,r7}
+POP {r0}
+BX r0

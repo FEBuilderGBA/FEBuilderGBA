@@ -1,0 +1,22 @@
+NAME=OPANIMEエフラム立ち絵
+NAME.en=OP Anime Ephraim (Distant)
+NAME.zh=OPANIME Efram站在图片
+//画像パッチとして実装します
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=16
+
+//圧縮画像
+ZIMAGE_POINTER=0xC74DC
+//圧縮TSA
+ZTSA_POINTER=0xC74E0
+//非圧縮パレット
+PALETTE_POINTER=0xC74E8
+
+INFO=Edit and import OP Anime Graphic for the Ephraim distant image.

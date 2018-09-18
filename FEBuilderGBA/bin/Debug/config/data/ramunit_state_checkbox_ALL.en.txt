@@ -1,0 +1,36 @@
+//特性1
+01=Hide	Don't display standing map sprite
+02=Already moved	This unit has already been acted on.\r\nIt is grayed out because it is a unit of action.
+03=Dead	This unit has died.
+04=Undeployed	This unit has not sorted out on stage.
+05=Rescuing someone	This unit is rescuing other units and holding it.
+06=Rescued	This unit is in a state of being rescued.
+07=Cantoing	already performed an action
+08=Under a roof
+//特性2
+11=display squares	Makes movement squares display over the map sprite,\r\n but is cleared when selecting a unit, so rather useless
+12=Hide link arena	Doesn't display map sprite in link arena if Hide Units is set to 'On'
+13=Related to AI	not entirely sure what it's for
+14=Riding a ballista
+15=Drop last item
+16=Afa's Drops	Metis Tome/Afa's Drops has been used
+17=Solo animation 1
+18=Solo animation 2
+//特性3
+21=Escaped	Something about not drawing map sprites?
+22=Super Arena1	Use it with Super Arena Mode.
+23=Super Arena2	Use it with Super Arena Mode.
+24=Super Arena Mode	If this and either Super Arena1 0r Super Arena2 is set,\r\nactivates a "super arena" with harder enemies and glitchy alternate text if you enter the arena
+25=Not Deployed Last Chapter
+26=?
+27=Second portrait	Increase portrait index by 1
+28=?
+//特性4
+31=Map sprite shake	Makes the standing map sprite shake very quickly.\r\nDoesn't seem to be useful otherwise
+32=Sortie not allow	Unit is unable to take part in chapter\r\n(can't select from prep screen)
+33=?
+34=Use link arena palette
+35=?
+36=?
+37=?
+38=?

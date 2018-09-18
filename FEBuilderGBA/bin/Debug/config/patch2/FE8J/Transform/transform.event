@@ -1,0 +1,130 @@
+
+#define TRANSFORM_WORKING_MEMORY $0203ACA8
+
+//0x668バイト+リスト分の容量を使用
+
+
+PUSH
+
+ORG		0x72EA8
+WORD	$46874800
+POIN	TransRefProgram+$1D0
+WORD	$1C280000
+
+//
+
+ORG		0x72EC0
+WORD	$46874800
+POIN	TransRefProgram+$230
+
+//
+
+ORG		0x72F28
+SHORT	$480A $3060 $4687
+ORG		0x72F54
+POIN	TransRefProgram+$480
+
+ORG		0x72F32
+SHORT	$4808 $30C0 $4687
+ORG		0x72F54
+POIN	TransRefProgram+$480
+
+//
+
+ORG		0x72F42
+SHORT	$4901 $468F $0
+POIN	TransRefProgram+$410
+
+//
+
+ORG		0x72F4C
+SHORT	$F000 $FF92
+WORD	$46874800
+POIN	TransRefProgram+$480
+
+ORG		0x72F5E
+SHORT	$4804 $4687
+ORG		0x72F6E
+SHORT	$BD00
+POIN	TransRefProgram+$290
+
+/////
+
+
+ORG		0x7301A		//竜化前サウンド
+SHORT	$485F $4687
+ORG		0x73198
+POIN	TransRefProgram+$590
+
+ORG		0x73022		//竜化前サウンド二回目
+SHORT	$485D $3060 $4687
+ORG		0x73198
+POIN	TransRefProgram+$590
+	
+ORG		0x7302E		//竜化前アニメ
+SHORT	$4907 $468F
+ORG		0x7304C
+POIN	TransRefProgram+$2F0
+
+ORG		0x73044		//竜化中アニメ
+WORD	$468F4900
+POIN	TransRefProgram+$350
+	
+////////
+
+ORG		0x7309E		//竜化解除
+SHORT	$4909 $468F
+ORG		0x730C4
+POIN	TransRefProgram+$3B0
+
+ORG		0x730B8
+BYTE	$09
+
+//////
+
+ORG		0x7311C
+WORD	$468F4900
+POIN	StrClsAndWe	//StrClsAndWep
+WORD	0
+
+ORG		0x73176
+SHORT	$4804
+SHORT	$4687
+SHORT	$480B
+ORG		0x73188
+POIN	TransRefProgram+$110
+SHORT	$4806
+
+//
+
+ORG		0x731B8
+WORD	0x46874800
+POIN	TransRefProgram+$150
+
+//
+
+ORG		0x731F6
+SHORT	$4804 $4687
+BYTE	$0A
+ORG		0x73208
+POIN	TransRefProgram+$190
+
+
+POP
+
+ALIGN	4
+TransRefProgram:	//E47880
+	#incbin "TransRefProgram1.bin"
+POIN	TransformList
+	#incbin "TransRefProgram2.bin"
+
+ALIGN	4
+StrClsAndWe:		//E477FC
+  #incbin "StrClsAndWe.bin"
+  WORD TRANSFORM_WORKING_MEMORY
+  POIN TransRefProgram+$80
+	
+
+ALIGN	4
+TransformList:
+

@@ -1,0 +1,14 @@
+﻿NAME=Pierce Glitch Fix
+NAME.en=Pierce Glitch Fix
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x2B200
+COMBO=Fix|0xa0|Default|0x80
+COMBO.zh=修复|0xa0|默认|0x80
+
+AUTHOR=credit Brendor
+AUTHOR.en=credit Brendor
+NAME.zh=故障修复
+INFO.zh=故障修复
+AUTHOR.zh=credit Brendor

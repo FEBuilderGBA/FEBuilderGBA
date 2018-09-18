@@ -1,0 +1,10 @@
+01=Melee Animation
+03=Melee Critical Animation
+05=Ranged Animation 
+06=Ranged Critical Animation
+07=Dodge Melee Attack
+08=Dodge Ranged Attack
+09=Equiped with Melee Weapon
+0A=standing motions?
+0B=Equiped with Ranged weapon
+0C=Attack Missed Animation

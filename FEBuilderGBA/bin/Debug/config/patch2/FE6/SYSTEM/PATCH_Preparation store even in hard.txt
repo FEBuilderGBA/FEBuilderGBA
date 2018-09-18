@@ -1,0 +1,18 @@
+
+NAME=ハードでも編成武器屋
+NAME.en=Preparation store even in hard
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|fix|ONN
+
+AUTHOR=FE6解析資料
+
+ONN:0x079544=0xC0 0x46
+OFF:0x079544=0x09 0xD1
+AUTHOR.en=FE 6 analysis material
+NAME.zh=有组织的武器商店甚至很难
+AUTHOR.zh=FE 6分析资料
+

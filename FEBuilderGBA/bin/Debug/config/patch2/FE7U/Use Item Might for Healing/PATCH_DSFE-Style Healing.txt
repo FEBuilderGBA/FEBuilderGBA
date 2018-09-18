@@ -1,0 +1,16 @@
+
+NAME=DSFE-Style Healing (回復量=(魔力/2)+杖の威力+武器Lv補正)
+NAME.en=DSFE-Style Healing (Recovery HP=(Magic / 2) + Staff power + Weapon LV correction)
+
+PATCHED_IF:0x16B68=0x10 0xB5 0x03 0x1C 0x0A 0x1C 0x24 0x24 0xFF 0x21 0x11 0x40 0x61 0x43 0x00 0x24 0x14 0x48
+
+INFO=回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力+武器Lv補正\r\nこのパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。
+INFO.en=Normally, the base power of healing staff items is hardcoded. This patch uses the staff item's power and the healer's staff weapon rank instead.\r\nRecovery HP=(Magic / 2) + Staff's power + bonus for rank\r\nThis patch depends on the address of the item table, so please install it before extending the item table.
+
+TYPE=BIN
+TAG=#ENGINE
+BIN:0x16B68=DSFE-Style Healing.dmp
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
+NAME.zh=DSFE风格复原（恢复量=（魔法力量/ 2）+手杖力量+武器Lv修正）
+INFO.zh=而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔法力量/ 2）+手杖+武器力量修正\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
+

@@ -1,0 +1,101 @@
+//FE8 UNCM/UNCR (SET_CONDITION and UNSET_CONDITION)
+//By Tequila
+
+/*
+Add the following to "Language Raws/Units/Change unit condition.txt"
+
+#Set the bits in memory slot 1 to the unit's condition word (+0xC in unit struct)
+SET_CONDITION, 0x3427, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+
+#Unset the bits in memory slot 1 to the unit's condition word (+0xC in unit struct)	
+UNSET_CONDITION, 0x3429, 4, -game:FE8 -indexMode:8
+	Character, 2, 2
+	
+Example: 
+SETVAL 0x1 0x2
+SET_CONDITION Eirika
+
+The flags are as follows:
+0x00000001 Don't display standing map sprite
+0x00000002 Greyed out/already moved
+0x00000004 Dead
+0x00000008 Undeployed
+0x00000010 Rescuing someone
+0x00000020 Is being rescued
+0x00000040 Cantoing/already performed an action
+0x00000080 Under a roof
+
+0x00000100 Makes movement squares display over the map sprite, but is cleared when selecting a unit, so rather useless
+0x00000200 Doesn't display map sprite in link arena if Hide Units is set to 'On'
+0x00000400 Related to AI; not entirely sure what it's for
+0x00000800 Riding a ballista
+0x00001000 Drop last item
+0x00002000 Metis Tome/Afa's Drops has been used
+0x00004000 Solo animation 1
+0x00008000 Solo animation 2
+
+0x00010000 Something about not drawing map sprites?
+0x00020000 Kind of unused
+0x00040000 ^, see below
+0x00080000 If this and either 0x00040000 0r 0x00020000 is set, activates a "super arena" with harder enemies and glitchy alternate text if you enter the arena
+0x00100000 ?
+0x00200000 Was not deployed last chapter
+0x00400000 ?
+0x00800000 Increase portrait index by 1
+
+0x01000000 Makes the standing map sprite shake very quickly. Doesn't seem to be useful otherwise
+0x02000000 Unit is unable to take part in chapter (can't select from prep screen)
+0x04000000 ?
+0x08000000 Use link arena palette
+0x10000000 ?
+0x20000000 ?
+0x40000000 ?
+0x80000000 ?
+
+*/
+	
+#ifdef _FE8_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+
+
+	PUSH
+	
+	ORG $10308 // $102EC + 4*7
+	POIN Set_Condition
+	
+	ORG $10310 // $102EC + 4*9
+	POIN Unset_Condition
+	
+	POP
+	
+	Set_Condition:
+	#incbin "Set_Condition.dmp"
+//	BYTE 0xE8 0x68 0x03 0x49 0x49 0x68 0x08 0x43 0xE8 0x60 0x02 0x48 0x00 0x47 0x00 0x00 0xB8 0x04 0x00 0x03 0x9B 0x04 0x01 0x08
+	
+	Unset_Condition:
+	#incbin "Unset_Condition.dmp"
+//	BYTE 0xE8 0x68 0x03 0x49 0x49 0x68 0x88 0x43 0xE8 0x60 0x02 0x48 0x00 0x47 0x00 0x00 0xB8 0x04 0x00 0x03 0x9B 0x04 0x01 0x08
+	
+#else
+	ERROR "You're not assembling FE8 events!"
+#endif
+
+/*
+Source:
+.thumb
+
+@r5 = char data
+
+ldr		r0,[r5,#0xC]
+ldr		r1,=#0x30004B8
+ldr		r1,[r1,#0x4]
+orr		r0,r1 			@change this to bic for UNCR
+str		r0,[r5,#0xC]
+ldr		r0,=#0x801049B
+bx		r0
+
+.ltorg
+*/

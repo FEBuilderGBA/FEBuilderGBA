@@ -1,0 +1,11 @@
+NAME=モードごとの経験値補正
+NAME.zh=调整上位职业的经验收益
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0x2C3B0
+COMBO=ON|0x00|OFF|0x01
+COMBO.zh=开|0x00|关|0x01
+
+AUTHOR=credit Vennobennu http://feuniverse.us/t/exp-formula-mode-coefficient-fix/27/2 Transplant:7743
+NAME.en=Experience value correction for each mode

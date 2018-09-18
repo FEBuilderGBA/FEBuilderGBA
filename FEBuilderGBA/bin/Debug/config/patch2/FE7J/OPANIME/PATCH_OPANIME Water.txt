@@ -1,0 +1,23 @@
+
+NAME=OPANIME 水滴
+NAME.en=OPANIME Water
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=8
+
+//圧縮画像
+ZIMAGE_POINTER=0xbc524
+//無圧縮ヘッダー付きTSA
+HEADERTSA_POINTER=0xbc530
+//非圧縮パレット
+PALETTE_POINTER=0xbc520
+
+
+NAME.zh=OPANIME水滴

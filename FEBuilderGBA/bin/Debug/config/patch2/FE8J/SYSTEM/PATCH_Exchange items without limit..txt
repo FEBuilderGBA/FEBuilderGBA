@@ -1,0 +1,24 @@
+﻿
+NAME=アイテムの交換 無制限にする
+NAME.en=Exchange items without limit.
+NAME.zh=道具的交换无限制
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x22f18
+COMBO=default|0x16 0xD1|fix|0xc0 0x46
+
+COMBO.zh=默认|0x16 0xD1|修复|0xc0 0x46
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#if9e8c3c
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#if9e8c3c
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#if9e8c3c
+
+
+
+
+INFO=GBA FEでは、アイテム交換を各ユニットごとに1ターンに付き1回しかりようできません。\r\nSFC FEは、無制限にアイテムを交換することができます。\r\nこのパッチは、SFC FEのように、何度でもアイテムを交換できるようにします。\r\nアーマーキラーなどの特殊武器を使いまわしやすくなります。\r\n
+INFO.zh=在GBA FE中，每个单位每回合不能进行一次物品交换。\r\nSFC FE可以无限期交换项目。\r\n该修补程序允许您以SFC FE的次数交换项目。\r\n重甲特殊等武器变得容易。\r\n
+INFO.en=In GBA FE, item trading is restricted to once per turn for each unit.\r\nIn contrast, SNES FE games allow you to exchange items without limit.\r\nThis would allow, for example, an item to be relayed across the map like a baton.\r\nThis patch removes the item trading limits, making the system similar to SNES FE games.\r\n

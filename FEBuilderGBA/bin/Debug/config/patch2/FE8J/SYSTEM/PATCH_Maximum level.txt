@@ -1,0 +1,23 @@
+
+NAME=最大レベル
+NAME.en=Maximum level
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+INFO=注意:最大31まで。それを超えるには上限突破パッチが必要です。
+
+ADDRESS=0x02B9C0
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#lb25700f
+NAME.zh=最大等级
+INFO.zh=注意:最大31。要超过那个，需要上限突破补丁。
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#lb25700f
+INFO.en=Note: Up to 31.To exceed it we need a breakthrough patch.
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#lb25700f
+
+

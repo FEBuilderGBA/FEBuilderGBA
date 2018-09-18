@@ -1,0 +1,31 @@
+﻿NAME=アイテムチェック(全ユニットと輸送体)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0xF0 0xB5 0x80 0x6B 0x47 0x88 0xC0 0x46 0x1E 0x48 0x02 0x68 0x03 0x79 0x5B 0x00 0x9E 0x18 0x15 0x1C 0x14 0x1C 0x28 0x78 0x69 0x78 0x02 0x35 0xB8 0x42 0x05 0xD0=0xF0 0xB5 0x80 0x6B
+
+
+
+EVENTSCRIPT=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:アイテム]アイテム所持チェック 	{COND}
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=item_find.bin
+
+INFO=特定のアイテムを輸送体を含めて誰かもっているかという条件式を作成します.
+AUTHOR=怪盗パッチ 7743
+NAME.en=Item check(All units and transporters)
+INFO.en=We create a conditional expression that someone has a certain item including a transporter.
+AUTHOR.en=Kaito patch7743
+
+NAME.zh=事件命令_ 物品拥有运输队
+INFO.zh=我们创建一个有条件的表达式，有人有一个包含一个运输队的某个物品。
+AUTHOR.zh=Kaito补丁7743
+
+
+
+
+
+EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM] item possession check extended instruction.
+EVENTSCRIPT.zh=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]项目拥有检查扩展指令。

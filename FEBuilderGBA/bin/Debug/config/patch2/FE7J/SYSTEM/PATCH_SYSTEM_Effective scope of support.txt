@@ -1,0 +1,12 @@
+
+NAME=支援の有効範囲
+NAME.en=Effective scope of support.
+
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x26f14
+NAME.zh=支持范围

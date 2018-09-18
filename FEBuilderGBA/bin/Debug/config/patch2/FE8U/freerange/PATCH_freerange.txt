@@ -1,0 +1,19 @@
+NAME=Range Display Fix (freerange / Implementation with Binary by icecube)
+NAME.en=Range Display Fix (Bin)
+
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x016CC6=0x2 0x49 0x38 0xC9 0x38 0xC2 0x18 0x32 0x1 0xE0 0xE8 0x79 0xD 0x8 0x89 0x69
+BIN:0x016CC6=00016CC6.bin
+BIN:0x016CE2=00016CE2.bin
+BIN:0x0170E6=000170E6.bin
+BIN:0x0172EA=000172EA.bin
+BIN:0x01ACD2=0001ACD2.bin
+BIN:0x01B46C=0001B46C.bin
+
+INFO=武器の攻撃レンジ4以上を正しく描画できるようにします。
+INFO.en=Patches the ROM to correctly draw weapon attack range 4 or more.\r\nImplemented with binary by icecube.\r\n
+INFO.zh=可以正确地绘制武器攻击范围4或更多。
+
+AUTHOR=icecube  https://serenesforest.net/forums/index.php?/topic/48334-fe7fe8-range-patch-fix/

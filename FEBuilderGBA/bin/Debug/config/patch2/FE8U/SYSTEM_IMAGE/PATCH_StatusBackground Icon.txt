@@ -1,0 +1,16 @@
+
+NAME=ステータス画面の背景のアイコン
+NAME.en=StatusBackground icon
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x0CEEEC//0xB17864
+PALETTE_POINTER=0x0CEEE8//0xB17B44
+
+NAME.zh=状态屏幕背景图标

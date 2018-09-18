@@ -1,0 +1,10 @@
+NAME.en=Prologue Text Reel BGM
+NAME.zh=MUSIC_prologue
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND #ESSENTIALFIXES
+
+ADDRESS=0x080C4A0C
+ADDRESS_TYPE=SONG
+
+INFO=Select the song to be played during the prologue text reel.

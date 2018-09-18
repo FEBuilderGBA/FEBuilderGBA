@@ -1,0 +1,10 @@
+
+NAME=武器経験値 攻撃時
+NAME.en=Weapon experience value when attacking
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x24e74
+NAME.zh=武器经验值在攻击

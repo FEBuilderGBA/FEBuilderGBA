@@ -1,0 +1,15 @@
+NAME=一般兵の顔画像を最大254個まで拡張する(導入)
+NAME.en=Allow 254 generic minimugs (Installer)
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x005F6C=0x00 0xB5 0xFF 0x21 0x08 0x40 0xC0 0x00
+
+EA=Allow 254 generic minimugs.event
+EDIT=PATCH_Allow 254 generic minimugs.txt
+
+AUTHOR=Gryz,7743 http://feuniverse.us/t/allowing-for-more-than-0x06-generic-minimugs/1085/9
+INFO=一般兵の顔の上限を増やします。\r\nこのパッチは、Gryzのルーチンを元に、データの持ち方を独自に拡張しました。
+INFO.en=Increase the upper limit of the face of general soldiers.\r\nBased on Gryz's routine, this patch expanded its own way of holding data.
+NAME.zh=扩大一般士兵的面部图像，最高可达254（介绍）
+INFO.zh=增加一般士兵面部的上限。\r\n根据Gryz的例程，这个补丁扩展了自己的数据保存方式。

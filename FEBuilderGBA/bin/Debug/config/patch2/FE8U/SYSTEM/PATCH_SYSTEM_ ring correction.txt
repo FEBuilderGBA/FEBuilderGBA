@@ -1,0 +1,16 @@
+NAME=指輪補正
+NAME.zh=SYSTEM_振铃校正
+NAME.en=Ring Correction
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02ADC4
+HEX=false
+
+INFO.en=Set to 0A for all ring effects at once.\r\nFurther research required.\r\n
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ma78e44f
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ma 78 e 44 f。
+AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ma78e44f

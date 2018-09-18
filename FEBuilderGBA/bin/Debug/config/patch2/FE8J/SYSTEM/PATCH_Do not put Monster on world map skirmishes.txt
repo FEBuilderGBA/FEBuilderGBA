@@ -1,0 +1,29 @@
+﻿
+NAME=フリーマップに魔物を出さない
+NAME.en=Do not put Monster on world map skirmishes
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0C66B4
+COMBO=魔物を出さない|0x00 0x00 0x00 0x00|魔物を出す|0xFB 0xF7 0xCE 0xFB
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+
+NAME.zh=在世界地图上不出魔物
+
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+
+
+
+
+COMBO.en=Do not put out demons|0x00 0x00 0x00 0x00|To put out demons|0xFB 0xF7 0xCE 0xFB
+
+COMBO.zh=不要放出恶魔|0x00 0x00 0x00 0x00|放出恶魔|0xFB 0xF7 0xCE 0xFB
+
+INFO=ワールドマップに魔物を登場させないようにします。\r\nワールドマップでのフリーマップ戦闘を抑制します。\r\n
+INFO.en=This patch is not make monsters appear on the world map.\r\nIt will erase the monster from the world map.\r\ndisable world map skirmishes.\r\n
+INFO.zh=我们不会让怪物出现在世界地图上。\r\n我们将在世界地图上压制免费的地图战。\r\n

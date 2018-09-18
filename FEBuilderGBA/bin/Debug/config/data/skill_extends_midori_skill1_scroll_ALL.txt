@@ -1,0 +1,8 @@
+01=Pursuit
+02=Critical
+04=Adept
+08=Accost
+10=Vantage
+20=Cancel
+40=Nullify
+80=Nihil

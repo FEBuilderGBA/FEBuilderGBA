@@ -1,0 +1,22 @@
+NAME=章ごとに戦闘音楽変更
+NAME.en=Change Battle BGM By Chapter
+NAME.zh=为每个章节改变战斗音乐
+
+TYPE=BIN
+TAG=#ENGINE #SOUND
+
+PATCHED_IF:0x726CA=0x0D 0x4E 0xB0 0x7B 0xC1 0xF7
+
+BIN:0x726CA=battle_changer.bin
+BIN:0x72700=72700.bin
+
+INFO=戦闘時に再生される音楽を章単位で変更できるようにします。
+INFO.en=Patches the ROM to re-enable Chapter Editor bytes 1C, 1E, and 20 - the attack BGM for player, enemy, and ally.\r\nTo edit, enter the Chapter Editor and modify the three "Attack by xxx BGM" fields.\r\nBy default these aren't set to combat BGM and must be changed throughout the ROM.\r\n
+INFO.zh=允许您以章节为单位更改战斗中播放的音乐。
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/battle_changer 移植:7743
+AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/battle_changer移植:7743。
+AUTHOR.en=Port: 7743 https://github.com/ngmansion/FE8/tree/master/battle_changer
+
+CONFLICT_IF:0x726CA=0x00 0x00 0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=Unique Battle Music Per Unit

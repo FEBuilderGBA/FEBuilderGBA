@@ -1,0 +1,10 @@
+NAME=アフアのしずく成長率補正値
+NAME.en=Metis's Tome Growth Bonus
+NAME.zh=Aphia的下降增长更正值
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2ba9a
+
+INFO.en=Boosts stat growth in all stats by specified value.

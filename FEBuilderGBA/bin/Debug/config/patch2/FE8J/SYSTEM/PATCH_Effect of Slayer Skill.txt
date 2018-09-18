@@ -1,0 +1,23 @@
+﻿NAME=司祭の魔物特効スキルの効果
+NAME.en=Effect of Slayer Skill
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2AA66
+COMBO=1.5倍|0x60 0x10|2倍|0x20 0x00|3倍|0x60 0x00
+
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より
+
+NAME.zh=司祭魔物特效的效果
+
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。
+
+AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.
+
+COMBO.en=1.5 times.|0x60 0x10|2 times|0x20 0x00|3 times|0x60 0x00
+
+COMBO.zh=1.5倍|0x60 0x10|2倍|0x20 0x00|3倍|0x60 0x00
+
+

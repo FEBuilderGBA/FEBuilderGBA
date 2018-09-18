@@ -1,0 +1,10 @@
+NAME=MUSIC_道具屋
+NAME.zh=音乐_道具屋
+NAME.en=MUSIC_Vendor
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080b9794
+ADDRESS_TYPE=SONG

@@ -1,0 +1,9 @@
+IF:0x16878=0x25 0x1c
+
+FORM=EventUnitFE6Form
+L_15_COMBO:COMBOAPPEND:40=40=アイテムドロップ+退避行動を取る
+L_15_COMBO:COMBOAPPEND:60=60=アイテムドロップ+退避行動を取らない(BOSS)
+L_15_COMBO:COMBOAPPEND.en:40=40=Item Drop+Retreat
+L_15_COMBO:COMBOAPPEND.en:60=60=Item Drop+Don't Retreat (BOSS AI)
+L_15_COMBO:COMBOAPPEND.zh:40=40=道具掉落+采取退避行动
+L_15_COMBO:COMBOAPPEND.zh:60=60=道具掉落+不采取退避行动（BOSS）

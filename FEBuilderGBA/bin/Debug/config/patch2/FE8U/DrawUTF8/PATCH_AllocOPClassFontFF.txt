@@ -1,0 +1,19 @@
+NAME=OPクラス紹介フォントで、0x80以上のフォントを許可する
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|ONN
+
+DETERMINATION_ADDRESS=0x0CCB8A
+
+OFF:0x0B2C9C=0x20 0x56
+ONN:0x0B2C9C=0x20 0x5C
+
+OFF:0x0CCB8A=0xA2 0x56
+ONN:0x0CCB8A=0xA2 0x5C
+
+INFO=OPクラス紹介フォントで、0x80以上0xFF以下のフォントを表示できるようにします。\r\nディフォルトは、ldsbで取得しているため、0x80以上は負の数になり取得できません。\r\nこのパッチは、ldrbで取得することで、その制限を解除します。
+NAME.en=Allow fonts of 0x80 or more in the OP class introduction font
+INFO.en=The OP class introduction font allows you to display fonts between 0x80 and 0xFF.\r\nThe default is acquired by ldsb, so 0x80 or more is a negative number and can not be acquired.\r\nThis patch is canceled by getting it with ldrb.
+NAME.zh=在OP类介绍字体中允许使用0x80或更多的字体
+INFO.zh=OP类引入字体允许您显示0x80和0xFF之间的字体。\r\n默认值由ldsb获取，因此0x80或更多是负数，无法获取。\r\n通过使用ldrb获取此补丁已取消。

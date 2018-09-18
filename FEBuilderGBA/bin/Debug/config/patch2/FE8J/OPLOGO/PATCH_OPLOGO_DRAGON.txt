@@ -1,0 +1,24 @@
+
+NAME=OPLOGOドラゴン
+NAME.en=OPLOGO DRAGON
+NAME.zh=OP界面龙
+
+//画像パッチとして実装します
+TYPE=IMAGE
+TAG=#IMAGE
+
+//幅と高さ
+WIDTH=256
+HEIGHT=160
+//利用パレット数
+PALETTE=1
+
+//圧縮画像
+ZIMAGE_POINTER=0xCA5B4
+//圧縮TSA
+ZTSA_POINTER=0xCA5BC
+//非圧縮パレット
+PALETTE_POINTER=0xCA5C4
+
+//KEEPTSA=true
+

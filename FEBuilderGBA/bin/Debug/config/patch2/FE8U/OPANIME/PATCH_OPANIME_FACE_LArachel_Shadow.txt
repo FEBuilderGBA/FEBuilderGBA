@@ -1,0 +1,15 @@
+NAME=OPANIME_FACE_ラーチェル_影
+NAME.en=OP Anime Face: L'Arachel (Shadow)
+NAME.zh=OPANIME_FACE_瑞秋_影子
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=64
+HEIGHT=120
+KEEPPALETTE=true
+
+ZIMAGE_POINTER=0x000C8E7C//0x08ADCCB8
+PALETTE_POINTER=0x000C8E78//0x08ADD050
+
+INFO=Edit and import OP Anime Graphic for the L'Arachel Face (Shadow) image.

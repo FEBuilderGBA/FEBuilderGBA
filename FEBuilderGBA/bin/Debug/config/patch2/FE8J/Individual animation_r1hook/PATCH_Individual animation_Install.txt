@@ -1,0 +1,26 @@
+NAME=(旧)個別アニメ導入(r1でフックするバージョン)
+NAME.zh=(旧)个人动画补丁介绍(Version to be hooked on r1)
+NAME.en=(Old)Individual animation patch(custom animation)(Version to be hooked on r1) (Installer)
+DEPRECATED=1
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x58168=0x00 0x49 0x8f 0x46
+EDIT_PATCH=PATCH_Individual animation.txt
+BIN:0x5815c=prologue.bin
+BIN:$FREEAREA:0xe47190=main.bin
+
+//本体へのJumpコードを作成する.
+//個別アニメパッチは、なぜか、先頭から始まらず中半からスタートするので、ファイル先頭から +0x50 する.
+JUMP:0x58168:$r1:+0x50=main.bin
+
+
+INFO=このパッチは、FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\nこのバージョンは、ルーチンをフックするのにr1レジスタを利用するバージョンです。(それ以外に違いは特にありません)\r\n
+INFO.en=This patch, like FE 7, assigns individual animation (custom animation) for each unit.\r\nThis version is a version that uses the r1 register to hook routines.(There are no other differences besides that).\r\n
+INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定义动画）\r\n该版本是使用r1寄存器挂接例程的版本（除此之外没有其他差异）\r\n
+
+CONFLICT_IF:0x58168=0x00 0x48 0x87 0x46
+CONFLICT_IF:0x058158=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=Individual animation patch

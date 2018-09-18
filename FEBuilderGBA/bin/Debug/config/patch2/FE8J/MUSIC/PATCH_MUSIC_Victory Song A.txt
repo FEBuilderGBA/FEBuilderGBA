@@ -1,0 +1,10 @@
+NAME=MUSIC_勝利の歌α
+NAME.en=MUSIC_Victory Song A
+NAME.zh=音乐_胜利之歌α
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0808812c
+ADDRESS_TYPE=SONG

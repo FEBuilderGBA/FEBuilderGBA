@@ -1,0 +1,16 @@
+NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する)
+NAME.en=Exceed The Portrait Hackbox By 4 Tiles
+NAME.zh=MugExceed/超过该肖像Hackbox（将面部图像扩大4块）
+
+TYPE=EA
+TAG=#ENGINE #IMAGE
+EA=EA.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x55D2=0xC0 0x46 0x01 0xB0 0x03 0x4B
+
+INFO=顔画像で利用できるタイルを増やします。
+INFO.en=Patches the ROM to increase the number of tiles available for portraits by 4.\r\nThese bytes control the new portrait info:\r\nByte 17: Left Tile X-Coordinate\r\nByte 18: Left Tile Y-Coordinate\r\nByte 19: Right Tile X-Coordinate\r\nByte 20: Right Tile Y-Coordinate\r\nByte 27: Flags whether selected portrait has expanded hackbox or not\r\n
+INFO.zh=增加可用于面部图像的图块数量。
+
+AUTHOR=tiki http://feuniverse.us/t/fe7-exceed-the-portrait-hackbox/2044 Compatability:aera

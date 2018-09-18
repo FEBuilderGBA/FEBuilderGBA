@@ -1,0 +1,31 @@
+NAME=状態異常剣
+NAME.zh=状态异常剑
+NAME.en=Status Ailment Swords
+
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x0178D8=0x30 0x30 0x0 0x29 0x4 0xD0 0xF0 0x22 0xA 0x40 0x1 0xD1 0x50 0x22 0x11 0x43 0x1 0x70 0x70 0x47 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+BIN:0x0178D8=000178D8.bin
+BIN:0x02B638=0002B638.bin
+BIN:0x02B8DC=0002B8DC.bin
+//BIN:0x05534B=0005534B.bin
+BIN:0x07A922=0007A922.bin
+
+BIN:$FREEAREA:0x08FFFEC0=effect_noanime.bin
+BIN:$FREEAREA:0x08FFFF30=effect(nop)2.bin
+BIN:$FREEAREA:0x08FFFF80=aki.bin
+
+JUMP:0x7A928:$NONE=effect_noanime.bin
+//JUMP:0x5534A:$r1=effect(nop)2.bin //入れるとダメっぽい.
+JUMP:0x2B63C:$NONE=aki.bin
+
+
+INFO=追加効果で、6=睡眠、 7=バーサク、8=サイレス、効果をそれぞれ与えることができる武器を作れるようになります。\r\nSkillSystemsと同じ場所をフックするため、SkillSystemsとは同時には利用できません。
+INFO.en=Patches ROM to enable sword status ailments. Effect Options: 6=Sleeping, 7=Berserk, 8=Silence.\r\nThis patch uses the same data as the Skill System Patch, so the two can't be used together.\r\nDo not attempt to use with the Skill System Patch.\r\n
+INFO.zh=追加効果で、6=睡觉，7 =狂暴者，8 =西勒斯，我们可以制造可以发挥各种效果的武器。\r\n因为它与SkillSystems挂钩的位置相同，所以它不能与SkillSystems同时使用。
+
+AUTHOR=Aera, Stein. Compatability:7743
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

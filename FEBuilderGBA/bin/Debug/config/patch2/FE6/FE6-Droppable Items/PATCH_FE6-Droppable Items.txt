@@ -1,0 +1,15 @@
+
+NAME=FE6-Droppable Items
+NAME.en=FE6-Droppable Items
+
+TYPE=EA
+TAG=#ENGINE
+EA=FE6-Droppable Items EA.txt
+PATCHED_IF:0x16878=0x25 0x1c
+
+AUTHOR=Orignal:Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/76
+
+INFO=FE6で敵がアイテムを落とすようになります。\r\nAI4(退避AI)に0x40のビットフラグを設定すると、最後に持っているアイテムをドロップするように修正します。
+INFO.en=FE6 will let the enemy drop the item.\r\nIf you set the bit flag of 0x40 to AI4, it modifies it so that the last item you have is dropped.
+
+INFO.zh=FE 6会让敌人放下物品。\r\n如果将0x40位标志设置为AI 4（保存AI），它将被修改为删除最后一个项目。

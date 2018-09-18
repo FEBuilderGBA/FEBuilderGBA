@@ -1,0 +1,3 @@
+NAME=MUSIC_フォデス戦
+NAME.zh=音乐_フォデス戦
+NAME.en=MUSIC_Fodeh

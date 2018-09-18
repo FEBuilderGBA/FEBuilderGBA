@@ -1,0 +1,17 @@
+NAME=OPANIMEエイリーク blur3
+NAME.en=OP Anime Eirika (Blur 3)
+NAME.zh=OPANIME Eirika blur3
+//画像パッチとして実装します
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=160
+PALETTE=11
+
+ZIMAGE_POINTER=0x0C7E98//0xAC4928
+ZTSA_POINTER=0x0C7EA0//0xAC5420
+PALETTE_POINTER=0x0C7E80//0xAC933C
+
+INFO=Edit and import OP Anime Graphic for the Eirika Blur 3 image.

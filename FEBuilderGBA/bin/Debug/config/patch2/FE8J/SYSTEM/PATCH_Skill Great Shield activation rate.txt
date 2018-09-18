@@ -1,0 +1,20 @@
+NAME=大盾発動率
+NAME.en=Skill Great Shield activation rate
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0002b2be
+HEX=false
+
+AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k6af1d1f
+
+NAME.zh=大盾发动率
+
+AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k 6 a 1 d 1 f。
+
+AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k 6 a 1 d 1 f.
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends

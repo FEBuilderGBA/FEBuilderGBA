@@ -1,0 +1,17 @@
+NAME=TorchWeapons 持っている範囲を照らす武器(導入)
+NAME.en=TorchWeapons(Install)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x178CA=0x00 0x00 0x00 0x49 0x08 0x47
+EDIT_PATCH=PATCH_TorchWeapons.txt
+EA=TorchWeapons.event
+
+INFO=このアイテムを保持していると、霧の中でも視界を確保できます。\r\n確保できる視界の幅は、AddRangeで決まります。\r\n複数保持していても結果は重複しません。\r\nリストの先頭からマッチさせるので、最も視界を確保できるアイテムをリストの上に設置してください。
+INFO.en=Hold this item, you can secure visibility even in the fog.\r\nThe range of visibility that can be secured is determined by AddRange.\r\nEven if you hold more than one, the result does not overlap.\r\nSince it matches from the top of the list, please place items that can secure the most visibility on the list.
+
+AUTHOR=7743, boy
+
+NAME.zh=TorchWeapons照亮我们所拥有范围的武器（介绍）
+INFO.zh=握住此物品，即使在雾中也能保证可见度。\r\n可以保护的可见性范围由AddRange确定。\r\n即使您持有多个，结果也不会重叠。\r\n由于它从列表顶部匹配，请放置可以确保列表中最具可见性的项目。

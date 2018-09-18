@@ -1,0 +1,14 @@
+
+NAME=リカバーの杖の回復量
+NAME.en=Set HP Recovered By Recover Staff
+NAME.zh=恢复甘蔗的恢复量
+
+IF:0x16FBE=0x00 0x24
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x16FF6
+DEFAULT=80
+HEX=FALSE

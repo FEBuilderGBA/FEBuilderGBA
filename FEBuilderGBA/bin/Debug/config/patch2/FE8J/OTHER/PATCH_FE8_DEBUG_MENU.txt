@@ -1,0 +1,23 @@
+﻿
+NAME.zh=FE8_调试_菜单
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=ON|ONN|OFF|OFF
+COMBO.zh=开|ONN|关|OFF
+
+
+ONN:0x0AB0=0x1B 0xF0 0x36 0xF9
+OFF:0x0AB0=0x09 0xF0 0xDA 0xF9
+ONN:0x5C53A0=0xBD 0x01 0x05 0x08 0x00 0x00 0x00 0x00 0xE9 0xB7 0x01
+OFF:0x5C53A0=0x2D 0x26 0x02 0x08 0x45 0x26 0x02 0x08 0xAD 0x26 0x02
+
+
+
+INFO=FE8のデバッグメニューを表示する
+AUTHOR=出典 http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+INFO.en=Display debug menu of FE8
+AUTHOR.en=Source http: // feuniverse.us/t/FE8u - doc - leftover - stuff - from - the - prototype - debug - builds/2874.
+INFO.zh=显示FE8的调试菜单
+AUTHOR.zh=来源http:// feuniverse。us/t/FE8u  -  doc  - 剩下的东西 - 从 -  prototype  -  debug  -  build/2874。
+

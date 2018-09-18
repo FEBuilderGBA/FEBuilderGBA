@@ -1,0 +1,15 @@
+NAME=はやい　もっとはやい
+NAME.en=Enable Faster Movement By Holding A (alt)
+NAME.zh=更快速
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x079514
+
+COMBO=Default|0x40|Fast|0x80
+
+INFO=ユニットの移動速度を、もっと早くします。
+INFO.en=Toggles if characters move faster when the A button is held or not.
+INFO.zh=更快地移动设备。

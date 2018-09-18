@@ -1,0 +1,15 @@
+﻿TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:$GREP4 0x01 0x00 0x00 0x00 0xCC 0xD3 0x9C 0x08 0x03 0x00 0x00 0x00 0x15 0xD5 0x9C 0x08 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0xBF 0x00 0x01 0xB4 0x02 0x48 0x3F 0x18=0x01 0x00 0x00 0x00
+
+EA=EA.txt
+
+AUTHOR=https://github.com/ngmansion/FE8/tree/master/Spell Animations
+NAME.en=CSA_Creator_For_FE8J_ver2
+NAME.zh=魔法补丁_ver2（CSA_Creator_For_FE8J_ver2)
+INFO.zh=这个补丁导入了自定义魔法系统。\r\nFE的魔法ASM + Proc硬被编程。\r\n因此，很难像战斗动画那样使用。\r\n这个补丁构筑独自的魔法系统。\r\n利用这个系统，可以像战斗动画一样制作魔法动画。\r\n是支撑自定义魔法系统的重要补丁。
+
+
+INFO=このパッチは、カスタム魔法システムを導入します。\r\nFEの魔法はASM+Procでハードコーディングされています。\r\nそのため戦闘アニメーションのように利用するのがとても困難です。\r\nこのパッチは、独自の魔法システムを構築します。\r\nそのシステムを利用することで、戦闘アニメーションのように、魔法アニメーションを作ることができるようになります。\r\nカスタム魔法システムを支える重要なパッチです。
+INFO.en=This patch introduces custom magic system.\r\nFE's magic is hard-coded in ASM + Proc.\r\nTherefore it is very difficult to use like battle animation.\r\nThis patch builds its own magic system.\r\nBy using that system, you will be able to create magic animation like battle animation.\r\nIt is an important patch that supports custom magic system.

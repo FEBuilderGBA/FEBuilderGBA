@@ -1,0 +1,11 @@
+NAME=MUSIC_武器屋
+NAME.en=MUSIC_Armory
+NAME.zh=音乐_武器屋
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080b978a
+ADDRESS_TYPE=SONG
+

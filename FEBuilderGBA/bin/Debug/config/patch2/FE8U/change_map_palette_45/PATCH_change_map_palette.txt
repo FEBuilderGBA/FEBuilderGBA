@@ -1,0 +1,26 @@
+NAME=マップパレット変化(use 45)
+NAME.en=Add Event: Switch Map Palette (Byte 0x2D/45)
+NAME.zh=地图调色板更改(use 45)
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$GREP4 0x01 0xB4 0x28 0x20 0x08 0x4A 0x96 0x46 0x00 0xF8 0x01 0x28 0x01 0xD1 0x2D 0x20 0x00 0xE0 0x06 0x20 0x02 0xBC 0x08 0x5C 0x80 0x00 0x40 0x19 0x00 0x68 0xA0 0x22=0x01 0xB4 0x28 0x20
+
+//本体をフリーエリアにいれる.
+//フラグが有効であれば第2パレットを見るようにする.
+BIN:$FREEAREA:1=change_map_palette.bin
+JUMP:0x08019950:$r1=change_map_palette.bin
+
+//もう一つのパレット変化
+BIN:$FREEAREA:2=change_map_palette2.bin
+JUMP:0x08019984:$r1=change_map_palette2.bin
+
+AUTHOR=7743
+
+INFO=フラグ0x28を立てると、第2パレットとして、マップ設定+0x2D をパレットPLISTを利用するようにします。\r\nマップ設定+2Dの設定値は戦績として利用されているようなので、このパッチではなく、マップ設定+0x92(use 146)の方をお勧めします。\r\n
+INFO.en=Patches in a map event that triggers when flag 0x28 is set.\r\nThis event changes the palette of the map to byte 0x2D (45) in the "Chapter Editor."\r\nByte 0x2D must be set for each chapter that needs a palette swap.\r\nBecause byte 0x2D is normally used for battle records, the 0x92 patch is recommended over this patch.\r\nFlag 0x28 is used so that flag 0x07 can be used for music-switching events.\r\n
+INFO.zh=当设置标志0x28时，我们将使用调色板PLIST作为地图设置+ 0x2D作为第二个调色板。\r\n看起来地图设置+ 2D设置值被用作战争记录，所以我们建议您映射设置+ 0x92（使用146）而不是此补丁。\r\n
+USEFLAG=0x28
+DEPRECATED=1

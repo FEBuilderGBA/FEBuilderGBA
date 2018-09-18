@@ -1,0 +1,16 @@
+TURN	转动条件
+TALK	对话条件（说话命令）
+OBJECT	地图对象（控制点，宝箱，门，私人住宅，村庄）
+ALWAYS	总是条件（范围条件，胜利条件等）
+TRAP	损坏的地板（Elliwood）
+TRAP	损坏的地板（HECTOR）
+ENEMY_UNIT	敌人的安排（Elliwood Normal）
+ENEMY_UNIT	敌人的安排（Elliwood Hard）
+ENEMY_UNIT	敌方安排（Hector Normal）
+ENEMY_UNIT	敌人安排（赫克托硬）
+PLAYER_UNIT	盟友安排（Eriwood Normal）
+PLAYER_UNIT	盟友安排（Eliwood Hard）
+PLAYER_UNIT	盟友安排（Hector Normal）
+PLAYER_UNIT	盟友安排（赫克托硬）
+START_EVENT	章开始事件
+END_EVENT	章节结束事件

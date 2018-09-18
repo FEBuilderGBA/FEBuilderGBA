@@ -1,0 +1,15 @@
+NAME=敵の踊り子のAIの修正 DancerAI
+NAME.en=DancerAI
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x03FA4A=0xC0 0x46
+EA=DanceAi.event
+
+AUTHOR=Stan http://feuniverse.us/t/fe8u-stans-asm-stuff/2376/18
+
+INFO=敵の踊り子のAIが適切に動作するように修正します。\r\n移動済みの敵ユニットに踊るを利用して移動を支援するようになります。
+INFO.en=Fix enemy dancer's AI to work properly.\r\nUsing dance to the enemy units that have already moved to assist moving.
+
+NAME.zh=纠正敌人的舞者AI舞者AI
+INFO.zh=我们将修改敌人舞者的AI以使其正常工作。\r\n我们将使用已经移动的敌方单位进行跳舞来协助移动。

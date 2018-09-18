@@ -1,0 +1,12 @@
+NAME.en=Remove Enemy Control Glitch
+
+TYPE=BIN
+
+//既に適応されたかどうか
+PATCHED_IF:0x0377A0=0x07 0xE0
+BIN:0x377A0=377A0.bin
+
+INFO.en=Patches the game to remove the enemy control glitch that occurs from mines, torches, etc.\r\n
+
+AUTHOR=Brendor Compatability:7743 http://feuniverse.us/t/enemy-control-glitch-fixes/1621
+TAG=#ENGINE #ESSENTIALFIXES

@@ -1,0 +1,26 @@
+NAME=章ごとに戦闘音楽変更
+NAME.en=Battle music change for each chapter
+NAME.zh=每章战斗音乐变更
+
+TYPE=BIN
+TAG=#ENGINE #SOUND
+
+PATCHED_IF:0x74ba6=0x0D 0x4E 0xB0 0x7B 0xBF 0xF7 0xB9 0xFC 0xF1 0x7B 0x1C 0x30 0x4A 0x06 0x14 0xD4
+
+
+BIN:0x74ba6=battle_changer.bin
+BIN:0x74bdc=74bdc.bin
+
+INFO=戦闘時に再生される音楽を章単位で変更できるようにします。
+INFO.en=Allows you to change the music played during battle in chapter units.
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/battle_changer
+AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/battle_changer。
+AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/battle_changer.
+
+
+INFO.zh=允许您以章节为单位更改战斗中播放的音乐。
+
+
+CONFLICT_IF:0x74ba6=0x00 0x00 0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=Battle music change for each units

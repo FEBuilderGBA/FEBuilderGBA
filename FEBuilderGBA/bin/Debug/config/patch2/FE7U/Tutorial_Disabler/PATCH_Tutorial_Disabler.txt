@@ -1,0 +1,19 @@
+
+NAME=チュートリアルを無効にする(Tutorial Disabler)
+NAME.en=Tutorial Disabler
+
+//既に適応されたかどうか
+PATCHED_IF:0x2DF06=0x07 0xE0
+
+//BINパッチとして実装します
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+BIN:0xD7C6=D7C6.bin
+BIN:0xD842=D842.bin
+BIN:0x2DF06=2DF06.bin
+INFO=FE7 Tutorial Disabler
+NAME.zh=禁用教程（教程功能停止）
+INFO.en=FE7 Tutorial Disabler
+INFO.zh=FE7 Tutorial Disabler
+
+INFO=チュートリアルイベントをすべて無効にします。

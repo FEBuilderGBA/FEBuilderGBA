@@ -1,0 +1,10 @@
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080bcfda
+ADDRESS_TYPE=SONG
+
+NAME.en=MUSIC_epilogue
+NAME.zh=音乐_尾声
+

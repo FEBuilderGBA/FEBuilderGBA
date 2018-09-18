@@ -1,0 +1,17 @@
+﻿NAME=難易度選択のパレット 普通を選択した時の色
+NAME.en=Level Select:Palette at Normal Active
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0xb0c34
+PALETTE_ADDRESS=0xAA7154
+
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+
+AUTHOR=Fatih
+NAME.zh=选择难度 选择正常时的调色板颜色

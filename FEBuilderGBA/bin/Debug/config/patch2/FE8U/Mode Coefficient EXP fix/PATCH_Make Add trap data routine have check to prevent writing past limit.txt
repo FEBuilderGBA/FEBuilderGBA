@@ -1,0 +1,9 @@
+NAME=トラップデータの追加ルーチンにチェックを付けて、制限を超えてデータを壊さないようにする
+NAME.en=Make the Add trap data routine have a check to prevent writing past the limit
+
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+BIN:0x2E2B8=2E2B8.bin
+
+NAME.zh=检查陷阱数据的添加例程，以便数据不会超出限制

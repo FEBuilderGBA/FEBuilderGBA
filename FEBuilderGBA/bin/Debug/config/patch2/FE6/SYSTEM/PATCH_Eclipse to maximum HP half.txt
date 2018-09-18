@@ -1,0 +1,23 @@
+
+NAME=イクリプスを最大HP半分に
+NAME.en=Eclipse to maximum HP half
+NAME.zh=系统_イクリプス最大HP的一半
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=HPの半分|OFF|最大HPの半分|ONN
+
+AUTHOR=FE6解析資料
+
+ONN:0x024a5e=0x10
+ONN:0x024a62=0x40 0x10
+OFF:0x024a5e=0x11
+OFF:0x024a62=0x01 0x38
+AUTHOR.en=FE 6 analysis material
+COMBO.en=Half of HP|OFF|Half of maximum HP|ONN
+AUTHOR.zh=FE 6分析资料
+COMBO.zh=惠普的一半|OFF|最大HP的一半|ONN
+
+

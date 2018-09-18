@@ -1,0 +1,16 @@
+TURN	Turn Conditions
+TALK	Talk Condition (Talk Command)
+OBJECT	Map Objects (Seize, Chest, Door, Visit Village or Home)
+ALWAYS	Always Condition (Range Condition, Victory Condition etc)
+TRAP	Trap（Eliwood）
+TRAP	Trap（Hector）
+ENEMY_UNIT	Enemy arrangement（Eliwood）
+ENEMY_UNIT	Enemy arrangement（Eliwood HARD）
+ENEMY_UNIT	Enemy arrangement（Hector）
+ENEMY_UNIT	Enemy arrangement（Hector HARD）
+PLAYER_UNIT	Player arrangement（Eliwood）
+PLAYER_UNIT	Player arrangement（Eliwood HARD）
+PLAYER_UNIT	Player arrangement（Hector）
+PLAYER_UNIT	Player arrangement（Hector HARD）
+START_EVENT	Chapter start event
+END_EVENT	Chapter end event

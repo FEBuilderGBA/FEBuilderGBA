@@ -1,0 +1,12 @@
+NAME.en=Sound Room 100% Unlocked
+NAME.zh=Unlock Sound Room songs
+
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+ADDRESS=0xaede0
+COMBO=Default: Earn as Heard|0x0B|Patched: All Songs Available|0xFF
+
+AUTHOR=Transplant:7743
+
+

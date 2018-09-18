@@ -1,0 +1,10 @@
+NAME=MUSIC_支援_きずな
+NAME.zh=音乐_支援_羁绊
+NAME.en=MUSIC_Support
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080974d6 0x080983a0 0x080a46cc
+ADDRESS_TYPE=SONG
+

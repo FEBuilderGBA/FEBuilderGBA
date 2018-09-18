@@ -1,0 +1,64 @@
+
+NAME=(旧)戦闘変身パッチ
+NAME.en=(Old)Battle Transforming
+DEPRECATED=1
+
+IF:$GREP4 0x09 0x4D 0x07 0x4E 0x30 0x43 0x07 0x4E 0x2B 0x78 0x00 0x2B 0xF5 0xD0 0x01 0x3B 0x10 0x35 0x2C 0x88 0xB4 0x42 0xF0 0xD0 0xA0 0x42 0xF6 0xD1 0xE6 0xE7 0xC0 0x46 0x00 0xFF 0x00 0x00 0xFF 0xFF 0x00 0x00=0x09 0x4D 0x07 0x4E
+
+IF_COMMENT=(旧)戦闘変身パッチを導入してください.
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$GREP4END 0x09 0x4D 0x07 0x4E 0x30 0x43 0x07 0x4E 0x2B 0x78 0x00 0x2B 0xF5 0xD0 0x01 0x3B 0x10 0x35 0x2C 0x88 0xB4 0x42 0xF0 0xD0 0xA0 0x42 0xF6 0xD1 0xE6 0xE7 0xC0 0x46 0x00 0xFF 0x00 0x00 0xFF 0xFF 0x00 0x00
+
+//データサイズ(10進数)
+DATASIZE=16
+
+//データ個数 FF FF FF FF が出てくるまで
+DATACOUNT=$GREP16 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=クラス
+B1:ITEM=アイテム
+B2:BATTLEANIME=変身開始アニメ
+B3:BATTLEANIME=変身戦闘アニメ
+B4:BATTLEANIME=変身解除アニメ
+B5:BATTLEANIME=変身終了アニメ
+W6=00
+W8:SONG=変身開始時の音
+W10:SONG=変身完了時の音
+W12:SONG=変身解除の音
+W14=00
+
+B0:CLASS.zh=职业
+B1:ITEM.zh=道具
+B2:BATTLEANIME.zh=变身开始动画
+B3:BATTLEANIME.zh=变身战斗动画
+B4:BATTLEANIME.zh=变身解除动画
+B5:BATTLEANIME.zh=变身终了动画
+W8:SONG.zh=变身开始的音效
+W10:SONG.zh=变身完了的音效
+W12:SONG.zh=变身解除的音效
+
+B0:CLASS.en=Class ID
+B1:ITEM.en=Item ID
+B2:BATTLEANIME.en=Transform Beginning Anim
+B3:BATTLEANIME.en=Transformed Battle Anim
+B4:BATTLEANIME.en=Transform Back Anim
+B5:BATTLEANIME.en=Transform Finished Anim
+W8:SONG.en=Transform Start Sound
+W10:SONG.en=Transform Done Sound
+W12:SONG.en=Detransform Sound
+
+
+INFO=戦闘時に、変身できるクラスとアイテムを増やします。\r\nこれは古いパッチです。
+AUTHOR=UNKNOWN ,Aera http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
+INFO.en=During battle, increase classes and items that can transform.\r\nThis is an old patch.
+NAME.zh=（旧）战斗转型补丁
+INFO.zh=在战斗中，增加可以变换的类和项目。\r\n这是一个旧补丁。

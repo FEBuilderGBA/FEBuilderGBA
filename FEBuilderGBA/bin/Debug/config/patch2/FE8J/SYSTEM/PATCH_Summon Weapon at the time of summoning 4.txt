@@ -1,0 +1,13 @@
+﻿NAME=召喚時の武器4
+NAME.en=Summoned Creature Weapon 4
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07d1e6 0x07d1fc 0x07d216
+ADDRESS_TYPE=ITEM
+
+
+AUTHOR=7743
+NAME.zh=召唤时的武器4

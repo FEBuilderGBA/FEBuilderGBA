@@ -1,0 +1,12 @@
+NAME=ユアン 見習いクラス自動CC セリフ4
+NAME.en=Ewan_Trainee_Auto_Promotion_Text4
+NAME.zh=尤恩_见习职业_自动_CC_对话4
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+DATASIZE=2
+TAG=#TEXT
+
+ADDRESS=0x082070A8
+ADDRESS_TYPE=TEXT
+

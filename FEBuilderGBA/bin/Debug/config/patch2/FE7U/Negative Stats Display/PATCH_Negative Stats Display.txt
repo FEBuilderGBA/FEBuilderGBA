@@ -1,0 +1,11 @@
+NAME=Negative Stats Display
+NAME.en=Negative Stats Display
+NAME.zh=Negative Stats Display
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x6242=0x00 0x00 0x00 0x4B 0x18 0x47
+EA=InstallNegativeStatsFix.txt
+
+AUTHOR=circleseverywhere http://feuniverse.us/t/fe8-negative-stat-boost-display-fix/1715/3

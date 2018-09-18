@@ -1,0 +1,21 @@
+NAME=ディフォルトオプション アニメーション設定
+NAME.en=Set Default Option "Animation"
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default(Animation 1)|ON1|Animation 2(背景付き)|ON2|Animation Off(アニメオフ)|OFF
+COMBO.en=Default(Animation 1)|ON1|Animation 2(With BG)|ON2|Animation Off|OFF
+
+
+DETERMINATION_ADDRESS=0x30CD6
+
+ON1:0x030CD6=0x03 0x40
+ON2:0x030CD6=0x06 0x33
+OFF:0x030CD6=0x02 0x33
+
+//animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
+INFO=ニューゲームで開始した時の初期のディフォルトオプションを設定します。\r\n戦闘アニメの有無を設定します。
+INFO.en=Set the default option when starting with the new game.\r\nSet the presence or absence of battle animation.
+NAME.zh=默认选项动画设置
+INFO.zh=从新游戏开始时设置默认选项。\r\n设置是否存在战斗动画。
+COMBO.zh=Default(Animation 1)|ON1|动画2（有背景）|ON2|动画关（动画关闭）|OFF

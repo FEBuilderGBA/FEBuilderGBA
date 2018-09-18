@@ -1,0 +1,15 @@
+NAME=輸送隊ユニット 序盤とエイリーク編
+NAME.en=Eirika Campaign Supply
+NAME.zh=运输单位早期诗歌和埃利克
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x23F88
+ADDRESS_TYPE=UNIT
+
+INFO=隣接すると輸送体メニューを出すユニットを設定します。
+INFO.en=Sets the unit that the "Supply" menu option is attached to during Chapters 1-8 and Eirika's campaign.\r\n
+INFO.zh=设置相邻时将显示转运菜单的单位。
+
+AUTHOR=7743

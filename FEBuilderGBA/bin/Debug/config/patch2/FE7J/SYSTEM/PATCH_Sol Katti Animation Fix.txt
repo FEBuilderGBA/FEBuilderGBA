@@ -1,0 +1,19 @@
+NAME=ソウルカティのアニメーションバグの修正
+NAME.en=Sol Katti Animation Fix
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=off|OFF|fix|ONN
+
+ONN:0xD60D84=0x8C
+OFF:0xD60D84=0x84
+
+AUTHOR=laqieer
+INFO=リンのソールカティのアニメーションを有効にします
+INFO.en=Enables Lyn w/Sol Katti Animation.
+
+
+NAME.zh=首尔Kati动画bug的修改
+INFO.zh=启用Lynn的Sorikati动画

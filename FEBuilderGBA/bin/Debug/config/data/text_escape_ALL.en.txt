@@ -1,0 +1,56 @@
+@0080@0004	[LoadOverworldFaces]	{MOVE_LOAD}
+@0080@0005	Display of gold [G]	{DISPLAY}
+@0080@0016	Enable blinking [EnableBlinking]	{TOGGLE}
+@0080@0018	Delay blinking [DelayBlinking]	{TOGGLE}
+@0080@0019	Pause blinking [PauseBlinking]	{TOGGLE}
+@0080@001B	Stop blinking [DisableBlinking]	{TOGGLE}
+@0080@001C	Open the eyes [OpenEyes]	{TOGGLE}
+@0080@001D	Close the eyes [CloseEyes]	{TOGGLE}
+@0080@001E	Close the eyes halfway [HalfCloseEyes]	{TOGGLE}
+@0080@001F	Wink [Wink]	{TOGGLE}
+@0080@0020	Display Tactician name [Tact]	{DISPLAY}
+@0080@0021	Make the text red (system messages only) [ToggleRed]	{TOGGLE}
+@0080@0022	Display item name [Item]	{DISPLAY}
+@0080@0023	Enter name [SetName]	{CHOOSE}
+@0080@0024	Display of military name 2 [Tact 2]	{DISPLAY}
+@0080@0025	Invert colors [ToggleColorInvert]	{TOGGLE}
+@0001	New Line [NL]	{LINEBREAK}
+@0002	Erase all text in the bubble[Clear]	{LINEBREAK}
+@0002	Two lines break[2NL]	{LINEBREAK}
+@0003	Wait for input by player[A]	{LINEBREAK}
+@0004	[....]	{LINEBREAK}
+@0005	[.....]	{LINEBREAK}
+@0006	[......]	{LINEBREAK}
+@0007	[.......]	{LINEBREAK}
+@0008	Open to the far left [OpenFarLeft]	{POSITION}
+@0009	Open to the left middle [OpenMidLeft]	{POSITION}
+@000A	Open to the left [OpenLeft]	{POSITION}
+@000B	Open to the right [OpenRight]	{POSITION}
+@000C	Open to the right middle [OpenMidRight]	{POSITION}
+@000D	Open to the far right [OpenFarRight]	{POSITION}
+@000E	Open outside the left screen [OpenFarFarLeft]	{POSITION}
+@000F	Open outside the right screen [OpenFarFarRight]	{POSITION}
+@0011	Clear portrait [ClearFace]	{MOVE_LOAD}
+@0012	Display speech at normal speed [NormalPrint]	{SPEED}
+@0013	Display speech at quickly [FastPrint]	{SPEED}
+@0014	[CloseSpeechFast]	{CHOOSE}
+@0015	[CloseSpeechSlow]	{CHOOSE}
+@0016	[ToggleMouthMove]	{TOGGLE}
+@0017	[ToggleSmile]	{TOGGLE}
+@0018	[Yes]	{CHOOSE}
+@0019	[No]	{CHOOSE}
+@001A	Shop,Buy or Sell Selector[Buy/Sell]	{CHOOSE}
+@001B	Shop,Continue trading[ShopContinue]	{CHOOSE}
+@001C	[SendToBack]	{CHOOSE}
+@001D	Display a character string quickly 2 [FastPrint]	{SPEED}
+@001F	Fill in the string margin[.]	{DISPLAY}
+@0040	Display of @[@]	{DISPLAY}
+@0010	Loading the next Portrait [LoadFace]	{MOVE_LOAD}
+@0080@000A	Move to the far left [MoveFarLeft]	{MOVE_LOAD}
+@0080@000B	Move to the left middle [MoveMidLeft]	{MOVE_LOAD}
+@0080@000C	Move to the left [MoveLeft]	{MOVE_LOAD}
+@0080@000D	Move to the right [MoveRight]	{MOVE_LOAD}
+@0080@000E	Move to the right middle [MoveMidRight]	{MOVE_LOAD}
+@0080@000F	Move to the far right [MoveFarRight]	{MOVE_LOAD}
+@0080@0010	Move outside the left screen [MoveFarFarLeft]	{MOVE_LOAD}
+@0080@0011	Move outside the right screen [MoveFarFarRight]	{MOVE_LOAD}

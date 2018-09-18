@@ -1,0 +1,21 @@
+﻿NAME=まほーパッチ(FeditorAdv MagicSystem)
+TYPE=BIN
+TAG=#ENGINE
+NAME.zh=魔法补丁(FeditorAdv 魔法系统)
+NAME.en=magic patch (FeditorAdvMagicSystem)
+
+//既に適応されたかどうか
+PATCHED_IF:0x0005C19C=0x00 0xB3 0xEF
+
+BIN:0x05C19C=0005C19C.bin
+BIN:0xEFB2F0=00EFB2F0.bin
+
+AUTHOR=出典元:\r\nhttps://ux.getuploader.com/FE4/download/136
+AUTHOR.zh=来源来源:\r\nhttps://ux.getuploader.com/FE4/download/136
+AUTHOR.en=Source:\r\nhttps://ux.getuploader.com/FE4/download/136
+
+
+
+INFO=このパッチは、カスタム魔法システムを導入します。\r\nFEの魔法はASM+Procでハードコーディングされています。\r\nそのため戦闘アニメーションのように利用するのがとても困難です。\r\nこのパッチは、独自の魔法システムを構築します。\r\nそのシステムを利用することで、戦闘アニメーションのように、魔法アニメーションを作ることができるようになります。\r\nカスタム魔法システムを支える重要なパッチです。
+INFO.en=This patch introduces custom magic system.\r\nFE's magic is hard-coded in ASM + Proc.\r\nTherefore it is very difficult to use like battle animation.\r\nThis patch builds its own magic system.\r\nBy using that system, you will be able to create magic animation like battle animation.\r\nIt is an important patch that supports custom magic system.
+INFO.zh=这个补丁引入了自定义的魔术系\r\nFE的魔法在ASM + Proc中被硬编码。\r\n因此，像战斗动画一样使用非常困难。\r\n这个补丁构建了自己的魔法系统。\r\n通过使用该系统，您将能够创建像战斗动画一样的魔法动画。\r\n这是一个支持自定义魔法系统的重要补丁。
