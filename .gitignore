@@ -1,6 +1,11 @@
 r
+FEBuilderGBA/bin/Debug\*.pdb
+FEBuilderGBA/bin/Debug\*.png
+FEBuilderGBA/bin/Debug\*.bin
+FEBuilderGBA/bin/Debug\*.gba
+FEBuilderGBA/bin/Debug\*.dmp
 FEBuilderGBA/bin/Release
-FEBuilderGBA/bin/obj
 FEBuilderGBA/bin/Debug/config/config.xml
 FEBuilderGBA/bin/Debug/config/etc/
 FEBuilderGBA/bin/Debug/config/log/
+FEBuilderGBA/obj
