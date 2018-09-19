@@ -33,7 +33,7 @@ In some cases, you may earn pocket money with affiliate. :)
 However, please do it at your own risk. :(  
 
 If you have something you do not understand from hackrom, please read "Manual" in "Help".  
-If you find a bug that you can not solve by any means, please create report.7z from 'File' -> 'Problem reporting tool' in 'Menu' and consult with the community.(Do NOT send the ROM)  
+If you find a bug that you can not solve by any means, please create report.7z from 'File' -> 'Menu' -> 'Create Report Issue' and consult with the community.(Do NOT send the ROM)  
 
 https://github.com/FEBuilderGBA/FEBuilderGBA
 
