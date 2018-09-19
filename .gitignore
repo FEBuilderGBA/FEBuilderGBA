@@ -1,3 +1,4 @@
+*.gba
 r
 FEBuilderGBA/bin/Debug\*.pdb
 FEBuilderGBA/bin/Debug\*.png
