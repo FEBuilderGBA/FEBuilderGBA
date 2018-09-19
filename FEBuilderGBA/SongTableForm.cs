@@ -139,17 +139,33 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
 
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, selfname, new uint[] { 0 });
+
+            List<uint> tracelist = new List<uint>();
             uint songpointer = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
             {
                 uint songaddr = Program.ROM.p32(songpointer);
-                string name = "Song" + U.ToHexString(i) + " ";
-                //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
-                SongUtil.RecycleOldSong(ref list ,name, songpointer);
+                if (!U.isSafetyOffset(songaddr))
+                {
+                    continue;
+                }
 
-                //楽器
-                name = "SongInst" + U.ToHexString(i) + " ";
-                SongInstrumentForm.RecycleOldInstrument(ref list, name, songaddr + 4);
+                if (tracelist.IndexOf(songaddr) < 0)
+                {//楽譜
+                    tracelist.Add(songaddr);
+                    string name = "Song" + U.ToHexString(i) + " ";
+                    //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
+                    SongUtil.RecycleOldSong(ref list, name, songpointer);
+                }
+
+                uint instpointer = songaddr + 4;
+                uint instaddr = Program.ROM.p32(instpointer);
+                if (tracelist.IndexOf(instaddr) < 0)
+                {//楽器
+                    tracelist.Add(instaddr);
+                    string name = "SongInst" + U.ToHexString(i) + " ";
+                    SongInstrumentForm.RecycleOldInstrument(ref list, name, instpointer);
+                }
             }
         }
     }

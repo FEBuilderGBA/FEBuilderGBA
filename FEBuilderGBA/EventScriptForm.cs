@@ -277,9 +277,9 @@ namespace FEBuilderGBA
             }
             return value;
         }
-        public static void ScanScript(List<Address> list, uint script_pointer, bool isWithEventUnit, bool isWorldMapEvent, string basename)
+        public static void ScanScript(List<Address> list, uint script_pointer, bool isWithEventUnit, bool isWorldMapEvent, string basename, List<uint> tracelist)
         {
-            ScanScriptHelper helper = new ScanScriptHelper(list, isWithEventUnit, isWorldMapEvent, basename);
+            ScanScriptHelper helper = new ScanScriptHelper(list, isWithEventUnit, isWorldMapEvent, basename, tracelist);
             helper.Scan(script_pointer);
         }
 
@@ -294,14 +294,14 @@ namespace FEBuilderGBA
             public ScanScriptHelper(List<Address> list
                 , bool isWithEventUnit
                 , bool isWorldMapEvent
-                , string basename)
+                , string basename
+                , List<uint> tracelist)
             {
                 this.RefList = list;
                 this.IsWithEventUnit = isWithEventUnit;
                 this.IsWorldMapEvent = isWorldMapEvent;
                 this.Basename = basename;
-                this.TraceList = new List<uint>();
-
+                this.TraceList = tracelist;
             }
 
             public void Scan(uint event_pointer)

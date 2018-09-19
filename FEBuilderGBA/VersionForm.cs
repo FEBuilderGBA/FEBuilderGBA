@@ -88,7 +88,7 @@ namespace FEBuilderGBA
                 url = "https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA/How%20to%20download%20FEBuilderGBA_EN";
             }
 
-            str += "\r\n" + "https://ux.getuploader.com/FE4/";
+            str += "\r\n" + "https://github.com/FEBuilderGBA/FEBuilderGBA/releases";
             str += "\r\n" + url;
 
             return str;

@@ -48,7 +48,7 @@ SHORT	$b014 $bcf0 $bc01 $4700
 
 //中指揮
 ORG	0x896ac
-#incbin "nakashiki.gba"
+#incbin "nakashiki.bin"
 
 //支援関連
 ORG	0x2821a	//支援数数え復活？

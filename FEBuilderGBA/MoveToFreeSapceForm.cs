@@ -187,6 +187,7 @@ namespace FEBuilderGBA
             U.AppendAllASMStructPointersList(list, null
                 , isPatchInstallOnly: true
                 , isPatchPointerOnly: true
+                , isPatchStructOnly:  true
                 , isUseOtherGraphics: false
                 , isUseOAMSP: false
                 );

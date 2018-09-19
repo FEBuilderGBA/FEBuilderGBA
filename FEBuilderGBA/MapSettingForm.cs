@@ -353,7 +353,7 @@ namespace FEBuilderGBA
             }
 
             uint event_plist = Program.ROM.u8(addr + Program.ROM.RomInfo.map_setting_event_plist_pos());
-            uint eventaddr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.EVENT, event_plist, out pointer);
+            uint eventaddr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.EVENT, event_plist, out pointer);
             return eventaddr;
         }
         public static uint GetEventAddrWhereMapID(uint mapid)
@@ -379,7 +379,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
             uint mapchange_plist = (uint)Program.ROM.u8(addr + 11);
-            uint mapchangeaddr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.CHANGE, mapchange_plist,out out_pointer);
+            uint mapchangeaddr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.CHANGE, mapchange_plist,out out_pointer);
             return mapchangeaddr;
         }
 

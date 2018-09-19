@@ -1798,7 +1798,7 @@ namespace FEBuilderGBA
         }
 
         //全データの取得
-        public static void MakeAllDataLength(List<Address> list)
+        public static void MakeAllDataLength(List<Address> list , bool isPointerOnly)
         {
             string name = "Text";
             InputFormRef InputFormRef = Init(null);
@@ -1809,13 +1809,16 @@ namespace FEBuilderGBA
             List<U.AddrResult> arlist = InputFormRef.MakeList();
             for(int i = 0 ; i < arlist.Count ; i++)
             {
-                int size;
+                int size = 0;
                 uint paddr = Program.ROM.u32(arlist[i].addr);
 
                 if (FETextEncode.IsUnHuffmanPatchPointer(paddr))
                 {//un-huffman patch?
                     uint unhuffman_addr = U.toOffset(FETextEncode.ConvertUnHuffmanPatchToPointer(paddr));
-                    textdecoder.UnHffmanPatchDecode(unhuffman_addr, out size);
+                    if (!isPointerOnly)
+                    {
+                        textdecoder.UnHffmanPatchDecode(unhuffman_addr, out size);
+                    }
                     FEBuilderGBA.Address.AddAddress(list,unhuffman_addr
                         , (uint)size
                         , arlist[i].addr
@@ -1825,7 +1828,10 @@ namespace FEBuilderGBA
                 else if (U.isPointer(paddr))
                 {
                     uint addr = U.toOffset(paddr);
-                    textdecoder.huffman_decode(addr, out size);
+                    if (!isPointerOnly)
+                    {
+                        textdecoder.huffman_decode(addr, out size);
+                    }
                     FEBuilderGBA.Address.AddAddress(list,addr
                         , (uint)size
                         , arlist[i].addr

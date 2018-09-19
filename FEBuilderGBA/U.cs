@@ -1208,7 +1208,7 @@ namespace FEBuilderGBA
         public static String getASCIIString(byte[] data,uint addr, int length)
         {
             if (length <= 0) return "";
-            byte[] d = U.getBinaryData(data,addr, (uint)length);
+            byte[] d = U.getBinaryData(data,addr, length);
             return System.Text.Encoding.GetEncoding("ASCII").GetString(d);
         }
 
@@ -1509,6 +1509,10 @@ namespace FEBuilderGBA
                     bitmap.MakeTransparent();
                 }
             }
+        }
+        public static byte[] getBinaryData(byte[] data, uint addr, int count)
+        {
+            return getBinaryData(data, addr, (uint) count);
         }
 
 
@@ -1938,7 +1942,7 @@ namespace FEBuilderGBA
             ItemShopForm.MakeAllDataLength(list);
             MapChangeForm.MakeAllDataLength(list);
             FontForm.MakeAllDataLength(list);
-            TextForm.MakeAllDataLength(list);
+            TextForm.MakeAllDataLength(list , isPointerOnly);
             MapPointerForm.MakeAllDataLength(list, isPointerOnly);
             MapExitPointForm.MakeAllDataLength(list);
             ItemForm.MakeAllDataLength(list);
@@ -2101,12 +2105,13 @@ namespace FEBuilderGBA
             , List<DisassemblerTrumb.LDRPointer> ldrmap
             , bool isPatchInstallOnly
             , bool isPatchPointerOnly
+            , bool isPatchStructOnly
             , bool isUseOtherGraphics
             , bool isUseOAMSP
             )
         {
             if (InputFormRef.DoEvents(null, "AppendAllASMStructPointersList PatchForm")) return;
-            PatchForm.MakePatchStructDataList(structlist, isPatchPointerOnly, isPatchInstallOnly);
+            PatchForm.MakePatchStructDataList(structlist, isPatchPointerOnly, isPatchInstallOnly, isPatchStructOnly);
 
             if (ldrmap != null)
             {
@@ -3643,6 +3648,9 @@ namespace FEBuilderGBA
 
         static HttpWebRequest HttpMakeRequest(string url, string referer)
         {
+            ServicePointManager.ServerCertificateValidationCallback = OnRemoteCertificateValidationCallback;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //TLS 1.2 
+
             string UserAgent = GenUserAgent(); //"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -3651,10 +3659,6 @@ namespace FEBuilderGBA
             {//自動プロキシ検出を利用しない.
              //こちらの方が早くなります.
                 request.Proxy = null;
-            }
-            if (IsLinux())
-            {//MONOには証明書が入っていないので、別処理が必要.
-                System.Net.ServicePointManager.ServerCertificateValidationCallback = OnRemoteCertificateValidationCallback;
             }
 
             //貴方の好きなUAを使ってね。

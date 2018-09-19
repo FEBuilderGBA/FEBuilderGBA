@@ -105,6 +105,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
+            List<uint> tracelist = new List<uint>();
             {
                 InputFormRef InputFormRef = N_Init(null);
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "WorldMapEvent ", new uint[] { 0 });
@@ -113,7 +114,7 @@ namespace FEBuilderGBA
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = "WorldMapEvent " + U.To0xHexString(i) + " ";
-                    EventScriptForm.ScanScript( list, p, true, true, name);
+                    EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
                 }
             }
         }

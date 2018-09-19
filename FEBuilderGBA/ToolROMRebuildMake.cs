@@ -582,6 +582,7 @@ namespace FEBuilderGBA
                 , ldrmap
                 , isPatchInstallOnly: true
                 , isPatchPointerOnly: false
+                , isPatchStructOnly:  false
                 , isUseOtherGraphics: true
                 , isUseOAMSP: false
                 );

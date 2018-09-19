@@ -104,6 +104,7 @@ namespace FEBuilderGBA
                     , ldrmap
                     , isPatchInstallOnly: false
                     , isPatchPointerOnly: false
+                    , isPatchStructOnly: false
                     , isUseOtherGraphics: false
                     , isUseOAMSP: false
                     );
@@ -220,6 +221,7 @@ namespace FEBuilderGBA
                     , ldrmap
                     , isPatchInstallOnly: false
                     , isPatchPointerOnly: false
+                    , isPatchStructOnly: false
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
@@ -387,6 +389,7 @@ namespace FEBuilderGBA
                     , ldrmap
                     , isPatchInstallOnly: false
                     , isPatchPointerOnly: false
+                    , isPatchStructOnly: false
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );

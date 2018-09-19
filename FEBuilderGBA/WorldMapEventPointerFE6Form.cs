@@ -98,11 +98,12 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = N_Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "WorldMapEvent ", new uint[] { 0 });
 
+            List<uint> tracelist = new List<uint>();
             uint p = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
             {
                 string name = "WorldMapEvent " + U.To0xHexString(i) + " ";
-                EventScriptForm.ScanScript( list,  p, true, true , name);
+                EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
             }
         }
         //エラー検出
@@ -116,7 +117,7 @@ namespace FEBuilderGBA
             }
             //FE6はPLISTが格納されている.
             uint p;
-            uint event_addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.WORLDMAP_FE6ONLY, wmapid, out p);
+            uint event_addr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.WORLDMAP_FE6ONLY, wmapid, out p);
             if (event_addr == U.NOT_FOUND)
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_WORLDMAP,U.NOT_FOUND

@@ -90,6 +90,7 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Haiku", new uint[] { 8 });
 
+            List<uint> tracelist = new List<uint>();
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
@@ -107,7 +108,7 @@ namespace FEBuilderGBA
                 uint unitid = Program.ROM.u8(addr + 0);
                 string event_name = "Haiku" + " " + U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid);
 
-                EventScriptForm.ScanScript(list, addr + 8, true, false, event_name);
+                EventScriptForm.ScanScript(list, addr + 8, true, false, event_name, tracelist);
             }
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)

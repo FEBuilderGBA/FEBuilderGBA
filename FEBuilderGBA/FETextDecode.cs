@@ -128,7 +128,7 @@ namespace FEBuilderGBA
 
         public String UnHffmanPatchDecodeLow(byte[] srcdata)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode(this.ROM);
+            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
             List<byte> str = new List<byte>();
             int length = srcdata.Length;
             int i = 0;
@@ -431,7 +431,7 @@ namespace FEBuilderGBA
         {
             List<byte> str = new List<byte>();
 
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode(this.ROM);
+            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
 
             length = Math.Min(srcdata.Length,length);
             int len = 0;

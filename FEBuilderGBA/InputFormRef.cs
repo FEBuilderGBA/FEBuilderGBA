@@ -4469,7 +4469,7 @@ namespace FEBuilderGBA
         //このキャッシュはあればうれしい程度なので、
         //速度よりも安全第一を取る.
         //そのため、ファイルに書き込んだりしたりしたらすべて破棄する.
-        static Dictionary<ulong, uint> CacheDataCount = new Dictionary<ulong, uint>();
+        static ConcurrentDictionary<ulong, uint> CacheDataCount = new ConcurrentDictionary<ulong, uint>();
 
         ulong MakeHashForCacheDataCount()
         {
@@ -4483,6 +4483,7 @@ namespace FEBuilderGBA
             OptionForm.ClearCache();
             ImageUtilMagic.ClearCache();
             ItemShopForm.ClearCache();
+            MapPointerForm.ClearPlistCache();
             U.ClearMigemoCache();
 
             Cache_ramunit_state_checkbox = null;

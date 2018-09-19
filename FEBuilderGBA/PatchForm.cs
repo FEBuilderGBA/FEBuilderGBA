@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
-//using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 
 
 namespace FEBuilderGBA
@@ -3331,7 +3331,7 @@ namespace FEBuilderGBA
             }
             return original;
         }
-        static Dictionary<string, string> CacheCheckIF = new Dictionary<string, string>();
+        static ConcurrentDictionary<string, string> CacheCheckIF = new ConcurrentDictionary<string, string>();
 
         public static void ClearCheckIF()
         {
@@ -4808,6 +4808,7 @@ namespace FEBuilderGBA
                 , datasize
                 , pointerIndexes));
 
+            List<uint> tracelist = new List<uint>();
             uint addr = struct_address;
             for (int i = 0; i < datacount; i++ , addr += datasize)
             {
@@ -4818,7 +4819,7 @@ namespace FEBuilderGBA
                     if (type == "EVENT")
                     {//イベント呼び出し
                         EventScriptForm.ScanScript(list, p, true, false
-                            , patchname + " DATA " + n);
+                            , patchname + " DATA " + n , tracelist);
                     }
                     else if (type == "BATTLEANIMEPOINTER")
                     {//戦闘アニメのデータ
@@ -5012,9 +5013,9 @@ namespace FEBuilderGBA
                 }
             }
         }
+
         //パッチが知っているアドレスをすべて取得します.
-        //この関数は非効率です.
-        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly)
+        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -5035,6 +5036,14 @@ namespace FEBuilderGBA
                 }
 
                 string type = U.at(patch.Param, "TYPE");
+                if (isStructOnly)
+                {
+                    if (type != "STRUCT")
+                    {//構造体だけ
+                        continue;
+                    }
+                }
+
                 if (type == "ADDR")
                 {
                     MakePatchStructDataListForADDR(list, isPointerOnly, patch);

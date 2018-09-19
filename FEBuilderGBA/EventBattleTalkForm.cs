@@ -94,6 +94,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
+            List<uint> tracelist = new List<uint>();
             string name = "EventBattleTalkForm";
             {
                 InputFormRef InputFormRef = Init(null);
@@ -116,7 +117,7 @@ namespace FEBuilderGBA
                     uint unitid = Program.ROM.u8(addr + 0);
                     string event_name = "EventBattleTalkForm" + " " + U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid);
 
-                    EventScriptForm.ScanScript(list, addr + 12, true, false, event_name);
+                    EventScriptForm.ScanScript(list, addr + 12, true, false, event_name , tracelist);
                 }
             }
         }

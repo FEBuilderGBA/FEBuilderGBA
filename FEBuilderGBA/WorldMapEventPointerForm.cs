@@ -239,6 +239,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
+            List<uint> tracelist = new List<uint>();
             {
                 InputFormRef InputFormRef = Init(null);
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "WorldMapEvent Before", new uint[] { 0});
@@ -248,7 +249,7 @@ namespace FEBuilderGBA
                 {
                     string name = "WorldMapEvent Before " + U.To0xHexString((uint)i);
 
-                    EventScriptForm.ScanScript( list,p, true, true , name);
+                    EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
                 }
             }
             {
@@ -259,23 +260,23 @@ namespace FEBuilderGBA
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = "WorldMapEvent After " + U.To0xHexString((uint)i);
-                    EventScriptForm.ScanScript( list,p, true, true , name);
+                    EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
                 }
             }
             {
                 uint p = Program.ROM.RomInfo.oping_event_pointer();
                 string name = R._("オープニングイベント");
-                EventScriptForm.ScanScript( list, p, true, true , name);
+                EventScriptForm.ScanScript( list, p, true, true , name , tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending1_event_pointer();
                 string name = R._("エイリークエンディング");
-                EventScriptForm.ScanScript( list, p, true, true, name);
+                EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending2_event_pointer();
                 string name = R._("エフラムエンディング");
-                EventScriptForm.ScanScript( list, p, true, true, name);
+                EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
             }
         }
 

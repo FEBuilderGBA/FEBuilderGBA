@@ -838,13 +838,20 @@ namespace FEBuilderGBA
 
             int textmargineY = (ListBoxEx.OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
 
-            
-
             uint addr = InputFormRef.SelectToAddr(lb, index);
-            uint b0 = Program.ROM.u8(addr + 0);
-            uint b1 = Program.ROM.u8(addr + 1);
-            Bitmap bitmap = ImageBattleAnimeForm.getSPTypeIcon(b0, b1);
+            Bitmap bitmap;
+            if (U.isSafetyOffset(addr))
+            {
+                uint b0 = Program.ROM.u8(addr + 0);
+                uint b1 = Program.ROM.u8(addr + 1);
+                bitmap = ImageBattleAnimeForm.getSPTypeIcon(b0, b1);
+            }
+            else
+            {
+                bitmap = ImageUtil.Blank(ListBoxEx.OWNER_DRAW_ICON_SIZE, ListBoxEx.OWNER_DRAW_ICON_SIZE);
+            }
             U.MakeTransparent(bitmap);
+
 
             Rectangle b = bounds;
             b.Width = ListBoxEx.OWNER_DRAW_ICON_SIZE;

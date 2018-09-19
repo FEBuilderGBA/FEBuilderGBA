@@ -40,10 +40,9 @@
             // 
             // Message
             // 
-            this.Message.AutoSize = true;
             this.Message.Location = new System.Drawing.Point(181, 24);
             this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(200, 72);
+            this.Message.Size = new System.Drawing.Size(677, 128);
             this.Message.TabIndex = 0;
             this.Message.Text = "最新版({0})があるようです。\r\nアップデートしますか？\r\n\r\n{1}";
             // 
@@ -91,7 +90,7 @@
             // 
             // AutoUpdateButton
             // 
-            this.AutoUpdateButton.Location = new System.Drawing.Point(17, 180);
+            this.AutoUpdateButton.Location = new System.Drawing.Point(17, 182);
             this.AutoUpdateButton.Name = "AutoUpdateButton";
             this.AutoUpdateButton.Size = new System.Drawing.Size(841, 34);
             this.AutoUpdateButton.TabIndex = 1;
@@ -99,7 +98,7 @@
             this.AutoUpdateButton.UseVisualStyleBackColor = true;
             this.AutoUpdateButton.Click += new System.EventHandler(this.AutoUpdateButton_Click);
             // 
-            // UpdateDialogForm
+            // ToolUpdateDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -107,11 +106,10 @@
             this.CancelButton = this.IgnoreButton;
             this.ClientSize = new System.Drawing.Size(904, 378);
             this.Controls.Add(this.panel1);
-            this.Name = "UpdateDialogForm";
+            this.Name = "ToolUpdateDialogForm";
             this.Text = "UpdateDialog";
             this.Load += new System.EventHandler(this.UpdateDialog_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).EndInit();
             this.ResumeLayout(false);
 

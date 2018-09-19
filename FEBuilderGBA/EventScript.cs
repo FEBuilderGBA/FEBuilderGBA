@@ -1090,6 +1090,7 @@ namespace FEBuilderGBA
 
         public static void MakeEventASMMAPList(List<Address> list, bool isEventOnly, string prefix, bool isPointerOnly)
         {
+            List<uint> tracelist = new List<uint>();
             for (int i = 0; i < Program.EventScript.Scripts.Length; i++)
             {
                 Script script = Program.EventScript.Scripts[i];
@@ -1130,7 +1131,7 @@ namespace FEBuilderGBA
                             uint eventPointer = U.GrepPointer(Program.ROM.Data, addr, 0x0500000);
                             if (eventPointer != U.NOT_FOUND)
                             {//イベント探索はポインタが必要なので、探す...
-                                EventScriptForm.ScanScript( list, eventPointer, true, false, "CALL_EVENT " + name);
+                                EventScriptForm.ScanScript( list, eventPointer, true, false, "CALL_EVENT " + name , tracelist);
                             }
                             else
                             {

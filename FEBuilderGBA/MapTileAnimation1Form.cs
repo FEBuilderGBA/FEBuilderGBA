@@ -398,7 +398,7 @@ namespace FEBuilderGBA
                 return;
             }
             uint pointer;
-            uint tileanime_addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.ANIMATION, ar.tag, out pointer);
+            uint tileanime_addr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.ANIMATION, ar.tag, out pointer);
             if (tileanime_addr == U.NOT_FOUND)
             {
                 R.ShowStopError("タイルアニメーションのPLISTからポインタを求められません。\r\nPLIST:{0}",ar.tag);

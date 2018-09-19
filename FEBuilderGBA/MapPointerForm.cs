@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Concurrent;
+
 
 namespace FEBuilderGBA
 {
@@ -231,7 +233,7 @@ namespace FEBuilderGBA
         public static uint PlistToOffsetAddr(MapPointerForm.PLIST_TYPE type, uint plist)
         {
             uint pointer;
-            return PlistToOffsetAddr(type, plist, out pointer);
+            return PlistToOffsetAddrFast(type, plist, out pointer);
         }
         public static MapPointerForm.PLIST_TYPE ConvertStringToType(string type)
         {
@@ -364,7 +366,34 @@ namespace FEBuilderGBA
             return (Program.ROM.RomInfo.map_config_pointer());
         }
 
-        public static uint PlistToOffsetAddr(MapPointerForm.PLIST_TYPE type, uint plist,out uint out_pointer)
+        static ConcurrentDictionary<uint, uint> PlistCache = new ConcurrentDictionary<uint, uint>();
+        public static void ClearPlistCache()
+        {
+            PlistCache.Clear();
+        }
+        public static uint PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE type, uint plist, out uint out_pointer)
+        {
+            //PLISTは何度もスキャンするので、キャッシュする.
+            uint key = ((uint)type << 24) + plist;
+            uint pointer;
+            uint addr;
+            if (PlistCache.TryGetValue(key, out pointer))
+            {
+                uint p = Program.ROM.p32(pointer);
+                if (p != 0)
+                {
+                    out_pointer = pointer;
+                    return p;
+                }
+            }
+
+            addr = PlistToOffsetAddr(type, plist, out pointer);
+            PlistCache[key] = pointer;
+
+            out_pointer = pointer;
+            return addr;
+        }
+        static uint PlistToOffsetAddr(MapPointerForm.PLIST_TYPE type, uint plist,out uint out_pointer)
         {
             InputFormRef InputFormRef = Init(null, IsPlistSplits());
             InputFormRef.ReInitPointer(GetBasePointer(type));
@@ -699,6 +728,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            ClearPlistCache(); //キャッシュをクリア やらなくてもいいんだろうけど...
             Undo.UndoData undodata = Program.Undo.NewUndoData("PListSplitsExpands");
 
             try

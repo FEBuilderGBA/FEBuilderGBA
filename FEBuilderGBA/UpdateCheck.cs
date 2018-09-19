@@ -11,7 +11,8 @@ namespace FEBuilderGBA
         {
             string download_url;
             string net_version;
-            string error = CheckUpdateURL(out download_url, out net_version);
+
+            string error = CheckUpdateURLByGitHub(out download_url, out net_version);
             if (error != "")
             {
                 if (net_version != "")
@@ -105,7 +106,7 @@ namespace FEBuilderGBA
                 string error;
                 try
                 {
-                    error = CheckUpdateURL(out download_url, out net_version);
+                    error = CheckUpdateURLByGitHub(out download_url, out net_version);
                 }
                 catch (System.Net.WebException e)
                 {
@@ -139,7 +140,75 @@ namespace FEBuilderGBA
             s1.Start();
         }
 
-        static string CheckUpdateURL(out string out_url, out string out_version)
+        static string CheckUpdateURLByGitHub(out string out_url, out string out_version)
+        {
+            out_url = "";
+            out_version = "";
+
+            string versionString = U.getVersion();
+            double version = U.atof(versionString);
+
+            string url = "https://api.github.com/repos/FEBuilderGBA/FEBuilderGBA/releases/latest";
+            string contents;
+            try
+            {
+                contents = U.HttpGet(url);
+            }
+            catch (Exception e)
+            {
+#if DEBUG
+                R.Error("Webサイトにアクセスできません。 URL:{0} Message:{1}", url, e.ToString());
+                throw;
+#else
+                return R.Error("Webサイトにアクセスできません。 URL:{0} Message:{1}", url, e.ToString());
+#endif
+            }
+
+
+            string downloadurl;
+            {
+                System.Text.RegularExpressions.Match match = RegexCache.Match(contents
+                , "\"browser_download_url\": \"(.+)\""
+                );
+                if (match.Groups.Count < 2)
+                {
+                    Log.Error(contents);
+                    Log.Error(U.var_dump(match.Groups));
+                    return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                }
+                downloadurl = match.Groups[1].Value;
+            }
+
+            {
+                System.Text.RegularExpressions.Match match = RegexCache.Match(contents
+                , "download/ver_([0-9.]+)/"
+                );
+                if (match.Groups.Count < 2)
+                {
+                    Log.Error(contents);
+                    Log.Error(U.var_dump(match.Groups));
+                    return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                }
+                out_version = match.Groups[1].Value;
+
+                double net_version = U.atof(out_version);
+                if (version >= net_version)
+                {
+                    if (net_version == 0)
+                    {
+                        Log.Error(contents);
+                        Log.Error(U.var_dump(match.Groups));
+                        return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                    }
+                    return R._("現在のバージョンが最新です。version:{0}", version);
+                }
+            }
+
+            out_url = downloadurl;
+            return "";
+        }
+
+        static string CheckUpdateURLByGetUploader(out string out_url, out string out_version)
         {
             out_url = "";
             out_version = "";

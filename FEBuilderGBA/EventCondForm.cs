@@ -2156,6 +2156,7 @@ namespace FEBuilderGBA
 
         public static void MakeAllDataLength(List<Address> list)
         {
+            List<uint> tracelist = new List<uint>();
             uint mapmax = MapSettingForm.GetDataCount();
             for (uint mapid = 0; mapid < mapmax; mapid++)
             {
@@ -2211,6 +2212,7 @@ namespace FEBuilderGBA
                                     , base_addr + 4
                                     , true, false
                                     , "EventScript map:" + mapidString + " turn:" + U.To0xHexString(event_addr)
+                                    , tracelist
                                     );
                             }
 
@@ -2276,6 +2278,7 @@ namespace FEBuilderGBA
                                 , base_addr + 4
                                 , true, false
                                 , "EventScript map:" + mapidString + " talk:" + U.To0xHexString(event_addr)
+                                , tracelist
                                 );
                         }
 
@@ -2323,6 +2326,7 @@ namespace FEBuilderGBA
                                     , base_addr + 4
                                     , true, false
                                     , "EventScript map:" + mapidString + " obj:" + U.To0xHexString(event_addr)
+                                    , tracelist
                                     );
                             }
                         }
@@ -2375,6 +2379,7 @@ namespace FEBuilderGBA
                                 , base_addr + 4
                                 , true, false
                                 , "EventScript map:" + mapidString + " always:" + U.To0xHexString(event_addr)
+                                , tracelist
                                 );
                         }
 
@@ -2430,6 +2435,7 @@ namespace FEBuilderGBA
                                 , base_addr + 0
                                 , true, false
                                 , "EventScript map:" + mapidString + " tutorial:" + U.To0xHexString(event_addr)
+                                , tracelist
                                 );
                         }
 
@@ -2458,6 +2464,7 @@ namespace FEBuilderGBA
                             , base_pointer
                             , true, false
                             , "EventScript map:" + mapidString + " chaptor:" + U.To0xHexString(startaddr)
+                            , tracelist
                             );
                     }
                 }

@@ -186,8 +186,26 @@ namespace FEBuilderGBA
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
+        void DownloadNewVersion(string save_filename, string download_url, string version, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            if (download_url.IndexOf("getuploader") > 0)
+            {
+                DownloadNewVersionByGetUploader(save_filename, download_url, version, pleaseWait);
+            }
+            else
+            {
+                DownloadNewVersionByGithub(save_filename, download_url, version, pleaseWait);
+            }
+        }
 
-        void DownloadNewVersion(string save_filename,string download_url,string version,InputFormRef.AutoPleaseWait pleaseWait)
+        void DownloadNewVersionByGithub(string save_filename, string download_url, string version, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            string durl = download_url;
+            Log.Notify("download url:{0}", durl);
+            U.HttpDownload(save_filename, durl, download_url, pleaseWait);
+        }
+
+        void DownloadNewVersionByGetUploader(string save_filename,string download_url,string version,InputFormRef.AutoPleaseWait pleaseWait)
         {
             string url = download_url;
             string contents = U.HttpGet(url);
