@@ -157,10 +157,6 @@ namespace FEBuilderGBA
             return null;
         }
 
-        public static Control FindObjectByForm<_CLASS>(Form f,string name)
-        {
-            return FindObjectByForm<_CLASS>(GetAllControls(f),name);
-        }
         public static Control FindObjectByForm<_CLASS>(List<Control> controls,string name)
         {
             foreach (Control search_info in controls)
@@ -3710,9 +3706,11 @@ namespace FEBuilderGBA
             {//フォームが取れないので無理.
                 return ;
             }
+            List<Control> controls = InputFormRef.GetAllControls(f);
+
             //残念ながらPLISTは、NEWALLOCを出せるほどの余白がない
             string addresslist_name = prefix + "AddressList";
-            Control c = FindObjectByForm<ListBox>(f, addresslist_name);
+            Control c = FindObjectByForm<ListBox>(controls, addresslist_name);
             if (!(c is ListBoxEx))
             {
                 return ;
@@ -3792,9 +3790,11 @@ namespace FEBuilderGBA
             {//フォームが取れないので無理.
                 return U.NOT_FOUND;
             }
+            List<Control> controls = InputFormRef.GetAllControls(f);
+
             //残念ながらPLISTは、NEWALLOCを出せるほどの余白がない
             string addresslist_name = prefix + "AddressList";
-            Control c = FindObjectByForm<ListBox>(f, addresslist_name);
+            Control c = FindObjectByForm<ListBox>(controls, addresslist_name);
             if (!(c is ListBoxEx))
             {
                 return U.NOT_FOUND;
@@ -3806,7 +3806,7 @@ namespace FEBuilderGBA
             }
 
             string writebutton_name = prefix + "WriteButton";
-            c = FindObjectByForm<Button>(f, writebutton_name);
+            c = FindObjectByForm<Button>(controls, writebutton_name);
             if (c == null)
             {//書き込みボタンの取得ができなかった...
                 Debug.Assert(false);
@@ -3889,9 +3889,10 @@ namespace FEBuilderGBA
             {//フォームが取れないので無理.
                 return false;
             }
+            List<Control> controls = InputFormRef.GetAllControls(f);
 
             string object_type_name = prefix + "B10";
-            Control c = FindObjectByForm<NumericUpDown>(f, object_type_name);
+            Control c = FindObjectByForm<NumericUpDown>(controls, object_type_name);
             if (!(c is NumericUpDown))
             {//判別不能
                 return false;
@@ -3924,9 +3925,10 @@ namespace FEBuilderGBA
             {//フォームが取れないので無理.
                 return false;
             }
+            List<Control> controls = InputFormRef.GetAllControls(f);
 
             string object_type_name = prefix + "B34";
-            Control c = FindObjectByForm<NumericUpDown>(f, object_type_name);
+            Control c = FindObjectByForm<NumericUpDown>(controls, object_type_name);
             if (!(c is NumericUpDown))
             {//判別不能
                 return false;
@@ -3958,8 +3960,9 @@ namespace FEBuilderGBA
             {//フォームが取れないので無理.
                 return U.NOT_FOUND;
             }
+            List<Control> controls = InputFormRef.GetAllControls(f);
             string newalloc_button_name = prefix + "L_" + id.ToString() + "_NEWALLOC_" + linktype;
-            Control c = FindObjectByForm<Button>(f, newalloc_button_name);
+            Control c = FindObjectByForm<Button>(controls, newalloc_button_name);
             if (!(c is Button))
             {//確保ボタンがないので無理
                 return U.NOT_FOUND;
@@ -4298,7 +4301,7 @@ namespace FEBuilderGBA
         TextBoxEx SelectAddressTextBox;
         public List<String> UnionPrefixList { get; private set; }
         TextBoxEx CommentTextBox;
-        List<Control> Controls;
+        public List<Control> Controls { get; private set; }
 
         public EventHandler PreAddressListExpandsEvent; //リストを拡張しようとした時のイベント
         public EventHandler AddressListExpandsEvent; //リストを拡張した時のイベント
@@ -5483,72 +5486,6 @@ namespace FEBuilderGBA
                 U.SelectedIndexSafety(this.AddressList, selected - 1);
             }
         }
-
-
-        //入力項目をゼロクリア
-        public void FullZeroAll(Form self)
-        {
-            if (this.ReadStartAddress != null)
-            {
-                U.ForceUpdate(this.ReadStartAddress, 0);
-            }
-            if (this.ReadCount != null)
-            {
-                U.ForceUpdate(ReadCount,0);
-            }
-            if (this.Address != null)
-            {
-                U.ForceUpdate(this.Address, 0);
-            }
-            this.BaseAddress = 0;
-            this.DataCount = 0;
-            this.OldBaseAddress = 0;
-            this.OldDataCount = 0;
-            WriteButtonToYellow(this.WriteButton, false);
-
-            FullZeroUIOnly(self);
-        }
-        public void FullZeroUIOnly(Form self)
-        {
-            List<Control> controls = GetAllControls(self);
-            foreach (Control info in controls)
-            {
-                if (! (info is NumericUpDown))
-                {
-                    continue;
-                }
-
-                String name = SkipPrefixName(info.Name, this.Prefix);
-                if (name.Length <= 0)
-                {
-                    continue;
-                }
-
-                NumericUpDown found_object = (NumericUpDown)info;
-
-                if (name[0] == 'B' && name[1] >= '0' && name[1] <= '9')
-                {
-                    U.ForceUpdate(found_object, 0);
-                }
-                else if (name[0] == 'b' && name[1] >= '0' && name[1] <= '9')
-                {
-                    U.ForceUpdate(found_object, 0);
-                }
-                else if (name[0] == 'W' && name[1] >= '0' && name[1] <= '9')
-                {
-                    U.ForceUpdate(found_object, 0);
-                }
-                else if (name[0] == 'D' && name[1] >= '0' && name[1] <= '9')
-                {
-                    U.ForceUpdate(found_object, 0);
-                }
-                else if (name[0] == 'P' && name[1] >= '0' && name[1] <= '9')
-                {
-                    U.ForceUpdate(found_object, 0);
-                }
-            }
-        }
-
 
         //リストビューを更新して、現在選択しているところを再選択.
         public void ReloadAddressList()

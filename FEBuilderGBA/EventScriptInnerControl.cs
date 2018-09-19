@@ -980,7 +980,8 @@ namespace FEBuilderGBA
             {
                 TextForm f = (TextForm)InputFormRef.JumpForm<TextForm>(U.NOT_FOUND);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
                 f.JumpTo(value);
             }
@@ -990,21 +991,24 @@ namespace FEBuilderGBA
                 {
                     UnitForm f = (UnitForm)InputFormRef.JumpForm<UnitForm>(value - 1);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
                 else if (Program.ROM.RomInfo.version() >= 7)
                 {//FE7
                     UnitFE7Form f = (UnitFE7Form)InputFormRef.JumpForm<UnitFE7Form>(value - 1);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
                 else
                 {//FE6
                     UnitFE6Form f = (UnitFE6Form)InputFormRef.JumpForm<UnitFE6Form>(value - 1);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1014,14 +1018,16 @@ namespace FEBuilderGBA
                 {//FE7 - FE8
                     ClassForm f = (ClassForm)InputFormRef.JumpForm<ClassForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
                 else
                 {//FE6
                     ClassFE6Form f = (ClassFE6Form)InputFormRef.JumpForm<ClassFE6Form>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1029,7 +1035,8 @@ namespace FEBuilderGBA
             {
                 ImageBGForm f = (ImageBGForm)InputFormRef.JumpForm<ImageBGForm>(value);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
             else if (arg.Type == EventScript.ArgType.CG)
@@ -1038,14 +1045,16 @@ namespace FEBuilderGBA
                 {
                     ImageCGFE7UForm f = (ImageCGFE7UForm)InputFormRef.JumpForm<ImageCGFE7UForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
                 else
                 {
                     ImageCGForm f = (ImageCGForm)InputFormRef.JumpForm<ImageCGForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1053,28 +1062,32 @@ namespace FEBuilderGBA
             {
                 ItemForm f = (ItemForm)InputFormRef.JumpForm<ItemForm>(value);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
             else if (arg.Type == EventScript.ArgType.MUSIC)
             {
                 SongTableForm f = (SongTableForm)InputFormRef.JumpForm<SongTableForm>(value);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
             else if (arg.Type == EventScript.ArgType.SOUND)
             {
                 SongTableForm f = (SongTableForm)InputFormRef.JumpForm<SongTableForm>(value);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
             else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
                 MapSettingForm f = (MapSettingForm)InputFormRef.JumpForm<MapSettingForm>(value);
                 MakeInjectionCallback(f
-                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
             }
             else if (arg.Type == EventScript.ArgType.PORTRAIT || arg.Type == EventScript.ArgType.REVPORTRAIT)
@@ -1083,14 +1096,16 @@ namespace FEBuilderGBA
                 {
                     ImagePortraitFE6Form f = (ImagePortraitFE6Form)InputFormRef.JumpForm<ImagePortraitFE6Form>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
                 else
                 {
                     ImagePortraitForm f = (ImagePortraitForm)InputFormRef.JumpForm<ImagePortraitForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1100,7 +1115,8 @@ namespace FEBuilderGBA
                 {
                     WorldMapPointForm f = (WorldMapPointForm)InputFormRef.JumpForm<WorldMapPointForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1110,7 +1126,8 @@ namespace FEBuilderGBA
                 {
                     WorldMapPathForm f = (WorldMapPathForm)InputFormRef.JumpForm<WorldMapPathForm>(value);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "AddressList")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "AddressList")
                         , src_object, false);
                 }
             }
@@ -1120,7 +1137,8 @@ namespace FEBuilderGBA
                 {
                     EventUnitForm f = (EventUnitForm)InputFormRef.JumpForm<EventUnitForm>(U.NOT_FOUND);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "EVENT_LISTBOX")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "EVENT_LISTBOX")
                         , src_object, true);
                     f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                     if (U.toOffset(value) == EventUnitForm.INVALIDATE_UNIT_POINTER)
@@ -1136,7 +1154,8 @@ namespace FEBuilderGBA
                 {//FE7
                     EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "EVENT_LISTBOX")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "EVENT_LISTBOX")
                         , src_object, true);
                     f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                     if (U.toOffset(value) == EventUnitForm.INVALIDATE_UNIT_POINTER)
@@ -1152,7 +1171,8 @@ namespace FEBuilderGBA
                 {//FE6
                     EventUnitFE6Form f = (EventUnitFE6Form)InputFormRef.JumpForm<EventUnitFE6Form>(U.NOT_FOUND);
                     MakeInjectionCallback(f
-                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>(f, "EVENT_LISTBOX")
+                        , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                            (InputFormRef.GetAllControls(f), "EVENT_LISTBOX")
                         , src_object, true);
                     f.MakeAddressListExpandsCallback(MakeAddressListExpandsCallback_Handler(src_object));
                     if (U.toOffset(value) == EventUnitForm.INVALIDATE_UNIT_POINTER)
@@ -1224,7 +1244,8 @@ namespace FEBuilderGBA
                 RAMUnitStateFlagForm f = (RAMUnitStateFlagForm)InputFormRef.JumpForm<RAMUnitStateFlagForm>(U.NOT_FOUND);
                 f.JumpTo(value);
                 MakeInjectionApplyButtonCallback(f
-                    , (Button)InputFormRef.FindObjectByForm<Button>(f, "ApplyButton")
+                    , (Button)InputFormRef.FindObjectByForm<Button>
+                        (InputFormRef.GetAllControls(f), "ApplyButton")
                     , src_object);
             }
         }

@@ -171,7 +171,7 @@ namespace FEBuilderGBA
             NumericUpDown nud = (NumericUpDown)(sender);
             uint id = InputFormRef.GetStructID("", nud.Name);
 
-            Control c = InputFormRef.FindObjectByForm<LabelEx>(this, "J_" + id);
+            Control c = InputFormRef.FindObjectByForm<LabelEx>(this.InputFormRef.Controls, "J_" + id);
             if (!(c is LabelEx))
             {
                 return;
