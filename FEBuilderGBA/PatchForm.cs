@@ -5107,6 +5107,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+
             string scriptbin = U.cut(eventscript,"{$","}");
             scriptbin = U.skip(scriptbin, ":");
             if (scriptbin == "")
@@ -5127,15 +5128,7 @@ namespace FEBuilderGBA
                     return;
                 }
 
-                uint FindStartAddress;
-                if (filename.IndexOf("ASMC_") >= 0)
-                {
-                    FindStartAddress = 0x00B00000;
-                }
-                else
-                {
-                    FindStartAddress = 0x00E00000;
-                }
+                uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
 
                 byte[] grepdata = File.ReadAllBytes(filename);
                 uint addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
