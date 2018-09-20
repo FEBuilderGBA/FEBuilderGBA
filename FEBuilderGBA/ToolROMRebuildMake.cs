@@ -121,6 +121,10 @@ namespace FEBuilderGBA
                 {//PATCH_ASM
                     a_point += 0x10;
                 }
+                else if (a.DataType == Address.DataTypeEnum.PROCS)
+                {//PROCS
+                    a_point += 0x10;
+                }
 
                 a_point += a.Length;
 

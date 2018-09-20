@@ -139,8 +139,6 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
 
             FEBuilderGBA.Address.AddAddress(list, InputFormRef, selfname, new uint[] { 0 });
-
-            List<uint> tracelist = new List<uint>();
             uint songpointer = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
             {
@@ -150,19 +148,15 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (tracelist.IndexOf(songaddr) < 0)
                 {//楽譜
-                    tracelist.Add(songaddr);
                     string name = "Song" + U.ToHexString(i) + " ";
                     //リサイクルで回収できるので、仮にこのデータをリサイクルするとしたら、どうなるだけ求める(実際にリサイクルはしない)
                     SongUtil.RecycleOldSong(ref list, name, songpointer);
                 }
 
                 uint instpointer = songaddr + 4;
-                uint instaddr = Program.ROM.p32(instpointer);
-                if (tracelist.IndexOf(instaddr) < 0)
+                //uint instaddr = Program.ROM.p32(instpointer);
                 {//楽器
-                    tracelist.Add(instaddr);
                     string name = "SongInst" + U.ToHexString(i) + " ";
                     SongInstrumentForm.RecycleOldInstrument(ref list, name, instpointer);
                 }

@@ -4903,7 +4903,7 @@ namespace FEBuilderGBA
                         if (U.isSafetyOffset(a))
                         {
                             FEBuilderGBA.Address.AddAPPointer(list
-                                , addr + 4
+                                , p
                                 , patchname + " AP " + n
                                 , isPointerOnly);
                         }
@@ -4913,12 +4913,10 @@ namespace FEBuilderGBA
                         uint a = Program.ROM.p32(p);
                         if (U.isSafetyOffset(a))
                         {
-                            FEBuilderGBA.Address.AddPointer(list
-                                , addr + 8
-                                , ProcsScriptForm.CalcLengthAndCheck(a)
+                            FEBuilderGBA.Address.AddProcsPointer(list
+                                , p
                                 , patchname + " PROCS " + n
-                                , FEBuilderGBA.Address.DataTypeEnum.PROCS
-                                );
+                                , isPointerOnly);
                         }
                     }
                     else
@@ -5014,6 +5012,35 @@ namespace FEBuilderGBA
             }
         }
 
+        static bool IsMakePatchStructDataListTarget(string type, string checkIF, bool isInstallOnly, bool isStructOnly)
+        {
+            if (isStructOnly)
+            {
+                if (type != "STRUCT")
+                {//構造体だけ
+                    return false;
+                }
+            }
+
+            if (isInstallOnly)
+            {
+                if (checkIF == "E")
+                {//エラーがおきているので無視
+                    return false;
+                }
+                else if (checkIF != "I")
+                {//インストールされていないので無視したいのだが...
+                    //構造体は性質上インストールできない
+                    if (type != "STRUCT")
+                    {//インストールされていない構造体以外ならボツ
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
         //パッチが知っているアドレスをすべて取得します.
         public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly)
         {
@@ -5022,27 +5049,13 @@ namespace FEBuilderGBA
             {
                 PatchSt patch = patchs[i];
 
+                string type = U.at(patch.Param, "TYPE");
                 string checkIF = CheckIFFast(patch);
-                if (isInstallOnly)
+                if (! IsMakePatchStructDataListTarget( type,  checkIF,  isInstallOnly,  isStructOnly) )
                 {
-                    if (checkIF == "E") 
-                    {//エラーがおきているので無視
-                        continue;
-                    }
-                    else if (checkIF != "I")
-                    {//インストールされていないので無視
-                        continue;
-                    }
+                    continue;
                 }
 
-                string type = U.at(patch.Param, "TYPE");
-                if (isStructOnly)
-                {
-                    if (type != "STRUCT")
-                    {//構造体だけ
-                        continue;
-                    }
-                }
 
                 if (type == "ADDR")
                 {

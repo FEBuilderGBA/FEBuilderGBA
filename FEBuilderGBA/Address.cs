@@ -325,6 +325,49 @@ namespace FEBuilderGBA
             }
             AddAPAddress(list, addr, pointer, info, isPointerOnly);
         }
+
+        static void AddProcsAddress(List<Address> list, uint addr, uint pointer, string info, bool isPointerOnly)
+        {
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            if (pointer != U.NOT_FOUND)
+            {
+                pointer = U.toOffset(pointer);
+                if (!U.isSafetyOffset(pointer))
+                {
+                    return;
+                }
+            }
+
+            uint length;
+            if (isPointerOnly)
+            {
+                length = 0;
+            }
+            else
+            {
+                length = ProcsScriptForm.CalcLengthAndCheck(addr);
+            }
+            list.Add(new Address(addr, length, pointer, info, DataTypeEnum.PROCS));
+        }
+        static public void AddProcsPointer(List<Address> list, uint pointer, string info, bool isPointerOnly)
+        {
+            pointer = U.toOffset(pointer);
+            if (!U.isSafetyOffset(pointer))
+            {
+                return;
+            }
+            uint addr = Program.ROM.u32(pointer);
+            if (!U.isSafetyPointer(addr))
+            {
+                return;
+            }
+            AddProcsAddress(list, addr, pointer, info, isPointerOnly);
+        }
+        
         public static bool IsLZ77(DataTypeEnum type)
         {
             return
