@@ -2182,9 +2182,6 @@ Pointer to read unit is specified incorrectly.: {0}.
 :ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}
 Reading unit There is a problem with the data of the {0}, {1} th unit.: {2}.
 
-:クリップボードのデータ({0})で上書きしてもよろしいですか？
-Are you sure you want to overwrite with clipboard data ({0})?
-
 :配置後座標
 Post-placement
 

@@ -10,3 +10,5 @@ PATCHED_IF:0x276b4=0x00 0x4B 0x18 0x47
 
 INFO=HPbarを追加します。\r\nHPBarを表示するだけのバージョンなので、SkillSystemsに搭載されているバージョンより高速に動作します。
 AUTHOR=Circles and Zane
+INFO.en=Add HPbar.\r\nSince it is only a version that displays HPBar, it runs faster than the version installed in SkillSystems.
+INFO.zh=添加HPbar。\r\n由于它只是一个显示HPBar的版本，因此它运行速度比SkillSystems中安装的版本快。

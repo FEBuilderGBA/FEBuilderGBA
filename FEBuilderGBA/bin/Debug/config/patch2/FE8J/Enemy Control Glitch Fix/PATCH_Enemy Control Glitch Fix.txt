@@ -1,4 +1,4 @@
-﻿TYPE=BIN
+TYPE=BIN
 TAG=#ENGINE #ESSENTIALFIXES
 
 //既に適応されたかどうか
@@ -11,3 +11,4 @@ NAME.zh=敌人控制故障修复
 AUTHOR.zh=Enemy Control Glitch Fix (Credits to Brendor)   Transplant:7743
 INFO=フレイボムで敵を操作できるバグを修正します。(フレイボムバグ)
 INFO.en=Fix bug that you can operate enemies with Freiborm.
+INFO.zh=修复你可以使用Freiborm操作敌人的bug。（Freybom bug）。

@@ -7483,3 +7483,7 @@ r3=X tile position of menu of the right	{U}
 08B1A0B8	:08B1FA3B	Boot dataNAZO 2	{U}
 08FE0000	:08FE1553	Boot dataROM termination 1	{U}
 08FE281C	:08FE308F	Boot dataROM termination 2	{U}
+080837b0	Forced game over	{U}
+08018ff0	AreAnyPlayerUnitDead	{U}
+08085AE8	Forced game over	{J}
+08018D04	AreAnyPlayerUnitDead	{J}
