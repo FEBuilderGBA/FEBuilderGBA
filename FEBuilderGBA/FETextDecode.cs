@@ -452,11 +452,14 @@ namespace FEBuilderGBA
                         continue;
                     }
                 }
-                if (code >= 0x82 && priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
-                {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
-                    AppendAtmarkCode(str, code);
-                    len += 1;
-                    continue;
+                if (priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                {//英語版FE
+                    if (code >= 0x82 || code == 0x1f)
+                    {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
+                        AppendAtmarkCode(str, code);
+                        len += 1;
+                        continue;
+                    }
                 }
 
                 //それ以外の文字

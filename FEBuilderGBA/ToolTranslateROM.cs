@@ -22,12 +22,19 @@ namespace FEBuilderGBA
         
         void WriteText(uint id,string text)
         {
+            //無効なID
+            if (id <= 0)
+            {
+                return;
+            }
+
             //最後の改行の削除.
             if (text.Length < 2)
             {
                 return;
             }
             string writetext = U.substr(text, 0, text.Length - 2);
+            writetext = TextForm.ConvertFEditorToEscape(writetext);
 
             if (id < this.MaxTextCount)
             {
@@ -37,28 +44,26 @@ namespace FEBuilderGBA
                     , writetext);
                 return;
             }
-            if (U.isSafetyPointer(id))
+            if (!U.isSafetyPointer(id))
             {
-                uint p_text_pointer = U.toOffset(id);
-                uint text_pointer = Program.ROM.u32(p_text_pointer);
-                if (!U.isSafetyPointer(text_pointer))
-                {
-                    Log.Error("ポインタではありません", id.ToString(), text);
-                    return;
-                }
-                uint new_textpointer = CStringForm.WriteCString(text_pointer, writetext);
-                if (new_textpointer == U.NOT_FOUND)
-                {
-                    return;
-                }
-
-                Program.Undo.Push("CSTRING_P",p_text_pointer,4);
-                Program.ROM.write_p32(p_text_pointer, new_textpointer);
+                Log.Error("不明な文字列", id.ToString(), text);
+                return;
+            }
+            uint p_text_pointer = U.toOffset(id);
+            uint text_pointer = Program.ROM.u32(p_text_pointer);
+            if (!U.isSafetyPointer(text_pointer))
+            {
+                Log.Error("ポインタではありません", id.ToString(), text);
+                return;
+            }
+            uint new_textpointer = CStringForm.WriteCString(text_pointer, writetext);
+            if (new_textpointer == U.NOT_FOUND)
+            {
                 return;
             }
 
-            Log.Error("不明な文字列", id.ToString(), text);
-            return;
+            Program.Undo.Push("CSTRING_P",p_text_pointer,4);
+            Program.ROM.write_p32(p_text_pointer, new_textpointer);
         }
         void ApplyAntiHuffmanPatch()
         {
@@ -124,7 +129,7 @@ namespace FEBuilderGBA
                         continue;
                     }
 
-                    if (line[0] != '[' && line[line.Length - 1] != ']')
+                    if (!IsTextIDCode(line))
                     {
                         text += line + "\r\n";
                         continue;
@@ -136,16 +141,38 @@ namespace FEBuilderGBA
                     WriteText(id, text);
 
                     //次のテキスト
-                    if (line[0] == '[' && line[line.Length - 1] == ']')
-                    {
-                        id = U.atoh(U.substr(line, 1));
-                        text = "";
-                    }
+                    id = U.atoh(U.substr(line, 1));
+                    text = "";
                 }
 
                 //最後のデータ
                 WriteText(id, text);
             }
+        }
+
+        //テキストIDの区切り
+        bool IsTextIDCode(string line)
+        {
+            if (line.Length < 4)
+            {
+                return false;
+            }
+            if (line[0] != '[')
+            {
+                return false;
+            }
+            if (line[line.Length - 1] != ']')
+            {
+                return false;
+            }
+            for (int i = 1; i < line.Length - 1; i++)
+            {
+                if (!U.ishex(line[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void ExportallText(Form self)
@@ -208,21 +235,25 @@ namespace FEBuilderGBA
 
         void ExportText(StreamWriter writer,uint id, string text, string tralnslate_from, string tralnslate_to,Dictionary<string,string> transDic,bool useGoolgeTranslate)
         {
-            writer.Write("[" + U.ToHexString(id) + "]\r\n");
+            string translatetext;
             if (tralnslate_from == "" || tralnslate_to == "")
             {
-                writer.Write(text + "\r\n");
+                translatetext = text; //変換不能
             }
             else
             {
-                string translatetext = TranslateTextUtil.TranslateText(id
+                translatetext = TranslateTextUtil.TranslateText(id
                     , text
                     , tralnslate_from
                     , tralnslate_to
                     , transDic
                     , useGoolgeTranslate);
-                writer.Write(translatetext + "\r\n");
             }
+
+            translatetext = TextForm.ConvertEscapeText(translatetext);
+
+            writer.Write("[" + U.ToHexString(id) + "]\r\n");
+            writer.Write(translatetext + "\r\n");
         }
 
         public void ExportallText(Form self

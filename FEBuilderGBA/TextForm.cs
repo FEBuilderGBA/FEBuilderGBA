@@ -3006,7 +3006,7 @@ namespace FEBuilderGBA
             string str = FETextDecode.Direct(textid);
             if (isSkip0x1f)
             {
-                str = str.Replace("@001F", "");
+                 str = str.Replace("@001F", "");
             }
             str = ConvertEscapeText(str);
             return str;

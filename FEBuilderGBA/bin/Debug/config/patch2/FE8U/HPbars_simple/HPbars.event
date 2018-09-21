@@ -1,0 +1,22 @@
+#include "Extensions/Hack Installation.txt" 
+
+PUSH //HP Bars
+ORG $276b4
+jumpToHack(HPBars)
+ORG $15690 //Increase width of loaded image
+SHORT $2220
+ORG $156ac //Repoint loaded image
+POIN HPBarGraphic
+ORG $35718 //Force Subtitle Help option
+SHORT 0
+POP
+ALIGN 4
+HPFrames:
+#incbin HPFrames.bin
+HPFramePointers:
+#include HPFramePointers.txt
+HPBars:
+#incbin Talk_Warning_Bars.dmp
+POIN HPFramePointers
+HPBarGraphic:
+#incbin "Warning_and_HPGraphic.bin"

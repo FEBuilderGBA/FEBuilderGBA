@@ -1,0 +1,12 @@
+NAME=HPBars_simple
+NAME.en=HPBars_simple
+NAME.zh=HPBars_simple
+
+TYPE=EA
+TAG=#ENGINE
+EA=HPbars.event
+
+PATCHED_IF:0x276b4=0x00 0x4B 0x18 0x47
+
+INFO=HPbarを追加します。\r\nHPBarを表示するだけのバージョンなので、SkillSystemsに搭載されているバージョンより高速に動作します。
+AUTHOR=Circles and Zane

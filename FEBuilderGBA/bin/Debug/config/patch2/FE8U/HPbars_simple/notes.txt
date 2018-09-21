@@ -1,0 +1,28 @@
+exclamation graphic at 9add4c
+loaded at 8078a14
+
+might be better to not do that though
+
+draw it like a hp bar?
+
+203a21b changes to 01 when unit selected
+
+When a unit is selected
+  AND the current unit is an enemy
+  AND the current unit's equipped weapon is effective vs the active unit
+  then display a ! sign over their head
+
+Sound good?
+Let's do this
+
+so adding to the end of the HP bars routine:
+
+(current unit in r4)
+if 203a21b = 1
+  if [r4,0xb] AND 0x80 <> 0
+    Loop through items (0x1e, 5 halfwords)
+      if 0, end loop
+      else
+      0x16BEC - 0x16C86: Given item and pointer to defender, return 0 if not effective and 1 if effective.
+      if 1, draw exclamation mark and end loop
+      if 5 items checked, end loop

@@ -75,8 +75,6 @@
             this.J_1 = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
@@ -101,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
@@ -198,7 +195,7 @@
             // 
             // ReloadListButton
             // 
-            this.ReloadListButton.Location = new System.Drawing.Point(501, -1);
+            this.ReloadListButton.Location = new System.Drawing.Point(260, -1);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(112, 30);
             this.ReloadListButton.TabIndex = 25;
@@ -736,28 +733,6 @@
             this.label8.Text = "先頭アドレス";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
-            // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(260, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 30);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "読込数";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ReadCount
-            // 
-            this.ReadCount.Location = new System.Drawing.Point(353, 2);
-            this.ReadCount.Maximum = new decimal(new int[] {
-            256,
-            0,
-            0,
-            0});
-            this.ReadCount.Name = "ReadCount";
-            this.ReadCount.Size = new System.Drawing.Size(78, 25);
-            this.ReadCount.TabIndex = 28;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -811,8 +786,6 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.ReloadListButton);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.ReadCount);
             this.panel3.Controls.Add(this.ReadStartAddress);
             this.panel3.Location = new System.Drawing.Point(13, 13);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -854,7 +827,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -875,8 +847,6 @@
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown ReadCount;
         private System.Windows.Forms.Panel panel1;
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
