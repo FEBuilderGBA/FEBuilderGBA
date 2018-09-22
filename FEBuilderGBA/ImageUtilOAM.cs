@@ -68,8 +68,8 @@ namespace FEBuilderGBA
             }
             else 
             {//mode0  - modeC
-                frameDataStart = getSectionData(showSectionData, sectionData_offset, (uint)frameData_UZ.Length);
-                frameDataEnd = getSectionData(showSectionData + 1, sectionData_offset, (uint)frameData_UZ.Length);
+                getSectionDataStartEnd(showSectionData, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart, out frameDataEnd);
             }
 
             //frameDataは4バイトずつのデータからなり、
@@ -88,8 +88,9 @@ namespace FEBuilderGBA
                 {//武器をもっていないモーションなので、0x01と0x03のような貫通している武器モーションは存在しない.
                     return bitmap;
                 }
-                uint frameDataStart2 = getSectionData(showSectionData+1, sectionData_offset, (uint)frameData_UZ.Length);
-                uint frameDataEnd2 = getSectionData(showSectionData +1+ 1, sectionData_offset, (uint)frameData_UZ.Length);
+                uint frameDataStart2,frameDataEnd2;
+                getSectionDataStartEnd(showSectionData + 1, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart2, out frameDataEnd2);
                 Debug.Assert(frameDataStart2 == Program.ROM.u32((showSectionData + 1) * 4 + sectionData_offset));
                 Debug.Assert(frameDataEnd2 == Program.ROM.u32((showSectionData+ 1 + 1) * 4 + sectionData_offset));
 
@@ -150,8 +151,9 @@ namespace FEBuilderGBA
         }
         static bool IsNoWeaponAnimation(uint sectionData_offset, byte[] frameData_UZ)
         {
-            uint frameDataStart = getSectionData(0, sectionData_offset, (uint)frameData_UZ.Length);
-            uint frameDataEnd = getSectionData(0 + 1, sectionData_offset, (uint)frameData_UZ.Length);
+            uint frameDataStart, frameDataEnd;
+            getSectionDataStartEnd(0, sectionData_offset, (uint)frameData_UZ.Length
+                , out frameDataStart, out frameDataEnd);
             return IsNoWeaponAnimation(frameDataStart, frameDataEnd, frameData_UZ);
         }
         
@@ -1593,6 +1595,26 @@ namespace FEBuilderGBA
             return frameDataEnd;
         }
 
+        static void getSectionDataStartEnd(uint sectionDataIndex, uint sectionData_offset, uint frameData_length
+            , out uint out_startFrameAddr, out uint out_endFrameAddr)
+        {
+            uint start = getSectionData(sectionDataIndex,sectionData_offset,frameData_length);
+            uint end = getSectionData(sectionDataIndex + 1, sectionData_offset, frameData_length);
+
+            if (end == 0)
+            {//終了地点が0なので補正する
+                end = frameData_length;
+            }
+            if (start == 0)
+            {//開始地点が0らしい。補正する
+                end = getSectionData(1, sectionData_offset, frameData_length);
+            }
+
+            Debug.Assert(start <= end);
+            out_startFrameAddr = start;
+            out_endFrameAddr = end;
+        }
+
         //後ろから数えて framesec秒前にループシンボルを埋め込む
         static void appendLoopStartSymbol(uint framesec, List<string> lines, string loopline)
         {
@@ -1676,8 +1698,9 @@ namespace FEBuilderGBA
 
                 //sectionDataデータは、 int sectionData[0x0C] として、
                 //frameData_UZへの参照位置を返します.
-                uint frameDataStart = getSectionData(sectionDataIndex,sectionData_offset,(uint)frameData_UZ.Length);
-                uint frameDataEnd = getSectionData(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length); 
+                uint frameDataStart, frameDataEnd;
+                getSectionDataStartEnd(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart, out frameDataEnd);
 
                 //Mode1 と Mode3 のときは、 特別処理が必要.
                 //Mode1 は Mode2 と、
@@ -1687,8 +1710,8 @@ namespace FEBuilderGBA
 
                 if (IsSeet01or03(sectionDataIndex) && isNoWeaponAnimation == false)
                 {
-                    frameDataStartMode2 = Program.ROM.u32((sectionDataIndex + 1) * 4 + sectionData_offset);
-                    frameDataEndMode2 = Program.ROM.u32((sectionDataIndex + 1 + 1) * 4 + sectionData_offset);
+                    getSectionDataStartEnd(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length
+                        , out frameDataStartMode2, out frameDataEndMode2);
                 }
 
                 line = "/// - Mode " + (sectionDataIndex + 1);
@@ -1855,8 +1878,9 @@ namespace FEBuilderGBA
 
                 //sectionDataデータは、 int sectionData[0x0C] として、
                 //frameData_UZへの参照位置を返します.
-                uint frameDataStart = getSectionData(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length);
-                uint frameDataEnd = getSectionData(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length);
+                uint frameDataStart, frameDataEnd;
+                getSectionDataStartEnd(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart, out frameDataEnd);
 
                 //Mode1 と Mode3 のときは、 特別処理が必要.
                 //Mode1 は Mode2 と、
@@ -1865,8 +1889,8 @@ namespace FEBuilderGBA
                 uint frameDataEndMode2 = 0;
                 if (IsSeet01or03(sectionDataIndex) && isNoWeaponAnimation == false)
                 {
-                    frameDataStartMode2 = Program.ROM.u32((sectionDataIndex + 1) * 4 + sectionData_offset);
-                    frameDataEndMode2 = Program.ROM.u32((sectionDataIndex + 1 + 1) * 4 + sectionData_offset);
+                    getSectionDataStartEnd(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length
+                        , out frameDataStartMode2, out frameDataEndMode2);
                 }
 
                 //frameDataは4バイトずつのデータからなり、
@@ -1986,8 +2010,9 @@ namespace FEBuilderGBA
 
                 //sectionDataデータは、 int sectionData[0x0C] として、
                 //frameData_UZへの参照位置を返します.
-                uint frameDataStart = getSectionData(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length);
-                uint frameDataEnd = getSectionData(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length);
+                uint frameDataStart, frameDataEnd;
+                getSectionDataStartEnd(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart, out frameDataEnd);
 
                 //Mode1 と Mode3 のときは、 特別処理が必要.
                 //Mode1 は Mode2 と、
@@ -1996,8 +2021,8 @@ namespace FEBuilderGBA
                 uint frameDataEndMode2 = 0;
                 if (IsSeet01or03(sectionDataIndex) && isNoWeaponAnimation == false)
                 {
-                    frameDataStartMode2 = Program.ROM.u32((sectionDataIndex + 1) * 4 + sectionData_offset);
-                    frameDataEndMode2 = Program.ROM.u32((sectionDataIndex + 1 + 1) * 4 + sectionData_offset);
+                    getSectionDataStartEnd(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length
+                        , out frameDataStartMode2, out frameDataEndMode2);
                 }
 
                 //攻撃モーションなどでウェイトを入れる FEditor Adv Gif Dumperより
@@ -2765,8 +2790,9 @@ namespace FEBuilderGBA
             {
                 //sectionDataデータは、 int sectionData[0x0C] として、
                 //frameData_UZへの参照位置を返します.
-                uint frameDataStart = getSectionData(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length);
-                uint frameDataEnd = getSectionData(sectionDataIndex + 1, sectionData_offset, (uint)frameData_UZ.Length);
+                uint frameDataStart, frameDataEnd;
+                getSectionDataStartEnd(sectionDataIndex, sectionData_offset, (uint)frameData_UZ.Length
+                    , out frameDataStart, out frameDataEnd);
 
                 //frameDataは4バイトずつのデータからなり、
                 //?? ?? ?? 0x86 のあとには、4バイトの画像へのポインタと、 4バイトの 変換する OAMへの絶対位置を返します.
@@ -3220,7 +3246,6 @@ namespace FEBuilderGBA
             uint rightToLeftOAM_offset = Program.ROM.p32(battleanime_baseaddress + 20); //OAM
             uint leftToRightOAM_offset = Program.ROM.p32(battleanime_baseaddress + 24); //OAM
             uint palettes_offset = Program.ROM.p32(battleanime_baseaddress + 28);             //パレット
-
 
             if (!U.isSafetyZArray(sectionData_offset + 4 * 12 - 1))
             {
