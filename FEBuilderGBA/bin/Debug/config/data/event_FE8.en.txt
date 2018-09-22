@@ -114,8 +114,8 @@
 2139XXYY	Changes the AI of unit at the given coordinates[XX:MAPX:X],[YY:MAPY:Y](CHAI)
 2634XXXX	Ends specified Unit's turn greying them out[XXXX:UNIT:Character](SET_ENDTURN)
 2834XXXX	SET_STATE[XXXX:UNIT:Character]
-2D34XXXX	[XXXX:UNIT:Character]Unit erase Sound falls(SET_SOMETHING)	{UNITREMOVE}
-2E34XXXX	[XXXX:UNIT:Character]Unit Erase No sound(DISA_IF)	{UNITREMOVE}
+2D34XXXX	[XXXX:UNIT:Character]Unit erase Sound falls(SET_SOMETHING)	@WARNING_DISA	{UNITREMOVE}
+2E34XXXX	[XXXX:UNIT:Character]Unit Erase No sound(DISA_IF)	@WARNING_DISA	{UNITREMOVE}
 2A340000	Clear All Player units(CLEA)	{CLEAR}	{UNITREMOVE}
 2B340000	Clear All Ally units(CLEN)	{CLEAR}	{UNITREMOVE}
 2C340000	Clear All Enemy units(CLEE)	{CLEAR}	{UNITREMOVE}
@@ -222,8 +222,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 40050200ZZ000000482FFFFFFDFFXXYY400A00003CE59E08	[ZZ:UNIT:Unit]appears warp2 in[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{U}
 40050200ZZ00000040050300XXXX0000400A00004804A608	Show conversation with BG(LOW)[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:TEXT]	{TEXT}	{J}
 40050200ZZ00000040050300XXXX0000400A000010E39E08	Show conversation with BG(LOW)[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:TEXT]	{TEXT}	{U}
-40050200ZZ000000400A00005406A6082F34ZZ00	[ZZ:UNIT:Unit]Warp erase units that appeared in warp	{UNITREMOVE}	{J}
-40050200ZZ000000400A00001CE59E082F34ZZ00	[ZZ:UNIT:Unit]Warp erase units that appeared in warp	{UNITREMOVE}	{U}
+40050200ZZ000000400A00005406A6082F34ZZ00	[ZZ:UNIT:Unit]Warp erase units that appeared in warp	@WARNING_DISA	{UNITREMOVE}	{J}
+40050200ZZ000000400A00001CE59E082F34ZZ00	[ZZ:UNIT:Unit]Warp erase units that appeared in warp	@WARNING_DISA	{UNITREMOVE}	{U}
 40050300XXXX0000400A00004804A608	[XXXX:CONVERSATION_TEXT:Text]Conversation event with background(LOW)	{TEXT}	{J}
 40050300XXXX0000400A000010E39E08	[XXXX:CONVERSATION_TEXT:Text]Conversation event with background(LOW)	{TEXT}	{U}
 40050200XX000000400A00002004A608	Change to[XX:BG:Background]	{BG}	{J}
@@ -378,9 +378,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 203DXXXX	_203D[XXXX::value]
 243BXXXX	_243B[XXXX::value]
 203C0000	_203C
-40050B00XXXXYYYY2D34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.There is a falling sound.
-40050B00XXXXYYYY2E34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.There is no falling sound.
-40050B00XXXXYYYY2D34FEFF2E34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.Erasing with a falling sound.	{UNITREMOVE}
+40050B00XXXXYYYY2D34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.There is a falling sound.	@WARNING_DISA
+40050B00XXXXYYYY2E34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.There is no falling sound.	@WARNING_DISA
+40050B00XXXXYYYY2D34FEFF2E34FEFF	Unit erase of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates.Erasing with a falling sound.	@WARNING_DISA	{UNITREMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV	Move the unit of[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates to new coordinates[WW:MAPX:X][VV:MAPY:Y]at[ZZZZ:DECIMAL:speed]	{UNITMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV20300000	Move to the new coordinates[WW:MAPX:X][VV:MAPY:Y]with[ZZZZ:DECIMAL:Speed]and immediately move the unit of[XXXX:MAPX:X][YYYY:MAPY:Y]	{UNITMOVE}
 40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A00002C08A608	tutorial.Urge the movement of the unit coordinates[ZZZZ:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:explanatory note][XXXXXXXX:UNIT:unit to act][YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:next event][TTTTTTTT:POINTER_EVENT:THIS]	{J}
@@ -433,7 +433,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008ZZZZ	Desert treasure [XX:ITEM:Item] [YYYY:LABEL:condition ID] [ZZZZ:LABEL:same value as the condition ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nFor "Condition ID\\r\nIf there is no other branch, leave 0 and there is no problem.\r\nFor "same value as condition ID\\r\nIf 1234 is inserted in "condition ID\	{ITEM}	{J}
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008ZZZZ	Desert treasure [XX:ITEM:Item] [YYYY:LABEL:condition ID] [ZZZZ:LABEL:same value as the condition ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nFor "Condition ID\\r\nIf there is no other branch, leave 0 and there is no problem.\r\nFor "same value as condition ID\\r\nIf 1234 is inserted in "condition ID\	{ITEM}	{U}
 2034XXXX	Remove a [XXXX:UNIT:unit] from the party. departure flag on.(REMU)	{UNITPERSOLNAL}
-2F34XXXX	Erase [XXXX:UNIT:Unit] (DISA)	{UNITPERSOLNAL}
+2F34XXXX	Erase [XXXX:UNIT:Unit] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
 2134XXXX	Change [XXXX:UNIT:Unit] can rejoin the party.departure flag off.(REVEAL)	{UNITPERSOLNAL}
-40050B00XXXXYYYY2F34FEFF	[XXXX:MAPX:X] Erase the units in [YYYY:MAPY:Y] coordinates.
+40050B00XXXXYYYY2F34FEFF	Erase the units in [XXXX:MAPX:X][YYYY:MAPY:Y] coordinates.	@WARNING_DISA
 40050300XXXX000022370000	Lose Gold [XXXX:DECIMAL:GOLD] from money(GIVETOSLOT3)	{GOLD}	{ITME}
