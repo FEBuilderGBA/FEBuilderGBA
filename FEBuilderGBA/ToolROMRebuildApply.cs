@@ -483,15 +483,17 @@ namespace FEBuilderGBA
             }
             else
             {
-                //実はこのデータが既にROMにあったりしますか?
-                uint foundAddr = U.Grep(this.WriteROMData32MB, bin, 0x100, this.WriteOffset, 4);
-                if (foundAddr != U.NOT_FOUND)
-                {//既にROMにあるので共有させましょう
-                    writeaddr = foundAddr;
-                    ResolvedPointer(U.toPointer(addr), U.toPointer(writeaddr), debugInfo + "//SHARE!");
-                    return;
+                if (bin.Length >= 8)
+                {
+                    //実はこのデータが既にROMにあったりしますか?
+                    uint foundAddr = U.Grep(this.WriteROMData32MB, bin, 0x100, this.WriteOffset, 4);
+                    if (foundAddr != U.NOT_FOUND)
+                    {//既にROMにあるので共有させましょう
+                        writeaddr = foundAddr;
+                        ResolvedPointer(U.toPointer(addr), U.toPointer(writeaddr), debugInfo + "//SHARE!");
+                        return;
+                    }
                 }
-
                 //リポイントが必須
                 writeaddr = Alloc((uint)bin.Length);
             }

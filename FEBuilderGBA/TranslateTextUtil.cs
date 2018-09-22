@@ -175,7 +175,7 @@ namespace FEBuilderGBA
                 }
                 trimEnd1F = false;
             }
-            else if (from == "zh" || from == "zh-CH")
+            else if (from == "zh" || from == "zh-CN")
             {
                 from_n = 0;
                 from_tbl = new SystemTextEncoder(OptionForm.textencoding_enum.ZH_TBL, rom_f);
@@ -203,7 +203,7 @@ namespace FEBuilderGBA
                     to_tbl = new SystemTextEncoder(OptionForm.textencoding_enum.Shift_JIS, rom_t);
                 }
             }
-            else if (to == "zh" || to == "zh-CH")
+            else if (to == "zh" || to == "zh-CN")
             {
                 to_n = 0;
                 to_tbl = new SystemTextEncoder(OptionForm.textencoding_enum.ZH_TBL, rom_t);
