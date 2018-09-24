@@ -84,6 +84,7 @@ namespace FEBuilderGBA
         uint sound_foot_steps_pointer(); // クラス足音の開始位置
         uint sound_foot_steps_switch2_address();
         uint worldmap_point_pointer(); // ワールドマップ拠点の開始位置
+        uint worldmap_bgm_pointer(); // ワールドマップのBGMテーブルの開始位置
         uint worldmap_event_on_stageclear_pointer(); // ワールドマップイベント 拠点クリア時
         uint worldmap_event_on_stageselect_pointer(); // ワールドマップイベント 拠点選択時
         uint worldmap_county_border_pointer(); // ワールドマップ国名の表示

@@ -1733,6 +1733,12 @@
     <Compile Include="LinkArenaDenyUnitForm.Designer.cs">
       <DependentUpon>LinkArenaDenyUnitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorldMapBGMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMapBGMForm.Designer.cs">
+      <DependentUpon>WorldMapBGMForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2562,6 +2568,9 @@
     <EmbeddedResource Include="LinkArenaDenyUnitForm.resx">
       <DependentUpon>LinkArenaDenyUnitForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMapBGMForm.resx">
+      <DependentUpon>WorldMapBGMForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

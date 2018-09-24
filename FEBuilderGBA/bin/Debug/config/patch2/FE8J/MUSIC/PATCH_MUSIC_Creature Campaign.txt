@@ -1,0 +1,15 @@
+NAME=MUSIC_大陸の魔物退治
+NAME.en=MUSIC_Creature Campaign
+NAME.zh=音乐_大陆恶魔灭绝
+
+INFO=ワールドマップで次の目的地が存在しない時に再生されるBGMを設定します。
+INFO.en=Set BGM to be played when the next destination does not exist in the world map.
+INFO.zh=设置BGM在世界地图中不存在下一个目的地时播放。
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x0BEE3C
+ADDRESS_TYPE=SONG
+

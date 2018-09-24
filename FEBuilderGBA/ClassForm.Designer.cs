@@ -912,7 +912,7 @@
             // B10
             // 
             this.B10.Hexadecimal = true;
-            this.B10.Location = new System.Drawing.Point(1040, 5);
+            this.B10.Location = new System.Drawing.Point(1057, 5);
             this.B10.Margin = new System.Windows.Forms.Padding(2);
             this.B10.Maximum = new decimal(new int[] {
             255,
@@ -927,7 +927,7 @@
             // 
             this.J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_10.Location = new System.Drawing.Point(914, 1);
+            this.J_10.Location = new System.Drawing.Point(931, 1);
             this.J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_10.Name = "J_10";
             this.J_10.Size = new System.Drawing.Size(122, 30);
@@ -938,7 +938,7 @@
             // W8
             // 
             this.W8.Hexadecimal = true;
-            this.W8.Location = new System.Drawing.Point(705, 67);
+            this.W8.Location = new System.Drawing.Point(722, 67);
             this.W8.Margin = new System.Windows.Forms.Padding(2);
             this.W8.Maximum = new decimal(new int[] {
             255,
@@ -1261,7 +1261,7 @@
             // 
             this.L_4_ID.Controls.Add(this.B4);
             this.L_4_ID.ErrorMessage = "";
-            this.L_4_ID.Location = new System.Drawing.Point(418, 4);
+            this.L_4_ID.Location = new System.Drawing.Point(435, 4);
             this.L_4_ID.Name = "L_4_ID";
             this.L_4_ID.Size = new System.Drawing.Size(84, 32);
             this.L_4_ID.TabIndex = 103;
@@ -1381,7 +1381,7 @@
             // L_6_CLASSICONSRC
             // 
             this.L_6_CLASSICONSRC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_6_CLASSICONSRC.Location = new System.Drawing.Point(914, 80);
+            this.L_6_CLASSICONSRC.Location = new System.Drawing.Point(931, 80);
             this.L_6_CLASSICONSRC.Margin = new System.Windows.Forms.Padding(2);
             this.L_6_CLASSICONSRC.Name = "L_6_CLASSICONSRC";
             this.L_6_CLASSICONSRC.Size = new System.Drawing.Size(70, 70);
@@ -1420,7 +1420,7 @@
             // B7
             // 
             this.B7.Hexadecimal = true;
-            this.B7.Location = new System.Drawing.Point(705, 97);
+            this.B7.Location = new System.Drawing.Point(722, 97);
             this.B7.Margin = new System.Windows.Forms.Padding(2);
             this.B7.Maximum = new decimal(new int[] {
             255,
@@ -1449,7 +1449,7 @@
             // 
             this.J_7.AccessibleDescription = "@CLASS_MOVE_SPEED";
             this.J_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_7.Location = new System.Drawing.Point(506, 96);
+            this.J_7.Location = new System.Drawing.Point(523, 96);
             this.J_7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_7.Name = "J_7";
             this.J_7.Size = new System.Drawing.Size(195, 28);
@@ -1460,7 +1460,7 @@
             // B6
             // 
             this.B6.Hexadecimal = true;
-            this.B6.Location = new System.Drawing.Point(705, 36);
+            this.B6.Location = new System.Drawing.Point(722, 36);
             this.B6.Margin = new System.Windows.Forms.Padding(2);
             this.B6.Maximum = new decimal(new int[] {
             255,
@@ -1474,7 +1474,7 @@
             // J_6_WAITICON
             // 
             this.J_6_WAITICON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_6_WAITICON.Location = new System.Drawing.Point(506, 35);
+            this.J_6_WAITICON.Location = new System.Drawing.Point(523, 35);
             this.J_6_WAITICON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_6_WAITICON.Name = "J_6_WAITICON";
             this.J_6_WAITICON.Size = new System.Drawing.Size(195, 28);
@@ -1485,7 +1485,7 @@
             // L_8_PORTRAIT_CLASS
             // 
             this.L_8_PORTRAIT_CLASS.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_PORTRAIT_CLASS.Location = new System.Drawing.Point(786, 34);
+            this.L_8_PORTRAIT_CLASS.Location = new System.Drawing.Point(803, 34);
             this.L_8_PORTRAIT_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.L_8_PORTRAIT_CLASS.Name = "L_8_PORTRAIT_CLASS";
             this.L_8_PORTRAIT_CLASS.Size = new System.Drawing.Size(116, 116);
@@ -1496,7 +1496,7 @@
             // 
             this.J_8_PORTRAIT.AccessibleDescription = "@CLASS_PORTRAIT";
             this.J_8_PORTRAIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8_PORTRAIT.Location = new System.Drawing.Point(506, 66);
+            this.J_8_PORTRAIT.Location = new System.Drawing.Point(523, 66);
             this.J_8_PORTRAIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_8_PORTRAIT.Name = "J_8_PORTRAIT";
             this.J_8_PORTRAIT.Size = new System.Drawing.Size(195, 28);
@@ -1507,7 +1507,7 @@
             // L_5_CLASS
             // 
             this.L_5_CLASS.ErrorMessage = "";
-            this.L_5_CLASS.Location = new System.Drawing.Point(786, 2);
+            this.L_5_CLASS.Location = new System.Drawing.Point(803, 2);
             this.L_5_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.L_5_CLASS.Name = "L_5_CLASS";
             this.L_5_CLASS.Placeholder = "";
@@ -1518,7 +1518,7 @@
             // B5
             // 
             this.B5.Hexadecimal = true;
-            this.B5.Location = new System.Drawing.Point(705, 3);
+            this.B5.Location = new System.Drawing.Point(722, 3);
             this.B5.Margin = new System.Windows.Forms.Padding(2);
             this.B5.Maximum = new decimal(new int[] {
             255,
@@ -1533,7 +1533,7 @@
             // 
             this.J_5.AccessibleDescription = "@CLASS_CC";
             this.J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_5.Location = new System.Drawing.Point(506, 4);
+            this.J_5.Location = new System.Drawing.Point(523, 4);
             this.J_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_5.Name = "J_5";
             this.J_5.Size = new System.Drawing.Size(195, 30);
@@ -1570,7 +1570,7 @@
             // 
             this.J_4_MOVEICON.AccessibleDescription = "@CLASS_ID";
             this.J_4_MOVEICON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4_MOVEICON.Location = new System.Drawing.Point(363, 4);
+            this.J_4_MOVEICON.Location = new System.Drawing.Point(380, 4);
             this.J_4_MOVEICON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_4_MOVEICON.Name = "J_4_MOVEICON";
             this.J_4_MOVEICON.Size = new System.Drawing.Size(54, 32);
@@ -1589,13 +1589,13 @@
             0,
             0});
             this.W0.Name = "W0";
-            this.W0.Size = new System.Drawing.Size(63, 25);
+            this.W0.Size = new System.Drawing.Size(78, 25);
             this.W0.TabIndex = 0;
             // 
             // L_0_TEXT_NAME1
             // 
             this.L_0_TEXT_NAME1.ErrorMessage = "";
-            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(195, 7);
+            this.L_0_TEXT_NAME1.Location = new System.Drawing.Point(212, 7);
             this.L_0_TEXT_NAME1.Margin = new System.Windows.Forms.Padding(2);
             this.L_0_TEXT_NAME1.Name = "L_0_TEXT_NAME1";
             this.L_0_TEXT_NAME1.Placeholder = "";
@@ -1606,7 +1606,7 @@
             // L_2_TEXT_DETAIL3
             // 
             this.L_2_TEXT_DETAIL3.ErrorMessage = "";
-            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(195, 39);
+            this.L_2_TEXT_DETAIL3.Location = new System.Drawing.Point(212, 39);
             this.L_2_TEXT_DETAIL3.Margin = new System.Windows.Forms.Padding(2);
             this.L_2_TEXT_DETAIL3.Multiline = true;
             this.L_2_TEXT_DETAIL3.Name = "L_2_TEXT_DETAIL3";
@@ -1626,7 +1626,7 @@
             0,
             0});
             this.W2.Name = "W2";
-            this.W2.Size = new System.Drawing.Size(63, 25);
+            this.W2.Size = new System.Drawing.Size(78, 25);
             this.W2.TabIndex = 1;
             // 
             // WriteButton

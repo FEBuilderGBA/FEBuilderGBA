@@ -7371,3 +7371,9 @@
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	強制ゲームオーバー	{J}
 08018D04	AreAnyPlayerUnitDead	{J}
+080021A8	再生しているBGMの取得	{J}
+08002258	再生しているBGMの取得	{U}
+080BEDE8	ワールドマップのBGM選択	{J}
+080B9F54	ワールドマップのBGM選択	{U}
+080c1e20	ワールドマップの次の目的地の拠点IDを取得	{J}
+080bd014	ワールドマップの次の目的地の拠点IDを取得	{U}

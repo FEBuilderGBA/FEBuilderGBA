@@ -2021,6 +2021,7 @@ namespace FEBuilderGBA
                 SupportUnitForm.MakeAllDataLength(list);
                 WorldMapImageForm.MakeAllDataLength(list, isPointerOnly);
                 WorldMapPointForm.MakeAllDataLength(list);
+                WorldMapBGMForm.MakeAllDataLength(list);
                 SummonUnitForm.MakeAllDataLength(list, isPointerOnly);
                 SummonsDemonKingForm.MakeAllDataLength(list, isPointerOnly);
                 MapSettingForm.MakeAllDataLength(list);

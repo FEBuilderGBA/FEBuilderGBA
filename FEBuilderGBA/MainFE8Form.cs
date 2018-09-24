@@ -1000,6 +1000,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<LinkArenaDenyUnitForm>();
         }
 
+        private void WorldMapBGMButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<WorldMapBGMForm>();
+        }
+
     }
 
 }

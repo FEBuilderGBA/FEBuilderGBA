@@ -10740,3 +10740,9 @@ World Map Nodes
 
 :DISAで自軍ユニットを消す場合は、後でREVEALで再加入させてください。ユニットに離脱状態(Escape)フラグがセットされ、パーティから離れている状態になります。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、離脱状態にはなりません。
 If you using to clear your unit at "DISA", please re-join later with "REVEAL". The Escape flag is set in the unit and it is away from the party.\r\n"CLEA" is recommended when you want to erase a unit with a production. "CLEA" will erase all units but will not set Escape flag.
+
+:ワールドマップBGM
+World Map BGM
+
+:この拠点が、次の目的地となったときに再生するBGMを選択します。
+Select the BGM to play when this base becomes the next destination.
