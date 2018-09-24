@@ -2183,6 +2183,8 @@ namespace FEBuilderGBA
             public uint oam_pos;         //OBJ
             public uint oam2_pos;        //OBJ BG
             public uint image_number;
+
+            public string imageHash;
         };
         public class image_data
         {
@@ -2217,6 +2219,17 @@ namespace FEBuilderGBA
             }
         }
 
+        public static animedata FindHash(string hash, Dictionary<string, animedata> animeDic)
+        {
+            foreach (var m in animeDic)
+            {
+                if (m.Value.imageHash == hash)
+                {
+                    return m.Value;
+                }
+            }
+            return null;
+        }
 
         public static string ImportBattleAnime(string filename
             , uint battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
@@ -2394,7 +2407,6 @@ namespace FEBuilderGBA
                         oam.SetIsMultiPaletteOAM(paletteCount >= 4);
                     }
 
-
                     animedata anime;
                     if (animeDic.ContainsKey(imagefilename))
                     {//すでに変換ずみなのでアドレスデータのコピー
@@ -2402,13 +2414,21 @@ namespace FEBuilderGBA
                     }
                     else
                     {//未登録なので作成します.
-                        anime = oam.MakeBattleAnime(imagefilename, isMode1);
+                        //同一画像のハッシュがあるのでは?
+                        string hash = ImageUtil.HashBitmap(imagefilename, oam.GetBaseDir());
+                        anime = FindHash(hash, animeDic);
                         if (anime == null)
-                        {
-                            return R.Error("エラーが発生しました。 \r\nFile: {0} line:{1}\r\n\r\nエラー内容:\r\n{2}", filename, lineCount,oam.ErrorMessage);
+                        {//ハッシュにもない
+                            anime = oam.MakeBattleAnime(imagefilename, isMode1);
+                            if (anime == null)
+                            {
+                                return R.Error("エラーが発生しました。 \r\nFile: {0} line:{1}\r\n\r\nエラー内容:\r\n{2}", filename, lineCount, oam.ErrorMessage);
+                            }
+
+                            anime.image_number = image_number++;
+                            anime.imageHash = hash;
+                            animeDic[imagefilename] = anime;
                         }
-                        anime.image_number = image_number++;
-                        animeDic[imagefilename] = anime;
                     }
 
                     uint a = (frameSec & 0xFFFF) | ((anime.image_number & 0xFF) << 16) | 0x86000000;

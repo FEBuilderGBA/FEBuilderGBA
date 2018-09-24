@@ -2987,6 +2987,21 @@ namespace FEBuilderGBA
             return retbitmap;
         }
 
+        public static string HashBitmap(string filename, string dir)
+        {
+            string fullfilename = Path.Combine(dir, filename);
+            return HashBitmap(fullfilename);
+        }
+        public static string HashBitmap(string fullfilename)
+        {
+            Bitmap bitmap = OpenBitmap(fullfilename);
+            string hash = HashBitmap(bitmap);
+
+            bitmap.Dispose();
+
+            return hash;
+        }
+
         //画像のハッシュ値を取得する 同一画像判定に利用する
         public static string HashBitmap(Bitmap bitmap)
         {

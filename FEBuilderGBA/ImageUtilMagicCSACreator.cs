@@ -911,13 +911,23 @@ namespace FEBuilderGBA
         {
             string key = "OBJ" + imagefilename;
 
+            ImageUtilOAM.animedata magic_animedata;
             if (animeDic.ContainsKey(key))
             {
                 errormessage = "";
 
-                //                animeDic[key].oam_pos = oam.AppendTermOAM();
-                return animeDic[key];
+                magic_animedata = animeDic[key];
+                return magic_animedata;
             }
+            string hash = ImageUtil.HashBitmap(imagefilename, basedir);
+            magic_animedata = ImageUtilOAM.FindHash(hash, animeDic);
+            if (magic_animedata != null)
+            {
+                errormessage = "";
+                return magic_animedata;
+            }
+
+
             Bitmap loadbitmap = ImageUtil.OpenBitmap(ImageUtilMagicFEditor.GetFullPath(imagefilename, basedir),null, out errormessage);
             if (loadbitmap == null)
             {
@@ -933,7 +943,7 @@ namespace FEBuilderGBA
                 return null;
             }
 
-            ImageUtilOAM.animedata magic_animedata = oam.MakeMagicAnime(imagefilename, true);
+            magic_animedata = oam.MakeMagicAnime(imagefilename, true);
             if (magic_animedata == null)
             {
                 errormessage = oam.ErrorMessage;
@@ -941,6 +951,7 @@ namespace FEBuilderGBA
                 return null;
             }
             magic_animedata.image_number = image_number++;
+            magic_animedata.imageHash = hash;
 
             animeDic[key] = magic_animedata;
             errormessage = "";
@@ -954,12 +965,25 @@ namespace FEBuilderGBA
             , out string errormessage
             )
         {
-            if (animeDic.ContainsKey("BG" + imagefilename))
+            string key = "BG" + imagefilename;
+
+            ImageUtilOAM.animedata magic_animedata;
+            if (animeDic.ContainsKey(key))
             {
                 errormessage = "";
-                return animeDic["BG" + imagefilename];
+                magic_animedata = animeDic[key];
+                return magic_animedata;
             }
-            ImageUtilOAM.animedata magic_animedata = new ImageUtilOAM.animedata();
+
+            string hash = ImageUtil.HashBitmap(imagefilename, basedir);
+            magic_animedata = ImageUtilOAM.FindHash(hash, animeDic);
+            if (magic_animedata != null)
+            {
+                errormessage = "";
+                return magic_animedata;
+            }
+
+            magic_animedata = new ImageUtilOAM.animedata();
             string bgfilename = ImageUtilMagicFEditor.GetFullPath(imagefilename, basedir);
             Bitmap loadbitmap = ImageUtil.OpenBitmap(bgfilename,null, out errormessage);
             if (loadbitmap == null)
@@ -1006,6 +1030,8 @@ namespace FEBuilderGBA
 
             //画像の高さを記録. BGは、FEditor=64   Scale Creator=160 と、違う.
             magic_animedata.height = height;
+            //ハッシュ値
+            magic_animedata.imageHash = hash;
 
             //画像
             magic_animedata.image_pointer = (uint)imagesData.Count;
@@ -1028,7 +1054,7 @@ namespace FEBuilderGBA
             imagesData.Add(tsa_data);
 
 
-            animeDic["BG" + imagefilename] = magic_animedata;
+            animeDic[key] = magic_animedata;
             errormessage = "";
             loadbitmap.Dispose();
             return magic_animedata;
