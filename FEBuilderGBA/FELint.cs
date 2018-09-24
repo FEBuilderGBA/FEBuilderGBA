@@ -520,7 +520,7 @@ namespace FEBuilderGBA
             if (data.Length <= 0)
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("このアドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。", U.To0xHexString(lz77addr), tag)));
+                    , R._("このアドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。", U.To0xHexString(lz77addr)), tag));
             }
             int height = ImageUtil.CalcHeight(width,data.Length);
             if (height < min_height)
