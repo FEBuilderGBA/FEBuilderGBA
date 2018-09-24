@@ -13,10 +13,10 @@ COMBO.en=SWORD|0x28|LANCE|0x29|AX|0x2A|BOW|0x2B|STAFF|0x2C|RULE|0x2D|LIGHT|0x2E|
 COMBO.zh=剑|0x28|枪|0x29|斧|0x2A|弓|0x2B|杖|0x2C|理|0x2D|光|0x2E|暗|0x2F
 
 
-AUTHOR=aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701
+AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-AUTHOR.zh=从aera的材料\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701
-AUTHOR.en=From aera's material\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701
+AUTHOR.zh=从aera的材料\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=From aera's material\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
 INFO=ユアンが特定のクラスへCCした時に、忘れる武器の種類を設定します。

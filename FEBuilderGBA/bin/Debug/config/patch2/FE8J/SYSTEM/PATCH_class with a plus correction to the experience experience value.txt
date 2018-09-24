@@ -6,11 +6,11 @@ TAG=#ENGINE
 ADDRESS=0x2C346
 ADDRESS_TYPE=CLASS
 
-AUTHOR=出典元:http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+AUTHOR=出典元:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 NAME.zh=在击破经验值上加上敌方职业
 
-AUTHOR.zh=来源:http://ngmansion。xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+AUTHOR.zh=来源:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 NAME.en=Enemy Class with Bonus EXP
-AUTHOR.en=Source: http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#z88e34e2
+AUTHOR.en=Source: https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 

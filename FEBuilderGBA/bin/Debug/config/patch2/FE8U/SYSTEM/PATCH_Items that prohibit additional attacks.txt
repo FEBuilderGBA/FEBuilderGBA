@@ -9,6 +9,6 @@ TAG=#ENGINE
 ADDRESS=0x2B008
 ADDRESS_TYPE=ITEM
 
-AUTHOR=aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701
-AUTHOR.zh=从aera的材料\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701。
-AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#r39b5701.
+AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=从aera的材料\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

@@ -15,6 +15,6 @@ COMBO.zh=惠普的一半|0x13|最大HP的一半|0x14
 INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or deals damage equal to 1/2 of max HP (Patched).\r\n
 
 
-AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#i64f96cd
-AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#i 64 f 96 cd。
-AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#i64f96cd
+AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

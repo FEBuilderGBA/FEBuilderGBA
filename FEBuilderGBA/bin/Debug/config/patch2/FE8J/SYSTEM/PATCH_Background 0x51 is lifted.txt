@@ -10,7 +10,7 @@ TAG=#ENGINE #ESSENTIALFIXES
 ADDRESS=0x00ea46
 COMBO=修正しない|0x04 0xD1|修正する|0x00 0x00
 
-AUTHOR=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d52d4614
+AUTHOR=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 NAME.zh=背景0x51号解放
 

@@ -14,8 +14,6 @@ namespace FEBuilderGBA
         Pen MouseCursorPen = new Pen(Color.Red, 1);
         Pen SelectMarkupPen = new Pen(Color.Blue, 3);
        
-        //see
-        //http://ngmansion.xyz/wiki/hackfe/index.php?cmd=read&page=%E8%A7%A3%E8%AA%AC%2F%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%83%9E%E3%83%83%E3%83%97%E3%81%AE%E9%81%93
         public WorldMapPathMoveEditorForm()
         {
             InitializeComponent();

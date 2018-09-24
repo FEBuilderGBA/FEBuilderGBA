@@ -559,7 +559,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                //TSA see http://ngmansion.webcrow.jp/wiki/hackfe/index.php?cmd=read&page=%E8%A7%A3%E8%AA%AC%2FTSA
+                //TSA see https://dw.ngmansion.xyz/doku.php?id=column:tsa
                 UInt16 tileNumber = (UInt16)(tsatile & 0x03FF);
 
                 //TSAのtileNumberの場所にソースデータがある.
@@ -740,7 +740,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                //TSA see http://ngmansion.webcrow.jp/wiki/hackfe/index.php?cmd=read&page=%E8%A7%A3%E8%AA%AC%2FTSA
+                //TSA see https://dw.ngmansion.xyz/doku.php?id=column:tsa
                 UInt16 tileNumber = (UInt16)(tsatile & 0x03FF);
 
                 //TSAのtileNumberの場所にソースデータがある.
@@ -1148,7 +1148,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                //TSA see http://ngmansion.webcrow.jp/wiki/hackfe/index.php?cmd=read&page=%E8%A7%A3%E8%AA%AC%2FTSA
+                //TSA see https://dw.ngmansion.xyz/doku.php?id=column:tsa
                 UInt16 tileNumber = (UInt16)(tsatile & 0x03FF);
 
                 //TSAのtileNumberの場所にソースデータがある.
@@ -1934,7 +1934,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                //TSA see http://ngmansion.webcrow.jp/wiki/hackfe/index.php?cmd=read&page=%E8%A7%A3%E8%AA%AC%2FTSA
+                //TSA see https://dw.ngmansion.xyz/doku.php?id=column:tsa
                 UInt16 tileNumber = (UInt16)(tsatile & 0x03FF);
 
                 //TSAのtileNumberの場所にソースデータがある.

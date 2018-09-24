@@ -16,6 +16,6 @@ INFO=GBAFEでは、背景テーブルの上限値を超えたところに番兵�
 INFO.en=Toggles whether the background image list cap is limited to 0x37 (Default) or unlimited (Patched).\r\nThis patch removes the 0x37 limit.
 INFO.zh=在GBAFE中，标记被设置在超过背景表的上限的地方。\r\n因此，当您扩展背景表时，如果您尝试显示特定ID的背景，则始终显示ID为0x00的背景。\r\n它对应于FE 8U的0x37和FE 8J的0 x 51。\r\n此修补程序将修复该限制。
 
-AUTHOR=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d52d4614
-AUTHOR.en=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d52d4614
-AUTHOR.zh=http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#d52d4614
+AUTHOR=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

@@ -74,21 +74,9 @@ namespace FEBuilderGBA
             string str = R._("現在利用しているバージョンから、1か月以上が経過しています。\r\n新しいバージョンが出ていないか確認してください。");
 
             string lang = OptionForm.lang();
-            string url;
-            if (lang == "ja")
-            {
-                url = "https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA";
-            }
-            else if (lang == "zh")
-            {
-                url = "https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDFEBuilderGBA_ZH";
-            }
-            else
-            {
-                url = "https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA/How%20to%20download%20FEBuilderGBA_EN";
-            }
+            string url = MainFormUtil.GetManualURL();
 
-            str += "\r\n" + "https://github.com/FEBuilderGBA/FEBuilderGBA/releases";
+            str += "\r\n" + "https://github.com/FEBuilderGBA/FEBuilderGBA/releases/latest";
             str += "\r\n" + url;
 
             return str;

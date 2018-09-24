@@ -20,7 +20,7 @@ We would like to thank our predecessors who released the analyzed data.
 
 
 Details (There is a commentary at the bottom of the page)  
-https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA#d4e82ff4
+https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:index
 
 
 This software has nothing to do with official.  
@@ -65,7 +65,7 @@ C#でありますが、特にパフォーマンスに注意しているので、
 
 
 詳細 (ページ下部に解説集があるよ)  
-https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA
+https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:index
 
 
 このソフトウェアは、公式とは一切関係ありません。  
@@ -105,7 +105,7 @@ FE_Builder_GBA
 
 
 详细信息（页面底部有评论）  
-https://ngmansion.xyz/wiki/hackfe/index.php?%E8%A7%A3%E8%AA%AC/FEBuilderGBA#a826589e
+https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:index
 
 
 这个软件与官方无关。  

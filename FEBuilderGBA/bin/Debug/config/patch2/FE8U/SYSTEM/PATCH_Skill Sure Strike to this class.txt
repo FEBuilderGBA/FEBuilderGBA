@@ -9,9 +9,9 @@ TAG=#ENGINE
 ADDRESS=0x02B226
 ADDRESS_TYPE=CLASS
 
-AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
-AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
-AUTHOR.en=Chap@FE8_GIRLS 09.10.01 http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ebacefe9
+AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=Chap@FE8_GIRLS 09.10.01 https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems

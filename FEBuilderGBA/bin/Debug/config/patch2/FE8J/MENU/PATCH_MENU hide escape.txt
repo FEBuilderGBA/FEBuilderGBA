@@ -10,9 +10,9 @@ TAG=#ENGINE
 ADDRESS=0x0024C85
 COMBO=表示|0xD0|消す|0xE0
 COMBO.en=show|0xD0|delete|0xE0
-AUTHOR=出典:aeraさんの書き込みより\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#we4f247d
-AUTHOR.zh=从aera的写\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#we 4 f 247 d。
-AUTHOR.en=From aera's write\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#we 4 f 247 d.
+AUTHOR=出典:aeraさんの書き込みより\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=从aera的写\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=From aera's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 COMBO.zh=显示|0xD0|消除|0xE0
 

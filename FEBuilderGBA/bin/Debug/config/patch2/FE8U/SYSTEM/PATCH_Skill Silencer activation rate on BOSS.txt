@@ -13,9 +13,9 @@ INFO=ボスに対して瞬殺が発動する確率を設定します。\r\n設�
 INFO.en=Modifies the Silencer activation rate vs boss units in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
 INFO.zh=设置瞬间杀人的概率给老板。\r\n要设置的值是一次致命一击是瞬发击杀的概率。
 
-AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c
-AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c。
-AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ye4bed5c.
+AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems

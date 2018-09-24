@@ -13,9 +13,9 @@ INFO=このパッチは、見習い職がLv10で勝手にCCするのを禁止し
 INFO.en=Toggle automatic promotion events for trainee classes upon reaching level 10.\r\n
 INFO.zh=该补丁禁止学徒CC在10级任意CC。
 
-AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#c2dfa8c9
-AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#c2dfa8c9
-AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#c2dfa8c9
+AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 COMBO.en=Auto-Promote Disabled|0xC0 0x46|Auto-Promote Enabled|0x00 0xDA
 COMBO.zh=不要随意让CC|0xC0 0x46|我们自私地做CC吧|0x00 0xDA

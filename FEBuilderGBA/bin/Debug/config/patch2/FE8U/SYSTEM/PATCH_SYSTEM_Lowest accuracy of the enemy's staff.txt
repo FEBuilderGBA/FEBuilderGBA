@@ -13,6 +13,6 @@ INFO=敵AIが杖を使うかどうかを判別するために利用する最低�
 INFO.en=Value specifies a minimum hit percentage.\r\nEnemies will only target units with Status Staves if the hit% exceeds this value.\r\n
 INFO.zh=指定用于确定敌方AI是否使用手杖的最低命中率。\r\n具有高魔法防御的角色不会使用手杖，因为手杖的命中率会更低。
 
-AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
-AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
-AUTHOR.en=aera http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#g5c65504
+AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

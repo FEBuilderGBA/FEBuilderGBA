@@ -12,10 +12,10 @@ COMBO=Default|0x00 0x16|Fix|0x00 0x0E
 COMBO.zh=不修正|0x00 0x16|修改|0x00 0x0E
 
 
-AUTHOR=出典元:http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ddef7ec7
+AUTHOR=出典元:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
-AUTHOR.zh=来源:http://ngmansion。xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ddef 7ec 7。
+AUTHOR.zh=来源:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-AUTHOR.en=Source: http://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#ddef 7ec 7.
+AUTHOR.en=Source: https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 

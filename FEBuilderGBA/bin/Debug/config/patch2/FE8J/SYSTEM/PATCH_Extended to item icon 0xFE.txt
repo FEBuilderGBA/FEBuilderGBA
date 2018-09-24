@@ -10,11 +10,11 @@ ADDRESS=0x034FC
 COMBO=C0まで|0xC0 0x01 0x00 0x01 0x10 0x6E 0x02 0x02|FEまで拡張|0xFE 0x01 0x00 0x01 0x90 0x6E 0x02 0x02
 COMBO.zh=直到C0|0xC0 0x01 0x00 0x01 0x10 0x6E 0x02 0x02|扩展到FE|0xFE 0x01 0x00 0x01 0x90 0x6E 0x02 0x02
 
-AUTHOR=出典:aeraさんの資料より\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k8f549eb
+AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-AUTHOR.zh=来源:从aera的数据\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k8f549eb
+AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-AUTHOR.en=Source: From aera's data\r\nhttp://ngmansion.xyz/wiki/hackfe/index.php?%E3%83%91%E3%83%83%E3%83%81#k8f549eb.
+AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 COMBO.en=Up to C0|0xC0 0x01 0x00 0x01 0x10 0x6E 0x02 0x02|Extended to FE|0xFE 0x01 0x00 0x01 0x90 0x6E 0x02 0x02
 
