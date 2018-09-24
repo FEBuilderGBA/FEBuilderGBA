@@ -2038,6 +2038,9 @@ Some maps freeze unless you enter from the world map.\r\nIn that case, please us
 :ワールドマップを利用する場合は、ワールドマップの設定を正しく行ってください。\r\n設定に失敗すると、序章に戻ったり、フリーズする原因になります。
 When using the world map please correctly set the world map.\r\nFailure to do so may cause you to return to the introduction or freeze.
 
+:DISAで自軍ユニットを消す場合は、後でREVEALで再加入させてください。ユニットに離脱状態(Escape)フラグがセットされ、パーティから離れている状態になります。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、離脱状態にはなりません。
+If you using to clear your unit at "DISA", please re-join later with "REVEAL". The Escape flag is set in the unit and it is away from the party.\r\n"CLEA" is recommended when you want to erase a unit with a production. "CLEA" will erase all units but will not set Escape flag.
+
 :この領域は利用できません
 Unable to use this area.
 
@@ -4996,6 +4999,9 @@ Road Movement Editor
 :ソングトラック
 Song Track
 
+:ワールドマップBGM
+World Map BGM
+
 :辞書
 Dictionary
 
@@ -6321,9 +6327,6 @@ Event ID (Plist)
 
 :壊れる壁HP
 Destructible Wall HP
-
-:ワールドマップBGM
-World Map BGM
 
 :友軍BGM
 NPC BGM
@@ -10591,6 +10594,9 @@ Update Check
 :ROMを開く
 Open ROM
 
+:この拠点が、次の目的地となったときに再生するBGMを選択します。
+Select the BGM to play when this base becomes the next destination.
+
 :対応するワールドマップイベント({0})が存在しません。
 The corresponding world map event ({0}) doesn't exist.
 
@@ -10738,11 +10744,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:DISAで自軍ユニットを消す場合は、後でREVEALで再加入させてください。ユニットに離脱状態(Escape)フラグがセットされ、パーティから離れている状態になります。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、離脱状態にはなりません。
-If you using to clear your unit at "DISA", please re-join later with "REVEAL". The Escape flag is set in the unit and it is away from the party.\r\n"CLEA" is recommended when you want to erase a unit with a production. "CLEA" will erase all units but will not set Escape flag.
-
-:ワールドマップBGM
-World Map BGM
-
-:この拠点が、次の目的地となったときに再生するBGMを選択します。
-Select the BGM to play when this base becomes the next destination.

@@ -7487,3 +7487,9 @@ r3=X tile position of menu of the right	{U}
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	Forced game over	{J}
 08018D04	AreAnyPlayerUnitDead	{J}
+080021A8	Acquire playing BGM	{J}
+08002258	Acquire playing BGM	{U}
+080BEDE8	BGM selection of world map	{J}
+080B9F54	BGM selection of world map	{U}
+080c1e20	Acquire the base ID of the next destination in the world map	{J}
+080bd014	Acquire the base ID of the next destination in the world map	{U}

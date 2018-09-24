@@ -7421,3 +7421,9 @@ r3=X tile position of menu of the right	{U}
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	强迫游戏结束	{J}
 08018D04	AreAnyPlayerUnitDead	{J}
+080021A8	获得播放BGM	{J}
+08002258	获得播放BGM	{U}
+080BEDE8	BGM选择世界地图	{J}
+080B9F54	BGM选择世界地图	{U}
+080c1e20	获取世界地图中下一个目的地的基本ID	{J}
+080bd014	获取世界地图中下一个目的地的基本ID	{U}

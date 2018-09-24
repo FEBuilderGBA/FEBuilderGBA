@@ -1385,12 +1385,15 @@ namespace FEBuilderGBA
                 }
             }
 
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer());
             uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai1_pointer());
             for (int i = AI1.Count; i < count; i++)
             {
                 AI1st p = new AI1st();
 
-                string str = U.ToHexString(i) + "=" + R._("追加AI:") + U.ToHexString(i);
+                string str = U.ToHexString(i) + "=" 
+                    + R._("追加AI:") 
+                    + GetAINameByAddrOrID(i, addr + ((uint)i * 4));
                 p.Name = R._(str);
                 AI1.Add(p);
             }
@@ -1428,16 +1431,33 @@ namespace FEBuilderGBA
                 }
             }
 
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer());
             uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai2_pointer());
             for (int i = AI2.Count; i < count; i++)
             {
                 AI2st p = new AI2st();
 
-                string str = U.ToHexString(i) + "=" + R._("追加AI:") + U.ToHexString(i);
+                string str = U.ToHexString(i) + "=" 
+                    + R._("追加AI:") 
+                    + GetAINameByAddrOrID(i, addr + ((uint)i * 4));
                 p.Name = R._(str);
                 AI2.Add(p);
             }
         }
+
+        static string GetAINameByAddrOrID(int i, uint addr)
+        {
+            if (U.isSafetyOffset(addr))
+            {
+                uint c = Program.ROM.p32(addr);
+                if (U.isSafetyOffset(c))
+                {
+                    return InputFormRef.GetCommentSA(c);
+                }
+            }
+            return U.ToHexString(i);
+        }
+
         public static string GetAIName1(uint ai)
         {
             if (ai >= AI1.Count)

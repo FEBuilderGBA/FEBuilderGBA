@@ -76,12 +76,22 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
 
-            EventUnitForm.PreLoadResourceAI1(U.ConfigDataFilename("ai1_"));
-            EventUnitForm.PreLoadResourceAI2(U.ConfigDataFilename("ai2_"));
+            ReloadAISetting();
 
             eearg.IsReload = true;
         }
-
+        //AI設定の再読み込み.
+        void ReloadAISetting()
+        {
+            if (this.FilterComboBox.SelectedIndex == 1)
+            {
+                EventUnitForm.PreLoadResourceAI2(U.ConfigDataFilename("ai2_"));
+            }
+            else
+            {
+                EventUnitForm.PreLoadResourceAI1(U.ConfigDataFilename("ai1_"));
+            }
+        }
         
         EventScript AIScriptDic;
         public InputFormRef InputFormRef;
@@ -1365,12 +1375,15 @@ namespace FEBuilderGBA
 
             Program.Undo.Push(undodata);
 
-            U.ReSelectList(this.AddressList);
+            ReloadAISetting();
+
+            InputFormRef.ReloadAddressList();
+//            U.ReSelectList(this.AddressList);
 
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
             InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
-
         }
+
 
         private MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
