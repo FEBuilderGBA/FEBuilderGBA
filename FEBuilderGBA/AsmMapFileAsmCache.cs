@@ -79,11 +79,12 @@ namespace FEBuilderGBA
             AsmMapFile map = MakeInstant();
             if (IsStopFlag) return map;
 
+            List<DisassemblerTrumb.LDRPointer> ldrmap;
 #if !DEBUG 
             try
             {
 #endif
-            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+            ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
@@ -94,17 +95,19 @@ namespace FEBuilderGBA
             }
 #endif
 
+            List<Address> structlist;
 #if !DEBUG 
             try
             {
 #endif
-            List<Address> structlist = U.MakeAllStructPointersList(false); //既存の構造体
+            structlist = U.MakeAllStructPointersList(false); //既存の構造体
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
             catch (Exception e)
             {
                 Log.Error(e.ToString() );
+                return map;
             }
 #endif
 
