@@ -5121,17 +5121,19 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string scriptbin = U.cut(eventscript,"{$","}");
+            string error = CheckIFFast(st);
+            if (error != "I")
+            {
+                return;
+            }
+
+            string scriptbin = U.cut(eventscript, "{$", "}");
             scriptbin = U.skip(scriptbin, ":");
             if (scriptbin == "")
             {
-                string error = CheckIFFast(st);
-                if (error == "")
-                {
-                    return;
-                }
+                return;
             }
-            else
+
             {
                 string basedir = Path.GetDirectoryName(st.PatchFileName);
                 string filename = Path.Combine(basedir, scriptbin);
@@ -5169,7 +5171,7 @@ namespace FEBuilderGBA
                 return;
             }
             string error = CheckIFFast(st);
-            if (error == "")
+            if (error != "I")
             {
                 return;
             }
