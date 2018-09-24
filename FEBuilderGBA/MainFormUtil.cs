@@ -2028,6 +2028,10 @@ namespace FEBuilderGBA
             {
                 return R._("ゲーム間のポインタの位置を自動的に計算します。\r\nゲームやバージョンを超えた移植に利用します。") + GetForHighLevelUser();
             }
+            if (name == "WorldMapBGMButton")
+            {
+                return R._("ワールドマップで再生するBGMを設定します。");
+            }
             return "";
         }
         public static void MakeExplainFunctions(Control controlPanel)

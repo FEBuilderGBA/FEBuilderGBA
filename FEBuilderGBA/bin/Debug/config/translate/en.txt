@@ -10744,3 +10744,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:ワールドマップで再生するBGMを設定します。
+Set BGM to be played on World Map.

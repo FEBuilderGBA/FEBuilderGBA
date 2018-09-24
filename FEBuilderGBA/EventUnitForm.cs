@@ -1431,7 +1431,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer());
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer());
             uint count = AIScriptForm.DataCount(Program.ROM.RomInfo.ai2_pointer());
             for (int i = AI2.Count; i < count; i++)
             {
