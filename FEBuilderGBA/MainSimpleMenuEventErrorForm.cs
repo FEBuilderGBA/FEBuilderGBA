@@ -346,6 +346,16 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("離脱ポイント");
             }
+            else if (dataType == FELint.Type.IMAGE_UNIT_WAIT_ICON)
+            {
+                show_tag = tag;
+                text = R._("待機アイコン");
+            }
+            else if (dataType == FELint.Type.IMAGE_UNIT_MOVE_ICON)
+            {
+                show_tag = tag;
+                text = R._("移動アイコン");
+            }
             else
             {
                 text = R._("不明");
@@ -821,6 +831,16 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.MAPEXIT)
             {
                 InputFormRef.JumpForm<MapExitPointForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.IMAGE_UNIT_WAIT_ICON)
+            {
+                InputFormRef.JumpForm<ImageUnitWaitIconFrom>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.IMAGE_UNIT_MOVE_ICON)
+            {
+                InputFormRef.JumpForm<ImageUnitMoveIconFrom>(tag);
                 return;
             }
 

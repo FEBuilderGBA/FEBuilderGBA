@@ -79,11 +79,34 @@ namespace FEBuilderGBA
             AsmMapFile map = MakeInstant();
             if (IsStopFlag) return map;
 
+#if !DEBUG 
+            try
+            {
+#endif
             List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
             if (IsStopFlag) return map;
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+                return map;
+            }
+#endif
 
+#if !DEBUG 
+            try
+            {
+#endif
             List<Address> structlist = U.MakeAllStructPointersList(false); //既存の構造体
             if (IsStopFlag) return map;
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+            }
+#endif
 
             //たまにファイルが見つかれないなどのありえない状況が起こりうるらしい。
             //アンチウイルスが誤爆してファイルを隔離したり消したりしているんだろうか?
@@ -279,10 +302,29 @@ namespace FEBuilderGBA
         }
         void MakeFullEndCallback(IAsyncResult ar)
         {
-            AsyncMethodCaller caller = (AsyncMethodCaller)ar.AsyncState;
-            AsmMapFile map = caller.EndInvoke(ar);
+            AsyncMethodCaller caller;
+            AsmMapFile map;
+#if !DEBUG 
+            try
+            {
+#endif
+                caller = (AsyncMethodCaller)ar.AsyncState;
+                map = caller.EndInvoke(ar);
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error("MakeFullEndCallback");
+                Log.Error(e.ToString());
 
-            if (IsStopFlag)
+                Caller = null;
+                AsyncResult = null;
+                IsStopFlag = false;
+                return;
+            }
+#endif
+
+                if (IsStopFlag)
             {
                 Caller = null;
                 AsyncResult = null;

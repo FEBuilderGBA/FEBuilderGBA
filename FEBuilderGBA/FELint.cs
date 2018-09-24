@@ -64,6 +64,8 @@ namespace FEBuilderGBA
             ,ITEM_USAGE_POINTER //アイテム利用効果
             ,PATCH   //パッチ
             ,MAPEXIT  //離脱ポイント
+            ,IMAGE_UNIT_MOVE_ICON  //ユニット移動画像
+            ,IMAGE_UNIT_WAIT_ICON  //ユニット待機画像
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)
         {
@@ -483,6 +485,29 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        public static void CheckAPErrorsPointer(uint apAddress, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(apAddress);
+            ImageUtilAP.CheckAPErrors(p, errors, cond, addr, tag);
+        }
+        public static void CheckAPErrors(uint apAddress, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (!U.isSafetyOffset(apAddress))
+            {//無効なポインタ
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(apAddress)), tag));
+            }
+            ImageUtilAP.CheckAPErrors(apAddress, errors, cond, addr, tag);
+        }
+
+
+        public static void CheckLZ77ImageErrorsPointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(lz77pointer);
+            CheckLZ77ImageErrors(p,errors,cond ,addr, width, min_height, tag);
+        }
+
         public static void CheckLZ77ImageErrors(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyOffset(lz77addr))
@@ -601,6 +626,12 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem PatchForm")) return;
             PatchForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageUnitMoveIconFrom")) return;
+            ImageUnitMoveIconFrom.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageUnitWaitIconFrom")) return;
+            ImageUnitWaitIconFrom.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

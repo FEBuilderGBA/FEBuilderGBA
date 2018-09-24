@@ -862,7 +862,8 @@ namespace FEBuilderGBA
                     , axsItems[i].name), cid));
             }
         }
-        //全データの取得
+
+        //エラーチェック
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
            bool isFE6 = (Program.ROM.RomInfo.version() == 6);

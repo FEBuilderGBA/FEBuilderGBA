@@ -34,23 +34,23 @@
             this.OpenLastROMButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.UpdateCheckButton = new System.Windows.Forms.Button();
-            this.VersionLabel = new System.Windows.Forms.Label();
             this.OpenROMButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.VersionLabel = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.VersionLabel);
             this.panel1.Controls.Add(this.ManButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.OpenLastROMButton);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.UpdateCheckButton);
-            this.panel1.Controls.Add(this.VersionLabel);
             this.panel1.Controls.Add(this.OpenROMButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -108,16 +108,6 @@
             this.UpdateCheckButton.UseVisualStyleBackColor = true;
             this.UpdateCheckButton.Click += new System.EventHandler(this.UpdateCheckButton_Click);
             // 
-            // VersionLabel
-            // 
-            this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(933, 233);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(38, 18);
-            this.VersionLabel.TabIndex = 4;
-            this.VersionLabel.Text = "Ver:";
-            this.VersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // OpenROMButton
             // 
             this.OpenROMButton.Location = new System.Drawing.Point(214, 346);
@@ -156,6 +146,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // VersionLabel
+            // 
+            this.VersionLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.VersionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VersionLabel.Location = new System.Drawing.Point(924, 235);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.ReadOnly = true;
+            this.VersionLabel.Size = new System.Drawing.Size(193, 18);
+            this.VersionLabel.TabIndex = 9;
+            this.VersionLabel.Text = "Ver:";
+            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -178,7 +179,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button OpenROMButton;
-        private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.Button UpdateCheckButton;
         private System.Windows.Forms.Button OpenLastROMButton;
         private System.Windows.Forms.Button ManButton;
@@ -186,5 +186,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox VersionLabel;
     }
 }

@@ -42,15 +42,29 @@ namespace FEBuilderGBA
 
         uint BaseAddr;
         uint Length;
+        string ErrorMessage;
 
         public uint GetLength()
         {
             return U.Padding4(this.Length);
         }
+        public string GetErrorMessage()
+        {
+            if (ErrorMessage == null)
+            {
+                return "";
+            }
+            return ErrorMessage;
+        }
 
-        public void Parse(uint addr)
+        public bool Parse(uint addr)
         {
             this.BaseAddr = addr;
+            if (!U.isSafetyOffset(addr + 4 - 1))
+            {//おかしなデータ
+                this.ErrorMessage = R.Error("APのデータ({0})が壊れています。ヘッダがROM終端を超えています", U.To0xHexString(this.BaseAddr));
+                return false;
+            }
 
             uint frameDataOffset = Program.ROM.u16(addr);
             uint animeTableOffset = Program.ROM.u16(addr + 2);
@@ -62,26 +76,55 @@ namespace FEBuilderGBA
 
             //フレームはアニメ開始地点まで
             uint end = this.BaseAddr + animeTableOffset;
+            if (!U.isSafetyOffset(end - 1))
+            {//おかしなデータ
+                this.ErrorMessage = R.Error("APのデータ({0})が壊れています。フレーム終端がROM終端を超えました。({1})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr));
+                return false;
+            }
+
             for (addr = this.BaseAddr + frameDataOffset; addr < end; addr += 2)
             {
                 uint f = Program.ROM.u16(addr);
                 if (minData > f)
                 {
                     minData = f;
-                
                 }
-                FrameArray.Add(ParseFrame(this.BaseAddr + frameDataOffset + f));
+                FrameArr farr = ParseFrame(this.BaseAddr + frameDataOffset + f);
+                if (farr == null)
+                {
+                    return false;
+                }
+                FrameArray.Add(farr);
+            }
+
+            if (minData >= 0x100)
+            {//おかしなデータ
+                this.ErrorMessage = R.Error("APのデータ({0})が壊れています。Animeデータの個数がありえない数です({1})。", U.To0xHexString(this.BaseAddr), minData);
+                return false;
             }
 
             //アニメの終了地点は最初のフレームの開始位置まで
             end = this.BaseAddr + frameDataOffset + minData;
+            if (!U.isSafetyOffset(end - 1))
+            {//おかしなデータ
+                this.ErrorMessage = R.Error("APのデータ({0})が壊れています。Anime終端がROM終端を超えました。({1})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr));
+                return false;
+            }
+
             for (addr = this.BaseAddr + animeTableOffset; addr < end; addr += 2)
             {
                 uint a = Program.ROM.u16(addr);
-                AnimeArray.Add(ParseAnime(this.BaseAddr + animeTableOffset + a));
+
+                AnimeArr aarr = ParseAnime(this.BaseAddr + animeTableOffset + a);
+                if (aarr == null)
+                {
+                    return false;
+                }
+                AnimeArray.Add(aarr);
             }
 
             UpdateLength(addr);
+            return true;
         }
         void UpdateLength(uint addr)
         {
@@ -100,6 +143,12 @@ namespace FEBuilderGBA
 
             for (; ; addr += 4)
             {
+                if (!U.isSafetyOffset(addr + 2 - 1))
+                {//おかしなデータ
+                    this.ErrorMessage = R.Error("APのデータ({0})が壊れています。Animeをスキャン中に、ROM終端を超えました。({1} @ {2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr), arr.Animes.Count);
+                    return null;
+                }
+
                 Anime a = new Anime();
                 a.Wait = Program.ROM.u16(addr + 0);
                 a.Frame = Program.ROM.u16(addr + 2);
@@ -124,10 +173,21 @@ namespace FEBuilderGBA
             if ((count & 0x8000) == 0x8000)
             {//回転などのデータがある場合
                 rotateCount = count & 0x7FFF;
+                if (rotateCount > 0x100)
+                {//おかしなデータ
+                    this.ErrorMessage = R.Error("APのデータ({0})が壊れています。OAM回転データの個数がありえない数です({1})。", U.To0xHexString(this.BaseAddr) , rotateCount );
+                    return null;
+                }
 
                 arr.UseRorate = true;
                 for (int i = 0; i < rotateCount; addr += 6, i++)
                 {
+                    if (! U.isSafetyOffset(addr+ 6 - 1))
+                    {//おかしなデータ
+                        this.ErrorMessage = R.Error("APのデータ({0})が壊れています。OAM回転をスキャン中に、ROM終端を超えました。({1}@{2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr) , i);
+                        return null;
+                    }
+
                     Frame f = new Frame();
                     f.alpha = Program.ROM.u16(addr + 0);
                     f.xMag = Program.ROM.u16(addr + 2);
@@ -138,8 +198,20 @@ namespace FEBuilderGBA
                 addr += 2;
             }
 
+            if (count > 0x100)
+            {//おかしなデータ
+                this.ErrorMessage = R.Error("APのデータ({0})が壊れています。データの個数がありえない数です({1})。", U.To0xHexString(this.BaseAddr), count);
+                return null;
+            }
+
             for (int i = 0; i < count; addr += 6, i++)
             {
+                if (!U.isSafetyOffset(addr + 6 - 1))
+                {//おかしなデータ
+                    this.ErrorMessage = R.Error("APのデータ({0})が壊れています。APをスキャン中に、ROM終端を超えました。({1} @ {2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr) , i);
+                    return null;
+                }
+
                 if (i < rotateCount)
                 {//既に回転データを入れている場合
                     Frame f = arr.Frames[i];
@@ -160,6 +232,12 @@ namespace FEBuilderGBA
             //Tile
             for (int i = 0; i < count; addr += 2, i++)
             {
+                if (!U.isSafetyOffset(addr + 2 - 1))
+                {//おかしなデータ
+                    this.ErrorMessage = R.Error("APのデータ({0})が壊れています。Tileをスキャン中に、ROM終端を超えました。({1} @ {2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr), i);
+                    return null;
+                }
+
                 Frame f = arr.Frames[i];
                 f.TileGfx = Program.ROM.u16(addr + 0);
             }
@@ -168,11 +246,29 @@ namespace FEBuilderGBA
             return arr;
         }
 
+        public static void CheckAPErrors(uint apAddress, List<FELint.ErrorSt> errors, FELint.Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            ImageUtilAP ap = new ImageUtilAP();
+            bool r = ap.Parse(apAddress);
+            if (!r)
+            {//エラー
+                errors.Add(new FELint.ErrorSt(cond
+                    , U.toOffset(addr)
+                    , ap.GetErrorMessage()
+                    , tag));
+            }
+        }
+
+
         //APのサイズを自動的に計算します.
         public static uint CalcAPLength(uint addr)
         {
             ImageUtilAP ap = new ImageUtilAP();
-            ap.Parse(addr);
+            bool r = ap.Parse(addr);
+            if (!r)
+            {//サイズ不明
+                return 0;
+            }
             uint newapLen = ap.GetLength();
 /*
             //やはりこちらの方がいいのでは・・・?

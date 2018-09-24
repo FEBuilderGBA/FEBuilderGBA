@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace FEBuilderGBA
 {
@@ -85,7 +86,7 @@ namespace FEBuilderGBA
         private void OpenROMButton_Click(object sender, EventArgs e)
         {
             string romfilename = Program.OpenROMDialog();
-            bool r = MainFormUtil.Open(this, romfilename , false,"");
+            bool r = MainFormUtil.Open(this, romfilename, false, "");
             if (r)
             {
                 this.Close();
@@ -112,7 +113,7 @@ namespace FEBuilderGBA
 
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
-
+            this.VersionLabel.BackColor = this.pictureBox1.BackColor;
         }
     }
 }

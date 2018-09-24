@@ -312,6 +312,18 @@ namespace FEBuilderGBA
                 }
             }
         }
+        //エラーチェック
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                FELint.CheckLZ77ImageErrorsPointer(addr + 4
+                    , errors, FELint.Type.IMAGE_UNIT_WAIT_ICON, addr, 32, 0, (uint)i);
+            }
+        }
 
     }
 }

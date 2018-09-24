@@ -231,28 +231,41 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
             string name = "MoveUnitIcon";
+            InputFormRef InputFormRef = Init(null);
+            FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 , 4});
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                InputFormRef InputFormRef = Init(null);
-                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 , 4});
+                name = "MoveUnitIcon " + U.To0xHexString(i);
 
-                uint addr = InputFormRef.BaseAddress;
-                for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
-                {
-                    name = "MoveUnitIcon " + U.To0xHexString(i);
+                FEBuilderGBA.Address.AddLZ77Pointer(list
+                    , addr + 0 
+                    , name
+                    , isPointerOnly
+                    , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
 
-                    FEBuilderGBA.Address.AddLZ77Pointer(list
-                        , addr + 0 
-                        , name
-                        , isPointerOnly
-                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
-
-                    FEBuilderGBA.Address.AddAPPointer(list
-                        , addr + 4
-                        , name + " AP"
-                        , isPointerOnly);
-                }
+                FEBuilderGBA.Address.AddAPPointer(list
+                    , addr + 4
+                    , name + " AP"
+                    , isPointerOnly);
             }
         }
+        //エラーチェック
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                FELint.CheckLZ77ImageErrorsPointer(addr + 0
+                    , errors, FELint.Type.IMAGE_UNIT_MOVE_ICON, addr, 32, 0, (uint)i);
+                FELint.CheckAPErrorsPointer(addr + 4
+                    , errors, FELint.Type.IMAGE_UNIT_MOVE_ICON, addr, (uint)i);
+            }
+        }
+
         public static uint ExpandsArea(Form form, uint current_count, uint newdatacount, Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = Init(null);

@@ -88,6 +88,8 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.BORDER_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BORDER_W10 = new System.Windows.Forms.NumericUpDown();
+            this.BORDER_J_10 = new System.Windows.Forms.Label();
             this.BORDER_P0 = new System.Windows.Forms.NumericUpDown();
             this.BORDER_P4 = new System.Windows.Forms.NumericUpDown();
             this.BORDER_W8 = new System.Windows.Forms.NumericUpDown();
@@ -112,8 +114,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BORDER_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.BORDER_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.BORDER_W10 = new System.Windows.Forms.NumericUpDown();
-            this.BORDER_J_10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.WMPointIconTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WMRoad_ZIMAGE)).BeginInit();
@@ -141,6 +141,7 @@
             this.tabPage4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W8)).BeginInit();
@@ -151,7 +152,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -865,6 +865,7 @@
             // 
             this.BORDER_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BORDER_AddressList.FormattingEnabled = true;
+            this.BORDER_AddressList.IntegralHeight = false;
             this.BORDER_AddressList.ItemHeight = 18;
             this.BORDER_AddressList.Location = new System.Drawing.Point(0, 25);
             this.BORDER_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -890,6 +891,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(757, 381);
             this.panel2.TabIndex = 74;
+            // 
+            // BORDER_W10
+            // 
+            this.BORDER_W10.Hexadecimal = true;
+            this.BORDER_W10.Location = new System.Drawing.Point(161, 101);
+            this.BORDER_W10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.BORDER_W10.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.BORDER_W10.Name = "BORDER_W10";
+            this.BORDER_W10.Size = new System.Drawing.Size(85, 25);
+            this.BORDER_W10.TabIndex = 71;
+            // 
+            // BORDER_J_10
+            // 
+            this.BORDER_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BORDER_J_10.Location = new System.Drawing.Point(8, 100);
+            this.BORDER_J_10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BORDER_J_10.Name = "BORDER_J_10";
+            this.BORDER_J_10.Size = new System.Drawing.Size(148, 31);
+            this.BORDER_J_10.TabIndex = 72;
+            this.BORDER_J_10.Text = "??";
+            this.BORDER_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BORDER_P0
             // 
@@ -952,7 +978,7 @@
             this.BORDER_J_4.Name = "BORDER_J_4";
             this.BORDER_J_4.Size = new System.Drawing.Size(148, 31);
             this.BORDER_J_4.TabIndex = 69;
-            this.BORDER_J_4.Text = "AP";
+            this.BORDER_J_4.Text = "AP?";
             this.BORDER_J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BORDER_J_0
@@ -1172,31 +1198,6 @@
             this.BORDER_ReadStartAddress.Size = new System.Drawing.Size(125, 25);
             this.BORDER_ReadStartAddress.TabIndex = 0;
             // 
-            // BORDER_W10
-            // 
-            this.BORDER_W10.Hexadecimal = true;
-            this.BORDER_W10.Location = new System.Drawing.Point(161, 101);
-            this.BORDER_W10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.BORDER_W10.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.BORDER_W10.Name = "BORDER_W10";
-            this.BORDER_W10.Size = new System.Drawing.Size(85, 25);
-            this.BORDER_W10.TabIndex = 71;
-            // 
-            // BORDER_J_10
-            // 
-            this.BORDER_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BORDER_J_10.Location = new System.Drawing.Point(8, 100);
-            this.BORDER_J_10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.BORDER_J_10.Name = "BORDER_J_10";
-            this.BORDER_J_10.Size = new System.Drawing.Size(148, 31);
-            this.BORDER_J_10.TabIndex = 72;
-            this.BORDER_J_10.Text = "??";
-            this.BORDER_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // WorldMapImageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1236,6 +1237,7 @@
             this.tabPage4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_W8)).EndInit();
@@ -1247,7 +1249,6 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BORDER_ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BORDER_W10)).EndInit();
             this.ResumeLayout(false);
 
         }
