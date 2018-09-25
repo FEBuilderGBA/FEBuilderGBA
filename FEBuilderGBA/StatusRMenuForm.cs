@@ -15,12 +15,15 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             this.InputFormRef = Init(this);
+            this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.FilterComboBox.BeginUpdate();
             this.FilterComboBox.Items.Add(R._("0=ステータスパラメータ"));
             this.FilterComboBox.Items.Add(R._("1=所持アイテム"));
             this.FilterComboBox.Items.Add(R._("2=武器レベル"));
+            this.FilterComboBox.Items.Add(R._("3=戦闘予測1"));
+            this.FilterComboBox.Items.Add(R._("4=戦闘予測2"));
             this.FilterComboBox.EndUpdate();
             FilterComboBox.SelectedIndex = 0;
         }
@@ -175,47 +178,74 @@ namespace FEBuilderGBA
             {
                 this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu3_pointer()));
             }
+            else if (selected == 3)
+            {
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu4_pointer()));
+            }
+            else if (selected == 4)
+            {
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu5_pointer()));
+            }
+        }
+
+        static void MakeAllDataLengthSub(List<Address> list, uint p,uint pointer,Dictionary<uint, bool> foundDic, uint[] pointerIndexes)
+        {
+            string name = "RMENU " + U.To0xHexString( Program.ROM.u16(p + 18) );
+            if (!foundDic.ContainsKey(p))
+            {
+                list.Add(new Address(p, 28, U.NOT_FOUND, name,FEBuilderGBA.Address.DataTypeEnum.MIX ,28 , pointerIndexes));
+            }
+            foundDic[p] = true;
+
+            uint pp;
+            pp = Program.ROM.p32(p + 0);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeAllDataLengthSub(list, pp, p + 0, foundDic , pointerIndexes);
+            }
+            pp = Program.ROM.p32(p + 4);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeAllDataLengthSub(list, pp, p + 4, foundDic, pointerIndexes);
+            }
+            pp = Program.ROM.p32(p + 8);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeAllDataLengthSub(list, pp, p + 8, foundDic, pointerIndexes);
+            }
+            pp = Program.ROM.p32(p + 12);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeAllDataLengthSub(list, pp, p + 12, foundDic, pointerIndexes);
+            }
+
+            FEBuilderGBA.Address.AddFunction(list
+                , p + 20
+                , name + "+P20"
+                );
+            FEBuilderGBA.Address.AddFunction(list
+                , p + 24
+                , name + "+P24"
+                );
         }
 
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
-            uint[] addlist = new uint[]{ Program.ROM.RomInfo.status_rmenu1_pointer(),Program.ROM.RomInfo.status_rmenu2_pointer(),Program.ROM.RomInfo.status_rmenu3_pointer()};
+            Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
+            uint[] pointerIndexes = new uint[] { 0, 4, 8, 12, 20, 24 };
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu1_pointer()
+                , Program.ROM.RomInfo.status_rmenu2_pointer()
+                , Program.ROM.RomInfo.status_rmenu3_pointer()
+                , Program.ROM.RomInfo.status_rmenu4_pointer()
+                , Program.ROM.RomInfo.status_rmenu5_pointer()
+            };
 
             for (int n = 0; n < addlist.Length; n++)
             {
-                uint addr = addlist[n];
-
-                InputFormRef InputFormRef = Init(null);
-                List<U.AddrResult> makelist = InputFormRef.MakeList(addr);
-                string name = "RMENU" + n;
-                FEBuilderGBA.Address.AddAddress(list
-                    , InputFormRef
-                    , name
-                    , new uint[] { 0,4,8,12,20,24}
-                    , FEBuilderGBA.Address.DataTypeEnum.InputFormRef_MIX
-                    );
-
-                for (int i = 0; i < makelist.Count ; i++)
-                {
-                    uint p = makelist[i].addr;
-
-                    uint paddr = Program.ROM.p32(20 + p);
-                    FEBuilderGBA.Address.AddAddress(list,
-                            DisassemblerTrumb.ProgramAddrToPlain(paddr)
-                        , 0 //プログラムなので長さ不明
-                        , p + 20
-                        , name + "+P20"
-                        , FEBuilderGBA.Address.DataTypeEnum.ASM);
-
-                    paddr = Program.ROM.p32(24 + p);
-                    FEBuilderGBA.Address.AddAddress(list,
-                            DisassemblerTrumb.ProgramAddrToPlain(paddr)
-                        , 0 //プログラムなので長さ不明
-                        , p + 24
-                        , name + "+P24"
-                        , FEBuilderGBA.Address.DataTypeEnum.ASM);
-                }
+                uint pointer = addlist[n];
+                uint p = Program.ROM.p32(pointer + 0);
+                MakeAllDataLengthSub(list, p, pointer, foundDic, pointerIndexes);
             }
         }
         public static void MakeTextIDArray(List<TextID> list)

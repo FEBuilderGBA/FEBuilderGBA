@@ -8709,42 +8709,6 @@ namespace FEBuilderGBA
             return ret;
         }
 
-        //アイテムリストを得る
-        public List<U.AddrResult> MakeList(uint baseaddr)
-        {
-            List<U.AddrResult> ret = new List<U.AddrResult>();
-
-            uint addr = baseaddr;
-
-            //終端
-            uint limitter = (uint)Program.ROM.Data.Length;
-            if (addr + this.BlockSize >= limitter)
-            {//終端を超えるので探索強制打ち切り.
-                return ret;
-            }
-
-            for (int i = 0; true ; i++)
-            {
-                if (! this.IsDataExistsCallback(i, addr))
-                {
-                    break;
-                }
-                U.AddrResult ar = this.LoopCallback(i, addr);
-                if (!ar.isNULL())
-                {
-                    ret.Add(ar);
-                }
-
-                addr = this.NextAddrCallback(addr);
-
-                if (addr + this.BlockSize > limitter)
-                {//終端を超えるので探索強制打ち切り.
-                    Debug.Assert(false);
-                    break;
-                }
-            }
-            return ret;
-        }
 
         public void ClearSelect(bool clearReadStartAddress)
         {

@@ -3377,22 +3377,22 @@ AP data ({0}) is corrupted.The number of Anime data is impossible number ({1}).
 AP data ({0}) is corrupted.Anime termination exceeded ROM end.({1}).
 
 :APのデータ({0})が壊れています。Animeをスキャン中に、ROM終端を超えました。({1} @ {2})
-AP data ({0}) is corrupted.I exceeded ROM end while scanning Anime.({1} @ {2}).
+AP data ({0}) is corrupted.Exceeded ROM end while scanning Anime.({1} @ {2}).
 
 :APのデータ({0})が壊れています。OAM回転データの個数がありえない数です({1})。
 AP data ({0}) is corrupted.The number of OAM rotation data is unlikely ({1}).
 
 :APのデータ({0})が壊れています。OAM回転をスキャン中に、ROM終端を超えました。({1}@{2})
-AP data ({0}) is corrupted.I exceeded ROM end while scanning OAM rotation.({1} @ {2}).
+AP data ({0}) is corrupted.Exceeded ROM end while scanning OAM rotation.({1} @ {2}).
 
 :APのデータ({0})が壊れています。データの個数がありえない数です({1})。
 AP data ({0}) is corrupted.The number of data is unlikely number ({1}).
 
 :APのデータ({0})が壊れています。APをスキャン中に、ROM終端を超えました。({1} @ {2})
-AP data ({0}) is corrupted.I ended ROM end while scanning AP.({1} @ {2}).
+AP data ({0}) is corrupted.Ended ROM end while scanning AP.({1} @ {2}).
 
 :APのデータ({0})が壊れています。Tileをスキャン中に、ROM終端を超えました。({1} @ {2})
-AP data ({0}) is corrupted.I ended ROM end while scanning Tile.({1} @ {2}).
+AP data ({0}) is corrupted.Ended ROM end while scanning Tile.({1} @ {2}).
 
 :CSA_Creatorにインポートする時には各行の#以降を削除してください。
 When importing to CSA_Creator delete # and after each line.
@@ -7994,7 +7994,7 @@ FEBuilderGBA Language
 Default Boot Screen
 
 :書き込み通知の表示時間
-Write Confirmation Displayed For...
+Write Confirmation Displayed For
 
 :0=簡易画面
 0=Simple w/ Chapter Focus

@@ -141,6 +141,8 @@ namespace FEBuilderGBA
         public uint status_rmenu1_pointer() { return 0x889D8; } // ステータス RMENU1
         public uint status_rmenu2_pointer() { return 0x889E0; } // ステータス RMENU2
         public uint status_rmenu3_pointer() { return 0x889F8; } // ステータス RMENU3
+        public uint status_rmenu4_pointer() { return 0x37450; } // 戦闘予測 RMENU4
+        public uint status_rmenu5_pointer() { return 0x37468; } // 戦闘予測 RMENU5
         public uint status_param1_pointer() { return 0x871BC; } // ステータス PARAM1
         public uint status_param2_pointer() { return 0x874F0; } // ステータス PARAM2
         public uint status_param3w_pointer() { return 0x0; } // ステータス PARAM3 武器 海外版には"剣"みたいな武器の属性表示がありません

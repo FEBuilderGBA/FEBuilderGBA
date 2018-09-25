@@ -140,6 +140,8 @@ namespace FEBuilderGBA
         uint status_rmenu1_pointer(); // ステータス RMENU1
         uint status_rmenu2_pointer(); // ステータス RMENU2
         uint status_rmenu3_pointer(); // ステータス RMENU3
+        uint status_rmenu4_pointer(); // 戦闘予測 RMENU4
+        uint status_rmenu5_pointer(); // 戦闘予測 RMENU5
         uint status_param1_pointer(); // ステータス PARAM1
         uint status_param2_pointer(); // ステータス PARAM2
         uint status_param3w_pointer(); // ステータス PARAM3 武器

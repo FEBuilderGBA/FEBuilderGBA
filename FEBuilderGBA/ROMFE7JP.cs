@@ -142,6 +142,8 @@ namespace FEBuilderGBA
         public uint status_rmenu1_pointer() { return 0x82288; } // ステータス RMENU1
         public uint status_rmenu2_pointer() { return 0x82290; } // ステータス RMENU2
         public uint status_rmenu3_pointer() { return 0x822a8; } // ステータス RMENU3
+        public uint status_rmenu4_pointer() { return 0x34700; } // 戦闘予測 RMENU4
+        public uint status_rmenu5_pointer() { return 0x34718; } // 戦闘予測 RMENU5
         public uint status_param1_pointer() { return 0x80bb4; } // ステータス PARAM1
         public uint status_param2_pointer() { return 0x80e80; } // ステータス PARAM2
         public uint status_param3w_pointer() { return 0x81220; } // ステータス PARAM3 武器

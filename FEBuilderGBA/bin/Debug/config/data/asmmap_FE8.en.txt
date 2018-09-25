@@ -2151,11 +2151,11 @@ r3=X tile position of menu of the right	{U}
 08002B90	WRAMRoutineGetter	This routine grabs and branches to a routine written in WRAM. This one draws text.	{U}
 03003740	WRAMPointer	There's a pointer to the routine here	{U}
 03003A8C	TextImageWriter	This is an ARM routine in WRAM that draws text. It's hard to follow, so you might want to skip it. I'll have plenty of notes here. 	r0=font	r1=location to write to	r2=character image	r3=overlap with last character	{U}
-08588240	FontColorTable	Shape Data Pointer table	{U}
+08588240	:08588273	FontColorTable	Shape Data Pointer table	{U}
+08577EF0	:08577F23	FontColorTable	Shape Data Pointer table	{J}
 08000540	CharSizeTable	{U}
 080192F4	MinimugGetter	Determines a unit's minimug	{U}
 08005988	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{U}
-085911C4	MMSizeTable	{U}
 08005924	MinimugWriter	{U}
 08005F9C	GenericMMGetter	{U}
 08005F9C	GenericMMPalGetter	{U}
@@ -2260,7 +2260,6 @@ r3=X tile position of menu of the right	{U}
 030036E0	WRAMPointer	There's a pointer to the routine here	{J}
 08000540	CharSizeTable	{J}
 08018FEC	MinimugGetter	Determines a unit's minimug	{J}
-085B8F5C	MMSizeTable	{J}
 0800582C	MinimugWriter	{J}
 08005EA0	GenericMMGetter	{J}
 08005EA0	GenericMMPalGetter	{J}

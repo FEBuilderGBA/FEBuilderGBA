@@ -866,3 +866,4 @@
 08007e78	FlushIntermediateOAMBuffer
 0800722c	AIS_ExecAll
 08008E00	转移一般士兵的面部图像的托盘
+0802bb0c	从地图编号，返回地图设定的地址的函数	RET=地图设置的地址	r0=您要检查的地图ID=地图章节
