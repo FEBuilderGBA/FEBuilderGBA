@@ -5129,7 +5129,7 @@ Edit up a unit that can support conversation.
 Edit the contents of the support conversation.
 
 :ユニットごとにどのクラスでどのパレットを利用するかを決定します。\r\nFE8では分岐CCが採用されているため、複雑な指定になっています。\r\nパレットを指定しないと汎用色で描画されます。
-For each unit, decide which class to use which palette.\r\nSince branch CC is adopted in FE 8, it is complicated designation.\r\nIf you do not specify a palette, it will be rendered with a generic color.
+For each unit, decide which class to use which palette.\r\nSince branch promotion is adopted in FE 8, it is complicated designation.\r\nIf you do not specify a palette, it will be rendered with a generic color.
 
 :支援のボーナス効果を設定します。
 Edit the bonus effect of support.

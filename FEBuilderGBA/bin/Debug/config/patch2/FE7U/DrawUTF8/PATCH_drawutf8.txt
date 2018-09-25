@@ -15,5 +15,5 @@ INFO=UTF8を出力できるように修正します.
 INFO.en=Patches the ROM to be able to output a utf8(such as All Lang).\r\nPrimarily used for translation purposes.
 INFO.zh=修复能够输出多字节字体。
 
-CONFLICT_IF:0x5BD6=0x00 0x00 0x00 0x49 0x8F 0x46
+CONFLICT_IF:0x5BD6=0x00 0x00 0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=DrawMultiByte
