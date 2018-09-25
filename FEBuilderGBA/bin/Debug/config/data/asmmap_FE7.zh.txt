@@ -3811,3 +3811,9 @@
 //This data is made with the aim of being readable by machine fast.
 080075C8	转移一般士兵的面部图像的托盘	{U}
 08007458	转移一般士兵的面部图像的托盘	{J}
+//This data is made with the aim of being readable by machine fast.
+080346A0	RMenu_Procs_BKSEL战斗预测对话关系	{J}
+080341C8	RMenu_Procs_BKSEL战斗预测对话关系	{U}
+08082A18	战斗预测对话框是注册RMenu的包装函数	{J}
+08070A0C	战斗预测对话框是注册RMenu的包装函数	{U}
+08CC26D4	:08CC2783	游戏系统引用的字符串ID	{U}

@@ -7492,3 +7492,25 @@ r3=X tile position of menu of the right	{U}
 080B9F54	BGM selection of world map	{U}
 080c1e20	Acquire the base ID of the next destination in the world map	{J}
 080bd014	Acquire the base ID of the next destination in the world map	{U}
+085911C4	:085911D7	MMSizeTable	{U}
+085B8F5C	:085B8F6F	MMSizeTable	{J}
+080374B0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{J}
+080373F0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{U}
+0808B414	Battle prediction dialog is a wrapper function to register RMenu	{J}
+08089188	Battle prediction dialog is a wrapper function to register RMenu	{U}
+08A73210	:08A732BF	Character string ID referred to by the game system	{J}
+08A01158	:08A01207	Character string ID referred to by the game system	{U}
+08670D40	:0867169F	What data related to live wand 1	0x0854	{U}
+086716A0	:08671FFF	What data 2 related to live wand 2	0x0854	{U}
+0866F774	:086700D3	What data related to live wand 3	0x1F	{U}
+086700D4	:086702D3	Live staff pallet relationship 1	{U}
+08672000	:0867221F	Palette of live cane relationship 2	{U}
+08672220	:0867243F	Data of live wand something	{U}
+0869D918	:0869E277	What data related to live wand 1	0x0854	{J}
+0869E278	:0869EBD7	What data 2 related to live wand 2	0x0854	{J}
+0869C34C	:0869CCAB	What data related to live wand 3	0x1F	{J}
+0869CCAC	:0869CEAB	Live staff pallet relationship 1	{J}
+080E29E6	:080E2A17	Palette of live cane relationship 2	{J}
+080E2A18	:080E2C37	Data of live wand something	{J}
+085879D8	:08587A3F	Procs(6c) Function Table	{U}
+08577688	:085776EF	Procs(6c) Function Table	{J}

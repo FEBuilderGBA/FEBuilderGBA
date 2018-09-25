@@ -3820,3 +3820,9 @@
 //This data is made with the aim of being readable by machine fast.
 080075C8	Transfer pallet of face image of general soldier	{U}
 08007458	Transfer pallet of face image of general soldier	{J}
+//This data is made with the aim of being readable by machine fast.
+080346A0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{J}
+080341C8	RMenu_Procs_BKSEL relationship of battle prediction dialog	{U}
+08082A18	Battle prediction dialog is a wrapper function to register RMenu	{J}
+08070A0C	Battle prediction dialog is a wrapper function to register RMenu	{U}
+08CC26D4	:08CC2783	Character string ID referred to by the game system	{U}

@@ -1079,3 +1079,6 @@
 08008E00	Transfer pallet of face image of general soldier
 
 0802bb0c	A function that returns the address of the map setting from the map number	r0=Address of map setting	r0=The map ID you want to examine:MAPCHAPTER
+0802E3D0	RMenu_Procs_BKSEL relationship of battle prediction dialog
+08070A0C	Battle prediction dialog is a wrapper function to register RMenu
+08003ad8	NewBlocking6C
