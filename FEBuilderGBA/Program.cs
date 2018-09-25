@@ -67,6 +67,11 @@ namespace FEBuilderGBA
                 Environment.Exit(ToolROMRebuildForm.ComandLineRebuild());
                 return;
             }
+            if (ArgsDic.ContainsKey("--pointercalc"))
+            {//ポインタ変換
+                Environment.Exit(PointerToolForm.ComandLineSearch());
+                return;
+            }
             
             {
                 //自動アップデートがやりたいので、初期化だけはやろうか...

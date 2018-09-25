@@ -708,17 +708,21 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                this.OtherROMFilename = open.FileNames[0];
-                this.OtherROMData = File.ReadAllBytes(open.FileNames[0]);
-
-                this.OtherLoadName.Text = R._("別ゲームROM:{0}", Path.GetFileNameWithoutExtension(this.OtherROMFilename));
-                //自分のLDRMAPをここで作る. 相手のROMに探索に利用する
-                this.LDRMAPs = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, 0);
-                //相手のROMのLDRMAPを作る.
-                this.OtherLDRMAPs = DisassemblerTrumb.MakeLDRMap(this.OtherROMData, 0x100, 0);
+                LoadTargetROM(open.FileNames[0]);
             }
 
             AutoSearch();
+        }
+        void LoadTargetROM(string filename)
+        {
+            this.OtherROMFilename = filename;
+            this.OtherROMData = File.ReadAllBytes(filename);
+
+            this.OtherLoadName.Text = R._("別ゲームROM:{0}", Path.GetFileNameWithoutExtension(this.OtherROMFilename));
+            //自分のLDRMAPをここで作る. 相手のROMに探索に利用する
+            this.LDRMAPs = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, 0);
+            //相手のROMのLDRMAPを作る.
+            this.OtherLDRMAPs = DisassemblerTrumb.MakeLDRMap(this.OtherROMData, 0x100, 0);
         }
 
         private void OtherROMAddress_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -762,6 +766,64 @@ namespace FEBuilderGBA
                 return;
             }
             R.ShowOK("アドレス{0}は {1} 領域です。", U.To0xHexString(addr), hint);
+        }
+        public static int ComandLineSearch()
+        {
+            string target = U.at(Program.ArgsDic,"--target");
+            if (!File.Exists(target))
+            {
+                U.echo(R.Error("--targetで、相手のROMを指定してください。"));
+                return -2;
+            }
+
+            PointerToolForm f = (PointerToolForm)InputFormRef.JumpFormLow<PointerToolForm>();
+            f.LoadTargetROM(target);
+
+            string tracelevel = U.at(Program.ArgsDic,"--tracelevel");
+            if (tracelevel != "")
+            {
+                U.SelectedIndexSafety(f.AutomaticTrackingComboBox, U.atoi0x(tracelevel));
+            }
+
+            string address = U.at(Program.ArgsDic, "--address");
+            if (File.Exists(address))
+            {
+                address = File.ReadAllText(address);
+            }
+            string[] lines = address.Split(new string[] { "\r\n" , "," , "\t"}, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string a in lines)
+            {
+                if (! U.isHexString(a))
+                {
+                    continue;
+                }
+
+                f.Address.Text = a;
+                f.AutoSearch();
+
+                bool isNearMatch;
+                if (!f.IsDataFound(out isNearMatch))
+                {//見つからなかった
+                    U.echo(
+                        f.Address.Text + "\t"
+                        + U.ToHexString(U.NOT_FOUND) + "\t"
+                        + U.ToHexString(U.NOT_FOUND) + "\t"
+                        + U.ToHexString(U.NOT_FOUND) + "\t"
+                        + U.ToHexString(U.NOT_FOUND));
+                }
+                else
+                {
+                    U.echo(
+                        f.Address.Text + "\t"
+                        + f.OtherROMAddressWithLDRRef.Text + "\t"
+                        + f.OtherROMAddressWithLDR.Text + "\t"
+                        + f.OtherROMRefPointer2.Text + "\t"
+                        + f.OtherROMAddress2.Text);
+                }
+            }
+
+            f.Close();
+            return 0;
         }
 
         private void BatchButton_Click(object sender, EventArgs e)
