@@ -10081,11 +10081,11 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
 
-:コミニティの説明URL
-Community description URL
+:DiscordコミニティURL
+Discord Community URL
 
-:完了ボタンでコミニティの説明URLを開く
-Open Comment Description URL with Complete button
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.

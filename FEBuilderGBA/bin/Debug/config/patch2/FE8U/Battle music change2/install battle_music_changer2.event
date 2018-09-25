@@ -2,7 +2,6 @@
 
 #include "EAstdlib.event"
 #include "Extensions/Hack Installation.txt"
-#endif
 
 PUSH
 ORG $726CA

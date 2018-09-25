@@ -366,7 +366,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 18);
             this.label1.TabIndex = 24;
-            this.label1.Text = "コミニティの説明URL";
+            this.label1.Text = "DiscordコミニティURL";
             // 
             // OpenCommunities
             // 
@@ -377,7 +377,7 @@
             this.OpenCommunities.Name = "OpenCommunities";
             this.OpenCommunities.Size = new System.Drawing.Size(310, 22);
             this.OpenCommunities.TabIndex = 23;
-            this.OpenCommunities.Text = "完了ボタンでコミニティの説明URLを開く";
+            this.OpenCommunities.Text = "完了ボタンでDiscordコミニティURLを開く";
             this.OpenCommunities.UseVisualStyleBackColor = true;
             // 
             // URLTextBoxEx

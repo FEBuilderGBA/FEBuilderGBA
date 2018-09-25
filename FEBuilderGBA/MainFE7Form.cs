@@ -776,5 +776,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolProblemReportForm>();
         }
+
+        private void DiscordURLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoCommunities();
+        }
     }
 }

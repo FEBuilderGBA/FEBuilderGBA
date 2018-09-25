@@ -211,6 +211,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -721,7 +722,8 @@
             // 
             this.ヘルプToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ヘルプToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OnlineHelpToolStripMenuItem});
+            this.OnlineHelpToolStripMenuItem,
+            this.DiscordURLToolStripMenuItem});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
@@ -729,7 +731,7 @@
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(228, 32);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
             // 
@@ -2176,6 +2178,13 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // DiscordURLToolStripMenuItem
+            // 
+            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
+            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
+            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2387,6 +2396,7 @@
         private System.Windows.Forms.Button ToolProblemReportToolButton;
         private System.Windows.Forms.Button LinkArenaDenyUnitButton;
         private System.Windows.Forms.Button WorldMapBGMButton;
+        private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
     }
 }
 

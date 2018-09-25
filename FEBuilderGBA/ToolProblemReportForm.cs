@@ -460,12 +460,14 @@ namespace FEBuilderGBA
             sb.Append(U.TrimPersonalInfomation(Log.LogToString(1024)));
             //情報を書き込む.
             sb.AppendLine("\r\n------\r\n");
-
             string FEVersion = "";
             if (Program.ROM != null)
             {
                 FEVersion = Program.ROM.VersionToFilename();
-                FEVersion += " @ROMSize:" + Program.ROM.Data.Length;
+                FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
+
+                U.CRC32 crc32 = new U.CRC32();
+                FEVersion += " @CRC32: " + U.ToHexString8(crc32.Calc(Program.ROM.Data));
             }
 
             sb.AppendLine(typeof(U).Assembly.GetName().Name + ":" + U.getVersion());

@@ -1005,6 +1005,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<WorldMapBGMForm>();
         }
 
+        private void DiscordURLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoCommunities();
+        }
+
     }
 
 }

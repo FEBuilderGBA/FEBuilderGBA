@@ -35,18 +35,20 @@
             // 
             // Version
             // 
+            this.Version.ErrorMessage = "";
             this.Version.Location = new System.Drawing.Point(18, 12);
             this.Version.Margin = new System.Windows.Forms.Padding(2);
             this.Version.Multiline = true;
             this.Version.Name = "Version";
+            this.Version.Placeholder = "";
             this.Version.ReadOnly = true;
-            this.Version.Size = new System.Drawing.Size(557, 242);
+            this.Version.Size = new System.Drawing.Size(674, 338);
             this.Version.TabIndex = 0;
             this.Version.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Version_KeyDown);
             // 
             // DevTranslateButton
             // 
-            this.DevTranslateButton.Location = new System.Drawing.Point(331, 204);
+            this.DevTranslateButton.Location = new System.Drawing.Point(448, 300);
             this.DevTranslateButton.Margin = new System.Windows.Forms.Padding(2);
             this.DevTranslateButton.Name = "DevTranslateButton";
             this.DevTranslateButton.Size = new System.Drawing.Size(244, 69);
@@ -72,7 +74,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(586, 272);
+            this.ClientSize = new System.Drawing.Size(703, 380);
             this.Controls.Add(this.DevTranslateButton);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.CloseButton);

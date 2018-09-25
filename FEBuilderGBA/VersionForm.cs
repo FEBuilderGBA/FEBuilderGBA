@@ -25,17 +25,33 @@ namespace FEBuilderGBA
             ver = U.getVersion();
 #endif
 
-            Version.Text =
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(
                 R._("{1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nこのソフトウェアはオープンソースのフリーソフトウェアです。\r\nGPLv3に従ってご自由にお使いください。"
                 , ver
                 , typeof(U).Assembly.GetName().Name
+                )
                 );
+
+            sb.AppendLine();
+            if (Program.ROM != null)
+            {
+                string FEVersion = "";
+                FEVersion = Program.ROM.VersionToFilename();
+                FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
+
+                U.CRC32 crc32 = new U.CRC32();
+                FEVersion += " @CRC32: " + U.ToHexString8(crc32.Calc(Program.ROM.Data));
+                sb.AppendLine("FEVersion:" + FEVersion);
+            }
 
             if (IsOldVersion())
             {
-                Version.Text += "\r\n" + MakeUpdateMessage();
+                sb.AppendLine(MakeUpdateMessage());
             }
 
+
+            Version.Text = sb.ToString();
             Version.Select(0, 0); //全選択解除.
 #if DEBUG
             DevTranslateButton.Show();
@@ -81,6 +97,7 @@ namespace FEBuilderGBA
 
             return str;
         }
+
 
         private void VersionForm_Load(object sender, EventArgs e)
         {

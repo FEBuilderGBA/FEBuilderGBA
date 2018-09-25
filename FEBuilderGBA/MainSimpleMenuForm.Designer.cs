@@ -101,6 +101,7 @@
             this.EventList = new FEBuilderGBA.ListBoxEx();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.MapListPanel.SuspendLayout();
             this.MapPanel.SuspendLayout();
@@ -552,7 +553,8 @@
             // 
             this.HelpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OnlineHelpToolStripMenuItem});
+            this.OnlineHelpToolStripMenuItem,
+            this.DiscordURLToolStripMenuItem});
             this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
             this.HelpToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.HelpToolStripMenuItem.Text = "ヘルプ";
@@ -560,7 +562,7 @@
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(228, 32);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
             // 
@@ -635,6 +637,7 @@
             this.MAP_LISTBOX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MAP_LISTBOX.FormattingEnabled = true;
+            this.MAP_LISTBOX.IntegralHeight = false;
             this.MAP_LISTBOX.ItemHeight = 18;
             this.MAP_LISTBOX.Location = new System.Drawing.Point(0, -1);
             this.MAP_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
@@ -705,6 +708,7 @@
             this.EventList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.EventList.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.EventList.FormattingEnabled = true;
+            this.EventList.IntegralHeight = false;
             this.EventList.ItemHeight = 30;
             this.EventList.Location = new System.Drawing.Point(0, 31);
             this.EventList.Margin = new System.Windows.Forms.Padding(4);
@@ -741,6 +745,13 @@
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1574, 41);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // DiscordURLToolStripMenuItem
+            // 
+            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
+            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
+            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
             // MainSimpleMenuForm
             // 
@@ -848,6 +859,7 @@
         private System.Windows.Forms.ToolStripMenuItem ExportEAEventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolMagicEffectMakerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolProblemReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
     }
 }
 

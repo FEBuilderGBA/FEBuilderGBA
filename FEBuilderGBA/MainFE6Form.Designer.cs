@@ -126,6 +126,7 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ToolProblemReportToolButton = new System.Windows.Forms.Button();
             this.ROMRebuildButton = new System.Windows.Forms.Button();
             this.ImageGenericEnemyPortraitButton = new System.Windows.Forms.Button();
             this.ROMAnimeButton = new System.Windows.Forms.Button();
@@ -176,7 +177,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ToolProblemReportToolButton = new System.Windows.Forms.Button();
+            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -932,7 +933,8 @@
             // 
             this.ヘルプToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ヘルプToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OnlineHelpToolStripMenuItem});
+            this.OnlineHelpToolStripMenuItem,
+            this.DiscordURLToolStripMenuItem});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
@@ -940,7 +942,7 @@
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(228, 32);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
             // 
@@ -1176,6 +1178,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1640, 687);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // ToolProblemReportToolButton
+            // 
+            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1232, 603);
+            this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
+            this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolProblemReportToolButton.TabIndex = 127;
+            this.ToolProblemReportToolButton.Text = "問題報告ツール";
+            this.ToolProblemReportToolButton.UseVisualStyleBackColor = true;
+            this.ToolProblemReportToolButton.Click += new System.EventHandler(this.ToolProblemReportToolButton_Click);
             // 
             // ROMRebuildButton
             // 
@@ -1727,16 +1740,12 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // ToolProblemReportToolButton
+            // DiscordURLToolStripMenuItem
             // 
-            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1232, 603);
-            this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
-            this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
-            this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
-            this.ToolProblemReportToolButton.TabIndex = 127;
-            this.ToolProblemReportToolButton.Text = "問題報告ツール";
-            this.ToolProblemReportToolButton.UseVisualStyleBackColor = true;
-            this.ToolProblemReportToolButton.Click += new System.EventHandler(this.ToolProblemReportToolButton_Click);
+            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
+            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
+            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
             // MainFE6Form
             // 
@@ -1915,5 +1924,6 @@
         private System.Windows.Forms.Button ImageGenericEnemyPortraitButton;
         private System.Windows.Forms.Button ROMRebuildButton;
         private System.Windows.Forms.Button ToolProblemReportToolButton;
+        private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
     }
 }
