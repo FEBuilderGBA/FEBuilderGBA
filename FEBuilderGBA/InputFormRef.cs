@@ -4496,6 +4496,7 @@ namespace FEBuilderGBA
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
             g_SCV_enum = SCVPatch_enum.NoCache;
+            g_SCV_enum = SCVPatch_enum.NoCache;
         }
 
 
@@ -9202,6 +9203,34 @@ namespace FEBuilderGBA
 
             Program.ROM.write_u32(data_offset - 4, (uint)count);
         }
+
+        public enum SpecialHack_enum
+        {
+            No
+            ,MoDUPS  //FE6でマップデータの形式が拡張されているパッチ
+            , NoCache = 0xff
+        }
+        static SpecialHack_enum g_SpecialHack = SpecialHack_enum.NoCache;
+        public static SpecialHack_enum SearchSpecialHack()
+        {
+            if (g_SpecialHack == SpecialHack_enum.NoCache)
+            {
+                g_SpecialHack = SearchSpecialHackLow();
+            }
+            return g_SpecialHack;
+        }
+        static SpecialHack_enum SearchSpecialHackLow()
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                if (Program.ROM.u16(0x2BB12) == 0x2048)
+                {
+                    return SpecialHack_enum.MoDUPS;
+                }
+            }
+            return SpecialHack_enum.No;
+        }
+
 
 
         public enum SCVPatch_enum

@@ -41,7 +41,13 @@ namespace FEBuilderGBA
 
         public uint unit_move_icon_pointer() { return 0x60ED8; } // ユニット移動アイコンの開始位置
         public uint map_setting_pointer() { return 0x2bb20; }  // マップ設定の開始位置
-        public uint map_setting_datasize() { return 68; } //マップ設定のデータサイズ
+        public uint map_setting_datasize() {
+            if (InputFormRef.SearchSpecialHack() == InputFormRef.SpecialHack_enum.MoDUPS)
+            {
+                return 72;
+            }
+            return 68; 
+        } //マップ設定のデータサイズ
         public uint map_setting_event_plist_pos() { return 58; } //event plistの場所 
         public uint map_setting_worldmap_plist_pos() { return 59; } //woldmap event plistの場所 
         public uint map_config_pointer() { return 0x018a7c; }      //マップ設定の開始位置(config)

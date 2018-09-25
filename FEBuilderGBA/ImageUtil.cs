@@ -23,12 +23,14 @@ namespace FEBuilderGBA
         //ダミー用
         public static Bitmap Blank(int width, int height)   
         {
+            ValidateWidthAndHeight(ref width, ref height);
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
             return pic;
         }
         //ダミー用
         public static Bitmap Blank(int width, int height, byte[] palette, int palette_pos)
         {
+            ValidateWidthAndHeight(ref width, ref height);
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
             //パレットの読込.
             pic.Palette = ByteToPalette(pic.Palette, palette, palette_pos);
@@ -37,10 +39,26 @@ namespace FEBuilderGBA
         //ダミー用
         public static Bitmap Blank(int width, int height, Bitmap palettebitmap)
         {
+            ValidateWidthAndHeight(ref width , ref height);
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
             //パレットの読込.
             pic.Palette = palettebitmap.Palette;
             return pic;
+        }
+        static void ValidateWidthAndHeight(ref int ref_width, ref int ref_height)
+        {
+            if (ref_width <= 0)
+            {
+                Log.Error(R.Error("ValidateWidthAndHeight {0} , {1}" , ref_width , ref_height));
+                Debug.Assert(false);
+                ref_width = 8;
+            }
+            if (ref_height <= 0)
+            {
+                Log.Error(R.Error("ValidateWidthAndHeight {0} , {1}", ref_width, ref_height));
+                Debug.Assert(false);
+                ref_height = 8;
+            }
         }
 
         //パレットを使った256色BMPかどうか.

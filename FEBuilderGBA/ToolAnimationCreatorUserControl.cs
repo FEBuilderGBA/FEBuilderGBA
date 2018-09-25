@@ -1928,12 +1928,12 @@ namespace FEBuilderGBA
                     }
                     else if ((code.code & 0xff) == 0x29)
                     {
-                        C29Brightness.Value = (code.code >> 16 & 0xff);
-                        C29Opacity.Value = (code.code >> 8 & 0xff);
+                        U.SelectedIndexSafety(C29Brightness , ((code.code >> 16) & 0xff));
+                        U.SelectedIndexSafety(C29Opacity , ((code.code >> 8) & 0xff));
                     }
                     else if ((code.code & 0xff) == 0x53)
                     {
-                        C53Expand.Value = (code.code >> 8 & 0xff);
+                        U.SelectedIndexSafety(C53Expand, ((code.code >> 8) & 0xff));
                     }
                 }
                 else if (code.type == AnimeStEnum.Image)

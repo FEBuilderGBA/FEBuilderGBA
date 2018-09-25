@@ -30,7 +30,9 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     //0 がポインタであればデータがあると考える.
-                    return U.isPointer(Program.ROM.u32(addr + 0));
+                    uint a = Program.ROM.u32(addr + 0);
+                    //                    return U.isPointer(a) || a == 0;
+                    return U.isPointer(a);
                 }
                 , (int i, uint addr) =>
                 {
