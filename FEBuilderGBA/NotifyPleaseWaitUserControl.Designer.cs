@@ -36,11 +36,12 @@
             // 
             this.BIG_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BIG_TEXT.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.BIG_TEXT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BIG_TEXT.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BIG_TEXT.Location = new System.Drawing.Point(1, 0);
+            this.BIG_TEXT.Location = new System.Drawing.Point(0, 0);
             this.BIG_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BIG_TEXT.Name = "BIG_TEXT";
-            this.BIG_TEXT.Size = new System.Drawing.Size(850, 235);
+            this.BIG_TEXT.Size = new System.Drawing.Size(855, 237);
             this.BIG_TEXT.TabIndex = 0;
             this.BIG_TEXT.Text = "しばらくお待ちください....";
             this.BIG_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -48,9 +49,10 @@
             // MessageLabel
             // 
             this.MessageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MessageLabel.Location = new System.Drawing.Point(4, 214);
+            this.MessageLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MessageLabel.Location = new System.Drawing.Point(0, 214);
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(847, 23);
+            this.MessageLabel.Size = new System.Drawing.Size(855, 23);
             this.MessageLabel.TabIndex = 1;
             this.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

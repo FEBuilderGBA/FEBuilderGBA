@@ -476,7 +476,7 @@ namespace FEBuilderGBA
 
 
             public Bitmap Draw(Bitmap retpic, Bitmap graphicsSeetPic)
-            {   
+            {
                 //OAMは逆順に描画する
                 for (int i = translist.Count - 1; i >= 0 ; i--)
                 {
