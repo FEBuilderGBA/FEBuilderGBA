@@ -12,3 +12,6 @@ HEX=false
 AUTHOR=7743
 
 INFO=盗賊ユニットは、霧の視界の距離+このボーナス値の視界を確保できます。
+INFO.en=The thief unit can secure the visibility of fog view distance + this bonus value.
+NAME.zh=盗贼可以在雾中额外确保视线的距离
+INFO.zh=小偷单元可以确保雾视距离+这个奖励值的可见性。

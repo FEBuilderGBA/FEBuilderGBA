@@ -7514,3 +7514,337 @@ r3=X tile position of menu of the right	{U}
 080E2A18	:080E2C37	Data of live wand something	{J}
 085879D8	:08587A3F	Procs(6c) Function Table	{U}
 08577688	:085776EF	Procs(6c) Function Table	{J}
+08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
+08206954	:082069D7	Monster occurrence rate relationship	Always 100% table	{U}
+081F6620	:081F66A3	Monster occurrence rate relationship	Always 100% table	{J}
+08207190	:0820721F	MPlayJumpTable	Midi Function Table	M4ALIB	{U}
+08207220	:08207267	MidiKeyToFreqTable1	M4ALIB	{U}
+08207268	:082072DB	Unknown	However, it seems to be music related	M4ALIB	{U}
+082072DC	:08207303	MidiKeyToFreqTable2	M4ALIB	{U}
+08207304	:0820731B	SampleFreqSetTable	M4ALIB	{U}
+0820731C	:0820739F	MidiKeyToCgbFreq Data Table1	M4ALIB	{U}
+082073A0	:082073B7	MidiKeyToCgbFreq Data Table2	M4ALIB	{U}
+082073B8	:082073F3	MidiKeyToCgbFreq Data Table3	M4ALIB	{U}
+082073F4	:08207403	CgbSound Data Table	M4ALIB	{U}
+08207404	:08207437	ply_note_Table	M4ALIB	{U}
+08207438	:0820746F	ply_xcmd_Table	Function Table	M4ALIB	{U}
+081F6E40	:081F6ECF	MPlayJumpTable	Midi Function Table	M4ALIB	{J}
+081F6ED0	:081F6F17	MidiKeyToFreqTable1	M4ALIB	{J}
+081F6F18	:081F6F8B	Unknown	However, it seems to be music related	M4ALIB	{J}
+081F6F8C	:081F6FB3	MidiKeyToFreqTable2	M4ALIB	{J}
+081F6FB4	:081F6FCB	SampleFreqSetTable	M4ALIB	{J}
+081F6FCC	:081F704F	MidiKeyToCgbFreq Data Table1	M4ALIB	{J}
+081F7050	:081F7067	MidiKeyToCgbFreq Data Table2	M4ALIB	{J}
+081F7068	:081F70A3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
+081F70A4	:081F70B3	CgbSound Data Table	M4ALIB	{J}
+081F70B4	:081F70E7	ply_note_Table	M4ALIB	{J}
+081F70E8	:081F711F	ply_xcmd_Table	Function Table	M4ALIB	{J}
+08AB988C	&LZ77	Mystery data	Mystery image may be related to OP	{U}
+08B53254	&LZ77	Mystery data	Mystery image may be related to OP	{J}
+085A0FF8	&ROMTCS	Any ROMTCS data	05	{U}
+085A129C	&ROMTCS	Any ROMTCS data	06	{U}
+085A14B8	&ROMTCS	Any ROMTCS data	07	{U}
+085A2384	&ROMTCS	Any ROMTCS data	08	{U}
+085A2DFC	&ROMTCS	Any ROMTCS data	09	{U}
+085A33C8	&ROMTCS	Any ROMTCS data	10	{U}
+085A3420	&ROMTCS	Any ROMTCS data	11	{U}
+085A3730	&ROMTCS	Any ROMTCS data	12	{U}
+085A38CC	&ROMTCS	Any ROMTCS data	13	{U}
+085A3908	&ROMTCS	Any ROMTCS data	14	{U}
+089AC194	&ROMTCS	Any ROMTCS data	15	{U}
+089AC440	&ROMTCS	Any ROMTCS data	16	{U}
+089A6FD8	&ROMTCS	Any ROMTCS data	17	{U}
+089A6F40	&ROMTCS	Any ROMTCS data	18	{U}
+089A61F8	&ROMTCS	Any ROMTCS data	19	{U}
+089B2108	&ROMTCS	Any ROMTCS data	20	{U}
+089B1A10	&ROMTCS	Any ROMTCS data	21	{U}
+089B2748	&ROMTCS	Any ROMTCS data	22	{U}
+089A6254	&ROMTCS	Any ROMTCS data	23	{U}
+089A5314	&ROMTCS	Any ROMTCS data	24	{U}
+089A5A6C	&ROMTCS	Any ROMTCS data	25	{U}
+08A1B194	&ROMTCS	Any ROMTCS data	26	{U}
+08A280A8	&ROMTCS	Any ROMTCS data	27	{U}
+08AA1C70	&ROMTCS	Any ROMTCS data	28	{U}
+085A7E34	&ROMTCS	Any ROMTCS data	29	{U}
+085C9518	&ROMTCS	Any ROMTCS data	05	{J}
+085C97BC	&ROMTCS	Any ROMTCS data	06	{J}
+085C99D8	&ROMTCS	Any ROMTCS data	07	{J}
+085CA8A4	&ROMTCS	Any ROMTCS data	08	{J}
+085CB31C	&ROMTCS	Any ROMTCS data	09	{J}
+085CB8E8	&ROMTCS	Any ROMTCS data	10	{J}
+085CB940	&ROMTCS	Any ROMTCS data	11	{J}
+085CBC50	&ROMTCS	Any ROMTCS data	12	{J}
+085CBDEC	&ROMTCS	Any ROMTCS data	13	{J}
+085CBE28	&ROMTCS	Any ROMTCS data	14	{J}
+08A1C81C	&ROMTCS	Any ROMTCS data	15	{J}
+08A1CAC8	&ROMTCS	Any ROMTCS data	16	{J}
+08A17660	&ROMTCS	Any ROMTCS data	17	{J}
+08A175C8	&ROMTCS	Any ROMTCS data	18	{J}
+08A16880	&ROMTCS	Any ROMTCS data	19	{J}
+08A22790	&ROMTCS	Any ROMTCS data	20	{J}
+08A22098	&ROMTCS	Any ROMTCS data	21	{J}
+08A22DD0	&ROMTCS	Any ROMTCS data	22	{J}
+08A168DC	&ROMTCS	Any ROMTCS data	23	{J}
+08A1599C	&ROMTCS	Any ROMTCS data	24	{J}
+08A160F4	&ROMTCS	Any ROMTCS data	25	{J}
+08A97C2C	&ROMTCS	Any ROMTCS data	26	{J}
+08AA52FC	&ROMTCS	Any ROMTCS data	27	{J}
+08B2759C	&ROMTCS	Any ROMTCS data	28	{J}
+085D1D3C	&ROMTCS	Any ROMTCS data	29	{J}
+08AA6EA4	:08AA702F	A table defining mysterious 60 bytes fixed data	{U}
+08AF4C9C	&NAZO60	Mysterious 60 bytes fixed data	01	{U}
+08AF5100	&NAZO60	Mysterious 60 bytes fixed data	02	{U}
+08AF5578	&NAZO60	Mysterious 60 bytes fixed data	03	{U}
+08AF59EC	&NAZO60	Mysterious 60 bytes fixed data	04	{U}
+08AF5E5C	&NAZO60	Mysterious 60 bytes fixed data	05	{U}
+08AF62CC	&NAZO60	Mysterious 60 bytes fixed data	06	{U}
+08AF6744	&NAZO60	Mysterious 60 bytes fixed data	07	{U}
+08AF6BBC	&NAZO60	Mysterious 60 bytes fixed data	08	{U}
+08AF7034	&NAZO60	Mysterious 60 bytes fixed data	09	{U}
+08AF74AC	&NAZO60	Mysterious 60 bytes fixed data	10	{U}
+08AF7924	&NAZO60	Mysterious 60 bytes fixed data	11	{U}
+08AF7D98	&NAZO60	Mysterious 60 bytes fixed data	12	{U}
+08AF8210	&NAZO60	Mysterious 60 bytes fixed data	13	{U}
+08AF8688	&NAZO60	Mysterious 60 bytes fixed data	14	{U}
+08AF8AFC	&NAZO60	Mysterious 60 bytes fixed data	15	{U}
+08AF8F74	&NAZO60	Mysterious 60 bytes fixed data	16	{U}
+08AF93EC	&NAZO60	Mysterious 60 bytes fixed data	17	{U}
+08AF9864	&NAZO60	Mysterious 60 bytes fixed data	18	{U}
+08AF9CDC	&NAZO60	Mysterious 60 bytes fixed data	19	{U}
+08AFA154	&NAZO60	Mysterious 60 bytes fixed data	20	{U}
+08AFA5CC	&NAZO60	Mysterious 60 bytes fixed data	21	{U}
+08AFAA44	&NAZO60	Mysterious 60 bytes fixed data	22	{U}
+08AFAEBC	&NAZO60	Mysterious 60 bytes fixed data	23	{U}
+08AFB334	&NAZO60	Mysterious 60 bytes fixed data	24	{U}
+08AFB7AC	&NAZO60	Mysterious 60 bytes fixed data	25	{U}
+08AFBC24	&NAZO60	Mysterious 60 bytes fixed data	26	{U}
+08AFC098	&NAZO60	Mysterious 60 bytes fixed data	27	{U}
+08AFC50C	&NAZO60	Mysterious 60 bytes fixed data	28	{U}
+08AFC978	&NAZO60	Mysterious 60 bytes fixed data	29	{U}
+08AFCDEC	&NAZO60	Mysterious 60 bytes fixed data	30	{U}
+08AFD260	&NAZO60	Mysterious 60 bytes fixed data	31	{U}
+08AFD6C4	&NAZO60	Mysterious 60 bytes fixed data	32	{U}
+08AFDB28	&NAZO60	Mysterious 60 bytes fixed data	33	{U}
+08AFDF98	&NAZO60	Mysterious 60 bytes fixed data	34	{U}
+08AFE40C	&NAZO60	Mysterious 60 bytes fixed data	35	{U}
+08AFE880	&NAZO60	Mysterious 60 bytes fixed data	36	{U}
+08AFECF4	&NAZO60	Mysterious 60 bytes fixed data	37	{U}
+08AFF16C	&NAZO60	Mysterious 60 bytes fixed data	38	{U}
+08AFF5DC	&NAZO60	Mysterious 60 bytes fixed data	39	{U}
+08AFFA44	&NAZO60	Mysterious 60 bytes fixed data	40	{U}
+08AFFEAC	&NAZO60	Mysterious 60 bytes fixed data	41	{U}
+08B0031C	&NAZO60	Mysterious 60 bytes fixed data	42	{U}
+08B00794	&NAZO60	Mysterious 60 bytes fixed data	43	{U}
+08B00C0C	&NAZO60	Mysterious 60 bytes fixed data	44	{U}
+08B0107C	&NAZO60	Mysterious 60 bytes fixed data	45	{U}
+08B014F0	&NAZO60	Mysterious 60 bytes fixed data	46	{U}
+08B01968	&NAZO60	Mysterious 60 bytes fixed data	47	{U}
+08B01DDC	&NAZO60	Mysterious 60 bytes fixed data	48	{U}
+08B02244	&NAZO60	Mysterious 60 bytes fixed data	49	{U}
+08B026B8	&NAZO60	Mysterious 60 bytes fixed data	50	{U}
+08B02B20	&NAZO60	Mysterious 60 bytes fixed data	51	{U}
+08B02F90	&NAZO60	Mysterious 60 bytes fixed data	52	{U}
+08B033FC	&NAZO60	Mysterious 60 bytes fixed data	53	{U}
+08B03870	&NAZO60	Mysterious 60 bytes fixed data	54	{U}
+08B03CE0	&NAZO60	Mysterious 60 bytes fixed data	55	{U}
+08B04158	&NAZO60	Mysterious 60 bytes fixed data	56	{U}
+08B045D0	&NAZO60	Mysterious 60 bytes fixed data	57	{U}
+08B04A48	&NAZO60	Mysterious 60 bytes fixed data	58	{U}
+08B04EB4	&NAZO60	Mysterious 60 bytes fixed data	59	{U}
+08B05328	&NAZO60	Mysterious 60 bytes fixed data	60	{U}
+08B05794	&NAZO60	Mysterious 60 bytes fixed data	61	{U}
+08B05BFC	&NAZO60	Mysterious 60 bytes fixed data	62	{U}
+08B06070	&NAZO60	Mysterious 60 bytes fixed data	63	{U}
+08B064E8	&NAZO60	Mysterious 60 bytes fixed data	64	{U}
+08B06960	&NAZO60	Mysterious 60 bytes fixed data	65	{U}
+08B06DD4	&NAZO60	Mysterious 60 bytes fixed data	66	{U}
+08B07244	&NAZO60	Mysterious 60 bytes fixed data	67	{U}
+08B076B4	&NAZO60	Mysterious 60 bytes fixed data	68	{U}
+08B07B2C	&NAZO60	Mysterious 60 bytes fixed data	69	{U}
+08B07F94	&NAZO60	Mysterious 60 bytes fixed data	70	{U}
+08B08404	&NAZO60	Mysterious 60 bytes fixed data	71	{U}
+08B0887C	&NAZO60	Mysterious 60 bytes fixed data	72	{U}
+08B08CF4	&NAZO60	Mysterious 60 bytes fixed data	73	{U}
+08B09160	&NAZO60	Mysterious 60 bytes fixed data	74	{U}
+08B095D0	&NAZO60	Mysterious 60 bytes fixed data	75	{U}
+08B09A48	&NAZO60	Mysterious 60 bytes fixed data	76	{U}
+08B09EBC	&NAZO60	Mysterious 60 bytes fixed data	77	{U}
+08B0A334	&NAZO60	Mysterious 60 bytes fixed data	78	{U}
+08B0A7A8	&NAZO60	Mysterious 60 bytes fixed data	79	{U}
+08B0AC20	&NAZO60	Mysterious 60 bytes fixed data	80	{U}
+08B0B098	&NAZO60	Mysterious 60 bytes fixed data	81	{U}
+08B0B508	&NAZO60	Mysterious 60 bytes fixed data	82	{U}
+08B0B97C	&NAZO60	Mysterious 60 bytes fixed data	83	{U}
+08B0BDF4	&NAZO60	Mysterious 60 bytes fixed data	84	{U}
+08B0C268	&NAZO60	Mysterious 60 bytes fixed data	85	{U}
+08B0C6DC	&NAZO60	Mysterious 60 bytes fixed data	86	{U}
+08B0CB4C	&NAZO60	Mysterious 60 bytes fixed data	87	{U}
+08B0CFC0	&NAZO60	Mysterious 60 bytes fixed data	88	{U}
+08B0D3F8	&NAZO60	Mysterious 60 bytes fixed data	89	{U}
+08B0D860	&NAZO60	Mysterious 60 bytes fixed data	90	{U}
+08B0DCA8	&NAZO60	Mysterious 60 bytes fixed data	91	{U}
+08B0E0D4	&NAZO60	Mysterious 60 bytes fixed data	92	{U}
+08B0E548	&NAZO60	Mysterious 60 bytes fixed data	93	{U}
+08B0E9A4	&NAZO60	Mysterious 60 bytes fixed data	94	{U}
+08B0EE18	&NAZO60	Mysterious 60 bytes fixed data	95	{U}
+08B0F264	&NAZO60	Mysterious 60 bytes fixed data	96	{U}
+08B0F6DC	&NAZO60	Mysterious 60 bytes fixed data	97	{U}
+08B0FAE0	&NAZO60	Mysterious 60 bytes fixed data	98	{U}
+08B0FF30	&NAZO60	Mysterious 60 bytes fixed data	99	{U}
+08B1039C	&NAZO60	Mysterious 60 bytes fixed data	100	{U}
+08B3F498	:08B3F627	A table defining mysterious 60 bytes fixed data	{U}
+08B8EAA4	&NAZO60	Mysterious 60 bytes fixed data	01	{J}
+08B8EF08	&NAZO60	Mysterious 60 bytes fixed data	02	{J}
+08B8F380	&NAZO60	Mysterious 60 bytes fixed data	03	{J}
+08B8F7F4	&NAZO60	Mysterious 60 bytes fixed data	04	{J}
+08B8FC64	&NAZO60	Mysterious 60 bytes fixed data	05	{J}
+08B900D4	&NAZO60	Mysterious 60 bytes fixed data	06	{J}
+08B9054C	&NAZO60	Mysterious 60 bytes fixed data	07	{J}
+08B909C4	&NAZO60	Mysterious 60 bytes fixed data	08	{J}
+08B90E3C	&NAZO60	Mysterious 60 bytes fixed data	09	{J}
+08B912B4	&NAZO60	Mysterious 60 bytes fixed data	10	{J}
+08B9172C	&NAZO60	Mysterious 60 bytes fixed data	11	{J}
+08B91BA0	&NAZO60	Mysterious 60 bytes fixed data	12	{J}
+08B92018	&NAZO60	Mysterious 60 bytes fixed data	13	{J}
+08B92490	&NAZO60	Mysterious 60 bytes fixed data	14	{J}
+08B92904	&NAZO60	Mysterious 60 bytes fixed data	15	{J}
+08B92D7C	&NAZO60	Mysterious 60 bytes fixed data	16	{J}
+08B931F4	&NAZO60	Mysterious 60 bytes fixed data	17	{J}
+08B9366C	&NAZO60	Mysterious 60 bytes fixed data	18	{J}
+08B93AE4	&NAZO60	Mysterious 60 bytes fixed data	19	{J}
+08B93F5C	&NAZO60	Mysterious 60 bytes fixed data	20	{J}
+08B943D4	&NAZO60	Mysterious 60 bytes fixed data	21	{J}
+08B9484C	&NAZO60	Mysterious 60 bytes fixed data	22	{J}
+08B94CC4	&NAZO60	Mysterious 60 bytes fixed data	23	{J}
+08B9513C	&NAZO60	Mysterious 60 bytes fixed data	24	{J}
+08B955B4	&NAZO60	Mysterious 60 bytes fixed data	25	{J}
+08B95A2C	&NAZO60	Mysterious 60 bytes fixed data	26	{J}
+08B95EA0	&NAZO60	Mysterious 60 bytes fixed data	27	{J}
+08B96314	&NAZO60	Mysterious 60 bytes fixed data	28	{J}
+08B96780	&NAZO60	Mysterious 60 bytes fixed data	29	{J}
+08B96BF4	&NAZO60	Mysterious 60 bytes fixed data	30	{J}
+08B97068	&NAZO60	Mysterious 60 bytes fixed data	31	{J}
+08B974CC	&NAZO60	Mysterious 60 bytes fixed data	32	{J}
+08B97930	&NAZO60	Mysterious 60 bytes fixed data	33	{J}
+08B97DA0	&NAZO60	Mysterious 60 bytes fixed data	34	{J}
+08B98214	&NAZO60	Mysterious 60 bytes fixed data	35	{J}
+08B98688	&NAZO60	Mysterious 60 bytes fixed data	36	{J}
+08B98AFC	&NAZO60	Mysterious 60 bytes fixed data	37	{J}
+08B98F74	&NAZO60	Mysterious 60 bytes fixed data	38	{J}
+08B993E4	&NAZO60	Mysterious 60 bytes fixed data	39	{J}
+08B9984C	&NAZO60	Mysterious 60 bytes fixed data	40	{J}
+08B99CB4	&NAZO60	Mysterious 60 bytes fixed data	41	{J}
+08B9A124	&NAZO60	Mysterious 60 bytes fixed data	42	{J}
+08B9A59C	&NAZO60	Mysterious 60 bytes fixed data	43	{J}
+08B9AA14	&NAZO60	Mysterious 60 bytes fixed data	44	{J}
+08B9AE84	&NAZO60	Mysterious 60 bytes fixed data	45	{J}
+08B9B2F8	&NAZO60	Mysterious 60 bytes fixed data	46	{J}
+08B9B770	&NAZO60	Mysterious 60 bytes fixed data	47	{J}
+08B9BBE4	&NAZO60	Mysterious 60 bytes fixed data	48	{J}
+08B9C04C	&NAZO60	Mysterious 60 bytes fixed data	49	{J}
+08B9C4C0	&NAZO60	Mysterious 60 bytes fixed data	50	{J}
+08B9C928	&NAZO60	Mysterious 60 bytes fixed data	51	{J}
+08B9CD98	&NAZO60	Mysterious 60 bytes fixed data	52	{J}
+08B9D204	&NAZO60	Mysterious 60 bytes fixed data	53	{J}
+08B9D678	&NAZO60	Mysterious 60 bytes fixed data	54	{J}
+08B9DAE8	&NAZO60	Mysterious 60 bytes fixed data	55	{J}
+08B9DF60	&NAZO60	Mysterious 60 bytes fixed data	56	{J}
+08B9E3D8	&NAZO60	Mysterious 60 bytes fixed data	57	{J}
+08B9E850	&NAZO60	Mysterious 60 bytes fixed data	58	{J}
+08B9ECBC	&NAZO60	Mysterious 60 bytes fixed data	59	{J}
+08B9F130	&NAZO60	Mysterious 60 bytes fixed data	60	{J}
+08B9F59C	&NAZO60	Mysterious 60 bytes fixed data	61	{J}
+08B9FA04	&NAZO60	Mysterious 60 bytes fixed data	62	{J}
+08B9FE78	&NAZO60	Mysterious 60 bytes fixed data	63	{J}
+08BA02F0	&NAZO60	Mysterious 60 bytes fixed data	64	{J}
+08BA0768	&NAZO60	Mysterious 60 bytes fixed data	65	{J}
+08BA0BDC	&NAZO60	Mysterious 60 bytes fixed data	66	{J}
+08BA104C	&NAZO60	Mysterious 60 bytes fixed data	67	{J}
+08BA14BC	&NAZO60	Mysterious 60 bytes fixed data	68	{J}
+08BA1934	&NAZO60	Mysterious 60 bytes fixed data	69	{J}
+08BA1D9C	&NAZO60	Mysterious 60 bytes fixed data	70	{J}
+08BA220C	&NAZO60	Mysterious 60 bytes fixed data	71	{J}
+08BA2684	&NAZO60	Mysterious 60 bytes fixed data	72	{J}
+08BA2AFC	&NAZO60	Mysterious 60 bytes fixed data	73	{J}
+08BA2F68	&NAZO60	Mysterious 60 bytes fixed data	74	{J}
+08BA33D8	&NAZO60	Mysterious 60 bytes fixed data	75	{J}
+08BA3850	&NAZO60	Mysterious 60 bytes fixed data	76	{J}
+08BA3CC4	&NAZO60	Mysterious 60 bytes fixed data	77	{J}
+08BA413C	&NAZO60	Mysterious 60 bytes fixed data	78	{J}
+08BA45B0	&NAZO60	Mysterious 60 bytes fixed data	79	{J}
+08BA4A28	&NAZO60	Mysterious 60 bytes fixed data	80	{J}
+08BA4EA0	&NAZO60	Mysterious 60 bytes fixed data	81	{J}
+08BA5310	&NAZO60	Mysterious 60 bytes fixed data	82	{J}
+08BA5784	&NAZO60	Mysterious 60 bytes fixed data	83	{J}
+08BA5BFC	&NAZO60	Mysterious 60 bytes fixed data	84	{J}
+08BA6070	&NAZO60	Mysterious 60 bytes fixed data	85	{J}
+08BA64E4	&NAZO60	Mysterious 60 bytes fixed data	86	{J}
+08BA6954	&NAZO60	Mysterious 60 bytes fixed data	87	{J}
+08BA6DC8	&NAZO60	Mysterious 60 bytes fixed data	88	{J}
+08BA7200	&NAZO60	Mysterious 60 bytes fixed data	89	{J}
+08BA7668	&NAZO60	Mysterious 60 bytes fixed data	90	{J}
+08BA7AB0	&NAZO60	Mysterious 60 bytes fixed data	91	{J}
+08BA7EDC	&NAZO60	Mysterious 60 bytes fixed data	92	{J}
+08BA8350	&NAZO60	Mysterious 60 bytes fixed data	93	{J}
+08BA87AC	&NAZO60	Mysterious 60 bytes fixed data	94	{J}
+08BA8C20	&NAZO60	Mysterious 60 bytes fixed data	95	{J}
+08BA906C	&NAZO60	Mysterious 60 bytes fixed data	96	{J}
+08BA94E4	&NAZO60	Mysterious 60 bytes fixed data	97	{J}
+08BA98E8	&NAZO60	Mysterious 60 bytes fixed data	98	{J}
+08BA9D38	&NAZO60	Mysterious 60 bytes fixed data	99	{J}
+08BAA1A4	&NAZO60	Mysterious 60 bytes fixed data	100	{J}
+089EE0DC	&EVENT	Any event function	Difficulty level determination	1	{U}
+089EE104	&EVENT	Any event function	Get chapter ID	{U}
+089EE120	&EVENT	Any event function	Acquire editing	1	{U}
+089EE140	&EVENT	Any event function	Acquire editing	2	{U}
+089EE218	&EVENT	Any event function	Difficulty level determination	2	{U}
+089EE330	&EVENT	Any event function	Tile Changes	{U}
+089EE340	&EVENT	Any event function	Mystery	1	{U}
+089EE354	&EVENT	Any event function	Mystery	2	{U}
+089EE368	&EVENT	Any event function	Mystery	3	{U}
+089EE37C	&EVENT	Any event function	Mystery	4	{U}
+089EE3F4	&EVENT	If the unit in memory slot 2 is alive, do something	{U}
+089EE6A0	&EVENT	Any event function	Mystery	5	{U}
+089EE6C8	&EVENT	Any event function	Mystery	6	{U}
+089F35FC	&EVENT	Any event function	Bifurcation to Ephrata	{U}
+089FC6C4	&EVENT	Any event function	Mystery reinforcement data	{U}
+089FF480	&EVENT	Any event function	Mystery	7	{U}
+089FFD64	&EVENT	Debug Room Event	details unknown	{U}
+08A60214	&EVENT	Any event function	Difficulty level determination	1	{J}
+08A6023C	&EVENT	Any event function	Get chapter ID	{J}
+08A60258	&EVENT	Any event function	Acquire editing	1	{J}
+08A60278	&EVENT	Any event function	Acquire editing	2	{J}
+08A60350	&EVENT	Any event function	Difficulty level determination	2	{J}
+08A60468	&EVENT	Any event function	Tile Changes	{J}
+08A60478	&EVENT	Any event function	Mystery	1	{J}
+08A6048C	&EVENT	Any event function	Mystery	2	{J}
+08A604A0	&EVENT	Any event function	Mystery	3	{J}
+08A604B4	&EVENT	Any event function	Mystery	4	{J}
+08A6052C	&EVENT	If the unit in memory slot 2 is alive, do something	{J}
+08A607D8	&EVENT	Any event function	Mystery	5	{J}
+08A60800	&EVENT	Any event function	Mystery	6	{J}
+08A628A8	&EVENT	An event explaining the visit in the tutorial	{J}
+08A632C8	&EVENT	Events that explain Garcia and Ross in the tutorial	{J}
+08A632EC	&EVENT	Event to explain weapons shop in the tutorial	{J}
+08A65730	&EVENT	Any event function	Bifurcation to Ephrata	{J}
+08A6E7A4	&EVENT	Any event function	Mystery reinforcement data	{J}
+08A71538	&EVENT	Any event function	Mystery	7	{J}
+08A71CE8	&EVENT	Debug Room Event	details unknown	{J}
+08A0186C	:08A0189B	Something's FillTileRect tile table	{U}
+08A175B4	&HEADERTSA	Something tiled FillTileRect	40	{U}
+08A175C8	&HEADERTSA	Something tiled FillTileRect	41	{U}
+08A175DC	&HEADERTSA	Something tiled FillTileRect	42	{U}
+08A175F0	&HEADERTSA	Something tiled FillTileRect	43	{U}
+08A1763C	&HEADERTSA	Something tiled FillTileRect	44	{U}
+08A17650	&HEADERTSA	Something tiled FillTileRect	45	{U}
+08A17664	&HEADERTSA	Something tiled FillTileRect	46	{U}
+08A17678	&HEADERTSA	Something tiled FillTileRect	47	{U}
+00A73924	:00A7394B	Something's FillTileRect tile table	{J}
+08A93300	&HEADERTSA	Something tiled FillTileRect	40	{J}
+08A93314	&HEADERTSA	Something tiled FillTileRect	41	{J}
+08A93328	&HEADERTSA	Something tiled FillTileRect	42	{J}
+08A9333C	&HEADERTSA	Something tiled FillTileRect	43	{J}
+08A93388	&HEADERTSA	Something tiled FillTileRect	44	{J}
+08A9339C	&HEADERTSA	Something tiled FillTileRect	45	{J}
+08A933B0	&HEADERTSA	Something tiled FillTileRect	46	{J}
+08A933C4	&HEADERTSA	Something tiled FillTileRect	47	{J}

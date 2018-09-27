@@ -4969,6 +4969,9 @@ World Map Image
 :簡易メニュー
 Simple Menu
 
+:DiscordコミニティURL
+Discord Community URL
+
 :詳細メニュー
 Advanced Editors
 
@@ -8296,6 +8299,9 @@ Another game ROM: {0}
 :アドレス{0}は {1} 領域です。
 Address {0} is a {1} area.
 
+:--targetで、相手のROMを指定してください。
+--targetで、相手のROMを指定してください。
+
 :この場所への最初の参照
 First Reference to This Location
 
@@ -10080,9 +10086,6 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
-
-:DiscordコミニティURL
-Discord Community URL
 
 :完了ボタンでDiscordコミニティURLを開く
 Open Discord Community URL with Complete button
