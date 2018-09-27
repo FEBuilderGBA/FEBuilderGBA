@@ -978,7 +978,7 @@
             this.BORDER_J_4.Name = "BORDER_J_4";
             this.BORDER_J_4.Size = new System.Drawing.Size(148, 31);
             this.BORDER_J_4.TabIndex = 69;
-            this.BORDER_J_4.Text = "AP?";
+            this.BORDER_J_4.Text = "ROMTCS";
             this.BORDER_J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BORDER_J_0

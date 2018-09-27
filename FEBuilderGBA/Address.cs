@@ -28,7 +28,8 @@ namespace FEBuilderGBA
             ,TSA  //TSA
             ,FONT  //フォント画像
             ,FONTCN  //フォント画像
-            ,AP      //アニメ処理
+            ,AP      //アニメ処理 ユニットの移動アニメ
+            ,ROMTCS   //アニメ処理2 それ以外のアニメに利用される
             ,HEADERTSA //ヘッダーTSA
             ,InputFormRef     //通常のIFRポインタはデータ
             ,InputFormRef_ASM //ポインタがASMのIFR
@@ -324,6 +325,48 @@ namespace FEBuilderGBA
                 return;
             }
             AddAPAddress(list, addr, pointer, info, isPointerOnly);
+        }
+
+        static void AddROMTCSPointer(List<Address> list, uint addr, uint pointer, string info, bool isPointerOnly)
+        {
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            if (pointer != U.NOT_FOUND)
+            {
+                pointer = U.toOffset(pointer);
+                if (!U.isSafetyOffset(pointer))
+                {
+                    return;
+                }
+            }
+
+            uint length;
+            if (isPointerOnly)
+            {
+                length = 0;
+            }
+            else
+            {
+                length = ImageUtilAP.CalcAPLength(addr);
+            }
+            list.Add(new Address(addr, length, pointer, info, DataTypeEnum.ROMTCS));
+        }
+        static public void AddROMTCSPointer(List<Address> list, uint pointer, string info, bool isPointerOnly)
+        {
+            pointer = U.toOffset(pointer);
+            if (!U.isSafetyOffset(pointer))
+            {
+                return;
+            }
+            uint addr = Program.ROM.u32(pointer);
+            if (!U.isSafetyPointer(addr))
+            {
+                return;
+            }
+            AddROMTCSPointer(list, addr, pointer, info, isPointerOnly);
         }
 
         static void AddProcsAddress(List<Address> list, uint addr, uint pointer, string info, bool isPointerOnly)

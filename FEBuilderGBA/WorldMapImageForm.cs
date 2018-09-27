@@ -407,10 +407,10 @@ namespace FEBuilderGBA
                         , name + " IMAGE"
                         , isPointerOnly
                         , FEBuilderGBA.Address.DataTypeEnum.POINTER);
-//                    FEBuilderGBA.Address.AddAPPointer(list, 0 + addr
-//                        , name + " AP"
-//                        , isPointerOnly
-//                        );
+                    FEBuilderGBA.Address.AddROMTCSPointer(list, 0 + addr
+                        , name + " ROMTCS"
+                        , isPointerOnly
+                        );
                 }
             }
         }

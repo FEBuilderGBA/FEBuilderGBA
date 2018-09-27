@@ -621,6 +621,14 @@ namespace FEBuilderGBA
             {
                 p.Length = 0x20 * 2;
             }
+            else if (type == "ROMTCS")
+            {
+                p.Length = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer));
+            }
+            else if (type == "NAZO60")
+            {
+                p.Length = 60;
+            }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {

@@ -259,10 +259,10 @@ namespace FEBuilderGBA
             }
         }
 
-
         //APのサイズを自動的に計算します.
         public static uint CalcAPLength(uint addr)
         {
+
             ImageUtilAP ap = new ImageUtilAP();
             bool r = ap.Parse(addr);
             if (!r)
@@ -270,28 +270,48 @@ namespace FEBuilderGBA
                 return 0;
             }
             uint newapLen = ap.GetLength();
-/*
-            //やはりこちらの方がいいのでは・・・?
-            byte[] need1 = new byte[] { 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00 };
-            uint endAddr1 = U.Grep(Program.ROM.Data, need1, addr, 0, 2);
+            return newapLen;
+        }
+        //ROMTCSのサイズを自動的に計算します.
+        //APと似ているが違う
+        public static uint CalcROMTCSLength(uint addr)
+        {
+            byte[][] needArray = new byte[][]{
+                 new byte[] { 0x00,0x00,0x00,0x00,0xFF,0xFF,0x04,0x00,0x01,0x00,0x00,0x00,0xFF,0xFF }
+                ,new byte[] { 0x00, 0x00, 0x01, 0x00, 0x00, 0x00 , 0xFF, 0xFF }
+                ,new byte[] { 0x05, 0x00, 0x00, 0x00, 0xFF, 0xFF }
+//                ,new byte[] { 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00 }
+//                ,new byte[] { 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF }
+                ,new byte[] { 0x00, 0x00, 0xFF, 0xFF ,0x00, 0x00, 0x10, 0x00}
+                ,new byte[] { 0x00, 0x00, 0xFF, 0xFF ,0x10, 0x00}
+            };
 
-            byte[] need2 = new byte[] { 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF };
-            uint endAddr2 = U.Grep(Program.ROM.Data, need2, addr, 0, 2);
+            uint[] plusOffsetArray = new uint[] { 14, 8, 6, 6, 4 };
 
-            uint endAddr = Math.Min(endAddr1, endAddr2);
+            uint limit = addr + 20000;
+            if (limit > Program.ROM.Data.Length)
+            {
+                limit = (uint)Program.ROM.Data.Length;
+            }
+
+            uint endAddr = U.NOT_FOUND;
+            uint plusOffset = 0;
+            for (int i = 0; i < needArray.Length; i++)
+            {
+                uint a = U.Grep(Program.ROM.Data, needArray[i], addr, limit, 2);
+                if (endAddr > a)
+                {
+                    endAddr = a;
+                    plusOffset = plusOffsetArray[i];
+                }
+            }
+
             if (endAddr == U.NOT_FOUND)
             {
                 return 0;
             }
-            uint aplen = (endAddr + 6) - addr;
-            if (aplen >= 16384)
-            {
-                return 0;
-            }
-//            Debug.Assert(aplen == newapLen);
-            return aplen;
-*/
-            return newapLen;
+            uint apLen = (endAddr + plusOffset) - addr;
+            return apLen;
         }
     }
 }

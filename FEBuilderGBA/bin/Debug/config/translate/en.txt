@@ -8071,8 +8071,8 @@ Essential Fixes(#ESSENTIALFIXES)
 :フィルタの適応
 Filter adaptation
 
-:パッチ探索中にエラーが発生しました。
-An error occurred during patch search.
+:パッチ探索中にエラーが発生しました。\r\n{0}
+An error occurred during patch search.\r\n{0}
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is an old patch.\r\nWe recommend using a new patch.\r\n

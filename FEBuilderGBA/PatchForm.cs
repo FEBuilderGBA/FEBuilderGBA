@@ -92,7 +92,7 @@ namespace FEBuilderGBA
             }
             catch (System.IO.IOException e)
             {
-                R.ShowStopError("パッチ探索中にエラーが発生しました。",e);
+                R.ShowStopError("パッチ探索中にエラーが発生しました。\r\n{0}" , e.ToString());
                 return patchs;
             }
 
@@ -4656,7 +4656,7 @@ namespace FEBuilderGBA
                     else if (m.type == Address.DataTypeEnum.BIN)
                     {
                         FEBuilderGBA.Address.AddAddress(list
-                            , m.addr + (uint)m.length
+                            , m.addr
                             , (uint)m.length
                             , U.NOT_FOUND
                             , "Fixed " + patch.Name + "@" + map[n].filename + "@BIN"
@@ -4905,6 +4905,17 @@ namespace FEBuilderGBA
                             FEBuilderGBA.Address.AddAPPointer(list
                                 , p
                                 , patchname + " AP " + n
+                                , isPointerOnly);
+                        }
+                    }
+                    else if (type == "ROMTCS")
+                    {//ROMTCS
+                        uint a = Program.ROM.p32(p);
+                        if (U.isSafetyOffset(a))
+                        {
+                            FEBuilderGBA.Address.AddROMTCSPointer(list
+                                , p
+                                , patchname + " ROMTCS " + n
                                 , isPointerOnly);
                         }
                     }

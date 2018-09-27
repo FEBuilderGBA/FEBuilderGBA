@@ -6120,7 +6120,7 @@ r3=X tile position of menu of the right	{U}
 08587A40	:0858823F	用于调试的字体图像	{U}
 080DC43C	:080DC52B	脸部图像TSA	{J}
 080D77FC	:080D78EB	脸部图像TSA	{U}
-08FFF006	:08FFF7FF	NAZO C00009FF	{U}
+08FFF000	:08FFF7FF	NAZO C00009FF	{U}
 0801964C	LoadChapterMapPaletteOnly	{J}
 08030B90	LoadTitleAnimations2Only	{J}
 08019974	LoadChapterMapPaletteOnly	{U}

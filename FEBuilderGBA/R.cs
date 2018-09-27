@@ -11,7 +11,7 @@ namespace FEBuilderGBA
     {
         public static string Notify(string str, params object[] args)
         {
-            string s = string.Format(MyTranslateResource.str(str), args);
+            string s = MyTranslateResource.str(str, args);
             Log.Notify(s);
             return s;
         }
@@ -19,8 +19,8 @@ namespace FEBuilderGBA
         {
             if (args.Length > 0)
             {
-                string a = MyTranslateResource.str(str);
-                return string.Format(a, args);
+                string s = MyTranslateResource.str(str, args);
+                return s;
             }
             else
             {
@@ -29,8 +29,7 @@ namespace FEBuilderGBA
         }
         public static string Error(string str, params object[] args)
         {
-            string a = MyTranslateResource.str(str);
-            string s = string.Format(a, args);
+            string s = MyTranslateResource.str(str, args);
             Log.Error(s);
             return s;
         }
@@ -38,7 +37,7 @@ namespace FEBuilderGBA
         //エラーメッセージ OKだけ
         public static void ShowStopError(string str, params object[] args)
         {
-            string message = R.Error(MyTranslateResource.str(str), args);
+            string message = R.Error(MyTranslateResource.str(str, args));
             string title = R._("エラー");
             MessageBox.Show(ClipIfVeryLong(message)
                 , title

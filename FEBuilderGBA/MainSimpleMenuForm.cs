@@ -21,6 +21,9 @@ namespace FEBuilderGBA
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
+//            ImageUtilAP.CalcROMTCSLength(0xA280A8);
+
+
             InputFormRef.RecolorMenuStrip(this.menuStrip1);
 
             this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);

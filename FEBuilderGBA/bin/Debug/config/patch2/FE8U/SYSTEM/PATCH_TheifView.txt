@@ -1,0 +1,14 @@
+
+NAME=盗賊が霧の中で追加で確保できる視界の距離
+NAME.en=Distance of sight that thieves can secure additional in mist
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0178C2
+HEX=false
+
+AUTHOR=7743
+
+INFO=盗賊ユニットは、霧の視界の距離+このボーナス値の視界を確保できます。

@@ -306,7 +306,8 @@
 08082EC4	CheckForEvents Event Check Buffer Pointer for first callable event (0 if none)	r0=Initial Event Check Buffer	{U}
 080851B8	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{J}
 08082E80	CallEventsFromBuffer Will call the events corresponding the output of CheckForEvents	void	r0=Event Check Buffer, r1=Passed Argument to Event Engine Call	{U}
-089E84F4	Event Check Table	{U}
+089E84F4	:089E858B	Event Check Table	FunctionTables	{U}
+08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
 
 //from https://doc.feuniverse.us/static/stan/RealSaveData.txt
 080A7AA8	GetSaveDataLocation	{J}
@@ -6066,7 +6067,7 @@
 08587A40	:0858823F	デバッグ用のフォント画像	{U}
 080DC43C	:080DC52B	顔画像TSA	{J}
 080D77FC	:080D78EB	顔画像TSA	{U}
-08FFF006	:08FFF7FF	NAZO C00009FF	{U}
+08FFF000	:08FFF7FF	NAZO C00009FF	{U}
 0801964C	LoadChapterMapPaletteOnly	{J}
 08030B90	LoadTitleAnimations2Only	{J}
 08019974	LoadChapterMapPaletteOnly	{U}
@@ -6573,11 +6574,9 @@
 085A0EA0	&ROMTCS	何かのROMTCSデータ	01	{U}
 089A8EF8	&ROMTCS	何かのROMTCSデータ	02	{U}
 08A97AEC	&ROMTCS	何かのROMTCSデータ	03	{U}
-08A9EC24	&ROMTCS	何かのROMTCSデータ	04	{U}
 085C93C0	&ROMTCS	何かのROMTCSデータ	01	{J}
 08A19580	&ROMTCS	何かのROMTCSデータ	02	{J}
 08B1CD80	&ROMTCS	何かのROMTCSデータ	03	{J}
-08B2449C	&ROMTCS	何かのROMTCSデータ	04	{J}
 
 08592230	&NewPopupSimple	ポップアップするためのデータ	01	{U}
 08592288	&NewPopupSimple	ポップアップするためのデータ	02	{U}
@@ -7399,3 +7398,346 @@
 080E2A18	:080E2C37	ライブの杖の何かのデータ	{J}
 085879D8	:08587A3F	Procs(6c) Function Table	{U}
 08577688	:085776EF	Procs(6c) Function Table	{J}
+
+08206954	:082069D7	モンスター発生率関係	常に100%のテーブル	{U}
+081F6620	:081F66A3	モンスター発生率関係	常に100%のテーブル	{J}
+
+08207190	:0820721F	MPlayJumpTable	Midi Function Table	M4ALIB	{U}
+08207220	:08207267	MidiKeyToFreqTable1	M4ALIB	{U}
+08207268	:082072DB	不明	ただ、音楽関係だと思われる	M4ALIB	{U}
+082072DC	:08207303	MidiKeyToFreqTable2	M4ALIB	{U}
+08207304	:0820731B	SampleFreqSetTable	M4ALIB	{U}
+0820731C	:0820739F	MidiKeyToCgbFreq Data Table1	M4ALIB	{U}
+082073A0	:082073B7	MidiKeyToCgbFreq Data Table2	M4ALIB	{U}
+082073B8	:082073F3	MidiKeyToCgbFreq Data Table3	M4ALIB	{U}
+082073F4	:08207403	CgbSound Data Table	M4ALIB	{U}
+08207404	:08207437	ply_note_Table	M4ALIB	{U}
+08207438	:0820746F	ply_xcmd_Table	Function Table	M4ALIB	{U}
+
+081F6E40	:081F6ECF	MPlayJumpTable	Midi Function Table	M4ALIB	{J}
+081F6ED0	:081F6F17	MidiKeyToFreqTable1	M4ALIB	{J}
+081F6F18	:081F6F8B	不明	ただ、音楽関係だと思われる	M4ALIB	{J}
+081F6F8C	:081F6FB3	MidiKeyToFreqTable2	M4ALIB	{J}
+081F6FB4	:081F6FCB	SampleFreqSetTable	M4ALIB	{J}
+081F6FCC	:081F704F	MidiKeyToCgbFreq Data Table1	M4ALIB	{J}
+081F7050	:081F7067	MidiKeyToCgbFreq Data Table2	M4ALIB	{J}
+081F7068	:081F70A3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
+081F70A4	:081F70B3	CgbSound Data Table	M4ALIB	{J}
+081F70B4	:081F70E7	ply_note_Table	M4ALIB	{J}
+081F70E8	:081F711F	ply_xcmd_Table	Function Table	M4ALIB	{J}
+08AB988C	&LZ77	謎のデータ	謎の画像OP関連かもしれない	{U}
+08B53254	&LZ77	謎のデータ	謎の画像OP関連かもしれない	{J}
+
+085A0FF8	&ROMTCS	何かのROMTCSデータ	05	{U}
+085A129C	&ROMTCS	何かのROMTCSデータ	06	{U}
+085A14B8	&ROMTCS	何かのROMTCSデータ	07	{U}
+085A2384	&ROMTCS	何かのROMTCSデータ	08	{U}
+085A2DFC	&ROMTCS	何かのROMTCSデータ	09	{U}
+085A33C8	&ROMTCS	何かのROMTCSデータ	10	{U}
+085A3420	&ROMTCS	何かのROMTCSデータ	11	{U}
+085A3730	&ROMTCS	何かのROMTCSデータ	12	{U}
+085A38CC	&ROMTCS	何かのROMTCSデータ	13	{U}
+085A3908	&ROMTCS	何かのROMTCSデータ	14	{U}
+089AC194	&ROMTCS	何かのROMTCSデータ	15	{U}
+089AC440	&ROMTCS	何かのROMTCSデータ	16	{U}
+089A6FD8	&ROMTCS	何かのROMTCSデータ	17	{U}
+089A6F40	&ROMTCS	何かのROMTCSデータ	18	{U}
+089A61F8	&ROMTCS	何かのROMTCSデータ	19	{U}
+089B2108	&ROMTCS	何かのROMTCSデータ	20	{U}
+089B1A10	&ROMTCS	何かのROMTCSデータ	21	{U}
+089B2748	&ROMTCS	何かのROMTCSデータ	22	{U}
+089A6254	&ROMTCS	何かのROMTCSデータ	23	{U}
+089A5314	&ROMTCS	何かのROMTCSデータ	24	{U}
+089A5A6C	&ROMTCS	何かのROMTCSデータ	25	{U}
+08A1B194	&ROMTCS	何かのROMTCSデータ	26	{U}
+08A280A8	&ROMTCS	何かのROMTCSデータ	27	{U}
+08AA1C70	&ROMTCS	何かのROMTCSデータ	28	{U}
+085A7E34	&ROMTCS	何かのROMTCSデータ	29	{U}
+
+085C9518	&ROMTCS	何かのROMTCSデータ	05	{J}
+085C97BC	&ROMTCS	何かのROMTCSデータ	06	{J}
+085C99D8	&ROMTCS	何かのROMTCSデータ	07	{J}
+085CA8A4	&ROMTCS	何かのROMTCSデータ	08	{J}
+085CB31C	&ROMTCS	何かのROMTCSデータ	09	{J}
+085CB8E8	&ROMTCS	何かのROMTCSデータ	10	{J}
+085CB940	&ROMTCS	何かのROMTCSデータ	11	{J}
+085CBC50	&ROMTCS	何かのROMTCSデータ	12	{J}
+085CBDEC	&ROMTCS	何かのROMTCSデータ	13	{J}
+085CBE28	&ROMTCS	何かのROMTCSデータ	14	{J}
+08A1C81C	&ROMTCS	何かのROMTCSデータ	15	{J}
+08A1CAC8	&ROMTCS	何かのROMTCSデータ	16	{J}
+08A17660	&ROMTCS	何かのROMTCSデータ	17	{J}
+08A175C8	&ROMTCS	何かのROMTCSデータ	18	{J}
+08A16880	&ROMTCS	何かのROMTCSデータ	19	{J}
+08A22790	&ROMTCS	何かのROMTCSデータ	20	{J}
+08A22098	&ROMTCS	何かのROMTCSデータ	21	{J}
+08A22DD0	&ROMTCS	何かのROMTCSデータ	22	{J}
+08A168DC	&ROMTCS	何かのROMTCSデータ	23	{J}
+08A1599C	&ROMTCS	何かのROMTCSデータ	24	{J}
+08A160F4	&ROMTCS	何かのROMTCSデータ	25	{J}
+08A97C2C	&ROMTCS	何かのROMTCSデータ	26	{J}
+08AA52FC	&ROMTCS	何かのROMTCSデータ	27	{J}
+08B2759C	&ROMTCS	何かのROMTCSデータ	28	{J}
+085D1D3C	&ROMTCS	何かのROMTCSデータ	29	{J}
+
+08AA6EA4	:08AA702F	謎の60バイト固定データを定義しているテーブル	{U}
+08AF4C9C	&NAZO60	謎の60バイト固定データ	01	{U}
+08AF5100	&NAZO60	謎の60バイト固定データ	02	{U}
+08AF5578	&NAZO60	謎の60バイト固定データ	03	{U}
+08AF59EC	&NAZO60	謎の60バイト固定データ	04	{U}
+08AF5E5C	&NAZO60	謎の60バイト固定データ	05	{U}
+08AF62CC	&NAZO60	謎の60バイト固定データ	06	{U}
+08AF6744	&NAZO60	謎の60バイト固定データ	07	{U}
+08AF6BBC	&NAZO60	謎の60バイト固定データ	08	{U}
+08AF7034	&NAZO60	謎の60バイト固定データ	09	{U}
+08AF74AC	&NAZO60	謎の60バイト固定データ	10	{U}
+08AF7924	&NAZO60	謎の60バイト固定データ	11	{U}
+08AF7D98	&NAZO60	謎の60バイト固定データ	12	{U}
+08AF8210	&NAZO60	謎の60バイト固定データ	13	{U}
+08AF8688	&NAZO60	謎の60バイト固定データ	14	{U}
+08AF8AFC	&NAZO60	謎の60バイト固定データ	15	{U}
+08AF8F74	&NAZO60	謎の60バイト固定データ	16	{U}
+08AF93EC	&NAZO60	謎の60バイト固定データ	17	{U}
+08AF9864	&NAZO60	謎の60バイト固定データ	18	{U}
+08AF9CDC	&NAZO60	謎の60バイト固定データ	19	{U}
+08AFA154	&NAZO60	謎の60バイト固定データ	20	{U}
+08AFA5CC	&NAZO60	謎の60バイト固定データ	21	{U}
+08AFAA44	&NAZO60	謎の60バイト固定データ	22	{U}
+08AFAEBC	&NAZO60	謎の60バイト固定データ	23	{U}
+08AFB334	&NAZO60	謎の60バイト固定データ	24	{U}
+08AFB7AC	&NAZO60	謎の60バイト固定データ	25	{U}
+08AFBC24	&NAZO60	謎の60バイト固定データ	26	{U}
+08AFC098	&NAZO60	謎の60バイト固定データ	27	{U}
+08AFC50C	&NAZO60	謎の60バイト固定データ	28	{U}
+08AFC978	&NAZO60	謎の60バイト固定データ	29	{U}
+08AFCDEC	&NAZO60	謎の60バイト固定データ	30	{U}
+08AFD260	&NAZO60	謎の60バイト固定データ	31	{U}
+08AFD6C4	&NAZO60	謎の60バイト固定データ	32	{U}
+08AFDB28	&NAZO60	謎の60バイト固定データ	33	{U}
+08AFDF98	&NAZO60	謎の60バイト固定データ	34	{U}
+08AFE40C	&NAZO60	謎の60バイト固定データ	35	{U}
+08AFE880	&NAZO60	謎の60バイト固定データ	36	{U}
+08AFECF4	&NAZO60	謎の60バイト固定データ	37	{U}
+08AFF16C	&NAZO60	謎の60バイト固定データ	38	{U}
+08AFF5DC	&NAZO60	謎の60バイト固定データ	39	{U}
+08AFFA44	&NAZO60	謎の60バイト固定データ	40	{U}
+08AFFEAC	&NAZO60	謎の60バイト固定データ	41	{U}
+08B0031C	&NAZO60	謎の60バイト固定データ	42	{U}
+08B00794	&NAZO60	謎の60バイト固定データ	43	{U}
+08B00C0C	&NAZO60	謎の60バイト固定データ	44	{U}
+08B0107C	&NAZO60	謎の60バイト固定データ	45	{U}
+08B014F0	&NAZO60	謎の60バイト固定データ	46	{U}
+08B01968	&NAZO60	謎の60バイト固定データ	47	{U}
+08B01DDC	&NAZO60	謎の60バイト固定データ	48	{U}
+08B02244	&NAZO60	謎の60バイト固定データ	49	{U}
+08B026B8	&NAZO60	謎の60バイト固定データ	50	{U}
+08B02B20	&NAZO60	謎の60バイト固定データ	51	{U}
+08B02F90	&NAZO60	謎の60バイト固定データ	52	{U}
+08B033FC	&NAZO60	謎の60バイト固定データ	53	{U}
+08B03870	&NAZO60	謎の60バイト固定データ	54	{U}
+08B03CE0	&NAZO60	謎の60バイト固定データ	55	{U}
+08B04158	&NAZO60	謎の60バイト固定データ	56	{U}
+08B045D0	&NAZO60	謎の60バイト固定データ	57	{U}
+08B04A48	&NAZO60	謎の60バイト固定データ	58	{U}
+08B04EB4	&NAZO60	謎の60バイト固定データ	59	{U}
+08B05328	&NAZO60	謎の60バイト固定データ	60	{U}
+08B05794	&NAZO60	謎の60バイト固定データ	61	{U}
+08B05BFC	&NAZO60	謎の60バイト固定データ	62	{U}
+08B06070	&NAZO60	謎の60バイト固定データ	63	{U}
+08B064E8	&NAZO60	謎の60バイト固定データ	64	{U}
+08B06960	&NAZO60	謎の60バイト固定データ	65	{U}
+08B06DD4	&NAZO60	謎の60バイト固定データ	66	{U}
+08B07244	&NAZO60	謎の60バイト固定データ	67	{U}
+08B076B4	&NAZO60	謎の60バイト固定データ	68	{U}
+08B07B2C	&NAZO60	謎の60バイト固定データ	69	{U}
+08B07F94	&NAZO60	謎の60バイト固定データ	70	{U}
+08B08404	&NAZO60	謎の60バイト固定データ	71	{U}
+08B0887C	&NAZO60	謎の60バイト固定データ	72	{U}
+08B08CF4	&NAZO60	謎の60バイト固定データ	73	{U}
+08B09160	&NAZO60	謎の60バイト固定データ	74	{U}
+08B095D0	&NAZO60	謎の60バイト固定データ	75	{U}
+08B09A48	&NAZO60	謎の60バイト固定データ	76	{U}
+08B09EBC	&NAZO60	謎の60バイト固定データ	77	{U}
+08B0A334	&NAZO60	謎の60バイト固定データ	78	{U}
+08B0A7A8	&NAZO60	謎の60バイト固定データ	79	{U}
+08B0AC20	&NAZO60	謎の60バイト固定データ	80	{U}
+08B0B098	&NAZO60	謎の60バイト固定データ	81	{U}
+08B0B508	&NAZO60	謎の60バイト固定データ	82	{U}
+08B0B97C	&NAZO60	謎の60バイト固定データ	83	{U}
+08B0BDF4	&NAZO60	謎の60バイト固定データ	84	{U}
+08B0C268	&NAZO60	謎の60バイト固定データ	85	{U}
+08B0C6DC	&NAZO60	謎の60バイト固定データ	86	{U}
+08B0CB4C	&NAZO60	謎の60バイト固定データ	87	{U}
+08B0CFC0	&NAZO60	謎の60バイト固定データ	88	{U}
+08B0D3F8	&NAZO60	謎の60バイト固定データ	89	{U}
+08B0D860	&NAZO60	謎の60バイト固定データ	90	{U}
+08B0DCA8	&NAZO60	謎の60バイト固定データ	91	{U}
+08B0E0D4	&NAZO60	謎の60バイト固定データ	92	{U}
+08B0E548	&NAZO60	謎の60バイト固定データ	93	{U}
+08B0E9A4	&NAZO60	謎の60バイト固定データ	94	{U}
+08B0EE18	&NAZO60	謎の60バイト固定データ	95	{U}
+08B0F264	&NAZO60	謎の60バイト固定データ	96	{U}
+08B0F6DC	&NAZO60	謎の60バイト固定データ	97	{U}
+08B0FAE0	&NAZO60	謎の60バイト固定データ	98	{U}
+08B0FF30	&NAZO60	謎の60バイト固定データ	99	{U}
+08B1039C	&NAZO60	謎の60バイト固定データ	100	{U}
+
+08B3F498	:08B3F627	謎の60バイト固定データを定義しているテーブル	{U}
+08B8EAA4	&NAZO60	謎の60バイト固定データ	01	{J}
+08B8EF08	&NAZO60	謎の60バイト固定データ	02	{J}
+08B8F380	&NAZO60	謎の60バイト固定データ	03	{J}
+08B8F7F4	&NAZO60	謎の60バイト固定データ	04	{J}
+08B8FC64	&NAZO60	謎の60バイト固定データ	05	{J}
+08B900D4	&NAZO60	謎の60バイト固定データ	06	{J}
+08B9054C	&NAZO60	謎の60バイト固定データ	07	{J}
+08B909C4	&NAZO60	謎の60バイト固定データ	08	{J}
+08B90E3C	&NAZO60	謎の60バイト固定データ	09	{J}
+08B912B4	&NAZO60	謎の60バイト固定データ	10	{J}
+08B9172C	&NAZO60	謎の60バイト固定データ	11	{J}
+08B91BA0	&NAZO60	謎の60バイト固定データ	12	{J}
+08B92018	&NAZO60	謎の60バイト固定データ	13	{J}
+08B92490	&NAZO60	謎の60バイト固定データ	14	{J}
+08B92904	&NAZO60	謎の60バイト固定データ	15	{J}
+08B92D7C	&NAZO60	謎の60バイト固定データ	16	{J}
+08B931F4	&NAZO60	謎の60バイト固定データ	17	{J}
+08B9366C	&NAZO60	謎の60バイト固定データ	18	{J}
+08B93AE4	&NAZO60	謎の60バイト固定データ	19	{J}
+08B93F5C	&NAZO60	謎の60バイト固定データ	20	{J}
+08B943D4	&NAZO60	謎の60バイト固定データ	21	{J}
+08B9484C	&NAZO60	謎の60バイト固定データ	22	{J}
+08B94CC4	&NAZO60	謎の60バイト固定データ	23	{J}
+08B9513C	&NAZO60	謎の60バイト固定データ	24	{J}
+08B955B4	&NAZO60	謎の60バイト固定データ	25	{J}
+08B95A2C	&NAZO60	謎の60バイト固定データ	26	{J}
+08B95EA0	&NAZO60	謎の60バイト固定データ	27	{J}
+08B96314	&NAZO60	謎の60バイト固定データ	28	{J}
+08B96780	&NAZO60	謎の60バイト固定データ	29	{J}
+08B96BF4	&NAZO60	謎の60バイト固定データ	30	{J}
+08B97068	&NAZO60	謎の60バイト固定データ	31	{J}
+08B974CC	&NAZO60	謎の60バイト固定データ	32	{J}
+08B97930	&NAZO60	謎の60バイト固定データ	33	{J}
+08B97DA0	&NAZO60	謎の60バイト固定データ	34	{J}
+08B98214	&NAZO60	謎の60バイト固定データ	35	{J}
+08B98688	&NAZO60	謎の60バイト固定データ	36	{J}
+08B98AFC	&NAZO60	謎の60バイト固定データ	37	{J}
+08B98F74	&NAZO60	謎の60バイト固定データ	38	{J}
+08B993E4	&NAZO60	謎の60バイト固定データ	39	{J}
+08B9984C	&NAZO60	謎の60バイト固定データ	40	{J}
+08B99CB4	&NAZO60	謎の60バイト固定データ	41	{J}
+08B9A124	&NAZO60	謎の60バイト固定データ	42	{J}
+08B9A59C	&NAZO60	謎の60バイト固定データ	43	{J}
+08B9AA14	&NAZO60	謎の60バイト固定データ	44	{J}
+08B9AE84	&NAZO60	謎の60バイト固定データ	45	{J}
+08B9B2F8	&NAZO60	謎の60バイト固定データ	46	{J}
+08B9B770	&NAZO60	謎の60バイト固定データ	47	{J}
+08B9BBE4	&NAZO60	謎の60バイト固定データ	48	{J}
+08B9C04C	&NAZO60	謎の60バイト固定データ	49	{J}
+08B9C4C0	&NAZO60	謎の60バイト固定データ	50	{J}
+08B9C928	&NAZO60	謎の60バイト固定データ	51	{J}
+08B9CD98	&NAZO60	謎の60バイト固定データ	52	{J}
+08B9D204	&NAZO60	謎の60バイト固定データ	53	{J}
+08B9D678	&NAZO60	謎の60バイト固定データ	54	{J}
+08B9DAE8	&NAZO60	謎の60バイト固定データ	55	{J}
+08B9DF60	&NAZO60	謎の60バイト固定データ	56	{J}
+08B9E3D8	&NAZO60	謎の60バイト固定データ	57	{J}
+08B9E850	&NAZO60	謎の60バイト固定データ	58	{J}
+08B9ECBC	&NAZO60	謎の60バイト固定データ	59	{J}
+08B9F130	&NAZO60	謎の60バイト固定データ	60	{J}
+08B9F59C	&NAZO60	謎の60バイト固定データ	61	{J}
+08B9FA04	&NAZO60	謎の60バイト固定データ	62	{J}
+08B9FE78	&NAZO60	謎の60バイト固定データ	63	{J}
+08BA02F0	&NAZO60	謎の60バイト固定データ	64	{J}
+08BA0768	&NAZO60	謎の60バイト固定データ	65	{J}
+08BA0BDC	&NAZO60	謎の60バイト固定データ	66	{J}
+08BA104C	&NAZO60	謎の60バイト固定データ	67	{J}
+08BA14BC	&NAZO60	謎の60バイト固定データ	68	{J}
+08BA1934	&NAZO60	謎の60バイト固定データ	69	{J}
+08BA1D9C	&NAZO60	謎の60バイト固定データ	70	{J}
+08BA220C	&NAZO60	謎の60バイト固定データ	71	{J}
+08BA2684	&NAZO60	謎の60バイト固定データ	72	{J}
+08BA2AFC	&NAZO60	謎の60バイト固定データ	73	{J}
+08BA2F68	&NAZO60	謎の60バイト固定データ	74	{J}
+08BA33D8	&NAZO60	謎の60バイト固定データ	75	{J}
+08BA3850	&NAZO60	謎の60バイト固定データ	76	{J}
+08BA3CC4	&NAZO60	謎の60バイト固定データ	77	{J}
+08BA413C	&NAZO60	謎の60バイト固定データ	78	{J}
+08BA45B0	&NAZO60	謎の60バイト固定データ	79	{J}
+08BA4A28	&NAZO60	謎の60バイト固定データ	80	{J}
+08BA4EA0	&NAZO60	謎の60バイト固定データ	81	{J}
+08BA5310	&NAZO60	謎の60バイト固定データ	82	{J}
+08BA5784	&NAZO60	謎の60バイト固定データ	83	{J}
+08BA5BFC	&NAZO60	謎の60バイト固定データ	84	{J}
+08BA6070	&NAZO60	謎の60バイト固定データ	85	{J}
+08BA64E4	&NAZO60	謎の60バイト固定データ	86	{J}
+08BA6954	&NAZO60	謎の60バイト固定データ	87	{J}
+08BA6DC8	&NAZO60	謎の60バイト固定データ	88	{J}
+08BA7200	&NAZO60	謎の60バイト固定データ	89	{J}
+08BA7668	&NAZO60	謎の60バイト固定データ	90	{J}
+08BA7AB0	&NAZO60	謎の60バイト固定データ	91	{J}
+08BA7EDC	&NAZO60	謎の60バイト固定データ	92	{J}
+08BA8350	&NAZO60	謎の60バイト固定データ	93	{J}
+08BA87AC	&NAZO60	謎の60バイト固定データ	94	{J}
+08BA8C20	&NAZO60	謎の60バイト固定データ	95	{J}
+08BA906C	&NAZO60	謎の60バイト固定データ	96	{J}
+08BA94E4	&NAZO60	謎の60バイト固定データ	97	{J}
+08BA98E8	&NAZO60	謎の60バイト固定データ	98	{J}
+08BA9D38	&NAZO60	謎の60バイト固定データ	99	{J}
+08BAA1A4	&NAZO60	謎の60バイト固定データ	100	{J}
+089EE0DC	&EVENT	何かのイベント関数	難易度判定	1	{U}
+089EE104	&EVENT	何かのイベント関数	章IDの取得	{U}
+089EE120	&EVENT	何かのイベント関数	編の取得	1	{U}
+089EE140	&EVENT	何かのイベント関数	編の取得	2	{U}
+089EE218	&EVENT	何かのイベント関数	難易度判定	2	{U}
+089EE330	&EVENT	何かのイベント関数	マップ変化	{U}
+089EE340	&EVENT	何かのイベント関数	謎	1	{U}
+089EE354	&EVENT	何かのイベント関数	謎	2	{U}
+089EE368	&EVENT	何かのイベント関数	謎	3	{U}
+089EE37C	&EVENT	何かのイベント関数	謎	4	{U}
+089EE3F4	&EVENT	メモリスロット2のユニットが生きていたら何かする	{U}
+089EE6A0	&EVENT	何かのイベント関数	謎	5	{U}
+089EE6C8	&EVENT	何かのイベント関数	謎	6	{U}
+089F35FC	&EVENT	何かのイベント関数	エフラムへの分岐	{U}
+089FC6C4	&EVENT	何かのイベント関数	謎の増援データ	{U}
+089FF480	&EVENT	何かのイベント関数	謎	7	{U}
+089FFD64	&EVENT	デバッグルームイベント	詳細不明	{U}
+
+08A60214	&EVENT	何かのイベント関数	難易度判定	1	{J}
+08A6023C	&EVENT	何かのイベント関数	章IDの取得	{J}
+08A60258	&EVENT	何かのイベント関数	編の取得	1	{J}
+08A60278	&EVENT	何かのイベント関数	編の取得	2	{J}
+08A60350	&EVENT	何かのイベント関数	難易度判定	2	{J}
+08A60468	&EVENT	何かのイベント関数	マップ変化	{J}
+08A60478	&EVENT	何かのイベント関数	謎	1	{J}
+08A6048C	&EVENT	何かのイベント関数	謎	2	{J}
+08A604A0	&EVENT	何かのイベント関数	謎	3	{J}
+08A604B4	&EVENT	何かのイベント関数	謎	4	{J}
+08A6052C	&EVENT	メモリスロット2のユニットが生きていたら何かする	{J}
+08A607D8	&EVENT	何かのイベント関数	謎	5	{J}
+08A60800	&EVENT	何かのイベント関数	謎	6	{J}
+08A628A8	&EVENT	チュートリアルで訪問を説明するイベント	{J}
+08A632C8	&EVENT	チュートリアルでガルシアとロスの説明をするイベント	{J}
+08A632EC	&EVENT	チュートリアルで武器屋の説明をするイベント	{J}
+08A65730	&EVENT	何かのイベント関数	エフラムへの分岐	{J}
+08A6E7A4	&EVENT	何かのイベント関数	謎の増援データ	{J}
+08A71538	&EVENT	何かのイベント関数	謎	7	{J}
+08A71CE8	&EVENT	デバッグルームイベント	詳細不明	{J}
+
+08A0186C	:08A0189B	何かのFillTileRectタイルテーブル	{U}
+08A175B4	&HEADERTSA	FillTileRectされる何かのタイル	40	{U}
+08A175C8	&HEADERTSA	FillTileRectされる何かのタイル	41	{U}
+08A175DC	&HEADERTSA	FillTileRectされる何かのタイル	42	{U}
+08A175F0	&HEADERTSA	FillTileRectされる何かのタイル	43	{U}
+08A1763C	&HEADERTSA	FillTileRectされる何かのタイル	44	{U}
+08A17650	&HEADERTSA	FillTileRectされる何かのタイル	45	{U}
+08A17664	&HEADERTSA	FillTileRectされる何かのタイル	46	{U}
+08A17678	&HEADERTSA	FillTileRectされる何かのタイル	47	{U}
+
+00A73924	:00A7394B	何かのFillTileRectタイルテーブル	{J}
+08A93300	&HEADERTSA	FillTileRectされる何かのタイル	40	{J}
+08A93314	&HEADERTSA	FillTileRectされる何かのタイル	41	{J}
+08A93328	&HEADERTSA	FillTileRectされる何かのタイル	42	{J}
+08A9333C	&HEADERTSA	FillTileRectされる何かのタイル	43	{J}
+08A93388	&HEADERTSA	FillTileRectされる何かのタイル	44	{J}
+08A9339C	&HEADERTSA	FillTileRectされる何かのタイル	45	{J}
+08A933B0	&HEADERTSA	FillTileRectされる何かのタイル	46	{J}
+08A933C4	&HEADERTSA	FillTileRectされる何かのタイル	47	{J}

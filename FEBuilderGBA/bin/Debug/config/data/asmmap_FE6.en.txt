@@ -1082,3 +1082,4 @@
 0802E3D0	RMenu_Procs_BKSEL relationship of battle prediction dialog
 08070A0C	Battle prediction dialog is a wrapper function to register RMenu
 08003ad8	NewBlocking6C
+08017410	GetUnitFogViewRange

@@ -25,6 +25,32 @@ namespace FEBuilderGBA
         {
             return Resource.str(src);
         }
+        public static string str(string src, params object[] args)
+        {
+            string trans = str(src);
+
+#if !DEBUG
+            try
+            {
+#endif
+                return string.Format(trans, args);
+#if !DEBUG
+            }
+            catch (FormatException e)
+            {
+                Log.Error("Translate Error! {0}->{1} @@ {2}" , src,trans , e.ToString() );
+                try
+                {
+                    return string.Format(src, args);
+                }
+                catch (FormatException e2)
+                {
+                    Log.Error("Translate Error2! {0} @@ {1}", src, e2.ToString());
+                    return src;
+                }
+            }
+#endif
+        }
         public static void LoadResource(string fullfilename)
         {
             Resource.LoadResource(fullfilename);
