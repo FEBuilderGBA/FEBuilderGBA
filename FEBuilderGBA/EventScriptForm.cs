@@ -318,6 +318,12 @@ namespace FEBuilderGBA
                 }
                 if (TraceList.IndexOf(event_addr) >= 0)
                 {//既知
+                    FEBuilderGBA.Address.AddPointer(RefList
+                        , event_pointer
+                        , 0
+                        , Basename
+                        , Address.DataTypeEnum.EVENTSCRIPT
+                        );
                     return;
                 }
                 TraceList.Add(event_addr);
@@ -338,7 +344,6 @@ namespace FEBuilderGBA
                             , Basename
                             , Address.DataTypeEnum.EVENTSCRIPT
                             );
-
                         return;
                     }
                     else if (code.Script.Has == EventScript.ScriptHas.UNKNOWN)

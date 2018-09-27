@@ -311,5 +311,39 @@ namespace FEBuilderGBA
             uint apLen = (endAddr + plusOffset) - addr;
             return apLen;
         }
+
+        public static uint CalcPopupSimpleLength(uint addr)
+        {
+            byte[][] needArray = new byte[][]{
+                 new byte[] { 0x00, 0x00,0x00, 0x00, 0x00, 0x00 , 0x00, 0x00 , 0x00, 0x00}
+            };
+
+            uint[] plusOffsetArray = new uint[] { 10 };
+
+            uint limit = addr + 20000;
+            if (limit > Program.ROM.Data.Length)
+            {
+                limit = (uint)Program.ROM.Data.Length;
+            }
+
+            uint endAddr = U.NOT_FOUND;
+            uint plusOffset = 0;
+            for (int i = 0; i < needArray.Length; i++)
+            {
+                uint a = U.Grep(Program.ROM.Data, needArray[i], addr, limit, 2);
+                if (endAddr > a)
+                {
+                    endAddr = a;
+                    plusOffset = plusOffsetArray[i];
+                }
+            }
+
+            if (endAddr == U.NOT_FOUND)
+            {
+                return 0;
+            }
+            uint apLen = (endAddr + plusOffset) - addr;
+            return apLen;
+        }
     }
 }

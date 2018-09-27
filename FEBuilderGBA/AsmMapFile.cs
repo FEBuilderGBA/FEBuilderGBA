@@ -629,6 +629,14 @@ namespace FEBuilderGBA
             {
                 p.Length = 60;
             }
+            else if (type == "FONTCOLOR0x200")
+            {
+                p.Length = 0x200;
+            }
+            else if (type == "NewPopupSimple")
+            {
+                p.Length = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer));
+            }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
