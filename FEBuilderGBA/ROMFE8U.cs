@@ -186,6 +186,7 @@ namespace FEBuilderGBA
         public uint map_load_function_switch1_address() { return 0xBD070; }
         public uint system_icon_pointer() { return 0x156AC; }//システム アイコン集
         public uint system_icon_palette_pointer() { return 0x156B8; }//システム アイコンパレット集
+        public uint system_icon_width_address() { return 0x15690; } //システムアイコンの幅が書かれているアドレス
         public uint system_weapon_icon_pointer() { return 0x9DC5C; }//剣　斧　弓などの武器属性アイコン集
         public uint system_weapon_icon_palette_pointer() { return 0x91178; }//剣　斧　弓などの武器属性アイコン集のパレット
         public uint system_music_icon_pointer() { return 0x0B1C7C; }//音楽関係のアイコン集

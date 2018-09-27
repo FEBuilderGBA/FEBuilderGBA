@@ -4495,8 +4495,6 @@ namespace FEBuilderGBA
             g_Cache_magic_split_enum = magic_split_enum.NoCache;
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
-            g_SCV_enum = SCVPatch_enum.NoCache;
-            g_SCV_enum = SCVPatch_enum.NoCache;
         }
 
 
@@ -9229,83 +9227,6 @@ namespace FEBuilderGBA
                 }
             }
             return SpecialHack_enum.No;
-        }
-
-
-
-        public enum SCVPatch_enum
-        {
-            No
-            ,Yes
-            ,NoCache = 0xff
-        }
-        static SCVPatch_enum g_SCV_enum = SCVPatch_enum.NoCache;
-        public static SCVPatch_enum SearchSCVPatch()
-        {
-            if (g_SCV_enum == SCVPatch_enum.NoCache)
-            {
-                g_SCV_enum = SearchSCVPatchLow();
-            }
-            return g_SCV_enum;
-        }
-        public static SCVPatch_enum SearchSCVPatchLow()
-        {
-            skill_system_enum skill = SearchSkillSystem();
-            if (skill == skill_system_enum.FE8N
-                || skill == skill_system_enum.FE8N_ver2)
-            {
-                return SCVPatch_enum.Yes;
-            }
-            if (Program.ROM.RomInfo.version() != 8)
-            {
-                return SCVPatch_enum.No;
-            }
-            string filename = U.ConfigDataFilename("SCV_extends_");
-            if (!U.IsRequiredFileExist(filename))
-            {
-                return SCVPatch_enum.No;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
-                if (U.memcmp(need, data) != 0)
-                {
-                    continue;
-                }
-                if (sp[0] == "SCV")
-                {
-                    return SCVPatch_enum.Yes;
-                }
-            }
-            return SCVPatch_enum.No;
         }
 
         //スキルシステムの判別. ちょっとだけコストがかかる.

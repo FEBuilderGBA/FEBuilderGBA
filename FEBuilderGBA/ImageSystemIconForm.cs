@@ -36,11 +36,17 @@ namespace FEBuilderGBA
         {
             Size size = new System.Drawing.Size(144, 32);
 
-            if (InputFormRef.SearchSCVPatch() == InputFormRef.SCVPatch_enum.Yes)
-            {//FE8Nでは、基本となるアイコンセットの幅が拡張されている.
-             //                size.Width = 32*8;
-                size.Width = 24 * 8;
+            uint width = Program.ROM.u8(Program.ROM.RomInfo.system_icon_width_address());
+            if (width > 32)
+            {
+                width = 32;
             }
+            else if (width < 0x12)
+            {
+                width = 0x12;
+            }
+
+            size.Width = (int)width * 8;
             return size;
         }
 
