@@ -45,7 +45,7 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.TextTabControl = new System.Windows.Forms.TabControl();
@@ -322,7 +322,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_32766);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(22, 36);
@@ -331,15 +331,15 @@
             this.panel6.Size = new System.Drawing.Size(299, 853);
             this.panel6.TabIndex = 74;
             // 
-            // AddressListExpandsButton
+            // AddressListExpandsButton_32766
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 822);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(210, 30);
-            this.AddressListExpandsButton.TabIndex = 114;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(-1, 822);
+            this.AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_32766.Name = "AddressListExpandsButton_32766";
+            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(219, 30);
+            this.AddressListExpandsButton_32766.TabIndex = 114;
+            this.AddressListExpandsButton_32766.Text = "リストの拡張";
+            this.AddressListExpandsButton_32766.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -357,6 +357,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -764,6 +765,7 @@
             // TextList
             // 
             this.TextList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.TextList.IntegralHeight = false;
             this.TextList.ItemHeight = 18;
             this.TextList.Location = new System.Drawing.Point(2, 2);
             this.TextList.Margin = new System.Windows.Forms.Padding(2);
@@ -863,6 +865,7 @@
             // SearchResultListBox
             // 
             this.SearchResultListBox.FormattingEnabled = true;
+            this.SearchResultListBox.IntegralHeight = false;
             this.SearchResultListBox.ItemHeight = 18;
             this.SearchResultListBox.Location = new System.Drawing.Point(19, 80);
             this.SearchResultListBox.Margin = new System.Windows.Forms.Padding(2);
@@ -1059,6 +1062,7 @@
             // RefListBox
             // 
             this.RefListBox.FormattingEnabled = true;
+            this.RefListBox.IntegralHeight = false;
             this.RefListBox.ItemHeight = 18;
             this.RefListBox.Location = new System.Drawing.Point(5, 109);
             this.RefListBox.Margin = new System.Windows.Forms.Padding(2);
@@ -1138,7 +1142,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
-        private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.Button AddressListExpandsButton_32766;
         private FEBuilderGBA.TextBoxEx AddressPointer;
         private System.Windows.Forms.TabControl TextTabControl;
         private System.Windows.Forms.TabPage EasyTabPage;

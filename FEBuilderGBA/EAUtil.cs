@@ -120,7 +120,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string ifdef_keyword = line.Substring(pos + 1).Trim();
+            string ifdef_keyword = line.Substring(pos + 7 + 1).Trim();
             if (ifdef_keyword == "")
             {
                 return;

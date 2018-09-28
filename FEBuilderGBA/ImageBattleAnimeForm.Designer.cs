@@ -66,6 +66,8 @@
             this.N_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.N_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.N_Comment = new FEBuilderGBA.TextBoxEx();
+            this.label6 = new System.Windows.Forms.Label();
             this.X_N_JumpEditor = new System.Windows.Forms.Button();
             this.X_N_JumpPalette = new System.Windows.Forms.Button();
             this.ERROR_OVER16_ANIME = new System.Windows.Forms.Label();
@@ -127,9 +129,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.N_AddressListExpandsButton = new System.Windows.Forms.Button();
-            this.N_Comment = new FEBuilderGBA.TextBoxEx();
-            this.label6 = new System.Windows.Forms.Label();
+            this.N_AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -667,6 +667,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(957, 509);
             this.panel4.TabIndex = 68;
+            // 
+            // N_Comment
+            // 
+            this.N_Comment.ErrorMessage = "";
+            this.N_Comment.Location = new System.Drawing.Point(565, 395);
+            this.N_Comment.Name = "N_Comment";
+            this.N_Comment.Placeholder = "";
+            this.N_Comment.Size = new System.Drawing.Size(387, 25);
+            this.N_Comment.TabIndex = 200;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleDescription = "@COMMENT";
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(436, 392);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 31);
+            this.label6.TabIndex = 199;
+            this.label6.Text = "コメント";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // X_N_JumpEditor
             // 
@@ -1414,7 +1435,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.N_AddressListExpandsButton);
+            this.panel8.Controls.Add(this.N_AddressListExpandsButton_32766);
             this.panel8.Controls.Add(this.N_AddressList);
             this.panel8.Controls.Add(this.N1_LabelFilter);
             this.panel8.Location = new System.Drawing.Point(10, 344);
@@ -1423,36 +1444,15 @@
             this.panel8.Size = new System.Drawing.Size(270, 539);
             this.panel8.TabIndex = 113;
             // 
-            // N_AddressListExpandsButton
+            // N_AddressListExpandsButton_32766
             // 
-            this.N_AddressListExpandsButton.Location = new System.Drawing.Point(1, 507);
-            this.N_AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.N_AddressListExpandsButton.Name = "N_AddressListExpandsButton";
-            this.N_AddressListExpandsButton.Size = new System.Drawing.Size(266, 30);
-            this.N_AddressListExpandsButton.TabIndex = 113;
-            this.N_AddressListExpandsButton.Text = "リストの拡張";
-            this.N_AddressListExpandsButton.UseVisualStyleBackColor = true;
-            // 
-            // N_Comment
-            // 
-            this.N_Comment.ErrorMessage = "";
-            this.N_Comment.Location = new System.Drawing.Point(565, 395);
-            this.N_Comment.Name = "N_Comment";
-            this.N_Comment.Placeholder = "";
-            this.N_Comment.Size = new System.Drawing.Size(387, 25);
-            this.N_Comment.TabIndex = 200;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleDescription = "@COMMENT";
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(436, 392);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 31);
-            this.label6.TabIndex = 199;
-            this.label6.Text = "コメント";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N_AddressListExpandsButton_32766.Location = new System.Drawing.Point(1, 507);
+            this.N_AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
+            this.N_AddressListExpandsButton_32766.Name = "N_AddressListExpandsButton_32766";
+            this.N_AddressListExpandsButton_32766.Size = new System.Drawing.Size(266, 30);
+            this.N_AddressListExpandsButton_32766.TabIndex = 113;
+            this.N_AddressListExpandsButton_32766.Text = "リストの拡張";
+            this.N_AddressListExpandsButton_32766.UseVisualStyleBackColor = true;
             // 
             // ImageBattleAnimeForm
             // 
@@ -1603,7 +1603,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button AddressListExpandsButton;
-        private System.Windows.Forms.Button N_AddressListExpandsButton;
+        private System.Windows.Forms.Button N_AddressListExpandsButton_32766;
         private FEBuilderGBA.TextBoxEx L_2_BATTLEANIME;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ShowSectionCombo;

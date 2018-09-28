@@ -350,7 +350,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                length = ImageUtilAP.CalcAPLength(addr);
+                length = ImageUtilAP.CalcROMTCSLength(addr);
             }
             list.Add(new Address(addr, length, pointer, info, DataTypeEnum.ROMTCS));
         }

@@ -73,7 +73,7 @@
             this.label3.Size = new System.Drawing.Size(972, 129);
             this.label3.TabIndex = 28;
             this.label3.Text = "ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセ" +
-    "ージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、上書き保存時に、簡易エラーチェックをするを「無効」にしてください。";
+    "ージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。";
             // 
             // MyOKButton
             // 
@@ -81,7 +81,7 @@
             this.MyOKButton.Location = new System.Drawing.Point(300, 147);
             this.MyOKButton.Name = "MyOKButton";
             this.MyOKButton.Size = new System.Drawing.Size(324, 51);
-            this.MyOKButton.TabIndex = 1;
+            this.MyOKButton.TabIndex = 0;
             this.MyOKButton.Text = "はい";
             this.MyOKButton.UseVisualStyleBackColor = true;
             this.MyOKButton.Click += new System.EventHandler(this.MyOKButton_Click);
@@ -92,7 +92,7 @@
             this.MyCancelButton.Location = new System.Drawing.Point(651, 147);
             this.MyCancelButton.Name = "MyCancelButton";
             this.MyCancelButton.Size = new System.Drawing.Size(331, 51);
-            this.MyCancelButton.TabIndex = 0;
+            this.MyCancelButton.TabIndex = 1;
             this.MyCancelButton.Text = "キャンセル";
             this.MyCancelButton.UseVisualStyleBackColor = true;
             this.MyCancelButton.Click += new System.EventHandler(this.MyCancelButton_Click);

@@ -246,7 +246,7 @@
             this.AddressListExpandsButton_256.Location = new System.Drawing.Point(-1, 734);
             this.AddressListExpandsButton_256.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_256.Name = "AddressListExpandsButton_256";
-            this.AddressListExpandsButton_256.Size = new System.Drawing.Size(250, 30);
+            this.AddressListExpandsButton_256.Size = new System.Drawing.Size(268, 30);
             this.AddressListExpandsButton_256.TabIndex = 144;
             this.AddressListExpandsButton_256.Text = "リストの拡張";
             this.AddressListExpandsButton_256.UseVisualStyleBackColor = true;
@@ -255,6 +255,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 30);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1080,6 +1081,7 @@
             // CLASS_LISTBOX
             // 
             this.CLASS_LISTBOX.FormattingEnabled = true;
+            this.CLASS_LISTBOX.IntegralHeight = false;
             this.CLASS_LISTBOX.ItemHeight = 18;
             this.CLASS_LISTBOX.Location = new System.Drawing.Point(136, 0);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(2);

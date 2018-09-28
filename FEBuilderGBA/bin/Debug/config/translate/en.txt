@@ -8044,8 +8044,8 @@ Are you sure to write the current contents to the following file?
 :ヒント
 Tips
 
-:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、上書き保存時に、簡易エラーチェックをするを「無効」にしてください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple Error Checking" to "Disable".
+:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".
 
 :はい
 Yes
