@@ -249,6 +249,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -303,6 +304,7 @@
             // 
             this.SHOP_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SHOP_LIST.FormattingEnabled = true;
+            this.SHOP_LIST.IntegralHeight = false;
             this.SHOP_LIST.ItemHeight = 18;
             this.SHOP_LIST.Location = new System.Drawing.Point(-1, 25);
             this.SHOP_LIST.Margin = new System.Windows.Forms.Padding(4);

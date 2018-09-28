@@ -184,5 +184,6 @@ namespace FEBuilderGBA
                 this.B1.Value = 0;
             }
         }
+
     }
 }

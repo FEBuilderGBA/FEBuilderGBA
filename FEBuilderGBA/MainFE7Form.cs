@@ -288,7 +288,7 @@ namespace FEBuilderGBA
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainFormUtil.Save(this);
+            MainFormUtil.SaveOverraide(this);
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)

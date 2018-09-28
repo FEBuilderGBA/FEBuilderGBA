@@ -37,12 +37,6 @@
             this.Step1Page = new System.Windows.Forms.TabPage();
             this.label6 = new FEBuilderGBA.LabelEx();
             this.Step1NextButton = new System.Windows.Forms.Button();
-            this.StableDateNone = new System.Windows.Forms.CheckBox();
-            this.StableDate = new System.Windows.Forms.DateTimePicker();
-            this.StableDateLabel = new FEBuilderGBA.LabelEx();
-            this.EmergenceDateNone = new System.Windows.Forms.CheckBox();
-            this.EmergenceDate = new System.Windows.Forms.DateTimePicker();
-            this.EmergenceDateLabel = new FEBuilderGBA.LabelEx();
             this.Problem = new FEBuilderGBA.TextBoxEx();
             this.ProblemLabel = new FEBuilderGBA.LabelEx();
             this.Step2Page = new System.Windows.Forms.TabPage();
@@ -60,6 +54,10 @@
             this.URLTextBoxEx = new FEBuilderGBA.TextBoxEx();
             this.EndButton = new System.Windows.Forms.Button();
             this.label12 = new FEBuilderGBA.LabelEx();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AttachDataFilename = new FEBuilderGBA.TextBoxEx();
+            this.AttachDataSelectButton = new System.Windows.Forms.Button();
+            this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.panel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.BeginPage.SuspendLayout();
@@ -135,14 +133,12 @@
             // Step1Page
             // 
             this.Step1Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step1Page.Controls.Add(this.labelEx1);
+            this.Step1Page.Controls.Add(this.label2);
+            this.Step1Page.Controls.Add(this.AttachDataFilename);
+            this.Step1Page.Controls.Add(this.AttachDataSelectButton);
             this.Step1Page.Controls.Add(this.label6);
             this.Step1Page.Controls.Add(this.Step1NextButton);
-            this.Step1Page.Controls.Add(this.StableDateNone);
-            this.Step1Page.Controls.Add(this.StableDate);
-            this.Step1Page.Controls.Add(this.StableDateLabel);
-            this.Step1Page.Controls.Add(this.EmergenceDateNone);
-            this.Step1Page.Controls.Add(this.EmergenceDate);
-            this.Step1Page.Controls.Add(this.EmergenceDateLabel);
             this.Step1Page.Controls.Add(this.Problem);
             this.Step1Page.Controls.Add(this.ProblemLabel);
             this.Step1Page.Location = new System.Drawing.Point(4, 28);
@@ -171,60 +167,6 @@
             this.Step1NextButton.Text = "次へ";
             this.Step1NextButton.UseVisualStyleBackColor = true;
             this.Step1NextButton.Click += new System.EventHandler(this.Step1NextButton_Click);
-            // 
-            // StableDateNone
-            // 
-            this.StableDateNone.AutoSize = true;
-            this.StableDateNone.Location = new System.Drawing.Point(335, 435);
-            this.StableDateNone.Name = "StableDateNone";
-            this.StableDateNone.Size = new System.Drawing.Size(133, 22);
-            this.StableDateNone.TabIndex = 15;
-            this.StableDateNone.Text = "不明/無回答";
-            this.StableDateNone.UseVisualStyleBackColor = true;
-            this.StableDateNone.CheckedChanged += new System.EventHandler(this.StableDateNone_CheckedChanged);
-            // 
-            // StableDate
-            // 
-            this.StableDate.Location = new System.Drawing.Point(9, 431);
-            this.StableDate.Name = "StableDate";
-            this.StableDate.Size = new System.Drawing.Size(200, 25);
-            this.StableDate.TabIndex = 14;
-            // 
-            // StableDateLabel
-            // 
-            this.StableDateLabel.ErrorMessage = "";
-            this.StableDateLabel.Location = new System.Drawing.Point(6, 403);
-            this.StableDateLabel.Name = "StableDateLabel";
-            this.StableDateLabel.Size = new System.Drawing.Size(775, 18);
-            this.StableDateLabel.TabIndex = 13;
-            this.StableDateLabel.Text = "逆に、問題が発生せずに、正しく動作していた時期はわかりますか？";
-            // 
-            // EmergenceDateNone
-            // 
-            this.EmergenceDateNone.AutoSize = true;
-            this.EmergenceDateNone.Location = new System.Drawing.Point(335, 360);
-            this.EmergenceDateNone.Name = "EmergenceDateNone";
-            this.EmergenceDateNone.Size = new System.Drawing.Size(133, 22);
-            this.EmergenceDateNone.TabIndex = 12;
-            this.EmergenceDateNone.Text = "不明/無回答";
-            this.EmergenceDateNone.UseVisualStyleBackColor = true;
-            this.EmergenceDateNone.CheckedChanged += new System.EventHandler(this.EmergenceDateNone_CheckedChanged);
-            // 
-            // EmergenceDate
-            // 
-            this.EmergenceDate.Location = new System.Drawing.Point(9, 356);
-            this.EmergenceDate.Name = "EmergenceDate";
-            this.EmergenceDate.Size = new System.Drawing.Size(200, 25);
-            this.EmergenceDate.TabIndex = 11;
-            // 
-            // EmergenceDateLabel
-            // 
-            this.EmergenceDateLabel.ErrorMessage = "";
-            this.EmergenceDateLabel.Location = new System.Drawing.Point(6, 328);
-            this.EmergenceDateLabel.Name = "EmergenceDateLabel";
-            this.EmergenceDateLabel.Size = new System.Drawing.Size(775, 18);
-            this.EmergenceDateLabel.TabIndex = 10;
-            this.EmergenceDateLabel.Text = "その問題はいつごろからありますか？";
             // 
             // Problem
             // 
@@ -364,7 +306,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 188);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 18);
+            this.label1.Size = new System.Drawing.Size(158, 18);
             this.label1.TabIndex = 24;
             this.label1.Text = "DiscordコミニティURL";
             // 
@@ -375,7 +317,7 @@
             this.OpenCommunities.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OpenCommunities.Location = new System.Drawing.Point(7, 458);
             this.OpenCommunities.Name = "OpenCommunities";
-            this.OpenCommunities.Size = new System.Drawing.Size(310, 22);
+            this.OpenCommunities.Size = new System.Drawing.Size(316, 22);
             this.OpenCommunities.TabIndex = 23;
             this.OpenCommunities.Text = "完了ボタンでDiscordコミニティURLを開く";
             this.OpenCommunities.UseVisualStyleBackColor = true;
@@ -408,6 +350,48 @@
             this.label12.Size = new System.Drawing.Size(766, 157);
             this.label12.TabIndex = 0;
             this.label12.Text = "レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。";
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(6, 320);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(196, 31);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "添付データ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AttachDataFilename
+            // 
+            this.AttachDataFilename.ErrorMessage = "";
+            this.AttachDataFilename.Location = new System.Drawing.Point(144, 361);
+            this.AttachDataFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachDataFilename.Name = "AttachDataFilename";
+            this.AttachDataFilename.Placeholder = "";
+            this.AttachDataFilename.Size = new System.Drawing.Size(638, 25);
+            this.AttachDataFilename.TabIndex = 96;
+            this.AttachDataFilename.DoubleClick += new System.EventHandler(this.AttachDataSelectButton_Click);
+            // 
+            // AttachDataSelectButton
+            // 
+            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 355);
+            this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachDataSelectButton.Name = "AttachDataSelectButton";
+            this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.AttachDataSelectButton.TabIndex = 95;
+            this.AttachDataSelectButton.Text = "ファイル選択";
+            this.AttachDataSelectButton.UseVisualStyleBackColor = true;
+            this.AttachDataSelectButton.Click += new System.EventHandler(this.AttachDataSelectButton_Click);
+            // 
+            // labelEx1
+            // 
+            this.labelEx1.ErrorMessage = "";
+            this.labelEx1.Location = new System.Drawing.Point(6, 390);
+            this.labelEx1.Name = "labelEx1";
+            this.labelEx1.Size = new System.Drawing.Size(775, 58);
+            this.labelEx1.TabIndex = 98;
+            this.labelEx1.Text = "戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます";
             // 
             // ToolProblemReportForm
             // 
@@ -442,12 +426,6 @@
         private System.Windows.Forms.TabPage Step2Page;
         private System.Windows.Forms.TabPage EndPage;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.CheckBox StableDateNone;
-        private System.Windows.Forms.DateTimePicker StableDate;
-        private LabelEx StableDateLabel;
-        private System.Windows.Forms.CheckBox EmergenceDateNone;
-        private System.Windows.Forms.DateTimePicker EmergenceDate;
-        private LabelEx EmergenceDateLabel;
         private TextBoxEx Problem;
         private LabelEx ProblemLabel;
         private LabelEx label5;
@@ -467,5 +445,9 @@
         private TextBoxEx URLTextBoxEx;
         private System.Windows.Forms.CheckBox OpenCommunities;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private TextBoxEx AttachDataFilename;
+        private System.Windows.Forms.Button AttachDataSelectButton;
+        private LabelEx labelEx1;
     }
 }

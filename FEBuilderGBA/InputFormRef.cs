@@ -5649,20 +5649,6 @@ namespace FEBuilderGBA
                 ClearSelect(false);
             }
 
-            if (this.AddressListExpandsButton != null)
-            {
-                //拡張上限が設定されている場合、表示されているデータ数がそれを超えているなら、ボタンを無効化する.
-                uint expandsMax = GetAddressListExpandsMax();
-                if (selectAddress.Count >= expandsMax)
-                {
-                    this.AddressListExpandsButton.Enabled = false;
-                }
-                else
-                {
-                    this.AddressListExpandsButton.Enabled = true;
-                }
-            }
-
             //再取得したので、書き込むボタンをもとに戻す.
             WriteButtonToYellow(WriteButton, false);
         }
@@ -7346,7 +7332,7 @@ namespace FEBuilderGBA
                             MainFormUtil.Open(self);
                             break;
                         case 16: //16=ROMを上書き保存する
-                            MainFormUtil.Save(self);
+                            MainFormUtil.SaveOverraide(self);
                             break;
                         case 17: //17=ROMを別名で保存する
                             MainFormUtil.SaveAs(self);

@@ -3283,6 +3283,9 @@ Please select the file name to be read
 :待機アイコンへJump
 Hover Map Icons
 
+:ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。\r\n\r\nAPは特殊クラスの踊り子(バード)以外は、全員同じデータなので変更する必要はありません。\r\n特殊クラスを移植したい場合のみ、APもインポートしてください。
+Define the animation when the unit moves.\r\nIn GBAFE, the value of ClassID is the data of the moving icon to use as it is.\r\n\r\nAp is not the special class dancer (bird) except for all the same data so you do not need to change it.\r\nPlease import AP only if you want to port special classes.
+
 :0=自軍
 0=Player
 
@@ -5062,8 +5065,8 @@ Skill Config
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
 
-:現在の内容を以下のファイルに書き込んでもよろしいですか？\r\n{0}
-Are you sure to write the current contents to the following file?\r\n{0}
+:現在の内容を以下のファイルに書き込んでもよろしいですか？
+Are you sure to write the current contents to the following file?
 
 :上書き確認
 Comfirm Overwrite
@@ -7573,6 +7576,9 @@ When jumping from the reference link,\r\nOn the top of the screen, set the time 
 :no$gba debuggerを起動したときに、現在のROMのSYMを自動的に作るかどうかを設定します。\r\n自動的に作る場合は、ROMが変更されていれば、SYMを作成します。\r\nSYMの作成には少し時間がかかります。
 Sets whether or not SYM of the current ROM is automatically created when no$gba debugger is activated.\r\nIn case of automatic creation, if ROM is changed, create SYM.\r\nCreating SYM takes a while.
 
+:上書き時に、簡易メニュー画面にエラーが表示されている場合、警告を出すようにします。\r\nすべての章を確認するエラーチェック違い、システムエラーと現在の章のエラーしかチェックできませんが、高速に動作します。
+When overwriting, if an error is displayed on the simple menu screen, issue a warning.\r\nCheck all chapters Only errors check errors, system errors and errors in the current chapter can be checked, but it works faster.
+
 :エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。
 When you set up the emulator, you can test it with the F5 key.\r\nAlso, data can be displayed by accessing the RAM area of ​​the emulator.\r\nIt corresponds to VBA-M (sourceforge), mGBA, no$gba, etc.\r\n\r\nHowever, it can not be connected to the RAM area of ​​VBA-M (github).
 
@@ -7794,6 +7800,15 @@ Shortcut Key 1
 
 :機能
 Function
+
+:0=チェックしない
+0=Do not check
+
+:1=簡易エラーチェックをする
+1=Perform a simple error check
+
+:上書き時の簡易チェック
+Simple check at overwrite
 
 :0=SYMファイルを作成しない
 0=Do not create SYM file
@@ -8019,6 +8034,21 @@ Save
 
 :その他ROM直値テキスト
 Other ROM Direct Text
+
+:このROMには、エラーがありますが、保存してもよろしいですか？
+There is an error in this ROM, are you sure to save it?
+
+:現在の内容を以下のファイルに書き込んでもよろしいですか？\t\t
+Are you sure to write the current contents to the following file? 
+
+:ヒント
+Tips
+
+:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、上書き保存時に、簡易エラーチェックをするを「無効」にしてください。
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple Error Checking" to "Disable".
+
+:はい
+Yes
 
 :文字列のサイズが{0}ではありません
 String size is not {0}
@@ -10045,9 +10075,6 @@ Example: When the hero attempts to fight, it freezes.\r\nEven characters other t
 :問題点を記載してください。
 Please describe the problem.
 
-:正しく動作している時期が、問題が発生した時期より後になっています。
-The time when it operates correctly is later than the time when the problem occurred.
-
 :レポートを保存するファイル名を選択してください
 Please select a file name to save the report
 
@@ -10057,6 +10084,12 @@ Could not create report.\r\n{0}
 :7z圧縮中
 7z compression..
 
+:添付データ
+Attachment data
+
+:サイズが大きすぎます。2MBまでにしてください。\r\n間違えてROMを添付できないように、サイズを制限しています。
+The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not attach a ROM by mistake.
+
 :このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
 This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
@@ -10065,15 +10098,6 @@ start
 
 :次へ
 next
-
-:不明/無回答
-Unknown / No answer
-
-:逆に、問題が発生せずに、正しく動作していた時期はわかりますか？
-On the contrary, do you know when you were working properly without problems?
-
-:その問題はいつごろからありますか？
-When is the problem from when?
 
 :どんな問題がありますか？\r\n問題を具体的に説明してください。
 What kind of problems are there?\r\nPlease explain the problem concretely.
@@ -10092,6 +10116,9 @@ Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
+
+:戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
+Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
 
 :ファイル({1})がありません。\r\n行数:{0}\r\n
 File ({1}) is missing.\r\nNumber of rows: {0}\r\n

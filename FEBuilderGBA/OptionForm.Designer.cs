@@ -171,6 +171,8 @@
             this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
             this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
             this.tabPageFunc = new System.Windows.Forms.TabPage();
+            this.func_overraide_simple_error_check = new System.Windows.Forms.ComboBox();
+            this.explain_func_overraide_simple_error_check = new System.Windows.Forms.Label();
             this.func_create_nodoll_gba_sym = new System.Windows.Forms.ComboBox();
             this.explain_func_create_nodoll_gba_sym = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -1882,6 +1884,8 @@
             // tabPageFunc
             // 
             this.tabPageFunc.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc.Controls.Add(this.func_overraide_simple_error_check);
+            this.tabPageFunc.Controls.Add(this.explain_func_overraide_simple_error_check);
             this.tabPageFunc.Controls.Add(this.func_create_nodoll_gba_sym);
             this.tabPageFunc.Controls.Add(this.explain_func_create_nodoll_gba_sym);
             this.tabPageFunc.Controls.Add(this.label40);
@@ -1915,6 +1919,30 @@
             this.tabPageFunc.Size = new System.Drawing.Size(843, 632);
             this.tabPageFunc.TabIndex = 3;
             this.tabPageFunc.Text = "機能";
+            // 
+            // func_overraide_simple_error_check
+            // 
+            this.func_overraide_simple_error_check.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_overraide_simple_error_check.FormattingEnabled = true;
+            this.func_overraide_simple_error_check.Items.AddRange(new object[] {
+            "0=チェックしない",
+            "1=簡易エラーチェックをする"});
+            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(421, 596);
+            this.func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2);
+            this.func_overraide_simple_error_check.Name = "func_overraide_simple_error_check";
+            this.func_overraide_simple_error_check.Size = new System.Drawing.Size(407, 26);
+            this.func_overraide_simple_error_check.TabIndex = 51;
+            // 
+            // explain_func_overraide_simple_error_check
+            // 
+            this.explain_func_overraide_simple_error_check.AccessibleDescription = "";
+            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(7, 600);
+            this.explain_func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_overraide_simple_error_check.Name = "explain_func_overraide_simple_error_check";
+            this.explain_func_overraide_simple_error_check.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_overraide_simple_error_check.TabIndex = 50;
+            this.explain_func_overraide_simple_error_check.Text = "上書き時の簡易チェック";
+            this.explain_func_overraide_simple_error_check.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // func_create_nodoll_gba_sym
             // 
@@ -2529,7 +2557,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(464, 682);
+            this.WriteButton.Location = new System.Drawing.Point(464, 685);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(382, 37);
@@ -2761,5 +2789,7 @@
         private System.Windows.Forms.ComboBox func_create_nodoll_gba_sym;
         private System.Windows.Forms.Label explain_func_create_nodoll_gba_sym;
         private System.Windows.Forms.Label X_EXPLAIN_NECESSARY_PROGRAM;
+        private System.Windows.Forms.Label explain_func_overraide_simple_error_check;
+        private System.Windows.Forms.ComboBox func_overraide_simple_error_check;
     }
 }

@@ -121,7 +121,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_proxy_server_when_connecting, (int)proxy_server_when_connecting());
             U.SelectedIndexSafety(func_notify_upper_time, (int)notify_upper_time());
             U.SelectedIndexSafety(func_create_nodoll_gba_sym, (int)create_nodoll_gba_sym());
-            
+            U.SelectedIndexSafety(func_overraide_simple_error_check, (int)overraide_simple_error_check());
 
             ChangeColorWriteButtonWhenChangingSetting();
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
@@ -261,7 +261,8 @@ namespace FEBuilderGBA
             Program.Config["func_proxy_server_when_connecting"] = U.SelectValueComboboxText(func_proxy_server_when_connecting.Text);
             Program.Config["func_notify_upper_time"] = U.SelectValueComboboxText(func_notify_upper_time.Text);
             Program.Config["func_create_nodoll_gba_sym"] = U.SelectValueComboboxText(func_create_nodoll_gba_sym.Text);
-            
+            Program.Config["func_overraide_simple_error_check"] = U.SelectValueComboboxText(func_overraide_simple_error_check.Text);
+
             //configの保存
             Program.Config.Save();
 
@@ -891,6 +892,19 @@ namespace FEBuilderGBA
             return (create_nodoll_gba_sym_enum)U.atoi(Program.Config.at("func_create_nodoll_gba_sym", "1"));
         }
 
+        public enum overraide_simple_error_check_enum
+        {
+            None = 0
+          , SimpleAlert = 1
+          , AllCheck = 9
+        };
+        public static overraide_simple_error_check_enum overraide_simple_error_check()
+        {
+            return (overraide_simple_error_check_enum)U.atoi(Program.Config.at("func_overraide_simple_error_check", "1"));
+        }
+
+        
+
 
         static string g_Cache_lang = null;
         public static string lang()
@@ -1236,6 +1250,7 @@ namespace FEBuilderGBA
             explain_func_textencoding.AccessibleDescription = R._("ゲーム内で利用する言語を設定します。\r\nFE6の英語版、及び中国語版は、日本語版をtblデータを利用して翻訳したファンサブです。\r\nこれらを利用する場合に設定します。\r\n(現在は、これらのROMを開くと、自動的に適用されるので、手動で変更しなくても問題ありません。)\r\n");
             explain_func_notify_upper_time.AccessibleDescription = R._("参照リンクから飛んだ場合に、\r\n画面の上に、「このリストをダブルクリックで選択できます」というメッセージの通知を行う時間を設定します。\r\n");
             explain_func_create_nodoll_gba_sym.AccessibleDescription = R._("no$gba debuggerを起動したときに、現在のROMのSYMを自動的に作るかどうかを設定します。\r\n自動的に作る場合は、ROMが変更されていれば、SYMを作成します。\r\nSYMの作成には少し時間がかかります。");
+            explain_func_overraide_simple_error_check.AccessibleDescription = R._("上書き時に、簡易メニュー画面にエラーが表示されている場合、警告を出すようにします。\r\nすべての章を確認するエラーチェック違い、システムエラーと現在の章のエラーしかチェックできませんが、高速に動作します。");
             X_EXPLAIN_VBA_M.AccessibleDescription = R._("エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。");
             X_EXPLAIN_NODOLL_GBA_DEBUGGER.AccessibleDescription = R._("Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。");
             X_EXPLAIN_SAPPY.AccessibleDescription = R._("sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。");

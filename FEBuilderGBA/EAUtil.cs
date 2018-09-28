@@ -37,6 +37,7 @@ namespace FEBuilderGBA
             }
         }
         public List<Data> DataList { get; private set; }
+        public List<string> IfNDefList { get; private set; }
         public string Filename { get; private set; }
         public string Dir { get; private set; }
 
@@ -50,6 +51,7 @@ namespace FEBuilderGBA
             this.DataList = new List<Data>();
             this.Filename = filename;
             this.Dir = Path.GetDirectoryName(filename);
+            this.IfNDefList = new List<string>();
 
             this.CurrentLabel = "";
             string[] lines = File.ReadAllLines(filename);
@@ -63,6 +65,7 @@ namespace FEBuilderGBA
                 }
 
                 ParseJumpToHack(line);
+                ParseIfNDef(line);
             }
             //本格的なパース.
             for (int i = 0; i < lines.Length; i++)
@@ -108,6 +111,21 @@ namespace FEBuilderGBA
                 return pos;
             }
             return -1;
+        }
+        void ParseIfNDef(string line)
+        {
+            int pos = line.IndexOf("#ifndef", StringComparison.OrdinalIgnoreCase);
+            if (pos < 0)
+            {
+                return;
+            }
+
+            string ifdef_keyword = line.Substring(pos + 1).Trim();
+            if (ifdef_keyword == "")
+            {
+                return;
+            }
+            IfNDefList.Add(ifdef_keyword);
         }
         void ParseJumpToHack(string line)
         {

@@ -97,6 +97,7 @@ namespace FEBuilderGBA
             CheckNeedUpdateMsg();
             this.UserMessage.Placeholder = R._("例:戦闘アニメをインポートしようとしたら、エラーが表示された。\r\n試した戦闘アニメは、 http://mydata.example.com/aaa/ から、ダウンロードしたものだ。\r\nバグってるだろうおおおお\r\n");
             this.UserMessage.Focus();
+            System.Media.SystemSounds.Hand.Play();
         }
 
         private void SendErrorMessageButton_Click(object sender, EventArgs e)

@@ -42,12 +42,6 @@ namespace FEBuilderGBA
                 return;
             }
             Problem.ErrorMessage = "";
-            if (StableDate.Value > EmergenceDate.Value)
-            {
-                StableDateLabel.ErrorMessage = R._("正しく動作している時期が、問題が発生した時期より後になっています。");
-                return;
-            }
-            StableDateLabel.ErrorMessage = "";
             MainTab.SelectedTab = Step2Page;
         }
 
@@ -147,83 +141,17 @@ namespace FEBuilderGBA
             return upsFullPath;
         }
 
-        enum FindOption
-        {
-            Forward
-            ,Prev
-            ,PrevPrev
-        };
 
-        string FindSrc(DateTime basedate, FindOption option, ref bool ref_hatena)
-        {
-            string pickup = "";
-            if (option == FindOption.Forward)
-            {
-                for (int i = 0; i < this.FindBackup.Files.Count; i++)
-                {
-                    string filename = this.FindBackup.Files[i].FilePath;
-                    DateTime date = this.FindBackup.Files[i].Date;
-                    if (date < basedate)
-                    {
-                        if (pickup != "")
-                        {
-                            return pickup;
-                        }
-                    }
-                    pickup = filename;
-                }
-            }
-            else if (option == FindOption.Prev)
-            {
-                for (int i = 0; i < this.FindBackup.Files.Count; i++)
-                {
-                    string filename = this.FindBackup.Files[i].FilePath;
-                    DateTime date = this.FindBackup.Files[i].Date;
-                    if (date < basedate)
-                    {
-                        return filename;
-                    }
-                    pickup = filename;
-                }
-            }
-            else if (option == FindOption.PrevPrev)
-            {
-                for (int i = 0; i < this.FindBackup.Files.Count; i++)
-                {
-                    string filename = this.FindBackup.Files[i].FilePath;
-                    DateTime date = this.FindBackup.Files[i].Date;
-                    if (date < basedate)
-                    {
-                        if (pickup != "")
-                        {
-                            return filename;
-                        }
-                        pickup = filename;
-                    }
-                }
-            }
-
-            if (pickup != "")
-            {
-                ref_hatena = true;
-                return pickup;
-            }
-            return "";
-        }
-
-        string FindSrcByFilename(string baseBackupFilename,int oldIndex)
+        string FindSrcByFilename(int oldIndex)
         {
             for (int i = 0; i < this.FindBackup.Files.Count; i++)
             {
                 string filename = this.FindBackup.Files[i].FilePath;
-                if (filename != baseBackupFilename)
-                {
-                    continue;
-                }
+
                 int searchIndex = i + oldIndex;
                 if (searchIndex >= this.FindBackup.Files.Count)
                 {//ない.
-                    return "";
+                    break;
                 }
 
                 return this.FindBackup.Files[searchIndex].FilePath;
@@ -251,22 +179,32 @@ namespace FEBuilderGBA
                 CollectUPSsLastROM(tempdir.Dir, s);
 
                 //動作しないUPSと動作するUPSデータの回収
-                bool isEmergenceHatena = false; //確実といえないけど回収できた場合trueになる
-                bool isStableHatena = false;    //確実といえないけど回収できた場合trueになる
-                CollectUPSs(tempdir.Dir,s, ref isEmergenceHatena, ref isStableHatena);
+                CollectUPSs(tempdir.Dir,s);
 
                 //ログとユーザの説明を書き込む
                 string log = Path.Combine(tempdir.Dir, "log.txt");
-                File.WriteAllText(log, MakeReportLog(isEmergenceHatena, isStableHatena));
+                File.WriteAllText(log, MakeReportLog());
 
                 //etcの内容をコピー
                 //lintやコメントなどの設定がほしい
                 CopyEtcData(tempdir.Dir);
 
+                //添付データ
+                AttachData(tempdir.Dir);
+
                 //7z圧縮
                 InputFormRef.DoEvents(this, R._("7z圧縮中"));
                 return ArchSevenZip.Compress(fullfilename, tempdir.Dir);
             }
+        }
+        void AttachData(string tempdir)
+        {
+            if (! File.Exists(this.AttachDataFilename.Text))
+            {
+                return;
+            }
+            string fullfilename = Path.Combine(tempdir, Path.GetFileName(this.AttachDataFilename.Text));
+            File.Copy(this.AttachDataFilename.Text , fullfilename);
         }
 
         void CopyEtcData(string tempdir)
@@ -302,66 +240,21 @@ namespace FEBuilderGBA
         }
 
         //動作しないUPSと動作するUPSデータの回収
-        void CollectUPSs(string tempdir, byte[] s, ref bool ref_isEmergenceHatena, ref bool ref_isStableHatena)
+        void CollectUPSs(string tempdir, byte[] s)
         {
-            string lastBackupFilename = "";
-
-            //比較のための動作するコピー
-            string emergenceFilename = "";
-            ref_isEmergenceHatena = false;
-            if (EmergenceDateNone.Checked == false)
+            //古いバックアップがあれば取得する
+            int[] olderPickup = new int[] { 0 , 1 , 2 , 3 , 4 , 5, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
+            for (int i = 0; i < olderPickup.Length; i++)
             {
-                emergenceFilename = FindSrc(EmergenceDate.Value.Date, FindOption.Forward, ref ref_isEmergenceHatena);
-            }
-            if (emergenceFilename == "")
-            {//不明なので、ちょい前
-                emergenceFilename = FindSrc(EmergenceDate.Value.Date, FindOption.PrevPrev, ref ref_isEmergenceHatena);
-                ref_isEmergenceHatena = true;
-            }
-
-            if (emergenceFilename != ""
-                && File.Exists(emergenceFilename))
-            {
-                MakeUPS(tempdir, s, emergenceFilename);
-                lastBackupFilename = emergenceFilename;
-            }
-
-            string stableFilename = "";
-            ref_isStableHatena = false;
-            if (StableDateNone.Checked == false)
-            {
-                stableFilename = FindSrc(StableDate.Value.Date, FindOption.Prev, ref ref_isStableHatena);
-            }
-
-            if (stableFilename == "" || stableFilename == emergenceFilename)
-            {//不明なので、正しく動作していた日のちょい前
-                stableFilename = FindSrc(StableDate.Value.Date, FindOption.PrevPrev, ref ref_isStableHatena);
-                ref_isStableHatena = true;
-            }
-
-            if (stableFilename != ""
-                && File.Exists(stableFilename))
-            {
-                MakeUPS(tempdir, s, stableFilename);
-                lastBackupFilename = emergenceFilename;
-            }
-
-            if (lastBackupFilename != "")
-            {
-                //もっと古いバックアップがあれば取得する
-                int[] olderPickup = new int[] { 5, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
-                for (int i = 0; i < olderPickup.Length; i++)
+                string moreOlderFilename = FindSrcByFilename(olderPickup[i]);
+                if (moreOlderFilename != ""
+                    && File.Exists(moreOlderFilename))
                 {
-                    string moreOlderFilename = FindSrcByFilename(lastBackupFilename, olderPickup[i]);
-                    if (moreOlderFilename != ""
-                        && File.Exists(moreOlderFilename))
-                    {
-                        MakeUPS(tempdir, s, moreOlderFilename);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    MakeUPS(tempdir, s, moreOlderFilename);
+                }
+                else
+                {
+                    break;
                 }
             }
         }
@@ -453,7 +346,7 @@ namespace FEBuilderGBA
             File.Copy(savFilename, destFilename, true);
         }
 
-        string MakeReportLog(bool isEmergenceHatena,bool isStableHatena)
+        string MakeReportLog()
         {
             StringBuilder sb = new StringBuilder();
             //User名を消す
@@ -476,26 +369,6 @@ namespace FEBuilderGBA
             //ユーザが書いた問題点
             sb.AppendLine("Problem:");
             sb.AppendLine(Problem.Text);
-            if (EmergenceDateNone.Checked)
-            {
-                sb.AppendLine("EmergenceDate:None");
-            }
-            else
-            {
-                sb.AppendLine("EmergenceDate:" 
-                    + EmergenceDate.Value.Date.ToLocalTime().ToString()
-                    + (isEmergenceHatena ? "(???)" : ""));
-            }
-            if (StableDateNone.Checked)
-            {
-                sb.AppendLine("StableDate:None");
-            }
-            else
-            {
-                sb.AppendLine("StableDate:" 
-                    + StableDate.Value.Date.ToLocalTime().ToString()
-                    + (isStableHatena ? "(???)" : ""));
-            }
             return sb.ToString();
         }
 
@@ -509,19 +382,39 @@ namespace FEBuilderGBA
 
         }
 
-        private void EmergenceDateNone_CheckedChanged(object sender, EventArgs e)
-        {
-            EmergenceDate.Enabled = !EmergenceDateNone.Checked;
-        }
-
-        private void StableDateNone_CheckedChanged(object sender, EventArgs e)
-        {
-            StableDate.Enabled = !StableDateNone.Checked;
-        }
-
         private void URLTextBoxEx_DoubleClick(object sender, EventArgs e)
         {
             MainFormUtil.GotoCommunities();
+        }
+
+        private void AttachDataSelectButton_Click(object sender, EventArgs e)
+        {
+            this.AttachDataFilename.ErrorMessage = "";
+
+            string title = R._("添付データ");
+            string filter = R._("All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
+            if (U.GetFileSize(open.FileName) > 2 * 1024 * 1024)
+            {
+                this.AttachDataFilename.ErrorMessage = R._("サイズが大きすぎます。2MBまでにしてください。\r\n間違えてROMを添付できないように、サイズを制限しています。");
+                return;
+            }
+
+
+            this.AttachDataFilename.Text = open.FileName;
         }
     }
 }

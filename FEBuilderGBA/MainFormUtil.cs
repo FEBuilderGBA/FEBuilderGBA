@@ -118,8 +118,7 @@ namespace FEBuilderGBA
                 }
             };
         }
-
-        public static void Save(Form self)
+        public static void SaveOverraide(Form self)
         {
             if (Program.ROM.IsVirtualROM)
             {
@@ -127,7 +126,40 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string text = R._("現在の内容を以下のファイルに書き込んでもよろしいですか？\r\n{0}", Program.ROM.Filename);
+            if (OptionForm.overraide_simple_error_check() == OptionForm.overraide_simple_error_check_enum.None)
+            {
+                Save(self);
+                return;
+            }
+
+            Form f = Program.MainForm();
+            if (f is MainSimpleMenuForm)
+            {
+                MainSimpleMenuForm ff = (MainSimpleMenuForm)f;
+                if (ff.IsErrorFoundByCurrentChapter())
+                {
+                    OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
+                    DialogResult r = dialog.ShowDialog();
+                    if (r != System.Windows.Forms.DialogResult.Yes)
+                    {
+                        return;
+                    }
+                    SaveForce();
+                    return;
+                }
+            }
+            Save(self);
+        }
+
+        static void Save(Form self)
+        {
+            if (Program.ROM.IsVirtualROM)
+            {
+                SaveAs(self);
+                return;
+            }
+
+            string text = R._("現在の内容を以下のファイルに書き込んでもよろしいですか？") + "\r\n"+ Program.ROM.Filename;
             string title = R._("上書き確認");
 
             DialogResult r =
@@ -685,6 +717,51 @@ namespace FEBuilderGBA
             return true;
         }
 
+        static string MakeEAAutoDef(string target_filename, uint freearea)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            EAUtil ea = new EAUtil(target_filename);
+            for (int i = 0; i < ea.IfNDefList.Count ; i++)
+            {
+                string ifndef_keyword = ea.IfNDefList[i];
+                switch (ifndef_keyword)
+                {
+                    case "FreeSpace":
+                        if (freearea != 0)
+                        {
+                            sb.AppendLine("#define FreeSpace " + U.To0xHexString(freearea));
+                        }
+                        break;
+                    case "ItemImage":
+                        sb.AppendLine("#define ItemImage " 
+                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
+                        break;
+                    case "ItemPalette":
+                        sb.AppendLine("#define ItemPalette " 
+                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
+                        break;
+                    case "ItemTable":
+                        sb.AppendLine("#define ItemTable " 
+                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
+                        break;
+                }
+            }
+
+            if (freearea != 0)
+            {
+                sb.AppendLine( String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
+                    , U.To0xHexString(freearea), target_filename));
+            }
+            else
+            {
+                sb.AppendLine( String.Format("#include \"{0}\"\r\n"
+                    , Path.GetFileName(target_filename)));
+            }
+            return sb.ToString();
+        }
+
+
         //EventAssemblerで対象物をコンパイル
         public static bool CompilerEventAssembler(string target_filename, uint freearea,out string output)
         {
@@ -697,23 +774,13 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            string freeAreaDef = "";
-            if (freearea != 0)
-            {
-                freeAreaDef = String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
-                    , U.To0xHexString(freearea), target_filename);
-            }
-            else
-            {
-                freeAreaDef += String.Format("#include \"{0}\"\r\n"
-                    , Path.GetFileName(target_filename));
-            }
+            string autoDef = MakeEAAutoDef(target_filename , freearea);
 
             string freeareadef_targetfile = "_FBG_Temp_" +　DateTime.Now.Ticks.ToString() + ".event";
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);
             freeareadef_targetfile_fullpath = Path.GetFullPath(freeareadef_targetfile_fullpath);
 
-            File.WriteAllText(freeareadef_targetfile_fullpath, freeAreaDef);
+            File.WriteAllText(freeareadef_targetfile_fullpath, autoDef);
 
             if (!File.Exists(freeareadef_targetfile_fullpath))
             {

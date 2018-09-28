@@ -152,6 +152,12 @@
     <Compile Include="MapStyleEditorAppendPopupForm.Designer.cs">
       <DependentUpon>MapStyleEditorAppendPopupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverraideCheckWithErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverraideCheckWithErrorDialog.Designer.cs">
+      <DependentUpon>OverraideCheckWithErrorDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatchFilterExForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1818,6 +1824,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapStyleEditorAppendPopupForm.resx">
       <DependentUpon>MapStyleEditorAppendPopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverraideCheckWithErrorDialog.resx">
+      <DependentUpon>OverraideCheckWithErrorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatchFilterExForm.resx">
       <DependentUpon>PatchFilterExForm.cs</DependentUpon>

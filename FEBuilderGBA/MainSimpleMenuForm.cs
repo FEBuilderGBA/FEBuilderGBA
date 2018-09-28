@@ -21,9 +21,6 @@ namespace FEBuilderGBA
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
-//            ImageUtilAP.CalcROMTCSLength(0xA280A8);
-
-
             InputFormRef.RecolorMenuStrip(this.menuStrip1);
 
             this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
@@ -136,7 +133,7 @@ namespace FEBuilderGBA
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainFormUtil.Save(this);
+            MainFormUtil.SaveOverraide(this);
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -536,6 +533,19 @@ namespace FEBuilderGBA
             U.ConvertListBox(this.EventAddrList, ref EventList);
         }
 
+        //現在の章にエラーがあるか?
+        public bool IsErrorFoundByCurrentChapter()
+        {
+            if (this.SystemErrorList != null && this.SystemErrorList.Count > 0)
+            {
+                return true;
+            }
+            if (this.MapErrorList != null && this.MapErrorList.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         //ユニット配置を検索して取得.
         List<UnitsAddr>  DrawUnits(List<U.AddrResult> units, uint mapid)

@@ -31,12 +31,27 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
+            uint classCount = ClassForm.DataCount();
+            if (classCount <= 0)
+            {
+                classCount = 0x7f;
+            }
+            else if (classCount > 0xFF)
+            {
+                classCount = 0xFF;
+            }
+            classCount--;
+
             return new InputFormRef(self
                 , ""
                 , Program.ROM.RomInfo.unit_move_icon_pointer()
                 , 8
                 , (int i, uint addr) =>
                 {//読込最大値検索
+                    if (i >= classCount)
+                    {
+                        return false;
+                    }
                     //0 と 4 がポインタであればデータがあると考える.
                     return U.isPointerOrNULL(Program.ROM.u32(addr + 0));
                 }
