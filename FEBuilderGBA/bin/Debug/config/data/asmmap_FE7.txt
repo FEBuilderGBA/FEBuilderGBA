@@ -377,10 +377,10 @@
 080A0E9C	LoadSavedUnit	void	r0=Source SRAM	r1=Unit	{U}
 
 //from https://doc.feuniverse.us/static/stan/TrigoTables.txt
-080C0F18	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
-080C5AC8	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
-080C0E98	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
-080C5A48	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
+080C0F18	:080C1117	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
+080C5AC8	:080C5CC7	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
+080C0E98	:080C0F97	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
+080C5A48	:080C5B47	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
 
 //from https://doc.feuniverse.us/static/stan/TCSNotes.txt
 08012658	TCS_New Creates a new TCS	RET=TCS Pointer	r0=Source ROMTCS, r1=OAM Index? idk	{J}

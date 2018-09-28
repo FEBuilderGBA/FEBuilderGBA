@@ -330,10 +330,10 @@
 080A0A60	SaveUnit     	void	r0=Unit	r1=Target SRAM	{U}
 080A1824	LoadSavedUnit	void	r0=Source SRAM	r1=Unit	{J}
 080A0E9C	LoadSavedUnit	void	r0=Source SRAM	r1=Unit	{U}
-080C0F18	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
-080C5AC8	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
-080C0E98	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
-080C5A48	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
+080C0F18	:080C1117	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
+080C5AC8	:080C5CC7	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
+080C0E98	:080C0F97	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
+080C5A48	:080C5B47	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
 08012658	TCS_New Creates a new TCS	TCS Pointer	r0=Source ROMTCS, r1=OAM Index? idk	{J}
 08011FC4	TCS_New Creates a new TCS	TCS Pointer	r0=Source ROMTCS, r1=OAM Index? idk	{U}
 0801267C	TCS_Free Frees/Deletes/Ends a TCS	void	r0=TCS	{J}

@@ -621,6 +621,18 @@ namespace FEBuilderGBA
             {
                 p.Length = 0x20 * 2;
             }
+            else if (type == "PALETTE4")
+            {
+                p.Length = 0x20 * 4;
+            }
+            else if (type == "PALETTE8")
+            {
+                p.Length = 0x20 * 8;
+            }
+            else if (type == "PALETTE16")
+            {
+                p.Length = 0x20 * 16;
+            }
             else if (type == "ROMTCS")
             {
                 p.Length = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer));

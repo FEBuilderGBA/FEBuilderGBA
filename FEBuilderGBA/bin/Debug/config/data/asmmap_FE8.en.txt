@@ -551,10 +551,10 @@ r3=X tile position of menu of the right	{U}
 080AA1AC	LoadSavedUnit	void	r0=Source SRAM	r1=Unit	{J}
 080A5794	LoadSavedUnit	void	r0=Source SRAM	r1=Unit	{U}
 080A5A48	SAVE_MOTHEFUCKING_GAME	{U}
-080DC1DC	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
-080D759C	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
-080DC15C	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
-080D751C	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
+080DC1DC	:080DC3DB	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{J}
+080D759C	:080D779B	Lookup Table for cos (0x100 -> 0 -> -0x100 -> 0 -> 0x100)	{U}
+080DC15C	:080DC25B	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{J}
+080D751C	:080D761B	Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)	{U}
 0800916C	TCS_New Creates a new TCS	TCS Pointer	r0=Source ROMTCS, r1=OAM Index? idk	{J}
 0800927C	TCS_New Creates a new TCS	TCS Pointer	r0=Source ROMTCS, r1=OAM Index? idk	{U}
 08009194	TCS_Free Frees/Deletes/Ends a TCS	void	r0=TCS	{J}

@@ -1,0 +1,15 @@
+NAME=ボツデータのクリア ROM末尾3
+NAME.en=clear unreleased works: ROM END3
+
+PATCHED_IF:0xFFF000=0x00 0x00 0x00 0x00
+IF:0xFFF000=0x0 0xFF 0x1 0x0
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xFFF000:2048=0xFFF7FF
+
+INFO=ROM末尾にある謎の領域を消去して、リビルド時に利用できるようにします。\r\n2048bytesを追加確保します。\r\n現在、このパッチはテスト中です。\r\n適応しても無事動作するかどうか動作報告をお待ちしています。
+INFO.en=Erase the enigmatic area at the end of the ROM and make it available for rebuild.\r\nWe will secure an additional 2048 bytes.\r\nCurrently, this patch is under test.\r\nI am waiting for a motion report whether it works safely even if it adapts.
+NAME.zh=清除引导数据ROM结束2
+INFO.zh=擦除ROM末尾的神秘区域，使其可用于重建。\r\n我们将额外获得2048个字节。\r\n目前，这个补丁正在测试中。\r\n我正在等待一份动作报告，即使它适应了它是否安全有效。
