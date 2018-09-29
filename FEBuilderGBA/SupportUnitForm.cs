@@ -39,7 +39,7 @@ namespace FEBuilderGBA
             {
                 if (addr == search_addr)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     X_WARNING_OWN_EXPANDS.Hide();
                     AddressListExpandsButton.Enabled = true;
                     return;

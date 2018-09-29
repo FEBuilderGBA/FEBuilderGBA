@@ -92,7 +92,7 @@ namespace FEBuilderGBA
                 uint item_id = (uint)Program.ROM.u8(addr);
                 if (search_item_id == item_id)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     return;
                 }
 

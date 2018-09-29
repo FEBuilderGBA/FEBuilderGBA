@@ -102,7 +102,7 @@ namespace FEBuilderGBA
                 uint unit_id2 = (uint)Program.ROM.u8(addr + 1);
                 if (search_unit_id == unit_id || search_unit_id == unit_id2)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     return;
                 }
 

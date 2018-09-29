@@ -67,7 +67,7 @@ namespace FEBuilderGBA
                 {
                     if (map_id == 0xFF || search_map_id == map_id)
                     {//マップも含めて完全一致
-                        this.AddressList.SelectedIndex = i;
+                        U.SelectedIndexSafety(this.AddressList, i);
                         return;
                     }
                     hit_uid_only_pos = i;
@@ -78,7 +78,7 @@ namespace FEBuilderGBA
 
             if (hit_uid_only_pos >= 0)
             {//キャラだけ一致
-                this.AddressList.SelectedIndex = hit_uid_only_pos;
+                U.SelectedIndexSafety(this.AddressList, hit_uid_only_pos);
                 return;
             }
         }

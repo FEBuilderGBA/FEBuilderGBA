@@ -2034,6 +2034,12 @@ namespace FEBuilderGBA
                 uint frameI = 0;
                 for (uint n = frameDataStart; n < frameDataEnd; n += 4)
                 {
+                    if (frameData_UZ.Length < n + 4)
+                    {//データが途中で終わっている変なデータ
+                        Debug.Assert(false);
+                        break;
+                    }
+
                     if (frameData_UZ[n + 3] == 0x85) //0x85 コマンド
                     {
                         if (frameData_UZ[n] == 0x48)
@@ -2626,7 +2632,6 @@ namespace FEBuilderGBA
             else
             {
                 //かなり甘めのチェックでいいと思う.
-                //limit = 18000;
                 limit = 25000; //もっと甘めにしよう
             }
 

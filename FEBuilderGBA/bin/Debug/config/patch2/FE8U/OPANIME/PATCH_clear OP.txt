@@ -1,5 +1,5 @@
 NAME=オープニング領域をカットしてリビルド領域に回す
-NAME.en=Cut the opening area and turn it to the rebuild area.
+NAME.en=Clear the opening area and turn it to the rebuild area.
 
 PATCHED_IF:0xAADBE8=0x00 0x00 0x00 0x00
 IF:0xAADBE8=0xDE 0x63 0xBC 0x5B

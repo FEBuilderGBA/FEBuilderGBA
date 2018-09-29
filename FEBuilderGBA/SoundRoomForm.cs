@@ -105,7 +105,7 @@ namespace FEBuilderGBA
                 uint a = Program.ROM.u32(addr);
                 if (song_id == a)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     return;
                 }
                 addr += InputFormRef.BlockSize;

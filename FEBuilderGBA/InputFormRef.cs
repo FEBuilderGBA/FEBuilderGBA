@@ -9946,7 +9946,7 @@ namespace FEBuilderGBA
                 uint id = U.atoh(name);
                 if (id == search_id)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     return;
                 }
             }

@@ -59,7 +59,7 @@ namespace FEBuilderGBA
                 uint unit_id = (uint)Program.ROM.u8(addr);
                 if (search_unit_id == unit_id)
                 {
-                    this.AddressList.SelectedIndex = i;
+                    U.SelectedIndexSafety(this.AddressList, i);
                     return;
                 }
                 addr += InputFormRef.BlockSize;
