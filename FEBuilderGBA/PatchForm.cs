@@ -4592,6 +4592,12 @@ namespace FEBuilderGBA
         }
         static void MakePatchStructDataListForEA(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
+            string use_asmamp = U.at(patch.Param, "ASMMAP", "true");
+            if (U.stringbool(use_asmamp) == false)
+            {//ASMMAPに含めない
+                return;
+            }
+
             List<BinMapping> map = TracePatchedMapping(patch);
             for (int n = 0; n < map.Count; n++)
             {
@@ -4611,6 +4617,12 @@ namespace FEBuilderGBA
         }
         static void MakePatchStructDataListForBIN(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
+            string use_asmamp = U.at(patch.Param, "ASMMAP","true");
+            if (U.stringbool(use_asmamp) == false)
+            {//ASMMAPに含めない
+                return;
+            }
+
             List<BinMapping> map = TracePatchedMapping(patch);
             for (int n = 0; n < map.Count; n++)
             {

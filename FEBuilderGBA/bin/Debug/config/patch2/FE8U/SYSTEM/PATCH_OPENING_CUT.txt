@@ -1,0 +1,26 @@
+NAME=オープニングカット いきなりタイトルロゴ
+NAME.en=Skip:Opening(OPENING_CUT)
+NAME.zh=跳过标题logo
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+COMBO=カットしない|ONN|いきなりタイトルロゴ|OFF
+COMBO.en=no cut|ONN|cut|OFF
+
+DETERMINATION_ADDRESS=0xCBDE2
+ONN:0x0C6714=0x09 0xD0
+ONN:0x0CBDF6=0x03 0xD0
+ONN:0x0CC20C=0x06 0xD1	//Skip H&S
+ONN:0x0CBDE2=0x35 0xF7 0x41 0xFF 0x00 0x28 0x0A 0xD0
+
+OFF:0x0C6714=0xC0 0x46
+OFF:0x0CBDF6=0xC0 0x46
+OFF:0x0CC20C=0x00 0x00	//Skip H&S
+OFF:0x0CBDE2=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+
+COMBO.zh=跳过|ONN|不跳过|OFF
+INFO=H&S,Nintendo log,IS Logo,Opening Demo.\r\nこれらをすべてカットします。
+INFO.en=H&S,Nintendo log,IS Logo,Opening Demo.\r\nSkip all these.
+INFO.zh=H＆S，Nintendo log，IS Logo，Opening Demo。\r\n我切掉了所有这些。

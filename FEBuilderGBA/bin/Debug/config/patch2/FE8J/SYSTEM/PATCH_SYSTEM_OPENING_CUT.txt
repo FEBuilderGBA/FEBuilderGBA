@@ -1,5 +1,5 @@
-NAME=オープニングカット
-NAME.en=OPENING_CUT
+NAME=オープニングタイトルをカット
+NAME.en=Skip:Opening(OPENING_CUT)
 
 //アドレスパッチとして実装します
 TYPE=SWITCH
@@ -20,7 +20,11 @@ OFF:0x009987=0xE0
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-NAME.zh=割开
+NAME.zh=削减开场标题
+INFO=緑のドラゴンのオープニングタイトルロゴをスキップして、いきなりメニューから開始するようにします。
+INFO.en=Skip the opening title logo of the green dragon and start suddenly from the menu.
+INFO.zh=将跳过绿龙的开头标题，并从菜单中突然开始。
+
 
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
