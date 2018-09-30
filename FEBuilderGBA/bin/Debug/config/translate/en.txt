@@ -2444,10 +2444,10 @@ Event "{0}" Jumping to nonexistent label "{1}".
 Unit placement pointer "{0}" is invalid.
 
 :序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-You are not join to the load unit of UnitID: 0x01,0x02 and 0x03 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this load unit in a group.
+You are not join to the lord unit of UnitID: 0x01,0x02 and 0x03 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
 
 :序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-You are not join to the load unit of UnitID: 0x01 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this load unit in a group.
+You are not join to the lord unit of UnitID: 0x01 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
 
 :イベントポインタ「{0}」が無効です。
 Event pointer '{0}' is invalid.

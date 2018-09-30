@@ -2077,7 +2077,7 @@
 08029D38	UpdateBallistaUsesFromBattle	{U}
 08029D6A	NullSomeStuff	{U}
 08029FF8	GetBattleUnitStaffExp	{U}
-0802A05A	InstigatorAdd10Exp	{U}
+0802A05C	InstigatorAdd10Exp	{U}
 0802A11E	BattleReverseWTriangeEffect	{U}
 0802A1F6	DoSomeBattleWeaponStuff	{U}
 0802A254	MakeSnagBattleTarget	{U}
@@ -2906,7 +2906,7 @@
 0802A1E8	UpdateBallistaUsesFromBattle	{J}
 08029D6A	NullSomeStuff	{J}
 0802A4A8	GetBattleUnitStaffExp	{J}
-0802A50A	InstigatorAdd10Exp	{J}
+0802A50C	InstigatorAdd10Exp	{J}
 0802A5CE	BattleReverseWTriangeEffect	{J}
 0802A6A6	DoSomeBattleWeaponStuff	{J}
 0802A704	MakeSnagBattleTarget	{J}

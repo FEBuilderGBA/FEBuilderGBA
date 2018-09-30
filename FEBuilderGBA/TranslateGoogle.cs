@@ -164,7 +164,7 @@ namespace FEBuilderGBA
 
 
 		    string url = string.Format(
-			     "https://translate.google.co.jp/translate_a/single?client=gtx&dt=bd&dt=ex&dt=ld&dt=md&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=qc&sl={0}&tl={1}&hl={2}&tk={3}&ie=UTF-8&oe=UTF-8&q={4}"
+		    		"http://translate.googleapis.com/translate_a/single?client=gtx&ie=UTF-8&oe=UTF-8&dt=bd&dt=ex&dt=ld&dt=md&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=qc&sl={0}&tl={1}&hl={2}&q={4}"
 			    ,from
 			    ,to
 			    ,from
