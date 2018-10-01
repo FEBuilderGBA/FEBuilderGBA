@@ -18,9 +18,13 @@ namespace FEBuilderGBA
             SRCFilename.AllowDropFilename();
             AllowDropFilename();
             this.Method.SelectedIndex = 0;
-            this.HookRegister.SelectedIndex = 0;
+            this.HookRegister.SelectedIndex = 3;
+            this.ELFComboBox.SelectedIndex = 1;
+            this.DebugSymbolComboBox.SelectedIndex = 3;
             U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
             this.ComplieBinFilename = "";
+
+            SetExplain();
         }
 
 
@@ -44,7 +48,6 @@ namespace FEBuilderGBA
 
         private void ToolASMInsertForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Method_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,6 +62,10 @@ namespace FEBuilderGBA
                 FREEAREALabel.Hide();
                 FREEAREA.Hide();
                 PatchMakerButton.Show();
+                DebugSymbol.Show();
+                DebugSymbolComboBox.Show();
+                ELFLabel.Hide();
+                ELFComboBox.Hide();
             }
             else if (this.Method.SelectedIndex == 2)
             {
@@ -70,6 +77,10 @@ namespace FEBuilderGBA
                 FREEAREALabel.Show();
                 FREEAREA.Show();
                 PatchMakerButton.Show();
+                DebugSymbol.Show();
+                DebugSymbolComboBox.Show();
+                ELFLabel.Hide();
+                ELFComboBox.Hide();
             }
             else
             {
@@ -80,6 +91,10 @@ namespace FEBuilderGBA
                 FREEAREALabel.Hide();
                 FREEAREA.Hide();
                 PatchMakerButton.Hide();
+                DebugSymbol.Hide();
+                DebugSymbolComboBox.Hide();
+                ELFLabel.Show();
+                ELFComboBox.Show();
             }
         }
 
@@ -87,6 +102,31 @@ namespace FEBuilderGBA
         {
             Address.Value = U.toOffset(Addr);
             this.Method.SelectedIndex = 2;
+        }
+
+        bool IsSaveElf()
+        {
+            if (ELFComboBox.Visible)
+            {
+                return ELFComboBox.SelectedIndex == 2 || ELFComboBox.SelectedIndex == 3;
+            }
+            return false;
+        }
+        SymbolUtil.DebugSymbol GetPlanOfDebugSymbol()
+        {
+            if (ELFComboBox.Visible)
+            {
+                if (ELFComboBox.SelectedIndex == 1)
+                {
+                    return SymbolUtil.DebugSymbol.SaveSymTxt;
+                }
+                if (ELFComboBox.SelectedIndex == 3)
+                {
+                    return SymbolUtil.DebugSymbol.SaveSymTxt;
+                }
+                return SymbolUtil.DebugSymbol.None;
+            }
+            return (SymbolUtil.DebugSymbol)DebugSymbolComboBox.SelectedIndex;
         }
 
         private void RunButton_Click(object sender, EventArgs e)
@@ -98,8 +138,10 @@ namespace FEBuilderGBA
                 R.ShowStopError(("ファイルがありません。\r\nファイル名:{0}"), fullpath);
                 return;
             }
+
             string result;
-            bool r = MainFormUtil.Compile(fullpath, out result);
+            string symbol;
+            bool r = MainFormUtil.Compile(fullpath, out result, out symbol , IsSaveElf() );
             if (r == false)
             {
                 R.ShowStopError("エラーが返されました。\r\n{0}", result);
@@ -109,6 +151,8 @@ namespace FEBuilderGBA
             this.ComplieBinFilename = result;
             if (this.Method.SelectedIndex == 0)
             {
+                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), 0);
+
                 //ROMに書き込まない場合、成果物を選択しよう.
                 U.SelectFileByExplorer(result,false);
                 return;
@@ -149,6 +193,8 @@ namespace FEBuilderGBA
             if (this.Method.SelectedIndex == 1)
             {
                 Program.ROM.write_range(addr, bin, undodata);
+                Program.CommentCache.RemoveRange(addr, addr + (uint)bin.Length);
+                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), addr);
             }
             else
             {
@@ -172,6 +218,9 @@ namespace FEBuilderGBA
 
                 byte[] jumpCode = DisassemblerTrumb.MakeInjectJump(addr, freeaddr, usereg);
                 Program.ROM.write_range(addr, jumpCode, undodata);
+
+                Program.CommentCache.RemoveRange(freeaddr, freeaddr + (uint)bin.Length);
+                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), freeaddr);
             }
             Program.Undo.Push(undodata);
             InputFormRef.ShowWriteNotifyAnimation(this, addr);
@@ -290,6 +339,11 @@ namespace FEBuilderGBA
             UndoButton.Hide();
 
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
+        }
+        void SetExplain()
+        {
+            HookRegisterLabel.AccessibleDescription = R._("フックするのに利用するレジスタを選択します。\r\nr3を利用するとEAのJumToHackと同じ意味になります。");
+            FREEAREALabel.AccessibleDescription = R._("データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。");
         }
     }
 }

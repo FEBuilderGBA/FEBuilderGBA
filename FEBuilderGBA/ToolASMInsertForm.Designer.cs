@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ELFComboBox = new System.Windows.Forms.ComboBox();
+            this.ELFLabel = new System.Windows.Forms.Label();
+            this.DebugSymbolComboBox = new System.Windows.Forms.ComboBox();
+            this.DebugSymbol = new System.Windows.Forms.Label();
+            this.UndoButton = new System.Windows.Forms.Button();
             this.FREEAREA = new System.Windows.Forms.NumericUpDown();
             this.FREEAREALabel = new System.Windows.Forms.Label();
             this.PatchMakerButton = new System.Windows.Forms.Button();
@@ -42,7 +47,6 @@
             this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.SRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.UndoButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FREEAREA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -50,6 +54,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ELFComboBox);
+            this.panel1.Controls.Add(this.ELFLabel);
+            this.panel1.Controls.Add(this.DebugSymbolComboBox);
+            this.panel1.Controls.Add(this.DebugSymbol);
             this.panel1.Controls.Add(this.UndoButton);
             this.panel1.Controls.Add(this.FREEAREA);
             this.panel1.Controls.Add(this.FREEAREALabel);
@@ -66,13 +74,77 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(664, 406);
+            this.panel1.Size = new System.Drawing.Size(789, 406);
             this.panel1.TabIndex = 0;
+            // 
+            // ELFComboBox
+            // 
+            this.ELFComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ELFComboBox.FormattingEnabled = true;
+            this.ELFComboBox.Items.AddRange(new object[] {
+            "0=中間ファイルは利用しないので消去する",
+            "1=.sym.txtとしてファイルにシンボルを保存する",
+            "2=ELFを保存する",
+            "3=ELFとシンボルを両方とも保存"});
+            this.ELFComboBox.Location = new System.Drawing.Point(304, 165);
+            this.ELFComboBox.Name = "ELFComboBox";
+            this.ELFComboBox.Size = new System.Drawing.Size(473, 26);
+            this.ELFComboBox.TabIndex = 3;
+            // 
+            // ELFLabel
+            // 
+            this.ELFLabel.AccessibleDescription = "";
+            this.ELFLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ELFLabel.Location = new System.Drawing.Point(6, 164);
+            this.ELFLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ELFLabel.Name = "ELFLabel";
+            this.ELFLabel.Size = new System.Drawing.Size(291, 31);
+            this.ELFLabel.TabIndex = 109;
+            this.ELFLabel.Text = "中間ファイル";
+            this.ELFLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DebugSymbolComboBox
+            // 
+            this.DebugSymbolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DebugSymbolComboBox.FormattingEnabled = true;
+            this.DebugSymbolComboBox.Items.AddRange(new object[] {
+            "0=シンボルを利用しない",
+            "1=.sym.txtとしてファイルにシンボルを保存する",
+            "2=FEBuilderGBAのコメントで設定する",
+            "3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)"});
+            this.DebugSymbolComboBox.Location = new System.Drawing.Point(304, 225);
+            this.DebugSymbolComboBox.Name = "DebugSymbolComboBox";
+            this.DebugSymbolComboBox.Size = new System.Drawing.Size(473, 26);
+            this.DebugSymbolComboBox.TabIndex = 5;
+            // 
+            // DebugSymbol
+            // 
+            this.DebugSymbol.AccessibleDescription = "@DEBUG_SYMBOL";
+            this.DebugSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DebugSymbol.Location = new System.Drawing.Point(6, 224);
+            this.DebugSymbol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DebugSymbol.Name = "DebugSymbol";
+            this.DebugSymbol.Size = new System.Drawing.Size(291, 31);
+            this.DebugSymbol.TabIndex = 104;
+            this.DebugSymbol.Text = "デバッグ用のシンボル ";
+            this.DebugSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UndoButton
+            // 
+            this.UndoButton.Location = new System.Drawing.Point(167, 355);
+            this.UndoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.UndoButton.Name = "UndoButton";
+            this.UndoButton.Size = new System.Drawing.Size(153, 45);
+            this.UndoButton.TabIndex = 9;
+            this.UndoButton.Text = "Undo";
+            this.UndoButton.UseVisualStyleBackColor = true;
+            this.UndoButton.Visible = false;
+            this.UndoButton.Click += new System.EventHandler(this.UndoButton_Click);
             // 
             // FREEAREA
             // 
             this.FREEAREA.Hexadecimal = true;
-            this.FREEAREA.Location = new System.Drawing.Point(305, 239);
+            this.FREEAREA.Location = new System.Drawing.Point(305, 288);
             this.FREEAREA.Margin = new System.Windows.Forms.Padding(2);
             this.FREEAREA.Maximum = new decimal(new int[] {
             -559939585,
@@ -81,12 +153,12 @@
             0});
             this.FREEAREA.Name = "FREEAREA";
             this.FREEAREA.Size = new System.Drawing.Size(130, 25);
-            this.FREEAREA.TabIndex = 101;
+            this.FREEAREA.TabIndex = 7;
             // 
             // FREEAREALabel
             // 
             this.FREEAREALabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FREEAREALabel.Location = new System.Drawing.Point(6, 235);
+            this.FREEAREALabel.Location = new System.Drawing.Point(6, 284);
             this.FREEAREALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FREEAREALabel.Name = "FREEAREALabel";
             this.FREEAREALabel.Size = new System.Drawing.Size(291, 31);
@@ -99,7 +171,7 @@
             this.PatchMakerButton.Location = new System.Drawing.Point(6, 355);
             this.PatchMakerButton.Name = "PatchMakerButton";
             this.PatchMakerButton.Size = new System.Drawing.Size(153, 48);
-            this.PatchMakerButton.TabIndex = 98;
+            this.PatchMakerButton.TabIndex = 8;
             this.PatchMakerButton.Text = "Patch Maker";
             this.PatchMakerButton.UseVisualStyleBackColor = true;
             this.PatchMakerButton.Click += new System.EventHandler(this.PatchMakerButton_Click);
@@ -109,8 +181,8 @@
             this.WriteButton.Location = new System.Drawing.Point(362, 355);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(291, 45);
-            this.WriteButton.TabIndex = 97;
+            this.WriteButton.Size = new System.Drawing.Size(415, 45);
+            this.WriteButton.TabIndex = 10;
             this.WriteButton.Text = "実行";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.RunButton_Click);
@@ -118,7 +190,7 @@
             // HookRegisterLabel
             // 
             this.HookRegisterLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HookRegisterLabel.Location = new System.Drawing.Point(6, 205);
+            this.HookRegisterLabel.Location = new System.Drawing.Point(6, 254);
             this.HookRegisterLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HookRegisterLabel.Name = "HookRegisterLabel";
             this.HookRegisterLabel.Size = new System.Drawing.Size(291, 31);
@@ -140,15 +212,15 @@
             "r6",
             "r7",
             "r8"});
-            this.HookRegister.Location = new System.Drawing.Point(305, 207);
+            this.HookRegister.Location = new System.Drawing.Point(305, 256);
             this.HookRegister.Name = "HookRegister";
-            this.HookRegister.Size = new System.Drawing.Size(345, 26);
-            this.HookRegister.TabIndex = 95;
+            this.HookRegister.Size = new System.Drawing.Size(327, 26);
+            this.HookRegister.TabIndex = 6;
             // 
             // Address
             // 
             this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(305, 176);
+            this.Address.Location = new System.Drawing.Point(305, 195);
             this.Address.Margin = new System.Windows.Forms.Padding(2);
             this.Address.Maximum = new decimal(new int[] {
             -559939585,
@@ -157,12 +229,12 @@
             0});
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(130, 25);
-            this.Address.TabIndex = 94;
+            this.Address.TabIndex = 4;
             // 
             // AddressLabel
             // 
             this.AddressLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AddressLabel.Location = new System.Drawing.Point(6, 175);
+            this.AddressLabel.Location = new System.Drawing.Point(6, 194);
             this.AddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(291, 31);
@@ -188,8 +260,8 @@
             "フリー領域に配置してジャンプコードを埋め込みます"});
             this.Method.Location = new System.Drawing.Point(4, 120);
             this.Method.Name = "Method";
-            this.Method.Size = new System.Drawing.Size(647, 26);
-            this.Method.TabIndex = 91;
+            this.Method.Size = new System.Drawing.Size(773, 26);
+            this.Method.TabIndex = 2;
             this.Method.SelectedIndexChanged += new System.EventHandler(this.Method_SelectedIndexChanged);
             // 
             // SRCFilename
@@ -199,8 +271,8 @@
             this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
             this.SRCFilename.Name = "SRCFilename";
             this.SRCFilename.Placeholder = "";
-            this.SRCFilename.Size = new System.Drawing.Size(346, 25);
-            this.SRCFilename.TabIndex = 90;
+            this.SRCFilename.Size = new System.Drawing.Size(472, 25);
+            this.SRCFilename.TabIndex = 0;
             this.SRCFilename.DoubleClick += new System.EventHandler(this.SRCFilename_DoubleClick);
             // 
             // SRCSelectButton
@@ -209,7 +281,7 @@
             this.SRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.SRCSelectButton.Name = "SRCSelectButton";
             this.SRCSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.SRCSelectButton.TabIndex = 89;
+            this.SRCSelectButton.TabIndex = 1;
             this.SRCSelectButton.Text = "別ファイル選択";
             this.SRCSelectButton.UseVisualStyleBackColor = true;
             this.SRCSelectButton.Click += new System.EventHandler(this.SRCSelectButton_Click);
@@ -225,24 +297,12 @@
             this.label9.Text = "SRC";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UndoButton
-            // 
-            this.UndoButton.Location = new System.Drawing.Point(167, 355);
-            this.UndoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.UndoButton.Name = "UndoButton";
-            this.UndoButton.Size = new System.Drawing.Size(153, 45);
-            this.UndoButton.TabIndex = 102;
-            this.UndoButton.Text = "Undo";
-            this.UndoButton.UseVisualStyleBackColor = true;
-            this.UndoButton.Visible = false;
-            this.UndoButton.Click += new System.EventHandler(this.UndoButton_Click);
-            // 
             // ToolASMInsertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(690, 430);
+            this.ClientSize = new System.Drawing.Size(809, 430);
             this.Controls.Add(this.panel1);
             this.Name = "ToolASMInsertForm";
             this.Text = "ASMで追加";
@@ -272,5 +332,9 @@
         private System.Windows.Forms.NumericUpDown FREEAREA;
         private System.Windows.Forms.Label FREEAREALabel;
         private System.Windows.Forms.Button UndoButton;
+        private System.Windows.Forms.Label DebugSymbol;
+        private System.Windows.Forms.ComboBox DebugSymbolComboBox;
+        private System.Windows.Forms.ComboBox ELFComboBox;
+        private System.Windows.Forms.Label ELFLabel;
     }
 }

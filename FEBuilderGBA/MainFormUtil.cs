@@ -623,10 +623,12 @@ namespace FEBuilderGBA
             sappy.StartPlay(p, song_id);
         }
 
+
         //Devkit pro Enbiで対象物をコンパイル
-        public static bool CompilerDevkitPro(string target_filename, out string output)
+        public static bool CompilerDevkitPro(string target_filename, out string output,out string out_symbol, bool isKeepElf)
         {
             output = "";
+            out_symbol = "";
 
             string devkitpro_eabi = Program.Config.at("devkitpro_eabi", "");
             if (devkitpro_eabi == "" || !File.Exists(devkitpro_eabi))
@@ -678,13 +680,14 @@ namespace FEBuilderGBA
             }
 
             string output_temp_filename = target + ".elf";
+            string target_filedir = Path.GetDirectoryName(target_filename);
 
             //Assemble into an elf
             string args = "-g -mcpu=arm7tdmi -mthumb-interwork "
                 + " " + U.escape_shell_args(target_filename)
                 + " -o " + U.escape_shell_args(output_temp_filename)
                 ;
-            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+            output = ProgramRunAsAndEndWait(compiler_exe, args, target_filedir);
             if (!File.Exists(output_temp_filename) || U.GetFileSize(output_temp_filename) <= 0)
             {//エラーなのでコマンド名もついでに付与
                 output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
@@ -692,11 +695,10 @@ namespace FEBuilderGBA
             }
 
             //Print symbol table
-            output_temp_filename = target + ".symbols.log";
-            args = "-s"
+            args = "-s --wide"
                 + " " + U.escape_shell_args(target + ".elf");
             output = ProgramRunAsAndEndWait(readelf, args, tooldir);
-            File.WriteAllText(target + ".symbols.log", output);
+            out_symbol = SymbolUtil.ReadElfToEASymbol(output);
 
             //Extract raw assembly binary (text section) from elf
             output_temp_filename = target + ".dmp";
@@ -711,9 +713,15 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            Log.Notify(target + ".dmp");
+            Log.Notify("=== SYMBOL ===");
+            Log.Notify(out_symbol);
+
             output = output_temp_filename;
-            File.Delete(target + ".elf");
-            File.Delete(target + ".symbols.log");
+            if (isKeepElf == false)
+            {
+                File.Delete(target + ".elf");
+            }
             return true;
         }
 
@@ -762,10 +770,12 @@ namespace FEBuilderGBA
         }
 
 
+
         //EventAssemblerで対象物をコンパイル
-        public static bool CompilerEventAssembler(string target_filename, uint freearea,out string output)
+        public static bool CompilerEventAssembler(string target_filename, uint freearea, out string output, out string out_symbol)
         {
             output = "";
+            out_symbol = "";
 
             string compiler_exe = Program.Config.at("event_assembler", "");
             if (compiler_exe == "" || !File.Exists(compiler_exe))
@@ -788,6 +798,8 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            string output_symFile = Path.GetTempFileName();
+
             string output_target_rom;
             try
             {
@@ -805,14 +817,28 @@ namespace FEBuilderGBA
             string args = "A "
                 + Program.ROM.TitleToFilename() + " "
                 + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
-                + U.escape_shell_args("-output:" + output_target_rom);
+                + U.escape_shell_args("-output:" + output_target_rom) + " "
+                + U.escape_shell_args("-symOutput:" + output_symFile);
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
             if (output.IndexOf("No errors or warnings.") < 0)
             {//エラーなのでコマンド名もついでに付与
                 output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
                 File.Delete(output_target_rom);
                 File.Delete(freeareadef_targetfile_fullpath);
+                File.Delete(output_symFile);
                 return false;
+            }
+
+
+            Log.Notify(args);
+            Log.Notify("=== OUTPUT ===");
+            Log.Notify(output);
+            if (File.Exists(output_symFile))
+            {
+                Log.Notify("=== SYMBOL ===");
+                out_symbol = File.ReadAllText(output_symFile);
+                Log.Notify(out_symbol);
+                File.Delete(output_symFile);
             }
 
             File.Delete(freeareadef_targetfile_fullpath);
@@ -821,9 +847,10 @@ namespace FEBuilderGBA
         }
 
         //GoldRoadで対象物をコンパイル
-        public static bool CompilerGoldRoad(string target_filename, out string output)
+        public static bool CompilerGoldRoad(string target_filename, out string output, out string out_symbol)
         {
             output = "";
+            out_symbol = "";
 
             string goldroad = Program.Config.at("goldroad_asm", "");
             if (goldroad == "" || !File.Exists(goldroad))
@@ -863,7 +890,7 @@ namespace FEBuilderGBA
             return true;
         }
         //対象物をコンパイル
-        public static bool Compile(string target_filename, out string output)
+        public static bool Compile(string target_filename, out string output, out string out_symbol, bool isKeepElf)
         {
             string ext = U.GetFilenameExt(target_filename);
             if (ext == ".ASM")
@@ -875,10 +902,10 @@ namespace FEBuilderGBA
                 }
                 else if (text.IndexOf("@thumb") >= 0)
                 {
-                    return CompilerGoldRoad(target_filename, out output);
+                    return CompilerGoldRoad(target_filename, out output, out out_symbol);
                 }
             }
-            return CompilerDevkitPro(target_filename, out output);
+            return CompilerDevkitPro(target_filename, out output,out out_symbol, isKeepElf);
         }
         //無改造ROMを探索する CRCと言語で探索
         public static string FindOrignalROM(string current_dir)

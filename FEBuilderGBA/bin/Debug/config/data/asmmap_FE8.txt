@@ -614,7 +614,7 @@
 080020CC	FlushPrimaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends primary OAM buffer data to actual OAM	{J}
 08002088	FlushSecondaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends secondary OAM buffer data to actual OAM	{J}
 08002B1C	PushToPrimaryOAM	Pushes data to primary OAM.   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
-08002ACC	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM 	{J}
+08002B08	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM 	{J}
 08002100	WriteOAMRotScaleData	Writes Rotation/Scale data for a fixed index	r0=index	r1=PA	r2=PB	r3=PC	[sp+0]=PD	{J}
 0800204C	SetupOAMBufferSplice	Sets up OAM buffers	r0=Size (in number of entries) of Primary buffer	{J}
 
@@ -4139,7 +4139,7 @@
 08002A08	DeleteAll6CWaitMusicRelated	{J}
 08002A48	StoreRoutinesToIRAM	{J}
 08002ACC	CallARM_DecompText	{J}
-08002ACC	CallARM_PushToSecondaryOAM	{J}
+08002B08	CallARM_PushToSecondaryOAM	{J}
 08002B1C	CallARM_PushToPrimaryOAM	{J}
 08002B30	CallARM_Func5	{J}
 08002B44	CallARM_FillMovementMap	{J}
@@ -7937,3 +7937,5 @@
 080C6704	ROM起動時のLogo	1	{U}
 080CBDD8	ROM起動時のLogo	2	{U}
 080CBE0C	ROM起動時のNitendo LogoとISLogoを読込む関数	{U}
+0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
+08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}

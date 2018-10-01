@@ -16,6 +16,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+            this.DebugSymbolComboBox.SelectedIndex = 3;
             U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
             SRCFilename.AllowDropFilename();
 
@@ -77,7 +78,8 @@ namespace FEBuilderGBA
                 {//フリーエリアを利用しない.
                     freearea = 0;
                 }
-                WriteEA(EAFilename,freearea, undodata);
+                SymbolUtil.DebugSymbol storeSymbol = (SymbolUtil.DebugSymbol)(DebugSymbolComboBox.SelectedIndex);
+                WriteEA(EAFilename, freearea, undodata, storeSymbol);
             }
             catch (PatchForm.PatchException exception)
             {
@@ -138,17 +140,19 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void WriteEA(string EA, uint freearea, Undo.UndoData undodata)
+        public static void WriteEA(string EA, uint freearea, Undo.UndoData undodata,SymbolUtil.DebugSymbol storeSymbol)
         {
             string output;
+            string symbol;
             bool r;
             try
             {
-                r = MainFormUtil.CompilerEventAssembler(EA, freearea, out output);
+                r = MainFormUtil.CompilerEventAssembler(EA, freearea, out output, out symbol);
             }
             catch (Win32Exception e)
             {
                 r = false;
+                symbol = "";
                 output = R._("プロセスを実行できません。\r\nfilename:{0}\r\n{1}", EA,  e.ToString());
             }
             if (!r)
@@ -162,10 +166,13 @@ namespace FEBuilderGBA
             {
                 throw new PatchForm.PatchException(R.Notify("変更をユーザーが取り消しました"));
             }
+            SymbolUtil.ProcessSymbol(EA, symbol, storeSymbol , 0);
 
             //EAの結果作成したROMを消します. 残すとROMがPATCHディレクトリに残るのでいろいろよろしくない.
             File.Delete(output);
         }
+
+
         public static string BlockToEA(uint addr,byte[] bytes)
         {
             StringBuilder sb = new StringBuilder();

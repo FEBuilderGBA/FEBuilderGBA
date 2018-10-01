@@ -515,7 +515,7 @@ namespace FEBuilderGBA
             {//サイズが同一なら何もしない
                 return;
             }
-
+            Program.CommentCache.RemoveOverRange(resize);
 
             //C#は refで プロパティを設定したものを渡せない愚かな仕様だから...
             //文句はMSまで.どうぞ.
@@ -793,8 +793,12 @@ namespace FEBuilderGBA
                     missCount++;
                 }
 
+                uint size = (uint)(i - checkpoint);
+
                 //checkpoint ～ i の間を相違点として記録.
-                undodata.list.Add(new Undo.UndoPostion((uint)checkpoint , (uint) (i-checkpoint) ));
+                undodata.list.Add(new Undo.UndoPostion((uint)checkpoint , size ));
+                //この範囲にコメントがある場合は再定義するので消す
+                Program.CommentCache.RemoveRange((uint)checkpoint, (uint)checkpoint + size);
             }
 
             if (newROMData.Length != this.Data.Length)

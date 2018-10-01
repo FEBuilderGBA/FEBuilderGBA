@@ -144,20 +144,21 @@ namespace FEBuilderGBA
 
         string FindSrcByFilename(int oldIndex)
         {
-            for (int i = 0; i < this.FindBackup.Files.Count; i++)
+            int length = this.FindBackup.Files.Count;
+            int i = 0;
+            if (i >= length)
             {
-                string filename = this.FindBackup.Files[i].FilePath;
+                return "";
+            }
+            string filename = this.FindBackup.Files[i].FilePath;
 
-                int searchIndex = i + oldIndex;
-                if (searchIndex >= this.FindBackup.Files.Count)
-                {//ない.
-                    break;
-                }
-
-                return this.FindBackup.Files[searchIndex].FilePath;
+            int searchIndex = i + oldIndex;
+            if (searchIndex >= this.FindBackup.Files.Count)
+            {//ない.
+                return "";
             }
 
-            return "";
+            return this.FindBackup.Files[searchIndex].FilePath;
         }
 
         string MakeReport(string fullfilename)

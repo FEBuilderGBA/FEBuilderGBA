@@ -65,7 +65,8 @@ namespace FEBuilderGBA
             ,MAGICOAM   //魔法拡張のOAM
             ,ROMANIMEFRAME //ROM内アニメのフレーム
             ,JUMPTOHACK //ハックへジャンプするコード
-            ,FFor00
+            ,FFor00    //空いてそうなデータ
+            ,Comment   //コメントデータ
         };
         public DataTypeEnum DataType { get; private set; }
 
@@ -125,6 +126,15 @@ namespace FEBuilderGBA
                 return;
             }
             list.Add( new Address(addr, length, pointer, info,type));
+        }
+        static public void AddCommentData(List<Address> list, uint addr, string info)
+        {
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            list.Add(new Address(addr, 0, U.NOT_FOUND, info, DataTypeEnum.Comment));
         }
         static public void AddAddress(List<Address> list, uint addr, uint length, uint pointer, string info, DataTypeEnum type)
         {

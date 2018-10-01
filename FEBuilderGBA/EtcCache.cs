@@ -63,6 +63,33 @@ namespace FEBuilderGBA
                 this.Cache[addr] = comment;
             }
         }
+        public void Remove(uint addr)
+        {
+            if (this.Cache.ContainsKey(addr))
+            {
+                this.Cache.Remove(addr);
+            }
+        }
+        public void RemoveOverRange(uint addr)
+        {
+            foreach (var key in this.Cache.Keys)
+            {
+                if (key >= addr)
+                {
+                    this.Cache.Remove(key);
+                }
+            }
+        }
+        public void RemoveRange(uint addr, uint limit)
+        {
+            foreach (var key in this.Cache.Keys)
+            {
+                if (key >= addr && key < limit)
+                {
+                    this.Cache.Remove(key);
+                }
+            }
+        }
 
         public void UpdateCode(uint startAddr,uint oldSize, List<EventScript.OneCode> codes)
         {
@@ -138,5 +165,14 @@ namespace FEBuilderGBA
         {
             U.SaveConfigEtcTSV1(this.Type , this.Cache , romBaseFilename);
         }
+
+        public void MakeAddressList(List<Address> list)
+        {
+            foreach (var pair in this.Cache)
+            {
+                Address.AddCommentData(list, pair.Key , pair.Value);
+            }
+        }
+
     }
 }

@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="RecycleAddress.cs" />
     <Compile Include="RegexCache.cs" />
+    <Compile Include="SymbolUtil.cs" />
     <Compile Include="TextID.cs" />
     <Compile Include="ToolAnimationCreatorForm.cs">
       <SubType>Form</SubType>

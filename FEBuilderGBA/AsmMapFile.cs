@@ -37,7 +37,6 @@ namespace FEBuilderGBA
             ASMMapLoadResource(U.ConfigDataFilename("asmmap_gba_"));
         }
 
-
         public AsmMapFile(AsmMapFile orignal)
         {
             this.NearSearchSortedList = new List<uint>(orignal.NearSearchSortedList);
@@ -373,7 +372,7 @@ namespace FEBuilderGBA
             }
         }
 
-        Dictionary<string, AsmStruct> AsmStructs = new Dictionary<string, AsmStruct>();
+        Dictionary<string, AsmStruct> AsmStructs = new Dictionary<string, AsmStruct>();            //コメントデータ.
 
         void ASMMapLoadResource(string fullfilename)
         {

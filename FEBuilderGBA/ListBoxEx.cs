@@ -49,6 +49,13 @@ namespace FEBuilderGBA
 
             e.ItemWidth = this.Width;
             e.ItemHeight = size.Height;
+
+            //オーナードローをしている場合、HorizontalExtentを設定しないと、横スクロールバーが表示されない
+            //https://dobon.net/vb/bbs/log3-54/31604.html
+            if (this.HorizontalExtent < size.Width)
+            {
+                this.HorizontalExtent = size.Width;
+            }
         }
         public override int SelectedIndex 
         {

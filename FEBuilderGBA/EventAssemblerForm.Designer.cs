@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DebugSymbolComboBox = new System.Windows.Forms.ComboBox();
+            this.DebugSymbol = new System.Windows.Forms.Label();
+            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
+            this.SRCSelectButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.FREEARE_PANEL = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.FREEAREA = new System.Windows.Forms.NumericUpDown();
@@ -36,9 +41,6 @@
             this.UndoButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.J_2_TEXT = new System.Windows.Forms.Label();
-            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
-            this.SRCSelectButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.FREEARE_PANEL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FREEAREA)).BeginInit();
@@ -46,6 +48,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DebugSymbolComboBox);
+            this.panel1.Controls.Add(this.DebugSymbol);
             this.panel1.Controls.Add(this.SRCFilename);
             this.panel1.Controls.Add(this.SRCSelectButton);
             this.panel1.Controls.Add(this.label9);
@@ -56,14 +60,72 @@
             this.panel1.Controls.Add(this.J_2_TEXT);
             this.panel1.Location = new System.Drawing.Point(13, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 335);
+            this.panel1.Size = new System.Drawing.Size(882, 398);
             this.panel1.TabIndex = 0;
+            // 
+            // DebugSymbolComboBox
+            // 
+            this.DebugSymbolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DebugSymbolComboBox.FormattingEnabled = true;
+            this.DebugSymbolComboBox.Items.AddRange(new object[] {
+            "0=シンボルを利用しない",
+            "1=.sym.txtとしてファイルにシンボルを保存する",
+            "2=FEBuilderGBAのコメントで設定する",
+            "3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)"});
+            this.DebugSymbolComboBox.Location = new System.Drawing.Point(307, 142);
+            this.DebugSymbolComboBox.Name = "DebugSymbolComboBox";
+            this.DebugSymbolComboBox.Size = new System.Drawing.Size(572, 26);
+            this.DebugSymbolComboBox.TabIndex = 107;
+            // 
+            // DebugSymbol
+            // 
+            this.DebugSymbol.AccessibleDescription = "@DEBUG_SYMBOL";
+            this.DebugSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DebugSymbol.Location = new System.Drawing.Point(4, 140);
+            this.DebugSymbol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DebugSymbol.Name = "DebugSymbol";
+            this.DebugSymbol.Size = new System.Drawing.Size(295, 31);
+            this.DebugSymbol.TabIndex = 106;
+            this.DebugSymbol.Text = "デバッグ用のシンボル ";
+            this.DebugSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SRCFilename
+            // 
+            this.SRCFilename.ErrorMessage = "";
+            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
+            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SRCFilename.Name = "SRCFilename";
+            this.SRCFilename.Placeholder = "";
+            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
+            this.SRCFilename.TabIndex = 93;
+            // 
+            // SRCSelectButton
+            // 
+            this.SRCSelectButton.Location = new System.Drawing.Point(169, 87);
+            this.SRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SRCSelectButton.Name = "SRCSelectButton";
+            this.SRCSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.SRCSelectButton.TabIndex = 92;
+            this.SRCSelectButton.Text = "別ファイル選択";
+            this.SRCSelectButton.UseVisualStyleBackColor = true;
+            this.SRCSelectButton.Click += new System.EventHandler(this.SRCSelectButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(4, 90);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 31);
+            this.label9.TabIndex = 91;
+            this.label9.Text = "スクリプト";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FREEARE_PANEL
             // 
             this.FREEARE_PANEL.Controls.Add(this.label1);
             this.FREEARE_PANEL.Controls.Add(this.FREEAREA);
-            this.FREEARE_PANEL.Location = new System.Drawing.Point(10, 240);
+            this.FREEARE_PANEL.Location = new System.Drawing.Point(13, 305);
             this.FREEARE_PANEL.Name = "FREEARE_PANEL";
             this.FREEARE_PANEL.Size = new System.Drawing.Size(430, 41);
             this.FREEARE_PANEL.TabIndex = 19;
@@ -101,7 +163,7 @@
             this.FREEAREA_DEF.AutoSize = true;
             this.FREEAREA_DEF.Checked = true;
             this.FREEAREA_DEF.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FREEAREA_DEF.Location = new System.Drawing.Point(10, 211);
+            this.FREEAREA_DEF.Location = new System.Drawing.Point(13, 276);
             this.FREEAREA_DEF.Name = "FREEAREA_DEF";
             this.FREEAREA_DEF.Size = new System.Drawing.Size(190, 22);
             this.FREEAREA_DEF.TabIndex = 18;
@@ -111,9 +173,9 @@
             // 
             // UndoButton
             // 
-            this.UndoButton.Location = new System.Drawing.Point(438, 139);
+            this.UndoButton.Location = new System.Drawing.Point(664, 186);
             this.UndoButton.Name = "UndoButton";
-            this.UndoButton.Size = new System.Drawing.Size(215, 32);
+            this.UndoButton.Size = new System.Drawing.Size(215, 51);
             this.UndoButton.TabIndex = 16;
             this.UndoButton.Text = "UNDO";
             this.UndoButton.UseVisualStyleBackColor = true;
@@ -122,9 +184,9 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(3, 139);
+            this.WriteButton.Location = new System.Drawing.Point(0, 186);
             this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(215, 32);
+            this.WriteButton.Size = new System.Drawing.Size(393, 51);
             this.WriteButton.TabIndex = 15;
             this.WriteButton.Text = "スクリプト読込";
             this.WriteButton.UseVisualStyleBackColor = true;
@@ -137,49 +199,17 @@
             this.J_2_TEXT.Location = new System.Drawing.Point(2, 1);
             this.J_2_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_2_TEXT.Name = "J_2_TEXT";
-            this.J_2_TEXT.Size = new System.Drawing.Size(665, 67);
+            this.J_2_TEXT.Size = new System.Drawing.Size(879, 67);
             this.J_2_TEXT.TabIndex = 13;
             this.J_2_TEXT.Text = "Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。";
             this.J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SRCFilename
-            // 
-            this.SRCFilename.ErrorMessage = "";
-            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
-            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SRCFilename.Name = "SRCFilename";
-            this.SRCFilename.Placeholder = "";
-            this.SRCFilename.Size = new System.Drawing.Size(346, 25);
-            this.SRCFilename.TabIndex = 93;
-            // 
-            // SRCSelectButton
-            // 
-            this.SRCSelectButton.Location = new System.Drawing.Point(169, 87);
-            this.SRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SRCSelectButton.Name = "SRCSelectButton";
-            this.SRCSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.SRCSelectButton.TabIndex = 92;
-            this.SRCSelectButton.Text = "別ファイル選択";
-            this.SRCSelectButton.UseVisualStyleBackColor = true;
-            this.SRCSelectButton.Click += new System.EventHandler(this.SRCSelectButton_Click);
-            // 
-            // label9
-            // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(4, 90);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(157, 31);
-            this.label9.TabIndex = 91;
-            this.label9.Text = "スクリプト";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EventAssemblerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(693, 355);
+            this.ClientSize = new System.Drawing.Size(907, 420);
             this.Controls.Add(this.panel1);
             this.Name = "EventAssemblerForm";
             this.Text = "Event Assemblerで追加";
@@ -206,5 +236,7 @@
         private TextBoxEx SRCFilename;
         private System.Windows.Forms.Button SRCSelectButton;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox DebugSymbolComboBox;
+        private System.Windows.Forms.Label DebugSymbol;
     }
 }

@@ -2668,10 +2668,11 @@ namespace FEBuilderGBA
         {
             //EventAssemblerで対象物をコンパイル
             string errorOutput;
+            string symbolOutput;
             bool r;
             try
             {
-                r = MainFormUtil.CompilerEventAssembler(filename, 0, out errorOutput);
+                r = MainFormUtil.CompilerEventAssembler(filename, 0, out errorOutput, out symbolOutput);
             }
             catch (Win32Exception e)
             {

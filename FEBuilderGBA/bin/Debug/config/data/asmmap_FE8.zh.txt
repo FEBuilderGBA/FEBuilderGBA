@@ -911,7 +911,7 @@ r3=X tile position of menu of the right	{U}
 080DA940	_read_r	{J}
 080DA940	_write_r	{J}
 08002AF4	CallARM_DecompText	{J}
-08002B04	CallARM_PushToSecondaryOAM	{J}
+08002B08	CallARM_PushToSecondaryOAM	{J}
 080CF4B8	umul3232H32	{U}
 080CF4C8	SoundMain	{U}
 080CF54C	SoundMainRAM	{U}
@@ -1641,7 +1641,7 @@ r3=X tile position of menu of the right	{U}
 080020CC	FlushPrimaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends primary OAM buffer data to actual OAM	{J}
 08002088	FlushSecondaryOAM	DON'T CALL THIS YOURSELF (called on VBlank); Sends secondary OAM buffer data to actual OAM	{J}
 08002B1C	PushToPrimaryOAM	Pushes data to primary OAM.   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
-08002ACC	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM (pointed by 03003130, originally at 08000494, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
+08002B08	PushToSecondaryOAM	Pushes data to secondary OAM	Actually calls routine stored in IWRAM (pointed by 03003130, originally at 08000494, ARM)	r0=base x coord	r1=base y coord	r2=pointer to OAM Data	r3=base OAM2 (tile/palette index)	{J}
 08002100	WriteOAMRotScaleData	Writes Rotation/Scale data for a fixed index	r0=index	r1=PA	r2=PB	r3=PC	[sp+0]=PD	{J}
 0800204C	SetupOAMBufferSplice	Sets up OAM buffers	r0=Size (in number of entries) of Primary buffer	{J}
 
@@ -4118,7 +4118,7 @@ r3=X tile position of menu of the right	{U}
 08002A08	DeleteAll6CWaitMusicRelated	{J}
 08002A48	StoreRoutinesToIRAM	{J}
 08002ACC	CallARM_DecompText	{J}
-08002ACC	CallARM_PushToSecondaryOAM	{J}
+08002B08	CallARM_PushToSecondaryOAM	{J}
 08002B1C	CallARM_PushToPrimaryOAM	{J}
 08002B30	CallARM_Func5	{J}
 08002B44	CallARM_FillMovementMap	{J}

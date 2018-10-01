@@ -78,9 +78,6 @@ namespace FEBuilderGBA
                 ParseORG(line);
                 ParseIncBIN(line, lines[i]);
                 ParseLabel(line);
-#if DEBUG
-                Debug.Assert(!ParseFreeAreaCheck(line));
-#endif
             }
         }
         void ParseLabel(string line)
@@ -245,21 +242,6 @@ namespace FEBuilderGBA
             string file = Path.GetFileName(filename);
             return (file.IndexOf("_FBG_Temp_") == 0);
         }
-#if DEBUG
-        public static bool ParseFreeAreaCheck(string line)
-        {
-            if (U.IsComment(line))
-            {
-                return false;
-            }
-            if (line.IndexOf("FreeSpace", StringComparison.OrdinalIgnoreCase) >= 0)
-            {//危険フリースエリア定義があるよ!
-                Debug.Assert(false);
-                return true;
-            }
-            return false;
-        }
-#endif
 
     }
 }

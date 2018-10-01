@@ -1300,6 +1300,27 @@ Unable to execute process.\r\nfilename: {0}\r\n{1}
 :変更をユーザーが取り消しました
 User canceled changes
 
+:0=シンボルを利用しない
+0=Do not use symbols
+
+:1=.sym.txtとしてファイルにシンボルを保存する
+1=sym.Save the symbol in the file as txt.
+
+:2=FEBuilderGBAのコメントで設定する
+2=Set by FEBuilderGBA comment
+
+:3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)
+3=Both (.sym.Save txt and set comment of FEBuilderGBA).
+
+:デバッグ用のシンボル 
+Symbol for debugging
+
+:別ファイル選択
+Open
+
+:スクリプト
+script
+
 :フリーエリアの定義
 Free Area
 
@@ -1311,12 +1332,6 @@ Load Script
 
 :Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。
 Read the event script in the Event Assembler and adapt it to the current ROM.
-
-:別ファイル選択
-Open
-
-:スクリプト
-script
 
 :Event Assemblerで追加
 Insert Events Via Event Assembler
@@ -4291,8 +4306,11 @@ When you activate magic, select whether to make the screen dim.\r\ndim_pc = Dark
 :テキストIDに0を指定した時だけ、ここで指定したイベントを実行できます。\r\nイベント命令のため、分岐をさせることで特殊な会話を実装できるようです。\r\nしかし、非常に制限が多いので、特別な理由がない限り利用しない方がいいでしょう。\r\nイベントを設定する場合は、イベント領域を確保して指定してください。\r\n
 The event specified here can be executed only when 0 is specified as the text ID.\r\nBecause it is an event instruction, it seems that you can implement a special conversation by making a branch.\r\nHowever, there are quite a few restrictions, so you should not use it unless there are special reasons.\r\nTo set an event, secure the event area and specify it.\r\n
 
-:自由に設定できるコメントです。\r\n開発時のメモに利用してください。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。\r\nconfig/etc/ROMNAME/comment_.txt
-It is a comment you can set freely.\r\nPlease use it for memo during development.\r\nThis content is not saved in ROM.It is recorded in the following file.\r\nconfig/etc/ROMNAME/comment_.txt.
+:自由に設定できるコメントです。\r\n開発時のメモに利用してください。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。
+It is a comment you can set freely.\r\nPlease use it for memo during development.\r\nThis content is not saved in ROM.It is recorded in the following file.
+
+:デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。
+Stores symbols for debugging as comments.\r\nEmbedding symbols is a hint for disassembling and debugging.\r\nThis content is not saved in ROM.It is recorded in the following file.
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -9726,6 +9744,24 @@ This fileI will also rewrite the {0} byte, is it really okay?\r\n\r\n(Do you mis
 
 :コンパイルした結果のファイルがないので、パッチを作成できません。
 Unable to create patch since there is no compiled result file.
+
+:フックするのに利用するレジスタを選択します。\r\nr3を利用するとEAのJumToHackと同じ意味になります。
+Select the register to use for hooking.\r\nUsing r3 is equivalent to EA's JumToHack.
+
+:データを格納する領域を定義します。\r\nディフォルトではROM末尾が自動的に指定されています。
+Define the area where data is stored.\r\nBy default, the end of ROM is automatically specified.
+
+:0=中間ファイルは利用しないので消去する
+0=Deletes the intermediate file because it does not use it
+
+:2=ELFを保存する
+2=Save ELF
+
+:3=ELFとシンボルを両方とも保存
+3=Save both ELF and symbols
+
+:中間ファイル
+Intermediate file
 
 :フックに利用するレジスタ
 Register used for hook

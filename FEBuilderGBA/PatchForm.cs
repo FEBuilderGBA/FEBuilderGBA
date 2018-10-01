@@ -2630,7 +2630,8 @@ namespace FEBuilderGBA
 
                 try
                 {
-                    EventAssemblerForm.WriteEA(EAFilename,freearea, undodata);
+                    SymbolUtil.DebugSymbol storeSymbol = SymbolUtil.DebugSymbol.SaveComment;
+                    EventAssemblerForm.WriteEA(EAFilename, freearea, undodata, storeSymbol);
                 }
                 catch (PatchException exception)
                 {
@@ -5152,11 +5153,7 @@ namespace FEBuilderGBA
 
             string scriptbin = U.cut(eventscript, "{$", "}");
             scriptbin = U.skip(scriptbin, ":");
-            if (scriptbin == "")
-            {
-                return;
-            }
-
+            if (scriptbin != "")
             {
                 string basedir = Path.GetDirectoryName(st.PatchFileName);
                 string filename = Path.Combine(basedir, scriptbin);
@@ -5610,6 +5607,8 @@ namespace FEBuilderGBA
                     uint o = U.at(orignalROM, addr); //パッチを含んでいないROMの内容
                     uint x = U.at(map.bin, i);       //パッチで変更される内容
                     uint c = Program.ROM.u8(addr);   //現在のROMの内容
+
+                    Program.CommentCache.Remove(addr);
 
                     if (c == x)
                     {//現在のROMの内容が、パッチの内容と同一の場合、含んでいないROMの内容で上書きして消去する

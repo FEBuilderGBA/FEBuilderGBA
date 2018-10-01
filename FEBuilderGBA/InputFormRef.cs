@@ -10405,7 +10405,11 @@ namespace FEBuilderGBA
             }
             else if (str == "@COMMENT")
             {
-                str = R._("自由に設定できるコメントです。\r\n開発時のメモに利用してください。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。\r\nconfig/etc/ROMNAME/comment_.txt");
+                str = R._("自由に設定できるコメントです。\r\n開発時のメモに利用してください。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。") + "\r\nconfig/etc/ROMNAME/comment_.txt";
+            }
+            else if (str == "@DEBUG_SYMBOL")
+            {
+                str = R._("デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。") + "\r\nconfig/etc/ROMNAME/comment_.txt";
             }
             else
             {

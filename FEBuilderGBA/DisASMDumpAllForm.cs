@@ -102,12 +102,16 @@ namespace FEBuilderGBA
                 //                List<Address> structlist = U.MakeAllStructPointersList(); //既存の構造体
                 U.AppendAllASMStructPointersList(structlist
                     , ldrmap
-                    , isPatchInstallOnly: false
+                    , isPatchInstallOnly: true
                     , isPatchPointerOnly: false
                     , isPatchStructOnly: false
                     , isUseOtherGraphics: false
                     , isUseOAMSP: false
                     );
+                asmMapFile.AppendMAP(structlist);
+
+                //コメントデータ
+                Program.CommentCache.MakeAddressList(structlist);
                 asmMapFile.AppendMAP(structlist);
 
                 string line;
@@ -229,6 +233,11 @@ namespace FEBuilderGBA
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);
+
+                //コメントデータ
+                Program.CommentCache.MakeAddressList(structlist);
+                asmMapFile.AppendMAP(structlist);
+
 
                 {//設計をミスった。 綺麗なリストを作りたいので、もう一回読みこみなおそう...
                     AsmMapFile asmMapFile2 = new AsmMapFile();
@@ -396,6 +405,11 @@ namespace FEBuilderGBA
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域
                 asmMapFile.AppendMAP(structlist);
+
+                //コメントデータ
+                Program.CommentCache.MakeAddressList(structlist);
+                asmMapFile.AppendMAP(structlist);
+
 
                 string line;
                 Dictionary<uint, AsmMapFile.AsmMapSt> asmmap = asmMapFile.GetAsmMap();

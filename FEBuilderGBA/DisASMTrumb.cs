@@ -1186,15 +1186,20 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            addr = U.toPointer(addr);
+            uint pointer = U.toPointer(addr);
 
             AsmMapFile.AsmMapSt p;
-            if (this.ASMMapFile.TryGetValue(addr, out p))
+            if (this.ASMMapFile.TryGetValue(pointer, out p))
             {
-                return "   //" + p.Name + " " + p.ResultAndArgs;
+                return "   //" + p.Name + U.SA(p.ResultAndArgs)+ Program.CommentCache.S_At(addr);
             }
-            return "";
+            string comment;
+            if (Program.CommentCache.TryGetValue(addr, out comment))
+            {
+                return "  //" + comment;
+            }
 
+            return "";
         }
         string BIOSCommentFunction(uint swi)
         {
