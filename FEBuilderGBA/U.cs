@@ -1211,6 +1211,19 @@ namespace FEBuilderGBA
             byte[] d = U.getBinaryData(data,addr, length);
             return System.Text.Encoding.GetEncoding("ASCII").GetString(d);
         }
+        public static string getASCIIString(byte[] data, uint addr)
+        {
+            for (uint i = addr; i < data.Length; i++)
+            {
+                if (data[i] == 0)
+                {
+                    uint length = i - addr;
+                    return getASCIIString( data , addr , (int)length);
+                }
+            }
+
+            return "";
+        }
 
         public static uint ChangeEndian16(uint a)
         {
@@ -5222,6 +5235,21 @@ namespace FEBuilderGBA
                 return 0;
             }
             return a - b;
+        }
+
+        public static uint[] DicKeys(Dictionary<uint,string> dic)
+        {
+            var k = dic.Keys;
+            uint[] keys = new uint[k.Count];
+            k.CopyTo(keys, 0);
+            return keys;
+        }
+        public static string[] DicKeys(Dictionary<string, string> dic)
+        {
+            var k = dic.Keys;
+            string[] keys = new string[k.Count];
+            k.CopyTo(keys, 0);
+            return keys;
         }
     }
 }

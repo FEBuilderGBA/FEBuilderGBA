@@ -864,42 +864,26 @@ namespace FEBuilderGBA
                 return;
             }
             uint palette_plist = this.MapEditConf[this.MapStyle.SelectedIndex].palette_plist;
+            uint obj_plist = this.MapEditConf[this.MapStyle.SelectedIndex].obj_plist;
 
             Bitmap bitmap = ImageFormRef.ImportFilenameDialog(this);
             if (bitmap == null)
             {
                 return;
             }
-            int palette_count = MAX_MAP_PALETTE_COUNT;
-            int bitmap_palette_count = ImageUtil.GetPalette16Count(bitmap);
-            if (bitmap_palette_count > palette_count)
-            {
-                R.ShowStopError("パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類", bitmap_palette_count, palette_count);
-                return;
-            }
 
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-
-            //パレット情報の書き込み.
-            uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
-            if (palette_address == 0)
-            {//未割り当てならば新規確保しようか
-                palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(palette_count), undodata);
-            }
-            PaletteFormRef.MakePaletteBitmapToROM(this, bitmap, palette_address, palette_count,undodata);
-
-            //拡張領域に書き込んでいる可能性もあるので plstを更新する.
-            bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
+            bool r = MapPaletteImport(this,bitmap , palette_plist);
             if (!r)
             {
-                Program.Undo.Rollback(undodata);
                 return;
             }
 
-            Program.Undo.Push(undodata);
-
             //パレットの交換
-            MapObjImage.Palette = bitmap.Palette;
+            this.MapObjImage = ImageUtilMap.DrawMapChipOnly(obj_plist, palette_plist);
+            if (this.MapObjImage == null)
+            {
+                this.MapObjImage = ImageUtil.BlankDummy();
+            }
             U.ForceUpdate(this.PaletteCombo, 0);
 
             //チップセットの更新.
@@ -907,6 +891,95 @@ namespace FEBuilderGBA
             SelectedChipset_Update();
             MapStyle_SelectedIndexChanged(sender, e);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
+        }
+
+        public static bool MapPaletteImport(Form self,Bitmap bitmap, uint palette_plist)
+        {
+            int palette_count = MAX_MAP_PALETTE_COUNT;
+            int bitmap_palette_count = ImageUtil.GetPalette16Count(bitmap);
+            if (palette_count <= 1)
+            {
+                R.ShowStopError("パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類", bitmap_palette_count, palette_count);
+                return false;
+            }
+
+            if (bitmap_palette_count < palette_count)
+            {
+                DialogResult dr = R.ShowQ("これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします");
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    return PaletteImportOne(self, bitmap, palette_plist, false);
+                }
+                else if (dr == System.Windows.Forms.DialogResult.No)
+                {
+                    return PaletteImportOne(self, bitmap, palette_plist, true);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                //全部のパレットを入れ替える
+                return PaletteImportFull(self, bitmap, palette_plist);
+            }
+        }
+
+        static bool PaletteImportFull(Form self, Bitmap bitmap, uint palette_plist)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(self);
+
+            //パレット情報の書き込み.
+            uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
+            if (palette_address == 0)
+            {//未割り当てならば新規確保しようか
+                palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(MAX_MAP_PALETTE_COUNT), undodata);
+            }
+            PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address, MAX_MAP_PALETTE_COUNT, undodata);
+
+            //拡張領域に書き込んでいる可能性もあるので plstを更新する.
+            bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
+            if (!r)
+            {
+                Program.Undo.Rollback(undodata);
+                return false;
+            }
+
+            Program.Undo.Push(undodata);
+            return true;
+        }
+        static bool PaletteImportOne(Form self,Bitmap bitmap, uint palette_plist, bool isFog)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(self);
+
+            //パレット情報の書き込み.
+            uint palette_address = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist);
+            if (palette_address == 0)
+            {//未割り当てならば新規確保しようか
+                palette_address = InputFormRef.AppendBinaryData(PaletteFormRef.NewNullPalette(MAX_MAP_PALETTE_COUNT), undodata);
+            }
+
+            if (isFog)
+            {
+                PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address + (0x20 * PARTS_MAP_PALETTE_COUNT), PARTS_MAP_PALETTE_COUNT, undodata);
+            }
+            else
+            {
+                PaletteFormRef.MakePaletteBitmapToROM(self, bitmap, palette_address, PARTS_MAP_PALETTE_COUNT, undodata);
+            }
+
+
+            //拡張領域に書き込んでいる可能性もあるので plstを更新する.
+            bool r = MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.PALETTE, palette_plist, palette_address, undodata);
+            if (!r)
+            {
+                Program.Undo.Rollback(undodata);
+                return false;
+            }
+
+            Program.Undo.Push(undodata);
+            return true;
         }
 
         private void PaletteWriteButton_Click(object sender, EventArgs e)

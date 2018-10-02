@@ -1015,7 +1015,7 @@ this.MapObjImage);
         private void SaveASbutton_Click(object sender, EventArgs e)
         {
             string title = R._("保存するファイル名を選択してください");
-            string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|All files|*");
+            string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|PNG Image|*.png|All files|*");
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;
@@ -1038,6 +1038,10 @@ this.MapObjImage);
             else if (ext == ".MAP")
             {
                 SaveAsMAP(save.FileName);
+            }
+            else if (ext == ".PNG")
+            {
+                SaveAsPNG(save.FileName);
             }
             else if (ext == ".TMX")
             {
@@ -1074,7 +1078,7 @@ this.MapObjImage);
             }
 
             string title = R._("開くマップを選択してください");
-            string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|All files|*");
+            string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|Import Palette|*.png|All files|*");
 
             OpenFileDialog open = new OpenFileDialog();
             open.Title = title;
@@ -1097,6 +1101,10 @@ this.MapObjImage);
             else if (ext == ".MAP")
             {
                 errormessage = LoadAsMAP(mapfilename);
+            }
+            else if (ext == ".PNG")
+            {
+                errormessage = LoadPaletteAsPNG(mapfilename);
             }
             else if (ext == ".TMX")
             {
@@ -1192,6 +1200,25 @@ this.MapObjImage);
                 }
             }
             return -1;
+        }
+
+        string LoadPaletteAsPNG(string mapfilename)
+        {
+            string errormessage;
+            Bitmap bitmap = ImageUtil.OpenBitmap(mapfilename, null, out errormessage);
+            if (bitmap == null)
+            {
+                return errormessage;
+            }
+            uint palette_plist = this.MapEditConf[this.MapStyle.SelectedIndex].palette_plist;
+            bool r = MapStyleEditorForm.MapPaletteImport(this, bitmap, palette_plist);
+            if (!r)
+            {
+                return "";
+            }
+            U.ReSelectList(MapStyle);
+            UpdateMapChip();
+            return "";
         }
 
         //map形式の読み込み
@@ -1713,6 +1740,41 @@ this.MapObjImage);
             {
                 writer.Write(bin);
             }
+        }
+
+        //png形式で保存する
+        void SaveAsPNG(string filename)
+        {
+            Bitmap basemap;
+
+            uint mapid = (uint)this.MAPCOMBO.SelectedIndex;
+            if (MapStyle.SelectedIndex >= 0)
+            {
+                basemap = MapSettingForm.DrawMap(mapid
+                    , MapEditConf[MapStyle.SelectedIndex].obj_plist
+                    , MapEditConf[MapStyle.SelectedIndex].palette_plist
+                    , MapEditConf[MapStyle.SelectedIndex].config_plist
+                    );
+            }
+            else
+            {
+                basemap = MapSettingForm.DrawMap(mapid);
+            }
+
+            {
+                Bitmap frontBitmap = (Bitmap)basemap.Clone();
+                ImageUtil.BlackOutUnnecessaryColors(frontBitmap, 5);
+                frontBitmap.Save(filename);
+                frontBitmap.Dispose();
+            }
+            {
+                Bitmap fogBitmap = ImageUtil.SwapPalette(basemap, 5, 0x10 * 5);
+                ImageUtil.BlackOutUnnecessaryColors(fogBitmap, 5);
+                string fogFilename = U.ChangeExtFilename(filename , ".png","_fog");
+                fogBitmap.Save(fogFilename);
+                fogBitmap.Dispose();
+            }
+            basemap.Dispose();
         }
 
         //map形式で保存する.

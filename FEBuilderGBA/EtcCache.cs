@@ -72,7 +72,8 @@ namespace FEBuilderGBA
         }
         public void RemoveOverRange(uint addr)
         {
-            foreach (var key in this.Cache.Keys)
+            uint[] keys = U.DicKeys(this.Cache);
+            foreach (var key in keys)
             {
                 if (key >= addr)
                 {
@@ -82,7 +83,8 @@ namespace FEBuilderGBA
         }
         public void RemoveRange(uint addr, uint limit)
         {
-            foreach (var key in this.Cache.Keys)
+            uint[] keys = U.DicKeys(this.Cache);
+            foreach (var key in keys)
             {
                 if (key >= addr && key < limit)
                 {

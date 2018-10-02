@@ -1304,13 +1304,13 @@ User canceled changes
 0=Do not use symbols
 
 :1=.sym.txtとしてファイルにシンボルを保存する
-1=sym.Save the symbol in the file as txt.
+1=Save the symbol in the file as sym.txt.
 
 :2=FEBuilderGBAのコメントで設定する
 2=Set by FEBuilderGBA comment
 
 :3=両方(.sym.txtを保存し、FEBuilderGBAのコメントも設定する)
-3=Both (.sym.Save txt and set comment of FEBuilderGBA).
+3=Both (Save .sym.txt and set comment of FEBuilderGBA).
 
 :デバッグ用のシンボル 
 Symbol for debugging
@@ -6771,6 +6771,9 @@ To define a new map design, assign a style with PLSIT.\r\nPLIST is a list contai
 
 :マップスタイルPLIST割当
 Map style PLIST assignment
+
+:これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします
+Is this the data on clear weather?\r\nOr is it fog data?\r\n\r\nIn case of "Yes\\r\nIn case of "No\
 
 :読み込むファイル名を選択してください
 Select file to load

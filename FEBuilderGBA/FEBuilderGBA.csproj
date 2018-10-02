@@ -104,6 +104,7 @@
       <DependentUpon>DisASMDumpAllArgGrepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EAUtil.cs" />
+    <Compile Include="Elf.cs" />
     <Compile Include="ErorrUnknownROM.cs">
       <SubType>Form</SubType>
     </Compile>
