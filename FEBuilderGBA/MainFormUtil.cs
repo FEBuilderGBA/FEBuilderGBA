@@ -694,11 +694,15 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            Elf elf = new Elf(output_temp_filename);
+            out_symbol = elf.ToEASymbol();
+
             //Print symbol table
-            args = "-s --wide"
-                + " " + U.escape_shell_args(target + ".elf");
-            output = ProgramRunAsAndEndWait(readelf, args, tooldir);
-            out_symbol = SymbolUtil.ReadElfToEASymbol(output);
+//            args = "-s --wide"
+//                + " " + U.escape_shell_args(target + ".elf");
+//            output = ProgramRunAsAndEndWait(readelf, args, tooldir);
+//            string test = SymbolUtil.ReadElfToEASymbol(output);
+//            Debug.Assert(out_symbol == test);
 
             //Extract raw assembly binary (text section) from elf
             output_temp_filename = target + ".dmp";
@@ -712,7 +716,12 @@ namespace FEBuilderGBA
                 output = objcopy + " " + args + " \r\noutput:\r\n" + output;
                 return false;
             }
-
+#if DEBUG
+            //まだリスクがあるので、比較だけにとどめておこう
+            byte[] testbin = File.ReadAllBytes(output_temp_filename);
+            Debug.Assert(U.memcmp(elf.ProgramBIN, testbin) == 0);
+            File.WriteAllBytes(output_temp_filename, elf.ProgramBIN);
+#endif
             Log.Notify(target + ".dmp");
             Log.Notify("=== SYMBOL ===");
             Log.Notify(out_symbol);

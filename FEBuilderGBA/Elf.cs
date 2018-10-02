@@ -113,7 +113,7 @@ typedef struct {
 
                 uint st_name = U.u32(bin, addr + 0x00);
                 uint st_value = U.u32(bin, addr + 0x04);
-//                uint st_size = U.u32(bin, addr + 0x08);
+                uint st_shndx = U.u16(bin, addr + 0x0E);
 
                 if (st_name == 0)
                 {
@@ -121,6 +121,14 @@ typedef struct {
                 }
                 if (st_value <= 1)
                 {
+                    continue;
+                }
+                if (st_value >= 0x02000000)
+                {
+                    continue;
+                }
+                if (st_shndx > 0x1)
+                {//fff1 externか何か?
                     continue;
                 }
 
@@ -140,7 +148,6 @@ typedef struct {
                 Sym sym = new Sym();
                 sym.name = name;
                 sym.addr = st_value;
-//                sym.length = st_size;
 
                 this.SymList.Add(sym);
             }
@@ -199,7 +206,23 @@ typedef struct {
                 }
             }
         }
+        public string ToEASymbol()
+        {
+            StringBuilder sb = new StringBuilder();
 
+            for (int i = 0; i < SymList.Count; i++)
+            {
+                Sym sym = SymList[i];
+
+                sb.Append(sym.name);
+                sb.Append("=$");
+                sb.Append(U.ToHexString(sym.addr));
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
+
+#if DEBUG
         public static void TEST_ELF()
         {
             Elf elf = new Elf(Program.GetTestData("test.elf"));
@@ -210,5 +233,6 @@ typedef struct {
             Debug.Assert(elf.SymList[0].name == "Table");
             Debug.Assert(elf.SymList[0].addr == 0x88);
         }
+#endif
     }
 }

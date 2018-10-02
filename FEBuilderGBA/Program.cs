@@ -19,9 +19,9 @@ namespace FEBuilderGBA
         {
             //オプション引数 --mode=foo とかを、dic["--mode"]="foo" みたいに変換します. 
             ArgsDic = U.OptionMap(args, "--rom");
-
+#if !DEBUG
             SetExceptionHandler();
-
+#endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

@@ -515,7 +515,10 @@ namespace FEBuilderGBA
             {//サイズが同一なら何もしない
                 return;
             }
-            Program.CommentCache.RemoveOverRange(resize);
+            if (Program.CommentCache != null)
+            {
+                Program.CommentCache.RemoveOverRange(resize);
+            }
 
             //C#は refで プロパティを設定したものを渡せない愚かな仕様だから...
             //文句はMSまで.どうぞ.
