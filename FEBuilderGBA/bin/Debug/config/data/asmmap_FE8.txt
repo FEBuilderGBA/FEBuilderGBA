@@ -7939,3 +7939,7 @@
 080CBE0C	ROM起動時のNitendo LogoとISLogoを読込む関数	{U}
 0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
 08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
+080C1298	ワールドマップのメニュー定義を設定する	{J}
+080BC454	ワールドマップのメニュー定義を設定する	{U}
+080C13F4	ワールドマップの店のメニュー定義を設定する	{J}
+080BC5B4	ワールドマップの店のメニュー定義を設定する	{U}

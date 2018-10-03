@@ -8022,3 +8022,10 @@ r3=X tile position of menu of the right	{U}
 080C6704	Logo at ROM start	1	{U}
 080CBDD8	Logo at ROM start	2	{U}
 080CBE0C	Nitendo at ROM startFunction to read Logo and ISLogo	{U}
+08002B04	CallARM_PushToSecondaryOAM	{J}
+0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
+08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
+080C1298	Set menu definition of world map	{J}
+080BC454	Set menu definition of world map	{U}
+080C13F4	Set menu definition of world map shop	{J}
+080BC5B4	Set menu definition of world map shop	{U}

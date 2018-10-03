@@ -52,10 +52,25 @@ namespace FEBuilderGBA
             return U.substr(ret,1);
         }
 
-        public static List<U.AddrResult> MakeList()
+        public static List<U.AddrResult> MakeListAll()
         {
+            uint[] pointers = GetPointers();
+
+            List<U.AddrResult> ret = new List<U.AddrResult>();
             InputFormRef InputFormRef = Init(null);
-            return InputFormRef.MakeList();
+
+            for (int n = 0; n < pointers.Length; n++)
+            {
+                if (pointers[n] == 0)
+                {
+                    continue;
+                }
+                InputFormRef.ReInitPointer(pointers[n]);
+                List<U.AddrResult> list = InputFormRef.MakeList();
+                ret.AddRange(list);
+            }
+
+            return ret;
         }
 
         private void MenuDefinitionForm_Load(object sender, EventArgs e)
@@ -68,7 +83,7 @@ namespace FEBuilderGBA
 
         public static string GetMenuNameWhereMenuCommandID(uint num)
         {
-            List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeList();
+            List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
             for (int n = 0; n < menuDefineList.Count; n++)
             {
                 if (!U.isSafetyOffset(menuDefineList[n].addr + 8))
@@ -97,13 +112,28 @@ namespace FEBuilderGBA
             return "";
         }
 
+        static uint[] GetPointers()
+        {
+            return new uint[] { 
+                           Program.ROM.RomInfo.menu_definiton_pointer()
+                        ,  Program.ROM.RomInfo.menu_definiton_split_pointer()
+                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_pointer()
+                        ,  Program.ROM.RomInfo.menu_definiton_worldmap_shop_pointer()
+            };
+
+        }
+
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
-            uint[] pointers = new uint[] { Program.ROM.RomInfo.menu_definiton_pointer() };
+            uint[] pointers = GetPointers();
 
             for (int n = 0; n < pointers.Length;n++ )
             {
+                if (pointers[n] == 0)
+                {
+                    continue;
+                }
                 MakeAllDataLength(list, pointers[n]);
             }
         }
@@ -182,10 +212,15 @@ namespace FEBuilderGBA
         }
         public static void MakeTextIDArray(List<TextID> list)
         {
-            uint[] pointers = new uint[] { Program.ROM.RomInfo.menu_definiton_pointer() };
+            uint[] pointers = GetPointers();
 
             for (int n = 0; n < pointers.Length; n++)
             {
+                if (pointers[n] == 0)
+                {
+                    continue;
+                }
+
                 InputFormRef InputFormRef = Init(null);
                 InputFormRef.ReInitPointer(pointers[n]);
                 uint p = InputFormRef.BaseAddress;

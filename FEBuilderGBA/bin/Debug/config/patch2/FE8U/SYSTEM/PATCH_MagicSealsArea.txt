@@ -1,0 +1,13 @@
+NAME=魔封じの者の有効範囲
+NAME.en=Effective range of Magic Seal
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x18CE2 0x18CF0 0x1A03E 0x1A108 0x1B982
+HEX=false
+
+
+AUTHOR=beikehanmu http://feuniverse.us/t/fe-builder-gba/2845/1745
+NAME.zh=邪恶之人的有效范围

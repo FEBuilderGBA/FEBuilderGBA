@@ -1,0 +1,15 @@
+NAME=デビルアクスで自滅する確率を下げる時に利用する値
+NAME.en=Devil Axs: The value to use when lowering the probability of self-destruction
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02B5F4
+COMBO=LV|0x8|MaxHP|0x12|HP|0x13|Power|0x14|Skill|0x15|Speed|0x16|Defence|0x17|Ref|0x18|Luck|0x19
+
+AUTHOR=beikehanmu http://feuniverse.us/t/fe-builder-gba/2845/1738
+INFO=デビルアクスで自分がダメージを受ける確率を減らす値に利用するパラメータです。\r\n基礎値 - この値=確率\r\n0%だと必ず敵に命中します。\r\n100%だと、必ず自滅します。\r\nただし、負の数になるとアンダーフローして、必ず自滅します。
+INFO.en=It is a parameter used to reduce the probability that you will be damaged by Devil Ax.\r\nBasic value-This value = probability\r\nWhen it is 0%, it always hits the enemy.\r\nIf it is 100%, it will surely be destroyed.\r\nHowever, when it becomes a negative number, it underflows and surely self-destructs.
+NAME.zh=降低魔鬼斧中自毁概率时的使用价值
+INFO.zh=它是一个参数，用于降低您被Devil Ax损坏的可能性。\r\n基本价值 - 该值=概率\r\n当它为0％时，它总是击中敌人。\r\n如果它是100％，它肯定会被摧毁。\r\n然而，当它变成负数时，它会下溢并且肯定会自毁。

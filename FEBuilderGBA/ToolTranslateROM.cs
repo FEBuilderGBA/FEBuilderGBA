@@ -291,7 +291,7 @@ namespace FEBuilderGBA
                     //メニュー1
                     if (Program.ROM.RomInfo.is_multibyte())
                     {
-                        List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeList();
+                        List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
                         for (int n = 0; n < menuDefineList.Count; n++)
                         {
                             if (!U.isSafetyOffset(menuDefineList[n].addr + 8))

@@ -16,7 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             InputFormRef.OwnerDrawColorCombo(L_8_COMBO);
 
-            List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeList();
+            List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
             U.ConvertComboBox(menuDefineList,ref FilterComboBox);
 
             this.InputFormRef = Init(this);

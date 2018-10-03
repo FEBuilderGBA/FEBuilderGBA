@@ -7956,3 +7956,10 @@ r3=X tile position of menu of the right	{U}
 080C6704	ROM开始的标志	1	{U}
 080CBDD8	ROM开始的标志	2	{U}
 080CBE0C	Nitendo在ROM开始读取Logo和ISLogo的功能	{U}
+08002B04	CallARM_PushToSecondaryOAM	{J}
+0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
+08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
+080C1298	设置世界地图的菜单定义	{J}
+080BC454	设置世界地图的菜单定义	{U}
+080C13F4	设置世界地图商店的菜单定义	{J}
+080BC5B4	设置世界地图商店的菜单定义	{U}

@@ -131,6 +131,10 @@ namespace FEBuilderGBA
                     {//インストールしていないので消す.
                         continue;
                     }
+                    if (IsUIHiddenPatch(patch))
+                    {
+                        continue;
+                    }
                     patchs.Add(patch);
                 }
             }
@@ -143,10 +147,19 @@ namespace FEBuilderGBA
                     {//フィルターで消す.
                         continue;
                     }
+                    if (IsUIHiddenPatch(patch))
+                    {
+                        continue;
+                    }
                     patchs.Add(patch);
                 }
             }
             return patchs;
+        }
+
+        static bool IsUIHiddenPatch(PatchSt patch)
+        {
+            return U.stringbool(U.at(patch.Param, "UI_HIDDEN", "0"));
         }
 
         static string CleanupKey(string key, string lang, bool canSecondLanguageEnglish , PatchSt patch)
