@@ -6773,7 +6773,7 @@ To define a new map design, assign a style with PLSIT.\r\nPLIST is a list contai
 Map style PLIST assignment
 
 :これは晴天時のデータですか？\r\nそれとも霧のデータですか？\r\n\r\n「はい」の場合、晴天時のデータとしてインポートします。\r\n「いいえ」の場合、霧のデータとしてインポートします
-Is this the data on clear weather?\r\nOr is it fog data?\r\n\r\nIn case of "Yes\\r\nIn case of "No\
+Is this the data on clear weather?\r\nOr is it fog data?\r\n\r\nIn case of "Yes" to import clear weather palette.\\r\nIn case of "No" to import fog palette.
 
 :読み込むファイル名を選択してください
 Select file to load
