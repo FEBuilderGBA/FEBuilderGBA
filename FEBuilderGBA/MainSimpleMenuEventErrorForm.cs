@@ -92,6 +92,9 @@ namespace FEBuilderGBA
         }
         void Scan()
         {
+            //次回システムチェックをする.
+            MainSimpleMenuForm.NeedSystemErrorCheck();
+
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
                 this.ErrorList = FELint.ScanMAP(this.MapID);
@@ -899,6 +902,12 @@ namespace FEBuilderGBA
             {
                 EventList.SelectedIndex = EventList.IndexFromPoint(e.X, e.Y);
             }
+        }
+
+        private void MainSimpleMenuEventErrorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //次回システムチェックをする.
+            MainSimpleMenuForm.NeedSystemErrorCheck();
         }
 
     }

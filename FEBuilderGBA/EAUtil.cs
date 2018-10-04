@@ -77,6 +77,7 @@ namespace FEBuilderGBA
                 }
                 ParseORG(line);
                 ParseIncBIN(line, lines[i]);
+                ParseLynELF(line, lines[i]);
                 ParseLabel(line);
             }
         }
@@ -199,6 +200,31 @@ namespace FEBuilderGBA
             this.DataList.Add(data);
             return true;
         }
+        bool ParseLynELF(string line , string orignalIine)
+        {
+            string a = Keyword(line, "#inctevent lyn");
+            if (a == "")
+            {
+                return false;
+            }
+            string filename = U.cut(a, "\"", "\"");
+            string fullbinname = Path.Combine( this.Dir, filename);
+
+            if (!File.Exists(fullbinname))
+            {
+                return false;
+            }
+
+            DataEnum dataType ;
+            dataType = DataEnum.ASM;
+
+            Elf elf = new Elf(fullbinname);
+
+            Data data = new Data(filename, elf.ProgramBIN, dataType);
+            this.DataList.Add(data);
+            return true;
+        }
+
         bool ParseORG(string line)
         {
             string a = Keyword(line , "ORG");

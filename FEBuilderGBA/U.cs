@@ -1803,14 +1803,33 @@ namespace FEBuilderGBA
             return a;
         }
 
-        public static uint GrepEnd(byte[] data, byte[] need, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0)
+        public static uint GrepEnd(byte[] data, byte[] need, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
         {
             uint grepresult = U.Grep(Program.ROM.Data, need, start, end, blocksize);
             if (grepresult == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;
             }
-            return grepresult + (uint)need.Length + plus;
+            uint resultAddr = grepresult + (uint)need.Length + plus;
+            if (resultAddr > data.Length)
+            {//データ終端を超えてしまった
+                return U.NOT_FOUND;
+            }
+
+            if (needPointer)
+            {//検索で見つけたものはポインタである必要がある.
+                if (U.isPointer(U.u32(data, resultAddr)))
+                {
+                    return resultAddr;
+                }
+                //どうやらマッチした場所は違うらしい? 
+                //続きから再検索
+                return GrepEnd(data, need, resultAddr, end , blocksize, plus , needPointer );
+            }
+            else
+            {
+                return resultAddr;
+            }
         }
 
         public static uint Grep(byte[] data, byte[] need, uint start = 0x100,uint end = 0,uint blocksize = 1)

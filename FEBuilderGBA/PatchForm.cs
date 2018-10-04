@@ -131,10 +131,6 @@ namespace FEBuilderGBA
                     {//インストールしていないので消す.
                         continue;
                     }
-                    if (IsUIHiddenPatch(patch))
-                    {
-                        continue;
-                    }
                     patchs.Add(patch);
                 }
             }
@@ -147,20 +143,12 @@ namespace FEBuilderGBA
                     {//フィルターで消す.
                         continue;
                     }
-                    if (IsUIHiddenPatch(patch))
-                    {
-                        continue;
-                    }
                     patchs.Add(patch);
                 }
             }
             return patchs;
         }
 
-        static bool IsUIHiddenPatch(PatchSt patch)
-        {
-            return U.stringbool(U.at(patch.Param, "UI_HIDDEN", "0"));
-        }
 
         static string CleanupKey(string key, string lang, bool canSecondLanguageEnglish , PatchSt patch)
         {
@@ -308,6 +296,10 @@ namespace FEBuilderGBA
             {
                 sb.Append(R._("TAG:"));
                 sb.AppendLine(tag);
+            }
+            if (tag.IndexOf("#HIDDEN")>=0)
+            {
+                sb.AppendLine(R._("このパッチは、内部処理用に作られたものです。通常は利用しないでください。"));
             }
 
             string name = patch.Name;
@@ -2423,31 +2415,31 @@ namespace FEBuilderGBA
             }
             if (value.IndexOf("GREP4END ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, true);
             }
             if (value.IndexOf("GREP1END ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 1);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 1, 0, true);
             }
             if (value.IndexOf("GREP4END+4 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4 ,4);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4 ,4, true);
             }
             if (value.IndexOf("GREP4END+8 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 8);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 8, true);
             }
             if (value.IndexOf("GREP4END+12 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 12);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 12, true);
             }
             if (value.IndexOf("GREP4END+16 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 16);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 16, true);
             }
             if (value.IndexOf("GREP4END+20 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 20);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 20, true);
             }
 
             if (value.IndexOf("FGREP16 ") == 0)
@@ -2472,31 +2464,31 @@ namespace FEBuilderGBA
             }
             if (value.IndexOf("FGREP4END ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 0, true);
             }
             if (value.IndexOf("FGREP1END ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 1);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 1, 0, true);
             }
             if (value.IndexOf("FGREP4END+4 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 4);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 4, true);
             }
             if (value.IndexOf("FGREP4END+8 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 8);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 8, true);
             }
             if (value.IndexOf("FGREP4END+12 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 12);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 12, true);
             }
             if (value.IndexOf("FGREP4END+16 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 16);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 16, true);
             }
             if (value.IndexOf("FGREP4END+20 ") == 0)
             {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 20);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 20 , true);
             }
             if (value.IndexOf("P32 ") == 0)
             {
@@ -3569,11 +3561,20 @@ namespace FEBuilderGBA
 
         static void TraceEditPatch(List<BinMapping> binMappings, PatchSt patchSt)
         {
-            string editpatch = U.at(patchSt.Param, "EDIT_PATCH");
-            if (editpatch == "")
+            foreach (var pair in patchSt.Param)
             {
-                return;
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EDIT_PATCH" && pair.Value != "")
+                {
+                    TraceEditPatchLow(pair.Value, binMappings, patchSt);
+                }
             }
+        }
+
+        static void TraceEditPatchLow(string editpatch, List<BinMapping> binMappings, PatchSt patchSt)
+        {
             string basedir = Path.GetDirectoryName(patchSt.PatchFileName);
             editpatch = Path.Combine(basedir, editpatch);
 
@@ -5530,17 +5531,29 @@ namespace FEBuilderGBA
                     Debug.Assert(false);
                 }
 
-                string editpatch = U.at(patch.Param, "EDIT_PATCH");
-                if (editpatch != "")
+                CheckEditPatch(basedir, patch);
+            }
+        }
+
+        static void CheckEditPatch(string basedir , PatchSt patch)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EDIT_PATCH" && pair.Value != "")
                 {
+                    string editpatch = pair.Value;
+
                     editpatch = Path.Combine(basedir, editpatch);
                     if (!File.Exists(editpatch))
                     {//EDIT_PATCHが存在しない
                         Debug.Assert(false);
                     }
                 }
-
             }
+
         }
 #endif
 

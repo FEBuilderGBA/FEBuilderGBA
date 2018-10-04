@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.EventPanel = new System.Windows.Forms.Panel();
+            this.Explain = new System.Windows.Forms.Label();
             this.ShowAllError = new System.Windows.Forms.CheckBox();
             this.ReloadButton = new System.Windows.Forms.Button();
             this.EventCond_Label = new System.Windows.Forms.Label();
-            this.EventList = new ListBoxEx();
-            this.Explain = new System.Windows.Forms.Label();
+            this.EventList = new FEBuilderGBA.ListBoxEx();
             this.EventPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,17 @@
             this.EventPanel.Name = "EventPanel";
             this.EventPanel.Size = new System.Drawing.Size(1167, 816);
             this.EventPanel.TabIndex = 134;
+            // 
+            // Explain
+            // 
+            this.Explain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Explain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Explain.Location = new System.Drawing.Point(4, 784);
+            this.Explain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Explain.Name = "Explain";
+            this.Explain.Size = new System.Drawing.Size(1161, 30);
+            this.Explain.TabIndex = 118;
+            this.Explain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ShowAllError
             // 
@@ -89,6 +100,7 @@
             this.EventList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.EventList.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.EventList.FormattingEnabled = true;
+            this.EventList.IntegralHeight = false;
             this.EventList.ItemHeight = 50;
             this.EventList.Location = new System.Drawing.Point(4, 30);
             this.EventList.Margin = new System.Windows.Forms.Padding(4);
@@ -99,17 +111,6 @@
             this.EventList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDoubleClick);
             this.EventList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDown);
             // 
-            // Explain
-            // 
-            this.Explain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Explain.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Explain.Location = new System.Drawing.Point(4, 784);
-            this.Explain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Explain.Name = "Explain";
-            this.Explain.Size = new System.Drawing.Size(1161, 30);
-            this.Explain.TabIndex = 118;
-            this.Explain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MainSimpleMenuEventErrorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -119,6 +120,7 @@
             this.Controls.Add(this.EventPanel);
             this.Name = "MainSimpleMenuEventErrorForm";
             this.Text = "エラー";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainSimpleMenuEventErrorForm_FormClosed);
             this.Load += new System.EventHandler(this.ErrorEventErrorForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainSimpleMenuEventErrorForm_KeyDown);
             this.EventPanel.ResumeLayout(false);
