@@ -126,6 +126,7 @@ namespace FEBuilderGBA
             public string PopupHint; //ポップアップヒント
             public string LowCode;  //1234XXXX みたいな設定ファイルに書いてあるコード
             public bool IsExdends;  //パッチで追加されたコマンド
+            public bool IsLowCommand; //危険なLOWコマンド
         };
         public Script[] Scripts { get; private set; }
         public Script Unknown { get; private set; }
@@ -315,7 +316,7 @@ namespace FEBuilderGBA
             script.Has = MakeScriptHas(script.Args, script.Info, line);
             script.Size = size;
             script.LowCode = sp[0];
-            ParsePopupHintAndCategory(sp, out script.PopupHint, out script.Category);
+            ParsePopupHintAndCategory(sp, out script.PopupHint, out script.Category , out script.IsLowCommand);
 
 
             return script;
@@ -333,10 +334,14 @@ namespace FEBuilderGBA
             //OK
             return true;
         }
-        static void ParsePopupHintAndCategory(string[] sp,out string popup,out string category)
+        static void ParsePopupHintAndCategory(string[] sp
+            , out string out_popup
+            , out string out_category
+            , out bool out_isLowCommand)
         {
-            popup = "";
-            category = "";
+            out_popup = "";
+            out_category = "";
+            out_isLowCommand = false;
 
             int i = 2;
             if (sp.Length < i)
@@ -351,23 +356,25 @@ namespace FEBuilderGBA
                 }
                 if (sp[i][0] == '{')
                 {
-                    category += sp[i];
+                    out_category += sp[i];
                     continue;
                 }
-                if (popup.Length > 0)
+                if (out_popup.Length > 0)
                 {
-                    popup += "\r\n";
+                    out_popup += "\r\n";
                 }
-                popup += ReplaceHintWord(sp[i]);
+                out_popup += ReplaceHintWord(sp[i]);
             }
 
             if (sp[1].IndexOf("(LOW)") >= 0)
             {
-                if (popup.Length > 0)
+                if (out_popup.Length > 0)
                 {
-                    popup += "\r\n";
+                    out_popup += "\r\n";
                 }
-                popup += R._("この命令は低レイヤーの命令です。通常は利用しないでください。");
+                out_popup += R._("この命令は低レイヤーの命令です。通常は利用しないでください。");
+
+                out_isLowCommand = true;
             }
         }
 

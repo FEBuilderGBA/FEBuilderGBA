@@ -1391,9 +1391,16 @@ namespace FEBuilderGBA
                     }
                 case (0x18 << 11): //Format15
                 case (0x19 << 11): //Format15
+                    return CodeType.OTHER;
                 case (0x1A << 11): //Format16
                 case (0x1B << 11): //Format16 or Format17
-                    return CodeType.OTHER;
+                    if ((a & (0xf << 8)) >= (0xf << 8))
+                    {//format 17
+                        return CodeType.OTHER;
+                    }
+                    short imm = ((sbyte)(a & 0xff));
+                    out_data = (uint)(U.toPointer(pos) + 4 + (imm << 1));
+                    return CodeType.CONDJMP;
                 case (0x1C << 11): //Format18
 
                     out_data = ParseJumpIMM(pos,a);
@@ -1496,6 +1503,16 @@ namespace FEBuilderGBA
             return addr - startaddr;
         }
 
+#if DEBUG
+        public static void TEST_CalcLengthByHack1()
+        {
+            byte[] bin = File.ReadAllBytes(Program.GetTestData("MMBPrepStats.dmp"));
+            List<uint> ldrtable = new List<uint>();
+            uint length = CalcLengthByHack(bin, 0, (uint)bin.Length, ldrtable);
+            Debug.Assert(length == 0x3C);
+        }
+#endif
+
 
         //フック処理
         //LDR参照のデータが末尾に登場するのでそれを見つける.
@@ -1543,6 +1560,9 @@ namespace FEBuilderGBA
                     unknown = 0;
                 }
 
+                if (addr == 0x0114133C)
+                {
+                }
 
                 if (type == CodeType.CALL)
                 {//CALLだけ32ビットなので4バイト
@@ -1557,12 +1577,16 @@ namespace FEBuilderGBA
                 {//LDRならばデータ参照を記録.
                     ldrtable.Add(data);
                 }
-                else if (type == CodeType.JMP || type == CodeType.CALL)
+                else if (type == CodeType.JMP 
+                    || type == CodeType.CALL 
+                    || type == CodeType.CONDJMP)
                 {
                     data = U.toOffset(data);
-                    if (data > addr
-                        && data < limit
-                        && data < addr + 0x100)
+                    if (data > addr              //現在のaddrより後方へ参照していて
+                        && data < limit          //0xffffffみたいに外へ参照しているわけでもなく
+                        && data < addr + 0x100   //ありえないぐらい遠くなく
+                        && lastJumpAddr < data   //既知の最後の参照エリアより後ろにあること
+                        )
                     {
                         lastJumpAddr = data;
                     }

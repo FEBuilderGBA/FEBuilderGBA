@@ -17,22 +17,40 @@ namespace FEBuilderGBA
         {
         }
 
+        const int FREEAREA_BLOCK_SIZE = 256;
+
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
         {
-            MakeFreeDataList(RecycleFreeAreaList , 1024 , data, RebuildAddress , useMap);
+            List<Address> knownList = U.MakeAllStructPointersList(false);
+
+            Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
+            MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE, data, RebuildAddress, useMap);
 
             for (int i = 0; i < this.RecycleFreeAreaList.Count; i++)
             {
                 Address p = this.RecycleFreeAreaList[i];
                 //先頭16バイトは捨てましょう. 別データの終端データに使われているとまずい.
-                p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
+                p.ResizeAddress(p.Addr + 16, p.Length - 16 );
                 Log.Debug("FREEAREA " + U.To0xHexString(p.Addr) + " " + p.Length, " => " + U.To0xHexString(p.Addr + p.Length));
             }
         }
-
+        Dictionary<uint,bool> MakeKnownListToDic(List<Address> knownList)
+        {
+            Dictionary<uint,bool> ret = new Dictionary<uint,bool>();
+            foreach(Address a in knownList)
+            {
+                ret[a.Addr] = true;
+                for (uint i = 0; i < a.Length; i += (FREEAREA_BLOCK_SIZE / 2))
+                {
+                    ret[a.Addr + i] = true;
+                }
+            }
+            return ret;
+        }
         //フリー領域と思われる部分を検出.
         void MakeFreeDataList(List<Address> list
+            , Dictionary<uint, bool> knownDic
             , uint needSize, byte[] data
             , uint length, Dictionary<uint, uint> useMap)
         {
@@ -42,7 +60,8 @@ namespace FEBuilderGBA
                 byte filldata;
                 if (data[addr] == 0x00 || data[addr] == 0xFF)
                 {
-                    if (useMap.ContainsKey(addr))
+                    if (useMap.ContainsKey(addr)
+                        || knownDic.ContainsKey(addr))
                     {
                         continue;
                     }
@@ -68,7 +87,8 @@ namespace FEBuilderGBA
                             break;
                         }
                         if (data[addr] != filldata
-                            ||  useMap.ContainsKey(addr) )
+                            ||  useMap.ContainsKey(addr)
+                            ||  knownDic.ContainsKey(addr))
                         {
                             uint matchsize = addr - start;
                             if (matchsize >= needSize)

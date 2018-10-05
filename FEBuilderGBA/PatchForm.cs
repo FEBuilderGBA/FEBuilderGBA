@@ -3311,6 +3311,23 @@ namespace FEBuilderGBA
             return b;
         }
 
+        //lynによってインポートされるelfのマスクパターンを作ります。
+        //
+        static bool[] MakeLynMaskPattern(byte[] bin)
+        {
+            bool[] isSkip = new bool[bin.Length];
+            for (int i = 0; i + 3 < bin.Length ; i += 4)
+            {
+                if (bin[i] == 0 && bin[i+1] == 0 && bin[i+2] == 0 && bin[i+3] == 0 )
+                {
+                    isSkip[i + 0] = true;
+                    isSkip[i + 1] = true;
+                    isSkip[i + 2] = true;
+                    isSkip[i + 3] = true;
+                }
+            }
+            return isSkip;
+        }
 
         //本来配置する場所から移動した場合、
         //データ参照のLDR値を変更しないといけいない.
@@ -3698,6 +3715,7 @@ namespace FEBuilderGBA
             Debug.Assert(type == "BIN");
 
             List<BinMapping> binMappings = new List<BinMapping>();
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
 
             Dictionary<string, bool> jumpMatch = new Dictionary<string, bool>();
             foreach (var pair in patch.Param)
@@ -3816,7 +3834,7 @@ namespace FEBuilderGBA
                     byte[] mod = ReadMod(sp, filename, out isSkip);
 
                     //ポインタ部は可変なので、maskパターンを作って検索します.
-                    addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip);
+                    addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr);
                     if (addr == U.NOT_FOUND)
                     {
                         continue;
@@ -3829,6 +3847,8 @@ namespace FEBuilderGBA
                     {
                         datatype = Address.DataTypeEnum.ASM;
                     }
+                    //フリー領域は連続して配置されるので、最後に発見したもののアドレスを記録する.
+                    lastMatchAddr = addr + length;
                 }
                 else
                 {//位置が特定できる場合
@@ -3947,7 +3967,6 @@ namespace FEBuilderGBA
 
 
             //データの位置を追跡
-            //if (binMappings.Count > 0)
             {
                 TraceEditPatch(binMappings, patch);
             }
@@ -3973,6 +3992,8 @@ namespace FEBuilderGBA
                     files = U.AddIfNotExist(files, ea);
                 }
             }
+
+            uint lastMatchAddr = Program.ROM.RomInfo.compress_image_borderline_address();
 
             foreach (string fullfilename in files)
             {
@@ -4019,11 +4040,12 @@ namespace FEBuilderGBA
                         byte[] mod = ReadMod(sp, data.BINData, out isSkip);
 
                         //可変なので、maskパターンを作って検索します.
-                        uint addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip);
+                        uint addr = U.GrepPatternMatch(Program.ROM.Data, mod, isSkip, lastMatchAddr);
                         if (addr == U.NOT_FOUND)
                         {
                             continue;
                         }
+
                         uint length = (uint)mod.Length;
 
                         BinMapping b = new BinMapping();
@@ -4043,13 +4065,45 @@ namespace FEBuilderGBA
                         }
 
                         binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.LYN)
+                    {
+                        //展開されるものを生成して、GREP検索する必要があります.
+                        string basedir = Path.GetDirectoryName(patch.PatchFileName);
+                        string[] sp = new string[] { };
+                        bool[] isSkip = MakeLynMaskPattern(data.BINData);
+
+                        //可変なので、maskパターンを作って検索します.
+                        uint addr = U.GrepPatternMatch(Program.ROM.Data, data.BINData, isSkip, lastMatchAddr);
+                        if (addr == U.NOT_FOUND)
+                        {
+                            continue;
+                        }
+                        uint length = (uint)data.BINData.Length;
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = isSkip;
+                        b.type = Address.DataTypeEnum.PATCH_ASM;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
                     }
                     else
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
                         string basedir = Path.GetDirectoryName(patch.PatchFileName);
 
-                        uint addr = U.Grep(Program.ROM.Data, data.BINData);
+                        uint addr = U.Grep(Program.ROM.Data, data.BINData, lastMatchAddr);
                         if (addr == U.NOT_FOUND)
                         {
                             continue;
@@ -4066,6 +4120,9 @@ namespace FEBuilderGBA
                         b.type = Address.DataTypeEnum.BIN;
 
                         binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
                     }
                 }
             }
@@ -4824,14 +4881,15 @@ namespace FEBuilderGBA
                 }
             }
             string[] typeArray;
-            uint[] pointerIndexes = MakePointerIndexes(patch, out typeArray);
+            Address.DataTypeEnum iftType;
+            uint[] pointerIndexes = MakePointerIndexes(patch, out typeArray , out iftType);
 
             string patchname = patch.Name + "@STRUCT";
             list.Add(new Address(struct_address
                 , datasize * (datacount+1)
                 , struct_pointer
                 , patchname
-                , Address.DataTypeEnum.InputFormRef
+                , iftType
                 , datasize
                 , pointerIndexes));
 
@@ -4957,6 +5015,17 @@ namespace FEBuilderGBA
                                 , isPointerOnly);
                         }
                     }
+                    else if (type == "ASM")
+                    {//ASM
+                        uint a = Program.ROM.p32(p);
+                        if (U.isSafetyOffset(a))
+                        {
+                            FEBuilderGBA.Address.AddFunction(list
+                                , p
+                                , patchname + " ASM " + n
+                                );
+                        }
+                    }
                     else
                     {//不明なポインタ
                         FEBuilderGBA.Address.AddPointer(list
@@ -5068,16 +5137,24 @@ namespace FEBuilderGBA
                 }
                 else if (checkIF != "I")
                 {//インストールされていないので無視したいのだが...
-                    //構造体は性質上インストールできない
-                    if (type != "STRUCT")
-                    {//インストールされていない構造体以外ならボツ
-                        return false;
+                    //構造体と画像は性質上インストールできない
+                    if (type == "STRUCT" || type == "IMAGE")
+                    {//構造体または画像
+                        return true;
                     }
+                    return false;
                 }
             }
 
             return true;
         }
+
+        static bool isCanonicalSkip(PatchSt patch)
+        {
+            string v = U.at(patch.Param, "CANONICAL_SKIP", "0");
+            return U.stringbool(v);
+        }
+            
 
         //パッチが知っているアドレスをすべて取得します.
         public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly)
@@ -5086,6 +5163,11 @@ namespace FEBuilderGBA
             for (int i = 0; i < patchs.Count; i++)
             {
                 PatchSt patch = patchs[i];
+
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
 
                 string type = U.at(patch.Param, "TYPE");
                 string checkIF = CheckIFFast(patch);
@@ -5123,8 +5205,13 @@ namespace FEBuilderGBA
                 if (InputFormRef.DoEvents(null, "Check Patch " + patch.Name)) return;
             }
         }
-        static uint[] MakePointerIndexes( PatchSt patch ,out string[] out_typeArray)
+        static uint[] MakePointerIndexes(PatchSt patch
+            , out string[] out_typeArray
+            , out Address.DataTypeEnum out_iftType
+            )
         {
+            bool hasASM = false;
+            bool hasNoASM = false;
             List<string> typeArray = new List<string>();
             List<uint> pointerIndexes = new List<uint>();
             foreach (var pair in patch.Param)
@@ -5142,12 +5229,38 @@ namespace FEBuilderGBA
 
                 if (key[0] == 'P')
                 {
+                    if (type == "ASM")
+                    {
+                        hasASM = true;
+                    }
+                    else
+                    {
+                        hasNoASM = true;
+                    }
+
                     pointerIndexes.Add((uint)datanum);
                     typeArray.Add(type);
                 }
             }
 
             out_typeArray = typeArray.ToArray();
+
+            if (hasASM)
+            {
+                if (hasNoASM == false)
+                {//ASMだけ
+                    out_iftType = Address.DataTypeEnum.InputFormRef_ASM;
+                }
+                else
+                {//ASMとデータの混在
+                    out_iftType = Address.DataTypeEnum.InputFormRef_MIX;
+                }
+            }
+            else
+            {//ASMを含まない
+                out_iftType = Address.DataTypeEnum.InputFormRef; ;
+            }
+
             return pointerIndexes.ToArray();
         }
 
@@ -5223,17 +5336,22 @@ namespace FEBuilderGBA
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),true);
             for (int i = 0; i < patchs.Count; i++)
             {
-                PatchSt st = patchs[i];
-                foreach (var pair in st.Param)
+                PatchSt patch = patchs[i];
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
+
+                foreach (var pair in patch.Param)
                 {
                     if (pair.Key.IndexOf("EVENTSCRIPT") == 0)
                     {
-                        MakeEventScriptAddEventScript(st, pair.Value, scripts);
+                        MakeEventScriptAddEventScript(patch, pair.Value, scripts);
                         continue;
                     }
                     if (pair.Key.IndexOf("USEFLAG") == 0)
                     {
-                        MakeEventScriptAddUseFlag(st, pair.Value, flags);
+                        MakeEventScriptAddUseFlag(patch, pair.Value, flags);
                         continue;
                     }
                 }
@@ -5760,8 +5878,12 @@ namespace FEBuilderGBA
                 if (Program.AsmMapFileAsmCache.IsStopFlagOn()) return;
 
                 PatchSt patch = patchs[i];
-                string type = U.at(patch.Param, "TYPE");
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
 
+                string type = U.at(patch.Param, "TYPE");
                 if (type != "STRUCT")
                 {
                     continue;

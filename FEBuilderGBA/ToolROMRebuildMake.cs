@@ -93,6 +93,12 @@ namespace FEBuilderGBA
             {
                 Address a = list[i];
                 uint a_point = 0;
+                if (a.DataType == Address.DataTypeEnum.UnkMIX)
+                {//不明なデータ LDR参照で見つけられたデータ
+                    scoreCache[a] = 0;
+                    continue;
+                }
+
                 if (a.DataType == Address.DataTypeEnum.BATTLEFRAME)
                 {//BATTLEFRAME
                     a_point += 0x30;
@@ -100,6 +106,10 @@ namespace FEBuilderGBA
                 else if (Address.IsLZ77(a.DataType) && a.Length > 0)
                 {//LZ77
                     a_point += 0x10;
+                }
+                else if (Address.IsASMOnly(a.DataType))
+                {//ASM
+                    a_point += 0x15;
                 }
                 else if (Address.IsPointerableType(a.DataType))
                 {//ポインタ
@@ -109,25 +119,12 @@ namespace FEBuilderGBA
                 {//IFR
                     a_point += 0x10;
                 }
-                else if (a.DataType == Address.DataTypeEnum.BIN)
+                else if (Address.IsBINType(a.DataType))
                 {//BIN
-                    a_point += 0x10;
+                    a_point += 0x15;
                 }
-                else if (a.DataType == Address.DataTypeEnum.ASM)
-                {//ASM
-                    a_point += 0x10;
-                }
-                else if (a.DataType == Address.DataTypeEnum.PATCH_ASM)
-                {//PATCH_ASM
-                    a_point += 0x10;
-                }
-                else if (a.DataType == Address.DataTypeEnum.PROCS)
-                {//PROCS
-                    a_point += 0x10;
-                }
-
+                
                 a_point += a.Length;
-
                 scoreCache[a] = a_point;
             }
 
@@ -408,17 +405,51 @@ namespace FEBuilderGBA
                             , "LDR DATA ASM_" + Program.AsmMapFileAsmCache.GetName(addr)
                             , Address.DataTypeEnum.ASM);
                     }
+                    else if (IsPointerData(addr))
+                    {
+                        Address.AddAddress(this.StructList
+                            , addr, 4, pointer
+                            , "LDR REF DATA " + Program.AsmMapFileAsmCache.GetName(addr)
+                            , Address.DataTypeEnum.POINTER);
+                    }
                     else
                     {
                         Address.AddAddress(this.StructList
                             , addr, 0, pointer
                             , "LDR DATA " + Program.AsmMapFileAsmCache.GetName(addr)
-                            , Address.DataTypeEnum.MIX);
+                            , Address.DataTypeEnum.UnkMIX);
                     }
                     PointerMark[addrP] = true;
                 }
             }
         }
+
+        bool IsPointerData(uint addr)
+        {
+            uint dataP = Program.ROM.u32(addr);
+            if (!U.isPointer(dataP))
+            {
+                if (U.is_RAMPointer(dataP))
+                {//RAMポインタだと思われる.
+                    return true;
+                }
+                return false;
+            }
+            if (PointerMark.ContainsKey(dataP))
+            {//既知のポインタ
+                return true;
+            }
+
+            uint data = U.toOffset(dataP);
+            Address a = GetBLFunctionAddress(data);
+            if (a != null)
+            {//既知の領域へのポインタだとおもわれる.
+                return true;
+            }
+
+            return false;
+        }
+
         void AppendUnkLDRPointer(uint addr, uint pointer)
         {
             Debug.Assert(Program.ROM.p32(pointer) == addr);
@@ -488,16 +519,14 @@ namespace FEBuilderGBA
                 //既存サイズの方が大きい場合は、大きい方を取る
                 address.Length = Math.Max(calclength, address.Length);
 
-                if (address.DataType == Address.DataTypeEnum.PATCH_ASM 
-                    && isRebuildAddress(address.Addr))
-
-                if(isRebuildAddress(address.Addr))
-                {//拡張領域のASMは何か変な書き方をされている mug_exceedとか、変なのが多いので、余分に領域をスキャンすることにする.
-                    address.Length += 32; //保険のため2LINE追加.
-                }
-
                 //発見したLDRを追加
                 ReScanLDR(address);
+
+//克服できたかも
+//                if (isRebuildAddress(address.Addr))
+//                {//拡張領域のASMは何か変な書き方をされている mug_exceedとか、変なのが多いので、余分に領域をスキャンすることにする.
+//                    address.Length += 32; //保険のため2LINE追加.
+//                }
             }
             if (address.Length <= 0)
             {//サイズが0の場合、推測します.
@@ -1235,7 +1264,7 @@ namespace FEBuilderGBA
                                 , startaddr
                                 , end
                                 , addr
-                                , ASMC_Delect.AUTO
+                                , ASMC_Delect.ASM
                                 );
                     if (r)
                     {
@@ -1597,12 +1626,28 @@ namespace FEBuilderGBA
                     Address a = GetBLFunctionAddress(addr);
                     if (a != null)
                     {//BLのとび先が存在している.
-                        if (a.DataType != Address.DataTypeEnum.ASM
-                            && a.DataType != Address.DataTypeEnum.PATCH_ASM)
+                        if (!(a.DataType == Address.DataTypeEnum.ASM
+                            || a.DataType == Address.DataTypeEnum.PATCH_ASM
+                            || a.DataType == Address.DataTypeEnum.BL_ASM)
+                            )
                         {//ASMコード以外に飛ぼうとしている.
                             continue;
                         }
                     }
+
+                    Address b = GetBLFunctionAddress(blmap[i].bl_address);
+                    if (b != null)
+                    {//BLの呼び出したコードの素性を知っている場合
+                        if (!(b.DataType == Address.DataTypeEnum.ASM
+                            || b.DataType == Address.DataTypeEnum.PATCH_ASM
+                            || b.DataType == Address.DataTypeEnum.BL_ASM)
+                            )
+                        {//ASMコード以外がBLを呼び出した.
+                            continue;
+                        }
+                    }
+
+
                     Address.AddAddress(this.StructList
                         , addr
                         , 0

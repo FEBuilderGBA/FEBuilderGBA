@@ -4213,14 +4213,11 @@ namespace FEBuilderGBA
 
         public void UIToRom(uint addr, String prefix,List<Control> controls)
         {
-            if (addr + this.BlockSize >= Program.ROM.Data.Length)
+            if (addr + this.BlockSize > Program.ROM.Data.Length)
             {
-                if (this.IsMemoryNotContinuous == false)
-                {
-                    R.ShowStopError("警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}", prefix, U.ToHexString(addr), U.ToHexString(this.BlockSize), U.ToHexString(Program.ROM.Data.Length), this.SelfForm.Text);
-                    Debug.Assert(false);
-                    return;
-                }
+                R.ShowStopError("警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}", prefix, U.ToHexString(addr), U.ToHexString(this.BlockSize), U.ToHexString(Program.ROM.Data.Length), this.SelfForm.Text);
+                Debug.Assert(false);
+                return;
             }
 
             foreach (Control info in controls)
@@ -4495,6 +4492,9 @@ namespace FEBuilderGBA
             g_Cache_magic_split_enum = magic_split_enum.NoCache;
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
+            g_CacheHasSkill = 0;
+            g_CacheLearnSkill = 0;
+            g_CacheSkillGetter = 0;
         }
 
 
@@ -9366,6 +9366,47 @@ namespace FEBuilderGBA
             return magic_split_enum.NO;
         }
 
+        static uint g_CacheHasSkill = 0;
+        static uint g_CacheLearnSkill = 0;
+        static uint g_CacheSkillGetter = 0;
+        public static uint SearchHasSkill()
+        {
+            if (g_CacheHasSkill == 0)
+            {
+                skill_system_enum skill = SearchSkillSystem();
+                if (skill == skill_system_enum.SkillSystem)
+                {
+                    g_CacheHasSkill = SkillConfigSkillSystemForm.SearchHasSkill();
+                }
+            }
+            return g_CacheHasSkill;
+        }
+        public static uint SearchLearnSkill()
+        {
+            if (g_CacheLearnSkill == 0)
+            {
+                skill_system_enum skill = SearchSkillSystem();
+                if (skill == skill_system_enum.SkillSystem)
+                {
+                    g_CacheHasSkill = SkillConfigSkillSystemForm.SearchLearnSkill();
+                }
+            }
+            return g_CacheLearnSkill;
+        }
+        public static uint SearchSkillGetter()
+        {
+            if (g_CacheSkillGetter == 0)
+            {
+                skill_system_enum skill = SearchSkillSystem();
+                if (skill == skill_system_enum.SkillSystem)
+                {
+                    g_CacheSkillGetter = SkillConfigSkillSystemForm.SearchSkillGetter();
+                }
+            }
+            return g_CacheSkillGetter;
+        }
+
+        
         //un-Huffmanの判別.
         public static bool SearchAntiHuffmanPatch()
         {
@@ -10410,6 +10451,10 @@ namespace FEBuilderGBA
             else if (str == "@DEBUG_SYMBOL")
             {
                 str = R._("デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。") + "\r\nconfig/etc/ROMNAME/comment_.txt";
+            }
+            else if (str == "@SHOW_LOW_COMMAND")
+            {
+                str = R._("チェックをつけると、LOW命令を表示します。\r\n\r\nLOW命令は、は低レイヤーの命令です。通常は利用しないでください。\r\n他の命令と組み合わせたり、命令の内部で利用される命令たちです。") ;
             }
             else
             {

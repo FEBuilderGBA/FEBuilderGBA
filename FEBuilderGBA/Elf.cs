@@ -8,11 +8,6 @@ namespace FEBuilderGBA
 {
     public class Elf
     {
-        public enum ScanType
-        {
-             All
-            ,SymOnly
-        }
         public Elf(string filename)
         {
             this.SymList = new List<Sym>();

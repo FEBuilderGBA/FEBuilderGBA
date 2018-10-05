@@ -2065,6 +2065,9 @@ Many invalid commands appeared consecutively before the event "{0}".\r\nThe even
 :イベント「{0}」の引数「型:{1}」「名前:{2}」「値:{3}({4})」\r\n{5}
 Event "{0}" Argument "Type: {1}" "Name: {2}" "Value: {3} ({4})" \r\n{5}
 
+:LOW命令を表示する
+Display LOW instruction
+
 :読み込むユニットを設定してください
 Please set the unit to be read
 
@@ -4311,6 +4314,9 @@ It is a comment you can set freely.\r\nPlease use it for memo during development
 
 :デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。
 Stores symbols for debugging as comments.\r\nEmbedding symbols is a hint for disassembling and debugging.\r\nThis content is not saved in ROM.It is recorded in the following file.
+
+:チェックをつけると、LOW命令を表示します。\r\n\r\nLOW命令は、は低レイヤーの命令です。通常は利用しないでください。\r\n他の命令と組み合わせたり、命令の内部で利用される命令たちです。
+When checked, the LOW instruction is displayed.\r\n\r\nThe LOW instruction is a low layer instruction.Please do not use usually.\r\nThey are instructions combined with other instructions and used inside the instruction.
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -8130,6 +8136,9 @@ An error occurred during patch search.\r\n{0}
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is an old patch.\r\nWe recommend using a new patch.\r\n
+
+:このパッチは、内部処理用に作られたものです。通常は利用しないでください。
+This patch was made for internal processing.Please do not use usually.
 
 :パッチ名:
 Patch name:

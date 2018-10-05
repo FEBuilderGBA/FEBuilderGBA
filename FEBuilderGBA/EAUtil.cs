@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             ,MIX //incbinされたデータ 判別不能
             ,ASM //incbinされたデータ ASM
             ,BIN //incbinされたデータ BIN
+            ,LYN //lynによってインポートされるelfファイル
         }
         public class Data
         {
@@ -216,10 +217,9 @@ namespace FEBuilderGBA
             }
 
             DataEnum dataType ;
-            dataType = DataEnum.ASM;
+            dataType = DataEnum.LYN;
 
             Elf elf = new Elf(fullbinname);
-
             Data data = new Data(filename, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
             return true;

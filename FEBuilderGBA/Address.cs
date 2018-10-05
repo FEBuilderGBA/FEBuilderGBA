@@ -66,6 +66,7 @@ namespace FEBuilderGBA
             ,ROMANIMEFRAME //ROM内アニメのフレーム
             ,JUMPTOHACK //ハックへジャンプするコード
             ,FFor00    //空いてそうなデータ
+            ,UnkMIX    //不明なデータ おそらくポインタを含む(rebuild内で利用)
             ,Comment   //コメントデータ
         };
         public DataTypeEnum DataType { get; private set; }
@@ -491,8 +492,31 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.JUMPTOHACK
                 || dataType == Address.DataTypeEnum.PATCH_ASM
                 || dataType == Address.DataTypeEnum.BL_ASM
+                || dataType == Address.DataTypeEnum.UnkMIX
                 ;
         }
 
+        //ポインタがないと言い切れるデータ
+        public static bool IsBINType(Address.DataTypeEnum dataType)
+        {
+            return dataType == Address.DataTypeEnum.IMG
+                || dataType == Address.DataTypeEnum.PAL
+                || dataType == Address.DataTypeEnum.TSA
+                || dataType == Address.DataTypeEnum.AP
+                || dataType == Address.DataTypeEnum.ROMTCS
+                || dataType == Address.DataTypeEnum.HEADERTSA
+                || dataType == Address.DataTypeEnum.BIN
+                || dataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND
+                || dataType == Address.DataTypeEnum.SONGINSTWAVE
+                || dataType == Address.DataTypeEnum.BATTLEFRAMEIMG
+                || dataType == Address.DataTypeEnum.BATTLEOAM
+                || dataType == Address.DataTypeEnum.CSTRING
+                || dataType == Address.DataTypeEnum.LZ77IMG
+                || dataType == Address.DataTypeEnum.LZ77MAPCONFIG
+                || dataType == Address.DataTypeEnum.LZ77MAPMAR
+                || dataType == Address.DataTypeEnum.LZ77PAL
+                || dataType == Address.DataTypeEnum.LZ77TSA
+                ;
+        }
     }
 }

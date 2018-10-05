@@ -1,7 +1,9 @@
 
-NAME=塔及び遺跡でセーブ可能 その1
-NAME.en=It can be saved at the tower and ruins Part1
-NAME.zh=塔及遗址可保存的1
+NAME=塔及び遺跡でセーブ可能
+NAME.en=Saving in the Tower and Ruins
+NAME.zh=塔及遗址可保存
+
+
 
 TYPE=SWITCH
 TAG=#ENGINE

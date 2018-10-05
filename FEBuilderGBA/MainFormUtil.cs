@@ -765,6 +765,8 @@ namespace FEBuilderGBA
                 }
             }
 
+            sb.AppendLine(SkillUtil.WriteEAEnv(InputFormRef.SearchSkillSystem()));
+
             if (freearea != 0)
             {
                 sb.AppendLine( String.Format("ORG {0}\r\n#include \"{1}\"\r\n"

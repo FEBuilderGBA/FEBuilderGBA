@@ -33,6 +33,7 @@
             this.SelectButton = new System.Windows.Forms.Button();
             this.CategoryListBox = new FEBuilderGBA.ListBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DisplayLowCommandCheckBox = new System.Windows.Forms.CheckBox();
             this.Infomation = new FEBuilderGBA.RichTextBoxEx();
             this.Filter = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,6 +79,7 @@
             // CategoryListBox
             // 
             this.CategoryListBox.FormattingEnabled = true;
+            this.CategoryListBox.IntegralHeight = false;
             this.CategoryListBox.ItemHeight = 18;
             this.CategoryListBox.Location = new System.Drawing.Point(-1, 29);
             this.CategoryListBox.Margin = new System.Windows.Forms.Padding(2);
@@ -90,6 +92,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.DisplayLowCommandCheckBox);
             this.panel2.Controls.Add(this.Infomation);
             this.panel2.Controls.Add(this.Filter);
             this.panel2.Controls.Add(this.label1);
@@ -99,6 +102,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1497, 910);
             this.panel2.TabIndex = 1;
+            // 
+            // DisplayLowCommandCheckBox
+            // 
+            this.DisplayLowCommandCheckBox.AccessibleDescription = "@SHOW_LOW_COMMAND";
+            this.DisplayLowCommandCheckBox.AutoSize = true;
+            this.DisplayLowCommandCheckBox.Location = new System.Drawing.Point(1054, 3);
+            this.DisplayLowCommandCheckBox.Name = "DisplayLowCommandCheckBox";
+            this.DisplayLowCommandCheckBox.Size = new System.Drawing.Size(185, 22);
+            this.DisplayLowCommandCheckBox.TabIndex = 29;
+            this.DisplayLowCommandCheckBox.Text = "LOW命令を表示する";
+            this.DisplayLowCommandCheckBox.UseVisualStyleBackColor = true;
+            this.DisplayLowCommandCheckBox.CheckedChanged += new System.EventHandler(this.DisplayLowCommandCheckBox_CheckedChanged);
             // 
             // Infomation
             // 
@@ -116,7 +131,7 @@
             this.Filter.Location = new System.Drawing.Point(182, 1);
             this.Filter.Name = "Filter";
             this.Filter.Placeholder = "";
-            this.Filter.Size = new System.Drawing.Size(1310, 25);
+            this.Filter.Size = new System.Drawing.Size(841, 25);
             this.Filter.TabIndex = 0;
             this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
@@ -137,6 +152,7 @@
             // 
             this.ListBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ListBox.FormattingEnabled = true;
+            this.ListBox.IntegralHeight = false;
             this.ListBox.ItemHeight = 24;
             this.ListBox.Location = new System.Drawing.Point(-1, 29);
             this.ListBox.Margin = new System.Windows.Forms.Padding(2);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.Label label1;
         private FEBuilderGBA.TextBoxEx Filter;
         private RichTextBoxEx Infomation;
+        private System.Windows.Forms.CheckBox DisplayLowCommandCheckBox;
     }
 }

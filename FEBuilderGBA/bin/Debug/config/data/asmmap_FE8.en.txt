@@ -8029,3 +8029,101 @@ r3=X tile position of menu of the right	{U}
 080BC454	Set menu definition of world map	{U}
 080C13F4	Set menu definition of world map shop	{J}
 080BC5B4	Set menu definition of world map shop	{U}
+08001EE4	EnablePaletteSync	{J}
+089B7414	&LZ77	Something small compressed data	35	{U}
+089B743C	&LZ77	Something small compressed data	36	{U}
+089B7468	&LZ77	Something small compressed data	37	{U}
+089B749C	&LZ77	Something small compressed data	38	{U}
+089B74D4	&LZ77	Something small compressed data	39	{U}
+089B7514	&LZ77	Something small compressed data	40	{U}
+089B7554	&LZ77	Something small compressed data	41	{U}
+089B759C	&LZ77	Something small compressed data	42	{U}
+089B75D8	&LZ77	Something small compressed data	43	{U}
+089B7414	&LZ77	Something small compressed data	44	{U}
+089B743C	&LZ77	Something small compressed data	45	{U}
+089B7468	&LZ77	Something small compressed data	46	{U}
+089B749C	&LZ77	Something small compressed data	47	{U}
+089B74D4	&LZ77	Something small compressed data	48	{U}
+089B7514	&LZ77	Something small compressed data	49	{U}
+089B7554	&LZ77	Something small compressed data	50	{U}
+089B759C	&LZ77	Something small compressed data	51	{U}
+089B75D8	&LZ77	Something small compressed data	52	{U}
+089E7E2C	&LZ77	Something small compressed data	53	{U}
+089E7E50	&LZ77	Something small compressed data	54	{U}
+089E7E78	&LZ77	Something small compressed data	55	{U}
+089E7EA0	&LZ77	Something small compressed data	56	{U}
+089E7ECC	&LZ77	Something small compressed data	57	{U}
+089E7EFC	&LZ77	Something small compressed data	58	{U}
+089E7F2C	&LZ77	Something small compressed data	59	{u}
+089E7F5C	&LZ77	Something small compressed data	60	{U}
+089E7F8C	&LZ77	Something small compressed data	61	{U}
+089E7FBC	&LZ77	Something small compressed data	62	{U}
+089E7FFC	&LZ77	Something small compressed data	63	{U}
+089E8040	&LZ77	Something small compressed data	64	{U}
+089E8090	&LZ77	Something small compressed data	65	{U}
+089E80EC	&LZ77	Something small compressed data	66	{U}
+089E8148	&LZ77	Something small compressed data	67	{U}
+089E81A4	&LZ77	Something small compressed data	68	{U}
+089E8200	&LZ77	Something small compressed data	69	{U}
+08A27A9C	&LZ77	Something small compressed data	35	{J}
+08A27AC4	&LZ77	Something small compressed data	36	{J}
+08A27AF0	&LZ77	Something small compressed data	37	{J}
+08A27B24	&LZ77	Something small compressed data	38	{J}
+08A27B5C	&LZ77	Something small compressed data	39	{J}
+08A27B9C	&LZ77	Something small compressed data	40	{J}
+08A27BDC	&LZ77	Something small compressed data	41	{J}
+08A27C24	&LZ77	Something small compressed data	42	{J}
+08A27C60	&LZ77	Something small compressed data	43	{J}
+08A27A9C	&LZ77	Something small compressed data	44	{J}
+08A27AC4	&LZ77	Something small compressed data	45	{J}
+08A27AF0	&LZ77	Something small compressed data	46	{J}
+08A27B24	&LZ77	Something small compressed data	47	{J}
+08A27B5C	&LZ77	Something small compressed data	48	{J}
+08A27B9C	&LZ77	Something small compressed data	49	{J}
+08A27BDC	&LZ77	Something small compressed data	50	{J}
+08A27C24	&LZ77	Something small compressed data	51	{J}
+08A27C60	&LZ77	Something small compressed data	52	{J}
+08A584B4	&LZ77	Something small compressed data	53	{J}
+08A584D8	&LZ77	Something small compressed data	54	{J}
+08A58500	&LZ77	Something small compressed data	55	{J}
+08A58528	&LZ77	Something small compressed data	56	{J}
+08A58554	&LZ77	Something small compressed data	57	{J}
+08A58584	&LZ77	Something small compressed data	58	{J}
+08A585B4	&LZ77	Something small compressed data	59	{J}
+08A585E4	&LZ77	Something small compressed data	60	{J}
+08A58614	&LZ77	Something small compressed data	61	{J}
+08A58644	&LZ77	Something small compressed data	62	{J}
+08A58684	&LZ77	Something small compressed data	63	{J}
+08A586C8	&LZ77	Something small compressed data	64	{J}
+08A58718	&LZ77	Something small compressed data	65	{J}
+08A58774	&LZ77	Something small compressed data	66	{J}
+08A587D0	&LZ77	Something small compressed data	67	{J}
+08A5882C	&LZ77	Something small compressed data	68	{J}
+08A58888	&LZ77	Something small compressed data	69	{J}
+08A987D8	&PALETTE	Something's palette	102	{J}
+085C74E0	&PALETTE	Something's palette	103	{J}
+085D8088	&PALETTE	Something's palette	104	{J}
+085D80E8	&PALETTE	Something's palette	105	{J}
+08A987D8	&PALETTE	Something's palette	106	{J}
+080E186C	&PALETTE	Something's palette	107	{J}
+08A99F60	&PALETTE	Something's palette	108	{J}
+08A987F8	&PALETTE	Something's palette	109	{J}
+08AA52DC	&PALETTE	Something's palette	110	{J}
+08A99EE0	&PALETTE	Something's palette	111	{J}
+08B1CD60	&PALETTE	Something's palette	112	{J}
+08B1E65C	&PALETTE	Something's palette	113	{J}
+08B27220	&PALETTE	Something's palette	114	{J}
+08A9A8D4	&LZ77	Something's TSA	{J}
+08A1BD40	&PALETTE	Something's palette	102	{U}
+0859EFC0	&PALETTE	Something's palette	103	{U}
+085ADDE8	&PALETTE	Something's palette	104	{U}
+085ADE48	&PALETTE	Something's palette	105	{U}
+08A1BD40	&PALETTE	Something's palette	106	{U}
+080DC85C	&PALETTE	Something's palette	107	{U}
+08A1D4C8	&PALETTE	Something's palette	108	{U}
+08A1BD60	&PALETTE	Something's palette	109	{U}
+08A28088	&PALETTE	Something's palette	110	{U}
+08A1D448	&PALETTE	Something's palette	111	{U}
+08A97ACC	&PALETTE	Something's palette	112	{U}
+08AA1950	&PALETTE	Something's palette	114	{U}
+089DD4E8	&LZ77	Something's TSA	{U}

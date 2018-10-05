@@ -43,7 +43,7 @@ namespace FEBuilderGBA
             string lang = OptionForm.lang();
             bool isJP = (lang == "ja");
 
-
+            bool showLowCommand = DisplayLowCommandCheckBox.Checked;
 
             this.ListBox.BeginUpdate();
             this.ListBox.Items.Clear();
@@ -62,6 +62,13 @@ namespace FEBuilderGBA
                 {
                     if(! U.StrStrEx(name,filterString,isJP) )
                     {//フィルターで消す.
+                        continue;
+                    }
+                }
+                if (showLowCommand == false)
+                {
+                    if (script.IsLowCommand)
+                    {//LOW命令なので消す
                         continue;
                     }
                 }
@@ -240,6 +247,11 @@ namespace FEBuilderGBA
         private void ListBox_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+
+        private void DisplayLowCommandCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CategoryListBox_SelectedIndexChanged(sender, e);
         }
 
 
