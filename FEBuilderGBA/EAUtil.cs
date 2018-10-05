@@ -79,6 +79,7 @@ namespace FEBuilderGBA
                 ParseORG(line);
                 ParseIncBIN(line, lines[i]);
                 ParseLynELF(line, lines[i]);
+                ParsePng2Dmp(line, lines[i]);
                 ParseLabel(line);
             }
         }
@@ -222,6 +223,58 @@ namespace FEBuilderGBA
             Elf elf = new Elf(fullbinname);
             Data data = new Data(filename, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
+            return true;
+        }
+        bool ParsePng2Dmp(string line, string orignalIine)
+        {
+            string a = Keyword(line, "#incext Png2Dmp");
+            if (a == "")
+            {
+                return false;
+            }
+            string filename = U.cut(a, "\"", "\"");
+            string fullbinname = Path.Combine(this.Dir, filename);
+
+            if (!File.Exists(fullbinname))
+            {
+                return false;
+            }
+
+            string errorMessage;
+            Bitmap bitmap = ImageUtil.OpenBitmap(fullbinname, null, out errorMessage);
+            if (bitmap == null)
+            {
+                return false;
+            }
+            if (bitmap.Width < 8 || bitmap.Height < 8)
+            {
+                bitmap.Dispose();
+                return false;
+            }
+
+            DataEnum dataType = DataEnum.BIN;
+            if (line.IndexOf("--palette-only") >= 0)
+            {//パレットのみ
+                byte[] palette = ImageUtil.ImageToPalette(bitmap, 1);
+
+                Data data = new Data(filename, palette, dataType);
+                this.DataList.Add(data);
+            }
+            else
+            {
+                byte[] image = ImageUtil.ImageToByte16Tile(bitmap, bitmap.Width , bitmap.Height);
+                
+                if (line.IndexOf("--lz77") >= 0)
+                {//LZ77 Png2Dmpと微妙に実装が違うようだ
+                    image = LZ77.compress(image);
+                }
+
+                Data data = new Data(filename, image, dataType);
+                this.DataList.Add(data);
+            }
+
+            bitmap.Dispose();
+
             return true;
         }
 

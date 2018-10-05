@@ -119,8 +119,7 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            //EventScript.MakeEventASMMAPList(structlist); //イベントから呼び出される特殊指定の領域を調べます.
-            PatchForm.MakePatchStructDataList(structlist,true,false,false); //パッチが知っている領域.
+            PatchForm.MakePatchStructDataList(structlist,true,true,false); //パッチが知っている領域.
             if (IsStopFlag) return map;
 #if !DEBUG 
             }

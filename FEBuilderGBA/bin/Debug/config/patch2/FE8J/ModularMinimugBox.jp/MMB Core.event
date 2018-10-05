@@ -1,0 +1,794 @@
+	#include "EAStdlib.event"
+	#include "Extensions/Hack Installation.txt"
+
+	#include "Internal/UI1 Proc Code.event"
+
+	#inctevent lyn "Internal/MMBInit.elf" "Internal/Definitions.elf"
+	WORD MMBNameWidth
+	WORD MMBAltTextWidth
+
+	#inctevent lyn "Internal/MMBSetup.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBGetUnitAtCursor.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBBuildWindow.elf" "Internal/Definitions.elf"
+	WORD ((1 << 24) | ((0x40 * MMBHeight * 2) >> 3))
+
+	#inctevent lyn "Internal/MMBBuildDynamics.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBSetWindowPosition.elf" "Internal/Definitions.elf"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#inctevent lyn "Internal/MMBClearScrolledWindow.elf" "Internal/Definitions.elf"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#inctevent lyn "Internal/MMBExtendWindow.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBRetractWindow.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBCheckCursor.elf" "Internal/Definitions.elf"
+
+	#inctevent lyn "Internal/MMBRedrawTilemap.elf" "Internal/Definitions.elf"
+	WORD MMBWidth
+	WORD MMBHeight
+
+	#inctevent lyn "Internal/MMBUpdateInfo.elf" "Internal/Definitions.elf"
+
+	ALIGN 4
+
+	MMBExtendTable:
+	BYTE (MMBWidth/2) ((MMBWidth*3)/4) ((MMBWidth*9)/10) MMBWidth
+
+	MMBRetractTable:
+	BYTE ((MMBWidth*3)/4) (MMBWidth/2) 0
+
+	ALIGN 4
+
+	// Module inclusions
+
+	// Tilemap modules
+
+		#ifdef MMBStandardTilemap
+			#inctevent lyn "Modules/MMBDrawTilemap.elf" "Internal/Definitions.elf"
+			POIN MMBTilemap
+			WORD MMBTilemapPaletteIndex
+		#endif // MMBStandardTilemap
+
+	// Unit name modules
+
+		#ifdef MMBName
+			#inctevent lyn "Modules/MMBDrawNameUncentered.elf" "Internal/Definitions.elf"
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBName
+
+		#ifdef MMBNameCentered
+			#inctevent lyn "Modules/MMBDrawNameCentered.elf" "Internal/Definitions.elf"
+			WORD MMBNameWidth * 8
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBNameCentered
+
+		#ifdef MMBNameAffinityShifted
+			#inctevent lyn "Modules/MMBDrawNameAffinityShifted.elf" "Internal/Definitions.elf"
+			WORD MMBNameColor
+			WORD MMBNameX
+			WORD MMBNameY
+		#endif // MMBNameAffinityShifted
+
+	// Inventory modules
+
+		#ifdef MMBInventory
+			#inctevent lyn "Modules/MMBDrawInventory.elf" "Internal/Definitions.elf"
+			WORD MMBInventoryTileIndex
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBInventoryObjs
+				#define MMBInventoryObjs
+			#endif // MMBInventoryObjs
+		#endif // MMBInventory
+
+		#ifdef MMBEquippedWeapon
+			#inctevent lyn "Modules/MMBDrawEquippedWeapon.elf" "Internal/Definitions.elf"
+			WORD MMBInventoryTileIndex
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBInventoryObjs
+				#define MMBInventoryObjs
+			#endif // MMBInventoryObjs
+		#endif // MMBEquippedWeapon
+
+		#ifdef MMBEquippedWeaponName
+			#inctevent lyn "Modules/MMBDrawEquippedWeaponName.elf" "Internal/Definitions.elf"
+			SHORT MMBInventoryTileIndex
+			SHORT MMBTextAltColor
+			WORD (2 * ((32 * (MMBInventoryY/8)) + (MMBInventoryX/8))) + 4
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBInventoryObjs
+				#define MMBInventoryObjs
+			#endif // MMBInventoryObjs
+		#endif // MMBEquippedWeaponName
+
+		#ifdef MMBInventoryOrEquippedWeaponName
+			#inctevent lyn "Modules/MMBDrawInventoryOrEquippedWeaponName.elf" "Internal/Definitions.elf"
+			SHORT MMBInventoryTileIndex
+			SHORT MMBTextAltColor
+			WORD (2 * ((32 * (MMBInventoryY/8)) + (MMBInventoryX/8))) + 4
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBInventoryObjs
+				#define MMBInventoryObjs
+			#endif // MMBInventoryObjs
+		#endif // MMBInventoryOrEquippedWeaponName
+
+		#ifdef MMBWeaponNameCentered
+			#inctevent lyn "Modules/MMBDrawWeaponNameCentered.elf" "Internal/Definitions.elf"
+			SHORT MMBAltTextWidth * 8
+			SHORT MMBTextAltColor
+			WORD (2 * ((32 * (MMBWeaponNameY/8)) + (MMBWeaponNameX/8))) + 4
+		#endif // MMBWeaponNameCentered
+
+
+	// Minimug modules
+
+		#ifdef MMBMinimug
+			#inctevent lyn "Modules/MMBDrawMinimug.elf" "Internal/Definitions.elf"
+			WORD MMBMinimugX
+			WORD MMBMinimugY
+			WORD MMBMinimugTileIndexStart
+			WORD MMBMinimugPaletteIndex
+		#endif // MMBMinimug
+
+		#ifdef MMBMinimugEnemyFlip
+			#inctevent lyn "Modules/MMBDrawMinimugEnemyFlip.elf" "Internal/Definitions.elf"
+			WORD MMBMinimugX
+			WORD MMBMinimugY
+			WORD MMBMinimugTileIndexStart
+			WORD MMBMinimugPaletteIndex
+		#endif // MMBMinimugEnemyFlip
+
+	// Combination modules
+
+		#ifdef MMBHPStatus
+			#inctevent lyn "Modules/MMBDrawHPStatus.elf" "Internal/Definitions.elf"
+			WORD MMBHPStatusX
+			WORD MMBHPStatusY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHPStatus
+		
+		#ifdef MMBHPStatusNoCombination
+			#inctevent lyn "Modules/MMBDrawHPStatusNoCombination.elf" "Internal/Definitions.elf"
+			WORD MMBHPStatusX
+			WORD MMBHPStatusY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHPStatusNoCombination
+
+		#ifdef MMBDEFRES
+			#inctevent lyn "Modules/MMBDrawDEFRES.elf" "Internal/Definitions.elf"
+			WORD (2 * ((32 * MMBDEFRESY) + MMBDEFRESX))
+			SHORT ((MMBDEFRESX+3)*8) (MMBDEFRESY*8)
+			WORD MMBHeight
+			WORD ((MMBDEFRESPaletteIndex << 12) | MMBDEFRESVRAMTile)
+			POIN MMBDEFLabelGraphic
+			POIN MMBRESLabelGraphic
+			ALIGN 4
+			MMBDEFLabelGraphic:
+			#incext Png2Dmp "Modules/DEFLabel.png"
+			ALIGN 4
+			MMBRESLabelGraphic:
+			#incext Png2Dmp "Modules/RESLabel.png"
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBDEFRES
+
+		#ifdef MMBAVODOD
+			#inctevent lyn "Modules/MMBDrawAVODOD.elf" "Internal/Definitions.elf"
+			WORD (2 * ((32 * MMBAVODODY) + MMBAVODODX))
+			SHORT ((MMBAVODODX+3)*8) (MMBAVODODY*8)
+			WORD MMBHeight
+			WORD ((MMBAVODODPaletteIndex << 12) | MMBAVODODVRAMTile)
+			POIN MMBAVOLabelGraphic
+			POIN MMBDODLabelGraphic
+			ALIGN 4
+			MMBAVOLabelGraphic:
+			#incext Png2Dmp "Modules/AVOLabel.png"
+			ALIGN 4
+			MMBDODLabelGraphic:
+			#incext Png2Dmp "Modules/DODLabel.png"
+			#inctevent lyn "Modules/MMBAVOGetter.elf" "Internal/Definitions.elf"
+			#inctevent lyn "Modules/MMBDODGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBAVODOD
+
+	// Bar modules
+
+		#ifdef MMBHPBar
+			#inctevent lyn "Modules/MMBDrawHPBar.elf" "Internal/Definitions.elf"
+			WORD MMBHPBarX
+			WORD MMBHPBarY
+			WORD MMBHPBarTileWidth
+			WORD MMBHPBarBase
+			#ifndef MMBBarDrawing
+				#define MMBBarDrawing
+			#endif // MMBBarDrawing
+		#endif // MMBHPBar
+
+		#ifdef MMBHPBarOrBadStatus
+			#inctevent lyn "Modules/MMBDrawHPBarOrBadStatus.elf" "Internal/Definitions.elf"
+			WORD MMBHPBarX
+			WORD MMBHPBarY
+			WORD MMBHPBarTileWidth
+			WORD MMBHPBarBase
+			#ifndef MMBBarDrawing
+				#define MMBBarDrawing
+			#endif // MMBBarDrawing
+		#endif //MMBHPBarOrBadStatus
+
+	// Affinity modules
+
+		#ifdef MMBAffinity
+			#inctevent lyn "Modules/MMBDrawAffinity.elf" "Internal/Definitions.elf"
+			WORD MMBAffinityTile
+			BYTE MMBAffinityX MMBAffinityY
+			ALIGN 4
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+			#ifndef MMBAffinityObjs
+				#define MMBAffinityObjs
+			#endif // MMBAffinityObjs
+		#endif // MMBAffinity
+
+	// Skills modules
+
+		#ifdef MMBSkillsAlternate
+			#inctevent lyn "Modules/MMBDrawSkills.elf" "Internal/Definitions.elf"
+			WORD MMBSkillTile
+			#inctevent lyn "Modules/MMBDrawSkillAlternatingObjs.elf" "Internal/Definitions.elf"
+			WORD MMBHeight
+			SHORT (4 << 12) | MMBSkillTile
+			BYTE MMBSkillsX MMBSkillsY
+			#ifndef MMBIconPrep
+				#define MMBIconPrep
+			#endif // MMBIconPrep
+		#endif // MMBSkillsAlternate
+
+	// Label modules
+
+	// Label drawing switchboard
+
+		#ifdef MMBASLabel
+			ALIGN 4
+			MMBASLabelGraphic:
+			#incext Png2Dmp "Modules/ASLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBASLabel
+
+		#ifdef MMBATKLabel
+			ALIGN 4
+			MMBATKLabelGraphic:
+			#incext Png2Dmp "Modules/ATKLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBATKLabel
+
+		#ifdef MMBAVOLabel
+			ALIGN 4
+			MMBAVOLabelGraphic:
+			#incext Png2Dmp "Modules/AVOLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBAVOLabel
+
+		#ifdef MMBCHRLabel
+			ALIGN 4
+			MMBCHRLabelGraphic:
+			#incext Png2Dmp "Modules/CHRLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBCHRLabel
+
+		#ifdef MMBCRTLabel
+			ALIGN 4
+			MMBCRTLabelGraphic:
+			#incext Png2Dmp "Modules/CRTLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBCRTLabel
+
+		#ifdef MMBDEFLabel
+			ALIGN 4
+			MMBDEFLabelGraphic:
+			#incext Png2Dmp "Modules/DEFLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBDEFLabel
+
+		#ifdef MMBDODLabel
+			ALIGN 4
+			MMBDODLabelGraphic:
+			#incext Png2Dmp "Modules/DODLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBDODLabel
+
+		#ifdef MMBEXPLabel
+			ALIGN 4
+			MMBEXPLabelGraphic:
+			#incext Png2Dmp "Modules/EXPLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBEXPLabel
+
+		#ifdef MMBHITLabel
+			ALIGN 4
+			MMBHITLabelGraphic:
+			#incext Png2Dmp "Modules/HITLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBHITLabel
+
+		#ifdef MMBLevelLabel
+			ALIGN 4
+			MMBLevelLabelGraphic:
+			#incext Png2Dmp "Modules/LevelLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBLevelLabel
+
+		#ifdef MMBRESLabel
+			ALIGN 4
+			MMBRESLabelGraphic:
+			#incext Png2Dmp "Modules/RESLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBRESLabel
+
+		#ifdef MMBRTGLabel
+			ALIGN 4
+			MMBRTGLabelGraphic:
+			#incext Png2Dmp "Modules/RTGLabel.png"
+			#ifndef MMBLabelDrawing
+				#define MMBLabelDrawing
+			#endif // MMBLabelDrawing
+		#endif // MMBRTGLabel
+
+	// Number modules
+
+		#ifdef MMBLevelNumber
+			#inctevent lyn "Modules/MMBDrawLevelNumber.elf" "Internal/Definitions.elf"
+			WORD MMBLevelX
+			WORD MMBLevelY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBLevelNumber
+
+		#ifdef MMBEXPNumber
+			#inctevent lyn "Modules/MMBDrawEXPNumber.elf" "Internal/Definitions.elf"
+			WORD MMBEXPX
+			WORD MMBEXPY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBEXPNumber
+
+	// Number drawing switchboard
+
+		#ifdef MMBASNumber
+			#inctevent lyn "Modules/MMBASGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBASNumber
+
+		#ifdef MMBATKNumber
+			#inctevent lyn "Modules/MMBATKGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBATKNumber
+
+		#ifdef MMBAVONumber
+			#inctevent lyn "Modules/MMBAVOGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBAVONumber
+
+		#ifdef MMBCHRNumber
+			#inctevent lyn "Modules/MMBCHRGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBCHRNumber
+
+		#ifdef MMBCRTNumber
+			#inctevent lyn "Modules/MMBCRTGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBCRTNumber
+
+		#ifdef MMBDEFNumber
+			#inctevent lyn "Modules/MMBDEFGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBDEFNumber
+
+		#ifdef MMBDODNumber
+			#inctevent lyn "Modules/MMBDODGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBDODNumber
+
+		#ifdef MMBHITNumber
+			#inctevent lyn "Modules/MMBHITGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBHITNumber
+
+		#ifdef MMBRESNumber
+			#inctevent lyn "Modules/MMBRESGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBRESNumber
+
+		#ifdef MMBRTGNumber
+			#inctevent lyn "Modules/MMBRTGGetter.elf" "Internal/Definitions.elf"
+			#ifndef MMBNumberListDrawing
+				#define MMBNumberListDrawing
+			#endif // MMBNumberListDrawing
+			#ifndef MMBBattleStruct
+				#define MMBBattleStruct
+			#endif // MMBBattleStruct
+		#endif // MMBRTGNumber
+
+	// Module helpers
+
+		#ifdef MMBNumberDrawing
+			#inctevent lyn "Internal/MMBDrawNumberOAM.elf" "Internal/Definitions.elf"
+			#inctevent lyn "Internal/MMBDrawUnsignedNumber.elf" "Internal/Definitions.elf"
+			#inctevent lyn "Internal/MMBDrawSignedNumber.elf" "Internal/Definitions.elf"
+		#endif // MMBNumberDrawing
+
+		#ifdef MMBBarDrawing
+			#inctevent lyn "Internal/MMBDrawBar.elf" "Internal/Definitions.elf"
+		#endif // MMBBarDrawing
+
+		#ifdef MMBBattleStruct
+			#inctevent lyn "Internal/MMBPrepStats.elf" "Internal/Definitions.elf"
+		#endif // MMBBattleStruct
+
+		#ifdef MMBIconPrep
+			#inctevent lyn "Internal/MMBPrepIcons.elf" "Internal/Definitions.elf"
+		#endif // MMBIconPrep
+
+		#ifdef MMBAffinityObjs
+			#inctevent lyn "Internal/MMBDrawAffinityObjs.elf" "Internal/Definitions.elf"
+			WORD MMBHeight
+		#endif // MMBAffinityObjs
+
+		#ifdef MMBInventoryObjs
+			#inctevent lyn "Internal/MMBDrawInventoryObjs.elf" "Internal/Definitions.elf"
+			WORD MMBHeight
+			SHORT (0x04 << 12) | MMBInventoryTileIndex
+			BYTE MMBInventoryX MMBInventoryY
+		#endif // MMBInventoryObjs
+
+	ALIGN 4
+
+	#ifdef MMBNumberListDrawing
+		#inctevent lyn "Internal/MMBDrawNumberList.elf" "Internal/Definitions.elf"
+		WORD MMBHeight
+		ALIGN 4
+		MMBNumberTable:
+		#ifdef MMBASNumber
+			POIN MMBASGetter
+			SHORT MMBASX
+			SHORT MMBASY
+		#endif // MMBASNumber
+		#ifdef MMBATKNumber
+			POIN MMBATKGetter
+			SHORT MMBATKX
+			SHORT MMBATKY
+		#endif // MMBATKNumber
+		#ifdef MMBAVONumber
+			POIN MMBAVOGetter
+			SHORT MMBAVOX
+			SHORT MMBAVOY
+		#endif // MMBAVONumber
+		#ifdef MMBCHRNumber
+			POIN MMBCHRGetter
+			SHORT MMBCHRX
+			SHORT MMBCHRY
+		#endif // MMBCHRNumber
+		#ifdef MMBCRTNumber
+			POIN MMBCRTGetter
+			SHORT MMBCRTX
+			SHORT MMBCRTY
+		#endif // MMBCRTNumber
+		#ifdef MMBDEFNumber
+			POIN MMBDEFGetter
+			SHORT MMBDEFX
+			SHORT MMBDEFY
+		#endif // MMBDEFNumber
+		#ifdef MMBDODNumber
+			POIN MMBDODGetter
+			SHORT MMBDODX
+			SHORT MMBDODY
+		#endif // MMBDODNumber
+		#ifdef MMBHITNumber
+			POIN MMBHITGetter
+			SHORT MMBHITX
+			SHORT MMBHITY
+		#endif // MMBHITNumber
+		#ifdef MMBRESNumber
+			POIN MMBRESGetter
+			SHORT MMBRESX
+			SHORT MMBRESY
+		#endif // MMBRESNumber
+		#ifdef MMBRTGNumber
+			POIN MMBRTGGetter
+			SHORT MMBRTGX
+			SHORT MMBRTGY
+		#endif // MMBRTGNumber
+		WORD 0
+	#endif // MMBNumberListDrawing
+
+	ALIGN 4
+
+	#ifdef MMBLabelDrawing
+		#inctevent lyn "Internal/MMBDrawLabelList.elf" "Internal/Definitions.elf"
+		ALIGN 4
+		MMBLabelTable:
+		#ifdef MMBASLabel
+			POIN MMBASLabelGraphic
+			SHORT ((MMBASLabelPaletteIndex << 12) | MMBASLabelVRAMTile)
+			SHORT (2 * ((32 * MMBASLabelY) + MMBASLabelX)) | ((MMBASLabelTileCount << 12))
+		#endif // MMBASLabel
+		#ifdef MMBATKLabel
+			POIN MMBATKLabelGraphic
+			SHORT ((MMBATKLabelPaletteIndex << 12) | MMBATKLabelVRAMTile)
+			SHORT (2 * ((32 * MMBATKLabelY) + MMBATKLabelX)) | ((MMBATKLabelTileCount << 12))
+		#endif // MMBATKLabel
+		#ifdef MMBAVOLabel
+			POIN MMBAVOLabelGraphic
+			SHORT ((MMBAVOLabelPaletteIndex << 12) | MMBAVOLabelVRAMTile)
+			SHORT (2 * ((32 * MMBAVOLabelY) + MMBAVOLabelX)) | ((MMBAVOLabelTileCount << 12))
+		#endif // MMBAVOLabel
+		#ifdef MMBCHRLabel
+			POIN MMBCHRLabelGraphic
+			SHORT ((MMBCHRLabelPaletteIndex << 12) | MMBCHRLabelVRAMTile)
+			SHORT (2 * ((32 * MMBCHRLabelY) + MMBCHRLabelX)) | ((MMBCHRLabelTileCount << 12))
+		#endif // MMBCHRLabel
+		#ifdef MMBCRTLabel
+			POIN MMBCRTLabelGraphic
+			SHORT ((MMBCRTLabelPaletteIndex << 12) | MMBCRTLabelVRAMTile)
+			SHORT (2 * ((32 * MMBCRTLabelY) + MMBCRTLabelX)) | ((MMBCRTLabelTileCount << 12))
+		#endif // MMBCRTLabel
+		#ifdef MMBDEFLabel
+			POIN MMBDEFLabelGraphic
+			SHORT ((MMBDEFLabelPaletteIndex << 12) | MMBDEFLabelVRAMTile)
+			SHORT (2 * ((32 * MMBDEFLabelY) + MMBDEFLabelX)) | ((MMBDEFLabelTileCount << 12))
+		#endif // MMBDEFLabel
+		#ifdef MMBDODLabel
+			POIN MMBDODLabelGraphic
+			SHORT ((MMBDODLabelPaletteIndex << 12) | MMBDODLabelVRAMTile)
+			SHORT (2 * ((32 * MMBDODLabelY) + MMBDODLabelX)) | ((MMBDODLabelTileCount << 12))
+		#endif // MMBDODLabel
+		#ifdef MMBEXPLabel
+			POIN MMBEXPLabelGraphic
+			SHORT ((MMBEXPLabelPaletteIndex << 12) | MMBEXPLabelVRAMTile)
+			SHORT (2 * ((32 * MMBEXPLabelY) + MMBEXPLabelX)) | ((MMBEXPLabelTileCount << 12))
+		#endif // MMBEXPLabel
+		#ifdef MMBHITLabel
+			POIN MMBHITLabelGraphic
+			SHORT ((MMBHITLabelPaletteIndex << 12) | MMBHITLabelVRAMTile)
+			SHORT (2 * ((32 * MMBHITLabelY) + MMBHITLabelX)) | ((MMBHITLabelTileCount << 12))
+		#endif // MMBHITLabel
+		#ifdef MMBLevelLabel
+			POIN MMBLevelLabelGraphic
+			SHORT ((MMBLevelLabelPaletteIndex << 12) | MMBLevelLabelVRAMTile)
+			SHORT (2 * ((32 * MMBLevelLabelY) + MMBLevelLabelX)) | ((MMBLevelLabelTileCount << 12))
+		#endif // MMBLevelLabel
+		#ifdef MMBRESLabel
+			POIN MMBRESLabelGraphic
+			SHORT ((MMBRESLabelPaletteIndex << 12) | MMBRESLabelVRAMTile)
+			SHORT (2 * ((32 * MMBRESLabelY) + MMBRESLabelX)) | ((MMBRESLabelTileCount << 12))
+		#endif // MMBRESLabel
+		#ifdef MMBRTGLabel
+			POIN MMBRTGLabelGraphic
+			SHORT ((MMBRTGLabelPaletteIndex << 12) | MMBRTGLabelVRAMTile)
+			SHORT (2 * ((32 * MMBRTGLabelY) + MMBRTGLabelX)) | ((MMBRTGLabelTileCount << 12))
+		#endif // MMBRTGLabel
+		WORD 0
+	#endif // MMBLabelDrawing
+
+	ALIGN 4
+
+	MMBBuildRoutines:
+
+	#ifdef MMBIconPrep
+		POIN MMBPrepIcons
+	#endif // MMBIconPrep
+
+	#ifdef MMBStandardTilemap
+		POIN MMBDrawTilemap
+	#endif // MMBStandardTilemap
+
+	#ifdef MMBName
+		POIN MMBDrawNameUncentered
+	#endif // MMBName
+
+	#ifdef MMBNameCentered
+		POIN MMBDrawNameCentered
+	#endif // MMBNameCentered
+
+	#ifdef MMBNameAffinityShifted
+		POIN MMBDrawNameAffinityShifted
+	#endif // MMBNameAffinityShifted
+
+	#ifdef MMBMinimug
+		POIN MMBDrawMinimug
+	#endif // MMBMinimug
+
+	#ifdef MMBMinimugEnemyFlip
+		POIN MMBDrawMinimugEnemyFlip
+	#endif // MMBMinimugEnemyFlip
+
+	#ifdef MMBInventory
+		POIN MMBDrawInventory
+	#endif // MMBInventory
+
+	#ifdef MMBEquippedWeapon
+		POIN MMBDrawEquippedWeapon
+	#endif // MMBEquippedWeapon
+
+	#ifdef MMBEquippedWeaponName
+		POIN MMBDrawEquippedWeaponName
+	#endif // MMBEquippedWeaponName
+
+	#ifdef MMBInventoryOrEquippedWeaponName
+		POIN MMBDrawInventoryOrEquippedWeaponName
+	#endif // MMBInventoryOrEquippedWeaponName
+
+	#ifdef MMBWeaponNameCentered
+		POIN MMBDrawWeaponNameCentered
+	#endif // MMBWeaponNameCentered
+
+	#ifdef MMBHPBar
+		POIN MMBDrawHPBar
+	#endif // MMBHPBar
+
+	#ifdef MMBHPBarOrBadStatus
+		POIN MMBDrawHPBarOrBadStatus
+	#endif // MMBHPBarOrBadStatus
+
+	#ifdef MMBLabelDrawing
+		POIN MMBDrawLabelList
+	#endif // MMBLabelDrawing
+
+	#ifdef MMBAffinity
+		POIN MMBDrawAffinity
+	#endif // MMBAffinity
+
+	#ifdef MMBSkillsAlternate
+		POIN MMBDrawSkills
+	#endif // MMBSkillsAlternate
+
+	WORD 0
+
+	ALIGN 4
+
+	MMBDynamicRoutines:
+
+	#ifdef MMBBattleStruct
+		POIN MMBPrepStats
+	#endif // MMBBattleStruct
+
+	#ifdef MMBHPStatus
+		POIN MMBDrawHPStatus
+	#endif // MMBHPStatus
+
+	#ifdef MMBHPStatusNoCombination
+		POIN MMBDrawHPStatusNoCombination
+	#endif // MMBHPStatusNoCombination
+
+	#ifdef MMBDEFRES
+		POIN MMBDrawDEFRES
+	#endif // MMBDEFRES
+
+	#ifdef MMBAVODOD
+		POIN MMBDrawAVODOD
+	#endif // MMBAVODOD
+
+	#ifdef MMBLevelNumber
+		POIN MMBDrawLevelNumber
+	#endif // MMBLevelNumber
+
+	#ifdef MMBEXPNumber
+		POIN MMBDrawEXPNumber
+	#endif // MMBEXPNumber
+
+	#ifdef MMBNumberListDrawing
+		POIN MMBDrawNumberList
+	#endif // MMBNumberListDrawing
+
+	#ifdef MMBAffinityObjs
+		POIN MMBDrawAffinityObjs
+	#endif // MMBAffinityObjs
+
+	#ifdef MMBInventoryObjs
+		POIN MMBDrawInventoryObjs
+	#endif // MMBInventoryObjs
+
+	#ifdef MMBSkillsAlternate
+		POIN MMBDrawSkillAlternatingObjs
+	#endif // MMBSkillsAlternate
+
+	WORD 0
+

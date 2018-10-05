@@ -3286,6 +3286,24 @@ namespace FEBuilderGBA
             }
             return isSkip;
         }
+        static bool[] MakeIFRMaskAddress(uint length,uint blocksize,uint[] pointerIndexes)
+        {
+            bool[] isSkip = new bool[length];
+
+            for (uint i = 0; i < length; i+= blocksize)
+            {
+                foreach (uint pointerIndex in pointerIndexes)
+                {
+                    isSkip[i + pointerIndex + 0] = true;
+                    isSkip[i + pointerIndex + 1] = true;
+                    isSkip[i + pointerIndex + 2] = true;
+                    isSkip[i + pointerIndex + 3] = true;
+                }
+            }
+            return isSkip;
+        }
+
+
         static byte[] ReadMod(string[] sp, string filename, out bool[] isSkip)
         {
             if (! File.Exists(filename))
@@ -3607,15 +3625,48 @@ namespace FEBuilderGBA
                 return;
             }
             string type = U.at(editpatchSt.Param, "TYPE");
-            if (type != "STRUCT")
+            if (type == "STRUCT")
             {
-                return;
+                TraceEditPatchStruct(binMappings, editpatchSt, basedir);
             }
+            else if (type == "IMAGE")
+            {//画像
+                TraceEditPatchImage(binMappings, editpatchSt);
+            }
+            else if (type == "BIN" || type == "EA")
+            {//BINパッチまたは、EAでネストしている場合
+                TraceEditPatchNest(binMappings, editpatchSt);
+            }
+        }
+        static void TraceEditPatchNest(List<BinMapping> binMappings, PatchSt editpatchSt)
+        {
+            List<BinMapping> nest = TracePatchedMapping(editpatchSt);
+            binMappings.AddRange(nest);
+        }
+        static void TraceEditPatchImage(List<BinMapping> binMappings, PatchSt editpatchSt)
+        {
+            List<Address> list = new List<Address>();
+            MakePatchStructDataListForIMAGE(list, false, editpatchSt);
 
+            foreach(Address a in list)
+            {
+                BinMapping binmap = new BinMapping();
+                binmap.addr = a.Addr;
+                binmap.filename = a.Info;
+                binmap.key = "DATA";
+                binmap.length = a.Length;
+                binmap.bin = Program.ROM.getBinaryData(binmap.addr, binmap.length);
+                binmap.mask = new bool[binmap.addr]; //画像なのでマスクは不要
+                binMappings.Add(binmap);
+            }
+        }
+
+        static void TraceEditPatchStruct(List<BinMapping> binMappings, PatchSt editpatchSt, string basedir)
+        {
             uint struct_address = 0x0;
-            while(true)
+            while (true)
             {//パッチを複数個インストールしている可能性の探索
-                struct_address = TraceEditPatchInner(binMappings, editpatchSt, struct_address , basedir);
+                struct_address = TraceEditPatchStructInner(binMappings, editpatchSt, struct_address, basedir);
 
                 if (struct_address == U.NOT_FOUND)
                 {
@@ -3625,7 +3676,8 @@ namespace FEBuilderGBA
                 struct_address += 16;
             }
         }
-        static uint TraceEditPatchInner(List<BinMapping> binMappings, PatchSt editpatchSt ,uint search_start_addr , string basedir)
+
+        static uint TraceEditPatchStructInner(List<BinMapping> binMappings, PatchSt editpatchSt, uint search_start_addr, string basedir)
         {
             uint struct_address;
             string pointer_str = U.at(editpatchSt.Param, "POINTER");
@@ -3702,7 +3754,7 @@ namespace FEBuilderGBA
                 binmap.key = "DATA";
                 binmap.length = datacount * datasize;
                 binmap.bin = Program.ROM.getBinaryData(struct_address, binmap.length);
-                binmap.mask = MakeMaskAddress(binmap.bin, struct_address);
+                binmap.mask = new bool[binmap.addr]; //データなのでマスクは不要
                 binMappings.Add(binmap);
             }
             return struct_address;

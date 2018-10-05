@@ -1,0 +1,24 @@
+NAME=ModularMinimugBox: REDFE Style Installer
+NAME.en=ModularMinimugBox: REDFE Style 導入
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0xA73A44=0x4D 0x4D 0x42 0x32 0x30 0x31 0x38 0x00
+EA=MMB Installer REDFE Style.event
+
+AUTHOR=7743 / Orignal: REDFE , ZaneAvernathy http://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)
+INFO=左上のパネルを拡張して、さまざなま情報を出力できるようにします。\r\nこれは、ModularMinimugBox: REDFE Styleのスタイルです。\r\nhttp://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\nなお、インストールには、EAの追加モジュールとしてLynが必要です。\r\nhttps://github.com/StanHash/lyn/
+
+EDIT_PATCH:1=PATCH_MMB SubData_MMBBuildRoutines.txt
+EDIT_PATCH:2=PATCH_MMB SubData_MMBDynamicRoutines.txt
+EDIT_PATCH:3=PATCH_MMB SubData_MMBLabelTable.txt
+EDIT_PATCH:4=PATCH_MMB SubData_MMBTilemap.txt
+EDIT_PATCH:5=PATCH_MMB SubData_NumberTable.txt
+
+INFO.en=Expand the upper left panel so that information can be output throughout the time.\r\nThis is the style of ModularMinimugBox: REDFE Style.\r\nhttp://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\nFor installation, Lyn is required as an additional module of EA.\r\nhttps://github.com/StanHash/lyn/
+
+INFO.zh=展开左上方面板，以便在整个时间内输出信息。\r\n这是ModularMinimugBox的样式：REDFE Style。\r\nhttp://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/27\r\n对于安装，Lyn需要作为EA的附加模块。\r\nhttps://github.com/StanHash/lyn/
+
+//このバージョンの設定違いです。
+CANONICAL_SKIP=MMB Installer 2018 Default.event
