@@ -15,5 +15,5 @@ OFF:0x02B5FA=0x40 0x1A 0x00 0x04 0x00 0x0C
 AUTHOR=7743
 INFO=デビルアクスで自滅する確率を計算するときに、幸運が高すぎると、アンダーフローして、必ず自滅するバグを修正します。\r\nアンダーフローした場合、自滅ではなく、逆に、必ず敵に命中するように変更します。
 INFO.en=When calculating the probability of self-destruction in Devil Ax, if fortune is too high, it underflows and corrects a bug that surely destroys self.\r\nIn case of underflow, change not to self-destruct but to hit the enemy without fail.
-NAME.zh=修复Devil Ax中发生下溢错误时总是自毁的错误
+NAME.zh=恶魔之斧: 修复恶魔之斧中发生下溢错误时总是自毁的错误
 INFO.zh=当计算魔鬼斧中的自我毁灭概率时，如果命运太高，它会下溢并纠正一个肯定会破坏自我的错误。\r\n在下溢的情况下，改变不是自毁，而是必定击中敌人。

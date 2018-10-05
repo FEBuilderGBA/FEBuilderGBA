@@ -10,6 +10,7 @@ TYPE=BIN
 CLEAR:0xB4680C:0x63ACF=0xB4680C  //ロゴまでクリア
 CLEAR:0xBAA2DC:0x1387=0xBAA2DC   //ロゴもクリアする
 BIN:0x0D0DD8=clear_OP_bx_lr.bin  //ロゴをロードしないようにASMを直す.
+BIN:0x0CB9A6=clear_OP_Skip_ImgLoad.bin  //ロゴをロードしないようにASMを直す.
 
 INFO=あなたの改造がオープニングを利用しない場合、オープニング領域をまるごと潰して、リビルド時にデータを格納する領域に回すことができます。\r\n408272バイトほど追加で確保できます。\r\nこのパッチを使うには、オープニングカットを利用していることが前提です。
 INFO.en=If your remodeling does not use the opening, you can crush whole opening area and turn it to the area where data is stored when rebuilding.\r\nYou can secure as much as 408272 bytes.\r\nTo use this patch, it is premised that you are using an opening cut.

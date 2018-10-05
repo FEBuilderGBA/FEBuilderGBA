@@ -115,17 +115,20 @@ namespace FEBuilderGBA
         //空き領域から割り当てができるか?
         public uint CanAllocFreeArea(uint needSize)
         {
+            //4の倍数に格納する
+            needSize = U.Padding4(needSize);
+
             for (int i = 0; i < this.RecycleFreeAreaList.Count; i++)
             {
                 Address p = this.RecycleFreeAreaList[i];
                 if (p.Length >= needSize)
                 {
-                    uint use_addr = p.Addr;
-                 
-                    uint addr = U.Padding4(p.Addr + needSize);
-                    uint length = U.Sub(p.Length, (addr - use_addr));
+                    uint use_addr = U.Padding4(p.Addr);
 
-                    p.ResizeAddress(addr, length);
+                    uint endaddr = U.Padding4(use_addr + needSize);
+                    uint length = U.Sub(p.Length, (endaddr - use_addr));
+
+                    p.ResizeAddress(endaddr, length);
                     if (p.Length < 4)
                     {//もう空きがない.
                         this.RecycleFreeAreaList.RemoveAt(i);
