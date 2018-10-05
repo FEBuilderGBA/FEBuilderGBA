@@ -5114,10 +5114,10 @@
             // 
             // label52
             // 
-            this.label52.Location = new System.Drawing.Point(103, 123);
+            this.label52.Location = new System.Drawing.Point(67, 123);
             this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(44, 18);
+            this.label52.Size = new System.Drawing.Size(80, 18);
             this.label52.TabIndex = 210;
             this.label52.Text = "Exp";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -5138,10 +5138,10 @@
             // 
             // label53
             // 
-            this.label53.Location = new System.Drawing.Point(133, 96);
+            this.label53.Location = new System.Drawing.Point(64, 96);
             this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(14, 18);
+            this.label53.Size = new System.Drawing.Size(83, 18);
             this.label53.TabIndex = 207;
             this.label53.Text = "Lv";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
