@@ -9388,7 +9388,7 @@ namespace FEBuilderGBA
                 skill_system_enum skill = SearchSkillSystem();
                 if (skill == skill_system_enum.SkillSystem)
                 {
-                    g_CacheHasSkill = SkillConfigSkillSystemForm.SearchLearnSkill();
+                    g_CacheLearnSkill = SkillConfigSkillSystemForm.SearchLearnSkill();
                 }
             }
             return g_CacheLearnSkill;

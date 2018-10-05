@@ -598,7 +598,7 @@ namespace FEBuilderGBA
         }
         public static uint SearchSkillGetter()
         {
-            string filename = Path.Combine(PatchForm.GetPatchDirectory(), "skill", "Skill Getter.dmp");
+            string filename = Path.Combine(PatchForm.GetPatchDirectory(), "skill", "skillGetter.dmp");
             if (!File.Exists(filename))
             {
                 return U.NOT_FOUND;
