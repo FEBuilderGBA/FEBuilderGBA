@@ -9478,6 +9478,9 @@ Warning:\r\nmaximum character\r\nwidth exceeds the\r\nserif upper limit.
 :警告:\r\nセリフが\r\n3行以上に\r\nなっています
 Warning:\r\nThere are \r\nmore than 3 lines\r\nof serif
 
+:Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n\r\n{0}
+Google translation returned an error.\r\nI sent the translation request too much.\r\n\r\n{0}
+
 :改行やエスケープシーケンを入れてはいけません。\r\n
 Do not insert newlines or escape sequences.\r\n
 
