@@ -8127,3 +8127,23 @@ r3=X tile position of menu of the right	{U}
 08A97ACC	&PALETTE	Something's palette	112	{U}
 08AA1950	&PALETTE	Something's palette	114	{U}
 089DD4E8	&LZ77	Something's TSA	{U}
+08B8B4E0	&PALETTE	OP related pallet	1	{J}
+08B8B978	&PALETTE	OP related pallet	2	{J}
+08B8C43C	&PALETTE	OP related pallet	3	{J}
+08B8CF14	&PALETTE	OP related pallet	4	{J}
+08AF1B18	&PALETTE	OP related pallet	1	{U}
+08AF1FB0	&PALETTE	OP related pallet	2	{U}
+08AF2634	&PALETTE	OP related pallet	3	{U}
+08AF310C	&PALETTE	OP related pallet	4	{U}
+08B8E5F8	&PALETTE	Something's palette	115	{J}
+08BAA1E0	&PALETTE	Something's palette	116	{J}
+08B75840	&PALETTE	Something's palette	117	{J}
+08AF47F0	&PALETTE	Something's palette	115	{U}
+08B103D8	&PALETTE	Something's palette	116	{U}
+08ADBE78	&PALETTE	Something's palette	117	{U}
+080B40EC	Opening class demoReading lottery table	{U}
+080B8C80	Opening class demoReading lottery table	{J}
+08A2FBE0	:08A2FCE3	Opening class demoLottery table	{U}
+08AB0A44	:08AB0B47	Opening class demoLottery table	{J}
+08A2FBD4	:08A2FBDF	Opening class demoNumber to shift lottery table	{U}
+08AB0A38	:08AB0A43	Opening class demoNumber to shift lottery table	{J}
