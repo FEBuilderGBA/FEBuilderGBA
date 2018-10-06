@@ -648,7 +648,7 @@ namespace FEBuilderGBA
             }
             thisPointer = (uint)((int)thisPointer + appendoffset);
 
-            byte[] data2 = Program.ROM.getBinaryData(thisPointer, (uint)testMatchDataSize);
+            byte[] data2 = Program.ROM.getBinaryData(thisPointer, testMatchDataSize);
             uint otherROMAddres2 = DGrep(this.OtherROMData, data2);
             if (otherROMAddres2 == U.NOT_FOUND)
             {

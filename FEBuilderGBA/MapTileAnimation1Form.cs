@@ -247,7 +247,7 @@ namespace FEBuilderGBA
             }
      
             int height = GetHight(count);
-            return Program.ROM.getBinaryData(date_offset, (uint)(32 * 8 / 2 * height)); 
+            return Program.ROM.getBinaryData(date_offset, 32 * 8 / 2 * height); 
         }
 
         private void MapTileAnimation1Form_Load(object sender, EventArgs e)

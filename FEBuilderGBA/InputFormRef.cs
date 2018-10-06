@@ -8246,6 +8246,10 @@ namespace FEBuilderGBA
                 {//必要サイズがROMサイズを超えていたら増設する.
                     Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
                 }
+                if (newFreeSapceAddr + original_size > Program.ROM.Data.Length)
+                {//必要サイズがROMサイズを超えていたら増設する.
+                    Program.ROM.write_resize_data((uint)(newFreeSapceAddr + original_size));
+                }
 
                 //LDRとEVEVNT
                 //影響を受けるポインタサーチ
@@ -9272,7 +9276,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
+                byte[] data = Program.ROM.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;
@@ -9353,7 +9357,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
+                byte[] data = Program.ROM.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;
@@ -9475,7 +9479,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = rom.getBinaryData(start, (uint)need.Length);
+                byte[] data = rom.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;
@@ -9673,7 +9677,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
+                byte[] data = Program.ROM.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;
@@ -9748,7 +9752,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
+                byte[] data = Program.ROM.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;

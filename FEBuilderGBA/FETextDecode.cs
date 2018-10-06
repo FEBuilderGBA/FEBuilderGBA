@@ -108,7 +108,7 @@ namespace FEBuilderGBA
                 out_DataSize = length;
             }
 
-            byte[] srcdata = this.ROM.getBinaryData(addr, (uint)length);
+            byte[] srcdata = this.ROM.getBinaryData(addr, length);
             return UnHffmanPatchDecodeLow(srcdata);
         }
         int AppendSJIS(List<byte> str,byte code,byte code2,InputFormRef.PRIORITY_CODE priorityCode)

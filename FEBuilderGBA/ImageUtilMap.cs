@@ -676,7 +676,7 @@ namespace FEBuilderGBA
             uint palette_addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.PALETTE, plists.palette_plist);
             if (U.isSafetyOffset(palette_addr))
             {//既存パレットがあればコピーする.
-                data = Program.ROM.getBinaryData(palette_addr, (uint)data.Length);
+                data = Program.ROM.getBinaryData(palette_addr, data.Length);
             }
 
             uint write_addr = InputFormRef.AppendBinaryData(data, undodata);

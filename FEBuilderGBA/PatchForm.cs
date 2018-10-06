@@ -1868,7 +1868,7 @@ namespace FEBuilderGBA
             }
 
             //現在のデータにマッチする行を選択.
-            byte[] now_data = Program.ROM.getBinaryData(addr, (uint)databyte);
+            byte[] now_data = Program.ROM.getBinaryData(addr, databyte);
             for (int i = 0; i < comboSP.Length; i += 2)
             {
                 string[] changevalueSP = comboSP[i + 1].Split(' ');

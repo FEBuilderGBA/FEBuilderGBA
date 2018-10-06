@@ -1753,11 +1753,20 @@ namespace FEBuilderGBA
                 Dictionary<string, string> transDic = TranslateTextUtil.LoadTranslateDic(from, to, from_rom, to_rom);
 
                 string text = GetEditorText(this.TextArea);
-                string result = TranslateTextUtil.TranslateText((uint)this.AddressList.SelectedIndex
-                    , text
-                    , from
-                    , to
-                    , transDic,true);
+                string result;
+                try
+                {
+                    result = TranslateTextUtil.TranslateText((uint)this.AddressList.SelectedIndex
+                        , text
+                        , from
+                        , to
+                        , transDic, true);
+                }
+                catch (System.Net.WebException ee)
+                {
+                    R.ShowStopError("Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n\r\n{0}", ee.ToString());
+                    return ;
+                }
 
                 SetEditorText(this.TextArea, result);
                 UpdateTextList(result, out this.SimpleList , -1);

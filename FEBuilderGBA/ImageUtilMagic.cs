@@ -84,7 +84,7 @@ namespace FEBuilderGBA
                 //チェック開始アドレス
                 uint start = U.atoh(sp[2]);
 
-                byte[] data = Program.ROM.getBinaryData(start, (uint)need.Length);
+                byte[] data = Program.ROM.getBinaryData(start, need.Length);
                 if (U.memcmp(need, data) != 0)
                 {
                     continue;

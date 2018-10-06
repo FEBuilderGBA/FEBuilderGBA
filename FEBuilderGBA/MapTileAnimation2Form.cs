@@ -229,7 +229,7 @@ namespace FEBuilderGBA
                 return null;
             }
 
-            return Program.ROM.getBinaryData(date_offset, (uint)(2 * count));
+            return Program.ROM.getBinaryData(date_offset, 2 * count);
         }
 
         private void MapTileAnimation1Form_Load(object sender, EventArgs e)

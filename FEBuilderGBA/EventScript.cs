@@ -801,7 +801,7 @@ namespace FEBuilderGBA
                 }
                 if(n >= script.Args.Length)
                 {//マッチ
-                     code.ByteData    = U.getBinaryData(data, startaddr, (uint)script.Size);
+                     code.ByteData    = U.getBinaryData(data, startaddr, script.Size);
                      code.Script      = script;
                      code.JisageCount = 0;
                      code.Comment = Program.CommentCache.At(startaddr);
@@ -817,7 +817,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                code.ByteData = U.getBinaryData(data, startaddr, (uint)this.Unknown.Size);
+                code.ByteData = U.getBinaryData(data, startaddr, this.Unknown.Size);
             }
             code.Script      = this.Unknown;
             code.JisageCount = 0;
@@ -846,7 +846,7 @@ namespace FEBuilderGBA
                 string info = EventScript.makeCommandComboText(script,false);
                 if (info == hint)
                 {//ヒント区に書いてあるものとマッチ.
-                    code.ByteData = U.getBinaryData(data, startaddr, (uint)script.Size);
+                    code.ByteData = U.getBinaryData(data, startaddr, script.Size);
                     code.Script = script;
                     code.JisageCount = 0;
                     code.Comment = Program.CommentCache.At(startaddr);

@@ -920,6 +920,7 @@ namespace FEBuilderGBA
                 return magic_animedata;
             }
             string hash = ImageUtil.HashBitmap(imagefilename, basedir);
+
             magic_animedata = ImageUtilOAM.FindHash(hash, animeDic);
             if (magic_animedata != null)
             {

@@ -3013,6 +3013,10 @@ namespace FEBuilderGBA
         public static string HashBitmap(string fullfilename)
         {
             Bitmap bitmap = OpenBitmap(fullfilename);
+            if (bitmap == null)
+            {//Not Found
+                return "";
+            }
             string hash = HashBitmap(bitmap);
 
             bitmap.Dispose();

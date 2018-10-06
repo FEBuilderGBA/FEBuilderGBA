@@ -157,6 +157,11 @@ namespace FEBuilderGBA
         }
         public byte[] getBinaryData(uint pointer, int count)
         {
+            if (count < 0)
+            {
+                R.Error("RAM.getBinaryData pointer:{0} count:{1}" , U.To0xHexString(pointer), count );
+                return new byte[0];
+            }
             return getBinaryData(pointer,(uint)count);
         }
 

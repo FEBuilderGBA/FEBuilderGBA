@@ -1525,7 +1525,13 @@ namespace FEBuilderGBA
         }
         public static byte[] getBinaryData(byte[] data, uint addr, int count)
         {
-            return getBinaryData(data, addr, (uint) count);
+            if (count < 0)
+            {
+                R.Error("U.getBinaryData pointer:{0} count:{1}", U.To0xHexString(addr), count);
+                Debug.Assert(false);
+                return new byte[0];
+            }
+            return getBinaryData(data, addr, (uint)count);
         }
 
 
@@ -1590,10 +1596,6 @@ namespace FEBuilderGBA
 
         public static void write_range(byte[] data, uint addr, byte[] write_data)
         {
-            if (addr == 0x9047D8)
-            {
-            }
-
             check_safety(data, addr + (uint)write_data.Length);
             Array.Copy(write_data, 0, data, addr, write_data.Length);
         }

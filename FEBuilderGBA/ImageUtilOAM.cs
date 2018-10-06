@@ -2422,6 +2422,7 @@ namespace FEBuilderGBA
                     {//未登録なので作成します.
                         //同一画像のハッシュがあるのでは?
                         string hash = ImageUtil.HashBitmap(imagefilename, oam.GetBaseDir());
+
                         anime = FindHash(hash, animeDic);
                         if (anime == null)
                         {//ハッシュにもない

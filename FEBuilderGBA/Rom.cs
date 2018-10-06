@@ -651,6 +651,10 @@ namespace FEBuilderGBA
         {
             return U.getASCIIString(Program.ROM.Data, addr, length);
         }
+        public byte[] getBinaryData(uint addr, int count)
+        {
+            return U.getBinaryData(this.Data, addr, count);
+        }
         public byte[] getBinaryData(uint addr, uint count)
         {
             return U.getBinaryData(this.Data, addr, count);
