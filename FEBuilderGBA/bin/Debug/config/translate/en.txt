@@ -9364,6 +9364,9 @@ The support amount of the unit ({0}) is incorrect.There are {2} people 's suppor
 :相手の初期値も自動調整する
 Automatically adjust the other party's initial value
 
+:シンボル探索中にエラーが発生しました。\r\n{0}
+An error occurred during symbol search.\r\n{0}
+
 :現在TBLを利用しています。\r\nTBLを利用しながらun-haffman patchを利用すると予期しないトラブルが発生することがあります。\r\n「はい」を選択すると、パッチのインストールを強行します。\r\n「いいえ」を選択すると、パッチ適応を取りやめます。(推奨)\r\n\r\nどうしますか？
 Currently using TBL.\r\nIf you use un-haffman patch while using TBL, unexpected troubles may occur.\r\nSelect "Yes" to force installation of the patch.\r\nSelect "No" to cancel patch adaptation.(Recommendation).\r\n\r\nContinue or not?
 

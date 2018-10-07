@@ -15,6 +15,7 @@ namespace FEBuilderGBA
             ,SaveComment = 2
             ,SaveBoth = 3
         };
+
         static void RegistSymbol(string basefilename, string symbol, uint baseaddr )
         {
             string basename = "@" + Path.GetFileName(basefilename);
@@ -89,33 +90,88 @@ namespace FEBuilderGBA
             }
         }
 
-        //readelf の symbol情報をEAのシンボル情報に変換します
-        public static string ReadElfToEASymbol(string readelf)
+        static void ProcessSymbol(string basefilename, List<Address> list)
         {
-            StringBuilder sb = new StringBuilder();
-
-            readelf = U.skip(readelf, "0: 00000000");
-            string[] lines = readelf.Split(':');
-            for (int i = 1; i < lines.Length; i++)
+            foreach (Address a in list)
             {
-                string line = lines[i];
-                string name = U.cut(line, "DEFAULT    1 ", " ");
-                if (name == "" || name[0] == ' ' || name[0] == '$')
+                if (a.DataType != Address.DataTypeEnum.Comment)
                 {
                     continue;
                 }
-                uint addr = U.atoh(line.Substring(1));
-                if (addr <= 1 || addr >= 0x02000000)
-                {
-                    continue;
-                }
-                sb.Append(name);
-                sb.Append("=$");
-                sb.Append(U.ToHexString(addr));
-                sb.AppendLine();
+                uint addr = a.Addr;
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Program.CommentCache.Update(addr, a.Info);
             }
-            return sb.ToString();
         }
 
+        static void MakeAllDataLengthSub(List<Address> list, string symbolfilename, uint baseaddr)
+        {
+            string basename = "@" + Path.GetFileName(symbolfilename);
+
+            string[] lines = File.ReadAllLines(symbolfilename);
+            foreach (string line in lines)
+            {
+                //EA形式
+                //MMBDrawInventoryObjs=$100109D
+                string[] sp = line.Split('=');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+                string name = sp[0];
+                uint addr = U.atoi0x(sp[1]);
+                addr += baseaddr;
+                if (name.Length <= 0 || addr <= 0x100)
+                {
+                    continue;
+                }
+
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Program.CommentCache.Update(addr, name + basename);
+            }
+        }
+
+        public static void MakeAllDataLength(List<Address> list, string basefilename)
+        {
+            string[] files;
+            try
+            {
+                files = Directory.GetFiles(basefilename, "*.sym.txt", SearchOption.AllDirectories);
+            }
+            catch (System.IO.IOException e)
+            {
+                R.Error("シンボル探索中にエラーが発生しました。\r\n{0}" , e.ToString());
+                return ;
+            }
+            foreach (string fullpath in files)
+            {
+                string dir = Path.GetDirectoryName(fullpath);
+                string filename = Path.GetFileNameWithoutExtension(fullpath);
+
+                string binfilename;
+                binfilename = Path.Combine(dir, filename, ".DMP");
+                if (File.Exists(binfilename))
+                {
+                    uint baseaddr = U.Grep(Program.ROM.Data, File.ReadAllBytes(binfilename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                    if (baseaddr == U.NOT_FOUND)
+                    {
+                        continue;
+                    }
+                    MakeAllDataLengthSub(list, fullpath, baseaddr);
+                    continue;
+                }
+                binfilename = Path.Combine(dir, filename, ".BIN");
+                if (File.Exists(binfilename))
+                {
+                    uint baseaddr = U.Grep(Program.ROM.Data, File.ReadAllBytes(binfilename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                    if (baseaddr == U.NOT_FOUND)
+                    {
+                        continue;
+                    }
+                    MakeAllDataLengthSub(list, fullpath, baseaddr);
+                    continue;
+                }
+            }
+        }
     }
 }

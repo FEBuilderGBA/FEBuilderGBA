@@ -2659,7 +2659,6 @@ namespace FEBuilderGBA
             };
         }
 
-
         void LoadPatchBin(PatchSt patch)
         {
             PatchPage.Controls.Clear();

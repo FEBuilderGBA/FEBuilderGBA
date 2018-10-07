@@ -1,0 +1,22 @@
+NAME=CCでレベル減少しない
+NAME.en=Level does not decrease with Promotion
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default: Level Reset|OFF|No Reset|ONN
+
+
+OFF:0x00298F8=0x20 0x72 0x61 0x72
+OFF:0x0068CD6=0x01 0x20
+
+ONN:0x00298F8=0x00 0x00 0x00 0x00
+ONN:0x0068CD6=0x18 0x7A
+
+INFO=CCしてもレベルを1にリセットしないように変更します。
+INFO.en=Change the level so that it does not reset to 1 even if it is promoted.
+
+
+NAME.zh=CC不会降低等级
+INFO.zh=更改CC，使其不会将级别重置为1。
