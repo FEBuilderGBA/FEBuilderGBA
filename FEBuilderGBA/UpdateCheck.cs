@@ -136,6 +136,10 @@ namespace FEBuilderGBA
                 {
                     //IsDisposedして、Invokeするわずかな時間にダメになることがまれにあるらしい.
                 }
+                catch (InvalidOperationException)
+                {
+                    //何かのタイミングで発生することがあるらしい?
+                }
             });
             s1.Start();
         }
