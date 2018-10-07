@@ -639,20 +639,6 @@ namespace FEBuilderGBA
             }
 
             string tooldir = Path.GetDirectoryName(devkitpro_eabi);
-            string readelf = U.FindFileOne(tooldir, "*readelf.exe");
-            if (readelf == "")
-            {
-                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。"
-                    , "devkitpro_eabi *readelf.exe");
-                return false;
-            }
-            string objcopy = U.FindFileOne(tooldir, "*objcopy.exe");
-            if (objcopy == "")
-            {
-                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。"
-                    , "devkitpro_eabi *objcopy.exe");
-                return false;
-            }
 
 
             string target = Path.Combine(Path.GetDirectoryName(target_filename), Path.GetFileNameWithoutExtension(target_filename));
@@ -697,31 +683,10 @@ namespace FEBuilderGBA
             Elf elf = new Elf(output_temp_filename);
             out_symbol = elf.ToEASymbol();
 
-            //Print symbol table
-//            args = "-s --wide"
-//                + " " + U.escape_shell_args(target + ".elf");
-//            output = ProgramRunAsAndEndWait(readelf, args, tooldir);
-//            string test = SymbolUtil.ReadElfToEASymbol(output);
-//            Debug.Assert(out_symbol == test);
-
             //Extract raw assembly binary (text section) from elf
             output_temp_filename = target + ".dmp";
-            args =
-                    "-S " + U.escape_shell_args(target + ".elf")
-                + " -O binary"
-                + " " + U.escape_shell_args(output_temp_filename);
-            output = ProgramRunAsAndEndWait(objcopy, args, tooldir);
-            if (!File.Exists(output_temp_filename) || U.GetFileSize(output_temp_filename) <= 0)
-            {
-                output = objcopy + " " + args + " \r\noutput:\r\n" + output;
-                return false;
-            }
-#if DEBUG
-            //まだリスクがあるので、比較だけにとどめておこう
-            byte[] testbin = File.ReadAllBytes(output_temp_filename);
-            Debug.Assert(U.memcmp(elf.ProgramBIN, testbin) == 0);
             File.WriteAllBytes(output_temp_filename, elf.ProgramBIN);
-#endif
+
             Log.Notify(target + ".dmp");
             Log.Notify("=== SYMBOL ===");
             Log.Notify(out_symbol);

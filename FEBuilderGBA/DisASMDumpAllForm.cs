@@ -105,6 +105,7 @@ namespace FEBuilderGBA
                     , isPatchInstallOnly: true
                     , isPatchPointerOnly: false
                     , isPatchStructOnly: false
+                    , isPatchStoreSymbol: true
                     , isUseOtherGraphics: false
                     , isUseOAMSP: false
                     );
@@ -226,6 +227,7 @@ namespace FEBuilderGBA
                     , isPatchInstallOnly: false
                     , isPatchPointerOnly: false
                     , isPatchStructOnly: false
+                    , isPatchStoreSymbol: true
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
@@ -399,6 +401,7 @@ namespace FEBuilderGBA
                     , isPatchInstallOnly: false
                     , isPatchPointerOnly: false
                     , isPatchStructOnly: false
+                    , isPatchStoreSymbol: true
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );

@@ -1,0 +1,10 @@
+RideBlista=$94
+Table=$C4
+Loop=$26
+NotMatch=$8C
+CheckUnit=$2E
+CheckFromClass=$3C
+CheckMapID=$46
+CheckFlag=$54
+Found=$64
+UpdateUnitIcon=$7E

@@ -4179,10 +4179,7 @@ namespace FEBuilderGBA
             }
 
             //データの位置を追跡
-            //if (binMappings.Count > 0)
-            {
-                TraceEditPatch(binMappings, patch);
-            }
+            TraceEditPatch(binMappings, patch);
             return binMappings;
         }
 
@@ -4713,7 +4710,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        static void MakePatchStructDataListForEA(List<Address> list, bool isPointerOnly, PatchSt patch)
+        static void MakePatchStructDataListForEA(List<Address> list, bool isPointerOnly, PatchSt patch , bool isStoreSymbol)
         {
             string use_asmamp = U.at(patch.Param, "ASMMAP", "true");
             if (U.stringbool(use_asmamp) == false)
@@ -4721,24 +4718,30 @@ namespace FEBuilderGBA
                 return;
             }
 
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
             List<BinMapping> map = TracePatchedMapping(patch);
-            for (int n = 0; n < map.Count; n++)
+            foreach(BinMapping m in map)
             {
-                uint a = map[n].addr;
+                uint a = m.addr;
                 if (!U.isSafetyOffset(a))
                 {
                     continue;
                 }
-                uint length = isPointerOnly ? 0 : map[n].length;
+                uint length = isPointerOnly ? 0 : m.length;
                 FEBuilderGBA.Address.AddAddress(list
                     , a
                     , length
                     , U.NOT_FOUND
-                    , patch.Name + "@" + map[n].filename + "@EA"
-                    , map[n].type);
+                    , patch.Name + "@" + m.filename + "@EA"
+                    , m.type);
+
+                if (isStoreSymbol && m.filename != "")
+                {
+                    SymbolUtil.ProcessSymbol(list, basedir, m.filename, m.addr);
+                }
             }
         }
-        static void MakePatchStructDataListForBIN(List<Address> list, bool isPointerOnly, PatchSt patch)
+        static void MakePatchStructDataListForBIN(List<Address> list, bool isPointerOnly, PatchSt patch, bool isStoreSymbol)
         {
             string use_asmamp = U.at(patch.Param, "ASMMAP","true");
             if (U.stringbool(use_asmamp) == false)
@@ -4746,10 +4749,10 @@ namespace FEBuilderGBA
                 return;
             }
 
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
             List<BinMapping> map = TracePatchedMapping(patch);
-            for (int n = 0; n < map.Count; n++)
+            foreach (BinMapping m in map)
             {
-                BinMapping m = map[n];
                 if (!U.isSafetyOffset(m.addr))
                 {
                     continue;
@@ -4757,19 +4760,19 @@ namespace FEBuilderGBA
                 uint length;
                 if (isPointerOnly == false)
                 {
-                    length = map[n].length;
+                    length = m.length;
                     if (m.type == Address.DataTypeEnum.POINTER)
                     {
                         FEBuilderGBA.Address.AddPointer(list
                             , m.addr
                             , 0
-                            , patch.Name + "@" + map[n].filename + "@BIN"
+                            , patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.POINTER);
                         FEBuilderGBA.Address.AddAddress(list
                             , m.addr
                             , 0
                             , U.NOT_FOUND
-                            , "Pointer_" + patch.Name + "@" + map[n].filename + "@BIN"
+                            , "Pointer_" + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.POINTER
                             );
                     }
@@ -4778,13 +4781,13 @@ namespace FEBuilderGBA
                         FEBuilderGBA.Address.AddPointer(list
                             , m.addr
                             , 0
-                            , "ASM" + patch.Name + "@" + map[n].filename + "@BIN"
+                            , "ASM" + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.PATCH_ASM);
                         FEBuilderGBA.Address.AddAddress(list
                             , m.addr
                             , 0
                             , U.NOT_FOUND
-                            , "Pointer_" + patch.Name + "@" + map[n].filename + "@BIN"
+                            , "Pointer_" + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.POINTER_ASM
                             );
                     }
@@ -4794,7 +4797,7 @@ namespace FEBuilderGBA
                             , m.addr
                             , (uint)m.length
                             , U.NOT_FOUND
-                            , "Fixed " + patch.Name + "@" + map[n].filename + "@BIN"
+                            , "Fixed " + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.BIN
                             );
                     }
@@ -4804,7 +4807,7 @@ namespace FEBuilderGBA
                             , m.addr
                             , (uint)m.length - 4
                             , U.NOT_FOUND
-                            , "Jump " + patch.Name + "@" + map[n].filename + "@BIN"
+                            , "Jump " + patch.Name + "@" + m.filename + "@BIN"
                             , Address.DataTypeEnum.BIN
                             );
                     }
@@ -4814,7 +4817,7 @@ namespace FEBuilderGBA
                             , m.addr
                             , 0
                             , U.NOT_FOUND
-                            , patch.Name + "@" + map[n].filename + "@BIN"
+                            , patch.Name + "@" + m.filename + "@BIN"
                             , m.type);
                     }
                 }
@@ -4824,8 +4827,13 @@ namespace FEBuilderGBA
                         , m.addr
                         , 0
                         , U.NOT_FOUND
-                        , patch.Name + "@" + map[n].filename + "@BIN"
+                        , patch.Name + "@" + m.filename + "@BIN"
                         , m.type);
+                }
+
+                if (isStoreSymbol && m.filename != "")
+                {
+                    SymbolUtil.ProcessSymbol(list, basedir, m.filename, m.addr);
                 }
             }
         }
@@ -5208,7 +5216,7 @@ namespace FEBuilderGBA
             
 
         //パッチが知っているアドレスをすべて取得します.
-        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly)
+        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly, bool isStoreSymbol)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -5227,18 +5235,17 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-
                 if (type == "ADDR")
                 {
                     MakePatchStructDataListForADDR(list, isPointerOnly, patch);
                 }
                 else if (type == "EA")
                 {
-                    MakePatchStructDataListForEA(list, isPointerOnly, patch);
+                    MakePatchStructDataListForEA(list, isPointerOnly, patch, isStoreSymbol);
                 }
                 else if (type == "BIN")
                 {
-                    MakePatchStructDataListForBIN(list, isPointerOnly, patch);
+                    MakePatchStructDataListForBIN(list, isPointerOnly, patch, isStoreSymbol);
                 }
                 else if (type == "SWITCH")
                 {
@@ -5256,6 +5263,7 @@ namespace FEBuilderGBA
                 if (InputFormRef.DoEvents(null, "Check Patch " + patch.Name)) return;
             }
         }
+
         static uint[] MakePointerIndexes(PatchSt patch
             , out string[] out_typeArray
             , out Address.DataTypeEnum out_iftType

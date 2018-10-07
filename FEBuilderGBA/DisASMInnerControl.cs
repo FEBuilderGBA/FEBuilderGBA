@@ -145,9 +145,6 @@ namespace FEBuilderGBA
 
         private void DisASMForm_Load(object sender, EventArgs e)
         {
-            //最大化を許可する.
-            DisASMForm_Resize(null, null);
-            
             MakeEditListboxContextMenu(this.AddressList, this.AddressList_KeyDown);
 
             InputFormRef.markupJumpLabel(ParamLabel1);

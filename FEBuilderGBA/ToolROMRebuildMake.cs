@@ -616,6 +616,7 @@ namespace FEBuilderGBA
                 , isPatchInstallOnly: true
                 , isPatchPointerOnly: false
                 , isPatchStructOnly:  false
+                , isPatchStoreSymbol: false
                 , isUseOtherGraphics: true
                 , isUseOAMSP: false
                 );

@@ -1,0 +1,42 @@
+NAME=DismountEx 乗り降りを可能にする(導入)
+NAME.en=DismountEx Enable to Rade and Exit (Installer)
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x024878=0x00 0x4B 0x18 0x47
+
+EA=DismountEx_Install.event
+EDIT_PATCH=PATCH_DismountEx.txt
+
+AUTHOR=7743
+INFO=SFC FEの乗る/降りるを再現します。\r\nこのパッチは、Dismountパッチを参考にさまざまな機能を追加しました。\r\n
+
+EVENTSCRIPT:1=400DXX00{$L1:ASMC_Rade_Mount.dmp}	ユニットを馬に乗せます。[XX:UNIT:ユニット]	{UNITPERSOLNAL}
+EVENTSCRIPT:2=410D0000{$L1:ASMC_Rade_Mount.dmp}	SVAL1のユニットを馬に乗せます。(LOW)
+EVENTSCRIPT:3=4B0D0000{$L1:ASMC_Rade_Mount.dmp}	SVALBの座標のユニットを馬に乗せます。(LOW)
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:ASMC_Rade_Mount.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットを馬に乗せます。	{UNITPERSOLNAL}
+EVENTSCRIPT:5=212E00002006C100410D0000{$L1:ASMC_Rade_Mount.dmp}	現在操作しているユニットを馬に乗せます。	{UNITPERSOLNAL}
+EVENTSCRIPT:6=4C0DXX00{$L1:ASMC_Rade_Mount.dmp}	バッチモードで、ユニットを馬に乗せます。効果音と再描画を省略。[XX:UNIT:ユニット]	{UNITPERSOLNAL}
+
+EVENTSCRIPT:11=400DXX00{$L1:ASMC_Exit_Dismount.dmp}	ユニットを馬から降ろします。[XX:UNIT:ユニット]	{UNITPERSOLNAL}
+EVENTSCRIPT:12=410D0000{$L1:ASMC_Exit_Dismount.dmp}	SVAL1のユニットを馬から降ろします。(LOW)
+EVENTSCRIPT:13=4B0D0000{$L1:ASMC_Exit_Dismount.dmp}	SVALBの座標のユニットを馬から降ろします。(LOW)
+EVENTSCRIPT:14=40050B00ZZZZWWWW4B0D0000{$L1:ASMC_Exit_Dismount.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットを馬から降ろします。	{UNITPERSOLNAL}
+EVENTSCRIPT:15=212E00002006C100410D0000{$L1:ASMC_Exit_Dismount.dmp}	現在操作しているユニットを馬から降ろします。	{UNITPERSOLNAL}
+EVENTSCRIPT:16=4C0DXX00{$L1:ASMC_Exit_Dismount.dmp}	バッチモードで、ユニットを馬から降ろします。効果音と再描画を省略。[XX:UNIT:ユニット]	{UNITPERSOLNAL}
+INFO.en=Reproduce SFC FE ride / get off.\r\nThis patch added various functions with reference to the Dismount patch.\r\n
+EVENTSCRIPT:1.en=400DXX00 {$ L1: ASMC_Rade_Mount.dmp} Place the unit on a horse.[XX: UNIT: Unit] {UNITPERSOLNAL}.
+EVENTSCRIPT:2.en=410D0000 {$ L1: ASMC_Rade_Mount.dmp} Place a SVAL1 unit on a horse.(LOW).
+EVENTSCRIPT:3.en=4B0D0000 {$ L1: ASMC_Rade_Mount.dmp} Place a unit with SVALB coordinates on a horse.(LOW).
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000 {$ L1: ASMC_Rade_Mount.dmp} Place the unit of coordinates [ZZ: MAPX: X] [WW: MAPY: Y] on the horse.{UNITPERSOLNAL}.
+EVENTSCRIPT:5.en=212E00002006C100410D0000 {$ L1: ASMC_Rade_Mount.dmp} Place the currently operating unit on the horse.{UNITPERSOLNAL}.
+EVENTSCRIPT:6.en=4C0DXX00 {$ L1: ASMC_Rade_Mount.dmp} Place a unit on a horse in batch mode.Skip sound effect and redraw.[XX: UNIT: Unit] {UNITPERSOLNAL}.
+NAME.zh=DismountEx可以上下车（介绍）
+INFO.zh=重现SFC FE乘坐/下车。\r\n该补丁添加了各种功能，参考Dismount补丁。\r\n
+EVENTSCRIPT:1.zh=400DXX00 {$ L1：ASMC_Rade_Mount.dmp}将装置放在马上。[XX：UNIT：Unit] {UNITPERSOLNAL}。
+EVENTSCRIPT:2.zh=410D0000 {$ L1：ASMC_Rade_Mount.dmp}将SVAL1单元放在马上。（LOW）。
+EVENTSCRIPT:3.zh=4B0D0000 {$ L1：ASMC_Rade_Mount.dmp}将具有SVALB坐标的单位放在马上。（LOW）。
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000 {$ L1：ASMC_Rade_Mount.dmp}将坐标单位[ZZ：MAPX：X] [WW：MAPY：Y]放在马上。{} UNITPERSOLNAL。
+EVENTSCRIPT:5.zh=212E00002006C100410D0000 {$ L1：ASMC_Rade_Mount.dmp}将当前操作单元放在马上。{} UNITPERSOLNAL。
+EVENTSCRIPT:6.zh=4C0DXX00 {$ L1：ASMC_Rade_Mount.dmp}以批处理模式将单位放在马上。跳过声音效果并重绘。[XX：UNIT：Unit] {UNITPERSOLNAL}。

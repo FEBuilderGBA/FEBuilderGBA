@@ -39,17 +39,17 @@
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
             this.ParamExplain1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc1 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel1 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ASMToFileButton = new System.Windows.Forms.Button();
             this.ToClipBordButton = new System.Windows.Forms.Button();
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.FileToASMButton = new System.Windows.Forms.Button();
             this.DumpAll = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
+            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -200,17 +200,6 @@
             this.label3.Text = "Code";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ScriptCodeName
-            // 
-            this.ScriptCodeName.ErrorMessage = "";
-            this.ScriptCodeName.Location = new System.Drawing.Point(145, 5);
-            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
-            this.ScriptCodeName.Name = "ScriptCodeName";
-            this.ScriptCodeName.Placeholder = "";
-            this.ScriptCodeName.ReadOnly = true;
-            this.ScriptCodeName.Size = new System.Drawing.Size(1198, 25);
-            this.ScriptCodeName.TabIndex = 199;
-            // 
             // ParamSrc1
             // 
             this.ParamSrc1.Hexadecimal = true;
@@ -246,22 +235,6 @@
             this.CloseButton.TabIndex = 201;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 24;
-            this.AddressList.Location = new System.Drawing.Point(0, 0);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(1485, 806);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            this.AddressList.DoubleClick += new System.EventHandler(this.AddressList_DoubleClick);
-            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
             // 
             // ASMToFileButton
             // 
@@ -326,14 +299,41 @@
             this.HexEditorButton.UseVisualStyleBackColor = true;
             this.HexEditorButton.Click += new System.EventHandler(this.HexEditorButton_Click);
             // 
+            // ScriptCodeName
+            // 
+            this.ScriptCodeName.ErrorMessage = "";
+            this.ScriptCodeName.Location = new System.Drawing.Point(145, 5);
+            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
+            this.ScriptCodeName.Name = "ScriptCodeName";
+            this.ScriptCodeName.Placeholder = "";
+            this.ScriptCodeName.ReadOnly = true;
+            this.ScriptCodeName.Size = new System.Drawing.Size(1198, 25);
+            this.ScriptCodeName.TabIndex = 199;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 24;
+            this.AddressList.Location = new System.Drawing.Point(0, 0);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(1485, 806);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            this.AddressList.DoubleClick += new System.EventHandler(this.AddressList_DoubleClick);
+            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
+            // 
             // DisASMInnerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.Controls.Add(this.FooterPanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.HeaderPanel);
+            this.Controls.Add(this.FooterPanel);
             this.Name = "DisASMInnerControl";
             this.Size = new System.Drawing.Size(1487, 838);
             this.Load += new System.EventHandler(this.DisASMForm_Load);

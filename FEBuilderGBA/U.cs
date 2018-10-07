@@ -2141,12 +2141,13 @@ namespace FEBuilderGBA
             , bool isPatchInstallOnly
             , bool isPatchPointerOnly
             , bool isPatchStructOnly
+            , bool isPatchStoreSymbol
             , bool isUseOtherGraphics
             , bool isUseOAMSP
             )
         {
             if (InputFormRef.DoEvents(null, "AppendAllASMStructPointersList PatchForm")) return;
-            PatchForm.MakePatchStructDataList(structlist, isPatchPointerOnly, isPatchInstallOnly, isPatchStructOnly);
+            PatchForm.MakePatchStructDataList(structlist, isPatchPointerOnly, isPatchInstallOnly, isPatchStructOnly, isPatchStoreSymbol);
 
             if (ldrmap != null)
             {

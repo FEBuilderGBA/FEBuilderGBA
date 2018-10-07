@@ -90,7 +90,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static void ProcessSymbol(string basefilename, List<Address> list)
+        static void ProcessSymbol(List<Address> list , string basefilename)
         {
             foreach (Address a in list)
             {
@@ -104,11 +104,32 @@ namespace FEBuilderGBA
             }
         }
 
-        static void MakeAllDataLengthSub(List<Address> list, string symbolfilename, uint baseaddr)
+        public static void ProcessSymbol(List<Address> list 
+            ,string basedir, string binfilename, uint baseaddr)
         {
-            string basename = "@" + Path.GetFileName(symbolfilename);
+            string ext = U.GetFilenameExt(binfilename);
+            if (ext == ".ELF")
+            {//elfだと自身にシンボルがある
+                string elfFilename = Path.Combine(basedir, binfilename);
+                if (File.Exists(elfFilename))
+                {
+                    ProcessSymbolElf(list, elfFilename, baseaddr);
+                }
+            }
+            if (ext == ".BIN" || ext == ".DMP")
+            {
+                string symtxt = Path.Combine(basedir, Path.GetFileNameWithoutExtension(binfilename) + ".sym.txt");
+                if (File.Exists(symtxt))
+                {
+                    ProcessSymbolSymTxt(list, symtxt, baseaddr, binfilename);
+                }
+            }
+        }
+        static void ProcessSymbolSymTxt(List<Address> list, string symtxt, uint baseaddr, string binfilename)
+        {
+            string basename = "@" + Path.GetFileName(binfilename);
 
-            string[] lines = File.ReadAllLines(symbolfilename);
+            string[] lines = File.ReadAllLines(symtxt);
             foreach (string line in lines)
             {
                 //EA形式
@@ -131,46 +152,27 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakeAllDataLength(List<Address> list, string basefilename)
+        static void ProcessSymbolElf(List<Address> list, string elffilename, uint baseaddr)
         {
-            string[] files;
-            try
+            Elf elf = new Elf(elffilename);
+            if (elf.ProgramBIN.Length < 0)
             {
-                files = Directory.GetFiles(basefilename, "*.sym.txt", SearchOption.AllDirectories);
+                return;
             }
-            catch (System.IO.IOException e)
-            {
-                R.Error("シンボル探索中にエラーが発生しました。\r\n{0}" , e.ToString());
-                return ;
-            }
-            foreach (string fullpath in files)
-            {
-                string dir = Path.GetDirectoryName(fullpath);
-                string filename = Path.GetFileNameWithoutExtension(fullpath);
 
-                string binfilename;
-                binfilename = Path.Combine(dir, filename, ".DMP");
-                if (File.Exists(binfilename))
+            string basename = "@" + Path.GetFileName(elffilename);
+            foreach (Elf.Sym line in elf.SymList)
+            {
+                string name = line.name;
+                uint addr = line.addr;
+                addr += baseaddr;
+                if (name.Length <= 0 || addr <= 0x100)
                 {
-                    uint baseaddr = U.Grep(Program.ROM.Data, File.ReadAllBytes(binfilename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
-                    if (baseaddr == U.NOT_FOUND)
-                    {
-                        continue;
-                    }
-                    MakeAllDataLengthSub(list, fullpath, baseaddr);
                     continue;
                 }
-                binfilename = Path.Combine(dir, filename, ".BIN");
-                if (File.Exists(binfilename))
-                {
-                    uint baseaddr = U.Grep(Program.ROM.Data, File.ReadAllBytes(binfilename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
-                    if (baseaddr == U.NOT_FOUND)
-                    {
-                        continue;
-                    }
-                    MakeAllDataLengthSub(list, fullpath, baseaddr);
-                    continue;
-                }
+
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Program.CommentCache.Update(addr, name + basename);
             }
         }
     }

@@ -1,0 +1,14 @@
+GetUnitInfoBySVAL1=$20
+GetUnitInfoByCoord=$24
+GetUnitInfoByCurrent=$1A
+GetUnitInfo=$26
+NotMatch=$A6
+Table=$D8
+Loop=$36
+CheckUnit=$3E
+CheckToClass=$4C
+CheckMapID=$56
+CheckFlag=$64
+Found=$74
+BatchModeSkip=$A6
+UpdateUnitIcon=$98

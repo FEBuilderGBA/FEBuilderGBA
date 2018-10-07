@@ -1,0 +1,8 @@
+Table=$74
+NotMatch=$5A
+Loop=$14
+CheckUnit=$1C
+CheckFromClass=$2A
+CheckMapID=$34
+CheckFlag=$42
+Found=$52

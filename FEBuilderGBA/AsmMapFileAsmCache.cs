@@ -111,15 +111,11 @@ namespace FEBuilderGBA
             }
 #endif
 
-            //たまにファイルが見つかれないなどのありえない状況が起こりうるらしい。
-            //アンチウイルスが誤爆してファイルを隔離したり消したりしているんだろうか?
-            //リリースビルドの場合、そういうエラーが発生することを見越してダメコンする.
-            //デバッグはそんなことなしに、すべて読みこみ例外があれば落とす.
 #if !DEBUG 
             try
             {
 #endif
-            PatchForm.MakePatchStructDataList(structlist,true,true,false); //パッチが知っている領域.
+            PatchForm.MakePatchStructDataList(structlist,true,true,false,true); //パッチが知っている領域.
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
