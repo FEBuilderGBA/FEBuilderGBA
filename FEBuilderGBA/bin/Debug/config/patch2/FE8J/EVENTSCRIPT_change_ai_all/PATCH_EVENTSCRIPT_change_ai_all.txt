@@ -7,8 +7,8 @@ PATCHED_IF:$GREP4 0x70 0xB5 0x84 0x6B 0x20 0x78 0x0F 0x21 0x08 0x40 0x00 0x28 0x
 
 
 
-EVENTSCRIPT:1=400DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての敵軍のAIをSVAL1の内容に変更(LOW)。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
-EVENTSCRIPT:2=410DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての友軍のAIをSVAL1の内容に変更(LOW)。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
+EVENTSCRIPT:1=400DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての敵軍のAIをSVAL1の内容に変更(LOW)[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
+EVENTSCRIPT:2=410DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての友軍のAIをSVAL1の内容に変更(LOW)[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]
 EVENTSCRIPT:3=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての敵軍のAIを[ZZ:AI1:AI1][WW:AI2:AI2]の内容に変更。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:4=40050100ZZWW0000410DXXYY{$L1:change_ai_all.dmp}	条件にマッチするすべての友軍のAIを[ZZ:AI1:AI1][WW:AI2:AI2]の内容に変更。[XX:UNIT:ユニット(00=ANY)][YY:CLASS:クラス(00=ANY)]	{UNITPERSOLNAL}
 
