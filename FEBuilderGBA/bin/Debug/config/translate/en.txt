@@ -4159,8 +4159,8 @@ When flag 4 is enabled, set the map to use the secondary BGM.
 :前作の残骸です。利用されません。
 Leftover data from previous FE. Unused in this game.
 
-:{0}のマークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\n
-Display mark of location for {0}.\r\nThis is only for display.\r\n\r\nActual {0} is set from "{0}" in detail menu.\r\n
+:{0}の▲マークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\nマークを消す場合は、255 , 0 を設定してください。\r\n
+The ▲ mark of {0} is displayed.\r\nHowever, it is only displayed.\r\n\r\nActual {0} is set from "{0}" in detail menu.\r\nTo erase the mark, set 255, 0.\r\n
 
 :離脱ポイント
 Thief Escape Point
@@ -8341,6 +8341,12 @@ Uninstall patch
 :パッチを含んでいないROM
 ROM without patch
 
+:変換開始
+Start conversion
+
+:ASMファイルを他のゲーム用に自動変換します
+Automatically convert ASM files for other games
+
 :一括アドレス変換
 Batch address translation
 
@@ -8361,6 +8367,9 @@ Address {0} is a {1} area.
 
 :--targetで、相手のROMを指定してください。
 --targetで、相手のROMを指定してください。
+
+:先に、ターゲットのROMを読込んでください。
+Please read the target ROM first.
 
 :この場所への最初の参照
 First Reference to This Location
@@ -8463,6 +8472,9 @@ Comparison Method
 
 :比較サイズ
 Comparison size
+
+:探索にASMMapを利用する
+Use ASMMap for searching
 
 :検索中
 Searching

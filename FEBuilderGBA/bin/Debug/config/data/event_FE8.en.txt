@@ -323,7 +323,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 22190000	CHECK_HARD	Difficulty If you are hard, you will get 1, otherwise you will get 0.	@STOREC	{COND}
 23190000	CHECK_TURNS	Get number of turns.	@STOREC	{COND}
 24190000	CHECK_ENEMIES	Get the number of enemy.	@STOREC	{COND}
-25190000	CHECK_OTHERS	Get a number of ally troops.	@STOREC	{COND}
+25190000	CHECK_OTHERS	Get the number of ally(Green NPC)	@STOREC	{COND}
 26190000	CHECK_SKIRMISH	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command.
 27190000	CHECK_TUTORIAL	Difficulty Level 1 if it is easy, 0 if not.	@STOREC	{COND}
 28190000	CHECK_MONEY	We will acquire the possession money.	@STOREC	{GOLD}	{COND}

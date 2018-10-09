@@ -13,28 +13,36 @@ namespace FEBuilderGBA
         public AsmMapFile()
         {
             string asmmap;
-            asmmap = U.ConfigDataFilename("asmmap_addition_");
+            asmmap = U.ConfigDataFilename("asmmap_addition_", Program.ROM);
             if (File.Exists(asmmap))
             {//追加マップファイル
                 Log.Notify("Load asmmap_addition", asmmap);
                 //型情報のスキャン.
-                ASMMapLoadStruct(asmmap);
+                ASMMapLoadStruct(asmmap, Program.ROM);
                 //逆アセンブラ用 map
-                ASMMapLoadResource(asmmap);
+                ASMMapLoadResource(asmmap, Program.ROM);
             }
             //ROM情報をmapとして利用する.
             ROMInfoLoadResource();
-
-            asmmap = U.ConfigDataFilename("asmmap_");
-            //型情報のスキャン.
-            ASMMapLoadStruct(asmmap);
             //構造体スキャン
             ROMTypeLoadResource();
-           
+
+            Load(Program.ROM);
+        }
+        public AsmMapFile(ROM rom)
+        {
+            Load(rom);
+        }
+        void Load(ROM rom)
+        {
+            string asmmap = U.ConfigDataFilename("asmmap_", rom);
+            //型情報のスキャン.
+            ASMMapLoadStruct(asmmap,rom);
+
             //逆アセンブラ用 map
-            ASMMapLoadResource(asmmap);
+            ASMMapLoadResource(asmmap, rom);
             //gba共通データ
-            ASMMapLoadResource(U.ConfigDataFilename("asmmap_gba_"));
+            ASMMapLoadResource(U.ConfigDataFilename("asmmap_gba_", rom),rom);
         }
 
         public AsmMapFile(AsmMapFile orignal)
@@ -269,7 +277,7 @@ namespace FEBuilderGBA
 	        public	List<AsmStructNode>	Nodes;
         };
 
-        void ASMMapLoadStruct(string fullfilename)
+        void ASMMapLoadStruct(string fullfilename, ROM rom)
         {
             //ユーザが定義したmapファイル
             if (!File.Exists(fullfilename))
@@ -282,7 +290,7 @@ namespace FEBuilderGBA
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    if (U.IsComment(line) || U.OtherLangLine(line, rom))
                     {
                         continue;
                     }
@@ -372,9 +380,117 @@ namespace FEBuilderGBA
             }
         }
 
-        Dictionary<string, AsmStruct> AsmStructs = new Dictionary<string, AsmStruct>();            //コメントデータ.
+        void ParseFuncName(string[] sp, out string out_FuncName)
+        {
+            if (sp.Length < 2)
+            {
+                out_FuncName = "";
+                return;
+            }
+            if (sp.Length < 3)
+            {
+                out_FuncName = sp[2];
+                return;
+            }
 
-        void ASMMapLoadResource(string fullfilename)
+            out_FuncName = sp[2];
+            int i = 3;
+            for (; i < sp.Length; i++)
+            {
+                string a = sp[i];
+                if (a.IndexOf("=") > 0)
+                {
+                    break;
+                }
+                out_FuncName += " " + a;
+            }
+        }
+
+        void ParseFuncNamePlus(string[] sp, out string out_FuncName, out string out_FuncArgs, out string out_FuncType)
+        {
+            int i = 2;
+            if (sp[i].Length > 0 && sp[i][0] == '&')
+            {
+                out_FuncType = sp[i].Substring(1);
+                i++;
+            }
+            else
+            {
+                out_FuncType = "";
+            }
+
+            out_FuncName = sp[i];
+            i++;
+
+            for (; i < sp.Length; i++)
+            {
+                string a = sp[i];
+                if (a.IndexOf("=") > 0)
+                {
+                    break;
+                }
+                out_FuncName += " " + a;
+            }
+
+            StringBuilder comment = new StringBuilder();
+            for (; i < sp.Length; i++)
+            {
+                comment.Append(" ");
+                comment.Append(sp[i]);
+            }
+            out_FuncArgs = U.substr(comment.ToString(), 1);
+        }
+
+        void ParseFuncNamePlus2(string[] sp, out string out_FuncName, out string out_FuncArgs, out string out_FuncType)
+        {
+            int i = 1;
+            out_FuncType = "";
+            if (sp[i].Length > 0 && sp[i][0] == '&')
+            {
+                out_FuncType = sp[i].Substring(1);
+                i++;
+            }
+
+            out_FuncName = sp[i];
+            i++;
+
+            for (; i < sp.Length; i++)
+            {
+                string a = sp[i];
+                if (a.IndexOf("=") > 0)
+                {
+                    break;
+                }
+                out_FuncName += " " + a;
+            }
+
+            StringBuilder comment = new StringBuilder();
+            for (; i < sp.Length; i++)
+            {
+                comment.Append(" ");
+                comment.Append(sp[i]);
+
+                int start = sp[i].IndexOf("RET=");
+                if (start >= 0 && out_FuncType == "")
+                {
+                    start += 4;
+                    int term = sp[i].IndexOf(" ", start);
+                    if (term < 0)
+                    {
+                        out_FuncType = U.substr(sp[i], start);
+                    }
+                    else
+                    {
+                        out_FuncType = U.substr(sp[i], start, term - start);
+                    }
+                }
+            }
+
+            out_FuncArgs = U.substr(comment.ToString(), 1);
+        }
+
+        Dictionary<string, AsmStruct> AsmStructs = new Dictionary<string, AsmStruct>();            //コメントデータ.
+        void ASMMapLoadResource(string fullfilename, ROM rom)
         {
             if (!U.IsRequiredFileExist(fullfilename))
             {
@@ -387,7 +503,7 @@ namespace FEBuilderGBA
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    if (U.IsComment(line) || U.OtherLangLine(line, rom))
                     {
                         continue;
                     }
@@ -420,6 +536,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
+
                     if (sp[1][0] == '@')
                     {//structを利用している
                         if (sp.Length <= 2)
@@ -461,7 +578,11 @@ namespace FEBuilderGBA
                                 AsmStructNode node = asmSt.Nodes[i];
                                 AsmMapSt p = new AsmMapSt();
                                 //p.Pointer = pointer; //keyに移動.
-                                p.Name = structName + "@" + sp[2] + "." + node.Name;
+
+                                string name;
+                                ParseFuncName(sp, out name);
+
+                                p.Name = structName + "@" + name + "." + node.Name;
                                 if (node.TypeName == "")
                                 {
                                     p.ResultAndArgs = node.Comment;
@@ -483,8 +604,12 @@ namespace FEBuilderGBA
                                 {
                                     AsmStructNode node = asmSt.Nodes[i];
                                     AsmMapSt p = new AsmMapSt();
+
+                                    string name;
+                                    ParseFuncName(sp, out name);
+
                                     //p.Pointer = pointer; //keyに移動.
-                                    p.Name = structName + "@" + sp[2] + "[" + n + "]" + "." + node.Name;
+                                    p.Name = structName + "@" + name + "[" + n + "]" + "." + node.Name;
                                     p.ResultAndArgs = node.Comment;
                                     p.TypeName = node.TypeName;
 
@@ -512,74 +637,20 @@ namespace FEBuilderGBA
                             U.Swap(ref pointer, ref endpointer);
                         }
 
-                        int i = 2;
-
                         AsmMapSt p = new AsmMapSt();
                         //p.Pointer = pointer; //keyに移動.
 
-                        if (sp[i].Length > 0 && sp[i][0] == '&')
-                        {
-                            p.TypeName = sp[i].Substring(1);
-                            i++;
-                        }
-
-                        p.Name = sp[i];
-                        i++;
-
-                        StringBuilder comment = new StringBuilder();
-                        for (; i < sp.Length; i++)
-                        {
-                            comment.Append(" ");
-                            comment.Append(sp[i]);
-                        }
+                        ParseFuncNamePlus(sp, out p.Name, out p.ResultAndArgs ,out p.TypeName);
                         p.Length = endpointer - pointer;
-                        p.ResultAndArgs = U.substr(comment.ToString(), 1);
-                        p.TypeName = "";
-
                         AsmMap[pointer] = p;
                     }
                     else
                     {//structを利用していない 範囲してもしない
-                        int i = 1;
                         AsmMapSt p = new AsmMapSt();
                         //p.Pointer = pointer; //keyに移動.
 
-                        string type = "";
-                        if (sp[i].Length > 0 && sp[i][0] == '&')
-                        {
-                            type = sp[i].Substring(1);
-                            i++;
-                        }
-
-                        p.Name = U.at(sp,i);
-                        i++;
-
-                        StringBuilder comment = new StringBuilder();
-                        for (; i < sp.Length; i++)
-                        {
-                            comment.Append(" ");
-                            comment.Append(sp[i]);
-                            
-                            int start = sp[i].IndexOf("RET=");
-                            if (start >= 0)
-                            {
-                                start += 4;
-                                int term = sp[i].IndexOf(" ",start);
-                                if (term < 0)
-                                {
-                                    type = U.substr(sp[i], start);
-                                }
-                                else
-                                {
-                                    type = U.substr(sp[i], start, term - start);
-                                }
-                            }
-                        }
-                        p.ResultAndArgs = U.substr(comment.ToString(), 1);
-                        p.TypeName = type;
-
-                        TypeToLengthAndName(p, type, pointer);
-
+                        ParseFuncNamePlus2(sp, out p.Name, out p.ResultAndArgs, out p.TypeName);
+                        TypeToLengthAndName(p, pointer, rom);
                         AsmMap[pointer] = p;
                     }
 
@@ -587,30 +658,31 @@ namespace FEBuilderGBA
             }
         }
 
-        void TypeToLengthAndName(AsmMapSt p,string type,uint pointer)
+        void TypeToLengthAndName(AsmMapSt p,uint pointer, ROM rom)
         {
+            string type = p.TypeName;
             if (type == "LZ77")
             {
-                p.Length = LZ77.getCompressedSize(Program.ROM.Data, U.toOffset(pointer));
+                p.Length = LZ77.getCompressedSize(rom.Data, U.toOffset(pointer));
             }
             else if (type == "OAMREGS")
             {
-                p.Length = U.OAMREGSLength(U.toOffset(pointer));
+                p.Length = U.OAMREGSLength(U.toOffset(pointer), rom);
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
             }
             else if (type == "TEXTBATCH")
             {
-                p.Length = U.TextBatchLength(U.toOffset(pointer));
+                p.Length = U.TextBatchLength(U.toOffset(pointer), rom);
                 p.Name += " Count_" + ((p.Length) / 8);
             }
             else if (type == "EVENT")
             {
-                p.Length = EventScript.SearchEveneLength(Program.ROM.Data, U.toOffset(pointer));
+                p.Length = EventScript.SearchEveneLength(rom.Data, U.toOffset(pointer));
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
             }
             else if (type == "HEADERTSA")
             {
-                p.Length = ImageUtil.CalcByteLengthForHeaderTSAData(Program.ROM.Data, (int)U.toOffset(pointer));
+                p.Length = ImageUtil.CalcByteLengthForHeaderTSAData(rom.Data, (int)U.toOffset(pointer));
             }
             else if (type == "PALETTE")
             {
@@ -634,7 +706,7 @@ namespace FEBuilderGBA
             }
             else if (type == "ROMTCS")
             {
-                p.Length = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer));
+                p.Length = ImageUtilAP.CalcROMTCSLength(U.toOffset(pointer), rom);
             }
             else if (type == "NAZO60")
             {
@@ -646,7 +718,7 @@ namespace FEBuilderGBA
             }
             else if (type == "NewPopupSimple")
             {
-                p.Length = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer));
+                p.Length = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer), rom);
             }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
@@ -991,6 +1063,19 @@ namespace FEBuilderGBA
                     addr = U.Padding4(addr);
                 }
             }
+        }
+
+        //名前からの逆検索(ただし、遅い)
+        public uint SearchName(string name)
+        {
+            foreach (var pair in AsmMap)
+            {
+                if (pair.Value.Name == name)
+                {
+                    return pair.Key;
+                }
+            }
+            return U.NOT_FOUND;
         }
 
         //近いデータの検索

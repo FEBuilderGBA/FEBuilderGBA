@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -24,8 +25,6 @@ namespace FEBuilderGBA
             SlideComboBox.SelectedIndex = 0;
             AutomaticTrackingComboBox.SelectedIndex = 2;
         }
-
-        
 
         private void PointerToolForm_Load(object sender, EventArgs e)
         {
@@ -161,10 +160,17 @@ namespace FEBuilderGBA
             }
         }
 
+
         void AutoSearch()
         {
             if (InputFormRef.IsPleaseWaitDialog(this))
             {//2重割り込み禁止
+                return;
+            }
+            if (this.OtherROMData == null
+                || this.OtherROMData.Length <= 0)
+            {//別のROMを読込んでいないので探索不可能
+                SearchCurrentROM();
                 return;
             }
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
@@ -189,6 +195,15 @@ namespace FEBuilderGBA
                 }
 
                 addr = U.ChangeEndian32(addr);
+                SearchCurrentROM();
+
+                if (UseASMMAPCheckBox.Checked)
+                {
+                    if (SearchASMMap())
+                    {
+                        return;
+                    }
+                }
 
                 uint autoMatictrackLevel = U.atoh(AutomaticTrackingComboBox.Text);
                 if (autoMatictrackLevel == 0)
@@ -280,6 +295,31 @@ namespace FEBuilderGBA
                 }
 
             }
+        }
+        //名前で探索する
+        bool SearchASMMap()
+        {
+            string name = Program.AsmMapFileAsmCache.GetName(this.CurrentPointer);
+            uint foundAddr = this.OtherROMASMMap.SearchName(name);
+            if (foundAddr == U.NOT_FOUND)
+            {
+                return false;
+            }
+            uint littleendian = ((foundAddr >> 24) & 0xFF) + (((foundAddr >> 16) & 0xFF) << 8) + (((foundAddr >> 8) & 0xFF) << 16) + (((foundAddr) & 0xFF) << 24);
+
+            byte[] b = new byte[4];
+            b[0] = (byte)((littleendian >> 24) & 0xFF);
+            b[1] = (byte)((littleendian >> 16) & 0xFF);
+            b[2] = (byte)((littleendian >> 8) & 0xFF);
+            b[3] = (byte)((littleendian) & 0xFF);
+            uint refaddress = U.Grep(this.OtherROMData, b);
+
+            SetAddressText(this.OtherROMAddressWithLDR, U.NOT_FOUND);
+            SetAddressText(this.OtherROMAddressWithLDRRef, U.NOT_FOUND);
+            SetAddressText(this.OtherROMAddress2, foundAddr);
+            SetAddressText(this.OtherROMRefPointer2, refaddress);
+
+            return true;
         }
         
         private void Address_KeyDown(object sender, KeyEventArgs e)
@@ -388,6 +428,7 @@ namespace FEBuilderGBA
         private void Address_ValueChanged(object sender, EventArgs e)
         {
             HideError();
+            SearchCurrentROM();
             Search();
 
             if (this.OtherROMData == null)
@@ -412,7 +453,9 @@ namespace FEBuilderGBA
             return 0;
         }
 
-        private void Search()
+        uint CurrentPointer;
+        uint CurrentREFAddress;
+        private void SearchCurrentROM()
         {
             //マッチテストサイズ
             int testMatchDataSize = minusAtoH(TestMatchDataSizeComboBox.Text);
@@ -428,7 +471,7 @@ namespace FEBuilderGBA
             b[3] = (byte)((littleendian) & 0xFF);
             uint refaddress = U.Grep(Program.ROM.Data, b);
 
-            SetAddressText(this.Pointer,pointer);
+            SetAddressText(this.Pointer, pointer);
             SetAddressText(this.LittleEndian, littleendian);
             SetAddressText(this.RefPointer, refaddress);
             SetAddressText(this.DataAddress, U.NOT_FOUND);
@@ -442,19 +485,18 @@ namespace FEBuilderGBA
                     SetAddressText(this.DataAddress, thisPointer);
                 }
             }
+            this.CurrentPointer = pointer;
+            this.CurrentREFAddress = refaddress;
+        }
 
-            if (this.OtherROMData == null)
-            {
-                return ;
-            }
-
-
+        private void Search()
+        {
             uint slide = U.atoh(this.SlideComboBox.Text);
 
             //LDR参照値を利用した比較
             {
                 uint otherROMAddressWithLDR, otherROMAddressWithLDRRef;
-                FindOtherROMDataWithLDR(pointer, refaddress, (int)slide
+                FindOtherROMDataWithLDR(this.CurrentPointer, this.CurrentREFAddress, (int)slide
                     , out otherROMAddressWithLDR, out otherROMAddressWithLDRRef);
 
                 SetAddressText(this.OtherROMAddressWithLDR, otherROMAddressWithLDR);
@@ -464,7 +506,7 @@ namespace FEBuilderGBA
             //現在地のデータが別のROMにもあるか？
             {
                 uint otherROMAddress2, otherROMRefPointer2;
-                FindOtherROMData(pointer, (int)slide
+                FindOtherROMData(this.CurrentPointer, (int)slide
                     , out otherROMAddress2, out otherROMRefPointer2);
 
                 SetAddressText(this.OtherROMAddress2, otherROMAddress2);
@@ -683,6 +725,7 @@ namespace FEBuilderGBA
         
         string OtherROMFilename;
         byte[] OtherROMData;
+        AsmMapFile OtherROMASMMap;
         
         private void LoadOtherROMButton_Click(object sender, EventArgs e)
         {
@@ -715,6 +758,13 @@ namespace FEBuilderGBA
         }
         void LoadTargetROM(string filename)
         {
+            ROM OtherROM = new ROM();
+            string version;
+            if (OtherROM.Load(filename, out version))
+            {
+                this.OtherROMASMMap = new AsmMapFile(OtherROM);
+            }
+
             this.OtherROMFilename = filename;
             this.OtherROMData = File.ReadAllBytes(filename);
 
@@ -828,6 +878,13 @@ namespace FEBuilderGBA
 
         private void BatchButton_Click(object sender, EventArgs e)
         {
+            if (this.OtherROMData == null
+                || this.OtherROMData.Length <= 0)
+            {
+                R.ShowStopError("先に、ターゲットのROMを読込んでください。");
+                return;
+            }
+
             PointerToolBatchInputForm f = (PointerToolBatchInputForm)InputFormRef.JumpFormLow<PointerToolBatchInputForm>();
             f.SetTextData("");
             DialogResult dr =  f.ShowDialog();
@@ -960,6 +1017,116 @@ namespace FEBuilderGBA
                 line = line.Replace(v, newV);
             }
             return found;
+        }
+
+        string ReplaceFunction(string prefix, uint addr, string orignalValue, Dictionary<uint, uint> addressCache)
+        {
+            if (prefix == "0x")
+            {
+                if (addr < 0x10000)
+                {//小さすぎるアドレスには何もしない
+                    return orignalValue;
+                }
+            }
+            else
+            {
+                if (addr < 0xA00)
+                {//小さすぎるアドレスには何もしない
+                    return orignalValue;
+                }
+            }
+            if (addr >= 0x0F000000)
+            {//大きすぎる
+                return orignalValue;
+            }
+            
+            uint cacheHitAddr;
+            if ( addressCache.TryGetValue(addr,out cacheHitAddr))
+            {
+                return prefix + U.ToHexString(cacheHitAddr);
+            }
+
+            this.Address.Text = U.ToHexString(addr);
+            AutoSearch();
+            bool isNearMatch;
+            if (!IsDataFound(out isNearMatch))
+            {//見つからなかった
+                return "??=>" + orignalValue;
+            }
+
+            uint foundAddr = U.atoh(OtherROMAddress2.Text);
+            if (foundAddr == U.NOT_FOUND)
+            {
+                foundAddr = U.atoh(OtherROMAddressWithLDR.Text);
+                if (foundAddr == U.NOT_FOUND)
+                {//ない
+                    return "??=>" + orignalValue;
+                }
+            }
+
+            //奇数データが必要ならば奇数化する.
+            if (U.IsValueOdd(addr))
+            {
+                if (!U.IsValueOdd(foundAddr))
+                {
+                    foundAddr++;
+                }
+            }
+            //ポインタ化が必要ならばポインタ化する
+            if (U.isPointer(addr))
+            {
+                foundAddr = U.toPointer(foundAddr);
+            }
+            else if (U.isOffset(addr))
+            {
+                foundAddr = U.toOffset(foundAddr);
+            }
+
+            addressCache[addr] = foundAddr;
+            return prefix + U.ToHexString(foundAddr);
+        }
+
+        private void PointerToolAlienButton_Click(object sender, EventArgs e)
+        {
+            if (   this.OtherROMData == null 
+                || this.OtherROMData.Length <= 0)
+            {
+                R.ShowStopError("先に、ターゲットのROMを読込んでください。");
+                return;
+            }
+
+            PointerToolAlienForm f = (PointerToolAlienForm)InputFormRef.JumpFormLow<PointerToolAlienForm>();
+            DialogResult dr = f.ShowDialog(this);
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
+            string saveFilename = AlienSourceCode(f.GetFilename());
+        }
+        string AlienSourceCode(string filename)
+        {
+            Dictionary<uint, uint> addressCache = new Dictionary<uint, uint>();
+
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = Regex.Replace(lines[i], @"(0x|$)([0-9a-fA-F]+)", (Match m)=>
+                {
+                    if (m.Groups.Count < 3)
+                    {
+                        return m.Value;
+                    }
+                    uint addr = U.atoh(m.Groups[2].ToString());
+                    string prefix = m.Groups[1].ToString();
+
+                    return ReplaceFunction(prefix, addr, m.Value, addressCache);
+                });
+            }
+            string ext = Path.GetExtension(filename);
+            string saveFilename = filename + ".convert" + ext;
+            File.WriteAllLines(saveFilename, lines);
+            return saveFilename; 
         }
     }
 }

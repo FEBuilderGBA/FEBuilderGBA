@@ -6,7 +6,7 @@
 .endm
 .thumb
 
-@Call 24878         @FE8J
+@Call $24878        @FE8J
 @r0   操作キャラのワークメモリへのポインタ
 
 push {r4, r5}

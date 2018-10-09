@@ -1,0 +1,33 @@
+NAME=DismountEx 乗り降りを可能にする
+NAME.en=DismountEx Enable to Rade and Exit
+
+IF:0x0248C8=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+//データへのポインタ
+POINTER=$FGREP4END DM_RideCommandUsability.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//データを定義します
+B0:UNIT=Unit(0=Any)
+B1:CLASS=From Class
+B2:CLASS=To Class
+B3:MAP=Chaptor ID(FF=Any)
+W4:FLAG=Judgment flag(0=Any)
+W6:SONG=From SE(0=None)
+W8:SONG=To SE(0=None)
+W10=00
+
+INFO=乗り降りできるユニットを設定します。
+AUTHOR=7743
+INFO.en=Set up a unit that can get on and off.
+NAME.zh=DismountEx打开和关闭
+INFO.zh=设置一个可以开启和关闭的单元。

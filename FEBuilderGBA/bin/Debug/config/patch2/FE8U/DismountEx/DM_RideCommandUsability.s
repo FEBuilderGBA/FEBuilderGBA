@@ -6,12 +6,21 @@
 .endm
 .thumb
 
-@Call $24900        @FE8J
+@Call $248C8        @
 @r0   操作キャラのワークメモリへのポインタ
 
 push {r4, r5}
 ldr  r4, Table
 ldr  r5, [r0]
+
+@ バリスタに乗っている場合は、非表示にする
+ldr r0, [r5, #0xc]
+MOV r1, #0x80
+LSL r1 ,r1 ,#0x4
+and r0 ,r1
+cmp r0, #0x0
+bne NotMatch
+
 
 sub  r4, #0xC       @ 面倒なので最初にひいておく
 
@@ -24,7 +33,7 @@ beq  NotMatch
 CheckUnit:
 ldrb r0,[r4,#0x00]  @     B0:UNIT=UNITID(0x00=ANY)
 cmp  r0, #0x00      @     ANY
-beq  CheckToClass
+beq  CheckFromClass
 
 ldr  r3,[r5,#0x00]  @     Get Unit Struct
 ldrb r1,[r3,#0x04]  @     Unit->ID
@@ -32,8 +41,8 @@ cmp  r0,r1
 bne  Loop           @     条件不一致なので、次のループへ continue;
 
 
-CheckToClass:
-ldrb r0,[r4,#0x02]  @     B2:CLASS=To Class
+CheckFromClass:
+ldrb r0,[r4,#0x01]  @     B1:CLASS=Form Class
 
 ldr  r3,[r5,#0x04]  @     Get Class Struct
 ldrb r1,[r3,#0x04]  @     Class->ID
@@ -46,7 +55,7 @@ ldrb r0,[r4,#0x03]  @     B0:MAP=MAPID(0xFF=ANY)
 cmp  r0,#0xFF       @     ANY MAPID ?
 beq  CheckFlag
 
-ldr  r2,=#0x202BCEC @FE8J Chaptor Pointer  (@ChapterData)
+ldr  r2,=#0x202BCF0 @ Chaptor Pointer  (@ChapterData)
 ldrb r1,[r2,#0xE]   @     ChapterData->MAPID
 cmp  r0,r1
 bne  Loop           @     条件不一致なので、次のループへ continue;
@@ -57,7 +66,7 @@ ldrh r0,[r4,#0x04]  @     W2:Flag=Flag(0x00=ANY)
 cmp  r0,#0x0        @     ANY Flag ?
 beq  Found
 
-blh  0x080860D0     @FE8J CheckFlag  Flag=r0  Result=r0:bool
+blh  0x08083DA8     @ CheckFlag  Flag=r0  Result=r0:bool
 cmp	r0,#0x00
 beq  Loop           @     条件不一致なので、次のループへ continue;
 
@@ -69,12 +78,12 @@ pop {r1}
 mov pc,r1
 
 NotMatch:
-mov r0, r5           @壊す命令の再送
-ldr r0, [r0, #0xc]
-MOV r1, #0x80
-LSL r1 ,r1 ,#0x4
+MOV r2, r5         @壊す命令の再送
+LDR r0, [r2, #0x0]
+LDR r1, [r2, #0x4]
+LDR r1, [r2, #0x4]
 
-LDR r3, =0x08024908  @FE8J バリスタチェックの続きを行う
+LDR r3, =0x080248D0  @ バリスタチェックの続きを行う
 pop {r4, r5}
 mov pc,r3
 

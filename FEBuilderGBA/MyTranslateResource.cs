@@ -33,6 +33,10 @@ namespace FEBuilderGBA
             try
             {
 #endif
+                if (args.Length <= 0)
+                {
+                    return trans;
+                }
                 return string.Format(trans, args);
 #if !DEBUG
             }

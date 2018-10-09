@@ -10242,7 +10242,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_ESCAPE_POINT")
             {
-                str = R._("{0}のマークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\n", R._("離脱ポイント"));
+                str = R._("{0}の▲マークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\nマークを消す場合は、255 , 0 を設定してください。\r\n", R._("離脱ポイント"));
             }
             else if (str == "@MAPSETTING_INIT_COORDINATE")
             {

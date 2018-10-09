@@ -31,7 +31,7 @@ namespace FEBuilderGBA
         void AllowDropFilename()
         {
             U.AllowDropFilename(this
-                , new string[] { ".ASM", ".S", ".TXT" }
+                , new string[] { ".ASM", ".S", ".TXT","" }
                 , (string filename) =>
                 {
                     SRCFilename.Text = filename;

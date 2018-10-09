@@ -34,26 +34,19 @@
             this.LoadOtherROMButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.LittleEndian = new FEBuilderGBA.TextBoxEx();
-            this.RefPointer = new FEBuilderGBA.TextBoxEx();
-            this.OtherROMRefPointer2 = new FEBuilderGBA.TextBoxEx();
-            this.OtherROMAddress2 = new FEBuilderGBA.TextBoxEx();
-            this.Pointer = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
-            this.DataAddress = new FEBuilderGBA.TextBoxEx();
             this.label9 = new System.Windows.Forms.Label();
             this.ERROR_ZERO1 = new System.Windows.Forms.Label();
-            this.Address = new FEBuilderGBA.TextBoxEx();
             this.WhatIsButton = new System.Windows.Forms.Button();
             this.BatchButton = new System.Windows.Forms.Button();
-            this.OtherROMAddressWithLDRRef = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
-            this.OtherROMAddressWithLDR = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
             this.OtherLoadName = new System.Windows.Forms.Label();
             this.ERROR_VERYFAR1 = new System.Windows.Forms.Label();
             this.ERROR_VERYFAR3 = new System.Windows.Forms.Label();
             this.ERROR_ZERO3 = new System.Windows.Forms.Label();
+            this.OtherROMAddressWithLDRRef = new FEBuilderGBA.TextBoxEx();
+            this.OtherROMAddressWithLDR = new FEBuilderGBA.TextBoxEx();
             this.groupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.WarningLevelComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,6 +61,14 @@
             this.DataType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.TestMatchDataSizeComboBox = new System.Windows.Forms.ComboBox();
+            this.Address = new FEBuilderGBA.TextBoxEx();
+            this.DataAddress = new FEBuilderGBA.TextBoxEx();
+            this.Pointer = new FEBuilderGBA.TextBoxEx();
+            this.OtherROMRefPointer2 = new FEBuilderGBA.TextBoxEx();
+            this.OtherROMAddress2 = new FEBuilderGBA.TextBoxEx();
+            this.RefPointer = new FEBuilderGBA.TextBoxEx();
+            this.LittleEndian = new FEBuilderGBA.TextBoxEx();
+            this.UseASMMAPCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,10 +108,10 @@
             // 
             // LoadOtherROMButton
             // 
-            this.LoadOtherROMButton.Location = new System.Drawing.Point(333, 222);
+            this.LoadOtherROMButton.Location = new System.Drawing.Point(291, 222);
             this.LoadOtherROMButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadOtherROMButton.Name = "LoadOtherROMButton";
-            this.LoadOtherROMButton.Size = new System.Drawing.Size(187, 32);
+            this.LoadOtherROMButton.Size = new System.Drawing.Size(231, 32);
             this.LoadOtherROMButton.TabIndex = 5;
             this.LoadOtherROMButton.Text = "別ROM読込";
             this.LoadOtherROMButton.UseVisualStyleBackColor = true;
@@ -119,7 +120,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(13, 307);
+            this.label6.Location = new System.Drawing.Point(13, 334);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(374, 30);
@@ -130,78 +131,13 @@
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(13, 261);
+            this.label7.Location = new System.Drawing.Point(13, 288);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(374, 46);
             this.label7.TabIndex = 42;
             this.label7.Text = "アドレス値の参照先の\r\nデータがある場所";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LittleEndian
-            // 
-            this.LittleEndian.ErrorMessage = "";
-            this.LittleEndian.Location = new System.Drawing.Point(396, 89);
-            this.LittleEndian.Margin = new System.Windows.Forms.Padding(2);
-            this.LittleEndian.Name = "LittleEndian";
-            this.LittleEndian.Placeholder = "";
-            this.LittleEndian.ReadOnly = true;
-            this.LittleEndian.Size = new System.Drawing.Size(124, 25);
-            this.LittleEndian.TabIndex = 2;
-            this.LittleEndian.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.LittleEndian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
-            // RefPointer
-            // 
-            this.RefPointer.ErrorMessage = "";
-            this.RefPointer.Location = new System.Drawing.Point(396, 116);
-            this.RefPointer.Margin = new System.Windows.Forms.Padding(2);
-            this.RefPointer.Name = "RefPointer";
-            this.RefPointer.Placeholder = "";
-            this.RefPointer.ReadOnly = true;
-            this.RefPointer.Size = new System.Drawing.Size(124, 25);
-            this.RefPointer.TabIndex = 3;
-            this.RefPointer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.RefPointer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
-            // OtherROMRefPointer2
-            // 
-            this.OtherROMRefPointer2.ErrorMessage = "";
-            this.OtherROMRefPointer2.Location = new System.Drawing.Point(398, 307);
-            this.OtherROMRefPointer2.Margin = new System.Windows.Forms.Padding(2);
-            this.OtherROMRefPointer2.Name = "OtherROMRefPointer2";
-            this.OtherROMRefPointer2.Placeholder = "";
-            this.OtherROMRefPointer2.ReadOnly = true;
-            this.OtherROMRefPointer2.Size = new System.Drawing.Size(124, 25);
-            this.OtherROMRefPointer2.TabIndex = 7;
-            this.OtherROMRefPointer2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.OtherROMRefPointer2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
-            // OtherROMAddress2
-            // 
-            this.OtherROMAddress2.ErrorMessage = "";
-            this.OtherROMAddress2.Location = new System.Drawing.Point(398, 261);
-            this.OtherROMAddress2.Margin = new System.Windows.Forms.Padding(2);
-            this.OtherROMAddress2.Name = "OtherROMAddress2";
-            this.OtherROMAddress2.Placeholder = "";
-            this.OtherROMAddress2.ReadOnly = true;
-            this.OtherROMAddress2.Size = new System.Drawing.Size(124, 25);
-            this.OtherROMAddress2.TabIndex = 6;
-            this.OtherROMAddress2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.OtherROMAddress2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
-            // Pointer
-            // 
-            this.Pointer.ErrorMessage = "";
-            this.Pointer.Location = new System.Drawing.Point(396, 54);
-            this.Pointer.Margin = new System.Windows.Forms.Padding(2);
-            this.Pointer.Name = "Pointer";
-            this.Pointer.Placeholder = "";
-            this.Pointer.ReadOnly = true;
-            this.Pointer.Size = new System.Drawing.Size(124, 25);
-            this.Pointer.TabIndex = 1;
-            this.Pointer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.Pointer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
             // 
             // label8
             // 
@@ -213,19 +149,6 @@
             this.label8.TabIndex = 51;
             this.label8.Text = "ポインタ化";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // DataAddress
-            // 
-            this.DataAddress.ErrorMessage = "";
-            this.DataAddress.Location = new System.Drawing.Point(396, 160);
-            this.DataAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.DataAddress.Name = "DataAddress";
-            this.DataAddress.Placeholder = "";
-            this.DataAddress.ReadOnly = true;
-            this.DataAddress.Size = new System.Drawing.Size(124, 25);
-            this.DataAddress.TabIndex = 4;
-            this.DataAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.DataAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
             // 
             // label9
             // 
@@ -241,30 +164,19 @@
             // ERROR_ZERO1
             // 
             this.ERROR_ZERO1.AutoSize = true;
-            this.ERROR_ZERO1.Location = new System.Drawing.Point(12, 358);
+            this.ERROR_ZERO1.Location = new System.Drawing.Point(12, 385);
             this.ERROR_ZERO1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ERROR_ZERO1.Name = "ERROR_ZERO1";
             this.ERROR_ZERO1.Size = new System.Drawing.Size(123, 18);
             this.ERROR_ZERO1.TabIndex = 59;
             this.ERROR_ZERO1.Text = "警告:0地帯です";
             // 
-            // Address
-            // 
-            this.Address.ErrorMessage = "";
-            this.Address.Location = new System.Drawing.Point(396, 17);
-            this.Address.Margin = new System.Windows.Forms.Padding(4);
-            this.Address.Name = "Address";
-            this.Address.Placeholder = "";
-            this.Address.Size = new System.Drawing.Size(126, 25);
-            this.Address.TabIndex = 0;
-            this.Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Address_KeyDown);
-            // 
             // WhatIsButton
             // 
-            this.WhatIsButton.Location = new System.Drawing.Point(639, 589);
+            this.WhatIsButton.Location = new System.Drawing.Point(639, 545);
             this.WhatIsButton.Margin = new System.Windows.Forms.Padding(2);
             this.WhatIsButton.Name = "WhatIsButton";
-            this.WhatIsButton.Size = new System.Drawing.Size(360, 32);
+            this.WhatIsButton.Size = new System.Drawing.Size(386, 32);
             this.WhatIsButton.TabIndex = 13;
             this.WhatIsButton.Text = "アドレスの種類判定";
             this.WhatIsButton.UseVisualStyleBackColor = true;
@@ -272,32 +184,19 @@
             // 
             // BatchButton
             // 
-            this.BatchButton.Location = new System.Drawing.Point(639, 538);
+            this.BatchButton.Location = new System.Drawing.Point(639, 508);
             this.BatchButton.Margin = new System.Windows.Forms.Padding(2);
             this.BatchButton.Name = "BatchButton";
-            this.BatchButton.Size = new System.Drawing.Size(360, 32);
+            this.BatchButton.Size = new System.Drawing.Size(386, 32);
             this.BatchButton.TabIndex = 12;
             this.BatchButton.Text = "バッチ (一括処理)";
             this.BatchButton.UseVisualStyleBackColor = true;
             this.BatchButton.Click += new System.EventHandler(this.BatchButton_Click);
             // 
-            // OtherROMAddressWithLDRRef
-            // 
-            this.OtherROMAddressWithLDRRef.ErrorMessage = "";
-            this.OtherROMAddressWithLDRRef.Location = new System.Drawing.Point(396, 443);
-            this.OtherROMAddressWithLDRRef.Margin = new System.Windows.Forms.Padding(2);
-            this.OtherROMAddressWithLDRRef.Name = "OtherROMAddressWithLDRRef";
-            this.OtherROMAddressWithLDRRef.Placeholder = "";
-            this.OtherROMAddressWithLDRRef.ReadOnly = true;
-            this.OtherROMAddressWithLDRRef.Size = new System.Drawing.Size(124, 25);
-            this.OtherROMAddressWithLDRRef.TabIndex = 11;
-            this.OtherROMAddressWithLDRRef.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.OtherROMAddressWithLDRRef.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(11, 441);
+            this.label4.Location = new System.Drawing.Point(11, 468);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(374, 30);
@@ -305,23 +204,10 @@
             this.label4.Text = "上記データの参照場所";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // OtherROMAddressWithLDR
-            // 
-            this.OtherROMAddressWithLDR.ErrorMessage = "";
-            this.OtherROMAddressWithLDR.Location = new System.Drawing.Point(396, 395);
-            this.OtherROMAddressWithLDR.Margin = new System.Windows.Forms.Padding(2);
-            this.OtherROMAddressWithLDR.Name = "OtherROMAddressWithLDR";
-            this.OtherROMAddressWithLDR.Placeholder = "";
-            this.OtherROMAddressWithLDR.ReadOnly = true;
-            this.OtherROMAddressWithLDR.Size = new System.Drawing.Size(124, 25);
-            this.OtherROMAddressWithLDR.TabIndex = 10;
-            this.OtherROMAddressWithLDR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
-            this.OtherROMAddressWithLDR.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
-            // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(11, 395);
+            this.label5.Location = new System.Drawing.Point(11, 422);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(374, 46);
@@ -341,7 +227,7 @@
             // ERROR_VERYFAR1
             // 
             this.ERROR_VERYFAR1.AutoSize = true;
-            this.ERROR_VERYFAR1.Location = new System.Drawing.Point(12, 358);
+            this.ERROR_VERYFAR1.Location = new System.Drawing.Point(12, 385);
             this.ERROR_VERYFAR1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ERROR_VERYFAR1.Name = "ERROR_VERYFAR1";
             this.ERROR_VERYFAR1.Size = new System.Drawing.Size(182, 18);
@@ -351,7 +237,7 @@
             // ERROR_VERYFAR3
             // 
             this.ERROR_VERYFAR3.AutoSize = true;
-            this.ERROR_VERYFAR3.Location = new System.Drawing.Point(15, 481);
+            this.ERROR_VERYFAR3.Location = new System.Drawing.Point(15, 508);
             this.ERROR_VERYFAR3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ERROR_VERYFAR3.Name = "ERROR_VERYFAR3";
             this.ERROR_VERYFAR3.Size = new System.Drawing.Size(182, 18);
@@ -361,12 +247,38 @@
             // ERROR_ZERO3
             // 
             this.ERROR_ZERO3.AutoSize = true;
-            this.ERROR_ZERO3.Location = new System.Drawing.Point(15, 481);
+            this.ERROR_ZERO3.Location = new System.Drawing.Point(15, 508);
             this.ERROR_ZERO3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ERROR_ZERO3.Name = "ERROR_ZERO3";
             this.ERROR_ZERO3.Size = new System.Drawing.Size(123, 18);
             this.ERROR_ZERO3.TabIndex = 71;
             this.ERROR_ZERO3.Text = "警告:0地帯です";
+            // 
+            // OtherROMAddressWithLDRRef
+            // 
+            this.OtherROMAddressWithLDRRef.ErrorMessage = "";
+            this.OtherROMAddressWithLDRRef.Location = new System.Drawing.Point(396, 470);
+            this.OtherROMAddressWithLDRRef.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherROMAddressWithLDRRef.Name = "OtherROMAddressWithLDRRef";
+            this.OtherROMAddressWithLDRRef.Placeholder = "";
+            this.OtherROMAddressWithLDRRef.ReadOnly = true;
+            this.OtherROMAddressWithLDRRef.Size = new System.Drawing.Size(124, 25);
+            this.OtherROMAddressWithLDRRef.TabIndex = 11;
+            this.OtherROMAddressWithLDRRef.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.OtherROMAddressWithLDRRef.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // OtherROMAddressWithLDR
+            // 
+            this.OtherROMAddressWithLDR.ErrorMessage = "";
+            this.OtherROMAddressWithLDR.Location = new System.Drawing.Point(396, 422);
+            this.OtherROMAddressWithLDR.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherROMAddressWithLDR.Name = "OtherROMAddressWithLDR";
+            this.OtherROMAddressWithLDR.Placeholder = "";
+            this.OtherROMAddressWithLDR.ReadOnly = true;
+            this.OtherROMAddressWithLDR.Size = new System.Drawing.Size(124, 25);
+            this.OtherROMAddressWithLDR.TabIndex = 10;
+            this.OtherROMAddressWithLDR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.OtherROMAddressWithLDR.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
             // 
             // groupBox1
             // 
@@ -388,7 +300,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(467, 521);
+            this.groupBox1.Size = new System.Drawing.Size(494, 487);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "検索オプション";
@@ -396,7 +308,6 @@
             // WarningLevelComboBox
             // 
             this.WarningLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.WarningLevelComboBox.FormattingEnabled = true;
             this.WarningLevelComboBox.Items.AddRange(new object[] {
             "警告をエラーにする",
@@ -405,7 +316,7 @@
             this.WarningLevelComboBox.Location = new System.Drawing.Point(211, 245);
             this.WarningLevelComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.WarningLevelComboBox.Name = "WarningLevelComboBox";
-            this.WarningLevelComboBox.Size = new System.Drawing.Size(250, 26);
+            this.WarningLevelComboBox.Size = new System.Drawing.Size(276, 26);
             this.WarningLevelComboBox.TabIndex = 66;
             // 
             // label10
@@ -433,7 +344,6 @@
             // AutomaticTrackingComboBox
             // 
             this.AutomaticTrackingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.AutomaticTrackingComboBox.FormattingEnabled = true;
             this.AutomaticTrackingComboBox.Items.AddRange(new object[] {
             "0000=自動追跡しない",
@@ -449,7 +359,7 @@
             this.AutomaticTrackingComboBox.Location = new System.Drawing.Point(211, 215);
             this.AutomaticTrackingComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.AutomaticTrackingComboBox.Name = "AutomaticTrackingComboBox";
-            this.AutomaticTrackingComboBox.Size = new System.Drawing.Size(250, 26);
+            this.AutomaticTrackingComboBox.Size = new System.Drawing.Size(276, 26);
             this.AutomaticTrackingComboBox.TabIndex = 4;
             // 
             // label16
@@ -466,7 +376,6 @@
             // SlideComboBox
             // 
             this.SlideComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.SlideComboBox.FormattingEnabled = true;
             this.SlideComboBox.Items.AddRange(new object[] {
             "0=追加検索しない",
@@ -480,14 +389,14 @@
             this.SlideComboBox.Location = new System.Drawing.Point(211, 134);
             this.SlideComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.SlideComboBox.Name = "SlideComboBox";
-            this.SlideComboBox.Size = new System.Drawing.Size(250, 26);
+            this.SlideComboBox.Size = new System.Drawing.Size(276, 26);
             this.SlideComboBox.TabIndex = 3;
             this.SlideComboBox.SelectedIndexChanged += new System.EventHandler(this.Address_ValueChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 322);
+            this.label15.Location = new System.Drawing.Point(8, 302);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(303, 108);
@@ -509,7 +418,6 @@
             // GrepType
             // 
             this.GrepType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.GrepType.FormattingEnabled = true;
             this.GrepType.Items.AddRange(new object[] {
             "0=完全一致",
@@ -517,7 +425,7 @@
             this.GrepType.Location = new System.Drawing.Point(212, 103);
             this.GrepType.Margin = new System.Windows.Forms.Padding(2);
             this.GrepType.Name = "GrepType";
-            this.GrepType.Size = new System.Drawing.Size(250, 26);
+            this.GrepType.Size = new System.Drawing.Size(276, 26);
             this.GrepType.TabIndex = 2;
             this.GrepType.SelectedIndexChanged += new System.EventHandler(this.Address_ValueChanged);
             // 
@@ -535,7 +443,6 @@
             // DataType
             // 
             this.DataType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.DataType.FormattingEnabled = true;
             this.DataType.Items.AddRange(new object[] {
             "0=DATA",
@@ -543,7 +450,7 @@
             this.DataType.Location = new System.Drawing.Point(212, 72);
             this.DataType.Margin = new System.Windows.Forms.Padding(2);
             this.DataType.Name = "DataType";
-            this.DataType.Size = new System.Drawing.Size(250, 26);
+            this.DataType.Size = new System.Drawing.Size(276, 26);
             this.DataType.TabIndex = 1;
             this.DataType.SelectedIndexChanged += new System.EventHandler(this.Address_ValueChanged);
             // 
@@ -561,7 +468,6 @@
             // TestMatchDataSizeComboBox
             // 
             this.TestMatchDataSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
             this.TestMatchDataSizeComboBox.FormattingEnabled = true;
             this.TestMatchDataSizeComboBox.Items.AddRange(new object[] {
             "100=512byte",
@@ -588,16 +494,118 @@
             this.TestMatchDataSizeComboBox.Location = new System.Drawing.Point(212, 41);
             this.TestMatchDataSizeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.TestMatchDataSizeComboBox.Name = "TestMatchDataSizeComboBox";
-            this.TestMatchDataSizeComboBox.Size = new System.Drawing.Size(250, 26);
+            this.TestMatchDataSizeComboBox.Size = new System.Drawing.Size(276, 26);
             this.TestMatchDataSizeComboBox.TabIndex = 0;
             this.TestMatchDataSizeComboBox.SelectedIndexChanged += new System.EventHandler(this.Address_ValueChanged);
+            // 
+            // Address
+            // 
+            this.Address.ErrorMessage = "";
+            this.Address.Location = new System.Drawing.Point(396, 17);
+            this.Address.Margin = new System.Windows.Forms.Padding(4);
+            this.Address.Name = "Address";
+            this.Address.Placeholder = "";
+            this.Address.Size = new System.Drawing.Size(126, 25);
+            this.Address.TabIndex = 0;
+            this.Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Address_KeyDown);
+            // 
+            // DataAddress
+            // 
+            this.DataAddress.ErrorMessage = "";
+            this.DataAddress.Location = new System.Drawing.Point(396, 160);
+            this.DataAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.DataAddress.Name = "DataAddress";
+            this.DataAddress.Placeholder = "";
+            this.DataAddress.ReadOnly = true;
+            this.DataAddress.Size = new System.Drawing.Size(124, 25);
+            this.DataAddress.TabIndex = 4;
+            this.DataAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.DataAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // Pointer
+            // 
+            this.Pointer.ErrorMessage = "";
+            this.Pointer.Location = new System.Drawing.Point(396, 54);
+            this.Pointer.Margin = new System.Windows.Forms.Padding(2);
+            this.Pointer.Name = "Pointer";
+            this.Pointer.Placeholder = "";
+            this.Pointer.ReadOnly = true;
+            this.Pointer.Size = new System.Drawing.Size(124, 25);
+            this.Pointer.TabIndex = 1;
+            this.Pointer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.Pointer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // OtherROMRefPointer2
+            // 
+            this.OtherROMRefPointer2.ErrorMessage = "";
+            this.OtherROMRefPointer2.Location = new System.Drawing.Point(398, 334);
+            this.OtherROMRefPointer2.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherROMRefPointer2.Name = "OtherROMRefPointer2";
+            this.OtherROMRefPointer2.Placeholder = "";
+            this.OtherROMRefPointer2.ReadOnly = true;
+            this.OtherROMRefPointer2.Size = new System.Drawing.Size(124, 25);
+            this.OtherROMRefPointer2.TabIndex = 7;
+            this.OtherROMRefPointer2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.OtherROMRefPointer2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // OtherROMAddress2
+            // 
+            this.OtherROMAddress2.ErrorMessage = "";
+            this.OtherROMAddress2.Location = new System.Drawing.Point(398, 288);
+            this.OtherROMAddress2.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherROMAddress2.Name = "OtherROMAddress2";
+            this.OtherROMAddress2.Placeholder = "";
+            this.OtherROMAddress2.ReadOnly = true;
+            this.OtherROMAddress2.Size = new System.Drawing.Size(124, 25);
+            this.OtherROMAddress2.TabIndex = 6;
+            this.OtherROMAddress2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.OtherROMAddress2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // RefPointer
+            // 
+            this.RefPointer.ErrorMessage = "";
+            this.RefPointer.Location = new System.Drawing.Point(396, 116);
+            this.RefPointer.Margin = new System.Windows.Forms.Padding(2);
+            this.RefPointer.Name = "RefPointer";
+            this.RefPointer.Placeholder = "";
+            this.RefPointer.ReadOnly = true;
+            this.RefPointer.Size = new System.Drawing.Size(124, 25);
+            this.RefPointer.TabIndex = 3;
+            this.RefPointer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.RefPointer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // LittleEndian
+            // 
+            this.LittleEndian.ErrorMessage = "";
+            this.LittleEndian.Location = new System.Drawing.Point(396, 89);
+            this.LittleEndian.Margin = new System.Windows.Forms.Padding(2);
+            this.LittleEndian.Name = "LittleEndian";
+            this.LittleEndian.Placeholder = "";
+            this.LittleEndian.ReadOnly = true;
+            this.LittleEndian.Size = new System.Drawing.Size(124, 25);
+            this.LittleEndian.TabIndex = 2;
+            this.LittleEndian.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShortCut_KeyDown);
+            this.LittleEndian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMAddress_MouseDoubleClick);
+            // 
+            // UseASMMAPCheckBox
+            // 
+            this.UseASMMAPCheckBox.AutoSize = true;
+            this.UseASMMAPCheckBox.Checked = true;
+            this.UseASMMAPCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.UseASMMAPCheckBox.Location = new System.Drawing.Point(291, 259);
+            this.UseASMMAPCheckBox.Name = "UseASMMAPCheckBox";
+            this.UseASMMAPCheckBox.Size = new System.Drawing.Size(229, 22);
+            this.UseASMMAPCheckBox.TabIndex = 74;
+            this.UseASMMAPCheckBox.Text = "探索にASMMapを利用する";
+            this.UseASMMAPCheckBox.UseVisualStyleBackColor = true;
             // 
             // PointerToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1006, 632);
+            this.ClientSize = new System.Drawing.Size(1035, 629);
+            this.Controls.Add(this.UseASMMAPCheckBox);
             this.Controls.Add(this.ERROR_VERYFAR3);
             this.Controls.Add(this.ERROR_ZERO3);
             this.Controls.Add(this.OtherLoadName);
@@ -678,5 +686,6 @@
         private System.Windows.Forms.Label ERROR_ZERO3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox WarningLevelComboBox;
+        private System.Windows.Forms.CheckBox UseASMMAPCheckBox;
     }
 }

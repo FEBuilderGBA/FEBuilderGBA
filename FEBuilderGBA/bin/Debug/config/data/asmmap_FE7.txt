@@ -3936,3 +3936,15 @@
 08082A18	戦闘予測ダイアログがRMenuを登録するラッパー関数	{J}
 08070A0C	戦闘予測ダイアログがRMenuを登録するラッパー関数	{U}
 08CC26D4	:08CC2783	ゲームシステムが参照する文字列ID	{U}
+
+080190B0	GetRescuingUnitNameId	{J}
+080190E0	WriteStatusTextToRAM	{J}
+08019108	GetROMClassStruct	{J}
+08019120	GetROMCharStruct	{J}
+0806d4a4	ClearMOVEUNITs	{J}
+0806c2dc	MakeMOVEUNITForMapUnit	{J}
+08018CC0	GetRescuingUnitNameId	{U}
+//08018D20	GetROMClassStruct	{U}
+08018D38	GetROMCharStruct	{U}
+0806ccb8	ClearMOVEUNITs	{U}
+0806baf0	MakeMOVEUNITForMapUnit	{U}

@@ -1,0 +1,57 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $24924        //
+jumpToHack(DM_RideCommandEffect)
+
+ORG $248C8        //
+jumpToHack(DM_RideCommandUsability)
+
+ORG $24950        //
+jumpToHack(DM_ExitCommandUsability)
+
+ORG $24984        //
+jumpToHack(DM_ExitCommandEffect)
+POP
+
+ALIGN 4
+DM_RideCommandEffect:
+#incbin "DM_RideCommandEffect.dmp"
+POIN DismountEx_Table
+
+ALIGN 4
+DM_RideCommandUsability:
+#incbin "DM_RideCommandUsability.dmp"
+POIN DismountEx_Table
+
+ALIGN 4
+DM_ExitCommandUsability:
+#incbin "DM_ExitCommandUsability.dmp"
+POIN DismountEx_Table
+
+ALIGN 4
+DM_ExitCommandEffect:
+#incbin "DM_ExitCommandEffect.dmp"
+POIN DismountEx_Table
+
+ALIGN 4
+ASMC_Rade_Mount:
+#incbin "ASMC_Rade_Mount.dmp"
+POIN DismountEx_Table
+
+ALIGN 4
+ASMC_Exit_Dismount:
+#incbin "ASMC_Exit_Dismount.dmp"
+POIN DismountEx_Table
+
+
+ALIGN 4
+#include "DismountEx_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

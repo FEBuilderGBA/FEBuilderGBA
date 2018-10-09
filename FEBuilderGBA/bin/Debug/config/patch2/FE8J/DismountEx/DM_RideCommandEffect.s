@@ -17,7 +17,7 @@
 
 .thumb
 
-@Call 248D4         @FE8J
+@Call $248D4        @FE8J
 @r1   gActionData
 
 push {r5}           @ push r4はもともとされているので、不足するr5を確保

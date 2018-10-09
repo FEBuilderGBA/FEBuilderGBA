@@ -272,9 +272,15 @@ namespace FEBuilderGBA
             uint newapLen = ap.GetLength();
             return newapLen;
         }
+
+        public static uint CalcROMTCSLength(uint addr)
+        {
+            return CalcROMTCSLength(addr , Program.ROM);
+        }
+
         //ROMTCSのサイズを自動的に計算します.
         //APと似ているが違う
-        public static uint CalcROMTCSLength(uint addr)
+        public static uint CalcROMTCSLength(uint addr,ROM rom)
         {
             byte[][] needArray = new byte[][]{
                  new byte[] { 0x00,0x00,0x00,0x00,0xFF,0xFF,0x04,0x00,0x01,0x00,0x00,0x00,0xFF,0xFF }
@@ -287,16 +293,16 @@ namespace FEBuilderGBA
             uint[] plusOffsetArray = new uint[] { 14, 8, 6, 6, 4 };
 
             uint limit = addr + 20000;
-            if (limit > Program.ROM.Data.Length)
+            if (limit > rom.Data.Length)
             {
-                limit = (uint)Program.ROM.Data.Length;
+                limit = (uint)rom.Data.Length;
             }
 
             uint endAddr = U.NOT_FOUND;
             uint plusOffset = 0;
             for (int i = 0; i < needArray.Length; i++)
             {
-                uint a = U.Grep(Program.ROM.Data, needArray[i], addr, limit, 2);
+                uint a = U.Grep(rom.Data, needArray[i], addr, limit, 2);
                 if (endAddr > a)
                 {
                     endAddr = a;
@@ -314,6 +320,10 @@ namespace FEBuilderGBA
 
         public static uint CalcPopupSimpleLength(uint addr)
         {
+            return CalcPopupSimpleLength(addr , Program.ROM);
+        }
+        public static uint CalcPopupSimpleLength(uint addr, ROM rom)
+        {
             byte[][] needArray = new byte[][]{
                  new byte[] { 0x00, 0x00,0x00, 0x00, 0x00, 0x00 , 0x00, 0x00 , 0x00, 0x00}
             };
@@ -321,16 +331,16 @@ namespace FEBuilderGBA
             uint[] plusOffsetArray = new uint[] { 10 };
 
             uint limit = addr + 20000;
-            if (limit > Program.ROM.Data.Length)
+            if (limit > rom.Data.Length)
             {
-                limit = (uint)Program.ROM.Data.Length;
+                limit = (uint)rom.Data.Length;
             }
 
             uint endAddr = U.NOT_FOUND;
             uint plusOffset = 0;
             for (int i = 0; i < needArray.Length; i++)
             {
-                uint a = U.Grep(Program.ROM.Data, needArray[i], addr, limit, 2);
+                uint a = U.Grep(rom.Data, needArray[i], addr, limit, 2);
                 if (endAddr > a)
                 {
                     endAddr = a;

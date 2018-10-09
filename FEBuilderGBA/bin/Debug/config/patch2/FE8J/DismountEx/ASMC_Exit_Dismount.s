@@ -29,7 +29,7 @@ push {lr,r4,r5,r6}
 GetUnitInfoByCurrent:
 	ldr  r0,=#0x03004DF0      @FE8J  操作中のユニット
 	ldr  r0,[r0]
-	b   GetUnitInfo
+	b   ProcessMain
 
 GetUnitInfoBySVAL1:
 	ldr  r0,=#0xFFFFFFFF
@@ -42,6 +42,7 @@ GetUnitInfoByCoord:
 GetUnitInfo:
 	blh  0x0800bf3c           @FE8J UNITIDの解決
 	                          @RAM UNIT POINTERの取得
+ProcessMain:
 	cmp  r0,#0x00
 	beq  NotMatch             @取得できなかったら終了
 

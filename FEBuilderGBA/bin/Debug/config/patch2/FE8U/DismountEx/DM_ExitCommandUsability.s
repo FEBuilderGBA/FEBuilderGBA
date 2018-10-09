@@ -6,7 +6,7 @@
 .endm
 .thumb
 
-@Call $24900        @FE8J
+@Call $24950        @
 @r0   操作キャラのワークメモリへのポインタ
 
 push {r4, r5}
@@ -46,7 +46,7 @@ ldrb r0,[r4,#0x03]  @     B0:MAP=MAPID(0xFF=ANY)
 cmp  r0,#0xFF       @     ANY MAPID ?
 beq  CheckFlag
 
-ldr  r2,=#0x202BCEC @FE8J Chaptor Pointer  (@ChapterData)
+ldr  r2,=#0x202BCF0 @ Chaptor Pointer  (@ChapterData)
 ldrb r1,[r2,#0xE]   @     ChapterData->MAPID
 cmp  r0,r1
 bne  Loop           @     条件不一致なので、次のループへ continue;
@@ -57,7 +57,7 @@ ldrh r0,[r4,#0x04]  @     W2:Flag=Flag(0x00=ANY)
 cmp  r0,#0x0        @     ANY Flag ?
 beq  Found
 
-blh  0x080860D0     @FE8J CheckFlag  Flag=r0  Result=r0:bool
+blh  0x08083DA8     @ CheckFlag  Flag=r0  Result=r0:bool
 cmp	r0,#0x00
 beq  Loop           @     条件不一致なので、次のループへ continue;
 
@@ -74,7 +74,7 @@ ldr r0, [r0, #0xc]
 MOV r1, #0x80
 LSL r1 ,r1 ,#0x4
 
-LDR r3, =0x08024908  @FE8J バリスタチェックの続きを行う
+LDR r3, =0x08024958  @ バリスタチェックの続きを行う
 pop {r4, r5}
 mov pc,r3
 

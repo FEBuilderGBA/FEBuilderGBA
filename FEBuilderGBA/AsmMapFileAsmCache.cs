@@ -445,6 +445,13 @@ namespace FEBuilderGBA
             }
             return a.Name;
         }
+
+        public uint SearchName(string name)
+        {
+            AsmMapFile map = GetAsmMapFile();
+            return map.SearchName(name);
+        }
+
         public string GetEventName(uint num, out string errorMessage)
         {
             if (num <= 0)

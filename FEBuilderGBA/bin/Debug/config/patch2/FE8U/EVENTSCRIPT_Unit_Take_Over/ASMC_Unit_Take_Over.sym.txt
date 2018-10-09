@@ -1,0 +1,4 @@
+GetUnitInfoByCurrent=$12
+GetUnitInfo=$18
+ProcessMain=$22
+Term=$6A

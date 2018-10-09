@@ -165,6 +165,12 @@
     <Compile Include="PatchFilterExForm.Designer.cs">
       <DependentUpon>PatchFilterExForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PointerToolAlienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointerToolAlienForm.Designer.cs">
+      <DependentUpon>PointerToolAlienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcsScriptInnerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1832,6 +1838,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatchFilterExForm.resx">
       <DependentUpon>PatchFilterExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointerToolAlienForm.resx">
+      <DependentUpon>PointerToolAlienForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProcsScriptInnerControl.resx">
       <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>

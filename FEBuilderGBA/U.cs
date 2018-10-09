@@ -2435,9 +2435,15 @@ namespace FEBuilderGBA
             }
             return false;
         }
+
+        [MethodImpl(256)]
         public static bool OtherLangLine(string line)
         {
-            if (Program.ROM.RomInfo.is_multibyte())
+            return OtherLangLine(line,Program.ROM);
+        }
+        public static bool OtherLangLine(string line,ROM rom)
+        {
+            if (rom.RomInfo.is_multibyte())
             {
                 if (line.IndexOf("\t{U}") >= 0)
                 {//日本語版で英語版専用項目はいらない
@@ -4766,27 +4772,27 @@ namespace FEBuilderGBA
 
         //OAMREGSの長さを求める
         //
-        public static uint OAMREGSLength(uint addr)
+        public static uint OAMREGSLength(uint addr,ROM rom)
         {
-            if (!U.isSafetyOffset(addr))
+            if (!U.isSafetyOffset(addr, rom))
             {
                 return 0;
             }
-            uint count = Program.ROM.u16(addr);
+            uint count = rom.u16(addr);
             Debug.Assert(count <= 0x14);
 
             return 2 + count * 2 * 3;
         }
         //TextBatchの長さを求める
         //
-        public static uint TextBatchLength(uint addr)
+        public static uint TextBatchLength(uint addr , ROM rom)
         {
             uint first = addr;
 
-            uint length = (uint)Program.ROM.Data.Length - 8;
+            uint length = (uint)rom.Data.Length - 8;
             for (; addr < length; addr += 8 )
             {
-                uint addr02 = Program.ROM.u16(addr);
+                uint addr02 = rom.u16(addr);
                 if (addr02 == 0)
                 {
                     addr += 8;
@@ -4980,7 +4986,6 @@ namespace FEBuilderGBA
                     }
 
                     string ext = U.GetFilenameExt(fileName[0]);
-
                     if (Array.IndexOf(allowExts, ext) < 0)
                     {
                         return;
