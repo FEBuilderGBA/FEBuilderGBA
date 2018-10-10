@@ -17,12 +17,22 @@ namespace FEBuilderGBA
         {
         }
 
-        const int FREEAREA_BLOCK_SIZE = 256;
+        const int FREEAREA_BLOCK_SIZE = 1024;
 
         List<Address> RecycleFreeAreaList = new List<Address>();
         public void MakeFreeAreaList(byte[] data, uint RebuildAddress, Dictionary<uint, uint> useMap)
         {
             List<Address> knownList = U.MakeAllStructPointersList(false);
+            List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+            U.AppendAllASMStructPointersList(knownList
+                , ldrmap
+                , isPatchInstallOnly: true
+                , isPatchPointerOnly: false
+                , isPatchStructOnly: false
+                , isPatchStoreSymbol: true
+                , isUseOtherGraphics: true
+                , isUseOAMSP: true
+                );
 
             Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
             MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE, data, RebuildAddress, useMap);
@@ -31,7 +41,7 @@ namespace FEBuilderGBA
             {
                 Address p = this.RecycleFreeAreaList[i];
                 //先頭16バイトは捨てましょう. 別データの終端データに使われているとまずい.
-                p.ResizeAddress(p.Addr + 16, p.Length - 16 );
+                p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
                 Log.Debug("FREEAREA " + U.To0xHexString(p.Addr) + " " + p.Length, " => " + U.To0xHexString(p.Addr + p.Length));
             }
         }

@@ -381,11 +381,19 @@ namespace FEBuilderGBA
                 {
                     bitmap = DrawFrameImage(n, graphiclist, tsalist, palettelist);
 
+                    int paletteCount = ImageUtil.GetPalette16Count(bitmap);
+                    if (paletteCount < 1)
+                    {
+                        paletteCount = 1;
+                    }
+
                     //利用していないパレットを消す.
-                    ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
+                    ImageUtil.BlackOutUnnecessaryColors(bitmap, paletteCount);
 
                     bitmap.Save(Path.Combine(basedir, imagefilename)
                         , System.Drawing.Imaging.ImageFormat.Png);
+
+                    animeHash[id] = bitmap;
                 }
 
                 string line = wait.ToString() + " " + imagefilename;
