@@ -8147,3 +8147,188 @@ r3=X tile position of menu of the right	{U}
 08AB0A44	:08AB0B47	Opening class demoLottery table	{J}
 08A2FBD4	:08A2FBDF	Opening class demoNumber to shift lottery table	{U}
 08AB0A38	:08AB0A43	Opening class demoNumber to shift lottery table	{J}
+085B0FA8	&LZ77	Boot data	Image of FE 6	There is no pointer in FE 8U	{U}
+085B4B44	&LZ77	Boot data	TSA of the image of FE 6	There is no pointer in FE 8U	{U}
+085B50A8	&PALETTE16	Boot data	FE 6 image palette	There is no pointer in FE 8U	{U}
+0801474C	Apply uncompressed TSA and read animation pattern	{U}
+089B17A4	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{U}
+089B0864	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{U}
+089B343C	&HEADERTSA	Anime pattern using something uncompressed TSA	3	{U}
+089B0840	&HEADERTSA	Anime pattern using something uncompressed TSA	4	{U}
+08014760	Apply uncompressed TSA and read animation pattern	{J}
+08A21E2C	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{J}
+08A20EEC	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{J}
+08A23AC4	&HEADERTSA	Anime pattern using something uncompressed TSA	3	{J}
+08A20EC8	&HEADERTSA	Anime pattern using something uncompressed TSA	4	{J}
+089B8140	&LZ77	Something small compressed data	70	{U}
+089B81A4	&LZ77	Something small compressed data	71	{U}
+089B8214	&LZ77	Something small compressed data	72	{U}
+089B828C	&LZ77	Something small compressed data	73	{U}
+089B82F0	&LZ77	Something small compressed data	74	{U}
+089B835C	&LZ77	Something small compressed data	75	{U}
+085BF114	&LZ77	Something's anime pattern	1	{U}
+085B5888	&LZ77	Mystery dialog and numeric data	{U}
+085F1620	:085F1681	Something's palette	118	{U}
+085F3F40	:085F3FE1	Something's palette	119	{U}
+085F7D64	&PALETTE	Something's palette	120	{U}
+08603B50	:08603D4F	Something's palette	121	{U}
+08622F4C	:08622FEB	Something's palette	122	{U}
+0862D424	&PALETTE	Something's palette	123	{U}
+08645F44	&PALETTE	Something's palette	124	{U}
+08652554	:08652733	Something's palette	125	{U}
+0865BAB8	:0865BAF9	Something's palette	126	{U}
+086671B0	&LZ77	Something's anime pattern	2	{U}
+08670528	&PALETTE	Something's palette	127	{U}
+088017E0	&PALETTE	Something's palette	128	{U}
+08A287C8	&LZ77	Something small compressed data	70	{J}
+08A2882C	&LZ77	Something small compressed data	71	{J}
+08A2889C	&LZ77	Something small compressed data	72	{J}
+08A28914	&LZ77	Something small compressed data	73	{J}
+08A28978	&LZ77	Something small compressed data	74	{J}
+08A289E4	&LZ77	Something small compressed data	75	{J}
+085E9344	&LZ77	Something's anime pattern	1	{J}
+085DFA68	&LZ77	Mystery dialog and numeric data	{J}
+085E04C4	&PALETTE	Mystery dialog and numeric data palette	{J}
+085DFA48	&PALETTE	Palette of Japanese version only	1	{J}
+0861E1F8	:0861E259	Something's palette	118	{J}
+08620B18	:08620BB9	Something's palette	119	{J}
+0862493C	&PALETTE	Something's palette	120	{J}
+08630728	:8630927	Something's palette	121	{J}
+0864FB24	:864FBC3	Something's palette	122	{J}
+08659FFC	&PALETTE	Something's palette	123	{J}
+08672B1C	&PALETTE	Something's palette	124	{J}
+0867F12C	:867F30B	Something's palette	125	{J}
+08688690	:86886D1	Something's palette	126	{J}
+08693D88	&LZ77	Something's anime pattern	2	{J}
+0869D100	&PALETTE	Something's palette	127	{J}
+08855D38	&PALETTE	Something's palette	128	{J}
+08A3E9A0	:08A3E9FF	Unk OAMREGS TABLE	{U}
+08A3E948	&OAMREGS	OAMREGS	{U}
+08A3E950	&OAMREGS	OAMREGS	{U}
+08A3E958	&OAMREGS	OAMREGS	{U}
+08A3E960	&OAMREGS	OAMREGS	{U}
+08A3E968	&OAMREGS	OAMREGS	{U}
+08A3E970	&OAMREGS	OAMREGS	{U}
+08A3E978	&OAMREGS	OAMREGS	{U}
+08A3E980	&OAMREGS	OAMREGS	{U}
+08A3E988	&OAMREGS	OAMREGS	{U}
+08A3E990	&OAMREGS	OAMREGS	{U}
+08A3E998	&OAMREGS	OAMREGS	{U}
+08AC2360	:08AC23BF	Unk OAMREGS TABLE2	{J}
+08AC2308	&OAMREGS	OAMREGS	{J}
+08AC2310	&OAMREGS	OAMREGS	{J}
+08AC2318	&OAMREGS	OAMREGS	{J}
+08AC2320	&OAMREGS	OAMREGS	{J}
+08AC2328	&OAMREGS	OAMREGS	{J}
+08AC2330	&OAMREGS	OAMREGS	{J}
+08AC2338	&OAMREGS	OAMREGS	{J}
+08AC2340	&OAMREGS	OAMREGS	{J}
+08AC2348	&OAMREGS	OAMREGS	{J}
+08AC2350	&OAMREGS	OAMREGS	{J}
+08AC2358	&OAMREGS	OAMREGS	{J}
+08A17C20	:08A17C47	Unk OAMREGS TABLE2	{U}
+08A17B98	&OAMREGS	OAMREGS	{U}
+08A17BA6	&OAMREGS	OAMREGS	{U}
+08A17BBA	&OAMREGS	OAMREGS	{U}
+08A17BCE	&OAMREGS	OAMREGS	{U}
+08A17BE2	&OAMREGS	OAMREGS	{U}
+08A17BF6	&OAMREGS	OAMREGS	{U}
+08A9396C	:08A93993	Unk OAMREGS TABLE2	{J}
+08A938E4	&OAMREGS	OAMREGS	{J}
+08A938F2	&OAMREGS	OAMREGS	{J}
+08A93906	&OAMREGS	OAMREGS	{J}
+08A9391A	&OAMREGS	OAMREGS	{J}
+08A9392E	&OAMREGS	OAMREGS	{J}
+08A93942	&OAMREGS	OAMREGS	{J}
+089A3AB8	:089A3B3B	Unk Small Image Array	{U}
+089B4C80	&LZ77	Something small compressed data	76	{U}
+089B4CE8	&LZ77	Something small compressed data	77	{U}
+089B4D64	&LZ77	Something small compressed data	78	{U}
+089B4DDC	&LZ77	Something small compressed data	79	{U}
+089B4E4C	&LZ77	Something small compressed data	80	{U}
+089B4EB8	&LZ77	Something small compressed data	81	{U}
+089B4F2C	&LZ77	Something small compressed data	82	{U}
+089B4FA4	&LZ77	Something small compressed data	83	{U}
+089B501C	&LZ77	Something small compressed data	84	{U}
+089B5094	&LZ77	Something small compressed data	85	{U}
+089B5118	&LZ77	Something small compressed data	86	{U}
+089B519C	&LZ77	Something small compressed data	87	{U}
+089B5220	&LZ77	Something small compressed data	88	{U}
+089B52A4	&LZ77	Something small compressed data	89	{U}
+089B5310	&LZ77	Something small compressed data	90	{U}
+089B5398	&LZ77	Something small compressed data	91	{U}
+089B5434	&LZ77	Something small compressed data	92	{U}
+089B54F0	&LZ77	Something small compressed data	93	{U}
+089B55EC	&LZ77	Something small compressed data	94	{U}
+089B5720	&LZ77	Something small compressed data	95	{U}
+089B58DC	&LZ77	Something small compressed data	96	{U}
+089B5B38	&LZ77	Something small compressed data	97	{U}
+089B5C6C	&LZ77	Something small compressed data	98	{U}
+089B5E0C	&LZ77	Something small compressed data	99	{U}
+089B6050	&LZ77	Something small compressed data	100	{U}
+089B6174	&LZ77	Something small compressed data	101	{U}
+089B630C	&LZ77	Something small compressed data	102	{U}
+089B6510	&LZ77	Something small compressed data	103	{U}
+089B65D4	&LZ77	Something small compressed data	104	{U}
+089B66BC	&LZ77	Something small compressed data	105	{U}
+089B6808	&LZ77	Something small compressed data	106	{U}
+089B69BC	&LZ77	Something small compressed data	107	{U}
+08A14140	:08A141C3		Unk Small Image Array	{J}
+08A25308	&LZ77	Something small compressed data	76	{J}
+08A25370	&LZ77	Something small compressed data	77	{J}
+08A253EC	&LZ77	Something small compressed data	78	{J}
+08A25464	&LZ77	Something small compressed data	79	{J}
+08A254D4	&LZ77	Something small compressed data	80	{J}
+08A25540	&LZ77	Something small compressed data	81	{J}
+08A255B4	&LZ77	Something small compressed data	82	{J}
+08A2562C	&LZ77	Something small compressed data	83	{J}
+08A256A4	&LZ77	Something small compressed data	84	{J}
+08A2571C	&LZ77	Something small compressed data	85	{J}
+08A257A0	&LZ77	Something small compressed data	86	{J}
+08A25824	&LZ77	Something small compressed data	87	{J}
+08A258A8	&LZ77	Something small compressed data	88	{J}
+08A2592C	&LZ77	Something small compressed data	89	{J}
+08A25998	&LZ77	Something small compressed data	90	{J}
+08A25A20	&LZ77	Something small compressed data	91	{J}
+08A25ABC	&LZ77	Something small compressed data	92	{J}
+08A25B78	&LZ77	Something small compressed data	93	{J}
+08A25C74	&LZ77	Something small compressed data	94	{J}
+08A25DA8	&LZ77	Something small compressed data	95	{J}
+08A25F64	&LZ77	Something small compressed data	96	{J}
+08A261C0	&LZ77	Something small compressed data	97	{J}
+08A262F4	&LZ77	Something small compressed data	98	{J}
+08A26494	&LZ77	Something small compressed data	99	{J}
+08A266D8	&LZ77	Something small compressed data	100	{J}
+08A267FC	&LZ77	Something small compressed data	101	{J}
+08A26994	&LZ77	Something small compressed data	102	{J}
+08A26B98	&LZ77	Something small compressed data	103	{J}
+08A26C5C	&LZ77	Something small compressed data	104	{J}
+08A26D44	&LZ77	Something small compressed data	105	{J}
+08A26E90	&LZ77	Something small compressed data	106	{J}
+08A27044	&LZ77	Something small compressed data	107	{J}
+085B0F2C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{U}
+080DA2F4	&PALETTE	Something's palette	129	{U}
+080DA334	&PALETTE	Something's palette	130	{U}
+080DA354	&PALETTE	Something's palette	131	{U}
+080DA314	&PALETTE	Something's palette	132	{U}
+085B7E54	&PALETTE	Something's palette	134	{U}
+085B8714	&PALETTE	Something's palette	135	{U}
+085B8F90	&PALETTE	Something's palette	136	{U}
+085B6BB4	&PALETTE	Something's palette	137	{U}
+085B6BD4	&PALETTE	Something's palette	138	{U}
+085B6BF4	&PALETTE	Something's palette	139	{U}
+085DD518	&LZ77	I think that it is an image of a snowstorm	{U}
+0878D648	&LZ77	Dragon's battle animation-like data	{U}
+085DB10C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{J}
+080DF2E0	&PALETTE	Something's palette	129	{J}
+080DF320	&PALETTE	Something's palette	130	{J}
+080DF340	&PALETTE	Something's palette	131	{J}
+080DF300	&PALETTE	Something's palette	132	{J}
+085E2034	&PALETTE	Something's palette	134	{J}
+085E28F4	&PALETTE	Something's palette	135	{J}
+085E3170	&PALETTE	Something's palette	136	{J}
+085E0D94	&PALETTE	Something's palette	137	{J}
+085E0DB4	&PALETTE	Something's palette	138	{J}
+085E0DD4	&PALETTE	Something's palette	139	{J}
+08607C40	&LZ77	I think that it is an image of a snowstorm	{J}
+087E1BA0	&LZ77	Dragon's battle animation-like data	{J}

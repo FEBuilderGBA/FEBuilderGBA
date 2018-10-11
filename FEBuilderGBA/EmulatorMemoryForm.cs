@@ -263,14 +263,22 @@ namespace FEBuilderGBA
             }
             this.NextStringOffset = offset;
 
-            //そこから開始の@0003を探索する.
-            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            try
             {
-                HightlightDisplayString("[A]");
+                //そこから開始の@0003を探索する.
+                if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+                {
+                    HightlightDisplayString("[A]");
+                }
+                else
+                {
+                    HightlightDisplayString("@0003");
+                }
             }
-            else
+            catch (ObjectDisposedException e)
             {
-                HightlightDisplayString("@0003");
+                Log.Error(e.ToString());
+                return;
             }
         }
 
