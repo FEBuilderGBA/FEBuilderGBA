@@ -1820,7 +1820,7 @@ namespace FEBuilderGBA
 
             if (needPointer)
             {//検索で見つけたものはポインタである必要がある.
-                if (U.isPointer(U.u32(data, resultAddr)))
+                if (U.isPointerOrNULL(U.u32(data, resultAddr)))
                 {
                     return resultAddr;
                 }
