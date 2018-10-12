@@ -66,11 +66,17 @@ namespace FEBuilderGBA
                 ScriptEditSetTables[i].ParamValue.SetToolTipEx(this.ToolTip);
             }
             //FE8だけテンプレートをメニューに出します
-            bool useTemplate = false;
+            bool useTemplate;
             if (Program.ROM.RomInfo.version() == 8)
             {
                 useTemplate = true;
             }
+            else
+            {
+                useTemplate = false;
+                TemplateButton.Hide();
+            }
+
             InputFormRef.MakeEditListboxContextMenuN(this.AddressList, this.AddressList_KeyDown, parentFormKeydownfunc ,useTemplate);
         }
 
@@ -3028,6 +3034,8 @@ namespace FEBuilderGBA
                 return;
             }
 
+            HideFloatingControlpanel();
+
             int insertedPoint = this.AddressList.SelectedIndex;
             if (insertedPoint < 0)
             {
@@ -3046,6 +3054,11 @@ namespace FEBuilderGBA
             this.AddressList.DummyAlloc(this.EventAsm.Count, insertedPoint + 1);
 
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
+        }
+
+        private void TemplateButton_Click(object sender, EventArgs e)
+        {
+            UseTemplate();
         }
 
 
