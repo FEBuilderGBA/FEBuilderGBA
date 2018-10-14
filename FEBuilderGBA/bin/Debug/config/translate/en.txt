@@ -2503,6 +2503,9 @@ This address ({0}) is not compressed with lz77.\r\nThe data is broken.
 :このアドレス({0})にある画像は、高さが最低値{1}より小さい値({2})です。\r\nデータが壊れています。
 The image at this address ({0}) is a value ({2}) whose height is less than the minimum value {1}.\r\nThe data is broken.
 
+:内部エラーが発生しました。\r\nreport7zを送ってください。\r\n{0}
+An internal error occurred.\r\nPlease send report 7z.\r\n{0}
+
 :@0080の後に、@命令が続いていません。@001Cで補正します。
 There is no @ command following @ 0080. Fix with @ 001C.
 
@@ -5622,6 +5625,9 @@ Footsteps
 
 :メニュー
 Menu
+
+:FELint内部エラー
+FELint internal error
 
 :このエラーは非表示になっています。理由:「{0}」
 This error is hidden.Reason: "{0}".

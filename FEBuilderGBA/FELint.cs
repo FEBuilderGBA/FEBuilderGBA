@@ -66,6 +66,7 @@ namespace FEBuilderGBA
             ,MAPEXIT  //離脱ポイント
             ,IMAGE_UNIT_MOVE_ICON  //ユニット移動画像
             ,IMAGE_UNIT_WAIT_ICON  //ユニット待機画像
+            ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)
         {
@@ -547,6 +548,26 @@ namespace FEBuilderGBA
 
         public const uint SYSTEM_MAP_ID = 0xEEEEEEEE;
         public static List<FELint.ErrorSt> ScanMAP(uint mapid)
+        {
+#if !DEBUG 
+            try
+            {
+#endif
+                return ScanMAPLow(mapid);
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString());
+
+                List<FELint.ErrorSt> errors = new List<ErrorSt>();
+                errors.Add(new FELint.ErrorSt(Type.FELINT_SYSTEM_ERROR, U.NOT_FOUND
+                    , R._("内部エラーが発生しました。\r\nreport7zを送ってください。\r\n{0}",e.Message)));
+                return errors;
+            }
+#endif
+        }
+        static List<FELint.ErrorSt> ScanMAPLow(uint mapid)
         {
             List<FELint.ErrorSt> errors = new List<ErrorSt>();
             if (mapid == SYSTEM_MAP_ID)

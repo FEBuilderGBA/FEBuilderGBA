@@ -359,6 +359,11 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("移動アイコン");
             }
+            else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
+            {
+                show_tag = tag;
+                text = R._("FELint内部エラー");
+            }
             else
             {
                 text = R._("不明");
@@ -844,6 +849,11 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.IMAGE_UNIT_MOVE_ICON)
             {
                 InputFormRef.JumpForm<ImageUnitMoveIconFrom>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
+            {
+                InputFormRef.JumpForm<ToolProblemReportForm>();
                 return;
             }
 
