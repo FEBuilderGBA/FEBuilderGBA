@@ -632,7 +632,7 @@
             this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "OPClassAlphaNameForm";
-            this.Text = "fr";
+            this.Text = "OPクラス紹介英語表記";
             this.Load += new System.EventHandler(this.OPClassAlphaNameForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

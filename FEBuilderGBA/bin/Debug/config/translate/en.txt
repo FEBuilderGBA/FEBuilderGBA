@@ -2104,6 +2104,9 @@ Parameter 7
 :変更したい行をダブルクリック or Enterキーを押してください。 右クリックでメニューが出ます。
 Double click on the line you want to change or press Enter key. Right-click to display the menu.
 
+:テンプレート
+Template
+
 :曲をSappyで再生する
 Play a song on Sappy
 
@@ -2145,9 +2148,6 @@ Create associate participation event in village
 
 :章終了イベントを呼び出す(章クリア)
 Call chapter end event (chapter clear)
-
-:テンプレート
-Template
 
 :既存イベントを呼び出す
 Call an existing event
@@ -5725,6 +5725,21 @@ Reload Tile Changes
 :マップ変更ポインタ
 Tile Changes pointer
 
+:マップ変化の設定画面を出します。
+We will display the map change setting screen.
+
+:新規にマップ変化を割り当てます。
+Assign a new map change.
+
+:訪問村や、宝箱、壊れる壁、古木などのために、\r\nマップ変化を新規に割り当てる場合は、ここから新規にマップ変化を割り当ててください。
+For visiting villages, treasure chests, broken walls, old trees, etc.,\r\nTo assign a new map change, assign a new map change from here.
+
+:マップ変化を減らす場合は、設定画面から消去してください。\r\n変更したマップ変化は、マップを切り替えたときに読み込まれます。
+To reduce the map change, please erase from the setting screen.\r\nThe changed map change is read when switching the map.
+
+:マップ変化をさらに追加で作成しますか？
+Would you like to create additional Tile Changes?
+
 :追加スタイル({0})
 Additional style ({0})
 
@@ -5814,9 +5829,6 @@ Data could not be written to address ({0})
 
 :PLIST({0})にアドレス({1})を書き込めませんでした
 Could not write address ({1}) to PLIST ({0})
-
-:マップ変化をさらに追加で作成しますか？
-Would you like to create additional Tile Changes?
 
 :マップ変化に割り当てを拒否されました。MAPID:{0}
 The Tile Changes was refused assignment.MAPID: {0}.

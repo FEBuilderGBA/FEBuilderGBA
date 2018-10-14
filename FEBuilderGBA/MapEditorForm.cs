@@ -2450,11 +2450,18 @@ this.MapObjImage);
                 return;
             }
 
-            DialogResult dr = R.ShowYesNo("マップ変化をさらに追加で作成しますか？");
-            if (dr != System.Windows.Forms.DialogResult.Yes)
+            MapEditorAddMapChangeDialogForm f = (MapEditorAddMapChangeDialogForm)InputFormRef.JumpFormLow<MapEditorAddMapChangeDialogForm>();
+            DialogResult dr = f.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.Cancel)
             {
                 //キャンセルされたので、とりあえずメインマップに戻す.
                 MapChange.SelectedIndex = 0;
+                return;
+            }
+            if (dr == System.Windows.Forms.DialogResult.Ignore)
+            {
+                //設定画面に移動
+                InputFormRef.JumpForm<MapChangeForm>((uint)MAPCOMBO.SelectedIndex);
                 return;
             }
 

@@ -1423,14 +1423,7 @@ namespace FEBuilderGBA
         public static uint CalcLength(byte[] prog,uint addr, uint limit, List<uint> out_ldrtable)
         {
             addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-//            if (IsCodeArea(addr))
- //           {
- //               return CalcLengthByC(prog, addr, limit, out_ldrtable);
-  //          }
-   //         else
-     //       {
-                return CalcLengthByHack(prog, addr, limit, out_ldrtable);
-       //     }
+            return CalcLengthByHack(prog, addr, limit, out_ldrtable);
         }
 
         //長さを計算する. Cで書かれた関数用

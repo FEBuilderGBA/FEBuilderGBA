@@ -141,6 +141,12 @@
     <Compile Include="ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MapEditorAddMapChangeDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapEditorAddMapChangeDialogForm.Designer.cs">
+      <DependentUpon>MapEditorAddMapChangeDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MapSettingDifficultyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1826,6 +1832,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageTSAAnimeForm.resx">
       <DependentUpon>ImageTSAAnimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEditorAddMapChangeDialogForm.resx">
+      <DependentUpon>MapEditorAddMapChangeDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapSettingDifficultyForm.resx">
       <DependentUpon>MapSettingDifficultyForm.cs</DependentUpon>

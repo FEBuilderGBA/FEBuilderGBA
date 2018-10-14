@@ -8332,3 +8332,35 @@ r3=X tile position of menu of the right	{U}
 085E0DD4	&PALETTE	Something's palette	139	{J}
 08607C40	&LZ77	I think that it is an image of a snowstorm	{J}
 087E1BA0	&LZ77	Dragon's battle animation-like data	{J}
+08a36338	&LZ77	OP(Promotion) Class Name Font	{U}
+08A372c0	&PALETTE	OP(Promotion) Class Name Font Palette	{U}
+08AB7164	&LZ77	OP(Promotion) Class Name Font	{J}
+08903C80	:08903DBF	Removal of individual animation data of FE 7	{J}
+08903DC0	:08903E0B	Removal of individual animation table of FE 7	{J}
+088AF6F4	:088AF833	Removal of individual animation data of FE 7	{U}
+088AF834	:088AF87F	Removal of individual animation table of FE 7	{U}
+08904BC4	:08904E1B	Cleared FE6 credit pointers	{J}
+08A12FA8	:08A12FBF	Unk Small Palette Array	{J}
+085C25E0	&PALETTE	Something's palette	141	{J}
+085C2600	&PALETTE	Something's palette	142	{J}
+085C2620	&PALETTE	Something's palette	143	{J}
+085C2640	&PALETTE	Something's palette	144	{J}
+085AA824	:085AA83B	Unk Small Palette Array	{U}
+0859A160	&PALETTE	Something's palette	141	{U}
+0859A180	&PALETTE	Something's palette	142	{U}
+0859A1A0	&PALETTE	Something's palette	143	{U}
+0859A1C0	&PALETTE	Something's palette	144	{U}
+085D4A44	:085D4A57	Unk OAMREGS TABLE3	{J}
+080DF008	&OAMREGS	OAMREGS	{J}
+080DF028	&OAMREGS	OAMREGS	{J}
+080DF048	&OAMREGS	OAMREGS	{J}
+080DF068	&OAMREGS	OAMREGS	{J}
+085AA9A0	:085AA9B3	Unk OAMREGS TABLE3	{U}
+080DA01C	&OAMREGS	OAMREGS	{U}
+080DA03C	&OAMREGS	OAMREGS	{U}
+080DA05C	&OAMREGS	OAMREGS	{U}
+080DA07C	&OAMREGS	OAMREGS	{U}
+085D4A58	:085D4A63	Unk OAMREGS TABLE4	{J}
+080DF09E	&OAMREGS	OAMREGS	{J}
+085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
+080DA0B2	&OAMREGS	OAMREGS	{U}

@@ -217,9 +217,9 @@
             // label4
             // 
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label4.Location = new System.Drawing.Point(9, 493);
+            this.label4.Location = new System.Drawing.Point(9, 458);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(395, 60);
+            this.label4.Size = new System.Drawing.Size(395, 95);
             this.label4.TabIndex = 206;
             this.label4.Text = "リストを縮める場合は、\r\n番号に、終端コード:255(0xFF)を設定してください。";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -557,6 +557,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 29);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -664,6 +665,7 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(1, 24);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
