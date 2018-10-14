@@ -56,8 +56,8 @@ namespace FEBuilderGBA
             for (int i = 0; i < pointers.Length; i++)
             {
                 InputFormRef.ReInitPointer(pointers[i]);
+                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + U.ToHexString(i), new uint[] { });
             }
-            FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { });
         }
 
         private void MapTerrainFloorLookupTableForm_Load(object sender, EventArgs e)
