@@ -854,18 +854,6 @@
             // 
             this.L_19_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_19_COMBO.FormattingEnabled = true;
-            this.L_19_COMBO.Items.AddRange(new object[] {
-            "00=通常",
-            "01=雪",
-            "02=溶岩洞窟",
-            "03=洞窟",
-            "04=草原",
-            "05=夕暮れ",
-            "07=夜",
-            "08=船",
-            "09=砂漠",
-            "0D=魔の島",
-            "0E=夜"});
             this.L_19_COMBO.Location = new System.Drawing.Point(295, 466);
             this.L_19_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_19_COMBO.Name = "L_19_COMBO";

@@ -8364,3 +8364,7 @@ r3=X tile position of menu of the right	{U}
 080DF09E	&OAMREGS	OAMREGS	{J}
 085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
 080DA0B2	&OAMREGS	OAMREGS	{U}
+08058BF4	Acquire the image ID of the battle cartoon floor tile	{J}
+08058D1C	Acquire the image ID of the background of battle animation	{J}
+08057DA8	Acquire the image ID of the battle cartoon floor tile	{U}
+08057ED0	Acquire the image ID of the background of battle animation	{U}

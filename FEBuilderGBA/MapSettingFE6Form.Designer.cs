@@ -624,17 +624,6 @@
             // 
             this.L_18_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_18_COMBO.FormattingEnabled = true;
-            this.L_18_COMBO.Items.AddRange(new object[] {
-            "00=Normal",
-            "01=Snow",
-            "02=Fiery Cave",
-            "03=Rocky Cave",
-            "04=Gray Castle",
-            "05=Town",
-            "06=Yellow Castle",
-            "07=Mountains?",
-            "08=Castle Again?",
-            "09=Desert"});
             this.L_18_COMBO.Location = new System.Drawing.Point(306, 561);
             this.L_18_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_18_COMBO.Name = "L_18_COMBO";
@@ -2020,6 +2009,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);

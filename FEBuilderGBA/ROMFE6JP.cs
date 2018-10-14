@@ -305,7 +305,49 @@ namespace FEBuilderGBA
         public uint dic_title_pointer() { return 0x0; }   //辞書タイトルポインタ
         public uint itemicon_mine_id(){ return 0x0;}  // アイテムアイコンのフレイボムの位置
         public uint item_gold_id() { return 0x6f;  }  // お金を取得するイベントに利用されるゴールドのID
-
+        public uint lookup_table_battle_terrain_00_pointer() { return 0x49CF8; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_01_pointer() { return 0x49CA4; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_02_pointer() { return 0x49CAC; }//戦闘アニメの床
+        public uint lookup_table_battle_terrain_03_pointer() { return 0x49CB4; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_04_pointer() { return 0x49CBC; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_05_pointer() { return 0x49CC4; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_06_pointer() { return 0x49CCC; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_07_pointer() { return 0x49CD4; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_08_pointer() { return 0x49CDC; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_09_pointer() { return 0x49CE4; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_10_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_11_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_12_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_13_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_14_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_15_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_16_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_17_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_18_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_19_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_terrain_20_pointer() { return 0x00; } //戦闘アニメの床
+        public uint lookup_table_battle_bg_00_pointer() { return 0x49D94; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_01_pointer() { return 0x49D44; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_02_pointer() { return 0x49D4C; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_03_pointer() { return 0x49D54; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_04_pointer() { return 0x49D5C; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_05_pointer() { return 0x49D64; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_06_pointer() { return 0x49D6C; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_07_pointer() { return 0x49D74; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_08_pointer() { return 0x49D7C; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_09_pointer() { return 0x49D84; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_10_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_11_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_12_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_13_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_14_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_15_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_16_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_17_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_18_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_19_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint lookup_table_battle_bg_20_pointer() { return 0x00; } //戦闘アニメの背景
+        public uint map_terrain_type_count() { return 48;  } //地形の種類の数
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
 
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0xB002B503; return 0x384c; } //anti-Huffman patch

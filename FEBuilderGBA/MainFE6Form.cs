@@ -738,5 +738,15 @@ namespace FEBuilderGBA
             MainFormUtil.GotoCommunities();
         }
 
+        private void MapTerrainFloorLookupTableButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<MapTerrainFloorLookupTableForm>();
+        }
+
+        private void MapTerrainBGLookupTableButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();
+        }
+
     }
 }

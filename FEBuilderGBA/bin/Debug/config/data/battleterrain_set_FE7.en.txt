@@ -1,0 +1,11 @@
+00=normal
+01=Snow
+02=Volcano
+03=cave
+04=Plains
+05=Sunset
+07=Night
+08=Ship
+09=Desert
+0D=Dread Isle
+0E=Night

@@ -45,7 +45,7 @@
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -77,8 +77,10 @@
             // 
             // TextBox
             // 
+            this.TextBox.ErrorMessage = "";
             this.TextBox.Location = new System.Drawing.Point(148, 1);
             this.TextBox.Name = "TextBox";
+            this.TextBox.Placeholder = "";
             this.TextBox.Size = new System.Drawing.Size(185, 25);
             this.TextBox.TabIndex = 77;
             // 
@@ -147,7 +149,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(357, 3);
             this.ReadCount.Maximum = new decimal(new int[] {
             256,
@@ -196,18 +197,22 @@
             // 
             // AddressPointer
             // 
+            this.AddressPointer.ErrorMessage = "";
             this.AddressPointer.Location = new System.Drawing.Point(92, 3);
             this.AddressPointer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.AddressPointer.Name = "AddressPointer";
+            this.AddressPointer.Placeholder = "";
             this.AddressPointer.ReadOnly = true;
             this.AddressPointer.Size = new System.Drawing.Size(169, 25);
             this.AddressPointer.TabIndex = 54;
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(386, -2);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 53;
@@ -238,6 +243,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);

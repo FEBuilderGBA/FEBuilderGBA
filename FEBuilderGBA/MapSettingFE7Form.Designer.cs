@@ -34,12 +34,16 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
+            this.W20 = new System.Windows.Forms.NumericUpDown();
+            this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
             this.X_MAPSTYLE_CHANGE = new System.Windows.Forms.Label();
             this.J_ID_MAPEDITOR = new System.Windows.Forms.Label();
             this.J_147 = new System.Windows.Forms.Label();
             this.J_146 = new System.Windows.Forms.Label();
             this.J_145 = new System.Windows.Forms.Label();
             this.L_19_COMBO = new System.Windows.Forms.ComboBox();
+            this.L_126_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_124_TEXT = new FEBuilderGBA.TextBoxEx();
             this.L_122_TEXT = new FEBuilderGBA.TextBoxEx();
             this.L_120_TEXT = new FEBuilderGBA.TextBoxEx();
@@ -277,12 +281,10 @@
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.L_126_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
-            this.W20 = new System.Windows.Forms.NumericUpDown();
-            this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.W36)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.W20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B147)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B146)).BeginInit();
@@ -380,8 +382,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W20)).BeginInit();
             this.SuspendLayout();
             // 
             // L_36_SONGPLAY
@@ -686,6 +686,43 @@
             this.panel3.Size = new System.Drawing.Size(1628, 939);
             this.panel3.TabIndex = 189;
             // 
+            // L_20_DIFFCULTY
+            // 
+            this.L_20_DIFFCULTY.ErrorMessage = "";
+            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 513);
+            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
+            this.L_20_DIFFCULTY.Placeholder = "";
+            this.L_20_DIFFCULTY.ReadOnly = true;
+            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(306, 25);
+            this.L_20_DIFFCULTY.TabIndex = 351;
+            // 
+            // W20
+            // 
+            this.W20.Hexadecimal = true;
+            this.W20.Location = new System.Drawing.Point(222, 514);
+            this.W20.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.W20.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.W20.Name = "W20";
+            this.W20.Size = new System.Drawing.Size(95, 25);
+            this.W20.TabIndex = 349;
+            // 
+            // J_20_DIFFCULTY
+            // 
+            this.J_20_DIFFCULTY.AccessibleDescription = "@MAPSETTING_HARD_BOOST";
+            this.J_20_DIFFCULTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_20_DIFFCULTY.Location = new System.Drawing.Point(6, 509);
+            this.J_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_20_DIFFCULTY.Name = "J_20_DIFFCULTY";
+            this.J_20_DIFFCULTY.Size = new System.Drawing.Size(210, 32);
+            this.J_20_DIFFCULTY.TabIndex = 350;
+            this.J_20_DIFFCULTY.Text = "難易度補正";
+            this.J_20_DIFFCULTY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // X_MAPSTYLE_CHANGE
             // 
             this.X_MAPSTYLE_CHANGE.Location = new System.Drawing.Point(7, 219);
@@ -742,23 +779,23 @@
             // 
             this.L_19_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_19_COMBO.FormattingEnabled = true;
-            this.L_19_COMBO.Items.AddRange(new object[] {
-            "00=通常",
-            "01=雪",
-            "02=溶岩洞窟",
-            "03=洞窟",
-            "04=草原",
-            "05=夕暮れ",
-            "07=夜",
-            "08=船",
-            "09=砂漠",
-            "0D=魔の島",
-            "0E=夜"});
             this.L_19_COMBO.Location = new System.Drawing.Point(295, 479);
             this.L_19_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_19_COMBO.Name = "L_19_COMBO";
             this.L_19_COMBO.Size = new System.Drawing.Size(330, 26);
             this.L_19_COMBO.TabIndex = 18;
+            // 
+            // L_126_PORTRAIT_AUTO
+            // 
+            this.L_126_PORTRAIT_AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_126_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 361);
+            this.L_126_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_126_PORTRAIT_AUTO.Name = "L_126_PORTRAIT_AUTO";
+            this.L_126_PORTRAIT_AUTO.Size = new System.Drawing.Size(66, 66);
+            this.L_126_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_126_PORTRAIT_AUTO.TabIndex = 282;
+            this.L_126_PORTRAIT_AUTO.TabStop = false;
             // 
             // L_124_TEXT
             // 
@@ -3402,55 +3439,6 @@
             this.panel14.Size = new System.Drawing.Size(254, 918);
             this.panel14.TabIndex = 192;
             // 
-            // L_126_PORTRAIT_AUTO
-            // 
-            this.L_126_PORTRAIT_AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_126_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 361);
-            this.L_126_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_126_PORTRAIT_AUTO.Name = "L_126_PORTRAIT_AUTO";
-            this.L_126_PORTRAIT_AUTO.Size = new System.Drawing.Size(66, 66);
-            this.L_126_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_126_PORTRAIT_AUTO.TabIndex = 282;
-            this.L_126_PORTRAIT_AUTO.TabStop = false;
-            // 
-            // L_20_DIFFCULTY
-            // 
-            this.L_20_DIFFCULTY.ErrorMessage = "";
-            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 513);
-            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
-            this.L_20_DIFFCULTY.Placeholder = "";
-            this.L_20_DIFFCULTY.ReadOnly = true;
-            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(306, 25);
-            this.L_20_DIFFCULTY.TabIndex = 351;
-            // 
-            // W20
-            // 
-            this.W20.Hexadecimal = true;
-            this.W20.Location = new System.Drawing.Point(222, 514);
-            this.W20.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.W20.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.W20.Name = "W20";
-            this.W20.Size = new System.Drawing.Size(95, 25);
-            this.W20.TabIndex = 349;
-            // 
-            // J_20_DIFFCULTY
-            // 
-            this.J_20_DIFFCULTY.AccessibleDescription = "@MAPSETTING_HARD_BOOST";
-            this.J_20_DIFFCULTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_20_DIFFCULTY.Location = new System.Drawing.Point(6, 509);
-            this.J_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_20_DIFFCULTY.Name = "J_20_DIFFCULTY";
-            this.J_20_DIFFCULTY.Size = new System.Drawing.Size(210, 32);
-            this.J_20_DIFFCULTY.TabIndex = 350;
-            this.J_20_DIFFCULTY.Text = "難易度補正";
-            this.J_20_DIFFCULTY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MapSettingFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -3466,6 +3454,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.W36)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.W20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B147)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B146)).EndInit();
@@ -3564,8 +3554,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W20)).EndInit();
             this.ResumeLayout(false);
 
         }

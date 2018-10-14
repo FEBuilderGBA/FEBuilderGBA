@@ -646,9 +646,31 @@ namespace FEBuilderGBA
                 TextBoxEx link_object = ((TextBoxEx)link_info);
                 src_object.ValueChanged += (sender, e) =>
                 {
-                    link_object.Text = ImageBattleTerrainForm.GetBattleTerrainName((uint)src_object.Value);
+                    uint id = (uint)src_object.Value;
+                    if (arg1 == "PLUS1")
+                    {
+                        id = id + 1;
+                    }
+                    link_object.Text = ImageBattleTerrainForm.GetBattleTerrainName(id);
                 };
 
+                return;
+            }
+            if (linktype == "TERRAINBATTLEICON")
+            {//バトル地形の画像
+                PictureBox link_object = ((PictureBox)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value;
+                    if (arg1 == "PLUS1")
+                    {
+                        id = id + 1;
+                    }
+                    Bitmap bitmap = ImageBattleTerrainForm.DrawSquare(id, ImageBattleTerrainForm.RangeType.Melee);
+//                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
                 return;
             }
             if (linktype == "BASEPOINT")
@@ -1731,6 +1753,16 @@ namespace FEBuilderGBA
                 return;
             }
             if (linktype == "BATTLEBG")
+            {//戦闘背景
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    link_object.Text = ImageBattleBGForm.GetName((uint)src_object.Value);
+                };
+
+                return;
+            }
+            if (linktype == "BATTLEBGICON")
             {//戦闘背景
                 PictureBox link_object = ((PictureBox)link_info);
 
@@ -4486,6 +4518,7 @@ namespace FEBuilderGBA
             MapPointerForm.ClearPlistCache();
             U.ClearMigemoCache();
 
+            Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
             Cache_map_emotion = null;
             g_Cache_portrait_extends = portrait_extends.NoCache;
@@ -5917,6 +5950,18 @@ namespace FEBuilderGBA
             }
             return U.at(Cache_map_emotion, num);
         }
+
+        static Dictionary<uint, string> Cache_TerrainSet;
+        public static Dictionary<uint,string> MakeTerrainSet()
+        {
+            if (Cache_TerrainSet == null)
+            {
+                string filename = U.ConfigDataFilename("battleterrain_set_");
+                Cache_TerrainSet = U.LoadDicResource(filename);
+            }
+            return Cache_TerrainSet;
+        }
+
 
         //ユニットの特殊状態
         static Dictionary<uint, string> Cache_ramunit_state_checkbox;

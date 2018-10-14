@@ -31,7 +31,7 @@
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.J_16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
@@ -50,6 +50,8 @@
             this.D12 = new System.Windows.Forms.NumericUpDown();
             this.D16 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.B9 = new System.Windows.Forms.NumericUpDown();
@@ -72,8 +74,6 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -124,7 +124,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_255);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(14, 43);
@@ -132,14 +132,14 @@
             this.panel6.Size = new System.Drawing.Size(252, 484);
             this.panel6.TabIndex = 76;
             // 
-            // AddressListExpandsButton
+            // AddressListExpandsButton_255
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 453);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(244, 30);
-            this.AddressListExpandsButton.TabIndex = 114;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 453);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(244, 30);
+            this.AddressListExpandsButton_255.TabIndex = 114;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -372,6 +372,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 405);
             this.panel2.TabIndex = 74;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(161, 302);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(290, 25);
+            this.Comment.TabIndex = 198;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(6, 299);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 31);
+            this.label4.TabIndex = 197;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B11
             // 
@@ -647,27 +668,6 @@
             this.AddressPanel.Size = new System.Drawing.Size(860, 30);
             this.AddressPanel.TabIndex = 75;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(161, 302);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(290, 25);
-            this.Comment.TabIndex = 198;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(6, 299);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 31);
-            this.label4.TabIndex = 197;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ImageBattleTerrainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -717,7 +717,7 @@
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label J_16;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
         private FEBuilderGBA.TextBoxEx BlockSize;

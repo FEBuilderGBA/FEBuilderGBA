@@ -183,5 +183,10 @@ namespace FEBuilderGBA
             DecreaseColorTSAToolForm f = (DecreaseColorTSAToolForm)InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
             f.InitMethod(2);
         }
+        public static string GetName(uint id)
+        {
+            InputFormRef InputFormRef = Init(null);
+            return InputFormRef.GetComment(id);
+        }
     }
 }

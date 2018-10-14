@@ -8277,3 +8277,8 @@
 080DF09E	&OAMREGS	OAMREGS	{J}
 085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
 080DA0B2	&OAMREGS	OAMREGS	{U}
+08058BF4	戦闘アニメの床のタイルの画像IDを取得する	{J}
+08058D1C	戦闘アニメの背景の画像IDを取得する	{J}
+08057DA8	戦闘アニメの床のタイルの画像IDを取得する	{U}
+08057ED0	戦闘アニメの背景の画像IDを取得する	{U}
+

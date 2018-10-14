@@ -113,6 +113,7 @@
             this.SettingVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnlineHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EventMapChangeButton = new System.Windows.Forms.Button();
             this.ArenaClassButton = new System.Windows.Forms.Button();
             this.ImageUnitPaletteButton = new System.Windows.Forms.Button();
@@ -177,7 +178,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
+            this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -207,7 +209,7 @@
             // 
             // MapTerrainNameButton
             // 
-            this.MapTerrainNameButton.Location = new System.Drawing.Point(1232, 123);
+            this.MapTerrainNameButton.Location = new System.Drawing.Point(1232, 201);
             this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainNameButton.Name = "MapTerrainNameButton";
             this.MapTerrainNameButton.Size = new System.Drawing.Size(200, 36);
@@ -942,9 +944,16 @@
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
+            // 
+            // DiscordURLToolStripMenuItem
+            // 
+            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
+            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
+            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
             // EventMapChangeButton
             // 
@@ -1080,6 +1089,8 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
+            this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
             this.ControlPanel.Controls.Add(this.ToolProblemReportToolButton);
             this.ControlPanel.Controls.Add(this.ROMRebuildButton);
             this.ControlPanel.Controls.Add(this.ImageGenericEnemyPortraitButton);
@@ -1632,7 +1643,7 @@
             // 
             // OtherTextButton
             // 
-            this.OtherTextButton.Location = new System.Drawing.Point(1232, 163);
+            this.OtherTextButton.Location = new System.Drawing.Point(1232, 122);
             this.OtherTextButton.Margin = new System.Windows.Forms.Padding(2);
             this.OtherTextButton.Name = "OtherTextButton";
             this.OtherTextButton.Size = new System.Drawing.Size(200, 36);
@@ -1740,12 +1751,27 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // DiscordURLToolStripMenuItem
+            // MapTerrainBGLookupTableButton
             // 
-            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
-            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
-            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
-            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1232, 277);
+            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
+            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainBGLookupTableButton.TabIndex = 133;
+            this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
+            this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainBGLookupTableButton.Click += new System.EventHandler(this.MapTerrainBGLookupTableButton_Click);
+            // 
+            // MapTerrainFloorLookupTableButton
+            // 
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1232, 240);
+            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
+            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainFloorLookupTableButton.TabIndex = 132;
+            this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
+            this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainFloorLookupTableButton.Click += new System.EventHandler(this.MapTerrainFloorLookupTableButton_Click);
             // 
             // MainFE6Form
             // 
@@ -1925,5 +1951,7 @@
         private System.Windows.Forms.Button ROMRebuildButton;
         private System.Windows.Forms.Button ToolProblemReportToolButton;
         private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
+        private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
+        private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
     }
 }

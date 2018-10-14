@@ -31,6 +31,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.D8 = new System.Windows.Forms.NumericUpDown();
@@ -55,11 +57,9 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
@@ -113,6 +113,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 381);
             this.panel2.TabIndex = 1;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(163, 152);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(222, 25);
+            this.Comment.TabIndex = 200;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(8, 149);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 31);
+            this.label4.TabIndex = 199;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // D0
             // 
@@ -388,7 +409,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_255);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(14, 47);
@@ -396,14 +417,14 @@
             this.panel6.Size = new System.Drawing.Size(252, 463);
             this.panel6.TabIndex = 71;
             // 
-            // AddressListExpandsButton
+            // AddressListExpandsButton_255
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(3, 432);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(240, 30);
-            this.AddressListExpandsButton.TabIndex = 114;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(3, 432);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(240, 30);
+            this.AddressListExpandsButton_255.TabIndex = 114;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // LabelFilter
             // 
@@ -429,27 +450,6 @@
             this.AddressList.Size = new System.Drawing.Size(251, 400);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(163, 152);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(222, 25);
-            this.Comment.TabIndex = 200;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(8, 149);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 31);
-            this.label4.TabIndex = 199;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImageBattleBGForm
             // 
@@ -513,7 +513,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
-        private System.Windows.Forms.Button AddressListExpandsButton;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
         private InterpolatedPictureBox X_BG_PIC;
         private System.Windows.Forms.Button DecreaseColorTSAToolButton;
         private TextBoxEx Comment;

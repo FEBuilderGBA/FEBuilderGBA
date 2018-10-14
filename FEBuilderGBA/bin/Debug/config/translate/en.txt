@@ -4924,6 +4924,9 @@ Help
 :オンラインヘルプ
 Online Help
 
+:DiscordコミニティURL
+Discord Community URL
+
 :マップ変化
 Tile Changes
 
@@ -4999,8 +5002,11 @@ World Map Image
 :簡易メニュー
 Simple Menu
 
-:DiscordコミニティURL
-Discord Community URL
+:地形背景対応表
+Terrain background correspondence table
+
+:地形床対応表
+Terrain floor correspondence table
 
 :詳細メニュー
 Advanced Editors
@@ -5536,6 +5542,12 @@ Automatically calculate the position of the pointer between games.\r\nThis is us
 :ワールドマップで再生するBGMを設定します。
 Set BGM to be played on World Map.
 
+:地形のごとに、戦闘アニメの床の画像の設定を行います。
+For each terrain, set the image of the battle cartoon floor.
+
+:地形のごとに、戦闘アニメの背景の画像の設定を行います。
+For each terrain, set the background image of the battle animation.
+
 :ファイルが見つかりませんか
 File not found
 
@@ -5732,16 +5744,16 @@ Reload Tile Changes
 Tile Changes pointer
 
 :マップ変化の設定画面を出します。
-We will display the map change setting screen.
+Display the tile change setting screen.
 
 :新規にマップ変化を割り当てます。
-Assign a new map change.
+Assign a new Tile change.
 
 :訪問村や、宝箱、壊れる壁、古木などのために、\r\nマップ変化を新規に割り当てる場合は、ここから新規にマップ変化を割り当ててください。
-For visiting villages, treasure chests, broken walls, old trees, etc.,\r\nTo assign a new map change, assign a new map change from here.
+For visiting villages, treasure chests, broken walls, Srag, etc.,\r\nTo assign a new map change, assign a new Tile change from here.
 
 :マップ変化を減らす場合は、設定画面から消去してください。\r\n変更したマップ変化は、マップを切り替えたときに読み込まれます。
-To reduce the map change, please erase from the setting screen.\r\nThe changed map change is read when switching the map.
+To reduce the Tile change, please erase from the setting screen.\r\nThe changed map change is read when switching the map.
 
 :マップ変化をさらに追加で作成しますか？
 Would you like to create additional Tile Changes?
@@ -6463,36 +6475,6 @@ Object type (Plist)
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
 
-:00=通常
-00=normal
-
-:02=溶岩洞窟
-02=Volcano
-
-:03=洞窟
-03=cave
-
-:04=草原
-04=Plains
-
-:05=夕暮れ
-05=Sunset
-
-:07=夜
-07=Night
-
-:08=船
-08=Ship
-
-:09=砂漠
-09=Desert
-
-:0D=魔の島
-0D=Dread Isle
-
-:0E=夜
-0E=Night
-
 :00=None(制圧)
 00=Seize
 
@@ -6682,6 +6664,9 @@ The map is too wide.Current size: ({0}, {1}).\r\nThe maximum size that can be us
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
 
+:00=通常
+00=normal
+
 :01=雪(未使用)
 01=Snow(UNUSED)
 
@@ -6702,6 +6687,12 @@ Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
 
 :07=街3(タイゼル港)
 07=Town 3 (Port Taizel)
+
+:08=船
+08=Ship
+
+:09=砂漠
+09=Desert
 
 :0A=要塞2(リグバルド要塞)
 0A=Fort 2 (Fort Rigwald)
@@ -6861,6 +6852,9 @@ Export Tile Config
 
 :マップスタイルエディタ
 Tileset Palette
+
+:値
+value
 
 :地形名(英語)
 Location Name (English)
@@ -8202,9 +8196,6 @@ There is no data to updatekeyword: {0}
 
 :アドレス指定がありません.\r\n\r\n例:\r\nADDRESS=0x1234
 There is no address specification.\r\n\r\nEx:\r\nADDRESS=0x1234
-
-:値
-value
 
 :COMBOの長さが不足しています。 4バイト以上ある必要があます.
 COMBO length is insufficient. It needs to have 4 bytes or more.

@@ -1,0 +1,10 @@
+00=Normal
+01=Snow
+02=Fiery Cave
+03=Rocky Cave
+04=Gray Castle
+05=Town
+06=Yellow Castle
+07=Mountains?
+08=Castle Again?
+09=Desert

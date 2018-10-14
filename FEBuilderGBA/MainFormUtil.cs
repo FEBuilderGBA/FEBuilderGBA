@@ -2102,6 +2102,14 @@ namespace FEBuilderGBA
             {
                 return R._("ワールドマップで再生するBGMを設定します。");
             }
+            if (name == "MapTerrainFloorLookupTableButton")
+            {
+                return R._("地形のごとに、戦闘アニメの床の画像の設定を行います。");
+            }
+            if (name == "MapTerrainBGLookupTableButton")
+            {
+                return R._("地形のごとに、戦闘アニメの背景の画像の設定を行います。");
+            }
             return "";
         }
         public static void MakeExplainFunctions(Control controlPanel)

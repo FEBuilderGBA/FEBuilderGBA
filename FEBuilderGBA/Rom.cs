@@ -296,6 +296,49 @@ namespace FEBuilderGBA
         uint dic_title_pointer();    //辞書タイトルポインタ
         uint itemicon_mine_id();  // アイテムアイコンのフレイボムの位置
         uint item_gold_id();  // お金を取得するイベントに利用されるゴールドのID
+        uint lookup_table_battle_terrain_00_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_01_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_02_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_03_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_04_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_05_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_06_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_07_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_08_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_09_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_10_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_11_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_12_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_13_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_14_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_15_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_16_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_17_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_18_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_19_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_terrain_20_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_00_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_01_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_02_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_03_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_04_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_05_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_06_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_07_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_08_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_09_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_10_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_11_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_12_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_13_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_14_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_15_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_16_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_17_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_18_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_19_pointer(); //戦闘アニメの床
+        uint lookup_table_battle_bg_20_pointer(); //戦闘アニメの床
+        uint map_terrain_type_count(); //地形の種類の数
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
         uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
         uint patch_C01_hack(out uint enable_value); //C01 patch

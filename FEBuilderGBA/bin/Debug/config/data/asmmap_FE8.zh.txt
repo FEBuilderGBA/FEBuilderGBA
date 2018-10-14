@@ -8298,3 +8298,7 @@ r3=X tile position of menu of the right	{U}
 080DF09E	&OAMREGS	OAMREGS	{J}
 085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
 080DA0B2	&OAMREGS	OAMREGS	{U}
+08058BF4	获取战斗卡通地砖的图像ID	{J}
+08058D1C	获取战斗动画背景的图像ID	{J}
+08057DA8	获取战斗卡通地砖的图像ID	{U}
+08057ED0	获取战斗动画背景的图像ID	{U}

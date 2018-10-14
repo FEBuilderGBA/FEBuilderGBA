@@ -870,3 +870,5 @@
 0802E3D0	RMenu_Procs_BKSEL战斗预测对话关系
 08070A0C	战斗预测对话框是注册RMenu的包装函数
 08003ad8	NewBlocking6C
+08049C5C	获取战斗卡通地砖的图像ID
+08049CFC	获取战斗动画背景的图像ID

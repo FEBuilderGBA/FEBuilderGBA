@@ -3948,3 +3948,7 @@
 08018D38	GetROMCharStruct	{U}
 0806ccb8	ClearMOVEUNITs	{U}
 0806baf0	MakeMOVEUNITForMapUnit	{U}
+0805313C	戦闘アニメの床のタイルの画像IDを取得する	{J}
+08053218	戦闘アニメの背景の画像IDを取得する	{J}
+08052954	戦闘アニメの床のタイルの画像IDを取得する	{U}
+08052A30	戦闘アニメの背景の画像IDを取得する	{U}

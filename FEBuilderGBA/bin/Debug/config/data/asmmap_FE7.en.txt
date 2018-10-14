@@ -3826,3 +3826,18 @@
 08082A18	Battle prediction dialog is a wrapper function to register RMenu	{J}
 08070A0C	Battle prediction dialog is a wrapper function to register RMenu	{U}
 08CC26D4	:08CC2783	Character string ID referred to by the game system	{U}
+//This data is made with the aim of being readable by machine fast.
+080190B0	GetRescuingUnitNameId	{J}
+080190E0	WriteStatusTextToRAM	{J}
+08019108	GetROMClassStruct	{J}
+08019120	GetROMCharStruct	{J}
+0806d4a4	ClearMOVEUNITs	{J}
+0806c2dc	MakeMOVEUNITForMapUnit	{J}
+08018CC0	GetRescuingUnitNameId	{U}
+08018D38	GetROMCharStruct	{U}
+0806ccb8	ClearMOVEUNITs	{U}
+0806baf0	MakeMOVEUNITForMapUnit	{U}
+0805313C	Acquire the image ID of the battle cartoon floor tile	{J}
+08053218	Acquire the image ID of the background of battle animation	{J}
+08052954	Acquire the image ID of the battle cartoon floor tile	{U}
+08052A30	Acquire the image ID of the background of battle animation	{U}

@@ -690,7 +690,28 @@ namespace FEBuilderGBA
             listbox.Tag = list;
             listbox.EndUpdate();
         }
-        public static uint FindList(List<U.AddrResult> list,uint addr)
+        public static void ConvertComboBox(Dictionary<uint,string> list, ref ComboBox listbox, bool withNumber)
+        {
+            listbox.BeginUpdate();
+            listbox.Items.Clear();
+            if (withNumber)
+            {
+                foreach (var pair in list)
+                {
+                    listbox.Items.Add(U.ToHexString(pair.Key) + "=" + pair.Value);
+                }
+            }
+            else
+            {
+                foreach (var pair in list)
+                {
+                    listbox.Items.Add(pair.Value);
+                }
+            }
+
+            listbox.EndUpdate();
+        }
+        public static uint FindList(List<U.AddrResult> list, uint addr)
         {
             int max = list.Count;
             for (int i = 0; i < max; i++)
@@ -2026,6 +2047,8 @@ namespace FEBuilderGBA
             AIMapSettingForm.MakeAllDataLength(list);
             ImageRomAnimeForm.MakeAllDataLength(list, isPointerOnly);
             ImageGenericEnemyPortraitForm.MakeAllDataLength(list, isPointerOnly);
+            MapTerrainFloorLookupTableForm.MakeAllDataLength(list);
+            MapTerrainBGLookupTableForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
             if (Program.ROM.RomInfo.version() == 8)

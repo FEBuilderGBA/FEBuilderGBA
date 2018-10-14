@@ -1083,3 +1083,5 @@
 08070A0C	Battle prediction dialog is a wrapper function to register RMenu
 08003ad8	NewBlocking6C
 08017410	GetUnitFogViewRange
+08049C5C	Acquire the image ID of the battle cartoon floor tile
+08049CFC	Acquire the image ID of the background of battle animation

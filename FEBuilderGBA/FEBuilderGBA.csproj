@@ -1759,6 +1759,18 @@
     <Compile Include="WorldMapBGMForm.Designer.cs">
       <DependentUpon>WorldMapBGMForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapTerrainFloorLookupTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTerrainFloorLookupTableForm.Designer.cs">
+      <DependentUpon>MapTerrainFloorLookupTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapTerrainBGLookupTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTerrainBGLookupTableForm.Designer.cs">
+      <DependentUpon>MapTerrainBGLookupTableForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2600,6 +2612,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorldMapBGMForm.resx">
       <DependentUpon>WorldMapBGMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTerrainFloorLookupTableForm.resx">
+      <DependentUpon>MapTerrainFloorLookupTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTerrainBGLookupTableForm.resx">
+      <DependentUpon>MapTerrainBGLookupTableForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

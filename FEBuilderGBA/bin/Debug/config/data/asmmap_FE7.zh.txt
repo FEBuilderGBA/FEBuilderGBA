@@ -3817,3 +3817,18 @@
 08082A18	战斗预测对话框是注册RMenu的包装函数	{J}
 08070A0C	战斗预测对话框是注册RMenu的包装函数	{U}
 08CC26D4	:08CC2783	游戏系统引用的字符串ID	{U}
+//This data is made with the aim of being readable by machine fast.
+080190B0	GetRescuingUnitNameId	{J}
+080190E0	WriteStatusTextToRAM	{J}
+08019108	GetROMClassStruct	{J}
+08019120	GetROMCharStruct	{J}
+0806d4a4	ClearMOVEUNITs	{J}
+0806c2dc	MakeMOVEUNITForMapUnit	{J}
+08018CC0	GetRescuingUnitNameId	{U}
+08018D38	GetROMCharStruct	{U}
+0806ccb8	ClearMOVEUNITs	{U}
+0806baf0	MakeMOVEUNITForMapUnit	{U}
+0805313C	获取战斗卡通地砖的图像ID	{J}
+08053218	获取战斗动画背景的图像ID	{J}
+08052954	获取战斗卡通地砖的图像ID	{U}
+08052A30	获取战斗动画背景的图像ID	{U}
