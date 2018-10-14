@@ -33,7 +33,7 @@
             this.L_0_BATTLEBG = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_BATTLEBG = new System.Windows.Forms.Label();
-            this.WriteTextButton = new System.Windows.Forms.Button();
+            this.WriteButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
@@ -119,14 +119,14 @@
             this.J_0_BATTLEBG.Text = "値";
             this.J_0_BATTLEBG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // WriteTextButton
+            // WriteButton
             // 
-            this.WriteTextButton.Location = new System.Drawing.Point(571, -2);
-            this.WriteTextButton.Name = "WriteTextButton";
-            this.WriteTextButton.Size = new System.Drawing.Size(167, 30);
-            this.WriteTextButton.TabIndex = 9;
-            this.WriteTextButton.Text = "書き込み";
-            this.WriteTextButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Location = new System.Drawing.Point(571, -2);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(167, 30);
+            this.WriteButton.TabIndex = 9;
+            this.WriteButton.Text = "書き込み";
+            this.WriteButton.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -227,7 +227,7 @@
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label55);
-            this.panel5.Controls.Add(this.WriteTextButton);
+            this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Location = new System.Drawing.Point(480, 49);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(738, 30);
@@ -345,7 +345,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button WriteTextButton;
+        private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label8;
