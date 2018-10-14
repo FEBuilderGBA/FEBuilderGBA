@@ -5003,10 +5003,10 @@ World Map Image
 Simple Menu
 
 :地形背景対応表
-Terrain background correspondence table
+Terrain BG table
 
 :地形床対応表
-Terrain floor correspondence table
+Terrain floor table
 
 :詳細メニュー
 Advanced Editors
