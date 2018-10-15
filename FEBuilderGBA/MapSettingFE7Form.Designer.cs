@@ -2897,7 +2897,7 @@
             // 
             // B16
             // 
-            this.B16.Location = new System.Drawing.Point(222, 419);
+            this.B16.Location = new System.Drawing.Point(222, 418);
             this.B16.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B16.Name = "B16";
             this.B16.Size = new System.Drawing.Size(64, 25);

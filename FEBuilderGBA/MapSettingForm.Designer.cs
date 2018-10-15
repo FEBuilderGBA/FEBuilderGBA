@@ -31,7 +31,6 @@
             this.panel1234 = new System.Windows.Forms.Panel();
             this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.L_14_ID = new FEBuilderGBA.PanelEx();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.X_MAPSTYLE_CHANGE = new System.Windows.Forms.Label();
             this.J_147 = new System.Windows.Forms.Label();
@@ -304,7 +303,6 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1234.SuspendLayout();
-            this.L_14_ID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B133)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B132)).BeginInit();
@@ -443,9 +441,9 @@
             // panel1234
             // 
             this.panel1234.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1234.Controls.Add(this.B14);
             this.panel1234.Controls.Add(this.L_20_DIFFCULTY);
             this.panel1234.Controls.Add(this.MapPictureBox);
-            this.panel1234.Controls.Add(this.L_14_ID);
             this.panel1234.Controls.Add(this.X_MAPSTYLE_CHANGE);
             this.panel1234.Controls.Add(this.J_147);
             this.panel1234.Controls.Add(this.J_ID_MAPEDITOR);
@@ -726,19 +724,10 @@
             this.MapPictureBox.Size = new System.Drawing.Size(532, 475);
             this.MapPictureBox.TabIndex = 151;
             // 
-            // L_14_ID
-            // 
-            this.L_14_ID.Controls.Add(this.B14);
-            this.L_14_ID.ErrorMessage = "";
-            this.L_14_ID.Location = new System.Drawing.Point(217, 339);
-            this.L_14_ID.Name = "L_14_ID";
-            this.L_14_ID.Size = new System.Drawing.Size(75, 32);
-            this.L_14_ID.TabIndex = 336;
-            // 
             // B14
             // 
             this.B14.Hexadecimal = true;
-            this.B14.Location = new System.Drawing.Point(3, 5);
+            this.B14.Location = new System.Drawing.Point(220, 347);
             this.B14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B14.Maximum = new decimal(new int[] {
             255,
@@ -4258,7 +4247,6 @@
             this.Load += new System.EventHandler(this.MapSettingForm_Load);
             this.panel1234.ResumeLayout(false);
             this.panel1234.PerformLayout();
-            this.L_14_ID.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.B14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B133)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B132)).EndInit();
@@ -4672,7 +4660,6 @@
         private System.Windows.Forms.Label J_ID_MAPEDITOR;
         private System.Windows.Forms.Label J_147;
         private System.Windows.Forms.Label X_MAPSTYLE_CHANGE;
-        private PanelEx L_14_ID;
         private TextBoxEx L_20_DIFFCULTY;
     }
 }
