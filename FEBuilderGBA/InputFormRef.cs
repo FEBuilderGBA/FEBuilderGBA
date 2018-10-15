@@ -4248,13 +4248,27 @@ namespace FEBuilderGBA
             }
         }
 
+        public bool IsSurrogateStructure;
+
         public void UIToRom(uint addr, String prefix,List<Control> controls)
         {
-            if (addr + this.BlockSize > Program.ROM.Data.Length)
+            if (IsSurrogateStructure)
+            {//代理構造体で表現されているのでサイズ不明
+                if (addr + 1 > Program.ROM.Data.Length)
+                {
+                    R.ShowStopError("警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}", prefix, U.ToHexString(addr), U.ToHexString(this.BlockSize), U.ToHexString(Program.ROM.Data.Length), this.SelfForm.Text);
+                    Debug.Assert(false);
+                    return;
+                }
+            }
+            else
             {
-                R.ShowStopError("警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}", prefix, U.ToHexString(addr), U.ToHexString(this.BlockSize), U.ToHexString(Program.ROM.Data.Length), this.SelfForm.Text);
-                Debug.Assert(false);
-                return;
+                if (addr + this.BlockSize > Program.ROM.Data.Length)
+                {
+                    R.ShowStopError("警告:範囲外への書き込みです prefix:{0} addr:{1}+{2} length:{3} form:{4}", prefix, U.ToHexString(addr), U.ToHexString(this.BlockSize), U.ToHexString(Program.ROM.Data.Length), this.SelfForm.Text);
+                    Debug.Assert(false);
+                    return;
+                }
             }
 
             foreach (Control info in controls)

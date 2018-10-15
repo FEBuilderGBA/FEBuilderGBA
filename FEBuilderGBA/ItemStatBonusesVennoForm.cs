@@ -20,6 +20,7 @@ namespace FEBuilderGBA
             this.ItemListBox.ItemListToJumpForm( "ITEM");
             this.InputFormRef = Init(this);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
+            this.InputFormRef.IsSurrogateStructure = true; //アイテムの構造体を利用するがサイズは異なる.
             this.InputFormRef.MakeGeneralAddressListContextMenu(false);
 
             InputFormRef.markupJumpLabel(X_EXPAIN_HOWTOADD);

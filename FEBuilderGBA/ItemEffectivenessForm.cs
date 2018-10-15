@@ -22,6 +22,7 @@ namespace FEBuilderGBA
             
             this.InputFormRef = Init(this);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
+            this.InputFormRef.IsSurrogateStructure = true; //アイテムの構造体を利用するがサイズは異なる.
             this.N_InputFormRef = N_Init(this);
 
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
