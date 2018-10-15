@@ -6856,6 +6856,12 @@ Tileset Palette
 :値
 value
 
+:戦闘アニメの床へJump
+Jump to the battle cartoon floor
+
+:戦闘アニメの背景へJump
+Jump to the background of battle animation
+
 :地形名(英語)
 Location Name (English)
 
@@ -7162,137 +7168,8 @@ Movement Cost: Rain (not in FE6)
 :移動コスト: 天気雪(FE6にはない)
 Movement Cost: Snow (not in FE6)
 
-:川
-River
-
-:砂漠
-Desert
-
-:平地
-Plains
-
-:砂地
-Desert
-
 :使用中のクラス
 Class in use
-
-:壊れた家
-Destroyed House
-
-:柱
-Pillar
-
-:壊れた壁
-Cracked Walls
-
-:深い森
-Deep Woods
-
-:森
-Woods
-
-:荒地
-Wasteland
-
-:壁
-Wall
-
-:城門
-Castle Gate
-
-:キラーアーチ
-Killer Ballista
-
-:ロングアーチ
-Iron Ballista
-
-:掘
-Digging
-
-:砦
-Fort
-
-:預かり所
-Unknown
-
-:アーチ
-Ballista
-
-:崖
-Cliff
-
-:床
-Floor
-
-:闘技場
-Arena
-
-:道具屋
-Vendor
-
-:廃墟
-Ruins
-
-:教会
-Church
-
-:湖
-Lake
-
-:海
-Ocean
-
-:武器屋
-Armory
-
-:民家
-House
-
-:堀
-Moat
-
-:谷
-Valley
-
-:門
-Gate
-
-:屋根
-Roof
-
-:跳ね橋
-Bridge
-
-:橋
-bridge
-
-:閉じ村
-Closed village
-
-:通信闘技
-Link Arena
-
-:氷河
-Glacier
-
-:空宝箱
-Empty Chest
-
-:高い山
-Peak
-
-:山
-Mountain
-
-:村
-Village
-
-:階段
-Stairs
-
-:王座
-Throne
 
 :クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。
 Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nTiles that can not be moved must be set to 255, and moveable tiles must be set to 0 - 15.
@@ -7302,45 +7179,6 @@ Movement Cost: Rain
 
 :移動コスト: 天気雪
 Movement Cost: Snow
-
-:骨
-Bone
-
-:タル
-Barrel
-
-:酒場
-Inn
-
-:遺跡
-Remains
-
-:深海
-Deep Sea
-
-:空
-Sky
-
-:丸太橋
-Log bridge
-
-:古木
-Old tree
-
-:マスト
-Mast
-
-:支柱
-Brace
-
-:甲板
-Deck
-
-:舵
-Rudder
-
-:水
-Water
 
 :空き領域のポインタまたはサイズが正しくありません。\r\n0x0 - 0x100までの領域は危険なので移動できません
 0x0-The data from 0x0 to 0x100 is dangerous and can't be moved
@@ -8547,6 +8385,12 @@ SelectAll(&A)
 
 :event_assemblerが、0x0 - 0x100 の領域を書き換えました。\r\nこの領域への書き込みは危険です。\r\nこの内容を本当に適応してもよろしいですか？\r\n\r\n「はい」ならば適応します。\r\nそれ以外ならば変更を破棄します。
 Are you sure you want to adapt this content?
+
+:武器屋
+Armory
+
+:道具屋
+Vendor
 
 :秘密屋
 Secret shop

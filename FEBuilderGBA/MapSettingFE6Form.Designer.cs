@@ -124,7 +124,7 @@
             this.B19 = new System.Windows.Forms.NumericUpDown();
             this.J_19 = new System.Windows.Forms.Label();
             this.B18 = new System.Windows.Forms.NumericUpDown();
-            this.J_18 = new System.Windows.Forms.Label();
+            this.J_18_MAPTERRAINBGLOOKUPTABLE = new System.Windows.Forms.Label();
             this.B17 = new System.Windows.Forms.NumericUpDown();
             this.L_17_COMBO = new System.Windows.Forms.ComboBox();
             this.J_17 = new System.Windows.Forms.Label();
@@ -371,7 +371,7 @@
             this.panel3.Controls.Add(this.B19);
             this.panel3.Controls.Add(this.J_19);
             this.panel3.Controls.Add(this.B18);
-            this.panel3.Controls.Add(this.J_18);
+            this.panel3.Controls.Add(this.J_18_MAPTERRAINBGLOOKUPTABLE);
             this.panel3.Controls.Add(this.B17);
             this.panel3.Controls.Add(this.L_17_COMBO);
             this.panel3.Controls.Add(this.J_17);
@@ -1520,17 +1520,17 @@
             this.B18.Size = new System.Drawing.Size(64, 25);
             this.B18.TabIndex = 15;
             // 
-            // J_18
+            // J_18_MAPTERRAINBGLOOKUPTABLE
             // 
-            this.J_18.AccessibleDescription = "@MAPSETTING_BATTLE_BACKGROUND";
-            this.J_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_18.Location = new System.Drawing.Point(6, 560);
-            this.J_18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_18.Name = "J_18";
-            this.J_18.Size = new System.Drawing.Size(210, 32);
-            this.J_18.TabIndex = 54;
-            this.J_18.Text = "戦闘背景";
-            this.J_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.AccessibleDescription = "@MAPSETTING_BATTLE_BACKGROUND";
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.Location = new System.Drawing.Point(6, 560);
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.Name = "J_18_MAPTERRAINBGLOOKUPTABLE";
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.Size = new System.Drawing.Size(210, 32);
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.TabIndex = 54;
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.Text = "戦闘背景";
+            this.J_18_MAPTERRAINBGLOOKUPTABLE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B17
             // 
@@ -2202,7 +2202,7 @@
         private System.Windows.Forms.NumericUpDown B19;
         private System.Windows.Forms.Label J_19;
         private System.Windows.Forms.NumericUpDown B18;
-        private System.Windows.Forms.Label J_18;
+        private System.Windows.Forms.Label J_18_MAPTERRAINBGLOOKUPTABLE;
         private System.Windows.Forms.NumericUpDown B17;
         private System.Windows.Forms.ComboBox L_17_COMBO;
         private System.Windows.Forms.Label J_17;

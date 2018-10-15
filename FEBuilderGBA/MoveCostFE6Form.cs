@@ -14,6 +14,7 @@ namespace FEBuilderGBA
         public MoveCostFE6Form()
         {
             InitializeComponent();
+            LoadNames();
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
@@ -194,6 +195,60 @@ namespace FEBuilderGBA
             {
                 label.ErrorMessage = "";
             }
+        }
+        void LoadNames()
+        {
+            J_0.Text = MapTerrainNameForm.GetName(0);
+            J_1.Text = MapTerrainNameForm.GetName(1);
+            J_2.Text = MapTerrainNameForm.GetName(2);
+            J_3.Text = MapTerrainNameForm.GetName(3);
+            J_4.Text = MapTerrainNameForm.GetName(4);
+            J_5.Text = MapTerrainNameForm.GetName(5);
+            J_6.Text = MapTerrainNameForm.GetName(6);
+            J_7.Text = MapTerrainNameForm.GetName(7);
+            J_8.Text = MapTerrainNameForm.GetName(8);
+            J_9.Text = MapTerrainNameForm.GetName(9);
+            J_10.Text = MapTerrainNameForm.GetName(10);
+            J_11.Text = MapTerrainNameForm.GetName(11);
+            J_12.Text = MapTerrainNameForm.GetName(12);
+            J_13.Text = MapTerrainNameForm.GetName(13);
+            J_14.Text = MapTerrainNameForm.GetName(14);
+            J_15.Text = MapTerrainNameForm.GetName(15);
+            J_16.Text = MapTerrainNameForm.GetName(16);
+            J_17.Text = MapTerrainNameForm.GetName(17);
+            J_18.Text = MapTerrainNameForm.GetName(18);
+            J_19.Text = MapTerrainNameForm.GetName(19);
+            J_20.Text = MapTerrainNameForm.GetName(20);
+            J_21.Text = MapTerrainNameForm.GetName(21);
+            J_22.Text = MapTerrainNameForm.GetName(22);
+            J_23.Text = MapTerrainNameForm.GetName(23);
+            J_24.Text = MapTerrainNameForm.GetName(24);
+            J_25.Text = MapTerrainNameForm.GetName(25);
+            J_26.Text = MapTerrainNameForm.GetName(26);
+            J_27.Text = MapTerrainNameForm.GetName(27);
+            J_28.Text = MapTerrainNameForm.GetName(28);
+            J_29.Text = MapTerrainNameForm.GetName(29);
+            J_30.Text = MapTerrainNameForm.GetName(30);
+            J_31.Text = MapTerrainNameForm.GetName(31);
+            J_32.Text = MapTerrainNameForm.GetName(32);
+            J_33.Text = MapTerrainNameForm.GetName(33);
+            J_34.Text = MapTerrainNameForm.GetName(34);
+            J_35.Text = MapTerrainNameForm.GetName(35);
+            J_36.Text = MapTerrainNameForm.GetName(36);
+            J_37.Text = MapTerrainNameForm.GetName(37);
+            J_38.Text = MapTerrainNameForm.GetName(38);
+            J_39.Text = MapTerrainNameForm.GetName(39);
+            J_40.Text = MapTerrainNameForm.GetName(40);
+            J_41.Text = MapTerrainNameForm.GetName(41);
+            J_42.Text = MapTerrainNameForm.GetName(42);
+            J_43.Text = MapTerrainNameForm.GetName(43);
+            J_44.Text = MapTerrainNameForm.GetName(44);
+            J_45.Text = MapTerrainNameForm.GetName(45);
+            J_46.Text = MapTerrainNameForm.GetName(46);
+            J_47.Text = MapTerrainNameForm.GetName(47);
+            J_48.Text = MapTerrainNameForm.GetName(48);
+            J_49.Text = MapTerrainNameForm.GetName(49);
+            J_50.Text = MapTerrainNameForm.GetName(50);
         }
     }
 }

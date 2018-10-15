@@ -8302,3 +8302,6 @@ r3=X tile position of menu of the right	{U}
 08058D1C	获取战斗动画背景的图像ID	{J}
 08057DA8	获取战斗卡通地砖的图像ID	{U}
 08057ED0	获取战斗动画背景的图像ID	{U}
+088618D0	:0886194F	地形名称的TextID在FE8J中没有使用	{J}
+08A0035C	&EVENT	天空事件	1	{J}
+08A00364	&EVENT	天空事件	2	{J}

@@ -3697,6 +3697,11 @@ namespace FEBuilderGBA
             {
                 InputFormRef.JumpForm<ToolUnitTalkGroupForm>(value, "AddressList", src_object);
             }
+            else if (linktype == "MAPTERRAINBGLOOKUPTABLE")
+            {
+                MapTerrainBGLookupTableForm f = (MapTerrainBGLookupTableForm)InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();
+                f.JumpTo(value,0);
+            }
             else if (linktype == "RAMUNIT_STATE")
             {
                 RAMUnitStateFlagForm f = (RAMUnitStateFlagForm)InputFormRef.JumpForm<RAMUnitStateFlagForm>(U.NOT_FOUND);

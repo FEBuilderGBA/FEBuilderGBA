@@ -50,6 +50,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.X_JUMP_FLOOR = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEBGICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -64,6 +65,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.X_JUMP_FLOOR);
             this.panel4.Controls.Add(this.L_0_BATTLEBGICON);
             this.panel4.Controls.Add(this.L_0_BATTLEBG);
             this.panel4.Controls.Add(this.B0);
@@ -314,6 +316,19 @@
             this.AddressList.Size = new System.Drawing.Size(455, 630);
             this.AddressList.TabIndex = 0;
             // 
+            // X_JUMP_FLOOR
+            // 
+            this.X_JUMP_FLOOR.AutoSize = true;
+            this.X_JUMP_FLOOR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_FLOOR.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_FLOOR.Location = new System.Drawing.Point(69, 444);
+            this.X_JUMP_FLOOR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_FLOOR.Name = "X_JUMP_FLOOR";
+            this.X_JUMP_FLOOR.Size = new System.Drawing.Size(172, 18);
+            this.X_JUMP_FLOOR.TabIndex = 73;
+            this.X_JUMP_FLOOR.Text = "戦闘アニメの床へJump";
+            this.X_JUMP_FLOOR.Click += new System.EventHandler(this.X_JUMP_FLOOR_Click);
+            // 
             // MapTerrainBGLookupTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -366,5 +381,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label X_JUMP_FLOOR;
     }
 }

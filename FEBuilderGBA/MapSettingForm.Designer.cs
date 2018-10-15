@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1234 = new System.Windows.Forms.Panel();
+            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.L_14_ID = new FEBuilderGBA.PanelEx();
             this.B14 = new System.Windows.Forms.NumericUpDown();
@@ -253,7 +254,7 @@
             this.W20 = new System.Windows.Forms.NumericUpDown();
             this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
             this.B19 = new System.Windows.Forms.NumericUpDown();
-            this.J_19 = new System.Windows.Forms.Label();
+            this.J_19_MAPTERRAINBGLOOKUPTABLE = new System.Windows.Forms.Label();
             this.B18 = new System.Windows.Forms.NumericUpDown();
             this.L_18_COMBO = new System.Windows.Forms.ComboBox();
             this.J_18 = new System.Windows.Forms.Label();
@@ -302,7 +303,6 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.panel1234.SuspendLayout();
             this.L_14_ID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B14)).BeginInit();
@@ -667,7 +667,7 @@
             this.panel1234.Controls.Add(this.W20);
             this.panel1234.Controls.Add(this.J_20_DIFFCULTY);
             this.panel1234.Controls.Add(this.B19);
-            this.panel1234.Controls.Add(this.J_19);
+            this.panel1234.Controls.Add(this.J_19_MAPTERRAINBGLOOKUPTABLE);
             this.panel1234.Controls.Add(this.B18);
             this.panel1234.Controls.Add(this.L_18_COMBO);
             this.panel1234.Controls.Add(this.J_18);
@@ -705,6 +705,17 @@
             this.panel1234.Name = "panel1234";
             this.panel1234.Size = new System.Drawing.Size(1487, 969);
             this.panel1234.TabIndex = 0;
+            // 
+            // L_20_DIFFCULTY
+            // 
+            this.L_20_DIFFCULTY.ErrorMessage = "";
+            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 517);
+            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
+            this.L_20_DIFFCULTY.Placeholder = "";
+            this.L_20_DIFFCULTY.ReadOnly = true;
+            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(244, 25);
+            this.L_20_DIFFCULTY.TabIndex = 337;
             // 
             // MapPictureBox
             // 
@@ -3623,17 +3634,17 @@
             this.B19.Size = new System.Drawing.Size(64, 25);
             this.B19.TabIndex = 16;
             // 
-            // J_19
+            // J_19_MAPTERRAINBGLOOKUPTABLE
             // 
-            this.J_19.AccessibleDescription = "@MAPSETTING_BATTLE_BACKGROUND";
-            this.J_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_19.Location = new System.Drawing.Point(6, 484);
-            this.J_19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_19.Name = "J_19";
-            this.J_19.Size = new System.Drawing.Size(210, 32);
-            this.J_19.TabIndex = 54;
-            this.J_19.Text = "戦闘背景";
-            this.J_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.AccessibleDescription = "@MAPSETTING_BATTLE_BACKGROUND";
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.Location = new System.Drawing.Point(6, 484);
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.Name = "J_19_MAPTERRAINBGLOOKUPTABLE";
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.Size = new System.Drawing.Size(210, 32);
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.TabIndex = 54;
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.Text = "戦闘背景";
+            this.J_19_MAPTERRAINBGLOOKUPTABLE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B18
             // 
@@ -4232,17 +4243,6 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // L_20_DIFFCULTY
-            // 
-            this.L_20_DIFFCULTY.ErrorMessage = "";
-            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 517);
-            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
-            this.L_20_DIFFCULTY.Placeholder = "";
-            this.L_20_DIFFCULTY.ReadOnly = true;
-            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(244, 25);
-            this.L_20_DIFFCULTY.TabIndex = 337;
-            // 
             // MapSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -4446,7 +4446,7 @@
         private System.Windows.Forms.NumericUpDown W20;
         private System.Windows.Forms.Label J_20_DIFFCULTY;
         private System.Windows.Forms.NumericUpDown B19;
-        private System.Windows.Forms.Label J_19;
+        private System.Windows.Forms.Label J_19_MAPTERRAINBGLOOKUPTABLE;
         private System.Windows.Forms.NumericUpDown B18;
         private System.Windows.Forms.ComboBox L_18_COMBO;
         private System.Windows.Forms.Button L_32_SONGPLAY;

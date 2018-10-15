@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.L_0_TERRAINBATTLEICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TERRAINBATTLE = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
@@ -41,29 +43,29 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_0_TERRAINBATTLEICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.X_JUMP_BG = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.X_JUMP_BG);
             this.panel4.Controls.Add(this.L_0_TERRAINBATTLEICON);
             this.panel4.Controls.Add(this.L_0_TERRAINBATTLE);
             this.panel4.Controls.Add(this.B0);
@@ -73,6 +75,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(738, 635);
             this.panel4.TabIndex = 80;
+            // 
+            // L_0_TERRAINBATTLEICON
+            // 
+            this.L_0_TERRAINBATTLEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_TERRAINBATTLEICON.Location = new System.Drawing.Point(72, 62);
+            this.L_0_TERRAINBATTLEICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_TERRAINBATTLEICON.Name = "L_0_TERRAINBATTLEICON";
+            this.L_0_TERRAINBATTLEICON.Size = new System.Drawing.Size(662, 343);
+            this.L_0_TERRAINBATTLEICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.L_0_TERRAINBATTLEICON.TabIndex = 185;
+            this.L_0_TERRAINBATTLEICON.TabStop = false;
+            // 
+            // L_0_TERRAINBATTLE
+            // 
+            this.L_0_TERRAINBATTLE.ErrorMessage = "";
+            this.L_0_TERRAINBATTLE.Location = new System.Drawing.Point(235, 5);
+            this.L_0_TERRAINBATTLE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_TERRAINBATTLE.Name = "L_0_TERRAINBATTLE";
+            this.L_0_TERRAINBATTLE.Placeholder = "";
+            this.L_0_TERRAINBATTLE.ReadOnly = true;
+            this.L_0_TERRAINBATTLE.Size = new System.Drawing.Size(169, 25);
+            this.L_0_TERRAINBATTLE.TabIndex = 80;
             // 
             // B0
             // 
@@ -211,27 +235,16 @@
             this.panel5.Size = new System.Drawing.Size(738, 30);
             this.panel5.TabIndex = 78;
             // 
-            // panel6
+            // SelectAddress
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.LabelFilter);
-            this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(20, 53);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(453, 661);
-            this.panel6.TabIndex = 146;
-            // 
-            // LabelFilter
-            // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-3, -1);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(455, 26);
-            this.LabelFilter.TabIndex = 106;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(382, -1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(158, 25);
+            this.SelectAddress.TabIndex = 58;
             // 
             // label22
             // 
@@ -269,6 +282,28 @@
             this.label55.Text = "アドレス";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.LabelFilter);
+            this.panel6.Controls.Add(this.AddressList);
+            this.panel6.Location = new System.Drawing.Point(20, 53);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(453, 661);
+            this.panel6.TabIndex = 146;
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Location = new System.Drawing.Point(-3, -1);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(455, 26);
+            this.LabelFilter.TabIndex = 106;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -281,38 +316,18 @@
             this.AddressList.Size = new System.Drawing.Size(455, 630);
             this.AddressList.TabIndex = 0;
             // 
-            // L_0_TERRAINBATTLEICON
+            // X_JUMP_BG
             // 
-            this.L_0_TERRAINBATTLEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_TERRAINBATTLEICON.Location = new System.Drawing.Point(72, 62);
-            this.L_0_TERRAINBATTLEICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_TERRAINBATTLEICON.Name = "L_0_TERRAINBATTLEICON";
-            this.L_0_TERRAINBATTLEICON.Size = new System.Drawing.Size(662, 343);
-            this.L_0_TERRAINBATTLEICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.L_0_TERRAINBATTLEICON.TabIndex = 185;
-            this.L_0_TERRAINBATTLEICON.TabStop = false;
-            // 
-            // L_0_TERRAINBATTLE
-            // 
-            this.L_0_TERRAINBATTLE.ErrorMessage = "";
-            this.L_0_TERRAINBATTLE.Location = new System.Drawing.Point(235, 5);
-            this.L_0_TERRAINBATTLE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_TERRAINBATTLE.Name = "L_0_TERRAINBATTLE";
-            this.L_0_TERRAINBATTLE.Placeholder = "";
-            this.L_0_TERRAINBATTLE.ReadOnly = true;
-            this.L_0_TERRAINBATTLE.Size = new System.Drawing.Size(169, 25);
-            this.L_0_TERRAINBATTLE.TabIndex = 80;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(382, -1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(158, 25);
-            this.SelectAddress.TabIndex = 58;
+            this.X_JUMP_BG.AutoSize = true;
+            this.X_JUMP_BG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_JUMP_BG.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_JUMP_BG.Location = new System.Drawing.Point(69, 443);
+            this.X_JUMP_BG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_JUMP_BG.Name = "X_JUMP_BG";
+            this.X_JUMP_BG.Size = new System.Drawing.Size(190, 18);
+            this.X_JUMP_BG.TabIndex = 186;
+            this.X_JUMP_BG.Text = "戦闘アニメの背景へJump";
+            this.X_JUMP_BG.Click += new System.EventHandler(this.X_JUMP_BG_Click);
             // 
             // MapTerrainFloorLookupTableForm
             // 
@@ -329,15 +344,15 @@
             this.Load += new System.EventHandler(this.MapTerrainFloorLookupTableForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_TERRAINBATTLEICON)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -366,5 +381,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label X_JUMP_BG;
     }
 }

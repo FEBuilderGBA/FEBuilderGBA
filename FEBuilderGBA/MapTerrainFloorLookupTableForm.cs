@@ -31,16 +31,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目
-                    string name;
-                    if (Program.ROM.RomInfo.is_multibyte())
-                    {
-                        name = MapTerrainNameForm.GetName((uint)i);
-                    }
-                    else
-                    {
-                        name = MapTerrainNameEngForm.GetName((uint)i);
-                    }
-
+                    string name = MapTerrainNameForm.GetName((uint)i);
                     return U.ToHexString(i + 1) + " " + name; 
                 }
                 );
@@ -103,6 +94,19 @@ namespace FEBuilderGBA
             }
             
             InputFormRef.ReInitPointer(pointers[selected]);
+        }
+
+        private void X_JUMP_BG_Click(object sender, EventArgs e)
+        {
+            MapTerrainBGLookupTableForm f = (MapTerrainBGLookupTableForm)
+                InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();
+            f.JumpTo((uint)FilterComboBox.SelectedIndex, (uint)AddressList.SelectedIndex);
+        }
+
+        public void JumpTo(uint filterSelected, uint listSelected)
+        {
+            U.SelectedIndexSafety(FilterComboBox, filterSelected);
+            U.SelectedIndexSafety(AddressList, listSelected);
         }
     }
 }

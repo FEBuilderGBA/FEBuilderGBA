@@ -80,7 +80,10 @@ namespace FEBuilderGBA
         {
             if (!Program.ROM.RomInfo.is_multibyte())
             {
-                return MapTerrainNameEngForm.GetName(id);
+                
+                string name = MapTerrainNameEngForm.GetName(id);
+                name = TextForm.StripAllCode(name);
+                return name;
             }
 
             InputFormRef InputFormRef = Init(null);

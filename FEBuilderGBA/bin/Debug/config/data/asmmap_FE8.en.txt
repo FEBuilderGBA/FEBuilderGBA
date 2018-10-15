@@ -8368,3 +8368,6 @@ r3=X tile position of menu of the right	{U}
 08058D1C	Acquire the image ID of the background of battle animation	{J}
 08057DA8	Acquire the image ID of the battle cartoon floor tile	{U}
 08057ED0	Acquire the image ID of the background of battle animation	{U}
+088618D0	:0886194F	TextID of terrain nameNot used in FE8J	{J}
+08A0035C	&EVENT	Sky event	1	{J}
+08A00364	&EVENT	Sky event	2	{J}

@@ -259,14 +259,14 @@
             // 
             // B31
             // 
-            this.B31.Location = new System.Drawing.Point(542, 38);
+            this.B31.Location = new System.Drawing.Point(366, 362);
             this.B31.Name = "B31";
             this.B31.Size = new System.Drawing.Size(93, 25);
             this.B31.TabIndex = 32;
             // 
             // B30
             // 
-            this.B30.Location = new System.Drawing.Point(542, 3);
+            this.B30.Location = new System.Drawing.Point(366, 327);
             this.B30.Name = "B30";
             this.B30.Size = new System.Drawing.Size(93, 25);
             this.B30.TabIndex = 31;
@@ -361,48 +361,46 @@
             this.J_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_31.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_31.ErrorMessage = "";
-            this.J_31.Location = new System.Drawing.Point(432, 33);
+            this.J_31.Location = new System.Drawing.Point(232, 359);
             this.J_31.Name = "J_31";
-            this.J_31.Size = new System.Drawing.Size(105, 30);
+            this.J_31.Size = new System.Drawing.Size(128, 30);
             this.J_31.TabIndex = 34;
-            this.J_31.Text = "王座";
             this.J_31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_30
             // 
             this.J_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30.ErrorMessage = "";
-            this.J_30.Location = new System.Drawing.Point(432, 3);
+            this.J_30.Location = new System.Drawing.Point(232, 327);
             this.J_30.Name = "J_30";
-            this.J_30.Size = new System.Drawing.Size(105, 29);
+            this.J_30.Size = new System.Drawing.Size(128, 29);
             this.J_30.TabIndex = 33;
-            this.J_30.Text = "扉";
             this.J_30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B16
             // 
-            this.B16.Location = new System.Drawing.Point(330, 38);
+            this.B16.Location = new System.Drawing.Point(133, 526);
             this.B16.Name = "B16";
             this.B16.Size = new System.Drawing.Size(93, 25);
             this.B16.TabIndex = 16;
             // 
             // B15
             // 
-            this.B15.Location = new System.Drawing.Point(330, 3);
+            this.B15.Location = new System.Drawing.Point(133, 491);
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(93, 25);
             this.B15.TabIndex = 15;
             // 
             // B1
             // 
-            this.B1.Location = new System.Drawing.Point(116, 36);
+            this.B1.Location = new System.Drawing.Point(133, 36);
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(93, 25);
             this.B1.TabIndex = 1;
             // 
             // B0
             // 
-            this.B0.Location = new System.Drawing.Point(116, 2);
+            this.B0.Location = new System.Drawing.Point(133, 2);
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(93, 25);
             this.B0.TabIndex = 0;
@@ -412,22 +410,20 @@
             this.J_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_16.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_16.ErrorMessage = "";
-            this.J_16.Location = new System.Drawing.Point(219, 33);
+            this.J_16.Location = new System.Drawing.Point(4, 518);
             this.J_16.Name = "J_16";
-            this.J_16.Size = new System.Drawing.Size(105, 30);
+            this.J_16.Size = new System.Drawing.Size(124, 30);
             this.J_16.TabIndex = 28;
-            this.J_16.Text = "川";
             this.J_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_15
             // 
             this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_15.ErrorMessage = "";
-            this.J_15.Location = new System.Drawing.Point(219, 3);
+            this.J_15.Location = new System.Drawing.Point(4, 488);
             this.J_15.Name = "J_15";
-            this.J_15.Size = new System.Drawing.Size(105, 29);
+            this.J_15.Size = new System.Drawing.Size(124, 29);
             this.J_15.TabIndex = 25;
-            this.J_15.Text = "砂漠";
             this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_1
@@ -436,9 +432,8 @@
             this.J_1.ErrorMessage = "";
             this.J_1.Location = new System.Drawing.Point(3, 33);
             this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(109, 30);
+            this.J_1.Size = new System.Drawing.Size(124, 30);
             this.J_1.TabIndex = 24;
-            this.J_1.Text = "平地";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -579,7 +574,7 @@
             this.panel2.Location = new System.Drawing.Point(289, 78);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1292, 505);
+            this.panel2.Size = new System.Drawing.Size(1292, 675);
             this.panel2.TabIndex = 58;
             // 
             // panel3
@@ -589,12 +584,12 @@
             this.panel3.Controls.Add(this.CLASS_LISTBOX);
             this.panel3.Location = new System.Drawing.Point(1064, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(221, 469);
+            this.panel3.Size = new System.Drawing.Size(221, 609);
             this.panel3.TabIndex = 161;
             // 
             // IndependenceButton
             // 
-            this.IndependenceButton.Location = new System.Drawing.Point(3, 399);
+            this.IndependenceButton.Location = new System.Drawing.Point(3, 539);
             this.IndependenceButton.Name = "IndependenceButton";
             this.IndependenceButton.Size = new System.Drawing.Size(218, 67);
             this.IndependenceButton.TabIndex = 1;
@@ -607,7 +602,7 @@
             this.label72.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label72.ErrorMessage = "";
-            this.label72.Location = new System.Drawing.Point(1, 3);
+            this.label72.Location = new System.Drawing.Point(1, 0);
             this.label72.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(217, 26);
@@ -619,16 +614,17 @@
             // 
             this.CLASS_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CLASS_LISTBOX.FormattingEnabled = true;
+            this.CLASS_LISTBOX.IntegralHeight = false;
             this.CLASS_LISTBOX.ItemHeight = 18;
-            this.CLASS_LISTBOX.Location = new System.Drawing.Point(0, 28);
+            this.CLASS_LISTBOX.Location = new System.Drawing.Point(0, 25);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
             this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(217, 364);
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(217, 507);
             this.CLASS_LISTBOX.TabIndex = 0;
             // 
             // B14
             // 
-            this.B14.Location = new System.Drawing.Point(116, 459);
+            this.B14.Location = new System.Drawing.Point(133, 459);
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(93, 25);
             this.B14.TabIndex = 14;
@@ -639,9 +635,8 @@
             this.J_14.ErrorMessage = "";
             this.J_14.Location = new System.Drawing.Point(3, 454);
             this.J_14.Name = "J_14";
-            this.J_14.Size = new System.Drawing.Size(109, 30);
+            this.J_14.Size = new System.Drawing.Size(124, 30);
             this.J_14.TabIndex = 158;
-            this.J_14.Text = "砂地";
             this.J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label71
@@ -657,14 +652,14 @@
             // 
             // B59
             // 
-            this.B59.Location = new System.Drawing.Point(755, 458);
+            this.B59.Location = new System.Drawing.Point(605, 625);
             this.B59.Name = "B59";
             this.B59.Size = new System.Drawing.Size(93, 25);
             this.B59.TabIndex = 61;
             // 
             // B58
             // 
-            this.B58.Location = new System.Drawing.Point(755, 423);
+            this.B58.Location = new System.Drawing.Point(605, 590);
             this.B58.Name = "B58";
             this.B58.Size = new System.Drawing.Size(93, 25);
             this.B58.TabIndex = 60;
@@ -674,34 +669,32 @@
             this.J_59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_59.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_59.ErrorMessage = "";
-            this.J_59.Location = new System.Drawing.Point(645, 453);
+            this.J_59.Location = new System.Drawing.Point(465, 620);
             this.J_59.Name = "J_59";
-            this.J_59.Size = new System.Drawing.Size(105, 30);
+            this.J_59.Size = new System.Drawing.Size(133, 30);
             this.J_59.TabIndex = 153;
-            this.J_59.Text = "闇";
             this.J_59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_58
             // 
             this.J_58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_58.ErrorMessage = "";
-            this.J_58.Location = new System.Drawing.Point(645, 423);
+            this.J_58.Location = new System.Drawing.Point(465, 588);
             this.J_58.Name = "J_58";
-            this.J_58.Size = new System.Drawing.Size(105, 29);
+            this.J_58.Size = new System.Drawing.Size(133, 29);
             this.J_58.TabIndex = 152;
-            this.J_58.Text = "骨";
             this.J_58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B44
             // 
-            this.B44.Location = new System.Drawing.Point(542, 458);
+            this.B44.Location = new System.Drawing.Point(605, 136);
             this.B44.Name = "B44";
             this.B44.Size = new System.Drawing.Size(93, 25);
             this.B44.TabIndex = 45;
             // 
             // B43
             // 
-            this.B43.Location = new System.Drawing.Point(542, 423);
+            this.B43.Location = new System.Drawing.Point(605, 101);
             this.B43.Name = "B43";
             this.B43.Size = new System.Drawing.Size(93, 25);
             this.B43.TabIndex = 44;
@@ -711,48 +704,46 @@
             this.J_44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_44.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_44.ErrorMessage = "";
-            this.J_44.Location = new System.Drawing.Point(432, 453);
+            this.J_44.Location = new System.Drawing.Point(465, 131);
             this.J_44.Name = "J_44";
-            this.J_44.Size = new System.Drawing.Size(105, 30);
+            this.J_44.Size = new System.Drawing.Size(133, 30);
             this.J_44.TabIndex = 149;
-            this.J_44.Text = "??";
             this.J_44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_43
             // 
             this.J_43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_43.ErrorMessage = "";
-            this.J_43.Location = new System.Drawing.Point(432, 423);
+            this.J_43.Location = new System.Drawing.Point(465, 101);
             this.J_43.Name = "J_43";
-            this.J_43.Size = new System.Drawing.Size(105, 29);
+            this.J_43.Size = new System.Drawing.Size(133, 29);
             this.J_43.TabIndex = 148;
-            this.J_43.Text = "壊れた家";
             this.J_43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B29
             // 
-            this.B29.Location = new System.Drawing.Point(330, 458);
+            this.B29.Location = new System.Drawing.Point(366, 298);
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(93, 25);
             this.B29.TabIndex = 30;
             // 
             // B28
             // 
-            this.B28.Location = new System.Drawing.Point(330, 423);
+            this.B28.Location = new System.Drawing.Point(366, 263);
             this.B28.Name = "B28";
             this.B28.Size = new System.Drawing.Size(93, 25);
             this.B28.TabIndex = 29;
             // 
             // B13
             // 
-            this.B13.Location = new System.Drawing.Point(116, 424);
+            this.B13.Location = new System.Drawing.Point(133, 424);
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(93, 25);
             this.B13.TabIndex = 13;
             // 
             // B12
             // 
-            this.B12.Location = new System.Drawing.Point(116, 390);
+            this.B12.Location = new System.Drawing.Point(133, 390);
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(93, 25);
             this.B12.TabIndex = 12;
@@ -762,22 +753,20 @@
             this.J_29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_29.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_29.ErrorMessage = "";
-            this.J_29.Location = new System.Drawing.Point(219, 453);
+            this.J_29.Location = new System.Drawing.Point(232, 293);
             this.J_29.Name = "J_29";
-            this.J_29.Size = new System.Drawing.Size(105, 30);
+            this.J_29.Size = new System.Drawing.Size(128, 30);
             this.J_29.TabIndex = 143;
-            this.J_29.Text = "柱";
             this.J_29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_28
             // 
             this.J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_28.ErrorMessage = "";
-            this.J_28.Location = new System.Drawing.Point(219, 423);
+            this.J_28.Location = new System.Drawing.Point(232, 263);
             this.J_28.Name = "J_28";
-            this.J_28.Size = new System.Drawing.Size(105, 29);
+            this.J_28.Size = new System.Drawing.Size(128, 29);
             this.J_28.TabIndex = 142;
-            this.J_28.Text = "壊れた壁";
             this.J_28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_13
@@ -786,9 +775,8 @@
             this.J_13.ErrorMessage = "";
             this.J_13.Location = new System.Drawing.Point(3, 422);
             this.J_13.Name = "J_13";
-            this.J_13.Size = new System.Drawing.Size(109, 30);
+            this.J_13.Size = new System.Drawing.Size(124, 30);
             this.J_13.TabIndex = 141;
-            this.J_13.Text = "深い森";
             this.J_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_12
@@ -797,14 +785,13 @@
             this.J_12.ErrorMessage = "";
             this.J_12.Location = new System.Drawing.Point(3, 388);
             this.J_12.Name = "J_12";
-            this.J_12.Size = new System.Drawing.Size(109, 32);
+            this.J_12.Size = new System.Drawing.Size(124, 32);
             this.J_12.TabIndex = 140;
-            this.J_12.Text = "森";
             this.J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B57
             // 
-            this.B57.Location = new System.Drawing.Point(755, 393);
+            this.B57.Location = new System.Drawing.Point(605, 560);
             this.B57.Name = "B57";
             this.B57.Size = new System.Drawing.Size(93, 25);
             this.B57.TabIndex = 59;
@@ -814,16 +801,15 @@
             this.J_57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_57.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_57.ErrorMessage = "";
-            this.J_57.Location = new System.Drawing.Point(645, 388);
+            this.J_57.Location = new System.Drawing.Point(465, 555);
             this.J_57.Name = "J_57";
-            this.J_57.Size = new System.Drawing.Size(105, 30);
+            this.J_57.Size = new System.Drawing.Size(133, 30);
             this.J_57.TabIndex = 138;
-            this.J_57.Text = "タル";
             this.J_57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B42
             // 
-            this.B42.Location = new System.Drawing.Point(542, 393);
+            this.B42.Location = new System.Drawing.Point(605, 71);
             this.B42.Name = "B42";
             this.B42.Size = new System.Drawing.Size(93, 25);
             this.B42.TabIndex = 43;
@@ -833,23 +819,22 @@
             this.J_42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_42.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_42.ErrorMessage = "";
-            this.J_42.Location = new System.Drawing.Point(432, 388);
+            this.J_42.Location = new System.Drawing.Point(465, 66);
             this.J_42.Name = "J_42";
-            this.J_42.Size = new System.Drawing.Size(105, 30);
+            this.J_42.Size = new System.Drawing.Size(133, 30);
             this.J_42.TabIndex = 136;
-            this.J_42.Text = "荒地";
             this.J_42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B27
             // 
-            this.B27.Location = new System.Drawing.Point(330, 393);
+            this.B27.Location = new System.Drawing.Point(366, 233);
             this.B27.Name = "B27";
             this.B27.Size = new System.Drawing.Size(93, 25);
             this.B27.TabIndex = 28;
             // 
             // B11
             // 
-            this.B11.Location = new System.Drawing.Point(116, 360);
+            this.B11.Location = new System.Drawing.Point(133, 360);
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(93, 25);
             this.B11.TabIndex = 11;
@@ -859,11 +844,10 @@
             this.J_27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_27.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_27.ErrorMessage = "";
-            this.J_27.Location = new System.Drawing.Point(219, 388);
+            this.J_27.Location = new System.Drawing.Point(232, 228);
             this.J_27.Name = "J_27";
-            this.J_27.Size = new System.Drawing.Size(105, 30);
+            this.J_27.Size = new System.Drawing.Size(128, 30);
             this.J_27.TabIndex = 133;
-            this.J_27.Text = "壁";
             this.J_27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_11
@@ -872,21 +856,20 @@
             this.J_11.ErrorMessage = "";
             this.J_11.Location = new System.Drawing.Point(3, 357);
             this.J_11.Name = "J_11";
-            this.J_11.Size = new System.Drawing.Size(109, 30);
+            this.J_11.Size = new System.Drawing.Size(124, 30);
             this.J_11.TabIndex = 132;
-            this.J_11.Text = "城門";
             this.J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B56
             // 
-            this.B56.Location = new System.Drawing.Point(755, 360);
+            this.B56.Location = new System.Drawing.Point(605, 527);
             this.B56.Name = "B56";
             this.B56.Size = new System.Drawing.Size(93, 25);
             this.B56.TabIndex = 57;
             // 
             // B55
             // 
-            this.B55.Location = new System.Drawing.Point(755, 326);
+            this.B55.Location = new System.Drawing.Point(605, 493);
             this.B55.Name = "B55";
             this.B55.Size = new System.Drawing.Size(93, 25);
             this.B55.TabIndex = 56;
@@ -896,34 +879,32 @@
             this.J_56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_56.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_56.ErrorMessage = "";
-            this.J_56.Location = new System.Drawing.Point(645, 356);
+            this.J_56.Location = new System.Drawing.Point(465, 523);
             this.J_56.Name = "J_56";
-            this.J_56.Size = new System.Drawing.Size(105, 30);
+            this.J_56.Size = new System.Drawing.Size(133, 30);
             this.J_56.TabIndex = 129;
-            this.J_56.Text = "酒場";
             this.J_56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_55
             // 
             this.J_55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_55.ErrorMessage = "";
-            this.J_55.Location = new System.Drawing.Point(645, 326);
+            this.J_55.Location = new System.Drawing.Point(465, 493);
             this.J_55.Name = "J_55";
-            this.J_55.Size = new System.Drawing.Size(105, 29);
+            this.J_55.Size = new System.Drawing.Size(133, 29);
             this.J_55.TabIndex = 128;
-            this.J_55.Text = "遺跡";
             this.J_55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B41
             // 
-            this.B41.Location = new System.Drawing.Point(542, 360);
+            this.B41.Location = new System.Drawing.Point(605, 38);
             this.B41.Name = "B41";
             this.B41.Size = new System.Drawing.Size(93, 25);
             this.B41.TabIndex = 42;
             // 
             // B40
             // 
-            this.B40.Location = new System.Drawing.Point(542, 326);
+            this.B40.Location = new System.Drawing.Point(605, 6);
             this.B40.Name = "B40";
             this.B40.Size = new System.Drawing.Size(93, 25);
             this.B40.TabIndex = 41;
@@ -933,48 +914,46 @@
             this.J_41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_41.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_41.ErrorMessage = "";
-            this.J_41.Location = new System.Drawing.Point(432, 356);
+            this.J_41.Location = new System.Drawing.Point(465, 34);
             this.J_41.Name = "J_41";
-            this.J_41.Size = new System.Drawing.Size(105, 30);
+            this.J_41.Size = new System.Drawing.Size(133, 30);
             this.J_41.TabIndex = 125;
-            this.J_41.Text = "キラーアーチ";
             this.J_41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_40
             // 
             this.J_40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_40.ErrorMessage = "";
-            this.J_40.Location = new System.Drawing.Point(432, 326);
+            this.J_40.Location = new System.Drawing.Point(465, 4);
             this.J_40.Name = "J_40";
-            this.J_40.Size = new System.Drawing.Size(105, 29);
+            this.J_40.Size = new System.Drawing.Size(133, 29);
             this.J_40.TabIndex = 124;
-            this.J_40.Text = "ロングアーチ";
             this.J_40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B26
             // 
-            this.B26.Location = new System.Drawing.Point(330, 360);
+            this.B26.Location = new System.Drawing.Point(366, 200);
             this.B26.Name = "B26";
             this.B26.Size = new System.Drawing.Size(93, 25);
             this.B26.TabIndex = 26;
             // 
             // B25
             // 
-            this.B25.Location = new System.Drawing.Point(330, 326);
+            this.B25.Location = new System.Drawing.Point(366, 166);
             this.B25.Name = "B25";
             this.B25.Size = new System.Drawing.Size(93, 25);
             this.B25.TabIndex = 25;
             // 
             // B10
             // 
-            this.B10.Location = new System.Drawing.Point(116, 327);
+            this.B10.Location = new System.Drawing.Point(133, 327);
             this.B10.Name = "B10";
             this.B10.Size = new System.Drawing.Size(93, 25);
             this.B10.TabIndex = 10;
             // 
             // B9
             // 
-            this.B9.Location = new System.Drawing.Point(116, 292);
+            this.B9.Location = new System.Drawing.Point(133, 292);
             this.B9.Name = "B9";
             this.B9.Size = new System.Drawing.Size(93, 25);
             this.B9.TabIndex = 9;
@@ -984,22 +963,20 @@
             this.J_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_26.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_26.ErrorMessage = "";
-            this.J_26.Location = new System.Drawing.Point(219, 356);
+            this.J_26.Location = new System.Drawing.Point(232, 196);
             this.J_26.Name = "J_26";
-            this.J_26.Size = new System.Drawing.Size(105, 30);
+            this.J_26.Size = new System.Drawing.Size(128, 30);
             this.J_26.TabIndex = 119;
-            this.J_26.Text = "壁";
             this.J_26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_25
             // 
             this.J_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_25.ErrorMessage = "";
-            this.J_25.Location = new System.Drawing.Point(219, 326);
+            this.J_25.Location = new System.Drawing.Point(232, 166);
             this.J_25.Name = "J_25";
-            this.J_25.Size = new System.Drawing.Size(105, 29);
+            this.J_25.Size = new System.Drawing.Size(128, 29);
             this.J_25.TabIndex = 118;
-            this.J_25.Text = "掘";
             this.J_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_10
@@ -1008,9 +985,8 @@
             this.J_10.ErrorMessage = "";
             this.J_10.Location = new System.Drawing.Point(3, 324);
             this.J_10.Name = "J_10";
-            this.J_10.Size = new System.Drawing.Size(109, 30);
+            this.J_10.Size = new System.Drawing.Size(124, 30);
             this.J_10.TabIndex = 117;
-            this.J_10.Text = "砦";
             this.J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_9
@@ -1019,21 +995,20 @@
             this.J_9.ErrorMessage = "";
             this.J_9.Location = new System.Drawing.Point(3, 291);
             this.J_9.Name = "J_9";
-            this.J_9.Size = new System.Drawing.Size(109, 32);
+            this.J_9.Size = new System.Drawing.Size(124, 32);
             this.J_9.TabIndex = 116;
-            this.J_9.Text = "預かり所";
             this.J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B54
             // 
-            this.B54.Location = new System.Drawing.Point(755, 296);
+            this.B54.Location = new System.Drawing.Point(605, 463);
             this.B54.Name = "B54";
             this.B54.Size = new System.Drawing.Size(93, 25);
             this.B54.TabIndex = 55;
             // 
             // B53
             // 
-            this.B53.Location = new System.Drawing.Point(755, 261);
+            this.B53.Location = new System.Drawing.Point(605, 428);
             this.B53.Name = "B53";
             this.B53.Size = new System.Drawing.Size(93, 25);
             this.B53.TabIndex = 54;
@@ -1043,34 +1018,32 @@
             this.J_54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_54.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_54.ErrorMessage = "";
-            this.J_54.Location = new System.Drawing.Point(645, 291);
+            this.J_54.Location = new System.Drawing.Point(465, 458);
             this.J_54.Name = "J_54";
-            this.J_54.Size = new System.Drawing.Size(105, 30);
+            this.J_54.Size = new System.Drawing.Size(133, 30);
             this.J_54.TabIndex = 113;
-            this.J_54.Text = "深海";
             this.J_54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_53
             // 
             this.J_53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_53.ErrorMessage = "";
-            this.J_53.Location = new System.Drawing.Point(645, 260);
+            this.J_53.Location = new System.Drawing.Point(465, 427);
             this.J_53.Name = "J_53";
-            this.J_53.Size = new System.Drawing.Size(105, 29);
+            this.J_53.Size = new System.Drawing.Size(133, 29);
             this.J_53.TabIndex = 112;
-            this.J_53.Text = "空";
             this.J_53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B39
             // 
-            this.B39.Location = new System.Drawing.Point(542, 296);
+            this.B39.Location = new System.Drawing.Point(366, 620);
             this.B39.Name = "B39";
             this.B39.Size = new System.Drawing.Size(93, 25);
             this.B39.TabIndex = 40;
             // 
             // B38
             // 
-            this.B38.Location = new System.Drawing.Point(542, 261);
+            this.B38.Location = new System.Drawing.Point(366, 585);
             this.B38.Name = "B38";
             this.B38.Size = new System.Drawing.Size(93, 25);
             this.B38.TabIndex = 39;
@@ -1080,48 +1053,46 @@
             this.J_39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_39.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_39.ErrorMessage = "";
-            this.J_39.Location = new System.Drawing.Point(432, 291);
+            this.J_39.Location = new System.Drawing.Point(232, 615);
             this.J_39.Name = "J_39";
-            this.J_39.Size = new System.Drawing.Size(105, 30);
+            this.J_39.Size = new System.Drawing.Size(128, 30);
             this.J_39.TabIndex = 109;
-            this.J_39.Text = "アーチ";
             this.J_39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_38
             // 
             this.J_38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_38.ErrorMessage = "";
-            this.J_38.Location = new System.Drawing.Point(432, 260);
+            this.J_38.Location = new System.Drawing.Point(232, 584);
             this.J_38.Name = "J_38";
-            this.J_38.Size = new System.Drawing.Size(105, 29);
+            this.J_38.Size = new System.Drawing.Size(128, 29);
             this.J_38.TabIndex = 108;
-            this.J_38.Text = "崖";
             this.J_38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B24
             // 
-            this.B24.Location = new System.Drawing.Point(330, 296);
+            this.B24.Location = new System.Drawing.Point(366, 136);
             this.B24.Name = "B24";
             this.B24.Size = new System.Drawing.Size(93, 25);
             this.B24.TabIndex = 24;
             // 
             // B23
             // 
-            this.B23.Location = new System.Drawing.Point(330, 261);
+            this.B23.Location = new System.Drawing.Point(366, 101);
             this.B23.Name = "B23";
             this.B23.Size = new System.Drawing.Size(93, 25);
             this.B23.TabIndex = 23;
             // 
             // B8
             // 
-            this.B8.Location = new System.Drawing.Point(116, 262);
+            this.B8.Location = new System.Drawing.Point(133, 262);
             this.B8.Name = "B8";
             this.B8.Size = new System.Drawing.Size(93, 25);
             this.B8.TabIndex = 8;
             // 
             // B7
             // 
-            this.B7.Location = new System.Drawing.Point(116, 228);
+            this.B7.Location = new System.Drawing.Point(133, 228);
             this.B7.Name = "B7";
             this.B7.Size = new System.Drawing.Size(93, 25);
             this.B7.TabIndex = 7;
@@ -1131,22 +1102,20 @@
             this.J_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_24.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_24.ErrorMessage = "";
-            this.J_24.Location = new System.Drawing.Point(219, 291);
+            this.J_24.Location = new System.Drawing.Point(232, 131);
             this.J_24.Name = "J_24";
-            this.J_24.Size = new System.Drawing.Size(105, 30);
+            this.J_24.Size = new System.Drawing.Size(128, 30);
             this.J_24.TabIndex = 103;
-            this.J_24.Text = "床";
             this.J_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_23
             // 
             this.J_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_23.ErrorMessage = "";
-            this.J_23.Location = new System.Drawing.Point(219, 260);
+            this.J_23.Location = new System.Drawing.Point(232, 100);
             this.J_23.Name = "J_23";
-            this.J_23.Size = new System.Drawing.Size(105, 29);
+            this.J_23.Size = new System.Drawing.Size(128, 29);
             this.J_23.TabIndex = 102;
-            this.J_23.Text = "床";
             this.J_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_8
@@ -1155,9 +1124,8 @@
             this.J_8.ErrorMessage = "";
             this.J_8.Location = new System.Drawing.Point(3, 260);
             this.J_8.Name = "J_8";
-            this.J_8.Size = new System.Drawing.Size(109, 30);
+            this.J_8.Size = new System.Drawing.Size(124, 30);
             this.J_8.TabIndex = 101;
-            this.J_8.Text = "闘技場";
             this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_7
@@ -1166,21 +1134,20 @@
             this.J_7.ErrorMessage = "";
             this.J_7.Location = new System.Drawing.Point(3, 226);
             this.J_7.Name = "J_7";
-            this.J_7.Size = new System.Drawing.Size(109, 32);
+            this.J_7.Size = new System.Drawing.Size(124, 32);
             this.J_7.TabIndex = 100;
-            this.J_7.Text = "道具屋";
             this.J_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B52
             // 
-            this.B52.Location = new System.Drawing.Point(755, 231);
+            this.B52.Location = new System.Drawing.Point(605, 398);
             this.B52.Name = "B52";
             this.B52.Size = new System.Drawing.Size(93, 25);
             this.B52.TabIndex = 53;
             // 
             // B51
             // 
-            this.B51.Location = new System.Drawing.Point(755, 196);
+            this.B51.Location = new System.Drawing.Point(605, 363);
             this.B51.Name = "B51";
             this.B51.Size = new System.Drawing.Size(93, 25);
             this.B51.TabIndex = 52;
@@ -1190,34 +1157,32 @@
             this.J_52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_52.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_52.ErrorMessage = "";
-            this.J_52.Location = new System.Drawing.Point(645, 226);
+            this.J_52.Location = new System.Drawing.Point(465, 393);
             this.J_52.Name = "J_52";
-            this.J_52.Size = new System.Drawing.Size(105, 30);
+            this.J_52.Size = new System.Drawing.Size(133, 30);
             this.J_52.TabIndex = 97;
-            this.J_52.Text = "丸太橋";
             this.J_52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_51
             // 
             this.J_51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_51.ErrorMessage = "";
-            this.J_51.Location = new System.Drawing.Point(645, 196);
+            this.J_51.Location = new System.Drawing.Point(465, 363);
             this.J_51.Name = "J_51";
-            this.J_51.Size = new System.Drawing.Size(105, 29);
+            this.J_51.Size = new System.Drawing.Size(133, 29);
             this.J_51.TabIndex = 96;
-            this.J_51.Text = "古木";
             this.J_51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B37
             // 
-            this.B37.Location = new System.Drawing.Point(542, 231);
+            this.B37.Location = new System.Drawing.Point(366, 555);
             this.B37.Name = "B37";
             this.B37.Size = new System.Drawing.Size(93, 25);
             this.B37.TabIndex = 38;
             // 
             // B36
             // 
-            this.B36.Location = new System.Drawing.Point(542, 196);
+            this.B36.Location = new System.Drawing.Point(366, 520);
             this.B36.Name = "B36";
             this.B36.Size = new System.Drawing.Size(93, 25);
             this.B36.TabIndex = 37;
@@ -1227,48 +1192,46 @@
             this.J_37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_37.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_37.ErrorMessage = "";
-            this.J_37.Location = new System.Drawing.Point(432, 226);
+            this.J_37.Location = new System.Drawing.Point(232, 550);
             this.J_37.Name = "J_37";
-            this.J_37.Size = new System.Drawing.Size(105, 30);
+            this.J_37.Size = new System.Drawing.Size(128, 30);
             this.J_37.TabIndex = 93;
-            this.J_37.Text = "廃墟";
             this.J_37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_36
             // 
             this.J_36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_36.ErrorMessage = "";
-            this.J_36.Location = new System.Drawing.Point(432, 196);
+            this.J_36.Location = new System.Drawing.Point(232, 520);
             this.J_36.Name = "J_36";
-            this.J_36.Size = new System.Drawing.Size(105, 29);
+            this.J_36.Size = new System.Drawing.Size(128, 29);
             this.J_36.TabIndex = 92;
-            this.J_36.Text = "教会";
             this.J_36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B22
             // 
-            this.B22.Location = new System.Drawing.Point(330, 231);
+            this.B22.Location = new System.Drawing.Point(366, 70);
             this.B22.Name = "B22";
             this.B22.Size = new System.Drawing.Size(93, 25);
             this.B22.TabIndex = 22;
             // 
             // B21
             // 
-            this.B21.Location = new System.Drawing.Point(330, 196);
+            this.B21.Location = new System.Drawing.Point(366, 39);
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(93, 25);
             this.B21.TabIndex = 21;
             // 
             // B6
             // 
-            this.B6.Location = new System.Drawing.Point(116, 198);
+            this.B6.Location = new System.Drawing.Point(133, 198);
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(93, 25);
             this.B6.TabIndex = 6;
             // 
             // B5
             // 
-            this.B5.Location = new System.Drawing.Point(116, 164);
+            this.B5.Location = new System.Drawing.Point(133, 164);
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(93, 25);
             this.B5.TabIndex = 5;
@@ -1278,22 +1241,20 @@
             this.J_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_22.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_22.ErrorMessage = "";
-            this.J_22.Location = new System.Drawing.Point(219, 226);
+            this.J_22.Location = new System.Drawing.Point(232, 66);
             this.J_22.Name = "J_22";
-            this.J_22.Size = new System.Drawing.Size(105, 30);
+            this.J_22.Size = new System.Drawing.Size(128, 30);
             this.J_22.TabIndex = 87;
-            this.J_22.Text = "湖";
             this.J_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_21
             // 
             this.J_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_21.ErrorMessage = "";
-            this.J_21.Location = new System.Drawing.Point(219, 196);
+            this.J_21.Location = new System.Drawing.Point(232, 36);
             this.J_21.Name = "J_21";
-            this.J_21.Size = new System.Drawing.Size(105, 29);
+            this.J_21.Size = new System.Drawing.Size(128, 29);
             this.J_21.TabIndex = 86;
-            this.J_21.Text = "海";
             this.J_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_6
@@ -1302,9 +1263,8 @@
             this.J_6.ErrorMessage = "";
             this.J_6.Location = new System.Drawing.Point(3, 195);
             this.J_6.Name = "J_6";
-            this.J_6.Size = new System.Drawing.Size(109, 30);
+            this.J_6.Size = new System.Drawing.Size(124, 30);
             this.J_6.TabIndex = 85;
-            this.J_6.Text = "武器屋";
             this.J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_5
@@ -1313,14 +1273,13 @@
             this.J_5.ErrorMessage = "";
             this.J_5.Location = new System.Drawing.Point(3, 162);
             this.J_5.Name = "J_5";
-            this.J_5.Size = new System.Drawing.Size(109, 32);
+            this.J_5.Size = new System.Drawing.Size(124, 32);
             this.J_5.TabIndex = 84;
-            this.J_5.Text = "民家";
             this.J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B64
             // 
-            this.B64.Location = new System.Drawing.Point(967, 133);
+            this.B64.Location = new System.Drawing.Point(862, 133);
             this.B64.Name = "B64";
             this.B64.Size = new System.Drawing.Size(93, 25);
             this.B64.TabIndex = 66;
@@ -1329,23 +1288,22 @@
             // 
             this.J_64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_64.ErrorMessage = "";
-            this.J_64.Location = new System.Drawing.Point(855, 132);
+            this.J_64.Location = new System.Drawing.Point(720, 132);
             this.J_64.Name = "J_64";
-            this.J_64.Size = new System.Drawing.Size(107, 29);
+            this.J_64.Size = new System.Drawing.Size(135, 29);
             this.J_64.TabIndex = 81;
-            this.J_64.Text = "マスト";
             this.J_64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B50
             // 
-            this.B50.Location = new System.Drawing.Point(755, 166);
+            this.B50.Location = new System.Drawing.Point(605, 333);
             this.B50.Name = "B50";
             this.B50.Size = new System.Drawing.Size(93, 25);
             this.B50.TabIndex = 51;
             // 
             // B49
             // 
-            this.B49.Location = new System.Drawing.Point(755, 135);
+            this.B49.Location = new System.Drawing.Point(605, 302);
             this.B49.Name = "B49";
             this.B49.Size = new System.Drawing.Size(93, 25);
             this.B49.TabIndex = 50;
@@ -1355,34 +1313,32 @@
             this.J_50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_50.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_50.ErrorMessage = "";
-            this.J_50.Location = new System.Drawing.Point(645, 162);
+            this.J_50.Location = new System.Drawing.Point(465, 329);
             this.J_50.Name = "J_50";
-            this.J_50.Size = new System.Drawing.Size(105, 30);
+            this.J_50.Size = new System.Drawing.Size(133, 30);
             this.J_50.TabIndex = 78;
-            this.J_50.Text = "堀";
             this.J_50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_49
             // 
             this.J_49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_49.ErrorMessage = "";
-            this.J_49.Location = new System.Drawing.Point(645, 132);
+            this.J_49.Location = new System.Drawing.Point(465, 299);
             this.J_49.Name = "J_49";
-            this.J_49.Size = new System.Drawing.Size(105, 29);
+            this.J_49.Size = new System.Drawing.Size(133, 29);
             this.J_49.TabIndex = 77;
-            this.J_49.Text = "谷";
             this.J_49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B35
             // 
-            this.B35.Location = new System.Drawing.Point(542, 166);
+            this.B35.Location = new System.Drawing.Point(366, 490);
             this.B35.Name = "B35";
             this.B35.Size = new System.Drawing.Size(93, 25);
             this.B35.TabIndex = 36;
             // 
             // B34
             // 
-            this.B34.Location = new System.Drawing.Point(542, 132);
+            this.B34.Location = new System.Drawing.Point(366, 456);
             this.B34.Name = "B34";
             this.B34.Size = new System.Drawing.Size(93, 25);
             this.B34.TabIndex = 35;
@@ -1392,41 +1348,39 @@
             this.J_35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_35.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_35.ErrorMessage = "";
-            this.J_35.Location = new System.Drawing.Point(432, 162);
+            this.J_35.Location = new System.Drawing.Point(232, 486);
             this.J_35.Name = "J_35";
-            this.J_35.Size = new System.Drawing.Size(105, 30);
+            this.J_35.Size = new System.Drawing.Size(128, 30);
             this.J_35.TabIndex = 74;
-            this.J_35.Text = "門";
             this.J_35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_34
             // 
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.ErrorMessage = "";
-            this.J_34.Location = new System.Drawing.Point(432, 132);
+            this.J_34.Location = new System.Drawing.Point(232, 456);
             this.J_34.Name = "J_34";
-            this.J_34.Size = new System.Drawing.Size(105, 29);
+            this.J_34.Size = new System.Drawing.Size(128, 29);
             this.J_34.TabIndex = 73;
-            this.J_34.Text = "屋根";
             this.J_34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B20
             // 
-            this.B20.Location = new System.Drawing.Point(330, 166);
+            this.B20.Location = new System.Drawing.Point(366, 5);
             this.B20.Name = "B20";
             this.B20.Size = new System.Drawing.Size(93, 25);
             this.B20.TabIndex = 20;
             // 
             // B19
             // 
-            this.B19.Location = new System.Drawing.Point(330, 132);
+            this.B19.Location = new System.Drawing.Point(133, 620);
             this.B19.Name = "B19";
             this.B19.Size = new System.Drawing.Size(93, 25);
             this.B19.TabIndex = 19;
             // 
             // B4
             // 
-            this.B4.Location = new System.Drawing.Point(116, 134);
+            this.B4.Location = new System.Drawing.Point(133, 134);
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(93, 25);
             this.B4.TabIndex = 4;
@@ -1436,22 +1390,20 @@
             this.J_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_20.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_20.ErrorMessage = "";
-            this.J_20.Location = new System.Drawing.Point(219, 162);
+            this.J_20.Location = new System.Drawing.Point(232, 2);
             this.J_20.Name = "J_20";
-            this.J_20.Size = new System.Drawing.Size(105, 30);
+            this.J_20.Size = new System.Drawing.Size(128, 30);
             this.J_20.TabIndex = 68;
-            this.J_20.Text = "跳ね橋";
             this.J_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_19
             // 
             this.J_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_19.ErrorMessage = "";
-            this.J_19.Location = new System.Drawing.Point(219, 132);
+            this.J_19.Location = new System.Drawing.Point(4, 617);
             this.J_19.Name = "J_19";
-            this.J_19.Size = new System.Drawing.Size(105, 29);
+            this.J_19.Size = new System.Drawing.Size(124, 29);
             this.J_19.TabIndex = 67;
-            this.J_19.Text = "橋";
             this.J_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_4
@@ -1460,21 +1412,20 @@
             this.J_4.ErrorMessage = "";
             this.J_4.Location = new System.Drawing.Point(3, 130);
             this.J_4.Name = "J_4";
-            this.J_4.Size = new System.Drawing.Size(109, 30);
+            this.J_4.Size = new System.Drawing.Size(124, 30);
             this.J_4.TabIndex = 66;
-            this.J_4.Text = "閉じ村";
             this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B63
             // 
-            this.B63.Location = new System.Drawing.Point(967, 102);
+            this.B63.Location = new System.Drawing.Point(862, 102);
             this.B63.Name = "B63";
             this.B63.Size = new System.Drawing.Size(93, 25);
             this.B63.TabIndex = 65;
             // 
             // B62
             // 
-            this.B62.Location = new System.Drawing.Point(967, 68);
+            this.B62.Location = new System.Drawing.Point(862, 68);
             this.B62.Name = "B62";
             this.B62.Size = new System.Drawing.Size(93, 25);
             this.B62.TabIndex = 64;
@@ -1484,34 +1435,32 @@
             this.J_63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_63.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_63.ErrorMessage = "";
-            this.J_63.Location = new System.Drawing.Point(855, 98);
+            this.J_63.Location = new System.Drawing.Point(720, 98);
             this.J_63.Name = "J_63";
-            this.J_63.Size = new System.Drawing.Size(107, 30);
+            this.J_63.Size = new System.Drawing.Size(135, 30);
             this.J_63.TabIndex = 62;
-            this.J_63.Text = "支柱";
             this.J_63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_62
             // 
             this.J_62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_62.ErrorMessage = "";
-            this.J_62.Location = new System.Drawing.Point(855, 68);
+            this.J_62.Location = new System.Drawing.Point(720, 68);
             this.J_62.Name = "J_62";
-            this.J_62.Size = new System.Drawing.Size(107, 29);
+            this.J_62.Size = new System.Drawing.Size(135, 29);
             this.J_62.TabIndex = 61;
-            this.J_62.Text = "甲板";
             this.J_62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B48
             // 
-            this.B48.Location = new System.Drawing.Point(755, 102);
+            this.B48.Location = new System.Drawing.Point(605, 269);
             this.B48.Name = "B48";
             this.B48.Size = new System.Drawing.Size(93, 25);
             this.B48.TabIndex = 49;
             // 
             // B47
             // 
-            this.B47.Location = new System.Drawing.Point(755, 68);
+            this.B47.Location = new System.Drawing.Point(605, 235);
             this.B47.Name = "B47";
             this.B47.Size = new System.Drawing.Size(93, 25);
             this.B47.TabIndex = 48;
@@ -1521,34 +1470,32 @@
             this.J_48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_48.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_48.ErrorMessage = "";
-            this.J_48.Location = new System.Drawing.Point(645, 98);
+            this.J_48.Location = new System.Drawing.Point(465, 265);
             this.J_48.Name = "J_48";
-            this.J_48.Size = new System.Drawing.Size(105, 30);
+            this.J_48.Size = new System.Drawing.Size(133, 30);
             this.J_48.TabIndex = 58;
-            this.J_48.Text = "通信闘技";
             this.J_48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_47
             // 
             this.J_47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_47.ErrorMessage = "";
-            this.J_47.Location = new System.Drawing.Point(645, 68);
+            this.J_47.Location = new System.Drawing.Point(465, 235);
             this.J_47.Name = "J_47";
-            this.J_47.Size = new System.Drawing.Size(105, 29);
+            this.J_47.Size = new System.Drawing.Size(133, 29);
             this.J_47.TabIndex = 57;
-            this.J_47.Text = "氷河";
             this.J_47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B33
             // 
-            this.B33.Location = new System.Drawing.Point(542, 102);
+            this.B33.Location = new System.Drawing.Point(366, 426);
             this.B33.Name = "B33";
             this.B33.Size = new System.Drawing.Size(93, 25);
             this.B33.TabIndex = 34;
             // 
             // B32
             // 
-            this.B32.Location = new System.Drawing.Point(542, 68);
+            this.B32.Location = new System.Drawing.Point(366, 392);
             this.B32.Name = "B32";
             this.B32.Size = new System.Drawing.Size(93, 25);
             this.B32.TabIndex = 33;
@@ -1558,48 +1505,46 @@
             this.J_33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_33.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_33.ErrorMessage = "";
-            this.J_33.Location = new System.Drawing.Point(432, 98);
+            this.J_33.Location = new System.Drawing.Point(232, 422);
             this.J_33.Name = "J_33";
-            this.J_33.Size = new System.Drawing.Size(105, 30);
+            this.J_33.Size = new System.Drawing.Size(128, 30);
             this.J_33.TabIndex = 54;
-            this.J_33.Text = "宝箱";
             this.J_33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_32
             // 
             this.J_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_32.ErrorMessage = "";
-            this.J_32.Location = new System.Drawing.Point(432, 68);
+            this.J_32.Location = new System.Drawing.Point(232, 392);
             this.J_32.Name = "J_32";
-            this.J_32.Size = new System.Drawing.Size(105, 29);
+            this.J_32.Size = new System.Drawing.Size(128, 29);
             this.J_32.TabIndex = 53;
-            this.J_32.Text = "空宝箱";
             this.J_32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B18
             // 
-            this.B18.Location = new System.Drawing.Point(330, 102);
+            this.B18.Location = new System.Drawing.Point(133, 590);
             this.B18.Name = "B18";
             this.B18.Size = new System.Drawing.Size(93, 25);
             this.B18.TabIndex = 18;
             // 
             // B17
             // 
-            this.B17.Location = new System.Drawing.Point(330, 68);
+            this.B17.Location = new System.Drawing.Point(133, 556);
             this.B17.Name = "B17";
             this.B17.Size = new System.Drawing.Size(93, 25);
             this.B17.TabIndex = 17;
             // 
             // B3
             // 
-            this.B3.Location = new System.Drawing.Point(116, 100);
+            this.B3.Location = new System.Drawing.Point(133, 100);
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(93, 25);
             this.B3.TabIndex = 3;
             // 
             // B2
             // 
-            this.B2.Location = new System.Drawing.Point(116, 66);
+            this.B2.Location = new System.Drawing.Point(133, 66);
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(93, 25);
             this.B2.TabIndex = 2;
@@ -1609,22 +1554,20 @@
             this.J_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_18.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_18.ErrorMessage = "";
-            this.J_18.Location = new System.Drawing.Point(219, 98);
+            this.J_18.Location = new System.Drawing.Point(4, 583);
             this.J_18.Name = "J_18";
-            this.J_18.Size = new System.Drawing.Size(105, 30);
+            this.J_18.Size = new System.Drawing.Size(124, 30);
             this.J_18.TabIndex = 48;
-            this.J_18.Text = "高い山";
             this.J_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_17
             // 
             this.J_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_17.ErrorMessage = "";
-            this.J_17.Location = new System.Drawing.Point(219, 68);
+            this.J_17.Location = new System.Drawing.Point(4, 553);
             this.J_17.Name = "J_17";
-            this.J_17.Size = new System.Drawing.Size(105, 29);
+            this.J_17.Size = new System.Drawing.Size(124, 29);
             this.J_17.TabIndex = 47;
-            this.J_17.Text = "山";
             this.J_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_3
@@ -1633,9 +1576,8 @@
             this.J_3.ErrorMessage = "";
             this.J_3.Location = new System.Drawing.Point(3, 98);
             this.J_3.Name = "J_3";
-            this.J_3.Size = new System.Drawing.Size(109, 30);
+            this.J_3.Size = new System.Drawing.Size(124, 30);
             this.J_3.TabIndex = 46;
-            this.J_3.Text = "村";
             this.J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_2
@@ -1644,21 +1586,20 @@
             this.J_2.ErrorMessage = "";
             this.J_2.Location = new System.Drawing.Point(3, 64);
             this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(109, 32);
+            this.J_2.Size = new System.Drawing.Size(124, 32);
             this.J_2.TabIndex = 45;
-            this.J_2.Text = "道";
             this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B61
             // 
-            this.B61.Location = new System.Drawing.Point(967, 38);
+            this.B61.Location = new System.Drawing.Point(862, 37);
             this.B61.Name = "B61";
             this.B61.Size = new System.Drawing.Size(93, 25);
             this.B61.TabIndex = 63;
             // 
             // B60
             // 
-            this.B60.Location = new System.Drawing.Point(967, 3);
+            this.B60.Location = new System.Drawing.Point(862, 5);
             this.B60.Name = "B60";
             this.B60.Size = new System.Drawing.Size(93, 25);
             this.B60.TabIndex = 62;
@@ -1668,34 +1609,32 @@
             this.J_61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_61.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_61.ErrorMessage = "";
-            this.J_61.Location = new System.Drawing.Point(855, 33);
+            this.J_61.Location = new System.Drawing.Point(720, 33);
             this.J_61.Name = "J_61";
-            this.J_61.Size = new System.Drawing.Size(107, 30);
+            this.J_61.Size = new System.Drawing.Size(135, 30);
             this.J_61.TabIndex = 42;
-            this.J_61.Text = "舵";
             this.J_61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_60
             // 
             this.J_60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_60.ErrorMessage = "";
-            this.J_60.Location = new System.Drawing.Point(855, 3);
+            this.J_60.Location = new System.Drawing.Point(720, 3);
             this.J_60.Name = "J_60";
-            this.J_60.Size = new System.Drawing.Size(107, 29);
+            this.J_60.Size = new System.Drawing.Size(135, 29);
             this.J_60.TabIndex = 41;
-            this.J_60.Text = "水";
             this.J_60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B46
             // 
-            this.B46.Location = new System.Drawing.Point(755, 38);
+            this.B46.Location = new System.Drawing.Point(605, 205);
             this.B46.Name = "B46";
             this.B46.Size = new System.Drawing.Size(93, 25);
             this.B46.TabIndex = 47;
             // 
             // B45
             // 
-            this.B45.Location = new System.Drawing.Point(755, 3);
+            this.B45.Location = new System.Drawing.Point(605, 167);
             this.B45.Name = "B45";
             this.B45.Size = new System.Drawing.Size(93, 25);
             this.B45.TabIndex = 46;
@@ -1705,22 +1644,20 @@
             this.J_46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_46.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_46.ErrorMessage = "";
-            this.J_46.Location = new System.Drawing.Point(645, 33);
+            this.J_46.Location = new System.Drawing.Point(465, 200);
             this.J_46.Name = "J_46";
-            this.J_46.Size = new System.Drawing.Size(105, 30);
+            this.J_46.Size = new System.Drawing.Size(133, 30);
             this.J_46.TabIndex = 38;
-            this.J_46.Text = "??";
             this.J_46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_45
             // 
             this.J_45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_45.ErrorMessage = "";
-            this.J_45.Location = new System.Drawing.Point(645, 3);
+            this.J_45.Location = new System.Drawing.Point(465, 167);
             this.J_45.Name = "J_45";
-            this.J_45.Size = new System.Drawing.Size(105, 29);
+            this.J_45.Size = new System.Drawing.Size(133, 29);
             this.J_45.TabIndex = 37;
-            this.J_45.Text = "階段";
             this.J_45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_0
@@ -1729,9 +1666,8 @@
             this.J_0.ErrorMessage = "";
             this.J_0.Location = new System.Drawing.Point(3, 0);
             this.J_0.Name = "J_0";
-            this.J_0.Size = new System.Drawing.Size(109, 32);
+            this.J_0.Size = new System.Drawing.Size(124, 32);
             this.J_0.TabIndex = 18;
-            this.J_0.Text = "??";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddressPanel
@@ -1833,7 +1769,7 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(20, 46);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(267, 539);
+            this.panel6.Size = new System.Drawing.Size(267, 704);
             this.panel6.TabIndex = 147;
             // 
             // LabelFilter
@@ -1841,10 +1777,10 @@
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LabelFilter.ErrorMessage = "";
-            this.LabelFilter.Location = new System.Drawing.Point(1, 0);
+            this.LabelFilter.Location = new System.Drawing.Point(0, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(265, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(267, 26);
             this.LabelFilter.TabIndex = 106;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1853,11 +1789,12 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(265, 508);
+            this.AddressList.Size = new System.Drawing.Size(268, 678);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -1866,7 +1803,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1585, 596);
+            this.ClientSize = new System.Drawing.Size(1585, 762);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
