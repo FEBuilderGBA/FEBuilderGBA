@@ -2372,7 +2372,7 @@
             // 
             // J_142_TEXT
             // 
-            this.J_142_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND2_DISPLAY_ONLY";
+            this.J_142_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY";
             this.J_142_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_142_TEXT.Location = new System.Drawing.Point(1103, 648);
             this.J_142_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -2409,7 +2409,7 @@
             // 
             // J_140_TEXT
             // 
-            this.J_140_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY";
+            this.J_140_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND2_DISPLAY_ONLY";
             this.J_140_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_140_TEXT.Location = new System.Drawing.Point(1103, 618);
             this.J_140_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

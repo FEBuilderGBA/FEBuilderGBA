@@ -3728,7 +3728,7 @@ Renais
 Renais~Near Jehanna
 
 :ジャハナ
-Jehanna	
+Jehanna
 
 :ジャハナ ～ グラド付近
 Jehanna~Near Grado
@@ -6641,7 +6641,7 @@ Chapter Title Ch.(Eliwood)
 Unit to Defend
 
 :ただし、表示するだけです。この値で何を指定しても、ゲームには影響を与えません。\r\n例えば、この値で、制圧を指定したとしても、\r\n実際のイベントが、ボス撃破でクリアならば、ボス撃破でクリアになります。\r\n\r\n実際の判定には、イベントが利用されます。\r\n
-This is only for display; it doesn't change gameplay.\r\nFor example, if seize is set here but the events declare a chapter is cleared by defeating a boss\r\nthe chapter will still be cleared by defeating the boss.\r\n\r\nEvents always determine the gameplay victory condition.\r\n																														   
+This is only for display; it doesn't change gameplay.\r\nFor example, if seize is set here but the events declare a chapter is cleared by defeating a boss\r\nthe chapter will still be cleared by defeating the boss.\r\n\r\nEvents always determine the gameplay victory condition.\r\n
 
 :FEでは、フラグ0x03の制圧フラグを有効にして、終了イベントを呼ぶと、クリアになります。\r\n
 If an End Event is called and the Seize Flag (0x03) is turned on, it will be cleared.\r\n

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1234 = new System.Windows.Forms.Panel();
+            this.B14 = new System.Windows.Forms.NumericUpDown();
             this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.B14 = new System.Windows.Forms.NumericUpDown();
             this.X_MAPSTYLE_CHANGE = new System.Windows.Forms.Label();
             this.J_147 = new System.Windows.Forms.Label();
             this.J_ID_MAPEDITOR = new System.Windows.Forms.Label();
@@ -704,6 +704,20 @@
             this.panel1234.Size = new System.Drawing.Size(1487, 969);
             this.panel1234.TabIndex = 0;
             // 
+            // B14
+            // 
+            this.B14.Hexadecimal = true;
+            this.B14.Location = new System.Drawing.Point(220, 347);
+            this.B14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B14.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.B14.Name = "B14";
+            this.B14.Size = new System.Drawing.Size(65, 25);
+            this.B14.TabIndex = 10;
+            // 
             // L_20_DIFFCULTY
             // 
             this.L_20_DIFFCULTY.ErrorMessage = "";
@@ -723,20 +737,6 @@
             this.MapPictureBox.Name = "MapPictureBox";
             this.MapPictureBox.Size = new System.Drawing.Size(532, 475);
             this.MapPictureBox.TabIndex = 151;
-            // 
-            // B14
-            // 
-            this.B14.Hexadecimal = true;
-            this.B14.Location = new System.Drawing.Point(220, 347);
-            this.B14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B14.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.B14.Name = "B14";
-            this.B14.Size = new System.Drawing.Size(65, 25);
-            this.B14.TabIndex = 10;
             // 
             // X_MAPSTYLE_CHANGE
             // 
@@ -2397,7 +2397,7 @@
             // 
             // J_138_TEXT
             // 
-            this.J_138_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND2_DISPLAY_ONLY";
+            this.J_138_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY";
             this.J_138_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_138_TEXT.Location = new System.Drawing.Point(824, 265);
             this.J_138_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -2448,7 +2448,7 @@
             // 
             // J_136_TEXT
             // 
-            this.J_136_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY";
+            this.J_136_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND2_DISPLAY_ONLY";
             this.J_136_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_136_TEXT.Location = new System.Drawing.Point(824, 235);
             this.J_136_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
