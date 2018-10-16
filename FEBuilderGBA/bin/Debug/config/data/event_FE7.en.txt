@@ -295,18 +295,19 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 7A00XXXX	[XX:DECIMAL:speed]fade music(MURE)	{MUSIC}	{U}
 7900XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:DECIMAL:speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{J}
 7B00XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:DECIMAL:speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{U}
-7A00XX00	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
-7B00XX00	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
+7A00XXXX	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
+7B00XXXX	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
 7B000000	Decrease the volume(MUSI)	{MUSIC}	{J}
 7D000000	Decrease the volume(MUSI)	{MUSIC}	{U}
 7C000000	Restore volume(MUNO)	{MUSIC}	{J}
 7E000000	Restore volume(MUNO)	{MUSIC}	{U}
-7D00XX00	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
-7F00XX00	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{U}
+7D00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
+7F00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{U}
 63000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{J}
 65000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{U}
 7B0000008C001000900000000500XXXX8D001000910000000D000000YYYY0000090000007C000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{J}
 7D0000008E001000920000000500XXXX8F001000930000000D000000YYYY0000090000007E000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{U}
+7C00XXXX	[XX:DECIMAL:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{U}
 84000000	_86(LOMA)
 86000000	_86
 840000009100000059000000XX000000	[XX:ITEM:Item]Get item	{ITEM}	{J}

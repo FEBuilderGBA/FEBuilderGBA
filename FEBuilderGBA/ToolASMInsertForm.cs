@@ -66,6 +66,7 @@ namespace FEBuilderGBA
                 DebugSymbolComboBox.Show();
                 ELFLabel.Hide();
                 ELFComboBox.Hide();
+                Address.Value = FREEAREA.Value;
             }
             else if (this.Method.SelectedIndex == 2)
             {
@@ -81,6 +82,7 @@ namespace FEBuilderGBA
                 DebugSymbolComboBox.Show();
                 ELFLabel.Hide();
                 ELFComboBox.Hide();
+                Address.Value = 0;
             }
             else
             {
@@ -165,8 +167,11 @@ namespace FEBuilderGBA
             }
             if (!U.isSafetyOffset(addr))
             {
-                R.ShowStopError("無効なポインタです。\r\nこの設定は危険です。");
-                return;
+                if (addr != Program.ROM.Data.Length)
+                {
+                    R.ShowStopError("無効なポインタです。\r\nこの設定は危険です。");
+                    return;
+                }
             }
 
             if (! File.Exists(result))
@@ -192,6 +197,11 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
             if (this.Method.SelectedIndex == 1)
             {
+                uint newlength = addr + (uint)bin.Length;
+                if (!U.isSafetyOffset(newlength))
+                {
+                    Program.ROM.write_resize_data(newlength);
+                }
                 Program.ROM.write_range(addr, bin, undodata);
                 Program.CommentCache.RemoveRange(addr, addr + (uint)bin.Length);
                 SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), addr);

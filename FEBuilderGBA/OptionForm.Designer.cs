@@ -244,7 +244,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(851, 664);
+            this.tabControl1.Size = new System.Drawing.Size(851, 735);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPagePath
@@ -276,7 +276,7 @@
             this.tabPagePath.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePath.Name = "tabPagePath";
             this.tabPagePath.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePath.Size = new System.Drawing.Size(843, 632);
+            this.tabPagePath.Size = new System.Drawing.Size(843, 703);
             this.tabPagePath.TabIndex = 0;
             this.tabPagePath.Text = "パス";
             // 
@@ -544,7 +544,7 @@
             this.tabPagePath2.Location = new System.Drawing.Point(4, 28);
             this.tabPagePath2.Name = "tabPagePath2";
             this.tabPagePath2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePath2.Size = new System.Drawing.Size(843, 632);
+            this.tabPagePath2.Size = new System.Drawing.Size(843, 703);
             this.tabPagePath2.TabIndex = 5;
             this.tabPagePath2.Text = "パス2";
             // 
@@ -827,7 +827,7 @@
             this.tabPageColor.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageColor.Name = "tabPageColor";
             this.tabPageColor.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageColor.Size = new System.Drawing.Size(843, 632);
+            this.tabPageColor.Size = new System.Drawing.Size(843, 703);
             this.tabPageColor.TabIndex = 1;
             this.tabPageColor.Text = "色";
             // 
@@ -1374,7 +1374,7 @@
             this.tabPageShortCut.Location = new System.Drawing.Point(4, 28);
             this.tabPageShortCut.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageShortCut.Name = "tabPageShortCut";
-            this.tabPageShortCut.Size = new System.Drawing.Size(843, 632);
+            this.tabPageShortCut.Size = new System.Drawing.Size(843, 703);
             this.tabPageShortCut.TabIndex = 2;
             this.tabPageShortCut.Text = "ショートカットキー";
             // 
@@ -1916,7 +1916,7 @@
             this.tabPageFunc.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageFunc.Name = "tabPageFunc";
             this.tabPageFunc.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc.Size = new System.Drawing.Size(843, 632);
+            this.tabPageFunc.Size = new System.Drawing.Size(843, 703);
             this.tabPageFunc.TabIndex = 3;
             this.tabPageFunc.Text = "機能";
             // 
@@ -2289,7 +2289,7 @@
             this.tabPageFunc2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageFunc2.Name = "tabPageFunc2";
             this.tabPageFunc2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc2.Size = new System.Drawing.Size(843, 632);
+            this.tabPageFunc2.Size = new System.Drawing.Size(843, 703);
             this.tabPageFunc2.TabIndex = 4;
             this.tabPageFunc2.Text = "機能2";
             // 
@@ -2557,7 +2557,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(464, 685);
+            this.WriteButton.Location = new System.Drawing.Point(465, 751);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(382, 37);
@@ -2572,7 +2572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(870, 730);
+            this.ClientSize = new System.Drawing.Size(878, 799);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
