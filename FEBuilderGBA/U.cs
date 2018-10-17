@@ -1570,9 +1570,9 @@ namespace FEBuilderGBA
                 }
                 count = (uint)(data.Length) - addr;
             }
+            check_safety(data, addr + count);
             byte[] ret = new byte[count];
 
-//            check_safety(data, addr + count);
             Array.Copy(data, addr, ret, 0, count);
             return ret;
         }

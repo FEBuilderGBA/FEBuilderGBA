@@ -824,17 +824,24 @@ namespace FEBuilderGBA
                 }
                 if(n >= script.Args.Length)
                 {//マッチ
-                     code.ByteData    = U.getBinaryData(data, startaddr, script.Size);
-                     code.Script      = script;
-                     code.JisageCount = 0;
-                     code.Comment = Program.CommentCache.At(startaddr);
-                     return code;
+                    if (data.Length < startaddr
+                        || data.Length < startaddr + script.Size)
+                    {//データが足りないのでマッチしない.
+                        continue;
+                    }
+                    code.ByteData    = U.getBinaryData(data, startaddr, script.Size);
+                    code.Script      = script;
+                    code.JisageCount = 0;
+                    code.Comment = Program.CommentCache.At(startaddr);
+                    return code;
                 }
             }
 
 
             //見つからない不明な命令.
-            if (data.Length < this.Unknown.Size)
+            if (data.Length < this.Unknown.Size
+                || data.Length < startaddr
+                || data.Length < startaddr + this.Unknown.Size)
             {
                 code.ByteData = new byte[4];
             }
