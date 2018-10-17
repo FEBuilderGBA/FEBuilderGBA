@@ -4098,19 +4098,19 @@ namespace FEBuilderGBA
 
         public static string CleanupFindString(string str, bool isJP)
         {
-            string need = str.ToLower();
+            string a = str.ToLower();
             if (isJP)
             {
-                str = RegexCache.Replace(str, @"[\[\]、,，]", "");
+                a = RegexCache.Replace(a, @"[\[\]、,，]", "");
                 //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
-                str = ToMigemo(str);
+                a = ToMigemo(a);
             }
             else
             {
-                str = RegexCache.Replace(str, @"[\[\]、,，]", " ");
+                a = RegexCache.Replace(a, @"[\[\]、,，]", " ");
             }
-            str = RegexCache.Replace(str, @"\s+", " ");//連続するスペースを1つにする.
-            return str;
+            a = RegexCache.Replace(a, @"\s+", " ");//連続するスペースを1つにする.
+            return a;
         }
 
         public static bool StrStrEx(string str,string need,bool isJP)

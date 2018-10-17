@@ -36,4 +36,4 @@ EVENTSCRIPT:5.zh=40050200VVVVVVVV4F0500YY{$L1:set_status_param.dmp}	当前人物
 EVENTSCRIPT:6.zh=400DXXYY{$L1:set_status_param.dmp}	将[XX:UNIT:人物]的[YY:RAM_UNIT_PARAM:Status]设置为SVAL2(LOW)	{COND}
 
 NAME.zh=设置本机的各种参数
-INFO.zh=设置本机的各种参数。
+INFO.zh=设置本机的各种参数

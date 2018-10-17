@@ -144,21 +144,11 @@ namespace FEBuilderGBA
             bool isJP = (this.LangCode == "ja");
             search = U.CleanupFindString(search, isJP);
 
-            //まず先頭一致
-            for (int i = start; i < end; i++)
-            {
-                string t = U.CleanupFindString((string)this.TargetistBox.Items[i] , isJP);
-                if (t.IndexOf(search) == 0)
-                {
-                    SelectIndex(i, noListFocus);
-                    return true;
-                }
-            }
-            //ダメなら部分一致
+            //部分一致
             for (int i = start; i < end; i++)
             {
                 string t = U.CleanupFindString((string)this.TargetistBox.Items[i], true);
-                if (t.IndexOf(search) > 0)
+                if (t.IndexOf(search) >= 0)
                 {
                     SelectIndex(i, noListFocus);
                     return true;
