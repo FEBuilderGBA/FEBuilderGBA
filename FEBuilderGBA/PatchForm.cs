@@ -119,7 +119,7 @@ namespace FEBuilderGBA
             List<PatchSt> patchs = new List<PatchSt>();
             string lang = OptionForm.lang();
             bool isJP = (lang == "ja");
-            filter = filter.ToLower();
+            filter = U.CleanupFindString(filter , isJP);
 
             if (filter == "!")
             {//インストールしているパッチだけ

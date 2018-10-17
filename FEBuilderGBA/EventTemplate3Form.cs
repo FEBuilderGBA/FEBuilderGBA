@@ -30,6 +30,7 @@ namespace FEBuilderGBA
         public byte[] GenCode = null;
         public uint CallEventAddr = U.NOT_FOUND;
         public bool NeedFlag03 = false;
+        public bool CounterReinforcementEvent = false;
 
         private void BLANK_Button_Click(object sender, EventArgs e)
         {
@@ -77,6 +78,13 @@ namespace FEBuilderGBA
         private void GAMEOVER_Button_Click(object sender, EventArgs e)
         {
             this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_GAMEOVER_"));
+            this.Close();
+        }
+
+        private void EnemyReinforcementByCounterButton_Click(object sender, EventArgs e)
+        {
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_EnemyReinforcementByCounter_"));
+            this.CounterReinforcementEvent = true;
             this.Close();
         }
 

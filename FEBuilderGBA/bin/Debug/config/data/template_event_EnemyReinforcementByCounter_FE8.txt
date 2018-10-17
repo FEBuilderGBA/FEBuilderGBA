@@ -1,0 +1,8 @@
+40050200FFFFFF08400A0000AC03A608	//増援[ユニット情報:0x89089F8]	{J}
+40050200FFFFFF08400A000074E29E08	//増援[ユニット情報:0x89089F8]	{U}
+230F0000	//COUNTER_SUBTRACT[Bitshift_value:0x0][Base_operand:0x0]
+21020E00	//フラグOFF[Flag:0xE 一時フラグ0E]
+200F0000	//カウンタの値を取得[Value1:0x0]
+410C00000C000000	//MemorySlotC BNE(不一致時、条件IDラベルにジャンプ)[条件ID:0x0][MemorySlot2:0x0 常に0(書き込み禁止)]
+29020E00	//フラグON[Flag:0xE 一時フラグ0E]
+20080000	//LABEL[条件ID:0x0]

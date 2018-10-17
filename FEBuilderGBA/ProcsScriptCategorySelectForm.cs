@@ -42,9 +42,9 @@ namespace FEBuilderGBA
             string category = GetSelectedCategory();
             bool filtered = category.Length > 0;
 
-            string filterString = this.Filter.Text.ToLower();
             string lang = OptionForm.lang();
             bool isJP = (lang == "ja");
+            string filterString = U.CleanupFindString(this.Filter.Text,isJP);
 
 
 

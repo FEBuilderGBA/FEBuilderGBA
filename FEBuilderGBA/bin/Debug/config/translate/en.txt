@@ -2182,6 +2182,9 @@ Game over event
 :敵増援(難易度:ハードのみ)
 Enemy reinforcement (difficulty: hard only)
 
+:カウンターを利用して特定のイベントから数ターン増援
+Reinforce several turns from specific events using counters
+
 :会話イベントを作成
 Create a conversation event
 
@@ -10335,6 +10338,9 @@ Save modifications as a UPS patch
 
 :SSL証明書({0})({1})は信用されていません
 The SSL certificate ({0}) ({1}) is not trusted
+
+:[\[\]、,，]
+[\\ [\\] ,,,]
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}

@@ -523,8 +523,8 @@ namespace FEBuilderGBA
                 EventScript.Arg arg = code.Script.Args[n];
                 uint v = EventScript.GetArgValue(code, arg);
 
-                if (arg.Type == EventScript.ArgType.FIXED)
-                {//固定値になっているところはパラメータを出さない.
+                if (EventScript.IsFixedArg(arg))
+                {//固定長になっているところは入力できないようにする.
                     i--;
                     continue;
                 }
@@ -585,7 +585,7 @@ namespace FEBuilderGBA
             for (; i < code.Script.Args.Length; i++)
             {
                 arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.FIXED)
+                if (EventScript.IsFixedArg(arg))
                 {//固定長になっているところは入力できないようにする.
                     continue;
                 }
@@ -662,6 +662,7 @@ namespace FEBuilderGBA
 
             EventScript.Arg arg = code.Script.Args[argindex];
             uint v = EventScriptForm.WriteOneScriptEditSetTables(ScriptEditSetTables[selectID], arg, code);
+            EventScriptForm.WriteAliasScriptEditSetTables(ScriptEditSetTables[selectID], arg, code);
 
             bool isOrderOfHuman = (this.ActiveControl == sender); //人間の操作によるものか
             string text = "";
@@ -921,6 +922,14 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.MAPEMOTION)
             {//MAPEMOTION
                 text = " " + InputFormRef.GetMAPEMOTION(v);
+            }
+            else if (arg.Type == EventScript.ArgType.COUNTER)
+            {//COUNTER
+                text = " " + "<<" + U.ToHexString(v);
+            }
+            else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+            {//RAM_UNIT_PARAM
+                text = " " + InputFormRef.GetRAM_UNIT_PARAM(v, out errormessage);
             }
             else if (arg.Type == EventScript.ArgType.WMAP_SPRITE_ID)
             {//WMAP_SPRITE_ID
@@ -2273,8 +2282,8 @@ namespace FEBuilderGBA
                 for (int n = 0; n < code.Script.Args.Length; n++)
                 {
                     EventScript.Arg arg = code.Script.Args[n];
-                    if (arg.Type == EventScript.ArgType.FIXED)
-                    {
+                    if (EventScript.IsFixedArg(arg))
+                    {//固定長になっているところは入力できないようにする.
                         continue;
                     }
                     if (symbol != arg.Symbol)
@@ -2506,6 +2515,18 @@ namespace FEBuilderGBA
                     {//MAPEMOTION
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetMAPEMOTION(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.COUNTER)
+                    {//COUNTER
+                        sb.Append(" ");
+                        sb.Append("<<");
+                        sb.Append(U.ToHexString(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+                    {//RAM_UNIT_PARAM
+                        sb.Append(" ");
+                        string dummy;
+                        sb.Append(InputFormRef.GetRAM_UNIT_PARAM(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.WMAP_SPRITE_ID)
                     {//WMAP_SPRITE_ID

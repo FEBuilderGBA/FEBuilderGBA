@@ -416,14 +416,13 @@ namespace FEBuilderGBA
                     break;
                 }
                 EventScript.Arg arg = code.Script.Args[n];
-                uint v = EventScript.GetArgValue(code, arg);
-
-                if (arg.Type == EventScript.ArgType.FIXED)
+                if (EventScript.IsFixedArg(arg))
                 {//固定値になっているところはパラメータを出さない.
                     i--;
                     continue;
                 }
 
+                uint v = EventScript.GetArgValue(code, arg);
                 EventScriptForm.SetOneScriptEditSetTables(ScriptEditSetTables[i], arg, v);
             }
 
@@ -479,10 +478,11 @@ namespace FEBuilderGBA
             for (; i < code.Script.Args.Length; i++)
             {
                 arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.FIXED)
+                if (EventScript.IsFixedArg(arg))
                 {//固定長になっているところは入力できないようにする.
                     continue;
                 }
+
                 if (n < selectID)
                 {
                     n++;
@@ -516,6 +516,7 @@ namespace FEBuilderGBA
 
             EventScript.Arg arg = code.Script.Args[argindex];
             uint value = EventScriptForm.WriteOneScriptEditSetTables(ScriptEditSetTables[selectID], arg, code);
+            EventScriptForm.WriteAliasScriptEditSetTables(ScriptEditSetTables[selectID], arg, code);
 
             bool isOrderOfHuman = (this.ActiveControl == sender); //人間の操作によるものか
             string text = "";
@@ -946,8 +947,8 @@ namespace FEBuilderGBA
                 for (int n = 0; n < code.Script.Args.Length; n++)
                 {
                     EventScript.Arg arg = code.Script.Args[n];
-                    if (arg.Type == EventScript.ArgType.FIXED)
-                    {
+                    if (EventScript.IsFixedArg(arg))
+                    {//固定長になっているところは入力できないようにする.
                         continue;
                     }
                     if (symbol != arg.Symbol)

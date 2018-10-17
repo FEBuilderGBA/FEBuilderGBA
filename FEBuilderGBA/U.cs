@@ -4096,60 +4096,48 @@ namespace FEBuilderGBA
             return str;
         }
 
+        public static string CleanupFindString(string str, bool isJP)
+        {
+            string need = str.ToLower();
+            if (isJP)
+            {
+                str = RegexCache.Replace(str, @"[\[\]、,，]", "");
+                //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
+                str = ToMigemo(str);
+            }
+            else
+            {
+                str = RegexCache.Replace(str, @"[\[\]、,，]", " ");
+            }
+            str = RegexCache.Replace(str, @"\s+", " ");//連続するスペースを1つにする.
+            return str;
+        }
+
         public static bool StrStrEx(string str,string need,bool isJP)
         {
-            Debug.Assert(need.ToLower() == need);
+            Debug.Assert(U.CleanupFindString(need,isJP) == need);
             if (str == null)
             {
                 return false;
             }
 
-            string t = str.ToLower();
+            string t = U.CleanupFindString(str, isJP);
             string search = need;
-            if (isJP)
+            if (t.IndexOf(search) >= 0)
             {
-                //日本語の場合、重くならないならば、migmoみたいに検索しましょうか.
-                if (t.IndexOf(search) >= 0)
-                {
-                    return true;
-                }
-                //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
-                search = ToMigemo(search);
-                t = ToMigemo(t);
-                if (t.IndexOf(search) >= 0)
-                {
-                    return true;
-                }
-                string[] sp = search.Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < sp.Length; i++ )
-                {
-                    if (t.IndexOf(sp[i]) < 0)
-                    {//ない
-                        return false;
-                    }
-                }
-                //マッチ
                 return true;
             }
-            else
-            {
-                //英語の場合、ともに小文字化して検索します.
-                if (t.IndexOf(search) >= 0)
-                {
-                    return true;
-                }
 
-                string[] sp = search.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < sp.Length; i++)
-                {
-                    if (t.IndexOf(sp[i]) < 0)
-                    {//ない
-                        return false;
-                    }
+            string[] sp = search.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < sp.Length; i++)
+            {
+                if (t.IndexOf(sp[i]) < 0)
+                {//ない
+                    return false;
                 }
-                //マッチ
-                return true;
             }
+            //マッチ
+            return true;
         }
 
         //必ずアップデートイベントを発生させる.

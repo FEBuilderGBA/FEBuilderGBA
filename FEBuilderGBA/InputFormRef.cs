@@ -2815,9 +2815,10 @@ namespace FEBuilderGBA
             , string prefix, List<Control> controls, Button writeButton)
         {
 
-            byte[] alloc ;
+            byte[] alloc;
             uint callEventAddr;
             bool needFlag03;
+            bool counterReinforcementEvent = false;
             if (arg1 == "EVENT1")
             {
                 EventTemplate1Form f = (EventTemplate1Form)InputFormRef.JumpFormLow<EventTemplate1Form>();
@@ -2844,6 +2845,7 @@ namespace FEBuilderGBA
                 alloc = f.GenCode;
                 callEventAddr = f.CallEventAddr;
                 needFlag03 = f.NeedFlag03;
+                counterReinforcementEvent = f.CounterReinforcementEvent;
             }
             else if (arg1 == "EVENT4")
             {
@@ -2894,7 +2896,25 @@ namespace FEBuilderGBA
                     }
                 }
             }
- 
+            //カウンターを利用した増援
+            if (counterReinforcementEvent)
+            {
+                string flag_name = prefix + "B8";
+                Control c = FindObjectByForm<NumericUpDown>(controls, flag_name);
+                if ((c is NumericUpDown))
+                {
+                    NumericUpDown nup = ((NumericUpDown)c);
+                    nup.Value = 1;
+                }
+                flag_name = prefix + "B9";
+                c = FindObjectByForm<NumericUpDown>(controls, flag_name);
+                if ((c is NumericUpDown))
+                {
+                    NumericUpDown nup = ((NumericUpDown)c);
+                    nup.Value = 255;
+                }
+            }
+
             if (callEventAddr != U.NOT_FOUND)
             {//既存のイベント呼び出し
                 if (callEventAddr == 1)
@@ -4539,6 +4559,7 @@ namespace FEBuilderGBA
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
+            Cache_ramunit_param_dic = null;
             Cache_map_emotion = null;
             g_Cache_portrait_extends = portrait_extends.NoCache;
             g_Cache_magic_split_enum = magic_split_enum.NoCache;
@@ -6015,6 +6036,21 @@ namespace FEBuilderGBA
             }
 
             return U.substr(sb.ToString(), 1);
+        }
+
+        //RAM UNIT PARAM
+        static Dictionary<uint, string> Cache_ramunit_param_dic;
+        public static string GetRAM_UNIT_PARAM(uint num, out string errorMessae)
+        {
+            errorMessae = "";
+            StringBuilder sb = new StringBuilder();
+
+            if (Cache_ramunit_param_dic == null)
+            {
+                string filename = U.ConfigDataFilename("ramunit_param_");
+                Cache_ramunit_param_dic = U.LoadDicResource(filename);
+            }
+            return U.at(Cache_ramunit_param_dic, num);
         }
 
         //ワールドマップに表示するユニット

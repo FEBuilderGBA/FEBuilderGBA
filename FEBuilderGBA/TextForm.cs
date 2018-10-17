@@ -1346,10 +1346,12 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            string lang = OptionForm.lang();
+            bool isJP = (lang == "ja");
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                findstr = findstr.ToLower();
+                findstr = U.CleanupFindString(findstr, isJP);
 
                 FETextDecode textdecoder = new FETextDecode();
                 List<U.AddrResult> result = InputFormRef.MakeList((U.AddrResult ar) =>
@@ -1357,7 +1359,7 @@ namespace FEBuilderGBA
                     int size;
                     string str = textdecoder.DecodeAddr(ar.addr, out size);
 
-                    int hitpos = str.ToLower().IndexOf(findstr);
+                    int hitpos = U.CleanupFindString(str, isJP).IndexOf(findstr);
                     if (hitpos < 0)
                     {//NO HIT
                         return new U.AddrResult();

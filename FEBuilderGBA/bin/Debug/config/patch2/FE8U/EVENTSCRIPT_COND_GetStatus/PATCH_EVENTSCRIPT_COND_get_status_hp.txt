@@ -20,11 +20,11 @@ EVENTSCRIPT:3=4B0D0000{$L1:get_status_hp.dmp}	SVALBの座標のユニットのHP
 EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:get_status_hp.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットのHPを取得	{COND}
 EVENTSCRIPT:5=212E00002006C100410D0000{$L1:get_status_hp.dmp}	現在操作しているユニットのHPを取得	{COND}
 
-EVENTSCRIPT:1.en=400DXX00{$L1:get_status_hp.dmp}	[XX:UNIT:Unit] Get HP of unit {COND}.
-EVENTSCRIPT:2.en=410D0000{$L1:get_status_hp.dmp}	Get the HP of the unit of SVAL1 (LOW) {COND}.
-EVENTSCRIPT:3.en=4B0D0000{$L1:get_status_hp.dmp}	Get the unit's HP of coordinates of SVALB (LOW) {COND}.
-EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000{$L1:get_status_hp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Get the unit HP {COND}.
-EVENTSCRIPT:5.en=212E00002006C100410D0000{$L1:get_status_hp.dmp}	Get the HP of the unit currently being operated {COND}.
+EVENTSCRIPT:1.en=400DXX00{$L1:get_status_hp.dmp}	[XX:UNIT:Unit] Get HP of unit	{COND}
+EVENTSCRIPT:2.en=410D0000{$L1:get_status_hp.dmp}	Get the HP of the unit of SVAL1 (LOW)	{COND}
+EVENTSCRIPT:3.en=4B0D0000{$L1:get_status_hp.dmp}	Get the unit's HP of coordinates of SVALB (LOW)	{COND}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000{$L1:get_status_hp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Get the unit HP	{COND}
+EVENTSCRIPT:5.en=212E00002006C100410D0000{$L1:get_status_hp.dmp}	Get the HP of the unit currently being operated	{COND}
 NAME.zh=获取人物级别的事件指令
 INFO.zh=获得人物级别。\r\n结果在内存插槽C中返回。
 EVENTSCRIPT:1.zh=400DXX00{$L1:get_status_hp.dmp}	[XX:UNIT:Unit]获得人物等级	{COND}

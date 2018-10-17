@@ -277,6 +277,28 @@ namespace FEBuilderGBA
             }
             return value;
         }
+        //本体を変更したので、そこを参照するAliasを更新する.
+        public static void WriteAliasScriptEditSetTables(ScriptEditSetTable table, EventScript.Arg arg, EventScript.OneCode code)
+        {
+            for (int i = 0; i < code.Script.Args.Length; i++)
+            {
+                EventScript.Arg a = code.Script.Args[i];
+                if (a.Type == EventScript.ArgType.FIXED)
+                {
+                    continue;
+                }
+                if (a.Alias == U.NOT_FOUND)
+                {//aliasではない
+                    continue;
+                }
+                if (arg.Symbol != a.Symbol)
+                {
+                    continue;
+                }
+                WriteOneScriptEditSetTables(table, a , code);
+            }
+        }
+
         public static void ScanScript(List<Address> list, uint script_pointer, bool isWithEventUnit, bool isWorldMapEvent, string basename, List<uint> tracelist)
         {
             ScanScriptHelper helper = new ScanScriptHelper(list, isWithEventUnit, isWorldMapEvent, basename, tracelist);
@@ -859,6 +881,10 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
+                    if (arg.Alias != U.NOT_FOUND)
+                    {//別名が付けられているだけなのでパラメータを出さない
+                        continue;
+                    }
                     if (symbol != arg.Symbol)
                     {
                         continue;
@@ -1320,7 +1346,17 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetMAPEMOTION(v);
                         }
-
+                        else if (arg.Type == EventScript.ArgType.COUNTER)
+                        {//COUNTER
+                            isENumText = true;
+                            text = " " + "<<" + U.ToHexString(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+                        {//RAMUNITSTATUS
+                            isENumText = true;
+                            string dummy;
+                            text = " " + InputFormRef.GetRAM_UNIT_PARAM(v,out dummy);
+                        }
                         if (isENumText)
                         {
                             bounds.X += U.DrawText(text, g, boldFont, brush, isWithDraw, bounds);

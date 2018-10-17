@@ -1,0 +1,35 @@
+NAME=ユニットの様々なパラメータを取得する
+NAME.en=AddEvent: Get Unit Status
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 get_status_param.dmp=0x10 0xB5 0x84 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=get_status_param.dmp
+
+INFO=ユニットの様々なパラメータを取得します。\r\n結果は、メモリスロットCに返されます。
+
+AUTHOR=7743
+INFO.en=Add Event:Get various parameters of the unit.\r\nThe result is returned in memory slot C.
+
+EVENTSCRIPT:1=400DXXYY{$L1:get_status_param.dmp}	[XX:UNIT:ユニット]の[YY:RAM_UNIT_PARAM:Status]を取得	{COND}
+EVENTSCRIPT:2=410D00YY{$L1:get_status_param.dmp}	SVAL1のユニットの[YY:RAM_UNIT_PARAM:Status]を取得(LOW)	{COND}
+EVENTSCRIPT:3=4B0D00YY{$L1:get_status_param.dmp}	SVALBの座標のユニットの[YY:RAM_UNIT_PARAM:Status]を取得(LOW)	{COND}
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:RAM_UNIT_PARAM:Status]を取得	{COND}
+EVENTSCRIPT:5=4F0500YY{$L1:get_status_param.dmp}	現在操作しているユニットの[YY:RAM_UNIT_PARAM:Status]を取得	{COND}
+
+EVENTSCRIPT:1.en=400DXXYY{$L1:get_status_param.dmp}	Get [XX:UNIT:Unit]'s [YY:RAM_UNIT_PARAM:Status] of unit	{COND}
+EVENTSCRIPT:2.en=410D00YY{$L1:get_status_param.dmp}	Get the [YY:RAM_UNIT_PARAM:Status] of the unit of SVAL1 (LOW)	{COND}
+EVENTSCRIPT:3.en=4B0D00YY{$L1:get_status_param.dmp}	Get the unit's [YY:RAM_UNIT_PARAM:Status] of coordinates of SVALB (LOW)	{COND}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Get the unit [YY:RAM_UNIT_PARAM:Status]	{COND}
+EVENTSCRIPT:5.en=4F0500YY{$L1:get_status_param.dmp}	Get the [YY:RAM_UNIT_PARAM:Status] of the unit currently being operated	{COND}
+
+EVENTSCRIPT:1.zh=400DXXYY{$L1:get_status_param.dmp}	获得[XX:UNIT:人物][YY:RAM_UNIT_PARAM:Status]	{COND}
+EVENTSCRIPT:2.zh=410D00YY{$L1:get_status_param.dmp}	获取SVAL1的人物[YY:RAM_UNIT_PARAM:Status](LOW)	{COND}
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:get_status_param.dmp}	获取人物的SVALB[YY:RAM_UNIT_PARAM:Status](LOW)	{COND}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]获取人物[YY:RAM_UNIT_PARAM:Status]	{COND}
+EVENTSCRIPT:5.zh=4F0500YY{$L1:get_status_param.dmp}	获取当前正在运行的人物的[YY:RAM_UNIT_PARAM:Status]	{COND}
+NAME.zh=获取单元的各种参数
+INFO.zh=获取单位的各种参数。\r\n结果在内存插槽C中返回。

@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.EnemyReinforcementIfHard_button = new System.Windows.Forms.Button();
             this.FormIcon = new System.Windows.Forms.PictureBox();
+            this.EnemyReinforcementByCounterButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +94,10 @@
             // 
             // CALL_EndEvent_button
             // 
-            this.CALL_EndEvent_button.Location = new System.Drawing.Point(12, 472);
+            this.CALL_EndEvent_button.Location = new System.Drawing.Point(12, 523);
             this.CALL_EndEvent_button.Name = "CALL_EndEvent_button";
             this.CALL_EndEvent_button.Size = new System.Drawing.Size(759, 42);
-            this.CALL_EndEvent_button.TabIndex = 8;
+            this.CALL_EndEvent_button.TabIndex = 7;
             this.CALL_EndEvent_button.Text = "章終了イベントを呼び出す(章クリア)";
             this.CALL_EndEvent_button.UseVisualStyleBackColor = true;
             this.CALL_EndEvent_button.Click += new System.EventHandler(this.CALL_EndEvent_button_Click);
@@ -106,7 +107,7 @@
             this.GAMEOVER_Button.Location = new System.Drawing.Point(12, 389);
             this.GAMEOVER_Button.Name = "GAMEOVER_Button";
             this.GAMEOVER_Button.Size = new System.Drawing.Size(759, 42);
-            this.GAMEOVER_Button.TabIndex = 6;
+            this.GAMEOVER_Button.TabIndex = 5;
             this.GAMEOVER_Button.Text = "ゲームオーバーイベント";
             this.GAMEOVER_Button.UseVisualStyleBackColor = true;
             this.GAMEOVER_Button.Click += new System.EventHandler(this.GAMEOVER_Button_Click);
@@ -123,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 451);
+            this.label3.Location = new System.Drawing.Point(12, 502);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 18);
             this.label3.TabIndex = 13;
@@ -148,11 +149,22 @@
             this.FormIcon.TabIndex = 14;
             this.FormIcon.TabStop = false;
             // 
+            // EnemyReinforcementByCounterButton
+            // 
+            this.EnemyReinforcementByCounterButton.Location = new System.Drawing.Point(12, 437);
+            this.EnemyReinforcementByCounterButton.Name = "EnemyReinforcementByCounterButton";
+            this.EnemyReinforcementByCounterButton.Size = new System.Drawing.Size(759, 42);
+            this.EnemyReinforcementByCounterButton.TabIndex = 6;
+            this.EnemyReinforcementByCounterButton.Text = "カウンターを利用して特定のイベントから数ターン増援";
+            this.EnemyReinforcementByCounterButton.UseVisualStyleBackColor = true;
+            this.EnemyReinforcementByCounterButton.Click += new System.EventHandler(this.EnemyReinforcementByCounterButton_Click);
+            // 
             // EventTemplate3Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 527);
+            this.ClientSize = new System.Drawing.Size(783, 586);
+            this.Controls.Add(this.EnemyReinforcementByCounterButton);
             this.Controls.Add(this.EnemyReinforcementIfHard_button);
             this.Controls.Add(this.FormIcon);
             this.Controls.Add(this.label3);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox FormIcon;
         private System.Windows.Forms.Button EnemyReinforcementIfHard_button;
+        private System.Windows.Forms.Button EnemyReinforcementByCounterButton;
     }
 }

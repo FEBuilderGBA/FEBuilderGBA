@@ -51,10 +51,12 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
 21070000	SAVETOQUEUE	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
-200FXXXX	カウンタの値を取得[XXXX::Value1](COUNTER_CHECK)	@STOREC	{VAL}	{COND}
-210FXXYY	COUNTER_SET[X::Bitshift_value][Y::Counter_value]	{VAL}
-220FXXYY	COUNTER_ADD[X::Bitshift_value][Y::Base_operand]	{VAL}
-230FXXYY	COUNTER_SUBTRACT[X::Bitshift_value][Y::Base_operand]	{VAL}
+200FXXXX	カウンタの値を取得[X:COUNTER:CounterID(bitshift)](COUNTER_CHECK)	@STOREC	{VAL}	{COND}
+210FXXYY	カウンタの値を設定[X:COUNTER:CounterID(bitshift)][Y::Counter_value](COUNTER_SET)	{VAL}
+220FXXYY	カウンタの値を足す[X:COUNTER:CounterID(bitshift)][Y::Base_operand](COUNTER_ADD)	{VAL}
+230FXXYY	カウンタの値を減らす[X:COUNTER:CounterID(bitshift)][Y::Base_operand](COUNTER_SUBTRACT)	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	カウンタを減らして、ゼロになったらフラグをONにする[X::Counter(bitshift)][Y::Base_operand][W:FLAG:達成フラグ][V:LABEL:条件ID]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を行います。\r\nCounter(bitshift)とBase_operandは特に変更しないならば0のままにしてください。\r\n達成フラグには、このイベントに設定されている達成フラグと同じ値を書いてください。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{VAL}	{FLAG}
+210FXXYY2102WWWW	カウンタを利用したイベントを開始する[X::CounterID(bitshift)][Y::Base_operand][W:FLAG:フラグ]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を開始させます。\r\nCounter(bitshift)は理由がなければ0のままにしてください。\r\nBase_operandには動作させるターン数を設定します。3ターンならば3になります。\r\nフラグには、動作させたいイベントの達成フラグを設定してください。	{VAL}	{FLAG}
 212AXXXX	ワールドマップあり 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNCH)	@MNCHBUG	{MAP}
 222AXXXX	ワールドマップなし 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNC2)	章をクリアして、次の章へ進みます	@MNC2BUG	{MAP}
 232AXXXX	ワールドマップなし 次のマップへ(セーブなし)[XXXX:MAPCHAPTER:次の章ID](MNC3)	章をクリアして、次の章へ進みます	@MNC2BUG	{MAP}
@@ -447,7 +449,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	WMAPに出したユニットの
 
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	歓声のガヤのセリフを表示 二件目以降[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:がやテキスト](SET_VAL_B+TEXTSHOW)	{TEXT}
 
-2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008ZZZZ	砂漠の財宝[XX:ITEM:拾えるアイテム][YYYY:LABEL:条件ID][ZZZZ:LABEL:条件IDと同一値]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。\r\n「条件IDと同一値」には、条件IDに入れた値と同じ値を入れてください。\r\nもし、「条件ID」に1234を入れたら、「条件IDと同一値」にも1234と書いてください	{ITEM}	{J}
-2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008ZZZZ	砂漠の財宝[XX:ITEM:拾えるアイテム][YYYY:LABEL:条件ID][ZZZZ:LABEL:条件IDと同一値]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。\r\n「条件IDと同一値」には、条件IDに入れた値と同じ値を入れてください。\r\nもし、「条件ID」に1234を入れたら、「条件IDと同一値」にも1234と書いてください	{ITEM}	{U}
+2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	砂漠の財宝[XX:ITEM:拾えるアイテム][YYYY:LABEL:条件ID]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{ITEM}	{J}
+2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	砂漠の財宝[XX:ITEM:拾えるアイテム][YYYY:LABEL:条件ID]	砂漠に埋もれているアイテムを実装します。\r\n盗賊以外は、幸運のパラメータによって、拾えるどうかが判定されます。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{ITEM}	{U}
 40050300XXXX000022370000	所持金からゴールド[XXXX:DECIMAL:GOLD]を失う(GIVETOSLOT3)	{GOLD}	{ITME}
 423FXXXXYYYYZZZZ	イベント戦闘実行42[XXXX:UNIT:攻撃側][YY:UNIT:反撃側][ZZ::Unk](FIG3)	{BATTLE}	{MAPEFFECT}

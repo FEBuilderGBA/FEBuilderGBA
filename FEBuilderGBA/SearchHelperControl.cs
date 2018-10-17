@@ -140,81 +140,28 @@ namespace FEBuilderGBA
                     }
                 }
             }
-            search = search.ToLower();
 
-            if (this.LangCode == "ja")
+            bool isJP = (this.LangCode == "ja");
+            search = U.CleanupFindString(search, isJP);
+
+            //まず先頭一致
+            for (int i = start; i < end; i++)
             {
-                //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
-                search = MultiByteJPUtil.mb_convert_kana(search, "HcasR");
-
-                //日本語の場合、重くならないならば、migmoみたいに検索しましょうか.
-                //まず先頭一致
-                for (int i = start; i < end; i++)
+                string t = U.CleanupFindString((string)this.TargetistBox.Items[i] , isJP);
+                if (t.IndexOf(search) == 0)
                 {
-                    string t = ((string)this.TargetistBox.Items[i]).ToLower();
-                    if (t.IndexOf(search) == 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
-                    if (U.isAsciiString(t))
-                    {//アスキー文字列なのでやるだけ無駄.
-                        continue;
-                    }
-
-                    //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
-                    t = MultiByteJPUtil.mb_convert_kana(t, "HcasR");
-                    if (t.IndexOf(search) == 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
-                }
-                //ダメなら部分一致
-                for (int i = start; i < end; i++)
-                {
-                    string t = ((string)this.TargetistBox.Items[i]).ToLower();
-                    if (t.IndexOf(search) > 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
-                    if (U.isAsciiString(t))
-                    {//アスキー文字列なのでやるだけ無駄.
-                        continue;
-                    }
-
-                    //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
-                    t = MultiByteJPUtil.mb_convert_kana(t, "HcasR");
-                    if (t.IndexOf(search) > 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
+                    SelectIndex(i, noListFocus);
+                    return true;
                 }
             }
-            else
+            //ダメなら部分一致
+            for (int i = start; i < end; i++)
             {
-                //英語の場合、ともに小文字化して検索します.
-                //まずは先頭一致
-                for (int i = start; i < end; i++)
+                string t = U.CleanupFindString((string)this.TargetistBox.Items[i], true);
+                if (t.IndexOf(search) > 0)
                 {
-                    string t = ((string)this.TargetistBox.Items[i]).ToLower();
-                    if (t.IndexOf(search) == 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
-                }
-                //だめなら部分一致
-                for (int i = start; i < end; i++)
-                {
-                    string t = ((string)this.TargetistBox.Items[i]).ToLower();
-                    if (t.IndexOf(search) > 0)
-                    {
-                        SelectIndex(i, noListFocus);
-                        return true;
-                    }
+                    SelectIndex(i, noListFocus);
+                    return true;
                 }
             }
             return false;

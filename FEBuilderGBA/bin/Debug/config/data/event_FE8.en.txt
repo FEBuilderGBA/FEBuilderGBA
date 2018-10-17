@@ -49,12 +49,14 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
 21070000	SAVETOQUEUE	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
-210FXXYY	COUNTER_SET[X::Bitshift_value][Y::Counter_value]	{VAL}
-220FXXYY	COUNTER_ADD[X::Bitshift_value][Y::Base_operand]	{VAL}
-230FXXYY	COUNTER_SUBTRACT[X::Bitshift_value][Y::Base_operand]	{VAL}
+210FXXYY	COUNTER_SET[X:COUNTER:CounterID(bitshift)][Y::Counter_value]	{VAL}
+220FXXYY	COUNTER_ADD[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
+230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:ConditionID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter (bitshift) and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
+210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter (bitshift) 0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
+
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
 202A0000	Return to title screen(MNTS)	{ENDING}
-
 
 402FXXXXYYYYZZWW20300000	Move Setting And Move immediately[YY:UNIT:Character]to[ZZ:MAPX:X][WW:MAPY:Y]with[XXXX:DECIMAL:speed](MOVE+ENUN)	{UNITMOVE}
 412FXXXXYYYYZZZZ20300000	Move Setting And Move immediately[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:DECIMAL:speed](MOVEONTO+ENUN)	{UNITMOVE}
@@ -371,7 +373,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 2F420000	End of shaking the screen (earthquake)(EARTHQUAKE_END)	{MAPEFFECT}
 2045XXXX	GLOWING_CROSS[XXXX:UNIT:Unit]	Makes a glowing X underneath the character.
 2F450000	END_GLOWING_CROSS
-200FXXXX	COUNTER_CHECK[XXXX::Value1]	Get the value of the counter	@STOREC	{VAL}	{COND}
+200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID(bitshift)]	Get the value of the counter	@STOREC	{VAL}	{COND}
 2734XXXX	_0x3427[XXXX:UNIT:Unit]
 410BYYYYFFFFFFFF	Event call in memory slot 2[YYYY::param]
 410BYYYYXXXXXXXX	Unconditional jump1 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
@@ -431,8 +433,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 
 241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW)	{TEXT}
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW)	{TEXT}
-2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008ZZZZ	Desert treasure [XX:ITEM:Item] [YYYY:LABEL:condition ID] [ZZZZ:LABEL:same value as the condition ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nFor "Condition ID\\r\nIf there is no other branch, leave 0 and there is no problem.\r\nFor "same value as condition ID\\r\nIf 1234 is inserted in "condition ID\	{ITEM}	{J}
-2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008ZZZZ	Desert treasure [XX:ITEM:Item] [YYYY:LABEL:condition ID] [ZZZZ:LABEL:same value as the condition ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nFor "Condition ID\\r\nIf there is no other branch, leave 0 and there is no problem.\r\nFor "same value as condition ID\\r\nIf 1234 is inserted in "condition ID\	{ITEM}	{U}
+2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{ITEM}	{J}
+2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the parameters of good fortune to judge whether you can pick up.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{ITEM}	{U}
 2034XXXX	Remove a [XXXX:UNIT:unit] from the party. departure flag on.(REMU)	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Unit] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
 2134XXXX	Change [XXXX:UNIT:Unit] can rejoin the party.departure flag off.(REVEAL)	{UNITPERSOLNAL}

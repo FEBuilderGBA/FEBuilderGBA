@@ -1446,7 +1446,7 @@ namespace FEBuilderGBA
             {
                 string lang = OptionForm.lang();
                 bool isJP = (lang == "ja");
-                filter = filter.ToLower();
+                filter = U.CleanupFindString(filter , isJP);
 
                 for (int i = 0; i < controlPanel.Controls.Count; i++)
                 {

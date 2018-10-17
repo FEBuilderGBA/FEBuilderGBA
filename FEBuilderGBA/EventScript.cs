@@ -84,6 +84,8 @@ namespace FEBuilderGBA
             , BADSTATUS         //状態異常 ターン <<8 | 状態
             , SKILL             //
             , MAPEMOTION        //マップ絵文字
+            , COUNTER           //カウンタ(ビットシフト)
+            , RAM_UNIT_PARAM     //RAMユニット
         };
 
         public class Arg
@@ -93,6 +95,7 @@ namespace FEBuilderGBA
             public int    Size;
             public ArgType Type;
             public char    Symbol;     //XとかYとかZとかのシンボル
+            public uint    Alias;      //不要ならU.NOT_FOUND 既に定義されている別名への参照
         }
 
         //探索を早くするため、スクリプトの種類を簡単に定義.
@@ -239,6 +242,18 @@ namespace FEBuilderGBA
             });
             this.Scripts = scripts.ToArray();
         }
+        static uint SelectAlias(List<Arg> args , char symbol)
+        {
+            for (int i = 0; i < args.Count; i++)
+            {
+                if (args[i].Symbol == symbol)
+                {
+                    return (uint)i;
+                }
+            }
+            return U.NOT_FOUND;
+        }
+
         public static Script ParseScriptLine(string line)
         {
             string[] sp = line.Split('\t');
@@ -285,6 +300,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
+                    arg.Alias = SelectAlias(args, bytestring[start]);
 
                     args.Add(arg);
                 }
@@ -304,6 +320,7 @@ namespace FEBuilderGBA
                     arg.Position = start / 2;
                     arg.Size = (i - start) / 2;
                     arg.Type = ArgType.FIXED;
+                    arg.Alias = U.NOT_FOUND;
                     args.Add(arg);
                 }
             }
@@ -630,6 +647,12 @@ namespace FEBuilderGBA
                  break;
              case "MAPEMOTION":
                  type = ArgType.MAPEMOTION;
+                 break;
+             case "COUNTER":
+                 type = ArgType.COUNTER;
+                 break;
+             case "RAM_UNIT_PARAM":
+                 type = ArgType.RAM_UNIT_PARAM;
                  break;
              case "MEMORYSLOT":
                  type = ArgType.MEMORYSLOT;
@@ -1501,6 +1524,19 @@ namespace FEBuilderGBA
                 return true;
             }
             //おそらくダミーの終端. 無視するべき.
+            return false;
+        }
+
+        public static bool IsFixedArg(EventScript.Arg arg)
+        {
+            if (arg.Type == EventScript.ArgType.FIXED)
+            {//固定値になっているところはパラメータを出さない.
+                return true;
+            }
+            if (arg.Alias != U.NOT_FOUND)
+            {//Aliasになっているところはパラメータを出さない.
+                return true;
+            }
             return false;
         }
     }
