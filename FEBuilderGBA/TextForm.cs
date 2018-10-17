@@ -1371,7 +1371,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        name = ar.name + " " + str.Substring(hitpos);
+                        name = ar.name + " " + U.substr(str,hitpos);
                     }
 
                     return new U.AddrResult(ar.addr, name, ar.tag);

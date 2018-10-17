@@ -1,0 +1,61 @@
+PUSH
+
+ORG	0x015534
+SHORT	$481C	//ldr	r0, [$080155a8]
+
+ORG	0x015560
+WORD	$0203A954
+
+ORG	0x015518
+#incbin "autosave2.bin"
+
+//オートセーブ実装部
+ORG 0x08F384
+#incbin "0008F384.bin"
+
+ORG 0x0AA460
+#incbin "000AA460.bin"
+
+ORG 0x0AA46E
+#incbin "000AA46E.bin"
+
+ORG 0x0AA4AA
+#incbin "000AA4AA.bin"
+
+ORG 0x0AA4B6
+#incbin "000AA4B6.bin"
+
+ORG 0x0AA4C6
+#incbin "000AA4C6.bin"
+
+ORG 0x0AA4DC
+#incbin "000AA4DC.bin"
+
+ORG 0x0AA4EC
+#incbin "000AA4EC.bin"
+
+ORG 0x0AA502
+#incbin "000AA502.bin"
+
+ORG 0x0AA51A
+#incbin "000AA51A.bin"
+
+ORG 0x0AA5D8
+#incbin "000AA5D8.bin"
+
+ORG 0x0BA8EC
+#incbin "000BA8EC.bin"
+
+//地形ウィンドウの設定をオートセーブに変更する
+ORG 0x0ED855
+#incbin "AutoSaveName_Text_0A.bin"
+
+ORG 0x0EDA04
+#incbin "AutoSaveName_Text_24.bin"
+
+//アイコン GBAのアイコン
+ORG 0xAAF750
+byte $12;
+
+
+POP

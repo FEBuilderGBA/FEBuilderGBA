@@ -1,0 +1,15 @@
+NAME=Lボタンでアニメオンオフ切り換え
+NAME.en=Switch:Animation on / off with L button
+TYPE=BIN
+TAG=#EVENT
+BIN:0x2c9a8=AnimeSwitchG.bin
+
+//既に適応されたかどうか
+PATCHED_IF:0x2c9a8=0xC1 0x68 0x48 0x04
+
+INFO=Lボタンでアニメのオンオフを切り替えます。\r\nまた、Aボタン押しっぱなしだと、アニメをオフにできます。\r\nAとLを押しっぱなしだと、アニメがオンになります。
+
+AUTHOR=aera
+INFO.en=L button to switch animation on / off.\r\nAlso, if you leave the A button pressed, animation can be turned off.\r\nIf you keep pressing A and L, animation will turn on.
+NAME.zh=L按钮可以打开/关闭动画
+INFO.zh=L按钮可以打开/关闭动画。\r\n此外，如果您按下A按钮，则可以关闭动画。\r\n如果持续按A和L，动画将打开。

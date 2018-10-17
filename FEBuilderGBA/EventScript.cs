@@ -827,6 +827,7 @@ namespace FEBuilderGBA
                     if (data.Length < startaddr
                         || data.Length < startaddr + script.Size)
                     {//データが足りないのでマッチしない.
+                        Debug.Assert(false);
                         continue;
                     }
                     code.ByteData    = U.getBinaryData(data, startaddr, script.Size);
