@@ -110,6 +110,34 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "SkillAssignmentUnitSkillSystem", new uint[] { });
             }
         }
+        //全データの取得
+        public static void ExportAllData(string filename)
+        {
+            InputFormRef InputFormRef;
+            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            List<string> lines = new List<string>();
+            {
+                uint assignUnitP = SkillConfigSkillSystemForm.FindAssignPersonalSkillPointer();
+                if (assignUnitP == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                InputFormRef = Init(null, assignUnitP);
+                uint p = InputFormRef.BaseAddress;
+                for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(U.ToHexString(Program.ROM.u8(p + 0)));
+                    lines.Add(sb.ToString());
+                }
+            }
+            File.WriteAllLines(filename, lines);
+        }
         public static int MakeUnitSkillButtons(uint uid, Button[] buttons, ToolTipEx tooltip)
         {
             uint iconP = SkillConfigSkillSystemForm.FindIconPointer();

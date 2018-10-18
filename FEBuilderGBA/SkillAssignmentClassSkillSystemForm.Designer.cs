@@ -35,22 +35,31 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.ZeroPointerPanel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.IndependencePanel = new System.Windows.Forms.Panel();
             this.IndependenceButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
             this.N1_B0 = new System.Windows.Forms.NumericUpDown();
             this.N1_J_SKILL = new System.Windows.Forms.Label();
+            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.N1_B1 = new System.Windows.Forms.NumericUpDown();
+            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
+            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label7 = new System.Windows.Forms.Label();
             this.N1_WriteButton = new System.Windows.Forms.Button();
             this.N1_Address = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N1_LabelFilter = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.N1_ReloadListButton = new System.Windows.Forms.Button();
@@ -58,10 +67,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
+            this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_SKILL = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -69,41 +82,28 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.ZeroPointerPanel = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
-            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
-            this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.ZeroPointerPanel.SuspendLayout();
             this.IndependencePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
-            this.ZeroPointerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -197,6 +197,16 @@
             this.panel4.Size = new System.Drawing.Size(905, 771);
             this.panel4.TabIndex = 96;
             // 
+            // SKILLNAME
+            // 
+            this.SKILLNAME.ErrorMessage = "";
+            this.SKILLNAME.Location = new System.Drawing.Point(48, 36);
+            this.SKILLNAME.Name = "SKILLNAME";
+            this.SKILLNAME.Placeholder = "";
+            this.SKILLNAME.ReadOnly = true;
+            this.SKILLNAME.Size = new System.Drawing.Size(191, 25);
+            this.SKILLNAME.TabIndex = 119;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -213,6 +223,24 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(657, 449);
             this.panel8.TabIndex = 118;
+            // 
+            // ZeroPointerPanel
+            // 
+            this.ZeroPointerPanel.Controls.Add(this.label12);
+            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 384);
+            this.ZeroPointerPanel.Name = "ZeroPointerPanel";
+            this.ZeroPointerPanel.Size = new System.Drawing.Size(504, 61);
+            this.ZeroPointerPanel.TabIndex = 144;
+            this.ZeroPointerPanel.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(3, 2);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(498, 42);
+            this.label12.TabIndex = 122;
+            this.label12.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IndependencePanel
             // 
@@ -242,6 +270,16 @@
             this.label4.TabIndex = 122;
             this.label4.Text = "このテーブルは、複数のクラスで参照されています。";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // N1_SKILLNAME
+            // 
+            this.N1_SKILLNAME.ErrorMessage = "";
+            this.N1_SKILLNAME.Location = new System.Drawing.Point(96, 85);
+            this.N1_SKILLNAME.Name = "N1_SKILLNAME";
+            this.N1_SKILLNAME.Placeholder = "";
+            this.N1_SKILLNAME.ReadOnly = true;
+            this.N1_SKILLNAME.Size = new System.Drawing.Size(178, 25);
+            this.N1_SKILLNAME.TabIndex = 120;
             // 
             // label5
             // 
@@ -279,10 +317,22 @@
             this.N1_J_SKILL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.N1_J_SKILL.Click += new System.EventHandler(this.N1_J_SKILL_Click);
             // 
+            // N1_SKILLTEXT
+            // 
+            this.N1_SKILLTEXT.ErrorMessage = "";
+            this.N1_SKILLTEXT.Location = new System.Drawing.Point(280, 115);
+            this.N1_SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_SKILLTEXT.Multiline = true;
+            this.N1_SKILLTEXT.Name = "N1_SKILLTEXT";
+            this.N1_SKILLTEXT.Placeholder = "";
+            this.N1_SKILLTEXT.ReadOnly = true;
+            this.N1_SKILLTEXT.Size = new System.Drawing.Size(348, 108);
+            this.N1_SKILLTEXT.TabIndex = 117;
+            // 
             // N1_B1
             // 
             this.N1_B1.Hexadecimal = true;
-            this.N1_B1.Location = new System.Drawing.Point(196, 51);
+            this.N1_B1.Location = new System.Drawing.Point(196, 52);
             this.N1_B1.Margin = new System.Windows.Forms.Padding(2);
             this.N1_B1.Maximum = new decimal(new int[] {
             -559939585,
@@ -293,6 +343,17 @@
             this.N1_B1.Size = new System.Drawing.Size(79, 25);
             this.N1_B1.TabIndex = 114;
             this.N1_B1.ValueChanged += new System.EventHandler(this.N1_B1_ValueChanged);
+            // 
+            // N1_SKILLICON
+            // 
+            this.N1_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N1_SKILLICON.Location = new System.Drawing.Point(279, 46);
+            this.N1_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_SKILLICON.Name = "N1_SKILLICON";
+            this.N1_SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.N1_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.N1_SKILLICON.TabIndex = 116;
+            this.N1_SKILLICON.TabStop = false;
             // 
             // panel7
             // 
@@ -310,6 +371,17 @@
             this.panel7.Size = new System.Drawing.Size(655, 75);
             this.panel7.TabIndex = 113;
             // 
+            // N1_BlockSize
+            // 
+            this.N1_BlockSize.ErrorMessage = "";
+            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
+            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_BlockSize.Name = "N1_BlockSize";
+            this.N1_BlockSize.Placeholder = "";
+            this.N1_BlockSize.ReadOnly = true;
+            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.N1_BlockSize.TabIndex = 58;
+            // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -320,6 +392,17 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "Size:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N1_SelectAddress
+            // 
+            this.N1_SelectAddress.ErrorMessage = "";
+            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
+            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_SelectAddress.Name = "N1_SelectAddress";
+            this.N1_SelectAddress.Placeholder = "";
+            this.N1_SelectAddress.ReadOnly = true;
+            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N1_SelectAddress.TabIndex = 57;
             // 
             // label7
             // 
@@ -386,6 +469,18 @@
             this.N1_AddressListExpandsButton.TabIndex = 115;
             this.N1_AddressListExpandsButton.Text = "リストの拡張";
             this.N1_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // N1_AddressList
+            // 
+            this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N1_AddressList.FormattingEnabled = true;
+            this.N1_AddressList.IntegralHeight = false;
+            this.N1_AddressList.ItemHeight = 18;
+            this.N1_AddressList.Location = new System.Drawing.Point(0, 29);
+            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N1_AddressList.Name = "N1_AddressList";
+            this.N1_AddressList.Size = new System.Drawing.Size(246, 454);
+            this.N1_AddressList.TabIndex = 57;
             // 
             // N1_LabelFilter
             // 
@@ -472,6 +567,29 @@
             this.N1_ReadStartAddress.TabIndex = 25;
             this.N1_ReadStartAddress.ValueChanged += new System.EventHandler(this.N1_ReadStartAddress_ValueChanged);
             // 
+            // SKILLTEXT
+            // 
+            this.SKILLTEXT.ErrorMessage = "";
+            this.SKILLTEXT.Location = new System.Drawing.Point(252, 71);
+            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLTEXT.Multiline = true;
+            this.SKILLTEXT.Name = "SKILLTEXT";
+            this.SKILLTEXT.Placeholder = "";
+            this.SKILLTEXT.ReadOnly = true;
+            this.SKILLTEXT.Size = new System.Drawing.Size(348, 108);
+            this.SKILLTEXT.TabIndex = 109;
+            // 
+            // SKILLICON
+            // 
+            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SKILLICON.Location = new System.Drawing.Point(251, 2);
+            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLICON.Name = "SKILLICON";
+            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SKILLICON.TabIndex = 102;
+            this.SKILLICON.TabStop = false;
+            // 
             // B0
             // 
             this.B0.Hexadecimal = true;
@@ -515,6 +633,17 @@
             this.panel5.Size = new System.Drawing.Size(906, 34);
             this.panel5.TabIndex = 94;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -525,6 +654,17 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
             // 
             // label22
             // 
@@ -607,149 +747,11 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ZeroPointerPanel
-            // 
-            this.ZeroPointerPanel.Controls.Add(this.label12);
-            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 384);
-            this.ZeroPointerPanel.Name = "ZeroPointerPanel";
-            this.ZeroPointerPanel.Size = new System.Drawing.Size(504, 61);
-            this.ZeroPointerPanel.TabIndex = 144;
-            this.ZeroPointerPanel.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(3, 2);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(498, 42);
-            this.label12.TabIndex = 122;
-            this.label12.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SKILLNAME
-            // 
-            this.SKILLNAME.ErrorMessage = "";
-            this.SKILLNAME.Location = new System.Drawing.Point(48, 36);
-            this.SKILLNAME.Name = "SKILLNAME";
-            this.SKILLNAME.Placeholder = "";
-            this.SKILLNAME.ReadOnly = true;
-            this.SKILLNAME.Size = new System.Drawing.Size(191, 25);
-            this.SKILLNAME.TabIndex = 119;
-            // 
-            // N1_SKILLNAME
-            // 
-            this.N1_SKILLNAME.ErrorMessage = "";
-            this.N1_SKILLNAME.Location = new System.Drawing.Point(96, 85);
-            this.N1_SKILLNAME.Name = "N1_SKILLNAME";
-            this.N1_SKILLNAME.Placeholder = "";
-            this.N1_SKILLNAME.ReadOnly = true;
-            this.N1_SKILLNAME.Size = new System.Drawing.Size(178, 25);
-            this.N1_SKILLNAME.TabIndex = 120;
-            // 
-            // N1_SKILLTEXT
-            // 
-            this.N1_SKILLTEXT.ErrorMessage = "";
-            this.N1_SKILLTEXT.Location = new System.Drawing.Point(280, 115);
-            this.N1_SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_SKILLTEXT.Multiline = true;
-            this.N1_SKILLTEXT.Name = "N1_SKILLTEXT";
-            this.N1_SKILLTEXT.Placeholder = "";
-            this.N1_SKILLTEXT.ReadOnly = true;
-            this.N1_SKILLTEXT.Size = new System.Drawing.Size(348, 108);
-            this.N1_SKILLTEXT.TabIndex = 117;
-            // 
-            // N1_SKILLICON
-            // 
-            this.N1_SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N1_SKILLICON.Location = new System.Drawing.Point(279, 46);
-            this.N1_SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_SKILLICON.Name = "N1_SKILLICON";
-            this.N1_SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.N1_SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.N1_SKILLICON.TabIndex = 116;
-            this.N1_SKILLICON.TabStop = false;
-            // 
-            // N1_BlockSize
-            // 
-            this.N1_BlockSize.ErrorMessage = "";
-            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
-            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_BlockSize.Name = "N1_BlockSize";
-            this.N1_BlockSize.Placeholder = "";
-            this.N1_BlockSize.ReadOnly = true;
-            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.N1_BlockSize.TabIndex = 58;
-            // 
-            // N1_SelectAddress
-            // 
-            this.N1_SelectAddress.ErrorMessage = "";
-            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
-            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_SelectAddress.Name = "N1_SelectAddress";
-            this.N1_SelectAddress.Placeholder = "";
-            this.N1_SelectAddress.ReadOnly = true;
-            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
-            this.N1_SelectAddress.TabIndex = 57;
-            // 
-            // N1_AddressList
-            // 
-            this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N1_AddressList.FormattingEnabled = true;
-            this.N1_AddressList.ItemHeight = 18;
-            this.N1_AddressList.Location = new System.Drawing.Point(0, 29);
-            this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N1_AddressList.Name = "N1_AddressList";
-            this.N1_AddressList.Size = new System.Drawing.Size(246, 454);
-            this.N1_AddressList.TabIndex = 57;
-            // 
-            // SKILLTEXT
-            // 
-            this.SKILLTEXT.ErrorMessage = "";
-            this.SKILLTEXT.Location = new System.Drawing.Point(252, 71);
-            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLTEXT.Multiline = true;
-            this.SKILLTEXT.Name = "SKILLTEXT";
-            this.SKILLTEXT.Placeholder = "";
-            this.SKILLTEXT.ReadOnly = true;
-            this.SKILLTEXT.Size = new System.Drawing.Size(348, 108);
-            this.SKILLTEXT.TabIndex = 109;
-            // 
-            // SKILLICON
-            // 
-            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.SKILLICON.Location = new System.Drawing.Point(251, 2);
-            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLICON.Name = "SKILLICON";
-            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SKILLICON.TabIndex = 102;
-            this.SKILLICON.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -778,9 +780,11 @@
             this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.ZeroPointerPanel.ResumeLayout(false);
             this.IndependencePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).EndInit();
@@ -788,14 +792,12 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.ZeroPointerPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
             this.ResumeLayout(false);
 
         }

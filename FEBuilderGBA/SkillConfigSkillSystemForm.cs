@@ -403,6 +403,59 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void ExportAllData(string filename)
+        {
+            InputFormRef InputFormRef;
+            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            List<string> lines = new List<string>();
+            {
+                uint baseiconP = FindIconPointer();
+                uint basetextP = FindTextPointer();
+                uint baseanimeP = FindAnimePointer();
+
+                if (baseiconP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (basetextP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (baseanimeP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                InputFormRef = Init(null, basetextP);
+                uint textAddr = InputFormRef.BaseAddress;
+
+                uint anime = Program.ROM.p32(baseanimeP);
+                for (uint i = 0; i < InputFormRef.DataCount; 
+                    i++, anime += 4, textAddr += 2)
+                {
+                    if (!U.isSafetyOffset(anime))
+                    {
+                        break;
+                    }
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(U.ToHexString(Program.ROM.u16(textAddr + 0)));
+
+                    uint addr = Program.ROM.p32(anime);
+                    if (!U.isSafetyOffset(addr))
+                    {
+                        lines.Add(sb.ToString());
+                        continue;
+                    }
+                    sb.Append("\t");
+                    sb.Append(U.ToHexString(addr));
+                    lines.Add(sb.ToString());
+                }
+            }
+            File.WriteAllLines(filename, lines);
+        }
         //テキストの取得
         public static void MakeTextIDArray(List<TextID> list)
         {
