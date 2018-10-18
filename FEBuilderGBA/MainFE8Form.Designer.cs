@@ -152,6 +152,8 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
+            this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
             this.WorldMapBGMButton = new System.Windows.Forms.Button();
             this.LinkArenaDenyUnitButton = new System.Windows.Forms.Button();
             this.ToolProblemReportToolButton = new System.Windows.Forms.Button();
@@ -212,8 +214,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
-            this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1395,6 +1396,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
             this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
             this.ControlPanel.Controls.Add(this.WorldMapBGMButton);
@@ -1528,6 +1530,28 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1631, 758);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // MapTerrainBGLookupTableButton
+            // 
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 522);
+            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
+            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainBGLookupTableButton.TabIndex = 128;
+            this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
+            this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainBGLookupTableButton.Click += new System.EventHandler(this.MapTerrainBGLookupTableButton_Click);
+            // 
+            // MapTerrainFloorLookupTableButton
+            // 
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 486);
+            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
+            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainFloorLookupTableButton.TabIndex = 127;
+            this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
+            this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainFloorLookupTableButton.Click += new System.EventHandler(this.MapTerrainFloorLookupTableButton_Click);
             // 
             // WorldMapBGMButton
             // 
@@ -2189,27 +2213,16 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // MapTerrainFloorLookupTableButton
+            // GameOptionButton
             // 
-            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 486);
-            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
-            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
-            this.MapTerrainFloorLookupTableButton.TabIndex = 127;
-            this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
-            this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
-            this.MapTerrainFloorLookupTableButton.Click += new System.EventHandler(this.MapTerrainFloorLookupTableButton_Click);
-            // 
-            // MapTerrainBGLookupTableButton
-            // 
-            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 522);
-            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
-            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
-            this.MapTerrainBGLookupTableButton.TabIndex = 128;
-            this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
-            this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
-            this.MapTerrainBGLookupTableButton.Click += new System.EventHandler(this.MapTerrainBGLookupTableButton_Click);
+            this.GameOptionButton.Location = new System.Drawing.Point(1426, 413);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 129;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // MainFE8Form
             // 
@@ -2425,6 +2438,7 @@
         private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
         private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
+        private System.Windows.Forms.Button GameOptionButton;
     }
 }
 

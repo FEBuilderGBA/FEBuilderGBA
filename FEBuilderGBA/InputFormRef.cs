@@ -465,6 +465,18 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "GAMEOPTIONICON")
+            {//オプションのアイコンとリンク
+                PictureBox link_object = ((PictureBox)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value / 2;
+                    Bitmap bitmap = ImageSystemIconForm.MusicIcon(id);
+                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
+                return;
+            }
             if (linktype == "WEAPON")
             {//武器レベルとリンク
                 if (link_info is Label)

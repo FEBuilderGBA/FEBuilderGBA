@@ -1771,6 +1771,12 @@
     <Compile Include="MapTerrainBGLookupTableForm.Designer.cs">
       <DependentUpon>MapTerrainBGLookupTableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusOptionForm.Designer.cs">
+      <DependentUpon>StatusOptionForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2618,6 +2624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapTerrainBGLookupTableForm.resx">
       <DependentUpon>MapTerrainBGLookupTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusOptionForm.resx">
+      <DependentUpon>StatusOptionForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

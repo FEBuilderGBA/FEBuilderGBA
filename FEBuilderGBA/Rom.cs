@@ -339,6 +339,7 @@ namespace FEBuilderGBA
         uint lookup_table_battle_bg_19_pointer(); //戦闘アニメの床
         uint lookup_table_battle_bg_20_pointer(); //戦闘アニメの床
         uint map_terrain_type_count(); //地形の種類の数
+        uint status_game_option_pointer(); //ゲームオプション
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
         uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
         uint patch_C01_hack(out uint enable_value); //C01 patch

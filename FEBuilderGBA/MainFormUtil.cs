@@ -2110,6 +2110,11 @@ namespace FEBuilderGBA
             {
                 return R._("地形のごとに、戦闘アニメの背景の画像の設定を行います。");
             }
+            if (name == "GameOptionButton")
+            {
+                return R._("ゲームの設定オプション項目を変更できます。");
+            }
+            
             return "";
         }
         public static void MakeExplainFunctions(Control controlPanel)

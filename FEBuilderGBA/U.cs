@@ -2053,6 +2053,7 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version() == 8)
             {
+                StatusOptionForm.MakeAllDataLength(list,isPointerOnly);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);
@@ -2234,6 +2235,7 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 4")) return list;
             if (Program.ROM.RomInfo.version() == 8)
             {
+                StatusOptionForm.MakeTextIDArray(list);
                 MapSettingForm.MakeTextIDArray(list);
                 SupportTalkForm.MakeTextIDArray(list);
                 EDForm.MakeTextIDArray(list);

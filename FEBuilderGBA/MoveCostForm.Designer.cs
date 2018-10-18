@@ -361,7 +361,7 @@
             this.J_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_31.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_31.ErrorMessage = "";
-            this.J_31.Location = new System.Drawing.Point(232, 359);
+            this.J_31.Location = new System.Drawing.Point(232, 357);
             this.J_31.Name = "J_31";
             this.J_31.Size = new System.Drawing.Size(128, 30);
             this.J_31.TabIndex = 34;
@@ -371,7 +371,7 @@
             // 
             this.J_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30.ErrorMessage = "";
-            this.J_30.Location = new System.Drawing.Point(232, 327);
+            this.J_30.Location = new System.Drawing.Point(232, 325);
             this.J_30.Name = "J_30";
             this.J_30.Size = new System.Drawing.Size(128, 29);
             this.J_30.TabIndex = 33;
@@ -410,7 +410,7 @@
             this.J_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_16.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_16.ErrorMessage = "";
-            this.J_16.Location = new System.Drawing.Point(4, 518);
+            this.J_16.Location = new System.Drawing.Point(4, 519);
             this.J_16.Name = "J_16";
             this.J_16.Size = new System.Drawing.Size(124, 30);
             this.J_16.TabIndex = 28;
@@ -763,7 +763,7 @@
             // 
             this.J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_28.ErrorMessage = "";
-            this.J_28.Location = new System.Drawing.Point(232, 263);
+            this.J_28.Location = new System.Drawing.Point(232, 262);
             this.J_28.Name = "J_28";
             this.J_28.Size = new System.Drawing.Size(128, 29);
             this.J_28.TabIndex = 142;
@@ -889,7 +889,7 @@
             // 
             this.J_55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_55.ErrorMessage = "";
-            this.J_55.Location = new System.Drawing.Point(465, 493);
+            this.J_55.Location = new System.Drawing.Point(465, 491);
             this.J_55.Name = "J_55";
             this.J_55.Size = new System.Drawing.Size(133, 29);
             this.J_55.TabIndex = 128;
@@ -1018,7 +1018,7 @@
             this.J_54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_54.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_54.ErrorMessage = "";
-            this.J_54.Location = new System.Drawing.Point(465, 458);
+            this.J_54.Location = new System.Drawing.Point(465, 457);
             this.J_54.Name = "J_54";
             this.J_54.Size = new System.Drawing.Size(133, 30);
             this.J_54.TabIndex = 113;
@@ -1028,7 +1028,7 @@
             // 
             this.J_53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_53.ErrorMessage = "";
-            this.J_53.Location = new System.Drawing.Point(465, 427);
+            this.J_53.Location = new System.Drawing.Point(465, 425);
             this.J_53.Name = "J_53";
             this.J_53.Size = new System.Drawing.Size(133, 29);
             this.J_53.TabIndex = 112;
@@ -1063,7 +1063,7 @@
             // 
             this.J_38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_38.ErrorMessage = "";
-            this.J_38.Location = new System.Drawing.Point(232, 584);
+            this.J_38.Location = new System.Drawing.Point(232, 583);
             this.J_38.Name = "J_38";
             this.J_38.Size = new System.Drawing.Size(128, 29);
             this.J_38.TabIndex = 108;
@@ -1167,7 +1167,7 @@
             // 
             this.J_51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_51.ErrorMessage = "";
-            this.J_51.Location = new System.Drawing.Point(465, 363);
+            this.J_51.Location = new System.Drawing.Point(465, 362);
             this.J_51.Name = "J_51";
             this.J_51.Size = new System.Drawing.Size(133, 29);
             this.J_51.TabIndex = 96;
@@ -1202,7 +1202,7 @@
             // 
             this.J_36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_36.ErrorMessage = "";
-            this.J_36.Location = new System.Drawing.Point(232, 520);
+            this.J_36.Location = new System.Drawing.Point(232, 518);
             this.J_36.Name = "J_36";
             this.J_36.Size = new System.Drawing.Size(128, 29);
             this.J_36.TabIndex = 92;
@@ -1217,7 +1217,7 @@
             // 
             // B21
             // 
-            this.B21.Location = new System.Drawing.Point(366, 39);
+            this.B21.Location = new System.Drawing.Point(366, 38);
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(93, 25);
             this.B21.TabIndex = 21;
@@ -1251,7 +1251,7 @@
             // 
             this.J_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_21.ErrorMessage = "";
-            this.J_21.Location = new System.Drawing.Point(232, 36);
+            this.J_21.Location = new System.Drawing.Point(232, 35);
             this.J_21.Name = "J_21";
             this.J_21.Size = new System.Drawing.Size(128, 29);
             this.J_21.TabIndex = 86;
@@ -1313,7 +1313,7 @@
             this.J_50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_50.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_50.ErrorMessage = "";
-            this.J_50.Location = new System.Drawing.Point(465, 329);
+            this.J_50.Location = new System.Drawing.Point(465, 330);
             this.J_50.Name = "J_50";
             this.J_50.Size = new System.Drawing.Size(133, 30);
             this.J_50.TabIndex = 78;
@@ -1358,7 +1358,7 @@
             // 
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.ErrorMessage = "";
-            this.J_34.Location = new System.Drawing.Point(232, 456);
+            this.J_34.Location = new System.Drawing.Point(232, 455);
             this.J_34.Name = "J_34";
             this.J_34.Size = new System.Drawing.Size(128, 29);
             this.J_34.TabIndex = 73;
@@ -1480,7 +1480,7 @@
             // 
             this.J_47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_47.ErrorMessage = "";
-            this.J_47.Location = new System.Drawing.Point(465, 235);
+            this.J_47.Location = new System.Drawing.Point(465, 233);
             this.J_47.Name = "J_47";
             this.J_47.Size = new System.Drawing.Size(133, 29);
             this.J_47.TabIndex = 57;
@@ -1488,7 +1488,7 @@
             // 
             // B33
             // 
-            this.B33.Location = new System.Drawing.Point(366, 426);
+            this.B33.Location = new System.Drawing.Point(366, 425);
             this.B33.Name = "B33";
             this.B33.Size = new System.Drawing.Size(93, 25);
             this.B33.TabIndex = 34;
@@ -1515,7 +1515,7 @@
             // 
             this.J_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_32.ErrorMessage = "";
-            this.J_32.Location = new System.Drawing.Point(232, 392);
+            this.J_32.Location = new System.Drawing.Point(232, 390);
             this.J_32.Name = "J_32";
             this.J_32.Size = new System.Drawing.Size(128, 29);
             this.J_32.TabIndex = 53;
@@ -1544,7 +1544,7 @@
             // 
             // B2
             // 
-            this.B2.Location = new System.Drawing.Point(133, 66);
+            this.B2.Location = new System.Drawing.Point(133, 67);
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(93, 25);
             this.B2.TabIndex = 2;
@@ -1564,7 +1564,7 @@
             // 
             this.J_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_17.ErrorMessage = "";
-            this.J_17.Location = new System.Drawing.Point(4, 553);
+            this.J_17.Location = new System.Drawing.Point(4, 551);
             this.J_17.Name = "J_17";
             this.J_17.Size = new System.Drawing.Size(124, 29);
             this.J_17.TabIndex = 47;

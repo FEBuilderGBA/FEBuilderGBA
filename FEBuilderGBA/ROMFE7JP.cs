@@ -341,6 +341,7 @@ namespace FEBuilderGBA
         public uint lookup_table_battle_bg_19_pointer() { return 0x00; } //戦闘アニメの背景
         public uint lookup_table_battle_bg_20_pointer() { return 0x00; } //戦闘アニメの背景
         public uint map_terrain_type_count() { return 65; } //地形の種類の数
+        public uint status_game_option_pointer() { return 0; } //ゲームオプション
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x1C284902; return 0x13324; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0xF0C046C0; return 0x06642; } //C01 patch

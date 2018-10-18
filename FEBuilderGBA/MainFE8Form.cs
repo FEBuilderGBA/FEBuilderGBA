@@ -1020,6 +1020,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();
         }
 
+        private void GameOptionButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusOptionForm>();
+        }
+
     }
 
 }

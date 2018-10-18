@@ -359,6 +359,11 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("移動アイコン");
             }
+            else if (dataType == FELint.Type.STATUS_GAME_OPTION)
+            {
+                show_tag = tag;
+                text = R._("ゲームオプション");
+            }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
             {
                 show_tag = tag;
@@ -854,6 +859,14 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
             {
                 InputFormRef.JumpForm<ToolProblemReportForm>();
+                return;
+            }
+            else if (dataType == FELint.Type.STATUS_GAME_OPTION)
+            {
+                if (Program.ROM.RomInfo.version() == 8)
+                {
+                    InputFormRef.JumpForm<TextDicForm>(tag);
+                }
                 return;
             }
 

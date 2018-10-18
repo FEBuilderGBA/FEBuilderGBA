@@ -66,6 +66,7 @@ namespace FEBuilderGBA
             ,MAPEXIT  //離脱ポイント
             ,IMAGE_UNIT_MOVE_ICON  //ユニット移動画像
             ,IMAGE_UNIT_WAIT_ICON  //ユニット待機画像
+            ,STATUS_GAME_OPTION //ゲームオプション
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)
