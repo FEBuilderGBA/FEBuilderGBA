@@ -27,7 +27,7 @@ namespace FEBuilderGBA
                 , 36
                 , (int i, uint addr) =>
                 {
-                    return U.isPointer(Program.ROM.u32(addr+8));
+                    return U.isPointer(Program.ROM.u32(addr + 8));
                 }
                 , (int i, uint addr) =>
                 {
@@ -116,6 +116,8 @@ namespace FEBuilderGBA
         {
             return new uint[] { 
                            Program.ROM.RomInfo.menu_definiton_pointer()
+                        ,  Program.ROM.RomInfo.menu_promotion_pointer()
+                        ,  Program.ROM.RomInfo.menu_promotion_branch_pointer()
                         ,  Program.ROM.RomInfo.menu_definiton_split_pointer()
                         ,  Program.ROM.RomInfo.menu_definiton_worldmap_pointer()
                         ,  Program.ROM.RomInfo.menu_definiton_worldmap_shop_pointer()

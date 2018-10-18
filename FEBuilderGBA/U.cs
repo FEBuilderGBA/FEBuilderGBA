@@ -1782,6 +1782,12 @@ namespace FEBuilderGBA
         }
 
         [MethodImpl(256)]
+        public static bool isPointerASM(uint a)
+        {
+            return (a >= 0x08000000 && a < 0x0A000000) && U.IsValueOdd(a);
+        }
+
+        [MethodImpl(256)]
         public static bool isPointer(uint a)
         {
             return (a >= 0x08000000 && a < 0x0A000000);
@@ -2053,7 +2059,7 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version() == 8)
             {
-                StatusOptionForm.MakeAllDataLength(list,isPointerOnly);
+                StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);

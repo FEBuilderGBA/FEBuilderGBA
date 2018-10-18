@@ -136,6 +136,8 @@ namespace FEBuilderGBA
         uint link_arena_deny_unit_pointer(); //通信闘技場 禁止ユニット 
         uint worldmap_road_pointer(); // ワールドマップの道
         uint menu_definiton_pointer();  //メニューの親玉 メニューを束ねる構造体です.
+        uint menu_promotion_pointer(); //CC決定する選択子
+        uint menu_promotion_branch_pointer(); //FE8にある分岐CC
         uint menu_definiton_split_pointer();  //FE8にある分岐メニュー
         uint menu_definiton_worldmap_pointer(); //FE8のワールドマップのメニュー
         uint menu_definiton_worldmap_shop_pointer(); //FE8のワールドマップ店のメニュー        

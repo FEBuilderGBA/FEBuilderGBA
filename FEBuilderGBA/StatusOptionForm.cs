@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         public static void MakeTextIDArray(List<TextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextIDPP(list, FELint.Type.STATUS_GAME_OPTION, InputFormRef, new uint[] { 0, 4, 6, 12, 14, 20, 22, 28, 30 });
+            TextID.AppendTextID(list, FELint.Type.STATUS_GAME_OPTION, InputFormRef, new uint[] { 0, 4, 6, 12, 14, 20, 22, 28, 30 });
         }
     }
 }

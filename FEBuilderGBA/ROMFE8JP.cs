@@ -138,6 +138,8 @@ namespace FEBuilderGBA
         public uint worldmap_road_pointer() { return 0xC598; } // ワールドマップの道
 
         public uint menu_definiton_pointer() { return 0x1BCBC; } //メニュー定義
+        public uint menu_promotion_pointer() { return 0xD2900; } //CC決定する選択子
+        public uint menu_promotion_branch_pointer() { return 0x0D2AC8; } //FE8にある分岐CCメニュー
         public uint menu_definiton_split_pointer() { return 0x887DC; }  //FE8にある分岐メニュー
         public uint menu_definiton_worldmap_pointer() { return 0xC12CC; } //FE8のワールドマップのメニュー
         public uint menu_definiton_worldmap_shop_pointer() { return 0xC142C; } //FE8のワールドマップ店のメニュー        
