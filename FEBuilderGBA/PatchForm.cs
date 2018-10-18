@@ -6010,5 +6010,83 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.PatchList, loopI);
         }
 
+        string UpdatePatchBySkillSystems(PatchSt patch, PatchSt new_patchSt)
+        {
+            using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
+            {
+                //Export
+                string SkillAssignmentClassSkillSystem = Path.Combine(tempdir.Dir, "SkillAssignmentClassSkillSystem.tsv");
+                string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir.Dir, "SkillAssignmentUnitSkillSystem.tsv");
+                string SkillConfigSkillSystem = Path.Combine(tempdir.Dir, "SkillConfigSkillSystemForm.tsv");
+                SkillAssignmentClassSkillSystemForm.ExportAllData(SkillAssignmentClassSkillSystem);
+                SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
+                SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
+
+                //Uninstall
+                UnInstallButton_Click(null, null);
+
+                //Install
+                bool r = ApplyPatch(new_patchSt.Name);
+                if (!r)
+                {
+                    return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
+                }
+
+                //Import
+                SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
+                SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
+                SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+            }
+            return "";
+        }
+        string UpdatePatchByNone(PatchSt patch, PatchSt new_patchSt)
+        {
+            //Uninstall
+            UnInstallButton_Click(null, null);
+
+            //Install
+            bool r = ApplyPatch(new_patchSt.Name);
+            if (!r)
+            {
+                return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
+            }
+            return "";
+        }
+
+        //バージョンアップデート
+        string UpdatePatch(PatchSt patch)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            string update_patch = U.at(patch.Param, "UPDATE_PATCH");
+            if (update_patch == "")
+            {
+                return R.Error("新しいパッチが存在しません。");
+            }
+            string new_patch = Path.Combine(basedir , update_patch);
+            if (!File.Exists(new_patch))
+            {
+                return R.Error("新しいパッチが存在しません。") + new_patch;
+            }
+            PatchSt new_patchSt = LoadPatch(new_patch, true);
+            if (new_patchSt == null)
+            {
+                return R.Error("新しいパッチが存在しません。") + new_patch;
+            }
+            string update_method = U.at(patch.Param, "UPDATE_METHOD");
+
+            if (update_method == "SKILL")
+            {
+                return UpdatePatchBySkillSystems(patch , new_patchSt);
+            }
+            else if (update_method == "NONE")
+            {
+                return UpdatePatchByNone(patch , new_patchSt);
+            }
+            else
+            {
+                return "";
+            }
+        }
+
     }
 }

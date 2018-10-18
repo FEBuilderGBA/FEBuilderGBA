@@ -4144,6 +4144,9 @@ Determines the victory conditions that appear in the status menu.\r\n
 :右上のメニューを変化させます。\r\n「敵全滅」　残りの敵数が表示されます。\r\n「ターン防衛」　現在のターン数が表示されます。\r\n
 Determines the menu in the upper right.\r\n"Rout Enemy": Displays the remaining number of enemies.\r\n"Defend": Displays current turn / turns to defend.\r\n"Seize": Displays seize point.\r\n"Defeat Boss": Displays boss to defeat.
 
+:ただし、FE8では、敵全滅とボス撃破を選択した場合、敵ユニットがいなくなると自動的に終了イベントが呼ばれることがあります。\r\nこれはフリーマップのルーチンが関係しています。\r\nこれらの条件のマップでは、敵がいなくなる状態を作らないでください。
+However, in FE 8, when you select enemy extinction and boss defeat, when the enemy unit disappears, the end event may be called automatically.\r\nThis is related to the free map routines.\r\nIn the map of these conditions, please do not make a state where enemies disappear.
+
 :「特殊表示」で「ターン防衛」を選択した時に利用されます。\r\n指定したターン数 - 1 == 「最終のターン」\r\nに、なります。\r\nもちろん、表示だけで、実際にそれが最終ターンなのかは、イベントで定義されます。\r\n
 Used when "turn defense" is selected in "Mini-Objective Display".\r\nTurns Specified -1 = Last turn of chapter.\r\nThis is display only and must be defined in the events to be functional.\r\n
 
@@ -5098,6 +5101,9 @@ Assign Skill by Unit
 :スキル拡張設定
 Skill Config
 
+:ゲームオプション
+Game Options
+
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
 
@@ -5550,6 +5556,9 @@ For each terrain, set the image of the battle cartoon floor.
 
 :地形のごとに、戦闘アニメの背景の画像の設定を行います。
 For each terrain, set the background image of the battle animation.
+
+:ゲームの設定オプション項目を変更できます。
+You can change the setting option items of the game.
 
 :ファイルが見つかりませんか
 File not found
@@ -8152,6 +8161,12 @@ Done
 :「{0}」パッチを2重にインストールしています。\r\n1st({1}),2nd({2})
 It installed the "{0}" patch twice.\r\n1st ({1}), 2nd ({2})
 
+:新しいパッチをインストールできませんでした。
+Could not install new patch.
+
+:新しいパッチが存在しません。
+There is no new patch.
+
 :パッチファイルを開く
 Open patch file
 
@@ -9094,6 +9109,63 @@ Song Length
 :表示条件ASM
 Display Condition ASM
 
+:アイコン(value*8)
+Icon (value * 8)
+
+:ASM関数
+ASM function
+
+:選択子4不明2
+Selector 4 Unknown 2
+
+:選択子4不明1
+Selector 4 Unknown 1
+
+:選択子4テキスト
+Selector 4 text
+
+:選択子4ヘルプ
+Selector 4 Help
+
+:選択子3不明2
+Selector 3 Unknown 2
+
+:選択子3不明1
+Selector 3 Unknown 1
+
+:選択子3テキスト
+Selector 3 text
+
+:選択子3ヘルプ
+Selector 3 Help
+
+:選択子2不明2
+Selector 2 Unknown 2
+
+:選択子2不明1
+Selector 2 Unknown 1
+
+:選択子2テキスト
+Selector 2 text
+
+:選択子2ヘルプ
+Selector 2 Help
+
+:選択子1不明2
+Selector 1 Unknown 2
+
+:選択子1不明1
+Selector 1 Unknown 1
+
+:選択子1テキスト
+Selector 1 text
+
+:選択子1ヘルプ
+Selector 1 Help
+
+:項目名
+Item Name
+
 :0=ステータスパラメータ
 0=Status Parameter
 
@@ -9270,9 +9342,6 @@ Read flag
 
 :表示フラグ
 Display flag
-
-:項目名
-Item Name
 
 :タイトル
 Title

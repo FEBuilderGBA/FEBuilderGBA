@@ -366,7 +366,7 @@ namespace FEBuilderGBA
             }
             File.WriteAllLines(filename, lines);
         }
-        public static void ImporttAllData(string filename)
+        public static void ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
             if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)

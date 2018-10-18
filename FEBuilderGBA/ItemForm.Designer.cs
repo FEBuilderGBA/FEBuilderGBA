@@ -1138,7 +1138,7 @@
             this.J_25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_25.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_25.Location = new System.Drawing.Point(457, 0);
+            this.J_25.Location = new System.Drawing.Point(457, 1);
             this.J_25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_25.Name = "J_25";
             this.J_25.Size = new System.Drawing.Size(64, 25);
@@ -1151,7 +1151,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(457, 26);
+            this.B25.Location = new System.Drawing.Point(457, 27);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,

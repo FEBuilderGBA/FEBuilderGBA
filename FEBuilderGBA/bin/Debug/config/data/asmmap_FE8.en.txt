@@ -8371,3 +8371,6 @@ r3=X tile position of menu of the right	{U}
 088618D0	:0886194F	TextID of terrain nameNot used in FE8J	{J}
 08A0035C	&EVENT	Sky event	1	{J}
 08A00364	&EVENT	Sky event	2	{J}
+08A95650	:08A9590F	Any arithmetic lookup table	{J}
+085B9BC4	:085B9CE3	Unk OAMSP TABLE1	{U}
+085E3DF4	:085E3F13	Unk OAMSP TABLE5	{J}

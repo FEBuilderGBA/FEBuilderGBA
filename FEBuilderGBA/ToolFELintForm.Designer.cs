@@ -197,6 +197,7 @@
             // AddressList
             // 
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(2, 31);
             this.AddressList.Name = "AddressList";
