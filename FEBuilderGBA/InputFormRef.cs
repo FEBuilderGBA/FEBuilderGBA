@@ -10324,6 +10324,11 @@ namespace FEBuilderGBA
             {
                 str = R._("右上のメニューを変化させます。\r\n「敵全滅」　残りの敵数が表示されます。\r\n「ターン防衛」　現在のターン数が表示されます。\r\n") + "\r\n" + MapSettingForm.GetExplainClearButShowOnly();
             }
+            else if (str == "@MAPSETTING_CLEAR_COND3_DISPLAY_ONLY_FE8")
+            {
+                str = R._("右上のメニューを変化させます。\r\n「敵全滅」　残りの敵数が表示されます。\r\n「ターン防衛」　現在のターン数が表示されます。\r\n") + "\r\n" + MapSettingForm.GetExplainClearButShowOnly() 
+                    + "\r\n" + R._("ただし、FE8では、敵全滅とボス撃破を選択した場合、敵ユニットがいなくなると自動的に終了イベントが呼ばれることがあります。\r\nこれはフリーマップのルーチンが関係しています。\r\nこれらの条件のマップでは、敵がいなくなる状態を作らないでください。");
+            }
             else if (str == "@MAPSETTING_CLEAR_COND4_DISPLAY_ONLY")
             {
                 str = R._("「特殊表示」で「ターン防衛」を選択した時に利用されます。\r\n指定したターン数 - 1 == 「最終のターン」\r\nに、なります。\r\nもちろん、表示だけで、実際にそれが最終ターンなのかは、イベントで定義されます。\r\n") + "\r\n" + MapSettingForm.GetExplainClearButShowOnly();

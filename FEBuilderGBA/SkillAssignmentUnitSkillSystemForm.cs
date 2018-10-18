@@ -138,6 +138,36 @@ namespace FEBuilderGBA
             }
             File.WriteAllLines(filename, lines);
         }
+        public static void ImportAllData(string filename)
+        {
+            InputFormRef InputFormRef;
+            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(filename);
+            {
+                uint assignUnitP = SkillConfigSkillSystemForm.FindAssignPersonalSkillPointer();
+                if (assignUnitP == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                InputFormRef = Init(null, assignUnitP);
+                uint p = InputFormRef.BaseAddress;
+                for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+                {
+                    if (i >= lines.Length)
+                    {
+                        break;
+                    }
+                    uint skill = U.atoh(lines[i]);
+                    Program.ROM.write_u8(p + 0 , skill);
+                }
+            }
+            File.WriteAllLines(filename, lines);
+        }
         public static int MakeUnitSkillButtons(uint uid, Button[] buttons, ToolTipEx tooltip)
         {
             uint iconP = SkillConfigSkillSystemForm.FindIconPointer();

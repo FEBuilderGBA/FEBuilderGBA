@@ -345,6 +345,7 @@ namespace FEBuilderGBA
                     sb.Append(U.ToHexString(Program.ROM.u8(classBaseSkillAddr + 0)));
 
                     uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+                    sb.Append(U.ToHexString(levelupList));
                     if (!U.isSafetyOffset(levelupList))
                     {
                         lines.Add(sb.ToString());
@@ -364,6 +365,91 @@ namespace FEBuilderGBA
                 }
             }
             File.WriteAllLines(filename, lines);
+        }
+        public static void ImporttAllData(string filename)
+        {
+            InputFormRef InputFormRef;
+            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(filename);
+            {
+                uint iconP = SkillConfigSkillSystemForm.FindIconPointer();
+                uint textP = SkillConfigSkillSystemForm.FindTextPointer();
+                uint assignClassP = SkillConfigSkillSystemForm.FindAssignClassSkillPointer();
+                uint assignLevelUpP = SkillConfigSkillSystemForm.FindAssignClassLevelUpSkillPointer();
+
+                if (iconP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (textP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (assignClassP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (assignLevelUpP == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                InputFormRef = Init(null, assignClassP);
+
+                Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
+                InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
+
+                uint classBaseSkillAddr = InputFormRef.BaseAddress;
+                uint assignLevelUpAddr = Program.ROM.p32(assignLevelUpP);
+                for (uint i = 0; i < InputFormRef.DataCount;
+                    i++, assignLevelUpAddr += 4, classBaseSkillAddr += 1)
+                {
+                    if (!U.isSafetyOffset(assignLevelUpAddr))
+                    {
+                        break;
+                    }
+                    if (i >= lines.Length)
+                    {
+                        break;
+                    }
+                    string[] sp = lines[i].Split('\t');
+                    if (sp.Length < 2)
+                    {
+                        continue;
+                    }
+                    {
+                        uint skill = U.atoh(sp[0]);
+                        Program.ROM.write_u8(classBaseSkillAddr + 0, skill);
+                    }
+
+                    uint levelupSkillAddr = U.atoh(sp[1]);
+                    if (U.isExtrendsROMArea(levelupSkillAddr) || levelupSkillAddr == 0)
+                    {//拡張領域、または0の値が設定されている場合は書き戻す
+                        Program.ROM.write_p32(assignLevelUpAddr, levelupSkillAddr);
+                        continue;
+                    }
+
+                    uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+                    if (!U.isSafetyOffset(levelupList))
+                    {
+                        continue;
+                    }
+
+                    N1_InputFormRef.ReInitPointer(assignLevelUpAddr);
+                    uint levelupAddr = N1_InputFormRef.BaseAddress;
+                    for (uint n = 0; n < N1_InputFormRef.DataCount; n++, levelupAddr += 2)
+                    {
+                        uint level = U.atoh(U.at(sp, 2 + (n * 2) + 0));
+                        uint skill = U.atoh(U.at(sp, 2 + (n * 2) + 1));
+                        Program.ROM.write_u8(levelupAddr + 0 , level);
+                        Program.ROM.write_u8(levelupAddr + 1 , skill);
+                    }
+                }
+            }
         }
 
         public static int MakeClassSkillButtons(uint cid, Button[] buttons, ToolTipEx tooltip)

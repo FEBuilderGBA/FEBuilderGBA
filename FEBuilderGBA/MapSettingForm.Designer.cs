@@ -2346,7 +2346,7 @@
             // 
             // J_140
             // 
-            this.J_140.AccessibleDescription = "@MAPSETTING_CLEAR_COND3_DISPLAY_ONLY";
+            this.J_140.AccessibleDescription = "@MAPSETTING_CLEAR_COND3_DISPLAY_ONLY_FE8";
             this.J_140.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_140.Location = new System.Drawing.Point(824, 293);
             this.J_140.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

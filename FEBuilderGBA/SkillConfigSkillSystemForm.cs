@@ -444,17 +444,75 @@ namespace FEBuilderGBA
                     sb.Append(U.ToHexString(Program.ROM.u16(textAddr + 0)));
 
                     uint addr = Program.ROM.p32(anime);
-                    if (!U.isSafetyOffset(addr))
-                    {
-                        lines.Add(sb.ToString());
-                        continue;
-                    }
                     sb.Append("\t");
                     sb.Append(U.ToHexString(addr));
                     lines.Add(sb.ToString());
+//                    if (!U.isSafetyOffset(addr))
+//                    {
+//                        continue;
+//                    }
                 }
             }
             File.WriteAllLines(filename, lines);
+        }
+        public static void ImportAllData(string filename)
+        {
+            InputFormRef InputFormRef;
+            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            {
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(filename);
+            {
+                uint baseiconP = FindIconPointer();
+                uint basetextP = FindTextPointer();
+                uint baseanimeP = FindAnimePointer();
+
+                if (baseiconP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (basetextP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (baseanimeP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                InputFormRef = Init(null, basetextP);
+                uint textAddr = InputFormRef.BaseAddress;
+
+                uint anime = Program.ROM.p32(baseanimeP);
+                for (uint i = 0; i < InputFormRef.DataCount;
+                    i++, anime += 4, textAddr += 2)
+                {
+                    if (!U.isSafetyOffset(anime))
+                    {
+                        break;
+                    }
+                    if (i >= lines.Length)
+                    {
+                        break;
+                    }
+                    string[] sp = lines[i].Split('\t');
+                    if (sp.Length < 2)
+                    {
+                        continue;
+                    }
+                    uint textid = U.atoh(sp[0]);
+                    Program.ROM.write_u16(textAddr + 0, textid);
+
+                    uint animePAddr = U.atoh(sp[1]);
+                    if (U.isExtrendsROMArea(animePAddr) || animePAddr == 0)
+                    {//拡張領域、または0の値が設定されている場合は書き戻す
+                        Program.ROM.write_p32(anime, animePAddr);
+                        continue;
+                    }
+                    //それ以外の値の場合、ディフォルト設定だとして、最新の値を採用します.
+                }
+            }
         }
         //テキストの取得
         public static void MakeTextIDArray(List<TextID> list)
