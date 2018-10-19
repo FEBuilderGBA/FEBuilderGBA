@@ -12,12 +12,13 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0x80 0x6B 0x47 0x88 0xC0 0x46 0x15 0x48 0x02 0x68 0x
 BIN:$FREEAREA:1=item_find.bin
 
 INFO=特定のアイテムを輸送体を含めて誰かもっているかという条件式を作成します.
-INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.\r\n
+INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 INFO.zh=我们创建一个有条件的表达式，有人有一个包含一个运输者的某个项目。
 
 AUTHOR=怪盗パッチ 7743
 AUTHOR.en=Kaito Patch:7743
 AUTHOR.zh=Kaito补丁7743
+
 
 
 

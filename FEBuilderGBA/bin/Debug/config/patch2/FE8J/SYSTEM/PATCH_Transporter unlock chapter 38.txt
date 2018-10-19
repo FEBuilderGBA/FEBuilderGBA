@@ -10,13 +10,12 @@ ADDRESS=0x031594
 COMBO=禁止|0x38 0x28 0x01 0xD0|許可|0x00 0x00 0x00 0x00
 
 AUTHOR=出典:7743さんの書き込みより\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 NAME.zh=运输体解禁38章
 
 AUTHOR.zh=来源:7743的写作\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 AUTHOR.en=From source: 7743's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
+INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 
 COMBO.en=Ban|0x38 0x28 0x01 0xD0|Authorization|0x00 0x00 0x00 0x00

@@ -92,9 +92,9 @@ INFO.zh=状态31上限超出，250个运输商。 \r\n与原始文件不同，�
 
 AUTHOR.zh=来源:https://ux.getuploader.com/FE4/download/213。
 
-NAME.en=Status 31 High limit exceeded_FE8Status (Installer)
+NAME.en=Status 31 High limit exceeded_FE8Status (Installer)\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
-INFO.en=Status 31 breaks, it makes 250 transporters.\r\nUnlike the original, I move the transport team from 203AB18 to 203AB48 so as not to wear a command patch.\r\n
+INFO.en=Status 31 breaks, it makes 250 transporters.\r\nUnlike the original, I move the transport team from 203AB18 to 203AB48 so as not to wear a command patch.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 AUTHOR.en=Source: https://ux.getuploader.com/FE4/download/213
 INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を250アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n

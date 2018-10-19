@@ -9,7 +9,7 @@ ADDRESS=0x23F94
 ADDRESS_TYPE=UNIT
 
 INFO=隣接すると輸送体メニューを出すユニットを設定します。
-INFO.en=Sets the unit that the "Supply" menu option is attached to during Ephraim's campaign.\r\n
+INFO.en=Sets the unit that the "Supply" menu option is attached to during Ephraim's campaign.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 INFO.zh=设置相邻时将显示转运菜单的单位。
 
 AUTHOR=7743

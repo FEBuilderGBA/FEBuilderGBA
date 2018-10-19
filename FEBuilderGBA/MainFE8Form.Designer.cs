@@ -152,6 +152,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
             this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
             this.WorldMapBGMButton = new System.Windows.Forms.Button();
@@ -214,7 +215,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.GameOptionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1165,7 +1165,7 @@
             // 
             // MapTerrainNameButton
             // 
-            this.MapTerrainNameButton.Location = new System.Drawing.Point(1222, 450);
+            this.MapTerrainNameButton.Location = new System.Drawing.Point(1222, 452);
             this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainNameButton.Name = "MapTerrainNameButton";
             this.MapTerrainNameButton.Size = new System.Drawing.Size(200, 36);
@@ -1531,9 +1531,20 @@
             this.ControlPanel.Size = new System.Drawing.Size(1631, 758);
             this.ControlPanel.TabIndex = 0;
             // 
+            // GameOptionButton
+            // 
+            this.GameOptionButton.Location = new System.Drawing.Point(1426, 413);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 129;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
+            // 
             // MapTerrainBGLookupTableButton
             // 
-            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 522);
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 524);
             this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
             this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
@@ -1544,7 +1555,7 @@
             // 
             // MapTerrainFloorLookupTableButton
             // 
-            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 486);
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 488);
             this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
             this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
             this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
@@ -2105,7 +2116,7 @@
             // 
             // OtherTextButton
             // 
-            this.OtherTextButton.Location = new System.Drawing.Point(1221, 371);
+            this.OtherTextButton.Location = new System.Drawing.Point(1221, 373);
             this.OtherTextButton.Margin = new System.Windows.Forms.Padding(2);
             this.OtherTextButton.Name = "OtherTextButton";
             this.OtherTextButton.Size = new System.Drawing.Size(200, 36);
@@ -2212,17 +2223,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // GameOptionButton
-            // 
-            this.GameOptionButton.Location = new System.Drawing.Point(1426, 413);
-            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionButton.Name = "GameOptionButton";
-            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionButton.TabIndex = 129;
-            this.GameOptionButton.Text = "ゲームオプション";
-            this.GameOptionButton.UseVisualStyleBackColor = true;
-            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // MainFE8Form
             // 

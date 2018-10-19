@@ -60,7 +60,7 @@ AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/break_sav
 
 
 INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を200アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
-INFO.en=Remodels save game data to remove the normal cap of 31 for strength, skill, etc. They will now be able to increase up to 63, and HP can increase up to 120. In addition, item storage/transporter space is expanded to hold 200 items. Applying this patch will break existing save files, so it will be necessary to erase the old save files and start fresh.
+INFO.en=Remodels save game data to remove the normal cap of 31 for strength, skill, etc. They will now be able to increase up to 63, and HP can increase up to 120. In addition, item storage/transporter space is expanded to hold 200 items. Applying this patch will break existing save files, so it will be necessary to erase the old save files and start fresh.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 NAME.zh=超过31个状态参数。运输车200
 INFO.zh=该修补程序允许您重新保存数据并保存超过31个状态参数。\r\n我们还将运输车延伸至200个物品。\r\n由于保存数据的变化，与现有数据的兼容性将被打破，因此删除所有保存的数据并开始新的游戏。\r\n
 

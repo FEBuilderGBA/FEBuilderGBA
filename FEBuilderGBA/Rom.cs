@@ -125,6 +125,8 @@ namespace FEBuilderGBA
         uint op_class_demo_pointer();  //OPクラスデモ
         uint op_class_font_pointer();  //OPクラス日本語フォント
         uint op_class_font_palette_pointer(); // OPクラス紹介フォントのパレット
+        uint status_font_pointer();  //ステータス画面用のフォント
+        uint status_font_count();  //ステータス画面用のフォントの数(英語版と日本語で数が違う)
         uint ed_staffroll_image_pointer(); // スタッフロール
         uint ed_staffroll_palette_pointer(); // スタッフロールのパレット
         uint op_prologue_image_pointer(); // OP字幕

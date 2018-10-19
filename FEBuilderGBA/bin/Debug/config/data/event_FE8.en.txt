@@ -75,7 +75,7 @@
 251A0000	_0x1A25
 4121XXXXYYYYZZZZ	_0x2141[XXXX::Value1][YY::Value2][ZZ::Value3]
 2813XXXX	Return screen with[XXXX:DECIMAL:speed]	{SCREENDADE}	{MAPEFFECT}
-2026XXYY	Specified to[XX:MAPX:X][YY:MAPY:Y]Specified coordinate Camera position change (It is OK even with designation of screen corner but not center)	{CAMERA}
+2026XXYY	Specified to[XX:MAPX:X][YY:MAPY:Y]Specified coordinate Camera position change (It is OK even with designation of screen corner but not center)(CAM2)	{CAMERA}
 2926XXXX	Moving screen instantaneously to [XXXX:UNIT:Character](Screen corner is dangerous)	{CAMERA}
 202BXXXX	_0x2B20[XXXX::Value1]
 210EXXXX	_0x210E[XXXX::Value1]

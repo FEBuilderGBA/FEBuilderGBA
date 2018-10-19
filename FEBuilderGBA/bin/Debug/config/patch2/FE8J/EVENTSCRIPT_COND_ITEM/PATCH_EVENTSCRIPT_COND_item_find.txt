@@ -16,7 +16,7 @@ BIN:$FREEAREA:1=item_find.bin
 INFO=特定のアイテムを輸送体を含めて誰かもっているかという条件式を作成します.
 AUTHOR=怪盗パッチ 7743
 NAME.en=Item check(All units and transporters)
-INFO.en=We create a conditional expression that someone has a certain item including a transporter.
+INFO.en=We create a conditional expression that someone has a certain item including a transporter.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 AUTHOR.en=Kaito patch7743
 
 NAME.zh=事件命令_ 物品拥有运输队

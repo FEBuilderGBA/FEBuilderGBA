@@ -57,7 +57,7 @@ BIN:0xA5B22=A5B22.bin //SHORT 0x2000        //mov r0,#0
 
 
 INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を200アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
-INFO.en=Patches the ROM save game data to modify several stat caps.\r\nStats that normally cap at 31 can now reach up to 63.\r\nHP can increase up to 120 rather than 60. \r\nItem Storage space is expanded from 100 to 200.\r\nApplying this patch breaks existing Save Files, so the game must be started fresh.\r\n
+INFO.en=Patches the ROM save game data to modify several stat caps.\r\nStats that normally cap at 31 can now reach up to 63.\r\nHP can increase up to 120 rather than 60. \r\nItem Storage space is expanded from 100 to 200.\r\nApplying this patch breaks existing Save Files, so the game must be started fresh.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 INFO.zh=该修补程序允许您重新保存数据并保存超过31个状态参数。\r\n我们还将运输车延伸至200个物品。\r\n由于保存数据的变化，与现有数据的兼容性将被打破，因此删除所有保存的数据并开始新的游戏。\r\n
 
 AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/break_save

@@ -14,7 +14,7 @@ BIN:$FREEAREA:1=item_collect.bin
 INFO=特定のアイテムを輸送体を含めて全員からすべて没収します.
 AUTHOR=怪盗パッチ 7743
 NAME.en=Take Item(All Unit and Transporter)
-INFO.en=We confiscate certain items from everyone, including transporters.
+INFO.en=We confiscate certain items from everyone, including transporters.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 AUTHOR.en=Kaito patch7743
 
 NAME.zh=事件命令_ 物品没收

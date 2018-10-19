@@ -9,7 +9,7 @@ PATCHED_IF:0x15560=0x54 0xA9 0x03 0x02
 
 INFO=中断から再開した時に、直前の行動ではなく、ターン開始時に戻れる設定を追加します。
 
-AUTHOR=aera
+AUTHOR=aera,FE8 Girls
 INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.
 NAME.zh=自动保存功能
 INFO.zh=从中断恢复时，添加可在转弯开始时返回的设置，而不是最后一个操作。

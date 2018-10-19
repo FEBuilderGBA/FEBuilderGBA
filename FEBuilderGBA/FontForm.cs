@@ -585,7 +585,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static Color GetFontColor(bool IsItemFont)
+        public static Color GetFontColor(bool IsItemFont)
         {
             if (IsItemFont)
             {
@@ -777,6 +777,12 @@ namespace FEBuilderGBA
             //セリフ
             fontlist_pointer = GetFontPointer(false);
             MakeAllDataLengthInner(fontlist_pointer, ref list);
+
+            //ステータスフォント
+            MakeAllDataLengthStatusFont( 
+                Program.ROM.RomInfo.status_font_pointer()
+                , Program.ROM.RomInfo.status_font_count()
+                , ref list);
         }
 
         static void MakeAllDataLengthInner(uint topaddress, ref List<Address> list)
@@ -901,6 +907,35 @@ namespace FEBuilderGBA
                         p = next;
                     }
                 }
+            }
+        }
+        static void MakeAllDataLengthStatusFont(uint toppointer , uint count , ref List<Address> list)
+        {
+            if (!U.isSafetyOffset(toppointer))
+            {
+                return;
+            }
+            uint topaddress = Program.ROM.p32(toppointer);
+            if (!U.isSafetyOffset(topaddress))
+            {
+                return;
+            }
+
+            string name = "StatusFont";
+            uint addr = topaddress;
+            for (int i = 0; i < count; i++ , addr += 4)
+            {
+                uint font = Program.ROM.p32(addr);
+                if (!U.isSafetyOffset(font))
+                {
+                    continue;
+                }
+
+                FEBuilderGBA.Address.AddAddress(list
+                    , font, 8 + 64
+                    , addr
+                    , name
+                    , FEBuilderGBA.Address.DataTypeEnum.FONT);
             }
         }
 

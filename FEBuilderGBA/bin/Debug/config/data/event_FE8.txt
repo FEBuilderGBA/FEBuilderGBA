@@ -83,7 +83,7 @@
 251A0000	_0x1A25
 4121XXXXYYYYZZZZ	_0x2141[XXXX::Value1][YY::Value2][ZZ::Value3]
 2813XXXX	[XXXX:DECIMAL:速さ]で画面を戻す	{MAPEFFECT}
-2026XXYY	[XX:MAPX:X][YY:MAPY:Y]へ指定座標カメラ位置変更(画面隅指定でもOKただし中心ではない模様)	{CAMERA}
+2026XXYY	[XX:MAPX:X][YY:MAPY:Y]へ指定座標カメラ位置変更(画面隅指定でもOKただし中心ではない模様)(CAM2)	{CAMERA}
 2926XXXX	[XXXX:UNIT:Unit]に画面瞬間移動(画面隅は危険)	{CAMERA}
 202BXXXX	_0x2B20[XXXX::Value1]
 210EXXXX	_0x210E[XXXX::Value1]

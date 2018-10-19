@@ -1025,6 +1025,7 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<StatusOptionForm>();
         }
 
+
     }
 
 }
