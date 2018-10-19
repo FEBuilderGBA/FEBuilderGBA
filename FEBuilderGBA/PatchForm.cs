@@ -4262,6 +4262,22 @@ namespace FEBuilderGBA
             return patched_message;
         }
 
+        bool canUpdate(PatchSt patch)
+        {
+            string type = U.at(patch.Param, "TYPE");
+            if (type != "BIN" && type != "EA")
+            {
+                return false;
+            }
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            string update_patch = U.at(patch.Param, "UPDATE_PATCH");
+            if (update_patch == "")
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         //EDIT_PATHを探す 
         private void PatchList_SelectedIndexChanged(object sender, EventArgs e)
@@ -4275,7 +4291,6 @@ namespace FEBuilderGBA
             this.Text = R._("パッチ") + " " + patch.Name;
             PatchFilename.Text = patch.PatchFileName;
 
-
             try
             {
                 string iferror = CheckIF(patch);
@@ -4288,6 +4303,14 @@ namespace FEBuilderGBA
 
                         PATCHED_TextBox.Visible = true;
                         PATCHED_TextBox.Text = iferror + "\r\n" + mapmessage + "\r\n\r\n" + infomesg;
+                        if (canUpdate(patch))
+                        {
+                            UpdateButton.Enabled = true;
+                        }
+                        else
+                        {
+                            UpdateButton.Enabled = false;
+                        }
                         TAB.SelectedTab = PatchedPage;
                     }
                     else if (iferror.IndexOf("CONFLICT_IF") >= 0)
@@ -5733,52 +5756,41 @@ namespace FEBuilderGBA
 
         }
 #endif
-
-        private void UnInstallButton_Click(object sender, EventArgs e)
+        bool UnInstallPatch(PatchSt patch , bool isAutomatic)
         {
-            if (InputFormRef.IsPleaseWaitDialog(this))
-            {//2重割り込み禁止
-                return;
-            }
-            if (this.PatchList.SelectedIndex < 0 || this.PatchList.SelectedIndex >= this.FiltedPatchs.Count)
-            {
-                return;
-            }
-
-            PatchSt patch = this.FiltedPatchs[this.PatchList.SelectedIndex];
             string type = U.at(patch.Param, "TYPE");
             if (type != "BIN" && type != "EA")
             {
                 R.ShowStopError("BINかEA以外のパッチはアンインストールできません。");
-                return;
+                return false;
             }
             List<BinMapping> binmap = TracePatchedMapping(patch);
 
             //パッチを含んでいないファイルを提示してもらう.
             PatchFormUninstallDialogForm f = (PatchFormUninstallDialogForm)InputFormRef.JumpFormLow<PatchFormUninstallDialogForm>();
-            f.Init(binmap);
+            f.Init(binmap, isAutomatic);
             DialogResult dr = f.ShowDialog();
             if (dr != System.Windows.Forms.DialogResult.OK)
             {
-                return;
+                return false;
             }
             byte[] orignalROMData = f.GetOrignalROMData();
             if (orignalROMData.Length <= 0)
             {
-                return;
+                return false;
             }
 
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
                 Undo.UndoData undodata = Program.Undo.NewUndoData(this, patch.Name);
-                string error = UninstallPatch(pleaseWait, binmap, orignalROMData, undodata);
+                string error = UninstallPatchInner(pleaseWait, binmap, orignalROMData, undodata);
                 if (error != "")
                 {
                     Program.Undo.Rollback(undodata);  //操作の取り消し
 
                     R.ShowStopError("アンインストールに失敗しました.\r\n\r\n{0}", error);
-                    return;
+                    return false;
                 }
                 Program.Undo.Push(undodata);
                 Program.ReLoadSetting();
@@ -5786,9 +5798,25 @@ namespace FEBuilderGBA
 
                 U.ReSelectList(PatchList);
             }
+            return true;
         }
 
-        static string UninstallPatch(InputFormRef.AutoPleaseWait pleaseWait 
+        private void UnInstallButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return ;
+            }
+            if (this.PatchList.SelectedIndex < 0 || this.PatchList.SelectedIndex >= this.FiltedPatchs.Count)
+            {
+                return ;
+            }
+
+            PatchSt patch = this.FiltedPatchs[this.PatchList.SelectedIndex];
+            UnInstallPatch(patch , false);
+        }
+
+        static string UninstallPatchInner(InputFormRef.AutoPleaseWait pleaseWait 
             , List<BinMapping> binmap
             , byte[] orignalROM
             , Undo.UndoData undodata)
@@ -6022,11 +6050,17 @@ namespace FEBuilderGBA
                 SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
 
+                bool r;
+
                 //Uninstall
-                UnInstallButton_Click(null, null);
+                r = UnInstallPatch(new_patchSt , true);
+                if (!r)
+                {
+                    return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", new_patchSt.PatchFileName);
+                }
 
                 //Install
-                bool r = ApplyPatch(new_patchSt.Name);
+                r = ApplyPatch(new_patchSt.Name);
                 if (!r)
                 {
                     return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
@@ -6041,11 +6075,16 @@ namespace FEBuilderGBA
         }
         string UpdatePatchByNone(PatchSt patch, PatchSt new_patchSt)
         {
+            bool r;
             //Uninstall
-            UnInstallButton_Click(null, null);
+            r = UnInstallPatch(new_patchSt , true);
+            if (!r)
+            {
+                return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", new_patchSt.PatchFileName);
+            }
 
             //Install
-            bool r = ApplyPatch(new_patchSt.Name);
+            r = ApplyPatch(new_patchSt.Name);
             if (!r)
             {
                 return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
@@ -6054,8 +6093,14 @@ namespace FEBuilderGBA
         }
 
         //バージョンアップデート
-        string UpdatePatch(PatchSt patch)
+        string UpdatePatch(PatchSt patch, bool isNoCheck)
         {
+            string type = U.at(patch.Param, "TYPE");
+            if (type != "BIN" && type != "EA")
+            {
+                return R.Error("BINかEA以外のパッチはアップデートできません。");
+            }
+
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             string update_patch = U.at(patch.Param, "UPDATE_PATCH");
             if (update_patch == "")
@@ -6067,13 +6112,22 @@ namespace FEBuilderGBA
             {
                 return R.Error("新しいパッチが存在しません。") + new_patch;
             }
-            PatchSt new_patchSt = LoadPatch(new_patch, true);
+            PatchSt new_patchSt = LoadPatch(new_patch, false);
             if (new_patchSt == null)
             {
                 return R.Error("新しいパッチが存在しません。") + new_patch;
             }
-            string update_method = U.at(patch.Param, "UPDATE_METHOD");
 
+            if (!isNoCheck)
+            {
+                DialogResult dr = R.ShowYesNo("現在のパッチを「{0}」を、新しいパッチ「{1}」にアップデートしてもよろしいですか？\r\n\r\nアップデート前にバックアップを取得してください。\r\nまた、アップデート後は、必ず動作テストをしてください。" , patch.Name , new_patchSt.Name);
+                if (dr != DialogResult.Yes)
+                {
+                    return R.Error("ユーザが処理をキャンセルしました。");
+                }
+            }
+            
+            string update_method = U.at(patch.Param, "UPDATE_METHOD");
             if (update_method == "SKILL")
             {
                 return UpdatePatchBySkillSystems(patch , new_patchSt);
@@ -6085,6 +6139,26 @@ namespace FEBuilderGBA
             else
             {
                 return "";
+            }
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+            if (this.PatchList.SelectedIndex < 0 || this.PatchList.SelectedIndex >= this.FiltedPatchs.Count)
+            {
+                return;
+            }
+
+            PatchSt patch = this.FiltedPatchs[this.PatchList.SelectedIndex];
+            string error = UpdatePatch(patch , isNoCheck: false);
+            if (error != "")
+            {
+                R.ShowStopError(error);
+                return;
             }
         }
 

@@ -20,9 +20,11 @@ namespace FEBuilderGBA
         }
 
         List<PatchForm.BinMapping> TargetBinMAP; //const 参照のみ C#だとできないんだよなあ..
-        public void Init(List<PatchForm.BinMapping> binmap)
+        bool IsAutomatic; //自動でアンインストールを開始する.
+        public void Init(List<PatchForm.BinMapping> binmap, bool isAutomatic)
         {
             this.TargetBinMAP = binmap;
+            this.IsAutomatic = isAutomatic;
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)
@@ -80,6 +82,11 @@ namespace FEBuilderGBA
             {
                 this.FindBackup = new FindBackup();
                 this.OrignalFilename.Text = SearchNotContainThisPatch(pleaseWait);
+            }
+
+            if (this.IsAutomatic)
+            {
+                UninstallPatchButton.PerformClick();
             }
         }
 

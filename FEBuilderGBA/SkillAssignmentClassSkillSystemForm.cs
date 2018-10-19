@@ -345,6 +345,7 @@ namespace FEBuilderGBA
                     sb.Append(U.ToHexString(Program.ROM.u8(classBaseSkillAddr + 0)));
 
                     uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+                    sb.Append("\t");
                     sb.Append(U.ToHexString(levelupList));
                     if (!U.isSafetyOffset(levelupList))
                     {

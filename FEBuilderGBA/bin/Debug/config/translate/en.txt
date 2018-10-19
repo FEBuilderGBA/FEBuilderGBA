@@ -8164,8 +8164,17 @@ It installed the "{0}" patch twice.\r\n1st ({1}), 2nd ({2})
 :新しいパッチをインストールできませんでした。
 Could not install new patch.
 
+:BINかEA以外のパッチはアップデートできません。
+Patches other than BIN or EA can not be updated.
+
 :新しいパッチが存在しません。
 There is no new patch.
+
+:現在のパッチを「{0}」を、新しいパッチ「{1}」にアップデートしてもよろしいですか？\r\n\r\nアップデート前にバックアップを取得してください。\r\nまた、アップデート後は、必ず動作テストをしてください。
+Are you sure you want to update the current patch "{0}" to the new patch "{1}"?\r\n\r\nPlease get backup before updating.\r\nAlso, be sure to test the operation after updating.
+
+:ユーザが処理をキャンセルしました。
+User canceled processing.
 
 :パッチファイルを開く
 Open patch file

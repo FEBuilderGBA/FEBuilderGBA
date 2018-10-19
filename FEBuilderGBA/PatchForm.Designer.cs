@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ELSE_TextBox = new FEBuilderGBA.TextBoxEx();
             this.PatchedPage = new System.Windows.Forms.TabPage();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.UnInstallButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PATCHED_TextBox = new FEBuilderGBA.TextBoxEx();
@@ -256,6 +257,7 @@
             // PatchedPage
             // 
             this.PatchedPage.BackColor = System.Drawing.SystemColors.Control;
+            this.PatchedPage.Controls.Add(this.UpdateButton);
             this.PatchedPage.Controls.Add(this.UnInstallButton);
             this.PatchedPage.Controls.Add(this.label3);
             this.PatchedPage.Controls.Add(this.PATCHED_TextBox);
@@ -267,9 +269,20 @@
             this.PatchedPage.TabIndex = 9;
             this.PatchedPage.Text = "PATCHED";
             // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(771, 56);
+            this.UpdateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(233, 41);
+            this.UpdateButton.TabIndex = 10;
+            this.UpdateButton.Text = "アップデート";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
             // UnInstallButton
             // 
-            this.UnInstallButton.Location = new System.Drawing.Point(771, 19);
+            this.UnInstallButton.Location = new System.Drawing.Point(771, 13);
             this.UnInstallButton.Margin = new System.Windows.Forms.Padding(2);
             this.UnInstallButton.Name = "UnInstallButton";
             this.UnInstallButton.Size = new System.Drawing.Size(233, 41);
@@ -284,7 +297,7 @@
             this.label3.Location = new System.Drawing.Point(7, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(758, 32);
+            this.label3.Size = new System.Drawing.Size(758, 74);
             this.label3.TabIndex = 8;
             this.label3.Text = "すでに適応済みです";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,14 +305,14 @@
             // PATCHED_TextBox
             // 
             this.PATCHED_TextBox.ErrorMessage = "";
-            this.PATCHED_TextBox.Location = new System.Drawing.Point(7, 84);
+            this.PATCHED_TextBox.Location = new System.Drawing.Point(7, 103);
             this.PATCHED_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PATCHED_TextBox.Multiline = true;
             this.PATCHED_TextBox.Name = "PATCHED_TextBox";
             this.PATCHED_TextBox.Placeholder = "";
             this.PATCHED_TextBox.ReadOnly = true;
             this.PATCHED_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.PATCHED_TextBox.Size = new System.Drawing.Size(995, 666);
+            this.PATCHED_TextBox.Size = new System.Drawing.Size(995, 647);
             this.PATCHED_TextBox.TabIndex = 7;
             // 
             // PatchPage
@@ -310,7 +323,7 @@
             this.PatchPage.Margin = new System.Windows.Forms.Padding(2);
             this.PatchPage.Name = "PatchPage";
             this.PatchPage.Padding = new System.Windows.Forms.Padding(2);
-            this.PatchPage.Size = new System.Drawing.Size(1010, 657);
+            this.PatchPage.Size = new System.Drawing.Size(1010, 756);
             this.PatchPage.TabIndex = 8;
             this.PatchPage.Text = "Patch";
             // 
@@ -322,7 +335,7 @@
             this.ConflictPage.Location = new System.Drawing.Point(4, 28);
             this.ConflictPage.Name = "ConflictPage";
             this.ConflictPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ConflictPage.Size = new System.Drawing.Size(1010, 657);
+            this.ConflictPage.Size = new System.Drawing.Size(1010, 756);
             this.ConflictPage.TabIndex = 10;
             this.ConflictPage.Text = "CONFLICT";
             // 
@@ -406,5 +419,6 @@
         private System.Windows.Forms.TabPage ConflictPage;
         private System.Windows.Forms.Label label4;
         private TextBoxEx CONFLICT_TextBox;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
