@@ -125,8 +125,8 @@ namespace FEBuilderGBA
         public uint op_class_demo_pointer() { return 0xdb01e8; } //OPクラスデモ
         public uint op_class_font_pointer() { return 0x0; }  //OPクラス日本語フォント
         public uint op_class_font_palette_pointer() { return 0x0; }  // OPクラス紹介フォントのパレット
-        public uint status_font_pointer() { return 0x0; }  //ステータス画面用のフォント
-        public uint status_font_count() { return 0x0; }  //ステータス画面用のフォントの数(英語版と日本語で数が違う)
+        public uint status_font_pointer() { return 0x5FA8; }  //ステータス画面用のフォント
+        public uint status_font_count() { return 0xA; }  //ステータス画面用のフォントの数(英語版と日本語で数が違う)
         public uint ed_staffroll_image_pointer() { return 0x0; } // スタッフロール
         public uint ed_staffroll_palette_pointer() { return 0x0; } // スタッフロールのパレット
         public uint op_prologue_image_pointer() { return 0x0; } // OP字幕
