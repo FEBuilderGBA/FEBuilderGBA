@@ -1,0 +1,2 @@
+Triangle Adept: Doubles[N]
+weapon triangle effects.[X]

@@ -1,0 +1,3 @@
+1d12: Gain 1 of 12 random proc[N]
+Skills during battle.[N]
+(Proc % based on original skills).[X]
