@@ -488,6 +488,7 @@ namespace FEBuilderGBA
             FlagCache = new EtcCacheFLag();
             LintCache = new EtcCache("lint_");
             CommentCache = new EtcCache("comment_");
+            ExportFunction = new ExportFunction();
 
             EventScript = new EventScript();
             EventScript.Load(EventScript.EventScriptType.Event);
@@ -557,6 +558,7 @@ namespace FEBuilderGBA
         public static EtcCacheFLag FlagCache { get; private set; }
         public static EtcCache LintCache { get; private set; }
         public static EtcCache CommentCache { get; private set; }
+        public static ExportFunction ExportFunction{ get; private set; }
         public static AsmMapFileAsmCache AsmMapFileAsmCache { get; private set; }
         public static RAM RAM { get; private set; }
         public static bool doReOpen = false;

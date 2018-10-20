@@ -123,6 +123,7 @@
     <Compile Include="EventTemplate1Form.Designer.cs">
       <DependentUpon>EventTemplate1Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportFunction.cs" />
     <Compile Include="FindBackup.cs" />
     <Compile Include="ImageRomAnimeForm.cs">
       <SubType>Form</SubType>

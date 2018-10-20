@@ -689,33 +689,6 @@ namespace FEBuilderGBA
                 f.Show();
             }
         }
-        public static uint SearchHasSkill()
-        {
-            string filename = Path.Combine(PatchForm.GetPatchDirectory(), "skill", "ASMC_HasSkill.bin");
-            if (! File.Exists(filename))
-            {
-                return U.NOT_FOUND;
-            }
-            return U.Grep(Program.ROM.Data, File.ReadAllBytes(filename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
-        }
-        public static uint SearchLearnSkill()
-        {
-            string filename = Path.Combine(PatchForm.GetPatchDirectory(), "skill", "ASMC_LearnSkill.bin");
-            if (!File.Exists(filename))
-            {
-                return U.NOT_FOUND;
-            }
-            return U.Grep(Program.ROM.Data, File.ReadAllBytes(filename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
-        }
-        public static uint SearchSkillGetter()
-        {
-            string filename = Path.Combine(PatchForm.GetPatchDirectory(), "skill", "skillGetter.dmp");
-            if (!File.Exists(filename))
-            {
-                return U.NOT_FOUND;
-            }
-            return U.Grep(Program.ROM.Data, File.ReadAllBytes(filename), Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
-        }
 
         
 

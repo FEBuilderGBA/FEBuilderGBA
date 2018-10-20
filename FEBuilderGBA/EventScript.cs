@@ -190,9 +190,7 @@ namespace FEBuilderGBA
                 this.Scripts = scripts.ToArray();
                 return;
             }
-#if DEBUG
-            //FixEAMix(fullfilename);
-#endif
+
             using (StreamReader reader = File.OpenText(fullfilename))
             {
                 string line;
@@ -215,7 +213,7 @@ namespace FEBuilderGBA
             {
                 //パッチに登録されているイベントのスキャン(少し重いです)
                 Dictionary<uint, string> flags = new Dictionary<uint,string>();
-                PatchForm.MakeEventScript(scripts, flags);
+                PatchForm.MakeEventScript(scripts, flags, Program.ExportFunction);
                 Program.FlagCache.MargeFlags(flags);
             }
 

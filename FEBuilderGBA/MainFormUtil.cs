@@ -730,7 +730,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            sb.AppendLine(SkillUtil.WriteEAEnv(InputFormRef.SearchSkillSystem()));
+            Program.ExportFunction.ExportEA(sb);
 
             if (freearea != 0)
             {

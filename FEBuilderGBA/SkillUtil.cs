@@ -122,43 +122,6 @@ namespace FEBuilderGBA
             SkillUtil.ApplyModButton(buttons, skillCount);
         }
 
-        public static string WriteEAEnv(InputFormRef.skill_system_enum skill)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            uint f;
-/* 
-            f = InputFormRef.SearchHasSkill();
-            if (U.isSafetyOffset(f) )
-            {
-                sb.AppendLine("PUSH");
-                sb.Append("ORG ");
-                sb.AppendLine(U.To0xHexString(f));
-                sb.AppendLine("ASMC_HasSkill:");
-                sb.AppendLine("POP");
-            }
-            f = InputFormRef.SearchLearnSkill();
-            if (U.isSafetyOffset(f) )
-            {
-                sb.AppendLine("PUSH");
-                sb.Append("ORG ");
-                sb.AppendLine(U.To0xHexString(f));
-                sb.AppendLine("ASMC_LearnNewSkill:");
-                sb.AppendLine("POP");
-            }
-*/
-            f = InputFormRef.SearchSkillGetter();
-            if (U.isSafetyOffset(f) )
-            {
-                sb.AppendLine("PUSH");
-                sb.Append("ORG ");
-                sb.AppendLine(U.To0xHexString(f));
-                sb.AppendLine("Skill_Getter:");
-                sb.AppendLine("POP");
-            }
-
-            return sb.ToString();
-        }
 
     }
 }

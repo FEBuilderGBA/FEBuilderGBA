@@ -4577,9 +4577,6 @@ namespace FEBuilderGBA
             g_Cache_magic_split_enum = magic_split_enum.NoCache;
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
-            g_CacheHasSkill = 0;
-            g_CacheLearnSkill = 0;
-            g_CacheSkillGetter = 0;
         }
 
 
@@ -9480,46 +9477,6 @@ namespace FEBuilderGBA
                 }
             }
             return magic_split_enum.NO;
-        }
-
-        static uint g_CacheHasSkill = 0;
-        static uint g_CacheLearnSkill = 0;
-        static uint g_CacheSkillGetter = 0;
-        public static uint SearchHasSkill()
-        {
-            if (g_CacheHasSkill == 0)
-            {
-                skill_system_enum skill = SearchSkillSystem();
-                if (skill == skill_system_enum.SkillSystem)
-                {
-                    g_CacheHasSkill = SkillConfigSkillSystemForm.SearchHasSkill();
-                }
-            }
-            return g_CacheHasSkill;
-        }
-        public static uint SearchLearnSkill()
-        {
-            if (g_CacheLearnSkill == 0)
-            {
-                skill_system_enum skill = SearchSkillSystem();
-                if (skill == skill_system_enum.SkillSystem)
-                {
-                    g_CacheLearnSkill = SkillConfigSkillSystemForm.SearchLearnSkill();
-                }
-            }
-            return g_CacheLearnSkill;
-        }
-        public static uint SearchSkillGetter()
-        {
-            if (g_CacheSkillGetter == 0)
-            {
-                skill_system_enum skill = SearchSkillSystem();
-                if (skill == skill_system_enum.SkillSystem)
-                {
-                    g_CacheSkillGetter = SkillConfigSkillSystemForm.SearchSkillGetter();
-                }
-            }
-            return g_CacheSkillGetter;
         }
 
         

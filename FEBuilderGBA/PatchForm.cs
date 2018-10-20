@@ -3376,6 +3376,7 @@ namespace FEBuilderGBA
         public static void ClearCheckIF()
         {
             CacheCheckIF.Clear();
+            CacheFileMapping.Clear();
         }
 
         static string CheckIFFast(PatchSt patch)
@@ -4218,7 +4219,6 @@ namespace FEBuilderGBA
 
         string MakePatchedMessage(PatchSt patch)
         {
-
             string mapping = "";
             List<BinMapping> map = TracePatchedMapping(patch);
             for (int i = 0; i < map.Count; i++ )
@@ -4436,7 +4436,7 @@ namespace FEBuilderGBA
             return false;
         }
 
-        public bool ApplyPatch(string PatchName, string PatchName2 = "", string patchCombo = "")
+        public bool ApplyPatch(string PatchName, string PatchName2 = "", string patchCombo = "" , bool isSlient = false)
         {
             //フィルターをしていたらやめさせる.
             Filter.Text = "";
@@ -4476,7 +4476,7 @@ namespace FEBuilderGBA
             }
 
             //書き込みボタンを押す.
-            return ApplyPatchWriteButton();
+            return ApplyPatchWriteButton(isSlient);
         }
 
         bool ApplyPatchSelectCombo(string patchCombo)
@@ -4499,7 +4499,7 @@ namespace FEBuilderGBA
             }
             return false;
         }
-        bool ApplyPatchWriteButton()
+        bool ApplyPatchWriteButton(bool isSlient)
         {
             for (int n = 0; n < this.PatchPage.Controls.Count; n++)
             {
@@ -4517,7 +4517,10 @@ namespace FEBuilderGBA
                 Button button = (Button)c;
                 button.PerformClick();
 
-                R.ShowOK("パッチを適応しました");
+                if (isSlient == false)
+                {
+                    R.ShowOK("パッチを適応しました");
+                }
                 return true;
             }
 
@@ -5346,6 +5349,96 @@ namespace FEBuilderGBA
             return pointerIndexes.ToArray();
         }
 
+        static ConcurrentDictionary<string, uint> CacheFileMapping = new ConcurrentDictionary<string, uint>();
+        static uint GrepFileMapping(string filename)
+        {
+            uint addr;
+            if (CacheFileMapping.TryGetValue(filename, out addr))
+            {
+                return addr;
+            }
+            if (!File.Exists(filename))
+            {
+                Debug.Assert(false);
+                return U.NOT_FOUND;
+            }
+
+            uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
+
+            byte[] grepdata = File.ReadAllBytes(filename);
+            addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            CacheFileMapping[filename] = addr;
+            return addr;
+        }
+
+        static List<string> ParseEventScript(string eventscript)
+        {
+            List<string> list = new List<string>();
+
+            System.Text.RegularExpressions.MatchCollection match =
+                RegexCache.Matches(eventscript,"{\\$(.+?)}");
+            for(int i = 0; i < match.Count ; i++)
+            {
+                string m = match[i].Value;
+                list.Add(m.Substring(1,m.Length - 2));
+            }
+            return list;
+        }
+
+        static void ExportEmbedFunction(PatchSt patch, Dictionary<string,uint> mapping)
+        {
+            List<string> lines = new List<string>();
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            foreach (var pair in patch.Param)
+            {
+                if (pair.Key.IndexOf("EVENTSCRIPT") == 0)
+                {
+                    string eventscript = pair.Value;
+                    List<string> scriptBinList = ParseEventScript(eventscript);
+                    for (int i = 0; i < scriptBinList.Count; i++)
+                    {
+                        string scriptbin = scriptBinList[i];
+                        scriptbin = U.skip(scriptbin, ":");
+                        string filename = Path.Combine(basedir, scriptbin);
+
+                        uint addr = GrepFileMapping(filename);
+                        if (addr == U.NOT_FOUND)
+                        {
+                            continue;
+                        }
+                        mapping[scriptbin] = addr;
+                    }
+                }
+                else if (pair.Key.IndexOf("EXPORT") == 0 )
+                {
+                    string exportLine = pair.Value;
+                    string[] sp = exportLine.Split('\t');
+                    if (sp.Length < 2)
+                    {
+                        continue;
+                    }
+
+                    string scriptbin = sp[0];
+                    string EAName = sp[1];
+                    if (scriptbin != "")
+                    {
+                        string filename = Path.Combine(basedir, scriptbin);
+
+                        uint addr = GrepFileMapping(filename);
+                        if (addr == U.NOT_FOUND)
+                        {
+                            continue;
+                        }
+                        mapping["EXPORT_"+scriptbin] = addr;
+                    }
+                }
+            }
+        }
+
         static void MakeEventScriptAddEventScript(PatchSt st, string eventscript 
             , List<EventScript.Script> scripts)
         {
@@ -5354,35 +5447,24 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string error = CheckIFFast(st);
-            if (error != "I")
+            string basedir = Path.GetDirectoryName(st.PatchFileName);
+            List<string> scriptBinList = ParseEventScript(eventscript);
+            for(int i = 0 ; i < scriptBinList.Count ; i++)
             {
-                return;
-            }
-
-            string scriptbin = U.cut(eventscript, "{$", "}");
-            scriptbin = U.skip(scriptbin, ":");
-            if (scriptbin != "")
-            {
-                string basedir = Path.GetDirectoryName(st.PatchFileName);
+                string scriptbin = scriptBinList[i];
+                scriptbin = U.skip(scriptbin, ":");
                 string filename = Path.Combine(basedir, scriptbin);
-                if (!File.Exists(filename))
-                {
-                    Debug.Assert(false);
-                    return;
-                }
 
-                uint FindStartAddress = Program.ROM.RomInfo.compress_image_borderline_address();
-
-                byte[] grepdata = File.ReadAllBytes(filename);
-                uint addr = U.Grep(Program.ROM.Data, grepdata, FindStartAddress, 0, 4);
+                uint addr = GrepFileMapping(filename);
                 if (addr == U.NOT_FOUND)
                 {
                     return;
                 }
+
                 //マクロを置換する.
                 eventscript = ReplaceL1Macro(eventscript, scriptbin, addr);
             }
+
             EventScript.Script script = EventScript.ParseScriptLine(eventscript);
             if (script == null)
             {
@@ -5392,15 +5474,11 @@ namespace FEBuilderGBA
             script.IsExdends = true;
             scripts.Add(script);
         }
+
         static void MakeEventScriptAddUseFlag(PatchSt st, string useflag
             , Dictionary<uint, string> flags)
         {
             if (useflag == "")
-            {
-                return;
-            }
-            string error = CheckIFFast(st);
-            if (error != "I")
             {
                 return;
             }
@@ -5413,7 +5491,40 @@ namespace FEBuilderGBA
             flags[f] = U.at(st.Param, "NAME");
         }
 
-        public static void MakeEventScript(List<EventScript.Script> scripts, Dictionary<uint, string> flags)
+        static void MakeEventScriptAddExportFunction(PatchSt st, string exportLine
+            , ExportFunction exportFunctions)
+        {
+            if (exportLine == "")
+            {
+                return;
+            }
+
+            string[] sp = exportLine.Split('\t');
+            if (sp.Length < 2)
+            {
+                return;
+            }
+
+            string basedir = Path.GetDirectoryName(st.PatchFileName);
+            string scriptbin = sp[0];
+            string EAName = sp[1];
+            {
+                string filename = Path.Combine(basedir, scriptbin);
+
+                uint addr = GrepFileMapping(filename);
+                if (addr == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                exportFunctions.Add(EAName, addr);
+            }
+        }
+
+        public static void MakeEventScript(List<EventScript.Script> scripts
+            , Dictionary<uint, string> flags
+            , ExportFunction exportFunctions
+            )
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),true);
             for (int i = 0; i < patchs.Count; i++)
@@ -5423,18 +5534,25 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                string error = CheckIFFast(patch);
+                if (error != "I")
+                {
+                    continue;
+                }
 
                 foreach (var pair in patch.Param)
                 {
                     if (pair.Key.IndexOf("EVENTSCRIPT") == 0)
                     {
                         MakeEventScriptAddEventScript(patch, pair.Value, scripts);
-                        continue;
                     }
-                    if (pair.Key.IndexOf("USEFLAG") == 0)
+                    else if (pair.Key.IndexOf("USEFLAG") == 0)
                     {
                         MakeEventScriptAddUseFlag(patch, pair.Value, flags);
-                        continue;
+                    }
+                    else if (pair.Key.IndexOf("EXPORT") == 0)
+                    {
+                        MakeEventScriptAddExportFunction(patch, pair.Value, exportFunctions);
                     }
                 }
             }
@@ -6038,6 +6156,39 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.PatchList, loopI);
         }
 
+        void UpdateEmbedFunction(Dictionary<string, uint> mappingSRCEmbedFunction, Dictionary<string, uint> mappingDESTEmbedFunction, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "UpdateEmbedFunction");
+            foreach (var src in mappingSRCEmbedFunction)
+            {
+                string name = src.Key;
+                uint oldaddr = src.Value;
+                uint newaddr;
+                if (!mappingDESTEmbedFunction.TryGetValue(name, out newaddr))
+                {
+                    continue;
+                }
+                pleaseWait.DoEvents(R._("ポインタ更新しています。{0}: {1}->{2}",name,oldaddr,newaddr));
+                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr);
+                //影響を受けるポインタの書き換え.
+                for (int i = 0; i < movepointerlist.Count; i++)
+                {
+                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                }
+                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
+                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1); //Thumb
+                //影響を受けるポインタの書き換え.
+                for (int i = 0; i < movepointerlist.Count; i++)
+                {
+                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
+                }
+            }
+            Program.Undo.Push(undodata);
+            Program.ReLoadSetting();
+        }
+
+
         string UpdatePatchBySkillSystems(PatchSt patch, PatchSt new_patchSt)
         {
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
@@ -6050,20 +6201,10 @@ namespace FEBuilderGBA
                 SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
 
-                bool r;
-
-                //Uninstall
-                r = UnInstallPatch(new_patchSt , true);
-                if (!r)
+                string error = UpdatePatchByNone(patch , new_patchSt);
+                if (error != "")
                 {
-                    return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", new_patchSt.PatchFileName);
-                }
-
-                //Install
-                r = ApplyPatch(new_patchSt.Name);
-                if (!r)
-                {
-                    return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
+                    return error;
                 }
 
                 //Import
@@ -6075,6 +6216,9 @@ namespace FEBuilderGBA
         }
         string UpdatePatchByNone(PatchSt patch, PatchSt new_patchSt)
         {
+            Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
+            ExportEmbedFunction(patch, mappingSRCEmbedFunction);
+
             bool r;
             //Uninstall
             r = UnInstallPatch(new_patchSt , true);
@@ -6084,10 +6228,18 @@ namespace FEBuilderGBA
             }
 
             //Install
-            r = ApplyPatch(new_patchSt.Name);
+            r = ApplyPatch(new_patchSt.Name,"","",true);
             if (!r)
             {
                 return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
+            }
+
+            //少し時間がかかるので、しばらくお待ちください表示.
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
+                ExportEmbedFunction(new_patchSt, mappingDESTEmbedFunction);
+                UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
             }
             return "";
         }
@@ -6160,6 +6312,10 @@ namespace FEBuilderGBA
                 R.ShowStopError(error);
                 return;
             }
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
+            U.ReSelectList(this.PatchList);
+
+            Program.ReLoadSetting();
         }
 
     }

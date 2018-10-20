@@ -20,6 +20,13 @@ EVENTSCRIPT:3=40050200VVVVVVVV4B0D00YY{$L1:set_status_param.dmp}	SVALBの座標�
 EVENTSCRIPT:4=40050200VVVVVVVV40050B00ZZZZWWWW4B0D00YY{$L1:set_status_param.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::NewValue]に設定する	{COND}
 EVENTSCRIPT:5=40050200VVVVVVVV4F0500YY{$L1:set_status_param.dmp}	現在操作しているユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::NewValue]に設定する	{COND}
 EVENTSCRIPT:6=400DXXYY{$L1:set_status_param.dmp}	[XX:UNIT:ユニット]の[YY:RAM_UNIT_PARAM:Status]をSVAL2に設定する(LOW)	{COND}
+EVENTSCRIPT:7=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C202400DXXYY{$L1:set_status_param.dmp}	[XX:UNIT:ユニット]の[YY:RAM_UNIT_PARAM:Status]を[VV::増やす値]増加させる	{UNITPERSOLNAL}
+EVENTSCRIPT:8=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C202400DXXYY{$L1:set_status_param.dmp}	[XX:UNIT:ユニット]の[YY:RAM_UNIT_PARAM:Status]を[VV::減らす値]減少させる	{UNITPERSOLNAL}
+EVENTSCRIPT:9=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024B0D00YY{$L1:set_status_param.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::増やす値]増加させる	{UNITPERSOLNAL}
+EVENTSCRIPT:A=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024B0D00YY{$L1:set_status_param.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::減らす値]減少させる	{UNITPERSOLNAL}
+EVENTSCRIPT:B=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024F0D00YY{$L1:set_status_param.dmp}	現在操作しているユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::増やす値]増加させる	{UNITPERSOLNAL}
+EVENTSCRIPT:C=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024F0D00YY{$L1:set_status_param.dmp}	現在操作しているユニットの[YY:RAM_UNIT_PARAM:Status]を[VV::減らす値]減少させる	{UNITPERSOLNAL}
+
 
 EVENTSCRIPT:1.en=40050200VVVVVVVV400DXXYY{$L1:set_status_param.dmp}	Set [XX:UNIT:Unit]'s [YY:RAM_UNIT_PARAM:Status] to [VV::NewValue]	{COND}
 EVENTSCRIPT:2.en=40050200VVVVVVVV410D00YY{$L1:set_status_param.dmp}	Set SVAL1 Unit's [YY:RAM_UNIT_PARAM:Status] to [VV::NewValue](LOW)	{COND}
@@ -27,6 +34,13 @@ EVENTSCRIPT:3.en=40050200VVVVVVVV4B0D00YY{$L1:set_status_param.dmp}	Set SVALB un
 EVENTSCRIPT:4.en=40050200VVVVVVVV40050B00ZZZZWWWW4B0D00YY{$L1:set_status_param.dmp}	Set coordinate[ZZ:MAPX:X][WW:MAPY:Y] unit's [YY:RAM_UNIT_PARAM:Status] to [VV::NewValue]	{COND}
 EVENTSCRIPT:5.en=40050200VVVVVVVV4F0500YY{$L1:set_status_param.dmp}	Current Unit's [YY:RAM_UNIT_PARAM:Status] to [VV::NewValue]	{COND}
 EVENTSCRIPT:6.en=400DXXYY{$L1:set_status_param.dmp}	Set [XX:UNIT:Unit]'s [YY:RAM_UNIT_PARAM:Status] to SVAL2(LOW)	{COND}
+EVENTSCRIPT:7.en=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C202400DXXYY{$L1:set_status_param.dmp}	Add [XX:UNIT:Unit]'s [YY:RAM_UNIT_PARAM:Status] By [VV::Increase value]	{UNITPERSOLNAL}
+EVENTSCRIPT:8.en=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C202400DXXYY{$L1:set_status_param.dmp}	Sub [XX:UNIT:Unit]'s [YY:RAM_UNIT_PARAM:Status] By [VV::Decrease value]	{UNITPERSOLNAL}
+EVENTSCRIPT:9.en=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024B0D00YY{$L1:set_status_param.dmp}	Add coordinate[ZZ:MAPX:X][WW:MAPY:Y] unit's [YY:RAM_UNIT_PARAM:Status] By [WW::Increase value]	{UNITPERSOLNAL}
+EVENTSCRIPT:A.en=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024B0D00YY{$L1:set_status_param.dmp}	Sub coordinate[ZZ:MAPX:X][WW:MAPY:Y] unit's [YY:RAM_UNIT_PARAM:Status] By [VV::Decrease value]	{UNITPERSOLNAL}
+EVENTSCRIPT:B.en=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024F0D00YY{$L1:set_status_param.dmp}	Add Current Unit's [YY:RAM_UNIT_PARAM:Status] By [VV::Increase value]	{UNITPERSOLNAL}
+EVENTSCRIPT:C.en=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024F0D00YY{$L1:set_status_param.dmp}	Sub Current Unit's [YY:RAM_UNIT_PARAM:Status] By [VV::Decrease value]	{UNITPERSOLNAL}
+
 
 EVENTSCRIPT:1.zh=40050200VVVVVVVV400DXXYY{$L1:set_status_param.dmp}	将[XX:UNIT:人物]的[YY:RAM_UNIT_PARAM:Status]设置为[VV::NewValue]	{COND}
 EVENTSCRIPT:2.zh=40050200VVVVVVVV410D00YY{$L1:set_status_param.dmp}	将SVAL1人物的[YY:RAM_UNIT_PARAM:Status]设置为[VV::NewValue](LOW)	{COND}
@@ -34,6 +48,14 @@ EVENTSCRIPT:3.zh=40050200VVVVVVVV4B0D00YY{$L1:set_status_param.dmp}	将SVALB人�
 EVENTSCRIPT:4.zh=40050200VVVVVVVV40050B00ZZZZWWWW4B0D00YY{$L1:set_status_param.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]人物的[YY:RAM_UNIT_PARAM:Status]设置为[VV::NewValue]	{COND}
 EVENTSCRIPT:5.zh=40050200VVVVVVVV4F0500YY{$L1:set_status_param.dmp}	当前人物的[YY:RAM_UNIT_PARAM:Status]设置为[VV::NewValue]	{COND}
 EVENTSCRIPT:6.zh=400DXXYY{$L1:set_status_param.dmp}	将[XX:UNIT:人物]的[YY:RAM_UNIT_PARAM:Status]设置为SVAL2(LOW)	{COND}
+EVENTSCRIPT:7.zh=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C202400DXXYY{$L1:set_status_param.dmp}	将[XX:UNIT:人物]的[YY:RAM_UNIT_PARAM:Status]加[VV::增加价值]	{UNITPERSOLNAL}
+EVENTSCRIPT:8.zh=400DXXYY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C202400DXXYY{$L1:set_status_param.dmp}	将[XX:UNIT:人物]的[YY:RAM_UNIT_PARAM:Status]降低[VV::降低价值]	{UNITPERSOLNAL}
+EVENTSCRIPT:9.zh=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024B0DXX00{$L1:set_status_param.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]人物的[YY:RAM_UNIT_PARAM:Status]を[VV::增加价值]	{UNITPERSOLNAL}
+EVENTSCRIPT:A.zh=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024B0DXX00{$L1:set_status_param.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]人物的[YY:RAM_UNIT_PARAM:Status]を[VV::降低价值]	{UNITPERSOLNAL}
+EVENTSCRIPT:B.zh=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024F0D00YY{$L1:set_status_param.dmp}	当前人物的[YY:RAM_UNIT_PARAM:Status]加[VV::增加价值]	{UNITPERSOLNAL}
+EVENTSCRIPT:C.zh=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024F0D00YY{$L1:set_status_param.dmp}	当前人物的[YY:RAM_UNIT_PARAM:Status]降低[VV::降低价值]	{UNITPERSOLNAL}
+
+
 
 NAME.zh=设置本机的各种参数
 INFO.zh=设置本机的各种参数

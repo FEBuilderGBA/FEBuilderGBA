@@ -30,5 +30,9 @@ namespace FEBuilderGBA
         {
             return Regex(pattern).Match(str);
         }
+        public static MatchCollection Matches(string str, string pattern)
+        {
+            return Regex(pattern).Matches(str);
+        }
     }
 }
