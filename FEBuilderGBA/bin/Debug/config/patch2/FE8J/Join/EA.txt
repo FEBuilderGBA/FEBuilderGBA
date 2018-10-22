@@ -1,0 +1,92 @@
+
+
+////0x478バイト使用
+
+
+////////////
+
+PUSH
+ORG	0x5C51E4	//本来の闘技場
+
+POIN	join_moji
+SHORT	$061A $0646		//右がヘルプ指定
+SHORT	$6300 0
+POIN	Join+1
+WORD	0
+POIN	Join4+1
+WORD	0 0 0
+
+POP
+join_moji:
+BYTE	$81 $40 $93 $AF $8D $73 0 0
+ALIGN 4
+
+////////////////救出に1を書く
+PUSH
+ORG		0x228a4
+	#incbin "second/Kyushutsu_one.bin"
+
+
+///効果circle
+
+ORG		0x32038
+WORD	0x46874800
+POIN	Pair
+
+
+////降ろしても非待機
+
+ORG		0x180bb
+BYTE	$D1	//$E0で非待機
+
+/////////////
+
+
+POP
+
+///
+	
+
+Join:
+	#incbin "first/Join_first.bin"
+ALIGN	4
+Join2:
+	#incbin "first/Join_bl.bin"
+POIN	Join3+1
+ALIGN	4
+Join3:
+	#incbin "first/Join_terms.bin"
+	ALIGN	4
+
+///
+
+Join4:
+	#incbin "second/Join_second.bin"
+POIN	Join5
+POIN	List
+ALIGN	4
+
+Join5:
+	#incbin "first/Join_bl.bin"
+POIN	Join6+1
+ALIGN	4
+Join6:
+	#incbin "second/Join_terms2.bin"
+ALIGN	4
+
+List:
+POIN	Join8+1
+WORD	0 0
+POIN	Join9+1
+	#incbin "second/data.bin"
+ALIGN	4
+Join8:
+	#incbin "second/Join_final.bin"
+ALIGN	4
+Join9:
+	#incbin "second/Join_last.bin"
+ALIGN	4
+
+Pair:
+	#incbin "Pair_up/Pair.bin"
+ALIGN	4
