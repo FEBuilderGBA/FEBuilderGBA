@@ -34,25 +34,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SaveWithLintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.UPSSimpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolProblemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExecuteRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsEmulatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsDebuggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsBinaryEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsSappyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.eventAssembler = new System.Windows.Forms.ToolStripMenuItem();
             this.ASMInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.OpenLastUsedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,22 +57,18 @@
             this.PatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SongImportOtherROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.lintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DiffDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DecreaseColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LZ77ToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DiffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PortraitMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolMagicEffectMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TranslateROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DisassemblerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PointerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,22 +76,32 @@
             this.SettingVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnlineHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EventUnitButton = new System.Windows.Forms.Button();
             this.ItemButton = new System.Windows.Forms.Button();
             this.SongTableButton = new System.Windows.Forms.Button();
             this.MapEditorButton = new System.Windows.Forms.Button();
             this.DetailMenuButton = new System.Windows.Forms.Button();
             this.MapListPanel = new System.Windows.Forms.Panel();
-            this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.MapPanel = new System.Windows.Forms.Panel();
             this.X_HELP_MESSAGE = new System.Windows.Forms.Label();
-            this.Map = new FEBuilderGBA.MapPictureBox();
             this.EventPanel = new System.Windows.Forms.Panel();
             this.EventCond_Label = new System.Windows.Forms.Label();
-            this.EventList = new FEBuilderGBA.ListBoxEx();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EventList = new FEBuilderGBA.ListBoxEx();
+            this.Map = new FEBuilderGBA.MapPictureBox();
+            this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
+            this.toolStripMenuItem2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.MapListPanel.SuspendLayout();
             this.MapPanel.SuspendLayout();
@@ -182,11 +182,6 @@
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(315, 6);
-            // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
@@ -201,22 +196,12 @@
             this.SaveAsToolStripMenuItem.Text = "別名保存";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(315, 6);
-            // 
             // SaveWithLintToolStripMenuItem
             // 
             this.SaveWithLintToolStripMenuItem.Name = "SaveWithLintToolStripMenuItem";
             this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.SaveWithLintToolStripMenuItem.Text = "エラーがなければ上書き保存";
             this.SaveWithLintToolStripMenuItem.Click += new System.EventHandler(this.SaveWithLintToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
             // 
             // UPSSimpleToolStripMenuItem
             // 
@@ -231,11 +216,6 @@
             this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.ToolProblemReportToolStripMenuItem.Text = "問題報告ツール";
             this.ToolProblemReportToolStripMenuItem.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(315, 6);
             // 
             // QuitToolStripMenuItem
             // 
@@ -292,11 +272,6 @@
             this.RunAsSappyToolStripMenuItem.Text = "Sappyで開く";
             this.RunAsSappyToolStripMenuItem.Click += new System.EventHandler(this.RunAsSappyToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
-            // 
             // eventAssembler
             // 
             this.eventAssembler.Name = "eventAssembler";
@@ -310,11 +285,6 @@
             this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.ASMInsertToolStripMenuItem.Text = "ASMで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
             // 
             // OpenLastUsedToolStripMenuItem
             // 
@@ -408,11 +378,6 @@
             this.SongImportOtherROMToolStripMenuItem.Text = "別ROMから曲のインポート";
             this.SongImportOtherROMToolStripMenuItem.Click += new System.EventHandler(this.SongImportOtherROMToolStripMenuItem_Click);
             // 
-            // toolStripSeparatorEx1
-            // 
-            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
-            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
-            // 
             // lintToolStripMenuItem
             // 
             this.lintToolStripMenuItem.Name = "lintToolStripMenuItem";
@@ -441,11 +406,6 @@
             this.LogToolStripMenuItem.Text = "ログ";
             this.LogToolStripMenuItem.Click += new System.EventHandler(this.LogToolStripMenuItem_Click);
             // 
-            // toolStripSeparatorEx2
-            // 
-            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
-            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
-            // 
             // FlagNameToolStripMenuItem
             // 
             this.FlagNameToolStripMenuItem.Name = "FlagNameToolStripMenuItem";
@@ -459,11 +419,6 @@
             this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.ExportEAEventToolStripMenuItem.Text = "Event Assemblerでイベントのエクスポート";
             this.ExportEAEventToolStripMenuItem.Click += new System.EventHandler(this.ExportEAEventToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx4
-            // 
-            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
-            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
             // 
             // DecreaseColorToolStripMenuItem
             // 
@@ -506,11 +461,6 @@
             this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.TranslateROMToolStripMenuItem.Text = "ROM翻訳ツール";
             this.TranslateROMToolStripMenuItem.Click += new System.EventHandler(this.TranslateROMToolStripMenuItem_Click);
-            // 
-            // toolStripSeparatorEx3
-            // 
-            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
-            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
             // 
             // DisassemblerToolStripMenuItem
             // 
@@ -562,9 +512,16 @@
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
+            // 
+            // DiscordURLToolStripMenuItem
+            // 
+            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
+            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
+            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
             // EventUnitButton
             // 
@@ -612,7 +569,7 @@
             // 
             // DetailMenuButton
             // 
-            this.DetailMenuButton.Location = new System.Drawing.Point(1367, 0);
+            this.DetailMenuButton.Location = new System.Drawing.Point(1367, 2);
             this.DetailMenuButton.Margin = new System.Windows.Forms.Padding(2);
             this.DetailMenuButton.Name = "DetailMenuButton";
             this.DetailMenuButton.Size = new System.Drawing.Size(205, 36);
@@ -631,20 +588,6 @@
             this.MapListPanel.Name = "MapListPanel";
             this.MapListPanel.Size = new System.Drawing.Size(258, 662);
             this.MapListPanel.TabIndex = 131;
-            // 
-            // MAP_LISTBOX
-            // 
-            this.MAP_LISTBOX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.MAP_LISTBOX.FormattingEnabled = true;
-            this.MAP_LISTBOX.IntegralHeight = false;
-            this.MAP_LISTBOX.ItemHeight = 18;
-            this.MAP_LISTBOX.Location = new System.Drawing.Point(0, -1);
-            this.MAP_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
-            this.MAP_LISTBOX.Name = "MAP_LISTBOX";
-            this.MAP_LISTBOX.Size = new System.Drawing.Size(257, 652);
-            this.MAP_LISTBOX.TabIndex = 0;
-            this.MAP_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.MAP_LISTBOX_SelectedIndexChanged);
             // 
             // MapPanel
             // 
@@ -665,15 +608,6 @@
             this.X_HELP_MESSAGE.Size = new System.Drawing.Size(431, 18);
             this.X_HELP_MESSAGE.TabIndex = 1;
             this.X_HELP_MESSAGE.Text = "変更したいところをダブルクリック、または右クリックしてください。";
-            // 
-            // Map
-            // 
-            this.Map.AutoScroll = true;
-            this.Map.Location = new System.Drawing.Point(1, -27);
-            this.Map.Margin = new System.Windows.Forms.Padding(2);
-            this.Map.Name = "Map";
-            this.Map.Size = new System.Drawing.Size(1033, 690);
-            this.Map.TabIndex = 0;
             // 
             // EventPanel
             // 
@@ -698,26 +632,6 @@
             this.EventCond_Label.Text = "イベント";
             this.EventCond_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EventCond_Label.Click += new System.EventHandler(this.EventCondButton_Click);
-            // 
-            // EventList
-            // 
-            this.EventList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EventList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.EventList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EventList.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.EventList.FormattingEnabled = true;
-            this.EventList.IntegralHeight = false;
-            this.EventList.ItemHeight = 30;
-            this.EventList.Location = new System.Drawing.Point(0, 31);
-            this.EventList.Margin = new System.Windows.Forms.Padding(4);
-            this.EventList.Name = "EventList";
-            this.EventList.Size = new System.Drawing.Size(280, 604);
-            this.EventList.TabIndex = 1;
-            this.EventList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventList_KeyDown);
-            this.EventList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDoubleClick);
-            this.EventList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDown);
             // 
             // MainSimpleMenuImageSubButton
             // 
@@ -746,12 +660,98 @@
             this.MenuPanel.Size = new System.Drawing.Size(1574, 41);
             this.MenuPanel.TabIndex = 1;
             // 
-            // DiscordURLToolStripMenuItem
+            // EventList
             // 
-            this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
-            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
-            this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
-            this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
+            this.EventList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EventList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EventList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EventList.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.EventList.FormattingEnabled = true;
+            this.EventList.IntegralHeight = false;
+            this.EventList.ItemHeight = 30;
+            this.EventList.Location = new System.Drawing.Point(0, 31);
+            this.EventList.Margin = new System.Windows.Forms.Padding(4);
+            this.EventList.Name = "EventList";
+            this.EventList.Size = new System.Drawing.Size(280, 604);
+            this.EventList.TabIndex = 1;
+            this.EventList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EventList_KeyDown);
+            this.EventList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDoubleClick);
+            this.EventList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EventList_MouseDown);
+            // 
+            // Map
+            // 
+            this.Map.AutoScroll = true;
+            this.Map.Location = new System.Drawing.Point(1, -27);
+            this.Map.Margin = new System.Windows.Forms.Padding(2);
+            this.Map.Name = "Map";
+            this.Map.Size = new System.Drawing.Size(1033, 690);
+            this.Map.TabIndex = 0;
+            // 
+            // MAP_LISTBOX
+            // 
+            this.MAP_LISTBOX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MAP_LISTBOX.FormattingEnabled = true;
+            this.MAP_LISTBOX.IntegralHeight = false;
+            this.MAP_LISTBOX.ItemHeight = 18;
+            this.MAP_LISTBOX.Location = new System.Drawing.Point(0, -1);
+            this.MAP_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
+            this.MAP_LISTBOX.Name = "MAP_LISTBOX";
+            this.MAP_LISTBOX.Size = new System.Drawing.Size(257, 652);
+            this.MAP_LISTBOX.TabIndex = 0;
+            this.MAP_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.MAP_LISTBOX_SelectedIndexChanged);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(315, 6);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(315, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(315, 6);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
+            // 
+            // toolStripSeparatorEx1
+            // 
+            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
+            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx2
+            // 
+            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
+            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx4
+            // 
+            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
+            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
+            // 
+            // toolStripSeparatorEx3
+            // 
+            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
+            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
             // 
             // MainSimpleMenuForm
             // 

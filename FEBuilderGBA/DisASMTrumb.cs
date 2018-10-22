@@ -674,7 +674,7 @@ namespace FEBuilderGBA
             }
             uint pointer = vm.r[Rs] + imm;
             uint data = 0;
-            if (isSafetyPointer(bin, pointer))
+            if (isSafetyPointer(bin, pointer + 4))
             {
                 pointer = U.toOffset(pointer);
                 data = U.u32(bin, pointer);

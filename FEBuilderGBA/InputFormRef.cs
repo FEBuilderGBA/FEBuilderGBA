@@ -6194,7 +6194,7 @@ namespace FEBuilderGBA
                     return "?";///No Translate
             }
 
-            out_errorMessage = R._("不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。");
+//            out_errorMessage = R._("不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。");
             return "";
         }
 

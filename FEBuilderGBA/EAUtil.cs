@@ -79,6 +79,7 @@ namespace FEBuilderGBA
                 ParseORG(line);
                 ParseIncBIN(line, lines[i]);
                 ParseLynELF(line, lines[i]);
+                ParseLynHook(line, lines[i]);
                 ParsePng2Dmp(line, lines[i]);
                 ParseLabel(line);
             }
@@ -202,12 +203,31 @@ namespace FEBuilderGBA
             this.DataList.Add(data);
             return true;
         }
+        bool ParseLynHook(string line, string orignalIine)
+        {
+            string keyword = "HINT=LYN_HOOK=";
+            int pos = orignalIine.IndexOf(keyword);
+            if (pos < 0)
+            {
+                return false;
+            }
+            uint orgaddr = U.atoi0x(orignalIine.Substring(pos + keyword.Length));
+
+            Data data = new Data(orgaddr, DataEnum.ORG);
+            this.DataList.Add(data);
+            return true;
+        }
+
         bool ParseLynELF(string line , string orignalIine)
         {
             string a = Keyword(line, "#inctevent lyn");
             if (a == "")
             {
-                return false;
+                a = Keyword(line, "#inctext lyn");
+                if (a == "")
+                {
+                    return false;
+                }
             }
             string filename = U.cut(a, "\"", "\"");
             string fullbinname = Path.Combine( this.Dir, filename);

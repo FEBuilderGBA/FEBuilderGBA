@@ -2441,6 +2441,10 @@ namespace FEBuilderGBA
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 20, true);
             }
+            if (value.IndexOf("GREP4END+24 ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 24, true);
+            }
 
             if (value.IndexOf("FGREP16 ") == 0)
             {
@@ -2489,6 +2493,10 @@ namespace FEBuilderGBA
             if (value.IndexOf("FGREP4END+20 ") == 0)
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 20 , true);
+            }
+            if (value.IndexOf("FGREP4END+24 ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 24, true);
             }
             if (value.IndexOf("P32 ") == 0)
             {
@@ -6244,6 +6252,40 @@ namespace FEBuilderGBA
             return "";
         }
 
+        void UpdateDepends(PatchSt patch)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                if (key != "UPDATE_DEPENDS")
+                {
+                    continue;
+                }
+
+                string depends_patch = pair.Value;
+                string new_patch = Path.Combine(basedir, depends_patch);
+                if (!File.Exists(new_patch))
+                {
+                    continue;
+                }
+                PatchSt depends_patchSt = LoadPatch(new_patch, false);
+                if (depends_patchSt == null)
+                {
+                    continue;
+                }
+                //インストールしているか?
+                string iferror = CheckIF(depends_patchSt);
+                if (iferror.IndexOf("PATCHED_IF") < 0)
+                {//インストールしていないので関係ない
+                    continue;
+                }
+                //このパッチもアップデート
+                UpdatePatch(depends_patchSt, true);
+            }
+        }
+
         //バージョンアップデート
         string UpdatePatch(PatchSt patch, bool isNoCheck)
         {
@@ -6255,19 +6297,23 @@ namespace FEBuilderGBA
 
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             string update_patch = U.at(patch.Param, "UPDATE_PATCH");
+            PatchSt new_patchSt;
             if (update_patch == "")
-            {
-                return R.Error("新しいパッチが存在しません。");
+            {//再インストール
+                new_patchSt = patch;
             }
-            string new_patch = Path.Combine(basedir , update_patch);
-            if (!File.Exists(new_patch))
+            else
             {
-                return R.Error("新しいパッチが存在しません。") + new_patch;
-            }
-            PatchSt new_patchSt = LoadPatch(new_patch, false);
-            if (new_patchSt == null)
-            {
-                return R.Error("新しいパッチが存在しません。") + new_patch;
+                string new_patch = Path.Combine(basedir, update_patch);
+                if (!File.Exists(new_patch))
+                {
+                    return R.Error("新しいパッチが存在しません。") + new_patch;
+                }
+                new_patchSt = LoadPatch(new_patch, false);
+                if (new_patchSt == null)
+                {
+                    return R.Error("新しいパッチが存在しません。") + new_patch;
+                }
             }
 
             if (!isNoCheck)
@@ -6278,20 +6324,25 @@ namespace FEBuilderGBA
                     return R.Error("ユーザが処理をキャンセルしました。");
                 }
             }
-            
+
+            string error;
             string update_method = U.at(patch.Param, "UPDATE_METHOD");
             if (update_method == "SKILL")
             {
-                return UpdatePatchBySkillSystems(patch , new_patchSt);
-            }
-            else if (update_method == "NONE")
-            {
-                return UpdatePatchByNone(patch , new_patchSt);
+                error = UpdatePatchBySkillSystems(patch , new_patchSt);
             }
             else
             {
-                return "";
+                error = UpdatePatchByNone(patch , new_patchSt);
             }
+
+            if (error != "")
+            {
+                return error;
+            }
+
+//            UpdateDepends(patch);
+            return "";
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)

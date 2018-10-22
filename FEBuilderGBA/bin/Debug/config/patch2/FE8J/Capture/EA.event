@@ -1,0 +1,111 @@
+/*
+おまけ　騎馬系の救出値20固定
+
+0x18726 > 14 20
+
+19固定(トラキア)なら > 13 20
+*/
+
+PUSH
+ORG	$5C5058 //移動後の呼魔つぶし。本来は召喚の位置
+	POIN	cap_word
+	SHORT	$060C $0661		//右の$0641がヘルプ
+	SHORT	$4F00 0
+	POIN	Capture_Usability|1
+	WORD	0
+	POIN	Capture_Effect_Func|1	//フラグストア
+	WORD	0 
+	WORD	0//$08022BF9(攻撃範囲表示)
+	WORD	0//$08022C61
+POP
+
+cap_word:
+//BYTE $81 $40 $8F $AC $8E $E8 $92 $B2 $00 $00	//小手調
+//BYTE $81 $40 $8E $E8 $89 $C1 $8C $B8 $00 $00	//手加減
+BYTE $81 $40 $95 $DF $8A $6C $00 $00	//捕獲
+
+
+PUSH
+
+	ORG $22cd0
+//	callHack_r3(New_Weapon_Select)	//アイテム選択後
+	
+	BYTE	$2C $F0 $9E $FC $20 $68 $C1 $8B $02 $F0 $44 $FA
+
+POP
+
+/*
+	ALIGN 4
+Fill_Capture_Range_Map:
+	#incbin "Fill_Capture_Range_Map.bin"
+//	POIN Capture_Target_Check|1
+
+
+	ALIGN 4
+New_Weapon_Select:	//アイテム選択後
+	#incbin "New_Weapon_Select.bin"
+	POIN Is_Capture_Set Fill_Capture_Range_Map
+*/
+
+	ALIGN 4
+Is_Capture_Set:
+	#incbin "Is_Capture_Set.dmp"
+
+	ALIGN 4
+Capture_Usability:
+//	#incbin "Capture_Usability_Func_Easy.bin"
+
+	#incbin "Capture_Usability_Func.bin"
+	POIN	StealMinusFunc|1
+StealMinusFunc:
+	#incbin "StealMinusFunc.bin"
+
+PUSH
+	ORG $16328
+	WORD	$46874800
+	POIN	Soubi_non
+	
+	ORG $22840
+	WORD	$469F4B00
+	POIN	Cancel_Capture
+	
+	ORG $3283c
+	WORD	$469F4B00
+	POIN	After_Battle_Rescue
+	
+	ORG $869b0
+	WORD	$468F4900
+	POIN	STOP_DEAD_WORD
+	
+	ORG $25130	//敵選択
+//	SHORT $480b $6800 $7ac0 $0600
+	WORD	$46874800
+	POIN	EnemyCaptureCheck
+	
+POP
+    ALIGN 4
+    Soubi_non:
+    #incbin "Soubi_non.bin"
+
+    ALIGN 4
+    Cancel_Capture:
+    #incbin "Cancel_Capture.bin"
+	
+    ALIGN 4
+    After_Battle_Rescue:
+    #incbin "After_Battle_Rescue.bin"
+    POIN Is_Capture_Set
+	
+    ALIGN 4
+    STOP_DEAD_WORD:
+    #incbin "stop.bin"
+
+    ALIGN 4
+EnemyCaptureCheck:
+    #incbin "EmemyCheck.bin"
+
+	ALIGN 4
+Capture_Effect_Func:
+    #incbin "Capture_Effect_Func.bin"
+	
+ALIGN 4

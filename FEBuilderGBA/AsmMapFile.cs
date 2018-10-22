@@ -658,6 +658,48 @@ namespace FEBuilderGBA
             }
         }
 
+        uint ScanOAMREGSTable(uint pointer,ROM rom)
+        {
+            uint startAddr = U.toOffset(pointer);
+            uint addr = startAddr;
+            for ( ;addr < rom.Data.Length ; addr += 4)
+            {
+                uint d = Program.ROM.u32(addr);
+                if (!U.isSafetyPointer(d))
+                {
+                    break;
+                }
+
+                AsmMapSt p = new AsmMapSt();
+                p.Length = U.OAMREGSLength(U.toOffset(d), rom);
+                p.Name = "OAMREGS Count_" + ((p.Length - 2) / (3 * 2));
+
+                this.AsmMap[d] = p;
+            }
+            return addr - startAddr;
+        }
+        uint ScanSECONDARYOAMTable(uint pointer, ROM rom)
+        {
+            uint startAddr = U.toOffset(pointer);
+            uint addr = startAddr;
+            for (; addr < rom.Data.Length; addr += 4)
+            {
+                uint d = Program.ROM.u32(addr);
+                if (!U.isSafetyPointer(d))
+                {
+                    break;
+                }
+
+                AsmMapSt p = new AsmMapSt();
+                p.Length = 14;
+                p.Name = "SECONDARYOAM";
+
+                this.AsmMap[d] = p;
+            }
+            return addr - startAddr;
+        }
+
+
         void TypeToLengthAndName(AsmMapSt p,uint pointer, ROM rom)
         {
             string type = p.TypeName;
@@ -669,6 +711,10 @@ namespace FEBuilderGBA
             {
                 p.Length = U.OAMREGSLength(U.toOffset(pointer), rom);
                 p.Name += " Count_" + ((p.Length - 2) / (3 * 2));
+            }
+            else if (type == "OAMREGS_ARRAY")
+            {
+                p.Length = ScanOAMREGSTable(pointer, rom);
             }
             else if (type == "TEXTBATCH")
             {
@@ -720,6 +766,15 @@ namespace FEBuilderGBA
             {
                 p.Length = ImageUtilAP.CalcPopupSimpleLength(U.toOffset(pointer), rom);
             }
+            else if (type == "SECONDARYOAM")
+            {
+                p.Length = 14;
+            }
+            else if (type == "SECONDARYOAM_ARRAY")
+            {
+                p.Length = ScanSECONDARYOAMTable(pointer,rom);
+            }
+            
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
