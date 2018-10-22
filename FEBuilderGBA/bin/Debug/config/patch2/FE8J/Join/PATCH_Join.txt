@@ -9,3 +9,7 @@ EA=EA.txt
 INFO=ユニットを救出するのではなく、相手側から同行で救出してもらうことができるようになります。\r\nこのコマンドは"奏でる"を""同行"に変化させます。\r\n
 
 AUTHOR=aera
+NAME.en=Tangential command
+INFO.en=Instead of rescuing units, you will be able to rescue them from the other side with you.\r\nThis command changes "playing" to "accompanying".\r\n
+NAME.zh=切线命令
+INFO.zh=您可以从另一侧救出他们，而不是救出单位。\r\n此命令将“播放”更改为“伴随”。\r\n

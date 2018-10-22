@@ -311,15 +311,15 @@
 080174F4	加载项目信息谜	ITEMPACK r0=耐力计数<< 8 | Item ID例如=铁剑耐久=46==2E01	{U}
 080162e8	从项目ID获取耐久性	ITEMPACK耐力计数<< 8 | Item ID例如=铁剑耐久=46==2E01	r0=项目ID	{J}
 08016540	从项目ID获取耐久性	ITEMPACK耐力计数<< 8 | Item ID例如=铁剑耐久=46==2E01	r0=项目ID	{U}
-080319D0	阅读体育场对手的信息	{J}
-080d6908	在体育场内画武器的例程	r0=店铺=3007 d 7 cr1 =武器属性列表80 DCC 90r 2 =伙伴分类ID	{J}
-080D1C0C	在体育场内画武器的例程	r0=商店r1 =属性武器清单r 2 =伙伴分类ID	{U}
+080319D0	阅读竞技场对手的信息	{J}
+080d6908	在竞技场内画武器的例程	r0=店铺=3007 d 7 cr1 =武器属性列表80 DCC 90r 2 =伙伴分类ID	{J}
+080D1C0C	在竞技场内画武器的例程	r0=商店r1 =属性武器清单r 2 =伙伴分类ID	{U}
 08031abc	在竞技场的装甲决定例程	{J}
 08031B70	在竞技场的装甲决定例程	{U}
-08031800	决定在体育场的武器更正？	{J}
-080318B4	决定在体育场的武器更正？	{U}
+08031800	决定在竞技场的武器更正？	{J}
+080318B4	决定在竞技场的武器更正？	{U}
 0203A8F9	对手在场馆的武器更正	{J}
-03007d7c	体育场内对手的武器（确定数据）	{J}
+03007d7c	竞技场内对手的武器（确定数据）	{J}
 080D67D0	师往下（Div）	{J}
 080D1AD4	师往下（Div）	{U}
 080D16AC	RegisterRamReset	{U}
@@ -327,7 +327,7 @@
 080D18FC	2区往下（Div）	{U}
 08031B0C	排列在领域的武器	{J}
 08031BC0	排列在领域的武器	{U}
-0203A8F0	体育场的临时数据	{U}
+0203A8F0	竞技场的临时数据	{U}
 0807ee68	在战斗中获得角色MISS	{J}
 0807eec4	没有在战斗获得角色伤害	{J}
 0807CB24	在战斗中获得角色MISS	{J}
@@ -7370,8 +7370,8 @@ r3=X tile position of menu of the right	{U}
 08086BB8	准备攻击的背景	{U}
 08088FA4	支持对话的背景	{J}
 08086CE8	支持对话的背景	{U}
-08097E74	通信体育场禁止的单位确定	{U}
-0809A14C	通信体育场禁止的单位确定	{J}
+08097E74	通信竞技场禁止的单位确定	{U}
+0809A14C	通信竞技场禁止的单位确定	{J}
 08086AC4	获取支持对话结构的起始位置	{J}
 080847F8	获取支持对话结构的起始位置	{U}
 08086A58	用于支持会话的BGM的指定	但是，要播放的歌曲仅限于ID。基本上无法使用	{J}
@@ -8446,3 +8446,33 @@ r3=X tile position of menu of the right	{U}
 08591430	:0859146F	Unk OAMREGS TABLE4	{U}
 080DCDD8	:080DCE53	AI Script ASM Table	{J}
 080D80FC	:080D8177	AI Script ASM Table	{U}
+0859B938	&SECONDARYOAM_ARRAY	Secondary OAM Array	1	{U}
+0859B898	&SECONDARYOAM_ARRAY	Secondary OAM Array	2	{U}
+0859B7F4	&SECONDARYOAM_ARRAY	Secondary OAM Array	3	{U}
+0859B858	&SECONDARYOAM_ARRAY	Secondary OAM Array	4	{U}
+0859B968	&SECONDARYOAM	Secondary OAM 1	{U}
+085921AC	&SECONDARYOAM	Secondary OAM 2	{U}
+0859B144	&SECONDARYOAM	Secondary OAM 3	{U}
+0802792C	&SECONDARYOAM	Secondary OAM 4	{U}
+08A2E986	&SECONDARYOAM	Secondary OAM 5	{U}
+08A39498	&SECONDARYOAM	Secondary OAM 6	{U}
+080ba788	竞技场	显示衬线	{J}
+080BA51C	竞技场	服务入口	{J}
+080BA550	竞技场	显示溢价	{J}
+080BA570	竞技场	显示对手	{J}
+080BA5BC	竞技场	支付保费	{J}
+080BA600	竞技场	“可以用B按钮取消”的衬线	{J}
+080BA614	竞技场	取消	冷静或消失	{J}
+080BA624	竞技场	播放长岭的声音	{J}
+080BA638	竞技场	战斗开始	{J}
+080BA69C	竞技场	赢或输的结果	{J}
+080B5C04	竞技场	显示衬线	{U}
+080B5998	竞技场	服务入口	{U}
+080B59CC	竞技场	显示溢价	{U}
+080B59EC	竞技场	显示对手	{U}
+080B5A38	竞技场	支付保费	{U}
+080B5A78	竞技场	“可以用B按钮取消”的衬线	{U}
+080B5A8C	竞技场	取消	冷静或消失	{U}
+080B5AA0	竞技场	播放长岭的声音	{U}
+080B5AB4	竞技场	战斗开始	{U}
+080B5B18	竞技场	赢或输的结果	{U}
