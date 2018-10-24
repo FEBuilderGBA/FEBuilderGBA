@@ -2076,7 +2076,7 @@
 02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.	{U}
 0808CCC8	MMBSetup	This is the main routine for setting up the minimug box. It determines where to put the box and the things on it.	{U}
 0202E4D8	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.	{U}
-08A01828	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{U}
+08A01828	:08A0185F	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{U}
 08A018AC	MMBStructType	This is the type of 0x6C struct used when drawing the box.	{U}
 0859A5D0	:0859A9D8	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM	{U}
 0808BBCC	WindowPosCheck	This returns 0-3 based on cursor position. Uses the same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{U}
@@ -2164,7 +2164,7 @@
 0808EFC4	MMBSetup	This is the main routine for setting up the minimug box. It determines where to put the box and the things on it.	{J}
 0202BCAC	MiscRAMData	This section of memory has information on cursor position,  phases, chapter number, gold, and a bunch of other things	{J}
 0202E4D4	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.	{J}
-08A738E0	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{J}
+08A738E0	:08A73917	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{J}
 08A73964	MMBStructType	This is the type of 0x6C struct used when drawing the box.	{J}
 085C2A50	:085C2E58	RAMSlotTable	This is a table of pointers, with one for every deployment slot in RAM	{J}
 0808DEDC	WindowPosCheck	This returns 0-3 based on cursor position. Uses the same misc. RAM data. This function is used by all window elements. here (goal, terrain, minimug), so don't edit it.	{J}
@@ -2417,7 +2417,6 @@
 08003e58	Text_Advance	{U}
 08003e60	Text_SetColorId	{U}
 08003e64	Text_GetColorId	{U}
-08003e68	Text_SetParameters	{U}
 08003e70	Text_Draw	{U}
 08003ebc	Text_DrawBlank	{U}
 08003edc	GetStringTextWidth	{U}
@@ -4235,7 +4234,6 @@
 08003D88	Text_Advance	{J}
 08003D90	Text_SetColorId	{J}
 08003D94	Text_GetColorId	{J}
-08003D98	Text_SetParameters	{J}
 08003DA0	Text_Draw	{J}
 08003DEC	Text_DrawBlank	{J}
 08003E0C	GetStringTextWidth	{J}
@@ -8460,3 +8458,84 @@
 080B5AA0	闘技場	チャンリンという音を再生する	{U}
 080B5AB4	闘技場	戦闘開始	{U}
 080B5B18	闘技場	勝敗の結果のセリフ	{U}
+08A1DDD4	&LZ77	何か小さい圧縮データ	108	{J}
+089AD74C	&LZ77	何か小さい圧縮データ	108	{U}
+08A595A4	&HEADERTSA	何かのTSA	20	未使用	{J}
+08A98838	&HEADERTSA	何かのTSA	21	未使用	{J}
+08A1BDA0	&HEADERTSA	何かのTSA	21	未使用	{U}
+08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{J}
+08A20650	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{U}
+08A9E470	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{J}
+08A21508	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{U}
+085C2940	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{J}
+0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{U}
+085C29BC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{J}
+0859A530	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{U}
+085C662C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{J}
+0859E14C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{U}
+085D35EC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{J}
+085A96E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{U}
+085D35DC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{J}
+085A96D4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{U}
+085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{J}
+085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{U}
+085D4B54	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{J}
+085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{U}
+085D4B80	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{J}
+085AAADC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{U}
+080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{J}
+080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{U}
+085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{J}
+085AABB8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{U}
+085E0678	&OAMREGS	OAMREGS	{J}
+085B6498	&OAMREGS	OAMREGS	{U}
+08A60AD4	&OAMREGS	OAMREGS	{J}
+089EE99C	&OAMREGS	OAMREGS	{U}
+08A72414	&EVENT	空のイベント	1	{J}
+08A7241C	&EVENT	空のイベント	2	{J}
+085C4144	&EVENT	チュートリアル	持ち物交換	1	{J}
+085C4188	&EVENT	チュートリアル	持ち物交換	2	{J}
+085C41D4	&EVENT	チュートリアル	持ち物交換	3	{J}
+085C4220	&EVENT	チュートリアル	持ち物交換	4	{J}
+085D3E50	&EVENT	デバッグ用	セーブデータをすべて消去しますか？	{J}
+085D4358	&EVENT	通信闘技場	降伏しますか？	{J}
+085D437C	&EVENT	通信闘技場	ダメージが与えられません。終了しますか？	{J}
+08A71E1C	&EVENT	デバッグ用	謎の分岐	{J}
+08A71FC0	&EVENT	デバッグ用	分岐	1	{J}
+08A72038	&EVENT	デバッグ用	分岐	2	{J}
+08A720E0	&EVENT	デバッグ用	分岐	3	{J}
+08A7214C	&EVENT	デバッグ用	分岐	4	{J}
+08A721E8	&EVENT	デバッグ用	分岐	5	{J}
+08A72258	&EVENT	デバッグ用	分岐	6	{J}
+08A7230C	&EVENT	デバッグ用	分岐	7	{J}
+08A7239C	&EVENT	デバッグ用	分岐	8	{J}
+08A721E8	&EVENT	デバッグ用	分岐	9	{J}
+08A72258	&EVENT	デバッグ用	分岐	10	{J}
+08A72408	&EVENT	デバッグ用	分岐	11	{J}
+0804874C	セーブデータをすべて消去する	{J}
+0804C46C	通信闘技場	戦闘終了	{J}
+08A0035C	&EVENT	空のイベント	1	{U}
+089FFC30	&EVENT	空のイベント	2	{U}
+0859BC64	&EVENT	チュートリアル	持ち物交換	1	{U}
+0859BCA8	&EVENT	チュートリアル	持ち物交換	2	{U}
+0859BCF4	&EVENT	チュートリアル	持ち物交換	3	{U}
+0859BD40	&EVENT	チュートリアル	持ち物交換	4	{U}
+085A9F48	&EVENT	デバッグ用	セーブデータをすべて消去しますか？	{U}
+085AA2B4	&EVENT	通信闘技場	降伏しますか？	{U}
+085AA2D8	&EVENT	通信闘技場	ダメージが与えられません。終了しますか？	{U}
+089FFC30	&EVENT	デバッグ用	謎の分岐	{U}
+089FFE84	&EVENT	デバッグ用	分岐	1	{U}
+089FFF14	&EVENT	デバッグ用	分岐	2	{U}
+089FFF8C	&EVENT	デバッグ用	分岐	3	{U}
+08A00034	&EVENT	デバッグ用	分岐	4	{U}
+08A000A0	&EVENT	デバッグ用	分岐	5	{U}
+08A0013C	&EVENT	デバッグ用	分岐	6	{U}
+08A001AC	&EVENT	デバッグ用	分岐	7	{U}
+08A00260	&EVENT	デバッグ用	分岐	8	{U}
+08A000A0	&EVENT	デバッグ用	分岐	9	{U}
+08A0013C	&EVENT	デバッグ用	分岐	10	{U}
+08A002F0	&EVENT	デバッグ用	分岐	11	{U}
+0804874C	セーブデータをすべて消去する	{U}
+0804B6CC	通信闘技場	戦闘終了	{U}
+0809B600	進撃準備画面のアイテム整理メニューの描画	{J}
+08099328	進撃準備画面のアイテム整理メニューの描画	{U}

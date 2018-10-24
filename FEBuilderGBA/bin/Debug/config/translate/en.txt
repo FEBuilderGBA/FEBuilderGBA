@@ -4324,8 +4324,11 @@ It is a comment you can set freely.\r\nPlease use it for memo during development
 :デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。
 Stores symbols for debugging as comments.\r\nEmbedding symbols is a hint for disassembling and debugging.\r\nThis content is not saved in ROM.It is recorded in the following file.
 
-:チェックをつけると、LOW命令を表示します。\r\n\r\nLOW命令は、は低レイヤーの命令です。通常は利用しないでください。\r\n他の命令と組み合わせたり、命令の内部で利用される命令たちです。
-When checked, the LOW instruction is displayed.\r\n\r\nThe LOW instruction is a low layer instruction.Please do not use usually.\r\nThey are instructions combined with other instructions and used inside the instruction.
+:武器を使用できる武器レベルを指定します。\r\nこのレベル以上であれば、武器を利用できます。
+Specify the weapon level that weapons can be used.\r\nYou can use weapons if you are above this level.
+
+:武器の射程を指定します。\r\n右側のリストから、射程を選択することができます。\r\n\r\nリストにない射程の武器を作りたい場合は、数字を直接入力してください。\r\n最大射程と最少射程を16進数で書き込みます。\r\n例えば、最小射程が「5」で、最大射程「10」、だったとしたら、「5A」になります。
+Specify the range of the weapon.\r\nFrom the list on the right you can select the range.\r\n\r\nIf you want to create a range weapon that is not on the list, please enter the number directly.\r\nWrite maximum range and minimum range in hexadecimal.\r\nFor example, if the minimum range is "5" and the maximum range is "10\
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -4341,6 +4344,9 @@ Paste(&V)
 
 :編集画面を出す(ENTER)
 Display the editing screen (ENTER)
+
+:読み上げ
+Text to Speech
 
 :ジャンプ2
 Jump 2
@@ -5278,8 +5284,8 @@ Beginners recommend that you do not change staffs or items.
 :既存のROMに存在する間接攻撃した場合に呼び出されるASM関数を設定します。
 Edit the ASM function called when an indirect attack exists in the existing ROM.
 
-:神将器/双聖器の設定を行います。
-Edit the Sacred Treasure.
+:神将器/双聖器の設定を行います。\r\n武器レベルSでの必殺率の設定も行えます。
+Edit the Sacred Treasure.\r\nand Edit the rate at Weapon Level S.
 
 :会話イベントで表示される背景画像の設定を行います。
 Edit the background image displayed in the conversation event.
@@ -5413,8 +5419,8 @@ A unit with summoning skill sets a unit that can be summoned.
 :魔王が呼魔で呼び出すことができるモンスターの設定を行います。
 Edit the monsters that can be Summoned by demon king.
 
-:ゲーム中に利用されるさまざな画像の設定を行えます。
-Edit the various images to be used during the game.
+:ゲーム中に利用されるさまざな画像の設定を行えます。\r\nユニットや敵、友軍、アイテムのパレット\r\nシステムメニューの外観\r\n攻撃範囲や移動範囲の色指定\r\nステータス異常(バッドステータス)
+Edit the various images to be used during the game.\r\nEdit the palette of Unit, enemy, ally(green) and item\r\nSystem menu appearance\r\nAttack range and movement range color specification\r\nStatus error/sick (bad status).
 
 :ワールドマップの道の形を定義します。
 Edit the shape of the world map road.
@@ -5560,7 +5566,7 @@ For each terrain, set the background image of the battle animation.
 :ゲームの設定オプション項目を変更できます。
 You can change the setting option items of the game.
 
-:ファイルが見つかりませんか
+:ファイルが見つかりません
 File not found
 
 :指定されたROMは無改造ROMではありません。CRC32が一致しません。
@@ -6972,6 +6978,24 @@ Action Pointer When Selected
 
 :キャンセルされたときの動作ポインタ
 Action Pointer When Canceled
+
+:この項目をメニューに表示するかどうかを決定する関数を指定します。\r\nこの関数の戻り値(r0)が1だった場合、この項目がメニューが表示されます。\r\n戻り値(r0)が3だった場合は、メニューが表示されません。\r\nこの項目は必須項目です。
+Specify a function to decide whether to display this item on the menu.\r\nIf the return value (r 0) of this function is 1, a menu will be displayed for this item.\r\nIf the return value (r 0) is 3, the menu will not be displayed.\r\nThis item is a mandatory item.
+
+:この項目を描画するときに利用する関数を指定します。\r\n0の場合は、デフォルト描画が呼び出されます。単純にテキストを描画します。
+Specify the function to use when drawing this item.\r\nIf 0, the default drawing is called.Simply draw the text.
+
+:この項目が選択された時に動作させる関数を指定します。\r\nこの項目は必須項目です。
+Specify the function to be operated when this item is selected.\r\nThis item is a mandatory item.
+
+:この項目を選んでいる時に毎ターン呼び出すルーチンを指定します。\r\n0の場合ディフォルト動作になります。
+Specify the routine to call every turn when this item is selected.\r\nWhen it is 0, it defaults to operation.
+
+:この項目をカーソルで選択された時に呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。
+Specify the routine called when this item is selected with the cursor.\r\nWhen it is 0, it defaults to operation.
+
+:メニューがキャンセルされたときに呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。
+Specifies the routine to be called when the menu is canceled.\r\nWhen it is 0, it defaults to operation.
 
 :00=普通
 00=Usually
@@ -9564,6 +9588,27 @@ Where this text is used
 
 :テキスト-エスケープコード選択
 Text - Escape code selection
+
+:合成音声エンジンで自動的にテキストを読み上げます。\r\nタイプミスを見つけるには音読するのが一番です。
+The synthetic voice engine automatically reads the text.\r\nIt is best to read aloud to find typos.
+
+:読み上げ開始
+Start Text to Speech
+
+:読み上げ停止
+Stop Speech
+
+:読み上げ速度
+Speech speed
+
+:このサイズ以上の文字列を読み上げる
+Speak that is larger than this size
+
+:読み上げエンジン
+Speech Engine
+
+:読み上げ設定
+Speech Setting
 
 :アニメーションエディタ
 Animation editor

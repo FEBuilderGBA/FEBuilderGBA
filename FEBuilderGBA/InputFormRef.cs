@@ -10530,9 +10530,13 @@ namespace FEBuilderGBA
             {
                 str = R._("デバッグ用のシンボルをコメントとして格納します。\r\nシンボルを埋め込むと、逆アセンブルやデバッグのヒントになります。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。") + "\r\nconfig/etc/ROMNAME/comment_.txt";
             }
-            else if (str == "@SHOW_LOW_COMMAND")
+            else if (str == "@ITEM_WLEVEL")
             {
-                str = R._("チェックをつけると、LOW命令を表示します。\r\n\r\nLOW命令は、は低レイヤーの命令です。通常は利用しないでください。\r\n他の命令と組み合わせたり、命令の内部で利用される命令たちです。") ;
+                str = R._("武器を使用できる武器レベルを指定します。\r\nこのレベル以上であれば、武器を利用できます。") ;
+            }
+            else if (str == "@ITEM_RANGE")
+            {
+                str = R._("武器の射程を指定します。\r\n右側のリストから、射程を選択することができます。\r\n\r\nリストにない射程の武器を作りたい場合は、数字を直接入力してください。\r\n最大射程と最少射程を16進数で書き込みます。\r\n例えば、最小射程が「5」で、最大射程「10」、だったとしたら、「5A」になります。");
             }
             else
             {
@@ -10721,6 +10725,43 @@ namespace FEBuilderGBA
 
             listbox.ContextMenu = contextMenu;
         }
+        public static void MakeEditListboxContextMenuText(ListBox listbox, KeyEventHandler keydownfunc)
+        {
+            ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
+            MenuItem menuItem;
+            menuItem = new MenuItem(R._("元に戻す(&Z)"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Z));
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem("-");
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem(R._("削除(DEL)"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Delete));
+            contextMenu.MenuItems.Add(menuItem);
+            menuItem = new MenuItem(R._("コピー(&C)"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.C));
+            contextMenu.MenuItems.Add(menuItem);
+            menuItem = new MenuItem(R._("貼り付け(&V)"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.V));
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem("-");
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem(R._("読み上げ"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Alt  | Keys.O));
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem("-");
+            contextMenu.MenuItems.Add(menuItem);
+
+            menuItem = new MenuItem(R._("編集画面を出す(ENTER)"));
+            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Enter));
+            contextMenu.MenuItems.Add(menuItem);
+
+            listbox.ContextMenu = contextMenu;
+        }
 
         public static void MakeEditListboxContextMenuN(ListBox listbox, KeyEventHandler keydownfunc, KeyEventHandler parentFormKeydownfunc , bool useTemplate)
         {
@@ -10761,7 +10802,7 @@ namespace FEBuilderGBA
                 contextMenu.MenuItems.Add(menuItem);
 
                 menuItem = new MenuItem(R._("テンプレート(&T)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(listbox,keydownfunc, Keys.Control | Keys.T));
+                menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Alt  | Keys.T));
                 contextMenu.MenuItems.Add(menuItem);
             }
 

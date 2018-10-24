@@ -203,6 +203,12 @@
     <Compile Include="RegexCache.cs" />
     <Compile Include="SymbolUtil.cs" />
     <Compile Include="TextID.cs" />
+    <Compile Include="TextToSpeechForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextToSpeechForm.Designer.cs">
+      <DependentUpon>TextToSpeechForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolAnimationCreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1876,6 +1882,9 @@
     <EmbeddedResource Include="RAMUnitStateFlagForm.resx">
       <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextToSpeechForm.resx">
+      <DependentUpon>TextToSpeechForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolAnimationCreatorForm.resx">
       <DependentUpon>ToolAnimationCreatorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2629,6 +2638,17 @@
     <EmbeddedResource Include="StatusOptionForm.resx">
       <DependentUpon>StatusOptionForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SpeechLib">
+      <Guid>{D3C4A7F2-7D27-4332-B41F-593D71E16DB1}</Guid>
+      <VersionMajor>11</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

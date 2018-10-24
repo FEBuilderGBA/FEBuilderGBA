@@ -40,6 +40,8 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             string[] args = new string[0];
 
+            SetSpeechIcon();
+
             InputFormRef.makeLinkEventHandler("", controls, this.BGM, this.BGMName, 0, "SONG", args);
             InputFormRef.makeJumpEventHandler(this.BGM, this.J_BGM, "SONG", args);
 
@@ -258,6 +260,7 @@ namespace FEBuilderGBA
 
                 FETextDecode decoder = new FETextDecode();
                 string lowText = decoder.UnHffmanPatchDecodeLow(strbin);
+                Speech(lowText);
                 lowText = TextForm.ConvertEscapeText(lowText);
                 CurrentTextBox.Text = lowText;
             }
@@ -844,6 +847,11 @@ namespace FEBuilderGBA
             {
                 this.YubiYokoCursor.Dispose();
                 this.YubiYokoCursor = null;
+            }
+            if (IsAutoSpeech)
+            {
+                TextToSpeechForm.Stop();
+                IsAutoSpeech = false;
             }
         }
 
@@ -1941,6 +1949,26 @@ namespace FEBuilderGBA
         private void Party_CloseButton_Click(object sender, EventArgs e)
         {
             Party_ControlPanel.Hide();
+        }
+
+        bool IsAutoSpeech = false;
+        private void SpeechButton_Click(object sender, EventArgs e)
+        {
+            IsAutoSpeech = TextToSpeechForm.OptionTextToSpeech(CurrentTextBox.Text2, true);
+            SetSpeechIcon();
+        }
+        void SetSpeechIcon()
+        {
+            U.SetIcon(SpeechButton, U.GetShell32Icon(138));
+        }
+        void Speech(string text)
+        {
+            if (!IsAutoSpeech)
+            {
+                return;
+            }
+            text = TextForm.StripAllCode(text);
+            TextToSpeechForm.Speak(text);
         }
     }
 }

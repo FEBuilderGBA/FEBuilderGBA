@@ -1085,6 +1085,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "TextForm";
             this.Text = "テキスト";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TextForm_FormClosed);
             this.Load += new System.EventHandler(this.TextForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextForm_KeyDown);
             this.AddressPanel.ResumeLayout(false);

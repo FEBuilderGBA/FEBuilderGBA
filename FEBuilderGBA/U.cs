@@ -4798,7 +4798,7 @@ namespace FEBuilderGBA
                 return 0;
             }
             uint count = rom.u16(addr);
-            Debug.Assert(count <= 0x14);
+//            Debug.Assert(count <= 0x14);
 
             return 2 + count * 2 * 3;
         }

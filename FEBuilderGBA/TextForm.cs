@@ -52,12 +52,14 @@ namespace FEBuilderGBA
             InitRichEditEx(this.TextListSpTextTextBox);
             InitRichEditEx(this.TextListSpSerifuTextBox);
 
-            InputFormRef.MakeEditListboxContextMenu(this.TextList, this.TextList_KeyDown);
+            InputFormRef.MakeEditListboxContextMenuText(this.TextList, this.TextList_KeyDown);
             U.SetIcon(Export, U.GetShell32Icon(122));
             U.SetIcon(Import, U.GetShell32Icon(45));
         }
         void InitRichEditEx(RichTextBoxEx editor)
         {
+            editor.AppendContentMenuBar();
+            editor.AppendContentMenu(R._("読み上げ"), new EventHandler(OptionTextToSpeechByRichText));
             editor.AppendContentMenuBar();
             editor.AppendContentMenu(R._("エスケープコード(&N)"), new EventHandler(SelectEscapeText));
             editor.CutCallback += OnPasteOrUndoOrCutText;
@@ -1635,6 +1637,10 @@ namespace FEBuilderGBA
                 ShowFloatingControlpanel();
                 return;
             }
+            else if (e.Control && e.Alt && e.KeyCode == Keys.O)
+            {
+                TextToSpeechForm.OptionTextToSpeech(this.TextArea.Text2);
+            }
 
             int i = this.TextList.SelectedIndex;
             if (i < 0)
@@ -1657,7 +1663,19 @@ namespace FEBuilderGBA
                 RemoveButton_Click(null, null);
             }
         }
-
+        void OptionTextToSpeechByRichText(Object sender, EventArgs e)
+        {
+            if ((sender is MenuItem))
+            {
+                sender = ((MenuItem)sender).GetContextMenu().SourceControl;
+            }
+            if (!(sender is RichTextBoxEx))
+            {
+                return;
+            }
+            RichTextBoxEx editor = (RichTextBoxEx)sender;
+            TextToSpeechForm.OptionTextToSpeech(editor.Text2);
+        }
 
         public const int MAX_SERIF_WIDTH = 224;
         private void TextListSpSerifuTextBox_TextChanged(object sender, EventArgs e)
@@ -3077,6 +3095,11 @@ namespace FEBuilderGBA
             {
                 KeywordHighLight((RichTextBoxEx)sender);
             }
+        }
+
+        private void TextForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TextToSpeechForm.Stop();
         }
     }
 }

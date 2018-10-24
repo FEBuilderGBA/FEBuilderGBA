@@ -676,6 +676,7 @@
             // 
             // label42
             // 
+            this.label42.AccessibleDescription = "@ITEM_WLEVEL";
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label42.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -975,6 +976,7 @@
             // 
             // label13
             // 
+            this.label13.AccessibleDescription = "@ITEM_RANGE";
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Cursor = System.Windows.Forms.Cursors.Arrow;

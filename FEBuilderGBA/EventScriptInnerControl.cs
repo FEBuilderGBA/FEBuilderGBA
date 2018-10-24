@@ -2807,7 +2807,7 @@ namespace FEBuilderGBA
                 ShowFloatingControlpanel();
                 return;
             }
-            else if (e.Control && e.KeyCode == Keys.T)
+            else if (e.Control && e.Alt && e.KeyCode == Keys.T)
             {
                 UseTemplate();
             }

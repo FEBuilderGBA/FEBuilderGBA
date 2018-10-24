@@ -14,6 +14,7 @@ namespace FEBuilderGBA
         public MenuCommandForm()
         {
             InitializeComponent();
+            Explain();
             InputFormRef.OwnerDrawColorCombo(L_8_COMBO);
 
             List<U.AddrResult> menuDefineList = MenuDefinitionForm.MakeListAll();
@@ -244,6 +245,16 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(pointer);
             TextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
+        }
+
+        void Explain()
+        {
+            J_12_ASM.AccessibleDescription = R._("この項目をメニューに表示するかどうかを決定する関数を指定します。\r\nこの関数の戻り値(r0)が1だった場合、この項目がメニューが表示されます。\r\n戻り値(r0)が3だった場合は、メニューが表示されません。\r\nこの項目は必須項目です。");
+            J_16_ASM.AccessibleDescription = R._("この項目を描画するときに利用する関数を指定します。\r\n0の場合は、デフォルト描画が呼び出されます。単純にテキストを描画します。");
+            J_20_ASM.AccessibleDescription = R._("この項目が選択された時に動作させる関数を指定します。\r\nこの項目は必須項目です。");
+            J_24_ASM.AccessibleDescription = R._("この項目を選んでいる時に毎ターン呼び出すルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
+            J_28_ASM.AccessibleDescription = R._("この項目をカーソルで選択された時に呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
+            J_32_ASM.AccessibleDescription = R._("メニューがキャンセルされたときに呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
         }
     }
 }

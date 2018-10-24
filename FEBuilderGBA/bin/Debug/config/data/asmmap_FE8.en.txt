@@ -8542,3 +8542,72 @@ r3=X tile position of menu of the right	{U}
 080B5AA0	Arena	Play Changling's sound	{U}
 080B5AB4	Arena	Combat start	{U}
 080B5B18	Arena	Serve as a result of winning or losing	{U}
+08A1DDD4	&LZ77	Something small compressed data	108	{J}
+089AD74C	&LZ77	Something small compressed data	108	{U}
+08A595A4	&HEADERTSA	Something's TSA	20	unused	{J}
+08A98838	&HEADERTSA	Something's TSA	21	unused	{J}
+08A1BDA0	&HEADERTSA	Something's TSA	21	unused	{U}
+08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{J}
+08A20650	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{U}
+08A9E470	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{J}
+08A21508	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{U}
+085C2940	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{J}
+0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{U}
+085C29BC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{J}
+0859A530	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{U}
+085C662C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{J}
+0859E14C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{U}
+085D35EC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{J}
+085A96E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{U}
+085D35DC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{J}
+085A96D4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{U}
+085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{J}
+085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{U}
+085D4B54	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{J}
+085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{U}
+085D4B80	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{J}
+085AAADC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{U}
+080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{J}
+080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{U}
+085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{J}
+085AABB8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{U}
+085E0678	&OAMREGS	OAMREGS	{J}
+085B6498	&OAMREGS	OAMREGS	{U}
+08A60AD4	&OAMREGS	OAMREGS	{J}
+089EE99C	&OAMREGS	OAMREGS	{U}
+08A72414	&EVENT	Empty event	1	{J}
+08A7241C	&EVENT	Empty event	2	{J}
+085C4144	&EVENT	Tutorial	Inventory change	1	{J}
+085C4188	&EVENT	Tutorial	Inventory change	2	{J}
+085C41D4	&EVENT	Tutorial	Inventory change	3	{J}
+085C4220	&EVENT	Tutorial	Inventory change	4	{J}
+085D3E50	&EVENT	For debugging	Would you like to delete all saved data?	{J}
+085D4358	&EVENT	Communication stadium	Do you surrender?	{J}
+085D437C	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{J}
+08A71E1C	&EVENT	For debugging	Mysterious branch	{J}
+08A71FC0	&EVENT	For debugging	Branch	1	{J}
+08A72038	&EVENT	For debugging	Branch	2	{J}
+08A720E0	&EVENT	For debugging	Branch	3	{J}
+08A7214C	&EVENT	For debugging	Branch	4	{J}
+08A721E8	&EVENT	For debugging	Branch	5	{J}
+08A72258	&EVENT	For debugging	Branch	6	{J}
+08A7230C	&EVENT	For debugging	Branch	7	{J}
+08A7239C	&EVENT	For debugging	Branch	8	{J}
+08A721E8	&EVENT	For debugging	Branch	9	{J}
+08A72258	&EVENT	For debugging	Branch	10	{J}
+08A72408	&EVENT	For debugging	Branch	11	{J}
+0804874C	Delete all saved data	{J}
+0804C46C	Communication stadium	Battle end	{J}
+089FFC30	&EVENT	Empty event	2	{U}
+0859BC64	&EVENT	Tutorial	Inventory change	1	{U}
+0859BCA8	&EVENT	Tutorial	Inventory change	2	{U}
+0859BCF4	&EVENT	Tutorial	Inventory change	3	{U}
+0859BD40	&EVENT	Tutorial	Inventory change	4	{U}
+085A9F48	&EVENT	For debugging	Would you like to delete all saved data?	{U}
+085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
+085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
+089FFC30	&EVENT	For debugging	Mysterious branch	{U}
+0804874C	Delete all saved data	{U}
+0804B6CC	Communication stadium	Battle end	{U}
+0809B600	Drawing the item arrangement menu on the attack advancement screen	{J}
+08099328	Drawing the item arrangement menu on the attack advancement screen	{U}

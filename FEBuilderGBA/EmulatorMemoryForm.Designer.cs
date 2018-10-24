@@ -35,6 +35,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.EventPage = new System.Windows.Forms.TabPage();
+            this.SpeechButton = new System.Windows.Forms.Button();
             this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.RunningEventListBox = new FEBuilderGBA.ListBoxEx();
@@ -670,6 +671,7 @@
             // EventPage
             // 
             this.EventPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EventPage.Controls.Add(this.SpeechButton);
             this.EventPage.Controls.Add(this.CurrentTextBox);
             this.EventPage.Controls.Add(this.N_SelectAddress);
             this.EventPage.Controls.Add(this.RunningEventListBox);
@@ -691,6 +693,15 @@
             this.EventPage.Size = new System.Drawing.Size(1646, 888);
             this.EventPage.TabIndex = 0;
             this.EventPage.Text = "イベント";
+            // 
+            // SpeechButton
+            // 
+            this.SpeechButton.Location = new System.Drawing.Point(509, 221);
+            this.SpeechButton.Name = "SpeechButton";
+            this.SpeechButton.Size = new System.Drawing.Size(46, 32);
+            this.SpeechButton.TabIndex = 310;
+            this.SpeechButton.UseVisualStyleBackColor = true;
+            this.SpeechButton.Click += new System.EventHandler(this.SpeechButton_Click);
             // 
             // CurrentTextBox
             // 
@@ -6552,5 +6563,6 @@
         private InterpolatedPictureBox PARTY_PORTRAIT;
         private TextBoxEx PARTY_AI2_TEXT;
         private TextBoxEx PARTY_AI1_TEXT;
+        private System.Windows.Forms.Button SpeechButton;
     }
 }

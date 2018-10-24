@@ -1733,7 +1733,7 @@ namespace FEBuilderGBA
             }
             if (name == "ItemEtcButton")
             {
-                return R._("神将器/双聖器の設定を行います。");
+                return R._("神将器/双聖器の設定を行います。\r\n武器レベルSでの必殺率の設定も行えます。");
             }
             if (name == "ImageBGButton")
             {
@@ -1837,11 +1837,11 @@ namespace FEBuilderGBA
                 string str = R._("必ず出撃しなければいけないユニットを設定します。");
                 if (Program.ROM.RomInfo.version() == 7)
                 {
-                    str = R._("FE7では、このデータは一部のみ設定できます。");
+                    str = "\r\n" + R._("FE7では、このデータは一部のみ設定できます。");
                 }
                 else if (Program.ROM.RomInfo.version() == 8)
                 {
-                    str += R._("逆に出撃できないユニットを作るには、パッチを利用してください");
+                    str += "\r\n" + R._("逆に出撃できないユニットを作るには、パッチを利用してください");
                 }
                 return str;
             }
@@ -1916,7 +1916,7 @@ namespace FEBuilderGBA
             }
             if (name == "SystemIconButton")
             {
-                return R._("ゲーム中に利用されるさまざな画像の設定を行えます。");
+                return R._("ゲーム中に利用されるさまざな画像の設定を行えます。\r\nユニットや敵、友軍、アイテムのパレット\r\nシステムメニューの外観\r\n攻撃範囲や移動範囲の色指定\r\nステータス異常(バッドステータス)");
             }
             if (name == "WorldMapRoadEditorbutton")
             {
@@ -2130,7 +2130,7 @@ namespace FEBuilderGBA
         {
             if (!File.Exists(filename))
             {
-                return R._("ファイルが見つかりませんか");
+                return R._("ファイルが見つかりません");
             }
 
             U.CRC32 crc32 = new U.CRC32();
