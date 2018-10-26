@@ -8729,7 +8729,7 @@ namespace FEBuilderGBA
 
                 if (addr + this.BlockSize > limitter)
                 {//終端を超えるので探索強制打ち切り.
-                    Debug.Assert(false);
+//                    Debug.Assert(false);
                     break;
                 }
             }
@@ -10537,6 +10537,10 @@ namespace FEBuilderGBA
             else if (str == "@ITEM_RANGE")
             {
                 str = R._("武器の射程を指定します。\r\n右側のリストから、射程を選択することができます。\r\n\r\nリストにない射程の武器を作りたい場合は、数字を直接入力してください。\r\n最大射程と最少射程を16進数で書き込みます。\r\n例えば、最小射程が「5」で、最大射程「10」、だったとしたら、「5A」になります。");
+            }
+            else if (str == "@SHOW_LOW_COMMAND")
+            {
+                str = R._("チェックをつけると、低レイヤーの命令を表示します。\r\n低レイヤー命令は、他の命令と組み合わせて利用する命令なので、ディフォルトでは非表示になっています。");
             }
             else
             {

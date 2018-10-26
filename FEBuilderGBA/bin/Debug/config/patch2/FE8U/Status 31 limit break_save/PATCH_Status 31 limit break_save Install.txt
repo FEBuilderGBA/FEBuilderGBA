@@ -51,7 +51,6 @@ BIN:0x09DD10=data_c7.bin //9ffb0
 BIN:0x09E902=data_c8.bin //a0ba2
 BIN:0x0B4738=data_c7.bin //b92C0
 
-DEPRECATED=1
 
 INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を200アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
 INFO.en=Patches the ROM save game data to modify several stat caps.\r\nStats that normally cap at 31 can now reach up to 63.\r\nHP can increase up to 120 rather than 60. \r\nItem Storage space is expanded from 100 to 200.\r\nApplying this patch breaks existing Save Files, so the game must be started fresh.\r\nHINT:convoy,supply,transporter,merlinus,wagon
@@ -61,6 +60,11 @@ AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/bre
 AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/break_save
 AUTHOR.en=Program https://github.com/ngmansion/FE8/tree/master/break_save
 
+DEPRECATED=1
+UPDATE_PATCH=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
+UPDATE_METHOD=NONE
+
 CONFLICT_IF:0x0A575C=0x1F 0xFE 0xFF 0xFF
 CONFLICT_IF:0x0a533c=0x78 0x47 0xC0 0x46 0x00 0xC0 0x9F 0xE5
+CONFLICT_IF:0xA31E4=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=Class Expansion

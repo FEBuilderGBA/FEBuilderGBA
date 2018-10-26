@@ -8188,9 +8188,6 @@ It installed the "{0}" patch twice.\r\n1st ({1}), 2nd ({2})
 :ポインタ更新しています。{0}: {1}->{2}
 Pointer updated.{0}: {1} -> {2}.
 
-:新しいパッチをインストールできませんでした。
-Could not install new patch.
-
 :BINかEA以外のパッチはアップデートできません。
 Patches other than BIN or EA can not be updated.
 
@@ -8202,6 +8199,9 @@ Are you sure you want to update the current patch "{0}" to the new patch "{1}"?\
 
 :ユーザが処理をキャンセルしました。
 User canceled processing.
+
+:新しいパッチをインストールできませんでした。
+Could not install new patch.
 
 :パッチファイルを開く
 Open patch file

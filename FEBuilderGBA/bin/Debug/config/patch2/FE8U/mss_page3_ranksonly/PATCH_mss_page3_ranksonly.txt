@@ -13,3 +13,5 @@ INFO.en=Patches the ROM's Status Menu to display all 8 Weapon Ranks.\r\nCompatab
 INFO.zh=状态屏幕3显示所有武器的等级。即使你使用技能系统，它也可以工作。
 
 AUTHOR=Kirb
+CONFLICT_IF:0x18A58=0x00 0xB5 0xFE 0xF7
+CONFLICT_MESSAGE=Limit Weapon Rank Display

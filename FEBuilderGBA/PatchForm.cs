@@ -6196,64 +6196,44 @@ namespace FEBuilderGBA
             Program.ReLoadSetting();
         }
 
-
-        string UpdatePatchBySkillSystems(PatchSt patch, PatchSt new_patchSt)
+        PatchSt GetUpdatePatch(PatchSt patch,out string out_error)
         {
-            using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
+            string type = U.at(patch.Param, "TYPE");
+            if (type != "BIN" && type != "EA")
             {
-                //Export
-                string SkillAssignmentClassSkillSystem = Path.Combine(tempdir.Dir, "SkillAssignmentClassSkillSystem.tsv");
-                string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir.Dir, "SkillAssignmentUnitSkillSystem.tsv");
-                string SkillConfigSkillSystem = Path.Combine(tempdir.Dir, "SkillConfigSkillSystemForm.tsv");
-                SkillAssignmentClassSkillSystemForm.ExportAllData(SkillAssignmentClassSkillSystem);
-                SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
-                SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
+                out_error = R.Error("BINかEA以外のパッチはアップデートできません。");
+                return null;
+            }
 
-                string error = UpdatePatchByNone(patch , new_patchSt);
-                if (error != "")
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            string update_patch = U.at(patch.Param, "UPDATE_PATCH");
+            PatchSt new_patchSt;
+            if (update_patch == "")
+            {//再インストール
+                new_patchSt = patch;
+            }
+            else
+            {
+                string new_patch = Path.Combine(basedir, update_patch);
+                if (!File.Exists(new_patch))
                 {
-                    return error;
+                    out_error = R.Error("新しいパッチが存在しません。") + new_patch;
+                    return null;
                 }
-
-                //Import
-                SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
-                SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
-                SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+                new_patchSt = LoadPatch(new_patch, false);
+                if (new_patchSt == null)
+                {
+                    out_error = R.Error("新しいパッチが存在しません。") + new_patch;
+                    return null;
+                }
             }
-            return "";
+            out_error = "";
+            return new_patchSt;
         }
-        string UpdatePatchByNone(PatchSt patch, PatchSt new_patchSt)
+        void MakeDependsPatchList(List<PatchSt> dependsList, PatchSt patch)
         {
-            Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
-            ExportEmbedFunction(patch, mappingSRCEmbedFunction);
+            dependsList.Add(patch);
 
-            bool r;
-            //Uninstall
-            r = UnInstallPatch(new_patchSt , true);
-            if (!r)
-            {
-                return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", new_patchSt.PatchFileName);
-            }
-
-            //Install
-            r = ApplyPatch(new_patchSt.Name,"","",true);
-            if (!r)
-            {
-                return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
-            }
-
-            //少し時間がかかるので、しばらくお待ちください表示.
-            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
-            {
-                Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
-                ExportEmbedFunction(new_patchSt, mappingDESTEmbedFunction);
-                UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
-            }
-            return "";
-        }
-
-        void UpdateDepends(PatchSt patch)
-        {
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             foreach (var pair in patch.Param)
             {
@@ -6281,43 +6261,58 @@ namespace FEBuilderGBA
                 {//インストールしていないので関係ない
                     continue;
                 }
+
                 //このパッチもアップデート
-                UpdatePatch(depends_patchSt, true);
+                MakeDependsPatchList(dependsList , depends_patchSt);
             }
+        }
+        void ExportPatchSetting(string tempdir
+            , Dictionary<string, uint> mappingSRCEmbedFunction
+            , PatchSt patch
+            )
+        {
+            ExportEmbedFunction(patch, mappingSRCEmbedFunction);
+
+            string update_method = U.at(patch.Param, "UPDATE_METHOD");
+            if (update_method == "SKILL")
+            {
+                string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
+                string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
+                string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
+                SkillAssignmentClassSkillSystemForm.ExportAllData(SkillAssignmentClassSkillSystem);
+                SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
+                SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
+            }
+        }
+        void ImportPatchSetting(string tempdir
+            , Dictionary<string, uint> mappingDESTEmbedFunction
+            , PatchSt patch
+            )
+        {
+            string update_method = U.at(patch.Param, "UPDATE_METHOD");
+            if (update_method == "SKILL")
+            {
+                string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
+                string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
+                string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
+                SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
+                SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
+                SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+            }
+
+            ExportEmbedFunction(patch, mappingDESTEmbedFunction);
         }
 
         //バージョンアップデート
-        string UpdatePatch(PatchSt patch, bool isNoCheck)
+        string UpdatePatchUI(PatchSt patch)
         {
-            string type = U.at(patch.Param, "TYPE");
-            if (type != "BIN" && type != "EA")
             {
-                return R.Error("BINかEA以外のパッチはアップデートできません。");
-            }
-
-            string basedir = Path.GetDirectoryName(patch.PatchFileName);
-            string update_patch = U.at(patch.Param, "UPDATE_PATCH");
-            PatchSt new_patchSt;
-            if (update_patch == "")
-            {//再インストール
-                new_patchSt = patch;
-            }
-            else
-            {
-                string new_patch = Path.Combine(basedir, update_patch);
-                if (!File.Exists(new_patch))
-                {
-                    return R.Error("新しいパッチが存在しません。") + new_patch;
-                }
-                new_patchSt = LoadPatch(new_patch, false);
+                string errorMessage;
+                PatchSt new_patchSt = GetUpdatePatch(patch, out errorMessage);
                 if (new_patchSt == null)
                 {
-                    return R.Error("新しいパッチが存在しません。") + new_patch;
+                    return errorMessage;
                 }
-            }
-
-            if (!isNoCheck)
-            {
                 DialogResult dr = R.ShowYesNo("現在のパッチを「{0}」を、新しいパッチ「{1}」にアップデートしてもよろしいですか？\r\n\r\nアップデート前にバックアップを取得してください。\r\nまた、アップデート後は、必ず動作テストをしてください。" , patch.Name , new_patchSt.Name);
                 if (dr != DialogResult.Yes)
                 {
@@ -6325,23 +6320,52 @@ namespace FEBuilderGBA
                 }
             }
 
-            string error;
-            string update_method = U.at(patch.Param, "UPDATE_METHOD");
-            if (update_method == "SKILL")
+            //依存するパッチのリストをすべて作成する.
+            List<PatchSt> dependsList = new List<PatchSt>();
+            MakeDependsPatchList(dependsList, patch);
+            using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
-                error = UpdatePatchBySkillSystems(patch , new_patchSt);
-            }
-            else
-            {
-                error = UpdatePatchByNone(patch , new_patchSt);
+                Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
+                foreach (var p in dependsList)
+                {
+                    ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction , p);
+                }
+                foreach (var p in dependsList)
+                {
+                    bool r = UnInstallPatch(p, true);
+                    if (!r)
+                    {
+                        return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", p.PatchFileName);
+                    }
+                }
+                foreach (var p in dependsList)
+                {
+                    string errorMessage;
+                    PatchSt new_patchSt = GetUpdatePatch(patch, out errorMessage);
+                    if (new_patchSt == null)
+                    {//アップデートするパッチがない場合、自分をもう一回入れる.
+                        new_patchSt = patch;
+                    }
+
+                    bool r = ApplyPatch(new_patchSt.Name, "", "", true);
+                    if (!r)
+                    {
+                        return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
+                    }
+                }
+                Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
+                foreach (var p in dependsList)
+                {
+                    ImportPatchSetting(tempdir.Dir,mappingDESTEmbedFunction, p);
+                }
+
+                //少し時間がかかるので、しばらくお待ちください表示.
+                using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+                {
+                    UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
+                }
             }
 
-            if (error != "")
-            {
-                return error;
-            }
-
-//            UpdateDepends(patch);
             return "";
         }
 
@@ -6357,7 +6381,7 @@ namespace FEBuilderGBA
             }
 
             PatchSt patch = this.FiltedPatchs[this.PatchList.SelectedIndex];
-            string error = UpdatePatch(patch , isNoCheck: false);
+            string error = UpdatePatchUI(patch);
             if (error != "")
             {
                 R.ShowStopError(error);
