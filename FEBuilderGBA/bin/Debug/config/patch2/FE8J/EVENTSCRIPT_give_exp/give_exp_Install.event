@@ -1,0 +1,19 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+
+ALIGN 4
+give_exp_Install:
+#incbin "give_exp.dmp" //HINT=ASM
+POIN event_proc_bin
+
+
+ALIGN 4
+event_proc_bin:
+#incbin "event_fe8j.bin" //HINT=PROCS
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

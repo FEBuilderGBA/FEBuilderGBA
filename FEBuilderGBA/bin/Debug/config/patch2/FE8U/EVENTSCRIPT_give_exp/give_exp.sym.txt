@@ -1,0 +1,11 @@
+GetUnitInfoBySVAL1=$24
+GetUnitInfoByCoord=$28
+GetUnitInfoByCurrent=$1E
+GetUnitInfo=$2A
+CheckUnitInfo=$30
+Term=$60
+Change=$34
+nin_i_exp=$68
+effect=$BE
+noexp=$AE
+event_procs=$014C
