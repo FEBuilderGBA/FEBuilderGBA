@@ -8541,3 +8541,6 @@
 08099328	進撃準備画面のアイテム整理メニューの描画	{U}
 0802CC54	アイテムを利用した時のモーションを登録	r1=ITEM ID	{U}
 0802CB8C	アイテムを利用した時のモーションを登録	r1=ITEM ID	{J}
+
+08013220	Number_Tile_Copy_Func	{J}
+08013168	Number_Tile_Copy_Func	{U}

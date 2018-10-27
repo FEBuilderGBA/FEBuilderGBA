@@ -77,6 +77,7 @@ Change:
 	mov	r0, r5         @Current Procs
 	bl	effect
 
+	@念のため なくてもいかも..
 	blh  0x08019ecc   @RefreshFogAndUnitMaps	{J}
 	blh  0x08027144   @SMS_UpdateFromGameData	{J}
 	blh  0x08019914   @UpdateGameTilesGraphics	{J}
@@ -149,7 +150,12 @@ nin_i_exp:
 
 effect:
 	push	{r4,lr}
-	mov     r4,r0
+	mov     r4,r0          @Current Procs
+	
+	                       @フォントを初期化しないと、PAL2が使われることがあるらしい。Thanks stan
+	blh 0x08003bc4         @Font_InitForUIDefault / Font_InitDefault {J}
+@	blh 0x08003C94         @Font_InitForUIDefault / Font_InitDefault {U}
+	
 	ldr	r0, =0x0203a4e8    @Unit@戦闘アニメで右側。 {J}
 @	ldr	r0, =0x0203A4EC    @Unit@戦闘アニメで右側。 {U}
 	mov	r2, r0

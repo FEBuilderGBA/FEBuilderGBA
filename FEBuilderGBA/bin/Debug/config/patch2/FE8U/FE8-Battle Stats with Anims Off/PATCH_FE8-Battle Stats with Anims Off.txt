@@ -1,0 +1,12 @@
+NAME=FE8-Battle Stats with Anims Off
+NAME.en=FE8-Battle Stats with Anims Off
+NAME.zh=FE8-Battle Stats with Anims Off
+
+TYPE=EA
+TAG=#ENGINE
+EA=FE8-Battle Stats Master EA File.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x7BED6=0xC0 0x46
+
+AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/51
