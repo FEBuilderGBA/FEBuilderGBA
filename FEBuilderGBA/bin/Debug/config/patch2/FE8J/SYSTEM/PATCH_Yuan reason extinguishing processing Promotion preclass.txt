@@ -9,7 +9,7 @@ NAME.zh=尤恩理cc前处理职业
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x2bda2
+ADDRESS=0x2bda2 0x2BC52
 ADDRESS_TYPE=CLASS
 
 AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
@@ -22,3 +22,5 @@ INFO.zh=决定Euan是否上某个阶层时是否忘记去做。\r\n如果Euan CC
 INFO.en=In FE8, when Ewan promotes from Pupil to Mage he loses the ability to use dark magic.\r\nThis patch specifies the base class (normally Pupil) that triggers this event. This can be used to create your own weapon class forgetting events.\r\n
 
 
+CONFLICT_IF:0x2BC30=0x00 0x23 0x3C 0x1C 0xE2 0x18 0x11 0x78 0x68 0x68 0x2C 0x30 0xC0 0x18 0x00 0x78 0x00 0x28 0x01 0xD1 0x00 0x21 0x03 0xE0 0x09 0x18 0xFB 0x29 0x00 0xDD 0xFB 0x21
+CONFLICT_MESSAGE=Lose Weapon Ranks on Promotion

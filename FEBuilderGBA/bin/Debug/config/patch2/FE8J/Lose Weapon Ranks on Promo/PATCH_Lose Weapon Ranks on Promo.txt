@@ -10,6 +10,8 @@ PATCHED_IF:0x2BC30=0x00 0x23 0x3C 0x1C 0xE2 0x18 0x11 0x78 0x68 0x68 0x2C 0x30 0
 TYPE=BIN
 TAG=#ENGINE
 BIN:0x2BC30=FE8Promotion.dmp
+BIN:0x2BD80=FE8Promotion.dmp
+
 AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/4
 NAME.zh=如果武器LV不能和CC(转职)一起使用，我们会失去武器LV
 INFO.zh=你不能在CC上使用武器当你在CC上没有等级的职业时，我们会忘记武器LV，这样我们就不能使用武器LV。\r\n例如，如果一个法师可以使用CC的原因到一个不能使用理由的夏天，那就忘记原因。

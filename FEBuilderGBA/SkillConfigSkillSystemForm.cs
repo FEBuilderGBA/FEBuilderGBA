@@ -63,18 +63,7 @@ namespace FEBuilderGBA
                 , 2
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    if (i == 0)
-                    {
-                        return true;
-                    }
-                    uint strid = Program.ROM.u16(addr);
-                    if (strid == 0 || strid >= TextForm.GetDataCount())
-                    {
-                        //Debug.Assert(i >= names.Count);
-                        return false;
-                    }
-
-                    return true;
+                    return i < 255;
                 }
                 , (int i, uint addr) =>
                 {
