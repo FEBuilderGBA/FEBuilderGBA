@@ -1,0 +1,15 @@
+NAME=弓とかは外しても減る
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2B74C=0x00 0x4B 0x9F 0x46
+EA=EA.txt
+
+INFO=弓などの間接武器を、ミスして外した場合も、耐久を1つ減らすように変更します。
+
+AUTHOR=aera
+NAME.en=Even if you remove the bow, it will be reduced
+INFO.en=Even if you mistake and remove an indirect weapon such as a bow, change it to reduce durability by one.
+NAME.zh=即使你取下弓，它也会减少
+INFO.zh=即使你误认并移除了诸如弓之类的间接武器，也要改变它以减少耐久性。

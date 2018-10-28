@@ -48,13 +48,13 @@ namespace FEBuilderGBA
             this.AssignLevelUpBaseAddress = Program.ROM.p32(assignLevelUpP);
 
             this.N1_AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
-            InputFormRef.markupJumpLabel(this.N1_J_SKILL);
+            InputFormRef.markupJumpLabel(this.N1_J_1_SKILLASSIGNMENT);
             N1_InputFormRef = N1_Init(this, this.SkillNames);
             N1_InputFormRef.AddressListExpandsEvent += N1_InputFormRef_AddressListExpandsEvent;
             N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
-            InputFormRef.markupJumpLabel(this.J_SKILL);
+            InputFormRef.markupJumpLabel(this.J_0_SKILLASSIGNMENT);
             InputFormRef = Init(this, assignClassP);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
@@ -168,10 +168,6 @@ namespace FEBuilderGBA
             SKILLNAME.Text = U.at(this.SkillNames, (uint)this.B0.Value);
         }
 
-        private void J_SKILL_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<SkillConfigSkillSystemForm>((uint)this.B0.Value);
-        }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -197,10 +193,6 @@ namespace FEBuilderGBA
             N1_SKILLNAME.Text = U.at(this.SkillNames, (uint)this.N1_B1.Value);
         }
 
-        private void N1_J_SKILL_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<SkillConfigSkillSystemForm>((uint)this.N1_B0.Value);
-        }
 
         void N1_InputFormRef_AddressListExpandsEvent(object sender, EventArgs e)
         {
@@ -638,5 +630,6 @@ namespace FEBuilderGBA
         {
             ZeroPointerPanel.Visible = InputFormRef.ShowZeroPointerPanel(this.AddressList, this.N1_ReadStartAddress);
         }
+
     }
 }

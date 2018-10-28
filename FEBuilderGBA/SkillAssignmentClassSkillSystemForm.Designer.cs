@@ -43,9 +43,9 @@
             this.IndependenceButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.label5 = new System.Windows.Forms.Label();
+            this.N1_J_0 = new System.Windows.Forms.Label();
             this.N1_B0 = new System.Windows.Forms.NumericUpDown();
-            this.N1_J_SKILL = new System.Windows.Forms.Label();
+            this.N1_J_1_SKILLASSIGNMENT = new System.Windows.Forms.Label();
             this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.N1_B1 = new System.Windows.Forms.NumericUpDown();
             this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
@@ -70,7 +70,7 @@
             this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.J_SKILL = new System.Windows.Forms.Label();
+            this.J_0_SKILLASSIGNMENT = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@
             this.panel4.Controls.Add(this.SKILLTEXT);
             this.panel4.Controls.Add(this.SKILLICON);
             this.panel4.Controls.Add(this.B0);
-            this.panel4.Controls.Add(this.J_SKILL);
+            this.panel4.Controls.Add(this.J_0_SKILLASSIGNMENT);
             this.panel4.Location = new System.Drawing.Point(258, 73);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
@@ -213,9 +213,9 @@
             this.panel8.Controls.Add(this.ZeroPointerPanel);
             this.panel8.Controls.Add(this.IndependencePanel);
             this.panel8.Controls.Add(this.N1_SKILLNAME);
-            this.panel8.Controls.Add(this.label5);
+            this.panel8.Controls.Add(this.N1_J_0);
             this.panel8.Controls.Add(this.N1_B0);
-            this.panel8.Controls.Add(this.N1_J_SKILL);
+            this.panel8.Controls.Add(this.N1_J_1_SKILLASSIGNMENT);
             this.panel8.Controls.Add(this.N1_SKILLTEXT);
             this.panel8.Controls.Add(this.N1_B1);
             this.panel8.Controls.Add(this.N1_SKILLICON);
@@ -281,16 +281,16 @@
             this.N1_SKILLNAME.Size = new System.Drawing.Size(178, 25);
             this.N1_SKILLNAME.TabIndex = 120;
             // 
-            // label5
+            // N1_J_0
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(2, 3);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 30);
-            this.label5.TabIndex = 112;
-            this.label5.Text = "習得レベル";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N1_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N1_J_0.Location = new System.Drawing.Point(2, 3);
+            this.N1_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N1_J_0.Name = "N1_J_0";
+            this.N1_J_0.Size = new System.Drawing.Size(191, 30);
+            this.N1_J_0.TabIndex = 112;
+            this.N1_J_0.Text = "習得レベル";
+            this.N1_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N1_B0
             // 
@@ -305,17 +305,16 @@
             this.N1_B0.Size = new System.Drawing.Size(78, 25);
             this.N1_B0.TabIndex = 25;
             // 
-            // N1_J_SKILL
+            // N1_J_1_SKILLASSIGNMENT
             // 
-            this.N1_J_SKILL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N1_J_SKILL.Location = new System.Drawing.Point(2, 46);
-            this.N1_J_SKILL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N1_J_SKILL.Name = "N1_J_SKILL";
-            this.N1_J_SKILL.Size = new System.Drawing.Size(191, 30);
-            this.N1_J_SKILL.TabIndex = 115;
-            this.N1_J_SKILL.Text = "スキル";
-            this.N1_J_SKILL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.N1_J_SKILL.Click += new System.EventHandler(this.N1_J_SKILL_Click);
+            this.N1_J_1_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N1_J_1_SKILLASSIGNMENT.Location = new System.Drawing.Point(2, 46);
+            this.N1_J_1_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N1_J_1_SKILLASSIGNMENT.Name = "N1_J_1_SKILLASSIGNMENT";
+            this.N1_J_1_SKILLASSIGNMENT.Size = new System.Drawing.Size(191, 30);
+            this.N1_J_1_SKILLASSIGNMENT.TabIndex = 115;
+            this.N1_J_1_SKILLASSIGNMENT.Text = "スキル";
+            this.N1_J_1_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N1_SKILLTEXT
             // 
@@ -605,17 +604,16 @@
             this.B0.TabIndex = 0;
             this.B0.ValueChanged += new System.EventHandler(this.B0_ValueChanged);
             // 
-            // J_SKILL
+            // J_0_SKILLASSIGNMENT
             // 
-            this.J_SKILL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_SKILL.Location = new System.Drawing.Point(-2, 2);
-            this.J_SKILL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_SKILL.Name = "J_SKILL";
-            this.J_SKILL.Size = new System.Drawing.Size(158, 30);
-            this.J_SKILL.TabIndex = 24;
-            this.J_SKILL.Text = "クラススキル";
-            this.J_SKILL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J_SKILL.Click += new System.EventHandler(this.J_SKILL_Click);
+            this.J_0_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_SKILLASSIGNMENT.Location = new System.Drawing.Point(-2, 2);
+            this.J_0_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_0_SKILLASSIGNMENT.Name = "J_0_SKILLASSIGNMENT";
+            this.J_0_SKILLASSIGNMENT.Size = new System.Drawing.Size(158, 30);
+            this.J_0_SKILLASSIGNMENT.TabIndex = 24;
+            this.J_0_SKILLASSIGNMENT.Text = "クラススキル";
+            this.J_0_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -814,7 +812,7 @@
         private FEBuilderGBA.TextBoxEx SKILLTEXT;
         private InterpolatedPictureBox SKILLICON;
         private System.Windows.Forms.NumericUpDown B0;
-        private System.Windows.Forms.Label J_SKILL;
+        private System.Windows.Forms.Label J_0_SKILLASSIGNMENT;
         private System.Windows.Forms.Panel panel5;
         private FEBuilderGBA.TextBoxEx BlockSize;
         private System.Windows.Forms.Label label3;
@@ -842,11 +840,11 @@
         private System.Windows.Forms.Button N1_WriteButton;
         private System.Windows.Forms.NumericUpDown N1_Address;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label N1_J_0;
         private FEBuilderGBA.TextBoxEx N1_SKILLTEXT;
         private InterpolatedPictureBox N1_SKILLICON;
         private System.Windows.Forms.NumericUpDown N1_B1;
-        private System.Windows.Forms.Label N1_J_SKILL;
+        private System.Windows.Forms.Label N1_J_1_SKILLASSIGNMENT;
         private System.Windows.Forms.NumericUpDown N1_B0;
         private ListBoxEx N1_AddressList;
         private System.Windows.Forms.Button N1_AddressListExpandsButton;

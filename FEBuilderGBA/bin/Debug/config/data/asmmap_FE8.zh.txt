@@ -8545,3 +8545,7 @@ r3=X tile position of menu of the right	{U}
 0804B6CC	通信体育场	战斗结束	{U}
 0809B600	在攻击推进屏幕上绘制项目排列菜单	{J}
 08099328	在攻击推进屏幕上绘制项目排列菜单	{U}
+0802CC54	使用物品时注册动作	r1=ITEM ID	{U}
+0802CB8C	使用物品时注册动作	r1=ITEM ID	{J}
+08013220	Number_Tile_Copy_Func	{J}
+08013168	Number_Tile_Copy_Func	{U}

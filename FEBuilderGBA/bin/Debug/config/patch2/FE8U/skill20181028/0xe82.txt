@@ -1,0 +1,2 @@
+Fiery Blood: +4 damage[N]
+when HP is not at max.[X]

@@ -8611,3 +8611,7 @@ r3=X tile position of menu of the right	{U}
 0804B6CC	Communication stadium	Battle end	{U}
 0809B600	Drawing the item arrangement menu on the attack advancement screen	{J}
 08099328	Drawing the item arrangement menu on the attack advancement screen	{U}
+0802CC54	Register motion when using items	r1=ITEM ID	{U}
+0802CB8C	Register motion when using items	r1=ITEM ID	{J}
+08013220	Number_Tile_Copy_Func	{J}
+08013168	Number_Tile_Copy_Func	{U}

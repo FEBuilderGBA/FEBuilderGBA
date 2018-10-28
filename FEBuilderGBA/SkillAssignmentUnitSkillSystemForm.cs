@@ -41,7 +41,7 @@ namespace FEBuilderGBA
             this.AssignUnitBaseAddress = Program.ROM.p32(assignUnit);
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
-            InputFormRef.markupJumpLabel(this.J_SKILL);
+            InputFormRef.markupJumpLabel(this.J_0_SKILLASSIGNMENT);
             InputFormRef = Init(this, assignUnit);
             InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
@@ -85,10 +85,6 @@ namespace FEBuilderGBA
             SKILLNAME.Text = U.at(this.SkillNames,(uint)this.B0.Value);
         }
 
-        private void J_SKILL_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<SkillConfigSkillSystemForm>((uint)this.B0.Value);
-        }
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
@@ -221,6 +217,7 @@ namespace FEBuilderGBA
 
             return skillCount;
         }
+
 
     }
 }

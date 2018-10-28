@@ -39,7 +39,7 @@
             this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.J_SKILL = new System.Windows.Forms.Label();
+            this.J_0_SKILLASSIGNMENT = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,7 +79,6 @@
             // 
             // ReloadListButton
             // 
-
             this.ReloadListButton.Location = new System.Drawing.Point(479, -1);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -144,7 +143,7 @@
             this.panel4.Controls.Add(this.SKILLTEXT);
             this.panel4.Controls.Add(this.SKILLICON);
             this.panel4.Controls.Add(this.B0);
-            this.panel4.Controls.Add(this.J_SKILL);
+            this.panel4.Controls.Add(this.J_0_SKILLASSIGNMENT);
             this.panel4.Location = new System.Drawing.Point(258, 73);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
@@ -199,17 +198,16 @@
             this.B0.TabIndex = 0;
             this.B0.ValueChanged += new System.EventHandler(this.B0_ValueChanged);
             // 
-            // J_SKILL
+            // J_0_SKILLASSIGNMENT
             // 
-            this.J_SKILL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_SKILL.Location = new System.Drawing.Point(-2, 2);
-            this.J_SKILL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_SKILL.Name = "J_SKILL";
-            this.J_SKILL.Size = new System.Drawing.Size(135, 30);
-            this.J_SKILL.TabIndex = 24;
-            this.J_SKILL.Text = "スキル";
-            this.J_SKILL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J_SKILL.Click += new System.EventHandler(this.J_SKILL_Click);
+            this.J_0_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_SKILLASSIGNMENT.Location = new System.Drawing.Point(-2, 2);
+            this.J_0_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_0_SKILLASSIGNMENT.Name = "J_0_SKILLASSIGNMENT";
+            this.J_0_SKILLASSIGNMENT.Size = new System.Drawing.Size(135, 30);
+            this.J_0_SKILLASSIGNMENT.TabIndex = 24;
+            this.J_0_SKILLASSIGNMENT.Text = "スキル";
+            this.J_0_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -273,7 +271,6 @@
             // 
             // WriteButton
             // 
-
             this.WriteButton.Location = new System.Drawing.Point(702, -1);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
@@ -345,6 +342,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-2, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -392,7 +390,7 @@
         private FEBuilderGBA.TextBoxEx SKILLTEXT;
         private InterpolatedPictureBox SKILLICON;
         private System.Windows.Forms.NumericUpDown B0;
-        private System.Windows.Forms.Label J_SKILL;
+        private System.Windows.Forms.Label J_0_SKILLASSIGNMENT;
         private System.Windows.Forms.Panel panel5;
         private FEBuilderGBA.TextBoxEx BlockSize;
         private System.Windows.Forms.Label label3;

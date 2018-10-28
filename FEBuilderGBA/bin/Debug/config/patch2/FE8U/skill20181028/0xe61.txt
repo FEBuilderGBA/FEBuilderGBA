@@ -1,0 +1,2 @@
+Paragon: Experience gain[N]
+is doubled.[X]

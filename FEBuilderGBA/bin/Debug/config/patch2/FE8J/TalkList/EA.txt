@@ -1,0 +1,57 @@
+PUSH
+/////////////////トークリスト
+ORG	0x92EDC
+BYTE	$07
+ORG	0x930BC
+BYTE	$07
+ORG	0x94D3A
+BYTE	$07
+
+ORG	0x946FC
+#incbin "946fc.bin"
+POIN TalkChance
+
+ORG	0xA93984
+POIN	Talksekkei
+
+ORG	0xA9985C
+#incbin "butai23.dmp"
+ALIGN 4
+TalkChance:
+#incbin "TalkChance2.bin"
+ALIGN 4
+Talksekkei:
+#incbin "sekkeisho.bin"
+
+
+ORG 0x9325C
+POIN TalkListImage
+
+////////////////ソート機能
+
+ORG	0x92ee8
+WORD	$46874800
+POIN	TalkSort1
+
+ORG	0x94ef4
+#incbin "jump2.bin"
+#incbin "adr.bin"
+POIN	TalkSort2
+
+ORG	0xA93D04
+BYTE $21
+
+ORG	0x94eea
+BYTE $20
+
+POP
+
+TalkListImage:
+#incbin "Animation.bin"
+
+TalkSort1:
+#incbin "test.bin"
+ALIGN 4
+TalkSort2:
+#incbin "NewPro.bin"
+ALIGN 4

@@ -3684,6 +3684,14 @@ namespace FEBuilderGBA
                         }
                     }
                 }
+                else if (Program.ROM.RomInfo.version() == 8)
+                {
+                    InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
+                    if (skill == InputFormRef.skill_system_enum.SkillSystem)
+                    {
+                        InputFormRef.JumpForm<SkillConfigSkillSystemForm>(value, "AddressList", src_object);
+                    }
+                }
             }
             else if (linktype == "MENU")
             {
