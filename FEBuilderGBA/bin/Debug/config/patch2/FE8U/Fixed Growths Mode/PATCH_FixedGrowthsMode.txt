@@ -1,0 +1,18 @@
+NAME=固定成長モード
+NAME.en=FixedGrowthsMode
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2B9A4=0x00 0x4B 0x18 0x47
+
+EA=FixedGrowthsModeInstaller.event
+
+INFO=ステータスの伸びは、レベルと成長率を使って何を与えるべきかを決定する公式に基づいています。\r\n効果は成長率が追加され、100の倍数を渡すたびにステータスを取得することです。\r\n完全に任意の50ポイントから始まり、最初のレベルをほとんどの文字では必ずしも空でないようにします（また、技術的には丸めあなたがレベル1からスタートした場合、平均的なステータスに影響を与えます）。\r\nステータスの成長は数学的にレベルに結びついているので（合計成長点の実際の記憶はありません）、異なる基礎レベルでそれらを開始すると、ユニットは最初のレベルアップを得るでしょう。
+INFO.en=Stat growth is based a formula that uses your level and growth rates to determine what stats to give. The effect is that your growth rates add and you get a stat for each time they pass a multiple of 100. You start with a completely arbitrary 50 points to make the first level not always empty for most characters (and it also technically has a rounding effect on your average stats if you start from level 1). Because the stat gains are mathematically tied to the level (there is no actual memory of your total growth points) your characters will gain different first level-ups if you start them at different base levels.
+INFO.zh=统计增长基于一个公式，该公式使用您的水平和增长率来确定要提供的统计数据。\r\n效果是你的增长率增加，你每次通过100的倍数就得到一个统计数据。\r\n你从一个完全随意的50点开始，使大多数字符的第一个级别并不总是空的（并且它在技术上也有一个舍入如果从1级开始，会影响您的平均统计数据。\r\n因为数据增益在数学上与水平相关（没有总生长点的实际记忆），如果你在不同的基础水平开始它们，你的角色会获得不同的第一级。
+
+
+AUTHOR=TR143 http://feuniverse.us/t/fe7-fe8-fixed-growths-mode/4482
+NAME.zh=固定增长模式

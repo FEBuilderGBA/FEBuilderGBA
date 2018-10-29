@@ -1025,6 +1025,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<StatusOptionForm>();
         }
 
+        private void ImageTSAAnime2Button_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ImageTSAAnime2Form>();
+        }
+
 
     }
 

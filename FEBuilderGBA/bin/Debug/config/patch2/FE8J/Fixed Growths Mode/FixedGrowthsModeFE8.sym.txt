@@ -1,0 +1,8 @@
+Verify=$0A
+Compute=$1A
+Return=$48
+cont=$2E
+Reduce2=$34
+Compute2=$3C
+procstat=$46
+ReturnTo=$50

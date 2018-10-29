@@ -2059,6 +2059,7 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version() == 8)
             {
+                ImageTSAAnime2Form.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);

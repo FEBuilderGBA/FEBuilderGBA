@@ -215,6 +215,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.ImageTSAAnime2Button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1396,6 +1397,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.ImageTSAAnime2Button);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
             this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
@@ -1654,7 +1656,7 @@
             // 
             // ROMAnimeButton
             // 
-            this.ROMAnimeButton.Location = new System.Drawing.Point(611, 602);
+            this.ROMAnimeButton.Location = new System.Drawing.Point(611, 638);
             this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(2);
             this.ROMAnimeButton.Name = "ROMAnimeButton";
             this.ROMAnimeButton.Size = new System.Drawing.Size(200, 36);
@@ -2224,6 +2226,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // ImageTSAAnime2Button
+            // 
+            this.ImageTSAAnime2Button.Location = new System.Drawing.Point(611, 600);
+            this.ImageTSAAnime2Button.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageTSAAnime2Button.Name = "ImageTSAAnime2Button";
+            this.ImageTSAAnime2Button.Size = new System.Drawing.Size(200, 36);
+            this.ImageTSAAnime2Button.TabIndex = 130;
+            this.ImageTSAAnime2Button.Text = "TSAアニメ2";
+            this.ImageTSAAnime2Button.UseVisualStyleBackColor = true;
+            this.ImageTSAAnime2Button.Click += new System.EventHandler(this.ImageTSAAnime2Button_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2439,6 +2452,7 @@
         private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
         private System.Windows.Forms.Button GameOptionButton;
+        private System.Windows.Forms.Button ImageTSAAnime2Button;
     }
 }
 

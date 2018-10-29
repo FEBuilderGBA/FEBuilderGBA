@@ -598,7 +598,7 @@ namespace FEBuilderGBA
                 {
                     if (this.AnimeList.Count != index)
                     {
-                        text = R._("/// ミスした場合の終端");
+                        text = "///" + R._("ミスした場合の終端");
                         bounds.X += U.DrawText(text, g, boldFont, brush, isWithDraw, bounds);
                     }
                 }

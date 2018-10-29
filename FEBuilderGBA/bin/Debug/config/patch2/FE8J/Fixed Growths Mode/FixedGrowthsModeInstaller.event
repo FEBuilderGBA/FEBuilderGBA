@@ -1,0 +1,14 @@
+#ifdef _FE8_
+	#include "Extensions/Hack Installation.txt" 
+
+PUSH
+ORG 0x0002B8EC
+jumpToHack(FGM)
+POP
+
+ALIGN 4
+FGM:
+#incbin FixedGrowthsModeFE8.dmp
+
+#endif
+

@@ -1,0 +1,15 @@
+#ifdef _FE7_
+	#include "Extensions/Hack Installation.txt" 
+
+PUSH
+ORG 0x00029A94
+jumpToHack(FGM)
+POP
+
+
+ALIGN 4
+FGM:
+#incbin FixedGrowthsModeFE7.dmp
+
+#endif
+

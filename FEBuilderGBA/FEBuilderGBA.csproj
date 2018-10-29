@@ -1784,6 +1784,12 @@
     <Compile Include="StatusOptionForm.Designer.cs">
       <DependentUpon>StatusOptionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageTSAAnime2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageTSAAnime2Form.Designer.cs">
+      <DependentUpon>ImageTSAAnime2Form.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2637,6 +2643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusOptionForm.resx">
       <DependentUpon>StatusOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageTSAAnime2Form.resx">
+      <DependentUpon>ImageTSAAnime2Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

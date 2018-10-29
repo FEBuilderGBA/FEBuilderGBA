@@ -8615,3 +8615,74 @@ r3=X tile position of menu of the right	{U}
 0802CB8C	Register motion when using items	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{J}
+08A19608	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{U}
+08A95478	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	18	FE8JONLY	{J}
+08A1A474	&HEADERTSA	Something's TSA	20	{U}
+08A96CC4	&HEADERTSA	Something's TSA	20	{J}
+08A9C874	:08A9C997	Boot data	Tile Changes	1	unused	{J}
+08A9BEFC	:08A9C01F	Boot data	Tile Changes	2	unused	{J}
+08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{J}
+08A1F948	:08A1FA6B	Boot data	Tile Changes	1	unused	{U}
+08A1EFD0	:08A1F0F3	Boot data	Tile Changes	2	unused	{U}
+08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{U}
+08A2C94C	&HEADERTSA	Something's TSA	21	unused	{U}
+08AAAADC	&HEADERTSA	Something's TSA	21	unused	{J}
+08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{U}
+08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{J}
+085B7E74	&PALETTE	Something's palette	203	{U}
+085B8734	&PALETTE	Something's palette	204	{U}
+085B8FB0	&PALETTE2	Something's palette	205	{U}
+085E2054	&PALETTE	Something's palette	203	{J}
+085E2914	&PALETTE	Something's palette	204	{J}
+085E3190	&PALETTE2	Something's palette	205	{J}
+0822415C	:082243D3	Data related to m4a	1	MAYBE	FE8UONLY	{U}
+0822440C	:08224463	Data related to m4a	2	MAYBE	{U}
+082140BC	:0821411F	Data related to m4a	2	MAYBE	{J}
+08577444	:0857747F	Data related to _localeconv_r	{J}
+08587794	:085877CF	Data related to _localeconv_r	{U}
+080B3240	RegistTSAAnime2	{J}
+080AE7C4	RegistTSAAnime2	{U}
+08012CFC	Register animation of destroying the statue	{U}
+08012DB4	Register animation of destroying the statue	{J}
+088BC5E8	:088BC60F	Unit movement in unused unit placement	1	{U}
+088BCCC8	:088BCD03	Unused unit arrangement	1	{U}
+088C179C	:088C17D3	Unit movement in unused unit placement	2	{U}
+088C1D30	:088C1DCF	Unused unit arrangement	2	{U}
+088C9C40	:088C9CAF	Unit movement in unused unit placement	3	{U}
+088CA250	:088CA463	Unused unit arrangement	3	{U}
+088CA60C	:088CA63B	Unit movement in unused unit placement	4	{U}
+088CAEAC	:088CAF87	Unused unit arrangement	4	{U}
+088CB020	:088CB057	Unit movement in unused unit placement	5	{U}
+088CB574	:088CB613	Unused unit arrangement	5	{U}
+088D1448	:088D164F	Unused unit arrangement	6	enemy	{U}
+08910B48	:08910B6F	Unit movement in unused unit placement	1	{J}
+08911200	:0891123B	Unused unit arrangement	1	{J}
+08915C84	:08915CBB	Unit movement in unused unit placement	2	{J}
+08916218	:089162B7	Unused unit arrangement	2	{J}
+0891E0A8	:0891E117	Unit movement in unused unit placement	3	{J}
+0891E6A4	:0891E8D3	Unused unit arrangement	3	{J}
+0891EA60	:0891EA8F	Unit movement in unused unit placement	4	{J}
+0891F300	:0891F3DB	Unused unit arrangement	4	{J}
+0891F474	:0891F4AB	Unit movement in unused unit placement	5	{J}
+0891F9C8	:0891FA57	Unused unit arrangement	5	{J}
+0892589C	:08925AA3	Unused unit arrangement	6	enemy	{J}
+087FF448	&PALETTE	Something's palette	206	{U}
+088019F4	:08801A95	Mystery data	Battle screen relation	1	{U}
+08801A96	:08801AD3	Mystery data	Battle screen relation	2	{U}
+08801AD4	:08801B13	Mystery data	Battle screen relation	3	{U}
+08801B14	:08801B53	Mystery data	Battle screen relation	4	{U}
+08801B54	:08801C13	Mystery data	Battle screen relation	5	{U}
+08801AAC	:08801AD3	Mystery data	Battle screen relation	Array	{U}
+088539A0	&PALETTE	Something's palette	206	{J}
+08855F4C	:08855FED	Mystery data	Battle screen relation	1	{J}
+08855FEE	:0885602B	Mystery data	Battle screen relation	2	{J}
+0885602C	:0885606B	Mystery data	Battle screen relation	3	{J}
+0885606C	:088560AB	Mystery data	Battle screen relation	4	{J}
+088560AC	:0885616B	Mystery data	Battle screen relation	5	{J}
+08856004	:0885602B	Mystery data	Battle screen relation	Array	{J}
+08A187A0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{U}
+08A944E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{J}
+08A187F0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{U}
+08A94534	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{J}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	22	FE8JONLY	{J}

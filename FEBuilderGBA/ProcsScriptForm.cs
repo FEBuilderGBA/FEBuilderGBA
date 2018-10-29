@@ -136,6 +136,24 @@ namespace FEBuilderGBA
                     }
                     FindProcOne(ldrmap[i].ldr_data_address, addr , false);
                 }
+                foreach (var pair in this.ProcsName)
+                {
+                    if (Program.AsmMapFileAsmCache.IsStopFlagOn()) return;
+
+                    uint pointer = pair.Key;
+                    pointer = U.toOffset(pointer);
+                    if (!U.isSafetyOffset(pointer))
+                    {
+                        continue;
+                    }
+                    uint addr = Program.ROM.p32(pointer);
+                    if (this.AlreadyMatch.ContainsKey(addr))
+                    {//既に知っている.
+                        continue;
+                    }
+                    FindProcOne(pointer, addr, false);
+                }
+
             }
 
             bool IsTooShort(uint length,uint addr)

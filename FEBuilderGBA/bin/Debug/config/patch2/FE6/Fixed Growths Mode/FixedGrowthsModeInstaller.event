@@ -1,0 +1,14 @@
+#ifdef _FE6_
+	#include "Extensions/Hack Installation.txt" 
+
+PUSH
+ORG 0x000250B4
+jumpToHack(FGM)
+POP
+
+ALIGN 4
+FGM:
+#incbin FixedGrowthsModeFE6.dmp
+
+#endif
+

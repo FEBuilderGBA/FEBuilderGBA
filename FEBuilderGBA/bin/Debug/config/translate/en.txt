@@ -3292,6 +3292,15 @@ BAD status
 :システムアイコン
 System Icon
 
+:ヘッダー
+header
+
+:ヘッダー書き込み
+Header write
+
+:TSAアニメ2
+TSA Animation 2
+
 :TSAアニメ
 TSA animation
 
@@ -9637,8 +9646,8 @@ Code
 :ループ開始
 Loop Start
 
-:/// ミスした場合の終端
-/// ミスした場合の終端
+:ミスした場合の終端
+Termination in case of miss
 
 :防衛スキル
 Defense skill

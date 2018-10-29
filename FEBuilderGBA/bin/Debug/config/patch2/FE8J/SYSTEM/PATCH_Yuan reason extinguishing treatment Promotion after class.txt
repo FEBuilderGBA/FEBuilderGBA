@@ -7,7 +7,7 @@ NAME.zh=尤恩理cc后处理职业
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x2bda8 0x2BD10
+ADDRESS=0x2bda8 0x2BC58
 ADDRESS_TYPE=CLASS
 
 AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
