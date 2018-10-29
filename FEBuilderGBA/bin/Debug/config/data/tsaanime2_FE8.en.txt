@@ -1,2 +1,3 @@
+//pointer	NAME
 012DC0	Animation of the destruction of the stone	//08592628	{U}
 012E78	Animation of the destruction of the stone	//085BA3A4	{J}
