@@ -260,6 +260,7 @@ namespace FEBuilderGBA
                 structlist = null;
 
                 uint nextDoEvents = 0;
+                bool prevPointer = false; //ひとつ前がポインタだった
                 Address matchAddress;
                 DisassemblerTrumb.VM vm = new DisassemblerTrumb.VM();
                 while (addr < limit)
@@ -274,7 +275,7 @@ namespace FEBuilderGBA
                     if (lookupStructMap.TryGetValue(addr, out matchAddress))
                     {
                         if (matchAddress.Pointer <= addr && addr < matchAddress.Pointer + 4)
-                        {//野良ポインタ?
+                        {//ポインタ?
                             writer.WriteLine(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //POINTER " + matchAddress.Info);
                             addr += 4;
                         }
@@ -286,6 +287,7 @@ namespace FEBuilderGBA
                             writer.WriteLine("{0} - {1} //{2} ({3}bytes)", U.toPointer(addr).ToString("X08"), U.toPointer(newaddr).ToString("X08"), matchAddress.Info, length);
                             addr = U.Padding4(newaddr);
                         }
+                        prevPointer = true;
                         continue;
                     }
 
@@ -302,8 +304,26 @@ namespace FEBuilderGBA
                             writer.WriteLine(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //LDRDATA");
                         }
                         addr += 4;
+                        prevPointer = true;
                         continue;
                     }
+
+                    if (prevPointer)
+                    {//ひとつ前がポインタの場合、野生のポインタをチェック
+                        uint data = Program.ROM.u32(addr);
+                        if (U.isPointer(data))
+                        {
+                            if (lookupStructMap.TryGetValue(U.toOffset(data), out matchAddress))
+                            {
+                                writer.WriteLine(U.toPointer(addr).ToString("X08") + " " + U.MakeOPData(addr, 4) + "   //Wild POINTER " + U.ToHexString8(data) + " " + matchAddress.Info);
+                                addr += 4;
+                                continue;
+                            }
+                        }
+                    }
+
+                    //ひとつ前はポインタではない.
+                    prevPointer = false;
 
                     //Disassembler
                     DisassemblerTrumb.Code code =

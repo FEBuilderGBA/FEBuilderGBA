@@ -24,6 +24,7 @@ namespace FEBuilderGBA
             String dir = Path.GetDirectoryName(Program.ROM.Filename);
 
             this.OrignalFilename = MainFormUtil.FindOrignalROM(dir);
+
             if (Program.ROM.IsVirtualROM)
             {
                 this.Prefix = "";
@@ -56,6 +57,29 @@ namespace FEBuilderGBA
                 }
             }
             return false;
+        }
+
+        //末尾に無改造ROMを追加する.
+        public void AppendOrignalROMToBackupList()
+        {
+            if (this.OrignalFilename == "")
+            {
+                return;
+            }
+            FileInfo fi = MakeOrignalFileInfo(this.OrignalFilename);
+            this.Files.Add(fi);
+            //日付順にソートする.
+            this.Files.Sort((a, b) => { return b.Date.CompareTo(a.Date); });
+        }
+
+        FileInfo MakeOrignalFileInfo(string filepath)
+        {
+            FileInfo fi = new FileInfo();
+            fi.FilePath = filepath;
+            fi.Date = GetFileDate(filepath);
+            fi.Undo = new Undo();
+
+            return fi;
         }
 
         public bool Scan(string dir,string prefix)

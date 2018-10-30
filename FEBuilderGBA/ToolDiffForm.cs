@@ -132,6 +132,8 @@ namespace FEBuilderGBA
                 }
 
                 //checkpoint ～ i の間を相違点として記録.
+                checkpoint = (checkpoint / 4) * 4;
+                i = U.Padding4(i);
 
                 string split_filename = U.ToHexString8(checkpoint) + ".bin";
                 string split_filename_fullpath =

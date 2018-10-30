@@ -6652,202 +6652,6 @@ r3=X tile position of menu of the right	{U}
 085D42C0	&NewPopupSimple	弹出数据	12	{J}
 08074e80	例程2发出声音效果	r0=音效:SONG	r1=?	r2=?	r3=?	{J}
 080729a4	例程2发出声音效果	r0=音效:SONG	r1=?	r2=?	r3=?	{U}
-0859A140	&PALETTE	一些调色板	01	{U}
-0859EEA0	&PALETTE	一些调色板	02	{U}
-0859EEC0	&PALETTE	一些调色板	03	{U}
-0859EEE0	&PALETTE	一些调色板	04	{U}
-0859EF00	&PALETTE	一些调色板	05	{U}
-0859EF20	&PALETTE	一些调色板	06	{U}
-0859EF60	&PALETTE	一些调色板	07	{U}
-0859EFE0	&PALETTE	一些调色板	08	{U}
-0859F000	&PALETTE	一些调色板	09	{U}
-085A0D2C	&PALETTE	一些调色板	10	{U}
-085A206C	&PALETTE	一些调色板	11	{U}
-085A208C	&PALETTE	一些调色板	12	{U}
-085A2DDC	&PALETTE	一些调色板	13	{U}
-085A3490	&PALETTE	一些调色板	14	{U}
-085A3944	&PALETTE	一些调色板	15	{U}
-085A3AC0	&PALETTE	一些调色板	16	{U}
-085A401C	&PALETTE	一些调色板	17	{U}
-085A5760	&PALETTE	一些调色板	18	{U}
-085A61A8	&PALETTE	一些调色板	19	{U}
-085A643C	&PALETTE	一些调色板	20	{U}
-085A7CA0	&PALETTE	一些调色板	21	{U}
-085A7EC8	&PALETTE	一些调色板	22	{U}
-085ADBE8	&PALETTE	一些调色板	23	{U}
-085ADC48	&PALETTE	一些调色板	24	{U}
-085ADCC8	&PALETTE	一些调色板	25	{U}
-085ADDA8	&PALETTE	一些调色板	26	{U}
-085ADDC8	&PALETTE	一些调色板	27	{U}
-085ADE08	&PALETTE	一些调色板	28	{U}
-085ADE68	&PALETTE	一些调色板	29	{U}
-085B081C	&PALETTE	一些调色板	30	{U}
-085B6C14	&PALETTE	一些调色板	31	{U}
-085B7560	&PALETTE	一些调色板	32	{U}
-085B7580	&PALETTE	一些调色板	33	{U}
-085B9244	&PALETTE	一些调色板	34	{U}
-0868716C	&PALETTE	一些调色板	35	{U}
-08803590	&PALETTE	一些调色板	36	{U}
-08803B10	&PALETTE	一些调色板	37	{U}
-089A232C	&PALETTE	一些调色板	38	{U}
-089A28E0	&PALETTE	一些调色板	39	{U}
-089AC9A8	&PALETTE	一些调色板	40	{U}
-089ADD0C	&PALETTE	一些调色板	41	{U}
-089AE204	&PALETTE	一些调色板	42	{U}
-089AE484	&PALETTE	一些调色板	43	{U}
-089AE7C4	&PALETTE	一些调色板	44	{U}
-089B068C	&PALETTE	一些调色板	45	{U}
-089B0700	&PALETTE	一些调色板	46	{U}
-089B20E8	&PALETTE	一些调色板	47	{U}
-089B4BFC	&PALETTE	一些调色板	48	{U}
-089B73D4	&PALETTE	一些调色板	49	{U}
-089B80C4	&PALETTE	一些调色板	50	{U}
-089E7DEC	&PALETTE	一些调色板	51	{U}
-089E84D4	&PALETTE	一些调色板	52	{U}
-08A01EE4	&PALETTE	一些调色板	53	{U}
-08A01F04	&PALETTE	一些调色板	54	{U}
-08A021E4	&PALETTE	一些调色板	55	{U}
-08A03334	&PALETTE	一些调色板	56	{U}
-08A09A5C	&PALETTE	一些调色板	57	{U}
-08A0AE44	&PALETTE	一些调色板	58	{U}
-08A0AE64	&PALETTE	一些调色板	59	{U}
-08A1A3FC	&PALETTE	一些调色板	60	{U}
-08A1B154	&PALETTE	一些调色板	61	{U}
-08A1B638	&PALETTE	一些调色板	62	{U}
-08A1BD00	&PALETTE	一些调色板	63	{U}
-08A1D79C	&PALETTE	一些调色板	64	{U}
-08A1E0D8	&PALETTE	一些调色板	65	{U}
-08A1FFB0	&PALETTE	一些调色板	66	{U}
-08A1FFD0	&PALETTE	一些调色板	67	{U}
-08A25DCC	&PALETTE	一些调色板	68	{U}
-08A268D8	&PALETTE	一些调色板	69	{U}
-08A27F68	&PALETTE	一些调色板	70	{U}
-08A295B4	&PALETTE	一些调色板	71	{U}
-08A2C11C	&PALETTE	一些调色板	72	{U}
-08A2C8A8	&PALETTE	一些调色板	73	{U}
-08A2D2CC	&PALETTE	一些调色板	74	{U}
-08A2E1B8	&PALETTE	一些调色板	75	{U}
-08A2E4A4	&PALETTE	一些调色板	76	{U}
-08A2E8F0	&PALETTE	一些调色板	77	{U}
-08A360C8	&PALETTE	一些调色板	78	{U}
-08A372C0	&PALETTE	一些调色板	79	{U}
-08A37300	&PALETTE	一些调色板	80	{U}
-08A3F710	&PALETTE	一些调色板	81	{U}
-08A40AD4	&PALETTE	一些调色板	82	{U}
-08A4D0CC	&PALETTE	一些调色板	83	{U}
-08A97A60	&PALETTE	一些调色板	84	{U}
-08A97E28	&PALETTE	一些调色板	85	{U}
-08A97FA4	&PALETTE	一些调色板	86	{U}
-08A98DCC	&PALETTE	一些调色板	87	{U}
-08A98E8C	&PALETTE	一些调色板	88	{U}
-08A99120	&PALETTE	一些调色板	89	{U}
-08A9E688	&PALETTE	一些调色板	90	{U}
-08AA11B0	&PALETTE	一些调色板	91	{U}
-08AA239C	&PALETTE	一些调色板	92	{U}
-08AADB68	&PALETTE	一些调色板	93	{U}
-08AAE8CC	&PALETTE	一些调色板	94	{U}
-08AAFCF4	&PALETTE	一些调色板	95	{U}
-08AB0114	&PALETTE	一些调色板	96	{U}
-08AB0B24	&PALETTE	一些调色板	97	{U}
-08AB210C	&PALETTE	一些调色板	98	{U}
-08AB21B8	&PALETTE	一些调色板	99	{U}
-085C25C0	&PALETTE	一些调色板	01	{J}
-085C73C0	&PALETTE	一些调色板	02	{J}
-085C73E0	&PALETTE	一些调色板	03	{J}
-085C7400	&PALETTE	一些调色板	04	{J}
-085C7420	&PALETTE	一些调色板	05	{J}
-085C7440	&PALETTE	一些调色板	06	{J}
-085C7480	&PALETTE	一些调色板	07	{J}
-085C7500	&PALETTE	一些调色板	08	{J}
-085C7520	&PALETTE	一些调色板	09	{J}
-085C924C	&PALETTE	一些调色板	10	{J}
-085CA58C	&PALETTE	一些调色板	11	{J}
-085CA5AC	&PALETTE	一些调色板	12	{J}
-085CB2FC	&PALETTE	一些调色板	13	{J}
-085CB9B0	&PALETTE	一些调色板	14	{J}
-085CBE64	&PALETTE	一些调色板	15	{J}
-085CBFE4	&PALETTE	一些调色板	16	{J}
-085CC540	&PALETTE	一些调色板	17	{J}
-085CDC84	&PALETTE	一些调色板	18	{J}
-085CF9BC	&PALETTE	一些调色板	19	{J}
-085CFC50	&PALETTE	一些调色板	20	{J}
-085D14B4	&PALETTE	一些调色板	21	{J}
-085D1DD0	&PALETTE	一些调色板	22	{J}
-085D7E88	&PALETTE	一些调色板	23	{J}
-085D7EE8	&PALETTE	一些调色板	24	{J}
-085D7F68	&PALETTE	一些调色板	25	{J}
-085D8048	&PALETTE	一些调色板	26	{J}
-085D8068	&PALETTE	一些调色板	27	{J}
-085D80A8	&PALETTE	一些调色板	28	{J}
-085D8108	&PALETTE	一些调色板	29	{J}
-085DA9FC	&PALETTE	一些调色板	30	{J}
-085E0DF4	&PALETTE	一些调色板	31	{J}
-085E1740	&PALETTE	一些调色板	32	{J}
-085E1760	&PALETTE	一些调色板	33	{J}
-085E3424	&PALETTE	一些调色板	34	{J}
-086B3D44	&PALETTE	一些调色板	35	{J}
-08857AE8	&PALETTE	一些调色板	36	{J}
-08858068	&PALETTE	一些调色板	37	{J}
-08A12AA0	&PALETTE	一些调色板	38	{J}
-08A12F68	&PALETTE	一些调色板	39	{J}
-08A1D030	&PALETTE	一些调色板	40	{J}
-08A1E394	&PALETTE	一些调色板	41	{J}
-08A1E88C	&PALETTE	一些调色板	42	{J}
-08A1EB0C	&PALETTE	一些调色板	43	{J}
-08A1EE4C	&PALETTE	一些调色板	44	{J}
-08A20D14	&PALETTE	一些调色板	45	{J}
-08A20D88	&PALETTE	一些调色板	46	{J}
-08A22770	&PALETTE	一些调色板	47	{J}
-08A25284	&PALETTE	一些调色板	48	{J}
-08A27A5C	&PALETTE	一些调色板	49	{J}
-08A2874C	&PALETTE	一些调色板	50	{J}
-08A58474	&PALETTE	一些调色板	51	{J}
-08A5A5F8	&PALETTE	一些调色板	52	{J}
-08A73F9C	&PALETTE	一些调色板	53	{J}
-08A73FBC	&PALETTE	一些调色板	54	{J}
-08A7429C	&PALETTE	一些调色板	55	{J}
-08A753EC	&PALETTE	一些调色板	56	{J}
-08A7CD1C	&PALETTE	一些调色板	57	{J}
-08A7E104	&PALETTE	一些调色板	58	{J}
-08A7E124	&PALETTE	一些调色板	59	{J}
-08A96C4C	&PALETTE	一些调色板	60	{J}
-08A97BEC	&PALETTE	一些调色板	61	{J}
-08A980D0	&PALETTE	一些调色板	62	{J}
-08A98798	&PALETTE	一些调色板	63	{J}
-08A99FA8	&PALETTE	一些调色板	64	{J}
-08A9B004	&PALETTE	一些调色板	65	{J}
-08A9CEDC	&PALETTE	一些调色板	66	{J}
-08A9CEFC	&PALETTE	一些调色板	67	{J}
-08AA2D34	&PALETTE	一些调色板	68	{J}
-08AA3840	&PALETTE	一些调色板	69	{J}
-08A980D0	&PALETTE	一些调色板	70	{J}
-08AA7310	&PALETTE	一些调色板	71	{J}
-08AA9E78	&PALETTE	一些调色板	72	{J}
-08AAAA38	&PALETTE	一些调色板	73	{J}
-08AAEAE4	&PALETTE	一些调色板	75	{J}
-08A79B70	&PALETTE	一些调色板	76	{J}
-08AAF654	&PALETTE	一些调色板	77	{J}
-08AB6EF4	&PALETTE	一些调色板	78	{J}
-08AB8044	&PALETTE	一些调色板	79	{J}
-08A97C0C	&PALETTE	一些调色板	80	{J}
-08AC30D4	&PALETTE	一些调色板	81	{J}
-08AC6C98	&PALETTE	一些调色板	82	{J}
-08AD1424	&PALETTE	一些调色板	83	{J}
-08B1CCF4	&PALETTE	一些调色板	84	{J}
-08B1D0BC	&PALETTE	一些调色板	85	{J}
-08B1D238	&PALETTE	一些调色板	86	{J}
-085E0DF4	&PALETTE	一些调色板	88	{J}
-08B1E998	&PALETTE	一些调色板	89	{J}
-08B23F00	&PALETTE	一些调色板	90	{J}
-08B2699C	&PALETTE	一些调色板	91	{J}
-08B3B72C	&PALETTE	一些调色板	92	{J}
-08B4678C	&PALETTE	一些调色板	93	{J}
-08B474F0	&PALETTE	一些调色板	94	{J}
-08B48918	&PALETTE	一些调色板	95	{J}
-08B48D38	&PALETTE	一些调色板	96	{J}
-08B49B4C	&PALETTE	一些调色板	97	{J}
-08B4B134	&PALETTE	一些调色板	98	{J}
-08B4B1E0	&PALETTE	一些调色板	99	{J}
 085AE778	&LZ77	一些小的压缩数据	01	{U}
 085B089C	&LZ77	一些小的压缩数据	02	{U}
 089AD6C8	&LZ77	一些小的压缩数据	03	{U}
@@ -7379,81 +7183,349 @@ r3=X tile position of menu of the right	{U}
 080598F8	神器闪光	{J}
 08058AC8	神器闪光	{U}
 0203F080	:0203F084	Reserve Gaiden Style Magic Menu	{U}
-08A71F3C	&EVENT	调试室，事件1	{J}
-08A71FCC	&EVENT	调试室，事件2	{J}
-08A72044	&EVENT	调试室，事件3	{J}
-08A720EC	&EVENT	调试室，事件4	{J}
-08A72158	&EVENT	调试室，事件5	{J}
-08A721F4	&EVENT	调试室，事件6	{J}
-08A72264	&EVENT	调试室，事件7	{J}
-08A72318	&EVENT	调试室，事件8	{J}
-08A72158	&EVENT	调试室，事件9	{J}
-08A721F4	&EVENT	调试室，事件10	{J}
-08A723A8	&EVENT	调试室，事件11	{J}
-089FFE84	&EVENT	调试室，事件1	{U}
-089FFF14	&EVENT	调试室，事件2	{U}
-089FFF8C	&EVENT	调试室，事件3	{U}
-08A00034	&EVENT	调试室，事件4	{U}
-08A000A0	&EVENT	调试室，事件5	{U}
-08A0013C	&EVENT	调试室，事件6	{U}
-08A001AC	&EVENT	调试室，事件7	{U}
-08A00260	&EVENT	调试室，事件8	{U}
-08A000A0	&EVENT	调试室，事件9	{U}
-08A0013C	&EVENT	调试室，事件10	{U}
-08A002F0	&EVENT	调试室，事件11	{U}
-08083DF0	设置疤痕伤害恢复效果	{J}
-08081B40	设置疤痕伤害恢复效果	{U}
-08A20600	:08A2067F	伤口药物的恢复效果托盘动画	{J}
-089AFF78	:089AFFF7	伤口药物的恢复效果托盘动画	{U}
-089991AC	:0899B5AB	启动数据2似乎没有使用平铺动画数据	{U}
-08BBD970	:08BC39FF	启动数据NAZO 1	{J}
-08BBB6C8	:08BBD3F7	启动数据NAZO 2	{J}
-08BB8ED0	:08BBB33C	启动数据NAZO 3	{J}
-08BB310C	:08BB878B	启动数据NAZO 4	{J}
-08FE0000	:08FE1553	启动数据ROM终止1	{J}
-08FE281C	:08FE308F	启动数据ROM终止2	{J}
-08B1FE7C	:08B2A5D3	启动数据NAZO 1	{U}
-08B1A0B8	:08B1FA3B	启动数据NAZO 2	{U}
-08FE0000	:08FE1553	启动数据ROM终止1	{U}
-08FE281C	:08FE308F	启动数据ROM终止2	{U}
-080837b0	强迫游戏结束	{U}
-08018ff0	AreAnyPlayerUnitDead	{U}
-08085AE8	强迫游戏结束	{J}
-08018D04	AreAnyPlayerUnitDead	{J}
-080021A8	获得播放BGM	{J}
-08002258	获得播放BGM	{U}
-080BEDE8	BGM选择世界地图	{J}
-080B9F54	BGM选择世界地图	{U}
-080c1e20	获取世界地图中下一个目的地的基本ID	{J}
-080bd014	获取世界地图中下一个目的地的基本ID	{U}
+08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
+08002B04	CallARM_PushToSecondaryOAM	{J}
 085911C4	:085911D7	MMSizeTable	{U}
 085B8F5C	:085B8F6F	MMSizeTable	{J}
-080374B0	RMenu_Procs_BKSEL战斗预测对话关系	{J}
-080373F0	RMenu_Procs_BKSEL战斗预测对话关系	{U}
-0808B414	战斗预测对话框是注册RMenu的包装函数	{J}
-08089188	战斗预测对话框是注册RMenu的包装函数	{U}
-08A73210	:08A732BF	游戏系统引用的字符串ID	{J}
-08A01158	:08A01207	游戏系统引用的字符串ID	{U}
-08670D40	:0867169F	什么数据与真棒有关1	0x0854	{U}
-086716A0	:08671FFF	什么数据2与活棒2相关	0x0854	{U}
-0866F774	:086700D3	什么数据与现场魔杖有关3	0x1F	{U}
-086700D4	:086702D3	现场员工托盘关系1	{U}
-08672000	:0867221F	活藤关系的调色板2	{U}
-08672220	:0867243F	活棒的数据	{U}
-0869D918	:0869E277	什么数据与真棒有关1	0x0854	{J}
-0869E278	:0869EBD7	什么数据2与活棒2相关	0x0854	{J}
-0869C34C	:0869CCAB	什么数据与现场魔杖有关3	0x1F	{J}
-0869CCAC	:0869CEAB	现场员工托盘关系1	{J}
-080E29E6	:080E2A17	活藤关系的调色板2	{J}
-080E2A18	:080E2C37	活棒的数据	{J}
-085879D8	:08587A3F	Procs(6c) Function Table	{U}
-08577688	:085776EF	Procs(6c) Function Table	{J}
-08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
-08206954	:082069D7	怪物发生率关系	始终100％表	{U}
-081F6620	:081F66A3	怪物发生率关系	始终100％表	{J}
-08207190	:0820721F	MPlayJumpTable	Midi Function Table	M4ALIB	{U}
+08001EE4	EnablePaletteSync	{J}
+089991AC	:0899B5AB	Boot data 2It seems to be tile animation data not being used	{U}
+0859A140	&PALETTE	Something's palette	01	{U}
+0859EEA0	&PALETTE	Something's palette	02	{U}
+0859EEC0	&PALETTE	Something's palette	03	{U}
+0859EEE0	&PALETTE	Something's palette	04	{U}
+0859EF00	&PALETTE	Something's palette	05	{U}
+0859EF20	&PALETTE	Something's palette	06	{U}
+0859EF60	&PALETTE	Something's palette	07	{U}
+0859EFE0	&PALETTE	Something's palette	08	{U}
+0859F000	&PALETTE	Something's palette	09	{U}
+085A0D2C	&PALETTE	Something's palette	10	{U}
+085A206C	&PALETTE	Something's palette	11	{U}
+085A208C	&PALETTE	Something's palette	12	{U}
+085A2DDC	&PALETTE	Something's palette	13	{U}
+085A3490	&PALETTE	Something's palette	14	{U}
+085A3944	&PALETTE	Something's palette	15	{U}
+085A3AC0	&PALETTE	Something's palette	16	{U}
+085A401C	&PALETTE	Something's palette	17	{U}
+085A5760	&PALETTE	Something's palette	18	{U}
+085A61A8	&PALETTE	Something's palette	19	{U}
+085A643C	&PALETTE	Something's palette	20	{U}
+085A7CA0	&PALETTE	Something's palette	21	{U}
+085A7EC8	&PALETTE	Something's palette	22	{U}
+085ADBE8	&PALETTE	Something's palette	23	{U}
+085ADC48	&PALETTE	Something's palette	24	{U}
+085ADCC8	&PALETTE	Something's palette	25	{U}
+085ADDA8	&PALETTE	Something's palette	26	{U}
+085ADDC8	&PALETTE	Something's palette	27	{U}
+085ADE08	&PALETTE	Something's palette	28	{U}
+085ADE68	&PALETTE	Something's palette	29	{U}
+085B081C	&PALETTE4	Something's palette	30	{U}
+085B6C14	&PALETTE	Something's palette	31	{U}
+085B7560	&PALETTE	Something's palette	32	{U}
+085B7580	&PALETTE	Something's palette	33	{U}
+085B9244	&PALETTE	Something's palette	34	{U}
+0868716C	&PALETTE	Something's palette	35	{U}
+08803590	&PALETTE	Something's palette	36	{U}
+08803B10	&PALETTE	Something's palette	37	{U}
+089A232C	&PALETTE	Something's palette	38	{U}
+089A28E0	&PALETTE	Something's palette	39	{U}
+089AC9A8	&PALETTE	Something's palette	40	{U}
+089ADD0C	&PALETTE	Something's palette	41	{U}
+089AE204	&PALETTE	Something's palette	42	{U}
+089AE484	&PALETTE	Something's palette	43	{U}
+089AE7C4	&PALETTE	Something's palette	44	{U}
+089B068C	&PALETTE	Something's palette	45	{U}
+089B0700	&PALETTE	Something's palette	46	{U}
+089B20E8	&PALETTE	Something's palette	47	{U}
+089B4BFC	&PALETTE	Something's palette	48	{U}
+089B73D4	&PALETTE	Something's palette	49	{U}
+089B80C4	&PALETTE	Something's palette	50	{U}
+089E7DEC	&PALETTE	Something's palette	51	{U}
+089E84D4	&PALETTE	Something's palette	52	{U}
+08A01EE4	&PALETTE	Something's palette	53	{U}
+08A01F04	&PALETTE	Something's palette	54	{U}
+08A021E4	&PALETTE	Something's palette	55	{U}
+08A03334	&PALETTE	Something's palette	56	{U}
+08A09A5C	&PALETTE	Something's palette	57	{U}
+08A0AE44	&PALETTE	Something's palette	58	{U}
+08A0AE64	&PALETTE	Something's palette	59	{U}
+08A1A3FC	&PALETTE	Something's palette	60	{U}
+08A1B154	&PALETTE	Something's palette	61	{U}
+08A1B638	&PALETTE	Something's palette	62	{U}
+08A1BD00	&PALETTE	Something's palette	63	{U}
+08A1D79C	&PALETTE	Something's palette	64	{U}
+08A1E0D8	&PALETTE	Something's palette	65	{U}
+08A1FFB0	&PALETTE	Something's palette	66	{U}
+08A1FFD0	&PALETTE	Something's palette	67	{U}
+08A25DCC	&PALETTE4	Something's palette	68	{U}
+08A268D8	&PALETTE	Something's palette	69	{U}
+08A27F68	&PALETTE8	Something's palette	70	{U}
+08A295B4	&PALETTE	Something's palette	71	{U}
+08A2C11C	&PALETTE	Something's palette	72	{U}
+08A2C8A8	&PALETTE3	Something's palette	73	{U}
+08A2D2CC	&PALETTE3	Something's palette	74	{U}
+08A2E1B8	&PALETTE2	Something's palette	75	{U}
+08A2E4A4	&PALETTE	Something's palette	76	{U}
+08A2E8F0	&PALETTE	Something's palette	77	{U}
+08A360C8	&PALETTE	Something's palette	78	{U}
+08A372C0	&PALETTE	Something's palette	79	{U}
+08A37300	&PALETTE	Something's palette	80	{U}
+08A3F710	&PALETTE	Something's palette	81	{U}
+08A40AD4	&PALETTE	Something's palette	82	{U}
+08A4D0CC	&PALETTE	Something's palette	83	{U}
+08A97A60	&PALETTE	Something's palette	84	{U}
+08A97E28	&PALETTE	Something's palette	85	{U}
+08A97FA4	&PALETTE	Something's palette	86	{U}
+08A98DCC	&PALETTE	Something's palette	87	{U}
+08A98E8C	&PALETTE	Something's palette	88	{U}
+08A99120	&PALETTE	Something's palette	89	{U}
+08A9E688	&PALETTE	Something's palette	90	{U}
+08AA11B0	&PALETTE	Something's palette	91	{U}
+08AA239C	&PALETTE	Something's palette	92	{U}
+08AADB68	&PALETTE	Something's palette	93	{U}
+08AAE8CC	&PALETTE	Something's palette	94	{U}
+08AAFCF4	&PALETTE	Something's palette	95	{U}
+08AB0114	&PALETTE	Something's palette	96	{U}
+08AB0B24	&PALETTE	Something's palette	97	{U}
+08AB210C	&PALETTE	Something's palette	98	{U}
+08AB21B8	&PALETTE	Something's palette	99	{U}
+085C25C0	&PALETTE	Something's palette	01	{J}
+085C73C0	&PALETTE	Something's palette	02	{J}
+085C73E0	&PALETTE	Something's palette	03	{J}
+085C7400	&PALETTE	Something's palette	04	{J}
+085C7420	&PALETTE	Something's palette	05	{J}
+085C7440	&PALETTE	Something's palette	06	{J}
+085C7480	&PALETTE	Something's palette	07	{J}
+085C7500	&PALETTE	Something's palette	08	{J}
+085C7520	&PALETTE	Something's palette	09	{J}
+085C924C	&PALETTE	Something's palette	10	{J}
+085CA58C	&PALETTE	Something's palette	11	{J}
+085CA5AC	&PALETTE	Something's palette	12	{J}
+085CB2FC	&PALETTE	Something's palette	13	{J}
+085CB9B0	&PALETTE	Something's palette	14	{J}
+085CBE64	&PALETTE	Something's palette	15	{J}
+085CBFE4	&PALETTE	Something's palette	16	{J}
+085CC540	&PALETTE	Something's palette	17	{J}
+085CDC84	&PALETTE	Something's palette	18	{J}
+085CF9BC	&PALETTE	Something's palette	19	{J}
+085CFC50	&PALETTE	Something's palette	20	{J}
+085D14B4	&PALETTE	Something's palette	21	{J}
+085D1DD0	&PALETTE	Something's palette	22	{J}
+085D7E88	&PALETTE	Something's palette	23	{J}
+085D7EE8	&PALETTE	Something's palette	24	{J}
+085D7F68	&PALETTE	Something's palette	25	{J}
+085D8048	&PALETTE	Something's palette	26	{J}
+085D8068	&PALETTE	Something's palette	27	{J}
+085D80A8	&PALETTE	Something's palette	28	{J}
+085D8108	&PALETTE	Something's palette	29	{J}
+085DA9FC	&PALETTE4	Something's palette	30	{J}
+085E0DF4	&PALETTE	Something's palette	31	{J}
+085E1740	&PALETTE	Something's palette	32	{J}
+085E1760	&PALETTE	Something's palette	33	{J}
+085E3424	&PALETTE	Something's palette	34	{J}
+086B3D44	&PALETTE	Something's palette	35	{J}
+08857AE8	&PALETTE	Something's palette	36	{J}
+08858068	&PALETTE	Something's palette	37	{J}
+08A12AA0	&PALETTE	Something's palette	38	{J}
+08A12F68	&PALETTE	Something's palette	39	{J}
+08A1D030	&PALETTE	Something's palette	40	{J}
+08A1E394	&PALETTE	Something's palette	41	{J}
+08A1E88C	&PALETTE	Something's palette	42	{J}
+08A1EB0C	&PALETTE	Something's palette	43	{J}
+08A1EE4C	&PALETTE	Something's palette	44	{J}
+08A20D14	&PALETTE	Something's palette	45	{J}
+08A20D88	&PALETTE	Something's palette	46	{J}
+08A22770	&PALETTE	Something's palette	47	{J}
+08A25284	&PALETTE	Something's palette	48	{J}
+08A27A5C	&PALETTE	Something's palette	49	{J}
+08A2874C	&PALETTE	Something's palette	50	{J}
+08A58474	&PALETTE	Something's palette	51	{J}
+08A5A5F8	&PALETTE	Something's palette	52	{J}
+08A73F9C	&PALETTE	Something's palette	53	{J}
+08A73FBC	&PALETTE	Something's palette	54	{J}
+08A7429C	&PALETTE	Something's palette	55	{J}
+08A753EC	&PALETTE	Something's palette	56	{J}
+08A7CD1C	&PALETTE	Something's palette	57	{J}
+08A7E104	&PALETTE	Something's palette	58	{J}
+08A7E124	&PALETTE	Something's palette	59	{J}
+08A96C4C	&PALETTE	Something's palette	60	{J}
+08A97BEC	&PALETTE	Something's palette	61	{J}
+08A980D0	&PALETTE	Something's palette	62	{J}
+08A98798	&PALETTE	Something's palette	63	{J}
+08A99FA8	&PALETTE	Something's palette	64	{J}
+08A9B004	&PALETTE	Something's palette	65	{J}
+08A9CEDC	&PALETTE	Something's palette	66	{J}
+08A9CEFC	&PALETTE	Something's palette	67	{J}
+08AA2D34	&PALETTE4	Something's palette	68	{J}
+08AA3840	&PALETTE	Something's palette	69	{J}
+08A980D0	&PALETTE8	Something's palette	70	{J}
+08AA7310	&PALETTE	Something's palette	71	{J}
+08AA9E78	&PALETTE	Something's palette	72	{J}
+08AAAA38	&PALETTE3	Something's palette	73	{J}
+08AAEAE4	&PALETTE2	Something's palette	75	{J}
+08A79B70	&PALETTE	Something's palette	76	{J}
+08AAF654	&PALETTE	Something's palette	77	{J}
+08AB6EF4	&PALETTE	Something's palette	78	{J}
+08AB8044	&PALETTE	Something's palette	79	{J}
+08A97C0C	&PALETTE	Something's palette	80	{J}
+08AC30D4	&PALETTE	Something's palette	81	{J}
+08AC6C98	&PALETTE	Something's palette	82	{J}
+08AD1424	&PALETTE	Something's palette	83	{J}
+08B1CCF4	&PALETTE	Something's palette	84	{J}
+08B1D0BC	&PALETTE	Something's palette	85	{J}
+08B1D238	&PALETTE	Something's palette	86	{J}
+085E0DF4	&PALETTE	Something's palette	88	{J}
+08B1E998	&PALETTE	Something's palette	89	{J}
+08B23F00	&PALETTE	Something's palette	90	{J}
+08B2699C	&PALETTE	Something's palette	91	{J}
+08B3B72C	&PALETTE	Something's palette	92	{J}
+08B4678C	&PALETTE	Something's palette	93	{J}
+08B474F0	&PALETTE	Something's palette	94	{J}
+08B48918	&PALETTE	Something's palette	95	{J}
+08B48D38	&PALETTE	Something's palette	96	{J}
+08B49B4C	&PALETTE	Something's palette	97	{J}
+08B4B134	&PALETTE	Something's palette	98	{J}
+08B4B1E0	&PALETTE	Something's palette	99	{J}
+089B7414	&LZ77	Something small compressed data	35	{U}
+089B743C	&LZ77	Something small compressed data	36	{U}
+089B7468	&LZ77	Something small compressed data	37	{U}
+089B749C	&LZ77	Something small compressed data	38	{U}
+089B74D4	&LZ77	Something small compressed data	39	{U}
+089B7514	&LZ77	Something small compressed data	40	{U}
+089B7554	&LZ77	Something small compressed data	41	{U}
+089B759C	&LZ77	Something small compressed data	42	{U}
+089B75D8	&LZ77	Something small compressed data	43	{U}
+089B7414	&LZ77	Something small compressed data	44	{U}
+089B743C	&LZ77	Something small compressed data	45	{U}
+089B7468	&LZ77	Something small compressed data	46	{U}
+089B749C	&LZ77	Something small compressed data	47	{U}
+089B74D4	&LZ77	Something small compressed data	48	{U}
+089B7514	&LZ77	Something small compressed data	49	{U}
+089B7554	&LZ77	Something small compressed data	50	{U}
+089B759C	&LZ77	Something small compressed data	51	{U}
+089B75D8	&LZ77	Something small compressed data	52	{U}
+089E7E2C	&LZ77	Something small compressed data	53	{U}
+089E7E50	&LZ77	Something small compressed data	54	{U}
+089E7E78	&LZ77	Something small compressed data	55	{U}
+089E7EA0	&LZ77	Something small compressed data	56	{U}
+089E7ECC	&LZ77	Something small compressed data	57	{U}
+089E7EFC	&LZ77	Something small compressed data	58	{U}
+089E7F2C	&LZ77	Something small compressed data	59	{U}
+089E7F5C	&LZ77	Something small compressed data	60	{U}
+089E7F8C	&LZ77	Something small compressed data	61	{U}
+089E7FBC	&LZ77	Something small compressed data	62	{U}
+089E7FFC	&LZ77	Something small compressed data	63	{U}
+089E8040	&LZ77	Something small compressed data	64	{U}
+089E8090	&LZ77	Something small compressed data	65	{U}
+089E80EC	&LZ77	Something small compressed data	66	{U}
+089E8148	&LZ77	Something small compressed data	67	{U}
+089E81A4	&LZ77	Something small compressed data	68	{U}
+089E8200	&LZ77	Something small compressed data	69	{U}
+08A27A9C	&LZ77	Something small compressed data	35	{J}
+08A27AC4	&LZ77	Something small compressed data	36	{J}
+08A27AF0	&LZ77	Something small compressed data	37	{J}
+08A27B24	&LZ77	Something small compressed data	38	{J}
+08A27B5C	&LZ77	Something small compressed data	39	{J}
+08A27B9C	&LZ77	Something small compressed data	40	{J}
+08A27BDC	&LZ77	Something small compressed data	41	{J}
+08A27C24	&LZ77	Something small compressed data	42	{J}
+08A27C60	&LZ77	Something small compressed data	43	{J}
+08A27A9C	&LZ77	Something small compressed data	44	{J}
+08A27AC4	&LZ77	Something small compressed data	45	{J}
+08A27AF0	&LZ77	Something small compressed data	46	{J}
+08A27B24	&LZ77	Something small compressed data	47	{J}
+08A27B5C	&LZ77	Something small compressed data	48	{J}
+08A27B9C	&LZ77	Something small compressed data	49	{J}
+08A27BDC	&LZ77	Something small compressed data	50	{J}
+08A27C24	&LZ77	Something small compressed data	51	{J}
+08A27C60	&LZ77	Something small compressed data	52	{J}
+08A584B4	&LZ77	Something small compressed data	53	{J}
+08A584D8	&LZ77	Something small compressed data	54	{J}
+08A58500	&LZ77	Something small compressed data	55	{J}
+08A58528	&LZ77	Something small compressed data	56	{J}
+08A58554	&LZ77	Something small compressed data	57	{J}
+08A58584	&LZ77	Something small compressed data	58	{J}
+08A585B4	&LZ77	Something small compressed data	59	{J}
+08A585E4	&LZ77	Something small compressed data	60	{J}
+08A58614	&LZ77	Something small compressed data	61	{J}
+08A58644	&LZ77	Something small compressed data	62	{J}
+08A58684	&LZ77	Something small compressed data	63	{J}
+08A586C8	&LZ77	Something small compressed data	64	{J}
+08A58718	&LZ77	Something small compressed data	65	{J}
+08A58774	&LZ77	Something small compressed data	66	{J}
+08A587D0	&LZ77	Something small compressed data	67	{J}
+08A5882C	&LZ77	Something small compressed data	68	{J}
+08A58888	&LZ77	Something small compressed data	69	{J}
+08A71F3C	&EVENT	Debug room, Event 1	{J}
+08A71FCC	&EVENT	Debug room, Event 2	{J}
+08A72044	&EVENT	Debug room, Event 3	{J}
+08A720EC	&EVENT	Debug room, Event 4	{J}
+08A72158	&EVENT	Debug room, Event 5	{J}
+08A721F4	&EVENT	Debug room, Event 6	{J}
+08A72264	&EVENT	Debug room, Event 7	{J}
+08A72318	&EVENT	Debug room, Event 8	{J}
+08A72158	&EVENT	Debug room, Event 9	{J}
+08A721F4	&EVENT	Debug room, Event 10	{J}
+08A723A8	&EVENT	Debug room, Event 11	{J}
+089FFE84	&EVENT	Debug room, Event 1	{U}
+089FFF14	&EVENT	Debug room, Event 2	{U}
+089FFF8C	&EVENT	Debug room, Event 3	{U}
+08A00034	&EVENT	Debug room, Event 4	{U}
+08A000A0	&EVENT	Debug room, Event 5	{U}
+08A0013C	&EVENT	Debug room, Event 6	{U}
+08A001AC	&EVENT	Debug room, Event 7	{U}
+08A00260	&EVENT	Debug room, Event 8	{U}
+08A000A0	&EVENT	Debug room, Event 9	{U}
+08A0013C	&EVENT	Debug room, Event 10	{U}
+08A002F0	&EVENT	Debug room, Event 11	{U}
+08083DF0	Set up scar damage recovery effect	{J}
+08081B40	Set up scar damage recovery effect	{U}
+08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}
+089AFF78	:089AFFF7	Restoration of wound medicine Effect pallet Animation	{U}
+08BBD970	:08BC39FF	Boot dataNAZO 1	{J}
+08BBB6C8	:08BBD3F7	Boot dataNAZO 2	{J}
+08BB8ED0	:08BBB33C	Boot dataNAZO 3	{J}
+08BB310C	:08BB878B	Boot dataNAZO 4	{J}
+08FE0000	:08FE1553	Boot dataROM termination 1	{J}
+08FE281C	:08FE308F	Boot dataROM termination 2	{J}
+08B1FE7C	:08B2A5D3	Boot dataNAZO 1	{U}
+08B1A0B8	:08B1FA3B	Boot dataNAZO 2	{U}
+08FE0000	:08FE1553	Boot dataROM termination 1	{U}
+08FE281C	:08FE308F	Boot dataROM termination 2	{U}
+080837b0	Forced game over	{U}
+08018ff0	AreAnyPlayerUnitDead	{U}
+08085AE8	Forced game over	{J}
+08018D04	AreAnyPlayerUnitDead	{J}
+080021A8	Acquire playing BGM	{J}
+08002258	Acquire playing BGM	{U}
+080BEDE8	BGM selection of world map	{J}
+080B9F54	BGM selection of world map	{U}
+080c1e20	Acquire the base ID of the next destination in the world map	{J}
+080bd014	Acquire the base ID of the next destination in the world map	{U}
+080374B0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{J}
+080373F0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{U}
+0808B414	Battle prediction dialog is a wrapper function to register RMenu	{J}
+08089188	Battle prediction dialog is a wrapper function to register RMenu	{U}
+08A73210	:08A732BF	Character string ID referred to by the game system	{J}
+08A01158	:08A01207	Character string ID referred to by the game system	{U}
+08670D40	:0867169F	What data related to live wand 1	0x0854	{U}
+086716A0	:08671FFF	What data 2 related to live wand 2	0x0854	{U}
+0866F774	:086700D3	What data related to live wand 3	0x1F	{U}
+086700D4	:086702D3	Live staff pallet relationship 1	{U}
+08672000	:0867221F	Palette of live cane relationship 2	{U}
+08672220	:0867243F	Data of live wand something	{U}
+0869D918	:0869E277	What data related to live wand 1	0x0854	{J}
+0869E278	:0869EBD7	What data 2 related to live wand 2	0x0854	{J}
+0869C34C	:0869CCAB	What data related to live wand 3	0x1F	{J}
+0869CCAC	:0869CEAB	Live staff pallet relationship 1	{J}
+080E29E6	:080E2A17	Palette of live cane relationship 2	{J}
+080E2A18	:080E2C37	Data of live wand something	{J}
+085879D8	&ASM_POINTER_ARRAY	Procs(6c) Function	{U}
+08577688	&ASM_POINTER_ARRAY	Procs(6c) Function	{J}
+08206954	:082069D7	Monster occurrence rate relationship	Always 100% table	{U}
+081F6620	:081F66A3	Monster occurrence rate relationship	Always 100% table	{J}
+08207190	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{U}
 08207220	:08207267	MidiKeyToFreqTable1	M4ALIB	{U}
-08207268	:082072DB	未知	但是，它似乎与音乐有关	M4ALIB	{U}
+08207268	:082072DB	Unknown	However, it seems to be music related	M4ALIB	{U}
 082072DC	:08207303	MidiKeyToFreqTable2	M4ALIB	{U}
 08207304	:0820731B	SampleFreqSetTable	M4ALIB	{U}
 0820731C	:0820739F	MidiKeyToCgbFreq Data Table1	M4ALIB	{U}
@@ -7461,10 +7533,10 @@ r3=X tile position of menu of the right	{U}
 082073B8	:082073F3	MidiKeyToCgbFreq Data Table3	M4ALIB	{U}
 082073F4	:08207403	CgbSound Data Table	M4ALIB	{U}
 08207404	:08207437	ply_note_Table	M4ALIB	{U}
-08207438	:0820746F	ply_xcmd_Table	Function Table	M4ALIB	{U}
-081F6E40	:081F6ECF	MPlayJumpTable	Midi Function Table	M4ALIB	{J}
+08207438	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{U}
+081F6E40	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{J}
 081F6ED0	:081F6F17	MidiKeyToFreqTable1	M4ALIB	{J}
-081F6F18	:081F6F8B	未知	但是，它似乎与音乐有关	M4ALIB	{J}
+081F6F18	:081F6F8B	Unknown	However, it seems to be music related	M4ALIB	{J}
 081F6F8C	:081F6FB3	MidiKeyToFreqTable2	M4ALIB	{J}
 081F6FB4	:081F6FCB	SampleFreqSetTable	M4ALIB	{J}
 081F6FCC	:081F704F	MidiKeyToCgbFreq Data Table1	M4ALIB	{J}
@@ -7472,341 +7544,341 @@ r3=X tile position of menu of the right	{U}
 081F7068	:081F70A3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
 081F70A4	:081F70B3	CgbSound Data Table	M4ALIB	{J}
 081F70B4	:081F70E7	ply_note_Table	M4ALIB	{J}
-081F70E8	:081F711F	ply_xcmd_Table	Function Table	M4ALIB	{J}
-08AB988C	&LZ77	神秘数据	神秘图像可能与OP有关	{U}
-08B53254	&LZ77	神秘数据	神秘图像可能与OP有关	{J}
-085A0FF8	&ROMTCS	任何ROMTCS数据	05	{U}
-085A129C	&ROMTCS	任何ROMTCS数据	06	{U}
-085A14B8	&ROMTCS	任何ROMTCS数据	07	{U}
-085A2384	&ROMTCS	任何ROMTCS数据	08	{U}
-085A2DFC	&ROMTCS	任何ROMTCS数据	09	{U}
-085A33C8	&ROMTCS	任何ROMTCS数据	10	{U}
-085A3420	&ROMTCS	任何ROMTCS数据	11	{U}
-085A3730	&ROMTCS	任何ROMTCS数据	12	{U}
-085A38CC	&ROMTCS	任何ROMTCS数据	13	{U}
-085A3908	&ROMTCS	任何ROMTCS数据	14	{U}
-089AC194	&ROMTCS	任何ROMTCS数据	15	{U}
-089AC440	&ROMTCS	任何ROMTCS数据	16	{U}
-089A6FD8	&ROMTCS	任何ROMTCS数据	17	{U}
-089A6F40	&ROMTCS	任何ROMTCS数据	18	{U}
-089A61F8	&ROMTCS	任何ROMTCS数据	19	{U}
-089B2108	&ROMTCS	任何ROMTCS数据	20	{U}
-089B1A10	&ROMTCS	任何ROMTCS数据	21	{U}
-089B2748	&ROMTCS	任何ROMTCS数据	22	{U}
-089A6254	&ROMTCS	任何ROMTCS数据	23	{U}
-089A5314	&ROMTCS	任何ROMTCS数据	24	{U}
-089A5A6C	&ROMTCS	任何ROMTCS数据	25	{U}
-08A1B194	&ROMTCS	任何ROMTCS数据	26	{U}
-08A280A8	&ROMTCS	任何ROMTCS数据	27	{U}
-08AA1C70	&ROMTCS	任何ROMTCS数据	28	{U}
-085A7E34	&ROMTCS	任何ROMTCS数据	29	{U}
-085C9518	&ROMTCS	任何ROMTCS数据	05	{J}
-085C97BC	&ROMTCS	任何ROMTCS数据	06	{J}
-085C99D8	&ROMTCS	任何ROMTCS数据	07	{J}
-085CA8A4	&ROMTCS	任何ROMTCS数据	08	{J}
-085CB31C	&ROMTCS	任何ROMTCS数据	09	{J}
-085CB8E8	&ROMTCS	任何ROMTCS数据	10	{J}
-085CB940	&ROMTCS	任何ROMTCS数据	11	{J}
-085CBC50	&ROMTCS	任何ROMTCS数据	12	{J}
-085CBDEC	&ROMTCS	任何ROMTCS数据	13	{J}
-085CBE28	&ROMTCS	任何ROMTCS数据	14	{J}
-08A1C81C	&ROMTCS	任何ROMTCS数据	15	{J}
-08A1CAC8	&ROMTCS	任何ROMTCS数据	16	{J}
-08A17660	&ROMTCS	任何ROMTCS数据	17	{J}
-08A175C8	&ROMTCS	任何ROMTCS数据	18	{J}
-08A16880	&ROMTCS	任何ROMTCS数据	19	{J}
-08A22790	&ROMTCS	任何ROMTCS数据	20	{J}
-08A22098	&ROMTCS	任何ROMTCS数据	21	{J}
-08A22DD0	&ROMTCS	任何ROMTCS数据	22	{J}
-08A168DC	&ROMTCS	任何ROMTCS数据	23	{J}
-08A1599C	&ROMTCS	任何ROMTCS数据	24	{J}
-08A160F4	&ROMTCS	任何ROMTCS数据	25	{J}
-08A97C2C	&ROMTCS	任何ROMTCS数据	26	{J}
-08AA52FC	&ROMTCS	任何ROMTCS数据	27	{J}
-08B2759C	&ROMTCS	任何ROMTCS数据	28	{J}
-085D1D3C	&ROMTCS	任何ROMTCS数据	29	{J}
-08AA6EA4	:08AA702F	一个定义神秘的60字节固定数据的表	{U}
-08AF4C9C	&NAZO60	神秘的60字节固定数据	01	{U}
-08AF5100	&NAZO60	神秘的60字节固定数据	02	{U}
-08AF5578	&NAZO60	神秘的60字节固定数据	03	{U}
-08AF59EC	&NAZO60	神秘的60字节固定数据	04	{U}
-08AF5E5C	&NAZO60	神秘的60字节固定数据	05	{U}
-08AF62CC	&NAZO60	神秘的60字节固定数据	06	{U}
-08AF6744	&NAZO60	神秘的60字节固定数据	07	{U}
-08AF6BBC	&NAZO60	神秘的60字节固定数据	08	{U}
-08AF7034	&NAZO60	神秘的60字节固定数据	09	{U}
-08AF74AC	&NAZO60	神秘的60字节固定数据	10	{U}
-08AF7924	&NAZO60	神秘的60字节固定数据	11	{U}
-08AF7D98	&NAZO60	神秘的60字节固定数据	12	{U}
-08AF8210	&NAZO60	神秘的60字节固定数据	13	{U}
-08AF8688	&NAZO60	神秘的60字节固定数据	14	{U}
-08AF8AFC	&NAZO60	神秘的60字节固定数据	15	{U}
-08AF8F74	&NAZO60	神秘的60字节固定数据	16	{U}
-08AF93EC	&NAZO60	神秘的60字节固定数据	17	{U}
-08AF9864	&NAZO60	神秘的60字节固定数据	18	{U}
-08AF9CDC	&NAZO60	神秘的60字节固定数据	19	{U}
-08AFA154	&NAZO60	神秘的60字节固定数据	20	{U}
-08AFA5CC	&NAZO60	神秘的60字节固定数据	21	{U}
-08AFAA44	&NAZO60	神秘的60字节固定数据	22	{U}
-08AFAEBC	&NAZO60	神秘的60字节固定数据	23	{U}
-08AFB334	&NAZO60	神秘的60字节固定数据	24	{U}
-08AFB7AC	&NAZO60	神秘的60字节固定数据	25	{U}
-08AFBC24	&NAZO60	神秘的60字节固定数据	26	{U}
-08AFC098	&NAZO60	神秘的60字节固定数据	27	{U}
-08AFC50C	&NAZO60	神秘的60字节固定数据	28	{U}
-08AFC978	&NAZO60	神秘的60字节固定数据	29	{U}
-08AFCDEC	&NAZO60	神秘的60字节固定数据	30	{U}
-08AFD260	&NAZO60	神秘的60字节固定数据	31	{U}
-08AFD6C4	&NAZO60	神秘的60字节固定数据	32	{U}
-08AFDB28	&NAZO60	神秘的60字节固定数据	33	{U}
-08AFDF98	&NAZO60	神秘的60字节固定数据	34	{U}
-08AFE40C	&NAZO60	神秘的60字节固定数据	35	{U}
-08AFE880	&NAZO60	神秘的60字节固定数据	36	{U}
-08AFECF4	&NAZO60	神秘的60字节固定数据	37	{U}
-08AFF16C	&NAZO60	神秘的60字节固定数据	38	{U}
-08AFF5DC	&NAZO60	神秘的60字节固定数据	39	{U}
-08AFFA44	&NAZO60	神秘的60字节固定数据	40	{U}
-08AFFEAC	&NAZO60	神秘的60字节固定数据	41	{U}
-08B0031C	&NAZO60	神秘的60字节固定数据	42	{U}
-08B00794	&NAZO60	神秘的60字节固定数据	43	{U}
-08B00C0C	&NAZO60	神秘的60字节固定数据	44	{U}
-08B0107C	&NAZO60	神秘的60字节固定数据	45	{U}
-08B014F0	&NAZO60	神秘的60字节固定数据	46	{U}
-08B01968	&NAZO60	神秘的60字节固定数据	47	{U}
-08B01DDC	&NAZO60	神秘的60字节固定数据	48	{U}
-08B02244	&NAZO60	神秘的60字节固定数据	49	{U}
-08B026B8	&NAZO60	神秘的60字节固定数据	50	{U}
-08B02B20	&NAZO60	神秘的60字节固定数据	51	{U}
-08B02F90	&NAZO60	神秘的60字节固定数据	52	{U}
-08B033FC	&NAZO60	神秘的60字节固定数据	53	{U}
-08B03870	&NAZO60	神秘的60字节固定数据	54	{U}
-08B03CE0	&NAZO60	神秘的60字节固定数据	55	{U}
-08B04158	&NAZO60	神秘的60字节固定数据	56	{U}
-08B045D0	&NAZO60	神秘的60字节固定数据	57	{U}
-08B04A48	&NAZO60	神秘的60字节固定数据	58	{U}
-08B04EB4	&NAZO60	神秘的60字节固定数据	59	{U}
-08B05328	&NAZO60	神秘的60字节固定数据	60	{U}
-08B05794	&NAZO60	神秘的60字节固定数据	61	{U}
-08B05BFC	&NAZO60	神秘的60字节固定数据	62	{U}
-08B06070	&NAZO60	神秘的60字节固定数据	63	{U}
-08B064E8	&NAZO60	神秘的60字节固定数据	64	{U}
-08B06960	&NAZO60	神秘的60字节固定数据	65	{U}
-08B06DD4	&NAZO60	神秘的60字节固定数据	66	{U}
-08B07244	&NAZO60	神秘的60字节固定数据	67	{U}
-08B076B4	&NAZO60	神秘的60字节固定数据	68	{U}
-08B07B2C	&NAZO60	神秘的60字节固定数据	69	{U}
-08B07F94	&NAZO60	神秘的60字节固定数据	70	{U}
-08B08404	&NAZO60	神秘的60字节固定数据	71	{U}
-08B0887C	&NAZO60	神秘的60字节固定数据	72	{U}
-08B08CF4	&NAZO60	神秘的60字节固定数据	73	{U}
-08B09160	&NAZO60	神秘的60字节固定数据	74	{U}
-08B095D0	&NAZO60	神秘的60字节固定数据	75	{U}
-08B09A48	&NAZO60	神秘的60字节固定数据	76	{U}
-08B09EBC	&NAZO60	神秘的60字节固定数据	77	{U}
-08B0A334	&NAZO60	神秘的60字节固定数据	78	{U}
-08B0A7A8	&NAZO60	神秘的60字节固定数据	79	{U}
-08B0AC20	&NAZO60	神秘的60字节固定数据	80	{U}
-08B0B098	&NAZO60	神秘的60字节固定数据	81	{U}
-08B0B508	&NAZO60	神秘的60字节固定数据	82	{U}
-08B0B97C	&NAZO60	神秘的60字节固定数据	83	{U}
-08B0BDF4	&NAZO60	神秘的60字节固定数据	84	{U}
-08B0C268	&NAZO60	神秘的60字节固定数据	85	{U}
-08B0C6DC	&NAZO60	神秘的60字节固定数据	86	{U}
-08B0CB4C	&NAZO60	神秘的60字节固定数据	87	{U}
-08B0CFC0	&NAZO60	神秘的60字节固定数据	88	{U}
-08B0D3F8	&NAZO60	神秘的60字节固定数据	89	{U}
-08B0D860	&NAZO60	神秘的60字节固定数据	90	{U}
-08B0DCA8	&NAZO60	神秘的60字节固定数据	91	{U}
-08B0E0D4	&NAZO60	神秘的60字节固定数据	92	{U}
-08B0E548	&NAZO60	神秘的60字节固定数据	93	{U}
-08B0E9A4	&NAZO60	神秘的60字节固定数据	94	{U}
-08B0EE18	&NAZO60	神秘的60字节固定数据	95	{U}
-08B0F264	&NAZO60	神秘的60字节固定数据	96	{U}
-08B0F6DC	&NAZO60	神秘的60字节固定数据	97	{U}
-08B0FAE0	&NAZO60	神秘的60字节固定数据	98	{U}
-08B0FF30	&NAZO60	神秘的60字节固定数据	99	{U}
-08B1039C	&NAZO60	神秘的60字节固定数据	100	{U}
-08B3F498	:08B3F627	一个定义神秘的60字节固定数据的表	{U}
-08B8EAA4	&NAZO60	神秘的60字节固定数据	01	{J}
-08B8EF08	&NAZO60	神秘的60字节固定数据	02	{J}
-08B8F380	&NAZO60	神秘的60字节固定数据	03	{J}
-08B8F7F4	&NAZO60	神秘的60字节固定数据	04	{J}
-08B8FC64	&NAZO60	神秘的60字节固定数据	05	{J}
-08B900D4	&NAZO60	神秘的60字节固定数据	06	{J}
-08B9054C	&NAZO60	神秘的60字节固定数据	07	{J}
-08B909C4	&NAZO60	神秘的60字节固定数据	08	{J}
-08B90E3C	&NAZO60	神秘的60字节固定数据	09	{J}
-08B912B4	&NAZO60	神秘的60字节固定数据	10	{J}
-08B9172C	&NAZO60	神秘的60字节固定数据	11	{J}
-08B91BA0	&NAZO60	神秘的60字节固定数据	12	{J}
-08B92018	&NAZO60	神秘的60字节固定数据	13	{J}
-08B92490	&NAZO60	神秘的60字节固定数据	14	{J}
-08B92904	&NAZO60	神秘的60字节固定数据	15	{J}
-08B92D7C	&NAZO60	神秘的60字节固定数据	16	{J}
-08B931F4	&NAZO60	神秘的60字节固定数据	17	{J}
-08B9366C	&NAZO60	神秘的60字节固定数据	18	{J}
-08B93AE4	&NAZO60	神秘的60字节固定数据	19	{J}
-08B93F5C	&NAZO60	神秘的60字节固定数据	20	{J}
-08B943D4	&NAZO60	神秘的60字节固定数据	21	{J}
-08B9484C	&NAZO60	神秘的60字节固定数据	22	{J}
-08B94CC4	&NAZO60	神秘的60字节固定数据	23	{J}
-08B9513C	&NAZO60	神秘的60字节固定数据	24	{J}
-08B955B4	&NAZO60	神秘的60字节固定数据	25	{J}
-08B95A2C	&NAZO60	神秘的60字节固定数据	26	{J}
-08B95EA0	&NAZO60	神秘的60字节固定数据	27	{J}
-08B96314	&NAZO60	神秘的60字节固定数据	28	{J}
-08B96780	&NAZO60	神秘的60字节固定数据	29	{J}
-08B96BF4	&NAZO60	神秘的60字节固定数据	30	{J}
-08B97068	&NAZO60	神秘的60字节固定数据	31	{J}
-08B974CC	&NAZO60	神秘的60字节固定数据	32	{J}
-08B97930	&NAZO60	神秘的60字节固定数据	33	{J}
-08B97DA0	&NAZO60	神秘的60字节固定数据	34	{J}
-08B98214	&NAZO60	神秘的60字节固定数据	35	{J}
-08B98688	&NAZO60	神秘的60字节固定数据	36	{J}
-08B98AFC	&NAZO60	神秘的60字节固定数据	37	{J}
-08B98F74	&NAZO60	神秘的60字节固定数据	38	{J}
-08B993E4	&NAZO60	神秘的60字节固定数据	39	{J}
-08B9984C	&NAZO60	神秘的60字节固定数据	40	{J}
-08B99CB4	&NAZO60	神秘的60字节固定数据	41	{J}
-08B9A124	&NAZO60	神秘的60字节固定数据	42	{J}
-08B9A59C	&NAZO60	神秘的60字节固定数据	43	{J}
-08B9AA14	&NAZO60	神秘的60字节固定数据	44	{J}
-08B9AE84	&NAZO60	神秘的60字节固定数据	45	{J}
-08B9B2F8	&NAZO60	神秘的60字节固定数据	46	{J}
-08B9B770	&NAZO60	神秘的60字节固定数据	47	{J}
-08B9BBE4	&NAZO60	神秘的60字节固定数据	48	{J}
-08B9C04C	&NAZO60	神秘的60字节固定数据	49	{J}
-08B9C4C0	&NAZO60	神秘的60字节固定数据	50	{J}
-08B9C928	&NAZO60	神秘的60字节固定数据	51	{J}
-08B9CD98	&NAZO60	神秘的60字节固定数据	52	{J}
-08B9D204	&NAZO60	神秘的60字节固定数据	53	{J}
-08B9D678	&NAZO60	神秘的60字节固定数据	54	{J}
-08B9DAE8	&NAZO60	神秘的60字节固定数据	55	{J}
-08B9DF60	&NAZO60	神秘的60字节固定数据	56	{J}
-08B9E3D8	&NAZO60	神秘的60字节固定数据	57	{J}
-08B9E850	&NAZO60	神秘的60字节固定数据	58	{J}
-08B9ECBC	&NAZO60	神秘的60字节固定数据	59	{J}
-08B9F130	&NAZO60	神秘的60字节固定数据	60	{J}
-08B9F59C	&NAZO60	神秘的60字节固定数据	61	{J}
-08B9FA04	&NAZO60	神秘的60字节固定数据	62	{J}
-08B9FE78	&NAZO60	神秘的60字节固定数据	63	{J}
-08BA02F0	&NAZO60	神秘的60字节固定数据	64	{J}
-08BA0768	&NAZO60	神秘的60字节固定数据	65	{J}
-08BA0BDC	&NAZO60	神秘的60字节固定数据	66	{J}
-08BA104C	&NAZO60	神秘的60字节固定数据	67	{J}
-08BA14BC	&NAZO60	神秘的60字节固定数据	68	{J}
-08BA1934	&NAZO60	神秘的60字节固定数据	69	{J}
-08BA1D9C	&NAZO60	神秘的60字节固定数据	70	{J}
-08BA220C	&NAZO60	神秘的60字节固定数据	71	{J}
-08BA2684	&NAZO60	神秘的60字节固定数据	72	{J}
-08BA2AFC	&NAZO60	神秘的60字节固定数据	73	{J}
-08BA2F68	&NAZO60	神秘的60字节固定数据	74	{J}
-08BA33D8	&NAZO60	神秘的60字节固定数据	75	{J}
-08BA3850	&NAZO60	神秘的60字节固定数据	76	{J}
-08BA3CC4	&NAZO60	神秘的60字节固定数据	77	{J}
-08BA413C	&NAZO60	神秘的60字节固定数据	78	{J}
-08BA45B0	&NAZO60	神秘的60字节固定数据	79	{J}
-08BA4A28	&NAZO60	神秘的60字节固定数据	80	{J}
-08BA4EA0	&NAZO60	神秘的60字节固定数据	81	{J}
-08BA5310	&NAZO60	神秘的60字节固定数据	82	{J}
-08BA5784	&NAZO60	神秘的60字节固定数据	83	{J}
-08BA5BFC	&NAZO60	神秘的60字节固定数据	84	{J}
-08BA6070	&NAZO60	神秘的60字节固定数据	85	{J}
-08BA64E4	&NAZO60	神秘的60字节固定数据	86	{J}
-08BA6954	&NAZO60	神秘的60字节固定数据	87	{J}
-08BA6DC8	&NAZO60	神秘的60字节固定数据	88	{J}
-08BA7200	&NAZO60	神秘的60字节固定数据	89	{J}
-08BA7668	&NAZO60	神秘的60字节固定数据	90	{J}
-08BA7AB0	&NAZO60	神秘的60字节固定数据	91	{J}
-08BA7EDC	&NAZO60	神秘的60字节固定数据	92	{J}
-08BA8350	&NAZO60	神秘的60字节固定数据	93	{J}
-08BA87AC	&NAZO60	神秘的60字节固定数据	94	{J}
-08BA8C20	&NAZO60	神秘的60字节固定数据	95	{J}
-08BA906C	&NAZO60	神秘的60字节固定数据	96	{J}
-08BA94E4	&NAZO60	神秘的60字节固定数据	97	{J}
-08BA98E8	&NAZO60	神秘的60字节固定数据	98	{J}
-08BA9D38	&NAZO60	神秘的60字节固定数据	99	{J}
-08BAA1A4	&NAZO60	神秘的60字节固定数据	100	{J}
-089EE0DC	&EVENT	任何事件功能	难度等级确定	1	{U}
-089EE104	&EVENT	任何事件功能	获取章节ID	{U}
-089EE120	&EVENT	任何事件功能	获取编辑	1	{U}
-089EE140	&EVENT	任何事件功能	获取编辑	2	{U}
-089EE218	&EVENT	任何事件功能	难度等级确定	2	{U}
-089EE330	&EVENT	任何事件功能	地图変化	{U}
-089EE340	&EVENT	任何事件功能	神秘	1	{U}
-089EE354	&EVENT	任何事件功能	神秘	2	{U}
-089EE368	&EVENT	任何事件功能	神秘	3	{U}
-089EE37C	&EVENT	任何事件功能	神秘	4	{U}
-089EE3F4	&EVENT	如果内存插槽2中的单元处于活动状态，请执行某些操作	{U}
-089EE6A0	&EVENT	任何事件功能	神秘	5	{U}
-089EE6C8	&EVENT	任何事件功能	神秘	6	{U}
-089F35FC	&EVENT	任何事件功能	分叉到以法莲	{U}
-089FC6C4	&EVENT	任何事件功能	神秘强化数据	{U}
-089FF480	&EVENT	任何事件功能	神秘	7	{U}
-089FFD64	&EVENT	调试室事件	细节未知	{U}
-08A60214	&EVENT	任何事件功能	难度等级确定	1	{J}
-08A6023C	&EVENT	任何事件功能	获取章节ID	{J}
-08A60258	&EVENT	任何事件功能	获取编辑	1	{J}
-08A60278	&EVENT	任何事件功能	获取编辑	2	{J}
-08A60350	&EVENT	任何事件功能	难度等级确定	2	{J}
-08A60468	&EVENT	任何事件功能	地图変化	{J}
-08A60478	&EVENT	任何事件功能	神秘	1	{J}
-08A6048C	&EVENT	任何事件功能	神秘	2	{J}
-08A604A0	&EVENT	任何事件功能	神秘	3	{J}
-08A604B4	&EVENT	任何事件功能	神秘	4	{J}
-08A6052C	&EVENT	如果内存插槽2中的单元处于活动状态，请执行某些操作	{J}
-08A607D8	&EVENT	任何事件功能	神秘	5	{J}
-08A60800	&EVENT	任何事件功能	神秘	6	{J}
-08A628A8	&EVENT	在教程中解释访问的事件	{J}
-08A632C8	&EVENT	在教程中解释Garcia和Ross的事件	{J}
-08A632EC	&EVENT	在教程中解释武器商店的事件	{J}
-08A65730	&EVENT	任何事件功能	分叉到以法莲	{J}
-08A6E7A4	&EVENT	任何事件功能	神秘强化数据	{J}
-08A71538	&EVENT	任何事件功能	神秘	7	{J}
-08A71CE8	&EVENT	调试室事件	细节未知	{J}
-08A0186C	:08A0189B	Something的FillTileRect磁贴表	{U}
-08A175B4	&HEADERTSA	平铺FillTileRect的东西	40	{U}
-08A175C8	&HEADERTSA	平铺FillTileRect的东西	41	{U}
-08A175DC	&HEADERTSA	平铺FillTileRect的东西	42	{U}
-08A175F0	&HEADERTSA	平铺FillTileRect的东西	43	{U}
-08A1763C	&HEADERTSA	平铺FillTileRect的东西	44	{U}
-08A17650	&HEADERTSA	平铺FillTileRect的东西	45	{U}
-08A17664	&HEADERTSA	平铺FillTileRect的东西	46	{U}
-08A17678	&HEADERTSA	平铺FillTileRect的东西	47	{U}
-00A73924	:00A7394B	Something的FillTileRect磁贴表	{J}
-08A93300	&HEADERTSA	平铺FillTileRect的东西	40	{J}
-08A93314	&HEADERTSA	平铺FillTileRect的东西	41	{J}
-08A93328	&HEADERTSA	平铺FillTileRect的东西	42	{J}
-08A9333C	&HEADERTSA	平铺FillTileRect的东西	43	{J}
-08A93388	&HEADERTSA	平铺FillTileRect的东西	44	{J}
-08A9339C	&HEADERTSA	平铺FillTileRect的东西	45	{J}
-08A933B0	&HEADERTSA	平铺FillTileRect的东西	46	{J}
-08A933C4	&HEADERTSA	平铺FillTileRect的东西	47	{J}
-08A09A7C	&LZ77	神秘数据	矩形的图像	{U}
-08A7CD3C	&LZ77	神秘数据	矩形的图像	{J}
-089A56C4	&ROMTCS	任何ROMTCS数据	30	{U}
-089A6684	&ROMTCS	任何ROMTCS数据	31	{U}
-089A80A4	&ROMTCS	任何ROMTCS数据	32	{U}
-089A66C8	&ROMTCS	任何ROMTCS数据	33	{U}
-089A80D4	&ROMTCS	任何ROMTCS数据	34	{U}
-089A8EC8	&ROMTCS	任何ROMTCS数据	35	{U}
-08A15D4C	&ROMTCS	任何ROMTCS数据	30	{J}
-08A16D0C	&ROMTCS	任何ROMTCS数据	31	{J}
-08A1872C	&ROMTCS	任何ROMTCS数据	32	{J}
-08A16D50	&ROMTCS	任何ROMTCS数据	33	{J}
-08A1875C	&ROMTCS	任何ROMTCS数据	34	{J}
-08A19550	&ROMTCS	任何ROMTCS数据	35	{J}
-08591F88	&EVENT	任何事件功能	神秘	8	{U}
-08591F9C	&EVENT	任何事件功能	神秘	9	{U}
-08591FA8	&EVENT	任何事件功能	神秘	10	{U}
-08592114	&EVENT	任何事件功能	神秘	11	{U}
-08592140	&EVENT	任何事件功能	神秘	12	{U}
-085B9D6C	&EVENT	任何事件功能	神秘	8	{J}
-085B9D80	&EVENT	任何事件功能	神秘	9	{J}
-085B9D8C	&EVENT	任何事件功能	神秘	10	{J}
-085B9EF8	&EVENT	任何事件功能	神秘	11	{J}
-085B9F24	&EVENT	任何事件功能	神秘	12	{J}
-085B9F54	&EVENT	任何事件功能	神秘	13	{J}
+081F70E8	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{J}
+08AB988C	&LZ77	Mystery data	Mystery image may be related to OP	{U}
+08B53254	&LZ77	Mystery data	Mystery image may be related to OP	{J}
+08A09A7C	&LZ77	Mystery data	Image of rectangle	{U}
+08A7CD3C	&LZ77	Mystery data	Image of rectangle	{J}
+085A0FF8	&ROMTCS	Any ROMTCS data	05	{U}
+085A129C	&ROMTCS	Any ROMTCS data	06	{U}
+085A14B8	&ROMTCS	Any ROMTCS data	07	{U}
+085A2384	&ROMTCS	Any ROMTCS data	08	{U}
+085A2DFC	&ROMTCS	Any ROMTCS data	09	{U}
+085A33C8	&ROMTCS	Any ROMTCS data	10	{U}
+085A3420	&ROMTCS	Any ROMTCS data	11	{U}
+085A3730	&ROMTCS	Any ROMTCS data	12	{U}
+085A38CC	&ROMTCS	Any ROMTCS data	13	{U}
+085A3908	&ROMTCS	Any ROMTCS data	14	{U}
+089AC194	&ROMTCS	Any ROMTCS data	15	{U}
+089AC440	&ROMTCS	Any ROMTCS data	16	{U}
+089A6FD8	&ROMTCS	Any ROMTCS data	17	{U}
+089A6F40	&ROMTCS	Any ROMTCS data	18	{U}
+089A61F8	&ROMTCS	Any ROMTCS data	19	{U}
+089B2108	&ROMTCS	Any ROMTCS data	20	{U}
+089B1A10	&ROMTCS	Any ROMTCS data	21	{U}
+089B2748	&ROMTCS	Any ROMTCS data	22	{U}
+089A6254	&ROMTCS	Any ROMTCS data	23	{U}
+089A5314	&ROMTCS	Any ROMTCS data	24	{U}
+089A5A6C	&ROMTCS	Any ROMTCS data	25	{U}
+08A1B194	&ROMTCS	Any ROMTCS data	26	{U}
+08A280A8	&ROMTCS	Any ROMTCS data	27	{U}
+08AA1C70	&ROMTCS	Any ROMTCS data	28	{U}
+085A7E34	&ROMTCS	Any ROMTCS data	29	{U}
+089A56C4	&ROMTCS	Any ROMTCS data	30	{U}
+089A6684	&ROMTCS	Any ROMTCS data	31	{U}
+089A80A4	&ROMTCS	Any ROMTCS data	32	{U}
+089A66C8	&ROMTCS	Any ROMTCS data	33	{U}
+089A80D4	&ROMTCS	Any ROMTCS data	34	{U}
+089A8EC8	&ROMTCS	Any ROMTCS data	35	{U}
+085C9518	&ROMTCS	Any ROMTCS data	05	{J}
+085C97BC	&ROMTCS	Any ROMTCS data	06	{J}
+085C99D8	&ROMTCS	Any ROMTCS data	07	{J}
+085CA8A4	&ROMTCS	Any ROMTCS data	08	{J}
+085CB31C	&ROMTCS	Any ROMTCS data	09	{J}
+085CB8E8	&ROMTCS	Any ROMTCS data	10	{J}
+085CB940	&ROMTCS	Any ROMTCS data	11	{J}
+085CBC50	&ROMTCS	Any ROMTCS data	12	{J}
+085CBDEC	&ROMTCS	Any ROMTCS data	13	{J}
+085CBE28	&ROMTCS	Any ROMTCS data	14	{J}
+08A1C81C	&ROMTCS	Any ROMTCS data	15	{J}
+08A1CAC8	&ROMTCS	Any ROMTCS data	16	{J}
+08A17660	&ROMTCS	Any ROMTCS data	17	{J}
+08A175C8	&ROMTCS	Any ROMTCS data	18	{J}
+08A16880	&ROMTCS	Any ROMTCS data	19	{J}
+08A22790	&ROMTCS	Any ROMTCS data	20	{J}
+08A22098	&ROMTCS	Any ROMTCS data	21	{J}
+08A22DD0	&ROMTCS	Any ROMTCS data	22	{J}
+08A168DC	&ROMTCS	Any ROMTCS data	23	{J}
+08A1599C	&ROMTCS	Any ROMTCS data	24	{J}
+08A160F4	&ROMTCS	Any ROMTCS data	25	{J}
+08A97C2C	&ROMTCS	Any ROMTCS data	26	{J}
+08AA52FC	&ROMTCS	Any ROMTCS data	27	{J}
+08B2759C	&ROMTCS	Any ROMTCS data	28	{J}
+085D1D3C	&ROMTCS	Any ROMTCS data	29	{J}
+08A15D4C	&ROMTCS	Any ROMTCS data	30	{J}
+08A16D0C	&ROMTCS	Any ROMTCS data	31	{J}
+08A1872C	&ROMTCS	Any ROMTCS data	32	{J}
+08A16D50	&ROMTCS	Any ROMTCS data	33	{J}
+08A1875C	&ROMTCS	Any ROMTCS data	34	{J}
+08A19550	&ROMTCS	Any ROMTCS data	35	{J}
+08AA6EA4	:08AA702F	A table defining mysterious 60 bytes fixed data	{U}
+08AF4C9C	&NAZO60	Mysterious 60 bytes fixed data	01	{U}
+08AF5100	&NAZO60	Mysterious 60 bytes fixed data	02	{U}
+08AF5578	&NAZO60	Mysterious 60 bytes fixed data	03	{U}
+08AF59EC	&NAZO60	Mysterious 60 bytes fixed data	04	{U}
+08AF5E5C	&NAZO60	Mysterious 60 bytes fixed data	05	{U}
+08AF62CC	&NAZO60	Mysterious 60 bytes fixed data	06	{U}
+08AF6744	&NAZO60	Mysterious 60 bytes fixed data	07	{U}
+08AF6BBC	&NAZO60	Mysterious 60 bytes fixed data	08	{U}
+08AF7034	&NAZO60	Mysterious 60 bytes fixed data	09	{U}
+08AF74AC	&NAZO60	Mysterious 60 bytes fixed data	10	{U}
+08AF7924	&NAZO60	Mysterious 60 bytes fixed data	11	{U}
+08AF7D98	&NAZO60	Mysterious 60 bytes fixed data	12	{U}
+08AF8210	&NAZO60	Mysterious 60 bytes fixed data	13	{U}
+08AF8688	&NAZO60	Mysterious 60 bytes fixed data	14	{U}
+08AF8AFC	&NAZO60	Mysterious 60 bytes fixed data	15	{U}
+08AF8F74	&NAZO60	Mysterious 60 bytes fixed data	16	{U}
+08AF93EC	&NAZO60	Mysterious 60 bytes fixed data	17	{U}
+08AF9864	&NAZO60	Mysterious 60 bytes fixed data	18	{U}
+08AF9CDC	&NAZO60	Mysterious 60 bytes fixed data	19	{U}
+08AFA154	&NAZO60	Mysterious 60 bytes fixed data	20	{U}
+08AFA5CC	&NAZO60	Mysterious 60 bytes fixed data	21	{U}
+08AFAA44	&NAZO60	Mysterious 60 bytes fixed data	22	{U}
+08AFAEBC	&NAZO60	Mysterious 60 bytes fixed data	23	{U}
+08AFB334	&NAZO60	Mysterious 60 bytes fixed data	24	{U}
+08AFB7AC	&NAZO60	Mysterious 60 bytes fixed data	25	{U}
+08AFBC24	&NAZO60	Mysterious 60 bytes fixed data	26	{U}
+08AFC098	&NAZO60	Mysterious 60 bytes fixed data	27	{U}
+08AFC50C	&NAZO60	Mysterious 60 bytes fixed data	28	{U}
+08AFC978	&NAZO60	Mysterious 60 bytes fixed data	29	{U}
+08AFCDEC	&NAZO60	Mysterious 60 bytes fixed data	30	{U}
+08AFD260	&NAZO60	Mysterious 60 bytes fixed data	31	{U}
+08AFD6C4	&NAZO60	Mysterious 60 bytes fixed data	32	{U}
+08AFDB28	&NAZO60	Mysterious 60 bytes fixed data	33	{U}
+08AFDF98	&NAZO60	Mysterious 60 bytes fixed data	34	{U}
+08AFE40C	&NAZO60	Mysterious 60 bytes fixed data	35	{U}
+08AFE880	&NAZO60	Mysterious 60 bytes fixed data	36	{U}
+08AFECF4	&NAZO60	Mysterious 60 bytes fixed data	37	{U}
+08AFF16C	&NAZO60	Mysterious 60 bytes fixed data	38	{U}
+08AFF5DC	&NAZO60	Mysterious 60 bytes fixed data	39	{U}
+08AFFA44	&NAZO60	Mysterious 60 bytes fixed data	40	{U}
+08AFFEAC	&NAZO60	Mysterious 60 bytes fixed data	41	{U}
+08B0031C	&NAZO60	Mysterious 60 bytes fixed data	42	{U}
+08B00794	&NAZO60	Mysterious 60 bytes fixed data	43	{U}
+08B00C0C	&NAZO60	Mysterious 60 bytes fixed data	44	{U}
+08B0107C	&NAZO60	Mysterious 60 bytes fixed data	45	{U}
+08B014F0	&NAZO60	Mysterious 60 bytes fixed data	46	{U}
+08B01968	&NAZO60	Mysterious 60 bytes fixed data	47	{U}
+08B01DDC	&NAZO60	Mysterious 60 bytes fixed data	48	{U}
+08B02244	&NAZO60	Mysterious 60 bytes fixed data	49	{U}
+08B026B8	&NAZO60	Mysterious 60 bytes fixed data	50	{U}
+08B02B20	&NAZO60	Mysterious 60 bytes fixed data	51	{U}
+08B02F90	&NAZO60	Mysterious 60 bytes fixed data	52	{U}
+08B033FC	&NAZO60	Mysterious 60 bytes fixed data	53	{U}
+08B03870	&NAZO60	Mysterious 60 bytes fixed data	54	{U}
+08B03CE0	&NAZO60	Mysterious 60 bytes fixed data	55	{U}
+08B04158	&NAZO60	Mysterious 60 bytes fixed data	56	{U}
+08B045D0	&NAZO60	Mysterious 60 bytes fixed data	57	{U}
+08B04A48	&NAZO60	Mysterious 60 bytes fixed data	58	{U}
+08B04EB4	&NAZO60	Mysterious 60 bytes fixed data	59	{U}
+08B05328	&NAZO60	Mysterious 60 bytes fixed data	60	{U}
+08B05794	&NAZO60	Mysterious 60 bytes fixed data	61	{U}
+08B05BFC	&NAZO60	Mysterious 60 bytes fixed data	62	{U}
+08B06070	&NAZO60	Mysterious 60 bytes fixed data	63	{U}
+08B064E8	&NAZO60	Mysterious 60 bytes fixed data	64	{U}
+08B06960	&NAZO60	Mysterious 60 bytes fixed data	65	{U}
+08B06DD4	&NAZO60	Mysterious 60 bytes fixed data	66	{U}
+08B07244	&NAZO60	Mysterious 60 bytes fixed data	67	{U}
+08B076B4	&NAZO60	Mysterious 60 bytes fixed data	68	{U}
+08B07B2C	&NAZO60	Mysterious 60 bytes fixed data	69	{U}
+08B07F94	&NAZO60	Mysterious 60 bytes fixed data	70	{U}
+08B08404	&NAZO60	Mysterious 60 bytes fixed data	71	{U}
+08B0887C	&NAZO60	Mysterious 60 bytes fixed data	72	{U}
+08B08CF4	&NAZO60	Mysterious 60 bytes fixed data	73	{U}
+08B09160	&NAZO60	Mysterious 60 bytes fixed data	74	{U}
+08B095D0	&NAZO60	Mysterious 60 bytes fixed data	75	{U}
+08B09A48	&NAZO60	Mysterious 60 bytes fixed data	76	{U}
+08B09EBC	&NAZO60	Mysterious 60 bytes fixed data	77	{U}
+08B0A334	&NAZO60	Mysterious 60 bytes fixed data	78	{U}
+08B0A7A8	&NAZO60	Mysterious 60 bytes fixed data	79	{U}
+08B0AC20	&NAZO60	Mysterious 60 bytes fixed data	80	{U}
+08B0B098	&NAZO60	Mysterious 60 bytes fixed data	81	{U}
+08B0B508	&NAZO60	Mysterious 60 bytes fixed data	82	{U}
+08B0B97C	&NAZO60	Mysterious 60 bytes fixed data	83	{U}
+08B0BDF4	&NAZO60	Mysterious 60 bytes fixed data	84	{U}
+08B0C268	&NAZO60	Mysterious 60 bytes fixed data	85	{U}
+08B0C6DC	&NAZO60	Mysterious 60 bytes fixed data	86	{U}
+08B0CB4C	&NAZO60	Mysterious 60 bytes fixed data	87	{U}
+08B0CFC0	&NAZO60	Mysterious 60 bytes fixed data	88	{U}
+08B0D3F8	&NAZO60	Mysterious 60 bytes fixed data	89	{U}
+08B0D860	&NAZO60	Mysterious 60 bytes fixed data	90	{U}
+08B0DCA8	&NAZO60	Mysterious 60 bytes fixed data	91	{U}
+08B0E0D4	&NAZO60	Mysterious 60 bytes fixed data	92	{U}
+08B0E548	&NAZO60	Mysterious 60 bytes fixed data	93	{U}
+08B0E9A4	&NAZO60	Mysterious 60 bytes fixed data	94	{U}
+08B0EE18	&NAZO60	Mysterious 60 bytes fixed data	95	{U}
+08B0F264	&NAZO60	Mysterious 60 bytes fixed data	96	{U}
+08B0F6DC	&NAZO60	Mysterious 60 bytes fixed data	97	{U}
+08B0FAE0	&NAZO60	Mysterious 60 bytes fixed data	98	{U}
+08B0FF30	&NAZO60	Mysterious 60 bytes fixed data	99	{U}
+08B1039C	&NAZO60	Mysterious 60 bytes fixed data	100	{U}
+08B3F498	:08B3F627	A table defining mysterious 60 bytes fixed data	{J}
+08B8EAA4	&NAZO60	Mysterious 60 bytes fixed data	01	{J}
+08B8EF08	&NAZO60	Mysterious 60 bytes fixed data	02	{J}
+08B8F380	&NAZO60	Mysterious 60 bytes fixed data	03	{J}
+08B8F7F4	&NAZO60	Mysterious 60 bytes fixed data	04	{J}
+08B8FC64	&NAZO60	Mysterious 60 bytes fixed data	05	{J}
+08B900D4	&NAZO60	Mysterious 60 bytes fixed data	06	{J}
+08B9054C	&NAZO60	Mysterious 60 bytes fixed data	07	{J}
+08B909C4	&NAZO60	Mysterious 60 bytes fixed data	08	{J}
+08B90E3C	&NAZO60	Mysterious 60 bytes fixed data	09	{J}
+08B912B4	&NAZO60	Mysterious 60 bytes fixed data	10	{J}
+08B9172C	&NAZO60	Mysterious 60 bytes fixed data	11	{J}
+08B91BA0	&NAZO60	Mysterious 60 bytes fixed data	12	{J}
+08B92018	&NAZO60	Mysterious 60 bytes fixed data	13	{J}
+08B92490	&NAZO60	Mysterious 60 bytes fixed data	14	{J}
+08B92904	&NAZO60	Mysterious 60 bytes fixed data	15	{J}
+08B92D7C	&NAZO60	Mysterious 60 bytes fixed data	16	{J}
+08B931F4	&NAZO60	Mysterious 60 bytes fixed data	17	{J}
+08B9366C	&NAZO60	Mysterious 60 bytes fixed data	18	{J}
+08B93AE4	&NAZO60	Mysterious 60 bytes fixed data	19	{J}
+08B93F5C	&NAZO60	Mysterious 60 bytes fixed data	20	{J}
+08B943D4	&NAZO60	Mysterious 60 bytes fixed data	21	{J}
+08B9484C	&NAZO60	Mysterious 60 bytes fixed data	22	{J}
+08B94CC4	&NAZO60	Mysterious 60 bytes fixed data	23	{J}
+08B9513C	&NAZO60	Mysterious 60 bytes fixed data	24	{J}
+08B955B4	&NAZO60	Mysterious 60 bytes fixed data	25	{J}
+08B95A2C	&NAZO60	Mysterious 60 bytes fixed data	26	{J}
+08B95EA0	&NAZO60	Mysterious 60 bytes fixed data	27	{J}
+08B96314	&NAZO60	Mysterious 60 bytes fixed data	28	{J}
+08B96780	&NAZO60	Mysterious 60 bytes fixed data	29	{J}
+08B96BF4	&NAZO60	Mysterious 60 bytes fixed data	30	{J}
+08B97068	&NAZO60	Mysterious 60 bytes fixed data	31	{J}
+08B974CC	&NAZO60	Mysterious 60 bytes fixed data	32	{J}
+08B97930	&NAZO60	Mysterious 60 bytes fixed data	33	{J}
+08B97DA0	&NAZO60	Mysterious 60 bytes fixed data	34	{J}
+08B98214	&NAZO60	Mysterious 60 bytes fixed data	35	{J}
+08B98688	&NAZO60	Mysterious 60 bytes fixed data	36	{J}
+08B98AFC	&NAZO60	Mysterious 60 bytes fixed data	37	{J}
+08B98F74	&NAZO60	Mysterious 60 bytes fixed data	38	{J}
+08B993E4	&NAZO60	Mysterious 60 bytes fixed data	39	{J}
+08B9984C	&NAZO60	Mysterious 60 bytes fixed data	40	{J}
+08B99CB4	&NAZO60	Mysterious 60 bytes fixed data	41	{J}
+08B9A124	&NAZO60	Mysterious 60 bytes fixed data	42	{J}
+08B9A59C	&NAZO60	Mysterious 60 bytes fixed data	43	{J}
+08B9AA14	&NAZO60	Mysterious 60 bytes fixed data	44	{J}
+08B9AE84	&NAZO60	Mysterious 60 bytes fixed data	45	{J}
+08B9B2F8	&NAZO60	Mysterious 60 bytes fixed data	46	{J}
+08B9B770	&NAZO60	Mysterious 60 bytes fixed data	47	{J}
+08B9BBE4	&NAZO60	Mysterious 60 bytes fixed data	48	{J}
+08B9C04C	&NAZO60	Mysterious 60 bytes fixed data	49	{J}
+08B9C4C0	&NAZO60	Mysterious 60 bytes fixed data	50	{J}
+08B9C928	&NAZO60	Mysterious 60 bytes fixed data	51	{J}
+08B9CD98	&NAZO60	Mysterious 60 bytes fixed data	52	{J}
+08B9D204	&NAZO60	Mysterious 60 bytes fixed data	53	{J}
+08B9D678	&NAZO60	Mysterious 60 bytes fixed data	54	{J}
+08B9DAE8	&NAZO60	Mysterious 60 bytes fixed data	55	{J}
+08B9DF60	&NAZO60	Mysterious 60 bytes fixed data	56	{J}
+08B9E3D8	&NAZO60	Mysterious 60 bytes fixed data	57	{J}
+08B9E850	&NAZO60	Mysterious 60 bytes fixed data	58	{J}
+08B9ECBC	&NAZO60	Mysterious 60 bytes fixed data	59	{J}
+08B9F130	&NAZO60	Mysterious 60 bytes fixed data	60	{J}
+08B9F59C	&NAZO60	Mysterious 60 bytes fixed data	61	{J}
+08B9FA04	&NAZO60	Mysterious 60 bytes fixed data	62	{J}
+08B9FE78	&NAZO60	Mysterious 60 bytes fixed data	63	{J}
+08BA02F0	&NAZO60	Mysterious 60 bytes fixed data	64	{J}
+08BA0768	&NAZO60	Mysterious 60 bytes fixed data	65	{J}
+08BA0BDC	&NAZO60	Mysterious 60 bytes fixed data	66	{J}
+08BA104C	&NAZO60	Mysterious 60 bytes fixed data	67	{J}
+08BA14BC	&NAZO60	Mysterious 60 bytes fixed data	68	{J}
+08BA1934	&NAZO60	Mysterious 60 bytes fixed data	69	{J}
+08BA1D9C	&NAZO60	Mysterious 60 bytes fixed data	70	{J}
+08BA220C	&NAZO60	Mysterious 60 bytes fixed data	71	{J}
+08BA2684	&NAZO60	Mysterious 60 bytes fixed data	72	{J}
+08BA2AFC	&NAZO60	Mysterious 60 bytes fixed data	73	{J}
+08BA2F68	&NAZO60	Mysterious 60 bytes fixed data	74	{J}
+08BA33D8	&NAZO60	Mysterious 60 bytes fixed data	75	{J}
+08BA3850	&NAZO60	Mysterious 60 bytes fixed data	76	{J}
+08BA3CC4	&NAZO60	Mysterious 60 bytes fixed data	77	{J}
+08BA413C	&NAZO60	Mysterious 60 bytes fixed data	78	{J}
+08BA45B0	&NAZO60	Mysterious 60 bytes fixed data	79	{J}
+08BA4A28	&NAZO60	Mysterious 60 bytes fixed data	80	{J}
+08BA4EA0	&NAZO60	Mysterious 60 bytes fixed data	81	{J}
+08BA5310	&NAZO60	Mysterious 60 bytes fixed data	82	{J}
+08BA5784	&NAZO60	Mysterious 60 bytes fixed data	83	{J}
+08BA5BFC	&NAZO60	Mysterious 60 bytes fixed data	84	{J}
+08BA6070	&NAZO60	Mysterious 60 bytes fixed data	85	{J}
+08BA64E4	&NAZO60	Mysterious 60 bytes fixed data	86	{J}
+08BA6954	&NAZO60	Mysterious 60 bytes fixed data	87	{J}
+08BA6DC8	&NAZO60	Mysterious 60 bytes fixed data	88	{J}
+08BA7200	&NAZO60	Mysterious 60 bytes fixed data	89	{J}
+08BA7668	&NAZO60	Mysterious 60 bytes fixed data	90	{J}
+08BA7AB0	&NAZO60	Mysterious 60 bytes fixed data	91	{J}
+08BA7EDC	&NAZO60	Mysterious 60 bytes fixed data	92	{J}
+08BA8350	&NAZO60	Mysterious 60 bytes fixed data	93	{J}
+08BA87AC	&NAZO60	Mysterious 60 bytes fixed data	94	{J}
+08BA8C20	&NAZO60	Mysterious 60 bytes fixed data	95	{J}
+08BA906C	&NAZO60	Mysterious 60 bytes fixed data	96	{J}
+08BA94E4	&NAZO60	Mysterious 60 bytes fixed data	97	{J}
+08BA98E8	&NAZO60	Mysterious 60 bytes fixed data	98	{J}
+08BA9D38	&NAZO60	Mysterious 60 bytes fixed data	99	{J}
+08BAA1A4	&NAZO60	Mysterious 60 bytes fixed data	100	{J}
+089EE0DC	&EVENT	Any event function	Difficulty level determination	1	{U}
+089EE104	&EVENT	Any event function	Get chapter ID	{U}
+089EE120	&EVENT	Any event function	Acquire editing	1	{U}
+089EE140	&EVENT	Any event function	Acquire editing	2	{U}
+089EE218	&EVENT	Any event function	Difficulty level determination	2	{U}
+089EE330	&EVENT	Any event function	Tile Changes	{U}
+089EE340	&EVENT	Any event function	Mystery	1	{U}
+089EE354	&EVENT	Any event function	Mystery	2	{U}
+089EE368	&EVENT	Any event function	Mystery	3	{U}
+089EE37C	&EVENT	Any event function	Mystery	4	{U}
+089EE3F4	&EVENT	If the unit in memory slot 2 is alive, do something	{U}
+089EE6A0	&EVENT	Any event function	Mystery	5	{U}
+089EE6C8	&EVENT	Any event function	Mystery	6	{U}
+089F35FC	&EVENT	Any event function	Bifurcation to Ephrata	{U}
+089FC6C4	&EVENT	Any event function	Mystery reinforcement data	{U}
+089FF480	&EVENT	Any event function	Mystery	7	{U}
+089FFD64	&EVENT	Debug Room Event	details unknown	{U}
+08591F88	&EVENT	Any event function	Mystery	8	{U}
+08591F9C	&EVENT	Any event function	Mystery	9	{U}
+08591FA8	&EVENT	Any event function	Mystery	10	{U}
+08592114	&EVENT	Any event function	Mystery	11	{U}
+08592140	&EVENT	Any event function	Mystery	12	{U}
+08A60214	&EVENT	Any event function	Difficulty level determination	1	{J}
+08A6023C	&EVENT	Any event function	Get chapter ID	{J}
+08A60258	&EVENT	Any event function	Acquire editing	1	{J}
+08A60278	&EVENT	Any event function	Acquire editing	2	{J}
+08A60350	&EVENT	Any event function	Difficulty level determination	2	{J}
+08A60468	&EVENT	Any event function	Tile Changes	{J}
+08A60478	&EVENT	Any event function	Mystery	1	{J}
+08A6048C	&EVENT	Any event function	Mystery	2	{J}
+08A604A0	&EVENT	Any event function	Mystery	3	{J}
+08A604B4	&EVENT	Any event function	Mystery	4	{J}
+08A6052C	&EVENT	If the unit in memory slot 2 is alive, do something	{J}
+08A607D8	&EVENT	Any event function	Mystery	5	{J}
+08A60800	&EVENT	Any event function	Mystery	6	{J}
+08A628A8	&EVENT	An event explaining the visit in the tutorial	{J}
+08A632C8	&EVENT	Events that explain Garcia and Ross in the tutorial	{J}
+08A632EC	&EVENT	Event to explain weapons shop in the tutorial	{J}
+08A65730	&EVENT	Any event function	Bifurcation to Ephrata	{J}
+08A6E7A4	&EVENT	Any event function	Mystery reinforcement data	{J}
+08A71538	&EVENT	Any event function	Mystery	7	{J}
+08A71CE8	&EVENT	Debug Room Event	details unknown	{J}
+085B9D6C	&EVENT	Any event function	Mystery	8	{J}
+085B9D80	&EVENT	Any event function	Mystery	9	{J}
+085B9D8C	&EVENT	Any event function	Mystery	10	{J}
+085B9EF8	&EVENT	Any event function	Mystery	11	{J}
+085B9F24	&EVENT	Any event function	Mystery	12	{J}
+085B9F54	&EVENT	Any event function	Mystery	13	{J}
+08A0186C	:08A0189B	Something's FillTileRect tile table	{U}
+08A175B4	&HEADERTSA	Something tiled FillTileRect	40	{U}
+08A175C8	&HEADERTSA	Something tiled FillTileRect	41	{U}
+08A175DC	&HEADERTSA	Something tiled FillTileRect	42	{U}
+08A175F0	&HEADERTSA	Something tiled FillTileRect	43	{U}
+08A1763C	&HEADERTSA	Something tiled FillTileRect	44	{U}
+08A17650	&HEADERTSA	Something tiled FillTileRect	45	{U}
+08A17664	&HEADERTSA	Something tiled FillTileRect	46	{U}
+08A17678	&HEADERTSA	Something tiled FillTileRect	47	{U}
+00A73924	:00A7394B	Something's FillTileRect tile table	{J}
+08A93300	&HEADERTSA	Something tiled FillTileRect	40	{J}
+08A93314	&HEADERTSA	Something tiled FillTileRect	41	{J}
+08A93328	&HEADERTSA	Something tiled FillTileRect	42	{J}
+08A9333C	&HEADERTSA	Something tiled FillTileRect	43	{J}
+08A93388	&HEADERTSA	Something tiled FillTileRect	44	{J}
+08A9339C	&HEADERTSA	Something tiled FillTileRect	45	{J}
+08A933B0	&HEADERTSA	Something tiled FillTileRect	46	{J}
+08A933C4	&HEADERTSA	Something tiled FillTileRect	47	{J}
 08577F4C	&FONTCOLOR0x200	FontColor	01	{J}
 0857814C	&FONTCOLOR0x200	FontColor	02	{J}
 0857834C	&FONTCOLOR0x200	FontColor	03	{J}
@@ -7833,20 +7905,20 @@ r3=X tile position of menu of the right	{U}
 0858969C	&FONTCOLOR0x200	FontColor	11	{U}
 0858989C	&FONTCOLOR0x200	FontColor	12	{U}
 08589A9C	&FONTCOLOR0x200	FontColor	13	{U}
-085D84D4	:085D8523	神秘的0x50字节数据	1	{U}
-085D8524	:085D8573	神秘的0x50字节数据	2	{U}
-085D8574	:085D85C3	神秘的0x50字节数据	3	{U}
-085D85C4	:085D8613	神秘的0x50字节数据	4	{U}
-085D8614	:085D8663	神秘的0x50字节数据	5	{U}
-085D8664	:085D86B3	神秘的0x50字节数据	6	{U}
-085D86B4	:085D8703	神秘的0x50字节数据	7	{U}
-08602B24	:08602B73	神秘的0x50字节数据	1	{J}
-08602B74	:08602BC3	神秘的0x50字节数据	2	{J}
-08602BC4	:08602C13	神秘的0x50字节数据	3	{J}
-08602C14	:08602C63	神秘的0x50字节数据	4	{J}
-08602C64	:08602CB3	神秘的0x50字节数据	5	{J}
-08602CB4	:08602D03	神秘的0x50字节数据	6	{J}
-08602D04	:08602D53	神秘的0x50字节数据	7	{J}
+085D84D4	:085D8523	Mysterious 0x50 byte data	1	{U}
+085D8524	:085D8573	Mysterious 0x50 byte data	2	{U}
+085D8574	:085D85C3	Mysterious 0x50 byte data	3	{U}
+085D85C4	:085D8613	Mysterious 0x50 byte data	4	{U}
+085D8614	:085D8663	Mysterious 0x50 byte data	5	{U}
+085D8664	:085D86B3	Mysterious 0x50 byte data	6	{U}
+085D86B4	:085D8703	Mysterious 0x50 byte data	7	{U}
+08602B24	:08602B73	Mysterious 0x50 byte data	1	{J}
+08602B74	:08602BC3	Mysterious 0x50 byte data	2	{J}
+08602BC4	:08602C13	Mysterious 0x50 byte data	3	{J}
+08602C14	:08602C63	Mysterious 0x50 byte data	4	{J}
+08602C64	:08602CB3	Mysterious 0x50 byte data	5	{J}
+08602CB4	:08602D03	Mysterious 0x50 byte data	6	{J}
+08602D04	:08602D53	Mysterious 0x50 byte data	7	{J}
 085B9804	:085B9883	QuakePure Table	{U}
 080DA4BA	:080DA4DB	QuakePure	01	{U}
 080DA4DC	:080DA525	QuakePure	02	{U}
@@ -7884,744 +7956,696 @@ r3=X tile position of menu of the right	{U}
 080DF862	:080DF9E3	QuakePure	16	{J}
 080DF9E4	:080DFA79	HitQuake	01	{J}
 080DFA7A	:080DFBAB	HitQuake	02	{J}
-08791D5C	&PALETTE	东西的调色板	100	{U}
-08791D7C	&PALETTE	东西的调色板	101	{U}
-08802428	:08802507	也许，多种调色板	A0	{U}
-088026E4	:08802883	也许，多种调色板	A1	{U}
-08802884	:08802903	也许，多种调色板	A2	{U}
-08802904	:08802B03	也许，多种调色板	A3	{U}
-08802B24	:08802B83	也许，多种调色板	A4	{U}
-08802B84	:08802C83	也许，多种调色板	A5	{U}
-08802C84	:08802D23	也许，多种调色板	A6	{U}
-08802D24	:08802D43	也许，多种调色板	A7	{U}
-08802D44	:088030C3	未压缩的图像	框架	{U}
-088030C4	:088033C3	未压缩的图像	条形图部分	{U}
-088033C4	:08803523	未压缩的图像	一个数字	{U}
-08803524	:0880358F	神秘的TSA数据	1	{U}
-0859A120	&PALETTE	纯黑色调色板	{U}
-085BEF94	&PALETTE4	也许，多种调色板	A8	{U}
-085BF014	&PALETTE4	也许，多种调色板	A9	{U}
-085BF094	&PALETTE4	也许，多种调色板	A10	{U}
-085B93D0	:085B940B	任何AIS数据	01	{U}
-085B940C	:085B9423	任何AIS数据	02	{U}
-085B9424	:085B949B	任何AIS数据	03	{U}
-085B949C	:085B94EF	任何AIS数据	04	{U}
-085B94F0	:085B9543	任何AIS数据	05	{U}
-085B9544	:085B955B	任何AIS数据	06	{U}
-085B955C	:085B9573	任何AIS数据	07	{U}
-085B9574	:085B958B	任何AIS数据	08	{U}
-085B958C	:085B95A3	任何AIS数据	09	{U}
-085B95A4	:085B95BB	任何AIS数据	10	{U}
-085B95BC	:085B95D3	任何AIS数据	11	{U}
-085B95D4	:085B95EB	任何AIS数据	12	{U}
-087E62B4	&PALETTE	东西的调色板	100	{J}
-087E62D4	&PALETTE	东西的调色板	101	{J}
-08856980	:08856C3B	也许，多种调色板	A0	{J}
-08856C3C	:08856DDB	也许，多种调色板	A1	{J}
-08856DDC	:08856E5B	也许，多种调色板	A2	{J}
-08856E5C	:0885705B	也许，多种调色板	A3	{J}
-0885705C	:088570DB	也许，多种调色板	A4	{J}
-088570DC	:088571DB	也许，多种调色板	A5	{J}
-088571DC	:0885727B	也许，多种调色板	A6	{J}
-0885727C	:0885729B	也许，多种调色板	A7	{J}
-0885729C	:0885761B	未压缩的图像	框架	{J}
-0885761C	:0885791B	未压缩的图像	条形图部分	{J}
-0885791C	:08857A7B	未压缩的图像	一个数字	{J}
-08857A7C	:08857AE7	神秘的TSA数据	1	{J}
-085C25A0	&PALETTE	纯黑色调色板	{J}
-085E91C4	&PALETTE4	也许，多种调色板	A8	{J}
-085E9244	&PALETTE4	也许，多种调色板	A9	{J}
-085E92C4	&PALETTE4	也许，多种调色板	A10	{J}
-085E35B0	:085E35EB	任何AIS数据	01	{J}
-085E35EC	:085E3603	任何AIS数据	02	{J}
-085E3604	:085E367B	任何AIS数据	03	{J}
-085E367C	:085E36CF	任何AIS数据	04	{J}
-085E36D0	:085E3723	任何AIS数据	05	{J}
-085E3724	:085E373B	任何AIS数据	06	{J}
-085E373C	:085E3753	任何AIS数据	07	{J}
-085E3754	:085E376B	任何AIS数据	08	{J}
-085E376C	:085E3783	任何AIS数据	09	{J}
-085E3784	:085E379B	任何AIS数据	10	{J}
-085E379C	:085E37B3	任何AIS数据	11	{J}
-085E37B4	:085E37CB	任何AIS数据	12	{J}
-08B467EC	&PALETTE	ROM启动时引用的调色板数据	{J}
-08B4680C	&PALETTE	打开关系托盘数据	1	{J}
-08AADBC8	&PALETTE	ROM启动时引用的调色板数据	{U}
-08AADBE8	&PALETTE	打开关系托盘数据	1	{U}
-08B75700	:08B7585F	关于开放关系的一些事情	{J}
-08ABAD10	:08ABB14B	关于开放关系的一些事情	{U}
-080CB650	ROM开始的标志	1	{J}
-080D0DB4	ROM开始的标志	2	{J}
-080D0DD8	Nitendo在ROM开始读取Logo和ISLogo的功能	{J}
-080C6704	ROM开始的标志	1	{U}
-080CBDD8	ROM开始的标志	2	{U}
-080CBE0C	Nitendo在ROM开始读取Logo和ISLogo的功能	{U}
-08002B04	CallARM_PushToSecondaryOAM	{J}
+08791D5C	&PALETTE	Something's palette	100	{U}
+08791D7C	&PALETTE	Something's palette	101	{U}
+08802428	:08802507	Maybe, something multiple palette	A0	{U}
+088026E4	:08802883	Maybe, something multiple palette	A1	{U}
+08802884	:08802903	Maybe, something multiple palette	A2	{U}
+08802904	:08802B03	Maybe, something multiple palette	A3	{U}
+08802B24	:08802B83	Maybe, something multiple palette	A4	{U}
+08802B84	:08802C83	Maybe, something multiple palette	A5	{U}
+08802C84	:08802D23	Maybe, something multiple palette	A6	{U}
+08802D24	:08802D43	Maybe, something multiple palette	A7	{U}
+08802D44	:088030C3	Uncompressed Image	frame	{U}
+088030C4	:088033C3	Uncompressed Image	Bar chart parts	{U}
+088033C4	:08803523	Uncompressed Image	A number	{U}
+08803524	:0880358F	Mysterious TSA data	1	{U}
+0859A120	&PALETTE	A pure black palette	{U}
+085BEF94	&PALETTE4	Maybe, something multiple palette	A8	{U}
+085BF014	&PALETTE4	Maybe, something multiple palette	A9	{U}
+085BF094	&PALETTE4	Maybe, something multiple palette	A10	{U}
+085B93D0	:085B940B	Any AIS data	01	{U}
+085B940C	:085B9423	Any AIS data	02	{U}
+085B9424	:085B949B	Any AIS data	03	{U}
+085B949C	:085B94EF	Any AIS data	04	{U}
+085B94F0	:085B9543	Any AIS data	05	{U}
+085B9544	:085B955B	Any AIS data	06	{U}
+085B955C	:085B9573	Any AIS data	07	{U}
+085B9574	:085B958B	Any AIS data	08	{U}
+085B958C	:085B95A3	Any AIS data	09	{U}
+085B95A4	:085B95BB	Any AIS data	10	{U}
+085B95BC	:085B95D3	Any AIS data	11	{U}
+085B95D4	:085B95EB	Any AIS data	12	{U}
+087E62B4	&PALETTE	Something's palette	100	{J}
+087E62D4	&PALETTE	Something's palette	101	{J}
+08856980	:08856C3B	Maybe, something multiple palette	A0	{J}
+08856C3C	:08856DDB	Maybe, something multiple palette	A1	{J}
+08856DDC	:08856E5B	Maybe, something multiple palette	A2	{J}
+08856E5C	:0885705B	Maybe, something multiple palette	A3	{J}
+0885705C	:088570DB	Maybe, something multiple palette	A4	{J}
+088570DC	:088571DB	Maybe, something multiple palette	A5	{J}
+088571DC	:0885727B	Maybe, something multiple palette	A6	{J}
+0885727C	:0885729B	Maybe, something multiple palette	A7	{J}
+0885729C	:0885761B	Uncompressed Image	frame	{J}
+0885761C	:0885791B	Uncompressed Image	Bar chart parts	{J}
+0885791C	:08857A7B	Uncompressed Image	A number	{J}
+08857A7C	:08857AE7	Mysterious TSA data	1	{J}
+085C25A0	&PALETTE	A pure black palette	{J}
+085E91C4	&PALETTE4	Maybe, something multiple palette	A8	{J}
+085E9244	&PALETTE4	Maybe, something multiple palette	A9	{J}
+085E92C4	&PALETTE4	Maybe, something multiple palette	A10	{J}
+085E35B0	:085E35EB	Any AIS data	01	{J}
+085E35EC	:085E3603	Any AIS data	02	{J}
+085E3604	:085E367B	Any AIS data	03	{J}
+085E367C	:085E36CF	Any AIS data	04	{J}
+085E36D0	:085E3723	Any AIS data	05	{J}
+085E3724	:085E373B	Any AIS data	06	{J}
+085E373C	:085E3753	Any AIS data	07	{J}
+085E3754	:085E376B	Any AIS data	08	{J}
+085E376C	:085E3783	Any AIS data	09	{J}
+085E3784	:085E379B	Any AIS data	10	{J}
+085E379C	:085E37B3	Any AIS data	11	{J}
+085E37B4	:085E37CB	Any AIS data	12	{J}
+08B467EC	&PALETTE	Palette data referenced when ROM is started	{J}
+08B4680C	&PALETTE	Opening relation pallet data	1	{J}
+08AADBC8	&PALETTE	Palette data referenced when ROM is started	{U}
+08AADBE8	&PALETTE	Opening relation pallet data	1	{U}
+08B75700	:08B7585F	Something about the opening relationship	{J}
+08ABAD10	:08ABB14B	Something about the opening relationship	{U}
+080CB650	Logo at ROM start	1	{J}
+080D0DB4	Logo at ROM start	2	{J}
+080D0DD8	Nitendo at ROM startFunction to read Logo and ISLogo	{J}
+080C6704	Logo at ROM start	1	{U}
+080CBDD8	Logo at ROM start	2	{U}
+080CBE0C	Nitendo at ROM startFunction to read Logo and ISLogo	{U}
 0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
 08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
-080C1298	设置世界地图的菜单定义	{J}
-080BC454	设置世界地图的菜单定义	{U}
-080C13F4	设置世界地图商店的菜单定义	{J}
-080BC5B4	设置世界地图商店的菜单定义	{U}
-08001EE4	EnablePaletteSync	{J}
-089B7414	&LZ77	一些小的压缩数据	35	{U}
-089B743C	&LZ77	一些小的压缩数据	36	{U}
-089B7468	&LZ77	一些小的压缩数据	37	{U}
-089B749C	&LZ77	一些小的压缩数据	38	{U}
-089B74D4	&LZ77	一些小的压缩数据	39	{U}
-089B7514	&LZ77	一些小的压缩数据	40	{U}
-089B7554	&LZ77	一些小的压缩数据	41	{U}
-089B759C	&LZ77	一些小的压缩数据	42	{U}
-089B75D8	&LZ77	一些小的压缩数据	43	{U}
-089B7414	&LZ77	一些小的压缩数据	44	{U}
-089B743C	&LZ77	一些小的压缩数据	45	{U}
-089B7468	&LZ77	一些小的压缩数据	46	{U}
-089B749C	&LZ77	一些小的压缩数据	47	{U}
-089B74D4	&LZ77	一些小的压缩数据	48	{U}
-089B7514	&LZ77	一些小的压缩数据	49	{U}
-089B7554	&LZ77	一些小的压缩数据	50	{U}
-089B759C	&LZ77	一些小的压缩数据	51	{U}
-089B75D8	&LZ77	一些小的压缩数据	52	{U}
-089E7E2C	&LZ77	一些小的压缩数据	53	{U}
-089E7E50	&LZ77	一些小的压缩数据	54	{U}
-089E7E78	&LZ77	一些小的压缩数据	55	{U}
-089E7EA0	&LZ77	一些小的压缩数据	56	{U}
-089E7ECC	&LZ77	一些小的压缩数据	57	{U}
-089E7EFC	&LZ77	一些小的压缩数据	58	{U}
-089E7F2C	&LZ77	一些小的压缩数据	59	{u}
-089E7F5C	&LZ77	一些小的压缩数据	60	{U}
-089E7F8C	&LZ77	一些小的压缩数据	61	{U}
-089E7FBC	&LZ77	一些小的压缩数据	62	{U}
-089E7FFC	&LZ77	一些小的压缩数据	63	{U}
-089E8040	&LZ77	一些小的压缩数据	64	{U}
-089E8090	&LZ77	一些小的压缩数据	65	{U}
-089E80EC	&LZ77	一些小的压缩数据	66	{U}
-089E8148	&LZ77	一些小的压缩数据	67	{U}
-089E81A4	&LZ77	一些小的压缩数据	68	{U}
-089E8200	&LZ77	一些小的压缩数据	69	{U}
-08A27A9C	&LZ77	一些小的压缩数据	35	{J}
-08A27AC4	&LZ77	一些小的压缩数据	36	{J}
-08A27AF0	&LZ77	一些小的压缩数据	37	{J}
-08A27B24	&LZ77	一些小的压缩数据	38	{J}
-08A27B5C	&LZ77	一些小的压缩数据	39	{J}
-08A27B9C	&LZ77	一些小的压缩数据	40	{J}
-08A27BDC	&LZ77	一些小的压缩数据	41	{J}
-08A27C24	&LZ77	一些小的压缩数据	42	{J}
-08A27C60	&LZ77	一些小的压缩数据	43	{J}
-08A27A9C	&LZ77	一些小的压缩数据	44	{J}
-08A27AC4	&LZ77	一些小的压缩数据	45	{J}
-08A27AF0	&LZ77	一些小的压缩数据	46	{J}
-08A27B24	&LZ77	一些小的压缩数据	47	{J}
-08A27B5C	&LZ77	一些小的压缩数据	48	{J}
-08A27B9C	&LZ77	一些小的压缩数据	49	{J}
-08A27BDC	&LZ77	一些小的压缩数据	50	{J}
-08A27C24	&LZ77	一些小的压缩数据	51	{J}
-08A27C60	&LZ77	一些小的压缩数据	52	{J}
-08A584B4	&LZ77	一些小的压缩数据	53	{J}
-08A584D8	&LZ77	一些小的压缩数据	54	{J}
-08A58500	&LZ77	一些小的压缩数据	55	{J}
-08A58528	&LZ77	一些小的压缩数据	56	{J}
-08A58554	&LZ77	一些小的压缩数据	57	{J}
-08A58584	&LZ77	一些小的压缩数据	58	{J}
-08A585B4	&LZ77	一些小的压缩数据	59	{J}
-08A585E4	&LZ77	一些小的压缩数据	60	{J}
-08A58614	&LZ77	一些小的压缩数据	61	{J}
-08A58644	&LZ77	一些小的压缩数据	62	{J}
-08A58684	&LZ77	一些小的压缩数据	63	{J}
-08A586C8	&LZ77	一些小的压缩数据	64	{J}
-08A58718	&LZ77	一些小的压缩数据	65	{J}
-08A58774	&LZ77	一些小的压缩数据	66	{J}
-08A587D0	&LZ77	一些小的压缩数据	67	{J}
-08A5882C	&LZ77	一些小的压缩数据	68	{J}
-08A58888	&LZ77	一些小的压缩数据	69	{J}
-08A987D8	&PALETTE	东西的调色板	102	{J}
-085C74E0	&PALETTE	东西的调色板	103	{J}
-085D8088	&PALETTE	东西的调色板	104	{J}
-085D80E8	&PALETTE	东西的调色板	105	{J}
-08A987D8	&PALETTE	东西的调色板	106	{J}
-080E186C	&PALETTE	东西的调色板	107	{J}
-08A99F60	&PALETTE	东西的调色板	108	{J}
-08A987F8	&PALETTE	东西的调色板	109	{J}
-08AA52DC	&PALETTE	东西的调色板	110	{J}
-08A99EE0	&PALETTE	东西的调色板	111	{J}
-08B1CD60	&PALETTE	东西的调色板	112	{J}
-08B1E65C	&PALETTE	东西的调色板	113	{J}
-08B27220	&PALETTE	东西的调色板	114	{J}
-08A9A8D4	&LZ77	东西是TSA	{J}
-08A1BD40	&PALETTE	东西的调色板	102	{U}
-0859EFC0	&PALETTE	东西的调色板	103	{U}
-085ADDE8	&PALETTE	东西的调色板	104	{U}
-085ADE48	&PALETTE	东西的调色板	105	{U}
-08A1BD40	&PALETTE	东西的调色板	106	{U}
-080DC85C	&PALETTE	东西的调色板	107	{U}
-08A1D4C8	&PALETTE	东西的调色板	108	{U}
-08A1BD60	&PALETTE	东西的调色板	109	{U}
-08A28088	&PALETTE	东西的调色板	110	{U}
-08A1D448	&PALETTE	东西的调色板	111	{U}
-08A97ACC	&PALETTE	东西的调色板	112	{U}
-08AA1950	&PALETTE	东西的调色板	114	{U}
-089DD4E8	&LZ77	东西是TSA	{U}
-08B8B4E0	&PALETTE	OP相关托盘	1	{J}
-08B8B978	&PALETTE	OP相关托盘	2	{J}
-08B8C43C	&PALETTE	OP相关托盘	3	{J}
-08B8CF14	&PALETTE	OP相关托盘	4	{J}
-08AF1B18	&PALETTE	OP相关托盘	1	{U}
-08AF1FB0	&PALETTE	OP相关托盘	2	{U}
-08AF2634	&PALETTE	OP相关托盘	3	{U}
-08AF310C	&PALETTE	OP相关托盘	4	{U}
-08B8E5F8	&PALETTE	东西的调色板	115	{J}
-08BAA1E0	&PALETTE	东西的调色板	116	{J}
-08B75840	&PALETTE	东西的调色板	117	{J}
-08AF47F0	&PALETTE	东西的调色板	115	{U}
-08B103D8	&PALETTE	东西的调色板	116	{U}
-08ADBE78	&PALETTE	东西的调色板	117	{U}
-080B40EC	开课课程阅读彩票表	{U}
-080B8C80	开课课程阅读彩票表	{J}
-08A2FBE0	:08A2FCE3	开课课程彩票表	{U}
-08AB0A44	:08AB0B47	开课课程彩票表	{J}
-08A2FBD4	:08A2FBDF	开课课程移动彩票表的号码	{U}
-08AB0A38	:08AB0A43	开课课程移动彩票表的号码	{J}
-085B0FA8	&LZ77	启动数据	FE 6的图像	FE 8U中没有指针	{U}
-085B4B44	&LZ77	启动数据	FE 6图像的TSA	FE 8U中没有指针	{U}
-085B50A8	&PALETTE16	启动数据	FE 6图像调色板	FE 8U中没有指针	{U}
-0801474C	应用未压缩的TSA并读取动画模式	{U}
-089B17A4	&HEADERTSA	动漫模式使用未压缩的东西TSA	1	{U}
-089B0864	&HEADERTSA	动漫模式使用未压缩的东西TSA	2	{U}
-089B343C	&HEADERTSA	动漫模式使用未压缩的东西TSA	3	{U}
-089B0840	&HEADERTSA	动漫模式使用未压缩的东西TSA	4	{U}
-08014760	应用未压缩的TSA并读取动画模式	{J}
-08A21E2C	&HEADERTSA	动漫模式使用未压缩的东西TSA	1	{J}
-08A20EEC	&HEADERTSA	动漫模式使用未压缩的东西TSA	2	{J}
-08A23AC4	&HEADERTSA	动漫模式使用未压缩的东西TSA	3	{J}
-08A20EC8	&HEADERTSA	动漫模式使用未压缩的东西TSA	4	{J}
-089B8140	&LZ77	一些小的压缩数据	70	{U}
-089B81A4	&LZ77	一些小的压缩数据	71	{U}
-089B8214	&LZ77	一些小的压缩数据	72	{U}
-089B828C	&LZ77	一些小的压缩数据	73	{U}
-089B82F0	&LZ77	一些小的压缩数据	74	{U}
-089B835C	&LZ77	一些小的压缩数据	75	{U}
-085BF114	&LZ77	东西的动漫模式	1	{U}
-085B5888	&LZ77	神秘对话框和数字数据	{U}
-085F1620	:085F1681	东西的调色板	118	{U}
-085F3F40	:085F3FE1	东西的调色板	119	{U}
-085F7D64	&PALETTE	东西的调色板	120	{U}
-08603B50	:08603D4F	东西的调色板	121	{U}
-08622F4C	:08622FEB	东西的调色板	122	{U}
-0862D424	&PALETTE	东西的调色板	123	{U}
-08645F44	&PALETTE	东西的调色板	124	{U}
-08652554	:08652733	东西的调色板	125	{U}
-0865BAB8	:0865BAF9	东西的调色板	126	{U}
-086671B0	&LZ77	东西的动漫模式	2	{U}
-08670528	&PALETTE	东西的调色板	127	{U}
-088017E0	&PALETTE	东西的调色板	128	{U}
-08A287C8	&LZ77	一些小的压缩数据	70	{J}
-08A2882C	&LZ77	一些小的压缩数据	71	{J}
-08A2889C	&LZ77	一些小的压缩数据	72	{J}
-08A28914	&LZ77	一些小的压缩数据	73	{J}
-08A28978	&LZ77	一些小的压缩数据	74	{J}
-08A289E4	&LZ77	一些小的压缩数据	75	{J}
-085E9344	&LZ77	东西的动漫模式	1	{J}
-085DFA68	&LZ77	神秘对话框和数字数据	{J}
-085E04C4	&PALETTE	神秘对话框和数字数据调色板	{J}
-085DFA48	&PALETTE	只有日文版的调色板	1	{J}
-0861E1F8	:0861E259	东西的调色板	118	{J}
-08620B18	:08620BB9	东西的调色板	119	{J}
-0862493C	&PALETTE	东西的调色板	120	{J}
-08630728	:8630927	东西的调色板	121	{J}
-0864FB24	:864FBC3	东西的调色板	122	{J}
-08659FFC	&PALETTE	东西的调色板	123	{J}
-08672B1C	&PALETTE	东西的调色板	124	{J}
-0867F12C	:867F30B	东西的调色板	125	{J}
-08688690	:86886D1	东西的调色板	126	{J}
-08693D88	&LZ77	东西的动漫模式	2	{J}
-0869D100	&PALETTE	东西的调色板	127	{J}
-08855D38	&PALETTE	东西的调色板	128	{J}
-08A3E9A0	:08A3E9FF	Unk OAMREGS TABLE	{U}
-08A3E948	&OAMREGS	OAMREGS	{U}
-08A3E950	&OAMREGS	OAMREGS	{U}
-08A3E958	&OAMREGS	OAMREGS	{U}
-08A3E960	&OAMREGS	OAMREGS	{U}
-08A3E968	&OAMREGS	OAMREGS	{U}
-08A3E970	&OAMREGS	OAMREGS	{U}
-08A3E978	&OAMREGS	OAMREGS	{U}
-08A3E980	&OAMREGS	OAMREGS	{U}
-08A3E988	&OAMREGS	OAMREGS	{U}
-08A3E990	&OAMREGS	OAMREGS	{U}
-08A3E998	&OAMREGS	OAMREGS	{U}
-08AC2360	:08AC23BF	Unk OAMREGS TABLE2	{J}
-08AC2308	&OAMREGS	OAMREGS	{J}
-08AC2310	&OAMREGS	OAMREGS	{J}
-08AC2318	&OAMREGS	OAMREGS	{J}
-08AC2320	&OAMREGS	OAMREGS	{J}
-08AC2328	&OAMREGS	OAMREGS	{J}
-08AC2330	&OAMREGS	OAMREGS	{J}
-08AC2338	&OAMREGS	OAMREGS	{J}
-08AC2340	&OAMREGS	OAMREGS	{J}
-08AC2348	&OAMREGS	OAMREGS	{J}
-08AC2350	&OAMREGS	OAMREGS	{J}
-08AC2358	&OAMREGS	OAMREGS	{J}
-08A17C20	:08A17C47	Unk OAMREGS TABLE2	{U}
-08A17B98	&OAMREGS	OAMREGS	{U}
-08A17BA6	&OAMREGS	OAMREGS	{U}
-08A17BBA	&OAMREGS	OAMREGS	{U}
-08A17BCE	&OAMREGS	OAMREGS	{U}
-08A17BE2	&OAMREGS	OAMREGS	{U}
-08A17BF6	&OAMREGS	OAMREGS	{U}
-08A9396C	:08A93993	Unk OAMREGS TABLE2	{J}
-08A938E4	&OAMREGS	OAMREGS	{J}
-08A938F2	&OAMREGS	OAMREGS	{J}
-08A93906	&OAMREGS	OAMREGS	{J}
-08A9391A	&OAMREGS	OAMREGS	{J}
-08A9392E	&OAMREGS	OAMREGS	{J}
-08A93942	&OAMREGS	OAMREGS	{J}
-089A3AB8	:089A3B3B	Unk Small Image Array	{U}
-089B4C80	&LZ77	一些小的压缩数据	76	{U}
-089B4CE8	&LZ77	一些小的压缩数据	77	{U}
-089B4D64	&LZ77	一些小的压缩数据	78	{U}
-089B4DDC	&LZ77	一些小的压缩数据	79	{U}
-089B4E4C	&LZ77	一些小的压缩数据	80	{U}
-089B4EB8	&LZ77	一些小的压缩数据	81	{U}
-089B4F2C	&LZ77	一些小的压缩数据	82	{U}
-089B4FA4	&LZ77	一些小的压缩数据	83	{U}
-089B501C	&LZ77	一些小的压缩数据	84	{U}
-089B5094	&LZ77	一些小的压缩数据	85	{U}
-089B5118	&LZ77	一些小的压缩数据	86	{U}
-089B519C	&LZ77	一些小的压缩数据	87	{U}
-089B5220	&LZ77	一些小的压缩数据	88	{U}
-089B52A4	&LZ77	一些小的压缩数据	89	{U}
-089B5310	&LZ77	一些小的压缩数据	90	{U}
-089B5398	&LZ77	一些小的压缩数据	91	{U}
-089B5434	&LZ77	一些小的压缩数据	92	{U}
-089B54F0	&LZ77	一些小的压缩数据	93	{U}
-089B55EC	&LZ77	一些小的压缩数据	94	{U}
-089B5720	&LZ77	一些小的压缩数据	95	{U}
-089B58DC	&LZ77	一些小的压缩数据	96	{U}
-089B5B38	&LZ77	一些小的压缩数据	97	{U}
-089B5C6C	&LZ77	一些小的压缩数据	98	{U}
-089B5E0C	&LZ77	一些小的压缩数据	99	{U}
-089B6050	&LZ77	一些小的压缩数据	100	{U}
-089B6174	&LZ77	一些小的压缩数据	101	{U}
-089B630C	&LZ77	一些小的压缩数据	102	{U}
-089B6510	&LZ77	一些小的压缩数据	103	{U}
-089B65D4	&LZ77	一些小的压缩数据	104	{U}
-089B66BC	&LZ77	一些小的压缩数据	105	{U}
-089B6808	&LZ77	一些小的压缩数据	106	{U}
-089B69BC	&LZ77	一些小的压缩数据	107	{U}
-08A14140	:08A141C3		Unk Small Image Array	{J}
-08A25308	&LZ77	一些小的压缩数据	76	{J}
-08A25370	&LZ77	一些小的压缩数据	77	{J}
-08A253EC	&LZ77	一些小的压缩数据	78	{J}
-08A25464	&LZ77	一些小的压缩数据	79	{J}
-08A254D4	&LZ77	一些小的压缩数据	80	{J}
-08A25540	&LZ77	一些小的压缩数据	81	{J}
-08A255B4	&LZ77	一些小的压缩数据	82	{J}
-08A2562C	&LZ77	一些小的压缩数据	83	{J}
-08A256A4	&LZ77	一些小的压缩数据	84	{J}
-08A2571C	&LZ77	一些小的压缩数据	85	{J}
-08A257A0	&LZ77	一些小的压缩数据	86	{J}
-08A25824	&LZ77	一些小的压缩数据	87	{J}
-08A258A8	&LZ77	一些小的压缩数据	88	{J}
-08A2592C	&LZ77	一些小的压缩数据	89	{J}
-08A25998	&LZ77	一些小的压缩数据	90	{J}
-08A25A20	&LZ77	一些小的压缩数据	91	{J}
-08A25ABC	&LZ77	一些小的压缩数据	92	{J}
-08A25B78	&LZ77	一些小的压缩数据	93	{J}
-08A25C74	&LZ77	一些小的压缩数据	94	{J}
-08A25DA8	&LZ77	一些小的压缩数据	95	{J}
-08A25F64	&LZ77	一些小的压缩数据	96	{J}
-08A261C0	&LZ77	一些小的压缩数据	97	{J}
-08A262F4	&LZ77	一些小的压缩数据	98	{J}
-08A26494	&LZ77	一些小的压缩数据	99	{J}
-08A266D8	&LZ77	一些小的压缩数据	100	{J}
-08A267FC	&LZ77	一些小的压缩数据	101	{J}
-08A26994	&LZ77	一些小的压缩数据	102	{J}
-08A26B98	&LZ77	一些小的压缩数据	103	{J}
-08A26C5C	&LZ77	一些小的压缩数据	104	{J}
-08A26D44	&LZ77	一些小的压缩数据	105	{J}
-08A26E90	&LZ77	一些小的压缩数据	106	{J}
-08A27044	&LZ77	一些小的压缩数据	107	{J}
-085B0F2C	&HEADERTSA	动漫模式使用未压缩的东西TSA	5	{U}
-080DA2F4	&PALETTE	东西的调色板	129	{U}
-080DA334	&PALETTE	东西的调色板	130	{U}
-080DA354	&PALETTE	东西的调色板	131	{U}
-080DA314	&PALETTE	东西的调色板	132	{U}
-085B7E54	&PALETTE	东西的调色板	134	{U}
-085B8714	&PALETTE	东西的调色板	135	{U}
-085B8F90	&PALETTE	东西的调色板	136	{U}
-085B6BB4	&PALETTE	东西的调色板	137	{U}
-085B6BD4	&PALETTE	东西的调色板	138	{U}
-085B6BF4	&PALETTE	东西的调色板	139	{U}
-085DD518	&LZ77	我认为这是一场暴风雪的形象	{U}
-0878D648	&LZ77	龙的战斗动画般的数据	{U}
-085DB10C	&HEADERTSA	动漫模式使用未压缩的东西TSA	5	{J}
-080DF2E0	&PALETTE	东西的调色板	129	{J}
-080DF320	&PALETTE	东西的调色板	130	{J}
-080DF340	&PALETTE	东西的调色板	131	{J}
-080DF300	&PALETTE	东西的调色板	132	{J}
-085E2034	&PALETTE	东西的调色板	134	{J}
-085E28F4	&PALETTE	东西的调色板	135	{J}
-085E3170	&PALETTE	东西的调色板	136	{J}
-085E0D94	&PALETTE	东西的调色板	137	{J}
-085E0DB4	&PALETTE	东西的调色板	138	{J}
-085E0DD4	&PALETTE	东西的调色板	139	{J}
-08607C40	&LZ77	我认为这是一场暴风雪的形象	{J}
-087E1BA0	&LZ77	龙的战斗动画般的数据	{J}
+080C1298	Set menu definition of world map	{J}
+080BC454	Set menu definition of world map	{U}
+080C13F4	Set menu definition of world map shop	{J}
+080BC5B4	Set menu definition of world map shop	{U}
+08A987D8	&PALETTE	Something's palette	102	{J}
+085C74E0	&PALETTE	Something's palette	103	{J}
+085D8088	&PALETTE	Something's palette	104	{J}
+085D80E8	&PALETTE	Something's palette	105	{J}
+08A987D8	&PALETTE	Something's palette	106	{J}
+080E186C	&PALETTE	Something's palette	107	{J}
+08A99F60	&PALETTE	Something's palette	108	{J}
+08A987F8	&PALETTE	Something's palette	109	{J}
+08AA52DC	&PALETTE	Something's palette	110	{J}
+08A99EE0	&PALETTE	Something's palette	111	{J}
+08B1CD60	&PALETTE	Something's palette	112	{J}
+08B1E65C	&PALETTE	Something's palette	113	{J}
+08B27220	&PALETTE	Something's palette	114	{J}
+08A9A8D4	&LZ77	Something's TSA	1	{J}
+08A1BD40	&PALETTE	Something's palette	102	{U}
+0859EFC0	&PALETTE	Something's palette	103	{U}
+085ADDE8	&PALETTE	Something's palette	104	{U}
+085ADE48	&PALETTE	Something's palette	105	{U}
+08A1BD40	&PALETTE	Something's palette	106	{U}
+080DC85C	&PALETTE	Something's palette	107	{U}
+08A1D4C8	&PALETTE	Something's palette	108	{U}
+08A1BD60	&PALETTE	Something's palette	109	{U}
+08A28088	&PALETTE	Something's palette	110	{U}
+08A1D448	&PALETTE	Something's palette	111	{U}
+08A97ACC	&PALETTE	Something's palette	112	{U}
+08AA1950	&PALETTE	Something's palette	114	{U}
+089DD4E8	&LZ77	Something's TSA	1	{U}
+08B8B4E0	&PALETTE	OP related pallet	1	{J}
+08B8B978	&PALETTE	OP related pallet	2	{J}
+08B8C43C	&PALETTE	OP related pallet	3	{J}
+08B8CF14	&PALETTE	OP related pallet	4	{J}
+08AF1B18	&PALETTE	OP related pallet	1	{U}
+08AF1FB0	&PALETTE	OP related pallet	2	{U}
+08AF2634	&PALETTE	OP related pallet	3	{U}
+08AF310C	&PALETTE	OP related pallet	4	{U}
+08B8E5F8	&PALETTE	Something's palette	115	{J}
+08BAA1E0	&PALETTE8	Something's palette	116	{J}
+08B75840	&PALETTE	Something's palette	117	{J}
+08AF47F0	&PALETTE	Something's palette	115	{U}
+08B103D8	&PALETTE8	Something's palette	116	{U}
+08ADBE78	&PALETTE	Something's palette	117	{U}
+080B40EC	Opening class demoReading lottery table	{U}
+080B8C80	Opening class demoReading lottery table	{J}
+08A2FBE0	:08A2FCE3	Opening class demoLottery table	{U}
+08AB0A44	:08AB0B47	Opening class demoLottery table	{J}
+08A2FBD4	:08A2FBDF	Opening class demoNumber to shift lottery table	{U}
+08AB0A38	:08AB0A43	Opening class demoNumber to shift lottery table	{J}
+085B0FA8	&LZ77	Boot data	Image of FE 6	There is no pointer in FE 8U	{U}
+085B4B44	&LZ77	Boot data	TSA of the image of FE 6	There is no pointer in FE 8U	{U}
+085B50A8	&PALETTE16	Boot data	FE 6 image palette	There is no pointer in FE 8U	{U}
+0801474C	Apply uncompressed TSA and read animation pattern	{U}
+089B17A4	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{U}
+089B0864	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{U}
+089B343C	&HEADERTSA	Anime pattern using something uncompressed TSA	3	{U}
+089B0840	&HEADERTSA	Anime pattern using something uncompressed TSA	4	{U}
+08014760	Apply uncompressed TSA and read animation pattern	{J}
+08A21E2C	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{J}
+08A20EEC	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{J}
+08A23AC4	&HEADERTSA	Anime pattern using something uncompressed TSA	3	{J}
+08A20EC8	&HEADERTSA	Anime pattern using something uncompressed TSA	4	{J}
+089B8140	&LZ77	Something small compressed data	70	{U}
+089B81A4	&LZ77	Something small compressed data	71	{U}
+089B8214	&LZ77	Something small compressed data	72	{U}
+089B828C	&LZ77	Something small compressed data	73	{U}
+089B82F0	&LZ77	Something small compressed data	74	{U}
+089B835C	&LZ77	Something small compressed data	75	{U}
+085BF114	&LZ77	Something's anime pattern	1	{U}
+085B5888	&LZ77	Mystery dialog and numeric data	{U}
+085F1620	:085F1681	Something's palette	118	{U}
+085F3F40	:085F3FE1	Something's palette	119	{U}
+085F7D64	&PALETTE	Something's palette	120	{U}
+08603B50	:08603D4F	Something's palette	121	{U}
+08622F4C	:08622FEB	Something's palette	122	{U}
+0862D424	&PALETTE	Something's palette	123	{U}
+08645F44	&PALETTE	Something's palette	124	{U}
+08652554	:08652733	Something's palette	125	{U}
+0865BAB8	:0865BAF9	Something's palette	126	{U}
+086671B0	&LZ77	Something's anime pattern	2	{U}
+08670528	&PALETTE	Something's palette	127	{U}
+088017E0	&PALETTE	Something's palette	128	{U}
+08A287C8	&LZ77	Something small compressed data	70	{J}
+08A2882C	&LZ77	Something small compressed data	71	{J}
+08A2889C	&LZ77	Something small compressed data	72	{J}
+08A28914	&LZ77	Something small compressed data	73	{J}
+08A28978	&LZ77	Something small compressed data	74	{J}
+08A289E4	&LZ77	Something small compressed data	75	{J}
+085E9344	&LZ77	Something's anime pattern	1	{J}
+085DFA68	&LZ77	Mystery dialog and numeric data	{J}
+085E04C4	&PALETTE	Mystery dialog and numeric data palette	{J}
+085DFA48	&PALETTE	Palette of Japanese version only	1	{J}
+0861E1F8	:0861E259	Something's palette	118	{J}
+08620B18	:08620BB9	Something's palette	119	{J}
+0862493C	&PALETTE	Something's palette	120	{J}
+08630728	:8630927	Something's palette	121	{J}
+0864FB24	:864FBC3	Something's palette	122	{J}
+08659FFC	&PALETTE	Something's palette	123	{J}
+08672B1C	&PALETTE	Something's palette	124	{J}
+0867F12C	:867F30B	Something's palette	125	{J}
+08688690	:86886D1	Something's palette	126	{J}
+08693D88	&LZ77	Something's anime pattern	2	{J}
+0869D100	&PALETTE	Something's palette	127	{J}
+08855D38	&PALETTE	Something's palette	128	{J}
+08A3E9A0	&OAMREGS_ARRAY	Unk OAMREGS	{U}
+08AC2360	&OAMREGS_ARRAY	Unk OAMREGS2	{J}
+08A17C20	&OAMREGS_ARRAY	Unk OAMREGS2	{U}
+08A9396C	&OAMREGS_ARRAY	Unk OAMREGS2	{J}
+089A3AB8	:089A3B3B	Unk Small Image	{U}
+089B4C80	&LZ77	Something small compressed data	76	{U}
+089B4CE8	&LZ77	Something small compressed data	77	{U}
+089B4D64	&LZ77	Something small compressed data	78	{U}
+089B4DDC	&LZ77	Something small compressed data	79	{U}
+089B4E4C	&LZ77	Something small compressed data	80	{U}
+089B4EB8	&LZ77	Something small compressed data	81	{U}
+089B4F2C	&LZ77	Something small compressed data	82	{U}
+089B4FA4	&LZ77	Something small compressed data	83	{U}
+089B501C	&LZ77	Something small compressed data	84	{U}
+089B5094	&LZ77	Something small compressed data	85	{U}
+089B5118	&LZ77	Something small compressed data	86	{U}
+089B519C	&LZ77	Something small compressed data	87	{U}
+089B5220	&LZ77	Something small compressed data	88	{U}
+089B52A4	&LZ77	Something small compressed data	89	{U}
+089B5310	&LZ77	Something small compressed data	90	{U}
+089B5398	&LZ77	Something small compressed data	91	{U}
+089B5434	&LZ77	Something small compressed data	92	{U}
+089B54F0	&LZ77	Something small compressed data	93	{U}
+089B55EC	&LZ77	Something small compressed data	94	{U}
+089B5720	&LZ77	Something small compressed data	95	{U}
+089B58DC	&LZ77	Something small compressed data	96	{U}
+089B5B38	&LZ77	Something small compressed data	97	{U}
+089B5C6C	&LZ77	Something small compressed data	98	{U}
+089B5E0C	&LZ77	Something small compressed data	99	{U}
+089B6050	&LZ77	Something small compressed data	100	{U}
+089B6174	&LZ77	Something small compressed data	101	{U}
+089B630C	&LZ77	Something small compressed data	102	{U}
+089B6510	&LZ77	Something small compressed data	103	{U}
+089B65D4	&LZ77	Something small compressed data	104	{U}
+089B66BC	&LZ77	Something small compressed data	105	{U}
+089B6808	&LZ77	Something small compressed data	106	{U}
+089B69BC	&LZ77	Something small compressed data	107	{U}
+08A14140	:08A141C3		Unk Small Image	{J}
+08A25308	&LZ77	Something small compressed data	76	{J}
+08A25370	&LZ77	Something small compressed data	77	{J}
+08A253EC	&LZ77	Something small compressed data	78	{J}
+08A25464	&LZ77	Something small compressed data	79	{J}
+08A254D4	&LZ77	Something small compressed data	80	{J}
+08A25540	&LZ77	Something small compressed data	81	{J}
+08A255B4	&LZ77	Something small compressed data	82	{J}
+08A2562C	&LZ77	Something small compressed data	83	{J}
+08A256A4	&LZ77	Something small compressed data	84	{J}
+08A2571C	&LZ77	Something small compressed data	85	{J}
+08A257A0	&LZ77	Something small compressed data	86	{J}
+08A25824	&LZ77	Something small compressed data	87	{J}
+08A258A8	&LZ77	Something small compressed data	88	{J}
+08A2592C	&LZ77	Something small compressed data	89	{J}
+08A25998	&LZ77	Something small compressed data	90	{J}
+08A25A20	&LZ77	Something small compressed data	91	{J}
+08A25ABC	&LZ77	Something small compressed data	92	{J}
+08A25B78	&LZ77	Something small compressed data	93	{J}
+08A25C74	&LZ77	Something small compressed data	94	{J}
+08A25DA8	&LZ77	Something small compressed data	95	{J}
+08A25F64	&LZ77	Something small compressed data	96	{J}
+08A261C0	&LZ77	Something small compressed data	97	{J}
+08A262F4	&LZ77	Something small compressed data	98	{J}
+08A26494	&LZ77	Something small compressed data	99	{J}
+08A266D8	&LZ77	Something small compressed data	100	{J}
+08A267FC	&LZ77	Something small compressed data	101	{J}
+08A26994	&LZ77	Something small compressed data	102	{J}
+08A26B98	&LZ77	Something small compressed data	103	{J}
+08A26C5C	&LZ77	Something small compressed data	104	{J}
+08A26D44	&LZ77	Something small compressed data	105	{J}
+08A26E90	&LZ77	Something small compressed data	106	{J}
+08A27044	&LZ77	Something small compressed data	107	{J}
+085B0F2C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{U}
+080DA2F4	&PALETTE	Something's palette	129	{U}
+080DA334	&PALETTE	Something's palette	130	{U}
+080DA354	&PALETTE	Something's palette	131	{U}
+080DA314	&PALETTE	Something's palette	132	{U}
+085B7560	&PALETTE	Something's palette	133	{U}
+085B7E54	&PALETTE	Something's palette	134	{U}
+085B8714	&PALETTE	Something's palette	135	{U}
+085B8F90	&PALETTE	Something's palette	136	{U}
+085B6BB4	&PALETTE	Something's palette	137	{U}
+085B6BD4	&PALETTE	Something's palette	138	{U}
+085B6BF4	&PALETTE	Something's palette	139	{U}
+085B6C14	&PALETTE	Something's palette	140	{U}
+085DD518	&LZ77	I think that it is an image of a snowstorm	{U}
+0878D648	&LZ77	Dragon's battle animation-like data	{U}
+085DB10C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{J}
+080DF2E0	&PALETTE	Something's palette	129	{J}
+080DF320	&PALETTE	Something's palette	130	{J}
+080DF340	&PALETTE	Something's palette	131	{J}
+080DF300	&PALETTE	Something's palette	132	{J}
+085E1740	&PALETTE	Something's palette	133	{J}
+085E2034	&PALETTE	Something's palette	134	{J}
+085E28F4	&PALETTE	Something's palette	135	{J}
+085E3170	&PALETTE	Something's palette	136	{J}
+085E0D94	&PALETTE	Something's palette	137	{J}
+085E0DB4	&PALETTE	Something's palette	138	{J}
+085E0DD4	&PALETTE	Something's palette	139	{J}
+085E0DF4	&PALETTE	Something's palette	140	{J}
+08607C40	&LZ77	I think that it is an image of a snowstorm	{J}
+087E1BA0	&LZ77	Dragon's battle animation-like data	{J}
 08a36338	&LZ77	OP(Promotion) Class Name Font	{U}
 08A372c0	&PALETTE	OP(Promotion) Class Name Font Palette	{U}
 08AB7164	&LZ77	OP(Promotion) Class Name Font	{J}
-08903C80	:08903DBF	删除FE 7的各个动画数据	{J}
-08903DC0	:08903E0B	删除FE 7的单个动画表	{J}
-088AF6F4	:088AF833	删除FE 7的各个动画数据	{U}
-088AF834	:088AF87F	删除FE 7的单个动画表	{U}
+08AB8044	&PALETTE	OP(Promotion) Class Name Font Palette	{J}
+08903C80	:08903DBF	Removal of individual animation data of FE 7	{J}
+08903DC0	:08903E0B	Removal of individual animation table of FE 7	{J}
+088AF6F4	:088AF833	Removal of individual animation data of FE 7	{U}
+088AF834	:088AF87F	Removal of individual animation table of FE 7	{U}
 08904BC4	:08904E1B	Cleared FE6 credit pointers	{J}
-08A12FA8	:08A12FBF	Unk Small Palette Array	{J}
-085C25E0	&PALETTE	东西的调色板	141	{J}
-085C2600	&PALETTE	东西的调色板	142	{J}
-085C2620	&PALETTE	东西的调色板	143	{J}
-085C2640	&PALETTE	东西的调色板	144	{J}
-085AA824	:085AA83B	Unk Small Palette Array	{U}
-0859A160	&PALETTE	东西的调色板	141	{U}
-0859A180	&PALETTE	东西的调色板	142	{U}
-0859A1A0	&PALETTE	东西的调色板	143	{U}
-0859A1C0	&PALETTE	东西的调色板	144	{U}
-085D4A44	:085D4A57	Unk OAMREGS TABLE3	{J}
-080DF008	&OAMREGS	OAMREGS	{J}
-080DF028	&OAMREGS	OAMREGS	{J}
-080DF048	&OAMREGS	OAMREGS	{J}
-080DF068	&OAMREGS	OAMREGS	{J}
-085AA9A0	:085AA9B3	Unk OAMREGS TABLE3	{U}
-080DA01C	&OAMREGS	OAMREGS	{U}
-080DA03C	&OAMREGS	OAMREGS	{U}
-080DA05C	&OAMREGS	OAMREGS	{U}
-080DA07C	&OAMREGS	OAMREGS	{U}
-085D4A58	:085D4A63	Unk OAMREGS TABLE4	{J}
-080DF09E	&OAMREGS	OAMREGS	{J}
-085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
-080DA0B2	&OAMREGS	OAMREGS	{U}
-08058BF4	获取战斗卡通地砖的图像ID	{J}
-08058D1C	获取战斗动画背景的图像ID	{J}
-08057DA8	获取战斗卡通地砖的图像ID	{U}
-08057ED0	获取战斗动画背景的图像ID	{U}
-088618D0	:0886194F	地形名称的TextID在FE8J中没有使用	{J}
-08A0035C	&EVENT	天空事件	1	{J}
-08A00364	&EVENT	天空事件	2	{J}
-08A95650	:08A9590F	任何算术查找表	{J}
-085B9BC4	:085B9CE3	Unk OAMSP TABLE1	{U}
-085E3DF4	:085E3F13	Unk OAMSP TABLE5	{J}
-085E3E14	:085E3F13	Unk OAMSP TABLE1	{J}
-08604784	&PALETTE	东西的调色板	145	{J}
-0860A374	&PALETTE	东西的调色板	146	{J}
-0860B53C	&PALETTE	东西的调色板	147	{J}
-0860C600	&PALETTE	东西的调色板	148	{J}
-0860C620	&PALETTE	东西的调色板	149	{J}
-0862DC64	&PALETTE	东西的调色板	150	{J}
-08630DE8	&PALETTE	东西的调色板	151	{J}
-08650674	&PALETTE	东西的调色板	152	{J}
-0869BE8C	&PALETTE	东西的调色板	153	{J}
-0867E214	&PALETTE	东西的调色板	154	{J}
-086886B0	&PALETTE	东西的调色板	155	{J}
-086B3D64	&PALETTE	东西的调色板	156	{J}
-086B97E8	&PALETTE	东西的调色板	157	{J}
-086BB044	&PALETTE	东西的调色板	158	{J}
-087554F8	&PALETTE	东西的调色板	159	{J}
-08756BB4	&PALETTE	东西的调色板	160	{J}
-0875A9DC	&PALETTE	东西的调色板	161	{J}
-0875D358	&PALETTE	东西的调色板	162	{J}
-08762170	&PALETTE	东西的调色板	163	{J}
-087611E4	&PALETTE	东西的调色板	164	{J}
-08760304	&PALETTE	东西的调色板	165	{J}
-0875CE7C	&PALETTE	东西的调色板	166	{J}
-08762C54	&PALETTE	东西的调色板	167	{J}
-0876361C	&PALETTE	东西的调色板	168	{J}
-08753BCC	&PALETTE	东西的调色板	169	{J}
-08776F94	&PALETTE	东西的调色板	170	{J}
-08779A94	&PALETTE	东西的调色板	171	{J}
-087A0EF4	&PALETTE	东西的调色板	172	{J}
-087A22E8	&PALETTE	东西的调色板	173	{J}
-087A22E8	&PALETTE	东西的调色板	174	{J}
-086CE8B8	&PALETTE	东西的调色板	175	{J}
-086BF6E8	&PALETTE	东西的调色板	176	{J}
-087F9CA4	&PALETTE	东西的调色板	177	{J}
-087F9670	&PALETTE	东西的调色板	178	{J}
-087FA744	&PALETTE	东西的调色板	179	{J}
-086F4504	&PALETTE	东西的调色板	180	{J}
-086F4524	&PALETTE	东西的调色板	181	{J}
-086EA344	&PALETTE	东西的调色板	182	{J}
-086F5FD4	&PALETTE	东西的调色板	183	{J}
-0872BF7C	&PALETTE	东西的调色板	184	{J}
-0872C914	&PALETTE	东西的调色板	185	{J}
-0860C640	&PALETTE	东西的调色板	186	{J}
-086CF1EC	&PALETTE	东西的调色板	187	{J}
-086CF8C0	&PALETTE	东西的调色板	188	{J}
-086E93FC	&PALETTE	东西的调色板	189	{J}
-086E2604	&PALETTE	东西的调色板	190	{J}
-086E24B4	&PALETTE	东西的调色板	191	{J}
-08706F14	&PALETTE	东西的调色板	192	{J}
-08716FC4	&PALETTE	东西的调色板	193	{J}
-086E24B4	&PALETTE	东西的调色板	194	{J}
-0872A61C	&PALETTE	东西的调色板	195	{J}
-08614CE0	&PALETTE	东西的调色板	196	{J}
-085FAA50	&PALETTE	东西的调色板	197	{J}
-0860C5E0	&PALETTE	东西的调色板	198	{J}
-0861E218	&PALETTE	东西的调色板	199	{J}
-0861E238	&PALETTE	东西的调色板	200	{J}
-086073AC	&PALETTE	东西的调色板	201	{J}
-0861589C	&PALETTE	东西的调色板	202	{J}
-087E66EC	&PALETTE	东西的调色板	203	{J}
-085DA05C	&PALETTE	东西的调色板	145	{U}
-085DE964	&PALETTE	东西的调色板	147	{U}
-085DFA28	&PALETTE	东西的调色板	148	{U}
-0860108C	&PALETTE	东西的调色板	150	{U}
-08604210	&PALETTE	东西的调色板	151	{U}
-08623A9C	&PALETTE	东西的调色板	152	{U}
-0866F2B4	&PALETTE	东西的调色板	153	{U}
-0865163C	&PALETTE	东西的调色板	154	{U}
-0865BAD8	&PALETTE	东西的调色板	155	{U}
-0868718C	&PALETTE	东西的调色板	156	{U}
-0868CC10	&PALETTE	东西的调色板	157	{U}
-0868E46C	&PALETTE	东西的调色板	158	{U}
-08728920	&PALETTE	东西的调色板	159	{U}
-0872DE04	&PALETTE	东西的调色板	161	{U}
-08730780	&PALETTE	东西的调色板	162	{U}
-08732228	&PALETTE	东西的调色板	164	{U}
-08731348	&PALETTE	东西的调色板	165	{U}
-087302A4	&PALETTE	东西的调色板	166	{U}
-08726FF4	&PALETTE	东西的调色板	169	{U}
-08751DB4	&PALETTE	东西的调色板	173	{U}
-08751DB4	&PALETTE	东西的调色板	174	{U}
-086A1CE0	&PALETTE	东西的调色板	175	{U}
-08692B10	&PALETTE	东西的调色板	176	{U}
-087A574C	&PALETTE	东西的调色板	177	{U}
-087A5118	&PALETTE	东西的调色板	178	{U}
-087A61EC	&PALETTE	东西的调色板	179	{U}
-086C792C	&PALETTE	东西的调色板	180	{U}
-086C794C	&PALETTE	东西的调色板	181	{U}
-086BD76C	&PALETTE	东西的调色板	182	{U}
-086C93FC	&PALETTE	东西的调色板	183	{U}
-086FF3A4	&PALETTE	东西的调色板	184	{U}
-086FFD3C	&PALETTE	东西的调色板	185	{U}
-086A2614	&PALETTE	东西的调色板	187	{U}
-086A2CE8	&PALETTE	东西的调色板	188	{U}
-086BC824	&PALETTE	东西的调色板	189	{U}
-086B5A2C	&PALETTE	东西的调色板	190	{U}
-086B58DC	&PALETTE	东西的调色板	191	{U}
-086DA33C	&PALETTE	东西的调色板	192	{U}
-086EA3EC	&PALETTE	东西的调色板	193	{U}
-086B58DC	&PALETTE	东西的调色板	194	{U}
-086FDA44	&PALETTE	东西的调色板	195	{U}
-085E8108	&PALETTE	东西的调色板	196	{U}
-085D0820	&PALETTE	东西的调色板	197	{U}
-085DFA08	&PALETTE	东西的调色板	198	{U}
-085F1640	&PALETTE	东西的调色板	199	{U}
-085F1660	&PALETTE	东西的调色板	200	{U}
-085DCC84	&PALETTE	东西的调色板	201	{U}
-085E8CC4	&PALETTE	东西的调色板	202	{U}
-08792194	&PALETTE	东西的调色板	203	{U}
-085DF4B8	&HEADERTSA	东西是TSA	2	{J}
-085DF554	&HEADERTSA	东西是TSA	3	{J}
-08A74308	&HEADERTSA	东西是TSA	4	{J}
-08AAEE9C	&HEADERTSA	东西是TSA	5	{J}
-08A96C84	&HEADERTSA	东西是TSA	6	{J}
-08AA71D4	&HEADERTSA	东西是TSA	7	{J}
-08AC3F5C	&HEADERTSA	东西是TSA	8	{J}
-08AC3AA8	&HEADERTSA	东西是TSA	9	{J}
-08AC484C	&HEADERTSA	东西是TSA	10	{J}
-08AC4398	&HEADERTSA	东西是TSA	11	{J}
-08AC718C	&HEADERTSA	东西是TSA	12	{J}
-08B1E73C	&HEADERTSA	东西是TSA	13	{J}
-08B1E7B8	&HEADERTSA	东西是TSA	14	{J}
-08B1E5FC	&HEADERTSA	东西是TSA	15	{J}
-08B1E61C	&HEADERTSA	东西是TSA	16	{J}
-08B1E634	&HEADERTSA	东西是TSA	17	{J}
-08AC2BE0	&HEADERTSA	东西是TSA	19	未使用	{J}
-085B52D8	&HEADERTSA	东西是TSA	2	{U}
-085B5374	&HEADERTSA	东西是TSA	3	{U}
-08A02250	&HEADERTSA	东西是TSA	4	{U}
-08A1A434	&HEADERTSA	东西是TSA	6	{U}
-08A1768C	&HEADERTSA	东西是TSA	18	{U}
-08A3F21C	&HEADERTSA	东西是TSA	19	未使用	{U}
-08004998	加载状态屏幕的字体	{J}
-08004A90	加载状态屏幕的字体	{U}
-085B91C8	:085B9207	Unk OAMREGS TABLE4	{J}
-08591430	:0859146F	Unk OAMREGS TABLE4	{U}
-080DCDD8	:080DCE53	AI Script ASM Table	{J}
-080D80FC	:080D8177	AI Script ASM Table	{U}
-0859B938	&SECONDARYOAM_ARRAY	Secondary OAM Array	1	{U}
-0859B898	&SECONDARYOAM_ARRAY	Secondary OAM Array	2	{U}
-0859B7F4	&SECONDARYOAM_ARRAY	Secondary OAM Array	3	{U}
-0859B858	&SECONDARYOAM_ARRAY	Secondary OAM Array	4	{U}
+08A12FA8	:08A12FBF	Unk Small Palette	{J}
+085C25E0	&PALETTE	Something's palette	141	{J}
+085C2600	&PALETTE	Something's palette	142	{J}
+085C2620	&PALETTE	Something's palette	143	{J}
+085C2640	&PALETTE	Something's palette	144	{J}
+085AA824	:085AA83B	Unk Small Palette	{U}
+0859A160	&PALETTE	Something's palette	141	{U}
+0859A180	&PALETTE	Something's palette	142	{U}
+0859A1A0	&PALETTE	Something's palette	143	{U}
+0859A1C0	&PALETTE	Something's palette	144	{U}
+085D4A44	&OAMREGS_ARRAY	Unk OAMREGS3	{J}
+085AA9A0	&OAMREGS_ARRAY	Unk OAMREGS3	{U}
+085D4A58	&OAMREGS_ARRAY	Unk OAMREGS4	{J}
+085AA9B4	&OAMREGS_ARRAY	Unk OAMREGS4	{U}
+08058BF4	Acquire the image ID of the battle cartoon floor tile	{J}
+08058D1C	Acquire the image ID of the background of battle animation	{J}
+08057DA8	Acquire the image ID of the battle cartoon floor tile	{U}
+08057ED0	Acquire the image ID of the background of battle animation	{U}
+088618D0	:0886194F	TextID of terrain nameNot used in FE8J	{J}
+08A0035C	&EVENT	Sky event	1	{J}
+08A00364	&EVENT	Sky event	2	{J}
+08A95650	:08A9590F	Any arithmetic lookup table	{J}
+085B9BC4	:085B9CE3	Unk OAMSP1	{U}
+085E3E14	:085E3F13	Unk OAMSP1	{J}
+08604784	&PALETTE	Something's palette	145	{J}
+0860A374	&PALETTE	Something's palette	146	{J}
+0860B53C	&PALETTE	Something's palette	147	{J}
+0860C600	&PALETTE	Something's palette	148	{J}
+0860C620	&PALETTE	Something's palette	149	{J}
+0862DC64	&PALETTE	Something's palette	150	{J}
+08630DE8	&PALETTE	Something's palette	151	{J}
+08650674	&PALETTE	Something's palette	152	{J}
+0869BE8C	&PALETTE	Something's palette	153	{J}
+0867E214	&PALETTE	Something's palette	154	{J}
+086886B0	&PALETTE	Something's palette	155	{J}
+086B3D64	&PALETTE	Something's palette	156	{J}
+086B97E8	&PALETTE	Something's palette	157	{J}
+086BB044	&PALETTE	Something's palette	158	{J}
+087554F8	&PALETTE	Something's palette	159	{J}
+08756BB4	&PALETTE	Something's palette	160	{J}
+0875A9DC	&PALETTE	Something's palette	161	{J}
+0875D358	&PALETTE	Something's palette	162	{J}
+08762170	&PALETTE	Something's palette	163	{J}
+087611E4	&PALETTE	Something's palette	164	{J}
+08760304	&PALETTE	Something's palette	165	{J}
+0875CE7C	&PALETTE	Something's palette	166	{J}
+08762C54	&PALETTE	Something's palette	167	{J}
+0876361C	&PALETTE	Something's palette	168	{J}
+08753BCC	&PALETTE	Something's palette	169	{J}
+08776F94	&PALETTE	Something's palette	170	{J}
+08779A94	&PALETTE	Something's palette	171	{J}
+087A0EF4	&PALETTE	Something's palette	172	{J}
+087A22E8	&PALETTE	Something's palette	173	{J}
+087A22E8	&PALETTE	Something's palette	174	{J}
+086CE8B8	&PALETTE	Something's palette	175	{J}
+086BF6E8	&PALETTE	Something's palette	176	{J}
+087F9CA4	&PALETTE	Something's palette	177	{J}
+087F9670	&PALETTE	Something's palette	178	{J}
+087FA744	&PALETTE	Something's palette	179	{J}
+086F4504	&PALETTE	Something's palette	180	{J}
+086F4524	&PALETTE	Something's palette	181	{J}
+086EA344	&PALETTE	Something's palette	182	{J}
+086F5FD4	&PALETTE	Something's palette	183	{J}
+0872BF7C	&PALETTE	Something's palette	184	{J}
+0872C914	&PALETTE	Something's palette	185	{J}
+0860C640	&PALETTE	Something's palette	186	{J}
+086CF1EC	&PALETTE	Something's palette	187	{J}
+086CF8C0	&PALETTE	Something's palette	188	{J}
+086E93FC	&PALETTE	Something's palette	189	{J}
+086E2604	&PALETTE	Something's palette	190	{J}
+086E24B4	&PALETTE	Something's palette	191	{J}
+08706F14	&PALETTE	Something's palette	192	{J}
+08716FC4	&PALETTE	Something's palette	193	{J}
+086E24B4	&PALETTE	Something's palette	194	{J}
+0872A61C	&PALETTE	Something's palette	195	{J}
+08614CE0	&PALETTE	Something's palette	196	{J}
+085FAA50	&PALETTE	Something's palette	197	{J}
+0860C5E0	&PALETTE	Something's palette	198	{J}
+0861E218	&PALETTE	Something's palette	199	{J}
+0861E238	&PALETTE	Something's palette	200	{J}
+086073AC	&PALETTE	Something's palette	201	{J}
+0861589C	&PALETTE	Something's palette	202	{J}
+087E66EC	&PALETTE	Something's palette	203	{J}
+085DA05C	&PALETTE	Something's palette	145	{U}
+085DE964	&PALETTE	Something's palette	147	{U}
+085DFA28	&PALETTE	Something's palette	148	{U}
+085DFA48	&PALETTE	Something's palette	149	{U}
+0860108C	&PALETTE	Something's palette	150	{U}
+08604210	&PALETTE	Something's palette	151	{U}
+08623A9C	&PALETTE	Something's palette	152	{U}
+0866F2B4	&PALETTE	Something's palette	153	{U}
+0865163C	&PALETTE	Something's palette	154	{U}
+0865BAD8	&PALETTE	Something's palette	155	{U}
+0868718C	&PALETTE	Something's palette	156	{U}
+0868CC10	&PALETTE	Something's palette	157	{U}
+0868E46C	&PALETTE	Something's palette	158	{U}
+08728920	&PALETTE	Something's palette	159	{U}
+08652554	&PALETTE	Something's palette	160	{U}
+0872DE04	&PALETTE	Something's palette	161	{U}
+08730780	&PALETTE	Something's palette	162	{U}
+08732228	&PALETTE	Something's palette	164	{U}
+08731348	&PALETTE	Something's palette	165	{U}
+087302A4	&PALETTE	Something's palette	166	{U}
+085F1620	&PALETTE	Something's palette	168	{U}
+08726FF4	&PALETTE	Something's palette	169	{U}
+08751DB4	&PALETTE	Something's palette	173	{U}
+08751DB4	&PALETTE	Something's palette	174	{U}
+086A1CE0	&PALETTE	Something's palette	175	{U}
+08692B10	&PALETTE	Something's palette	176	{U}
+087A574C	&PALETTE	Something's palette	177	{U}
+087A5118	&PALETTE	Something's palette	178	{U}
+087A61EC	&PALETTE	Something's palette	179	{U}
+086C792C	&PALETTE	Something's palette	180	{U}
+086C794C	&PALETTE	Something's palette	181	{U}
+086BD76C	&PALETTE	Something's palette	182	{U}
+086C93FC	&PALETTE	Something's palette	183	{U}
+086FF3A4	&PALETTE	Something's palette	184	{U}
+086FFD3C	&PALETTE	Something's palette	185	{U}
+085DFA68	&PALETTE	Something's palette	186	{U}
+086A2614	&PALETTE	Something's palette	187	{U}
+086A2CE8	&PALETTE	Something's palette	188	{U}
+086BC824	&PALETTE	Something's palette	189	{U}
+086B5A2C	&PALETTE	Something's palette	190	{U}
+086B58DC	&PALETTE	Something's palette	191	{U}
+086DA33C	&PALETTE	Something's palette	192	{U}
+086EA3EC	&PALETTE	Something's palette	193	{U}
+086B58DC	&PALETTE	Something's palette	194	{U}
+086FDA44	&PALETTE	Something's palette	195	{U}
+085E8108	&PALETTE	Something's palette	196	{U}
+085D0820	&PALETTE	Something's palette	197	{U}
+085DFA08	&PALETTE	Something's palette	198	{U}
+085F1640	&PALETTE	Something's palette	199	{U}
+085F1660	&PALETTE	Something's palette	200	{U}
+085DCC84	&PALETTE	Something's palette	201	{U}
+085E8CC4	&PALETTE	Something's palette	202	{U}
+08792194	&PALETTE	Something's palette	203	{U}
+085DF4B8	&HEADERTSA	Something's TSA	2	{J}
+085DF554	&HEADERTSA	Something's TSA	3	{J}
+08A74308	&HEADERTSA	Something's TSA	4	{J}
+08AAEE9C	&HEADERTSA	Something's TSA	5	{J}
+08A96C84	&HEADERTSA	Something's TSA	6	{J}
+08AA71D4	&HEADERTSA	Something's TSA	7	{J}
+08AC3F5C	&HEADERTSA	Something's TSA	8	{J}
+08AC3AA8	&HEADERTSA	Something's TSA	9	{J}
+08AC484C	&HEADERTSA	Something's TSA	10	{J}
+08AC4398	&HEADERTSA	Something's TSA	11	{J}
+08AC718C	&HEADERTSA	Something's TSA	12	{J}
+08B1E73C	&HEADERTSA	Something's TSA	13	{J}
+08B1E7B8	&HEADERTSA	Something's TSA	14	{J}
+08B1E5FC	&HEADERTSA	Something's TSA	15	{J}
+08B1E61C	&HEADERTSA	Something's TSA	16	{J}
+08B1E634	&HEADERTSA	Something's TSA	17	{J}
+08AC2BE0	&HEADERTSA	Something's TSA	19	unused	{J}
+085B52D8	&HEADERTSA	Something's TSA	2	{U}
+085B5374	&HEADERTSA	Something's TSA	3	{U}
+08A02250	&HEADERTSA	Something's TSA	4	{U}
+08A1A434	&HEADERTSA	Something's TSA	6	{U}
+08A1768C	&HEADERTSA	Something's TSA	18	{U}
+08A3F21C	&HEADERTSA	Something's TSA	19	unused	{U}
+08004998	Load font for status screen	{J}
+08004A90	Load font for status screen	{U}
+085B91C8	&OAMREGS_ARRAY	Unk OAMREGS4	{J}
+08591430	&OAMREGS_ARRAY	Unk OAMREGS4	{U}
+080DCDD8	&ASM_POINTER_ARRAY	AI Script Function	{J}
+080D80FC	&ASM_POINTER_ARRAY	AI Script Function	{U}
+0859B938	&SECONDARYOAM_ARRAY	Secondary OAM	1	{U}
+0859B898	&SECONDARYOAM_ARRAY	Secondary OAM	2	{U}
+0859B7F4	&SECONDARYOAM_ARRAY	Secondary OAM	3	{U}
+0859B858	&SECONDARYOAM_ARRAY	Secondary OAM	4	{U}
 0859B968	&SECONDARYOAM	Secondary OAM 1	{U}
 085921AC	&SECONDARYOAM	Secondary OAM 2	{U}
 0859B144	&SECONDARYOAM	Secondary OAM 3	{U}
 0802792C	&SECONDARYOAM	Secondary OAM 4	{U}
 08A2E986	&SECONDARYOAM	Secondary OAM 5	{U}
 08A39498	&SECONDARYOAM	Secondary OAM 6	{U}
-080ba788	竞技场	显示衬线	{J}
-080BA51C	竞技场	服务入口	{J}
-080BA550	竞技场	显示溢价	{J}
-080BA570	竞技场	显示对手	{J}
-080BA5BC	竞技场	支付保费	{J}
-080BA600	竞技场	“可以用B按钮取消”的衬线	{J}
-080BA614	竞技场	取消	冷静或消失	{J}
-080BA624	竞技场	播放长岭的声音	{J}
-080BA638	竞技场	战斗开始	{J}
-080BA69C	竞技场	赢或输的结果	{J}
-080B5C04	竞技场	显示衬线	{U}
-080B5998	竞技场	服务入口	{U}
-080B59CC	竞技场	显示溢价	{U}
-080B59EC	竞技场	显示对手	{U}
-080B5A38	竞技场	支付保费	{U}
-080B5A78	竞技场	“可以用B按钮取消”的衬线	{U}
-080B5A8C	竞技场	取消	冷静或消失	{U}
-080B5AA0	竞技场	播放长岭的声音	{U}
-080B5AB4	竞技场	战斗开始	{U}
-080B5B18	竞技场	赢或输的结果	{U}
-08A1DDD4	&LZ77	一些小的压缩数据	108	{J}
-089AD74C	&LZ77	一些小的压缩数据	108	{U}
-08A595A4	&HEADERTSA	东西是TSA	20	未使用	{J}
-08A98838	&HEADERTSA	东西是TSA	21	未使用	{J}
-08A1BDA0	&HEADERTSA	东西是TSA	21	未使用	{U}
-08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{J}
-08A20650	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{U}
-08A9E470	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{J}
-08A21508	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{U}
-085C2940	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{J}
-0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{U}
-085C29BC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{J}
-0859A530	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{U}
-085C662C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{J}
-0859E14C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{U}
-085D35EC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{J}
-085A96E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{U}
-085D35DC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{J}
-085A96D4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{U}
-085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{J}
-085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{U}
-085D4B54	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{J}
-085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{U}
-085D4B80	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{J}
-085AAADC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{U}
-080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{J}
-080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{U}
-085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{J}
-085AABB8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{U}
+080ba788	Arena	Show serif	{J}
+080BA51C	Arena	Serving entrance	{J}
+080BA550	Arena	Display premium	{J}
+080BA570	Arena	Show opponent	{J}
+080BA5BC	Arena	Pay premium	{J}
+080BA600	Arena	Serif of "Can cancel with B button"	{J}
+080BA614	Arena	Cancel	To be cool or to go away	{J}
+080BA624	Arena	Play Changling's sound	{J}
+080BA638	Arena	Combat start	{J}
+080BA69C	Arena	Serve as a result of winning or losing	{J}
+080B5C04	Arena	Show serif	{U}
+080B5998	Arena	Serving entrance	{U}
+080B59CC	Arena	Display premium	{U}
+080B59EC	Arena	Show opponent	{U}
+080B5A38	Arena	Pay premium	{U}
+080B5A78	Arena	Serif of "Can cancel with B button"	{U}
+080B5A8C	Arena	Cancel	To be cool or to go away	{U}
+080B5AA0	Arena	Play Changling's sound	{U}
+080B5AB4	Arena	Combat start	{U}
+080B5B18	Arena	Serve as a result of winning or losing	{U}
+08A1DDD4	&LZ77	Something small compressed data	108	{J}
+089AD74C	&LZ77	Something small compressed data	108	{U}
+08A595A4	&HEADERTSA	Something's TSA	20	unused	{J}
+08A98838	&HEADERTSA	Something's TSA	21	unused	{J}
+08A1BDA0	&HEADERTSA	Something's TSA	21	unused	{U}
+08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS	05	{J}
+08A20650	&OAMREGS_ARRAY	Unk OAMREGS	05	{U}
+08A9E470	&OAMREGS_ARRAY	Unk OAMREGS	06	{J}
+08A21508	&OAMREGS_ARRAY	Unk OAMREGS	06	{U}
+085C2940	&OAMREGS_ARRAY	Unk OAMREGS	07	{J}
+0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS	07	{U}
+085C29BC	&OAMREGS_ARRAY	Unk OAMREGS	08	{J}
+0859A530	&OAMREGS_ARRAY	Unk OAMREGS	08	{U}
+085C662C	&OAMREGS_ARRAY	Unk OAMREGS	09	{J}
+0859E14C	&OAMREGS_ARRAY	Unk OAMREGS	09	{U}
+085D35EC	&OAMREGS_ARRAY	Unk OAMREGS	10	{J}
+085A96E4	&OAMREGS_ARRAY	Unk OAMREGS	10	{U}
+085D35DC	&OAMREGS_ARRAY	Unk OAMREGS	11	{J}
+085A96D4	&OAMREGS_ARRAY	Unk OAMREGS	11	{U}
+085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS	12	{J}
+085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS	12	{U}
+085D4B54	&OAMREGS_ARRAY	Unk OAMREGS	13	{J}
+085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS	13	{U}
+085D4B80	&OAMREGS_ARRAY	Unk OAMREGS	14	{J}
+085AAADC	&OAMREGS_ARRAY	Unk OAMREGS	14	{U}
+080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS	15	{J}
+080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS	15	{U}
+085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS	16	{J}
+085AABB8	&OAMREGS_ARRAY	Unk OAMREGS	16	{U}
 085E0678	&OAMREGS	OAMREGS	{J}
 085B6498	&OAMREGS	OAMREGS	{U}
 08A60AD4	&OAMREGS	OAMREGS	{J}
 089EE99C	&OAMREGS	OAMREGS	{U}
-08A72414	&EVENT	空事件	1	{J}
-08A7241C	&EVENT	空事件	2	{J}
-085C4144	&EVENT	教程	库存变化	1	{J}
-085C4188	&EVENT	教程	库存变化	2	{J}
-085C41D4	&EVENT	教程	库存变化	3	{J}
-085C4220	&EVENT	教程	库存变化	4	{J}
-085D3E50	&EVENT	用于调试	要删除所有已保存的数据吗？	{J}
-085D4358	&EVENT	通信体育场	你投降了吗？	{J}
-085D437C	&EVENT	通信体育场	我无法给予伤害。你想结束吗？ 	{J}
-08A71E1C	&EVENT	用于调试	神秘的分支	{J}
-08A71FC0	&EVENT	用于调试	一个分支	1	{J}
-08A72038	&EVENT	用于调试	一个分支	2	{J}
-08A720E0	&EVENT	用于调试	一个分支	3	{J}
-08A7214C	&EVENT	用于调试	一个分支	4	{J}
-08A721E8	&EVENT	用于调试	一个分支	5	{J}
-08A72258	&EVENT	用于调试	一个分支	6	{J}
-08A7230C	&EVENT	用于调试	一个分支	7	{J}
-08A7239C	&EVENT	用于调试	一个分支	8	{J}
-08A721E8	&EVENT	用于调试	一个分支	9	{J}
-08A72258	&EVENT	用于调试	一个分支	10	{J}
-08A72408	&EVENT	用于调试	一个分支	11	{J}
-0804874C	删除所有保存的数据	{J}
-0804C46C	通信体育场	战斗结束	{J}
-089FFC30	&EVENT	空事件	2	{U}
-0859BC64	&EVENT	教程	库存变化	1	{U}
-0859BCA8	&EVENT	教程	库存变化	2	{U}
-0859BCF4	&EVENT	教程	库存变化	3	{U}
-0859BD40	&EVENT	教程	库存变化	4	{U}
-085A9F48	&EVENT	用于调试	要删除所有已保存的数据吗？	{U}
-085AA2B4	&EVENT	通信体育场	你投降了吗？	{U}
-085AA2D8	&EVENT	通信体育场	我无法给予伤害。你想结束吗？ 	{U}
-089FFC30	&EVENT	用于调试	神秘的分支	{U}
-0804874C	删除所有保存的数据	{U}
-0804B6CC	通信体育场	战斗结束	{U}
-0809B600	在攻击推进屏幕上绘制项目排列菜单	{J}
-08099328	在攻击推进屏幕上绘制项目排列菜单	{U}
-0802CC54	使用物品时注册动作	r1=ITEM ID	{U}
-0802CB8C	使用物品时注册动作	r1=ITEM ID	{J}
+08A72414	&EVENT	Empty event	1	{J}
+08A7241C	&EVENT	Empty event	2	{J}
+085C4144	&EVENT	Tutorial	Inventory change	1	{J}
+085C4188	&EVENT	Tutorial	Inventory change	2	{J}
+085C41D4	&EVENT	Tutorial	Inventory change	3	{J}
+085C4220	&EVENT	Tutorial	Inventory change	4	{J}
+085D3E50	&EVENT	For debugging	Would you like to delete all saved data?	{J}
+085D4358	&EVENT	Communication stadium	Do you surrender?	{J}
+085D437C	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{J}
+08A71E1C	&EVENT	For debugging	Mysterious branch	{J}
+08A71FC0	&EVENT	For debugging	Branch	1	{J}
+08A72038	&EVENT	For debugging	Branch	2	{J}
+08A720E0	&EVENT	For debugging	Branch	3	{J}
+08A7214C	&EVENT	For debugging	Branch	4	{J}
+08A721E8	&EVENT	For debugging	Branch	5	{J}
+08A72258	&EVENT	For debugging	Branch	6	{J}
+08A7230C	&EVENT	For debugging	Branch	7	{J}
+08A7239C	&EVENT	For debugging	Branch	8	{J}
+08A721E8	&EVENT	For debugging	Branch	9	{J}
+08A72258	&EVENT	For debugging	Branch	10	{J}
+08A72408	&EVENT	For debugging	Branch	11	{J}
+0804874C	Delete all saved data	{J}
+0804C46C	Communication stadium	Battle end	{J}
+08A0035C	&EVENT	Empty event	1	{U}
+089FFC30	&EVENT	Empty event	2	{U}
+0859BC64	&EVENT	Tutorial	Inventory change	1	{U}
+0859BCA8	&EVENT	Tutorial	Inventory change	2	{U}
+0859BCF4	&EVENT	Tutorial	Inventory change	3	{U}
+0859BD40	&EVENT	Tutorial	Inventory change	4	{U}
+085A9F48	&EVENT	For debugging	Would you like to delete all saved data?	{U}
+085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
+085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
+089FFC30	&EVENT	For debugging	Mysterious branch	{U}
+089FFE84	&EVENT	For debugging	Branch	1	{U}
+089FFF14	&EVENT	For debugging	Branch	2	{U}
+089FFF8C	&EVENT	For debugging	Branch	3	{U}
+08A00034	&EVENT	For debugging	Branch	4	{U}
+08A000A0	&EVENT	For debugging	Branch	5	{U}
+08A0013C	&EVENT	For debugging	Branch	6	{U}
+08A001AC	&EVENT	For debugging	Branch	7	{U}
+08A00260	&EVENT	For debugging	Branch	8	{U}
+08A000A0	&EVENT	For debugging	Branch	9	{U}
+08A0013C	&EVENT	For debugging	Branch	10	{U}
+08A002F0	&EVENT	For debugging	Branch	11	{U}
+0804874C	Delete all saved data	{U}
+0804B6CC	Communication stadium	Battle end	{U}
+0809B600	Drawing the item arrangement menu on the attack advancement screen	{J}
+08099328	Drawing the item arrangement menu on the attack advancement screen	{U}
+0802CC54	Register motion when using items	r1=ITEM ID	{U}
+0802CB8C	Register motion when using items	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{J}
-08A19608	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{U}
-08A95478	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	18	FE8JONLY	{J}
-08A1A474	&HEADERTSA	东西是TSA	20	{U}
-08A96CC4	&HEADERTSA	东西是TSA	20	{J}
-08A9C874	:08A9C997	启动数据	地图変化	1	未使用	{J}
-08A9BEFC	:08A9C01F	启动数据	地图変化	2	未使用	{J}
-08A1F3A8	:08A1F3BF	启动数据	地图変化	3	未使用	{J}
-08A1F948	:08A1FA6B	启动数据	地图変化	1	未使用	{U}
-08A1EFD0	:08A1F0F3	启动数据	地图変化	2	未使用	{U}
-08A1F3A8	:08A1F3BF	启动数据	地图変化	3	未使用	{U}
-08A2C94C	&HEADERTSA	东西是TSA	21	未使用	{U}
-08AAAADC	&HEADERTSA	东西是TSA	21	未使用	{J}
-08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{U}
-08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{J}
-085B7E74	&PALETTE	东西的调色板	203	{U}
-085B8734	&PALETTE	东西的调色板	204	{U}
-085B8FB0	&PALETTE2	东西的调色板	205	{U}
-085E2054	&PALETTE	东西的调色板	203	{J}
-085E2914	&PALETTE	东西的调色板	204	{J}
-085E3190	&PALETTE2	东西的调色板	205	{J}
-0822415C	:082243D3	与m4a相关的数据	1	MAYBE	FE8UONLY	{U}
-0822440C	:08224463	与m4a相关的数据	2	MAYBE	{U}
-082140BC	:0821411F	与m4a相关的数据	2	MAYBE	{J}
-08577444	:0857747F	与_localeconv_r相关的数据	{J}
-08587794	:085877CF	与_localeconv_r相关的数据	{U}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	{J}
+08A19608	&OAMREGS_ARRAY	Unk OAMREGS	17	{U}
+08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
+08A1A474	&HEADERTSA	Something's TSA	20	{U}
+08A96CC4	&HEADERTSA	Something's TSA	20	{J}
+08A9C874	:08A9C997	Boot data	Tile Changes	1	unused	{J}
+08A9BEFC	:08A9C01F	Boot data	Tile Changes	2	unused	{J}
+08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{J}
+08A1F948	:08A1FA6B	Boot data	Tile Changes	1	unused	{U}
+08A1EFD0	:08A1F0F3	Boot data	Tile Changes	2	unused	{U}
+08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{U}
+08A2C94C	&HEADERTSA	Something's TSA	21	unused	{U}
+08AAAADC	&HEADERTSA	Something's TSA	21	unused	{J}
+08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS	19	{U}
+08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS	19	{J}
+085B7E74	&PALETTE	Something's palette	203	{U}
+085B8734	&PALETTE	Something's palette	204	{U}
+085B8FB0	&PALETTE2	Something's palette	205	{U}
+085E2054	&PALETTE	Something's palette	203	{J}
+085E2914	&PALETTE	Something's palette	204	{J}
+085E3190	&PALETTE2	Something's palette	205	{J}
+0822415C	:082243D3	Data related to m4a	1	MAYBE	FE8UONLY	{U}
+0822440C	:08224463	Data related to m4a	2	MAYBE	{U}
+082140BC	:0821411F	Data related to m4a	2	MAYBE	{J}
+08577444	:0857747F	Data related to _localeconv_r	{J}
+08587794	:085877CF	Data related to _localeconv_r	{U}
 080B3240	RegistTSAAnime2	{J}
 080AE7C4	RegistTSAAnime2	{U}
-08012CFC	注册摧毁雕像的动画	{U}
-08012DB4	注册摧毁雕像的动画	{J}
-088BC5E8	:088BC60F	未使用单元放置中的单元移动	1	{U}
-088BCCC8	:088BCD03	未使用的单位安排	1	{U}
-088C179C	:088C17D3	未使用单元放置中的单元移动	2	{U}
-088C1D30	:088C1DCF	未使用的单位安排	2	{U}
-088C9C40	:088C9CAF	未使用单元放置中的单元移动	3	{U}
-088CA250	:088CA463	未使用的单位安排	3	{U}
-088CA60C	:088CA63B	未使用单元放置中的单元移动	4	{U}
-088CAEAC	:088CAF87	未使用的单位安排	4	{U}
-088CB020	:088CB057	未使用单元放置中的单元移动	5	{U}
-088CB574	:088CB613	未使用的单位安排	5	{U}
-088D1448	:088D164F	未使用的单位安排	6	敌人	{U}
-08910B48	:08910B6F	未使用单元放置中的单元移动	1	{J}
-08911200	:0891123B	未使用的单位安排	1	{J}
-08915C84	:08915CBB	未使用单元放置中的单元移动	2	{J}
-08916218	:089162B7	未使用的单位安排	2	{J}
-0891E0A8	:0891E117	未使用单元放置中的单元移动	3	{J}
-0891E6A4	:0891E8D3	未使用的单位安排	3	{J}
-0891EA60	:0891EA8F	未使用单元放置中的单元移动	4	{J}
-0891F300	:0891F3DB	未使用的单位安排	4	{J}
-0891F474	:0891F4AB	未使用单元放置中的单元移动	5	{J}
-0891F9C8	:0891FA57	未使用的单位安排	5	{J}
-0892589C	:08925AA3	未使用的单位安排	6	敌人	{J}
-087FF448	&PALETTE	东西的调色板	206	{U}
-088019F4	:08801A95	神秘数据	战屏关系	1	{U}
-08801A96	:08801AD3	神秘数据	战屏关系	2	{U}
-08801AD4	:08801B13	神秘数据	战屏关系	3	{U}
-08801B14	:08801B53	神秘数据	战屏关系	4	{U}
-08801B54	:08801C13	神秘数据	战屏关系	5	{U}
-08801AAC	:08801AD3	神秘数据	战屏关系	Array	{U}
-088539A0	&PALETTE	东西的调色板	206	{J}
-08855F4C	:08855FED	神秘数据	战屏关系	1	{J}
-08855FEE	:0885602B	神秘数据	战屏关系	2	{J}
-0885602C	:0885606B	神秘数据	战屏关系	3	{J}
-0885606C	:088560AB	神秘数据	战屏关系	4	{J}
-088560AC	:0885616B	神秘数据	战屏关系	5	{J}
-08856004	:0885602B	神秘数据	战屏关系	Array	{J}
-08A187A0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{U}
-08A944E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{J}
-08A187F0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{U}
-08A94534	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{J}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	22	FE8JONLY	{J}
-08A9DA70	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	23	{J}
+08012CFC	Register animation of destroying the statue	{U}
+08012DB4	Register animation of destroying the statue	{J}
+088BC5E8	:088BC60F	Unit movement in unused unit placement	1	{U}
+088BCCC8	:088BCD03	Unused unit arrangement	1	{U}
+088C179C	:088C17D3	Unit movement in unused unit placement	2	{U}
+088C1D30	:088C1DCF	Unused unit arrangement	2	{U}
+088C9C40	:088C9CAF	Unit movement in unused unit placement	3	{U}
+088CA250	:088CA463	Unused unit arrangement	3	{U}
+088CA60C	:088CA63B	Unit movement in unused unit placement	4	{U}
+088CAEAC	:088CAF87	Unused unit arrangement	4	{U}
+088CB020	:088CB057	Unit movement in unused unit placement	5	{U}
+088CB574	:088CB613	Unused unit arrangement	5	{U}
+088D1448	:088D164F	Unused unit arrangement	6	enemy	{U}
+08910B48	:08910B6F	Unit movement in unused unit placement	1	{J}
+08911200	:0891123B	Unused unit arrangement	1	{J}
+08915C84	:08915CBB	Unit movement in unused unit placement	2	{J}
+08916218	:089162B7	Unused unit arrangement	2	{J}
+0891E0A8	:0891E117	Unit movement in unused unit placement	3	{J}
+0891E6A4	:0891E8D3	Unused unit arrangement	3	{J}
+0891EA60	:0891EA8F	Unit movement in unused unit placement	4	{J}
+0891F300	:0891F3DB	Unused unit arrangement	4	{J}
+0891F474	:0891F4AB	Unit movement in unused unit placement	5	{J}
+0891F9C8	:0891FA57	Unused unit arrangement	5	{J}
+0892589C	:08925AA3	Unused unit arrangement	6	enemy	{J}
+087FF448	&PALETTE	Something's palette	206	{U}
+088019F4	:08801A95	Mystery data	Battle screen relation	1	{U}
+08801A96	:08801AD3	Mystery data	Battle screen relation	2	{U}
+08801AD4	:08801B13	Mystery data	Battle screen relation	3	{U}
+08801B14	:08801B53	Mystery data	Battle screen relation	4	{U}
+08801B54	:08801C13	Mystery data	Battle screen relation	5	{U}
+08801AAC	:08801AD3	Mystery data	Battle screen relation	Array	{U}
+088539A0	&PALETTE	Something's palette	206	{J}
+08855F4C	:08855FED	Mystery data	Battle screen relation	1	{J}
+08855FEE	:0885602B	Mystery data	Battle screen relation	2	{J}
+0885602C	:0885606B	Mystery data	Battle screen relation	3	{J}
+0885606C	:088560AB	Mystery data	Battle screen relation	4	{J}
+088560AC	:0885616B	Mystery data	Battle screen relation	5	{J}
+08856004	:0885602B	Mystery data	Battle screen relation	Array	{J}
+08A187A0	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
+08A944E4	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
+08A187F0	&OAMREGS_ARRAY	Unk OAMREGS	21	{U}
+08A94534	&OAMREGS_ARRAY	Unk OAMREGS	21	{J}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	22	FE8JONLY	{J}
+08A9DA70	&OAMREGS_ARRAY	Unk OAMREGS	23	{J}
 080144E0	NewPaletteAnimator_2	{J}
 080144CC	NewPaletteAnimator_2	{U}
-089B0820	&PALETTE	东西的调色板	207	{U}
-08A20EA8	&PALETTE	东西的调色板	207	{J}
+089B0820	&PALETTE	Something's palette	207	{U}
+08A20EA8	&PALETTE	Something's palette	207	{J}
+085AF0F0	&PALETTE	Something's palette	208	{U}
+085AF110	&PALETTE	Something's palette	209	{U}
+085AF130	&PALETTE	Something's palette	210	{U}
+085AF150	&PALETTE	Something's palette	211	{U}
+085D92D0	&PALETTE	Something's palette	208	{J}
+085D92F0	&PALETTE	Something's palette	209	{J}
+085D9310	&PALETTE	Something's palette	210	{J}
+085D9330	&PALETTE	Something's palette	211	{J}
+0805F660	MagicAnime	efxResireBG2_2	{U}
+08060760	MagicAnime	efxResireBG2_2	{J}
+08758D20	&SOUND_85COMMAND_POINTER_ARRAY	C85 1B	{U}
+08758E00	&SOUND_85COMMAND_POINTER_ARRAY	C85 59	{U}
+08758E8C	&SOUND_85COMMAND_POINTER_ARRAY	C85 5D	{U}
+08758F18	&SOUND_85COMMAND_POINTER_ARRAY	C85 66	{U}
+08758FA4	&SOUND_85COMMAND_POINTER_ARRAY	C85 67	{U}
+087A9254	&SOUND_85COMMAND_POINTER_ARRAY	C85 1B	{J}
+087A9334	&SOUND_85COMMAND_POINTER_ARRAY	C85 59	{J}
+087A93C0	&SOUND_85COMMAND_POINTER_ARRAY	C85 5D	{J}
+087A944C	&SOUND_85COMMAND_POINTER_ARRAY	C85 66	{J}
+087A94D8	&SOUND_85COMMAND_POINTER_ARRAY	C85 67	{J}
+08A25E50	&PALETTE	Something's palette	212	{U}
+08A25E68	&PALETTE2	Something's palette	213	{U}
+08A25E80	&PALETTE2	Something's palette	214	{U}
+08A29438	&PALETTE4	Something's palette	215	{U}
+08A3595C	&PALETTE7	Something's palette	216	{U}
+08A36318	&PALETTE	Something's palette	217	{U}
+08AA2DB8	&PALETTE	Something's palette	212	{J}
+08AA2DD0	&PALETTE2	Something's palette	213	{J}
+08AA2DE8	&PALETTE2	Something's palette	214	{J}
+08AA70B4	&PALETTE4	Something's palette	215	{J}
+08AB6788	&PALETTE7	Something's palette	216	{J}
+08AB7144	&PALETTE	Something's palette	217	{J}
+08A1FB08	TEXTBATCH	TextBatch3	{U}
+08A9CA34	TEXTBATCH	TextBatch3	{J}
+08A196BC	TEXTBATCH	TextBatch4	{U}
+08A188F8	TEXTBATCH	TextBatch5	{U}
+08A18614	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
+08A94358	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
+08A1D850	&PALETTE	Something's palette	218	{U}
+08A1D870	&PALETTE	Something's palette	219	{U}
+08A1D890	&PALETTE	Something's palette	220	{U}
+08A1D8B0	&PALETTE	Something's palette	221	{U}
+08667D90	&PALETTE	Something's palette	222	{U}
+08A9A5A4	&PALETTE	Something's palette	218	{J}
+08A9A5C4	&PALETTE	Something's palette	219	{J}
+08A9A5E4	&PALETTE	Something's palette	220	{J}
+08A9A604	&PALETTE	Something's palette	221	{J}
+08694968	&PALETTE	Something's palette	222	{J}

@@ -658,7 +658,7 @@ namespace FEBuilderGBA
             }
         }
 
-        uint ScanOAMREGSTable(uint pointer,ROM rom)
+        uint ScanOAMREGSTable(uint pointer, string prefix , ROM rom)
         {
             uint startAddr = U.toOffset(pointer);
             uint addr = startAddr;
@@ -672,17 +672,68 @@ namespace FEBuilderGBA
 
                 AsmMapSt p = new AsmMapSt();
                 p.Length = U.OAMREGSLength(U.toOffset(d), rom);
-                p.Name = "OAMREGS Count_" + ((p.Length - 2) / (3 * 2));
+                p.Name = prefix + " Count_" + ((p.Length - 2) / (3 * 2));
 
                 this.AsmMap[d] = p;
             }
             return addr - startAddr;
         }
-        uint ScanSECONDARYOAMTable(uint pointer, ROM rom)
+
+        uint ScanASMPointerTable(uint pointer, string prefix, ROM rom)
         {
             uint startAddr = U.toOffset(pointer);
             uint addr = startAddr;
-            for (; addr < rom.Data.Length; addr += 4)
+            
+            for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
+            {
+                uint d = Program.ROM.u32(addr);
+                if (!U.isSafetyPointer(d))
+                {
+                    break;
+                }
+                d = DisassemblerTrumb.ProgramAddrToPlain(d);
+
+                if (this.AsmMap.ContainsKey(d))
+                {
+                    continue;
+                }
+
+                AsmMapSt p = new AsmMapSt();
+                p.Length = 0;
+                p.Name = prefix + " ASM " + U.ToHexString(i);
+
+                this.AsmMap[d] = p;
+            }
+            return addr - startAddr;
+        }
+
+        uint ScanSOUND85COMMANDPointerTable(uint pointer,string prefix, ROM rom)
+        {
+            uint startAddr = U.toOffset(pointer);
+            uint addr = startAddr;
+            
+            for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
+            {
+                uint d = Program.ROM.u32(addr);
+                if (!U.isSafetyPointer(d))
+                {
+                    break;
+                }
+
+                AsmMapSt p = new AsmMapSt();
+                p.Length = 16;
+                p.Name = prefix + " SOUNDes " + U.ToHexString(i);
+
+                this.AsmMap[d] = p;
+            }
+            return addr - startAddr;
+        }
+
+        uint ScanSECONDARYOAMTable(uint pointer,string prefix, ROM rom)
+        {
+            uint startAddr = U.toOffset(pointer);
+            uint addr = startAddr;
+            for (int i = 0 ; addr < rom.Data.Length; addr += 4 , i++)
             {
                 uint d = Program.ROM.u32(addr);
                 if (!U.isSafetyPointer(d))
@@ -692,7 +743,7 @@ namespace FEBuilderGBA
 
                 AsmMapSt p = new AsmMapSt();
                 p.Length = 14;
-                p.Name = "SECONDARYOAM";
+                p.Name = prefix + " SECONDARYOAM " + U.ToHexString(i);
 
                 this.AsmMap[d] = p;
             }
@@ -714,7 +765,7 @@ namespace FEBuilderGBA
             }
             else if (type == "OAMREGS_ARRAY")
             {
-                p.Length = ScanOAMREGSTable(pointer, rom);
+                p.Length = ScanOAMREGSTable(pointer,p.Name, rom);
             }
             else if (type == "TEXTBATCH")
             {
@@ -738,6 +789,10 @@ namespace FEBuilderGBA
             {
                 p.Length = 0x20 * 2;
             }
+            else if (type == "PALETTE3")
+            {
+                p.Length = 0x20 * 3;
+            }
             else if (type == "PALETTE4")
             {
                 p.Length = 0x20 * 4;
@@ -745,6 +800,10 @@ namespace FEBuilderGBA
             else if (type == "PALETTE8")
             {
                 p.Length = 0x20 * 8;
+            }
+            else if (type == "PALETTE7")
+            {
+                p.Length = 0x20 * 7;
             }
             else if (type == "PALETTE16")
             {
@@ -772,9 +831,24 @@ namespace FEBuilderGBA
             }
             else if (type == "SECONDARYOAM_ARRAY")
             {
-                p.Length = ScanSECONDARYOAMTable(pointer,rom);
+                p.Length = ScanSECONDARYOAMTable(pointer,p.Name, rom);
             }
-            
+            else if (type == "CSTRING")
+            {
+                int length;
+                string strname = Program.ROM.getString(U.toOffset(pointer), out length);
+                p.Length = (uint)length;
+                p.Name += " =>　" + strname;
+            }
+            else if (type == "SOUND_85COMMAND_POINTER_ARRAY")
+            {
+                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name , rom);
+            }
+            else if (type == "ASM_POINTER_ARRAY")
+            {
+                p.Length = ScanASMPointerTable(pointer, p.Name, rom);
+            }
+         
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {

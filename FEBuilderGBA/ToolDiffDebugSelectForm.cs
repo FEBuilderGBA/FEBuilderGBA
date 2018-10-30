@@ -33,6 +33,8 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait())
             {
                 this.FindBackup = new FindBackup();
+                this.FindBackup.AppendOrignalROMToBackupList(); //末尾にバックアップROMを追加.
+
                 this.PrefixTextBox.Text = this.FindBackup.Prefix;
                 this.OrignalFilename.Text = this.FindBackup.OrignalFilename;
 

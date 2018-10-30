@@ -333,6 +333,7 @@ namespace FEBuilderGBA
                 else
                 {
                     t = engine.Trans(lines[i], from, this.GoogleTranslateLang);
+                    Log.Debug("GoolgeTranslate:" + lines[i] + " => " + t);
                     this.TranslateCache[lines[i]] = t;
                 }
                 ret += "\r\n" + t;
@@ -363,12 +364,8 @@ namespace FEBuilderGBA
                     catch (Exception e)
                     {
                         R.ShowStopError(e.ToString());
-                        goolge_translate_failed = true;
+                        throw new Exception("Failed to translate google!");
                     }
-                }
-                if (goolge_translate_failed == true)
-                {//google翻訳に失敗したので、以後は翻訳内容を全コピーする.
-                    line = pair.Key;
                 }
 
                 line = line.Replace("\r\n", "\\r\\n");
@@ -384,10 +381,6 @@ namespace FEBuilderGBA
             }
             File.WriteAllLines(resoucefilename, lines.ToArray());
 
-            if (goolge_translate_failed == true)
-            {
-                throw new Exception("I failed to translate google!");
-            }
         }
 
         bool IsEnglishBase()

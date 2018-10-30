@@ -33,7 +33,7 @@ namespace FEBuilderGBA
 
                 ProcsList = new List<Address>();
                 List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
-                FindProc find = new FindProc(ProcsList, ldrmap);
+                FindProc find = new FindProc(ProcsList, null,ldrmap);
 
                 this.AddressList.BeginUpdate();
                 this.AddressList.Items.Clear();
@@ -114,11 +114,13 @@ namespace FEBuilderGBA
             Dictionary<uint, string> ProcsName;
             Dictionary<uint, bool> AlreadyMatch = new Dictionary<uint, bool>();
             List<Address> List;
+            List<Address> SubDataList;
 
-            public FindProc(List<Address> list, List<DisassemblerTrumb.LDRPointer> ldrmap)
+            public FindProc(List<Address> list, List<Address> subDataList, List<DisassemblerTrumb.LDRPointer> ldrmap)
             {
                 this.ProcsName = U.LoadDicResource(U.ConfigDataFilename("6c_name_"));
                 this.List = list;
+                this.SubDataList = subDataList;
 
                 for (int i = 0; i < ldrmap.Count; i++)
                 {
@@ -207,13 +209,20 @@ namespace FEBuilderGBA
                         }
                         FindProcOne(addr + 4, arg, true);
                     }
+                    else if (code == 0x01)
+                    {//Set name
+                        if (this.SubDataList != null)
+                        {
+                            FEBuilderGBA.Address.AddCString(this.SubDataList, addr + 4);
+                        }
+                    }
                 }
             }
         }
 
         public static void MakeAllDataLength(List<Address> list, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
-            FindProc find = new FindProc(list, ldrmap);
+            FindProc find = new FindProc(list,list, ldrmap);
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)

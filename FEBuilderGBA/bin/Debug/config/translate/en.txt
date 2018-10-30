@@ -379,6 +379,9 @@ Rank up weapon
 :闘技場武器ランク
 Arena Weapons Rank
 
+: =>　
+ =>
+
 :とび先のコード:{0}
 Destination code: {0}
 
@@ -9859,29 +9862,29 @@ Which comparison method would you use?\r\n\r\nThe last ROM that was working corr
 :OK ROMとNG ROMで値が違うもの\r\n且つ、OK ROMとCURRENTで値が違うもの\r\n(NG ROMとCURRENTでバグの内容が違う場合はこちらを選択してください)
 "OK ROM" and "NG ROM" have different values\r\nAnd "OK ROM" and "CURRENT" have different values\r\n(Please select here if the content of bug is different on "NG ROM" and "CURRENT")
 
-:比較ファイル
-File for comparison
+:3者差分
+Three-way difference
 
 :容認差異
 Acceptable Difference
 
-:差分をBINパッチとして作成する
-Create the difference as a BIN patch
-
-:バイナリ差分
-Binary difference
-
-:3者差分
-Three-way difference
-
 :AとBにあって、自分にだけないもの
 Things in A and B, not only for you
+
+:差分をBINパッチとして作成する
+Create the difference as a BIN patch
 
 :比較ファイルB
 Comparison File B
 
 :比較ファイルA
 Comparison File A
+
+:バイナリ差分
+Binary difference
+
+:比較ファイル
+File for comparison
 
 :最新版のEAでは拡張領域のデータがダンプできないことがあるので、その場合は、古いEA ver9を利用してください。
 In the latest version of EA, you may not be able to dump extended area data, so in that case please use the old EA ver9.

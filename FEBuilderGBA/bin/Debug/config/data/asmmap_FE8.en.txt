@@ -6716,202 +6716,6 @@ r3=X tile position of menu of the right	{U}
 080d4ef4	Sound effect sound functionm4aSongNumStart	r0=Sound number you want to ring: SOUND	{J}
 08074e80	Routine 2 to sound sound effect	r0=Sound effect: SONG	r1=?	r2=?	r3=?	{J}
 080729a4	Routine 2 to sound sound effect	r0=Sound effect: SONG	r1=?	r2=?	r3=?	{U}
-0859A140	&PALETTE	Something's palette	01	{U}
-0859EEA0	&PALETTE	Something's palette	02	{U}
-0859EEC0	&PALETTE	Something's palette	03	{U}
-0859EEE0	&PALETTE	Something's palette	04	{U}
-0859EF00	&PALETTE	Something's palette	05	{U}
-0859EF20	&PALETTE	Something's palette	06	{U}
-0859EF60	&PALETTE	Something's palette	07	{U}
-0859EFE0	&PALETTE	Something's palette	08	{U}
-0859F000	&PALETTE	Something's palette	09	{U}
-085A0D2C	&PALETTE	Something's palette	10	{U}
-085A206C	&PALETTE	Something's palette	11	{U}
-085A208C	&PALETTE	Something's palette	12	{U}
-085A2DDC	&PALETTE	Something's palette	13	{U}
-085A3490	&PALETTE	Something's palette	14	{U}
-085A3944	&PALETTE	Something's palette	15	{U}
-085A3AC0	&PALETTE	Something's palette	16	{U}
-085A401C	&PALETTE	Something's palette	17	{U}
-085A5760	&PALETTE	Something's palette	18	{U}
-085A61A8	&PALETTE	Something's palette	19	{U}
-085A643C	&PALETTE	Something's palette	20	{U}
-085A7CA0	&PALETTE	Something's palette	21	{U}
-085A7EC8	&PALETTE	Something's palette	22	{U}
-085ADBE8	&PALETTE	Something's palette	23	{U}
-085ADC48	&PALETTE	Something's palette	24	{U}
-085ADCC8	&PALETTE	Something's palette	25	{U}
-085ADDA8	&PALETTE	Something's palette	26	{U}
-085ADDC8	&PALETTE	Something's palette	27	{U}
-085ADE08	&PALETTE	Something's palette	28	{U}
-085ADE68	&PALETTE	Something's palette	29	{U}
-085B081C	&PALETTE	Something's palette	30	{U}
-085B6C14	&PALETTE	Something's palette	31	{U}
-085B7560	&PALETTE	Something's palette	32	{U}
-085B7580	&PALETTE	Something's palette	33	{U}
-085B9244	&PALETTE	Something's palette	34	{U}
-0868716C	&PALETTE	Something's palette	35	{U}
-08803590	&PALETTE	Something's palette	36	{U}
-08803B10	&PALETTE	Something's palette	37	{U}
-089A232C	&PALETTE	Something's palette	38	{U}
-089A28E0	&PALETTE	Something's palette	39	{U}
-089AC9A8	&PALETTE	Something's palette	40	{U}
-089ADD0C	&PALETTE	Something's palette	41	{U}
-089AE204	&PALETTE	Something's palette	42	{U}
-089AE484	&PALETTE	Something's palette	43	{U}
-089AE7C4	&PALETTE	Something's palette	44	{U}
-089B068C	&PALETTE	Something's palette	45	{U}
-089B0700	&PALETTE	Something's palette	46	{U}
-089B20E8	&PALETTE	Something's palette	47	{U}
-089B4BFC	&PALETTE	Something's palette	48	{U}
-089B73D4	&PALETTE	Something's palette	49	{U}
-089B80C4	&PALETTE	Something's palette	50	{U}
-089E7DEC	&PALETTE	Something's palette	51	{U}
-089E84D4	&PALETTE	Something's palette	52	{U}
-08A01EE4	&PALETTE	Something's palette	53	{U}
-08A01F04	&PALETTE	Something's palette	54	{U}
-08A021E4	&PALETTE	Something's palette	55	{U}
-08A03334	&PALETTE	Something's palette	56	{U}
-08A09A5C	&PALETTE	Something's palette	57	{U}
-08A0AE44	&PALETTE	Something's palette	58	{U}
-08A0AE64	&PALETTE	Something's palette	59	{U}
-08A1A3FC	&PALETTE	Something's palette	60	{U}
-08A1B154	&PALETTE	Something's palette	61	{U}
-08A1B638	&PALETTE	Something's palette	62	{U}
-08A1BD00	&PALETTE	Something's palette	63	{U}
-08A1D79C	&PALETTE	Something's palette	64	{U}
-08A1E0D8	&PALETTE	Something's palette	65	{U}
-08A1FFB0	&PALETTE	Something's palette	66	{U}
-08A1FFD0	&PALETTE	Something's palette	67	{U}
-08A25DCC	&PALETTE	Something's palette	68	{U}
-08A268D8	&PALETTE	Something's palette	69	{U}
-08A27F68	&PALETTE	Something's palette	70	{U}
-08A295B4	&PALETTE	Something's palette	71	{U}
-08A2C11C	&PALETTE	Something's palette	72	{U}
-08A2C8A8	&PALETTE	Something's palette	73	{U}
-08A2D2CC	&PALETTE	Something's palette	74	{U}
-08A2E1B8	&PALETTE	Something's palette	75	{U}
-08A2E4A4	&PALETTE	Something's palette	76	{U}
-08A2E8F0	&PALETTE	Something's palette	77	{U}
-08A360C8	&PALETTE	Something's palette	78	{U}
-08A372C0	&PALETTE	Something's palette	79	{U}
-08A37300	&PALETTE	Something's palette	80	{U}
-08A3F710	&PALETTE	Something's palette	81	{U}
-08A40AD4	&PALETTE	Something's palette	82	{U}
-08A4D0CC	&PALETTE	Something's palette	83	{U}
-08A97A60	&PALETTE	Something's palette	84	{U}
-08A97E28	&PALETTE	Something's palette	85	{U}
-08A97FA4	&PALETTE	Something's palette	86	{U}
-08A98DCC	&PALETTE	Something's palette	87	{U}
-08A98E8C	&PALETTE	Something's palette	88	{U}
-08A99120	&PALETTE	Something's palette	89	{U}
-08A9E688	&PALETTE	Something's palette	90	{U}
-08AA11B0	&PALETTE	Something's palette	91	{U}
-08AA239C	&PALETTE	Something's palette	92	{U}
-08AADB68	&PALETTE	Something's palette	93	{U}
-08AAE8CC	&PALETTE	Something's palette	94	{U}
-08AAFCF4	&PALETTE	Something's palette	95	{U}
-08AB0114	&PALETTE	Something's palette	96	{U}
-08AB0B24	&PALETTE	Something's palette	97	{U}
-08AB210C	&PALETTE	Something's palette	98	{U}
-08AB21B8	&PALETTE	Something's palette	99	{U}
-085C25C0	&PALETTE	Something's palette	01	{J}
-085C73C0	&PALETTE	Something's palette	02	{J}
-085C73E0	&PALETTE	Something's palette	03	{J}
-085C7400	&PALETTE	Something's palette	04	{J}
-085C7420	&PALETTE	Something's palette	05	{J}
-085C7440	&PALETTE	Something's palette	06	{J}
-085C7480	&PALETTE	Something's palette	07	{J}
-085C7500	&PALETTE	Something's palette	08	{J}
-085C7520	&PALETTE	Something's palette	09	{J}
-085C924C	&PALETTE	Something's palette	10	{J}
-085CA58C	&PALETTE	Something's palette	11	{J}
-085CA5AC	&PALETTE	Something's palette	12	{J}
-085CB2FC	&PALETTE	Something's palette	13	{J}
-085CB9B0	&PALETTE	Something's palette	14	{J}
-085CBE64	&PALETTE	Something's palette	15	{J}
-085CBFE4	&PALETTE	Something's palette	16	{J}
-085CC540	&PALETTE	Something's palette	17	{J}
-085CDC84	&PALETTE	Something's palette	18	{J}
-085CF9BC	&PALETTE	Something's palette	19	{J}
-085CFC50	&PALETTE	Something's palette	20	{J}
-085D14B4	&PALETTE	Something's palette	21	{J}
-085D1DD0	&PALETTE	Something's palette	22	{J}
-085D7E88	&PALETTE	Something's palette	23	{J}
-085D7EE8	&PALETTE	Something's palette	24	{J}
-085D7F68	&PALETTE	Something's palette	25	{J}
-085D8048	&PALETTE	Something's palette	26	{J}
-085D8068	&PALETTE	Something's palette	27	{J}
-085D80A8	&PALETTE	Something's palette	28	{J}
-085D8108	&PALETTE	Something's palette	29	{J}
-085DA9FC	&PALETTE	Something's palette	30	{J}
-085E0DF4	&PALETTE	Something's palette	31	{J}
-085E1740	&PALETTE	Something's palette	32	{J}
-085E1760	&PALETTE	Something's palette	33	{J}
-085E3424	&PALETTE	Something's palette	34	{J}
-086B3D44	&PALETTE	Something's palette	35	{J}
-08857AE8	&PALETTE	Something's palette	36	{J}
-08858068	&PALETTE	Something's palette	37	{J}
-08A12AA0	&PALETTE	Something's palette	38	{J}
-08A12F68	&PALETTE	Something's palette	39	{J}
-08A1D030	&PALETTE	Something's palette	40	{J}
-08A1E394	&PALETTE	Something's palette	41	{J}
-08A1E88C	&PALETTE	Something's palette	42	{J}
-08A1EB0C	&PALETTE	Something's palette	43	{J}
-08A1EE4C	&PALETTE	Something's palette	44	{J}
-08A20D14	&PALETTE	Something's palette	45	{J}
-08A20D88	&PALETTE	Something's palette	46	{J}
-08A22770	&PALETTE	Something's palette	47	{J}
-08A25284	&PALETTE	Something's palette	48	{J}
-08A27A5C	&PALETTE	Something's palette	49	{J}
-08A2874C	&PALETTE	Something's palette	50	{J}
-08A58474	&PALETTE	Something's palette	51	{J}
-08A5A5F8	&PALETTE	Something's palette	52	{J}
-08A73F9C	&PALETTE	Something's palette	53	{J}
-08A73FBC	&PALETTE	Something's palette	54	{J}
-08A7429C	&PALETTE	Something's palette	55	{J}
-08A753EC	&PALETTE	Something's palette	56	{J}
-08A7CD1C	&PALETTE	Something's palette	57	{J}
-08A7E104	&PALETTE	Something's palette	58	{J}
-08A7E124	&PALETTE	Something's palette	59	{J}
-08A96C4C	&PALETTE	Something's palette	60	{J}
-08A97BEC	&PALETTE	Something's palette	61	{J}
-08A980D0	&PALETTE	Something's palette	62	{J}
-08A98798	&PALETTE	Something's palette	63	{J}
-08A99FA8	&PALETTE	Something's palette	64	{J}
-08A9B004	&PALETTE	Something's palette	65	{J}
-08A9CEDC	&PALETTE	Something's palette	66	{J}
-08A9CEFC	&PALETTE	Something's palette	67	{J}
-08AA2D34	&PALETTE	Something's palette	68	{J}
-08AA3840	&PALETTE	Something's palette	69	{J}
-08A980D0	&PALETTE	Something's palette	70	{J}
-08AA7310	&PALETTE	Something's palette	71	{J}
-08AA9E78	&PALETTE	Something's palette	72	{J}
-08AAAA38	&PALETTE	Something's palette	73	{J}
-08AAEAE4	&PALETTE	Something's palette	75	{J}
-08A79B70	&PALETTE	Something's palette	76	{J}
-08AAF654	&PALETTE	Something's palette	77	{J}
-08AB6EF4	&PALETTE	Something's palette	78	{J}
-08AB8044	&PALETTE	Something's palette	79	{J}
-08A97C0C	&PALETTE	Something's palette	80	{J}
-08AC30D4	&PALETTE	Something's palette	81	{J}
-08AC6C98	&PALETTE	Something's palette	82	{J}
-08AD1424	&PALETTE	Something's palette	83	{J}
-08B1CCF4	&PALETTE	Something's palette	84	{J}
-08B1D0BC	&PALETTE	Something's palette	85	{J}
-08B1D238	&PALETTE	Something's palette	86	{J}
-085E0DF4	&PALETTE	Something's palette	88	{J}
-08B1E998	&PALETTE	Something's palette	89	{J}
-08B23F00	&PALETTE	Something's palette	90	{J}
-08B2699C	&PALETTE	Something's palette	91	{J}
-08B3B72C	&PALETTE	Something's palette	92	{J}
-08B4678C	&PALETTE	Something's palette	93	{J}
-08B474F0	&PALETTE	Something's palette	94	{J}
-08B48918	&PALETTE	Something's palette	95	{J}
-08B48D38	&PALETTE	Something's palette	96	{J}
-08B49B4C	&PALETTE	Something's palette	97	{J}
-08B4B134	&PALETTE	Something's palette	98	{J}
-08B4B1E0	&PALETTE	Something's palette	99	{J}
 085AE778	&LZ77	Something small compressed data	01	{U}
 085B089C	&LZ77	Something small compressed data	02	{U}
 089AD6C8	&LZ77	Something small compressed data	03	{U}
@@ -7445,6 +7249,278 @@ r3=X tile position of menu of the right	{U}
 080598F8	Scarlet weapon's Flash	{J}
 08058AC8	Scarlet weapon's Flash	{U}
 0203F080	:0203F084	Reserve Gaiden Style Magic Menu	{U}
+08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
+08002B04	CallARM_PushToSecondaryOAM	{J}
+085911C4	:085911D7	MMSizeTable	{U}
+085B8F5C	:085B8F6F	MMSizeTable	{J}
+08001EE4	EnablePaletteSync	{J}
+089991AC	:0899B5AB	Boot data 2It seems to be tile animation data not being used	{U}
+0859A140	&PALETTE	Something's palette	01	{U}
+0859EEA0	&PALETTE	Something's palette	02	{U}
+0859EEC0	&PALETTE	Something's palette	03	{U}
+0859EEE0	&PALETTE	Something's palette	04	{U}
+0859EF00	&PALETTE	Something's palette	05	{U}
+0859EF20	&PALETTE	Something's palette	06	{U}
+0859EF60	&PALETTE	Something's palette	07	{U}
+0859EFE0	&PALETTE	Something's palette	08	{U}
+0859F000	&PALETTE	Something's palette	09	{U}
+085A0D2C	&PALETTE	Something's palette	10	{U}
+085A206C	&PALETTE	Something's palette	11	{U}
+085A208C	&PALETTE	Something's palette	12	{U}
+085A2DDC	&PALETTE	Something's palette	13	{U}
+085A3490	&PALETTE	Something's palette	14	{U}
+085A3944	&PALETTE	Something's palette	15	{U}
+085A3AC0	&PALETTE	Something's palette	16	{U}
+085A401C	&PALETTE	Something's palette	17	{U}
+085A5760	&PALETTE	Something's palette	18	{U}
+085A61A8	&PALETTE	Something's palette	19	{U}
+085A643C	&PALETTE	Something's palette	20	{U}
+085A7CA0	&PALETTE	Something's palette	21	{U}
+085A7EC8	&PALETTE	Something's palette	22	{U}
+085ADBE8	&PALETTE	Something's palette	23	{U}
+085ADC48	&PALETTE	Something's palette	24	{U}
+085ADCC8	&PALETTE	Something's palette	25	{U}
+085ADDA8	&PALETTE	Something's palette	26	{U}
+085ADDC8	&PALETTE	Something's palette	27	{U}
+085ADE08	&PALETTE	Something's palette	28	{U}
+085ADE68	&PALETTE	Something's palette	29	{U}
+085B081C	&PALETTE4	Something's palette	30	{U}
+085B6C14	&PALETTE	Something's palette	31	{U}
+085B7560	&PALETTE	Something's palette	32	{U}
+085B7580	&PALETTE	Something's palette	33	{U}
+085B9244	&PALETTE	Something's palette	34	{U}
+0868716C	&PALETTE	Something's palette	35	{U}
+08803590	&PALETTE	Something's palette	36	{U}
+08803B10	&PALETTE	Something's palette	37	{U}
+089A232C	&PALETTE	Something's palette	38	{U}
+089A28E0	&PALETTE	Something's palette	39	{U}
+089AC9A8	&PALETTE	Something's palette	40	{U}
+089ADD0C	&PALETTE	Something's palette	41	{U}
+089AE204	&PALETTE	Something's palette	42	{U}
+089AE484	&PALETTE	Something's palette	43	{U}
+089AE7C4	&PALETTE	Something's palette	44	{U}
+089B068C	&PALETTE	Something's palette	45	{U}
+089B0700	&PALETTE	Something's palette	46	{U}
+089B20E8	&PALETTE	Something's palette	47	{U}
+089B4BFC	&PALETTE	Something's palette	48	{U}
+089B73D4	&PALETTE	Something's palette	49	{U}
+089B80C4	&PALETTE	Something's palette	50	{U}
+089E7DEC	&PALETTE	Something's palette	51	{U}
+089E84D4	&PALETTE	Something's palette	52	{U}
+08A01EE4	&PALETTE	Something's palette	53	{U}
+08A01F04	&PALETTE	Something's palette	54	{U}
+08A021E4	&PALETTE	Something's palette	55	{U}
+08A03334	&PALETTE	Something's palette	56	{U}
+08A09A5C	&PALETTE	Something's palette	57	{U}
+08A0AE44	&PALETTE	Something's palette	58	{U}
+08A0AE64	&PALETTE	Something's palette	59	{U}
+08A1A3FC	&PALETTE	Something's palette	60	{U}
+08A1B154	&PALETTE	Something's palette	61	{U}
+08A1B638	&PALETTE	Something's palette	62	{U}
+08A1BD00	&PALETTE	Something's palette	63	{U}
+08A1D79C	&PALETTE	Something's palette	64	{U}
+08A1E0D8	&PALETTE	Something's palette	65	{U}
+08A1FFB0	&PALETTE	Something's palette	66	{U}
+08A1FFD0	&PALETTE	Something's palette	67	{U}
+08A25DCC	&PALETTE4	Something's palette	68	{U}
+08A268D8	&PALETTE	Something's palette	69	{U}
+08A27F68	&PALETTE8	Something's palette	70	{U}
+08A295B4	&PALETTE	Something's palette	71	{U}
+08A2C11C	&PALETTE	Something's palette	72	{U}
+08A2C8A8	&PALETTE3	Something's palette	73	{U}
+08A2D2CC	&PALETTE3	Something's palette	74	{U}
+08A2E1B8	&PALETTE2	Something's palette	75	{U}
+08A2E4A4	&PALETTE	Something's palette	76	{U}
+08A2E8F0	&PALETTE	Something's palette	77	{U}
+08A360C8	&PALETTE	Something's palette	78	{U}
+08A372C0	&PALETTE	Something's palette	79	{U}
+08A37300	&PALETTE	Something's palette	80	{U}
+08A3F710	&PALETTE	Something's palette	81	{U}
+08A40AD4	&PALETTE	Something's palette	82	{U}
+08A4D0CC	&PALETTE	Something's palette	83	{U}
+08A97A60	&PALETTE	Something's palette	84	{U}
+08A97E28	&PALETTE	Something's palette	85	{U}
+08A97FA4	&PALETTE	Something's palette	86	{U}
+08A98DCC	&PALETTE	Something's palette	87	{U}
+08A98E8C	&PALETTE	Something's palette	88	{U}
+08A99120	&PALETTE	Something's palette	89	{U}
+08A9E688	&PALETTE	Something's palette	90	{U}
+08AA11B0	&PALETTE	Something's palette	91	{U}
+08AA239C	&PALETTE	Something's palette	92	{U}
+08AADB68	&PALETTE	Something's palette	93	{U}
+08AAE8CC	&PALETTE	Something's palette	94	{U}
+08AAFCF4	&PALETTE	Something's palette	95	{U}
+08AB0114	&PALETTE	Something's palette	96	{U}
+08AB0B24	&PALETTE	Something's palette	97	{U}
+08AB210C	&PALETTE	Something's palette	98	{U}
+08AB21B8	&PALETTE	Something's palette	99	{U}
+085C25C0	&PALETTE	Something's palette	01	{J}
+085C73C0	&PALETTE	Something's palette	02	{J}
+085C73E0	&PALETTE	Something's palette	03	{J}
+085C7400	&PALETTE	Something's palette	04	{J}
+085C7420	&PALETTE	Something's palette	05	{J}
+085C7440	&PALETTE	Something's palette	06	{J}
+085C7480	&PALETTE	Something's palette	07	{J}
+085C7500	&PALETTE	Something's palette	08	{J}
+085C7520	&PALETTE	Something's palette	09	{J}
+085C924C	&PALETTE	Something's palette	10	{J}
+085CA58C	&PALETTE	Something's palette	11	{J}
+085CA5AC	&PALETTE	Something's palette	12	{J}
+085CB2FC	&PALETTE	Something's palette	13	{J}
+085CB9B0	&PALETTE	Something's palette	14	{J}
+085CBE64	&PALETTE	Something's palette	15	{J}
+085CBFE4	&PALETTE	Something's palette	16	{J}
+085CC540	&PALETTE	Something's palette	17	{J}
+085CDC84	&PALETTE	Something's palette	18	{J}
+085CF9BC	&PALETTE	Something's palette	19	{J}
+085CFC50	&PALETTE	Something's palette	20	{J}
+085D14B4	&PALETTE	Something's palette	21	{J}
+085D1DD0	&PALETTE	Something's palette	22	{J}
+085D7E88	&PALETTE	Something's palette	23	{J}
+085D7EE8	&PALETTE	Something's palette	24	{J}
+085D7F68	&PALETTE	Something's palette	25	{J}
+085D8048	&PALETTE	Something's palette	26	{J}
+085D8068	&PALETTE	Something's palette	27	{J}
+085D80A8	&PALETTE	Something's palette	28	{J}
+085D8108	&PALETTE	Something's palette	29	{J}
+085DA9FC	&PALETTE4	Something's palette	30	{J}
+085E0DF4	&PALETTE	Something's palette	31	{J}
+085E1740	&PALETTE	Something's palette	32	{J}
+085E1760	&PALETTE	Something's palette	33	{J}
+085E3424	&PALETTE	Something's palette	34	{J}
+086B3D44	&PALETTE	Something's palette	35	{J}
+08857AE8	&PALETTE	Something's palette	36	{J}
+08858068	&PALETTE	Something's palette	37	{J}
+08A12AA0	&PALETTE	Something's palette	38	{J}
+08A12F68	&PALETTE	Something's palette	39	{J}
+08A1D030	&PALETTE	Something's palette	40	{J}
+08A1E394	&PALETTE	Something's palette	41	{J}
+08A1E88C	&PALETTE	Something's palette	42	{J}
+08A1EB0C	&PALETTE	Something's palette	43	{J}
+08A1EE4C	&PALETTE	Something's palette	44	{J}
+08A20D14	&PALETTE	Something's palette	45	{J}
+08A20D88	&PALETTE	Something's palette	46	{J}
+08A22770	&PALETTE	Something's palette	47	{J}
+08A25284	&PALETTE	Something's palette	48	{J}
+08A27A5C	&PALETTE	Something's palette	49	{J}
+08A2874C	&PALETTE	Something's palette	50	{J}
+08A58474	&PALETTE	Something's palette	51	{J}
+08A5A5F8	&PALETTE	Something's palette	52	{J}
+08A73F9C	&PALETTE	Something's palette	53	{J}
+08A73FBC	&PALETTE	Something's palette	54	{J}
+08A7429C	&PALETTE	Something's palette	55	{J}
+08A753EC	&PALETTE	Something's palette	56	{J}
+08A7CD1C	&PALETTE	Something's palette	57	{J}
+08A7E104	&PALETTE	Something's palette	58	{J}
+08A7E124	&PALETTE	Something's palette	59	{J}
+08A96C4C	&PALETTE	Something's palette	60	{J}
+08A97BEC	&PALETTE	Something's palette	61	{J}
+08A980D0	&PALETTE	Something's palette	62	{J}
+08A98798	&PALETTE	Something's palette	63	{J}
+08A99FA8	&PALETTE	Something's palette	64	{J}
+08A9B004	&PALETTE	Something's palette	65	{J}
+08A9CEDC	&PALETTE	Something's palette	66	{J}
+08A9CEFC	&PALETTE	Something's palette	67	{J}
+08AA2D34	&PALETTE4	Something's palette	68	{J}
+08AA3840	&PALETTE	Something's palette	69	{J}
+08A980D0	&PALETTE8	Something's palette	70	{J}
+08AA7310	&PALETTE	Something's palette	71	{J}
+08AA9E78	&PALETTE	Something's palette	72	{J}
+08AAAA38	&PALETTE3	Something's palette	73	{J}
+08AAEAE4	&PALETTE2	Something's palette	75	{J}
+08A79B70	&PALETTE	Something's palette	76	{J}
+08AAF654	&PALETTE	Something's palette	77	{J}
+08AB6EF4	&PALETTE	Something's palette	78	{J}
+08AB8044	&PALETTE	Something's palette	79	{J}
+08A97C0C	&PALETTE	Something's palette	80	{J}
+08AC30D4	&PALETTE	Something's palette	81	{J}
+08AC6C98	&PALETTE	Something's palette	82	{J}
+08AD1424	&PALETTE	Something's palette	83	{J}
+08B1CCF4	&PALETTE	Something's palette	84	{J}
+08B1D0BC	&PALETTE	Something's palette	85	{J}
+08B1D238	&PALETTE	Something's palette	86	{J}
+085E0DF4	&PALETTE	Something's palette	88	{J}
+08B1E998	&PALETTE	Something's palette	89	{J}
+08B23F00	&PALETTE	Something's palette	90	{J}
+08B2699C	&PALETTE	Something's palette	91	{J}
+08B3B72C	&PALETTE	Something's palette	92	{J}
+08B4678C	&PALETTE	Something's palette	93	{J}
+08B474F0	&PALETTE	Something's palette	94	{J}
+08B48918	&PALETTE	Something's palette	95	{J}
+08B48D38	&PALETTE	Something's palette	96	{J}
+08B49B4C	&PALETTE	Something's palette	97	{J}
+08B4B134	&PALETTE	Something's palette	98	{J}
+08B4B1E0	&PALETTE	Something's palette	99	{J}
+089B7414	&LZ77	Something small compressed data	35	{U}
+089B743C	&LZ77	Something small compressed data	36	{U}
+089B7468	&LZ77	Something small compressed data	37	{U}
+089B749C	&LZ77	Something small compressed data	38	{U}
+089B74D4	&LZ77	Something small compressed data	39	{U}
+089B7514	&LZ77	Something small compressed data	40	{U}
+089B7554	&LZ77	Something small compressed data	41	{U}
+089B759C	&LZ77	Something small compressed data	42	{U}
+089B75D8	&LZ77	Something small compressed data	43	{U}
+089B7414	&LZ77	Something small compressed data	44	{U}
+089B743C	&LZ77	Something small compressed data	45	{U}
+089B7468	&LZ77	Something small compressed data	46	{U}
+089B749C	&LZ77	Something small compressed data	47	{U}
+089B74D4	&LZ77	Something small compressed data	48	{U}
+089B7514	&LZ77	Something small compressed data	49	{U}
+089B7554	&LZ77	Something small compressed data	50	{U}
+089B759C	&LZ77	Something small compressed data	51	{U}
+089B75D8	&LZ77	Something small compressed data	52	{U}
+089E7E2C	&LZ77	Something small compressed data	53	{U}
+089E7E50	&LZ77	Something small compressed data	54	{U}
+089E7E78	&LZ77	Something small compressed data	55	{U}
+089E7EA0	&LZ77	Something small compressed data	56	{U}
+089E7ECC	&LZ77	Something small compressed data	57	{U}
+089E7EFC	&LZ77	Something small compressed data	58	{U}
+089E7F2C	&LZ77	Something small compressed data	59	{U}
+089E7F5C	&LZ77	Something small compressed data	60	{U}
+089E7F8C	&LZ77	Something small compressed data	61	{U}
+089E7FBC	&LZ77	Something small compressed data	62	{U}
+089E7FFC	&LZ77	Something small compressed data	63	{U}
+089E8040	&LZ77	Something small compressed data	64	{U}
+089E8090	&LZ77	Something small compressed data	65	{U}
+089E80EC	&LZ77	Something small compressed data	66	{U}
+089E8148	&LZ77	Something small compressed data	67	{U}
+089E81A4	&LZ77	Something small compressed data	68	{U}
+089E8200	&LZ77	Something small compressed data	69	{U}
+08A27A9C	&LZ77	Something small compressed data	35	{J}
+08A27AC4	&LZ77	Something small compressed data	36	{J}
+08A27AF0	&LZ77	Something small compressed data	37	{J}
+08A27B24	&LZ77	Something small compressed data	38	{J}
+08A27B5C	&LZ77	Something small compressed data	39	{J}
+08A27B9C	&LZ77	Something small compressed data	40	{J}
+08A27BDC	&LZ77	Something small compressed data	41	{J}
+08A27C24	&LZ77	Something small compressed data	42	{J}
+08A27C60	&LZ77	Something small compressed data	43	{J}
+08A27A9C	&LZ77	Something small compressed data	44	{J}
+08A27AC4	&LZ77	Something small compressed data	45	{J}
+08A27AF0	&LZ77	Something small compressed data	46	{J}
+08A27B24	&LZ77	Something small compressed data	47	{J}
+08A27B5C	&LZ77	Something small compressed data	48	{J}
+08A27B9C	&LZ77	Something small compressed data	49	{J}
+08A27BDC	&LZ77	Something small compressed data	50	{J}
+08A27C24	&LZ77	Something small compressed data	51	{J}
+08A27C60	&LZ77	Something small compressed data	52	{J}
+08A584B4	&LZ77	Something small compressed data	53	{J}
+08A584D8	&LZ77	Something small compressed data	54	{J}
+08A58500	&LZ77	Something small compressed data	55	{J}
+08A58528	&LZ77	Something small compressed data	56	{J}
+08A58554	&LZ77	Something small compressed data	57	{J}
+08A58584	&LZ77	Something small compressed data	58	{J}
+08A585B4	&LZ77	Something small compressed data	59	{J}
+08A585E4	&LZ77	Something small compressed data	60	{J}
+08A58614	&LZ77	Something small compressed data	61	{J}
+08A58644	&LZ77	Something small compressed data	62	{J}
+08A58684	&LZ77	Something small compressed data	63	{J}
+08A586C8	&LZ77	Something small compressed data	64	{J}
+08A58718	&LZ77	Something small compressed data	65	{J}
+08A58774	&LZ77	Something small compressed data	66	{J}
+08A587D0	&LZ77	Something small compressed data	67	{J}
+08A5882C	&LZ77	Something small compressed data	68	{J}
+08A58888	&LZ77	Something small compressed data	69	{J}
 08A71F3C	&EVENT	Debug room, Event 1	{J}
 08A71FCC	&EVENT	Debug room, Event 2	{J}
 08A72044	&EVENT	Debug room, Event 3	{J}
@@ -7467,11 +7543,10 @@ r3=X tile position of menu of the right	{U}
 08A000A0	&EVENT	Debug room, Event 9	{U}
 08A0013C	&EVENT	Debug room, Event 10	{U}
 08A002F0	&EVENT	Debug room, Event 11	{U}
-08083DF0	Vulnerary Recovery effect settings	{J}
-08081B40	Vulnerary Recovery effect settings	{U}
+08083DF0	Set up scar damage recovery effect	{J}
+08081B40	Set up scar damage recovery effect	{U}
 08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}
 089AFF78	:089AFFF7	Restoration of wound medicine Effect pallet Animation	{U}
-089991AC	:0899B5AB	Boot data 2It seems to be tile animation data not being used	{U}
 08BBD970	:08BC39FF	Boot dataNAZO 1	{J}
 08BBB6C8	:08BBD3F7	Boot dataNAZO 2	{J}
 08BB8ED0	:08BBB33C	Boot dataNAZO 3	{J}
@@ -7492,8 +7567,6 @@ r3=X tile position of menu of the right	{U}
 080B9F54	BGM selection of world map	{U}
 080c1e20	Acquire the base ID of the next destination in the world map	{J}
 080bd014	Acquire the base ID of the next destination in the world map	{U}
-085911C4	:085911D7	MMSizeTable	{U}
-085B8F5C	:085B8F6F	MMSizeTable	{J}
 080374B0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{J}
 080373F0	RMenu_Procs_BKSEL relationship of battle prediction dialog	{U}
 0808B414	Battle prediction dialog is a wrapper function to register RMenu	{J}
@@ -7512,12 +7585,11 @@ r3=X tile position of menu of the right	{U}
 0869CCAC	:0869CEAB	Live staff pallet relationship 1	{J}
 080E29E6	:080E2A17	Palette of live cane relationship 2	{J}
 080E2A18	:080E2C37	Data of live wand something	{J}
-085879D8	:08587A3F	Procs(6c) Function Table	{U}
-08577688	:085776EF	Procs(6c) Function Table	{J}
-08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
+085879D8	&ASM_POINTER_ARRAY	Procs(6c) Function	{U}
+08577688	&ASM_POINTER_ARRAY	Procs(6c) Function	{J}
 08206954	:082069D7	Monster occurrence rate relationship	Always 100% table	{U}
 081F6620	:081F66A3	Monster occurrence rate relationship	Always 100% table	{J}
-08207190	:0820721F	MPlayJumpTable	Midi Function Table	M4ALIB	{U}
+08207190	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{U}
 08207220	:08207267	MidiKeyToFreqTable1	M4ALIB	{U}
 08207268	:082072DB	Unknown	However, it seems to be music related	M4ALIB	{U}
 082072DC	:08207303	MidiKeyToFreqTable2	M4ALIB	{U}
@@ -7527,8 +7599,8 @@ r3=X tile position of menu of the right	{U}
 082073B8	:082073F3	MidiKeyToCgbFreq Data Table3	M4ALIB	{U}
 082073F4	:08207403	CgbSound Data Table	M4ALIB	{U}
 08207404	:08207437	ply_note_Table	M4ALIB	{U}
-08207438	:0820746F	ply_xcmd_Table	Function Table	M4ALIB	{U}
-081F6E40	:081F6ECF	MPlayJumpTable	Midi Function Table	M4ALIB	{J}
+08207438	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{U}
+081F6E40	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{J}
 081F6ED0	:081F6F17	MidiKeyToFreqTable1	M4ALIB	{J}
 081F6F18	:081F6F8B	Unknown	However, it seems to be music related	M4ALIB	{J}
 081F6F8C	:081F6FB3	MidiKeyToFreqTable2	M4ALIB	{J}
@@ -7538,9 +7610,11 @@ r3=X tile position of menu of the right	{U}
 081F7068	:081F70A3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
 081F70A4	:081F70B3	CgbSound Data Table	M4ALIB	{J}
 081F70B4	:081F70E7	ply_note_Table	M4ALIB	{J}
-081F70E8	:081F711F	ply_xcmd_Table	Function Table	M4ALIB	{J}
+081F70E8	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{J}
 08AB988C	&LZ77	Mystery data	Mystery image may be related to OP	{U}
 08B53254	&LZ77	Mystery data	Mystery image may be related to OP	{J}
+08A09A7C	&LZ77	Mystery data	Image of rectangle	{U}
+08A7CD3C	&LZ77	Mystery data	Image of rectangle	{J}
 085A0FF8	&ROMTCS	Any ROMTCS data	05	{U}
 085A129C	&ROMTCS	Any ROMTCS data	06	{U}
 085A14B8	&ROMTCS	Any ROMTCS data	07	{U}
@@ -7566,6 +7640,12 @@ r3=X tile position of menu of the right	{U}
 08A280A8	&ROMTCS	Any ROMTCS data	27	{U}
 08AA1C70	&ROMTCS	Any ROMTCS data	28	{U}
 085A7E34	&ROMTCS	Any ROMTCS data	29	{U}
+089A56C4	&ROMTCS	Any ROMTCS data	30	{U}
+089A6684	&ROMTCS	Any ROMTCS data	31	{U}
+089A80A4	&ROMTCS	Any ROMTCS data	32	{U}
+089A66C8	&ROMTCS	Any ROMTCS data	33	{U}
+089A80D4	&ROMTCS	Any ROMTCS data	34	{U}
+089A8EC8	&ROMTCS	Any ROMTCS data	35	{U}
 085C9518	&ROMTCS	Any ROMTCS data	05	{J}
 085C97BC	&ROMTCS	Any ROMTCS data	06	{J}
 085C99D8	&ROMTCS	Any ROMTCS data	07	{J}
@@ -7591,6 +7671,12 @@ r3=X tile position of menu of the right	{U}
 08AA52FC	&ROMTCS	Any ROMTCS data	27	{J}
 08B2759C	&ROMTCS	Any ROMTCS data	28	{J}
 085D1D3C	&ROMTCS	Any ROMTCS data	29	{J}
+08A15D4C	&ROMTCS	Any ROMTCS data	30	{J}
+08A16D0C	&ROMTCS	Any ROMTCS data	31	{J}
+08A1872C	&ROMTCS	Any ROMTCS data	32	{J}
+08A16D50	&ROMTCS	Any ROMTCS data	33	{J}
+08A1875C	&ROMTCS	Any ROMTCS data	34	{J}
+08A19550	&ROMTCS	Any ROMTCS data	35	{J}
 08AA6EA4	:08AA702F	A table defining mysterious 60 bytes fixed data	{U}
 08AF4C9C	&NAZO60	Mysterious 60 bytes fixed data	01	{U}
 08AF5100	&NAZO60	Mysterious 60 bytes fixed data	02	{U}
@@ -7692,7 +7778,7 @@ r3=X tile position of menu of the right	{U}
 08B0FAE0	&NAZO60	Mysterious 60 bytes fixed data	98	{U}
 08B0FF30	&NAZO60	Mysterious 60 bytes fixed data	99	{U}
 08B1039C	&NAZO60	Mysterious 60 bytes fixed data	100	{U}
-08B3F498	:08B3F627	A table defining mysterious 60 bytes fixed data	{U}
+08B3F498	:08B3F627	A table defining mysterious 60 bytes fixed data	{J}
 08B8EAA4	&NAZO60	Mysterious 60 bytes fixed data	01	{J}
 08B8EF08	&NAZO60	Mysterious 60 bytes fixed data	02	{J}
 08B8F380	&NAZO60	Mysterious 60 bytes fixed data	03	{J}
@@ -7810,6 +7896,11 @@ r3=X tile position of menu of the right	{U}
 089FC6C4	&EVENT	Any event function	Mystery reinforcement data	{U}
 089FF480	&EVENT	Any event function	Mystery	7	{U}
 089FFD64	&EVENT	Debug Room Event	details unknown	{U}
+08591F88	&EVENT	Any event function	Mystery	8	{U}
+08591F9C	&EVENT	Any event function	Mystery	9	{U}
+08591FA8	&EVENT	Any event function	Mystery	10	{U}
+08592114	&EVENT	Any event function	Mystery	11	{U}
+08592140	&EVENT	Any event function	Mystery	12	{U}
 08A60214	&EVENT	Any event function	Difficulty level determination	1	{J}
 08A6023C	&EVENT	Any event function	Get chapter ID	{J}
 08A60258	&EVENT	Any event function	Acquire editing	1	{J}
@@ -7830,6 +7921,12 @@ r3=X tile position of menu of the right	{U}
 08A6E7A4	&EVENT	Any event function	Mystery reinforcement data	{J}
 08A71538	&EVENT	Any event function	Mystery	7	{J}
 08A71CE8	&EVENT	Debug Room Event	details unknown	{J}
+085B9D6C	&EVENT	Any event function	Mystery	8	{J}
+085B9D80	&EVENT	Any event function	Mystery	9	{J}
+085B9D8C	&EVENT	Any event function	Mystery	10	{J}
+085B9EF8	&EVENT	Any event function	Mystery	11	{J}
+085B9F24	&EVENT	Any event function	Mystery	12	{J}
+085B9F54	&EVENT	Any event function	Mystery	13	{J}
 08A0186C	:08A0189B	Something's FillTileRect tile table	{U}
 08A175B4	&HEADERTSA	Something tiled FillTileRect	40	{U}
 08A175C8	&HEADERTSA	Something tiled FillTileRect	41	{U}
@@ -7848,31 +7945,6 @@ r3=X tile position of menu of the right	{U}
 08A9339C	&HEADERTSA	Something tiled FillTileRect	45	{J}
 08A933B0	&HEADERTSA	Something tiled FillTileRect	46	{J}
 08A933C4	&HEADERTSA	Something tiled FillTileRect	47	{J}
-08A09A7C	&LZ77	Mystery data	Image of rectangle	{U}
-08A7CD3C	&LZ77	Mystery data	Image of rectangle	{J}
-089A56C4	&ROMTCS	Any ROMTCS data	30	{U}
-089A6684	&ROMTCS	Any ROMTCS data	31	{U}
-089A80A4	&ROMTCS	Any ROMTCS data	32	{U}
-089A66C8	&ROMTCS	Any ROMTCS data	33	{U}
-089A80D4	&ROMTCS	Any ROMTCS data	34	{U}
-089A8EC8	&ROMTCS	Any ROMTCS data	35	{U}
-08A15D4C	&ROMTCS	Any ROMTCS data	30	{J}
-08A16D0C	&ROMTCS	Any ROMTCS data	31	{J}
-08A1872C	&ROMTCS	Any ROMTCS data	32	{J}
-08A16D50	&ROMTCS	Any ROMTCS data	33	{J}
-08A1875C	&ROMTCS	Any ROMTCS data	34	{J}
-08A19550	&ROMTCS	Any ROMTCS data	35	{J}
-08591F88	&EVENT	Any event function	Mystery	8	{U}
-08591F9C	&EVENT	Any event function	Mystery	9	{U}
-08591FA8	&EVENT	Any event function	Mystery	10	{U}
-08592114	&EVENT	Any event function	Mystery	11	{U}
-08592140	&EVENT	Any event function	Mystery	12	{U}
-085B9D6C	&EVENT	Any event function	Mystery	8	{J}
-085B9D80	&EVENT	Any event function	Mystery	9	{J}
-085B9D8C	&EVENT	Any event function	Mystery	10	{J}
-085B9EF8	&EVENT	Any event function	Mystery	11	{J}
-085B9F24	&EVENT	Any event function	Mystery	12	{J}
-085B9F54	&EVENT	Any event function	Mystery	13	{J}
 08577F4C	&FONTCOLOR0x200	FontColor	01	{J}
 0857814C	&FONTCOLOR0x200	FontColor	02	{J}
 0857834C	&FONTCOLOR0x200	FontColor	03	{J}
@@ -8022,84 +8094,12 @@ r3=X tile position of menu of the right	{U}
 080C6704	Logo at ROM start	1	{U}
 080CBDD8	Logo at ROM start	2	{U}
 080CBE0C	Nitendo at ROM startFunction to read Logo and ISLogo	{U}
-08002B04	CallARM_PushToSecondaryOAM	{J}
 0802a38c	SetupBattleStructFromUnitAndWeapon	{J}
 08005890	CreateMinimug	This routine draws the minimug to VRAM and writes its tilemap	{J}
 080C1298	Set menu definition of world map	{J}
 080BC454	Set menu definition of world map	{U}
 080C13F4	Set menu definition of world map shop	{J}
 080BC5B4	Set menu definition of world map shop	{U}
-08001EE4	EnablePaletteSync	{J}
-089B7414	&LZ77	Something small compressed data	35	{U}
-089B743C	&LZ77	Something small compressed data	36	{U}
-089B7468	&LZ77	Something small compressed data	37	{U}
-089B749C	&LZ77	Something small compressed data	38	{U}
-089B74D4	&LZ77	Something small compressed data	39	{U}
-089B7514	&LZ77	Something small compressed data	40	{U}
-089B7554	&LZ77	Something small compressed data	41	{U}
-089B759C	&LZ77	Something small compressed data	42	{U}
-089B75D8	&LZ77	Something small compressed data	43	{U}
-089B7414	&LZ77	Something small compressed data	44	{U}
-089B743C	&LZ77	Something small compressed data	45	{U}
-089B7468	&LZ77	Something small compressed data	46	{U}
-089B749C	&LZ77	Something small compressed data	47	{U}
-089B74D4	&LZ77	Something small compressed data	48	{U}
-089B7514	&LZ77	Something small compressed data	49	{U}
-089B7554	&LZ77	Something small compressed data	50	{U}
-089B759C	&LZ77	Something small compressed data	51	{U}
-089B75D8	&LZ77	Something small compressed data	52	{U}
-089E7E2C	&LZ77	Something small compressed data	53	{U}
-089E7E50	&LZ77	Something small compressed data	54	{U}
-089E7E78	&LZ77	Something small compressed data	55	{U}
-089E7EA0	&LZ77	Something small compressed data	56	{U}
-089E7ECC	&LZ77	Something small compressed data	57	{U}
-089E7EFC	&LZ77	Something small compressed data	58	{U}
-089E7F2C	&LZ77	Something small compressed data	59	{u}
-089E7F5C	&LZ77	Something small compressed data	60	{U}
-089E7F8C	&LZ77	Something small compressed data	61	{U}
-089E7FBC	&LZ77	Something small compressed data	62	{U}
-089E7FFC	&LZ77	Something small compressed data	63	{U}
-089E8040	&LZ77	Something small compressed data	64	{U}
-089E8090	&LZ77	Something small compressed data	65	{U}
-089E80EC	&LZ77	Something small compressed data	66	{U}
-089E8148	&LZ77	Something small compressed data	67	{U}
-089E81A4	&LZ77	Something small compressed data	68	{U}
-089E8200	&LZ77	Something small compressed data	69	{U}
-08A27A9C	&LZ77	Something small compressed data	35	{J}
-08A27AC4	&LZ77	Something small compressed data	36	{J}
-08A27AF0	&LZ77	Something small compressed data	37	{J}
-08A27B24	&LZ77	Something small compressed data	38	{J}
-08A27B5C	&LZ77	Something small compressed data	39	{J}
-08A27B9C	&LZ77	Something small compressed data	40	{J}
-08A27BDC	&LZ77	Something small compressed data	41	{J}
-08A27C24	&LZ77	Something small compressed data	42	{J}
-08A27C60	&LZ77	Something small compressed data	43	{J}
-08A27A9C	&LZ77	Something small compressed data	44	{J}
-08A27AC4	&LZ77	Something small compressed data	45	{J}
-08A27AF0	&LZ77	Something small compressed data	46	{J}
-08A27B24	&LZ77	Something small compressed data	47	{J}
-08A27B5C	&LZ77	Something small compressed data	48	{J}
-08A27B9C	&LZ77	Something small compressed data	49	{J}
-08A27BDC	&LZ77	Something small compressed data	50	{J}
-08A27C24	&LZ77	Something small compressed data	51	{J}
-08A27C60	&LZ77	Something small compressed data	52	{J}
-08A584B4	&LZ77	Something small compressed data	53	{J}
-08A584D8	&LZ77	Something small compressed data	54	{J}
-08A58500	&LZ77	Something small compressed data	55	{J}
-08A58528	&LZ77	Something small compressed data	56	{J}
-08A58554	&LZ77	Something small compressed data	57	{J}
-08A58584	&LZ77	Something small compressed data	58	{J}
-08A585B4	&LZ77	Something small compressed data	59	{J}
-08A585E4	&LZ77	Something small compressed data	60	{J}
-08A58614	&LZ77	Something small compressed data	61	{J}
-08A58644	&LZ77	Something small compressed data	62	{J}
-08A58684	&LZ77	Something small compressed data	63	{J}
-08A586C8	&LZ77	Something small compressed data	64	{J}
-08A58718	&LZ77	Something small compressed data	65	{J}
-08A58774	&LZ77	Something small compressed data	66	{J}
-08A587D0	&LZ77	Something small compressed data	67	{J}
-08A5882C	&LZ77	Something small compressed data	68	{J}
-08A58888	&LZ77	Something small compressed data	69	{J}
 08A987D8	&PALETTE	Something's palette	102	{J}
 085C74E0	&PALETTE	Something's palette	103	{J}
 085D8088	&PALETTE	Something's palette	104	{J}
@@ -8113,7 +8113,7 @@ r3=X tile position of menu of the right	{U}
 08B1CD60	&PALETTE	Something's palette	112	{J}
 08B1E65C	&PALETTE	Something's palette	113	{J}
 08B27220	&PALETTE	Something's palette	114	{J}
-08A9A8D4	&LZ77	Something's TSA	{J}
+08A9A8D4	&LZ77	Something's TSA	1	{J}
 08A1BD40	&PALETTE	Something's palette	102	{U}
 0859EFC0	&PALETTE	Something's palette	103	{U}
 085ADDE8	&PALETTE	Something's palette	104	{U}
@@ -8126,7 +8126,7 @@ r3=X tile position of menu of the right	{U}
 08A1D448	&PALETTE	Something's palette	111	{U}
 08A97ACC	&PALETTE	Something's palette	112	{U}
 08AA1950	&PALETTE	Something's palette	114	{U}
-089DD4E8	&LZ77	Something's TSA	{U}
+089DD4E8	&LZ77	Something's TSA	1	{U}
 08B8B4E0	&PALETTE	OP related pallet	1	{J}
 08B8B978	&PALETTE	OP related pallet	2	{J}
 08B8C43C	&PALETTE	OP related pallet	3	{J}
@@ -8136,10 +8136,10 @@ r3=X tile position of menu of the right	{U}
 08AF2634	&PALETTE	OP related pallet	3	{U}
 08AF310C	&PALETTE	OP related pallet	4	{U}
 08B8E5F8	&PALETTE	Something's palette	115	{J}
-08BAA1E0	&PALETTE	Something's palette	116	{J}
+08BAA1E0	&PALETTE8	Something's palette	116	{J}
 08B75840	&PALETTE	Something's palette	117	{J}
 08AF47F0	&PALETTE	Something's palette	115	{U}
-08B103D8	&PALETTE	Something's palette	116	{U}
+08B103D8	&PALETTE8	Something's palette	116	{U}
 08ADBE78	&PALETTE	Something's palette	117	{U}
 080B40EC	Opening class demoReading lottery table	{U}
 080B8C80	Opening class demoReading lottery table	{J}
@@ -8202,45 +8202,11 @@ r3=X tile position of menu of the right	{U}
 08693D88	&LZ77	Something's anime pattern	2	{J}
 0869D100	&PALETTE	Something's palette	127	{J}
 08855D38	&PALETTE	Something's palette	128	{J}
-08A3E9A0	:08A3E9FF	Unk OAMREGS TABLE	{U}
-08A3E948	&OAMREGS	OAMREGS	{U}
-08A3E950	&OAMREGS	OAMREGS	{U}
-08A3E958	&OAMREGS	OAMREGS	{U}
-08A3E960	&OAMREGS	OAMREGS	{U}
-08A3E968	&OAMREGS	OAMREGS	{U}
-08A3E970	&OAMREGS	OAMREGS	{U}
-08A3E978	&OAMREGS	OAMREGS	{U}
-08A3E980	&OAMREGS	OAMREGS	{U}
-08A3E988	&OAMREGS	OAMREGS	{U}
-08A3E990	&OAMREGS	OAMREGS	{U}
-08A3E998	&OAMREGS	OAMREGS	{U}
-08AC2360	:08AC23BF	Unk OAMREGS TABLE2	{J}
-08AC2308	&OAMREGS	OAMREGS	{J}
-08AC2310	&OAMREGS	OAMREGS	{J}
-08AC2318	&OAMREGS	OAMREGS	{J}
-08AC2320	&OAMREGS	OAMREGS	{J}
-08AC2328	&OAMREGS	OAMREGS	{J}
-08AC2330	&OAMREGS	OAMREGS	{J}
-08AC2338	&OAMREGS	OAMREGS	{J}
-08AC2340	&OAMREGS	OAMREGS	{J}
-08AC2348	&OAMREGS	OAMREGS	{J}
-08AC2350	&OAMREGS	OAMREGS	{J}
-08AC2358	&OAMREGS	OAMREGS	{J}
-08A17C20	:08A17C47	Unk OAMREGS TABLE2	{U}
-08A17B98	&OAMREGS	OAMREGS	{U}
-08A17BA6	&OAMREGS	OAMREGS	{U}
-08A17BBA	&OAMREGS	OAMREGS	{U}
-08A17BCE	&OAMREGS	OAMREGS	{U}
-08A17BE2	&OAMREGS	OAMREGS	{U}
-08A17BF6	&OAMREGS	OAMREGS	{U}
-08A9396C	:08A93993	Unk OAMREGS TABLE2	{J}
-08A938E4	&OAMREGS	OAMREGS	{J}
-08A938F2	&OAMREGS	OAMREGS	{J}
-08A93906	&OAMREGS	OAMREGS	{J}
-08A9391A	&OAMREGS	OAMREGS	{J}
-08A9392E	&OAMREGS	OAMREGS	{J}
-08A93942	&OAMREGS	OAMREGS	{J}
-089A3AB8	:089A3B3B	Unk Small Image Array	{U}
+08A3E9A0	&OAMREGS_ARRAY	Unk OAMREGS	{U}
+08AC2360	&OAMREGS_ARRAY	Unk OAMREGS2	{J}
+08A17C20	&OAMREGS_ARRAY	Unk OAMREGS2	{U}
+08A9396C	&OAMREGS_ARRAY	Unk OAMREGS2	{J}
+089A3AB8	:089A3B3B	Unk Small Image	{U}
 089B4C80	&LZ77	Something small compressed data	76	{U}
 089B4CE8	&LZ77	Something small compressed data	77	{U}
 089B4D64	&LZ77	Something small compressed data	78	{U}
@@ -8273,7 +8239,7 @@ r3=X tile position of menu of the right	{U}
 089B66BC	&LZ77	Something small compressed data	105	{U}
 089B6808	&LZ77	Something small compressed data	106	{U}
 089B69BC	&LZ77	Something small compressed data	107	{U}
-08A14140	:08A141C3		Unk Small Image Array	{J}
+08A14140	:08A141C3		Unk Small Image	{J}
 08A25308	&LZ77	Something small compressed data	76	{J}
 08A25370	&LZ77	Something small compressed data	77	{J}
 08A253EC	&LZ77	Something small compressed data	78	{J}
@@ -8311,12 +8277,14 @@ r3=X tile position of menu of the right	{U}
 080DA334	&PALETTE	Something's palette	130	{U}
 080DA354	&PALETTE	Something's palette	131	{U}
 080DA314	&PALETTE	Something's palette	132	{U}
+085B7560	&PALETTE	Something's palette	133	{U}
 085B7E54	&PALETTE	Something's palette	134	{U}
 085B8714	&PALETTE	Something's palette	135	{U}
 085B8F90	&PALETTE	Something's palette	136	{U}
 085B6BB4	&PALETTE	Something's palette	137	{U}
 085B6BD4	&PALETTE	Something's palette	138	{U}
 085B6BF4	&PALETTE	Something's palette	139	{U}
+085B6C14	&PALETTE	Something's palette	140	{U}
 085DD518	&LZ77	I think that it is an image of a snowstorm	{U}
 0878D648	&LZ77	Dragon's battle animation-like data	{U}
 085DB10C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{J}
@@ -8324,46 +8292,39 @@ r3=X tile position of menu of the right	{U}
 080DF320	&PALETTE	Something's palette	130	{J}
 080DF340	&PALETTE	Something's palette	131	{J}
 080DF300	&PALETTE	Something's palette	132	{J}
+085E1740	&PALETTE	Something's palette	133	{J}
 085E2034	&PALETTE	Something's palette	134	{J}
 085E28F4	&PALETTE	Something's palette	135	{J}
 085E3170	&PALETTE	Something's palette	136	{J}
 085E0D94	&PALETTE	Something's palette	137	{J}
 085E0DB4	&PALETTE	Something's palette	138	{J}
 085E0DD4	&PALETTE	Something's palette	139	{J}
+085E0DF4	&PALETTE	Something's palette	140	{J}
 08607C40	&LZ77	I think that it is an image of a snowstorm	{J}
 087E1BA0	&LZ77	Dragon's battle animation-like data	{J}
 08a36338	&LZ77	OP(Promotion) Class Name Font	{U}
 08A372c0	&PALETTE	OP(Promotion) Class Name Font Palette	{U}
 08AB7164	&LZ77	OP(Promotion) Class Name Font	{J}
+08AB8044	&PALETTE	OP(Promotion) Class Name Font Palette	{J}
 08903C80	:08903DBF	Removal of individual animation data of FE 7	{J}
 08903DC0	:08903E0B	Removal of individual animation table of FE 7	{J}
 088AF6F4	:088AF833	Removal of individual animation data of FE 7	{U}
 088AF834	:088AF87F	Removal of individual animation table of FE 7	{U}
 08904BC4	:08904E1B	Cleared FE6 credit pointers	{J}
-08A12FA8	:08A12FBF	Unk Small Palette Array	{J}
+08A12FA8	:08A12FBF	Unk Small Palette	{J}
 085C25E0	&PALETTE	Something's palette	141	{J}
 085C2600	&PALETTE	Something's palette	142	{J}
 085C2620	&PALETTE	Something's palette	143	{J}
 085C2640	&PALETTE	Something's palette	144	{J}
-085AA824	:085AA83B	Unk Small Palette Array	{U}
+085AA824	:085AA83B	Unk Small Palette	{U}
 0859A160	&PALETTE	Something's palette	141	{U}
 0859A180	&PALETTE	Something's palette	142	{U}
 0859A1A0	&PALETTE	Something's palette	143	{U}
 0859A1C0	&PALETTE	Something's palette	144	{U}
-085D4A44	:085D4A57	Unk OAMREGS TABLE3	{J}
-080DF008	&OAMREGS	OAMREGS	{J}
-080DF028	&OAMREGS	OAMREGS	{J}
-080DF048	&OAMREGS	OAMREGS	{J}
-080DF068	&OAMREGS	OAMREGS	{J}
-085AA9A0	:085AA9B3	Unk OAMREGS TABLE3	{U}
-080DA01C	&OAMREGS	OAMREGS	{U}
-080DA03C	&OAMREGS	OAMREGS	{U}
-080DA05C	&OAMREGS	OAMREGS	{U}
-080DA07C	&OAMREGS	OAMREGS	{U}
-085D4A58	:085D4A63	Unk OAMREGS TABLE4	{J}
-080DF09E	&OAMREGS	OAMREGS	{J}
-085AA9B4	:085AA9BF	Unk OAMREGS TABLE4	{U}
-080DA0B2	&OAMREGS	OAMREGS	{U}
+085D4A44	&OAMREGS_ARRAY	Unk OAMREGS3	{J}
+085AA9A0	&OAMREGS_ARRAY	Unk OAMREGS3	{U}
+085D4A58	&OAMREGS_ARRAY	Unk OAMREGS4	{J}
+085AA9B4	&OAMREGS_ARRAY	Unk OAMREGS4	{U}
 08058BF4	Acquire the image ID of the battle cartoon floor tile	{J}
 08058D1C	Acquire the image ID of the background of battle animation	{J}
 08057DA8	Acquire the image ID of the battle cartoon floor tile	{U}
@@ -8372,9 +8333,8 @@ r3=X tile position of menu of the right	{U}
 08A0035C	&EVENT	Sky event	1	{J}
 08A00364	&EVENT	Sky event	2	{J}
 08A95650	:08A9590F	Any arithmetic lookup table	{J}
-085B9BC4	:085B9CE3	Unk OAMSP TABLE1	{U}
-085E3DF4	:085E3F13	Unk OAMSP TABLE5	{J}
-085E3E14	:085E3F13	Unk OAMSP TABLE1	{J}
+085B9BC4	:085B9CE3	Unk OAMSP1	{U}
+085E3E14	:085E3F13	Unk OAMSP1	{J}
 08604784	&PALETTE	Something's palette	145	{J}
 0860A374	&PALETTE	Something's palette	146	{J}
 0860B53C	&PALETTE	Something's palette	147	{J}
@@ -8437,6 +8397,7 @@ r3=X tile position of menu of the right	{U}
 085DA05C	&PALETTE	Something's palette	145	{U}
 085DE964	&PALETTE	Something's palette	147	{U}
 085DFA28	&PALETTE	Something's palette	148	{U}
+085DFA48	&PALETTE	Something's palette	149	{U}
 0860108C	&PALETTE	Something's palette	150	{U}
 08604210	&PALETTE	Something's palette	151	{U}
 08623A9C	&PALETTE	Something's palette	152	{U}
@@ -8447,11 +8408,13 @@ r3=X tile position of menu of the right	{U}
 0868CC10	&PALETTE	Something's palette	157	{U}
 0868E46C	&PALETTE	Something's palette	158	{U}
 08728920	&PALETTE	Something's palette	159	{U}
+08652554	&PALETTE	Something's palette	160	{U}
 0872DE04	&PALETTE	Something's palette	161	{U}
 08730780	&PALETTE	Something's palette	162	{U}
 08732228	&PALETTE	Something's palette	164	{U}
 08731348	&PALETTE	Something's palette	165	{U}
 087302A4	&PALETTE	Something's palette	166	{U}
+085F1620	&PALETTE	Something's palette	168	{U}
 08726FF4	&PALETTE	Something's palette	169	{U}
 08751DB4	&PALETTE	Something's palette	173	{U}
 08751DB4	&PALETTE	Something's palette	174	{U}
@@ -8466,6 +8429,7 @@ r3=X tile position of menu of the right	{U}
 086C93FC	&PALETTE	Something's palette	183	{U}
 086FF3A4	&PALETTE	Something's palette	184	{U}
 086FFD3C	&PALETTE	Something's palette	185	{U}
+085DFA68	&PALETTE	Something's palette	186	{U}
 086A2614	&PALETTE	Something's palette	187	{U}
 086A2CE8	&PALETTE	Something's palette	188	{U}
 086BC824	&PALETTE	Something's palette	189	{U}
@@ -8508,14 +8472,14 @@ r3=X tile position of menu of the right	{U}
 08A3F21C	&HEADERTSA	Something's TSA	19	unused	{U}
 08004998	Load font for status screen	{J}
 08004A90	Load font for status screen	{U}
-085B91C8	:085B9207	Unk OAMREGS TABLE4	{J}
-08591430	:0859146F	Unk OAMREGS TABLE4	{U}
-080DCDD8	:080DCE53	AI Script ASM Table	{J}
-080D80FC	:080D8177	AI Script ASM Table	{U}
-0859B938	&SECONDARYOAM_ARRAY	Secondary OAM Array	1	{U}
-0859B898	&SECONDARYOAM_ARRAY	Secondary OAM Array	2	{U}
-0859B7F4	&SECONDARYOAM_ARRAY	Secondary OAM Array	3	{U}
-0859B858	&SECONDARYOAM_ARRAY	Secondary OAM Array	4	{U}
+085B91C8	&OAMREGS_ARRAY	Unk OAMREGS4	{J}
+08591430	&OAMREGS_ARRAY	Unk OAMREGS4	{U}
+080DCDD8	&ASM_POINTER_ARRAY	AI Script Function	{J}
+080D80FC	&ASM_POINTER_ARRAY	AI Script Function	{U}
+0859B938	&SECONDARYOAM_ARRAY	Secondary OAM	1	{U}
+0859B898	&SECONDARYOAM_ARRAY	Secondary OAM	2	{U}
+0859B7F4	&SECONDARYOAM_ARRAY	Secondary OAM	3	{U}
+0859B858	&SECONDARYOAM_ARRAY	Secondary OAM	4	{U}
 0859B968	&SECONDARYOAM	Secondary OAM 1	{U}
 085921AC	&SECONDARYOAM	Secondary OAM 2	{U}
 0859B144	&SECONDARYOAM	Secondary OAM 3	{U}
@@ -8547,30 +8511,30 @@ r3=X tile position of menu of the right	{U}
 08A595A4	&HEADERTSA	Something's TSA	20	unused	{J}
 08A98838	&HEADERTSA	Something's TSA	21	unused	{J}
 08A1BDA0	&HEADERTSA	Something's TSA	21	unused	{U}
-08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{J}
-08A20650	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	05	{U}
-08A9E470	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{J}
-08A21508	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	06	{U}
-085C2940	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{J}
-0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	07	{U}
-085C29BC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{J}
-0859A530	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	08	{U}
-085C662C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{J}
-0859E14C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	09	{U}
-085D35EC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{J}
-085A96E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	10	{U}
-085D35DC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{J}
-085A96D4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	11	{U}
-085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{J}
-085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	12	{U}
-085D4B54	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{J}
-085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	13	{U}
-085D4B80	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{J}
-085AAADC	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	14	{U}
-080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{J}
-080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	15	{U}
-085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{J}
-085AABB8	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	16	{U}
+08A9D57C	&OAMREGS_ARRAY	Unk OAMREGS	05	{J}
+08A20650	&OAMREGS_ARRAY	Unk OAMREGS	05	{U}
+08A9E470	&OAMREGS_ARRAY	Unk OAMREGS	06	{J}
+08A21508	&OAMREGS_ARRAY	Unk OAMREGS	06	{U}
+085C2940	&OAMREGS_ARRAY	Unk OAMREGS	07	{J}
+0859A4C0	&OAMREGS_ARRAY	Unk OAMREGS	07	{U}
+085C29BC	&OAMREGS_ARRAY	Unk OAMREGS	08	{J}
+0859A530	&OAMREGS_ARRAY	Unk OAMREGS	08	{U}
+085C662C	&OAMREGS_ARRAY	Unk OAMREGS	09	{J}
+0859E14C	&OAMREGS_ARRAY	Unk OAMREGS	09	{U}
+085D35EC	&OAMREGS_ARRAY	Unk OAMREGS	10	{J}
+085A96E4	&OAMREGS_ARRAY	Unk OAMREGS	10	{U}
+085D35DC	&OAMREGS_ARRAY	Unk OAMREGS	11	{J}
+085A96D4	&OAMREGS_ARRAY	Unk OAMREGS	11	{U}
+085D4B4C	&OAMREGS_ARRAY	Unk OAMREGS	12	{J}
+085AAAA8	&OAMREGS_ARRAY	Unk OAMREGS	12	{U}
+085D4B54	&OAMREGS_ARRAY	Unk OAMREGS	13	{J}
+085AAAB0	&OAMREGS_ARRAY	Unk OAMREGS	13	{U}
+085D4B80	&OAMREGS_ARRAY	Unk OAMREGS	14	{J}
+085AAADC	&OAMREGS_ARRAY	Unk OAMREGS	14	{U}
+080DF1B6	&OAMREGS_ARRAY	Unk OAMREGS	15	{J}
+080DA1CA	&OAMREGS_ARRAY	Unk OAMREGS	15	{U}
+085D4C5C	&OAMREGS_ARRAY	Unk OAMREGS	16	{J}
+085AABB8	&OAMREGS_ARRAY	Unk OAMREGS	16	{U}
 085E0678	&OAMREGS	OAMREGS	{J}
 085B6498	&OAMREGS	OAMREGS	{U}
 08A60AD4	&OAMREGS	OAMREGS	{J}
@@ -8598,6 +8562,7 @@ r3=X tile position of menu of the right	{U}
 08A72408	&EVENT	For debugging	Branch	11	{J}
 0804874C	Delete all saved data	{J}
 0804C46C	Communication stadium	Battle end	{J}
+08A0035C	&EVENT	Empty event	1	{U}
 089FFC30	&EVENT	Empty event	2	{U}
 0859BC64	&EVENT	Tutorial	Inventory change	1	{U}
 0859BCA8	&EVENT	Tutorial	Inventory change	2	{U}
@@ -8607,6 +8572,17 @@ r3=X tile position of menu of the right	{U}
 085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
 085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
 089FFC30	&EVENT	For debugging	Mysterious branch	{U}
+089FFE84	&EVENT	For debugging	Branch	1	{U}
+089FFF14	&EVENT	For debugging	Branch	2	{U}
+089FFF8C	&EVENT	For debugging	Branch	3	{U}
+08A00034	&EVENT	For debugging	Branch	4	{U}
+08A000A0	&EVENT	For debugging	Branch	5	{U}
+08A0013C	&EVENT	For debugging	Branch	6	{U}
+08A001AC	&EVENT	For debugging	Branch	7	{U}
+08A00260	&EVENT	For debugging	Branch	8	{U}
+08A000A0	&EVENT	For debugging	Branch	9	{U}
+08A0013C	&EVENT	For debugging	Branch	10	{U}
+08A002F0	&EVENT	For debugging	Branch	11	{U}
 0804874C	Delete all saved data	{U}
 0804B6CC	Communication stadium	Battle end	{U}
 0809B600	Drawing the item arrangement menu on the attack advancement screen	{J}
@@ -8615,9 +8591,9 @@ r3=X tile position of menu of the right	{U}
 0802CB8C	Register motion when using items	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{J}
-08A19608	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	17	{U}
-08A95478	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	18	FE8JONLY	{J}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	{J}
+08A19608	&OAMREGS_ARRAY	Unk OAMREGS	17	{U}
+08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
 08A1A474	&HEADERTSA	Something's TSA	20	{U}
 08A96CC4	&HEADERTSA	Something's TSA	20	{J}
 08A9C874	:08A9C997	Boot data	Tile Changes	1	unused	{J}
@@ -8628,8 +8604,8 @@ r3=X tile position of menu of the right	{U}
 08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{U}
 08A2C94C	&HEADERTSA	Something's TSA	21	unused	{U}
 08AAAADC	&HEADERTSA	Something's TSA	21	unused	{J}
-08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{U}
-08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	19	{J}
+08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS	19	{U}
+08AAFF34	&OAMREGS_ARRAY	Unk OAMREGS	19	{J}
 085B7E74	&PALETTE	Something's palette	203	{U}
 085B8734	&PALETTE	Something's palette	204	{U}
 085B8FB0	&PALETTE2	Something's palette	205	{U}
@@ -8681,13 +8657,61 @@ r3=X tile position of menu of the right	{U}
 0885606C	:088560AB	Mystery data	Battle screen relation	4	{J}
 088560AC	:0885616B	Mystery data	Battle screen relation	5	{J}
 08856004	:0885602B	Mystery data	Battle screen relation	Array	{J}
-08A187A0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{U}
-08A944E4	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	20	{J}
-08A187F0	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{U}
-08A94534	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	21	{J}
-08A9534C	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	22	FE8JONLY	{J}
-08A9DA70	&OAMREGS_ARRAY	Unk OAMREGS ARRAY	23	{J}
+08A187A0	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
+08A944E4	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
+08A187F0	&OAMREGS_ARRAY	Unk OAMREGS	21	{U}
+08A94534	&OAMREGS_ARRAY	Unk OAMREGS	21	{J}
+08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	22	FE8JONLY	{J}
+08A9DA70	&OAMREGS_ARRAY	Unk OAMREGS	23	{J}
 080144E0	NewPaletteAnimator_2	{J}
 080144CC	NewPaletteAnimator_2	{U}
 089B0820	&PALETTE	Something's palette	207	{U}
 08A20EA8	&PALETTE	Something's palette	207	{J}
+085AF0F0	&PALETTE	Something's palette	208	{U}
+085AF110	&PALETTE	Something's palette	209	{U}
+085AF130	&PALETTE	Something's palette	210	{U}
+085AF150	&PALETTE	Something's palette	211	{U}
+085D92D0	&PALETTE	Something's palette	208	{J}
+085D92F0	&PALETTE	Something's palette	209	{J}
+085D9310	&PALETTE	Something's palette	210	{J}
+085D9330	&PALETTE	Something's palette	211	{J}
+0805F660	MagicAnime	efxResireBG2_2	{U}
+08060760	MagicAnime	efxResireBG2_2	{J}
+08758D20	&SOUND_85COMMAND_POINTER_ARRAY	C85 1B	{U}
+08758E00	&SOUND_85COMMAND_POINTER_ARRAY	C85 59	{U}
+08758E8C	&SOUND_85COMMAND_POINTER_ARRAY	C85 5D	{U}
+08758F18	&SOUND_85COMMAND_POINTER_ARRAY	C85 66	{U}
+08758FA4	&SOUND_85COMMAND_POINTER_ARRAY	C85 67	{U}
+087A9254	&SOUND_85COMMAND_POINTER_ARRAY	C85 1B	{J}
+087A9334	&SOUND_85COMMAND_POINTER_ARRAY	C85 59	{J}
+087A93C0	&SOUND_85COMMAND_POINTER_ARRAY	C85 5D	{J}
+087A944C	&SOUND_85COMMAND_POINTER_ARRAY	C85 66	{J}
+087A94D8	&SOUND_85COMMAND_POINTER_ARRAY	C85 67	{J}
+08A25E50	&PALETTE	Something's palette	212	{U}
+08A25E68	&PALETTE2	Something's palette	213	{U}
+08A25E80	&PALETTE2	Something's palette	214	{U}
+08A29438	&PALETTE4	Something's palette	215	{U}
+08A3595C	&PALETTE7	Something's palette	216	{U}
+08A36318	&PALETTE	Something's palette	217	{U}
+08AA2DB8	&PALETTE	Something's palette	212	{J}
+08AA2DD0	&PALETTE2	Something's palette	213	{J}
+08AA2DE8	&PALETTE2	Something's palette	214	{J}
+08AA70B4	&PALETTE4	Something's palette	215	{J}
+08AB6788	&PALETTE7	Something's palette	216	{J}
+08AB7144	&PALETTE	Something's palette	217	{J}
+08A1FB08	TEXTBATCH	TextBatch3	{U}
+08A9CA34	TEXTBATCH	TextBatch3	{J}
+08A196BC	TEXTBATCH	TextBatch4	{U}
+08A188F8	TEXTBATCH	TextBatch5	{U}
+08A18614	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
+08A94358	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
+08A1D850	&PALETTE	Something's palette	218	{U}
+08A1D870	&PALETTE	Something's palette	219	{U}
+08A1D890	&PALETTE	Something's palette	220	{U}
+08A1D8B0	&PALETTE	Something's palette	221	{U}
+08667D90	&PALETTE	Something's palette	222	{U}
+08A9A5A4	&PALETTE	Something's palette	218	{J}
+08A9A5C4	&PALETTE	Something's palette	219	{J}
+08A9A5E4	&PALETTE	Something's palette	220	{J}
+08A9A604	&PALETTE	Something's palette	221	{J}
+08694968	&PALETTE	Something's palette	222	{J}
