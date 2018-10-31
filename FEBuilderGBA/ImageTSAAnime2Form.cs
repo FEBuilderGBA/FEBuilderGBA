@@ -14,14 +14,15 @@ namespace FEBuilderGBA
         public ImageTSAAnime2Form()
         {
             InitializeComponent();
-            this.TSAAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime2_"));
-
+#if DEBUG
+            ImageTSAAnimeForm.PreLoadResource();
+#endif
             this.InputFormRef = Init(this);
             this.N1_InputFormRef = N1_Init(this);
 
             this.TSAANime2List.BeginUpdate();
             this.TSAANime2List.Items.Clear();
-            foreach (var pair in this.TSAAnime)
+            foreach (var pair in g_TSAAnime)
             {
                 string name = U.ToHexString(pair.Key) + " " + U.at(pair.Value, 0);
                 this.TSAANime2List.Items.Add(name);
@@ -29,7 +30,13 @@ namespace FEBuilderGBA
             this.TSAANime2List.EndUpdate();
             U.SelectedIndexSafety(this.TSAANime2List, 0, true);
         }
-        Dictionary<uint, string[]> TSAAnime;
+        static Dictionary<uint, string[]> g_TSAAnime;
+        public static void PreLoadResource()
+        {
+            g_TSAAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime2_"));
+        }
+
+
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
@@ -75,7 +82,7 @@ namespace FEBuilderGBA
         {
             uint pointer = U.atoh(this.TSAANime2List.Text);
             string[] sp;
-            if (!this.TSAAnime.TryGetValue(pointer, out sp))
+            if (!g_TSAAnime.TryGetValue(pointer, out sp))
             {
                 return;
             }
@@ -147,8 +154,7 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             InputFormRef N1_InputFormRef = N1_Init(null);
-            Dictionary<uint, string[]> tsaAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime2_"));
-            foreach (var pair in tsaAnime)
+            foreach (var pair in g_TSAAnime)
             {
                 uint pointer = pair.Key;
                 pointer = U.toOffset(pointer);

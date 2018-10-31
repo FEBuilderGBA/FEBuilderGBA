@@ -15,11 +15,13 @@ namespace FEBuilderGBA
         public ImageRomAnimeForm()
         {
             InitializeComponent();
-            this.ROMAnime = U.LoadTSVResource(U.ConfigDataFilename("romanime_"));
+#if DEBUG
+            ImageRomAnimeForm.PreLoadResource();
+#endif
 
             this.AddressList.BeginUpdate();
             this.AddressList.Items.Clear();
-            foreach (var pair in this.ROMAnime)
+            foreach (var pair in g_ROMAnime)
             {
                 string name = U.ToHexString(pair.Key) + " " + U.at(pair.Value, 6);
                 this.AddressList.Items.Add(name);
@@ -29,7 +31,11 @@ namespace FEBuilderGBA
             U.SetIcon(AnimeExportButton, U.GetShell32Icon(122));
             U.SetIcon(AnimeImportButton, U.GetShell32Icon(45));
         }
-        Dictionary<uint, string[]> ROMAnime;
+        static Dictionary<uint, string[]> g_ROMAnime;
+        public static void PreLoadResource()
+        {
+            g_ROMAnime = U.LoadTSVResource(U.ConfigDataFilename("romanime_"));
+        }
 
         private void ImageRomAnimeForm_Load(object sender, EventArgs e)
         {
@@ -49,7 +55,7 @@ namespace FEBuilderGBA
         {
             uint id = U.atoh(this.AddressList.Text);
             string[] sp;
-            if (!this.ROMAnime.TryGetValue(id, out sp))
+            if (!g_ROMAnime.TryGetValue(id, out sp))
             {
                 this.ImageWidth = 30;
                 this.FramePointer = 0;
@@ -590,8 +596,7 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {
-            Dictionary<uint, string[]>  romAnime = U.LoadTSVResource(U.ConfigDataFilename("romanime_"));
-            foreach (var pair in romAnime)
+            foreach (var pair in g_ROMAnime)
             {
                 string[] sp = pair.Value;
                 int imageWidth = (int)U.atoi(U.at(sp, 0));

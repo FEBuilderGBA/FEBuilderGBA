@@ -39,6 +39,7 @@ namespace FEBuilderGBA
         uint unit_icon_npc_palette_address(); // ユニット(友軍)のパレットの開始位置
         uint unit_icon_enemey_palette_address(); // ユニット(敵軍)のパレットの開始位置
         uint unit_icon_gray_palette_address(); //ユニット(グレー)のパレットの開始位置
+        uint unit_icon_four_palette_address(); // ユニット(4軍))のパレットの開始位置
         uint unit_move_icon_pointer();  // ユニット移動アイコンの開始位置
         uint map_setting_pointer();  // マップ設定の開始位置
         uint map_setting_datasize(); //マップ設定のデータサイズ
@@ -149,6 +150,7 @@ namespace FEBuilderGBA
         uint status_rmenu3_pointer(); // ステータス RMENU3
         uint status_rmenu4_pointer(); // 戦闘予測 RMENU4
         uint status_rmenu5_pointer(); // 戦闘予測 RMENU5
+        uint status_rmenu6_pointer(); // 状況画面 RMENU6
         uint status_param1_pointer(); // ステータス PARAM1
         uint status_param2_pointer(); // ステータス PARAM2
         uint status_param3w_pointer(); // ステータス PARAM3 武器

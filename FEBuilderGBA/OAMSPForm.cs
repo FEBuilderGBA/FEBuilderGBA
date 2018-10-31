@@ -64,6 +64,10 @@ namespace FEBuilderGBA
                     continue;
                 }
                 addr = U.toOffset(addr);
+                if (addr < Program.ROM.RomInfo.compress_image_borderline_address())
+                {
+                    continue;
+                }
 
                 if (alreadyMatch.ContainsKey(addr))
                 {//既に知っている.
@@ -107,7 +111,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                string name = "OAMSP " + pair.Value;
+                string name = "OAMSP_ " + pair.Value;
                 List<Address> listoam12_local = new List<Address>();
                 uint length = CalcLengthAndCheck(addr, name, ref listoam12_local, ref alreadyMatch12);
                 if (U.NOT_FOUND == length)
@@ -134,17 +138,24 @@ namespace FEBuilderGBA
             uint length = (uint)(Program.ROM.Data.Length - 12);
             while (addr < length)
             {
-                byte[] oam = Program.ROM.getBinaryData(addr, 4);
+                byte[] oam = Program.ROM.getBinaryData(addr, 12);
 
                 addr += 12;
                 if (oam[0] == 0 && oam[0 + 1] == 0xFF && oam[0 + 2] == 0xFF && oam[0 + 3] == 0xFF)
                 {//FEditorシリアライズを読み込んだときは別終端がある?
                     break;
                 }
-                if (oam[0] == 0 && oam[1] == 0 && oam[2] == 0 && oam[3] == 0)
-                {//全部nullだともしかして終わり?
+                if (oam[0] == 0 && oam[1] == 0 && oam[2] == 0 && oam[3] == 0 
+                    && oam[4] == 0 && oam[5] == 0 && oam[6] == 0 && oam[7] == 0)
+                {
                     break;
                 }
+
+//                if (oam[0] == 0 && oam[1] == 0 && oam[2] == 0 && oam[3] == 0)
+//                {//全部nullだともしかして終わり?
+//                    Log.Debug(U.ToHexString8(addr) + " " + U.DumpByte(oam));
+//                    break;
+//                }
 
                 if (oam[0 + 2] == 0xFF && oam[0 + 3] == 0xFF)
                 {//2バイト目と3バイト目が FFだったら 別ルーチン

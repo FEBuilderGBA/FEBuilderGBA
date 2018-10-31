@@ -24,6 +24,10 @@ namespace FEBuilderGBA
             this.FilterComboBox.Items.Add(R._("2=武器レベル"));
             this.FilterComboBox.Items.Add(R._("3=戦闘予測1"));
             this.FilterComboBox.Items.Add(R._("4=戦闘予測2"));
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                this.FilterComboBox.Items.Add(R._("5=状況画面"));
+            }
             this.FilterComboBox.EndUpdate();
             FilterComboBox.SelectedIndex = 0;
         }
@@ -186,6 +190,10 @@ namespace FEBuilderGBA
             {
                 this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu5_pointer()));
             }
+            else if (selected == 5)
+            {
+                this.InputFormRef.ReInitPointer((Program.ROM.RomInfo.status_rmenu6_pointer()));
+            }
         }
 
         static void MakeAllDataLengthSub(List<Address> list, uint p,uint pointer,Dictionary<uint, bool> foundDic, uint[] pointerIndexes)
@@ -239,11 +247,16 @@ namespace FEBuilderGBA
                 , Program.ROM.RomInfo.status_rmenu3_pointer()
                 , Program.ROM.RomInfo.status_rmenu4_pointer()
                 , Program.ROM.RomInfo.status_rmenu5_pointer()
+                , Program.ROM.RomInfo.status_rmenu6_pointer()
             };
 
             for (int n = 0; n < addlist.Length; n++)
             {
                 uint pointer = addlist[n];
+                if (pointer == 0)
+                {
+                    continue;
+                }
                 uint p = Program.ROM.p32(pointer + 0);
                 MakeAllDataLengthSub(list, p, pointer, foundDic, pointerIndexes);
             }

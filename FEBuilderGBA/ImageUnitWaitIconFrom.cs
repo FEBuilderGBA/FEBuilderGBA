@@ -137,6 +137,14 @@ namespace FEBuilderGBA
             {//敵軍
                 palette = Program.ROM.RomInfo.unit_icon_enemey_palette_address();
             }
+            else if (palette_type == 4)
+            {//4軍
+                palette = Program.ROM.RomInfo.unit_icon_four_palette_address();
+            }
+            else if (palette_type == 3)
+            {//グレー
+                palette = Program.ROM.RomInfo.unit_icon_gray_palette_address();
+            }
             else 
             {//自軍
                palette = Program.ROM.RomInfo.unit_icon_palette_address();

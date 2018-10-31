@@ -8386,7 +8386,7 @@ r3=X tile position of menu of the right	{U}
 08716FC4	&PALETTE	Something's palette	193	{J}
 086E24B4	&PALETTE	Something's palette	194	{J}
 0872A61C	&PALETTE	Something's palette	195	{J}
-08614CE0	&PALETTE	Something's palette	196	{J}
+08614CE0	&PALETTE16	Something's palette	196	{J}
 085FAA50	&PALETTE	Something's palette	197	{J}
 0860C5E0	&PALETTE	Something's palette	198	{J}
 0861E218	&PALETTE	Something's palette	199	{J}
@@ -8439,7 +8439,7 @@ r3=X tile position of menu of the right	{U}
 086EA3EC	&PALETTE	Something's palette	193	{U}
 086B58DC	&PALETTE	Something's palette	194	{U}
 086FDA44	&PALETTE	Something's palette	195	{U}
-085E8108	&PALETTE	Something's palette	196	{U}
+085E8108	&PALETTE16	Something's palette	196	{U}
 085D0820	&PALETTE	Something's palette	197	{U}
 085DFA08	&PALETTE	Something's palette	198	{U}
 085F1640	&PALETTE	Something's palette	199	{U}
@@ -8715,3 +8715,604 @@ r3=X tile position of menu of the right	{U}
 08A9A5E4	&PALETTE	Something's palette	220	{J}
 08A9A604	&PALETTE	Something's palette	221	{J}
 08694968	&PALETTE	Something's palette	222	{J}
+08592170	&EVENT	Any event function	Mystery	13	{U}
+089A37E8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{U}
+089A3770	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{U}
+08678740	&PALETTE	Something's palette	223	unused	{U}
+08678760	&PALETTE	Something's palette	224	unused	{U}
+08678780	&PALETTE	Something's palette	225	unused	{U}
+086787A0	&PALETTE	Something's palette	226	unused	{U}
+086787C0	&PALETTE	Something's palette	227	unused	{U}
+086787E0	&PALETTE	Something's palette	228	unused	{U}
+08678800	&PALETTE	Something's palette	229	unused	{U}
+08678820	&PALETTE	Something's palette	230	unused	{U}
+08678840	&PALETTE	Something's palette	231	unused	{U}
+08678860	&PALETTE	Something's palette	232	unused	{U}
+08678880	&PALETTE	Something's palette	233	unused	{U}
+086788A0	&PALETTE	Something's palette	234	unused	{U}
+086788C0	&PALETTE	Something's palette	235	unused	{U}
+086788E0	&PALETTE	Something's palette	236	unused	{U}
+08678900	&PALETTE	Something's palette	237	unused	{U}
+086A5318	&PALETTE	Something's palette	223	unused	{J}
+086A5338	&PALETTE	Something's palette	224	unused	{J}
+086A5358	&PALETTE	Something's palette	225	unused	{J}
+086A5378	&PALETTE	Something's palette	226	unused	{J}
+086A5398	&PALETTE	Something's palette	227	unused	{J}
+086A53B8	&PALETTE	Something's palette	228	unused	{J}
+086A53D8	&PALETTE	Something's palette	229	unused	{J}
+086A53F8	&PALETTE	Something's palette	230	unused	{J}
+086A5418	&PALETTE	Something's palette	231	unused	{J}
+086A5438	&PALETTE	Something's palette	232	unused	{J}
+086A5458	&PALETTE	Something's palette	233	unused	{J}
+086A5478	&PALETTE	Something's palette	234	unused	{J}
+086A5498	&PALETTE	Something's palette	235	unused	{J}
+086A54B8	&PALETTE	Something's palette	236	unused	{J}
+086A54D8	&PALETTE	Something's palette	237	unused	{J}
+08678940	&PALETTE	Something's palette	238	unused	{U}
+08678960	&PALETTE	Something's palette	239	unused	{U}
+08678980	&PALETTE	Something's palette	240	unused	{U}
+086789A0	&PALETTE	Something's palette	241	unused	{U}
+086789C0	&PALETTE	Something's palette	242	unused	{U}
+086789E0	&PALETTE	Something's palette	243	unused	{U}
+08678A00	&PALETTE	Something's palette	244	unused	{U}
+08678A20	&PALETTE	Something's palette	245	unused	{U}
+08678A40	&PALETTE	Something's palette	246	unused	{U}
+08678A60	&PALETTE	Something's palette	247	unused	{U}
+08678A80	&PALETTE	Something's palette	248	unused	{U}
+08678AA0	&PALETTE	Something's palette	249	unused	{U}
+08678AC0	&PALETTE	Something's palette	250	unused	{U}
+08678AE0	&PALETTE	Something's palette	251	unused	{U}
+08678B00	&PALETTE	Something's palette	252	unused	{U}
+08678B20	&PALETTE16	Something's palette	253	{U}
+08678D20	&LZ77	Image of something	1	unused	{U}
+086792A4	:08679B03	Unknown	Unused data	1	{U}
+0867EA48	:0867EE03	Unknown	Unused data	2	{U}
+0868CC30	&PALETTE	Something's palette	254	Background color	{U}
+0868CC50	&PALETTE	Something's palette	255	Background color	{U}
+0868CC70	&PALETTE	Something's palette	256	Background color	{U}
+0868CC90	&PALETTE	Something's palette	257	Background color	{U}
+0868CCB0	&PALETTE	Something's palette	258	Background color	{U}
+0868CCD0	&PALETTE	Something's palette	259	Background color	{U}
+0868CCF0	&PALETTE	Something's palette	260	Background color	{U}
+0868CD10	&PALETTE	Something's palette	261	Background color	{U}
+0868CD30	&PALETTE	Something's palette	262	Background color	{U}
+086A5518	&PALETTE	Something's palette	238	unused	{J}
+086A5538	&PALETTE	Something's palette	239	unused	{J}
+086A5558	&PALETTE	Something's palette	240	unused	{J}
+086A5578	&PALETTE	Something's palette	241	unused	{J}
+086A5598	&PALETTE	Something's palette	242	unused	{J}
+086A55B8	&PALETTE	Something's palette	243	unused	{J}
+086A55D8	&PALETTE	Something's palette	244	unused	{J}
+086A55F8	&PALETTE	Something's palette	245	unused	{J}
+086A5618	&PALETTE	Something's palette	246	unused	{J}
+086A5638	&PALETTE	Something's palette	247	unused	{J}
+086A5658	&PALETTE	Something's palette	248	unused	{J}
+086A5678	&PALETTE	Something's palette	249	unused	{J}
+086A5698	&PALETTE	Something's palette	250	unused	{J}
+086A56B8	&PALETTE	Something's palette	251	unused	{J}
+086A56D8	&PALETTE	Something's palette	252	unused	{J}
+086A56F8	&PALETTE	Something's palette	253	{J}
+086A58F8	&LZ77	Image of something	1	unused	{J}
+086A5E7C	:086A66DB	Unknown	Unused data	1	{J}
+086AB620	:086AB9DB	Unknown	Unused data	2	{J}
+086B9808	&PALETTE	Something's palette	254	Background color	{J}
+086B9828	&PALETTE	Something's palette	255	Background color	{J}
+086B9848	&PALETTE	Something's palette	256	Background color	{J}
+086B9868	&PALETTE	Something's palette	257	Background color	{J}
+086B9888	&PALETTE	Something's palette	258	Background color	{J}
+086B98A8	&PALETTE	Something's palette	259	Background color	{J}
+086B98C8	&PALETTE	Something's palette	260	Background color	{J}
+086B98E8	&PALETTE	Something's palette	261	Background color	{J}
+086B9908	&PALETTE	Something's palette	262	Background color	{J}
+085924F8	&PROC	Unused PROC	1	{U}
+08592518	&PROC	Unused PROC	2	{U}
+085BA274	&PROC	Unused PROC	1	{J}
+085BA294	&PROC	Unused PROC	2	{J}
+08599FB4	&ASM_POINTER_ARRAY	UnLZ77Decompress_Inner	{U}
+085C2438	&ASM_POINTER_ARRAY	UnLZ77Decompress_Inner	{J}
+08599F94	&PALETTE	Something's palette	263	{U}
+085C1D10	&PALETTE	Something's palette	263	{U}
+0859A598	&TEXTBATCH	TextBatch6	{U}
+085C2A18	&TEXTBATCH	TextBatch6	{J}
+08A0A9F8	&HEADERTSA	Something's TSA	22	{U}
+08A7DCB8	&HEADERTSA	Something's TSA	22	{J}
+08A20B08	&OAMREGS_ARRAY	Unk OAMREGS	24	{U}
+085D0840	&PALETTE	Something's palette	263	unused	{U}
+085D0860	&PALETTE	Something's palette	264	unused	{U}
+085D0880	&PALETTE	Something's palette	265	unused	{U}
+085D08A0	&PALETTE	Something's palette	266	unused	{U}
+085D08C0	&PALETTE	Something's palette	267	unused	{U}
+085D08E0	&PALETTE	Something's palette	268	unused	{U}
+085D0900	&PALETTE	Something's palette	269	unused	{U}
+085D0920	&PALETTE	Something's palette	270	unused	{U}
+085D0940	&PALETTE	Something's palette	271	unused	{U}
+085D0960	&PALETTE	Something's palette	272	unused	{U}
+085D0980	&PALETTE	Something's palette	273	unused	{U}
+085D09A0	&PALETTE	Something's palette	274	unused	{U}
+085D09C0	&PALETTE	Something's palette	275	unused	{U}
+085D09E0	&PALETTE	Something's palette	276	unused	{U}
+085D0A00	&PALETTE	Something's palette	277	unused	{U}
+085DBB70	&PALETTE	Something's palette	278	{U}
+085D7298	:085D7397	ExcaliburData	details unknown	{U}
+085D7030	:085D70EF	LunaData	details unknown	{U}
+085D88AC	:085D895F	CrimsonEyeData	details unknown	{U}
+085D9154	:085D9243	SRankWeaponEffect	details unknown	{U}
+085D9430	&ASM_POINTER_ARRAY	ROMMagicTable	{U}
+089EDE80	:089EDE97	Boot data	Trap	unused	{U}
+085FAA70	&PALETTE	Something's palette	263	unused	{J}
+085FAA90	&PALETTE	Something's palette	264	unused	{J}
+085FAAB0	&PALETTE	Something's palette	265	unused	{J}
+085FAAD0	&PALETTE	Something's palette	266	unused	{J}
+085FAAF0	&PALETTE	Something's palette	267	unused	{J}
+085FAB10	&PALETTE	Something's palette	268	unused	{J}
+085FAB30	&PALETTE	Something's palette	269	unused	{J}
+085FAB50	&PALETTE	Something's palette	270	unused	{J}
+085FAB70	&PALETTE	Something's palette	271	unused	{J}
+085FAB90	&PALETTE	Something's palette	272	unused	{J}
+085FABB0	&PALETTE	Something's palette	273	unused	{J}
+085FABD0	&PALETTE	Something's palette	274	unused	{J}
+085FABF0	&PALETTE	Something's palette	275	unused	{J}
+085FAC10	&PALETTE	Something's palette	276	unused	{J}
+085FAC30	&PALETTE	Something's palette	277	unused	{J}
+08601530	:0860162F	ExcaliburData	details unknown	{J}
+086012C8	:08601387	LunaData	details unknown	{J}
+08602EFC	:08602FAF	CrimsonEyeData	details unknown	{J}
+086037A4	:08603893	SRankWeaponEffect	details unknown	{J}
+08603B58	&ASM_POINTER_ARRAY	ROMMagicTable	{J}
+08A5FFB8	:08A5FFCF	Boot data	Trap	unused	{J}
+08A59A58	&PALETTE	Something's palette	279	{J}
+08A59A78	&PALETTE	Something's palette	280	{J}
+08A59A98	&PALETTE	Something's palette	281	{J}
+08A59AB8	&PALETTE	Something's palette	282	{J}
+08A59AD8	&LZ77	Image of GameOver	{J}
+08A59E88	&HEADERTSA	Something's TSA	23	{J}
+08A736F0	&PROC	Unused PROC	3	{J}
+08A01638	&PROC	Unused PROC	3	{U}
+08A07AB8	&PALETTE	Something's palette	283	{U}
+08A07AD8	&PALETTE	Something's palette	284	{U}
+08A07AF8	&PALETTE	Something's palette	285	{U}
+08A07B18	&PALETTE	Something's palette	286	{U}
+08A07B38	&PALETTE	Something's palette	287	{U}
+08A07B58	&PALETTE	Something's palette	288	{U}
+08A07B78	&PALETTE	Something's palette	289	{U}
+08A07B98	&PALETTE	Something's palette	290	{U}
+08A07BB8	&PALETTE	Something's palette	291	{U}
+08A07BD8	&PALETTE	Something's palette	292	{U}
+08A07BF8	&PALETTE	Something's palette	293	{U}
+08A07C18	&PALETTE	Something's palette	294	{U}
+08A07C38	&PALETTE	Something's palette	295	{U}
+08A07C58	&PALETTE	Something's palette	296	{U}
+08A07C78	&PALETTE	Something's palette	297	{U}
+08A07C98	&PALETTE	Something's palette	298	{U}
+08A07CB8	&PALETTE	Something's palette	299	{U}
+08A07CD8	&PALETTE	Something's palette	300	{U}
+08A07CF8	&PALETTE	Something's palette	301	{U}
+08A07D18	&PALETTE	Something's palette	302	{U}
+08A07D38	&PALETTE	Something's palette	303	{U}
+08A07D58	&PALETTE	Something's palette	304	{U}
+08A07D78	&PALETTE	Something's palette	305	{U}
+08A07D98	&PALETTE	Something's palette	306	{U}
+08A07DB8	&PALETTE	Something's palette	307	{U}
+08A79B90	&PALETTE	Something's palette	284	{J}
+08A79BB0	&PALETTE	Something's palette	285	{J}
+08A79BD0	&PALETTE	Something's palette	286	{J}
+08A79BF0	&PALETTE	Something's palette	287	{J}
+08A79C10	&PALETTE	Something's palette	288	{J}
+08A79C30	&PALETTE	Something's palette	289	{J}
+08A79C50	&PALETTE	Something's palette	290	{J}
+08A79C70	&PALETTE	Something's palette	291	{J}
+08A79C90	&PALETTE	Something's palette	292	{J}
+08A79CB0	&PALETTE	Something's palette	293	{J}
+08A79CD0	&PALETTE	Something's palette	294	{J}
+08A79CF0	&PALETTE	Something's palette	295	{J}
+08A79D10	&PALETTE	Something's palette	296	{J}
+08A79D30	&PALETTE	Something's palette	297	{J}
+08A79D50	&PALETTE	Something's palette	298	{J}
+08A79D70	&PALETTE	Something's palette	299	{J}
+08A79D90	&PALETTE	Something's palette	300	{J}
+08A79DB0	&PALETTE	Something's palette	301	{J}
+08A79DD0	&PALETTE	Something's palette	302	{J}
+08A79DF0	&PALETTE	Something's palette	303	{J}
+08A79E10	&PALETTE	Something's palette	304	{J}
+08A79E30	&PALETTE	Something's palette	305	{J}
+08A79E50	&PALETTE	Something's palette	306	{J}
+08A79E70	&PALETTE	Something's palette	307	{J}
+089FFF08	&EVENT	SVAL 0x2,0x07	{U}
+089FFF80	&EVENT	SVAL 0x2,0x0B	{U}
+08A00028	&EVENT	SVAL 0x2,0x0D	{U}
+08A00094	&EVENT	SVAL 0x2,0x11	{U}
+08A00130	&EVENT	SVAL 0x2,0x12	{U}
+08A001A0	&EVENT	SVAL 0x2,0x14	{U}
+08A00254	&EVENT	SVAL 0x2,0x1A	{U}
+08A002E4	&EVENT	SVAL 0x2,0x39	{U}
+08A00350	&EVENT	SVAL 0x2,0x4	{U}
+089F1194	&EVENT	Events called from the tutorial Chapter 2	2	{U}
+089F11B8	&EVENT	Events called from the tutorial Chapter 2	3	{U}
+089F0770	&EVENT	Events called from the tutorial 1 chapter	3	{U}
+089AF910	&PALETTE	Something's palette	308	{U}
+089AF930	&PALETTE	Something's palette	309	{U}
+08AA1190	&PALETTE	Something's palette	310	{U}
+08A98DEC	&PALETTE	Something's palette	311	{U}
+08A98E0C	&PALETTE	Something's palette	312	{U}
+08A98E2C	&PALETTE	Something's palette	313	{U}
+08A98E4C	&PALETTE	Something's palette	314	{U}
+08A98E6C	&PALETTE	Something's palette	315	{U}
+085ADC08	&PALETTE	Something's palette	316	{U}
+085ADC28	&PALETTE	Something's palette	317	{U}
+085ADC68	&PALETTE	Something's palette	318	{U}
+085ADC88	&PALETTE	Something's palette	319	{U}
+085ADCA8	&PALETTE	Something's palette	320	{U}
+085ADC68	&PALETTE	Something's palette	321	{U}
+085ADC88	&PALETTE	Something's palette	322	{U}
+085ADCA8	&PALETTE	Something's palette	323	{U}
+085ADCE8	&PALETTE	Something's palette	325	{U}
+085ADD08	&PALETTE	Something's palette	326	{U}
+085ADD28	&PALETTE	Something's palette	327	{U}
+085ADD48	&PALETTE	Something's palette	328	{U}
+085ADD68	&PALETTE	Something's palette	329	{U}
+085ADD88	&PALETTE	Something's palette	330	{U}
+085ADE28	&PALETTE	Something's palette	331	{U}
+085B542C	&PALETTE	Something's palette	331	{U}
+085B62E4	&PALETTE	Something's palette	332	{U}
+085B6304	&PALETTE	Something's palette	333	{U}
+085B6324	&PALETTE	Something's palette	334	{U}
+085B6344	&PALETTE	Something's palette	335	{U}
+085B9264	&PALETTE	Something's palette	336	{U}
+085B9284	&PALETTE	Something's palette	337	{U}
+085B92A4	&PALETTE	Something's palette	338	{U}
+085BA2E0	&PALETTE	Something's palette	339	{U}
+085BA300	&PALETTE	Something's palette	340	{U}
+085BA320	&PALETTE	Something's palette	341	{U}
+085F369C	&PALETTE	Something's palette	342	{U}
+085F371C	&PALETTE	Something's palette	343	{U}
+085F373C	&PALETTE	Something's palette	344	{U}
+085F375C	&PALETTE	Something's palette	345	{U}
+085F377C	&PALETTE	Something's palette	346	{U}
+085F379C	&PALETTE	Something's palette	347	{U}
+085F37BC	&PALETTE	Something's palette	348	{U}
+085F37DC	&PALETTE	Something's palette	349	{U}
+085F37FC	&PALETTE	Something's palette	350	{U}
+085F381C	&PALETTE	Something's palette	351	{U}
+085F383C	&PALETTE	Something's palette	352	{U}
+085F385C	&PALETTE	Something's palette	353	{U}
+08608858	&PALETTE	Something's palette	354	{U}
+08608878	&PALETTE	Something's palette	355	{U}
+08652574	&PALETTE	Something's palette	356	{U}
+08652594	&PALETTE	Something's palette	357	{U}
+086525A4	&PALETTE	Something's palette	358	{U}
+086525C4	&PALETTE	Something's palette	359	{U}
+086525E4	&PALETTE	Something's palette	360	{U}
+08652614	&PALETTE	Something's palette	361	{U}
+08652634	&PALETTE	Something's palette	362	{U}
+08652654	&PALETTE	Something's palette	363	{U}
+08652674	&PALETTE	Something's palette	364	{U}
+08652694	&PALETTE	Something's palette	365	{U}
+086526A4	&PALETTE	Something's palette	366	{U}
+086526C4	&PALETTE	Something's palette	367	{U}
+086526E4	&PALETTE	Something's palette	368	{U}
+08652714	&PALETTE	Something's palette	369	{U}
+08729FDC	&PALETTE	Something's palette	370	{U}
+08729FFC	&PALETTE	Something's palette	371	{U}
+0872A01C	&PALETTE	Something's palette	372	{U}
+0872A03C	&PALETTE	Something's palette	373	{U}
+0872A05C	&PALETTE	Something's palette	374	{U}
+0872A07C	&PALETTE	Something's palette	375	{U}
+0872A09C	&PALETTE	Something's palette	376	{U}
+0872A0BC	&PALETTE	Something's palette	377	{U}
+0872A0DC	&PALETTE	Something's palette	378	{U}
+0872A0FC	&PALETTE	Something's palette	379	{U}
+0872A11C	&PALETTE	Something's palette	380	{U}
+0872A13C	&PALETTE	Something's palette	381	{U}
+0872A15C	&PALETTE	Something's palette	382	{U}
+0872A17C	&PALETTE	Something's palette	383	{U}
+0872A19C	&PALETTE	Something's palette	384	{U}
+0872E64C	&PALETTE	Something's palette	385	{U}
+0872E66C	&PALETTE	Something's palette	386	{U}
+0872E68C	&PALETTE	Something's palette	387	{U}
+0872E6AC	&PALETTE	Something's palette	388	{U}
+0872E6CC	&PALETTE	Something's palette	389	{U}
+0872E6EC	&PALETTE	Something's palette	390	{U}
+0872E70C	&PALETTE	Something's palette	391	{U}
+0872E72C	&PALETTE	Something's palette	392	{U}
+0872E74C	&PALETTE	Something's palette	393	{U}
+0872E76C	&PALETTE	Something's palette	394	{U}
+0872E78C	&PALETTE	Something's palette	395	{U}
+0872E7AC	&PALETTE	Something's palette	396	{U}
+0872E7CC	&PALETTE	Something's palette	397	{U}
+0872FA04	&PALETTE	Something's palette	398	{U}
+0872FA24	&PALETTE	Something's palette	399	{U}
+0872FA44	&PALETTE	Something's palette	400	{U}
+0872FA64	&PALETTE	Something's palette	401	{U}
+087302C4	&PALETTE	Something's palette	402	{U}
+087302E4	&PALETTE	Something's palette	403	{U}
+08730304	&PALETTE	Something's palette	404	{U}
+08731368	&PALETTE	Something's palette	405	{U}
+08731388	&PALETTE	Something's palette	406	{U}
+087313A8	&PALETTE	Something's palette	407	{U}
+08732248	&PALETTE	Something's palette	408	{U}
+08732268	&PALETTE	Something's palette	409	{U}
+08732288	&PALETTE	Something's palette	410	{U}
+087322A8	&PALETTE	Something's palette	411	{U}
+087322C8	&PALETTE	Something's palette	412	{U}
+087322E8	&PALETTE	Something's palette	413	{U}
+08732308	&PALETTE	Something's palette	414	{U}
+08732328	&PALETTE	Something's palette	415	{U}
+08732348	&PALETTE	Something's palette	416	{U}
+08754890	&PALETTE	Something's palette	417	{U}
+087548B0	&PALETTE	Something's palette	418	{U}
+087548D0	&PALETTE	Something's palette	419	{U}
+087548F0	&PALETTE	Something's palette	420	{U}
+089B2728	&PALETTE	Something's palette	421	{U}
+08A0AAEC	&PALETTE	Something's palette	422	{U}
+08A1BD20	&PALETTE	Something's palette	423	{U}
+08A1BD80	&PALETTE	Something's palette	424	{U}
+0859EF80	&PALETTE	Something's palette	425	{U}
+0859EFA0	&PALETTE	Something's palette	426	{U}
+085DD734	&PALETTE	Something's palette	427	{U}
+085DD754	&PALETTE	Something's palette	428	{U}
+085DD774	&PALETTE	Something's palette	429	{U}
+085DD794	&PALETTE	Something's palette	430	{U}
+085DD7B4	&PALETTE	Something's palette	431	{U}
+085DD7D4	&PALETTE	Something's palette	432	{U}
+085DD7F4	&PALETTE	Something's palette	433	{U}
+085DD814	&PALETTE	Something's palette	434	{U}
+085DD834	&PALETTE	Something's palette	435	{U}
+085DD854	&PALETTE	Something's palette	436	{U}
+085DD874	&PALETTE	Something's palette	437	{U}
+085DD894	&PALETTE	Something's palette	438	{U}
+085DD8B4	&PALETTE	Something's palette	439	{U}
+085DD8D4	&PALETTE	Something's palette	440	{U}
+085DD8F4	&PALETTE	Something's palette	441	{U}
+085DD914	&PALETTE	Something's palette	442	{U}
+085DD934	&PALETTE	Something's palette	443	{U}
+085DD954	&PALETTE	Something's palette	444	{U}
+085DD974	&PALETTE	Something's palette	445	{U}
+085DD994	&PALETTE	Something's palette	446	{U}
+085DD9B4	&PALETTE	Something's palette	447	{U}
+085DD9D4	&PALETTE	Something's palette	448	{U}
+085DD9F4	&PALETTE	Something's palette	449	{U}
+085DDA14	&PALETTE	Something's palette	450	{U}
+085DDA34	&PALETTE	Something's palette	451	{U}
+085DDA54	&PALETTE	Something's palette	452	{U}
+085DDA74	&PALETTE	Something's palette	453	{U}
+085DDA94	&PALETTE	Something's palette	454	{U}
+085DDAB4	&PALETTE	Something's palette	455	{U}
+085DDAD4	&PALETTE	Something's palette	456	{U}
+085F36BC	&PALETTE	Something's palette	457	{U}
+085F36DC	&PALETTE	Something's palette	458	{U}
+085F36FC	&PALETTE	Something's palette	459	{U}
+087FF468	&PALETTE	Something's palette	460	{U}
+08803CB0	&PALETTE	Something's palette	461	{U}
+089A2900	&PALETTE	Something's palette	462	{U}
+089AD648	&PALETTE	Something's palette	463	{U}
+089AD668	&PALETTE	Something's palette	464	{U}
+089AD688	&PALETTE	Something's palette	465	{U}
+089AD6A8	&PALETTE	Something's palette	466	{U}
+089ADD2C	&PALETTE	Something's palette	467	{U}
+08A1B174	&PALETTE	Something's palette	468	{U}
+08A30780	&PALETTE	Something's palette	469	{U}
+08A307A0	&PALETTE	Something's palette	470	{U}
+08A307C0	&PALETTE	Something's palette	471	{U}
+08A307E0	&PALETTE	Something's palette	472	{U}
+08B18EF4	&PALETTE	Something's palette	473	{U}
+08B18F14	&PALETTE	Something's palette	474	{U}
+08A40AF4	&PALETTE	Something's palette	475	{U}
+08AADB88	&PALETTE	Something's palette	476	{U}
+086BC804	&PALETTE	Something's palette	502	{U}
+086BC844	&PALETTE	Something's palette	503	{U}
+086BC864	&PALETTE	Something's palette	504	{U}
+085BA340	&LZ77	Image of something	2	{U}
+085BA7B4	&LZ77	Image of something	3	{U}
+085BAC54	&LZ77	Image of something	4	{U}
+08A1FF98	&PALETTE	Something's palette	308	{J}
+08A1FFB8	&PALETTE	Something's palette	309	{J}
+08B2697C	&PALETTE	Something's palette	310	{J}
+08B1E67C	&PALETTE	Something's palette	311	{J}
+08B1E69C	&PALETTE	Something's palette	312	{J}
+08B1E71C	&PALETTE	Something's palette	313	{J}
+085D7EA8	&PALETTE	Something's palette	316	{J}
+085D7EC8	&PALETTE	Something's palette	317	{J}
+085D7F08	&PALETTE	Something's palette	318	{J}
+085D7F28	&PALETTE	Something's palette	319	{J}
+085D7F48	&PALETTE	Something's palette	320	{J}
+085D7F08	&PALETTE	Something's palette	321	{J}
+085D7F28	&PALETTE	Something's palette	322	{J}
+085D7F48	&PALETTE	Something's palette	323	{J}
+085D7F88	&PALETTE	Something's palette	325	{J}
+085D7FA8	&PALETTE	Something's palette	326	{J}
+085D7FC8	&PALETTE	Something's palette	327	{J}
+085D7FE8	&PALETTE	Something's palette	328	{J}
+085D8008	&PALETTE	Something's palette	329	{J}
+085D8028	&PALETTE	Something's palette	330	{J}
+085D80C8	&PALETTE	Something's palette	331	{J}
+085DF60C	&PALETTE	Something's palette	331	{J}
+085E04E4	&PALETTE	Something's palette	333	{J}
+085E0504	&PALETTE	Something's palette	334	{J}
+085E0524	&PALETTE	Something's palette	335	{J}
+085E3444	&PALETTE	Something's palette	336	{J}
+085E3464	&PALETTE	Something's palette	337	{J}
+085E3484	&PALETTE	Something's palette	338	{J}
+085E4510	&PALETTE	Something's palette	339	{J}
+085E4530	&PALETTE	Something's palette	340	{J}
+085E4550	&PALETTE	Something's palette	341	{J}
+08620274	&PALETTE	Something's palette	342	{J}
+086202F4	&PALETTE	Something's palette	343	{J}
+08620314	&PALETTE	Something's palette	344	{J}
+08620334	&PALETTE	Something's palette	345	{J}
+08620354	&PALETTE	Something's palette	346	{J}
+08620374	&PALETTE	Something's palette	347	{J}
+08620394	&PALETTE	Something's palette	348	{J}
+086203B4	&PALETTE	Something's palette	349	{J}
+086203D4	&PALETTE	Something's palette	350	{J}
+086203F4	&PALETTE	Something's palette	351	{J}
+08620414	&PALETTE	Something's palette	352	{J}
+08620434	&PALETTE	Something's palette	353	{J}
+08635430	&PALETTE	Something's palette	354	{J}
+08635450	&PALETTE	Something's palette	355	{J}
+0867F14C	&PALETTE	Something's palette	371	{J}
+0867F16C	&PALETTE	Something's palette	372	{J}
+0867F18C	&PALETTE	Something's palette	373	{J}
+0867F1AC	&PALETTE	Something's palette	374	{J}
+0867F1CC	&PALETTE	Something's palette	375	{J}
+0867F1EC	&PALETTE	Something's palette	376	{J}
+0867F20C	&PALETTE	Something's palette	377	{J}
+08756CB4	&PALETTE	Something's palette	378	{J}
+08756CD4	&PALETTE	Something's palette	379	{J}
+08756CF4	&PALETTE	Something's palette	380	{J}
+08756D14	&PALETTE	Something's palette	381	{J}
+08756D34	&PALETTE	Something's palette	382	{J}
+08756D54	&PALETTE	Something's palette	383	{J}
+08756D74	&PALETTE	Something's palette	384	{J}
+0875B224	&PALETTE	Something's palette	385	{J}
+0875B244	&PALETTE	Something's palette	386	{J}
+0875B264	&PALETTE	Something's palette	387	{J}
+0875B284	&PALETTE	Something's palette	388	{J}
+0875B2A4	&PALETTE	Something's palette	389	{J}
+0875B2C4	&PALETTE	Something's palette	390	{J}
+0875B2E4	&PALETTE	Something's palette	391	{J}
+0875B304	&PALETTE	Something's palette	392	{J}
+0875B324	&PALETTE	Something's palette	393	{J}
+0875B344	&PALETTE	Something's palette	394	{J}
+0875B364	&PALETTE	Something's palette	395	{J}
+0875B384	&PALETTE	Something's palette	396	{J}
+0875B3A4	&PALETTE	Something's palette	397	{J}
+0875C5DC	&PALETTE	Something's palette	398	{J}
+0875C5FC	&PALETTE	Something's palette	399	{J}
+0875C61C	&PALETTE	Something's palette	400	{J}
+0875C63C	&PALETTE	Something's palette	401	{J}
+0875CE9C	&PALETTE	Something's palette	402	{J}
+0875CEBC	&PALETTE	Something's palette	403	{J}
+0875CEDC	&PALETTE	Something's palette	404	{J}
+08760324	&PALETTE	Something's palette	405	{J}
+08760344	&PALETTE	Something's palette	406	{J}
+08760364	&PALETTE	Something's palette	407	{J}
+08761204	&PALETTE	Something's palette	408	{J}
+08761224	&PALETTE	Something's palette	409	{J}
+08761244	&PALETTE	Something's palette	410	{J}
+08761264	&PALETTE	Something's palette	411	{J}
+08761284	&PALETTE	Something's palette	412	{J}
+087612A4	&PALETTE	Something's palette	413	{J}
+087612C4	&PALETTE	Something's palette	414	{J}
+087612E4	&PALETTE	Something's palette	415	{J}
+08761304	&PALETTE	Something's palette	416	{J}
+087A4DC4	&PALETTE	Something's palette	417	{J}
+087A4DE4	&PALETTE	Something's palette	418	{J}
+087A4E04	&PALETTE	Something's palette	419	{J}
+087A4E24	&PALETTE	Something's palette	420	{J}
+08A22DB0	&PALETTE	Something's palette	421	{J}
+08A7DDAC	&PALETTE	Something's palette	422	{J}
+08A987B8	&PALETTE	Something's palette	423	{J}
+08A98818	&PALETTE	Something's palette	424	{J}
+085C74A0	&PALETTE	Something's palette	425	{J}
+085C74C0	&PALETTE	Something's palette	426	{J}
+08607E5C	&PALETTE	Something's palette	427	{J}
+08607E7C	&PALETTE	Something's palette	428	{J}
+08607E9C	&PALETTE	Something's palette	429	{J}
+08607EBC	&PALETTE	Something's palette	430	{J}
+08607EDC	&PALETTE	Something's palette	431	{J}
+08607EFC	&PALETTE	Something's palette	432	{J}
+08607F1C	&PALETTE	Something's palette	433	{J}
+08607F3C	&PALETTE	Something's palette	434	{J}
+08607F5C	&PALETTE	Something's palette	435	{J}
+08607F7C	&PALETTE	Something's palette	436	{J}
+08607F9C	&PALETTE	Something's palette	437	{J}
+08607FBC	&PALETTE	Something's palette	438	{J}
+08607FDC	&PALETTE	Something's palette	439	{J}
+08607FFC	&PALETTE	Something's palette	440	{J}
+0860801C	&PALETTE	Something's palette	441	{J}
+0860803C	&PALETTE	Something's palette	442	{J}
+0860805C	&PALETTE	Something's palette	443	{J}
+0860807C	&PALETTE	Something's palette	444	{J}
+0860809C	&PALETTE	Something's palette	445	{J}
+086080BC	&PALETTE	Something's palette	446	{J}
+086080DC	&PALETTE	Something's palette	447	{J}
+086080FC	&PALETTE	Something's palette	448	{J}
+0860811C	&PALETTE	Something's palette	449	{J}
+0860813C	&PALETTE	Something's palette	450	{J}
+0860815C	&PALETTE	Something's palette	451	{J}
+0860817C	&PALETTE	Something's palette	452	{J}
+0860819C	&PALETTE	Something's palette	453	{J}
+086081BC	&PALETTE	Something's palette	454	{J}
+086081DC	&PALETTE	Something's palette	455	{J}
+086081FC	&PALETTE	Something's palette	456	{J}
+08620294	&PALETTE	Something's palette	457	{J}
+086202B4	&PALETTE	Something's palette	458	{J}
+086202D4	&PALETTE	Something's palette	459	{J}
+088539C0	&PALETTE	Something's palette	460	{J}
+08858208	&PALETTE	Something's palette	461	{J}
+08A12F88	&PALETTE	Something's palette	462	{J}
+08A1DCD0	&PALETTE	Something's palette	463	{J}
+08A1DCF0	&PALETTE	Something's palette	464	{J}
+08A1DD10	&PALETTE	Something's palette	465	{J}
+08A1DD30	&PALETTE	Something's palette	466	{J}
+08A1E3B4	&PALETTE	Something's palette	467	{J}
+08AB15AC	&PALETTE	Something's palette	469	{J}
+08AB15CC	&PALETTE	Something's palette	470	{J}
+08AB15EC	&PALETTE	Something's palette	471	{J}
+08AB160C	&PALETTE	Something's palette	472	{J}
+08BB1F48	&PALETTE	Something's palette	473	{J}
+08BB1F68	&PALETTE	Something's palette	474	{J}
+08AC6CB8	&PALETTE	Something's palette	475	{J}
+08B467AC	&PALETTE	Something's palette	476	{J}
+08AA51BC	&PALETTE	Something's palette	477	{J}
+08AA51DC	&PALETTE	Something's palette	478	{J}
+08AA51FC	&PALETTE	Something's palette	479	{J}
+08AA521C	&PALETTE	Something's palette	480	{J}
+08AA523C	&PALETTE	Something's palette	481	{J}
+08AA525C	&PALETTE	Something's palette	482	{J}
+08AA9E98	&PALETTE	Something's palette	483	{J}
+08AA9EB8	&PALETTE	Something's palette	484	{J}
+08AA9ED8	&PALETTE	Something's palette	485	{J}
+08AAB440	&PALETTE	Something's palette	486	{J}
+08AB8084	&PALETTE	Something's palette	487	{J}
+08B1E6BC	&PALETTE	Something's palette	488	{J}
+08B1E6DC	&PALETTE	Something's palette	489	{J}
+08B1E6FC	&PALETTE	Something's palette	490	{J}
+08BB05BC	&PALETTE	Something's palette	491	{J}
+08BB05DC	&PALETTE	Something's palette	492	{J}
+08BB05FC	&PALETTE	Something's palette	493	{J}
+08BB061C	&PALETTE	Something's palette	494	{J}
+08BB063C	&PALETTE	Something's palette	495	{J}
+08BB065C	&PALETTE	Something's palette	496	{J}
+08BB067C	&PALETTE	Something's palette	497	{J}
+08BB069C	&PALETTE	Something's palette	498	{J}
+08BB06BC	&PALETTE	Something's palette	499	{J}
+08BB06DC	&PALETTE	Something's palette	500	{J}
+08BB06FC	&PALETTE	Something's palette	501	{J}
+086E93DC	&PALETTE	Something's palette	502	{J}
+086E941C	&PALETTE	Something's palette	503	{J}
+086E943C	&PALETTE	Something's palette	504	{J}
+085E4570	&LZ77	Image of something	2	{J}
+085E49E4	&LZ77	Image of something	3	{J}
+085E4570	&LZ77	Image of something	4	{J}
+08A13E70	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	1	{J}
+08A13DF8	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	2	{J}
+085A7F94	&ASM_POINTER_ARRAY	NAZO1 Script Function	{U}
+085D1E9C	&ASM_POINTER_ARRAY	NAZO1 Script Function	{J}
+087A5800	:087A582D	Unknown data	OAMSP Maybe	1	{U}
+087A5A1C	:087A5A49	Unknown data	OAMSP Maybe	2	{U}
+087A64F8	:087A6669	Unknown data	OAMSP Maybe	3	{U}
+087A6684	:087A6DE3	Unknown data	OAMSP Maybe	4	{U}
+087A6F78	:087A725F	Unknown data	OAMSP Maybe	5	{U}
+0868454C	:08684907	Unknown data	OAMSP Maybe	6	{U}
+0868B254	:0868BBED	Unknown data	OAMSP Maybe	7	{U}
+0868FD38	:0868FEB5	Unknown data	OAMSP Maybe	8	{U}
+087F9D58	:087F9D85	Unknown data	OAMSP Maybe	1	{J}
+087F9F74	:087F9FA1	Unknown data	OAMSP Maybe	2	{J}
+087FAA50	:087FABC1	Unknown data	OAMSP Maybe	3	{J}
+087FABDC	:087FB33B	Unknown data	OAMSP Maybe	4	{J}
+087FB4D0	:087FB7B7	Unknown data	OAMSP Maybe	5	{J}
+085AABF0	:085AAE0B	Debug menu	Direct Attack / Indirect Attack	Maybe	{U}
+080DA2D8	&CSTRING	Debug menu string	{U}
+080DA2E4	&CSTRING	Debug menu string	{U}
+085D4C94	:085D4EAF	Debug menu	Direct Attack / Indirect Attack	Maybe	{J}
+080DF2C4	&CSTRING	Debug menu string	{J}
+080DF2D0	&CSTRING	Debug menu string	{J}
+080D9D34	&TEXTBATCH	NetworkMessage	{U}
+080DED10	&TEXTBATCH	NetworkMessage	{J}
+08045CEC	ShowNetworkMessage	{U}
+08045C8C	ShowNetworkMessage	{J}
+080DC760	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{J}
+080D7AB4	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{U}
+081F6D2C	&TEXTBATCH	Apprentice CC serif	{J}
+0820707C	&TEXTBATCH	Apprentice CC serif	{U}

@@ -2055,6 +2055,7 @@ namespace FEBuilderGBA
             ImageGenericEnemyPortraitForm.MakeAllDataLength(list, isPointerOnly);
             MapTerrainFloorLookupTableForm.MakeAllDataLength(list);
             MapTerrainBGLookupTableForm.MakeAllDataLength(list);
+            ArenaEnemyWeaponForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
             if (Program.ROM.RomInfo.version() == 8)
@@ -2291,6 +2292,8 @@ namespace FEBuilderGBA
                 EventBattleTalkFE6Form.MakeTextIDArray(list);
                 SoundRoomFE6Form.MakeTextIDArray(list);
             }
+            if (InputFormRef.DoEvents(null, "MakeTextIDArray 2")) return list;
+            PatchForm.MakeTextIDArray(list);
 
             return list;
         }

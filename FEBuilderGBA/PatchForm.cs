@@ -4731,7 +4731,7 @@ namespace FEBuilderGBA
 
             for (int n = 0; n < address_sp.Length; n++)
             {
-                uint a = U.atoi0x(address_sp[n]);
+                uint a = U.toOffset(U.atoi0x(address_sp[n]));
                 if (!U.isSafetyOffset(a)) continue;
 
                 if (length < 4)
@@ -5247,7 +5247,41 @@ namespace FEBuilderGBA
             string v = U.at(patch.Param, "CANONICAL_SKIP", "0");
             return U.stringbool(v);
         }
-            
+
+        public static void MakeTextIDArray(List<TextID> list)
+        {
+            List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
+            for (int i = 0; i < patchs.Count; i++)
+            {
+                PatchSt patch = patchs[i];
+
+                if (isCanonicalSkip(patch))
+                {
+                    continue;
+                }
+                
+                string type = U.at(patch.Param, "TYPE");
+                if (type != "ADDR")
+                {
+                    continue;
+                }
+                string addressType = U.at(patch.Param, "ADDRESS_TYPE");
+                if (addressType != "TEXT")
+                {
+                    continue;
+                }
+                uint addr = atOffset(patch.Param, "ADDRESS");
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+                string name = U.at(patch.Param, "NAME");
+
+                uint textid = Program.ROM.u16(addr);
+                TextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
+            }
+        }
+ 
 
         //パッチが知っているアドレスをすべて取得します.
         public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly, bool isStoreSymbol)

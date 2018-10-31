@@ -12,13 +12,10 @@ namespace FEBuilderGBA
 {
     public partial class AIScriptCategorySelectForm : Form
     {
-        EventScript AIScriptDic;
         Dictionary<string, string> CategoryDic;
         public AIScriptCategorySelectForm()
         {
             InitializeComponent();
-            this.AIScriptDic = new EventScript(16);
-            this.AIScriptDic.Load(EventScript.EventScriptType.AI);
 
             this.CategoryDic = LoadTSVResource((U.ConfigDataFilename("aiscript_category_")));
             this.CategoryListBox.BeginUpdate();
@@ -47,7 +44,7 @@ namespace FEBuilderGBA
             this.ListBox.BeginUpdate();
             this.ListBox.Items.Clear();
             this.ScriptCahce.Clear();
-            foreach (EventScript.Script script in AIScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.AIScript.Scripts)
             {
                 if (filtered == true)
                 {
@@ -80,7 +77,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            foreach (EventScript.Script script in AIScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.AIScript.Scripts)
             {
                 if (EventScript.makeCommandComboText(script,true) == text)
                 {
@@ -188,7 +185,7 @@ namespace FEBuilderGBA
             this.Infomation.Text = "";
 
             string listtext = lb.Items[hoverindex].ToString();
-            foreach (EventScript.Script script in AIScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.AIScript.Scripts)
             {
                 if (EventScript.makeCommandComboText(script,true) == listtext)
                 {

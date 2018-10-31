@@ -600,10 +600,6 @@ namespace FEBuilderGBA
             //各種スクリプトの辞書を構築.
             this.EventScriptWithoutPatchDic = new EventScript();
             this.EventScriptWithoutPatchDic.Load(FEBuilderGBA.EventScript.EventScriptType.Event_without_Patch);
-            this.AIScriptDic = new EventScript(16);
-            this.AIScriptDic.Load(FEBuilderGBA.EventScript.EventScriptType.AI);
-            this.ProcsScriptDic = new EventScript(8);
-            this.ProcsScriptDic.Load(FEBuilderGBA.EventScript.EventScriptType.Procs);
 
             //念のためパッチのCheckIFをスキャンをやり直す.
             PatchForm.ClearCheckIF();
@@ -1778,8 +1774,6 @@ namespace FEBuilderGBA
         }
 
         EventScript EventScriptWithoutPatchDic;
-        EventScript AIScriptDic;
-        EventScript ProcsScriptDic;
 
         RefCmd Mix(Address address)
         {
@@ -1902,12 +1896,12 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.AISCRIPT)
             {
-                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, AIScriptDic);
+                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.AIScript);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.PROCS)
             {
-                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ProcsScriptDic);
+                EventScript(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, Program.ProcsScript);
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.SONGTRACK)

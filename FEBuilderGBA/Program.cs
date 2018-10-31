@@ -405,6 +405,14 @@ namespace FEBuilderGBA
             //SondEffectリスト
             SongTableForm.PreLoadResource(U.ConfigDataFilename("sound_"));
 
+            //ROM内アニメ
+            ImageRomAnimeForm.PreLoadResource();
+            ImageTSAAnimeForm.PreLoadResource();
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                ImageTSAAnime2Form.PreLoadResource();
+            }
+
             //MODの読込.
             ReLoadMod();
 
@@ -492,6 +500,12 @@ namespace FEBuilderGBA
 
             EventScript = new EventScript();
             EventScript.Load(EventScript.EventScriptType.Event);
+
+            ProcsScript = new EventScript(8);
+            ProcsScript.Load(EventScript.EventScriptType.Procs);
+
+            AIScript = new EventScript(16);
+            AIScript.Load(EventScript.EventScriptType.AI);
         }
         static void ReLoadMod()
         {
@@ -548,7 +562,9 @@ namespace FEBuilderGBA
         public static ROM ROM { get; private set; }
         public static string BaseDirectory { get; private set; }
         public static EventScript EventScript { get; private set; }
-        public static Undo Undo{ get; private set; }
+        public static EventScript ProcsScript { get; private set; }
+        public static EventScript AIScript { get; private set; }
+        public static Undo Undo { get; private set; }
         public static Config Config { get; private set; }
         public static ROMUpdateWatcher UpdateWatcher { get; private set; }
         public static FETextEncode FETextEncoder { get; private set; }

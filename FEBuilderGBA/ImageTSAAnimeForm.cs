@@ -14,13 +14,15 @@ namespace FEBuilderGBA
         public ImageTSAAnimeForm()
         {
             InitializeComponent();
-            this.TSAAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime_"));
+#if DEBUG
+            ImageTSAAnimeForm.PreLoadResource();
+#endif
 
             this.InputFormRef = Init(this);
 
             this.TSAANimeList.BeginUpdate();
             this.TSAANimeList.Items.Clear();
-            foreach (var pair in this.TSAAnime)
+            foreach (var pair in g_TSAAnime)
             {
                 string name = U.ToHexString(pair.Key) + " " + U.at(pair.Value, 1);
                 this.TSAANimeList.Items.Add(name);
@@ -30,7 +32,12 @@ namespace FEBuilderGBA
             U.SetIcon(ExportButton, U.GetShell32Icon(122));
             U.SetIcon(ImportButton, U.GetShell32Icon(45));
         }
-        Dictionary<uint, string[]> TSAAnime;
+        static Dictionary<uint, string[]> g_TSAAnime;
+        public static void PreLoadResource()
+        {
+            g_TSAAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime_"));
+        }
+
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
@@ -59,7 +66,7 @@ namespace FEBuilderGBA
         {
             uint pointer = U.atoh(this.TSAANimeList.Text);
             string[] sp;
-            if (!this.TSAAnime.TryGetValue(pointer, out sp))
+            if (!g_TSAAnime.TryGetValue(pointer, out sp))
             {
                 return;
             }
@@ -187,8 +194,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {
             InputFormRef InputFormRef = Init(null);
-            Dictionary<uint, string[]>  tsaAnime = U.LoadTSVResource(U.ConfigDataFilename("tsaanime_"));
-            foreach (var pair in tsaAnime)
+            foreach (var pair in g_TSAAnime)
             {
                 uint pointer = pair.Key;
                 pointer = U.toOffset(pointer);

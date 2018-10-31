@@ -12,15 +12,11 @@ namespace FEBuilderGBA
 {
     public partial class ProcsScriptCategorySelectForm : Form
     {
-        EventScript ProcsScriptDic;
         Dictionary<string, string> CategoryDic;
         public ProcsScriptCategorySelectForm()
         {
             InitializeComponent();
             U.AddCancelButton(this);
-
-            this.ProcsScriptDic = new EventScript(8);
-            this.ProcsScriptDic.Load(EventScript.EventScriptType.Procs);
 
             this.CategoryDic = LoadTSVResource((U.ConfigDataFilename("6c_script_category_")));
             this.CategoryListBox.BeginUpdate();
@@ -51,7 +47,7 @@ namespace FEBuilderGBA
             this.ListBox.BeginUpdate();
             this.ListBox.Items.Clear();
             this.ScriptCahce.Clear();
-            foreach (EventScript.Script script in this.ProcsScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.ProcsScript.Scripts)
             {
                 if (filtered == true)
                 {
@@ -84,7 +80,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            foreach (EventScript.Script script in this.ProcsScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.ProcsScript.Scripts)
             {
                 if (EventScript.makeCommandComboText(script,true) == text)
                 {
@@ -191,7 +187,7 @@ namespace FEBuilderGBA
             this.Infomation.Text = "";
 
             string listtext = lb.Items[hoverindex].ToString();
-            foreach (EventScript.Script script in this.ProcsScriptDic.Scripts)
+            foreach (EventScript.Script script in Program.ProcsScript.Scripts)
             {
                 if (EventScript.makeCommandComboText(script,true) == listtext)
                 {

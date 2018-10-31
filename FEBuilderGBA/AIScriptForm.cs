@@ -19,8 +19,6 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             Popup = new EventScriptPopupUserControl();
-            this.AIScriptDic = new EventScript(16);
-            this.AIScriptDic.Load(EventScript.EventScriptType.AI);
             this.AIAsm = new List<EventScript.OneCode>();
 
             this.Script.OwnerDraw(Draw, DrawMode.OwnerDrawVariable, false);
@@ -93,7 +91,6 @@ namespace FEBuilderGBA
             }
         }
         
-        EventScript AIScriptDic;
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
@@ -402,7 +399,7 @@ namespace FEBuilderGBA
             string hint = this.ScriptCodeName.Text;
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.AIScriptDic.DisAseemble(selectedByteData, 0, hint);
+            EventScript.OneCode code = Program.AIScript.DisAseemble(selectedByteData, 0, hint);
 
             //命令を選択.
             this.ScriptCodeName.Text = EventScript.makeCommandComboText(code.Script,false);
@@ -454,7 +451,7 @@ namespace FEBuilderGBA
             string hint = this.ScriptCodeName.Text;
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.AIScriptDic.DisAseemble(selectedByteData, 0, hint);
+            EventScript.OneCode code = Program.AIScript.DisAseemble(selectedByteData, 0, hint);
 
             Control senderobject = ((Control)sender);
 
@@ -909,7 +906,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                EventScript.OneCode code = this.AIScriptDic.DisAseemble(bin, 0);
+                EventScript.OneCode code = Program.AIScript.DisAseemble(bin, 0);
                 if (insertPoint <= -1)
                 {//末尾に追加.
                     this.AIAsm.Add(code);
@@ -1146,7 +1143,7 @@ namespace FEBuilderGBA
             byte[] selectedByteData = U.convertStringDumpToByte(this.ASMTextBox.Text);
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.AIScriptDic.DisAseemble(selectedByteData, 0);
+            EventScript.OneCode code = Program.AIScript.DisAseemble(selectedByteData, 0);
             code.Comment = this.CommentTextBox.Text;
 
             //選択されているコードを入れ替える.
@@ -1193,7 +1190,7 @@ namespace FEBuilderGBA
             byte[] selectedByteData = U.convertStringDumpToByte(this.ASMTextBox.Text);
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.AIScriptDic.DisAseemble(selectedByteData, 0);
+            EventScript.OneCode code = Program.AIScript.DisAseemble(selectedByteData, 0);
             code.Comment = this.CommentTextBox.Text;
 
             int selected;
@@ -1441,7 +1438,7 @@ namespace FEBuilderGBA
             uint limit = Math.Min(addr + bytecount, (uint)Program.ROM.Data.Length);
             while (addr < limit)
             {
-                EventScript.OneCode code = AIScriptDic.DisAseemble(Program.ROM.Data, addr);
+                EventScript.OneCode code = Program.AIScript.DisAseemble(Program.ROM.Data, addr);
                 this.AIAsm.Add(code);
 
                 addr += (uint)code.Script.Size;

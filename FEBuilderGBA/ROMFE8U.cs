@@ -38,6 +38,7 @@ namespace FEBuilderGBA
         public uint unit_icon_enemey_palette_address() { return 0x59EE40; } // ユニット(敵軍)のパレットのアドレス
         public uint unit_icon_npc_palette_address() { return 0x59EE60; } // ユニット(友軍)のパレットのアドレス
         public uint unit_icon_gray_palette_address() { return 0x59EE80; } // ユニット(グレー)のパレットのアドレス
+        public uint unit_icon_four_palette_address() { return 0x59EEA0; } // ユニット(4軍))のパレットの開始位置
         public uint unit_move_icon_pointer() { return 0x079584; } // ユニット移動アイコンの開始位置
         public uint map_setting_pointer() { return 0x0B5F98; }  // マップ設定の開始位置
         public uint map_setting_datasize() { return 148; } //マップ設定のデータサイズ
@@ -150,6 +151,7 @@ namespace FEBuilderGBA
         public uint status_rmenu3_pointer() { return 0x889F8; } // ステータス RMENU3
         public uint status_rmenu4_pointer() { return 0x37450; } // 戦闘予測 RMENU4
         public uint status_rmenu5_pointer() { return 0x37468; } // 戦闘予測 RMENU5
+        public uint status_rmenu6_pointer() { return 0xA01CE0; } // 状況画面 RMENU6
         public uint status_param1_pointer() { return 0x871BC; } // ステータス PARAM1
         public uint status_param2_pointer() { return 0x874F0; } // ステータス PARAM2
         public uint status_param3w_pointer() { return 0x0; } // ステータス PARAM3 武器 海外版には"剣"みたいな武器の属性表示がありません

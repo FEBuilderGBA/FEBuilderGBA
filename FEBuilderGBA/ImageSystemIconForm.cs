@@ -104,11 +104,15 @@ namespace FEBuilderGBA
             unit_icon_Picture.Image = DrawUnits(0);
             unit_icon_enemy_Picture.Image = DrawUnits(2);
             unit_icon_npc_Picture.Image = DrawUnits(1);
+            unit_icon_four_Picture.Image = DrawUnits(4);
+            unit_icon_gray_Picture.Image = DrawUnits(3);
             item_icon_Picture.Image = DrawItemIcons();
 
             unit_icon_PALETTE.Value = Program.ROM.RomInfo.unit_icon_palette_address();
             unit_icon_enemy_PALETTE.Value = Program.ROM.RomInfo.unit_icon_enemey_palette_address();
             unit_icon_npc_PALETTE.Value = Program.ROM.RomInfo.unit_icon_npc_palette_address();
+            unit_icon_four_PALETTE.Value = Program.ROM.RomInfo.unit_icon_four_palette_address();
+            unit_icon_gray_PALETTE.Value = Program.ROM.RomInfo.unit_icon_gray_palette_address();
             item_icon_PALETTE.Value = Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer());
         }
 
@@ -204,6 +208,17 @@ namespace FEBuilderGBA
             ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename(this, "unit_icon_npc"));
         }
 
+        private void unit_icon_four_Export_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = DrawUnits(4);
+            ImageFormRef.ExportImage(this, bitmap, InputFormRef.MakeSaveImageFilename(this, "unit_icon_four"));
+        }
+        private void unit_icon_gray_Export_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = DrawUnits(3);
+            ImageFormRef.ExportImage(this, bitmap, InputFormRef.MakeSaveImageFilename(this, "unit_icon_gray"));
+        }
+
         private void icon_palette_Export_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = DrawItemIcons();
@@ -248,6 +263,14 @@ namespace FEBuilderGBA
         private void unit_icon_npc_Import_Click(object sender, EventArgs e)
         {
             Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_npc_palette_address());
+        }
+        private void unit_icon_four_Import_Click(object sender, EventArgs e)
+        {
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_four_palette_address());
+        }
+        private void unit_icon_gray_Import_Click(object sender, EventArgs e)
+        {
+            Import_Palette_By_Address(Program.ROM.RomInfo.unit_icon_gray_palette_address());
         }
 
         private void icon_palette_Import_Click(object sender, EventArgs e)
@@ -743,6 +766,12 @@ namespace FEBuilderGBA
                 , U.NOT_FOUND
                 , "unit_icon_gray pal"
                 , Address.DataTypeEnum.PAL);
+            palette = (Program.ROM.RomInfo.unit_icon_four_palette_address());
+            FEBuilderGBA.Address.AddAddress(list, palette
+                , 0x20
+                , U.NOT_FOUND
+                , "unit_icon_for pal"
+                , Address.DataTypeEnum.PAL);
 
             if (Program.ROM.RomInfo.version() >= 7)
             {
@@ -873,6 +902,8 @@ namespace FEBuilderGBA
             ImageSystemAreaForm f = (ImageSystemAreaForm)InputFormRef.JumpForm<ImageSystemAreaForm>();
             f.JumpToAddr((uint)systemarea_staff_gradation_palette.Value);
         }
+
+
 
     }
 }

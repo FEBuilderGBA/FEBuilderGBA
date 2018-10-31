@@ -707,6 +707,33 @@ namespace FEBuilderGBA
             return addr - startAddr;
         }
 
+        uint ScanNazo8DataPointerTable(uint pointer, string prefix, ROM rom)
+        {
+            uint startAddr = U.toOffset(pointer);
+            uint addr = startAddr;
+            
+            for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
+            {
+                uint d = Program.ROM.u32(addr);
+                if (!U.isSafetyPointer(d))
+                {
+                    break;
+                }
+
+                if (this.AsmMap.ContainsKey(d))
+                {
+                    continue;
+                }
+
+                AsmMapSt p = new AsmMapSt();
+                p.Length = 8;
+                p.Name = prefix + " NAZO8 " + U.ToHexString(i);
+
+                this.AsmMap[d] = p;
+            }
+            return addr - startAddr;
+        }
+
         uint ScanSOUND85COMMANDPointerTable(uint pointer,string prefix, ROM rom)
         {
             uint startAddr = U.toOffset(pointer);
@@ -848,7 +875,19 @@ namespace FEBuilderGBA
             {
                 p.Length = ScanASMPointerTable(pointer, p.Name, rom);
             }
-         
+            else if (type == "PROC")
+            {
+                uint length = ProcsScriptForm.CalcLengthAndCheck(U.toOffset(pointer));
+                if (length != U.NOT_FOUND)
+                {
+                    p.Length = length;
+                }
+            }
+            else if (type == "NAZO8_DATA_POINTER_ARRAY")
+            {
+                p.Length = ScanNazo8DataPointerTable(pointer, p.Name, rom);
+            }
+        
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {

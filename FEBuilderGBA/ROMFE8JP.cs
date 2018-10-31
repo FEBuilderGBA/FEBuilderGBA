@@ -38,6 +38,7 @@ namespace FEBuilderGBA
         public uint unit_icon_enemey_palette_address() { return 0x5c7360; } // ユニット(敵軍)のパレットのアドレス
         public uint unit_icon_npc_palette_address() { return 0x5c7380; } // ユニット(友軍)のパレットのアドレス
         public uint unit_icon_gray_palette_address() { return 0x5c73A0; } // ユニット(グレー))のパレットの開始位置
+        public uint unit_icon_four_palette_address() { return 0x5c73C0; } // ユニット(4軍))のパレットの開始位置
 
         public uint unit_move_icon_pointer() { return 0x07B998; } // ユニット移動アイコンの開始位置
         public uint map_setting_pointer() { return 0x0BAB1C; }  // マップ設定の開始位置
@@ -151,6 +152,7 @@ namespace FEBuilderGBA
         public uint status_rmenu3_pointer() { return 0x8ac84; } // ステータス RMENU3
         public uint status_rmenu4_pointer() { return 0x37510; } // 戦闘予測 RMENU4
         public uint status_rmenu5_pointer() { return 0x37528; } // 戦闘予測 RMENU5
+        public uint status_rmenu6_pointer() { return 0xA73DF8; } // 状況画面 RMENU6
         public uint status_param1_pointer() { return 0x089454; } // ステータス PARAM1
         public uint status_param2_pointer() { return 0x089758; } // ステータス PARAM2
         public uint status_param3w_pointer() { return 0x089B54; } // ステータス PARAM3 武器

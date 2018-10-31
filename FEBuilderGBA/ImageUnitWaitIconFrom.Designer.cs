@@ -287,7 +287,9 @@
             this.X_PALETTE.Items.AddRange(new object[] {
             "0=自軍",
             "1=友軍",
-            "2=敵軍"});
+            "2=敵軍",
+            "3=グレー",
+            "4=4軍"});
             this.X_PALETTE.Location = new System.Drawing.Point(728, 187);
             this.X_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.X_PALETTE.Name = "X_PALETTE";

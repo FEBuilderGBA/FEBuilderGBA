@@ -3274,6 +3274,9 @@ System Palette
 :画像からパレット読込
 Import Palette from Image
 
+:4軍
+Fourth
+
 :システムメニュー
 System Menu
 
@@ -3330,6 +3333,12 @@ Define the animation when the unit moves.\r\nIn GBAFE, the value of ClassID is t
 
 :2=敵軍
 2=Enemy
+
+:3=グレー
+3=gray
+
+:4=4軍
+4=Fourth
 
 :AP読込
 Import AP
@@ -9243,6 +9252,9 @@ String Pointer
 
 :4=戦闘予測2
 4=Battle Forecast 2
+
+:5=状況画面
+5=Status screen
 
 :上 RMenuPointer
 Up RMenu Pointer

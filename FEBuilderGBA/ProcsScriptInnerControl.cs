@@ -120,7 +120,7 @@ namespace FEBuilderGBA
             string hint = this.ScriptCodeName.Text;
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(selectedByteData, 0, hint);
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(selectedByteData, 0, hint);
 
             //命令を選択.
             this.ScriptCodeName.Text = EventScript.makeCommandComboText(code.Script, false);
@@ -173,7 +173,7 @@ namespace FEBuilderGBA
             string hint = this.ScriptCodeName.Text;
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(selectedByteData, 0, hint);
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(selectedByteData, 0, hint);
 
             Control senderobject = ((Control)sender);
 
@@ -512,7 +512,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(bin, 0);
+                EventScript.OneCode code = Program.ProcsScript.DisAseemble(bin, 0);
                 if (insertPoint <= -1)
                 {//末尾に追加.
                     this.ProcsScript.Add(code);
@@ -751,7 +751,7 @@ namespace FEBuilderGBA
             byte[] selectedByteData = U.convertStringDumpToByte(this.ASMTextBox.Text);
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(selectedByteData, 0);
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(selectedByteData, 0);
             code.Comment = this.CommentTextBox.Text;
 
             //選択されているコードを入れ替える.
@@ -796,7 +796,7 @@ namespace FEBuilderGBA
             byte[] selectedByteData = U.convertStringDumpToByte(this.ASMTextBox.Text);
 
             //バイト列をイベント命令としてDisassembler.
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(selectedByteData, 0);
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(selectedByteData, 0);
             code.Comment = this.CommentTextBox.Text;
 
             int selected;
@@ -1042,7 +1042,7 @@ namespace FEBuilderGBA
 
             while (addr < limit)
             {
-                EventScript.OneCode code = ProcsScriptDic.DisAseemble(Program.ROM.Data, addr);
+                EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, addr);
                 this.ProcsScript.Add(code);
                 addr += (uint)code.Script.Size;
             }
@@ -1108,11 +1108,9 @@ namespace FEBuilderGBA
         }
         public EventHandler AddressListExpandsEvent;
 
-        EventScript ProcsScriptDic;
         ToolTipEx ToolTip;
-        public void Init(EventScript procsScriptDic,ToolTipEx toolTip, KeyEventHandler parentFormKeydownfunc)
+        public void Init(ToolTipEx toolTip, KeyEventHandler parentFormKeydownfunc)
         {
-            this.ProcsScriptDic = procsScriptDic;
             this.ToolTip = toolTip;
             for (int i = 0; i < 2; i++)
             {

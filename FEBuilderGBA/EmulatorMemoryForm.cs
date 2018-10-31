@@ -117,9 +117,6 @@ namespace FEBuilderGBA
         }
         void InitProcs()
         {
-            this.ProcsScriptDic = new EventScript(8);
-            this.ProcsScriptDic.Load(EventScript.EventScriptType.Procs);
-
             this.ProcsTree = new List<ProcsData>();
             this.ProcsListBox.OwnerDraw(DrawProcs, DrawMode.OwnerDrawFixed, false);
             this.ProcsListBox.ItemHeight = 22;
@@ -497,7 +494,6 @@ namespace FEBuilderGBA
             }
             return name;
         }
-        EventScript ProcsScriptDic;
         string GetCursolProcCode(uint procHeaderP, uint startCode)
         {
             uint cursolP = Program.RAM.u32(procHeaderP + 0x4);
@@ -505,7 +501,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(Program.ROM.Data, U.toOffset(cursolP));
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, U.toOffset(cursolP));
             return EventScript.makeCommandComboText(code.Script, false);
         }
 
@@ -772,7 +768,7 @@ namespace FEBuilderGBA
                 addr = pd.ROMAddr;
             }
 
-            EventScript.OneCode code = this.ProcsScriptDic.DisAseemble(Program.ROM.Data,U.toOffset(addr));
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, U.toOffset(addr));
             return EventScriptForm.DrawCode(lb, g, listbounds, isWithDraw, code);
         }
         private Size DrawMemorySlot(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)

@@ -16,9 +16,6 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            this.ProcsScriptDic = new EventScript(8);
-            this.ProcsScriptDic.Load(EventScript.EventScriptType.Procs);
-
             this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed, true);
 
         }
@@ -86,9 +83,6 @@ namespace FEBuilderGBA
             return "";
         }
         
-        EventScript ProcsScriptDic;
-
-
         //全データの取得
         static string Get6CName2(uint addr, uint length, string hint, string hint2)
         {
@@ -524,7 +518,7 @@ namespace FEBuilderGBA
 
             ProcsScriptInnerControl f = new ProcsScriptInnerControl();
             InputFormRef.InitControl(f, this.ToolTip);
-            f.Init(this.ProcsScriptDic ,this.ToolTip, this.ProcsScriptForm_KeyDown);
+            f.Init(this.ToolTip, this.ProcsScriptForm_KeyDown);
             f.JumpTo(addr, event_current_addr);
             if (addressListExpandsEvent != null)
             {
