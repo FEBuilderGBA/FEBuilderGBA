@@ -6308,7 +6308,7 @@ namespace FEBuilderGBA
             ExportEmbedFunction(patch, mappingSRCEmbedFunction);
 
             string update_method = U.at(patch.Param, "UPDATE_METHOD");
-            if (update_method == "SKILL")
+            if (update_method == "SKILLSYSTEM")
             {
                 string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
                 string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
@@ -6324,7 +6324,7 @@ namespace FEBuilderGBA
             )
         {
             string update_method = U.at(patch.Param, "UPDATE_METHOD");
-            if (update_method == "SKILL")
+            if (update_method == "SKILLSYSTEM")
             {
                 string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
                 string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
@@ -6332,6 +6332,8 @@ namespace FEBuilderGBA
                 SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
                 SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+
+                SkillConfigSkillSystemForm.FixWeaponLockEx();
             }
 
             ExportEmbedFunction(patch, mappingDESTEmbedFunction);

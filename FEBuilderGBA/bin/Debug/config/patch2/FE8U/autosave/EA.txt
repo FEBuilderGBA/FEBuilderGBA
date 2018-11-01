@@ -1,0 +1,81 @@
+PUSH
+
+//ORG	0x015534  //J
+ORG 0x015510      //U
+SHORT	$481C	//ldr	r0, [$080155a8]
+
+//ORG	0x015560
+ORG	0x01553C
+//WORD	$0203A954
+WORD $0203A958
+
+//ORG	0x015518
+ORG	0x0154F4
+#incbin "autosave2.bin"
+
+//オートセーブ実装部
+//ORG 0x08F384
+ORG 0x08D088
+#incbin "0008F384.bin"
+
+//ORG 0x0AA460
+ORG 0x0A5A48
+#incbin "000AA460.bin"
+
+//ORG 0x0AA46E
+ORG 0x0A5A56
+#incbin "000AA46E.bin"
+
+//ORG 0x0AA4AA
+ORG 0x0A5A92
+#incbin "000AA4AA.bin"
+
+//ORG 0x0AA4B6
+ORG 0x0A5A9E
+#incbin "000AA4B6.bin"
+
+//ORG 0x0AA4C6
+ORG 0xA5AAE
+#incbin "000AA4C6.bin"
+
+//ORG 0x0AA4DC
+ORG 0xA5AC4
+#incbin "000AA4DC.bin"
+
+//ORG 0x0AA4EC
+ORG 0xA5AD4
+#incbin "000AA4EC.bin"
+
+//ORG 0x0AA502
+ORG 0x0A5AEA
+#incbin "000AA502.bin"
+
+//ORG 0x0AA51A
+ORG 0x0A5B02
+#incbin "000AA51A.bin"
+
+//       aa5e4
+//ORG 0x0AA5D8  !!
+ORG 0x0A5BC0
+#incbin "000AA5D8.bin"
+
+//ORG 0x0BA8EC
+ORG 0x0B5ED4
+#incbin "000BA8EC.bin"
+
+//地形ウィンドウの設定をオートセーブに変更する
+//ORG 0x0ED855
+ORG 0xE883C
+#incbin "AutoSaveName_Text_91.bin"
+
+//ORG 0x0EDA04
+ORG 0x0E896A
+#incbin "AutoSaveName_Text_AB.bin"
+
+//アイコン GBAのアイコン
+//ORG 0xAAF750
+ORG 0xA2E9EC
+byte $12;
+
+
+POP

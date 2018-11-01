@@ -1,0 +1,50 @@
+@thumb
+@org	$080aa460
+	b	$080aa5d8
+	
+@org	$080aa46e
+	ldr	r4, [$080aa778+4]	;;$000aa5d8
+	
+@org	$080aa4aa
+	ldr	r0, [$080aa77c+4]	;;$000aa5dc
+	
+@org	$080aa4b6
+	ldr	r5, [addressA+4]	;;$000aa5e0
+	
+@org	$080aa4c6
+	ldr	r6, [$080aa780+4]	;;$000aa5e4
+	
+@org	$080aa4dc
+	ldr	r4, [addressA]	;;$000aa5e0
+	
+@org	$080aa4de
+	ldr	r2, [addressB+4]	;;$000aa5e8
+	
+@org	$080aa4ec
+	ldr	r6, [$080aa788]	;;$000aa5ec
+	
+@org	$080aa502
+	ldr	r6, [$080aa790+4]	;;($000aa5f0)
+	
+@org	$080aa51a
+	ldr	r0, [addressA+4]	;;$000aa5e0
+	
+@org	$080aa5d8
+	ldr	r3, [address]
+	ldrb	r3, [r3, #0]
+	lsl	r3, r3, #30
+	lsr	r3, r3, #31
+	beq	save
+	bx	lr
+save
+	push	{r4, r5, r6, r7, lr}
+	b	$080aa462
+address
+	@dcd	$0202BD2C
+addressA
+	@dcd	$02020188
+addressB
+	@dcd	$00000a5c
+	
+@org	$080ba8ea
+	bl	save

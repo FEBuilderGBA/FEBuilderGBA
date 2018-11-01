@@ -9316,3 +9316,43 @@ r3=X tile position of menu of the right	{U}
 080D7AB4	&NAZO8_DATA_POINTER_ARRAY	nazo8 table	3	{U}
 081F6D2C	&TEXTBATCH	Apprentice CC serif	{J}
 0820707C	&TEXTBATCH	Apprentice CC serif	{U}
+080D779C	&CSTRING	Hex	{U}
+080D74D0	&CSTRING	Build time	{U}
+080D74EC	&CSTRING	Release year	{U}
+080D74F4	:080D7503	Mysterious data 16 bytes	{U}
+080D7504	:080D751B	Mysterious data 18 bytes	{U}
+080DC3DC	&CSTRING	Hex	{J}
+080DC110	&CSTRING	Build time	{J}
+080DC12C	&CSTRING	Release year	{J}
+080DC134	:080DC143	Mysterious data 16 bytes	{J}
+080DC144	:080DC157	Mysterious data 18 bytes	{J}
+080D8740	:080D9D33	Mystery data	2	{U}
+080DD41C	:080DED0F	Mystery data	2	{J}
+080DFA2C	&LZ77	Picture of flame picture below	unused	{U}
+080E043C	&LZ77	TSA of the image of the flame picture below	unused	{U}
+080E041C	&PALETTE	Flame picture palette on the bottom	unused	{U}
+080E05F8	&LZ77	A flaming fire	unused	{U}
+080E1184	&LZ77	TSA of burning flame	unused	{U}
+080E1164	&PALETTE	Burning flame palette	{U}
+085B63A4	&LZ77	Image for palette test	unused	{U}
+080E4E0C	&LZ77	Picture of flame picture below	unused	{J}
+080E581C	&LZ77	TSA of the image of the flame picture below	unused	{J}
+080E57FC	&PALETTE	Flame picture palette on the bottom	unused	{J}
+080E59D8	&LZ77	A flaming fire	unused	{J}
+080E6564	&LZ77	TSA of burning flame	unused	{J}
+080E6544	&PALETTE	Burning flame palette	{J}
+085E0584	&LZ77	Image for palette test	unused	{J}
+08673168	:08674027	Unknown data	OAMSP Maybe	9	{U}
+08727014	&PALETTE	Something's palette	505	{U}
+08727034	&PALETTE	Something's palette	506	{U}
+08727054	&PALETTE	Something's palette	507	{U}
+08727074	&PALETTE	Something's palette	508	{U}
+0868DF7C	&PALETTE	Something's palette	509	{U}
+086852B8	&PALETTE	Something's palette	510	{U}
+0869FD40	:086A0BFF	Unknown data	OAMSP Maybe	9	{J}
+08753BEC	&PALETTE	Something's palette	505	{J}
+08753C0C	&PALETTE	Something's palette	506	{J}
+08753C2C	&PALETTE	Something's palette	507	{J}
+08753C4C	&PALETTE	Something's palette	508	{J}
+086BAB54	&PALETTE	Something's palette	509	{J}
+086B1E90	&PALETTE	Something's palette	510	{J}
