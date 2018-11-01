@@ -1228,6 +1228,18 @@ namespace FEBuilderGBA
             MainFormUtil.OpenURL(MainFormUtil.GetNecessaryProgramURL());
         }
 
+        //利用しているエミュレータの種類を知りたいので、名前を取得する
+        public static string GetEmulatorNameOnly()
+        {
+            //エミュレータの名前
+            string emu = Program.Config.at("emulator");
+            if (emu == "")
+            {
+                return "";
+            }
+            return Path.GetFileName(emu);
+        }
+
         void MakeExplainFunctions()
         {
             explain_func_rom_extends.AccessibleDescription = R._("可変長データを更新した時に、元のデータより長くなってしまったときに、\r\n自動的にリポイントするかを決定します。");

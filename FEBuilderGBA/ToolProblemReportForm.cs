@@ -176,8 +176,6 @@ namespace FEBuilderGBA
 
                 //現在のROMのUPSデータの回収
                 CollectUPSsCurrentROM(tempdir.Dir, s);
-                //保存していないデータが存在する場合 そのデータのupsも作る
-                CollectUPSsLastROM(tempdir.Dir, s);
 
                 //動作しないUPSと動作するUPSデータの回収
                 CollectUPSs(tempdir.Dir,s);
@@ -230,6 +228,11 @@ namespace FEBuilderGBA
 
         void MakeUPS(string tempdir, byte[] s, string targetFilename)
         {
+            string filename_only = Path.GetFileName(targetFilename);
+            if (filename_only.IndexOf(".backup.") <= -1)
+            {
+                return;
+            }
             InputFormRef.DoEvents(this, "=>" + Path.GetFileName(targetFilename));
 
             string orignalFilename = OrignalFilename.Text;
@@ -244,7 +247,7 @@ namespace FEBuilderGBA
         void CollectUPSs(string tempdir, byte[] s)
         {
             //古いバックアップがあれば取得する
-            int[] olderPickup = new int[] { 0 , 1 , 2 , 3 , 4 , 5, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
+            int[] olderPickup = new int[] { 1 , 2 , 3 , 4 , 5, 6, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
             for (int i = 0; i < olderPickup.Length; i++)
             {
                 string moreOlderFilename = FindSrcByFilename(olderPickup[i]);
@@ -263,26 +266,25 @@ namespace FEBuilderGBA
         //現在のROMのUPSデータの回収
         void CollectUPSsCurrentROM(string tempdir, byte[] s)
         {
-            string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
-            string ups = Path.Combine(tempdir, file + ".ups");
-            UPSUtil.MakeUPS(s, Program.ROM.Data, ups);
-        }
-
-        //保存していないデータが存在する場合 そのデータのupsも作る
-        void CollectUPSsLastROM(string tempdir, byte[] s)
-        {
-            if (Program.ROM.Modified && Program.ROM.IsVirtualROM == false)
+            //現在のROMデータを保存する.
             {
-                string orignalFilename = OrignalFilename.Text;
-                byte[] d = MainFormUtil.OpenROMToByte(Program.ROM.Filename, orignalFilename);
+                string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
+                string ups = Path.Combine(tempdir, file + ".ups");
+                UPSUtil.MakeUPS(s, Program.ROM.Data, ups);
+            }
 
+            //保存していないデータが存在する場合 変更する前のデータをバックアップとして回収する
+            if (Program.ROM.Modified && !Program.ROM.IsVirtualROM)
+            {
+                byte[] d = MainFormUtil.OpenROMToByte(Program.ROM.Filename);
                 DateTime date = File.GetLastWriteTime(Program.ROM.Filename);
+                string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
                 string backup = "backup." + date.ToString("yyyyMMddHHmmss");
-                string backupFullPath = U.MakeFilename(backup);
-                string ups = Path.Combine(tempdir, Path.GetFileNameWithoutExtension(backupFullPath) + ".ups");
-                UPSUtil.MakeUPS(s, d, ups);
+                string ups = Path.Combine(tempdir, file + "." + backup + ".GBA.ups");
+                UPSUtil.MakeUPS(s, d , ups);
                 U.CopyTimeStamp(Program.ROM.Filename, ups); //タイムスタンプを元のファイルに合わせる.
             }
+
         }
 
         //セーブデータの回収
@@ -366,6 +368,7 @@ namespace FEBuilderGBA
 
             sb.AppendLine(typeof(U).Assembly.GetName().Name + ":" + U.getVersion());
             sb.AppendLine("FEVersion:" + FEVersion);
+            sb.AppendLine("Emu:" + OptionForm.GetEmulatorNameOnly());
 
             //ユーザが書いた問題点
             sb.AppendLine("Problem:");

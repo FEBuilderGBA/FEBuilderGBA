@@ -90,7 +90,6 @@ namespace FEBuilderGBA
             return this[key];
         }
 
-
         public Keys[] ShortCutKeys { get; private set; }
         public void UpdateShortcutKeys()
         {
