@@ -2506,9 +2506,38 @@ namespace FEBuilderGBA
             {
                 return ReadPointer(value, 4);
             }
-
+            if (value.IndexOf("TEXTID ") == 0)
+            {
+                return GetTextAddress(value);
+            }
+            if (value.IndexOf("TEXTID_P ") == 0)
+            {
+                return GetTextPointer(value);
+            }
 
             throw new PatchException(R.Error(("アドレス指定が正しくありません。 値:0x{0}"), addrstring));
+        }
+        static uint GetTextAddress(string value)
+        {
+            string[] sp = value.Split(' ');
+            if (sp.Length < 1)
+            {
+                return U.NOT_FOUND;
+            }
+            uint textid = U.atoi0x(sp[1]);
+
+            return TextForm.GetTextIDToDataAddr(textid);
+        }
+        static uint GetTextPointer(string value)
+        {
+            string[] sp = value.Split(' ');
+            if (sp.Length < 1)
+            {
+                return U.NOT_FOUND;
+            }
+            uint textid = U.atoi0x(sp[1]);
+
+            return TextForm.GetTextIDToDataPointer(textid);
         }
 
         static uint ReadPointer(string value, uint plus)
@@ -6362,9 +6391,13 @@ namespace FEBuilderGBA
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
-                foreach (var p in dependsList)
+                //少し時間がかかるので、しばらくお待ちください表示.
+                using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction , p);
+                    foreach (var p in dependsList)
+                    {
+                        ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction, p);
+                    }
                 }
                 foreach (var p in dependsList)
                 {
@@ -6390,9 +6423,12 @@ namespace FEBuilderGBA
                     }
                 }
                 Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
-                foreach (var p in dependsList)
+                using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    ImportPatchSetting(tempdir.Dir,mappingDESTEmbedFunction, p);
+                    foreach (var p in dependsList)
+                    {
+                        ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
+                    }
                 }
 
                 //少し時間がかかるので、しばらくお待ちください表示.

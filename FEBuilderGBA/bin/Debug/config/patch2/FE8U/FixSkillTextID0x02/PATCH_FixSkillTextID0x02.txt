@@ -1,0 +1,12 @@
+NAME=Fix SkillSystems TextID 0x02
+
+IF:$TEXTID 0x02=0xFF 0xFF 0xFF 0xFF
+
+INFO=以前のスキルアップデート、アンインストールで発生したテキストID0x02の不具合を修正します。\r\nSkillSystemsでは、TextID0x02 " Weapon rank increased to "だけが、別の場所に定義されており、この部分の修正を見落としていました。\r\nこの問題を解決するためのパッチです。
+
+AUTHOR=7743
+TYPE=BIN
+TEXTADV:0x002=0x002.txt
+
+INFO.en=Fix bug with text ID 0x02 which occurred in previous skill update or uninstall.\r\nSkillSystemsでは、TextID0x02 In SkillSystems, only TextID 0x02 "Weapon rank increased to" was defined elsewhere and We overlooked the correction of this part.\r\nThis is a patch to solve this problem.
+

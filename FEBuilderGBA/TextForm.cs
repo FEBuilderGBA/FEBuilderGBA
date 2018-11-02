@@ -3101,5 +3101,25 @@ namespace FEBuilderGBA
         {
             TextToSpeechForm.Stop();
         }
+
+        public static uint GetTextIDToDataAddr(uint textID)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint write_pointer = InputFormRef.BaseAddress + (InputFormRef.BlockSize * textID);
+            uint write_addr = Program.ROM.u32(write_pointer);
+
+            if (FETextEncode.IsUnHuffmanPatchPointer(write_addr))
+            {
+                write_addr = FETextEncode.ConvertUnHuffmanPatchToPointer(write_addr);
+            }
+            return U.toOffset(write_addr);
+        }
+        public static uint GetTextIDToDataPointer(uint textID)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint write_pointer = InputFormRef.BaseAddress + (InputFormRef.BlockSize * textID);
+
+            return write_pointer;
+        }
     }
 }

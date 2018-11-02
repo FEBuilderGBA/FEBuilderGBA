@@ -404,6 +404,34 @@ namespace FEBuilderGBA
             File.WriteAllLines(filename, lines);
         }
 
+        //拡張領域に定義されているアニメーションかどうか
+        public static bool IsExtendsAreaAnime(uint anime_address)
+        {
+            List<Address> recycle = new List<Address>();
+            RecycleOldAnime(ref recycle, "anime", false, anime_address);
+
+            if (recycle.Count <= 0)
+            {//不明
+                return true;
+            }
+            for (int i = 0; i < recycle.Count; i++)
+            {
+                Address a = recycle[i];
+                if (U.isExtrendsROMArea(a.Addr))
+                {
+                    return true;
+                }
+                if (a.Pointer != U.NOT_FOUND)
+                {
+                    if (U.isExtrendsROMArea(a.Pointer))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         class anime
         {
             public byte[] tsa;
@@ -412,13 +440,11 @@ namespace FEBuilderGBA
             public string filename;
         }
 
-        public static string Import(
-              string filename    //書き込むファイル名
-            , uint anime_pointer)
+
+        public static string Import(string filename, uint anime_pointer)
         {
             string basename = Path.GetFileNameWithoutExtension(filename) + "_";
             string basedir = Path.GetDirectoryName(filename);
-
 
             //同じアニメを何度も入力しないように記録する.
             List<anime> anime_list = new List<anime>();
@@ -510,7 +536,7 @@ namespace FEBuilderGBA
             uint anime_address = Program.ROM.p32(anime_pointer);
 
             List<Address> recycle = new List<Address>();
-            RecycleOldAnime(ref recycle,basename,false, anime_address);
+            RecycleOldAnime(ref recycle, basename, false, anime_address);
             RecycleAddress ra = new RecycleAddress(recycle);
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("");

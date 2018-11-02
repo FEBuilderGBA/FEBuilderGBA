@@ -400,6 +400,7 @@ namespace FEBuilderGBA
                 return;
             }
 
+            string basedir = Path.GetDirectoryName(filename);
             List<string> lines = new List<string>();
             {
                 uint baseiconP = FindIconPointer();
@@ -436,10 +437,18 @@ namespace FEBuilderGBA
                     sb.Append("\t");
                     sb.Append(U.ToHexString(addr));
                     lines.Add(sb.ToString());
-//                    if (!U.isSafetyOffset(addr))
-//                    {
-//                        continue;
-//                    }
+
+                    if (!U.isExtrendsROMArea(addr) || addr == 0)
+                    {//既存領域内なので新しいアニメで上書きする.
+                        continue;
+                    }
+
+                    //拡張領域のアニメはexportしないといけないようだ.
+                    //内部に非拡張領域のデータを使いまわしていることがあるため
+                    string animedir = Path.Combine(basedir, "anime" + U.ToHexString(i));
+                    U.mkdir(animedir);
+                    string anime_filename = Path.Combine(animedir, "anime.txt");
+                    ImageUtilSkillSystemsAnimeCreator.Export(anime_filename, addr);
                 }
             }
             File.WriteAllLines(filename, lines);
@@ -452,6 +461,7 @@ namespace FEBuilderGBA
                 return;
             }
 
+            string basedir = Path.GetDirectoryName(filename);
             string[] lines = File.ReadAllLines(filename);
             {
                 uint baseiconP = FindIconPointer();
@@ -494,15 +504,21 @@ namespace FEBuilderGBA
                     Program.ROM.write_u16(textAddr + 0, textid);
 
                     uint animePAddr = U.atoh(sp[1]);
-                    if (U.isExtrendsROMArea(animePAddr) || animePAddr == 0)
-                    {//拡張領域、または0の値が設定されている場合は書き戻す
-                        Program.ROM.write_p32(anime, animePAddr);
+                    if (animePAddr == 0)
+                    {//0の値が設定されている場合は、アニメ未指定になっているので0を書き込みます.
+                        Program.ROM.write_p32(anime, 0);
                         continue;
+                    }
+                    string anime_filename = Path.Combine(basedir, "anime" + U.ToHexString(i), "anime.txt");
+                    if (File.Exists(anime_filename))
+                    {//インポートしなおす
+                        ImageUtilSkillSystemsAnimeCreator.Import(anime_filename, anime);
                     }
                     //それ以外の値の場合、ディフォルト設定だとして、最新の値を採用します.
                 }
             }
         }
+
         //テキストの取得
         public static void MakeTextIDArray(List<TextID> list)
         {
