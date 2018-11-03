@@ -1,6 +1,6 @@
-NAME=個別アニメ導入 by EA
-NAME.zh=个人动画补丁介绍 by EA
-NAME.en=Character Custom Animation by EA Table Installer
+NAME=(旧)個別アニメ導入 by EA
+NAME.zh=(旧)个人动画补丁介绍 by EA
+NAME.en=(Old)Character Custom Animation by EA Table Installer
 
 TYPE=EA
 TAG=#ENGINE
@@ -19,3 +19,6 @@ AUTHOR=7743
 CONFLICT_IF:0x58168=0x00 0x48 0x87 0x46
 CONFLICT_IF:0x58168=0x00 0x49 0x8f 0x46
 CONFLICT_MESSAGE=Individual animation patch
+
+DEPRECATED=1
+UPDATE_PATCH=..\Individual animation_ea_2\PATCH_Individual animation_2018_2_Install.txt

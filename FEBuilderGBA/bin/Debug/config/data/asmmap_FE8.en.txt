@@ -5403,7 +5403,8 @@ r3=X tile position of menu of the right	{U}
 0805740C	ekrBattleEnding_8056484	{J}
 08057CAC	NewEkrWindowAppear	{J}
 08057D98	NewEkrNamewinAppear	{J}
-08057F7C	PrepareBattleGraphicsMaybe	{J}
+08057F80	PrepareBattleGraphicsMaybe	{J}
+080D1D1C	LoadBattleSpritesForBranchScreen	runs once per frame while on the branched promotion screen.	{J}
 08058E44	GetSpellAnimId	{J}
 08059678	GetBattleAnimationId	{J}
 08059790	SomethingFilterBattleAnimId	{J}

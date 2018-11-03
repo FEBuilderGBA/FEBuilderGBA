@@ -1,0 +1,5 @@
+CustomAnimeTable=$44
+loop_search_table=$0E
+not_found=$2A
+found=$1C
+store_and_exit=$36

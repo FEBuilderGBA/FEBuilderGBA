@@ -1,0 +1,8 @@
+Something_of_left=$0C
+find_anime=$1E
+exit=$1A
+CustomAnimeTable=$4C
+loop_search_table=$2C
+not_found=$3E
+found=$3A
+store_and_exit=$42

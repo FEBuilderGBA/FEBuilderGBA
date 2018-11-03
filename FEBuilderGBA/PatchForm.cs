@@ -5159,6 +5159,7 @@ namespace FEBuilderGBA
                     }
                 }
             }
+
         }
         static void MakePatchStructDataListForIMAGE(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
@@ -6346,6 +6347,10 @@ namespace FEBuilderGBA
                 SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
             }
+            else
+            {
+                ExportPatchAll(patch, tempdir);
+            }
         }
         void ImportPatchSetting(string tempdir
             , Dictionary<string, uint> mappingDESTEmbedFunction
@@ -6358,15 +6363,31 @@ namespace FEBuilderGBA
                 string SkillAssignmentClassSkillSystem = Path.Combine(tempdir, "SkillAssignmentClassSkillSystem.tsv");
                 string SkillAssignmentUnitSkillSystem = Path.Combine(tempdir, "SkillAssignmentUnitSkillSystem.tsv");
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
-                SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
-                SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
-                SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
-
+                if (File.Exists(SkillAssignmentClassSkillSystem))
+                {
+                    SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
+                    File.Delete(SkillAssignmentClassSkillSystem);
+                }
+                if (File.Exists(SkillAssignmentUnitSkillSystem))
+                {
+                    SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
+                    File.Delete(SkillAssignmentUnitSkillSystem);
+                }
+                if (File.Exists(SkillConfigSkillSystem))
+                {
+                    SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
+                    File.Delete(SkillConfigSkillSystem);
+                }
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
+            }
+            else
+            {
+                ImportPatchAll(patch, tempdir);
             }
 
             ExportEmbedFunction(patch, mappingDESTEmbedFunction);
         }
+
 
         //バージョンアップデート
         string UpdatePatchUI(PatchSt patch)
@@ -6387,6 +6408,8 @@ namespace FEBuilderGBA
 
             //依存するパッチのリストをすべて作成する.
             List<PatchSt> dependsList = new List<PatchSt>();
+            //新しくインストールしたパッチのリスト
+            List<PatchSt> newInstallPatchList = new List<PatchSt>();
             MakeDependsPatchList(dependsList, patch);
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
@@ -6415,6 +6438,10 @@ namespace FEBuilderGBA
                     {//アップデートするパッチがない場合、自分をもう一回入れる.
                         new_patchSt = patch;
                     }
+                    else
+                    {//新しくインストールするパッチのリスト
+                        newInstallPatchList.Add(new_patchSt);
+                    }
 
                     bool r = ApplyPatch(new_patchSt.Name, "", "", true);
                     if (!r)
@@ -6428,6 +6455,12 @@ namespace FEBuilderGBA
                     foreach (var p in dependsList)
                     {
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
+                    }
+
+                    //新しくインストールしたパッチの設定
+                    foreach (var p in newInstallPatchList)
+                    {
+                        ImportPatchAll(p, tempdir.Dir);
                     }
                 }
 
@@ -6464,6 +6497,367 @@ namespace FEBuilderGBA
 
             Program.ReLoadSetting();
         }
+
+        void ImportPatchAll(PatchSt patch,string tempdir)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EDIT_PATCH" && pair.Value != "")
+                {
+                    ImportPatch(pair.Value, patch, tempdir);
+                }
+            }
+        }
+
+        void ImportPatch(string editpatch, PatchSt patchSt, string tempdir)
+        {
+            string basedir = Path.GetDirectoryName(patchSt.PatchFileName);
+            editpatch = Path.Combine(basedir, editpatch);
+            if (!File.Exists(editpatch))
+            {
+                Debug.Assert(false);
+                return;
+            }
+            PatchSt editpatchSt = LoadPatch(editpatch, true);
+            if (editpatchSt == null)
+            {
+                Debug.Assert(false);
+                return;
+            }
+
+            string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
+            if (updateFromName == "")
+            {
+                Debug.Assert(false);
+                return;
+            }
+            string targetFilename = Path.Combine(tempdir, updateFromName);
+            if (! File.Exists(targetFilename))
+            {
+                return;
+            }
+
+            string type = U.at(editpatchSt.Param, "TYPE");
+            if (type == "STRUCT")
+            {
+                ImportPatchStruct(editpatchSt, targetFilename);
+            }
+        }
+
+        void ImportPatchStruct(PatchSt patch,string filename)
+        {
+            string pointer_str = U.at(patch.Param, "POINTER");
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+
+            uint struct_address = 0;
+            uint struct_pointer = U.NOT_FOUND;
+            if (pointer_str != "")
+            {
+                struct_pointer = convertBinAddressString(pointer_str, 8, struct_address, basedir);
+                if (!U.isSafetyOffset(struct_pointer))
+                {
+                    return ;
+                }
+                struct_address = Program.ROM.p32(struct_pointer);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return ;
+                }
+            }
+            else
+            {
+                string address_str = U.at(patch.Param, "ADDRESS");
+                if (address_str == "")
+                {
+                    return ;
+                }
+                struct_address = convertBinAddressString(address_str, 8, 0x100, basedir);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return ;
+                }
+            }
+
+            uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+            if (datasize <= 0)
+            {
+                return ;
+            }
+
+            uint datacount;
+            string datacount_str = U.at(patch.Param, "DATACOUNT");
+            if (datacount_str.Length > 0 && datacount_str[0] == '$')
+            {//grep等
+                datacount = convertBinAddressString(datacount_str, 8, struct_address,basedir);
+                if (datacount == U.NOT_FOUND)
+                {
+                    return ;
+                }
+                if (datacount > struct_address)
+                {
+                    datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+            }
+            else
+            {//直値
+                datacount = U.atoi0x(datacount_str);
+            }
+            if (datacount <= 0)
+            {
+                if (datacount_str == "")
+                {
+                    return ;
+                }
+            }
+
+            string[] lines = File.ReadAllLines(filename);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("extends");
+            if (struct_pointer != U.NOT_FOUND && datacount < lines.Length)
+            {//必要ならば、リポイントする.
+                InputFormRef.ExpandsArea(null, (uint)lines.Length+1
+                    , struct_pointer, datacount, InputFormRef.ExpandsFillOption.NO
+                    , datasize, undodata);
+                struct_address = Program.ROM.p32(struct_pointer);
+                datacount = (uint)lines.Length;
+            }
+
+            uint addr = struct_address;
+            for (int i = 0; i < datacount; i++ , addr += datasize)
+            {
+                string line = lines[i];
+                string[] lineSP = line.Split('\t');
+                int spIndex = 0;
+
+                foreach (var pair in patch.Param)
+                {
+                    string[] sp = pair.Key.Split(':');
+                    string key = sp[0];
+                    string type = U.at(sp, 1);
+                    string value = pair.Value;
+
+                    if ( ! U.isnum(key[1]) )
+                    {
+                        continue;
+                    }
+                    uint datanum = U.atoi(key.Substring(1));
+
+                    spIndex ++;
+                    if (spIndex > lineSP.Length)
+                    {
+                        break;
+                    }
+                    string write_data = lineSP[spIndex];
+                    uint a = U.atoh(write_data);
+
+                    if (key[0] == 'P')
+                    {//ポインタの場合は、そのポインタを上書きしてもいいかチェックする必要がある.
+                     //パッチのアンインストールで無効になっているかもしれないため.
+                        string[] pointerMarkSP = write_data.Split('=');
+                        if (pointerMarkSP.Length >= 2 && U.isSafetyPointer(a))
+                        {
+                            uint currentValue = Program.ROM.u32(U.toOffset(a));
+                            uint checkValue = U.atoh(pointerMarkSP[1]);
+                            if (currentValue == checkValue)
+                            {//上書きしても問題ないポインタ
+                                Program.ROM.write_p32(addr + datanum , a, undodata);
+                            }
+                        }
+                    }
+                    else if (key[0] == 'D')
+                    {
+                        Program.ROM.write_u32(addr + datanum, a, undodata);
+                    }
+                    else if (key[0] == 'W')
+                    {
+                        Program.ROM.write_u16(addr + datanum, a, undodata);
+                    }
+                    else if (key[0] == 'B')
+                    {
+                        Program.ROM.write_u8(addr + datanum, a, undodata);
+                    }
+                    else if (key[0] == 'b')
+                    {
+                        Program.ROM.write_u8(addr + datanum, a, undodata);
+                    }
+                }
+            }
+            Program.Undo.Push(undodata);
+
+            //インポートしたため消去する.
+            File.Delete(filename);
+        }
+
+        void ExportPatchAll(PatchSt patch, string tempdir)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EDIT_PATCH" && pair.Value != "")
+                {
+                    ExportPatch(pair.Value, patch, tempdir);
+                }
+            }
+        }
+
+        void ExportPatch(string editpatch, PatchSt patchSt, string tempdir)
+        {
+            string basedir = Path.GetDirectoryName(patchSt.PatchFileName);
+            editpatch = Path.Combine(basedir, editpatch);
+
+            if (!File.Exists(editpatch))
+            {
+                Debug.Assert(false);
+                return;
+            }
+            PatchSt editpatchSt = LoadPatch(editpatch, true);
+            if (editpatchSt == null)
+            {
+                Debug.Assert(false);
+                return;
+            }
+
+            string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
+            if (updateFromName == "")
+            {
+                Debug.Assert(false);
+                return;
+            }
+            string targetFilename = Path.Combine(tempdir, updateFromName);
+            string type = U.at(editpatchSt.Param, "TYPE");
+            if (type == "STRUCT")
+            {
+                ExportPatchStruct(editpatchSt, targetFilename);
+            }
+        }
+
+        void ExportPatchStruct(PatchSt patch, string filename)
+        {
+            string pointer_str = U.at(patch.Param, "POINTER");
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+
+            uint struct_address = 0;
+            if (pointer_str != "")
+            {
+                uint struct_pointer = convertBinAddressString(pointer_str, 8, struct_address, basedir);
+                if (!U.isSafetyOffset(struct_pointer))
+                {
+                    return;
+                }
+                struct_address = Program.ROM.p32(struct_pointer);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+            }
+            else
+            {
+                string address_str = U.at(patch.Param, "ADDRESS");
+                if (address_str == "")
+                {
+                    return;
+                }
+                struct_address = convertBinAddressString(address_str, 8, 0x100, basedir);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+            }
+
+            uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+            if (datasize <= 0)
+            {
+                return;
+            }
+
+            uint datacount;
+            string datacount_str = U.at(patch.Param, "DATACOUNT");
+            if (datacount_str.Length > 0 && datacount_str[0] == '$')
+            {//grep等
+                datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
+                if (datacount == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (datacount > struct_address)
+                {
+                    datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+            }
+            else
+            {//直値
+                datacount = U.atoi0x(datacount_str);
+            }
+            if (datacount <= 0)
+            {
+                if (datacount_str == "")
+                {
+                    return;
+                }
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            uint addr = struct_address;
+            for (int i = 0; i < datacount; i++, addr += datasize)
+            {
+                foreach (var pair in patch.Param)
+                {
+                    string[] sp = pair.Key.Split(':');
+                    string key = sp[0];
+                    string type = U.at(sp, 1);
+                    string value = pair.Value;
+
+                    if (!U.isnum(key[1]))
+                    {
+                        continue;
+                    }
+                    uint datanum = U.atoi(key.Substring(1));
+                    sb.Append('\t');
+
+                    if (key[0] == 'P')
+                    {
+                        uint a = Program.ROM.u32(addr + datanum);
+                        sb.Append(U.ToHexString(a));
+
+                        if (U.isSafetyPointer(a))
+                        {
+                            uint p = Program.ROM.u32(U.toOffset(a));
+                            sb.Append("=");
+                            sb.Append(U.ToHexString(p)); //中身チェック
+                        }
+                    }
+                    else if (key[0] == 'D')
+                    {
+                        uint a = Program.ROM.u32(addr + datanum);
+                        sb.Append(U.ToHexString(a));
+                    }
+                    else if (key[0] == 'W')
+                    {
+                        uint a = Program.ROM.u16(addr + datanum);
+                        sb.Append(U.ToHexString(a));
+                    }
+                    else if (key[0] == 'B')
+                    {
+                        uint a = Program.ROM.u8(addr + datanum);
+                        sb.Append(U.ToHexString(a));
+                    }
+                    else if (key[0] == 'b')
+                    {
+                        uint a = Program.ROM.u8(addr + datanum);
+                        sb.Append(U.ToHexString(a));
+                    }
+                }
+                sb.AppendLine();
+            }
+            File.WriteAllText(filename, sb.ToString());
+        }
+
 
     }
 }

@@ -1,0 +1,34 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $58158  //FE8J
+jumpToHack(IndividualAnimation7743)
+POP
+
+IndividualAnimation7743:
+#incbin "IndividualAnimation7743.dmp"
+POIN CustomAnimeTable
+
+
+PUSH
+ORG $D1DD8  //FE8J
+jumpToHack(IndividualAnimation7743_CC)
+POP
+
+IndividualAnimation7743_CC:
+#incbin "IndividualAnimation7743_CC.dmp"
+POIN CustomAnimeTable
+
+
+CustomAnimeTable:
+BYTE 0x01  //Unit: Eirika
+BYTE 0x02  //Class: Load
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+WORD 0x08903588 //Eirika Master Load Battle Animation.
+
+BYTE 0x00  //Unit: term data
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+BYTE 0x00  //dummy
+WORD 0x00  //dummy

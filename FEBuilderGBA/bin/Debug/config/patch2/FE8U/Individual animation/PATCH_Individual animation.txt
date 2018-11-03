@@ -1,6 +1,6 @@
-NAME=個別アニメ
-NAME.zh=个人动画
-NAME.en=Character Custom Animation Table Editor
+NAME=(旧)個別アニメ
+NAME.zh=(旧)个人动画
+NAME.en=(旧)Character Custom Animation Table Editor
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
@@ -39,6 +39,7 @@ B0:UNIT.zh=人物
 B1:CLASS.zh=职业
 P4:BATTLEANIMEPOINTER.zh=战斗动画
 
+UPDATE_FROM_NAME=Individual animation
 
 INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
 INFO.en=Edit the custom animation table patched in by "Character Custom Animation Table Installer."\r\nWhen defining a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new secure button appears.\r\n

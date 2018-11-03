@@ -1,6 +1,6 @@
-NAME=個別アニメ導入
-NAME.zh=个人动画补丁介绍
-NAME.en=Character Custom Animation Table Installer
+NAME=(旧)個別アニメ導入
+NAME.zh=(旧)个人动画补丁介绍
+NAME.en=(Old)Character Custom Animation Table Installer
 
 TYPE=BIN
 TAG=#ENGINE
@@ -18,3 +18,5 @@ INFO.en=Patches a table into the ROM for custom animations by character like in 
 INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定义动画）\r\n
 
 AUTHOR=7743
+DEPRECATED=1
+UPDATE_PATCH=..\Individual animation_ea_2\PATCH_Individual animation_2018_2_Install.txt

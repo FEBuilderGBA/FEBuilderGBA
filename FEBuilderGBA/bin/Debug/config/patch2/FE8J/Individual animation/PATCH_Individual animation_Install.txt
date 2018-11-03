@@ -1,7 +1,6 @@
 NAME=(旧)個別アニメ導入
 NAME.zh=(旧)个人动画补丁介绍
 NAME.en=(Old)Individual animation patch(custom animation) (Installer)
-DEPRECATED=1
 
 TYPE=BIN
 TAG=#ENGINE
@@ -24,3 +23,6 @@ INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定�
 CONFLICT_IF:0x058168=0x00 0x49 0x8f 0x46
 CONFLICT_IF:0x058158=0x00 0x4B 0x18 0x47
 CONFLICT_MESSAGE=Individual animation patch(custom animation)(Version to be hooked on r1)
+
+DEPRECATED=1
+UPDATE_PATCH=..\Individual animation_ea_2\PATCH_Individual animation_2018_2_Install.txt

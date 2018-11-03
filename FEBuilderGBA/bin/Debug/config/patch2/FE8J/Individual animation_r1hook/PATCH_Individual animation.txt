@@ -38,6 +38,8 @@ B0:UNIT.zh=人物
 B1:CLASS.zh=职业
 P4:BATTLEANIMEPOINTER.zh=战斗动画
 
+UPDATE_FROM_NAME=Individual animation
+
 INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\nこのバージョンは、ルーチンをフックするのにr1レジスタを利用するバージョンです。(それ以外に違いは特にありません)\r\nユニット設定で、個別アニメフラグに1を立てるのを忘れないようにしてください。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
 
 INFO.en=Do not forget to set 1 for the individual animation flag in unit setting.\r\nIf you define a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new securing button appears.\r\n
