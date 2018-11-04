@@ -6433,7 +6433,7 @@ namespace FEBuilderGBA
                 foreach (var p in dependsList)
                 {
                     string errorMessage;
-                    PatchSt new_patchSt = GetUpdatePatch(patch, out errorMessage);
+                    PatchSt new_patchSt = GetUpdatePatch(p, out errorMessage);
                     if (new_patchSt == null)
                     {//アップデートするパッチがない場合、自分をもう一回入れる.
                         new_patchSt = patch;

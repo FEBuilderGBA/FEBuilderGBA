@@ -1,6 +1,6 @@
 NAME=(旧)個別アニメ
 NAME.zh=(旧)个人动画
-NAME.en=(旧)Character Custom Animation Table Editor
+NAME.en=(Old)Character Custom Animation Table Editor
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT

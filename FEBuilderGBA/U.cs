@@ -4497,6 +4497,10 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            if (!File.Exists(open.FileNames[0]))
+            {
+                return false;
+            }
             if (!U.CanReadFileRetry(open.FileNames[0]))
             {
                 return false;
@@ -4506,6 +4510,8 @@ namespace FEBuilderGBA
 
         public static bool CanReadFileRetry(string path)
         {
+            Debug.Assert(path != "");
+
             bool isRetry = true;
             do
             {
