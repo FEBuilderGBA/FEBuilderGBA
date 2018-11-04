@@ -1,0 +1,17 @@
+NAME=ボツデータの未使用画像
+NAME.en=clear unreleased works: images
+
+PATCHED_IF:0xE4E0C=0x00 0x00 0x00 0x00
+IF:0xE4E0C=0x10 0x00 0x18 0x00
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xE4E0C:0x1758=0x0E6564  //FE7の火竜背景の残骸
+CLEAR:0x5DB188:0x4200=0x05DF388 //FE7の通信メニュー /FE6の画像
+
+INFO=ボツデータの画像を消します。\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x5958(22872)bytes の空き領域を確保できます。
+
+INFO.en=Erase the image of the data.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x5958 (22872) bytes can be secured.
+NAME.zh=未使用的Bots数据图像
+INFO.zh=删除数据图像。\r\n这使得重建时可以重用该区域。\r\n可以保证0x5958（22872）字节的可用空间。
