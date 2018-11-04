@@ -43,11 +43,11 @@
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Right_TSA:
-	#incbin "New_Battle_Anims_Off_Right_TSA.dmp"
+	#incbin "New_Battle_Anims_Off_Right_TSA.dmp" //HINT=BIN
 	
 	ALIGN 4
 	New_Battle_Anims_Off_Left_TSA:
-	#incbin "New_Battle_Anims_Off_Left_TSA.dmp"
+	#incbin "New_Battle_Anims_Off_Left_TSA.dmp" //HINT=BIN
 	
 	ALIGN 4
 	Show_Battle_Stats:
@@ -65,7 +65,7 @@
 	ALIGN 4
 	New_Numbers:
 	#incext Png2Dmp "New_Numbers.png" --lz77
-	
+
 #else
 	ERROR "You're not assembling FE8 events!"
 #endif

@@ -1553,10 +1553,6 @@ namespace FEBuilderGBA
                     unknown = 0;
                 }
 
-                if (addr == 0x0114133C)
-                {
-                }
-
                 if (type == CodeType.CALL)
                 {//CALLだけ32ビットなので4バイト
                     addr += 4;
@@ -1577,7 +1573,7 @@ namespace FEBuilderGBA
                     data = U.toOffset(data);
                     if (data > addr              //現在のaddrより後方へ参照していて
                         && data < limit          //0xffffffみたいに外へ参照しているわけでもなく
-                        && data < addr + 0x100   //ありえないぐらい遠くなく
+                        && data < addr + 0x200   //ありえないぐらい遠くなく
                         && lastJumpAddr < data   //既知の最後の参照エリアより後ろにあること
                         )
                     {
