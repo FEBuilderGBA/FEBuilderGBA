@@ -3944,7 +3944,6 @@
 0806d4a4	ClearMOVEUNITs	{J}
 0806c2dc	MakeMOVEUNITForMapUnit	{J}
 08018CC0	GetRescuingUnitNameId	{U}
-//08018D20	GetROMClassStruct	{U}
 08018D38	GetROMCharStruct	{U}
 0806ccb8	ClearMOVEUNITs	{U}
 0806baf0	MakeMOVEUNITForMapUnit	{U}
@@ -3956,3 +3955,6 @@
 080060E0	ステータス画面用のフォントを読込む	{U}
 08000e60	Roll1RN	{U}
 08000e38	Roll1RN	{J}
+080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
+080BA640	攻略評価の画像をロード	{J}
+080BAAB8	攻略評価の画像をロードするProcsを起動する	{J}

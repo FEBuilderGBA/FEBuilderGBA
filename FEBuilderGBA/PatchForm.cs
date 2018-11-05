@@ -6327,7 +6327,8 @@ namespace FEBuilderGBA
                 }
 
                 //このパッチもアップデート
-                MakeDependsPatchList(dependsList , depends_patchSt);
+                Log.Debug("UPDATE_DEPENDS", depends_patchSt.PatchFileName);
+                MakeDependsPatchList(dependsList, depends_patchSt);
             }
         }
         void ExportPatchSetting(string tempdir

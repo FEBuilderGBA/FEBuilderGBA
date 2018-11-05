@@ -3844,3 +3844,9 @@
 //This data is made with the aim of being readable by machine fast.
 08005F70	Load font for status screen	{J}
 080060E0	Load font for status screen	{U}
+//This data is made with the aim of being readable by machine fast.
+08000e60	Roll1RN	{U}
+08000e38	Roll1RN	{J}
+080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
+080BA640	Load image of capture rating	{J}
+080BAAB8	Load the image of the strategy evaluation Start up Procs	{J}

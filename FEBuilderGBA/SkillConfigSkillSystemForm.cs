@@ -501,7 +501,10 @@ namespace FEBuilderGBA
                         continue;
                     }
                     uint textid = U.atoh(sp[0]);
-                    Program.ROM.write_u16(textAddr + 0, textid);
+                    if (textid != 0)
+                    {
+                        Program.ROM.write_u16(textAddr + 0, textid);
+                    }
 
                     uint animePAddr = U.atoh(sp[1]);
                     if (animePAddr == 0)

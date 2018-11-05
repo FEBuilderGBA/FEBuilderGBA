@@ -9357,3 +9357,57 @@ r3=X tile position of menu of the right	{U}
 08753C4C	&PALETTE	Something's palette	508	{J}
 086BAB54	&PALETTE	Something's palette	509	{J}
 086B1E90	&PALETTE	Something's palette	510	{J}
+08A02C34	:08A02CB3	Uncompressed image 0x80 bytes	1	{U}
+08A02CB4	:08A02D33	Uncompressed image 0x80 bytes	2	{U}
+08A02D34	:08A02DB3	Uncompressed image 0x80 bytes	3	{U}
+08A02DB4	:08A02E33	Uncompressed image 0x80 bytes	4	{U}
+08A02E34	:08A02EB3	Uncompressed image 0x80 bytes	5	{U}
+08A02EB4	:08A02F34	Uncompressed image 0x80 bytes	6	{U}
+08A74CEC	:08A74D6B	Uncompressed image 0x80 bytes	1	{J}
+08A74D6C	:08A74DEB	Uncompressed image 0x80 bytes	2	{J}
+08A74DEC	:08A74E6B	Uncompressed image 0x80 bytes	3	{J}
+08A74E6C	:08A74EEB	Uncompressed image 0x80 bytes	4	{J}
+08A74EEC	:08A74F6B	Uncompressed image 0x80 bytes	5	{J}
+08A74F6C	:08A74FEB	Uncompressed image 0x80 bytes	6	{J}
+0803830C	Battle record display	{J}
+080381E0	Battle record display	{U}
+080BD02C	Draw capture assessment	ending	{J}
+080BCC90	Setting the background of the screen for evaluating the capture	ending	I have a bug.	{J}
+080BC044	Display Fin screen Procs launch	{J}
+08AC5558	&PALETTE	Palette of strategy evaluation screen	1	{J}
+08AC6C58	&PALETTE	Palette of strategy evaluation screen	2	{J}
+08AC6BF8	&PALETTE	Palette of strategy evaluation screen	3	{J}
+08AC6C18	&PALETTE	Palette of strategy evaluation screen	4	{J}
+080BC1B8	Draw total number of turns	ending	{J}
+080BC0F4	Preparing to draw the background of the screen with total number of turns	ending		{J}
+080BCECC	Set the background of the screen with total number of turns	ending		{J}
+080B7598	Display Fin screen Procs launch	{U}
+080B770C	Draw total number of turns	ending	{U}
+080B7648	Preparing to draw the background of the screen with total number of turns	ending		{U}
+080B8014	Set the background of the screen with total number of turns	ending		{U}
+080ba8f8	Acquisition of "strategy evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080ba9f0	Acquire "survival evaluation evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080bab54	Acquired "asset valuation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080baa28	Acquisition of "experience evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080bab20	Acquisition of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080babf4	Acquire "comprehensive evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080A93E8	Subroutine of "Battle evaluation" of strategy evaluation	{J}
+080BADB0	Subroutine of "evaluation of survival evaluation" of strategy evaluation	Unit's life / death determination	{J}
+080bade8	Subroutine of "Battle evaluation" of strategy evaluation	{J}
+080171F8	Acquisition of values ​​for calculating asset valuation	{J}
+080BACC8	Calculate 'Strategy evaluation' of strategy evaluation at the time of chapter clearance	{J}
+080BAE60	Calculate the "asset valuation" of the strategy evaluation at the time of clearing the chapter	{J}
+080BAFA8	Calculate the "experience value evaluation" of the strategy evaluation at the time of clearing the chapter	{J}
+080B5D74	Acquisition of "strategy evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5E6C	Acquire "survival evaluation evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5FD0	Acquired "asset valuation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5EA4	Acquisition of "experience evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5F9C	Acquisition of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B6070	Acquire "comprehensive evaluation" of strategy evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080A49A4	Subroutine of "Battle evaluation" of strategy evaluation	{U}
+080B622C	Subroutine of "evaluation of survival evaluation" of strategy evaluation	Unit's life / death determination	{U}
+080B6264	Subroutine of "Battle evaluation" of strategy evaluation	{U}
+08017450	Acquisition of values ​​for calculating asset valuation	{U}
+080B6144	Calculate 'Strategy evaluation' of strategy evaluation at the time of chapter clearance	{U}
+080B62DC	Calculate the "asset valuation" of the strategy evaluation at the time of clearing the chapter	{U}
+080B6424	Calculate the "experience value evaluation" of the strategy evaluation at the time of clearing the chapter	{U}

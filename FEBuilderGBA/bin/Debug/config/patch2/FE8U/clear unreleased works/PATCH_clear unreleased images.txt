@@ -13,5 +13,5 @@ CLEAR:0x5B0FA8:0x4300=0x05B52A8 //FE7の通信メニュー /FE6の画像
 INFO=ボツデータの画像を消します。\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x5A38(23096)bytes の空き領域を確保できます。
 
 INFO.en=Erase the image of the data.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x5A38 (23096) bytes can be secured.
-NAME.zh=未使用的Bots数据图像
+NAME.zh=清零引导数据的数据图像
 INFO.zh=删除数据图像。\r\n这使得重建时可以重用该区域。\r\n可以保证0x5A38（23096）字节的可用空间。

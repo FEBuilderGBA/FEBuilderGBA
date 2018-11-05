@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.J_0_ITEM = new System.Windows.Forms.Label();
             this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -45,9 +45,9 @@
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.J_1 = new System.Windows.Forms.Label();
             this.textBox1 = new FEBuilderGBA.TextBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -67,15 +67,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
+            // J_0_ITEM
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(282, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 30);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "アイテム";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_0_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_ITEM.Location = new System.Drawing.Point(282, 89);
+            this.J_0_ITEM.Name = "J_0_ITEM";
+            this.J_0_ITEM.Size = new System.Drawing.Size(123, 30);
+            this.J_0_ITEM.TabIndex = 57;
+            this.J_0_ITEM.Text = "アイテム";
+            this.J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_ITEM
             // 
@@ -109,8 +109,8 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.B1);
             this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.J_1);
+            this.panel4.Controls.Add(this.J_0_ITEM);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.B0);
             this.panel4.Controls.Add(this.L_0_ITEM);
@@ -229,7 +229,6 @@
             // 
             // B1
             // 
-
             this.B1.Location = new System.Drawing.Point(411, 119);
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(63, 25);
@@ -259,6 +258,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-2, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -278,15 +278,15 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // J_1
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(282, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 30);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "確率%";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_1.Location = new System.Drawing.Point(282, 118);
+            this.J_1.Name = "J_1";
+            this.J_1.Size = new System.Drawing.Size(123, 30);
+            this.J_1.TabIndex = 60;
+            this.J_1.Text = "確率%";
+            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -344,7 +344,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(379, 3);
             this.ReadCount.Maximum = new decimal(new int[] {
             256,
@@ -368,7 +367,7 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // ItemChestForm
+            // ItemRandomChestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -376,7 +375,7 @@
             this.ClientSize = new System.Drawing.Size(808, 410);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Name = "ItemChestForm";
+            this.Name = "ItemRandomChestForm";
             this.Text = "ランダム宝箱";
             this.Load += new System.EventHandler(this.ItemShopForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
@@ -397,11 +396,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label J_0_ITEM;
         private FEBuilderGBA.TextBoxEx L_0_ITEM;
         private System.Windows.Forms.NumericUpDown B0;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label J_1;
         private FEBuilderGBA.TextBoxEx textBox1;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.Panel panel5;

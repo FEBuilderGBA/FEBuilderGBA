@@ -1308,7 +1308,7 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(498, 32);
             this.label68.TabIndex = 69;
-            this.label68.Text = "経験評価加算数";
+            this.label68.Text = "資産評価加算数";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W94

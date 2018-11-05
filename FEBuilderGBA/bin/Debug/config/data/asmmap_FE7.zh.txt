@@ -3835,3 +3835,9 @@
 //This data is made with the aim of being readable by machine fast.
 08005F70	加载状态屏幕的字体	{J}
 080060E0	加载状态屏幕的字体	{U}
+//This data is made with the aim of being readable by machine fast.
+08000e60	Roll1RN	{U}
+08000e38	Roll1RN	{J}
+080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
+080BA640	加载捕获评级的图像	{J}
+080BAAB8	加载策略评估的图像启动过程	{J}

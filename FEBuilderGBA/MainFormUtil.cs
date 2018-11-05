@@ -1531,6 +1531,10 @@ namespace FEBuilderGBA
 
         public static byte[] OpenROMToByte(string path, string orignalFile = "")
         {
+            if (path == "")
+            {
+                return new byte[0];
+            }
             if (!U.CanReadFileRetry(path))
             {
                 return new byte[0];

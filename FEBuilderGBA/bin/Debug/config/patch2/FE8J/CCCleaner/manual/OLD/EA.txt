@@ -1,0 +1,134 @@
+scroll_check:
+ #incbin "check.bin"
+// #incbin "check_no.bin"
+
+
+
+
+ALIGN 4
+PUSH
+//////////CCつぶし(不要かも)
+
+ORG 0x291c4
+WORD $08029392 $08029392 $08029392 $08029392 $08029392
+ORG 0x29290
+WORD $08029392 $08029392 $08029392
+
+//
+ORG 0x2925c
+WORD $08029392
+ORG 0x29338
+WORD $08029392
+
+///////実際の効果から除外(進撃準備)
+ORG 0x9edf8
+BYTE $88
+ORG 0x9ee0e
+BYTE $88
+
+ORG 0x9ee0e
+BYTE $88
+ORG 0x9ee12
+BYTE $88
+
+//
+ORG 0x9edf0
+BYTE $88
+ORG 0x9ee18
+BYTE $88
+
+/////効果から除外(マップ？)
+ORG 0x1ce58
+BYTE $88
+ORG 0x1ce5C
+BYTE $88
+
+ORG 0x1ce70
+BYTE $88
+ORG 0x1ce74
+BYTE $88
+
+//
+ORG 0x1ce50
+BYTE $88
+ORG 0x1ce78
+BYTE $88
+
+
+///////////////マップ・選択後使う条件(効果が指定されていると使うが出てくる)
+ORG 0x288c0
+WORD $08028b94 $08028b94 $08028b94 $08028b94 $08028b94
+ORG 0x2898c
+WORD $08028b94 $08028b94 $08028b94
+
+ORG 0x28958
+WORD $08028b94
+ORG 0x28a34
+WORD $08028b94
+
+ORG 0x28b94
+SHORT $1c29     //	mov	r1, r5
+SHORT $1c20     //	mov	r0, r4
+BL(0x2f748)
+
+////////使えない理由表示
+
+ORG 0x28c10
+WORD $08028e00 $08028e00 $08028e00 $08028e00 $08028e00
+ORG 0x28cdc
+WORD $08028e00 $08028e00 $08028e00
+
+ORG 0x28ca8
+WORD $08028e00
+ORG 0x28d84
+WORD $08028e00
+
+///////////////CCからメティスへ1(進撃準備使う条件
+ORG 0x29ee4
+WORD $0802a070 $0802a070 $0802a070 $0802a070 $0802a070
+ORG 0x29fb0
+WORD $0802a070 $0802a070 $0802a070
+
+ORG 0x29f7c
+WORD $0802a070
+ORG 0x2a058
+WORD $0802a070
+
+
+ORG 0x2a070
+SHORT $1c28     //	mov	r0, r5
+SHORT $1c21     //	mov	r1, r4
+BL(0x2f748)
+
+
+////////////CCからメティスへ(使った瞬間に飛ぶ・効果
+
+ORG 0x2fc44
+WORD $0802fe90 $0802fe90 $0802fe90 $0802fe90 $0802fe90
+ORG 0x2fd10
+WORD $0802fe90 $0802fe90 $0802fe90
+
+ORG 0x2fcdc
+WORD $0802fe90
+ORG 0x2fdb8
+WORD $0802fe90
+
+//メティス実際の効果分岐
+ORG 0x2f740
+WORD	$468F4900 //r1
+POIN s_scroll
+WORD	$46974A00
+POIN scroll_check
+
+
+///////0xC1起動
+
+ORG 0x85FBAA
+BYTE 55
+
+/////////
+POP
+s_scroll:
+ #incbin "test.bin"
+ALIGN 4
+

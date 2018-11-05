@@ -4354,6 +4354,9 @@ Specify the range of the weapon.\r\nFrom the list on the right you can select th
 :チェックをつけると、低レイヤーの命令を表示します。\r\n低レイヤー命令は、他の命令と組み合わせて利用する命令なので、ディフォルトでは非表示になっています。
 When checked, low layer instructions will be displayed.\r\nThe low layer instruction is an instruction to be used in combination with other instructions, so it is hidden by default.
 
+:FE7の残骸データですが、スコアの計算は実行されています。\r\nただし、スコアを表示する画面がないため表示できませんでした。\r\nFE8Jで画面の表示方法が確立できたので、画面を復活させました。\r\nそれぞれのパラメータの内容は現在調査中です。
+It is the remains of FE 7, but the calculation of the score is being executed.\r\nHowever, it could not be displayed because there was no screen to display the score.\r\nSince the display method of the screen was established with FE 8 J, the screen was restored.\r\nThe content of each parameter is currently under investigation.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6568,8 +6571,8 @@ Eliwood Hard
 :エリウッドノーマル
 Eliwood Normal
 
-:経験評価加算数
-Experience evaluation addition number
+:資産評価加算数
+Asset evaluation addition number
 
 :Dヘクトルハード
 D Hector Hard
@@ -6618,6 +6621,9 @@ A Eliwood Hard
 
 :Aエリウッドノーマル
 A Eliwood Normal
+
+:経験評価加算数
+Experience evaluation addition number
 
 :攻略評価加算数
 Capture rating added number
@@ -8256,6 +8262,9 @@ This ROM can not be used because it contains patches to be uninstalled.
 
 :パッチを含まないバックアップを探索中。進捗:{1}/{2} {0}
 Searching for backups without patches in progress... {1}/{2} {0}
+
+:パッチを含んでいないROMを指定してください。\r\nわからない場合は、無改造のROMを指定してください。\r\n\r\nもし、カレントディレクトリ等に無改造ROMがあれば自動的に選択されるので、無改造ROMをカレントディレクトリに置いておくことをお勧めします。
+Please specify the ROM that does not contain the patch.\r\nIf you do not know, please specify ROM without modification.\r\n\r\nIf there is an unmodified ROM in the current directory etc., it will be selected automatically so we recommend putting unmodified ROM in the current directory.
 
 :復旧用に、このパッチをインストールする前のROMを選択してください。\r\n\r\nこの機能は、確実なアンインストールを約束するものではありません。\r\n失敗するかもしれないので、事前にバックアップを取ってください。\r\nまた、パッチ本体は消せますが、付属するデータは消せない時があります。\r\nその場合、数百バイト程度のロスになりますが、ご了承ください。
 For recovery, please select the ROM before installing this patch.\r\n\r\nThis function does not promise reliable uninstallation.\r\nBecause it may fail, please backup in advance.\r\nAlso, although you can erase the patch itself, there are times when you can not erase the attached data.\r\nIn that case, it will be about several hundred bytes of loss, but please understand.

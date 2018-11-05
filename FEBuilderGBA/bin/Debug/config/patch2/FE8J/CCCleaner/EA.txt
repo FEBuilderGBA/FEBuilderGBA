@@ -1,0 +1,139 @@
+
+
+ALIGN 4
+PUSH
+///////////////マップ・選択後使うが出る条件(効果が指定されていると使うが出てくる)
+
+ORG 0x028846
+    SHORT $46C0
+    jumpToHack(item_usability1)
+
+////////使えない理由表示
+ORG 0x028bc2
+    SHORT $46C0
+    jumpToHack(item_usability_reason)
+    
+
+///////////////CCからメティスへ1(進撃準備や選んだ時の使う条件
+
+ORG 0x029ea8
+    jumpToHack(item_usability2)
+
+////////////CCからメティスへ(使った瞬間に飛ぶ・効果
+
+ORG 0x02fbc0
+    jumpToHack(item_effect)
+
+/////////
+POP
+
+item_usability1:
+    #incbin usability1.bin
+    ALIGN 4
+item_usability2:
+    #incbin usability2.bin
+    ALIGN 4
+item_usability_reason:
+    #incbin usability_reason.bin
+    ALIGN 4
+item_effect:
+    #incbin item_effect.bin
+    ALIGN 4
+
+///////revert
+PUSH
+
+//////////CCつぶし(不要かも)revert
+
+ORG 0x291c4
+WORD $0802933c $08029344 $0802934c $08029354 $0802935c
+ORG 0x29290
+WORD $08029390 $0802936c $08029374
+ORG 0x2925c
+WORD $0802937c
+ORG 0x29338
+WORD $08029384
+
+///////cc実際の効果から除外(進撃準備)revert
+ORG 0x9edf8
+BYTE $64
+ORG 0x9ee0e
+BYTE $99
+ORG 0x9ee12
+BYTE $97
+ORG 0x9edf0
+BYTE $8a
+ORG 0x9ee18
+BYTE $c1
+
+/////cc効果から除外(マップ？)revert
+ORG 0x1ce58
+BYTE $64
+ORG 0x1ce5C
+BYTE $68
+
+ORG 0x1ce70
+BYTE $97
+ORG 0x1ce74
+BYTE $99
+
+ORG 0x1ce50
+BYTE $8a
+ORG 0x1ce78
+BYTE $c1
+
+
+
+
+//revert use1
+ORG 0x288c0
+WORD $08028b02 $08028b02 $08028b02 $08028b02 $08028b02
+ORG 0x2898c
+WORD $08028b02 $08028b02 $08028b02
+ORG 0x28958
+WORD $08028b02
+ORG 0x28a34
+WORD $08028b02
+
+//revert reason
+ORG 0x28c10
+WORD $08028dcc $08028dcc $08028dcc $08028dcc $08028dcc
+ORG 0x28cdc
+WORD $08028dcc $08028dcc $08028dcc
+
+ORG 0x28ca8
+WORD $08028dcc
+ORG 0x28d84
+WORD $08028dcc
+
+//revert use2
+ORG 0x29ee4
+WORD $0802a066 $0802a066 $0802a066 $0802a066 $0802a066
+ORG 0x29fb0
+WORD $0802a066 $0802a066 $0802a066
+ORG 0x29f7c
+WORD $0802a066
+ORG 0x2a058
+WORD $0802a066
+
+//revert effect
+ORG 0x2fc44
+WORD $0802fe3c $0802fe3c $0802fe3c $0802fe3c $0802fe3c
+ORG 0x2fd10
+WORD $0802fe3c $0802fe3c $0802fe3c
+ORG 0x2fcdc
+WORD $0802fe3c
+ORG 0x2fdb8
+WORD $0802fe3c
+
+/*
+///////0xC1の効果
+
+ORG 0x85FBAA
+BYTE 55
+
+*/
+POP
+
+
+#include config.txt

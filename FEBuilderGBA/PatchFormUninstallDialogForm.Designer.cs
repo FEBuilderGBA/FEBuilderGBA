@@ -32,8 +32,8 @@
             this.UninstallPatchButton = new System.Windows.Forms.Button();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.OrignalSelectButton = new System.Windows.Forms.Button();
             this.OrignalFilename = new FEBuilderGBA.TextBoxEx();
+            this.OrignalSelectButton = new System.Windows.Forms.Button();
             this.customColorGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,17 +85,6 @@
             this.label2.Text = "パッチを含んでいないROM";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // OrignalSelectButton
-            // 
-            this.OrignalSelectButton.Location = new System.Drawing.Point(207, 29);
-            this.OrignalSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.OrignalSelectButton.Name = "OrignalSelectButton";
-            this.OrignalSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.OrignalSelectButton.TabIndex = 1;
-            this.OrignalSelectButton.Text = "ファイル選択";
-            this.OrignalSelectButton.UseVisualStyleBackColor = true;
-            this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
-            // 
             // OrignalFilename
             // 
             this.OrignalFilename.ErrorMessage = "";
@@ -106,6 +95,17 @@
             this.OrignalFilename.Size = new System.Drawing.Size(801, 25);
             this.OrignalFilename.TabIndex = 3;
             this.OrignalFilename.DoubleClick += new System.EventHandler(this.OrignalFilename_DoubleClick);
+            // 
+            // OrignalSelectButton
+            // 
+            this.OrignalSelectButton.Location = new System.Drawing.Point(207, 29);
+            this.OrignalSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OrignalSelectButton.Name = "OrignalSelectButton";
+            this.OrignalSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.OrignalSelectButton.TabIndex = 1;
+            this.OrignalSelectButton.Text = "ファイル選択";
+            this.OrignalSelectButton.UseVisualStyleBackColor = true;
+            this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
             // 
             // PatchFormUninstallDialogForm
             // 

@@ -164,6 +164,12 @@ namespace FEBuilderGBA
 
         private void UninstallPatchButton_Click(object sender, EventArgs e)
         {
+            if (! File.Exists(this.OrignalFilename.Text))
+            {
+                R.ShowStopError("パッチを含んでいないROMを指定してください。\r\nわからない場合は、無改造のROMを指定してください。\r\n\r\nもし、カレントディレクトリ等に無改造ROMがあれば自動的に選択されるので、無改造ROMをカレントディレクトリに置いておくことをお勧めします。");
+                return;
+            }
+
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
@@ -172,5 +178,6 @@ namespace FEBuilderGBA
         {
 
         }
+
     }
 }
