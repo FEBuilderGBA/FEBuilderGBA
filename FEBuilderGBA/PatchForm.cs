@@ -5958,7 +5958,7 @@ namespace FEBuilderGBA
 
             //パッチを含んでいないファイルを提示してもらう.
             PatchFormUninstallDialogForm f = (PatchFormUninstallDialogForm)InputFormRef.JumpFormLow<PatchFormUninstallDialogForm>();
-            f.Init(binmap, isAutomatic);
+            f.Init(binmap);
             DialogResult dr = f.ShowDialog();
             if (dr != System.Windows.Forms.DialogResult.OK)
             {

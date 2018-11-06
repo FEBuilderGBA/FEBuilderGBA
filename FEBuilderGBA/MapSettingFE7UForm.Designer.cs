@@ -1327,7 +1327,7 @@
             this.D108.Location = new System.Drawing.Point(1540, 67);
             this.D108.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D108.Name = "D108";
-            this.D108.Size = new System.Drawing.Size(85, 25);
+            this.D108.Size = new System.Drawing.Size(94, 25);
             this.D108.TabIndex = 68;
             // 
             // D104
@@ -1335,23 +1335,23 @@
             this.D104.Location = new System.Drawing.Point(1540, 35);
             this.D104.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D104.Name = "D104";
-            this.D104.Size = new System.Drawing.Size(85, 25);
+            this.D104.Size = new System.Drawing.Size(94, 25);
             this.D104.TabIndex = 67;
             // 
             // D100
             // 
-            this.D100.Location = new System.Drawing.Point(1286, 65);
+            this.D100.Location = new System.Drawing.Point(1282, 65);
             this.D100.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D100.Name = "D100";
-            this.D100.Size = new System.Drawing.Size(85, 25);
+            this.D100.Size = new System.Drawing.Size(94, 25);
             this.D100.TabIndex = 66;
             // 
             // D96
             // 
-            this.D96.Location = new System.Drawing.Point(1286, 34);
+            this.D96.Location = new System.Drawing.Point(1282, 34);
             this.D96.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D96.Name = "D96";
-            this.D96.Size = new System.Drawing.Size(85, 25);
+            this.D96.Size = new System.Drawing.Size(94, 25);
             this.D96.TabIndex = 65;
             // 
             // J_108
@@ -1406,21 +1406,21 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(525, 32);
             this.label68.TabIndex = 236;
-            this.label68.Text = "資産評価加算数";
+            this.label68.Text = "資産評価";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W94
             // 
-            this.W94.Location = new System.Drawing.Point(1037, 903);
+            this.W94.Location = new System.Drawing.Point(1021, 903);
             this.W94.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W94.Name = "W94";
-            this.W94.Size = new System.Drawing.Size(58, 25);
+            this.W94.Size = new System.Drawing.Size(75, 25);
             this.W94.TabIndex = 64;
             // 
             // J_94
             // 
             this.J_94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_94.Location = new System.Drawing.Point(874, 897);
+            this.J_94.Location = new System.Drawing.Point(858, 897);
             this.J_94.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_94.Name = "J_94";
             this.J_94.Size = new System.Drawing.Size(161, 32);
@@ -1430,7 +1430,7 @@
             // 
             // B61
             // 
-            this.B61.Location = new System.Drawing.Point(816, 902);
+            this.B61.Location = new System.Drawing.Point(800, 902);
             this.B61.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B61.Name = "B61";
             this.B61.Size = new System.Drawing.Size(58, 25);
@@ -1439,7 +1439,7 @@
             // J_61
             // 
             this.J_61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_61.Location = new System.Drawing.Point(655, 897);
+            this.J_61.Location = new System.Drawing.Point(639, 897);
             this.J_61.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_61.Name = "J_61";
             this.J_61.Size = new System.Drawing.Size(161, 32);
@@ -1449,72 +1449,72 @@
             // 
             // W92
             // 
-            this.W92.Location = new System.Drawing.Point(1037, 872);
+            this.W92.Location = new System.Drawing.Point(1021, 872);
             this.W92.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W92.Name = "W92";
-            this.W92.Size = new System.Drawing.Size(58, 25);
+            this.W92.Size = new System.Drawing.Size(75, 25);
             this.W92.TabIndex = 63;
             // 
             // W90
             // 
-            this.W90.Location = new System.Drawing.Point(1037, 841);
+            this.W90.Location = new System.Drawing.Point(1021, 841);
             this.W90.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W90.Name = "W90";
-            this.W90.Size = new System.Drawing.Size(58, 25);
+            this.W90.Size = new System.Drawing.Size(75, 25);
             this.W90.TabIndex = 62;
             // 
             // W88
             // 
-            this.W88.Location = new System.Drawing.Point(1036, 809);
+            this.W88.Location = new System.Drawing.Point(1020, 809);
             this.W88.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W88.Name = "W88";
-            this.W88.Size = new System.Drawing.Size(58, 25);
+            this.W88.Size = new System.Drawing.Size(75, 25);
             this.W88.TabIndex = 61;
             // 
             // W86
             // 
-            this.W86.Location = new System.Drawing.Point(1036, 778);
+            this.W86.Location = new System.Drawing.Point(1020, 778);
             this.W86.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W86.Name = "W86";
-            this.W86.Size = new System.Drawing.Size(58, 25);
+            this.W86.Size = new System.Drawing.Size(75, 25);
             this.W86.TabIndex = 60;
             // 
             // W84
             // 
-            this.W84.Location = new System.Drawing.Point(1036, 748);
+            this.W84.Location = new System.Drawing.Point(1020, 748);
             this.W84.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W84.Name = "W84";
-            this.W84.Size = new System.Drawing.Size(58, 25);
+            this.W84.Size = new System.Drawing.Size(75, 25);
             this.W84.TabIndex = 59;
             // 
             // W82
             // 
-            this.W82.Location = new System.Drawing.Point(1036, 717);
+            this.W82.Location = new System.Drawing.Point(1020, 717);
             this.W82.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W82.Name = "W82";
-            this.W82.Size = new System.Drawing.Size(58, 25);
+            this.W82.Size = new System.Drawing.Size(75, 25);
             this.W82.TabIndex = 58;
             // 
             // W80
             // 
-            this.W80.Location = new System.Drawing.Point(1035, 685);
+            this.W80.Location = new System.Drawing.Point(1019, 685);
             this.W80.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W80.Name = "W80";
-            this.W80.Size = new System.Drawing.Size(58, 25);
+            this.W80.Size = new System.Drawing.Size(75, 25);
             this.W80.TabIndex = 57;
             // 
             // W78
             // 
-            this.W78.Location = new System.Drawing.Point(1035, 654);
+            this.W78.Location = new System.Drawing.Point(1019, 654);
             this.W78.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W78.Name = "W78";
-            this.W78.Size = new System.Drawing.Size(58, 25);
+            this.W78.Size = new System.Drawing.Size(75, 25);
             this.W78.TabIndex = 56;
             // 
             // label46
             // 
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label46.Location = new System.Drawing.Point(874, 866);
+            this.label46.Location = new System.Drawing.Point(858, 866);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(161, 32);
@@ -1525,7 +1525,7 @@
             // label47
             // 
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label47.Location = new System.Drawing.Point(874, 835);
+            this.label47.Location = new System.Drawing.Point(858, 835);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(161, 32);
@@ -1535,7 +1535,7 @@
             // 
             // B60
             // 
-            this.B60.Location = new System.Drawing.Point(816, 871);
+            this.B60.Location = new System.Drawing.Point(800, 871);
             this.B60.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B60.Name = "B60";
             this.B60.Size = new System.Drawing.Size(58, 25);
@@ -1544,7 +1544,7 @@
             // label48
             // 
             this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Location = new System.Drawing.Point(655, 866);
+            this.label48.Location = new System.Drawing.Point(639, 866);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(161, 32);
@@ -1554,7 +1554,7 @@
             // 
             // B59
             // 
-            this.B59.Location = new System.Drawing.Point(816, 840);
+            this.B59.Location = new System.Drawing.Point(800, 840);
             this.B59.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B59.Name = "B59";
             this.B59.Size = new System.Drawing.Size(58, 25);
@@ -1563,7 +1563,7 @@
             // label51
             // 
             this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label51.Location = new System.Drawing.Point(655, 835);
+            this.label51.Location = new System.Drawing.Point(639, 835);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(161, 32);
@@ -1574,7 +1574,7 @@
             // label54
             // 
             this.label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label54.Location = new System.Drawing.Point(874, 804);
+            this.label54.Location = new System.Drawing.Point(858, 804);
             this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(161, 32);
@@ -1585,7 +1585,7 @@
             // label55
             // 
             this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label55.Location = new System.Drawing.Point(874, 773);
+            this.label55.Location = new System.Drawing.Point(858, 773);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(161, 32);
@@ -1595,7 +1595,7 @@
             // 
             // B58
             // 
-            this.B58.Location = new System.Drawing.Point(816, 809);
+            this.B58.Location = new System.Drawing.Point(800, 809);
             this.B58.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B58.Name = "B58";
             this.B58.Size = new System.Drawing.Size(58, 25);
@@ -1604,7 +1604,7 @@
             // label56
             // 
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(655, 804);
+            this.label56.Location = new System.Drawing.Point(639, 804);
             this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(161, 32);
@@ -1614,7 +1614,7 @@
             // 
             // B57
             // 
-            this.B57.Location = new System.Drawing.Point(816, 778);
+            this.B57.Location = new System.Drawing.Point(800, 778);
             this.B57.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B57.Name = "B57";
             this.B57.Size = new System.Drawing.Size(58, 25);
@@ -1623,7 +1623,7 @@
             // label57
             // 
             this.label57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label57.Location = new System.Drawing.Point(655, 773);
+            this.label57.Location = new System.Drawing.Point(639, 773);
             this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(161, 32);
@@ -1634,7 +1634,7 @@
             // label58
             // 
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label58.Location = new System.Drawing.Point(874, 742);
+            this.label58.Location = new System.Drawing.Point(858, 742);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(161, 32);
@@ -1645,7 +1645,7 @@
             // label59
             // 
             this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label59.Location = new System.Drawing.Point(874, 711);
+            this.label59.Location = new System.Drawing.Point(858, 711);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(161, 32);
@@ -1655,7 +1655,7 @@
             // 
             // B56
             // 
-            this.B56.Location = new System.Drawing.Point(816, 747);
+            this.B56.Location = new System.Drawing.Point(800, 747);
             this.B56.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B56.Name = "B56";
             this.B56.Size = new System.Drawing.Size(58, 25);
@@ -1664,7 +1664,7 @@
             // label60
             // 
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label60.Location = new System.Drawing.Point(655, 742);
+            this.label60.Location = new System.Drawing.Point(639, 742);
             this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(161, 32);
@@ -1674,7 +1674,7 @@
             // 
             // B55
             // 
-            this.B55.Location = new System.Drawing.Point(816, 716);
+            this.B55.Location = new System.Drawing.Point(800, 716);
             this.B55.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B55.Name = "B55";
             this.B55.Size = new System.Drawing.Size(58, 25);
@@ -1683,7 +1683,7 @@
             // label61
             // 
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label61.Location = new System.Drawing.Point(655, 711);
+            this.label61.Location = new System.Drawing.Point(639, 711);
             this.label61.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(161, 32);
@@ -1694,7 +1694,7 @@
             // label62
             // 
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label62.Location = new System.Drawing.Point(874, 680);
+            this.label62.Location = new System.Drawing.Point(858, 680);
             this.label62.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(161, 32);
@@ -1705,7 +1705,7 @@
             // label63
             // 
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label63.Location = new System.Drawing.Point(874, 649);
+            this.label63.Location = new System.Drawing.Point(858, 649);
             this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(161, 32);
@@ -1715,7 +1715,7 @@
             // 
             // B54
             // 
-            this.B54.Location = new System.Drawing.Point(816, 685);
+            this.B54.Location = new System.Drawing.Point(800, 685);
             this.B54.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B54.Name = "B54";
             this.B54.Size = new System.Drawing.Size(58, 25);
@@ -1724,7 +1724,7 @@
             // label64
             // 
             this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label64.Location = new System.Drawing.Point(655, 680);
+            this.label64.Location = new System.Drawing.Point(639, 680);
             this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(161, 32);
@@ -1734,7 +1734,7 @@
             // 
             // B53
             // 
-            this.B53.Location = new System.Drawing.Point(816, 654);
+            this.B53.Location = new System.Drawing.Point(800, 654);
             this.B53.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B53.Name = "B53";
             this.B53.Size = new System.Drawing.Size(58, 25);
@@ -1743,7 +1743,7 @@
             // label65
             // 
             this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label65.Location = new System.Drawing.Point(655, 649);
+            this.label65.Location = new System.Drawing.Point(639, 649);
             this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(161, 32);
@@ -1753,16 +1753,16 @@
             // 
             // W76
             // 
-            this.W76.Location = new System.Drawing.Point(1037, 624);
+            this.W76.Location = new System.Drawing.Point(1021, 624);
             this.W76.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W76.Name = "W76";
-            this.W76.Size = new System.Drawing.Size(58, 25);
+            this.W76.Size = new System.Drawing.Size(75, 25);
             this.W76.TabIndex = 55;
             // 
             // label32
             // 
             this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Location = new System.Drawing.Point(874, 618);
+            this.label32.Location = new System.Drawing.Point(858, 618);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(161, 32);
@@ -1772,16 +1772,16 @@
             // 
             // W74
             // 
-            this.W74.Location = new System.Drawing.Point(1037, 593);
+            this.W74.Location = new System.Drawing.Point(1021, 593);
             this.W74.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W74.Name = "W74";
-            this.W74.Size = new System.Drawing.Size(58, 25);
+            this.W74.Size = new System.Drawing.Size(75, 25);
             this.W74.TabIndex = 54;
             // 
             // label33
             // 
             this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Location = new System.Drawing.Point(874, 587);
+            this.label33.Location = new System.Drawing.Point(858, 587);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(161, 32);
@@ -1791,7 +1791,7 @@
             // 
             // B52
             // 
-            this.B52.Location = new System.Drawing.Point(816, 623);
+            this.B52.Location = new System.Drawing.Point(800, 623);
             this.B52.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B52.Name = "B52";
             this.B52.Size = new System.Drawing.Size(58, 25);
@@ -1800,7 +1800,7 @@
             // label36
             // 
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Location = new System.Drawing.Point(655, 618);
+            this.label36.Location = new System.Drawing.Point(639, 618);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(161, 32);
@@ -1810,7 +1810,7 @@
             // 
             // B51
             // 
-            this.B51.Location = new System.Drawing.Point(816, 592);
+            this.B51.Location = new System.Drawing.Point(800, 592);
             this.B51.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B51.Name = "B51";
             this.B51.Size = new System.Drawing.Size(58, 25);
@@ -1819,7 +1819,7 @@
             // label37
             // 
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(655, 587);
+            this.label37.Location = new System.Drawing.Point(639, 587);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(161, 32);
@@ -1829,16 +1829,16 @@
             // 
             // W72
             // 
-            this.W72.Location = new System.Drawing.Point(1036, 561);
+            this.W72.Location = new System.Drawing.Point(1020, 561);
             this.W72.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W72.Name = "W72";
-            this.W72.Size = new System.Drawing.Size(58, 25);
+            this.W72.Size = new System.Drawing.Size(75, 25);
             this.W72.TabIndex = 53;
             // 
             // label38
             // 
             this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label38.Location = new System.Drawing.Point(874, 556);
+            this.label38.Location = new System.Drawing.Point(858, 556);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(161, 32);
@@ -1848,16 +1848,16 @@
             // 
             // W70
             // 
-            this.W70.Location = new System.Drawing.Point(1036, 530);
+            this.W70.Location = new System.Drawing.Point(1020, 530);
             this.W70.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W70.Name = "W70";
-            this.W70.Size = new System.Drawing.Size(58, 25);
+            this.W70.Size = new System.Drawing.Size(75, 25);
             this.W70.TabIndex = 52;
             // 
             // label39
             // 
             this.label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label39.Location = new System.Drawing.Point(874, 525);
+            this.label39.Location = new System.Drawing.Point(858, 525);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(161, 32);
@@ -1867,7 +1867,7 @@
             // 
             // B50
             // 
-            this.B50.Location = new System.Drawing.Point(816, 561);
+            this.B50.Location = new System.Drawing.Point(800, 561);
             this.B50.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B50.Name = "B50";
             this.B50.Size = new System.Drawing.Size(58, 25);
@@ -1876,7 +1876,7 @@
             // label43
             // 
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Location = new System.Drawing.Point(655, 556);
+            this.label43.Location = new System.Drawing.Point(639, 556);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(161, 32);
@@ -1886,7 +1886,7 @@
             // 
             // B49
             // 
-            this.B49.Location = new System.Drawing.Point(816, 530);
+            this.B49.Location = new System.Drawing.Point(800, 530);
             this.B49.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B49.Name = "B49";
             this.B49.Size = new System.Drawing.Size(58, 25);
@@ -1895,7 +1895,7 @@
             // label45
             // 
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label45.Location = new System.Drawing.Point(655, 525);
+            this.label45.Location = new System.Drawing.Point(639, 525);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(161, 32);
@@ -1905,16 +1905,16 @@
             // 
             // W68
             // 
-            this.W68.Location = new System.Drawing.Point(1036, 500);
+            this.W68.Location = new System.Drawing.Point(1020, 500);
             this.W68.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W68.Name = "W68";
-            this.W68.Size = new System.Drawing.Size(58, 25);
+            this.W68.Size = new System.Drawing.Size(75, 25);
             this.W68.TabIndex = 51;
             // 
             // label27
             // 
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Location = new System.Drawing.Point(874, 494);
+            this.label27.Location = new System.Drawing.Point(858, 494);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(161, 32);
@@ -1924,16 +1924,16 @@
             // 
             // W66
             // 
-            this.W66.Location = new System.Drawing.Point(1036, 469);
+            this.W66.Location = new System.Drawing.Point(1020, 469);
             this.W66.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W66.Name = "W66";
-            this.W66.Size = new System.Drawing.Size(58, 25);
+            this.W66.Size = new System.Drawing.Size(75, 25);
             this.W66.TabIndex = 50;
             // 
             // label28
             // 
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Location = new System.Drawing.Point(874, 463);
+            this.label28.Location = new System.Drawing.Point(858, 463);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(161, 32);
@@ -1943,7 +1943,7 @@
             // 
             // B48
             // 
-            this.B48.Location = new System.Drawing.Point(816, 499);
+            this.B48.Location = new System.Drawing.Point(800, 499);
             this.B48.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B48.Name = "B48";
             this.B48.Size = new System.Drawing.Size(58, 25);
@@ -1952,7 +1952,7 @@
             // label29
             // 
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Location = new System.Drawing.Point(655, 494);
+            this.label29.Location = new System.Drawing.Point(639, 494);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(161, 32);
@@ -1962,7 +1962,7 @@
             // 
             // B47
             // 
-            this.B47.Location = new System.Drawing.Point(816, 468);
+            this.B47.Location = new System.Drawing.Point(800, 468);
             this.B47.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B47.Name = "B47";
             this.B47.Size = new System.Drawing.Size(58, 25);
@@ -1971,7 +1971,7 @@
             // label31
             // 
             this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Location = new System.Drawing.Point(655, 463);
+            this.label31.Location = new System.Drawing.Point(639, 463);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(161, 32);
@@ -1981,16 +1981,16 @@
             // 
             // W64
             // 
-            this.W64.Location = new System.Drawing.Point(1035, 437);
+            this.W64.Location = new System.Drawing.Point(1019, 437);
             this.W64.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W64.Name = "W64";
-            this.W64.Size = new System.Drawing.Size(58, 25);
+            this.W64.Size = new System.Drawing.Size(75, 25);
             this.W64.TabIndex = 49;
             // 
             // label25
             // 
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(874, 432);
+            this.label25.Location = new System.Drawing.Point(858, 432);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(161, 32);
@@ -2000,16 +2000,16 @@
             // 
             // W62
             // 
-            this.W62.Location = new System.Drawing.Point(1035, 406);
+            this.W62.Location = new System.Drawing.Point(1019, 406);
             this.W62.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W62.Name = "W62";
-            this.W62.Size = new System.Drawing.Size(58, 25);
+            this.W62.Size = new System.Drawing.Size(75, 25);
             this.W62.TabIndex = 48;
             // 
             // label26
             // 
             this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Location = new System.Drawing.Point(874, 401);
+            this.label26.Location = new System.Drawing.Point(858, 401);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(161, 32);
@@ -2019,7 +2019,7 @@
             // 
             // B46
             // 
-            this.B46.Location = new System.Drawing.Point(816, 437);
+            this.B46.Location = new System.Drawing.Point(800, 437);
             this.B46.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B46.Name = "B46";
             this.B46.Size = new System.Drawing.Size(58, 25);
@@ -2028,7 +2028,7 @@
             // label24
             // 
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(655, 432);
+            this.label24.Location = new System.Drawing.Point(639, 432);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(161, 32);
@@ -2038,7 +2038,7 @@
             // 
             // B45
             // 
-            this.B45.Location = new System.Drawing.Point(816, 406);
+            this.B45.Location = new System.Drawing.Point(800, 406);
             this.B45.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B45.Name = "B45";
             this.B45.Size = new System.Drawing.Size(58, 25);
@@ -2047,7 +2047,7 @@
             // label21
             // 
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(655, 401);
+            this.label21.Location = new System.Drawing.Point(639, 401);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(161, 32);
@@ -2058,23 +2058,23 @@
             // label20
             // 
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(874, 370);
+            this.label20.Location = new System.Drawing.Point(857, 370);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(220, 32);
+            this.label20.Size = new System.Drawing.Size(240, 32);
             this.label20.TabIndex = 167;
-            this.label20.Text = "経験評価加算数";
+            this.label20.Text = "経験評価";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(655, 370);
+            this.label18.Location = new System.Drawing.Point(639, 370);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(219, 32);
             this.label18.TabIndex = 166;
-            this.label18.Text = "攻略評価加算数";
+            this.label18.Text = "攻略評価";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_42_SONGPLAY

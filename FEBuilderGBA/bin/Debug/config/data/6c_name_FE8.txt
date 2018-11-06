@@ -21,5 +21,5 @@ C3A54=MNCH WorldMap Procs	{U}	//08A3D748
 BEEB4=MNCH WorldMap Procs	{J}	//08AC1108
 3831C=Display Record evaluation screen	{J}	//085C6B74 戦績
 381F0=Display Record evaluation screen	{U}	//0859E64C 戦績
-BD03C=Display strategy evaluation screen	{J}	//08AC0F10 攻略評価
+BD03C=Display tactics evaluation screen	{J}	//08AC0F10 攻略評価
 BC054=Display Fin Screen	{J}	//08AC0CD0 FIN

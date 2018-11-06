@@ -6412,40 +6412,40 @@ PLIST扩展
 :上の軍
 上层军队
 
-:戦力評価加算数D
+:戦力評価D
 战斗力评估附加号D
 
-:戦力評価加算数C
+:戦力評価C
 战斗力评估附加号C
 
-:戦力評価加算数B
+:戦力評価B
 战斗力评估附加号B
 
-:戦力評価加算数A
+:戦力評価A
 战斗力评估附加号A
 
-:経験評価加算数D
+:経験評価D
 经验评估附加号D
 
-:経験評価加算数C
+:経験評価C
 经验评估附加号C
 
-:経験評価加算数B
+:経験評価B
 经验评估附加号B
 
-:経験評価加算数A
+:経験評価A
 经验评估增加号A
 
-:攻略評価加算数D
+:攻略評価D
 战略评估附加号D
 
-:攻略評価加算数C
+:攻略評価C
 战略评估附加号C
 
-:攻略評価加算数B
+:攻略評価B
 战略评估附加号B
 
-:攻略評価加算数A
+:攻略評価A
 捕获评估附加号A
 
 :離脱ポイントへJump
@@ -6560,73 +6560,73 @@ PLIST扩展
 运输车赫克托编。
 
 :ヘクトルハード
-Hector Heard
+Hector Hard
 
 :ヘクトルノーマル
 Hector Normal
 
 :エリウッドハード
-埃利伍德硬
+Eliwood Hard
 
 :エリウッドノーマル
-Eriwood Normal
+Eliwood Normal
 
-:資産評価加算数
-资产评估增加数量
+:資産評価
+资产评级
 
 :Dヘクトルハード
-D赫克托硬
+D Hector Hard
 
 :Dヘクトルノーマル
-D赫克托正常
+D Hector Normal
 
 :Dエリウッドハード
-D Eliwood硬
+D Eliwood Hard
 
 :Dエリウッドノーマル
-D Eriwood正常
+D Eliwood Normal
 
 :Cヘクトルハード
-C赫克托硬
+C Hector Hard
 
 :Cヘクトルノーマル
 C Hector Normal
 
 :Cエリウッドハード
-C Elliwood硬
+C Eliwood Hard
 
 :Cエリウッドノーマル
-C Eriwood正常
+C Eliwood Normal
 
 :Bヘクトルハード
-B赫克托硬
+B Hector Hard
 
 :Bヘクトルノーマル
 B Hector Normal
 
 :Bエリウッドハード
-B Eriwood硬
+B Eliwood Hard
 
 :Bエリウッドノーマル
-B Eriwood正常
+B Eliwood Normal
 
 :Aヘクトルハード
-赫克托硬
+A Hector Hard
 
 :Aヘクトルノーマル
-Hector正常
+A Hector Normal
 
 :Aエリウッドハード
-Eliwood硬
+A Eliwood Hard
 
 :Aエリウッドノーマル
-Eriwood正常
+A Eliwood Normal
 
-:経験評価加算数
-经验评估附加号
+:経験評価
+经验评级
 
-:攻略評価加算数
-捕获评级增加数字
+:攻略評価
+捕获评级
 
 :章プロローグBGM(ヘクトル編)
 章节序言BGM（Hector's版）

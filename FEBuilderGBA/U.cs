@@ -1480,6 +1480,12 @@ namespace FEBuilderGBA
                 selectID = 0;
             }
 
+            if (list.Items.Count < 0)
+            {//件数が0件
+                Debug.Assert(false);
+                list.SelectedIndex = -1;
+                return false;
+            }
             if (list.Items.Count > selectID)
             {
                 list.SelectedIndex = selectID;

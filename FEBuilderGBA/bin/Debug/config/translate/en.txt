@@ -6412,40 +6412,40 @@ Lower Army
 :上の軍
 Upper Army
 
-:戦力評価加算数D
+:戦力評価D
 Combat Rank D
 
-:戦力評価加算数C
+:戦力評価C
 Combat Rank C
 
-:戦力評価加算数B
+:戦力評価B
 Combat Rank B
 
-:戦力評価加算数A
+:戦力評価A
 Combat Rank A
 
-:経験評価加算数D
+:経験評価D
 EXP Rank D
 
-:経験評価加算数C
+:経験評価C
 EXP Rank C
 
-:経験評価加算数B
+:経験評価B
 EXP Rank B
 
-:経験評価加算数A
+:経験評価A
 EXP Rank A
 
-:攻略評価加算数D
+:攻略評価D
 Tactics Rank D
 
-:攻略評価加算数C
+:攻略評価C
 Tactics Rank C
 
-:攻略評価加算数B
+:攻略評価B
 Tactics Rank B
 
-:攻略評価加算数A
+:攻略評価A
 Tactics Rank A
 
 :離脱ポイントへJump
@@ -6571,8 +6571,8 @@ Eliwood Hard
 :エリウッドノーマル
 Eliwood Normal
 
-:資産評価加算数
-Asset evaluation addition number
+:資産評価
+Asset evaluation
 
 :Dヘクトルハード
 D Hector Hard
@@ -6622,11 +6622,11 @@ A Eliwood Hard
 :Aエリウッドノーマル
 A Eliwood Normal
 
-:経験評価加算数
-Experience evaluation addition number
+:経験評価
+Experience evaluation
 
-:攻略評価加算数
-Capture rating added number
+:攻略評価
+Tactics evaluation
 
 :章プロローグBGM(ヘクトル編)
 Chapter Prologue BGM (Hector)

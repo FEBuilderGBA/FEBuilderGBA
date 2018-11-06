@@ -28,4 +28,4 @@ A4E54=Main Menu Logic	{U}	//08CE3C54
 9E44=EventScriptEngine	{J}	//BFFB84
 9FB4=EventScriptEngine	{U}	//B909D4
 
-BAAC8=Display strategy evaluation screen	{J}	//DB8B94 攻略評価画面を表示
+BAAC8=Display tactics evaluation screen	{J}	//DB8B94 攻略評価画面を表示

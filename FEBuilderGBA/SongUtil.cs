@@ -3073,7 +3073,17 @@ namespace FEBuilderGBA
             if (returnValue == 0) return 0;
             returnValue /= 127;
             returnValue = Math.Pow(returnValue, 10.0 / 6.0);
-            uint r = Convert.ToByte(returnValue * 127);
+            returnValue = returnValue * 127;
+
+            if (returnValue < 0)
+            {
+                return 0;
+            }
+            if (returnValue >= 127)
+            {
+                return 127;
+            }
+            uint r = Convert.ToByte(returnValue);
             return r;
         }
         //逆変換
@@ -3083,7 +3093,17 @@ namespace FEBuilderGBA
             if (returnValue == 0) return 0;
             returnValue /= 127;
             returnValue = Math.Pow(returnValue, 1.0 / (10.0 / 6.0));
-            uint r = Convert.ToByte(returnValue * 127);
+            returnValue = returnValue * 127;
+
+            if (returnValue < 0)
+            {
+                return 0;
+            }
+            if (returnValue >= 127)
+            {
+                return 127;
+            }
+            uint r = Convert.ToByte(returnValue);
             return r;
         }
 #if DEBUG

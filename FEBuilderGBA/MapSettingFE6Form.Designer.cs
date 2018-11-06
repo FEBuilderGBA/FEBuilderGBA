@@ -863,7 +863,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(211, 32);
             this.label18.TabIndex = 309;
-            this.label18.Text = "戦力評価加算数D";
+            this.label18.Text = "戦力評価D";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W44
@@ -882,7 +882,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(211, 32);
             this.label26.TabIndex = 307;
-            this.label26.Text = "戦力評価加算数C";
+            this.label26.Text = "戦力評価C";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W42
@@ -901,7 +901,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(211, 32);
             this.label27.TabIndex = 305;
-            this.label27.Text = "戦力評価加算数B";
+            this.label27.Text = "戦力評価B";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W40
@@ -920,12 +920,12 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(211, 32);
             this.label28.TabIndex = 303;
-            this.label28.Text = "戦力評価加算数A";
+            this.label28.Text = "戦力評価A";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W38
             // 
-            this.W38.Location = new System.Drawing.Point(802, 787);
+            this.W38.Location = new System.Drawing.Point(802, 783);
             this.W38.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W38.Name = "W38";
             this.W38.Size = new System.Drawing.Size(95, 25);
@@ -934,17 +934,17 @@
             // label20
             // 
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(587, 781);
+            this.label20.Location = new System.Drawing.Point(587, 777);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(211, 32);
             this.label20.TabIndex = 301;
-            this.label20.Text = "経験評価加算数D";
+            this.label20.Text = "経験評価D";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W36
             // 
-            this.W36.Location = new System.Drawing.Point(802, 756);
+            this.W36.Location = new System.Drawing.Point(802, 752);
             this.W36.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W36.Name = "W36";
             this.W36.Size = new System.Drawing.Size(95, 25);
@@ -953,17 +953,17 @@
             // label21
             // 
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(587, 750);
+            this.label21.Location = new System.Drawing.Point(587, 746);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(211, 32);
             this.label21.TabIndex = 299;
-            this.label21.Text = "経験評価加算数C";
+            this.label21.Text = "経験評価C";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W34
             // 
-            this.W34.Location = new System.Drawing.Point(802, 728);
+            this.W34.Location = new System.Drawing.Point(802, 724);
             this.W34.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W34.Name = "W34";
             this.W34.Size = new System.Drawing.Size(95, 25);
@@ -972,17 +972,17 @@
             // label24
             // 
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(587, 723);
+            this.label24.Location = new System.Drawing.Point(587, 719);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(211, 32);
             this.label24.TabIndex = 297;
-            this.label24.Text = "経験評価加算数B";
+            this.label24.Text = "経験評価B";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W32
             // 
-            this.W32.Location = new System.Drawing.Point(802, 696);
+            this.W32.Location = new System.Drawing.Point(802, 694);
             this.W32.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W32.Name = "W32";
             this.W32.Size = new System.Drawing.Size(95, 25);
@@ -991,17 +991,17 @@
             // label25
             // 
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(587, 690);
+            this.label25.Location = new System.Drawing.Point(587, 688);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(211, 32);
             this.label25.TabIndex = 295;
-            this.label25.Text = "経験評価加算数A";
+            this.label25.Text = "経験評価A";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B31
             // 
-            this.B31.Location = new System.Drawing.Point(802, 659);
+            this.B31.Location = new System.Drawing.Point(802, 657);
             this.B31.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B31.Name = "B31";
             this.B31.Size = new System.Drawing.Size(70, 25);
@@ -1010,7 +1010,7 @@
             // label74
             // 
             this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label74.Location = new System.Drawing.Point(587, 653);
+            this.label74.Location = new System.Drawing.Point(587, 651);
             this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(211, 32);
@@ -1020,7 +1020,7 @@
             // 
             // B30
             // 
-            this.B30.Location = new System.Drawing.Point(802, 627);
+            this.B30.Location = new System.Drawing.Point(802, 625);
             this.B30.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B30.Name = "B30";
             this.B30.Size = new System.Drawing.Size(70, 25);
@@ -1029,17 +1029,17 @@
             // label19
             // 
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(587, 622);
+            this.label19.Location = new System.Drawing.Point(587, 620);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(211, 32);
             this.label19.TabIndex = 291;
-            this.label19.Text = "攻略評価加算数D";
+            this.label19.Text = "攻略評価D";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B29
             // 
-            this.B29.Location = new System.Drawing.Point(802, 594);
+            this.B29.Location = new System.Drawing.Point(802, 593);
             this.B29.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(70, 25);
@@ -1048,17 +1048,17 @@
             // label73
             // 
             this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label73.Location = new System.Drawing.Point(587, 590);
+            this.label73.Location = new System.Drawing.Point(587, 589);
             this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(211, 32);
             this.label73.TabIndex = 289;
-            this.label73.Text = "攻略評価加算数C";
+            this.label73.Text = "攻略評価C";
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B28
             // 
-            this.B28.Location = new System.Drawing.Point(802, 567);
+            this.B28.Location = new System.Drawing.Point(802, 566);
             this.B28.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B28.Name = "B28";
             this.B28.Size = new System.Drawing.Size(70, 25);
@@ -1067,12 +1067,12 @@
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(587, 562);
+            this.label17.Location = new System.Drawing.Point(587, 561);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(211, 32);
             this.label17.TabIndex = 287;
-            this.label17.Text = "攻略評価加算数B";
+            this.label17.Text = "攻略評価B";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B27
@@ -1091,7 +1091,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(211, 32);
             this.label16.TabIndex = 285;
-            this.label16.Text = "攻略評価加算数A";
+            this.label16.Text = "攻略評価A";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B26

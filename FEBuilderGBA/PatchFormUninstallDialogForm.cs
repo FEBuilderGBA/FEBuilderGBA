@@ -21,10 +21,10 @@ namespace FEBuilderGBA
 
         List<PatchForm.BinMapping> TargetBinMAP; //const 参照のみ C#だとできないんだよなあ..
         bool IsAutomatic; //自動でアンインストールを開始する.
-        public void Init(List<PatchForm.BinMapping> binmap, bool isAutomatic)
+        public void Init(List<PatchForm.BinMapping> binmap)
         {
             this.TargetBinMAP = binmap;
-            this.IsAutomatic = isAutomatic;
+            this.IsAutomatic = true;
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)

@@ -3849,4 +3849,4 @@
 08000e38	Roll1RN	{J}
 080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
 080BA640	Load image of capture rating	{J}
-080BAAB8	Load the image of the strategy evaluation Start up Procs	{J}
+080BAAB8	Load the image of the tactics evaluation Start up Procs	{J}
