@@ -9308,14 +9308,14 @@
 080B8014	総ターン数の画面の背景を設定	エンディング		{U}
 
 080ba8f8	攻略評価の「攻略評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
-080ba9f0	攻略評価の「生存評価評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080ba9f0	攻略評価の「生存評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080bab54	攻略評価の「資産評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080baa28	攻略評価の「経験評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080bab20	攻略評価の「戦闘評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080babf4	攻略評価の「総合評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080A93E8	攻略評価の「戦闘評価」のサブルーチン	{J}
-080BADB0	攻略評価の「生存評価評価」のサブルーチン	ユニットの生死判定	{J}
-080bade8	攻略評価の「戦闘評価」のサブルーチン	{J}
+080BADB0	攻略評価の「生存評価」のサブルーチン	ユニットの生死判定	{J}
+080bade8	攻略評価の「戦闘評価」のサブルーチン	勝率判定	{J}
 080171F8	資産評価を計算するための値の取得	{J}
 080BACC8	攻略評価の「攻略評価」を章クリア時に計算する	{J}
 080BAE60	攻略評価の「資産評価」を章クリア時に計算する	{J}
@@ -9335,14 +9335,14 @@
 080C572C	フリーマップExtraMapかどうかを判定する	{U}
 
 080B5D74	攻略評価の「攻略評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
-080B5E6C	攻略評価の「生存評価評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5E6C	攻略評価の「生存評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080B5FD0	攻略評価の「資産評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080B5EA4	攻略評価の「経験評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080B5F9C	攻略評価の「戦闘評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080B6070	攻略評価の「総合評価」を取得	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080A49A4	攻略評価の「戦闘評価」のサブルーチン	{U}
-080B622C	攻略評価の「生存評価評価」のサブルーチン	ユニットの生死判定	{U}
-080B6264	攻略評価の「戦闘評価」のサブルーチン	{U}
+080B622C	攻略評価の「生存評価」のサブルーチン	ユニットの生死判定	{U}
+080B6264	攻略評価の「戦闘評価」のサブルーチン	勝率判定	{U}
 08017450	資産評価を計算するための値の取得	{U}
 080B6144	攻略評価の「攻略評価」を章クリア時に計算する	{U}
 080B62DC	攻略評価の「資産評価」を章クリア時に計算する	{U}
@@ -9360,3 +9360,51 @@
 080969C8	進撃準備画面での現在の章IDの画像をObjとして登録して表示する	(遺跡)	{U}
 080969DC	進撃準備画面での現在の章IDの画像をObjとして登録して表示する	(Extra)	{U}
 080C0960	フリーマップExtraMapかどうかを判定する	{U}
+
+080D668C	nullsub_1	{J}
+08003328	nullsub_2	{J}
+08008F28	nullsub_15	{J}
+08019860	nullsub_8	{J}
+0802346C	nullsub_23	{J}
+08024BA4	nullsub_24	{J}
+080299D4	nullsub_22	{J}
+0802CA30	nullsub_11	{J}
+08030660	nullsub_12	{J}
+0804D148	nullsub_13	{J}
+08077390	nullsub_17	{J}
+0807ACB8	nullsub_18	{J}
+08087CB4	nullsub_19	{J}
+0809D634	nullsub_20	{J}
+080BD0C8	nullsub_5	{J}
+080BDE98	nullsub_21	{J}
+08009F38	__malloc_unlock	{J}
+0800CFB0	__malloc_unlock_0	{J}
+0800D000	__malloc_unlock_1	{J}
+0800D0B0	__malloc_unlock_2	{J}
+0804D144	__malloc_unlock_3	{J}
+08061388	__malloc_unlock_4	{J}
+0807B070	__malloc_unlock_5	{J}
+0808FA64	__malloc_unlock_6	{J}
+080975B0	__malloc_unlock_7	{J}
+080A29F8	__malloc_unlock_8	{J}
+080A82B0	__malloc_unlock_9	{J}
+080B3E48	__malloc_unlock_10	{J}
+080BD058	__malloc_unlock_11	{J}
+080D2AD4	__malloc_unlock_12	{J}
+080D6360	__malloc_unlock_13	{J}
+080D9964	__malloc_unlock_14	{J}
+
+080BAD48	GetChapterSurvivalRank	{J}
+080B61C4	GetChapterSurvivalRank	{U}
+080BAE08	GetChapterDeathCount	{J}
+080B6284	GetChapterDeathCount	{U}
+080BAE60	GetChapterFundsRank	{J}
+080B62DC	GetChapterFundsRank	{U}
+080BAEDC	GetChapterWinPerc	{J}
+080B6358	GetChapterWinPerc	{U}
+080BAF74	GetChapterCombatRank	{J}
+080B63F0	GetChapterCombatRank	{U}
+080BB088	ComputeChapterRankings	{J}
+080B6504	ComputeChapterRankings	{U}
+080D74C0	ComputeChecksum32	{U}
+080dc0fc	ComputeChecksum32	{J}

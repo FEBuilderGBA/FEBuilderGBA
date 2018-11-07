@@ -350,5 +350,53 @@ namespace FEBuilderGBA
             ItemWeaponEffectForm f = (ItemWeaponEffectForm)InputFormRef.JumpForm<ItemWeaponEffectForm>();
             f.JumpTo((uint)this.AddressList.SelectedIndex);
         }
+
+        bool IsFE8NVer2SkillNoSyo()
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+            if (B30.Value != 0x2e)
+            {//メティスの書でなければボツ
+                return false;
+            }
+            if (B6.Value < 0x25)
+            {//0x25未満ならばボツ
+                return false;
+            }
+            if (Program.ROM.u32(0x28846) != 0x4B0046C0)
+            {//スキルの書のパッチが当たっていない
+                return false;
+            }
+            if (InputFormRef.SearchSkillSystem() != FEBuilderGBA.InputFormRef.skill_system_enum.FE8N_ver2)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        private void B30_ValueChanged(object sender, EventArgs e)
+        {
+            if (IsFE8NVer2SkillNoSyo())
+            {//FE8NVer2のスキルの書
+                J_21.Text = R._("スキル");
+                InputFormRef.markupJumpLabel(J_21);
+            }
+            else
+            {
+                J_21.Text = R._("攻撃");
+                InputFormRef.unmarkupJumpLabel(J_21);
+            }
+        }
+
+        private void J_21_Click(object sender, EventArgs e)
+        {
+            if (IsFE8NVer2SkillNoSyo())
+            {
+                InputFormRef.JumpTo(B21, J_21, "SKILLASSIGNMENT", new string[] {} );
+            }
+        }
     }
 }

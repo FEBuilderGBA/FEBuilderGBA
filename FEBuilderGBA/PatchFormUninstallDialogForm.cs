@@ -55,14 +55,21 @@ namespace FEBuilderGBA
             }
             string filename = open.FileNames[0];
 
-            //念のため確認する
-            byte[] rom = MainFormUtil.OpenROMToByte(
-                  filename
-                , this.FindBackup.OrignalFilename);
-            if (! SearchNotContainThisPatchBy(rom))
+            if (this.FindBackup.OrignalFilename == filename)
+            {//無改造ROM
+                Log.Debug("無改造ROMなので利用できます");
+            }
+            else
             {
-                R.ShowStopError("このROMはアンインストール対象のパッチを含んでいるので利用できません。");
-                return ;
+                //念のため確認する
+                byte[] rom = MainFormUtil.OpenROMToByte(
+                      filename
+                    , this.FindBackup.OrignalFilename);
+                if (!SearchNotContainThisPatchBy(rom))
+                {
+                    R.ShowStopError("このROMはアンインストール対象のパッチを含んでいるので利用できません。");
+                    return;
+                }
             }
             //利用できるらしい.
             OrignalFilename.Text = filename;
@@ -80,11 +87,12 @@ namespace FEBuilderGBA
         {
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
+                pleaseWait.DoEvents(R._("準備しています"));
                 this.FindBackup = new FindBackup();
                 this.OrignalFilename.Text = SearchNotContainThisPatch(pleaseWait);
             }
 
-            if (this.IsAutomatic)
+            if (this.IsAutomatic && this.OrignalFilename.Text != "")
             {
                 UninstallPatchButton.PerformClick();
             }
@@ -103,6 +111,11 @@ namespace FEBuilderGBA
                 pleaseWait.DoEvents(R._("パッチを含まないバックアップを探索中。進捗:{1}/{2} {0}"
                     , Path.GetFileName(this.FindBackup.Files[i].FilePath)
                     , i, this.FindBackup.Files.Count));
+
+                if (this.FindBackup.OrignalFilename == this.FindBackup.Files[i].FilePath)
+                {//無改造ROMなので無条件にOK
+                    return this.FindBackup.Files[i].FilePath;
+                }
 
                 byte[] rom = MainFormUtil.OpenROMToByte(
                      this.FindBackup.Files[i].FilePath

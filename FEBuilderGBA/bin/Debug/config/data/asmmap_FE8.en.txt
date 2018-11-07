@@ -9385,29 +9385,29 @@ r3=X tile position of menu of the right	{U}
 080B770C	Draw total number of turns	ending	{U}
 080B7648	Preparing to draw the background of the screen with total number of turns	ending		{U}
 080B8014	Set the background of the screen with total number of turns	ending		{U}
-080ba8f8	Acquisition of "tactics evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
-080ba9f0	Acquire "survival evaluation evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
-080bab54	Acquired "asset valuation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
-080baa28	Acquisition of "experience evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
-080bab20	Acquisition of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080ba8f8	Acquire of "tactics evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080ba9f0	Acquire "survival evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080bab54	Acquire "asset valuation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080baa28	Acquire of "experience evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
+080bab20	Acquire of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080babf4	Acquire "comprehensive evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{J}
 080A93E8	Subroutine of "Battle evaluation" of tactics evaluation	{J}
 080BADB0	Subroutine of "evaluation of survival evaluation" of tactics evaluation	Unit's life / death determination	{J}
 080bade8	Subroutine of "Battle evaluation" of tactics evaluation	{J}
-080171F8	Acquisition of values ​​for calculating asset valuation	{J}
+080171F8	Acquire of values ​​for calculating asset valuation	{J}
 080BACC8	Calculate 'tactics evaluation' of tactics evaluation at the time of chapter clearance	{J}
 080BAE60	Calculate the "asset valuation" of the tactics evaluation at the time of clearing the chapter	{J}
 080BAFA8	Calculate the "experience value evaluation" of the tactics evaluation at the time of clearing the chapter	{J}
-080B5D74	Acquisition of "tactics evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
-080B5E6C	Acquire "survival evaluation evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
-080B5FD0	Acquired "asset valuation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
-080B5EA4	Acquisition of "experience evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
-080B5F9C	Acquisition of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5D74	Acquire of "tactics evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5E6C	Acquire "survival evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5FD0	Acquire "asset valuation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5EA4	Acquire of "experience evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
+080B5F9C	Acquire of "Battle Evaluation" of Capture Evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080B6070	Acquire "comprehensive evaluation" of tactics evaluation	0=E 1=D 2=C 3=B 4=A 5=S	{U}
 080A49A4	Subroutine of "Battle evaluation" of tactics evaluation	{U}
 080B622C	Subroutine of "evaluation of survival evaluation" of tactics evaluation	Unit's life / death determination	{U}
 080B6264	Subroutine of "Battle evaluation" of tactics evaluation	{U}
-08017450	Acquisition of values ​​for calculating asset valuation	{U}
+08017450	Acquire of values ​​for calculating asset valuation	{U}
 080B6144	Calculate 'tactics evaluation' of tactics evaluation at the time of chapter clearance	{U}
 080B62DC	Calculate the "asset valuation" of the tactics evaluation at the time of clearing the chapter	{U}
 080B6424	Calculate the "experience value evaluation" of the tactics evaluation at the time of clearing the chapter	{U}
@@ -9437,3 +9437,51 @@ r3=X tile position of menu of the right	{U}
 080969C8	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Remains)	{U}
 080969DC	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Extra)	{U}
 080C0960	Determine whether it is a free map ExtraMap	{U}
+
+080D668C	nullsub_1	{J}
+08003328	nullsub_2	{J}
+08008F28	nullsub_15	{J}
+08019860	nullsub_8	{J}
+0802346C	nullsub_23	{J}
+08024BA4	nullsub_24	{J}
+080299D4	nullsub_22	{J}
+0802CA30	nullsub_11	{J}
+08030660	nullsub_12	{J}
+0804D148	nullsub_13	{J}
+08077390	nullsub_17	{J}
+0807ACB8	nullsub_18	{J}
+08087CB4	nullsub_19	{J}
+0809D634	nullsub_20	{J}
+080BD0C8	nullsub_5	{J}
+080BDE98	nullsub_21	{J}
+08009F38	__malloc_unlock	{J}
+0800CFB0	__malloc_unlock_0	{J}
+0800D000	__malloc_unlock_1	{J}
+0800D0B0	__malloc_unlock_2	{J}
+0804D144	__malloc_unlock_3	{J}
+08061388	__malloc_unlock_4	{J}
+0807B070	__malloc_unlock_5	{J}
+0808FA64	__malloc_unlock_6	{J}
+080975B0	__malloc_unlock_7	{J}
+080A29F8	__malloc_unlock_8	{J}
+080A82B0	__malloc_unlock_9	{J}
+080B3E48	__malloc_unlock_10	{J}
+080BD058	__malloc_unlock_11	{J}
+080D2AD4	__malloc_unlock_12	{J}
+080D6360	__malloc_unlock_13	{J}
+080D9964	__malloc_unlock_14	{J}
+
+080BAD48	GetChapterSurvivalRank	{J}
+080B61C4	GetChapterSurvivalRank	{U}
+080BAE08	GetChapterDeathCount	{J}
+080B6284	GetChapterDeathCount	{U}
+080BAE60	GetChapterFundsRank	{J}
+080B62DC	GetChapterFundsRank	{U}
+080BAEDC	GetChapterWinPerc	{J}
+080B6358	GetChapterWinPerc	{U}
+080BAF74	GetChapterCombatRank	{J}
+080B63F0	GetChapterCombatRank	{U}
+080BB088	ComputeChapterRankings	{J}
+080B6504	ComputeChapterRankings	{U}
+080D74C0	ComputeChecksum32	{U}
+080dc0fc	ComputeChecksum32	{J}
