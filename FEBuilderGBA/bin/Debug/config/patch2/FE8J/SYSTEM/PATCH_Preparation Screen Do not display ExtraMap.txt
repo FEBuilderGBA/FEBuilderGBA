@@ -1,0 +1,18 @@
+NAME=進撃準備画面: ExtraMapの表示にしない
+NAME.en=Preparation Screen: Do not display ExtraMap
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|ExtraMapの表示にしない|ONN
+COMBO.en=Default|OFF|Do not ExtraMap|ONN
+COMBO.zh=Default|OFF|Do not ExtraMap|ONN
+
+OFF:0x98E2A=0x2C 0xF0 0x7F 0xFC
+ONN:0x98E2A=0x00 0x00 0x00 0x20
+
+INFO=進撃準備画面の右上にあるマップIDを表示する部分を変更します
+INFO.en=Change the part to display the map ID in the upper right corner of the attack advancement screen
+NAME.zh=攻击准备屏幕：不显示ExtraMap
+INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID

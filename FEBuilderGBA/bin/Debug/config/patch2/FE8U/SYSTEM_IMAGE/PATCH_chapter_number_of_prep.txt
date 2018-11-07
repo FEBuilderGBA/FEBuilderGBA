@@ -1,0 +1,15 @@
+NAME=進撃準備の章番号の画像
+NAME.en=chapter_number_of_prep
+INFO=進撃準備の章ID(マップID)の画像
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x095C78//0xA1AC88
+PALETTE_POINTER=0x095C80//0xA1B174
+
+INFO.en=Image of chapter ID (map ID) prepared for attack
+NAME.zh=攻击章号准备的图像
+INFO.zh=为攻击准备的章节ID（地图ID）的图像

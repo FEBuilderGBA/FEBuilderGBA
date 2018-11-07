@@ -9411,3 +9411,29 @@ r3=X tile position of menu of the right	{U}
 080B6144	Calculate 'tactics evaluation' of tactics evaluation at the time of chapter clearance	{U}
 080B62DC	Calculate the "asset valuation" of the tactics evaluation at the time of clearing the chapter	{U}
 080B6424	Calculate the "experience value evaluation" of the tactics evaluation at the time of clearing the chapter	{U}
+08097D24	Draw the purpose of the upper right chapter of the attack advancement screen	{J}
+08030C10	Display the results under the status	{J}
+08A98130	&LZ77	Something's TSA	24	{J}
+08A980F0	&LZ77	Something's TSA	25	{J}
+08097F64	Draw the advancement preparation screen	{J}
+08097F30	Retrieve image of chapter number of advancement screen	{J}
+08098DA0	Acquire the current chapter ID on the attack advancement screen	{J}
+08098C3C	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	{J}
+08098C84	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Chapter ID)	{J}
+08098C98	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Tower)	{J}
+08098CAC	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Remains)	{J}
+08098CC0	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Extra)	{J}
+080C572C	Determine whether it is a free map ExtraMap	{U}
+08095A44	Draw the purpose of the upper right chapter of the attack advancement screen	{U}
+08030CC0	Display the results under the status	{U}
+08A1B698	&LZ77	Something's TSA	24	{U}
+08A1B658	&LZ77	Something's TSA	25	{U}
+08095C84	Draw the advancement preparation screen	{U}
+08095C50	Retrieve image of chapter number of advancement screen	{U}
+08096ABC	Acquire the current chapter ID on the attack advancement screen	{U}
+08096958	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	{U}
+080969A0	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Chapter ID)	{U}
+080969B4	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Tower)	{U}
+080969C8	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Remains)	{U}
+080969DC	Register and display the image of the current chapter ID on the advancement preparation screen as Obj	(Extra)	{U}
+080C0960	Determine whether it is a free map ExtraMap	{U}

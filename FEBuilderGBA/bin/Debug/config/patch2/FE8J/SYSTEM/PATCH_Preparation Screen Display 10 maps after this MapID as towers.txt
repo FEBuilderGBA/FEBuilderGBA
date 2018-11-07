@@ -1,0 +1,14 @@
+NAME=進撃準備画面: このMapID以降の10マップを塔として表示する
+NAME.en=Preparation Screen: Display 10 maps after this MapID as towers
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x98DFC
+ADDRESS_TYPE=MAP
+
+INFO=進撃準備画面の右上にあるマップIDを表示する部分を変更します
+INFO.en=Change the part to display the map ID in the upper right corner of the attack advancement screen
+NAME.zh=攻击准备屏幕：在MapID之后显示10个地图作为塔
+INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID

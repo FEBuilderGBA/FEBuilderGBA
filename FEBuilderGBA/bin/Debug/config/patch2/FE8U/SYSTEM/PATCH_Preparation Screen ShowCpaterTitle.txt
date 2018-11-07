@@ -1,0 +1,15 @@
+NAME=進撃準備画面: 目的ではなく章名を表示する
+NAME.en=Preparation Screen: Display chapter name rather than purpose
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x95A9A
+COMBO=修正しない|0x8A|章名を表示|0x70
+COMBO.en=Defualt|0x8A|Display Chapter name|0x70
+COMBO.zh=Defualt|0x8A|Display Chapter name|0x70
+
+AUTHOR=aera
+INFO=進撃準備の章の目的が表示されている部分に、章名(タイトル)を表示するようにします。
+INFO.en=Make sure to display the chapter title (title) in the part where the purpose of the challenge preparation chapter is displayed.
+NAME.zh=攻击准备屏幕：显示章节名称而不是目的
+INFO.zh=确保在显示挑战准备章节目的的部分中显示章节标题（标题）。

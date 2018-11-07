@@ -1486,6 +1486,7 @@ namespace FEBuilderGBA
                 list.SelectedIndex = -1;
                 return false;
             }
+
             if (list.Items.Count > selectID)
             {
                 list.SelectedIndex = selectID;
@@ -3053,6 +3054,8 @@ namespace FEBuilderGBA
             string relativePath = relativeUri.ToString();
 
             relativePath = relativePath.Replace('/', '\\');
+            relativePath = Uri.UnescapeDataString(relativePath);
+
             return (relativePath);
         }
 

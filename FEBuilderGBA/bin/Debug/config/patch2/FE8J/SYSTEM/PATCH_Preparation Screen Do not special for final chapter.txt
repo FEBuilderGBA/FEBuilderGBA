@@ -1,0 +1,19 @@
+NAME=進撃準備画面: 終章用の特殊表記をやめる
+NAME.en=Preparation Screen: Do not special for final chapter
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|終章用の特殊表記をやめる|ONN|逆に常に終章扱い|REV
+COMBO.en=Default|OFF|Do not special for final chapter|ONN|Reverse|REV
+COMBO.zh=Default|OFF|Do not special for final chapter|ONN|Reverse|REV
+
+OFF:0x98E3A=0x20 0x1C
+ONN:0x98E3A=0x0a 0xe0
+REV:0x98E3A=0x06 0xe0
+
+INFO=進撃準備画面の右上にあるマップIDを表示する部分を変更します
+INFO.en=Change the part to display the map ID in the upper right corner of the attack advancement screen
+NAME.zh=攻击准备屏幕：为最后一章停止特殊符号
+INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID

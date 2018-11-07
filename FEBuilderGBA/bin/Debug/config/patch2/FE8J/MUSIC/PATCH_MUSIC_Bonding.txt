@@ -1,6 +1,6 @@
-NAME=MUSIC_戦績
-NAME.en=MUSIC_Bonding
-NAME.zh=音乐_战绩
+NAME=MUSIC_戦績/攻略評価
+NAME.en=MUSIC_Record/Tactics evaluation
+NAME.zh=音乐_战绩/捕获评级
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
