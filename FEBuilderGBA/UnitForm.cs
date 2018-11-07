@@ -769,7 +769,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                return (cid == 0x01) ;
+                return (cid == 0x01 || cid == 0x0F) ;
             }
         }
 

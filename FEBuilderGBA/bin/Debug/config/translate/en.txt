@@ -8257,6 +8257,9 @@ It is not available because there are conflicting patches
 :アンインストールしたパッチを含んでいないROMを選択してください
 Please select ROM that does not contain uninstalled patch
 
+:無改造ROMなので利用できます
+It can be used because it is unmodified ROM
+
 :このROMはアンインストール対象のパッチを含んでいるので利用できません。
 This ROM can not be used because it contains patches to be uninstalled.
 
