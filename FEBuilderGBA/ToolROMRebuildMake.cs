@@ -1936,6 +1936,11 @@ namespace FEBuilderGBA
 //                    Debug.Assert(false);
 //                }
             }
+            else if (address.DataType == Address.DataTypeEnum.POINTER_ARRAY)
+            {//ポインタ
+                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.NONE);
+                sb.Append("@MIX ");
+            }
             else
             {
                 WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);

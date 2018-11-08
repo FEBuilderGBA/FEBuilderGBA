@@ -153,10 +153,7 @@ namespace FEBuilderGBA
         private void EndButton_Click(object sender, EventArgs e)
         {
             Stop();
-            if (this.IsEmulatorMode)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -166,10 +163,7 @@ namespace FEBuilderGBA
                 return;
             }
             Speak(this.DefString , true);
-            if (this.IsEmulatorMode)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
 

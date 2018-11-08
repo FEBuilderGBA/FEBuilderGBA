@@ -13,9 +13,21 @@ SHORT 0
 POP
 ALIGN 4
 HPFrames:
-#incbin "bin/HPFrames.bin"
-HPFramePointers:
-#include "ASM/HPFramePointers.txt"
+#incbin "bin/HPFrames.bin" //HINT=BIN
+HPFramePointers:           //HINT=POINTER_ARRAY
+POIN HPFrames
+POIN HPFrames+8
+POIN HPFrames+16
+POIN HPFrames+24
+POIN HPFrames+32
+POIN HPFrames+40
+POIN HPFrames+48
+POIN HPFrames+56
+POIN HPFrames+64
+POIN HPFrames+72
+POIN HPFrames+80
+POIN HPFrames+88
+
 HPBars:
 //#incbin "ASM/Talk_Warning_Bars.dmp" //causes lag?
 #incbin "ASM/_warning_and_hpbars.dmp"

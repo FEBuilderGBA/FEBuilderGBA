@@ -316,67 +316,6 @@ namespace FEBuilderGBA
         }
         // search method; FE EDitor からもってきました。 自分で作った奴はバグがあるみたいなので・・・
 
-        //圧縮時に最長一致を検索する バグ
-        /*
-        static int search(byte[] data, int pos, int length, out int out_match_pos)
-        {
-            if (pos <= 3 || length - pos < 3)
-            {//3文字にみたいないものは圧縮できない.
-                out_match_pos = 0;
-                return 0;
-            }
-            //WINDOW_SIZE READ_AHEAD_BUFFER_SIZE
-            //READ_AHEAD_BUFFER_SIZEの文字列が 最も長くマッチする文字列の場所をWINDOW_SIZEから探索する
-            int max_match_count = 0;
-            int max_match_pos = 0;
-
-            int wstart = pos-Math.Min(pos,WINDOW_SIZE);
-            int alimit = pos+Math.Min(length-pos,READ_AHEAD_BUFFER_SIZE);
-            for (int w = wstart; w < pos; w++)
-            {
-                //1文字目が一致するか？
-                if (data[pos] != data[w])
-                {
-                    continue;
-                }
-                //1文字目が一致するらしいので、次も調べる
-                int ww = w+1;
-                for (int a = pos + 1; true ; a++,ww++)
-                {
-                    if (a >= alimit)
-                    {
-                        break;
-                    }
-                    if (ww >= pos)
-                    {
-                        break;
-                    }
-                    if (data[a] != data[ww])
-                    {
-                        break;
-                    }
-                }
-                //マッチしましたか？
-                int match_count = ww - w;
-                //最長マッチ？
-                if (max_match_count < match_count)
-                {
-                    max_match_count = match_count;
-                    max_match_pos = w - wstart;
-                }
-            }
-
-            if (max_match_count <= 0)
-            {//どこもマッチしていない.
-                out_match_pos = 0;
-                return 0;
-            }
-
-            out_match_pos = max_match_pos + pos;
-            Debug.Assert(out_match_pos > 0);
-            return max_match_count;
-        }
-        */
 
         //圧縮
         public static byte[] compress(byte[] data)

@@ -152,7 +152,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                lines.Add("BIN:" + U.To0xHexString((uint)checkpoint) + "=" + split_filename);
+                lines.Add("BINF:" + U.To0xHexString((uint)checkpoint) + "=" + split_filename);
             }
 
             File.WriteAllLines(bin_patchfilename, lines);
@@ -288,7 +288,7 @@ namespace FEBuilderGBA
                         }
                     }
 
-                    lines.Add("BIN:" + U.To0xHexString((uint)checkpoint) + "=" + split_filename);
+                    lines.Add("BINF:" + U.To0xHexString((uint)checkpoint) + "=" + split_filename);
                 }
             }
 

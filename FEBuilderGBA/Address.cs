@@ -58,6 +58,7 @@ namespace FEBuilderGBA
             ,TEXTPOINTERS
             ,POINTER
             ,POINTER_ASM    //アセンブラ関数専用へのポインタ
+            ,POINTER_ARRAY  //ポインタ配列
             ,AISCRIPT
             ,MAGIC_APPEND_SPELLTABLE //追加魔法テーブル ポインタの塊 5*4
             ,MAGICFRAME_FEITORADV //魔法FRAME 圧縮されていないが0x85フレームポインタがあるよ
@@ -421,6 +422,24 @@ namespace FEBuilderGBA
             }
             AddProcsAddress(list, addr, pointer, info, isPointerOnly);
         }
+        static public void AddPointerArray(List<Address> list, uint address, uint length , string info, Address.DataTypeEnum innerType)
+        {
+            Debug.Assert(length % 4 == 0);
+
+            int n = 0;
+            for (uint i = 0; i < length; i += 4 , n ++)
+            {
+                uint p = address + i;
+                uint addr = Program.ROM.u32(p);
+                if (!U.isSafetyPointer(addr))
+                {
+                    Debug.Assert(false);
+                    return;
+                }
+                addr = U.toOffset(addr);
+                list.Add(new Address(addr, 0, p, info + n, innerType));
+            }
+        }
         
         public static bool IsLZ77(DataTypeEnum type)
         {
@@ -478,6 +497,7 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.OAMSP
                 || dataType == Address.DataTypeEnum.POINTER
                 || dataType == Address.DataTypeEnum.POINTER_ASM
+                || dataType == Address.DataTypeEnum.POINTER_ARRAY
                 || dataType == Address.DataTypeEnum.AISCRIPT
                 || dataType == Address.DataTypeEnum.MAGICFRAME_CSA
                 || dataType == Address.DataTypeEnum.MAGICFRAME_FEITORADV

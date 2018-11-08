@@ -17,6 +17,7 @@ namespace FEBuilderGBA
             ,ASM //incbinされたデータ ASM
             ,BIN //incbinされたデータ BIN
             ,LYN //lynによってインポートされるelfファイル
+            ,POINTER_ARRAY
         }
         public class Data
         {
@@ -81,10 +82,10 @@ namespace FEBuilderGBA
                 ParseLynELF(line, lines[i]);
                 ParseLynHook(line, lines[i]);
                 ParsePng2Dmp(line, lines[i]);
-                ParseLabel(line);
+                ParseLabel(line , lines[i]);
             }
         }
-        void ParseLabel(string line)
+        void ParseLabel(string line, string orignalIine)
         {
             string a = line.Trim();
             int pos = a.IndexOf(':');
@@ -93,6 +94,14 @@ namespace FEBuilderGBA
                 return ;
             }
             this.CurrentLabel = a.Substring(0, pos);
+
+
+            if (orignalIine.IndexOf("HINT=POINTER_ARRAY", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.POINTER_ARRAY);
+                this.DataList.Add(data);
+            }
+
         }
         int FindJumpToHack(string line)
         {
@@ -245,6 +254,7 @@ namespace FEBuilderGBA
             this.DataList.Add(data);
             return true;
         }
+
         bool ParsePng2Dmp(string line, string orignalIine)
         {
             string a = Keyword(line, "#incext Png2Dmp");
@@ -260,6 +270,14 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            DataEnum dataType = DataEnum.BIN;
+            if (orignalIine.IndexOf("--lz77") >= 0)
+            {
+                byte[] image = Png2DmpLZ77(fullbinname);
+                Data data = new Data(filename, image, dataType);
+                this.DataList.Add(data);
+            }
+
             string errorMessage;
             Bitmap bitmap = ImageUtil.OpenBitmap(fullbinname, null, out errorMessage);
             if (bitmap == null)
@@ -272,8 +290,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            DataEnum dataType = DataEnum.BIN;
-            if (line.IndexOf("--palette-only") >= 0)
+            if (orignalIine.IndexOf("--palette-only") >= 0)
             {//パレットのみ
                 byte[] palette = ImageUtil.ImageToPalette(bitmap, 1);
 
@@ -282,12 +299,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                byte[] image = ImageUtil.ImageToByte16Tile(bitmap, bitmap.Width , bitmap.Height);
-                
-                if (line.IndexOf("--lz77") >= 0)
-                {//LZ77 Png2Dmpと微妙に実装が違うようだ
-                    image = LZ77.compress(image);
-                }
+                byte[] image = ImageUtil.ImageToByte16Tile(bitmap, bitmap.Width, bitmap.Height);
 
                 Data data = new Data(filename, image, dataType);
                 this.DataList.Add(data);
@@ -296,6 +308,17 @@ namespace FEBuilderGBA
             bitmap.Dispose();
 
             return true;
+        }
+        byte[] Png2DmpLZ77(string filename)
+        {
+            string hint = filename + ".dmp";
+            if (File.Exists(hint))
+            {
+                return File.ReadAllBytes(hint);
+            }
+            //ヒントファイルがない!!
+            Debug.Assert(false);
+            return new byte[] { };
         }
 
         bool ParseORG(string line)

@@ -14,8 +14,7 @@ POIN ChFont
 POIN ChTable
 
 ChFont:
-#incbin "ASM/font.png.bin"	//HINT=BIN
-//#incext Png2Dmp "ASM/font.png" --lz77
+#incext Png2Dmp "ASM/font.png" --lz77
 
 ChTable:
 #incbin "ASM/chartable.dmp"	//HINT=BIN

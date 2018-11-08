@@ -4061,6 +4061,17 @@ namespace FEBuilderGBA
             }
             return binMappings;
         }
+
+        static bool[] MakeFullMask(uint length)
+        {
+            bool[] r = new bool[length];
+            for (int i = 0; i < length; i++)
+            {
+                r[i] = true;
+            }
+            return r;
+        }
+
         //EAパッチがどこにマップされたのか追跡して表示する.
         static List<BinMapping> TraceEAPatchedMapping(PatchSt patch)
         {
@@ -4181,6 +4192,40 @@ namespace FEBuilderGBA
                         b.bin = Program.ROM.getBinaryData(addr, length);
                         b.mask = isSkip;
                         b.type = Address.DataTypeEnum.PATCH_ASM;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.POINTER_ARRAY)
+                    {
+                        //最後に書き込んだ部分から、ポインタと思われる部分を連続して検出する.
+                        uint addr = lastMatchAddr;
+                        for (; addr + 3 < Program.ROM.Data.Length; addr+=4 )
+                        {
+                            uint a = Program.ROM.u32(addr);
+                            if (! U.isSafetyPointer(a))
+                            {
+                                break;
+                            }
+
+                        }
+                        uint length = addr - lastMatchAddr;
+                        if (length <= 0)
+                        {
+                            continue;
+                        }
+                        addr = lastMatchAddr;
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeFullMask(length);
+                        b.type = Address.DataTypeEnum.POINTER_ARRAY;
 
                         binMappings.Add(b);
 
@@ -4790,13 +4835,20 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                uint length = isPointerOnly ? 0 : m.length;
+
                 FEBuilderGBA.Address.AddAddress(list
                     , a
-                    , length
+                    , isPointerOnly ? 0 : m.length
                     , U.NOT_FOUND
                     , patch.Name + "@" + m.filename + "@EA"
                     , m.type);
+                if (m.type == Address.DataTypeEnum.POINTER_ARRAY)
+                {
+                    FEBuilderGBA.Address.AddPointerArray(list,
+                        a, m.length,
+                        patch.Name + "@" + m.filename + "@Pointer_Array",
+                        Address.DataTypeEnum.MIX);
+                }
 
                 if (isStoreSymbol && m.filename != "")
                 {

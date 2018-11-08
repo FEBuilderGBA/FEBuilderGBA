@@ -43,9 +43,11 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.P0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_EVENT = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.N_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.N_P0 = new System.Windows.Forms.NumericUpDown();
             this.N_J_0_EVENT = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,10 +65,10 @@
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.N_AddressList = new ListBoxEx();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.N_LabelFilter = new System.Windows.Forms.Label();
             this.JUMP_OPNING_EVENT = new System.Windows.Forms.Label();
             this.OPNING_EVENT = new System.Windows.Forms.NumericUpDown();
@@ -79,8 +81,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.X_JUMP_ROAD = new System.Windows.Forms.Label();
             this.X_JUMP_WORLDMAP_POINT = new System.Windows.Forms.Label();
-            this.N_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -152,7 +152,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(353, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
@@ -280,6 +279,18 @@
             this.panel2.Size = new System.Drawing.Size(874, 204);
             this.panel2.TabIndex = 184;
             // 
+            // L_0_EVENT
+            // 
+            this.L_0_EVENT.ErrorMessage = "";
+            this.L_0_EVENT.Location = new System.Drawing.Point(543, 0);
+            this.L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_EVENT.Name = "L_0_EVENT";
+            this.L_0_EVENT.Placeholder = "";
+            this.L_0_EVENT.ReadOnly = true;
+            this.L_0_EVENT.Size = new System.Drawing.Size(324, 25);
+            this.L_0_EVENT.TabIndex = 245;
+            this.L_0_EVENT.Visible = false;
+            // 
             // P0
             // 
             this.P0.Hexadecimal = true;
@@ -297,7 +308,7 @@
             // J_0_EVENT
             // 
             this.J_0_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0_EVENT.Location = new System.Drawing.Point(0, 0);
+            this.J_0_EVENT.Location = new System.Drawing.Point(-1, -1);
             this.J_0_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_0_EVENT.Name = "J_0_EVENT";
             this.J_0_EVENT.Size = new System.Drawing.Size(407, 26);
@@ -316,6 +327,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(872, 207);
             this.panel3.TabIndex = 188;
+            // 
+            // N_L_0_EVENT
+            // 
+            this.N_L_0_EVENT.ErrorMessage = "";
+            this.N_L_0_EVENT.Location = new System.Drawing.Point(550, 4);
+            this.N_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_L_0_EVENT.Name = "N_L_0_EVENT";
+            this.N_L_0_EVENT.Placeholder = "";
+            this.N_L_0_EVENT.ReadOnly = true;
+            this.N_L_0_EVENT.Size = new System.Drawing.Size(313, 25);
+            this.N_L_0_EVENT.TabIndex = 244;
+            this.N_L_0_EVENT.Visible = false;
             // 
             // N_P0
             // 
@@ -390,7 +413,6 @@
             // 
             // N_ReadCount
             // 
-
             this.N_ReadCount.Location = new System.Drawing.Point(353, 5);
             this.N_ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReadCount.Name = "N_ReadCount";
@@ -521,11 +543,12 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(1, 30);
+            this.AddressList.Location = new System.Drawing.Point(1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(324, 202);
+            this.AddressList.Size = new System.Drawing.Size(330, 209);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -533,10 +556,10 @@
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(5, 0);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(321, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(332, 26);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -556,11 +579,12 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(0, 26);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(329, 202);
+            this.N_AddressList.Size = new System.Drawing.Size(332, 211);
             this.N_AddressList.TabIndex = 108;
             this.N_AddressList.SelectedIndexChanged += new System.EventHandler(this.N_AddressList_SelectedIndexChanged);
             // 
@@ -568,10 +592,10 @@
             // 
             this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_LabelFilter.Location = new System.Drawing.Point(1, 0);
+            this.N_LabelFilter.Location = new System.Drawing.Point(1, -1);
             this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N_LabelFilter.Name = "N_LabelFilter";
-            this.N_LabelFilter.Size = new System.Drawing.Size(328, 26);
+            this.N_LabelFilter.Size = new System.Drawing.Size(331, 26);
             this.N_LabelFilter.TabIndex = 107;
             this.N_LabelFilter.Text = "名前";
             this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -723,30 +747,6 @@
             this.X_JUMP_WORLDMAP_POINT.TabIndex = 0;
             this.X_JUMP_WORLDMAP_POINT.Text = "ワールドマップ拠点へJump";
             this.X_JUMP_WORLDMAP_POINT.Click += new System.EventHandler(this.X_JUMP_WORLDMAP_POINT_Click);
-            // 
-            // N_L_0_EVENT
-            // 
-            this.N_L_0_EVENT.ErrorMessage = "";
-            this.N_L_0_EVENT.Location = new System.Drawing.Point(550, 4);
-            this.N_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_L_0_EVENT.Name = "N_L_0_EVENT";
-            this.N_L_0_EVENT.Placeholder = "";
-            this.N_L_0_EVENT.ReadOnly = true;
-            this.N_L_0_EVENT.Size = new System.Drawing.Size(313, 25);
-            this.N_L_0_EVENT.TabIndex = 244;
-            this.N_L_0_EVENT.Visible = false;
-            // 
-            // L_0_EVENT
-            // 
-            this.L_0_EVENT.ErrorMessage = "";
-            this.L_0_EVENT.Location = new System.Drawing.Point(543, 0);
-            this.L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_EVENT.Name = "L_0_EVENT";
-            this.L_0_EVENT.Placeholder = "";
-            this.L_0_EVENT.ReadOnly = true;
-            this.L_0_EVENT.Size = new System.Drawing.Size(324, 25);
-            this.L_0_EVENT.TabIndex = 245;
-            this.L_0_EVENT.Visible = false;
             // 
             // WorldMapEventPointerForm
             // 

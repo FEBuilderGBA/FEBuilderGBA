@@ -175,7 +175,7 @@
             // label18
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(454, 0);
+            this.label18.Location = new System.Drawing.Point(454, -1);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 30);
@@ -197,7 +197,7 @@
             // label13
             // 
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(260, 0);
+            this.label13.Location = new System.Drawing.Point(260, -1);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 30);
@@ -207,7 +207,7 @@
             // 
             // AllWriteButton
             // 
-            this.AllWriteButton.Location = new System.Drawing.Point(648, 0);
+            this.AllWriteButton.Location = new System.Drawing.Point(648, -1);
             this.AllWriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.AllWriteButton.Name = "AllWriteButton";
             this.AllWriteButton.Size = new System.Drawing.Size(167, 30);
@@ -219,7 +219,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Location = new System.Drawing.Point(-1, -1);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 30);
@@ -278,7 +278,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, -2);
+            this.label1.Location = new System.Drawing.Point(-1, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 30);
@@ -289,7 +289,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(304, 0);
+            this.label2.Location = new System.Drawing.Point(304, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 30);
@@ -345,10 +345,10 @@
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(0, -1);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(298, 29);
+            this.LabelFilter.Size = new System.Drawing.Size(301, 29);
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
