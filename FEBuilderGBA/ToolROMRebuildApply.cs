@@ -157,7 +157,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (isMakeFreeAreaList == false && addr > this.RebuildAddress)
+                if (isMakeFreeAreaList == false && addr >= this.RebuildAddress)
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
                     if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
