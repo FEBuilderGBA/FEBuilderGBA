@@ -2333,12 +2333,31 @@ namespace FEBuilderGBA
                 {
                     ExportSkillAnimeWrite(filename);
 
-                    SkillConfigSkillSystemForm f = (SkillConfigSkillSystemForm)InputFormRef.JumpForm<SkillConfigSkillSystemForm>(U.NOT_FOUND);
-                    string error = f.SkillAnimeImportDirect(this.ID, filename);
-                    if (error != "")
+                    InputFormRef.skill_system_enum skillsystem = InputFormRef.SearchSkillSystem();
+                    if (skillsystem == InputFormRef.skill_system_enum.FE8N_ver2)
                     {
-                        R.ShowStopError(error);
-                        return;
+                        SkillConfigFE8NVer2SkillForm f = (SkillConfigFE8NVer2SkillForm)InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(U.NOT_FOUND);
+                        string error = f.SkillAnimeImportDirect(this.ID, filename);
+                        if (error != "")
+                        {
+                            R.ShowStopError(error);
+                            return;
+                        }
+                    }
+                    else if (skillsystem == InputFormRef.skill_system_enum.SkillSystem)
+                    {
+                        SkillConfigSkillSystemForm f = (SkillConfigSkillSystemForm)InputFormRef.JumpForm<SkillConfigSkillSystemForm>(U.NOT_FOUND);
+                        string error = f.SkillAnimeImportDirect(this.ID, filename);
+                        if (error != "")
+                        {
+                            R.ShowStopError(error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Debug.Assert(false);
+                        R.ShowStopError(R._("スキル拡張がありません。\r\nスキル拡張パッチをインストールしてから利用してください。")); 
                     }
                 }
             }
