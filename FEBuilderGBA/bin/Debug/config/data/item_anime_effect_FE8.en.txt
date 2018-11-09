@@ -15,7 +15,7 @@
 0E=Dance/Play (Regular)
 0F=Dance/Play (Regular)
 10=Ballista (Glitchy Arrow)
-11=Nothing (Stalls Battle Screen)
+11=Nothing (Stalls Battle Screen/Ecksacks)
 12=Sword of Seals Fire
 13=Flametongue
 14=Fa's Holy Dragon Stone (BGM/SFX-kill)

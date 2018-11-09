@@ -39,6 +39,8 @@
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label7 = new System.Windows.Forms.Label();
             this.L_4_COMBO = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,11 +63,9 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -214,6 +214,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(870, 640);
             this.panel4.TabIndex = 80;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(226, 78);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(336, 25);
+            this.Comment.TabIndex = 198;
+            // 
+            // label7
+            // 
+            this.label7.AccessibleDescription = "@COMMENT";
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(-1, 75);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(216, 31);
+            this.label7.TabIndex = 197;
+            this.label7.Text = "コメント";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_4_COMBO
             // 
@@ -470,6 +491,16 @@
             this.panel6.Size = new System.Drawing.Size(421, 670);
             this.panel6.TabIndex = 147;
             // 
+            // AddressListExpandsButton_32766
+            // 
+            this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(2, 639);
+            this.AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_32766.Name = "AddressListExpandsButton_32766";
+            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(415, 30);
+            this.AddressListExpandsButton_32766.TabIndex = 116;
+            this.AddressListExpandsButton_32766.Text = "リストの拡張";
+            this.AddressListExpandsButton_32766.UseVisualStyleBackColor = true;
+            // 
             // LabelFilter
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -493,37 +524,6 @@
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(421, 617);
             this.AddressList.TabIndex = 0;
-            // 
-            // AddressListExpandsButton_32766
-            // 
-            this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(2, 639);
-            this.AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton_32766.Name = "AddressListExpandsButton_32766";
-            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(415, 30);
-            this.AddressListExpandsButton_32766.TabIndex = 116;
-            this.AddressListExpandsButton_32766.Text = "リストの拡張";
-            this.AddressListExpandsButton_32766.UseVisualStyleBackColor = true;
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(226, 78);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(336, 25);
-            this.Comment.TabIndex = 198;
-            // 
-            // label7
-            // 
-            this.label7.AccessibleDescription = "@COMMENT";
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(-1, 75);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(216, 31);
-            this.label7.TabIndex = 197;
-            this.label7.Text = "コメント";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SongTableForm
             // 

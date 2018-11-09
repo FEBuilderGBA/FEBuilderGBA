@@ -7189,7 +7189,7 @@ r3=X tile position of menu of the right	{U}
 085911C4	:085911D7	MMSizeTable	{U}
 085B8F5C	:085B8F6F	MMSizeTable	{J}
 08001EE4	EnablePaletteSync	{J}
-089991AC	:0899B5AB	Boot data 2It seems to be tile animation data not being used	{U}
+089991AC	:0899B5AB	UNUSED DATA 2	It seems to be tile animation data not being used	{U}
 0859A140	&PALETTE	Something's palette	01	{U}
 0859EEA0	&PALETTE	Something's palette	02	{U}
 0859EEC0	&PALETTE	Something's palette	03	{U}
@@ -7482,16 +7482,16 @@ r3=X tile position of menu of the right	{U}
 08081B40	Set up scar damage recovery effect	{U}
 08A20600	:08A2067F	Restoration of wound medicine Effect pallet Animation	{J}
 089AFF78	:089AFFF7	Restoration of wound medicine Effect pallet Animation	{U}
-08BBD970	:08BC39FF	Boot dataNAZO 1	{J}
-08BBB6C8	:08BBD3F7	Boot dataNAZO 2	{J}
-08BB8ED0	:08BBB33C	Boot dataNAZO 3	{J}
-08BB310C	:08BB878B	Boot dataNAZO 4	{J}
-08FE0000	:08FE1553	Boot dataROM termination 1	{J}
-08FE281C	:08FE308F	Boot dataROM termination 2	{J}
-08B1FE7C	:08B2A5D3	Boot dataNAZO 1	{U}
-08B1A0B8	:08B1FA3B	Boot dataNAZO 2	{U}
-08FE0000	:08FE1553	Boot dataROM termination 1	{U}
-08FE281C	:08FE308F	Boot dataROM termination 2	{U}
+08BBD970	:08BC39FF	UNUSED DATA NAZO 1	{J}
+08BBB6C8	:08BBD3F7	UNUSED DATA NAZO 2	{J}
+08BB8ED0	:08BBB33C	UNUSED DATA NAZO 3	{J}
+08BB310C	:08BB8787	Network Arena Data	{J}
+08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{J}
+08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{J}
+08B1FE7C	:08B2A5D3	UNUSED DATA NAZO 1	{U}
+08B1A0B8	:08B1FA3B	UNUSED DATA NAZO 2	{U}
+08FE0000	:08FE1553	UNUSED DATA ROM termination 1	{U}
+08FE281C	:08FE308F	UNUSED DATA ROM termination 2	{U}
 080837b0	Forced game over	{U}
 08018ff0	AreAnyPlayerUnitDead	{U}
 08085AE8	Forced game over	{J}
@@ -8082,9 +8082,9 @@ r3=X tile position of menu of the right	{U}
 08AB0A44	:08AB0B47	Opening class demoLottery table	{J}
 08A2FBD4	:08A2FBDF	Opening class demoNumber to shift lottery table	{U}
 08AB0A38	:08AB0A43	Opening class demoNumber to shift lottery table	{J}
-085B0FA8	&LZ77	Boot data	Image of FE 6	There is no pointer in FE 8U	{U}
-085B4B44	&LZ77	Boot data	TSA of the image of FE 6	There is no pointer in FE 8U	{U}
-085B50A8	&PALETTE16	Boot data	FE 6 image palette	There is no pointer in FE 8U	{U}
+085B0FA8	&LZ77	UNUSED DATA	Image of FE 6	There is no pointer in FE 8U	{U}
+085B4B44	&LZ77	UNUSED DATA	TSA of the image of FE 6	There is no pointer in FE 8U	{U}
+085B50A8	&PALETTE16	UNUSED DATA	FE 6 image palette	There is no pointer in FE 8U	{U}
 0801474C	Apply uncompressed TSA and read animation pattern	{U}
 089B17A4	&HEADERTSA	Anime pattern using something uncompressed TSA	1	{U}
 089B0864	&HEADERTSA	Anime pattern using something uncompressed TSA	2	{U}
@@ -8531,12 +8531,12 @@ r3=X tile position of menu of the right	{U}
 08A95478	&OAMREGS_ARRAY	Unk OAMREGS	18	FE8JONLY	{J}
 08A1A474	&HEADERTSA	Something's TSA	20	{U}
 08A96CC4	&HEADERTSA	Something's TSA	20	{J}
-08A9C874	:08A9C997	Boot data	Tile Changes	1	unused	{J}
-08A9BEFC	:08A9C01F	Boot data	Tile Changes	2	unused	{J}
-08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{J}
-08A1F948	:08A1FA6B	Boot data	Tile Changes	1	unused	{U}
-08A1EFD0	:08A1F0F3	Boot data	Tile Changes	2	unused	{U}
-08A1F3A8	:08A1F3BF	Boot data	Tile Changes	3	unused	{U}
+08A9C874	:08A9C997	UNUSED DATA	Tile Changes	1	unused	{J}
+08A9BEFC	:08A9C01F	UNUSED DATA	Tile Changes	2	unused	{J}
+08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	{J}
+08A1F948	:08A1FA6B	UNUSED DATA	Tile Changes	1	unused	{U}
+08A1EFD0	:08A1F0F3	UNUSED DATA	Tile Changes	2	unused	{U}
+08A1F3A8	:08A1F3BF	UNUSED DATA	Tile Changes	3	unused	{U}
 08A2C94C	&HEADERTSA	Something's TSA	21	unused	{U}
 08AAAADC	&HEADERTSA	Something's TSA	21	unused	{J}
 08A2F1D0	&OAMREGS_ARRAY	Unk OAMREGS	19	{U}

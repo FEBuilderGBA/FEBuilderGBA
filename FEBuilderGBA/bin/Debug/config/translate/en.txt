@@ -10900,3 +10900,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:[空きトラック]
+[Empty Track]

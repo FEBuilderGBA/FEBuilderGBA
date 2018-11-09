@@ -46,25 +46,63 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             string comment = InputFormRef.GetComment(song_id);
 
+            string emptyTrackMessage = "";
+            uint addr = InputFormRef.IDToAddr(song_id);
+            if (IsEmptyTrack(song_id, addr))
+            {
+                emptyTrackMessage = R._("[空きトラック]");
+            }
+
             string name = SoundRoomForm.GetSongNameWhereSongID(song_id);
             if (name != "")
             {
-                return name.Trim() + U.SA(comment);
+                return name.Trim() + U.SA(comment) + U.SA(emptyTrackMessage);
             }
             //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + U.SA(comment);
+            return U.at(SoundEffectList, (int)song_id) + U.SA(comment) + U.SA(emptyTrackMessage);
         }
 
         //名前の取得   アドレスを指定できるので、早く取得できる 
         public static string GetSongNameFast(uint song_id, uint addr)
         {
+            string emptyTrackMessage = "";
+            if (IsEmptyTrack(song_id,addr))
+            {
+                emptyTrackMessage = R._("[空きトラック]");
+            }
+
             string name = SoundRoomForm.GetSongNameWhereSongID(song_id);
             if (name != "")
             {
-                return name.Trim() + InputFormRef.GetCommentSA(addr);
+                return name.Trim() + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
             }
             //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + InputFormRef.GetCommentSA(addr);
+            return U.at(SoundEffectList, (int)song_id) + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
+        }
+
+        static bool IsEmptyTrack(uint song_id , uint addr)
+        {
+            if (song_id == 0 || song_id >= 0x7FF)
+            {//特殊指定。空きではないことにする
+                return false;
+            }
+
+            uint songTrack = Program.ROM.p32(addr+0);
+            if (songTrack == 0)
+            {//空き
+                return true;
+            }
+            if (!U.isSafetyOffset(songTrack))
+            {//空きではないが変なデータ
+                return false;
+            }
+            uint trackCount = Program.ROM.u8(songTrack);
+            if (trackCount == 0)
+            {//トラック数 ゼロ
+                return true;
+            }
+            //空きではない.
+            return false;
         }
 
         public static uint GetSongAddr(uint song_id)
