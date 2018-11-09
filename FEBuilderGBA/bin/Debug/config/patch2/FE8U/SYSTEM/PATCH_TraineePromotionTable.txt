@@ -1,0 +1,29 @@
+NAME=見習いが自動的にCCする設定
+NAME.en=Trainee Promotion Table
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0xCC6FC //0x08207044へのポインタ
+
+//構造体のサイズ 4
+DATASIZE=4
+
+//データ個数
+DATACOUNT=3
+//最大拡張数
+MAX_EXPLANDS_SIZE=3
+
+//データを定義します
+B0:UNIT=Unit
+B1:DECIMAL=Level
+B2:CLASS=Class
+B3=00
+
+INFO=見習いが自動的にCCする設定を定義します。
+
+INFO.en=Define the setting that the apprentice will automatically CC.
+NAME.zh=将学徒设置为自动CC
+INFO.zh=定义学徒将自动CC的设置。

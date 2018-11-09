@@ -1293,5 +1293,34 @@ namespace FEBuilderGBA
         {
             this.TextIDArray = U.MakeTextIDArray();
         }
+#if DEBUG
+        void MargeS(string filename)
+        {
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                //SET_ABS_FUNC LoadRNState, 0x8000C35
+                string line = lines[i];
+                string[] sp = line.Split(' ');
+                if (sp.Length < 3)
+                {
+                    continue;
+                }
+                string name = sp[1];
+                name = name.Replace(",", "");
+
+                uint addr = U.atoi0x(sp[2]);
+                if (sp[0] == "SET_ABS_FUNC")
+                {
+                    addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                }
+                if (ContainsKey(addr))
+                {
+                    continue;
+                }
+                Log.Debug(U.ToHexString8(addr) + "\t" + name + "\t{U}");
+            }
+        }
+#endif
     }
 }
