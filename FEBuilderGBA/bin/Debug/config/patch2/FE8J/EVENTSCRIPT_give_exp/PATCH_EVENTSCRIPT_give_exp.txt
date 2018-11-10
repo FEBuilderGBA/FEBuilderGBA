@@ -19,7 +19,6 @@ EVENTSCRIPT:2=410D00YY{$L1:give_exp.dmp}	SVAL1のユニットに経験値を与�
 EVENTSCRIPT:3=4B0D00YY{$L1:give_exp.dmp}	SVALBの座標のユニットに経験値を与えます。[YY:DECIMAL:経験値](LOW)
 EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
 EVENTSCRIPT:5=4F0D00YY{$L1:give_exp.dmp}	現在操作しているユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
-ユニットに経験値を与える
 
 EVENTSCRIPT:1.en=400DXXYY{$L1:give_exp.dmp}	Give the unit experience points[XX:UNIT:Unit][YY:DECIMAL:add exp]	{UNIT}
 EVENTSCRIPT:2.en=410D00YY{$L1:give_exp.dmp}	Give experience value of SVAL1 Unit.[YY:DECIMAL:add exp](LOW)

@@ -37,7 +37,17 @@ namespace FEBuilderGBA
             Mods = new List<ModSt>();
             string lang = OptionForm.lang();
 
-            string[] files = Directory.GetFiles(path, "MOD_*.txt", SearchOption.AllDirectories);
+            string[] files;
+            try
+            {
+                files = Directory.GetFiles(path, "MOD_*.txt", SearchOption.AllDirectories);
+            }
+            catch (System.IO.IOException e)
+            {
+                R.ShowStopError("パッチ探索中にエラーが発生しました。\r\n{0}", e.ToString());
+                return ;
+            }
+
             foreach (string fullfilename in files)
             {
                 ModSt m = LoadMod(fullfilename, lang);

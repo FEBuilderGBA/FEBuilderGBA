@@ -11164,3 +11164,10 @@
 08040354	AIの杖利用判定	サイレス	{U}
 080404E0	AIの杖利用判定	スリープ	バーサク	{U}
 08040664	AIの杖利用判定	Ｍシールド	{U}
+
+08012A14	WarpIN_Event_Sub	{J}
+08021A2C	WarpIN_Event_Sub_2	{J}
+08012950	WarpIN_Event_Sub	{U}
+08021d34	WarpIN_Event_Sub_2	{U}
+08A156DC	&PROC	UNUSE Item Effect	1	{J}
+089A5054	&PROC	UNUSE Item Effect	1	{U}

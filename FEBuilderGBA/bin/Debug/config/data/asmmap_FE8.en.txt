@@ -11208,3 +11208,10 @@ r3=X tile position of menu of the right	{U}
 08040164	AI's staff use judgment	Restore	{U}
 08040354	AI's staff use judgment	Sleep	Berserk	{U}
 080404E0	AI's staff use judgment	Barrier	{U}
+
+08012A14	WarpIN_Event_Sub	{J}
+08021A2C	WarpIN_Event_Sub_2	{J}
+08012950	WarpIN_Event_Sub	{U}
+08021d34	WarpIN_Event_Sub_2	{U}
+08A156DC	&PROC	UNUSE Item Effect	1	{J}
+089A5054	&PROC	UNUSE Item Effect	1	{U}

@@ -750,6 +750,10 @@ this.MapObjImage);
                 return 0;
             }
             int n = x + y * this.MapWidth;
+            if (this.MAR == null)
+            {
+                return 0;
+            }
             if (n < 0 || n >= this.MAR.Length)
             {
                 return 0;
@@ -1470,7 +1474,7 @@ this.MapObjImage);
             }
 
             //メインマップ書き込み
-            errormessage = WriteMapData();
+            errormessage = WriteMapData(isShowNotifyMessage: false);
             if (errormessage != "")
             {
                 return errormessage;
@@ -1500,7 +1504,7 @@ this.MapObjImage);
                 this.ChangeList[(int)id].y = layer.y;
 
                 //マップ変化の書き込み.
-                WriteMapChangeData();
+                WriteMapChangeData(isShowNotifyMessage: false);
             }
 
             //キャッシュを消す
@@ -2282,13 +2286,13 @@ this.MapObjImage);
             string errormessage;
             if (MapChange.SelectedIndex == 0)
             {//MAIN
-                errormessage = WriteMapData();
+                errormessage = WriteMapData(isShowNotifyMessage: true);
                 //メインが変わるので、マップ変化で使うグレーのマップキャッシュをクリアする.
                 this.BasePictureCache = null;
             }
             else
             {//マップ変化
-                errormessage = WriteMapChangeData();
+                errormessage = WriteMapChangeData(isShowNotifyMessage: true);
             }
             if (errormessage != "")
             {
@@ -2299,7 +2303,7 @@ this.MapObjImage);
             //変更マークをクリア
             ClearModifiedFlag();
         }
-        string WriteMapChangeData()
+        string WriteMapChangeData(bool isShowNotifyMessage)
         {
             byte[] data = new byte[this.MAR.Length * 2];
             for (int i = 0; i < this.MAR.Length; i++)
@@ -2364,12 +2368,15 @@ this.MapObjImage);
             }
 
             Program.Undo.Push(undodata);
-            InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
+            if (isShowNotifyMessage)
+            {
+                InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
+            }
 
             return "";
         }
 
-        string WriteMapData()
+        string WriteMapData(bool isShowNotifyMessage)
         {
             byte[] data = new byte[this.MAR.Length * 2 + 2];
             data[0] = (byte)this.MapWidth;
@@ -2428,7 +2435,10 @@ this.MapObjImage);
             this.MapAddress.Value = newaddr;
 
             Program.Undo.Push(undodata);
-            InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
+            if (isShowNotifyMessage)
+            {
+                InputFormRef.ShowWriteNotifyAnimation(this, newaddr);
+            }
             return "";
         }
 

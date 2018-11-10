@@ -693,3 +693,5 @@ BC054=Display Fin Screen	{J}	//08AC0CD0 FIN
 000D2368=gProc_ccramifyEvent	{J}	//08BAB85C
 000226BC=gProc_Guide	{J}	//08BABCB4
 000BE734=gProc_Guide2	{J}	//08BABD6C
+00021A8C=gProcWarpIN	{J}	//085C3950
+00021D9C=gProcWarpIN	{U}	//0859B4D0
