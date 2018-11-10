@@ -5166,7 +5166,7 @@
 08037720	ExecTrap	{J}
 080378D8	LoadTrapData	{J}
 080379A8	LoadChapterBallistae	{J}
-080379C8	AddGorgonEggTrap	{J}
+080379C0	AddGorgonEggTrap	{J}
 08037A24	GetBallistaItemAt	{J}
 08037A6C	GetSomeBallistaItemAt	{J}
 08037A9C	AddBallista	{J}

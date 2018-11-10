@@ -3,6 +3,7 @@ NAME.en=chapter_number_of_prep
 INFO=進撃準備の章ID(マップID)の画像
 
 TYPE=IMAGE
+TAG=#IMAGE
 
 WIDTH=256
 HEIGHT=32

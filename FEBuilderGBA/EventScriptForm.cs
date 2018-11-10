@@ -1357,6 +1357,17 @@ namespace FEBuilderGBA
                             string dummy;
                             text = " " + InputFormRef.GetRAM_UNIT_PARAM(v,out dummy);
                         }
+                        else if (arg.Type == EventScript.ArgType.BOOL)
+                        {//BOOL
+                            isENumText = true;
+                            text = " " + InputFormRef.GetBOOL(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.TRAP)
+                        {//TRAP
+                            isENumText = true;
+                            text = " " + InputFormRef.GetTRAP(v);
+                        }
+
                         if (isENumText)
                         {
                             bounds.X += U.DrawText(text, g, boldFont, brush, isWithDraw, bounds);

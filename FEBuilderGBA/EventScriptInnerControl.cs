@@ -931,6 +931,14 @@ namespace FEBuilderGBA
             {//RAM_UNIT_PARAM
                 text = " " + InputFormRef.GetRAM_UNIT_PARAM(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.BOOL)
+            {//BOOL
+                text = " " + InputFormRef.GetBOOL(v);
+            }
+            else if (arg.Type == EventScript.ArgType.TRAP)
+            {//TRAP
+                text = " " + InputFormRef.GetTRAP(v);
+            }
             else if (arg.Type == EventScript.ArgType.WMAP_SPRITE_ID)
             {//WMAP_SPRITE_ID
                 text = " " + InputFormRef.GetWMAP_SPRITE_ID(v, out errormessage);
@@ -2527,6 +2535,16 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(InputFormRef.GetRAM_UNIT_PARAM(v, out dummy));
+                    }
+                    else if (arg.Type == EventScript.ArgType.BOOL)
+                    {//BOOL
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetBOOL(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.TRAP)
+                    {//TRAP
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetTRAP(v));
                     }
                     else if (arg.Type == EventScript.ArgType.WMAP_SPRITE_ID)
                     {//WMAP_SPRITE_ID

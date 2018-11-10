@@ -85,7 +85,9 @@ namespace FEBuilderGBA
             , SKILL             //
             , MAPEMOTION        //マップ絵文字
             , COUNTER           //カウンタ(ビットシフト)
-            , RAM_UNIT_PARAM     //RAMユニット
+            , RAM_UNIT_PARAM    //RAMユニット
+            , BOOL              //BOOL値型
+            , TRAP              //RAM罠
         };
 
         public class Arg
@@ -651,6 +653,12 @@ namespace FEBuilderGBA
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
+                 break;
+             case "BOOL":
+                 type = ArgType.BOOL;
+                 break;
+             case "TRAP":
+                 type = ArgType.TRAP;
                  break;
              case "MEMORYSLOT":
                  type = ArgType.MEMORYSLOT;

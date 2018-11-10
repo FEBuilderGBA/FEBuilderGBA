@@ -1,0 +1,16 @@
+AddBallista=$40
+AddWallOrSrag=$50
+AddFireTrap=$62
+AddGasTrap=$6E
+AddArrowTrap=$90
+AddTrap8=$7E
+AddTrap9=$86
+AddLight=$9C
+AddMine=$AE
+AddGorgonEgg=$D2
+AddLightRune=$E2
+Term=$FE
+AddBallistaRun=$48
+Join=$FE
+AddWallOrSragRun=$5A
+AddLightRun=$A6

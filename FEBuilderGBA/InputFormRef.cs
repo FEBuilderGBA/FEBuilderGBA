@@ -6069,6 +6069,74 @@ namespace FEBuilderGBA
             }
             return U.at(Cache_ramunit_param_dic, num);
         }
+        public static string GetBOOL(uint num)
+        {
+            if (num == 0)
+            {
+                return "FALSE";
+            }
+            else if (num == 1)
+            {
+                return "TRUE";
+            }
+            return "";
+        }
+        public static string GetTRAP(uint num)
+        {
+            if (num == 1)
+            {
+                return R._("アーチ");
+            }
+            else if (num == 2)
+            {
+                return R._("壊れる壁/古木");
+            }
+            else if (num == 3)
+            {
+                return R._("マップ変化1");
+            }
+            else if (num == 4)
+            {
+                return R._("炎");
+            }
+            else if (num == 5)
+            {
+                return R._("毒ガス");
+            }
+            else if (num == 6)
+            {
+                return R._("マップ変化2");
+            }
+            else if (num == 7)
+            {
+                return R._("神の矢");
+            }
+            else if (num == 8)
+            {
+                return R._("不明1");
+            }
+            else if (num == 9)
+            {
+                return R._("不明2");
+            }
+            else if (num == 0xA)
+            {
+                return R._("トーチ");
+            }
+            else if (num == 0xB)
+            {
+                return R._("フレイボム");
+            }
+            else if (num == 0xC)
+            {
+                return R._("卵");
+            }
+            else if (num == 0xD)
+            {
+                return R._("光の結界");
+            }
+            return "";
+        }
 
         //ワールドマップに表示するユニット
         public static string GetWMAP_SPRITE_ID(uint num, out string errorMessae)

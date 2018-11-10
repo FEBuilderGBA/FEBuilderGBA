@@ -3736,6 +3736,36 @@ Warning: Write to MemorySlot 0.
 :警告: MemorySlotD以降にアクセスしています。
 Warning: You are accessing MemorySlotD or later.
 
+:アーチ
+arch
+
+:壊れる壁/古木
+Broken walls / old trees
+
+:マップ変化1
+Map change 1
+
+:マップ変化2
+Map change 2
+
+:不明1
+Unknown 1
+
+:不明2
+Unknown 2
+
+:トーチ
+torch
+
+:フレイボム
+Freybom
+
+:卵
+egg
+
+:光の結界
+The barrier of light
+
 :警告: 上限を超えています
 warning:It exceeds the upper limit
 
@@ -5599,6 +5629,9 @@ For each terrain, set the background image of the battle animation.
 :ゲームの設定オプション項目を変更できます。
 You can change the setting option items of the game.
 
+:AIが杖を利用できるかどうか判断する関数テーブルを設定します。
+Set up a function table to determine if AI can use staff.
+
 :ファイルが見つかりません
 File not found
 
@@ -7090,6 +7123,9 @@ String 1
 :分岐メニュー定義
 Branch menu definition
 
+:パッチ探索中にエラーが発生しました。\r\n{0}
+An error occurred during patch search.\r\n{0}
+
 :IFパースエラー、このアドレス({1})は危険です。\r\n{0}\r\n{2}
 If parse error, this address ({1}) is dangerous.\r\n{0}\r\n{2}
 
@@ -8052,9 +8088,6 @@ Essential Fixes(#ESSENTIALFIXES)
 
 :フィルタの適応
 Filter adaptation
-
-:パッチ探索中にエラーが発生しました。\r\n{0}
-An error occurred during patch search.\r\n{0}
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is an old patch.\r\nWe recommend using a new patch.\r\n
@@ -10909,5 +10942,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:AIが杖を利用できるかどうか判断する関数テーブルを設定します。
-Set up a function table to determine if AI can use staff.
