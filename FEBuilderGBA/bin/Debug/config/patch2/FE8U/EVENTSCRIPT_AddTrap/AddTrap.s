@@ -123,7 +123,6 @@ AddMine:
 	mov r3, #0x0
 @	blh 0x0802e1f0,r4          @FE8J AddTrap
 	blh 0x0802e2b8,r4          @FE8U AddTrap
-	b    Join
 
 	ldr  r2, [r6, #0x38]       @イベント命令にアクセスらしい [r0,#0x38] でイベント命令が書いてあるアドレスの場所へ
 	ldrb r2, [r2, #0x3]        @引数2 with_effect

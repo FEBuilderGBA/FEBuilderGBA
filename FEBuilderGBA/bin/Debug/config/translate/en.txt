@@ -3737,10 +3737,10 @@ Warning: Write to MemorySlot 0.
 Warning: You are accessing MemorySlotD or later.
 
 :アーチ
-arch
+Ballista
 
 :壊れる壁/古木
-Broken walls / old trees
+Broken walls / Srag
 
 :マップ変化1
 Map change 1
@@ -3755,16 +3755,16 @@ Unknown 1
 Unknown 2
 
 :トーチ
-torch
+Torch
 
 :フレイボム
-Freybom
+Mine
 
 :卵
-egg
+Egg
 
 :光の結界
-The barrier of light
+LightRune
 
 :警告: 上限を超えています
 warning:It exceeds the upper limit
