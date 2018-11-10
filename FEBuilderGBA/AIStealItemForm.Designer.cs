@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.B1 = new System.Windows.Forms.NumericUpDown();
+            this.J_1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_ITEM = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -40,21 +46,16 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.J_1 = new System.Windows.Forms.Label();
-            this.B1 = new System.Windows.Forms.NumericUpDown();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,7 +64,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -81,6 +81,52 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(843, 610);
             this.panel4.TabIndex = 92;
+            // 
+            // B1
+            // 
+            this.B1.Hexadecimal = true;
+            this.B1.Location = new System.Drawing.Point(232, 48);
+            this.B1.Margin = new System.Windows.Forms.Padding(2);
+            this.B1.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.B1.Name = "B1";
+            this.B1.Size = new System.Drawing.Size(79, 25);
+            this.B1.TabIndex = 107;
+            // 
+            // J_1
+            // 
+            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_1.Location = new System.Drawing.Point(-2, 46);
+            this.J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_1.Name = "J_1";
+            this.J_1.Size = new System.Drawing.Size(222, 30);
+            this.J_1.TabIndex = 106;
+            this.J_1.Text = "00";
+            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(2, 521);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(725, 87);
+            this.label1.TabIndex = 105;
+            this.label1.Text = "盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。";
+            // 
+            // L_0_ITEM
+            // 
+            this.L_0_ITEM.ErrorMessage = "";
+            this.L_0_ITEM.Location = new System.Drawing.Point(314, 15);
+            this.L_0_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_ITEM.Name = "L_0_ITEM";
+            this.L_0_ITEM.Placeholder = "";
+            this.L_0_ITEM.ReadOnly = true;
+            this.L_0_ITEM.Size = new System.Drawing.Size(189, 25);
+            this.L_0_ITEM.TabIndex = 103;
             // 
             // B0
             // 
@@ -119,6 +165,16 @@
             this.panel6.Size = new System.Drawing.Size(245, 641);
             this.panel6.TabIndex = 93;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(2, 610);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // LabelFilter
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -130,6 +186,18 @@
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(246, 580);
+            this.AddressList.TabIndex = 0;
             // 
             // panel3
             // 
@@ -147,7 +215,6 @@
             // 
             // ReloadListButton
             // 
-
             this.ReloadListButton.Location = new System.Drawing.Point(480, -3);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -221,6 +288,17 @@
             this.panel5.Size = new System.Drawing.Size(843, 34);
             this.panel5.TabIndex = 90;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(87, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -231,6 +309,17 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
             // 
             // label22
             // 
@@ -245,7 +334,6 @@
             // 
             // WriteButton
             // 
-
             this.WriteButton.Location = new System.Drawing.Point(672, 0);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
@@ -279,26 +367,6 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(2, 521);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(725, 87);
-            this.label1.TabIndex = 105;
-            this.label1.Text = "盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。";
-            // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(2, 610);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
-            this.AddressListExpandsButton.TabIndex = 115;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
-            // 
             // L_0_ITEMICON
             // 
             this.L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
@@ -308,75 +376,6 @@
             this.L_0_ITEMICON.Size = new System.Drawing.Size(32, 32);
             this.L_0_ITEMICON.TabIndex = 104;
             this.L_0_ITEMICON.TabStop = false;
-            // 
-            // L_0_ITEM
-            // 
-            this.L_0_ITEM.ErrorMessage = "";
-            this.L_0_ITEM.Location = new System.Drawing.Point(314, 15);
-            this.L_0_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_ITEM.Name = "L_0_ITEM";
-            this.L_0_ITEM.Placeholder = "";
-            this.L_0_ITEM.ReadOnly = true;
-            this.L_0_ITEM.Size = new System.Drawing.Size(189, 25);
-            this.L_0_ITEM.TabIndex = 103;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 580);
-            this.AddressList.TabIndex = 0;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(87, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
-            // J_1
-            // 
-            this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_1.Location = new System.Drawing.Point(-2, 46);
-            this.J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(222, 30);
-            this.J_1.TabIndex = 106;
-            this.J_1.Text = "00";
-            this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B1
-            // 
-            this.B1.Hexadecimal = true;
-            this.B1.Location = new System.Drawing.Point(232, 48);
-            this.B1.Margin = new System.Windows.Forms.Padding(2);
-            this.B1.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.B1.Name = "B1";
-            this.B1.Size = new System.Drawing.Size(79, 25);
-            this.B1.TabIndex = 107;
             // 
             // AIStealItemForm
             // 
@@ -393,6 +392,7 @@
             this.Load += new System.EventHandler(this.AITargetForm_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -402,7 +402,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             this.ResumeLayout(false);
 
         }

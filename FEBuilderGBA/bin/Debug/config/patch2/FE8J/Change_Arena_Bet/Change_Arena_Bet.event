@@ -1,0 +1,22 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $BA6C2		//FE8J
+BYTE 0x00 0x00
+jumpToHack(Change_Arena_Bet)
+POP
+
+ALIGN 4
+Change_Arena_Bet:
+#incbin "Change_Arena_Bet.dmp"
+POIN Change_Arena_Bet_Table
+
+#include "Change_Arena_Bet_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

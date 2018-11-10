@@ -1804,6 +1804,10 @@ namespace FEBuilderGBA
             {
                 return R._("イベントでマップ上に表示されるアニメーションの設定を行います。\r\nこのアニメーションはプログラムでハードコーディングされているので、増やすことはできません。");
             }
+            if (name == "ImageTSAAnime2Button")
+            {
+                return R._("イベントでマップ上に表示されるアニメーションの設定を行います。\r\nこのアニメーションはプログラムでハードコーディングされているので、増やすことはできません。");
+            }
             if (name == "ROMAnimeButton")
             {
                 return R._("ROM内に存在する魔法データの閲覧を行います。\r\nGBAFEでは、魔法はプログラムでハードコーディングされているため、一部データだけを閲覧できます。\r\nこのデータを書き換えることもできますが、書き換えないことを推奨します。\r\n魔法を改造したい場合は、魔法拡張の方を利用してください。") + GetForHighLevelUser();
@@ -2117,6 +2121,10 @@ namespace FEBuilderGBA
             if (name == "GameOptionButton")
             {
                 return R._("ゲームの設定オプション項目を変更できます。");
+            }
+            if (name == "AIPerformStaffButton")
+            {
+                return R._("AIが杖を利用できるかどうか判断する関数テーブルを設定します。");
             }
             
             return "";

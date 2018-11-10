@@ -275,7 +275,8 @@ namespace FEBuilderGBA
         uint ai1_pointer();  //AI1ポインタ
         uint ai2_pointer();  //AI2ポインタ
         uint ai3_pointer();  //AI3ポインタ
-        uint ai_steal_item_pointer();  //AI盗むAI アイテム評価テーブル
+        uint ai_steal_item_pointer();  //AI盗む アイテム評価テーブル
+        uint ai_preform_staff_pointer();  //AI杖 杖評価テーブル
         uint ai_map_setting_pointer();  //AI 章ごとの設定テーブル
         uint item_usability_array_pointer(); //アイテムを利用できるか判定する
         uint item_usability_array_switch2_address();

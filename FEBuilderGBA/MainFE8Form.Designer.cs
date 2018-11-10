@@ -152,6 +152,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ImageTSAAnime2Button = new System.Windows.Forms.Button();
             this.GameOptionButton = new System.Windows.Forms.Button();
             this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
             this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
@@ -215,7 +216,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ImageTSAAnime2Button = new System.Windows.Forms.Button();
+            this.AIPerformStaffButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1397,6 +1398,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
             this.ControlPanel.Controls.Add(this.ImageTSAAnime2Button);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
@@ -1533,6 +1535,17 @@
             this.ControlPanel.Size = new System.Drawing.Size(1631, 758);
             this.ControlPanel.TabIndex = 0;
             // 
+            // ImageTSAAnime2Button
+            // 
+            this.ImageTSAAnime2Button.Location = new System.Drawing.Point(611, 600);
+            this.ImageTSAAnime2Button.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageTSAAnime2Button.Name = "ImageTSAAnime2Button";
+            this.ImageTSAAnime2Button.Size = new System.Drawing.Size(200, 36);
+            this.ImageTSAAnime2Button.TabIndex = 130;
+            this.ImageTSAAnime2Button.Text = "TSAアニメ2";
+            this.ImageTSAAnime2Button.UseVisualStyleBackColor = true;
+            this.ImageTSAAnime2Button.Click += new System.EventHandler(this.ImageTSAAnime2Button_Click);
+            // 
             // GameOptionButton
             // 
             this.GameOptionButton.Location = new System.Drawing.Point(1426, 413);
@@ -1645,7 +1658,7 @@
             // 
             // AIMapSettingButton
             // 
-            this.AIMapSettingButton.Location = new System.Drawing.Point(814, 491);
+            this.AIMapSettingButton.Location = new System.Drawing.Point(814, 527);
             this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
             this.AIMapSettingButton.Size = new System.Drawing.Size(200, 36);
@@ -1920,7 +1933,7 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 527);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 566);
             this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -2226,16 +2239,16 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // ImageTSAAnime2Button
+            // AIPerformStaffButton
             // 
-            this.ImageTSAAnime2Button.Location = new System.Drawing.Point(611, 600);
-            this.ImageTSAAnime2Button.Margin = new System.Windows.Forms.Padding(2);
-            this.ImageTSAAnime2Button.Name = "ImageTSAAnime2Button";
-            this.ImageTSAAnime2Button.Size = new System.Drawing.Size(200, 36);
-            this.ImageTSAAnime2Button.TabIndex = 130;
-            this.ImageTSAAnime2Button.Text = "TSAアニメ2";
-            this.ImageTSAAnime2Button.UseVisualStyleBackColor = true;
-            this.ImageTSAAnime2Button.Click += new System.EventHandler(this.ImageTSAAnime2Button_Click);
+            this.AIPerformStaffButton.Location = new System.Drawing.Point(814, 490);
+            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIPerformStaffButton.Name = "AIPerformStaffButton";
+            this.AIPerformStaffButton.Size = new System.Drawing.Size(200, 36);
+            this.AIPerformStaffButton.TabIndex = 131;
+            this.AIPerformStaffButton.Text = "AIの杖利用判定";
+            this.AIPerformStaffButton.UseVisualStyleBackColor = true;
+            this.AIPerformStaffButton.Click += new System.EventHandler(this.AIPerformStaffButton_Click);
             // 
             // MainFE8Form
             // 
@@ -2453,6 +2466,7 @@
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
         private System.Windows.Forms.Button GameOptionButton;
         private System.Windows.Forms.Button ImageTSAAnime2Button;
+        private System.Windows.Forms.Button AIPerformStaffButton;
     }
 }
 

@@ -3841,3 +3841,22 @@
 080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
 080BA640	加载捕获评级的图像	{J}
 080BAAB8	加载策略评估的图像启动过程	{J}
+//This data is made with the aim of being readable by machine fast.
+0803AF24	AiGetStaffAiIndex	{J}
+0803AA70	AiGetStaffAiIndex	{U}
+0803B104	AI的魔杖使用判断力	回复之杖	治疗之杖	痊愈之杖	{J}
+0803B27C	AI的魔杖使用判断力	治愈之杖	援救杖	{J}
+0803B44C	AI的魔杖使用判断力	生命之杖	{J}
+0803B558	AI的魔杖使用判断力	传送杖	{J}
+0803B6B0	AI的魔杖使用判断力	复原之杖	{J}
+0803B8A0	AI的魔杖使用判断力	沉默之杖	{J}
+0803BA2C	AI的魔杖使用判断力	睡眠之杖	狂乱之杖	{J}
+0803BBB0	AI的魔杖使用判断力	魔防之杖	{J}
+0803AC50	AI的魔杖使用判断力	回复之杖	治疗之杖	痊愈之杖	{U}
+0803ADC8	AI的魔杖使用判断力	治愈之杖	援救杖	{U}
+0803AF98	AI的魔杖使用判断力	生命之杖	{U}
+0803B0A4	AI的魔杖使用判断力	传送杖	{U}
+0803B1FC	AI的魔杖使用判断力	复原之杖	{U}
+0803B3EC	AI的魔杖使用判断力	沉默之杖	{U}
+0803B578	AI的魔杖使用判断力	睡眠之杖	狂乱之杖	{U}
+0803B6FC	AI的魔杖使用判断力	魔防之杖	{U}

@@ -278,6 +278,7 @@ namespace FEBuilderGBA
         public uint ai2_pointer() { return 0xC07CA4; }  //AI2ポインタ
         public uint ai3_pointer() { return 0x039758; }  //AI3ポインタ
         public uint ai_steal_item_pointer() { return 0x36D90; }  //AI盗むAI アイテム評価テーブル 0x08C06564
+        public uint ai_preform_staff_pointer() { return 0x03AF88; }  //AI杖 杖評価テーブル
         public uint ai_map_setting_pointer() { return 0x34E18; }  //AI 章ごとの設定テーブル 0x081D92F4
         public uint item_usability_array_pointer() { return 0x27194; } //アイテムを利用できるか判定する
         public uint item_usability_array_switch2_address() { return 0x27182; }

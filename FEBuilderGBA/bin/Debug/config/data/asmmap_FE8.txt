@@ -99,8 +99,27 @@
 080318B4	闘技場の武器補正	GetUnitBestWRankType	{U}
 08031B0C	闘技場の武器のランクアップ	GetArenaBetterItem	{J}
 08031BC0	闘技場の武器のランクアップ	GetArenaBetterItem	{U}
-0203A8F9	闘技場の一時データ	{J}
-0203A8F0	闘技場の一時データ	{U}
+
+@ArenaTemp@00	&Unit	プレイヤーユニット
+@ArenaTemp@04	&Unit	対戦相手
+@ArenaTemp@08	short	掛け金
+@ArenaTemp@0A	byte	戦闘結果
+@ArenaTemp@0B	byte	不明1
+@ArenaTemp@0C	byte	耐久
+@ArenaTemp@0D	byte	アイテム
+@ArenaTemp@0E	byte	不明2
+@ArenaTemp@0F	byte	不明3
+@ArenaTemp@10	short	不明4
+@ArenaTemp@12	byte	不明5
+@ArenaTemp@13	byte	不明6
+@ArenaTemp@14	short	不明7
+@ArenaTemp@15	short	不明8
+@ArenaTemp@16	short	プレイヤーの強さ
+@ArenaTemp@18	short	対戦相手の強さ
+
+0203A8EC	@ArenaTemp	闘技場の一時データ	{J}
+0203A8F0	@ArenaTemp	闘技場の一時データ	{U}
+
 03007d7c	闘技場の相手の武器(決定されたデータ)	{J}
 0807ee68	戦闘時のMISSという文字を取得する	{J}
 0807eec4	戦闘時のNO DAMAGEという文字を取得する	{J}
@@ -5091,7 +5110,7 @@
 0803182C	GetClassBestWRankType	{J}
 08031924	IsWeaponMagic	{J}
 08031944	GetNearLevel	{J}
-08031962	GetUnitArenaWeight	{J}
+08031960	GetUnitArenaWeight	{J}
 080319D0	LoadArenaOpponentStruct	{J}
 08031B5C	PrepareBalancedArenaFight	{J}
 08031CA4	AdjustArenaOpponentPower	{J}
@@ -9752,7 +9771,6 @@
 0803F9D8	AiGetStaffAiIndex	{U}
 0803FA40	AiTryDoStaff	{U}
 0803FAE8	GetAiSafestAccessibleAdjacentPosition	{U}
-08040664	nullsub_29	{U}
 08040844	AiTryDoSpecialItems	{U}
 08040BB4	AiSomethingGetPick	{U}
 08040C5C	AiTrySomethingPick	{U}
@@ -11112,3 +11130,37 @@
 08A1EE2C	gGfxSpark	{J}
 08A5A35C	gGfxDialogueTextBubble	{J}
 08A5A6A0	gEventIdMaskLookup	{J}
+
+08031e18	闘技場の掛け金を取得	{J}
+08031DEC	闘技場の掛け金を設定	{J}
+08031E24	闘技場の試合結果の取得	{J}
+080A0AFC	進撃準備画面で、輸送体にアイテムを送る	{J}
+080A0568	進撃準備画面で、輸送体からアイテムを受け取る	{J}
+0809FCA0	進撃準備画面で、輸送体にアクセスした時	{J}
+0809C804	進撃準備画面で、全預け	r0=@UNIT	{J}
+
+08031ecc	闘技場の掛け金を取得	{U}
+08031EA0	闘技場の掛け金を設定	{U}
+08031ED8	闘技場の試合結果の取得	{U}
+0809E85C	進撃準備画面で、輸送体にアイテムを送る	{U}
+0809E2C8	進撃準備画面で、輸送体からアイテムを受け取る	{U}
+0809DA00	進撃準備画面で、輸送体にアクセスした時	{U}
+0809A538	進撃準備画面で、全預け	r0=@UNIT	{U}
+
+0803FB38	AIの杖利用判定	ライブ	リライブ	リカバー	{J}
+0803FCB0	AIの杖利用判定	リブロー	レスキュー	{J}
+0803FE80	AIの杖利用判定	リザーブ	{J}
+0803FF8C	AIの杖利用判定	ワープ	{J}
+080400E4	AIの杖利用判定	レスト	{J}
+080402D4	AIの杖利用判定	サイレス	{J}
+08040460	AIの杖利用判定	スリープ	バーサク	{J}
+080405E4	AIの杖利用判定	Ｍシールド	{J}
+
+0803FBB8	AIの杖利用判定	ライブ	リライブ	リカバー	{U}
+0803FD30	AIの杖利用判定	リブロー	レスキュー	{U}
+0803FF00	AIの杖利用判定	リザーブ	{U}
+0804000C	AIの杖利用判定	ワープ	{U}
+08040164	AIの杖利用判定	レスト	{U}
+08040354	AIの杖利用判定	サイレス	{U}
+080404E0	AIの杖利用判定	スリープ	バーサク	{U}
+08040664	AIの杖利用判定	Ｍシールド	{U}

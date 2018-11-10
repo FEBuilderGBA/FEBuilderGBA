@@ -3850,3 +3850,22 @@
 080CB51A	:080CB7E7	used by FEditor auto patching system FE7U	{U}
 080BA640	Load image of capture rating	{J}
 080BAAB8	Load the image of the tactics evaluation Start up Procs	{J}
+//This data is made with the aim of being readable by machine fast.
+0803AF24	AiGetStaffAiIndex	{J}
+0803AA70	AiGetStaffAiIndex	{U}
+0803B104	AI's wand use judgment	Heal	Mend	Recover	{J}
+0803B27C	AI's wand use judgment	Physic	Rescue	{J}
+0803B44C	AI's wand use judgment	Fortify	{J}
+0803B558	AI's wand use judgment	warp	{J}
+0803B6B0	AI's wand use judgment	Restore	{J}
+0803B8A0	AI's wand use judgment	Silence	{J}
+0803BA2C	AI's wand use judgment	Sleep	Berserk	{J}
+0803BBB0	AI's wand use judgment	Barrier	{J}
+0803AC50	AI's wand use judgment	Heal	Mend	Recover	{U}
+0803ADC8	AI's wand use judgment	Physic	Rescue	{U}
+0803AF98	AI's wand use judgment	Fortify	{U}
+0803B0A4	AI's wand use judgment	warp	{U}
+0803B1FC	AI's wand use judgment	Restore	{U}
+0803B3EC	AI's wand use judgment	Silence	{U}
+0803B578	AI's wand use judgment	Sleep	Berserk	{U}
+0803B6FC	AI's wand use judgment	Barrier	{U}

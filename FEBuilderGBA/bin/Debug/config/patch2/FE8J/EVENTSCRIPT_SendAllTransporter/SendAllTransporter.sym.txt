@@ -1,0 +1,7 @@
+GetUnitInfoBySVAL1=$20
+GetUnitInfoByCoord=$24
+GetUnitInfoByCurrent=$1A
+GetUnitInfo=$26
+CheckUnitInfo=$2C
+Term=$36
+Change=$30

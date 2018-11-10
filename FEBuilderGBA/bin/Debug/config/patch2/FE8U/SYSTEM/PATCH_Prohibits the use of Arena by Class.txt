@@ -1,0 +1,14 @@
+NAME=闘技場禁止クラス
+NAME.en=Prohibits the use of Arena by Class
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0240F6
+ADDRESS_TYPE=CLASS
+
+INFO=このクラスは武器を持っていたとしても、闘技場を利用できません。
+INFO.en=Even if this class has weapons, they can not use Arena.
+NAME.zh=禁止禁止类
+INFO.zh=即使这个级别有武器，也不能使用体育场。

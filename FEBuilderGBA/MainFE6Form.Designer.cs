@@ -127,6 +127,8 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
+            this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
             this.ToolProblemReportToolButton = new System.Windows.Forms.Button();
             this.ROMRebuildButton = new System.Windows.Forms.Button();
             this.ImageGenericEnemyPortraitButton = new System.Windows.Forms.Button();
@@ -178,8 +180,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.MapTerrainBGLookupTableButton = new System.Windows.Forms.Button();
-            this.MapTerrainFloorLookupTableButton = new System.Windows.Forms.Button();
+            this.AIPerformStaffButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1089,6 +1090,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
             this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
             this.ControlPanel.Controls.Add(this.ToolProblemReportToolButton);
@@ -1190,6 +1192,28 @@
             this.ControlPanel.Size = new System.Drawing.Size(1640, 687);
             this.ControlPanel.TabIndex = 0;
             // 
+            // MapTerrainBGLookupTableButton
+            // 
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1232, 277);
+            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
+            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainBGLookupTableButton.TabIndex = 133;
+            this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
+            this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainBGLookupTableButton.Click += new System.EventHandler(this.MapTerrainBGLookupTableButton_Click);
+            // 
+            // MapTerrainFloorLookupTableButton
+            // 
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1232, 240);
+            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
+            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainFloorLookupTableButton.TabIndex = 132;
+            this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
+            this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
+            this.MapTerrainFloorLookupTableButton.Click += new System.EventHandler(this.MapTerrainFloorLookupTableButton_Click);
+            // 
             // ToolProblemReportToolButton
             // 
             this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1232, 603);
@@ -1247,7 +1271,7 @@
             // 
             // AIMapSettingButton
             // 
-            this.AIMapSettingButton.Location = new System.Drawing.Point(823, 471);
+            this.AIMapSettingButton.Location = new System.Drawing.Point(823, 508);
             this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(2);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
             this.AIMapSettingButton.Size = new System.Drawing.Size(200, 36);
@@ -1489,7 +1513,7 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(823, 509);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(823, 546);
             this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -1751,27 +1775,16 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // MapTerrainBGLookupTableButton
+            // AIPerformStaffButton
             // 
-            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1232, 277);
-            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
-            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
-            this.MapTerrainBGLookupTableButton.TabIndex = 133;
-            this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
-            this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
-            this.MapTerrainBGLookupTableButton.Click += new System.EventHandler(this.MapTerrainBGLookupTableButton_Click);
-            // 
-            // MapTerrainFloorLookupTableButton
-            // 
-            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1232, 240);
-            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
-            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
-            this.MapTerrainFloorLookupTableButton.TabIndex = 132;
-            this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
-            this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
-            this.MapTerrainFloorLookupTableButton.Click += new System.EventHandler(this.MapTerrainFloorLookupTableButton_Click);
+            this.AIPerformStaffButton.Location = new System.Drawing.Point(823, 471);
+            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIPerformStaffButton.Name = "AIPerformStaffButton";
+            this.AIPerformStaffButton.Size = new System.Drawing.Size(200, 36);
+            this.AIPerformStaffButton.TabIndex = 134;
+            this.AIPerformStaffButton.Text = "AIの杖利用判定";
+            this.AIPerformStaffButton.UseVisualStyleBackColor = true;
+            this.AIPerformStaffButton.Click += new System.EventHandler(this.AIPerformStaffButton_Click);
             // 
             // MainFE6Form
             // 
@@ -1953,5 +1966,6 @@
         private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
         private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
+        private System.Windows.Forms.Button AIPerformStaffButton;
     }
 }

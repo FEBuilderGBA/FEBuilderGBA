@@ -1030,6 +1030,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ImageTSAAnime2Form>();
         }
 
+        private void AIPerformStaffButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<AIPerformStaffForm>();
+        }
+
 
     }
 

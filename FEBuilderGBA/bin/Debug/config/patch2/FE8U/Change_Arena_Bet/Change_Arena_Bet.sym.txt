@@ -1,0 +1,5 @@
+Is_Hard_Mode=$26
+Is_Normal_Mode=$20
+Is_Easy_Mode=$1A
+BetTable=$74
+Join=$2A

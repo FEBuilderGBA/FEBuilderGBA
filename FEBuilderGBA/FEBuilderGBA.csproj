@@ -1790,6 +1790,12 @@
     <Compile Include="ImageTSAAnime2Form.Designer.cs">
       <DependentUpon>ImageTSAAnime2Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIPerformStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIPerformStaffForm.Designer.cs">
+      <DependentUpon>AIPerformStaffForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2646,6 +2652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageTSAAnime2Form.resx">
       <DependentUpon>ImageTSAAnime2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIPerformStaffForm.resx">
+      <DependentUpon>AIPerformStaffForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

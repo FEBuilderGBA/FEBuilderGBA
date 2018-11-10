@@ -1,7 +1,9 @@
-
 NAME=支援の有効範囲
 NAME.en=Max Range For Support Gain
-NAME.zh=支持范围
+INFO=このパッチは、支援効果を受けられるマス目を指定します。\r\nユニット同士がすでにサポート関係にある場合、支援効果ボーナスを得られます。
+INFO.en=This patch specifies the square that the range of Support effect extends.\r\nIf units are already in Support relationship, they will get bonus for Support effect.
+NAME.zh=支援的有效范围
+INFO.zh=此修补程序指定可以接收支持效果的方块。 \r\n如果某个人物已经处于支持关系中，您可以获得支持效果奖励。
 
 //アドレスパッチとして実装します
 TYPE=ADDR

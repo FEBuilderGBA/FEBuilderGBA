@@ -1085,3 +1085,13 @@
 08017410	GetUnitFogViewRange
 08049C5C	Acquire the image ID of the battle cartoon floor tile
 08049CFC	Acquire the image ID of the background of battle animation
+08000e38	Roll1RN
+08033B9C	AiGetStaffAiIndex
+08033D5C	AI's staff use judgment	Heal	Mend	Recover
+08033ECC	AI's staff use judgment	Physic	Rescue
+08034094	AI's staff use judgment	Fortify
+08034178	AI's staff use judgment	Warp
+080342C4	AI's staff use judgment	Restore
+080344AC	AI's staff use judgment	Silence
+0803462C	AI's staff use judgment	Sleep	Berserk
+080347A4	AI's staff use judgment	Barrier

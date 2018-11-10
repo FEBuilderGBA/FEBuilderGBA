@@ -1,0 +1,7 @@
+#define csvmacro000(arg000) "WORD arg000; "
+
+Change_Arena_Bet_Table:
+csvmacro000(200)  //ŠÈ’P‚Í200% Š|‚¯‹à‚Ì2”{
+csvmacro000(150)  //•’Ê‚Í150% Š|‚¯‹à‚Ì1.5”{
+csvmacro000(80)   //ƒn[ƒh‚Í80% í‚¤‚½‚Ñ‚É20%‘¹‚ğ‚·‚é
+csvmacro000(0)    //Term

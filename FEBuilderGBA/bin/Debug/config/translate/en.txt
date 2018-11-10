@@ -37,6 +37,18 @@ Address
 :AIの章ごとの設定
 AI Setting for chapter
 
+:杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
+Specify a function to decide whether AI that can use wand uses wand.
+
+:アイテム
+Item Editor
+
+:リストの拡張
+Extended list
+
+:AIの杖利用判定
+AI's wand use judgment
+
 :カテゴリ
 Category
 
@@ -100,9 +112,6 @@ Parameter 1
 :読込バイト数
 Read Bytes
 
-:リストの拡張
-Extended list
-
 :切替
 switching
 
@@ -111,9 +120,6 @@ Export To File
 
 :ファイルからインポート
 Import from file
-
-:アイテム
-Item Editor
 
 :盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。
 Thieves Set the priority of items used by AI to steal items.\r\nThe top of the list will be the item with the highest priority.
@@ -4981,6 +4987,12 @@ Tileset Palette
 :マップエディタ
 Map Editor
 
+:地形背景対応表
+Terrain BG table
+
+:地形床対応表
+Terrain floor table
+
 :ROMリビルド
 ROM Rebuild
 
@@ -5040,12 +5052,6 @@ World Map Image
 
 :簡易メニュー
 Simple Menu
-
-:地形背景対応表
-Terrain BG table
-
-:地形床対応表
-Terrain floor table
 
 :詳細メニュー
 Advanced Editors
@@ -8872,6 +8878,9 @@ Instrument Set
 :ドラムセット
 Drum Set
 
+:[空きトラック]
+[Empty Track]
+
 :警告\r\nマップで再生する音楽は、SongTableのPriority(PlayerType)で、0x00010001を指定する必要があります。\r\n現在の設定:{0}
 Alert\r\nMusic to be played on the map must be Priority (PlayerType) of SongTable and 0x00010001 must be specified.\r\nCurrent setting: {0}
 
@@ -10900,5 +10909,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:[空きトラック]
-[Empty Track]
+:AIが杖を利用できるかどうか判断する関数テーブルを設定します。
+Set up a function table to determine if AI can use staff.

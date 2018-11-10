@@ -791,5 +791,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<MapTerrainBGLookupTableForm>();
         }
+
+        private void AIPerformStaffButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<AIPerformStaffForm>();
+        }
     }
 }
