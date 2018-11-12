@@ -11110,3 +11110,13 @@ r3=X tile position of menu of the right	{U}
 08030A50	设置天气对象	云量	执行例程	{J}
 08030C0C	如果地图上的天气是阴天，请设置云端数据	{U}
 08030b00	设置天气对象	云量	执行例程	{U}
+080BDEF0	DrawUnitSpriteOnWorldmap	{J}
+080D2EBC	在字典中绘制一个项目项	{J}
+080D2F44	在字典中绘制项目项	{J}
+080D39AC	画出字典的屏幕	{J}
+080B9774	阅读商店屏幕	{J}
+080B9028	DrawUnitSpriteOnWorldmap	{U}
+080CE1C0	在字典中绘制一个项目项	{U}
+080CE248	在字典中绘制项目项	{U}
+080CECB0	画出字典的屏幕	{U}
+080B4BEC	阅读商店屏幕	{U}

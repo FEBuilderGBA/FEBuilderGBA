@@ -11236,3 +11236,13 @@ r3=X tile position of menu of the right	{U}
 08030A50	Set weather object	Cloudy	Execution routine	{J}
 08030C0C	If the weather on the map is cloudy, set the cloudy data	{U}
 08030b00	Set weather object	Cloudy	Execution routine	{U}
+080BDEF0	DrawUnitSpriteOnWorldmap	{J}
+080D2EBC	Draw one item item in the dictionary	{J}
+080D2F44	Draw item items in dictionary	{J}
+080D39AC	Draw the screen of the dictionary	{J}
+080B9774	Reading the shop screen	{J}
+080B9028	DrawUnitSpriteOnWorldmap	{U}
+080CE1C0	Draw one item item in the dictionary	{U}
+080CE248	Draw item items in dictionary	{U}
+080CECB0	Draw the screen of the dictionary	{U}
+080B4BEC	Reading the shop screen	{U}

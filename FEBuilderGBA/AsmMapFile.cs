@@ -664,7 +664,7 @@ namespace FEBuilderGBA
             uint addr = startAddr;
             for ( ;addr < rom.Data.Length ; addr += 4)
             {
-                uint d = Program.ROM.u32(addr);
+                uint d = rom.u32(addr);
                 if (!U.isSafetyPointer(d))
                 {
                     break;
@@ -686,8 +686,8 @@ namespace FEBuilderGBA
             
             for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
             {
-                uint d = Program.ROM.u32(addr);
-                if (!U.isSafetyPointer(d))
+                uint d = rom.u32(addr);
+                if (!U.isSafetyPointer(d, rom))
                 {
                     break;
                 }
@@ -714,8 +714,8 @@ namespace FEBuilderGBA
             
             for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
             {
-                uint d = Program.ROM.u32(addr);
-                if (!U.isSafetyPointer(d))
+                uint d = rom.u32(addr);
+                if (!U.isSafetyPointer(d, rom))
                 {
                     break;
                 }
@@ -741,8 +741,8 @@ namespace FEBuilderGBA
             
             for (int i = 0; addr < rom.Data.Length; addr += 4 , i++)
             {
-                uint d = Program.ROM.u32(addr);
-                if (!U.isSafetyPointer(d))
+                uint d = rom.u32(addr);
+                if (!U.isSafetyPointer(d,rom))
                 {
                     break;
                 }
@@ -762,8 +762,8 @@ namespace FEBuilderGBA
             uint addr = startAddr;
             for (int i = 0 ; addr < rom.Data.Length; addr += 4 , i++)
             {
-                uint d = Program.ROM.u32(addr);
-                if (!U.isSafetyPointer(d))
+                uint d = rom.u32(addr);
+                if (!U.isSafetyPointer(d, rom))
                 {
                     break;
                 }
@@ -863,7 +863,7 @@ namespace FEBuilderGBA
             else if (type == "CSTRING")
             {
                 int length;
-                string strname = Program.ROM.getString(U.toOffset(pointer), out length);
+                string strname = rom.getString(U.toOffset(pointer), out length);
                 p.Length = (uint)length;
                 p.Name += " =>　" + strname;
             }
