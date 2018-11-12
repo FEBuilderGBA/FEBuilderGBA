@@ -290,7 +290,7 @@ namespace FEBuilderGBA
             {
                 string writeTextFileName = Path.GetTempFileName();
 
-                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom, useGoolgeTranslate , X_MODIFIED_TEXT_ONLY.Checked);
+                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom, useGoolgeTranslate , false);
                 trans.ImportAllText(this, writeTextFileName);
 
                 ToolTranslateROMFont transFont = new ToolTranslateROMFont();

@@ -127,16 +127,6 @@ namespace FEBuilderGBA
 
 #endif
 
-        //部分翻訳できないか試します. この処理は遅いです.
-        public string ConvertRecentWord(string src)
-        {
-            string text = str(src);
-            foreach (var pair in Dic)
-            {
-                text = text.Replace(pair.Key, pair.Value);
-            }
-            return text;
-        }
         public Dictionary<string, string> ConvertOnelineSplitWord()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>(Dic);

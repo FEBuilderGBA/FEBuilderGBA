@@ -31,6 +31,9 @@ namespace FEBuilderGBA
 
             //一行ずつ翻訳したものをキャッシュにいれる.
             this.TranslateCache = this.TranslateResource.ConvertOnelineSplitWord();
+            //固定文の翻訳辞書
+            this.TransDic = new Dictionary<string, string>();
+            TranslateTextUtil.AppendFixedDic(this.TransDic, "ja", lang);
         }
 
         MyTranslateResourceLow TranslateResource;
@@ -220,7 +223,8 @@ namespace FEBuilderGBA
             }
         }
 
-        Dictionary<string, string> TranslateCache ;
+        Dictionary<string, string> TranslateCache ; //キャッシュ(同じ文書を何度も問い合わせないようにする)
+        Dictionary<string, string> TransDic; //固定文翻訳辞書
         string Translate(string text, string from)
         {
             if (this.TranslateCache.ContainsKey(text))
@@ -294,8 +298,6 @@ namespace FEBuilderGBA
             {
                 eq = 0;
             }
-//            //部分翻訳できないか試す.
-//            t = TranslateResource.ConvertRecentWord(t);
 
             //一行ずつ翻訳する
             t = OneLineTranslate(t, from);

@@ -256,6 +256,7 @@ namespace FEBuilderGBA
                 }
             }
 
+            //エスケープシーケンスの変換
             translatetext = TextForm.ConvertEscapeText(translatetext);
 
             writer.Write("[" + U.ToHexString(id) + "]\r\n");
@@ -281,6 +282,8 @@ namespace FEBuilderGBA
                 {
                     transDic = TranslateTextUtil.LoadTranslateDic(tralnslate_from, tralnslate_to, rom_from, rom_to);
                 }
+                //固定文の辞書
+                TranslateTextUtil.AppendFixedDic(transDic, tralnslate_from, tralnslate_to);
 
                 using (StreamWriter writer = new StreamWriter(writeTextFileName))
                 {

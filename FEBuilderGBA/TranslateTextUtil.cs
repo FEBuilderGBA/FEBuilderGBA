@@ -131,6 +131,65 @@ namespace FEBuilderGBA
             return sb.ToString();
         }
 
+        //固定辞書の読込
+        public static void AppendFixedDic(Dictionary<string, string> dic,string from, string to)
+        {
+            bool isRev;
+            string fullfilename;
+
+            if (from == "ja" && to == "en")
+            {
+                isRev = false;
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "translate", "dic_ja_en.txt");
+            }
+            else if (from == "en" && to == "ja")
+            {
+                isRev = true;
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "translate", "dic_ja_en.txt");
+            }
+            else
+            {
+                return;
+            }
+
+            if (! File.Exists(fullfilename))
+            {//辞書がない
+                return ;
+            }
+
+            string[] lines = File.ReadAllLines(fullfilename);
+            foreach (string line in lines)
+            {
+                string[] sp = line.Split('\t');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+
+                string key;
+                string value;
+
+                if (isRev)
+                {
+                    key = sp[1];
+                    value = sp[0];
+                }
+                else
+                {
+                    key = sp[0];
+                    value = sp[1];
+                }
+
+                key = key.ToUpper();
+                if (dic.ContainsKey(key))
+                {
+                    continue;
+                }
+
+                dic[key] = value;
+            }
+        }
+
         //翻訳用のよくあるテキスト集の作成.
         public static Dictionary<string, string> LoadTranslateDic(string from, string to, string rom_from, string rom_to)
         {
@@ -322,6 +381,8 @@ namespace FEBuilderGBA
             }
             return "";
         }
+
+        
         static string TranslateTextGoogleTranslate(string text, string from, string to)
         {
             //定型文で変換できない場合GoogleTranslateへ

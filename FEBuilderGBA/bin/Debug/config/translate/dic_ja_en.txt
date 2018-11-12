@@ -1683,7 +1683,32 @@ HPの薬	HP Tonic
 ルーチェ	Luce
 ブレイドロード	Blade Lord
 ゼーベイア	Xavier
-ケンプク	Kenpku
+ケンプフ	Kenpf
+シルバーナイト	Silver Knight
+国王	King
+ロート	rot
+グリューン	grun
+リラ	lila
+ゲルプ	gelb
+オランジュ	orange
+ヘルブラウ	hellblau
+ブラウ	blau
+シュヴァルツ	schwarz
+アインス	Eins
+ツヴァイ	Zwei
+ドライ	Drei
+フィーア	Vier
+フュンフ	Funf
+ゼクス	Sechs
+ズィーベン	Sieben
+アハト	Acht
+ノイン	Neun
+シェーン	Zehn
+エルフ	Elf
+ツヴェルフ	Zwolf
+ドライツェン	Dreizehn
+かつて魔王によって倒された\r\n１３人の英雄達	One of the 13 heroes defeated\r\nby the Demon King.
+シーマ	Sheena
 フィアナの戦士	The Warrior of Fiana
 イスの海岸	The Village of Ith
 海賊島	The Pirate Isles
@@ -2019,7 +2044,7 @@ HPの薬	HP Tonic
 青い理想	Blue Ideal
 ノーブル	Noble
 ノ‐ブルレイピア	Noble Rapier
-ユグドラ	yggdra
+ユグドラ	Yggdra
 アンドレイ	Andorey
 ジェスト	Jest
 アリシア	Alicia
