@@ -7,6 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x7fd9e 0x7fdae
+HEX=FALSE
 
 NAME.zh=状态笼子最大长度
 

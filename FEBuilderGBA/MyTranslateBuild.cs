@@ -166,8 +166,6 @@ namespace FEBuilderGBA
             return newline;
         }
 
-        //resources.GetString("label5.Text")
-
         void ScanStringForSourceCode(string filename)
         {
             string[] lines = File.ReadAllLines(filename);

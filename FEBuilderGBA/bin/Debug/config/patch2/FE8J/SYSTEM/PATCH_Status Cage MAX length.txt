@@ -6,7 +6,9 @@ NAME.en=Stat Bar Max Length
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x893ca 0x893da 0x893ec
+ADDRESS=0x893ca 0x893da
+// 0x893ec
+HEX=FALSE
 
 NAME.zh=状态菜单最大长度
 
