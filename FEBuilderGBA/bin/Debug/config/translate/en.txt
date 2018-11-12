@@ -2518,6 +2518,9 @@ The image at this address ({0}) is a value ({2}) whose height is less than the m
 :内部エラーが発生しました。\r\nreport7zを送ってください。\r\n{0}
 An internal error occurred.\r\nPlease send report 7z.\r\n{0}
 
+:ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。
+ROM capacity exceeds 32 MB.\r\nWith GBA, ROM that exceeds 32 MB can not be executed.
+
 :@0080の後に、@命令が続いていません。@001Cで補正します。
 There is no @ command following @ 0080. Fix with @ 001C.
 
@@ -10414,6 +10417,9 @@ Please select ROM to extract fonts
 :定型文を抽出するROMを選択してください
 Please select ROM to extract fixed phrases
 
+:翻訳データを指定してください
+Please specify translation data
+
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using Japanese ROM and English ROM.\r\n\r\nIn simplified mode, it translates fully automatically.\r\nIt automatically adjusts the missing font import, menu length etc etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
 
@@ -10425,6 +10431,9 @@ Fixed String TO
 
 :定型文ROM FROM
 Fixed String FROM
+
+:翻訳データ
+Translation data
 
 :足りないフォントの自動生成
 Automatic generation of missing fonts
@@ -10440,6 +10449,9 @@ Export ALL Text
 
 :翻訳して書き出す
 Translate to Export
+
+:改造されたテキストのみ取得する
+Acquire only remodeled text
 
 :google translateは、負荷をかけないようにするため、DebugBuildでのみ使えます
 Google Translate is restricted to the Debug build to avoid load issues.

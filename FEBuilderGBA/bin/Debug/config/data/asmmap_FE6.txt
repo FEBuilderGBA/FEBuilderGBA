@@ -1076,3 +1076,6 @@
 080344AC	AIの杖利用判定	サイレス
 0803462C	AIの杖利用判定	スリープ	バーサク
 080347A4	AIの杖利用判定	Ｍシールド
+
+08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
+0801729c	GetItemWRank

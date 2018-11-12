@@ -11215,3 +11215,24 @@ r3=X tile position of menu of the right	{U}
 08021d34	WarpIN_Event_Sub_2	{U}
 08A156DC	&PROC	UNUSE Item Effect	1	{J}
 089A5054	&PROC	UNUSE Item Effect	1	{U}
+080379C0	AddGorgonEggTrap	{J}
+08030220	Set weather object	Snow	{J}
+08030434	Set weather object	Sandstorm	{J}
+0803054C	Set weather object	Snowstorm	{J}
+08030344	Set weather object	Rain	{J}
+08030930	Set weather object	Lava	{J}
+080309D4	Set weather object	Cloudy	{J}
+0803082C	Set weather object	Lava	Subroutine 1	{J}
+08030898	Set weather object	Lava	Subroutine 2	{J}
+080302d0	Set weather object	Snow	{U}
+080304e4	Set weather object	Sandstorm	{U}
+080305fc	Set weather object	Snowstorm	{U}
+080303f4	Set weather object	Rain	{U}
+080309e0	Set weather object	Lava	{U}
+08030a84	Set weather object	Cloudy	{U}
+080308dc	Set weather object	Lava	Subroutine 1	{U}
+08030948	Set weather object	Lava	Subroutine 2	{U}
+08030B5C	If the weather on the map is cloudy, set the cloudy data	{J}
+08030A50	Set weather object	Cloudy	Execution routine	{J}
+08030C0C	If the weather on the map is cloudy, set the cloudy data	{U}
+08030b00	Set weather object	Cloudy	Execution routine	{U}

@@ -959,6 +959,7 @@
     <Compile Include="ToolUndoPopupDialogForm.Designer.cs">
       <DependentUpon>ToolUndoPopupDialogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TranslateDic.cs" />
     <Compile Include="TranslateGoogle.cs" />
     <Compile Include="ToolTranslateROMForm.cs">
       <SubType>Form</SubType>

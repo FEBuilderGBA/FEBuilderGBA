@@ -256,6 +256,7 @@ namespace FEBuilderGBA
                 {
                     if (to_key <= 0)
                     {
+                        dic[U.ToHexString(orignal_from_key) + "#NOTFOUND#" + from_string] = "";
                         continue;
                     }
                     if (U.isSafetyPointer(to_key, rom_t))
@@ -263,6 +264,7 @@ namespace FEBuilderGBA
                         to_key = rom_t.u32(U.toOffset(to_key));
                         if (!U.isSafetyPointer(to_key, rom_t))
                         {
+                            dic[U.ToHexString(orignal_from_key) + "#NOTFOUND#" + from_string] = "";
                             continue;
                         }
                     }
@@ -297,16 +299,26 @@ namespace FEBuilderGBA
         {
             string upper_text = text.ToUpper();
 
-            string key = U.ToHexString(fromkey) + "|" + upper_text;
-            if (transDic.ContainsKey(key))
             {
-                return transDic[key];
+                string key = U.ToHexString(fromkey) + "|" + upper_text;
+                if (transDic.ContainsKey(key))
+                {
+                    return transDic[key];
+                }
             }
-
-            key = upper_text;
-            if (transDic.ContainsKey(key))
             {
-                return transDic[key];
+                string key = U.ToHexString(fromkey) + "#NOTFOUND#" + upper_text;
+                if (transDic.ContainsKey(key))
+                {//NOT FOUND
+                    return "";
+                }
+            }
+            {
+                string key = upper_text;
+                if (transDic.ContainsKey(key))
+                {
+                    return transDic[key];
+                }
             }
             return "";
         }
@@ -379,7 +391,7 @@ namespace FEBuilderGBA
         }
 
         //テキストを翻訳する(時間がかかるので注意)
-        public static string TranslateText(uint fromkey,string text, string from, string to, Dictionary<string, string> transDic, bool useGoolgeTranslate)
+        public static string TranslateText(uint fromkey,string text, string from, string to, Dictionary<string, string> transDic, bool useGoolgeTranslate, bool modifiedTextOnly)
         {
             if (text == "" || from == to)
             {
@@ -389,6 +401,10 @@ namespace FEBuilderGBA
             string r = TranslateTextDic(fromkey,text, transDic);
             if (r != "")
             {//定型文で変換できるらしい.
+                if (modifiedTextOnly)
+                {//定型文で翻訳できるものには、利用しない場合は、[@SKIP]を返す.
+                    return "[@SKIP]";
+                }
                 return r;
             }
 

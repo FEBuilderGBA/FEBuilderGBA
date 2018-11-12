@@ -1780,7 +1780,7 @@ namespace FEBuilderGBA
                         , text
                         , from
                         , to
-                        , transDic, true);
+                        , transDic, true , false);
                 }
                 catch (System.Net.WebException ee)
                 {

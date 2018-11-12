@@ -625,9 +625,20 @@ namespace FEBuilderGBA
 
             return errors;
         }
+        static void ROMCheck(List<FELint.ErrorSt> errors)
+        {
+            if (Program.ROM.Data.Length > 1024 * 1024 * 32)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.FELINT_SYSTEM_ERROR, U.NOT_FOUND
+                    , R._("ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。"
+                )));
+            }
+        }
 
         static void ScanSystem(List<FELint.ErrorSt> errors)
         {
+            ROMCheck(errors);
+
             if (InputFormRef.DoEvents(null, "ScanSystem ImageBattleAnimeForm")) return;
             ImageBattleAnimeForm.MakeCheckError(errors);
 

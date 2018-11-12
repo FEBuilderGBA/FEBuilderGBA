@@ -1,0 +1,2134 @@
+ファイアエンブレム	Fire Emblem
+暗黒龍	Shadow Dragon
+暗黒竜	Shadow Dragon
+聖戦の系譜	Genealogy of the Holy War
+暁の女神	Radiant Dawn
+蒼炎の軌跡	Path of Radiance
+ドーピング	Stat Booster
+聖魔の光石	The Sacred Stones
+聖魔	The Sacred Stones
+特効効果	Effectiveness
+特攻効果	Effectiveness
+CC	Promotion
+クラスチェンジ	Promotion
+下級職	un-Promoted
+上級職	Promoted
+CCボーナス	Promotion Gains
+CCアイテム	Promotion Item
+必殺	Critical
+自軍	Player
+友軍	Ally
+友軍	NPC
+敵軍	Enemy
+幸運	Luck
+幸運	LUK
+魔防	Resistance
+魔防	RES
+守備	DEF
+守備	defence
+速さ	SPD
+速さ	speed
+技	SKIL
+技	SKL
+攻撃	POW
+攻撃	STR
+顔画像	Portrait
+移動	MOVE
+体格	CON
+救出できる	Aid
+同行	Trv
+属性	Affin
+状態	Cond
+ユニット	Character
+ユニット	Unit
+近距離武器	Melee weapon
+遠距離武器	Ranged weapon
+闘技場	Arena
+武器屋	Armory
+道具屋	Vendor
+秘密の店	Secret Shop
+玉座	throne
+古木	Snag
+地形	Terrain
+武器LV	WLVL
+制圧	Seize
+城門の制圧	Seize gate
+ボスを倒す	Defeat boss
+倒す	Defeat
+NNNターン生存	Survive for NNN turns
+敵全滅	Defeat enemy
+敵全滅	Rout
+玉座制圧	Seize throne
+NNNの仕掛けの解除	Trigger NNN switches
+AAAの生存	Protect AAA
+AAAに話しかける	Speak to AAA
+NNNの拠点到達	Earn NNN points
+拠点到達	Earn point
+輸送隊	Supply
+輸送隊	Merlinus
+杖	Staff
+杖	STF
+闇	Dark
+闇	DRK
+光	Light
+光	LGT
+理	Anima
+理	ANM
+弓	BOW
+斧	AXE
+槍	Lance
+槍	LNC
+剣	Sword
+剣	SWD
+すくみ	Weapon Triangle
+命中補正	Hit Modifier
+攻撃補正	Attack Modifier
+攻撃武器	Equipped weapon
+きずぐすり	Vulnarary
+傷薬	Vulnarary
+特効薬	Elixir
+とっこうやく	Elixir
+神器フラッシュ	Sacred Flash
+神器	Sacred
+進撃準備	Preparation
+命中	Hit
+射程	Range
+射程	Rng
+重さ	Weight
+必殺	Crit
+耐久	Uses
+回避	Avoid
+必殺無効	Negate Criticals
+飛行特攻無効	Negate Flier Effectiveness
+修理不可	Unrepairable
+属性反転	Reaver Effect
+双方反撃不可	Uncounterable
+反撃不可	Uncounterable
+魔法剣	Hits RES
+2回攻撃	Brave Weapon
+売却不可	Unsellable
+防御無視	Negate Defenses
+宝箱	Chest
+支援	Support
+魔物	Monster
+モンスター	Monster
+エイリーク	Eirika
+ゼト	Seth
+ライブ	Heal
+リライブ	Mend
+リカバー	Recover
+リブロー	Physic
+リザーブ	Fortify
+レスト	Restore
+リザイア	Nosferatu
+ノスフェラート	Fenrir
+章	Chapter
+ステージ	Chapter
+面	Chapter
+序章	Prologue
+終章	Final Chapter
+NNN章	Chapter.NNN
+NNN章外伝	Chapter.NNNx
+NNN章異伝	Chapter.NNNxx
+外伝	gaiden
+フリーマップ	world map skirmishes
+フリーマップ	skirmishes
+貫通	Pierce
+大盾	Great Shield
+必的	Sure Strike
+魔物特効	Slayer
+瞬殺	Silencer
+かぎ開	Pick
+とうぞくのかぎ	Lockpick
+盗賊の鍵	Lockpick
+★	Prf
+専用武器	Prf
+マップ変化	Tile Change
+マップ変化	Map Change
+ラトナ	Latona
+サイレス	Silence
+スリープ	Sleep
+ハマーン	Hammern
+バーサク	Beserk
+Mシールド	Barrier
+大陸の魔物退治	Creature Campaign
+マルス	Marth
+シーダ	Caeda
+シーダ	Shiida
+ジェイガン	Jeigan
+ジェイガン	Jagen
+カイン	Cain
+アベル	Abel
+ドーガ	Draug
+ゴードン	Gordin
+リフ	Wrys
+オグマ	Ogma
+バーツ	Barst
+サジ	Bord
+マジ	Cord
+カシム	Castor
+ダロス	Darros
+ジュリアン	Julian
+レナ	Lena
+ナバール	Nabarl
+ナバール	Navarre
+マリク	Merric
+マチス	Matthis
+ハーディン	Hardin
+ウルフ	Wolf
+ザガロ	Sedgar
+ロシェ	Roshea
+ビラク	Vyland
+ウェンデル	Wendell
+リカード	Rickard
+バヌトゥ	Bantu
+シーザ	Caesar
+ラディ	Radd
+ロジャー	Roger
+ジョルジュ	Jeorge
+マリア	Maria
+ミネルバ	Minerva
+リンダ	Linde
+ジェイク	Jake
+ミディア	Midia
+トムス	Dolph
+ミシェラン	Macellan
+トーマス	Tomas
+ボア	Boah
+ベック	Beck
+アストリア	Astram
+パオラ	Palla
+カチュア	Catria
+アラン	Arran
+サムソン	Samson
+チェイニー	Xane
+エスト	Est
+チキ	Tiki
+ロレンス	Lorenz
+エリス	Elice
+ガトー	Gotoh
+ジオル	Jiol
+カミュ	Camus
+ミシェイル	Michalis
+ガーネフ	Gharnef
+メディウス	Medeus
+ガザック	Gazzak
+ゴメス	Gomer
+ハイマン	Reynard
+ハイマン	Hyman
+ベンソン	Bentheon
+ムラク	Merach
+マリオネス	Emereus
+ハーマイン	Harmein
+マフー	Mannu
+ジューコフ	Zharov
+ショーゼン	Khozen
+ボーゼン	Volzhin
+ヒムラ	Heimler
+ギガッシュ	Grigas
+ホルサード	Hollstadt
+モーゼス	Morzas
+スターロン	Sternlin
+オーダイン	Orridyon
+ゼムセル	Xemcel
+モロドフ	Malledus
+ニーナ	Nyna
+アカネイア	Archanea
+アリティア	Altea
+ドルーア	Dolhr
+グラ	Gra
+グルニア	Grust
+マケドニア	Macedon
+タリス	Talys
+オレルアン	Aurelis
+ペラティ	Pyrathi
+カダイン	Khadein
+カシミア	Chiasmir
+ラーマン神殿	Fane of Raman
+シグルド	Sigurd
+アーダン	Arden
+ノイッシュ	Naoise
+アレク	Alec
+オイフェ	Oifey
+アゼル	Azelle
+レックス	Lex
+キュアン	Quan
+エスリン	Ethlyn
+フィン	Finn
+ミデェール	Midir
+エーディン	Edain
+デュー	Dew
+アイラ	Ayra
+シャナン	Shannan
+ディアドラ	Deirdre
+ジャムカ	Jamke
+ホリン	Chulainn
+ラケシス	Raquesis
+ベオウルフ	Beowolf
+レヴィン	Lewyn
+シルヴィア	Silvia
+フュリー	Erinys
+ティルテュ	Tailtiu
+クロード	Claud
+ブリギッド	Brigid
+セリス	Seliph
+ラクチェ	Larcei
+ラドネイ	Creidne
+スカサハ	Ulster
+ロドルバン	Dalvin
+ラナ	Lana
+マナ	Muirne
+デルムッド	Diarmuid
+トリスタン	Tristan
+レスター	Lester
+ディムナ	Deimne
+ユリア	Julia
+アーサー	Arthur
+アミッド	Amid
+フィー	Fee
+フェミナ	Hermina
+ヨハン	Iuchar
+ヨハルヴァ	Iucharba
+パティ	Patty
+デイジー	Daisy
+リーフ	Leif
+ナンナ	Nanna
+ジャンヌ	Jeanne
+アレス	Ares
+リーン	Lene
+レイリア	Laylea
+ティニー	Tine
+リンダ	Linda
+ファバル	Febail
+アサエロ	Asaello
+セティ	Ced
+ホーク	Hawk
+ハンニバル	Hannibal
+コープル	Coirpre
+シャルロー	Charlot
+アルテナ	Altena
+レプトール	Reptor
+ランゴバルト	Lombard
+アルヴィス	Arvis
+ガンドルフ	Munnir
+デマジオ	DiMaggio
+ゲラルド	Gerrard
+バトゥ	Batur
+キンボイス	Cimbaeth
+エルトシャン	Eldigan
+エリオット	Elliot
+サンディマ	Sandima
+マンフロイ	Manfroy
+シャガール	Chagall
+フィリップ	Philip
+ボルドー	Bordeaux
+ヴォルツ	Waltz
+マクベス	Macbeth
+クレメント	Clement
+ザイン	Zane
+ジャコバン	Jacoban
+トラバント	Travant
+パピヨン	Papillon
+ピサール	Pizare
+ドバール	Duvall
+クブリ	Cuvuli
+ディートバ	Dithorba
+マイオス	Maios
+パメラ	Pamela
+ドノバン	Donovan
+アンドレイ	Andre
+レイミア	Lamia
+ダッカー	Daccar
+スレイダー	Slayder
+マゴーネ	Magorn
+ヴァハ	Vaha
+ダナン	Danann
+ハロルド	Harold
+シュミット	Schmidt
+ユリウス	Julius
+ブルーム	Bloom
+クトゥーゾフ	Kutuzof
+ブラムセル	Bramsel
+ジャバロー	Javarro
+イシュトー	Ishtore
+ライザ	Liza
+ヴァンパ	Banba
+フェトラ	Fotla
+エリウ	Eriu
+イシュタル	Ishtar
+ムハマド	Muhammad
+オーヴォ	Ovo
+コルータ	Coulter
+マイコフ	Maykov
+アリオーン	Arion
+カナッツ	Kanatz
+ディスラー	Distler
+ムーサー	Musar
+ジュダ	Judah
+ヒルダ	Hilda
+リデール	Riddell
+モリガン	Morrigan
+ザガム	Zagam
+ブリアン	Brian
+スコピオ	Scipio
+ロベルト	Roberto
+ボイス	Boyce
+ロダン	Rodan
+ユフィール	Juphiel
+フィッシャー	Fisher
+ダゴン	Dagon
+バラン	Baran
+メング	Meng
+ブレグ	Bleg
+メイベル	Mabel
+アインス	Mus
+ツヴァイ	Bovis
+ドライ	Tigris
+フィーア	Lepus
+フュンフ	Draco
+ゼクス	Anguilla
+ズイーベン	Equus
+アハト	Ovis
+ノイン	Simia
+ツェーン	Gallus
+エルフ	Canis
+ツヴェルフ	Porcus
+アズムール	Azmur
+クルト	Kurth
+バイロン	Byron
+リング	Ring
+フィラート	Filat
+イーヴ	Yves
+エヴァ	Eva
+アルヴァ	Alva
+マーニャ	Annand
+ラーナ	Rahna
+アイーダ	Aida
+アンナ	Anna
+パルマーク	Palmarch
+フェリペ	Felipe
+ロプトウス	Loptyr
+フォルセティ	Forseti
+ナーガ	Naga
+バルド	Baldur
+Baldr
+ヘイム	Heim
+ファラ	Fjalar
+ネール	Neir
+ウル	Ullur
+トード	Thrud
+ブラギ	Bragi
+ヘズル	Hezul
+オード	Od
+ダイン	Dain
+ノヴァ	Njörun
+サラマンド	Salamand
+マイラ	Maera
+マナナン	Mananan
+マリクル	Maricle
+シギュン	Sigyn
+ヴィクトル	Victor
+エスニャ	Ethnia
+イムカ	Imca
+グラーニェ	Grainne
+聖騎士誕生	Birth of a Crusader
+精霊の森の少女	The Spirit Forest's Maiden
+アグストリアの動乱	Crisis in Agustria
+獅子王エルトシャン	Eldigan the Lionheart
+空に舞う	Dance in the Skies
+運命の扉	Threshold of Fate
+光をつぐもの	Heir of Light
+砂漠を越えて	Beyond the Desert
+トラキアの竜騎士	The Dracoknights of Thracia
+封印の剣	Sword of seal
+烈火の剣	The Binding Blade
+烈火	The Binding Blade
+誰がために	For Whose Sake
+光と闇と	Light and Darkness
+最後の聖戦	The Final Holy War
+ユグドラル	Jugdral
+グランベル	Grannvale
+バーハラ	Belhalla
+シアルフィ	Chalphy
+ヴェルトマー	Velthomer
+ユングヴィ	Jungby
+フリージ	Friege
+ドズル	Dozel
+エッダ	Edda
+ヴェルダン	Verdane
+エバンス	Evans
+ジェノア	Genoa
+マーファ	Marpha
+アグストリア	Agustria
+ノディオン	Nordion
+ハイライン	Heirhein
+アンフォニー	Anphony
+マッキリー	Mackily
+アグスティ	Agusty
+マディノ	Madino
+シルベール	Silvail
+オーガヒル	Orgahil
+ブラギの塔	Tower of Bragi
+シレジア	Silesse
+セイレーン	Sailane
+トーヴェ	Thove
+ザクソン	Zaxon
+リューベック	Lubeck
+イード砂漠	Yied Desert
+フィノーラ	Phinora
+イザーク	Isaach
+ティルナノグ	Tirnanog
+ガネーシャ	Ganeishire
+ソファラ	Sophara
+リボー	Rivough
+ダーナ	Darna
+メルゲン	Melgen
+マンスター地方	Manster District
+レンスター	Leonster
+アルスター	Alster
+コノート	Connaught
+マンスター	Manster
+トラキア	Thracia
+ミーズ	Meath
+カパトギア	Kapathogia
+ルテキア	Luthecia
+グルティア	Grutia
+ミレトス	Miletos
+ペルルーク	Perlucos
+クロノス	Chronos
+ラドス	Rados
+ジュニアロード	Lord
+ロードナイト	Knight Lord
+プリンス	Prince
+プリンセス	Princess
+マスターナイト	Master Knight
+ソシアルナイト	Cavalier
+トルバドール	Troubadour
+フリーナイト	Sword Knight
+フォレストナイト	Ranger
+フォレスト	Ranger
+ランスナイト	Lance Knight
+デュークナイト	Duke Knight
+アクスナイト	Axe Knight
+グレートナイト	Great Knight
+アーチナイト	Bow Knight
+ボウナイト	Bow Knight
+アーマー	Armr Knight
+ソードアーマー	Armored Sword
+アクスアーマー	Armored Axe
+ボウアーマー	Armored Bow
+ジェネラル	General
+将軍	General
+ソードファイター	Myrmidon
+ソードマスター	Swordmaster
+フォーレスト	Hero
+アクスファイター	Fighter
+ウォーリア	Warrior
+ボウファイター	Archer
+スナイパー	Sniper
+シーフ	Thief
+シーフファイター	Rogue
+バーバリアン	Barbarian
+マウンテンシーフ	Brigand
+パイレーツ	Pirate
+ハンター	Hunter
+ペガサスナイト	Pegasus Knight
+ファルコンナイト	Falcon Knight
+ドラゴンライダー	Dracorider
+ドラゴンナイト	Wyvern Rider
+ドラゴンマスター	Wyvern Lord
+ダンサー	Dancer
+マージ	Mage
+ファイアマージ	Fire Mage
+サンダーマージ	Thunder Mage
+ウインドマージ	Wind Mage
+マージナイト	Mage Knight
+マージファイター	War Mage
+バード	Bard
+シャーマン	Shaman
+セイジ	Sage
+プリースト	Priest
+ハイプリースト	High Priest
+ビショップ	Bishop
+シビリアン	Civilian
+ダークマージ	Dark Mage
+ダークビショップ	Dark Bishop
+ダークプリンス	Dark Prince
+バロン	Baron
+クイーン	Queen
+エンペラー	Emperor
+ロングアーチ	Ballista
+キラーアーチ	Killer Ballista
+アイアンアーチ	Iron Ballista
+グレートアーチ	Ballistician
+ソルジャー	Soldier
+ソードソルジャー	Sword Soldier
+スピアソルジャー	Spear Soldier
+アクスソルジャー	Axe Soldier
+アーチャー	Archer
+てつの剣	Iron Sword
+鉄の剣	Iron Sword
+ほそみの剣	Slim Sword
+細見の剣	Slim Sword
+とうぞくの剣	Thief's sword
+盗賊の剣	Thief's sword
+いのりの剣	Miracle sword
+祈りの剣	Miracle sword
+まもりの剣	Safeguard
+守りの剣	Safeguard
+バリアの剣	Barrier Blade
+ほのおの剣	Flame sword
+炎の剣	Flame sword
+いかずちの剣	Lightning Sword
+雷の剣	Lightning Sword
+かぜの剣	Wind Sword
+風の剣	Wind Sword
+だいちの剣	Earth sword
+大地の剣	Earth sword
+ひかりの剣	Light Brand
+光の剣	Light Brand
+バサークの剣	Berserk edge
+スリープの剣	Sleep edge
+サイレスの剣	Silence edge
+はがねの剣	Steel Sword
+鋼の剣	Steel Sword
+ゆうしゃの剣	Brave Sword
+勇者の剣	Brave Sword
+ざんてつの剣	Armorslayer
+斬鉄剣	Armorslayer
+つばめがえし	Wing Clipper
+ツバメ返し	Wing Clipper
+ぎんの剣	Silver Sword
+銀の剣	Silver Sword
+てつの大剣	Iron Blade
+鉄の大剣	Iron Blade
+はがねの大剣	Steel Blade
+鋼の大剣	Steel Blade
+ぎんの大剣	Silver Blade
+銀の大剣	Silver Blade
+ティルフィング	Tyrfing
+バルムンク	Balmung
+ミストルティン	Mystletainn
+こわれた剣	Broken sword
+壊れた剣	Broken sword
+てつのやり	Iron Lance
+鉄の槍	Iron Lance
+ほそみのやり	Slim Lance
+細身の槍	Slim Lance
+てやり	Javelin
+手槍	Javelin
+ナイトキラー	Ridersbane
+はがねのやり	Steel Lance
+鋼の槍	Steel Lance
+ゆうしゃのやり	Brave Lance
+勇者の槍	Brave Lance
+ぎんのやり	Silver Lance
+銀の槍	Silver Lance
+グングニル	Gungnir
+ゲイボルグ	Gáe Bolg
+こわれたやり	Broken lance
+壊れた槍	Broken lance
+てつのおの	Iron Axe
+鉄の斧	Iron Axe
+ておの	Hand Axe
+手斧	Hand Axe
+はがねのおの	Steel Axe
+鋼の斧	Steel Axe
+ゆうしゃのおの	Brave Axe
+勇者の斧	Brave Axe
+スワンチカ	Helswath
+こわれたおの	Broken axe
+壊れた斧	Broken axe
+てつのゆみ	Iron Bow
+鉄の弓	Iron Bow
+キラーボウ	Killer Bow
+はがねのゆみ	Steel Bow
+鋼の弓	Steel Bow
+ゆうしゃのゆみ	Brave Bow
+勇者の弓	Brave Bow
+ぎんのゆみ	Silver Bow
+銀の弓	Silver Bow
+イチイバル	Yewfelle
+こわれたゆみ	Broken bow
+壊れた弓	Broken bow
+グレートアーチ	Great ballista
+ファイアー	Fire
+エルファイアー	Elfire
+ボルガノン	Bolganone
+メティオ	Meteor
+ファラフレイム	Valflame
+サンダー	Thunder
+エルサンダー	Elthunder
+トローン	Thoron
+サンダーストーム	Bolting
+ウインド	Wind
+エルウインド	Elwind
+トルネード	Tornado
+ブリザード	Blizzard
+ライトニング	Lightning
+オーラ	Aura
+ヨツムンガンド	Jormungand
+フェンリル	Fenrir
+ヘル	Hel
+きえたまどう書	Drained tome
+消えた魔道書	Drained tome
+リターン	Return
+ワープ	Warp
+レスキュー	Rescue
+チャーム	Charm
+バサーク	Berserk
+壊れた杖	Broken Staff
+バルキリー	Valkyria
+ライブのうでわ	Renewal band
+ライブの腕輪	Renewal band
+エリートリング	Paragon band
+シーフのうでわ	Thief's band
+シーフの腕輪	Thief's band
+いのりのうでわ	Miracle band
+祈りの腕輪	Miracle band
+ついげきリング	Follow-Up Ring
+追撃リング	Follow-Up Ring
+リカバーリング	Recover Ring
+ねぎりのうでわ	Bargain band
+値切りの腕輪	Bargain band
+ナイトリング	Knight ring
+リターンリング	Return band
+スピードリング	Speed ring
+マジックリング	Magic ring
+パワーリング	Power ring
+シールドリング	Shield ring
+バリアリング	Barrier ring
+レッグリング	Leg ring
+スキルリング	Skill ring
+サークレット	Circlet
+太陽剣	Sol
+月光剣	Luna
+流星剣	Astra
+れんぞく	Adept
+連続	Adept
+ねぎり	Bargain
+値切り	Bargain
+とつげき	Accost
+突撃	Accost
+カリスマ	Charm
+ひっさつ	Critical
+おどる	Dance
+踊る	Dance
+いのり	Miracle
+祈り	Miracle
+みきり	Nihil
+見切り	Nihil
+エリート	Paragon
+おおだて	Pavise
+ついげき	Follow-Up
+追撃	Follow-Up
+ねすむ	Steal
+盗む	Steal
+まちぶせ	Vantage
+待ち伏せ	Vantage
+いかり	Wrath
+怒り	Wrath
+盗賊	Thief
+ロイ	Roy
+マーカス	Marcus
+アレン	Alen
+ランス	Lance
+ウォルト	Wolt
+ボールス	Bors
+マリナス	Merlinus
+エレン	Elen
+ディーク	Dieck
+シャニー	Shanna
+ワード	Wade
+ロット	Lot
+チャド	Chad
+ルゥ	Lugh
+クラリーネ	Clarine
+ルトガー	Rutger
+サウル	Saul
+ドロシー	Dorothy
+スー	Sue
+ゼロット	Zelot
+トレック	Trec
+ノア	Noah
+アストール	Astolfo
+リリーナ	Lilina
+ウェンディ	Gwendolyn
+バース	Barthe
+オージェ	Ogier
+フィル	Fir
+シン	Sin
+ゴンザレス	Gonzalez
+ギース	Geese
+クレイン	Klein
+ティト	Thea
+ララム	Larum
+エルフィン	Elffin
+エキドナ	Echidna
+バアトル	Bartre
+レイ	Raigh
+キャス	Cath
+ミレディ	Melady
+パーシバル	Perceval
+セシリア	Cecilia
+ソフィーヤ	Sophia
+イグレーヌ	Igrene
+ガレット	Garret
+ファ	Fae
+ヒュウ	Hugh
+ツァイス	Zeiss
+ダグラス	Douglas
+ニイメ	Niime
+ダヤン	Dayan
+ユーノ	Juno
+ヨーデル	Yoder
+カレル	Karel
+ゼフィール	Zephiel
+ナーシェン	Narcian
+ゲイル	Galle
+マードック	Murdock
+ブルーニャ	Brunnya
+イドゥン	Idunn
+ヤアン	Jahn
+ダマス	Damas
+ルード	Ruud
+スレーター	Slater
+エリック	Erik
+ドリー	Dory
+ワグナー	Wagner
+デビアス	Debias
+レイガンス	Legance
+ヘニング	Henning
+スコット	Scott
+ノード	Nord
+オロ	Orlo
+ジンク	Zinque
+モルガン	Morgan
+アルカルド	Arcardo
+ロアーツ	Roartz
+フレアー	Flaer
+アイン	Ein
+ゲレロ	Guerrero
+ランディ	Randy
+オーツ	Oates
+レイス	Raith
+ウィンダム	Windham
+モンケ	Monke
+マーテル	Martel
+ケル	Kel
+シグーネ	Sigune
+トオリル	Thoril
+ブラクル	Brakul
+クドカ	Kudoka
+マラル	Marral
+カブル	Kabul
+チャン	Chan
+ティック	Tick
+ペレス	Peres
+エリウッド	Eliwood
+ヘクトル	Hector
+リン	Lyn
+ギネヴィア	Guinivere
+ハルトムート	Hartmut
+ローラン	Roland
+テュルバン	Durban
+アトス	Athos
+エリミーヌ	Elimine
+ハノン	Hanon
+バリガン	Barigan
+ブラミモンド	Bramimond
+パント	Pent
+オルン	Orun
+モルドレッド	Mordred
+ミルディン	Myrddin
+運命の息吹	Dawn of Destiny
+ベルンの王女	The Princess of Bern
+後れてきた者	Latecomer's Sorrow
+同盟の崩壊	Crumbling League
+炎の紋章	Fire Emblem
+しかけられた罠	Ensnared
+オスティアの反乱	The Ostian Revolt
+再会	Reunion
+烈火の剣	The Blazing Blade
+霧にけむる島	The Misty Isles
+あらがう者たち	Western Resistance
+西方の勇者	The Hero of the West
+対立のはざまで	Amidst a Struggle
+自由への脱出	Flight Toward Freedom
+真実の敵	The True Enemy
+天雷の斧	The Thunder Axe
+救出作戦	Rescue Mission
+理想郷	Arcadia
+業火の理	The Infernal Truth
+竜の娘	The Dragon Child
+王都奪還	Storming the Capital
+至高の光	The Glorious Ascension
+海の道	Ocean's Parting
+凍てつく河	The Frozen River
+冬将軍	Bitter Cold
+イリア解放	Ilia's Salvation
+氷雪の槍	The Blizzard Spear
+司祭の教え	The Bishop's Teachings
+サカの掟	The Law of Sacae
+ブルガルの攻防	Battle in Bulgar
+灰色の狼	The Silver Wolf
+疾風の弓	The Tempest Bow
+封印の剣	The Binding Blade
+黙示の闇	The Elder Revelation
+見果てぬ夢	An Undying Dream
+ベルンの亡霊	The Ghosts of Bern
+伝説の真実	Legends and Lies
+暗闇の向こう	Beyond the Darkness
+司祭	Bishop
+エレブ	Elibe
+リキア	Lycia
+フェレ	Pherae
+オスティア	Ostia
+オスティア	Ositia
+アラフェン	Araphen
+ラウス	Laus
+ラウス	Lahus
+トリア	Thria
+ベルン	Bern
+ベルン	Biran
+封印の神殿	Shrine of Seals
+竜殿	Dragon Sanctuary
+西方三島	Western Isles
+フィベルニア	Fibernia
+カレドニア	Caldonia
+ディア	Dia
+アルマー	Almar
+エブラクム	Eburacum
+イディナ	Idina
+ジュトー	Jutes
+ミスル	Missur
+ナバタ	Nabata
+エトルリア	Etruria
+アクレイア	Aquleia
+サカ	Sacae
+クトラ	Kutolah
+ジュテ	Djute
+ブルガル	Bulgar
+イリア	Ilia
+レーミー	Remy
+エデッサ	Edessa
+デュランダル	Durandal
+封印の剣	Binding Blade
+エッケザックス	Eckesachs
+マルテ	Maltet
+アルマーズ	Armads
+ミュルグレ	Murgleis
+フォルブレイズ	Forblaze
+アーリアル	Aureola
+アポカリプス	Apocalypse
+聖女の杖	Saint's Staff
+フランツ	Franz
+ギリアム	Gilliam
+ヴァネッサ	Vanessa
+モルダ	Moulder
+ロス	Ross
+ガルシア	Garcia
+ネイミー	Neimi
+コーマ	Colm
+アスレイ	Artur
+ルーテ	Lute
+ナターシャ	Natasha
+ヨシュア	Joshua
+エフラム	Ephraim
+フォルデ	Forde
+カイル	Kyle
+オルソン	Orson
+ターナ	Tana
+アメリア	Amelia
+ヒーニアス	Innes
+ジスト	Gerik
+テティス	Tethys
+マリカ	Marisa
+ラーチェル	L'Arachel
+ドズラ	Dozla
+サレフ	Saleh
+ユアン	Ewan
+クーガー	Cormag
+レナック	Rennac
+デュッセル	Duessel
+ノール	Knoll
+ミルラ	Myrrh
+シレーネ	Syrene
+ケセルダ	Caellach
+アーヴ	Riev
+セライナ	Selena
+グレン	Glen
+ヴァルター	Valter
+リオン	Lyon
+ヴィガルド	Vigarde
+フォデス	Fomortiis
+オニール	O'Neill
+ブレゲ	Breguet
+ボン	Bone
+バズバ	Bazba
+ザール	Saar
+ゾンタ	Zonta
+ノベラ	Novala
+マーレイ	Murray
+ティラード	Tirado
+ビンクス	Binks
+ゲブ	Gheb
+ベルナ	Beran
+アイアス	Aias
+カーライル	Carlyle
+パブロ	Pablo
+イシュメア	Ismaire
+ヘイデン	Hayden
+ファード	Fado
+クリムト	Klimt
+ダラ	Dara
+マンセル	Mansel
+モルヴァ	Morva
+ルネス	Renais
+グラド	Grado
+ロストン	Rausten
+ジャハナ	Jehanna
+フレリア	Frelia
+カルチノ	Carcino
+マギ・ヴァル	Magvel
+マギヴァル	Magvel
+ヴェルニの塔	Tower Of Valni
+ラグドゥ遺跡	Lagdou Ruins
+ポカラの里	Caer Pelyn
+メレカナ海岸	Melkaen Coast
+闇の樹海	Darkling Woods
+ジャハナ王宮	Jehanna Hall
+国境ミュラン	Border Mulan
+Ide	イム
+ザッハの古森	Za'ha Woods
+ロード	Lord
+マスターロード	Great Lord
+ディール	Deil
+パレス	Palace
+アドリア	Adria
+レフカンディ	Lefcandith
+メニディ	Menedy
+サムスーフ	Samsooth
+ノルダ	Knorda
+港町ワーレン	Port Warren
+ワーレン	Warren
+クロム	Chrom
+ルフレ	Robin
+リズ	Lissa
+フレデリク	Frederick
+ソワレ	Sully
+ヴィオール	Virion
+ソール	Stahl
+ヴェイク	Vaike
+ミリエル	Miriel
+スミア	Sumia
+カラム	Kellam
+ドニ	Donnel
+ロンクー	Lon'qu
+リヒト	Ricken
+マリアベル	Maribelle
+ベルベット	Panne
+ガイア	Gaius
+ティアモ	Cordelia
+グレゴ	Gregor
+ノノ	Nowi
+リベラ	Libra
+サーリャ	Tharja
+オリヴィエ	Olivia
+セルジュ	Cherche
+ヘンリー	Henry
+サイリ	Say'ri
+バジーリオ	Basilio
+フラヴィア	Flavia
+ルキナ	Lucina
+ウード	Owain
+アズール	Inigo
+ブレディ	Brady
+デジェル	Kjelle
+シンシア	Cynthia
+セレナ	Severa
+ジェローム	Gerome
+マーク	Morgan
+シャンブレー	Yarne
+ロラン	Laurent
+ノワール	Noire
+ンン	Nah
+ギャンレル	Gangrel
+ヴァルハルト	Walhart
+エメリナ	Emmeryn
+レンハ	Yen'fay
+インバース	Aversa
+パリス	Priam
+ファウダー	Validar
+セルバンテス	Cervantes
+エクセライ	Excellus
+邪竜	Fell Dragon
+ギムレー	Grima
+ライミ	Raimi
+ズィーベン	Equus
+フィレイン	Phila
+神竜	Divine Dragon
+ホラント	Holland
+占い爺	Old Hubba
+聖王国	Halidom
+イーリス	Ylisse
+ペレジア	Plegia
+フェリア	Ferox
+ヴァルム	Valm
+ソンシン	Chon'sin
+異界の門	Outrealm Gate
+異界	Outrealm
+戦術師	Tactician
+軍師	Tactician
+神軍師	Grandmaster
+トリックスター	Trickster
+ダークペガサス	Dark Flier
+グリフォンナイト	Griffon Rider
+ダークナイト	Dark Knight
+バトルモンク	War Monk
+バトルシスター	War Cleric
+村人	Villager
+タグエル	Taguel
+マムクート	Manakete
+スターロード	Lodestar
+魔戦士	Dread Fighter
+花嫁	Bride
+オーバーロード	Conqueror
+商人	Merchant
+青銅の剣	Bronze Sword
+キルソード	Killing Edge
+アーマーキラー	Armorslayer
+ドラゴンキラー	Wyrmslayer
+サンダーソード	Levin Sword
+レイピア	Rapier
+ノーブルレイピア	Noble Rapier
+ミステルトィン	Missiletainn
+太陽	Sol
+アマツ	Amatsu
+封剣ファルシオン	Falchion
+神剣ファルシオン	Exalted Falchion
+裏剣ファルシオン	Parallel Falchion
+メリクルソード	Mercurius Sword
+メリクル	Mercurius
+ソール・カティ	Sol Katti
+ソールカティ	Sol Katti
+ラグネル	Ragnell
+木の枝	Tree Branch
+ガラスの剣	Glass Sword
+いやされる剣	Soothing Sword
+癒される剣	Soothing Sword
+剣殺しの剣	Superior Edge
+リーフの宝剣	Leif's Blade
+ロイの硬剣	Roy's Blade
+エリウッドの鋼剣	Eliwood's Blade
+エイリークの疾剣	Eirika's Blade
+セリスの神剣	Seliph's Blade
+アルムの覇剣	Alm's Blade
+青銅の槍	Bronze Lance
+キラーランス	Killer Lance
+ショートスピア	Short Spear
+スレンドスピア	Spear
+ビーストキラー	Beast Killer
+聖なる槍	Blessed Lance
+月光	Luna
+グラディウス	Gradvius
+ゲイボルグ	G?e Bolg
+丸太	Log
+ガラスの槍	Glass Lance
+極小の槍	Miniature Lance
+しびれる槍	Shockstick
+槍殺しの槍	Superior Lance
+フィンの守槍	Finn's Lance
+エフラムの勇槍	Ephraim's Lance
+シグルドの鋼槍	Sigurd's Lance
+青銅の斧	Bronze Axe
+銀の斧	Silver Axe
+キラーアクス	Killer Axe
+ショートアクス	Short Axe
+トマホーク	Tomahawk
+ハンマー	Hammer
+ボルトアクス	Bolt Axe
+復讐	Vengeance
+ヴォルフベルグ	Wolf Berg
+オートクレール	Hauteclere
+おたま	Ladle
+ガラスの斧	Glass Axe
+極太の斧	Imposing Axe
+空投げ斧	Volant Axe
+斧殺しの斧	Superior Axe
+オーシンの投げ斧	Orsin's Hatchet
+ティアマトの赤斧	Titania's Axe
+ヘクトルの烈斧	Hector's Axe
+青銅の弓	Bronze Bow
+せいなるゆみ	Blessed Bow
+長弓	Longbow
+流星	Astra
+パルティア	Parthia
+ニーズヘッグ	Nidhogg
+バルフレチェ	Double Bow
+ゆるんだ弓	Slack Bow
+ガラスの弓	Glass Bow
+極長の弓	Towering Bow
+下剋上の弓	Underdog Bow
+弓殺しの弓	Superior Bow
+ウォルトの薬弓	Wolt's Bow
+ヒーニアスの的弓	Innes' Bow
+ギガファイアー	Arcfire
+燃え尽きる炎	Dying Blaze
+ミカヤの神炎	Micaiah's Pyre
+ギガファイアー	Arcwind
+レクスカリバー	Rexcalibur
+エクスカリバー	Excalibur
+気まぐれな風	Wilderwind
+セリカの疾風	Celica's Gale
+ギガサンダー	Arcthunder
+トールハンマー	Mjolnir
+魔殺しの雷	Superior Jolt
+カタリナの雷糸	Katarina's Bolt
+ミィル	Flux
+ルイン	Ruin
+イル	Waste
+スライム	Mire
+ゲーティア	Goetia
+インバースの暗闇	Aversa's Night
+魔書ギムレー	Grima's Truth
+聖書ナーガ	Book of Naga
+女神の杖	Goddess Staff
+マジックシールド	Ward
+ハマーン	Hammerne
+肩たたき	Kneader
+薬効ある杖	Balmwood Staff
+リライブロー	Catharsis
+竜石	Dragonstone
+真竜石	Dragonstone+
+獣石	Beaststone
+超獣石	Beaststone+
+腐った爪	Blighted Claws
+腐った長爪	Blighted Talons
+邪竜のブレス	Expiration
+傷薬	Vulnerary
+調合薬	Concoction
+聖水	Pure Water
+HPの薬	HP Tonic
+力Pの薬	Strength Tonic
+魔力の薬	Magic Tonic
+スキルの薬	Skill Tonic
+速さの薬	Speed Tonic
+幸運の薬	Luck Tonic
+守備の薬	Defense Tonic
+魔防の叫び 薬	Resistance Tonic
+天使の衣	Seraph Robe
+高速翼	Speedwing
+竜の盾	Dracoshield
+まよけ	Talisman
+神竜の涙	Naga's Tear
+ブーツ	Boots
+マスタープルフ	Master Seal
+チェンジプルフ	Second Seal
+甘い薬	Sweet Tincture
+ガイアの高級菓子	Gaius's Confect
+クリスの手製菓子	Kris's Confect
+チキの涙	Tiki's Tear
+絆の種	Seed of Trust
+匂いの箱	Reeking Box
+時空の扉	Rift Door
+究極の紋章	Supreme Emblem
+魔戦士の巻物	Dread Scroll
+花嫁のブーケ	Wedding Bouquet
+シルバーカード	Silver Card
+軽業	Acrobat
+聖盾	Aegis
+赤の呪い	Anathema
+良成長	Aptitude
+武器節約	Armsthrift
+斧殺し	Axebreaker
+斧の達人	Axefaire
+獣特効	Beastbane
+弓殺し	Bowbreaker
+弓の達人	Bowfaire
+覇王	Conquest
+守り手	Defender
+運び手	Deliverer
+深窓の令嬢	Demoiselle
+強奪	Despoil
+デュアルガード+	Dual Guard+
+デュアルアタック+	Dual Strike+
+デュアルサポート+	Dual Support+
+バイオリズム・偶数	Even Rhythm
+集中	Focus
+疾風迅雷	Galeforce
+いやしの心	Healtouch
+癒しの心	Healtouch
+呪い	Hex
+最大HP	Max HP
+華炎	Ignis
+屋内戦闘	Indoor Fighter
+槍殺し	Lancebreaker
+槍の達人	Lancefaire
+生命吸収	Lifetaker
+鍵開け	Locktouch
+ラッキー7	Lucky Seven
+バイオリズム・奇数	Odd Rhythm
+屋外戦闘	Outdoor Fighter
+後の先	Patience
+先の先	Prescience
+ホットスタート	Quick Burn
+守備の叫び	Rally Defense
+幸運の叫び	Rally Luck
+魔力の叫び	Rally Magic
+移動の叫び	Rally Movement
+魔防の叫び	Rally Resistance
+技の叫び Waza no Sakebi)	Rally Skill
+七色の叫び	Rally Spectrum
+速さの叫び	Rally Speed
+力の叫び	Rally Strength
+リフレッシュ	Relief
+王の器	Rightful King
+暗闇の加護	Shadowgift
+スロースタート	Slow Burn
+方陣	Solidarity
+特別な踊り(Tokubetsuna Odori)	Special Dance
+剣殺し	Swordbreaker
+剣の達人	Swordfaire
+疾駆	Tantivy
+魔殺し	Tomebreaker
+魔の達人	Tomefaire
+戦知識	Veteran
+竜特効	Wyrmsbane
+熱い心	Zeal
+聖盾+	Aegis+
+邪悪なドラゴンの鱗	Dragonskin
+絶対命中	Hawkeye
+月光+ Gekkou	Luna+
+大盾+	Pavise+
+神の器	Rightful God
+待ち伏せ	Vantage+
+居合一閃	Aggressor
+全能力	All Stats
+絆	Bond
+イオテの盾	Iote's Shield
+限界突破	Limit Breaker
+愛の叫び	Rally Heart
+マイユニット	Avatar
+デュアルサポート	Dual Support
+デュアルアタック	Dual Strike
+デュアルガード	Dual Guard
+ダブル	Pair Up
+デュアルタッグ	Double Duel
+断章	Premonition
+外伝	Paralogue
+異伝	Xenologue
+クロム自警団	Shepherds
+聖王	Exalt
+覚醒	Awakening
+炎の台座	Fire Emblem
+英雄王	Hero-King
+屍兵	Risen
+英霊の魔符	Einherjar
+魔将	Deadlords
+蒼炎の勇者	Radiant Hero
+加賀	Kaga
+クラス	Class
+最速	Max
+個別	Solo
+簡略	Strat
+終了	End
+ルネス陥落	The Fall of Renais
+脱出行	Escape!
+守るべきもの	The Protected
+ボルゴ峠の山賊	The Bandits of Borgo
+異形の者たち	Ancient Horrors
+砕けぬ心	Unbroken Heart
+帝国の影	The Empire's Reach
+憎悪の泥濘	Victims of War
+水城レンバール	Waterside Renvall
+陥穽そして	It's a Trap!
+後背の刃	Distant Blade
+カルチノの内乱	Revolt at Carcino
+静寂の里	Village of Silence
+ハミル渓谷	Hamill Canyon
+白沙の女王	Queen of White Dunes
+灼けた砂	Scorched Sand
+荒れ果てた王都	Ruled by Madness
+決別の大河	River of Regrets
+魔の双面	Two Faces of Evil
+残されし希望	Last Hope
+聖魔の光石	Sacred Stone
+リグバルド要塞	Fort Rigwald
+不忠の徒	Turning Traitor
+上陸タイゼル港	Landing at Taizel
+蛍石の誓い	Fluorspar's Oath
+父と子と	Father and Son
+フレリア城	Castle Frelia
+這いうねる闇	Creeping Darkness
+幽霊船	Phantom Ship
+平地	Plain
+道	Road
+村	Village
+閉じ村	Village
+民家	House
+預り所	C.Room
+砦	Fort
+城門	Gate
+森	Forest
+深い森	Thicket
+砂地	Sand
+砂漠	Desert
+川	River
+山	Mntn
+高い山	Peak
+橋	Bridge
+はね橋	Bridge
+海	Sea
+湖	Lake
+床	Floor
+塀	Fence
+壁	Wall
+壊れた壁	Rubble
+柱	Pillar
+扉	Door
+玉座	Throne
+空宝箱	Chest
+屋根	Roof
+門	Gate
+教会	Church
+廃墟	Ruins
+がけ	Cliff
+アーチ	Ballista
+バリスタ	Ballista
+ロング	Long B
+キラー	Killer B
+荒地	Flat
+壊れた家	Wreck
+階段	Stairs
+氷河	Glacier
+通信闘技	Arena
+谷	Valley
+丸太橋	Bridge
+空	Sky
+深海	Deeps
+遺跡	Ruins
+酒場	Inn
+タル	Barrel
+骨	Bone
+水	Water
+舷	Gunnels
+床	Deck
+支柱	Brace
+マスト	Mast
+今回	Current
+記録	Record
+魔物撃破数	Monsters
+獲得経験値	Exp
+のべ出撃数	Units Used
+ターン数	Turns
+経過時間	Time
+天馬の伝令	Messenger
+フレリア兵	Frelian
+ロストン兵	Rausten
+市民	Citizen
+ルネスの民	Renais Cit.
+ナルーベの民	River Folk
+対戦相手	Enemy
+壊れる壁	Wall
+マーク	Mark
+イビル	Evil
+サマナーン	Summonern
+サモン	Summon
+パラディン	Paladin
+アーマーナイト	Knight
+傭兵	Mercenary
+勇者	Hero
+剣士	Myrmidon
+アサシン	Assassin
+ワイバーンナイト	Wyvern Kn.
+魔道士	Mage
+賢者	Sage
+遊牧民	Nomad
+遊牧騎兵	Nmd Trooper
+かけだし戦士	Journeyman
+魔道士見習い	Pupil
+新人兵士	Recruit
+ローグ	Rogue
+戦士	Fighter
+山賊	Brigand
+バーサーカー	Berserker
+ドルイド	Druid
+サマナー	Summoner
+修道士	Monk
+神官	Priest
+ペガサスナイト	Pegasus Kn.
+ファルコンナイト	Falcoknight
+シスター	Cleric
+ヴァルキュリア	Valkyrie
+踊り子	Dancer
+海賊	Pirate
+ネクロマンサー	Necromancer
+船団	Fleet
+亡霊戦士	Phantom
+ゾンビ	Revenant
+マミー	Entombed
+スケルトン	Bonewalker
+ヘルボーン	Wight
+バール	Bael
+エルダバール	Elder Bael
+サイクロプス	Cyclops
+モーサドゥーグ	Mauthe Doog
+ケルベロス	Gwyllgi
+タルヴォス	Tarvos
+マグダイル	Maelduin
+ビグル	Mogall
+アークビグル	Arch Mogall
+ゴーゴン	Gorgon
+ゴーゴンの卵	Gorgon Egg
+ガーゴイル	Gargoyle
+デスガーゴイル	Deathgoyle
+ドラゴンゾンビ	Draco Zombie
+魔王	Demon King
+市民	Civilian
+教皇	Pontifex
+女王	Queen
+どくの剣	Poison Sword
+シャムシール	Shamshir
+ルーンソード	Runesword
+ランスバスター	Lancereaver
+斬馬刀	Zanbato
+ジークリンデ	Sieglinde
+アウドムラ	Audhulma
+どくのやり	Toxin Lance
+ホースキラー	Horseslayer
+アクスバスター	Axereaver
+レギンレイヴ	Reginleif
+ジークムント	Siegmund
+ヴィドフニル	Vidofnir
+ドラゴンスピア	Dragonspear
+つらぬきのやり	Heavy Spear
+ぎんのおの	Silver Axe
+どくのおの	Poison Axe
+ハルベルト	Halberd
+デビルアクス	Devil Axe
+ソードバスター	Swordreaver
+ソードキラー	Swordslayer
+ドラゴンアクス	Dragon Axe
+バトルアクス	Battle Axe
+ガルム	Garm
+なげおの	Hatchet
+てつの弓	Iron Bow
+はがねの弓	Steel Bow
+ぎんの弓	Silver Bow
+どくの弓	Poison Bow
+ゆうしゃの弓	Brave Bow
+短弓	Short Bow
+腐敗のブレス	Wretched Air
+魔石のかけら	Stone Shard
+不浄の魔光	Demon Light
+滅びの魔拳	Ravager
+漆黒の悪夢	Nightmare
+するどい爪	Sharp Claw
+くさった爪	Rotten Claw
+くさった長爪	Fetid Claw
+どくの爪	Poison Claw
+もうどくの爪	Lethal Talon
+灼熱の牙	Fiery Fang
+焦熱の牙	Hellfang
+斬魔の剣	Shadowkiller
+撃魔のやり	Bright Lance
+断魔のおの	Fiendcleaver
+破魔の弓	Beacon Bow
+エイルカリバー	Alacalibur
+フィンブル	Fimbulvetr
+シャイン	Shine
+ディヴァイン	Divine
+パージ	Purge
+アルジローレ	Aura
+イーヴァルディ	Ivaldi
+ルナ	Luna
+イクリプス	Eclipse
+グレイプニル	Gleipnir
+ナグルファル	Naglfar
+ストーン	Stone
+イービルアイ	Evil Eye
+ブラッディアイ	Crimson Eye
+魔幻の波動	Demon Surge
+暗黒の魔弾	Shadowshot
+トーチ	Torch
+アンロック	Unlock
+Ｍシールド	Barrier
+奏でる	Play
+天使の衣	Angelic Robe
+エナジーリング	Energy Ring
+秘伝の書	Secret Book
+はやての羽	Speedwing
+女神のぞう	Goddess Icon
+竜のたて	Dragonshield
+魔よけ	Talisman
+ブーツ	Swiftsole
+ボディリング	Body Ring
+英雄の証	Hero Crest
+騎士の勲章	Knight Crest
+オリオンの矢	Orion's Bolt
+天空のムチ	Elysian Whip
+導きの指輪	Guiding Ring
+たからのかぎ	Chest Key
+とびらのかぎ	Door Key
+きずぐすり	Vulnerary
+せいすい	Pure Water
+どくけし	Antitoxin
+たいまつ	Torch
+フィーリの守護	Fili Shield
+メンバーカード	Member Card
+金の宝玉	Gold Gem
+黒の宝玉	Black Gem
+白の宝玉	White Gem
+青の宝玉	Blue Gem
+赤の宝玉	Red Gem
+ゴールド	Gold
+ホプロンの守護	Hoplon Guard
+メティスの書	Metis's Tome
+覇者の証	Ocean Seal
+月の腕輪	Lunar Brace
+太陽の腕輪	Solar Brace
+ポイズン	Poison
+病気	Sick
+回復	Recovr
+石化	Petrify
+攻撃	Attack
+守備	Defend
+回避	Dodge
+移動	Movement
+戦闘	Combat
+救出	Rescue
+アイテム	Items
+仲間	Allies
+勝利条件	Victory
+ゲームオーバー	Game Over
+移動範囲	Movement Range
+再移動	Moving Again
+攻撃範囲	Attack Range
+特効	Weapon Effectiveness
+必殺技	Critical Hit
+物理防御	Physical Defense
+魔法防御	Magical Resistance
+降ろす	Drop
+入手方法	Acquiring Items
+使い方	Using Items
+アイテム交換	Trading Items
+武器耐久度	Weapon Durability
+輸送隊	Supply Convoy
+道具屋	Shop
+民家	Houses
+村	Villages
+宝箱	Chests
+古木	Snags
+壊せる壁	Damaged Walls
+シューター	Ballistae
+支援会話	Support Conversations
+支援効果	Support Effects
+ボス撃破	Defeat Boss
+制圧	Seize a Location
+全滅	Defeat All
+防衛	Defense
+中断	Suspend
+記録	Save
+移動方法	How to Move
+アイテム整理	Item Management
+魔物の出現	Monsters
+進撃準備画面	Preparation Screen
+レベルアップ	Leveling Up
+退却	Retreat
+装備	Equip
+交換	Trade
+捨てる	Discard
+乗る	Ride
+降りる	Exit
+話す	Talk
+訪問	Visit
+秘密店	Secret
+引受け	Take
+引渡し	Give
+持ち物	Item
+待機	Wait
+部隊	Unit
+状況	Status
+辞書	Guide
+戦績	Records
+設定	Options
+甲板	Deck
+最終ターン	Last Turn
+ターン	Turn
+マーニ・カティ	Mani Katti
+倭刀	Wo Dao
+長柄刀	Wyrmslayer
+ギガスカリバー	Gigascalibur
+ゲスペンスト	Gespenst
+ディルファイの守り	Delphi shield
+パビスの守り	Iron rune
+ファーラの力	Filla's Might
+ファーラの力	Ninis's Grace
+トォルの怒り	Thor's Ire
+セチの祈り	Set's Litany
+地の刻印	Earth seal
+アフアのしずく	Afa's Drops
+天の刻印	Heaven seal
+闇の誓約書	Fell contract
+ヴォルフバイル	Wolf Beil
+エレシュキガル	Ereshkigal
+灼熱のブレス	Flametongue
+フレイボム	Mine
+光の結界	Light rune
+リガルブレイド	Regal blade
+レークスハスタ	Rex Hasta
+バシリコス	Basilikos
+リヤンフレチェ	Rienfleche
+ルーチェ	Luce
+ブレイドロード	Blade Lord
+ゼーベイア	Xavier
+ケンプク	Kenpku
+フィアナの戦士	The Warrior of Fiana
+イスの海岸	The Village of Ith
+海賊島	The Pirate Isles
+ケルベスの門	The Gate of Kelves
+地下監獄	The Dungeon
+風の勇者	The Hero of Winds
+母と娘	Mother and Child
+脱出	The Escape
+トラキアの盾	The Shield of Thracia
+紫竜山	Purple Dragon Mountain
+ダグダの館	Dagdar's Mansion
+ノヴァの紋章	The Emblem of Njörun
+ノエル渓谷	Noel Canyon
+ダンドラム要塞	Dandrum Fortress
+マーダーホレス	Murder Hollace
+ダキアの盗賊	The Thieves of Dakia
+ダンディライオン	Dandelion
+城塞都市	The Stronghold
+総攻撃	Open Fire
+自由を求めて	Freedom
+二つの道	The Two Paths
+ノルデンライン	Norden Line
+レンスターゲイト	Leonster's Gate
+暗黒の森	The Dark Forest
+五月の雨	The First Rain of May
+王都解放	The Liberation of Leonster
+帝国の反撃	Remorse and Retaliation
+光の公子	The Child of Light
+解放戦争	The Liberation Wars
+捕虜収容所	The Detention Center
+渡河作戦	Across the River
+魔王の城	The Palace of Evil
+黒衣の男爵	The Baron in Black
+ロプトの祭壇	The Altar of Lopto
+誓いの剣	An Undying Oath
+最終章	Final Chapter
+ロプト	Lopto
+ミューラー	Mueller
+アウグスト	August
+サイアス	Saias
+サラ	Sara
+ティナ	Tina
+ミランダ	Miranda
+ドリアス	Dorias
+エーヴェル	Eyvel
+ダグダ	Dagdar
+ターニャ	Tanya
+マーティ	Marty
+ロナン	Ronan
+オーシン	Orsin
+ハルヴァン	Halvan
+リフィス	Lifis
+サフィ	Safy
+フェルグス	Fergus
+カリン	Karin
+ブライトン	Brighton
+マチュア	Machyua
+ラーラ	Lara
+ダルシン	Dalsin
+アスベル	Asbel
+ヒックス	Hicks
+シヴァ	Shiva
+カリオン	Carrion
+セルフィナ	Selfina
+ケイン	Cain 
+アルバ	Alva
+ロベルト	Robert
+フレッド	Fred
+オルエン	Olwen
+マリータ	Mareeta
+セイラム	Salem
+パーン	Perne
+トルード	Troude
+グレイド	Glade
+ディーン	Dean 
+エダ	Eda
+ホメロス	Homer
+リノアン	Linoan
+ラルフ	Ralf
+イリオス	Ilios
+スルーフ	Sleuf
+シャナム	Shannam
+ミーシャ	Misha
+アマルダ	Amalda
+コノモール	Conomor
+ガルザス	Galzus
+レイヴァン	Raven
+ガイツ	Geitz
+ギィ	Guy
+ドルカス	Dorcas
+オズイン	Oswin
+ファーガス	Fargus
+ウィル	Wil
+レベッカ	Rebecca
+ルイーズ	Louise
+ルセア	Lucius
+セーラ	Serra
+レナート	Renault
+エルク	Erk
+ニノ	Nino
+カナス	Canas
+ケント	Kent
+セイン	Sain
+ロウエン	Lowen
+プリシラ	Priscilla
+ラス	Rath
+フロリーナ	Florina
+フィオーラ	Fiora
+ファリナ	Farina
+ヒース	Heath
+ヴァイダ	Vaida
+ホークアイ	Hawkeye
+マシュー	Matthew
+ジャファル	Jaffar
+ニニアン	Ninian
+ニルス	Nils
+エレノア	Eleanora
+ウーゼル	Uther
+ダーツ	Dart
+ワレス	Wallace
+イサドラ	Isadora
+ナディーン	Nadine
+ラガルト	Legault
+ハーケン	Harken
+カアラ	Karla
+レイラ	Leila
+キシュナ	Kishuna
+ワイアー	Wire
+グロズヌイ	Groznyi
+ザガン	Zagan
+ボイズ	Boies
+プゾン	Puzon
+ユバンズ	Eubans
+サンタルス	Santals
+ネルガル	Nergal
+シレン	Sealen
+バウカー	Bauker
+ベルナルド	Bernard
+ダミアン	Damian
+ゾルダム	Zoldam
+ウハイ	Uhai
+アイオン	Aion
+ダーレン	Darin
+カムラン	Cameron
+オレグ	Oleg
+ウルスラ	Ursula
+ブュルノ	Bruno
+ポール	Paul
+ジャスミン	Jasmine
+ブレンダン	Brendan
+ボーガン	Bogan
+エフタ	Efta
+デニング	Denning
+パスカル	Pascal
+ケネス	Kenneth
+ジュルメ	Jerme
+マクシム	Maxime
+ソーニャ	Sonia
+テオドル	Teodor
+カイム	Kaim
+イーゴリ	Igor
+アレクス	Alexis
+ボドワン	Baudouin
+ロイド	Lloyd
+ライナス	Linus
+リムステラ	Limstella
+竜	Dragon
+ゲオルク	Georg
+エルバート	Elbert
+バッタ	Batta
+ズグ	Zugu
+グラス	Glass
+ミガル	Migal
+カージガ	Carjiga
+バグ	Bug
+ブール	Bool
+ナタリー	Natalie
+ハインツ	Heintz
+ベアード	Beyard
+ヨーギ	Yogi
+イーグラー	Eagler
+ラングレン	Lundgren
+黒い牙	Black Fang
+山賊	Bandit
+ならずもの	Bandit
+ラウス兵	Laus
+キアラン兵	Caelin
+オスティア兵	Ostia
+ベルン兵	Bern
+傭兵団	Merc
+守護兵	Guardian
+モルフ	Morph
+ボス	Boss
+ラスボス	Last Boss
+カンスト	Counter Stop
+不具合	glitch
+バグ	glitch
+アナキン	Anakin
+ケリク	Kelik
+ジークフリード	Siegfried
+ベン	Ben
+グレイ	Gary
+テクン	Tekun
+フレームバイパー	Flameviper
+ケビン	Kevin
+エース	Ace
+マグナス軍	Magnian
+ロガン	Logan
+シューダ	Shuuda
+イケツ	Itsuke
+レックス	Rex
+キア	Cia
+タミコ	Tamiko
+レナ	Rana
+レーチェル	Rachel
+レオポルド	Leopold
+ザック	Zach
+コーベン	Corben
+ショーン	Shon
+ノア	Noah
+カリーナ	Karina
+エマ	Emma
+ストーム	Storm
+イナンナ	Inanna
+リリン	Lirin
+アリス	Alice
+リスク	Risk
+レビン	Levion
+ユエ	Yue
+アルハース	Althares
+エドゥアルド	Eduardo
+タリアセン	Taliesinn
+フレデック	Frederick
+リューケ	Liuke
+ウザー	Uther
+ハース	Haas
+レヌゥ	Neku
+サイ	Sai
+ハワード	Howard
+アッシュ	Asch
+タロン	Talon
+フェニックス	Fenix
+ゼキエル	Zekiel
+ラハール	Lahar
+ペリー	Perry
+レジス	Regis
+ロアリック	Roarik
+リャム	Lyam
+ゾロ	Zoro
+イーサン	Ethan
+アールニスト	Earnest
+エリゴ	Eligor
+ガラガール	Galagar
+ランマーク	Lanmark
+ホルトン	Holton
+シド	Cid
+セロ	Cero
+ジャスミン	Jasmine
+囚人	Prisoner
+ネビリム	Nebilim
+リリアンナ	Lirianna
+ルイ	Louis
+チャンピオン	Champion
+ブレイン	Blaine
+イワン	Ivan
+リウス	Linus
+デビジオ	Devisio
+デビジオ軍	Devisian
+死神	Reaper
+セレスト	Celest
+セレスト軍	Celestian
+イージス	Aegis
+イージス軍	Aegean
+スターキング	Star King
+バルドルフ	Bardolph
+ジャレド	Jaled
+ジャオド	Jarod
+ゴーン	Gorn
+アダ	Ada
+マジャラ軍	Majaraon
+タオス	Taos
+ナタリー	Natalie
+シンショウ	Shinshou
+サイグラム	Seigram
+ロレーヌ	Lorraine
+ダナー	Darner
+ミナ	Mina
+反乱軍	Rebel
+リクイド	Liquid
+ペレノア	Pellenore
+帝国軍	Imperial
+カシャア	Kashaya
+ポーラ	Phora
+アレクシア	Alexia
+ブレイン王	Blaine King
+レオン	Leon
+ナイロス	Nyros
+マリオン	Marion
+アポロ	Apollo
+ビオラ	Viola
+エステル	Estelle
+リィ	Lee
+ポロン	Polon
+アルミン	Armin
+シェリー	Sherry
+リト	Rito
+キャシー	Cathy
+モリアーティ	Moriarty
+アラベラ	Arabella
+マイコウ	Maiko
+カルロ	Carlo
+ダール	Dahl
+ゼーニン	Zeanin
+モルド	Mold
+ホラムズ	Holrums
+ルーシー	Lucy
+リナ	Lina
+ポロロ	Pororo
+探偵	Detective
+怪盗	Kaitou
+ルナ	Lua
+アドラー	Adler
+警官隊	Police
+特殊部隊	SP.Forces
+革命軍	Revolution
+共和軍	Republican
+解放戦線	Liberation
+やせ薬	Diet Drag
+超特効薬	Super Elixir
+赤い理想	Red Ideal
+白い理想	White Ideal
+黒い理想	Black Ideal
+青い理想	Blue Ideal
+ノーブル	Noble
+ノ‐ブルレイピア	Noble Rapier
+ユグドラ	yggdra
+アンドレイ	Andorey
+ジェスト	Jest
+アリシア	Alicia
+ミラノ	Milanor
+トルーマン	Truman
+ケンプク	Kempf
+ドボルザーク	Dvorak
+ガルカーサ	Gulcasa
+ラインハルト	Reinhardt
+ホマサ	Homasa
+バークライト	Barklight
+パピヨン	Papillon
+マゴーネ	Magone
+スコピオ	Scipio
+ヴォルツ	Volz
+ノシトヒ	Norris
+インザーギ	Inzaghi
+マクレガー	McGregor
+サヤ	Saya
+ラ・ピュセル	La Pucelle
+ストレイシーフ	Ttray Thief
+デザートロード	Desert Load
+密偵	Spy
+ハルバーディア	Halberdier
+ワルキューレ	Valkyria
+ウィッチ	Witch
+マスターナイト	Master Kn.
+トロン	Thoron
+エレファント	Elefant
+ポイズンアーチ	Poison Ballista
+センチュリオ	Centurio
+ブロンガ	Brongaa
+呪われし槍	Cursed Lance
+サンダブレード	Thunderblade
+バルムンク	Balmung
+ダイムサンダー	DireThunder
+アサシンブレード	Silencer
+グラフカリバー	Grafcalibur
+シャルティエ	Chartier
+ウィングスピア	Wing Spear
+バサークの斧	Berserk Ax.
+サイレスの槍	Silence Lnc.
+サンダーボルト	Thunderbolt
+フランツの守槍	Franz' Lance
+ドラゴンランス	DragonLance
+パワーリング	Power Ring
+スピードリング	Speed Ring
+スキルリング	Skill Ring
+シールドリング	Shield Ring
+マジックリング	Magic Ring
+ラックリング	Luck Ring
+火竜石	Fire Dstone
+神竜石	Divine Dstone
+氷竜石	Ice Dstone
+黒竜石	Black Dstone
+青銅の剣	BronzeSword
+青どうの剣	BronzeSword
+青銅の槍	BronzeLance
+青どうの槍	BronzeLance
+悟りのアンク	Satori Ankh
+陽光の杖	Flare Staff
+ライナロック	Rainarok
+ナイトクラウン	Knight Crown
+ボウガン	Crossbow
+与一の弓	Yoichi Bow
+セイニー	Thani
+スキル『エリート』\r\n敵を倒したときの経験値にボーナスが\r\n入る	Skill 『Paragon』\r\nDoubles experience gain.
+スキル『勇将』\r\n体力が半分以下になったとき、特定の\r\n能力が１、５倍になる。	Skill 『Resolve』\r\nWhen HP falls to less than 50%, certain\r\nstats are multiplied by 1.5.
+スキル『担ぎ不可』\r\nこのキャラクターを担ぐことができない	Skill 『Screw you』\r\nCannot capture this unit.
+スキル『盗み不可』\r\nこのユニットからは盗めない	Skill 『No Fun』\r\nCannot steal from this unit.
+『王の器』\r\nスキル発動率が１０％増加する	Skill 『Rightful King』\r\nIncreases skill activation by 10%.
+スキル『流星』\r\n上級職でＨＰが半分以下のとき\r\nレベル％で５倍のダメージを与える	Skill 『Astra』\r\nLevel% chance to perform 5 consecutive\r\nattacks while under 50% HP.
+スキル『待ち伏せ』\r\n常にこちらからの先制攻撃を行う	Skill 『Vantage』\r\nAllows the user to always attack first.
+スキル『祈り』\r\nあと一撃で倒れる時、幸運×２％で\r\n受けるダメージを今のＨＰの半分にする	Skill 『Miracle』\r\nLuck x 2% to halve lethal blows.
+スキル『大盾』\r\n守備の４分の３％で受けるダメージを\r\n半分にする	Skill 『Pavise』\r\nDefense x 3/4% chance to halve\r\ndamage taken.
+スキル『すり抜け』\r\n敵がいても問題なく移動できる	Skill 『Pass』\r\nAllows movement through enemies.
+スキル『連続』\r\n速さ％で攻撃回数をプラス１する	Skill 『Adept』\r\nSpeed% chance to allow the user\r\nto perform a consecutive attack.
+スキル『練達』\r\n相手から受ける特効を無効にする	Skill 『Nullify』\r\nNullifies bonus damage from weapons.
+スキル『見切り』\r\n敵の一部のスキルの発動を無効にする	Skill 『Nihil』\r\nNegates enemy's battle skills.
+スキル『太陽』\r\n技％で敵に与えたダメージだけ\r\n回復する	Skill 『Sol』\r\nSkill% chance to restore HP equal\r\nto the amount of damage done to enemy.
+スキル『怒り』\r\n自分の体力が２５％以下になったとき\r\n必殺率にプラス５０する	Skill 『Wrathv\r\nCritical rate will be increased by 50%\r\nwhen the user's HP is below 25%.
+スキル『鳴動』\r\n技％で自分の攻撃力に体格分を\r\n追加する	Skill 『Colossus』\r\nSkill% chance to add Con\r\nto your damage output.
+スキル『神射手』\r\n弓での攻撃射程が１増える	Skill 『Longshot』\r\nIncreases bow range by 1.
+スキル『キャンセル』\r\n速さ％で敵の攻撃を封じる	Skill 『Cancel』\r\nSpeed% chance to seal the enemy's\r\nattack.
+スキル『武器破壊』\r\nレベル％で敵の武器を破壊する	Skill 『Corrosion』\r\nLevel% chance to destroy the\r\nenemy's weapon.
+スキル『瞬殺』\r\n必殺時に５０％で敵を倒す	Skill 『Lethality』\r\n50% chance to instant kill with\r\na critical hit.
+スキル『必中』\r\nレベル％×２で絶対攻撃が当たる	Skill 『Deadeye』\r\nLevel x 2% chance to perform a\r\n100% accurate attack.
+スキル『恐怖』\r\n周囲３マスの敵の命中、回避を\r\n５％下げる	Skill 『Daunt』\r\nEnemies within 3 tiles have their\r\nHit and Avo reduced by 5%.
+スキル『カリスマ』\r\n周囲３マスの味方の命中と回避が\r\nプラス５％される	Skill 『Charm』\r\nAll units within 3 tiles receive\r\na 5% support bonus to Hit and Avo.
+スキル『月光剣』\r\n技％で敵の守備を無視した攻撃を行う	Skill 『Moonlight Sword』\r\nSkill% chance to ignore the\r\nenemy's defense.
+スキル『貫通』\r\n技％で敵の守備を半分にした\r\n攻撃を行う	Skill 『Luna』\r\nSkill% chance to ignore half of\r\nthe enemy's defense.
+スキル『攻速＋４』\r\n攻速が常時＋４される	Skill 『Pursuit』\r\nUser get +4 attack speed.
+スキル『治癒』\r\n一定量体力を回復する	Skill 『Renewal』\r\nUser recovers an amount of HP\r\nat the start of every player turn.
+スキル『護り手』\r\n救出しても能力の減少が\r\nなくなる	Skill 『Savior』\r\nAllows the user to rescue a unit\r\nwithout suffering penalties.
+スッ・・・\r\n敵のもつアイテムをスリ取ります	Can steal items from enemies.
+味方を再行動可能にします	Enables target to take another action.
+スキル『地の祝福』\r\n自分のターンの開始時に状態異常を\r\n回復する	Skill 『Boon』\r\nRestores status condition of the unit\r\nat the beginning of the next turn.
+スキル『滑空』\r\n全移動力を消費して行動した時\r\n５マス移動できる	Skill 『Glide』\r\nCan move 5 more tiles when the\r\nuser used up their full move.
+スキル『召喚』\r\n魔物または亡霊戦士を呼び出します	Skill 『Summon』\r\nAllows its user to summon\r\na Phantom.
+スキル『ジハード』\r\n体力が半減中に幸運％で攻撃力が２倍\r\nの攻撃を行う	Skill 『Crusade』\r\nLuck% chance to multiply attack\r\nby 2 when below 50% HP.
+スキル『黒魔術』\r\n魔力％で相手を状態異常のどれかにする	Skill 『Hex』\r\nMagic% to inflict a random status\r\neffect after combat.
+スキル『強運』\r\n杖、魔法、武器を持っている間\r\n敵から必殺を受けない	Skill 『Blessing』\r\nCannot get critted while holding\r\nstaves or magic.
+スキル『魔法特攻』\r\n魔法を扱う者に対して特攻が発生する	Skill 『Magebane』\r\nEffective damage against those\r\nwho use magic.
+宝箱やとびらを\r\nカギを使わずに開けます	Opens doors and chests without\r\nthe use of a key.
+ロード	Lord
+ロード	Load
+セーブ	Save
+道	Road
+召喚	Summon
+召喚士	Summonner
+呼魔	Summons
+アイテムを落とす	Item Drop

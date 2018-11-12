@@ -35,19 +35,19 @@ namespace FEBuilderGBA
         }
         public String Decode(uint id, out int out_DataSize)
         {
-            if (U.isSafetyPointer(id))
+            if (U.isSafetyPointer(id, this.ROM))
             {//FE7だと曲名などにアドレス直指定 SJIS文字があるらしい...
                 return CString( U.toOffset(id),out out_DataSize);
             }
 
-            if (id < 0 || id >= TextForm.GetDataCount())
+            if (id >= 0x7FFF)
             {
                 out_DataSize = 0;
                 return "";
             }
 
             uint text_base = this.ROM.p32(this.ROM.RomInfo.text_pointer());
-            if (!U.isSafetyOffset(text_base))
+            if (!U.isSafetyOffset(text_base, this.ROM))
             {//テキストポインタを壊しているので復帰する.
                 text_base = this.ROM.RomInfo.text_recover_address();
             }
@@ -79,7 +79,7 @@ namespace FEBuilderGBA
 
         public String UnHffmanPatchDecode(uint addr, out int out_DataSize)
         {
-            if (!U.isSafetyOffset(addr))
+            if (!U.isSafetyOffset(addr, this.ROM))
             {
                 Log.Error(R._("UnHffmanPatchDecode string addr:{0} is not safety", addr.ToString("X")));
                 out_DataSize = 0;
@@ -223,17 +223,17 @@ namespace FEBuilderGBA
             uint tree_data_base = this.ROM.p32p(this.ROM.RomInfo.mask_point_base_pointer());
             bool useSJIS = this.ROM.RomInfo.is_multibyte();
 
-            if (!U.isSafetyOffset(addr))
+            if (!U.isSafetyOffset(addr, this.ROM))
             {
                 Log.Error(R._("huffman_decode string addr:{0} is not safety", addr.ToString("X")));
                 out_DataSize = 0;
                 return "";
             }
-            if (!U.isSafetyOffset(tree_base))
+            if (!U.isSafetyOffset(tree_base, this.ROM))
             {
                 throw new Exception(R._("mask_pointer broken 0x{0}.this is broken rom.", U.ToHexString(tree_base)));
             }
-            if (!U.isSafetyOffset(tree_data_base))
+            if (!U.isSafetyOffset(tree_data_base, this.ROM))
             {
                 throw new Exception(R._("tree_data_base broken 0x{0}.this is broken rom.", U.ToHexString(tree_data_base)));
             }

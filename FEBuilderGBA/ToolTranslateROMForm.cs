@@ -90,7 +90,7 @@ namespace FEBuilderGBA
             }
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.ExportallText(this,useAutoTranslateCheckBox.Checked, from, to, fromrom, torom, useGoolgeTranslate);
+            trans.ExportallText(this, useAutoTranslateCheckBox.Checked, from, to, fromrom, torom, useGoolgeTranslate, X_MODIFIED_TEXT_ONLY.Checked);
         }
 
 
@@ -201,6 +201,8 @@ namespace FEBuilderGBA
             TranslateToROMFilenameSelectButton.PerformClick();
         }
 
+
+
         private void Translate_from_SelectedIndexChanged(object sender, EventArgs e)
         {
             String dir = Path.GetDirectoryName(Program.ROM.Filename);
@@ -262,21 +264,33 @@ namespace FEBuilderGBA
             string fromrom = SimpleTranslateFromROMFilename.Text;
             string torom = SimpleTranslateToROMFilename.Text;
             bool useGoolgeTranslate = false;
+
+            ToolTranslateROM trans = new ToolTranslateROM();
+            //パッチの適用.
+            {
+                trans.CheckTextImportPatch(true);
+                //メニューのサイズを調整する
+                trans.ChangeMainMenuWidth(to);
+                trans.ChangeStatusScreenSkill(to);
+            }
+
+            //翻訳データがある場合は適用する.
+            string translateDataFilename = SimpleTranslateToTranslateDataFilename.Text;
+            if (File.Exists(translateDataFilename))
+            {
+                trans.ImportAllText(this, translateDataFilename);
+            }
+
             if (from == to)
             {
                 return;
             }
 
+            //それ以外のデータの翻訳
             {
                 string writeTextFileName = Path.GetTempFileName();
 
-                ToolTranslateROM trans = new ToolTranslateROM();
-                trans.CheckTextImportPatch(true);
-                //メニューのサイズを調整する
-                trans.ChangeMainMenuWidth(to);
-                trans.ChangeStatusScreenSkill(to);
-
-                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom, useGoolgeTranslate);
+                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom, useGoolgeTranslate , X_MODIFIED_TEXT_ONLY.Checked);
                 trans.ImportAllText(this, writeTextFileName);
 
                 ToolTranslateROMFont transFont = new ToolTranslateROMFont();
@@ -288,8 +302,33 @@ namespace FEBuilderGBA
             this.Close();
         }
 
+        private void SimpleTranslateToTranslateDataFilenameButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("翻訳データを指定してください");
+            string filter = R._("Text|*.txt|All files|*");
 
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return;
+            }
 
+            Program.LastSelectedFilename.Save(this, "", open);
+            this.SimpleTranslateToTranslateDataFilename.Text = open.FileNames[0];
+        }
+
+        private void SimpleTranslateToTranslateDataFilename_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SimpleTranslateToTranslateDataFilenameButton.PerformClick();
+        }
 
     }
 }

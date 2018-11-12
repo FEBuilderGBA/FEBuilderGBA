@@ -1,0 +1,19 @@
+NAME=クラス成長で専用武器だったとしても成長させる
+NAME.en=Autoleveling Prf Weapons
+INFO=ユニット配置で、クラス成長に設定すると、武器レベルが所持アイテムのレベルになります。しかし、専用武器は、武器レベルが成長しません。この問題を修正します。
+INFO.en=In unit placer, if set for Autoleveling, the weapon level will be grow of possessed item.\r\nHowever, weapons level does not grow If Prf weapons.\r\nFix this problem.
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17f88
+COMBO=default|0x0D 0x49|専用武器も成長|0x00 0x21
+COMBO.en=default|0x0D 0x49|Prf Weapons also grows|0x00 0x21
+COMBO.zh=default|0x0D 0x49|Prf Weapons also grows|0x00 0x21
+
+
+AUTHOR=Datagne http://feuniverse.us/t/fe8-psa-autoleveling-prf-weapons/4584
+NAME.zh=即使它是阶级成长的专用武器
+INFO.zh=在单位安排中，如果我们将其设定为阶级增长，则武器等级将是拥有物品的等级。但是，专有武器的武器等级不会增加。解决这个问题。
