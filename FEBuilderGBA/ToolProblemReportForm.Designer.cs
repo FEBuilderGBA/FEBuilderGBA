@@ -35,6 +35,10 @@
             this.label7 = new FEBuilderGBA.LabelEx();
             this.StartButton = new System.Windows.Forms.Button();
             this.Step1Page = new System.Windows.Forms.TabPage();
+            this.labelEx1 = new FEBuilderGBA.LabelEx();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AttachDataFilename = new FEBuilderGBA.TextBoxEx();
+            this.AttachDataSelectButton = new System.Windows.Forms.Button();
             this.label6 = new FEBuilderGBA.LabelEx();
             this.Step1NextButton = new System.Windows.Forms.Button();
             this.Problem = new FEBuilderGBA.TextBoxEx();
@@ -54,10 +58,6 @@
             this.URLTextBoxEx = new FEBuilderGBA.TextBoxEx();
             this.EndButton = new System.Windows.Forms.Button();
             this.label12 = new FEBuilderGBA.LabelEx();
-            this.label2 = new System.Windows.Forms.Label();
-            this.AttachDataFilename = new FEBuilderGBA.TextBoxEx();
-            this.AttachDataSelectButton = new System.Windows.Forms.Button();
-            this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.panel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.BeginPage.SuspendLayout();
@@ -147,6 +147,48 @@
             this.Step1Page.Size = new System.Drawing.Size(797, 511);
             this.Step1Page.TabIndex = 1;
             this.Step1Page.Text = "Step1Page";
+            // 
+            // labelEx1
+            // 
+            this.labelEx1.ErrorMessage = "";
+            this.labelEx1.Location = new System.Drawing.Point(6, 390);
+            this.labelEx1.Name = "labelEx1";
+            this.labelEx1.Size = new System.Drawing.Size(775, 58);
+            this.labelEx1.TabIndex = 98;
+            this.labelEx1.Text = "戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます";
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(6, 320);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(196, 31);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "添付データ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AttachDataFilename
+            // 
+            this.AttachDataFilename.ErrorMessage = "";
+            this.AttachDataFilename.Location = new System.Drawing.Point(144, 361);
+            this.AttachDataFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachDataFilename.Name = "AttachDataFilename";
+            this.AttachDataFilename.Placeholder = "";
+            this.AttachDataFilename.Size = new System.Drawing.Size(638, 25);
+            this.AttachDataFilename.TabIndex = 96;
+            this.AttachDataFilename.DoubleClick += new System.EventHandler(this.AttachDataSelectButton_Click);
+            // 
+            // AttachDataSelectButton
+            // 
+            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 355);
+            this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachDataSelectButton.Name = "AttachDataSelectButton";
+            this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.AttachDataSelectButton.TabIndex = 95;
+            this.AttachDataSelectButton.Text = "ファイル選択";
+            this.AttachDataSelectButton.UseVisualStyleBackColor = true;
+            this.AttachDataSelectButton.Click += new System.EventHandler(this.AttachDataSelectButton_Click);
             // 
             // label6
             // 
@@ -351,48 +393,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。";
             // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(6, 320);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 31);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "添付データ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AttachDataFilename
-            // 
-            this.AttachDataFilename.ErrorMessage = "";
-            this.AttachDataFilename.Location = new System.Drawing.Point(144, 361);
-            this.AttachDataFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.AttachDataFilename.Name = "AttachDataFilename";
-            this.AttachDataFilename.Placeholder = "";
-            this.AttachDataFilename.Size = new System.Drawing.Size(638, 25);
-            this.AttachDataFilename.TabIndex = 96;
-            this.AttachDataFilename.DoubleClick += new System.EventHandler(this.AttachDataSelectButton_Click);
-            // 
-            // AttachDataSelectButton
-            // 
-            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 355);
-            this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AttachDataSelectButton.Name = "AttachDataSelectButton";
-            this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.AttachDataSelectButton.TabIndex = 95;
-            this.AttachDataSelectButton.Text = "ファイル選択";
-            this.AttachDataSelectButton.UseVisualStyleBackColor = true;
-            this.AttachDataSelectButton.Click += new System.EventHandler(this.AttachDataSelectButton_Click);
-            // 
-            // labelEx1
-            // 
-            this.labelEx1.ErrorMessage = "";
-            this.labelEx1.Location = new System.Drawing.Point(6, 390);
-            this.labelEx1.Name = "labelEx1";
-            this.labelEx1.Size = new System.Drawing.Size(775, 58);
-            this.labelEx1.TabIndex = 98;
-            this.labelEx1.Text = "戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます";
-            // 
             // ToolProblemReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -403,6 +403,7 @@
             this.Name = "ToolProblemReportForm";
             this.Text = "問題報告ツール";
             this.Load += new System.EventHandler(this.ToolProblemReportForm_Load);
+            this.Shown += new System.EventHandler(this.ToolProblemReportForm_Shown);
             this.panel1.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.BeginPage.ResumeLayout(false);

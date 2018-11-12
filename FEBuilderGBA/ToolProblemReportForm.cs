@@ -247,7 +247,7 @@ namespace FEBuilderGBA
         void CollectUPSs(string tempdir, byte[] s)
         {
             //古いバックアップがあれば取得する
-            int[] olderPickup = new int[] { 1 , 2 , 3 , 4 , 5, 6, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
+            int[] olderPickup = new int[] { 0, 1 , 2 , 3 , 4 , 5, 6, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
             for (int i = 0; i < olderPickup.Length; i++)
             {
                 string moreOlderFilename = FindSrcByFilename(olderPickup[i]);
@@ -383,7 +383,6 @@ namespace FEBuilderGBA
 
         private void ToolProblemReportForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void URLTextBoxEx_DoubleClick(object sender, EventArgs e)
@@ -419,6 +418,11 @@ namespace FEBuilderGBA
 
 
             this.AttachDataFilename.Text = open.FileName;
+        }
+
+        private void ToolProblemReportForm_Shown(object sender, EventArgs e)
+        {
+            StartButton.Focus();
         }
     }
 }
