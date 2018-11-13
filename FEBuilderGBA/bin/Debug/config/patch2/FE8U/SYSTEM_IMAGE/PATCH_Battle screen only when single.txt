@@ -1,0 +1,15 @@
+NAME=戦闘画面_単独時のみ
+NAME.en=Battle screen only when single
+
+TYPE=IMAGE
+
+WIDTH=128
+HEIGHT=56
+
+ZIMAGE_POINTER=0x051F68//0x801C14
+TSA_POINTER=0x05141C//0x802428
+PALETTE_POINTER=0x052178//0x802558
+
+INFO=FE8の画面の中央には、マークが存在します。\r\n単独時の戦闘画面では、この模様は邪魔なので、この特殊なTSAによって除去が行われます。\r\nこの処理は、FE8にのみ存在します。
+KEEPIMAGE=true
+KEEPTSA=true

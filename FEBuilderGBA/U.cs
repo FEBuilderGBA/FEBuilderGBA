@@ -4711,6 +4711,18 @@ namespace FEBuilderGBA
             }
         }
 
+        //幅を推測する(ポインタ)
+        public static int CalcLZ77LinerImagePointerToWidth(uint addr, int align = 8)
+        {
+            addr = U.toOffset(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return align;
+            }
+            uint a = Program.ROM.p32(addr);
+            return CalcLZ77LinerImageToWidth(a, align);
+        }
+
         //幅を推測する
         public static int CalcLZ77LinerImageToWidth(uint addr, int align = 8)
         {

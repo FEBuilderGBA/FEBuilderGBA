@@ -1,6 +1,6 @@
-NAME=HPBars
-NAME.en=HPBars
-NAME.zh=HPBars
+NAME=HPBars and warnings
+NAME.en=HPBars and warnings
+NAME.zh=HPBars and warnings
 
 TYPE=EA
 TAG=#ENGINE

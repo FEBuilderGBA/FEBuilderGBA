@@ -8023,7 +8023,6 @@ r3=X tile position of menu of the right	{U}
 080DFA7A	:080DFBAB	HitQuake	02	{J}
 08791D5C	&PALETTE	Something's palette	100	{U}
 08791D7C	&PALETTE	Something's palette	101	{U}
-08802428	:08802507	Maybe, something multiple palette	A0	{U}
 088026E4	:08802883	Maybe, something multiple palette	A1	{U}
 08802884	:08802903	Maybe, something multiple palette	A2	{U}
 08802904	:08802B03	Maybe, something multiple palette	A3	{U}
@@ -8053,7 +8052,6 @@ r3=X tile position of menu of the right	{U}
 085B95D4	:085B95EB	Any AIS data	12	{U}
 087E62B4	&PALETTE	Something's palette	100	{J}
 087E62D4	&PALETTE	Something's palette	101	{J}
-08856980	:08856C3B	Maybe, something multiple palette	A0	{J}
 08856C3C	:08856DDB	Maybe, something multiple palette	A1	{J}
 08856DDC	:08856E5B	Maybe, something multiple palette	A2	{J}
 08856E5C	:0885705B	Maybe, something multiple palette	A3	{J}

@@ -2182,7 +2182,7 @@ namespace FEBuilderGBA
 
             if (keeptsa)
             {
-                Debug.Assert(keeppalette == false);
+//                Debug.Assert(keeppalette == false);
 
                 Button export = new Button();
                 export.Location = new Point(200, y);

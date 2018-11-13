@@ -60,10 +60,10 @@ namespace FEBuilderGBA
             int[] srcImageWidth = new int[5];
             Size size = U.CalcLZ77ImageToSizePointer(Program.ROM.RomInfo.battle_screen_image1_pointer());
             srcImageWidth[0] = size.Width;
-            srcImageWidth[1] = U.CalcLZ77LinerImageToWidth(Program.ROM.RomInfo.battle_screen_image2_pointer());
-            srcImageWidth[2] = U.CalcLZ77LinerImageToWidth(Program.ROM.RomInfo.battle_screen_image3_pointer());
-            srcImageWidth[3] = U.CalcLZ77LinerImageToWidth(Program.ROM.RomInfo.battle_screen_image4_pointer());
-            srcImageWidth[4] = U.CalcLZ77LinerImageToWidth(Program.ROM.RomInfo.battle_screen_image5_pointer());
+            srcImageWidth[1] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image2_pointer());
+            srcImageWidth[2] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image3_pointer());
+            srcImageWidth[3] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image4_pointer());
+            srcImageWidth[4] = U.CalcLZ77LinerImagePointerToWidth(Program.ROM.RomInfo.battle_screen_image5_pointer());
 
             this.image1_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image1_pointer());
             this.Image1 = new ImageFormRef(this, "image1", size.Width, size.Height, 1, Program.ROM.RomInfo.battle_screen_image1_pointer(), 0, Program.ROM.RomInfo.battle_screen_palette_pointer());
