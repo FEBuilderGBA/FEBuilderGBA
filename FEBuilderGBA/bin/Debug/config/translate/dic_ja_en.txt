@@ -220,7 +220,6 @@ Mシールド	Barrier
 ムラク	Merach
 マリオネス	Emereus
 ハーマイン	Harmein
-マフー	Mannu
 ジューコフ	Zharov
 ショーゼン	Khozen
 ボーゼン	Volzhin
@@ -1683,7 +1682,7 @@ HPの薬	HP Tonic
 ルーチェ	Luce
 ブレイドロード	Blade Lord
 ゼーベイア	Xavier
-ケンプフ	Kenpf
+ケンプフ	Kempf
 シルバーナイト	Silver Knight
 国王	King
 ロート	rot
@@ -1928,7 +1927,6 @@ HPの薬	HP Tonic
 ザック	Zach
 コーベン	Corben
 ショーン	Shon
-ノア	Noah
 カリーナ	Karina
 エマ	Emma
 ストーム	Storm
@@ -1966,7 +1964,6 @@ HPの薬	HP Tonic
 ホルトン	Holton
 シド	Cid
 セロ	Cero
-ジャスミン	Jasmine
 囚人	Prisoner
 ネビリム	Nebilim
 リリアンナ	Lirianna
@@ -1990,7 +1987,6 @@ HPの薬	HP Tonic
 アダ	Ada
 マジャラ軍	Majaraon
 タオス	Taos
-ナタリー	Natalie
 シンショウ	Shinshou
 サイグラム	Seigram
 ロレーヌ	Lorraine
@@ -2044,21 +2040,19 @@ HPの薬	HP Tonic
 青い理想	Blue Ideal
 ノーブル	Noble
 ノ‐ブルレイピア	Noble Rapier
+ノーブルレイピア	Noble Rapier
 ユグドラ	Yggdra
 アンドレイ	Andorey
 ジェスト	Jest
 アリシア	Alicia
 ミラノ	Milanor
 トルーマン	Truman
-ケンプク	Kempf
 ドボルザーク	Dvorak
 ガルカーサ	Gulcasa
 ラインハルト	Reinhardt
 ホマサ	Homasa
 バークライト	Barklight
-パピヨン	Papillon
 マゴーネ	Magone
-スコピオ	Scipio
 ヴォルツ	Volz
 ノシトヒ	Norris
 インザーギ	Inzaghi
@@ -2079,7 +2073,6 @@ HPの薬	HP Tonic
 ブロンガ	Brongaa
 呪われし槍	Cursed Lance
 サンダブレード	Thunderblade
-バルムンク	Balmung
 ダイムサンダー	DireThunder
 アサシンブレード	Silencer
 グラフカリバー	Grafcalibur
@@ -2149,11 +2142,1199 @@ HPの薬	HP Tonic
 スキル『強運』\r\n杖、魔法、武器を持っている間\r\n敵から必殺を受けない	Skill 『Blessing』\r\nCannot get critted while holding\r\nstaves or magic.
 スキル『魔法特攻』\r\n魔法を扱う者に対して特攻が発生する	Skill 『Magebane』\r\nEffective damage against those\r\nwho use magic.
 宝箱やとびらを\r\nカギを使わずに開けます	Opens doors and chests without\r\nthe use of a key.
-ロード	Lord
 ロード	Load
 セーブ	Save
-道	Road
 召喚	Summon
 召喚士	Summonner
 呼魔	Summons
 アイテムを落とす	Item Drop
+ライアン	Ryan
+ロディ	Rody
+ルーク Luke
+セシル	Cecille
+マリーシア	Malicia
+ウォーレン	Warren
+ルーメル	Rumel
+パラオ	Palla
+リューク	Ryuke
+ガイル	Gile
+シリウス	Sirius
+ユベロ	Yubello
+ユミナ	Yumina
+トラース	Doras
+アカネイア軍	Archanean
+方位445	Position 445
+サムトー	Samto
+ラング	Lang
+フィーナ	Feena
+人殺しー	Murderer!
+ヨーデル	Yodel
+エルレーン	Elrean
+アンリ	Anri
+砂の部族	DesertTribe
+火の部族	FireTribe
+氷の部族	IceTribe
+闇の部族	DarkTribe
+エイベル	Eibel
+ウィロー	Willow
+グローメル	Gromell
+闇の司祭	DarkBishop
+トルーデ	Trude
+バルダック	Bardac
+ナイリング	Nailing
+おっちょこちょい	Mischievous
+おみくじ	Future Sight
+お大尽	Spendthrift
+お菓子の杖	Candy Cane
+お転婆	Fearsome Blow
+かんざし	Hair Pin
+きしのくんしょう	Knight Crest
+ぎんの剣	Silv. Sword
+ぎんの斧	Silver Axe
+ぎんの槍	Silv. Lance
+ぎんの槍	Silver Lance
+くちばし	Beak
+ご奉仕の喜び	Live to Serve
+しぶとい心	Good Fortune
+しょうぐん	General
+じゃれつき	Playthings
+すり抜け	Pass
+だまし討ち	Fierce Counter
+ちょうちん	Lantern
+てつの斧	Iron Axe
+てつの槍	Iron Lance
+とうぞくのカギ	Lockpick
+どくの剣	Venin Edge
+どくの弓	Venin Bow
+どくの斧	Venin Axe
+どくの槍	Venin Lance
+なりそこない	Feral One
+はがねの斧	Steel Axe
+はがねの槍	Steel Lance
+はね橋のカギ	Bridge Key
+ひろい食い	Goody Basket
+ぶちかまし	Smite
+ぶちかましの書	Smite
+ほうき	Broom
+ほら貝	Shell Horn
+ぼんやり	Optimistic
+まきびし	Caltrop
+ゆうしゃのあかし	Hero Crest
+よく効く薬	Potent Potion
+アイオテ	Iote
+アイオテの盾	Iote's Shield
+アイク	Ike
+アイクの模擬剣	Ike's Backup
+アウルゲルミル	Aurgelmir
+アカネイア・パレス	The Ageless Palace
+アクア	Azura
+アクアの秘薬	Azura's Salve
+アサマ	Azama
+アサマの捻れ祓串	Purification Rod
+アシュナード	Ashnard
+アシュラ	Shura
+アスタルテ	Ashera
+アテナ	Athena
+アドベンチャラー	Adventurer
+アドラ	Adrah
+アミーテ	Amiti
+アリティアの戦い	The Battle for Altea
+アリティア城	Altea Castle
+アルテミス	Artemis
+アンナの福弓	Anna's Bow
+イカナウ	Ikanau
+イグニス	Ignatius
+イコナ	Ikona
+イザナ	Izana
+イザナの古呪	Izana's Scroll
+イズカ	Izuka
+イズモ	Izumo
+イズモ公国城内	Izumo: Castle Interior
+イズモ公国市街	Town in Izumo
+イナ	Ena
+イレース	Ilyana
+インビジブルキングダム	Revelation
+ウィリアム	Lloyd
+ウィンダム	Windmire
+ウィークネス	Enfeeble
+ウォーム	Swarm
+ウォーリアー	Warrior
+ウルキ	Ulki
+ウルヴァン	Urvan
+エカテリーナ	Katerina
+エタルド	Alondite
+エターナルプルフ	Eternal Seal
+エッツェル	Etzel
+エポニーヌ	Nina
+エマコウ	Emil
+エリンシア	Elincia
+エリーゼ	Elise
+エリーゼの幼杖	Elise's Staff
+エリートの書	Paragon
+エルナ	Elena
+エルファイア	Elfire
+エルファイアー	Elfire
+エルフィ	Effie
+エルフィの大槍	Effie's Lance
+エレファント	Pachyderm
+オスカー	Oscar
+オフェリア	Ophelia
+オペラ劇場	Opera House
+オボロ	Oboro
+オボロの漆薙刀	Oboro's Spear
+オム	Aum
+オリヴァー	Oliver
+オルティナ	Altina
+オルリベス大橋	Riven Bridge
+オルリベス大橋	The Great Bridge
+オレルアンの戦士たち	Champions of Aurelis
+オロチ	Orochi
+オーディン	Odin
+オーディンの黒書	Odin's Grimoire
+オードウィン	Ordwin
+カウンター	Counter
+カウンターの書	Counter
+カゲロウ	Kagero
+カゲロウの眩惑針	Kagero's Dart
+カサタイ	Kasatai
+カザハナ	Hana
+カザハナの麗刀	Hana's Katana
+カナリス	Kannival
+カミュ	Camus
+カミラ	Camilla
+カミラの艶斧	Camilla's Axe
+カムイ	Corrin
+カムラ	Kamura
+カヤッチェ	Kayachey
+カラス	Raven
+カリル	Calill
+カリワ村	Caldea
+カントゥス城	Canteus Castle
+カンナ	Kana
+ガウェイン	Gawain
+ガザック	Gazak
+ガザレア海	Gazaleah Sea
+ガシラマ　	Gashilama
+ガトリー	Gatrie
+ガリア	Gallia
+ガリアにて	Gallia
+ガリア国境	Gallia Border
+ガリア城	Castle Gallia
+ガルダ	Galder
+ガルダの海賊	The Pirates of Galder
+ガルー	Wolfskin
+ガルーの峰	Mount Garou
+ガロン	Garon
+ガングレリ	Ganglari
+ガンズ	Hans
+キサラギ	Kiragi
+キヌ	Selkie
+キノコの杖	Mushroom Staff
+キマーシ	Kimaarsi
+キャンセル	Guard
+キャンセルの書	Guard
+キューピッドの弓	Cupid Bow
+キラーアーチ	Killer B
+キルロイ	Rhys
+キルヴァス	Kilvas
+キルヴァス城	Castle Kilvas
+ギュンター	Gunter
+ギュンターの良薬	Gunter's Potion
+ギンヌンガガプ	Ginnungagap
+クインクレイン	Arrowspate
+クマゲラ	Kumagera
+クラーケンシュタイン	Krakenburg
+クリスナイフ	Kris Knife
+クリミア	Crimea
+クリミア王城	Crimea Castle
+クリミア王女	Princess Crimea
+クリミア軍進撃	Crimea Marches
+クリムゾン	Scarlet
+クレリック	Cleric
+クワ	Hoe
+クーリア	Kilma
+グラディウス	Gradivus
+グラーヌ砂漠	Grann Desert
+グラ城	Gra Bastion
+グリトネア塔	Gritnea Tower
+グルグラント	Gurgurant
+グルニアの木馬隊	The Wooden Cavalry
+グルニア城	The Grusthold
+グルニア黒騎士団	The Sable Order
+グレイ	Asugi
+グレイの創作菓子	Asugi's Confect
+グレイル	Greil
+グレイル傭兵団	Greil Mercenaries
+ケビン	Kieran
+ゲバル城	Gebal Castle
+コイン	Coin
+コタフ	Kotaff
+コタロウ	Kotaro
+コマンド	Freelancer
+コユージョ	Heddwyn
+コーネリウス	Cornelius
+ゴムの弓	Rubber Bow
+ゴルドア	Goldoa
+ゴート	Gareth
+ゴーレム	Stoneborn
+サイゾウ	Saizo
+サイゾウの爆炎針	Saizo's Star
+サイラス	Silas
+サギ	Heron
+サクラ	Sakura
+サクラの小祓串	Sakura's Rod
+サザ	Sothe
+サナキ	Sanaki
+サムシアン	Soothsires
+ザワナー	Zawana
+シェンメイ	Arete
+シエネ	Sienne
+シグルーン	Sigrun
+シグレ	Shigure
+シノノメ	Shiro
+シノン	Shinon
+シハラム	Shiharam
+シャイニングボウ	Shining Bow
+シャラ	Rhajat
+シャーロッテ	Charlotte
+シュヴァリエ	Cheve
+シュヴァリエ市街	Cheve
+シューター	Ballistician
+シューター砲台	Sighting Lens
+ショートボウ	Mini Bow
+シーカー	Seeker
+シークコ	Schaeffer
+シーフ	Outlaw
+ジェネラル	
+ジフカ	Giffca
+ジョフレ	Geoffrey
+ジョーカー	Jakob
+ジョーカーの食器	Jakob's Tray
+ジョージ	Jorge
+ジル	Jill
+ジークフリート	Siegfried
+ジークベルト	Siegbert
+スカディ	Skadi
+スサノオ長城	Great Wall of Suzanoh
+スズカゼ	Kaze
+スズカゼの疾風針	Kaze's Needle
+スターライト	Starlight
+スターロード・マルス	Star and Savior
+スティレット	Stiletto
+ステラ	Astrid
+ストラテジスト	Strategist
+ストンヘッジ	Stonehoist
+スメラギ	Sumeragi
+セツナ	Setsuna
+セツナの緩弓	Setsuna's Yumi
+セネリオ	Soren
+セノウ	Senno
+セフェラン	Sephiran
+セリノス	Serenes
+セリノスの森	Serenes Forest
+ゼルギウス	Zelgius
+ゼロ	Niles
+ゼロの虐弓	Niles's Bow
+ゼーンズフト	Wishblade
+ソニックソード	Sonic Sword
+ソレイユ	Soleil
+ソーサラー	Sorcerer
+ソードナイト	Sword Knight
+ソーンバルケ	Stefan
+ゾフィー	Sophie
+ゾーラ	Zola
+タウロニオ	Tauroneo
+タカ	Hawk
+タクミ	Takumi
+タクミの竹刀	Takumi's Shinai
+タタナ砦	Fort Tatana
+タナス公爵別邸	Dukedom of Tanas
+タニス	Tanith
+ダイチ	Daichi
+ダガー	Dagger
+ダクティル	Dactyl
+ダッコーワ	Dakova
+ダニエラ	Daniela
+ダニエル	Daniel
+ダノミル	Danomill
+ダラハウ	Devdan
+ダルレカ	Talrega
+ダルレカの攻防	Defending Talrega
+ダルレカ水門	Talrega Floodgates
+ダークファルコン	Dark Falcon
+ダークブラッド	Nohr Noble
+ダークプリンス	Nohr Prince
+ダークプリンセス	Nohr Princess
+ダークロード	Nohrian King
+ダーティファイト	Highwayman
+チャイルドプルフ	Offspring Seal
+チャップ	Brom
+チューニング	Perfect Pitch
+ツイハーク	Zihark
+ツクヨミ	Hayato
+ツバキ	Subaki
+ツバキの金薙刀	Subaki's Pike
+ティアマト	Titania
+ティバーン	Tibarn
+テリウス	Tellius
+テンジン砦	Fort Jinya
+テンジン砦前	Fort Jinya
+テーベの神殿	The Temple of Thabes
+ディーア	Dwyer
+デイン	Daein
+デイン国境	Daein Border
+デイン国王	King Daein
+デイン王城	Daein Keep
+デギンハンザー	Deghinsea
+デジャニラ	Dejanira
+デビルソード	Devil Sword
+デビルマウンテン	A Brush in the Teeth
+デビルマウンテン	Ghoul's Teeth
+デルブレー城	Delbray Castle
+デーモンフォール	Demon's Falls
+トパック	Tormod
+トレガレン長城	Tor Garen
+ドラゴンソード	Wyrmslayer
+ドラゴンナイト	Dracoknight
+ドラゴンランス	Dragonpike
+ドラジェ	Candace
+ドルーア城	Dolhr Keep
+ドロー	Entrap
+ナイトキラー	Knight Killer
+ナイトリング	Knight Ring
+ナイフ	Knife
+ナギ	Nagi
+ナドゥス城	Nados Castle
+ナハト	Nichol
+ナーガ一族	Naga
+ナーシル	Nasir
+ニアルチ	Nealuchi
+ニシキ	Kaden
+ニュクス	Nyx
+ネサラ	Naesala
+ネダタ	Nedata
+ネフェニー	Nephenee
+ネヴァサ	Nevassa
+ノスフェラトゥ	Faceless
+ノルダの奴隷市場	Knorda Market
+ノルダの市場	Knorda Market
+ノルン	Norne
+ノートルディア	Notre Sagesse
+ハイタカ	Haitaka
+ハイドラ	Anankos
+ハフェド	Hafedd
+ハロルド	Arthur
+ハロルドの雄斧	Arthur's Axe
+ハープ	Allegro Harp
+ハール	Haar
+バイオリンの弓	Violin Bow
+バディプルフ	Friendship Seal
+バトラー	Butler
+バフス	Bathys
+バルマ	Balmer
+バンデット	Bandit
+バンバ	Tarba
+パラレルプルフ	Heart Seal
+パルメニー神殿	Palmeni Shrine
+ヒサメ	Hisame
+ヒナタ	Hinata
+ヒナタの猛刀	Hinata's Katana
+ヒノカ	Hinoka
+ヒノカの紅薙刀	Hinoka's Spear
+ヒブッティ	Havetti
+ヒムラー	Heimler
+ビフレスト	Bifröst
+ピエリ	Peri
+ピエリの小槍	Peri's Lance
+ピネル砦	Fort Pinell
+ファイアーエムブレム	Fire Emblem
+ファイヤーガン	Hoistflamme
+ファルシオン	Falchion
+ファンク	Funke
+フウガ	Fuga
+フウガの疾風金棒	Fuga's Club
+フウマ	Mokushu
+フウマの森	Forest in Mokushu
+フウマの森	Mokushu Forest
+フウマの洞窟	Cave in Mokushu
+フェニキス	Phoenicis
+フェニキス城	Phoenicis Hall
+フェリシア	Felicia
+フェリシアの氷皿	Felicia's Plate
+フォルカ	Volke
+フォレオ	Forrest
+フライパン	Frying Pan
+フランネル	Keaton
+フリーズ	Freeze
+フルガード	Full Guard
+フレイ	Frey
+フレイムランス	Flame Lance
+フローラ	Flora
+ブノワ	Benny
+ブライス	Bryce
+ブライトボウ	Bright Bow
+ブラックナイト・カミユ	Camus the Sable
+ブリザー	Blizzard
+ブリュンヒルデ	Brynhildr
+ブレイブヒーロー	Hero
+ブレス	Breath
+ブーストサンダー	Speed Thunder
+プチファイアー	Ember
+プラハ	Petrine
+プリンセス・ミネルバ	Princess Minerva
+ヘッツェル	Hetzel
+ベウフォレス	Bertram
+ベオク	Beorc
+ベオクガード	Beorcguard
+ベグニオン	Begnion
+ベグニオンの贖罪	The Atonement
+ベグニオン近海	Coastal Begnion
+ベルカ	Beruka
+ベルカの殺斧	Beruka's Axe
+ベルヴェルク	Bölverk
+ベロア	Velouria
+ペガサスナイト	Peg. Knight
+ペガサスナイト	Pegasus Kn
+ペラティの火竜	The Pyrathi Dragon
+ホルス	Horace
+ホルスタット	Hollstadt
+ホルモン	Llewelyn
+ホースメン	Horseman
+ボウガン	Bowgun
+ボーレ	Boyd
+ポールアクス	Poleax
+マイジン	Maijin
+マカラス宮殿	Palace Macarath
+マカラス宮殿離れ	Near Palace Macarath
+マカロフ	Makalov
+マクベス	Iago
+マクベスの惑書	Iago's Tome
+マクロニソスの城	Helena Castle
+マケドニアの森	Macedon Forest
+マケドニア城	The Macedon Aerie
+マッコヤー	Mackoya
+マトイ	Caeldori
+マヌー	Mannu
+マフー	Imhullu
+マムクートの王国	The Dragonkin Realm
+マムクート・プリンセス	Manakete Princess
+マリッジプルフ	Partner Seal
+マルスの旅立ち	Marth Embarks
+マルスの模擬剣	Marth's Spatha
+マレハウト山岳	Marhaut Range
+マンナズ	Zunanma
+マークス	Xander
+マークスの指南槍	Xander's Lance
+マーシナリー	Mercenary
+マーシャ	Marcia
+マーナガルム	Wolfssegner
+ミコト	Mikoto
+ミコトの霊弓	Mikoto's Yumi
+ミスト	Mist
+ミタマ	Mitama
+ミドリコ	Midori
+ミョルニル	Mjölnir
+ミロア	Miloah
+ムストン	Muston
+ムワリム	Muarim
+ムーンライト	Moonlight
+メイド	Maid
+メリオル	Melior
+メリテネ砦	Fort Meritenne
+メンバーカード	VIP Card
+モゥディ	Mordecai
+モズ	Omozu
+モズメ	Mozu
+ヤナフ	Janaff
+ユウギリ	Reina
+ユキムラ	Yukimura
+ユミル	Ymir
+ユリシーズ	Bastian
+ヨファ	Rolf
+ヨファの弓	Rolf's Bow
+ライ	Ranulf
+ライト	Light
+ライナロック	Ragnarok
+ラグズ	Laguz
+ラグズアクス	Laguz Axe
+ラグズガード	Laguzguard
+ラグズソード	Laguzslayer
+ラグズボウ	Laguz Bow
+ラグズランス	Laguz Lance
+ラジャイオン	Rajaion
+ラズワルド	Laslow
+ラズワルドの舞剣	Laslow's Blade
+ララ	Layla
+ララベル	Aimee
+ララベル	Larabel
+ラリッサ	Larissa
+ラルゴ	Largo
+ランサー	Lancer
+リアーネ	Leanne
+リガルソード	Regal Sword
+リヒトル	Rikard
+リュシオン	Reyson
+リョウマ	Ryoma
+リョウマの鍛錬棒	Ryoma's Club
+リリス	Lilith
+リリスの星杖	Lilith's Staff
+リンカ	Rinkah
+リンカの鬼金棒	Rinkah's Club
+リーザ	Liza
+リーリア	Lillia
+ルイ	Ludwik
+ルカン	Lekain
+ルキナの模擬剣	Lucina's Estoc
+ルキノ	Lucia
+ルッツ	Percy
+ルフレの写本	Robin's Primer
+ルーナ	Selena
+ルーナの鋭剣	Selena's Blade
+レオン	Leo
+レオンの冷剣	Leo's Iceblade
+レクスオーラ	Rexaura
+レクスフレイム	Rexflame
+レクスボルト	Rexbolt
+レテ	Lethe
+レディーファースト	Gallant
+レニング	Renning
+レフカンディの罠	Lefcandith Gauntlet
+レンジャー	Ranger
+レヴナントナイト	Malig Knight
+ロッツ	Lotz
+ロッドナイト	Troubadour
+ロライゼ	Lorazieh
+ロングボウ	Longbow
+ロンタオ	Anthony
+ローバー	Disrobing Gale
+ワインボトル	Bottle
+ワユ	Mia
+ワルキューレ	Valkyrie
+ヴァスハラ	Zhara
+ヴァンガード	Vanguard
+ヴァーグ・カティ	Vague Katti
+一人、歌う	Solo
+一攫千金	Make a Killing
+一発屋	Gamble
+一発屋の書	Gamble
+七重の塔	Sevenfold Sanctuary
+七難即滅	Rescue
+万能カギ	Master Key
+万能鍵	Master Key
+上忍	Master Ninja
+下剋上	Underdog
+不動の四駿	Four Steadfast Riders
+不思議な魅力	Supportive
+不運の塊	Misfortunate
+中央公路	Middleroad
+乙女心の躍動	Bibliophile
+九尾の狐	Nine-Tails
+乱拳	Shackled Fist
+五・七・五	Haiku
+交易の街	Trading Town
+人形崩し	Golembane
+体当たり	Shove
+侍	Samurai
+俊足	Celerity
+修羅	Oni Chieftain
+修験者	Monk
+偶人の空蝉	Even Keel
+偶像の幻	Evenhanded
+偶然のまどろみ	Even Better
+傭兵	Mercenaries
+傭兵団の砦	Mercenary Fort
+傾奇者	Quixotic
+僧侶	Curate
+先手必勝	Quick Draw
+光のオーブ	Lightsphere
+光装備	Lumina
+兎神・卯	Rabbit Spirit
+入れ替え	Swap
+兵士の腕輪	Soldier Band
+兵法者	Master of Arms
+再行動	Canto
+写し身人形	Replicate
+冬祭	Moon Festal
+冷血	Pragmatic
+冷静沈着	Calm
+凍結	Immobilize
+凶鳥の一撃	Certain Blow
+切り込み	Lunge
+初陣	The Battle Begins
+前向き	Optimist
+剛剣	Heavy Blade
+剣士の腕輪	Sword Band
+剣聖	Swordmaster
+剣薙ぎの薙刀	Swordcatcher
+力+2	Strength +2
+力のしずく	Energy Drop
+力の吸収	Strengthtaker
+力の吸収の書	Strengthtaker
+力の薬	Strength Tonic
+力封じ	Seal Strength
+勇将	Resolve
+勇将の書	Resolve
+勇者の剣	Brv. Sword
+勇者の槍	Brv. Lance
+勝利への執念	In Extremis
+勝者の愉悦	Morbid Celebration
+化身の石	Laguz Stone
+化身の腕輪	Laguz Band
+北の城塞	Northern Fortress
+匠の技	Salvage Blow
+千里眼	Insight
+半化身の腕輪	Demi Band
+印付き	Branded
+友情の誓い	Vow of Friendship
+古びた書物	Malevolent Text
+古書の街	Ancient City
+可憐な花	Lily's Poise
+叱咤激励	Rallying Cry
+同盟軍	Archanean League
+名家の令息	Gentilhomme
+呪い師	Diviner
+呪縛	Heartseeker
+呪詛の地下遺跡	Cursed Ruins
+呪詛返し	Countercurse
+命中回避+10	Hit/Avo +10
+命中回避+20	Hit/Avo +20
+咆哮	Roar
+和の心	Camaraderie
+和傘	Parasol
+四牙	Grisly Wound
+四駿	Four Riders
+回復	Renewal
+回復の書	Renewal
+団子串	Dumpling Rod
+固いパン	Stale Bread
+国境の城壁	Border Walls
+地の祝福	Boon
+地下通路	Underground Passage
+地竜	E. Dragon
+地竜石	Earthstone
+執事の嗜み	Born Steward
+執念	Vendetta
+夏祭	Sun Festal
+夜刀神	Yato
+大商人	Merchant
+大器晩成	Blossom
+大地のオーブ	Geosphere
+大戦のはざまで	In War's Grip
+大振り	Gamble
+大根	Daikon Radish
+大盾	Pavise
+大神殿マナイル	Mainal Cathedral
+大祭	Great Festal
+大義の勇	Noble Cause
+大金棒	Great Club
+天才肌	Prodigy
+天照らす	Amaterasu
+天空	Aether
+天空を駆ける騎士	A Knight-Filled Sky
+天罰	Divine Retribution
+天翔ける	Air Superiority
+天蓋の森	Woods of the Forlorn
+天馬武者	Sky Knight
+天馬騎士の腕輪	Pegasus Band
+奇妙な鳴き声	Better Odds
+奇襲の牙	Odd Shaped
+奇襲任務	Opportunist
+奥深い山野	Countryside
+奥義の書	Occult
+女の子好き	Sisterhood
+女の本性	Unmask
+女神の像	Goddess Icon
+女神の加護	Mantle
+女神の杖	Ashera Staff
+妖狐	Kitsune
+妖狐の里	Kitsune Hamlet
+妖艶な花	Rose's Thorns
+婆娑羅	Basara
+守りの薙刀	Guard Naginata
+守備+2	Defense +2
+守備の吸収	Defensetaker
+守備の吸収の書	Defensetaker
+守備封じ	Seal Defense
+守備隊形	Wary Fighter
+守獣石	Beastrune
+安定	Serenity
+完璧主義	Perfectionist
+宝のカギ	Chest Key
+宝の鍵	Chest Key
+宿命の刻	Moment of Fate
+密猟の森	Poachers' Forest
+富豪の屋敷	Fancy Estate
+対抗意識	Competitive
+尊大	Pride
+導きの塔	Guiding Tower
+小さな声援	Quiet Strength
+小さな村	Small Village
+小判	Gold Bar
+小太刀	Kodachi
+小枝	Stick
+小石	Pebble
+居合刀	Practice Katana
+山伏	Great Master
+山地の砦	Mountain Fort
+山岳を越えて	Strange Lands
+山賊団のアジト	Bandit Hold
+山間の村	Valley Settlement
+岩塊	Rock
+川沿いの村	Riverside Village
+左うちわ	Profiteer
+巧者の和弓	Spy's Yumi
+巧者の手裏剣	Spy's Shuriken
+巨岩塊	Massive Rock
+巫女	Shrine Maiden
+帰還	Repatriation
+常備薬	Quick Salve
+平和の声	Voice of Peace
+幸運+4	Luck +4
+幸運のおまじない	Lucky Charm
+幸運の吸収	Lucktaker
+幸運の吸収の書	Lucktaker
+広所突撃	Elbow Room
+廃墟の街	Abandoned Town
+弓使い	Archer
+弓兵の腕輪	Archer Band
+弓聖	Sniper
+強者の弓	Crescent Bow
+強者の暗器	Soldier's Knife
+強運の塊	Fortunate Son
+強面	Fierce Mien
+影	Shade
+影の書	Shade
+待ち伏せの書	Vantage
+後手不敗	Strong Riposte
+心頭滅却	Clarity
+必中の和弓	Surefire Yumi
+忍	Ninja
+忍法車返し	Shuriken Mastery
+怒りの書	Wrath
+怪力	Puissance
+恐怖	Daunt
+恩返し	Reciprocity
+悪あがき	Triple Threat
+悪の司祭ガーネフ	Dark Pontifex
+悪路踏破	Surefooted
+悲しみの大地・グラ	Land of Sorrow
+戦場の再会	Battle Reunion
+戦士の腕輪	Fighter Band
+戦巫女	Priestess
+戦術指南	Tactical Advice
+戦闘指揮	Inspiration
+戦闘王の紋章	Battle Seal
+扉のカギ	Door Key
+扉の鍵	Door Key
+手加減	Discipline
+技+2	Skill +2
+技の叫び	Rally Skill
+技の吸収	Skilltaker
+技の吸収の書	Skilltaker
+技の薬	Skill Tonic
+投げ棒	Throwing Club
+投石器	Onager
+拾いもの	Collector
+挑発	Provoke
+挑発の書	Provoke
+捕虜開放	Prisoner Release
+捨て身の薙刀	Bold Naginata
+援軍	Reinforce
+揺らぎの橋	Floating Bridge
+攻防一体の陣	Bold Stance
+攻防一体の陣の書	Bold Stance
+攻陣＋	Dual Striker
+救出	Shelter
+斧斬りの刀	Axe Splitter
+旧街道	Old Town Road
+明鏡の一撃	Warding Blow
+明鏡の和弓	Illusory Yumi
+星のオーブ	Starsphere
+星界の海	Astral Sea
+星竜	Astral Dragon
+星竜のブレス	Astral Breath
+星竜の加護	Astral Blessing
+春祭	Bloom Festal
+暗器の達人	Shurikenfaire
+暗器殺し	Shurikenbreaker
+暗夜	Nohr
+暗夜	Nohrian Trust
+暗夜の拘束術	Kidnap
+暗夜の漆黒剣	Nohrian Blade
+暗夜城・大階段	Castle: Grand Staircase
+暗夜城・武闘の間	Castle: Combat Room
+暗夜城・王の間	Castle: Throne Room
+暗夜城・練兵場	Castle: Training Grounds
+暗夜城・謁見の間	Castle: Reception Room
+暗夜嫌い	Nohr Enmity
+暗夜海域	Nohrian Sea
+暗夜王国	Conquest
+暗夜王都市街	Windmire
+暗夜竜	Blight Dragon
+暗夜竜の翼	Dark Breath
+暗殺手裏剣	Barb Shuriken
+最大ＨＰ+5	HP +5
+朧	Chakram
+朽ちた黒竜砦	Fort Dragonfall
+松の木	Pine Branch
+果物ナイフ	Fruit Knife
+柔剣	Dancing Blade
+槍砕きの金棒	Pike-Ruin Club
+槍聖	Spear Master
+槍術士	Spear Fighter
+横撃ちの和弓	Sidelong Yumi
+歌姫	Songstress
+武器破壊	Corrosion
+武器破壊の書	Corrosion
+武士道	Bushido
+武者の刀	Venge Katana
+武者の薙刀	Venge Naginata
+武者の金棒	Venge Club
+武術書	Arms Scroll
+歪んだ魔塔	Twisted Tower
+歴戦の勘	Veteran Intuition
+死の吐息	Savage Blow
+死を呼ぶナイフ	Sacrificial Knife
+死線	Life and Death
+残心	Pursuer
+殺戮本能	Bloodthirst
+毒消し	Antitoxin
+気分屋	Tempest
+水の眷属	Empty Vessel
+水の飛沫	Draconic Rage
+水車	Waterwheel
+氷の海	At Sea
+氷の血	Icy Blood
+氷の部族の村	Ice Tribe Village
+決戦マケドニア	Clash in Macedon
+洋傘	Umbrella
+流れる血の色は	Blood Runs Red
+浮遊島	Floating Isle
+海賊討伐	Pirates Aground
+清流の一撃	Duelist's Blow
+測量術	Survey
+港町タルマ	Port Talma
+港町ディア	Port Dia
+港町ディア	Port Town of Dia
+港町トハ	Port Toha
+滅殺	Lethality
+漆黒の騎士	Black Knight
+漆黒の魔手	Shades of Evil
+激突	Clash!
+火竜	F. Dragon
+火竜石	Firestone
+炎の洞窟	The Lair of Fire
+炎の血	Fiery Blood
+炎の裂け目	Lava Fields
+無限の杖	Staff Savant
+無限渓谷	Bottomless Canyon
+無限渓谷	Bottomless Canyon S.
+無限渓谷の吊り橋	Bottomless Canyon N.
+爆炎使い	Pyrotechnics
+爆炎手裏剣	Flame Shuriken
+爪	Claw
+牛神・丑	Ox Spirit
+特別な歌	Inspiring Song
+状態異常無効	Immune Status
+状態異常耐性	Resist Status
+狂乱拳	Gauntlet
+狂戦士の斧	Berserker's Axe
+狙撃	Deadeye
+狩人の弓	Hunter's Bow
+猫	Cat
+猿神・申	Monkey Spirit
+獅子	Lion
+獣の骨	Bone Axe
+獣牙族	Beast Tribe
+獣狩りの暗器	Hunter's Knife
+獣盾	Beast Shield
+獣盾の書	Beast Shield
+王なき王都	Without a King
+王都への道	Capital Way
+王都パレス	Millennium Court
+琵琶の和弓	Harp Yumi
+甘党	Sweet Tooth
+異界の塔	The Alterspire
+異邦の王女	Foreign Princess
+異邦の領域	A Strange Land
+疾風の刃	Vortex
+癒しの声	Healing Descant
+白い砂漠	White Sands
+白の血族	Hoshido Noble
+白夜	Hoshidan Unity
+白夜	Hoshido
+白夜の捕縛術	Capture
+白夜の霞刀	Sunrise Katana
+白夜城	Shirasagi
+白夜城・大広間	Shirasagi: Reception Hall
+白夜城・王の間	Shirasagi: Throne Room
+白夜城・王の間前	Shirasagi: Foyer
+白夜平原	Plains of Hoshido
+白夜海域	Sea of Hoshido
+白夜王国	Birthright
+白夜王都・広場	Hoshido Capital: Plaza
+白夜王都市街	Hoshidan Capital
+白竜	White Dragon
+白騎士団	Whitewings
+盗賊の腕輪	Thief Band
+瞬殺	Lethality
+石像の欠片	Statue Frag
+石壁の街	Walled Town
+砲身改造	Rifled Barrel
+破城の投げ棒	Battering Club
+破壊された市街	Destroyed Town
+破天	Rend Heaven
+破魔矢	Spellbane Yumi
+祈りのロウソク	Votive Candle
+祈りの書	Miracle
+神使親衛隊	Holy Guard
+神剣ファルシオン	Falchion
+神剣ラグネル	Ragnell
+神官の腕輪	Priest Band
+神盾	Divine Shield
+神竜	D. Dragon
+神竜の森	Divine Dragon's Forest
+神竜石	Divinestone
+神竜草	Dragon Herbs
+神雷の薙刀	Bolt Naginata
+神風招来	Silence
+禍事罪穢	Hexing Rod
+秋祭	Wane Festal
+秘境の墓地	Cemetery in a Deeprealm
+秘境の山	Deeprealm Mountain
+秘境の村	Village in a Deeprealm
+秘境の湿地帯	Swamp in a Deeprealm
+秘境の隠れ家	Sanctuary in a Deeprealm
+秘境の隠れ里	Town in a Deeprealm
+移動+1	Movement +1
+空の祝福	Blessing
+竜	Feral Dragon
+竜の御子	Draconic Heir
+竜の門	Dragon's Gate
+竜呪	Draconic Hex
+竜盾	Dragon Ward
+竜穿	Dragon Fang
+竜脈	Dragon Vein
+竜騎士の腕輪	Wyvern Band
+竜騎士団	Dragoons
+竜鱗	Dragonskin
+竜鱗族	Dragon Tribe
+竹の和弓	Bamboo Yumi
+竹竿	Bamboo Pole
+笹飾り	Bamboo Branch
+精神統一	Iron Will
+精霊の粉	Spirit Dust
+紙	Paper
+細身の剣	Slim Sword
+絆の王の紋章	Master Emblem
+絆の祈り	Miraculous Save
+絡繰人形	Automaton
+絡繰巨大鋸	Big Saw
+絡繰師	Mechanist
+絡繰鋸	Saw
+絶対援護	Devoted Partner
+絶対死守	Evasive Partner
+絶対進攻	Forceful Partner
+絶望そして希望	Despair and Hope
+緩やかな大河	Riverside
+繋がれた奇岩群	Floating Isles
+羊神・未	Sheep Spirit
+美しき王	Peacebringer
+羽ペン	Quill Pen
+翼の守護	Cancel
+翼盾	Winged Shield
+翼盾の書	Winged Shield
+聖なる弓	Blessed Bow
+聖天馬武者	Falcon Knight
+能力勝負	Parity
+能力勝負の書	Parity
+脱出	Flight!
+臆病	Guarded Bravery
+自動砲台	Opportunity Shot
+自壊	Self-Destruct
+花束の杖	Bouquet Staff
+草原の戦い	Battle in the Lea
+荒れ地の村	Isolated Village
+荒れ果てた荒野	Wastelands
+菜箸	Chopstick
+葉隠	Hagakure Blade
+薬商人	Apothecary
+虎	Tiger
+虎神・寅	Tiger Spirit
+虚無の呪い	Void Curse
+虹の秘薬	Rainbow Tonic
+虹の賢者	Rainbow Sage
+虹の賢者の墨絵	Ink Painting
+蛇毒	Poison Strike
+蛇神・巳	Snake Spirit
+血の疼き	Aching Blood
+術書	Arms Scroll
+街道の戦い	Roadside Battle
+衝撃	Stun
+裏切りの持つ価値は	A Traitor's Worth
+見下す者	Trample
+見切りの書	Nihil
+訓練用の剣	Trainer
+訓練用の斧	Practice Axe
+託されしもの	Entrusted
+訪問王の紋章	Visitation Seal
+試練	Training
+護り手	Savior
+護り手の書	Savior
+負けん気	Fierce Rival
+負の連鎖	Inevitable End
+貫きの槍	Heavy Spear
+賊のアジト	Thieves' Den
+赤竜	Red Dragon
+軍略伝授	Perspicacious
+軽器装備	Knife
+農地の主	Forager
+辺境の獣	The Feral Frontier
+近接射撃	Point Blank
+近接射撃の書	Point Blank
+迷いの森	Lost Forest
+追い剥ぎの刀	Raider Katana
+追い剥ぎの和弓	Raider Yumi
+追い剥ぎの斧	Raider Axe
+追い剥ぎの薙刀	Raider Naginata
+追い剥ぎナイフ	Raider Knife
+逆刀	Dual Katana
+逆和弓	Dual Yumi
+逆手裏剣	Dual Shuriken
+逆神・丑寅	Calamity Gate
+逆薙刀	Dual Naginata
+逆金棒	Dual Club
+透魔	Valla
+透魔城・地下	Castle Valla: Basement
+透魔城・崩壊	Castle Valla Ruins
+透魔城・王の間	Castle Valla: Throne Room
+透魔城・試練の間	Castle Valla: Labyrinth
+透魔竜	Silent Dragon
+透魔竜のブレス	Dragon Breath
+速さ+2	Speed +2
+速さの吸収	Speedtaker
+速さの吸収の書	Speedtaker
+速さ封じ	Seal Speed
+連続の書	Adept
+選ばれし者たち	Chosen by Fate
+邪な空想	Daydream
+重歩兵	Knight
+重歩兵の腕輪	Knight Band
+金剛の一撃	Armored Blow
+金剛の金棒	Adamant Club
+金塊（中）	Bullion (M)
+金塊（大）	Bullion (L)
+金塊（小）	Bullion (S)
+金塊（特大）	Bullion (XL)
+金鵄武者	Kinshi Knight
+針手裏剣	Sting Shuriken
+鉄の刀	Iron Katana
+鉄の和弓	Iron Yumi
+鉄の手裏剣	Iron Shuriken
+鉄の投撃刀	Iron Katti
+鉄の投撃剣	Iron Kukri
+鉄の投撃斧	Iron Star Axe
+鉄の投撃槍	Iron Javelin
+鉄の投撃薙刀	Iron Nageyari
+鉄の投撃金棒	Iron Mace
+鉄の暗器	Iron Dagger
+鉄の薙刀	Iron Naginata
+鉄の近撃和弓	Iron Hankyu
+鉄の近撃弓	Iron Shortbow
+鉄の金棒	Iron Club
+銀の刀	Silver Katana
+銀の和弓	Silver Yumi
+銀の手裏剣	Silver Shuriken
+銀の投撃刀	Silver Katti
+銀の投撃剣	Silver Kukri
+銀の投撃斧	Silver Star Axe
+銀の投撃槍	Silver Javelin
+銀の投撃薙刀	Silver Nageyari
+銀の投撃金棒	Silver Mace
+銀の暗器	Silver Dagger
+銀の薙刀	Silver Naginata
+銀の近撃和弓	Silver Hankyu
+銀の近撃弓	Silver Shortbow
+銀の金棒	Silver Club
+鋼の刀	Steel Katana
+鋼の和弓	Steel Yumi
+鋼の手裏剣	Steel Shuriken
+鋼の投撃刀	Steel Katti
+鋼の投撃剣	Steel Kukri
+鋼の投撃斧	Steel Star Axe
+鋼の投撃槍	Steel Javelin
+鋼の投撃薙刀	Steel Nageyari
+鋼の投撃金棒	Steel Mace
+鋼の暗器	Steel Dagger
+鋼の薙刀	Steel Naginata
+鋼の近撃和弓	Steel Hankyu
+鋼の近撃弓	Steel Shortbow
+鋼の金棒	Steel Club
+鍛冶	Blacksmith
+鎧盾	Armor Shield
+鎧盾の書	Armor Shield
+長柄刀	Longsword
+閉所防御	Natural Cover
+闇の渓谷	Canyon Valley
+防陣＋	Dual Guardsman
+陰陽師	Onmyoji
+陽光	Flare
+陽動作戦	A Brief Diversion
+障害物	Obstacle
+雷書トロン	Thoron
+雷神刀	Raijinto
+霊刀	Spirit Katana
+青の踊り	Fancy Footwork
+青銅の刀	Brass Katana
+青銅の和弓	Brass Yumi
+青銅の手裏剣	Brass Shuriken
+青銅の暗器	Bronze Dagger
+青銅の薙刀	Brass Naginata
+青銅の金棒	Brass Club
+順風耳	Vigilance
+風の血	Wind Disciple
+風の部族の村	Wind Tribe Village
+風は導く	A Guiding Wind
+風神弓	Fujin Yumi
+飛刀	Wakizashi
+飛燕の一撃	Darting Blow
+馬神・午	Horse Spirit
+騎士の腕輪	Paladin Band
+騎士の護り	Knight Ward
+騎士道	Chivalry
+高貴なる血統	Nobility
+鬼人	Oni Savage
+鬼神の一撃	Death Blow
+魔の風	Malefic Aura
+魔剣ガングレリ	Ganglari
+魔力+2	Magic +2
+魔力の吸収	Magictaker
+魔力の吸収の書	Magictaker
+魔力封じ	Seal Magic
+魔女	Witch
+魔女の大釜	Witch's Brew
+魔女の毒薬	Toxic Brew
+魔女の魔法陣	Witch's Mark
+魔封じの槍	Hexlock Spear
+魔法カウンター	Countermagic
+魔竜	M. Dragon
+魔竜石	Magestone
+魔道の国カダイン	An Oasis of Magic
+魔道士の腕輪	Mage Band
+魔防+2	Resistance +2
+魔防の吸収	Resistancetaker
+魔防の吸収の書	Resistancetaker
+魔防の薬	Resistance Tonic
+魔防封じ	Seal Resistance
+鯉のぼり	Carp Streamer
+鳥神・酉	Bird Spirit
+鳥翼族	Bird Tribe
+鳴動	Colossus
+黄泉の階段	Eternal Stairway
+黎明	Day Breaks
+黒天馬の翼	Ebon Wing
+黒竜砦	Fort Dragonfall
+黒騎士団	Sable Order
+鼠神・子	Rat Spirit
+龍神・辰	Dragon Spirit
+ＨＰの薬	HP Tonic

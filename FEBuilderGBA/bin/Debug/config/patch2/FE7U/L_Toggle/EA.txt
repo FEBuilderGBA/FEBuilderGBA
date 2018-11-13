@@ -1,0 +1,9 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+
+//Press L when initiating combat to toggle animations on/off
+ORG $2A430
+jumpToHack(L_Toggle)
+
+POP

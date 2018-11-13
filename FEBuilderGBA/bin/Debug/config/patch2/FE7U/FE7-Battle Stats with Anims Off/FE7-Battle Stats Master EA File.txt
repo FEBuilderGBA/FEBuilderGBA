@@ -1,0 +1,94 @@
+//FE8 Show battle stats when animations are off
+//By Tequila
+
+#ifdef _FE7_
+	
+	#include "Extensions/Hack Installation.txt"
+	
+	PUSH
+	
+	//Update the graphics
+	ORG $6F844 //7BC44
+	//POIN New_Battle_Anims_Off_Graphics
+	
+	//Modify the numbers to use - rather than ?
+	ORG $6F52C //7BA20-fe8
+	POIN New_Numbers
+	//Make said numbers load earlier in tile ram to make room for --
+	ORG $6F624 //62BA8-fe6
+	BYTE 0x1F
+	//And then read earlier as well
+	ORG $6FB44 //630C0-fe6
+	BYTE 0x1F
+	
+	//TSA for the right and left boxes, respectively (taken from fe6 version, but it actually works, surprisingly)
+	ORG $C9D7A8 //9A3680
+	POIN New_Battle_Anims_Off_Right_TSA
+	POIN New_Battle_Anims_Off_Left_TSA
+	
+	//Make the box not overlap active units or go off-screen (will probably have to fiddle with this later)
+	ORG $6EA44 //7AB8A
+	SHORT 0x295F //cmp r1,#0x5F rather than 0x6F
+	ORG $6EA5C //7AB98
+	SHORT 0x3840 //sub r0,#0x40 rather than 0x28
+	ORG $6EA7E //7ABA2
+	SHORT 0x2008 //mov r0,0x8; should cover all the funny cases
+	
+	//Actually display the necessary things
+	ORG $6FD2C //7BED6
+	//SHORT 0x46C0
+	jumpToHack(Show_Battle_Stats)
+	
+	//THE FOLLOWING STUFF IS FROM THE FE6 VERSION BECAUSE IT'S MORE SIMILAR THAN FE8
+	//Handle the '--' tiles
+	ORG $13350 //13E8C
+	SHORT 0xB408 0
+	jumpToHack(Func_13350)
+
+	//Create a wrapper so hp doesn't show as -- due to the above fix
+	ORG $6F5CC //62B50
+	callHack_r3(Wrap_13350)
+
+	POP
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Graphics:
+	#incext Png2Dmp "Anims_Off_Battle_Graphic New.png" --lz77
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Right_TSA:
+	#incbin "New_Battle_Anims_Off_Right_TSA.dmp"
+	
+	ALIGN 4
+	New_Battle_Anims_Off_Left_TSA:
+	#incbin "New_Battle_Anims_Off_Left_TSA.dmp"
+	
+	ALIGN 4
+	Show_Battle_Stats:
+	#incbin "Show_Battle_Stats.dmp"
+	POIN Battle_Name_Graphics Battle_Name_Palette
+	
+	ALIGN 4
+	Battle_Name_Graphics:
+	#incext Png2Dmp "New_Stat_Names.png" --lz77
+	
+	ALIGN 4
+	Battle_Name_Palette:
+	#incext Png2Dmp "New_Stat_Names.png" --palette-only
+	
+	ALIGN 4
+	New_Numbers:
+	#incext Png2Dmp "New_Numbers.png" --lz77
+	
+	ALIGN 4
+	Func_13350:
+	#incbin "Func_13350.dmp"
+	
+	ALIGN 4
+	Wrap_13350:
+	#incbin "Wrap_13350.dmp"
+	
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif

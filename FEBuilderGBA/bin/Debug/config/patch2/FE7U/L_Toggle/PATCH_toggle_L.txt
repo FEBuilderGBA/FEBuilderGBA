@@ -1,0 +1,7 @@
+NAME=Press L when initiating combat to toggle animations on/off
+NAME.en=Press L when initiating combat to toggle animations on/off
+TYPE=EA
+TAG=#ENGINE
+EA=EA.txt
+
+NAME.zh=索敌_L
