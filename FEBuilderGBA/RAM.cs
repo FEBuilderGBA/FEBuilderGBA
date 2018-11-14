@@ -380,7 +380,6 @@ namespace FEBuilderGBA
             if (process == null)
             {
                 this.ErrorMessage = R._("エミュレータが動作していません。");
-                Log.Error(this.ErrorMessage);
                 return false;
             }
             this.Process = process;

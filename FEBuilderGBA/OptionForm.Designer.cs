@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePath = new System.Windows.Forms.TabPage();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.X_EXPLAIN_NECESSARY_PROGRAM = new System.Windows.Forms.Label();
             this.mid2agb_default = new System.Windows.Forms.CheckBox();
             this.mid2agb_button = new System.Windows.Forms.Button();
@@ -250,6 +252,8 @@
             // tabPagePath
             // 
             this.tabPagePath.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagePath.Controls.Add(this.label51);
+            this.tabPagePath.Controls.Add(this.label50);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_NECESSARY_PROGRAM);
             this.tabPagePath.Controls.Add(this.mid2agb_default);
             this.tabPagePath.Controls.Add(this.mid2agb_button);
@@ -280,6 +284,24 @@
             this.tabPagePath.TabIndex = 0;
             this.tabPagePath.Text = "パス";
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(227, 189);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(500, 18);
+            this.label51.TabIndex = 55;
+            this.label51.Text = "Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(231, 85);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(491, 18);
+            this.label50.TabIndex = 54;
+            this.label50.Text = "F5キーを押すと、このエミュレータを起動して、テストプレイを行います。";
+            // 
             // X_EXPLAIN_NECESSARY_PROGRAM
             // 
             this.X_EXPLAIN_NECESSARY_PROGRAM.AutoSize = true;
@@ -293,7 +315,7 @@
             // mid2agb_default
             // 
             this.mid2agb_default.AutoSize = true;
-            this.mid2agb_default.Location = new System.Drawing.Point(230, 435);
+            this.mid2agb_default.Location = new System.Drawing.Point(230, 453);
             this.mid2agb_default.Name = "mid2agb_default";
             this.mid2agb_default.Size = new System.Drawing.Size(337, 22);
             this.mid2agb_default.TabIndex = 51;
@@ -303,7 +325,7 @@
             // 
             // mid2agb_button
             // 
-            this.mid2agb_button.Location = new System.Drawing.Point(733, 403);
+            this.mid2agb_button.Location = new System.Drawing.Point(733, 421);
             this.mid2agb_button.Margin = new System.Windows.Forms.Padding(2);
             this.mid2agb_button.Name = "mid2agb_button";
             this.mid2agb_button.Size = new System.Drawing.Size(82, 28);
@@ -315,7 +337,7 @@
             // mid2agb
             // 
             this.mid2agb.ErrorMessage = "";
-            this.mid2agb.Location = new System.Drawing.Point(228, 404);
+            this.mid2agb.Location = new System.Drawing.Point(228, 422);
             this.mid2agb.Margin = new System.Windows.Forms.Padding(2);
             this.mid2agb.Name = "mid2agb";
             this.mid2agb.Placeholder = "";
@@ -327,7 +349,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(7, 408);
+            this.label31.Location = new System.Drawing.Point(7, 426);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(69, 18);
@@ -337,7 +359,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(10, 367);
+            this.label4.Location = new System.Drawing.Point(10, 385);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(807, 30);
@@ -348,7 +370,7 @@
             // X_EXPLAIN_EA
             // 
             this.X_EXPLAIN_EA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_EXPLAIN_EA.Location = new System.Drawing.Point(11, 280);
+            this.X_EXPLAIN_EA.Location = new System.Drawing.Point(11, 298);
             this.X_EXPLAIN_EA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_EA.Name = "X_EXPLAIN_EA";
             this.X_EXPLAIN_EA.Size = new System.Drawing.Size(807, 31);
@@ -359,7 +381,7 @@
             // X_EXPLAIN_SAPPY
             // 
             this.X_EXPLAIN_SAPPY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_EXPLAIN_SAPPY.Location = new System.Drawing.Point(10, 199);
+            this.X_EXPLAIN_SAPPY.Location = new System.Drawing.Point(10, 217);
             this.X_EXPLAIN_SAPPY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_SAPPY.Name = "X_EXPLAIN_SAPPY";
             this.X_EXPLAIN_SAPPY.Size = new System.Drawing.Size(807, 31);
@@ -370,7 +392,7 @@
             // X_EXPLAIN_NODOLL_GBA_DEBUGGER
             // 
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Location = new System.Drawing.Point(10, 115);
+            this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Location = new System.Drawing.Point(10, 117);
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Name = "X_EXPLAIN_NODOLL_GBA_DEBUGGER";
             this.X_EXPLAIN_NODOLL_GBA_DEBUGGER.Size = new System.Drawing.Size(807, 31);
@@ -391,7 +413,7 @@
             // 
             // event_assembler_button
             // 
-            this.event_assembler_button.Location = new System.Drawing.Point(733, 316);
+            this.event_assembler_button.Location = new System.Drawing.Point(733, 334);
             this.event_assembler_button.Margin = new System.Windows.Forms.Padding(2);
             this.event_assembler_button.Name = "event_assembler_button";
             this.event_assembler_button.Size = new System.Drawing.Size(82, 28);
@@ -403,7 +425,7 @@
             // event_assembler
             // 
             this.event_assembler.ErrorMessage = "";
-            this.event_assembler.Location = new System.Drawing.Point(228, 317);
+            this.event_assembler.Location = new System.Drawing.Point(228, 335);
             this.event_assembler.Margin = new System.Windows.Forms.Padding(2);
             this.event_assembler.Name = "event_assembler";
             this.event_assembler.Placeholder = "";
@@ -414,7 +436,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(7, 321);
+            this.label41.Location = new System.Drawing.Point(7, 339);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(201, 18);
@@ -423,7 +445,7 @@
             // 
             // sappy_button
             // 
-            this.sappy_button.Location = new System.Drawing.Point(735, 233);
+            this.sappy_button.Location = new System.Drawing.Point(735, 251);
             this.sappy_button.Margin = new System.Windows.Forms.Padding(2);
             this.sappy_button.Name = "sappy_button";
             this.sappy_button.Size = new System.Drawing.Size(82, 28);
@@ -435,7 +457,7 @@
             // sappy
             // 
             this.sappy.ErrorMessage = "";
-            this.sappy.Location = new System.Drawing.Point(228, 236);
+            this.sappy.Location = new System.Drawing.Point(228, 254);
             this.sappy.Margin = new System.Windows.Forms.Padding(2);
             this.sappy.Name = "sappy";
             this.sappy.Placeholder = "";
@@ -446,7 +468,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 238);
+            this.label5.Location = new System.Drawing.Point(16, 256);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 18);
@@ -455,7 +477,7 @@
             // 
             // emulator2_button
             // 
-            this.emulator2_button.Location = new System.Drawing.Point(733, 148);
+            this.emulator2_button.Location = new System.Drawing.Point(733, 150);
             this.emulator2_button.Margin = new System.Windows.Forms.Padding(2);
             this.emulator2_button.Name = "emulator2_button";
             this.emulator2_button.Size = new System.Drawing.Size(82, 28);
@@ -467,7 +489,7 @@
             // emulator2
             // 
             this.emulator2.ErrorMessage = "";
-            this.emulator2.Location = new System.Drawing.Point(228, 150);
+            this.emulator2.Location = new System.Drawing.Point(228, 152);
             this.emulator2.Margin = new System.Windows.Forms.Padding(2);
             this.emulator2.Name = "emulator2";
             this.emulator2.Placeholder = "";
@@ -478,7 +500,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 153);
+            this.label2.Location = new System.Drawing.Point(7, 155);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
@@ -499,7 +521,7 @@
             // emulator
             // 
             this.emulator.ErrorMessage = "";
-            this.emulator.Location = new System.Drawing.Point(228, 50);
+            this.emulator.Location = new System.Drawing.Point(228, 48);
             this.emulator.Margin = new System.Windows.Forms.Padding(2);
             this.emulator.Name = "emulator";
             this.emulator.Placeholder = "";
@@ -510,7 +532,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 53);
+            this.label1.Location = new System.Drawing.Point(7, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 18);
@@ -2791,5 +2813,7 @@
         private System.Windows.Forms.Label X_EXPLAIN_NECESSARY_PROGRAM;
         private System.Windows.Forms.Label explain_func_overraide_simple_error_check;
         private System.Windows.Forms.ComboBox func_overraide_simple_error_check;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
     }
 }

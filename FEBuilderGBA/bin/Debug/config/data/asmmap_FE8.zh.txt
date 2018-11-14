@@ -11118,3 +11118,7 @@ r3=X tile position of menu of the right	{U}
 080CE248	在字典中绘制项目项	{U}
 080CECB0	画出字典的屏幕	{U}
 080B4BEC	阅读商店屏幕	{U}
+08051FB8	ekrGauge_Loop	{J}
+080BC2A4	绘制一个清晰的清单	{J}
+08024608	使用恢复棒时的绘图屏幕	{J}
+08024658	使用恢复棒时的绘图屏幕	{U}

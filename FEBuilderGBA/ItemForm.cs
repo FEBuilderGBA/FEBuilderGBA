@@ -271,15 +271,31 @@ namespace FEBuilderGBA
             , uint id
             ,List<FELint.ErrorSt> errors)
         {
-            uint b25 = Program.ROM.u8(item_addr + 25);
-            if (b25 <= 0x11)
-            {//射程1以下
+            U.AddrResult ar;
+            if (!itemWeaponEffectDic.TryGetValue(id, out ar))
+            {//間接効果がないとマップアニメになります
                 return;
             }
 
-            U.AddrResult ar;
-            if (! itemWeaponEffectDic.TryGetValue(id, out ar))
-            {//間接効果がないとマップアニメになります
+
+            //物理武器かどうか
+            uint flag1 = Program.ROM.u8(item_addr + 8);
+            if ((flag1 & 0x01) == 0x01)
+            {//ダメージエフェクトがONのはず
+                //ダメージエフェクトの有無
+                uint IsDamageEffect = Program.ROM.u8(ar.addr + 12);
+                if (IsDamageEffect == 0)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.ITEM_WEAPON_EFFECT, ar.addr
+                        , R._("物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。"), id));
+                    return;
+                }
+            }
+
+
+            uint b25 = Program.ROM.u8(item_addr + 25);
+            if (b25 <= 0x11)
+            {//射程1以下
                 return;
             }
 
@@ -328,10 +344,7 @@ namespace FEBuilderGBA
                 uint id = Program.ROM.u8(item_addr + 6);
                 if (id == 0)
                 {//ただの使っていないデータ
-                }
-                else
-                {//IDチェックおそらく不要
-//                    FELint.CheckID(id, i, errors, FELint.Type.ITEM, item_addr);
+                    continue;
                 }
 
                 //武器攻撃範囲のチェック

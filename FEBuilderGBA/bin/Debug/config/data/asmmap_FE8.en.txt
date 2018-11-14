@@ -11244,3 +11244,7 @@ r3=X tile position of menu of the right	{U}
 080CE248	Draw item items in dictionary	{U}
 080CECB0	Draw the screen of the dictionary	{U}
 080B4BEC	Reading the shop screen	{U}
+08051FB8	ekrGauge_Loop	{J}
+080BC2A4	Draw a clear-turn list	{J}
+08024608	Drawing screen when using recovery wand	{J}
+08024658	Drawing screen when using recovery wand	{U}

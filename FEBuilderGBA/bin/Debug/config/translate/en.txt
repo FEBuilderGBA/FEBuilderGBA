@@ -4672,6 +4672,9 @@ Description
 :使用画面
 Use Screen
 
+:物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。
+This item is a physical weapon, but "Damage effect" when attacking is set to "None".
+
 :マップ使用ポインタが危険です。範囲外を参照してしまいます。
 Map pointer is dangerous.It will refer to outside the range.
 
@@ -7579,6 +7582,12 @@ When sappy is set, you can play BGM when you click the note button.\r\nWhen inst
 :パス
 Path
 
+:Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。
+Press Ctrl + F5 to start up this emulator and debug.
+
+:F5キーを押すと、このエミュレータを起動して、テストプレイを行います。
+Press the F5 key to start up this emulator and perform test play.
+
 :それぞれのプログラムの入手先と説明は、こちらのマニュアルをご覧ください。
 For details on where to obtain each program, please refer to this manual.
 
@@ -10225,6 +10234,9 @@ This tool is a tool to create a report on problems that are present in your ROM.
 :始める
 start
 
+:戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
+Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
+
 :次へ
 next
 
@@ -10245,9 +10257,6 @@ Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
-
-:戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
-Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
 
 :ファイル({1})がありません。\r\n行数:{0}\r\n
 File ({1}) is missing.\r\nNumber of rows: {0}\r\n
