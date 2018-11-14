@@ -2118,13 +2118,13 @@ HPの薬	HP Tonic
 スキル『練達』\r\n相手から受ける特効を無効にする	Skill 『Nullify』\r\nNullifies bonus damage from weapons.
 スキル『見切り』\r\n敵の一部のスキルの発動を無効にする	Skill 『Nihil』\r\nNegates enemy's battle skills.
 スキル『太陽』\r\n技％で敵に与えたダメージだけ\r\n回復する	Skill 『Sol』\r\nSkill% chance to restore HP equal\r\nto the amount of damage done to enemy.
-スキル『怒り』\r\n自分の体力が２５％以下になったとき\r\n必殺率にプラス５０する	Skill 『Wrathv\r\nCritical rate will be increased by 50%\r\nwhen the user's HP is below 25%.
+スキル『怒り』\r\n自分の体力が２５％以下になったとき\r\n必殺率にプラス５０する	Skill 『Wrath』\r\nCritical rate will be increased by 50%\r\nwhen the user's HP is below 25%.
 スキル『鳴動』\r\n技％で自分の攻撃力に体格分を\r\n追加する	Skill 『Colossus』\r\nSkill% chance to add Con\r\nto your damage output.
 スキル『神射手』\r\n弓での攻撃射程が１増える	Skill 『Longshot』\r\nIncreases bow range by 1.
 スキル『キャンセル』\r\n速さ％で敵の攻撃を封じる	Skill 『Cancel』\r\nSpeed% chance to seal the enemy's\r\nattack.
 スキル『武器破壊』\r\nレベル％で敵の武器を破壊する	Skill 『Corrosion』\r\nLevel% chance to destroy the\r\nenemy's weapon.
 スキル『瞬殺』\r\n必殺時に５０％で敵を倒す	Skill 『Lethality』\r\n50% chance to instant kill with\r\na critical hit.
-スキル『必中』\r\nレベル％×２で絶対攻撃が当たる	Skill 『Deadeye』\r\nLevel x 2% chance to perform a\r\n100% accurate attack.
+スキル『必中』\r\nレベル％×２で絶対攻撃が当たる	Skill 『Hawkeye』\r\nLevel x 2% chance to perform a\r\n100% accurate attack.
 スキル『恐怖』\r\n周囲３マスの敵の命中、回避を\r\n５％下げる	Skill 『Daunt』\r\nEnemies within 3 tiles have their\r\nHit and Avo reduced by 5%.
 スキル『カリスマ』\r\n周囲３マスの味方の命中と回避が\r\nプラス５％される	Skill 『Charm』\r\nAll units within 3 tiles receive\r\na 5% support bonus to Hit and Avo.
 スキル『月光剣』\r\n技％で敵の守備を無視した攻撃を行う	Skill 『Moonlight Sword』\r\nSkill% chance to ignore the\r\nenemy's defense.

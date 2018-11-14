@@ -697,9 +697,10 @@ namespace FEBuilderGBA
 
                     ComboBox link = new ComboBox();
                     link.Location = new Point(500, y);
-                    link.Size = new Size(100, CONTROL_HEIGHT);
+                    link.Size = new Size(150, CONTROL_HEIGHT);
                     link.Name = "L_" + datanum + "_" + "COMBO";
                     link.DropDownStyle = ComboBoxStyle.DropDownList;
+                    U.ConvertComboBox(dic, ref link, true);
                     PatchPage.Controls.Add(link);
                 }
                 else if (type.IndexOf("BATTLEANIMEITEM") == 0)
