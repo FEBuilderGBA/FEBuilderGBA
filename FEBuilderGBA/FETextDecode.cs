@@ -62,7 +62,13 @@ namespace FEBuilderGBA
         }
         public String DecodeAddr(uint addr, out int out_DataSize)
         {
-            uint paddr = this.ROM.u32(U.toOffset(addr));
+            addr = U.toOffset(addr);
+            if ( ! U.isSafetyOffset(addr))
+            {
+                out_DataSize = 0;
+                return "";
+            }
+            uint paddr = this.ROM.u32(addr);
 
             if (FETextEncode.IsUnHuffmanPatchPointer(paddr))
             {//un-huffman patch?

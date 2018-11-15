@@ -405,6 +405,13 @@ namespace FEBuilderGBA
             {//翻訳がある
                 return t;
             }
+            if (this.Lang == "zh")
+            {//中国語への翻訳の場合、漢字だけの文章は同一の文章になることがある.
+                if (this.TranslateResource.Exist(test))
+                {//翻訳があるらしい
+                    return t;
+                }
+            }
 
             test = target.Replace("\\r\\n","\r\n");
             t = this.TranslateResource.str(test);

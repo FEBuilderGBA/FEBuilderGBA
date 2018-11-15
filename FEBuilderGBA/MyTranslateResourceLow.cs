@@ -30,6 +30,11 @@ namespace FEBuilderGBA
             }
             return src;
         }
+        //翻訳があるかどうか取得 開発用
+        public bool Exist(string src)
+        {
+            return Dic.ContainsKey(src);
+        }
         //翻訳の変更.開発用
         public void replaceTranslateString(string f,string t)
         {

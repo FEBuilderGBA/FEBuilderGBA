@@ -30,8 +30,8 @@
         {
             this.panel6 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.MainTab = new FEBuilderGBA.TabControlEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
             this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
             this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
@@ -43,8 +43,8 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.AddressList);
+            this.panel6.Controls.Add(this.label30);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
@@ -54,25 +54,14 @@
             // label30
             // 
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(-1, -1);
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Location = new System.Drawing.Point(0, 0);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(351, 29);
+            this.label30.Size = new System.Drawing.Size(350, 29);
             this.label30.TabIndex = 106;
             this.label30.Text = "名前";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // AddressList
-            // 
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 27);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(351, 796);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // MainTab
             // 
@@ -82,9 +71,22 @@
             this.MainTab.Location = new System.Drawing.Point(352, 0);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(1130, 836);
+            this.MainTab.Size = new System.Drawing.Size(1278, 836);
             this.MainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTab.TabIndex = 151;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 29);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(350, 805);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // ParamValue2
             // 
@@ -144,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1482, 836);
+            this.ClientSize = new System.Drawing.Size(1630, 836);
             this.Controls.Add(this.MainTab);
             this.Controls.Add(this.panel6);
             this.Name = "ProcsScriptForm";

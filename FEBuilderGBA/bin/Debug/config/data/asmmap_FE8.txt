@@ -9396,6 +9396,126 @@
 0809D634	nullsub_20	{J}
 080BD0C8	nullsub_5	{J}
 080BDE98	nullsub_21	{J}
+08050B44	nullsub_25	{J}
+08050CD4	nullsub_26	{J}
+08049878	nullsub_27	{J}
+08000C1C	nullsub_28	{J}
+08003398	nullsub_29	{J}
+080044A0	nullsub_30	{J}
+08007BD0	nullsub_31	{J}
+080086A0	nullsub_32	{J}
+08008E0C	nullsub_33	{J}
+0800CFAC	nullsub_34	{J}
+0800CFFC	nullsub_35	{J}
+0800D0AC	nullsub_36	{J}
+0800D4C8	nullsub_37	{J}
+0800D7E8	nullsub_38	{J}
+08011B04	nullsub_39	{J}
+08012F4C	nullsub_40	{J}
+080134E0	nullsub_41	{J}
+08015260	nullsub_42	{J}
+08016148	nullsub_43	{J}
+0801B720	nullsub_44	{J}
+0801B750	nullsub_45	{J}
+0802468C	nullsub_46	{J}
+08024834	nullsub_47	{J}
+08024854	nullsub_48	{J}
+0802A8C4	nullsub_49	{J}
+080420B8	nullsub_50	{J}
+0804D140	nullsub_51	{J}
+08051B14	nullsub_52	{J}
+08054418	nullsub_53	{J}
+0805C1A0	nullsub_54	{J}
+08075780	nullsub_55	{J}
+08076A48	nullsub_56	{J}
+08076A70	nullsub_57	{J}
+0807866C	nullsub_58	{J}
+080789B8	nullsub_59	{J}
+080793F0	nullsub_60	{J}
+080797B8	nullsub_61	{J}
+08079ECC	nullsub_62	{J}
+0808359C	nullsub_63	{J}
+08092E1C	nullsub_64	{J}
+080975AC	nullsub_65	{J}
+080A29F4	nullsub_66	{J}
+080A767C	nullsub_67	{J}
+080A82AC	nullsub_68	{J}
+080B0E84	nullsub_69	{J}
+080B2898	nullsub_70	{J}
+080B3AE0	nullsub_71	{J}
+080B51D8	nullsub_72	{J}
+080B7130	nullsub_73	{J}
+080B8EB0	nullsub_74	{J}
+080BAE5C	nullsub_75	{J}
+080BB178	nullsub_76	{J}
+080BD054	nullsub_77	{J}
+080BD544	nullsub_78	{J}
+080C08C4	nullsub_79	{J}
+080C0CF8	nullsub_80	{J}
+080C20B4	nullsub_81	{J}
+080C2224	nullsub_82	{J}
+080C29E8	nullsub_83	{J}
+080C43A4	nullsub_84	{J}
+080C4B60	nullsub_85	{J}
+080C532C	nullsub_86	{J}
+080C66A4	nullsub_87	{J}
+080C6D94	nullsub_88	{J}
+080C7A0C	nullsub_89	{J}
+080C8C7C	nullsub_90	{J}
+080D2AD0	nullsub_91	{J}
+080DA93C	nullsub_92	{J}
+0801B71C	Get0x17	1	{J}
+08022578	Get0x17	2	{J}
+080226FC	Get0x17	3	{J}
+08003BC0	Return False	1	{J}
+08022868	Return False	2	{J}
+08029044	Return False	3	{J}
+080855FC	Return False	4	{J}
+08085600	Return False	5	{J}
+08085604	Return False	6	{J}
+08085608	Return False	7	{J}
+0808560C	Return False	8	{J}
+08086D50	Return False	9	{J}
+08086D54	Return False	10	{J}
+08086D58	Return False	11	{J}
+08086D5C	Return False	12	{J}
+08086D60	Return False	13	{J}
+08086D64	Return False	14	{J}
+08086D68	Return False	15	{J}
+08086D6C	Return False	16	{J}
+08086D70	Return False	17	{J}
+08086D74	Return False	18	{J}
+08086D78	Return False	19	{J}
+08086D7C	Return False	20	{J}
+08086D80	Return False	21	{J}
+08086D84	Return False	22	{J}
+08086D88	Return False	23	{J}
+08086D8C	Return False	24	{J}
+08086D90	Return False	25	{J}
+08086D94	Return False	26	{J}
+08086D98	Return False	27	{J}
+08086D9C	Return False	28	{J}
+08086DA0	Return False	29	{J}
+08086DA4	Return False	30	{J}
+0808761C	Return False	31	{J}
+0808763C	Return False	32	{J}
+08088250	Return False	33	{J}
+0808FA60	Return False	34	{J}
+0808FA68	Return False	35	{J}
+08099F9C	Return False	36	{J}
+080AB748	Return False	37	{J}
+080AB74C	Return False	38	{J}
+080B38B0	Return False	39	{J}
+0802BFF8	Return True	1	{J}
+0803D3CC	Return True	2	{J}
+08086D4C	Return True	3	{J}
+080A2D24	Return True	4	{J}
+080A7D30	Return True	5	{J}
+080A7D6C	Return True	6	{J}
+0801BA68	Menu Function Always 0	{J}
+080BB170	Get_CG_Table	{J}
+080B65EC	Get_CG_Table	{U}
+
 08009F38	__malloc_unlock	{J}
 0800CFB0	__malloc_unlock_0	{J}
 0800D000	__malloc_unlock_1	{J}
@@ -11130,7 +11250,7 @@
 08A1EE2C	gGfxSpark	{J}
 08A5A35C	gGfxDialogueTextBubble	{J}
 08A5A6A0	gEventIdMaskLookup	{J}
-
+08A79E90	&LZ77	ボツデータ	雷のような画像	ONLY FE8J	{J}
 08031e18	闘技場の掛け金を取得	{J}
 08031DEC	闘技場の掛け金を設定	{J}
 08031E24	闘技場の試合結果の取得	{J}
@@ -11138,7 +11258,6 @@
 080A0568	進撃準備画面で、輸送体からアイテムを受け取る	{J}
 0809FCA0	進撃準備画面で、輸送体にアクセスした時	{J}
 0809C804	進撃準備画面で、全預け	r0=@UNIT	{J}
-
 08031ecc	闘技場の掛け金を取得	{U}
 08031EA0	闘技場の掛け金を設定	{U}
 08031ED8	闘技場の試合結果の取得	{U}
@@ -11146,7 +11265,6 @@
 0809E2C8	進撃準備画面で、輸送体からアイテムを受け取る	{U}
 0809DA00	進撃準備画面で、輸送体にアクセスした時	{U}
 0809A538	進撃準備画面で、全預け	r0=@UNIT	{U}
-
 0803FB38	AIの杖利用判定	ライブ	リライブ	リカバー	{J}
 0803FCB0	AIの杖利用判定	リブロー	レスキュー	{J}
 0803FE80	AIの杖利用判定	リザーブ	{J}
@@ -11155,7 +11273,6 @@
 080402D4	AIの杖利用判定	サイレス	{J}
 08040460	AIの杖利用判定	スリープ	バーサク	{J}
 080405E4	AIの杖利用判定	Ｍシールド	{J}
-
 0803FBB8	AIの杖利用判定	ライブ	リライブ	リカバー	{U}
 0803FD30	AIの杖利用判定	リブロー	レスキュー	{U}
 0803FF00	AIの杖利用判定	リザーブ	{U}
@@ -11190,6 +11307,28 @@
 080313FC	GAMECTRLから呼ばれる攻略評価	{J}
 080A858C	軍師名と攻略評価を出すサブルーチン	{J}
 08009CF8	制圧フラグ0x03が立っていたら、クリアターン数を書き込む	{J}
+080D13F0	見習いの自動CC開始ルーチン	{J}
+080D2588	見習いCCのセリフを取得2	{J}
+080D2588	見習いCCのセリフを取得3	{J}
+080D25E8	見習いCCのセリフを取得4	{J}
+080D2648	見習いCCのセリフを取得5	{J}
+080D26A8	見習いCCのセリフを取得6	{J}
+08FE1554	ROM末尾のデバッグルーチン	1	{J}
+08FE1688	ROM末尾のデバッグルーチン	2	{J}
+08FE1768	ROM末尾のデバッグルーチン	3	{J}
+08FE19EC	ROM末尾のデバッグルーチン	4	{J}
+08FE1DB0	ROM末尾のデバッグルーチン	5	{J}
+08FE1E4C	ROM末尾のデバッグルーチン	6	{J}
+08FE1F14	ROM末尾のデバッグルーチン	7	{J}
+08FE242C	ROM末尾のデバッグルーチン	8	{J}
+08FE255C	ROM末尾のデバッグルーチン	9	{J}
+08FE2690	ROM末尾のデバッグルーチン	10	{J}
+08FE27F8	ROM末尾のデバッグルーチン	11	{J}
+0801FDE8	章開始	開始ルーチン	{J}
+0801FFB4	章開始	初期化と音を再生	{J}
+0801FFF0	章開始	開始時の2つの光のアニメーションの描画	{J}
+08020470	章開始	章タイトルを描画を開始するルーチン	{J}
+080204C0	章開始	章タイトルの後ろのレリーフを描画	{J}
 080302d0	天気のオブジェクトを設定	雪	{U}
 080304e4	天気のオブジェクトを設定	砂嵐	{U}
 080305fc	天気のオブジェクトを設定	吹雪	{U}
@@ -11209,3 +11348,25 @@
 080314B0	GAMECTRLから呼ばれる攻略評価	{U}
 080A3B48	軍師名と攻略評価を出すサブルーチン	{U}
 08009D98	制圧フラグ0x03が立っていたら、クリアターン数を書き込む	{U}
+080CC6D4	見習いの自動CC開始ルーチン	{U}
+080CD898	見習いCCのセリフを取得2	{U}
+080CD898	見習いCCのセリフを取得3	{U}
+080CD8F8	見習いCCのセリフを取得4	{U}
+080CD958	見習いCCのセリフを取得5	{U}
+080CD9B8	見習いCCのセリフを取得6	{U}
+08FE1554	ROM末尾のデバッグルーチン	1	{U}
+08FE1688	ROM末尾のデバッグルーチン	2	{U}
+08FE1768	ROM末尾のデバッグルーチン	3	{U}
+08FE19EC	ROM末尾のデバッグルーチン	4	{U}
+08FE1DB0	ROM末尾のデバッグルーチン	5	{U}
+08FE1E4C	ROM末尾のデバッグルーチン	6	{U}
+08FE1F14	ROM末尾のデバッグルーチン	7	{U}
+08FE242C	ROM末尾のデバッグルーチン	8	{U}
+08FE255C	ROM末尾のデバッグルーチン	9	{U}
+08FE2690	ROM末尾のデバッグルーチン	10	{U}
+08FE27F8	ROM末尾のデバッグルーチン	11	{U}
+080200F0	章開始	開始ルーチン	{U}
+080202BC	章開始	初期化と音を再生	{U}
+080202F8	章開始	開始時の2つの光のアニメーションの描画	{U}
+08020778	章開始	章タイトルを描画を開始するルーチン	{U}
+080207C8	章開始	章タイトルの後ろのレリーフを描画	{U}

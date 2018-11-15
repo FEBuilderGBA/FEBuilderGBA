@@ -1919,7 +1919,7 @@ HPの薬	HP Tonic
 シューダ	Shuuda
 イケツ	Itsuke
 レックス	Rex
-キア	Cia
+シア	Cia
 タミコ	Tamiko
 レナ	Rana
 レーチェル	Rachel

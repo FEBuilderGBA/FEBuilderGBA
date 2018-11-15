@@ -1,0 +1,15 @@
+NAME=ボツデータのクリア ROM末尾のデバッグルーチン
+NAME.en=clear unreleased works: Debugging at the end of ROM
+
+PATCHED_IF:0xFE1554=0x00 0x00 0x00 0x00
+IF:0xFE1554=0x70 0xB5 0x04 0x1C
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xFE1554:4806=0xFE2819
+
+INFO=ROM末尾にあるデバッグルーチンの領域を消去して、リビルド時に利用できるようにします。\r\n4806bytesを追加確保します。\r\n現在、このパッチはテスト中です。\r\n適応しても無事動作するかどうか動作報告をお待ちしています。
+INFO.en=Delete the area of ​​the debug routine at the end of the ROM so that it can be used at the time of rebuild.\r\nWe will secure additional 4806 bytes.\r\nCurrently, this patch is under test.\r\nI am waiting for a motion report whether it works safely even if it adapts.
+NAME.zh=清除引导数据ROM末尾的调试例程
+INFO.zh=删除ROM末尾的调试例程区域，以便在重建时使用它。\r\n我们将获得额外的4806字节。\r\n目前，这个补丁正在测试中。\r\n我正在等待一份动作报告，即使它适应了它是否安全有效。
