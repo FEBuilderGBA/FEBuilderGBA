@@ -123,6 +123,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.label12 = new System.Windows.Forms.Label();
+            this.X_ITEMDROP = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.EVENTUNIT_AFTER_COORD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
@@ -561,6 +562,7 @@
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(65, 25);
             this.B1.TabIndex = 5;
+            this.B1.ValueChanged += new System.EventHandler(this.B1_ValueChanged);
             // 
             // L_0_UNIT
             // 
@@ -586,6 +588,7 @@
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(65, 25);
             this.B0.TabIndex = 4;
+            this.B0.ValueChanged += new System.EventHandler(this.B0_ValueChanged);
             // 
             // J_0_UNIT
             // 
@@ -792,13 +795,14 @@
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.X_ITEMDROP);
             this.panel10.Controls.Add(this.JUMP_BATTLEBGM);
             this.panel10.Controls.Add(this.JUMP_HAIKU);
             this.panel10.Controls.Add(this.JUMP_BATTLETALK);
-            this.panel10.Location = new System.Drawing.Point(554, 232);
+            this.panel10.Location = new System.Drawing.Point(489, 232);
             this.panel10.Margin = new System.Windows.Forms.Padding(5);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(321, 123);
+            this.panel10.Size = new System.Drawing.Size(386, 134);
             this.panel10.TabIndex = 92;
             // 
             // JUMP_BATTLEBGM
@@ -806,7 +810,7 @@
             this.JUMP_BATTLEBGM.AutoSize = true;
             this.JUMP_BATTLEBGM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLEBGM.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(16, 44);
+            this.JUMP_BATTLEBGM.Location = new System.Drawing.Point(16, 38);
             this.JUMP_BATTLEBGM.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLEBGM.Name = "JUMP_BATTLEBGM";
             this.JUMP_BATTLEBGM.Size = new System.Drawing.Size(154, 18);
@@ -819,7 +823,7 @@
             this.JUMP_HAIKU.AutoSize = true;
             this.JUMP_HAIKU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_HAIKU.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_HAIKU.Location = new System.Drawing.Point(16, 78);
+            this.JUMP_HAIKU.Location = new System.Drawing.Point(16, 70);
             this.JUMP_HAIKU.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_HAIKU.Name = "JUMP_HAIKU";
             this.JUMP_HAIKU.Size = new System.Drawing.Size(156, 18);
@@ -832,7 +836,7 @@
             this.JUMP_BATTLETALK.AutoSize = true;
             this.JUMP_BATTLETALK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JUMP_BATTLETALK.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(14, 10);
+            this.JUMP_BATTLETALK.Location = new System.Drawing.Point(16, 6);
             this.JUMP_BATTLETALK.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.JUMP_BATTLETALK.Name = "JUMP_BATTLETALK";
             this.JUMP_BATTLETALK.Size = new System.Drawing.Size(156, 18);
@@ -1342,6 +1346,19 @@
             this.label12.Text = "マップ名前";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // X_ITEMDROP
+            // 
+            this.X_ITEMDROP.AutoSize = true;
+            this.X_ITEMDROP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_ITEMDROP.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_ITEMDROP.Location = new System.Drawing.Point(16, 102);
+            this.X_ITEMDROP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.X_ITEMDROP.Name = "X_ITEMDROP";
+            this.X_ITEMDROP.Size = new System.Drawing.Size(114, 18);
+            this.X_ITEMDROP.TabIndex = 4;
+            this.X_ITEMDROP.Text = "アイテムドロップ";
+            this.X_ITEMDROP.Click += new System.EventHandler(this.X_ITEMDROP_Click);
+            // 
             // EventUnitFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1502,5 +1519,6 @@
         private System.Windows.Forms.Label J_0_UNIT;
         private PanelEx EVENTUNIT_BEFORE_COORD;
         private PanelEx EVENTUNIT_AFTER_COORD;
+        private System.Windows.Forms.Label X_ITEMDROP;
     }
 }

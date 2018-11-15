@@ -29,22 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.EVENTUNIT_AFTER_COORD = new FEBuilderGBA.PanelEx();
-            this.L_6_MAPXY_7 = new System.Windows.Forms.Label();
-            this.J_6 = new System.Windows.Forms.Label();
-            this.B6 = new System.Windows.Forms.NumericUpDown();
-            this.J_7 = new System.Windows.Forms.Label();
-            this.B7 = new System.Windows.Forms.NumericUpDown();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.EVENTUNIT_BEFORE_COORD = new FEBuilderGBA.PanelEx();
-            this.L_4_MAPXY_5 = new System.Windows.Forms.Label();
-            this.J_4 = new System.Windows.Forms.Label();
-            this.B4 = new System.Windows.Forms.NumericUpDown();
-            this.J_5 = new System.Windows.Forms.Label();
-            this.B5 = new System.Windows.Forms.NumericUpDown();
-            this.PosSyncUpdateComboBox = new System.Windows.Forms.ComboBox();
-            this.L_2_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_1_CLASSICON_UNITGROW_3 = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.L_3_UNITGROW_GROW = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,18 +41,10 @@
             this.J_3 = new System.Windows.Forms.Label();
             this.J_2_UNIT = new System.Windows.Forms.Label();
             this.B2 = new System.Windows.Forms.NumericUpDown();
-            this.L_1_CLASS = new FEBuilderGBA.TextBoxEx();
             this.J_1_CLASS = new System.Windows.Forms.Label();
             this.B1 = new System.Windows.Forms.NumericUpDown();
-            this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
             this.J_0_UNIT = new System.Windows.Forms.Label();
-            this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_14_COMBO = new System.Windows.Forms.ComboBox();
-            this.L_11_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_10_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_9_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_8_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.JUMP_HAIKU = new System.Windows.Forms.Label();
             this.JUMP_BATTLETALK = new System.Windows.Forms.Label();
@@ -82,28 +59,21 @@
             this.J_13 = new System.Windows.Forms.Label();
             this.B12 = new System.Windows.Forms.NumericUpDown();
             this.J_12 = new System.Windows.Forms.Label();
-            this.L_11_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.J_11_ITEM = new System.Windows.Forms.Label();
-            this.L_10_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.J_10_ITEM = new System.Windows.Forms.Label();
-            this.L_9_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B9 = new System.Windows.Forms.NumericUpDown();
             this.J_9_ITEM = new System.Windows.Forms.Label();
-            this.L_8_ITEM = new FEBuilderGBA.TextBoxEx();
             this.B8 = new System.Windows.Forms.NumericUpDown();
             this.J_8_ITEM = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label46 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -113,34 +83,51 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.label53 = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel11 = new System.Windows.Forms.Panel();
             this.NewButton = new System.Windows.Forms.Button();
             this.label47 = new System.Windows.Forms.Label();
-            this.EVENT_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.label12 = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.EVENT_LISTBOX = new FEBuilderGBA.ListBoxEx();
+            this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
+            this.EVENTUNIT_AFTER_COORD = new FEBuilderGBA.PanelEx();
+            this.L_6_MAPXY_7 = new System.Windows.Forms.Label();
+            this.J_6 = new System.Windows.Forms.Label();
+            this.B6 = new System.Windows.Forms.NumericUpDown();
+            this.J_7 = new System.Windows.Forms.Label();
+            this.B7 = new System.Windows.Forms.NumericUpDown();
+            this.EVENTUNIT_BEFORE_COORD = new FEBuilderGBA.PanelEx();
+            this.L_4_MAPXY_5 = new System.Windows.Forms.Label();
+            this.J_4 = new System.Windows.Forms.Label();
+            this.B4 = new System.Windows.Forms.NumericUpDown();
+            this.J_5 = new System.Windows.Forms.Label();
+            this.B5 = new System.Windows.Forms.NumericUpDown();
+            this.PosSyncUpdateComboBox = new System.Windows.Forms.ComboBox();
+            this.L_2_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_1_CLASSICON_UNITGROW_3 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_1_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_11_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_10_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_9_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_8_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_11_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.L_10_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.L_9_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.L_8_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.panel3.SuspendLayout();
-            this.EVENTUNIT_AFTER_COORD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
-            this.EVENTUNIT_BEFORE_COORD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON_UNITGROW_3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITGROW_LV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_11_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_10_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_9_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_ITEMICON)).BeginInit();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B14)).BeginInit();
@@ -159,6 +146,19 @@
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.EVENTUNIT_AFTER_COORD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
+            this.EVENTUNIT_BEFORE_COORD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON_UNITGROW_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_11_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_10_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_9_ITEMICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_ITEMICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -215,72 +215,6 @@
             this.panel3.Size = new System.Drawing.Size(889, 458);
             this.panel3.TabIndex = 47;
             // 
-            // EVENTUNIT_AFTER_COORD
-            // 
-            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.L_6_MAPXY_7);
-            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.J_6);
-            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.B6);
-            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.J_7);
-            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.B7);
-            this.EVENTUNIT_AFTER_COORD.ErrorMessage = "";
-            this.EVENTUNIT_AFTER_COORD.Location = new System.Drawing.Point(0, 414);
-            this.EVENTUNIT_AFTER_COORD.Margin = new System.Windows.Forms.Padding(2);
-            this.EVENTUNIT_AFTER_COORD.Name = "EVENTUNIT_AFTER_COORD";
-            this.EVENTUNIT_AFTER_COORD.Size = new System.Drawing.Size(881, 36);
-            this.EVENTUNIT_AFTER_COORD.TabIndex = 191;
-            // 
-            // L_6_MAPXY_7
-            // 
-            this.L_6_MAPXY_7.AccessibleDescription = "@EVENTUNIT_AFTER_FE7";
-            this.L_6_MAPXY_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_6_MAPXY_7.Location = new System.Drawing.Point(1, 3);
-            this.L_6_MAPXY_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.L_6_MAPXY_7.Name = "L_6_MAPXY_7";
-            this.L_6_MAPXY_7.Size = new System.Drawing.Size(128, 32);
-            this.L_6_MAPXY_7.TabIndex = 107;
-            this.L_6_MAPXY_7.Text = "配置後座標";
-            this.L_6_MAPXY_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // J_6
-            // 
-            this.J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_6.Location = new System.Drawing.Point(137, 3);
-            this.J_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_6.Name = "J_6";
-            this.J_6.Size = new System.Drawing.Size(52, 32);
-            this.J_6.TabIndex = 119;
-            this.J_6.Text = "X:";
-            this.J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B6
-            // 
-            this.B6.Location = new System.Drawing.Point(199, 6);
-            this.B6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B6.Name = "B6";
-            this.B6.Size = new System.Drawing.Size(79, 25);
-            this.B6.TabIndex = 23;
-            this.B6.ValueChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // J_7
-            // 
-            this.J_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_7.Location = new System.Drawing.Point(295, 3);
-            this.J_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_7.Name = "J_7";
-            this.J_7.Size = new System.Drawing.Size(52, 32);
-            this.J_7.TabIndex = 121;
-            this.J_7.Text = "Y:";
-            this.J_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B7
-            // 
-            this.B7.Location = new System.Drawing.Point(357, 6);
-            this.B7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B7.Name = "B7";
-            this.B7.Size = new System.Drawing.Size(79, 25);
-            this.B7.TabIndex = 24;
-            this.B7.ValueChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
             // B0
             // 
             this.B0.Hexadecimal = true;
@@ -294,107 +228,6 @@
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(65, 25);
             this.B0.TabIndex = 0;
-            // 
-            // EVENTUNIT_BEFORE_COORD
-            // 
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.L_4_MAPXY_5);
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.J_4);
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.B4);
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.J_5);
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.B5);
-            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.PosSyncUpdateComboBox);
-            this.EVENTUNIT_BEFORE_COORD.ErrorMessage = "";
-            this.EVENTUNIT_BEFORE_COORD.Location = new System.Drawing.Point(0, 370);
-            this.EVENTUNIT_BEFORE_COORD.Margin = new System.Windows.Forms.Padding(2);
-            this.EVENTUNIT_BEFORE_COORD.Name = "EVENTUNIT_BEFORE_COORD";
-            this.EVENTUNIT_BEFORE_COORD.Size = new System.Drawing.Size(881, 36);
-            this.EVENTUNIT_BEFORE_COORD.TabIndex = 190;
-            // 
-            // L_4_MAPXY_5
-            // 
-            this.L_4_MAPXY_5.AccessibleDescription = "@EVENTUNIT_BEFORE";
-            this.L_4_MAPXY_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_4_MAPXY_5.Location = new System.Drawing.Point(0, 2);
-            this.L_4_MAPXY_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.L_4_MAPXY_5.Name = "L_4_MAPXY_5";
-            this.L_4_MAPXY_5.Size = new System.Drawing.Size(128, 32);
-            this.L_4_MAPXY_5.TabIndex = 93;
-            this.L_4_MAPXY_5.Text = "配置前座標";
-            this.L_4_MAPXY_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // J_4
-            // 
-            this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4.Location = new System.Drawing.Point(136, 2);
-            this.J_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_4.Name = "J_4";
-            this.J_4.Size = new System.Drawing.Size(52, 32);
-            this.J_4.TabIndex = 115;
-            this.J_4.Text = "X:";
-            this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B4
-            // 
-            this.B4.Location = new System.Drawing.Point(198, 6);
-            this.B4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B4.Name = "B4";
-            this.B4.Size = new System.Drawing.Size(79, 25);
-            this.B4.TabIndex = 21;
-            this.B4.ValueChanged += new System.EventHandler(this.B4_ValueChanged);
-            // 
-            // J_5
-            // 
-            this.J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_5.Location = new System.Drawing.Point(294, 2);
-            this.J_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_5.Name = "J_5";
-            this.J_5.Size = new System.Drawing.Size(52, 32);
-            this.J_5.TabIndex = 117;
-            this.J_5.Text = "Y:";
-            this.J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // B5
-            // 
-            this.B5.Location = new System.Drawing.Point(356, 5);
-            this.B5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B5.Name = "B5";
-            this.B5.Size = new System.Drawing.Size(79, 25);
-            this.B5.TabIndex = 22;
-            this.B5.ValueChanged += new System.EventHandler(this.B5_ValueChanged);
-            // 
-            // PosSyncUpdateComboBox
-            // 
-            this.PosSyncUpdateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PosSyncUpdateComboBox.FormattingEnabled = true;
-            this.PosSyncUpdateComboBox.Items.AddRange(new object[] {
-            "配置後も同時に変更",
-            "配置後、配置前は別々"});
-            this.PosSyncUpdateComboBox.Location = new System.Drawing.Point(454, 3);
-            this.PosSyncUpdateComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PosSyncUpdateComboBox.Name = "PosSyncUpdateComboBox";
-            this.PosSyncUpdateComboBox.Size = new System.Drawing.Size(405, 26);
-            this.PosSyncUpdateComboBox.TabIndex = 25;
-            // 
-            // L_2_UNIT
-            // 
-            this.L_2_UNIT.ErrorMessage = "";
-            this.L_2_UNIT.Location = new System.Drawing.Point(688, 33);
-            this.L_2_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_2_UNIT.Name = "L_2_UNIT";
-            this.L_2_UNIT.Placeholder = "";
-            this.L_2_UNIT.ReadOnly = true;
-            this.L_2_UNIT.Size = new System.Drawing.Size(160, 25);
-            this.L_2_UNIT.TabIndex = 246;
-            // 
-            // L_1_CLASSICON_UNITGROW_3
-            // 
-            this.L_1_CLASSICON_UNITGROW_3.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_1_CLASSICON_UNITGROW_3.Location = new System.Drawing.Point(400, 32);
-            this.L_1_CLASSICON_UNITGROW_3.Margin = new System.Windows.Forms.Padding(2);
-            this.L_1_CLASSICON_UNITGROW_3.Name = "L_1_CLASSICON_UNITGROW_3";
-            this.L_1_CLASSICON_UNITGROW_3.Size = new System.Drawing.Size(32, 32);
-            this.L_1_CLASSICON_UNITGROW_3.TabIndex = 251;
-            this.L_1_CLASSICON_UNITGROW_3.TabStop = false;
             // 
             // panel4
             // 
@@ -536,17 +369,6 @@
             this.B2.Size = new System.Drawing.Size(65, 25);
             this.B2.TabIndex = 3;
             // 
-            // L_1_CLASS
-            // 
-            this.L_1_CLASS.ErrorMessage = "";
-            this.L_1_CLASS.Location = new System.Drawing.Point(202, 35);
-            this.L_1_CLASS.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_1_CLASS.Name = "L_1_CLASS";
-            this.L_1_CLASS.Placeholder = "";
-            this.L_1_CLASS.ReadOnly = true;
-            this.L_1_CLASS.Size = new System.Drawing.Size(188, 25);
-            this.L_1_CLASS.TabIndex = 243;
-            // 
             // J_1_CLASS
             // 
             this.J_1_CLASS.AccessibleDescription = "@EVENTUNIT_CLASS_ID";
@@ -573,17 +395,6 @@
             this.B1.Size = new System.Drawing.Size(65, 25);
             this.B1.TabIndex = 1;
             // 
-            // L_0_UNIT
-            // 
-            this.L_0_UNIT.ErrorMessage = "";
-            this.L_0_UNIT.Location = new System.Drawing.Point(200, 2);
-            this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_UNIT.Name = "L_0_UNIT";
-            this.L_0_UNIT.Placeholder = "";
-            this.L_0_UNIT.ReadOnly = true;
-            this.L_0_UNIT.Size = new System.Drawing.Size(189, 25);
-            this.L_0_UNIT.TabIndex = 240;
-            // 
             // J_0_UNIT
             // 
             this.J_0_UNIT.AccessibleDescription = "@EVENTUNIT_UNIT_ID";
@@ -595,30 +406,6 @@
             this.J_0_UNIT.TabIndex = 239;
             this.J_0_UNIT.Text = "ユニット番号";
             this.J_0_UNIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_2_UNITICON
-            // 
-            this.L_2_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_2_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_2_UNITICON.Location = new System.Drawing.Point(851, 34);
-            this.L_2_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_2_UNITICON.Name = "L_2_UNITICON";
-            this.L_2_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_2_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_2_UNITICON.TabIndex = 221;
-            this.L_2_UNITICON.TabStop = false;
-            // 
-            // L_0_UNITICON
-            // 
-            this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(400, 6);
-            this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_UNITICON.Name = "L_0_UNITICON";
-            this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_0_UNITICON.TabIndex = 220;
-            this.L_0_UNITICON.TabStop = false;
             // 
             // L_14_COMBO
             // 
@@ -636,46 +423,6 @@
             this.L_14_COMBO.Name = "L_14_COMBO";
             this.L_14_COMBO.Size = new System.Drawing.Size(676, 26);
             this.L_14_COMBO.TabIndex = 14;
-            // 
-            // L_11_ITEMICON
-            // 
-            this.L_11_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_11_ITEMICON.Location = new System.Drawing.Point(391, 331);
-            this.L_11_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_11_ITEMICON.Name = "L_11_ITEMICON";
-            this.L_11_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_11_ITEMICON.TabIndex = 105;
-            this.L_11_ITEMICON.TabStop = false;
-            // 
-            // L_10_ITEMICON
-            // 
-            this.L_10_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_10_ITEMICON.Location = new System.Drawing.Point(391, 297);
-            this.L_10_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_10_ITEMICON.Name = "L_10_ITEMICON";
-            this.L_10_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_10_ITEMICON.TabIndex = 104;
-            this.L_10_ITEMICON.TabStop = false;
-            // 
-            // L_9_ITEMICON
-            // 
-            this.L_9_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_9_ITEMICON.Location = new System.Drawing.Point(391, 262);
-            this.L_9_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_9_ITEMICON.Name = "L_9_ITEMICON";
-            this.L_9_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_9_ITEMICON.TabIndex = 103;
-            this.L_9_ITEMICON.TabStop = false;
-            // 
-            // L_8_ITEMICON
-            // 
-            this.L_8_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_ITEMICON.Location = new System.Drawing.Point(391, 232);
-            this.L_8_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_8_ITEMICON.Name = "L_8_ITEMICON";
-            this.L_8_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_8_ITEMICON.TabIndex = 102;
-            this.L_8_ITEMICON.TabStop = false;
             // 
             // panel10
             // 
@@ -851,17 +598,6 @@
             this.J_12.Text = "1次AI";
             this.J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_11_ITEM
-            // 
-            this.L_11_ITEM.ErrorMessage = "";
-            this.L_11_ITEM.Location = new System.Drawing.Point(200, 328);
-            this.L_11_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_11_ITEM.Name = "L_11_ITEM";
-            this.L_11_ITEM.Placeholder = "";
-            this.L_11_ITEM.ReadOnly = true;
-            this.L_11_ITEM.Size = new System.Drawing.Size(189, 25);
-            this.L_11_ITEM.TabIndex = 78;
-            // 
             // B11
             // 
             this.B11.Hexadecimal = true;
@@ -879,24 +615,13 @@
             // J_11_ITEM
             // 
             this.J_11_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_11_ITEM.Location = new System.Drawing.Point(-1, 325);
+            this.J_11_ITEM.Location = new System.Drawing.Point(-1, 324);
             this.J_11_ITEM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_11_ITEM.Name = "J_11_ITEM";
             this.J_11_ITEM.Size = new System.Drawing.Size(128, 32);
             this.J_11_ITEM.TabIndex = 76;
             this.J_11_ITEM.Text = "所持品4";
             this.J_11_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_10_ITEM
-            // 
-            this.L_10_ITEM.ErrorMessage = "";
-            this.L_10_ITEM.Location = new System.Drawing.Point(199, 297);
-            this.L_10_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_10_ITEM.Name = "L_10_ITEM";
-            this.L_10_ITEM.Placeholder = "";
-            this.L_10_ITEM.ReadOnly = true;
-            this.L_10_ITEM.Size = new System.Drawing.Size(189, 25);
-            this.L_10_ITEM.TabIndex = 75;
             // 
             // B10
             // 
@@ -923,17 +648,6 @@
             this.J_10_ITEM.Text = "所持品3";
             this.J_10_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_9_ITEM
-            // 
-            this.L_9_ITEM.ErrorMessage = "";
-            this.L_9_ITEM.Location = new System.Drawing.Point(199, 265);
-            this.L_9_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_9_ITEM.Name = "L_9_ITEM";
-            this.L_9_ITEM.Placeholder = "";
-            this.L_9_ITEM.ReadOnly = true;
-            this.L_9_ITEM.Size = new System.Drawing.Size(189, 25);
-            this.L_9_ITEM.TabIndex = 72;
-            // 
             // B9
             // 
             this.B9.Hexadecimal = true;
@@ -958,17 +672,6 @@
             this.J_9_ITEM.TabIndex = 70;
             this.J_9_ITEM.Text = "所持品2";
             this.J_9_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_8_ITEM
-            // 
-            this.L_8_ITEM.ErrorMessage = "";
-            this.L_8_ITEM.Location = new System.Drawing.Point(199, 232);
-            this.L_8_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_8_ITEM.Name = "L_8_ITEM";
-            this.L_8_ITEM.Placeholder = "";
-            this.L_8_ITEM.ReadOnly = true;
-            this.L_8_ITEM.Size = new System.Drawing.Size(189, 25);
-            this.L_8_ITEM.TabIndex = 69;
             // 
             // B8
             // 
@@ -1011,17 +714,6 @@
             this.AddressPanel.Size = new System.Drawing.Size(731, 30);
             this.AddressPanel.TabIndex = 104;
             // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(331, 2);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(83, 25);
-            this.BlockSize.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1032,17 +724,6 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(551, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(160, 25);
-            this.SelectAddress.TabIndex = 2;
             // 
             // label22
             // 
@@ -1098,15 +779,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(988, 1003);
             this.panel2.TabIndex = 158;
-            // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(1, 0);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(985, 994);
-            this.MapPictureBox.TabIndex = 0;
             // 
             // panel1
             // 
@@ -1210,21 +882,6 @@
             this.label53.Text = "名前";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 28;
-            this.AddressList.Location = new System.Drawing.Point(0, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(302, 368);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
-            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.NewButton);
@@ -1260,6 +917,43 @@
             this.label47.Text = "イベント名前";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.MAP_LISTBOX);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Location = new System.Drawing.Point(5, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(257, 446);
+            this.panel5.TabIndex = 169;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(2, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(252, 30);
+            this.label12.TabIndex = 157;
+            this.label12.Text = "マップ名前";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 28;
+            this.AddressList.Location = new System.Drawing.Point(0, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(302, 368);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
+            // 
             // EVENT_LISTBOX
             // 
             this.EVENT_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1274,16 +968,6 @@
             this.EVENT_LISTBOX.TabIndex = 0;
             this.EVENT_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.EVENT_LISTBOX_SelectedIndexChanged);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.MAP_LISTBOX);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Location = new System.Drawing.Point(5, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(257, 446);
-            this.panel5.TabIndex = 169;
-            // 
             // MAP_LISTBOX
             // 
             this.MAP_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1297,17 +981,333 @@
             this.MAP_LISTBOX.TabIndex = 0;
             this.MAP_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.MAP_LISTBOX_SelectedIndexChanged);
             // 
-            // label12
+            // EVENTUNIT_AFTER_COORD
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(2, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(252, 30);
-            this.label12.TabIndex = 157;
-            this.label12.Text = "マップ名前";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.L_6_MAPXY_7);
+            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.J_6);
+            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.B6);
+            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.J_7);
+            this.EVENTUNIT_AFTER_COORD.Controls.Add(this.B7);
+            this.EVENTUNIT_AFTER_COORD.ErrorMessage = "";
+            this.EVENTUNIT_AFTER_COORD.Location = new System.Drawing.Point(0, 414);
+            this.EVENTUNIT_AFTER_COORD.Margin = new System.Windows.Forms.Padding(2);
+            this.EVENTUNIT_AFTER_COORD.Name = "EVENTUNIT_AFTER_COORD";
+            this.EVENTUNIT_AFTER_COORD.Size = new System.Drawing.Size(881, 36);
+            this.EVENTUNIT_AFTER_COORD.TabIndex = 191;
+            // 
+            // L_6_MAPXY_7
+            // 
+            this.L_6_MAPXY_7.AccessibleDescription = "@EVENTUNIT_AFTER_FE7";
+            this.L_6_MAPXY_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_6_MAPXY_7.Location = new System.Drawing.Point(1, 3);
+            this.L_6_MAPXY_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_6_MAPXY_7.Name = "L_6_MAPXY_7";
+            this.L_6_MAPXY_7.Size = new System.Drawing.Size(128, 32);
+            this.L_6_MAPXY_7.TabIndex = 107;
+            this.L_6_MAPXY_7.Text = "配置後座標";
+            this.L_6_MAPXY_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_6
+            // 
+            this.J_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_6.Location = new System.Drawing.Point(137, 3);
+            this.J_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_6.Name = "J_6";
+            this.J_6.Size = new System.Drawing.Size(52, 32);
+            this.J_6.TabIndex = 119;
+            this.J_6.Text = "X:";
+            this.J_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // B6
+            // 
+            this.B6.Location = new System.Drawing.Point(199, 6);
+            this.B6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B6.Name = "B6";
+            this.B6.Size = new System.Drawing.Size(79, 25);
+            this.B6.TabIndex = 23;
+            this.B6.ValueChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // J_7
+            // 
+            this.J_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_7.Location = new System.Drawing.Point(295, 3);
+            this.J_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_7.Name = "J_7";
+            this.J_7.Size = new System.Drawing.Size(52, 32);
+            this.J_7.TabIndex = 121;
+            this.J_7.Text = "Y:";
+            this.J_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // B7
+            // 
+            this.B7.Location = new System.Drawing.Point(357, 6);
+            this.B7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B7.Name = "B7";
+            this.B7.Size = new System.Drawing.Size(79, 25);
+            this.B7.TabIndex = 24;
+            this.B7.ValueChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // EVENTUNIT_BEFORE_COORD
+            // 
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.L_4_MAPXY_5);
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.J_4);
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.B4);
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.J_5);
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.B5);
+            this.EVENTUNIT_BEFORE_COORD.Controls.Add(this.PosSyncUpdateComboBox);
+            this.EVENTUNIT_BEFORE_COORD.ErrorMessage = "";
+            this.EVENTUNIT_BEFORE_COORD.Location = new System.Drawing.Point(0, 370);
+            this.EVENTUNIT_BEFORE_COORD.Margin = new System.Windows.Forms.Padding(2);
+            this.EVENTUNIT_BEFORE_COORD.Name = "EVENTUNIT_BEFORE_COORD";
+            this.EVENTUNIT_BEFORE_COORD.Size = new System.Drawing.Size(881, 36);
+            this.EVENTUNIT_BEFORE_COORD.TabIndex = 190;
+            // 
+            // L_4_MAPXY_5
+            // 
+            this.L_4_MAPXY_5.AccessibleDescription = "@EVENTUNIT_BEFORE";
+            this.L_4_MAPXY_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_4_MAPXY_5.Location = new System.Drawing.Point(0, 2);
+            this.L_4_MAPXY_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_4_MAPXY_5.Name = "L_4_MAPXY_5";
+            this.L_4_MAPXY_5.Size = new System.Drawing.Size(128, 32);
+            this.L_4_MAPXY_5.TabIndex = 93;
+            this.L_4_MAPXY_5.Text = "配置前座標";
+            this.L_4_MAPXY_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // J_4
+            // 
+            this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_4.Location = new System.Drawing.Point(136, 2);
+            this.J_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_4.Name = "J_4";
+            this.J_4.Size = new System.Drawing.Size(52, 32);
+            this.J_4.TabIndex = 115;
+            this.J_4.Text = "X:";
+            this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // B4
+            // 
+            this.B4.Location = new System.Drawing.Point(198, 6);
+            this.B4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(79, 25);
+            this.B4.TabIndex = 21;
+            this.B4.ValueChanged += new System.EventHandler(this.B4_ValueChanged);
+            // 
+            // J_5
+            // 
+            this.J_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_5.Location = new System.Drawing.Point(294, 2);
+            this.J_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_5.Name = "J_5";
+            this.J_5.Size = new System.Drawing.Size(52, 32);
+            this.J_5.TabIndex = 117;
+            this.J_5.Text = "Y:";
+            this.J_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // B5
+            // 
+            this.B5.Location = new System.Drawing.Point(356, 5);
+            this.B5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B5.Name = "B5";
+            this.B5.Size = new System.Drawing.Size(79, 25);
+            this.B5.TabIndex = 22;
+            this.B5.ValueChanged += new System.EventHandler(this.B5_ValueChanged);
+            // 
+            // PosSyncUpdateComboBox
+            // 
+            this.PosSyncUpdateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PosSyncUpdateComboBox.FormattingEnabled = true;
+            this.PosSyncUpdateComboBox.Items.AddRange(new object[] {
+            "配置後も同時に変更",
+            "配置後、配置前は別々"});
+            this.PosSyncUpdateComboBox.Location = new System.Drawing.Point(454, 3);
+            this.PosSyncUpdateComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PosSyncUpdateComboBox.Name = "PosSyncUpdateComboBox";
+            this.PosSyncUpdateComboBox.Size = new System.Drawing.Size(405, 26);
+            this.PosSyncUpdateComboBox.TabIndex = 25;
+            // 
+            // L_2_UNIT
+            // 
+            this.L_2_UNIT.ErrorMessage = "";
+            this.L_2_UNIT.Location = new System.Drawing.Point(688, 33);
+            this.L_2_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_2_UNIT.Name = "L_2_UNIT";
+            this.L_2_UNIT.Placeholder = "";
+            this.L_2_UNIT.ReadOnly = true;
+            this.L_2_UNIT.Size = new System.Drawing.Size(160, 25);
+            this.L_2_UNIT.TabIndex = 246;
+            // 
+            // L_1_CLASSICON_UNITGROW_3
+            // 
+            this.L_1_CLASSICON_UNITGROW_3.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_1_CLASSICON_UNITGROW_3.Location = new System.Drawing.Point(400, 32);
+            this.L_1_CLASSICON_UNITGROW_3.Margin = new System.Windows.Forms.Padding(2);
+            this.L_1_CLASSICON_UNITGROW_3.Name = "L_1_CLASSICON_UNITGROW_3";
+            this.L_1_CLASSICON_UNITGROW_3.Size = new System.Drawing.Size(32, 32);
+            this.L_1_CLASSICON_UNITGROW_3.TabIndex = 251;
+            this.L_1_CLASSICON_UNITGROW_3.TabStop = false;
+            // 
+            // L_1_CLASS
+            // 
+            this.L_1_CLASS.ErrorMessage = "";
+            this.L_1_CLASS.Location = new System.Drawing.Point(202, 35);
+            this.L_1_CLASS.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_1_CLASS.Name = "L_1_CLASS";
+            this.L_1_CLASS.Placeholder = "";
+            this.L_1_CLASS.ReadOnly = true;
+            this.L_1_CLASS.Size = new System.Drawing.Size(188, 25);
+            this.L_1_CLASS.TabIndex = 243;
+            // 
+            // L_0_UNIT
+            // 
+            this.L_0_UNIT.ErrorMessage = "";
+            this.L_0_UNIT.Location = new System.Drawing.Point(200, 2);
+            this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_UNIT.Name = "L_0_UNIT";
+            this.L_0_UNIT.Placeholder = "";
+            this.L_0_UNIT.ReadOnly = true;
+            this.L_0_UNIT.Size = new System.Drawing.Size(189, 25);
+            this.L_0_UNIT.TabIndex = 240;
+            // 
+            // L_2_UNITICON
+            // 
+            this.L_2_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_2_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_2_UNITICON.Location = new System.Drawing.Point(851, 34);
+            this.L_2_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_2_UNITICON.Name = "L_2_UNITICON";
+            this.L_2_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_2_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_2_UNITICON.TabIndex = 221;
+            this.L_2_UNITICON.TabStop = false;
+            // 
+            // L_0_UNITICON
+            // 
+            this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_UNITICON.Location = new System.Drawing.Point(400, 6);
+            this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_UNITICON.Name = "L_0_UNITICON";
+            this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_0_UNITICON.TabIndex = 220;
+            this.L_0_UNITICON.TabStop = false;
+            // 
+            // L_11_ITEMICON
+            // 
+            this.L_11_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_11_ITEMICON.Location = new System.Drawing.Point(391, 331);
+            this.L_11_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_11_ITEMICON.Name = "L_11_ITEMICON";
+            this.L_11_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_11_ITEMICON.TabIndex = 105;
+            this.L_11_ITEMICON.TabStop = false;
+            // 
+            // L_10_ITEMICON
+            // 
+            this.L_10_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_10_ITEMICON.Location = new System.Drawing.Point(391, 297);
+            this.L_10_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_10_ITEMICON.Name = "L_10_ITEMICON";
+            this.L_10_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_10_ITEMICON.TabIndex = 104;
+            this.L_10_ITEMICON.TabStop = false;
+            // 
+            // L_9_ITEMICON
+            // 
+            this.L_9_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_9_ITEMICON.Location = new System.Drawing.Point(391, 262);
+            this.L_9_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_9_ITEMICON.Name = "L_9_ITEMICON";
+            this.L_9_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_9_ITEMICON.TabIndex = 103;
+            this.L_9_ITEMICON.TabStop = false;
+            // 
+            // L_8_ITEMICON
+            // 
+            this.L_8_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_8_ITEMICON.Location = new System.Drawing.Point(391, 232);
+            this.L_8_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_8_ITEMICON.Name = "L_8_ITEMICON";
+            this.L_8_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_8_ITEMICON.TabIndex = 102;
+            this.L_8_ITEMICON.TabStop = false;
+            // 
+            // L_11_ITEM
+            // 
+            this.L_11_ITEM.ErrorMessage = "";
+            this.L_11_ITEM.Location = new System.Drawing.Point(200, 328);
+            this.L_11_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_11_ITEM.Name = "L_11_ITEM";
+            this.L_11_ITEM.Placeholder = "";
+            this.L_11_ITEM.ReadOnly = true;
+            this.L_11_ITEM.Size = new System.Drawing.Size(189, 25);
+            this.L_11_ITEM.TabIndex = 78;
+            // 
+            // L_10_ITEM
+            // 
+            this.L_10_ITEM.ErrorMessage = "";
+            this.L_10_ITEM.Location = new System.Drawing.Point(199, 297);
+            this.L_10_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_10_ITEM.Name = "L_10_ITEM";
+            this.L_10_ITEM.Placeholder = "";
+            this.L_10_ITEM.ReadOnly = true;
+            this.L_10_ITEM.Size = new System.Drawing.Size(189, 25);
+            this.L_10_ITEM.TabIndex = 75;
+            // 
+            // L_9_ITEM
+            // 
+            this.L_9_ITEM.ErrorMessage = "";
+            this.L_9_ITEM.Location = new System.Drawing.Point(199, 265);
+            this.L_9_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_9_ITEM.Name = "L_9_ITEM";
+            this.L_9_ITEM.Placeholder = "";
+            this.L_9_ITEM.ReadOnly = true;
+            this.L_9_ITEM.Size = new System.Drawing.Size(189, 25);
+            this.L_9_ITEM.TabIndex = 72;
+            // 
+            // L_8_ITEM
+            // 
+            this.L_8_ITEM.ErrorMessage = "";
+            this.L_8_ITEM.Location = new System.Drawing.Point(199, 232);
+            this.L_8_ITEM.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_8_ITEM.Name = "L_8_ITEM";
+            this.L_8_ITEM.Placeholder = "";
+            this.L_8_ITEM.ReadOnly = true;
+            this.L_8_ITEM.Size = new System.Drawing.Size(189, 25);
+            this.L_8_ITEM.TabIndex = 69;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(331, 2);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(83, 25);
+            this.BlockSize.TabIndex = 1;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(551, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(160, 25);
+            this.SelectAddress.TabIndex = 2;
+            // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(1, 0);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(985, 994);
+            this.MapPictureBox.TabIndex = 0;
             // 
             // EventUnitFE6Form
             // 
@@ -1329,25 +1329,12 @@
             this.Load += new System.EventHandler(this.EventUnitFE6Form_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.EVENTUNIT_AFTER_COORD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
-            this.EVENTUNIT_BEFORE_COORD.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON_UNITGROW_3)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITGROW_LV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_11_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_10_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_9_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_ITEMICON)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B15)).EndInit();
@@ -1368,6 +1355,19 @@
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.EVENTUNIT_AFTER_COORD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
+            this.EVENTUNIT_BEFORE_COORD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_CLASSICON_UNITGROW_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_11_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_10_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_9_ITEMICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_ITEMICON)).EndInit();
             this.ResumeLayout(false);
 
         }

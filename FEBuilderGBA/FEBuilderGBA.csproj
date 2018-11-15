@@ -123,6 +123,12 @@
     <Compile Include="EventTemplate1Form.Designer.cs">
       <DependentUpon>EventTemplate1Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventUnitItemDropForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUnitItemDropForm.Designer.cs">
+      <DependentUpon>EventUnitItemDropForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportFunction.cs" />
     <Compile Include="FindBackup.cs" />
     <Compile Include="ImageRomAnimeForm.cs">
@@ -1863,6 +1869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventTemplate1Form.resx">
       <DependentUpon>EventTemplate1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventUnitItemDropForm.resx">
+      <DependentUpon>EventUnitItemDropForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageRomAnimeForm.resx">
       <DependentUpon>ImageRomAnimeForm.cs</DependentUpon>

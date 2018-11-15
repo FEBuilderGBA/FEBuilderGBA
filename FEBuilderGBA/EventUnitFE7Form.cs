@@ -627,5 +627,61 @@ namespace FEBuilderGBA
                 , mapid);
         }
 
+        static bool IsItemDropFlag(uint addr)
+        {
+            if (! U.isSafetyOffset(addr))
+            {
+                return false;
+            }
+            if (!U.isSafetyOffset(addr + 43))
+            {
+                return false;
+            }
+
+            uint a = Program.ROM.u8(addr + 43);
+            return  ((a & 0x08) == 0x08) ;
+        }
+        void UpdateItemDropLabel()
+        {
+            uint unit_id  = (uint)this.B0.Value;
+            uint class_id = (uint)this.B1.Value;
+            if (unit_id > 0)
+            {
+                unit_id--;
+            }
+            uint unit_addr = UnitForm.GetUnitAddr(unit_id);
+            uint class_addr = ClassForm.GetClassAddr(class_id);
+
+            bool isItemDrop = 
+                IsItemDropFlag(unit_addr) || IsItemDropFlag(class_addr);
+
+            if (isItemDrop)
+            {//アイテムドロップ
+                X_ITEMDROP.Text = R._("アイテムドロップ: ドロップする");
+                X_ITEMDROP.ForeColor = Color.GreenYellow;
+            }
+            else
+            {
+                X_ITEMDROP.Text = R._("アイテムドロップ: ドロップしない");
+                X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
+            }
+        }
+
+        private void X_ITEMDROP_Click(object sender, EventArgs e)
+        {
+            string str = R._("FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n");
+            R.ShowOK(str);
+        }
+
+        private void B0_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateItemDropLabel();
+        }
+
+        private void B1_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateItemDropLabel();
+        }
+
     }
 }

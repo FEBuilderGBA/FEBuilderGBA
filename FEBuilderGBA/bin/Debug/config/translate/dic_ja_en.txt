@@ -3305,6 +3305,21 @@ HPの薬	HP Tonic
 高貴なる血統	Nobility
 鬼人	Oni Savage
 鬼神の一撃	Death Blow
+鬼神飛燕の一撃	Swift Sparrow
+飛燕の一撃	Darting Blow
+鬼神金剛の一撃	Sturdy Blow
+鬼神明鏡の一撃	Mirror Strike
+飛燕明鏡の一撃	Swift Strike
+飛燕金剛の一撃	Steady Blow
+金剛の一撃	Armored Blow
+金剛明鏡の一撃	Bracing Blow
+明鏡の一撃	Warding Blow
+金剛の構え	Steady Stance
+金剛の呼吸	Steady Breath
+明鏡の構え	Warding Stance
+鬼神の構え	Fierce Stance
+アスク	Askr
+エンブラ	Embla
 魔の風	Malefic Aura
 魔剣ガングレリ	Ganglari
 魔力+2	Magic +2
@@ -3338,3 +3353,36 @@ HPの薬	HP Tonic
 鼠神・子	Rat Spirit
 龍神・辰	Dragon Spirit
 ＨＰの薬	HP Tonic
+ソードドラゴン	Sword Dragon
+ランスドラゴン	Lance Dragon
+アクスドラゴン	Axe Dragon
+ソードペガサス	Sword Pegasus
+ランスペガサス	Lance Pegasus
+アクスペガサス	Axe Pegasus
+ランスアーマー	Lance Armor
+レッドナイト	Red Knight
+ブルーナイト	Blue Knight
+グリーンナイト	Green Knight
+ボウナイト	Bow Knight
+ロッドナイト	Rod Knight
+ソードファイター	Sword Fighter
+ランスファイター	Lance Fighter
+アクスファイター	Axe Fighter
+レッドマージ	Red Mage
+ブルーマージ	Blue Mage
+グリーンマージ	Green Mage
+ボウファイター	Bow Fighter
+ラウアマムクート	Rauor Mamkute
+ブラーマムクート	Blar Mamkute
+グルンマムクート	Gronn Mamkute
+アルフォンス	Alfonse
+シャロン	Sharena
+フィヨルム	Fjorm
+スリーズ	Gunnthra
+エクラ	Kiran
+ヴェロニカ	Veronica
+ブルーノ	Bruno
+ロキ	Loki
+スルト	Surtr
+レーヴァテイン	Laevatein
+レーギャルン	Laegjarn

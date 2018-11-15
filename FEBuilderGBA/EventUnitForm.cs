@@ -1023,6 +1023,8 @@ namespace FEBuilderGBA
 
                 FE8CoordList.Add(pos);
             }
+            //アイテムドロップ
+            UpdateItemDropLabel();
         }
 
         Size FE8CoordListBox_Draw(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
@@ -1858,6 +1860,9 @@ namespace FEBuilderGBA
         {
             ControlPanel.Hide();
             DrawAllUnits();
+
+            //アイテムドロップの更新
+            UpdateItemDropLabel();
         }
 
         private void FE8CoordListBox_KeyDown(object sender, KeyEventArgs e)
@@ -2034,6 +2039,9 @@ namespace FEBuilderGBA
 
             //コントロールパネルを閉じたくない.
             ControlPanel.Show();
+
+            //アイテムドロップの更新
+            UpdateItemDropLabel();
         }
 
         private void DownButton_Click(object sender, EventArgs e)
@@ -2052,6 +2060,9 @@ namespace FEBuilderGBA
 
             //コントロールパネルを閉じたくない.
             ControlPanel.Show();
+
+            //アイテムドロップの更新
+            UpdateItemDropLabel();
         }
         class UndoData
         {
@@ -2123,6 +2134,7 @@ namespace FEBuilderGBA
             }
             this.UndoPosstion = UndoPosstion + 1;
             RunUndoRollback(this.UndoBuffer[UndoPosstion]);
+            UpdateItemDropLabel();
         }
         void RunUndoRollback(UndoData u)
         {
@@ -2249,6 +2261,73 @@ namespace FEBuilderGBA
         }
 
         public const uint INVALIDATE_UNIT_POINTER = 0xFFFFFF;
+
+        private void X_ITEMDROP_Click(object sender, EventArgs e)
+        {
+            if (this.FE8CoordList.Count <= 0)
+            {
+                return;
+            }
+
+            EventUnitItemDropForm f = (EventUnitItemDropForm)InputFormRef.JumpFormLow<EventUnitItemDropForm>();
+            DialogResult dr = f.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.Cancel)
+            {
+                return;
+            }
+
+            PushUndo();
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.FE8CoordList[0].ext = 2;
+            }
+            else if (dr == System.Windows.Forms.DialogResult.No)
+            {
+                if (this.FE8CoordList[0].ext == 2)
+                {
+                    this.FE8CoordList[0].ext = 0;
+                }
+            }
+            //移動リストの再描画
+            FE8CoordListBox.Invalidate();
+            if (ControlPanel.Visible)
+            {
+                int index = FE8CoordListBox.SelectedIndex;
+                if (index == 0)
+                {//もし、移動設定ダイアログの最初のが表示されている場合、
+                    //表示も更新しないと、おかしなことになる.
+                    U.ForceUpdate(F_EXT, (int)this.FE8CoordList[0].ext);
+                }
+            }
+            //アイテムドロップのラベルの更新
+            UpdateItemDropLabel();
+            //設定を変更したので、ライトボタンの点灯
+            InputFormRef.WriteButtonToYellow(WriteButton, true);
+        }
+        void UpdateItemDropLabel()
+        {
+            uint ext;
+            if (this.FE8CoordList.Count <= 0)
+            {
+                ext = 0;
+            }
+            else
+            {
+                ext = this.FE8CoordList[0].ext;
+            }
+
+            if (ext == 2)
+            {//アイテムドロップ
+                X_ITEMDROP.Text = R._("アイテムドロップ: ドロップする");
+                X_ITEMDROP.ForeColor = Color.GreenYellow;
+            }
+            else
+            {
+                X_ITEMDROP.Text = R._("アイテムドロップ: ドロップしない");
+                X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
+            }
+        }
+
     }
 
 }

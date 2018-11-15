@@ -2215,18 +2215,6 @@ Pointer to read unit is specified incorrectly.: {0}.
 :ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}
 Reading unit There is a problem with the data of the {0}, {1} th unit.: {2}.
 
-:配置後座標
-Post-placement
-
-:配置前座標
-Pre-placement
-
-:配置後も同時に変更
-Change at the same time after placement
-
-:配置後、配置前は別々
-After placement, separately before arrangement
-
 :成長させない
 Do not grow
 
@@ -2279,10 +2267,10 @@ Unit Number
 30=Special weapon holders
 
 :死亡時セリフへJump
-Use Death Quote
+Jump to Death Quote
 
 :交戦時セリフへJump
-Use Battle Quote
+Jump to Battle Quote
 
 :00=退避行動を取る
 00=Retreat
@@ -2320,8 +2308,29 @@ Alloc New Space
 :イベント名前
 Event Name
 
+:配置後座標
+Post-placement
+
+:配置前座標
+Pre-placement
+
+:配置後も同時に変更
+Change at the same time after placement
+
+:配置後、配置前は別々
+After placement, separately before arrangement
+
 :ユニット配置
 Unit Placer
+
+:アイテムドロップ: ドロップする
+Item Drop:To drop
+
+:アイテムドロップ: ドロップしない
+Item Drop:Do not drop
+
+:FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n
+To make an item fall on FE 7, enable the bit of the drop item of characteristic 4 of unit or class.\r\n
 
 :標的と回復AI
 Target AI
@@ -2362,6 +2371,9 @@ Target AI
 :交戦時BGMへJump
 Jump to BGM During Battle
 
+:アイテムドロップ
+Item Drop
+
 :このユニットが行動し終わった後に行動します。\r\n利用しない場合は、0を指定してください。
 It will act after this unit is done.\r\nIf you do not want to use it, please specify 0.
 
@@ -2394,9 +2406,6 @@ None
 
 :魔物
 Monster
-
-:アイテムドロップ
-Item Drop
 
 :魔物ランダム
 Random Monster
@@ -2448,6 +2457,15 @@ After Moving
 
 :配置後座標格納アドレス
 Post-place coordinate storage
+
+:アイテムドロップする
+Drop item
+
+:アイテムドロップしない
+Do not drop items
+
+:この敵を倒すと、アイテムドロップするようにしますか？\r\nアイテムドロップする場合、一番最後に持っているアイテムが対象になります。
+Do you want to drop items when you defeat this enemy?\r\nWhen dropping an item, items that you have at the very end are eligible.
 
 :確保
 Reserve
@@ -4302,9 +4320,6 @@ Set items possessed by the unit.\r\nThe weapon at the top of the unit becomes th
 
 :FE6でアイテムを落とすようにするには、FE6-Droppable Itemsパッチを適応したあとで、AI4(退避AI)に0x40のビットフラグを立ててください。\r\n
 In order to drop the item with FE 6, after applying the FE 6 - Droppable Items patch, set the 0x40 bit flag to AI 4 (save AI).\r\n
-
-:FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n
-To make an item fall on FE 7, enable the bit of the drop item of characteristic 4 of unit or class.\r\n
 
 :FE8でアイテムを落とすようにするには、ユニットの一番最初の座標データにある特殊設定をアイテムドロップに変更します。\r\n
 In order to drop an item with FE 8, change the special setting in the unit's first coordinate data to item drop.\r\n
