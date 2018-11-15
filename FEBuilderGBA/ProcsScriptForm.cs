@@ -106,6 +106,7 @@ namespace FEBuilderGBA
         class FindProc
         {
             Dictionary<uint, string> ProcsName;
+            Dictionary<uint, string> ProcsNameByAddr;
             Dictionary<uint, bool> AlreadyMatch = new Dictionary<uint, bool>();
             List<Address> List;
             List<Address> SubDataList;
@@ -113,6 +114,7 @@ namespace FEBuilderGBA
             public FindProc(List<Address> list, List<Address> subDataList, List<DisassemblerTrumb.LDRPointer> ldrmap)
             {
                 this.ProcsName = U.LoadDicResource(U.ConfigDataFilename("6c_name_"));
+                this.ProcsNameByAddr = MakeProcNameByAddr(this.ProcsName);
                 this.List = list;
                 this.SubDataList = subDataList;
 
@@ -152,7 +154,22 @@ namespace FEBuilderGBA
 
             }
 
-            bool IsTooShort(uint length,uint addr)
+            Dictionary<uint, string> MakeProcNameByAddr(Dictionary<uint, string> procsName)
+            {
+                Dictionary<uint, string> ret = new Dictionary<uint, string>();
+                foreach (var pair in procsName)
+                {
+                    if (!U.isSafetyOffset(pair.Key))
+                    {
+                        continue;
+                    }
+                    uint p = Program.ROM.p32(pair.Key);
+                    ret[p] = pair.Value;
+                }
+                return ret;
+            }
+
+            bool IsTooShort(uint length, uint addr)
             {
                 if (length >= 8 * 2)
                 {
@@ -180,7 +197,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                string name = Get6CName2(addr, length, U.at(ProcsName, pointer), U.at(ProcsName, pointer));
+                string name = Get6CName2(addr, length, U.at(ProcsName, pointer), U.at(ProcsNameByAddr, addr));
                 FEBuilderGBA.Address.AddAddress(this.List, addr, length, pointer, name , Address.DataTypeEnum.PROCS);
                 this.AlreadyMatch[addr] = true;
 

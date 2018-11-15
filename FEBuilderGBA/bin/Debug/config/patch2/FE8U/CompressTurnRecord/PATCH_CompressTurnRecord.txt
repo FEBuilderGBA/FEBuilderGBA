@@ -1,0 +1,34 @@
+NAME=クリアターン数を記録できるRAM領域を増やす
+INFO=クリアターン数を記録する領域を2倍に増やします。\r\nクリアターン数を記録する部分には、時刻を記録する部分があります。\r\nしかし、時刻は利用されていないので、この領域を潰して、クリアターン数を記録する領域として再利用します。\r\nこのパッチは、RAMの領域を改変するので、大量の章を作りたい場合のみ利用してください。
+
+//
+//章ID + ターン数<<7 , 時刻  == 4byte
+//↓
+//章ID + ターン数<<7 == 2byte
+//
+
+AUTHOR=7743
+TYPE=SWITCH
+
+COMBO=Default|OFF|Fix|ONN
+
+OFF:0x0A4168=0x04
+ONN:0x0A4168=0x02
+
+OFF:0x0A42D6=0x04
+ONN:0x0A42D6=0x02
+
+OFF:0x0A4318=0x04
+ONN:0x0A4318=0x02
+
+OFF:0x0A429C=0x80
+ONN:0x0A429C=0x40	//(lsl r0,r0,#0x2 -> lsl r0,r0,#0x1)
+
+//時刻を書込している場所を飛ばす.
+OFF:0x0A43A0=0x6E 0x80
+ONN:0x0A43A0=0x00 0x00
+
+NAME.en=Increase the RAM area that can record the number of clear turns
+INFO.en=Doubles the area for recording the number of clear turns.\r\nThere is a part to record the time in the part to record the clear turn number.\r\nHowever, since the time is not used, we will crush this area and reuse it as an area to record the number of clear turns.\r\nSince this patch modifies the area of ​​RAM, please use it only when you want to create a large number of chapters.
+NAME.zh=增加可记录清晰转弯次数的RAM区域
+INFO.zh=将区域加倍以记录清晰转弯的次数。\r\n有一部分记录部件中记录清晰转弯的时间。\r\n但是，由于没有使用时间，我们将粉碎该区域并将其重新用作记录清晰转弯次数的区域。\r\n由于此修补程序修改了RAM的区域，因此仅在您要创建大量章节时才使用它。

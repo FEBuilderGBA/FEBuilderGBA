@@ -8,5 +8,5 @@ PATCHED_IF:0xa4404=0x01 0x20 0x70 0x47
 BIN:0xa4404=Fix_DoesThisChapterCount.dmp
 
 AUTHOR=7743
-INFO.en=This Function will judge whether the chapter deserves capture evaluation, but it should evaluate all the chapters written in the offense turn.\r\nIt is safe to always answer that it is the target chapter.
+INFO.en=This Function will judge whether the chapter deserves capture evaluation, but it should evaluate all the chapters written in the Record.\r\nIt is safe to always answer that it is the target chapter.
 INFO.zh=我们将判断该章是否值得进行捕获评估，但我们应该评估在攻击转向中写的所有章节。\r\n总是回答它是目标章节是安全的。

@@ -953,6 +953,10 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                if (filename.IndexOf("song_instrument") == 0)
+                {
+                    continue;
+                }
 
                 string langfilename = System.IO.Path.Combine(path, filename + "." + this.Lang + ".txt");
                 UpdateData(data[i], langfilename);

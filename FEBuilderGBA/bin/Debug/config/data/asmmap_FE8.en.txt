@@ -11252,3 +11252,5 @@ r3=X tile position of menu of the right	{U}
 080A858C	Subroutine to give martial player name and strategy evaluation	{J}
 080314B0	Capture evaluation called from GAMECTRL	{U}
 080A3B48	Subroutine to give martial player name and strategy evaluation	{U}
+08009CF8	If the suppression flag 0x03 is set, write the number of clear turns	{J}
+08009D98	If the suppression flag 0x03 is set, write the number of clear turns	{U}
