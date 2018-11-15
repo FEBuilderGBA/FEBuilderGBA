@@ -2841,6 +2841,7 @@ HPの薬	HP Tonic
 奇襲任務	Opportunist
 奥深い山野	Countryside
 奥義の書	Occult
+奥義	Occult
 女の子好き	Sisterhood
 女の本性	Unmask
 女神の像	Goddess Icon
@@ -3386,3 +3387,22 @@ HPの薬	HP Tonic
 スルト	Surtr
 レーヴァテイン	Laevatein
 レーギャルン	Laegjarn
+死線	Life and Death
+スキルの書	Skill Book
+レザー	Leather Shield
+鉄の盾	Iron Shield
+鋼の盾	Steel Shield
+銀の盾	Silver Shield
+ペルシーダ	Perushida
+ドラゴンシールド	Dragon Shield
+祈りペンダント	MiraclePendant
+アロンダイト	Aroundight
+グレートソード	Great Sword
+グレートランス	Great Lance
+グレートアクス	Great Axe
+グレートボウ	Great Bow
+マスターソード	Master Sword
+マスターランス	Master Lance
+マスターアクス	Master Axe
+マスターボウ	Master Bow
+ウィンド	Wind

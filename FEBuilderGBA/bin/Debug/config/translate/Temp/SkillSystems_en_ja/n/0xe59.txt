@@ -1,0 +1,2 @@
+Amaterasu: Allies within 2 tiles[N]
+recover 20% HP each turn.[X]

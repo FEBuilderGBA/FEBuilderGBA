@@ -1,0 +1,2 @@
+Counter: Physical damage taken[N]
+at 1-2 range is reflected.[X]

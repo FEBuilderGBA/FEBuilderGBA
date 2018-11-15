@@ -2324,10 +2324,10 @@ After placement, separately before arrangement
 Unit Placer
 
 :アイテムドロップ: ドロップする
-Item Drop:To drop
+Item Drop: Yes
 
 :アイテムドロップ: ドロップしない
-Item Drop:Do not drop
+Item Drop: No
 
 :FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n
 To make an item fall on FE 7, enable the bit of the drop item of characteristic 4 of unit or class.\r\n
