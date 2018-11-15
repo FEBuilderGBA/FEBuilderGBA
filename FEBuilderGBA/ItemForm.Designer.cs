@@ -719,7 +719,7 @@
             this.panel9.Controls.Add(this.B28);
             this.panel9.Controls.Add(this.label41);
             this.panel9.Controls.Add(this.J_28);
-            this.panel9.Location = new System.Drawing.Point(3, 556);
+            this.panel9.Location = new System.Drawing.Point(2, 556);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(769, 55);

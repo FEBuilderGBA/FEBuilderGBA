@@ -19,6 +19,7 @@ namespace FEBuilderGBA
         private void EventUnitItemDropForm_Load(object sender, EventArgs e)
         {
             FormIcon.Image = SystemIcons.Question.ToBitmap();
+            YesButton.ForeColor = OptionForm.Color_ControlComment_ForeColor();
             YesButton.Focus();
         }
 

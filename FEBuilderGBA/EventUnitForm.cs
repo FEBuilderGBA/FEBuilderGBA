@@ -2319,7 +2319,7 @@ namespace FEBuilderGBA
             if (ext == 2)
             {//アイテムドロップ
                 X_ITEMDROP.Text = R._("アイテムドロップ: ドロップする");
-                X_ITEMDROP.ForeColor = Color.GreenYellow;
+                X_ITEMDROP.ForeColor = OptionForm.Color_ControlComment_ForeColor();
             }
             else
             {

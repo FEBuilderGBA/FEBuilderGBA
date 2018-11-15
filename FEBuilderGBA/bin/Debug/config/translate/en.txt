@@ -2215,6 +2215,18 @@ Pointer to read unit is specified incorrectly.: {0}.
 :ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}
 Reading unit There is a problem with the data of the {0}, {1} th unit.: {2}.
 
+:配置後座標
+Post-placement
+
+:配置前座標
+Pre-placement
+
+:配置後も同時に変更
+Change at the same time after placement
+
+:配置後、配置前は別々
+After placement, separately before arrangement
+
 :成長させない
 Do not grow
 
@@ -2308,18 +2320,6 @@ Alloc New Space
 :イベント名前
 Event Name
 
-:配置後座標
-Post-placement
-
-:配置前座標
-Pre-placement
-
-:配置後も同時に変更
-Change at the same time after placement
-
-:配置後、配置前は別々
-After placement, separately before arrangement
-
 :ユニット配置
 Unit Placer
 
@@ -2368,11 +2368,11 @@ Target AI
 :04=回復モードにならない
 04=Not in recovery mode
 
-:交戦時BGMへJump
-Jump to BGM During Battle
-
 :アイテムドロップ
 Item Drop
+
+:交戦時BGMへJump
+Jump to BGM During Battle
 
 :このユニットが行動し終わった後に行動します。\r\n利用しない場合は、0を指定してください。
 It will act after this unit is done.\r\nIf you do not want to use it, please specify 0.
@@ -2855,7 +2855,7 @@ Battle animation is extremely few.It may be damaged.
 Weapon type
 
 :アニメ番号
-Animation number
+Animation ID
 
 :領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
 Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
@@ -2876,7 +2876,7 @@ Generic Color
 It is a battle animation with more than 16 colors.
 
 :グレー
-gray
+Gray
 
 :拡大して描画
 Zoom and Draw
@@ -3290,7 +3290,7 @@ Music icon
 Weapon
 
 :やじるし
-Harassment
+Arrow
 
 :汎用
 General Purpose
@@ -3299,7 +3299,7 @@ General Purpose
 System Palette
 
 :画像からパレット読込
-Import Palette from Image
+Import Palette
 
 :4軍
 Fourth
@@ -5969,7 +5969,7 @@ Tile Changes
 Import From File
 
 :タイルの拡大
-Expansion of tiles
+tile	s Zoom
 
 :マップ変化追加
 Expand Tile Changes
@@ -7594,6 +7594,9 @@ Set the debugger to be started when Ctrl + F5 is pressed.\r\nFEBuilderGBA can tr
 :sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。
 When sappy is set, you can play BGM when you click the note button.\r\nWhen installing sappy, it is convenient to use the installer written in the manual.
 
+:FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。
+In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlease install EA Ver 11 or higher.
+
 :パス
 Path
 
@@ -8043,6 +8046,9 @@ File Export Settings
 
 :保存
 Save
+
+:コントロールのコメント文字色
+Control comment text color
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -9074,7 +9080,7 @@ Export Music
 Import Music
 
 :トラック数
-Number of tracks
+Tracks
 
 :mid2agbが設定されていません。\r\n設定画面より、mid2agbの設定をしてください。
 mid2agb is not set.\r\nPlease set mid2agb from setting screen.

@@ -1565,7 +1565,7 @@
             this.panel5.Controls.Add(this.J_29);
             this.panel5.Controls.Add(this.J_28);
             this.panel5.Controls.Add(this.X_GROW);
-            this.panel5.Location = new System.Drawing.Point(260, 269);
+            this.panel5.Location = new System.Drawing.Point(261, 269);
             this.panel5.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(936, 54);

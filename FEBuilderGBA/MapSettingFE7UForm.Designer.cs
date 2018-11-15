@@ -452,6 +452,9 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label68);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.L_20_DIFFCULTY);
             this.panel3.Controls.Add(this.W20);
             this.panel3.Controls.Add(this.J_20_DIFFCULTY);
@@ -513,7 +516,6 @@
             this.panel3.Controls.Add(this.J_104);
             this.panel3.Controls.Add(this.J_100);
             this.panel3.Controls.Add(this.J_96);
-            this.panel3.Controls.Add(this.label68);
             this.panel3.Controls.Add(this.W94);
             this.panel3.Controls.Add(this.J_94);
             this.panel3.Controls.Add(this.B61);
@@ -582,8 +584,6 @@
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.B45);
             this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.L_42_SONGPLAY);
             this.panel3.Controls.Add(this.L_42_SONG);
             this.panel3.Controls.Add(this.L_40_SONGPLAY);

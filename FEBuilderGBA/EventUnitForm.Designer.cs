@@ -1812,10 +1812,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 28;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Location = new System.Drawing.Point(-2, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(302, 340);
+            this.AddressList.Size = new System.Drawing.Size(304, 340);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 

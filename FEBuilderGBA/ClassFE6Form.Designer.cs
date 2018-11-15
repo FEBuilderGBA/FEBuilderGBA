@@ -1666,7 +1666,7 @@
             // 
             this.label37.AccessibleDescription = "@WEAPONLV";
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(-1, 29);
+            this.label37.Location = new System.Drawing.Point(-1, 35);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(228, 30);

@@ -462,7 +462,7 @@
             // JumpToITEMEFFECT
             // 
             this.JumpToITEMEFFECT.AutoSize = true;
-            this.JumpToITEMEFFECT.Location = new System.Drawing.Point(705, 647);
+            this.JumpToITEMEFFECT.Location = new System.Drawing.Point(699, 648);
             this.JumpToITEMEFFECT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.JumpToITEMEFFECT.Name = "JumpToITEMEFFECT";
             this.JumpToITEMEFFECT.Size = new System.Drawing.Size(152, 18);
@@ -480,17 +480,17 @@
             this.panel10.Controls.Add(this.L_31_COMBO);
             this.panel10.Controls.Add(this.B31);
             this.panel10.Controls.Add(this.label29);
-            this.panel10.Location = new System.Drawing.Point(-8, 611);
+            this.panel10.Location = new System.Drawing.Point(-1, 611);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(709, 55);
+            this.panel10.Size = new System.Drawing.Size(696, 55);
             this.panel10.TabIndex = 73;
             // 
             // L_30_COMBO
             // 
             this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_30_COMBO.FormattingEnabled = true;
-            this.L_30_COMBO.Location = new System.Drawing.Point(152, 25);
+            this.L_30_COMBO.Location = new System.Drawing.Point(156, 25);
             this.L_30_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_30_COMBO.Name = "L_30_COMBO";
             this.L_30_COMBO.Size = new System.Drawing.Size(256, 26);
@@ -501,7 +501,7 @@
             this.B30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B30.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B30.Hexadecimal = true;
-            this.B30.Location = new System.Drawing.Point(82, 26);
+            this.B30.Location = new System.Drawing.Point(80, 26);
             this.B30.Margin = new System.Windows.Forms.Padding(2);
             this.B30.Maximum = new decimal(new int[] {
             255,
@@ -518,7 +518,7 @@
             this.J_30_ITEMUSAGEPOINTER.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_30_ITEMUSAGEPOINTER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30_ITEMUSAGEPOINTER.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_30_ITEMUSAGEPOINTER.Location = new System.Drawing.Point(82, 0);
+            this.J_30_ITEMUSAGEPOINTER.Location = new System.Drawing.Point(80, 0);
             this.J_30_ITEMUSAGEPOINTER.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_30_ITEMUSAGEPOINTER.Name = "J_30_ITEMUSAGEPOINTER";
             this.J_30_ITEMUSAGEPOINTER.Size = new System.Drawing.Size(326, 25);
@@ -531,10 +531,10 @@
             this.X_JUMP_USEITEM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_JUMP_USEITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_JUMP_USEITEM.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_JUMP_USEITEM.Location = new System.Drawing.Point(7, 26);
+            this.X_JUMP_USEITEM.Location = new System.Drawing.Point(1, 26);
             this.X_JUMP_USEITEM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_JUMP_USEITEM.Name = "X_JUMP_USEITEM";
-            this.X_JUMP_USEITEM.Size = new System.Drawing.Size(69, 25);
+            this.X_JUMP_USEITEM.Size = new System.Drawing.Size(75, 25);
             this.X_JUMP_USEITEM.TabIndex = 83;
             this.X_JUMP_USEITEM.Text = "効果";
             this.X_JUMP_USEITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -546,13 +546,13 @@
             this.L_31_COMBO.Location = new System.Drawing.Point(505, 26);
             this.L_31_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_31_COMBO.Name = "L_31_COMBO";
-            this.L_31_COMBO.Size = new System.Drawing.Size(170, 26);
+            this.L_31_COMBO.Size = new System.Drawing.Size(187, 26);
             this.L_31_COMBO.TabIndex = 80;
             // 
             // B31
             // 
             this.B31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B31.Location = new System.Drawing.Point(442, 26);
+            this.B31.Location = new System.Drawing.Point(436, 26);
             this.B31.Margin = new System.Windows.Forms.Padding(2);
             this.B31.Maximum = new decimal(new int[] {
             255,
@@ -568,10 +568,10 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label29.Location = new System.Drawing.Point(442, -1);
+            this.label29.Location = new System.Drawing.Point(436, -1);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(232, 25);
+            this.label29.Size = new System.Drawing.Size(259, 25);
             this.label29.TabIndex = 78;
             this.label29.Text = "ダメージ追加効果";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -586,7 +586,7 @@
             this.panel9.Controls.Add(this.B28);
             this.panel9.Controls.Add(this.label41);
             this.panel9.Controls.Add(this.label42);
-            this.panel9.Location = new System.Drawing.Point(1, 555);
+            this.panel9.Location = new System.Drawing.Point(-1, 555);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(699, 55);
@@ -669,7 +669,7 @@
             this.label41.Location = new System.Drawing.Point(-1, 28);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(69, 25);
+            this.label41.Size = new System.Drawing.Size(75, 25);
             this.label41.TabIndex = 45;
             this.label41.Text = "レベル";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -700,7 +700,7 @@
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.W26);
             this.panel8.Controls.Add(this.J_26);
-            this.panel8.Location = new System.Drawing.Point(1, 498);
+            this.panel8.Location = new System.Drawing.Point(-1, 498);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(699, 55);
@@ -798,7 +798,7 @@
             this.label10.Location = new System.Drawing.Point(-1, 28);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 25);
+            this.label10.Size = new System.Drawing.Size(75, 25);
             this.label10.TabIndex = 45;
             this.label10.Text = "価格";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -854,7 +854,7 @@
             this.panel7.Controls.Add(this.label23);
             this.panel7.Controls.Add(this.J_20);
             this.panel7.Controls.Add(this.B22);
-            this.panel7.Location = new System.Drawing.Point(1, 441);
+            this.panel7.Location = new System.Drawing.Point(-1, 441);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(699, 55);
@@ -886,7 +886,7 @@
             this.label28.Location = new System.Drawing.Point(-1, 28);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(69, 25);
+            this.label28.Size = new System.Drawing.Size(75, 25);
             this.label28.TabIndex = 45;
             this.label28.Text = "性能";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1143,7 +1143,7 @@
             this.panel4.Controls.Add(this.label67);
             this.panel4.Controls.Add(this.P12);
             this.panel4.Controls.Add(this.J_12_ITEMSTATBOOSTER);
-            this.panel4.Location = new System.Drawing.Point(1, 379);
+            this.panel4.Location = new System.Drawing.Point(-1, 379);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1045, 58);

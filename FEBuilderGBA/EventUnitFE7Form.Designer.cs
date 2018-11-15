@@ -78,6 +78,7 @@
             this.L_9_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_8_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.X_ITEMDROP = new System.Windows.Forms.Label();
             this.JUMP_BATTLEBGM = new System.Windows.Forms.Label();
             this.JUMP_HAIKU = new System.Windows.Forms.Label();
             this.JUMP_BATTLETALK = new System.Windows.Forms.Label();
@@ -123,7 +124,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
             this.label12 = new System.Windows.Forms.Label();
-            this.X_ITEMDROP = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.EVENTUNIT_AFTER_COORD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
@@ -805,6 +805,19 @@
             this.panel10.Size = new System.Drawing.Size(386, 134);
             this.panel10.TabIndex = 92;
             // 
+            // X_ITEMDROP
+            // 
+            this.X_ITEMDROP.AutoSize = true;
+            this.X_ITEMDROP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_ITEMDROP.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.X_ITEMDROP.Location = new System.Drawing.Point(16, 102);
+            this.X_ITEMDROP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.X_ITEMDROP.Name = "X_ITEMDROP";
+            this.X_ITEMDROP.Size = new System.Drawing.Size(114, 18);
+            this.X_ITEMDROP.TabIndex = 4;
+            this.X_ITEMDROP.Text = "アイテムドロップ";
+            this.X_ITEMDROP.Click += new System.EventHandler(this.X_ITEMDROP_Click);
+            // 
             // JUMP_BATTLEBGM
             // 
             this.JUMP_BATTLEBGM.AutoSize = true;
@@ -1170,10 +1183,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 28;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Location = new System.Drawing.Point(-2, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(302, 368);
+            this.AddressList.Size = new System.Drawing.Size(304, 368);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             this.AddressList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressList_KeyDown);
@@ -1345,19 +1358,6 @@
             this.label12.TabIndex = 157;
             this.label12.Text = "マップ名前";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // X_ITEMDROP
-            // 
-            this.X_ITEMDROP.AutoSize = true;
-            this.X_ITEMDROP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.X_ITEMDROP.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_ITEMDROP.Location = new System.Drawing.Point(16, 102);
-            this.X_ITEMDROP.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.X_ITEMDROP.Name = "X_ITEMDROP";
-            this.X_ITEMDROP.Size = new System.Drawing.Size(114, 18);
-            this.X_ITEMDROP.TabIndex = 4;
-            this.X_ITEMDROP.Text = "アイテムドロップ";
-            this.X_ITEMDROP.Click += new System.EventHandler(this.X_ITEMDROP_Click);
             // 
             // EventUnitFE7Form
             // 

@@ -33,6 +33,7 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.W20 = new System.Windows.Forms.NumericUpDown();
             this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
             this.X_MAPSTYLE_CHANGE = new System.Windows.Forms.Label();
@@ -41,6 +42,11 @@
             this.J_146 = new System.Windows.Forms.Label();
             this.J_145 = new System.Windows.Forms.Label();
             this.L_19_COMBO = new System.Windows.Forms.ComboBox();
+            this.L_126_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_124_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.L_122_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.L_120_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.L_118_TEXT = new FEBuilderGBA.TextBoxEx();
             this.L_140_COMBO = new System.Windows.Forms.ComboBox();
             this.B127 = new System.Windows.Forms.NumericUpDown();
             this.B147 = new System.Windows.Forms.NumericUpDown();
@@ -153,16 +159,20 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.L_42_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_42_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_40_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_40_SONG = new FEBuilderGBA.TextBoxEx();
             this.W42 = new System.Windows.Forms.NumericUpDown();
             this.J_42_SONG = new System.Windows.Forms.Label();
             this.W40 = new System.Windows.Forms.NumericUpDown();
             this.J_40_SONG = new System.Windows.Forms.Label();
             this.L_38_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_38_SONG = new FEBuilderGBA.TextBoxEx();
             this.W38 = new System.Windows.Forms.NumericUpDown();
             this.J_38_SONG = new System.Windows.Forms.Label();
             this.J_ID_MAPEXITPOINT = new System.Windows.Forms.Label();
             this.J_14_IMAGECHAPTER = new System.Windows.Forms.Label();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.B44 = new System.Windows.Forms.NumericUpDown();
             this.B143 = new System.Windows.Forms.NumericUpDown();
             this.label151 = new System.Windows.Forms.Label();
@@ -173,8 +183,10 @@
             this.J_141 = new System.Windows.Forms.Label();
             this.B140 = new System.Windows.Forms.NumericUpDown();
             this.J_140 = new System.Windows.Forms.Label();
+            this.L_138_TEXT_MAPGOAL1 = new FEBuilderGBA.TextBoxEx();
             this.W138 = new System.Windows.Forms.NumericUpDown();
             this.J_138_TEXT = new System.Windows.Forms.Label();
+            this.L_136_TEXT_MAPGOAL2 = new FEBuilderGBA.TextBoxEx();
             this.W136 = new System.Windows.Forms.NumericUpDown();
             this.J_136_TEXT = new System.Windows.Forms.Label();
             this.W134 = new System.Windows.Forms.NumericUpDown();
@@ -183,16 +195,23 @@
             this.J_117_WORLDMAPEVENT = new System.Windows.Forms.Label();
             this.B116 = new System.Windows.Forms.NumericUpDown();
             this.J_116_PLIST_EVENT = new System.Windows.Forms.Label();
+            this.L_114_TEXT_MAPNAME1 = new FEBuilderGBA.TextBoxEx();
+            this.L_112_TEXT_MAPNAME1 = new FEBuilderGBA.TextBoxEx();
             this.W114 = new System.Windows.Forms.NumericUpDown();
             this.J_114_TEXT = new System.Windows.Forms.Label();
             this.W112 = new System.Windows.Forms.NumericUpDown();
             this.J_112_TEXT = new System.Windows.Forms.Label();
             this.J_44 = new System.Windows.Forms.Label();
             this.L_30_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_36_SONG_MAP = new FEBuilderGBA.TextBoxEx();
+            this.L_34_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.W34 = new System.Windows.Forms.NumericUpDown();
             this.J_34_SONG = new System.Windows.Forms.Label();
             this.L_32_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_32_SONG_MAP = new FEBuilderGBA.TextBoxEx();
+            this.L_30_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.L_28_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_28_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.W32 = new System.Windows.Forms.NumericUpDown();
             this.J_32_SONG = new System.Windows.Forms.Label();
             this.W30 = new System.Windows.Forms.NumericUpDown();
@@ -200,8 +219,11 @@
             this.W28 = new System.Windows.Forms.NumericUpDown();
             this.J_28_SONG = new System.Windows.Forms.Label();
             this.L_26_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_26_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.L_24_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_24_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.L_22_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_22_SONG_MAP = new FEBuilderGBA.TextBoxEx();
             this.W26 = new System.Windows.Forms.NumericUpDown();
             this.J_26_SONG = new System.Windows.Forms.Label();
             this.W24 = new System.Windows.Forms.NumericUpDown();
@@ -240,6 +262,7 @@
             this.J_6_PLIST_PAL = new System.Windows.Forms.Label();
             this.W4 = new System.Windows.Forms.NumericUpDown();
             this.J_4_PLIST_OBJ = new System.Windows.Forms.Label();
+            this.L_0_CSTRING = new FEBuilderGBA.TextBoxEx();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -254,36 +277,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
-            this.L_126_PORTRAIT_AUTO = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_124_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.L_122_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.L_120_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.L_118_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.L_42_SONG = new FEBuilderGBA.TextBoxEx();
-            this.L_40_SONG = new FEBuilderGBA.TextBoxEx();
-            this.L_38_SONG = new FEBuilderGBA.TextBoxEx();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.L_138_TEXT_MAPGOAL1 = new FEBuilderGBA.TextBoxEx();
-            this.L_136_TEXT_MAPGOAL2 = new FEBuilderGBA.TextBoxEx();
-            this.L_114_TEXT_MAPNAME1 = new FEBuilderGBA.TextBoxEx();
-            this.L_112_TEXT_MAPNAME1 = new FEBuilderGBA.TextBoxEx();
-            this.L_36_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_34_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_32_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_30_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_28_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_26_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_24_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_22_SONG_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_0_CSTRING = new FEBuilderGBA.TextBoxEx();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.W36)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B147)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B146)).BeginInit();
@@ -381,7 +382,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).BeginInit();
             this.SuspendLayout();
             // 
             // L_36_SONGPLAY
@@ -433,6 +433,9 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label68);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.L_20_DIFFCULTY);
             this.panel3.Controls.Add(this.W20);
             this.panel3.Controls.Add(this.J_20_DIFFCULTY);
@@ -487,7 +490,6 @@
             this.panel3.Controls.Add(this.label70);
             this.panel3.Controls.Add(this.label71);
             this.panel3.Controls.Add(this.label72);
-            this.panel3.Controls.Add(this.label68);
             this.panel3.Controls.Add(this.W94);
             this.panel3.Controls.Add(this.J_94);
             this.panel3.Controls.Add(this.B61);
@@ -556,8 +558,6 @@
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.B45);
             this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.L_42_SONGPLAY);
             this.panel3.Controls.Add(this.L_42_SONG);
             this.panel3.Controls.Add(this.L_40_SONGPLAY);
@@ -675,6 +675,17 @@
             this.panel3.Size = new System.Drawing.Size(1628, 939);
             this.panel3.TabIndex = 189;
             // 
+            // L_20_DIFFCULTY
+            // 
+            this.L_20_DIFFCULTY.ErrorMessage = "";
+            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 513);
+            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
+            this.L_20_DIFFCULTY.Placeholder = "";
+            this.L_20_DIFFCULTY.ReadOnly = true;
+            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(306, 25);
+            this.L_20_DIFFCULTY.TabIndex = 351;
+            // 
             // W20
             // 
             this.W20.Hexadecimal = true;
@@ -762,6 +773,62 @@
             this.L_19_COMBO.Name = "L_19_COMBO";
             this.L_19_COMBO.Size = new System.Drawing.Size(330, 26);
             this.L_19_COMBO.TabIndex = 18;
+            // 
+            // L_126_PORTRAIT_AUTO
+            // 
+            this.L_126_PORTRAIT_AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_126_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 361);
+            this.L_126_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_126_PORTRAIT_AUTO.Name = "L_126_PORTRAIT_AUTO";
+            this.L_126_PORTRAIT_AUTO.Size = new System.Drawing.Size(66, 66);
+            this.L_126_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_126_PORTRAIT_AUTO.TabIndex = 282;
+            this.L_126_PORTRAIT_AUTO.TabStop = false;
+            // 
+            // L_124_TEXT
+            // 
+            this.L_124_TEXT.ErrorMessage = "";
+            this.L_124_TEXT.Location = new System.Drawing.Point(1420, 326);
+            this.L_124_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_124_TEXT.Name = "L_124_TEXT";
+            this.L_124_TEXT.Placeholder = "";
+            this.L_124_TEXT.ReadOnly = true;
+            this.L_124_TEXT.Size = new System.Drawing.Size(209, 25);
+            this.L_124_TEXT.TabIndex = 281;
+            // 
+            // L_122_TEXT
+            // 
+            this.L_122_TEXT.ErrorMessage = "";
+            this.L_122_TEXT.Location = new System.Drawing.Point(1420, 298);
+            this.L_122_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_122_TEXT.Name = "L_122_TEXT";
+            this.L_122_TEXT.Placeholder = "";
+            this.L_122_TEXT.ReadOnly = true;
+            this.L_122_TEXT.Size = new System.Drawing.Size(209, 25);
+            this.L_122_TEXT.TabIndex = 280;
+            // 
+            // L_120_TEXT
+            // 
+            this.L_120_TEXT.ErrorMessage = "";
+            this.L_120_TEXT.Location = new System.Drawing.Point(1420, 265);
+            this.L_120_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_120_TEXT.Name = "L_120_TEXT";
+            this.L_120_TEXT.Placeholder = "";
+            this.L_120_TEXT.ReadOnly = true;
+            this.L_120_TEXT.Size = new System.Drawing.Size(209, 25);
+            this.L_120_TEXT.TabIndex = 279;
+            // 
+            // L_118_TEXT
+            // 
+            this.L_118_TEXT.ErrorMessage = "";
+            this.L_118_TEXT.Location = new System.Drawing.Point(1420, 237);
+            this.L_118_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_118_TEXT.Name = "L_118_TEXT";
+            this.L_118_TEXT.Placeholder = "";
+            this.L_118_TEXT.ReadOnly = true;
+            this.L_118_TEXT.Size = new System.Drawing.Size(209, 25);
+            this.L_118_TEXT.TabIndex = 278;
             // 
             // L_140_COMBO
             // 
@@ -1911,6 +1978,17 @@
             this.L_42_SONGPLAY.Text = "♪";
             this.L_42_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_42_SONG
+            // 
+            this.L_42_SONG.ErrorMessage = "";
+            this.L_42_SONG.Location = new System.Drawing.Point(380, 869);
+            this.L_42_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_42_SONG.Name = "L_42_SONG";
+            this.L_42_SONG.Placeholder = "";
+            this.L_42_SONG.ReadOnly = true;
+            this.L_42_SONG.Size = new System.Drawing.Size(209, 25);
+            this.L_42_SONG.TabIndex = 164;
+            // 
             // L_40_SONGPLAY
             // 
             this.L_40_SONGPLAY.Location = new System.Drawing.Point(595, 837);
@@ -1920,6 +1998,17 @@
             this.L_40_SONGPLAY.TabIndex = 163;
             this.L_40_SONGPLAY.Text = "♪";
             this.L_40_SONGPLAY.UseVisualStyleBackColor = true;
+            // 
+            // L_40_SONG
+            // 
+            this.L_40_SONG.ErrorMessage = "";
+            this.L_40_SONG.Location = new System.Drawing.Point(380, 840);
+            this.L_40_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_40_SONG.Name = "L_40_SONG";
+            this.L_40_SONG.Placeholder = "";
+            this.L_40_SONG.ReadOnly = true;
+            this.L_40_SONG.Size = new System.Drawing.Size(209, 25);
+            this.L_40_SONG.TabIndex = 162;
             // 
             // W42
             // 
@@ -1981,6 +2070,17 @@
             this.L_38_SONGPLAY.Text = "♪";
             this.L_38_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_38_SONG
+            // 
+            this.L_38_SONG.ErrorMessage = "";
+            this.L_38_SONG.Location = new System.Drawing.Point(380, 811);
+            this.L_38_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_38_SONG.Name = "L_38_SONG";
+            this.L_38_SONG.Placeholder = "";
+            this.L_38_SONG.ReadOnly = true;
+            this.L_38_SONG.Size = new System.Drawing.Size(209, 25);
+            this.L_38_SONG.TabIndex = 156;
+            // 
             // W38
             // 
             this.W38.Hexadecimal = true;
@@ -2023,6 +2123,15 @@
             this.J_14_IMAGECHAPTER.Size = new System.Drawing.Size(135, 18);
             this.J_14_IMAGECHAPTER.TabIndex = 104;
             this.J_14_IMAGECHAPTER.Text = "章タイトルへJump";
+            // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(290, -24);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(809, 392);
+            this.MapPictureBox.TabIndex = 0;
             // 
             // B44
             // 
@@ -2136,6 +2245,17 @@
             this.J_140.Text = "特殊表示";
             this.J_140.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_138_TEXT_MAPGOAL1
+            // 
+            this.L_138_TEXT_MAPGOAL1.ErrorMessage = "";
+            this.L_138_TEXT_MAPGOAL1.Location = new System.Drawing.Point(1421, 603);
+            this.L_138_TEXT_MAPGOAL1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_138_TEXT_MAPGOAL1.Name = "L_138_TEXT_MAPGOAL1";
+            this.L_138_TEXT_MAPGOAL1.Placeholder = "";
+            this.L_138_TEXT_MAPGOAL1.ReadOnly = true;
+            this.L_138_TEXT_MAPGOAL1.Size = new System.Drawing.Size(209, 25);
+            this.L_138_TEXT_MAPGOAL1.TabIndex = 132;
+            // 
             // W138
             // 
             this.W138.Hexadecimal = true;
@@ -2161,6 +2281,17 @@
             this.J_138_TEXT.TabIndex = 130;
             this.J_138_TEXT.Text = "詳細クリア条件(表示のみ)";
             this.J_138_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_136_TEXT_MAPGOAL2
+            // 
+            this.L_136_TEXT_MAPGOAL2.ErrorMessage = "";
+            this.L_136_TEXT_MAPGOAL2.Location = new System.Drawing.Point(1421, 572);
+            this.L_136_TEXT_MAPGOAL2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_136_TEXT_MAPGOAL2.Name = "L_136_TEXT_MAPGOAL2";
+            this.L_136_TEXT_MAPGOAL2.Placeholder = "";
+            this.L_136_TEXT_MAPGOAL2.ReadOnly = true;
+            this.L_136_TEXT_MAPGOAL2.Size = new System.Drawing.Size(209, 25);
+            this.L_136_TEXT_MAPGOAL2.TabIndex = 129;
             // 
             // W136
             // 
@@ -2265,6 +2396,28 @@
             this.J_116_PLIST_EVENT.Text = "イベントID(Plist)";
             this.J_116_PLIST_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_114_TEXT_MAPNAME1
+            // 
+            this.L_114_TEXT_MAPNAME1.ErrorMessage = "";
+            this.L_114_TEXT_MAPNAME1.Location = new System.Drawing.Point(1420, 144);
+            this.L_114_TEXT_MAPNAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_114_TEXT_MAPNAME1.Name = "L_114_TEXT_MAPNAME1";
+            this.L_114_TEXT_MAPNAME1.Placeholder = "";
+            this.L_114_TEXT_MAPNAME1.ReadOnly = true;
+            this.L_114_TEXT_MAPNAME1.Size = new System.Drawing.Size(209, 25);
+            this.L_114_TEXT_MAPNAME1.TabIndex = 110;
+            // 
+            // L_112_TEXT_MAPNAME1
+            // 
+            this.L_112_TEXT_MAPNAME1.ErrorMessage = "";
+            this.L_112_TEXT_MAPNAME1.Location = new System.Drawing.Point(1420, 114);
+            this.L_112_TEXT_MAPNAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_112_TEXT_MAPNAME1.Name = "L_112_TEXT_MAPNAME1";
+            this.L_112_TEXT_MAPNAME1.Placeholder = "";
+            this.L_112_TEXT_MAPNAME1.ReadOnly = true;
+            this.L_112_TEXT_MAPNAME1.Size = new System.Drawing.Size(209, 25);
+            this.L_112_TEXT_MAPNAME1.TabIndex = 109;
+            // 
             // W114
             // 
             this.W114.Hexadecimal = true;
@@ -2336,6 +2489,28 @@
             this.L_30_SONGPLAY.Text = "♪";
             this.L_30_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_36_SONG_MAP
+            // 
+            this.L_36_SONG_MAP.ErrorMessage = "";
+            this.L_36_SONG_MAP.Location = new System.Drawing.Point(380, 779);
+            this.L_36_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_36_SONG_MAP.Name = "L_36_SONG_MAP";
+            this.L_36_SONG_MAP.Placeholder = "";
+            this.L_36_SONG_MAP.ReadOnly = true;
+            this.L_36_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_36_SONG_MAP.TabIndex = 90;
+            // 
+            // L_34_SONG_MAP
+            // 
+            this.L_34_SONG_MAP.ErrorMessage = "";
+            this.L_34_SONG_MAP.Location = new System.Drawing.Point(380, 748);
+            this.L_34_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_34_SONG_MAP.Name = "L_34_SONG_MAP";
+            this.L_34_SONG_MAP.Placeholder = "";
+            this.L_34_SONG_MAP.ReadOnly = true;
+            this.L_34_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_34_SONG_MAP.TabIndex = 88;
+            // 
             // W34
             // 
             this.W34.Hexadecimal = true;
@@ -2372,6 +2547,28 @@
             this.L_32_SONGPLAY.Text = "♪";
             this.L_32_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_32_SONG_MAP
+            // 
+            this.L_32_SONG_MAP.ErrorMessage = "";
+            this.L_32_SONG_MAP.Location = new System.Drawing.Point(380, 719);
+            this.L_32_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_32_SONG_MAP.Name = "L_32_SONG_MAP";
+            this.L_32_SONG_MAP.Placeholder = "";
+            this.L_32_SONG_MAP.ReadOnly = true;
+            this.L_32_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_32_SONG_MAP.TabIndex = 80;
+            // 
+            // L_30_SONG_MAP
+            // 
+            this.L_30_SONG_MAP.ErrorMessage = "";
+            this.L_30_SONG_MAP.Location = new System.Drawing.Point(380, 693);
+            this.L_30_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_30_SONG_MAP.Name = "L_30_SONG_MAP";
+            this.L_30_SONG_MAP.Placeholder = "";
+            this.L_30_SONG_MAP.ReadOnly = true;
+            this.L_30_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_30_SONG_MAP.TabIndex = 78;
+            // 
             // L_28_SONGPLAY
             // 
             this.L_28_SONGPLAY.Location = new System.Drawing.Point(595, 659);
@@ -2381,6 +2578,17 @@
             this.L_28_SONGPLAY.TabIndex = 77;
             this.L_28_SONGPLAY.Text = "♪";
             this.L_28_SONGPLAY.UseVisualStyleBackColor = true;
+            // 
+            // L_28_SONG_MAP
+            // 
+            this.L_28_SONG_MAP.ErrorMessage = "";
+            this.L_28_SONG_MAP.Location = new System.Drawing.Point(380, 662);
+            this.L_28_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_28_SONG_MAP.Name = "L_28_SONG_MAP";
+            this.L_28_SONG_MAP.Placeholder = "";
+            this.L_28_SONG_MAP.ReadOnly = true;
+            this.L_28_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_28_SONG_MAP.TabIndex = 76;
             // 
             // W32
             // 
@@ -2467,6 +2675,17 @@
             this.L_26_SONGPLAY.Text = "♪";
             this.L_26_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_26_SONG_MAP
+            // 
+            this.L_26_SONG_MAP.ErrorMessage = "";
+            this.L_26_SONG_MAP.Location = new System.Drawing.Point(380, 630);
+            this.L_26_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_26_SONG_MAP.Name = "L_26_SONG_MAP";
+            this.L_26_SONG_MAP.Placeholder = "";
+            this.L_26_SONG_MAP.ReadOnly = true;
+            this.L_26_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_26_SONG_MAP.TabIndex = 68;
+            // 
             // L_24_SONGPLAY
             // 
             this.L_24_SONGPLAY.Location = new System.Drawing.Point(595, 599);
@@ -2477,6 +2696,17 @@
             this.L_24_SONGPLAY.Text = "♪";
             this.L_24_SONGPLAY.UseVisualStyleBackColor = true;
             // 
+            // L_24_SONG_MAP
+            // 
+            this.L_24_SONG_MAP.ErrorMessage = "";
+            this.L_24_SONG_MAP.Location = new System.Drawing.Point(380, 602);
+            this.L_24_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_24_SONG_MAP.Name = "L_24_SONG_MAP";
+            this.L_24_SONG_MAP.Placeholder = "";
+            this.L_24_SONG_MAP.ReadOnly = true;
+            this.L_24_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_24_SONG_MAP.TabIndex = 66;
+            // 
             // L_22_SONGPLAY
             // 
             this.L_22_SONGPLAY.Location = new System.Drawing.Point(595, 564);
@@ -2486,6 +2716,17 @@
             this.L_22_SONGPLAY.TabIndex = 65;
             this.L_22_SONGPLAY.Text = "♪";
             this.L_22_SONGPLAY.UseVisualStyleBackColor = true;
+            // 
+            // L_22_SONG_MAP
+            // 
+            this.L_22_SONG_MAP.ErrorMessage = "";
+            this.L_22_SONG_MAP.Location = new System.Drawing.Point(380, 571);
+            this.L_22_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_22_SONG_MAP.Name = "L_22_SONG_MAP";
+            this.L_22_SONG_MAP.Placeholder = "";
+            this.L_22_SONG_MAP.ReadOnly = true;
+            this.L_22_SONG_MAP.Size = new System.Drawing.Size(209, 25);
+            this.L_22_SONG_MAP.TabIndex = 64;
             // 
             // W26
             // 
@@ -2972,6 +3213,17 @@
             this.J_4_PLIST_OBJ.Text = "オブジェクトタイプ(Plist)";
             this.J_4_PLIST_OBJ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_0_CSTRING
+            // 
+            this.L_0_CSTRING.ErrorMessage = "";
+            this.L_0_CSTRING.Location = new System.Drawing.Point(59, 5);
+            this.L_0_CSTRING.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_CSTRING.Name = "L_0_CSTRING";
+            this.L_0_CSTRING.Placeholder = "";
+            this.L_0_CSTRING.ReadOnly = true;
+            this.L_0_CSTRING.Size = new System.Drawing.Size(81, 25);
+            this.L_0_CSTRING.TabIndex = 15;
+            // 
             // D0
             // 
             this.D0.Hexadecimal = true;
@@ -3142,268 +3394,6 @@
             this.panel1.Size = new System.Drawing.Size(1890, 30);
             this.panel1.TabIndex = 190;
             // 
-            // panel14
-            // 
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.AddressList);
-            this.panel14.Controls.Add(this.LabelFilter);
-            this.panel14.Location = new System.Drawing.Point(8, 38);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(254, 918);
-            this.panel14.TabIndex = 192;
-            // 
-            // L_20_DIFFCULTY
-            // 
-            this.L_20_DIFFCULTY.ErrorMessage = "";
-            this.L_20_DIFFCULTY.Location = new System.Drawing.Point(321, 513);
-            this.L_20_DIFFCULTY.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_20_DIFFCULTY.Name = "L_20_DIFFCULTY";
-            this.L_20_DIFFCULTY.Placeholder = "";
-            this.L_20_DIFFCULTY.ReadOnly = true;
-            this.L_20_DIFFCULTY.Size = new System.Drawing.Size(306, 25);
-            this.L_20_DIFFCULTY.TabIndex = 351;
-            // 
-            // L_126_PORTRAIT_AUTO
-            // 
-            this.L_126_PORTRAIT_AUTO.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_126_PORTRAIT_AUTO.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_126_PORTRAIT_AUTO.Location = new System.Drawing.Point(1421, 361);
-            this.L_126_PORTRAIT_AUTO.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_126_PORTRAIT_AUTO.Name = "L_126_PORTRAIT_AUTO";
-            this.L_126_PORTRAIT_AUTO.Size = new System.Drawing.Size(66, 66);
-            this.L_126_PORTRAIT_AUTO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_126_PORTRAIT_AUTO.TabIndex = 282;
-            this.L_126_PORTRAIT_AUTO.TabStop = false;
-            // 
-            // L_124_TEXT
-            // 
-            this.L_124_TEXT.ErrorMessage = "";
-            this.L_124_TEXT.Location = new System.Drawing.Point(1420, 326);
-            this.L_124_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_124_TEXT.Name = "L_124_TEXT";
-            this.L_124_TEXT.Placeholder = "";
-            this.L_124_TEXT.ReadOnly = true;
-            this.L_124_TEXT.Size = new System.Drawing.Size(209, 25);
-            this.L_124_TEXT.TabIndex = 281;
-            // 
-            // L_122_TEXT
-            // 
-            this.L_122_TEXT.ErrorMessage = "";
-            this.L_122_TEXT.Location = new System.Drawing.Point(1420, 298);
-            this.L_122_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_122_TEXT.Name = "L_122_TEXT";
-            this.L_122_TEXT.Placeholder = "";
-            this.L_122_TEXT.ReadOnly = true;
-            this.L_122_TEXT.Size = new System.Drawing.Size(209, 25);
-            this.L_122_TEXT.TabIndex = 280;
-            // 
-            // L_120_TEXT
-            // 
-            this.L_120_TEXT.ErrorMessage = "";
-            this.L_120_TEXT.Location = new System.Drawing.Point(1420, 265);
-            this.L_120_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_120_TEXT.Name = "L_120_TEXT";
-            this.L_120_TEXT.Placeholder = "";
-            this.L_120_TEXT.ReadOnly = true;
-            this.L_120_TEXT.Size = new System.Drawing.Size(209, 25);
-            this.L_120_TEXT.TabIndex = 279;
-            // 
-            // L_118_TEXT
-            // 
-            this.L_118_TEXT.ErrorMessage = "";
-            this.L_118_TEXT.Location = new System.Drawing.Point(1420, 237);
-            this.L_118_TEXT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_118_TEXT.Name = "L_118_TEXT";
-            this.L_118_TEXT.Placeholder = "";
-            this.L_118_TEXT.ReadOnly = true;
-            this.L_118_TEXT.Size = new System.Drawing.Size(209, 25);
-            this.L_118_TEXT.TabIndex = 278;
-            // 
-            // L_42_SONG
-            // 
-            this.L_42_SONG.ErrorMessage = "";
-            this.L_42_SONG.Location = new System.Drawing.Point(380, 869);
-            this.L_42_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_42_SONG.Name = "L_42_SONG";
-            this.L_42_SONG.Placeholder = "";
-            this.L_42_SONG.ReadOnly = true;
-            this.L_42_SONG.Size = new System.Drawing.Size(209, 25);
-            this.L_42_SONG.TabIndex = 164;
-            // 
-            // L_40_SONG
-            // 
-            this.L_40_SONG.ErrorMessage = "";
-            this.L_40_SONG.Location = new System.Drawing.Point(380, 840);
-            this.L_40_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_40_SONG.Name = "L_40_SONG";
-            this.L_40_SONG.Placeholder = "";
-            this.L_40_SONG.ReadOnly = true;
-            this.L_40_SONG.Size = new System.Drawing.Size(209, 25);
-            this.L_40_SONG.TabIndex = 162;
-            // 
-            // L_38_SONG
-            // 
-            this.L_38_SONG.ErrorMessage = "";
-            this.L_38_SONG.Location = new System.Drawing.Point(380, 811);
-            this.L_38_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_38_SONG.Name = "L_38_SONG";
-            this.L_38_SONG.Placeholder = "";
-            this.L_38_SONG.ReadOnly = true;
-            this.L_38_SONG.Size = new System.Drawing.Size(209, 25);
-            this.L_38_SONG.TabIndex = 156;
-            // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(290, -24);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(809, 392);
-            this.MapPictureBox.TabIndex = 0;
-            // 
-            // L_138_TEXT_MAPGOAL1
-            // 
-            this.L_138_TEXT_MAPGOAL1.ErrorMessage = "";
-            this.L_138_TEXT_MAPGOAL1.Location = new System.Drawing.Point(1421, 603);
-            this.L_138_TEXT_MAPGOAL1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_138_TEXT_MAPGOAL1.Name = "L_138_TEXT_MAPGOAL1";
-            this.L_138_TEXT_MAPGOAL1.Placeholder = "";
-            this.L_138_TEXT_MAPGOAL1.ReadOnly = true;
-            this.L_138_TEXT_MAPGOAL1.Size = new System.Drawing.Size(209, 25);
-            this.L_138_TEXT_MAPGOAL1.TabIndex = 132;
-            // 
-            // L_136_TEXT_MAPGOAL2
-            // 
-            this.L_136_TEXT_MAPGOAL2.ErrorMessage = "";
-            this.L_136_TEXT_MAPGOAL2.Location = new System.Drawing.Point(1421, 572);
-            this.L_136_TEXT_MAPGOAL2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_136_TEXT_MAPGOAL2.Name = "L_136_TEXT_MAPGOAL2";
-            this.L_136_TEXT_MAPGOAL2.Placeholder = "";
-            this.L_136_TEXT_MAPGOAL2.ReadOnly = true;
-            this.L_136_TEXT_MAPGOAL2.Size = new System.Drawing.Size(209, 25);
-            this.L_136_TEXT_MAPGOAL2.TabIndex = 129;
-            // 
-            // L_114_TEXT_MAPNAME1
-            // 
-            this.L_114_TEXT_MAPNAME1.ErrorMessage = "";
-            this.L_114_TEXT_MAPNAME1.Location = new System.Drawing.Point(1420, 144);
-            this.L_114_TEXT_MAPNAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_114_TEXT_MAPNAME1.Name = "L_114_TEXT_MAPNAME1";
-            this.L_114_TEXT_MAPNAME1.Placeholder = "";
-            this.L_114_TEXT_MAPNAME1.ReadOnly = true;
-            this.L_114_TEXT_MAPNAME1.Size = new System.Drawing.Size(209, 25);
-            this.L_114_TEXT_MAPNAME1.TabIndex = 110;
-            // 
-            // L_112_TEXT_MAPNAME1
-            // 
-            this.L_112_TEXT_MAPNAME1.ErrorMessage = "";
-            this.L_112_TEXT_MAPNAME1.Location = new System.Drawing.Point(1420, 114);
-            this.L_112_TEXT_MAPNAME1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_112_TEXT_MAPNAME1.Name = "L_112_TEXT_MAPNAME1";
-            this.L_112_TEXT_MAPNAME1.Placeholder = "";
-            this.L_112_TEXT_MAPNAME1.ReadOnly = true;
-            this.L_112_TEXT_MAPNAME1.Size = new System.Drawing.Size(209, 25);
-            this.L_112_TEXT_MAPNAME1.TabIndex = 109;
-            // 
-            // L_36_SONG_MAP
-            // 
-            this.L_36_SONG_MAP.ErrorMessage = "";
-            this.L_36_SONG_MAP.Location = new System.Drawing.Point(380, 779);
-            this.L_36_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_36_SONG_MAP.Name = "L_36_SONG_MAP";
-            this.L_36_SONG_MAP.Placeholder = "";
-            this.L_36_SONG_MAP.ReadOnly = true;
-            this.L_36_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_36_SONG_MAP.TabIndex = 90;
-            // 
-            // L_34_SONG_MAP
-            // 
-            this.L_34_SONG_MAP.ErrorMessage = "";
-            this.L_34_SONG_MAP.Location = new System.Drawing.Point(380, 748);
-            this.L_34_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_34_SONG_MAP.Name = "L_34_SONG_MAP";
-            this.L_34_SONG_MAP.Placeholder = "";
-            this.L_34_SONG_MAP.ReadOnly = true;
-            this.L_34_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_34_SONG_MAP.TabIndex = 88;
-            // 
-            // L_32_SONG_MAP
-            // 
-            this.L_32_SONG_MAP.ErrorMessage = "";
-            this.L_32_SONG_MAP.Location = new System.Drawing.Point(380, 719);
-            this.L_32_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_32_SONG_MAP.Name = "L_32_SONG_MAP";
-            this.L_32_SONG_MAP.Placeholder = "";
-            this.L_32_SONG_MAP.ReadOnly = true;
-            this.L_32_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_32_SONG_MAP.TabIndex = 80;
-            // 
-            // L_30_SONG_MAP
-            // 
-            this.L_30_SONG_MAP.ErrorMessage = "";
-            this.L_30_SONG_MAP.Location = new System.Drawing.Point(380, 693);
-            this.L_30_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_30_SONG_MAP.Name = "L_30_SONG_MAP";
-            this.L_30_SONG_MAP.Placeholder = "";
-            this.L_30_SONG_MAP.ReadOnly = true;
-            this.L_30_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_30_SONG_MAP.TabIndex = 78;
-            // 
-            // L_28_SONG_MAP
-            // 
-            this.L_28_SONG_MAP.ErrorMessage = "";
-            this.L_28_SONG_MAP.Location = new System.Drawing.Point(380, 662);
-            this.L_28_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_28_SONG_MAP.Name = "L_28_SONG_MAP";
-            this.L_28_SONG_MAP.Placeholder = "";
-            this.L_28_SONG_MAP.ReadOnly = true;
-            this.L_28_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_28_SONG_MAP.TabIndex = 76;
-            // 
-            // L_26_SONG_MAP
-            // 
-            this.L_26_SONG_MAP.ErrorMessage = "";
-            this.L_26_SONG_MAP.Location = new System.Drawing.Point(380, 630);
-            this.L_26_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_26_SONG_MAP.Name = "L_26_SONG_MAP";
-            this.L_26_SONG_MAP.Placeholder = "";
-            this.L_26_SONG_MAP.ReadOnly = true;
-            this.L_26_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_26_SONG_MAP.TabIndex = 68;
-            // 
-            // L_24_SONG_MAP
-            // 
-            this.L_24_SONG_MAP.ErrorMessage = "";
-            this.L_24_SONG_MAP.Location = new System.Drawing.Point(380, 602);
-            this.L_24_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_24_SONG_MAP.Name = "L_24_SONG_MAP";
-            this.L_24_SONG_MAP.Placeholder = "";
-            this.L_24_SONG_MAP.ReadOnly = true;
-            this.L_24_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_24_SONG_MAP.TabIndex = 66;
-            // 
-            // L_22_SONG_MAP
-            // 
-            this.L_22_SONG_MAP.ErrorMessage = "";
-            this.L_22_SONG_MAP.Location = new System.Drawing.Point(380, 571);
-            this.L_22_SONG_MAP.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_22_SONG_MAP.Name = "L_22_SONG_MAP";
-            this.L_22_SONG_MAP.Placeholder = "";
-            this.L_22_SONG_MAP.ReadOnly = true;
-            this.L_22_SONG_MAP.Size = new System.Drawing.Size(209, 25);
-            this.L_22_SONG_MAP.TabIndex = 64;
-            // 
-            // L_0_CSTRING
-            // 
-            this.L_0_CSTRING.ErrorMessage = "";
-            this.L_0_CSTRING.Location = new System.Drawing.Point(59, 5);
-            this.L_0_CSTRING.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_0_CSTRING.Name = "L_0_CSTRING";
-            this.L_0_CSTRING.Placeholder = "";
-            this.L_0_CSTRING.ReadOnly = true;
-            this.L_0_CSTRING.Size = new System.Drawing.Size(81, 25);
-            this.L_0_CSTRING.TabIndex = 15;
-            // 
             // BlockSize
             // 
             this.BlockSize.ErrorMessage = "";
@@ -3425,6 +3415,16 @@
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(312, 25);
             this.SelectAddress.TabIndex = 40;
+            // 
+            // panel14
+            // 
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.AddressList);
+            this.panel14.Controls.Add(this.LabelFilter);
+            this.panel14.Location = new System.Drawing.Point(8, 38);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(254, 918);
+            this.panel14.TabIndex = 192;
             // 
             // AddressList
             // 
@@ -3455,6 +3455,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B147)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B146)).EndInit();
@@ -3553,7 +3554,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).EndInit();
             this.ResumeLayout(false);
 
         }

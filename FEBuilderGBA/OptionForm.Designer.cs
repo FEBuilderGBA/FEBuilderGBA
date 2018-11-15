@@ -225,6 +225,9 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
+            this.Color_ControlComment_ForeColor_reset_button = new System.Windows.Forms.Button();
+            this.Color_ControlComment_ForeColor_button = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -798,6 +801,9 @@
             // tabPageColor
             // 
             this.tabPageColor.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageColor.Controls.Add(this.Color_ControlComment_ForeColor_reset_button);
+            this.tabPageColor.Controls.Add(this.Color_ControlComment_ForeColor_button);
+            this.tabPageColor.Controls.Add(this.label52);
             this.tabPageColor.Controls.Add(this.Color_Comment_ForeColor_reset_button);
             this.tabPageColor.Controls.Add(this.Color_Comment_ForeColor_button);
             this.tabPageColor.Controls.Add(this.label32);
@@ -877,7 +883,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(17, 559);
+            this.label32.Location = new System.Drawing.Point(9, 559);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(112, 18);
@@ -919,7 +925,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(17, 521);
+            this.label43.Location = new System.Drawing.Point(9, 521);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(200, 18);
@@ -939,7 +945,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(17, 487);
+            this.label44.Location = new System.Drawing.Point(9, 487);
             this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(200, 18);
@@ -949,7 +955,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(17, 16);
+            this.label38.Location = new System.Drawing.Point(9, 16);
             this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(174, 18);
@@ -1006,7 +1012,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(17, 449);
+            this.label35.Location = new System.Drawing.Point(9, 449);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(104, 18);
@@ -1026,7 +1032,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(17, 415);
+            this.label36.Location = new System.Drawing.Point(9, 415);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(90, 18);
@@ -1068,7 +1074,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(17, 382);
+            this.label28.Location = new System.Drawing.Point(9, 382);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(108, 18);
@@ -1088,7 +1094,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(17, 345);
+            this.label29.Location = new System.Drawing.Point(9, 345);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(108, 18);
@@ -1130,7 +1136,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 311);
+            this.label13.Location = new System.Drawing.Point(9, 311);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(164, 18);
@@ -1150,7 +1156,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 274);
+            this.label14.Location = new System.Drawing.Point(9, 274);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 18);
@@ -1192,7 +1198,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(17, 238);
+            this.label15.Location = new System.Drawing.Point(9, 238);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 18);
@@ -1212,7 +1218,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 201);
+            this.label16.Location = new System.Drawing.Point(9, 201);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(152, 18);
@@ -1254,7 +1260,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 167);
+            this.label11.Location = new System.Drawing.Point(9, 167);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 18);
@@ -1274,7 +1280,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 130);
+            this.label12.Location = new System.Drawing.Point(9, 130);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 18);
@@ -1316,7 +1322,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 97);
+            this.label10.Location = new System.Drawing.Point(9, 97);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(143, 18);
@@ -1336,7 +1342,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 60);
+            this.label9.Location = new System.Drawing.Point(9, 60);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 18);
@@ -2588,6 +2594,37 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // Color_ControlComment_ForeColor_reset_button
+            // 
+            this.Color_ControlComment_ForeColor_reset_button.Location = new System.Drawing.Point(479, 593);
+            this.Color_ControlComment_ForeColor_reset_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Color_ControlComment_ForeColor_reset_button.Name = "Color_ControlComment_ForeColor_reset_button";
+            this.Color_ControlComment_ForeColor_reset_button.Size = new System.Drawing.Size(124, 28);
+            this.Color_ControlComment_ForeColor_reset_button.TabIndex = 51;
+            this.Color_ControlComment_ForeColor_reset_button.Text = "元に戻す";
+            this.Color_ControlComment_ForeColor_reset_button.UseVisualStyleBackColor = true;
+            this.Color_ControlComment_ForeColor_reset_button.Click += new System.EventHandler(this.Color_ControlComment_ForeColor_reset_button_Click);
+            // 
+            // Color_ControlComment_ForeColor_button
+            // 
+            this.Color_ControlComment_ForeColor_button.Location = new System.Drawing.Point(284, 591);
+            this.Color_ControlComment_ForeColor_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Color_ControlComment_ForeColor_button.Name = "Color_ControlComment_ForeColor_button";
+            this.Color_ControlComment_ForeColor_button.Size = new System.Drawing.Size(179, 26);
+            this.Color_ControlComment_ForeColor_button.TabIndex = 50;
+            this.Color_ControlComment_ForeColor_button.UseVisualStyleBackColor = true;
+            this.Color_ControlComment_ForeColor_button.Click += new System.EventHandler(this.Color_ControlComment_ForeColor_button_Click);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(9, 594);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(208, 18);
+            this.label52.TabIndex = 49;
+            this.label52.Text = "コントロールのコメント文字色";
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.WriteButton;
@@ -2815,5 +2852,8 @@
         private System.Windows.Forms.ComboBox func_overraide_simple_error_check;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button Color_ControlComment_ForeColor_reset_button;
+        private System.Windows.Forms.Button Color_ControlComment_ForeColor_button;
+        private System.Windows.Forms.Label label52;
     }
 }

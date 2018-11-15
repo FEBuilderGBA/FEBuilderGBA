@@ -11248,3 +11248,7 @@ r3=X tile position of menu of the right	{U}
 080BC2A4	Draw a clear-turn list	{J}
 08024608	Drawing screen when using recovery wand	{J}
 08024658	Drawing screen when using recovery wand	{U}
+080313FC	Capture evaluation called from GAMECTRL	{J}
+080A858C	Subroutine to give martial player name and strategy evaluation	{J}
+080314B0	Capture evaluation called from GAMECTRL	{U}
+080A3B48	Subroutine to give martial player name and strategy evaluation	{U}

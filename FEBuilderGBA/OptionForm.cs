@@ -51,6 +51,7 @@ namespace FEBuilderGBA
             Color_Keyword_BackColor_button.BackColor = Color_Keyword_BackColor();
             Color_Keyword_ForeColor_button.BackColor = Color_Keyword_ForeColor();
             Color_Comment_ForeColor_button.BackColor = Color_Comment_ForeColor();
+            Color_ControlComment_ForeColor_button.BackColor = Color_ControlComment_ForeColor(); 
 
             foreach(String a in ShortCutValue1.Items)
             {
@@ -207,7 +208,7 @@ namespace FEBuilderGBA
             Program.Config["Color_Keyword_BackColor"] = Color_Keyword_BackColor_button.BackColor.Name;
             Program.Config["Color_Keyword_ForeColor"] = Color_Keyword_ForeColor_button.BackColor.Name;
             Program.Config["Color_Comment_ForeColor"] = Color_Comment_ForeColor_button.BackColor.Name;
-
+            Program.Config["Color_ControlComment_ForeColor"] = Color_ControlComment_ForeColor_button.BackColor.Name;
 
             Program.Config["ShortCutKey1"] = ShortCutKey1.Text;
             Program.Config["ShortCutValue1"] = ShortCutValue1.SelectedIndex.ToString();
@@ -365,7 +366,13 @@ namespace FEBuilderGBA
         {
             return U.ColorFromName(Program.Config.at("Color_Comment_ForeColor", "DarkGreen"));
         }
+
+        public static Color Color_ControlComment_ForeColor()
+        {
+            return U.ColorFromName(Program.Config.at("Color_ControlComment_ForeColor", "Green"));
+        }
         
+
         Color SelectColorDialog(Color def)
         {
             ColorDialog cd = new ColorDialog();
@@ -999,6 +1006,7 @@ namespace FEBuilderGBA
                 Color_Keyword_BackColor_button.BackColor = U.ColorFromName("Window");
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("Blue");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("DarkGreen");
+                Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("Green");
 
                 return ;
             }
@@ -1019,6 +1027,8 @@ namespace FEBuilderGBA
                 Color_Keyword_BackColor_button.BackColor = U.ColorFromName("Black");
                 Color_Keyword_ForeColor_button.BackColor = U.ColorFromName("LightBlue");
                 Color_Comment_ForeColor_button.BackColor = U.ColorFromName("DeepPink");
+                Color_ControlComment_ForeColor_button.BackColor = U.ColorFromName("GreenYellow");
+
                 return;
             }
         }
@@ -1266,7 +1276,17 @@ namespace FEBuilderGBA
             X_EXPLAIN_VBA_M.AccessibleDescription = R._("エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。");
             X_EXPLAIN_NODOLL_GBA_DEBUGGER.AccessibleDescription = R._("Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。");
             X_EXPLAIN_SAPPY.AccessibleDescription = R._("sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。");
-//            X_EXPLAIN_EA.AccessibleDescription = R._("");
+            X_EXPLAIN_EA.AccessibleDescription = R._("FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。");
+        }
+
+        private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)
+        {
+            Color_ControlComment_ForeColor_button.BackColor = Color.FromName("Green");
+        }
+
+        private void Color_ControlComment_ForeColor_reset_button_Click(object sender, EventArgs e)
+        {
+            Color_ControlComment_ForeColor_button.BackColor = SelectColorDialog(Color_ControlComment_ForeColor_button.BackColor);
         }
 
 

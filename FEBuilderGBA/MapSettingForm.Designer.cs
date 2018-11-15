@@ -387,6 +387,9 @@
             // panel1234
             // 
             this.panel1234.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1234.Controls.Add(this.label68);
+            this.panel1234.Controls.Add(this.label20);
+            this.panel1234.Controls.Add(this.label18);
             this.panel1234.Controls.Add(this.D108);
             this.panel1234.Controls.Add(this.D104);
             this.panel1234.Controls.Add(this.D100);
@@ -395,7 +398,6 @@
             this.panel1234.Controls.Add(this.label70);
             this.panel1234.Controls.Add(this.label71);
             this.panel1234.Controls.Add(this.label72);
-            this.panel1234.Controls.Add(this.label68);
             this.panel1234.Controls.Add(this.W94);
             this.panel1234.Controls.Add(this.J_94);
             this.panel1234.Controls.Add(this.B61);
@@ -464,8 +466,6 @@
             this.panel1234.Controls.Add(this.label24);
             this.panel1234.Controls.Add(this.B45);
             this.panel1234.Controls.Add(this.label21);
-            this.panel1234.Controls.Add(this.label20);
-            this.panel1234.Controls.Add(this.label18);
             this.panel1234.Controls.Add(this.B14);
             this.panel1234.Controls.Add(this.L_20_DIFFCULTY);
             this.panel1234.Controls.Add(this.MapPictureBox);
@@ -517,7 +517,6 @@
             this.panel1234.Controls.Add(this.label151);
             this.panel1234.Controls.Add(this.B143);
             this.panel1234.Controls.Add(this.label121);
-            this.panel1234.Controls.Add(this.L_143_MAPXY_144);
             this.panel1234.Controls.Add(this.B142);
             this.panel1234.Controls.Add(this.J_142_UNIT);
             this.panel1234.Controls.Add(this.B141);
@@ -619,6 +618,7 @@
             this.panel1234.Controls.Add(this.L_0_CSTRING);
             this.panel1234.Controls.Add(this.D0);
             this.panel1234.Controls.Add(this.J_0_TEXT);
+            this.panel1234.Controls.Add(this.L_143_MAPXY_144);
             this.panel1234.Location = new System.Drawing.Point(269, 29);
             this.panel1234.Margin = new System.Windows.Forms.Padding(5);
             this.panel1234.Name = "panel1234";

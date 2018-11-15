@@ -34,6 +34,7 @@
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.J_4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_8_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_4_ID_PLUS1 = new FEBuilderGBA.PanelEx();
             this.B4 = new System.Windows.Forms.NumericUpDown();
             this.X_SKILL_BUTTON9 = new System.Windows.Forms.Button();
@@ -231,10 +232,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.L_8_GENERICENEMYPORTRAIT = new FEBuilderGBA.InterpolatedPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).BeginInit();
             this.L_4_ID_PLUS1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).BeginInit();
@@ -319,7 +320,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).BeginInit();
             this.SuspendLayout();
             // 
             // J_0_TEXT
@@ -430,6 +430,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1110, 138);
             this.panel2.TabIndex = 18;
+            // 
+            // L_8_GENERICENEMYPORTRAIT
+            // 
+            this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(847, 73);
+            this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
+            this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(64, 64);
+            this.L_8_GENERICENEMYPORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_8_GENERICENEMYPORTRAIT.TabIndex = 107;
+            this.L_8_GENERICENEMYPORTRAIT.TabStop = false;
             // 
             // L_4_ID_PLUS1
             // 
@@ -1903,7 +1914,7 @@
             this.panel5.Controls.Add(this.J_29);
             this.panel5.Controls.Add(this.J_28);
             this.panel5.Controls.Add(this.X_GROW);
-            this.panel5.Location = new System.Drawing.Point(237, 270);
+            this.panel5.Location = new System.Drawing.Point(238, 270);
             this.panel5.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(938, 54);
@@ -2954,6 +2965,7 @@
             // AddressList
             // 
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -2979,17 +2991,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(158, 293);
             this.panel7.TabIndex = 55;
-            // 
-            // L_8_GENERICENEMYPORTRAIT
-            // 
-            this.L_8_GENERICENEMYPORTRAIT.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_8_GENERICENEMYPORTRAIT.Location = new System.Drawing.Point(847, 73);
-            this.L_8_GENERICENEMYPORTRAIT.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.L_8_GENERICENEMYPORTRAIT.Name = "L_8_GENERICENEMYPORTRAIT";
-            this.L_8_GENERICENEMYPORTRAIT.Size = new System.Drawing.Size(64, 64);
-            this.L_8_GENERICENEMYPORTRAIT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.L_8_GENERICENEMYPORTRAIT.TabIndex = 107;
-            this.L_8_GENERICENEMYPORTRAIT.TabStop = false;
             // 
             // UnitForm
             // 
@@ -3018,6 +3019,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).EndInit();
             this.L_4_ID_PLUS1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_9_ATTRIBUTEICON)).EndInit();
@@ -3107,7 +3109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.L_8_GENERICENEMYPORTRAIT)).EndInit();
             this.ResumeLayout(false);
 
         }

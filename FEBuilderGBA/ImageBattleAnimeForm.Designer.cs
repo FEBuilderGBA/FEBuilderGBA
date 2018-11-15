@@ -261,7 +261,7 @@
             // B1
             // 
             this.B1.Hexadecimal = true;
-            this.B1.Location = new System.Drawing.Point(116, 35);
+            this.B1.Location = new System.Drawing.Point(151, 35);
             this.B1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B1.Maximum = new decimal(new int[] {
             255,
@@ -275,7 +275,7 @@
             // B0
             // 
             this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(115, 1);
+            this.B0.Location = new System.Drawing.Point(150, 1);
             this.B0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B0.Maximum = new decimal(new int[] {
             255,
@@ -290,10 +290,10 @@
             // 
             this.J_0_ITEM.AccessibleDescription = "@IMAGE_BATTLE_ANIME_CLASS_ANIMESET";
             this.J_0_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0_ITEM.Location = new System.Drawing.Point(-4, 1);
+            this.J_0_ITEM.Location = new System.Drawing.Point(-1, 1);
             this.J_0_ITEM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_0_ITEM.Name = "J_0_ITEM";
-            this.J_0_ITEM.Size = new System.Drawing.Size(111, 31);
+            this.J_0_ITEM.Size = new System.Drawing.Size(146, 31);
             this.J_0_ITEM.TabIndex = 24;
             this.J_0_ITEM.Text = "武器種類";
             this.J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,7 +312,7 @@
             // W2
             // 
             this.W2.Hexadecimal = true;
-            this.W2.Location = new System.Drawing.Point(115, 71);
+            this.W2.Location = new System.Drawing.Point(150, 71);
             this.W2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W2.Maximum = new decimal(new int[] {
             65535,
@@ -349,10 +349,10 @@
             // J_2
             // 
             this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(-4, 67);
+            this.J_2.Location = new System.Drawing.Point(-1, 67);
             this.J_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(111, 31);
+            this.J_2.Size = new System.Drawing.Size(146, 31);
             this.J_2.TabIndex = 62;
             this.J_2.Text = "アニメ番号";
             this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,7 +444,7 @@
             // L_2_BATTLEANIMEICON
             // 
             this.L_2_BATTLEANIMEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_2_BATTLEANIMEICON.Location = new System.Drawing.Point(463, 70);
+            this.L_2_BATTLEANIMEICON.Location = new System.Drawing.Point(498, 70);
             this.L_2_BATTLEANIMEICON.Margin = new System.Windows.Forms.Padding(2);
             this.L_2_BATTLEANIMEICON.Name = "L_2_BATTLEANIMEICON";
             this.L_2_BATTLEANIMEICON.Size = new System.Drawing.Size(150, 150);
@@ -454,7 +454,7 @@
             // L_0_BATTLEANIMEITEMICON_1
             // 
             this.L_0_BATTLEANIMEITEMICON_1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_BATTLEANIMEITEMICON_1.Location = new System.Drawing.Point(463, 0);
+            this.L_0_BATTLEANIMEITEMICON_1.Location = new System.Drawing.Point(498, 0);
             this.L_0_BATTLEANIMEITEMICON_1.Name = "L_0_BATTLEANIMEITEMICON_1";
             this.L_0_BATTLEANIMEITEMICON_1.Size = new System.Drawing.Size(32, 32);
             this.L_0_BATTLEANIMEITEMICON_1.TabIndex = 140;
@@ -463,7 +463,7 @@
             // L_2_BATTLEANIME
             // 
             this.L_2_BATTLEANIME.ErrorMessage = "";
-            this.L_2_BATTLEANIME.Location = new System.Drawing.Point(218, 70);
+            this.L_2_BATTLEANIME.Location = new System.Drawing.Point(253, 70);
             this.L_2_BATTLEANIME.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_2_BATTLEANIME.Name = "L_2_BATTLEANIME";
             this.L_2_BATTLEANIME.Placeholder = "";
@@ -475,7 +475,7 @@
             // 
             this.L_1_BATTLEANIMESP_0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_1_BATTLEANIMESP_0.FormattingEnabled = true;
-            this.L_1_BATTLEANIMESP_0.Location = new System.Drawing.Point(181, 34);
+            this.L_1_BATTLEANIMESP_0.Location = new System.Drawing.Point(216, 34);
             this.L_1_BATTLEANIMESP_0.Margin = new System.Windows.Forms.Padding(5);
             this.L_1_BATTLEANIMESP_0.Name = "L_1_BATTLEANIMESP_0";
             this.L_1_BATTLEANIMESP_0.Size = new System.Drawing.Size(268, 26);
@@ -484,7 +484,7 @@
             // L_0_BATTLEANIMEITEM_1
             // 
             this.L_0_BATTLEANIMEITEM_1.ErrorMessage = "";
-            this.L_0_BATTLEANIMEITEM_1.Location = new System.Drawing.Point(178, 1);
+            this.L_0_BATTLEANIMEITEM_1.Location = new System.Drawing.Point(213, 1);
             this.L_0_BATTLEANIMEITEM_1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_BATTLEANIMEITEM_1.Name = "L_0_BATTLEANIMEITEM_1";
             this.L_0_BATTLEANIMEITEM_1.Placeholder = "";
@@ -495,10 +495,10 @@
             // J_1
             // 
             this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_1.Location = new System.Drawing.Point(-4, 35);
+            this.J_1.Location = new System.Drawing.Point(-1, 35);
             this.J_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(111, 31);
+            this.J_1.Size = new System.Drawing.Size(146, 31);
             this.J_1.TabIndex = 68;
             this.J_1.Text = "特殊";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -532,7 +532,7 @@
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Location = new System.Drawing.Point(-1, -1);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(82, 32);
@@ -737,10 +737,10 @@
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(4, 417);
+            this.label7.Location = new System.Drawing.Point(-1, 417);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 32);
+            this.label7.Size = new System.Drawing.Size(102, 32);
             this.label7.TabIndex = 181;
             this.label7.Text = "パレット";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -762,10 +762,10 @@
             // label25
             // 
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(4, 386);
+            this.label25.Location = new System.Drawing.Point(-1, 386);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 32);
+            this.label25.Size = new System.Drawing.Size(102, 32);
             this.label25.TabIndex = 179;
             this.label25.Text = "拡大";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -787,10 +787,10 @@
             // label27
             // 
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Location = new System.Drawing.Point(4, 355);
+            this.label27.Location = new System.Drawing.Point(-1, 355);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(97, 32);
+            this.label27.Size = new System.Drawing.Size(102, 32);
             this.label27.TabIndex = 177;
             this.label27.Text = "方向";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -809,10 +809,10 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(4, 318);
+            this.label4.Location = new System.Drawing.Point(-1, 318);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 39);
+            this.label4.Size = new System.Drawing.Size(102, 39);
             this.label4.TabIndex = 174;
             this.label4.Text = "セクション";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -831,10 +831,10 @@
             // label24
             // 
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(4, 289);
+            this.label24.Location = new System.Drawing.Point(-1, 289);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(432, 30);
+            this.label24.Size = new System.Drawing.Size(437, 30);
             this.label24.TabIndex = 171;
             this.label24.Text = "表示例";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1122,10 +1122,10 @@
             // 
             this.N_J_28.AccessibleDescription = "@BATTLEANIME_PALETTE";
             this.N_J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_28.Location = new System.Drawing.Point(2, 250);
+            this.N_J_28.Location = new System.Drawing.Point(-1, 250);
             this.N_J_28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_28.Name = "N_J_28";
-            this.N_J_28.Size = new System.Drawing.Size(154, 31);
+            this.N_J_28.Size = new System.Drawing.Size(157, 31);
             this.N_J_28.TabIndex = 75;
             this.N_J_28.Text = "パレット";
             this.N_J_28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1134,10 +1134,10 @@
             // N_J_24
             // 
             this.N_J_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_24.Location = new System.Drawing.Point(2, 220);
+            this.N_J_24.Location = new System.Drawing.Point(-1, 220);
             this.N_J_24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_24.Name = "N_J_24";
-            this.N_J_24.Size = new System.Drawing.Size(154, 31);
+            this.N_J_24.Size = new System.Drawing.Size(157, 31);
             this.N_J_24.TabIndex = 74;
             this.N_J_24.Text = "LeftToRightOAM";
             this.N_J_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1145,10 +1145,10 @@
             // N_J_20
             // 
             this.N_J_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_20.Location = new System.Drawing.Point(2, 190);
+            this.N_J_20.Location = new System.Drawing.Point(-1, 190);
             this.N_J_20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_20.Name = "N_J_20";
-            this.N_J_20.Size = new System.Drawing.Size(154, 31);
+            this.N_J_20.Size = new System.Drawing.Size(157, 31);
             this.N_J_20.TabIndex = 73;
             this.N_J_20.Text = "RightToLeftOAM";
             this.N_J_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1156,10 +1156,10 @@
             // N_J_16
             // 
             this.N_J_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_16.Location = new System.Drawing.Point(2, 160);
+            this.N_J_16.Location = new System.Drawing.Point(-1, 160);
             this.N_J_16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_16.Name = "N_J_16";
-            this.N_J_16.Size = new System.Drawing.Size(154, 31);
+            this.N_J_16.Size = new System.Drawing.Size(157, 31);
             this.N_J_16.TabIndex = 72;
             this.N_J_16.Text = "FrameData";
             this.N_J_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1167,10 +1167,10 @@
             // N_J_8
             // 
             this.N_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_8.Location = new System.Drawing.Point(2, 91);
+            this.N_J_8.Location = new System.Drawing.Point(-1, 91);
             this.N_J_8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_8.Name = "N_J_8";
-            this.N_J_8.Size = new System.Drawing.Size(154, 31);
+            this.N_J_8.Size = new System.Drawing.Size(157, 31);
             this.N_J_8.TabIndex = 68;
             this.N_J_8.Text = "00";
             this.N_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1178,10 +1178,10 @@
             // N_J_12
             // 
             this.N_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_12.Location = new System.Drawing.Point(2, 130);
+            this.N_J_12.Location = new System.Drawing.Point(-1, 130);
             this.N_J_12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_12.Name = "N_J_12";
-            this.N_J_12.Size = new System.Drawing.Size(154, 31);
+            this.N_J_12.Size = new System.Drawing.Size(157, 31);
             this.N_J_12.TabIndex = 62;
             this.N_J_12.Text = "SectionData";
             this.N_J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1232,10 +1232,10 @@
             // 
             this.N_J_0.AccessibleDescription = "@INNERNAME";
             this.N_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_0.Location = new System.Drawing.Point(2, 7);
+            this.N_J_0.Location = new System.Drawing.Point(-1, 7);
             this.N_J_0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.N_J_0.Name = "N_J_0";
-            this.N_J_0.Size = new System.Drawing.Size(154, 31);
+            this.N_J_0.Size = new System.Drawing.Size(157, 31);
             this.N_J_0.TabIndex = 24;
             this.N_J_0.Text = "識別子";
             this.N_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
