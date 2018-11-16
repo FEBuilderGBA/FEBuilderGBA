@@ -4041,6 +4041,11 @@ namespace FEBuilderGBA
                 }
 
                 uint length = U.atoi0x(sp[2]);
+                if (IsClearArea(addr, length))
+                {//クリア済み
+                    datatype = Address.DataTypeEnum.FFor00;
+                }
+
                 bin = Program.ROM.getBinaryData(addr, length);
                 mask = new bool[length];
 
@@ -4063,6 +4068,20 @@ namespace FEBuilderGBA
             }
             return binMappings;
         }
+
+        static bool IsClearArea(uint addr,uint length)
+        {
+            uint end = addr + length;
+            for (; addr < end; addr += 4 )
+            {
+                if (Program.ROM.u32(addr) != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         static bool[] MakeFullMask(uint length)
         {

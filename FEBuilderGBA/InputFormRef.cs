@@ -648,7 +648,12 @@ namespace FEBuilderGBA
                 TextBoxEx link_object = ((TextBoxEx)link_info);
                 src_object.ValueChanged += (sender, e) =>
                 {
-                    link_object.Text = ImageUnitPaletteForm.GetPaletteName((uint)src_object.Value);
+                    uint id = (uint)src_object.Value;
+                    if (arg1 == "PLUS1")
+                    {
+                        id = id + 1;
+                    }
+                    link_object.Text = ImageUnitPaletteForm.GetPaletteName(id);
                 };
 
                 return;
@@ -3392,6 +3397,10 @@ namespace FEBuilderGBA
             }
             else if (linktype == "UNITPALETTE")
             {//ユニットパレット
+                if (arg1 == "PLUS1")
+                {
+                    value = value + 1;
+                }
                 InputFormRef.JumpForm<ImageUnitPaletteForm>(value - 1);
             }
             else if (linktype == "UNITCUSTOMBATTLEANIME")
@@ -3446,6 +3455,10 @@ namespace FEBuilderGBA
                 else if (U.isPointer(value))
                 {
                     f.JumpToAnimeSettingPointer(value);
+                }
+                else if (arg1 == "PLUS1")
+                {
+                    f.JumpToAnimeID(value + 1);
                 }
             }
             else if (linktype == "BATTLEANIMEPOINTER")
@@ -3585,6 +3598,10 @@ namespace FEBuilderGBA
             }
             else if (linktype == "TERRAINBATTLE")
             {//バトル地形
+                if (arg1 == "PLUS1")
+                {
+                    value = value + 1;
+                }
                 InputFormRef.JumpForm<ImageBattleTerrainForm>(value);
             }
             else if (linktype == "BATTLEBG")

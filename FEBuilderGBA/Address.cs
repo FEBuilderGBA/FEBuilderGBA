@@ -538,5 +538,9 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.LZ77TSA
                 ;
         }
+        public static bool IsFFor00(Address.DataTypeEnum dataType)
+        {
+            return dataType == DataTypeEnum.FFor00;
+        }
     }
 }

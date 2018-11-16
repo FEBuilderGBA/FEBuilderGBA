@@ -35,13 +35,13 @@ namespace FEBuilderGBA
                 );
 
             Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
-            MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE, data, RebuildAddress, useMap);
+            MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE+16+16, data, RebuildAddress, useMap);
 
             for (int i = 0; i < this.RecycleFreeAreaList.Count; i++)
             {
                 Address p = this.RecycleFreeAreaList[i];
-                //先頭16バイトは捨てましょう. 別データの終端データに使われているとまずい.
-                p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
+
+                p.ResizeAddress(p.Addr, p.Length);
                 Log.Debug("FREEAREA " + U.To0xHexString(p.Addr) + " " + p.Length, " => " + U.To0xHexString(p.Addr + p.Length));
             }
         }
@@ -50,6 +50,11 @@ namespace FEBuilderGBA
             Dictionary<uint,bool> ret = new Dictionary<uint,bool>();
             foreach(Address a in knownList)
             {
+                if (a.DataType == Address.DataTypeEnum.FFor00)
+                {
+                    continue;
+                }
+
                 ret[a.Addr] = true;
                 for (uint i = 0; i < a.Length; i += (FREEAREA_BLOCK_SIZE / 2))
                 {
@@ -88,8 +93,8 @@ namespace FEBuilderGBA
                             {
                                 if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
                                 FEBuilderGBA.Address.AddAddress(list
-                                    , start
-                                    , matchsize
+                                    , start + 16     //あたまと尻尾は危険なので利用しない
+                                    , matchsize - 16 - 16 //あたまと尻尾は危険なので利用しない
                                     , U.NOT_FOUND
                                     , ""
                                     , Address.DataTypeEnum.FFor00);
@@ -105,8 +110,8 @@ namespace FEBuilderGBA
                             {
                                 if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
                                 FEBuilderGBA.Address.AddAddress(list
-                                    , start
-                                    , matchsize
+                                    , start + 16     //あたまと尻尾は危険なので利用しない
+                                    , matchsize - 16 - 16 //あたまと尻尾は危険なので利用しない
                                     , U.NOT_FOUND
                                     , ""
                                     , Address.DataTypeEnum.FFor00);

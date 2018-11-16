@@ -31,8 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.L_17_BATTLEANIMEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_16_COMBO = new System.Windows.Forms.ComboBox();
-            this.L_24_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
-            this.L_23_TERRAINBATTLE = new FEBuilderGBA.TextBoxEx();
+            this.L_24_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
+            this.L_23_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.L_18_ITEMEFFECT_00ANY = new FEBuilderGBA.TextBoxEx();
             this.L_17_BATTLEANIME_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.label30 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.W6 = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
-            this.L_14_UNITPALETTE = new FEBuilderGBA.TextBoxEx();
+            this.L_14_UNITPALETTE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.D19 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
@@ -81,13 +81,13 @@
             this.B17 = new System.Windows.Forms.NumericUpDown();
             this.J_18_ITEMEFFECT = new System.Windows.Forms.Label();
             this.B16 = new System.Windows.Forms.NumericUpDown();
-            this.J_17_BATTLEANIME_PLUS1 = new System.Windows.Forms.Label();
+            this.J_17_BATTLEANIME = new System.Windows.Forms.Label();
             this.B15 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.L_15_CLASS = new FEBuilderGBA.TextBoxEx();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.J_15_CLASS = new System.Windows.Forms.Label();
-            this.J_14_UNITPALETTE = new System.Windows.Forms.Label();
+            this.J_14_UNITPALETTE_PLUS1 = new System.Windows.Forms.Label();
             this.B13 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.P8 = new System.Windows.Forms.NumericUpDown();
@@ -158,8 +158,8 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.L_17_BATTLEANIMEICON_PLUS1);
             this.panel2.Controls.Add(this.L_16_COMBO);
-            this.panel2.Controls.Add(this.L_24_TERRAINBATTLE);
-            this.panel2.Controls.Add(this.L_23_TERRAINBATTLE);
+            this.panel2.Controls.Add(this.L_24_TERRAINBATTLE_PLUS1);
+            this.panel2.Controls.Add(this.L_23_TERRAINBATTLE_PLUS1);
             this.panel2.Controls.Add(this.L_18_ITEMEFFECT_00ANY);
             this.panel2.Controls.Add(this.L_17_BATTLEANIME_PLUS1);
             this.panel2.Controls.Add(this.label30);
@@ -171,7 +171,7 @@
             this.panel2.Controls.Add(this.label29);
             this.panel2.Controls.Add(this.W6);
             this.panel2.Controls.Add(this.label28);
-            this.panel2.Controls.Add(this.L_14_UNITPALETTE);
+            this.panel2.Controls.Add(this.L_14_UNITPALETTE_PLUS1);
             this.panel2.Controls.Add(this.D19);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.P28);
@@ -183,13 +183,13 @@
             this.panel2.Controls.Add(this.B17);
             this.panel2.Controls.Add(this.J_18_ITEMEFFECT);
             this.panel2.Controls.Add(this.B16);
-            this.panel2.Controls.Add(this.J_17_BATTLEANIME_PLUS1);
+            this.panel2.Controls.Add(this.J_17_BATTLEANIME);
             this.panel2.Controls.Add(this.B15);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.L_15_CLASS);
             this.panel2.Controls.Add(this.B14);
             this.panel2.Controls.Add(this.J_15_CLASS);
-            this.panel2.Controls.Add(this.J_14_UNITPALETTE);
+            this.panel2.Controls.Add(this.J_14_UNITPALETTE_PLUS1);
             this.panel2.Controls.Add(this.B13);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.P8);
@@ -227,30 +227,30 @@
             this.L_16_COMBO.Location = new System.Drawing.Point(266, 342);
             this.L_16_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_16_COMBO.Name = "L_16_COMBO";
-            this.L_16_COMBO.Size = new System.Drawing.Size(174, 26);
+            this.L_16_COMBO.Size = new System.Drawing.Size(222, 26);
             this.L_16_COMBO.TabIndex = 20;
             // 
-            // L_24_TERRAINBATTLE
+            // L_24_TERRAINBATTLE_PLUS1
             // 
-            this.L_24_TERRAINBATTLE.ErrorMessage = "";
-            this.L_24_TERRAINBATTLE.Location = new System.Drawing.Point(266, 498);
-            this.L_24_TERRAINBATTLE.Margin = new System.Windows.Forms.Padding(2);
-            this.L_24_TERRAINBATTLE.Name = "L_24_TERRAINBATTLE";
-            this.L_24_TERRAINBATTLE.Placeholder = "";
-            this.L_24_TERRAINBATTLE.ReadOnly = true;
-            this.L_24_TERRAINBATTLE.Size = new System.Drawing.Size(172, 25);
-            this.L_24_TERRAINBATTLE.TabIndex = 192;
+            this.L_24_TERRAINBATTLE_PLUS1.ErrorMessage = "";
+            this.L_24_TERRAINBATTLE_PLUS1.Location = new System.Drawing.Point(266, 498);
+            this.L_24_TERRAINBATTLE_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_24_TERRAINBATTLE_PLUS1.Name = "L_24_TERRAINBATTLE_PLUS1";
+            this.L_24_TERRAINBATTLE_PLUS1.Placeholder = "";
+            this.L_24_TERRAINBATTLE_PLUS1.ReadOnly = true;
+            this.L_24_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(220, 25);
+            this.L_24_TERRAINBATTLE_PLUS1.TabIndex = 192;
             // 
-            // L_23_TERRAINBATTLE
+            // L_23_TERRAINBATTLE_PLUS1
             // 
-            this.L_23_TERRAINBATTLE.ErrorMessage = "";
-            this.L_23_TERRAINBATTLE.Location = new System.Drawing.Point(266, 469);
-            this.L_23_TERRAINBATTLE.Margin = new System.Windows.Forms.Padding(2);
-            this.L_23_TERRAINBATTLE.Name = "L_23_TERRAINBATTLE";
-            this.L_23_TERRAINBATTLE.Placeholder = "";
-            this.L_23_TERRAINBATTLE.ReadOnly = true;
-            this.L_23_TERRAINBATTLE.Size = new System.Drawing.Size(172, 25);
-            this.L_23_TERRAINBATTLE.TabIndex = 191;
+            this.L_23_TERRAINBATTLE_PLUS1.ErrorMessage = "";
+            this.L_23_TERRAINBATTLE_PLUS1.Location = new System.Drawing.Point(266, 469);
+            this.L_23_TERRAINBATTLE_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_23_TERRAINBATTLE_PLUS1.Name = "L_23_TERRAINBATTLE_PLUS1";
+            this.L_23_TERRAINBATTLE_PLUS1.Placeholder = "";
+            this.L_23_TERRAINBATTLE_PLUS1.ReadOnly = true;
+            this.L_23_TERRAINBATTLE_PLUS1.Size = new System.Drawing.Size(220, 25);
+            this.L_23_TERRAINBATTLE_PLUS1.TabIndex = 191;
             // 
             // L_18_ITEMEFFECT_00ANY
             // 
@@ -260,7 +260,7 @@
             this.L_18_ITEMEFFECT_00ANY.Name = "L_18_ITEMEFFECT_00ANY";
             this.L_18_ITEMEFFECT_00ANY.Placeholder = "";
             this.L_18_ITEMEFFECT_00ANY.ReadOnly = true;
-            this.L_18_ITEMEFFECT_00ANY.Size = new System.Drawing.Size(172, 25);
+            this.L_18_ITEMEFFECT_00ANY.Size = new System.Drawing.Size(220, 25);
             this.L_18_ITEMEFFECT_00ANY.TabIndex = 190;
             // 
             // L_17_BATTLEANIME_PLUS1
@@ -271,7 +271,7 @@
             this.L_17_BATTLEANIME_PLUS1.Name = "L_17_BATTLEANIME_PLUS1";
             this.L_17_BATTLEANIME_PLUS1.Placeholder = "";
             this.L_17_BATTLEANIME_PLUS1.ReadOnly = true;
-            this.L_17_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(172, 25);
+            this.L_17_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(220, 25);
             this.L_17_BATTLEANIME_PLUS1.TabIndex = 189;
             // 
             // label30
@@ -391,16 +391,16 @@
             this.label28.Text = "??";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // L_14_UNITPALETTE
+            // L_14_UNITPALETTE_PLUS1
             // 
-            this.L_14_UNITPALETTE.ErrorMessage = "";
-            this.L_14_UNITPALETTE.Location = new System.Drawing.Point(266, 278);
-            this.L_14_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
-            this.L_14_UNITPALETTE.Name = "L_14_UNITPALETTE";
-            this.L_14_UNITPALETTE.Placeholder = "";
-            this.L_14_UNITPALETTE.ReadOnly = true;
-            this.L_14_UNITPALETTE.Size = new System.Drawing.Size(172, 25);
-            this.L_14_UNITPALETTE.TabIndex = 178;
+            this.L_14_UNITPALETTE_PLUS1.ErrorMessage = "";
+            this.L_14_UNITPALETTE_PLUS1.Location = new System.Drawing.Point(266, 278);
+            this.L_14_UNITPALETTE_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_14_UNITPALETTE_PLUS1.Name = "L_14_UNITPALETTE_PLUS1";
+            this.L_14_UNITPALETTE_PLUS1.Placeholder = "";
+            this.L_14_UNITPALETTE_PLUS1.ReadOnly = true;
+            this.L_14_UNITPALETTE_PLUS1.Size = new System.Drawing.Size(220, 25);
+            this.L_14_UNITPALETTE_PLUS1.TabIndex = 178;
             // 
             // D19
             // 
@@ -450,6 +450,7 @@
             // 
             this.N2_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
             this.N2_AddressList.Location = new System.Drawing.Point(1, 128);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -460,6 +461,7 @@
             // ANIME_LIST
             // 
             this.ANIME_LIST.FormattingEnabled = true;
+            this.ANIME_LIST.IntegralHeight = false;
             this.ANIME_LIST.ItemHeight = 18;
             this.ANIME_LIST.Location = new System.Drawing.Point(592, 157);
             this.ANIME_LIST.Margin = new System.Windows.Forms.Padding(5);
@@ -859,16 +861,16 @@
             this.B16.Size = new System.Drawing.Size(67, 25);
             this.B16.TabIndex = 19;
             // 
-            // J_17_BATTLEANIME_PLUS1
+            // J_17_BATTLEANIME
             // 
-            this.J_17_BATTLEANIME_PLUS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_17_BATTLEANIME_PLUS1.Location = new System.Drawing.Point(2, 368);
-            this.J_17_BATTLEANIME_PLUS1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_17_BATTLEANIME_PLUS1.Name = "J_17_BATTLEANIME_PLUS1";
-            this.J_17_BATTLEANIME_PLUS1.Size = new System.Drawing.Size(175, 32);
-            this.J_17_BATTLEANIME_PLUS1.TabIndex = 158;
-            this.J_17_BATTLEANIME_PLUS1.Text = "戦闘アニメ";
-            this.J_17_BATTLEANIME_PLUS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_17_BATTLEANIME.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_17_BATTLEANIME.Location = new System.Drawing.Point(2, 368);
+            this.J_17_BATTLEANIME.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_17_BATTLEANIME.Name = "J_17_BATTLEANIME";
+            this.J_17_BATTLEANIME.Size = new System.Drawing.Size(175, 32);
+            this.J_17_BATTLEANIME.TabIndex = 158;
+            this.J_17_BATTLEANIME.Text = "戦闘アニメ";
+            this.J_17_BATTLEANIME.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B15
             // 
@@ -903,7 +905,7 @@
             this.L_15_CLASS.Name = "L_15_CLASS";
             this.L_15_CLASS.Placeholder = "";
             this.L_15_CLASS.ReadOnly = true;
-            this.L_15_CLASS.Size = new System.Drawing.Size(172, 25);
+            this.L_15_CLASS.Size = new System.Drawing.Size(220, 25);
             this.L_15_CLASS.TabIndex = 155;
             // 
             // B14
@@ -931,16 +933,16 @@
             this.J_15_CLASS.Text = "使用可能表示武器";
             this.J_15_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // J_14_UNITPALETTE
+            // J_14_UNITPALETTE_PLUS1
             // 
-            this.J_14_UNITPALETTE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_14_UNITPALETTE.Location = new System.Drawing.Point(2, 277);
-            this.J_14_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_14_UNITPALETTE.Name = "J_14_UNITPALETTE";
-            this.J_14_UNITPALETTE.Size = new System.Drawing.Size(175, 32);
-            this.J_14_UNITPALETTE.TabIndex = 152;
-            this.J_14_UNITPALETTE.Text = "パレットID";
-            this.J_14_UNITPALETTE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_14_UNITPALETTE_PLUS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_14_UNITPALETTE_PLUS1.Location = new System.Drawing.Point(2, 277);
+            this.J_14_UNITPALETTE_PLUS1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_14_UNITPALETTE_PLUS1.Name = "J_14_UNITPALETTE_PLUS1";
+            this.J_14_UNITPALETTE_PLUS1.Size = new System.Drawing.Size(175, 32);
+            this.J_14_UNITPALETTE_PLUS1.TabIndex = 152;
+            this.J_14_UNITPALETTE_PLUS1.Text = "パレットID";
+            this.J_14_UNITPALETTE_PLUS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B13
             // 
@@ -1269,6 +1271,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1355,7 +1358,7 @@
         private FEBuilderGBA.TextBoxEx L_15_CLASS;
         private System.Windows.Forms.NumericUpDown B14;
         private System.Windows.Forms.Label J_15_CLASS;
-        private System.Windows.Forms.Label J_14_UNITPALETTE;
+        private System.Windows.Forms.Label J_14_UNITPALETTE_PLUS1;
         private System.Windows.Forms.NumericUpDown B13;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown P8;
@@ -1387,7 +1390,7 @@
         private System.Windows.Forms.NumericUpDown B17;
         private System.Windows.Forms.Label J_18_ITEMEFFECT;
         private System.Windows.Forms.NumericUpDown B16;
-        private System.Windows.Forms.Label J_17_BATTLEANIME_PLUS1;
+        private System.Windows.Forms.Label J_17_BATTLEANIME;
         private System.Windows.Forms.NumericUpDown B15;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel3;
@@ -1405,7 +1408,7 @@
         private System.Windows.Forms.NumericUpDown N2_Address;
         private System.Windows.Forms.Label label31;
         private ListBoxEx N2_AddressList;
-        private FEBuilderGBA.TextBoxEx L_14_UNITPALETTE;
+        private FEBuilderGBA.TextBoxEx L_14_UNITPALETTE_PLUS1;
         private System.Windows.Forms.NumericUpDown W6;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.NumericUpDown B24;
@@ -1415,8 +1418,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.NumericUpDown B18;
         private System.Windows.Forms.NumericUpDown B27;
-        private FEBuilderGBA.TextBoxEx L_24_TERRAINBATTLE;
-        private FEBuilderGBA.TextBoxEx L_23_TERRAINBATTLE;
+        private FEBuilderGBA.TextBoxEx L_24_TERRAINBATTLE_PLUS1;
+        private FEBuilderGBA.TextBoxEx L_23_TERRAINBATTLE_PLUS1;
         private FEBuilderGBA.TextBoxEx L_18_ITEMEFFECT_00ANY;
         private FEBuilderGBA.TextBoxEx L_17_BATTLEANIME_PLUS1;
         private System.Windows.Forms.ComboBox L_16_COMBO;

@@ -6161,9 +6161,9 @@ r3=X tile position of menu of the right	{U}
 08AD1540	&LZ77	Something like a fireball	{J}
 08B1D11C	&LZ77	triangle	{J}
 08B1D954	&LZ77	A number	{J}
-08B30274	&LZ77	Something using TSA	{J}
-08B35820	&LZ77	Something using TSA	{J}
-08B3B014	&LZ77	Something round	{J}
+//08B30274	&LZ77	Something using TSA	{J}
+//08B35820	&LZ77	Something using TSA	{J}
+//08B3B014	&LZ77	Something round	{J}
 08BBB340	&LZ77	Guide letters	{J}
 08BBB3E4	&LZ77	Status of the lower left of the screen etc.	{J}
 08BBD3F8	&LZ77	Relief at the start of chapter	{J}
@@ -9325,20 +9325,8 @@ r3=X tile position of menu of the right	{U}
 080DC144	:080DC157	Mysterious data 18 bytes	{J}
 080D8740	:080D9D33	Mystery data	2	{U}
 080DD41C	:080DED0F	Mystery data	2	{J}
-080DFA2C	&LZ77	Picture of flame picture below	unused	{U}
-080E043C	&LZ77	TSA of the image of the flame picture below	unused	{U}
-080E041C	&PALETTE	Flame picture palette on the bottom	unused	{U}
-080E05F8	&LZ77	A flaming fire	unused	{U}
-080E1184	&LZ77	TSA of burning flame	unused	{U}
 080E1164	&PALETTE	Burning flame palette	{U}
-085B63A4	&LZ77	Image for palette test	unused	{U}
-080E4E0C	&LZ77	Picture of flame picture below	unused	{J}
-080E581C	&LZ77	TSA of the image of the flame picture below	unused	{J}
-080E57FC	&PALETTE	Flame picture palette on the bottom	unused	{J}
-080E59D8	&LZ77	A flaming fire	unused	{J}
-080E6564	&LZ77	TSA of burning flame	unused	{J}
 080E6544	&PALETTE	Burning flame palette	{J}
-085E0584	&LZ77	Image for palette test	unused	{J}
 08673168	:08674027	Unknown data	OAMSP Maybe	9	{U}
 08727014	&PALETTE	Something's palette	505	{U}
 08727034	&PALETTE	Something's palette	506	{U}

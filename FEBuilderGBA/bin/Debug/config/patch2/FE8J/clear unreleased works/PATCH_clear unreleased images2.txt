@@ -9,8 +9,9 @@ TAG=#ENGINE
 
 CLEAR:0xAAB4A0:0x27B8=0xAADC58	//ボツデータ いろいろ
 CLEAR:0xA79E90:0xFC0=0xA7AE50	//ボツデータ 雷のデータ
+CLEAR:0xB27970:0x13A64=0xB3B3D4	//FE6のワールドマップのデータ
 
-INFO=ボツデータの画像を消します。その2\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x3778(14200)bytes の空き領域を確保できます。
-INFO.en=Erase the image of the data.Part 2.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x3778 (14200) bytes can be secured.
+INFO=ボツデータの画像を消します。その2\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x171DC (94684) の空き領域を確保できます。
+INFO.en=Erase the image of the data.Part 2.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x171DC (94684) bytes can be secured.
 NAME.zh=未使用的图像数据2
-INFO.zh=删除数据图像。第2部分。\r\n这使得重建时可以重用该区域。\r\n可以保证0x3778（14200）字节的可用空间。
+INFO.zh=删除数据图像。第2部分。\r\n这使得重建时可以重用该区域。\r\n可以保证0x171DC (94684)字节的可用空间。
