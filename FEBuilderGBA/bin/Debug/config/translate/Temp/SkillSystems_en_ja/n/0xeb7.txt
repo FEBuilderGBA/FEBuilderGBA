@@ -1,2 +1,2 @@
-Death Blow: +6 Attack[N]
-when initiating battle.[X]
+Death Blow: +6 Attack
+when initiating battle.

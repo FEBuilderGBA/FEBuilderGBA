@@ -49,6 +49,7 @@ have_two:
 POP
 
 menu_gazou:
-#incext Png2Dmp menu.png --lz77
+//#incext Png2Dmp menu.png --lz77
+#incbin "menu.png.dmp"
 ALIGN 4
 

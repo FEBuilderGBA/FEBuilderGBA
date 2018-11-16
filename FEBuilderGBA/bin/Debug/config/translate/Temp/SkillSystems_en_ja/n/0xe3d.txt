@@ -1,2 +1,2 @@
-Warding Blow: +20 Res[N]
-when initiating battle.[X]
+Warding Blow: +20 Res
+when initiating battle.

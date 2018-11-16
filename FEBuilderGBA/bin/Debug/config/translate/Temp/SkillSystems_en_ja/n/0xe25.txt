@@ -1,2 +1,2 @@
-Wary Fighter: Unit cannot[N]
-double or be doubled.[X]
+Wary Fighter: Unit cannot
+double or be doubled.

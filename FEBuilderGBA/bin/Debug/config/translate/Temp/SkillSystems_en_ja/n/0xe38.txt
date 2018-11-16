@@ -1,2 +1,2 @@
-Aegis: Nullify a magic attack.[N]
-(Skill % activation)[X]
+Aegis: Nullify a magic attack.
+(Skill % activation)

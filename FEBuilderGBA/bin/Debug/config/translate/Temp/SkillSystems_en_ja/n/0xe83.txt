@@ -1,2 +1,2 @@
-Elbow Room: +3 damage dealt[N]
-when on open terrain.[X]
+Elbow Room: +3 damage dealt
+when on open terrain.

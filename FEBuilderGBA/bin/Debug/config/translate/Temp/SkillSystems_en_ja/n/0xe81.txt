@@ -1,1 +1,1 @@
-Celerity: Movement +2.[X]
+Celerity: Movement +2.

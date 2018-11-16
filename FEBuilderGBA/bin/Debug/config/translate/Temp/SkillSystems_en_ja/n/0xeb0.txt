@@ -1,2 +1,2 @@
-Trace: During Battle, copies[N]
-the first Skill of the enemy.[X]
+Trace: During Battle, copies
+the first Skill of the enemy.

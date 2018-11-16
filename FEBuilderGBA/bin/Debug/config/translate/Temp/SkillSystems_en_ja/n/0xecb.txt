@@ -1,2 +1,2 @@
-Black Magic: Skill% chance to[N]
-inflict a random status.[X]
+Black Magic: Skill% chance to
+inflict a random status.

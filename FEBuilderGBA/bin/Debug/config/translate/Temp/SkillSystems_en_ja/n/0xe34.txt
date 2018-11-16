@@ -1,2 +1,2 @@
-Lancebreaker: +50 Hit/Avo when[N]
-enemy has a lance equipped.[X]
+Lancebreaker: +50 Hit/Avo when
+enemy has a lance equipped.

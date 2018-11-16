@@ -3860,3 +3860,11 @@
 0803B3EC	AI的魔杖使用判断力	沉默之杖	{U}
 0803B578	AI的魔杖使用判断力	睡眠之杖	狂乱之杖	{U}
 0803B6FC	AI的魔杖使用判断力	魔防之杖	{U}
+//This data is made with the aim of being readable by machine fast.
+0802D596	天气图片的精灵号码	change light snow	{U}
+0802D89D	天气图片的精灵号码	change heavy snow	{U}
+08B961FF	天气图片的精灵号码	change rain1	{U}
+08B96207	天气图片的精灵号码	change rain2	{U}
+0802DBDE	天气图片的精灵号码	change BBQ	{U}
+0802D76D	天气图片的精灵号码	change sandstorm	{U}
+0802DD5D	天气图片的精灵号码	change clouds	{U}

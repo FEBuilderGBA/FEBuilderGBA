@@ -1,2 +1,2 @@
-Push an adjacent unit two[N]
-tiles away.[X]
+Push an adjacent unit two
+tiles away.

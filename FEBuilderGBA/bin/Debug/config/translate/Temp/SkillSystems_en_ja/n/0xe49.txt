@@ -1,2 +1,2 @@
-Bowfaire: +4 damage[N]
-when equipping a bow.[X]
+Bowfaire: +4 damage
+when equipping a bow.

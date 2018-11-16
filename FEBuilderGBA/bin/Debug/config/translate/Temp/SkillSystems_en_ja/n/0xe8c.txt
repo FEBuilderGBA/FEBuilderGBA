@@ -1,2 +1,2 @@
-Dragon's Blood: Unit is able[N]
-to activate Dragon Veins.[X]
+Dragon's Blood: Unit is able
+to activate Dragon Veins.

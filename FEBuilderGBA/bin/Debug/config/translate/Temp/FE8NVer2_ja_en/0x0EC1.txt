@@ -1,0 +1,2 @@
+Nullify:
+Nullifies bonus damage from weapons.

@@ -33,4 +33,5 @@ HPBars:
 #incbin "ASM/_warning_and_hpbars.dmp"
 POIN HPFramePointers
 HPBarGraphic:
-#incext Png2Dmp "bin/Warning_and_HPGraphic - Copy.png" --lz77
+//#incext Png2Dmp "bin/Warning_and_HPGraphic - Copy.png" --lz77
+#incbin "bin/Warning_and_HPGraphic - Copy.png.dmp"

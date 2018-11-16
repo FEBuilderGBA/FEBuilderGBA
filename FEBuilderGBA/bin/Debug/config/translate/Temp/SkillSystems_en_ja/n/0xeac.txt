@@ -1,2 +1,2 @@
-Dazzle: Opponents cannot[N]
-counterattack this unit.[X]
+Dazzle: Opponents cannot
+counterattack this unit.

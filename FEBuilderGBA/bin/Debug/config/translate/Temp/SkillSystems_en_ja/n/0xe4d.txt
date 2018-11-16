@@ -1,2 +1,2 @@
-Summon: Can conjure a phantom[N]
-soldier to fight alongside you.[X]
+Summon: Can conjure a phantom
+soldier to fight alongside you.

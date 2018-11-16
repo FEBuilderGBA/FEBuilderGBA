@@ -3869,3 +3869,11 @@
 0803B3EC	AI's wand use judgment	Silence	{U}
 0803B578	AI's wand use judgment	Sleep	Berserk	{U}
 0803B6FC	AI's wand use judgment	Barrier	{U}
+//This data is made with the aim of being readable by machine fast.
+0802D596	Sprite number of the weather picture	change light snow	{U}
+0802D89D	Sprite number of the weather picture	change heavy snow	{U}
+08B961FF	Sprite number of the weather picture	change rain1	{U}
+08B96207	Sprite number of the weather picture	change rain2	{U}
+0802DBDE	Sprite number of the weather picture	change BBQ	{U}
+0802D76D	Sprite number of the weather picture	change sandstorm	{U}
+0802DD5D	Sprite number of the weather picture	change clouds	{U}

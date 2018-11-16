@@ -3960,7 +3960,6 @@
 080BAAB8	攻略評価の画像をロードするProcsを起動する	{J}
 0803AF24	AiGetStaffAiIndex	{J}
 0803AA70	AiGetStaffAiIndex	{U}
-
 0803B104	AIの杖利用判定	ライブ	リライブ	リカバー	{J}
 0803B27C	AIの杖利用判定	リブロー	レスキュー	{J}
 0803B44C	AIの杖利用判定	リザーブ	{J}
@@ -3969,7 +3968,6 @@
 0803B8A0	AIの杖利用判定	サイレス	{J}
 0803BA2C	AIの杖利用判定	スリープ	バーサク	{J}
 0803BBB0	AIの杖利用判定	Ｍシールド	{J}
-
 0803AC50	AIの杖利用判定	ライブ	リライブ	リカバー	{U}
 0803ADC8	AIの杖利用判定	リブロー	レスキュー	{U}
 0803AF98	AIの杖利用判定	リザーブ	{U}
@@ -3978,3 +3976,10 @@
 0803B3EC	AIの杖利用判定	サイレス	{U}
 0803B578	AIの杖利用判定	スリープ	バーサク	{U}
 0803B6FC	AIの杖利用判定	Ｍシールド	{U}
+0802D596	天気の画像のスプライト番号	change light snow	{U}
+0802D89D	天気の画像のスプライト番号	change heavy snow	{U}
+08B961FF	天気の画像のスプライト番号	change rain1	{U}
+08B96207	天気の画像のスプライト番号	change rain2	{U}
+0802DBDE	天気の画像のスプライト番号	change BBQ	{U}
+0802D76D	天気の画像のスプライト番号	change sandstorm	{U}
+0802DD5D	天気の画像のスプライト番号	change clouds	{U}

@@ -149,7 +149,8 @@ ALIGN	4
 
 
 HPBarGraphic:
-#incext Png2Dmp "HPGraphic.png" --lz77
+//#incext Png2Dmp "HPGraphic.png" --lz77
+#incbin "HPGraphic.png.dmp"
 
 	
 ALIGN	4

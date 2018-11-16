@@ -1,1 +1,1 @@
- Gamble[X]
+ Gamble

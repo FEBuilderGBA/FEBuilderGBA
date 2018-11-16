@@ -11304,3 +11304,10 @@ r3=X tile position of menu of the right	{U}
 08007938	加载面部图形	r0=面部识别码	r1=?	r2=?	r3=?	{U}
 08AAB4A0	&LZ77	启动数据	模式	ONLY FE8J	{J}
 08AAC5A8	&LZ77	启动数据	菜单救济	ONLY FE8J	{J}
+08030366	天气图片的精灵号码	change 80 to 80/A0/C0/E0 light snow	{U}
+0803066D	天气图片的精灵号码	change 10 to 10/14/18/1C heavy snow	{U}
+0859D95F	天气图片的精灵号码	change 10 to 10/14/18/1C rain1	{U}
+0859D967	天气图片的精灵号码	change 10 to 10/14/18/1C rain2	{U}
+080309B2	天气图片的精灵号码	change A0 to A0/A4/A8/AC BBQ	{U}
+0803053C	天气图片的精灵号码	change 10 to 10/14/18/1C sandstorm	{U}
+08030B31	天气图片的精灵号码	change AC to A0/A4/A8/AC clouds	{U}

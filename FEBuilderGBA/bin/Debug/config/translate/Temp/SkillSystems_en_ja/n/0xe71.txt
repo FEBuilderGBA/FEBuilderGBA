@@ -1,2 +1,2 @@
-Life and Death: +10 to[N]
-damage dealt and taken.[X]
+Life and Death: +10 to
+damage dealt and taken.

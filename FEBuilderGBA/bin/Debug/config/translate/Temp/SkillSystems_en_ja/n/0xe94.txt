@@ -1,2 +1,2 @@
-Killing Machine: Total critical[N]
-rate is doubled.[X]
+Killing Machine: Total critical
+rate is doubled.

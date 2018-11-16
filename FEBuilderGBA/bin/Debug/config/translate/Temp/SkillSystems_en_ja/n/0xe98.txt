@@ -1,2 +1,2 @@
-Armsthrift: Luck % chance to not[N]
-consume weapon durability.[X]
+Armsthrift: Luck % chance to not
+consume weapon durability.

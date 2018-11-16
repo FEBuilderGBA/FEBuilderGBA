@@ -1,0 +1,2 @@
+Adept: Skill% chance to allow the user
+to perform a consecutive attack.

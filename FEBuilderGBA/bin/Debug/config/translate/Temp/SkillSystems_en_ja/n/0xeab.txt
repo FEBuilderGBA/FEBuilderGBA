@@ -1,2 +1,2 @@
-Fury: +2 Atk/Spd/Def/Res. Unit[N]
-takes 6 damage after combat.[X]
+Fury: +2 Atk/Spd/Def/Res. Unit
+takes 6 damage after combat.
