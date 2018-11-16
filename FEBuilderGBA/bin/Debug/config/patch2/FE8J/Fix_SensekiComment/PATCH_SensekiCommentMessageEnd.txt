@@ -1,0 +1,15 @@
+NAME=戦績コメントのメッセージの位置
+INFO=戦略評価の戦績コメントのメッセージを5つ用意する必要があるのですが、そのメッセージの基準位置となるテキストIDを指定します。\r\nこのテキストIDから、逆方向に5つメッセージを書くことができます。\r\n例えば、7B7を指定した場合、以下のようになります。\r\n7B7 = 評価S\r\n7B6 = 評価A\r\n7B5 = 評価B\r\n7B4 = 評価C\r\n7B3 = 評価D\r\n7B2 = 評価E
+
+TYPE=ADDR
+TAG=#ENGINE
+
+AUTHOR=7743
+
+ADDRESS=0xA324C
+DATASIZE=2
+ADDRESS_TYPE=TEXT
+NAME.en=Position of the message of the Bonding Comment
+INFO.en=It is necessary to prepare five message of comment on strategy evaluation, but specify the text ID which is the reference position of the message.\r\nFrom this text ID, you can write 5 messages in the reverse direction.\r\nFor example, if 7B7 is specified, it becomes as follows.\r\n7B7=Evaluation S\r\n7B6=Evaluation A\r\n7B5=Evaluation B\r\n7B4=Evaluation C\r\n7B3=Evaluation D\r\n7B2=Evaluation E
+NAME.zh=BK记录评论的消息的位置
+INFO.zh=有必要准备五条关于策略评估的评论信息，但是指定作为信息参考位置的文本ID。\r\n从该文本ID，您可以反向写入5条消息。\r\n例如，如果指定了7B7，则其变为如下。\r\n7B7=评估S.\r\n7B6=评价A.\r\n7B5=评估B.\r\n7B4=评价C.\r\n7B3=评估D.\r\n7B2=评价E.

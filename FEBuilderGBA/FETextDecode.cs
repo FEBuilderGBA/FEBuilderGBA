@@ -63,7 +63,7 @@ namespace FEBuilderGBA
         public String DecodeAddr(uint addr, out int out_DataSize)
         {
             addr = U.toOffset(addr);
-            if ( ! U.isSafetyOffset(addr))
+            if ( ! U.isSafetyOffset(addr, this.ROM))
             {
                 out_DataSize = 0;
                 return "";

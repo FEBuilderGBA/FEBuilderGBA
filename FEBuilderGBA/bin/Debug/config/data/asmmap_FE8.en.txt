@@ -9260,7 +9260,7 @@ r3=X tile position of menu of the right	{U}
 08AA9E98	&PALETTE	Something's palette	483	{J}
 08AA9EB8	&PALETTE	Something's palette	484	{J}
 08AA9ED8	&PALETTE	Something's palette	485	{J}
-08AAB440	&PALETTE	Something's palette	486	{J}
+08AAB440	&PALETTE3	Something's palette	486	{J}
 08AB8084	&PALETTE	Something's palette	487	{J}
 08B1E6BC	&PALETTE	Something's palette	488	{J}
 08B1E6DC	&PALETTE	Something's palette	489	{J}
@@ -11417,3 +11417,16 @@ r3=X tile position of menu of the right	{U}
 080202F8	Start chapter	Drawing animation of two lights at the start	{U}
 08020778	Start chapter	Routine to start drawing chapter title	{U}
 080207C8	Start chapter	Draw the relief behind the chapter title	{U}
+080A3074	Tactics evaluation	Version in which stars are displayed	1	{J}
+080A3458	Tactics evaluation	Version in which stars are displayed	2	{J}
+080A2BF8	Bonding Comment	Top	{J}
+080A3118	Bonding Comment	Loading facial graphics	{J}
+080A3228	Bonding Comment	Getting text	0x7B7-	{J}
+080913FC	Display speech of text	{J}
+0800783c	Loading facial graphics	r0=Face ID	r1=?	r2=?	r3=?	{J}
+08A95438	&TEXTBATCH	Text of the item of the boy record comment	{J}
+08A9A4E4	&PALETTE2	Background palette of ball record of comment	{J}
+0808F128	Display speech of text	{U}
+08007938	Loading facial graphics	r0=Face ID	r1=?	r2=?	r3=?	{U}
+08AAB4A0	&LZ77	Boot data	mode	ONLY FE8J	{J}
+08AAC5A8	&LZ77	Boot data	Menu Relief	ONLY FE8J	{J}

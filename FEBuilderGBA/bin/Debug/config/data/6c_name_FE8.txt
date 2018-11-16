@@ -23,8 +23,7 @@ BEEB4=MNCH WorldMap Procs	{J}	//08AC1108
 381F0=Display Record evaluation screen	{U}	//0859E64C 戦績
 BD03C=Display tactics evaluation screen	{J}	//08AC0F10 攻略評価
 BC054=Display Fin Screen	{J}	//08AC0CD0 FIN
-
-
+A2C0C=SensekiComment	{J}	//08A95370 戦績コメント
 
 
 

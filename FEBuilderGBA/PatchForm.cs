@@ -2322,21 +2322,22 @@ namespace FEBuilderGBA
                 this.filename = filename;
             }
         };
-        static uint atOffset(string[] dic, int at, string def = "0")
+        static uint atOffset(string[] dic, int at, string def = "0", string basedir = "")
         {
             string v = U.at(dic, at, def);
-            return convertBinAddressString(v, 0, 0x100,"");
+            return convertBinAddressString(v, 0, 0x100,basedir);
         }
-        static uint atOffset(Dictionary<string, string> dic, string at, string def = "0")
+        static uint atOffset(Dictionary<string, string> dic, string at, string def = "0",string basedir="")
         {
             string v = U.at(dic, at, def);
-            return convertBinAddressString(v, 0, 0x100, "");
+            return convertBinAddressString(v, 0, 0x100, basedir);
         }
-        static uint atOffset(Dictionary<uint, string> dic, uint at, string def = "0")
+        static uint atOffset(Dictionary<uint, string> dic, uint at, string def = "0", string basedir = "")
         {
             string v = U.at(dic, at, def);
-            return convertBinAddressString(v, 0, 0x100, "");
+            return convertBinAddressString(v, 0, 0x100, basedir);
         }
+
         static uint convertBinAddressString(string addrstring, uint appnedSize, uint start_offset , string basedir)
         {
             if (addrstring == "")
@@ -4658,49 +4659,50 @@ namespace FEBuilderGBA
 
             //インポートボタンをクリック
             importButton.PerformClick();
+            string basedir = Path.GetDirectoryName(st.PatchFileName);
 
             //もし、書き込んだ場合は、ポインタを更新します.
             uint p;
             for (int n = 0; n < st.Param.Count; n++)
             {
-                p = atOffset(st.Param, "IMAGE_POINTER");
+                p = atOffset(st.Param, "IMAGE_POINTER", basedir: basedir);
                 if (p > 0 && U.isSafetyOffset(p))
                 {
                     out_img = Program.ROM.p32(p);
                 }
-                p = atOffset(st.Param, "ZIMAGE_POINTER");
+                p = atOffset(st.Param, "ZIMAGE_POINTER", basedir: basedir);
                 if (p > 0 && U.isSafetyOffset(p))
                 {
                     out_img = Program.ROM.p32(p);
                 }
-                p = atOffset(st.Param, "Z2IMAGE_POINTER");
+                p = atOffset(st.Param, "Z2IMAGE_POINTER", basedir: basedir);
                 if (p > 0 && U.isSafetyOffset(p))
                 {
                     out_img2 = Program.ROM.p32(p);
                 }
 
-                p = atOffset(st.Param, "TSA_POINTER");
+                p = atOffset(st.Param, "TSA_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
                 {
                     out_tsa = Program.ROM.p32(p);
                 }
-                p = atOffset(st.Param, "ZTSA_POINTER");
+                p = atOffset(st.Param, "ZTSA_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
                 {
                     out_tsa = Program.ROM.p32(p);
                 }
-                p = atOffset(st.Param, "HEADERTSA_POINTER");
+                p = atOffset(st.Param, "HEADERTSA_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
                 {
                     out_tsa = Program.ROM.p32(p);
                 }
-                p = atOffset(st.Param, "ZHEADERTSA_POINTER");
+                p = atOffset(st.Param, "ZHEADERTSA_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
                 {
                     out_tsa = Program.ROM.p32(p);
                 }
 
-                p = atOffset(st.Param, "PALETTE_POINTER");
+                p = atOffset(st.Param, "PALETTE_POINTER", basedir: basedir);
                 if (U.isSafetyOffset(p))
                 {
                     out_pal = Program.ROM.p32(p);
@@ -5216,10 +5218,11 @@ namespace FEBuilderGBA
         }
         static void MakePatchStructDataListForIMAGE(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
             uint width = atOffset(patch.Param, "WIDTH", "8");
             uint height = atOffset(patch.Param, "HEIGHT", "8");
             uint p;
-            p = atOffset(patch.Param, "IMAGE_POINTER");
+            p = atOffset(patch.Param, "IMAGE_POINTER",basedir: basedir);
             if (p > 0 && U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5228,7 +5231,7 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list, a, width * height / 2, p, patch.Name + "@IMAGE_POINTER", Address.DataTypeEnum.IMG);
                 }
             }
-            p = atOffset(patch.Param, "ZIMAGE_POINTER");
+            p = atOffset(patch.Param, "ZIMAGE_POINTER", basedir: basedir);
             if (p > 0 && U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5239,7 +5242,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            p = atOffset(patch.Param, "TSA_POINTER");
+            p = atOffset(patch.Param, "TSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5248,7 +5251,7 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list, a, width * height / 32, p, patch.Name + "@TSA_POINTER", Address.DataTypeEnum.TSA);
                 }
             }
-            p = atOffset(patch.Param, "ZTSA_POINTER");
+            p = atOffset(patch.Param, "ZTSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5258,12 +5261,12 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@ZTSA_POINTER", Address.DataTypeEnum.LZ77TSA);
                 }
             }
-            p = atOffset(patch.Param, "HEADERTSA_POINTER");
+            p = atOffset(patch.Param, "HEADERTSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 FEBuilderGBA.Address.AddHeaderTSAPointer(list, p, patch.Name + "@HEADERTSA_POINTER", false);
             }
-            p = atOffset(patch.Param, "ZHEADERTSA_POINTER");
+            p = atOffset(patch.Param, "ZHEADERTSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5274,7 +5277,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            p = atOffset(patch.Param, "PALETTE_POINTER");
+            p = atOffset(patch.Param, "PALETTE_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
             {
                 uint a = Program.ROM.p32(p);
@@ -5286,7 +5289,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                uint a = atOffset(patch.Param, "PALETTE_ADDRESS");
+                uint a = atOffset(patch.Param, "PALETTE_ADDRESS", basedir: basedir);
                 if (U.isSafetyOffset(a))
                 {
                     uint len = atOffset(patch.Param, "PALETTE", "1") * 0x20;
@@ -5342,7 +5345,8 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                
+
+                string basedir = Path.GetDirectoryName(patch.PatchFileName);
                 string type = U.at(patch.Param, "TYPE");
                 if (type != "ADDR")
                 {
@@ -5353,7 +5357,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                uint addr = atOffset(patch.Param, "ADDRESS");
+                uint addr = atOffset(patch.Param, "ADDRESS", basedir: basedir);
                 if (!U.isSafetyOffset(addr))
                 {
                     continue;

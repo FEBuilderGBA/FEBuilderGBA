@@ -1,0 +1,16 @@
+NAME=ライブの杖で回復量を表示します
+NAME.en=Show Heal Amount
+
+TYPE=BIN
+TAG=#ENGINE
+
+PATCHED_IF:0x24670=0x00 0x4B 0x9F 0x46
+BIN:$FREEAREA=FE8-Show Heal Amount.dmp
+JUMP:0x24670:$r3=FE8-Show Heal Amount.dmp
+
+EXTENDS:0x1000=TEXT
+TEXTADV:0xedc=0xedc.txt
+
+
+AUTHOR=Tequila
+NAME.zh=我们将用活杖显示恢复量

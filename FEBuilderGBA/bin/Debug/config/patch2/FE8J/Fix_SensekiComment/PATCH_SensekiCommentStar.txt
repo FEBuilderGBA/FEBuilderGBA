@@ -1,0 +1,15 @@
+NAME=戦績コメントの星データ
+INFO=攻略評価の戦績コメントでは、評価は数字ではなく星で表現されます。\r\nただし、この画像のパレットを変更しても無視されるようです。\r\n元のパレットのそのまま維持してください。
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x0A3108//0xA9A39C
+PALETTE_POINTER=0x0A2E44//0xA9A4E4
+
+NAME.en=Star data of Bonding Comment
+INFO.en=In the capture assessment's battle comment, the evaluation is expressed not by numbers but by stars.\r\nHowever, changing the palette of this image seems to be ignored.\r\nPlease keep the original pallet as it is.
+NAME.zh=评论评论的明星数据
+INFO.zh=在捕获评估的战斗评论中，评估不是由数字表示，而是由星星表示。\r\n但是，更改此图像的调色板似乎被忽略。\r\n请保持原托盘原样。

@@ -1,0 +1,16 @@
+NAME=ボツデータの未使用画像2
+NAME.en=clear unreleased works: images2
+
+PATCHED_IF:0xAAB4A0=0x00 0x00 0x00 0x00
+IF:0xAAB4A0=0x10 0x00 0x10 0x00
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xAAB4A0:0x27B8=0xAADC58	//ボツデータ いろいろ
+CLEAR:0xA79E90:0xFC0=0xA7AE50	//ボツデータ 雷のデータ
+
+INFO=ボツデータの画像を消します。その2\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0x3778(14200)bytes の空き領域を確保できます。
+INFO.en=Erase the image of the data.Part 2.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0x3778 (14200) bytes can be secured.
+NAME.zh=未使用的图像数据2
+INFO.zh=删除数据图像。第2部分。\r\n这使得重建时可以重用该区域。\r\n可以保证0x3778（14200）字节的可用空间。
