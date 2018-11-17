@@ -78,7 +78,7 @@ namespace FEBuilderGBA
         public uint event_haiku_pointer() { return 0x8472c; } //死亡時セリフの開始位置
         public uint event_force_sortie_pointer() { return 0x8483C; } // 強制出撃の開始位置
         public uint map_exit_point_pointer() { return 0x3E8AC; } // 離脱ポイント開始サイズ
-        public uint map_exit_point_npc_blockadd() { return 63; } // arr[+65] からNPCらしい.
+        public uint map_exit_point_npc_blockadd() { return 65; } // arr[+65] からNPCらしい.
         public uint map_exit_point_blank() { return 0xD84E0; } // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
         public uint sound_boss_bgm_pointer() { return 0x72908; } // ボスBGMの開始位置
         public uint sound_foot_steps_pointer() { return 0x78dd4; } //クラス足音の開始位置

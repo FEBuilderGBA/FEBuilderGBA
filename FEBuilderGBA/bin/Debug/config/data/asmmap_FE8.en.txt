@@ -11425,3 +11425,27 @@ r3=X tile position of menu of the right	{U}
 080309B2	Sprite number of the weather picture	change A0 to A0/A4/A8/AC BBQ	{U}
 0803053C	Sprite number of the weather picture	change 10 to 10/14/18/1C sandstorm	{U}
 08030B31	Sprite number of the weather picture	change AC to A0/A4/A8/AC clouds	{U}
+0809C23C	Select items in advance preparations	{J}
+0809E100	Item change screen of item arrangement screen	{J}
+080A2028	List display screen of item arrangement screen	{J}
+080A0D78	Transporter of item arrangement screen	{J}
+080A5744	Support screen for attack advance preparation	Top	{J}
+080A575C	Support screen for attack advance preparation	Part 2	{J}
+080A56F0	Select unit on support screen	Top	{J}
+080A69D4	When you select a unit on the support screen	{J}
+08034014	When accessing save screen on advancement advance screen	{J}
+08098600	When selecting menu item on the advancement preparation screen	{J}
+08090A70	Show status screen	subroutine	{J}
+080A0944	Evaluation of attack strategy preparation	Top	{U}
+08099F68	Select items in advance preparations	{U}
+0809BE3C	Item change screen of item arrangement screen	{U}
+0809FD88	List display screen of item arrangement screen	{U}
+0809EAD8	Transporter of item arrangement screen	{U}
+080A196C	Support screen for attack advance preparation	Top	{U}
+080A1984	Support screen for attack advance preparation	Part 2	{U}
+080A1918	Select unit on support screen	Top	{U}
+080a2c08	When you select a unit on the support screen	{U}
+0803410C	When accessing save screen on advancement advance screen	{U}
+0809631C	When selecting menu item on the advancement preparation screen	{U}
+0808E79C	Show status screen	subroutine	{U}
+080A0758	nullsub_66	{U}
