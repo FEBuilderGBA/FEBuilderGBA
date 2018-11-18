@@ -2204,7 +2204,7 @@
             // 
             // MagicExtClassPromotionGain
             // 
-            this.MagicExtClassPromotionGain.Location = new System.Drawing.Point(788, 33);
+            this.MagicExtClassPromotionGain.Location = new System.Drawing.Point(789, 33);
             this.MagicExtClassPromotionGain.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtClassPromotionGain.Maximum = new decimal(new int[] {
             255,

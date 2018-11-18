@@ -546,7 +546,68 @@ namespace FEBuilderGBA
 
             int x = e.X / chipsize * chipsize;
             int y = e.Y / chipsize * chipsize;
-            PutPathChip(x / chipsize, y / chipsize);
+
+            x = x / chipsize;
+            y = y / chipsize;
+
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {//右ボタンを押すと、現在のマップチップを選択する スポイトツール
+                SelectSpointChip(x, y);
+                CHIPLIST.Invalidate();
+                return;
+            }
+
+            PutPathChip(x, y);
+        }
+
+        void SelectSpointChip(int x, int y)
+        {
+            int read_index = (y) * MAP_X + (x);
+            if (read_index < 0 || read_index >= this.Map.Length)
+            {
+                return;
+            }
+
+            ushort a = this.Map[read_index];
+            uint xx = 0;
+            uint yy = (uint)(a & 0xff);
+
+            uint pal_flip = (uint)((a >> 8) & 0xff);
+            if (pal_flip == 0x00)
+            {
+                xx = 0;
+            }
+            else if (pal_flip == 0x04)
+            {
+                xx = 1 ;
+            }
+            else if (pal_flip == 0x08)
+            {
+                xx = 2 ;
+            }
+            else if (pal_flip == 0x0C)
+            {
+                xx = 3 ;
+            }
+            else if (pal_flip == 0x10)
+            {
+                xx = 4 ;
+            }
+            else if (pal_flip == 0x14)
+            {
+                xx = 5 ;
+            }
+            else if (pal_flip == 0x18)
+            {
+                xx = 6 ;
+            }
+            else if (pal_flip == 0x1C)
+            {
+                xx = 7 ;
+            }
+
+            SelectCursor.X = (int)(xx * 8);
+            SelectCursor.Y = (int)(yy * 8);
         }
 
 

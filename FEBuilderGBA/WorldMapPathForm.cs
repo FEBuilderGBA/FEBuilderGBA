@@ -200,21 +200,16 @@ namespace FEBuilderGBA
             MakeWorldMap();
         }
         
-        public static uint CalcPathDataLength(uint id)
+        public static uint CalcPathDataLength(uint addr)
         {
-            InputFormRef InputFormRef = Init(null);
-            //現在のIDに対応するデータ
-            uint addr = InputFormRef.IDToAddr(id);
             if (!U.isSafetyOffset(addr))
             {
                 return 0;
             }
-
-            uint p = Program.ROM.p32(addr + 0);
-            addr = p;
+            uint p = addr;
             while (true)
             {
-                if (! U.isSafetyOffset(p + 4))
+                if (!U.isSafetyOffset(p + 4))
                 {
                     Debug.Assert(false);
                     return p - addr;
@@ -232,18 +227,14 @@ namespace FEBuilderGBA
                 p += count * 2;
             }
         }
-        public static uint CalcPathMoveDataLength(uint id)
+        public static uint CalcPathMoveDataLength(uint addr)
         {
-            InputFormRef InputFormRef = Init(null);
-            //現在のIDに対応するデータ
-            uint addr = InputFormRef.IDToAddr(id);
-            if (!U.isSafetyOffset(addr+8))
+            if (!U.isSafetyOffset(addr))
             {
                 return 0;
             }
 
-            uint p = Program.ROM.p32(addr + 8);
-            addr = p;
+            uint p = addr;
             while (true)
             {
                 if (!U.isSafetyOffset(p))
@@ -279,7 +270,7 @@ namespace FEBuilderGBA
                     {
                         name = "WorldMapPath:" + U.To0xHexString(i);
                         FEBuilderGBA.Address.AddAddress(list,a0
-                            , CalcPathDataLength((uint)i)
+                            , CalcPathDataLength(a0)
                             , p + 0
                             , name
                             , FEBuilderGBA.Address.DataTypeEnum.BIN);
@@ -289,7 +280,7 @@ namespace FEBuilderGBA
                     {
                         name = "WorldMapPathMove:" + U.To0xHexString(i);
                         FEBuilderGBA.Address.AddAddress(list,a8
-                            , CalcPathMoveDataLength((uint)i)
+                            , CalcPathMoveDataLength(a8)
                             , p + 8
                             , name
                             , FEBuilderGBA.Address.DataTypeEnum.POINTER);
