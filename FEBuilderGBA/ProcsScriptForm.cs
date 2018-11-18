@@ -278,8 +278,8 @@ namespace FEBuilderGBA
                             return U.NOT_FOUND;
                         }
                     }
-                    else if (sarg <= 1)
-                    {//1だったときは、何か値が入ることがあるようだ
+                    else if (sarg <= 10)
+                    {//10だったときは、何か値が入ることがあるようだ
                      //例: 0000 1000 08001800
                         if (parg == 0)
                         {//規約違反
@@ -367,6 +367,10 @@ namespace FEBuilderGBA
                     {//規約違反
                         return U.NOT_FOUND;
                     }
+                }
+                else if (code == 0x800)
+                {//EXIT その3
+                    break;
                 }
                 else
                 {

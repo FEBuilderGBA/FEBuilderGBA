@@ -79,6 +79,11 @@ namespace FEBuilderGBA
                     }
                 }
 
+                if (code == 0x800)
+                {//EXIT その3
+                    break;
+                }
+
                 if (code == 0x00)
                 {//EXIT
                     break;
