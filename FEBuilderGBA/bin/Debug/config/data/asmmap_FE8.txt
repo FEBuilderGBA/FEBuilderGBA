@@ -8263,7 +8263,7 @@
 085B9BC4	:085B9CE3	Unk OAMSP1	{U}
 085E3E14	:085E3F13	Unk OAMSP1	{J}
 08604784	&PALETTE	何かのパレット	145	{J}
-0860A374	&PALETTE	何かのパレット	146	{J}
+0860A374	&PALETTE8	何かのパレット	146	{J}
 0860B53C	&PALETTE	何かのパレット	147	{J}
 0860C600	&PALETTE	何かのパレット	148	{J}
 0860C620	&PALETTE	何かのパレット	149	{J}
@@ -11306,7 +11306,6 @@
 08040354	AIの杖利用判定	サイレス	{U}
 080404E0	AIの杖利用判定	スリープ	バーサク	{U}
 08040664	AIの杖利用判定	Ｍシールド	{U}
-
 08012A14	WarpIN_Event_Sub	{J}
 08021A2C	WarpIN_Event_Sub_2	{J}
 08012950	WarpIN_Event_Sub	{U}
@@ -11415,3 +11414,11 @@
 0809631C	進撃準備画面でメニューの項目を選択した時	{U}
 0808E79C	状況画面を表示	サブルーチン	{U}
 080A0758	nullsub_66	{U}
+085C573C	085C5968	謎の関数リスト	不規則なデータ	{J}
+08006DC8	NewBlocking_Yeild	{J}
+08006DDC	IsBlocking_Yeild	{J}
+08006DF4	ExitBlocking_Yeild	{J}
+0859D25C	0859D498	謎の関数リスト	不規則なデータ	{U}
+08006EC4	NewBlocking_Yeild	{U}
+08006ED8	IsBlocking_Yeild	{U}
+08006EF0	ExitBlocking_Yeild	{U}

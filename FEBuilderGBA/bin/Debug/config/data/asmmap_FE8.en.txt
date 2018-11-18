@@ -8333,7 +8333,7 @@ r3=X tile position of menu of the right	{U}
 085B9BC4	:085B9CE3	Unk OAMSP1	{U}
 085E3E14	:085E3F13	Unk OAMSP1	{J}
 08604784	&PALETTE	Something's palette	145	{J}
-0860A374	&PALETTE	Something's palette	146	{J}
+0860A374	&PALETTE8	Something's palette	146	{J}
 0860B53C	&PALETTE	Something's palette	147	{J}
 0860C600	&PALETTE	Something's palette	148	{J}
 0860C620	&PALETTE	Something's palette	149	{J}
