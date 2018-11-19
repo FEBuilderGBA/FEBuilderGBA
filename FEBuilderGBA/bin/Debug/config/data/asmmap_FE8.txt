@@ -11414,11 +11414,11 @@
 0809631C	進撃準備画面でメニューの項目を選択した時	{U}
 0808E79C	状況画面を表示	サブルーチン	{U}
 080A0758	nullsub_66	{U}
-085C573C	085C5968	謎の関数リスト	不規則なデータ	{J}
+085C573C	:085C5967	謎の関数リスト	不規則なデータ	{J}
 08006DC8	NewBlocking_Yeild	{J}
 08006DDC	IsBlocking_Yeild	{J}
 08006DF4	ExitBlocking_Yeild	{J}
-0859D25C	0859D498	謎の関数リスト	不規則なデータ	{U}
+0859D25C	:0859D497	謎の関数リスト	不規則なデータ	{U}
 08006EC4	NewBlocking_Yeild	{U}
 08006ED8	IsBlocking_Yeild	{U}
 08006EF0	ExitBlocking_Yeild	{U}

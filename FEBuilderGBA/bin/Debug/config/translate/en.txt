@@ -4331,7 +4331,8 @@ Specify Pointer to Support Data of Unit.\r\nIt becomes 0 when support is unneces
 Generic conversation grouping the unit uses when visiting.\r\nWhen visiting character speaks Serif in Village visit etc.,\r\nUsed to change Serif's Mouth tone by Conversation group.\r\n
 
 :武器ごとに利用するアニメーションを設定します。\r\n投げ槍は、槍の汎用アニメーションを利用できますが、\r\n投げ斧は、個別に指定する必要があります。\r\n詳しくは、斧を使うクラスの設定を参考にしてください。\r\n斧使いは、投げ斧を個別に設定することを、絶対に忘れないでください。\r\n
-Set the Animation to use for each weapon.\r\nThrowing Lance, General of LanceYou can use purposeAnimation,\r\nThrowing Axe needs to be supported individually.\r\nFor details, please refer to Setting of Class using Axe.\r\nPlease do not forget to set Axe separately for throwing Ax.\r\n
+Throwing lances like Javelins can use the Lance animation type.\r\nHowever, throwing axes like the Hand Axe have a special animation type that is separate from close-range axes, and they will use the throwing axe animation even at 1-range.\r\nYou will need to set separate animation data for throwing axes and close-range axes. If not, the animation will freeze when a throwing axe is equipped.\r\nThere is hard-coded data for the Hatchet, Tomahawk and Hand Axe which specifies the throwing axe behavior.
+
 
 :名前を定義します。\r\nこの値はゲーム中からは参照されません。\r\n製作者が理解しやすいように設定する名前です。\r\n
 Define a Name.\r\nThis value is not loaded from inside the game.\r\nIt is a Name to set so that the producer can easily understand Anima.\r\n

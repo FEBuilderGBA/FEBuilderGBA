@@ -447,3 +447,11 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 40050200XXXXXXXX40050300YYYY0000400A00006C26A708	Ending scene 2 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{J}
 40050200XXXXXXXX40050300YYYY0000400A0000E426A708	Ending scene 3 [XX:POINTER_UNIT:Units][YY:TEXT:Conversation]	{J}
 211A0000400D00002DD00B08	Show tactics evaluation screen	{ENDING}	{J}
+400D0000C97E0808	Production of a ring of light when using a torch	{MAPEFFECT}	{J}
+400D000009190808	Make the map a Black out.	{J}
+400D0000A9180808	Make the map a little darker.	{J}
+400D0000FD5B0808	Production of a ring of light when using a torch	{MAPEFFECT}	{U}
+400D000069F50708	Make the map a Black out.	{U}
+400D0000C9F50708	Make the map a little darker.	{U}
+211A0000400D000045570A082022000020171000	Display Support Relationship Screen for preparation.	{J}
+211A0000400D00006D190A082022000020171000	Display Support Relationship Screen for preparation.	{U}
