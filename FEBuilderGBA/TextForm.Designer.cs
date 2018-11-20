@@ -460,7 +460,7 @@
             // 
             this.TextListSpTextTextBox.ErrorMessage = "";
             this.TextListSpTextTextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TextListSpTextTextBox.Location = new System.Drawing.Point(6, 4);
+            this.TextListSpTextTextBox.Location = new System.Drawing.Point(7, 7);
             this.TextListSpTextTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TextListSpTextTextBox.Name = "TextListSpTextTextBox";
             this.TextListSpTextTextBox.Placeholder = "";
