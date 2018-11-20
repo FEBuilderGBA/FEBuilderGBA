@@ -11422,3 +11422,4 @@
 08006EC4	NewBlocking_Yeild	{U}
 08006ED8	IsBlocking_Yeild	{U}
 08006EF0	ExitBlocking_Yeild	{U}
+080A5708	進撃準備またはOPタイトルのBGMに戻す	{J}

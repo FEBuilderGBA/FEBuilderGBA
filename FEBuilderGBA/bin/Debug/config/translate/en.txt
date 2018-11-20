@@ -4404,7 +4404,8 @@ Stores symbols for debugging as comments.\r\nEmbedding symbols is a hint for dis
 Specify the weapon level that weapons can be used.\r\nYou can use weapons if you are above this level.
 
 :武器の射程を指定します。\r\n右側のリストから、射程を選択することができます。\r\n\r\nリストにない射程の武器を作りたい場合は、数字を直接入力してください。\r\n最大射程と最少射程を16進数で書き込みます。\r\n例えば、最小射程が「5」で、最大射程「10」、だったとしたら、「5A」になります。
-Specify the range of the weapon.\r\nFrom the list on the right you can select the range.\r\n\r\nIf you want to create a range weapon that is not on the list, please enter the number directly.\r\nWrite maximum range and minimum range in hexadecimal.\r\nFor example, if the minimum range is "5" and the maximum range is "10\
+Specify the range of the weapon.\r\nFrom the list on the right you can select the range.\r\n\r\nIf you want to create a range weapon that is not on the list, please enter the number directly.\r\nWrite maximum range and minimum range in hexadecimal.\r\nFor example, if the minimum range is "5" and the maximum range is "10", it will be "5A".
+
 
 :チェックをつけると、低レイヤーの命令を表示します。\r\n低レイヤー命令は、他の命令と組み合わせて利用する命令なので、ディフォルトでは非表示になっています。
 When checked, low layer instructions will be displayed.\r\nThe low layer instruction is an instruction to be used in combination with other instructions, so it is hidden by default.

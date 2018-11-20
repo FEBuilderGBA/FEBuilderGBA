@@ -148,6 +148,7 @@
     <Compile Include="ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MagicSplitUtil.cs" />
     <Compile Include="MapEditorAddMapChangeDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>

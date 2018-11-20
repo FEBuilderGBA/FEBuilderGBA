@@ -1,0 +1,66 @@
+//FE7 Str/Mag Split Master File
+//By Tequila
+
+#ifdef _FE7_
+	
+	#include EAstdlib.event
+	#include "Extensions/Hack Installation.txt"
+	
+	//###### CHANGE THESE IF NECESSARY ######
+	#define Item_Table 0xBE222C
+	#define Item_Usability 0x26D10
+	#define Item_Effect 0x2D04C
+	#define Character_Table 0xBDCE18
+	#define Mov_Text_ID 0x1106 			//says Move, make a new text id that says Mov, and place it here
+	#define Mag_Booster_Item 0x98 		//normally 5000G; if you make it higher than the vanilla number of items (0x9A) you'll have to repoint and expand the Usability and Effect tables as well
+	#define	Talk_R_Button_Text_ID 0x351	//Affinty R-button text; make a new one and change this
+	
+	//##### SHOULDN'T HAVE TO MESS WITH THESE #####
+	#define FE7_callHack_r1(offset) "SHORT 0x4901; BL(0xBFC50); SHORT 0xE001; POIN (offset|0x1)"
+	#define FE7_callHack_r3(offset) "SHORT 0x4B01; BL(0xBFC58); SHORT 0xE001; POIN (offset|0x1)"
+	#define Mag_Booster_Item_Usability_Ptr "Item_Usability+4*(Mag_Booster_Item-0x4A)"
+	#define Mag_Booster_Item_Effect_Ptr "Item_Effect+4*(Mag_Booster_Item-0x4A)"
+	
+	PUSH
+	
+	//Repoint peg knight graphic
+	ORG $6A854
+	POIN Peg_Triangle_Graphic1
+	
+	//Put magic getter in BL range
+	ORG $2E5CB8
+	Mag_Getter:
+	#incbin "Mag Getter.dmp"
+	POIN Item_Table
+
+	POP
+
+//	ORG FreeSpace
+	
+	ALIGN 4
+	Mag_Char_Table: //[Base] [Growth]
+	#incbin "Mag Char Table.dmp"
+	
+	ALIGN 4 
+	Mag_Class_Table: //[Base] [Growth] [Cap] [Promotion Bonus]
+	#incbin "Mag Class Table.dmp"
+	
+	ALIGN 4
+	Mov_Text_ID_Pointer:
+	WORD Mov_Text_ID
+	
+	//Repoint the first pegasus triangle attack graphic so I can insert the mag getter function
+	ALIGN 4
+	Peg_Triangle_Graphic1:
+	#incbin "Peg Triangle Graphic1.dmp"
+	
+	#include "Stat Screen/Stat Screen EA.txt"
+	#include "Unit Viewer/Unit Viewer EA.txt"
+	#include "Level-Up and Promotion Screen/Level-Up and Promotion Screen EA.txt"
+	#include "Combat Calcs/Combat Calculations EA.txt"
+	#include "Prep Screen and Mag Booster/Prep Screen EA.txt"
+	#include "Autolevelling and Saves/Autolevel and Save EA.txt"
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif

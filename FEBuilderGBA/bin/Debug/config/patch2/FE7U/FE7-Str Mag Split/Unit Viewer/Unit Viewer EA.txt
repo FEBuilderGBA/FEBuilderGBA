@@ -1,0 +1,57 @@
+//FE7 str/mag split unit viewer
+//By Tequila
+
+#ifdef _FE7_
+	
+	PUSH
+	
+	//Text labels at the top
+	ORG $CC36AC
+	SHORT 0x10F8
+	ORG $CC36BC
+	SHORT 0x10F9
+	ORG $CC36CC
+	SHORT 0x10FB
+	ORG $CC36DC
+	SHORT 0x10FC
+	ORG $CC36EC
+	SHORT 0x10FD
+	ORG $CC36FC
+	SHORT 0x10FE
+	ORG $CC370C
+	SHORT 0x10FF
+	
+	//Shift skills over
+	ORG $8B0B8
+	BYTE 0x1E
+	ORG $8B0DE
+	BYTE 0x24
+	ORG $8B104
+	BYTE 0x2A
+	ORG $8B124
+	BYTE 0x30
+	ORG $8B14A
+	BYTE 0x36
+	
+	//Change place this pointer is loaded from
+	ORG $8B08E
+	SHORT 0x4938
+	
+	//Add mag
+	ORG $8B16E
+	SHORT 0xE001
+	WORD 0x200CBF0
+	FE7_callHack_r1(Unit_Viewer)
+	SHORT 0xE219
+	
+	POP
+	
+	ALIGN 4
+	Unit_Viewer:
+	#incbin "Unit Viewer.dmp"
+	POIN Mag_Getter
+	POIN Mag_Class_Table
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif

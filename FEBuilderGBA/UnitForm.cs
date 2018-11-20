@@ -47,7 +47,6 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
-
             InputFormRef ifr = new InputFormRef(self
                 , ""
                 , Program.ROM.RomInfo.unit_pointer()
@@ -97,8 +96,8 @@ namespace FEBuilderGBA
                 }
 
                 //魔法分離パッチ
-                InputFormRef.magic_split_enum magic_split = InputFormRef.SearchMagicSplit();
-                if (magic_split == InputFormRef.magic_split_enum.FE8NMAGIC)
+                MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+                if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
                 {
                     InitFE8NMagicExtends(controls);
                 }
@@ -112,14 +111,6 @@ namespace FEBuilderGBA
         }
 
 
-        public static uint GetUnitBaseMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 50);
-        }
-        public static uint GetUnitGrowMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 51);
-        }
 
         public static void GetSim(ref GrowSimulator sim, uint uid)
         {
@@ -143,7 +134,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 16) //def
                 , (int)Program.ROM.u8(addr + 17) //res
                 , (int)Program.ROM.u8(addr + 18) //luck
-                , (int)GetUnitBaseMagicExtends(addr) //magic ext
+                , (int)MagicSplitUtil.GetUnitBaseMagicExtends(uid,addr) //magic ext
                 );
             sim.SetUnitGrow(
                   (int)Program.ROM.u8(addr + 28) //hp
@@ -153,7 +144,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 32) //def
                 , (int)Program.ROM.u8(addr + 33) //res
                 , (int)Program.ROM.u8(addr + 34) //luck
-                , (int)GetUnitGrowMagicExtends(addr) //magic ext
+                , (int)MagicSplitUtil.GetUnitGrowMagicExtends(uid,addr) //magic ext
                 );
         }
         public GrowSimulator BuildSim()

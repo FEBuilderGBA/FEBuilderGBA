@@ -1,0 +1,271 @@
+Str/Mag split notes
+
+Hacks I can reference:
+FE IV 
+Midnight Sun 
+FE: SS (?? Ask CC)
+
+Things that need to be done:
+Add byte in char data in ram
+Add byte in char data in rom
+Add byte in class data
+Add stat cap in class data
+Add growth in class data
+
+Mag getter:
+	Gets mag (duh)
+	
+Stat screen:
+	Shift down stat names
+	Shift down stat numbers/bars
+	Shift down rescue penalty arrows
+	Add in Mag name and information
+	Prevent B/W/L from displaying
+	Modify R-button infoboxes
+	Change background so res doesn't hang off the bottom
+
+Level-up screen:
+	Make a new line on the background
+	Lift title bar
+	Move stat names and numbers to their new lines
+	Make sure both versions (1 with anim, 1 without) are working
+
+Weapon stat bonuses/stat boosters
+	Done? Check how venno's passive stats boost thing works
+
+Autolevelling
+
+Promotion screen:
+	See growths with animations
+	
+Prep screen:
+	Done
+
+Fighting Skill screen on Unit Menu: 
+	Move skill names over
+	Replace affinity with mag
+	Done
+
+Battle calculations:
+	mag/2 distance
+	mag/2 staff accuracy
+	staff heal amt
+	Done
+
+IDEA:
+Store magic stat in byte 0x39 of char data in ram
+Rom Class base: 0xA
+Rom Class cap: 0xB
+Rom Class growth: 0x53
+Rom Class promotion bonus: 0x54
+Rom Character base: 0x23
+Rom Character growth: 0x24
+NOPE. Scratch all of these except first; make separate tables for them.
+
+MS:
+Set break on read to Faratrass' mag
+break at 8719C; r0=ram class data, r1=rom char data, r2=(I assume) class cap (0x14), r3=mag from ram
+write here upon restarting chapter at A628A
+
+Str=10F8; text table is at B808AC; pointed to at 12cb8
+Skill=10FB
+
+bl to 7FD28 takes: r0=?, r1=x tile, r2=y tile, for stats/bar. Stack has current stat and stat cap
+7FE10:
+load 200310C,#0xC (char data)
+bl 184DC (check if it should display Str (0)or Mag (1))
+if Mag:
+ldr r0,10F9
+bl 12C60 (copy text from rom to ram)
+
+FOR MAG TITLE: (suspicion: write all titles at once?)
+ldr r0, 10F9
+bl 12C60
+mov r2,0
+str r2,sp
+str r0,sp+4
+mov r0,r5
+add r0,30
+ldr r1,20032FE
+mov r2,3 (Palette)
+mov r3,0 (x placement)
+bl 5AD4
+
+For the stat:
+load char data in r0
+bl str getter (includes weapon bonuses)
+load str from ram char struct into r3)
+store str+bonus on sp
+store cap at sp+4
+mov r0,0
+mov r1,5 (x placement of stat number and bar)
+mov r2,1 (y placement of stat number and bar; this needs changing)
+(r3 still has ram struct str)
+bl 7FD28
+
+TO PREVENT B/W/L from showing up, write E0 to 7FC13
+
+5Ad4 is somehow relevant to where stat name gets written
+skl-res are written before str/mag
+
+
+Mag Class Table: indexed by class ID
+Mag Promotion Bonuse Table: indexed by class ID
+
+###
+Promotions
+####
+Routine begins at 68B28
+Store level at 2020108
+Store max hp at 202010C, str +2, skl +4, luk+8, spd+6, def +A, res +C, class+char con +E (values from attacker data in battle struct, 203A470)
+Store 1 at 202010A (new level, probably)
+202011C: load stuff from 203A3F0 (seems new stats were written here) and write them here in the same order
+bl somewhere; seems to copy bg to vram or something
+r7 seems to be counter for stats
+if mag, ldr r1=BDB5DC, if str, ldr r1=BDB5BC (has char ids)
+ldr r0=2017660, lsl r7,3, add them together in r4, mov to r0, mov r1,3, bl 5474
+Table at 2E5BF0 dictates placement of stat/number/level-up
+get the correct entry, multiply by 2, add to 2023C60 (i think this is place in ram where one of the bg layers is located until it gets copied to vram)
+stick that in r1, mov r0,r4, bl 5590 (probably does the heavy display lifting)
+cmp r1,7, and loop if <=
+162 16A
+1A2 1AA
+1E2 1EA
+222 22A
+262 26A
+stuff at 202011C loaded around 697BA 
+Another pointer to that table with placements for stats at 69840
+68DDE mov r4,7
+68DE2 ldrb
+68EE2: nop
+68EE6: ldrh->ldrb
+697B0: nop
+697B8 ldrb
+697BA: ldrb
+697C6: change strh to strb
+69820: nop
+69824: ldrh/strh
+(which brings its own host of problems; this gets stored at 203E0BC) (ok, not actually an issue, just strh as usual)
+69860: change 8 to A eventually
+
+69388 has mov r2,0xBC; this is x position of portrait on promo screen
+after drawing portrait (I assume), zero out 200 halfwords at 2023C60 (stuff there gets copied to 6005000 which is bg2)
+
+suspected TSA at 1DB568 (nope, seems to be palette)
+692BE: load 81DAFEC which is img 199 in r0, 2017784 in r1, bl to LZ77 decompress 8 bit (seems to be image)
+
+img 202 is the outside part of the title box (where class name is written): loaded at 69314, but offset is -0x20; there's a palette in front, called with cpufastset, then the image is processed at 105C (nop'ing this out doesn't seem to do anything though)
+Suspect img 203 is the filler inside the box (not true, it seems) (update: it's the box that comes afterwards showing which weapons you can now use)
+
+69D2E: mov r2,20 (how long each row is) and mov r2,14 (how many rows to display) (maybe not?). Will need to change these.
+
+69354: Change pointer to 2023560 (determines where the pic starts)
+
+Figure out how that bloody flipping works:
+Supposedly 4000020-4000026 has flipping (on second thought this is probably stupid, since this flips the whole thing?)
+4000020 gets copied to from 30028B8
+Unsurprisingly, setting a break here did nothing
+
+69DFE and 69E04? YES! Nop'ing out the store here prevents the flipping. Well, around here, at least.
+3002870 ? (doesn't change; modifying this number does shift the entire bg up/down)
+sets 16 and 1A which are bg1 and bg2...
+
+69DE2:
+load halfword at 4000004 (Display Status)
+check if first bit is set and skip this function if true (VBlank)
+ldr r3,400001A (400001Ah - BG2VOFS - BG2 Y-Offset (W), whatever that means)
+ldr r4,3002870 (stuff here doesn't seem to change during the flip) (changing this shifts the respective layer up and down, as expected)
+ldr r2,201FB28
+ldr r0,[r2] (=201FBE2)
+ldrh r5,[r4,26] (=8)
+ldrh r6,[r0] (=0)
+add r1,r5,r6
+strh r1,[r3]
+add r0,2
+str r0,[r2]
+sub r3,4 (4000016h - BG1VOFS - BG1 Y-Offset (W))
+ldr r2,201FDB4
+ldr r0,[r2] (=201FE6E)
+ldrh r4,[r4,22] (=8)
+ldrh r5,[r0] (=0)
+add r1,r4,r5
+strh r1,[r3]
+add r0,2
+str r0,[r2]
+
+69da0: 
+
+Beginning 201FB7C is a series of halfwords that seem to describe zooming , goes until 201FC6C (height?)
+Loaded from 202012C
+Another set afterwards
+
+69BEE loads FFE0 and stores that in this area; 
+
+
+first begins with r1=FFE8 written to 1A (bg 2, height)
+FFE8 8 9 E8FF 8 E8FF 6-C 8 4-6 9-14 E8FF
+FFE0 written to 201FCBC first
+this is loaded from 202012C
+691CC = mov r1,90...possibility?
+13008 has a jump table
+696b2 might be relevant? Is called for the re-expanding part; goes from 1000 - 0. Definitely some kind of expanding coefficient because changing the number to 0 makes it appear instantaneously.
+6962A seems to go from 0 - 1000, so it's the start to this whole collapsing business
+Values: 0,40, 100, 240, 400, 640, 900, C40, 1000 are written to 202012C
+These values are multipled by signed halfword entries starting at bdb6ec, do some shifting, and store result at 201FCBC and 201FF48? (not sure about the second, might not always be the same)
+
+one of the bgs starts in wram at 200323C, other at 2003C3C
+
+Fixing the part of the bg that doesn't zoom out in sync with the rest:
+coords are written as words most of the time, at 11EE (function begins at 11B0)
+However, 69DB0 maybe
+
+691CC? seems not
+69500 has height for portrait
+4000014 written from 3002890 and 4000018 written from 3002894, and initially they're at 0x8 for the y positioning...but changing these in memory after they were written to the 3000 blah shifts the oam stuff upwards. What gives? EDIT: I derped. It shifts the bg downwards. Good. Except the scrolling is still messed up.
+
+##################
+Unit menu organizing thing
+
+Set break when r0=10FA (S/M) text, broke at 8AC50, begins at 8ABC4, called at 8A744
+Text seems to begin at CC3618, with 0x10 length entries: 7-D (position, probably) (word), text id (word), number (word), another number (position of r button?)
+hector data at 202beb8
+61E4 seems to be responsible. Takes r0=some ram ptr, r1=r6=palette number, r2=stat. r0 probably has to do with where things end up
+200CBF0 has a pointer table of 0xC entries. Changes when rearranging the order. Row pointers?
+First word is char pointer, so this seems likely
+
+###############
+Growths
+Animations on:
+295E0 checks whether stat increments and returns amt, i guess
+once written to battle struct+73-79, go to 29970; this checks if those growths would put any stats above their caps
+
+Animations off:
+hp growth loaded at 74258, fn begins at 74d88
+level up with animations ptr is 692A5, in 20254E8+0xC
+68FE5
+00000
+69051
+BDB61C + 4has this ptr
+in anim-off, fn where tsa is loaded begins at 74008, called at 74A4A, begins 74A28
+
+#############
+Prep screen
+Stats are loaded from ram, added to the bonus from the stat booster (what happens if more than 1?) and stored at 3004440. Function begins at 27578. Only loads character con and mov bonus, not the actual stat. After storing, calls 17C64, which (I believe) ensures none of the stats goes higher than allowed.
+This is part of the usability check, looks like.
+Displaying function seems to begin at 94D74. 61E4 seems to be the function that displays the numbers; r0=ram offset (probably where to draw), r1=palette id, r2=stat number.
+r0 gets 80 added to it for each stat
+94BD4 begins another function. r0=stat*24, r1=stat cap, bl to BFC88 (draws bars?). returns a number which gets put on stack.
+R-button text (in this case, "Increases skill") called at 94F5C. Function begins at 94EF4; params are r0=char data in ram, r1=slot id
+Write stats text function begins at 94A20
+Possibility: Change 7 at 94A2E to 9.
+615C seems to be responsible for displaying stat number
+94CD8: Might have to change E0 to...FC? to display extra bars
+94D5a: Change 7 to 9 also for bars?
+
+HP starts at sp+0xC
+Mag goes at sp+0x14
+
+
+bg 2 begins at 2023C60 and is written to 600F000-6000F7FE
+Originally, "Stat increased!" and item icon begin at 600F3A2-3F4
+so in ram, it should begin at 2024002

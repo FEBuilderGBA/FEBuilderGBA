@@ -11,8 +11,6 @@ namespace FEBuilderGBA
 {
     public partial class ClassForm : Form
     {
-        
-
         public ClassForm()
         {
             InitializeComponent();
@@ -99,12 +97,16 @@ namespace FEBuilderGBA
                         this.X_SkillButtons[i].Click += X_CLASSSKILL_Button_Click;
                     }
                 }
-                //魔法分離パッチ
-                InputFormRef.magic_split_enum magic_split = InputFormRef.SearchMagicSplit();
-                if (magic_split == InputFormRef.magic_split_enum.FE8NMAGIC)
-                {
-                    InitFE8NMagicExtends(controls);
-                }
+            }
+            //魔法分離パッチ
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
+            {
+                InitFE8NMagicExtends(controls);
+            }
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                InitFE7UMagicExtends(controls);
             }
 
             //クラス拡張を表示するかどうか
@@ -368,15 +370,6 @@ namespace FEBuilderGBA
             SkillUtil.MakeClassSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex, this.X_SkillButtons, this.X_Tooltip);
         }
 
-        public static uint GetClassBaseMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 80);
-        }
-        public static uint GetClassGrowMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 81);
-        }
-
         public static void GetSim(ref GrowSimulator sim,uint cid)
         {
             InputFormRef InputFormRef = Init(null);
@@ -392,7 +385,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 14) //spd
                 , (int)Program.ROM.u8(addr + 15) //def
                 , (int)Program.ROM.u8(addr + 16) //res
-                , (int)GetClassBaseMagicExtends(addr) //ext_magic
+                , (int)MagicSplitUtil.GetClassBaseMagicExtends(cid, addr) //ext_magic
                 );
             sim.SetClassGrow(
                   (int)Program.ROM.u8(addr + 27) //hp
@@ -402,7 +395,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 31) //def
                 , (int)Program.ROM.u8(addr + 32) //res
                 , (int)Program.ROM.u8(addr + 33) //luck
-                , (int)GetClassGrowMagicExtends(addr) //ext_magic
+                , (int)MagicSplitUtil.GetClassGrowMagicExtends(cid, addr) //ext_magic
                 );
         }
         public GrowSimulator BuildSim()
@@ -992,6 +985,88 @@ namespace FEBuilderGBA
             U.ShiftControlPosition(B25, B26);
             U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
             U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+        }
+
+        void InitFE7UMagicExtends(List<Control> controls)
+        {
+            MagicExtClassBase.ValueChanged += X_SIM_ValueChanged;
+            MagicExtClassGrow.ValueChanged += X_SIM_ValueChanged;
+            MagicExtClassLimit.ValueChanged += X_SIM_ValueChanged;
+            AddressList.SelectedIndexChanged += SelectedIndexChangedFE7UMagicExtends;
+            this.InputFormRef.PreWriteHandler += WriteButtonFE7UMagicExtends;
+
+            MagicExtClassBase.Show();
+            MagicExtClassBaseLabel.Show();
+            MagicExtClassGrow.Show();
+            MagicExtClassGrowLabel.Show();
+            MagicExtClassPromotionGain.Show();
+            MagicExtClassPromotionGainLabel.Show();
+            MagicExtClassLimit.Show();
+            MagicExtClassLimitLabel.Show();
+            X_SIM_MAGICEX_Label.Show();
+            X_SIM_MAGICEX_Value.Show();
+
+            U.SwapControlPosition(J_18, MagicExtClassBaseLabel);
+            U.SwapControlPosition(B18, MagicExtClassBase);
+            B18.Location = new Point(J_18.Location.X , B18.Location.Y);
+
+            U.SwapControlPosition(J_26, MagicExtClassLimitLabel);
+            U.SwapControlPosition(B26, MagicExtClassLimit);
+            B26.Location = new Point(J_26.Location.X, B26.Location.Y);
+
+            U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
+            U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+        }
+        void SelectedIndexChangedFE7UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                return;
+            }
+
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint cid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(cid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            this.MagicExtClassBase.Value = MagicSplitUtil.GetClassBaseMagicExtends(cid, addr);
+            this.MagicExtClassGrow.Value = MagicSplitUtil.GetClassGrowMagicExtends(cid, addr);
+            this.MagicExtClassLimit.Value = MagicSplitUtil.GetClassLimitMagicExtends(cid, addr);
+            this.MagicExtClassPromotionGain.Value = MagicSplitUtil.GetClassPromotionGainMagicExtends(cid, addr);
+        }
+        void WriteButtonFE7UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                return;
+            }
+
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint cid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(cid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "MagicExtends");
+            MagicSplitUtil.WriteClassBaseMagicExtends(cid, addr, (uint)this.MagicExtClassBase.Value , undodata);
+            MagicSplitUtil.WriteClassGrowMagicExtends(cid, addr, (uint)this.MagicExtClassGrow.Value , undodata);
+            MagicSplitUtil.WriteClassLimitMagicExtends(cid, addr, (uint)this.MagicExtClassLimit.Value, undodata);
+            MagicSplitUtil.WriteClassPromotionGainMagicExtends(cid, addr, (uint)this.MagicExtClassPromotionGain.Value, undodata);
+            Program.Undo.Push(undodata);
         }
 
         public static void MakeTextIDArray(List<TextID> list)

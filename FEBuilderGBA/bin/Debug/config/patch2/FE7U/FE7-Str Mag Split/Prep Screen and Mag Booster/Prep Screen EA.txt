@@ -1,0 +1,354 @@
+//FE7 str/mag split prep screen
+//By Tequila
+
+#ifdef _FE7_
+	
+	PUSH
+	
+	//Move windowing effect on text box
+	ORG $9520C
+	BYTE 0x76
+	
+	//Move R-button text down
+	ORG $94F74
+	WORD 0x202303E
+	
+	//Display the stat names in their new position
+	ORG $94A3E
+	#incbin "Prep Screen Stat Names.dmp"
+	POIN Prep_Screen_Stat_Name_Table
+	SHORT 0xE071
+	
+	//Prevent Move from being overwritten by an item name? (Actually, save tile space for the incoming stat names)
+	ORG $950D0
+	BYTE 0x09
+	
+	//Clear more vram so the class name isn't overwritten
+	ORG $94A2E
+	BYTE 0x0A
+	
+	//Repoint the TSA
+	ORG $9530C
+	POIN Prep_Screen_New_TSA
+	
+	//Move stat numbers down and insert new ones as needed
+	ORG $94DCC
+	FE7_callHack_r1(Prep_Screen_Mag_Number)
+	
+	//Shift speed number downwards
+	ORG $94E02
+	SHORT 0x46C0 0x183F
+	
+	//Show Mov stat number
+	ORG $94ED4
+	FE7_callHack_r1(Prep_Screen_Mov_Number)
+	
+	//Move the text that confirms you want to use a stat booster
+	ORG $954E0
+	WORD 0x2024042
+	ORG $95504 //and clear it properly after pressing B
+	WORD 0x2024042
+	
+	//Move the box under the text
+	ORG $95536
+	BYTE 0x74
+	
+	//Move the hand on the choice
+	ORG $9551A
+	BYTE 0x88
+	ORG $95630
+	BYTE 0x88
+	
+	//#### Bars ####
+	//Increase stack depth
+	ORG $94BDA
+	SHORT 0xB08D
+	ORG $94D64
+	SHORT 0xB00D
+	
+	//Increase counter
+	ORG $94D5A
+	BYTE 0x9
+	
+	//Shift stats on stack
+	ORG $94C46 //skill
+	BYTE 0x6
+	ORG $94C62 //speed
+	BYTE 0x7
+	ORG $94C78 //luck
+	BYTE 0x8
+	ORG $94C94 //def
+	BYTE 0x9
+	ORG $94CAE //res
+	BYTE 0xA
+	
+	//Add in mag/mov bars
+	ORG $94CCC
+	FE7_callHack_r3(Prep_Screen_Bars)
+	
+	//Make sure said bars end up in the right place
+	ORG $94D24
+	SHORT 0x0069 0x4A02 0x1889 0x880A 0xE004 0x46C0 //lsl r1,r5,#0x1; ldr r2,BarTable; add r1,r1,r2; ldrh r2,[r1], b
+	POIN Prep_Screen_Bar_Placement
+	
+	//Using the item (changing this byte shifts the bg, the text, and the icon all at once. Neat, aye?
+	ORG $95AC2
+	BYTE 0x10
+	
+	//Increment the actual stats when using the stat booster
+	ORG $2CDAC
+	FE7_callHack_r3(Mag_Stat_Booster_Incrementer)
+	
+	//Ensure the new stats don't go over the cap
+	ORG $17D18
+	FE7_callHack_r3(Mag_Stat_Booster_Cap_Check)
+	
+	//Fiddle with stats placement in the struct where it calculates the difference so as to display the "+2"
+	//Old stats
+	ORG $959CE //hp
+	BYTE 0x2C
+	ORG $959DA //str
+	BYTE 0x2D
+	ORG $959E6 //skl
+	BYTE 0x2F
+	ORG $959F2 //spd
+	BYTE 0x30
+	ORG $959FE //luck
+	BYTE 0x31
+	ORG $95A0a //def
+	BYTE 0x32
+	ORG $95A16 //res
+	BYTE 0x33
+	ORG $95A2C //con
+	BYTE 0x34
+	ORG $95A30 //mag+mov
+	FE7_callHack_r3(Prep_Screen_Write_Old_Stats)
+	
+	//New stats
+	ORG $95A5A //hp
+	BYTE 0x36
+	ORG $95A66 //str
+	BYTE 0x37 
+	ORG $95A72 //skl
+	BYTE 0x39
+	ORG $95A7E //spd
+	BYTE 0x3A
+	ORG $95A8A //luck
+	BYTE 0x3B
+	ORG $95A96 //def
+	BYTE 0x3C
+	ORG $95AA2 //res
+	BYTE 0x3D
+	ORG $95AB4 //con+mag+mov
+	FE7_callHack_r3(Prep_Screen_Write_New_Stats)
+	
+	//Number placement
+	ORG $95ACE
+	SHORT 0x302C 0x1903 0x300A
+	ORG $95AFC //counter
+	BYTE 0x9
+	ORG $95ADE
+	SHORT 0x0061 0x4802 0x1840 0x7841 0x7800 0xE002 0x46C0
+	POIN Incremented_Stat_Table
+	
+	//Make sure the message and item icon get properly cleared
+	ORG $95B94
+	WORD 0x202407E
+	
+	//Put the class name tiles in a different place so they don't get cleared after using an item
+	ORG $950F2
+	SHORT 0x3050 0x210B
+	
+	//##### MAG BOOSTER ITEM #####
+	ORG $2805A
+	BYTE 0x3E
+	ORG $2806C
+	POIN Prep_Screen_Usability_Table
+	
+	ORG $275D0
+	FE7_callHack_r3(Prep_Screen_Usability1)
+	
+	ORG $27630
+	FE7_callHack_r3(Prep_Screen_Usability2)
+	
+	ORG Item_Table+(0x24*Mag_Booster_Item)+0xC //Stat booster pointer
+	POIN Mag_Booster_Item_Ptr
+	
+	ORG Item_Table+(0x24*Mag_Booster_Item)+0x1E //Staff/use effect; without this, can't use the item outside prep screen
+	BYTE 0x11
+	
+	ORG $2CDCA //return which text id to display
+	SHORT 0x4904 0x780A 0x4290 0xD002 0x3104 0x2A00 0xD1F9 0x8848 0xE03C
+	POIN Stat_Booster_Text_ID_Table
+	
+	ALIGN 4
+	Stat_Booster_Text_ID_Table:
+	#incbin "Stat Booster Text ID Table.dmp"
+	BYTE Mag_Booster_Item 0 0x10 0x07 0 0 0xD5 0x03 //The village was attacked!
+	
+	ORG Mag_Booster_Item_Usability_Ptr
+	POIN 0x26EB4
+	
+	ORG Mag_Booster_Item_Effect_Ptr
+	POIN 0x2D20E
+	
+	POP
+	
+	ALIGN 4
+	Prep_Screen_Stat_Name_Table:
+	#incbin "Prep Screen Stat Name Table.dmp"
+	
+	ALIGN 4
+	Prep_Screen_New_TSA: //IMG: 406528 TSA: 40E50C PAL: 406D52
+	#incbin "Prep Screen New TSA.dmp"
+	
+	ALIGN 4
+	Prep_Screen_Mag_Number:
+	#incbin "Prep Screen Mag Number.dmp"
+	POIN Mag_Getter
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Prep_Screen_Mov_Number:
+	#incbin "Prep Screen Mov Number.dmp"
+	
+	ALIGN 4
+	Prep_Screen_Bars:
+	#incbin "Prep Screen Bars.dmp"
+	POIN Mag_Getter
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Prep_Screen_Bar_Placement:
+	SHORT 0x166 0x1E6 0x266 0x2E6 0x366 0x172 0x1F2 0x272 0x2F2 0x372
+	
+	ALIGN 4
+	Mag_Stat_Booster_Incrementer:
+	#incbin "Mag Stat Booster Incrementer.dmp"
+	
+	ALIGN 4
+	Mag_Stat_Booster_Cap_Check:
+	#incbin "Mag Stat Booster Cap Check.dmp"
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Prep_Screen_Write_Old_Stats:
+	#incbin "Prep Screen Write Old Stats.dmp"
+	POIN Mag_Getter
+	
+	ALIGN  4
+	Prep_Screen_Write_New_Stats:
+	#incbin "Prep Screen Write New Stats.dmp"
+	POIN Mag_Getter
+	
+	ALIGN 4
+	Incremented_Stat_Table:
+	BYTE 0xB8 0x32 0xB8 0x42 0xB8 0x52 0xB8 0x62 0xB8 0x72 0xE8 0x32 0xE8 0x42 0xE8 0x52 0xE8 0x62 0xE8 0x72
+	
+	ALIGN 4
+	Prep_Screen_Usability1:
+	#incbin "Prep Screen Usability1.dmp"
+	
+	ALIGN 4
+	Prep_Screen_Usability2:
+	#incbin "Prep Screen Usability2.dmp"
+	
+	ALIGN 4
+	Prep_Screen_Usability_Table:
+	#incbin "Prep Screen Usability Table.dmp"
+	
+	ALIGN 4
+	Mag_Booster_Item_Ptr:
+	BYTE 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x02 0x00 0x00
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif
+
+/*
+Hand graphic seems to be at B9A860
+successful break at 49FA2
+49FE4 nope
+4A00E nope
+4A1BE nope
+4A1F2 nope
+
+Box might be at B90608
+82716 nope
+92E48 maybe? (nope, responsible for little box under the name in top left corner)
+A8FC4 nope
+A9070 nope
+
+Let's try something different
+They all seem to go to 6A34
+Set break there and see what kind of offsets fly in
+CE4B48 - namebox
+B905B0 - AHA (or not?)
+B906D2 - portrait
+CE4C04? no
+B905E8?
+CE4B80? no
+B90608?
+
+4388:
+CC208C seems to be the R-button thing
+B9A860?
+CE49E8 seems to be the solitary hand on the item menu
+B90608
+
+b905ea?
+
+fast cpuset from 3002930 to 7000000. Function writing to this part of iram begins at 4388.
+
+49f86 strh r6,[r0,2] 203dcec
+20253A4+0x30
+A951C
+
+x=CC,y=74 for skill increased! background copied from 2029DF0 (written here by function beginning at 6A34)
+Comes from funky function; x coord at +0x40, y coord at 0x44 (2025044)
+Written here at 9597C: Take number from sp+8, lsl by 3, sub 4
+
+skill book: bonus ptr at c98FBC 02 00 00 02 00 02 02 02 00 02
+
+Lord text tile gets written to 6001D00, would like to write at 6002A00
+202A5B4 seems to have the relevant info
+never mind, 20129F8? I remember messing with this.
+Value: 32 00 13 00 05 00 00 00
+ldrb r2,[r0,4] = 05
+ldrb r3,[r0,6] = 00
+mov r1,r2
+mul r1,r3 = 0
+ldrh r2,[r0] = 0032
+add r1,r2,r1 = 32
+ldrb r0,[r0,2] = 13
+lsr r0,r0,3 = 19/8=2
+add r1,r1,r0 = 34
+lsl r1,r1,6 = 34*40 = D00
+So if I want to write to 1A00 instead...
+1A00/40 = 68
+Ok, but now I need to push the item description text tiles forward. Not an issue because there's 1 less line since I shoved everything downwards.
+They begin at 2AC0
+End result: We want to write 70 to 201A70 instead of 6B and 66 at ...nvm
+
+Vanilla:
+Class name tiles begin at 6002800. 20129E8 has 5E 00 13 00 07 00 00 00
+Stat names begin at 6002180
+New:
+Class name tiles begin at 6001D00. 20129F8 has 32 00 13 00 05 00 00 00 (+0x2 seems to change, so, tile index?. +0x0 probably initializes where things are supposed to begin)
+Looks like +0x4 is how many tiles to reserve?
+2028D58+12 contains the first number (halfword) (6B)
+stored at 548C; seems it writes based on where the last thing ended. Makes sense. This should mean I only need to move the title, and not the description
+5474 writes?
+Description text: 2012A70 has 6B, want 70
+
+###########
+2028D70 has a pointer, seems to (at least for now) always be 2028D58.
+This+0x12 has the number of the next available tile, not sure how 
+The issue is that the space for the description text is reserved before the space for the class text
+Solution: Call the incrementer function
+
+###########
+If usability returns true, look at 922EA; this may tell you where to go for the effect later on (ok, maybe not; seems to determine what image to pull up?)
+
+Set break at 95A3E if new item doesn't work and trace backwards
+*/

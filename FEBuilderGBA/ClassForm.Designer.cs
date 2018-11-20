@@ -257,6 +257,8 @@
             this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B40 = new System.Windows.Forms.NumericUpDown();
+            this.MagicExtClassLimit = new System.Windows.Forms.NumericUpDown();
+            this.MagicExtClassLimitLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.B29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B32)).BeginInit();
             this.panel5.SuspendLayout();
@@ -356,6 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B41)).BeginInit();
             this.J_40.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MagicExtClassLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // B29
@@ -1967,6 +1970,8 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.MagicExtClassLimit);
+            this.panel7.Controls.Add(this.MagicExtClassLimitLabel);
             this.panel7.Controls.Add(this.B26);
             this.panel7.Controls.Add(this.J_26);
             this.panel7.Controls.Add(this.B25);
@@ -3332,6 +3337,33 @@
             this.B40.Size = new System.Drawing.Size(60, 25);
             this.B40.TabIndex = 0;
             // 
+            // MagicExtClassLimit
+            // 
+            this.MagicExtClassLimit.Location = new System.Drawing.Point(980, 32);
+            this.MagicExtClassLimit.Margin = new System.Windows.Forms.Padding(2);
+            this.MagicExtClassLimit.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.MagicExtClassLimit.Name = "MagicExtClassLimit";
+            this.MagicExtClassLimit.Size = new System.Drawing.Size(70, 25);
+            this.MagicExtClassLimit.TabIndex = 38;
+            this.MagicExtClassLimit.Visible = false;
+            // 
+            // MagicExtClassLimitLabel
+            // 
+            this.MagicExtClassLimitLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MagicExtClassLimitLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MagicExtClassLimitLabel.Location = new System.Drawing.Point(980, -1);
+            this.MagicExtClassLimitLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MagicExtClassLimitLabel.Name = "MagicExtClassLimitLabel";
+            this.MagicExtClassLimitLabel.Size = new System.Drawing.Size(69, 32);
+            this.MagicExtClassLimitLabel.TabIndex = 39;
+            this.MagicExtClassLimitLabel.Text = "魔力";
+            this.MagicExtClassLimitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MagicExtClassLimitLabel.Visible = false;
+            // 
             // ClassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -3463,6 +3495,7 @@
             this.J_40.ResumeLayout(false);
             this.J_40.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MagicExtClassLimit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3698,5 +3731,7 @@
         private System.Windows.Forms.Label MagicExtClassGrowLabel;
         private System.Windows.Forms.NumericUpDown X_SIM_MAGICEX_Value;
         private System.Windows.Forms.Label X_SIM_MAGICEX_Label;
+        private System.Windows.Forms.NumericUpDown MagicExtClassLimit;
+        private System.Windows.Forms.Label MagicExtClassLimitLabel;
     }
 }

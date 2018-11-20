@@ -1,0 +1,88 @@
+//FE7 str/mag split combat calculations
+//By Tequila
+
+#ifdef _FE7_
+	
+	PUSH
+	
+	//Staff accuracy
+	ORG $2A672
+	BL(Mag_Getter)
+	
+	//Healing amount
+	ORG $16CF4
+	BL(Mag_Getter)
+	
+	//Staff range
+	ORG $184B8
+	BL(Mag_Getter)
+	SHORT 0x1C01 0xE004 //mov r1,r0; b 
+	
+	//Determine whether to use def or res
+	ORG $28AA6
+	#incbin "New Ability 0x40.dmp"
+	
+	//Determine whether to add str or mag to damage
+	ORG $28B54
+	FE7_callHack_r3(Str_Or_Mag_Damage)
+	
+	//Update magic in battle struct
+	ORG $2860C
+	FE7_callHack_r3(Update_Magic)
+	
+	//Prevent arena display glitches
+	ORG $52E68
+	jumpToHack(Arena_Fix1)
+	ORG $52EC0
+	jumpToHack(Arena_Fix2)
+	ORG $52E9C
+	jumpToHack(Arena_Fix3)
+	ORG $52F20
+	jumpToHack(Arena_Fix4)
+	
+	POP
+	
+	ALIGN 4
+	Str_Or_Mag_Damage:
+	#incbin "Str or Mag Damage.dmp"
+	
+	ALIGN 4
+	Arena_Fix1:
+	SHORT 0x1C30 //mov r0,r6
+	BL(Arena_Mage_Melee_Fix)
+	SHORT 0x0600 //lsl r0,#0x18
+	jumpToHack(0x52E70)
+	
+	ALIGN 4
+	Arena_Fix2:
+	BL(Arena_Mage_Melee_Fix)
+	SHORT 0x0600 0x2800 //lsl r0,#0x18; cmp r0,#0x0
+	jumpToHack(0x52EC8)
+	
+	ALIGN 4
+	Arena_Fix3:
+	SHORT 0x1C30 //mov r0,r6
+	BL(Arena_Mage_Melee_Fix)
+	SHORT 0x0600 //lsl r0,#0x18
+	jumpToHack(0x52EA4)
+	
+	ALIGN 4
+	Arena_Fix4:
+	SHORT 0x1C30 //mov r0,r6
+	BL(Arena_Mage_Melee_Fix)
+	SHORT 0x0600 //lsl r0,#0x18
+	jumpToHack(0x52F28)
+	
+	ALIGN 4
+	Arena_Mage_Melee_Fix:
+	#incbin "Arena_Mage_Melee_Fix.dmp"
+	POIN Item_Table
+	
+	ALIGN 4
+	Update_Magic:
+	#incbin "Update Magic.dmp"
+	POIN Mag_Getter
+	
+	#else
+	ERROR "You're not assembling FE7 events!"
+#endif

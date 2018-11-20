@@ -1,0 +1,269 @@
+//FE7 str/mag split growths screens
+//By Tequila
+
+//NOTE: The screen that appears with battle animations on is shared with the promotion routine.
+#ifdef _FE7_
+	
+	PUSH
+	
+	//##### Promotions (note: some of this stuff applies to the growths with promotions on as well) ##### 
+	
+	//Function that adds promo bonuses to char data
+	ORG $2989C
+	FE7_callHack_r1(Add_Promotion_Bonuses)
+	
+	//Change stats at 2020100 from shorts to bytes
+	//WRITES
+	ORG $68C96
+	#incbin "Write Promo to RAM.dmp"
+	SHORT 0xE012
+	
+	//LOADS
+	ORG $68DE0
+	SHORT 0x1838 0x7801
+	ORG $68EE2
+	SHORT 0x46C0 0x1820 0x7801 //nop; add r0,r4,r0; ldrb r1,[r0]
+	ORG $697B0
+	SHORT 0x46C0
+	ORG $697B8
+	SHORT 0x7800 0x7811 //ldrb r0,[r0]; ldrb r1,[r2]
+	ORG $697C6
+	SHORT 0x7010 //strb r0,[r2]
+	ORG $69820
+	SHORT 0x46C0 0x19C0 0x7800 //nop; add r0,r0,r7; ldrb r0,[r0]
+	
+	//Change list of stat text IDS
+	ORG $68D32
+	SHORT 0x46C0 0x46C0
+	ORG $68D54
+	POIN Promo_Stat_Name_Table
+	
+	//Change max counter from 8 to 0xA
+	ORG $68DB6
+	BYTE 0x9
+	ORG $68DFE
+	BYTE 0x9
+	ORG $697A6
+	BYTE 0xA
+	ORG $6985A
+	BYTE 0xA
+	ORG $69860
+	BYTE 0xA
+	
+	//Change placement of stats
+	ORG $68EA0
+	POIN New_Stat_Location_Table
+	ORG $68F10
+	POIN New_Stat_Location_Table
+	ORG $69840
+	POIN New_Stat_Location_Table
+	
+	//Move everything upwards
+	ORG $69354
+	WORD 0x2023560
+	
+	//Remove the flipping effect
+	ORG $69DFC
+	SHORT 0x46C0
+	ORG $69E0E
+	SHORT 0x46C0
+	
+	//Get original class name in right place
+	ORG $68E22
+	BYTE 0xA0
+	//Get 'LV' in right place
+	ORG $68E50
+	BYTE 0xA8
+	//Get new level number in right place
+	ORG $68E80
+	BYTE 0xAB
+	
+	//Make sure class and level changes occur in the right place
+	ORG $68F44
+	WORD 0x20176F0
+	ORG $68F84
+	WORD 0x2017700
+	ORG $68E04
+	BYTE 0x50
+	
+	//##### Growths: Animations on #####
+	
+	//Repoint TSA
+	ORG $6934C
+	POIN Promotion_Screen_TSA
+	
+	ORG $68B84
+	#incbin "Write Growth to Ram Anim On.dmp"
+	SHORT 0xE096
+	
+	//###### Growths: Animations off #####
+	//Repoint TSA
+	ORG $740B0
+	POIN Promotion_Screen_TSA
+	
+	//Shift things upward
+	ORG $74CFC
+	BYTE 0x18
+	ORG $7403C //Load more rows
+	BYTE 0xFC
+	ORG $74CF2 //lower portrait placement
+	SHORT 0x3118
+	
+	//Add new stat names
+	ORG $740C4
+	POIN Growths_Anims_Off_Stat_Name_Table
+	ORG $7412C
+	POIN Growths_Anims_Off_Stat_Name_Table
+	ORG $7410A
+	SHORT 0xE015
+	
+	//Add new stat numbers (I hope)
+	ORG $741EC
+	POIN Growths_Anims_Off_Stat_Name_Table
+	ORG $74A54 //increase counter
+	BYTE 0x0A
+	ORG $74394 //jump table to retrieve original stats counter
+	BYTE 0x0A
+	ORG $743AC
+	POIN Original_Stats_Jump_Table
+	
+	//When stats go up
+	ORG $74E98
+	POIN Growths_Anims_Off_Stat_Name_Table
+	ORG $74200 //jump table entry count
+	BYTE 0x0A
+	ORG $74214
+	POIN New_Stats_Jump_Table
+	ORG $74DF6
+	BYTE 0xA
+	ORG $74DD0
+	BYTE 0xA
+	
+	//Add mag boost in battle struct
+	ORG $2975C
+	FE7_callHack_r1(Write_Mag_Growth)
+	
+	//Update mag in char struct after growths
+	ORG $29CA0
+	FE7_callHack_r1(Update_Mag_In_Char_Struct)
+	
+	//Make sure con doesn't accidentally return mag growth
+	ORG $7433C
+	SHORT 0xE010
+	
+	POP
+	
+	ALIGN 4
+	Add_Promotion_Bonuses:
+	#incbin "Add Promotion Bonuses.dmp"
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Growths_Anims_Off_Stat_Name_Table:
+	#incbin "Growths Anims Off Stat Name Table.dmp"
+	POIN Mov_Text_ID_Pointer
+	POIN Mov_Text_ID_Pointer //no, not a typo, it's repeated
+	SHORT 0xFFFF
+	
+	ALIGN 4
+	Promo_Stat_Name_Table:
+	#incbin "Promo Stat Name Table.dmp"
+	POIN Mov_Text_ID_Pointer
+	
+	ALIGN 4
+	New_Stat_Location_Table:
+	#incbin "New Stat Location Table.dmp"
+	
+	ALIGN 4
+	Original_Stats_Jump_Table:
+	POIN 0x743D4 0x743F8 0x74402 Get_Original_Magic 0x7440C 0x74416 0x74420 0x7442A 0x74434 Get_Original_Con Get_Original_Mov
+	
+	ALIGN 4
+	Get_Original_Magic:
+	SHORT 0x68B8 0x3039 0x7800 0xB003 0xBC80 0xBC02 0x4708 //ldr r0,[r7,8]; add r0,#0x39; ldrb r0,[r0]; add sp,0xC; pop r7; pop r1; bx r1 
+	
+	ALIGN 4
+	Get_Original_Con:
+	SHORT 0x68B8 0x6842 0x2111 0x5651 0x6802 0x2313 0x56D2 0x1889 0x221A 0x5682 0x1888 0xB003 0xBC80 0xBC02 0x4708
+	
+	ALIGN 4
+	Get_Original_Mov:
+	SHORT 0x68B8 0x6841 0x7C89 0x221A 0x5680 0x1840 0xB003 0xBC80 0xBC02 0x4708 //ldr r0,[r7,8]; ldr r1,[r0,4]; ldrb r1,[r1,0x12]; mov r2,0x1A; ldsb r0,[r0,r2]; add r0,r0,r1; add sp,0xC; pop r7; pop r1; bx r1
+	
+	ALIGN 4
+	New_Stats_Jump_Table:
+	POIN 0x7423C 0x74240 0x74264 Get_New_Magic 0x74288 0x742AC 0x742D0 0x742F4 0x74318 0x7433C Get_New_Mov
+	
+	ALIGN 4
+	Get_New_Magic:
+	#incbin "Get New Magic.dmp"
+	
+	ALIGN 4
+	Get_New_Mov: //Easy, because it doesn't grow
+	SHORT 0x2000 0xB002 0xBC80 0xBC02 0x4708
+	
+	ALIGN 4
+	Write_Mag_Growth:
+	#incbin "Write Mag Growth.dmp"
+	POIN Mag_Char_Table Mag_Class_Table
+	
+	ALIGN 4
+	Update_Mag_In_Char_Struct:
+	#incbin "Update Mag In Char Struct.dmp"
+	
+	//Animations on
+	
+	ALIGN 4
+	Promotion_Screen_TSA:
+	#incbin "Promotion Screen TSA compressed.dmp"
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif
+
+/*
+Text is on bg 0, or 6006000 in vram, which gets copied from, which is written from 2022C60
+Scrolling effect done by 4000010 for bg 0
+Written to from 300288C, which is written to by...looks like 74CCA?
+74CA0 is beginning of function here
+74B72 also branches to 1D8C (which updates 3002880); seems to be the first one
+74CA0 branched to using a funky struct. Y coord at 0x32; written to at 74AAC (0xFF70)
+Add 8 to it at the function at 74CA0 apparently; that takes the funky struct as a parameter in r0
+Possiblity: Change byte at 74CE2? mov r3,20, then subtract the Y coord from it, then store that halfword at [30041C0+36]
+More likely: 74CFC: mov r0,30
+
+portrait seems to take x=B8, y=B0, written at 2029CAC +0x4 and 0x6
+y coord written at 6A48
+comes from 20253A4+0x36 
+stored there at 6cdc; function begins at 6C3C; r2=x, r3=y
+came here from 74bac
+74BA0 has the constant that y is subtracted from, but changing that doesn't seem to change anything (probably because it's only for the first frame?)
+74CE8:
+r2 hsa thing
+mov r3,0
+and r2,r3
+mov r3,r2
+orr r2,r1
+mov r1,r2
+strh (thing I need)
+74CF2 changed to add r1,10; portrait is now in the right place, yay!
+
+Write str label at 74144
+Table at C9DDB4 seems to relate to this. Entries are 0xC long; byte 0 is x coord, byte 0x1 seems to be y coord, words 0x4 and 0x8 are usually the same and presumably point to text ids. Terminated with a 0xFF entry
+
+Lowen data at 202BDE0; attack 203A3F0
+741BC seems to load stats from char struct; function begins at 7416C r0=0, r1=r2=1, r3=number to show
+branched to by 74A75 when writing original numbers and 74E17 when levelling up
+741D4 only called when numbers change; bl's to 741F4
+pointer table at 743B0 that retrieves level/relevant stat number from char struct (not updated yet); repoint and expand this and change the 8 at 74394 to a 0xA.
+741F4 takes position of stat in r1, which was passed in via r3 at the beginning of the function
+74E12 bl's to 7416C when doing the level up. Issue: need to insert mag so the left column works correctly. Function begins at 74D88.
+
+
+Shifting the bg for promotions/level-up with anims on
+Set break at 6A48, writes to 2029C8C+4/6, possibly coming from 2025698+34 ()?
+Seems to be only for the portait. Bugger.
+as usual, word written to 4000014 from 3002890 via 11F0
+69DB0 might have something; 201FCBC seems to have...nope
+69388 has mov r2,0xBC, which is the portrait x position.
+*/

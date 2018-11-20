@@ -1,0 +1,15 @@
+NAME=魔力分離パッチ(導入)
+NAME.en=Magic separation patch(Install)
+
+TYPE=EA
+TAG=#ENGINE
+
+PATCHED_IF:0x68DE0=0x38 0x18 0x01 0x78
+EA=FE7-Str Mag Master EA File.txt
+
+AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/20
+INFO=魔力の項目を新設して、魔法を分離します。\r\n力や魔法防御の項目を使って魔力を表現するのではなく、魔力の項目を新しく作ります。\r\nFE7-Str Mag
+NAME.zh=魔法分离补丁（介绍）
+
+EDIT_PATCH:1=PATCH_Mag Char Editor.txt
+EDIT_PATCH:2=PATCH_Mag Class Editor.txt

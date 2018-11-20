@@ -1,0 +1,28 @@
+﻿
+IF:0x68DE0=0x38 0x18 0x01 0x78
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+//内部的なデータとして利用されます。
+TAG=#HIDDEN
+
+//データへのポインタ
+POINTER=$FGREP4END Autolevelling and Saves/Class Mag Autolevel.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 256
+DATACOUNT=256
+
+//リストに表示されるのはユニット名です
+LISTNAME=CLASS
+
+//データを定義します
+B0:DECIMAL=Base Magic
+B1:DECIMAL=Magic Growth
+B2:DECIMAL=Magic Cap
+B3:DECIMAL=Magic Promotion Bonus
+
+INFO=Mag Class Editor.nmm
+

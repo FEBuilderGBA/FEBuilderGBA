@@ -1,0 +1,75 @@
+//FE7 str/mag split autolevelling
+//By Tequila
+
+#ifdef _FE7_
+
+	PUSH
+	
+	//Temporarily disable checksum saving
+	//ORG $A19AE
+	//SHORT 0x46C0
+	
+	//Write bases to ram
+	ORG $17958
+	FE7_callHack_r3(Write_Bases_to_RAM)
+	
+	//Autolevel with character growths
+	ORG $17C44
+	FE7_callHack_r1(Char_Mag_Autolevel)
+	SHORT 0x46C0
+	
+	//Autolevel with class growths
+	ORG $17B28
+	FE7_callHack_r1(Class_Mag_Autolevel)
+	
+	
+	//#### SAVING ####
+	
+	//Move the data in byte 0x39 to (hopefully) unused byte 0x3A
+	{
+	#define Unused_Character_Byte 0x3A //other options include 3B and 47
+	ORG $26BF0 //checking 2 characters have already supported
+	BYTE Unused_Character_Byte
+	ORG $26BC0 //setting the bit for 2 characters supporting
+	BYTE Unused_Character_Byte
+	ORG $26BE0 //ditto
+	BYTE Unused_Character_Byte
+	ORG $2E460 //clear 'already supported' byte after ending chapter
+	BYTE Unused_Character_Byte 0x30 0x05 0x70
+	}
+	
+	ORG $9FAAC
+	FE7_callHack_r3(Restore_Mag)
+	
+	ORG $9FAF0
+	FE7_callHack_r3(Save_Mag)
+	
+	POP
+	
+	ALIGN 4
+	Write_Bases_to_RAM:
+	#incbin "Write Bases to RAM.dmp"
+	POIN Mag_Char_Table
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Char_Mag_Autolevel:
+	#incbin "Char Mag Autolevel.dmp"
+	POIN Mag_Char_Table
+	
+	ALIGN 4
+	Class_Mag_Autolevel:
+	#incbin "Class Mag Autolevel.dmp"
+	POIN Mag_Class_Table
+	
+	ALIGN 4
+	Restore_Mag:
+	#incbin "Restore Mag.dmp"
+	
+	ALIGN 4
+	Save_Mag:
+	#incbin "Save Mag.dmp"
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif

@@ -68,16 +68,82 @@ namespace FEBuilderGBA
             ToolTipEx tooltip = InputFormRef.GetToolTip<UnitFE7Form>();
             InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("unitclass_checkbox_"), controls, tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
 
+            //魔法分離パッチ
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                InitFE7UMagicExtends(controls);
+            }
+        }
+        void InitFE7UMagicExtends(List<Control> controls)
+        {
+            MagicExtUnitBase.ValueChanged += X_SIM_ValueChanged;
+            MagicExtUnitGrow.ValueChanged += X_SIM_ValueChanged;
+            AddressList.SelectedIndexChanged += SelectedIndexChangedFE7UMagicExtends;
+            this.InputFormRef.PreWriteHandler += WriteButtonFE7UMagicExtends;
+
+            MagicExtUnitBase.Show();
+            MagicExtUnitBaseLabel.Show();
+            MagicExtUnitGrow.Show();
+            MagicExtUnitGrowLabel.Show();
+            X_SIM_MAGICEX_Label.Show();
+            X_SIM_MAGICEX_Value.Show();
+
+            U.SwapControlPosition(J_19, MagicExtUnitBaseLabel);
+            U.SwapControlPosition(b19, MagicExtUnitBase);
+            U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
+            U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+        }
+        void SelectedIndexChangedFE7UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                return;
+            }
+
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            uid++;
+            this.MagicExtUnitBase.Value = MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
+            this.MagicExtUnitGrow.Value = MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr);
         }
 
+        void WriteButtonFE7UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                return;
+            }
 
-        public static uint GetUnitBaseMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 50);
-        }
-        public static uint GetUnitGrowMagicExtends(uint addr)
-        {
-            return Program.ROM.u8(addr + 51);
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            uid++;
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "MagicExtends");
+            MagicSplitUtil.WriteUnitBaseMagicExtends(uid, addr, (uint)this.MagicExtUnitBase.Value , undodata);
+            MagicSplitUtil.WriteUnitGrowMagicExtends(uid, addr, (uint)this.MagicExtUnitGrow.Value , undodata);
+            Program.Undo.Push(undodata);
         }
 
         public static void GetSim(ref GrowSimulator sim,uint uid)
@@ -102,7 +168,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 16) //def
                 , (int)Program.ROM.u8(addr + 17) //res
                 , (int)Program.ROM.u8(addr + 18) //luck
-                , (int)GetUnitBaseMagicExtends(addr) //magic ext
+                , (int)MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr) //magic ext
                 );
             sim.SetUnitGrow(
                   (int)Program.ROM.u8(addr + 28) //hp
@@ -112,7 +178,7 @@ namespace FEBuilderGBA
                 , (int)Program.ROM.u8(addr + 32) //def
                 , (int)Program.ROM.u8(addr + 33) //res
                 , (int)Program.ROM.u8(addr + 34) //luck
-                , (int)GetUnitGrowMagicExtends(addr) //magic ext
+                , (int)MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr) //magic ext
                 );
         }
         public GrowSimulator BuildSim()
@@ -163,6 +229,7 @@ namespace FEBuilderGBA
             X_SIM_DEF.Value = sim.sim_def;
             X_SIM_RES.Value = sim.sim_res;
             X_SIM_LUCK.Value = sim.sim_luck;
+            X_SIM_MAGICEX_Value.Value = sim.sim_ext_magic; //魔力分離拡張
 
             X_SIM_SUM_RATE.Value = sim.sim_sum_grow_rate;
         }
@@ -171,8 +238,8 @@ namespace FEBuilderGBA
         {
             X_SIM.Value = GrowSimulator.CalcMaxLevel((uint)B5.Value);
             X_SIM_ValueChanged(null, null);
-//            MeleeAndMagicFix();
         }
+
         public void MeleeAndMagicFix()
         {
             if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)

@@ -4593,13 +4593,13 @@ namespace FEBuilderGBA
             ItemShopForm.ClearCache();
             MapPointerForm.ClearPlistCache();
             U.ClearMigemoCache();
+            MagicSplitUtil.ClearCache();
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
             Cache_ramunit_param_dic = null;
             Cache_map_emotion = null;
             g_Cache_portrait_extends = portrait_extends.NoCache;
-            g_Cache_magic_split_enum = magic_split_enum.NoCache;
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
         }
@@ -9506,72 +9506,6 @@ namespace FEBuilderGBA
             }
             return skill_system_enum.NO;
         }
-        //魔法分離パッチの判別.
-        public enum magic_split_enum
-        {
-             NO             //なし
-           , FE8NMAGIC      //for FE8J   FE8N 魔力分離
-           , NoCache = 0xFF
-        };
-        static magic_split_enum g_Cache_magic_split_enum = magic_split_enum.NoCache;
-        public static magic_split_enum SearchMagicSplit()
-        {
-            if (g_Cache_magic_split_enum == magic_split_enum.NoCache)
-            {
-                g_Cache_magic_split_enum = SearchMagicSplitLow();
-            }
-            return g_Cache_magic_split_enum;
-        }
-        static magic_split_enum SearchMagicSplitLow()
-        {
-            string filename = U.ConfigDataFilename("magic_split_extends_");
-            if (!U.IsRequiredFileExist(filename))
-            {
-                return magic_split_enum.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
-                {
-                    continue;
-                }
-                if (sp[0] == "FE8NMAGIC")
-                {
-                    return magic_split_enum.FE8NMAGIC;
-                }
-            }
-            return magic_split_enum.NO;
-        }
-
         
         //un-Huffmanの判別.
         public static bool SearchAntiHuffmanPatch()

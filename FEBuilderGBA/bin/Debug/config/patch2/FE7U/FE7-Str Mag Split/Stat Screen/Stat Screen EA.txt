@@ -1,0 +1,227 @@
+//FE7 str/mag split, stat screen
+//By Tequila
+
+#ifdef _FE7_
+	
+	PUSH
+	
+	//Shift B/W/L (Disabling this because the save functions mess with this table, so the values are incorrect)
+	//ORG $7FD20 //Shift background box
+	//WORD 0x200403C
+	//ORG $7FD1C //Shift text
+	//WORD 0x200363E
+	
+	//Disable B/W/L
+	ORG $7FC13
+	BYTE 0xE0
+	
+	//Shift stat numbers/bars
+	ORG $7FEDC	//Skill
+	SHORT 0x2002 0x2105 0x2205
+	ORG $7FF26	//Speed
+	SHORT 0x2003 0x2105 0x2207
+	ORG $7FF42	//Luck
+	SHORT 0x2004 0x2105 0x2209
+	ORG $7FF64	//Defense
+	SHORT 0x2005 0x2105 0x220B
+	ORG $7FF86	//Resistance
+	SHORT 0x2006 0x2105 0x220D
+	ORG $7FFA4	//Mov
+	BYTE 0x07
+	ORG $7FFD2	//Con
+	BYTE 0x08
+	
+	//Shift rescue penalty arrows
+	ORG $80F92	//Skill
+	BYTE 0x38
+	ORG $80F9C	//Speed
+	BYTE 0x48
+	
+	//Insert Mag stat
+	ORG $7FE10
+	#incbin "Stat Screen.dmp"
+	POIN Mag_Class_Table
+	
+	//Change stat name pointer table
+	ORG $7FE4C
+	POIN New_Stat_Name_Ptr_Table
+	
+	//Change the background to the item background (actually, just use the new tsa)
+	ORG $7FE40
+	//POIN 0x3FCAC0
+	POIN Stat_Screen_New_TSA
+	
+	//Add Talk functionality
+	ORG $80070
+	FE7_callHack_r1(Talk_Functionality)
+	
+	//Add an extra tile for the Talk names (may be glitchy)
+	ORG $CC1D60
+	BYTE 0x8
+	
+	//Clear tiles so as to avoid issues with text getting overwritten when changing screens
+	ORG $804CE
+	SHORT 0x480E
+	FE7_callHack_r1(Clear_Tiles)
+	
+	//R button shenanigans
+	#define Str 0xCC2140
+	#define Skl 0xCC215C
+	#define Spd 0xCC2178
+	#define Luk 0xCC2194
+	#define Def 0xCC21B0
+	#define Res 0xCC21CC
+	#define Mov 0xCC21E8
+	#define Con 0xCC2204
+	#define Aid 0xCC2220
+	#define Trv 0xCC223C
+	#define Afn 0xCC2258
+	#define Cnd 0xCC2274
+	#define Cln 0xCC20D0 //class name
+	#define Exp 0xCC2108
+	
+	//Up = 0x0
+	#define Down_Ptr	0x4
+	#define Left_Ptr	0x8
+	#define Right_Ptr 	0xC
+	#define X_Co		0x10
+	#define Y_Co		0x11
+	
+	//Entries are POIN up down left right BYTE x y SHORT text id WORD 0 POIN <routine that determines what text to display, if necessary>
+	ORG Str+0x18 //Remove str text id check
+	WORD 0
+	ORG Str+Down_Ptr
+	POIN Mag_R_Button_Entry
+	ORG Skl 
+	POIN Mag_R_Button_Entry
+	ORG Skl+X_Co
+	BYTE 0x66 0x38
+	ORG Spd+Y_Co
+	BYTE 0x48
+	ORG Luk+Y_Co
+	BYTE 0x58
+	ORG Def+Y_Co
+	BYTE 0x68
+	ORG Res+Y_Co
+	BYTE 0x78
+	ORG Skl+Right_Ptr
+	POIN Aid
+	ORG Spd+Right_Ptr
+	POIN Trv
+	ORG Luk+Right_Ptr
+	POIN Afn
+	ORG Def+Right_Ptr
+	POIN Cnd
+	ORG Res+Right_Ptr
+	POIN Talk_R_Button_Entry
+	ORG Con+Left_Ptr
+	POIN Mag_R_Button_Entry
+	ORG Aid+Left_Ptr
+	POIN Skl
+	ORG Trv+Left_Ptr
+	POIN Spd
+	ORG Afn+Left_Ptr
+	POIN Luk
+	ORG Cnd+Left_Ptr
+	POIN Def
+	ORG Def+Left_Ptr
+	POIN Cln
+	ORG Res+Left_Ptr
+	POIN Exp
+	ORG Cln+Right_Ptr
+	POIN Def
+	ORG Cnd+Down_Ptr
+	POIN Talk_R_Button_Entry
+	ORG Res+Down_Ptr
+	POIN Mov
+	ORG Str
+	POIN Talk_R_Button_Entry
+	ORG Mov
+	POIN Res
+	
+	//############# FREE SPACE STUFF ##############
+	POP
+	
+	ALIGN 4
+	New_Stat_Name_Ptr_Table:
+	#incbin "Stat Screen Ptr Table.dmp"
+	POIN Talk_Text_ID
+	WORD 0 0 0 0
+	
+	ALIGN 4
+	Talk_Text_ID:
+	WORD 0x10D0
+	
+	ALIGN 4
+	Mag_R_Button_Entry:
+	POIN Str Skl 0xCC20B4 Con; BYTE 0x66 0x28; SHORT 0x265;	WORD 0 0 //CC20B4 is portrait
+	
+	ALIGN 4
+	Talk_R_Button_Entry:
+	POIN Cnd Str Res; WORD 0; BYTE 0xA6 0x78; SHORT Talk_R_Button_Text_ID; WORD 0 0 
+	
+	ALIGN 4
+	Stat_Screen_New_TSA:
+	#incbin "Stat Screen New TSA.dmp"
+	
+	ALIGN 4
+	Talk_Functionality:
+	#incbin "Talk.dmp"
+	POIN Get_Talkee Character_Table
+	
+	ALIGN 4
+	Get_Talkee:
+	#incbin "Get Talkee.dmp"
+	
+	ALIGN 4
+	Clear_Tiles:
+	#incbin "Clear Tiles.dmp"
+	
+	#undef Str
+	#undef Skl
+	#undef Spd
+	#undef Luk
+	#undef Def
+	#undef Res
+	#undef Mov
+	#undef Con
+	#undef Aid
+	#undef Trv
+	#undef Afn
+	#undef Cnd
+	#undef Cln
+	#undef Exp
+	#undef Down_Ptr
+	#undef Left_Ptr
+	#undef Right_Ptr
+	#undef X_Co
+	#undef Y_Co
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif
+/*
+Aid Trv Affin Condition
+Dunno about the title, but trv bl's to 5B18 with r0=r6+78, r1=18, r2=2, r3=beginning of ram struct where name (or ---) is written
+try r0=r6+98?
+In theory, add: 9C 31 00 02 8E 35 00 02 03 00 00 00 <pointer to 10D0>
+Had to change 9C 31 to 0C 32 to prevent tiles from being overwritten, but hey, it worked!
+Place where i'd have to modify to return char id (I think): 7845C. Actually, I can't, since all the lower params are used. Just call the usability check? Seems complicated. Just read the event table directly.
+Load event table
+Load chapter events
+Load CharacterBasedEvents
+for each element, check if the first character == current char
+if yes, check if event id has been triggered
+if no, return second char id
+
+chapter number at 202BBF8+0xE
+Load C9C9C8; not sure what this is (C9C9CC is the event reference table)
+load chapter data table at C92A00 and using the chapter number we passed in, return the offset of the chapter's data
+Add 0x78, which is Event Data reference, and load that byte
+lsl byte by 2 and add to C9C9C8 and load the word there, which seems to be the chapter data offset (CA21C0)+
+Basically, get chapter number, bl to 315BC
+add 4, get pointer (talk events). Entries are 0x10 long; event id at 0x2, initiator at 0x8, recepient at 0x9
+bl to 79798, r0=event id to check, I think
+
+
+*/

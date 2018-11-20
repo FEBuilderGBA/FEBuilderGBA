@@ -5328,6 +5328,15 @@ namespace FEBuilderGBA
             k.CopyTo(keys, 0);
             return keys;
         }
+        public static uint Grep4EndByDmp(string filename, uint start_offset, uint plus)
+        {
+            if (!File.Exists(filename))
+            {
+                return U.NOT_FOUND;
+            }
+            byte[] bin = File.ReadAllBytes(filename);
+            return U.GrepEnd(Program.ROM.Data, bin, start_offset, 0, 4 ,plus, true);
+        }
     }
 }
 
