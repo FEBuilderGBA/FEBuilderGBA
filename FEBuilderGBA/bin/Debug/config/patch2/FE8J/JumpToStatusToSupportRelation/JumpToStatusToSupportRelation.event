@@ -1,0 +1,18 @@
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+
+PUSH
+ORG $908E0		//FE8J
+jumpToHack_r1(JumpToStatusToSupportRelation)
+POP
+
+ALIGN 4
+JumpToStatusToSupportRelation:
+#incbin "JumpToStatusToSupportRelation.dmp"
+
+
+//BGMを進撃準備に戻されないように、補正する
+PUSH
+ORG 0xA5710
+#incbin "fix_BGM.dmp"
+POP

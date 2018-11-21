@@ -11449,3 +11449,19 @@ r3=X tile position of menu of the right	{U}
 0809631C	When selecting menu item on the advancement preparation screen	{U}
 0808E79C	Show status screen	subroutine	{U}
 080A0758	nullsub_66	{U}
+085C573C	:085C5967	Mystery function list	Irregular data	{J}
+08006DC8	NewBlocking_Yeild	{J}
+08006DDC	IsBlocking_Yeild	{J}
+08006DF4	ExitBlocking_Yeild	{J}
+0859D25C	:0859D497	Mystery function list	Irregular data	{U}
+08006EC4	NewBlocking_Yeild	{U}
+08006ED8	IsBlocking_Yeild	{U}
+08006EF0	ExitBlocking_Yeild	{U}
+080A5708	Return to BGM of attack title or OP title	{J}
+080908DC	Key input process of status screen	{J}
+080B2874	ClearChild6C	Erase the specified Procs or less	{J}
+080033ec	FindFirstChild6C	Enumerate specified Procs or less	{J}
+080A1930	Return to BGM of attack title or OP title	{U}
+0808E608	Key input process of status screen	{U}
+080ADDD4	ClearChild6C	Erase the specified Procs or less	{U}
+080034A0	FindFirstChild6C	Enumerate specified Procs or less	{U}

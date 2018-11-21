@@ -11323,3 +11323,19 @@ r3=X tile position of menu of the right	{U}
 0809631C	在进度准备屏幕上选择菜单项时	{U}
 0808E79C	显示状态屏幕	子程序	{U}
 080A0758	nullsub_66	{U}
+085C573C	:085C5967	神秘功能列表	不规则的数据	{J}
+08006DC8	NewBlocking_Yeild	{J}
+08006DDC	IsBlocking_Yeild	{J}
+08006DF4	ExitBlocking_Yeild	{J}
+0859D25C	:0859D497	神秘功能列表	不规则的数据	{U}
+08006EC4	NewBlocking_Yeild	{U}
+08006ED8	IsBlocking_Yeild	{U}
+08006EF0	ExitBlocking_Yeild	{U}
+080A5708	返回攻击标题或OP标题的BGM	{J}
+080908DC	状态屏幕的键输入过程	{J}
+080B2874	ClearChild6C	删除指定的Procs或更少	{J}
+080033ec	FindFirstChild6C	枚举指定的Procs或更少	{J}
+080A1930	返回攻击标题或OP标题的BGM	{U}
+0808E608	状态屏幕的键输入过程	{U}
+080ADDD4	ClearChild6C	删除指定的Procs或更少	{U}
+080034A0	FindFirstChild6C	枚举指定的Procs或更少	{U}

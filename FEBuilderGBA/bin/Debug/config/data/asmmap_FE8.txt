@@ -1531,7 +1531,7 @@
 @KeyStatusBuffer@01	byte	NextTickDelay
 @KeyStatusBuffer@02	byte	TickDownCounter	(decreased by one each frame, reset to FirstTickDelay when Presses change and NextTickDelay when reaches 0)
 @KeyStatusBuffer@03	byte	unused 
-@KeyStatusBuffer@04	short	Current
+@KeyStatusBuffer@04	short	Current	キーコード(ビット)を格納
 @KeyStatusBuffer@06	short	TickPresses	 1 For Press|Tick&Pressed, 0 Otherwise
 @KeyStatusBuffer@08	short	NewPresses:  1 For Press, 0 Otherwise
 @KeyStatusBuffer@0A	short	Previous
@@ -11423,3 +11423,10 @@
 08006ED8	IsBlocking_Yeild	{U}
 08006EF0	ExitBlocking_Yeild	{U}
 080A5708	進撃準備またはOPタイトルのBGMに戻す	{J}
+080908DC	状況画面のキー入力処理	{J}
+080B2874	ClearChild6C	指定したProcs以下を消去する	{J}
+080033ec	FindFirstChild6C	指定したProcs以下を列挙する	{J}
+080A1930	進撃準備またはOPタイトルのBGMに戻す	{U}
+0808E608	状況画面のキー入力処理	{U}
+080ADDD4	ClearChild6C	指定したProcs以下を消去する	{U}
+080034A0	FindFirstChild6C	指定したProcs以下を列挙する	{U}

@@ -249,12 +249,26 @@ namespace FEBuilderGBA
 
         void Explain()
         {
-            J_12_ASM.AccessibleDescription = R._("この項目をメニューに表示するかどうかを決定する関数を指定します。\r\nこの関数の戻り値(r0)が1だった場合、この項目がメニューが表示されます。\r\n戻り値(r0)が3だった場合は、メニューが表示されません。\r\nこの項目は必須項目です。");
+            J_12_ASM.AccessibleDescription = R._("この項目をメニューに表示するかどうかを決定する関数を指定します。\r\nこの関数の戻り値(r0)が1だった場合、この項目がメニューが表示されます。\r\n戻り値(r0)が3だった場合は、メニューが表示されません。\r\nこの項目は必須項目です。") + "\r\n\r\n" + Explain12();
             J_16_ASM.AccessibleDescription = R._("この項目を描画するときに利用する関数を指定します。\r\n0の場合は、デフォルト描画が呼び出されます。単純にテキストを描画します。");
             J_20_ASM.AccessibleDescription = R._("この項目が選択された時に動作させる関数を指定します。\r\nこの項目は必須項目です。");
             J_24_ASM.AccessibleDescription = R._("この項目を選んでいる時に毎ターン呼び出すルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
             J_28_ASM.AccessibleDescription = R._("この項目をカーソルで選択された時に呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
             J_32_ASM.AccessibleDescription = R._("メニューがキャンセルされたときに呼び出されるルーチンを指定します。\r\n0の場合ディフォルト動作になります。");
+        }
+        string Explain12()
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                return R._("よく使われる関数のメモ\r\n{0} 常にメニューの項目を表示します。"
+                    , U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address() + 1))
+                    );
+            }
+
+            return R._("よく使われる関数のメモ\r\n{0} 常にメニューの項目を表示します。\r\n{1} メニューを非表示にします。"
+                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_always_address()+1))
+                ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_hide_address()+1))
+                );
         }
     }
 }
