@@ -5337,6 +5337,18 @@ namespace FEBuilderGBA
             byte[] bin = File.ReadAllBytes(filename);
             return U.GrepEnd(Program.ROM.Data, bin, start_offset, 0, 4 ,plus, true);
         }
+        public static double GetOtherProgramVersion(string filename)
+        {
+            if (! File.Exists(filename))
+            {
+                return 0;
+            }
+
+            System.Diagnostics.FileVersionInfo vi =
+                System.Diagnostics.FileVersionInfo.GetVersionInfo(
+                    filename);
+            return U.atof(vi.FileVersion);
+        }
     }
 }
 

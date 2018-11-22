@@ -10,6 +10,6 @@ EA=JumpToStatusToSupportRelation.event
 AUTHOR=7743
 
 NAME.en=Call the support relation screen with the L button from the status screen
-INFO.en=On the status screen of the menu, press the L button to display the support relation screen of the attack advancement screen.
+INFO.en=On the status screen of the menu, press the L button to display the support relation screen of the prep screen.
 NAME.zh=从状态屏幕使用L按钮调用支持关系屏幕
 INFO.zh=在菜单的状态屏幕上，按L按钮显示攻击推进屏幕的支持关系屏幕。

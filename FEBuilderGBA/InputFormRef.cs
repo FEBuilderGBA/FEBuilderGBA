@@ -4544,10 +4544,15 @@ namespace FEBuilderGBA
         }
         public uint AddrToID(uint addr)
         {
+            addr = U.toOffset(addr);
+            if (addr < this.BaseAddress)
+            {
+                return 0;
+            }
             uint id = (addr - this.BaseAddress) / this.BlockSize;
-            if ((addr - this.BaseAddress) % this.BlockSize == 0)
-            {//中途半端
-                return U.NOT_FOUND;
+            if (id > this.DataCount)
+            {
+                return 0;
             }
             return id;
         }

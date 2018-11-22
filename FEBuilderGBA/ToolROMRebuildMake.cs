@@ -1746,6 +1746,8 @@ namespace FEBuilderGBA
         {
             uint addr = a.Addr;
             uint vallinaLength = (uint)this.Vanilla.Data.Length;
+            vallinaLength = U.Padding2Before(vallinaLength);
+
             uint missCount = 0;
             uint maybeEnd = addr;
             for (uint i = addr; i < vallinaLength; i += 2)
