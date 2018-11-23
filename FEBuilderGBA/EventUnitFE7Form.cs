@@ -477,6 +477,33 @@ namespace FEBuilderGBA
         //リストが拡張されたとき
         void AddressListExpandsEvent(object sender, EventArgs arg)
         {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            uint rom_length = (uint)Program.ROM.Data.Length;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "FixUnitPlacer");
+
+            //途中にnullが含まれている場合は、補正します.
+            for (int i = 0; i < count; i++)
+            {
+                if (addr + 2 > rom_length)
+                {
+                    Log.Error("ROM Broken! Address after allocation is out of range. {0}+2/{1}", U.ToHexString8(addr), U.ToHexString8(rom_length));
+                    break;
+                }
+                if (Program.ROM.u8(addr + 0) == 0)
+                {//アドレスが空だったら増やす必要がある
+                    //とりあえずUnitID: 0x01 を設置する.
+                    Program.ROM.write_u8(addr + 0, 0x1, undodata);
+                    Program.ROM.write_u8(addr + 1, 0x1, undodata);
+                }
+
+                addr += eearg.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+
             U.ReSelectList(this.MAP_LISTBOX, this.EVENT_LISTBOX);
         }
 

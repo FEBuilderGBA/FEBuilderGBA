@@ -331,7 +331,6 @@ namespace FEBuilderGBA
             this.FE8CoordListBox.DummyAlloc(FE8CoordList.Count , 0);
         }
 
-
         void PreWriteHandler(object sender, EventArgs e)
         {
             if (ControlPanel.Visible && InputFormRef.IsWriteButtonToYellow(UpdateButton))
@@ -917,8 +916,6 @@ namespace FEBuilderGBA
         //リストが拡張されたとき
         void AddressListExpandsEvent(object sender, EventArgs arg)
         {
-            U.ReSelectList(this.MAP_LISTBOX,this.EVENT_LISTBOX);
-
             //配置後座標のアドレスをコピーしないようにします.
             InputFormRef.WriteButtonToYellow(WriteButton, false);
 
@@ -938,11 +935,33 @@ namespace FEBuilderGBA
                     Log.Error("ROM Broken! Address after allocation is out of range. {0}+8+4/{1}", U.ToHexString8(addr), U.ToHexString8(rom_length));
                     break;
                 }
+
                 Program.ROM.write_u8(addr + 7, 0, undodata);
                 Program.ROM.write_u32(addr + 8, 0, undodata);
                 addr += eearg.BlockSize;
             }
+
+            //途中にnullが含まれている場合は、補正します.
+            addr = eearg.NewBaseAddress;
+            for (int i = 0; i < count; i++)
+            {
+                if (addr + 8 + 4 > rom_length)
+                {
+                    Log.Error("ROM Broken! Address after allocation is out of range. {0}+8+4/{1}", U.ToHexString8(addr), U.ToHexString8(rom_length));
+                    break;
+                }
+                if (Program.ROM.u8(addr + 0) == 0)
+                {//アドレスが空だったら増やす必要がある
+                    //とりあえずUnitID: 0x01 を設置する.
+                    Program.ROM.write_u8(addr + 0, 0x1, undodata);
+                    Program.ROM.write_u8(addr + 1, 0x2, undodata);
+                }
+
+                addr += eearg.BlockSize;
+            }
             Program.Undo.Push(undodata);
+
+            U.ReSelectList(this.MAP_LISTBOX, this.EVENT_LISTBOX);
         }
 
 

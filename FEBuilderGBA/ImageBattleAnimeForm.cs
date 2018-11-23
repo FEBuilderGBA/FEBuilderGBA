@@ -390,6 +390,12 @@ namespace FEBuilderGBA
        //リストが拡張されたとき
        void AddressListExpandsEvent(object sender, EventArgs arg)
        {
+           FixBattleAnimeSettingDataOnAddressListExpandsEvent(sender, arg);
+           FixBattleAnimePointerOnAddressListExpandsEvent(sender, arg);
+       }
+
+       void FixBattleAnimePointerOnAddressListExpandsEvent(object sender, EventArgs arg)
+       {
            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
            uint addr = eearg.NewBaseAddress;
            int count = (int)eearg.NewDataCount;
@@ -402,14 +408,46 @@ namespace FEBuilderGBA
            uint cid = (uint)CLASS_LISTBOX.SelectedIndex;
            uint pointer;
            ClassForm.GetBattleAnimeAddrWhereID(cid, out pointer);
-           if (! U.isSafetyOffset(pointer))
+           if (!U.isSafetyOffset(pointer))
            {
                return;
            }
-           Program.Undo.Push("BATTLE_POINTER",pointer,4);
-           Program.ROM.write_p32(pointer,addr);
+           Undo.UndoData undodata = Program.Undo.NewUndoData(this, "FixBattleAnimeSetting");
+           //クラスの戦闘アニメポインタを更新する.
+           Program.ROM.write_p32(pointer, addr, undodata);
+           Program.Undo.Push(undodata);
 
-           this.InputFormRef.ReInit(addr,(uint)count);
+           this.InputFormRef.ReInit(addr, (uint)count);
+       }
+       void FixBattleAnimeSettingDataOnAddressListExpandsEvent(object sender, EventArgs arg)
+       {
+           InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+           uint addr = eearg.NewBaseAddress;
+           int count = (int)eearg.NewDataCount;
+
+           uint rom_length = (uint)Program.ROM.Data.Length;
+
+           Undo.UndoData undodata = Program.Undo.NewUndoData(this, "FixBattleAnimeSetting");
+
+           //途中にnullが含まれている場合は、補正します.
+           for (int i = 0; i < count; i++)
+           {
+               if (addr + 4 > rom_length)
+               {
+                   Log.Error("ROM Broken! Address after allocation is out of range. {0}+2/{1}", U.ToHexString8(addr), U.ToHexString8(rom_length));
+                   break;
+               }
+               if (Program.ROM.u32(addr + 0) == 0)
+               {//アドレスが空だったら増やす必要がある
+                   //とりあえずアイテム、剣、アニメ1
+                   Program.ROM.write_u8(addr + 0, 0x0, undodata);
+                   Program.ROM.write_u8(addr + 1, 0x1, undodata);
+                   Program.ROM.write_u16(addr + 2, 0x1, undodata);
+               }
+
+               addr += eearg.BlockSize;
+           }
+           Program.Undo.Push(undodata);
        }
 
        public static string GetBattleAnimeHint(uint search_animeindex)
