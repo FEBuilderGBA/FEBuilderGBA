@@ -1,0 +1,7 @@
+#define csvmacro000(arg000,arg001,arg002) "SHORT arg000; BYTE arg001 arg002; "
+
+ChangeShopBGMEachChapter_Table:
+csvmacro000(0x2,0x00,0x02)  // ch2 •Ší‰®
+csvmacro000(0x2,0x00,0x06)  // ch5 •Ší‰®
+csvmacro000(0x3,0x01,0x06)  // ch5 “¹‹ï‰®
+csvmacro000(0x00,0x00,0x00)  // term

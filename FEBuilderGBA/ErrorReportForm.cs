@@ -79,6 +79,19 @@ namespace FEBuilderGBA
                 inex = inex.InnerException;
             }
 
+            //ログに書く.
+            try
+            {
+                Log.Error("ERROR!");
+                Log.Error("ERROR:");
+                Log.Error(errorMessage);
+                Log.Error("STACKTRACE:");
+                Log.Error(stacktrace);
+                Log.SyncLog();
+            }
+            catch(Exception)
+            {
+            }
             this.ErrorMessage.Text = U.TrimPersonalInfomation(errorMessage);
             this.StackTrace.Text = U.TrimPersonalInfomation(stacktrace);
 

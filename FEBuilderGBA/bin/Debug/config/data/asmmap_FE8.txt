@@ -11426,7 +11426,15 @@
 080908DC	状況画面のキー入力処理	{J}
 080B2874	ClearChild6C	指定したProcs以下を消去する	{J}
 080033ec	FindFirstChild6C	指定したProcs以下を列挙する	{J}
+080BEEE8	IsWordMap	{J}
+08074B88	戦闘BGMを決定する	{J}
+08002570	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{J}
+08074DAC	BossBGMを取得	{J}
 080A1930	進撃準備またはOPタイトルのBGMに戻す	{U}
 0808E608	状況画面のキー入力処理	{U}
 080ADDD4	ClearChild6C	指定したProcs以下を消去する	{U}
 080034A0	FindFirstChild6C	指定したProcs以下を列挙する	{U}
+080BA054	IsWordMap	{U}
+080726AC	戦闘BGMを決定する	{U}
+08002620	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{U}
+080728D0	BossBGMを取得	{U}

@@ -11339,3 +11339,11 @@ r3=X tile position of menu of the right	{U}
 0808E608	状态屏幕的键输入过程	{U}
 080ADDD4	ClearChild6C	删除指定的Procs或更少	{U}
 080034A0	FindFirstChild6C	枚举指定的Procs或更少	{U}
+080BEEE8	IsWordMap	{J}
+08074B88	确定战斗BG​​M	{J}
+08002570	切换BGM（另一个命令第5部分）	r0=BGM号码：MUSIC	{J}
+08074DAC	获取BossBGM	{J}
+080BA054	IsWordMap	{U}
+080726AC	确定战斗BG​​M	{U}
+08002620	切换BGM（另一个命令第5部分）	r0=BGM号码：MUSIC	{U}
+080728D0	获取BossBGM	{U}

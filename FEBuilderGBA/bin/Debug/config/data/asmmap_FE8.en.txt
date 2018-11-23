@@ -11465,3 +11465,11 @@ r3=X tile position of menu of the right	{U}
 0808E608	Key input process of status screen	{U}
 080ADDD4	ClearChild6C	Erase the specified Procs or less	{U}
 080034A0	FindFirstChild6C	Enumerate specified Procs or less	{U}
+080BEEE8	IsWordMap	{J}
+08074B88	Determine battle BGM	{J}
+08002570	Switch BGM (another commandPart 5)	r0=BGM number: MUSIC	{J}
+08074DAC	Get BossBGM	{J}
+080BA054	IsWordMap	{U}
+080726AC	Determine battle BGM	{U}
+08002620	Switch BGM (another commandPart 5)	r0=BGM number: MUSIC	{U}
+080728D0	Get BossBGM	{U}

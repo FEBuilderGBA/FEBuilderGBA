@@ -1,0 +1,10 @@
+IsPrepShop=$06
+IsWorldMapShop=$16
+SetMapID=$24
+LoopStart=$28
+Table=$70
+Loop=$2E
+defualt_bgm=$4E
+CheckShopType=$36
+CheckMapID=$3C
+Found=$46
