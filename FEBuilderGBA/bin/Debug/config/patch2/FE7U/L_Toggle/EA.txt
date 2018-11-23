@@ -7,3 +7,7 @@ ORG $2A430
 jumpToHack(L_Toggle)
 
 POP
+
+ALIGN 4
+L_Toggle:
+#incbin "L_Toggle.dmp"

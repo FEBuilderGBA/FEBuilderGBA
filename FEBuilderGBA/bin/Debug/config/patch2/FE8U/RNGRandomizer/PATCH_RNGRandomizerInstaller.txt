@@ -1,0 +1,13 @@
+NAME=RNGRandomizer
+NAME.en=RNGRandomizer
+NAME.zh=RNGRandomizer
+
+TYPE=EA
+TAG=#ENGINE
+EA=RNGRandomizerInstaller.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x1336=0x08 0xB4
+INFO=リセットして再操作しても同じ結果を得られないようにします。
+
+AUTHOR=TR143 http://feuniverse.us/t/gba-rng-randomizer/3175

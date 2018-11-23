@@ -1,0 +1,37 @@
+#include "eastdlib.event"
+#include "Extensions\Hack Installation.txt"
+
+#ifdef _FE7_
+
+PUSH
+
+ORG 0x19D8
+jumpToHack(RNGBodyFE7)
+
+POP
+
+RNGBodyFE7:
+#incbin rngbodyFE7.dmp
+
+PUSH
+
+ORG 0xB5A
+BYTE 0x08 0xB4 // push r3
+jumpToHack(bootHackBodyFE7)
+
+POP
+
+bootHackBodyFE7:
+#incbin BootHackFE7.dmp
+
+PUSH
+
+ORG 0xD74
+jumpToHack(resumeHackBodyFE7)
+
+POP
+
+resumeHackBodyFE7:
+#incbin ResumeHackFE7.dmp
+
+#endif
