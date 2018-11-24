@@ -1,0 +1,9 @@
+
+PUSH
+ORG 0x58AD2
+#incbin "weapon_battle_flash.dmp"
+POIN weapon_battle_flash_Table
+POP
+
+ALIGN 4
+#include "weapon_battle_flash_Table.event"

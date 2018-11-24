@@ -1,0 +1,7 @@
+weapon_battle_flash_Table:
+BYTE 0x84 //デュランダル
+BYTE 0x85 //アルマーズ
+BYTE 0x86 //アーリアル
+BYTE 0x3C //フォルブレイズ
+
+BYTE 0x00 //Term

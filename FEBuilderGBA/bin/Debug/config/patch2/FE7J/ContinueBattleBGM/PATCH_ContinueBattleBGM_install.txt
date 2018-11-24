@@ -1,0 +1,17 @@
+NAME=戦闘BGMにも継続判定を入れる
+INFO=戦闘BGMが現在再生中のBGMと同じものが指定された場合、音楽を止めずに継続して再生するようにします。
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x67E8C=0x00 0x4B 0x9F 0x46
+
+BIN:$FREEAREA=ContinueBattleBGM.dmp
+JUMP:0x67E8C:$r3=ContinueBattleBGM.dmp
+
+AUTHOR=7743
+NAME.en=Also put a continuation judgment in Battle BGM
+INFO.en=If the same BGM as the currently playing BGM is specified, it will continue playing without stopping the music.
+NAME.zh=还在Battle BGM中进行了延续判断
+INFO.zh=如果指定了与当前正在播放的BGM相同的BGM，则它将继续播放而不停止音乐。

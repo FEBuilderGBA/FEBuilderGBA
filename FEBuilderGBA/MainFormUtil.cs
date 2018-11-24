@@ -2246,7 +2246,8 @@ namespace FEBuilderGBA
 
         public static void SetMainFormIcon(Form mainForm)
         {
-            mainForm.Icon = Properties.Resources.Icon1;
+//やっぱりやめよう
+//            mainForm.Icon = Properties.Resources.Icon1;
         }
     }
 }

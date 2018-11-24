@@ -5875,7 +5875,6 @@ namespace FEBuilderGBA
                     struct_address = Program.ROM.p32(addr);
                     if (!U.isSafetyOffset(struct_address))
                     {
-                        Debug.Assert(false);
                         continue;
                     }
 

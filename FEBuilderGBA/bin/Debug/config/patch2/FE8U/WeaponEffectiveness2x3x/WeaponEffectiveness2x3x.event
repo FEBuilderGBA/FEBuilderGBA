@@ -1,0 +1,9 @@
+
+PUSH
+ORG 0x2ab18
+#incbin "WeaponEffectiveness2x3x.dmp"
+POIN WeaponEffectiveness2x3x_Table
+POP
+
+ALIGN 4
+#include "WeaponEffectiveness2x3x_Table.event"

@@ -1,0 +1,12 @@
+NAME=MUSIC_戦闘BGM-防衛(バトルBGM)
+NAME.en=MUSIC_Battle-Defense BGM
+NAME.zh=音乐_战斗BGM-Defense
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x067E76
+ADDRESS_TYPE=SONG
+
