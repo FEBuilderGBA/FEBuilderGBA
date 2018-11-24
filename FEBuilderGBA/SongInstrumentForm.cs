@@ -35,14 +35,14 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-            U.SetIcon(N00_ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(N00_ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(N08_ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(N08_ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(N10_ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(N10_ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(N18_ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(N18_ExportButton, U.GetShell32Icon(122));
+            U.SetIcon(N00_ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(N00_ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(N08_ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(N08_ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(N10_ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(N10_ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(N18_ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(N18_ExportButton, Properties.Resources.icon_arrow);
         }
 
         public InputFormRef InputFormRef;

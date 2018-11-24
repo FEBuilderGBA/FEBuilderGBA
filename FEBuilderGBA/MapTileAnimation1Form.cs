@@ -22,10 +22,10 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-            U.SetIcon(ExportAllButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportAllButton,U.GetShell32Icon(45));
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportAllButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportAllButton,Properties.Resources.icon_upload);
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
 
 

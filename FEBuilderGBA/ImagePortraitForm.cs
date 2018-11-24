@@ -33,8 +33,8 @@ namespace FEBuilderGBA
             //パレット変更の部分にリンクを置く.
             InputFormRef.markupJumpLabel(this.J_8);
 
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
 
         public InputFormRef InputFormRef;

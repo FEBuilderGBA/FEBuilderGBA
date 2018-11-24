@@ -53,8 +53,8 @@ namespace FEBuilderGBA
             ReadStartAddress.Focus();
             ClearUndoBuffer();
 
-            U.SetIcon(EventToFileButton, U.GetShell32Icon(122));
-            U.SetIcon(FileToEventButton, U.GetShell32Icon(45));
+            U.SetIcon(EventToFileButton, Properties.Resources.icon_arrow);
+            U.SetIcon(FileToEventButton, Properties.Resources.icon_upload);
         }
 
         ToolTipEx ToolTip;

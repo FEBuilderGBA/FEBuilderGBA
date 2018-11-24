@@ -28,8 +28,8 @@ namespace FEBuilderGBA
             }
             this.AddressList.EndUpdate();
             U.SelectedIndexSafety(this.AddressList, 0, true);
-            U.SetIcon(AnimeExportButton, U.GetShell32Icon(122));
-            U.SetIcon(AnimeImportButton, U.GetShell32Icon(45));
+            U.SetIcon(AnimeExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(AnimeImportButton, Properties.Resources.icon_upload);
         }
         static Dictionary<uint, string[]> g_ROMAnime;
         public static void PreLoadResource()

@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Drawing;
 
 namespace FEBuilderGBA
 {
@@ -2243,5 +2244,9 @@ namespace FEBuilderGBA
             return noMatch;
         }
 
+        public static void SetMainFormIcon(Form mainForm)
+        {
+            mainForm.Icon = Properties.Resources.Icon1;
+        }
     }
 }

@@ -191,6 +191,11 @@
     <Compile Include="ProcsScriptInnerControl.Designer.cs">
       <DependentUpon>ProcsScriptInnerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RAM.cs" />
     <Compile Include="EmulatorMemoryForm.cs">
       <SubType>Form</SubType>
@@ -796,11 +801,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="R.cs" />
     <Compile Include="Rom.cs" />
     <Compile Include="ROMFE6JP.cs" />
@@ -2327,6 +2327,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchHelperControl.resx">
@@ -2686,6 +2687,17 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_arrow.ico" />
+    <Content Include="icon_film.ico" />
+    <Content Include="icon_music.ico" />
+    <Content Include="icon_settings.ico" />
+    <Content Include="icon_speaker.ico" />
+    <Content Include="icon_upload.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

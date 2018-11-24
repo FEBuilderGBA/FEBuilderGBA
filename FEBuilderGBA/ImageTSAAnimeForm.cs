@@ -29,8 +29,8 @@ namespace FEBuilderGBA
             }
             this.TSAANimeList.EndUpdate();
             U.SelectedIndexSafety(this.TSAANimeList, 0, true);
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
         static Dictionary<uint, string[]> g_TSAAnime;
         public static void PreLoadResource()

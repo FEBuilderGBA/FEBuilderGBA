@@ -226,7 +226,7 @@ namespace FEBuilderGBA
             if (ExportButton != null)
             {
                 ExportButton.Click += OnExportButton;
-                U.SetIcon(ExportButton, U.GetShell32Icon(122));
+                U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             }
             if (PaletteEditorButton != null)
             {
@@ -236,7 +236,7 @@ namespace FEBuilderGBA
             if (ImportButton != null)
             {
                 ImportButton.Click += OnImport;
-                U.SetIcon(ImportButton, U.GetShell32Icon(45));
+                U.SetIcon(ImportButton, Properties.Resources.icon_upload);
             }
             if (TSAEditorButton != null)
             {

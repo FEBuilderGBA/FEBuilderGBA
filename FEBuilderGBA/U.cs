@@ -5087,11 +5087,20 @@ namespace FEBuilderGBA
         {
             return str.Replace("\r\n", " ");
         }
-        [System.Runtime.InteropServices.DllImport("shell32.dll", EntryPoint = "ExtractIconEx")]
-        public static extern int ExtractIconEx( string file, int index, out IntPtr largeIconHandle, out IntPtr smallIconHandle, int icons);
-        [System.Runtime.InteropServices.DllImport("User32.dll")]
-        private static extern bool DestroyIcon(IntPtr hIcon);
+        public static void SetIcon(Button button, Icon tempIcon)
+        {
+            if (button.Height <= 6)
+            {
+                return;
+            }
 
+            Bitmap icon = tempIcon.ToBitmap();
+            U.MakeTransparent(icon);
+            button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            Bitmap bitmap = ImageUtil.BitmapScale(icon, button.Height - 6, button.Height - 6);
+
+            button.Image = icon;
+        }
         public static void SetIcon(Button button, Bitmap icon)
         {
             if (icon == null || button.Height <= 6 || icon.Height <= 0)
@@ -5104,41 +5113,6 @@ namespace FEBuilderGBA
 
             button.Image = bitmap;
            
-        }
-        public static Bitmap GetShell32Icon(int iconIndex, bool iconSize = false)
-        {
-            string shell32Path = Path.Combine(Environment.SystemDirectory, "Shell32.dll");
-            return GetIconImage(shell32Path, iconIndex, iconSize);
-        }
-        public static Bitmap GetIconImage(string path, int iconIndex, bool iconSize)
-        {
-            Bitmap ret;
-            try
-            {
-                Icon[] icons = new Icon[2];
-                IntPtr largeIconHandle = IntPtr.Zero;
-                IntPtr smallIconHandle = IntPtr.Zero;
-                ExtractIconEx(path, iconIndex, out largeIconHandle, out smallIconHandle, 1);
-
-                if (iconSize)
-                {
-                    ret = Bitmap.FromHicon(largeIconHandle);
-                }
-                else
-                {
-                    ret = Bitmap.FromHicon(smallIconHandle);
-                }
-                DestroyIcon(largeIconHandle);
-                DestroyIcon(smallIconHandle);
-    
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString());
-                return null;
-            }
-    
-            return ret;
         }
 
         //個人情報の削除

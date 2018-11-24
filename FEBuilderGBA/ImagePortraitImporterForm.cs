@@ -22,8 +22,8 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            U.SetIcon(SimpleImportButton, U.GetShell32Icon(45));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(SimpleImportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
 
         private void ImagePortraitImporterForm_Load(object sender, EventArgs e)

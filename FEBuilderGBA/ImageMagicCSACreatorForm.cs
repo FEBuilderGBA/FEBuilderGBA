@@ -15,8 +15,8 @@ namespace FEBuilderGBA
         public ImageMagicCSACreatorForm()
         {
             InitializeComponent();
-            U.SetIcon(MagicAnimeExportButton, U.GetShell32Icon(122));
-            U.SetIcon(MagicAnimeImportButton, U.GetShell32Icon(45));
+            U.SetIcon(MagicAnimeExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(MagicAnimeImportButton, Properties.Resources.icon_upload);
 
             if (ImageUtilMagic.SearchMagicSystem(out MagicEngineBaseAddr, out DimAddr, out NoDimAddr) != ImageUtilMagic.magic_system_enum.CSA_CREATOR)
             {

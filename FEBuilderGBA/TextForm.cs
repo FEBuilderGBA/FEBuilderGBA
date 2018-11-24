@@ -53,8 +53,8 @@ namespace FEBuilderGBA
             InitRichEditEx(this.TextListSpSerifuTextBox);
 
             InputFormRef.MakeEditListboxContextMenuText(this.TextList, this.TextList_KeyDown);
-            U.SetIcon(Export, U.GetShell32Icon(122));
-            U.SetIcon(Import, U.GetShell32Icon(45));
+            U.SetIcon(Export, Properties.Resources.icon_arrow);
+            U.SetIcon(Import, Properties.Resources.icon_upload);
         }
         void InitRichEditEx(RichTextBoxEx editor)
         {

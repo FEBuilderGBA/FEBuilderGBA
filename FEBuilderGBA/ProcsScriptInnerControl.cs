@@ -33,8 +33,8 @@ namespace FEBuilderGBA
                 ScriptEditSetTables[i].ParamLabel.Click += ParamLabel_Clicked;
                 ScriptEditSetTables[i].ParamValue.DoubleClick += ParamLabel_Clicked;
             }
-            U.SetIcon(EventToFileButton, U.GetShell32Icon(122));
-            U.SetIcon(FileToEventButton, U.GetShell32Icon(45));
+            U.SetIcon(EventToFileButton, Properties.Resources.icon_arrow);
+            U.SetIcon(FileToEventButton, Properties.Resources.icon_upload);
         }
 
         List<EventScript.OneCode> ProcsScript;

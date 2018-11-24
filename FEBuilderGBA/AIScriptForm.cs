@@ -54,8 +54,8 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.FilterComboBox , 0);
             InputFormRef.MakeEditListboxContextMenuN(this.Script, this.Script_KeyDown, this.Script_KeyDown, useTemplate: false);
 
-            U.SetIcon(EventToFileButton, U.GetShell32Icon(122));
-            U.SetIcon(FileToEventButton, U.GetShell32Icon(45));
+            U.SetIcon(EventToFileButton, Properties.Resources.icon_arrow);
+            U.SetIcon(FileToEventButton, Properties.Resources.icon_upload);
         }
         //リストが拡張された分のポインタをNULLにする.
         void AddressListExpandsEventNoCopyPointer(object sender, EventArgs arg)

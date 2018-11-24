@@ -21,8 +21,8 @@ namespace FEBuilderGBA
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsUpdateBaristaAnimationAddress;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
         //リストが拡張されたとき
         void AddressListExpandsUpdateBaristaAnimationAddress(object sender, EventArgs arg)

@@ -35,12 +35,12 @@ namespace FEBuilderGBA
             ObjImportOption.SelectedIndex = 1; //パレットもインポートする
             PaletteTypeCombo.SelectedIndex = 0; //霧なし
 
-            U.SetIcon(MapChipExportButton, U.GetShell32Icon(122));
-            U.SetIcon(MapChipImportButton, U.GetShell32Icon(45));
-            U.SetIcon(ObjExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ObjImportButton, U.GetShell32Icon(45));
-            U.SetIcon(PaletteExportButton, U.GetShell32Icon(122));
-            U.SetIcon(PaletteImportButton, U.GetShell32Icon(45));
+            U.SetIcon(MapChipExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(MapChipImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(ObjExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ObjImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(PaletteExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(PaletteImportButton, Properties.Resources.icon_upload);
         }
         void MakeMapStyleCombo()
         {

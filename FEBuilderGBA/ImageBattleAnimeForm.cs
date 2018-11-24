@@ -44,9 +44,9 @@ namespace FEBuilderGBA
             //パレット変更の部分にリンクを置く.
             InputFormRef.markupJumpLabel(this.N_J_28);
 
-            U.SetIcon(BattleAnimeImportButton, U.GetShell32Icon(45));
-            U.SetIcon(BattleAnimeExportButton, U.GetShell32Icon(122));
-            U.SetIcon(X_N_JumpEditor, U.GetShell32Icon(115));
+            U.SetIcon(BattleAnimeImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(BattleAnimeExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(X_N_JumpEditor, Properties.Resources.icon_film);
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(ImageBattleAnimeForm self)

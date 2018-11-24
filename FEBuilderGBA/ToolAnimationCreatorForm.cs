@@ -15,7 +15,7 @@ namespace FEBuilderGBA
         public ToolAnimationCreatorForm()
         {
             InitializeComponent();
-
+            this.Icon = Properties.Resources.icon_film;
         }
 
         ToolTipEx ToolTip;

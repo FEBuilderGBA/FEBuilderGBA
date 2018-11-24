@@ -18,8 +18,8 @@ namespace FEBuilderGBA
         public WorldMapPathEditorForm()
         {
             InitializeComponent();
-            U.SetIcon(SaveASbutton, U.GetShell32Icon(122));
-            U.SetIcon(LoadButton, U.GetShell32Icon(45));
+            U.SetIcon(SaveASbutton, Properties.Resources.icon_arrow);
+            U.SetIcon(LoadButton, Properties.Resources.icon_upload);
         }
 
         Bitmap MapCache;

@@ -58,10 +58,10 @@ namespace FEBuilderGBA
 
 
             MainTab.SelectedIndex = 1;
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(AnimationInportButton, U.GetShell32Icon(45));
-            U.SetIcon(AnimationExportButton, U.GetShell32Icon(122));
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);
+            U.SetIcon(AnimationExportButton, Properties.Resources.icon_arrow);
         }
 
         //アニメを利用できない場合は消す. かならず Initの前に呼ぶ

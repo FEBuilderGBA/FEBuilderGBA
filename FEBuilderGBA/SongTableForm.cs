@@ -17,6 +17,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
+            this.Icon = Properties.Resources.icon_music;
         }
 
         public InputFormRef InputFormRef;

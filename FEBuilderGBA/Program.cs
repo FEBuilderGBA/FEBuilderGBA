@@ -105,7 +105,9 @@ namespace FEBuilderGBA
             do
             {
                 Program.doReOpen = false;
-                Application.Run(MainForm());
+                Form f = MainForm();
+                MainFormUtil.SetMainFormIcon(f);
+                Application.Run(f);
             }
             while (Program.doReOpen); //メインフォームを作り直すためループにする.
 

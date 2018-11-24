@@ -18,8 +18,8 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.ZoomComboBox.SelectedIndex = 2;
             this.FontType.SelectedIndex = 0;
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
 
             UseFontNameTextEdit.Text = UseFontNameTextEdit.Font.FontFamily.ToString();
             AutoGenbutton.AccessibleDescription = R._("ROMに存在しいフォントをPCに存在するフォントから自動的に作成します。\r\nまとめて複数のフォントを一気に作りたい場合は、ROM翻訳ツールから作ることをお勧めします。");

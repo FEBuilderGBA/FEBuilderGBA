@@ -136,6 +136,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 31);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -234,6 +235,7 @@
             // Track12
             // 
             this.Track12.FormattingEnabled = true;
+            this.Track12.IntegralHeight = false;
             this.Track12.ItemHeight = 18;
             this.Track12.Location = new System.Drawing.Point(1605, 50);
             this.Track12.Margin = new System.Windows.Forms.Padding(4);
@@ -244,6 +246,7 @@
             // Track16
             // 
             this.Track16.FormattingEnabled = true;
+            this.Track16.IntegralHeight = false;
             this.Track16.ItemHeight = 18;
             this.Track16.Location = new System.Drawing.Point(2196, 50);
             this.Track16.Margin = new System.Windows.Forms.Padding(4);
@@ -299,6 +302,7 @@
             // Track10
             // 
             this.Track10.FormattingEnabled = true;
+            this.Track10.IntegralHeight = false;
             this.Track10.ItemHeight = 18;
             this.Track10.Location = new System.Drawing.Point(1317, 48);
             this.Track10.Margin = new System.Windows.Forms.Padding(4);
@@ -309,6 +313,7 @@
             // Track11
             // 
             this.Track11.FormattingEnabled = true;
+            this.Track11.IntegralHeight = false;
             this.Track11.ItemHeight = 18;
             this.Track11.Location = new System.Drawing.Point(1461, 50);
             this.Track11.Margin = new System.Windows.Forms.Padding(4);
@@ -352,6 +357,7 @@
             // Track14
             // 
             this.Track14.FormattingEnabled = true;
+            this.Track14.IntegralHeight = false;
             this.Track14.ItemHeight = 18;
             this.Track14.Location = new System.Drawing.Point(1908, 50);
             this.Track14.Margin = new System.Windows.Forms.Padding(4);
@@ -362,6 +368,7 @@
             // Track1
             // 
             this.Track1.FormattingEnabled = true;
+            this.Track1.IntegralHeight = false;
             this.Track1.ItemHeight = 18;
             this.Track1.Location = new System.Drawing.Point(4, 48);
             this.Track1.Margin = new System.Windows.Forms.Padding(4);
@@ -372,6 +379,7 @@
             // Track9
             // 
             this.Track9.FormattingEnabled = true;
+            this.Track9.IntegralHeight = false;
             this.Track9.ItemHeight = 18;
             this.Track9.Location = new System.Drawing.Point(1173, 50);
             this.Track9.Margin = new System.Windows.Forms.Padding(4);
@@ -382,6 +390,7 @@
             // Track15
             // 
             this.Track15.FormattingEnabled = true;
+            this.Track15.IntegralHeight = false;
             this.Track15.ItemHeight = 18;
             this.Track15.Location = new System.Drawing.Point(2052, 50);
             this.Track15.Margin = new System.Windows.Forms.Padding(4);
@@ -392,6 +401,7 @@
             // Track2
             // 
             this.Track2.FormattingEnabled = true;
+            this.Track2.IntegralHeight = false;
             this.Track2.ItemHeight = 18;
             this.Track2.Location = new System.Drawing.Point(148, 48);
             this.Track2.Margin = new System.Windows.Forms.Padding(4);
@@ -402,6 +412,7 @@
             // Track3
             // 
             this.Track3.FormattingEnabled = true;
+            this.Track3.IntegralHeight = false;
             this.Track3.ItemHeight = 18;
             this.Track3.Location = new System.Drawing.Point(292, 48);
             this.Track3.Margin = new System.Windows.Forms.Padding(4);
@@ -423,6 +434,7 @@
             // Track4
             // 
             this.Track4.FormattingEnabled = true;
+            this.Track4.IntegralHeight = false;
             this.Track4.ItemHeight = 18;
             this.Track4.Location = new System.Drawing.Point(436, 48);
             this.Track4.Margin = new System.Windows.Forms.Padding(4);
@@ -433,6 +445,7 @@
             // Track13
             // 
             this.Track13.FormattingEnabled = true;
+            this.Track13.IntegralHeight = false;
             this.Track13.ItemHeight = 18;
             this.Track13.Location = new System.Drawing.Point(1764, 51);
             this.Track13.Margin = new System.Windows.Forms.Padding(4);
@@ -454,6 +467,7 @@
             // Track5
             // 
             this.Track5.FormattingEnabled = true;
+            this.Track5.IntegralHeight = false;
             this.Track5.ItemHeight = 18;
             this.Track5.Location = new System.Drawing.Point(580, 48);
             this.Track5.Margin = new System.Windows.Forms.Padding(4);
@@ -475,6 +489,7 @@
             // Track6
             // 
             this.Track6.FormattingEnabled = true;
+            this.Track6.IntegralHeight = false;
             this.Track6.ItemHeight = 18;
             this.Track6.Location = new System.Drawing.Point(724, 48);
             this.Track6.Margin = new System.Windows.Forms.Padding(4);
@@ -496,6 +511,7 @@
             // Track7
             // 
             this.Track7.FormattingEnabled = true;
+            this.Track7.IntegralHeight = false;
             this.Track7.ItemHeight = 18;
             this.Track7.Location = new System.Drawing.Point(868, 48);
             this.Track7.Margin = new System.Windows.Forms.Padding(4);
@@ -517,6 +533,7 @@
             // Track8
             // 
             this.Track8.FormattingEnabled = true;
+            this.Track8.IntegralHeight = false;
             this.Track8.ItemHeight = 18;
             this.Track8.Location = new System.Drawing.Point(1012, 48);
             this.Track8.Margin = new System.Windows.Forms.Padding(4);
@@ -592,7 +609,7 @@
             // 
             // SONGPLAY
             // 
-            this.SONGPLAY.Location = new System.Drawing.Point(1186, 38);
+            this.SONGPLAY.Location = new System.Drawing.Point(1201, 39);
             this.SONGPLAY.Margin = new System.Windows.Forms.Padding(2);
             this.SONGPLAY.Name = "SONGPLAY";
             this.SONGPLAY.Size = new System.Drawing.Size(178, 30);
@@ -603,10 +620,10 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(946, 40);
+            this.ExportButton.Location = new System.Drawing.Point(954, 40);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(224, 30);
+            this.ExportButton.Size = new System.Drawing.Size(236, 30);
             this.ExportButton.TabIndex = 185;
             this.ExportButton.Text = "音楽をファイルへ書き出す";
             this.ExportButton.UseVisualStyleBackColor = true;
@@ -617,7 +634,7 @@
             this.ImportButton.Location = new System.Drawing.Point(707, 40);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(224, 30);
+            this.ImportButton.Size = new System.Drawing.Size(243, 30);
             this.ImportButton.TabIndex = 184;
             this.ImportButton.Text = "音楽をファイルから読み込む";
             this.ImportButton.UseVisualStyleBackColor = true;

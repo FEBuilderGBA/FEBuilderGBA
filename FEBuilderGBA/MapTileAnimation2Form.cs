@@ -27,8 +27,8 @@ namespace FEBuilderGBA
             this.N_AddressList.OwnerDraw(ListBoxEx.DrawColorAndText, DrawMode.OwnerDrawFixed);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            U.SetIcon(ExportAllButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportAllButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportAllButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportAllButton, Properties.Resources.icon_upload);
         }
 
         //リストが拡張されたとき

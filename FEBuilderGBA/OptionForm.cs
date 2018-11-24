@@ -18,6 +18,7 @@ namespace FEBuilderGBA
 
             InputFormRef.LoadComboResource(func_lang, U.ConfigDataFilename("func_lang_"));
             InputFormRef.markupJumpLabel(X_EXPLAIN_NECESSARY_PROGRAM);
+            this.Icon = Properties.Resources.icon_settings;
         }
 
 

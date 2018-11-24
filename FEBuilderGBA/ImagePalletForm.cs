@@ -20,8 +20,8 @@ namespace FEBuilderGBA
             this.PaletteZoomComboBox.SelectedIndex = 0;
             PaletteFormRef.MakePaletteUI(this, OnChangeColor);
             
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
         }
 
         private void PALETTE_POINTER_ValueChanged(object sender, EventArgs e)

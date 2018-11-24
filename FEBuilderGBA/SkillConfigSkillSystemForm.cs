@@ -44,8 +44,8 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             ShowZoomComboBox.SelectedIndex = 0;
-            U.SetIcon(AnimationInportButton, U.GetShell32Icon(45));
-            U.SetIcon(AnimationExportButton, U.GetShell32Icon(122));
+            U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);
+            U.SetIcon(AnimationExportButton, Properties.Resources.icon_arrow);
         }
 
         uint TextBaseAddress;

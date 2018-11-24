@@ -16,7 +16,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            this.IconPictureBox.Image = U.GetShell32Icon(138);
+            this.IconPictureBox.Image = Properties.Resources.icon_speaker.ToBitmap();
             U.AddCancelButton(this);
         }
 

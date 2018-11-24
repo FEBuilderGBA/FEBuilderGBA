@@ -17,12 +17,12 @@ namespace FEBuilderGBA
 
             Border_InputFormRef = Border_Init(this);
 
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(DarkMAPExportButton, U.GetShell32Icon(122));
-            U.SetIcon(DarkMAPImportButton, U.GetShell32Icon(45));
-            U.SetIcon(BORDER_ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(BORDER_ImportButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(DarkMAPExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(DarkMAPImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(BORDER_ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(BORDER_ImportButton, Properties.Resources.icon_upload);
         }
 
         ImageFormRef WMEvent;

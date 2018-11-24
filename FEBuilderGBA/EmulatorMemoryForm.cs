@@ -1955,7 +1955,7 @@ namespace FEBuilderGBA
         }
         void SetSpeechIcon()
         {
-            U.SetIcon(SpeechButton, U.GetShell32Icon(138));
+            U.SetIcon(SpeechButton, Properties.Resources.icon_speaker);
         }
         void Speech(string text)
         {

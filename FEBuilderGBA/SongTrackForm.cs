@@ -33,10 +33,9 @@ namespace FEBuilderGBA
                 this.TrackLabels[i].Click += TrackLabel_Click;
             }
             InputFormRef.markupJumpLabel(this.AllTracksLabel);
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(SONGPLAY, U.GetShell32Icon(116));
-            
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(SONGPLAY, Properties.Resources.icon_music);
         }
 
         public InputFormRef InputFormRef;

@@ -27,8 +27,8 @@ namespace FEBuilderGBA
             this.BackBrush = new SolidBrush(this.BackColor);
             this.IsModified = false;
 
-            U.SetIcon(SaveASbutton, U.GetShell32Icon(122));
-            U.SetIcon(LoadButton, U.GetShell32Icon(45));
+            U.SetIcon(SaveASbutton, Properties.Resources.icon_arrow);
+            U.SetIcon(LoadButton, Properties.Resources.icon_upload);
         }
 
         public static List<MapEditConfst> MakeMapStyleList(List<U.AddrResult> maplist)

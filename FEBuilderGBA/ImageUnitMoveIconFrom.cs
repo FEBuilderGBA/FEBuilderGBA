@@ -22,10 +22,10 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.PreAddressListExpandsEvent += OnPreClassExtendsWarningHandler;
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
-            U.SetIcon(ExportButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportButton, U.GetShell32Icon(45));
-            U.SetIcon(ExportAPButton, U.GetShell32Icon(122));
-            U.SetIcon(ImportAPButton, U.GetShell32Icon(45));
+            U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+            U.SetIcon(ExportAPButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportAPButton, Properties.Resources.icon_upload);
         }
 
         public InputFormRef InputFormRef;
