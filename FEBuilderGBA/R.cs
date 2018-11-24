@@ -38,22 +38,42 @@ namespace FEBuilderGBA
         public static void ShowStopError(string str, params object[] args)
         {
             string message = R.Error(MyTranslateResource.str(str, args));
-            string title = R._("エラー");
-            MessageBox.Show(ClipIfVeryLong(message)
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Error);
+
+            if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
+            {
+                ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
+                f.SetErrorMessage(message);
+                f.ShowDialog();
+            }
+            else
+            {
+                string title = R._("エラー");
+                MessageBox.Show(message
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
         public static void ShowStopError(string str)
         {
             string message = R.Error(MyTranslateResource.str(str));
 
-            string title = R._("エラー");
-            MessageBox.Show(ClipIfVeryLong(message)
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Error);
+            if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
+            {
+                ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
+                f.SetErrorMessage(message);
+                f.ShowDialog();
+            }
+            else
+            {
+                string title = R._("エラー");
+                MessageBox.Show(message
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
         }
+
         static string ClipIfVeryLong(string str)
         {
             if (str.Length >= 2048)

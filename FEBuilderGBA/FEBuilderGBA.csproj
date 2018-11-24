@@ -402,6 +402,12 @@
       <DependentUpon>ItemEtcForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LastSelectedFilename.cs" />
+    <Compile Include="ErrorLongMessageDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorLongMessageDialogForm.Designer.cs">
+      <DependentUpon>ErrorLongMessageDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolROMRebuildFreeArea.cs" />
     <Compile Include="ToolROMRebuildMake.cs" />
     <Compile Include="ToolFELintForm.cs">
@@ -2135,6 +2141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolFlagNameForm.resx">
       <DependentUpon>ToolFlagNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorLongMessageDialogForm.resx">
+      <DependentUpon>ErrorLongMessageDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolLZ77Form.resx">
       <DependentUpon>ToolLZ77Form.cs</DependentUpon>

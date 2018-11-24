@@ -1213,6 +1213,12 @@ Load as Japanese version FE7J
 :このROMには規定のバージョン情報がありません。\r\nこれは正しいGBAFEのROMですか？\r\nもし、GBAFEのROMであれば、バージョンを指定してください。\r\n
 There is no prescribed version information in this ROM.\r\nIs this the correct GBAFE ROM?\r\nIf it is a GBAFE ROM, please specify the version.\r\n
 
+:以下のエラーが発生しました。
+The following error occurred.
+
+:エラー
+Error
+
 :できるだけ元の画像を再現できるように再構築をしてインポートします。
 Image will be rebuilt and imported as close to the original image as possible.
 
@@ -5242,6 +5248,9 @@ Sappy does not exist.\r\nPlease set the correct path from the setting -> option.
 :Sappyプロセスを実行できません。\r\n{0}
 Unable to execute Sappy process.\r\n{0}
 
+:このパッチを使うには、lynが必要です。EAのToolsフォルダにlynをインストールしてください。以下のマニュアルを参考にしてください。\r\n{0}\r\n\r\n詳細エラーメッセージ:\r\n{1}
+To use this patch, lyn is required.Please install lyn in the Tools folder of EA.Please refer to the following manual.\r\n{0}\r\n\r\nError message:\r\n{1}
+
 : +　DateTime.Now.Ticks.ToString() + 
 + DateTime.Now.Ticks.ToString () +.
 
@@ -5754,9 +5763,6 @@ Show Hidden Errors
 
 :再取得(Ctrl+R)
 Reload (Ctrl + R)
-
-:エラー
-Error
 
 :非表示にする理由
 Reason For Hiding:

@@ -744,7 +744,56 @@ namespace FEBuilderGBA
             }
             return sb.ToString();
         }
+        static string CompilerEventAssemblerInner(string compiler_exe ,string tooldir,string  freeareadef_targetfile_fullpath,string  output_target_rom,string  output_symFile)
+        {
+            string args = "A "
+                + Program.ROM.TitleToFilename() + " "
+                + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
+                + U.escape_shell_args("-output:" + output_target_rom) + " "
+                + U.escape_shell_args("-symOutput:" + output_symFile);
+            Log.Notify(args);
+            string output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+            Log.Notify("=== OUTPUT ===");
+            Log.Notify(output);
+            if (!IsCompilerErrorByEventAssembler(output))
+            {//エラーではない
+                return output;
+            }
 
+            //エラーなので詳細を追加する.
+            output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+
+            if (output.IndexOf("Tool lyn not found.") >= 0)
+            {
+                output = R.Error("このパッチを使うには、lynが必要です。EAのToolsフォルダにlynをインストールしてください。以下のマニュアルを参考にしてください。\r\n{0}\r\n\r\n詳細エラーメッセージ:\r\n{1}", GetLynProgramURL(), output);
+                return output;
+            }
+
+            if (output.IndexOf("symOutput doesn't exist.") >= 0)
+            {//古いEAらしいので、symOutputを外して実行する
+                args = "A "
+                    + Program.ROM.TitleToFilename() + " "
+                    + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
+                    + U.escape_shell_args("-output:" + output_target_rom);
+                Log.Notify(args);
+                Log.Notify("=== OUTPUT ===");
+                Log.Notify(output);
+                output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+                if (!IsCompilerErrorByEventAssembler(output))
+                {//エラーではない
+                    return output;
+                }
+
+                //エラーなので詳細を追加する.
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+            }
+
+            return output;
+        }
+        static bool IsCompilerErrorByEventAssembler(string output)
+        {
+            return (output.IndexOf("No errors or warnings.") < 0);
+        }
 
 
         //EventAssemblerで対象物をコンパイル
@@ -790,25 +839,15 @@ namespace FEBuilderGBA
             string tooldir = Path.GetDirectoryName(compiler_exe);
 
             //A FE8 "-input:EA.txt" "-output:temp.gba"
-            string args = "A "
-                + Program.ROM.TitleToFilename() + " "
-                + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
-                + U.escape_shell_args("-output:" + output_target_rom) + " "
-                + U.escape_shell_args("-symOutput:" + output_symFile);
-            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
-            if (output.IndexOf("No errors or warnings.") < 0)
-            {//エラーなのでコマンド名もついでに付与
-                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+            output = CompilerEventAssemblerInner(compiler_exe ,tooldir, freeareadef_targetfile_fullpath, output_target_rom, output_symFile);
+            if (IsCompilerErrorByEventAssembler(output))
+            {
                 File.Delete(output_target_rom);
                 File.Delete(freeareadef_targetfile_fullpath);
                 File.Delete(output_symFile);
                 return false;
             }
 
-
-            Log.Notify(args);
-            Log.Notify("=== OUTPUT ===");
-            Log.Notify(output);
             if (File.Exists(output_symFile))
             {
                 Log.Notify("=== SYMBOL ===");
@@ -1356,6 +1395,27 @@ namespace FEBuilderGBA
             }
             return url;
         }
+
+        static string GetLynProgramURL()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:febuildergba%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E4%B8%8A%E3%81%A7%E5%BF%85%E8%A6%81%E3%81%AB%E3%81%AA%E3%82%8B%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95#lyn";
+            }
+            else if (lang == "zh")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:febuildergba%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95_zh#lyn";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:how_to_obtain_necessary_tools_to_use_febuildergba_en#lyn";
+            }
+            return url;
+        }
+
         public static string GetNecessaryProgramURL()
         {
             string lang = OptionForm.lang();
