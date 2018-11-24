@@ -10,7 +10,7 @@ BIN:$FREEAREA=ContinueBattleBGM.dmp
 JUMP:0x73F4C:$r3=ContinueBattleBGM.dmp
 
 AUTHOR=7743
-NAME.en=Also put a continuation judgment in Battle BGM
+NAME.en=Insert a continuation judgment in Battle BGM
 INFO.en=If the same BGM as the currently playing BGM is specified, it will continue playing without stopping the music.
 NAME.zh=还在Battle BGM中进行了延续判断
 INFO.zh=如果指定了与当前正在播放的BGM相同的BGM，则它将继续播放而不停止音乐。

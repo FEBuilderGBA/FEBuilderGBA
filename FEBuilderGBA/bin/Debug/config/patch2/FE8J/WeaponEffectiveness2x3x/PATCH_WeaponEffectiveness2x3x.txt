@@ -26,7 +26,7 @@ B0:ITEM=ITEM
 B1=SCALE
 
 INFO=双聖器の特効ダメージ係数を簡単に変更します。\r\n指定したアイテムIDごとに特攻ダメージ係数を変更できるようにします。\r\n神器以外にも設定できますし、2倍以外にも設定できます。
-INFO.en=A Sacred Easily change the Effectiveness damage coefficient of Twin tome.\r\nAllows you to change the Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.
+INFO.en=Change the Effectiveness damage coefficient of Twin tome.\r\nAllows you to change the Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.
 
 
 NAME.zh=改变武器的特殊效果改变伤害系数
