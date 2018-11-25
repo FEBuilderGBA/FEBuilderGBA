@@ -1,0 +1,24 @@
+NAME=強制出撃のユニットの開始位置を変更できるようにする
+NAME.en=Allow Forced Units to change their Starting Position
+NAME.zh=允许强制人物更改其起始位置
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Allow|ONN
+
+DETERMINATION_ADDRESS=0x033750
+
+ONN:0x033750=0x00 0x20 0x00 0x00
+OFF:0x033750=0x61 0xF0 0x4E 0xFE
+
+ONN:0x09543E=0x00 0x20 0x00 0x00
+OFF:0x09543E=0xFF 0xF7 0xD7 0xFF
+
+INFO=強制出撃のユニットの位置を、他の出撃枠のユニットの位置と交換できるようにします。
+INFO.en=Patches the allow forced units to swap with other deployed player units, and also allow other player units to swap to those forced unit positions.
+INFO.zh=强制出击人物的位置，与拍摄框架的人物交换位置。
+
+
+AUTHOR=AuraWolf http://feuniverse.us/t/fe8-allow-forced-units-to-change-their-starting-position/4664

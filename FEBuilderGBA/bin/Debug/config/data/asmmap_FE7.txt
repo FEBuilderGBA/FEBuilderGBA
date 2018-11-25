@@ -2169,7 +2169,7 @@
 0802F8BC	BATTLE_ProbablyMakesTheDeadUnitDissapear	{U}
 0802F954	BATTLE_DeleteLinkedMOVEUNIT	{U}
 0802F9C4	BATTLE_HandleItemDrop	{U}
-08030778	CanCharacterBePrepMoved	{U}
+0803077C	CanCharacterBePrepMoved	{U}
 08030C28	SALLYCURSOR6C_StartUnitSwap	{U}
 08030EFA	CallCursorShop	{U}
 0803117C	ShrinkPlayerUnits	{U}
@@ -2981,7 +2981,7 @@
 0802FD74	DidUnitDie	{J}
 0802FD88	BATTLE_ProbablyMakesTheDeadUnitDissapear	{J}
 0802FE20	BATTLE_DeleteLinkedMOVEUNIT	{J}
-08030C64	CanCharacterBePrepMoved	{J}
+08030C68	CanCharacterBePrepMoved	{J}
 08031114	SALLYCURSOR6C_StartUnitSwap	{J}
 080313E6	CallCursorShop	{J}
 08031664	ShrinkPlayerUnits	{J}
@@ -3983,3 +3983,7 @@
 0802DBDE	天気の画像のスプライト番号	change BBQ	{U}
 0802D76D	天気の画像のスプライト番号	change sandstorm	{U}
 0802DD5D	天気の画像のスプライト番号	change clouds	{U}
+0808e6a4	IsCharacterForceDeployed	{J}
+0808E794	CanCharacterBePrepSwap	{J}
+0808dd78	IsCharacterForceDeployed	{U}
+0808DE68	CanCharacterBePrepSwap	{U}

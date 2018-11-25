@@ -11430,6 +11430,7 @@
 08074B88	戦闘BGMを決定する	{J}
 08002570	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{J}
 08074DAC	BossBGMを取得	{J}
+080976FC	CanCharacterBePrepSwap	{J}
 080A1930	進撃準備またはOPタイトルのBGMに戻す	{U}
 0808E608	状況画面のキー入力処理	{U}
 080ADDD4	ClearChild6C	指定したProcs以下を消去する	{U}
@@ -11438,3 +11439,4 @@
 080726AC	戦闘BGMを決定する	{U}
 08002620	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{U}
 080728D0	BossBGMを取得	{U}
+0809541C	CanCharacterBePrepSwap	{U}
