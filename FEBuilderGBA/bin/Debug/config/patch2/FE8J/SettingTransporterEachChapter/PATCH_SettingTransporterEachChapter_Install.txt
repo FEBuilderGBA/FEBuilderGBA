@@ -1,0 +1,13 @@
+NAME=マップごとに輸送体が利用できるか設定する(導入)
+NAME.en=Set whether the transporter can be used for each map(Installer)
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x023F22=0x00 0x00 0x00 0x4B 0x18 0x47
+
+EA=SettingTransporterEachChapter_Install.event
+EDIT_PATCH=PATCH_SettingTransporterEachChapter.txt
+
+AUTHOR=7743
+NAME.zh=设置是否可以为每个地图使用运输车（简介）

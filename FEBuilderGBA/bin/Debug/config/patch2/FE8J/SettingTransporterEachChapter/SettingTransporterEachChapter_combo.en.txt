@@ -1,0 +1,5 @@
+0=No Use
+1=Send but can not retrieve
+2=Available
+3=Call everyone
+4=Available if flag 0x27 is enabled

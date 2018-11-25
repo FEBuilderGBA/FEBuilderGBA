@@ -1,0 +1,31 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $23F22        //FE8J
+BYTE 0x00 0x00
+jumpToHack(SupplyUsability)
+
+ORG $31590        //FE8J
+jumpToHack(HasConvoyAccess)
+
+POP
+
+ALIGN 4
+SupplyUsability:
+#incbin "SupplyUsability.dmp"
+POIN SettingTransporterEachChapter_Table
+
+ALIGN 4
+HasConvoyAccess:
+#incbin "HasConvoyAccess.dmp"
+POIN SettingTransporterEachChapter_Table
+
+//see SettingTransporterEachChapter_combo.txt
+#include "SettingTransporterEachChapter_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

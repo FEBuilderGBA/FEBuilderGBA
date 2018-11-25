@@ -1,0 +1,3 @@
+Table=$18
+ReturnTrue=$0E
+ReturnFalse=$08

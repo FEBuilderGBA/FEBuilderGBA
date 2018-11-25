@@ -1,0 +1,27 @@
+NAME=マップごとに輸送体が利用できるか設定する
+NAME.en=Set whether the transporter can be used for each map
+
+IF:0x023F66=0x00 0x00 0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END SupplyUsability.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 マップ最大数
+DATACOUNT=0x4F
+
+LISTNAME=MAP
+
+//データを定義します
+B0:$COMBO SettingTransporterEachChapter_combo.txt:.jp=輸送体
+B0:$COMBO SettingTransporterEachChapter_combo.en.txt:.en=Transporter
+B0:$COMBO SettingTransporterEachChapter_combo.zh.txt:.zh=运输车
+
+AUTHOR=7743
+NAME.zh=设置是否可以将传输器用于每个映射

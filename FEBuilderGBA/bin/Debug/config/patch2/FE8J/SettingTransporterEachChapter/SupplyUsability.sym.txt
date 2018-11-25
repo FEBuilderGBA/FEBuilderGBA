@@ -1,0 +1,5 @@
+ReturnFalse=$1E
+Table=$50
+ReturnTrue=$36
+ReturnAlways=$24
+CheckFlag27=$2A
