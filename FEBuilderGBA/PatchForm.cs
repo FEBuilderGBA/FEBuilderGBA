@@ -3833,7 +3833,12 @@ namespace FEBuilderGBA
                 if (sp2 == "$NONE")
                 {//ジャンプ命令ではなく
                     length = 4;
-                    if (addr <= Program.ROM.RomInfo.compress_image_borderline_address())
+                    string sp3 = U.at(sp, 3);
+                    if (sp3 == "+1")
+                    {//+1しているため間違いなくコードだ
+                        datatype = Address.DataTypeEnum.POINTER_ASM;
+                    }
+                    else if (addr <= Program.ROM.RomInfo.compress_image_borderline_address())
                     {
                         datatype = Address.DataTypeEnum.POINTER_ASM;
                     }
@@ -4915,7 +4920,7 @@ namespace FEBuilderGBA
                     }
                     else if (m.type == Address.DataTypeEnum.POINTER_ASM)
                     {
-                        FEBuilderGBA.Address.AddPointer(list
+                        FEBuilderGBA.Address.AddPointerASM(list
                             , m.addr
                             , 0
                             , "ASM" + patch.Name + "@" + m.filename + "@BIN"

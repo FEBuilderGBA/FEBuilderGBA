@@ -1015,11 +1015,16 @@ namespace FEBuilderGBA
             if (PointerMark.ContainsKey(srcp))
             {
                 if (srcoffset == startaddr
-                    && IsEnableSelfPointer(asmcdelect)
+                 && IsEnableSelfPointer(asmcdelect)
                     )
                 {//自己参照
                     sb.Append('+');
                     sb.Append(U.ToHexString(srcoffset - startaddr));
+                }
+                else if (asmcdelect == ASMC_Delect.ASM && U.IsValueOdd(srcp))
+                {//ASMポインタ
+                    sb.Append('&');
+                    sb.Append(U.ToHexString(srcp - 1));
                 }
                 else
                 {//ポインタ
@@ -1615,6 +1620,10 @@ namespace FEBuilderGBA
                 if (!PointerMark.ContainsKey(addrP)
                     && !PointerMark.ContainsKey(addrP - 1))
                 {//まだ知らないデータ
+                    if (DisassemblerTrumb.IsCallBX( Program.ROM.u16(addr) ))
+                    {//bx r3 などの bx callなので無視してよい.
+                        continue;
+                    }
                     if (IsFalseBL(ldrmap, addr))
                     {//LDRDATAを誤爆しているので無視.
                         continue;
@@ -1655,6 +1664,7 @@ namespace FEBuilderGBA
                 }
             }
         }
+
 
         //BLが割り込む先を知っているならば、そのアドレスを返す.
         Address GetBLFunctionAddress(uint addr)
@@ -1931,12 +1941,8 @@ namespace FEBuilderGBA
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ASM)
             {//ポインタ
-                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.AUTO);
+                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");
-//                if (isRebuildAddress(Program.ROM.p32(address.Addr)) && r == false)
-//                {
-//                    Debug.Assert(false);
-//                }
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ARRAY)
             {//ポインタ

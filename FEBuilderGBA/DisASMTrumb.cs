@@ -2115,5 +2115,25 @@ namespace FEBuilderGBA
 
             return (correctLDR >= 1) ;
         }
+        public static bool IsCallBX(uint a)
+        {
+            if ((a & 0xF800) != (0x8 << 11))
+            {
+                return false;
+            }
+            //Format4 or Format5
+            if ((a & (0x1 << 10)) <= 0)
+            {//Format4なので対象外
+                return false;
+            }
+
+            uint b = (((a >> 8) & 0x3));
+            if (b == 0x3)
+            {//bx r3 などの bx call
+                return true;
+            }
+            //それ以外のコード
+            return false;
+        }
     }
 }

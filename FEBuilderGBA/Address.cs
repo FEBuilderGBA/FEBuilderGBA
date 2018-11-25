@@ -129,6 +129,24 @@ namespace FEBuilderGBA
             }
             list.Add( new Address(addr, length, pointer, info,type));
         }
+        static public void AddPointerASM(List<Address> list, uint pointer, uint length, string info, DataTypeEnum type)
+        {
+            pointer = U.toOffset(pointer);
+            if (!U.isSafetyOffset(pointer))
+            {
+                return;
+            }
+            uint addr = Program.ROM.u32(pointer);
+            if (!U.isSafetyPointer(addr))
+            {
+                return;
+            }
+            if (U.IsValueOdd(addr))
+            {//ASMポインタのようなので、-1する.
+                addr = addr - 1;
+            }
+            list.Add(new Address(addr, length, pointer, info, type));
+        }
         static public void AddCommentData(List<Address> list, uint addr, string info)
         {
             addr = U.toOffset(addr);
