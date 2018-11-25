@@ -19,7 +19,7 @@ DATACOUNT=0x4F
 LISTNAME=MAP
 
 //データを定義します
-B0:$COMBO SettingTransporterEachChapter_combo.txt:.jp=輸送体
+B0:$COMBO SettingTransporterEachChapter_combo.txt:.ja=輸送体
 B0:$COMBO SettingTransporterEachChapter_combo.en.txt:.en=Transporter
 B0:$COMBO SettingTransporterEachChapter_combo.zh.txt:.zh=运输车
 
