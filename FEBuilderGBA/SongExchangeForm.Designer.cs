@@ -31,9 +31,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.OpenOtherROMButton = new System.Windows.Forms.Button();
-            this.OtherROMSongTable = new ListBoxEx();
+            this.OtherROMSongTable = new FEBuilderGBA.ListBoxEx();
             this.label3 = new System.Windows.Forms.Label();
-            this.SongTable = new ListBoxEx();
+            this.SongTable = new FEBuilderGBA.ListBoxEx();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,14 +45,15 @@
             this.panel2.Controls.Add(this.OtherROMSongTable);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.SongTable);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 548);
+            this.panel2.Size = new System.Drawing.Size(1306, 563);
             this.panel2.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(586, 434);
+            this.button1.Location = new System.Drawing.Point(607, 434);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 101);
             this.button1.TabIndex = 39;
@@ -62,7 +63,7 @@
             // 
             // OpenOtherROMButton
             // 
-            this.OpenOtherROMButton.Location = new System.Drawing.Point(712, 12);
+            this.OpenOtherROMButton.Location = new System.Drawing.Point(733, 12);
             this.OpenOtherROMButton.Name = "OpenOtherROMButton";
             this.OpenOtherROMButton.Size = new System.Drawing.Size(565, 60);
             this.OpenOtherROMButton.TabIndex = 38;
@@ -74,19 +75,20 @@
             // 
             this.OtherROMSongTable.FormattingEnabled = true;
             this.OtherROMSongTable.HorizontalScrollbar = true;
+            this.OtherROMSongTable.IntegralHeight = false;
             this.OtherROMSongTable.ItemHeight = 18;
-            this.OtherROMSongTable.Location = new System.Drawing.Point(712, 78);
+            this.OtherROMSongTable.Location = new System.Drawing.Point(733, 78);
             this.OtherROMSongTable.Name = "OtherROMSongTable";
-            this.OtherROMSongTable.Size = new System.Drawing.Size(565, 454);
+            this.OtherROMSongTable.Size = new System.Drawing.Size(565, 476);
             this.OtherROMSongTable.TabIndex = 36;
             this.OtherROMSongTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMSongTable_MouseDoubleClick);
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(10, 13);
+            this.label3.Location = new System.Drawing.Point(11, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(570, 30);
+            this.label3.Size = new System.Drawing.Size(590, 30);
             this.label3.TabIndex = 35;
             this.label3.Text = "サウンドテーブル";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,10 +97,11 @@
             // 
             this.SongTable.FormattingEnabled = true;
             this.SongTable.HorizontalScrollbar = true;
+            this.SongTable.IntegralHeight = false;
             this.SongTable.ItemHeight = 18;
-            this.SongTable.Location = new System.Drawing.Point(10, 46);
+            this.SongTable.Location = new System.Drawing.Point(11, 44);
             this.SongTable.Name = "SongTable";
-            this.SongTable.Size = new System.Drawing.Size(570, 490);
+            this.SongTable.Size = new System.Drawing.Size(590, 512);
             this.SongTable.TabIndex = 0;
             this.SongTable.DoubleClick += new System.EventHandler(this.SongTable_DoubleClick);
             // 

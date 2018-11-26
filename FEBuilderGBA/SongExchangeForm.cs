@@ -163,11 +163,12 @@ namespace FEBuilderGBA
             list.Items.Clear();
             for (int i = 0; i < songTable.Count; i++)
             {
-                string a = "No: " + U.To0xHexString(songTable[i].number) + " Table: " + U.To0xHexString(songTable[i].table) + " Header: " + U.To0xHexString(songTable[i].header) + " Voices: " + U.To0xHexString(songTable[i].voices) + " Tracks: " + U.To0xHexString(songTable[i].tracks);
+                string a = U.ToHexString(songTable[i].number);
                 if (isSourceROM)
                 {
-                    a = SongTableForm.GetSongNameFast(songTable[i].number, songTable[i].table) + a; 
+                    a += U.SA(SongTableForm.GetSongNameFast(songTable[i].number, songTable[i].table)); 
                 }
+                a = a + " Table: " + U.To0xHexString(songTable[i].table) + " Header: " + U.To0xHexString(songTable[i].header) + " Voices: " + U.To0xHexString(songTable[i].voices) + " Tracks: " + U.To0xHexString(songTable[i].tracks);
                 list.Items.Add(a);
             }
             list.EndUpdate();

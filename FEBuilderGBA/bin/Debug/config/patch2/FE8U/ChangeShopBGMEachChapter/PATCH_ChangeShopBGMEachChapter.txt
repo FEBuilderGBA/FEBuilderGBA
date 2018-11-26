@@ -21,7 +21,7 @@ LISTNAME=$B3:MAP
 
 //データを定義します
 W0:SONG=BGM
-B2:$COMBO ShopType.txt=Type
+B2:$COMBO ShopType.txt:.ja=Type
 B3:MAP_ANYFF=MAPID(0xFF=ANY,0xFE=Worldmap)
 
 W0:SONG.en=BGM

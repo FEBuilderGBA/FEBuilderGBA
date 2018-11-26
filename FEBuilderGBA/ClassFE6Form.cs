@@ -162,15 +162,14 @@ namespace FEBuilderGBA
             sim.Grow((int)X_SIM.Value, false);
 
             X_SIM.Value = sim.sim_lv;
-            X_SIM_HP.Value = sim.sim_hp;
-            X_SIM_STR.Value = sim.sim_str;
-            X_SIM_SKILL.Value = sim.sim_skill;
-            X_SIM_SPD.Value = sim.sim_spd;
-            X_SIM_DEF.Value = sim.sim_def;
-            X_SIM_RES.Value = sim.sim_res;
-            X_SIM_LUCK.Value = sim.sim_luck;
-
-            X_SIM_SUM_RATE.Value = sim.sim_sum_grow_rate;
+            U.SelectedIndexSafety(X_SIM_HP, sim.sim_hp);
+            U.SelectedIndexSafety(X_SIM_STR, sim.sim_str);
+            U.SelectedIndexSafety(X_SIM_SKILL, sim.sim_skill);
+            U.SelectedIndexSafety(X_SIM_SPD, sim.sim_spd);
+            U.SelectedIndexSafety(X_SIM_DEF, sim.sim_def);
+            U.SelectedIndexSafety(X_SIM_RES, sim.sim_res);
+            U.SelectedIndexSafety(X_SIM_LUCK, sim.sim_luck);
+            U.SelectedIndexSafety(X_SIM_SUM_RATE, sim.sim_sum_grow_rate);
         }
 
         public static uint GetMoveCostAddrLow(uint addr, uint costtype)

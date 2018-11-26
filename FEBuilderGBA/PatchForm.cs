@@ -6091,6 +6091,8 @@ namespace FEBuilderGBA
             , byte[] orignalROM
             , Undo.UndoData undodata)
         {
+            uint current_rom_length = (uint)Program.ROM.Data.Length;
+
             for (int n = 0; n < binmap.Count; n++)
             {
                 BinMapping map = binmap[n];
@@ -6105,11 +6107,17 @@ namespace FEBuilderGBA
                 for (int i = 0; i < map.length; i++)
                 {
                     uint addr = map.addr + (uint)i;
+                    Program.CommentCache.Remove(addr);
+                    if (addr >= current_rom_length)
+                    {
+                        Log.Error("OutOfRange: {0}/{1}", U.ToHexString8(addr), U.ToHexString8(current_rom_length));
+                        Debug.Assert(false);
+                        continue;
+                    }
+
                     uint o = U.at(orignalROM, addr); //パッチを含んでいないROMの内容
                     uint x = U.at(map.bin, i);       //パッチで変更される内容
                     uint c = Program.ROM.u8(addr);   //現在のROMの内容
-
-                    Program.CommentCache.Remove(addr);
 
                     if (c == x)
                     {//現在のROMの内容が、パッチの内容と同一の場合、含んでいないROMの内容で上書きして消去する
