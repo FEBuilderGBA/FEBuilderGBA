@@ -15,3 +15,5 @@ template_event_COND_GOLD_MORE_5000.txt	If you own 5000 gold or more
 template_event_COND_UNITALIVE_AND_STIL.txt	If the unit alive and not join
 template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	Two critical attacks at the battle event and destroy enemy
+template_event_WarpIN_FE8.txt	Make a unit appear in warp.
+template_event_Gaiden.txt	Make a Big Branch.If you clear within 3 turns, it will be a Gaidai.

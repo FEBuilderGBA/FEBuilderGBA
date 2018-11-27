@@ -15,3 +15,5 @@ template_event_COND_GOLD_MORE_5000.txt	もし、5000ゴールド以上を所持�
 template_event_COND_UNITALIVE_AND_STIL.txt	もし、敵ユニットを仲間にしておらず生存していたら
 template_event_TALK_COND_CHANGE_MUSIC.txt	会話中に、イベントを並列して実行して、音楽を変える
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	戦闘イベントで2回連続攻撃して必殺で相手を撃破する
+template_event_WarpIN_FE8.txt	ユニットをワープで登場させる
+template_event_Gaiden.txt	外伝分岐を作る。もし、3ターン以内にクリアすれば外伝に。

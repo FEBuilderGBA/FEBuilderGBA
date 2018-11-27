@@ -31,8 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.OpenOtherROMButton = new System.Windows.Forms.Button();
-            this.OtherROMSongTable = new FEBuilderGBA.ListBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.OtherROMSongTable = new FEBuilderGBA.ListBoxEx();
             this.SongTable = new FEBuilderGBA.ListBoxEx();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1306, 563);
+            this.panel2.Size = new System.Drawing.Size(1306, 768);
             this.panel2.TabIndex = 1;
             // 
             // button1
@@ -71,6 +71,16 @@
             this.OpenOtherROMButton.UseVisualStyleBackColor = true;
             this.OpenOtherROMButton.Click += new System.EventHandler(this.OpenOtherROMButton_Click);
             // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(11, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(590, 30);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "サウンドテーブル";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // OtherROMSongTable
             // 
             this.OtherROMSongTable.FormattingEnabled = true;
@@ -82,16 +92,6 @@
             this.OtherROMSongTable.Size = new System.Drawing.Size(565, 476);
             this.OtherROMSongTable.TabIndex = 36;
             this.OtherROMSongTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.OtherROMSongTable_MouseDoubleClick);
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(11, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(590, 30);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "サウンドテーブル";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SongTable
             // 

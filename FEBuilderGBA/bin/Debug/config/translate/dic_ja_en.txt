@@ -1080,6 +1080,7 @@ Ide	イム
 戦術師	Tactician
 軍師	Tactician
 神軍師	Grandmaster
+上級軍師	Grandmaster
 トリックスター	Trickster
 ダークペガサス	Dark Flier
 グリフォンナイト	Griffon Rider
@@ -1685,14 +1686,14 @@ HPの薬	HP Tonic
 ケンプフ	Kempf
 シルバーナイト	Silver Knight
 国王	King
-ロート	rot
-グリューン	grun
-リラ	lila
-ゲルプ	gelb
-オランジュ	orange
-ヘルブラウ	hellblau
-ブラウ	blau
-シュヴァルツ	schwarz
+ロート	Rot
+グリューン	Grun
+リラ	Lila
+ゲルプ	Gelb
+オランジュ	Orange
+ヘルブラウ	Hellblau
+ブラウ	Blau
+シュヴァルツ	Schwarz
 アインス	Eins
 ツヴァイ	Zwei
 ドライ	Drei
@@ -3406,3 +3407,56 @@ HPの薬	HP Tonic
 マスターアクス	Master Axe
 マスターボウ	Master Bow
 ウィンド	Wind
+ハルミライン	Harumi Line
+王宮魔道士	Royal Mage
+親衛隊	BodyGuard
+ジャハナ軍	Jehannan
+幻影の騎士	Phantom Kn.
+黒鋼騎士団	BlackSteelKn.
+傭兵隊	Mercenary Co.
+アレス隊	Ares Co.
+皇騎兵	Emperor's kn.
+隊長	Captain
+山賊団	Bandits
+ベルクローゼン	Bergrosen
+ブルック	Brook
+ユグドラ・ユニオン	Yggdra Union
+テイルズ	Tales
+ソーサラー	Sorceror
+ミスリルブレード	Mythril Blade
+アダマントランス	Adamant Lnc
+ピアシングソード	Piercing Swd
+グラム	Nothung
+アーマーキラー	Armor Cutter
+ドラゴンキラー	Dragonslayer
+プリズムソード	Prism Sword
+インフェルノ	Inferno
+ラディアンス	Radiance
+レイ	Ray
+ソルスティス	Solstice
+トーチ	Illuminate
+天使の羽	Speedwings
+エーテルスフィア	Ether Sphere
+アミュレット	Amulet
+カプリーチオ	Cappricio
+ヒーローズフレア	Hero's Flare
+チャージ	Charge
+スーパーライフル	Super Rifle
+ブラディライフル	Bloody Rifle
+ライフルボウ	Rifle Bow
+レクイエム	Requiem
+インペリウス	Imperius
+ヒーロースレイヤー	Heroslayer
+チェーンソー	Chainsaw
+ソニックショット	Sonic Shot
+天使の翼	Angelic Wing
+マグナムソード	Magnum Swd
+マグナムランス	Magnum Lnc
+マグナムアクス	Magnum Axe
+マグナムボウ	Magnum Bow
+マグナムレイ	Magnum Ray
+マグナムシード	Magnum Shd
+マグナムブレス	Magnum Bliss
+剣士	Swordsman
+アーチナイト	Arch Knight
+ミスティックセージ	Mystic Sage

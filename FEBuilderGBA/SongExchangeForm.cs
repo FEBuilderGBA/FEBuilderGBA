@@ -18,6 +18,9 @@ namespace FEBuilderGBA
 
             this.MySongList = SongTableToSongList(Program.ROM.Data);
             SongListToListBox(this.MySongList, this.SongTable, true);
+
+            this.SongTable.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            this.OtherROMSongTable.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
         }
         public class SongSt
         {

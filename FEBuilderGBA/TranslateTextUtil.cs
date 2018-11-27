@@ -458,8 +458,14 @@ namespace FEBuilderGBA
             {
                 return "";
             }
+
             //定型文で変換できるか？
             string r = TranslateTextDic(fromkey,text, transDic);
+            if (r == "")
+            {
+                //trimしたものでもマッチできないか?
+                r = TranslateTextDic(fromkey, text.Trim(), transDic);
+            }
             if (r != "")
             {//定型文で変換できるらしい.
                 if (modifiedTextOnly)
