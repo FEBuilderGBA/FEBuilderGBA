@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1234 = new System.Windows.Forms.Panel();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.D108 = new System.Windows.Forms.NumericUpDown();
             this.D104 = new System.Windows.Forms.NumericUpDown();
             this.D100 = new System.Windows.Forms.NumericUpDown();
@@ -37,7 +40,6 @@
             this.label70 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
             this.W94 = new System.Windows.Forms.NumericUpDown();
             this.J_94 = new System.Windows.Forms.Label();
             this.B61 = new System.Windows.Forms.NumericUpDown();
@@ -106,8 +108,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.B45 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
@@ -159,7 +159,6 @@
             this.label151 = new System.Windows.Forms.Label();
             this.B143 = new System.Windows.Forms.NumericUpDown();
             this.label121 = new System.Windows.Forms.Label();
-            this.L_143_MAPXY_144 = new System.Windows.Forms.Label();
             this.B142 = new System.Windows.Forms.NumericUpDown();
             this.J_142_UNIT = new System.Windows.Forms.Label();
             this.B141 = new System.Windows.Forms.NumericUpDown();
@@ -261,6 +260,7 @@
             this.L_0_CSTRING = new FEBuilderGBA.TextBoxEx();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TEXT = new System.Windows.Forms.Label();
+            this.L_143_MAPXY_144 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
@@ -625,13 +625,49 @@
             this.panel1234.Size = new System.Drawing.Size(1487, 969);
             this.panel1234.TabIndex = 0;
             // 
+            // label68
+            // 
+            this.label68.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label68.Location = new System.Drawing.Point(578, 457);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(330, 32);
+            this.label68.TabIndex = 408;
+            this.label68.Text = "資産評価";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Location = new System.Drawing.Point(1234, 402);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(239, 30);
+            this.label20.TabIndex = 374;
+            this.label20.Text = "経験評価";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(1011, 402);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(226, 30);
+            this.label18.TabIndex = 373;
+            this.label18.Text = "攻略評価";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // D108
             // 
             this.D108.Location = new System.Drawing.Point(741, 585);
             this.D108.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D108.Name = "D108";
             this.D108.Size = new System.Drawing.Size(167, 25);
-            this.D108.TabIndex = 412;
+            this.D108.TabIndex = 54;
             // 
             // D104
             // 
@@ -639,7 +675,7 @@
             this.D104.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D104.Name = "D104";
             this.D104.Size = new System.Drawing.Size(167, 25);
-            this.D104.TabIndex = 411;
+            this.D104.TabIndex = 53;
             // 
             // D100
             // 
@@ -647,7 +683,7 @@
             this.D100.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D100.Name = "D100";
             this.D100.Size = new System.Drawing.Size(167, 25);
-            this.D100.TabIndex = 410;
+            this.D100.TabIndex = 52;
             // 
             // D96
             // 
@@ -655,7 +691,7 @@
             this.D96.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D96.Name = "D96";
             this.D96.Size = new System.Drawing.Size(167, 25);
-            this.D96.TabIndex = 409;
+            this.D96.TabIndex = 51;
             // 
             // label69
             // 
@@ -701,25 +737,13 @@
             this.label72.Text = "エリウッドノーマル";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label68
-            // 
-            this.label68.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
-            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label68.Location = new System.Drawing.Point(578, 457);
-            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(330, 32);
-            this.label68.TabIndex = 408;
-            this.label68.Text = "資産評価";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // W94
             // 
             this.W94.Location = new System.Drawing.Point(1401, 933);
             this.W94.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W94.Name = "W94";
             this.W94.Size = new System.Drawing.Size(75, 25);
-            this.W94.TabIndex = 372;
+            this.W94.TabIndex = 106;
             // 
             // J_94
             // 
@@ -738,7 +762,7 @@
             this.B61.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B61.Name = "B61";
             this.B61.Size = new System.Drawing.Size(58, 25);
-            this.B61.TabIndex = 355;
+            this.B61.TabIndex = 89;
             // 
             // J_61
             // 
@@ -757,7 +781,7 @@
             this.W92.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W92.Name = "W92";
             this.W92.Size = new System.Drawing.Size(75, 25);
-            this.W92.TabIndex = 371;
+            this.W92.TabIndex = 105;
             // 
             // W90
             // 
@@ -765,7 +789,7 @@
             this.W90.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W90.Name = "W90";
             this.W90.Size = new System.Drawing.Size(75, 25);
-            this.W90.TabIndex = 370;
+            this.W90.TabIndex = 104;
             // 
             // W88
             // 
@@ -773,7 +797,7 @@
             this.W88.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W88.Name = "W88";
             this.W88.Size = new System.Drawing.Size(75, 25);
-            this.W88.TabIndex = 369;
+            this.W88.TabIndex = 103;
             // 
             // W86
             // 
@@ -781,7 +805,7 @@
             this.W86.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W86.Name = "W86";
             this.W86.Size = new System.Drawing.Size(75, 25);
-            this.W86.TabIndex = 368;
+            this.W86.TabIndex = 102;
             // 
             // W84
             // 
@@ -789,7 +813,7 @@
             this.W84.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W84.Name = "W84";
             this.W84.Size = new System.Drawing.Size(75, 25);
-            this.W84.TabIndex = 367;
+            this.W84.TabIndex = 101;
             // 
             // W82
             // 
@@ -797,7 +821,7 @@
             this.W82.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W82.Name = "W82";
             this.W82.Size = new System.Drawing.Size(75, 25);
-            this.W82.TabIndex = 366;
+            this.W82.TabIndex = 100;
             // 
             // W80
             // 
@@ -805,7 +829,7 @@
             this.W80.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W80.Name = "W80";
             this.W80.Size = new System.Drawing.Size(75, 25);
-            this.W80.TabIndex = 365;
+            this.W80.TabIndex = 99;
             // 
             // W78
             // 
@@ -813,7 +837,7 @@
             this.W78.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W78.Name = "W78";
             this.W78.Size = new System.Drawing.Size(75, 25);
-            this.W78.TabIndex = 364;
+            this.W78.TabIndex = 98;
             // 
             // label46
             // 
@@ -843,7 +867,7 @@
             this.B60.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B60.Name = "B60";
             this.B60.Size = new System.Drawing.Size(58, 25);
-            this.B60.TabIndex = 354;
+            this.B60.TabIndex = 88;
             // 
             // label48
             // 
@@ -862,7 +886,7 @@
             this.B59.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B59.Name = "B59";
             this.B59.Size = new System.Drawing.Size(58, 25);
-            this.B59.TabIndex = 353;
+            this.B59.TabIndex = 87;
             // 
             // label51
             // 
@@ -903,7 +927,7 @@
             this.B58.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B58.Name = "B58";
             this.B58.Size = new System.Drawing.Size(58, 25);
-            this.B58.TabIndex = 352;
+            this.B58.TabIndex = 86;
             // 
             // label56
             // 
@@ -922,7 +946,7 @@
             this.B57.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B57.Name = "B57";
             this.B57.Size = new System.Drawing.Size(58, 25);
-            this.B57.TabIndex = 351;
+            this.B57.TabIndex = 85;
             // 
             // label57
             // 
@@ -963,7 +987,7 @@
             this.B56.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B56.Name = "B56";
             this.B56.Size = new System.Drawing.Size(58, 25);
-            this.B56.TabIndex = 350;
+            this.B56.TabIndex = 84;
             // 
             // label60
             // 
@@ -982,7 +1006,7 @@
             this.B55.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B55.Name = "B55";
             this.B55.Size = new System.Drawing.Size(58, 25);
-            this.B55.TabIndex = 349;
+            this.B55.TabIndex = 83;
             // 
             // label61
             // 
@@ -1023,7 +1047,7 @@
             this.B54.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B54.Name = "B54";
             this.B54.Size = new System.Drawing.Size(58, 25);
-            this.B54.TabIndex = 348;
+            this.B54.TabIndex = 82;
             // 
             // label64
             // 
@@ -1042,7 +1066,7 @@
             this.B53.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B53.Name = "B53";
             this.B53.Size = new System.Drawing.Size(58, 25);
-            this.B53.TabIndex = 347;
+            this.B53.TabIndex = 81;
             // 
             // label65
             // 
@@ -1061,7 +1085,7 @@
             this.W76.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W76.Name = "W76";
             this.W76.Size = new System.Drawing.Size(75, 25);
-            this.W76.TabIndex = 363;
+            this.W76.TabIndex = 97;
             // 
             // label32
             // 
@@ -1080,7 +1104,7 @@
             this.W74.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W74.Name = "W74";
             this.W74.Size = new System.Drawing.Size(75, 25);
-            this.W74.TabIndex = 362;
+            this.W74.TabIndex = 96;
             // 
             // label33
             // 
@@ -1099,7 +1123,7 @@
             this.B52.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B52.Name = "B52";
             this.B52.Size = new System.Drawing.Size(58, 25);
-            this.B52.TabIndex = 346;
+            this.B52.TabIndex = 80;
             // 
             // label36
             // 
@@ -1118,7 +1142,7 @@
             this.B51.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B51.Name = "B51";
             this.B51.Size = new System.Drawing.Size(58, 25);
-            this.B51.TabIndex = 345;
+            this.B51.TabIndex = 79;
             // 
             // label37
             // 
@@ -1137,7 +1161,7 @@
             this.W72.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W72.Name = "W72";
             this.W72.Size = new System.Drawing.Size(75, 25);
-            this.W72.TabIndex = 361;
+            this.W72.TabIndex = 95;
             // 
             // label38
             // 
@@ -1156,7 +1180,7 @@
             this.W70.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W70.Name = "W70";
             this.W70.Size = new System.Drawing.Size(75, 25);
-            this.W70.TabIndex = 360;
+            this.W70.TabIndex = 94;
             // 
             // label39
             // 
@@ -1175,7 +1199,7 @@
             this.B50.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B50.Name = "B50";
             this.B50.Size = new System.Drawing.Size(58, 25);
-            this.B50.TabIndex = 344;
+            this.B50.TabIndex = 78;
             // 
             // label43
             // 
@@ -1194,7 +1218,7 @@
             this.B49.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B49.Name = "B49";
             this.B49.Size = new System.Drawing.Size(58, 25);
-            this.B49.TabIndex = 343;
+            this.B49.TabIndex = 77;
             // 
             // label45
             // 
@@ -1213,7 +1237,7 @@
             this.W68.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W68.Name = "W68";
             this.W68.Size = new System.Drawing.Size(75, 25);
-            this.W68.TabIndex = 359;
+            this.W68.TabIndex = 93;
             // 
             // label27
             // 
@@ -1232,7 +1256,7 @@
             this.W66.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W66.Name = "W66";
             this.W66.Size = new System.Drawing.Size(75, 25);
-            this.W66.TabIndex = 358;
+            this.W66.TabIndex = 92;
             // 
             // label28
             // 
@@ -1251,7 +1275,7 @@
             this.B48.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B48.Name = "B48";
             this.B48.Size = new System.Drawing.Size(58, 25);
-            this.B48.TabIndex = 341;
+            this.B48.TabIndex = 76;
             // 
             // label29
             // 
@@ -1270,7 +1294,7 @@
             this.B47.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B47.Name = "B47";
             this.B47.Size = new System.Drawing.Size(58, 25);
-            this.B47.TabIndex = 340;
+            this.B47.TabIndex = 75;
             // 
             // label31
             // 
@@ -1289,7 +1313,7 @@
             this.W64.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W64.Name = "W64";
             this.W64.Size = new System.Drawing.Size(75, 25);
-            this.W64.TabIndex = 357;
+            this.W64.TabIndex = 91;
             // 
             // label25
             // 
@@ -1308,7 +1332,7 @@
             this.W62.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W62.Name = "W62";
             this.W62.Size = new System.Drawing.Size(75, 25);
-            this.W62.TabIndex = 356;
+            this.W62.TabIndex = 90;
             // 
             // label26
             // 
@@ -1327,7 +1351,7 @@
             this.B46.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B46.Name = "B46";
             this.B46.Size = new System.Drawing.Size(58, 25);
-            this.B46.TabIndex = 339;
+            this.B46.TabIndex = 74;
             // 
             // label24
             // 
@@ -1346,7 +1370,7 @@
             this.B45.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B45.Name = "B45";
             this.B45.Size = new System.Drawing.Size(58, 25);
-            this.B45.TabIndex = 338;
+            this.B45.TabIndex = 73;
             // 
             // label21
             // 
@@ -1358,30 +1382,6 @@
             this.label21.TabIndex = 375;
             this.label21.Text = "Aエリウッドノーマル";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(1234, 402);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(239, 30);
-            this.label20.TabIndex = 374;
-            this.label20.Text = "経験評価";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(1011, 402);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(226, 30);
-            this.label18.TabIndex = 373;
-            this.label18.Text = "攻略評価";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B14
             // 
@@ -1395,7 +1395,7 @@
             0});
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(65, 25);
-            this.B14.TabIndex = 10;
+            this.B14.TabIndex = 11;
             // 
             // L_20_DIFFCULTY
             // 
@@ -1422,7 +1422,7 @@
             this.X_MAPSTYLE_CHANGE.Location = new System.Drawing.Point(6, 218);
             this.X_MAPSTYLE_CHANGE.Name = "X_MAPSTYLE_CHANGE";
             this.X_MAPSTYLE_CHANGE.Size = new System.Drawing.Size(279, 18);
-            this.X_MAPSTYLE_CHANGE.TabIndex = 335;
+            this.X_MAPSTYLE_CHANGE.TabIndex = 7;
             this.X_MAPSTYLE_CHANGE.Text = "マップスタイルの変更";
             this.X_MAPSTYLE_CHANGE.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.X_MAPSTYLE_CHANGE.Click += new System.EventHandler(this.X_MAPSTYLE_CHANGE_Click);
@@ -1459,7 +1459,7 @@
             0});
             this.B133.Name = "B133";
             this.B133.Size = new System.Drawing.Size(64, 25);
-            this.B133.TabIndex = 332;
+            this.B133.TabIndex = 69;
             // 
             // B132
             // 
@@ -1473,7 +1473,7 @@
             0});
             this.B132.Name = "B132";
             this.B132.Size = new System.Drawing.Size(64, 25);
-            this.B132.TabIndex = 331;
+            this.B132.TabIndex = 68;
             // 
             // J_146
             // 
@@ -1567,7 +1567,7 @@
             0});
             this.B147.Name = "B147";
             this.B147.Size = new System.Drawing.Size(64, 25);
-            this.B147.TabIndex = 133;
+            this.B147.TabIndex = 72;
             // 
             // B145
             // 
@@ -1581,7 +1581,7 @@
             0});
             this.B145.Name = "B145";
             this.B145.Size = new System.Drawing.Size(64, 25);
-            this.B145.TabIndex = 131;
+            this.B145.TabIndex = 70;
             // 
             // B146
             // 
@@ -1595,7 +1595,7 @@
             0});
             this.B146.Name = "B146";
             this.B146.Size = new System.Drawing.Size(64, 25);
-            this.B146.TabIndex = 132;
+            this.B146.TabIndex = 71;
             // 
             // B127
             // 
@@ -1609,7 +1609,7 @@
             0});
             this.B127.Name = "B127";
             this.B127.Size = new System.Drawing.Size(64, 25);
-            this.B127.TabIndex = 127;
+            this.B127.TabIndex = 64;
             // 
             // B126
             // 
@@ -1623,7 +1623,7 @@
             0});
             this.B126.Name = "B126";
             this.B126.Size = new System.Drawing.Size(64, 25);
-            this.B126.TabIndex = 126;
+            this.B126.TabIndex = 63;
             // 
             // B125
             // 
@@ -1637,7 +1637,7 @@
             0});
             this.B125.Name = "B125";
             this.B125.Size = new System.Drawing.Size(64, 25);
-            this.B125.TabIndex = 125;
+            this.B125.TabIndex = 62;
             // 
             // B131
             // 
@@ -1651,7 +1651,7 @@
             0});
             this.B131.Name = "B131";
             this.B131.Size = new System.Drawing.Size(64, 25);
-            this.B131.TabIndex = 130;
+            this.B131.TabIndex = 67;
             // 
             // B124
             // 
@@ -1665,7 +1665,7 @@
             0});
             this.B124.Name = "B124";
             this.B124.Size = new System.Drawing.Size(64, 25);
-            this.B124.TabIndex = 124;
+            this.B124.TabIndex = 61;
             // 
             // B123
             // 
@@ -1679,7 +1679,7 @@
             0});
             this.B123.Name = "B123";
             this.B123.Size = new System.Drawing.Size(64, 25);
-            this.B123.TabIndex = 123;
+            this.B123.TabIndex = 60;
             // 
             // B119
             // 
@@ -1693,7 +1693,7 @@
             0});
             this.B119.Name = "B119";
             this.B119.Size = new System.Drawing.Size(64, 25);
-            this.B119.TabIndex = 119;
+            this.B119.TabIndex = 56;
             // 
             // B122
             // 
@@ -1707,7 +1707,7 @@
             0});
             this.B122.Name = "B122";
             this.B122.Size = new System.Drawing.Size(64, 25);
-            this.B122.TabIndex = 122;
+            this.B122.TabIndex = 59;
             // 
             // B129
             // 
@@ -1721,7 +1721,7 @@
             0});
             this.B129.Name = "B129";
             this.B129.Size = new System.Drawing.Size(64, 25);
-            this.B129.TabIndex = 128;
+            this.B129.TabIndex = 65;
             // 
             // B121
             // 
@@ -1735,7 +1735,7 @@
             0});
             this.B121.Name = "B121";
             this.B121.Size = new System.Drawing.Size(64, 25);
-            this.B121.TabIndex = 121;
+            this.B121.TabIndex = 58;
             // 
             // B120
             // 
@@ -1749,7 +1749,7 @@
             0});
             this.B120.Name = "B120";
             this.B120.Size = new System.Drawing.Size(64, 25);
-            this.B120.TabIndex = 120;
+            this.B120.TabIndex = 57;
             // 
             // B130
             // 
@@ -1763,7 +1763,7 @@
             0});
             this.B130.Name = "B130";
             this.B130.Size = new System.Drawing.Size(64, 25);
-            this.B130.TabIndex = 129;
+            this.B130.TabIndex = 66;
             // 
             // B118
             // 
@@ -1777,7 +1777,7 @@
             0});
             this.B118.Name = "B118";
             this.B118.Size = new System.Drawing.Size(64, 25);
-            this.B118.TabIndex = 118;
+            this.B118.TabIndex = 55;
             // 
             // J_132
             // 
@@ -1899,7 +1899,7 @@
             this.L_19_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_19_COMBO.Name = "L_19_COMBO";
             this.L_19_COMBO.Size = new System.Drawing.Size(271, 26);
-            this.L_19_COMBO.TabIndex = 17;
+            this.L_19_COMBO.TabIndex = 18;
             // 
             // L_135_COMBO
             // 
@@ -1912,7 +1912,7 @@
             this.L_135_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_135_COMBO.Name = "L_135_COMBO";
             this.L_135_COMBO.Size = new System.Drawing.Size(246, 26);
-            this.L_135_COMBO.TabIndex = 39;
+            this.L_135_COMBO.TabIndex = 42;
             // 
             // L_140_COMBO
             // 
@@ -1928,7 +1928,7 @@
             this.L_140_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_140_COMBO.Name = "L_140_COMBO";
             this.L_140_COMBO.Size = new System.Drawing.Size(231, 26);
-            this.L_140_COMBO.TabIndex = 44;
+            this.L_140_COMBO.TabIndex = 46;
             // 
             // J_ID_MAPEXITPOINT
             // 
@@ -1954,7 +1954,7 @@
             this.B44.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B44.Name = "B44";
             this.B44.Size = new System.Drawing.Size(70, 25);
-            this.B44.TabIndex = 30;
+            this.B44.TabIndex = 32;
             // 
             // L_142_UNIT
             // 
@@ -1979,7 +1979,7 @@
             0});
             this.B128.Name = "B128";
             this.B128.Size = new System.Drawing.Size(64, 25);
-            this.B128.TabIndex = 35;
+            this.B128.TabIndex = 38;
             // 
             // B144
             // 
@@ -1992,7 +1992,7 @@
             0});
             this.B144.Name = "B144";
             this.B144.Size = new System.Drawing.Size(62, 25);
-            this.B144.TabIndex = 48;
+            this.B144.TabIndex = 50;
             // 
             // label151
             // 
@@ -2010,7 +2010,7 @@
             this.B143.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B143.Name = "B143";
             this.B143.Size = new System.Drawing.Size(65, 25);
-            this.B143.TabIndex = 47;
+            this.B143.TabIndex = 49;
             // 
             // label121
             // 
@@ -2021,18 +2021,6 @@
             this.label121.Size = new System.Drawing.Size(23, 18);
             this.label121.TabIndex = 143;
             this.label121.Text = "X:";
-            // 
-            // L_143_MAPXY_144
-            // 
-            this.L_143_MAPXY_144.AccessibleDescription = "@MAPSETTING_ESCAPE_POINT";
-            this.L_143_MAPXY_144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_143_MAPXY_144.Location = new System.Drawing.Point(824, 368);
-            this.L_143_MAPXY_144.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.L_143_MAPXY_144.Name = "L_143_MAPXY_144";
-            this.L_143_MAPXY_144.Size = new System.Drawing.Size(276, 32);
-            this.L_143_MAPXY_144.TabIndex = 142;
-            this.L_143_MAPXY_144.Text = "離脱▲マーク";
-            this.L_143_MAPXY_144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B142
             // 
@@ -2046,7 +2034,7 @@
             0});
             this.B142.Name = "B142";
             this.B142.Size = new System.Drawing.Size(64, 25);
-            this.B142.TabIndex = 46;
+            this.B142.TabIndex = 48;
             // 
             // J_142_UNIT
             // 
@@ -2071,7 +2059,7 @@
             0});
             this.B141.Name = "B141";
             this.B141.Size = new System.Drawing.Size(64, 25);
-            this.B141.TabIndex = 45;
+            this.B141.TabIndex = 47;
             // 
             // J_141
             // 
@@ -2097,7 +2085,7 @@
             0});
             this.B140.Name = "B140";
             this.B140.Size = new System.Drawing.Size(64, 25);
-            this.B140.TabIndex = 43;
+            this.B140.TabIndex = 45;
             // 
             // J_140
             // 
@@ -2134,7 +2122,7 @@
             0});
             this.W138.Name = "W138";
             this.W138.Size = new System.Drawing.Size(95, 25);
-            this.W138.TabIndex = 42;
+            this.W138.TabIndex = 44;
             // 
             // J_138_TEXT
             // 
@@ -2171,7 +2159,7 @@
             0});
             this.W136.Name = "W136";
             this.W136.Size = new System.Drawing.Size(95, 25);
-            this.W136.TabIndex = 41;
+            this.W136.TabIndex = 43;
             // 
             // J_136_TEXT
             // 
@@ -2197,7 +2185,7 @@
             0});
             this.B135.Name = "B135";
             this.B135.Size = new System.Drawing.Size(64, 25);
-            this.B135.TabIndex = 38;
+            this.B135.TabIndex = 41;
             // 
             // J_135
             // 
@@ -2223,7 +2211,7 @@
             0});
             this.B134.Name = "B134";
             this.B134.Size = new System.Drawing.Size(64, 25);
-            this.B134.TabIndex = 37;
+            this.B134.TabIndex = 40;
             // 
             // J_134
             // 
@@ -2342,7 +2330,7 @@
             this.L_128_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_128_COMBO.Name = "L_128_COMBO";
             this.L_128_COMBO.Size = new System.Drawing.Size(247, 26);
-            this.L_128_COMBO.TabIndex = 36;
+            this.L_128_COMBO.TabIndex = 39;
             // 
             // J_128
             // 
@@ -2368,7 +2356,7 @@
             0});
             this.B117.Name = "B117";
             this.B117.Size = new System.Drawing.Size(64, 25);
-            this.B117.TabIndex = 34;
+            this.B117.TabIndex = 37;
             // 
             // J_117_WORLDMAPEVENT
             // 
@@ -2394,7 +2382,7 @@
             0});
             this.B116.Name = "B116";
             this.B116.Size = new System.Drawing.Size(64, 25);
-            this.B116.TabIndex = 33;
+            this.B116.TabIndex = 36;
             // 
             // J_116_PLIST_EVENT
             // 
@@ -2417,7 +2405,7 @@
             this.L_114_TEXT_MAPNAME1.Placeholder = "";
             this.L_114_TEXT_MAPNAME1.ReadOnly = true;
             this.L_114_TEXT_MAPNAME1.Size = new System.Drawing.Size(233, 25);
-            this.L_114_TEXT_MAPNAME1.TabIndex = 110;
+            this.L_114_TEXT_MAPNAME1.TabIndex = 35;
             // 
             // L_112_TEXT_MAPNAME1
             // 
@@ -2442,7 +2430,7 @@
             0});
             this.W114.Name = "W114";
             this.W114.Size = new System.Drawing.Size(95, 25);
-            this.W114.TabIndex = 32;
+            this.W114.TabIndex = 34;
             // 
             // J_114_TEXT
             // 
@@ -2468,7 +2456,7 @@
             0});
             this.W112.Name = "W112";
             this.W112.Size = new System.Drawing.Size(95, 25);
-            this.W112.TabIndex = 31;
+            this.W112.TabIndex = 33;
             // 
             // J_112_TEXT
             // 
@@ -2504,7 +2492,7 @@
             0});
             this.W38.Name = "W38";
             this.W38.Size = new System.Drawing.Size(95, 25);
-            this.W38.TabIndex = 27;
+            this.W38.TabIndex = 29;
             // 
             // L_30_SONGPLAY
             // 
@@ -2528,7 +2516,7 @@
             0});
             this.W42.Name = "W42";
             this.W42.Size = new System.Drawing.Size(95, 25);
-            this.W42.TabIndex = 29;
+            this.W42.TabIndex = 31;
             // 
             // W40
             // 
@@ -2542,7 +2530,7 @@
             0});
             this.W40.Name = "W40";
             this.W40.Size = new System.Drawing.Size(95, 25);
-            this.W40.TabIndex = 28;
+            this.W40.TabIndex = 30;
             // 
             // J_38
             // 
@@ -2609,7 +2597,7 @@
             0});
             this.W36.Name = "W36";
             this.W36.Size = new System.Drawing.Size(95, 25);
-            this.W36.TabIndex = 26;
+            this.W36.TabIndex = 28;
             // 
             // J_36_SONG
             // 
@@ -2635,7 +2623,7 @@
             0});
             this.W34.Name = "W34";
             this.W34.Size = new System.Drawing.Size(95, 25);
-            this.W34.TabIndex = 25;
+            this.W34.TabIndex = 27;
             // 
             // J_34_SONG
             // 
@@ -2714,7 +2702,7 @@
             0});
             this.W32.Name = "W32";
             this.W32.Size = new System.Drawing.Size(95, 25);
-            this.W32.TabIndex = 24;
+            this.W32.TabIndex = 26;
             // 
             // J_32_SONG
             // 
@@ -2740,7 +2728,7 @@
             0});
             this.W30.Name = "W30";
             this.W30.Size = new System.Drawing.Size(95, 25);
-            this.W30.TabIndex = 23;
+            this.W30.TabIndex = 25;
             // 
             // J_30_SONG
             // 
@@ -2766,7 +2754,7 @@
             0});
             this.W28.Name = "W28";
             this.W28.Size = new System.Drawing.Size(95, 25);
-            this.W28.TabIndex = 22;
+            this.W28.TabIndex = 23;
             // 
             // J_28_SONG
             // 
@@ -2855,7 +2843,7 @@
             0});
             this.W26.Name = "W26";
             this.W26.Size = new System.Drawing.Size(95, 25);
-            this.W26.TabIndex = 21;
+            this.W26.TabIndex = 22;
             // 
             // J_26_SONG
             // 
@@ -2880,7 +2868,7 @@
             0});
             this.W24.Name = "W24";
             this.W24.Size = new System.Drawing.Size(95, 25);
-            this.W24.TabIndex = 20;
+            this.W24.TabIndex = 21;
             // 
             // J_24_SONG
             // 
@@ -2905,7 +2893,7 @@
             0});
             this.W22.Name = "W22";
             this.W22.Size = new System.Drawing.Size(95, 25);
-            this.W22.TabIndex = 19;
+            this.W22.TabIndex = 20;
             // 
             // J_22_SONG
             // 
@@ -2930,7 +2918,7 @@
             0});
             this.W20.Name = "W20";
             this.W20.Size = new System.Drawing.Size(95, 25);
-            this.W20.TabIndex = 18;
+            this.W20.TabIndex = 19;
             // 
             // J_20_DIFFCULTY
             // 
@@ -2956,7 +2944,7 @@
             0});
             this.B19.Name = "B19";
             this.B19.Size = new System.Drawing.Size(64, 25);
-            this.B19.TabIndex = 16;
+            this.B19.TabIndex = 17;
             // 
             // J_19_MAPTERRAINBGLOOKUPTABLE
             // 
@@ -2982,7 +2970,7 @@
             0});
             this.B18.Name = "B18";
             this.B18.Size = new System.Drawing.Size(64, 25);
-            this.B18.TabIndex = 14;
+            this.B18.TabIndex = 15;
             // 
             // L_18_COMBO
             // 
@@ -3000,7 +2988,7 @@
             this.L_18_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_18_COMBO.Name = "L_18_COMBO";
             this.L_18_COMBO.Size = new System.Drawing.Size(271, 26);
-            this.L_18_COMBO.TabIndex = 15;
+            this.L_18_COMBO.TabIndex = 16;
             // 
             // J_18
             // 
@@ -3024,7 +3012,7 @@
             0});
             this.B17.Name = "B17";
             this.B17.Size = new System.Drawing.Size(65, 25);
-            this.B17.TabIndex = 13;
+            this.B17.TabIndex = 14;
             // 
             // label19
             // 
@@ -3042,7 +3030,7 @@
             this.B16.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B16.Name = "B16";
             this.B16.Size = new System.Drawing.Size(58, 25);
-            this.B16.TabIndex = 12;
+            this.B16.TabIndex = 13;
             // 
             // label120
             // 
@@ -3078,7 +3066,7 @@
             0});
             this.B15.Name = "B15";
             this.B15.Size = new System.Drawing.Size(65, 25);
-            this.B15.TabIndex = 11;
+            this.B15.TabIndex = 12;
             // 
             // J_15
             // 
@@ -3115,7 +3103,7 @@
             0});
             this.B13.Name = "B13";
             this.B13.Size = new System.Drawing.Size(65, 25);
-            this.B13.TabIndex = 9;
+            this.B13.TabIndex = 10;
             // 
             // J_13
             // 
@@ -3141,7 +3129,7 @@
             0});
             this.B12.Name = "B12";
             this.B12.Size = new System.Drawing.Size(65, 25);
-            this.B12.TabIndex = 8;
+            this.B12.TabIndex = 9;
             // 
             // J_12
             // 
@@ -3167,7 +3155,7 @@
             0});
             this.B11.Name = "B11";
             this.B11.Size = new System.Drawing.Size(65, 25);
-            this.B11.TabIndex = 7;
+            this.B11.TabIndex = 8;
             // 
             // J_11_PLIST_MAPCHANGE
             // 
@@ -3378,6 +3366,18 @@
             this.J_0_TEXT.Text = "CP";
             this.J_0_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_143_MAPXY_144
+            // 
+            this.L_143_MAPXY_144.AccessibleDescription = "@MAPSETTING_ESCAPE_POINT";
+            this.L_143_MAPXY_144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_143_MAPXY_144.Location = new System.Drawing.Point(824, 368);
+            this.L_143_MAPXY_144.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_143_MAPXY_144.Name = "L_143_MAPXY_144";
+            this.L_143_MAPXY_144.Size = new System.Drawing.Size(276, 32);
+            this.L_143_MAPXY_144.TabIndex = 142;
+            this.L_143_MAPXY_144.Text = "離脱▲マーク";
+            this.L_143_MAPXY_144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3406,7 +3406,7 @@
             this.WriteButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(267, 30);
-            this.WriteButton.TabIndex = 0;
+            this.WriteButton.TabIndex = 3;
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
             // 
@@ -3422,7 +3422,7 @@
             0});
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(125, 25);
-            this.Address.TabIndex = 0;
+            this.Address.TabIndex = 2;
             // 
             // label52
             // 

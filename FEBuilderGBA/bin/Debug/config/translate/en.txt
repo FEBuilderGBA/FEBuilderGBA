@@ -4417,6 +4417,15 @@ When checked, low layer instructions will be displayed.\r\nThe low layer instruc
 :FE7の残骸データですが、スコアの計算は実行されています。\r\nただし、スコアを表示する画面がないため表示できませんでした。\r\nFE8Jで画面の表示方法が確立できたので、画面を復活させました。\r\nそれぞれのパラメータの内容は現在調査中です。
 It is the remains of FE 7, but the calculation of the score is being executed.\r\nHowever, it could not be displayed because there was no screen to display the score.\r\nSince the display method of the screen was established with FE 8 J, the screen was restored.\r\nThe content of each parameter is currently under investigation.
 
+:翻訳のヒントに使うROMを指定します。\r\n無変更のテキストを取り出して比較するのに利用します。
+Specify ROM to be used for translation hints.\r\nIt is used to retrieve and compare unchanged text.
+
+:翻訳のヒントに使うROMを指定します。\r\n無変更のテキストの翻訳文を取り出すために利用します。
+Specify ROM to be used for translation hints.\r\nIt is used to retrieve translated text of unchanged text.
+
+:そのゲーム専用の翻訳データがあれば指定してください。\r\n
+Please specify if there is translation data exclusive for that game.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -10453,6 +10462,9 @@ Merge
 :不明な文字列
 Unknown Character String
 
+:Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n以降は、Google翻訳を無効にして処理を実装します。\r\n\r\n{0}
+Google translation returned an error.\r\nI sent the translation request too much.\r\nAfter that, disable Google translation and implement processing.\r\n\r\n{0}
+
 :フォントを抽出するROMを選択してください
 Please select ROM to extract fonts
 
@@ -10462,8 +10474,23 @@ Please select ROM to extract fixed phrases
 :翻訳データを指定してください
 Please specify translation data
 
+:無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。
+We will use translated dictionary and translation site to obtain translated text.
+
+:変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。
+Save only the changed text file.\r\nConversations that exist in unmodified ROM can be edited automatically and there is no need to translate.\r\nSpecify it to reduce translation data.
+
+:無改造ROMや、翻訳辞書で自動翻訳できない場合に、Google翻訳を利用して翻訳します。\r\nただし、大量にリクエストを投げると、BANされることがあります。\r\nBANされた場合は、翌日また試してください。\r\n何度もBANされる場合は、使用しないでください。
+If you can not translate automatically with unmodified ROM or translation dictionary, we translate using Google translation.\r\nHowever, if you throw a large number of requests, you may be BANed.\r\nIf you were BAN, please try again the next day.\r\nPlease do not use it when you BAN many times.
+
+:ROMに収録されていないフォントを自動的に生成します。
+It automatically generates fonts not included in ROM.
+
 :ROMの翻訳を行います。\r\n日本語ROMと英語ROMを利用して、無変更のテキストを自動的に変換します。\r\n\r\n簡易モードでは、全自動で翻訳します。\r\n不足しているフォントのインポートや、メニューの長さなどを自動的に調整します。\r\n全ての処理が終わるのに、10分ほど時間がかかるので、少しお待ちください。
 Translate the ROM.\r\nAutomatically convert unchanged text using Japanese ROM and English ROM.\r\n\r\nIn simplified mode, it translates fully automatically.\r\nIt automatically adjusts the missing font import, menu length etc etc.\r\nPlease wait for a while because it takes about 10 minutes to complete all processing.
+
+:翻訳データ
+Translation data
 
 :翻訳開始
 Translation Start
@@ -10473,9 +10500,6 @@ Fixed String TO
 
 :定型文ROM FROM
 Fixed String FROM
-
-:翻訳データ
-Translation data
 
 :足りないフォントの自動生成
 Automatic generation of missing fonts
@@ -10494,9 +10518,6 @@ Translate to Export
 
 :改造されたテキストのみ取得する
 Acquire only remodeled text
-
-:google translateは、負荷をかけないようにするため、DebugBuildでのみ使えます
-Google Translate is restricted to the Debug build to avoid load issues.
 
 :定型文以外をgoogle translateを利用して翻訳して書き出す
 Translate and Export non-fixed string with Google Translate

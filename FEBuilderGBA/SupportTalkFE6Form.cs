@@ -110,5 +110,6 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             TextID.AppendTextID(list, FELint.Type.SUPPORT_TALK, InputFormRef, new uint[] { 4, 6, 8 });
         }
+
     }
 }

@@ -21,15 +21,11 @@ namespace FEBuilderGBA
             SimpleTranslateFromROMFilename.AllowDropFilename();
             SimpleTranslateToROMFilename.AllowDropFilename();
 
+            //google翻訳解禁
             useAutoTranslateCheckBox_CheckedChanged(null, null);
-#if DEBUG //デバッグモードのときだけ翻訳して書出しボタンをだしてやろう.
             UseGoogleTranslateCheckBox.Enabled = true;
             UseGoogleTranslateCheckBox.Show();
-            X_UseGoogleTranslateCheckBox.Hide();
-#else
-            UseGoogleTranslateCheckBox.Hide();
-            X_UseGoogleTranslateCheckBox.Show();
-#endif
+
             int from,to;
             TranslateTextUtil.TranslateLanguageAutoSelect(out from,out to);
 
@@ -37,6 +33,7 @@ namespace FEBuilderGBA
             U.ForceUpdate(Translate_to, to);
 
             UseFontNameTextEdit.Text = UseFontNameTextEdit.Font.FontFamily.ToString();
+            MakeExplainFunctions();
         }
         
 
@@ -263,7 +260,6 @@ namespace FEBuilderGBA
             string to = U.InnerSplit(Translate_to.Text, "=", 0);
             string fromrom = SimpleTranslateFromROMFilename.Text;
             string torom = SimpleTranslateToROMFilename.Text;
-            bool useGoolgeTranslate = false;
 
             ToolTranslateROM trans = new ToolTranslateROM();
             //パッチの適用.
@@ -290,7 +286,7 @@ namespace FEBuilderGBA
             {
                 string writeTextFileName = Path.GetTempFileName();
 
-                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom, useGoolgeTranslate , false);
+                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false);
                 trans.ImportAllText(this, writeTextFileName);
 
                 ToolTranslateROMFont transFont = new ToolTranslateROMFont();
@@ -329,6 +325,12 @@ namespace FEBuilderGBA
         {
             SimpleTranslateToTranslateDataFilenameButton.PerformClick();
         }
-
+        void MakeExplainFunctions()
+        {
+            useAutoTranslateCheckBox.AccessibleDescription = R._("無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。");
+            X_MODIFIED_TEXT_ONLY.AccessibleDescription = R._("変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。");
+            UseGoogleTranslateCheckBox.AccessibleDescription = R._("無改造ROMや、翻訳辞書で自動翻訳できない場合に、Google翻訳を利用して翻訳します。\r\nただし、大量にリクエストを投げると、BANされることがあります。\r\nBANされた場合は、翌日また試してください。\r\n何度もBANされる場合は、使用しないでください。");
+            FontAutoGenelateCheckBox.AccessibleDescription = R._("ROMに収録されていないフォントを自動的に生成します。");
+        }
     }
 }

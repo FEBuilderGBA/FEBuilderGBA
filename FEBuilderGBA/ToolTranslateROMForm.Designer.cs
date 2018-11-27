@@ -32,14 +32,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SimpleTranslateToTranslateDataFilenameButton = new System.Windows.Forms.Button();
+            this.LabelSimpleTranslateToTranslateDataFilename = new System.Windows.Forms.Label();
             this.SimpleFireButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LabelSimpleTranslateToROMFilename = new System.Windows.Forms.Label();
             this.SimpleTranslateToROMFilenameSelectButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.LabelSimpleTranslateFromROMFilename = new System.Windows.Forms.Label();
             this.SimpleTranslateFormROMFilenameSelectButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.SimpleTranslateToTranslateDataFilenameButton = new System.Windows.Forms.Button();
             this.SimpleTranslateToTranslateDataFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateFromROMFilename = new FEBuilderGBA.TextBoxEx();
@@ -57,13 +57,12 @@
             this.customColorGroupBox4 = new FEBuilderGBA.CustomColorGroupBox();
             this.TranslatePanel = new System.Windows.Forms.Panel();
             this.X_MODIFIED_TEXT_ONLY = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LabelTranslateToROMFilename = new System.Windows.Forms.Label();
             this.TranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
             this.TranslateToROMFilenameSelectButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LabelTranslateFormROMFilename = new System.Windows.Forms.Label();
             this.TranslateFormROMFilename = new FEBuilderGBA.TextBoxEx();
             this.TranslateFormROMFilenameSelectButton = new System.Windows.Forms.Button();
-            this.X_UseGoogleTranslateCheckBox = new System.Windows.Forms.Label();
             this.UseGoogleTranslateCheckBox = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.Translate_to = new System.Windows.Forms.ComboBox();
@@ -123,18 +122,41 @@
             // 
             this.panel1.Controls.Add(this.SimpleTranslateToTranslateDataFilename);
             this.panel1.Controls.Add(this.SimpleTranslateToTranslateDataFilenameButton);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.LabelSimpleTranslateToTranslateDataFilename);
             this.panel1.Controls.Add(this.SimpleFireButton);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.LabelSimpleTranslateToROMFilename);
             this.panel1.Controls.Add(this.SimpleTranslateToROMFilename);
             this.panel1.Controls.Add(this.SimpleTranslateToROMFilenameSelectButton);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.LabelSimpleTranslateFromROMFilename);
             this.panel1.Controls.Add(this.SimpleTranslateFromROMFilename);
             this.panel1.Controls.Add(this.SimpleTranslateFormROMFilenameSelectButton);
             this.panel1.Location = new System.Drawing.Point(6, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(894, 192);
             this.panel1.TabIndex = 2;
+            // 
+            // SimpleTranslateToTranslateDataFilenameButton
+            // 
+            this.SimpleTranslateToTranslateDataFilenameButton.Location = new System.Drawing.Point(833, 81);
+            this.SimpleTranslateToTranslateDataFilenameButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SimpleTranslateToTranslateDataFilenameButton.Name = "SimpleTranslateToTranslateDataFilenameButton";
+            this.SimpleTranslateToTranslateDataFilenameButton.Size = new System.Drawing.Size(41, 31);
+            this.SimpleTranslateToTranslateDataFilenameButton.TabIndex = 101;
+            this.SimpleTranslateToTranslateDataFilenameButton.Text = "..";
+            this.SimpleTranslateToTranslateDataFilenameButton.UseVisualStyleBackColor = true;
+            this.SimpleTranslateToTranslateDataFilenameButton.Click += new System.EventHandler(this.SimpleTranslateToTranslateDataFilenameButton_Click);
+            // 
+            // LabelSimpleTranslateToTranslateDataFilename
+            // 
+            this.LabelSimpleTranslateToTranslateDataFilename.AccessibleDescription = "@TRANSLATE_HINT_FILE";
+            this.LabelSimpleTranslateToTranslateDataFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelSimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(5, 83);
+            this.LabelSimpleTranslateToTranslateDataFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelSimpleTranslateToTranslateDataFilename.Name = "LabelSimpleTranslateToTranslateDataFilename";
+            this.LabelSimpleTranslateToTranslateDataFilename.Size = new System.Drawing.Size(196, 31);
+            this.LabelSimpleTranslateToTranslateDataFilename.TabIndex = 99;
+            this.LabelSimpleTranslateToTranslateDataFilename.Text = "翻訳データ";
+            this.LabelSimpleTranslateToTranslateDataFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SimpleFireButton
             // 
@@ -146,16 +168,17 @@
             this.SimpleFireButton.UseVisualStyleBackColor = true;
             this.SimpleFireButton.Click += new System.EventHandler(this.SimpleFireButton_Click);
             // 
-            // label8
+            // LabelSimpleTranslateToROMFilename
             // 
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(5, 44);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(196, 31);
-            this.label8.TabIndex = 97;
-            this.label8.Text = "定型文ROM TO";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelSimpleTranslateToROMFilename.AccessibleDescription = "@TRANSLATE_TO_ROM";
+            this.LabelSimpleTranslateToROMFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelSimpleTranslateToROMFilename.Location = new System.Drawing.Point(5, 44);
+            this.LabelSimpleTranslateToROMFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelSimpleTranslateToROMFilename.Name = "LabelSimpleTranslateToROMFilename";
+            this.LabelSimpleTranslateToROMFilename.Size = new System.Drawing.Size(196, 31);
+            this.LabelSimpleTranslateToROMFilename.TabIndex = 97;
+            this.LabelSimpleTranslateToROMFilename.Text = "定型文ROM TO";
+            this.LabelSimpleTranslateToROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SimpleTranslateToROMFilenameSelectButton
             // 
@@ -168,16 +191,17 @@
             this.SimpleTranslateToROMFilenameSelectButton.UseVisualStyleBackColor = true;
             this.SimpleTranslateToROMFilenameSelectButton.Click += new System.EventHandler(this.TranslateToROMFilenameSelectButton_Click);
             // 
-            // label9
+            // LabelSimpleTranslateFromROMFilename
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(6, 7);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 31);
-            this.label9.TabIndex = 94;
-            this.label9.Text = "定型文ROM FROM";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelSimpleTranslateFromROMFilename.AccessibleDescription = "@TRANSLATE_FROM_ROM";
+            this.LabelSimpleTranslateFromROMFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelSimpleTranslateFromROMFilename.Location = new System.Drawing.Point(6, 7);
+            this.LabelSimpleTranslateFromROMFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelSimpleTranslateFromROMFilename.Name = "LabelSimpleTranslateFromROMFilename";
+            this.LabelSimpleTranslateFromROMFilename.Size = new System.Drawing.Size(196, 31);
+            this.LabelSimpleTranslateFromROMFilename.TabIndex = 94;
+            this.LabelSimpleTranslateFromROMFilename.Text = "定型文ROM FROM";
+            this.LabelSimpleTranslateFromROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SimpleTranslateFormROMFilenameSelectButton
             // 
@@ -202,28 +226,6 @@
             this.tabPage2.Size = new System.Drawing.Size(908, 754);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "詳細";
-            // 
-            // label5
-            // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(5, 83);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 31);
-            this.label5.TabIndex = 99;
-            this.label5.Text = "翻訳データ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SimpleTranslateToTranslateDataFilenameButton
-            // 
-            this.SimpleTranslateToTranslateDataFilenameButton.Location = new System.Drawing.Point(833, 81);
-            this.SimpleTranslateToTranslateDataFilenameButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SimpleTranslateToTranslateDataFilenameButton.Name = "SimpleTranslateToTranslateDataFilenameButton";
-            this.SimpleTranslateToTranslateDataFilenameButton.Size = new System.Drawing.Size(41, 31);
-            this.SimpleTranslateToTranslateDataFilenameButton.TabIndex = 101;
-            this.SimpleTranslateToTranslateDataFilenameButton.Text = "..";
-            this.SimpleTranslateToTranslateDataFilenameButton.UseVisualStyleBackColor = true;
-            this.SimpleTranslateToTranslateDataFilenameButton.Click += new System.EventHandler(this.SimpleTranslateToTranslateDataFilenameButton_Click);
             // 
             // SimpleTranslateToTranslateDataFilename
             // 
@@ -400,13 +402,12 @@
             // TranslatePanel
             // 
             this.TranslatePanel.Controls.Add(this.X_MODIFIED_TEXT_ONLY);
-            this.TranslatePanel.Controls.Add(this.label6);
+            this.TranslatePanel.Controls.Add(this.LabelTranslateToROMFilename);
             this.TranslatePanel.Controls.Add(this.TranslateToROMFilename);
             this.TranslatePanel.Controls.Add(this.TranslateToROMFilenameSelectButton);
-            this.TranslatePanel.Controls.Add(this.label3);
+            this.TranslatePanel.Controls.Add(this.LabelTranslateFormROMFilename);
             this.TranslatePanel.Controls.Add(this.TranslateFormROMFilename);
             this.TranslatePanel.Controls.Add(this.TranslateFormROMFilenameSelectButton);
-            this.TranslatePanel.Controls.Add(this.X_UseGoogleTranslateCheckBox);
             this.TranslatePanel.Controls.Add(this.UseGoogleTranslateCheckBox);
             this.TranslatePanel.Controls.Add(this.label16);
             this.TranslatePanel.Controls.Add(this.Translate_to);
@@ -430,16 +431,17 @@
             this.X_MODIFIED_TEXT_ONLY.Text = "改造されたテキストのみ取得する";
             this.X_MODIFIED_TEXT_ONLY.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // LabelTranslateToROMFilename
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(5, 84);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 31);
-            this.label6.TabIndex = 97;
-            this.label6.Text = "定型文ROM TO";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelTranslateToROMFilename.AccessibleDescription = "@TRANSLATE_TO_ROM";
+            this.LabelTranslateToROMFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelTranslateToROMFilename.Location = new System.Drawing.Point(5, 84);
+            this.LabelTranslateToROMFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelTranslateToROMFilename.Name = "LabelTranslateToROMFilename";
+            this.LabelTranslateToROMFilename.Size = new System.Drawing.Size(196, 31);
+            this.LabelTranslateToROMFilename.TabIndex = 97;
+            this.LabelTranslateToROMFilename.Text = "定型文ROM TO";
+            this.LabelTranslateToROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TranslateToROMFilename
             // 
@@ -463,16 +465,17 @@
             this.TranslateToROMFilenameSelectButton.UseVisualStyleBackColor = true;
             this.TranslateToROMFilenameSelectButton.Click += new System.EventHandler(this.TranslateToROMFilenameSelectButton_Click);
             // 
-            // label3
+            // LabelTranslateFormROMFilename
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(6, 47);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 31);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "定型文ROM FROM";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelTranslateFormROMFilename.AccessibleDescription = "@TRANSLATE_FROM_ROM";
+            this.LabelTranslateFormROMFilename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelTranslateFormROMFilename.Location = new System.Drawing.Point(6, 47);
+            this.LabelTranslateFormROMFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelTranslateFormROMFilename.Name = "LabelTranslateFormROMFilename";
+            this.LabelTranslateFormROMFilename.Size = new System.Drawing.Size(196, 31);
+            this.LabelTranslateFormROMFilename.TabIndex = 94;
+            this.LabelTranslateFormROMFilename.Text = "定型文ROM FROM";
+            this.LabelTranslateFormROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TranslateFormROMFilename
             // 
@@ -495,15 +498,6 @@
             this.TranslateFormROMFilenameSelectButton.Text = "..";
             this.TranslateFormROMFilenameSelectButton.UseVisualStyleBackColor = true;
             this.TranslateFormROMFilenameSelectButton.Click += new System.EventHandler(this.TranslateFormROMFilenameSelectButton_Click);
-            // 
-            // X_UseGoogleTranslateCheckBox
-            // 
-            this.X_UseGoogleTranslateCheckBox.AutoSize = true;
-            this.X_UseGoogleTranslateCheckBox.Location = new System.Drawing.Point(31, 153);
-            this.X_UseGoogleTranslateCheckBox.Name = "X_UseGoogleTranslateCheckBox";
-            this.X_UseGoogleTranslateCheckBox.Size = new System.Drawing.Size(563, 18);
-            this.X_UseGoogleTranslateCheckBox.TabIndex = 11;
-            this.X_UseGoogleTranslateCheckBox.Text = "google translateは、負荷をかけないようにするため、DebugBuildでのみ使えます";
             // 
             // UseGoogleTranslateCheckBox
             // 
@@ -543,10 +537,10 @@
             "ru=ロシア語",
             "fr=フランス語",
             "eo=エスペランド語"});
-            this.Translate_to.Location = new System.Drawing.Point(258, 12);
+            this.Translate_to.Location = new System.Drawing.Point(284, 12);
             this.Translate_to.Margin = new System.Windows.Forms.Padding(4);
             this.Translate_to.Name = "Translate_to";
-            this.Translate_to.Size = new System.Drawing.Size(144, 26);
+            this.Translate_to.Size = new System.Drawing.Size(166, 26);
             this.Translate_to.TabIndex = 1;
             this.Translate_to.SelectedIndexChanged += new System.EventHandler(this.Translate_to_SelectedIndexChanged);
             // 
@@ -561,14 +555,14 @@
             this.Translate_from.Location = new System.Drawing.Point(66, 10);
             this.Translate_from.Margin = new System.Windows.Forms.Padding(4);
             this.Translate_from.Name = "Translate_from";
-            this.Translate_from.Size = new System.Drawing.Size(144, 26);
+            this.Translate_from.Size = new System.Drawing.Size(167, 26);
             this.Translate_from.TabIndex = 0;
             this.Translate_from.SelectedIndexChanged += new System.EventHandler(this.Translate_from_SelectedIndexChanged);
             // 
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(215, 9);
+            this.label17.Location = new System.Drawing.Point(241, 9);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 30);
@@ -693,11 +687,10 @@
         private System.Windows.Forms.CheckBox useAutoTranslateCheckBox;
         private System.Windows.Forms.Panel TranslatePanel;
         private System.Windows.Forms.CheckBox UseGoogleTranslateCheckBox;
-        private System.Windows.Forms.Label X_UseGoogleTranslateCheckBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LabelTranslateFormROMFilename;
         private FEBuilderGBA.TextBoxEx TranslateFormROMFilename;
         private System.Windows.Forms.Button TranslateFormROMFilenameSelectButton;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LabelTranslateToROMFilename;
         private FEBuilderGBA.TextBoxEx TranslateToROMFilename;
         private System.Windows.Forms.Button TranslateToROMFilenameSelectButton;
         private System.Windows.Forms.CheckBox FontAutoGenelateCheckBox;
@@ -709,10 +702,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LabelSimpleTranslateToROMFilename;
         private TextBoxEx SimpleTranslateToROMFilename;
         private System.Windows.Forms.Button SimpleTranslateToROMFilenameSelectButton;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LabelSimpleTranslateFromROMFilename;
         private TextBoxEx SimpleTranslateFromROMFilename;
         private System.Windows.Forms.Button SimpleTranslateFormROMFilenameSelectButton;
         private System.Windows.Forms.TextBox textBox1;
@@ -720,6 +713,6 @@
         private System.Windows.Forms.CheckBox X_MODIFIED_TEXT_ONLY;
         private TextBoxEx SimpleTranslateToTranslateDataFilename;
         private System.Windows.Forms.Button SimpleTranslateToTranslateDataFilenameButton;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LabelSimpleTranslateToTranslateDataFilename;
     }
 }
