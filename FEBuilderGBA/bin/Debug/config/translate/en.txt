@@ -38,7 +38,7 @@ Address
 AI Setting for chapter
 
 :杖を利用できるAIが杖を使用するかどうか判定する関数を指定します。
-Specify a function to decide whether AI that can use wand uses wand.
+Specify a function to decide whether AI that can use Staff.
 
 :アイテム
 Item Editor
@@ -47,7 +47,7 @@ Item Editor
 Extended list
 
 :AIの杖利用判定
-AI's wand use judgment
+AI's Staff
 
 :カテゴリ
 Category

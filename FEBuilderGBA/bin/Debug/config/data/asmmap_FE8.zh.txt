@@ -1262,7 +1262,10 @@ r3=X tile position of menu of the right	{U}
 @ActionBattleStruct@12	Inventory slot number (0-4)
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
+@ChapterData@00	word	Clock
+@ChapterData@04	word	Unk4
 @ChapterData@08	word	Money
+@ChapterData@0C	byte	SaveBonusClaimFlags
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)
 @ChapterData@0E	byte	Chapter ID
 @ChapterData@0F	byte	Phase	(0x0=player, 0x40=allied, 0x80=enemy)
@@ -1272,6 +1275,8 @@ r3=X tile position of menu of the right	{U}
 @ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
 @ChapterData@15	byte	Weather	(0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 @ChapterData@16	short	Number of support points gained this chapter?
+@ChapterData@18	short	Unk18
+@ChapterData@1A	byte	Unk1a
 @ChapterData@1B	byte	Mode	(1=prologue-8, 2=Eirika 3=Ephraim)
 @ChapterData@40	byte	Option1	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
 &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)

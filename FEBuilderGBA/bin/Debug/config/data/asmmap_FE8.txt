@@ -1658,7 +1658,10 @@
 0203A958	@ActionBattleStruct	ActionBattleStruct	{U}
 0203A954	@ActionBattleStruct	ActionBattleStruct	{J}
 
+@ChapterData@00	word	Clock
+@ChapterData@04	word	Unk4
 @ChapterData@08	word	所持金
+@ChapterData@0C	byte	SaveBonusClaimFlags
 @ChapterData@0D	byte	霧の濃さ (0なら霧なし)
 @ChapterData@0E	byte	マップID
 @ChapterData@0F	byte	フェイズ 0=自軍,0x40=友軍,0x80=敵軍
@@ -1667,8 +1670,12 @@
 @ChapterData@13	byte	カーソル位置Y (only when displaying a menu?)
 @ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
 @ChapterData@15	byte	天気 (0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
-@ChapterData@16	short	Number of support points gained this chapter?
+@ChapterData@16	short	Number of support points gained this chapter
+@ChapterData@18	short	Unk18
+@ChapterData@1A	byte	Unk1a
 @ChapterData@1B	byte	編指定 序盤=0x1,A編=0x2,F編=0x3
+@ChapterData@1C	byte	Unk1c
+@ChapterData@1D	byte	Unk1d
 @ChapterData@40	byte	CONFIGの設定 カーソル等	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
  &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
 @ChapterData@41	byte	CONFIGの設定 効果音	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
@@ -10543,7 +10550,6 @@
 
 08000360	ARM_ComputeChecksum32	{J}
 08000BA0	InitRN	{J}
-08000d28	GetGameClock	{J}
 08001E20	SetColorEffectsFirstTarget	{J}
 08001E5C	SetColorEffectsSecondTarget	{J}
 08001E98	SetColorEffectBackdropFirstTarget	{J}
@@ -11431,6 +11437,11 @@
 08002570	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{J}
 08074DAC	BossBGMを取得	{J}
 080976FC	CanCharacterBePrepSwap	{J}
+08089100	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{J}
+08000CD8	GetGameClock	{J}
+08091544	DeleteSerifProcs	{J}
+08091558	IsExistSerifProcs	{J}
+08091574	GotoLabel0BySerifProcs	{J}
 080A1930	進撃準備またはOPタイトルのBGMに戻す	{U}
 0808E608	状況画面のキー入力処理	{U}
 080ADDD4	ClearChild6C	指定したProcs以下を消去する	{U}
@@ -11440,3 +11451,7 @@
 08002620	BGMを切り替える(別命令 その5)	r0=BGM番号:MUSIC	{U}
 080728D0	BossBGMを取得	{U}
 0809541C	CanCharacterBePrepSwap	{U}
+08086E44	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{U}
+0808F270	DeleteSerifProcs	{U}
+0808F284	IsExistSerifProcs	{U}
+0808F2A0	GotoLabel0BySerifProcs	{U}
