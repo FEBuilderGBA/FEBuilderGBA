@@ -123,6 +123,16 @@ namespace FEBuilderGBA.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Icon icon_translate_subtile {
+            get {
+                object obj = ResourceManager.GetObject("icon_translate_subtile", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Icon icon_upload {
             get {
                 object obj = ResourceManager.GetObject("icon_upload", resourceCulture);

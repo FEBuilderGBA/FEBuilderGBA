@@ -955,6 +955,18 @@
     <Compile Include="ToolDiffDebugSelectMethodPopup.Designer.cs">
       <DependentUpon>ToolDiffDebugSelectMethodPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolSubtitleOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolSubtitleOverlayForm.Designer.cs">
+      <DependentUpon>ToolSubtitleOverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolSubtitleSetingDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolSubtitleSetingDialogForm.Designer.cs">
+      <DependentUpon>ToolSubtitleSetingDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolThreeMargeCloseAlertForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2372,6 +2384,12 @@
     <EmbeddedResource Include="ToolProblemReportForm.resx">
       <DependentUpon>ToolProblemReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolSubtitleOverlayForm.resx">
+      <DependentUpon>ToolSubtitleOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolSubtitleSetingDialogForm.resx">
+      <DependentUpon>ToolSubtitleSetingDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolThreeMargeCloseAlertForm.resx">
       <DependentUpon>ToolThreeMargeCloseAlertForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2694,6 +2712,7 @@
     <Content Include="icon_music.ico" />
     <Content Include="icon_settings.ico" />
     <Content Include="icon_speaker.ico" />
+    <Content Include="icon_translate_subtile.ico" />
     <Content Include="icon_upload.ico" />
   </ItemGroup>
   <ItemGroup>

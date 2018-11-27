@@ -20,6 +20,7 @@ namespace FEBuilderGBA
             TranslateToROMFilename.AllowDropFilename();
             SimpleTranslateFromROMFilename.AllowDropFilename();
             SimpleTranslateToROMFilename.AllowDropFilename();
+            SimpleTranslateToTranslateDataFilename.AllowDropFilename();
 
             //google翻訳解禁
             useAutoTranslateCheckBox_CheckedChanged(null, null);

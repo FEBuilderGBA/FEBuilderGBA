@@ -14,6 +14,8 @@ namespace FEBuilderGBA
         public EmulatorMemoryForm()
         {
             InitializeComponent();
+
+            SetExplain();
         }
         private void EmulatorMemoryForm_Load(object sender, EventArgs e)
         {
@@ -41,6 +43,7 @@ namespace FEBuilderGBA
             string[] args = new string[0];
 
             SetSpeechIcon();
+            SetSubtileIcon();
 
             InputFormRef.makeLinkEventHandler("", controls, this.BGM, this.BGMName, 0, "SONG", args);
             InputFormRef.makeJumpEventHandler(this.BGM, this.J_BGM, "SONG", args);
@@ -224,8 +227,10 @@ namespace FEBuilderGBA
             this.N_InputFormRef.ReInit(stageStructAddr, 1);
         }
 
-        byte[] LastStringByte;
-        uint NextStringOffset;
+        string LastStringText; //最後に表示しているテキスト
+        byte[] LastStringByte; //最後に表示しているテキストのバイト列表現
+        uint NextStringOffset; //次のテキストの位置
+
         void UpdateString()
         {
             uint length = Program.RAM.strlen(Program.ROM.RomInfo.workmemory_text_buffer_address());
@@ -256,24 +261,20 @@ namespace FEBuilderGBA
                 this.LastStringByte = strbin;
 
                 FETextDecode decoder = new FETextDecode();
-                string lowText = decoder.UnHffmanPatchDecodeLow(strbin);
-                Speech(lowText);
-                lowText = TextForm.ConvertEscapeText(lowText);
-                CurrentTextBox.Text = lowText;
+                this.LastStringText = decoder.UnHffmanPatchDecodeLow(strbin);
+
+                //自動読み上げ
+                Speech(this.LastStringText);
+                CurrentTextBox.Text = TextForm.ConvertEscapeText(this.LastStringText);
             }
             this.NextStringOffset = offset;
 
+            //字幕表示
+            Subtile();
+
             try
             {
-                //そこから開始の@0003を探索する.
-                if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
-                {
-                    HightlightDisplayString("[A]");
-                }
-                else
-                {
-                    HightlightDisplayString("@0003");
-                }
+                HightlightDisplayString();
             }
             catch (ObjectDisposedException e)
             {
@@ -282,7 +283,7 @@ namespace FEBuilderGBA
             }
         }
 
-        void HightlightDisplayString(string keyword)
+        void HightlightDisplayString()
         {
             if (this.CurrentTextBox.IsDisposed)
             {//まれに破棄したオブジェクトでアクセスがある。なぜだ?
@@ -298,7 +299,8 @@ namespace FEBuilderGBA
             nextString = nextString.Replace("\r\n", "\n");
             //リッチテキストボックスは、改行コードが違うため、ずれる.
             //そのため、リッチボックス内のデータから検索することで微調整します.
-            string text = CurrentTextBox.Text;
+            string text = TextForm.ConvertEscapeText(this.LastStringText);
+            text = text.Replace("\r\n", "\n");
 
             //次の文字列のバッファが取れるので、そのバッファの位置を検索
             int endPoint = text.IndexOf(nextString);
@@ -307,6 +309,7 @@ namespace FEBuilderGBA
                 endPoint = text.Length;
             }
 
+            string keyword = TextForm.GetLineBreak();
             int startPoint;
             //バッファの位置は少しずれるみたいなので、@0003 / [A]の位置に戻す.
             int newEndPoint = text.LastIndexOf(keyword, endPoint);
@@ -849,6 +852,11 @@ namespace FEBuilderGBA
                 TextToSpeechForm.Stop();
                 IsAutoSpeech = false;
             }
+            if (IsSubtileSpeech)
+            {
+                ToolSubtitleSetingDialogForm.CloseSubTile();
+                IsSubtileSpeech = false;
+            }
         }
 
         private void ProcsListBox_DoubleClick(object sender, EventArgs e)
@@ -987,6 +995,7 @@ namespace FEBuilderGBA
         List<EventScript.OneCode> DisplayEventAsm;
         void InitRunningEventList()
         {
+            this.LastStringText = "";
             this.DisplayEventAsm = new List<EventScript.OneCode>();
             this.RunningEventListBox.OwnerDraw(DrawRunningEventList, DrawMode.OwnerDrawVariable, false);
         }
@@ -1951,7 +1960,6 @@ namespace FEBuilderGBA
         private void SpeechButton_Click(object sender, EventArgs e)
         {
             IsAutoSpeech = TextToSpeechForm.OptionTextToSpeech(CurrentTextBox.Text2, true);
-            SetSpeechIcon();
         }
         void SetSpeechIcon()
         {
@@ -1965,6 +1973,62 @@ namespace FEBuilderGBA
             }
             text = TextForm.StripAllCode(text);
             TextToSpeechForm.Speak(text);
+        }
+
+        bool IsSubtileSpeech = false;
+        private void SubtileButton_Click(object sender, EventArgs e)
+        {
+            IsSubtileSpeech = ToolSubtitleSetingDialogForm.OptionTextSubtile();
+        }
+        void SetSubtileIcon()
+        {
+            U.SetIcon(SubtileButton, Properties.Resources.icon_translate_subtile);
+        }
+        void Subtile()
+        {
+            if (!IsSubtileSpeech)
+            {
+                return;
+            }
+            FETextDecode decoder = new FETextDecode();
+            string lowText = this.LastStringText;
+            string nextString = decoder.UnHffmanPatchDecodeLow(U.subrange(this.LastStringByte, this.NextStringOffset, (uint)this.LastStringByte.Length));
+
+            int endPoint = lowText.IndexOf(nextString);
+            if (endPoint <= 0)
+            {
+                endPoint = lowText.Length;
+            }
+
+            string keyword = "@0003";
+            int startPoint;
+            //バッファの位置は少しずれるみたいなので、@0003 / [A]の位置に戻す.
+            int newEndPoint = lowText.LastIndexOf(keyword, endPoint);
+            if (newEndPoint <= 0)
+            {
+                startPoint = lowText.LastIndexOf(keyword, endPoint);
+            }
+            else
+            {
+                startPoint = lowText.LastIndexOf(keyword, newEndPoint);
+                endPoint = newEndPoint + keyword.Length;
+            }
+
+            if (startPoint < 0)
+            {
+                startPoint = 0;
+            }
+            else
+            {
+                startPoint += keyword.Length;
+            }
+
+            ToolSubtitleSetingDialogForm.ShowSubtile(lowText, startPoint);
+        }
+        void SetExplain()
+        {
+            this.SpeechButton.AccessibleDescription = R._("Windowsのテキスト読み上げ機能を利用して、文章を合成音声で読み上げます。\r\n利用するには、OSに合成音声ライブラリがインストールされている必要があります。");
+            this.SubtileButton.AccessibleDescription = R._("翻訳リソースを利用して、翻訳した字幕を表示します。");
         }
     }
 }

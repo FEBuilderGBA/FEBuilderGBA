@@ -35,6 +35,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.EventPage = new System.Windows.Forms.TabPage();
+            this.SubtileButton = new System.Windows.Forms.Button();
             this.SpeechButton = new System.Windows.Forms.Button();
             this.CurrentTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
@@ -671,6 +672,7 @@
             // EventPage
             // 
             this.EventPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EventPage.Controls.Add(this.SubtileButton);
             this.EventPage.Controls.Add(this.SpeechButton);
             this.EventPage.Controls.Add(this.CurrentTextBox);
             this.EventPage.Controls.Add(this.N_SelectAddress);
@@ -694,9 +696,18 @@
             this.EventPage.TabIndex = 0;
             this.EventPage.Text = "イベント";
             // 
+            // SubtileButton
+            // 
+            this.SubtileButton.Location = new System.Drawing.Point(507, 221);
+            this.SubtileButton.Name = "SubtileButton";
+            this.SubtileButton.Size = new System.Drawing.Size(46, 32);
+            this.SubtileButton.TabIndex = 311;
+            this.SubtileButton.UseVisualStyleBackColor = true;
+            this.SubtileButton.Click += new System.EventHandler(this.SubtileButton_Click);
+            // 
             // SpeechButton
             // 
-            this.SpeechButton.Location = new System.Drawing.Point(509, 221);
+            this.SpeechButton.Location = new System.Drawing.Point(460, 221);
             this.SpeechButton.Name = "SpeechButton";
             this.SpeechButton.Size = new System.Drawing.Size(46, 32);
             this.SpeechButton.TabIndex = 310;
@@ -6564,5 +6575,6 @@
         private TextBoxEx PARTY_AI2_TEXT;
         private TextBoxEx PARTY_AI1_TEXT;
         private System.Windows.Forms.Button SpeechButton;
+        private System.Windows.Forms.Button SubtileButton;
     }
 }

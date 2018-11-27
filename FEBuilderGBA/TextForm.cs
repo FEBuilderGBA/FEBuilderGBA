@@ -2259,6 +2259,14 @@ namespace FEBuilderGBA
             }
             return text;
         }
+        public static string GetLineBreak()
+        {
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                return "[A]";
+            }
+            return "@0003";
+        }
 
         static string GetEditorText(RichTextBoxEx target)
         {

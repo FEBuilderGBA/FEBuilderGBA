@@ -681,5 +681,119 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        public static string GetLangIntCodeToLangText(int lang)
+        {
+            if (lang == 0)
+            {
+                return "ja";
+            }
+            else if (lang == 1)
+            {
+                return "en";
+            }
+            else if (lang == 2)
+            {
+                return "zh";
+            }
+
+            return "en";
+        }
+        //テキストIDの区切り
+        public static bool IsTextIDCode(string line)
+        {
+            if (line.Length < 4)
+            {
+                return false;
+            }
+            if (line[0] != '[')
+            {
+                return false;
+            }
+            if (line[line.Length - 1] != ']')
+            {
+                return false;
+            }
+            for (int i = 1; i < line.Length - 1; i++)
+            {
+                if (!U.ishex(line[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        static void AppendDicTextID(Dictionary<string, string> transDic, uint id, string text)
+        {
+            if (id <= 0)
+            {
+                return;
+            }
+            string to_string = U.substr(text, 0, text.Length - 2);
+            to_string = TextForm.ConvertFEditorToEscape(to_string);
+
+            FETextDecode decode = new FETextDecode();
+            string from_string = decode.Decode(id);
+
+            transDic[from_string] = to_string;
+            transDic[U.ToHexString(id) + "|" + from_string] = to_string;
+        }
+
+        public static void AppendDicFixedFile(Dictionary<string, string> transDic, string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                return;
+            }
+
+            uint id = U.NOT_FOUND;
+            string text = "";
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (U.IsComment(line) || U.OtherLangLine(line))
+                {
+                    continue;
+                }
+                line = U.ClipComment(line);
+                if (line.Length <= 0)
+                {
+                    continue;
+                }
+
+                if (!IsTextIDCode(line))
+                {
+                    text += line + "\r\n";
+                    continue;
+                }
+
+                AppendDicTextID(transDic , id ,text);
+
+                //次のテキスト
+                id = U.atoh(U.substr(line, 1));
+                text = "";
+            }
+
+            //最後のデータ
+            AppendDicTextID(transDic, id, text);
+        }
+        public static Dictionary<string, string> MakeFixedDic(
+              string tralnslate_from, string tralnslate_to
+            , string rom_from, string rom_to
+        )
+        {
+            //よくある定型文の翻訳辞書
+            Dictionary<string, string> transDic = new Dictionary<string, string>();
+            if (rom_from != "" && rom_to != "")
+            {
+                transDic = TranslateTextUtil.LoadTranslateDic(tralnslate_from, tralnslate_to, rom_from, rom_to);
+            }
+            //固定文の辞書
+            TranslateTextUtil.AppendFixedDic(transDic, tralnslate_from, tralnslate_to);
+
+            return transDic;
+        }
     }
 }

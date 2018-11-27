@@ -130,7 +130,7 @@ namespace FEBuilderGBA
                         continue;
                     }
 
-                    if (!IsTextIDCode(line))
+                    if (! TranslateTextUtil.IsTextIDCode(line))
                     {
                         text += line + "\r\n";
                         continue;
@@ -151,30 +151,6 @@ namespace FEBuilderGBA
             }
         }
 
-        //テキストIDの区切り
-        bool IsTextIDCode(string line)
-        {
-            if (line.Length < 4)
-            {
-                return false;
-            }
-            if (line[0] != '[')
-            {
-                return false;
-            }
-            if (line[line.Length - 1] != ']')
-            {
-                return false;
-            }
-            for (int i = 1; i < line.Length - 1; i++)
-            {
-                if (!U.ishex(line[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
 
         public void ExportallText(Form self)
         {
@@ -274,6 +250,7 @@ namespace FEBuilderGBA
             writer.Write(translatetext + "\r\n");
         }
 
+
         public void ExportallText(Form self
             , string writeTextFileName
             , string tralnslate_from, string tralnslate_to
@@ -286,15 +263,7 @@ namespace FEBuilderGBA
             {
                 FETextDecode decode = new FETextDecode();
 
-                //よくある定型文の翻訳辞書
-                Dictionary<string, string> transDic = new Dictionary<string, string>();
-                if (rom_from != "" && rom_to != "")
-                {
-                    transDic = TranslateTextUtil.LoadTranslateDic(tralnslate_from, tralnslate_to, rom_from, rom_to);
-                }
-                //固定文の辞書
-                TranslateTextUtil.AppendFixedDic(transDic, tralnslate_from, tralnslate_to);
-
+                Dictionary<string, string> transDic = TranslateTextUtil.MakeFixedDic(tralnslate_from, tralnslate_to , rom_from , rom_to);
                 using (StreamWriter writer = new StreamWriter(writeTextFileName))
                 {
                     //テキスト
