@@ -1462,7 +1462,7 @@ namespace FEBuilderGBA
                 b.Width = 330;
                 b.Height = lineHeight * 2;
 
-                Size bb = TextForm.DrawMini(longtext, lb, g, b, isWithDraw);
+                Size bb = TextForm.DrawMini(longtext, lb, g, b, isWithDraw , true);
                 maxHeight = Math.Max(maxHeight, b.Y + bb.Height);
                 bounds.X += 330;
             }

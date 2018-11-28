@@ -24,8 +24,7 @@ namespace FEBuilderGBA
         Dictionary<string,string> TransDic;
         int ShortLength;
         bool ShowAlways;
-        public void Init(Dictionary<string,string> transDic
-            , int shortLength, bool showTitleBar , bool showAlways)
+        public void Init(Dictionary<string, string> transDic, int shortLength, bool showAlways)
         {
             this.CurrentText = "";
             this.CurrentSubtile = "";
@@ -34,14 +33,7 @@ namespace FEBuilderGBA
             this.ShortLength = shortLength;
             this.ShowAlways = showAlways;
 
-            if (showTitleBar)
-            {
-                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            }
-            else
-            {
-                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            }
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Text = R._("字幕");
         }
 
@@ -50,7 +42,11 @@ namespace FEBuilderGBA
         int CurrentPoint;
         bool IsHideForm;
 
-        public void ShowSubtile(string text,int startPoint)
+        int CountOf0010;
+        int CountOf00800004;
+        int CountOf0003;
+
+        public void ShowSubtile(string text, int startPoint, int endPoint)
         {
             if (text.Length < this.ShortLength)
             {//短すぎる.
@@ -58,28 +54,28 @@ namespace FEBuilderGBA
                 return;
             }
 
-            int showLines = 0;
             if (CurrentText == text)
             {
                 if (CurrentPoint == startPoint)
                 {//変更なし
                     return;
                 }
-                CurrentPoint = startPoint;
-                showLines = CalcLine(startPoint);
             }
             else
             {
                 CurrentText = text;
-                if (!TransDic.TryGetValue(text, out CurrentSubtile))
+                if (!TransDic.TryGetValue(text.ToUpper(), out CurrentSubtile))
                 {
                     CurrentSubtile = "";
                 }
-                CurrentPoint = 0;
+                this.Subtile.Text = TextForm.ConvertEscapeText(this.CurrentSubtile);
             }
 
-            string subtile = PickupLine(showLines);
-            this.Subtile.Text = TextForm.StripAllCode(subtile);
+            CurrentPoint = startPoint;
+
+            UpdateCount(startPoint, endPoint);
+
+            PickupLine();
 
             ShowForm();
         }
@@ -98,48 +94,149 @@ namespace FEBuilderGBA
         {
             if (!this.ShowAlways)
             {
-                this.Opacity = 0.3;
+                this.Opacity = 0.01;
                 this.IsHideForm = true;
             }
         }
 
-        string PickupLine(int showLines)
+        void PickupLine()
         {
-            string lineBreak = "@0003";
+            string code0010;
+            string code00800004;
+            string code0003 = TextForm.GetLineBreak();
+            if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
+            {
+                code0010 = "[LoadFace]";
+                code00800004 = "[LoadOverworldFaces]";
+            }
+            else
+            {
+                code0010 = "@0010";
+                code00800004 = "@0080@0004";
+            }
+
+            int snipPoint;
+            string r = TextForm.ConvertEscapeText(this.CurrentSubtile);
+            r = r.Replace("\r\n", "\n");
+            if (this.CountOf00800004 > 0)
+            {
+                r = PickupLineSub(r, this.CountOf00800004, code00800004, out snipPoint);
+            }
+            else
+            {
+                r = PickupLineSub(r, this.CountOf0010, code0010, out snipPoint);
+            }
+
+            int snipPoint2;
+            r = PickupLineSub(r, this.CountOf0003, code0003, out snipPoint2);
+
+            int startPoint = snipPoint + snipPoint2;
+
+            //キーワードハイライトト
+            TextForm.KeywordHighLight(this.Subtile);
+
+            Color displayBackColor = OptionForm.Color_NotifyWrite_BackColor();
+            Color displayForeColor = OptionForm.Color_NotifyWrite_ForeColor();
+            //表示部分の選択
+            this.Subtile.SelectionStart = startPoint;
+            this.Subtile.SelectionLength = r.Length;
+            this.Subtile.SelectionColor = displayForeColor;
+            this.Subtile.SelectionBackColor = displayBackColor;
+
+            //選択位置の調整
+            this.Subtile.SelectionStart = startPoint;
+            this.Subtile.SelectionLength = 0;
+        }
+        string PickupLineSub(string subtileText, int searchPoint, string keyword, out int out_p)
+        {
             int p = 0;
             for (int i = 0; true; i++)
             {
-                int f = this.CurrentSubtile.IndexOf(lineBreak, p);
+                int f = subtileText.IndexOf(keyword, p);
                 if (f < 0)
                 {
-                    return this.CurrentSubtile.Substring(p);
+                    out_p = p;
+                    return subtileText.Substring(p);
                 }
-                if (i >= showLines)
+                if (i >= searchPoint)
                 {
-                    return this.CurrentSubtile.Substring(p, f - p);
+                    out_p = p;
+                    return subtileText.Substring(p, f - p);
                 }
-                p = f + lineBreak.Length;
-            }
-        }
-        int CalcLine(int showLines)
-        {
-            string lineBreak = "@0003";
-            int p = 0;
-            for(int i = 0 ; true ; i ++)
-            {
-                int f = this.CurrentText.IndexOf(lineBreak, p);
-                if (f < 0)
-                {
-                    return i;
-                }
-                if (f >= showLines)
-                {
-                    return i;
-                }
-                p = f + lineBreak.Length;
+                p = f + keyword.Length;
             }
         }
 
+        void UpdateCount(int startPoint, int endPoint)
+        {
+            //英訳すると、@0003の数がかわってしまうことがあるため、
+            //まず、@0010の相対位置で引っ掛けて、
+            //その中から@0003を探索します.
+            int first0010 = this.CurrentText.IndexOf("@0010");
+            int first00800004 = this.CurrentText.IndexOf("@0080@0004");
+
+            int snipPoint;
+            string r;
+            if (first0010 <= 0 && first00800004 > 0)
+            {//ワールドマップイベントとしてパースしてみる
+                this.CountOf0010 = 0;
+                r = PickupLineSub2(this.CurrentText, startPoint, "@0080@0004", out this.CountOf00800004, out snipPoint);
+            }
+            else
+            {//会話イベント
+                this.CountOf00800004 = 0;
+                r = PickupLineSub2(this.CurrentText, startPoint, "@0010", out this.CountOf0010, out snipPoint);
+            }
+
+            int newStartPoint = startPoint - snipPoint;
+            if (newStartPoint < 0)
+            {
+                newStartPoint = 0;
+            }
+            r = PickupLineSub2(r, newStartPoint, "@0003", out this.CountOf0003, out snipPoint);
+            Log.Debug("Subtile", startPoint.ToString() , this.CountOf0010.ToString(), this.CountOf0003.ToString());
+
+            if (startPoint == endPoint)
+            {//既にネストさせているので、これ以上は無理.
+                return;
+            }
+
+            if (first0010 < 0 && first00800004 < 0)
+            {//@0010 と @0080@0004が一つもない
+                return;
+            }
+
+            //なぜかたくさん@0010があると、先頭の0がヒットしてしまうことがある.
+            //そうなると会話冒頭のメッセージが表示できないので、抜け道を作る
+            r = TextForm.StripAllCode(r);
+            if (r != "")
+            {
+                return;
+            }
+            //終端をベースに、もう一回取り直す.
+            UpdateCount(endPoint - 1,endPoint - 1);
+        }
+        string PickupLineSub2(string subtileText, int startPoint, string keyword, out int out_i, out int out_p)
+        {
+            int p = 0;
+            for (int i = 0; true; i++)
+            {
+                int f = subtileText.IndexOf(keyword, p);
+                if (f < 0)
+                {
+                    out_i = i;
+                    out_p = p;
+                    return subtileText.Substring(p);
+                }
+                if (f >= startPoint)
+                {
+                    out_i = i;
+                    out_p = p;
+                    return subtileText.Substring(p, f - p);
+                }
+                p = f + keyword.Length;
+            }
+        }
 
         private void ToolSubtitleOverlayForm_Activated(object sender, EventArgs e)
         {

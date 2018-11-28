@@ -151,18 +151,22 @@ namespace FEBuilderGBA
         {
             ToolSubtitleSetingDialogForm f = (ToolSubtitleSetingDialogForm)InputFormRef.JumpFormLow<ToolSubtitleSetingDialogForm>();
             f.ShowDialog();
+
             if (f.DialogResult == DialogResult.OK)
             {
                 if (g_SubTitleOverlay == null)
                 {
                     g_SubTitleOverlay = (ToolSubtitleOverlayForm)InputFormRef.JumpFormLow<ToolSubtitleOverlayForm>();
-                    g_SubTitleOverlay.FormClosed += (ss,ee) =>
+                    g_SubTitleOverlay.FormClosed += (ss, ee) =>
                     {
                         g_SubTitleOverlay = null;
                     };
                 }
 
-                g_SubTitleOverlay.Init(f.MakeTransDic(), f.ShortLength, f.ShowTitleBar.Checked , f.ShowAlways.Checked);
+                using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
+                {
+                    g_SubTitleOverlay.Init(f.MakeTransDic(), f.ShortLength,  f.ShowAlways.Checked);
+                }
                 g_SubTitleOverlay.Show();
             }
             else
@@ -176,13 +180,13 @@ namespace FEBuilderGBA
             return g_SubTitleOverlay != null;
         }
 
-        public static void ShowSubtile(string text,int startPoint)
+        public static void ShowSubtile(string text,int startPoint,int endPoint)
         {
             if (g_SubTitleOverlay == null)
             {//未初期化
                 return;
             }
-            g_SubTitleOverlay.ShowSubtile(text, startPoint);
+            g_SubTitleOverlay.ShowSubtile(text, startPoint, endPoint);
         }
 
         public static void CloseSubTile()

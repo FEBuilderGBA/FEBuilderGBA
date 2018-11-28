@@ -9,15 +9,25 @@ namespace FEBuilderGBA
     {
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
+        InputFormRef.PRIORITY_CODE PriorityCode;
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
+            this.PriorityCode = InputFormRef.SearchPriorityCode();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
             this.ROM = rom;
             this.SystemTextEncoder = encoder;
+            if (rom == Program.ROM)
+            {
+                this.PriorityCode = InputFormRef.SearchPriorityCode();
+            }
+            else
+            {
+                this.PriorityCode = InputFormRef.SearchPriorityCode(rom);
+            }
         }
 
 
@@ -134,7 +144,6 @@ namespace FEBuilderGBA
 
         public String UnHffmanPatchDecodeLow(byte[] srcdata)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
             List<byte> str = new List<byte>();
             int length = srcdata.Length;
             int i = 0;
@@ -144,14 +153,14 @@ namespace FEBuilderGBA
                 if (length > i + 1)
                 {
                     byte code2 = srcdata[i + 1];
-                    if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
                     {
                         i += U.AppendUTF8(str , srcdata , i);
                         continue;
                     }
                     else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
-                        i += AppendSJIS(str, code, code2, priorityCode);
+                        i += AppendSJIS(str, code, code2, this.PriorityCode);
                         continue;
                     }
 
@@ -197,7 +206,7 @@ namespace FEBuilderGBA
                     i += 1;
                     continue;
                 }
-                if (code >= 0x82 && priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                if (code >= 0x82 && this.PriorityCode == InputFormRef.PRIORITY_CODE.LAT1)
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                     AppendAtmarkCode(str, code); //@000Fとかのコード
                     i += 1;
@@ -437,8 +446,6 @@ namespace FEBuilderGBA
         {
             List<byte> str = new List<byte>();
 
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
-
             length = Math.Min(srcdata.Length,length);
             int len = 0;
             while( len < length )
@@ -447,18 +454,18 @@ namespace FEBuilderGBA
                 if (length > len + 1)
                 {
                     byte code2 = srcdata[len + 1];
-                    if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
                     {
                         len += U.AppendUTF8(str, srcdata, len);
                         continue;
                     }
                     else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
-                        len += AppendSJIS(str, code, code2, priorityCode);
+                        len += AppendSJIS(str, code, code2, this.PriorityCode);
                         continue;
                     }
                 }
-                if (priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                if (this.PriorityCode == InputFormRef.PRIORITY_CODE.LAT1)
                 {//英語版FE
                     if (code >= 0x82 || code == 0x1f)
                     {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.

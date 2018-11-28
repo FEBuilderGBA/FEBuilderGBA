@@ -39,7 +39,7 @@
             this.Subtile.Location = new System.Drawing.Point(0, 0);
             this.Subtile.Name = "Subtile";
             this.Subtile.Placeholder = "";
-            this.Subtile.Size = new System.Drawing.Size(1017, 101);
+            this.Subtile.Size = new System.Drawing.Size(976, 192);
             this.Subtile.TabIndex = 0;
             this.Subtile.Text = "";
             this.Subtile.DoubleClick += new System.EventHandler(this.Subtile_DoubleClick);
@@ -50,9 +50,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 101);
+            this.ClientSize = new System.Drawing.Size(976, 192);
             this.Controls.Add(this.Subtile);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToolSubtitleOverlayForm";
             this.Text = "字幕";
             this.TopMost = true;

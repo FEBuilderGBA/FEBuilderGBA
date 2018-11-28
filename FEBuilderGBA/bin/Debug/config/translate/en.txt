@@ -10408,14 +10408,11 @@ Fixed String TO
 :定型文ROM FROM
 Fixed String FROM
 
-:字幕ウィンドウにウィンドウバーを付与する
-Give a window bar to the subtitle window
-
 :字幕がない時でもウィンドウを表示する
 Display windows even when there is no subtitle
 
 :字幕表示
-Caption display
+Subtitle display
 
 :非表示
 Hide

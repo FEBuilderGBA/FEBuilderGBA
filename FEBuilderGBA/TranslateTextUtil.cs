@@ -769,7 +769,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                AppendDicTextID(transDic , id ,text);
+                AppendDicTextID(transDic, id, text);
 
                 //次のテキスト
                 id = U.atoh(U.substr(line, 1));

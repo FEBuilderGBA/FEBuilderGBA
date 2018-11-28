@@ -37,7 +37,6 @@
             this.LabelSimpleTranslateFromROMFilename = new System.Windows.Forms.Label();
             this.SimpleTranslateFromROMFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateFormROMFilenameSelectButton = new System.Windows.Forms.Button();
-            this.ShowTitleBar = new System.Windows.Forms.CheckBox();
             this.ShowAlways = new System.Windows.Forms.CheckBox();
             this.ShowButton = new System.Windows.Forms.Button();
             this.HideButton = new System.Windows.Forms.Button();
@@ -145,23 +144,9 @@
             this.SimpleTranslateFormROMFilenameSelectButton.UseVisualStyleBackColor = true;
             this.SimpleTranslateFormROMFilenameSelectButton.Click += new System.EventHandler(this.TranslateFormROMFilenameSelectButton_Click);
             // 
-            // ShowTitleBar
-            // 
-            this.ShowTitleBar.AutoSize = true;
-            this.ShowTitleBar.Checked = true;
-            this.ShowTitleBar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ShowTitleBar.Location = new System.Drawing.Point(13, 158);
-            this.ShowTitleBar.Name = "ShowTitleBar";
-            this.ShowTitleBar.Size = new System.Drawing.Size(317, 22);
-            this.ShowTitleBar.TabIndex = 111;
-            this.ShowTitleBar.Text = "字幕ウィンドウにウィンドウバーを付与する";
-            this.ShowTitleBar.UseVisualStyleBackColor = true;
-            // 
             // ShowAlways
             // 
             this.ShowAlways.AutoSize = true;
-            this.ShowAlways.Checked = true;
-            this.ShowAlways.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ShowAlways.Location = new System.Drawing.Point(12, 198);
             this.ShowAlways.Name = "ShowAlways";
             this.ShowAlways.Size = new System.Drawing.Size(303, 22);
@@ -197,7 +182,6 @@
             this.Controls.Add(this.HideButton);
             this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.ShowAlways);
-            this.Controls.Add(this.ShowTitleBar);
             this.Controls.Add(this.SimpleTranslateToTranslateDataFilename);
             this.Controls.Add(this.SimpleTranslateToTranslateDataFilenameButton);
             this.Controls.Add(this.LabelSimpleTranslateToTranslateDataFilename);
@@ -226,7 +210,6 @@
         private System.Windows.Forms.Label LabelSimpleTranslateFromROMFilename;
         private TextBoxEx SimpleTranslateFromROMFilename;
         private System.Windows.Forms.Button SimpleTranslateFormROMFilenameSelectButton;
-        private System.Windows.Forms.CheckBox ShowTitleBar;
         private System.Windows.Forms.CheckBox ShowAlways;
         private System.Windows.Forms.Button ShowButton;
         private System.Windows.Forms.Button HideButton;

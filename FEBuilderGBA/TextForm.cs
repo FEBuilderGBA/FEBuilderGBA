@@ -1414,7 +1414,7 @@ namespace FEBuilderGBA
         }
 
         //ミニバージョン イベント命令のテキストプレビューとしてよびだされる
-        public static Size DrawMini(string srctext, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
+        public static Size DrawMini(string srctext, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw, bool isFirstOnly)
         {
             List<TextBlock> simpleList;
             ParseTextList(srctext, out simpleList);
@@ -1435,13 +1435,16 @@ namespace FEBuilderGBA
                 bounds.Height -= size.Height;
                 totalHeight += size.Height;
 
-                if (bounds.Height <= 0)
+                if (isFirstOnly)
                 {
-                    break;
-                }
-                if (totalHeight >= listbounds.Height)
-                {
-                    break;
+                    if (bounds.Height <= 0)
+                    {
+                        break;
+                    }
+                    if (totalHeight >= listbounds.Height)
+                    {
+                        break;
+                    }
                 }
             }
             return new Size(bounds.X, bounds.Y);
@@ -2413,7 +2416,6 @@ namespace FEBuilderGBA
                 InputFormRef ifr = Init(null);
                 newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer());
             }
-            //UpdateDataCountCache();
             InputFormRef.ClearCacheDataCount();
             return newaddr;
         }
@@ -3129,5 +3131,6 @@ namespace FEBuilderGBA
 
             return write_pointer;
         }
+
     }
 }

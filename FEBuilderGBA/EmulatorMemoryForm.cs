@@ -295,12 +295,9 @@ namespace FEBuilderGBA
             FETextDecode decoder = new FETextDecode();
             string nextString = decoder.UnHffmanPatchDecodeLow(U.subrange(this.LastStringByte  , this.NextStringOffset,(uint)this.LastStringByte.Length));
             nextString = TextForm.ConvertEscapeText(nextString);
-            //リッチテキストは、\n固定.
-            nextString = nextString.Replace("\r\n", "\n");
             //リッチテキストボックスは、改行コードが違うため、ずれる.
             //そのため、リッチボックス内のデータから検索することで微調整します.
             string text = TextForm.ConvertEscapeText(this.LastStringText);
-            text = text.Replace("\r\n", "\n");
 
             //次の文字列のバッファが取れるので、そのバッファの位置を検索
             int endPoint = text.IndexOf(nextString);
@@ -2023,7 +2020,7 @@ namespace FEBuilderGBA
                 startPoint += keyword.Length;
             }
 
-            ToolSubtitleSetingDialogForm.ShowSubtile(lowText, startPoint);
+            ToolSubtitleSetingDialogForm.ShowSubtile(lowText,startPoint, endPoint);
         }
         void SetExplain()
         {
