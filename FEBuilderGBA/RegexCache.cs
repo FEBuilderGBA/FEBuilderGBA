@@ -26,6 +26,10 @@ namespace FEBuilderGBA
         {
             return Regex(pattern).Replace(str, replace);
         }
+        public static bool IsMatch(string str, string pattern)
+        {
+            return Regex(pattern).IsMatch(str);
+        }
         public static Match Match(string str, string pattern)
         {
             return Regex(pattern).Match(str);

@@ -239,7 +239,7 @@ namespace FEBuilderGBA
                 {
                     R.ShowStopError("Google翻訳がエラーを返しました。\r\n翻訳リクエストの送りすぎです。\r\n以降は、Google翻訳を無効にして処理を実装します。\r\n\r\n{0}", ee.ToString());
                     this.UseGoolgeTranslate = false;
-                    return;
+                    translatetext = text;
                 }
             }
 

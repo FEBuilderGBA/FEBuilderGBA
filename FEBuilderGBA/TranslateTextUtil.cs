@@ -382,7 +382,6 @@ namespace FEBuilderGBA
             return "";
         }
 
-        
         static string TranslateTextGoogleTranslate(string text, string from, string to)
         {
             //定型文で変換できない場合GoogleTranslateへ
@@ -439,7 +438,6 @@ namespace FEBuilderGBA
                 TranslateGoogle engine = new TranslateGoogle();
                 string transline = engine.Trans(oneline, from, to);
 
-
                 if (use0001)
                 {
                     transline = InsertSerifnl(transline, to, use0003, ref addchar);
@@ -450,7 +448,6 @@ namespace FEBuilderGBA
             string resultext = string.Join("", list);
             return resultext;
         }
-
         //テキストを翻訳する(時間がかかるので注意)
         public static string TranslateText(uint fromkey,string text, string from, string to, Dictionary<string, string> transDic, bool useGoolgeTranslate, bool modifiedTextOnly)
         {
@@ -475,10 +472,26 @@ namespace FEBuilderGBA
                 return r;
             }
 
+            if (to == "en")
+            {
+                if (U.isAsciiString(text))
+                {//既に英語じゃん
+                    return text;
+                }
+            }
+            else if (to == "ja")
+            {
+                if (U.isJAString(text))
+                {//既に日本語じゃん
+                    return text;
+                }
+            }
+
             if (useGoolgeTranslate == false)
             {//google翻訳を使わない場合、未翻訳の文章をそのまま返す.
                 return text;
             }
+
 
             //定型文で変換できない場合GoogleTranslateへ
             r = TranslateTextGoogleTranslate(text, from, to);

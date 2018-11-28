@@ -172,7 +172,6 @@ namespace FEBuilderGBA
 			    ,q
 		    );
 
-
             string contents = U.HttpGet(url);
             string a = U.cut(contents, "[\"", "\",");
             a = cleaning_text(a);

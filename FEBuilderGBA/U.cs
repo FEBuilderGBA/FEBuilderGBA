@@ -543,6 +543,11 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        public static bool isJAString(string str)
+        {
+            bool r = RegexCache.IsMatch(str, @"^[\p{IsHiragana}|\p{IsKatakana}|\p{IsCJKUnifiedIdeographs}]+$");
+            return r;
+        }
         public static bool isHexString(string str)
         {
             for (int i = 0; i < str.Length; i++)

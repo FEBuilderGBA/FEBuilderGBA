@@ -22,10 +22,7 @@ namespace FEBuilderGBA
             SimpleTranslateToROMFilename.AllowDropFilename();
             SimpleTranslateToTranslateDataFilename.AllowDropFilename();
 
-            //google翻訳解禁
             useAutoTranslateCheckBox_CheckedChanged(null, null);
-            UseGoogleTranslateCheckBox.Enabled = true;
-            UseGoogleTranslateCheckBox.Show();
 
             int from,to;
             TranslateTextUtil.TranslateLanguageAutoSelect(out from,out to);
@@ -84,7 +81,7 @@ namespace FEBuilderGBA
                     return;
                 }
 
-                useGoolgeTranslate = UseGoogleTranslateCheckBox.Checked;
+                useGoolgeTranslate = false;
             }
 
             ToolTranslateROM trans = new ToolTranslateROM();
@@ -330,7 +327,6 @@ namespace FEBuilderGBA
         {
             useAutoTranslateCheckBox.AccessibleDescription = R._("無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。");
             X_MODIFIED_TEXT_ONLY.AccessibleDescription = R._("変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。");
-            UseGoogleTranslateCheckBox.AccessibleDescription = R._("無改造ROMや、翻訳辞書で自動翻訳できない場合に、Google翻訳を利用して翻訳します。\r\nただし、大量にリクエストを投げると、BANされることがあります。\r\nBANされた場合は、翌日また試してください。\r\n何度もBANされる場合は、使用しないでください。");
             FontAutoGenelateCheckBox.AccessibleDescription = R._("ROMに収録されていないフォントを自動的に生成します。");
         }
     }
