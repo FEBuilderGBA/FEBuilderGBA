@@ -1,0 +1,261 @@
+#include "Extensions/Hack Installation.txt"
+
+#define _8x8(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "SHORT y_coord x_coord|(h_flip<<0xC)|(v_flip<<0xD) (tile_num | palette << 12)"
+#define _16x16(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "_8x8(x_coord|0x4000, y_coord|0x0000, h_flip, v_flip, tile_num, palette)"
+#define _64x32(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "_8x8(x_coord|0xC000, y_coord|0x4000, h_flip, v_flip, tile_num, palette)"
+#define _32x32(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "_8x8(x_coord|0x8000, y_coord|0x0000, h_flip, v_flip, tile_num, palette)"
+#define _16x32(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "_8x8(x_coord|0x8000, y_coord|0x8000, h_flip, v_flip, tile_num, palette)"
+#define _32x16(x_coord, y_coord, h_flip, v_flip, tile_num, palette) "_8x8(x_coord|0x8000, y_coord|0x4000, h_flip, v_flip, tile_num, palette)"
+
+PUSH
+ORG 0x78F4
+BYTE 0x20 //y Coordinates
+ORG 0x1C136
+BYTE 0x20
+ORG 0x1C184
+BYTE 0x20
+ORG 0x73DD0 //Level up with anims, portrait removed because it broke too much stuff
+SHORT 0 0
+ORG 0x7F2AC //Level up without anims
+WORD 0x1044
+
+ORG 0x2384E
+BYTE 0x1
+ORG 0x2360A
+BYTE 0x4
+ORG 0x2360E
+BYTE 0x1
+
+ORG 0x1C142
+BYTE 0x2
+ORG 0x1C132
+BYTE 0x01 //Marth
+ORG 0x1C1A0
+BYTE 0x2 //All of these are for the debug bootup(yes this is basically useless but fuck you)
+
+ORG 0x2DB50
+BYTE 0x2 //Fixing backing out of trading
+ORG 0x2D2EA
+BYTE 0x70 //70<<7 = 0x3800
+ORG 0x2D2FE
+BYTE 10 //Palette ID 10 because 8/9 is used by halfbody //Fixing trading
+
+ORG 0x23318
+BYTE 0x1
+ORG 0x4F238
+BYTE 0x1
+ORG 0x23576
+BYTE 0x1 //Fixing item menu overwriting the moving map sprite
+
+ORG 0x23572
+BYTE 0x4 //Fixing Equip with Item
+
+ORG 0x23314
+BYTE 0x4
+
+/*
+ORG 0x2332E
+BYTE 0x0D
+ORG 0x1E7AC
+BYTE 0x12 //Extend the Character stat box for Item.
+*/
+
+ORG 0x56C2
+BYTE 0x40 //Palette size
+
+ORG 0x5584
+BYTE 0x8 //Portrait ordering quick fix
+
+ORG 0x5586
+BYTE 0x2 //Portrait ordering quick fix
+
+ORG 0x88C4
+BYTE 0x12 //Fixing y
+
+//Fixing Stat Screen
+ORG 0x886A2
+BYTE 0x90 
+
+//Fixing prep screen supports
+ORG 0xA233C
+BYTE 0x70
+ORG 0xA2A5E
+BYTE 0x70
+
+//Fixing Prep Screen Trading
+/*ORG 0x99D5C
+BYTE 0x2
+ORG 0x989E0
+BYTE 0x2
+ORG 0x99BDE
+BYTE 0x2*/
+ORG 0x205C14
+WORD 0x4000
+ORG 0x205C1C
+WORD 0x6000
+ORG 0x205C44
+WORD 0x4000
+ORG 0x205C4C
+WORD 0x6000
+
+ORG 0x5A0838
+#incbin "NewStatScreenPortraitTsa.bin"
+#incbin "NewStatScreenPortraitTsa.bin"
+
+ORG 0x5D22
+SHORT 0 0
+
+//Fixing Text Box
+ORG 0x83AE
+SHORT 0x220C
+
+ORG 0x8540
+SHORT 0x3A01
+
+ORG 0x8578
+WORD 0x3815
+WORD 0x3816
+WORD 0x3814
+WORD 0x3C14
+
+ORG 0x8544
+WORD 0x3C16
+WORD 0x3C15
+WORD 0x3814
+
+ORG 0x5800
+POIN LeftMugOAM
+
+ORG 0x5808
+POIN RightMugOAM
+
+ORG 0x5810
+POIN LeftMugOAM
+
+ORG 0x5818
+POIN RightMugCutOAM
+
+ORG 0x5820
+POIN LeftMugCutOAM
+
+/*ORG 0x5594
+replaceWithHack(Load6CFACEGraphics)*/
+
+POP
+
+RightMugOAM:
+SHORT 22 //Number of OAM data
+
+//Face
+_64x32(224|0x100, 0, 0, 0, 0x0, 0) //all the |0x100 one are negative, it uses the center of the portrait
+_64x32(224|0x100, 32, 0, 0, 0x8, 0)
+_16x16(208|0x100, 0, 0, 0, 0x9A, 0)
+_16x16(32, 0, 0, 0, 0xDA, 0)
+
+//Body 1
+_32x16(224|0x100, 64, 0, 0, 0x10, 0)
+_32x16(0, 64, 0, 0, 0x50, 0)
+
+//Shoulders
+_16x32(208|0x100, 48, 0, 0, 0x14, 0)
+_16x32(32, 48, 0, 0, 0x16, 0)
+_16x32(48, 48, 0, 0, 0x96, 0)
+_16x32(192|0x100, 48, 0, 0, 0x98, 0)
+_16x32(208|0x100, 16, 0, 0, 0x92, 0)
+_16x32(32, 16, 0, 0, 0x94, 0)
+
+//Part 1 of the halfbody
+_16x32(192|0x100, 80, 0, 0, 0x80, 0)
+_32x32(208|0x100, 80, 0, 0, 0x82, 0)
+_32x32(240|0x100, 80, 0, 0, 0x86, 0)
+_32x32(16, 80, 0, 0, 0x8A, 0)
+_16x32(48, 80, 0, 0, 0x8E, 0)
+
+//Part 2 of the halfbody
+_16x16(192|0x100, 112, 0, 0, 0x90, 0)
+_32x16(208|0x100, 112, 0, 0, 0x5C, 0)
+_32x16(240|0x100, 112, 0, 0, 0x9C, 0)
+_32x16(16, 112, 0, 0, 0xDC, 0)
+_16x16(48, 112, 0, 0, 0xD0, 0)
+
+
+LeftMugOAM:
+SHORT 22
+//Face
+_64x32(224|0x100, 0, 1, 0, 0x0, 0) //all the |0x100 one are negative, it uses the center of the portrait
+_64x32(224|0x100, 32, 1, 0, 0x8, 0)
+_16x16(32, 0, 1, 0, 0x9A, 0)
+_16x16(208|0x100, 0, 1, 0, 0xDA, 0)
+
+//Body 1
+_32x16(0, 64, 1, 0, 0x10, 0)
+_32x16(224|0x100, 64, 1, 0, 0x50, 0)
+
+//Shoulders
+_16x32(32, 48, 1, 0, 0x14, 0)
+_16x32(208|0x100, 48, 1, 0, 0x16, 0)
+_16x32(192|0x100, 48, 1, 0, 0x96, 0)
+_16x32(48, 48, 1, 0, 0x98, 0)
+_16x32(32, 16, 1, 0, 0x92, 0)
+_16x32(208|0x100, 16, 1, 0, 0x94, 0)
+
+//Part 1 of the halfbody
+_16x32(48, 80, 1, 0, 0x80, 0)
+_32x32(16, 80, 1, 0, 0x82, 0)
+_32x32(240|0x100, 80, 1, 0, 0x86, 0)
+_32x32(208|0x100, 80, 1, 0, 0x8A, 0)
+_16x32(192|0x100, 80, 1, 0, 0x8E, 0)
+
+//Part 2 of the halfbody
+_16x16(48, 112, 1, 0, 0x90, 0)
+_32x16(16, 112, 1, 0, 0x5C, 0)
+_32x16(240|0x100, 112, 1, 0, 0x9C, 0)
+_32x16(208|0x100, 112, 1, 0, 0xDC, 0)
+_16x16(192|0x100, 112, 1, 0, 0xD0, 0)
+
+RightMugCutOAM:
+SHORT 12
+//Face
+_64x32(224|0x100, 0, 0, 0, 0x0, 0) //all the |0x100 one are negative, it uses the center of the portrait
+_64x32(224|0x100, 32, 0, 0, 0x8, 0)
+_16x16(208|0x100, 0, 0, 0, 0x9A, 0)
+_16x16(32, 0, 0, 0, 0xDA, 0)
+
+//Body 1
+_32x16(224|0x100, 64, 0, 0, 0x10, 0)
+_32x16(0, 64, 0, 0, 0x50, 0)
+
+//Shoulders
+_16x32(208|0x100, 48, 0, 0, 0x14, 0)
+_16x32(32, 48, 0, 0, 0x16, 0)
+_16x32(48, 48, 0, 0, 0x96, 0)
+_16x32(192|0x100, 48, 0, 0, 0x98, 0)
+_16x32(208|0x100, 16, 0, 0, 0x92, 0)
+_16x32(32, 16, 0, 0, 0x94, 0)
+
+LeftMugCutOAM:
+SHORT 12
+//Face
+_64x32(224|0x100, 0, 1, 0, 0x0, 0) //all the |0x100 one are negative, it uses the center of the portrait
+_64x32(224|0x100, 32, 1, 0, 0x8, 0)
+_16x16(32, 0, 1, 0, 0x9A, 0)
+_16x16(208|0x100, 0, 1, 0, 0xDA, 0)
+
+//Body 1
+_32x16(0, 64, 1, 0, 0x10, 0)
+_32x16(224|0x100, 64, 1, 0, 0x50, 0)
+
+//Shoulders
+_16x32(32, 48, 1, 0, 0x14, 0)
+_16x32(208|0x100, 48, 1, 0, 0x16, 0)
+_16x32(192|0x100, 48, 1, 0, 0x96, 0)
+_16x32(48, 48, 1, 0, 0x98, 0)
+_16x32(32, 16, 1, 0, 0x92, 0)
+_16x32(208|0x100, 16, 1, 0, 0x94, 0)
+
+ALIGN 4
+
+Load6CFACEGraphics:
+#incbin "Load6CFACEGraphics.dmp"
+
+ALIGN 4

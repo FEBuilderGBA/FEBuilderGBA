@@ -10510,9 +10510,6 @@ We will use translated dictionary and translation site to obtain translated text
 :変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。
 Save only the changed text file.\r\nConversations that exist in unmodified ROM can be edited automatically and there is no need to translate.\r\nSpecify it to reduce translation data.
 
-:無改造ROMや、翻訳辞書で自動翻訳できない場合に、Google翻訳を利用して翻訳します。\r\nただし、大量にリクエストを投げると、BANされることがあります。\r\nBANされた場合は、翌日また試してください。\r\n何度もBANされる場合は、使用しないでください。
-If you can not translate automatically with unmodified ROM or translation dictionary, we translate using Google translation.\r\nHowever, if you throw a large number of requests, you may be BANed.\r\nIf you were BAN, please try again the next day.\r\nPlease do not use it when you BAN many times.
-
 :ROMに収録されていないフォントを自動的に生成します。
 It automatically generates fonts not included in ROM.
 
@@ -10539,9 +10536,6 @@ Translate to Export
 
 :改造されたテキストのみ取得する
 Acquire only remodeled text
-
-:定型文以外をgoogle translateを利用して翻訳して書き出す
-Translate and Export non-fixed string with Google Translate
 
 :定型文の翻訳(FROM ROMと TO ROMから、定型文を取得し、翻訳の参考にする)
 Fixed String (Get fixed string from FROM ROM and TO ROM ,reference for translation)
