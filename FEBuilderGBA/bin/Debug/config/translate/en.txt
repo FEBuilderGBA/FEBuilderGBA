@@ -5950,6 +5950,9 @@ The width or height of the map file is incorrect.\r\n\r\nMapFilename:{0}\r\nWidt
 :マップデータの形式が正しくありません。\r\nTiledで保存するデータ形式をcsvか、tmxディフォルトのxml形式にしてください。
 The format of the map data is incorrect.\r\nPlease set the data format saved with Tiled to csv or tmx default xml format.
 
+:このマップ「{0}」には、マップ変化を格納するPLISTが存在しません。\r\nまず「マップ変化追加」ボタンを押して、PLISTを確保してください。
+In this map "{0}" there is no PLIST to store map changes.\r\nFirst, press "Add Map Change" button to reserve PLIST.
+
 :マップ変化数がたりません。{0}個必要です。インポートする前にマップ変化から確保してください。\r\n\r\nマップファイル:{1}\r\n
 There is no Tile Changes count.{0} items are required.Please secure from Tile Changes before importing.\r\n\r\nMapFilename:{1}\r\n
 

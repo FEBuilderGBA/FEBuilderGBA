@@ -1,6 +1,6 @@
-﻿NAME=MUSIC_NAZO 0x43
-NAME.en=MUSIC_Unknown 0x43
-NAME.zh=音乐_资料 0x43
+﻿NAME=MUSIC_メインテーマ(OPタイトル) 0x43
+NAME.en=MUSIC_Main theme(OP title screen) 0x43
+NAME.zh=音乐_Main theme(OP title screen) 0x43
 
 //アドレスパッチとして実装します
 TYPE=ADDR

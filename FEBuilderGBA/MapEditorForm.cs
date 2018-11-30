@@ -1455,6 +1455,10 @@ this.MapObjImage);
             {
                 //マップ変化数がたりません...なら、増設しよう.
                 uint mapid = (uint)this.MAPCOMBO.SelectedIndex;
+                if (!CheckExistsMapChangePlist(mapid))
+                {
+                    return R._("このマップ「{0}」には、マップ変化を格納するPLISTが存在しません。\r\nまず「マップ変化追加」ボタンを押して、PLISTを確保してください。" , U.ToHexString(mapid) );
+                }
                 bool r = MapChangeForm.ResizeChangeList(mapid, (uint)(layerMapping.Count));
                 if (!r)
                 {
@@ -1517,6 +1521,12 @@ this.MapObjImage);
             U.SelectedIndexSafety(MapStyle, mapStyle);
 
             return "";
+        }
+
+        static bool CheckExistsMapChangePlist(uint mapid)
+        {
+            MapSettingForm.PLists plist = MapSettingForm.GetMapPListsWhereMapID(mapid);
+            return plist.mapchange_plist != 0;
         }
 
         static List<UInt16> ImportTMXDataBase64(StreamReader reader, uint size, string compressMethod)
