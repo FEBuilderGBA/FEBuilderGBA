@@ -924,7 +924,7 @@
             // 
             this.L_17_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_17_COMBO.FormattingEnabled = true;
-            this.L_17_COMBO.Location = new System.Drawing.Point(198, 128);
+            this.L_17_COMBO.Location = new System.Drawing.Point(199, 128);
             this.L_17_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_17_COMBO.Name = "L_17_COMBO";
             this.L_17_COMBO.Size = new System.Drawing.Size(687, 26);

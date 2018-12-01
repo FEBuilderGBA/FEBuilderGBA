@@ -213,6 +213,12 @@
     </Compile>
     <Compile Include="RecycleAddress.cs" />
     <Compile Include="RegexCache.cs" />
+    <Compile Include="SkillSystemsEffectivenessReworkClassTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillSystemsEffectivenessReworkClassTypeForm.Designer.cs">
+      <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SymbolUtil.cs" />
     <Compile Include="TextID.cs" />
     <Compile Include="TextToSpeechForm.cs">
@@ -1821,6 +1827,12 @@
     <Compile Include="AIPerformStaffForm.Designer.cs">
       <DependentUpon>AIPerformStaffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemEffectivenessSkillSystemsReworkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemEffectivenessSkillSystemsReworkForm.Designer.cs">
+      <DependentUpon>ItemEffectivenessSkillSystemsReworkForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -1921,6 +1933,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RAMUnitStateFlagForm.resx">
       <DependentUpon>RAMUnitStateFlagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillSystemsEffectivenessReworkClassTypeForm.resx">
+      <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextToSpeechForm.resx">
       <DependentUpon>TextToSpeechForm.cs</DependentUpon>
@@ -2693,6 +2708,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIPerformStaffForm.resx">
       <DependentUpon>AIPerformStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEffectivenessSkillSystemsReworkForm.resx">
+      <DependentUpon>ItemEffectivenessSkillSystemsReworkForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

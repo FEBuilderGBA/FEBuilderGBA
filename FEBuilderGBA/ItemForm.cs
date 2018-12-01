@@ -17,9 +17,17 @@ namespace FEBuilderGBA
             InitializeComponent();
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
-            this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
-            
-            this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
+
+            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            {//SkillSystemsによる 特効リワーク
+                this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassTypeAndText, DrawMode.OwnerDrawFixed);
+            }
+            else
+            {
+                this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
+                this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
+            }
+
 
             this.InputFormRef = Init(this);
             this.InputFormRef.UseWriteProtectionID00 = true; //ID:0x00を書き込み禁止
@@ -167,8 +175,16 @@ namespace FEBuilderGBA
         }
         private void P16_ValueChanged(object sender, EventArgs e)
         {
-            List<U.AddrResult>  arlist = ItemEffectivenessForm.MakeCriticalClassList((uint)P16.Value);
-            U.ConvertListBox(arlist, ref CLASS_LISTBOX);
+            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            {//SkillSystemsによる 特効リワーク
+                List<U.AddrResult> arlist = ItemEffectivenessSkillSystemsReworkForm.MakeCriticalClassList((uint)P16.Value);
+                U.ConvertListBox(arlist, ref CLASS_LISTBOX);
+            }
+            else
+            {
+                List<U.AddrResult> arlist = ItemEffectivenessForm.MakeCriticalClassList((uint)P16.Value);
+                U.ConvertListBox(arlist, ref CLASS_LISTBOX);
+            }
         }
 
         private void W26_ValueChanged(object sender, EventArgs e)
@@ -189,6 +205,9 @@ namespace FEBuilderGBA
             {
                 InputFormRef InputFormRef = Init(null);
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Item", new uint[] { 12 , 16 });
+
+                //SkillSystemsによる 特効リワーク
+                InputFormRef.class_type_enum effectivenesRework = InputFormRef.SearchClassType();
 
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
@@ -218,12 +237,24 @@ namespace FEBuilderGBA
                     uint itemEffectiveness = Program.ROM.p32(addr + 16);
                     if (itemEffectiveness > 0)
                     {
-                        List<U.AddrResult> arlist = ItemEffectivenessForm.MakeCriticalClassList((uint)itemEffectiveness);
-                        FEBuilderGBA.Address.AddAddress(list,itemEffectiveness
-                            , (uint)(arlist.Count + 1)
-                            , addr + 16
-                            , "ItemEffectiveness " + U.To0xHexString(i)
-                            , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                        if (effectivenesRework == FEBuilderGBA.InputFormRef.class_type_enum.SkillSystems_Rework)
+                        {
+                            List<U.AddrResult> arlist = ItemEffectivenessSkillSystemsReworkForm.MakeCriticalClassList((uint)itemEffectiveness);
+                            FEBuilderGBA.Address.AddAddress(list, itemEffectiveness
+                                , (uint)(arlist.Count + 1)  * 4
+                                , addr + 16
+                                , "ItemEffectiveness " + U.To0xHexString(i)
+                                , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                        }
+                        else
+                        {
+                            List<U.AddrResult> arlist = ItemEffectivenessForm.MakeCriticalClassList((uint)itemEffectiveness);
+                            FEBuilderGBA.Address.AddAddress(list, itemEffectiveness
+                                , (uint)(arlist.Count + 1)
+                                , addr + 16
+                                , "ItemEffectiveness " + U.To0xHexString(i)
+                                , FEBuilderGBA.Address.DataTypeEnum.BIN);
+                        }
                     }
                 }
             }

@@ -1298,5 +1298,43 @@ namespace FEBuilderGBA
             bounds.Y += lineHeight;
             return new Size(bounds.X, bounds.Y);
         }
+        //ClassType + テキストを書く
+        public static Size DrawClassTypeAndText(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            string text = lb.Items[index].ToString();
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+            Font normalFont = lb.Font;
+            Rectangle bounds = listbounds;
+
+            int textmargineY = (OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
+
+            //テキストの先頭にアイコン番号(クラス番号が入っている. 無駄だが汎用性を考えるとほかに方法がない)
+            uint icon = U.atoh(text);
+            Bitmap bitmap = ClassForm.DrawClassTypeIcon(icon);
+            U.MakeTransparent(bitmap);
+
+            //アイコンを描く.
+            Rectangle b = bounds;
+            b.Width = OWNER_DRAW_ICON_SIZE;
+            b.Height = OWNER_DRAW_ICON_SIZE;
+            bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+            //テキストを描く.
+            b = bounds;
+            b.Y += textmargineY;
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, b);
+
+            bitmap.Dispose();
+            brush.Dispose();
+
+
+            bounds.Y += OWNER_DRAW_ICON_SIZE;
+            return new Size(bounds.X, bounds.Y);
+        }
     }
 }

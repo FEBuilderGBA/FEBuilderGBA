@@ -1,6 +1,6 @@
 ﻿namespace FEBuilderGBA
 {
-    partial class ItemEffectivenessForm
+    partial class ItemEffectivenessSkillSystemsReworkForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ItemListBox = new FEBuilderGBA.ListBoxEx();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
@@ -36,56 +35,51 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.N_W2 = new System.Windows.Forms.NumericUpDown();
+            this.N_J_2_CLASSTYPE = new System.Windows.Forms.Label();
+            this.N_J_1 = new System.Windows.Forms.Label();
+            this.N_B1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.N_L_0_CLASSICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.N_J_0_CLASS = new System.Windows.Forms.Label();
-            this.N_L_0_CLASS = new FEBuilderGBA.TextBoxEx();
+            this.N_J_0 = new System.Windows.Forms.Label();
             this.N_B0 = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.N_WriteButton = new System.Windows.Forms.Button();
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.N_AddressListExpandsButton = new System.Windows.Forms.Button();
-            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.N_L_2_CLASSTYPEICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.N_L_2_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
+            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.ItemListBox = new FEBuilderGBA.ListBoxEx();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N_L_0_CLASSICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_W2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B0)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ItemListBox
-            // 
-            this.ItemListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ItemListBox.FormattingEnabled = true;
-            this.ItemListBox.IntegralHeight = false;
-            this.ItemListBox.ItemHeight = 18;
-            this.ItemListBox.Location = new System.Drawing.Point(716, 97);
-            this.ItemListBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ItemListBox.Name = "ItemListBox";
-            this.ItemListBox.Size = new System.Drawing.Size(220, 400);
-            this.ItemListBox.TabIndex = 110;
             // 
             // label10
             // 
@@ -117,7 +111,7 @@
             this.N_ReloadListButton.Location = new System.Drawing.Point(409, 0);
             this.N_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReloadListButton.Name = "N_ReloadListButton";
-            this.N_ReloadListButton.Size = new System.Drawing.Size(198, 30);
+            this.N_ReloadListButton.Size = new System.Drawing.Size(189, 30);
             this.N_ReloadListButton.TabIndex = 26;
             this.N_ReloadListButton.Text = "特効再取得";
             this.N_ReloadListButton.UseVisualStyleBackColor = true;
@@ -168,20 +162,6 @@
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LabelFilter.Click += new System.EventHandler(this.label30_Click);
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 27);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(324, 508);
-            this.AddressList.TabIndex = 108;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -210,10 +190,14 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.N_L_2_CLASSTYPEICON);
+            this.panel7.Controls.Add(this.N_W2);
+            this.panel7.Controls.Add(this.N_J_2_CLASSTYPE);
+            this.panel7.Controls.Add(this.N_J_1);
+            this.panel7.Controls.Add(this.N_B1);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.N_L_0_CLASSICON);
-            this.panel7.Controls.Add(this.N_J_0_CLASS);
-            this.panel7.Controls.Add(this.N_L_0_CLASS);
+            this.panel7.Controls.Add(this.N_J_0);
+            this.panel7.Controls.Add(this.N_L_2_CLASSTYPE);
             this.panel7.Controls.Add(this.N_B0);
             this.panel7.Location = new System.Drawing.Point(269, 73);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
@@ -221,51 +205,78 @@
             this.panel7.Size = new System.Drawing.Size(444, 430);
             this.panel7.TabIndex = 179;
             // 
+            // N_W2
+            // 
+            this.N_W2.Location = new System.Drawing.Point(186, 76);
+            this.N_W2.Margin = new System.Windows.Forms.Padding(2);
+            this.N_W2.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.N_W2.Name = "N_W2";
+            this.N_W2.Size = new System.Drawing.Size(89, 25);
+            this.N_W2.TabIndex = 109;
+            // 
+            // N_J_2_CLASSTYPE
+            // 
+            this.N_J_2_CLASSTYPE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_J_2_CLASSTYPE.Location = new System.Drawing.Point(4, 71);
+            this.N_J_2_CLASSTYPE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_J_2_CLASSTYPE.Name = "N_J_2_CLASSTYPE";
+            this.N_J_2_CLASSTYPE.Size = new System.Drawing.Size(178, 30);
+            this.N_J_2_CLASSTYPE.TabIndex = 108;
+            this.N_J_2_CLASSTYPE.Text = "ClassType";
+            this.N_J_2_CLASSTYPE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_J_1
+            // 
+            this.N_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_J_1.Location = new System.Drawing.Point(4, 40);
+            this.N_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_J_1.Name = "N_J_1";
+            this.N_J_1.Size = new System.Drawing.Size(178, 30);
+            this.N_J_1.TabIndex = 107;
+            this.N_J_1.Text = "coefficient_times*2";
+            this.N_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_B1
+            // 
+            this.N_B1.Location = new System.Drawing.Point(186, 45);
+            this.N_B1.Margin = new System.Windows.Forms.Padding(2);
+            this.N_B1.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.N_B1.Name = "N_B1";
+            this.N_B1.Size = new System.Drawing.Size(62, 25);
+            this.N_B1.TabIndex = 105;
+            // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 404);
+            this.label4.Location = new System.Drawing.Point(8, 343);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(363, 18);
+            this.label4.Size = new System.Drawing.Size(423, 85);
             this.label4.TabIndex = 104;
-            this.label4.Text = "リストを縮める場合は、終端:0 を設定してください。";
+            this.label4.Text = "リストを縮める場合は、3つの項目を全部:00にして終端記号を入れてください。";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // N_L_0_CLASSICON
+            // N_J_0
             // 
-            this.N_L_0_CLASSICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.N_L_0_CLASSICON.Location = new System.Drawing.Point(306, 12);
-            this.N_L_0_CLASSICON.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_0_CLASSICON.Name = "N_L_0_CLASSICON";
-            this.N_L_0_CLASSICON.Size = new System.Drawing.Size(32, 32);
-            this.N_L_0_CLASSICON.TabIndex = 103;
-            this.N_L_0_CLASSICON.TabStop = false;
-            // 
-            // N_J_0_CLASS
-            // 
-            this.N_J_0_CLASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_0_CLASS.Location = new System.Drawing.Point(4, 8);
-            this.N_J_0_CLASS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N_J_0_CLASS.Name = "N_J_0_CLASS";
-            this.N_J_0_CLASS.Size = new System.Drawing.Size(80, 30);
-            this.N_J_0_CLASS.TabIndex = 57;
-            this.N_J_0_CLASS.Text = "クラス";
-            this.N_J_0_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N_L_0_CLASS
-            // 
-            this.N_L_0_CLASS.ErrorMessage = "";
-            this.N_L_0_CLASS.Location = new System.Drawing.Point(151, 12);
-            this.N_L_0_CLASS.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_L_0_CLASS.Name = "N_L_0_CLASS";
-            this.N_L_0_CLASS.Placeholder = "";
-            this.N_L_0_CLASS.ReadOnly = true;
-            this.N_L_0_CLASS.Size = new System.Drawing.Size(136, 25);
-            this.N_L_0_CLASS.TabIndex = 55;
+            this.N_J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_J_0.Location = new System.Drawing.Point(4, 8);
+            this.N_J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_J_0.Name = "N_J_0";
+            this.N_J_0.Size = new System.Drawing.Size(178, 30);
+            this.N_J_0.TabIndex = 57;
+            this.N_J_0.Text = "00";
+            this.N_J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N_B0
             // 
             this.N_B0.Hexadecimal = true;
-            this.N_B0.Location = new System.Drawing.Point(90, 13);
+            this.N_B0.Location = new System.Drawing.Point(186, 13);
             this.N_B0.Margin = new System.Windows.Forms.Padding(2);
             this.N_B0.Maximum = new decimal(new int[] {
             -559939585,
@@ -292,17 +303,6 @@
             this.panel6.Size = new System.Drawing.Size(672, 64);
             this.panel6.TabIndex = 178;
             // 
-            // N_BlockSize
-            // 
-            this.N_BlockSize.ErrorMessage = "";
-            this.N_BlockSize.Location = new System.Drawing.Point(91, 34);
-            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_BlockSize.Name = "N_BlockSize";
-            this.N_BlockSize.Placeholder = "";
-            this.N_BlockSize.ReadOnly = true;
-            this.N_BlockSize.Size = new System.Drawing.Size(72, 25);
-            this.N_BlockSize.TabIndex = 55;
-            // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -313,17 +313,6 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Size:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N_SelectAddress
-            // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(307, 32);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(136, 25);
-            this.N_SelectAddress.TabIndex = 54;
             // 
             // label22
             // 
@@ -393,18 +382,6 @@
             this.N_AddressListExpandsButton.Text = "リストの拡張";
             this.N_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
-            // N_AddressList
-            // 
-            this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N_AddressList.FormattingEnabled = true;
-            this.N_AddressList.IntegralHeight = false;
-            this.N_AddressList.ItemHeight = 18;
-            this.N_AddressList.Location = new System.Drawing.Point(-1, 30);
-            this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(262, 436);
-            this.N_AddressList.TabIndex = 108;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -464,7 +441,87 @@
             this.panel3.Size = new System.Drawing.Size(1264, 30);
             this.panel3.TabIndex = 93;
             // 
-            // ItemEffectivenessForm
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 27);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(324, 508);
+            this.AddressList.TabIndex = 108;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // N_L_2_CLASSTYPEICON
+            // 
+            this.N_L_2_CLASSTYPEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N_L_2_CLASSTYPEICON.Location = new System.Drawing.Point(297, 71);
+            this.N_L_2_CLASSTYPEICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_2_CLASSTYPEICON.Name = "N_L_2_CLASSTYPEICON";
+            this.N_L_2_CLASSTYPEICON.Size = new System.Drawing.Size(32, 32);
+            this.N_L_2_CLASSTYPEICON.TabIndex = 110;
+            this.N_L_2_CLASSTYPEICON.TabStop = false;
+            // 
+            // N_L_2_CLASSTYPE
+            // 
+            this.N_L_2_CLASSTYPE.ErrorMessage = "";
+            this.N_L_2_CLASSTYPE.Location = new System.Drawing.Point(159, 105);
+            this.N_L_2_CLASSTYPE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_L_2_CLASSTYPE.Name = "N_L_2_CLASSTYPE";
+            this.N_L_2_CLASSTYPE.Placeholder = "";
+            this.N_L_2_CLASSTYPE.ReadOnly = true;
+            this.N_L_2_CLASSTYPE.Size = new System.Drawing.Size(280, 25);
+            this.N_L_2_CLASSTYPE.TabIndex = 55;
+            // 
+            // N_BlockSize
+            // 
+            this.N_BlockSize.ErrorMessage = "";
+            this.N_BlockSize.Location = new System.Drawing.Point(91, 34);
+            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
+            this.N_BlockSize.ReadOnly = true;
+            this.N_BlockSize.Size = new System.Drawing.Size(72, 25);
+            this.N_BlockSize.TabIndex = 55;
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(307, 32);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N_SelectAddress.TabIndex = 54;
+            // 
+            // N_AddressList
+            // 
+            this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
+            this.N_AddressList.ItemHeight = 18;
+            this.N_AddressList.Location = new System.Drawing.Point(-1, 30);
+            this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N_AddressList.Name = "N_AddressList";
+            this.N_AddressList.Size = new System.Drawing.Size(262, 436);
+            this.N_AddressList.TabIndex = 108;
+            // 
+            // ItemListBox
+            // 
+            this.ItemListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ItemListBox.FormattingEnabled = true;
+            this.ItemListBox.IntegralHeight = false;
+            this.ItemListBox.ItemHeight = 18;
+            this.ItemListBox.Location = new System.Drawing.Point(716, 97);
+            this.ItemListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ItemListBox.Name = "ItemListBox";
+            this.ItemListBox.Size = new System.Drawing.Size(220, 400);
+            this.ItemListBox.TabIndex = 110;
+            // 
+            // ItemEffectivenessSkillSystemsReworkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -475,7 +532,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ItemEffectivenessForm";
+            this.Name = "ItemEffectivenessSkillSystemsReworkForm";
             this.Text = "特効指定";
             this.Load += new System.EventHandler(this.ItemCriticalForm_Load);
             this.panel5.ResumeLayout(false);
@@ -484,7 +541,8 @@
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N_L_0_CLASSICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_W2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B0)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -492,6 +550,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N_L_2_CLASSTYPEICON)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,8 +579,8 @@
         private System.Windows.Forms.NumericUpDown N_Address;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label N_J_0_CLASS;
-        private FEBuilderGBA.TextBoxEx N_L_0_CLASS;
+        private System.Windows.Forms.Label N_J_0;
+        private FEBuilderGBA.TextBoxEx N_L_2_CLASSTYPE;
         private System.Windows.Forms.NumericUpDown N_B0;
         private System.Windows.Forms.Button N_ReloadListButton;
         private System.Windows.Forms.Button N_AddressListExpandsButton;
@@ -530,6 +589,10 @@
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
-        private InterpolatedPictureBox N_L_0_CLASSICON;
+        private System.Windows.Forms.Label N_J_1;
+        private System.Windows.Forms.NumericUpDown N_B1;
+        private System.Windows.Forms.Label N_J_2_CLASSTYPE;
+        private System.Windows.Forms.NumericUpDown N_W2;
+        private InterpolatedPictureBox N_L_2_CLASSTYPEICON;
     }
 }

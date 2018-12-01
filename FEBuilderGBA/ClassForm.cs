@@ -15,7 +15,6 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.PreAddressListExpandsEvent += OnPreClassExtendsWarningHandler;
@@ -119,7 +118,11 @@ namespace FEBuilderGBA
                 this.AddressList.Height += AddressListExpandsButton_255.Height;
                 AddressListExpandsButton_255.Hide();
             }
+
+            //SkillSystemsによる 特効リワーク
+            InitFE8ClassType(controls);
         }
+
 
         public static bool IsShowClassExetdns(ListBox list)
         {
@@ -368,6 +371,12 @@ namespace FEBuilderGBA
 
             X_SIM_ValueChanged(null, null);
             SkillUtil.MakeClassSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex, this.X_SkillButtons, this.X_Tooltip);
+
+            //SkillSystemsによる 特効リワーク
+            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            {
+                X_CLASSTYPE.Text = ClassForm.GetClassType((uint)this.D80.Value);
+            }
         }
 
         public static void GetSim(ref GrowSimulator sim,uint cid)
@@ -1075,5 +1084,36 @@ namespace FEBuilderGBA
             TextID.AppendTextID(list, FELint.Type.CLASS, InputFormRef, new uint[] { 0, 2 });
         }
 
+        void InitFE8ClassType(List<Control> controls)
+        {
+            //SkillSystemsによる 特効リワーク
+            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            {
+                J_80.Text = R._("ClassType");
+                InputFormRef.makeJumpEventHandler(D80, J_80, "CLASSTYPE", new string[] { });
+                InputFormRef.makeLinkEventHandler("", controls, D80, X_CLASSTYPE, 80, "CLASSTYPE", new string[] { });
+                X_CLASSTYPE.Show();
+            }
+        }
+
+        //Class Type拡張
+        public static string GetClassType(uint class_type)
+        {
+            string text = "";
+            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            {
+                text = SkillSystemsEffectivenessReworkClassTypeForm.GetText(class_type);
+            }
+            return text;
+        }
+        public static Bitmap DrawClassTypeIcon(uint class_type)
+        {
+            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            {
+                return SkillSystemsEffectivenessReworkClassTypeForm.DrawClassTypeIcon(class_type);
+            }
+
+            return ImageUtil.BlankDummy();
+        }
     }
 }

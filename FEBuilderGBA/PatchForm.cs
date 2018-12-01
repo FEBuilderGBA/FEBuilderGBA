@@ -767,7 +767,13 @@ namespace FEBuilderGBA
                     link.Name = "L_" + datanum + "_" + type;
                     PatchPage.Controls.Add(link);
 
-                    if (type == "UNIT" || type == "ITEM" || type == "CLASS" || type == "BATTLEANIME" || type == "BATTLEANIMEPOINTER")
+                    if (type == "UNIT" 
+                        || type == "ITEM" 
+                        || type == "CLASS" 
+                        || type == "BATTLEANIME" 
+                        || type == "BATTLEANIMEPOINTER" 
+                        || type == "CLASSTYPEICON"
+                        )
                     {
                         PictureBox pic = new PictureBox();
                         pic.Location = new Point(600, y);

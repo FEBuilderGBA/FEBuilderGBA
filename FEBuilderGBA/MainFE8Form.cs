@@ -344,7 +344,14 @@ namespace FEBuilderGBA
 
         private void ItemCriticalButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<ItemEffectivenessForm>();
+            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            {//SkillSystemsによる 特効リワーク
+                InputFormRef.JumpForm<ItemEffectivenessSkillSystemsReworkForm>();
+            }
+            else
+            {
+                InputFormRef.JumpForm<ItemEffectivenessForm>();
+            }
         }
 
         private void ItemShopButton_Click(object sender, EventArgs e)

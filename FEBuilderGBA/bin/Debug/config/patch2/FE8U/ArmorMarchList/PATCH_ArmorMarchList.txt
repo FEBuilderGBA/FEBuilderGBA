@@ -1,0 +1,24 @@
+NAME=ArmorMarchList(Requires Skill System Patch)
+
+IF:$FGREP4 armormarchskill.dmp=0x00 0xB5 0x46 0x49
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+24 armormarchskill.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=CLASS
+
+INFO=SkillSystemsのSkill:ArmorMarchを利用した時の設定を行います。

@@ -872,6 +872,22 @@ namespace FEBuilderGBA
 
             return true;
         }
+        public bool CompareByte(uint addr, byte[] bin)
+        {
+            if (addr + bin.Length >= this.Data.Length)
+            {
+                return false;
+            }
+
+            for (uint i = 0; i < bin.Length; i++)
+            {
+                if (this.Data[addr + i] != bin[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
 }

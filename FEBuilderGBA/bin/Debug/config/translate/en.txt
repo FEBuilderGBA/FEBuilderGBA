@@ -11038,3 +11038,20 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:アーマー系
+ArmorType
+
+:騎兵系
+HorseType
+
+:ソード系
+SwordType
+
+:モンスター系
+MonsterType
+
+:飛行系
+FlierType
+
+:ドラゴン系
+DragonType

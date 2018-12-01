@@ -2466,6 +2466,42 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "CLASSTYPE")
+            {
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value;
+
+                    string text = ClassForm.GetClassType(id);
+                    link_object.Text = text;
+                };
+                link_object.DoubleClick += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "CLASSTYPE", new string[] { });
+                };
+                return;
+            }
+            if (linktype == "CLASSTYPEICON")
+            {//クラスタイプ名からアイコン表示
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    PictureBox link_object = ((PictureBox)link_info);
+
+                    Bitmap bitmap;
+                    bitmap = ClassForm.DrawClassTypeIcon((uint)src_object.Value);
+                    U.MakeTransparent(bitmap);
+                    link_object.Image = bitmap;
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "CLASSTYPE", new string[] { });
+                };
+
+                return;
+            }
             if (linktype == "DWORD")
             {//HEXDUMP
                 TextBoxEx link_object = ((TextBoxEx)link_info);
@@ -2777,8 +2813,19 @@ namespace FEBuilderGBA
             {
                 alllocQMessage = R._("このアイテムに、特効効果を新規に割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。特効効果画面より値を割り振ってください。");
-                alloc = U.FillArray(12, 1);
-                alloc[11] = 0;
+                if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+                {//SkillSystemsによる 特効リワーク
+                    alloc = U.FillArray(12, 0);
+                    alloc[1] = 6;
+                    alloc[2] = 1; //アーマー
+                    alloc[5] = 6;
+                    alloc[6] = 2; //騎兵
+                }
+                else
+                {
+                    alloc = U.FillArray(12, 1);
+                    alloc[11] = 0;
+                }
             }
             else if (arg1 == "IMAGEUNITPALETTE")
             {
@@ -3362,7 +3409,15 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                InputFormRef.JumpForm<ItemEffectivenessForm>(value, "AddressList", src_object);
+
+                if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+                {//SkillSystemsによる 特効リワーク
+                    InputFormRef.JumpForm<ItemEffectivenessSkillSystemsReworkForm>(value, "AddressList", src_object);
+                }
+                else
+                {
+                    InputFormRef.JumpForm<ItemEffectivenessForm>(value, "AddressList", src_object);
+                }
             }
             else if (linktype == "ITEMEFFECT")
             {//間接エフェクト
@@ -3707,6 +3762,19 @@ namespace FEBuilderGBA
                     if (skill == InputFormRef.skill_system_enum.SkillSystem)
                     {
                         InputFormRef.JumpForm<SkillConfigSkillSystemForm>(value, "AddressList", src_object);
+                    }
+                }
+            }
+            else if (linktype == "CLASSTYPE")
+            {//SkillSystemsの ClassType Rework
+                if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
+                    if (skill == InputFormRef.skill_system_enum.SkillSystem)
+                    {
+                        SkillSystemsEffectivenessReworkClassTypeForm f = (SkillSystemsEffectivenessReworkClassTypeForm)InputFormRef.JumpForm<SkillSystemsEffectivenessReworkClassTypeForm>(U.NOT_FOUND);
+                        InputFormRef.MakeInjectionApplyButtonCallback(f, f.GetApplyButton(), src_object);
+                        f.JumpToClassType(value);
                     }
                 }
             }
@@ -4607,6 +4675,7 @@ namespace FEBuilderGBA
             g_Cache_portrait_extends = portrait_extends.NoCache;
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
+            g_Cache_class_type_enum = class_type_enum.NoCache;
         }
 
 
@@ -9511,7 +9580,37 @@ namespace FEBuilderGBA
             }
             return skill_system_enum.NO;
         }
-        
+
+        //スキルシステムの判別. ちょっとだけコストがかかる.
+        public enum class_type_enum
+        {
+             NO             //なし
+           , SkillSystems_Rework          //for FE8U
+           , NoCache = 0xFF
+        };
+        static class_type_enum g_Cache_class_type_enum = class_type_enum.NoCache;
+        public static class_type_enum SearchClassType()
+        {
+            if (g_Cache_class_type_enum == class_type_enum.NoCache)
+            {
+                g_Cache_class_type_enum = SearchSkillSystemsEffectivenesReworkLow();
+            }
+            return g_Cache_class_type_enum;
+        }
+        static class_type_enum SearchSkillSystemsEffectivenesReworkLow()
+        {
+            if (Program.ROM.RomInfo.version() == 8 && Program.ROM.RomInfo.is_multibyte() == false)
+            {
+                bool r = Program.ROM.CompareByte(0x2AAEC
+                    , new byte[] { 0x00, 0x25, 0x00, 0x28, 0x00, 0xD0, 0x05, 0x1C });
+                if (r)
+                {
+                    return class_type_enum.SkillSystems_Rework;
+                }
+            }
+            return class_type_enum.NO;
+        }
+
         //un-Huffmanの判別.
         public static bool SearchAntiHuffmanPatch()
         {
