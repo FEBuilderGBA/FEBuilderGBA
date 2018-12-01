@@ -9247,6 +9247,9 @@ Error during error parsing. {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}
 :ソングテーブルがありません。\r\n\r\nglobal sss\r\nsss:\r\nこのようなデータが必要です。\r\n
 There is no song table.\r\n\r\nglobal sss\r\nsss:\r\nSuch data is necessary.\r\n
 
+:ソングテーブルにソングヘッダがありません。
+There is no song header in the song table.
+
 :数式以外の文字が入っています。 expr:{0}
 Characters other than mathematical expressions are included. expr:{0}
 

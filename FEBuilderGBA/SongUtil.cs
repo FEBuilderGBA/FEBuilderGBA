@@ -2256,7 +2256,7 @@ namespace FEBuilderGBA
             uint songheader_address = Program.ROM.p32(songtable_address + 0);
 
             Dictionary<string, int> equ = new Dictionary<string, int>();
-            equ["voicegroup000"] = (int)U.toPointer(instrument_addr);
+            equ["voicegroup000"] = -1; //楽器テーブル　例外的な扱いをするので適当な値を入れる
             equ["mxv"] = (int)0x7F;
             equ["c_v"] = (int)0x40;
             equ["EOT"] = 0xCE;
@@ -2302,13 +2302,13 @@ namespace FEBuilderGBA
             //16進数の場合があるらしいので、ある程度のルックアップテーブルを作ろう.
             for (uint i = 0; i < 0xf; i++)
             {
-                equ["0x"+i.ToString("X")] = (int)i;
+                equ["0x" + i.ToString("X")] = (int)i;
             }
             for (uint i = 0; i < 0xff; i++)
             {
                 equ[U.To0xHexString(i)] = (int)i;
             }
-            
+
             string[] lines = File.ReadAllLines(filename);
 
             string globalName = null;
@@ -2448,11 +2448,6 @@ namespace FEBuilderGBA
                         {
                             uint v = (uint)Expr(token[n], equ);
 
-                            if (v == equ["voicegroup000"])
-//                            if ( U.isPointer(v))
-                            {//ポインタ値 (楽器データとか)
-                            }
-                            else
                             {//それ以外の相対値 
                                 current.useLabelRegist.Add(current.list.Count);
                             }
@@ -2493,7 +2488,7 @@ namespace FEBuilderGBA
 
             //古い曲をリサイクル情報に登録..
             List<Address> recycle = new List<Address>();
-            RecycleOldSong(ref recycle , "",songheader_address);
+            RecycleOldSong(ref recycle, "", songheader_address);
 
             RecycleAddress ra = new RecycleAddress(recycle);
 
@@ -2527,8 +2522,19 @@ namespace FEBuilderGBA
                     Program.ROM.write_p32(rewrite_addr, new_pointer, undodata);
                 }
             }
+            //楽器テーブルの更新
+            {
+                uint songheader = Program.ROM.u32(songtable_address);
+                if (! U.isSafetyPointer(songheader + 4))
+                {//ソングヘッダーが存在しない.
+                    Program.Undo.Rollback(undodata);
+                    return R.Error("ソングテーブルにソングヘッダがありません。");
+                }
+                Program.ROM.write_p32( U.toOffset(songheader) + 4, instrument_addr, undodata);
+            }
             ra.BlackOut(undodata);
 
+            Program.Undo.Push(undodata);
             return "";
         }
         static int findGlobal(List<SongInnerDataSt> global, string name)
