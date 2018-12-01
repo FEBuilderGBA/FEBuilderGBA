@@ -293,6 +293,12 @@ namespace FEBuilderGBA
             uint olddatasize = N_InputFormRef.DataCount * N_InputFormRef.BlockSize;
             uint newdatasize = (newcount+1) * N_InputFormRef.BlockSize;
 
+            if (newdatasize < olddatasize)
+            {//新しく確保するテーブル数が小さい場合
+             //特に何もしない.
+                return true;
+            }
+
             //既存データの取得
             byte[] oldDataByte = Program.ROM.getBinaryData(change_addr, olddatasize);
             //新規
