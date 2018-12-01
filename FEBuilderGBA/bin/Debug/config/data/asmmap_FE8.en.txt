@@ -11478,3 +11478,20 @@ r3=X tile position of menu of the right	{U}
 080726AC	Determine battle BGM	{U}
 08002620	Switch BGM (another commandPart 5)	r0=BGM number: MUSIC	{U}
 080728D0	Get BossBGM	{U}
+@ChapterData@1C	byte	Unk1c
+@ChapterData@1D	byte	Unk1d
+080976FC	CanCharacterBePrepSwap	{J}
+08089100	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{J}
+08000CD8	GetGameClock	{J}
+08091544	DeleteSerifProcs	{J}
+08091558	IsExistSerifProcs	{J}
+08091574	GotoLabel0BySerifProcs	{J}
+0809541C	CanCharacterBePrepSwap	{U}
+08086E44	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{U}
+0808F270	DeleteSerifProcs	{U}
+0808F284	IsExistSerifProcs	{U}
+0808F2A0	GotoLabel0BySerifProcs	{U}
+080E1184	&LZ77	Something's TSA.	26	{U}
+080E1400	&LZ77	An image of something.	1	{U}
+080E6564	&LZ77	Something's TSA.	26	{J}
+080E67E0	&LZ77	An image of something.	1	{J}
