@@ -95,11 +95,6 @@ namespace FEBuilderGBA
             if (term < 0)
             {
                 term_char = '.';
-                term = src.IndexOf(term_char);
-                if (term < 0)
-                {
-                    term_char = ' ';
-                }
             }
             
             string[] lines = src.Split(term_char);

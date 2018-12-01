@@ -41,8 +41,16 @@ namespace FEBuilderGBA
             {
                 Address p = this.RecycleFreeAreaList[i];
 
-                p.ResizeAddress(p.Addr, p.Length);
-                Log.Debug("FREEAREA " + U.To0xHexString(p.Addr) + " " + p.Length, " => " + U.To0xHexString(p.Addr + p.Length));
+                //頭としっぽはくれてやれ
+                if (p.Length < 32)
+                {
+                    p.ResizeAddress(p.Addr, 0);
+                }
+                else
+                {
+                    p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
+                }
+
             }
         }
         Dictionary<uint,bool> MakeKnownListToDic(List<Address> knownList)
@@ -93,8 +101,8 @@ namespace FEBuilderGBA
                             {
                                 if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
                                 FEBuilderGBA.Address.AddAddress(list
-                                    , start + 16     //あたまと尻尾は危険なので利用しない
-                                    , matchsize - 16 - 16 //あたまと尻尾は危険なので利用しない
+                                    , start
+                                    , matchsize
                                     , U.NOT_FOUND
                                     , ""
                                     , Address.DataTypeEnum.FFor00);
@@ -110,8 +118,8 @@ namespace FEBuilderGBA
                             {
                                 if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
                                 FEBuilderGBA.Address.AddAddress(list
-                                    , start + 16     //あたまと尻尾は危険なので利用しない
-                                    , matchsize - 16 - 16 //あたまと尻尾は危険なので利用しない
+                                    , start
+                                    , matchsize
                                     , U.NOT_FOUND
                                     , ""
                                     , Address.DataTypeEnum.FFor00);

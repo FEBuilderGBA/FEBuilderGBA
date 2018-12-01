@@ -92,6 +92,13 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+
+                //ポインタは連続してあらわれるのでそのチェックをする.
+                if (!IsContinuousPointer(addr, length))
+                {
+                    continue;
+                }
+
                 //ポインタ先をすでに知っている場合は無視.
                 if (IsAlrealyFoundImage(list,a))
                 {
@@ -978,6 +985,42 @@ namespace FEBuilderGBA
                 );
         }
 
+        //ポインタは連続してあらわれるのでそのチェックをする.
+        static bool IsContinuousPointer(uint addr, uint length)
+        {
+            if (addr <= Program.ROM.RomInfo.compress_image_borderline_address())
+            {//プログラム領域であればポインタが散在していてもいい
+                return true;
+            }
+
+            //データ領域であれば、ポインタが連続しているはずだ.
+            //画像にはパレットやTSAがセットになるはずだから、ポインタだけが出てくるわけがないのだ.
+            for (int checkRange = 4; checkRange <= 0x8; checkRange += 4)
+            {
+                uint a = (uint)(addr - checkRange);
+                uint p = Program.ROM.u32( a );
+                if (U.isSafetyPointer(p))
+                {//安全なポインタ
+                    return true;
+                }
+            }
+            for (int checkRange = 4; checkRange <= 0xC; checkRange += 4)
+            {
+                uint a = (uint)(addr + checkRange);
+                if (a + 4 >= length)
+                {
+                    break;
+                }
+                uint p = Program.ROM.u32(a);
+                if (U.isSafetyPointer(p))
+                {//安全なポインタ
+                    return true;
+                }
+            }
+            //おそらくこのマッチは間違っている.
+            return false;
+        }
+
         public static void MakeLZ77DataList(List<Address> list)
         {
             string name = R._("圧縮データ");
@@ -1002,6 +1045,12 @@ namespace FEBuilderGBA
                 //ポインタ先は圧縮されているか？
                 uint imageDataSize = LZ77.getUncompressSize(Program.ROM.Data, a);
                 if (IsBadImageSize(imageDataSize) )
+                {
+                    continue;
+                }
+
+                //ポインタは連続してあらわれるのでそのチェックをする.
+                if (!IsContinuousPointer(addr, length))
                 {
                     continue;
                 }

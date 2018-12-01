@@ -11455,3 +11455,7 @@
 0808F270	DeleteSerifProcs	{U}
 0808F284	IsExistSerifProcs	{U}
 0808F2A0	GotoLabel0BySerifProcs	{U}
+080E1184	&LZ77	何かのTSA	26	{U}
+080E1400	&LZ77	何かの画像	1	{U}
+080E6564	&LZ77	何かのTSA	26	{J}
+080E67E0	&LZ77	何かの画像	1	{J}

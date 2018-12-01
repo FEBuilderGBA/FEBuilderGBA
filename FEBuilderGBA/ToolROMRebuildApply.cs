@@ -65,7 +65,7 @@ namespace FEBuilderGBA
             return addr > this.RebuildAddress;
         }
 
-        ToolROMRebuildFreeArea FreeArea = new ToolROMRebuildFreeArea();
+        ToolROMRebuildFreeArea FreeArea;
 
         uint Alloc(uint size)
         {
@@ -79,6 +79,19 @@ namespace FEBuilderGBA
             }
 
             return writeaddr;
+        }
+
+        void InitFreeAreaDef(int useFreeArea)
+        {
+            this.FreeArea = new ToolROMRebuildFreeArea();
+            if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
+            {
+                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, this.AddressMap);
+            }
+            else if (useFreeArea == (int)UseFreeAreaEnum.Use0x09000000)
+            {
+                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address()), this.AddressMap);
+            }
         }
 
         enum UseFreeAreaEnum
@@ -111,6 +124,10 @@ namespace FEBuilderGBA
                 this.RebuildAddress = this.WriteOffset;
             }
 
+            //途中でデータを書き込むことがあるので、現在のフリーエリアを見つけてリストに追加.
+            //後でROM末尾を超えたら再設定する.
+            InitFreeAreaDef(useFreeArea);
+            //通常のROM末尾を超えた時点で再度スキャンする.
             bool isMakeFreeAreaList = false;
 
             int nextDoEvents = 0;
@@ -160,14 +177,8 @@ namespace FEBuilderGBA
                 if (isMakeFreeAreaList == false && addr >= this.RebuildAddress)
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
-                    if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
-                    {
-                        FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, this.AddressMap);
-                    }
-                    else if (useFreeArea == (int)UseFreeAreaEnum.Use0x09000000)
-                    {
-                        FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address()), this.AddressMap);
-                    }
+                    //フリーエリアの再設定
+                    InitFreeAreaDef(useFreeArea);
                 }
 
                 if (i > nextDoEvents)
