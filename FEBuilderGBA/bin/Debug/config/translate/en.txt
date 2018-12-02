@@ -4492,6 +4492,9 @@ Special class
 :特効指定
 Specific Effectiveness Designation
 
+:リストを縮める場合は、3つの項目を全部:00にして終端記号を入れてください。
+To shrink the list, please set all three items to 00 and put a terminal symbol.
+
 :アイテム間接エフェクトポインタテーブル
 Indirect effect pointer table
 
@@ -8881,6 +8884,27 @@ Skill extension SkillSystem's animation can't be acquired.
 :アニメーション
 Animation
 
+:アーマー系
+ArmorType
+
+:騎兵系
+HorseType
+
+:飛行系
+FlierType
+
+:ドラゴン系
+DragonType
+
+:モンスター系
+MonsterType
+
+:ソード系
+SwordType
+
+:クラス分類
+Classification.
+
 :この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？
 Are you sure you want to port this music ({0}) to (1) in ROM?
 
@@ -11038,20 +11062,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:アーマー系
-ArmorType
-
-:騎兵系
-HorseType
-
-:ソード系
-SwordType
-
-:モンスター系
-MonsterType
-
-:飛行系
-FlierType
-
-:ドラゴン系
-DragonType

@@ -22,3 +22,5 @@ LISTNAME=$B0:CLASS
 B0:CLASS=CLASS
 
 INFO=SkillSystemsのSkill:ArmorMarchを利用した時の設定を行います。
+INFO.en=SkillSystems' Skill: Configure settings when using ArmorMarch.
+INFO.zh=SkillSystems的技能：使用ArmorMarch时配置设置。

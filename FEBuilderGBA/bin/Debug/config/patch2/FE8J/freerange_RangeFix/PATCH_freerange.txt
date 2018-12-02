@@ -13,3 +13,5 @@ AUTHOR=StanH  http://feuniverse.us/t/fe8-stans-asm-stuff/2376/17
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends
+INFO.en=Make it possible to correctly draw weapon attack range 4 or more.\r\nSince this patch conflicts with FE 8 N Skill, when using FE 8 Skill, please use "Range Display Fix WithFE 8 N Skill".
+INFO.zh=可以正确地绘制武器攻击范围4或更多。\r\n由于此补丁与FE 8 N技能冲突，因此在使用FE 8技能时，请使用“范围显示固定与FE 8 N技能”。

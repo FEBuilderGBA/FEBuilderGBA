@@ -24,3 +24,5 @@ B1:DECIMAL=coefficient_times*2
 W2:CLASSTYPE=type_list
 
 INFO=SkillSystemsのslayer/effectiveness reworkを利用した時のSkill:Slayerの設定を行います。
+INFO.en=Set Skill: Slayer when using SkillSystems slayer / effectiveness rework.
+INFO.zh=使用SkillSystems杀手/效果返工时设置技能：杀手。
