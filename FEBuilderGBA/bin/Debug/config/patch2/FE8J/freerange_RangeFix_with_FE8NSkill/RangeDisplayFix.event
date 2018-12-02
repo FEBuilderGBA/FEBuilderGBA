@@ -1,0 +1,39 @@
+#ifndef HAX_RANGE_DISPLAY_FIX_EVENT
+#define HAX_RANGE_DISPLAY_FIX_EVENT
+
+#ifndef _FE8_
+	ERROR Range Display Fix is for FE8
+#endif
+
+#include "Extensions/Hack Installation.txt"
+#include "eastdlib.event"
+
+{
+
+PUSH
+	ORG 0x01A998
+		#incbin "asm/Replace_FillReachRangeForUnit.bin"
+		POIN (_prFillRangeByMask+1)
+	
+	ORG 0x016e8e
+		#incbin "asm/Replace_GetItemRangeMask_With_FE8NSkill.bin"
+	
+	ORG 0x01B13C
+		#incbin "asm/Replace_FillStandingRangeForUnit.bin"
+		POIN (_prFillRangeByMask+1)
+	
+	ORG 0x016FE4
+		replaceWithHack((_prReplace_GetUnitStaffRangeMask+1))
+POP
+
+ALIGN 4
+_prFillRangeByMask:
+	#incbin "asm/FillRangeByMask.bin"
+
+ALIGN 4
+_prReplace_GetUnitStaffRangeMask:
+	#incbin "asm/Replace_GetUnitStaffRangeMask.bin"
+
+}
+
+#endif // HAX_RANGE_DISPLAY_FIX_EVENT
