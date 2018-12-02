@@ -4492,7 +4492,9 @@ namespace FEBuilderGBA
         private void Filter_TextChanged(object sender, EventArgs e)
         {
             ReFilter();
-            Filter.Focus();
+            int currentPos = this.Filter.SelectionStart;
+            this.Filter.Focus();
+            this.Filter.Select(currentPos, 0);
         }
 
         bool checkPatchName(string patch,string PatchName, string PatchName2)
