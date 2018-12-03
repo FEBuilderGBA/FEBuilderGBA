@@ -87,6 +87,8 @@ namespace FEBuilderGBA
         InputFormRef PROCS_InputFormRef;
         InputFormRef PARTY_InputFormRef;
 
+        const uint RAMUnitSizeOf = 72;
+
         void InitParty()
         {
             U.SelectedIndexSafety(this.PartyCombo, 0);
@@ -95,7 +97,7 @@ namespace FEBuilderGBA
             PartyCombo.AddIcon(0x40, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(16, 1, true)); //40=友軍
             PartyCombo.AddIcon(0x80, ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(7, 2, true)); //80=敵軍
 
-            this.UpdateCheckParty = new byte[0x72 * (50)];
+            this.UpdateCheckParty = new byte[RAMUnitSizeOf * (50)];
             this.PartyListBox.OwnerDraw(DrawParty, DrawMode.OwnerDrawVariable, false);
         }
         void InitFlag()
@@ -1003,6 +1005,8 @@ namespace FEBuilderGBA
             InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_ITEM_ID, this.CHEAT_ITEM_ICON, 0, "ITEMICON", args);
             InputFormRef.makeJumpEventHandler(this.CHEAT_ITEM_ID, this.CHEAT_ITEM_JUMP, "ITEM", args);
 
+            InputFormRef.makeLinkEventHandler("", controls, this.CHEAT_WEATHER_VALUE, this.CHEAT_WEATHER_COMBO, 0, "COMBO", args);
+
             if (Program.ROM.RomInfo.version() == 8)
             {
                 this.CHEAT_ITEM_ID.Value = 0x88; //マスタープルフ
@@ -1573,38 +1577,43 @@ namespace FEBuilderGBA
             }
             Debug.Assert(U.is_02RAMPointer(CurrentControlUnitRAMAddress));
 
-            uint romUnitPointer = Program.RAM.u32(CurrentControlUnitRAMAddress + 0);
+            CheatUnitGrow(CurrentControlUnitRAMAddress,growMovePower: true, showNotify: true );
+        }
+        void CheatUnitGrow(uint ramUnitAddress,bool growMovePower, bool showNotify)
+        {
+            uint romUnitPointer = Program.RAM.u32(ramUnitAddress + 0);
+            if (!U.isSafetyPointer(romUnitPointer))
+            {//不正な値が入っています.
+                return;
+            }
             uint romUnitAddr = U.toOffset(romUnitPointer);
-            if (!U.isSafetyOffset(romUnitAddr) )
+
+            uint romClassPointer = Program.RAM.u32(ramUnitAddress + 4);
+            if (!U.isSafetyPointer(romClassPointer))
             {//不正な値が入っています.
                 return;
             }
-            uint romClassPointer = Program.RAM.u32(CurrentControlUnitRAMAddress + 4);
             uint romClassAddr = U.toOffset(romClassPointer);
-            if (!U.isSafetyOffset(romClassAddr) )
-            {//不正な値が入っています.
-                return;
-            }
 
             //上級職かどうか
             bool promoted = UnitForm.IsUnitPromotedByAddr(romUnitAddr)
                 || ClassForm.IsClassPromotedByAddr(romClassAddr);
 
-            uint lv = Program.RAM.u8(CurrentControlUnitRAMAddress + 0x8);
+            uint lv = Program.RAM.u8(ramUnitAddress + 0x8);
             if (promoted == false && lv < 10)
             {//LV10以下の場合 CCできるLV10まで引き上げる
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x8,10);
+                Program.RAM.write_u8(ramUnitAddress + 0x8, 10);
             }
 
             //保持している武器レベルを最大値まで上げる
             uint weaponLvAddr;
             if (Program.ROM.RomInfo.version() == 6)
             {
-                weaponLvAddr = CurrentControlUnitRAMAddress + 0x26;
+                weaponLvAddr = ramUnitAddress + 0x26;
             }
             else
             {
-                weaponLvAddr = CurrentControlUnitRAMAddress + 0x28;
+                weaponLvAddr = ramUnitAddress + 0x28;
             }
             for (int i = 0; i < 8; i++, weaponLvAddr++)
             {
@@ -1642,7 +1651,12 @@ namespace FEBuilderGBA
             {
                 addMove = 15 - move;
             }
+
             maxLuck = Program.ROM.u8(Program.ROM.RomInfo.max_luck_address());
+            if (maxLuck < 10 || maxLuck >= 100)
+            {//不明な値、とりあえず運の最大値は30にする.
+                maxLuck = 30;
+            }
 
             if (promoted)
             {//上級職なのでクラスの設定上限まで引き上げる
@@ -1662,31 +1676,39 @@ namespace FEBuilderGBA
             }
             if (Program.ROM.RomInfo.version() == 6)
             {
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x10, maxHP);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x11, maxHP);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x12, maxPower);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x13, maxSkill);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x14, maxSpeed);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x15, maxDef);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x16, maxRes);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x17, maxLuck);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x1B, addMove);
+                Program.RAM.write_u8(ramUnitAddress + 0x10, maxHP);
+                Program.RAM.write_u8(ramUnitAddress + 0x11, maxHP);
+                Program.RAM.write_u8(ramUnitAddress + 0x12, maxPower);
+                Program.RAM.write_u8(ramUnitAddress + 0x13, maxSkill);
+                Program.RAM.write_u8(ramUnitAddress + 0x14, maxSpeed);
+                Program.RAM.write_u8(ramUnitAddress + 0x15, maxDef);
+                Program.RAM.write_u8(ramUnitAddress + 0x16, maxRes);
+                Program.RAM.write_u8(ramUnitAddress + 0x17, maxLuck);
+                if (growMovePower)
+                {
+                    Program.RAM.write_u8(ramUnitAddress + 0x1B, addMove);
+                }
             }
             else
             {
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x12, maxHP);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x13, maxHP);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x14, maxPower);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x15, maxSkill);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x16, maxSpeed);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x17, maxDef);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x18, maxRes);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x19, maxLuck);
-                Program.RAM.write_u8(CurrentControlUnitRAMAddress + 0x1D, addMove);
+                Program.RAM.write_u8(ramUnitAddress + 0x12, maxHP);
+                Program.RAM.write_u8(ramUnitAddress + 0x13, maxHP);
+                Program.RAM.write_u8(ramUnitAddress + 0x14, maxPower);
+                Program.RAM.write_u8(ramUnitAddress + 0x15, maxSkill);
+                Program.RAM.write_u8(ramUnitAddress + 0x16, maxSpeed);
+                Program.RAM.write_u8(ramUnitAddress + 0x17, maxDef);
+                Program.RAM.write_u8(ramUnitAddress + 0x18, maxRes);
+                Program.RAM.write_u8(ramUnitAddress + 0x19, maxLuck);
+                if (growMovePower)
+                {
+                    Program.RAM.write_u8(ramUnitAddress + 0x1D, addMove);
+                }
             }
 
-
-            InputFormRef.ShowWriteNotifyAnimation(this, CurrentControlUnitRAMAddress);
+            if (showNotify)
+            {
+                InputFormRef.ShowWriteNotifyAnimation(this, ramUnitAddress);
+            }
         }
 
         bool CheckUnitSelectAndError()
@@ -1736,11 +1758,10 @@ namespace FEBuilderGBA
             bool isDetail = Party_ControlPanel.Visible;
 
             uint i = 0;
-            uint limit = (uint)this.UpdateCheckParty.Length / 0x72;
-            //uint limit = GetLimitRAMPartyUnits();
+            uint limit = GetLimitRAMPartyUnits();
             uint lastZeroPoint = 0;
             uint addr = 0;
-            for (; i < limit; i++ , addr += 72)
+            for (; i < limit; i++, addr += RAMUnitSizeOf)
             {
                 uint unitPointer = U.u32(bin, addr);
                 if (unitPointer == 0)
@@ -1971,11 +1992,7 @@ namespace FEBuilderGBA
             {
                 return 0x20;
             }
-            if (this.PartyCombo.SelectedIndex == 2)
-            {
-                return 0x50;
-            }
-            return 0x50;
+            return (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
         }
 
         private void Party_CloseButton_Click(object sender, EventArgs e)
@@ -2056,6 +2073,68 @@ namespace FEBuilderGBA
         {
             this.SpeechButton.AccessibleDescription = R._("Windowsのテキスト読み上げ機能を利用して、文章を合成音声で読み上げます。\r\n利用するには、OSに合成音声ライブラリがインストールされている必要があります。");
             this.SubtileButton.AccessibleDescription = R._("翻訳リソースを利用して、翻訳した字幕を表示します。");
+        }
+
+        private void CHEAT_WEATHER_Click(object sender, EventArgs e)
+        {
+            if (!CheckConnectShowError())
+            {
+                return;
+            }
+            if (Program.ROM.RomInfo.version() <= 6)
+            {
+                return;
+            }
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint writeRAMPointer = stageStructAddr + 0x15;
+            Program.RAM.write_u8(writeRAMPointer, (uint)CHEAT_WEATHER_VALUE.Value);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
+        }
+
+
+        void MultiUnitsGrow(uint addr, uint limit, bool growMovePower)
+        {
+            for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
+            {
+                uint unitPointer = Program.RAM.u32(addr);
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    break;
+                }
+
+                CheatUnitGrow(addr, growMovePower , showNotify: false);
+            }
+        }
+
+        private void CHEAT_ALL_PLAYER_UNIT_GROW_Click(object sender, EventArgs e)
+        {
+            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
+            MultiUnitsGrow(addr, limit, growMovePower: true);
+            InputFormRef.ShowWriteNotifyAnimation(this , 0);
+        }
+
+        private void CHEAT_ALL_UNIT_GROW_Click(object sender, EventArgs e)
+        {
+            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
+            MultiUnitsGrow(addr, limit, growMovePower: true);
+
+            //敵軍  移動力は上げない
+            addr = Program.ROM.RomInfo.workmemory_enemy_units_address();
+            MultiUnitsGrow(addr, limit, growMovePower: false);
+
+            //NPC  移動力は上げない
+            limit = 0x20;
+            addr = Program.ROM.RomInfo.workmemory_npc_units_address();
+            MultiUnitsGrow(addr, limit, growMovePower: false);
+
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
     }
 }

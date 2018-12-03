@@ -1138,6 +1138,39 @@ Party
 :チート
 Cheat
 
+:敵を含めて、すべてのユニットを最強にします
+Including enemies, we will make all units strongest.
+
+:すべての味方ユニットを最強にします
+We will make all friendly units strongest.
+
+:天気
+Weather
+
+:00=晴れ
+00=Sunny
+
+:01=雪
+01=Snow
+
+:02=吹雪
+02=Blizzard
+
+:04=雨
+04=Rain
+
+:05=マグマ
+05=Lava
+
+:06=砂嵐
+06=Sandstorm
+
+:07=曇り
+07=Cloudy
+
+:天気を変更\r\n次のターンから適用されます。
+Change the weather.\r\nIt will be applied from the next turn.
+
 :デバッグ用に便利なチート機能です
 Useful cheating function for debugging
 
@@ -6561,30 +6594,6 @@ Enemy Phase BGM
 
 :味方フェーズBGM
 Player Phase BGM
-
-:00=晴れ
-00=Sunny
-
-:01=雪
-01=Snow
-
-:02=吹雪
-02=Blizzard
-
-:04=雨
-04=Rain
-
-:05=マグマ
-05=Lava
-
-:06=砂嵐
-06=Sandstorm
-
-:07=曇り
-07=Cloudy
-
-:天気
-Weather
 
 :戦闘準備の有無
 Battle Prep Y/N?

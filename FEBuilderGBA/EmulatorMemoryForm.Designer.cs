@@ -377,6 +377,13 @@
             this.label56 = new System.Windows.Forms.Label();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
             this.CheatPage = new System.Windows.Forms.TabPage();
+            this.systemIconPictureBox4 = new FEBuilderGBA.SystemIconPictureBox();
+            this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
+            this.CHEAT_ALL_PLAYER_UNIT_GROW = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CHEAT_WEATHER_VALUE = new System.Windows.Forms.NumericUpDown();
+            this.CHEAT_WEATHER_COMBO = new System.Windows.Forms.ComboBox();
+            this.CHEAT_WEATHER = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.CHEAT_FOG_VALUE = new System.Windows.Forms.NumericUpDown();
@@ -604,6 +611,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).BeginInit();
             this.CheatPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).BeginInit();
@@ -5268,6 +5277,13 @@
             // CheatPage
             // 
             this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CheatPage.Controls.Add(this.systemIconPictureBox4);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
+            this.CheatPage.Controls.Add(this.label35);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_VALUE);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER_COMBO);
+            this.CheatPage.Controls.Add(this.CHEAT_WEATHER);
             this.CheatPage.Controls.Add(this.label19);
             this.CheatPage.Controls.Add(this.label18);
             this.CheatPage.Controls.Add(this.CHEAT_FOG_VALUE);
@@ -5304,6 +5320,95 @@
             this.CheatPage.TabIndex = 3;
             this.CheatPage.Text = "チート";
             // 
+            // systemIconPictureBox4
+            // 
+            this.systemIconPictureBox4.IconNumber = ((uint)(2u));
+            this.systemIconPictureBox4.Location = new System.Drawing.Point(2, 487);
+            this.systemIconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox4.Name = "systemIconPictureBox4";
+            this.systemIconPictureBox4.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox4.TabIndex = 316;
+            this.systemIconPictureBox4.TabStop = false;
+            // 
+            // CHEAT_ALL_UNIT_GROW
+            // 
+            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(70, 561);
+            this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
+            this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_UNIT_GROW.TabIndex = 315;
+            this.CHEAT_ALL_UNIT_GROW.Text = "敵を含めて、すべてのユニットを最強にします";
+            this.CHEAT_ALL_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_UNIT_GROW_Click);
+            // 
+            // CHEAT_ALL_PLAYER_UNIT_GROW
+            // 
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(71, 498);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TabIndex = 313;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Text = "すべての味方ユニットを最強にします";
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Click += new System.EventHandler(this.CHEAT_ALL_PLAYER_UNIT_GROW_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(896, 437);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 18);
+            this.label35.TabIndex = 312;
+            this.label35.Text = "天気";
+            // 
+            // CHEAT_WEATHER_VALUE
+            // 
+            this.CHEAT_WEATHER_VALUE.Hexadecimal = true;
+            this.CHEAT_WEATHER_VALUE.Location = new System.Drawing.Point(1022, 432);
+            this.CHEAT_WEATHER_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CHEAT_WEATHER_VALUE.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.CHEAT_WEATHER_VALUE.Name = "CHEAT_WEATHER_VALUE";
+            this.CHEAT_WEATHER_VALUE.Size = new System.Drawing.Size(65, 25);
+            this.CHEAT_WEATHER_VALUE.TabIndex = 309;
+            // 
+            // CHEAT_WEATHER_COMBO
+            // 
+            this.CHEAT_WEATHER_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CHEAT_WEATHER_COMBO.FormattingEnabled = true;
+            this.CHEAT_WEATHER_COMBO.Items.AddRange(new object[] {
+            "00=晴れ",
+            "01=雪",
+            "02=吹雪",
+            "04=雨",
+            "05=マグマ",
+            "06=砂嵐",
+            "07=曇り"});
+            this.CHEAT_WEATHER_COMBO.Location = new System.Drawing.Point(1104, 431);
+            this.CHEAT_WEATHER_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.CHEAT_WEATHER_COMBO.Name = "CHEAT_WEATHER_COMBO";
+            this.CHEAT_WEATHER_COMBO.Size = new System.Drawing.Size(271, 26);
+            this.CHEAT_WEATHER_COMBO.TabIndex = 310;
+            // 
+            // CHEAT_WEATHER
+            // 
+            this.CHEAT_WEATHER.Location = new System.Drawing.Point(893, 352);
+            this.CHEAT_WEATHER.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_WEATHER.Name = "CHEAT_WEATHER";
+            this.CHEAT_WEATHER.Size = new System.Drawing.Size(742, 62);
+            this.CHEAT_WEATHER.TabIndex = 308;
+            this.CHEAT_WEATHER.Text = "天気を変更\r\n次のターンから適用されます。";
+            this.CHEAT_WEATHER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_WEATHER.UseVisualStyleBackColor = true;
+            this.CHEAT_WEATHER.Click += new System.EventHandler(this.CHEAT_WEATHER_Click);
+            // 
             // label19
             // 
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -5318,7 +5423,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(254, 640);
+            this.label18.Location = new System.Drawing.Point(1104, 302);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(313, 18);
@@ -5328,7 +5433,7 @@
             // CHEAT_FOG_VALUE
             // 
             this.CHEAT_FOG_VALUE.Hexadecimal = true;
-            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(172, 638);
+            this.CHEAT_FOG_VALUE.Location = new System.Drawing.Point(1022, 300);
             this.CHEAT_FOG_VALUE.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CHEAT_FOG_VALUE.Maximum = new decimal(new int[] {
             255,
@@ -5398,7 +5503,7 @@
             // 
             // CHEAT_MONEY_VALUE
             // 
-            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(172, 515);
+            this.CHEAT_MONEY_VALUE.Location = new System.Drawing.Point(1022, 165);
             this.CHEAT_MONEY_VALUE.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_MONEY_VALUE.Maximum = new decimal(new int[] {
             999999,
@@ -5417,7 +5522,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(67, 726);
+            this.label16.Location = new System.Drawing.Point(895, 758);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(146, 18);
@@ -5426,7 +5531,7 @@
             // 
             // Dump03Button
             // 
-            this.Dump03Button.Location = new System.Drawing.Point(65, 800);
+            this.Dump03Button.Location = new System.Drawing.Point(893, 832);
             this.Dump03Button.Margin = new System.Windows.Forms.Padding(2);
             this.Dump03Button.Name = "Dump03Button";
             this.Dump03Button.Size = new System.Drawing.Size(742, 40);
@@ -5438,7 +5543,7 @@
             // 
             // Dump02Button
             // 
-            this.Dump02Button.Location = new System.Drawing.Point(65, 746);
+            this.Dump02Button.Location = new System.Drawing.Point(893, 778);
             this.Dump02Button.Margin = new System.Windows.Forms.Padding(2);
             this.Dump02Button.Name = "Dump02Button";
             this.Dump02Button.Size = new System.Drawing.Size(742, 40);
@@ -5451,7 +5556,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(68, 640);
+            this.label15.Location = new System.Drawing.Point(896, 302);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 18);
@@ -5470,7 +5575,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(67, 517);
+            this.label13.Location = new System.Drawing.Point(895, 167);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 18);
@@ -5479,10 +5584,10 @@
             // 
             // CHEAT_FOG
             // 
-            this.CHEAT_FOG.Location = new System.Drawing.Point(65, 571);
+            this.CHEAT_FOG.Location = new System.Drawing.Point(893, 222);
             this.CHEAT_FOG.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_FOG.Name = "CHEAT_FOG";
-            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 50);
+            this.CHEAT_FOG.Size = new System.Drawing.Size(742, 62);
             this.CHEAT_FOG.TabIndex = 8;
             this.CHEAT_FOG.Text = "霧レベルを変更\r\n次のターンから適用されます。";
             this.CHEAT_FOG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -5491,7 +5596,7 @@
             // 
             // CHEAT_MONEY
             // 
-            this.CHEAT_MONEY.Location = new System.Drawing.Point(65, 464);
+            this.CHEAT_MONEY.Location = new System.Drawing.Point(893, 114);
             this.CHEAT_MONEY.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_MONEY.Name = "CHEAT_MONEY";
             this.CHEAT_MONEY.Size = new System.Drawing.Size(742, 40);
@@ -5594,7 +5699,7 @@
             // systemIconPictureBox3
             // 
             this.systemIconPictureBox3.IconNumber = ((uint)(5u));
-            this.systemIconPictureBox3.Location = new System.Drawing.Point(2, 726);
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(830, 758);
             this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox3.Name = "systemIconPictureBox3";
             this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
@@ -5605,7 +5710,7 @@
             // systemIconPictureBox2
             // 
             this.systemIconPictureBox2.IconNumber = ((uint)(8u));
-            this.systemIconPictureBox2.Location = new System.Drawing.Point(2, 464);
+            this.systemIconPictureBox2.Location = new System.Drawing.Point(830, 114);
             this.systemIconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.systemIconPictureBox2.Name = "systemIconPictureBox2";
             this.systemIconPictureBox2.Size = new System.Drawing.Size(56, 56);
@@ -6156,6 +6261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_P0)).EndInit();
             this.CheatPage.ResumeLayout(false);
             this.CheatPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHEAT_WEATHER_VALUE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_FOG_VALUE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_COUNT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CHEAT_ITEM_ID)).EndInit();
@@ -6576,5 +6683,12 @@
         private TextBoxEx PARTY_AI1_TEXT;
         private System.Windows.Forms.Button SpeechButton;
         private System.Windows.Forms.Button SubtileButton;
+        private System.Windows.Forms.Button CHEAT_WEATHER;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.NumericUpDown CHEAT_WEATHER_VALUE;
+        private System.Windows.Forms.ComboBox CHEAT_WEATHER_COMBO;
+        private System.Windows.Forms.Button CHEAT_ALL_PLAYER_UNIT_GROW;
+        private System.Windows.Forms.Button CHEAT_ALL_UNIT_GROW;
+        private SystemIconPictureBox systemIconPictureBox4;
     }
 }

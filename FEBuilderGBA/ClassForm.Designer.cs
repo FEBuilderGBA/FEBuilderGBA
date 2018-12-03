@@ -93,6 +93,7 @@
             this.J_11 = new System.Windows.Forms.Label();
             this.X_BASE = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.X_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
             this.L_4_ID = new FEBuilderGBA.PanelEx();
             this.B4 = new System.Windows.Forms.NumericUpDown();
             this.X_SKILL_BUTTON9 = new System.Windows.Forms.Button();
@@ -259,7 +260,6 @@
             this.L_40_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_40_BIT_01 = new System.Windows.Forms.CheckBox();
             this.B40 = new System.Windows.Forms.NumericUpDown();
-            this.X_CLASSTYPE = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.B29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B32)).BeginInit();
             this.panel5.SuspendLayout();
@@ -1261,6 +1261,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 154);
             this.panel2.TabIndex = 32;
+            // 
+            // X_CLASSTYPE
+            // 
+            this.X_CLASSTYPE.ErrorMessage = "";
+            this.X_CLASSTYPE.Location = new System.Drawing.Point(931, 33);
+            this.X_CLASSTYPE.Margin = new System.Windows.Forms.Padding(2);
+            this.X_CLASSTYPE.Name = "X_CLASSTYPE";
+            this.X_CLASSTYPE.Placeholder = "";
+            this.X_CLASSTYPE.ReadOnly = true;
+            this.X_CLASSTYPE.Size = new System.Drawing.Size(188, 25);
+            this.X_CLASSTYPE.TabIndex = 104;
+            this.X_CLASSTYPE.Visible = false;
             // 
             // L_4_ID
             // 
@@ -3365,18 +3377,6 @@
             this.B40.Name = "B40";
             this.B40.Size = new System.Drawing.Size(60, 25);
             this.B40.TabIndex = 0;
-            // 
-            // X_CLASSTYPE
-            // 
-            this.X_CLASSTYPE.ErrorMessage = "";
-            this.X_CLASSTYPE.Location = new System.Drawing.Point(931, 33);
-            this.X_CLASSTYPE.Margin = new System.Windows.Forms.Padding(2);
-            this.X_CLASSTYPE.Name = "X_CLASSTYPE";
-            this.X_CLASSTYPE.Placeholder = "";
-            this.X_CLASSTYPE.ReadOnly = true;
-            this.X_CLASSTYPE.Size = new System.Drawing.Size(188, 25);
-            this.X_CLASSTYPE.TabIndex = 104;
-            this.X_CLASSTYPE.Visible = false;
             // 
             // ClassForm
             // 
