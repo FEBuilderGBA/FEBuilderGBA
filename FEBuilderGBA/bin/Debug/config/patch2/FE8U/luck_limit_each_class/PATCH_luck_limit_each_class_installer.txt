@@ -1,0 +1,15 @@
+NAME=幸運上限をクラスごとに設定する(導入)
+NAME.en=Set the luck limit for each class.(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=luck_limit_each_class.event
+
+INFO=幸運上限を一律ではなく、クラスごとに設定できるようにします。
+PATCHED_IF:0x01824C=0x00 0x4B 0x18 0x47
+
+AUTHOR=FE8Girls,7743
+INFO.en=Let's make it possible to set the luck limit not for uniform, but for each class.
+NAME.zh=设置每个班级的幸运限额（介绍）。
+INFO.zh=让我们可以设置运气限制不是为了统一，而是为每个班级。

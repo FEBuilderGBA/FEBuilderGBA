@@ -1,0 +1,28 @@
+NAME=幸運上限をクラスごとに設定する
+NAME.en=Set the luck limit for each class
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+INFO=幸運上限を一律ではなく、クラスごとに設定できるようにします。
+IF:0x01824C=0x00 0x4B 0x18 0x47
+
+AUTHOR=FE8Girls,7743
+
+//データへのポインタ
+POINTER=$FGREP4END Hook3_GetLuckLimit.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 256
+DATACOUNT=256
+
+//リストに表示されるのはユニット名です
+LISTNAME=CLASS
+
+//データを定義します
+B0:DECIMAL=Luck
+INFO.en=Let's make it possible to set the luck limit not for uniform, but for each class.
+NAME.zh=设置每个班级的幸运限额。
+INFO.zh=让我们可以设置运气限制不是为了统一，而是为每个班级。

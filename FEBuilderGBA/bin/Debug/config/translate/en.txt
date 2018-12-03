@@ -1139,10 +1139,10 @@ Party
 Cheat
 
 :敵を含めて、すべてのユニットを最強にします
-Including enemies, we will make all units strongest.
+Including enemies, Grow ALL units strongest.
 
 :すべての味方ユニットを最強にします
-We will make all friendly units strongest.
+Grow all Player units strongest.
 
 :天気
 Weather

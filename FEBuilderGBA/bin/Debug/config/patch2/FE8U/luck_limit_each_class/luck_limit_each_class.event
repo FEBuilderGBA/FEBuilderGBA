@@ -1,0 +1,54 @@
+#include "Extensions/Hack Installation.txt"
+#include "eastdlib.event"
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG $1824C;
+jumpToHack(Hook1_GetLuckLimit);
+
+ORG $2C016;
+BYTE 0x00 0x00
+jumpToHack_r1(Hook2_GetLuckLimit);
+
+ORG $926F2;
+BYTE 0x00 0x00
+jumpToHack(Hook3_GetLuckLimit);
+
+ORG $9C14C;
+jumpToHack(Hook4_GetLuckLimit);
+
+ORG $9C31C;
+jumpToHack(Hook5_GetLuckLimit);
+
+ORG $872A8;
+jumpToHack(Hook6_GetLuckLimit);
+
+POP
+
+ALIGN 4
+Hook1_GetLuckLimit:
+#incbin "Hook1_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+Hook2_GetLuckLimit:
+#incbin "Hook2_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+Hook3_GetLuckLimit:
+#incbin "Hook3_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+Hook4_GetLuckLimit:
+#incbin "Hook4_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+Hook5_GetLuckLimit:
+#incbin "Hook5_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+Hook6_GetLuckLimit:
+#incbin "Hook6_GetLuckLimit.dmp"
+POIN luck_limit_each_class_Table
+
+#include "luck_limit_each_class_Table.event"
+
