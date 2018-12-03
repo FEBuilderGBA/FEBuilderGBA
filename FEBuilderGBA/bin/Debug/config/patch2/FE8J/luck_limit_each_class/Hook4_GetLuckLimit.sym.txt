@@ -1,0 +1,1 @@
+LuckTable=$1C

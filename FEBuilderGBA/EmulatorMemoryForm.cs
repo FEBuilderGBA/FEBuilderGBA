@@ -1719,6 +1719,8 @@ namespace FEBuilderGBA
             f.JumpToSearch(text);
         }
 
+
+
         byte[] UpdateCheckParty;
         void UpdateParty()
         {
@@ -1735,16 +1737,24 @@ namespace FEBuilderGBA
 
             uint i = 0;
             uint limit = (uint)this.UpdateCheckParty.Length / 0x72;
+            //uint limit = GetLimitRAMPartyUnits();
+            uint lastZeroPoint = 0;
             uint addr = 0;
             for (; i < limit; i++ , addr += 72)
             {
                 uint unitPointer = U.u32(bin, addr);
-                if (! U.isSafetyPointer(unitPointer))
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(unitPointer))
                 {
                     break;
                 }
+                lastZeroPoint = i + 1;
             }
-            this.PartyListBox.DummyAlloc((int)i, this.PartyListBox.SelectedIndex);
+
+            this.PartyListBox.DummyAlloc((int)lastZeroPoint, this.PartyListBox.SelectedIndex);
 
             if (isDetail)
             {
@@ -1767,6 +1777,14 @@ namespace FEBuilderGBA
             uint addr = GetShowRAMPartyUnitsAddr() + (uint)index * 72;
             uint unitPointer =  Program.RAM.u32(addr + 0);
             uint classPointer = Program.RAM.u32(addr + 4);
+
+            if (unitPointer == 0)
+            {
+                bounds.X += ListBoxEx.OWNER_DRAW_ICON_SIZE;
+                bounds.X += U.DrawText(R._("-Empty-"), g, this.BoldFont, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+                bounds.Y += lineHeight;
+                return new Size(bounds.X, bounds.Y);
+            }
 
             if (!U.isSafetyPointer(unitPointer))
             {
@@ -1946,6 +1964,18 @@ namespace FEBuilderGBA
                 return 2;
             }
             return 0;
+        }
+        uint GetLimitRAMPartyUnits()
+        {
+            if (this.PartyCombo.SelectedIndex == 1)
+            {
+                return 0x20;
+            }
+            if (this.PartyCombo.SelectedIndex == 2)
+            {
+                return 0x50;
+            }
+            return 0x50;
         }
 
         private void Party_CloseButton_Click(object sender, EventArgs e)
