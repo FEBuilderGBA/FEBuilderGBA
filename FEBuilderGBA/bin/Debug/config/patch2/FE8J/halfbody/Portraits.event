@@ -125,6 +125,14 @@ POIN RightMugCutOAM
 ORG 0x5728 //0x5820
 POIN LeftMugCutOAM
 
+//
+//If SkillSystems's RandomMug4 does not exist.
+ORG 0x22BC0 //0x22BF8
+BYTE 0x04
+ORG 0x22BC4 //0x22BFC
+BYTE 0x01
+
+
 POP
 
 RightMugOAM:

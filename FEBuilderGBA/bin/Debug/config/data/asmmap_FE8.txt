@@ -11460,3 +11460,5 @@
 080E6564	&LZ77	何かのTSA	26	{J}
 080E67E0	&LZ77	何かの画像	1	{J}
 02029D84	gpAISFirst	{J}
+08022BD8	AttackCommandEffect_DrawFace	{U}
+08022BA0	AttackCommandEffect_DrawFace	{J}
