@@ -460,3 +460,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 400D0000C9F50708	Make the map a little darker.	{U}
 211A0000400D000045570A082022000020171000	Display Support Relationship Screen for preparation.	{J}
 211A0000400D00006D190A082022000020171000	Display Support Relationship Screen for preparation.	{U}
+400D00004D880808	Party switch diaphragm 2.	Switch the editing.	{J}
+400D000081650808	Party switch diaphragm 2.	Switch the editing.	{U}
+400D000031880808	Party switching Eliq 2.	Switch the editing.	{J}
+400D000065650808	Party switching Eliq 2.	Switch the editing.	{U}

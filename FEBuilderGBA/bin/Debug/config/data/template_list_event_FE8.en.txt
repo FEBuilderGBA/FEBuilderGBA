@@ -17,3 +17,5 @@ template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a c
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	Two critical attacks at the battle event and destroy enemy
 template_event_WarpIN_FE8.txt	Make a unit appear in warp.
 template_event_Gaiden.txt	Make a Big Branch.If you clear within 3 turns, it will be a Gaidai.
+template_event_COND_FLAG_ON_FE8.txt	If the flag 0x0A is ON.
+template_event_COND_FLAG_OFF_FE8.txt	If flag 0x0A is OFF.

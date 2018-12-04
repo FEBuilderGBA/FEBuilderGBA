@@ -207,10 +207,10 @@
             // 
             // AllWriteButton
             // 
-            this.AllWriteButton.Location = new System.Drawing.Point(648, -1);
+            this.AllWriteButton.Location = new System.Drawing.Point(637, -1);
             this.AllWriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.AllWriteButton.Name = "AllWriteButton";
-            this.AllWriteButton.Size = new System.Drawing.Size(167, 30);
+            this.AllWriteButton.Size = new System.Drawing.Size(178, 30);
             this.AllWriteButton.TabIndex = 9;
             this.AllWriteButton.Text = "書き込み";
             this.AllWriteButton.UseVisualStyleBackColor = true;
@@ -237,15 +237,15 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ReadCount);
             this.panel1.Controls.Add(this.ReadStartAddress);
-            this.panel1.Location = new System.Drawing.Point(22, 2);
+            this.panel1.Location = new System.Drawing.Point(11, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1121, 30);
+            this.panel1.Size = new System.Drawing.Size(1132, 30);
             this.panel1.TabIndex = 53;
             // 
             // REDOButton
             // 
-            this.REDOButton.Location = new System.Drawing.Point(668, 0);
+            this.REDOButton.Location = new System.Drawing.Point(699, 0);
             this.REDOButton.Margin = new System.Windows.Forms.Padding(2);
             this.REDOButton.Name = "REDOButton";
             this.REDOButton.Size = new System.Drawing.Size(69, 30);
@@ -256,17 +256,17 @@
             // 
             // ReloadListButton
             // 
-            this.ReloadListButton.Location = new System.Drawing.Point(472, 0);
+            this.ReloadListButton.Location = new System.Drawing.Point(490, 0);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
-            this.ReloadListButton.Size = new System.Drawing.Size(103, 30);
+            this.ReloadListButton.Size = new System.Drawing.Size(114, 30);
             this.ReloadListButton.TabIndex = 25;
             this.ReloadListButton.Text = "再取得";
             this.ReloadListButton.UseVisualStyleBackColor = true;
             // 
             // UNDOButton
             // 
-            this.UNDOButton.Location = new System.Drawing.Point(598, 0);
+            this.UNDOButton.Location = new System.Drawing.Point(624, 0);
             this.UNDOButton.Margin = new System.Windows.Forms.Padding(2);
             this.UNDOButton.Name = "UNDOButton";
             this.UNDOButton.Size = new System.Drawing.Size(69, 30);
@@ -289,17 +289,17 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(304, -1);
+            this.label2.Location = new System.Drawing.Point(315, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 30);
+            this.label2.Size = new System.Drawing.Size(85, 30);
             this.label2.TabIndex = 24;
             this.label2.Text = "読込数";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReadCount
             // 
-            this.ReadCount.Location = new System.Drawing.Point(390, 3);
+            this.ReadCount.Location = new System.Drawing.Point(406, 3);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
             this.ReadCount.Size = new System.Drawing.Size(78, 25);
@@ -316,7 +316,7 @@
             54,
             0});
             this.ReadStartAddress.Name = "ReadStartAddress";
-            this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
+            this.ReadStartAddress.Size = new System.Drawing.Size(141, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
             // panel6
@@ -325,10 +325,10 @@
             this.panel6.Controls.Add(this.AddressListExpandsButton_32766);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(22, 36);
+            this.panel6.Location = new System.Drawing.Point(11, 36);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 853);
+            this.panel6.Size = new System.Drawing.Size(310, 853);
             this.panel6.TabIndex = 74;
             // 
             // AddressListExpandsButton_32766
@@ -348,7 +348,7 @@
             this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(301, 29);
+            this.LabelFilter.Size = new System.Drawing.Size(310, 29);
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,7 +362,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(299, 796);
+            this.AddressList.Size = new System.Drawing.Size(310, 796);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 

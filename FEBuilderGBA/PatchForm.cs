@@ -5851,6 +5851,7 @@ namespace FEBuilderGBA
                 }
                 else if (type == "SWITCH")
                 {
+                    uint determinationAddress = atOffset(patch.Param, "DETERMINATION_ADDRESS");
                     foreach (var pair in patch.Param)
                     {
                         if (pair.Key.IndexOf("ONN:") != 0)
@@ -5873,7 +5874,17 @@ namespace FEBuilderGBA
                             Debug.Assert(false);
                             continue;
                         }
+                        if (determinationAddress != 0)
+                        {//determinationAddressの利用確認
+                            if (determinationAddress == a)
+                            {
+                                determinationAddress = 0;
+                            }
+                        }
                     }
+
+                    //もし、指定があったとしても利用されているなら0になるはずだ
+                    Debug.Assert(determinationAddress == 0);
                 }
                 else if (type == "STRUCT")
                 {

@@ -11,8 +11,8 @@ COMBO=Apply|ONN|Default_None|OFF
 
 DETERMINATION_ADDRESS=0x02C134
 
-ONN:0x02C07C=0x4A
-OFF:0x02C07C=0x48
+ONN:0x02C134=0x4A
+OFF:0x02C134=0x48
 
 AUTHOR=FE8Girls Chap
 INFO.en=If you adapt, you can also get experience value when the weapon breaks.\r\nIt is used when implementing items that are used 1 times and receive a lot of experience values.

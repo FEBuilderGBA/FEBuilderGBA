@@ -17,3 +17,5 @@ template_event_TALK_COND_CHANGE_MUSIC.txt	会話中に、イベントを並列�
 template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	戦闘イベントで2回連続攻撃して必殺で相手を撃破する
 template_event_WarpIN_FE8.txt	ユニットをワープで登場させる
 template_event_Gaiden.txt	外伝分岐を作る。もし、3ターン以内にクリアすれば外伝に。
+template_event_COND_FLAG_ON_FE8.txt	もし、フラグ0x0AがONであれば
+template_event_COND_FLAG_OFF_FE8.txt	もし、フラグ0x0AがOFFであれば

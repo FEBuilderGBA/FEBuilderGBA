@@ -19,3 +19,5 @@ template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	战斗事件中的两次重大攻�
 template_event_COND_GOLD_MORE_5000.txt	如果你拥有5000金币或更多
 template_event_WarpIN_FE8.txt	使单位出现扭曲
 template_event_Gaiden.txt	做一个大分支。如果你在3回合内清除，它将是一个Gaidai。
+template_event_COND_FLAG_ON_FE8.txt	如果标志0x0A为ON。
+template_event_COND_FLAG_OFF_FE8.txt	如果标志0x0A为OFF。

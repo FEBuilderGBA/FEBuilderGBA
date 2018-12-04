@@ -1694,6 +1694,7 @@
     </Compile>
     <Compile Include="AIMapSettingForm.cs">
       <SubType>Form</SubType>
+      <Generator>z</Generator>
     </Compile>
     <Compile Include="AIMapSettingForm.Designer.cs">
       <DependentUpon>AIMapSettingForm.cs</DependentUpon>

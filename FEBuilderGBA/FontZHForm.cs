@@ -359,8 +359,10 @@ namespace FEBuilderGBA
                 return;
             }
 
-            Color bgcolor = GetFontColor(this.FontType.SelectedIndex == 0);
-            Bitmap paletteHint = ImageUtil.ByteToImage4(16, 16, new byte[64], 0, bgcolor);
+            bool IsItemFont = (this.FontType.SelectedIndex == 0);
+
+            Color bgcolor = GetFontColor(IsItemFont);
+            Bitmap paletteHint = ImageUtil.ByteToImage4(16, 0xD, new byte[64], 0, bgcolor);
             Bitmap bitmap = ImageUtil.LoadAndCheckPaletteUI(this
                 , paletteHint
                 , 0, 0);
@@ -372,7 +374,14 @@ namespace FEBuilderGBA
             uint width = (uint)bitmap.Width;
 
             //画像
-            this.SelectFontBitmapByte = ImageUtil.Image4ToByte(bitmap);
+            if (IsItemFont)
+            {
+                this.SelectFontBitmapByte = ImageUtil.Image4ToByteZH(bitmap, (int)width + 1);
+            }
+            else
+            {
+                this.SelectFontBitmapByte = ImageUtil.Image4ToByteZH(bitmap, (int)width);
+            }
             U.ForceUpdate(this.FontWidth, width);
 
             //画像等データの書き込み
