@@ -256,10 +256,14 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 40050200XX000000400A0000BDE39E08	Erase[XX:UNIT:Character]by superimposing on main character	{UNITREMOVE}	{U}
 40050200XXXXXXXX400A0000F801A608	If Tutorial,Branch[XXXXXXXX:POINTER_EVENT:Event]	{SUBROUTINE}	{J}
 40050200XXXXXXXX400A0000C0E09E08	If Tutorial,Branch[XXXXXXXX:POINTER_EVENT:Event]	{SUBROUTINE}	{U}
-400D0000E1860808	Party switch Ephraim	{WMAP}	{J}
-400D000015640808	Party switch Ephraim	{WMAP}	{U}
-400D000031870808	Party switch Eirika	{WMAP}	{J}
-400D000065640808	Party switch Eirika	{WMAP}	{U}
+400D0000E1860808	Party switch Ephraim	Temporary party switching (used in Chapter 5)	{J}
+400D000015640808	Party switch Ephraim	Temporary party switching (used in Chapter 5)	{U}
+400D000031870808	Party switch Eirika	Temporary party switching (used in Chapter 5)	{J}
+400D000065640808	Party switch Eirika	Temporary party switching (used in Chapter 5)	{U}
+400D00004D880808	Party switch Ephraim 2.	Switch the editing and make permanent switching.	{J}
+400D000081650808	Party switch Ephraim 2.	Switch the editing and make permanent switching.	{U}
+400D000031880808	Party switch Eirika 2.	Switch the editing and make permanent switching.	{J}
+400D000065650808	Party switch Eirika 2.	Switch the editing and make permanent switching.	{U}
 400D0000B91B0808	Effects when Satan appears	{MAPEFFECT}	{J}
 400D000079F80708	Effects when Satan appears	{MAPEFFECT}	{U}
 400D000001200808	Floor effect when Satan appears	{MAPEFFECT}	{J}
@@ -460,7 +464,3 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 400D0000C9F50708	Make the map a little darker.	{U}
 211A0000400D000045570A082022000020171000	Display Support Relationship Screen for preparation.	{J}
 211A0000400D00006D190A082022000020171000	Display Support Relationship Screen for preparation.	{U}
-400D00004D880808	Party switch diaphragm 2.	Switch the editing.	{J}
-400D000081650808	Party switch diaphragm 2.	Switch the editing.	{U}
-400D000031880808	Party switching Eliq 2.	Switch the editing.	{J}
-400D000065650808	Party switching Eliq 2.	Switch the editing.	{U}
