@@ -13,3 +13,6 @@ HEX=FALSE
 INFO=幸運の上限値を設定します。\r\n幸運は全クラス共通です。\r\nディフォルトでは、30が設定されています。\r\n
 INFO.en=Determines the maximum luck stat in decimal.\r\nThis is a universal cap amongst all classes.
 INFO.zh=设定运气的上限。\r\n运气对所有班级都很常见。\r\n默认情况下，设置为30。\r\n
+
+CONFLICT_IF:0x01824C=0x00 0x4B 0x18 0x47
+CONFLICT_MESSAGE=luck_limit_each_class

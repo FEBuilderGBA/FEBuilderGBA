@@ -748,6 +748,7 @@ namespace FEBuilderGBA
 
             FETextDecode decode = new FETextDecode();
             string from_string = decode.Decode(id);
+            from_string = from_string.ToUpper();
 
             transDic[from_string] = to_string;
             transDic[U.ToHexString(id) + "|" + from_string] = to_string;

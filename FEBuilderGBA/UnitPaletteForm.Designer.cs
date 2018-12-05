@@ -116,10 +116,10 @@
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.label30 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.N_AddressList = new ListBoxEx();
+            this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -182,7 +182,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Location = new System.Drawing.Point(-1, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 30);
@@ -193,7 +193,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(265, 1);
+            this.label2.Location = new System.Drawing.Point(265, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 30);
@@ -213,7 +213,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(360, 4);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
@@ -252,9 +251,11 @@
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(335, 2);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 52;
@@ -272,9 +273,11 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(557, 2);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(137, 25);
             this.SelectAddress.TabIndex = 40;
@@ -317,10 +320,10 @@
             // label55
             // 
             this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label55.Location = new System.Drawing.Point(-1, 0);
+            this.label55.Location = new System.Drawing.Point(-1, -1);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(85, 30);
+            this.label55.Size = new System.Drawing.Size(86, 30);
             this.label55.TabIndex = 1;
             this.label55.Text = "アドレス";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -434,63 +437,77 @@
             // 
             // L_6_UNITPALETTE
             // 
+            this.L_6_UNITPALETTE.ErrorMessage = "";
             this.L_6_UNITPALETTE.Location = new System.Drawing.Point(818, 100);
             this.L_6_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_6_UNITPALETTE.Name = "L_6_UNITPALETTE";
+            this.L_6_UNITPALETTE.Placeholder = "";
             this.L_6_UNITPALETTE.ReadOnly = true;
             this.L_6_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_6_UNITPALETTE.TabIndex = 136;
             // 
             // L_5_UNITPALETTE
             // 
+            this.L_5_UNITPALETTE.ErrorMessage = "";
             this.L_5_UNITPALETTE.Location = new System.Drawing.Point(818, 69);
             this.L_5_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_5_UNITPALETTE.Name = "L_5_UNITPALETTE";
+            this.L_5_UNITPALETTE.Placeholder = "";
             this.L_5_UNITPALETTE.ReadOnly = true;
             this.L_5_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_5_UNITPALETTE.TabIndex = 135;
             // 
             // L_4_UNITPALETTE
             // 
+            this.L_4_UNITPALETTE.ErrorMessage = "";
             this.L_4_UNITPALETTE.Location = new System.Drawing.Point(818, 40);
             this.L_4_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_4_UNITPALETTE.Name = "L_4_UNITPALETTE";
+            this.L_4_UNITPALETTE.Placeholder = "";
             this.L_4_UNITPALETTE.ReadOnly = true;
             this.L_4_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_4_UNITPALETTE.TabIndex = 134;
             // 
             // L_3_UNITPALETTE
             // 
+            this.L_3_UNITPALETTE.ErrorMessage = "";
             this.L_3_UNITPALETTE.Location = new System.Drawing.Point(818, 10);
             this.L_3_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_3_UNITPALETTE.Name = "L_3_UNITPALETTE";
+            this.L_3_UNITPALETTE.Placeholder = "";
             this.L_3_UNITPALETTE.ReadOnly = true;
             this.L_3_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_3_UNITPALETTE.TabIndex = 133;
             // 
             // L_2_UNITPALETTE
             // 
+            this.L_2_UNITPALETTE.ErrorMessage = "";
             this.L_2_UNITPALETTE.Location = new System.Drawing.Point(467, 68);
             this.L_2_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_2_UNITPALETTE.Name = "L_2_UNITPALETTE";
+            this.L_2_UNITPALETTE.Placeholder = "";
             this.L_2_UNITPALETTE.ReadOnly = true;
             this.L_2_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_2_UNITPALETTE.TabIndex = 132;
             // 
             // L_1_UNITPALETTE
             // 
+            this.L_1_UNITPALETTE.ErrorMessage = "";
             this.L_1_UNITPALETTE.Location = new System.Drawing.Point(467, 37);
             this.L_1_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_1_UNITPALETTE.Name = "L_1_UNITPALETTE";
+            this.L_1_UNITPALETTE.Placeholder = "";
             this.L_1_UNITPALETTE.ReadOnly = true;
             this.L_1_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_1_UNITPALETTE.TabIndex = 131;
             // 
             // L_0_UNITPALETTE
             // 
+            this.L_0_UNITPALETTE.ErrorMessage = "";
             this.L_0_UNITPALETTE.Location = new System.Drawing.Point(467, 5);
             this.L_0_UNITPALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.L_0_UNITPALETTE.Name = "L_0_UNITPALETTE";
+            this.L_0_UNITPALETTE.Placeholder = "";
             this.L_0_UNITPALETTE.ReadOnly = true;
             this.L_0_UNITPALETTE.Size = new System.Drawing.Size(90, 25);
             this.L_0_UNITPALETTE.TabIndex = 130;
@@ -836,9 +853,11 @@
             // 
             // EXPLAIN
             // 
+            this.EXPLAIN.ErrorMessage = "";
             this.EXPLAIN.Location = new System.Drawing.Point(9, 222);
             this.EXPLAIN.Multiline = true;
             this.EXPLAIN.Name = "EXPLAIN";
+            this.EXPLAIN.Placeholder = "";
             this.EXPLAIN.ReadOnly = true;
             this.EXPLAIN.Size = new System.Drawing.Size(1079, 111);
             this.EXPLAIN.TabIndex = 240;
@@ -847,63 +866,77 @@
             // 
             // N_L_6_CLASS
             // 
+            this.N_L_6_CLASS.ErrorMessage = "";
             this.N_L_6_CLASS.Location = new System.Drawing.Point(922, 107);
             this.N_L_6_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_6_CLASS.Name = "N_L_6_CLASS";
+            this.N_L_6_CLASS.Placeholder = "";
             this.N_L_6_CLASS.ReadOnly = true;
             this.N_L_6_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_6_CLASS.TabIndex = 135;
             // 
             // N_L_5_CLASS
             // 
+            this.N_L_5_CLASS.ErrorMessage = "";
             this.N_L_5_CLASS.Location = new System.Drawing.Point(922, 76);
             this.N_L_5_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_5_CLASS.Name = "N_L_5_CLASS";
+            this.N_L_5_CLASS.Placeholder = "";
             this.N_L_5_CLASS.ReadOnly = true;
             this.N_L_5_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_5_CLASS.TabIndex = 134;
             // 
             // N_L_4_CLASS
             // 
+            this.N_L_4_CLASS.ErrorMessage = "";
             this.N_L_4_CLASS.Location = new System.Drawing.Point(922, 43);
             this.N_L_4_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_4_CLASS.Name = "N_L_4_CLASS";
+            this.N_L_4_CLASS.Placeholder = "";
             this.N_L_4_CLASS.ReadOnly = true;
             this.N_L_4_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_4_CLASS.TabIndex = 133;
             // 
             // N_L_3_CLASS
             // 
+            this.N_L_3_CLASS.ErrorMessage = "";
             this.N_L_3_CLASS.Location = new System.Drawing.Point(922, 13);
             this.N_L_3_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_3_CLASS.Name = "N_L_3_CLASS";
+            this.N_L_3_CLASS.Placeholder = "";
             this.N_L_3_CLASS.ReadOnly = true;
             this.N_L_3_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_3_CLASS.TabIndex = 132;
             // 
             // N_L_2_CLASS
             // 
+            this.N_L_2_CLASS.ErrorMessage = "";
             this.N_L_2_CLASS.Location = new System.Drawing.Point(466, 72);
             this.N_L_2_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_2_CLASS.Name = "N_L_2_CLASS";
+            this.N_L_2_CLASS.Placeholder = "";
             this.N_L_2_CLASS.ReadOnly = true;
             this.N_L_2_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_2_CLASS.TabIndex = 131;
             // 
             // N_L_1_CLASS
             // 
+            this.N_L_1_CLASS.ErrorMessage = "";
             this.N_L_1_CLASS.Location = new System.Drawing.Point(466, 41);
             this.N_L_1_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_1_CLASS.Name = "N_L_1_CLASS";
+            this.N_L_1_CLASS.Placeholder = "";
             this.N_L_1_CLASS.ReadOnly = true;
             this.N_L_1_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_1_CLASS.TabIndex = 130;
             // 
             // N_L_0_CLASS
             // 
+            this.N_L_0_CLASS.ErrorMessage = "";
             this.N_L_0_CLASS.Location = new System.Drawing.Point(466, 6);
             this.N_L_0_CLASS.Margin = new System.Windows.Forms.Padding(2);
             this.N_L_0_CLASS.Name = "N_L_0_CLASS";
+            this.N_L_0_CLASS.Placeholder = "";
             this.N_L_0_CLASS.ReadOnly = true;
             this.N_L_0_CLASS.Size = new System.Drawing.Size(172, 25);
             this.N_L_0_CLASS.TabIndex = 129;
@@ -1106,7 +1139,7 @@
             // 
             // N_ReloadListButton
             // 
-            this.N_ReloadListButton.Location = new System.Drawing.Point(448, 1);
+            this.N_ReloadListButton.Location = new System.Drawing.Point(485, 0);
             this.N_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReloadListButton.Name = "N_ReloadListButton";
             this.N_ReloadListButton.Size = new System.Drawing.Size(112, 30);
@@ -1117,7 +1150,7 @@
             // label18
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(-1, 0);
+            this.label18.Location = new System.Drawing.Point(-1, -1);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(115, 30);
@@ -1128,18 +1161,17 @@
             // label19
             // 
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(265, 0);
+            this.label19.Location = new System.Drawing.Point(265, -1);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(86, 30);
+            this.label19.Size = new System.Drawing.Size(87, 30);
             this.label19.TabIndex = 24;
             this.label19.Text = "読込数";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N_ReadCount
             // 
-
-            this.N_ReadCount.Location = new System.Drawing.Point(355, 2);
+            this.N_ReadCount.Location = new System.Drawing.Point(358, 2);
             this.N_ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReadCount.Name = "N_ReadCount";
             this.N_ReadCount.Size = new System.Drawing.Size(78, 25);
@@ -1177,9 +1209,11 @@
             // 
             // N_BlockSize
             // 
-            this.N_BlockSize.Location = new System.Drawing.Point(335, 4);
+            this.N_BlockSize.ErrorMessage = "";
+            this.N_BlockSize.Location = new System.Drawing.Point(335, 2);
             this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
             this.N_BlockSize.ReadOnly = true;
             this.N_BlockSize.Size = new System.Drawing.Size(82, 25);
             this.N_BlockSize.TabIndex = 52;
@@ -1197,9 +1231,11 @@
             // 
             // N_SelectAddress
             // 
+            this.N_SelectAddress.ErrorMessage = "";
             this.N_SelectAddress.Location = new System.Drawing.Point(557, 2);
             this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
             this.N_SelectAddress.ReadOnly = true;
             this.N_SelectAddress.Size = new System.Drawing.Size(137, 25);
             this.N_SelectAddress.TabIndex = 40;
@@ -1242,10 +1278,10 @@
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Location = new System.Drawing.Point(-1, -1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(85, 30);
+            this.label23.Size = new System.Drawing.Size(86, 30);
             this.label23.TabIndex = 1;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1265,6 +1301,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 29);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1300,6 +1337,7 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(-1, 31);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);

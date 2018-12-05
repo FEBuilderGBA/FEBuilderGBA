@@ -26,3 +26,4 @@ B0:DECIMAL=Luck
 INFO.en=Let's make it possible to set the luck limit not for uniform, but for each class.
 NAME.zh=设置每个班级的幸运限额。
 INFO.zh=让我们可以设置运气限制不是为了统一，而是为每个班级。
+

@@ -43,6 +43,7 @@
             this.Subtile.TabIndex = 0;
             this.Subtile.Text = "";
             this.Subtile.DoubleClick += new System.EventHandler(this.Subtile_DoubleClick);
+            this.Subtile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Subtile_MouseDoubleClick);
             this.Subtile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Subtile_MouseDown);
             this.Subtile.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Subtile_MouseMove);
             // 

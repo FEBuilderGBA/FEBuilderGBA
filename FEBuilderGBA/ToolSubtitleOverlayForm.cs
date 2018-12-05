@@ -21,11 +21,13 @@ namespace FEBuilderGBA
 
         }
 
+        string SimpleTranslateToTranslateDataFilename;
         Dictionary<string,string> TransDic;
         int ShortLength;
         bool ShowAlways;
-        public void Init(Dictionary<string, string> transDic, int shortLength, bool showAlways)
+        public void Init(string simpleTranslateToTranslateDataFilename,Dictionary<string, string> transDic, int shortLength, bool showAlways)
         {
+            this.SimpleTranslateToTranslateDataFilename = simpleTranslateToTranslateDataFilename;
             this.CurrentText = "";
             this.CurrentSubtile = "";
             this.IsHideForm = false;
@@ -269,6 +271,10 @@ namespace FEBuilderGBA
                 this.Left += e.X - this.MousePoint.X;
                 this.Top += e.Y - this.MousePoint.Y;
             }
+        }
+
+        private void Subtile_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
         }
     }
 }

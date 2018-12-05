@@ -17,7 +17,13 @@ namespace FEBuilderGBA
             InitializeComponent();
             InputFormRef.TabControlHideTabOption(MainTab);
             OrignalFilename.AllowDropFilename();
-            U.AddCancelButton(this);
+//            U.AddCancelButton(this);
+
+            SetExplain();
+
+            List<Control> controls = InputFormRef.GetAllControls(this);
+            InputFormRef.makeLinkEventHandler("", controls, this.X_MapID, this.X_MapName, 0, "MAP", new string[]{ });
+            U.ForceUpdate(this.X_MapID,0);
 
             this.Problem.Placeholder = R._("例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)");
             this.URLTextBoxEx.Text = MainFormUtil.GetCommunitiesURL();
@@ -370,6 +376,9 @@ namespace FEBuilderGBA
             sb.AppendLine("FEVersion:" + FEVersion);
             sb.AppendLine("Emu:" + OptionForm.GetEmulatorNameOnly());
 
+            sb.AppendLine("MapID:");
+            sb.AppendLine(U.ToHexString(this.X_MapID.Value) + ":" + this.X_MapName.Text);
+
             //ユーザが書いた問題点
             sb.AppendLine("Problem:");
             sb.AppendLine(Problem.Text);
@@ -423,6 +432,10 @@ namespace FEBuilderGBA
         private void ToolProblemReportForm_Shown(object sender, EventArgs e)
         {
             StartButton.Focus();
+        }
+        void SetExplain()
+        {
+            X_MapIDLabel.AccessibleDescription = R._("どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。");
         }
     }
 }

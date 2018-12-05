@@ -65,19 +65,26 @@ namespace FEBuilderGBA
                 return;
             }
 
-            //XMLシリアライザが初期化できないので自前でやる.
-            using (StreamReader r = new StreamReader(fullfilename))
+            try
             {
-                XmlDocument xml = new XmlDocument();
-                xml.Load(r);
-
-                XmlElement elem = xml.DocumentElement;
-                foreach (XmlNode node in elem.SelectNodes("item"))
+                //XMLシリアライザが初期化できないので自前でやる.
+                using (StreamReader r = new StreamReader(fullfilename))
                 {
-                    XmlNode key = node.SelectSingleNode("key");
-                    XmlNode value = node.SelectSingleNode("value");
-                    this[key.InnerText] = value.InnerText;
+                    XmlDocument xml = new XmlDocument();
+                    xml.Load(r);
+
+                    XmlElement elem = xml.DocumentElement;
+                    foreach (XmlNode node in elem.SelectNodes("item"))
+                    {
+                        XmlNode key = node.SelectSingleNode("key");
+                        XmlNode value = node.SelectSingleNode("value");
+                        this[key.InnerText] = value.InnerText;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("設定ファイルが壊れています。\r\n設定ファイルを利用せずに、ディフォルトの設定で起動させます。\r\nこのエラーが何度も出る場合は、連絡してください。\r\n\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
         }
 

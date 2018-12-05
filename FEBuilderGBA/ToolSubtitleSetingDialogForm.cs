@@ -165,7 +165,7 @@ namespace FEBuilderGBA
 
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait())
                 {
-                    g_SubTitleOverlay.Init(f.MakeTransDic(), f.ShortLength,  f.ShowAlways.Checked);
+                    g_SubTitleOverlay.Init(f.SimpleTranslateToTranslateDataFilename.Text, f.MakeTransDic(), f.ShortLength,  f.ShowAlways.Checked);
                 }
                 g_SubTitleOverlay.Show();
             }

@@ -14,3 +14,6 @@ INFO.en=Patches the ROM to increase the number of tiles available for portraits 
 INFO.zh=增加可用于面部图像的图块数量。
 
 AUTHOR=tiki http://feuniverse.us/t/fe7-exceed-the-portrait-hackbox/2044 Compatability:aera
+
+CONFLICT_IF:0x8540=0x01 0x3A
+CONFLICT_MESSAGE=halfbody

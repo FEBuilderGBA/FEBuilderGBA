@@ -16,3 +16,6 @@ INFO=顔画像で利用できるタイルを増やします。
 INFO.en=Increase the number of tiles available for facial images.
 NAME.zh=MugExceed/超过头像hack框（扩大面部图像4块）
 INFO.zh=增加可用于面部图像的图块数量。
+
+CONFLICT_IF:0x843C=0x01 0x3A
+CONFLICT_MESSAGE=halfbody

@@ -628,6 +628,9 @@ Function instruction pointer table of event instruction
 :設定ファイルに書き込めません。\r\n{0}\r\n{1}
 Unable to write to the configuration file.\r\n{0}\r\n{1}
 
+:設定ファイルが壊れています。\r\n設定ファイルを利用せずに、ディフォルトの設定で起動させます。\r\nこのエラーが何度も出る場合は、連絡してください。\r\n\r\n{0}\r\n{1}
+The configuration file is corrupted.\r\nActivate with the default setting without using the setting file.\r\nIf this error occurs many times, please contact.\r\n\r\n{0}.\r\n{1}.
+
 :直接ROMに書き込まれた文字列
 String written directly to ROM
 
@@ -10315,11 +10318,17 @@ Attachment data
 :サイズが大きすぎます。2MBまでにしてください。\r\n間違えてROMを添付できないように、サイズを制限しています。
 The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not attach a ROM by mistake.
 
+:どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
+Which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nWe added items because there are too many people who do not mention which chapter a problem occurs.
+
 :このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
 This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
 :始める
 start
+
+:どの章？
+Which chapter? 
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
