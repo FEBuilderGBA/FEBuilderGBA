@@ -441,6 +441,7 @@
             this.textBoxEx30 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx31 = new FEBuilderGBA.TextBoxEx();
             this.textBoxEx32 = new FEBuilderGBA.TextBoxEx();
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.EventPage.SuspendLayout();
@@ -5277,6 +5278,7 @@
             // CheatPage
             // 
             this.CheatPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CheatPage.Controls.Add(this.CHEAT_ALL_ENEMY_UNIT_HP_1);
             this.CheatPage.Controls.Add(this.systemIconPictureBox4);
             this.CheatPage.Controls.Add(this.CHEAT_ALL_UNIT_GROW);
             this.CheatPage.Controls.Add(this.CHEAT_ALL_PLAYER_UNIT_GROW);
@@ -5333,7 +5335,7 @@
             // 
             // CHEAT_ALL_UNIT_GROW
             // 
-            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(70, 561);
+            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(70, 551);
             this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
             this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
@@ -6069,6 +6071,18 @@
             this.textBoxEx32.Size = new System.Drawing.Size(671, 25);
             this.textBoxEx32.TabIndex = 202;
             // 
+            // CHEAT_ALL_ENEMY_UNIT_HP_1
+            // 
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(71, 600);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TabIndex = 317;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Text = "すべての敵ユニットのHPを1にします。";
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.UseVisualStyleBackColor = true;
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Click += new System.EventHandler(this.CHEAT_ALL_ENEMY_UNIT_HP_1_Click);
+            // 
             // EmulatorMemoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -6690,5 +6704,6 @@
         private System.Windows.Forms.Button CHEAT_ALL_PLAYER_UNIT_GROW;
         private System.Windows.Forms.Button CHEAT_ALL_UNIT_GROW;
         private SystemIconPictureBox systemIconPictureBox4;
+        private System.Windows.Forms.Button CHEAT_ALL_ENEMY_UNIT_HP_1;
     }
 }

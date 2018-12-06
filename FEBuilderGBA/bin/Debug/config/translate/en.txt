@@ -1225,6 +1225,9 @@ Counter Stop the parameters of this unit
 :クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。
 Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.
 
+:すべての敵ユニットのHPを1にします。
+Set HP of all enemy units to 1.
+
 :エミュレータへ接続
 Connect to emulator
 

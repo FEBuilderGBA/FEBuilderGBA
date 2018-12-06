@@ -9026,7 +9026,7 @@
 085F36DC	&PALETTE	何かのパレット	458	{U}
 085F36FC	&PALETTE	何かのパレット	459	{U}
 087FF468	&PALETTE	何かのパレット	460	{U}
-08803CB0	&PALETTE	何かのパレット	461	{U}
+08803CB0	&PALETTE	gPalette_BattlePopup	{U}
 089A2900	&PALETTE	何かのパレット	462	{U}
 089AD648	&PALETTE	何かのパレット	463	{U}
 089AD668	&PALETTE	何かのパレット	464	{U}
@@ -9187,7 +9187,7 @@
 086202B4	&PALETTE	何かのパレット	458	{J}
 086202D4	&PALETTE	何かのパレット	459	{J}
 088539C0	&PALETTE	何かのパレット	460	{J}
-08858208	&PALETTE	何かのパレット	461	{J}
+08858208	&PALETTE	gPalette_BattlePopup	{J}
 08A12F88	&PALETTE	何かのパレット	462	{J}
 08A1DCD0	&PALETTE	何かのパレット	463	{J}
 08A1DCF0	&PALETTE	何かのパレット	464	{J}
@@ -10416,17 +10416,17 @@
 0859D458	gSelect_Drop	{U}
 0859D478	gSelect_Rescue	{U}
 0859DBA0	gpMovementArrowData	{U}
-0859F020	gGfx_PhaseSwitchFrame	{U}
-0859F3F8	gGfx_PlayerPhaseIntro	{U}
+0859F020	&LZ77	gGfx_PhaseSwitchFrame	{U}
+0859F3F8	&LZ77	gGfx_PlayerPhaseIntro	{U}
 0859FA2C	&PALETTE	gPal_PlayerPhaseIntro	{U}
-0859FA4C	gGfx_EnemyPhaseIntro	{U}
+0859FA4C	&LZ77	gGfx_EnemyPhaseIntro	{U}
 085A0068	&PALETTE	gPal_EnemyPhaseIntro	{U}
-085A0088	gGfx_OtherPhaseIntro	{U}
+085A0088	&LZ77	gGfx_OtherPhaseIntro	{U}
 085A0698	&PALETTE	gPal_OtherPhaseIntro	{U}
-085A06D8	gGfx_PhaseSwitchSquares	{U}
-085A0C80	gBattleForecast_x2x4Gfx	{U}
-085A2940	gGfxMineFireEffectGfx	{U}
-085A7CC0	gImg_MineAnimGfx	{U}
+085A06D8	&LZ77	gGfx_PhaseSwitchSquares	{U}
+085A0C80	&LZ77	gBattleForecast_x2x4Gfx	{U}
+085A2940	&LZ77	gGfxMineFireEffectGfx	{U}
+085A7CC0	&LZ77	gImg_MineAnimGfx	{U}
 085A7F58	gpAIUnitPriorityBuffer	{U}
 085A7F9C	gAiDecisionMakerCallTable	{U}
 085A80BC	gSomeRangeTileOffsetLookup	{U}
@@ -10473,7 +10473,7 @@
 085B6450	gNewUIPaletterPointers	{U}
 085B6460	gOldUIGfxPointers	{U}
 085B9D5C	gAISFrames_DummyNoFrames	{U}
-085BA0B8	gGfx_NODAMGEMIS	{U}
+085BA0B8	&LZ77	gGfx_NODAMGEMIS	{U}
 085D5458	gThunderAnimBgTsaLookupClose	{U}
 085D5460	gThunderAnimBgTsaLookupFar	{U}
 085F2DC0	gGfx_ThunderAnimBg	{U}
@@ -10485,11 +10485,11 @@
 08696840	gPalIvaldiBigSpark	{U}
 0878D500	gPopupIconOAMData	{U}
 0878D518	gAnimScr_PopupIcon	{U}
-088035B0	gGfx_LevelUpBoxFrame	{U}
-088039E8	gMap_LevelUpBoxFrame	{U}
-08803B30	gGfx_BattlePopup	{U}
-08803BD0	gGfx_BattlePopupTextBg	{U}
-08803CD0	gTsa_BattlePopup	{U}
+088035B0	&LZ77	gGfx_LevelUpBoxFrame	{U}
+088039E8	&LZ77	gMap_LevelUpBoxFrame	{U}
+08803B30	&LZ77	gGfx_BattlePopup	{U}
+08803BD0	&LZ77	gGfx_BattlePopupTextBg	{U}
+08803CD0	&LZ77	gTsa_BattlePopup	{U}
 0880BB96	gSomeMovCostTable	{U}
 0880BC18	gBallistaMovCostTable	{U}
 088ADF39	gSlayerEffectivenessTable	{U}
@@ -10497,31 +10497,31 @@
 089A2C28	gMoveUnitStateCallTable	{U}
 089A2C78	gWalkSpeedLookup	{U}
 089A3ED4	gMapAnimLevelUpStatLabelLocationTable	{U}
-089AC0A4	gGfxMISSAnim	{U}
-089AC794	gGfx_LevelUpTextSmall	{U}
-089ADEB0	gGfxPoisonEffectAnim	{U}
-089AE224	gGfx_SomeWarpEffect	{U}
-089AE7A4	gGfxSpark	{U}
-089E8238	gGfxDialogueTextBubble	{U}
+089AC0A4	&LZ77	gGfxMISSAnim	{U}
+089AC794	&LZ77	gGfx_LevelUpTextSmall	{U}
+089ADEB0	&LZ77	gGfxPoisonEffectAnim	{U}
+089AE224	&LZ77	gGfx_SomeWarpEffect	{U}
+089AE7A4	&LZ77	gGfxSpark	{U}
+089E8238	&LZ77	gGfxDialogueTextBubble	{U}
 089E857C	gEventIdMaskLookup	{U}
 089EE274	gEvent_LoadReinforcements	{U}
 089EE2C4	gEvent_ConvoClearBackground	{U}
 089EE310	gEvent_ConvoShowTextWithBg	{U}
 089EEBE8	gEvent_ChPrologueBeginning	{U}
 089F3634	gMenuCommands_RouteSplit	{U}
-08A0285C	gGfxHelpTextBox	{U}
-08A02884	gGfxHelpTextBox2	{U}
-08A028AC	gGfxHelpTextBox3	{U}
-08A02914	gGfxHelpTextBox4	{U}
-08A02980	gGfxHelpTextBox5	{U}
+08A0285C	&LZ77	gGfxHelpTextBox	{U}
+08A02884	&LZ77	gGfxHelpTextBox2	{U}
+08A028AC	&LZ77	gGfxHelpTextBox3	{U}
+08A02914	&LZ77	gGfxHelpTextBox4	{U}
+08A02980	&LZ77	gGfxHelpTextBox5	{U}
 08A191F4	gSomeTextIndexLookup	{U}
 08A19200	gpStringBufferAlt	{U}
 08A1951C	gShopSellTextIndexLookup	{U}
 08A19524	gpShopSellStringBuffer	{U}
 08A199C8	gGfxPrepMenuInputHelp	{U}
-08A1A0A4	gGfxConvoyTopWIcons	{U}
-08A1A23C	gGfxConvoyBottomWIcons	{U}
-08A1B0D8	gGfx_SmolBrownNameBox	{U}
+08A1A0A4	&LZ77	gGfxConvoyTopWIcons	{U}
+08A1A23C	&LZ77	gGfxConvoyBottomWIcons	{U}
+08A1B0D8	&LZ77	gGfx_SmolBrownNameBox	{U}
 08A1FAF4	gpSaveDataStart	{U}
 08A1FB30	gpDummyChapterDataSRAM	{U}
 08A1FB34	gpDummyChapterData	{U}
@@ -10535,15 +10535,15 @@
 08A3CB1E	gOverallRankLookup	{U}
 08A3D728	gWMFaceGfxData	{U}
 08AA213C	gBgConfig_8AA213C	{U}
-08AA7760	gGfx_TitleScreen	{U}
+08AA7760	&LZ77	gGfx_TitleScreen	{U}
 08AAB3F4	&PALETTE	gPal_TitleScreen	{U}
-08AF1AE8	gGfxBarIntro	{U}
-08AF1B38	gGfxNintyIntSysPresentsIntroText	{U}
-08AF1FD0	gGfxEphraimEirikaIntroText	{U}
-08AF2654	gGfxBubblesIntro	{U}
-08B11D0C	gGfxHSWarning	{U}
+08AF1AE8	&LZ77	gGfxBarIntro	{U}
+08AF1B38	&LZ77	gGfxNintyIntSysPresentsIntroText	{U}
+08AF1FD0	&LZ77	gGfxEphraimEirikaIntroText	{U}
+08AF2654	&LZ77	gGfxBubblesIntro	{U}
+08B11D0C	&LZ77	gGfxHSWarning	{U}
 08B12A60	gMenuGeometry_Promotion	{U}
-08B12DB4	gGfx_ChapterIntroBackground	{U}
+08B12DB4	&LZ77	gGfx_ChapterIntroBackground	{U}
 08B1754C	&PALETTE	gPal_ChapterIntroBackground	{U}
 08B17B64	gGfx_8B17B64	{U}
 08B18ED4	&PALETTE	gPal_8B18ED4	{U}
@@ -11208,17 +11208,17 @@
 085C54D8	gDebugStartupMenuDef	{J}
 085C54FC	gSomeDebugMenuDef	{J}
 085C5520	gMenu_MapDebug	{J}
-085C7540	gGfx_PhaseSwitchFrame	{J}
-085C7918	gGfx_PlayerPhaseIntro	{J}
+085C7540	&LZ77	gGfx_PhaseSwitchFrame	{J}
+085C7918	&LZ77	gGfx_PlayerPhaseIntro	{J}
 085C7F4C	&PALETTE	gPal_PlayerPhaseIntro	{J}
-085C7F6C	gGfx_EnemyPhaseIntro	{J}
+085C7F6C	&LZ77	gGfx_EnemyPhaseIntro	{J}
 085C8588	&PALETTE	gPal_EnemyPhaseIntro	{J}
-085C85A8	gGfx_OtherPhaseIntro	{J}
+085C85A8	&LZ77	gGfx_OtherPhaseIntro	{J}
 085C8BB8	&PALETTE	gPal_OtherPhaseIntro	{J}
-085C8BF8	gGfx_PhaseSwitchSquares	{J}
-085C91A0	gBattleForecast_x2x4Gfx	{J}
-085CAE60	gGfxMineFireEffectGfx	{J}
-085D1BC8	gImg_MineAnimGfx	{J}
+085C8BF8	&LZ77	gGfx_PhaseSwitchSquares	{J}
+085C91A0	&LZ77	gBattleForecast_x2x4Gfx	{J}
+085CAE60	&LZ77	gGfxMineFireEffectGfx	{J}
+085D1BC8	&LZ77	gImg_MineAnimGfx	{J}
 085D1E60	gpAIUnitPriorityBuffer	{J}
 085D1EA4	gAiDecisionMakerCallTable	{J}
 085D1FC4	gSomeRangeTileOffsetLookup	{J}
@@ -11259,12 +11259,12 @@
 085E0620	gNewUIPaletterPointers	{J}
 085E0640	gOldUIGfxPointers	{J}
 085E3F8F	gAISFrames_DummyNoFrames	{J}
-085E42E8	gGfx_NODAMGEMIS	{J}
-08857B08	gGfx_LevelUpBoxFrame	{J}
-08857F40	gMap_LevelUpBoxFrame	{J}
-08858088	gGfx_BattlePopup	{J}
-08858128	gGfx_BattlePopupTextBg	{J}
-08858228	gTsa_BattlePopup	{J}
+085E42E8	&LZ77	gGfx_NODAMGEMIS	{J}
+08857B08	&LZ77	gGfx_LevelUpBoxFrame	{J}
+08857F40	&LZ77	gMap_LevelUpBoxFrame	{J}
+08858088	&LZ77	gGfx_BattlePopup	{J}
+08858128	&LZ77	gGfx_BattlePopupTextBg	{J}
+08858228	&LZ77	gTsa_BattlePopup	{J}
 088600EE	gSomeMovCostTable	{J}
 08860170	gBallistaMovCostTable	{J}
 089024C5	gSlayerEffectivenessTable	{J}
@@ -11272,12 +11272,12 @@
 08A132B0	gMoveUnitStateCallTable	{J}
 08A13300	gWalkSpeedLookup	{J}
 08A1455C	gMapAnimLevelUpStatLabelLocationTable	{J}
-08A1C72C	gGfxMISSAnim	{J}
-085E52F8	gGfx_LevelUpTextSmall	{J}
-08A1E538	gGfxPoisonEffectAnim	{J}
-08A1E8AC	gGfx_SomeWarpEffect	{J}
-08A1EE2C	gGfxSpark	{J}
-08A5A35C	gGfxDialogueTextBubble	{J}
+08A1C72C	&LZ77	gGfxMISSAnim	{J}
+085E52F8	&LZ77	gGfx_LevelUpTextSmall	{J}
+08A1E538	&LZ77	gGfxPoisonEffectAnim	{J}
+08A1E8AC	&LZ77	gGfx_SomeWarpEffect	{J}
+08A1EE2C	&LZ77	gGfxSpark	{J}
+08A5A35C	&LZ77	gGfxDialogueTextBubble	{J}
 08A5A6A0	gEventIdMaskLookup	{J}
 08A79E90	&LZ77	ボツデータ	雷のような画像	ONLY FE8J	{J}
 08AAB4A0	&LZ77	ボツデータ	モード	ONLY FE8J	{J}

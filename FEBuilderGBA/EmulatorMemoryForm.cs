@@ -1496,6 +1496,25 @@ namespace FEBuilderGBA
             //CHEAT_UNIT_MEMORY_AND_NAME
         }
 
+        void UpdateUnitHP1(uint unitRAMAddress, bool showNotify)
+        {
+            uint writeRAMPointer;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                writeRAMPointer = unitRAMAddress + 0x11;
+            }
+            else
+            {
+                writeRAMPointer = unitRAMAddress + 0x13;
+            }
+            Program.RAM.write_u8(writeRAMPointer, 1);
+
+            if (showNotify)
+            {
+                InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
+            }
+        }
+
         private void CHEAT_UNIT_HP_1_Click(object sender, EventArgs e)
         {
             if (!CheckConnectShowError())
@@ -1507,18 +1526,7 @@ namespace FEBuilderGBA
                 return;
             }
             Debug.Assert(U.is_02RAMPointer(CurrentControlUnitRAMAddress));
-
-            uint writeRAMPointer;
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                writeRAMPointer = CurrentControlUnitRAMAddress + 0x11;
-            }
-            else
-            {
-                writeRAMPointer = CurrentControlUnitRAMAddress + 0x13;
-            }
-            Program.RAM.write_u8(writeRAMPointer, 1);
-            InputFormRef.ShowWriteNotifyAnimation(this, writeRAMPointer);
+            UpdateUnitHP1(CurrentControlUnitRAMAddress , showNotify: true);
         }
 
         private void CHEAT_UNIT_HAVE_ITEM_Click(object sender, EventArgs e)
@@ -2134,6 +2142,27 @@ namespace FEBuilderGBA
             addr = Program.ROM.RomInfo.workmemory_npc_units_address();
             MultiUnitsGrow(addr, limit, growMovePower: false);
 
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
+        }
+
+        private void CHEAT_ALL_ENEMY_UNIT_HP_1_Click(object sender, EventArgs e)
+        {
+            uint addr = Program.ROM.RomInfo.workmemory_enemy_units_address();
+            uint limit = (uint)this.UpdateCheckParty.Length / RAMUnitSizeOf;
+            for (uint i = 0; i < limit; i++, addr += RAMUnitSizeOf)
+            {
+                uint unitPointer = Program.RAM.u32(addr);
+                if (unitPointer == 0)
+                {
+                    continue;
+                }
+                if (!U.isSafetyPointer(unitPointer))
+                {
+                    break;
+                }
+
+                UpdateUnitHP1(addr, showNotify: true);
+            }
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
     }
