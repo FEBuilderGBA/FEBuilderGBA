@@ -11495,3 +11495,11 @@ r3=X tile position of menu of the right	{U}
 080E1400	&LZ77	An image of something.	1	{U}
 080E6564	&LZ77	Something's TSA.	26	{J}
 080E67E0	&LZ77	An image of something.	1	{J}
+02029D84	gpAISFirst	{J}
+08022f50	TradeCommandEffect2	{J}
+08022BD8	AttackCommandEffect_DrawFace	{U}
+08022BA0	AttackCommandEffect_DrawFace	{J}
+08023550	When I selected the belongings menu.	Give a list of belongings.	{U}
+08023514	When I selected the belongings menu.	Give a list of belongings.	{J}
+08073CE8	Display the level up screen.	{U}
+08076170	Display the level up screen.	{J}

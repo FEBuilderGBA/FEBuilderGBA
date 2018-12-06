@@ -40,6 +40,10 @@ BYTE 0x70 //70<<7 = 0x3800
 ORG 0x2D2FE
 BYTE 10 //Palette ID 10 because 8/9 is used by halfbody //Fixing trading
 
+//Fixed Item Trading
+ORG 0x2D7F6
+BYTE 0x02
+
 ORG 0x23318
 BYTE 0x1
 ORG 0x4F238
@@ -53,12 +57,10 @@ BYTE 0x4 //Fixing Equip with Item
 ORG 0x23314
 BYTE 0x4
 
-/*
-ORG 0x2332E
-BYTE 0x0D
-ORG 0x1E7AC
-BYTE 0x12 //Extend the Character stat box for Item.
-*/
+//ORG 0x2332E
+//BYTE 0x0D
+//ORG 0x1E7AC
+//BYTE 0x12 //Extend the Character stat box for Item.
 
 ORG 0x56C2
 BYTE 0x40 //Palette size
@@ -83,12 +85,12 @@ ORG 0xA2A5E
 BYTE 0x70
 
 //Fixing Prep Screen Trading
-/*ORG 0x99D5C
-BYTE 0x2
-ORG 0x989E0
-BYTE 0x2
-ORG 0x99BDE
-BYTE 0x2*/
+//ORG 0x99D5C
+//BYTE 0x2
+//ORG 0x989E0
+//BYTE 0x2
+//ORG 0x99BDE
+//BYTE 0x2
 ORG 0x205C14
 WORD 0x4000
 ORG 0x205C1C
@@ -138,8 +140,8 @@ POIN RightMugCutOAM
 ORG 0x5820
 POIN LeftMugCutOAM
 
-/*ORG 0x5594
-replaceWithHack(Load6CFACEGraphics)*/
+//ORG 0x5594
+//replaceWithHack(Load6CFACEGraphics)
 
 //A routine coexisting with SkillSystems' s RandomMug4 
 //by 7743.

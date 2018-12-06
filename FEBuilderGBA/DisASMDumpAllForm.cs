@@ -185,6 +185,20 @@ namespace FEBuilderGBA
             }
             return dic;
         }
+        static void UnpackBINByCode(List<Address> structlist)
+        {
+            for (int i = 0; i < structlist.Count; i++)
+            {
+                Address a = structlist[i];
+                if (a.Addr < Program.ROM.RomInfo.compress_image_borderline_address())
+                {
+                    if (a.Info.IndexOf("@BIN") >= 0)
+                    {
+                        a.Length = 0;
+                    }
+                }
+            }
+        }
 
         public static void RunAllDisASMButton(Form self)
         {
@@ -231,6 +245,7 @@ namespace FEBuilderGBA
                     , isUseOtherGraphics: true
                     , isUseOAMSP: true
                     );
+                UnpackBINByCode(structlist);
 
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0x00, 16); //フリー領域
                 AsmMapFile.MakeFreeDataList(structlist, 0x100, 0xFF, 16); //フリー領域

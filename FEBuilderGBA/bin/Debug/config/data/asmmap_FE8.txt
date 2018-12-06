@@ -5963,7 +5963,7 @@
 08024144	ArenaCommandEffect	{U}
 080232B8	ItemCommandUsability	{U}
 08022F34	TradeCommandUsability	{U}
-08022F88	TradeCommandEffect	{U}
+08022F88	TradeCommandEffect2	{U}
 08023FB8	SupplyCommandEffect	{U}
 0802260C	UnitCommandEffect	{U}
 08022650	CommandEffect	{U}
@@ -6045,7 +6045,6 @@
 08024100	ArenaCommandEffect	{J}
 08023280	ItemCommandUsability	{J}
 08022EFC	TradeCommandUsability	{J}
-080228A0	TradeCommandEffect	{J}
 08023F74	SupplyCommandEffect	{J}
 080225D8	UnitCommandEffect	{J}
 0802261C	CommandEffect	{J}
@@ -11460,5 +11459,12 @@
 080E6564	&LZ77	何かのTSA	26	{J}
 080E67E0	&LZ77	何かの画像	1	{J}
 02029D84	gpAISFirst	{J}
+08022f50	TradeCommandEffect2	{J}
 08022BD8	AttackCommandEffect_DrawFace	{U}
 08022BA0	AttackCommandEffect_DrawFace	{J}
+08023550	持ち物メニューを選択した時	所持品一覧を出す	{U}
+08023514	持ち物メニューを選択した時	所持品一覧を出す	{J}
+//0802356C	持ち物を交換するメニューを選択した時	お互いの持ち物を表示?	{J}
+//080235A8	持ち物を交換するメニューを選択した時	お互いの持ち物を表示?	{U}
+08073CE8	レベルアップの画面を表示する	{U}
+08076170	レベルアップの画面を表示する	{J}

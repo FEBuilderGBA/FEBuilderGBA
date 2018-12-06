@@ -11369,3 +11369,11 @@ r3=X tile position of menu of the right	{U}
 080E1400	&LZ77	某事的图象。	1	{U}
 080E6564	&LZ77	东西是TSA。	26	{J}
 080E67E0	&LZ77	某事的图象。	1	{J}
+02029D84	gpAISFirst	{J}
+08022f50	TradeCommandEffect2	{J}
+08022BD8	AttackCommandEffect_DrawFace	{U}
+08022BA0	AttackCommandEffect_DrawFace	{J}
+08023550	当我选择随餐菜单时。	列出所有物品清单。	{U}
+08023514	当我选择随餐菜单时。	列出所有物品清单。	{J}
+08073CE8	显示升级屏幕。	{U}
+08076170	显示升级屏幕。	{J}
