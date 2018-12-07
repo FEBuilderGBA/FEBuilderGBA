@@ -1316,14 +1316,9 @@ namespace FEBuilderGBA
 
         public void JumpToSearch(string str)
         {
-            this.SearchTextBox.Text = str;
-            //検索画面を出す.
-            TextTabControl.SelectedIndex = 2;
-            //検索ボタンを押す.
-            this.SearchButton.PerformClick();
-            if (this.SearchResultListBox.Items.Count == 1)
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                int id = (int)U.atoh(SearchResultListBox.Items[0].ToString());
+                uint id = SearchText(str);
                 if (id < AddressList.Items.Count)
                 {
                     this.SearchTextBox.Clear();
@@ -1331,9 +1326,41 @@ namespace FEBuilderGBA
 
                     U.ForceUpdate(AddressList, id);
                 }
-                return;
             }
-            SearchResultListBox.Focus();
+        }
+
+        public static uint SearchText(string findstr)
+        {
+            if (findstr.Length <= 0)
+            {
+                return U.NOT_FOUND;
+            }
+            string lang = OptionForm.lang();
+            bool isJP = (lang == "ja");
+            findstr = U.CleanupFindString(findstr, isJP);
+            FETextDecode textdecoder = new FETextDecode();
+
+            InputFormRef InputFormRef = Init(null);
+            UpdateDataCountCache(InputFormRef);
+
+            List<U.AddrResult> arlist = InputFormRef.MakeList();
+            for (int i = 0; i < arlist.Count; i++)
+            {
+                U.AddrResult ar = arlist[i];
+
+                int size;
+                string str = textdecoder.DecodeAddr(ar.addr, out size);
+
+                int hitpos = U.CleanupFindString(str, isJP).IndexOf(findstr);
+                if (hitpos < 0)
+                {//NO HIT
+                    continue;
+                }
+
+                return (uint)i;
+            }
+
+            return U.NOT_FOUND;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

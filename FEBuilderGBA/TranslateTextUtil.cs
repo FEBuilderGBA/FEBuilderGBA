@@ -809,5 +809,19 @@ namespace FEBuilderGBA
 
             return transDic;
         }
+
+        public static uint GrepReverseSearchDic(string filename,string search)
+        {
+            string[] lines = File.ReadAllLines(filename);
+            for (uint i = 0; i < lines.Length; i++)
+            {
+                string s = lines[i];
+                if (s.IndexOf(search) >= 0)
+                {
+                    return i + 1;
+                }
+            }
+            return U.NOT_FOUND;
+        }
     }
 }

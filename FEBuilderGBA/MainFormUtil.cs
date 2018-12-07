@@ -2249,5 +2249,55 @@ namespace FEBuilderGBA
 //やっぱりやめよう
 //            mainForm.Icon = Properties.Resources.Icon1;
         }
+
+        //テキストエディタで行番号を指定して開く
+        public static void OpenTextEditor(string textFilename,uint number = U.NOT_FOUND)
+        {
+            if (number == U.NOT_FOUND)
+            {
+                Process.Start(textFilename);
+                return;
+            }
+
+            string ext = Path.GetExtension(textFilename);
+            string editor = U.FindAssociatedExecutable(ext);
+            if (!File.Exists(editor))
+            {
+                return;
+            }
+            string args;
+            string editorFilename = Path.GetFileName(editor);
+            editorFilename = editorFilename.ToLower();
+            if (editorFilename == "sakura.exe")
+            {
+                args = U.escape_shell_args(textFilename) + " -Y=" + number;
+            }
+            else if (editorFilename == "hidemaru.exe")
+            {
+                args = U.escape_shell_args(textFilename) + " -j=" + number;
+            }
+            else if (editorFilename == "vim.exe" || editorFilename == "gvim.exe")
+            {
+                args = U.escape_shell_args(textFilename) + " -c " + number;
+            }
+            else if (editorFilename == "emditor.exe")
+            {
+                args = U.escape_shell_args(textFilename) + " -l=" + number;
+            }
+            else if (editorFilename == "notepad++.exe")
+            {
+                args = U.escape_shell_args(textFilename) + " -n=" + number;
+            }
+            else if (editorFilename == "vscode.exe" || editorFilename == "subl.exe")
+            {
+                args = U.escape_shell_args(textFilename + ":" + number);
+            }
+            else
+            {
+                args = U.escape_shell_args(textFilename);
+            }
+
+            Process.Start(editor , args);
+        }
     }
 }

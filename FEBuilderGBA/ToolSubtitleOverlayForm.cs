@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -52,6 +53,7 @@ namespace FEBuilderGBA
         {
             if (text.Length < this.ShortLength)
             {//短すぎる.
+                this.CurrentText = text;
                 HideForm();
                 return;
             }
@@ -275,6 +277,32 @@ namespace FEBuilderGBA
 
         private void Subtile_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                uint text_id = TextForm.SearchText(this.CurrentText);
+                if (text_id == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                string clipbord = "";
+                uint num = TranslateTextUtil.GrepReverseSearchDic(this.SimpleTranslateToTranslateDataFilename, U.ToHexString(text_id) + "]");
+                if (num == U.NOT_FOUND)
+                {
+                    clipbord = "[" + U.ToHexString(text_id) + "]";
+                }
+                clipbord += this.CurrentText;
+                Clipboard.SetText(clipbord);
+
+                try
+                {
+                    MainFormUtil.OpenTextEditor(this.SimpleTranslateToTranslateDataFilename, num);
+                }
+                catch (Exception ee)
+                {
+                    R.ShowStopError(ee.ToString());
+                }
+            }
         }
     }
 }

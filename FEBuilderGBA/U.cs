@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Collections;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-
+using System.Runtime.InteropServices;
 
 namespace FEBuilderGBA
 {
@@ -849,7 +849,7 @@ namespace FEBuilderGBA
                 {
                     g.DrawString(text, font, brush, bounds, format);
                 }
-                catch (System.Runtime.InteropServices.ExternalException e)
+                catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                     Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
                     Debug.Assert(false);
@@ -863,7 +863,7 @@ namespace FEBuilderGBA
                 SizeF size = g.MeasureString(text, font, bb);
                 return (int)size.Width;
             }
-            catch (System.Runtime.InteropServices.ExternalException e)
+            catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                 Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
                 Debug.Assert(false);
@@ -882,7 +882,7 @@ namespace FEBuilderGBA
                 {
                     g.DrawString(text, font, brush, bounds, format);
                 }
-                catch (System.Runtime.InteropServices.ExternalException e)
+                catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                     Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
                     Debug.Assert(false);
@@ -899,7 +899,7 @@ namespace FEBuilderGBA
 
                 return new Size((int)size.Width, (int)size.Height);
             }
-            catch (System.Runtime.InteropServices.ExternalException e)
+            catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                 Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
                 Debug.Assert(false);
@@ -920,7 +920,7 @@ namespace FEBuilderGBA
                 {
                     g.DrawImage(pic, bounds);
                 }
-                catch (System.Runtime.InteropServices.ExternalException e)
+                catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                     Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
                     Debug.Assert(false);
@@ -3009,8 +3009,8 @@ namespace FEBuilderGBA
         }
 
         //see http://dobon.net/vb/dotnet/programing/arraycompare.html
-        [System.Runtime.InteropServices.DllImport("msvcrt.dll",
-            CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl)]
+        [DllImport("msvcrt.dll",
+            CallingConvention = CallingConvention.Cdecl)]
         public static extern int memcmp(byte[] b1, byte[] b2, IntPtr count);
         public static int memcmp(byte[] a, byte[] b)
         {
@@ -3027,11 +3027,11 @@ namespace FEBuilderGBA
         }
 
 
-        [System.Runtime.InteropServices.DllImport("msvcrt.dll",
-            CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl)]
+        [DllImport("msvcrt.dll",
+            CallingConvention = CallingConvention.Cdecl)]
         public static extern int memcmp(IntPtr b1, IntPtr b2, IntPtr size);
 
-        [System.Runtime.InteropServices.DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
+        [DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
         public static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
 
         //一時的にカレントディレクトリを移動する.
@@ -3189,7 +3189,7 @@ namespace FEBuilderGBA
             return sp[get_count];
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern int IsWindowEnabled(IntPtr hwnd);
 
         public static bool IsProcessExit(Process p)
@@ -3416,7 +3416,7 @@ namespace FEBuilderGBA
                 }
                 return zoomPic;
             }
-            catch (System.Runtime.InteropServices.ExternalException e)
+            catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
                 Log.Error("GDI+ Exception", e.ToString(),e.ErrorCode.ToString(), e.StackTrace);
                 Debug.Assert(false);
@@ -4052,7 +4052,7 @@ namespace FEBuilderGBA
             return r;
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool LockWindowUpdate(IntPtr hWndLock);
 
         public static bool mkdir(string dir)
@@ -4233,6 +4233,10 @@ namespace FEBuilderGBA
             }
 
             obj.SelectedIndex = value;
+        }
+        public static void ForceUpdate(ListBox obj, uint value)
+        {
+            ForceUpdate(obj,(int)value);
         }
         //必ずアップデートイベントを発生させる.
         //C#のイベントはおかしい
@@ -4958,7 +4962,7 @@ namespace FEBuilderGBA
         }
 
         //https://stackoverflow.com/questions/25772622/how-do-i-echo-into-an-existing-cmd-window
-        [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll")]
         private static extern bool AttachConsole(int dwProcessId);
         private const int ATTACH_PARENT_PROCESS = -1;
 
@@ -5327,6 +5331,96 @@ namespace FEBuilderGBA
                 System.Diagnostics.FileVersionInfo.GetVersionInfo(
                     filename);
             return U.atof(vi.FileVersion);
+        }
+
+        /// 指定された拡張子に関連付けられた実行ファイルのパスを取得する。
+        /// https://dobon.net/vb/dotnet/system/findassociatedexe.html
+        /// <summary>
+        /// 指定された拡張子に関連付けられた実行ファイルのパスを取得する。
+        /// </summary>
+        /// <param name="extName">".txt"などの拡張子。</param>
+        /// <returns>見つかった時は、実行ファイルのパス。
+        /// 見つからなかった時は、空の文字列。</returns>
+        /// <example>
+        /// 拡張子".txt"に関連付けられた実行ファイルのパスを取得する例
+        /// <code>
+        /// string exePath = FindAssociatedExecutable(".txt");
+        /// </code>
+        /// </example>
+        public static string FindAssociatedExecutable(string extName)
+        {
+            //pszOutのサイズを取得する
+            uint pcchOut = 0;
+            //ASSOCF_INIT_IGNOREUNKNOWNで関連付けられていないものを無視
+            //ASSOCF_VERIFYを付けると検証を行うが、パフォーマンスは落ちる
+            AssocQueryString(AssocF.Init_IgnoreUnknown, AssocStr.Executable,
+                extName, null, null, ref pcchOut);
+            if (pcchOut == 0)
+            {
+                return string.Empty;
+            }
+            //結果を受け取るためのStringBuilderオブジェクトを作成する
+            StringBuilder pszOut = new StringBuilder((int)pcchOut);
+            //関連付けられた実行ファイルのパスを取得する
+            AssocQueryString(AssocF.Init_IgnoreUnknown, AssocStr.Executable,
+                extName, null, pszOut, ref pcchOut);
+            //結果を返す
+            return pszOut.ToString();
+        }
+
+        [DllImport("Shlwapi.dll",
+            SetLastError = true,
+            CharSet = CharSet.Auto)]
+        private static extern uint AssocQueryString(AssocF flags,
+            AssocStr str,
+            string pszAssoc,
+            string pszExtra,
+            [Out] StringBuilder pszOut,
+            [In][Out] ref uint pcchOut);
+
+        [Flags]
+        private enum AssocF
+        {
+            None = 0,
+            Init_NoRemapCLSID = 0x1,
+            Init_ByExeName = 0x2,
+            Open_ByExeName = 0x2,
+            Init_DefaultToStar = 0x4,
+            Init_DefaultToFolder = 0x8,
+            NoUserSettings = 0x10,
+            NoTruncate = 0x20,
+            Verify = 0x40,
+            RemapRunDll = 0x80,
+            NoFixUps = 0x100,
+            IgnoreBaseClass = 0x200,
+            Init_IgnoreUnknown = 0x400,
+            Init_FixedProgId = 0x800,
+            IsProtocol = 0x1000,
+            InitForFile = 0x2000,
+        }
+
+        private enum AssocStr
+        {
+            Command = 1,
+            Executable,
+            FriendlyDocName,
+            FriendlyAppName,
+            NoOpen,
+            ShellNewValue,
+            DDECommand,
+            DDEIfExec,
+            DDEApplication,
+            DDETopic,
+            InfoTip,
+            QuickTip,
+            TileInfo,
+            ContentType,
+            DefaultIcon,
+            ShellExtension,
+            DropTarget,
+            DelegateExecute,
+            SupportedUriProtocols,
+            Max,
         }
     }
 }
