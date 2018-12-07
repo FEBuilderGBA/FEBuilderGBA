@@ -1009,11 +1009,21 @@ namespace FEBuilderGBA
             fd.ShowColor = false;
             fd.ShowEffects = false;
             fd.Font = UseFontNameTextEdit.Font;
-            DialogResult dr = fd.ShowDialog();
-            if (dr != System.Windows.Forms.DialogResult.OK)
+
+            try
             {
+                DialogResult dr = fd.ShowDialog();
+                if (dr != System.Windows.Forms.DialogResult.OK)
+                {
+                    return;
+                }
+            }
+            catch (Exception ee)
+            {
+                R.ShowStopError(ee.ToString());
                 return;
             }
+
             UseFontNameTextEdit.Font = fd.Font;
             UseFontNameTextEdit.Text = fd.Font.FontFamily.ToString();
         }
