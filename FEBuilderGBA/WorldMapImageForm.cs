@@ -458,6 +458,12 @@ namespace FEBuilderGBA
             int width = 8 * 32; //256
             int height = 8 * 4; //32
             int palette_count = 1;
+
+            if (BORDER_AddressList.SelectedIndex == 1)
+            {//グラドだけ //256x40
+                height = 8 * 5;
+            }
+
             Bitmap bitmap = ImageUtil.LoadAndConvertDecolorUI(this, null, width, height, true, palette_count);
             if (bitmap == null)
             {
