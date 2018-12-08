@@ -1,0 +1,20 @@
+NAME=フィンブルバグを修正する
+NAME.en=Fimbulvetr Glitch Fix
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE #ESSENTIALFIXES
+
+AUTHOR=7743
+
+INFO=フィンブルバグを修正します。\r\nフィンブルバグは、吹雪のアニメーションを大量に描画することで、Procs領域が枯渇してしまうために発生します。\r\nこのパッチは、雪の量を減らしてバグを発生しにくくします。\r\n減らすほど、より安全になりますが、吹雪の量が減ります。
+INFO.en=Fix the Fimbulvetr Glitch.\r\nFimbulvetr Glitch occurs because drawing a lot of animation of a snowstorm causes the Procs area to be exhausted.\r\nThis patch reduces the amount of snow and makes bugs less likely to occur.\r\nThe more you reduce it, the safer it is, but the amount of snowstorm decreases.
+
+NAME.zh=终末之冬 bug fix
+INFO.zh=终末之冬 bug fix\r\n发生终末之冬错误是因为通过绘制大量暴风雪动画来使Procs区域耗尽。\r\n这个补丁减少了雪的数量，并使错误不太可能发生。\r\n减少它越多，它就越安全，但暴风雪的数量会减少。
+COMBO.zh=默认|0x1f|无聊|0x10|可能是安全区|0x0c|安全的区域|0x0A|非常安全区|0x08
+
+ADDRESS=0x4F9F8
+COMBO=ディフォルト|0x1f|ギリギリ|0x10|たぶん安全圏|0x0c|かなり安全圏|0x0A|とても安全圏|0x08
+COMBO.en=default|0x1f|Barely|0x10|Probably safety zone|0x0c|Pretty safe area|0x0A|Very safety zone|0x08
+

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.VersionLabel = new System.Windows.Forms.TextBox();
             this.ManButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.OpenLastROMButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.VersionLabel = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1128, 529);
             this.panel1.TabIndex = 1;
+            // 
+            // VersionLabel
+            // 
+            this.VersionLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.VersionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VersionLabel.Location = new System.Drawing.Point(924, 235);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.ReadOnly = true;
+            this.VersionLabel.Size = new System.Drawing.Size(193, 18);
+            this.VersionLabel.TabIndex = 9;
+            this.VersionLabel.Text = "Ver:";
             // 
             // ManButton
             // 
@@ -145,17 +156,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // VersionLabel
-            // 
-            this.VersionLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.VersionLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.VersionLabel.Location = new System.Drawing.Point(924, 235);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.ReadOnly = true;
-            this.VersionLabel.Size = new System.Drawing.Size(193, 18);
-            this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Ver:";
             // 
             // WelcomeForm
             // 
