@@ -2650,6 +2650,38 @@ namespace FEBuilderGBA
         }
 #endif
 
+        public static bool IsDirectSoundData(byte[] rom,uint addr)
+        {
+            if (addr + 12 + 4 > rom.Length)
+            {
+                return false;
+            }
+            uint header = U.u16(rom , addr + 0x0);
+            if (header != 0x0)
+            {
+                return false;
+            }
+            uint header2 = U.u8(rom, addr + 0x2);
+            if (header2 != 0x0)
+            {
+                return false;
+            }
+
+            uint len = U.u32(rom, (uint)(addr + 12));
+            if (len >= 1024*1024*4)
+            {//4MB使う音源とかマジですか?
+                return false;
+            }
+
+            if (addr + 12 + 4 + len > rom.Length)
+            {
+                return false;
+            }
+
+            //どうやら正しいデータのようだ.
+            return true;
+        }
+
         public static byte[] byteToWav(byte[] data, uint pos)
         {
             //周波数??

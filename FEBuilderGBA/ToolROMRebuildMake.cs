@@ -550,7 +550,7 @@ namespace FEBuilderGBA
                 }
                 else if (address.DataType == Address.DataTypeEnum.SONGINSTDIRECTSOUND)
                 {//サイズがわからない 楽器データ.
-                    address.Length = CheckUnkLength(address, UNKNOWN_DATA_DEFAULT_SIZE, UNKNOWN_DATA_DEFAULT_SIZE * 10);
+                    address.Length = CheckUnkLength(address, UNKNOWN_DATA_DEFAULT_SIZE, UNKNOWN_DATA_DEFAULT_SIZE);
                 }
                 else
                 {
@@ -1733,7 +1733,15 @@ namespace FEBuilderGBA
         uint CheckUnk0x09Length(Address a, uint min0x09, uint max0x09)
         {
             uint addr = U.toPointer(a.Addr);
-            uint currentROMLength = U.toPointer((uint)Program.ROM.Data.Length);
+            uint currentROMLength ;
+            if (Program.ROM.Data.Length >= 0x02000000)
+            {
+                currentROMLength = 0x0A000000;
+            }
+            else
+            {
+                currentROMLength = U.toPointer((uint)Program.ROM.Data.Length);
+            }
             for (uint i = addr + 2; i < currentROMLength; i += 2)
             {
                 if (this.PointerMark.ContainsKey(i))
@@ -1750,7 +1758,12 @@ namespace FEBuilderGBA
                     return length;
                 }
             }
-            return currentROMLength - addr;
+            uint ret_length = currentROMLength - addr;
+            if (ret_length > max0x09)
+            {
+                return max0x09;
+            }
+            return ret_length;
         }
         uint CheckUnk0x08Length(Address a)
         {

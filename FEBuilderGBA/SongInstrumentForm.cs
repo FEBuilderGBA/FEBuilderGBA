@@ -206,9 +206,6 @@ namespace FEBuilderGBA
                 )
                 {//directsound waveデータ.
                     uint songdata_addr = Program.ROM.p32(addr + 4);
-                    if (songdata_addr == 0x125E510)
-                    {
-                    }
                     if (!U.isSafetyOffset(songdata_addr))
                     {
                         continue;
@@ -216,6 +213,15 @@ namespace FEBuilderGBA
                     uint sample_length = Program.ROM.u32(songdata_addr + 12);
                     if (!U.isSafetyLength(songdata_addr + 12 + 4, sample_length))
                     {//壊れたデータ 長さが取れない
+                        FEBuilderGBA.Address.AddPointer(recycle
+                            , addr + 4
+                            , 0
+                            , basename + U.To0xHexString(i) + "DIRECTSOUND(BROKEN)"
+                            , FEBuilderGBA.Address.DataTypeEnum.SONGINSTDIRECTSOUND);
+                        continue;
+                    }
+                    if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                    {//壊れたデータ 
                         FEBuilderGBA.Address.AddPointer(recycle
                             , addr + 4
                             , 0
@@ -356,7 +362,6 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-
 
             byte[] wavedata = Program.ROM.getBinaryData(songdata_addr + 12, length);
             data.AddRange(wavedata);
@@ -748,6 +753,10 @@ namespace FEBuilderGBA
                     uint sample_length = Program.ROM.u32(songdata_addr + 12);
                     if (!U.isSafetyLength(songdata_addr + 12 + 4,sample_length))
                     {
+                        continue;
+                    }
+                    if (!SongUtil.IsDirectSoundData(Program.ROM.Data, songdata_addr))
+                    {//壊れたデータ 
                         continue;
                     }
 
