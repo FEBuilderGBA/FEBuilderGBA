@@ -5,7 +5,7 @@ NAME.zh=HP溢出错误修复
 
 //アドレスパッチとして実装します
 TYPE=ADDR
-TAG=#ENGINE
+TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0x02b67C
 COMBO=Default|0x00 0x16|Fix|0x00 0x0E
