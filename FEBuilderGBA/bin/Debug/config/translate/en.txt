@@ -9322,6 +9322,9 @@ Song Number
 :曲名
 Song Name
 
+:サウンドルームが極端に少ないです。破損している可能性があります。
+The sound room is extremely small.It may be damaged.
+
 :曲の長さ
 Song Length
 

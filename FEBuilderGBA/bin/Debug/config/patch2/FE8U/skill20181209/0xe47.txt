@@ -1,0 +1,2 @@
+Lancefaire: +4 damage[N]
+when equipping a lance.[X]

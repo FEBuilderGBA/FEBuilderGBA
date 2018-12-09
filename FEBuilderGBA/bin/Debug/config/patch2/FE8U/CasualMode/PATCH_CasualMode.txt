@@ -1,0 +1,16 @@
+NAME=カジュアルモード
+NAME.en=CasualMode
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=CasualMode.event
+
+INFO=グローバルフラグ0xB0をONにした状態で、プレイヤーユニットが死亡しても、次の章で自動的に復活するようになります。
+PATCHED_IF:0x18418=0x00 0x4B 0x18 0x47
+USEFLAG=0xB0
+
+AUTHOR=circleseverywhere
+INFO.en=Even if the player unit dies while the global flag 0xB 0 is set to ON, it will be automatically restored in the next chapter.
+NAME.zh=休闲模式。
+INFO.zh=即使播放器单元在全局标志0xB 0设置为ON时死亡，它也将在下一章中自动恢复。
