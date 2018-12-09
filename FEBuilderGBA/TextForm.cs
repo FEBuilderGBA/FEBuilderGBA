@@ -1916,10 +1916,8 @@ namespace FEBuilderGBA
         }
 
         //現在のテキスト長を求めます.
-        uint CalcTextSize()
+        uint CalcTextSize(string text)
         {
-            string text = GetEditorText(this.TextArea);
-
             byte[] encode;
             if (EnableUnHuffmanPatch(InputFormRef.BaseAddress
                 ,(uint)this.AddressList.SelectedIndex))
@@ -1965,7 +1963,8 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
 
             //テキストのサイズを求めます.
-            this.BlockSize.Text = CalcTextSize().ToString();
+            string text = GetEditorText(this.TextArea);
+            this.BlockSize.Text = CalcTextSize(text).ToString();
 
             //キーワードハイライト
             KeywordHighLight(TextArea);
@@ -2111,7 +2110,8 @@ namespace FEBuilderGBA
             if (TextTabControl.SelectedIndex == 1)
             {//キーワードハイライトは時間がかかるので、選択されたときに実行します.
                 //テキストのサイズを求めます.
-                this.BlockSize.Text = CalcTextSize().ToString();
+                string text = GetEditorText(this.TextArea);
+                this.BlockSize.Text = CalcTextSize(text).ToString();
 
                 //キーワードハイライト
                 KeywordHighLight(TextArea);

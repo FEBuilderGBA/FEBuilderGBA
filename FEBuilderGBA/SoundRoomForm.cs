@@ -144,5 +144,27 @@ namespace FEBuilderGBA
             TextID.AppendTextID(list, FELint.Type.SOUNDROOM, InputFormRef, new uint[] { 12 });
         }
 
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+            if (InputFormRef.DataCount < 10)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SOUNDROOM, U.NOT_FOUND
+                    , R._("サウンドルームが極端に少ないです。破損している可能性があります。")));
+            }
+
+            uint soundroom_addr = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, soundroom_addr += InputFormRef.BlockSize)
+            {
+                uint name = Program.ROM.u32(soundroom_addr + 12);
+                FELint.CheckText(name, "SOUND1", errors, FELint.Type.SOUNDROOM, soundroom_addr, i);
+
+                uint asm = Program.ROM.u32(soundroom_addr + 8);
+                if (asm != 0)
+                {
+                    FELint.CheckASMPointerErrors(asm, errors, FELint.Type.SOUNDROOM, soundroom_addr);
+                }
+            }
+        }
     }
 }

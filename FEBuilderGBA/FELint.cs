@@ -685,6 +685,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem SupportUnitForm")) return;
                 SupportUnitForm.MakeCheckError(errors);
+
+                if (InputFormRef.DoEvents(null, "ScanSystem SoundRoomForm")) return;
+                SoundRoomForm.MakeCheckError(errors);
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
@@ -702,6 +705,9 @@ namespace FEBuilderGBA
 
                 if (InputFormRef.DoEvents(null, "ScanSystem SupportUnitForm")) return;
                 SupportUnitForm.MakeCheckError(errors);
+
+                if (InputFormRef.DoEvents(null, "ScanSystem SoundRoomForm")) return;
+                SoundRoomForm.MakeCheckError(errors);
             }
             else
             {
