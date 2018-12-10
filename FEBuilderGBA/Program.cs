@@ -221,6 +221,12 @@ namespace FEBuilderGBA
         {
             string inputformref_debuginfo = InputFormRef.GetDebugInfo();
 
+            if (ex is FETextDecode.FETextException)
+            {
+                R.ShowStopError(ex.ToString());
+                return;
+            }
+
             {
                 ErrorReportForm f = (ErrorReportForm)InputFormRef.JumpFormLow<ErrorReportForm>();
                 f.SetException(ex, inputformref_debuginfo);

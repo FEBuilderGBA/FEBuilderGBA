@@ -11503,3 +11503,7 @@ r3=X tile position of menu of the right	{U}
 08023514	When I selected the belongings menu.	Give a list of belongings.	{J}
 08073CE8	Display the level up screen.	{U}
 08076170	Display the level up screen.	{J}
+080BBF78	Switch BGM (another command No. 6).	r0=BGM number: MUSIC.	{J}
+080B74CC	Switch BGM (another command No. 6).	r0=BGM number: MUSIC.	{U}
+08021668	Redraw the map at the end of the event effect.	{U}
+08021360	Redraw the map at the end of the event effect.	{J}

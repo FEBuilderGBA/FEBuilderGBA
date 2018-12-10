@@ -246,11 +246,11 @@ namespace FEBuilderGBA
             }
             if (!U.isSafetyOffset(tree_base, this.ROM))
             {
-                throw new Exception(R._("mask_pointer broken 0x{0}.this is broken rom.", U.ToHexString(tree_base)));
+                throw new FETextException(R._("mask_pointer broken 0x{0}.this is broken rom.", U.ToHexString(tree_base)));
             }
             if (!U.isSafetyOffset(tree_data_base, this.ROM))
             {
-                throw new Exception(R._("tree_data_base broken 0x{0}.this is broken rom.", U.ToHexString(tree_data_base)));
+                throw new FETextException(R._("tree_data_base broken 0x{0}.this is broken rom.", U.ToHexString(tree_data_base)));
             }
 
             uint rom_length = (uint)this.ROM.Data.Length;
@@ -539,6 +539,14 @@ namespace FEBuilderGBA
                 }
             }
             return str;
+        }
+
+        public class FETextException : Exception
+        {
+            public FETextException(string message)
+                : base(message)
+            {
+            }
         }
     }
 }

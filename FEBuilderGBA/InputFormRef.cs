@@ -10876,43 +10876,6 @@ namespace FEBuilderGBA
 
             listbox.ContextMenu = contextMenu;
         }
-        public static void MakeEditListboxContextMenuText(ListBox listbox, KeyEventHandler keydownfunc)
-        {
-            ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
-            MenuItem menuItem;
-            menuItem = new MenuItem(R._("元に戻す(&Z)"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Z));
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem("-");
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem(R._("削除(DEL)"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Delete));
-            contextMenu.MenuItems.Add(menuItem);
-            menuItem = new MenuItem(R._("コピー(&C)"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.C));
-            contextMenu.MenuItems.Add(menuItem);
-            menuItem = new MenuItem(R._("貼り付け(&V)"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.V));
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem("-");
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem(R._("読み上げ"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Alt  | Keys.O));
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem("-");
-            contextMenu.MenuItems.Add(menuItem);
-
-            menuItem = new MenuItem(R._("編集画面を出す(ENTER)"));
-            menuItem.Click += new EventHandler(U.FireKeyDown(listbox, keydownfunc, Keys.Control | Keys.Enter));
-            contextMenu.MenuItems.Add(menuItem);
-
-            listbox.ContextMenu = contextMenu;
-        }
 
         public static void MakeEditListboxContextMenuN(ListBox listbox, KeyEventHandler keydownfunc, KeyEventHandler parentFormKeydownfunc , bool useTemplate)
         {

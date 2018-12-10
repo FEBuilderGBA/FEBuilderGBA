@@ -4486,9 +4486,6 @@ Paste(&V)
 :編集画面を出す(ENTER)
 Display the editing screen (ENTER)
 
-:読み上げ
-Text to Speech
-
 :ジャンプ2
 Jump 2
 
@@ -9570,6 +9567,9 @@ Display flag
 
 :タイトル
 Title
+
+:読み上げ
+Text to Speech
 
 :エスケープコード(&N)
 Script Notation(&N)

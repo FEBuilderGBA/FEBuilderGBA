@@ -31,6 +31,11 @@ namespace FEBuilderGBA
             this.tree_base = Program.ROM.p32(Program.ROM.RomInfo.mask_pointer());
             make_huffman_map(tree_data_base, 1);
 
+            if (! this.huffman_map.ContainsKey(0))
+            {//終端文字列が辞書に存在しない.
+                throw new FETextDecode.FETextException(R._("text decoder table broken 0x{0}.this is broken rom.", U.ToHexString(tree_base)));
+            }
+
             //EOF
             huffman_value_st huffman_value = this.huffman_map[0];
             if (Program.ROM.RomInfo.is_multibyte())
