@@ -11470,3 +11470,6 @@
 080B74CC	BGMを切り替える(別命令 その6)	r0=BGM番号:MUSIC	{U}
 08021668	イベントエフェクト終了時のマップの再描画	{U}
 08021360	イベントエフェクト終了時のマップの再描画	{J}
+02017728	gBattleAnimeCounter
+0203E152	gSomeBattleAnimHpValue1	{J}
+0203E154	gSomeBattleAnimHpValue2	{J}

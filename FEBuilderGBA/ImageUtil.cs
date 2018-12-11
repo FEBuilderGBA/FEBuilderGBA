@@ -1593,7 +1593,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {
-                        Debug.Assert(false); //パレットの方が先になくなるのはありえない...
+                        //Debug.Assert(false); //パレットの方が先になくなるのはありえない...
                         c = Color.Black;
                     }
                     uint p = ColorToGBARGB(c);
