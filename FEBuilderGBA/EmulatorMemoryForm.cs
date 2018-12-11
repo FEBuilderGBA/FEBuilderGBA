@@ -446,6 +446,12 @@ namespace FEBuilderGBA
         }
         bool MakeProcNode(List<ProcsData> tree, uint ramaddr,uint topTreeIndex, uint jisage)
         {
+            if (jisage >= 20)
+            {//スタックオーバーフローの可能性
+                Log.Error(R._("MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}", U.To0xHexString(ramaddr), U.To0xHexString(topTreeIndex)));
+                return false;
+            }
+
             uint procHeaderP = Program.RAM.u32(ramaddr);
 
             ProcsData pd = new ProcsData();
