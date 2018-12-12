@@ -958,6 +958,9 @@ Endgame Credits
 :準備しています
 preparing...
 
+:MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}
+Infinite recursion with MakeProcNode ramaddr: {0} topTreeIndex: {1}.
+
 :エミュレータと接続できませんでした。
 Could not connect to the emulator.
 
@@ -2115,6 +2118,9 @@ When using the world map please correctly set the world map.\r\nFailure to do so
 
 :自軍のパーティにいるメンバーに対してDISAを使うと存在が抹消されます。\r\nユニットを一時的に離脱させて消したい場合は、REMUを利用してください。そして、後でREVEALで再加入させてください。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、抹消も、離脱状態にもなりません。
 If you use DISA for members who are at your party party, their existence will be deleted.\r\nPlease use REMU if you want to temporarily detach the unit and erase it.And please re-join later with REVEAL.\r\nCLEA is recommended when you want to erase the unit by directing.CLEA erases all units, but neither kill nor leave it.
+
+:指定したウェイト処理を行います
+Performs the specified wait processing.
 
 :この領域は利用できません
 Unable to use this area.

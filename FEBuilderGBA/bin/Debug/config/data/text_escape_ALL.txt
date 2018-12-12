@@ -1,4 +1,4 @@
-@0080@0004	[LoadOverworldFaces]	{MOVE_LOAD}
+@0080@0004	TEXTCONTまで命令を先行して実行する[LoadOverworldFaces]	{MOVE_LOAD}
 @0080@0005	ゴールドの表示[G]	{DISPLAY}
 @0080@0016	瞬き目パチを有効にする[EnableBlinking]	{TOGGLE}
 @0080@0018	瞬き目パチを遅くする[DelayBlinking]	{TOGGLE}

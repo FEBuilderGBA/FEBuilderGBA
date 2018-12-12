@@ -1,4 +1,4 @@
-@0080@0004	[LoadOverworldFaces]	{MOVE_LOAD}
+@0080@0004	Load overworld faces[LoadOverworldFaces]	{MOVE_LOAD}
 @0080@0005	Display of gold [G]	{DISPLAY}
 @0080@0016	Enable blinking [EnableBlinking]	{TOGGLE}
 @0080@0018	Delay blinking [DelayBlinking]	{TOGGLE}

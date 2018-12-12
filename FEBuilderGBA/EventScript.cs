@@ -1073,8 +1073,6 @@ namespace FEBuilderGBA
             return addr - start_addr;
         }
 
-
-
         public static string makeCommandComboText(EventScript.Script sc, bool appendBinCode)
         {
             if (sc.Info.Length < 1)
@@ -1356,6 +1354,10 @@ namespace FEBuilderGBA
             else if (hint == "@WARNING_DISA")
             {
                 return R._("自軍のパーティにいるメンバーに対してDISAを使うと存在が抹消されます。\r\nユニットを一時的に離脱させて消したい場合は、REMUを利用してください。そして、後でREVEALで再加入させてください。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、抹消も、離脱状態にもなりません。");
+            }
+            else if (hint == "@WAIT")
+            {
+                return R._("指定したウェイト処理を行います");
             }
             
             return hint.Replace("\\r\\n", "\r\n");

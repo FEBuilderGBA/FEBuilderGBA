@@ -56,7 +56,7 @@ namespace FEBuilderGBA
                 string name = EventScript.makeCommandComboText(script, true);
                 if (filterString.Length > 0)
                 {
-                    if(! U.StrStrEx(name,filterString,isJP) )
+                    if (!U.StrStrEx(name + " " + script.PopupHint, filterString, isJP))
                     {//フィルターで消す.
                         continue;
                     }

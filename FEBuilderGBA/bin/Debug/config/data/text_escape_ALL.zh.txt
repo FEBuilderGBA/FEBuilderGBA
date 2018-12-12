@@ -1,4 +1,4 @@
-@0080@0004	[LoadOverworldFaces]	{MOVE_LOAD}
+@0080@0004	Load overworld faces[LoadOverworldFaces]	{MOVE_LOAD}
 @0080@0005	显示金[G]	{DISPLAY}
 @0080@0016	启用闪烁[EnableBlinking]	{TOGGLE}
 @0080@0018	延迟闪烁[DelayBlinking]	{TOGGLE}

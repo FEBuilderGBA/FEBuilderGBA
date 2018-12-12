@@ -4115,7 +4115,7 @@ namespace FEBuilderGBA
             }
             if (!U.isAsciiString(str))
             {
-                string s = MultiByteJPUtil.mb_convert_kana(str, "HcasR");
+                string s = MultiByteJPUtil.mb_convert_kana(str, "HcasRX");
                 MigemoCache[str] = s;
                 return s;
             }
