@@ -70,7 +70,6 @@
 2113FF7F	Erase BGM	{MUSIC}
 2113XXXX	_MUSICSOMETHING[XXXX::Something]
 482F0000YYYYZZWW	Unit movement setting2[YY:UNIT:Character][ZZ:MAPX:X][WW:MAPY:Y]
-20130000XXXX0000	[XXXX:MUSIC:BGM]Change music
 221A0000	_0x1A22
 251A0000	_0x1A25
 4121XXXXYYYYZZZZ	_0x2141[XXXX::Value1][YY::Value2][ZZ::Value3]
@@ -464,3 +463,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 400D0000C9F50708	Make the map a little darker.	{U}
 211A0000400D000045570A082022000020171000	Display Support Relationship Screen for preparation.	{J}
 211A0000400D00006D190A082022000020171000	Display Support Relationship Screen for preparation.	{U}
+20130000XXXX0000	[XXXX: MUSIC: BGM] Changed music.
+400D0000DD600108	Return music to the map standard BGM.	{J}
+400D0000D1600108	Return music to the map standard BGM.	{U}

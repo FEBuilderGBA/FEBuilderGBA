@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.L_2_SONGPLAY = new System.Windows.Forms.Button();
             this.L_0_SONGPLAY = new System.Windows.Forms.Button();
+            this.L_2_SONG = new FEBuilderGBA.TextBoxEx();
+            this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.J_2_SONG = new System.Windows.Forms.Label();
-            this.WriteButton = new System.Windows.Forms.Button();
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_SONG = new System.Windows.Forms.Label();
+            this.WriteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,18 +46,16 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.LabelFilter = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_2_SONG = new FEBuilderGBA.TextBoxEx();
-            this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
@@ -84,6 +85,17 @@
             this.panel11.Size = new System.Drawing.Size(874, 639);
             this.panel11.TabIndex = 179;
             // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(11, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(845, 47);
+            this.label4.TabIndex = 236;
+            this.label4.Text = "この拠点が、次の目的地となったときに再生するBGMを選択します。";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // L_2_SONGPLAY
             // 
             this.L_2_SONGPLAY.Location = new System.Drawing.Point(633, 43);
@@ -103,6 +115,28 @@
             this.L_0_SONGPLAY.TabIndex = 234;
             this.L_0_SONGPLAY.Text = "♪";
             this.L_0_SONGPLAY.UseVisualStyleBackColor = true;
+            // 
+            // L_2_SONG
+            // 
+            this.L_2_SONG.ErrorMessage = "";
+            this.L_2_SONG.Location = new System.Drawing.Point(353, 47);
+            this.L_2_SONG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_2_SONG.Name = "L_2_SONG";
+            this.L_2_SONG.Placeholder = "";
+            this.L_2_SONG.ReadOnly = true;
+            this.L_2_SONG.Size = new System.Drawing.Size(270, 25);
+            this.L_2_SONG.TabIndex = 233;
+            // 
+            // L_0_SONG
+            // 
+            this.L_0_SONG.ErrorMessage = "";
+            this.L_0_SONG.Location = new System.Drawing.Point(353, 15);
+            this.L_0_SONG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_SONG.Name = "L_0_SONG";
+            this.L_0_SONG.Placeholder = "";
+            this.L_0_SONG.ReadOnly = true;
+            this.L_0_SONG.Size = new System.Drawing.Size(270, 25);
+            this.L_0_SONG.TabIndex = 232;
             // 
             // W2
             // 
@@ -129,16 +163,6 @@
             this.J_2_SONG.Text = "エフラム編";
             this.J_2_SONG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // WriteButton
-            // 
-            this.WriteButton.Location = new System.Drawing.Point(682, 1);
-            this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(193, 30);
-            this.WriteButton.TabIndex = 9;
-            this.WriteButton.Text = "書き込み";
-            this.WriteButton.UseVisualStyleBackColor = true;
-            // 
             // W0
             // 
             this.W0.Hexadecimal = true;
@@ -163,6 +187,16 @@
             this.J_0_SONG.TabIndex = 199;
             this.J_0_SONG.Text = "エイリーク編";
             this.J_0_SONG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WriteButton
+            // 
+            this.WriteButton.Location = new System.Drawing.Point(682, 1);
+            this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(193, 30);
+            this.WriteButton.TabIndex = 9;
+            this.WriteButton.Text = "書き込み";
+            this.WriteButton.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -253,6 +287,17 @@
             this.AddressPanel.Size = new System.Drawing.Size(877, 30);
             this.AddressPanel.TabIndex = 177;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(326, 0);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -263,6 +308,17 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(538, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 40;
             // 
             // label22
             // 
@@ -303,6 +359,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressListExpandsButton);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Controls.Add(this.LabelFilter);
             this.panel6.Location = new System.Drawing.Point(14, 40);
@@ -310,6 +367,19 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(251, 670);
             this.panel6.TabIndex = 190;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(246, 604);
+            this.AddressList.TabIndex = 108;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // LabelFilter
             // 
@@ -323,73 +393,15 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // AddressListExpandsButton
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(11, 153);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(845, 47);
-            this.label4.TabIndex = 236;
-            this.label4.Text = "この拠点が、次の目的地となったときに再生するBGMを選択します。";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 634);
-            this.AddressList.TabIndex = 108;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // L_2_SONG
-            // 
-            this.L_2_SONG.ErrorMessage = "";
-            this.L_2_SONG.Location = new System.Drawing.Point(353, 47);
-            this.L_2_SONG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_2_SONG.Name = "L_2_SONG";
-            this.L_2_SONG.Placeholder = "";
-            this.L_2_SONG.ReadOnly = true;
-            this.L_2_SONG.Size = new System.Drawing.Size(270, 25);
-            this.L_2_SONG.TabIndex = 233;
-            // 
-            // L_0_SONG
-            // 
-            this.L_0_SONG.ErrorMessage = "";
-            this.L_0_SONG.Location = new System.Drawing.Point(353, 15);
-            this.L_0_SONG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_SONG.Name = "L_0_SONG";
-            this.L_0_SONG.Placeholder = "";
-            this.L_0_SONG.ReadOnly = true;
-            this.L_0_SONG.Size = new System.Drawing.Size(270, 25);
-            this.L_0_SONG.TabIndex = 232;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(326, 0);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(538, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 40;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 636);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(244, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // WorldMapBGMForm
             // 
@@ -449,5 +461,6 @@
         private System.Windows.Forms.Button L_2_SONGPLAY;
         private System.Windows.Forms.Button L_0_SONGPLAY;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }
