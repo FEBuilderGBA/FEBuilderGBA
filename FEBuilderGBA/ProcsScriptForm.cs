@@ -584,5 +584,40 @@ namespace FEBuilderGBA
 
         }
 
+        public static uint FindLabelAddr(uint romAddr, uint label)
+        {
+            uint addr = U.toOffset(romAddr);
+            for (; ; addr += 8)
+            {
+                uint code = Program.ROM.u16(addr + 0);
+                if (code == 0x00)
+                {//終端命令. ラベルがない
+                    return U.NOT_FOUND;
+                }
+                if (code == 0x0b)
+                {//ラベルではない
+                    continue;
+                }
+                uint current_label = Program.ROM.u16(addr + 2);
+                if (current_label == label)
+                {
+                    return addr;
+                }
+            }
+        }
+        public static uint FindTermAddr(uint romAddr)
+        {
+            uint addr = CalcLengthAndCheck(romAddr);
+            if (addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            if (addr <= 8)
+            {
+                return U.NOT_FOUND;
+            }
+            //終端命令へ
+            return addr - 8;
+        }
     }
 }

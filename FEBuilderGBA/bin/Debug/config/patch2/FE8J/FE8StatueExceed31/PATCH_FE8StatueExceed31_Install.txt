@@ -88,16 +88,17 @@ INFO=ステータス31突破、輸送体250個にします。\r\nオリジナル
 AUTHOR=出典元:https://ux.getuploader.com/FE4/download/213
 
 NAME.zh=状态31上限超出FE8状态导入
-INFO.zh=状态31上限超出，250个运输商。 \r\n与原始文件不同，我将运输团队从203AB18移动到203AB48，以免使用命令补丁。\r\n
 
-AUTHOR.zh=来源:https://ux.getuploader.com/FE4/download/213。
+AUTHOR.zh=来源:https://ux.getuploader.com/FE4/download/213
 
 NAME.en=Status 31 High limit exceeded_FE8Status (Installer)\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
-INFO.en=Status 31 breaks, it makes 250 transporters.\r\nUnlike the original, I move the transport team from 203AB18 to 203AB48 so as not to wear a command patch.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 AUTHOR.en=Source: https://ux.getuploader.com/FE4/download/213
-INFO=このパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を250アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
+INFO=警告:このパッチは64kbのセーブ領域を要求するため、現代のエミュレータでは、セーブスロット2以降が壊れます。\r\n\r\nこのパッチは、セーブデータを改造して、31以上のステータスパラメータを保存できるようにします。\r\nまた、輸送体を250アイテムまで拡張します。\r\nセーブデータがかわると既存のデータとの互換性が壊れるので、すべてのセーブデータを削除して新規にゲームを開始してください。\r\n
 
 CONFLICT_IF:0x0a9dfa=0x6B 0x46 0x5A 0x68 0x12 0x05 0x12 0x0D 0x38 0x7D 0x00 0x03 0x02 0x43 0x78 0x7D 0x80 0x04 0x02 0x43 0xB8 0x7D 0x00 0x06 0x02 0x43 0xF9 0x7D 0x88 0x07 0x02 0x43
 CONFLICT_MESSAGE=break save
+DEPRECATED=1
+INFO.en=Warning: Since this patch requires a 64 kb save area, modern emulators will break save slot 2 onwards.\r\n\r\nThis patch allows you to remodel save data and save more than 31 status parameters.\r\nWe also extend the transporter to 250 items.\r\nAs save data changes, compatibility with existing data will be broken, so delete all saved data and start a new game.\r\n
+INFO.zh=警告：由于此修补程序需要64 kb的保存区域，因此现代仿真器将中断保存插槽2。\r\n\r\n此修补程序允许您重新构建保存数据并保存超过31个状态参数。\r\n我们还将运输车扩展到250件。\r\n随着保存数据的更改，与现有数据的兼容性将被破坏，因此删除所有已保存的数据并开始新游戏。\r\n

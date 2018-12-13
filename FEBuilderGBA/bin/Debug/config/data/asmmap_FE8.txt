@@ -11473,3 +11473,4 @@
 02017728	gBattleAnimeCounter
 0203E152	gSomeBattleAnimHpValue1	{J}
 0203E154	gSomeBattleAnimHpValue2	{J}
+08032114	UpdateMapAndUnit	{J}

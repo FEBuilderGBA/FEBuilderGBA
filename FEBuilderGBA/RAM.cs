@@ -250,7 +250,7 @@ namespace FEBuilderGBA
             return 0;
         }
 
-        public void write_u32(uint pointer,uint data)
+        public void write_u32(uint pointer, uint data)
         {
             uint addr = pointer;
             if (U.is_02RAMPointer(addr))

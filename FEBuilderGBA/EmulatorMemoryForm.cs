@@ -2171,5 +2171,20 @@ namespace FEBuilderGBA
             }
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
+
+        ProcsData Find6C(uint romPointer)
+        {
+            romPointer = U.toPointer(romPointer);
+            for (int i = 0; i < ProcsTree.Count; i++)
+            {
+                ProcsData proc = ProcsTree[i];
+                if (proc.ROMAddr == romPointer)
+                {
+                    return proc;
+                }
+            }
+            return null;
+        }
+
     }
 }
