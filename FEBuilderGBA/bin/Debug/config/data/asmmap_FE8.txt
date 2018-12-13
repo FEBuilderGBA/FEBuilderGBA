@@ -11474,3 +11474,6 @@
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
 08032114	UpdateMapAndUnit	{J}
+0807E160	マップアニメのグラフのダイアログを描画	{J}
+0807DFF0	マップアニメのフレームを管理するルーチン	{J}
+0807DD70	マップアニメの棒グラフの数字を描画する	{J}
