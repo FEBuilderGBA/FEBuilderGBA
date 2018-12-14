@@ -11381,3 +11381,14 @@ r3=X tile position of menu of the right	{U}
 080B74CC	切换BGM（另一个命令No.6）。	r0=BGM号码：MUSIC。	{U}
 08021668	在事件效果结束时重绘地图。	{U}
 08021360	在事件效果结束时重绘地图。	{J}
+02017728	gBattleAnimeCounter
+0203E152	gRoundDamageValuesMaybe	{J}
+0203E154	gRoundDamageValuesMaybe2	{J}
+08032114	UpdateMapAndUnit	{J}
+0807E160	绘制地图动画图形对话框。	{J}
+0807DFF0	用于管理地图动画帧的例程。	{J}
+0807DD70	在地图动画条形图上绘制数字。	{J}
+080321C8	UpdateMapAndUnit	{U}
+0807BE1C	绘制地图动画图形对话框。	{U}
+0807BCA8	用于管理地图动画帧的例程。	{U}
+0807BA28	在地图动画条形图上绘制数字。	{U}

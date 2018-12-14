@@ -11507,3 +11507,14 @@ r3=X tile position of menu of the right	{U}
 080B74CC	Switch BGM (another command No. 6).	r0=BGM number: MUSIC.	{U}
 08021668	Redraw the map at the end of the event effect.	{U}
 08021360	Redraw the map at the end of the event effect.	{J}
+02017728	gBattleAnimeCounter
+0203E152	gRoundDamageValuesMaybe	{J}
+0203E154	gRoundDamageValuesMaybe2	{J}
+08032114	UpdateMapAndUnit	{J}
+0807E160	Draw a map animation graph dialog.	{J}
+0807DFF0	A routine for managing frames of map animation.	{J}
+0807DD70	Draw numbers on map animation bar graph.	{J}
+080321C8	UpdateMapAndUnit	{U}
+0807BE1C	Draw a map animation graph dialog.	{U}
+0807BCA8	A routine for managing frames of map animation.	{U}
+0807BA28	Draw numbers on map animation bar graph.	{U}

@@ -11473,7 +11473,14 @@
 02017728	gBattleAnimeCounter
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
+02000004	gAISBackLeft	{J}
+02000008	gAISFrontRight	{J}
+0200000C	gAISBackRight	{J}
 08032114	UpdateMapAndUnit	{J}
 0807E160	マップアニメのグラフのダイアログを描画	{J}
 0807DFF0	マップアニメのフレームを管理するルーチン	{J}
 0807DD70	マップアニメの棒グラフの数字を描画する	{J}
+080321C8	UpdateMapAndUnit	{U}
+0807BE1C	マップアニメのグラフのダイアログを描画	{U}
+0807BCA8	マップアニメのフレームを管理するルーチン	{U}
+0807BA28	マップアニメの棒グラフの数字を描画する	{U}
