@@ -5,6 +5,7 @@ NAME.zh=责骂的回收量
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#ENGINE
+HEX=false
 
 ADDRESS=0x2FEC6
 DEFAULT=0x0A
