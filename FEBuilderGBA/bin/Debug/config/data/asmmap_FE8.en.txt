@@ -11518,3 +11518,44 @@ r3=X tile position of menu of the right	{U}
 0807BE1C	Draw a map animation graph dialog.	{U}
 0807BCA8	A routine for managing frames of map animation.	{U}
 0807BA28	Draw numbers on map animation bar graph.	{U}
+0803581C	Display a message at the bottom of the screen.	BB function.	{J}
+08035EDC	The start of the recovery demonstration.	{J}
+08038320	A war record display when clearing a tower or ruins.	{J}
+0804B1CC	Display item selection menu.	{J}
+08082354	Effect when using the stone 2.	It is different from the instruction called from the event instruction.	{J}
+080943D4	Draw the screen of the unit selected from the menu.	{J}
+0809442C	Display an animation setting individual animation setting screen.	{J}
+0809445C	Draw the screen of the unit selected from the menu 2.	{J}
+0809448C	Draw the screen of the unit selected from the menu 3.	{J}
+0809E124	Item exchanges between units called from the attack advancement screen.	{J}
+080A4868	Make the screen brighten momentarily unnaturally.	{J}
+080AD1E0	Display MiniMap.	Non-Blocking	{J}
+080AD1F4	Display MiniMap.	Blocking	{J}
+080B2D94	Run FadeIn Procs	{J}
+080B2DB8	Run FadeOut Procs	{J}
+080B2E74	Run FadeIn Procs2	{J}
+080B2E98	Run FadeOut Procs2	{J}
+080B4B34	Show sound room screen.	{J}
+080BE718	Display dictionary screen.	{J}
+080BE794	Display setting screen.	{J}
+080BE810	Display of status map of world map.	{J}
+080CA1D4	OP subtitle is displayed.	{J}
+080CB370	Display game title OP.	{J}
+080CB390	Display game title OP 2.	{J}
+080CB3A8	Show OP after displaying the ring of light.	{J}
+08035DDC	The start of the recovery demonstration.	{U}
+080381F4	A war record display when clearing a tower or ruins.	{U}
+0804A430	Display item selection menu.	{U}
+08080014	Effect when using the stone 2.	It is different from the instruction called from the event instruction.	{U}
+0809BE60	Item exchanges between units called from the attack advancement screen.	{U}
+080A87C8	Display MiniMap.	Non-Blocking	{U}
+080A87DC	Display MiniMap.	Blocking	{U}
+080AE318	Run FadeIn Procs	{U}
+080AE33C	Run FadeOut Procs	{U}
+080AE3F8	Run FadeIn Procs2	{U}
+080AE41C	Run FadeOut Procs2	{U}
+080AFF1C	Show sound room screen.	{U}
+080C541C	OP subtitle is displayed.	{U}
+080C6424	Display game title OP.	{U}
+080C6444	Display game title OP 2.	{U}
+080C645C	Show OP after displaying the ring of light.	{U}

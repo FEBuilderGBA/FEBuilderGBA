@@ -1,4 +1,4 @@
-NAME=Skip New Game text
+NAME=オープニングの字幕をスキップ
 NAME.en=Toggle New Game Text
 NAME.zh=Skip New Game text
 
@@ -8,8 +8,10 @@ TAG=#ENGINE #ESSENTIALFIXES
 ADDRESS=0xC4928
 COMBO=SKIP|0x00 0x00|SKIP2|0xC0 0x46|Default|0x06 0xD0
 
-INFO=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\n
+INFO=オープニングの字幕をスキップします。\r\n英雄グラドが・・・という字幕を表示しなくします。
+INFO.en=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\nSkipping the opening subtitles.\r\nSkip the display subtitles of Hero's Grado...
 
 AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
 
 
+INFO.zh=跳过开场字幕。\r\n英雄英雄格拉多···不会显示字幕···。

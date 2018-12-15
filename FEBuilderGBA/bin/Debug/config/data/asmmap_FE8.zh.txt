@@ -11392,3 +11392,44 @@ r3=X tile position of menu of the right	{U}
 0807BE1C	绘制地图动画图形对话框。	{U}
 0807BCA8	用于管理地图动画帧的例程。	{U}
 0807BA28	在地图动画条形图上绘制数字。	{U}
+0803581C	在屏幕底部显示一条消息。	BB功能。	{J}
+08035EDC	恢复示范的开始。	{J}
+08038320	清除塔楼或废墟时的战争记录显示。	{J}
+0804B1CC	显示项目选择菜单。	{J}
+08082354	使用石头时的效果2。	它与从事件指令调用的指令不同。	{J}
+080943D4	绘制从菜单中选择的单位画面。	{J}
+0809442C	显示动画设置单个动画设置屏幕。	{J}
+0809445C	绘制从菜单2中选择的单位画面。	{J}
+0809448C	绘制从菜单3中选择的单位画面。	{J}
+0809E124	从攻击推进屏幕调用的单元之间的项目交换。	{J}
+080A4868	让屏幕不自然地变亮。	{J}
+080AD1E0	显示MiniMap。	Non-Blocking	{J}
+080AD1F4	显示MiniMap。	Blocking	{J}
+080B2D94	Run FadeIn Procs	{J}
+080B2DB8	Run FadeOut Procs	{J}
+080B2E74	Run FadeIn Procs2	{J}
+080B2E98	Run FadeOut Procs2	{J}
+080B4B34	显示音响室屏幕。	{J}
+080BE718	显示字典屏幕。	{J}
+080BE794	显示设定画面。	{J}
+080BE810	显示世界地图的状态图。	{J}
+080CA1D4	显示OP字幕。	{J}
+080CB370	显示游戏标题OP。	{J}
+080CB390	显示游戏标题OP 2。	{J}
+080CB3A8	显示光环后显示OP。	{J}
+08035DDC	恢复示范的开始。	{U}
+080381F4	清除塔楼或废墟时的战争记录显示。	{U}
+0804A430	显示项目选择菜单。	{U}
+08080014	使用石头时的效果2。	它与从事件指令调用的指令不同。	{U}
+0809BE60	从攻击推进屏幕调用的单元之间的项目交换。	{U}
+080A87C8	显示MiniMap。	Non-Blocking	{U}
+080A87DC	显示MiniMap。	Blocking	{U}
+080AE318	Run FadeIn Procs	{U}
+080AE33C	Run FadeOut Procs	{U}
+080AE3F8	Run FadeIn Procs2	{U}
+080AE41C	Run FadeOut Procs2	{U}
+080AFF1C	显示音响室屏幕。	{U}
+080C541C	显示OP字幕。	{U}
+080C6424	显示游戏标题OP。	{U}
+080C6444	显示游戏标题OP 2。	{U}
+080C645C	显示光环后显示OP。	{U}

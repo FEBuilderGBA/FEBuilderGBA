@@ -402,7 +402,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 203DXXXX	_203D[XXXX::value]
 243BXXXX	_243B[XXXX::value]
 203C0000	_203C
-2114XXXX	[XXXX:DECIMAL:Speed]Fade in music(MURE)	{MUSIC}
+2114XXXX	[XXXX:DECIMAL:Speed]Fade in music and return to map standard BGM(MURE)	{MUSIC}
 2011XXXX	STORETOSOMETHING[XXXX::immediate value]	Write a value to 03000010
 2126ZZZZ213BXXXX200EYYYY223B0000	Move the camera to[ZZZZ:UNIT:unit]and display the frame[YYYY:DECIMAL:frame seconds][]in[XXXX:UNIT:unit](CAM1+CUMO)	{WAKU}	{CAMERA}
 482FZZZZWW00XXYY	[WW:UNIT:Unit]is set to[XXXX:MAPX:X][YYYY:MAPY:Y]coordinates by setting[ZZZZ:DECIMAL:speed](_WARP)	{UNITMOVE}
@@ -465,3 +465,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 211A0000400D00006D190A082022000020171000	Display Support Relationship Screen for preparation.	{U}
 400D0000DD600108	Return music to the map standard BGM.	{MUSIC}	{J}
 400D0000D1600108	Return music to the map standard BGM.	{MUSIC}	{U}
+400D0000317F0808	Display of the map clearing effect when clearing the tower and ruins is displayed.	{MAPEFFECT}	{J}
+400D0000655C0808	Display of the map clearing effect when clearing the tower and ruins is displayed.	{MAPEFFECT}	{U}
