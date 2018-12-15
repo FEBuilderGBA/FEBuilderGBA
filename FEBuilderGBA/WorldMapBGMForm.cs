@@ -28,7 +28,17 @@ namespace FEBuilderGBA
                 , 4
                 , (int i, uint addr) =>
                 {//終端データは存在しない
-                    return i < (54 / 2);
+                    uint song_id1 = Program.ROM.u16(addr + 0);
+                    uint song_id2 = Program.ROM.u16(addr + 2);
+                    if (song_id1 == 1 && song_id2 == 0)
+                    {
+                        return false;
+                    }
+                    if (song_id1 == 0 && song_id2 == 0)
+                    {
+                        return false;
+                    }
+                    return true;
                 }
                 , (int i, uint addr) =>
                 {

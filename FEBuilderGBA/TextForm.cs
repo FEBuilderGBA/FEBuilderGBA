@@ -27,6 +27,7 @@ namespace FEBuilderGBA
             {
                 this.SrcText = "";
                 this.Error = "";
+                this.Units = new uint[8];
             }
         };
         List<TextBlock> SimpleList = new List<TextBlock>();
@@ -1105,12 +1106,16 @@ namespace FEBuilderGBA
 
         private void TextList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HideFloatingControlpanel(); 
+            HideFloatingControlpanel();
+            TextBlock code;
             if (this.TextList.SelectedIndex < 0 || this.TextList.SelectedIndex >= this.SimpleList.Count)
             {
-                return;
+                code = new TextBlock();
             }
-            TextBlock code = this.SimpleList[this.TextList.SelectedIndex];
+            else
+            {
+                code = this.SimpleList[this.TextList.SelectedIndex];
+            }
 
             //テキストには常に全部
             SetEditorText(this.TextListSpTextTextBox, code.SrcText);
@@ -1686,6 +1691,10 @@ namespace FEBuilderGBA
 
         private void TextList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (this.TextList.SelectedIndex < 0)
+            {//1件もデータがないと初期化されないため強引に初期化する
+                TextList_SelectedIndexChanged(null, null);
+            }
             ShowFloatingControlpanel();
         }
 
