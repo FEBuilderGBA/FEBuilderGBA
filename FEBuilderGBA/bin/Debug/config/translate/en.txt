@@ -5867,7 +5867,7 @@ Magic effect creation tool
 Report
 
 :マニュアル
-manual.
+Manual
 
 :詳細メニューを開く
 Advanced Editors
