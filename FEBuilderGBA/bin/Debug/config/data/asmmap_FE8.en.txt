@@ -11559,3 +11559,14 @@ r3=X tile position of menu of the right	{U}
 080C6424	Display game title OP.	{U}
 080C6444	Display game title OP 2.	{U}
 080C645C	Show OP after displaying the ring of light.	{U}
+0203E0EC	Unknown flag for battle 4 bytes.	{J}
+080868F4	Turn on flag 0x82.	{J}
+08086900	Status acquisition of flag 0x82.	{J}
+08050ABC	Set a value for "unknown flag for battle 4 bytes".	{J}
+08050AC8	Get "unknown flag for battle 4 bytes".	{J}
+08059938	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92).	{J}
+08084628	Turn on flag 0x82.	{U}
+08084634	Status acquisition of flag 0x82.	{U}
+0804FD48	Set a value for "unknown flag for battle 4 bytes".	{U}
+0804FD54	Get "unknown flag for battle 4 bytes".	{U}
+08058B08	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92).	{U}

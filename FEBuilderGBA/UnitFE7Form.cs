@@ -328,7 +328,6 @@ namespace FEBuilderGBA
             {
                 return 0;
             }
-            uid--;
 
             //FE7までは分岐がないので、クラスのCCクラスを参照する.
             uint shien_classs_id = UnitForm.GetClassID(uid);
@@ -336,18 +335,24 @@ namespace FEBuilderGBA
             {
                 return 0;
             }
+            if (ClassForm.isHighClass(shien_classs_id))
+            {//上位クラスなので、もう CCではない
+                return shien_classs_id;
+            }
 
             uint change_class = ClassForm.GetChangeClassID(shien_classs_id);
             if (change_class <= 0)
-            {
-                return 0;
+            {//上位のクラスが取れないので下位クラスを返す
+                return shien_classs_id;
             }
 
             if (ClassForm.isHighClass(change_class))
             {//上位クラスなので、もう CCではない
                 return change_class;
             }
-            return 0;
+
+            //上位のクラスが取れないので下位クラスを返す
+            return shien_classs_id;
         }
         //ロードユニットフラグの確認
 

@@ -69,7 +69,7 @@
 7F=Triangle attack dialog
 80=Triangle attack dialog
 81=Triangle attack dialog
-82=Global flag 82
+82=Fought with Deamon King
 83=Global flag 83
 84=Suppress Boss Icons
 85=Global flag 85

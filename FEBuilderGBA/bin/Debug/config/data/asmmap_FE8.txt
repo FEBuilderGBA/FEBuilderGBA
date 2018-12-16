@@ -7107,6 +7107,7 @@
 0203dde8	gTargetPosition	{U}
 0203ddec	gTargetArray	{U}
 0203e0ec	gTargetArraySize	{U}
+0203E0F0	戦闘用の不明なフラグ4バイト	{U}
 0203e0f4	gBoolBattleDeamonActive	{U}
 0203e0f8	gpEkrBattleDeamon	{U}
 0203e116	gSomeAllegienceIdShort	{U}
@@ -7233,6 +7234,7 @@
 0203DDE4	gTargetPosition	{J}
 0203DDE8	gTargetArray	{J}
 0203E0E8	gTargetArraySize	{J}
+0203E0EC	戦闘用の不明なフラグ4バイト	{J}
 0203E0F0	gBoolBattleDeamonActive	{J}
 0203E0F4	gpEkrBattleDeamon	{J}
 0203e112	gSomeAllegienceIdShort	{J}
@@ -11525,3 +11527,13 @@
 080C6424	ゲームOPタイトルを表示	{U}
 080C6444	ゲームOPタイトルを表示2	{U}
 080C645C	光の輪っかを表示した後にOPを表示	{U}
+080868F4	フラグ0x82をONにする	{J}
+08086900	フラグ0x82の状態取得	{J}
+08050ABC	"戦闘用の不明なフラグ4バイト"に値を設定	{J}
+08050AC8	"戦闘用の不明なフラグ4バイト"を取得する	{J}
+08059938	アイテムID判定0x85または0x92かどうか	ジークリンデ(0x85)とジークムント(0x92)	{J}
+08084628	フラグ0x82をONにする	{U}
+08084634	フラグ0x82の状態取得	{U}
+0804FD48	"戦闘用の不明なフラグ4バイト"に値を設定	{U}
+0804FD54	"戦闘用の不明なフラグ4バイト"を取得する	{U}
+08058B08	アイテムID判定0x85または0x92かどうか	ジークリンデ(0x85)とジークムント(0x92)	{U}
