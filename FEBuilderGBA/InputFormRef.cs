@@ -8111,7 +8111,10 @@ namespace FEBuilderGBA
         {
             self.Activated += (sender, e) =>
             {
-                Program.UpdateWatcher.CheckALL();
+                if (Program.UpdateWatcher != null)
+                {
+                    Program.UpdateWatcher.CheckALL();
+                }
                 LastActiveForm = self;
             };
         }

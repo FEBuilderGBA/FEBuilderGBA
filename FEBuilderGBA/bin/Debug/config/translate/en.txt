@@ -5863,6 +5863,12 @@ Portrait Generation Tool
 :魔法エフェクト作成ツール
 Magic effect creation tool
 
+:問題を報告
+Report
+
+:マニュアル
+manual.
+
 :詳細メニューを開く
 Advanced Editors
 
@@ -10333,35 +10339,38 @@ The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not 
 :どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
 Which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nWe added items because there are too many people who do not mention which chapter a problem occurs.
 
-:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
-
 :始める
 start
 
 :どの章？
 Which chapter? 
 
-:戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
-Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
-
 :次へ
 next
 
-:どんな問題がありますか？\r\n問題を具体的に説明してください。
-What kind of problems are there?\r\nPlease explain the problem concretely.
-
 :戻る
 Return
+
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
+
+:この機能の説明
+Explanation of this function.
+
+:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
+This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
+
+:戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
+Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
+
+:どんな問題がありますか？\r\n問題を具体的に説明してください。
+What kind of problems are there?\r\nPlease explain the problem concretely.
 
 :多くの国では、ROMを公開することは違法です。\r\nそのため、あなたの改造だけを取り出したupsパッチという差分データを作ります。\r\nupsパッチは、無改造ROMと、あなたのROMを比較して、あなたの改造だけを取り出します。
 It is illegal to publish ROM in many countries.\r\nTherefore, Will make difference data called ups patch which just extracted your remodeling.\r\nThe ups patch compares your ROM with unmodified ROM and extracts only your remodeling.
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.

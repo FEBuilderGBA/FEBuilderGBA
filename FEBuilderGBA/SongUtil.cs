@@ -2044,6 +2044,10 @@ namespace FEBuilderGBA
 
         static uint DeltaTimeToGBATime(uint delta, uint onpu4)
         {
+            if (onpu4 == 0)
+            {
+                return 0;
+            }
             return delta / (onpu4 / 24);
         }
 

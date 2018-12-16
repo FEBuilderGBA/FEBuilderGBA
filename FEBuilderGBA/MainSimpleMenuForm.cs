@@ -1443,5 +1443,12 @@ namespace FEBuilderGBA
             MainFormUtil.GotoCommunities();
         }
 
+        private void ToolProblemReportToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolProblemReportForm>();
+        }
+
+
+
     }
 }

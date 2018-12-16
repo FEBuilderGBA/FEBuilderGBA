@@ -17,7 +17,6 @@ namespace FEBuilderGBA
             InitializeComponent();
             InputFormRef.TabControlHideTabOption(MainTab);
             OrignalFilename.AllowDropFilename();
-//            U.AddCancelButton(this);
 
             SetExplain();
 
@@ -27,6 +26,8 @@ namespace FEBuilderGBA
 
             this.Problem.Placeholder = R._("例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)");
             this.URLTextBoxEx.Text = MainFormUtil.GetCommunitiesURL();
+
+            this.AboutReport7zText.Text = MainFormUtil.GetReport7zURL();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -436,6 +437,11 @@ namespace FEBuilderGBA
         void SetExplain()
         {
             X_MapIDLabel.AccessibleDescription = R._("どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。");
+        }
+
+        private void AboutReport7zText_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MainFormUtil.GotoReport7zURL();
         }
     }
 }

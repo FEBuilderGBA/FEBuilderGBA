@@ -141,7 +141,7 @@ namespace FEBuilderGBA
                 List<MapChangeForm.ChangeSt> mapchange = MapChangeForm.MakeChangeList(mapid);
                 for (int i = 0; i < mapchange.Count; i++)
                 {
-                    name = R._("マップ変化:") + mapchange[i].no;
+                    name = R._("マップ変化:") + U.ToHexString(mapchange[i].no);
                     this.ChangeComboBox.Items.Add(name);
                 }
             }

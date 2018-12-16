@@ -74,6 +74,8 @@
             this.OptionSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingOptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolProblemReportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnlineHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DiscordURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,6 +151,7 @@
             this.ExecuteRunToolStripMenuItem,
             this.ToolToolToolStripMenuItem,
             this.OptionSettingToolStripMenuItem,
+            this.toolStripMenuItem7,
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -499,6 +502,22 @@
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolProblemReportToolStripMenuItem2});
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(114, 31);
+            this.toolStripMenuItem7.Text = "問題を報告";
+            // 
+            // ToolProblemReportToolStripMenuItem2
+            // 
+            this.ToolProblemReportToolStripMenuItem2.Name = "ToolProblemReportToolStripMenuItem2";
+            this.ToolProblemReportToolStripMenuItem2.Size = new System.Drawing.Size(210, 32);
+            this.ToolProblemReportToolStripMenuItem2.Text = "問題報告ツール";
+            this.ToolProblemReportToolStripMenuItem2.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem2_Click);
+            // 
             // HelpToolStripMenuItem
             // 
             this.HelpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -506,8 +525,8 @@
             this.OnlineHelpToolStripMenuItem,
             this.DiscordURLToolStripMenuItem});
             this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
-            this.HelpToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
-            this.HelpToolStripMenuItem.Text = "ヘルプ";
+            this.HelpToolStripMenuItem.Size = new System.Drawing.Size(114, 31);
+            this.HelpToolStripMenuItem.Text = "マニュアル";
             // 
             // OnlineHelpToolStripMenuItem
             // 
@@ -837,8 +856,6 @@
         private System.Windows.Forms.ToolStripMenuItem TranslateROMToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DecreaseColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PortraitMakerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem OnlineHelpToolStripMenuItem;
         private ToolStripSeparatorEx toolStripMenuItem2;
         private ToolStripSeparatorEx toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UPSSimpleToolStripMenuItem;
@@ -859,7 +876,11 @@
         private System.Windows.Forms.ToolStripMenuItem ExportEAEventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolMagicEffectMakerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolProblemReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OnlineHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DiscordURLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem ToolProblemReportToolStripMenuItem2;
     }
 }
 

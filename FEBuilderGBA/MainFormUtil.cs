@@ -1377,6 +1377,31 @@ namespace FEBuilderGBA
             }
             return url;
         }
+
+        public static void GotoReport7zURL()
+        {
+            OpenURL(GetReport7zURL());
+        }
+        public static string GetReport7zURL()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:report7z";
+            }
+            else if (lang == "zh")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:febuildergba:report7z";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:febuildergba:report7z";
+            }
+            return url;
+        }
+
         public static string GetManualURL()
         {
             string lang = OptionForm.lang();
