@@ -243,6 +243,11 @@ namespace FEBuilderGBA
                 }
             }
 
+            if ( Program.ROM.RomInfo.is_multibyte() )
+            {//マルチバイトROMならば、001fパディングを消す.
+                translatetext = translatetext.Replace("@001F", "");
+            }
+
             //エスケープシーケンスの変換
             translatetext = TextForm.ConvertEscapeText(translatetext);
 

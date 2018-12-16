@@ -7642,6 +7642,9 @@ Sets whether or not SYM of the current ROM is automatically created when no$gba 
 :上書き時に、簡易メニュー画面にエラーが表示されている場合、警告を出すようにします。\r\nすべての章を確認するエラーチェック違い、システムエラーと現在の章のエラーしかチェックできませんが、高速に動作します。
 When overwriting, if an error is displayed on the simple menu screen, issue a warning.\r\nCheck all chapters Only errors check errors, system errors and errors in the current chapter can be checked, but it works faster.
 
+:イベントを解析したときに不明な命令が連続していたら、壊れていると警告を出します。\r\n数字を下げると、壊れたイベントを検知しやすくなりますが、未知の命令を誤認する可能性もあります。\r\nFE8とFE6はほぼすべての命令を解析されているので厳し目の値にしてもいい。\r\nFE7はまだ未知の命令があるので下げ過ぎると誤認識があります。\r\n
+If unknown instructions are consecutive when analyzing an event, a warning is issued if it is broken.\r\nDecreasing the number makes it easier to detect broken events, but there is also the possibility of misidentifying unknown commands.\r\nSince FE 8 and FE 6 have almost all instructions analyzed, they can be set as strict values.\r\nSince FE 7 has an unknown command yet, it is false recognition if it goes down too much.\r\n
+
 :エミュレータを設定すると、F5キーでテスト実行できるようになります。\r\nまた、エミュレータのRAM領域にアクセスしてデータを表示できます。\r\nVBA-M(sourceforge),mGBA,no$gba等に対応しています。\r\n\r\nただし、VBA-M(github)のRAM領域へは接続できません。
 When you set up the emulator, you can test it with the F5 key.\r\nAlso, data can be displayed by accessing the RAM area of ​​the emulator.\r\nIt corresponds to VBA-M (sourceforge), mGBA, no$gba, etc.\r\n\r\nHowever, it can not be connected to the RAM area of ​​VBA-M (github).
 
@@ -7716,6 +7719,9 @@ Program 3
 
 :元に戻す
 Restore
+
+:コントロールのコメント文字色
+Control comment text color
 
 :コメント文字色
 Comment Character Color
@@ -8104,8 +8110,17 @@ File Export Settings
 :保存
 Save
 
-:コントロールのコメント文字色
-Control comment text color
+:1=最高レベル
+1=The highest level.
+
+:6=通常レベル
+6=Normal level.
+
+:9=最低レベル
+9=The lowest level.
+
+:Lintで警告する不明な命令の連続数
+Continuous number of unknown instructions warning by Lint.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
