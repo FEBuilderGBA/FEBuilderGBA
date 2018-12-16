@@ -52,6 +52,10 @@ namespace FEBuilderGBA
                     {
                         return false;
                     }
+                    if (i == 0)
+                    {//先頭データは確認しないことにする.
+                        return true;
+                    }
                     //0 と 4 がポインタであればデータがあると考える.
                     return U.isPointerOrNULL(Program.ROM.u32(addr + 0));
                 }
