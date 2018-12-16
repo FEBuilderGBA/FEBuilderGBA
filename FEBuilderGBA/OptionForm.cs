@@ -915,7 +915,7 @@ namespace FEBuilderGBA
 
         public static int alert_unk_event_code()
         {
-            return (int)U.atoi(Program.Config.at("func_alert_unk_event_code", "10"));
+            return (int)U.atoi(Program.Config.at("func_alert_unk_event_code", "6"));
         }
         
 
