@@ -796,5 +796,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<AIPerformStaffForm>();
         }
+
+        private void SoundRoomCGButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<SoundRoomCGForm>();
+        }
     }
 }

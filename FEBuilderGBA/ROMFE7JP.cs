@@ -74,6 +74,7 @@ namespace FEBuilderGBA
         public uint sound_table_pointer() { return 0x3E2C; } // ソングテーブルの開始位置
         public uint sound_room_pointer() { return 0x1B844; } // サウンドルームの開始位置
         public uint sound_room_datasize() { return 16; } // サウンドルームのデータサイズ
+        public uint sound_room_cg_pointer() { return 0xAC3A4; } // サウンドルームの背景リスト(FE7のみ)
         public uint event_ballte_talk_pointer() { return 0x79ab0; } // 交戦時セリフの開始位置
         public uint event_ballte_talk2_pointer() { return 0x79c24; } // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         public uint event_haiku_pointer() { return 0x79d20; } // 死亡時セリフの開始位置
@@ -244,6 +245,7 @@ namespace FEBuilderGBA
         public uint workmemory_global_flag_address() { return 0x030049F0; }  //ワークメモリ ローカルフラグ
         public uint workmemory_trap_address() { return 0x0203A514; }  //ワークメモリ ローカルフラグ
         public uint workmemory_memoryslot_address() { return 0; }  //ワークメモリ メモリスロットFE8
+        public uint workmemory_eventcounter_address() { return 0x0; }  //イベントカウンター メモリスロットFE8
         public uint workmemory_procs_forest_address() { return 0x02026A28; }  //ワークメモリ Procs
         public uint workmemory_procs_pool_address() { return 0x02024E20; }  //ワークメモリ Procs
         public uint function_sleep_handle_address() { return 0x08004960 + 1; }  //ワークメモリ Procs待機中

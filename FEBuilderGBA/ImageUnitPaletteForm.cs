@@ -74,6 +74,9 @@ namespace FEBuilderGBA
 
         private void ImageUnitPaletteForm_Load(object sender, EventArgs e)
         {
+            List<Control> controls = InputFormRef.GetAllControls(this);
+            InputFormRef.makeJumpEventHandler(this.X_BATTLEANIME, this.X_BATTLEANIME_LABEL, "BATTLEANIME", new string[] { "MINUS1" });
+            InputFormRef.makeLinkEventHandler("X_", controls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
         }
 
         public static string GetPaletteName(uint paletteid)
@@ -188,9 +191,15 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
             uint class_id = InputFormRef.SelectToAddr(this.UNITCLASS_LIST);
+            uint battleAnimeID = ImageBattleAnimeForm.GetAnimeIDByClassID(class_id);
+            U.ForceUpdate(this.X_BATTLEANIME, battleAnimeID);
+        }
+        private void X_DISPLAY_CLASS_ValueChanged(object sender, EventArgs e)
+        {
+            uint battleAnimeID = (uint)this.X_BATTLEANIME.Value;
             uint paletteno = (uint)AddressList.SelectedIndex + 1;
             int paletteIndex = this.PaletteIndexComboBox.SelectedIndex;
-            DrawSample(class_id, paletteno, paletteIndex);
+            DrawSample(battleAnimeID, paletteno, paletteIndex);
         }
 
         void DrawSample(uint battleAnimeID //戦闘アニメID
@@ -204,7 +213,7 @@ namespace FEBuilderGBA
             uint showframe = 0;
             for (int index = 0; index < animeframe.Length; index++, showframe += 2)
             {
-                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(ImageBattleAnimeForm.GetAnimeIDByClassID(battleAnimeID)
+                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(battleAnimeID
                     , ImageBattleAnimeForm.ScaleTrim.SCALE_90
                     , paletteno, showsecstion, showframe, paletteIndex);
                 if (!ImageUtil.IsBlankBitmap(animeframe[index], 10))
@@ -213,7 +222,7 @@ namespace FEBuilderGBA
                 }
                 //何も描画されなければフレームをもうちょっと進めてみる.
                 showframe += 2;
-                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(ImageBattleAnimeForm.GetAnimeIDByClassID(battleAnimeID)
+                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(battleAnimeID
                     , ImageBattleAnimeForm.ScaleTrim.SCALE_90
                     , paletteno, showsecstion, showframe, paletteIndex);
                 if (!ImageUtil.IsBlankBitmap(animeframe[index], 10))
@@ -223,7 +232,7 @@ namespace FEBuilderGBA
                 //それでもだめならセクションを切り替える.
                 showsecstion += 1;
                 showframe = 0;
-                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(ImageBattleAnimeForm.GetAnimeIDByClassID(battleAnimeID)
+                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(battleAnimeID
                     , ImageBattleAnimeForm.ScaleTrim.SCALE_90
                     , paletteno, showsecstion, showframe, paletteIndex);
                 if (!ImageUtil.IsBlankBitmap(animeframe[index], 10))
@@ -233,7 +242,7 @@ namespace FEBuilderGBA
                 //さらにダメならもう一つセクションを進める. それでもだめならあきらめる.
                 showsecstion += 1;
                 showframe = 0;
-                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(ImageBattleAnimeForm.GetAnimeIDByClassID(battleAnimeID)
+                animeframe[index] = ImageBattleAnimeForm.DrawBattleAnime(battleAnimeID
                     , ImageBattleAnimeForm.ScaleTrim.SCALE_90
                     , paletteno, showsecstion, showframe, paletteIndex);
             }
@@ -258,9 +267,8 @@ namespace FEBuilderGBA
         private void CLASS_LIST_SelectedIndexChanged(object sender, EventArgs e)
         {
             uint class_id = InputFormRef.SelectToAddr(this.UNITCLASS_LIST);
-            uint paletteno = (uint)AddressList.SelectedIndex + 1;
-            int paletteIndex = this.PaletteIndexComboBox.SelectedIndex;
-            DrawSample(class_id, paletteno, paletteIndex);
+            uint battleAnimeID = ImageBattleAnimeForm.GetAnimeIDByClassID(class_id);
+            U.ForceUpdate(this.X_BATTLEANIME, battleAnimeID);
         }
         Bitmap DrawBitmap;
 
@@ -396,6 +404,7 @@ namespace FEBuilderGBA
                 return R._("{0}の色決定ルーチンは以下のようになります。\r\nユニット設定で、{1}、または、{2}が指定されているかを確認します。\r\nもし、パレットが指定されていれば、{3}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n", Program.ROM.TitleToFilename(), R._("下位クラス戦闘アニメ色"), R._("上位クラス戦闘アニメ色"), R._("ユニット別パレット"));
             }
         }
+
 
     }
 }

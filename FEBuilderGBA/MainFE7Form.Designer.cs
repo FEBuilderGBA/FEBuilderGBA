@@ -191,6 +191,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.SoundRoomCGButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -242,7 +243,7 @@
             // 
             // SongTableButton
             // 
-            this.SongTableButton.Location = new System.Drawing.Point(1422, 74);
+            this.SongTableButton.Location = new System.Drawing.Point(1422, 115);
             this.SongTableButton.Margin = new System.Windows.Forms.Padding(2);
             this.SongTableButton.Name = "SongTableButton";
             this.SongTableButton.Size = new System.Drawing.Size(200, 36);
@@ -253,7 +254,7 @@
             // 
             // SoundBossBGMButton
             // 
-            this.SoundBossBGMButton.Location = new System.Drawing.Point(1422, 33);
+            this.SoundBossBGMButton.Location = new System.Drawing.Point(1422, 74);
             this.SoundBossBGMButton.Margin = new System.Windows.Forms.Padding(2);
             this.SoundBossBGMButton.Name = "SoundBossBGMButton";
             this.SoundBossBGMButton.Size = new System.Drawing.Size(200, 36);
@@ -275,7 +276,7 @@
             // 
             // TextCharCodeButton
             // 
-            this.TextCharCodeButton.Location = new System.Drawing.Point(1217, 34);
+            this.TextCharCodeButton.Location = new System.Drawing.Point(1217, 36);
             this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(2);
             this.TextCharCodeButton.Name = "TextCharCodeButton";
             this.TextCharCodeButton.Size = new System.Drawing.Size(200, 36);
@@ -614,7 +615,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1630, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1630, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -633,75 +634,75 @@
             this.toolStripMenuItem3,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(119, 38);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(96, 31);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.SaveToolStripMenuItem.Text = "上書き保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.SaveAsToolStripMenuItem.Text = "別名保存";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(386, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(315, 6);
             // 
             // SaveWithLintToolStripMenuItem
             // 
             this.SaveWithLintToolStripMenuItem.Name = "SaveWithLintToolStripMenuItem";
-            this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.SaveWithLintToolStripMenuItem.Text = "エラーがなければ上書き保存";
             this.SaveWithLintToolStripMenuItem.Click += new System.EventHandler(this.SaveWithLintToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(315, 6);
             // 
             // UPSSimpleToolStripMenuItem
             // 
             this.UPSSimpleToolStripMenuItem.Name = "UPSSimpleToolStripMenuItem";
-            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.UPSSimpleToolStripMenuItem.Text = "UPS差分で保存";
             this.UPSSimpleToolStripMenuItem.Click += new System.EventHandler(this.UPSSimpleToolStripMenuItem_Click);
             // 
             // ToolProblemReportToolStripMenuItem
             // 
             this.ToolProblemReportToolStripMenuItem.Name = "ToolProblemReportToolStripMenuItem";
-            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.ToolProblemReportToolStripMenuItem.Text = "問題報告ツール";
             this.ToolProblemReportToolStripMenuItem.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(315, 6);
             // 
             // QuitToolStripMenuItem
             // 
             this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
             this.QuitToolStripMenuItem.Text = "終了";
             this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -722,93 +723,93 @@
             this.RunAsProgram3ToolStripMenuItem,
             this.RunAsToolStripMenuItem});
             this.ExecuteRunToolStripMenuItem.Name = "ExecuteRunToolStripMenuItem";
-            this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(73, 38);
+            this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
             this.ExecuteRunToolStripMenuItem.Text = "実行";
             // 
             // RunAsEmulatorToolStripMenuItem
             // 
             this.RunAsEmulatorToolStripMenuItem.Name = "RunAsEmulatorToolStripMenuItem";
-            this.RunAsEmulatorToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsEmulatorToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsEmulatorToolStripMenuItem.Text = "エミュレータで実行([F5])";
             this.RunAsEmulatorToolStripMenuItem.Click += new System.EventHandler(this.RunAsEmulatorToolStripMenuItem_Click);
             // 
             // RunAsDebuggerToolStripMenuItem
             // 
             this.RunAsDebuggerToolStripMenuItem.Name = "RunAsDebuggerToolStripMenuItem";
-            this.RunAsDebuggerToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsDebuggerToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsDebuggerToolStripMenuItem.Text = "エミュレーター2で実行([Ctrl+F5])";
             this.RunAsDebuggerToolStripMenuItem.Click += new System.EventHandler(this.RunAsDebuggerToolStripMenuItem_Click);
             // 
             // RunAsBinaryEditorToolStripMenuItem
             // 
             this.RunAsBinaryEditorToolStripMenuItem.Name = "RunAsBinaryEditorToolStripMenuItem";
-            this.RunAsBinaryEditorToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsBinaryEditorToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsBinaryEditorToolStripMenuItem.Text = "バイナリエディタで開く";
             this.RunAsBinaryEditorToolStripMenuItem.Click += new System.EventHandler(this.RunAsBinaryEditorToolStripMenuItem_Click);
             // 
             // RunAsSappyToolStripMenuItem
             // 
             this.RunAsSappyToolStripMenuItem.Name = "RunAsSappyToolStripMenuItem";
-            this.RunAsSappyToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsSappyToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsSappyToolStripMenuItem.Text = "Sappyで開く";
             this.RunAsSappyToolStripMenuItem.Click += new System.EventHandler(this.RunAsSappyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(456, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
             // 
             // eventAssembler
             // 
             this.eventAssembler.Name = "eventAssembler";
-            this.eventAssembler.Size = new System.Drawing.Size(459, 38);
+            this.eventAssembler.Size = new System.Drawing.Size(373, 32);
             this.eventAssembler.Text = "Event Assemblerで追加";
             this.eventAssembler.Click += new System.EventHandler(this.eventAssembler_Click);
             // 
             // ASMInsertToolStripMenuItem
             // 
             this.ASMInsertToolStripMenuItem.Name = "ASMInsertToolStripMenuItem";
-            this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.ASMInsertToolStripMenuItem.Text = "ASMで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(456, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
             // 
             // OpenLastUsedToolStripMenuItem
             // 
             this.OpenLastUsedToolStripMenuItem.Name = "OpenLastUsedToolStripMenuItem";
-            this.OpenLastUsedToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.OpenLastUsedToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.OpenLastUsedToolStripMenuItem.Text = "最後に利用したファイル";
             this.OpenLastUsedToolStripMenuItem.Click += new System.EventHandler(this.OpenLastUsedToolStripMenuItem_Click);
             // 
             // RunAsProgram1ToolStripMenuItem
             // 
             this.RunAsProgram1ToolStripMenuItem.Name = "RunAsProgram1ToolStripMenuItem";
-            this.RunAsProgram1ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram1ToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsProgram1ToolStripMenuItem.Text = "プログラム1で開く";
             this.RunAsProgram1ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram1ToolStripMenuItem_Click);
             // 
             // RunAsProgram2ToolStripMenuItem
             // 
             this.RunAsProgram2ToolStripMenuItem.Name = "RunAsProgram2ToolStripMenuItem";
-            this.RunAsProgram2ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram2ToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsProgram2ToolStripMenuItem.Text = "プログラム2で開く";
             this.RunAsProgram2ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram2ToolStripMenuItem_Click);
             // 
             // RunAsProgram3ToolStripMenuItem
             // 
             this.RunAsProgram3ToolStripMenuItem.Name = "RunAsProgram3ToolStripMenuItem";
-            this.RunAsProgram3ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram3ToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsProgram3ToolStripMenuItem.Text = "プログラム3で開く";
             this.RunAsProgram3ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram3ToolStripMenuItem_Click);
             // 
             // RunAsToolStripMenuItem
             // 
             this.RunAsToolStripMenuItem.Name = "RunAsToolStripMenuItem";
-            this.RunAsToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.RunAsToolStripMenuItem.Text = "任意のプログラムで開く";
             this.RunAsToolStripMenuItem.Click += new System.EventHandler(this.RunAsToolStripMenuItem_Click);
             // 
@@ -836,138 +837,138 @@
             this.DisassemblerToolStripMenuItem,
             this.PointerToolStripMenuItem2});
             this.ToolToolToolStripMenuItem.Name = "ToolToolToolStripMenuItem";
-            this.ToolToolToolStripMenuItem.Size = new System.Drawing.Size(96, 38);
+            this.ToolToolToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ToolToolToolStripMenuItem.Text = "ツール";
             // 
             // UndoToolStripMenuItem
             // 
             this.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem";
-            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.UndoToolStripMenuItem.Text = "UNDO 操作の取り消し";
             this.UndoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItem_Click);
             // 
             // PatchToolStripMenuItem
             // 
             this.PatchToolStripMenuItem.Name = "PatchToolStripMenuItem";
-            this.PatchToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.PatchToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.PatchToolStripMenuItem.Text = "パッチ";
             this.PatchToolStripMenuItem.Click += new System.EventHandler(this.PatchToolStripMenuItem_Click);
             // 
             // GraphicsToolStripMenuItem
             // 
             this.GraphicsToolStripMenuItem.Name = "GraphicsToolStripMenuItem";
-            this.GraphicsToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.GraphicsToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.GraphicsToolStripMenuItem.Text = "グラフィックツール";
             this.GraphicsToolStripMenuItem.Click += new System.EventHandler(this.GraphicsToolStripMenuItem_Click);
             // 
             // SongImportOtherROMToolStripMenuItem
             // 
             this.SongImportOtherROMToolStripMenuItem.Name = "SongImportOtherROMToolStripMenuItem";
-            this.SongImportOtherROMToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.SongImportOtherROMToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.SongImportOtherROMToolStripMenuItem.Text = "別ROMから曲のインポート";
             this.SongImportOtherROMToolStripMenuItem.Click += new System.EventHandler(this.SongImportOtherROMToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx1
             // 
             this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
-            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
             // 
             // lintToolStripMenuItem
             // 
             this.lintToolStripMenuItem.Name = "lintToolStripMenuItem";
-            this.lintToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.lintToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.lintToolStripMenuItem.Text = "Lint";
             this.lintToolStripMenuItem.Click += new System.EventHandler(this.lintToolStripMenuItem_Click);
             // 
             // DiffDebugToolStripMenuItem
             // 
             this.DiffDebugToolStripMenuItem.Name = "DiffDebugToolStripMenuItem";
-            this.DiffDebugToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DiffDebugToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.DiffDebugToolStripMenuItem.Text = "比較デバッグツール";
             this.DiffDebugToolStripMenuItem.Click += new System.EventHandler(this.DiffDebugToolStripMenuItem_Click);
             // 
             // EmulatorMemoryToolStripMenuItem
             // 
             this.EmulatorMemoryToolStripMenuItem.Name = "EmulatorMemoryToolStripMenuItem";
-            this.EmulatorMemoryToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.EmulatorMemoryToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.EmulatorMemoryToolStripMenuItem.Text = "動作中のエミュレータへ接続";
             this.EmulatorMemoryToolStripMenuItem.Click += new System.EventHandler(this.EmulatorMemoryToolStripMenuItem_Click);
             // 
             // LogToolStripMenuItem
             // 
             this.LogToolStripMenuItem.Name = "LogToolStripMenuItem";
-            this.LogToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.LogToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.LogToolStripMenuItem.Text = "ログ";
             this.LogToolStripMenuItem.Click += new System.EventHandler(this.LogToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx2
             // 
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
-            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
             // 
             // FlagNameToolStripMenuItem
             // 
             this.FlagNameToolStripMenuItem.Name = "FlagNameToolStripMenuItem";
-            this.FlagNameToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.FlagNameToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.FlagNameToolStripMenuItem.Text = "フラグ設定";
             this.FlagNameToolStripMenuItem.Click += new System.EventHandler(this.FlagNameToolStripMenuItem_Click);
             // 
             // ExportEAEventToolStripMenuItem
             // 
             this.ExportEAEventToolStripMenuItem.Name = "ExportEAEventToolStripMenuItem";
-            this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.ExportEAEventToolStripMenuItem.Text = "Event Assemblerでイベントのエクスポート";
             this.ExportEAEventToolStripMenuItem.Click += new System.EventHandler(this.ExportEAEventToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx3
             // 
             this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
-            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
             // 
             // DecreaseColorToolStripMenuItem
             // 
             this.DecreaseColorToolStripMenuItem.Name = "DecreaseColorToolStripMenuItem";
-            this.DecreaseColorToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DecreaseColorToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.DecreaseColorToolStripMenuItem.Text = "減色ツール";
             this.DecreaseColorToolStripMenuItem.Click += new System.EventHandler(this.DecreaseColorToolStripMenuItem_Click);
             // 
             // LZ77ToolStripMenuItem
             // 
             this.LZ77ToolStripMenuItem.Name = "LZ77ToolStripMenuItem";
-            this.LZ77ToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.LZ77ToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.LZ77ToolStripMenuItem.Text = "LZ77ツール";
             this.LZ77ToolStripMenuItem.Click += new System.EventHandler(this.LZ77ToolToolStripMenuItem_Click);
             // 
             // diffToolStripMenuItem
             // 
             this.diffToolStripMenuItem.Name = "diffToolStripMenuItem";
-            this.diffToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.diffToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.diffToolStripMenuItem.Text = "Diffツール";
             this.diffToolStripMenuItem.Click += new System.EventHandler(this.diffToolStripMenuItem_Click);
             // 
             // TranslateROMToolStripMenuItem
             // 
             this.TranslateROMToolStripMenuItem.Name = "TranslateROMToolStripMenuItem";
-            this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.TranslateROMToolStripMenuItem.Text = "ROM翻訳ツール";
             this.TranslateROMToolStripMenuItem.Click += new System.EventHandler(this.TranslateROMToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx4
             // 
             this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
-            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
             // 
             // DisassemblerToolStripMenuItem
             // 
             this.DisassemblerToolStripMenuItem.Name = "DisassemblerToolStripMenuItem";
-            this.DisassemblerToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DisassemblerToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.DisassemblerToolStripMenuItem.Text = "逆アセンブラ";
             this.DisassemblerToolStripMenuItem.Click += new System.EventHandler(this.DisassemblerToolStripMenuItem_Click);
             // 
             // PointerToolStripMenuItem2
             // 
             this.PointerToolStripMenuItem2.Name = "PointerToolStripMenuItem2";
-            this.PointerToolStripMenuItem2.Size = new System.Drawing.Size(553, 38);
+            this.PointerToolStripMenuItem2.Size = new System.Drawing.Size(445, 32);
             this.PointerToolStripMenuItem2.Text = "ポインタ計算ツール";
             this.PointerToolStripMenuItem2.Click += new System.EventHandler(this.PointerToolStripMenuItem2_Click);
             // 
@@ -977,20 +978,20 @@
             this.SettingOptionToolStripMenuItem,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
-            this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(73, 38);
+            this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
             this.OptionSettingToolStripMenuItem.Text = "設定";
             // 
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -1001,20 +1002,20 @@
             this.OnlineHelpToolStripMenuItem,
             this.DiscordURLToolStripMenuItem});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
-            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(96, 38);
+            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
             // 
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(335, 38);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
             // 
             // DiscordURLToolStripMenuItem
             // 
             this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
-            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(335, 38);
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(274, 32);
             this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
             this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
@@ -1185,6 +1186,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.SoundRoomCGButton);
             this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
             this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
@@ -1912,6 +1914,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // SoundRoomCGButton
+            // 
+            this.SoundRoomCGButton.Location = new System.Drawing.Point(1422, 36);
+            this.SoundRoomCGButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundRoomCGButton.Name = "SoundRoomCGButton";
+            this.SoundRoomCGButton.Size = new System.Drawing.Size(200, 36);
+            this.SoundRoomCGButton.TabIndex = 105;
+            this.SoundRoomCGButton.Text = "サウンドルームCG";
+            this.SoundRoomCGButton.UseVisualStyleBackColor = true;
+            this.SoundRoomCGButton.Click += new System.EventHandler(this.SoundRoomCGButton_Click);
+            // 
             // MainFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2103,5 +2116,6 @@
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
         private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
         private System.Windows.Forms.Button AIPerformStaffButton;
+        private System.Windows.Forms.Button SoundRoomCGButton;
     }
 }

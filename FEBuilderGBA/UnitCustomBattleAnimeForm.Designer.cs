@@ -41,13 +41,16 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.IndependencePanel = new System.Windows.Forms.Panel();
+            this.IndependenceButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.L_2_BATTLEANIMEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_BATTLEANIMEITEMICON_1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_2_BATTLEANIME = new FEBuilderGBA.TextBoxEx();
             this.L_1_BATTLEANIMESP_0 = new System.Windows.Forms.ComboBox();
             this.L_0_BATTLEANIMEITEM_1 = new FEBuilderGBA.TextBoxEx();
             this.J_1 = new System.Windows.Forms.Label();
-            this.J_2 = new System.Windows.Forms.Label();
+            this.J_2_BATTLEANIME_MINUS1 = new System.Windows.Forms.Label();
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.B0 = new System.Windows.Forms.NumericUpDown();
@@ -73,14 +76,12 @@
             this.N2_P0 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.del = new FEBuilderGBA.InterpolatedPictureBox();
-            this.IndependencePanel = new System.Windows.Forms.Panel();
-            this.IndependenceButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel2.SuspendLayout();
+            this.IndependencePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_2_BATTLEANIMEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEANIMEITEMICON_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
@@ -95,7 +96,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.del)).BeginInit();
-            this.IndependencePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -249,7 +249,7 @@
             this.panel2.Controls.Add(this.L_1_BATTLEANIMESP_0);
             this.panel2.Controls.Add(this.L_0_BATTLEANIMEITEM_1);
             this.panel2.Controls.Add(this.J_1);
-            this.panel2.Controls.Add(this.J_2);
+            this.panel2.Controls.Add(this.J_2_BATTLEANIME_MINUS1);
             this.panel2.Controls.Add(this.W2);
             this.panel2.Controls.Add(this.B1);
             this.panel2.Controls.Add(this.B0);
@@ -259,6 +259,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(821, 337);
             this.panel2.TabIndex = 62;
+            // 
+            // IndependencePanel
+            // 
+            this.IndependencePanel.Controls.Add(this.IndependenceButton);
+            this.IndependencePanel.Controls.Add(this.label5);
+            this.IndependencePanel.Location = new System.Drawing.Point(3, 271);
+            this.IndependencePanel.Name = "IndependencePanel";
+            this.IndependencePanel.Size = new System.Drawing.Size(457, 62);
+            this.IndependencePanel.TabIndex = 153;
+            this.IndependencePanel.Visible = false;
+            // 
+            // IndependenceButton
+            // 
+            this.IndependenceButton.Location = new System.Drawing.Point(0, 29);
+            this.IndependenceButton.Name = "IndependenceButton";
+            this.IndependenceButton.Size = new System.Drawing.Size(402, 30);
+            this.IndependenceButton.TabIndex = 121;
+            this.IndependenceButton.Text = "選択クラスの分離独立";
+            this.IndependenceButton.UseVisualStyleBackColor = true;
+            this.IndependenceButton.Click += new System.EventHandler(this.IndependenceButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(3, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(451, 25);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "このテーブルは、複数のクラスで参照されています。";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // L_2_BATTLEANIMEICON
             // 
@@ -322,16 +351,16 @@
             this.J_1.Text = "特殊";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // J_2
+            // J_2_BATTLEANIME_MINUS1
             // 
-            this.J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2.Location = new System.Drawing.Point(0, 72);
-            this.J_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_2.Name = "J_2";
-            this.J_2.Size = new System.Drawing.Size(137, 31);
-            this.J_2.TabIndex = 145;
-            this.J_2.Text = "アニメ番号";
-            this.J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_2_BATTLEANIME_MINUS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_2_BATTLEANIME_MINUS1.Location = new System.Drawing.Point(0, 72);
+            this.J_2_BATTLEANIME_MINUS1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_2_BATTLEANIME_MINUS1.Name = "J_2_BATTLEANIME_MINUS1";
+            this.J_2_BATTLEANIME_MINUS1.Size = new System.Drawing.Size(137, 31);
+            this.J_2_BATTLEANIME_MINUS1.TabIndex = 145;
+            this.J_2_BATTLEANIME_MINUS1.Text = "アニメ番号";
+            this.J_2_BATTLEANIME_MINUS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W2
             // 
@@ -417,6 +446,7 @@
             // 
             this.N2_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
             this.N2_AddressList.Location = new System.Drawing.Point(0, 26);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -441,6 +471,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 30);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -635,35 +666,6 @@
             this.del.TabIndex = 150;
             this.del.TabStop = false;
             // 
-            // IndependencePanel
-            // 
-            this.IndependencePanel.Controls.Add(this.IndependenceButton);
-            this.IndependencePanel.Controls.Add(this.label5);
-            this.IndependencePanel.Location = new System.Drawing.Point(3, 271);
-            this.IndependencePanel.Name = "IndependencePanel";
-            this.IndependencePanel.Size = new System.Drawing.Size(457, 62);
-            this.IndependencePanel.TabIndex = 153;
-            this.IndependencePanel.Visible = false;
-            // 
-            // IndependenceButton
-            // 
-            this.IndependenceButton.Location = new System.Drawing.Point(0, 29);
-            this.IndependenceButton.Name = "IndependenceButton";
-            this.IndependenceButton.Size = new System.Drawing.Size(402, 30);
-            this.IndependenceButton.TabIndex = 121;
-            this.IndependenceButton.Text = "選択クラスの分離独立";
-            this.IndependenceButton.UseVisualStyleBackColor = true;
-            this.IndependenceButton.Click += new System.EventHandler(this.IndependenceButton_Click);
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(3, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(451, 25);
-            this.label5.TabIndex = 122;
-            this.label5.Text = "このテーブルは、複数のクラスで参照されています。";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // UnitCustomBattleAnimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -687,6 +689,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.IndependencePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.L_2_BATTLEANIMEICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_BATTLEANIMEITEMICON_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
@@ -702,7 +705,6 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N2_P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.del)).EndInit();
-            this.IndependencePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -748,7 +750,7 @@
         private System.Windows.Forms.ComboBox L_1_BATTLEANIMESP_0;
         private FEBuilderGBA.TextBoxEx L_0_BATTLEANIMEITEM_1;
         private System.Windows.Forms.Label J_1;
-        private System.Windows.Forms.Label J_2;
+        private System.Windows.Forms.Label J_2_BATTLEANIME_MINUS1;
         private System.Windows.Forms.NumericUpDown W2;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.NumericUpDown B0;

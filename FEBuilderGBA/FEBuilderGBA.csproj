@@ -1834,6 +1834,12 @@
     <Compile Include="ItemEffectivenessSkillSystemsReworkForm.Designer.cs">
       <DependentUpon>ItemEffectivenessSkillSystemsReworkForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SoundRoomCGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundRoomCGForm.Designer.cs">
+      <DependentUpon>SoundRoomCGForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2712,6 +2718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemEffectivenessSkillSystemsReworkForm.resx">
       <DependentUpon>ItemEffectivenessSkillSystemsReworkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundRoomCGForm.resx">
+      <DependentUpon>SoundRoomCGForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

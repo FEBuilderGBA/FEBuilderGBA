@@ -1769,6 +1769,44 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "BGICON")
+            {//BG
+                PictureBox link_object = ((PictureBox)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value;
+                    Bitmap bitmap = ImageBGForm.DrawBG(id);
+                    link_object.Image = bitmap;
+                };
+
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "BG", new string[] { });
+                };
+                return;
+            }
+            if (linktype == "CGICON")
+            {//CG
+                PictureBox link_object = ((PictureBox)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value;
+                    Bitmap bitmap = ImageCGForm.DrawImageByID(id);
+                    link_object.Image = bitmap;
+                };
+
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "CG", new string[] { });
+                };
+                return;
+            }
             if (linktype == "BATTLEBG")
             {//戦闘背景
                 TextBoxEx link_object = ((TextBoxEx)link_info);
@@ -3514,6 +3552,10 @@ namespace FEBuilderGBA
                 else if (arg1 == "PLUS1")
                 {
                     f.JumpToAnimeID(value + 1);
+                }
+                else if (arg1 == "MINUS1")
+                {
+                    f.JumpToAnimeID(value - 1);
                 }
             }
             else if (linktype == "BATTLEANIMEPOINTER")

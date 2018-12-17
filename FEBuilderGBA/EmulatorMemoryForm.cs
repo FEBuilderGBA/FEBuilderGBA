@@ -550,7 +550,7 @@ namespace FEBuilderGBA
 
 
             //個数が変更されるため再描画が必要.
-            this.MemorySlotListBox.DummyAlloc((int)(0xD + 1 + newCount), this.MemorySlotListBox.SelectedIndex);
+            this.MemorySlotListBox.DummyAlloc((int)(0xD + 1 + 1 + newCount), this.MemorySlotListBox.SelectedIndex);
         }
 
         private Size DrawFlag(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
@@ -652,7 +652,16 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            uint addr = Program.ROM.RomInfo.workmemory_memoryslot_address() + ((uint)index * 4);
+
+            uint addr;
+            if (IsEventCounter_Index(index, this.MemorySlotListBox))
+            {
+                addr = Program.ROM.RomInfo.workmemory_eventcounter_address();
+            }
+            else
+            {
+                addr = Program.ROM.RomInfo.workmemory_memoryslot_address() + ((uint)index * 4);
+            }
             N_SelectAddress.Text = U.ToHexString8(addr);
         }
 
@@ -779,6 +788,11 @@ namespace FEBuilderGBA
             EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, U.toOffset(addr));
             return EventScriptForm.DrawCode(lb, g, listbounds, isWithDraw, code);
         }
+        bool IsEventCounter_Index(int index,ListBox lb)
+        {
+            return index == lb.Items.Count - 1;
+        }
+
         private Size DrawMemorySlot(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
             if (index < 0 || index >= lb.Items.Count)
@@ -789,26 +803,41 @@ namespace FEBuilderGBA
 
             int lineHeight = ListBoxEx.OWNER_DRAW_ICON_SIZE;
 
-            string text;
-            if (index <= 0xD)
-            {
-                text = U.ToHexString(index) + " ";
+            if (IsEventCounter_Index(index,lb))
+            {//最後の項目はカウンター
+                string text = "Counter: ";
+
+                bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+
+                uint data = Program.RAM.u32(Program.ROM.RomInfo.workmemory_eventcounter_address());
+                text = U.To0xHexString(data);
+
+                bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeBrush, isWithDraw, bounds);
             }
             else
-            {
-                text = "Q:" + U.ToHexString(index - 0xD) + " ";
-            }
-            bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
-
-            uint data = Program.RAM.u32((uint)(index * 4) + Program.ROM.RomInfo.workmemory_memoryslot_address());
-            text = U.To0xHexString(data);
-            bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeBrush, isWithDraw, bounds);
-
-            text = Program.AsmMapFileAsmCache.GetName(data);
-            if (text != "")
-            {
-                text = " " + text;
+            {//それ以外はメモリスロット
+                string text;
+                if (index <= 0xD)
+                {
+                    text = U.ToHexString(index) + " ";
+                }
+                else
+                {
+                    text = "Q:" + U.ToHexString(index - 0xD) + " ";
+                }
                 bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+
+                uint data = Program.RAM.u32((uint)(index * 4) + Program.ROM.RomInfo.workmemory_memoryslot_address());
+                text = U.To0xHexString(data);
+
+                bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+
+                text = Program.AsmMapFileAsmCache.GetName(data);
+                if (text != "")
+                {
+                    text = " " + text;
+                    bounds.X += U.DrawText(text, g, this.Font, this.ListBoxForeKeywordBrush, isWithDraw, bounds);
+                }
             }
 
             bounds.Y += lineHeight;
@@ -1839,6 +1868,8 @@ namespace FEBuilderGBA
                 bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
                 bitmap.Dispose();
 
+                bounds.X += U.DrawText(U.ToHexString(unitid), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 4;
                 bounds.X += U.DrawText(UnitForm.GetUnitName(unitid), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
             }
             bounds.X += U.DrawText(" : ", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
@@ -1862,6 +1893,8 @@ namespace FEBuilderGBA
                 bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
                 bitmap.Dispose();
 
+                bounds.X += U.DrawText(U.ToHexString(classid), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+                bounds.X += 4;
                 bounds.X += U.DrawText(ClassForm.GetClassName(classid), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
             }
 
@@ -1942,13 +1975,13 @@ namespace FEBuilderGBA
             if (U.isSafetyOffset(unitPointer))
             {
                 uint unitid = Program.ROM.u8(U.toOffset(unitPointer) + 4);
-                unitname = UnitForm.GetUnitName(unitid);
+                unitname = U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid);
                 faceImage = UnitForm.DrawUnitFacePicture(unitid);
             }
             if (U.isSafetyOffset(classPointer))
             {
                 uint classid = Program.ROM.u8(U.toOffset(classPointer) + 4);
-                classname = ClassForm.GetClassName(classid);
+                classname = U.ToHexString(classid) + " " + ClassForm.GetClassName(classid);
             }
             uint state;
             if (Program.ROM.RomInfo.version() == 6)

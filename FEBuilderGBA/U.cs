@@ -2136,6 +2136,7 @@ namespace FEBuilderGBA
                 SupportTalkFE7Form.MakeAllDataLength(list);
                 SupportUnitForm.MakeAllDataLength(list);
                 WorldMapImageFE7Form.MakeAllDataLength(list, isPointerOnly);
+                SoundRoomCGForm.MakeAllDataLength(list);
 
                 if (Program.ROM.RomInfo.is_multibyte())
                 {

@@ -74,6 +74,7 @@ namespace FEBuilderGBA
         uint sound_table_pointer(); // ソングテーブルの開始位置
         uint sound_room_pointer(); // サウンドルームの開始位置
         uint sound_room_datasize(); // サウンドルームのデータサイズ
+        uint sound_room_cg_pointer(); // サウンドルームの背景リスト(FE7のみ)
         uint event_ballte_talk_pointer(); // 交戦時セリフの開始位置
         uint event_ballte_talk2_pointer(); // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         uint event_haiku_pointer(); // 死亡時セリフの開始位置
@@ -242,6 +243,7 @@ namespace FEBuilderGBA
         uint workmemory_global_flag_address();  //ワークメモリ ローカルフラグ
         uint workmemory_trap_address();  //ワークメモリ ローカルフラグ
         uint workmemory_memoryslot_address();  //ワークメモリ メモリスロットFE8
+        uint workmemory_eventcounter_address();  //イベントカウンター メモリスロットFE8
         uint workmemory_procs_forest_address();  //ワークメモリ Procs
         uint workmemory_procs_pool_address();  //ワークメモリ Procs
         uint function_sleep_handle_address();  //ワークメモリ Procs待機中
