@@ -3987,3 +3987,23 @@
 0808E794	CanCharacterBePrepSwap	{J}
 0808dd78	IsCharacterForceDeployed	{U}
 0808DE68	CanCharacterBePrepSwap	{U}
+080AAD7C	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AAD94	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AADEC	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AB654	SoundRoom	曲IDを表示する	{U}
+080ABAB4	SoundRoom	指定した曲を再生する	{U}
+080AC174	SoundRoom	再生時間を表示	{U}
+080AC384	SoundRoom	曲名を表示	{U}
+080AB440	SoundRoom	初回読み込み時に呼び出される1	{U}
+080AB4EC	SoundRoom	曲を切り替えたときに背景CGを取得する	{U}
+080AB548	SoundRoom	初回読み込み時に呼び出される2	{U}
+080ABC60	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080ABC78	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080ABCD0	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080AC538	SoundRoom	曲IDを表示する	{J}
+080AC998	SoundRoom	指定した曲を再生する	{J}
+080AD058	SoundRoom	再生時間を表示	{J}
+080AD1A4	SoundRoom	曲名を表示	{J}
+080AC324	SoundRoom	初回読み込み時に呼び出される1	{J}
+080AC3D0	SoundRoom	曲を切り替えたときに背景CGを取得する	{J}
+080AC42C	SoundRoom	初回読み込み時に呼び出される2	{J}

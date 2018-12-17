@@ -3868,3 +3868,28 @@
 0802DBDE	天气图片的精灵号码	change BBQ	{U}
 0802D76D	天气图片的精灵号码	change sandstorm	{U}
 0802DD5D	天气图片的精灵号码	change clouds	{U}
+//This data is made with the aim of being readable by machine fast.
+0808e6a4	IsCharacterForceDeployed	{J}
+0808E794	CanCharacterBePrepSwap	{J}
+0808dd78	IsCharacterForceDeployed	{U}
+0808DE68	CanCharacterBePrepSwap	{U}
+080AAD7C	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AAD94	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AADEC	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AB654	SoundRoom	显示歌曲ID。	{U}
+080ABAB4	SoundRoom	播放指定的歌曲。	{U}
+080AC174	SoundRoom	显示播放时间。	{U}
+080AC384	SoundRoom	显示歌曲标题。	{U}
+080AB440	SoundRoom	一读时打电话1。	{U}
+080AB4EC	SoundRoom	切换歌曲时获取背景CG。	{U}
+080AB548	SoundRoom	一读时打电话2。	{U}
+080ABC60	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080ABC78	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080ABCD0	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080AC538	SoundRoom	显示歌曲ID。	{J}
+080AC998	SoundRoom	播放指定的歌曲。	{J}
+080AD058	SoundRoom	显示播放时间。	{J}
+080AD1A4	SoundRoom	显示歌曲标题。	{J}
+080AC324	SoundRoom	一读时打电话1。	{J}
+080AC3D0	SoundRoom	切换歌曲时获取背景CG。	{J}
+080AC42C	SoundRoom	一读时打电话2。	{J}

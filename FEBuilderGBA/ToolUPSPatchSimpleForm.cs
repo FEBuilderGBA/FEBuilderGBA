@@ -59,8 +59,9 @@ namespace FEBuilderGBA
             string errorMessage = MainFormUtil.CheckOrignalROM(OrignalFilename.Text);
             if (errorMessage != "")
             {
-                R.ShowStopError("無改造ROMを指定してください。" + "\r\n" + errorMessage);
-                OrignalFilename.ErrorMessage = R._("無改造ROMを指定してください。" + "\r\n" + errorMessage);
+                string error = R._("無改造ROMを指定してください。") + "\r\n" + errorMessage;
+                OrignalFilename.ErrorMessage = error;
+                R.ShowStopError(error);
                 return;
             }
             OrignalFilename.ErrorMessage = "";

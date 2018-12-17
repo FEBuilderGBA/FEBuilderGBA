@@ -3877,3 +3877,28 @@
 0802DBDE	Sprite number of the weather picture	change BBQ	{U}
 0802D76D	Sprite number of the weather picture	change sandstorm	{U}
 0802DD5D	Sprite number of the weather picture	change clouds	{U}
+//This data is made with the aim of being readable by machine fast.
+0808e6a4	IsCharacterForceDeployed	{J}
+0808E794	CanCharacterBePrepSwap	{J}
+0808dd78	IsCharacterForceDeployed	{U}
+0808DE68	CanCharacterBePrepSwap	{U}
+080AAD7C	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AAD94	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AADEC	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AB654	SoundRoom	Show song ID.	{U}
+080ABAB4	SoundRoom	Play the specified song.	{U}
+080AC174	SoundRoom	Display playing time.	{U}
+080AC384	SoundRoom	Show song title.	{U}
+080AB440	SoundRoom	Called on first reading 1.	{U}
+080AB4EC	SoundRoom	Acquire background CG when switching songs.	{U}
+080AB548	SoundRoom	Called at first reading 2.	{U}
+080ABC60	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080ABC78	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080ABCD0	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080AC538	SoundRoom	Show song ID.	{J}
+080AC998	SoundRoom	Play the specified song.	{J}
+080AD058	SoundRoom	Display playing time.	{J}
+080AD1A4	SoundRoom	Show song title.	{J}
+080AC324	SoundRoom	Called on first reading 1.	{J}
+080AC3D0	SoundRoom	Acquire background CG when switching songs.	{J}
+080AC42C	SoundRoom	Called at first reading 2.	{J}

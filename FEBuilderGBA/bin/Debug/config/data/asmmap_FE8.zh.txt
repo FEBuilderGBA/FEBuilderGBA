@@ -11444,3 +11444,21 @@ r3=X tile position of menu of the right	{U}
 0804FD48	设置“战斗4字节的未知标志”的值。	{U}
 0804FD54	获得“战斗4字节的未知标志”。	{U}
 08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）。	{U}
+080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080B3FE8	SoundRoom	显示歌曲ID。	{J}
+080B4414	SoundRoom	播放指定的歌曲。	{J}
+080B4A0C	SoundRoom	显示播放时间。	{J}
+080B4B48	SoundRoom	显示歌曲标题。	{J}
+080B4C30	SoundRoom	显示歌曲标题2。	{J}
+080B4F3C	SoundRoom	绘制声音室的关系。	{J}
+080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AF3C8	SoundRoom	显示歌曲ID。	{U}
+080AF7F4	SoundRoom	播放指定的歌曲。	{U}
+080AFDF4	SoundRoom	显示播放时间。	{U}
+080AFF30	SoundRoom	显示歌曲标题。	{U}
+080B0018	SoundRoom	显示歌曲标题2。	{U}
+080B0324	SoundRoom	绘制声音室的关系。	{U}

@@ -11537,3 +11537,21 @@
 0804FD48	"戦闘用の不明なフラグ4バイト"に値を設定	{U}
 0804FD54	"戦闘用の不明なフラグ4バイト"を取得する	{U}
 08058B08	アイテムID判定0x85または0x92かどうか	ジークリンデ(0x85)とジークムント(0x92)	{U}
+080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080B3FE8	SoundRoom	曲IDを表示する	{J}
+080B4414	SoundRoom	指定した曲を再生する	{J}
+080B4A0C	SoundRoom	再生時間を表示	{J}
+080B4B48	SoundRoom	曲名を表示	{J}
+080B4C30	SoundRoom	曲名を表示2	{J}
+080B4F3C	SoundRoom	サウンドルームの描画関係	{J}
+080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AF3C8	SoundRoom	曲IDを表示する	{U}
+080AF7F4	SoundRoom	指定した曲を再生する	{U}
+080AFDF4	SoundRoom	再生時間を表示	{U}
+080AFF30	SoundRoom	曲名を表示	{U}
+080B0018	SoundRoom	曲名を表示2	{U}
+080B0324	SoundRoom	サウンドルームの描画関係	{U}

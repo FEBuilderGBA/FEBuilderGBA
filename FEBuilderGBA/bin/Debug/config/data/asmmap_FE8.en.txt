@@ -11570,3 +11570,21 @@ r3=X tile position of menu of the right	{U}
 0804FD48	Set a value for "unknown flag for battle 4 bytes".	{U}
 0804FD54	Get "unknown flag for battle 4 bytes".	{U}
 08058B08	Is it item ID judgment 0x85 or 0x92?	Sigelinde (0x85) and Sigmund (0x92).	{U}
+080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
+080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
+080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
+080B3FE8	SoundRoom	Show song ID.	{J}
+080B4414	SoundRoom	Play the specified song.	{J}
+080B4A0C	SoundRoom	Display playing time.	{J}
+080B4B48	SoundRoom	Show song title.	{J}
+080B4C30	SoundRoom	Show song title 2.	{J}
+080B4F3C	SoundRoom	Drawing relation of the sound room.	{J}
+080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
+080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
+080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
+080AF3C8	SoundRoom	Show song ID.	{U}
+080AF7F4	SoundRoom	Play the specified song.	{U}
+080AFDF4	SoundRoom	Display playing time.	{U}
+080AFF30	SoundRoom	Show song title.	{U}
+080B0018	SoundRoom	Show song title 2.	{U}
+080B0324	SoundRoom	Drawing relation of the sound room.	{U}
