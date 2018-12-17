@@ -5188,6 +5188,9 @@ Individual Animation
 :背を伸ばす
 Portrait Height
 
+:サウンドルームCG
+Sound room CG.
+
 :スキル拡張がありません。\r\nスキル拡張パッチをインストールしてから利用してください。
 There is no skill extension.\r\nPlease install skill extension patch before using.
 
@@ -9342,6 +9345,9 @@ Could not import instrument data.
 
 :曲番号
 Song Number
+
+:リストの中身はあまり変更しない方がよさそうです。\r\nフリーズの原因になることがあります。
+It seems better not to change the contents of the list much.\r\nIt may cause freezing.
 
 :曲名
 Song Name
