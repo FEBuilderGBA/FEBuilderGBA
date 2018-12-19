@@ -3902,3 +3902,222 @@
 080AC324	SoundRoom	Called on first reading 1.	{J}
 080AC3D0	SoundRoom	Acquire background CG when switching songs.	{J}
 080AC42C	SoundRoom	Called at first reading 2.	{J}
+//This data is made with the aim of being readable by machine fast.
+081911D4	&HEADERTSA	Face image related tiles.	{J}
+0819128C	&HEADERTSA	Something tile that will be FillTileRect.	01	{J}
+08409060	&HEADERTSA	Something tile that will be FillTileRect.	02	{J}
+08404BD4	&HEADERTSA	Something tile that will be FillTileRect.	05	{J}
+08191780	&HEADERTSA	Something tile that will be FillTileRect.	06	{J}
+081CDA58	&HEADERTSA	Something tile that will be FillTileRect.	10	{J}
+081BD6E4	&HEADERTSA	Something tile that will be FillTileRect.	29	{J}
+0861A460	&HEADERTSA	Something tile that will be FillTileRect.	30	{J}
+08191D7C	&ROMTCS	Something's ROMTCS data.	01	{J}
+083F641C	&ROMTCS	Something's ROMTCS data.	02	{J}
+08C00DEC	&NewPopupSimple	Data to pop up.	03	{J}
+08C00D44	&NewPopupSimple	Data to pop up.	07	{J}
+08C00D44	&NewPopupSimple	Data to pop up.	08	{J}
+081DBD64	&PALETTE	A palette of something.	32	{J}
+081CDA18)	&PALETTE	A palette of something.	44	{J}
+081CF79C)	&PALETTE	A palette of something.	45	{J}
+081CF7DC)	&PALETTE	A palette of something.	46	{J}
+081D0E50)	&PALETTE	A palette of something.	47	{J}
+081D3AB0)	&PALETTE	A palette of something.	48	{J}
+081D7BF0)	&PALETTE	A palette of something.	49	{J}
+081D7F74)	&PALETTE	A palette of something.	50	{J}
+081D83B0)	&PALETTE	A palette of something.	51	{J}
+081D8E2C)	&PALETTE	A palette of something.	52	{J}
+081DBD84)	&PALETTE	A palette of something.	53	{J}
+081DDA48)	&PALETTE	A palette of something.	54	{J}
+0827BE0C)	&PALETTE	A palette of something.	55	{J}
+083FB16C)	&PALETTE	A palette of something.	56	{J}
+083FB664)	&PALETTE	A palette of something.	57	{J}
+083FB8E4)	&PALETTE	A palette of something.	58	{J}
+083FBC24)	&PALETTE	A palette of something.	59	{J}
+083FDAAC)	&PALETTE	A palette of something.	60	{J}
+083FDB20)	&PALETTE	A palette of something.	61	{J}
+08407E9C)	&PALETTE	A palette of something.	62	{J}
+083FFB48)	&PALETTE	A palette of something.	63	{J}
+08402A4C)	&PALETTE	A palette of something.	64	{J}
+0840364C)	&PALETTE	A palette of something.	65	{J}
+0840366C)	&PALETTE	A palette of something.	66	{J}
+084038AC)	&PALETTE	A palette of something.	67	{J}
+08404BB4)	&PALETTE4	A palette of something.	68	{J}
+084061F8)	&PALETTE	A palette of something.	69	{J}
+08407E9C)	&PALETTE8	A palette of something.	70	{J}
+08408CC8)	&PALETTE	A palette of something.	71	{J}
+08409020)	&PALETTE	A palette of something.	72	{J}
+08409040)	&PALETTE3	A palette of something.	73	{J}
+0841BB50)	&PALETTE2	A palette of something.	75	{J}
+0841BC44)	&PALETTE	A palette of something.	77	{J}
+0841D100)	&PALETTE	A palette of something.	78	{J}
+0841E7F4)	&PALETTE	A palette of something.	81	{J}
+0841EC70)	&PALETTE	A palette of something.	82	{J}
+08428A40)	&PALETTE	A palette of something.	83	{J}
+08428DB4)	&PALETTE	A palette of something.	84	{J}
+084291AC)	&PALETTE	A palette of something.	85	{J}
+08429638)	&PALETTE	A palette of something.	86	{J}
+0842D710)	&PALETTE	A palette of something.	89	{J}
+0842D730)	&PALETTE	A palette of something.	90	{J}
+08432594)	&PALETTE	A palette of something.	91	{J}
+08432694)	&PALETTE	A palette of something.	92	{J}
+08432DE4)	&PALETTE	A palette of something.	93	{J}
+08433A90)	&PALETTE	A palette of something.	94	{J}
+08434448)	&PALETTE	A palette of something.	95	{J}
+084352DC)	&PALETTE	A palette of something.	96	{J}
+08436460)	&PALETTE	A palette of something.	97	{J}
+0843927C)	&PALETTE	A palette of something.	98	{J}
+0843F084)	&PALETTE	A palette of something.	99	{J}
+083FAD4C	&LZ77	Something small compressed data.	04	{J}
+02028E6C	gAISArray	{J}
+0202A580	gFaceGfxData	{J}
+0202BC44	gSomeCameraMovementTableMaybe	{J}
+0202BD44	gActiveUnitIndex	{J}
+0202BD48	gActiveUnitPosition	{J}
+0202E3E0	gMapMovement	{J}
+0202E3E4	gMapRange	{J}
+0202E3E8	gMapFog	{J}
+0202E3F4	gMapUnitPool	{J}
+0202EBAC	gMapTerrainPool	{J}
+02030A8C	gTileConfigBuffer	{J}
+02033DFC	gUnitMoveBuffer	{J}
+02033E3C	gUnitSubject	{J}
+02033E40	gSMSGfxIndexLookup	{J}
+02033F10	gSMSGfxBuffer_Frame1	{J}
+02035F10	gSMSGfxBuffer_Frame2	{J}
+02037F10	gSMSGfxBuffer_Frame3	{J}
+02039F10	gSMS16xGfxIndexCounter	{J}
+02039F14	gSMS32xGfxIndexCounter	{J}
+0203A510	gpTradeMenuProc	{J}
+0203A714	gTrapArrayBack	{J}
+0203A7E4	gpSomeUnitPool	{J}
+0203A7E8	gpSomeUnitIt	{J}
+0203A7EC	gSomeUnitCounter	{J}
+0203A810	gArenaOpponent	{J}
+0203A8E8	gAiData	{J}
+0203DCCC	gTargetPosition	{J}
+0203DCD0	gTargetArray	{J}
+0203DFD0	gTargetArraySize	{J}
+0203DFD8	gBoolBattleDeamonActive	{J}
+0203DFDC	gpEkrBattleDeamon	{J}
+0203E004	gSomethingRelatedToAnimAndDistance	{J}
+0203E64C	gSomeTextRelatedStuff	{J}
+0203E774	gpBWLSaveTarget	{J}
+0203E778	gBWLDataStorage	{J}
+030000C8	gDialogueText	{J}
+03000438	gpCurrentInitMap	{J}
+030013B0	gAiScriptEndedFlag	{J}
+030013B4	gBoolIsAI2	{J}
+030013B8	gpAiScriptCurrent	{J}
+030013BC	gpCurrentAiFunctionCall	{J}
+030013C0	gpAiBattleWeightFactorTable	{J}
+03001458	gMenuRelatedList	{J}
+030040B0	gOAMAllocIt	{J}
+030040E0	gpFaceProcs	{J}
+03004110	gpSubjectMap	{J}
+030045C0	gMovementFillConfig	{J}
+030046C0	gpAiPerformer	{J}
+03004750	gCurrentUnitIndex	{J}
+03005D90	gpReadSramFast	{J}
+03005D94	gpVerifySramFast	{J}
+03007FF8	IRQCheckFlags	{J}
+0203DFE4	gBattleAttackPhaseBool	{J}
+083FD3D8	:083FD457	Palette animation of wound medicine recovery effect.	{J}
+08DBAD14	:08DC038F	Data of the communication stadium.	{J}
+082710C8	:0827191B	What data related to live wand 1.	0x0854	{J}
+08271A28	:0827227B	What data related to live wand 2.	0x0854	{J}
+0826FAFC	:0826FB1B	What data related to live wand 3.	0x1F	{J}
+0827045C	:0827065B	Palette relationship of live wand 1.	{J}
+081EE9C0	:081EEBDF	Palette relationship of live wand 2.	{J}
+081EE93C	:081EEB5B	Data of something of live wand.	{J}
+08BBFD28	&ASM_POINTER_ARRAY	Procs(6c) Function	{J}
+086C4560	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{J}
+086C45F0	:086C4637	MidiKeyToFreqTable1	M4ALIB	{J}
+086C46D4	:086C46EB	SampleFreqSetTable	M4ALIB	{J}
+086C46EC	:086C476F	MidiKeyToCgbFreq Data Table1	M4ALIB	{J}
+086C4770	:086C4787	MidiKeyToCgbFreq Data Table2	M4ALIB	{J}
+086C4788	:086C47C3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
+086C47C4	:086C47D3	CgbSound Data Table	M4ALIB	{J}
+086C47D4	:086C4807	ply_note_Table	M4ALIB	{J}
+086C4808	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{J}
+08191ED4	&ROMTCS	Something's ROMTCS data.	05	{J}
+08192178	&ROMTCS	Something's ROMTCS data.	06	{J}
+08193260	&ROMTCS	Something's ROMTCS data.	08	{J}
+08193CD8	&ROMTCS	Something's ROMTCS data.	09	{J}
+08194D78	&ROMTCS	Something's ROMTCS data.	12	{J}
+08194F14	&ROMTCS	Something's ROMTCS data.	13	{J}
+083F96B8	&ROMTCS	Something's ROMTCS data.	15	{J}
+083F9964	&ROMTCS	Something's ROMTCS data.	16	{J}
+083F44FC	&ROMTCS	Something's ROMTCS data.	17	{J}
+083F4464	&ROMTCS	Something's ROMTCS data.	18	{J}
+083F371C	&ROMTCS	Something's ROMTCS data.	19	{J}
+083FF528	&ROMTCS	Something's ROMTCS data.	20	{J}
+083FEE30	&ROMTCS	Something's ROMTCS data.	21	{J}
+083FFB68	&ROMTCS	Something's ROMTCS data.	22	{J}
+083F3778	&ROMTCS	Something's ROMTCS data.	23	{J}
+083F2F90	&ROMTCS	Something's ROMTCS data.	25	{J}
+081C855C	&ROMTCS	Something's ROMTCS data.	29	{J}
+08BC05EC	&FONTCOLOR0x200	FontColor	01	{J}
+08BC07EC	&FONTCOLOR0x200	FontColor	02	{J}
+08BC09EC	&FONTCOLOR0x200	FontColor	03	{J}
+08BC0BEC	&FONTCOLOR0x200	FontColor	04	{J}
+08BC0DEC	&FONTCOLOR0x200	FontColor	05	{J}
+08BC0FEC	&FONTCOLOR0x200	FontColor	06	{J}
+08BC11EC	&FONTCOLOR0x200	FontColor	07	{J}
+08BC13EC	&FONTCOLOR0x200	FontColor	08	{J}
+08BC15EC	&FONTCOLOR0x200	FontColor	09	{J}
+08BC17EC	&FONTCOLOR0x200	FontColor	10	{J}
+08BC19EC	&FONTCOLOR0x200	FontColor	11	{J}
+08BC1BEC	&FONTCOLOR0x200	FontColor	12	{J}
+08BC1DEC	&FONTCOLOR0x200	FontColor	13	{J}
+080C1358	:080C13D7	QuakePure Table	{J}
+081DDB74	:081DDB95	QuakePure	01	{J}
+081DDB96	:081DDBdf	QuakePure	02	{J}
+081DDBE0	:081DDC29	QuakePure	03	{J}
+081DDC2A	:081DDC73	QuakePure	04	{J}
+081DDC74	:081DDCBD	QuakePure	05	{J}
+081DDCBE	:081DDDD9	QuakePure	06	{J}
+081DDDDA	:081DDDEB	QuakePure	07	{J}
+081DDDEC	:081DDE0D	QuakePure	08	{J}
+081DDE0E	:081DDE1f	QuakePure	09	{J}
+081DDE20	:081DDE43	QuakePure	10	{J}
+081DDE44	:081DDED9	HitQuake	01	{J}
+081DDEDA	:081DE00B	HitQuake	02	{J}
+081DF444	:081DF463	Maybe, something of multiple palettes.	A7	{J}
+08C01CEC	&PALETTE	A pure black palette.	{J}
+081E4210	&PALETTE4	Maybe, something of multiple palettes.	A8	{J}
+081E4290	&PALETTE4	Maybe, something of multiple palettes.	A9	{J}
+081E4310	&PALETTE4	Maybe, something of multiple palettes.	A10	{J}
+08C09D60	:08C09D8f	Something's AIS data.	01	{J}
+08C09D90	:08C09E4f	Something's AIS data.	02	{J}
+08C09E50	:08C09E67	Something's AIS data.	06	{J}
+08C09E68	:08C09E7f	Something's AIS data.	07	{J}
+08C09E80	:08C09E97	Something's AIS data.	08	{J}
+08C09E98	:08C09Eaf	Something's AIS data.	09	{J}
+08C09EB0	:08C09EC7	Something's AIS data.	10	{J}
+08C09EC8	:08C09Edf	Something's AIS data.	11	{J}
+08C09EE0	:08C09EF7	Something's AIS data.	12	{J}
+0841ECB0	&PALETTE	A palette of something.	102	{J}
+08190288	&PALETTE	A palette of something.	103	{J}
+081CD9B8	&PALETTE	A palette of something.	104	{J}
+081CD9B8	&PALETTE	A palette of something.	105	{J}
+0841ECB0	&PALETTE	A palette of something.	106	{J}
+08421C24	&PALETTE	A palette of something.	109	{J}
+08428A80	&PALETTE	A palette of something.	111	{J}
+083FEBC4	&HEADERTSA	Anime pattern using something uncompressed TSA.	1	{J}
+083FDC84	&HEADERTSA	Anime pattern using something uncompressed TSA.	2	{J}
+0840085C	&HEADERTSA	Anime pattern using something uncompressed TSA.	3	{J}
+083FDC60	&HEADERTSA	Anime pattern using something uncompressed TSA.	4	{J}
+081D83D0	&LZ77	Mystery dialog and numeric data.	{J}
+082010C8	:08201129	A palette of something.	118	{J}
+082022A8	:08202349	A palette of something.	119	{J}
+08204A74	&PALETTE	A palette of something.	120	{J}
+08210150	:821034F	A palette of something.	121	{J}
+0822FED0	&PALETTE	A palette of something.	123	{J}
+08248128	&PALETTE	A palette of something.	124	{J}
+082539B4	:8253B93	A palette of something.	125	{J}
+0825CF18	:825CF59	A palette of something.	126	{J}
+082708B0	&PALETTE	A palette of something.	127	{J}
+081DBD64	&PALETTE	A palette of something.	133	{J}
+081DC658	&PALETTE	A palette of something.	134	{J}
+081DCF18	&PALETTE	A palette of something.	135	{J}
+081DD794	&PALETTE	A palette of something.	136	{J}

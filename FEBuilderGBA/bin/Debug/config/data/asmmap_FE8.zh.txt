@@ -11462,3 +11462,9 @@ r3=X tile position of menu of the right	{U}
 080AFF30	SoundRoom	显示歌曲标题。	{U}
 080B0018	SoundRoom	显示歌曲标题2。	{U}
 080B0324	SoundRoom	绘制声音室的关系。	{U}
+08A73924	:08A7394B	Something的FillTileRect磁贴表。	{J}
+08A9D64C	:08A9D667	文本ID，例如“开始”。	{J}
+0860754C	:086078C5	未知数据。	OAMSP Maybe	10	{J}
+0860821C	:086094B3	未知数据。	OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	未知数据。	OAMSP Maybe	12	{J}
+08A1D320	:08A1D8BF	未知数据。	OAMSP Maybe	13	{J}

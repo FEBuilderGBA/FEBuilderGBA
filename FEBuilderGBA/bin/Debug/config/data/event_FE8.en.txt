@@ -474,3 +474,4 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 400D0000D1600108	Return music to the map standard BGM.	{MUSIC}	{U}
 400D0000317F0808	Display of the map clearing effect when clearing the tower and ruins is displayed.	{MAPEFFECT}	{J}
 400D0000655C0808	Display of the map clearing effect when clearing the tower and ruins is displayed.	{MAPEFFECT}	{U}
+20000000	NOP

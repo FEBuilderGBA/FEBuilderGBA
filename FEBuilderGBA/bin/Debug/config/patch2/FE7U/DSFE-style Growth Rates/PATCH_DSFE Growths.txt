@@ -8,6 +8,8 @@ INFO=このパッチでは、キャラクターの統計の成長率は、個人
 
 INFO.en=This patch makes the game consider a character's stat growth rates to be the sum of their personal growth and their class's growth for the given stat.\r\nNote that this does not alter the game's auto-level routines, so keep this in mind when changing growth rates.\r\nTotal growth = character growth + class growth\r\nThis patch depends on the address of the item table, please install it before extending the item table and redoing.
 
+SHOW_WARNING=true
+
 TYPE=BIN
 TAG=#ENGINE
 BIN:0x296B0=DSFE Growths.dmp

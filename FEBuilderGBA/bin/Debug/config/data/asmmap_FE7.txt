@@ -4007,3 +4007,295 @@
 080AC324	SoundRoom	初回読み込み時に呼び出される1	{J}
 080AC3D0	SoundRoom	曲を切り替えたときに背景CGを取得する	{J}
 080AC42C	SoundRoom	初回読み込み時に呼び出される2	{J}
+
+
+081911D4	&HEADERTSA	顔画像関係のタイル	{J}
+0819128C	&HEADERTSA	FillTileRectされる何かのタイル	01	{J}
+08409060	&HEADERTSA	FillTileRectされる何かのタイル	02	{J}
+08404BD4	&HEADERTSA	FillTileRectされる何かのタイル	05	{J}
+08191780	&HEADERTSA	FillTileRectされる何かのタイル	06	{J}
+081CDA58	&HEADERTSA	FillTileRectされる何かのタイル	10	{J}
+081BD6E4	&HEADERTSA	FillTileRectされる何かのタイル	29	{J}
+0861A460	&HEADERTSA	FillTileRectされる何かのタイル	30	{J}
+
+08191D7C	&ROMTCS	何かのROMTCSデータ	01	{J}
+083F641C	&ROMTCS	何かのROMTCSデータ	02	{J}
+08C00DEC	&NewPopupSimple	ポップアップするためのデータ	03	{J}
+08C00D44	&NewPopupSimple	ポップアップするためのデータ	07	{J}
+08C00D44	&NewPopupSimple	ポップアップするためのデータ	08	{J}
+
+080C86D4	&PALETTE	何かのパレット	01	{J}
+0818BC3C	&PALETTE	何かのパレット	02	{J}
+08190168	&PALETTE	何かのパレット	03	{J}
+08190188	&PALETTE	何かのパレット	04	{J}
+081901A8	&PALETTE	何かのパレット	05	{J}
+081901C8	&PALETTE	何かのパレット	06	{J}
+081901E8	&PALETTE	何かのパレット	07	{J}
+08190228	&PALETTE	何かのパレット	08	{J}
+08190268	&PALETTE	何かのパレット	09	{J}
+081902A8	&PALETTE	何かのパレット	10	{J}
+081902C8	&PALETTE	何かのパレット	11	{J}
+08190BDC	&PALETTE	何かのパレット	12	{J}
+08191054	&PALETTE	何かのパレット	13	{J}
+08191B04	&PALETTE	何かのパレット	14	{J}
+08192F48	&PALETTE	何かのパレット	15	{J}
+08192F68	&PALETTE	何かのパレット	16	{J}
+08193CB8	&PALETTE	何かのパレット	17	{J}
+0819436C	&PALETTE	何かのパレット	18	{J}
+08194F8C	&PALETTE	何かのパレット	19	{J}
+0819510C	&PALETTE	何かのパレット	20	{J}
+08195668	&PALETTE	何かのパレット	21	{J}
+08196DAC	&PALETTE	何かのパレット	22	{J}
+081980C0	&PALETTE	何かのパレット	23	{J}
+08198AE4	&PALETTE	何かのパレット	24	{J}
+081A7F00	&PALETTE	何かのパレット	26	{J}
+081ACA20	&PALETTE	何かのパレット	27	{J}
+081BD514	&PALETTE	何かのパレット	28	{J}
+081BD6C4	&PALETTE	何かのパレット	29	{J}
+081BEF08	&PALETTE4	何かのパレット	30	{J}
+08429638	&PALETTE	何かのパレット	31	{J}
+081DBD64	&PALETTE	何かのパレット	32	{J}
+081C6C34	&PALETTE	何かのパレット	33	{J}
+081C85F0	&PALETTE	何かのパレット	34	{J}
+081C8AF8	&PALETTE	何かのパレット	35	{J}
+081CD738	&PALETTE	何かのパレット	36	{J}
+081CD798	&PALETTE	何かのパレット	37	{J}
+081CD818	&PALETTE	何かのパレット	38	{J}
+081CD858	&PALETTE	何かのパレット	39	{J}
+081CD938	&PALETTE	何かのパレット	40	{J}
+081CD978	&PALETTE	何かのパレット	41	{J}
+081CD9D8	&PALETTE	何かのパレット	42	{J}
+081CD9F8	&PALETTE	何かのパレット	43	{J}
+081CDA18)	&PALETTE	何かのパレット	44	{J}
+081CF79C)	&PALETTE	何かのパレット	45	{J}
+081CF7DC)	&PALETTE	何かのパレット	46	{J}
+081D0E50)	&PALETTE	何かのパレット	47	{J}
+081D3AB0)	&PALETTE	何かのパレット	48	{J}
+081D7BF0)	&PALETTE	何かのパレット	49	{J}
+081D7F74)	&PALETTE	何かのパレット	50	{J}
+081D83B0)	&PALETTE	何かのパレット	51	{J}
+081D8E2C)	&PALETTE	何かのパレット	52	{J}
+081DBD84)	&PALETTE	何かのパレット	53	{J}
+081DDA48)	&PALETTE	何かのパレット	54	{J}
+0827BE0C)	&PALETTE	何かのパレット	55	{J}
+083FB16C)	&PALETTE	何かのパレット	56	{J}
+083FB664)	&PALETTE	何かのパレット	57	{J}
+083FB8E4)	&PALETTE	何かのパレット	58	{J}
+083FBC24)	&PALETTE	何かのパレット	59	{J}
+083FDAAC)	&PALETTE	何かのパレット	60	{J}
+083FDB20)	&PALETTE	何かのパレット	61	{J}
+08407E9C)	&PALETTE	何かのパレット	62	{J}
+083FFB48)	&PALETTE	何かのパレット	63	{J}
+08402A4C)	&PALETTE	何かのパレット	64	{J}
+0840364C)	&PALETTE	何かのパレット	65	{J}
+0840366C)	&PALETTE	何かのパレット	66	{J}
+084038AC)	&PALETTE	何かのパレット	67	{J}
+08404BB4)	&PALETTE4	何かのパレット	68	{J}
+084061F8)	&PALETTE	何かのパレット	69	{J}
+08407E9C)	&PALETTE8	何かのパレット	70	{J}
+08408CC8)	&PALETTE	何かのパレット	71	{J}
+08409020)	&PALETTE	何かのパレット	72	{J}
+08409040)	&PALETTE3	何かのパレット	73	{J}
+0841BB50)	&PALETTE2	何かのパレット	75	{J}
+0841BC44)	&PALETTE	何かのパレット	77	{J}
+0841D100)	&PALETTE	何かのパレット	78	{J}
+08429638	&PALETTE	何かのパレット	80	{J}
+0841E7F4)	&PALETTE	何かのパレット	81	{J}
+0841EC70)	&PALETTE	何かのパレット	82	{J}
+08428A40)	&PALETTE	何かのパレット	83	{J}
+08428DB4)	&PALETTE	何かのパレット	84	{J}
+084291AC)	&PALETTE	何かのパレット	85	{J}
+08429638)	&PALETTE	何かのパレット	86	{J}
+08429638	&PALETTE	何かのパレット	88	{J}
+0842D710)	&PALETTE	何かのパレット	89	{J}
+0842D730)	&PALETTE	何かのパレット	90	{J}
+08432594)	&PALETTE	何かのパレット	91	{J}
+08432694)	&PALETTE	何かのパレット	92	{J}
+08432DE4)	&PALETTE	何かのパレット	93	{J}
+08433A90)	&PALETTE	何かのパレット	94	{J}
+08434448)	&PALETTE	何かのパレット	95	{J}
+084352DC)	&PALETTE	何かのパレット	96	{J}
+08436460)	&PALETTE	何かのパレット	97	{J}
+0843927C)	&PALETTE	何かのパレット	98	{J}
+0843F084)	&PALETTE	何かのパレット	99	{J}
+
+083FAD4C	&LZ77	何か小さい圧縮データ	04	{J}
+02028E6C	gAISArray	{J}
+0202A580	gFaceGfxData	{J}
+0202B5B4	gPaletteFadeBuffer	{J}
+0202BBB4	gMainLoopEndedFlag	{J}
+0202BBF4	gChapterData	{J}
+
+0202BC44	gSomeCameraMovementTableMaybe	{J}
+0202BD44	gActiveUnitIndex	{J}
+0202BD48	gActiveUnitPosition	{J}
+0202BD4C	gUnitArray	{J}
+0202E3D4	gMapSize	{J}
+0202E3D8	gMapUnit	{J}
+0202E3DC	gMapTerrain	{J}
+0202E3E0	gMapMovement	{J}
+0202E3E4	gMapRange	{J}
+0202E3E8	gMapFog	{J}
+0202E3EC	gMapHidden	{J}
+0202E3F0	gMapMovement2	{J}
+0202E3F4	gMapUnitPool	{J}
+0202EBAC	gMapTerrainPool	{J}
+02030A8C	gTileConfigBuffer	{J}
+02033DFC	gUnitMoveBuffer	{J}
+02033E3C	gUnitSubject	{J}
+02033E40	gSMSGfxIndexLookup	{J}
+02033F10	gSMSGfxBuffer_Frame1	{J}
+02035F10	gSMSGfxBuffer_Frame2	{J}
+02037F10	gSMSGfxBuffer_Frame3	{J}
+02039F10	gSMS16xGfxIndexCounter	{J}
+02039F14	gSMS32xGfxIndexCounter	{J}
+02039F18	gSMSHandleArray	{J}
+0203A3C8	gSMSHandleIt	{J}
+0203A3CC	gSMSSyncFlag	{J}
+0203A510	gpTradeMenuProc	{J}
+0203A714	gTrapArrayBack	{J}
+0203A7E4	gpSomeUnitPool	{J}
+0203A7E8	gpSomeUnitIt	{J}
+0203A7EC	gSomeUnitCounter	{J}
+0203A810	gArenaOpponent	{J}
+0203A858	gActionData	{J}
+0203A8E8	gAiData	{J}
+0203DCCC	gTargetPosition	{J}
+0203DCD0	gTargetArray	{J}
+0203DFD0	gTargetArraySize	{J}
+0203DFD8	gBoolBattleDeamonActive	{J}
+0203DFDC	gpEkrBattleDeamon	{J}
+0203E004	gSomethingRelatedToAnimAndDistance	{J}
+0203E066	gStoredBattleAnimId11Ptr	{J}
+0203E64C	gSomeTextRelatedStuff	{J}
+0203E768	gBWLDataArray	{J}
+0203E774	gpBWLSaveTarget	{J}
+0203E778	gBWLDataStorage	{J}
+0203EBD8	gChapterWinDataArray	{J}
+
+030000C8	gDialogueText	{J}
+03000438	gpCurrentInitMap	{J}
+030013B0	gAiScriptEndedFlag	{J}
+030013B4	gBoolIsAI2	{J}
+030013B8	gpAiScriptCurrent	{J}
+030013BC	gpCurrentAiFunctionCall	{J}
+030013C0	gpAiBattleWeightFactorTable	{J}
+03001458	gMenuRelatedList	{J}
+030040B0	gOAMAllocIt	{J}
+030040E0	gpFaceProcs	{J}
+03004110	gpSubjectMap	{J}
+030045C0	gMovementFillConfig	{J}
+030046C0	gpAiPerformer	{J}
+03004750	gCurrentUnitIndex	{J}
+03005D90	gpReadSramFast	{J}
+03005D94	gpVerifySramFast	{J}
+03007FF8	IRQCheckFlags	{J}
+08D8C9C0	ccramify	PROCS	Promotion(Class Change)	{J}
+08D8C9C0	CCRamifyMenuSelect	PROCS	Promotion(Class Change)	{J}
+08D8C9C0	CCRamifyMenuSelect	{J}
+0203DFE4	gBattleAttackPhaseBool	{J}
+083FD3D8	:083FD457	傷薬の回復エフェクトのパレットアニメ	{J}
+08DBAD14	:08DC038F	通信闘技場のデータ	{J}
+
+080346A0	戦闘予測ダイアログのRMenu_Procs_BKSEL関係	{J}
+082710C8	:0827191B	ライブの杖に関係する何のデータ1	0x0854	{J}
+08271A28	:0827227B	ライブの杖に関係する何のデータ2	0x0854	{J}
+0826FAFC	:0826FB1B	ライブの杖に関係する何のデータ3	0x1F	{J}
+0827045C	:0827065B	ライブの杖のパレット関係1	{J}
+081EE9C0	:081EEBDF	ライブの杖のパレット関係2	{J}
+081EE93C	:081EEB5B	ライブの杖の何かのデータ	{J}
+08BBFD28	&ASM_POINTER_ARRAY	Procs(6c) Function	{J}
+086C4560	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{J}
+086C45F0	:086C4637	MidiKeyToFreqTable1	M4ALIB	{J}
+086C46D4	:086C46EB	SampleFreqSetTable	M4ALIB	{J}
+086C46EC	:086C476F	MidiKeyToCgbFreq Data Table1	M4ALIB	{J}
+086C4770	:086C4787	MidiKeyToCgbFreq Data Table2	M4ALIB	{J}
+086C4788	:086C47C3	MidiKeyToCgbFreq Data Table3	M4ALIB	{J}
+086C47C4	:086C47D3	CgbSound Data Table	M4ALIB	{J}
+086C47D4	:086C4807	ply_note_Table	M4ALIB	{J}
+086C4808	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{J}
+08191ED4	&ROMTCS	何かのROMTCSデータ	05	{J}
+08192178	&ROMTCS	何かのROMTCSデータ	06	{J}
+08193260	&ROMTCS	何かのROMTCSデータ	08	{J}
+08193CD8	&ROMTCS	何かのROMTCSデータ	09	{J}
+08194D78	&ROMTCS	何かのROMTCSデータ	12	{J}
+08194F14	&ROMTCS	何かのROMTCSデータ	13	{J}
+083F96B8	&ROMTCS	何かのROMTCSデータ	15	{J}
+083F9964	&ROMTCS	何かのROMTCSデータ	16	{J}
+083F44FC	&ROMTCS	何かのROMTCSデータ	17	{J}
+083F4464	&ROMTCS	何かのROMTCSデータ	18	{J}
+083F371C	&ROMTCS	何かのROMTCSデータ	19	{J}
+083FF528	&ROMTCS	何かのROMTCSデータ	20	{J}
+083FEE30	&ROMTCS	何かのROMTCSデータ	21	{J}
+083FFB68	&ROMTCS	何かのROMTCSデータ	22	{J}
+083F3778	&ROMTCS	何かのROMTCSデータ	23	{J}
+083F2F90	&ROMTCS	何かのROMTCSデータ	25	{J}
+081C855C	&ROMTCS	何かのROMTCSデータ	29	{J}
+08BC05EC	&FONTCOLOR0x200	FontColor	01	{J}
+08BC07EC	&FONTCOLOR0x200	FontColor	02	{J}
+08BC09EC	&FONTCOLOR0x200	FontColor	03	{J}
+08BC0BEC	&FONTCOLOR0x200	FontColor	04	{J}
+08BC0DEC	&FONTCOLOR0x200	FontColor	05	{J}
+08BC0FEC	&FONTCOLOR0x200	FontColor	06	{J}
+08BC11EC	&FONTCOLOR0x200	FontColor	07	{J}
+08BC13EC	&FONTCOLOR0x200	FontColor	08	{J}
+08BC15EC	&FONTCOLOR0x200	FontColor	09	{J}
+08BC17EC	&FONTCOLOR0x200	FontColor	10	{J}
+08BC19EC	&FONTCOLOR0x200	FontColor	11	{J}
+08BC1BEC	&FONTCOLOR0x200	FontColor	12	{J}
+08BC1DEC	&FONTCOLOR0x200	FontColor	13	{J}
+080C1358	:080C13D7	QuakePure Table	{J}
+081DDB74	:081DDB95	QuakePure	01	{J}
+081DDB96	:081DDBdf	QuakePure	02	{J}
+081DDBE0	:081DDC29	QuakePure	03	{J}
+081DDC2A	:081DDC73	QuakePure	04	{J}
+081DDC74	:081DDCBD	QuakePure	05	{J}
+081DDCBE	:081DDDD9	QuakePure	06	{J}
+081DDDDA	:081DDDEB	QuakePure	07	{J}
+081DDDEC	:081DDE0D	QuakePure	08	{J}
+081DDE0E	:081DDE1f	QuakePure	09	{J}
+081DDE20	:081DDE43	QuakePure	10	{J}
+081DDE44	:081DDED9	HitQuake	01	{J}
+081DDEDA	:081DE00B	HitQuake	02	{J}
+081DF444	:081DF463	たぶん、何かの複数パレット	A7	{J}
+08C01CEC	&PALETTE	真っ黒なパレット	{J}
+081E4210	&PALETTE4	たぶん、何かの複数パレット	A8	{J}
+081E4290	&PALETTE4	たぶん、何かの複数パレット	A9	{J}
+081E4310	&PALETTE4	たぶん、何かの複数パレット	A10	{J}
+08C09D60	:08C09D8f	何かのAISデータ	01	{J}
+08C09D90	:08C09E4f	何かのAISデータ	02	{J}
+08C09E50	:08C09E67	何かのAISデータ	06	{J}
+08C09E68	:08C09E7f	何かのAISデータ	07	{J}
+08C09E80	:08C09E97	何かのAISデータ	08	{J}
+08C09E98	:08C09Eaf	何かのAISデータ	09	{J}
+08C09EB0	:08C09EC7	何かのAISデータ	10	{J}
+08C09EC8	:08C09Edf	何かのAISデータ	11	{J}
+08C09EE0	:08C09EF7	何かのAISデータ	12	{J}
+0841ECB0	&PALETTE	何かのパレット	102	{J}
+08190288	&PALETTE	何かのパレット	103	{J}
+081CD9B8	&PALETTE	何かのパレット	104	{J}
+081CD9B8	&PALETTE	何かのパレット	105	{J}
+0841ECB0	&PALETTE	何かのパレット	106	{J}
+081CD818	&PALETTE	何かのパレット	108	{J}
+08421C24	&PALETTE	何かのパレット	109	{J}
+08428A80	&PALETTE	何かのパレット	111	{J}
+083FEBC4	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	1	{J}
+083FDC84	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	2	{J}
+0840085C	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	3	{J}
+083FDC60	&HEADERTSA	何かの無圧縮TSAを利用したアニメパターン	4	{J}
+081D83D0	&LZ77	謎のダイアログと数字データ	{J}
+081D8E2C	&PALETTE	謎のダイアログと数字データのパレット	{J}
+081D83B0	&PALETTE	日本語版のみの何かのパレット	1	{J}
+082010C8	:08201129	何かのパレット	118	{J}
+082022A8	:08202349	何かのパレット	119	{J}
+08204A74	&PALETTE	何かのパレット	120	{J}
+08210150	:821034F	何かのパレット	121	{J}
+0822FED0	&PALETTE	何かのパレット	123	{J}
+08248128	&PALETTE	何かのパレット	124	{J}
+082539B4	:8253B93	何かのパレット	125	{J}
+0825CF18	:825CF59	何かのパレット	126	{J}
+082708B0	&PALETTE	何かのパレット	127	{J}
+081DBD64	&PALETTE	何かのパレット	133	{J}
+081DC658	&PALETTE	何かのパレット	134	{J}
+081DCF18	&PALETTE	何かのパレット	135	{J}
+081DD794	&PALETTE	何かのパレット	136	{J}

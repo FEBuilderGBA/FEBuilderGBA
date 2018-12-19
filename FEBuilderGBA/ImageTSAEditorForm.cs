@@ -59,7 +59,7 @@ namespace FEBuilderGBA
             {
                 PALETTE_ADDRESS.Value = Program.ROM.p32(this.PalettePointer);
             }
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor);
+            PaletteFormRef.MakePaletteUI(this, OnChangeColor, GetSampleBitmap);
             this.PaletteIndexComboBox.SelectedIndex = 0;
 
             InitLoadChipsetInfo();
@@ -505,6 +505,23 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
             InputFormRef.ShowWriteNotifyAnimation(this, addr);
+        }
+
+        Bitmap GetSampleBitmap()
+        {
+            if (this.ChipCache == null || this.DrawBitmap == null)
+            {
+                return null;
+            }
+
+            int sel = PaletteIndexComboBox.SelectedIndex;
+            if (sel < 0)
+            {
+                return null;
+            }
+
+            Bitmap newbitmap = ImageUtil.SwapPalette(this.DrawBitmap, (int)sel);
+            return newbitmap;
         }
 
         private bool OnChangeColor(Color color, int paletteno)

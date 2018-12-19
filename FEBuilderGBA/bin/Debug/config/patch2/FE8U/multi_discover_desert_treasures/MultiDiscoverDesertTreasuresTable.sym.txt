@@ -1,0 +1,5 @@
+NotTheif=$22
+MultiDiscoverDesertTreasuresTable=$34
+Loop=$10
+Theif=$1E
+Exit=$24

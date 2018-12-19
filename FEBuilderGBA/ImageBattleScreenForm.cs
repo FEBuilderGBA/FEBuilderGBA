@@ -44,7 +44,7 @@ namespace FEBuilderGBA
 
             uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
             U.ForceUpdate(PALETTE_ADDRESS, palette);
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor);
+            PaletteFormRef.MakePaletteUI(this, OnChangeColor , GetSampleBitmap);
             this.PaletteIndexComboBox.SelectedIndex = 0;
 
             InitLoadChipsetInfo();
@@ -633,6 +633,10 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, addr);
         }
 
+        Bitmap GetSampleBitmap()
+        {
+            return this.DrawBitmap;
+        }
         private bool OnChangeColor(Color color, int paletteno)
         {
             if (this.DrawBitmap == null)

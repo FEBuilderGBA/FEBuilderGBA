@@ -173,6 +173,12 @@
     <Compile Include="OverraideCheckWithErrorDialog.Designer.cs">
       <DependentUpon>OverraideCheckWithErrorDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaletteChangeColorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaletteChangeColorsForm.Designer.cs">
+      <DependentUpon>PaletteChangeColorsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatchFilterExForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1928,6 +1934,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OverraideCheckWithErrorDialog.resx">
       <DependentUpon>OverraideCheckWithErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaletteChangeColorsForm.resx">
+      <DependentUpon>PaletteChangeColorsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatchFilterExForm.resx">
       <DependentUpon>PatchFilterExForm.cs</DependentUpon>

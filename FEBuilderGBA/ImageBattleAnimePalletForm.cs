@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.PaletteZoomComboBox.SelectedIndex = 0;
             this.PaletteIndexComboBox.SelectedIndex = 0;
-            PaletteFormRef.MakePaletteUI(this, OnChangeColor);
+            PaletteFormRef.MakePaletteUI(this, OnChangeColor, GetSampleBitmap);
         }
 
 
@@ -113,7 +113,10 @@ namespace FEBuilderGBA
         }
         Bitmap DrawBitmap;
 
-
+        Bitmap GetSampleBitmap()
+        {
+            return this.DrawBitmap;
+        }
         private bool OnChangeColor(Color color,int paletteno)
         {
             if (this.DrawBitmap == null)

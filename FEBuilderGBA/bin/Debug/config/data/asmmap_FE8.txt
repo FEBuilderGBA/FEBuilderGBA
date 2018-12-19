@@ -7866,7 +7866,7 @@
 08A17664	&HEADERTSA	FillTileRectされる何かのタイル	46	{U}
 08A17678	&HEADERTSA	FillTileRectされる何かのタイル	47	{U}
 
-00A73924	:00A7394B	何かのFillTileRectタイルテーブル	{J}
+08A73924	:08A7394B	何かのFillTileRectタイルテーブル	{J}
 08A93300	&HEADERTSA	FillTileRectされる何かのタイル	40	{J}
 08A93314	&HEADERTSA	FillTileRectされる何かのタイル	41	{J}
 08A93328	&HEADERTSA	FillTileRectされる何かのタイル	42	{J}
@@ -11555,3 +11555,9 @@
 080AFF30	SoundRoom	曲名を表示	{U}
 080B0018	SoundRoom	曲名を表示2	{U}
 080B0324	SoundRoom	サウンドルームの描画関係	{U}
+08A9D64C	:08A9D667	"始める"等のテキストID	{J}
+0869FD40	:086A0BFF	不明なデータ	OAMSP Maybe	9	{J}
+0860754C	:086078C5	不明なデータ	OAMSP Maybe	10	{J}
+0860821C	:086094B3	不明なデータ	OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	不明なデータ	OAMSP Maybe	12	{J}
+08A1D320	:08A1D8BF	不明なデータ	OAMSP Maybe	13	{J}

@@ -483,7 +483,6 @@
             // 
             // PALETTE_B_16
             // 
-
             this.PALETTE_B_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -502,7 +501,6 @@
             // 
             // PALETTE_G_16
             // 
-
             this.PALETTE_G_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -521,7 +519,6 @@
             // 
             // PALETTE_R_16
             // 
-
             this.PALETTE_R_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -561,7 +558,6 @@
             // 
             // PALETTE_B_15
             // 
-
             this.PALETTE_B_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -580,7 +576,6 @@
             // 
             // PALETTE_G_15
             // 
-
             this.PALETTE_G_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -599,7 +594,6 @@
             // 
             // PALETTE_R_15
             // 
-
             this.PALETTE_R_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -639,7 +633,6 @@
             // 
             // PALETTE_B_14
             // 
-
             this.PALETTE_B_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -658,7 +651,6 @@
             // 
             // PALETTE_G_14
             // 
-
             this.PALETTE_G_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -677,7 +669,6 @@
             // 
             // PALETTE_R_14
             // 
-
             this.PALETTE_R_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -717,7 +708,6 @@
             // 
             // PALETTE_B_13
             // 
-
             this.PALETTE_B_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -736,7 +726,6 @@
             // 
             // PALETTE_G_13
             // 
-
             this.PALETTE_G_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -755,7 +744,6 @@
             // 
             // PALETTE_R_13
             // 
-
             this.PALETTE_R_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -795,7 +783,6 @@
             // 
             // PALETTE_B_12
             // 
-
             this.PALETTE_B_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -814,7 +801,6 @@
             // 
             // PALETTE_G_12
             // 
-
             this.PALETTE_G_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -833,7 +819,6 @@
             // 
             // PALETTE_R_12
             // 
-
             this.PALETTE_R_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -873,7 +858,6 @@
             // 
             // PALETTE_B_11
             // 
-
             this.PALETTE_B_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -892,7 +876,6 @@
             // 
             // PALETTE_G_11
             // 
-
             this.PALETTE_G_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -911,7 +894,6 @@
             // 
             // PALETTE_R_11
             // 
-
             this.PALETTE_R_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -951,7 +933,6 @@
             // 
             // PALETTE_B_10
             // 
-
             this.PALETTE_B_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -970,7 +951,6 @@
             // 
             // PALETTE_G_10
             // 
-
             this.PALETTE_G_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -989,7 +969,6 @@
             // 
             // PALETTE_R_10
             // 
-
             this.PALETTE_R_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1029,7 +1008,6 @@
             // 
             // PALETTE_B_9
             // 
-
             this.PALETTE_B_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1048,7 +1026,6 @@
             // 
             // PALETTE_G_9
             // 
-
             this.PALETTE_G_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1067,7 +1044,6 @@
             // 
             // PALETTE_R_9
             // 
-
             this.PALETTE_R_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1107,7 +1083,6 @@
             // 
             // PALETTE_B_8
             // 
-
             this.PALETTE_B_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1126,7 +1101,6 @@
             // 
             // PALETTE_G_8
             // 
-
             this.PALETTE_G_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1145,7 +1119,6 @@
             // 
             // PALETTE_R_8
             // 
-
             this.PALETTE_R_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1185,7 +1158,6 @@
             // 
             // PALETTE_B_7
             // 
-
             this.PALETTE_B_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1204,7 +1176,6 @@
             // 
             // PALETTE_G_7
             // 
-
             this.PALETTE_G_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1223,7 +1194,6 @@
             // 
             // PALETTE_R_7
             // 
-
             this.PALETTE_R_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1263,7 +1233,6 @@
             // 
             // PALETTE_B_6
             // 
-
             this.PALETTE_B_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1282,7 +1251,6 @@
             // 
             // PALETTE_G_6
             // 
-
             this.PALETTE_G_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1301,7 +1269,6 @@
             // 
             // PALETTE_R_6
             // 
-
             this.PALETTE_R_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1341,7 +1308,6 @@
             // 
             // PALETTE_B_5
             // 
-
             this.PALETTE_B_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -1360,7 +1326,6 @@
             // 
             // PALETTE_G_5
             // 
-
             this.PALETTE_G_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -1379,7 +1344,6 @@
             // 
             // PALETTE_R_5
             // 
-
             this.PALETTE_R_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -1419,7 +1383,6 @@
             // 
             // PALETTE_B_4
             // 
-
             this.PALETTE_B_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -1438,7 +1401,6 @@
             // 
             // PALETTE_G_4
             // 
-
             this.PALETTE_G_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -1457,7 +1419,6 @@
             // 
             // PALETTE_R_4
             // 
-
             this.PALETTE_R_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -1497,7 +1458,6 @@
             // 
             // PALETTE_B_3
             // 
-
             this.PALETTE_B_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -1516,7 +1476,6 @@
             // 
             // PALETTE_G_3
             // 
-
             this.PALETTE_G_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -1535,7 +1494,6 @@
             // 
             // PALETTE_R_3
             // 
-
             this.PALETTE_R_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -1575,7 +1533,6 @@
             // 
             // PALETTE_B_2
             // 
-
             this.PALETTE_B_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -1594,7 +1551,6 @@
             // 
             // PALETTE_G_2
             // 
-
             this.PALETTE_G_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -1613,7 +1569,6 @@
             // 
             // PALETTE_R_2
             // 
-
             this.PALETTE_R_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -1653,7 +1608,6 @@
             // 
             // PALETTE_B_1
             // 
-
             this.PALETTE_B_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -1672,7 +1626,6 @@
             // 
             // PALETTE_G_1
             // 
-
             this.PALETTE_G_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -1691,7 +1644,6 @@
             // 
             // PALETTE_R_1
             // 
-
             this.PALETTE_R_1.Increment = new decimal(new int[] {
             8,
             0,

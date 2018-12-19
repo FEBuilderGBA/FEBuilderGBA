@@ -11588,3 +11588,9 @@ r3=X tile position of menu of the right	{U}
 080AFF30	SoundRoom	Show song title.	{U}
 080B0018	SoundRoom	Show song title 2.	{U}
 080B0324	SoundRoom	Drawing relation of the sound room.	{U}
+08A73924	:08A7394B	Something's FillTileRect tile table.	{J}
+08A9D64C	:08A9D667	A text ID such as "start".	{J}
+0860754C	:086078C5	Unknown data.	OAMSP Maybe	10	{J}
+0860821C	:086094B3	Unknown data.	OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	Unknown data.	OAMSP Maybe	12	{J}
+08A1D320	:08A1D8BF	Unknown data.	OAMSP Maybe	13	{J}

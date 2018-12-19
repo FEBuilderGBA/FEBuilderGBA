@@ -77,7 +77,7 @@ namespace FEBuilderGBA
             this.MAP.SetDefualtIcon(black);
 
             //パレット
-            PaletteFormRef.MakePaletteUI(this,OnChangeColor);
+            PaletteFormRef.MakePaletteUI(this,OnChangeColor, GetSampleBitmap);
             U.SelectedIndexSafety(this.PaletteCombo, 0);
 
             //TSA変更のイベント適応.
@@ -92,6 +92,23 @@ namespace FEBuilderGBA
             this.MaximizeBox = false;
             IsInit = false;
         }
+
+        Bitmap GetSampleBitmap()
+        {
+            if (this.IsInit)
+            {
+                return null;
+            }
+            uint palIndex = CalcPatelleIndex();
+            if (palIndex == U.NOT_FOUND)
+            {
+                return null;
+            }
+            Bitmap newbitmap = ImageUtil.SwapPalette(this.MapObjImage, (int)palIndex);
+            return newbitmap;
+        }
+
+
         private bool OnChangeColor(Color color, int paletteno)
         {
             if (this.IsInit)

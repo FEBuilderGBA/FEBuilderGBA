@@ -30,6 +30,24 @@ namespace FEBuilderGBA
             }
         }
 
+        public static PictureBox MakePaletteUI_FindSampleImage(List<Control> controls)
+        {
+            foreach (Control info in controls)
+            {
+                if (info.Width < 128 || info.Height < 128)
+                {//小さすぎ
+                    continue;
+                }
+
+                if (!(info is PictureBox))
+                {
+                    continue;
+                }
+
+                return (PictureBox)info;
+            }
+            return null;
+        }
 
         public static Control MakePaletteUI_FindObject<_TYPE>(List<Control> controls, string symbol, int paletteno)
         {
@@ -66,63 +84,111 @@ namespace FEBuilderGBA
         {
             return (sender, e) =>
             {
-                if (e.Button == MouseButtons.Right)
-                {//色交換
-                    PaletteSwapForm form = (PaletteSwapForm)InputFormRef.JumpFormLow<PaletteSwapForm>();
-                    form.SetMainColorIndex(paletteno);
-                    Color[] colormap = new Color[16 + 1];
-                    for (int i = 1; i <= 16; i++)
-                    {
-                        //Label p = (Label)MakePaletteUI_FindObject<Label>(controls, "P", paletteno);
-                        NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                        NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                        NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
-                        form.SetColor(i, (int)r.Value, (int)g.Value, (int)b.Value);
-                        colormap[i] = Color.FromArgb((int)r.Value, (int)g.Value, (int)b.Value);
-                    }
-                    DialogResult dr = form.ShowDialog();
-                    if (dr != System.Windows.Forms.DialogResult.OK)
-                    {
-                        return;
-                    }
-                    int selected = form.GetSelectedColorIndex();
+                if (e.Button != MouseButtons.Left)
+                {
+                    return;
+                }
 
-                    for (int i = 1; i <= 16; i++)
-                    {
-                        //Label p = (Label)MakePaletteUI_FindObject<Label>(controls, "P", paletteno);
-                        NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
-                        NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
-                        NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                //色変更ダイアログ
+                ColorDialog cd = new ColorDialog();
+                cd.Color = obj.BackColor;
+                if (cd.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                //選択された色の取得
+                NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
+                r.Value = (cd.Color.R >> 3) << 3;
+                NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
+                g.Value = (cd.Color.G >> 3) << 3;
+                NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
+                b.Value = (cd.Color.B >> 3) << 3;
+            }
+            ;
+        }
+        static EventHandler MakePaletteUI_Label_ColorSwap(Form self, List<Control> controls, Label obj, int paletteno)
+        {
+            return (sender, e) =>
+            {
+                PaletteSwapForm form = (PaletteSwapForm)InputFormRef.JumpFormLow<PaletteSwapForm>();
+                form.SetMainColorIndex(paletteno);
+                Color[] colormap = new Color[16 + 1];
+                for (int i = 1; i <= 16; i++)
+                {
+                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
+                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
+                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    form.SetColor(i, (int)r.Value, (int)g.Value, (int)b.Value);
+                    colormap[i] = Color.FromArgb((int)r.Value, (int)g.Value, (int)b.Value);
+                }
+                DialogResult dr = form.ShowDialog();
+                if (dr != System.Windows.Forms.DialogResult.OK)
+                {
+                    return;
+                }
+                int selected = form.GetSelectedColorIndex();
 
-                        if (selected == i)
-                        {
-                            r.Value = colormap[paletteno].R;
-                            g.Value = colormap[paletteno].G;
-                            b.Value = colormap[paletteno].B;
-                        }
-                        else if (paletteno == i)
-                        {
-                            r.Value = colormap[selected].R;
-                            g.Value = colormap[selected].G;
-                            b.Value = colormap[selected].B;
-                        }
+                for (int i = 1; i <= 16; i++)
+                {
+                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
+                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
+                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+
+                    if (selected == i)
+                    {
+                        r.Value = colormap[paletteno].R;
+                        g.Value = colormap[paletteno].G;
+                        b.Value = colormap[paletteno].B;
+                    }
+                    else if (paletteno == i)
+                    {
+                        r.Value = colormap[selected].R;
+                        g.Value = colormap[selected].G;
+                        b.Value = colormap[selected].B;
                     }
                 }
-                else
-                {//色変更ダイアログ
-                    ColorDialog cd = new ColorDialog();
-                    cd.Color = obj.BackColor;
-                    if (cd.ShowDialog() != DialogResult.OK)
-                    {
-                        return;
-                    }
-                    //選択された色の取得
-                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", paletteno);
-                    r.Value = (cd.Color.R >> 3) << 3;
-                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", paletteno);
-                    g.Value = (cd.Color.G >> 3) << 3;
-                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", paletteno);
-                    b.Value = (cd.Color.B >> 3) << 3;
+            }
+            ;
+        }
+
+        static EventHandler MakePaletteUI_Label_ColorChanges(Form self, List<Control> controls, Label obj, int paletteno, Func<Bitmap> getSampleBitmap)
+        {
+            return (sender, e) =>
+            {
+                Bitmap sample = getSampleBitmap();
+                if (sample == null)
+                {
+                    return;
+                }
+
+                PaletteChangeColorsForm form = (PaletteChangeColorsForm)InputFormRef.JumpFormLow<PaletteChangeColorsForm>();
+                form.SetMainColorIndex(paletteno);
+                form.SetPreviewBitmap(sample);
+                Color[] colormap = new Color[16 + 1];
+                for (int i = 1; i <= 16; i++)
+                {
+                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
+                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
+                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+                    form.SetColor(i, (int)r.Value, (int)g.Value, (int)b.Value);
+                    colormap[i] = Color.FromArgb((int)r.Value, (int)g.Value, (int)b.Value);
+                }
+                DialogResult dr = form.ShowDialog();
+                if (dr != System.Windows.Forms.DialogResult.OK)
+                {
+                    return;
+                }
+
+                for (int i = 1; i <= 16; i++)
+                {
+                    NumericUpDown r = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "R", i);
+                    NumericUpDown g = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "G", i);
+                    NumericUpDown b = (NumericUpDown)MakePaletteUI_FindObject<NumericUpDown>(controls, "B", i);
+
+                    Color rgb = form.GetColor(i);
+                    r.Value = rgb.R;
+                    g.Value = rgb.G;
+                    b.Value = rgb.B;
                 }
             }
             ;
@@ -161,7 +227,8 @@ namespace FEBuilderGBA
             ;
         }
 
-        public static void MakePaletteUI(Form self, Func<Color, int, bool> onChangeColor)
+
+        public static void MakePaletteUI(Form self, Func<Color, int, bool> onChangeColor, Func<Bitmap> getSampleBitmap)
         {
             List<Control> controls = InputFormRef.GetAllControls(self);
             for (int paletteno = 1; paletteno <= 16; paletteno++)
@@ -173,6 +240,18 @@ namespace FEBuilderGBA
 
                 p.MouseClick += MakePaletteUI_Label_MouseClickEvent(self, controls, p, paletteno);
                 p.Cursor = Cursors.Hand;
+
+                ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
+                MenuItem menuItem;
+
+                menuItem = new MenuItem(R._("色の交換"));
+                menuItem.Click += MakePaletteUI_Label_ColorSwap(self, controls, p, paletteno);
+                contextMenu.MenuItems.Add(menuItem);
+                menuItem = new MenuItem(R._("色違いを作る"));
+                menuItem.Click += MakePaletteUI_Label_ColorChanges(self, controls, p, paletteno, getSampleBitmap);
+                contextMenu.MenuItems.Add(menuItem);
+
+                p.ContextMenu = contextMenu;
 
                 EventHandler r_eh = MakePaletteUI_NumericUpDown_ChangeEvent(self, controls, r, "R", paletteno, onChangeColor);
                 r.ValueChanged += r_eh;
@@ -587,7 +666,6 @@ namespace FEBuilderGBA
             StringBuilder sb = new StringBuilder();
             for (uint n = 0; n < 16; n ++ )
             {
-//                uint p = U.u16(palttebyte, n * 2);
                 uint p = U.big16(palttebyte, n * 2);
                 sb.Append(  p.ToString("X04") );
             }
@@ -605,7 +683,6 @@ namespace FEBuilderGBA
                 string hexString = U.substr(paltext, (int)n * 4, 4);
                 uint hex = U.atoh(hexString);
 
-//                U.write_u16(palttebyte, n * 2, hex);
                 U.write_big16(palttebyte, n * 2, hex);
             }
             MakePaletteByteGBAToUI(self, palttebyte);

@@ -279,6 +279,13 @@ namespace FEBuilderGBA
         static string MakeInfoAndAuthorString(PatchSt patch)
         {
             StringBuilder sb = new StringBuilder();
+            string showWarning = U.at(patch.Param, "SHOW_WARNING", "false");
+            if (U.stringbool(showWarning))
+            {
+                sb.AppendLine("!!!! WARNING !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                sb.AppendLine(R._("このパッチを利用した時にフリーズする等のバグが報告されています。\r\n特別な理由がない限り、利用しないでください。\r\n"));
+            }
+
             string deprecated = U.at(patch.Param, "DEPRECATED","false");
             if (U.stringbool(deprecated))
             {

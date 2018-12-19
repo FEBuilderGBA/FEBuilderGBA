@@ -8143,6 +8143,24 @@ Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM ba
 :はい
 Yes
 
+:変更する色
+Change color
+
+:新しい色
+New color
+
+:連動して変更す色
+Colors to change color.
+
+:プレビュー
+Preview
+
+:リセット
+Reset
+
+:似た色を連動して置き換える
+Interlocking and replacing similar colors.
+
 :文字列のサイズが{0}ではありません
 String size is not {0}
 
@@ -8154,6 +8172,12 @@ Palette Value
 
 :パレットの数字化
 Digitize Palette
+
+:色の交換
+Color exchange.
+
+:色違いを作る
+Make a color difference.
 
 :この画像のパレットは破壊されています。\r\n復元しようとしましたが、元画像と異なる画像のため、復元できませんでした。\r\n無視して強引にインポートすることは可能ですが、継続しますか？
 The palette of this image has been destroyed.\r\nA restore was attempted, but it is too different from the original image and failed.\r\nIgnore and import anyway?
@@ -8196,6 +8220,9 @@ Essential Fixes(#ESSENTIALFIXES)
 
 :フィルタの適応
 Filter adaptation
+
+:このパッチを利用した時にフリーズする等のバグが報告されています。\r\n特別な理由がない限り、利用しないでください。\r\n
+Bugs such as freezing when using this patch are reported.\r\nPlease do not use unless there is a special reason.\r\n
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is an old patch.\r\nWe recommend using a new patch.\r\n
