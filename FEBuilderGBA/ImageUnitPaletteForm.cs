@@ -77,6 +77,14 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.makeJumpEventHandler(this.X_BATTLEANIME, this.X_BATTLEANIME_LABEL, "BATTLEANIME", new string[] { "MINUS1" });
             InputFormRef.makeLinkEventHandler("X_", controls, this.X_BATTLEANIME, this.X_BATTLEANIME_INFO, 0, "BATTLEANIME", new string[] { });
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
         }
 
         public static string GetPaletteName(uint paletteid)

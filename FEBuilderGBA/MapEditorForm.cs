@@ -84,6 +84,14 @@ namespace FEBuilderGBA
             this.Width = this.ControlPanel.Width;
             this.Height = this.ControlPanel.Height * 10;
             this.MaximizeBox = true;
+
+            U.AllowDropFilename(this, new string[] { ".TMX", ".MAR", ".MAP" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    LoadButton_Click(null, null);
+                }
+            });
         }
 
         //マップリスト
@@ -1084,17 +1092,24 @@ this.MapObjImage);
             string title = R._("開くマップを選択してください");
             string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|Import Palette|*.png|All files|*");
 
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            Program.LastSelectedFilename.Load(this, "", open);
-            open.ShowDialog();
-            if (!U.CanReadFileRetry(open))
+            string mapfilename;
+            if (ImageFormRef.GetDragFilePath(out mapfilename))
             {
-                return;
             }
-            Program.LastSelectedFilename.Save(this, "", open);
-            string mapfilename = open.FileNames[0];
+            else
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                Program.LastSelectedFilename.Load(this, "", open);
+                open.ShowDialog();
+                if (!U.CanReadFileRetry(open))
+                {
+                    return;
+                }
+                Program.LastSelectedFilename.Save(this, "", open);
+                mapfilename = open.FileNames[0];
+            }
 
             string ext = U.GetFilenameExt(mapfilename);
             string errormessage = "";

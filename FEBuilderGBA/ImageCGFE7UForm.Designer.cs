@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label6 = new System.Windows.Forms.Label();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -64,9 +66,7 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
@@ -94,33 +94,54 @@
             this.label8.Text = "先頭アドレス";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // DragTargetPanel
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.Comment);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.DecreaseColorTSAToolButton);
-            this.panel4.Controls.Add(this.ImportButton);
-            this.panel4.Controls.Add(this.ExportButton);
-            this.panel4.Controls.Add(this.L_0_COMBO);
-            this.panel4.Controls.Add(this.J_1);
-            this.panel4.Controls.Add(this.B3);
-            this.panel4.Controls.Add(this.B2);
-            this.panel4.Controls.Add(this.B1);
-            this.panel4.Controls.Add(this.B0);
-            this.panel4.Controls.Add(this.J_0);
-            this.panel4.Controls.Add(this.P4);
-            this.panel4.Controls.Add(this.P12);
-            this.panel4.Controls.Add(this.J_12);
-            this.panel4.Controls.Add(this.P8);
-            this.panel4.Controls.Add(this.J_8);
-            this.panel4.Controls.Add(this.X_PIC);
-            this.panel4.Controls.Add(this.J_4);
-            this.panel4.Location = new System.Drawing.Point(263, 73);
-            this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(862, 369);
-            this.panel4.TabIndex = 88;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.Comment);
+            this.DragTargetPanel.Controls.Add(this.label6);
+            this.DragTargetPanel.Controls.Add(this.DecreaseColorTSAToolButton);
+            this.DragTargetPanel.Controls.Add(this.ImportButton);
+            this.DragTargetPanel.Controls.Add(this.ExportButton);
+            this.DragTargetPanel.Controls.Add(this.L_0_COMBO);
+            this.DragTargetPanel.Controls.Add(this.J_1);
+            this.DragTargetPanel.Controls.Add(this.B3);
+            this.DragTargetPanel.Controls.Add(this.B2);
+            this.DragTargetPanel.Controls.Add(this.B1);
+            this.DragTargetPanel.Controls.Add(this.B0);
+            this.DragTargetPanel.Controls.Add(this.J_0);
+            this.DragTargetPanel.Controls.Add(this.P4);
+            this.DragTargetPanel.Controls.Add(this.P12);
+            this.DragTargetPanel.Controls.Add(this.J_12);
+            this.DragTargetPanel.Controls.Add(this.P8);
+            this.DragTargetPanel.Controls.Add(this.J_8);
+            this.DragTargetPanel.Controls.Add(this.X_PIC);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Location = new System.Drawing.Point(263, 73);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(862, 369);
+            this.DragTargetPanel.TabIndex = 88;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(128, 176);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(236, 25);
+            this.Comment.TabIndex = 200;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleDescription = "@COMMENT";
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(-1, 173);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 31);
+            this.label6.TabIndex = 199;
+            this.label6.Text = "コメント";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DecreaseColorTSAToolButton
             // 
@@ -535,34 +556,13 @@
             this.panel5.Size = new System.Drawing.Size(862, 29);
             this.panel5.TabIndex = 86;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(128, 176);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(236, 25);
-            this.Comment.TabIndex = 200;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleDescription = "@COMMENT";
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(-1, 173);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 31);
-            this.label6.TabIndex = 199;
-            this.label6.Text = "コメント";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ImageCGFE7UForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1137, 449);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
@@ -570,8 +570,8 @@
             this.Name = "ImageCGFE7UForm";
             this.Text = "CG画像";
             this.Load += new System.EventHandler(this.ImageCGFE7UForm_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
@@ -594,7 +594,7 @@
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.NumericUpDown P12;
         private System.Windows.Forms.Label J_12;
         private System.Windows.Forms.NumericUpDown P8;

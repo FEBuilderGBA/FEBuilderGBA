@@ -30,6 +30,14 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.AddressList, 0, true);
             U.SetIcon(AnimeExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(AnimeImportButton, Properties.Resources.icon_upload);
+
+            U.AllowDropFilename(this, new string[] {".TXT"} , (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    AnimeImportButton_Click(null, null);
+                }
+            });
         }
         static Dictionary<uint, string[]> g_ROMAnime;
         public static void PreLoadResource()
@@ -1127,24 +1135,31 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string title = R._("開くファイル名を選択してください");
-            string filter = R._("アニメスクリプト|*.txt|All files|*");
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
+            {
+            }
+            else
+            {
+                string title = R._("開くファイル名を選択してください");
+                string filter = R._("アニメスクリプト|*.txt|All files|*");
 
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            open.FileName = "romanime_" + this.AddressList.Text.Trim();
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                open.FileName = "romanime_" + this.AddressList.Text.Trim();
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (!U.CanReadFileRetry(open))
+                {
+                    return;
+                }
+                filename = open.FileNames[0];
+                Program.LastSelectedFilename.Save(this, "", open);
             }
-            if (!U.CanReadFileRetry(open))
-            {
-                return;
-            }
-            string filename = open.FileNames[0];
-            Program.LastSelectedFilename.Save(this, "", open);
 
             string error = "";
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))

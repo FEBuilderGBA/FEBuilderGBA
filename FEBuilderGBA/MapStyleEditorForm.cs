@@ -91,6 +91,21 @@ namespace FEBuilderGBA
             //クレームは microsoft あたりまでどうぞ.
             this.MaximizeBox = false;
             IsInit = false;
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER , (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ObjImportButton_Click(null, null);
+                }
+            });
+            U.AllowDropFilename(this, new string[] { ".MAPCHIP_CONFIG" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    MapChipImportButton_Click(null, null);
+                }
+            });
         }
 
         Bitmap GetSampleBitmap()
@@ -1102,21 +1117,28 @@ namespace FEBuilderGBA
             string title = R._("読み込むファイル名を選択してください");
             string filter = R._("mapchip_config|*.mapchip_config|All files|*");
 
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            Program.LastSelectedFilename.Load(this, "mapchip_config", open);
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
             {
-                return ;
             }
-            if (!U.CanReadFileRetry(open))
+            else
             {
-                return ;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                Program.LastSelectedFilename.Load(this, "mapchip_config", open);
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return ;
+                }
+                if (!U.CanReadFileRetry(open))
+                {
+                    return ;
+                }
+                Program.LastSelectedFilename.Save(this, "mapchip_config", open);
+                filename = open.FileNames[0];
             }
-            Program.LastSelectedFilename.Save(this, "mapchip_config", open);
-            string filename = open.FileNames[0];
 
             if (U.GetFileSize(filename) < 9216)
             {

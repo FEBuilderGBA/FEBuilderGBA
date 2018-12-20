@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -57,9 +59,7 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
@@ -82,26 +82,47 @@
             this.label8.Text = "先頭アドレス";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // DragTargetPanel
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.Comment);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.DecreaseColorTSAToolButton);
-            this.panel4.Controls.Add(this.ImportButton);
-            this.panel4.Controls.Add(this.ExportButton);
-            this.panel4.Controls.Add(this.P8);
-            this.panel4.Controls.Add(this.J_8);
-            this.panel4.Controls.Add(this.P4);
-            this.panel4.Controls.Add(this.J_4);
-            this.panel4.Controls.Add(this.X_PIC);
-            this.panel4.Controls.Add(this.P0);
-            this.panel4.Controls.Add(this.J_0);
-            this.panel4.Location = new System.Drawing.Point(263, 73);
-            this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(862, 372);
-            this.panel4.TabIndex = 88;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.Comment);
+            this.DragTargetPanel.Controls.Add(this.label4);
+            this.DragTargetPanel.Controls.Add(this.DecreaseColorTSAToolButton);
+            this.DragTargetPanel.Controls.Add(this.ImportButton);
+            this.DragTargetPanel.Controls.Add(this.ExportButton);
+            this.DragTargetPanel.Controls.Add(this.P8);
+            this.DragTargetPanel.Controls.Add(this.J_8);
+            this.DragTargetPanel.Controls.Add(this.P4);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Controls.Add(this.X_PIC);
+            this.DragTargetPanel.Controls.Add(this.P0);
+            this.DragTargetPanel.Controls.Add(this.J_0);
+            this.DragTargetPanel.Location = new System.Drawing.Point(263, 73);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(862, 372);
+            this.DragTargetPanel.TabIndex = 88;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(128, 103);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(236, 25);
+            this.Comment.TabIndex = 198;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(-1, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 31);
+            this.label4.TabIndex = 197;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DecreaseColorTSAToolButton
             // 
@@ -406,42 +427,21 @@
             this.panel5.Size = new System.Drawing.Size(864, 32);
             this.panel5.TabIndex = 86;
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(128, 103);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(236, 25);
-            this.Comment.TabIndex = 198;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(-1, 100);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 31);
-            this.label4.TabIndex = 197;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ImageCGForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1130, 449);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Name = "ImageCGForm";
             this.Text = "CG画像";
             this.Load += new System.EventHandler(this.BigCGForm_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
@@ -460,7 +460,7 @@
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.NumericUpDown P8;
         private System.Windows.Forms.Label J_8;
         private System.Windows.Forms.NumericUpDown P4;

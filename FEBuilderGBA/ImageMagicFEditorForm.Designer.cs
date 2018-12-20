@@ -38,7 +38,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.MagicComment = new FEBuilderGBA.TextBoxEx();
             this.label2 = new System.Windows.Forms.Label();
             this.X_N_JumpEditor = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_B_ANIME_PIC2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).BeginInit();
@@ -210,38 +210,38 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // panel4
+            // DragTargetPanel
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.MagicComment);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.X_N_JumpEditor);
-            this.panel4.Controls.Add(this.DimComboBox);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.ShowZoomComboBox);
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.P16);
-            this.panel4.Controls.Add(this.J_16);
-            this.panel4.Controls.Add(this.label26);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Controls.Add(this.MagicAnimeExportButton);
-            this.panel4.Controls.Add(this.MagicAnimeImportButton);
-            this.panel4.Controls.Add(this.X_B_ANIME_PIC2);
-            this.panel4.Controls.Add(this.ShowFrameUpDown);
-            this.panel4.Controls.Add(this.numericUpDown26);
-            this.panel4.Controls.Add(this.P12);
-            this.panel4.Controls.Add(this.P8);
-            this.panel4.Controls.Add(this.P4);
-            this.panel4.Controls.Add(this.P0);
-            this.panel4.Controls.Add(this.J_12);
-            this.panel4.Controls.Add(this.J_8);
-            this.panel4.Controls.Add(this.J_4);
-            this.panel4.Controls.Add(this.J_0);
-            this.panel4.Location = new System.Drawing.Point(302, 65);
-            this.panel4.Margin = new System.Windows.Forms.Padding(5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(917, 468);
-            this.panel4.TabIndex = 116;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.MagicComment);
+            this.DragTargetPanel.Controls.Add(this.label2);
+            this.DragTargetPanel.Controls.Add(this.X_N_JumpEditor);
+            this.DragTargetPanel.Controls.Add(this.DimComboBox);
+            this.DragTargetPanel.Controls.Add(this.label3);
+            this.DragTargetPanel.Controls.Add(this.ShowZoomComboBox);
+            this.DragTargetPanel.Controls.Add(this.label25);
+            this.DragTargetPanel.Controls.Add(this.P16);
+            this.DragTargetPanel.Controls.Add(this.J_16);
+            this.DragTargetPanel.Controls.Add(this.label26);
+            this.DragTargetPanel.Controls.Add(this.label24);
+            this.DragTargetPanel.Controls.Add(this.MagicAnimeExportButton);
+            this.DragTargetPanel.Controls.Add(this.MagicAnimeImportButton);
+            this.DragTargetPanel.Controls.Add(this.X_B_ANIME_PIC2);
+            this.DragTargetPanel.Controls.Add(this.ShowFrameUpDown);
+            this.DragTargetPanel.Controls.Add(this.numericUpDown26);
+            this.DragTargetPanel.Controls.Add(this.P12);
+            this.DragTargetPanel.Controls.Add(this.P8);
+            this.DragTargetPanel.Controls.Add(this.P4);
+            this.DragTargetPanel.Controls.Add(this.P0);
+            this.DragTargetPanel.Controls.Add(this.J_12);
+            this.DragTargetPanel.Controls.Add(this.J_8);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Controls.Add(this.J_0);
+            this.DragTargetPanel.Location = new System.Drawing.Point(302, 65);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(917, 468);
+            this.DragTargetPanel.TabIndex = 116;
             // 
             // MagicComment
             // 
@@ -638,7 +638,7 @@
             this.ClientSize = new System.Drawing.Size(1229, 547);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.panel5);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImageMagicFEditorForm";
@@ -648,8 +648,8 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_B_ANIME_PIC2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowFrameUpDown)).EndInit();
@@ -676,7 +676,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown ReadCount;
         private System.Windows.Forms.NumericUpDown ReadStartAddress;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button MagicAnimeExportButton;

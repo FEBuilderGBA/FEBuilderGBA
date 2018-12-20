@@ -36,7 +36,7 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel2 = new System.Windows.Forms.Panel();
             this.ExportButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.D8 = new System.Windows.Forms.NumericUpDown();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.D0 = new System.Windows.Forms.NumericUpDown();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
             this.DescriptionAfterImportLabel = new FEBuilderGBA.LabelEx();
@@ -103,7 +103,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.DragTargetPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B25)).BeginInit();
@@ -119,7 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             this.X_MUG_EXCEED.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B18)).BeginInit();
@@ -222,16 +222,16 @@
             this.label22.Text = "選択アドレス:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // DragTargetPanel2
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.ExportButton);
-            this.panel3.Controls.Add(this.ImportButton);
-            this.panel3.Location = new System.Drawing.Point(280, 692);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(872, 58);
-            this.panel3.TabIndex = 63;
+            this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.ExportButton);
+            this.DragTargetPanel2.Controls.Add(this.ImportButton);
+            this.DragTargetPanel2.Location = new System.Drawing.Point(280, 692);
+            this.DragTargetPanel2.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel2.Name = "DragTargetPanel2";
+            this.DragTargetPanel2.Size = new System.Drawing.Size(872, 58);
+            this.DragTargetPanel2.TabIndex = 63;
             // 
             // ExportButton
             // 
@@ -647,53 +647,53 @@
             this.D0.Size = new System.Drawing.Size(125, 25);
             this.D0.TabIndex = 0;
             // 
-            // panel2
+            // DragTargetPanel
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Comment);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.DescriptionAfterImportLabel);
-            this.panel2.Controls.Add(this.X_MUG_EXCEED);
-            this.panel2.Controls.Add(this.J_27);
-            this.panel2.Controls.Add(this.J_26);
-            this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.ShowFrameUpDown);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.X_PIC_ZZZ);
-            this.panel2.Controls.Add(this.X_MAP_PIC);
-            this.panel2.Controls.Add(this.D0);
-            this.panel2.Controls.Add(this.D4);
-            this.panel2.Controls.Add(this.D8);
-            this.panel2.Controls.Add(this.D12);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.B23);
-            this.panel2.Controls.Add(this.B22);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.B21);
-            this.panel2.Controls.Add(this.B20);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.L_24_COMBO);
-            this.panel2.Controls.Add(this.J_25);
-            this.panel2.Controls.Add(this.J_24);
-            this.panel2.Controls.Add(this.J_22);
-            this.panel2.Controls.Add(this.J_20);
-            this.panel2.Controls.Add(this.J_16);
-            this.panel2.Controls.Add(this.J_8);
-            this.panel2.Controls.Add(this.J_4);
-            this.panel2.Controls.Add(this.J_0);
-            this.panel2.Controls.Add(this.X_UNIT_PIC);
-            this.panel2.Controls.Add(this.D16);
-            this.panel2.Controls.Add(this.B24);
-            this.panel2.Controls.Add(this.B27);
-            this.panel2.Controls.Add(this.B26);
-            this.panel2.Controls.Add(this.B25);
-            this.panel2.Controls.Add(this.J_12);
-            this.panel2.Location = new System.Drawing.Point(280, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(872, 606);
-            this.panel2.TabIndex = 62;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.Comment);
+            this.DragTargetPanel.Controls.Add(this.label11);
+            this.DragTargetPanel.Controls.Add(this.DescriptionAfterImportLabel);
+            this.DragTargetPanel.Controls.Add(this.X_MUG_EXCEED);
+            this.DragTargetPanel.Controls.Add(this.J_27);
+            this.DragTargetPanel.Controls.Add(this.J_26);
+            this.DragTargetPanel.Controls.Add(this.label24);
+            this.DragTargetPanel.Controls.Add(this.ShowFrameUpDown);
+            this.DragTargetPanel.Controls.Add(this.label17);
+            this.DragTargetPanel.Controls.Add(this.X_PIC_ZZZ);
+            this.DragTargetPanel.Controls.Add(this.X_MAP_PIC);
+            this.DragTargetPanel.Controls.Add(this.D0);
+            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.D8);
+            this.DragTargetPanel.Controls.Add(this.D12);
+            this.DragTargetPanel.Controls.Add(this.label15);
+            this.DragTargetPanel.Controls.Add(this.B23);
+            this.DragTargetPanel.Controls.Add(this.B22);
+            this.DragTargetPanel.Controls.Add(this.label16);
+            this.DragTargetPanel.Controls.Add(this.label13);
+            this.DragTargetPanel.Controls.Add(this.B21);
+            this.DragTargetPanel.Controls.Add(this.B20);
+            this.DragTargetPanel.Controls.Add(this.label14);
+            this.DragTargetPanel.Controls.Add(this.L_24_COMBO);
+            this.DragTargetPanel.Controls.Add(this.J_25);
+            this.DragTargetPanel.Controls.Add(this.J_24);
+            this.DragTargetPanel.Controls.Add(this.J_22);
+            this.DragTargetPanel.Controls.Add(this.J_20);
+            this.DragTargetPanel.Controls.Add(this.J_16);
+            this.DragTargetPanel.Controls.Add(this.J_8);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Controls.Add(this.J_0);
+            this.DragTargetPanel.Controls.Add(this.X_UNIT_PIC);
+            this.DragTargetPanel.Controls.Add(this.D16);
+            this.DragTargetPanel.Controls.Add(this.B24);
+            this.DragTargetPanel.Controls.Add(this.B27);
+            this.DragTargetPanel.Controls.Add(this.B26);
+            this.DragTargetPanel.Controls.Add(this.B25);
+            this.DragTargetPanel.Controls.Add(this.J_12);
+            this.DragTargetPanel.Location = new System.Drawing.Point(280, 76);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(872, 606);
+            this.DragTargetPanel.TabIndex = 62;
             // 
             // Comment
             // 
@@ -1022,8 +1022,8 @@
             this.ClientSize = new System.Drawing.Size(1160, 764);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.DragTargetPanel2);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.AddressPanel);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ImagePortraitForm";
@@ -1032,7 +1032,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.DragTargetPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
@@ -1049,8 +1049,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.D8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             this.X_MUG_EXCEED.ResumeLayout(false);
             this.X_MUG_EXCEED.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MUG_EXCEED_B19)).EndInit();
@@ -1078,7 +1078,7 @@
         private FEBuilderGBA.TextBoxEx BlockSize;
         private FEBuilderGBA.TextBoxEx SelectAddress;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel DragTargetPanel2;
         private System.Windows.Forms.Button ImportButton;
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.NumericUpDown Address;
@@ -1111,7 +1111,7 @@
         private System.Windows.Forms.NumericUpDown D8;
         private System.Windows.Forms.NumericUpDown D4;
         private System.Windows.Forms.NumericUpDown D0;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;

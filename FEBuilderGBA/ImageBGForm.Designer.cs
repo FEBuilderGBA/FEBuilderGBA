@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
+            this.label4 = new System.Windows.Forms.Label();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.D8 = new System.Windows.Forms.NumericUpDown();
@@ -44,7 +46,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel2 = new System.Windows.Forms.Panel();
             this.DecreaseColorTSAToolButton = new System.Windows.Forms.Button();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
@@ -58,16 +60,14 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.DragTargetPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -85,23 +85,44 @@
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // DragTargetPanel
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Comment);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.D0);
-            this.panel2.Controls.Add(this.D4);
-            this.panel2.Controls.Add(this.D8);
-            this.panel2.Controls.Add(this.J_8);
-            this.panel2.Controls.Add(this.J_4);
-            this.panel2.Controls.Add(this.J_0);
-            this.panel2.Controls.Add(this.X_BG_PIC);
-            this.panel2.Location = new System.Drawing.Point(274, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 340);
-            this.panel2.TabIndex = 1;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.Comment);
+            this.DragTargetPanel.Controls.Add(this.label4);
+            this.DragTargetPanel.Controls.Add(this.D0);
+            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.D8);
+            this.DragTargetPanel.Controls.Add(this.J_8);
+            this.DragTargetPanel.Controls.Add(this.J_4);
+            this.DragTargetPanel.Controls.Add(this.J_0);
+            this.DragTargetPanel.Controls.Add(this.X_BG_PIC);
+            this.DragTargetPanel.Location = new System.Drawing.Point(274, 76);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(823, 340);
+            this.DragTargetPanel.TabIndex = 1;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(132, 134);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(256, 25);
+            this.Comment.TabIndex = 196;
+            // 
+            // label4
+            // 
+            this.label4.AccessibleDescription = "@COMMENT";
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(3, 131);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 31);
+            this.label4.TabIndex = 195;
+            this.label4.Text = "コメント";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // D0
             // 
@@ -272,17 +293,17 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // DragTargetPanel2
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.DecreaseColorTSAToolButton);
-            this.panel3.Controls.Add(this.ImportButton);
-            this.panel3.Controls.Add(this.ExportButton);
-            this.panel3.Location = new System.Drawing.Point(273, 426);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(825, 43);
-            this.panel3.TabIndex = 73;
+            this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.DecreaseColorTSAToolButton);
+            this.DragTargetPanel2.Controls.Add(this.ImportButton);
+            this.DragTargetPanel2.Controls.Add(this.ExportButton);
+            this.DragTargetPanel2.Location = new System.Drawing.Point(273, 426);
+            this.DragTargetPanel2.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel2.Name = "DragTargetPanel2";
+            this.DragTargetPanel2.Size = new System.Drawing.Size(825, 43);
+            this.DragTargetPanel2.TabIndex = 73;
             // 
             // DecreaseColorTSAToolButton
             // 
@@ -430,27 +451,6 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(132, 134);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(256, 25);
-            this.Comment.TabIndex = 196;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleDescription = "@COMMENT";
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(3, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 31);
-            this.label4.TabIndex = 195;
-            this.label4.Text = "コメント";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ImageBGForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -458,16 +458,16 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1111, 472);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.AddressPanel);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.DragTargetPanel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ImageBGForm";
             this.Text = "背景画像";
             this.Load += new System.EventHandler(this.ImageBGForm_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).EndInit();
@@ -475,7 +475,7 @@
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.DragTargetPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -487,7 +487,7 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.NumericUpDown D0;
         private System.Windows.Forms.NumericUpDown D4;
         private System.Windows.Forms.NumericUpDown D8;
@@ -501,7 +501,7 @@
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel DragTargetPanel2;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

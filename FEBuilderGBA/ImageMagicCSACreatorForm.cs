@@ -118,6 +118,13 @@ namespace FEBuilderGBA
             {
                 this.MagicListExpandsButton.PerformClick();
             }
+            U.AllowDropFilename(this, new string[] { ".TXT" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    MagicAnimeImportButton_Click(null, null);
+                }
+            });
         }
 
         void DrawSelectedAnime()
@@ -201,24 +208,31 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string title = R._("開くファイル名を選択してください");
-            string filter = R._("TEXT|*.txt|All files|*");
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
+            {
+            }
+            else
+            {
+                string title = R._("開くファイル名を選択してください");
+                string filter = R._("TEXT|*.txt|All files|*");
 
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            Program.LastSelectedFilename.Load(this, "", open);
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                Program.LastSelectedFilename.Load(this, "", open);
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (!U.CanReadFileRetry(open))
+                {
+                    return;
+                }
+                Program.LastSelectedFilename.Save(this, "", open);
+                filename = open.FileName;
             }
-            if (!U.CanReadFileRetry(open))
-            {
-                return;
-            }
-            Program.LastSelectedFilename.Save(this, "", open);
-            string filename = open.FileName;
 
             //インポート実行
             uint id = (uint)AddressList.SelectedIndex + 1;
@@ -229,6 +243,7 @@ namespace FEBuilderGBA
                 return;
             }
         }
+
         public string MagicAnimeImportDirect(uint id, string filename)
         {
             if (InputFormRef.IsPleaseWaitDialog(this))

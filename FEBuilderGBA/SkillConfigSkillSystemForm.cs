@@ -46,6 +46,22 @@ namespace FEBuilderGBA
             ShowZoomComboBox.SelectedIndex = 0;
             U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);
             U.SetIcon(AnimationExportButton, Properties.Resources.icon_arrow);
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
+
+            U.AllowDropFilename(this, new string[] { ".TXT" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    AnimationImportButton_Click(null, null);
+                }
+            });
         }
 
         uint TextBaseAddress;
@@ -605,24 +621,32 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string title = R._("開くファイル名を選択してください");
-            string filter = R._("スキルアニメスクリプト|*.txt|All files|*");
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
+            {
+            }
+            else
+            {
 
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            open.FileName = "skill_" + this.AddressList.Text.Trim();
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
+                string title = R._("開くファイル名を選択してください");
+                string filter = R._("スキルアニメスクリプト|*.txt|All files|*");
+
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                open.FileName = "skill_" + this.AddressList.Text.Trim();
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (!U.CanReadFileRetry(open))
+                {
+                    return;
+                }
+                filename = open.FileNames[0];
+                Program.LastSelectedFilename.Save(this, "", open);
             }
-            if (!U.CanReadFileRetry(open))
-            {
-                return;
-            }
-            string filename = open.FileNames[0];
-            Program.LastSelectedFilename.Save(this, "", open);
 
             uint id = (uint)this.AddressList.SelectedIndex;
             string error = SkillAnimeImportDirect(id,filename);

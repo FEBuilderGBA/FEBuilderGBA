@@ -47,6 +47,14 @@ namespace FEBuilderGBA
             U.SetIcon(BattleAnimeImportButton, Properties.Resources.icon_upload);
             U.SetIcon(BattleAnimeExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(X_N_JumpEditor, Properties.Resources.icon_film);
+
+            U.AllowDropFilename(this, new string[] { ".TXT", ".BIN" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    this.BattleAnimeImportButton_Click(null,null);
+                }
+            });
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(ImageBattleAnimeForm self)
@@ -590,34 +598,41 @@ namespace FEBuilderGBA
                return;
            }
 
-           string title = R._("開くファイル名を選択してください");
-           string filter = R._("バトルアニメ テキスト形式|*.txt|FEditorシリアライズ形式|*|All files|*");
-
-           OpenFileDialog open = new OpenFileDialog();
-           open.Title = title;
-           open.Filter = filter;
-           Program.LastSelectedFilename.Load(this, "", open);
-           DialogResult dr = open.ShowDialog();
-           if (dr != DialogResult.OK)
+           string filename;
+           if (ImageFormRef.GetDragFilePath(out filename))
            {
-               return;
            }
-           if (!U.CanReadFileRetry(open))
+           else
            {
-               return;
-           }
-           Program.LastSelectedFilename.Save(this, "", open);
-           string filename = open.FileNames[0];
+               string title = R._("開くファイル名を選択してください");
+               string filter = R._("バトルアニメ テキスト形式|*.txt|FEditorシリアライズ形式|*|All files|*");
 
-           //インポート実行
-           uint id = (uint)N_AddressList.SelectedIndex + 1;
-           string error = BattleAnimeImportDirect(id, filename);
-           if (error != "")
-           {
+               OpenFileDialog open = new OpenFileDialog();
+               open.Title = title;
+               open.Filter = filter;
+               Program.LastSelectedFilename.Load(this, "", open);
+               DialogResult dr = open.ShowDialog();
+               if (dr != DialogResult.OK)
+               {
+                   return;
+               }
+               if (!U.CanReadFileRetry(open))
+               {
+                   return;
+               }
+               Program.LastSelectedFilename.Save(this, "", open);
+               filename = open.FileNames[0];
+            }
+
+            //インポート実行
+            uint id = (uint)N_AddressList.SelectedIndex + 1;
+            string error = BattleAnimeImportDirect(id, filename);
+            if (error != "")
+            {
                 R.ShowStopError(error);
                 return;
-           }
-       }
+            }
+        }
 
 
        public string BattleAnimeImportDirect(uint id,string filename)

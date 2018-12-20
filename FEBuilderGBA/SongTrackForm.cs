@@ -36,6 +36,15 @@ namespace FEBuilderGBA
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(SONGPLAY, Properties.Resources.icon_music);
+
+            U.AllowDropFilename(this, new string[] { ".S", ".MID", ".MIDI", ".WAV", ".INSTRUMENT" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
+
         }
 
         public InputFormRef InputFormRef;
@@ -109,26 +118,34 @@ namespace FEBuilderGBA
                 return;
             }
 
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
+            {
+            }
+            else
+            {
+                string title = R._("インポートする音楽ファイルを選択してください");
+                string filter = R._("sound|*.s;*.wav;*.mid;*.midi;*.instrument|s|*.s|midi|*.mid;*.midi|wav|*.wav|MusicalInstrument|*.instrument|All files|*");
+
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+                Program.LastSelectedFilename.Load(this, "", open);
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (!U.CanReadFileRetry(open))
+                {
+                    return;
+                }
+                Program.LastSelectedFilename.Save(this, "", open);
+                filename = open.FileNames[0];
+            }
+
             uint songtable_address = InputFormRef.BaseAddress + (InputFormRef.BlockSize * (uint)AddressList.SelectedIndex);
 
-            string title = R._("インポートする音楽ファイルを選択してください");
-            string filter = R._("sound|*.s;*.wav;*.mid;*.midi;*.instrument|s|*.s|midi|*.mid;*.midi|wav|*.wav|MusicalInstrument|*.instrument|All files|*");
-
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-            Program.LastSelectedFilename.Load(this, "", open);
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
-            {
-                return;
-            }
-            if (!U.CanReadFileRetry(open))
-            {
-                return;
-            }
-            Program.LastSelectedFilename.Save(this, "", open);
-            string filename = open.FileNames[0];
             string error = "";
 
             string ext = U.GetFilenameExt(filename);
@@ -136,7 +153,7 @@ namespace FEBuilderGBA
             {
                 SongTrackImportWaveForm f = (SongTrackImportWaveForm)InputFormRef.JumpFormLow<SongTrackImportWaveForm>();
                 f.Init();
-                dr = f.ShowDialog();
+                DialogResult dr = f.ShowDialog();
                 if (dr != System.Windows.Forms.DialogResult.OK)
                 {
                     return;
@@ -148,7 +165,7 @@ namespace FEBuilderGBA
                 //楽器セットとオプションを選択してもらう.
                 SongTrackImportMidiForm f = (SongTrackImportMidiForm)InputFormRef.JumpFormLow<SongTrackImportMidiForm>();
                 f.Init((uint)P4.Value);
-                dr = f.ShowDialog();
+                DialogResult dr = f.ShowDialog();
                 if (dr != System.Windows.Forms.DialogResult.OK)
                 {
                     return;
@@ -191,7 +208,7 @@ namespace FEBuilderGBA
                 //楽器セットを選択してもらう.
                 SongTrackImportSelectInstrumentForm f = (SongTrackImportSelectInstrumentForm)InputFormRef.JumpFormLow<SongTrackImportSelectInstrumentForm>();
                 f.Init((uint)P4.Value);
-                dr = f.ShowDialog();
+                DialogResult dr = f.ShowDialog();
                 if (dr != System.Windows.Forms.DialogResult.OK)
                 {
                     return;

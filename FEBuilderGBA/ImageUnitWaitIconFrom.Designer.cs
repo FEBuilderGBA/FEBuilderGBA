@@ -42,7 +42,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,13 +65,13 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.DragTargetPanel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.DragTargetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.DragTargetPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -247,29 +247,29 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // DragTargetPanel
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.Comment);
-            this.panel2.Controls.Add(this.X_PALETTE);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.X_ONE_STEP);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.X_ONE_PIC);
-            this.panel2.Controls.Add(this.X_PIC);
-            this.panel2.Controls.Add(this.D4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.B3);
-            this.panel2.Controls.Add(this.B2);
-            this.panel2.Controls.Add(this.B1);
-            this.panel2.Controls.Add(this.B0);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(355, 64);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 392);
-            this.panel2.TabIndex = 57;
+            this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.Comment);
+            this.DragTargetPanel.Controls.Add(this.X_PALETTE);
+            this.DragTargetPanel.Controls.Add(this.label8);
+            this.DragTargetPanel.Controls.Add(this.label7);
+            this.DragTargetPanel.Controls.Add(this.X_ONE_STEP);
+            this.DragTargetPanel.Controls.Add(this.label6);
+            this.DragTargetPanel.Controls.Add(this.X_ONE_PIC);
+            this.DragTargetPanel.Controls.Add(this.X_PIC);
+            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.label5);
+            this.DragTargetPanel.Controls.Add(this.B3);
+            this.DragTargetPanel.Controls.Add(this.B2);
+            this.DragTargetPanel.Controls.Add(this.B1);
+            this.DragTargetPanel.Controls.Add(this.B0);
+            this.DragTargetPanel.Controls.Add(this.label4);
+            this.DragTargetPanel.Location = new System.Drawing.Point(355, 64);
+            this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel.Name = "DragTargetPanel";
+            this.DragTargetPanel.Size = new System.Drawing.Size(907, 392);
+            this.DragTargetPanel.TabIndex = 57;
             // 
             // Comment
             // 
@@ -541,17 +541,17 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // panel3
+            // DragTargetPanel2
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.X_JUMP_MOVEICON);
-            this.panel3.Controls.Add(this.ImportButton);
-            this.panel3.Controls.Add(this.ExportButton);
-            this.panel3.Location = new System.Drawing.Point(355, 458);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(906, 56);
-            this.panel3.TabIndex = 58;
+            this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.X_JUMP_MOVEICON);
+            this.DragTargetPanel2.Controls.Add(this.ImportButton);
+            this.DragTargetPanel2.Controls.Add(this.ExportButton);
+            this.DragTargetPanel2.Location = new System.Drawing.Point(355, 458);
+            this.DragTargetPanel2.Margin = new System.Windows.Forms.Padding(5);
+            this.DragTargetPanel2.Name = "DragTargetPanel2";
+            this.DragTargetPanel2.Size = new System.Drawing.Size(906, 56);
+            this.DragTargetPanel2.TabIndex = 58;
             // 
             // ImageUnitWaitIconFrom
             // 
@@ -560,8 +560,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1266, 518);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.DragTargetPanel2);
+            this.Controls.Add(this.DragTargetPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AddressPanel);
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -574,8 +574,8 @@
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.DragTargetPanel.ResumeLayout(false);
+            this.DragTargetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
@@ -585,8 +585,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.DragTargetPanel2.ResumeLayout(false);
+            this.DragTargetPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -607,7 +607,7 @@
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.NumericUpDown Address;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel DragTargetPanel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown B3;
@@ -628,7 +628,7 @@
         private System.Windows.Forms.Label X_JUMP_MOVEICON;
         private InterpolatedPictureBox X_PIC;
         private InterpolatedPictureBox X_ONE_PIC;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel DragTargetPanel2;
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label8;
     }

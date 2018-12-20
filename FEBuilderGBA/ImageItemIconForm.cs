@@ -33,6 +33,14 @@ namespace FEBuilderGBA
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null,null);
+                }
+            });
         }
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
@@ -146,6 +154,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+
             int width = 2 * 8;
             int height = 2 * 8;
             if (bitmap.Width != width || bitmap.Height != height)
@@ -194,7 +203,6 @@ namespace FEBuilderGBA
             InputFormRef.ReloadAddressList();
             InputFormRef.ShowWriteNotifyAnimation(this, addr);
         }
-
 
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)

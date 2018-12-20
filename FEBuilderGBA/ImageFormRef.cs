@@ -1466,6 +1466,12 @@ namespace FEBuilderGBA
         public static string OpenFilenameDialogFullColor(Control self)
         {
             string filename;
+            if (GetDragFilePath(out filename))
+            {
+                //drag されているファイルがあるらしい.
+                return filename;
+            }
+            else
             {
                 string title = R._("開くファイル名を選択してください");
                 string filter = R._("IMAGES|*.png;*.bmp;*.jpg|PNG|*.png|BMP|*.bmp|All files|*");
@@ -1488,9 +1494,48 @@ namespace FEBuilderGBA
             }
             return filename;
         }
+
+        static string DragFilePath = "";
+
+        public static bool GetDragFilePath(out string out_path)
+        {
+            if (DragFilePath == "")
+            {
+                out_path = "";
+                return false;
+            }
+
+            out_path = DragFilePath;
+            DragFilePath = ""; //利用したので、潰す
+
+            return (File.Exists(out_path));
+        }
+        static void UpdateDragFilePath(string path)
+        {
+            DragFilePath = path;
+        }
+        public class AutoDrag : IDisposable
+        {
+            public AutoDrag(string filename)
+            {
+                UpdateDragFilePath(filename);
+            }
+            public void Dispose()
+            {
+                UpdateDragFilePath("");
+            }
+        }
+
+        public readonly static string[] IMAGE_FILE_FILTER = new string[]{ ".PNG",".GIF",".BMP" };
+
         public static Bitmap ImportFilenameDialog(Control self, Bitmap paletteHint = null, string addName = "")
         {
             string filename;
+            if (GetDragFilePath(out filename))
+            {
+                //drag されているファイルがあるらしい.
+            }
+            else
             {
                 string title = R._("開くファイル名を選択してください");
                 string filter = R._("IMAGES|*.png;*.bmp|PNG|*.png|BMP|*.bmp|All files|*");
