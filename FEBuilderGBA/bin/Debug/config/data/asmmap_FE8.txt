@@ -11561,3 +11561,5 @@
 0860821C	:086094B3	不明なデータ	OAMSP Maybe	11	{J}
 0874E5D4	:0874F211	不明なデータ	OAMSP Maybe	12	{J}
 08A1D320	:08A1D8BF	不明なデータ	OAMSP Maybe	13	{J}
+0808B93C	セーブメニューの項目の背景	{J}
+0808B8DC	LoadChapterTitleGfx2	{J}

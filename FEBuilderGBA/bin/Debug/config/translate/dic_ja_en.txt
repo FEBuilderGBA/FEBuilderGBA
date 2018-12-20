@@ -3460,3 +3460,198 @@ HPの薬	HP Tonic
 剣士	Swordsman
 アーチナイト	Arch Knight
 ミスティックセージ	Mystic Sage
+『近接防御』\r\n敵攻撃時に直接攻撃を\e\n－６ダメージ	Short Shield\r\n-6 damage when attacked up close.
+『コンゴウの一撃』\r\n自分から攻撃時に\r\n受けるダメージー１０	Armormed Blow\r\nDef +10 when attacking.
+『神風招来』\r\n杖を使った場合、一度だけ\r\n確実に再行動ができる	Powerstaff\r\nTake another action after using\r\na staff (once per turn).
+風の精霊セチの加護\r\n１ターン　味方の回避を上げます	A dance that increases an\r\nallies' avoid by 10 for a turn.
+　『秘伝』\r\nスキル発動率を１０％上昇させる	Rightful King\r\n+10% to skill activation rate.
+　『エリート』\r\n通常よりも多くの経験値を得る	Paragon\r\nEXP gain is doubled.
+奥義『太陽』（技％）\r\n与ダメージの半分を回復する	Sol (Skill%)\r\nRestore HP equal to half\r\nof damage dealt.
+奥義『月光』（技％）\r\n相手の守備を半減して攻撃	Luna (Skill%)\r\nHalve opponent's defense.
+奥義『流星』（ＬＶ％）\r\n目にもとまらぬ連続攻撃	Astra (Lv%)\r\nAttack 5 times at half damage.
+奥義『鳴動』（技％）\r\nダメージに自分の体格を加算する	Colossus (Skill%)\r\nAdd Con to damage.
+奥義『復讐』（技％）\r\n減少したＨＰ半分をダメージに加算	Vengeance (Skill%)\r\nAdd half of lost HP to damage.
+奥義『天空』（ＬＶ％）\r\n敵の守備を８割減し　ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
+奥義『瞬殺』（特殊％）\r\n通常の５倍のダメージを与える	Shootout (Random%)\r\nDeal quintuple damage.
+　『怒り』\r\nＨＰが１ケタのとき必殺＋５０％	Wrath\r\nCrit +50% when HP is at 1.
+　『キャンセル』（技％）\r\n相手の反撃を封じる	Cancel\r\nNegates the opponent's counterattack.
+　『待ち伏せ』\r\n常に先制攻撃をおこなう	Ambush\r\nAlways attack first.
+　『見切り』\r\n相手の戦闘スキルを無効にする	Nihil\r\nIgnore opponent's combat skills.
+　『祈り』（幸運×３％）\r\n致命攻撃をＨＰ１で耐える	Miracle (Luck x3%)\r\nSurvive a fatal blow with 1 HP.
+　『再行動』（幸運％）\r\n行動終了後にもう一度行動ができる	Re-Move (Luck%)\r\nAct again after completing an action.
+　『前線指揮』\r\n３マス以内の味方の命中回避＋１０％	Charm\r\nAllies within 3 spaces gain +10 hit.
+　『恐怖』\r\n３マス以内の敵の回避必殺－１０％	Intimidate\r\nEnemies within 3 tiles lose 10 avoid.
+　『連続』（技％）\r\n攻撃をもう一度おこなう	Adept (Skill%)\r\nInitiates another attack.
+　『回復』\r\n毎ターンＨＰを２０％回復	Renewal\r\nRestore 20%HP at the\r\nstart of every turn.
+　『疾風迅雷』\r\n戦闘に勝利した場合、再行動が可能	Galeforce\r\nAct again after defeating an\r\nenemy (once per turn).
+奥義『陽光』（技％）\r\n敵の魔防を半減し　ダメージ半分回復	Flare (Skill%)\r\nHalve the foes's resistance and heal\r\nHP equal to half of damage dealt.
+　『魔道特効』\r\n魔道士に対して常に特効	Magekiller\r\nDeal effective damage to magic users.
+　『大盾』（ＬＶ％）\r\n相手の物理攻撃を半減する	Pavise (Lv%)\r\nReduces physical damage by half.
+　『召喚』\r\n異形の者を召喚する	Summon\r\nSummons a phantom.
+奥義『衝撃』（技％）\r\n相手をバサーク状態にする	Enrage (Skill%)\r\nMakes the opponent go berserk.
+　『近接射撃』\r\n弓による直接攻撃が可能	Proximity Shot\r\nCan use bows at close range.
+　『神射手』\r\n弓による攻撃の射程を伸ばす	Bowrange+r\r\n+1 maximum attack range\r\nwhile using a bow.
+　『必的』（技％）\r\n時々必ず攻撃が当たる	Sure Shot (Skill%)\r\nThe attack will not miss.
+　『すり抜け』\r\n敵ユニットに通過を防がれない	Pass\r\nMove through enemy units.
+　『神盾』\r\n被ダメージを常時半減	Divine Shield\r\nHalves all damage received.
+　『かぎ開』\r\n扉や宝箱を開けられる	Locktouch\r\nOpen doors and chests without keys.
+　『盗む』\r\n装備していないアイテムを奪える	Steal\r\nSteal unequipped items when\r\nspeed is higher than target's.
+奥義『叫喚』（技％）\r\n相手を石化状態にする	Petrify (Skill%)\r\nTurns the opponent to stone.
+『勇将』\r\nＨＰ半減時、スキル発動率を\r\nプラス３０％	Hero\r\nWhen HP is less than half,\r\nskill activation rate +30%.
+『強運』\r\n敵から必殺を受けない	Blessing\r\nCannot be defeated by enemy attacks.
+　『メンテナンス』\r\n『盗み』と『担ぎ』を無効にする	Watchful\r\nCannot be captured or stolen from.
+『練達』\r\n特効を無効にする	Nullify\r\nNegates effective damage.
+　『聖盾』（技％）\r\n相手の魔法攻撃を無効にする	Aegis (Skill%)\r\nNullify a magical attack.
+奥義『華炎』（技％）\r\n物理攻撃では魔力の半分\r\n魔法攻撃では力の半分を加算	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
+『連撃防御』\r\n被追撃時、１回目以降の\r\nダメージを半減する	Bunker\r\nReduces follow-up damage received by half.
+『虚無』\r\n取得する経験値が０になる	Void Curse\r\nUnit gives no experience\r\npoints upon being defeated.
+奥義『竜牙』（技％）\r\n相手に与えるダメージの半分を\r\n攻撃力に追加	Rend Heaven (Skill%)\r\nAdds half of the opponent's\r\nstrength to your attack.
+　『再移動』\r\n行動した後に、残った移動分\r\n再移動ができる	Canto\r\nCan use remaining movement\r\nafter performing any action.
+　『聖杖』\r\n杖の射程がリブローと同じになる	Staff Savant\r\nIncrease maximum staff range by 1.
+　『守備隊形』\r\nこの戦闘では追撃が発生しない	Wary Fighter\r\nPrevents all follow-up attacks.
+『必殺』\r\n必殺率が１５％上昇する	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
+『攻め立て』\r\n自分の追撃を連続で行う	Desperation\r\nFollow-up attacks will occur immediately.
+『武器殺し』\r\n相手が特定の武器を装備している場合\r\n優位になれる補正が付く	Breaker\r\n+50 Hit/Avo against the\r\nspecified weapon.
+奥義『撃破』（技％）\r\n相手に与えるダメージを２倍する\r\n（必殺時は４倍）	Impale (Skill%)\r\nDeals double damage. Deals quadruple\r\ndamage if it will defeat the opponent.
+『生命吸収』\r\n自ターンの攻撃で敵を撃破した場合\r\nＨＰを５０％回復する	Lifetaker\r\nRestore 50%HP after attacking
+and defeating an enemy.
+『鬼神の一撃』\r\n自分から攻撃時に\r\n与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
+『死線』\r\n与ダメージ＋１０被ダメージ＋１０	Life and Death\r\nDamage dealt and recieved +10.
+『持ち替え』\r\n反撃時、その距離に見合った武器に\r\n持ち替えて戦闘を行う	Shift\r\nCan change weapons when attacked\r\nif unable to counterattack.
+奥義『ジハード』（ＬＶ％）\r\nＨＰ半減時、元の攻撃力の２倍のダメージと\r\n与ダメの半分を回復する	Crusade (Lv%)\r\nWhen HP is half or less, deal double damage\r\nand restore HP equal to damage dealt.
+『奥義の拍動』\r\n４ターンに１回だけ、\r\n確率スキルの発動率が１００％になる	Mysterious Rhythm\r\nOnce every 4 turns, skills occur\r\nat a 100% activation rate.
+奥義『月食』（技％）\r\n相手のＨＰを１にする\r\n（撃破できる場合には発動しない）	Eclipse (Skill%)\r\nIf the attack does not defeat the\r\nopponent, it reduces their HP to 1.
+このキャラは章終了時に離脱します\r\n部隊に加入しません	Aside\r\nThis character is only usable\r\nfor the duration of the chapter.
+遠距離攻撃を得意とする戦車\r\n装備『弓』	Heavy tanks specialized in attacking\r\nfrom a long range. Equip: Ballistae.『遠距離防御』\r\n被間接攻撃時、受けるダメージー６	Tower Shield\r\n-6 damage when attacked at range.
+『電撃戦闘』\r\nお互い２回連続攻撃を行う	Continue\r\nDoubles the amount of\r\nrounds of all combat.
+『奮迅』\r\n戦闘時、大幅に強化されるが\r\n戦闘終了時にＨＰが６減少する	Fury\r\nStr/Spd/Def/Res +2, but take\r\n6 damage after attacking.
+『相性激化』\r\n３すくみの効果が２倍になる	Triangle Adept\r\nDoubles weapon traingle effects.
+『遠距離無効』\r\n敵の間接攻撃を無効化する	Tower Shield+\r\nNegates all ranged attacks.
+『神の器』\r\n自分のスキル発動率＋３０	Rightful God\r\n+30% to skill activation rate.
+ドラゴンシールド	Drg. Shield
+ランスナイト	Cavalier
+移動力にすぐれる騎士\r\n装備『槍』	Mounted knights with swift\r\nmovement. Equip: Lances.
+鋼の盾	Stl. Shield
+ブライアン	Brian
+ネームネス	Nameless
+エトルリア兵	Etrurian
+書で覚えた\r\nスキルを消します	Removes any skills\r\nlearned via manuals.
+祈りペンダント	Prayer Amlt.
+鉄の盾	Iron Shield
+ゾット団	Zot's
+銀の盾	Silv. Shield
+レザー	Lthr. Shield
+レジスタンス	Resistance
+ペルシーダ	Spellshield
+クインクレイン	Arrowspate
+ストンヘッジ	Stonehoist
+スキルの書	Skill Manual
+指揮の書	Cmd Manual
+かがり火	Beacon
+ならずもの	Bandit
+アイアス	Aias
+アイザック	Isaac
+アモン	Amon
+アリアナ	Ariana
+アリシア	Alicia
+アルティ	Artie
+イーリス	Elise
+エキドナ	Echidna
+エトルリア兵	Etrurian
+エルフィン	Elfin
+オドレイ	Audrey
+オニール	O'Neill
+オルガ	Olga
+オルソン	Olson
+オルソン	Orson
+カーラ	Kara
+カーライル	Carlyle
+ギルバード	Phelix
+クリムト	Klimt
+クロエ	Chloe
+クロノス	Kronos
+ケセルダ	Caellach
+ケルベス	Kerbes
+ケンプフ	Ken
+サマナーン	Summonern
+ザール	Saar
+ジェスト	Jester
+ジョニー	Johnny
+ジョン	John
+ジーナ	Jeana
+セレーネ	Selene
+ソフィア	Sofia
+ゾット	Zot
+ゾット団	Zot's
+タイター	Titor
+ダリス	Darth
+ティラード	Tirado
+デミ	Deni
+デュラン	Dylan
+ドラグーン隊	Dragoon
+ネームレス	Nameless
+ノアール	Schwarz
+ノーマ	Numa
+ハグロ	Haguro
+バズバ	Bazba
+バズバ団	Bazba's
+バッカス	Berkus
+バレル	Barelle
+パブロ	Pablo
+ヒューゲル	Hyuuga
+ヒューゲル隊	Hyuuga's
+ファリス	Ferris
+ファード	Fado
+フォデス	Fomortiis
+フレリア兵	Frelian
+ブライアン	Brian
+ブラン	Schnee
+ブレゲ	Breguet
+ヘイデン	Hayden
+ヘルメス	Hermes
+ベルナ	Beran
+ボリス	Boris
+マンセル	Mansel
+マーゲイ	Hugh
+マーレイ	Murray
+ミケ	Mike
+ミスラ	Mythra
+ミルラ	Myrrh
+ムラサメ	Murasame
+ムルヴァ	Morva
+モールス	Morris
+ララム	Lalum
+リオン	Leon
+リディ	Lizzy
+リヒター	Richter
+リリア	Lillia
+レジスタンス	Resistance
+レム	Rem
+ロザリー	Rosalie
+ロストン兵	Rausten
+ヴァルカン	Vulcan
+ヴィガルド	Vigarde
+ヴィルヘルム	Wilhelm
+ヴォルツ	Wolf
+傭兵団	Mercenary
+剣闘士	Gladiator
+宝あらし	Hunter
+対戦相手	Enemy
+市民	Citizen
+市民	Civilian
+神官	Priest
+船長	Captain
+西方『賊』	Pirate
+解放軍	Liberation
+軍師	Tactician
+シュヴァリエ	Chevalier
+ワイルドギース	Legionnaire
+オフィシエ	Commandeur
+ソードナイト	Cavalier
+ランスナイト	Cavalier
+ダークペガサス	Dark Flier
+ドラグーン	Dragoon
+バリスタ	Ballistician
+コマンドナイト	Command Kn.
+メイド	Maid
+コマンダー	Harbinger

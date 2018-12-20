@@ -1,2 +1,3 @@
-Occult『ジハード』
-攻撃力２倍　与ダメージ半分回復
+Crusade (Lv%)
+When HP is half or less, deal double damage
+and restore HP equal to damage dealt.
