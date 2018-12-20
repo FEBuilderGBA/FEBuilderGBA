@@ -26,6 +26,21 @@ namespace FEBuilderGBA
             U.SetIcon(ImportAllButton,Properties.Resources.icon_upload);
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
+            U.AllowDropFilename(this, new string[]{".TXT"} , (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportAllButton_Click(null, null);
+                }
+            });
         }
 
 
@@ -405,24 +420,31 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string title = R._("読込むファイル名を選択してください");
-            string filter = R._("マップアニメ1|*.mapanime1.txt|All files|*");
-
-            OpenFileDialog open = new OpenFileDialog();
-            open.Title = title;
-            open.Filter = filter;
-
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
             {
-                return;
             }
-            if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+            else
             {
-                return;
+                string title = R._("読込むファイル名を選択してください");
+                string filter = R._("マップアニメ1|*.mapanime1.txt|All files|*");
+
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = title;
+                open.Filter = filter;
+
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+                {
+                    return;
+                }
+                filename = open.FileNames[0];
+                Program.LastSelectedFilename.Save(this, "", open);
             }
-            string filename = open.FileNames[0];
-            Program.LastSelectedFilename.Save(this, "", open);
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {

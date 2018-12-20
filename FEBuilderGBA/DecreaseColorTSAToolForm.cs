@@ -19,6 +19,14 @@ namespace FEBuilderGBA
             //背景を選択.
             this.Method.SelectedIndex = 1;
             this.ConvertSizeMethod.SelectedIndex = 1;
+
+            AFilename.AllowDropFilename();
+            BFilename.AllowDropFilename();
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                AFilename.Text = filename;
+            });
         }
 
         public void InitMethod(int i)

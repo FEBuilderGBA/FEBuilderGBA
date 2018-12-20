@@ -26,6 +26,21 @@ namespace FEBuilderGBA
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
             U.SetIcon(ExportAPButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportAPButton, Properties.Resources.icon_upload);
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
+            U.AllowDropFilename(this, new string[] { ".BIN" }, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportAPButton_Click(null, null);
+                }
+            });
         }
 
         public InputFormRef InputFormRef;
@@ -332,17 +347,24 @@ namespace FEBuilderGBA
             open.Title = title;
             open.Filter = filter;
 
-            DialogResult dr = open.ShowDialog();
-            if (dr != DialogResult.OK)
+            string filename;
+            if (ImageFormRef.GetDragFilePath(out filename))
             {
-                return;
             }
-            if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+            else
             {
-                return;
+                DialogResult dr = open.ShowDialog();
+                if (dr != DialogResult.OK)
+                {
+                    return;
+                }
+                if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+                {
+                    return;
+                }
+                filename = open.FileNames[0];
+                Program.LastSelectedFilename.Save(this, "", open);
             }
-            string filename = open.FileNames[0];
-            Program.LastSelectedFilename.Save(this, "", open);
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {

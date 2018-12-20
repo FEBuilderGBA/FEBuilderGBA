@@ -47,6 +47,14 @@ namespace FEBuilderGBA
                 this.FontSample.Text = "AB@cd"; ///No Translate
                 this.SearchChar.Text = "X";     ///No Translate
             }
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
+            });
         }
 
 

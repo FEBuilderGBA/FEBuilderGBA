@@ -35,9 +35,13 @@ namespace FEBuilderGBA
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
-            
-            U.AllowDropFilename(this,ImageFormRef.IMAGE_FILE_FILTER , (string filename) => {
-                ImportButtonDirect(filename);
+
+            U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
+            {
+                using (ImageFormRef.AutoDrag ad = new ImageFormRef.AutoDrag(filename))
+                {
+                    ImportButton_Click(null, null);
+                }
             });
         }
 
@@ -1284,10 +1288,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            ImportButtonDirect(imagefilename);
-        }
-        private void ImportButtonDirect(string imagefilename)
-        {
+
             Bitmap fullColor = ImageUtil.OpenLowBitmap(imagefilename); //bitmapそのものの色で開く.
             if (fullColor == null)
             {
