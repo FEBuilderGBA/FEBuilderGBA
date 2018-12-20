@@ -8144,13 +8144,13 @@ Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM ba
 Yes
 
 :変更する色
-Change color
+Target Color
 
 :新しい色
-New color
+New Color
 
-:連動して変更す色
-Colors to change color.
+:連動して変更する色
+Color to change in conjunction
 
 :プレビュー
 Preview

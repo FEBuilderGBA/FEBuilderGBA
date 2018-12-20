@@ -11468,3 +11468,5 @@ r3=X tile position of menu of the right	{U}
 0860821C	:086094B3	未知数据。	OAMSP Maybe	11	{J}
 0874E5D4	:0874F211	未知数据。	OAMSP Maybe	12	{J}
 08A1D320	:08A1D8BF	未知数据。	OAMSP Maybe	13	{J}
+0808B93C	保存菜单项的背景。	{J}
+0808B8DC	LoadChapterTitleGfx2	{J}

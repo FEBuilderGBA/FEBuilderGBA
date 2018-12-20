@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelEx1 = new FEBuilderGBA.LabelEx();
-            this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.NewColor = new System.Windows.Forms.Button();
             this.OldColor = new System.Windows.Forms.Panel();
             this.NewColorR = new System.Windows.Forms.NumericUpDown();
@@ -38,7 +36,6 @@
             this.NewColorG = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.NewColorB = new System.Windows.Forms.NumericUpDown();
-            this.OldColorInfo = new FEBuilderGBA.TextBoxEx();
             this.Ref01Color = new System.Windows.Forms.Panel();
             this.Ref01 = new System.Windows.Forms.CheckBox();
             this.Ref02 = new System.Windows.Forms.CheckBox();
@@ -71,36 +68,19 @@
             this.Ref10Color = new System.Windows.Forms.Panel();
             this.Ref09 = new System.Windows.Forms.CheckBox();
             this.Ref09Color = new System.Windows.Forms.Panel();
-            this.labelEx3 = new FEBuilderGBA.LabelEx();
-            this.labelEx4 = new FEBuilderGBA.LabelEx();
             this.OKButton = new System.Windows.Forms.Button();
-            this.Preview = new FEBuilderGBA.InterpolatedPictureBox();
             this.ResetButton = new System.Windows.Forms.Button();
+            this.Preview = new FEBuilderGBA.InterpolatedPictureBox();
+            this.labelEx4 = new FEBuilderGBA.LabelEx();
+            this.labelEx3 = new FEBuilderGBA.LabelEx();
+            this.OldColorInfo = new FEBuilderGBA.TextBoxEx();
+            this.labelEx2 = new FEBuilderGBA.LabelEx();
+            this.labelEx1 = new FEBuilderGBA.LabelEx();
             ((System.ComponentModel.ISupportInitialize)(this.NewColorR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewColorG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewColorB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Preview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelEx1
-            // 
-            this.labelEx1.AutoSize = true;
-            this.labelEx1.ErrorMessage = "";
-            this.labelEx1.Location = new System.Drawing.Point(13, 13);
-            this.labelEx1.Name = "labelEx1";
-            this.labelEx1.Size = new System.Drawing.Size(91, 18);
-            this.labelEx1.TabIndex = 0;
-            this.labelEx1.Text = "変更する色";
-            // 
-            // labelEx2
-            // 
-            this.labelEx2.AutoSize = true;
-            this.labelEx2.ErrorMessage = "";
-            this.labelEx2.Location = new System.Drawing.Point(13, 50);
-            this.labelEx2.Name = "labelEx2";
-            this.labelEx2.Size = new System.Drawing.Size(72, 18);
-            this.labelEx2.TabIndex = 1;
-            this.labelEx2.Text = "新しい色";
             // 
             // NewColor
             // 
@@ -183,15 +163,6 @@
             this.NewColorB.Size = new System.Drawing.Size(78, 25);
             this.NewColorB.TabIndex = 8;
             this.NewColorB.ValueChanged += new System.EventHandler(this.NewColorR_ValueChanged);
-            // 
-            // OldColorInfo
-            // 
-            this.OldColorInfo.ErrorMessage = "";
-            this.OldColorInfo.Location = new System.Drawing.Point(328, 10);
-            this.OldColorInfo.Name = "OldColorInfo";
-            this.OldColorInfo.Placeholder = "";
-            this.OldColorInfo.Size = new System.Drawing.Size(349, 25);
-            this.OldColorInfo.TabIndex = 10;
             // 
             // Ref01Color
             // 
@@ -481,26 +452,6 @@
             this.Ref09Color.Size = new System.Drawing.Size(122, 29);
             this.Ref09Color.TabIndex = 108;
             // 
-            // labelEx3
-            // 
-            this.labelEx3.AutoSize = true;
-            this.labelEx3.ErrorMessage = "";
-            this.labelEx3.Location = new System.Drawing.Point(14, 98);
-            this.labelEx3.Name = "labelEx3";
-            this.labelEx3.Size = new System.Drawing.Size(140, 18);
-            this.labelEx3.TabIndex = 125;
-            this.labelEx3.Text = "連動して変更す色";
-            // 
-            // labelEx4
-            // 
-            this.labelEx4.AutoSize = true;
-            this.labelEx4.ErrorMessage = "";
-            this.labelEx4.Location = new System.Drawing.Point(251, 98);
-            this.labelEx4.Name = "labelEx4";
-            this.labelEx4.Size = new System.Drawing.Size(76, 18);
-            this.labelEx4.TabIndex = 126;
-            this.labelEx4.Text = "プレビュー";
-            // 
             // OKButton
             // 
             this.OKButton.Location = new System.Drawing.Point(601, 606);
@@ -510,6 +461,16 @@
             this.OKButton.Text = "変更";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(700, 41);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(129, 36);
+            this.ResetButton.TabIndex = 129;
+            this.ResetButton.Text = "リセット";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // Preview
             // 
@@ -521,15 +482,54 @@
             this.Preview.TabIndex = 128;
             this.Preview.TabStop = false;
             // 
-            // ResetButton
+            // labelEx4
             // 
-            this.ResetButton.Location = new System.Drawing.Point(700, 41);
-            this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(129, 36);
-            this.ResetButton.TabIndex = 129;
-            this.ResetButton.Text = "リセット";
-            this.ResetButton.UseVisualStyleBackColor = true;
-            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            this.labelEx4.AutoSize = true;
+            this.labelEx4.ErrorMessage = "";
+            this.labelEx4.Location = new System.Drawing.Point(260, 98);
+            this.labelEx4.Name = "labelEx4";
+            this.labelEx4.Size = new System.Drawing.Size(76, 18);
+            this.labelEx4.TabIndex = 126;
+            this.labelEx4.Text = "プレビュー";
+            // 
+            // labelEx3
+            // 
+            this.labelEx3.AutoSize = true;
+            this.labelEx3.ErrorMessage = "";
+            this.labelEx3.Location = new System.Drawing.Point(14, 98);
+            this.labelEx3.Name = "labelEx3";
+            this.labelEx3.Size = new System.Drawing.Size(154, 18);
+            this.labelEx3.TabIndex = 125;
+            this.labelEx3.Text = "連動して変更する色";
+            // 
+            // OldColorInfo
+            // 
+            this.OldColorInfo.ErrorMessage = "";
+            this.OldColorInfo.Location = new System.Drawing.Point(328, 10);
+            this.OldColorInfo.Name = "OldColorInfo";
+            this.OldColorInfo.Placeholder = "";
+            this.OldColorInfo.Size = new System.Drawing.Size(349, 25);
+            this.OldColorInfo.TabIndex = 10;
+            // 
+            // labelEx2
+            // 
+            this.labelEx2.AutoSize = true;
+            this.labelEx2.ErrorMessage = "";
+            this.labelEx2.Location = new System.Drawing.Point(13, 50);
+            this.labelEx2.Name = "labelEx2";
+            this.labelEx2.Size = new System.Drawing.Size(72, 18);
+            this.labelEx2.TabIndex = 1;
+            this.labelEx2.Text = "新しい色";
+            // 
+            // labelEx1
+            // 
+            this.labelEx1.AutoSize = true;
+            this.labelEx1.ErrorMessage = "";
+            this.labelEx1.Location = new System.Drawing.Point(13, 13);
+            this.labelEx1.Name = "labelEx1";
+            this.labelEx1.Size = new System.Drawing.Size(91, 18);
+            this.labelEx1.TabIndex = 0;
+            this.labelEx1.Text = "変更する色";
             // 
             // PaletteChangeColorsForm
             // 
