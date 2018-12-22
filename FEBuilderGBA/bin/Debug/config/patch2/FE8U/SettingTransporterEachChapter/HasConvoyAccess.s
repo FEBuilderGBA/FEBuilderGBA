@@ -16,7 +16,7 @@ cmp  r1,#0x01
 bge  ReturnTrue
 
 
-ReturnFalse:        @輸送体は使えない    0
+ReturnFalse:        @輸送隊は使えない    0
 mov r0, #0x0
 ldr r3, =0x0803165A|1
 bx  r3

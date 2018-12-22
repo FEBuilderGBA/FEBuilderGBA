@@ -22,7 +22,7 @@ ONN:0x037C2D=0xD1
 OFF:0x037C2D=0xE0
 
 AUTHOR=Tequila http://feuniverse.us/t/fe-builder-gba/2845/1547
-INFO=5x章のさまざまな制約を一括で解除します。ゴールドを表示して、輸送体を呼べるようにして、進撃準備画面も呼べるようにします。
-INFO.en=Unlock various constraints of Chapter 5x at once.Display the gold and call the transporter so that you can call up the attack advancement screen as well.
+INFO=5x章のさまざまな制約を一括で解除します。ゴールドを表示して、輸送隊を呼べるようにして、進撃準備画面も呼べるようにします。\r\nHINT:輸送体
+INFO.en=Unlock various constraints of Chapter 5x at once.Display the gold and call the transporter so that you can call up the attack advancement screen as well.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 NAME.zh=取消第5x章的各种限制
 INFO.zh=立即解锁第5x章的各种约束。显示黄金并调用转运器，以便您也可以调出攻击推进屏幕。

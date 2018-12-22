@@ -1,4 +1,4 @@
-﻿NAME=アイテムチェック(全ユニットと輸送体)
+﻿NAME=アイテムチェック(全ユニットと輸送隊)
 TYPE=BIN
 TAG=#EVENT
 
@@ -13,7 +13,7 @@ EVENTSCRIPT=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:アイテム]アイテム所�
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=item_find.bin
 
-INFO=特定のアイテムを輸送体を含めて誰かもっているかという条件式を作成します.
+INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.\r\nHINT:輸送体
 AUTHOR=怪盗パッチ 7743
 NAME.en=Item check(All units and transporters)
 INFO.en=We create a conditional expression that someone has a certain item including a transporter.\r\nHINT:convoy,supply,transporter,merlinus,wagon

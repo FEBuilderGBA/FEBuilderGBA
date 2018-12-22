@@ -936,8 +936,8 @@ r3=X tile position of menu of the right	{U}
 080DA918	abort	{J}
 080DA940	_read_r	{J}
 080DA940	_write_r	{J}
-08002AF4	CallARM_DecompText	{J}
-08002B08	CallARM_PushToSecondaryOAM	{J}
+08002AF4	&ARM	CallARM_DecompText	{J}
+08002B08	&ARM	CallARM_PushToSecondaryOAM	{J}
 080CF4B8	umul3232H32	{U}
 080CF4C8	SoundMain	{U}
 080CF54C	SoundMainRAM	{U}
@@ -2316,15 +2316,15 @@ r3=X tile position of menu of the right	{U}
 08048280	Name input event	{U}
 
 
-080000fc	intr_main	arm_func	{U}
-08000304	Store160To80Structs	arm_func	{U}
-080003a8	ARM_FillRect	arm_func	{U}
-08000494	IRAMARM_CopyToSecondaryOAM	arm_func	{U}
-08000534	IRAMARM_CopyToPrimaryOAM	arm_func	{U}
-08000564	IRAMARM_Func3_DrawGlyph	arm_func	{U}
-080006e4	IRAMARM_DecompText	arm_func	{U}
-08000784	IRAMARM_Func5	arm_func	{U}
-08000874	IRAMARM_FillMovementMap	arm_func		{U}
+080000fc	&ARM	intr_main		{U}
+08000304	&ARM	ARM_ClearOAMBuffer		{U}
+080003a8	&ARM	ARM_FillRect		{U}
+08000494	&ARM	IRAMARM_CopyToSecondaryOAM		{U}
+08000534	&ARM	IRAMARM_CopyToPrimaryOAM		{U}
+08000564	&ARM	IRAM3_DrawGlyph		{U}
+080006e4	&ARM	IRAMARM_DecompText		{U}
+08000784	&ARM	IRAM5		{U}
+08000874	&ARM	IRAMARM_FillMovementMap			{U}
 08000a20	AgbMain	{U}
 08000b34	StoreIRQToIRAM	{U}
 08000b74	DummyIRQRoutine	{U}
@@ -2399,11 +2399,11 @@ r3=X tile position of menu of the right	{U}
 08002858	Exec6CSomeWaitIfMusicOn	{U}
 08002ab8	DeleteAll6CWaitMusicRelated	{U}
 08002af8	StoreRoutinesToIRAM	{U}
-08002ba4	CallARM_DecompText	{U}
-08002bb8	CallARM_PushToSecondaryOAM	{U}
-08002bcc	CallARM_PushToPrimaryOAM	{U}
-08002be0	CallARM_Func5	{U}
-08002bf4	CallARM_FillMovementMap	{U}
+08002ba4	&ARM	CallARM_DecompText	{U}
+08002bb8	&ARM	CallARM_PushToSecondaryOAM	{U}
+08002bcc	&ARM	CallARM_PushToPrimaryOAM	{U}
+08002be0	&ARM	Call5	{U}
+08002bf4	&ARM	CallARM_FillMovementMap	{U}
 08002c08	Initialize6CEngine	{U}
 08002c7c	New6C	{U}
 08002ce0	NewBlocking6C	{U}
@@ -2518,7 +2518,7 @@ r3=X tile position of menu of the right	{U}
 08004568	GetStringTextWidthSimple	{U}
 0800459c	InitSomeOtherGraphicsRelatedStruct	{U}
 080045d8	Text_Init3	{U}
-080046b4	Text_80046B4	{U}
+080046b4	Text_MeasureString	{U}
 080049ac	NewGreenTextColorManager	{U}
 080049d0	EndGreenTextColorManager	{U}
 08004b94	DrawDecNumber	{U}
@@ -4139,12 +4139,12 @@ r3=X tile position of menu of the right	{U}
 080d5eac	__unpack_d	{U}
 080d5f84	_fpadd_parts	{U}
 080d6c34	_fpadd_parts_0	{U}
-080d74a0	CallARM_FillTileRect	{U}
+080d74a0	&ARM	CallARM_FillTileRect	{U}
 080d74a8	TileMap_FillRect	{U}
 080d74b8	TileMap_CopyRect	{U}
 
 
-080003A8	ARM_FillRect	arm_func	{J}
+080003A8	&ARM	ARM_FillRect		{J}
 08000B0C	StoreIRQToIRAM	{J}
 08000B4C	DummyIRQRoutine	{J}
 08000B50	SetIRQHandler	{J}
@@ -4216,11 +4216,11 @@ r3=X tile position of menu of the right	{U}
 080027A8	Exec6CSomeWaitIfMusicOn	{J}
 08002A08	DeleteAll6CWaitMusicRelated	{J}
 08002A48	StoreRoutinesToIRAM	{J}
-08002ACC	CallARM_DecompText	{J}
-08002B08	CallARM_PushToSecondaryOAM	{J}
-08002B1C	CallARM_PushToPrimaryOAM	{J}
-08002B30	CallARM_Func5	{J}
-08002B44	CallARM_FillMovementMap	{J}
+08002ACC	&ARM	CallARM_DecompText	{J}
+08002B08	&ARM	CallARM_PushToSecondaryOAM	{J}
+08002B1C	&ARM	CallARM_PushToPrimaryOAM	{J}
+08002B30	&ARM	Call5	{J}
+08002B44	&ARM	CallARM_FillMovementMap	{J}
 08002B58	Initialize6CEngine	{J}
 08002BCC	New6C	{J}
 08002C30	NewBlocking6C	{J}
@@ -4334,7 +4334,7 @@ r3=X tile position of menu of the right	{U}
 08004470	GetStringTextWidthSimple	{J}
 080044A4	InitSomeOtherGraphicsRelatedStruct	{J}
 080044E0	Text_Init3	{J}
-080045BC	Text_80046B4	{J}
+080045BC	Text_MeasureString	{J}
 080048B4	NewGreenTextColorManager	{J}
 080048D8	EndGreenTextColorManager	{J}
 08004A9C	DrawDecNumber	{J}
@@ -5965,7 +5965,7 @@ r3=X tile position of menu of the right	{U}
 0804EF20	EndAllMenus Kills *all* the E_Menus	void	{U}
 08025854	RunSkillLockPickPerform skill key unpacking	{J}
 080258A4	RunSkillLockPickPerform skill key unpacking	{U}
-080dc0dc	CallARM_FillTileRect	{J}
+080dc0dc	&ARM	CallARM_FillTileRect	{J}
 080dc0e4	TileMap_FillRect	{J}
 080dc0f4	TileMap_CopyRect	{J}
 085B9DD4	:085B9E13	&EVENT	Event"Support level has gone up"	{J}
@@ -6959,12 +6959,12 @@ r3=X tile position of menu of the right	{U}
 03001a30	gUsedBuffersBitfield	{U}
 03001a34	gExtraLongEventMoveBuffer	{U}
 030030f0	gIRQHandlers	{U}
-03003128	gpARM_FillMovementMap	{U}
+03003128	&ARM	gpARM_FillMovementMap	{U}
 03003134	gpHBlankCallback	{U}
 03003748	gpHBlankCallback2	{U}
 03003750	gStart_IRAMCodeCopied_CallARM	{U}
-03004154	gpARM_CopyToPrimaryOAM	{U}
-03004960	gpARM_Func5	{U}
+03004154	&ARM	gpARM_CopyToPrimaryOAM	{U}
+03004960	&ARM	gp5	{U}
 03004970	gOAMAllocIt	{U}
 03004980	gpFaceProcs	{U}
 030049a0	gpSubjectMap	{U}
@@ -7087,7 +7087,7 @@ r3=X tile position of menu of the right	{U}
 03001A28	gUsedBuffersBitfield	{J}
 03001A2C	gExtraLongEventMoveBuffer	{J}
 03003090	gIRQHandlers	{J}
-030030C8	gpARM_FillMovementMap	{J}
+030030C8	&ARM	gpARM_FillMovementMap	{J}
 030030D4	gpHBlankCallback	{J}
 030036E8	gpHBlankCallback2	{J}
 030036F0	gStart_IRAMCodeCopied_CallARM	{J}
@@ -7254,7 +7254,7 @@ r3=X tile position of menu of the right	{U}
 08058AC8	Scarlet weapon's Flash	{U}
 0203F080	:0203F084	Reserve Gaiden Style Magic Menu	{U}
 08A5A618	:08A5A6AF	Event Check Table	FunctionTables	{J}
-08002B04	CallARM_PushToSecondaryOAM	{J}
+08002B04	&ARM	CallARM_PushToSecondaryOAM	{J}
 085911C4	:085911D7	MMSizeTable	{U}
 085B8F5C	:085B8F6F	MMSizeTable	{J}
 08001EE4	EnablePaletteSync	{J}
@@ -9494,7 +9494,7 @@ r3=X tile position of menu of the right	{U}
 0203A8F0	@ArenaTemp	Temporary data of Arena	{U}
 08031960	GetUnitArenaWeight	{J}
 0807C8DC	GetAdjustedPositionForNewUnit	{J}
-08000360	ARM_ComputeChecksum32	{U}
+08000360	&ARM	ARM_ComputeChecksum32	{U}
 08000BC8	InitRN	{U}
 08000D28	GetGameClock	{U}
 08001F48	SetColorEffectBackdropFirstTarget	{U}
@@ -10448,7 +10448,7 @@ r3=X tile position of menu of the right	{U}
 08B1754C	&PALETTE	gPal_ChapterIntroBackground	{U}
 08B17B64	gGfx_8B17B64	{U}
 08B18ED4	&PALETTE	gPal_8B18ED4	{U}
-08000360	ARM_ComputeChecksum32	{J}
+08000360	&ARM	ARM_ComputeChecksum32	{J}
 08000BA0	InitRN	{J}
 08000d28	GetGameClock	{J}
 08001E20	SetColorEffectsFirstTarget	{J}
@@ -11596,3 +11596,14 @@ r3=X tile position of menu of the right	{U}
 08A1D320	:08A1D8BF	Unknown data.	OAMSP Maybe	13	{J}
 0808B93C	The background of the save menu item.	{J}
 0808B8DC	LoadChapterTitleGfx2	{J}
+02000000	gAISFrontLeft	{U}
+02000000	gAISFrontLeft	{J}
+0808BAAC	To obtain chapter names, obtain chapter title IDs to be read.	{J}
+0808BA30	To obtain the chapter name of the save slot, obtain the chapter title ID to be read.	{J}
+08089678	The background of the save menu item.	{U}
+0808979C	To obtain chapter names, obtain chapter title IDs to be read.	{U}
+08089720	To obtain the chapter name of the save slot, obtain the chapter title ID to be read.	{U}
+08000228	&ARM	gStart_ARMCopy	{U}
+080003e0	&ARM	ARM_BgMapCopyRect	{U}
+08000228	&ARM	gStart_ARMCopy	{J}
+080003E0	&ARM	ARM_BgMapCopyRect	{J}

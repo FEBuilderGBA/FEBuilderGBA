@@ -9,7 +9,7 @@
 	
 	ldr r0, =$0803144c
 	mov lr, r0
-	@dcw $F800 ;輸送体ベースアドレスロード
+	@dcw $F800 ;輸送隊ベースアドレスロード
 	mov r5, r0
 	
 loopstart

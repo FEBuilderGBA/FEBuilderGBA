@@ -1,5 +1,5 @@
 
-NAME=輸送隊ユニットが自分自身で輸送体を呼び出せない制約を消す.
+NAME=輸送隊ユニットが自分自身で輸送隊を呼び出せない制約を消す.
 NAME.en=Remove a check that prevents storage unit(Transport) from accessing own storage
 
 TYPE=SWITCH
@@ -13,7 +13,7 @@ OFF:0x0022D94=0x08 0xD0
 ONN:0x0022D94=0x08 0xDD
 
 AUTHOR=Gryz http://feuniverse.us/t/item-storage-without-merlinus/520
-INFO=FE7の輸送体は、自分自身で輸送体にアクセスすることができません。この制限を解除します。
+INFO=FE7の輸送隊は、自分自身で輸送隊にアクセスすることができません。この制限を解除します。\r\nHINT:輸送体
 INFO.en=The FE 7 transporter can not access the transporter on its own.Release this restriction.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 NAME.zh=消除运输单元无法自行调用运输车的约束。
 INFO.zh=FE 7运输车无法自行进入运输车。发布此限制。

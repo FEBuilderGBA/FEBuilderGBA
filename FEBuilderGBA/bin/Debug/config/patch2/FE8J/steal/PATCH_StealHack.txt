@@ -6,7 +6,7 @@ TAG=#ENGINE
 PATCHED_IF:0x16e16=0xC0 0x46 0x00 0x48 0x87 0x46
 EA=EA.txt
 
-INFO=装備していない武器や杖も盗めるようにします。\r\n相手と速度が1つ違えば盗めます。\r\nただし、敵将や輸送体フラグが設定されているユニットからは盗めません(メンテナンススキル持ちからは盗めない)。
+INFO=装備していない武器や杖も盗めるようにします。\r\n相手と速度が1つ違えば盗めます。\r\nただし、敵将や輸送隊フラグが設定されているユニットからは盗めません(メンテナンススキル持ちからは盗めない)。
 
 AUTHOR=aera
 NAME.en=Try to steal unarmed weapons and canes as well

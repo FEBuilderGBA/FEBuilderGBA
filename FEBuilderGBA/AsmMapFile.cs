@@ -887,7 +887,10 @@ namespace FEBuilderGBA
             {
                 p.Length = ScanNazo8DataPointerTable(pointer, p.Name, rom);
             }
-        
+            else if (type == "ASM")
+            {
+                p.Length = 0;
+            }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {

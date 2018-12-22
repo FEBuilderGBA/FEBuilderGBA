@@ -16,10 +16,10 @@ ldrb r0, [r0, #0xe] @(ChapterData@ステージの領域.マップID )
 ldr r1, Table
 ldrb r1,[r1,r0]
 
-cmp  r1,#0x2        @所定のユニットだけが輸送体を使える    2(FE8ディフォルト)
+cmp  r1,#0x2        @所定のユニットだけが輸送隊を使える    2(FE8ディフォルト)
 beq  ReturnTrue
 
-cmp  r1,#0x3        @全員輸送体を呼べる    3  (西方の拠点と同じ)
+cmp  r1,#0x3        @全員輸送隊を呼べる    3  (西方の拠点と同じ)
 beq  ReturnAlways
 
 cmp  r1,#0x4        @フラグ0x27有効なら所定のユニットが利用可能

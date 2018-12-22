@@ -17,7 +17,7 @@
 	ldr	r1, [r1, #40]
 	lsl	r0, r1, #31
 	bmi	GoBack
-;輸送体判定
+;輸送隊判定
 	ldr	r1, [r2]
 	ldr	r1, [r1, #40]
 	ldr	r0, [r2, #4]

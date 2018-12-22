@@ -8143,20 +8143,20 @@ Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM ba
 :はい
 Yes
 
-:変更する色
-Target Color
-
-:新しい色
-New Color
-
-:連動して変更する色
-Color to change in conjunction
+:リセット
+Reset
 
 :プレビュー
 Preview
 
-:リセット
-Reset
+:連動して変更する色
+Color to change in conjunction
+
+:新しい色
+New Color
+
+:変更する色
+Target Color
 
 :似た色を連動して置き換える
 Interlocking and replacing similar colors.

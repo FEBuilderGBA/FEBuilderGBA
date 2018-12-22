@@ -11,7 +11,7 @@ ADDRESS=0x23F50
 ADDRESS_TYPE=UNIT
 
 AUTHOR=7743
-INFO=隣接すると輸送体メニューを出すユニットを設定します。
+INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nHINT:輸送体
 INFO.en=Set up units that will bring out the transporter menu when adjacent.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 NAME.zh=运输单位 伊弗列姆故事
 INFO.zh=设置相邻时将显示运输菜单的人物。

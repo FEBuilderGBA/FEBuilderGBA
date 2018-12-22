@@ -1,4 +1,4 @@
-NAME=ユニットの持ち物をすべて輸送体に送るイベント命令
+NAME=ユニットの持ち物をすべて輸送隊に送るイベント命令
 NAME.en=Add Event: Send unit's all items to transporter
 NAME.zh=事件命令将单元的所有项目发送到运输车
 
@@ -9,11 +9,11 @@ TAG=#EVENT
 PATCHED_IF:$FGREP4 SendAllTransporter.dmp=0x10 0xB5 0x84 0x6B
 BIN:$FREEAREA=SendAllTransporter.dmp
 
-EVENTSCRIPT:1=400DXX00{$L1:SendAllTransporter.dmp}	ユニットの持ち物をすべて輸送体に送ります。[XX:UNIT:ユニット]	{UNIT}
-EVENTSCRIPT:2=410D0000{$L1:SendAllTransporter.dmp}	SVAL1のユニットの持ち物をすべて輸送体に送ります(LOW)
-EVENTSCRIPT:3=4B0D0000{$L1:SendAllTransporter.dmp}	SVALBの座標のユニットの持ち物をすべて輸送体に送ります(LOW)
-EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットの持ち物をすべて輸送体に送ります	{UNIT}
-EVENTSCRIPT:5=4F0D0000{$L1:SendAllTransporter.dmp}	現在操作しているユニットの持ち物をすべて輸送体に送ります	{UNIT}
+EVENTSCRIPT:1=400DXX00{$L1:SendAllTransporter.dmp}	ユニットの持ち物をすべて輸送隊に送ります。[XX:UNIT:ユニット]	{UNIT}
+EVENTSCRIPT:2=410D0000{$L1:SendAllTransporter.dmp}	SVAL1のユニットの持ち物をすべて輸送隊に送ります(LOW)
+EVENTSCRIPT:3=4B0D0000{$L1:SendAllTransporter.dmp}	SVALBの座標のユニットの持ち物をすべて輸送隊に送ります(LOW)
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットの持ち物をすべて輸送隊に送ります	{UNIT}
+EVENTSCRIPT:5=4F0D0000{$L1:SendAllTransporter.dmp}	現在操作しているユニットの持ち物をすべて輸送隊に送ります	{UNIT}
 
 
 EVENTSCRIPT:1.en=400DXX00{$L1:SendAllTransporter.dmp}	Send unit's all items to transporter[XX:UNIT:Unit][YY:DECIMAL:add exp]	{UNIT}
@@ -28,9 +28,9 @@ EVENTSCRIPT:3.zh=4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于SVALB坐标
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于坐标[ZZ:MAPX:X][WW:MAPY:Y]的所有项目发送给运输商	{UNIT}
 EVENTSCRIPT:5.zh=4F0D0000{$L1:SendAllTransporter.dmp}	我会将当前运营人物的所有物品发送给运输商	{UNIT}
 
-INFO=指定したユニットのすべての持ち物を輸送体に送るイベント命令を定義します。\r\n進撃準備画面から全預けした時と同じく、ユニットが所有しているすべてのアイテムを輸送体に送ります。
+INFO=指定したユニットのすべての持ち物を輸送隊に送るイベント命令を定義します。\r\n進撃準備画面から全預けした時と同じく、ユニットが所有しているすべてのアイテムを輸送隊に送ります。\r\nHINT:輸送体
 
 
 AUTHOR=7743
-INFO.en=Defines an event command that sends all belongings of the specified unit to the transporter.\r\nSend all items owned by the unit to the transporter, as well as all deposits from the advancement preparation screen.
+INFO.en=Defines an event command that sends all belongings of the specified unit to the transporter.\r\nSend all items owned by the unit to the transporter, as well as all deposits from the advancement preparation screen.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 INFO.zh=定义一个事件命令，将指定单元的所有所有物发送到传输器。\r\n将设备拥有的所有物品发送到运输车，以及进度准备屏幕上的所有存款。

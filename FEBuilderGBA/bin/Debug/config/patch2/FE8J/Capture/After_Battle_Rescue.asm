@@ -69,7 +69,7 @@ mov		r0,r7
 	ldr	r1, [r1, #40]
 	lsl	r0, r1, #31
 	bmi	Reset
-;輸送体判定
+;輸送隊判定
 	ldr	r1, [r7]
 	ldr	r1, [r1, #40]
 	ldr	r0, [r7, #4]
