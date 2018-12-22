@@ -2178,7 +2178,7 @@ r3=X tile position of menu of the right	{U}
 0808BC10	HPBarLeftEnd	{U}
 0808BC2C	HPBarMiddle	{U}
 0808BC68	HPBarRightEnd	{U}
-0800043C	TilemapWriter	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{U}
+0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{U}
 0808C2CC	MMBPalSelect	Routine selects a palette and  writes it based on the unit's allegiance after ANDing the unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively	{U}
 
 08A1738C	:08A173AB	MMBAllyPalette	{U}
@@ -2281,7 +2281,7 @@ r3=X tile position of menu of the right	{U}
 0808BC10	HPBarLeftEnd	{J}
 0808DF38	HPBarMiddle	{J}
 0808BC68	HPBarRightEnd	{J}
-0800043C	TilemapWriter	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{J}
+0800043C	&ARM	ARM_BgMapApplyTsa	This is an ARM routine. that draws a tilemap. For some reason, this isn't run from RAM	r0=destination	r1=tilemap	r2=base tile	{J}
 0808E5CC	MMBPalSelect	Routine selects a palette and  writes it based on the unit's allegiance after ANDing the unit's number with 0xF0 you'll get 0x00, 0x40, 0x80 which are ally, npc, and enemy, respectively	{J}
 
 08A930D8	:08A930F7	MMBAllyPalette	{J}
