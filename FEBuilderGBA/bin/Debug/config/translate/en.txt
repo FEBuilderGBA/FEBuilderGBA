@@ -3739,6 +3739,9 @@ Are you sure you want to replace {0} with {1}?
 :アドレス({0}+{1})は、終端(2)を超えるので表示できません。
 The address ({0} + {1}) exceeds the termination (2) and can't be displayed.
 
+:アドレス({0}+{1})は、65535個のアイテムがあります。壊れています。
+The address ({0} + {1}) has 65535 items.broken.
+
 :雷
 Thunder
 

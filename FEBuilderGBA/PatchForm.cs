@@ -481,7 +481,7 @@ namespace FEBuilderGBA
                 {
                     throw new SyntaxException(R.Error("データ件数を調べようとしましたが、終端データを取得できません。"));
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                 }
@@ -2460,6 +2460,10 @@ namespace FEBuilderGBA
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 24, true);
             }
+            if (value.IndexOf("GREP4END+28 ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 28, true);
+            }
 
             if (value.IndexOf("FGREP16 ") == 0)
             {
@@ -2512,6 +2516,10 @@ namespace FEBuilderGBA
             if (value.IndexOf("FGREP4END+24 ") == 0)
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 24, true);
+            }
+            if (value.IndexOf("FGREP4END+28 ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 28, true);
             }
             if (value.IndexOf("P32 ") == 0)
             {

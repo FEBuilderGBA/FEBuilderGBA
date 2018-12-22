@@ -1,0 +1,28 @@
+NAME=FE8NSkill 魔法特効(SkillID:0x17 魔殺し)の対象クラスの指定
+
+IF:$FGREP4 main.dmp=0x00 0xB5 0x30 0xB4
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+16 main.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=CLASS
+
+INFO=FE8NSkill 魔法特効(SkillID:0x17 魔殺しスキル)の対象となるクラスを指定します。
+NAME.en=Designation of target class of FE 8 NS kill magic special effect (SkillID: 0 × 17 murderer).
+INFO.en=FE8NSkill Specify the class to be a target of magic special effect (SkillID: 0x17 murderer skill).
+NAME.zh=指定FE 8 NS杀死魔法特效的目标类（SkillID：0×17杀人犯）。
+INFO.zh=FE8NSkill指定该类作为魔法特效的目标（技能ID：0x17凶手技能）。

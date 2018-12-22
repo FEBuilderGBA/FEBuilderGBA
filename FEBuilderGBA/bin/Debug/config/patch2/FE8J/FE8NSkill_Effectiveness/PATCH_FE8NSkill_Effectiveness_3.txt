@@ -1,0 +1,28 @@
+NAME=FE8NSkill カスタム特効1 (SkillID:0x1D) の対象クラスの指定
+
+IF:$FGREP4 main.dmp=0x00 0xB5 0x30 0xB4
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+24 main.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=CLASS
+
+INFO=FE8NSkill FE8NSkill カスタム特効1 (SkillID:0x1D) の対象クラスの指定します。
+NAME.en=Specification of target class of FE 8 NS kill custom advantage 1 (SkillID: 0 × 1 D).
+INFO.en=FE8NSkill FE8NSkill Specify the target class of custom advantage 1 (SkillID: 0x1D).
+NAME.zh=FE 8 NS目标类别的规范杀死自定义优势1（SkillID：0×1 D）。
+INFO.zh=FE8NSkill FE8NSkill指定自定义优势1的目标类（SkillID：0x1D）。

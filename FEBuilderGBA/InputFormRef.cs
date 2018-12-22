@@ -5861,6 +5861,12 @@ namespace FEBuilderGBA
                         Log.Error("アドレス({0}+{1})は、終端(2)を超えるので表示できません。", U.To0xHexString(addr), U.To0xHexString(this.BlockSize), U.To0xHexString(limitter));
                         break;
                     }
+                    if (i >= 0xffff)
+                    {//65535個を超えるので探索強制打ち切り.
+                        Log.Error("アドレス({0}+{1})は、65535個のアイテムがあります。壊れています。", U.To0xHexString(addr), U.To0xHexString(this.BlockSize));
+                        break;
+                    }
+
                 }
             }
             this.AddressList.EndUpdate();
