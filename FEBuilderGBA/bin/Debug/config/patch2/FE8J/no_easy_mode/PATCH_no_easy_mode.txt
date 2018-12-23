@@ -12,6 +12,6 @@ BIN:0xA612BD=00A612BD.bin
 BIN:0xA643CF=00A643CF.bin
 
 AUTHOR=Original author: http://feuniverse.us/t/nintenlords-utilities/52
-INFO=簡単モードを選択できなくします。
-INFO.en=You can not select easy mode.
-INFO.zh=您无法选择简易模式。
+INFO=難易度選択画面で簡単モードを選択できなくします。
+INFO.en=Removes Easy Mode from the Campaign Select Menu.\r\nThis patch can not select easy mode on difficulty selection screen.
+INFO.zh=此补丁使得无法在难度选择屏幕上选择简易模式。
