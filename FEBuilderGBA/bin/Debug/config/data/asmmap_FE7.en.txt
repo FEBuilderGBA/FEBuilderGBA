@@ -4121,3 +4121,157 @@
 081DC658	&PALETTE	A palette of something.	134	{J}
 081DCF18	&PALETTE	A palette of something.	135	{J}
 081DD794	&PALETTE	A palette of something.	136	{J}
+//This data is made with the aim of being readable by machine fast.
+0800EF54	NewItemGot	{U}
+0800EE60	NewItemGot	{J}
+0800AD5C	NewPopup	{U}
+0800AD04	NewPopup	{J}
+08195680	&HEADERTSA	Face image related tiles.	{U}
+08195738	&HEADERTSA	Something tile that will be FillTileRect.	01	{U}
+084025C8	&HEADERTSA	Something tile that will be FillTileRect.	02	{U}
+083FE13C	&HEADERTSA	Something tile that will be FillTileRect.	05	{U}
+08195C2C	&HEADERTSA	Something tile that will be FillTileRect.	06	{U}
+081C81C4	&HEADERTSA	Something tile that will be FillTileRect.	10	{U}
+085DFB70	&HEADERTSA	Something tile that will be FillTileRect.	30	{U}
+08196228	&ROMTCS	Something's ROMTCS data.	01	{U}
+083EF9A0	&ROMTCS	Something's ROMTCS data.	02	{U}
+08B91BE4	&NewPopupSimple	Data to pop up.	03	{U}
+081D60F0	&PALETTE	A palette of something.	32	{U}
+083F42D0	&LZ77	Something small compressed data.	04	{U}
+02028E78	gAISArray	{U}
+0202A58C	gFaceGfxData	{U}
+0202B5B8	gPaletteFadeBuffer	{U}
+0202BC48	gSomeCameraMovementTableMaybe	{U}
+0202E3F8	gMapUnitPool	{U}
+0202EBB0	gMapTerrainPool	{U}
+02030A90	gTileConfigBuffer	{U}
+02033E00	gUnitMoveBuffer	{U}
+02033E44	gSMSGfxIndexLookup	{U}
+02033F14	gSMSGfxBuffer_Frame1	{U}
+02035F14	gSMSGfxBuffer_Frame2	{U}
+02037F14	gSMSGfxBuffer_Frame3	{U}
+0203A3D0	gSMSSyncFlag	{U}
+0203A718	gTrapArrayBack	{U}
+0203A7F0	gSomeUnitCounter	{U}
+0203A814	gArenaOpponent	{U}
+0203A8EC	gAiData	{U}
+0203DCF4	gTargetPosition	{U}
+0203DCF8	gTargetArray	{U}
+0203DFF8	gTargetArraySize	{U}
+0203E000	gBoolBattleDeamonActive	{U}
+0203E02C	gSomethingRelatedToAnimAndDistance	{U}
+0203E674	gSomeTextRelatedStuff	{U}
+0203E79C	gpBWLSaveTarget	{U}
+0203E7A0	gBWLDataStorage	{U}
+03004190	gOAMAllocIt	{U}
+030041C0	gpFaceProcs	{U}
+030041F0	gpSubjectMap	{U}
+030046A0	gMovementFillConfig	{U}
+030047A0	gpAiPerformer	{U}
+03004830	gCurrentUnitIndex	{U}
+03005E70	gpReadSramFast	{U}
+03005E74	gpVerifySramFast	{U}
+08CC4448	ccramify	PROCS	Promotion(Class Change)	{U}
+08CC4448	CCRamifyMenuSelect	PROCS	Promotion(Class Change)	{U}
+08CC4448	CCRamifyMenuSelect	{U}
+0203E00C	gBattleAttackPhaseBool	{U}
+083F695C	:083F69DB	Palette animation of wound medicine recovery effect.	{U}
+08CF0CD0	:08CF634B	Data of the communication stadium.	{U}
+0826B454	:0826BCA8	What data related to live wand 1.	0x0854	{U}
+0826BDB4	:0826C608	What data related to live wand 2.	0x0854	{U}
+08269E88	:08269EA7	What data related to live wand 3.	0x1F	{U}
+0826A7E8	:0826A9E7	Palette relationship of live wand 1.	{U}
+081E8D4C	:081E8F6B	Palette relationship of live wand 2.	{U}
+081E8CC8	:081E8EE7	Data of something of live wand.	{U}
+08B858A4	&ASM_POINTER_ARRAY	Procs(6c) Function	{U}
+08677370	&ASM_POINTER_ARRAY	MPlayJumpTable Midi Function	M4ALIB	{U}
+08677400	:08677447	MidiKeyToFreqTable1	M4ALIB	{U}
+086774E4	:086774FB	SampleFreqSetTable	M4ALIB	{U}
+086774FC	:0867757F	MidiKeyToCgbFreq Data Table1	M4ALIB	{U}
+08677580	:08677597	MidiKeyToCgbFreq Data Table2	M4ALIB	{U}
+08677598	:086775D3	MidiKeyToCgbFreq Data Table3	M4ALIB	{U}
+086775D4	:086775E3	CgbSound Data Table	M4ALIB	{U}
+086775E4	:08677617	ply_note_Table	M4ALIB	{U}
+08677618	&ASM_POINTER_ARRAY	ply_xcmd Function	M4ALIB	{U}
+08196380	&ROMTCS	Something's ROMTCS data.	05	{U}
+08196624	&ROMTCS	Something's ROMTCS data.	06	{U}
+0819770C	&ROMTCS	Something's ROMTCS data.	08	{U}
+08198184	&ROMTCS	Something's ROMTCS data.	09	{U}
+08199224	&ROMTCS	Something's ROMTCS data.	12	{U}
+081993C0	&ROMTCS	Something's ROMTCS data.	13	{U}
+083F2C3C	&ROMTCS	Something's ROMTCS data.	15	{U}
+083F2EE8	&ROMTCS	Something's ROMTCS data.	16	{U}
+083EDA80	&ROMTCS	Something's ROMTCS data.	17	{U}
+083ED9E8	&ROMTCS	Something's ROMTCS data.	18	{U}
+083ECCA0	&ROMTCS	Something's ROMTCS data.	19	{U}
+083F8AAC	&ROMTCS	Something's ROMTCS data.	20	{U}
+083F83B4	&ROMTCS	Something's ROMTCS data.	21	{U}
+083F90EC	&ROMTCS	Something's ROMTCS data.	22	{U}
+083ECCFC	&ROMTCS	Something's ROMTCS data.	23	{U}
+083EC514	&ROMTCS	Something's ROMTCS data.	25	{U}
+081C34DC	&ROMTCS	Something's ROMTCS data.	29	{U}
+08B86168	&FONTCOLOR0x200	FontColor	01	{U}
+08B86368	&FONTCOLOR0x200	FontColor	02	{U}
+08B86568	&FONTCOLOR0x200	FontColor	03	{U}
+08B86768	&FONTCOLOR0x200	FontColor	04	{U}
+08B86968	&FONTCOLOR0x200	FontColor	05	{U}
+08B86B68	&FONTCOLOR0x200	FontColor	06	{U}
+08B86D68	&FONTCOLOR0x200	FontColor	07	{U}
+08B86F68	&FONTCOLOR0x200	FontColor	08	{U}
+08B87168	&FONTCOLOR0x200	FontColor	09	{U}
+08B87368	&FONTCOLOR0x200	FontColor	10	{U}
+08B87568	&FONTCOLOR0x200	FontColor	11	{U}
+08B87768	&FONTCOLOR0x200	FontColor	12	{U}
+08B87968	&FONTCOLOR0x200	FontColor	13	{U}
+080C5F08	:080C5F87	QuakePure Table	{U}
+081D7F00	:081D7F21	QuakePure	01	{U}
+081D7F22	:081D7F6B	QuakePure	02	{U}
+081D7F6C	:081D7FB5	QuakePure	03	{U}
+081D7FB6	:081D7FFF	QuakePure	04	{U}
+081D8000	:081D8049	QuakePure	05	{U}
+081D804A	:081D8165	QuakePure	06	{U}
+081D8166	:081D8177	QuakePure	07	{U}
+081D8178	:081D8199	QuakePure	08	{U}
+081D819A	:081D81AB	QuakePure	09	{U}
+081D81AC	:081D81CF	QuakePure	10	{U}
+081D81D0	:081D8265	HitQuake	01	{U}
+081D8266	:081D8397	HitQuake	02	{U}
+081D97D0	:081D97EF	Maybe, something of multiple palettes.	A7	{U}
+08B92A28	&PALETTE	A pure black palette.	{U}
+081DE59C	&PALETTE4	Maybe, something of multiple palettes.	A8	{U}
+081DE61C	&PALETTE4	Maybe, something of multiple palettes.	A9	{U}
+081DE69C	&PALETTE4	Maybe, something of multiple palettes.	A10	{U}
+08B9AA14	:08B9AA43	Something's AIS data.	01	{U}
+08B9AA44	:08B9AB03	Something's AIS data.	02	{U}
+08B9AB04	:08B9AB1B	Something's AIS data.	06	{U}
+08B9AB1C	:08B9AB33	Something's AIS data.	07	{U}
+08B9AB34	:08B9AB4B	Something's AIS data.	08	{U}
+08B9AB4C	:08B9AB63	Something's AIS data.	09	{U}
+08B9AB64	:08B9AB7B	Something's AIS data.	10	{U}
+08B9AB7C	:08B9AB93	Something's AIS data.	11	{U}
+08B9AB94	:08B9ABAB	Something's AIS data.	12	{U}
+0840628C	&PALETTE	A palette of something.	102	{U}
+08194734	&PALETTE	A palette of something.	103	{U}
+081C8124	&PALETTE	A palette of something.	104	{U}
+081C8124	&PALETTE	A palette of something.	105	{U}
+0840628C	&PALETTE	A palette of something.	106	{U}
+08407400	&PALETTE	A palette of something.	109	{U}
+0840DD24	&PALETTE	A palette of something.	111	{U}
+083F8148	&HEADERTSA	Anime pattern using something uncompressed TSA.	1	{U}
+083F7208	&HEADERTSA	Anime pattern using something uncompressed TSA.	2	{U}
+083F9DE0	&HEADERTSA	Anime pattern using something uncompressed TSA.	3	{U}
+083F71E4	&HEADERTSA	Anime pattern using something uncompressed TSA.	4	{U}
+081D2B3C	&LZ77	Mystery dialog and numeric data.	{U}
+081FB454	:081FB4B5	A palette of something.	118	{U}
+081FC634	:081FC6D5	A palette of something.	119	{U}
+081FEE00	&PALETTE	A palette of something.	120	{U}
+0820A4DC	:0820A6DB	A palette of something.	121	{U}
+0822A25C	&PALETTE	A palette of something.	123	{U}
+082424B4	&PALETTE	A palette of something.	124	{U}
+0824DD40	:0824DF1F	A palette of something.	125	{U}
+082572A4	:082572E5	A palette of something.	126	{U}
+0826AC3C	&PALETTE	A palette of something.	127	{U}
+081D60F0	&PALETTE	A palette of something.	133	{U}
+081D69E4	&PALETTE	A palette of something.	134	{U}
+081D72A4	&PALETTE	A palette of something.	135	{U}
+081D7B20	&PALETTE	A palette of something.	136	{U}

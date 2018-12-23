@@ -31,3 +31,7 @@ A4E54=Main Menu Logic	{U}	//08CE3C54
 BAAC8=Display tactics evaluation screen	{J}	//DB8B94 攻略評価画面を表示
 11EE8=Ninian's resurrection animation	{J}	//C015DC ニニアンの復活アニメ
 11850=Ninian's resurrection animation	{U}	//B92354 ニニアンの復活アニメ
+0AD74=Popup	{U}	//08B90CA0
+0EF6C=NewItemGotProc	{U}	//08B91DC4
+0AD5C=Popup	{J}	//08BFFE90
+0EE78=NewItemGotProc	{J}	//08C00F7C
