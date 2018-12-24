@@ -29,3 +29,5 @@ B0:UNIT=Unit (0xFF=ANY)
 B1:CLASS=Class (0xFF=ANY)
 B2:DECIMAL=Maximum Level
 B3=00
+
+AUTHOR=7743

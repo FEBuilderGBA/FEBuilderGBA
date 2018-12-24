@@ -1,6 +1,6 @@
 ﻿
 NAME=エクストラ フリーマップ 削除
-NAME.en=Extra Creature Campaign deletion
+NAME.en=Remove Creature Campaign
 NAME.zh=系统_删除额外的地图
 
 //アドレスパッチとして実装します
@@ -13,9 +13,8 @@ COMBO.en=show|0xF7 0xF7 0x18 0xFD|delete|0x00 0x00 0x00 0x20
 
 INFO=ゲームクリア後に表示されるエクストラメニューのフリーマップ「大陸の魔物退治」を削除します。\r\n塔や遺跡を別のマップとして潰してしまったり、モンスターを発生させないなどの改造を行っている場合、フリーマップは邪魔になるので、このパッチで消すことができます。
 
-AUTHOR.en=COMBO.zh=显示|0xF7 0xF7 0x18 0xFD|删除|0x00 0x00 0x00 0x20
-
 COMBO.zh=显示|0xF7 0xF7 0x18 0xFD|删除|0x00 0x00 0x00 0x20
 INFO.en=Deletes the "Creature Campaign" option from the Extras menu displayed after clearing the game. This is useful if you are using the Tower of Valni maps, etc. for other purposes and don't want the players to be able to access them.
 INFO.zh=删除游戏结束后显示的练习菜单的世界地图“消灭大陆的妖魔”。\r\n如果将塔和遗迹作为另一个地图而崩溃，或者不让怪物发生等进行改造的话，世界地图会造成妨碍，所以可以在这个补丁中消除。
 
+AUTHOR=Aera

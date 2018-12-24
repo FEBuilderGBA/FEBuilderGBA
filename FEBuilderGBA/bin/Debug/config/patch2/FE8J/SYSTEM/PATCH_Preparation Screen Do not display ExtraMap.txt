@@ -16,3 +16,5 @@ INFO=進撃準備画面の右上にあるマップIDを表示する部分を変�
 INFO.en=Change the part to display the map ID in the upper right corner of the attack advancement screen
 NAME.zh=攻击准备屏幕：不显示ExtraMap
 INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID
+
+AUTHOR=7743

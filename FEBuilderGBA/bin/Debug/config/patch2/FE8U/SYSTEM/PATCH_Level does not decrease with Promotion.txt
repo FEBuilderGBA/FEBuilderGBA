@@ -21,3 +21,5 @@ INFO.en=Change the level so that it does not reset to 1 even if it is promoted.
 
 NAME.zh=CC不会降低等级
 INFO.zh=更改CC，使其不会将级别重置为1。
+
+AUTHOR=7743

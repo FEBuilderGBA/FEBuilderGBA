@@ -5,7 +5,7 @@ PATCHED_IF:0xCB680=0x19 0x00 0x00 0x00 0x90 0xB6 0x0C 0x08 0x03 0x00 0x00 0x00 0
 
 EA=Master Spell Animation Installer.event
 
-AUTHOR=
+AUTHOR=circleseverywhere
 
 INFO=このパッチは、カスタム魔法システムを導入します。\r\nFEの魔法はASM+Procでハードコーディングされています。\r\nそのため戦闘アニメーションのように利用するのがとても困難です。\r\nこのパッチは、独自の魔法システムを構築します。\r\nそのシステムを利用することで、戦闘アニメーションのように、魔法アニメーションを作ることができるようになります。\r\nカスタム魔法システムを支える重要なパッチです。
 INFO.en=This patch introduces custom magic system.\r\nFE's magic is hard-coded in ASM + Proc.\r\nTherefore it is very difficult to use like battle animation.\r\nThis patch builds its own magic system.\r\nBy using that system, you will be able to create magic animation like battle animation.\r\nIt is an important patch that supports custom magic system.

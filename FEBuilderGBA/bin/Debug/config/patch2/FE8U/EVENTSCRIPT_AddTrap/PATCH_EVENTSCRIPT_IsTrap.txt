@@ -2,6 +2,7 @@
 NAME.en=Add Event: Is Exist Trap
 NAME.zh=Add Event: Is Exist Trap
 
+AUTHOR=7743
 
 TYPE=BIN
 TAG=#EVENT

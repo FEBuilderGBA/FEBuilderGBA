@@ -1,7 +1,8 @@
 
 NAME=エクストラ フリーマップ 削除
 NAME.en=Remove Creature Campaign
-NAME.zh=额外免费地图删除
+NAME.zh=系统_删除额外的地图
+
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -15,3 +16,5 @@ COMBO.zh=显示|0xF7 0xF7 0x52 0xFD|删除|0x00 0x00 0x00 0x20
 INFO=ゲームクリア後に表示されるエクストラメニューのフリーマップ「大陸の魔物退治」を削除します。\r\n塔や遺跡を別のマップとして潰してしまったり、モンスターを発生させないなどの改造を行っている場合、フリーマップは邪魔になるので、このパッチで消すことができます。
 INFO.en=Sets whether the "Creature Campaign" option from the "Extras" menu is displayed or hidden during the post-game.\r\nThis is useful to prevent player access if Creature Campaign maps like Lagdou, Valni, etc., have been repurposed.
 INFO.zh=删除清除游戏后显示的额外菜单的免费地图“大陆恶魔灭绝”。\r\n如果您将塔楼或废墟改造为另一张地图或不生成怪物，则免费地图会成为障碍物，因此您可以使用此修补程序擦除它。
+
+AUTHOR=Aera

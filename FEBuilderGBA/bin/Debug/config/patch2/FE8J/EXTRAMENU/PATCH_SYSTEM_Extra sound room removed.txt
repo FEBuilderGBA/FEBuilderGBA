@@ -1,6 +1,6 @@
 ﻿
 NAME=エクストラ サウンドルーム 削除
-NAME.en=Extra sound room removed.
+NAME.en=Remove Sound Room
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -18,3 +18,5 @@ INFO.zh=COMBO.zh=显示|0xF7 0xF7 0xC8 0xFC|删除|0x00 0x00 0x00 0x20
 
 COMBO.zh=显示|0xF7 0xF7 0xC8 0xFC|删除|0x00 0x00 0x00 0x20
 INFO.en=Delete the sound room from the extra menu.\r\nIt is used when you do not want to use the sound room.
+
+AUTHOR=Aera

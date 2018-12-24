@@ -1,7 +1,7 @@
 
 NAME=エクストラ サウンドルーム 削除
 NAME.en=Remove Sound Room
-NAME.zh=额外音室删除
+NAME.zh=系统_删除额外音乐室
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -16,3 +16,5 @@ COMBO.zh=显示|0xF7 0xF7 0x02 0xFD|删除|0x00 0x00 0x00 0x20
 INFO=エクストラメニューの、サウンドルームを削除します。\r\nサウンドルームを使わせたくない場合に利用します。
 INFO.en=Sets whether the "Sound Room" option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent player access to the Sound Room.
 INFO.zh=从额外菜单中删除声音房间。\r\n当您不想使用音响室时使用它。
+
+AUTHOR=Aera

@@ -6,8 +6,8 @@ PATCHED_IF:$GREP4 0x01 0x00 0x00 0x00 0xCC 0xD3 0x9C 0x08 0x03 0x00 0x00 0x00 0x
 EA=EA.txt
 
 AUTHOR=出典元:https://github.com/ngmansion/FE8/tree/master/Spell Animations
-AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master /拼写动画。
-AUTHOR.en=Source: https://github.com/ngmansion/FE8/tree/master/Spell Animations.
+AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master/Spell Animations
+AUTHOR.en=Source: https://github.com/ngmansion/FE8/tree/master/Spell Animations
 NAME.en=CSA_Creator_For_FE8J
 NAME.zh=魔法补丁（CSA_Creator_For_FE8J)
 INFO.zh=这个补丁导入了自定义魔法系统。\r\nFE的魔法ASM + Proc硬被编程。\r\n因此，很难像战斗动画那样使用。\r\n这个补丁构筑独自的魔法系统。\r\n利用这个系统，可以像战斗动画一样制作魔法动画。\r\n是支撑自定义魔法系统的重要补丁。

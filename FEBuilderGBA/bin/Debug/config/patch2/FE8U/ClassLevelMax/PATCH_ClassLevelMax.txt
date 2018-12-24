@@ -26,3 +26,5 @@ B0:DECIMAL=MaxLevel
 INFO=レベルの上限値をクラス別に設定します。\r\nこれはFE8USkillSystemsに付属しているモジュールを変更するためのパッチです。
 INFO.en=Edits the class level module set via the Skill System.\r\nRequires the Skill System Patch.\r\n
 INFO.zh=设置每个班级的上限。\r\n这是修改连接到FE8USkillSystems的模块的补丁。
+
+AUTHOR=SkillSystems Authors

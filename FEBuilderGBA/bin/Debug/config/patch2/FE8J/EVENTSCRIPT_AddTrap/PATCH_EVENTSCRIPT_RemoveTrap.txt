@@ -5,6 +5,8 @@ NAME.zh=Add Event: Remove Trap
 TYPE=BIN
 TAG=#EVENT
 
+AUTHOR=7743
+
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 RemoveTrap.dmp=0x10 0xB5 0x80 0x6B
 
