@@ -98,6 +98,19 @@ namespace FEBuilderGBA
                 , newCount
                 , defAddr
                 , undodata);
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//Fix PlaySoundStepByClass(足音) HardCode
+                    Program.ROM.write_range(0x7B198, new byte[] { 0x1c, 0xe0 }, undodata);
+                }
+                else
+                {//Fix PlaySoundStepByClass(足音) HardCode
+                    Program.ROM.write_range(0x78d84, new byte[] { 0x1c, 0xe0 }, undodata);
+                }
+            }
+
             Program.Undo.Push(undodata);
 
             ReInit(this.InputFormRef);

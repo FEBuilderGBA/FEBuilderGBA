@@ -24,5 +24,5 @@
 8078FDC=Sailing sound of the fleet	{U}
 807B3F8=Sound of Myrrh's feathers	{J}
 8078FE4=Sound of Myrrh's feathers	{U}
-807B3F8=unknown	{J}
-8078FE4=unknown	{U}
+807B1CC=Pegasus's flying sound	{J}
+8078DB8=Pegasus's flying sound	{J}
