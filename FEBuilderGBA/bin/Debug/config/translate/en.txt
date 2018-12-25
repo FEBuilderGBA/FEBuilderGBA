@@ -1345,6 +1345,12 @@ This image does not meet the criteria of the required format.
 :画像の形式が基準を満たしていません。
 The image format does not meet the criteria.
 
+:EAを実行するときに、書き込み始める領域を指定します。
+When executing EA, specify the area to start writing.
+
+:このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。
+If the source code of the program referenced in this event file has been updated, it will be recompiled automatically.\r\nIt does something like the make command.
+
 :インポートするeventファイルを選択してください
 Please select the event file to import
 
@@ -1395,6 +1401,9 @@ Load Script
 
 :Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。
 Read the event script in the Event Assembler and adapt it to the current ROM.
+
+:更新されたプログラムを再コンパイル
+Recompile the updated program.
 
 :Event Assemblerで追加
 Insert Events Via Event Assembler
@@ -8223,6 +8232,9 @@ Essential Fixes(#ESSENTIALFIXES)
 
 :フィルタの適応
 Filter adaptation
+
+:FEBuilderGBAを設置しているディレクトリが深すぎます。\r\nファイルのパスの最大数260文字を越えました。\r\nパッチの探索を実行できません。\r\n{0}
+The directory where FEBuilderGBA is installed is too deep.\r\nThe maximum number of file paths exceeded 260 characters.\r\nPatch search can not be executed.\r\n{0}.
 
 :このパッチを利用した時にフリーズする等のバグが報告されています。\r\n特別な理由がない限り、利用しないでください。\r\n
 Bugs such as freezing when using this patch are reported.\r\nPlease do not use unless there is a special reason.\r\n

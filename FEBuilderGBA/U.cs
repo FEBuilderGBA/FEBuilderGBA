@@ -2585,10 +2585,15 @@ namespace FEBuilderGBA
             FileInfo info = new FileInfo(filename);
             return info.Length;
         }
-        public static DateTime GetFileDate(string filename)
+        public static DateTime GetFileDateCreationTime(string filename)
         {
             FileInfo info = new FileInfo(filename);
             return info.CreationTime;
+        }
+        public static DateTime GetFileDateLastWriteTime(string filename)
+        {
+            FileInfo info = new FileInfo(filename);
+            return info.LastWriteTime;
         }
 
         //https://stackoverflow.com/questions/146134/how-to-remove-illegal-characters-from-path-and-filenames

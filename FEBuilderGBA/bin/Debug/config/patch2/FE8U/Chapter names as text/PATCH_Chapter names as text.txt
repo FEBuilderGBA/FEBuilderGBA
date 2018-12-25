@@ -8,4 +8,4 @@ EA=fe8_chnames.event
 
 INFO.en=Patches the ROM to use text for all chapter titles rather than images.\r\nEdit the chapter name in the Chapter Editor to rename.
 
-AUTHOR=
+AUTHOR=circleseverywhere

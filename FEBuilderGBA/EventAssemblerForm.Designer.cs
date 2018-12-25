@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.DebugSymbolComboBox = new System.Windows.Forms.ComboBox();
             this.DebugSymbol = new System.Windows.Forms.Label();
-            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.SRCSelectButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.FREEARE_PANEL = new System.Windows.Forms.Panel();
@@ -41,6 +40,8 @@
             this.UndoButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.J_2_TEXT = new System.Windows.Forms.Label();
+            this.AutoReCompile = new System.Windows.Forms.CheckBox();
+            this.SRCFilename = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.FREEARE_PANEL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FREEAREA)).BeginInit();
@@ -48,6 +49,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.AutoReCompile);
             this.panel1.Controls.Add(this.DebugSymbolComboBox);
             this.panel1.Controls.Add(this.DebugSymbol);
             this.panel1.Controls.Add(this.SRCFilename);
@@ -89,16 +91,6 @@
             this.DebugSymbol.Text = "デバッグ用のシンボル ";
             this.DebugSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SRCFilename
-            // 
-            this.SRCFilename.ErrorMessage = "";
-            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
-            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SRCFilename.Name = "SRCFilename";
-            this.SRCFilename.Placeholder = "";
-            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
-            this.SRCFilename.TabIndex = 93;
-            // 
             // SRCSelectButton
             // 
             this.SRCSelectButton.Location = new System.Drawing.Point(169, 87);
@@ -125,9 +117,9 @@
             // 
             this.FREEARE_PANEL.Controls.Add(this.label1);
             this.FREEARE_PANEL.Controls.Add(this.FREEAREA);
-            this.FREEARE_PANEL.Location = new System.Drawing.Point(13, 305);
+            this.FREEARE_PANEL.Location = new System.Drawing.Point(13, 288);
             this.FREEARE_PANEL.Name = "FREEARE_PANEL";
-            this.FREEARE_PANEL.Size = new System.Drawing.Size(430, 41);
+            this.FREEARE_PANEL.Size = new System.Drawing.Size(380, 41);
             this.FREEARE_PANEL.TabIndex = 19;
             // 
             // label1
@@ -163,7 +155,7 @@
             this.FREEAREA_DEF.AutoSize = true;
             this.FREEAREA_DEF.Checked = true;
             this.FREEAREA_DEF.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FREEAREA_DEF.Location = new System.Drawing.Point(13, 276);
+            this.FREEAREA_DEF.Location = new System.Drawing.Point(13, 259);
             this.FREEAREA_DEF.Name = "FREEAREA_DEF";
             this.FREEAREA_DEF.Size = new System.Drawing.Size(190, 22);
             this.FREEAREA_DEF.TabIndex = 18;
@@ -204,6 +196,28 @@
             this.J_2_TEXT.Text = "Event Assemblerでeventスクリプトを読み込んで現在のROMに適応します。";
             this.J_2_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // AutoReCompile
+            // 
+            this.AutoReCompile.AutoSize = true;
+            this.AutoReCompile.Checked = true;
+            this.AutoReCompile.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoReCompile.Location = new System.Drawing.Point(423, 259);
+            this.AutoReCompile.Name = "AutoReCompile";
+            this.AutoReCompile.Size = new System.Drawing.Size(280, 22);
+            this.AutoReCompile.TabIndex = 108;
+            this.AutoReCompile.Text = "更新されたプログラムを再コンパイル";
+            this.AutoReCompile.UseVisualStyleBackColor = true;
+            // 
+            // SRCFilename
+            // 
+            this.SRCFilename.ErrorMessage = "";
+            this.SRCFilename.Location = new System.Drawing.Point(307, 91);
+            this.SRCFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SRCFilename.Name = "SRCFilename";
+            this.SRCFilename.Placeholder = "";
+            this.SRCFilename.Size = new System.Drawing.Size(572, 25);
+            this.SRCFilename.TabIndex = 93;
+            // 
             // EventAssemblerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -238,5 +252,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox DebugSymbolComboBox;
         private System.Windows.Forms.Label DebugSymbol;
+        private System.Windows.Forms.CheckBox AutoReCompile;
     }
 }

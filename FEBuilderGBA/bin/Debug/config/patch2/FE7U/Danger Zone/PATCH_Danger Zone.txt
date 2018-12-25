@@ -8,3 +8,4 @@ INFO.en=Patches the ROM to enable viewing the full-map danger-zone by pressing S
 TYPE=EA
 TAG=#ENGINE
 EA=Dangerzone_FE7.event
+AUTHOR=circleseverywhere

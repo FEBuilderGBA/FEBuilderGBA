@@ -7,3 +7,4 @@ TAG=#ENGINE #ESSENTIALFIXES
 BIN:0x2E2B8=2E2B8.bin
 
 NAME.zh=检查陷阱数据的添加例程，以便数据不会超出限制
+AUTHOR=Leonarth

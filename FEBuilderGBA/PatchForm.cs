@@ -90,7 +90,12 @@ namespace FEBuilderGBA
             {
                 files = Directory.GetFiles(path, "PATCH_*.txt", SearchOption.AllDirectories);
             }
-            catch (System.IO.IOException e)
+            catch (PathTooLongException e)
+            {
+                R.ShowStopError("FEBuilderGBAを設置しているディレクトリが深すぎます。\r\nファイルのパスの最大数260文字を越えました。\r\nパッチの探索を実行できません。\r\n{0}", e.ToString());
+                return patchs;
+            }
+            catch (Exception e)
             {
                 R.ShowStopError("パッチ探索中にエラーが発生しました。\r\n{0}" , e.ToString());
                 return patchs;

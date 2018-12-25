@@ -21,6 +21,12 @@ namespace FEBuilderGBA
             SRCFilename.AllowDropFilename();
 
             AllowDropFilename();
+            MakeExplain();
+        }
+        void MakeExplain()
+        {
+            FREEAREA_DEF.AccessibleDescription = R._("EAを実行するときに、書き込み始める領域を指定します。");
+            AutoReCompile.AccessibleDescription = R._("このeventファイル内で参照しているプログラムのソースコードが更新されていたら、自動的に再コンパイルします。\r\nmakeコマンドのような動作を行います。");
         }
 
         void AllowDropFilename()
@@ -67,6 +73,16 @@ namespace FEBuilderGBA
             if (!File.Exists(SRCFilename.Text))
             {
                 return;
+            }
+
+            if (this.AutoReCompile.Checked)
+            {//自動コンパイル
+                string error = RunAutoReCompile(EAFilename);
+                if (error != "")
+                {
+                    R.ShowStopError(error);
+                    return;
+                }
             }
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
@@ -261,5 +277,71 @@ namespace FEBuilderGBA
             return 0;
         }
 
+        static bool IsUpdateSourceCode(string targetfilename, out string sourceCode)
+        {
+            if (!File.Exists(targetfilename))
+            {
+                sourceCode = "";
+                return false;
+            }
+            DateTime dmpFileDate = U.GetFileDateLastWriteTime(targetfilename);
+
+            string[] extList = new string[] {".s",".asm" };
+            foreach (string ext in extList)
+            {
+                sourceCode = U.ChangeExtFilename(targetfilename, ext);
+                if (File.Exists(sourceCode))
+                {
+                    DateTime sourceCodeDate = U.GetFileDateLastWriteTime(sourceCode);
+                    if (dmpFileDate < sourceCodeDate)
+                    {//更新されている.
+                        return true;
+                    }
+                }
+            }
+
+            sourceCode = "";
+            return false;
+        }
+
+        static string RunAutoReCompile(string eaFilename)
+        {
+            if (! File.Exists(eaFilename))
+            {
+                return "";
+            }
+
+            EAUtil ea = new EAUtil(eaFilename);
+            foreach (EAUtil.Data d in ea.DataList)
+            {
+                if (d.DataType == EAUtil.DataEnum.ASM
+                    || d.DataType == EAUtil.DataEnum.LYN)
+                {
+                    string targetfilename = Path.Combine(ea.Dir, d.Name);
+
+                    string sourceCode;
+                    if (!IsUpdateSourceCode(targetfilename, out sourceCode))
+                    {
+                        continue;
+                    }
+
+                    bool isKeepElf = false;
+                    if (d.DataType == EAUtil.DataEnum.LYN)
+                    {
+                        isKeepElf = true;
+                    }
+
+                    string error;
+                    string symbol;
+                    bool r = MainFormUtil.Compile(sourceCode, out error, out symbol, isKeepElf);
+                    if (!r)
+                    {
+                        return error;
+                    }
+                }
+            }
+
+            return "";
+        }
     }
 }
