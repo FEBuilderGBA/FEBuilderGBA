@@ -36,7 +36,7 @@ Loop:
 	beq  Term
 
 	ldrb r0,[r6,#0x0]
-	ldrb r1,[r4,#0xF] @ChapterData->MAPID
+	ldrb r1,[r4,#0xE] @ChapterData->MAPID
 	cmp  r0,r1
 	bne  Loop
 

@@ -85,10 +85,19 @@ namespace FEBuilderGBA
         {
             List<PatchSt> patchs = new List<PatchSt>();
 
-            string[] files;
             try
             {
-                files = Directory.GetFiles(path, "PATCH_*.txt", SearchOption.AllDirectories);
+                string[] files = Directory.GetFiles(path, "PATCH_*.txt", SearchOption.AllDirectories);
+                foreach (string fullfilename in files)
+                {
+                    PatchSt patch = LoadPatch(fullfilename, isScanOnly);
+                    if (patch == null)
+                    {
+                        continue;
+                    }
+
+                    patchs.Add(patch);
+                }
             }
             catch (PathTooLongException e)
             {
@@ -101,16 +110,6 @@ namespace FEBuilderGBA
                 return patchs;
             }
 
-            foreach (string fullfilename in files)
-            {
-                PatchSt patch = LoadPatch(fullfilename, isScanOnly);
-                if (patch == null)
-                {
-                    continue;
-                }
-                
-                patchs.Add(patch);
-            }
             return patchs;
         }
 
