@@ -14,7 +14,7 @@
 0B00YYYY00000000	Defines Label [YYYY:LABEL_CONDITIONAL:LABEL] (doesn't do anything by itself)	{COND}
 0C00YYYY00000000	Goto Label [YYYY:GOTO_CONDITIONAL:LABEL]	{COND}
 0D000000ZZZZZZZZ	Jump code to [ZZZZZZZZ:POINTER_PROCS:Procs]	{JUMP}
-0E00YYYY00000000	Sleep for given duration [YY::WAIT FRAME] (Sets callback to Sleep Callback)	{WAIT}
+0E00YYYY00000000	Sleep for given duration [YY:FSEC:WAIT FRAME] (Sets callback to Sleep Callback)	{WAIT}
 0F00YY0000000000	Store Byte [YY::BYTE] to Field 26 in Struct (unknown use yet, maybe for passing data to routines?)
 1000000000000000	Yeild (Stops exectution until next call to interpreter)	{WAIT}
 1100000000000000	Delete Self if at least one other struct of same type exists	{CLEAR}

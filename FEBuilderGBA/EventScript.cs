@@ -88,6 +88,7 @@ namespace FEBuilderGBA
             , RAM_UNIT_PARAM    //RAMユニット
             , BOOL              //BOOL値型
             , TRAP              //RAM罠
+            , FSEC              //フレーム秒
         };
 
         public class Arg
@@ -651,6 +652,9 @@ namespace FEBuilderGBA
              case "COUNTER":
                  type = ArgType.COUNTER;
                  break;
+             case "FSEC":
+                 type = ArgType.FSEC;
+                 break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
                  break;
@@ -994,7 +998,9 @@ namespace FEBuilderGBA
                 || type == EventScript.ArgType.WMAPY
                 || type == EventScript.ArgType.PROBABILITY
                 || type == EventScript.ArgType.DECIMAL
-                || type == EventScript.ArgType.MAGVELY);
+                || type == EventScript.ArgType.MAGVELY
+                || type == EventScript.ArgType.FSEC
+                );
         }
         //符号を使ってマイナスを表示するかどうか
         public static bool IsSigned(EventScript.ArgType type)

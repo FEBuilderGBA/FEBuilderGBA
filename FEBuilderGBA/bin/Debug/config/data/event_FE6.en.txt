@@ -40,7 +40,7 @@
 36000000XXXX0000	[XXXX:MUSIC:music]BGM playing(MUSC)	{MUSIC}
 37000000XXXX0000	[XXXX:MUSIC:Music]Play song and end song with 38 million.(MUSS)	{MUSIC}
 38000000	Stop song(MURE)	{MUSIC}
-39000000XX000000	[XX:DECIMAL:Speed]Fade out BGM with specified length(MUEN)	{MUSIC}
+39000000XX000000	[XX:FSEC:Speed]Fade out BGM with specified length(MUEN)	{MUSIC}
 3C000000XXXX0000	[XXXX:SOUND:sound effect]Performance sound SE playing	{MUSIC}
 3D000000XX000000	[XX:MAPCHAPTER:Next Map]Next chapter Call up save screen(MNCH)	{MAP}
 3E00000001000000	Calling save screen (Epilogue)(THE_END)	{ENDING}
@@ -117,8 +117,8 @@
 02000000XXXX0000	[XXXX:DECIMAL:Frame seconds]Wait(STAL)	{WAIT}	{MAPEFFECT}	{WMAPTEXT}
 0C000000XX0000002D000000YY000000	[XX:UNIT:unit]Match the camera to the unit and put a frame in[YY:UNIT:unit]	{CAMERA}	{WAKU}
 0200000001000000010000000600000000000000	[TERM]End part of event call2	{TERM}
-43000000XX000000	Fade in the screen and make it dark[XXXX:DECIMAL:Speed](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
-44000000XX000000	Fade out screen (return from pitch dark)[XXXX:DECIMAL:Speed](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
-45000000XX000000	White in the screen and make it white[XXXX:DECIMAL:Speed](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
-46000000XX000000	White out the screen (return from pure white)[XXXX:DECIMAL:Speed](FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
+43000000XX000000	Fade in the screen and make it dark[XXXX:FSEC:Speed](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
+44000000XX000000	Fade out screen (return from pitch dark)[XXXX:FSEC:Speed](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
+45000000XX000000	White in the screen and make it white[XXXX:FSEC:Speed](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
+46000000XX000000	White out the screen (return from pure white)[XXXX:FSEC:Speed](FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
 020000000100000001000000	_2&_1

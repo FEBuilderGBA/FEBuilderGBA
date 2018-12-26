@@ -1373,6 +1373,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetTRAP(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.FSEC)
+                        {//FSEC
+                            isENumText = true;
+                            text = " " + InputFormRef.GetFSEC(v);
+                        }
 
                         if (isENumText)
                         {

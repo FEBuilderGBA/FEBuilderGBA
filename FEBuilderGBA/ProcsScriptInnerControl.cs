@@ -265,6 +265,10 @@ namespace FEBuilderGBA
             {
                 text = Program.AsmMapFileAsmCache.GetASMName(value, false, out errorMessage);
             }
+            else if (arg.Type == EventScript.ArgType.FSEC)
+            {//FSEC
+                text = InputFormRef.GetFSEC(value);
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;
@@ -612,6 +616,11 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, false, out dummy));
+                    }
+                    else if (arg.Type == EventScript.ArgType.FSEC)
+                    {//FSEC
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetFSEC(v));
                     }
                     sb.Append("]");
                     break;

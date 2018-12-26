@@ -927,6 +927,10 @@ namespace FEBuilderGBA
             {//COUNTER
                 text = " " + "<<" + U.ToHexString(v);
             }
+            else if (arg.Type == EventScript.ArgType.FSEC)
+            {//FSEC
+                text = " " + InputFormRef.GetFSEC(v);
+            }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
             {//RAM_UNIT_PARAM
                 text = " " + InputFormRef.GetRAM_UNIT_PARAM(v, out errormessage);
@@ -2529,6 +2533,11 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         sb.Append("<<");
                         sb.Append(U.ToHexString(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.FSEC)
+                    {//FSEC
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetFSEC(v));
                     }
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
                     {//RAM_UNIT_PARAM

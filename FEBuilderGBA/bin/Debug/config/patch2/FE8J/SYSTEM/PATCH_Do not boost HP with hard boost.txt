@@ -1,0 +1,17 @@
+NAME=ハードブーストでもHPをブーストしない
+NAME.en=Do not boost HP with hard boost
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|FIX
+
+OFF:0x17D00=0xA1 0x74
+FIX:0x17D00=0x00 0x00
+
+INFO=ハードブーストでもHPをブーストさせない
+AUTHOR=7743
+INFO.en=Do not boost HP even with hard boost.
+NAME.zh=即使使用硬加速也不要提升HP。
+INFO.zh=即使使用硬加速也不要提升HP。

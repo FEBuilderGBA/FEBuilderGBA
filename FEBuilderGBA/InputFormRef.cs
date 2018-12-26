@@ -6193,6 +6193,11 @@ namespace FEBuilderGBA
 
             return U.substr(sb.ToString(), 1);
         }
+        public static string GetFSEC(uint num)
+        {
+            double sec = Math.Round( ((double)num / 60.0f) , 4);
+            return R._("フレーム秒({0}秒)", sec );
+        }
 
         //RAM UNIT PARAM
         static Dictionary<uint, string> Cache_ramunit_param_dic;
