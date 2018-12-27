@@ -1536,7 +1536,11 @@ namespace FEBuilderGBA
             }
 
             if (lastBranchAddr == 0)
-            {//ダミーではない本当の終端
+            {//ダミーではない本当の終端...?
+                if (Program.ROM.RomInfo.version() == 8 && IsFE8DummyEnd(code,addr) )
+                {//ダミー終端
+                    return false;
+                }
                 return true;
             }
             Debug.Assert(addr >= lastBranchAddr);
@@ -1547,6 +1551,34 @@ namespace FEBuilderGBA
             }
             //おそらくダミーの終端. 無視するべき.
             return false;
+        }
+
+        static bool IsFE8DummyEnd(EventScript.OneCode code, uint addr)
+        {
+            if (code.Script.Has != EventScript.ScriptHas.TERM)
+            {//終端ではない
+                return false;
+            }
+            uint nextAddr = addr + (uint)code.Script.Size;
+            if (nextAddr + 0x8 >= Program.ROM.Data.Length)
+            {//ROM終端
+                return false;
+            }
+            uint a1 = Program.ROM.u8(nextAddr + 0);
+            uint a2 = Program.ROM.u8(nextAddr + 1);
+            uint a3 = Program.ROM.u8(nextAddr + 2);
+            uint a4 = Program.ROM.u8(nextAddr + 3);
+            if (! (a1 == 0x20 && a2 == 0x08 && a3 == 0x09 && a4 == 0x00))
+            {//ダミー終端ではない
+                return false;
+            }
+            uint a5 = (Program.ROM.u8(nextAddr + 4) & 0xF0);
+            if (! (a5 == 0x20 || a5 == 0x40))
+            {//ダミー終端ではない
+                return false;
+            }
+            //ダミー終端
+            return true;
         }
 
         public static bool IsFixedArg(EventScript.Arg arg)

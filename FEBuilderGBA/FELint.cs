@@ -142,41 +142,6 @@ namespace FEBuilderGBA
         }
         public static void LabelCheck(List<FELint.ErrorSt> errors,uint start_addr, List<LabelCheckSt> list)
         {
-            if (Program.ROM.RomInfo.version() == 8)
-            {
-                if (Program.ROM.RomInfo.is_multibyte())
-                {
-                    if (0xA65504 == start_addr)
-                    {//新たなる旅立ちはとても複雑なので無視します.
-                        return;
-                    }
-                }
-                else
-                {
-                    if (0x9F33D0 == start_addr)
-                    {//新たなる旅立ちはとても複雑なので無視します.
-                        return;
-                    }
-                }
-            }
-            else if (Program.ROM.RomInfo.version() == 7)
-            {
-                if (Program.ROM.RomInfo.is_multibyte())
-                {
-                    if (0xD8656C == start_addr)
-                    {//旅支度はとても複雑なので無視します.
-                        return;
-                    }
-                }
-                else
-                {
-                    //FE7Uには存在しない.
-                }
-            }
-            else
-            {//ver6
-                //FE6には存在しない.
-            }
 
             for (int i = 0; i < list.Count; i++)
             {
