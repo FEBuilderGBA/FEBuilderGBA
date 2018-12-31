@@ -311,26 +311,19 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 222AXXXX	Goto Next Chapter Without Worldmap.[XXXX:MAPCHAPTER:Chapter_ID](MNC2)	Clear the chapter and proceed to the next chapter.	@MNC2BUG	{MAP}
 232AXXXX	Goto Next Chapter Without Worldmap(No Save).[XXXX:MAPCHAPTER:Chapter_ID](MNC3)	Clear the chapter and proceed to the next chapter.	@MNC2BUG	{MAP}
 
-40050700YYYYYYYY400CXXXX0C000700	Imm BEQ(Jump to ConditionID label when ==,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional ==[YYYY::Value]	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY410CXXXX0C000700	Imm BNE(Jump to ConditionID label when !=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional !=[YYYY::Value]	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY420CXXXX0C000700	Imm BGE(Jump to ConditionID label when >=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional >=[YYYY::Value]	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY430CXXXX0C000700	Imm BGT(Jumps to ConditionID label when >,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional >[YYYY::Value]	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY440CXXXX0C000700	Imm BLE(Jump to ConditionID label when <=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional <=[YYYY::Value]	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY450CXXXX0C000700	Imm BLT(Jump to ConditionID label when <,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID]Result of the previous conditional <[YYYY::Value]	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY400CXXXX0C000700	Imm BEQ (If Result == [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY410CXXXX0C000700	Imm BNE (If Result != [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY420CXXXX0C000700	Imm BGE (If Result >= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY430CXXXX0C000700	Imm BGT (If Result >  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY440CXXXX0C000700	Imm BLE (If Result <= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY450CXXXX0C000700	Imm BLT (If Result <  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
 
-400CXXXX0C00YYYY	MemorySlotC BEQ(Jump to ConditionID label when ==,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional ==[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-410CXXXX0C00YYYY	MemorySlotC BNE(Jump to ConditionID label when !=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional !=[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-420CXXXX0C00YYYY	MemorySlotC BGE(Jump to ConditionID label when >=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional >=[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-430CXXXX0C00YYYY	MemorySlotC BGT(Jumps to ConditionID label when >,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional >[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-440CXXXX0C00YYYY	MemorySlotC BLE(Jump to ConditionID label when <=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional <=[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-450CXXXX0C00YYYY	MemorySlotC BLT(Jump to ConditionID label when <,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID],Result of the previous conditional <[YYYY:MEMORYSLOT:MemorySlot2]	@CMP_C	{JUMP}
-
-400CXXXXYYYYZZZZ	BEQ(Jump to ConditionID label when ==,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]==[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
-410CXXXXYYYYZZZZ	BNE(Jump to ConditionID label when !=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]!=[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
-420CXXXXYYYYZZZZ	BGE(Jump to ConditionID label when >=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]>=[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
-430CXXXXYYYYZZZZ	BGT(Jump to ConditionID label when >,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]>[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
-440CXXXXYYYYZZZZ	BLE(Jump to ConditionID label when <=,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]<=[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
-450CXXXXYYYYZZZZ	BLT(Jump to ConditionID label when <,else execute the following)[XXXX:IF_CONDITIONAL:ConditionID][YY:MEMORYSLOT:MemorySlot1]<[ZZZZ:MEMORYSLOT:MemorySlot2]	{JUMP}
+400CXXXXYYYYZZZZ	BEQ (If [YYYY:MEMORYSLOT:MemorySlot] == [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+410CXXXXYYYYZZZZ	BNE (If [YYYY:MEMORYSLOT:MemorySlot] != [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+420CXXXXYYYYZZZZ	BGE (If [YYYY:MEMORYSLOT:MemorySlot] >= [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+430CXXXXYYYYZZZZ	BGT (If [YYYY:MEMORYSLOT:MemorySlot] >  [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+440CXXXXYYYYZZZZ	BLE (If [YYYY:MEMORYSLOT:MemorySlot] <= [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+450CXXXXYYYYZZZZ	BLT (If [YYYY:MEMORYSLOT:MemorySlot] <  [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
 
 
 20190000	CHECK_MODE	1=Prologue-Ch8,2=Eirika,3=Ephraim	@STOREC	{COND}

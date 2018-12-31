@@ -3806,10 +3806,10 @@ Do NOT use
 Always 0 (write protected)
 
 :座標結果
-Coordinate Result
+Coordinate
 
 :処理結果
-Processing Result
+Result
 
 :キューサイズ
 Queue Size
