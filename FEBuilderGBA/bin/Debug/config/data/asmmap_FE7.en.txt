@@ -4275,3 +4275,8 @@
 081D69E4	&PALETTE	A palette of something.	134	{U}
 081D72A4	&PALETTE	A palette of something.	135	{U}
 081D7B20	&PALETTE	A palette of something.	136	{U}
+//This data is made with the aim of being readable by machine fast.
+08075F68	Play sound effect (0x2d5) when playing on the map.	{J}
+08075FAC	Play sound effect (0x2d6) when dancing on the map.	{J}
+08075798	Play sound effect (0x2d5) when playing on the map.	{U}
+080757DC	Play sound effect (0x2d6) when dancing on the map.	{U}

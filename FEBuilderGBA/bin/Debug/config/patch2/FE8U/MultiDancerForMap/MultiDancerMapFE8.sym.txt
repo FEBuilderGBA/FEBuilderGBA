@@ -1,0 +1,7 @@
+MultiDancerClassTable=$44
+Loop=$0E
+CheckUnit=$1C
+NotMatch=$34
+CheckClass=$26
+Match=$30
+Exit=$36

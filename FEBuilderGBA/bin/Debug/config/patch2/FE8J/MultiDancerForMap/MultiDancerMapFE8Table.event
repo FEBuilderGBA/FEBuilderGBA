@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002,arg003) "BYTE arg000 arg001 arg002 0x00; SHORT arg003 0x00; "
+
+MultiDancerMapFE8Table:
+csvmacro000(0x00,0x4d,0x09,0x2D5)
+csvmacro000(0x0,0x0,0x0,0x0)

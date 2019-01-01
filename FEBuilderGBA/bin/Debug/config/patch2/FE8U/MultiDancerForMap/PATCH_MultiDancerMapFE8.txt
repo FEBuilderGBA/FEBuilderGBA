@@ -1,0 +1,30 @@
+NAME=マップ戦闘での踊り子の効果音を複数設定する
+NAME.en=Setting the sound effect of a many dancer in map battle
+
+
+IF:0x812D4=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiDancerMapFE8.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B1:CLASS
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2=??
+B3=00
+W4:SONG=DanceSE
+W6=00
+NAME.zh=在地图战中设置多个舞者音效。

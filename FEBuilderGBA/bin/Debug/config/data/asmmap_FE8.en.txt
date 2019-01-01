@@ -11607,3 +11607,27 @@ r3=X tile position of menu of the right	{U}
 080003e0	&ARM	ARM_BgMapCopyRect	{U}
 08000228	&ARM	gStart_ARMCopy	{J}
 080003E0	&ARM	ARM_BgMapCopyRect	{J}
+08000d00	EnableSoftReset	{U}
+08000d0c	DisableSoftReset	{U}
+08000d18	IsSoftResetEnabled	{U}
+08003870	DebugInit	{U}
+080ce2fc	guMenu2ReWriteUp_80CE2FC	{U}
+080ce388	guMenu2ReWriteDown_80CE388	{U}
+080ce588	guMenu2ReWriteFirst_80CE588	{U}
+080ce9e8	guMess3ReWrite_80CE9E8	{U}
+080cef10	Guide_80CEF10	{U}
+080cefd4	Guide_80CEFD4	{U}
+080cf448	Guide_80CF448	{U}
+080037BC	DebugInit	{J}
+080D2FF8	guMenu2ReWriteUp_80CE2FC	{J}
+080D2FF8	guMenu2ReWriteDown_80CE388	{J}
+080D3284	guMenu2ReWriteFirst_80CE588	{J}
+080D36E4	guMess3ReWrite_80CE9E8	{J}
+080D3C0C	Guide_80CEF10	{J}
+080D4140	Guide_80CF448	{J}
+08083688	Play sound effect (0x2d5) when playing on the map.	{J}
+080836C4	Play sound effect (0x2d6) when dancing on the map.	{J}
+08083600	Register sound effects to play when dancing / playing on the map.	{J}
+08081348	Play sound effect (0x2d5) when playing on the map.	{U}
+08081348	Play sound effect (0x2d6) when dancing on the map.	{U}
+080812C0	Register sound effects to play when dancing / playing on the map.	{U}

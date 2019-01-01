@@ -1,0 +1,19 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $83614  //FE8J
+jumpToHack(HackLocation)
+POP
+
+
+HackLocation:
+#incbin "MultiDancerMapFE8.dmp"
+POIN MultiDancerMapFE8Table
+POIN MultiDancerMapCallbackFE8+1
+
+MultiDancerMapCallbackFE8:
+#incbin "MultiDancerMapCallbackFE8.dmp"
+POIN MultiDancerMapFE8Table
+
+
+#include "MultiDancerMapFE8Table.event"

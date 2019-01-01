@@ -1,0 +1,14 @@
+NAME=マップ戦闘での踊り子の効果音を複数設定する(導入)
+NAME.en=Setting the sound effect of a many dancer in map battle (Installer)
+
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x83614=0x00 0x4B
+EDIT_PATCH=PATCH_MultiDancerMapFE8.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.zh=在Map战斗（介绍）中设置多个声音舞者的声音。
