@@ -2983,6 +2983,9 @@ Import Battle Animation
 :識別子
 Identifier
 
+:この戦闘アニメーションは、32モードで作られています。\r\n通常、戦闘アニメーションは、自軍(青)、敵軍(赤)、友軍(緑)、グレー(グレー)の4つがあります。\r\n32Colorモードでは、自軍(青)と敵軍(赤)のパレットを同時に利用して、32色のキャラクターを描画します。
+This battle animation is made in 32 modes.\r\nNormally, there are four battle animations, Player(blue), enemy(red), ally(green), gray(gray).\r\nIn 32Color mode, use the pallet of Player(blue) and enemy(red) simultaneously to draw 32 color characters.
+
 :ウィンドウサイズで表示する
 Display by Window Size
 

@@ -17,9 +17,12 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.PaletteZoomComboBox.SelectedIndex = 0;
             this.PaletteIndexComboBox.SelectedIndex = 0;
+            this.Is32ColorMode = false;
             PaletteFormRef.MakePaletteUI(this, OnChangeColor, GetSampleBitmap);
+            SetExpain();
         }
-
+        //32Colorモードかどうか
+        bool Is32ColorMode;
 
         private void PALETTE_POINTER_ValueChanged(object sender, EventArgs e)
         {
@@ -30,7 +33,14 @@ namespace FEBuilderGBA
             PaletteFormRef.MakePaletteROMToUI(this, (uint)PALETTE_ADDRESS.Value,true , this.PaletteIndexComboBox.SelectedIndex);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
 
-            DrawSample(this.BattleAnimeID, this.PaletteIndexComboBox.SelectedIndex);
+            if (this.Is32ColorMode)
+            {//32colorモード 常に最初のパレットで描画
+                DrawSample(this.BattleAnimeID, 0);
+            }
+            else
+            {//通常モード
+                DrawSample(this.BattleAnimeID, this.PaletteIndexComboBox.SelectedIndex);
+            }
         }
         private void PaletteIndexComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -105,10 +115,6 @@ namespace FEBuilderGBA
                 }
             }
 
-            //パレットが違うので、1番目に移動しないといけない.
-//            this.DrawBitmap =
-//                ImageUtil.SwapPaletteAndImage(this.DrawBitmap, this.PaletteIndexComboBox.SelectedIndex);
-
             ReDrawBitmap();
         }
         Bitmap DrawBitmap;
@@ -124,7 +130,17 @@ namespace FEBuilderGBA
                 return true;
             }
             ColorPalette palette = this.DrawBitmap.Palette; //一度、値をとってからいじらないと無視される
-            palette.Entries[paletteno] = color;
+            if (this.Is32ColorMode)
+            {//32colorモード
+             //パレットを切り替えられないので、現在の場所を絶対値で求める必要がある
+                int palettenoABS = (PaletteIndexComboBox.SelectedIndex * 16) + paletteno;
+                palette.Entries[palettenoABS] = color;
+            }
+            else
+            {//通常モード
+             //パレットをPlayer,Enemy,Other,4thごとに切り替えるため、そのまま変更するだけでよい
+                palette.Entries[paletteno] = color;
+            }
             this.DrawBitmap.Palette = palette;
             ReDrawBitmap();
 
@@ -166,6 +182,18 @@ namespace FEBuilderGBA
         {
             this.BattleAnimeID = battleAnimeID;
             this.PALETTE_ADDRESS.Value = paletteAddress;
+
+            DrawSample(battleAnimeID, 0);
+            int palette_count = ImageUtil.GetPalette16Count(this.DrawBitmap);
+            if (palette_count >= 2)
+            {//32Colorモード
+                this.Is32ColorMode = true;
+            }
+            else
+            {//通常モード
+                this.Is32ColorMode = false;
+            }
+            this.Warning32ColorMode.Visible = this.Is32ColorMode;
             this.PaletteIndexComboBox.SelectedIndex = paletteIndex;
         }
 
@@ -183,5 +211,16 @@ namespace FEBuilderGBA
         {
             ReDrawBitmap();
         }
+
+        private void ImageBattleAnimePalletForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        void SetExpain()
+        {
+            Warning32ColorMode.AccessibleDescription = R._("この戦闘アニメーションは、32モードで作られています。\r\n通常、戦闘アニメーションは、自軍(青)、敵軍(赤)、友軍(緑)、グレー(グレー)の4つがあります。\r\n32Colorモードでは、自軍(青)と敵軍(赤)のパレットを同時に利用して、32色のキャラクターを描画します。");
+        }
+
     }
 }

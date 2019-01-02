@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.AutoScrollPanel = new System.Windows.Forms.Panel();
-            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.PaletteZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -127,9 +126,10 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.Warning32ColorMode = new System.Windows.Forms.Label();
+            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel1.SuspendLayout();
             this.AutoScrollPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).BeginInit();
@@ -179,11 +179,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Warning32ColorMode);
             this.panel1.Controls.Add(this.AutoScrollPanel);
             this.panel1.Controls.Add(this.PaletteZoomComboBox);
             this.panel1.Controls.Add(this.label10);
@@ -296,16 +298,6 @@
             this.AutoScrollPanel.Size = new System.Drawing.Size(574, 419);
             this.AutoScrollPanel.TabIndex = 276;
             // 
-            // X_PIC
-            // 
-            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(2, 2);
-            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
-            this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(555, 406);
-            this.X_PIC.TabIndex = 0;
-            this.X_PIC.TabStop = false;
-            // 
             // PaletteZoomComboBox
             // 
             this.PaletteZoomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -354,10 +346,10 @@
             "敵軍",
             "友軍",
             "グレー"});
-            this.PaletteIndexComboBox.Location = new System.Drawing.Point(200, 48);
+            this.PaletteIndexComboBox.Location = new System.Drawing.Point(192, 48);
             this.PaletteIndexComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PaletteIndexComboBox.Name = "PaletteIndexComboBox";
-            this.PaletteIndexComboBox.Size = new System.Drawing.Size(168, 26);
+            this.PaletteIndexComboBox.Size = new System.Drawing.Size(195, 26);
             this.PaletteIndexComboBox.TabIndex = 0;
             this.PaletteIndexComboBox.SelectedIndexChanged += new System.EventHandler(this.PaletteIndexComboBox_SelectedIndexChanged);
             // 
@@ -408,7 +400,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(20, 349);
+            this.label51.Location = new System.Drawing.Point(18, 336);
             this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(19, 18);
@@ -418,7 +410,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(20, 319);
+            this.label52.Location = new System.Drawing.Point(18, 306);
             this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(20, 18);
@@ -428,7 +420,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(20, 288);
+            this.label53.Location = new System.Drawing.Point(18, 275);
             this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(19, 18);
@@ -438,7 +430,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(20, 213);
+            this.label50.Location = new System.Drawing.Point(18, 200);
             this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(19, 18);
@@ -448,7 +440,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(20, 181);
+            this.label49.Location = new System.Drawing.Point(18, 168);
             this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(20, 18);
@@ -458,7 +450,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(20, 151);
+            this.label48.Location = new System.Drawing.Point(18, 138);
             this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(19, 18);
@@ -469,7 +461,7 @@
             // 
             this.PALETTE_P_16.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_16.Location = new System.Drawing.Point(571, 247);
+            this.PALETTE_P_16.Location = new System.Drawing.Point(569, 234);
             this.PALETTE_P_16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_16.Name = "PALETTE_P_16";
             this.PALETTE_P_16.Size = new System.Drawing.Size(37, 30);
@@ -479,7 +471,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(548, 259);
+            this.label33.Location = new System.Drawing.Point(546, 246);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(26, 18);
@@ -488,13 +480,12 @@
             // 
             // PALETTE_B_16
             // 
-
             this.PALETTE_B_16.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_16.Location = new System.Drawing.Point(548, 343);
+            this.PALETTE_B_16.Location = new System.Drawing.Point(546, 330);
             this.PALETTE_B_16.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_16.Maximum = new decimal(new int[] {
             255,
@@ -507,13 +498,12 @@
             // 
             // PALETTE_G_16
             // 
-
             this.PALETTE_G_16.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_16.Location = new System.Drawing.Point(548, 312);
+            this.PALETTE_G_16.Location = new System.Drawing.Point(546, 299);
             this.PALETTE_G_16.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_16.Maximum = new decimal(new int[] {
             255,
@@ -526,13 +516,12 @@
             // 
             // PALETTE_R_16
             // 
-
             this.PALETTE_R_16.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_16.Location = new System.Drawing.Point(548, 281);
+            this.PALETTE_R_16.Location = new System.Drawing.Point(546, 268);
             this.PALETTE_R_16.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_16.Maximum = new decimal(new int[] {
             255,
@@ -547,7 +536,7 @@
             // 
             this.PALETTE_P_15.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_15.Location = new System.Drawing.Point(497, 247);
+            this.PALETTE_P_15.Location = new System.Drawing.Point(495, 234);
             this.PALETTE_P_15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_15.Name = "PALETTE_P_15";
             this.PALETTE_P_15.Size = new System.Drawing.Size(37, 30);
@@ -557,7 +546,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(474, 259);
+            this.label35.Location = new System.Drawing.Point(472, 246);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(26, 18);
@@ -566,13 +555,12 @@
             // 
             // PALETTE_B_15
             // 
-
             this.PALETTE_B_15.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_15.Location = new System.Drawing.Point(474, 343);
+            this.PALETTE_B_15.Location = new System.Drawing.Point(472, 330);
             this.PALETTE_B_15.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_15.Maximum = new decimal(new int[] {
             255,
@@ -585,13 +573,12 @@
             // 
             // PALETTE_G_15
             // 
-
             this.PALETTE_G_15.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_15.Location = new System.Drawing.Point(474, 312);
+            this.PALETTE_G_15.Location = new System.Drawing.Point(472, 299);
             this.PALETTE_G_15.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_15.Maximum = new decimal(new int[] {
             255,
@@ -604,13 +591,12 @@
             // 
             // PALETTE_R_15
             // 
-
             this.PALETTE_R_15.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_15.Location = new System.Drawing.Point(474, 281);
+            this.PALETTE_R_15.Location = new System.Drawing.Point(472, 268);
             this.PALETTE_R_15.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_15.Maximum = new decimal(new int[] {
             255,
@@ -625,7 +611,7 @@
             // 
             this.PALETTE_P_14.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_14.Location = new System.Drawing.Point(428, 247);
+            this.PALETTE_P_14.Location = new System.Drawing.Point(426, 234);
             this.PALETTE_P_14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_14.Name = "PALETTE_P_14";
             this.PALETTE_P_14.Size = new System.Drawing.Size(37, 30);
@@ -635,7 +621,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(404, 259);
+            this.label37.Location = new System.Drawing.Point(402, 246);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(26, 18);
@@ -644,13 +630,12 @@
             // 
             // PALETTE_B_14
             // 
-
             this.PALETTE_B_14.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_14.Location = new System.Drawing.Point(404, 343);
+            this.PALETTE_B_14.Location = new System.Drawing.Point(402, 330);
             this.PALETTE_B_14.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_14.Maximum = new decimal(new int[] {
             255,
@@ -663,13 +648,12 @@
             // 
             // PALETTE_G_14
             // 
-
             this.PALETTE_G_14.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_14.Location = new System.Drawing.Point(404, 312);
+            this.PALETTE_G_14.Location = new System.Drawing.Point(402, 299);
             this.PALETTE_G_14.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_14.Maximum = new decimal(new int[] {
             255,
@@ -682,13 +666,12 @@
             // 
             // PALETTE_R_14
             // 
-
             this.PALETTE_R_14.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_14.Location = new System.Drawing.Point(404, 281);
+            this.PALETTE_R_14.Location = new System.Drawing.Point(402, 268);
             this.PALETTE_R_14.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_14.Maximum = new decimal(new int[] {
             255,
@@ -703,7 +686,7 @@
             // 
             this.PALETTE_P_13.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_13.Location = new System.Drawing.Point(358, 247);
+            this.PALETTE_P_13.Location = new System.Drawing.Point(356, 234);
             this.PALETTE_P_13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_13.Name = "PALETTE_P_13";
             this.PALETTE_P_13.Size = new System.Drawing.Size(37, 30);
@@ -713,7 +696,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(335, 259);
+            this.label39.Location = new System.Drawing.Point(333, 246);
             this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(26, 18);
@@ -722,13 +705,12 @@
             // 
             // PALETTE_B_13
             // 
-
             this.PALETTE_B_13.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_13.Location = new System.Drawing.Point(335, 343);
+            this.PALETTE_B_13.Location = new System.Drawing.Point(333, 330);
             this.PALETTE_B_13.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_13.Maximum = new decimal(new int[] {
             255,
@@ -741,13 +723,12 @@
             // 
             // PALETTE_G_13
             // 
-
             this.PALETTE_G_13.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_13.Location = new System.Drawing.Point(335, 312);
+            this.PALETTE_G_13.Location = new System.Drawing.Point(333, 299);
             this.PALETTE_G_13.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_13.Maximum = new decimal(new int[] {
             255,
@@ -760,13 +741,12 @@
             // 
             // PALETTE_R_13
             // 
-
             this.PALETTE_R_13.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_13.Location = new System.Drawing.Point(335, 281);
+            this.PALETTE_R_13.Location = new System.Drawing.Point(333, 268);
             this.PALETTE_R_13.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_13.Maximum = new decimal(new int[] {
             255,
@@ -781,7 +761,7 @@
             // 
             this.PALETTE_P_12.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_12.Location = new System.Drawing.Point(288, 247);
+            this.PALETTE_P_12.Location = new System.Drawing.Point(286, 234);
             this.PALETTE_P_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_12.Name = "PALETTE_P_12";
             this.PALETTE_P_12.Size = new System.Drawing.Size(37, 30);
@@ -791,7 +771,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(265, 259);
+            this.label41.Location = new System.Drawing.Point(263, 246);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(26, 18);
@@ -800,13 +780,12 @@
             // 
             // PALETTE_B_12
             // 
-
             this.PALETTE_B_12.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_12.Location = new System.Drawing.Point(265, 343);
+            this.PALETTE_B_12.Location = new System.Drawing.Point(263, 330);
             this.PALETTE_B_12.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_12.Maximum = new decimal(new int[] {
             255,
@@ -819,13 +798,12 @@
             // 
             // PALETTE_G_12
             // 
-
             this.PALETTE_G_12.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_12.Location = new System.Drawing.Point(265, 312);
+            this.PALETTE_G_12.Location = new System.Drawing.Point(263, 299);
             this.PALETTE_G_12.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_12.Maximum = new decimal(new int[] {
             255,
@@ -838,13 +816,12 @@
             // 
             // PALETTE_R_12
             // 
-
             this.PALETTE_R_12.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_12.Location = new System.Drawing.Point(265, 281);
+            this.PALETTE_R_12.Location = new System.Drawing.Point(263, 268);
             this.PALETTE_R_12.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_12.Maximum = new decimal(new int[] {
             255,
@@ -859,7 +836,7 @@
             // 
             this.PALETTE_P_11.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_11.Location = new System.Drawing.Point(214, 247);
+            this.PALETTE_P_11.Location = new System.Drawing.Point(212, 234);
             this.PALETTE_P_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_11.Name = "PALETTE_P_11";
             this.PALETTE_P_11.Size = new System.Drawing.Size(37, 30);
@@ -869,7 +846,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(191, 259);
+            this.label43.Location = new System.Drawing.Point(189, 246);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(26, 18);
@@ -878,13 +855,12 @@
             // 
             // PALETTE_B_11
             // 
-
             this.PALETTE_B_11.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_11.Location = new System.Drawing.Point(191, 343);
+            this.PALETTE_B_11.Location = new System.Drawing.Point(189, 330);
             this.PALETTE_B_11.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_11.Maximum = new decimal(new int[] {
             255,
@@ -897,13 +873,12 @@
             // 
             // PALETTE_G_11
             // 
-
             this.PALETTE_G_11.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_11.Location = new System.Drawing.Point(191, 312);
+            this.PALETTE_G_11.Location = new System.Drawing.Point(189, 299);
             this.PALETTE_G_11.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_11.Maximum = new decimal(new int[] {
             255,
@@ -916,13 +891,12 @@
             // 
             // PALETTE_R_11
             // 
-
             this.PALETTE_R_11.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_11.Location = new System.Drawing.Point(191, 281);
+            this.PALETTE_R_11.Location = new System.Drawing.Point(189, 268);
             this.PALETTE_R_11.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_11.Maximum = new decimal(new int[] {
             255,
@@ -937,7 +911,7 @@
             // 
             this.PALETTE_P_10.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_10.Location = new System.Drawing.Point(145, 247);
+            this.PALETTE_P_10.Location = new System.Drawing.Point(143, 234);
             this.PALETTE_P_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_10.Name = "PALETTE_P_10";
             this.PALETTE_P_10.Size = new System.Drawing.Size(37, 30);
@@ -947,7 +921,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(122, 259);
+            this.label45.Location = new System.Drawing.Point(120, 246);
             this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(26, 18);
@@ -956,13 +930,12 @@
             // 
             // PALETTE_B_10
             // 
-
             this.PALETTE_B_10.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_10.Location = new System.Drawing.Point(122, 343);
+            this.PALETTE_B_10.Location = new System.Drawing.Point(120, 330);
             this.PALETTE_B_10.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_10.Maximum = new decimal(new int[] {
             255,
@@ -975,13 +948,12 @@
             // 
             // PALETTE_G_10
             // 
-
             this.PALETTE_G_10.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_10.Location = new System.Drawing.Point(122, 312);
+            this.PALETTE_G_10.Location = new System.Drawing.Point(120, 299);
             this.PALETTE_G_10.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_10.Maximum = new decimal(new int[] {
             255,
@@ -994,13 +966,12 @@
             // 
             // PALETTE_R_10
             // 
-
             this.PALETTE_R_10.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_10.Location = new System.Drawing.Point(122, 281);
+            this.PALETTE_R_10.Location = new System.Drawing.Point(120, 268);
             this.PALETTE_R_10.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_10.Maximum = new decimal(new int[] {
             255,
@@ -1015,7 +986,7 @@
             // 
             this.PALETTE_P_9.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_9.Location = new System.Drawing.Point(74, 247);
+            this.PALETTE_P_9.Location = new System.Drawing.Point(72, 234);
             this.PALETTE_P_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_9.Name = "PALETTE_P_9";
             this.PALETTE_P_9.Size = new System.Drawing.Size(37, 30);
@@ -1025,7 +996,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(52, 259);
+            this.label47.Location = new System.Drawing.Point(50, 246);
             this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(17, 18);
@@ -1034,13 +1005,12 @@
             // 
             // PALETTE_B_9
             // 
-
             this.PALETTE_B_9.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_9.Location = new System.Drawing.Point(52, 343);
+            this.PALETTE_B_9.Location = new System.Drawing.Point(50, 330);
             this.PALETTE_B_9.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_9.Maximum = new decimal(new int[] {
             255,
@@ -1053,13 +1023,12 @@
             // 
             // PALETTE_G_9
             // 
-
             this.PALETTE_G_9.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_9.Location = new System.Drawing.Point(52, 312);
+            this.PALETTE_G_9.Location = new System.Drawing.Point(50, 299);
             this.PALETTE_G_9.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_9.Maximum = new decimal(new int[] {
             255,
@@ -1072,13 +1041,12 @@
             // 
             // PALETTE_R_9
             // 
-
             this.PALETTE_R_9.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_9.Location = new System.Drawing.Point(52, 281);
+            this.PALETTE_R_9.Location = new System.Drawing.Point(50, 268);
             this.PALETTE_R_9.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_9.Maximum = new decimal(new int[] {
             255,
@@ -1093,7 +1061,7 @@
             // 
             this.PALETTE_P_8.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_8.Location = new System.Drawing.Point(571, 112);
+            this.PALETTE_P_8.Location = new System.Drawing.Point(569, 99);
             this.PALETTE_P_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_8.Name = "PALETTE_P_8";
             this.PALETTE_P_8.Size = new System.Drawing.Size(37, 30);
@@ -1103,7 +1071,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(548, 124);
+            this.label24.Location = new System.Drawing.Point(546, 111);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(17, 18);
@@ -1112,13 +1080,12 @@
             // 
             // PALETTE_B_8
             // 
-
             this.PALETTE_B_8.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_8.Location = new System.Drawing.Point(548, 207);
+            this.PALETTE_B_8.Location = new System.Drawing.Point(546, 194);
             this.PALETTE_B_8.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_8.Maximum = new decimal(new int[] {
             255,
@@ -1131,13 +1098,12 @@
             // 
             // PALETTE_G_8
             // 
-
             this.PALETTE_G_8.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_8.Location = new System.Drawing.Point(548, 175);
+            this.PALETTE_G_8.Location = new System.Drawing.Point(546, 162);
             this.PALETTE_G_8.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_8.Maximum = new decimal(new int[] {
             255,
@@ -1150,13 +1116,12 @@
             // 
             // PALETTE_R_8
             // 
-
             this.PALETTE_R_8.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_8.Location = new System.Drawing.Point(548, 145);
+            this.PALETTE_R_8.Location = new System.Drawing.Point(546, 132);
             this.PALETTE_R_8.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_8.Maximum = new decimal(new int[] {
             255,
@@ -1171,7 +1136,7 @@
             // 
             this.PALETTE_P_7.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_7.Location = new System.Drawing.Point(497, 112);
+            this.PALETTE_P_7.Location = new System.Drawing.Point(495, 99);
             this.PALETTE_P_7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_7.Name = "PALETTE_P_7";
             this.PALETTE_P_7.Size = new System.Drawing.Size(37, 30);
@@ -1181,7 +1146,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(474, 124);
+            this.label26.Location = new System.Drawing.Point(472, 111);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(17, 18);
@@ -1190,13 +1155,12 @@
             // 
             // PALETTE_B_7
             // 
-
             this.PALETTE_B_7.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_7.Location = new System.Drawing.Point(474, 207);
+            this.PALETTE_B_7.Location = new System.Drawing.Point(472, 194);
             this.PALETTE_B_7.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_7.Maximum = new decimal(new int[] {
             255,
@@ -1209,13 +1173,12 @@
             // 
             // PALETTE_G_7
             // 
-
             this.PALETTE_G_7.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_7.Location = new System.Drawing.Point(474, 175);
+            this.PALETTE_G_7.Location = new System.Drawing.Point(472, 162);
             this.PALETTE_G_7.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_7.Maximum = new decimal(new int[] {
             255,
@@ -1228,13 +1191,12 @@
             // 
             // PALETTE_R_7
             // 
-
             this.PALETTE_R_7.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_7.Location = new System.Drawing.Point(474, 145);
+            this.PALETTE_R_7.Location = new System.Drawing.Point(472, 132);
             this.PALETTE_R_7.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_7.Maximum = new decimal(new int[] {
             255,
@@ -1249,7 +1211,7 @@
             // 
             this.PALETTE_P_6.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_6.Location = new System.Drawing.Point(428, 112);
+            this.PALETTE_P_6.Location = new System.Drawing.Point(426, 99);
             this.PALETTE_P_6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_6.Name = "PALETTE_P_6";
             this.PALETTE_P_6.Size = new System.Drawing.Size(37, 30);
@@ -1259,7 +1221,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(404, 124);
+            this.label28.Location = new System.Drawing.Point(402, 111);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(17, 18);
@@ -1268,13 +1230,12 @@
             // 
             // PALETTE_B_6
             // 
-
             this.PALETTE_B_6.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_6.Location = new System.Drawing.Point(404, 207);
+            this.PALETTE_B_6.Location = new System.Drawing.Point(402, 194);
             this.PALETTE_B_6.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_6.Maximum = new decimal(new int[] {
             255,
@@ -1287,13 +1248,12 @@
             // 
             // PALETTE_G_6
             // 
-
             this.PALETTE_G_6.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_6.Location = new System.Drawing.Point(404, 175);
+            this.PALETTE_G_6.Location = new System.Drawing.Point(402, 162);
             this.PALETTE_G_6.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_6.Maximum = new decimal(new int[] {
             255,
@@ -1306,13 +1266,12 @@
             // 
             // PALETTE_R_6
             // 
-
             this.PALETTE_R_6.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_6.Location = new System.Drawing.Point(404, 145);
+            this.PALETTE_R_6.Location = new System.Drawing.Point(402, 132);
             this.PALETTE_R_6.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_6.Maximum = new decimal(new int[] {
             255,
@@ -1327,7 +1286,7 @@
             // 
             this.PALETTE_P_5.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_5.Location = new System.Drawing.Point(358, 112);
+            this.PALETTE_P_5.Location = new System.Drawing.Point(356, 99);
             this.PALETTE_P_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_5.Name = "PALETTE_P_5";
             this.PALETTE_P_5.Size = new System.Drawing.Size(37, 30);
@@ -1337,7 +1296,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(335, 124);
+            this.label31.Location = new System.Drawing.Point(333, 111);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(17, 18);
@@ -1346,13 +1305,12 @@
             // 
             // PALETTE_B_5
             // 
-
             this.PALETTE_B_5.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_5.Location = new System.Drawing.Point(335, 207);
+            this.PALETTE_B_5.Location = new System.Drawing.Point(333, 194);
             this.PALETTE_B_5.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_5.Maximum = new decimal(new int[] {
             255,
@@ -1365,13 +1323,12 @@
             // 
             // PALETTE_G_5
             // 
-
             this.PALETTE_G_5.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_5.Location = new System.Drawing.Point(335, 175);
+            this.PALETTE_G_5.Location = new System.Drawing.Point(333, 162);
             this.PALETTE_G_5.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_5.Maximum = new decimal(new int[] {
             255,
@@ -1384,13 +1341,12 @@
             // 
             // PALETTE_R_5
             // 
-
             this.PALETTE_R_5.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_5.Location = new System.Drawing.Point(335, 145);
+            this.PALETTE_R_5.Location = new System.Drawing.Point(333, 132);
             this.PALETTE_R_5.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_5.Maximum = new decimal(new int[] {
             255,
@@ -1405,7 +1361,7 @@
             // 
             this.PALETTE_P_4.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_4.Location = new System.Drawing.Point(288, 112);
+            this.PALETTE_P_4.Location = new System.Drawing.Point(286, 99);
             this.PALETTE_P_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_4.Name = "PALETTE_P_4";
             this.PALETTE_P_4.Size = new System.Drawing.Size(37, 30);
@@ -1415,7 +1371,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(265, 124);
+            this.label19.Location = new System.Drawing.Point(263, 111);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(17, 18);
@@ -1424,13 +1380,12 @@
             // 
             // PALETTE_B_4
             // 
-
             this.PALETTE_B_4.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_4.Location = new System.Drawing.Point(265, 207);
+            this.PALETTE_B_4.Location = new System.Drawing.Point(263, 194);
             this.PALETTE_B_4.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_4.Maximum = new decimal(new int[] {
             255,
@@ -1443,13 +1398,12 @@
             // 
             // PALETTE_G_4
             // 
-
             this.PALETTE_G_4.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_4.Location = new System.Drawing.Point(265, 175);
+            this.PALETTE_G_4.Location = new System.Drawing.Point(263, 162);
             this.PALETTE_G_4.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_4.Maximum = new decimal(new int[] {
             255,
@@ -1462,13 +1416,12 @@
             // 
             // PALETTE_R_4
             // 
-
             this.PALETTE_R_4.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_4.Location = new System.Drawing.Point(265, 145);
+            this.PALETTE_R_4.Location = new System.Drawing.Point(263, 132);
             this.PALETTE_R_4.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_4.Maximum = new decimal(new int[] {
             255,
@@ -1483,7 +1436,7 @@
             // 
             this.PALETTE_P_3.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_3.Location = new System.Drawing.Point(214, 112);
+            this.PALETTE_P_3.Location = new System.Drawing.Point(212, 99);
             this.PALETTE_P_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_3.Name = "PALETTE_P_3";
             this.PALETTE_P_3.Size = new System.Drawing.Size(37, 30);
@@ -1493,7 +1446,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(191, 124);
+            this.label17.Location = new System.Drawing.Point(189, 111);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(17, 18);
@@ -1502,13 +1455,12 @@
             // 
             // PALETTE_B_3
             // 
-
             this.PALETTE_B_3.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_3.Location = new System.Drawing.Point(191, 207);
+            this.PALETTE_B_3.Location = new System.Drawing.Point(189, 194);
             this.PALETTE_B_3.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_3.Maximum = new decimal(new int[] {
             255,
@@ -1521,13 +1473,12 @@
             // 
             // PALETTE_G_3
             // 
-
             this.PALETTE_G_3.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_3.Location = new System.Drawing.Point(191, 175);
+            this.PALETTE_G_3.Location = new System.Drawing.Point(189, 162);
             this.PALETTE_G_3.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_3.Maximum = new decimal(new int[] {
             255,
@@ -1540,13 +1491,12 @@
             // 
             // PALETTE_R_3
             // 
-
             this.PALETTE_R_3.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_3.Location = new System.Drawing.Point(191, 145);
+            this.PALETTE_R_3.Location = new System.Drawing.Point(189, 132);
             this.PALETTE_R_3.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_3.Maximum = new decimal(new int[] {
             255,
@@ -1561,7 +1511,7 @@
             // 
             this.PALETTE_P_2.AccessibleDescription = "@PALETTE_COLOR";
             this.PALETTE_P_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_2.Location = new System.Drawing.Point(145, 112);
+            this.PALETTE_P_2.Location = new System.Drawing.Point(143, 99);
             this.PALETTE_P_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_2.Name = "PALETTE_P_2";
             this.PALETTE_P_2.Size = new System.Drawing.Size(37, 30);
@@ -1571,7 +1521,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(122, 124);
+            this.label15.Location = new System.Drawing.Point(120, 111);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 18);
@@ -1580,13 +1530,12 @@
             // 
             // PALETTE_B_2
             // 
-
             this.PALETTE_B_2.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_2.Location = new System.Drawing.Point(122, 207);
+            this.PALETTE_B_2.Location = new System.Drawing.Point(120, 194);
             this.PALETTE_B_2.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_2.Maximum = new decimal(new int[] {
             255,
@@ -1599,13 +1548,12 @@
             // 
             // PALETTE_G_2
             // 
-
             this.PALETTE_G_2.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_2.Location = new System.Drawing.Point(122, 175);
+            this.PALETTE_G_2.Location = new System.Drawing.Point(120, 162);
             this.PALETTE_G_2.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_2.Maximum = new decimal(new int[] {
             255,
@@ -1618,13 +1566,12 @@
             // 
             // PALETTE_R_2
             // 
-
             this.PALETTE_R_2.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_2.Location = new System.Drawing.Point(122, 145);
+            this.PALETTE_R_2.Location = new System.Drawing.Point(120, 132);
             this.PALETTE_R_2.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_2.Maximum = new decimal(new int[] {
             255,
@@ -1639,7 +1586,7 @@
             // 
             this.PALETTE_P_1.AccessibleDescription = "@PALETTE_COLOR0";
             this.PALETTE_P_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PALETTE_P_1.Location = new System.Drawing.Point(74, 112);
+            this.PALETTE_P_1.Location = new System.Drawing.Point(72, 99);
             this.PALETTE_P_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PALETTE_P_1.Name = "PALETTE_P_1";
             this.PALETTE_P_1.Size = new System.Drawing.Size(37, 30);
@@ -1649,7 +1596,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 124);
+            this.label7.Location = new System.Drawing.Point(50, 111);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 18);
@@ -1658,13 +1605,12 @@
             // 
             // PALETTE_B_1
             // 
-
             this.PALETTE_B_1.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_B_1.Location = new System.Drawing.Point(52, 207);
+            this.PALETTE_B_1.Location = new System.Drawing.Point(50, 194);
             this.PALETTE_B_1.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_B_1.Maximum = new decimal(new int[] {
             255,
@@ -1677,13 +1623,12 @@
             // 
             // PALETTE_G_1
             // 
-
             this.PALETTE_G_1.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_G_1.Location = new System.Drawing.Point(52, 175);
+            this.PALETTE_G_1.Location = new System.Drawing.Point(50, 162);
             this.PALETTE_G_1.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_G_1.Maximum = new decimal(new int[] {
             255,
@@ -1696,13 +1641,12 @@
             // 
             // PALETTE_R_1
             // 
-
             this.PALETTE_R_1.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.PALETTE_R_1.Location = new System.Drawing.Point(52, 145);
+            this.PALETTE_R_1.Location = new System.Drawing.Point(50, 132);
             this.PALETTE_R_1.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_R_1.Maximum = new decimal(new int[] {
             255,
@@ -1716,7 +1660,7 @@
             // PALETTE_ADDRESS
             // 
             this.PALETTE_ADDRESS.Hexadecimal = true;
-            this.PALETTE_ADDRESS.Location = new System.Drawing.Point(200, 18);
+            this.PALETTE_ADDRESS.Location = new System.Drawing.Point(192, 18);
             this.PALETTE_ADDRESS.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_ADDRESS.Maximum = new decimal(new int[] {
             -559939585,
@@ -1739,6 +1683,29 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Warning32ColorMode
+            // 
+            this.Warning32ColorMode.AccessibleDescription = "";
+            this.Warning32ColorMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Warning32ColorMode.Location = new System.Drawing.Point(398, 51);
+            this.Warning32ColorMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Warning32ColorMode.Name = "Warning32ColorMode";
+            this.Warning32ColorMode.Size = new System.Drawing.Size(143, 26);
+            this.Warning32ColorMode.TabIndex = 277;
+            this.Warning32ColorMode.Text = "32ColorMode";
+            this.Warning32ColorMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Warning32ColorMode.Visible = false;
+            // 
+            // X_PIC
+            // 
+            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC.Location = new System.Drawing.Point(2, 2);
+            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
+            this.X_PIC.Name = "X_PIC";
+            this.X_PIC.Size = new System.Drawing.Size(555, 406);
+            this.X_PIC.TabIndex = 0;
+            this.X_PIC.TabStop = false;
+            // 
             // ImageBattleAnimePalletForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1749,10 +1716,10 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "ImageBattleAnimePalletForm";
             this.Text = "バトルアニメパレット";
+            this.Load += new System.EventHandler(this.ImageBattleAnimePalletForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AutoScrollPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).EndInit();
@@ -1802,6 +1769,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1907,5 +1875,6 @@
         private System.Windows.Forms.ComboBox PaletteZoomComboBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel AutoScrollPanel;
+        private System.Windows.Forms.Label Warning32ColorMode;
     }
 }

@@ -839,7 +839,7 @@ namespace FEBuilderGBA
        }
        private void X_N_JumpPalette_Click(object sender, EventArgs e)
        {
-           ImageBattleAnimePalletForm f = (ImageBattleAnimePalletForm)InputFormRef.JumpForm<ImageBattleAnimePalletForm>(U.NOT_FOUND);
+           ImageBattleAnimePalletForm f = (ImageBattleAnimePalletForm)InputFormRef.JumpFormLow<ImageBattleAnimePalletForm>();
            f.JumpTo((uint)N_AddressList.SelectedIndex + 1
                , (uint)N_P28.Value
                , (int)ShowPaletteComboBox.SelectedIndex);
@@ -851,6 +851,7 @@ namespace FEBuilderGBA
                }
                U.ReSelectList(this.N_AddressList);
            };
+           f.Show();
        }
 
        //斧使いが、手斧のモーションを持っているかテストする.
