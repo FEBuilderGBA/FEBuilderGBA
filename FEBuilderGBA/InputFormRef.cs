@@ -5888,23 +5888,49 @@ namespace FEBuilderGBA
         //武器レベル
         public static String GetWeaponClass(uint num)
         {
-            if (num <= 0) return "-";
-            if (num <= 30) return "E";
-            if (num <= 70) return "D";
-            if (num <= 120) return "C";
-            if (num <= 180) return "B";
-            if (num <= 250) return "A";
-            return "S";
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                if (num <= 0) return "-";
+                if (num <= 50) return "E";
+                if (num <= 100) return "D";
+                if (num <= 150) return "C";
+                if (num <= 200) return "B";
+                if (num <= 250) return "A";
+                return "S";
+            }
+            else
+            {
+                if (num <= 0) return "-";
+                if (num <= 30) return "E";
+                if (num <= 70) return "D";
+                if (num <= 120) return "C";
+                if (num <= 180) return "B";
+                if (num <= 250) return "A";
+                return "S";
+            }
         }
         public static uint GetWeaponClassRev(string lv)
         {
-            if (lv == "E") return 1;
-            else if (lv == "D") return 31;
-            else if (lv == "C") return 71;
-            else if (lv == "B") return 121;
-            else if (lv == "A") return 181;
-            else if (lv == "S") return 251;
-            return 0;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                if (lv == "E") return 1;
+                else if (lv == "D") return 51;
+                else if (lv == "C") return 101;
+                else if (lv == "B") return 151;
+                else if (lv == "A") return 201;
+                else if (lv == "S") return 251;
+                return 0;
+            }
+            else
+            {
+                if (lv == "E") return 1;
+                else if (lv == "D") return 31;
+                else if (lv == "C") return 71;
+                else if (lv == "B") return 121;
+                else if (lv == "A") return 181;
+                else if (lv == "S") return 251;
+                return 0;
+            }
         }
         //属性
         public static String GetAttributeName(uint num)
