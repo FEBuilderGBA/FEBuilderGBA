@@ -11631,3 +11631,5 @@ r3=X tile position of menu of the right	{U}
 08081348	Play sound effect (0x2d5) when playing on the map.	{U}
 08081348	Play sound effect (0x2d6) when dancing on the map.	{U}
 080812C0	Register sound effects to play when dancing / playing on the map.	{U}
+08000AE8	Display build version and release year.	{J}
+08000B10	Display build version and release year.	{U}

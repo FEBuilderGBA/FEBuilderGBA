@@ -59,7 +59,8 @@ namespace FEBuilderGBA
                         return new U.AddrResult(0, "");
                     }
 
-                    uint p = ClassForm.GetMoveCostAddrLow(addr,(uint)self.FilterComboBox.SelectedIndex);
+                    int filter = FilerFE6ToFE8(self.FilterComboBox.SelectedIndex);
+                    uint p = ClassForm.GetMoveCostAddrLow(addr, (uint)filter);
                     if (p == 0)
                     {
                         return new U.AddrResult();
@@ -79,13 +80,28 @@ namespace FEBuilderGBA
             this.ReloadListButton.PerformClick();
         }
 
+        static int FilerFE6ToFE8(int fe6Filter)
+        {
+            if (fe6Filter == 0)
+            {
+                return 0;
+            }
+            //天気 雨と雪は FE6にはない.
+            return fe6Filter + 2;
+        }
+        static int FilerFE8ToFE6(int fe8Filter)
+        {
+            if (fe8Filter <= 2)
+            {
+                return 0;
+            }
+            //天気 雨と雪は FE6にはない.
+            return fe8Filter - 2;
+        }
+
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int filter = this.FilterComboBox.SelectedIndex;
-            if (filter == 1 || filter == 2)
-            {//天気 雨と雪は FE6にはない.
-                filter = 0;
-            }
+            int filter = FilerFE6ToFE8(this.FilterComboBox.SelectedIndex);
 
             if (filter == 6)
             {//地形回復 全クラス共通
@@ -114,7 +130,7 @@ namespace FEBuilderGBA
 
         public void JumpToClassID(uint classid,int filter)
         {
-            FilterComboBox.SelectedIndex = filter - 1;
+            FilterComboBox.SelectedIndex = FilerFE8ToFE6(filter - 1);
             for (int i = 0; i < AddressList.Items.Count; i++)
             {
                 if (U.atoh(AddressList.Items[i].ToString()) == classid)
@@ -147,7 +163,8 @@ namespace FEBuilderGBA
             string name = U.ToHexString(classid) + " " + ClassForm.GetClassNameLow(classaddr);
 
             uint p = InputFormRef.SelectToAddr(this.AddressList);
-            uint setting = ClassForm.GetMoveCostPointerAddrLow(classaddr, (uint)this.FilterComboBox.SelectedIndex);
+            int filter = FilerFE6ToFE8(this.FilterComboBox.SelectedIndex);
+            uint setting = ClassForm.GetMoveCostPointerAddrLow(classaddr, (uint)filter);
             if (setting == U.NOT_FOUND)
             {
                 return;
@@ -179,7 +196,8 @@ namespace FEBuilderGBA
             }
             LabelEx label = (LabelEx)c;
 
-            if (FilterComboBox.SelectedIndex <= 2)
+            int filter = FilerFE6ToFE8(this.FilterComboBox.SelectedIndex);
+            if (filter <= 2)
             {
                 uint value = (uint)nud.Value;
                 if (value == 255 || value <= 15)

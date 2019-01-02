@@ -243,8 +243,6 @@
             this.FilterComboBox.FormattingEnabled = true;
             this.FilterComboBox.Items.AddRange(new object[] {
             "移動コスト: 天気普通",
-            "移動コスト: 天気雨(FE6にはない)",
-            "移動コスト: 天気雪(FE6にはない)",
             "地形回避",
             "地形防御",
             "地形魔防",

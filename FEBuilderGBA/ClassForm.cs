@@ -473,17 +473,17 @@ namespace FEBuilderGBA
                 switch (costtype)
                 {
                     case 0:
-                        return addr + 48; //移動コスト
+                        return addr + 52; //移動コスト
                     case 1:
                         return 0; //移動コスト(雨)  FE6にはない
                     case 2:
                         return 0; //移動コスト(雪)  FE6にはない
                     case 3:
-                        return addr + 52; //地形回避
+                        return addr + 56; //地形回避
                     case 4:
-                        return addr + 56; //地形防御
+                        return addr + 60; //地形防御
                     case 5:
-                        return addr + 60; //地形魔防
+                        return addr + 64; //地形魔防
                     default:
                         return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
                 }

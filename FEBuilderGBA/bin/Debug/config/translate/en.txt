@@ -7366,12 +7366,6 @@ Tile movement cost incorrect.\r\nTiles that can not be moved must be set to 255,
 :移動コスト: 天気普通
 Movement Cost: Clear sky
 
-:移動コスト: 天気雨(FE6にはない)
-Movement Cost: Rain (not in FE6)
-
-:移動コスト: 天気雪(FE6にはない)
-Movement Cost: Snow (not in FE6)
-
 :使用中のクラス
 Class in use
 
