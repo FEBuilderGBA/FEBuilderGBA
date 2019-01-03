@@ -120,6 +120,10 @@ namespace FEBuilderGBA
                 byte[] rom = MainFormUtil.OpenROMToByte(
                      this.FindBackup.Files[i].FilePath
                     ,this.FindBackup.OrignalFilename);
+                if (rom.Length <= 0)
+                {//このバックアップは壊れている!
+                    continue;
+                }
 
                 if (SearchNotContainThisPatchBy(rom))
                 {
@@ -172,6 +176,11 @@ namespace FEBuilderGBA
             byte[] rom = MainFormUtil.OpenROMToByte(
                   this.OrignalFilename.Text
                 , this.FindBackup.OrignalFilename);
+            if (rom.Length <= 0)
+            {//ROMを読み込めないので、バニラを取得.
+                rom = MainFormUtil.OpenROMToByte(this.FindBackup.OrignalFilename);
+            }
+
             return rom;
         }
 
