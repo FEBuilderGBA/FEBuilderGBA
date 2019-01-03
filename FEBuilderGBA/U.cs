@@ -4133,15 +4133,15 @@ namespace FEBuilderGBA
             string a = str.ToLower();
             if (isJP)
             {
-                a = RegexCache.Replace(a, @"[\[\]、,，]", "");
+                a = RegexCache.Replace(a, @"[\[\]、,，]", "");    ///No Translate
                 //カタカナはすべてひらがなを経由してローマ字へ、全角英数字は、半角英数字に置き換えます.
                 a = ToMigemo(a);
             }
             else
             {
-                a = RegexCache.Replace(a, @"[\[\]、,，]", " ");
+                a = RegexCache.Replace(a, @"[\[\]、,，]", " ");   ///No Translate
             }
-            a = RegexCache.Replace(a, @"\s+", " ");//連続するスペースを1つにする.
+            a = RegexCache.Replace(a, @"\s+", " ");//連続するスペースを1つにする. ///No Translate
             return a;
         }
 

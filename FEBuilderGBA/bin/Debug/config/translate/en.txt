@@ -1144,11 +1144,14 @@ Party
 :チート
 Cheat
 
+:すべての敵ユニットのHPを1にします。
+Set HP of all enemy units to 1.
+
 :敵を含めて、すべてのユニットを最強にします
 Including enemies, Grow ALL units strongest.
 
-:すべての味方ユニットを最強にします
-Grow all Player units strongest.
+:すべての味方ユニットを最強にします。(Hotkey Ctrl + G)
+Grow all Player units strongest.(Hotkey Ctrl + G).
 
 :天気
 Weather
@@ -1225,11 +1228,8 @@ Currently operating unit
 :このユニットのパラメータをカンストさせる。
 Counter Stop the parameters of this unit
 
-:クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。
-Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.
-
-:すべての敵ユニットのHPを1にします。
-Set HP of all enemy units to 1.
+:クリアフラグ0x03を立てる。\r\nユニットを待機すると、現在のステージをクリアになります。(Hotkey: Ctrl + U)
+Clear flag 0x03 is set.\r\nWaiting for the unit will clear the current stage.(Hotkey: Ctrl + U).
 
 :エミュレータへ接続
 Connect to emulator
@@ -9584,7 +9584,7 @@ Support Partner 3
 This data is outside the support table.
 
 :このチェックボックスを有効にしている場合、\r\n初期値、進行値を変更すると、\r\nその相手の初期値、進行値も自動的に調整します。\r\n(ただし、相手の支援データが存在している必要があります。)
-When this check box is enabled,\r\nWhen initial value and progress value are changed,\r\nWe will automatically adjust the other party's initial value and progress value.\r\n(However, the other party's support data must be present.).
+When this check box is enabled,\r\nchanging the initial and progress value automatically adjusts\r\ninitial and progress value of the other party.\r\n(However, the other party's support data must be present.).
 
 :ユニット({0})->ユニット({1})へ支援と、その逆の、ユニット({1})->ユニット({0})へ支援の設定値が違います。\r\n初期値({2} vs {3})、進行度({4} vs {5})\r\n初期値と進行度は、同じ値にする必要があります。
 Assistance setting to unit ({1}) -> unit ({0}) is different from support to unit ({0}) -> unit ({1}) and vice versa.\r\nInitial value ({2}vs{3}), degree of progress ({4}vs{5})\r\nThe initial value and the progress degree must be the same value.
@@ -10637,7 +10637,7 @@ Google translation returned an error.\r\nI sent the translation request too much
 Please select ROM to extract fonts
 
 :無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。
-We will use translated dictionary and translation site to obtain translated text.
+This function gets translated text by using unmodified ROM, translation dictionary, translation site.
 
 :変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。
 Save only the changed text file.\r\nConversations that exist in unmodified ROM can be edited automatically and there is no need to translate.\r\nSpecify it to reduce translation data.

@@ -945,6 +945,16 @@ namespace FEBuilderGBA
             {
                 HideFloatingControlpanel();
             }
+            else if (e.Control && e.KeyCode == Keys.U)
+            {
+                MainTabControl.SelectedTab = CheatPage;
+                CHEAT_SET_FLAG03.PerformClick();
+            }
+            else if (e.Control && e.KeyCode == Keys.G)
+            {
+                MainTabControl.SelectedTab = CheatPage;
+                CHEAT_ALL_PLAYER_UNIT_GROW.PerformClick();
+            }
         }
 
         private void ProcsListBox_SelectedIndexChanged(object sender, EventArgs e)
