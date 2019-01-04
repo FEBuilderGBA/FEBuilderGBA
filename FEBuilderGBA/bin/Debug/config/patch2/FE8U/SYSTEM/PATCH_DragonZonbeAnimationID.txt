@@ -1,0 +1,15 @@
+
+NAME=ドラゴンゾンビ アニメーションID
+NAME.en=DragonZonbe AnimationID
+NAME.zh=系统_僵尸龙攻击强制改变动画效果
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x6FEC6
+AUTHOR=ainz ooal gown
+
+INFO=ドラゴンゾンビの攻撃時の魔法エフェクトIDを指定します。
+INFO.en=Dragon Specifies the magic effect ID at the time of zombie attack.
+INFO.zh=龙指定僵尸攻击时的魔法效果ID。

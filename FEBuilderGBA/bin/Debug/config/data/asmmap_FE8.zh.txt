@@ -8161,7 +8161,6 @@ r3=X tile position of menu of the right	{U}
 085B6BF4	&PALETTE	Something's palette	139	{U}
 085B6C14	&PALETTE	Something's palette	140	{U}
 085DD518	&LZ77	I think that it is an image of a snowstorm	{U}
-0878D648	&LZ77	Dragon's battle animation-like data	{U}
 085DB10C	&HEADERTSA	Anime pattern using something uncompressed TSA	5	{J}
 080DF2E0	&PALETTE	Something's palette	129	{J}
 080DF320	&PALETTE	Something's palette	130	{J}
@@ -8176,7 +8175,6 @@ r3=X tile position of menu of the right	{U}
 085E0DD4	&PALETTE	Something's palette	139	{J}
 085E0DF4	&PALETTE	Something's palette	140	{J}
 08607C40	&LZ77	I think that it is an image of a snowstorm	{J}
-087E1BA0	&LZ77	Dragon's battle animation-like data	{J}
 08a36338	&LZ77	OP(Promotion) Class Name Font	{U}
 08A372c0	&PALETTE	OP(Promotion) Class Name Font Palette	{U}
 08AB7164	&LZ77	OP(Promotion) Class Name Font	{J}
@@ -11507,3 +11505,7 @@ r3=X tile position of menu of the right	{U}
 080812C0	在地图上跳舞/玩耍时注册要播放的音效。	{U}
 08000AE8	显示构建版本和发布年份。	{J}
 08000B10	显示构建版本和发布年份。	{U}
+080286A4	获取单位属性的字符串。	{J}
+080DC94C	单位的属性。	{J}
+08072454	加载龙僵尸格斗动画数据。	{J}
+0806FEA4	加载龙僵尸格斗动画数据。	{U}

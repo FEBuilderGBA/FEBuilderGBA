@@ -10768,9 +10768,6 @@ Save modifications as a UPS patch
 :SSL証明書({0})({1})は信用されていません
 The SSL certificate ({0}) ({1}) is not trusted
 
-:[\[\]、,，]
-[\\ [\\] ,,,]
-
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
 
