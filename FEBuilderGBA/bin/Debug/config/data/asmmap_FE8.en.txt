@@ -11635,3 +11635,5 @@ r3=X tile position of menu of the right	{U}
 080DC94C	Attributes of the unit.	{J}
 08072454	Load dragon zombie fighting animation data.	{J}
 0806FEA4	Load dragon zombie fighting animation data.	{U}
+080BA2F0	ActionArena	{J}
+080B576C	ActionArena	{U}

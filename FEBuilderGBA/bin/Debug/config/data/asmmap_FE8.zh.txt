@@ -11509,3 +11509,5 @@ r3=X tile position of menu of the right	{U}
 080DC94C	单位的属性。	{J}
 08072454	加载龙僵尸格斗动画数据。	{J}
 0806FEA4	加载龙僵尸格斗动画数据。	{U}
+080BA2F0	ActionArena	{J}
+080B576C	ActionArena	{U}

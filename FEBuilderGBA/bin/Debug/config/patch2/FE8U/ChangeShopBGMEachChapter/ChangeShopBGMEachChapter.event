@@ -4,7 +4,7 @@
 #include "Extensions/Hack Installation.txt"
 
 PUSH
-ORG $B4BF8		//FE8J
+ORG $B4BF8		//FE8U
 jumpToHack(ChangeShopBGMEachChapter)
 POP
 
