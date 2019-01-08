@@ -975,11 +975,11 @@ namespace FEBuilderGBA
        //他のクラスでこのデータを参照しているか?
        bool UpdateIndependencePanel()
        {
-           if (this.AddressList.SelectedIndex < 0)
+           if (this.CLASS_LISTBOX.SelectedIndex < 0)
            {
                return false;
            }
-           uint classid = (uint)U.atoh(this.AddressList.Text);
+           uint classid = (uint)U.atoh(this.CLASS_LISTBOX.Text);
 
            uint currentP = ClassForm.GetBattleAnimeAddrWhereID(classid);
            if (!U.isSafetyOffset(currentP))
@@ -1005,22 +1005,17 @@ namespace FEBuilderGBA
        }
        private void IndependenceButton_Click(object sender, EventArgs e)
        {
-           if (this.AddressList.SelectedIndex < 0)
+           if (this.CLASS_LISTBOX.SelectedIndex < 0)
            {
                return;
            }
-           uint classid = (uint)U.atoh(this.AddressList.Text);
+           uint classid = (uint)U.atoh(this.CLASS_LISTBOX.Text);
            uint classaddr = ClassForm.GetClassAddr(classid);
            string name = U.ToHexString(classid) + " " + ClassForm.GetClassNameLow(classaddr);
 
            uint pointer;
            uint currentP = ClassForm.GetBattleAnimeAddrWhereID(classid, out pointer);
            if (!U.isSafetyOffset(currentP))
-           {
-               return;
-           }
-
-           if (InputFormRef.BaseAddress != currentP)
            {
                return;
            }
@@ -1033,8 +1028,7 @@ namespace FEBuilderGBA
 
            InputFormRef.ShowWriteNotifyAnimation(this, currentP);
 
-           this.ReloadListButton.PerformClick();
-           this.InputFormRef.JumpTo(classid);
+           U.ReSelectList(this.CLASS_LISTBOX);
        }
 
        private void ReadStartAddress_ValueChanged(object sender, EventArgs e)
