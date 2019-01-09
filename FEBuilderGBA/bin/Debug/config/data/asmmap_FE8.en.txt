@@ -11637,3 +11637,5 @@ r3=X tile position of menu of the right	{U}
 0806FEA4	Load dragon zombie fighting animation data.	{U}
 080BA2F0	ActionArena	{J}
 080B576C	ActionArena	{U}
+080B9DA4	Acquisition of selling price of shop.	{J}
+080B5220	Acquisition of selling price of shop.	{U}

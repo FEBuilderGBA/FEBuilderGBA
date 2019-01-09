@@ -459,7 +459,7 @@ namespace FEBuilderGBA
                 }
                 else if (code.Code1 >= 0x8) 
                 {//セリフ
-                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, MAX_SERIF_WIDTH, 16 * 2 , false);
+                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, GetMaxSerifWidth(), 16 * 2, false);
                     if (result != CheckBlockResult.NoError)
                     {
                         code.Error = ct.ErrorString;
@@ -1759,13 +1759,25 @@ namespace FEBuilderGBA
             TextToSpeechForm.OptionTextToSpeech(editor.Text2);
         }
 
-        public const int MAX_SERIF_WIDTH = 224;
+        public static int GetMaxSerifWidth()
+        {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                return 224;
+            }
+            else
+            {
+                return 214;
+            }
+        }
+
+
         private void TextListSpSerifuTextBox_TextChanged(object sender, EventArgs e)
         {
             string text = GetEditorText(this.TextListSpSerifuTextBox);
             CheckText ct = new CheckText();
 
-            CheckBlockResult result = ct.CheckBlockBox(text, MAX_SERIF_WIDTH, 16 * 2 , false);
+            CheckBlockResult result = ct.CheckBlockBox(text, GetMaxSerifWidth(), 16 * 2, false);
             if (result == CheckBlockResult.NoError)
             {
                 ERROR_SERIFU.Hide();
@@ -2645,7 +2657,7 @@ namespace FEBuilderGBA
             }
             if (arg1 == "OPCLASS2")
             {
-                return CheckOneLineTextMessage(text, MAX_SERIF_WIDTH, 2 * 16, false);
+                return CheckOneLineTextMessage(text, GetMaxSerifWidth(), 2 * 16, false);
             }
 
             if (arg1 == "CONVERSATION")
@@ -2940,7 +2952,7 @@ namespace FEBuilderGBA
                 return CheckSystemTextMessage(text);
             }
 
-            return CheckParse(text, MAX_SERIF_WIDTH,16*2 , false);
+            return CheckParse(text, GetMaxSerifWidth(), 16 * 2, false);
         }
         //システムメッセージのエラーチェック
         public static string CheckSystemTextMessage(string text)
@@ -2961,7 +2973,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            return CheckParse(text, MAX_SERIF_WIDTH, 16 * 5 , false);
+            return CheckParse(text, GetMaxSerifWidth(), 16 * 5, false);
         }
         //一行テキストのエラーチェック
         public static string CheckOneLineTextMessage(string text, int width, int height,bool isItemFont)

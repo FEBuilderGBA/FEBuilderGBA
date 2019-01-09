@@ -523,7 +523,7 @@ namespace FEBuilderGBA
                     w = unkownFontSize;
                 }
                 sum += w + 1;
-                if (sum + unkownFontSize < TextForm.MAX_SERIF_WIDTH)
+                if (sum + unkownFontSize < TextForm.GetMaxSerifWidth())
                 {
                     continue;
                 }
