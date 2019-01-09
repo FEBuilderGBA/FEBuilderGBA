@@ -11511,3 +11511,5 @@ r3=X tile position of menu of the right	{U}
 0806FEA4	加载龙僵尸格斗动画数据。	{U}
 080BA2F0	ActionArena	{J}
 080B576C	ActionArena	{U}
+080B9DA4	收购商店的售价。	{J}
+080B5220	收购商店的售价。	{U}
