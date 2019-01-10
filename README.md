@@ -38,10 +38,6 @@ If you find a bug that you can not solve by any means, please create report.7z f
 https://github.com/FEBuilderGBA/FEBuilderGBA
 
 
-
-
-
-
 FE_Builder_GBA
 ===
 FE GBA 3部作のROMエディターです。  

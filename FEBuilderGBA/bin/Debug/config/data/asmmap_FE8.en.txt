@@ -11639,3 +11639,21 @@ r3=X tile position of menu of the right	{U}
 080B576C	ActionArena	{U}
 080B9DA4	Acquisition of selling price of shop.	{J}
 080B5220	Acquisition of selling price of shop.	{U}
+080A4DD0	A screen for browsing the support conversation.	Draw achievement rate.	{J}
+080A7F88	A screen for browsing the support conversation.	Acquisition of support conversation achievement rate.	{J}
+080a7f44	A screen for browsing the support conversation.	Acquisition of support conversation achievement number (molecule).	{J}
+080a7f10	A screen for browsing the support conversation.	Acquisition of total number of support conversations (denominator).	{J}
+080A5774	A screen for browsing the support conversation.	Draw unit name (color changes depending on the state of support).	{J}
+080A5048	A screen for browsing the support conversation.	Top of functions to draw.	{J}
+080A4CA8	A screen for browsing the support conversation.	Draw a unit icon.	{J}
+0809af14	Drawing the frame of the menu.	{J}
+080A5388	A screen for browsing the support conversation.	Main loop.	{J}
+080A0FE8	A screen for browsing the support conversation.	Draw achievement rate.	{U}
+080A3544	A screen for browsing the support conversation.	Acquisition of support conversation achievement rate.	{U}
+080A3500	A screen for browsing the support conversation.	Acquisition of support conversation achievement number (molecule).	{U}
+080A34CC	A screen for browsing the support conversation.	Acquisition of total number of support conversations (denominator).	{U}
+080A199C	A screen for browsing the support conversation.	Draw unit name (color changes depending on the state of support).	{U}
+080A1270	A screen for browsing the support conversation.	Top of functions to draw.	{U}
+080A0EC0	A screen for browsing the support conversation.	Draw a unit icon.	{U}
+080950E8	Drawing the frame of the menu.	{U}
+080A15B0	A screen for browsing the support conversation.	Main loop.	{U}
