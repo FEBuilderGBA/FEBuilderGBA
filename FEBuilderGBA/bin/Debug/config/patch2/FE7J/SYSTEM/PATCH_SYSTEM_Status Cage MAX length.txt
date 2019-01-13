@@ -6,7 +6,7 @@ NAME.en=Stat Bar Max Length
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x80b0a 0x80b1a
+ADDRESS=0x80b0a 0x80b1a 0x80AD6 0x80ADA
 NAME.zh=状态笼子最大长度
 HEX=FALSE
 

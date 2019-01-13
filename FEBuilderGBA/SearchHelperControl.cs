@@ -100,6 +100,11 @@ namespace FEBuilderGBA
 
         void SelectIndex(int index, bool noListFocus)
         {
+            if (IsDisposed)
+            {
+                return;
+            }
+
             this.IsInnerJump = true;
             this.TargetistBox.SelectedIndex = index;
 

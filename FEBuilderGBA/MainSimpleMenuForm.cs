@@ -266,13 +266,15 @@ namespace FEBuilderGBA
         private void MainFE8Form_FormClosing(object sender, FormClosingEventArgs e)
         {
 #if DEBUG
-            //デバッグ時はいちいち聞かれると面倒なのでスルーする
-#else
+            if (Program.ArgsDic.ContainsKey("--lastrom"))
+            {//デバッグ時はいちいち聞かれると面倒なのでスルーする
+                return;
+            }
+#endif
             if (! MainFormUtil.IsNotSaveYet(this))
             {
                 e.Cancel = true;
             }
-#endif
         }
 
         private void DetailMenuButton_Click(object sender, EventArgs e)
