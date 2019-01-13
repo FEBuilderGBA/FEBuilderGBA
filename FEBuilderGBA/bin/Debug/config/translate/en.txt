@@ -5585,7 +5585,7 @@ Specify the probability that a monster will occur.
 Edit the belongings the monster has.
 
 :モンスターがワールドマップのどこに発生するかを設定します。
-Edit the unit that can be summoned by a unit with summoning skill.
+Edit the where monsters will occur in the world map.
 
 :召喚スキルを持つユニットが、召喚できるユニットを設定します。
 A unit with summoning skill sets a unit that can be summoned.

@@ -1235,6 +1235,7 @@ namespace FEBuilderGBA
                 code.SrcText = "@" + code.Code1.ToString("X04")
                     + GetEditorText(this.TextListSpSerifuTextBox)
                     ;
+                code.SrcText = AutoAppend0x0003(code.SrcText);
             }
             else
             {//テキスト
@@ -1242,6 +1243,18 @@ namespace FEBuilderGBA
             }
 
             return code;
+        }
+
+        //セリフの末尾に @0003 がなければ追加する.
+        string AutoAppend0x0003(string text)
+        {
+            string trimtext = text.TrimEnd();
+            string last = U.substr(trimtext, -5);
+            if (last.Length >= 1  && last[0] == '@')
+            {//エスケープが追加されているのでなにもしない.
+                return text;
+            }
+            return trimtext + "@0003";
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
@@ -1761,14 +1774,7 @@ namespace FEBuilderGBA
 
         public static int GetMaxSerifWidth()
         {
-            if (Program.ROM.RomInfo.is_multibyte())
-            {
-                return 224;
-            }
-            else
-            {
-                return 214;
-            }
+            return 214;
         }
 
 
