@@ -11657,3 +11657,5 @@ r3=X tile position of menu of right	{U}
 080A0EC0	browsing support conversation.	Draw a unit icon.	{U}
 080950E8	Drawing frame of menu.	{U}
 080A15B0	browsing support conversation.	Main loop.	{U}
+080D4178	Dictionary	It is judged whether there is a new item.	{J}
+080CF480	Dictionary	It is judged whether there is a new item.	{U}
