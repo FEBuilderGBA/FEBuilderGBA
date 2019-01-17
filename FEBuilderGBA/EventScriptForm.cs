@@ -1177,7 +1177,7 @@ namespace FEBuilderGBA
                     }
                     else if (arg.Type == EventScript.ArgType.WMPATH)
                     {//ワールドマップの道
-                        text = " " + WorldMapPointForm.GetWorldMapPointName(v);
+                        text = " " + WorldMapPathForm.GetPathName(v);
 
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 

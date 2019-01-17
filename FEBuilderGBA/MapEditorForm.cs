@@ -2350,6 +2350,10 @@ this.MapObjImage);
             {
                 return R.Error("MapChangeIDが0以下です");
             }
+            if (changeno >= this.ChangeList.Count)
+            {
+                return R.Error("内部構造に問題があります。this.ChangeList.Count({0}) <= changeno({1}) です", this.ChangeList.Count, changeno);
+            }
             MapChangeForm.ChangeSt changest = this.ChangeList[changeno];
             //00 は メインマップとして使っているので、 -1 する.
             changeno = changeno - 1;

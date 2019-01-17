@@ -1537,7 +1537,14 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            Clipboard.SetText(text);
+            try
+            {
+                Clipboard.SetText(text);
+            }
+            catch (ExternalException e)
+            {
+                R.ShowStopError("クリップボードにデータを保存できませんでした。" + "\r\n" + e.ToString());
+            }
         }
 
         //透明色を作る.

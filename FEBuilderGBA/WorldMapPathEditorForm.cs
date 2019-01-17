@@ -449,7 +449,7 @@ namespace FEBuilderGBA
             else
             {
                 length = Program.ROM.getBlockDataCount(addr, 4, (i, p) => { return Program.ROM.u32(p) != 0xFF; });
-                length = (length + 1) * 4;
+                length = (length + 1) ;
             }
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;

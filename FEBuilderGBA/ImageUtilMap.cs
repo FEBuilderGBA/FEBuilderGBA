@@ -540,6 +540,10 @@ namespace FEBuilderGBA
             //2つあるデータのうちどちらを参照するかは、 マップチップの 0x4 ビット目で判別する.
             // if ( 0x208 & 0x4 ) terrain_data2
             // else               terrain_data1  
+            if (null == configUZ)
+            {//変なデータ
+                return U.NOT_FOUND;
+            }
 
             int terrain_offset = ((chipset_id >> 3) * 2) + CHIPSET_SEP_BYTE;
             if (terrain_offset + 1 >= configUZ.Length)
