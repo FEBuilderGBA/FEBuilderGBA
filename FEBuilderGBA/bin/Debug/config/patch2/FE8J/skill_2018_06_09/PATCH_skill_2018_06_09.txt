@@ -196,10 +196,10 @@ TEXT:0x0ED6=0x0ED6.TXT
 
 INFO=aeraさんが作ったFE8Nからスキル機能だけを抜き出したものです。
 INFO.en=This is the one which extracted skill function only from FE8N made by aera.
-AUTHOR=出典元:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills
+AUTHOR=出典元:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills  , kenpuku
 
 INFO.zh=只有从aera制作的FE8N才能提取技能功能。
-AUTHOR.zh=来源:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills
-AUTHOR.en=Source: https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills
+AUTHOR.zh=来源:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills  , kenpuku
+AUTHOR.en=Source: https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills  , kenpuku
 
 

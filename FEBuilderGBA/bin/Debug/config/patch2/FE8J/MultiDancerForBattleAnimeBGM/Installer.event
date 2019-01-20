@@ -1,0 +1,13 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $74CD8
+jumpToHack(HackLocation)
+POP
+
+
+HackLocation:
+#incbin "MultiDancerForBattleAnimeBGM.dmp"
+POIN MultiDancerForBattleAnimeBGMTable
+
+#include "MultiDancerForBattleAnimeBGMTable.event"

@@ -4746,7 +4746,7 @@ r3=X tile position of menu of right	{U}
 08018F64	GetUnitDefense	{J}
 08018F84	GetUnitResistance	{J}
 08018FAC	GetUnitLuck	{J}
-08018FCC	080192b8	GetUnitPortraitId	{J}
+08018FCC	GetUnitPortraitId	{J}
 08018FEC	GetUnitMiniPortraitId	{J}
 08019018	GetUnitLeader	{J}
 08019040	SetUnitHP	{J}

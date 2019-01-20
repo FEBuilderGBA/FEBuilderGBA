@@ -1,0 +1,14 @@
+NAME=敵救出パッチがGetUnitPortraitIdを壊すのを修正する
+
+IF:0x2D724=0x01 0x68 0xC9 0x88
+INFO=敵救出パッチがGetUnitPortraitId破壊するため、顔画像変更パッチを利用してアイテム交換した時に不具合が生じます。この問題を修正します。
+
+AUTHOR=7743
+TYPE=BIN
+
+BIN:$FREEAREA=Fix_GetUnitPortraitId.dmp
+JUMP:0x2D724:$r1=Fix_GetUnitPortraitId.dmp
+NAME.en=Fix the enemy rescue patch breaking GetUnitPortraitId.
+INFO.en=Because the enemy rescue patch destroys GetUnitPortraitId, a problem occurs when items are exchanged using the face image change patch.Fix this problem.
+NAME.zh=修复敌人救援补丁打破GetUnitPortraitId。
+INFO.zh=因为敌人救援补丁破坏了GetUnitPortraitId，所以当使用面部图像更改补丁交换项目时会出现问题。解决这个问题。

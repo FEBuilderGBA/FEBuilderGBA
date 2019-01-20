@@ -6040,6 +6040,9 @@ MAPID is less than 0
 :MapChangeIDが0以下です
 MapChangeID is 0 or less
 
+:内部構造に問題があります。this.ChangeList.Count({0}) <= changeno({1}) です
+There is a problem with the internal structure.this.ChangeList.Count ({0}) <= changeno ({1}).
+
 :original.self_change_addr == 0 と、なりました
 original.self_change_addr == 0 and so on.
 
@@ -10764,6 +10767,9 @@ Save modifications as a UPS patch
 
 :。
 。
+
+:クリップボードにデータを保存できませんでした。
+Could not save data to clipboard.
 
 :SSL証明書({0})({1})は信用されていません
 The SSL certificate ({0}) ({1}) is not trusted

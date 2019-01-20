@@ -6040,6 +6040,9 @@ MAP ID小于0
 :MapChangeIDが0以下です
 Map 更改 ID是0或更少
 
+:内部構造に問題があります。this.ChangeList.Count({0}) <= changeno({1}) です
+内部结构存在问题。this.ChangeList.Count（{0}）<= changeno（{1}）。
+
 :original.self_change_addr == 0 と、なりました
 原。self_更改_地址 == 0等等。
 
@@ -10764,6 +10767,9 @@ UPS补丁创建
 
 :。
 。
+
+:クリップボードにデータを保存できませんでした。
+无法将数据保存到剪贴板。
 
 :SSL証明書({0})({1})は信用されていません
 SSL证书（{0}）（{1}）不受信任

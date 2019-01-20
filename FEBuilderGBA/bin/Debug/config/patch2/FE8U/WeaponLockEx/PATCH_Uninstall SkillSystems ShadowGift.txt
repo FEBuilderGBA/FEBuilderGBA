@@ -1,7 +1,5 @@
 NAME=Uninstall SkillSystems ShadowGift
 
-PATCHED_ID
-
 IF:0x16738=0x00 0x4B 0x18 0x47
 INFO=SkillSystems ShadowGiftを無効にします。\r\nSkillSystems ShadowGiftと、WeaponLockEx が競合しているため、WeaponLockExを利用するには、このパッチでSkillSystems ShadowGiftを無効にした後で、WeaponLockExをインストールしてください。
 
