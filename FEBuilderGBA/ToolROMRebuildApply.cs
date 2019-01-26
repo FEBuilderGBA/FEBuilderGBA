@@ -54,7 +54,12 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            this.LDRCache = DisassemblerTrumb.MakeLDRMap(this.WriteROMData32MB, 0x100, this.WriteOffset, true);
+            uint limit = Program.ROM.RomInfo.compress_image_borderline_address();
+            if (this.WriteOffset < limit)
+            {
+                limit = this.WriteOffset;
+            }
+            this.LDRCache = DisassemblerTrumb.MakeLDRMap(this.WriteROMData32MB, 0x100, limit, true);
         }
         void ClearLDRCache()
         {
@@ -81,16 +86,85 @@ namespace FEBuilderGBA
             return writeaddr;
         }
 
-        void InitFreeAreaDef(int useFreeArea)
+        void AppendUseMap(Dictionary<uint, uint> useMap,uint rebuildAddress, string[] rebuildLines)
         {
+            for (int i = 0; i < rebuildLines.Length; i++)
+            {
+                string line = rebuildLines[i];
+                string srcline = line;
+                line = U.ClipComment(line);
+                string[] sp = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+                if (sp[0] == "@_CRC32"
+                    || sp[0] == "@_REBUILDADDRESS"
+                    || sp[0] == "@_ASSERT")
+                {
+                    continue;
+                }
+
+                uint vanilla_addr;
+                uint blocksize;
+                uint count;
+                string targetfilename;
+                uint addr = ParseLine(sp
+                    , out vanilla_addr
+                    , out targetfilename
+                    , out blocksize
+                    , out count);
+                if (addr > rebuildAddress)
+                {
+                    continue;
+                }
+
+                useMap[addr] = addr;
+                uint limit = addr;
+                if (count > 0 && blocksize > 0)
+                {
+                    limit += count * blocksize;
+                }
+                else if (count > 0)
+                {
+                    limit += count;
+                }
+                else if (blocksize > 0)
+                {
+                    limit += blocksize;
+                }
+                else if (blocksize > 0)
+                {
+                    limit += 1024;
+                }
+
+                if (limit > rebuildAddress)
+                {
+                    limit = rebuildAddress;
+                }
+
+                addr = U.Padding4(addr);
+                for (uint n = addr; n < limit; n += 4)
+                {
+                    useMap[n] = n;
+                }
+            }
+        }
+
+
+        void InitFreeAreaDef(int useFreeArea,uint rebuildAddress, string[] rebuildLines)
+        {
+            Dictionary<uint, uint> useMap = new Dictionary<uint,uint>(this.AddressMap);
+            AppendUseMap(useMap, rebuildAddress,rebuildLines);
+
             this.FreeArea = new ToolROMRebuildFreeArea();
             if (useFreeArea == (int)UseFreeAreaEnum.UseReBuildAddress)
             {
-                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, this.AddressMap);
+                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, this.RebuildAddress, useMap);
             }
             else if (useFreeArea == (int)UseFreeAreaEnum.Use0x09000000)
             {
-                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address()), this.AddressMap);
+                FreeArea.MakeFreeAreaList(this.WriteROMData32MB, U.toOffset(Program.ROM.RomInfo.extends_address()), useMap);
             }
         }
 
@@ -126,7 +200,7 @@ namespace FEBuilderGBA
 
             //途中でデータを書き込むことがあるので、現在のフリーエリアを見つけてリストに追加.
             //後でROM末尾を超えたら再設定する.
-            InitFreeAreaDef(useFreeArea);
+            InitFreeAreaDef(useFreeArea,this.RebuildAddress, lines);
             //通常のROM末尾を超えた時点で再度スキャンする.
             bool isMakeFreeAreaList = false;
 
@@ -178,7 +252,7 @@ namespace FEBuilderGBA
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
                     //フリーエリアの再設定
-                    InitFreeAreaDef(useFreeArea);
+                    InitFreeAreaDef(useFreeArea, this.RebuildAddress, lines);
                 }
 
                 if (i > nextDoEvents)
@@ -718,7 +792,6 @@ namespace FEBuilderGBA
             {//リポイントが必要
                 writeaddr = Alloc((uint)newbin.Length);
             }
-
             //データの書き込み
             U.write_range(this.WriteROMData32MB, writeaddr, newbin);
             ResolvedPointer(U.toPointer(addr), U.toPointer(writeaddr), debugInfo);

@@ -63,14 +63,27 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                ret[a.Addr] = true;
+                uint addr = U.toOffset(a.Addr);
+
+                ret[addr] = true;
                 for (uint i = 0; i < a.Length; i += (FREEAREA_BLOCK_SIZE / 2))
                 {
-                    ret[a.Addr + i] = true;
+                    ret[addr + i] = true;
                 }
+
+                if (a.Pointer != U.NOT_FOUND)
+                {
+                    addr = U.toOffset(a.Pointer);
+                    ret[addr + 0] = true;
+                    ret[addr + 1] = true;
+                    ret[addr + 2] = true;
+                    ret[addr + 3] = true;
+                }
+
             }
             return ret;
         }
+
         //フリー領域と思われる部分を検出.
         void MakeFreeDataList(List<Address> list
             , Dictionary<uint, bool> knownDic
