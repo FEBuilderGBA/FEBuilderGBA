@@ -11625,3 +11625,5 @@
 080950E8	メニューの枠の描画	{U}
 080A15B0	支援会話を閲覧する画面	メインループ	{U}
 080CF480	辞書	新規項目があるか判定	{U}
+08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
+08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}

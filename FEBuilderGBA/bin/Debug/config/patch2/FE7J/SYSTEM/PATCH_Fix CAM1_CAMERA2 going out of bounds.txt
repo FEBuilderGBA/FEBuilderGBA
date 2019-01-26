@@ -1,0 +1,17 @@
+NAME=CAM1/CAMERA2で範囲外に移動するバグを修正する
+NAME.en=Fix CAM1/CAMERA2 going out of bounds
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=Default|OFF|Fix|ONN
+
+OFF:0x0160A2=0x8
+ONN:0x0160A2=0x14
+OFF:0x0160B6=0x4
+ONN:0x0160B6=0x9
+
+INFO=カメラ移動命令を利用した時に画面範囲外に移動してまうバグを修正する
+
+AUTHOR=Stan
