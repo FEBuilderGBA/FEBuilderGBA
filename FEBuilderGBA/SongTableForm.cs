@@ -130,6 +130,21 @@ namespace FEBuilderGBA
             SoundEffectList = U.LoadDicResource(fullfilename);
         }
 
+        public static string GetC85SoundEffect(uint command)
+        {
+            string need = "@C85_" + U.ToHexString(command);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var pair in SoundEffectList)
+            {
+                if (pair.Value.IndexOf(need) >= 0)
+                {
+                    sb.AppendLine(U.ToHexString(pair.Key) + "=" + pair.Value);
+                }
+            }
+            return sb.ToString();
+        }
+
         public static string GetErrorMessage(uint song_id,string type)
         {
             if (type == "")

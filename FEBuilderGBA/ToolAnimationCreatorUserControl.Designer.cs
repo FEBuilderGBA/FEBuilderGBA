@@ -75,6 +75,9 @@
             this.SamplePanel = new System.Windows.Forms.Panel();
             this.ModeHint = new FEBuilderGBA.TextBoxEx();
             this.SampleOptionPanel = new System.Windows.Forms.Panel();
+            this.C53Label = new System.Windows.Forms.Label();
+            this.C53Expand = new System.Windows.Forms.NumericUpDown();
+            this.C53ExpandLabel = new System.Windows.Forms.Label();
             this.C29Label = new System.Windows.Forms.Label();
             this.C29Opacity = new System.Windows.Forms.NumericUpDown();
             this.C29OpacityLabel = new System.Windows.Forms.Label();
@@ -109,9 +112,9 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.WriteButtonPanel = new System.Windows.Forms.Panel();
-            this.C53Label = new System.Windows.Forms.Label();
-            this.C53Expand = new System.Windows.Forms.NumericUpDown();
-            this.C53ExpandLabel = new System.Windows.Forms.Label();
+            this.SoundPlayCodeButton = new System.Windows.Forms.Button();
+            this.JumpToSoundTableSound = new FEBuilderGBA.LabelEx();
+            this.JumpToSoundTableCode = new FEBuilderGBA.LabelEx();
             this.ControlPanel.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.ImageTabPage.SuspendLayout();
@@ -126,6 +129,7 @@
             this.TermPage.SuspendLayout();
             this.SamplePanel.SuspendLayout();
             this.SampleOptionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.C53Expand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C29Opacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C29Brightness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerUnitFream)).BeginInit();
@@ -133,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ANIME_PIC)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.WriteButtonPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.C53Expand)).BeginInit();
             this.SuspendLayout();
             // 
             // ControlPanel
@@ -379,6 +382,7 @@
             // SoundTabPage
             // 
             this.SoundTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.SoundTabPage.Controls.Add(this.JumpToSoundTableSound);
             this.SoundTabPage.Controls.Add(this.label16);
             this.SoundTabPage.Controls.Add(this.SoundPlaySoundButton);
             this.SoundTabPage.Controls.Add(this.Sound);
@@ -411,6 +415,7 @@
             this.SoundPlaySoundButton.TabIndex = 46;
             this.SoundPlaySoundButton.Text = "♪";
             this.SoundPlaySoundButton.UseVisualStyleBackColor = true;
+            this.SoundPlaySoundButton.Click += new System.EventHandler(this.SoundPlaySoundButton_Click);
             // 
             // Sound
             // 
@@ -451,6 +456,8 @@
             // CodeTabPage
             // 
             this.CodeTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.CodeTabPage.Controls.Add(this.JumpToSoundTableCode);
+            this.CodeTabPage.Controls.Add(this.SoundPlayCodeButton);
             this.CodeTabPage.Controls.Add(this.Code);
             this.CodeTabPage.Controls.Add(this.label1);
             this.CodeTabPage.Controls.Add(this.CodeInfo);
@@ -711,6 +718,40 @@
             this.SampleOptionPanel.Name = "SampleOptionPanel";
             this.SampleOptionPanel.Size = new System.Drawing.Size(683, 292);
             this.SampleOptionPanel.TabIndex = 199;
+            // 
+            // C53Label
+            // 
+            this.C53Label.AutoSize = true;
+            this.C53Label.Location = new System.Drawing.Point(3, 243);
+            this.C53Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.C53Label.Name = "C53Label";
+            this.C53Label.Size = new System.Drawing.Size(24, 18);
+            this.C53Label.TabIndex = 208;
+            this.C53Label.Text = "??";
+            // 
+            // C53Expand
+            // 
+            this.C53Expand.Hexadecimal = true;
+            this.C53Expand.Location = new System.Drawing.Point(222, 237);
+            this.C53Expand.Margin = new System.Windows.Forms.Padding(2);
+            this.C53Expand.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.C53Expand.Name = "C53Expand";
+            this.C53Expand.Size = new System.Drawing.Size(74, 25);
+            this.C53Expand.TabIndex = 207;
+            // 
+            // C53ExpandLabel
+            // 
+            this.C53ExpandLabel.AutoSize = true;
+            this.C53ExpandLabel.Location = new System.Drawing.Point(123, 243);
+            this.C53ExpandLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.C53ExpandLabel.Name = "C53ExpandLabel";
+            this.C53ExpandLabel.Size = new System.Drawing.Size(95, 18);
+            this.C53ExpandLabel.TabIndex = 206;
+            this.C53ExpandLabel.Text = "背景の拡大";
             // 
             // C29Label
             // 
@@ -1096,39 +1137,38 @@
             this.WriteButtonPanel.Size = new System.Drawing.Size(676, 36);
             this.WriteButtonPanel.TabIndex = 187;
             // 
-            // C53Label
+            // SoundPlayCodeButton
             // 
-            this.C53Label.AutoSize = true;
-            this.C53Label.Location = new System.Drawing.Point(3, 243);
-            this.C53Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.C53Label.Name = "C53Label";
-            this.C53Label.Size = new System.Drawing.Size(24, 18);
-            this.C53Label.TabIndex = 208;
-            this.C53Label.Text = "??";
+            this.SoundPlayCodeButton.Location = new System.Drawing.Point(300, 8);
+            this.SoundPlayCodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundPlayCodeButton.Name = "SoundPlayCodeButton";
+            this.SoundPlayCodeButton.Size = new System.Drawing.Size(46, 28);
+            this.SoundPlayCodeButton.TabIndex = 47;
+            this.SoundPlayCodeButton.Text = "♪";
+            this.SoundPlayCodeButton.UseVisualStyleBackColor = true;
+            this.SoundPlayCodeButton.Click += new System.EventHandler(this.SoundPlayCodeButton_Click);
             // 
-            // C53Expand
+            // JumpToSoundTableSound
             // 
-            this.C53Expand.Hexadecimal = true;
-            this.C53Expand.Location = new System.Drawing.Point(222, 237);
-            this.C53Expand.Margin = new System.Windows.Forms.Padding(2);
-            this.C53Expand.Maximum = new decimal(new int[] {
-            16,
-            0,
-            0,
-            0});
-            this.C53Expand.Name = "C53Expand";
-            this.C53Expand.Size = new System.Drawing.Size(74, 25);
-            this.C53Expand.TabIndex = 207;
+            this.JumpToSoundTableSound.AutoSize = true;
+            this.JumpToSoundTableSound.ErrorMessage = "";
+            this.JumpToSoundTableSound.Location = new System.Drawing.Point(393, 16);
+            this.JumpToSoundTableSound.Name = "JumpToSoundTableSound";
+            this.JumpToSoundTableSound.Size = new System.Drawing.Size(176, 18);
+            this.JumpToSoundTableSound.TabIndex = 55;
+            this.JumpToSoundTableSound.Text = "ソングテーブルへジャンプ";
+            this.JumpToSoundTableSound.Click += new System.EventHandler(this.JumpToSoundTableSound_Click);
             // 
-            // C53ExpandLabel
+            // JumpToSoundTableCode
             // 
-            this.C53ExpandLabel.AutoSize = true;
-            this.C53ExpandLabel.Location = new System.Drawing.Point(123, 243);
-            this.C53ExpandLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.C53ExpandLabel.Name = "C53ExpandLabel";
-            this.C53ExpandLabel.Size = new System.Drawing.Size(95, 18);
-            this.C53ExpandLabel.TabIndex = 206;
-            this.C53ExpandLabel.Text = "背景の拡大";
+            this.JumpToSoundTableCode.AutoSize = true;
+            this.JumpToSoundTableCode.ErrorMessage = "";
+            this.JumpToSoundTableCode.Location = new System.Drawing.Point(393, 16);
+            this.JumpToSoundTableCode.Name = "JumpToSoundTableCode";
+            this.JumpToSoundTableCode.Size = new System.Drawing.Size(176, 18);
+            this.JumpToSoundTableCode.TabIndex = 56;
+            this.JumpToSoundTableCode.Text = "ソングテーブルへジャンプ";
+            this.JumpToSoundTableCode.Click += new System.EventHandler(this.JumpToSoundTableCode_Click);
             // 
             // ToolAnimationCreatorUserControl
             // 
@@ -1164,6 +1204,7 @@
             this.SamplePanel.PerformLayout();
             this.SampleOptionPanel.ResumeLayout(false);
             this.SampleOptionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.C53Expand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C29Opacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.C29Brightness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerUnitFream)).EndInit();
@@ -1171,7 +1212,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ANIME_PIC)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.WriteButtonPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.C53Expand)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1261,5 +1301,8 @@
         private System.Windows.Forms.Label C53Label;
         private System.Windows.Forms.NumericUpDown C53Expand;
         private System.Windows.Forms.Label C53ExpandLabel;
+        private System.Windows.Forms.Button SoundPlayCodeButton;
+        private LabelEx JumpToSoundTableSound;
+        private LabelEx JumpToSoundTableCode;
     }
 }

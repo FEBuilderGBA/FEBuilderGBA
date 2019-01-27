@@ -115,6 +115,8 @@ namespace FEBuilderGBA
 
             this.OBJ.OwnerDraw(DrawOBJCombo, DrawMode.OwnerDrawVariable);
             this.BG.OwnerDraw(DrawBGCombo, DrawMode.OwnerDrawVariable);
+            InputFormRef.markupJumpLabel(JumpToSoundTableCode);
+            InputFormRef.markupJumpLabel(JumpToSoundTableSound);
 
             InputFormRef.MakeEditListboxContextMenu(this.AddressList, AddressList_KeyDown);
 
@@ -222,6 +224,17 @@ namespace FEBuilderGBA
                 argsText = R._("ARGS\r\nXX: {0}\r\nYY: {1}\r\n", U.To0xHexString(argsXX), U.To0xHexString(argsYY));
             }
 
+            string soundText = SongTableForm.GetC85SoundEffect(c);
+            if (soundText == "")
+            {
+                SoundPlayCodeButton.Hide();
+            }
+            else
+            {
+                argsText += R._("効果音") + "\r\n" + soundText;
+                SoundPlayCodeButton.Show();
+            }
+
             if (this.AnimationType == AnimationTypeEnum.BattleAnime)
             {
                 this.CodeInfo.Text = R._("Command {0} //{1}\r\n\r\n{2}", U.To0xHexString(c), U.at(Comment_85command_Dic, c), argsText);
@@ -231,6 +244,7 @@ namespace FEBuilderGBA
                 this.CodeInfo.Text = R._("Command {0} //{1}\r\n\r\n{2}", U.To0xHexString(c), U.at(Comment_Magic85command_Dic, c), argsText);
             }
         }
+
         private void LightupButtonOnFloatingControlpanel(object sender, EventArgs e)
         {
             //変更ボタンを光らせる
@@ -2678,6 +2692,47 @@ namespace FEBuilderGBA
             X_ANIME_PIC.Width = SamplePanel.Width - X_ANIME_PIC.Location.X - 4;
             X_ANIME_PIC.Height = PlayButton.Location.Y - X_ANIME_PIC.Location.Y - 8;
         }
+
+        private void SoundPlayCodeButton_Click(object sender, EventArgs e)
+        {
+            uint command = (uint)this.Code.Value;
+            uint c = command & 0xff;
+
+            string soundText = SongTableForm.GetC85SoundEffect(c);
+            if (soundText == "")
+            {
+                return;
+            }
+            uint sound = U.atoh(soundText);
+            MainFormUtil.RunAsSappy(sound);
+        }
+
+        private void SoundPlaySoundButton_Click(object sender, EventArgs e)
+        {
+            uint sound = (uint)this.Sound.Value;
+            MainFormUtil.RunAsSappy(sound);
+        }
+
+        private void JumpToSoundTableCode_Click(object sender, EventArgs e)
+        {
+            uint command = (uint)this.Code.Value;
+            uint c = command & 0xff;
+
+            string soundText = SongTableForm.GetC85SoundEffect(c);
+            if (soundText == "")
+            {
+                InputFormRef.JumpForm<SongTableForm>();
+                return;
+            }
+            uint sound = U.atoh(soundText);
+            InputFormRef.JumpForm<SongTableForm>(sound);
+        }
+        private void JumpToSoundTableSound_Click(object sender, EventArgs e)
+        {
+            uint sound = (uint)this.Sound.Value;
+            InputFormRef.JumpForm<SongTableForm>(sound);
+        }
+
 
 
 
