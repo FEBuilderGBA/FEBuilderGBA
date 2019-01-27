@@ -2707,12 +2707,6 @@ namespace FEBuilderGBA
             MainFormUtil.RunAsSappy(sound);
         }
 
-        private void SoundPlaySoundButton_Click(object sender, EventArgs e)
-        {
-            uint sound = (uint)this.Sound.Value;
-            MainFormUtil.RunAsSappy(sound);
-        }
-
         private void JumpToSoundTableCode_Click(object sender, EventArgs e)
         {
             uint command = (uint)this.Code.Value;

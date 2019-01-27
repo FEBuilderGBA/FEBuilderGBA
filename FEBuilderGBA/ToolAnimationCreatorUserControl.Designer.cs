@@ -415,7 +415,6 @@
             this.SoundPlaySoundButton.TabIndex = 46;
             this.SoundPlaySoundButton.Text = "♪";
             this.SoundPlaySoundButton.UseVisualStyleBackColor = true;
-            this.SoundPlaySoundButton.Click += new System.EventHandler(this.SoundPlaySoundButton_Click);
             // 
             // Sound
             // 

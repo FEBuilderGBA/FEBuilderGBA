@@ -11167,3 +11167,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:ソングテーブルへジャンプ
+Jump To SongTable
