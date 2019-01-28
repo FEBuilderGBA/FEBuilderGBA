@@ -2584,6 +2584,9 @@ The order of the list does not match the ID.\r\nThe ID of this data should be {0
 :アドレス「{0}」は無効なアドレスです。
 The address "{0}" is an invalid address.
 
+:アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。
+The address "{0}" is a number that can not be divided by 4.\r\nIt may crash at run time.
+
 :アドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。
 The address ({0}) is not compressed with lz77.\r\nThe data is broken.
 
@@ -9895,6 +9898,9 @@ Animation editor
 :01 戦闘画面
 01Battle screen
 
+:効果音
+Sound Effect
+
 :コード
 Code
 
@@ -9906,9 +9912,6 @@ Termination in case of miss
 
 :防衛スキル
 Defense skill
-
-:効果音
-Sound Effect
 
 :戦闘アニメーションには、Mode1,Mode3,5,6,7,8,9,10,11,12 のモードが必要になります。
 Mode 1, Mode 3, 5, 6, 7, 8, 9, 10, 11, 12 are required for battle animation.
@@ -9976,6 +9979,9 @@ Termination
 :モードの終端を定義します。
 Defines the end of the mode.
 
+:背景の拡大
+Enlarging the background
+
 :不透明レベル
 opacity level
 
@@ -10003,8 +10009,8 @@ Target
 :プレイヤ
 Player
 
-:背景の拡大
-Enlarging the background
+:ソングテーブルへジャンプ
+Jump To SongTable
 
 :フックするアドレス
 Address to hook
@@ -11167,5 +11173,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:ソングテーブルへジャンプ
-Jump To SongTable
