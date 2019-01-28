@@ -417,6 +417,20 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            uint table_addr = InputFormRef.BaseAddress;
+            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count());
+            for (int i = 0; i < InputFormRef.DataCount; i++, table_addr += InputFormRef.BlockSize)
+            {
+                uint id = (uint)i;
+                uint p = Program.ROM.p32(table_addr + 0xC);
+
+                FELint.CheckLZ77Errors(p, errors, FELint.Type.IMAGE_UNIT_PALETTE, table_addr, id);
+            }
+        }
 
     }
 }

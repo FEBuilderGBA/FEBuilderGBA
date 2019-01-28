@@ -359,6 +359,16 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("移動アイコン");
             }
+            else if (dataType == FELint.Type.ITEM_EEFECT_POINTER)
+            {
+                show_tag = tag;
+                text = R._("間接エフェクトポインタ");
+            }
+            else if (dataType == FELint.Type.IMAGE_UNIT_PALETTE)
+            {
+                show_tag = tag;
+                text = R._("キャラパレット");
+            }
             else if (dataType == FELint.Type.STATUS_GAME_OPTION)
             {
                 show_tag = tag;
@@ -854,6 +864,16 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.IMAGE_UNIT_MOVE_ICON)
             {
                 InputFormRef.JumpForm<ImageUnitMoveIconFrom>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.ITEM_EEFECT_POINTER)
+            {
+                InputFormRef.JumpForm<ItemEffectPointerForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.IMAGE_UNIT_PALETTE)
+            {
+                InputFormRef.JumpForm<ImageUnitPaletteForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)

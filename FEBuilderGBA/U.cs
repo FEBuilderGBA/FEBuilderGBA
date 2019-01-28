@@ -344,6 +344,13 @@ namespace FEBuilderGBA
             str = str.Replace("\"", "\\\"");
             return '"' + str + '"';
         }
+
+        public static bool isPadding4(uint a)
+        {
+            return a % 4 == 0;
+        }
+
+
         [MethodImpl(256)]
         public static uint Padding2(uint p)
         {

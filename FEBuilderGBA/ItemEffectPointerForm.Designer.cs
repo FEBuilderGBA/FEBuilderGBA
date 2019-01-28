@@ -193,6 +193,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 30);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -203,7 +204,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(357, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Maximum = new decimal(new int[] {
@@ -338,6 +338,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ItemEffectPointerForm";
             this.Text = "アイテム間接エフェクトポインタテーブル";
+            this.Load += new System.EventHandler(this.ItemEffectPointerForm_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();

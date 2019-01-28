@@ -79,6 +79,43 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddFunction(list, pointer, arlist[i].name + name);
             }
         }
+
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            bool isFE6 = (Program.ROM.RomInfo.version() == 6);
+
+            uint table_addr = InputFormRef.BaseAddress;
+            uint limit_count = Math.Min(InputFormRef.DataCount, Program.ROM.RomInfo.magic_effect_original_data_count() );
+            for (int i = 0; i < limit_count; i++, table_addr += InputFormRef.BlockSize)
+            {
+                uint id = (uint)i;
+                uint asm = Program.ROM.u32(table_addr + 0);
+
+                if (asm == 0)
+                {
+                    if (isFE6)
+                    {//FE6
+                        if (id == 0x0C || id == 0x0D)
+                        {
+                            continue;
+                        }
+                    }
+                    if (id == 0x32)
+                    {//CCアイテムは、0x00が設定されているため無視する
+                        continue;
+                    }
+                }
+
+                FELint.CheckASMPointerErrors(asm, errors, FELint.Type.ITEM_EEFECT_POINTER, table_addr , id);
+            }
+        }
+
+        private void ItemEffectPointerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     
     }
 }

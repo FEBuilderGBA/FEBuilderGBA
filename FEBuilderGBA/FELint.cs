@@ -66,6 +66,8 @@ namespace FEBuilderGBA
             ,MAPEXIT  //離脱ポイント
             ,IMAGE_UNIT_MOVE_ICON  //ユニット移動画像
             ,IMAGE_UNIT_WAIT_ICON  //ユニット待機画像
+            ,ITEM_EEFECT_POINTER //アイテム間接効果ポインタ
+            ,IMAGE_UNIT_PALETTE //ユニットパレット
             ,STATUS_GAME_OPTION //ゲームオプション
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
@@ -335,17 +337,17 @@ namespace FEBuilderGBA
         {
             CheckASMPointerErrors(event_addr, errors, EventCondToType(cond), addr);
         }
-        public static void CheckASMPointerErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr)
+        public static void CheckASMPointerErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(asm))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ASM関数ポインタ「{0}」が無効です。", U.To0xHexString(asm))));
+                    , R._("ASM関数ポインタ「{0}」が無効です。", U.To0xHexString(asm)),tag));
             }
             else if (U.IsValueOdd(asm) == false)
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm))));
+                    , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
             }
         }
         public static void CheckFlagErrors(uint flag, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
@@ -404,6 +406,11 @@ namespace FEBuilderGBA
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(lz77addr)), tag));
+            }
+            if (!U.isPadding4(lz77addr))
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(lz77addr)), tag));
             }
             if (!LZ77.iscompress(Program.ROM.Data, lz77addr))
             {
@@ -481,6 +488,11 @@ namespace FEBuilderGBA
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(lz77addr)), tag));
+            }
+            if (!U.isPadding4(lz77addr))
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(lz77addr)), tag));
             }
 
             byte[] data = LZ77.decompress(Program.ROM.Data, lz77addr);
@@ -630,6 +642,12 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem ImageUnitWaitIconFrom")) return;
             ImageUnitWaitIconFrom.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ItemEffectPointerForm")) return;
+            ItemEffectPointerForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageUnitPaletteForm")) return;
+            ImageUnitPaletteForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {
