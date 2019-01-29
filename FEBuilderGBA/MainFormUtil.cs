@@ -674,6 +674,13 @@ namespace FEBuilderGBA
                 + " " + U.escape_shell_args(target_filename)
                 + " -o " + U.escape_shell_args(output_temp_filename)
                 ;
+
+            //TODO add custom option or pass user-defined argument
+            if (ext == ".C" || ext == ".CPP")
+            {
+                args += " -c -mthumb -O2";
+            }
+
             output = ProgramRunAsAndEndWait(compiler_exe, args, target_filedir);
             if (!File.Exists(output_temp_filename) || U.GetFileSize(output_temp_filename) <= 0)
             {//エラーなのでコマンド名もついでに付与

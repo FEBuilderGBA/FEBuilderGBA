@@ -770,7 +770,7 @@
             // 
             this.ASMInsertToolStripMenuItem.Name = "ASMInsertToolStripMenuItem";
             this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
-            this.ASMInsertToolStripMenuItem.Text = "ASMで追加";
+            this.ASMInsertToolStripMenuItem.Text = "ASM/Cで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
@@ -1569,7 +1569,7 @@
             this.ToolRunAsASMButton.Name = "ToolRunAsASMButton";
             this.ToolRunAsASMButton.Size = new System.Drawing.Size(200, 36);
             this.ToolRunAsASMButton.TabIndex = 20;
-            this.ToolRunAsASMButton.Text = "ASMで追加";
+            this.ToolRunAsASMButton.Text = "ASM/Cで追加";
             this.ToolRunAsASMButton.UseVisualStyleBackColor = true;
             this.ToolRunAsASMButton.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
             // 
