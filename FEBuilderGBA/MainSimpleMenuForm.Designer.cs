@@ -286,7 +286,7 @@
             // 
             this.ASMInsertToolStripMenuItem.Name = "ASMInsertToolStripMenuItem";
             this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
-            this.ASMInsertToolStripMenuItem.Text = "ASMで追加";
+            this.ASMInsertToolStripMenuItem.Text = "ASM/Cで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
             // 
             // OpenLastUsedToolStripMenuItem

@@ -305,7 +305,7 @@
             this.ClientSize = new System.Drawing.Size(809, 430);
             this.Controls.Add(this.panel1);
             this.Name = "ToolASMInsertForm";
-            this.Text = "ASMで追加";
+            this.Text = "ASM/Cで追加";
             this.Load += new System.EventHandler(this.ToolASMInsertForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
