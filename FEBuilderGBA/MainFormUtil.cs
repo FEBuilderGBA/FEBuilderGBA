@@ -678,7 +678,7 @@ namespace FEBuilderGBA
             //TODO add custom option or pass user-defined argument
             if (ext == ".C" || ext == ".CPP")
             {
-                args += " -c -mthumb -O2";
+                args += " " + OptionForm.GetCFLAGS();
             }
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, target_filedir);

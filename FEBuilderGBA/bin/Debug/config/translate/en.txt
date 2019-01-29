@@ -2491,6 +2491,12 @@ Post placement coordinates are incorrect.: {0}.
 :配置後座標が指定された数だけありません。:{0} Count:{1}
 There are not as many as the specified number of coordinates after placement.: {0} Count: {1}.
 
+:配置後座標で、すべてのデータがゼロになっています。:{0} Count:{1}
+All data is zero in the post-placement coordinates.: {0} Count: {1}.
+
+:配置後座標で、すべてのデータがFFになっています。:{0} Count:{1}
+After placement coordinates, all data is FF.: {0} Count: {1}.
+
 :ユニットに想定と異なるクラスを割り当てています。\r\nこれでは、武器レベルで近接と魔法を混在させることになります。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。
 You assigned different classes to the unit.\r\nWith this, you will mix proximity and magic at the weapon level.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.
 
@@ -5035,8 +5041,8 @@ Open in Hex Editor
 :Sappyで開く
 Open in Sappy
 
-:ASMで追加
-Insert ASM
+:ASM/Cで追加
+Insert ASM/C
 
 :最後に利用したファイル
 Last Used File
@@ -7903,6 +7909,18 @@ Function
 :0=チェックしない
 0=Do not check
 
+:1=最高レベル
+1=The highest level.
+
+:6=通常レベル
+6=Normal level.
+
+:9=最低レベル
+9=The lowest level.
+
+:Lintで警告する不明な命令の連続数
+Continuous number of unknown instructions warning by Lint.
+
 :1=簡易エラーチェックをする
 1=Perform a simple error check
 
@@ -8130,18 +8148,6 @@ File Export Settings
 
 :保存
 Save
-
-:1=最高レベル
-1=The highest level.
-
-:6=通常レベル
-6=Normal level.
-
-:9=最低レベル
-9=The lowest level.
-
-:Lintで警告する不明な命令の連続数
-Continuous number of unknown instructions warning by Lint.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -9744,6 +9750,12 @@ Warning: Text is too long in the side.\r\nEstimated number of dots: ({0},{1})\r\
 
 :警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
 Warning: Too many lines of text.\r\nEstimated dot number ({0},{1})\r\n{2}
+
+:不要
+No need.
+
+:警告:\r\n会話用のテキストなのに@0003等の記号がありません。
+warning:.\r\nAlthough it is text for conversation, there are no symbols such as @ 0003.
 
 :警告:\r\nシステムメッセージなのに{0}があります。
 Warning:\r\nThere is {0} even though it is a system message.
