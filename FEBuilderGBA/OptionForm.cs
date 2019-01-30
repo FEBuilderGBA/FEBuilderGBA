@@ -36,6 +36,7 @@ namespace FEBuilderGBA
             event_assembler.Text = Program.Config.at("event_assembler");
             mid2agb.Text = Program.Config.at("mid2agb");
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
+            CFLAGS.Text = GetCFLAGS();
 
             Color_Control_BackColor_button.BackColor = Color_Control_BackColor();
             Color_Control_ForeColor_button.BackColor = Color_Control_ForeColor();
@@ -196,6 +197,7 @@ namespace FEBuilderGBA
             Program.Config["goldroad_asm"] = goldroad_asm.Text;
             Program.Config["event_assembler"] = event_assembler.Text;
             Program.Config["mid2agb"] = mid2agb.Text;
+            Program.Config["CFLAGS"] = CFLAGS.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1255,6 +1257,11 @@ namespace FEBuilderGBA
                 return "";
             }
             return Path.GetFileName(emu);
+        }
+
+        public static string GetCFLAGS()
+        {
+            return Program.Config.at("CFLAGS", "-c -mthumb -O2");
         }
 
         void MakeExplainFunctions()

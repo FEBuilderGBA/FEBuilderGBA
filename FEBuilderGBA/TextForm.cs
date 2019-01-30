@@ -2941,8 +2941,25 @@ namespace FEBuilderGBA
             }
             text = ConvertEscapeTextRev(text);
 
-            string[] required_words = new string[] { "@0008", "@0009", "@000A", "@000B", "@000C", "@000D", "@000E", "@000F", "@0010", "@0080@000A", "@0080@000B", "@0080@000C", "@0080@000D", "@0080@000E", "@0080@000F", "@0080@0010", "@0080@0011", "@0080@0016", "@0080@0018", "@0080@0019", "@0080@001B", "@0080@001C", "@0080@001D", "@0080@001E", "@0018" };///No Translate
+            string[] required_words2 = new string[] { "@0003", "@0018", "@0017", "@0010", "@0006", "@0007" };///No Translate
+            bool found_required2_words = false;
+            for (int i = 0; i < required_words2.Length; i++)
+            {
+                if (text.IndexOf(required_words2[i]) >= 0)
+                {
+                    found_required2_words = true;
+                    break;
+                }
+            }
+            if (!found_required2_words)
+            {
+                if (text != "不要")
+                {//FE7J のルイーズとの支援会話
+                    return R._("警告:\r\n会話用のテキストなのに@0003等の記号がありません。");
+                }
+            }
 
+            string[] required_words = new string[] { "@0008", "@0009", "@000A", "@000B", "@000C", "@000D", "@000E", "@000F", "@0010", "@0080@000A", "@0080@000B", "@0080@000C", "@0080@000D", "@0080@000E", "@0080@000F", "@0080@0010", "@0080@0011", "@0080@0016", "@0080@0018", "@0080@0019", "@0080@001B", "@0080@001C", "@0080@001D", "@0080@001E", "@0018" };///No Translate
             bool found_required_words = false;
             for (int i = 0; i < required_words.Length; i++)
             {

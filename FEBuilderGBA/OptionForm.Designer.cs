@@ -176,6 +176,8 @@
             this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
             this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
             this.tabPageFunc = new System.Windows.Forms.TabPage();
+            this.func_alert_unk_event_code = new System.Windows.Forms.ComboBox();
+            this.explain_func_alert_unk_event_code = new System.Windows.Forms.Label();
             this.func_overraide_simple_error_check = new System.Windows.Forms.ComboBox();
             this.explain_func_overraide_simple_error_check = new System.Windows.Forms.Label();
             this.func_create_nodoll_gba_sym = new System.Windows.Forms.ComboBox();
@@ -228,8 +230,8 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.func_alert_unk_event_code = new System.Windows.Forms.ComboBox();
-            this.explain_func_alert_unk_event_code = new System.Windows.Forms.Label();
+            this.CFLAGS = new FEBuilderGBA.TextBoxEx();
+            this.label54 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -547,6 +549,8 @@
             // tabPagePath2
             // 
             this.tabPagePath2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagePath2.Controls.Add(this.label54);
+            this.tabPagePath2.Controls.Add(this.CFLAGS);
             this.tabPagePath2.Controls.Add(this.label49);
             this.tabPagePath2.Controls.Add(this.label48);
             this.tabPagePath2.Controls.Add(this.J_SKILL);
@@ -1983,6 +1987,38 @@
             this.tabPageFunc.TabIndex = 3;
             this.tabPageFunc.Text = "機能";
             // 
+            // func_alert_unk_event_code
+            // 
+            this.func_alert_unk_event_code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_alert_unk_event_code.FormattingEnabled = true;
+            this.func_alert_unk_event_code.Items.AddRange(new object[] {
+            "0=チェックしない",
+            "1=最高レベル",
+            "2=",
+            "3=",
+            "4=",
+            "5=",
+            "6=通常レベル",
+            "7=",
+            "8=",
+            "9=最低レベル"});
+            this.func_alert_unk_event_code.Location = new System.Drawing.Point(417, 157);
+            this.func_alert_unk_event_code.Margin = new System.Windows.Forms.Padding(2);
+            this.func_alert_unk_event_code.Name = "func_alert_unk_event_code";
+            this.func_alert_unk_event_code.Size = new System.Drawing.Size(413, 26);
+            this.func_alert_unk_event_code.TabIndex = 53;
+            // 
+            // explain_func_alert_unk_event_code
+            // 
+            this.explain_func_alert_unk_event_code.AccessibleDescription = "";
+            this.explain_func_alert_unk_event_code.Location = new System.Drawing.Point(7, 159);
+            this.explain_func_alert_unk_event_code.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_alert_unk_event_code.Name = "explain_func_alert_unk_event_code";
+            this.explain_func_alert_unk_event_code.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_alert_unk_event_code.TabIndex = 52;
+            this.explain_func_alert_unk_event_code.Text = "Lintで警告する不明な命令の連続数";
+            this.explain_func_alert_unk_event_code.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // func_overraide_simple_error_check
             // 
             this.func_overraide_simple_error_check.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2629,37 +2665,25 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // func_alert_unk_event_code
+            // CFLAGS
             // 
-            this.func_alert_unk_event_code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_alert_unk_event_code.FormattingEnabled = true;
-            this.func_alert_unk_event_code.Items.AddRange(new object[] {
-            "0=チェックしない",
-            "1=最高レベル",
-            "2=",
-            "3=",
-            "4=",
-            "5=",
-            "6=通常レベル",
-            "7=",
-            "8=",
-            "9=最低レベル"});
-            this.func_alert_unk_event_code.Location = new System.Drawing.Point(417, 157);
-            this.func_alert_unk_event_code.Margin = new System.Windows.Forms.Padding(2);
-            this.func_alert_unk_event_code.Name = "func_alert_unk_event_code";
-            this.func_alert_unk_event_code.Size = new System.Drawing.Size(413, 26);
-            this.func_alert_unk_event_code.TabIndex = 53;
+            this.CFLAGS.ErrorMessage = "";
+            this.CFLAGS.Location = new System.Drawing.Point(226, 376);
+            this.CFLAGS.Margin = new System.Windows.Forms.Padding(2);
+            this.CFLAGS.Name = "CFLAGS";
+            this.CFLAGS.Placeholder = "";
+            this.CFLAGS.Size = new System.Drawing.Size(590, 25);
+            this.CFLAGS.TabIndex = 35;
             // 
-            // explain_func_alert_unk_event_code
+            // label54
             // 
-            this.explain_func_alert_unk_event_code.AccessibleDescription = "";
-            this.explain_func_alert_unk_event_code.Location = new System.Drawing.Point(7, 159);
-            this.explain_func_alert_unk_event_code.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_alert_unk_event_code.Name = "explain_func_alert_unk_event_code";
-            this.explain_func_alert_unk_event_code.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_alert_unk_event_code.TabIndex = 52;
-            this.explain_func_alert_unk_event_code.Text = "Lintで警告する不明な命令の連続数";
-            this.explain_func_alert_unk_event_code.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(7, 381);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(161, 18);
+            this.label54.TabIndex = 36;
+            this.label54.Text = "gcc option(CFLAGS)";
             // 
             // OptionForm
             // 
@@ -2893,5 +2917,7 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox func_alert_unk_event_code;
         private System.Windows.Forms.Label explain_func_alert_unk_event_code;
+        private TextBoxEx CFLAGS;
+        private System.Windows.Forms.Label label54;
     }
 }

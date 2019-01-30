@@ -1654,9 +1654,22 @@ namespace FEBuilderGBA
             for (uint i = 0; i < count; i++)
             {
                 uint addr2 = after_address + (i * 8);
-                if (!U.isSafetyOffset(addr2 + 2))
+                if (!U.isSafetyOffset(addr2 + 7))
                 {//データがあるといったのにデータがないよ!
                     return R._("配置後座標が指定された数だけありません。:{0} Count:{1}", U.To0xHexString(after_address) , count);
+                }
+
+                //全データがnullなら警告を出す
+                uint after_move_0 = Program.ROM.u32(addr2 + 0);
+                uint after_move_4 = Program.ROM.u32(addr2 + 4);
+
+                if (after_move_0 == 0 && after_move_4 == 0)
+                {
+                    return R._("配置後座標で、すべてのデータがゼロになっています。:{0} Count:{1}", U.To0xHexString(after_address), count);
+                }
+                if (after_move_0 == 0xFFFFFFFF && after_move_4 == 0xFFFFFFFF)
+                {
+                    return R._("配置後座標で、すべてのデータがFFになっています。:{0} Count:{1}", U.To0xHexString(after_address), count);
                 }
             }
             return "";
