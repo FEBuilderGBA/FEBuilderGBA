@@ -90,6 +90,12 @@
     <Compile Include="CustomColorGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DecompileResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DecompileResult.Designer.cs">
+      <DependentUpon>DecompileResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="DecreaseColor.cs" />
     <Compile Include="DevTranslateForm.cs">
       <SubType>Form</SubType>
@@ -1894,6 +1900,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CStringForm.resx">
       <DependentUpon>CStringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DecompileResult.resx">
+      <DependentUpon>DecompileResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevTranslateForm.resx">
       <DependentUpon>DevTranslateForm.cs</DependentUpon>

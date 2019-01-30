@@ -675,7 +675,7 @@ namespace FEBuilderGBA
                 + " -o " + U.escape_shell_args(output_temp_filename)
                 ;
 
-            //TODO add custom option or pass user-defined argument
+            //add custom compiler option
             if (ext == ".C" || ext == ".CPP")
             {
                 args += " " + OptionForm.GetCFLAGS();
