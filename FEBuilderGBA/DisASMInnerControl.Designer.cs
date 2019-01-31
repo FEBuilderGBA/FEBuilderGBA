@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.decompile_button = new System.Windows.Forms.Button();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.FileToASMButton = new System.Windows.Forms.Button();
             this.DumpAll = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
-            this.decompile_button = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -72,10 +72,20 @@
             this.HeaderPanel.Controls.Add(this.ReadStartAddress);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
-            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(1486, 30);
             this.HeaderPanel.TabIndex = 54;
+            // 
+            // decompile_button
+            // 
+            this.decompile_button.Location = new System.Drawing.Point(1087, -1);
+            this.decompile_button.Name = "decompile_button";
+            this.decompile_button.Size = new System.Drawing.Size(257, 30);
+            this.decompile_button.TabIndex = 29;
+            this.decompile_button.Text = "C言語へ逆コンパイル";
+            this.decompile_button.UseVisualStyleBackColor = true;
+            this.decompile_button.Click += new System.EventHandler(this.decompile_button_Click);
             // 
             // ReloadListButton
             // 
@@ -164,7 +174,7 @@
             this.ControlPanel.Controls.Add(this.ControlPanelCommand);
             this.ControlPanel.Controls.Add(this.CloseButton);
             this.ControlPanel.Location = new System.Drawing.Point(2, 566);
-            this.ControlPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ControlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1466, 66);
             this.ControlPanel.TabIndex = 3;
@@ -178,7 +188,7 @@
             this.ControlPanelCommand.Controls.Add(this.ParamSrc1);
             this.ControlPanelCommand.Controls.Add(this.ParamLabel1);
             this.ControlPanelCommand.Location = new System.Drawing.Point(0, 2);
-            this.ControlPanelCommand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ControlPanelCommand.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanelCommand.Name = "ControlPanelCommand";
             this.ControlPanelCommand.Size = new System.Drawing.Size(1366, 63);
             this.ControlPanelCommand.TabIndex = 202;
@@ -207,7 +217,7 @@
             // 
             this.ScriptCodeName.ErrorMessage = "";
             this.ScriptCodeName.Location = new System.Drawing.Point(146, 4);
-            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
             this.ScriptCodeName.Name = "ScriptCodeName";
             this.ScriptCodeName.Placeholder = "";
             this.ScriptCodeName.ReadOnly = true;
@@ -218,7 +228,7 @@
             // 
             this.ParamSrc1.Hexadecimal = true;
             this.ParamSrc1.Location = new System.Drawing.Point(146, 34);
-            this.ParamSrc1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ParamSrc1.Margin = new System.Windows.Forms.Padding(2);
             this.ParamSrc1.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
@@ -243,7 +253,7 @@
             // CloseButton
             // 
             this.CloseButton.Location = new System.Drawing.Point(1380, 8);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(2);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(82, 32);
             this.CloseButton.TabIndex = 201;
@@ -258,7 +268,7 @@
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 24;
             this.AddressList.Location = new System.Drawing.Point(0, 0);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(1484, 768);
             this.AddressList.TabIndex = 0;
@@ -328,16 +338,6 @@
             this.HexEditorButton.Text = "HexEditor";
             this.HexEditorButton.UseVisualStyleBackColor = true;
             this.HexEditorButton.Click += new System.EventHandler(this.HexEditorButton_Click);
-            // 
-            // decompile_button
-            // 
-            this.decompile_button.Location = new System.Drawing.Point(686, -1);
-            this.decompile_button.Name = "decompile_button";
-            this.decompile_button.Size = new System.Drawing.Size(257, 30);
-            this.decompile_button.TabIndex = 29;
-            this.decompile_button.Text = "C言語へ逆コンパイル";
-            this.decompile_button.UseVisualStyleBackColor = true;
-            this.decompile_button.Click += new System.EventHandler(this.decompile_button_Click);
             // 
             // DisASMInnerControl
             // 

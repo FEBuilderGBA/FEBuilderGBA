@@ -10088,7 +10088,7 @@ Place it in the free area and embed the jump code
 Which button do you click?
 
 :逆コンパイル中です。しばらくお待ちください。
-It is being decompiled.Please wait.
+We are currently running decompiling. Please wait.
 
 :ファイルを読めませんでした。
 The file could not be read.

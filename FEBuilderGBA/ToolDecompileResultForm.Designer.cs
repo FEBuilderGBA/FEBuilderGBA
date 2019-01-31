@@ -54,6 +54,7 @@
             this.Name = "ToolDecompileResultForm";
             this.Text = "C Pseudocode";
             this.Load += new System.EventHandler(this.DecompileResult_Load);
+            this.Resize += new System.EventHandler(this.ToolDecompileResultForm_Resize);
             this.ResumeLayout(false);
 
         }

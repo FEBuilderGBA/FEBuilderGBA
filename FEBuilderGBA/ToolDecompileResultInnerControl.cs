@@ -69,7 +69,7 @@ namespace FEBuilderGBA
             System.Threading.Thread s1 = new System.Threading.Thread(t =>
             {
                 // 双引号中可以包含空格，区分绝对路径和相对路径，参数解析太麻烦了，所以先假定没有设置输出文件
-                string retdec_option = "-a thumb -e little -k -l c -m raw --raw-section-vma 0x8000000 --select-decode-only --cleanup --backend-no-opts --backend-no-debug";
+                string retdec_option = "-a thumb -e little -k -l c -m raw --raw-section-vma 0x8000000 --select-decode-only --cleanup --backend-no-opts --backend-no-debug --no-memory-limit";
                 retdec_option += " --raw-entry-point " + U.To0xHexString(U.toPointer(addr)) + " --select-ranges " + U.To0xHexString(U.toPointer(addr)) + "-" + U.To0xHexString(U.toPointer(addr + size));
                 string args = U.escape_shell_args(retdec) + " " + retdec_option + " -o " + U.escape_shell_args(output_c) + " " + U.escape_shell_args(Program.ROM.Filename);
                 Log.Debug(args);
@@ -79,11 +79,19 @@ namespace FEBuilderGBA
                 DecomplieResult ee = new DecomplieResult();
                 if (!File.Exists(output_c))
                 {
-                    ee.Result = R._("ファイルを読めませんでした。") +  "\r\n" + output_c + "\r\n" + stdout;
+                    ee.Result = R._("ファイルを読めませんでした。") +  "\r\n" + output_c + "\r\n" + stdout + "\r\n" + python3 + "\r\n" + args;
                 }
                 else
                 {
-                    ee.Result =File.ReadAllText(output_c);
+                    string result  = File.ReadAllText(output_c);
+                    if (result == "")
+                    {
+                        ee.Result = R._("処理結果が空になりました。") + "\r\n" + output_c + "\r\n" + stdout + "\r\n" + python3 + "\r\n" + args; 
+                    }
+                    else
+                    {
+                        ee.Result = result;
+                    }
                     File.Delete(output_c);
                 }
 
