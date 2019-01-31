@@ -1898,6 +1898,8 @@ HPの薬	HP Tonic
 キアラン兵	Caelin
 オスティア兵	Ostia
 ベルン兵	Bern
+キアラン	Caelin
+オスティア	Ostia
 傭兵団	Merc
 守護兵	Guardian
 モルフ	Morph

@@ -7,7 +7,6 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -143,26 +142,6 @@ namespace FEBuilderGBA
             this.AddressList.EndUpdate();
 
             U.SelectedIndexSafety(this.AddressList, 0, true);
-
-            // 若设置了反编译器则自动反编译
-            string retdec = OptionForm.GetRetDec(); ;
-            if (!String.IsNullOrEmpty(retdec))
-            {
-                string retdec_option = OptionForm.GetRetDecOption();
-                //FIXME get output file from options
-                string output_c = Path.ChangeExtension(Program.ROM.Filename, ".c");
-                // 双引号中可以包含空格，区分绝对路径和相对路径，参数解析太麻烦了，所以先假定没有设置输出文件
-                // MatchCollection mc = Regex.Matches(retdec_option, @"-o(utput)?\s+\S+\s");
-                retdec_option += " --raw-entry-point " + "0x" + (addr_1 + 0x8000000).ToString("x") + " --select-ranges " + "0x" + (addr_1 + 0x8000000).ToString("x") +  "-" + "0x" + (limit + 0x8000000).ToString("x");
-                string args = "\"" + retdec + "\" " + retdec_option + " -o \"" + output_c + "\" \"" + Program.ROM.Filename + "\"";
-                Log.Debug("Decompile: ", addr_1.ToString("x"), bytecount.ToString());
-                Log.Debug(args);
-                string output = MainFormUtil.ProgramRunAsAndEndWait("python3", args);
-                Log.Debug(output);
-                // 弹窗显示反编译出的C伪代码
-                DecompileResult newForm = new DecompileResult();
-                newForm.ShowDialog();
-            }
         }
 
         private void DisASMForm_Load(object sender, EventArgs e)
@@ -480,6 +459,28 @@ namespace FEBuilderGBA
         private void ReadCount_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void decompile_button_Click(object sender, EventArgs e)
+        {
+            string retdec = OptionForm.GetRetDec();
+            if (retdec == "")
+            {
+                R.ShowStopError("RetDec逆コンパイラが設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるためにRetDecの設定をしてください。");
+                return;
+            }
+            string python3 = OptionForm.GetPython3();
+            if (python3 == "")
+            {
+                R.ShowStopError("python3が設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるために必要なpythonの設定をしてください。");
+                return;
+            }
+
+            uint addr_1 = (uint)ReadStartAddress.Value;
+            uint limit = (uint)ReadCount.Value;
+
+            ToolDecompileResultForm f = (ToolDecompileResultForm)InputFormRef.JumpForm<ToolDecompileResultForm>();
+            f.JumpTo(addr_1,limit);
         }
     }
 }

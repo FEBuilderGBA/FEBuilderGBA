@@ -551,7 +551,6 @@ namespace FEBuilderGBA
         }
 
 
-
         public static Process PoolRunAs(string run_name, string arg1 = "<<ROM>>")
         {
             string emulator = Program.Config.at(run_name, "");

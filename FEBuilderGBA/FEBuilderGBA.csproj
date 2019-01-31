@@ -90,11 +90,11 @@
     <Compile Include="CustomColorGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DecompileResult.cs">
+    <Compile Include="ToolDecompileResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DecompileResult.Designer.cs">
-      <DependentUpon>DecompileResult.cs</DependentUpon>
+    <Compile Include="ToolDecompileResultForm.Designer.cs">
+      <DependentUpon>ToolDecompileResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DecreaseColor.cs" />
     <Compile Include="DevTranslateForm.cs">
@@ -250,6 +250,12 @@
     </Compile>
     <Compile Include="ToolAnimationCreatorUserControl.Designer.cs">
       <DependentUpon>ToolAnimationCreatorUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDecompileResultInnerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolDecompileResultInnerControl.Designer.cs">
+      <DependentUpon>ToolDecompileResultInnerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolExportEAEventForm.cs">
       <SubType>Form</SubType>
@@ -1901,8 +1907,8 @@
     <EmbeddedResource Include="CStringForm.resx">
       <DependentUpon>CStringForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DecompileResult.resx">
-      <DependentUpon>DecompileResult.cs</DependentUpon>
+    <EmbeddedResource Include="ToolDecompileResultForm.resx">
+      <DependentUpon>ToolDecompileResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevTranslateForm.resx">
       <DependentUpon>DevTranslateForm.cs</DependentUpon>
@@ -1970,6 +1976,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolAnimationCreatorUserControl.resx">
       <DependentUpon>ToolAnimationCreatorUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDecompileResultInnerControl.resx">
+      <DependentUpon>ToolDecompileResultInnerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolExportEAEventForm.resx">
       <DependentUpon>ToolExportEAEventForm.cs</DependentUpon>

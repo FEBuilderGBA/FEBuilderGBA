@@ -10,5 +10,4 @@ FEBuilderGBA/bin/Debug/config/config.xml
 FEBuilderGBA/bin/Debug/config/etc/
 FEBuilderGBA/bin/Debug/config/log/
 FEBuilderGBA/obj
-/.vs/FEBuilderGBA/v15/Server/sqlite3
-.vs/FEBuilderGBA/v15/.suo
+.vs/

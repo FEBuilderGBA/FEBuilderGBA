@@ -38,7 +38,7 @@ namespace FEBuilderGBA
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
-            retdec_option.Text = GetCFLAGS();
+            python3.Text = GetPython3();
 
             Color_Control_BackColor_button.BackColor = Color_Control_BackColor();
             Color_Control_ForeColor_button.BackColor = Color_Control_ForeColor();
@@ -201,7 +201,7 @@ namespace FEBuilderGBA
             Program.Config["mid2agb"] = mid2agb.Text;
             Program.Config["CFLAGS"] = CFLAGS.Text;
             Program.Config["retdec"] = retdec.Text;
-            Program.Config["retdec_option"] = retdec_option.Text;
+            Program.Config["python3"] = python3.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1272,10 +1272,9 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("retdec", "");
         }
-
-        public static string GetRetDecOption()
+        public static string GetPython3()
         {
-            return Program.Config.at("retdec_option", "-a thumb -e little -k -l c -m raw --raw-section-vma 0x8000000 --select-decode-only --cleanup");
+            return Program.Config.at("python3", "");
         }
 
         void MakeExplainFunctions()
@@ -1318,17 +1317,7 @@ namespace FEBuilderGBA
             Color_ControlComment_ForeColor_button.BackColor = SelectColorDialog(Color_ControlComment_ForeColor_button.BackColor);
         }
 
-        private void label61_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEx2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void retdec_button_Click(object sender, EventArgs e)
         {
             string r = EXESearch("retdec-decompiler.py|retdec-decompiler.py|");
             if (r != "")
@@ -1337,24 +1326,23 @@ namespace FEBuilderGBA
             }
         }
 
-        private void textBoxEx1_TextChanged(object sender, EventArgs e)
+        private void python3_button_Click(object sender, EventArgs e)
         {
-
+            string r = EXESearch("python|python.exe;python3.exe|");
+            if (r != "")
+            {
+                python3.Text = r;
+            }
         }
 
-        private void goldroad_asm_TextChanged(object sender, EventArgs e)
+        private void retdec_DoubleClick(object sender, EventArgs e)
         {
-
+            retdec_button.PerformClick();
         }
 
-        private void devkitpro_eabi_TextChanged(object sender, EventArgs e)
+        private void python3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void CFLAGS_TextChanged(object sender, EventArgs e)
-        {
-
+            python3_button.PerformClick();
         }
     }
 }
