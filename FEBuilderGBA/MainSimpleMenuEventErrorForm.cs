@@ -369,6 +369,11 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("キャラパレット");
             }
+            else if (dataType == FELint.Type.IMAGE_BATTLE_SCREEN)
+            {
+                show_tag = tag;
+                text = R._("戦闘画面");
+            }
             else if (dataType == FELint.Type.STATUS_GAME_OPTION)
             {
                 show_tag = tag;
@@ -874,6 +879,11 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.IMAGE_UNIT_PALETTE)
             {
                 InputFormRef.JumpForm<ImageUnitPaletteForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.IMAGE_BATTLE_SCREEN)
+            {
+                InputFormRef.JumpForm<ImageBattleScreenForm>();
                 return;
             }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)

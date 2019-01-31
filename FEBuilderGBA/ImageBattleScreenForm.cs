@@ -91,6 +91,22 @@ namespace FEBuilderGBA
             MakeCHIPLIST();
         }
 
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            uint[] image_pos = new uint[] {
+                 Program.ROM.RomInfo.battle_screen_image1_pointer()
+                ,Program.ROM.RomInfo.battle_screen_image2_pointer()
+                ,Program.ROM.RomInfo.battle_screen_image3_pointer()
+                ,Program.ROM.RomInfo.battle_screen_image4_pointer()
+                ,Program.ROM.RomInfo.battle_screen_image5_pointer()
+            };
+
+            for (int i = 0; i < image_pos.Length; i++)
+            {
+                FELint.CheckLZ77ImageErrorsPointer(image_pos[i], errors, FELint.Type.IMAGE_BATTLE_SCREEN, U.NOT_FOUND, 32, 8 , (uint)i); 
+            }
+        }
+
         static Bitmap GetChipImage(List<int> notUseList)
         {
             uint[] image_pos = new uint[] {
@@ -121,6 +137,11 @@ namespace FEBuilderGBA
                 byte[] imageUZ = unlz77_images[i];
                 int width = 8;
                 int height = ImageUtil.CalcHeight(width, imageUZ.Length);
+                if (height <= 0)
+                {
+                    continue;
+                }
+
                 Bitmap src = ImageUtil.ByteToImage16Tile(width, height, imageUZ, 0, Program.ROM.Data, (int)palette);
 
                 ImageUtil.BitBlt(bitmap, 0, copy_height, 8, height, src, 0, 0);

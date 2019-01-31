@@ -68,6 +68,7 @@ namespace FEBuilderGBA
             ,IMAGE_UNIT_WAIT_ICON  //ユニット待機画像
             ,ITEM_EEFECT_POINTER //アイテム間接効果ポインタ
             ,IMAGE_UNIT_PALETTE //ユニットパレット
+            ,IMAGE_BATTLE_SCREEN //戦闘画面
             ,STATUS_GAME_OPTION //ゲームオプション
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
@@ -648,6 +649,9 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem ImageUnitPaletteForm")) return;
             ImageUnitPaletteForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageBattleScreen")) return;
+            ImageBattleScreenForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {
