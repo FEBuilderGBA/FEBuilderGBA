@@ -814,14 +814,14 @@ RetDec Decompiler not set.\r\nPlease set up RetDec in order to operate RetDec fr
 :python3が設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるために必要なpythonの設定をしてください。
 python 3 is not set.\r\nPlease set the python necessary to operate RetDec from the setting screen of pass 2.
 
+:C言語へ逆コンパイル
+Decompile to C language.
+
 :リンクをクリックするか、Jで関数に移動します
 Click the link or move to the function with J
 
 :クリックボードへ(Ctrl+C)
 To the click board (Ctrl+C)
-
-:C言語へ逆コンパイル
-Decompile to C language.
 
 :選択しているアドレスをバイナリエディタで表示
 Open selected address in Hex Editor
@@ -10092,6 +10092,9 @@ We are currently running decompiling. Please wait.
 
 :ファイルを読めませんでした。
 The file could not be read.
+
+:処理結果が空になりました。
+Processing result is empty.
 
 :仮想ROMなのでファイル名を取得できません。
 Unable to get file name because it is a virtual ROM.
