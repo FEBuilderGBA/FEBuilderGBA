@@ -37,6 +37,8 @@ namespace FEBuilderGBA
             mid2agb.Text = Program.Config.at("mid2agb");
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
             CFLAGS.Text = GetCFLAGS();
+            retdec.Text = GetRetDec();
+            retdec_option.Text = GetCFLAGS();
 
             Color_Control_BackColor_button.BackColor = Color_Control_BackColor();
             Color_Control_ForeColor_button.BackColor = Color_Control_ForeColor();
@@ -198,6 +200,8 @@ namespace FEBuilderGBA
             Program.Config["event_assembler"] = event_assembler.Text;
             Program.Config["mid2agb"] = mid2agb.Text;
             Program.Config["CFLAGS"] = CFLAGS.Text;
+            Program.Config["retdec"] = retdec.Text;
+            Program.Config["retdec_option"] = retdec_option.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1264,6 +1268,16 @@ namespace FEBuilderGBA
             return Program.Config.at("CFLAGS", "-c -mthumb -O2");
         }
 
+        public static string GetRetDec()
+        {
+            return Program.Config.at("retdec", "");
+        }
+
+        public static string GetRetDecOption()
+        {
+            return Program.Config.at("retdec_option", "-a thumb -e little -k -l c -m raw --raw-section-vma 0x8000000 --select-decode-only --cleanup");
+        }
+
         void MakeExplainFunctions()
         {
             explain_func_rom_extends.AccessibleDescription = R._("可変長データを更新した時に、元のデータより長くなってしまったときに、\r\n自動的にリポイントするかを決定します。");
@@ -1304,7 +1318,43 @@ namespace FEBuilderGBA
             Color_ControlComment_ForeColor_button.BackColor = SelectColorDialog(Color_ControlComment_ForeColor_button.BackColor);
         }
 
+        private void label61_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void textBoxEx2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("retdec-decompiler.py|retdec-decompiler.py|");
+            if (r != "")
+            {
+                retdec.Text = r;
+            }
+        }
+
+        private void textBoxEx1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void goldroad_asm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void devkitpro_eabi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CFLAGS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

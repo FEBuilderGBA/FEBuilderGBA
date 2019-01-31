@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -39,6 +40,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            uint addr_1 = addr;
 
             //変更通知.
             if (Navigation != null)
@@ -141,6 +143,26 @@ namespace FEBuilderGBA
             this.AddressList.EndUpdate();
 
             U.SelectedIndexSafety(this.AddressList, 0, true);
+
+            // 若设置了反编译器则自动反编译
+            string retdec = OptionForm.GetRetDec(); ;
+            if (!String.IsNullOrEmpty(retdec))
+            {
+                string retdec_option = OptionForm.GetRetDecOption();
+                //FIXME get output file from options
+                string output_c = Path.ChangeExtension(Program.ROM.Filename, ".c");
+                // 双引号中可以包含空格，区分绝对路径和相对路径，参数解析太麻烦了，所以先假定没有设置输出文件
+                // MatchCollection mc = Regex.Matches(retdec_option, @"-o(utput)?\s+\S+\s");
+                retdec_option += " --raw-entry-point " + "0x" + (addr_1 + 0x8000000).ToString("x") + " --select-ranges " + "0x" + (addr_1 + 0x8000000).ToString("x") +  "-" + "0x" + (limit + 0x8000000).ToString("x");
+                string args = "\"" + retdec + "\" " + retdec_option + " -o \"" + output_c + "\" \"" + Program.ROM.Filename + "\"";
+                Log.Debug("Decompile: ", addr_1.ToString("x"), bytecount.ToString());
+                Log.Debug(args);
+                string output = MainFormUtil.ProgramRunAsAndEndWait("python3", args);
+                Log.Debug(output);
+                // 弹窗显示反编译出的C伪代码
+                DecompileResult newForm = new DecompileResult();
+                newForm.ShowDialog();
+            }
         }
 
         private void DisASMForm_Load(object sender, EventArgs e)
@@ -453,6 +475,11 @@ namespace FEBuilderGBA
                     }
                     this.ReloadListButton.PerformClick();
                 };
+        }
+
+        private void ReadCount_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
