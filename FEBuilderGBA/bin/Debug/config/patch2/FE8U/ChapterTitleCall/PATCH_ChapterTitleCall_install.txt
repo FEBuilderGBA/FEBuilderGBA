@@ -1,0 +1,13 @@
+NAME=章タイトルコールを非表示にする(導入)
+NAME.en=Setting the Hide chapter title calls(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x15518=0x00 0x4B
+EDIT_PATCH=PATCH_ChapterTitleCall.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.zh=隐藏章节标题调用（简介）。

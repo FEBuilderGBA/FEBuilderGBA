@@ -1668,7 +1668,7 @@
 @ChapterData@10	short	ターン数
 @ChapterData@12	byte	カーソル位置X (only when displaying a menu?)
 @ChapterData@13	byte	カーソル位置Y (only when displaying a menu?)
-@ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
+@ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&20=Epilogue &40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
 @ChapterData@15	byte	天気 (0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
 @ChapterData@16	short	Number of support points gained this chapter
 @ChapterData@18	short	Unk18
@@ -11627,3 +11627,5 @@
 080CF480	辞書	新規項目があるか判定	{U}
 08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
 08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
+0808BA78	セーブスロットに表示する章IDの取得	r0=@ChapterData	{J}
+08089768	セーブスロットに表示する章IDの取得	r0=@ChapterData	{U}

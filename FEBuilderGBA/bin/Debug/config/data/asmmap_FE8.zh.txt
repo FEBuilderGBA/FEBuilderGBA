@@ -11533,3 +11533,7 @@ r3=X tile position of menu of the right	{U}
 080A15B0	用于浏览支持对话的屏幕。	主循环。	{U}
 080D4178	字典	判断是否有新项目。	{J}
 080CF480	字典	判断是否有新项目。	{U}
+08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
+08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
+0808BA78	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{J}
+08089768	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{U}

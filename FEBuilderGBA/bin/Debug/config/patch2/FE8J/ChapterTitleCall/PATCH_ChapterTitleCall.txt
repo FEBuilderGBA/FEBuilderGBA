@@ -1,0 +1,32 @@
+NAME=章タイトルコールを非表示にする
+NAME.en=Setting the Hide chapter title calls
+
+INFO=章を開始するときに、章タイトルを表示する方法を変更します。\r\nテーブルになければディフォルトのタイトルコールが呼び出されます。\r\nテーブルに設定を作り、Procs=0x0 に設定すると、タイトルコールを表示しなくします。
+
+IF:0x1553C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END ChapterTitleCall.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=Map(FF=ANY)
+B1=00
+W2:FLAG=Flag(00=ANY)
+P4:$COMBO ChapterTitleCall_combo.txt:.ja=Procs
+
+INFO.en=When starting the chapter, change the way to display the chapter title.\r\nIf it is not on the table, the default title call will be called.\r\nIf you create a setting in the table and set Procs = 0x0, the title call will not be displayed.
+NAME.zh=隐藏章节标题调用。
+INFO.zh=启动章节时，请更改显示章节标题的方式。\r\n如果它不在表上，则将调用默认的标题调用。\r\n如果在表中创建设置并设置Procs = 0x0，则不会显示标题调用。

@@ -11659,3 +11659,7 @@ r3=X tile position of menu of right	{U}
 080A15B0	browsing support conversation.	Main loop.	{U}
 080D4178	Dictionary	It is judged whether there is a new item.	{J}
 080CF480	Dictionary	It is judged whether there is a new item.	{U}
+08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
+08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
+0808BA78	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{J}
+08089768	Get chapter ID to be displayed in Save Slot.	r0=@ChapterData	{U}
