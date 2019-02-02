@@ -50,12 +50,15 @@
             this.Wait = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.SoundTabPage = new System.Windows.Forms.TabPage();
+            this.JumpToSoundTableSound = new FEBuilderGBA.LabelEx();
             this.label16 = new System.Windows.Forms.Label();
             this.SoundPlaySoundButton = new System.Windows.Forms.Button();
             this.Sound = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.SoundInfo = new FEBuilderGBA.TextBoxEx();
             this.CodeTabPage = new System.Windows.Forms.TabPage();
+            this.JumpToSoundTableCode = new FEBuilderGBA.LabelEx();
+            this.SoundPlayCodeButton = new System.Windows.Forms.Button();
             this.Code = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.CodeInfo = new FEBuilderGBA.TextBoxEx();
@@ -112,9 +115,6 @@
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.WriteButtonPanel = new System.Windows.Forms.Panel();
-            this.SoundPlayCodeButton = new System.Windows.Forms.Button();
-            this.JumpToSoundTableSound = new FEBuilderGBA.LabelEx();
-            this.JumpToSoundTableCode = new FEBuilderGBA.LabelEx();
             this.ControlPanel.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.ImageTabPage.SuspendLayout();
@@ -396,6 +396,17 @@
             this.SoundTabPage.TabIndex = 2;
             this.SoundTabPage.Text = "効果音";
             // 
+            // JumpToSoundTableSound
+            // 
+            this.JumpToSoundTableSound.AutoSize = true;
+            this.JumpToSoundTableSound.ErrorMessage = "";
+            this.JumpToSoundTableSound.Location = new System.Drawing.Point(393, 16);
+            this.JumpToSoundTableSound.Name = "JumpToSoundTableSound";
+            this.JumpToSoundTableSound.Size = new System.Drawing.Size(176, 18);
+            this.JumpToSoundTableSound.TabIndex = 55;
+            this.JumpToSoundTableSound.Text = "ソングテーブルへジャンプ";
+            this.JumpToSoundTableSound.Click += new System.EventHandler(this.JumpToSoundTableSound_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -467,6 +478,28 @@
             this.CodeTabPage.Size = new System.Drawing.Size(927, 260);
             this.CodeTabPage.TabIndex = 0;
             this.CodeTabPage.Text = "コード";
+            // 
+            // JumpToSoundTableCode
+            // 
+            this.JumpToSoundTableCode.AutoSize = true;
+            this.JumpToSoundTableCode.ErrorMessage = "";
+            this.JumpToSoundTableCode.Location = new System.Drawing.Point(393, 16);
+            this.JumpToSoundTableCode.Name = "JumpToSoundTableCode";
+            this.JumpToSoundTableCode.Size = new System.Drawing.Size(176, 18);
+            this.JumpToSoundTableCode.TabIndex = 56;
+            this.JumpToSoundTableCode.Text = "ソングテーブルへジャンプ";
+            this.JumpToSoundTableCode.Click += new System.EventHandler(this.JumpToSoundTableCode_Click);
+            // 
+            // SoundPlayCodeButton
+            // 
+            this.SoundPlayCodeButton.Location = new System.Drawing.Point(300, 8);
+            this.SoundPlayCodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundPlayCodeButton.Name = "SoundPlayCodeButton";
+            this.SoundPlayCodeButton.Size = new System.Drawing.Size(46, 28);
+            this.SoundPlayCodeButton.TabIndex = 47;
+            this.SoundPlayCodeButton.Text = "♪";
+            this.SoundPlayCodeButton.UseVisualStyleBackColor = true;
+            this.SoundPlayCodeButton.Click += new System.EventHandler(this.SoundPlayCodeButton_Click);
             // 
             // Code
             // 
@@ -1135,39 +1168,6 @@
             this.WriteButtonPanel.Name = "WriteButtonPanel";
             this.WriteButtonPanel.Size = new System.Drawing.Size(676, 36);
             this.WriteButtonPanel.TabIndex = 187;
-            // 
-            // SoundPlayCodeButton
-            // 
-            this.SoundPlayCodeButton.Location = new System.Drawing.Point(300, 8);
-            this.SoundPlayCodeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SoundPlayCodeButton.Name = "SoundPlayCodeButton";
-            this.SoundPlayCodeButton.Size = new System.Drawing.Size(46, 28);
-            this.SoundPlayCodeButton.TabIndex = 47;
-            this.SoundPlayCodeButton.Text = "♪";
-            this.SoundPlayCodeButton.UseVisualStyleBackColor = true;
-            this.SoundPlayCodeButton.Click += new System.EventHandler(this.SoundPlayCodeButton_Click);
-            // 
-            // JumpToSoundTableSound
-            // 
-            this.JumpToSoundTableSound.AutoSize = true;
-            this.JumpToSoundTableSound.ErrorMessage = "";
-            this.JumpToSoundTableSound.Location = new System.Drawing.Point(393, 16);
-            this.JumpToSoundTableSound.Name = "JumpToSoundTableSound";
-            this.JumpToSoundTableSound.Size = new System.Drawing.Size(176, 18);
-            this.JumpToSoundTableSound.TabIndex = 55;
-            this.JumpToSoundTableSound.Text = "ソングテーブルへジャンプ";
-            this.JumpToSoundTableSound.Click += new System.EventHandler(this.JumpToSoundTableSound_Click);
-            // 
-            // JumpToSoundTableCode
-            // 
-            this.JumpToSoundTableCode.AutoSize = true;
-            this.JumpToSoundTableCode.ErrorMessage = "";
-            this.JumpToSoundTableCode.Location = new System.Drawing.Point(393, 16);
-            this.JumpToSoundTableCode.Name = "JumpToSoundTableCode";
-            this.JumpToSoundTableCode.Size = new System.Drawing.Size(176, 18);
-            this.JumpToSoundTableCode.TabIndex = 56;
-            this.JumpToSoundTableCode.Text = "ソングテーブルへジャンプ";
-            this.JumpToSoundTableCode.Click += new System.EventHandler(this.JumpToSoundTableCode_Click);
             // 
             // ToolAnimationCreatorUserControl
             // 

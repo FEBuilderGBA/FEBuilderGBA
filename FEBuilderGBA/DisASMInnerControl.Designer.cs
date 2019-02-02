@@ -38,6 +38,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
+            this.DirectEditButton = new System.Windows.Forms.Button();
             this.ParamExplain1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
@@ -188,6 +189,7 @@
             // 
             // ControlPanelCommand
             // 
+            this.ControlPanelCommand.Controls.Add(this.DirectEditButton);
             this.ControlPanelCommand.Controls.Add(this.ParamExplain1);
             this.ControlPanelCommand.Controls.Add(this.label3);
             this.ControlPanelCommand.Controls.Add(this.ScriptCodeName);
@@ -197,6 +199,16 @@
             this.ControlPanelCommand.Name = "ControlPanelCommand";
             this.ControlPanelCommand.Size = new System.Drawing.Size(911, 42);
             this.ControlPanelCommand.TabIndex = 202;
+            // 
+            // DirectEditButton
+            // 
+            this.DirectEditButton.Location = new System.Drawing.Point(1067, 31);
+            this.DirectEditButton.Name = "DirectEditButton";
+            this.DirectEditButton.Size = new System.Drawing.Size(277, 30);
+            this.DirectEditButton.TabIndex = 201;
+            this.DirectEditButton.Text = "ASMコードの直編集(&N)";
+            this.DirectEditButton.UseVisualStyleBackColor = true;
+            this.DirectEditButton.Click += new System.EventHandler(this.DirectEditButton_Click);
             // 
             // ParamExplain1
             // 
@@ -401,5 +413,6 @@
         private System.Windows.Forms.Label ParamExplain1;
         private System.Windows.Forms.Button FileToASMButton;
         private System.Windows.Forms.Button decompile_button;
+        private System.Windows.Forms.Button DirectEditButton;
     }
 }
