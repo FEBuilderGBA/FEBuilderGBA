@@ -239,12 +239,6 @@ namespace FEBuilderGBA
             f.JumpTo(start);
         }
 
-
-
-
-
-
-
         private void DumpAllButton_Click(object sender, EventArgs e)
         {
             DisASMDumpAllForm f = (DisASMDumpAllForm)InputFormRef.JumpFormLow<DisASMDumpAllForm>();
@@ -300,6 +294,11 @@ namespace FEBuilderGBA
             else if (e.Alt && e.KeyCode == Keys.J)
             {
                 ParamLabel1_Click(sender, e);
+                return;
+            }
+            else if (e.KeyCode == Keys.N)
+            {
+                DirectEditButton_Click(sender, e);
                 return;
             }
         }
@@ -482,5 +481,23 @@ namespace FEBuilderGBA
             ToolDecompileResultForm f = (ToolDecompileResultForm)InputFormRef.JumpForm<ToolDecompileResultForm>();
             f.JumpTo(addr_1,limit);
         }
+
+        private void DirectEditButton_Click(object sender, EventArgs e)
+        {
+            HideFloatingControlpanel();
+            string code = this.AddressList.Text;
+
+            ToolASMEditForm f = (ToolASMEditForm)InputFormRef.JumpForm<ToolASMEditForm>(U.NOT_FOUND);
+            f.Init(this, code);
+        }
+
+        public void ReloadASM()
+        {
+            int select = AddressList.SelectedIndex;
+            ReloadListButton.PerformClick();
+
+            U.SelectedIndexSafety(AddressList , select);
+        }
+
     }
 }

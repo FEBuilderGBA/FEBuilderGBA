@@ -5471,6 +5471,11 @@ namespace FEBuilderGBA
             SupportedUriProtocols,
             Max,
         }
+
+        public static bool Wordrap(char c)
+        {
+            return c == ' ' || c == '\t' || c == '\n';
+        }
     }
 }
 

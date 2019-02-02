@@ -817,6 +817,9 @@ python 3 is not set.\r\nPlease set the python necessary to operate RetDec from t
 :C言語へ逆コンパイル
 Decompile to C language.
 
+:ASMコードの直編集(&N)
+Direct editing of ASM code(&N)
+
 :リンクをクリックするか、Jで関数に移動します
 Click the link or move to the function with J
 
@@ -9988,6 +9991,9 @@ Import image
 :表示時間
 Wait
 
+:ソングテーブルへジャンプ
+Jump To SongTable
+
 :Command48ハックを利用して効果音を再生します。\r\nアニメーションの最中に指定した効果音を再生します。
 Use the Command 48 hack to play sound effects.\r\nPlay the specified sound effect during animation.
 
@@ -10036,8 +10042,11 @@ Target
 :プレイヤ
 Player
 
-:ソングテーブルへジャンプ
-Jump To SongTable
+:0x100以下への書き込みは、危険なのでできません。
+Writing to 0x100 or less is not possible because it is dangerous.
+
+:ASMコードの直編集
+Direct editing of ASM code.
 
 :フックするアドレス
 Address to hook
