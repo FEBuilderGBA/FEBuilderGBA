@@ -1,0 +1,13 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $15518
+jumpToHack(HackLocation)
+POP
+
+
+HackLocation:
+#incbin "ChapterTitleCall.dmp"
+POIN ChapterTitleCallTable
+
+#include "ChapterTitleCallTable.event"

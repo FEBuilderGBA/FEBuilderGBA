@@ -1,5 +1,6 @@
 *.gba
 r
+FEBuilderGBA/bin/Debug/*.exe
 FEBuilderGBA/bin/Debug/*.pdb
 FEBuilderGBA/bin/Debug/*.png
 FEBuilderGBA/bin/Debug/*.bin

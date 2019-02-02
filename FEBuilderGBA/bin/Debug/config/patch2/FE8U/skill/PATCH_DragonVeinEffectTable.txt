@@ -1,0 +1,18 @@
+NAME=DragonVeinEffectTable
+IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+//データへのポインタ
+POINTER=$FGREP4END Dragon_Vein_Execution.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP_ENABLE_POINTER 0x00
+
+//データを定義します
+P0:EVENT=Event
+

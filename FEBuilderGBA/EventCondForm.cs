@@ -147,6 +147,11 @@ namespace FEBuilderGBA
                 OBJECT_N0A_L_10_COMBO.AddIcon(0x17, ImageSystemIconForm.Vendor()); //17=道具屋
                 OBJECT_N0A_L_10_COMBO.AddIcon(0x18, ImageSystemIconForm.SecretShop()); //18=秘密の店
 
+                if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+                {
+                    TRAP_L_0_COMBO.Items.Insert(4, R._("06=DragonVein"));
+                }
+
                 return;
             }
 
@@ -508,7 +513,7 @@ namespace FEBuilderGBA
         {
             return new InputFormRef(self
                 , "TRAP_"
-                , new List<string>() { "N01_", "N04_", "N05_", "N07_", "N08_", "N0A_", "N0B_", "N0C_" }
+                , new List<string>() { "N01_", "N04_", "N05_", "N06_", "N07_", "N08_", "N0A_", "N0B_", "N0C_" }
                 , 0
                 , 6
                 , (int i, uint addr) =>

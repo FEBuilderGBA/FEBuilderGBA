@@ -2468,6 +2468,10 @@ namespace FEBuilderGBA
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 28, true);
             }
+            if (value.IndexOf("GREP_ENABLE_POINTER ") == 0)
+            {
+                return U.GrepEnablePointer(Program.ROM.Data, start_offset, 0);
+            }
 
             if (value.IndexOf("FGREP16 ") == 0)
             {

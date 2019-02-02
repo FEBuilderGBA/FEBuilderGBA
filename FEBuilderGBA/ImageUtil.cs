@@ -332,6 +332,17 @@ namespace FEBuilderGBA
         //cdef cdef
         public static Bitmap ByteToImage16Tile(int width, int height, byte[] image, int image_pos, byte[] palette, int palette_pos, int palette_count = 0)
         {
+            if (width <= 0)
+            {
+                width = 8;
+                Debug.Assert(false);
+            }
+            if (height <= 0)
+            {
+                height = 8;
+                Debug.Assert(false);
+            }
+
             //BITMAP生成.
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
             //パレットの読込.

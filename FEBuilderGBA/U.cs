@@ -1858,6 +1858,35 @@ namespace FEBuilderGBA
             return a;
         }
 
+        public static uint GrepEnablePointer(byte[] data, uint start = 0x100, uint end = 0)
+        {
+            if (end == 0 || end == U.NOT_FOUND)
+            {//終端が明記されない場合は、自動的にデータの終端
+                end = (uint)data.Length;
+            }
+
+            if (start > end)
+            {//データ数が足りない
+                return U.NOT_FOUND;
+            }
+            end -= 3;
+
+            uint addr;
+            for (addr = start; addr < end; addr += 4)
+            {
+                uint p = U.u32(data, addr);
+                if (U.isPointer(p))
+                {
+                    if (U.toOffset(p) < data.Length)
+                    {
+                        continue;
+                    }
+                }
+                break;
+            }
+            return addr - start;
+        }
+
         public static uint GrepEnd(byte[] data, byte[] need, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
         {
             uint grepresult = U.Grep(Program.ROM.Data, need, start, end, blocksize);

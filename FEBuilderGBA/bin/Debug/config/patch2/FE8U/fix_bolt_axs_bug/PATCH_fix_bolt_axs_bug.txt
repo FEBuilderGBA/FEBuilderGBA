@@ -1,0 +1,16 @@
+NAME=魔法投げ斧(ボルトアクス)を作れるようにする
+INFO=魔法斧(ボルトアクス)を作って投げると、フリーズするバグを修正します。
+
+AUTHOR=Midori Patch / 一部改編7743
+TAG=#ENGINE
+TYPE=BIN
+
+PATCHED_IF:0x0593B4=0x00 0x49 0x8F 0x46
+BIN:$FREEAREA:1=fix_bolt_axs_bug.dmp
+JUMP:0x0593B4:$r1=fix_bolt_axs_bug.dmp
+NAME.en=Make a magic throwing ax (Volt Ax).
+INFO.en=Make a magic ax (VoltAX) and throw and fix bugs that freeze.
+AUTHOR.en=Midori Patch / Partial reorganization 7743.
+NAME.zh=做一个魔法投掷斧（伏特斧）。
+INFO.zh=制作魔法斧（VoltAX）并抛出并修复冻结的bug。
+AUTHOR.zh=Midori补丁/部分重组7743。
