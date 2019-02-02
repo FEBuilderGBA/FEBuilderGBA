@@ -801,5 +801,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<SoundRoomCGForm>();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ASMEditForm>();
+        }
     }
 }

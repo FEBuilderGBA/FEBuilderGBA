@@ -217,6 +217,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -224,10 +225,9 @@
             // 
             // UnitButton
             // 
-            this.UnitButton.Location = new System.Drawing.Point(0, 4);
-            this.UnitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.UnitButton.Location = new System.Drawing.Point(0, 3);
             this.UnitButton.Name = "UnitButton";
-            this.UnitButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitButton.Size = new System.Drawing.Size(133, 24);
             this.UnitButton.TabIndex = 0;
             this.UnitButton.Text = "ユニット能力";
             this.UnitButton.UseVisualStyleBackColor = true;
@@ -235,10 +235,9 @@
             // 
             // ClassButton
             // 
-            this.ClassButton.Location = new System.Drawing.Point(202, 3);
-            this.ClassButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ClassButton.Location = new System.Drawing.Point(135, 2);
             this.ClassButton.Name = "ClassButton";
-            this.ClassButton.Size = new System.Drawing.Size(200, 36);
+            this.ClassButton.Size = new System.Drawing.Size(133, 24);
             this.ClassButton.TabIndex = 15;
             this.ClassButton.Text = "クラス能力";
             this.ClassButton.UseVisualStyleBackColor = true;
@@ -246,10 +245,9 @@
             // 
             // ImageBGButton
             // 
-            this.ImageBGButton.Location = new System.Drawing.Point(611, 2);
-            this.ImageBGButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageBGButton.Location = new System.Drawing.Point(407, 1);
             this.ImageBGButton.Name = "ImageBGButton";
-            this.ImageBGButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageBGButton.Size = new System.Drawing.Size(133, 24);
             this.ImageBGButton.TabIndex = 41;
             this.ImageBGButton.Text = "背景画像";
             this.ImageBGButton.UseVisualStyleBackColor = true;
@@ -257,10 +255,9 @@
             // 
             // ImagePortraitButton
             // 
-            this.ImagePortraitButton.Location = new System.Drawing.Point(611, 35);
-            this.ImagePortraitButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImagePortraitButton.Location = new System.Drawing.Point(407, 23);
             this.ImagePortraitButton.Name = "ImagePortraitButton";
-            this.ImagePortraitButton.Size = new System.Drawing.Size(200, 36);
+            this.ImagePortraitButton.Size = new System.Drawing.Size(133, 24);
             this.ImagePortraitButton.TabIndex = 42;
             this.ImagePortraitButton.Text = "顔画像";
             this.ImagePortraitButton.UseVisualStyleBackColor = true;
@@ -268,10 +265,9 @@
             // 
             // ImageIconButton
             // 
-            this.ImageIconButton.Location = new System.Drawing.Point(611, 74);
-            this.ImageIconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageIconButton.Location = new System.Drawing.Point(407, 49);
             this.ImageIconButton.Name = "ImageIconButton";
-            this.ImageIconButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageIconButton.Size = new System.Drawing.Size(133, 24);
             this.ImageIconButton.TabIndex = 43;
             this.ImageIconButton.Text = "アイテムアイコン";
             this.ImageIconButton.UseVisualStyleBackColor = true;
@@ -279,10 +275,9 @@
             // 
             // ImageUnitWaitIconButton
             // 
-            this.ImageUnitWaitIconButton.Location = new System.Drawing.Point(611, 112);
-            this.ImageUnitWaitIconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageUnitWaitIconButton.Location = new System.Drawing.Point(407, 75);
             this.ImageUnitWaitIconButton.Name = "ImageUnitWaitIconButton";
-            this.ImageUnitWaitIconButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageUnitWaitIconButton.Size = new System.Drawing.Size(133, 24);
             this.ImageUnitWaitIconButton.TabIndex = 44;
             this.ImageUnitWaitIconButton.Text = "待機アイコン";
             this.ImageUnitWaitIconButton.UseVisualStyleBackColor = true;
@@ -290,10 +285,9 @@
             // 
             // ImageUnitMoveIconButton
             // 
-            this.ImageUnitMoveIconButton.Location = new System.Drawing.Point(611, 152);
-            this.ImageUnitMoveIconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageUnitMoveIconButton.Location = new System.Drawing.Point(407, 101);
             this.ImageUnitMoveIconButton.Name = "ImageUnitMoveIconButton";
-            this.ImageUnitMoveIconButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageUnitMoveIconButton.Size = new System.Drawing.Size(133, 24);
             this.ImageUnitMoveIconButton.TabIndex = 45;
             this.ImageUnitMoveIconButton.Text = "移動アイコン";
             this.ImageUnitMoveIconButton.UseVisualStyleBackColor = true;
@@ -301,10 +295,9 @@
             // 
             // MapSettingButton
             // 
-            this.MapSettingButton.Location = new System.Drawing.Point(814, 2);
-            this.MapSettingButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MapSettingButton.Location = new System.Drawing.Point(543, 1);
             this.MapSettingButton.Name = "MapSettingButton";
-            this.MapSettingButton.Size = new System.Drawing.Size(200, 36);
+            this.MapSettingButton.Size = new System.Drawing.Size(133, 24);
             this.MapSettingButton.TabIndex = 59;
             this.MapSettingButton.Text = "マップ設定";
             this.MapSettingButton.UseVisualStyleBackColor = true;
@@ -312,10 +305,9 @@
             // 
             // MapPointerButton
             // 
-            this.MapPointerButton.Location = new System.Drawing.Point(814, 38);
-            this.MapPointerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MapPointerButton.Location = new System.Drawing.Point(543, 25);
             this.MapPointerButton.Name = "MapPointerButton";
-            this.MapPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.MapPointerButton.Size = new System.Drawing.Size(133, 24);
             this.MapPointerButton.TabIndex = 60;
             this.MapPointerButton.Text = "マップポインタ";
             this.MapPointerButton.UseVisualStyleBackColor = true;
@@ -323,10 +315,9 @@
             // 
             // ImageBattleAnimeButton
             // 
-            this.ImageBattleAnimeButton.Location = new System.Drawing.Point(611, 189);
-            this.ImageBattleAnimeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageBattleAnimeButton.Location = new System.Drawing.Point(407, 126);
             this.ImageBattleAnimeButton.Name = "ImageBattleAnimeButton";
-            this.ImageBattleAnimeButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageBattleAnimeButton.Size = new System.Drawing.Size(133, 24);
             this.ImageBattleAnimeButton.TabIndex = 46;
             this.ImageBattleAnimeButton.Text = "戦闘アニメ";
             this.ImageBattleAnimeButton.UseVisualStyleBackColor = true;
@@ -342,8 +333,8 @@
             this.ヘルプToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1638, 42);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -362,75 +353,75 @@
             this.toolStripMenuItem3,
             this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(119, 38);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.FileToolStripMenuItem.Text = "ファイル";
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.SaveToolStripMenuItem.Text = "上書き保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.SaveAsToolStripMenuItem.Text = "別名保存";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(386, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
             // 
             // SaveWithLintToolStripMenuItem
             // 
             this.SaveWithLintToolStripMenuItem.Name = "SaveWithLintToolStripMenuItem";
-            this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.SaveWithLintToolStripMenuItem.Text = "エラーがなければ上書き保存";
             this.SaveWithLintToolStripMenuItem.Click += new System.EventHandler(this.SaveWithLintToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(229, 6);
             // 
             // UPSSimpleToolStripMenuItem
             // 
             this.UPSSimpleToolStripMenuItem.Name = "UPSSimpleToolStripMenuItem";
-            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.UPSSimpleToolStripMenuItem.Text = "UPS差分で保存";
             this.UPSSimpleToolStripMenuItem.Click += new System.EventHandler(this.UPSSimpleToolStripMenuItem_Click);
             // 
             // ToolProblemReportToolStripMenuItem
             // 
             this.ToolProblemReportToolStripMenuItem.Name = "ToolProblemReportToolStripMenuItem";
-            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.ToolProblemReportToolStripMenuItem.Text = "問題報告ツール";
             this.ToolProblemReportToolStripMenuItem.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(386, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(229, 6);
             // 
             // QuitToolStripMenuItem
             // 
             this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.QuitToolStripMenuItem.Text = "終了";
             this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -451,93 +442,93 @@
             this.RunAsProgram3ToolStripMenuItem,
             this.RunAsToolStripMenuItem});
             this.ExecuteRunToolStripMenuItem.Name = "ExecuteRunToolStripMenuItem";
-            this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(73, 38);
+            this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.ExecuteRunToolStripMenuItem.Text = "実行";
             // 
             // RunAsEmulatorToolStripMenuItem
             // 
             this.RunAsEmulatorToolStripMenuItem.Name = "RunAsEmulatorToolStripMenuItem";
-            this.RunAsEmulatorToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsEmulatorToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsEmulatorToolStripMenuItem.Text = "エミュレータで実行([F5])";
             this.RunAsEmulatorToolStripMenuItem.Click += new System.EventHandler(this.RunAsEmulatorToolStripMenuItem_Click);
             // 
             // RunAsDebuggerToolStripMenuItem
             // 
             this.RunAsDebuggerToolStripMenuItem.Name = "RunAsDebuggerToolStripMenuItem";
-            this.RunAsDebuggerToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsDebuggerToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsDebuggerToolStripMenuItem.Text = "エミュレーター2で実行([Ctrl+F5])";
             this.RunAsDebuggerToolStripMenuItem.Click += new System.EventHandler(this.RunAsEmulator2ToolStripMenuItem_Click);
             // 
             // RunAsBinaryEditorToolStripMenuItem
             // 
             this.RunAsBinaryEditorToolStripMenuItem.Name = "RunAsBinaryEditorToolStripMenuItem";
-            this.RunAsBinaryEditorToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsBinaryEditorToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsBinaryEditorToolStripMenuItem.Text = "バイナリエディタで開く";
             this.RunAsBinaryEditorToolStripMenuItem.Click += new System.EventHandler(this.RunAsBinaryEditorToolStripMenuItem_Click);
             // 
             // RunAsSappyToolStripMenuItem
             // 
             this.RunAsSappyToolStripMenuItem.Name = "RunAsSappyToolStripMenuItem";
-            this.RunAsSappyToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsSappyToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsSappyToolStripMenuItem.Text = "Sappyで開く";
             this.RunAsSappyToolStripMenuItem.Click += new System.EventHandler(this.RunAsSappyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(456, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(258, 6);
             // 
             // eventAssembler
             // 
             this.eventAssembler.Name = "eventAssembler";
-            this.eventAssembler.Size = new System.Drawing.Size(459, 38);
+            this.eventAssembler.Size = new System.Drawing.Size(261, 22);
             this.eventAssembler.Text = "Event Assemblerで追加";
             this.eventAssembler.Click += new System.EventHandler(this.eventAssembler_Click);
             // 
             // ASMInsertToolStripMenuItem
             // 
             this.ASMInsertToolStripMenuItem.Name = "ASMInsertToolStripMenuItem";
-            this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.ASMInsertToolStripMenuItem.Text = "ASM/Cで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(456, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(258, 6);
             // 
             // OpenLastUsedToolStripMenuItem
             // 
             this.OpenLastUsedToolStripMenuItem.Name = "OpenLastUsedToolStripMenuItem";
-            this.OpenLastUsedToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.OpenLastUsedToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.OpenLastUsedToolStripMenuItem.Text = "最後に利用したファイル";
             this.OpenLastUsedToolStripMenuItem.Click += new System.EventHandler(this.OpenLastUsedToolStripMenuItem_Click);
             // 
             // RunAsProgram1ToolStripMenuItem
             // 
             this.RunAsProgram1ToolStripMenuItem.Name = "RunAsProgram1ToolStripMenuItem";
-            this.RunAsProgram1ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram1ToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsProgram1ToolStripMenuItem.Text = "プログラム1で開く";
             this.RunAsProgram1ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram1ToolStripMenuItem_Click);
             // 
             // RunAsProgram2ToolStripMenuItem
             // 
             this.RunAsProgram2ToolStripMenuItem.Name = "RunAsProgram2ToolStripMenuItem";
-            this.RunAsProgram2ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram2ToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsProgram2ToolStripMenuItem.Text = "プログラム2で開く";
             this.RunAsProgram2ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram2ToolStripMenuItem_Click);
             // 
             // RunAsProgram3ToolStripMenuItem
             // 
             this.RunAsProgram3ToolStripMenuItem.Name = "RunAsProgram3ToolStripMenuItem";
-            this.RunAsProgram3ToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsProgram3ToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsProgram3ToolStripMenuItem.Text = "プログラム3で開く";
             this.RunAsProgram3ToolStripMenuItem.Click += new System.EventHandler(this.RunAsProgram3ToolStripMenuItem_Click);
             // 
             // RunAsToolStripMenuItem
             // 
             this.RunAsToolStripMenuItem.Name = "RunAsToolStripMenuItem";
-            this.RunAsToolStripMenuItem.Size = new System.Drawing.Size(459, 38);
+            this.RunAsToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RunAsToolStripMenuItem.Text = "任意のプログラムで開く";
             this.RunAsToolStripMenuItem.Click += new System.EventHandler(this.RunAsToolStripMenuItem_Click);
             // 
@@ -565,138 +556,138 @@
             this.DisassemblerToolStripMenuItem,
             this.PointerToolStripMenuItem2});
             this.ToolToolToolStripMenuItem.Name = "ToolToolToolStripMenuItem";
-            this.ToolToolToolStripMenuItem.Size = new System.Drawing.Size(96, 38);
+            this.ToolToolToolStripMenuItem.Size = new System.Drawing.Size(56, 22);
             this.ToolToolToolStripMenuItem.Text = "ツール";
             // 
             // UndoToolStripMenuItem
             // 
             this.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem";
-            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.UndoToolStripMenuItem.Text = "UNDO 操作の取り消し";
             this.UndoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItem_Click);
             // 
             // PatchToolStripMenuItem
             // 
             this.PatchToolStripMenuItem.Name = "PatchToolStripMenuItem";
-            this.PatchToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.PatchToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.PatchToolStripMenuItem.Text = "パッチ";
             this.PatchToolStripMenuItem.Click += new System.EventHandler(this.PatchToolStripMenuItem_Click);
             // 
             // GraphicsToolStripMenuItem
             // 
             this.GraphicsToolStripMenuItem.Name = "GraphicsToolStripMenuItem";
-            this.GraphicsToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.GraphicsToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.GraphicsToolStripMenuItem.Text = "グラフィックツール";
             this.GraphicsToolStripMenuItem.Click += new System.EventHandler(this.GraphicsToolStripMenuItem_Click);
             // 
             // SongImportOtherROMToolStripMenuItem
             // 
             this.SongImportOtherROMToolStripMenuItem.Name = "SongImportOtherROMToolStripMenuItem";
-            this.SongImportOtherROMToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.SongImportOtherROMToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.SongImportOtherROMToolStripMenuItem.Text = "別ROMから曲のインポート";
             this.SongImportOtherROMToolStripMenuItem.Click += new System.EventHandler(this.SongImportOtherROMToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx1
             // 
             this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
-            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(313, 6);
             // 
             // lintToolStripMenuItem
             // 
             this.lintToolStripMenuItem.Name = "lintToolStripMenuItem";
-            this.lintToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.lintToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.lintToolStripMenuItem.Text = "Lint";
             this.lintToolStripMenuItem.Click += new System.EventHandler(this.lintToolStripMenuItem_Click);
             // 
             // DiffDebugToolStripMenuItem
             // 
             this.DiffDebugToolStripMenuItem.Name = "DiffDebugToolStripMenuItem";
-            this.DiffDebugToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DiffDebugToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.DiffDebugToolStripMenuItem.Text = "比較デバッグツール";
             this.DiffDebugToolStripMenuItem.Click += new System.EventHandler(this.DiffDebugToolStripMenuItem_Click);
             // 
             // EmulatorMemoryToolStripMenuItem
             // 
             this.EmulatorMemoryToolStripMenuItem.Name = "EmulatorMemoryToolStripMenuItem";
-            this.EmulatorMemoryToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.EmulatorMemoryToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.EmulatorMemoryToolStripMenuItem.Text = "動作中のエミュレータへ接続";
             this.EmulatorMemoryToolStripMenuItem.Click += new System.EventHandler(this.EmulatorMemoryToolStripMenuItem_Click);
             // 
             // LogToolStripMenuItem
             // 
             this.LogToolStripMenuItem.Name = "LogToolStripMenuItem";
-            this.LogToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.LogToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.LogToolStripMenuItem.Text = "ログ";
             this.LogToolStripMenuItem.Click += new System.EventHandler(this.LogToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx2
             // 
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
-            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(313, 6);
             // 
             // FlagNameToolStripMenuItem
             // 
             this.FlagNameToolStripMenuItem.Name = "FlagNameToolStripMenuItem";
-            this.FlagNameToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.FlagNameToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.FlagNameToolStripMenuItem.Text = "フラグ設定";
             this.FlagNameToolStripMenuItem.Click += new System.EventHandler(this.FlagNameToolStripMenuItem_Click);
             // 
             // ExportEAEventToolStripMenuItem
             // 
             this.ExportEAEventToolStripMenuItem.Name = "ExportEAEventToolStripMenuItem";
-            this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.ExportEAEventToolStripMenuItem.Text = "Event Assemblerでイベントのエクスポート";
             this.ExportEAEventToolStripMenuItem.Click += new System.EventHandler(this.ExportEAEventToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx3
             // 
             this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
-            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(313, 6);
             // 
             // DecreaseColorToolStripMenuItem
             // 
             this.DecreaseColorToolStripMenuItem.Name = "DecreaseColorToolStripMenuItem";
-            this.DecreaseColorToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DecreaseColorToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.DecreaseColorToolStripMenuItem.Text = "減色ツール";
             this.DecreaseColorToolStripMenuItem.Click += new System.EventHandler(this.DecreaseColorToolStripMenuItem_Click);
             // 
             // LZ77ToolToolStripMenuItem
             // 
             this.LZ77ToolToolStripMenuItem.Name = "LZ77ToolToolStripMenuItem";
-            this.LZ77ToolToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.LZ77ToolToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.LZ77ToolToolStripMenuItem.Text = "LZ77ツール";
             this.LZ77ToolToolStripMenuItem.Click += new System.EventHandler(this.LZ77ToolToolStripMenuItem_Click);
             // 
             // diffToolStripMenuItem
             // 
             this.diffToolStripMenuItem.Name = "diffToolStripMenuItem";
-            this.diffToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.diffToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.diffToolStripMenuItem.Text = "Diffツール";
             this.diffToolStripMenuItem.Click += new System.EventHandler(this.diffToolStripMenuItem_Click);
             // 
             // TranslateROMToolStripMenuItem
             // 
             this.TranslateROMToolStripMenuItem.Name = "TranslateROMToolStripMenuItem";
-            this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.TranslateROMToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.TranslateROMToolStripMenuItem.Text = "ROM翻訳ツール";
             this.TranslateROMToolStripMenuItem.Click += new System.EventHandler(this.TranslateROMToolStripMenuItem_Click);
             // 
             // toolStripSeparatorEx4
             // 
             this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
-            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(550, 6);
+            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(313, 6);
             // 
             // DisassemblerToolStripMenuItem
             // 
             this.DisassemblerToolStripMenuItem.Name = "DisassemblerToolStripMenuItem";
-            this.DisassemblerToolStripMenuItem.Size = new System.Drawing.Size(553, 38);
+            this.DisassemblerToolStripMenuItem.Size = new System.Drawing.Size(316, 22);
             this.DisassemblerToolStripMenuItem.Text = "逆アセンブラ";
             this.DisassemblerToolStripMenuItem.Click += new System.EventHandler(this.DisassemblerToolStripMenuItem_Click);
             // 
             // PointerToolStripMenuItem2
             // 
             this.PointerToolStripMenuItem2.Name = "PointerToolStripMenuItem2";
-            this.PointerToolStripMenuItem2.Size = new System.Drawing.Size(553, 38);
+            this.PointerToolStripMenuItem2.Size = new System.Drawing.Size(316, 22);
             this.PointerToolStripMenuItem2.Text = "ポインタ計算ツール";
             this.PointerToolStripMenuItem2.Click += new System.EventHandler(this.PointerToolStripMenuItem2_Click);
             // 
@@ -706,20 +697,20 @@
             this.SettingOptionToolStripMenuItem,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
-            this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(73, 38);
+            this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.OptionSettingToolStripMenuItem.Text = "設定";
             // 
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -730,29 +721,29 @@
             this.OnlineHelpToolStripMenuItem,
             this.DiscordURLToolStripMenuItem});
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
-            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(96, 38);
+            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(56, 22);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
             // 
             // OnlineHelpToolStripMenuItem
             // 
             this.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem";
-            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(335, 38);
+            this.OnlineHelpToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.OnlineHelpToolStripMenuItem.Text = "オンラインヘルプ";
             this.OnlineHelpToolStripMenuItem.Click += new System.EventHandler(this.OnlineHelpToolStripMenuItem_Click);
             // 
             // DiscordURLToolStripMenuItem
             // 
             this.DiscordURLToolStripMenuItem.Name = "DiscordURLToolStripMenuItem";
-            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(335, 38);
+            this.DiscordURLToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.DiscordURLToolStripMenuItem.Text = "DiscordコミニティURL";
             this.DiscordURLToolStripMenuItem.Click += new System.EventHandler(this.DiscordURLToolStripMenuItem_Click);
             // 
             // EventCondButton
             // 
-            this.EventCondButton.Location = new System.Drawing.Point(814, 74);
-            this.EventCondButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventCondButton.Location = new System.Drawing.Point(543, 49);
+            this.EventCondButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventCondButton.Name = "EventCondButton";
-            this.EventCondButton.Size = new System.Drawing.Size(200, 36);
+            this.EventCondButton.Size = new System.Drawing.Size(133, 24);
             this.EventCondButton.TabIndex = 61;
             this.EventCondButton.Text = "イベント条件";
             this.EventCondButton.UseVisualStyleBackColor = true;
@@ -760,10 +751,10 @@
             // 
             // EventScriptButton
             // 
-            this.EventScriptButton.Location = new System.Drawing.Point(814, 111);
-            this.EventScriptButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventScriptButton.Location = new System.Drawing.Point(543, 74);
+            this.EventScriptButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventScriptButton.Name = "EventScriptButton";
-            this.EventScriptButton.Size = new System.Drawing.Size(200, 36);
+            this.EventScriptButton.Size = new System.Drawing.Size(133, 24);
             this.EventScriptButton.TabIndex = 62;
             this.EventScriptButton.Text = "イベント命令";
             this.EventScriptButton.UseVisualStyleBackColor = true;
@@ -771,10 +762,10 @@
             // 
             // TextButton
             // 
-            this.TextButton.Location = new System.Drawing.Point(1222, 1);
-            this.TextButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TextButton.Location = new System.Drawing.Point(815, 1);
+            this.TextButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.TextButton.Name = "TextButton";
-            this.TextButton.Size = new System.Drawing.Size(200, 36);
+            this.TextButton.Size = new System.Drawing.Size(133, 24);
             this.TextButton.TabIndex = 90;
             this.TextButton.Text = "文字列";
             this.TextButton.UseVisualStyleBackColor = true;
@@ -782,10 +773,10 @@
             // 
             // EventUnitButton
             // 
-            this.EventUnitButton.Location = new System.Drawing.Point(814, 153);
-            this.EventUnitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventUnitButton.Location = new System.Drawing.Point(543, 102);
+            this.EventUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventUnitButton.Name = "EventUnitButton";
-            this.EventUnitButton.Size = new System.Drawing.Size(200, 36);
+            this.EventUnitButton.Size = new System.Drawing.Size(133, 24);
             this.EventUnitButton.TabIndex = 63;
             this.EventUnitButton.Text = "ユニット配置";
             this.EventUnitButton.UseVisualStyleBackColor = true;
@@ -793,10 +784,10 @@
             // 
             // SupportUnitButton
             // 
-            this.SupportUnitButton.Location = new System.Drawing.Point(0, 43);
-            this.SupportUnitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportUnitButton.Location = new System.Drawing.Point(0, 29);
+            this.SupportUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SupportUnitButton.Name = "SupportUnitButton";
-            this.SupportUnitButton.Size = new System.Drawing.Size(200, 36);
+            this.SupportUnitButton.Size = new System.Drawing.Size(133, 24);
             this.SupportUnitButton.TabIndex = 1;
             this.SupportUnitButton.Text = "ユニット支援";
             this.SupportUnitButton.UseVisualStyleBackColor = true;
@@ -804,10 +795,10 @@
             // 
             // SupportTalkButton
             // 
-            this.SupportTalkButton.Location = new System.Drawing.Point(0, 80);
-            this.SupportTalkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportTalkButton.Location = new System.Drawing.Point(0, 53);
+            this.SupportTalkButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SupportTalkButton.Name = "SupportTalkButton";
-            this.SupportTalkButton.Size = new System.Drawing.Size(200, 36);
+            this.SupportTalkButton.Size = new System.Drawing.Size(133, 24);
             this.SupportTalkButton.TabIndex = 2;
             this.SupportTalkButton.Text = "支援会話";
             this.SupportTalkButton.UseVisualStyleBackColor = true;
@@ -815,10 +806,10 @@
             // 
             // UnitPaletteButton
             // 
-            this.UnitPaletteButton.Location = new System.Drawing.Point(0, 116);
-            this.UnitPaletteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitPaletteButton.Location = new System.Drawing.Point(0, 77);
+            this.UnitPaletteButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.UnitPaletteButton.Name = "UnitPaletteButton";
-            this.UnitPaletteButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitPaletteButton.Size = new System.Drawing.Size(133, 24);
             this.UnitPaletteButton.TabIndex = 3;
             this.UnitPaletteButton.Text = "ユニット別パレット";
             this.UnitPaletteButton.UseVisualStyleBackColor = true;
@@ -826,10 +817,10 @@
             // 
             // SupportAttributeButton
             // 
-            this.SupportAttributeButton.Location = new System.Drawing.Point(0, 153);
-            this.SupportAttributeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SupportAttributeButton.Location = new System.Drawing.Point(0, 102);
+            this.SupportAttributeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SupportAttributeButton.Name = "SupportAttributeButton";
-            this.SupportAttributeButton.Size = new System.Drawing.Size(200, 36);
+            this.SupportAttributeButton.Size = new System.Drawing.Size(133, 24);
             this.SupportAttributeButton.TabIndex = 4;
             this.SupportAttributeButton.Text = "支援効果";
             this.SupportAttributeButton.UseVisualStyleBackColor = true;
@@ -837,10 +828,10 @@
             // 
             // MoveCostButton
             // 
-            this.MoveCostButton.Location = new System.Drawing.Point(202, 41);
-            this.MoveCostButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MoveCostButton.Location = new System.Drawing.Point(135, 27);
+            this.MoveCostButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MoveCostButton.Name = "MoveCostButton";
-            this.MoveCostButton.Size = new System.Drawing.Size(200, 36);
+            this.MoveCostButton.Size = new System.Drawing.Size(133, 24);
             this.MoveCostButton.TabIndex = 16;
             this.MoveCostButton.Text = "地形設定";
             this.MoveCostButton.UseVisualStyleBackColor = true;
@@ -848,10 +839,10 @@
             // 
             // CCBranchButton
             // 
-            this.CCBranchButton.Location = new System.Drawing.Point(202, 80);
-            this.CCBranchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CCBranchButton.Location = new System.Drawing.Point(135, 53);
+            this.CCBranchButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.CCBranchButton.Name = "CCBranchButton";
-            this.CCBranchButton.Size = new System.Drawing.Size(200, 36);
+            this.CCBranchButton.Size = new System.Drawing.Size(133, 24);
             this.CCBranchButton.TabIndex = 17;
             this.CCBranchButton.Text = "CC分岐";
             this.CCBranchButton.UseVisualStyleBackColor = true;
@@ -859,10 +850,10 @@
             // 
             // ItemButton
             // 
-            this.ItemButton.Location = new System.Drawing.Point(407, 3);
-            this.ItemButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemButton.Location = new System.Drawing.Point(271, 2);
+            this.ItemButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemButton.Name = "ItemButton";
-            this.ItemButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemButton.Size = new System.Drawing.Size(133, 24);
             this.ItemButton.TabIndex = 27;
             this.ItemButton.Text = "アイテム";
             this.ItemButton.UseVisualStyleBackColor = true;
@@ -870,10 +861,10 @@
             // 
             // ItemEffectButton
             // 
-            this.ItemEffectButton.Location = new System.Drawing.Point(407, 38);
-            this.ItemEffectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemEffectButton.Location = new System.Drawing.Point(271, 25);
+            this.ItemEffectButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemEffectButton.Name = "ItemEffectButton";
-            this.ItemEffectButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemEffectButton.Size = new System.Drawing.Size(133, 24);
             this.ItemEffectButton.TabIndex = 28;
             this.ItemEffectButton.Text = "間接エフェクト";
             this.ItemEffectButton.UseVisualStyleBackColor = true;
@@ -881,10 +872,10 @@
             // 
             // ITEMSTATBOOSTERButton
             // 
-            this.ITEMSTATBOOSTERButton.Location = new System.Drawing.Point(407, 78);
-            this.ITEMSTATBOOSTERButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ITEMSTATBOOSTERButton.Location = new System.Drawing.Point(271, 52);
+            this.ITEMSTATBOOSTERButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ITEMSTATBOOSTERButton.Name = "ITEMSTATBOOSTERButton";
-            this.ITEMSTATBOOSTERButton.Size = new System.Drawing.Size(200, 36);
+            this.ITEMSTATBOOSTERButton.Size = new System.Drawing.Size(133, 24);
             this.ITEMSTATBOOSTERButton.TabIndex = 29;
             this.ITEMSTATBOOSTERButton.Text = "能力補正";
             this.ITEMSTATBOOSTERButton.UseVisualStyleBackColor = true;
@@ -892,10 +883,10 @@
             // 
             // ItemCriticalButton
             // 
-            this.ItemCriticalButton.Location = new System.Drawing.Point(407, 116);
-            this.ItemCriticalButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemCriticalButton.Location = new System.Drawing.Point(271, 77);
+            this.ItemCriticalButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemCriticalButton.Name = "ItemCriticalButton";
-            this.ItemCriticalButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemCriticalButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCriticalButton.TabIndex = 30;
             this.ItemCriticalButton.Text = "特効効果";
             this.ItemCriticalButton.UseVisualStyleBackColor = true;
@@ -903,10 +894,10 @@
             // 
             // ItemShopButton
             // 
-            this.ItemShopButton.Location = new System.Drawing.Point(407, 154);
-            this.ItemShopButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemShopButton.Location = new System.Drawing.Point(271, 103);
+            this.ItemShopButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemShopButton.Name = "ItemShopButton";
-            this.ItemShopButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemShopButton.Size = new System.Drawing.Size(133, 24);
             this.ItemShopButton.TabIndex = 31;
             this.ItemShopButton.Text = "お店";
             this.ItemShopButton.UseVisualStyleBackColor = true;
@@ -914,10 +905,10 @@
             // 
             // ItemCCButton
             // 
-            this.ItemCCButton.Location = new System.Drawing.Point(407, 192);
-            this.ItemCCButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemCCButton.Location = new System.Drawing.Point(271, 128);
+            this.ItemCCButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemCCButton.Name = "ItemCCButton";
-            this.ItemCCButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemCCButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCCButton.TabIndex = 32;
             this.ItemCCButton.Text = "CCアイテム";
             this.ItemCCButton.UseVisualStyleBackColor = true;
@@ -925,10 +916,10 @@
             // 
             // ItemCorneredButton
             // 
-            this.ItemCorneredButton.Location = new System.Drawing.Point(407, 231);
-            this.ItemCorneredButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemCorneredButton.Location = new System.Drawing.Point(271, 154);
+            this.ItemCorneredButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemCorneredButton.Name = "ItemCorneredButton";
-            this.ItemCorneredButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemCorneredButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCorneredButton.TabIndex = 33;
             this.ItemCorneredButton.Text = "すくみ";
             this.ItemCorneredButton.UseVisualStyleBackColor = true;
@@ -936,10 +927,10 @@
             // 
             // EventBattleTalkButton
             // 
-            this.EventBattleTalkButton.Location = new System.Drawing.Point(814, 190);
-            this.EventBattleTalkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventBattleTalkButton.Location = new System.Drawing.Point(543, 127);
+            this.EventBattleTalkButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventBattleTalkButton.Name = "EventBattleTalkButton";
-            this.EventBattleTalkButton.Size = new System.Drawing.Size(200, 36);
+            this.EventBattleTalkButton.Size = new System.Drawing.Size(133, 24);
             this.EventBattleTalkButton.TabIndex = 64;
             this.EventBattleTalkButton.Text = "交戦セリフ";
             this.EventBattleTalkButton.UseVisualStyleBackColor = true;
@@ -947,10 +938,10 @@
             // 
             // EventHaikuButton
             // 
-            this.EventHaikuButton.Location = new System.Drawing.Point(814, 228);
-            this.EventHaikuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventHaikuButton.Location = new System.Drawing.Point(543, 152);
+            this.EventHaikuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventHaikuButton.Name = "EventHaikuButton";
-            this.EventHaikuButton.Size = new System.Drawing.Size(200, 36);
+            this.EventHaikuButton.Size = new System.Drawing.Size(133, 24);
             this.EventHaikuButton.TabIndex = 65;
             this.EventHaikuButton.Text = "死亡セリフ";
             this.EventHaikuButton.UseVisualStyleBackColor = true;
@@ -958,10 +949,10 @@
             // 
             // EventForceSortieButton
             // 
-            this.EventForceSortieButton.Location = new System.Drawing.Point(814, 267);
-            this.EventForceSortieButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventForceSortieButton.Location = new System.Drawing.Point(543, 178);
+            this.EventForceSortieButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventForceSortieButton.Name = "EventForceSortieButton";
-            this.EventForceSortieButton.Size = new System.Drawing.Size(200, 36);
+            this.EventForceSortieButton.Size = new System.Drawing.Size(133, 24);
             this.EventForceSortieButton.TabIndex = 66;
             this.EventForceSortieButton.Text = "強制出撃";
             this.EventForceSortieButton.UseVisualStyleBackColor = true;
@@ -969,10 +960,10 @@
             // 
             // EventMapChangeButton
             // 
-            this.EventMapChangeButton.Location = new System.Drawing.Point(814, 304);
-            this.EventMapChangeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventMapChangeButton.Location = new System.Drawing.Point(543, 203);
+            this.EventMapChangeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventMapChangeButton.Name = "EventMapChangeButton";
-            this.EventMapChangeButton.Size = new System.Drawing.Size(200, 36);
+            this.EventMapChangeButton.Size = new System.Drawing.Size(133, 24);
             this.EventMapChangeButton.TabIndex = 67;
             this.EventMapChangeButton.Text = "マップ変化";
             this.EventMapChangeButton.UseVisualStyleBackColor = true;
@@ -980,10 +971,10 @@
             // 
             // EDButton
             // 
-            this.EDButton.Location = new System.Drawing.Point(1221, 111);
-            this.EDButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EDButton.Location = new System.Drawing.Point(814, 74);
+            this.EDButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EDButton.Name = "EDButton";
-            this.EDButton.Size = new System.Drawing.Size(200, 36);
+            this.EDButton.Size = new System.Drawing.Size(133, 24);
             this.EDButton.TabIndex = 93;
             this.EDButton.Text = "ED関係";
             this.EDButton.UseVisualStyleBackColor = true;
@@ -991,10 +982,10 @@
             // 
             // MapExitPointButton
             // 
-            this.MapExitPointButton.Location = new System.Drawing.Point(814, 340);
-            this.MapExitPointButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapExitPointButton.Location = new System.Drawing.Point(543, 227);
+            this.MapExitPointButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapExitPointButton.Name = "MapExitPointButton";
-            this.MapExitPointButton.Size = new System.Drawing.Size(200, 36);
+            this.MapExitPointButton.Size = new System.Drawing.Size(133, 24);
             this.MapExitPointButton.TabIndex = 68;
             this.MapExitPointButton.Text = "離脱ポイント";
             this.MapExitPointButton.UseVisualStyleBackColor = true;
@@ -1002,10 +993,10 @@
             // 
             // WorldMapEventPointerButton
             // 
-            this.WorldMapEventPointerButton.Location = new System.Drawing.Point(1017, 1);
-            this.WorldMapEventPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapEventPointerButton.Location = new System.Drawing.Point(678, 1);
+            this.WorldMapEventPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapEventPointerButton.Name = "WorldMapEventPointerButton";
-            this.WorldMapEventPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapEventPointerButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapEventPointerButton.TabIndex = 75;
             this.WorldMapEventPointerButton.Text = "ワールドマップイベント";
             this.WorldMapEventPointerButton.UseVisualStyleBackColor = true;
@@ -1013,10 +1004,10 @@
             // 
             // WorldMapRoadButton
             // 
-            this.WorldMapRoadButton.Location = new System.Drawing.Point(1017, 39);
-            this.WorldMapRoadButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapRoadButton.Location = new System.Drawing.Point(678, 26);
+            this.WorldMapRoadButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapRoadButton.Name = "WorldMapRoadButton";
-            this.WorldMapRoadButton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapRoadButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapRoadButton.TabIndex = 76;
             this.WorldMapRoadButton.Text = "道";
             this.WorldMapRoadButton.UseVisualStyleBackColor = true;
@@ -1024,10 +1015,10 @@
             // 
             // WorldMapEventPointButton
             // 
-            this.WorldMapEventPointButton.Location = new System.Drawing.Point(1017, 76);
-            this.WorldMapEventPointButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapEventPointButton.Location = new System.Drawing.Point(678, 51);
+            this.WorldMapEventPointButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapEventPointButton.Name = "WorldMapEventPointButton";
-            this.WorldMapEventPointButton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapEventPointButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapEventPointButton.TabIndex = 77;
             this.WorldMapEventPointButton.Text = "拠点";
             this.WorldMapEventPointButton.UseVisualStyleBackColor = true;
@@ -1035,10 +1026,10 @@
             // 
             // WorldMapImageButton
             // 
-            this.WorldMapImageButton.Location = new System.Drawing.Point(1017, 111);
-            this.WorldMapImageButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapImageButton.Location = new System.Drawing.Point(678, 74);
+            this.WorldMapImageButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapImageButton.Name = "WorldMapImageButton";
-            this.WorldMapImageButton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapImageButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapImageButton.TabIndex = 78;
             this.WorldMapImageButton.Text = "WMAP画像";
             this.WorldMapImageButton.UseVisualStyleBackColor = true;
@@ -1046,10 +1037,10 @@
             // 
             // OPPrologueButton
             // 
-            this.OPPrologueButton.Location = new System.Drawing.Point(1221, 149);
-            this.OPPrologueButton.Margin = new System.Windows.Forms.Padding(2);
+            this.OPPrologueButton.Location = new System.Drawing.Point(814, 99);
+            this.OPPrologueButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.OPPrologueButton.Name = "OPPrologueButton";
-            this.OPPrologueButton.Size = new System.Drawing.Size(200, 36);
+            this.OPPrologueButton.Size = new System.Drawing.Size(133, 24);
             this.OPPrologueButton.TabIndex = 94;
             this.OPPrologueButton.Text = "OP字幕";
             this.OPPrologueButton.UseVisualStyleBackColor = true;
@@ -1057,10 +1048,9 @@
             // 
             // BigCGButton
             // 
-            this.BigCGButton.Location = new System.Drawing.Point(611, 377);
-            this.BigCGButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BigCGButton.Location = new System.Drawing.Point(407, 251);
             this.BigCGButton.Name = "BigCGButton";
-            this.BigCGButton.Size = new System.Drawing.Size(200, 36);
+            this.BigCGButton.Size = new System.Drawing.Size(133, 24);
             this.BigCGButton.TabIndex = 51;
             this.BigCGButton.Text = "CG画像";
             this.BigCGButton.UseVisualStyleBackColor = true;
@@ -1068,10 +1058,9 @@
             // 
             // ImageChapterTitleButton
             // 
-            this.ImageChapterTitleButton.Location = new System.Drawing.Point(611, 415);
-            this.ImageChapterTitleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageChapterTitleButton.Location = new System.Drawing.Point(407, 277);
             this.ImageChapterTitleButton.Name = "ImageChapterTitleButton";
-            this.ImageChapterTitleButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageChapterTitleButton.Size = new System.Drawing.Size(133, 24);
             this.ImageChapterTitleButton.TabIndex = 52;
             this.ImageChapterTitleButton.Text = "章タイトル";
             this.ImageChapterTitleButton.UseVisualStyleBackColor = true;
@@ -1079,10 +1068,9 @@
             // 
             // ImageUnitPaletteButton
             // 
-            this.ImageUnitPaletteButton.Location = new System.Drawing.Point(611, 452);
-            this.ImageUnitPaletteButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageUnitPaletteButton.Location = new System.Drawing.Point(407, 301);
             this.ImageUnitPaletteButton.Name = "ImageUnitPaletteButton";
-            this.ImageUnitPaletteButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageUnitPaletteButton.Size = new System.Drawing.Size(133, 24);
             this.ImageUnitPaletteButton.TabIndex = 53;
             this.ImageUnitPaletteButton.Text = "キャラパレット";
             this.ImageUnitPaletteButton.UseVisualStyleBackColor = true;
@@ -1090,10 +1078,10 @@
             // 
             // TextCharCodeButton
             // 
-            this.TextCharCodeButton.Location = new System.Drawing.Point(1222, 38);
-            this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TextCharCodeButton.Location = new System.Drawing.Point(815, 25);
+            this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.TextCharCodeButton.Name = "TextCharCodeButton";
-            this.TextCharCodeButton.Size = new System.Drawing.Size(200, 36);
+            this.TextCharCodeButton.Size = new System.Drawing.Size(133, 24);
             this.TextCharCodeButton.TabIndex = 91;
             this.TextCharCodeButton.Text = "符号テーブル";
             this.TextCharCodeButton.UseVisualStyleBackColor = true;
@@ -1101,10 +1089,10 @@
             // 
             // ArenaClassButton
             // 
-            this.ArenaClassButton.Location = new System.Drawing.Point(202, 118);
-            this.ArenaClassButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ArenaClassButton.Location = new System.Drawing.Point(135, 79);
+            this.ArenaClassButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ArenaClassButton.Name = "ArenaClassButton";
-            this.ArenaClassButton.Size = new System.Drawing.Size(200, 36);
+            this.ArenaClassButton.Size = new System.Drawing.Size(133, 24);
             this.ArenaClassButton.TabIndex = 18;
             this.ArenaClassButton.Text = "闘技場出現クラス";
             this.ArenaClassButton.UseVisualStyleBackColor = true;
@@ -1112,10 +1100,10 @@
             // 
             // SoundFootStepsButton
             // 
-            this.SoundFootStepsButton.Location = new System.Drawing.Point(202, 191);
-            this.SoundFootStepsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundFootStepsButton.Location = new System.Drawing.Point(135, 127);
+            this.SoundFootStepsButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SoundFootStepsButton.Name = "SoundFootStepsButton";
-            this.SoundFootStepsButton.Size = new System.Drawing.Size(200, 36);
+            this.SoundFootStepsButton.Size = new System.Drawing.Size(133, 24);
             this.SoundFootStepsButton.TabIndex = 20;
             this.SoundFootStepsButton.Text = "クラス足音";
             this.SoundFootStepsButton.UseVisualStyleBackColor = true;
@@ -1123,10 +1111,10 @@
             // 
             // SoundRoomuttoBn
             // 
-            this.SoundRoomuttoBn.Location = new System.Drawing.Point(1426, 1);
-            this.SoundRoomuttoBn.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundRoomuttoBn.Location = new System.Drawing.Point(951, 1);
+            this.SoundRoomuttoBn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SoundRoomuttoBn.Name = "SoundRoomuttoBn";
-            this.SoundRoomuttoBn.Size = new System.Drawing.Size(200, 36);
+            this.SoundRoomuttoBn.Size = new System.Drawing.Size(133, 24);
             this.SoundRoomuttoBn.TabIndex = 108;
             this.SoundRoomuttoBn.Text = "サウンドルーム";
             this.SoundRoomuttoBn.UseVisualStyleBackColor = true;
@@ -1134,10 +1122,10 @@
             // 
             // SoundBossBGMButton
             // 
-            this.SoundBossBGMButton.Location = new System.Drawing.Point(1426, 39);
-            this.SoundBossBGMButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SoundBossBGMButton.Location = new System.Drawing.Point(951, 26);
+            this.SoundBossBGMButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SoundBossBGMButton.Name = "SoundBossBGMButton";
-            this.SoundBossBGMButton.Size = new System.Drawing.Size(200, 36);
+            this.SoundBossBGMButton.Size = new System.Drawing.Size(133, 24);
             this.SoundBossBGMButton.TabIndex = 109;
             this.SoundBossBGMButton.Text = "ボスBGM";
             this.SoundBossBGMButton.UseVisualStyleBackColor = true;
@@ -1145,10 +1133,10 @@
             // 
             // SongTableButton
             // 
-            this.SongTableButton.Location = new System.Drawing.Point(1426, 114);
-            this.SongTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SongTableButton.Location = new System.Drawing.Point(951, 76);
+            this.SongTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SongTableButton.Name = "SongTableButton";
-            this.SongTableButton.Size = new System.Drawing.Size(200, 36);
+            this.SongTableButton.Size = new System.Drawing.Size(133, 24);
             this.SongTableButton.TabIndex = 111;
             this.SongTableButton.Text = "ソングテーブル";
             this.SongTableButton.UseVisualStyleBackColor = true;
@@ -1156,10 +1144,10 @@
             // 
             // ClassOPDemoButton
             // 
-            this.ClassOPDemoButton.Location = new System.Drawing.Point(1221, 186);
-            this.ClassOPDemoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ClassOPDemoButton.Location = new System.Drawing.Point(814, 124);
+            this.ClassOPDemoButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ClassOPDemoButton.Name = "ClassOPDemoButton";
-            this.ClassOPDemoButton.Size = new System.Drawing.Size(200, 36);
+            this.ClassOPDemoButton.Size = new System.Drawing.Size(133, 24);
             this.ClassOPDemoButton.TabIndex = 95;
             this.ClassOPDemoButton.Text = "OPクラス紹介";
             this.ClassOPDemoButton.UseVisualStyleBackColor = true;
@@ -1167,10 +1155,10 @@
             // 
             // MapTerrainNameButton
             // 
-            this.MapTerrainNameButton.Location = new System.Drawing.Point(1222, 452);
-            this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainNameButton.Location = new System.Drawing.Point(815, 301);
+            this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapTerrainNameButton.Name = "MapTerrainNameButton";
-            this.MapTerrainNameButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainNameButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainNameButton.TabIndex = 101;
             this.MapTerrainNameButton.Text = "地形名前";
             this.MapTerrainNameButton.UseVisualStyleBackColor = true;
@@ -1178,10 +1166,10 @@
             // 
             // MenuButton
             // 
-            this.MenuButton.Location = new System.Drawing.Point(1426, 261);
-            this.MenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuButton.Location = new System.Drawing.Point(951, 174);
+            this.MenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(200, 36);
+            this.MenuButton.Size = new System.Drawing.Size(133, 24);
             this.MenuButton.TabIndex = 113;
             this.MenuButton.Text = "メニューコマンド";
             this.MenuButton.UseVisualStyleBackColor = true;
@@ -1189,10 +1177,10 @@
             // 
             // UnitIncreaseHeightFormButton
             // 
-            this.UnitIncreaseHeightFormButton.Location = new System.Drawing.Point(0, 189);
-            this.UnitIncreaseHeightFormButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitIncreaseHeightFormButton.Location = new System.Drawing.Point(0, 126);
+            this.UnitIncreaseHeightFormButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.UnitIncreaseHeightFormButton.Name = "UnitIncreaseHeightFormButton";
-            this.UnitIncreaseHeightFormButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitIncreaseHeightFormButton.Size = new System.Drawing.Size(133, 24);
             this.UnitIncreaseHeightFormButton.TabIndex = 5;
             this.UnitIncreaseHeightFormButton.Text = "背を伸ばす";
             this.UnitIncreaseHeightFormButton.UseVisualStyleBackColor = true;
@@ -1200,10 +1188,10 @@
             // 
             // ClassOPFontButton
             // 
-            this.ClassOPFontButton.Location = new System.Drawing.Point(1221, 223);
-            this.ClassOPFontButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ClassOPFontButton.Location = new System.Drawing.Point(814, 149);
+            this.ClassOPFontButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ClassOPFontButton.Name = "ClassOPFontButton";
-            this.ClassOPFontButton.Size = new System.Drawing.Size(200, 36);
+            this.ClassOPFontButton.Size = new System.Drawing.Size(133, 24);
             this.ClassOPFontButton.TabIndex = 96;
             this.ClassOPFontButton.Text = "OPクラス紹介フォント";
             this.ClassOPFontButton.UseVisualStyleBackColor = true;
@@ -1211,10 +1199,10 @@
             // 
             // EDStaffRollButton
             // 
-            this.EDStaffRollButton.Location = new System.Drawing.Point(1221, 298);
-            this.EDStaffRollButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EDStaffRollButton.Location = new System.Drawing.Point(814, 199);
+            this.EDStaffRollButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EDStaffRollButton.Name = "EDStaffRollButton";
-            this.EDStaffRollButton.Size = new System.Drawing.Size(200, 36);
+            this.EDStaffRollButton.Size = new System.Drawing.Size(133, 24);
             this.EDStaffRollButton.TabIndex = 98;
             this.EDStaffRollButton.Text = "スタッフロール";
             this.EDStaffRollButton.UseVisualStyleBackColor = true;
@@ -1222,10 +1210,10 @@
             // 
             // FontButton
             // 
-            this.FontButton.Location = new System.Drawing.Point(1222, 76);
-            this.FontButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FontButton.Location = new System.Drawing.Point(815, 51);
+            this.FontButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.FontButton.Name = "FontButton";
-            this.FontButton.Size = new System.Drawing.Size(200, 36);
+            this.FontButton.Size = new System.Drawing.Size(133, 24);
             this.FontButton.TabIndex = 92;
             this.FontButton.Text = "フォント";
             this.FontButton.UseVisualStyleBackColor = true;
@@ -1233,10 +1221,9 @@
             // 
             // ImageBattleFieldButton
             // 
-            this.ImageBattleFieldButton.Location = new System.Drawing.Point(611, 264);
-            this.ImageBattleFieldButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageBattleFieldButton.Location = new System.Drawing.Point(407, 176);
             this.ImageBattleFieldButton.Name = "ImageBattleFieldButton";
-            this.ImageBattleFieldButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageBattleFieldButton.Size = new System.Drawing.Size(133, 24);
             this.ImageBattleFieldButton.TabIndex = 48;
             this.ImageBattleFieldButton.Text = "戦闘背景";
             this.ImageBattleFieldButton.UseVisualStyleBackColor = true;
@@ -1244,10 +1231,10 @@
             // 
             // MonsterProbabilityButton
             // 
-            this.MonsterProbabilityButton.Location = new System.Drawing.Point(1017, 149);
-            this.MonsterProbabilityButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MonsterProbabilityButton.Location = new System.Drawing.Point(678, 99);
+            this.MonsterProbabilityButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MonsterProbabilityButton.Name = "MonsterProbabilityButton";
-            this.MonsterProbabilityButton.Size = new System.Drawing.Size(200, 36);
+            this.MonsterProbabilityButton.Size = new System.Drawing.Size(133, 24);
             this.MonsterProbabilityButton.TabIndex = 79;
             this.MonsterProbabilityButton.Text = "魔物確率";
             this.MonsterProbabilityButton.UseVisualStyleBackColor = true;
@@ -1255,10 +1242,10 @@
             // 
             // MonsterDropItemButton
             // 
-            this.MonsterDropItemButton.Location = new System.Drawing.Point(1017, 187);
-            this.MonsterDropItemButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MonsterDropItemButton.Location = new System.Drawing.Point(678, 125);
+            this.MonsterDropItemButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MonsterDropItemButton.Name = "MonsterDropItemButton";
-            this.MonsterDropItemButton.Size = new System.Drawing.Size(200, 36);
+            this.MonsterDropItemButton.Size = new System.Drawing.Size(133, 24);
             this.MonsterDropItemButton.TabIndex = 80;
             this.MonsterDropItemButton.Text = "魔物所持品";
             this.MonsterDropItemButton.UseVisualStyleBackColor = true;
@@ -1266,10 +1253,9 @@
             // 
             // ImageBattleTerrainButton
             // 
-            this.ImageBattleTerrainButton.Location = new System.Drawing.Point(611, 301);
-            this.ImageBattleTerrainButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageBattleTerrainButton.Location = new System.Drawing.Point(407, 201);
             this.ImageBattleTerrainButton.Name = "ImageBattleTerrainButton";
-            this.ImageBattleTerrainButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageBattleTerrainButton.Size = new System.Drawing.Size(133, 24);
             this.ImageBattleTerrainButton.TabIndex = 49;
             this.ImageBattleTerrainButton.Text = "戦闘地形";
             this.ImageBattleTerrainButton.UseVisualStyleBackColor = true;
@@ -1277,10 +1263,10 @@
             // 
             // MapEditorButton
             // 
-            this.MapEditorButton.Location = new System.Drawing.Point(0, 301);
-            this.MapEditorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapEditorButton.Location = new System.Drawing.Point(0, 201);
+            this.MapEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapEditorButton.Name = "MapEditorButton";
-            this.MapEditorButton.Size = new System.Drawing.Size(200, 36);
+            this.MapEditorButton.Size = new System.Drawing.Size(133, 24);
             this.MapEditorButton.TabIndex = 7;
             this.MapEditorButton.Text = "マップエディタ";
             this.MapEditorButton.UseVisualStyleBackColor = true;
@@ -1288,10 +1274,10 @@
             // 
             // DisassemblerButton
             // 
-            this.DisassemblerButton.Location = new System.Drawing.Point(407, 600);
-            this.DisassemblerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DisassemblerButton.Location = new System.Drawing.Point(271, 400);
+            this.DisassemblerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.DisassemblerButton.Name = "DisassemblerButton";
-            this.DisassemblerButton.Size = new System.Drawing.Size(200, 36);
+            this.DisassemblerButton.Size = new System.Drawing.Size(133, 24);
             this.DisassemblerButton.TabIndex = 39;
             this.DisassemblerButton.Text = "Disassembler";
             this.DisassemblerButton.UseVisualStyleBackColor = true;
@@ -1299,10 +1285,10 @@
             // 
             // OPClassAlphaNameButton
             // 
-            this.OPClassAlphaNameButton.Location = new System.Drawing.Point(1221, 261);
-            this.OPClassAlphaNameButton.Margin = new System.Windows.Forms.Padding(2);
+            this.OPClassAlphaNameButton.Location = new System.Drawing.Point(814, 174);
+            this.OPClassAlphaNameButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.OPClassAlphaNameButton.Name = "OPClassAlphaNameButton";
-            this.OPClassAlphaNameButton.Size = new System.Drawing.Size(200, 36);
+            this.OPClassAlphaNameButton.Size = new System.Drawing.Size(133, 24);
             this.OPClassAlphaNameButton.TabIndex = 97;
             this.OPClassAlphaNameButton.Text = "OPクラス紹介英語表記";
             this.OPClassAlphaNameButton.UseVisualStyleBackColor = true;
@@ -1310,10 +1296,10 @@
             // 
             // PatchButton
             // 
-            this.PatchButton.Location = new System.Drawing.Point(0, 677);
-            this.PatchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PatchButton.Location = new System.Drawing.Point(0, 451);
+            this.PatchButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.PatchButton.Name = "PatchButton";
-            this.PatchButton.Size = new System.Drawing.Size(200, 36);
+            this.PatchButton.Size = new System.Drawing.Size(133, 24);
             this.PatchButton.TabIndex = 14;
             this.PatchButton.Text = "patch";
             this.PatchButton.UseVisualStyleBackColor = true;
@@ -1321,10 +1307,10 @@
             // 
             // MapStyleEditorButton
             // 
-            this.MapStyleEditorButton.Location = new System.Drawing.Point(0, 338);
-            this.MapStyleEditorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapStyleEditorButton.Location = new System.Drawing.Point(0, 225);
+            this.MapStyleEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapStyleEditorButton.Name = "MapStyleEditorButton";
-            this.MapStyleEditorButton.Size = new System.Drawing.Size(200, 36);
+            this.MapStyleEditorButton.Size = new System.Drawing.Size(133, 24);
             this.MapStyleEditorButton.TabIndex = 8;
             this.MapStyleEditorButton.Text = "マップスタイル";
             this.MapStyleEditorButton.UseVisualStyleBackColor = true;
@@ -1332,10 +1318,10 @@
             // 
             // SystemIconButton
             // 
-            this.SystemIconButton.Location = new System.Drawing.Point(1017, 339);
-            this.SystemIconButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SystemIconButton.Location = new System.Drawing.Point(678, 226);
+            this.SystemIconButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SystemIconButton.Name = "SystemIconButton";
-            this.SystemIconButton.Size = new System.Drawing.Size(200, 36);
+            this.SystemIconButton.Size = new System.Drawing.Size(133, 24);
             this.SystemIconButton.TabIndex = 84;
             this.SystemIconButton.Text = "システムアイコン";
             this.SystemIconButton.UseVisualStyleBackColor = true;
@@ -1343,10 +1329,10 @@
             // 
             // WorldMapRoadEditorbutton
             // 
-            this.WorldMapRoadEditorbutton.Location = new System.Drawing.Point(1017, 376);
-            this.WorldMapRoadEditorbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapRoadEditorbutton.Location = new System.Drawing.Point(678, 251);
+            this.WorldMapRoadEditorbutton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapRoadEditorbutton.Name = "WorldMapRoadEditorbutton";
-            this.WorldMapRoadEditorbutton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapRoadEditorbutton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapRoadEditorbutton.TabIndex = 85;
             this.WorldMapRoadEditorbutton.Text = "道エディタ";
             this.WorldMapRoadEditorbutton.UseVisualStyleBackColor = true;
@@ -1354,10 +1340,10 @@
             // 
             // WorldMapRoadMoveEditorbutton
             // 
-            this.WorldMapRoadMoveEditorbutton.Location = new System.Drawing.Point(1017, 412);
-            this.WorldMapRoadMoveEditorbutton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapRoadMoveEditorbutton.Location = new System.Drawing.Point(678, 275);
+            this.WorldMapRoadMoveEditorbutton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapRoadMoveEditorbutton.Name = "WorldMapRoadMoveEditorbutton";
-            this.WorldMapRoadMoveEditorbutton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapRoadMoveEditorbutton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapRoadMoveEditorbutton.TabIndex = 86;
             this.WorldMapRoadMoveEditorbutton.Text = "道移動エディタ";
             this.WorldMapRoadMoveEditorbutton.UseVisualStyleBackColor = true;
@@ -1365,10 +1351,9 @@
             // 
             // ImageMagicButton
             // 
-            this.ImageMagicButton.Location = new System.Drawing.Point(611, 227);
-            this.ImageMagicButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ImageMagicButton.Location = new System.Drawing.Point(407, 151);
             this.ImageMagicButton.Name = "ImageMagicButton";
-            this.ImageMagicButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageMagicButton.Size = new System.Drawing.Size(133, 24);
             this.ImageMagicButton.TabIndex = 47;
             this.ImageMagicButton.Text = "追加魔法";
             this.ImageMagicButton.UseVisualStyleBackColor = true;
@@ -1376,10 +1361,10 @@
             // 
             // SongTrackButton
             // 
-            this.SongTrackButton.Location = new System.Drawing.Point(1426, 155);
-            this.SongTrackButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SongTrackButton.Location = new System.Drawing.Point(951, 103);
+            this.SongTrackButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SongTrackButton.Name = "SongTrackButton";
-            this.SongTrackButton.Size = new System.Drawing.Size(200, 36);
+            this.SongTrackButton.Size = new System.Drawing.Size(133, 24);
             this.SongTrackButton.TabIndex = 112;
             this.SongTrackButton.Text = "ソングトラック";
             this.SongTrackButton.UseVisualStyleBackColor = true;
@@ -1387,10 +1372,10 @@
             // 
             // SimpleMenuButton
             // 
-            this.SimpleMenuButton.Location = new System.Drawing.Point(1426, 639);
-            this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SimpleMenuButton.Location = new System.Drawing.Point(951, 426);
+            this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SimpleMenuButton.Name = "SimpleMenuButton";
-            this.SimpleMenuButton.Size = new System.Drawing.Size(200, 36);
+            this.SimpleMenuButton.Size = new System.Drawing.Size(133, 24);
             this.SimpleMenuButton.TabIndex = 120;
             this.SimpleMenuButton.Text = "簡易メニュー";
             this.SimpleMenuButton.UseVisualStyleBackColor = true;
@@ -1398,6 +1383,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.button1);
             this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
             this.ControlPanel.Controls.Add(this.ImageTSAAnime2Button);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
@@ -1529,18 +1515,17 @@
             this.ControlPanel.Controls.Add(this.WorldMapEventPointerButton);
             this.ControlPanel.Controls.Add(this.WorldMapEventPointButton);
             this.ControlPanel.Controls.Add(this.WorldMapRoadButton);
-            this.ControlPanel.Location = new System.Drawing.Point(7, 79);
-            this.ControlPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.ControlPanel.Location = new System.Drawing.Point(5, 53);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1631, 758);
+            this.ControlPanel.Size = new System.Drawing.Size(1087, 505);
             this.ControlPanel.TabIndex = 1;
             // 
             // AIPerformStaffButton
             // 
-            this.AIPerformStaffButton.Location = new System.Drawing.Point(814, 490);
-            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIPerformStaffButton.Location = new System.Drawing.Point(543, 327);
+            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AIPerformStaffButton.Name = "AIPerformStaffButton";
-            this.AIPerformStaffButton.Size = new System.Drawing.Size(200, 36);
+            this.AIPerformStaffButton.Size = new System.Drawing.Size(133, 24);
             this.AIPerformStaffButton.TabIndex = 72;
             this.AIPerformStaffButton.Text = "AIの杖利用判定";
             this.AIPerformStaffButton.UseVisualStyleBackColor = true;
@@ -1548,10 +1533,10 @@
             // 
             // ImageTSAAnime2Button
             // 
-            this.ImageTSAAnime2Button.Location = new System.Drawing.Point(611, 600);
-            this.ImageTSAAnime2Button.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageTSAAnime2Button.Location = new System.Drawing.Point(407, 400);
+            this.ImageTSAAnime2Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ImageTSAAnime2Button.Name = "ImageTSAAnime2Button";
-            this.ImageTSAAnime2Button.Size = new System.Drawing.Size(200, 36);
+            this.ImageTSAAnime2Button.Size = new System.Drawing.Size(133, 24);
             this.ImageTSAAnime2Button.TabIndex = 57;
             this.ImageTSAAnime2Button.Text = "TSAアニメ2";
             this.ImageTSAAnime2Button.UseVisualStyleBackColor = true;
@@ -1559,10 +1544,10 @@
             // 
             // GameOptionButton
             // 
-            this.GameOptionButton.Location = new System.Drawing.Point(1426, 413);
-            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Location = new System.Drawing.Point(951, 275);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.GameOptionButton.Name = "GameOptionButton";
-            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.Size = new System.Drawing.Size(133, 24);
             this.GameOptionButton.TabIndex = 117;
             this.GameOptionButton.Text = "ゲームオプション";
             this.GameOptionButton.UseVisualStyleBackColor = true;
@@ -1570,10 +1555,10 @@
             // 
             // MapTerrainBGLookupTableButton
             // 
-            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(1222, 524);
-            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(815, 349);
+            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
-            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainBGLookupTableButton.TabIndex = 103;
             this.MapTerrainBGLookupTableButton.Text = "地形背景対応表";
             this.MapTerrainBGLookupTableButton.UseVisualStyleBackColor = true;
@@ -1581,10 +1566,10 @@
             // 
             // MapTerrainFloorLookupTableButton
             // 
-            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(1222, 488);
-            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(815, 325);
+            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
-            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(200, 36);
+            this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainFloorLookupTableButton.TabIndex = 102;
             this.MapTerrainFloorLookupTableButton.Text = "地形床対応表";
             this.MapTerrainFloorLookupTableButton.UseVisualStyleBackColor = true;
@@ -1592,10 +1577,10 @@
             // 
             // WorldMapBGMButton
             // 
-            this.WorldMapBGMButton.Location = new System.Drawing.Point(1426, 76);
-            this.WorldMapBGMButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WorldMapBGMButton.Location = new System.Drawing.Point(951, 51);
+            this.WorldMapBGMButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.WorldMapBGMButton.Name = "WorldMapBGMButton";
-            this.WorldMapBGMButton.Size = new System.Drawing.Size(200, 36);
+            this.WorldMapBGMButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapBGMButton.TabIndex = 110;
             this.WorldMapBGMButton.Text = "ワールドマップBGM";
             this.WorldMapBGMButton.UseVisualStyleBackColor = true;
@@ -1603,10 +1588,10 @@
             // 
             // LinkArenaDenyUnitButton
             // 
-            this.LinkArenaDenyUnitButton.Location = new System.Drawing.Point(1018, 527);
-            this.LinkArenaDenyUnitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LinkArenaDenyUnitButton.Location = new System.Drawing.Point(679, 351);
+            this.LinkArenaDenyUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.LinkArenaDenyUnitButton.Name = "LinkArenaDenyUnitButton";
-            this.LinkArenaDenyUnitButton.Size = new System.Drawing.Size(200, 36);
+            this.LinkArenaDenyUnitButton.Size = new System.Drawing.Size(133, 24);
             this.LinkArenaDenyUnitButton.TabIndex = 89;
             this.LinkArenaDenyUnitButton.Text = "通信闘技場禁止ユニット";
             this.LinkArenaDenyUnitButton.UseVisualStyleBackColor = true;
@@ -1614,10 +1599,9 @@
             // 
             // ToolProblemReportToolButton
             // 
-            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1222, 678);
-            this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(815, 452);
             this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
-            this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolProblemReportToolButton.Size = new System.Drawing.Size(133, 24);
             this.ToolProblemReportToolButton.TabIndex = 107;
             this.ToolProblemReportToolButton.Text = "問題報告ツール";
             this.ToolProblemReportToolButton.UseVisualStyleBackColor = true;
@@ -1625,10 +1609,10 @@
             // 
             // ImageGenericEnemyPortraitButton
             // 
-            this.ImageGenericEnemyPortraitButton.Location = new System.Drawing.Point(611, 527);
-            this.ImageGenericEnemyPortraitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageGenericEnemyPortraitButton.Location = new System.Drawing.Point(407, 351);
+            this.ImageGenericEnemyPortraitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ImageGenericEnemyPortraitButton.Name = "ImageGenericEnemyPortraitButton";
-            this.ImageGenericEnemyPortraitButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageGenericEnemyPortraitButton.Size = new System.Drawing.Size(133, 24);
             this.ImageGenericEnemyPortraitButton.TabIndex = 55;
             this.ImageGenericEnemyPortraitButton.Text = "一般兵顔";
             this.ImageGenericEnemyPortraitButton.UseVisualStyleBackColor = true;
@@ -1636,10 +1620,10 @@
             // 
             // ExtraUnitButton
             // 
-            this.ExtraUnitButton.Location = new System.Drawing.Point(1017, 490);
-            this.ExtraUnitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ExtraUnitButton.Location = new System.Drawing.Point(678, 327);
+            this.ExtraUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ExtraUnitButton.Name = "ExtraUnitButton";
-            this.ExtraUnitButton.Size = new System.Drawing.Size(200, 36);
+            this.ExtraUnitButton.Size = new System.Drawing.Size(133, 24);
             this.ExtraUnitButton.TabIndex = 88;
             this.ExtraUnitButton.Text = "エクストラユニット";
             this.ExtraUnitButton.UseVisualStyleBackColor = true;
@@ -1647,10 +1631,10 @@
             // 
             // ROMRebuildButton
             // 
-            this.ROMRebuildButton.Location = new System.Drawing.Point(1426, 678);
-            this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ROMRebuildButton.Location = new System.Drawing.Point(951, 452);
+            this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ROMRebuildButton.Name = "ROMRebuildButton";
-            this.ROMRebuildButton.Size = new System.Drawing.Size(200, 36);
+            this.ROMRebuildButton.Size = new System.Drawing.Size(133, 24);
             this.ROMRebuildButton.TabIndex = 121;
             this.ROMRebuildButton.Text = "ROMリビルド";
             this.ROMRebuildButton.UseVisualStyleBackColor = true;
@@ -1658,10 +1642,10 @@
             // 
             // AIStealItemButton
             // 
-            this.AIStealItemButton.Location = new System.Drawing.Point(814, 453);
-            this.AIStealItemButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIStealItemButton.Location = new System.Drawing.Point(543, 302);
+            this.AIStealItemButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AIStealItemButton.Name = "AIStealItemButton";
-            this.AIStealItemButton.Size = new System.Drawing.Size(200, 36);
+            this.AIStealItemButton.Size = new System.Drawing.Size(133, 24);
             this.AIStealItemButton.TabIndex = 71;
             this.AIStealItemButton.Text = "AIの盗む優先度";
             this.AIStealItemButton.UseVisualStyleBackColor = true;
@@ -1669,10 +1653,10 @@
             // 
             // AIMapSettingButton
             // 
-            this.AIMapSettingButton.Location = new System.Drawing.Point(814, 527);
-            this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIMapSettingButton.Location = new System.Drawing.Point(543, 351);
+            this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
-            this.AIMapSettingButton.Size = new System.Drawing.Size(200, 36);
+            this.AIMapSettingButton.Size = new System.Drawing.Size(133, 24);
             this.AIMapSettingButton.TabIndex = 73;
             this.AIMapSettingButton.Text = "AIの章ごとの設定";
             this.AIMapSettingButton.UseVisualStyleBackColor = true;
@@ -1680,10 +1664,10 @@
             // 
             // ROMAnimeButton
             // 
-            this.ROMAnimeButton.Location = new System.Drawing.Point(611, 638);
-            this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ROMAnimeButton.Location = new System.Drawing.Point(407, 425);
+            this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ROMAnimeButton.Name = "ROMAnimeButton";
-            this.ROMAnimeButton.Size = new System.Drawing.Size(200, 36);
+            this.ROMAnimeButton.Size = new System.Drawing.Size(133, 24);
             this.ROMAnimeButton.TabIndex = 58;
             this.ROMAnimeButton.Text = "ROM内魔法アニメ";
             this.ROMAnimeButton.UseVisualStyleBackColor = true;
@@ -1691,10 +1675,10 @@
             // 
             // TextDicButton
             // 
-            this.TextDicButton.Location = new System.Drawing.Point(1221, 335);
-            this.TextDicButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TextDicButton.Location = new System.Drawing.Point(814, 223);
+            this.TextDicButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.TextDicButton.Name = "TextDicButton";
-            this.TextDicButton.Size = new System.Drawing.Size(200, 36);
+            this.TextDicButton.Size = new System.Drawing.Size(133, 24);
             this.TextDicButton.TabIndex = 99;
             this.TextDicButton.Text = "辞書";
             this.TextDicButton.UseVisualStyleBackColor = true;
@@ -1702,10 +1686,10 @@
             // 
             // ImageTSAAnimeButton
             // 
-            this.ImageTSAAnimeButton.Location = new System.Drawing.Point(611, 564);
-            this.ImageTSAAnimeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageTSAAnimeButton.Location = new System.Drawing.Point(407, 376);
+            this.ImageTSAAnimeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ImageTSAAnimeButton.Name = "ImageTSAAnimeButton";
-            this.ImageTSAAnimeButton.Size = new System.Drawing.Size(200, 36);
+            this.ImageTSAAnimeButton.Size = new System.Drawing.Size(133, 24);
             this.ImageTSAAnimeButton.TabIndex = 56;
             this.ImageTSAAnimeButton.Text = "TSAアニメ";
             this.ImageTSAAnimeButton.UseVisualStyleBackColor = true;
@@ -1713,10 +1697,9 @@
             // 
             // FlagNameToolButton
             // 
-            this.FlagNameToolButton.Location = new System.Drawing.Point(1222, 565);
-            this.FlagNameToolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FlagNameToolButton.Location = new System.Drawing.Point(815, 377);
             this.FlagNameToolButton.Name = "FlagNameToolButton";
-            this.FlagNameToolButton.Size = new System.Drawing.Size(200, 36);
+            this.FlagNameToolButton.Size = new System.Drawing.Size(133, 24);
             this.FlagNameToolButton.TabIndex = 104;
             this.FlagNameToolButton.Text = "フラグ設定";
             this.FlagNameToolButton.UseVisualStyleBackColor = true;
@@ -1724,10 +1707,9 @@
             // 
             // ExportEAEventToolButton
             // 
-            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1222, 603);
-            this.ExportEAEventToolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ExportEAEventToolButton.Location = new System.Drawing.Point(815, 402);
             this.ExportEAEventToolButton.Name = "ExportEAEventToolButton";
-            this.ExportEAEventToolButton.Size = new System.Drawing.Size(200, 36);
+            this.ExportEAEventToolButton.Size = new System.Drawing.Size(133, 24);
             this.ExportEAEventToolButton.TabIndex = 105;
             this.ExportEAEventToolButton.Text = "EAでエクスポート";
             this.ExportEAEventToolButton.UseVisualStyleBackColor = true;
@@ -1735,10 +1717,9 @@
             // 
             // EmulatorMemoryToolButton
             // 
-            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1222, 641);
-            this.EmulatorMemoryToolButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(815, 427);
             this.EmulatorMemoryToolButton.Name = "EmulatorMemoryToolButton";
-            this.EmulatorMemoryToolButton.Size = new System.Drawing.Size(200, 36);
+            this.EmulatorMemoryToolButton.Size = new System.Drawing.Size(133, 24);
             this.EmulatorMemoryToolButton.TabIndex = 106;
             this.EmulatorMemoryToolButton.Text = "エミュレータへ接続";
             this.EmulatorMemoryToolButton.UseVisualStyleBackColor = true;
@@ -1746,10 +1727,10 @@
             // 
             // MonsterWMapProbabilityButton
             // 
-            this.MonsterWMapProbabilityButton.Location = new System.Drawing.Point(1017, 224);
-            this.MonsterWMapProbabilityButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MonsterWMapProbabilityButton.Location = new System.Drawing.Point(678, 149);
+            this.MonsterWMapProbabilityButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MonsterWMapProbabilityButton.Name = "MonsterWMapProbabilityButton";
-            this.MonsterWMapProbabilityButton.Size = new System.Drawing.Size(200, 36);
+            this.MonsterWMapProbabilityButton.Size = new System.Drawing.Size(133, 24);
             this.MonsterWMapProbabilityButton.TabIndex = 81;
             this.MonsterWMapProbabilityButton.Text = "魔物発生拠点";
             this.MonsterWMapProbabilityButton.UseVisualStyleBackColor = true;
@@ -1758,19 +1739,20 @@
             // Patch0
             // 
             this.Patch0.AutoEllipsis = true;
-            this.Patch0.Location = new System.Drawing.Point(0, 716);
-            this.Patch0.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch0.Location = new System.Drawing.Point(0, 477);
+            this.Patch0.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch0.Name = "Patch0";
-            this.Patch0.Size = new System.Drawing.Size(200, 36);
+            this.Patch0.Size = new System.Drawing.Size(133, 24);
             this.Patch0.TabIndex = 124;
             this.Patch0.UseVisualStyleBackColor = true;
             this.Patch0.Visible = false;
             // 
             // PatchResult
             // 
-            this.PatchResult.Location = new System.Drawing.Point(5, 685);
+            this.PatchResult.Location = new System.Drawing.Point(3, 457);
+            this.PatchResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PatchResult.Name = "PatchResult";
-            this.PatchResult.Size = new System.Drawing.Size(1209, 23);
+            this.PatchResult.Size = new System.Drawing.Size(806, 15);
             this.PatchResult.TabIndex = 123;
             this.PatchResult.Text = "上記以外に、次のパッチが見つかりました。(パッチには不安定なものもあるので、注意してください。)";
             this.PatchResult.Visible = false;
@@ -1779,20 +1761,20 @@
             // Patch7
             // 
             this.Patch7.AutoEllipsis = true;
-            this.Patch7.Location = new System.Drawing.Point(1426, 716);
-            this.Patch7.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch7.Location = new System.Drawing.Point(951, 477);
+            this.Patch7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch7.Name = "Patch7";
-            this.Patch7.Size = new System.Drawing.Size(200, 36);
+            this.Patch7.Size = new System.Drawing.Size(133, 24);
             this.Patch7.TabIndex = 0;
             this.Patch7.UseVisualStyleBackColor = true;
             this.Patch7.Visible = false;
             // 
             // DecreaseColorToolButton
             // 
-            this.DecreaseColorToolButton.Location = new System.Drawing.Point(205, 638);
-            this.DecreaseColorToolButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DecreaseColorToolButton.Location = new System.Drawing.Point(137, 425);
+            this.DecreaseColorToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.DecreaseColorToolButton.Name = "DecreaseColorToolButton";
-            this.DecreaseColorToolButton.Size = new System.Drawing.Size(200, 36);
+            this.DecreaseColorToolButton.Size = new System.Drawing.Size(133, 24);
             this.DecreaseColorToolButton.TabIndex = 26;
             this.DecreaseColorToolButton.Text = "減色ツール";
             this.DecreaseColorToolButton.UseVisualStyleBackColor = true;
@@ -1801,10 +1783,10 @@
             // Patch5
             // 
             this.Patch5.AutoEllipsis = true;
-            this.Patch5.Location = new System.Drawing.Point(1025, 717);
-            this.Patch5.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch5.Location = new System.Drawing.Point(683, 478);
+            this.Patch5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch5.Name = "Patch5";
-            this.Patch5.Size = new System.Drawing.Size(191, 36);
+            this.Patch5.Size = new System.Drawing.Size(127, 24);
             this.Patch5.TabIndex = 129;
             this.Patch5.UseVisualStyleBackColor = true;
             this.Patch5.Visible = false;
@@ -1812,10 +1794,10 @@
             // Patch6
             // 
             this.Patch6.AutoEllipsis = true;
-            this.Patch6.Location = new System.Drawing.Point(1221, 716);
-            this.Patch6.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch6.Location = new System.Drawing.Point(814, 477);
+            this.Patch6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch6.Name = "Patch6";
-            this.Patch6.Size = new System.Drawing.Size(200, 36);
+            this.Patch6.Size = new System.Drawing.Size(133, 24);
             this.Patch6.TabIndex = 130;
             this.Patch6.UseVisualStyleBackColor = true;
             this.Patch6.Visible = false;
@@ -1823,10 +1805,10 @@
             // Patch1
             // 
             this.Patch1.AutoEllipsis = true;
-            this.Patch1.Location = new System.Drawing.Point(207, 716);
-            this.Patch1.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch1.Location = new System.Drawing.Point(138, 477);
+            this.Patch1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch1.Name = "Patch1";
-            this.Patch1.Size = new System.Drawing.Size(200, 36);
+            this.Patch1.Size = new System.Drawing.Size(133, 24);
             this.Patch1.TabIndex = 125;
             this.Patch1.UseVisualStyleBackColor = true;
             this.Patch1.Visible = false;
@@ -1834,10 +1816,10 @@
             // Patch4
             // 
             this.Patch4.AutoEllipsis = true;
-            this.Patch4.Location = new System.Drawing.Point(819, 716);
-            this.Patch4.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch4.Location = new System.Drawing.Point(546, 477);
+            this.Patch4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch4.Name = "Patch4";
-            this.Patch4.Size = new System.Drawing.Size(200, 36);
+            this.Patch4.Size = new System.Drawing.Size(133, 24);
             this.Patch4.TabIndex = 128;
             this.Patch4.UseVisualStyleBackColor = true;
             this.Patch4.Visible = false;
@@ -1845,10 +1827,10 @@
             // PointerToolButton
             // 
             this.PointerToolButton.AutoEllipsis = true;
-            this.PointerToolButton.Location = new System.Drawing.Point(0, 560);
-            this.PointerToolButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PointerToolButton.Location = new System.Drawing.Point(0, 373);
+            this.PointerToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.PointerToolButton.Name = "PointerToolButton";
-            this.PointerToolButton.Size = new System.Drawing.Size(200, 36);
+            this.PointerToolButton.Size = new System.Drawing.Size(133, 24);
             this.PointerToolButton.TabIndex = 11;
             this.PointerToolButton.Text = "ポインタ計算ツール";
             this.PointerToolButton.UseVisualStyleBackColor = true;
@@ -1857,20 +1839,20 @@
             // Patch2
             // 
             this.Patch2.AutoEllipsis = true;
-            this.Patch2.Location = new System.Drawing.Point(411, 716);
-            this.Patch2.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch2.Location = new System.Drawing.Point(274, 477);
+            this.Patch2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch2.Name = "Patch2";
-            this.Patch2.Size = new System.Drawing.Size(200, 36);
+            this.Patch2.Size = new System.Drawing.Size(133, 24);
             this.Patch2.TabIndex = 126;
             this.Patch2.UseVisualStyleBackColor = true;
             this.Patch2.Visible = false;
             // 
             // ToolRunAsEventAssemblerEAButton
             // 
-            this.ToolRunAsEventAssemblerEAButton.Location = new System.Drawing.Point(205, 558);
-            this.ToolRunAsEventAssemblerEAButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ToolRunAsEventAssemblerEAButton.Location = new System.Drawing.Point(137, 372);
+            this.ToolRunAsEventAssemblerEAButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ToolRunAsEventAssemblerEAButton.Name = "ToolRunAsEventAssemblerEAButton";
-            this.ToolRunAsEventAssemblerEAButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolRunAsEventAssemblerEAButton.Size = new System.Drawing.Size(133, 24);
             this.ToolRunAsEventAssemblerEAButton.TabIndex = 24;
             this.ToolRunAsEventAssemblerEAButton.Text = "EAで追加";
             this.ToolRunAsEventAssemblerEAButton.UseVisualStyleBackColor = true;
@@ -1879,20 +1861,20 @@
             // Patch3
             // 
             this.Patch3.AutoEllipsis = true;
-            this.Patch3.Location = new System.Drawing.Point(615, 716);
-            this.Patch3.Margin = new System.Windows.Forms.Padding(2);
+            this.Patch3.Location = new System.Drawing.Point(410, 477);
+            this.Patch3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Patch3.Name = "Patch3";
-            this.Patch3.Size = new System.Drawing.Size(200, 36);
+            this.Patch3.Size = new System.Drawing.Size(133, 24);
             this.Patch3.TabIndex = 127;
             this.Patch3.UseVisualStyleBackColor = true;
             this.Patch3.Visible = false;
             // 
             // ToolRunAsASMButton
             // 
-            this.ToolRunAsASMButton.Location = new System.Drawing.Point(205, 596);
-            this.ToolRunAsASMButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ToolRunAsASMButton.Location = new System.Drawing.Point(137, 397);
+            this.ToolRunAsASMButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ToolRunAsASMButton.Name = "ToolRunAsASMButton";
-            this.ToolRunAsASMButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolRunAsASMButton.Size = new System.Drawing.Size(133, 24);
             this.ToolRunAsASMButton.TabIndex = 25;
             this.ToolRunAsASMButton.Text = "ASM/Cで追加";
             this.ToolRunAsASMButton.UseVisualStyleBackColor = true;
@@ -1900,10 +1882,10 @@
             // 
             // DiffDebugToolButton
             // 
-            this.DiffDebugToolButton.Location = new System.Drawing.Point(0, 598);
-            this.DiffDebugToolButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DiffDebugToolButton.Location = new System.Drawing.Point(0, 399);
+            this.DiffDebugToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.DiffDebugToolButton.Name = "DiffDebugToolButton";
-            this.DiffDebugToolButton.Size = new System.Drawing.Size(200, 36);
+            this.DiffDebugToolButton.Size = new System.Drawing.Size(133, 24);
             this.DiffDebugToolButton.TabIndex = 12;
             this.DiffDebugToolButton.Text = "比較デバッグツール";
             this.DiffDebugToolButton.UseVisualStyleBackColor = true;
@@ -1911,10 +1893,10 @@
             // 
             // LintButton
             // 
-            this.LintButton.Location = new System.Drawing.Point(0, 638);
-            this.LintButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LintButton.Location = new System.Drawing.Point(0, 425);
+            this.LintButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.LintButton.Name = "LintButton";
-            this.LintButton.Size = new System.Drawing.Size(200, 36);
+            this.LintButton.Size = new System.Drawing.Size(133, 24);
             this.LintButton.TabIndex = 13;
             this.LintButton.Text = "Lint";
             this.LintButton.UseVisualStyleBackColor = true;
@@ -1922,10 +1904,10 @@
             // 
             // ItemEffectPointerButton
             // 
-            this.ItemEffectPointerButton.Location = new System.Drawing.Point(407, 302);
-            this.ItemEffectPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemEffectPointerButton.Location = new System.Drawing.Point(271, 201);
+            this.ItemEffectPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemEffectPointerButton.Name = "ItemEffectPointerButton";
-            this.ItemEffectPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemEffectPointerButton.Size = new System.Drawing.Size(133, 24);
             this.ItemEffectPointerButton.TabIndex = 35;
             this.ItemEffectPointerButton.Text = "間接エフェクトポインタ";
             this.ItemEffectPointerButton.UseVisualStyleBackColor = true;
@@ -1933,10 +1915,10 @@
             // 
             // Command85PointerButton
             // 
-            this.Command85PointerButton.Location = new System.Drawing.Point(611, 489);
-            this.Command85PointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.Command85PointerButton.Location = new System.Drawing.Point(407, 326);
+            this.Command85PointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Command85PointerButton.Name = "Command85PointerButton";
-            this.Command85PointerButton.Size = new System.Drawing.Size(200, 36);
+            this.Command85PointerButton.Size = new System.Drawing.Size(133, 24);
             this.Command85PointerButton.TabIndex = 54;
             this.Command85PointerButton.Text = "85Commandポインタ";
             this.Command85PointerButton.UseVisualStyleBackColor = true;
@@ -1944,10 +1926,10 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 566);
-            this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(543, 377);
+            this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
-            this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.EventFunctionPointerButton.Size = new System.Drawing.Size(133, 24);
             this.EventFunctionPointerButton.TabIndex = 74;
             this.EventFunctionPointerButton.Text = "イベント命令ポインタ";
             this.EventFunctionPointerButton.UseVisualStyleBackColor = true;
@@ -1955,10 +1937,10 @@
             // 
             // OAMSPButton
             // 
-            this.OAMSPButton.Location = new System.Drawing.Point(408, 525);
-            this.OAMSPButton.Margin = new System.Windows.Forms.Padding(2);
+            this.OAMSPButton.Location = new System.Drawing.Point(272, 350);
+            this.OAMSPButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.OAMSPButton.Name = "OAMSPButton";
-            this.OAMSPButton.Size = new System.Drawing.Size(200, 36);
+            this.OAMSPButton.Size = new System.Drawing.Size(133, 24);
             this.OAMSPButton.TabIndex = 37;
             this.OAMSPButton.Text = "特殊OAM";
             this.OAMSPButton.UseVisualStyleBackColor = true;
@@ -1966,10 +1948,10 @@
             // 
             // MapTileAnimation2Button
             // 
-            this.MapTileAnimation2Button.Location = new System.Drawing.Point(0, 414);
-            this.MapTileAnimation2Button.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTileAnimation2Button.Location = new System.Drawing.Point(0, 276);
+            this.MapTileAnimation2Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapTileAnimation2Button.Name = "MapTileAnimation2Button";
-            this.MapTileAnimation2Button.Size = new System.Drawing.Size(200, 36);
+            this.MapTileAnimation2Button.Size = new System.Drawing.Size(133, 24);
             this.MapTileAnimation2Button.TabIndex = 10;
             this.MapTileAnimation2Button.Text = "タイルアニメーション2";
             this.MapTileAnimation2Button.UseVisualStyleBackColor = true;
@@ -1977,10 +1959,10 @@
             // 
             // MapTileAnimation1Button
             // 
-            this.MapTileAnimation1Button.Location = new System.Drawing.Point(0, 376);
-            this.MapTileAnimation1Button.Margin = new System.Windows.Forms.Padding(2);
+            this.MapTileAnimation1Button.Location = new System.Drawing.Point(0, 251);
+            this.MapTileAnimation1Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapTileAnimation1Button.Name = "MapTileAnimation1Button";
-            this.MapTileAnimation1Button.Size = new System.Drawing.Size(200, 36);
+            this.MapTileAnimation1Button.Size = new System.Drawing.Size(133, 24);
             this.MapTileAnimation1Button.TabIndex = 9;
             this.MapTileAnimation1Button.Text = "タイルアニメーション1";
             this.MapTileAnimation1Button.UseVisualStyleBackColor = true;
@@ -1988,10 +1970,10 @@
             // 
             // ProcsScriptButton
             // 
-            this.ProcsScriptButton.Location = new System.Drawing.Point(408, 562);
-            this.ProcsScriptButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ProcsScriptButton.Location = new System.Drawing.Point(272, 375);
+            this.ProcsScriptButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ProcsScriptButton.Name = "ProcsScriptButton";
-            this.ProcsScriptButton.Size = new System.Drawing.Size(200, 36);
+            this.ProcsScriptButton.Size = new System.Drawing.Size(133, 24);
             this.ProcsScriptButton.TabIndex = 38;
             this.ProcsScriptButton.Text = "Procs";
             this.ProcsScriptButton.UseVisualStyleBackColor = true;
@@ -1999,10 +1981,10 @@
             // 
             // SummonsDemonKingButton
             // 
-            this.SummonsDemonKingButton.Location = new System.Drawing.Point(1017, 301);
-            this.SummonsDemonKingButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SummonsDemonKingButton.Location = new System.Drawing.Point(678, 201);
+            this.SummonsDemonKingButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SummonsDemonKingButton.Name = "SummonsDemonKingButton";
-            this.SummonsDemonKingButton.Size = new System.Drawing.Size(200, 36);
+            this.SummonsDemonKingButton.Size = new System.Drawing.Size(133, 24);
             this.SummonsDemonKingButton.TabIndex = 83;
             this.SummonsDemonKingButton.Text = "呼魔";
             this.SummonsDemonKingButton.UseVisualStyleBackColor = true;
@@ -2010,10 +1992,10 @@
             // 
             // ArenaEnemyWeaponButton
             // 
-            this.ArenaEnemyWeaponButton.Location = new System.Drawing.Point(202, 156);
-            this.ArenaEnemyWeaponButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ArenaEnemyWeaponButton.Location = new System.Drawing.Point(135, 104);
+            this.ArenaEnemyWeaponButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ArenaEnemyWeaponButton.Name = "ArenaEnemyWeaponButton";
-            this.ArenaEnemyWeaponButton.Size = new System.Drawing.Size(200, 36);
+            this.ArenaEnemyWeaponButton.Size = new System.Drawing.Size(133, 24);
             this.ArenaEnemyWeaponButton.TabIndex = 19;
             this.ArenaEnemyWeaponButton.Text = "闘技場武器ランク";
             this.ArenaEnemyWeaponButton.UseVisualStyleBackColor = true;
@@ -2021,10 +2003,10 @@
             // 
             // MapLoadFunction
             // 
-            this.MapLoadFunction.Location = new System.Drawing.Point(1017, 450);
-            this.MapLoadFunction.Margin = new System.Windows.Forms.Padding(2);
+            this.MapLoadFunction.Location = new System.Drawing.Point(678, 300);
+            this.MapLoadFunction.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MapLoadFunction.Name = "MapLoadFunction";
-            this.MapLoadFunction.Size = new System.Drawing.Size(200, 36);
+            this.MapLoadFunction.Size = new System.Drawing.Size(133, 24);
             this.MapLoadFunction.TabIndex = 87;
             this.MapLoadFunction.Text = "マップ読込時処理";
             this.MapLoadFunction.UseVisualStyleBackColor = true;
@@ -2032,10 +2014,10 @@
             // 
             // ItemUsagePointerButton
             // 
-            this.ItemUsagePointerButton.Location = new System.Drawing.Point(407, 267);
-            this.ItemUsagePointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemUsagePointerButton.Location = new System.Drawing.Point(271, 178);
+            this.ItemUsagePointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemUsagePointerButton.Name = "ItemUsagePointerButton";
-            this.ItemUsagePointerButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemUsagePointerButton.Size = new System.Drawing.Size(133, 24);
             this.ItemUsagePointerButton.TabIndex = 34;
             this.ItemUsagePointerButton.Text = "アイテム利用効果";
             this.ItemUsagePointerButton.UseVisualStyleBackColor = true;
@@ -2043,10 +2025,10 @@
             // 
             // AIFormButton
             // 
-            this.AIFormButton.Location = new System.Drawing.Point(814, 378);
-            this.AIFormButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AIFormButton.Location = new System.Drawing.Point(543, 252);
+            this.AIFormButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AIFormButton.Name = "AIFormButton";
-            this.AIFormButton.Size = new System.Drawing.Size(200, 36);
+            this.AIFormButton.Size = new System.Drawing.Size(133, 24);
             this.AIFormButton.TabIndex = 69;
             this.AIFormButton.Text = "AI";
             this.AIFormButton.UseVisualStyleBackColor = true;
@@ -2054,10 +2036,10 @@
             // 
             // AI3FormButton
             // 
-            this.AI3FormButton.Location = new System.Drawing.Point(814, 415);
-            this.AI3FormButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AI3FormButton.Location = new System.Drawing.Point(543, 277);
+            this.AI3FormButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AI3FormButton.Name = "AI3FormButton";
-            this.AI3FormButton.Size = new System.Drawing.Size(200, 36);
+            this.AI3FormButton.Size = new System.Drawing.Size(133, 24);
             this.AI3FormButton.TabIndex = 70;
             this.AI3FormButton.Text = "標的AI";
             this.AI3FormButton.UseVisualStyleBackColor = true;
@@ -2065,10 +2047,10 @@
             // 
             // StatusRMenuButton
             // 
-            this.StatusRMenuButton.Location = new System.Drawing.Point(1426, 373);
-            this.StatusRMenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StatusRMenuButton.Location = new System.Drawing.Point(951, 249);
+            this.StatusRMenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.StatusRMenuButton.Name = "StatusRMenuButton";
-            this.StatusRMenuButton.Size = new System.Drawing.Size(200, 36);
+            this.StatusRMenuButton.Size = new System.Drawing.Size(133, 24);
             this.StatusRMenuButton.TabIndex = 116;
             this.StatusRMenuButton.Text = "ステータスRMenu";
             this.StatusRMenuButton.UseVisualStyleBackColor = true;
@@ -2076,10 +2058,10 @@
             // 
             // StatusParamButton
             // 
-            this.StatusParamButton.Location = new System.Drawing.Point(1426, 336);
-            this.StatusParamButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StatusParamButton.Location = new System.Drawing.Point(951, 224);
+            this.StatusParamButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.StatusParamButton.Name = "StatusParamButton";
-            this.StatusParamButton.Size = new System.Drawing.Size(200, 36);
+            this.StatusParamButton.Size = new System.Drawing.Size(133, 24);
             this.StatusParamButton.TabIndex = 115;
             this.StatusParamButton.Text = "ステータスパラメータ";
             this.StatusParamButton.UseVisualStyleBackColor = true;
@@ -2087,10 +2069,9 @@
             // 
             // WelcomeDialogButton
             // 
-            this.WelcomeDialogButton.Location = new System.Drawing.Point(1426, 565);
-            this.WelcomeDialogButton.Margin = new System.Windows.Forms.Padding(4);
+            this.WelcomeDialogButton.Location = new System.Drawing.Point(951, 377);
             this.WelcomeDialogButton.Name = "WelcomeDialogButton";
-            this.WelcomeDialogButton.Size = new System.Drawing.Size(200, 36);
+            this.WelcomeDialogButton.Size = new System.Drawing.Size(133, 24);
             this.WelcomeDialogButton.TabIndex = 118;
             this.WelcomeDialogButton.Text = "WelcomeDialog";
             this.WelcomeDialogButton.UseVisualStyleBackColor = true;
@@ -2098,10 +2079,10 @@
             // 
             // MenuDefinitionButton
             // 
-            this.MenuDefinitionButton.Location = new System.Drawing.Point(1426, 298);
-            this.MenuDefinitionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuDefinitionButton.Location = new System.Drawing.Point(951, 199);
+            this.MenuDefinitionButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuDefinitionButton.Name = "MenuDefinitionButton";
-            this.MenuDefinitionButton.Size = new System.Drawing.Size(200, 36);
+            this.MenuDefinitionButton.Size = new System.Drawing.Size(133, 24);
             this.MenuDefinitionButton.TabIndex = 114;
             this.MenuDefinitionButton.Text = "メニュー定義";
             this.MenuDefinitionButton.UseVisualStyleBackColor = true;
@@ -2109,10 +2090,10 @@
             // 
             // MantAnimationButton
             // 
-            this.MantAnimationButton.Location = new System.Drawing.Point(0, 227);
-            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MantAnimationButton.Location = new System.Drawing.Point(0, 151);
+            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MantAnimationButton.Name = "MantAnimationButton";
-            this.MantAnimationButton.Size = new System.Drawing.Size(200, 36);
+            this.MantAnimationButton.Size = new System.Drawing.Size(133, 24);
             this.MantAnimationButton.TabIndex = 6;
             this.MantAnimationButton.Text = "マント";
             this.MantAnimationButton.UseVisualStyleBackColor = true;
@@ -2120,10 +2101,9 @@
             // 
             // BattleScreenButton
             // 
-            this.BattleScreenButton.Location = new System.Drawing.Point(611, 339);
-            this.BattleScreenButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BattleScreenButton.Location = new System.Drawing.Point(407, 226);
             this.BattleScreenButton.Name = "BattleScreenButton";
-            this.BattleScreenButton.Size = new System.Drawing.Size(200, 36);
+            this.BattleScreenButton.Size = new System.Drawing.Size(133, 24);
             this.BattleScreenButton.TabIndex = 50;
             this.BattleScreenButton.Text = "戦闘画面";
             this.BattleScreenButton.UseVisualStyleBackColor = true;
@@ -2131,10 +2111,10 @@
             // 
             // SummonButton
             // 
-            this.SummonButton.Location = new System.Drawing.Point(1017, 261);
-            this.SummonButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SummonButton.Location = new System.Drawing.Point(678, 174);
+            this.SummonButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SummonButton.Name = "SummonButton";
-            this.SummonButton.Size = new System.Drawing.Size(200, 36);
+            this.SummonButton.Size = new System.Drawing.Size(133, 24);
             this.SummonButton.TabIndex = 82;
             this.SummonButton.Text = "召喚";
             this.SummonButton.UseVisualStyleBackColor = true;
@@ -2142,10 +2122,10 @@
             // 
             // OtherTextButton
             // 
-            this.OtherTextButton.Location = new System.Drawing.Point(1221, 373);
-            this.OtherTextButton.Margin = new System.Windows.Forms.Padding(2);
+            this.OtherTextButton.Location = new System.Drawing.Point(814, 249);
+            this.OtherTextButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.OtherTextButton.Name = "OtherTextButton";
-            this.OtherTextButton.Size = new System.Drawing.Size(200, 36);
+            this.OtherTextButton.Size = new System.Drawing.Size(133, 24);
             this.OtherTextButton.TabIndex = 100;
             this.OtherTextButton.Text = "その他文字列";
             this.OtherTextButton.UseVisualStyleBackColor = true;
@@ -2153,10 +2133,10 @@
             // 
             // HexEditorButton
             // 
-            this.HexEditorButton.Location = new System.Drawing.Point(407, 638);
-            this.HexEditorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.HexEditorButton.Location = new System.Drawing.Point(271, 425);
+            this.HexEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.HexEditorButton.Name = "HexEditorButton";
-            this.HexEditorButton.Size = new System.Drawing.Size(200, 36);
+            this.HexEditorButton.Size = new System.Drawing.Size(133, 24);
             this.HexEditorButton.TabIndex = 40;
             this.HexEditorButton.Text = "バイナリエディタ";
             this.HexEditorButton.UseVisualStyleBackColor = true;
@@ -2164,10 +2144,10 @@
             // 
             // SkillAssignmentClassButton
             // 
-            this.SkillAssignmentClassButton.Location = new System.Drawing.Point(204, 378);
-            this.SkillAssignmentClassButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SkillAssignmentClassButton.Location = new System.Drawing.Point(136, 252);
+            this.SkillAssignmentClassButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SkillAssignmentClassButton.Name = "SkillAssignmentClassButton";
-            this.SkillAssignmentClassButton.Size = new System.Drawing.Size(200, 36);
+            this.SkillAssignmentClassButton.Size = new System.Drawing.Size(133, 24);
             this.SkillAssignmentClassButton.TabIndex = 23;
             this.SkillAssignmentClassButton.Text = "スキル_クラス別割当";
             this.SkillAssignmentClassButton.UseVisualStyleBackColor = true;
@@ -2175,10 +2155,10 @@
             // 
             // SkillAssignmentUnitButton
             // 
-            this.SkillAssignmentUnitButton.Location = new System.Drawing.Point(204, 338);
-            this.SkillAssignmentUnitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SkillAssignmentUnitButton.Location = new System.Drawing.Point(136, 225);
+            this.SkillAssignmentUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SkillAssignmentUnitButton.Name = "SkillAssignmentUnitButton";
-            this.SkillAssignmentUnitButton.Size = new System.Drawing.Size(200, 36);
+            this.SkillAssignmentUnitButton.Size = new System.Drawing.Size(133, 24);
             this.SkillAssignmentUnitButton.TabIndex = 22;
             this.SkillAssignmentUnitButton.Text = "スキル_ユニット別割当";
             this.SkillAssignmentUnitButton.UseVisualStyleBackColor = true;
@@ -2186,10 +2166,10 @@
             // 
             // SkillConfigButton
             // 
-            this.SkillConfigButton.Location = new System.Drawing.Point(204, 301);
-            this.SkillConfigButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SkillConfigButton.Location = new System.Drawing.Point(136, 201);
+            this.SkillConfigButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SkillConfigButton.Name = "SkillConfigButton";
-            this.SkillConfigButton.Size = new System.Drawing.Size(200, 36);
+            this.SkillConfigButton.Size = new System.Drawing.Size(133, 24);
             this.SkillConfigButton.TabIndex = 21;
             this.SkillConfigButton.Text = "スキル拡張設定";
             this.SkillConfigButton.UseVisualStyleBackColor = true;
@@ -2197,10 +2177,10 @@
             // 
             // ItemEtcButton
             // 
-            this.ItemEtcButton.Location = new System.Drawing.Point(407, 339);
-            this.ItemEtcButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ItemEtcButton.Location = new System.Drawing.Point(271, 226);
+            this.ItemEtcButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ItemEtcButton.Name = "ItemEtcButton";
-            this.ItemEtcButton.Size = new System.Drawing.Size(200, 36);
+            this.ItemEtcButton.Size = new System.Drawing.Size(133, 24);
             this.ItemEtcButton.TabIndex = 36;
             this.ItemEtcButton.Text = "アイテムその他";
             this.ItemEtcButton.UseVisualStyleBackColor = true;
@@ -2208,10 +2188,9 @@
             // 
             // MainSimpleMenuImageSubButton
             // 
-            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1426, 602);
-            this.MainSimpleMenuImageSubButton.Margin = new System.Windows.Forms.Padding(4);
+            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(951, 401);
             this.MainSimpleMenuImageSubButton.Name = "MainSimpleMenuImageSubButton";
-            this.MainSimpleMenuImageSubButton.Size = new System.Drawing.Size(200, 36);
+            this.MainSimpleMenuImageSubButton.Size = new System.Drawing.Size(133, 24);
             this.MainSimpleMenuImageSubButton.TabIndex = 119;
             this.MainSimpleMenuImageSubButton.Text = "簡易画像メニュー";
             this.MainSimpleMenuImageSubButton.UseVisualStyleBackColor = true;
@@ -2221,19 +2200,20 @@
             // 
             this.panel1.Controls.Add(this.FilterLabel);
             this.panel1.Controls.Add(this.Filter);
-            this.panel1.Location = new System.Drawing.Point(7, 43);
+            this.panel1.Location = new System.Drawing.Point(5, 29);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1626, 34);
+            this.panel1.Size = new System.Drawing.Size(1084, 23);
             this.panel1.TabIndex = 98;
             // 
             // FilterLabel
             // 
             this.FilterLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FilterLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FilterLabel.Location = new System.Drawing.Point(1, 2);
-            this.FilterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FilterLabel.Location = new System.Drawing.Point(1, 1);
+            this.FilterLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(199, 32);
+            this.FilterLabel.Size = new System.Drawing.Size(133, 22);
             this.FilterLabel.TabIndex = 13;
             this.FilterLabel.Text = "検索";
             this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2242,25 +2222,36 @@
             // Filter
             // 
             this.Filter.ErrorMessage = "";
-            this.Filter.Location = new System.Drawing.Point(205, 4);
+            this.Filter.Location = new System.Drawing.Point(137, 3);
+            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Filter.Name = "Filter";
             this.Filter.Placeholder = "";
-            this.Filter.Size = new System.Drawing.Size(1414, 25);
+            this.Filter.Size = new System.Drawing.Size(944, 21);
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(138, 350);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 24);
+            this.button1.TabIndex = 131;
+            this.button1.Text = "ASM編集";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainFE8Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1638, 851);
+            this.ClientSize = new System.Drawing.Size(913, 499);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainFE8Form";
             this.Text = "詳細メニュー";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFE8Form_FormClosing);
@@ -2467,6 +2458,7 @@
         private System.Windows.Forms.Button GameOptionButton;
         private System.Windows.Forms.Button ImageTSAAnime2Button;
         private System.Windows.Forms.Button AIPerformStaffButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

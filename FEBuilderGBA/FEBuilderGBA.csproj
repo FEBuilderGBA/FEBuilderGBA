@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FEBuilderGBA</RootNamespace>
     <AssemblyName>FEBuilderGBA</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -28,6 +29,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -40,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -52,11 +56,22 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon1.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FEBuilderGBA.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gee.External.Capstone, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Capstone.NET\Gee.External.Capstone\bin\Debug\net45\Gee.External.Capstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Keystone.Net">
+      <HintPath>I:\Fire_Emblem_Fan_Projects\Tools\Assemblers\KeyStone\keystone\bindings\csharp\Keystone.Net\bin\Debug\netstandard1.1\Keystone.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -64,6 +79,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unicorn.Net">
+      <HintPath>I:\Fire_Emblem_Fan_Projects\Tools\Emulators\Unicorn\unicorn-net\src\Unicorn.Net\bin\Debug\netstandard1.1\Unicorn.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
@@ -79,6 +97,12 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ASMEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ASMEditForm.Designer.cs">
+      <DependentUpon>ASMEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsmMapFile.cs" />
     <Compile Include="AsmMapFileAsmCache.cs" />
     <Compile Include="CStringForm.cs">
@@ -90,6 +114,7 @@
     <Compile Include="CustomColorGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GBAMemory.cs" />
     <Compile Include="ToolDecompileResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1860,6 +1885,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="FEBuilderGBA_logo1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1894,6 +1920,9 @@
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ASMEditForm.resx">
+      <DependentUpon>ASMEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CCBranchForm.resx">
       <DependentUpon>CCBranchForm.cs</DependentUpon>
