@@ -244,7 +244,7 @@ namespace FEBuilderGBA
         public uint workmemory_local_flag_address() { return 0x03005270; }  //ワークメモリ グローバルフラグ
         public uint workmemory_global_flag_address() { return 0x03005250; }  //ワークメモリ ローカルフラグ
         public uint workmemory_trap_address() { return 0x0203A614; }  //ワークメモリ ローカルフラグ
-        public uint workmemory_memoryslot_address() { return 0x03000568; }  //ワークメモリ メモリスロットFE8
+        public uint workmemory_memoryslot_address() { return 0x030004B8; }  //ワークメモリ メモリスロットFE8
         public uint workmemory_eventcounter_address() { return 0x03000568; }  //イベントカウンター メモリスロットFE8
         public uint workmemory_procs_forest_address() { return 0x02026A70; }  //ワークメモリ Procs
         public uint workmemory_procs_pool_address() { return 0x02024E68; }  //ワークメモリ Procs
