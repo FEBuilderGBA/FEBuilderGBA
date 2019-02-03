@@ -40,11 +40,25 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     uint affinity_id = Program.ROM.u32(addr + 0);
-
-                    return U.ToHexString(affinity_id) + " " + InputFormRef.GetAFFILIATION(affinity_id);
+                    return U.ToHexString(affinity_id) + " " + InputFormRef.GetAFFILIATION(affinity_id) + " " + GetName((uint)i);
                 }
                 );
             return ifr;
+        }
+
+        static string GetName(uint select)
+        {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                uint birth = select / 4;
+                uint blood_type = select - (birth * 4);
+                return R._("誕生月") + ":" + InputFormRef.GetMonthName(birth) + " " + R._("血液型") + ":" + InputFormRef.GetBloodType(blood_type);
+            }
+            else
+            {
+                uint birth = select;
+                return R._("誕生月") + ":" + InputFormRef.GetMonthName(birth);
+            }
         }
 
         //全データの取得
@@ -61,22 +75,9 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            uint select = (uint)this.AddressList.SelectedIndex;
-
-            if (Program.ROM.RomInfo.is_multibyte())
-            {
-                uint birth = select / 4;
-                uint blood_type = select - (birth * 4);
-                string l = R._("誕生月") + ":" + InputFormRef.GetMonthName(birth) + " " + R._("血液型") + ":" + InputFormRef.GetBloodType(blood_type);
-                this.Explain.Text = l;
-            }
-            else
-            {
-                uint birth = select;
-                string l = R._("誕生月") + ":" + InputFormRef.GetMonthName(birth);
-                this.Explain.Text = l;
-            }
-
+            Explain.Text = GetName((uint)this.AddressList.SelectedIndex);
         }
+
+
     }
 }

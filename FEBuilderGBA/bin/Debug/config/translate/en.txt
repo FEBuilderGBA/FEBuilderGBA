@@ -4193,40 +4193,40 @@ Player Normal(blue) (Class == 0 only)
 Player team is moving(blue) (Class == 0 only)
 
 :1月
-January.
+January
 
 :2月
-February.
+February
 
 :3月
-In March
+March
 
 :4月
-April.
+April
 
 :5月
-May.
+May
 
 :6月
-June.
+June
 
 :7月
-July.
+July
 
 :8月
-August.
+August
 
 :9月
-September.
+September
 
 :10月
-October.
+October
 
 :11月
-November.
+November
 
 :12月
-December.
+December
 
 :書き込んでいないデータがありますが、フォームを閉じてもよろしいですか？
 Your data changes in this form haven't been written to the ROM. Close anyway?
