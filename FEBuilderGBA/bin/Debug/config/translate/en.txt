@@ -385,6 +385,48 @@ Rank up weapon
 :闘技場武器ランク
 Arena Weapons Rank
 
+:読み込む
+Read in.
+
+:コード数
+Number of codes.
+
+:モード
+mode.
+
+:書き込む
+Write
+
+:ファイルへセーブ
+Save to file.
+
+:ファイルからロード
+Load from file.
+
+:構文
+syntax.
+
+:エミュレート
+emulate.
+
+:セーブ
+save.
+
+:ロード
+Road.
+
+:制限
+Restriction.
+
+:実行コード数
+Number of executed codes.
+
+:タイムアウト(s)
+Timeout (s).
+
+:ASM編集
+ASM editing.
+
 : =>　
  =>
 
@@ -4150,6 +4192,42 @@ Player Normal(blue) (Class == 0 only)
 :自軍移動中(青)(Class==0のみ)
 Player team is moving(blue) (Class == 0 only)
 
+:1月
+January.
+
+:2月
+February.
+
+:3月
+In March
+
+:4月
+April.
+
+:5月
+May.
+
+:6月
+June.
+
+:7月
+July.
+
+:8月
+August.
+
+:9月
+September.
+
+:10月
+October.
+
+:11月
+November.
+
+:12月
+December.
+
 :書き込んでいないデータがありますが、フォームを閉じてもよろしいですか？
 Your data changes in this form haven't been written to the ROM. Close anyway?
 
@@ -4627,9 +4705,6 @@ Condition 2
 :条件1
 Condition 1
 
-:書き込む
-Write
-
 :アイテムその他
 Sacred Weapons
 
@@ -4993,9 +5068,6 @@ Weapon Effectiveness
 :間接エフェクト
 Magic Animations
 
-:地形設定
-Terrain Editor
-
 :支援効果
 Support Stat Boosts
 
@@ -5212,6 +5284,9 @@ World Map Image
 :簡易メニュー
 Simple Menu
 
+:地形設定
+Terrain Editor
+
 :詳細メニュー
 Advanced Editors
 
@@ -5227,11 +5302,14 @@ Class Reel Editor
 :個別アニメ
 Individual Animation
 
-:背を伸ばす
-Portrait Height
+:軍師属性
+Military attribute.
 
 :サウンドルームCG
 Sound room CG.
+
+:背を伸ばす
+Portrait Height
 
 :スキル拡張がありません。\r\nスキル拡張パッチをインストールしてから利用してください。
 There is no skill extension.\r\nPlease install skill extension patch before using.
@@ -9630,6 +9708,12 @@ The support amount of the unit ({0}) is incorrect.There are {2} people 's suppor
 
 :相手の初期値も自動調整する
 Automatically adjust the other party's initial value
+
+:誕生月
+Birth month.
+
+:血液型
+blood type.
 
 :現在TBLを利用しています。\r\nTBLを利用しながらun-haffman patchを利用すると予期しないトラブルが発生することがあります。\r\n「はい」を選択すると、パッチのインストールを強行します。\r\n「いいえ」を選択すると、パッチ適応を取りやめます。(推奨)\r\n\r\nどうしますか？
 Currently using TBL.\r\nIf you use un-haffman patch while using TBL, unexpected troubles may occur.\r\nSelect "Yes" to force installation of the patch.\r\nSelect "No" to cancel patch adaptation.(Recommendation).\r\n\r\nContinue or not?

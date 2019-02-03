@@ -6933,6 +6933,53 @@ namespace FEBuilderGBA
 
             return "";
         }
+
+        public static string GetMonthName(uint num)
+        {
+            switch (num)
+            {
+                case 0x00:
+                    return R._("1月");
+                case 0x01:
+                    return R._("2月");
+                case 0x02:
+                    return R._("3月");
+                case 0x03:
+                    return R._("4月");
+                case 0x04:
+                    return R._("5月");
+                case 0x05:
+                    return R._("6月");
+                case 0x06:
+                    return R._("7月");
+                case 0x07:
+                    return R._("8月");
+                case 0x08:
+                    return R._("9月");
+                case 0x09:
+                    return R._("10月");
+                case 0x0A:
+                    return R._("11月");
+                case 0x0B:
+                    return R._("12月");
+            }
+            return "";
+        }
+        public static string GetBloodType(uint num)
+        {
+            switch (num)
+            {
+                case 0x00:
+                    return R._("A");
+                case 0x01:
+                    return R._("B");
+                case 0x02:
+                    return R._("O");
+                case 0x03:
+                    return R._("AB");
+            }
+            return "";
+        }
         
         public static string GetEVENTUNITPOS(uint num)
         {

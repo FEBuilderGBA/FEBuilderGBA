@@ -353,6 +353,7 @@ namespace FEBuilderGBA
         public uint menu_J12_always_address() { return 0x4B0D4; } //メニューの表示判定関数 常に表示する
         public uint menu_J12_hide_address() { return 0x4B0DC; }   //メニューの表示判定関数 表示しない
         public uint status_game_option_pointer() { return 0; } //ゲームオプション
+        public uint tactician_affinity_pointer() { return 0x1C3F4; } //軍師属性(FE7のみ)
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x1C284902; return 0x13324; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0xF0C046C0; return 0x06642; } //C01 patch
