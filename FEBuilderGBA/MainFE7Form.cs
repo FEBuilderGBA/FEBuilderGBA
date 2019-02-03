@@ -804,7 +804,20 @@ namespace FEBuilderGBA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<ASMEditForm>();
+            //InputFormRef.JumpForm<ASMEditForm>();
+        }
+
+        private void TacticianAffinity_Click(object sender, EventArgs e)
+        {
+            //判断是否是日版
+            if(Program.ROM.Data[0xAF] == 'J')
+            {
+                InputFormRef.JumpForm<TacticianAffinityFE7JForm>();
+            }
+            else
+            {
+                InputFormRef.JumpForm<TacticianAffinityFE7UForm>();
+            }
         }
     }
 }

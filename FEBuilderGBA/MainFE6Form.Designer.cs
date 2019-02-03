@@ -43,7 +43,6 @@
             this.ITEMSTATBOOSTERButton = new System.Windows.Forms.Button();
             this.ItemEffectButton = new System.Windows.Forms.Button();
             this.ItemButton = new System.Windows.Forms.Button();
-            this.MoveCostButton = new System.Windows.Forms.Button();
             this.SupportAttributeButton = new System.Windows.Forms.Button();
             this.SupportTalkButton = new System.Windows.Forms.Button();
             this.SupportUnitButton = new System.Windows.Forms.Button();
@@ -181,7 +180,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MoveCostButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,7 +189,7 @@
             // FontButton
             // 
             this.FontButton.Location = new System.Drawing.Point(821, 55);
-            this.FontButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.FontButton.Margin = new System.Windows.Forms.Padding(1);
             this.FontButton.Name = "FontButton";
             this.FontButton.Size = new System.Drawing.Size(133, 24);
             this.FontButton.TabIndex = 69;
@@ -201,7 +200,7 @@
             // MenuButton
             // 
             this.MenuButton.Location = new System.Drawing.Point(959, 108);
-            this.MenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuButton.Margin = new System.Windows.Forms.Padding(1);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(133, 24);
             this.MenuButton.TabIndex = 80;
@@ -212,7 +211,7 @@
             // MapTerrainNameButton
             // 
             this.MapTerrainNameButton.Location = new System.Drawing.Point(821, 134);
-            this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapTerrainNameButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapTerrainNameButton.Name = "MapTerrainNameButton";
             this.MapTerrainNameButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainNameButton.TabIndex = 71;
@@ -223,7 +222,7 @@
             // SongTableButton
             // 
             this.SongTableButton.Location = new System.Drawing.Point(958, 29);
-            this.SongTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SongTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.SongTableButton.Name = "SongTableButton";
             this.SongTableButton.Size = new System.Drawing.Size(133, 24);
             this.SongTableButton.TabIndex = 79;
@@ -234,7 +233,7 @@
             // SoundRoomuttoBn
             // 
             this.SoundRoomuttoBn.Location = new System.Drawing.Point(958, 1);
-            this.SoundRoomuttoBn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SoundRoomuttoBn.Margin = new System.Windows.Forms.Padding(1);
             this.SoundRoomuttoBn.Name = "SoundRoomuttoBn";
             this.SoundRoomuttoBn.Size = new System.Drawing.Size(133, 24);
             this.SoundRoomuttoBn.TabIndex = 78;
@@ -245,7 +244,7 @@
             // TextCharCodeButton
             // 
             this.TextCharCodeButton.Location = new System.Drawing.Point(821, 26);
-            this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TextCharCodeButton.Margin = new System.Windows.Forms.Padding(1);
             this.TextCharCodeButton.Name = "TextCharCodeButton";
             this.TextCharCodeButton.Size = new System.Drawing.Size(133, 24);
             this.TextCharCodeButton.TabIndex = 68;
@@ -256,7 +255,7 @@
             // MapExitPointButton
             // 
             this.MapExitPointButton.Location = new System.Drawing.Point(549, 212);
-            this.MapExitPointButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapExitPointButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapExitPointButton.Name = "MapExitPointButton";
             this.MapExitPointButton.Size = new System.Drawing.Size(133, 24);
             this.MapExitPointButton.TabIndex = 55;
@@ -267,7 +266,7 @@
             // EventHaikuButton
             // 
             this.EventHaikuButton.Location = new System.Drawing.Point(549, 160);
-            this.EventHaikuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventHaikuButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventHaikuButton.Name = "EventHaikuButton";
             this.EventHaikuButton.Size = new System.Drawing.Size(133, 24);
             this.EventHaikuButton.TabIndex = 53;
@@ -278,7 +277,7 @@
             // EventBattleTalkButton
             // 
             this.EventBattleTalkButton.Location = new System.Drawing.Point(549, 134);
-            this.EventBattleTalkButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventBattleTalkButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventBattleTalkButton.Name = "EventBattleTalkButton";
             this.EventBattleTalkButton.Size = new System.Drawing.Size(133, 24);
             this.EventBattleTalkButton.TabIndex = 52;
@@ -289,7 +288,7 @@
             // ItemCorneredButton
             // 
             this.ItemCorneredButton.Location = new System.Drawing.Point(275, 161);
-            this.ItemCorneredButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemCorneredButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemCorneredButton.Name = "ItemCorneredButton";
             this.ItemCorneredButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCorneredButton.TabIndex = 26;
@@ -300,7 +299,7 @@
             // ItemShopButton
             // 
             this.ItemShopButton.Location = new System.Drawing.Point(275, 109);
-            this.ItemShopButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemShopButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemShopButton.Name = "ItemShopButton";
             this.ItemShopButton.Size = new System.Drawing.Size(133, 24);
             this.ItemShopButton.TabIndex = 24;
@@ -311,7 +310,7 @@
             // ItemCriticalButton
             // 
             this.ItemCriticalButton.Location = new System.Drawing.Point(275, 83);
-            this.ItemCriticalButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemCriticalButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemCriticalButton.Name = "ItemCriticalButton";
             this.ItemCriticalButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCriticalButton.TabIndex = 23;
@@ -322,7 +321,7 @@
             // ITEMSTATBOOSTERButton
             // 
             this.ITEMSTATBOOSTERButton.Location = new System.Drawing.Point(275, 57);
-            this.ITEMSTATBOOSTERButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ITEMSTATBOOSTERButton.Margin = new System.Windows.Forms.Padding(1);
             this.ITEMSTATBOOSTERButton.Name = "ITEMSTATBOOSTERButton";
             this.ITEMSTATBOOSTERButton.Size = new System.Drawing.Size(133, 24);
             this.ITEMSTATBOOSTERButton.TabIndex = 22;
@@ -333,7 +332,7 @@
             // ItemEffectButton
             // 
             this.ItemEffectButton.Location = new System.Drawing.Point(275, 28);
-            this.ItemEffectButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemEffectButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemEffectButton.Name = "ItemEffectButton";
             this.ItemEffectButton.Size = new System.Drawing.Size(133, 24);
             this.ItemEffectButton.TabIndex = 21;
@@ -344,7 +343,7 @@
             // ItemButton
             // 
             this.ItemButton.Location = new System.Drawing.Point(275, 1);
-            this.ItemButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemButton.Name = "ItemButton";
             this.ItemButton.Size = new System.Drawing.Size(133, 24);
             this.ItemButton.TabIndex = 20;
@@ -352,21 +351,10 @@
             this.ItemButton.UseVisualStyleBackColor = true;
             this.ItemButton.Click += new System.EventHandler(this.ItemButton_Click);
             // 
-            // MoveCostButton
-            // 
-            this.MoveCostButton.Location = new System.Drawing.Point(139, 29);
-            this.MoveCostButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.MoveCostButton.Name = "MoveCostButton";
-            this.MoveCostButton.Size = new System.Drawing.Size(133, 24);
-            this.MoveCostButton.TabIndex = 14;
-            this.MoveCostButton.Text = "地形設定";
-            this.MoveCostButton.UseVisualStyleBackColor = true;
-            this.MoveCostButton.Click += new System.EventHandler(this.MoveCostButton_Click);
-            // 
             // SupportAttributeButton
             // 
             this.SupportAttributeButton.Location = new System.Drawing.Point(3, 81);
-            this.SupportAttributeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SupportAttributeButton.Margin = new System.Windows.Forms.Padding(1);
             this.SupportAttributeButton.Name = "SupportAttributeButton";
             this.SupportAttributeButton.Size = new System.Drawing.Size(133, 24);
             this.SupportAttributeButton.TabIndex = 3;
@@ -377,7 +365,7 @@
             // SupportTalkButton
             // 
             this.SupportTalkButton.Location = new System.Drawing.Point(3, 55);
-            this.SupportTalkButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SupportTalkButton.Margin = new System.Windows.Forms.Padding(1);
             this.SupportTalkButton.Name = "SupportTalkButton";
             this.SupportTalkButton.Size = new System.Drawing.Size(133, 24);
             this.SupportTalkButton.TabIndex = 2;
@@ -388,7 +376,7 @@
             // SupportUnitButton
             // 
             this.SupportUnitButton.Location = new System.Drawing.Point(3, 29);
-            this.SupportUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SupportUnitButton.Margin = new System.Windows.Forms.Padding(1);
             this.SupportUnitButton.Name = "SupportUnitButton";
             this.SupportUnitButton.Size = new System.Drawing.Size(133, 24);
             this.SupportUnitButton.TabIndex = 1;
@@ -399,7 +387,7 @@
             // EventUnitButton
             // 
             this.EventUnitButton.Location = new System.Drawing.Point(549, 108);
-            this.EventUnitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventUnitButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventUnitButton.Name = "EventUnitButton";
             this.EventUnitButton.Size = new System.Drawing.Size(133, 24);
             this.EventUnitButton.TabIndex = 51;
@@ -410,7 +398,7 @@
             // TextButton
             // 
             this.TextButton.Location = new System.Drawing.Point(821, 0);
-            this.TextButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TextButton.Margin = new System.Windows.Forms.Padding(1);
             this.TextButton.Name = "TextButton";
             this.TextButton.Size = new System.Drawing.Size(133, 24);
             this.TextButton.TabIndex = 67;
@@ -421,7 +409,7 @@
             // EventScriptButton
             // 
             this.EventScriptButton.Location = new System.Drawing.Point(549, 82);
-            this.EventScriptButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventScriptButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventScriptButton.Name = "EventScriptButton";
             this.EventScriptButton.Size = new System.Drawing.Size(133, 24);
             this.EventScriptButton.TabIndex = 50;
@@ -522,7 +510,7 @@
             // EventCondButton
             // 
             this.EventCondButton.Location = new System.Drawing.Point(549, 55);
-            this.EventCondButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventCondButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventCondButton.Name = "EventCondButton";
             this.EventCondButton.Size = new System.Drawing.Size(133, 24);
             this.EventCondButton.TabIndex = 48;
@@ -950,7 +938,7 @@
             // EventMapChangeButton
             // 
             this.EventMapChangeButton.Location = new System.Drawing.Point(549, 186);
-            this.EventMapChangeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventMapChangeButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventMapChangeButton.Name = "EventMapChangeButton";
             this.EventMapChangeButton.Size = new System.Drawing.Size(133, 24);
             this.EventMapChangeButton.TabIndex = 54;
@@ -961,7 +949,7 @@
             // ArenaClassButton
             // 
             this.ArenaClassButton.Location = new System.Drawing.Point(139, 55);
-            this.ArenaClassButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ArenaClassButton.Margin = new System.Windows.Forms.Padding(1);
             this.ArenaClassButton.Name = "ArenaClassButton";
             this.ArenaClassButton.Size = new System.Drawing.Size(133, 24);
             this.ArenaClassButton.TabIndex = 15;
@@ -982,7 +970,7 @@
             // EDButton
             // 
             this.EDButton.Location = new System.Drawing.Point(685, 1);
-            this.EDButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EDButton.Margin = new System.Windows.Forms.Padding(1);
             this.EDButton.Name = "EDButton";
             this.EDButton.Size = new System.Drawing.Size(133, 24);
             this.EDButton.TabIndex = 62;
@@ -993,7 +981,7 @@
             // ItemCCButton
             // 
             this.ItemCCButton.Location = new System.Drawing.Point(275, 135);
-            this.ItemCCButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemCCButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemCCButton.Name = "ItemCCButton";
             this.ItemCCButton.Size = new System.Drawing.Size(133, 24);
             this.ItemCCButton.TabIndex = 25;
@@ -1004,7 +992,7 @@
             // WorldMapEventPointerButton
             // 
             this.WorldMapEventPointerButton.Location = new System.Drawing.Point(685, 26);
-            this.WorldMapEventPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.WorldMapEventPointerButton.Margin = new System.Windows.Forms.Padding(1);
             this.WorldMapEventPointerButton.Name = "WorldMapEventPointerButton";
             this.WorldMapEventPointerButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapEventPointerButton.TabIndex = 63;
@@ -1025,7 +1013,7 @@
             // MapStyleEditorButton
             // 
             this.MapStyleEditorButton.Location = new System.Drawing.Point(3, 186);
-            this.MapStyleEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapStyleEditorButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapStyleEditorButton.Name = "MapStyleEditorButton";
             this.MapStyleEditorButton.Size = new System.Drawing.Size(133, 24);
             this.MapStyleEditorButton.TabIndex = 6;
@@ -1036,7 +1024,7 @@
             // PatchButton
             // 
             this.PatchButton.Location = new System.Drawing.Point(3, 404);
-            this.PatchButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.PatchButton.Margin = new System.Windows.Forms.Padding(1);
             this.PatchButton.Name = "PatchButton";
             this.PatchButton.Size = new System.Drawing.Size(133, 24);
             this.PatchButton.TabIndex = 12;
@@ -1047,7 +1035,7 @@
             // MapEditorButton
             // 
             this.MapEditorButton.Location = new System.Drawing.Point(3, 161);
-            this.MapEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapEditorButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapEditorButton.Name = "MapEditorButton";
             this.MapEditorButton.Size = new System.Drawing.Size(133, 24);
             this.MapEditorButton.TabIndex = 5;
@@ -1058,7 +1046,7 @@
             // DisassemblerButton
             // 
             this.DisassemblerButton.Location = new System.Drawing.Point(275, 315);
-            this.DisassemblerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.DisassemblerButton.Margin = new System.Windows.Forms.Padding(1);
             this.DisassemblerButton.Name = "DisassemblerButton";
             this.DisassemblerButton.Size = new System.Drawing.Size(133, 24);
             this.DisassemblerButton.TabIndex = 31;
@@ -1069,7 +1057,7 @@
             // SystemIconButton
             // 
             this.SystemIconButton.Location = new System.Drawing.Point(685, 55);
-            this.SystemIconButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SystemIconButton.Margin = new System.Windows.Forms.Padding(1);
             this.SystemIconButton.Name = "SystemIconButton";
             this.SystemIconButton.Size = new System.Drawing.Size(133, 24);
             this.SystemIconButton.TabIndex = 64;
@@ -1079,7 +1067,6 @@
             // 
             // ControlPanel
             // 
-            this.ControlPanel.Controls.Add(this.button1);
             this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
             this.ControlPanel.Controls.Add(this.MapTerrainBGLookupTableButton);
             this.ControlPanel.Controls.Add(this.MapTerrainFloorLookupTableButton);
@@ -1184,7 +1171,7 @@
             // AIPerformStaffButton
             // 
             this.AIPerformStaffButton.Location = new System.Drawing.Point(549, 314);
-            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AIPerformStaffButton.Margin = new System.Windows.Forms.Padding(1);
             this.AIPerformStaffButton.Name = "AIPerformStaffButton";
             this.AIPerformStaffButton.Size = new System.Drawing.Size(133, 24);
             this.AIPerformStaffButton.TabIndex = 59;
@@ -1195,7 +1182,7 @@
             // MapTerrainBGLookupTableButton
             // 
             this.MapTerrainBGLookupTableButton.Location = new System.Drawing.Point(821, 185);
-            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapTerrainBGLookupTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapTerrainBGLookupTableButton.Name = "MapTerrainBGLookupTableButton";
             this.MapTerrainBGLookupTableButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainBGLookupTableButton.TabIndex = 73;
@@ -1206,7 +1193,7 @@
             // MapTerrainFloorLookupTableButton
             // 
             this.MapTerrainFloorLookupTableButton.Location = new System.Drawing.Point(821, 160);
-            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapTerrainFloorLookupTableButton.Margin = new System.Windows.Forms.Padding(1);
             this.MapTerrainFloorLookupTableButton.Name = "MapTerrainFloorLookupTableButton";
             this.MapTerrainFloorLookupTableButton.Size = new System.Drawing.Size(133, 24);
             this.MapTerrainFloorLookupTableButton.TabIndex = 72;
@@ -1227,7 +1214,7 @@
             // ROMRebuildButton
             // 
             this.ROMRebuildButton.Location = new System.Drawing.Point(957, 402);
-            this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(1);
             this.ROMRebuildButton.Name = "ROMRebuildButton";
             this.ROMRebuildButton.Size = new System.Drawing.Size(133, 24);
             this.ROMRebuildButton.TabIndex = 87;
@@ -1238,7 +1225,7 @@
             // ImageGenericEnemyPortraitButton
             // 
             this.ImageGenericEnemyPortraitButton.Location = new System.Drawing.Point(685, 107);
-            this.ImageGenericEnemyPortraitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ImageGenericEnemyPortraitButton.Margin = new System.Windows.Forms.Padding(1);
             this.ImageGenericEnemyPortraitButton.Name = "ImageGenericEnemyPortraitButton";
             this.ImageGenericEnemyPortraitButton.Size = new System.Drawing.Size(133, 24);
             this.ImageGenericEnemyPortraitButton.TabIndex = 66;
@@ -1249,7 +1236,7 @@
             // ROMAnimeButton
             // 
             this.ROMAnimeButton.Location = new System.Drawing.Point(411, 315);
-            this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ROMAnimeButton.Margin = new System.Windows.Forms.Padding(1);
             this.ROMAnimeButton.Name = "ROMAnimeButton";
             this.ROMAnimeButton.Size = new System.Drawing.Size(133, 24);
             this.ROMAnimeButton.TabIndex = 45;
@@ -1260,7 +1247,7 @@
             // AIStealItemButton
             // 
             this.AIStealItemButton.Location = new System.Drawing.Point(549, 289);
-            this.AIStealItemButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AIStealItemButton.Margin = new System.Windows.Forms.Padding(1);
             this.AIStealItemButton.Name = "AIStealItemButton";
             this.AIStealItemButton.Size = new System.Drawing.Size(133, 24);
             this.AIStealItemButton.TabIndex = 58;
@@ -1271,7 +1258,7 @@
             // AIMapSettingButton
             // 
             this.AIMapSettingButton.Location = new System.Drawing.Point(549, 339);
-            this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AIMapSettingButton.Margin = new System.Windows.Forms.Padding(1);
             this.AIMapSettingButton.Name = "AIMapSettingButton";
             this.AIMapSettingButton.Size = new System.Drawing.Size(133, 24);
             this.AIMapSettingButton.TabIndex = 60;
@@ -1312,7 +1299,7 @@
             // DecreaseColorToolButton
             // 
             this.DecreaseColorToolButton.Location = new System.Drawing.Point(140, 364);
-            this.DecreaseColorToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.DecreaseColorToolButton.Margin = new System.Windows.Forms.Padding(1);
             this.DecreaseColorToolButton.Name = "DecreaseColorToolButton";
             this.DecreaseColorToolButton.Size = new System.Drawing.Size(133, 24);
             this.DecreaseColorToolButton.TabIndex = 19;
@@ -1324,7 +1311,7 @@
             // 
             this.PointerToolButton.AutoEllipsis = true;
             this.PointerToolButton.Location = new System.Drawing.Point(3, 315);
-            this.PointerToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.PointerToolButton.Margin = new System.Windows.Forms.Padding(1);
             this.PointerToolButton.Name = "PointerToolButton";
             this.PointerToolButton.Size = new System.Drawing.Size(133, 24);
             this.PointerToolButton.TabIndex = 9;
@@ -1335,7 +1322,7 @@
             // ToolRunAsEventAssemblerEAButton
             // 
             this.ToolRunAsEventAssemblerEAButton.Location = new System.Drawing.Point(140, 314);
-            this.ToolRunAsEventAssemblerEAButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ToolRunAsEventAssemblerEAButton.Margin = new System.Windows.Forms.Padding(1);
             this.ToolRunAsEventAssemblerEAButton.Name = "ToolRunAsEventAssemblerEAButton";
             this.ToolRunAsEventAssemblerEAButton.Size = new System.Drawing.Size(133, 24);
             this.ToolRunAsEventAssemblerEAButton.TabIndex = 17;
@@ -1346,7 +1333,7 @@
             // ToolRunAsASMButton
             // 
             this.ToolRunAsASMButton.Location = new System.Drawing.Point(140, 339);
-            this.ToolRunAsASMButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ToolRunAsASMButton.Margin = new System.Windows.Forms.Padding(1);
             this.ToolRunAsASMButton.Name = "ToolRunAsASMButton";
             this.ToolRunAsASMButton.Size = new System.Drawing.Size(133, 24);
             this.ToolRunAsASMButton.TabIndex = 18;
@@ -1357,7 +1344,7 @@
             // DiffDebugToolButton
             // 
             this.DiffDebugToolButton.Location = new System.Drawing.Point(3, 341);
-            this.DiffDebugToolButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.DiffDebugToolButton.Margin = new System.Windows.Forms.Padding(1);
             this.DiffDebugToolButton.Name = "DiffDebugToolButton";
             this.DiffDebugToolButton.Size = new System.Drawing.Size(133, 24);
             this.DiffDebugToolButton.TabIndex = 10;
@@ -1368,7 +1355,7 @@
             // LintButton
             // 
             this.LintButton.Location = new System.Drawing.Point(3, 365);
-            this.LintButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.LintButton.Margin = new System.Windows.Forms.Padding(1);
             this.LintButton.Name = "LintButton";
             this.LintButton.Size = new System.Drawing.Size(133, 24);
             this.LintButton.TabIndex = 11;
@@ -1380,7 +1367,7 @@
             // 
             this.Patch0.AutoEllipsis = true;
             this.Patch0.Location = new System.Drawing.Point(3, 429);
-            this.Patch0.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch0.Margin = new System.Windows.Forms.Padding(1);
             this.Patch0.Name = "Patch0";
             this.Patch0.Size = new System.Drawing.Size(133, 24);
             this.Patch0.TabIndex = 89;
@@ -1402,7 +1389,7 @@
             // 
             this.Patch7.AutoEllipsis = true;
             this.Patch7.Location = new System.Drawing.Point(957, 429);
-            this.Patch7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch7.Margin = new System.Windows.Forms.Padding(1);
             this.Patch7.Name = "Patch7";
             this.Patch7.Size = new System.Drawing.Size(133, 24);
             this.Patch7.TabIndex = 0;
@@ -1413,7 +1400,7 @@
             // 
             this.Patch5.AutoEllipsis = true;
             this.Patch5.Location = new System.Drawing.Point(685, 430);
-            this.Patch5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch5.Margin = new System.Windows.Forms.Padding(1);
             this.Patch5.Name = "Patch5";
             this.Patch5.Size = new System.Drawing.Size(127, 24);
             this.Patch5.TabIndex = 94;
@@ -1424,7 +1411,7 @@
             // 
             this.Patch6.AutoEllipsis = true;
             this.Patch6.Location = new System.Drawing.Point(815, 430);
-            this.Patch6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch6.Margin = new System.Windows.Forms.Padding(1);
             this.Patch6.Name = "Patch6";
             this.Patch6.Size = new System.Drawing.Size(139, 24);
             this.Patch6.TabIndex = 95;
@@ -1435,7 +1422,7 @@
             // 
             this.Patch1.AutoEllipsis = true;
             this.Patch1.Location = new System.Drawing.Point(141, 429);
-            this.Patch1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch1.Margin = new System.Windows.Forms.Padding(1);
             this.Patch1.Name = "Patch1";
             this.Patch1.Size = new System.Drawing.Size(133, 24);
             this.Patch1.TabIndex = 90;
@@ -1446,7 +1433,7 @@
             // 
             this.Patch4.AutoEllipsis = true;
             this.Patch4.Location = new System.Drawing.Point(549, 429);
-            this.Patch4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch4.Margin = new System.Windows.Forms.Padding(1);
             this.Patch4.Name = "Patch4";
             this.Patch4.Size = new System.Drawing.Size(133, 24);
             this.Patch4.TabIndex = 93;
@@ -1457,7 +1444,7 @@
             // 
             this.Patch2.AutoEllipsis = true;
             this.Patch2.Location = new System.Drawing.Point(277, 429);
-            this.Patch2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch2.Margin = new System.Windows.Forms.Padding(1);
             this.Patch2.Name = "Patch2";
             this.Patch2.Size = new System.Drawing.Size(133, 24);
             this.Patch2.TabIndex = 91;
@@ -1468,7 +1455,7 @@
             // 
             this.Patch3.AutoEllipsis = true;
             this.Patch3.Location = new System.Drawing.Point(413, 429);
-            this.Patch3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Patch3.Margin = new System.Windows.Forms.Padding(1);
             this.Patch3.Name = "Patch3";
             this.Patch3.Size = new System.Drawing.Size(133, 24);
             this.Patch3.TabIndex = 92;
@@ -1488,7 +1475,7 @@
             // ItemEffectPointerButton
             // 
             this.ItemEffectPointerButton.Location = new System.Drawing.Point(275, 186);
-            this.ItemEffectPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemEffectPointerButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemEffectPointerButton.Name = "ItemEffectPointerButton";
             this.ItemEffectPointerButton.Size = new System.Drawing.Size(133, 24);
             this.ItemEffectPointerButton.TabIndex = 27;
@@ -1499,7 +1486,7 @@
             // Command85PointerButton
             // 
             this.Command85PointerButton.Location = new System.Drawing.Point(411, 289);
-            this.Command85PointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Command85PointerButton.Margin = new System.Windows.Forms.Padding(1);
             this.Command85PointerButton.Name = "Command85PointerButton";
             this.Command85PointerButton.Size = new System.Drawing.Size(133, 24);
             this.Command85PointerButton.TabIndex = 44;
@@ -1510,7 +1497,7 @@
             // EventFunctionPointerButton
             // 
             this.EventFunctionPointerButton.Location = new System.Drawing.Point(549, 364);
-            this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(1);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(133, 24);
             this.EventFunctionPointerButton.TabIndex = 61;
@@ -1521,7 +1508,7 @@
             // OAMSPButton
             // 
             this.OAMSPButton.Location = new System.Drawing.Point(275, 263);
-            this.OAMSPButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.OAMSPButton.Margin = new System.Windows.Forms.Padding(1);
             this.OAMSPButton.Name = "OAMSPButton";
             this.OAMSPButton.Size = new System.Drawing.Size(133, 24);
             this.OAMSPButton.TabIndex = 29;
@@ -1532,7 +1519,7 @@
             // MapTileAnimation2Button
             // 
             this.MapTileAnimation2Button.Location = new System.Drawing.Point(3, 239);
-            this.MapTileAnimation2Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapTileAnimation2Button.Margin = new System.Windows.Forms.Padding(1);
             this.MapTileAnimation2Button.Name = "MapTileAnimation2Button";
             this.MapTileAnimation2Button.Size = new System.Drawing.Size(133, 24);
             this.MapTileAnimation2Button.TabIndex = 8;
@@ -1543,7 +1530,7 @@
             // MapTileAnimation1Button
             // 
             this.MapTileAnimation1Button.Location = new System.Drawing.Point(3, 213);
-            this.MapTileAnimation1Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MapTileAnimation1Button.Margin = new System.Windows.Forms.Padding(1);
             this.MapTileAnimation1Button.Name = "MapTileAnimation1Button";
             this.MapTileAnimation1Button.Size = new System.Drawing.Size(133, 24);
             this.MapTileAnimation1Button.TabIndex = 7;
@@ -1554,7 +1541,7 @@
             // ProcsScriptButton
             // 
             this.ProcsScriptButton.Location = new System.Drawing.Point(275, 289);
-            this.ProcsScriptButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ProcsScriptButton.Margin = new System.Windows.Forms.Padding(1);
             this.ProcsScriptButton.Name = "ProcsScriptButton";
             this.ProcsScriptButton.Size = new System.Drawing.Size(133, 24);
             this.ProcsScriptButton.TabIndex = 30;
@@ -1565,7 +1552,7 @@
             // ArenaEnemyWeaponButton
             // 
             this.ArenaEnemyWeaponButton.Location = new System.Drawing.Point(139, 83);
-            this.ArenaEnemyWeaponButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ArenaEnemyWeaponButton.Margin = new System.Windows.Forms.Padding(1);
             this.ArenaEnemyWeaponButton.Name = "ArenaEnemyWeaponButton";
             this.ArenaEnemyWeaponButton.Size = new System.Drawing.Size(133, 24);
             this.ArenaEnemyWeaponButton.TabIndex = 16;
@@ -1576,7 +1563,7 @@
             // ItemUsagePointerButton
             // 
             this.ItemUsagePointerButton.Location = new System.Drawing.Point(275, 212);
-            this.ItemUsagePointerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ItemUsagePointerButton.Margin = new System.Windows.Forms.Padding(1);
             this.ItemUsagePointerButton.Name = "ItemUsagePointerButton";
             this.ItemUsagePointerButton.Size = new System.Drawing.Size(133, 24);
             this.ItemUsagePointerButton.TabIndex = 28;
@@ -1587,7 +1574,7 @@
             // AIFormButton
             // 
             this.AIFormButton.Location = new System.Drawing.Point(549, 239);
-            this.AIFormButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AIFormButton.Margin = new System.Windows.Forms.Padding(1);
             this.AIFormButton.Name = "AIFormButton";
             this.AIFormButton.Size = new System.Drawing.Size(133, 24);
             this.AIFormButton.TabIndex = 56;
@@ -1598,7 +1585,7 @@
             // AI3FormButton
             // 
             this.AI3FormButton.Location = new System.Drawing.Point(549, 263);
-            this.AI3FormButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AI3FormButton.Margin = new System.Windows.Forms.Padding(1);
             this.AI3FormButton.Name = "AI3FormButton";
             this.AI3FormButton.Size = new System.Drawing.Size(133, 24);
             this.AI3FormButton.TabIndex = 57;
@@ -1609,7 +1596,7 @@
             // StatusRMenuButton
             // 
             this.StatusRMenuButton.Location = new System.Drawing.Point(957, 185);
-            this.StatusRMenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.StatusRMenuButton.Margin = new System.Windows.Forms.Padding(1);
             this.StatusRMenuButton.Name = "StatusRMenuButton";
             this.StatusRMenuButton.Size = new System.Drawing.Size(133, 24);
             this.StatusRMenuButton.TabIndex = 83;
@@ -1620,7 +1607,7 @@
             // StatusParamButton
             // 
             this.StatusParamButton.Location = new System.Drawing.Point(957, 160);
-            this.StatusParamButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.StatusParamButton.Margin = new System.Windows.Forms.Padding(1);
             this.StatusParamButton.Name = "StatusParamButton";
             this.StatusParamButton.Size = new System.Drawing.Size(133, 24);
             this.StatusParamButton.TabIndex = 82;
@@ -1631,7 +1618,7 @@
             // MenuDefinitionButton
             // 
             this.MenuDefinitionButton.Location = new System.Drawing.Point(959, 134);
-            this.MenuDefinitionButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuDefinitionButton.Margin = new System.Windows.Forms.Padding(1);
             this.MenuDefinitionButton.Name = "MenuDefinitionButton";
             this.MenuDefinitionButton.Size = new System.Drawing.Size(133, 24);
             this.MenuDefinitionButton.TabIndex = 81;
@@ -1642,7 +1629,7 @@
             // MantAnimationButton
             // 
             this.MantAnimationButton.Location = new System.Drawing.Point(3, 107);
-            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MantAnimationButton.Margin = new System.Windows.Forms.Padding(1);
             this.MantAnimationButton.Name = "MantAnimationButton";
             this.MantAnimationButton.Size = new System.Drawing.Size(133, 24);
             this.MantAnimationButton.TabIndex = 4;
@@ -1663,7 +1650,7 @@
             // OtherTextButton
             // 
             this.OtherTextButton.Location = new System.Drawing.Point(821, 81);
-            this.OtherTextButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.OtherTextButton.Margin = new System.Windows.Forms.Padding(1);
             this.OtherTextButton.Name = "OtherTextButton";
             this.OtherTextButton.Size = new System.Drawing.Size(133, 24);
             this.OtherTextButton.TabIndex = 70;
@@ -1674,7 +1661,7 @@
             // HexEditorButton
             // 
             this.HexEditorButton.Location = new System.Drawing.Point(275, 341);
-            this.HexEditorButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.HexEditorButton.Margin = new System.Windows.Forms.Padding(1);
             this.HexEditorButton.Name = "HexEditorButton";
             this.HexEditorButton.Size = new System.Drawing.Size(133, 24);
             this.HexEditorButton.TabIndex = 32;
@@ -1705,7 +1692,7 @@
             // WorldMapImageButton
             // 
             this.WorldMapImageButton.Location = new System.Drawing.Point(685, 82);
-            this.WorldMapImageButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.WorldMapImageButton.Margin = new System.Windows.Forms.Padding(1);
             this.WorldMapImageButton.Name = "WorldMapImageButton";
             this.WorldMapImageButton.Size = new System.Drawing.Size(133, 24);
             this.WorldMapImageButton.TabIndex = 65;
@@ -1726,7 +1713,7 @@
             // SimpleMenuButton
             // 
             this.SimpleMenuButton.Location = new System.Drawing.Point(957, 377);
-            this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(1);
             this.SimpleMenuButton.Name = "SimpleMenuButton";
             this.SimpleMenuButton.Size = new System.Drawing.Size(133, 24);
             this.SimpleMenuButton.TabIndex = 86;
@@ -1739,7 +1726,7 @@
             this.panel1.Controls.Add(this.FilterLabel);
             this.panel1.Controls.Add(this.Filter);
             this.panel1.Location = new System.Drawing.Point(2, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1092, 23);
             this.panel1.TabIndex = 100;
@@ -1761,7 +1748,7 @@
             // 
             this.Filter.ErrorMessage = "";
             this.Filter.Location = new System.Drawing.Point(139, 3);
-            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Filter.Margin = new System.Windows.Forms.Padding(2);
             this.Filter.Name = "Filter";
             this.Filter.Placeholder = "";
             this.Filter.Size = new System.Drawing.Size(944, 21);
@@ -1769,16 +1756,16 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // button1
+            // MoveCostButton
             // 
-            this.button1.Location = new System.Drawing.Point(139, 288);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 24);
-            this.button1.TabIndex = 132;
-            this.button1.Text = "ASM編集";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.MoveCostButton.Location = new System.Drawing.Point(139, 29);
+            this.MoveCostButton.Margin = new System.Windows.Forms.Padding(1);
+            this.MoveCostButton.Name = "MoveCostButton";
+            this.MoveCostButton.Size = new System.Drawing.Size(133, 24);
+            this.MoveCostButton.TabIndex = 14;
+            this.MoveCostButton.Text = "地形設定";
+            this.MoveCostButton.UseVisualStyleBackColor = true;
+            this.MoveCostButton.Click += new System.EventHandler(this.MoveCostButton_Click);
             // 
             // MainFE6Form
             // 
@@ -1790,7 +1777,7 @@
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "MainFE6Form";
             this.Text = "詳細メニュー";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFE6Form_FormClosing);
@@ -1823,7 +1810,6 @@
         private System.Windows.Forms.Button ITEMSTATBOOSTERButton;
         private System.Windows.Forms.Button ItemEffectButton;
         private System.Windows.Forms.Button ItemButton;
-        private System.Windows.Forms.Button MoveCostButton;
         private System.Windows.Forms.Button SupportAttributeButton;
         private System.Windows.Forms.Button SupportTalkButton;
         private System.Windows.Forms.Button SupportUnitButton;
@@ -1961,6 +1947,6 @@
         private System.Windows.Forms.Button MapTerrainBGLookupTableButton;
         private System.Windows.Forms.Button MapTerrainFloorLookupTableButton;
         private System.Windows.Forms.Button AIPerformStaffButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MoveCostButton;
     }
 }
