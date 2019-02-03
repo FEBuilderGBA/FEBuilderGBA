@@ -856,6 +856,12 @@ RetDec Decompiler not set.\r\nPlease set up RetDec in order to operate RetDec fr
 :python3が設定されていません。\r\n設定のパス2の画面から、RetDecを動作させるために必要なpythonの設定をしてください。
 python 3 is not set.\r\nPlease set the python necessary to operate RetDec from the setting screen of pass 2.
 
+:「アドレス」の項目に有効なアドレスを入力してください。
+Please enter a valid address in the "Address" field.
+
+:「読込バイト数」の項目に有効な逆アセンブルするバイト数を入力してください。
+Please enter the number of bytes to be disassembled that are valid in the "Number of bytes to read" field.
+
 :C言語へ逆コンパイル
 Decompile to C language.
 
@@ -10130,7 +10136,7 @@ Player
 Writing to 0x100 or less is not possible because it is dangerous.
 
 :ASMコードの直編集
-Direct editing of ASM code.
+Direct editing of ASM code
 
 :フックするアドレス
 Address to hook

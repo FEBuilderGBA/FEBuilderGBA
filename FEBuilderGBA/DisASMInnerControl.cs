@@ -478,6 +478,17 @@ namespace FEBuilderGBA
             uint addr_1 = (uint)ReadStartAddress.Value;
             uint limit = (uint)ReadCount.Value;
 
+            if (!U.isSafetyOffset(addr_1))
+            {
+                R.ShowStopError("「アドレス」の項目に有効なアドレスを入力してください。");
+                return;
+            }
+            if (limit <= 0)
+            {
+                R.ShowStopError("「読込バイト数」の項目に有効な逆アセンブルするバイト数を入力してください。");
+                return;
+            }
+
             ToolDecompileResultForm f = (ToolDecompileResultForm)InputFormRef.JumpForm<ToolDecompileResultForm>();
             f.JumpTo(addr_1,limit);
         }
@@ -498,6 +509,7 @@ namespace FEBuilderGBA
 
             U.SelectedIndexSafety(AddressList , select);
         }
+
 
     }
 }
