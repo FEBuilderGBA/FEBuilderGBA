@@ -79,6 +79,18 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TacticianAffinityFE7UForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TacticianAffinityFE7UForm.Designer.cs">
+      <DependentUpon>TacticianAffinityFE7UForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TacticianAffinityFE7JForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TacticianAffinityFE7JForm.Designer.cs">
+      <DependentUpon>TacticianAffinityFE7JForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1900,6 +1912,12 @@
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TacticianAffinityFE7UForm.resx">
+      <DependentUpon>TacticianAffinityFE7UForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TacticianAffinityFE7JForm.resx">
+      <DependentUpon>TacticianAffinityFE7JForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolASMEditForm.resx">
       <DependentUpon>ToolASMEditForm.cs</DependentUpon>

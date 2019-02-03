@@ -1042,7 +1042,10 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<AIPerformStaffForm>();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //InputFormRef.JumpForm<ASMEditForm>();
+        }
     }
 
 }
