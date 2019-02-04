@@ -1732,10 +1732,6 @@ namespace FEBuilderGBA
             {
                 TextToSpeechForm.OptionTextToSpeech(this.TextArea.Text2);
             }
-            else if (e.Control && e.Alt && e.KeyCode == Keys.T)
-            {
-                TemplateText();
-            }
 
             int i = this.TextList.SelectedIndex;
             if (i < 0)
@@ -3244,10 +3240,6 @@ namespace FEBuilderGBA
             uint write_pointer = InputFormRef.BaseAddress + (InputFormRef.BlockSize * textID);
 
             return write_pointer;
-        }
-
-        void TemplateText()
-        {
         }
     }
 }

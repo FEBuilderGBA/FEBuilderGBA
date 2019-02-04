@@ -1,0 +1,17 @@
+NAME=追撃禁止武器を複数設定できるようにする. 導入
+NAME.en=Define Multiple Item Attacks 1x Per Combat (Installer)
+
+INFO=追撃を出さない武器を複数設定できるようにします。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2AF78=0x00 0x4B
+EDIT_PATCH=PATCH_MultiItemAttacks1xPerCombat.txt
+EA=Installer.event
+
+AUTHOR=7743
+INFO.en=We will allow you to set up multiple weapons that will not pursue.
+NAME.zh=允许设置多个违禁武器。简介。
+INFO.zh=我们将允许你设置多种不会追求的武器。

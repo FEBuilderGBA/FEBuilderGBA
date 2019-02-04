@@ -270,5 +270,31 @@ namespace FEBuilderGBA
                 ,U.ToHexString8(U.toPointer(Program.ROM.RomInfo.menu_J12_hide_address()+1))
                 );
         }
+
+        public static uint ExpandsArea(Form form, string typename, uint newdatacount, Undo.UndoData undodata)
+        {
+            uint pointer;
+            if (typename == "UNITMENU")
+            {
+                pointer = MenuDefinitionForm.GetUnitMenuPointer();
+            }
+            else if (typename == "GAMEMENU")
+            {
+                pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
+
+            uint newaddr;
+            {
+                InputFormRef ifr = Init(null);
+                ifr.ReInitPointer(pointer);
+                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer());
+            }
+            InputFormRef.ClearCacheDataCount();
+            return newaddr;
+        }
     }
 }

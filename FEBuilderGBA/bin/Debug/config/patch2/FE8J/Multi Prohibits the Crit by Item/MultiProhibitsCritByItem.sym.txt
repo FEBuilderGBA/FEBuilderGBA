@@ -1,0 +1,5 @@
+MultiProhibitsCritByItemTable=$24
+Loop=$02
+NotFound=$14
+Found=$10
+Exit=$16

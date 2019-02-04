@@ -1,0 +1,17 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $2AF78
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "MultiItemAttacks1xPerCombat.dmp"
+
+POIN MultiItemAttacks1xPerCombatTable
+
+MultiItemAttacks1xPerCombatTable:
+BYTE 0xb5   //Item Stone
+//BYTE 0x9  //Item Rapier
+
+BYTE 0x00   //term data

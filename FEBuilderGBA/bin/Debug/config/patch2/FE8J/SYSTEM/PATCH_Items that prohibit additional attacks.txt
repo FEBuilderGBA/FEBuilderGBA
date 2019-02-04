@@ -1,6 +1,6 @@
-﻿
 NAME=追撃禁止のアイテム
-NAME.en=Items that prohibit additional attacks
+NAME.en=Specified Item Attacks 1x Per Combat
+NAME.zh=禁止追击的道具
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -10,10 +10,8 @@ ADDRESS=0x2AF78
 ADDRESS_TYPE=ITEM
 
 AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
-NAME.zh=禁止追击的道具
-
 AUTHOR.zh=从aera的材料\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-AUTHOR.en=From aera's material\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
+CONFLICT_IF:0x2AF78=0x00 0x4B
+CONFLICT_MESSAGE=Define Multiple Item Attacks 1x Per Combat

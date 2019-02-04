@@ -1,0 +1,18 @@
+NAME=常に必殺を禁止する武器を複数設定できるようにする. (導入)
+NAME.en=Define Multiple Prohibits the Crit By Item. (Installer)
+
+INFO=追撃を出さない武器を複数設定できるようにします。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2ACB6=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_MultiProhibitsCritByItem.txt
+EA=Installer.event
+
+AUTHOR=7743
+
+INFO.en=We will allow you to set up multiple weapons that will not pursue.
+NAME.zh=始终能够设置多种禁止死亡的武器。（引言）。
+INFO.zh=我们将允许你设置多种不会追求的武器。

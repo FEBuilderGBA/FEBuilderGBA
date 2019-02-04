@@ -1,0 +1,29 @@
+NAME=追撃禁止武器を複数設定できるようにする.
+NAME.en=Define Multiple Item Attacks 1x Per Combat
+
+INFO=追撃を出さない武器を複数設定できるようにします。
+
+IF:0x2B008=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiItemAttacks1xPerCombat.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはアイテム名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+
+INFO.en=We will allow you to set up multiple weapons that will not pursue.
+NAME.zh=允许设置多个违禁武器。
+INFO.zh=我们将允许你设置多种不会追求的武器。

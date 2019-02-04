@@ -238,5 +238,14 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        public static uint GetUnitMenuPointer()
+        {
+            return Program.ROM.RomInfo.menu1_pointer();
+        }
+        public static uint GetGameMenuPointer()
+        {
+            return Program.ROM.RomInfo.menu2_pointer();
+        }
     }
 }

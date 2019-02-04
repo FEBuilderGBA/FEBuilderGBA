@@ -3284,6 +3284,14 @@ namespace FEBuilderGBA
             {
                 addr = TextForm.ExpandsArea(this,id,undodata);
             }
+            else if (typename == "UNITMENU")
+            {
+                addr = MenuCommandForm.ExpandsArea(this, typename , id, undodata);
+            }
+            else if (typename == "GAMEMENU")
+            {
+                addr = MenuCommandForm.ExpandsArea(this, typename , id, undodata);
+            }
             else
             {
                 throw new PatchException(R.Error("拡張の指定が正しくありません type:{0}", typename));

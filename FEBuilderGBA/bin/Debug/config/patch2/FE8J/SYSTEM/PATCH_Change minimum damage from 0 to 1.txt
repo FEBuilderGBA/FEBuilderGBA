@@ -34,3 +34,6 @@ AUTHOR=midori patch
 INFO.en=Set the minimum damage to 1.
 NAME.zh=将最小伤害从0设置为1。
 INFO.zh=将最小伤害设置为1。
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends
