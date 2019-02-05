@@ -24,6 +24,10 @@ LISTNAME=$B0:ITEM
 //データを定義します
 B0:ITEM=Item
 
-INFO.en=We will allow you to set up multiple weapons that will not give off.
-NAME.zh=始终能够设置多种禁止死亡的武器。
-INFO.zh=我们将允许您设置多种不会放弃的武器。
+
+
+
+INFO.en=Allows to set multiple weapons that do not emit Crit.
+NAME.zh=定义多个禁止按项目批判
+
+INFO.zh=允许设置多个不发射Crit的武器。

@@ -13,6 +13,6 @@ EA=Installer.event
 
 AUTHOR=7743
 
-INFO.en=We will allow you to set up multiple weapons that will not pursue.
-NAME.zh=始终能够设置多种禁止死亡的武器。（引言）。
-INFO.zh=我们将允许你设置多种不会追求的武器。
+INFO.en=Allows to set multiple weapons that do not emit Crit.
+NAME.zh=定义多个禁止按项目批判。(Install)
+INFO.zh=允许设置多个不发射Crit的武器。

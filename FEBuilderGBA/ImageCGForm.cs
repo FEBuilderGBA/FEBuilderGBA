@@ -156,6 +156,13 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
+                //パレット領域が他の領域を浸食していないか確認する
+                if (IsPaletteDuplicate((uint)this.P8.Value, (uint)this.AddressList.SelectedIndex))
+                {
+                    //FE8のパレットはバグっていて、となりのパレットに浸食している.
+                    this.P8.Value = 0;
+                }
+
                 //画像等データの書き込み
                 Undo.UndoData undodata = Program.Undo.NewUndoData(this);
                 this.InputFormRef.WriteImageData10(this.P0, image, undodata);
@@ -172,6 +179,30 @@ namespace FEBuilderGBA
         private void DecreaseColorTSAToolButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<DecreaseColorTSAToolForm>();
+        }
+
+        //パレット領域が他の領域を浸食していないか確認する
+        //FE8のパレットはバグっていて、となりのパレットに浸食している.
+        public static bool IsPaletteDuplicate(uint paletteAddrP , uint currentIndex)
+        {
+            paletteAddrP = U.toPointer(paletteAddrP);
+            uint paletteEndAddrP = paletteAddrP + (0x20 * 8);
+
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+            {
+                if (i == currentIndex)
+                {//自分自身なので無視.
+                    continue;
+                }
+                uint pal = Program.ROM.u32(addr + 8);
+                if (pal >= paletteAddrP && pal < paletteEndAddrP)
+                {//重複している
+                    return true;
+                }
+            }
+            return false;
         }
 
         //全データの取得
