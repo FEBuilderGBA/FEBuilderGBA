@@ -427,7 +427,47 @@ namespace FEBuilderGBA
                      || dataaddr == no_dimaddr)
                     {
                         name = "Magic:" + U.To0xHexString(i);
-                        ImageUtilMagicFEditor.RecycleOldAnime(ref list, name, isPointerOnly, csaaddress);
+                        ImageUtilMagicCSACreator.RecycleOldAnime(ref list, name, isPointerOnly, csaaddress);
+                    }
+
+                }
+            }
+        }
+        //全データの取得
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            string name;
+            InputFormRef InputFormRef;
+            uint baseaddr, dimaddr, no_dimaddr;
+            if (ImageUtilMagic.SearchMagicSystem(out baseaddr, out dimaddr, out no_dimaddr) != ImageUtilMagic.magic_system_enum.CSA_CREATOR)
+            {
+                return;
+            }
+
+            {
+                uint spellDataCount = ImageUtilMagicFEditor.SpellDataCount();
+                uint csaSpellTablePointer;
+                uint csaSpellTable = ImageUtilMagic.FindCSASpellTable("SCA_Creator", out csaSpellTablePointer);
+                Dictionary<uint, string> effectDic = new Dictionary<uint, string>();
+                InputFormRef = Init(null, dimaddr, no_dimaddr, spellDataCount, csaSpellTable, effectDic);
+
+                uint addr = InputFormRef.BaseAddress;
+                for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
+                {
+                    uint baseaddress = Program.ROM.p32(Program.ROM.RomInfo.magic_effect_pointer());
+                    uint csaaddress = (uint)(csaSpellTable + (20 * i));
+
+                    uint dataaddr = Program.ROM.p32(addr);
+                    if (dataaddr == 0)
+                    {
+                        continue;
+                    }
+                    if (
+                        dataaddr == dimaddr
+                     || dataaddr == no_dimaddr)
+                    {
+                        name = "Magic:" + U.To0xHexString(i);
+                        ImageUtilMagicCSACreator.MakeCheckError(ref errors, name, csaaddress, (uint)i);
                     }
 
                 }

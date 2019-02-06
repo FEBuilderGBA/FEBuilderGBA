@@ -1,0 +1,15 @@
+NAME=この武器で攻撃をするときBGMを変更する2
+NAME.en=Change Battle BGM if Specified Item Weapon2
+INFO=特定の武器で攻撃したときにBGMを変更します。\r\nディフォルトは、0x92 ジークムントが設定されています。
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x59946
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+INFO.en=Change BGM when attacking with a specific weapon.\r\nThe default is 0x92 Siegmund.
+NAME.zh=当用这种武器攻击时改变BGM 2。
+INFO.zh=使用特定武器进行攻击时更改BGM。\r\n默认值为0x92 Siegmund。

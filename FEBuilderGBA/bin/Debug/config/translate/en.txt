@@ -3613,6 +3613,12 @@ AP data ({0}) is corrupted.Ended ROM end while scanning Tile.({1} @ {2}).
 :CSA_Creatorにインポートする時には各行の#以降を削除してください。
 When importing to CSA_Creator delete # and after each line.
 
+:frameDataが範囲外です
+frameData is out of range.
+
+:OBJRightToLeftOAMが範囲外です
+OBJRightToLeftOAM is out of range.
+
 :時間指定が連続しています。\r\nO filename\r\nB filename\r\ntime\r\n\r\nFile:{0} Line:{1}\r\n
 Time designation is continuous.\r\nO filename\r\nB filename\r\ntime\r\n\r\nFile:{0} Line:{1}\r\n
 

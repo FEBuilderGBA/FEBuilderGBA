@@ -69,6 +69,7 @@ namespace FEBuilderGBA
             ,ITEM_EEFECT_POINTER //アイテム間接効果ポインタ
             ,IMAGE_UNIT_PALETTE //ユニットパレット
             ,IMAGE_BATTLE_SCREEN //戦闘画面
+            ,MAGIC_ANIME_EXTENDS //魔法拡張アニメ
             ,STATUS_GAME_OPTION //ゲームオプション
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
@@ -401,6 +402,12 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void CheckLZ77Pointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr,string name, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(lz77pointer);
+            CheckLZ77Errors(p, errors, cond, addr,  tag);
+        }
+
         public static void CheckLZ77Errors(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyOffset(lz77addr))
@@ -417,6 +424,19 @@ namespace FEBuilderGBA
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("アドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。", U.To0xHexString(lz77addr)), tag));
+            }
+        }
+        public static void CkeckMagicLZ77Pointer(uint pointer, ref List<FELint.ErrorSt> errors, uint magic_baseaddress, string name, uint magicindex)
+        {
+            uint imageOffset = U.u32(Program.ROM.Data, pointer);
+            if (U.isPointer(imageOffset))
+            {
+                imageOffset = U.toOffset(imageOffset);
+                if (imageOffset == 0)
+                {
+                    return;
+                }
+                FELint.CheckLZ77Errors(imageOffset, errors, FELint.Type.MAGIC_ANIME_EXTENDS, magic_baseaddress, magicindex);
             }
         }
         public static void CheckInputFormRefASMErrors(InputFormRef ifr, List<ErrorSt> errors, bool isSwitch, Type cond)
@@ -652,6 +672,10 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem ImageBattleScreen")) return;
             ImageBattleScreenForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem ImageMagic")) return;
+            ImageMagicFEditorForm.MakeCheckError(errors);
+            ImageMagicCSACreatorForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

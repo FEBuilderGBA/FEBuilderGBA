@@ -521,6 +521,11 @@ namespace FEBuilderGBA
             uint RightToLeftOAMBG_offset = Program.ROM.u32(magic_baseaddress + 12); //OBJ BG OAM
             uint LeftRightOAMBG_offset = Program.ROM.u32(magic_baseaddress + 16); //OBJ BG OAM
 
+            if (frameData_offset == 0)
+            {
+                return;
+            }
+
             //圧縮されていないデータなので、事故防止のため リミッターをかける.
             uint limitter = frameData_offset + 1024 * 1024; //1MBサーチしたらもうあきらめる.
             limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);
@@ -595,7 +600,7 @@ namespace FEBuilderGBA
                 i += 24 + 4; // 24+4+4 = 32bytes
             }
 
-            if (i >= limitter)
+            if (i > limitter)
             {//リミッターを超えているので、危険なので、フレーム等の再利用はしない
 
             }
@@ -630,6 +635,87 @@ namespace FEBuilderGBA
                     , ImageUtilMagicFEditor.calcOAMLength(LeftRightOAMBG_offset, maxBGOAM)
                     , basename + "LeftRightOAMBG"
                     , Address.DataTypeEnum.MAGICOAM);
+            }
+        }
+        public static void MakeCheckError(ref List<FELint.ErrorSt> errors, string basename, uint magic_baseaddress, uint magicindex)
+        {
+            uint frameData_offset = Program.ROM.p32(magic_baseaddress + 0);     //
+            uint RightToLeftOAM_offset = Program.ROM.u32(magic_baseaddress + 4); //OBJ OAM
+            uint LeftToRightOAM_offset = Program.ROM.u32(magic_baseaddress + 8); //OBJ OAM
+            uint RightToLeftOAMBG_offset = Program.ROM.u32(magic_baseaddress + 12); //OBJ BG OAM
+            uint LeftRightOAMBG_offset = Program.ROM.u32(magic_baseaddress + 16); //OBJ BG OAM
+
+            if (frameData_offset == 0)
+            {
+                return;
+            }
+
+            if (!U.isSafetyOffset(frameData_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.MAGIC_ANIME_EXTENDS, frameData_offset, basename + " " + R._("frameDataが範囲外です"), magicindex));
+            }
+            if (!U.isSafetyPointer(RightToLeftOAM_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.MAGIC_ANIME_EXTENDS, RightToLeftOAM_offset, basename + " " + R._("OBJRightToLeftOAMが範囲外です"), magicindex));
+            }
+            if (!U.isSafetyPointer(LeftToRightOAM_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.MAGIC_ANIME_EXTENDS, LeftToRightOAM_offset, basename + " " + R._("OBJRightToLeftOAMが範囲外です"), magicindex));
+            }
+            if (!U.isSafetyPointer(RightToLeftOAMBG_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.MAGIC_ANIME_EXTENDS, RightToLeftOAMBG_offset, basename + " " + R._("OBJRightToLeftOAMが範囲外です"), magicindex));
+            }
+            if (!U.isSafetyPointer(LeftRightOAMBG_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.MAGIC_ANIME_EXTENDS, LeftRightOAMBG_offset, basename + " " + R._("OBJRightToLeftOAMが範囲外です"), magicindex));
+            }
+
+            //圧縮されていないデータなので、事故防止のため リミッターをかける.
+            uint limitter = frameData_offset + 1024 * 1024; //1MBサーチしたらもうあきらめる.
+            limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);
+
+            //最大OAM数を求める.
+            uint maxObjOAM = 0;
+            uint maxBGOAM = 0;
+
+            byte[] frameData = Program.ROM.Data;
+            uint i;
+            for (i = frameData_offset; i < limitter; i += 4)
+            {
+                if (frameData[i + 3] == 0x80)
+                {//終端データ
+                    if (frameData[i + 1] == 0x01) //0x00 0x01 0x00 0x80 の場合続くときがある.
+                    {
+                        continue;
+                    }
+                    i += 4;
+                    break;
+                }
+                if (frameData[i + 3] != 0x86)
+                {
+                    if (frameData[i + 3] == 0x85)
+                    {
+                        continue;
+                    }
+                    //不明な命令.
+                    break;
+                }
+
+                //OBJ画像
+                FELint.CkeckMagicLZ77Pointer((uint)(i + 4), ref errors, magic_baseaddress, basename + "OBJ", magicindex);
+                //BG画像
+                FELint.CkeckMagicLZ77Pointer((uint)(i + 16), ref errors, magic_baseaddress, basename + "BG", magicindex);
+                //TSA
+                FELint.CkeckMagicLZ77Pointer((uint)(i + 28), ref errors, magic_baseaddress, basename + "TSA", magicindex);
+
+                //最大OAMを求める.
+                uint objOAM = U.u32(frameData, (uint)(i + 8));
+                uint bgOAM = U.u32(frameData, (uint)(i + 12));
+                if (objOAM > maxObjOAM) maxObjOAM = objOAM;
+                if (bgOAM > maxBGOAM) maxBGOAM = bgOAM;
+
+                i += 24 + 4; // 24+4+4 = 32bytes
             }
         }
 

@@ -374,6 +374,11 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("戦闘画面");
             }
+            else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)
+            {
+                show_tag = tag;
+                text = R._("追加魔法");
+            }
             else if (dataType == FELint.Type.STATUS_GAME_OPTION)
             {
                 show_tag = tag;
@@ -884,6 +889,15 @@ namespace FEBuilderGBA
             else if (dataType == FELint.Type.IMAGE_BATTLE_SCREEN)
             {
                 InputFormRef.JumpForm<ImageBattleScreenForm>();
+                return;
+            }
+            else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)
+            {
+                if (tag >= Program.ROM.RomInfo.magic_effect_original_data_count())
+                {
+                    tag -= Program.ROM.RomInfo.magic_effect_original_data_count();
+                }
+                InputFormRef.JumpForm<ImageMagicFEditorForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)

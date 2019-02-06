@@ -3613,6 +3613,12 @@ AP数据（{0}）已损坏。我在扫描Tile时结束了ROM结束。（{1} @ {2
 :CSA_Creatorにインポートする時には各行の#以降を削除してください。
 当导入到CSA_Creator时删除＃和每行之后。
 
+:frameDataが範囲外です
+frameData超出范围。
+
+:OBJRightToLeftOAMが範囲外です
+OBJRightToLeftOAM超出范围。
+
 :時間指定が連続しています。\r\nO filename\r\nB filename\r\ntime\r\n\r\nFile:{0} Line:{1}\r\n
 时间指定是连续的。\r\nØ文件名\r\n乙文件名\r\n时间\r\n\r\n文件：{0}行：{1}\r\n
 
