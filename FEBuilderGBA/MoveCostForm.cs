@@ -242,10 +242,11 @@ namespace FEBuilderGBA
             {
                 max = 50 + 1;
             }
+
             for (uint i = 0; i < max; i++)
             {
                 uint v = Program.ROM.u8(addr + i);
-                if (v == 255 || v <= 15)
+                if (v >= 31 || v <= 15)
                 {
                     continue;
                 }
@@ -315,7 +316,7 @@ namespace FEBuilderGBA
             if (FilterComboBox.SelectedIndex <= 2)
             {
                 uint value = (uint)nud.Value;
-                if (value == 255 || value <= 15)
+                if (value <= 255 || value <= 15)
                 {
                     label.ErrorMessage = "";
                 }
