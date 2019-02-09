@@ -1,0 +1,14 @@
+NAME=Rogue Robbery
+NAME.en=Rogue Robbery
+
+TYPE=EA
+TAG=#ENGINE
+EA=FE8-Rogue Robbery EA.txt
+
+//既に適応されたかどうか
+PATCHED_IF:0x2432A=0x61 0x08 0xC0 0x46 0xC0 0x46
+
+INFO=ローグが装備していないアイテムを盗めるようにします。
+INFO.en=This hack allows rogues to steal unequipped weapons and staffs, provided the rogue's constitution is higher than the weapon's weight (items and staffs skip this check). 
+
+AUTHOR=Tequila

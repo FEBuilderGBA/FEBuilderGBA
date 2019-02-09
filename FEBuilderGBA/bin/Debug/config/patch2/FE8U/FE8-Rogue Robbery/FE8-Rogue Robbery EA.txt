@@ -1,0 +1,47 @@
+//FE8 Rogue Steal, player version
+//By Tequila
+
+#include EAstdlib.event
+#include "Extensions/Hack Installation.txt"
+
+#ifndef _FE8_
+	ERROR "You're not assembling FE8 events!"
+#endif
+
+
+PUSH
+
+ORG $17054
+jumpToHack(Rogue_Robbery)
+
+//Can this item be stolen
+ORG $2432A
+SHORT 0x0861 0x46C0 0x46C0 //lsr r1,r4,#1; nop; nop 
+
+//What color to make the items on the steal menu
+ORG $2435E
+SHORT 0x004C 0x341E 0x1824 0x8824 0x46C0 //lsl r4,r1,#1; add r4,#0x1E; add r4,r0; ldrh r4,[r4]; nop
+
+//Usability check
+ORG $25BCC
+SHORT 0x1C28 0x1C31 //mov r0,r5; mov r1,r6
+BL(0x17054)
+SHORT 0x2800 0xD00B 0x7C28 //cmp r0,#0; beq place; ldrb r0,[r5,#0x10]
+	
+//Target select menu
+ORG $34D9A
+SHORT 0x004E 0x9802 0x361E 0x1836 0x8836 0x46C0 //lsl r6,r1,#1; ldr r0,[sp,#8]; add r6,#0x1E; add r6,r0; ldrh r6,[r6]; nop
+
+POP
+
+ALIGN 4
+Rogue_Robbery:
+#incbin "FE8-Rogue Robbery.dmp"
+POIN Con_Getter
+
+#ifndef Con_Getter
+	ALIGN 4
+	Con_Getter:
+	BYTE $00 $B5 $41 $68 $11 $22 $89 $56 $02 $68 $13 $23 $D2 $56 $89 $18 $1A $22 $80 $56 $40 $18 $02 $BC $08 $47
+#endif
+
