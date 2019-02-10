@@ -1,0 +1,29 @@
+NAME=攻撃速度と回避計算から体格を除外し、FE3と同じ計算式にする
+NAME.en=Exclude Con from Attack Speed calculus
+INFO="攻撃速度=速度-(体格-武器の重さ)"、この計算式から、体格を無視して、\r\n"攻撃速度=速度-武器の重さ" とします。\r\nこれは、FE3と同じ計算式になります。
+INFO.en=With this patch, the weapons added in the weapon list will ignore the Con of the unit using it during Attack Speed calculus. \r\nIt's using the same formula as FE3 : Attack Speed = Speed - Weapon Weight instead of Attack Speed = Speed - (Weapon Weight - Consitution).
+
+
+IF:0x2AB80=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END WeaponIgnoreCon.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはアイテム名です
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=Item
+
+AUTHOR=kao
+

@@ -1,0 +1,13 @@
+#include "Extensions/Hack Installation.txt"
+PUSH
+ORG $2AB80
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "WeaponIgnoreCon.dmp"
+
+POIN WeaponList
+
+WeaponList:
+BYTE 0x03 0x00

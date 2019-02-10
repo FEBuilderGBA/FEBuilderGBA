@@ -692,7 +692,7 @@ namespace FEBuilderGBA
         }
         public void JumpTo(int select)
         {
-            this.MapStyle.SelectedIndex = select;
+            U.SelectedIndexSafety(this.MapStyle,select);
         }
         public void JumpToMAPID(uint mapid)
         {

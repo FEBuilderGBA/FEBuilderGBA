@@ -163,6 +163,14 @@ namespace FEBuilderGBA
             {
                 text = R._("敵配置");
             }
+            else if (dataType == FELint.Type.EVENT_COND_TUTORIAL)
+            {
+                text = R._("チュートリアル");
+            }
+            else if (dataType == FELint.Type.EVENT_COND_TRAP)
+            {
+                text = R._("トラップ");
+            }
             else if (dataType == FELint.Type.MAPSETTING)
             {
                 text = R._("マップ設定");

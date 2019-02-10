@@ -911,7 +911,7 @@ namespace FEBuilderGBA
             uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
             if (!U.isSafetyOffset(mapcond_addr))
             {
-                return ;
+                return;
             }
 
             List<uint> tracelist = new List<uint>();
@@ -936,8 +936,8 @@ namespace FEBuilderGBA
                 objectTypeOfSecret = 0x15;
             }
 
-            List<U.AddrResult> list ;
-            list = MakePointerListBox(mapid,CONDTYPE.OBJECT);
+            List<U.AddrResult> list;
+            list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
@@ -1027,7 +1027,7 @@ namespace FEBuilderGBA
                     if (!(object_type == objectTypeOfArmory || object_type == objectTypeOfVendor || object_type == objectTypeOfSecret))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                            , R._("店なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type) )));
+                            , R._("店なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
                     }
 
                     if (flag > 0)
@@ -1038,8 +1038,8 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr 
-                        , R._("マップオブジェクトに不明なタイプ「{0}」が利用されました。",U.To0xHexString(type)) ));
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                        , R._("マップオブジェクトに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                 }
             }
 
@@ -1047,7 +1047,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
-                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size() ))
+                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
                 {
                     break;
                 }
@@ -1071,7 +1071,7 @@ namespace FEBuilderGBA
                     else
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.TALK, addr
-                            , R._("会話イベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type) )));
+                            , R._("会話イベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                     }
                 }
                 else
@@ -1089,7 +1089,7 @@ namespace FEBuilderGBA
                     else
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.TALK, addr
-                            , R._("会話イベントに不明なタイプ「{0}」が利用されました。",U.To0xHexString(type))));
+                            , R._("会話イベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                     }
                 }
 
@@ -1121,8 +1121,8 @@ namespace FEBuilderGBA
                 }
                 else if (Program.ROM.RomInfo.version() == 7 && (type == 0x1 || type == 0x2))
                 {//FE7 には、ターン1-2まである
-                 //ターン1はサイズが小さい
-                 //ターン2はサイズが大きい
+                    //ターン1はサイズが小さい
+                    //ターン2はサイズが大きい
                 }
                 else if (Program.ROM.RomInfo.version() == 8 && (type == 0x2))
                 {//FE8 には、ターン2がある
@@ -1130,7 +1130,7 @@ namespace FEBuilderGBA
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
-                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。",U.To0xHexString(type))));
+                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                 }
             }
 
@@ -1170,11 +1170,11 @@ namespace FEBuilderGBA
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
-                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。",U.To0xHexString(type))));
+                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                 }
             }
 
-            if(Program.ROM.RomInfo.version() == 8)
+            if (Program.ROM.RomInfo.version() == 8)
             {
                 uint player_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 10)));
                 uint player_hard_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 11)));
@@ -1186,7 +1186,7 @@ namespace FEBuilderGBA
                 FELint.CheckEventPointerErrors(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 18)), true, tracelist);
                 FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 19)), true, tracelist);
             }
-            else if(Program.ROM.RomInfo.version() == 7)
+            else if (Program.ROM.RomInfo.version() == 7)
             {
                 uint eliwood_enemy_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
                 uint eliwood_enemy_hard_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 7)));
@@ -1210,7 +1210,7 @@ namespace FEBuilderGBA
                 FELint.CheckEventPointerErrors(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 14)), true, tracelist);
                 FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 15)), true, tracelist);
             }
-            else if(Program.ROM.RomInfo.version() == 6)
+            else if (Program.ROM.RomInfo.version() == 6)
             {
                 uint player_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
                 uint enemy_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
@@ -1219,6 +1219,40 @@ namespace FEBuilderGBA
                 FELint.CheckPointerErrors(player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 4)));
                 FELint.CheckPointerErrors(enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 5)));
                 FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 6)), true, tracelist);
+            }
+
+            {
+                uint turn_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 0)));
+                uint talk_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 1)));
+                uint object_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 2)));
+                uint always_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 3)));
+                FELint.CheckPointerErrors(turn_cond_addr, errors, CONDTYPE.TURN, (uint)(mapcond_addr + (4 * 0)));
+                FELint.CheckPointerErrors(talk_cond_addr, errors, CONDTYPE.TALK, (uint)(mapcond_addr + (4 * 1)));
+                FELint.CheckPointerErrors(object_cond_addr, errors, CONDTYPE.OBJECT, (uint)(mapcond_addr + (4 * 2)));
+                FELint.CheckPointerErrors(always_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 3)));
+            }
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                uint always1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
+                uint always2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
+                uint always3_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
+                uint tutorial_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 7)));
+                uint trap1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 8)));
+                uint trap2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 9)));
+                FELint.CheckPointerErrors(always1_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 4)));
+                FELint.CheckPointerErrors(always2_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 5)));
+                FELint.CheckPointerErrors(always3_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 6)));
+                FELint.CheckPointerErrors(tutorial_cond_addr, errors, CONDTYPE.TUTORIAL, (uint)(mapcond_addr + (4 * 7)));
+                FELint.CheckPointerErrors(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 8)));
+                FELint.CheckPointerErrors(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 9)));
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                uint trap1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
+                uint trap2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
+                FELint.CheckPointerErrors(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 4)));
+                FELint.CheckPointerErrors(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 5)));
             }
         }
 

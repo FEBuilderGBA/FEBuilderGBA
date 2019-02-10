@@ -15,6 +15,7 @@ namespace FEBuilderGBA
             ,EVENT_COND_OBJECT
             ,EVENT_COND_ALWAYS
             ,EVENT_COND_TUTORIAL
+            ,EVENT_COND_TRAP
             ,EVENT_COND_PLAYER_UNIT
             ,EVENT_COND_ENEMY_UNIT
             ,EVENT_COND_START_EVENT
@@ -95,6 +96,8 @@ namespace FEBuilderGBA
                     return EventCondForm.CONDTYPE.START_EVENT;
                 case Type.EVENT_COND_END_EVENT:
                     return EventCondForm.CONDTYPE.END_EVENT;
+                case Type.EVENT_COND_TRAP:
+                    return EventCondForm.CONDTYPE.TRAP;
             }
             Debug.Assert(false);
             throw new Exception("Unknown Type Type:" + filterCondtype);
@@ -121,6 +124,8 @@ namespace FEBuilderGBA
                     return Type.EVENT_COND_START_EVENT;
                 case EventCondForm.CONDTYPE.END_EVENT:
                     return Type.EVENT_COND_END_EVENT;
+                case EventCondForm.CONDTYPE.TRAP:
+                    return Type.EVENT_COND_TRAP;
             }
             Debug.Assert(false);
             throw new Exception("Unknown filterCondtype:" + filterCondtype);

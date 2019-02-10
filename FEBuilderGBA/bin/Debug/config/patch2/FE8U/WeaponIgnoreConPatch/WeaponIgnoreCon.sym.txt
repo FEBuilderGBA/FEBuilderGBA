@@ -1,0 +1,7 @@
+WeaponList=$34
+Loop=$0E
+ConItem=$1E
+NextIteration=$1A
+NoConItem=$26
+Utils=$2A
+BackToVanilla=$30
