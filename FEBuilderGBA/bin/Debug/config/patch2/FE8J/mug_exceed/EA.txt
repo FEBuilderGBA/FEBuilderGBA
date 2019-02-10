@@ -18,8 +18,9 @@ POIN	mug_exceed2+1
 SHORT	$4718
 
 
-ORG $5c26
-SHORT	$46C0 $46C0
+ORG $5c20
+SHORT	$4A00 $4710
+POIN	mug_exceed3+1
 
 
 POP
@@ -40,4 +41,8 @@ mug_exceed2:
 //WORD $080dc0dd		//080c57b5
 //WORD $085c8e10		//08195680
 //SHORT	$4718
+ALIGN 4
+
+mug_exceed3:
+#incbin "mug_exceed3.bin"	//HINT=ASM
 ALIGN 4
