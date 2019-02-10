@@ -1,4 +1,4 @@
-NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する)
+﻿NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する)
 NAME.en=MugExceed / Exceed the Portrait Hackbox(Extend Portrait by 4 tiles)
 
 TYPE=EA
