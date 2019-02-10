@@ -149,6 +149,8 @@ namespace FEBuilderGBA
         public uint menu_definiton_worldmap_shop_pointer() { return 0x0; } //FE8のワールドマップ店のメニュー        
         public uint menu1_pointer() { return 0xB95AB4; } // ユニットメニュー
         public uint menu2_pointer() { return 0xB95AFC; } // ゲームメニュー
+        public uint MenuCommand_UsabilityAlways() { return 0x04A8F8; } //メニューを開くという値を返す関数のアドレス
+        public uint MenuCommand_UsabilityNever() { return 0x04A900; } //メニューを開かないという値を返す関数のアドレス       
         public uint status_rmenu1_pointer() { return 0x8152C; } // ステータス RMENU1
         public uint status_rmenu2_pointer() { return 0x81534; } // ステータス RMENU2
         public uint status_rmenu3_pointer() { return 0x8154C; } // ステータス RMENU3

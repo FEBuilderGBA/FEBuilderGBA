@@ -147,6 +147,8 @@ namespace FEBuilderGBA
         uint menu_definiton_worldmap_shop_pointer(); //FE8のワールドマップ店のメニュー        
         uint menu1_pointer(); // ユニットメニュー
         uint menu2_pointer(); // ゲームメニュー
+        uint MenuCommand_UsabilityAlways(); //メニューを開くという値を返す関数のアドレス
+        uint MenuCommand_UsabilityNever(); //メニューを開かないという値を返す関数のアドレス       
         uint status_rmenu1_pointer(); // ステータス RMENU1
         uint status_rmenu2_pointer(); // ステータス RMENU2
         uint status_rmenu3_pointer(); // ステータス RMENU3

@@ -22,6 +22,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
         }
 
         public InputFormRef InputFormRef;
@@ -295,6 +296,48 @@ namespace FEBuilderGBA
             }
             InputFormRef.ClearCacheDataCount();
             return newaddr;
+        }
+
+        //リストが拡張されたとき
+        void AddressListExpandsEvent(object sender, EventArgs arg)
+        {
+            InputFormRef.WriteButtonToYellow(WriteButton, false);
+
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+            int count = (int)eearg.NewDataCount;
+
+            uint rom_length = (uint)Program.ROM.Data.Length;
+
+            uint alwayFalse = 0;
+            if (Program.ROM.RomInfo.version() != 6)
+            {
+                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
+            }
+
+            //配置後アドレスを0クリアします.
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearAllocMenu");
+            addr = addr + (eearg.OldDataCount * eearg.BlockSize);
+            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            {
+                if (addr + 36 > rom_length)
+                {
+                    break;
+                }
+                Program.ROM.write_u32(addr + 0, 0, undodata);
+                Program.ROM.write_u32(addr + 4, 0, undodata);
+                Program.ROM.write_u32(addr + 8, 0, undodata);
+                Program.ROM.write_u32(addr + 12, alwayFalse, undodata); //常にメニューを表示しないを選択
+                Program.ROM.write_u32(addr + 16, 0, undodata);
+                Program.ROM.write_u32(addr + 20, 0, undodata);
+                Program.ROM.write_u32(addr + 24, 0, undodata);
+                Program.ROM.write_u32(addr + 28, 0, undodata);
+                Program.ROM.write_u32(addr + 32, 0, undodata);
+                addr += eearg.BlockSize;
+            }
+
+            Program.Undo.Push(undodata);
+            eearg.IsReload = true;
         }
     }
 }
