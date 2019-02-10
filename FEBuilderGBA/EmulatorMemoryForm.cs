@@ -1739,7 +1739,7 @@ namespace FEBuilderGBA
                 Program.RAM.write_u8(ramUnitAddress + 0x17, maxLuck);
                 if (growMovePower)
                 {
-                    Program.RAM.write_u8(ramUnitAddress + 0x1B, addMove);
+                    Program.RAM.write_u8(ramUnitAddress + 0x1A, addMove);
                 }
             }
             else
