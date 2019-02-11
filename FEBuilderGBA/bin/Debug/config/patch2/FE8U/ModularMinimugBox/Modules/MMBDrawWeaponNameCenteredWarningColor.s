@@ -63,7 +63,7 @@ MMBDrawWeaponNameCenteredWarningColor:
 	mov		r0, r5
 	mov		r2, #100
 	mul		r0, r2
-	swi		0x6      @ div
+	swi		0x6     @ div
 
 	@ Switch the color with the rest of the weapon.
 

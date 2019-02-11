@@ -97,9 +97,12 @@ After each set of module options are definitions that you can use to adjust the 
 
 //Displaying only the text name of the item being equipped and Centering
 
-	#define MMBWeaponNameCentered
+//	#define MMBWeaponNameCentered
+	#define MMBWeaponNameCenteredWarningColor
 	#define MMBWeaponNameX 48
 	#define MMBWeaponNameY 40
+	#define MMBWeaponNameCenteredWarningColor_Parcent	35		//<= 35%
+	#define MMBWeaponNameCenteredWarningColor_Color		TextYellow
 
 	#define MMBHPStatusNoCombination
 

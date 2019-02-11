@@ -137,6 +137,16 @@
 			WORD (2 * ((32 * (MMBWeaponNameY/8)) + (MMBWeaponNameX/8))) + 4
 		#endif // MMBWeaponNameCentered
 
+		#ifdef MMBWeaponNameCenteredWarningColor
+			#inctevent lyn "Modules/MMBDrawWeaponNameCenteredWarningColor.elf" "Internal/Definitions.elf"
+			SHORT MMBAltTextWidth * 8
+			SHORT MMBTextAltColor
+			WORD (2 * ((32 * (MMBWeaponNameY/8)) + (MMBWeaponNameX/8))) + 4
+			SHORT MMBWeaponNameCenteredWarningColor_Parcent
+			SHORT MMBWeaponNameCenteredWarningColor_Color
+		#endif // MMBWeaponNameCenteredWarningColor
+
+
 
 	// Minimug modules
 
@@ -719,6 +729,10 @@
 	#ifdef MMBWeaponNameCentered
 		POIN MMBDrawWeaponNameCentered
 	#endif // MMBWeaponNameCentered
+
+	#ifdef MMBWeaponNameCenteredWarningColor
+		POIN MMBDrawWeaponNameCenteredWarningColor
+	#endif // MMBWeaponNameCenteredWarningColor
 
 	#ifdef MMBHPBar
 		POIN MMBDrawHPBar
