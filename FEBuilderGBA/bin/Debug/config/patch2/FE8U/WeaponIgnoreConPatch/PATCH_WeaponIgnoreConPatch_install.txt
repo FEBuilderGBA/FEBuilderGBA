@@ -12,3 +12,5 @@ EDIT_PATCH=PATCH_WeaponIgnoreConPatch.txt
 EA=Installer.event
 
 AUTHOR=kao
+NAME.zh=从攻击速度和回避计算中排除体质，并使其与FE 3（简介）具有相同的公式。
+INFO.zh="攻撃速度=速度 - （体格 - 武器的重量）“，忽略了这个公式的体质。\r\n“攻击速度=速度 - 武器重量”。\r\n这与FE 3的计算公式相同。

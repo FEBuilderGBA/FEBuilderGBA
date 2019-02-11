@@ -2117,6 +2117,7 @@ namespace FEBuilderGBA
             {
                 ImageTSAAnime2Form.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
+                StatusOptionOrderForm.MakeAllDataLength(list);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);
@@ -2181,6 +2182,8 @@ namespace FEBuilderGBA
                 WorldMapImageFE7Form.MakeAllDataLength(list, isPointerOnly);
                 SoundRoomCGForm.MakeAllDataLength(list);
                 TacticianAffinityFE7.MakeAllDataLength(list);
+                StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
+                StatusOptionOrderForm.MakeAllDataLength(list);
 
                 if (Program.ROM.RomInfo.is_multibyte())
                 {

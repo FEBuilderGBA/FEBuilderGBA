@@ -95,6 +95,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_36_GAMEOPTIONICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D36)).BeginInit();
@@ -851,6 +852,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressListExpandsButton);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(12, 45);
@@ -861,7 +863,7 @@
             // label30
             // 
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(0, -1);
+            this.label30.Location = new System.Drawing.Point(-1, -1);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(276, 26);
@@ -877,7 +879,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(276, 684);
+            this.AddressList.Size = new System.Drawing.Size(276, 650);
             this.AddressList.TabIndex = 0;
             // 
             // ReadCount
@@ -928,6 +930,16 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
+            // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 677);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(271, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // StatusOptionForm
             // 
@@ -1044,5 +1056,6 @@
         private System.Windows.Forms.NumericUpDown D36;
         private System.Windows.Forms.Label J_36;
         private InterpolatedPictureBox L_36_GAMEOPTIONICON;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }

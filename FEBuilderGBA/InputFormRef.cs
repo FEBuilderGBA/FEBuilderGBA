@@ -2520,6 +2520,22 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "GAMEOPTION")
+            {
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint id = (uint)src_object.Value;
+
+                    string text = StatusOptionForm.GetNameIndex(id);
+                    link_object.Text = text;
+                };
+                link_object.DoubleClick += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "GAMEOPTION", new string[] { });
+                };
+                return;
+            }
             if (linktype == "CLASSTYPEICON")
             {//クラスタイプ名からアイコン表示
                 src_object.ValueChanged += (sender, e) =>
@@ -3894,6 +3910,10 @@ namespace FEBuilderGBA
                 f.ShowDialog();
 
                 src_object.Value = f.GetDifficultyValue();
+            }
+            else if (linktype == "GAMEOPTION")
+            {
+                InputFormRef.JumpForm<StatusOptionForm>(value, "AddressList", src_object);
             }
         }
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)

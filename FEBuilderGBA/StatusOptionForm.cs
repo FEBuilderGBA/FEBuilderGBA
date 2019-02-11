@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+            this.AddressList.OwnerDraw(ListBoxEx.DrawGameOptionAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
@@ -32,12 +33,12 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    return U.ToHexString(i) + " " + GetName(addr);
+                    return U.ToHexString(i) + " " + GetNameFast(addr);
                 }
                 );
         }
 
-        static string GetName(uint addr)
+        static string GetNameFast(uint addr)
         {
             if (!U.isSafetyOffset(addr))
             {
@@ -46,6 +47,18 @@ namespace FEBuilderGBA
             uint textid = Program.ROM.u16(addr + 0);
             return TextForm.DirectAndStripAllCode(textid);
         }
+        public static string GetNameIndex(uint index)
+        {
+            InputFormRef InputFormRef = Init(null);
+            //現在のIDに対応するデータ
+            uint addr = InputFormRef.IDToAddr(index);
+            if (!U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            return GetNameFast(addr);
+        }
+
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
@@ -63,7 +76,7 @@ namespace FEBuilderGBA
             {
                 FEBuilderGBA.Address.AddFunction(list
                     , p + 40
-                    , isPointerOnly ? "" : "GameOption " + GetName(p)
+                    , isPointerOnly ? "" : "GameOption " + GetNameFast(p)
                     );
             }
         }
@@ -71,6 +84,21 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             TextID.AppendTextID(list, FELint.Type.STATUS_GAME_OPTION, InputFormRef, new uint[] { 0, 4, 6, 12, 14, 20, 22, 28, 30 });
+        }
+
+        //アイコン
+        public static Bitmap DrawIcon(uint id, int palette_type = 0, bool height16_limit = false)
+        {
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(id);
+            if (!U.isSafetyOffset(addr))
+            {
+                return ImageUtil.BlankDummy();
+            }
+            uint icon_id = Program.ROM.u32(addr + 36);
+
+            Bitmap bitmap = ImageSystemIconForm.MusicIcon(icon_id / 2);
+            return bitmap;
         }
     }
 }

@@ -363,6 +363,8 @@ namespace FEBuilderGBA
         public uint menu_J12_always_address() { return 0x41E6C; } //メニューの表示判定関数 常に表示する
         public uint menu_J12_hide_address() { return 0x0; }   //メニューの表示判定関数 表示しない
         public uint status_game_option_pointer() { return 0; } //ゲームオプション
+        public uint status_game_option_order_pointer() { return 0; } //ゲームオプションの並び順
+        public uint status_game_option_order_count_address() { return 0; } //ゲームオプションの個数
         public uint tactician_affinity_pointer() { return 0; } //軍師属性(FE7のみ)
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
 

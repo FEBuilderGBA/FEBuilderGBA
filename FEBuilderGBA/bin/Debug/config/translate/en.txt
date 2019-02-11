@@ -5395,6 +5395,9 @@ Assign Skill by Unit
 :スキル拡張設定
 Skill Config
 
+:ゲームオプションの順番
+Order of game options.
+
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
 
@@ -5856,6 +5859,12 @@ You can change the setting option items of the game.
 
 :AIが杖を利用できるかどうか判断する関数テーブルを設定します。
 Set up a function table to determine if AI can use staff.
+
+:軍師の属性を決定するテーブルを設定します。
+Set up a table to determine the military attributes.
+
+:ゲームオプションの表示順番を設定します。
+Set the display order of game options.
 
 :ファイルが見つかりません
 File not found

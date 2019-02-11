@@ -2218,6 +2218,14 @@ namespace FEBuilderGBA
             {
                 return R._("AIが杖を利用できるかどうか判断する関数テーブルを設定します。");
             }
+            if (name == "TacticianAffinity")
+            {
+                return R._("軍師の属性を決定するテーブルを設定します。");
+            }
+            if (name == "GameOptionOrderButton")
+            {
+                return R._("ゲームオプションの表示順番を設定します。");
+            }
             
             return "";
         }

@@ -1870,6 +1870,12 @@
     <Compile Include="TacticianAffinityFE7.Designer.cs">
       <DependentUpon>TacticianAffinityFE7.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusOptionOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusOptionOrderForm.Designer.cs">
+      <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2766,6 +2772,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TacticianAffinityFE7.resx">
       <DependentUpon>TacticianAffinityFE7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusOptionOrderForm.resx">
+      <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

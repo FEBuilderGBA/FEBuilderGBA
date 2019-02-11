@@ -354,6 +354,8 @@ namespace FEBuilderGBA
         uint menu_J12_always_address(); //メニューの表示判定関数 常に表示する
         uint menu_J12_hide_address();   //メニューの表示判定関数 表示しない
         uint status_game_option_pointer(); //ゲームオプション
+        uint status_game_option_order_pointer(); //ゲームオプションの並び順
+        uint status_game_option_order_count_address(); //ゲームオプションの個数
         uint tactician_affinity_pointer(); //軍師属性(FE7のみ)
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
         uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
