@@ -91,6 +91,39 @@ namespace FEBuilderGBA
             f.JumpTo((uint)this.AddressList.SelectedIndex);
         }
 
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.AddressList.SelectedIndex > 0)
+            {
+                L_2_TEXT_ITEM1.ErrorMessage = ItemForm.ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
+                L_4_TEXT_ITEM2.ErrorMessage = ItemForm.ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
+            }
+            else
+            {
+                L_2_TEXT_ITEM1.ErrorMessage = "";
+                L_4_TEXT_ITEM2.ErrorMessage = "";
+            }
+
+            if (P12.Value == 0
+                && this.AddressList.SelectedIndex > 0)
+            {
+                L_12_NEWALLOC_ITEMSTATBOOSTER.Show();
+            }
+            else
+            {
+                L_12_NEWALLOC_ITEMSTATBOOSTER.Hide();
+            }
+            if (P16.Value == 0
+                && this.AddressList.SelectedIndex > 0)
+            {
+                L_16_NEWALLOC_ITEMCRTIICAL.Show();
+            }
+            else
+            {
+                L_16_NEWALLOC_ITEMCRTIICAL.Hide();
+            }
+        }
+
 
 
     }

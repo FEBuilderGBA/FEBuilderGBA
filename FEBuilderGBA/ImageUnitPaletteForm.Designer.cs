@@ -35,9 +35,14 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_BATTLEANIME_INFO = new FEBuilderGBA.TextBoxEx();
+            this.X_BATTLEANIME = new System.Windows.Forms.NumericUpDown();
+            this.X_BATTLEANIME_LABEL = new System.Windows.Forms.Label();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label13 = new System.Windows.Forms.Label();
             this.L_12_NEWALLOC_IMAGEUNITPALETTE = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.UNITCLASS_LIST = new FEBuilderGBA.ListBoxEx();
             this.label21 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +54,7 @@
             this.B2 = new System.Windows.Forms.NumericUpDown();
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.B0 = new System.Windows.Forms.NumericUpDown();
+            this.L_0_SPLITSTRING_2 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown26 = new System.Windows.Forms.NumericUpDown();
             this.P12 = new System.Windows.Forms.NumericUpDown();
             this.B6 = new System.Windows.Forms.NumericUpDown();
@@ -59,7 +65,9 @@
             this.B3 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -67,8 +75,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AutoScrollPanel = new System.Windows.Forms.Panel();
+            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.PaletteZoomComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -165,20 +175,11 @@
             this.PALETTE_R_1 = new System.Windows.Forms.NumericUpDown();
             this.PALETTE_ADDRESS = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.X_BATTLEANIME = new System.Windows.Forms.NumericUpDown();
-            this.X_BATTLEANIME_LABEL = new System.Windows.Forms.Label();
-            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.X_BATTLEANIME_INFO = new FEBuilderGBA.TextBoxEx();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.UNITCLASS_LIST = new FEBuilderGBA.ListBoxEx();
-            this.L_0_SPLITSTRING_2 = new FEBuilderGBA.TextBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIME)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B9)).BeginInit();
@@ -198,6 +199,7 @@
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.AutoScrollPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).BeginInit();
@@ -247,8 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -362,6 +362,52 @@
             this.panel4.Size = new System.Drawing.Size(982, 339);
             this.panel4.TabIndex = 72;
             // 
+            // X_BATTLEANIME_INFO
+            // 
+            this.X_BATTLEANIME_INFO.ErrorMessage = "";
+            this.X_BATTLEANIME_INFO.Location = new System.Drawing.Point(788, 309);
+            this.X_BATTLEANIME_INFO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.X_BATTLEANIME_INFO.Name = "X_BATTLEANIME_INFO";
+            this.X_BATTLEANIME_INFO.Placeholder = "";
+            this.X_BATTLEANIME_INFO.ReadOnly = true;
+            this.X_BATTLEANIME_INFO.Size = new System.Drawing.Size(186, 25);
+            this.X_BATTLEANIME_INFO.TabIndex = 227;
+            // 
+            // X_BATTLEANIME
+            // 
+            this.X_BATTLEANIME.Hexadecimal = true;
+            this.X_BATTLEANIME.Location = new System.Drawing.Point(711, 308);
+            this.X_BATTLEANIME.Margin = new System.Windows.Forms.Padding(2);
+            this.X_BATTLEANIME.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.X_BATTLEANIME.Name = "X_BATTLEANIME";
+            this.X_BATTLEANIME.Size = new System.Drawing.Size(71, 25);
+            this.X_BATTLEANIME.TabIndex = 226;
+            this.X_BATTLEANIME.ValueChanged += new System.EventHandler(this.X_DISPLAY_CLASS_ValueChanged);
+            // 
+            // X_BATTLEANIME_LABEL
+            // 
+            this.X_BATTLEANIME_LABEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_BATTLEANIME_LABEL.Location = new System.Drawing.Point(576, 306);
+            this.X_BATTLEANIME_LABEL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.X_BATTLEANIME_LABEL.Name = "X_BATTLEANIME_LABEL";
+            this.X_BATTLEANIME_LABEL.Size = new System.Drawing.Size(130, 30);
+            this.X_BATTLEANIME_LABEL.TabIndex = 225;
+            this.X_BATTLEANIME_LABEL.Text = "戦闘アニメ";
+            this.X_BATTLEANIME_LABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(135, 252);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(338, 25);
+            this.Comment.TabIndex = 224;
+            // 
             // label13
             // 
             this.label13.AccessibleDescription = "@COMMENT";
@@ -393,6 +439,19 @@
             this.label4.TabIndex = 178;
             this.label4.Text = "利用クラスとアニメ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UNITCLASS_LIST
+            // 
+            this.UNITCLASS_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UNITCLASS_LIST.FormattingEnabled = true;
+            this.UNITCLASS_LIST.IntegralHeight = false;
+            this.UNITCLASS_LIST.ItemHeight = 18;
+            this.UNITCLASS_LIST.Location = new System.Drawing.Point(575, 39);
+            this.UNITCLASS_LIST.Margin = new System.Windows.Forms.Padding(4);
+            this.UNITCLASS_LIST.Name = "UNITCLASS_LIST";
+            this.UNITCLASS_LIST.Size = new System.Drawing.Size(401, 263);
+            this.UNITCLASS_LIST.TabIndex = 177;
+            this.UNITCLASS_LIST.SelectedIndexChanged += new System.EventHandler(this.CLASS_LIST_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -539,6 +598,16 @@
             this.B0.Size = new System.Drawing.Size(60, 25);
             this.B0.TabIndex = 157;
             // 
+            // L_0_SPLITSTRING_2
+            // 
+            this.L_0_SPLITSTRING_2.ErrorMessage = "";
+            this.L_0_SPLITSTRING_2.Location = new System.Drawing.Point(135, 12);
+            this.L_0_SPLITSTRING_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_SPLITSTRING_2.Name = "L_0_SPLITSTRING_2";
+            this.L_0_SPLITSTRING_2.Placeholder = "";
+            this.L_0_SPLITSTRING_2.Size = new System.Drawing.Size(205, 25);
+            this.L_0_SPLITSTRING_2.TabIndex = 155;
+            // 
             // numericUpDown26
             // 
             this.numericUpDown26.Hexadecimal = true;
@@ -674,6 +743,17 @@
             this.panel5.Size = new System.Drawing.Size(982, 30);
             this.panel5.TabIndex = 70;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(321, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -684,6 +764,17 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 57;
             // 
             // label22
             // 
@@ -764,6 +855,19 @@
             this.LabelFilter.TabIndex = 55;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(277, 310);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -880,6 +984,16 @@
             this.AutoScrollPanel.Size = new System.Drawing.Size(640, 419);
             this.AutoScrollPanel.TabIndex = 277;
             // 
+            // X_PIC
+            // 
+            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC.Location = new System.Drawing.Point(2, 2);
+            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
+            this.X_PIC.Name = "X_PIC";
+            this.X_PIC.Size = new System.Drawing.Size(636, 407);
+            this.X_PIC.TabIndex = 0;
+            this.X_PIC.TabStop = false;
+            // 
             // PaletteZoomComboBox
             // 
             this.PaletteZoomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -928,7 +1042,7 @@
             "敵軍",
             "友軍",
             "グレー",
-            "???"});
+            "独立"});
             this.PaletteIndexComboBox.Location = new System.Drawing.Point(200, 41);
             this.PaletteIndexComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PaletteIndexComboBox.Name = "PaletteIndexComboBox";
@@ -2266,120 +2380,6 @@
             this.label5.Text = "パレットアドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // X_BATTLEANIME
-            // 
-            this.X_BATTLEANIME.Hexadecimal = true;
-            this.X_BATTLEANIME.Location = new System.Drawing.Point(711, 308);
-            this.X_BATTLEANIME.Margin = new System.Windows.Forms.Padding(2);
-            this.X_BATTLEANIME.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.X_BATTLEANIME.Name = "X_BATTLEANIME";
-            this.X_BATTLEANIME.Size = new System.Drawing.Size(71, 25);
-            this.X_BATTLEANIME.TabIndex = 226;
-            this.X_BATTLEANIME.ValueChanged += new System.EventHandler(this.X_DISPLAY_CLASS_ValueChanged);
-            // 
-            // X_BATTLEANIME_LABEL
-            // 
-            this.X_BATTLEANIME_LABEL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_BATTLEANIME_LABEL.Location = new System.Drawing.Point(576, 306);
-            this.X_BATTLEANIME_LABEL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.X_BATTLEANIME_LABEL.Name = "X_BATTLEANIME_LABEL";
-            this.X_BATTLEANIME_LABEL.Size = new System.Drawing.Size(130, 30);
-            this.X_BATTLEANIME_LABEL.TabIndex = 225;
-            this.X_BATTLEANIME_LABEL.Text = "戦闘アニメ";
-            this.X_BATTLEANIME_LABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // X_PIC
-            // 
-            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(2, 2);
-            this.X_PIC.Margin = new System.Windows.Forms.Padding(2);
-            this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(636, 407);
-            this.X_PIC.TabIndex = 0;
-            this.X_PIC.TabStop = false;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(277, 310);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // X_BATTLEANIME_INFO
-            // 
-            this.X_BATTLEANIME_INFO.ErrorMessage = "";
-            this.X_BATTLEANIME_INFO.Location = new System.Drawing.Point(788, 309);
-            this.X_BATTLEANIME_INFO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.X_BATTLEANIME_INFO.Name = "X_BATTLEANIME_INFO";
-            this.X_BATTLEANIME_INFO.Placeholder = "";
-            this.X_BATTLEANIME_INFO.ReadOnly = true;
-            this.X_BATTLEANIME_INFO.Size = new System.Drawing.Size(186, 25);
-            this.X_BATTLEANIME_INFO.TabIndex = 227;
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(135, 252);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(338, 25);
-            this.Comment.TabIndex = 224;
-            // 
-            // UNITCLASS_LIST
-            // 
-            this.UNITCLASS_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UNITCLASS_LIST.FormattingEnabled = true;
-            this.UNITCLASS_LIST.IntegralHeight = false;
-            this.UNITCLASS_LIST.ItemHeight = 18;
-            this.UNITCLASS_LIST.Location = new System.Drawing.Point(575, 39);
-            this.UNITCLASS_LIST.Margin = new System.Windows.Forms.Padding(4);
-            this.UNITCLASS_LIST.Name = "UNITCLASS_LIST";
-            this.UNITCLASS_LIST.Size = new System.Drawing.Size(401, 263);
-            this.UNITCLASS_LIST.TabIndex = 177;
-            this.UNITCLASS_LIST.SelectedIndexChanged += new System.EventHandler(this.CLASS_LIST_SelectedIndexChanged);
-            // 
-            // L_0_SPLITSTRING_2
-            // 
-            this.L_0_SPLITSTRING_2.ErrorMessage = "";
-            this.L_0_SPLITSTRING_2.Location = new System.Drawing.Point(135, 12);
-            this.L_0_SPLITSTRING_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_SPLITSTRING_2.Name = "L_0_SPLITSTRING_2";
-            this.L_0_SPLITSTRING_2.Placeholder = "";
-            this.L_0_SPLITSTRING_2.Size = new System.Drawing.Size(205, 25);
-            this.L_0_SPLITSTRING_2.TabIndex = 155;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(321, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
             // ImageUnitPaletteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2400,6 +2400,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIME)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B9)).EndInit();
@@ -2421,6 +2422,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AutoScrollPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_B_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_16)).EndInit();
@@ -2470,8 +2472,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }

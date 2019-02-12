@@ -269,9 +269,59 @@ namespace FEBuilderGBA
             return Program.ROM.u8(addr + 28);
         }
 
+        public static string ChcekTextItem1ErrorMessage(uint id,string text, uint type)
+        {
+            if (type <= 7 && type != 4)
+            {
+                if (text == "")
+                {
+                    if (Program.ROM.RomInfo.version() == 8)
+                    {//FE8では武器の名前を""にすると、耐久などが表示されない
+                        if (Program.ROM.RomInfo.is_multibyte())
+                        {
+                            return R._("アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。");
+                        }
+                        else
+                        {
+                            return R._("アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例: \" [.]\"");
+                        }
+                    }
+                }
+
+                string errormessage = TextForm.GetErrorMessage(text, "ITEM1");
+
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {//FE7Uにはバグがある
+                    if (id == 0x59 || id == 0x99)
+                    {//無視
+                        errormessage = "";
+                    }
+                }
+                return errormessage;
+            }
+            else
+            {
+                return TextForm.GetErrorMessage(text, "ITEM3");
+            }
+        }
+        public static string ChcekTextItem2ErrorMessage(uint id, string text, uint type)
+        {
+            return TextForm.GetErrorMessage(text, "ITEM3");
+        }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.AddressList.SelectedIndex > 0)
+            {
+                L_2_TEXT_ITEM1.ErrorMessage = ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
+                L_4_TEXT_ITEM2.ErrorMessage = ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
+            }
+            else
+            {
+                L_2_TEXT_ITEM1.ErrorMessage = "";
+                L_4_TEXT_ITEM2.ErrorMessage = "";
+            }
+
             if (P12.Value == 0 
                 && this.AddressList.SelectedIndex > 0)
             {
@@ -366,16 +416,30 @@ namespace FEBuilderGBA
                 uint name = Program.ROM.u16(item_addr + 0);
                 FELint.CheckText(name, "NAME1", errors, FELint.Type.ITEM, item_addr, i);
 
-                uint info = Program.ROM.u16(item_addr + 2);
-                FELint.CheckText(info, "DETAIL3", errors, FELint.Type.ITEM, item_addr, i);
-
-                uint info2 = Program.ROM.u16(item_addr + 4);
-                FELint.CheckText(info2, "DETAIL3", errors, FELint.Type.ITEM, item_addr, i);
-
                 uint id = Program.ROM.u8(item_addr + 6);
                 if (id == 0)
                 {//ただの使っていないデータ
                     continue;
+                }
+
+                if (i > 0)
+                {
+                    uint info = Program.ROM.u16(item_addr + 2);
+                    uint info2 = Program.ROM.u16(item_addr + 4);
+                    uint type = Program.ROM.u8(item_addr + 7);
+                    string errorMessage = ChcekTextItem1ErrorMessage(id , FETextDecode.Direct(info), type);
+                    if (errorMessage != "")
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
+                            , R._("TextID:{0}\r\n{1}", U.To0xHexString(info), errorMessage), i));
+                    }
+
+                    errorMessage = ChcekTextItem2ErrorMessage(id , FETextDecode.Direct(info2), type);
+                    if (errorMessage != "")
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
+                            , R._("TextID:{0}\r\n{1}", U.To0xHexString(info2), errorMessage), i));
+                    }
                 }
 
                 //武器攻撃範囲のチェック

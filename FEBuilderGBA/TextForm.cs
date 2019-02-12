@@ -2661,6 +2661,14 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, GetMaxSerifWidth(), 2 * 16, false);
             }
+            if (arg1 == "ITEM3")
+            {
+                return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
+            }
+            if (arg1 == "ITEM1")
+            {
+                return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
+            }
 
             if (arg1 == "CONVERSATION")
             {

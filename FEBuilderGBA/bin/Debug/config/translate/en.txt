@@ -5396,7 +5396,7 @@ Assign Skill by Unit
 Skill Config
 
 :ゲームオプションの順番
-Order of game options.
+Order of Game Option
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -11323,3 +11323,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:独立
+Independence
