@@ -1560,7 +1560,7 @@ namespace FEBuilderGBA
                 return false;
             }
             uint nextAddr = addr + (uint)code.Script.Size;
-            if (nextAddr + 0x8 >= Program.ROM.Data.Length)
+            if (nextAddr + 0x4 >= Program.ROM.Data.Length)
             {//ROM終端
                 return false;
             }
@@ -1568,7 +1568,11 @@ namespace FEBuilderGBA
             uint a2 = Program.ROM.u8(nextAddr + 1);
             uint a3 = Program.ROM.u8(nextAddr + 2);
             uint a4 = Program.ROM.u8(nextAddr + 3);
-            if (! (a1 == 0x20 && a2 == 0x08 && a3 == 0x09 && a4 == 0x00))
+//            if (! (a1 == 0x20 && a2 == 0x08 && a3 == 0x09 && a4 == 0x00))
+//            {//ダミー終端ではない
+//                return false;
+//            }
+            if (!(a1 == 0x20 && a2 == 0x08))
             {//ダミー終端ではない
                 return false;
             }

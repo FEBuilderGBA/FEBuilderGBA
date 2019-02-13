@@ -1635,8 +1635,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 //1 p- filename みたいなデータ
-                uint f = U.atoi(a);
-                totalframe += f;
+                totalframe += 3;
 
                 if (totalframe >= framesec)
                 {//ループマークを差し込む
@@ -2398,7 +2397,7 @@ namespace FEBuilderGBA
 
                     if (countLoopFrame != U.NOT_FOUND)
                     {//ループ処理が有効な場合、ループする秒を数える.
-                        countLoopFrame += frameSec;
+                        countLoopFrame += 3;
                     }
 
                     //p- filename
