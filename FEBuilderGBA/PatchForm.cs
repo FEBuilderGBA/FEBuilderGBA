@@ -3136,7 +3136,11 @@ namespace FEBuilderGBA
             int addaddr = 0;
             if (sp.Length > 3)
             {
-                if (sp[3][0] == '-')
+                if (sp[3] == "")
+                {
+                    addaddr = 0;
+                }
+                else if (sp[3][0] == '-')
                 {
                     addaddr = -1 * (int)U.atoi0x(sp[3].Substring(1));
                 }
