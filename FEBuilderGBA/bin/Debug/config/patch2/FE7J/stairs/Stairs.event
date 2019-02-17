@@ -1,7 +1,7 @@
 #include "Extensions/Hack Installation.txt"
 
-	//HINT=LYN_HOOK=0x18244
-	//HINT=LYN_HOOK=0x1C4D0
+	//HINT=LYN_HOOK=0x18634
+	//HINT=LYN_HOOK=0x1C8D4
 	ALIGN 4
 	#inctext lyn "Stairs.elf" "Hooks.elf"
 	ALIGN 4
@@ -9,20 +9,20 @@
 	SHORT 0x1302 //StairsBlockedText
 	
 	PUSH
-	ORG $2F250
+	ORG $2F71C
 	POIN RepointThatAction
-	ORG $2F284
+	ORG $2F750
 	POIN RepointThatAction
-	ORG $2F28C
+	ORG $2F758
 	POIN RepointThatAction
-	ORG $2F2A0
+	ORG $2F76C
 	POIN RepointThatAction
-	ORG $2F320 // GOOD FOR FE7
+	ORG $2F7EC // GOOD FOR FE7
 	SHORT 0xE7F8 // b #0x0802F314
-	ORG $2F314
+	ORG $2F7E0
 	jumpToHack(UnsetMoveDebuff)
 	
-	ORG $21580 // GOOD FOR FE7
+	ORG $219F8 // GOOD FOR FE7
 	jumpToHack(EndTurnFix)
 	POP
 

@@ -1221,7 +1221,6 @@
 08037DC8	AI_Compare_Allegiance_Func	Checks current unit's allegiance	RET=True if not on the same team	r0=allegiance byte of target	{J}
 08018D20	Get_Class_Data	RET=Pointer to entry in class data table	r0=class number	{J}
 08017664	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{J}
-080315BC	Get_Chapter_Events	RET=Pointer to that chapter's events	r0=chapter number	{J}
 08018124	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
 
 080178F8	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{J}
