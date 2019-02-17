@@ -3319,7 +3319,7 @@ r3=X tile position of menu of the right	{U}
 0803e698	UpdateUnitHealingAIStatus	{U}
 0803e878	GetEscapePointStructThingMaybe	{U}
 0803ec98	StoreItemAndGetUnitAttack	{U}
-08042e98	CheckSomethingSomewhere	{U}
+08042e98	CheckGameLinkArenaBit	{U}
 080450ac	NameSelect_DrawName	{U}
 08045c14	New6C_SIOMAIN2	{U}
 0804e078	LoadOldUIPal	{U}

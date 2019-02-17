@@ -1,0 +1,1 @@
+shinan_table=$30

@@ -799,6 +799,11 @@ namespace FEBuilderGBA
                 p.Length = U.TextBatchLength(U.toOffset(pointer), rom);
                 p.Name += " Count_" + ((p.Length) / 8);
             }
+            else if (type == "TEXTBATCHSHORT")
+            {
+                p.Length = U.TextBatchShortLength(U.toOffset(pointer), rom);
+                p.Name += " Count_" + ((p.Length) / 2);
+            }
             else if (type == "EVENT")
             {
                 p.Length = EventScript.SearchEveneLength(rom.Data, U.toOffset(pointer));

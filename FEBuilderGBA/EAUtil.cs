@@ -54,7 +54,7 @@ namespace FEBuilderGBA
             this.Filename = filename;
             this.Dir = Path.GetDirectoryName(filename);
             this.IfNDefList = new List<string>();
-
+       
             this.CurrentLabel = "";
             string[] lines = File.ReadAllLines(filename);
 
@@ -122,6 +122,7 @@ namespace FEBuilderGBA
             }
             return -1;
         }
+
         void ParseIfNDef(string line)
         {
             int pos = line.IndexOf("#ifndef", StringComparison.OrdinalIgnoreCase);
@@ -137,6 +138,7 @@ namespace FEBuilderGBA
             }
             IfNDefList.Add(ifdef_keyword);
         }
+
         void ParseJumpToHack(string line)
         {
             int pos = FindJumpToHack(line);

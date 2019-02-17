@@ -68,7 +68,7 @@ namespace FEBuilderGBA
         public uint image_chapter_title_pointer() { return 0x8ba0c; } // 章タイトルの開始位置
         public uint image_chapter_title_palette() { return 0xa99fa8; } // 章タイトルのパレット 多分違う
         public uint image_unit_palette_pointer() { return 0x5b6cc;  } // ユニットパレットの開始位置
-        public uint item_pointer() { return 0x161b8; } // アイテムの開始位置
+        public uint item_pointer() { return 0x17568; } // アイテムの開始位置
         public uint item_datasize() { return 36; } // アイテムのデータサイズ
         public uint item_effect_pointer() { return 0x7A664; } // アイテムエフェクトの開始位置
         public uint sound_table_pointer() { return 0xD5024; } // ソングテーブルの開始位置
@@ -368,6 +368,7 @@ namespace FEBuilderGBA
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
         public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0xE0B8; return 0xc1e7c; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x5E70; } //一般兵の顔 拡張
+        public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x225C4; } //階段拡張
         public byte[] defualt_event_script_term_code() { return new byte[] { 0x20, 0x01, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x28, 0x02, 0x07, 0x00, 0x20, 0x01, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_mapterm_code() { return new byte[] { 0x20, 0x01, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード

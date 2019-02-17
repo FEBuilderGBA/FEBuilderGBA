@@ -81,6 +81,7 @@ namespace FEBuilderGBA
             //イベント条件の指定を忘れる人が多いので、アイコンをつけて目立たせる.
             this.FilterComboBox.OwnerDraw(DrawFilterCombo, DrawMode.OwnerDrawFixed);
 
+            this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             InputFormRef.TabControlHideTabOption(CondTabControl);
 
             //マップIDリストを作る.
@@ -131,10 +132,21 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8.
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("11=制圧"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x11, ImageSystemIconForm.Throne()); //11=制圧
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("20=村の中心(盗賊のターゲット)"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x20, ImageSystemIconForm.VillageCenter()); //20=村の中心(盗賊のターゲット)
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("10=民家"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.House()); //10=民家
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("14=ランダム宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x14, ImageSystemIconForm.Chest()); //14=ランダム宝箱
+                if (InputFormRef.SearchStairsHackPatch())
+                {
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
+                }
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("0=--"));
+
 
                 OBJECT_N06_L_10_COMBO.AddIcon(0x20, ImageSystemIconForm.VillageCenter()); //20=村の中心(盗賊のターゲット)
                 OBJECT_N06_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.Village()); //10=民家
@@ -157,7 +169,6 @@ namespace FEBuilderGBA
 
             //FE7とFE6はイベントオブジェクトの種類のIDが違う.
             OBJECT_N05_L_10_COMBO.BeginUpdate();
-            OBJECT_N05_L_10_COMBO.Items.Clear();
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0F=制圧"));
             OBJECT_N05_L_10_COMBO.Items.Add(R._("1D=村の中心(盗賊のターゲット)"));
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0E=民家"));
@@ -170,6 +181,11 @@ namespace FEBuilderGBA
             {//FE6には、イベント付き宝箱がある
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("12=イベント付き宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Chest());
+            }
+            if (InputFormRef.SearchStairsHackPatch())
+            {
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
+                OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
             }
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0=不明"));
             OBJECT_N05_L_10_COMBO.EndUpdate();
@@ -978,6 +994,9 @@ namespace FEBuilderGBA
                         }
                         else if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfDoor))
                         {//FE6ではドアを指定してもいいらしい.
+                        }
+                        else if ((object_type == 0x22) && InputFormRef.SearchStairsHackPatch())
+                        {//階段拡張
                         }
                         else if (!(object_type == objectTypeOfSeize || object_type == objectTypeOfTownCenter || object_type == objectTypeOfHouse))
                         {
@@ -3396,6 +3415,12 @@ namespace FEBuilderGBA
                 }
             }
 
+            if (objecttype == 0x22 && type == 0x5)
+            {
+                out_bitmap = ImageSystemIconForm.Stairs();
+                return U.ToHexString(type) + ":" + R._("22=階段拡張");
+            }
+
             out_bitmap = ImageSystemIconForm.Cursol();
             return U.ToHexString(type) + ":" + U.ToHexString(objecttype) + "=" + "???";
         }
@@ -4166,5 +4191,20 @@ namespace FEBuilderGBA
             //イベントの関連アイコンを取得しなおしたい
             EventRelationIconsCache.Clear();
         }
+
+        private void OBJECT_N05_B10_ValueChanged(object sender, EventArgs e)
+        {
+            if (OBJECT_N05_B10.Value == 0x22)
+            {
+                OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
+                OBJECT_N05_L_2_FLAG.Hide();
+            }
+            else
+            {
+                OBJECT_N05_J_2_FLAG.Text = GetNameOfAchievementFlag();
+                OBJECT_N05_L_2_FLAG.Show();
+            }
+        }
+
     }
 }

@@ -753,9 +753,9 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<AIPerformStaffForm>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OPClassAlphaNameButton_Click(object sender, EventArgs e)
         {
-            //InputFormRef.JumpForm<ASMEditForm>();
+            InputFormRef.JumpForm<OPClassAlphaNameFE6Form>();
         }
     }
 }

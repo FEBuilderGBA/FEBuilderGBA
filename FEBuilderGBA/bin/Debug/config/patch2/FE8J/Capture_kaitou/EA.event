@@ -7,9 +7,9 @@
 */
 
 PUSH
-ORG	$5C5058 //移動後の呼魔つぶし。本来は召喚の位置
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
 	POIN	cap_word
-	SHORT	$060C $0661		//右の$0641がヘルプ
+	SHORT	$060C $0661		//右の$0661がヘルプ
 	SHORT	$4F00 0
 	POIN	Capture_Usability|1
 	WORD	0

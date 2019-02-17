@@ -1876,6 +1876,12 @@
     <Compile Include="StatusOptionOrderForm.Designer.cs">
       <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OPClassAlphaNameFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassAlphaNameFE6Form.Designer.cs">
+      <DependentUpon>OPClassAlphaNameFE6Form.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2775,6 +2781,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusOptionOrderForm.resx">
       <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassAlphaNameFE6Form.resx">
+      <DependentUpon>OPClassAlphaNameFE6Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1079,3 +1079,5 @@
 
 08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
 0801729c	GetItemWRank
+
+086905B0	&TEXTBATCHSHORT	クラス紹介テキスト

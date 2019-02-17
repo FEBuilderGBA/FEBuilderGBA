@@ -6,7 +6,7 @@
 ////////////
 
 PUSH
-ORG	0x5C51E4	//本来の闘技場
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
 
 POIN	join_moji
 SHORT	$061A $0646		//右がヘルプ指定

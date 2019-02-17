@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.FilterComboBox = new FEBuilderGBA.ComboBoxEx();
             this.label2 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.AddressPanel = new System.Windows.Forms.Panel();
@@ -44,16 +45,21 @@
             this.CondTabControl = new System.Windows.Forms.TabControl();
             this.tabPage0506070A0C = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.OBJECT_AddressList = new FEBuilderGBA.ListBoxEx();
             this.OBJECT_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.OBJECT_W0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
+            this.OBJECT_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.OBJECT_J_0 = new System.Windows.Forms.Label();
             this.OBJECT_UNIONTAB = new System.Windows.Forms.TabControl();
             this.OBJECT_UNIONTAB_N05 = new System.Windows.Forms.TabPage();
+            this.OBJECT_N05_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N05_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_N05_L_4_NEWALLOC_EVENTORCHEST = new System.Windows.Forms.Button();
             this.OBJECT_N05_B11 = new System.Windows.Forms.NumericUpDown();
             this.OBJECT_N05_J_11 = new System.Windows.Forms.Label();
+            this.OBJECT_N05_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.OBJECT_N05_B10 = new System.Windows.Forms.NumericUpDown();
             this.OBJECT_N05_J_10 = new System.Windows.Forms.Label();
             this.OBJECT_N05_W2 = new System.Windows.Forms.NumericUpDown();
@@ -65,6 +71,7 @@
             this.OBJECT_N05_J_2_FLAG = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.OBJECT_N05_L_8_MAPXY_9 = new System.Windows.Forms.Label();
+            this.OBJECT_N05_L_4_EVENTORCHEST = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_UNIONTAB_N06 = new System.Windows.Forms.TabPage();
             this.OBJECT_N06_L_4_NEWALLOC_EVENT1 = new System.Windows.Forms.Button();
             this.OBJECT_N06_B11 = new System.Windows.Forms.NumericUpDown();
@@ -80,6 +87,10 @@
             this.OBJECT_N06_J_2_FLAG = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
             this.OBJECT_N06_L_8_MAPXY_9 = new System.Windows.Forms.Label();
+            this.OBJECT_N06_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.OBJECT_N06_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N06_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N06_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_UNIONTAB_N07 = new System.Windows.Forms.TabPage();
             this.OBJECT_N07_J_5 = new System.Windows.Forms.Label();
             this.OBJECT_N07_B5 = new System.Windows.Forms.NumericUpDown();
@@ -99,6 +110,11 @@
             this.OBJECT_N07_J_2_FLAG = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.OBJECT_N07_L_8_MAPXY_9 = new System.Windows.Forms.Label();
+            this.OBJECT_N07_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.OBJECT_N07_L_4_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.OBJECT_N07_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N07_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N07_L_4_ITEM = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_UNIONTAB_N08 = new System.Windows.Forms.TabPage();
             this.OBJECT_N08_L_4_NEWALLOC_EVENT5 = new System.Windows.Forms.Button();
             this.OBJECT_N08_B11 = new System.Windows.Forms.NumericUpDown();
@@ -114,6 +130,10 @@
             this.OBJECT_N08_J_2_FLAG = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
             this.OBJECT_N08_L_8_MAPXY_9 = new System.Windows.Forms.Label();
+            this.OBJECT_N08_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.OBJECT_N08_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N08_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N08_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_UNIONTAB_N0A = new System.Windows.Forms.TabPage();
             this.OBJECT_N0A_L_4_NEWALLOC_ITEMSHOP = new System.Windows.Forms.Button();
             this.OBJECT_N0A_B11 = new System.Windows.Forms.NumericUpDown();
@@ -128,21 +148,31 @@
             this.OBJECT_N0A_B8 = new System.Windows.Forms.NumericUpDown();
             this.label81 = new System.Windows.Forms.Label();
             this.OBJECT_N0A_L_8_MAPXY_9 = new System.Windows.Forms.Label();
+            this.OBJECT_N0A_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.OBJECT_N0A_J_2_FLAG = new FEBuilderGBA.LabelEx();
+            this.OBJECT_N0A_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.OBJECT_N0A_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.OBJECT_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.OBJECT_WriteButton = new System.Windows.Forms.Button();
             this.OBJECT_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
+            this.OBJECT_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.tabPage03 = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
             this.TALK_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.TALK_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label74 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.TALK_W0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
+            this.TALK_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.TALK_J_0 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.TALK_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label75 = new System.Windows.Forms.Label();
+            this.TALK_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label76 = new System.Windows.Forms.Label();
             this.TALK_WriteButton = new System.Windows.Forms.Button();
             this.TALK_Address = new System.Windows.Forms.NumericUpDown();
@@ -150,15 +180,23 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.TALK_UNIONTAB = new System.Windows.Forms.TabControl();
             this.TALK_UNIONTAB_N03 = new System.Windows.Forms.TabPage();
+            this.TALK_N03_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N03_L_14_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N03_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.TALK_N03_L_4_NEWALLOC_EVENT4 = new System.Windows.Forms.Button();
+            this.TALK_N03_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.TALK_N03_J_9_UNIT = new System.Windows.Forms.Label();
+            this.TALK_N03_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.TALK_N03_J_8_UNIT = new System.Windows.Forms.Label();
             this.TALK_N03_W2 = new System.Windows.Forms.NumericUpDown();
+            this.TALK_N03_L_12_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.TALK_N03_P4 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N03_J_4_EVENT = new System.Windows.Forms.Label();
             this.TALK_N03_J_14_FLAG = new System.Windows.Forms.Label();
             this.TALK_N03_J_10 = new System.Windows.Forms.Label();
             this.TALK_N03_J_12 = new System.Windows.Forms.Label();
+            this.TALK_N03_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N03_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
             this.TALK_N03_W14 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N03_J_2_FLAG = new System.Windows.Forms.Label();
             this.TALK_N03_B11 = new System.Windows.Forms.NumericUpDown();
@@ -166,6 +204,7 @@
             this.TALK_N03_W12 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N03_B8 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N03_B9 = new System.Windows.Forms.NumericUpDown();
+            this.TALK_N03_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.TALK_UNIONTAB_N04 = new System.Windows.Forms.TabPage();
             this.TALK_N04_L_4_NEWALLOC_EVENT4 = new System.Windows.Forms.Button();
             this.TALK_N04_J_9_UNIT = new System.Windows.Forms.Label();
@@ -181,15 +220,27 @@
             this.TALK_N04_P12 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N04_B8 = new System.Windows.Forms.NumericUpDown();
             this.TALK_N04_B9 = new System.Windows.Forms.NumericUpDown();
+            this.TALK_N04_L_12_ASM = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N04_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N04_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N04_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.TALK_N04_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.TALK_N04_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.TALK_N04_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.tabPage03FE6 = new System.Windows.Forms.TabPage();
             this.panel30 = new System.Windows.Forms.Panel();
             this.TALKFE6_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.TALKFE6_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label10 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.TALKFE6_W0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
+            this.TALKFE6_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.label9 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
+            this.TALKFE6_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
+            this.TALKFE6_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label12 = new System.Windows.Forms.Label();
             this.TALKFE6_WriteButton = new System.Windows.Forms.Button();
             this.TALKFE6_Address = new System.Windows.Forms.NumericUpDown();
@@ -197,18 +248,25 @@
             this.panel32 = new System.Windows.Forms.Panel();
             this.TALKFE6_UNIONTAB = new System.Windows.Forms.TabControl();
             this.TALKFE6_UNIONTAB_N04 = new System.Windows.Forms.TabPage();
+            this.TALKFE6_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TALKFE6_N04_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.TALKFE6_N04_L_4_NEWALLOC_EVENT4 = new System.Windows.Forms.Button();
+            this.TALKFE6_N04_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.TALKFE6_N04_J_9_UNIT = new System.Windows.Forms.Label();
+            this.TALKFE6_N04_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.TALKFE6_N04_J_8_UNIT = new System.Windows.Forms.Label();
             this.TALKFE6_N04_W2 = new System.Windows.Forms.NumericUpDown();
             this.TALKFE6_N04_P4 = new System.Windows.Forms.NumericUpDown();
             this.TALKFE6_N04_J_4_EVENT = new System.Windows.Forms.Label();
             this.TALKFE6_N04_J_10 = new System.Windows.Forms.Label();
+            this.TALKFE6_N04_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.TALKFE6_N04_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
             this.TALKFE6_N04_J_2_FLAG = new System.Windows.Forms.Label();
             this.TALKFE6_N04_B11 = new System.Windows.Forms.NumericUpDown();
             this.TALKFE6_N04_B10 = new System.Windows.Forms.NumericUpDown();
             this.TALKFE6_N04_B8 = new System.Windows.Forms.NumericUpDown();
             this.TALKFE6_N04_B9 = new System.Windows.Forms.NumericUpDown();
+            this.TALKFE6_N04_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.TALKFE6_UNIONTAB_N0D = new System.Windows.Forms.TabPage();
             this.TALKFE6_N0D_L_4_NEWALLOC_EVENT4 = new System.Windows.Forms.Button();
             this.TALKFE6_N0D_W2 = new System.Windows.Forms.NumericUpDown();
@@ -217,14 +275,21 @@
             this.TALKFE6_N0D_J_8_ASM = new System.Windows.Forms.Label();
             this.TALKFE6_N0D_J_2_FLAG = new System.Windows.Forms.Label();
             this.TALKFE6_N0D_P8 = new System.Windows.Forms.NumericUpDown();
+            this.TALKFE6_N0D_L_8_ASM = new FEBuilderGBA.TextBoxEx();
+            this.TALKFE6_N0D_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TALKFE6_N0D_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.TALKFE6_N0D_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.tabPage02 = new System.Windows.Forms.TabPage();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.N02_11_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.N02_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.N02_L_4_NEWALLOC_EVENT3 = new System.Windows.Forms.Button();
             this.N02_B11 = new System.Windows.Forms.NumericUpDown();
             this.N02_J_9 = new System.Windows.Forms.Label();
             this.N02_J_11 = new System.Windows.Forms.Label();
             this.N02_B10 = new System.Windows.Forms.NumericUpDown();
             this.N02_J_2_FLAG = new System.Windows.Forms.Label();
+            this.N02_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.N02_J_10 = new System.Windows.Forms.Label();
             this.N02_J_4_EVENT = new System.Windows.Forms.Label();
             this.N02_B9 = new System.Windows.Forms.NumericUpDown();
@@ -232,14 +297,19 @@
             this.N02_W2 = new System.Windows.Forms.NumericUpDown();
             this.N02_J_8 = new System.Windows.Forms.Label();
             this.N02_B8 = new System.Windows.Forms.NumericUpDown();
+            this.N02_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.panel6 = new System.Windows.Forms.Panel();
             this.N02_W0 = new System.Windows.Forms.NumericUpDown();
+            this.N02_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.N02_J_0 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.N02_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N02_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label14 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.N02_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
+            this.N02_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label64 = new System.Windows.Forms.Label();
             this.N02_WriteButton = new System.Windows.Forms.Button();
             this.N02_Address = new System.Windows.Forms.NumericUpDown();
@@ -247,8 +317,12 @@
             this.tabPage02FE7 = new System.Windows.Forms.TabPage();
             this.panel28 = new System.Windows.Forms.Panel();
             this.NFE702_W0 = new System.Windows.Forms.NumericUpDown();
+            this.NFE702_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.NFE702_J_0 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.NFE702_12_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.NFE702_L_12_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.NFE702_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.NFE702_L_4_NEWALLOC_EVENT3 = new System.Windows.Forms.Button();
             this.NFE702_D12 = new System.Windows.Forms.NumericUpDown();
             this.NFE702_J_12 = new System.Windows.Forms.Label();
@@ -257,6 +331,7 @@
             this.NFE702_J_11 = new System.Windows.Forms.Label();
             this.NFE702_B10 = new System.Windows.Forms.NumericUpDown();
             this.NFE702_J_2_FLAG = new System.Windows.Forms.Label();
+            this.NFE702_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.NFE702_J_10 = new System.Windows.Forms.Label();
             this.NFE702_J_4_EVENT = new System.Windows.Forms.Label();
             this.NFE702_B9 = new System.Windows.Forms.NumericUpDown();
@@ -264,11 +339,15 @@
             this.NFE702_W2 = new System.Windows.Forms.NumericUpDown();
             this.NFE702_J_8 = new System.Windows.Forms.Label();
             this.NFE702_B8 = new System.Windows.Forms.NumericUpDown();
+            this.NFE702_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.panel15 = new System.Windows.Forms.Panel();
             this.NFE702_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.NFE702_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.NFE702_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
+            this.NFE702_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label7 = new System.Windows.Forms.Label();
             this.NFE702_WriteButton = new System.Windows.Forms.Button();
             this.NFE702_Address = new System.Windows.Forms.NumericUpDown();
@@ -277,18 +356,24 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ALWAYS_W0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
+            this.ALWAYS_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.ALWAYS_J_0 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.ALWAYS_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label5 = new System.Windows.Forms.Label();
+            this.ALWAYS_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.ALWAYS_WriteButton = new System.Windows.Forms.Button();
             this.ALWAYS_Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.Panel123 = new System.Windows.Forms.Panel();
+            this.ALWAYS_AddressList = new FEBuilderGBA.ListBoxEx();
             this.ALWAYS_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.label63 = new System.Windows.Forms.Label();
             this.ALWAYS_UNIONTAB = new System.Windows.Forms.TabControl();
             this.ALWAYS_UNIONTAB_N0B = new System.Windows.Forms.TabPage();
+            this.ALWAYS_N0B_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0B_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
             this.ALWAYS_N0B_L_4_NEWALLOC_EVENT2 = new System.Windows.Forms.Button();
             this.ALWAYS_N0B_B2 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0B_P4 = new System.Windows.Forms.NumericUpDown();
@@ -304,6 +389,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.ALWAYS_N0B_B9 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0B_B8 = new System.Windows.Forms.NumericUpDown();
+            this.ALWAYS_N0B_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.ALWAYS_UNIONTAB_N01 = new System.Windows.Forms.TabPage();
             this.ALWAYS_N01_L_4_NEWALLOC_EVENT5 = new System.Windows.Forms.Button();
             this.ALWAYS_N01_B11 = new System.Windows.Forms.NumericUpDown();
@@ -315,6 +401,10 @@
             this.ALWAYS_N01_W8 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_P4 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_J_4_EVENT = new System.Windows.Forms.Label();
+            this.ALWAYS_N01_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N01_L_8_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N01_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N01_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.ALWAYS_UNIONTAB_N0E = new System.Windows.Forms.TabPage();
             this.ALWAYS_N0E_L_4_NEWALLOC_EVENT5 = new System.Windows.Forms.Button();
             this.ALWAYS_N0E_W2 = new System.Windows.Forms.NumericUpDown();
@@ -323,6 +413,10 @@
             this.ALWAYS_N0E_P8 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0E_P4 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0E_J_4_EVENT = new System.Windows.Forms.Label();
+            this.ALWAYS_N0E_L_8_ASM = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0E_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0E_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0E_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.ALWAYS_UNIONTAB_N0D = new System.Windows.Forms.TabPage();
             this.ALWAYS_N0D_W2 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0D_J_2_FLAG = new System.Windows.Forms.Label();
@@ -331,15 +425,23 @@
             this.ALWAYS_N0D_P4 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N0D_J_4_EVENT = new System.Windows.Forms.Label();
             this.ALWAYS_N0D_L_4_NEWALLOC_EVENT5 = new System.Windows.Forms.Button();
+            this.ALWAYS_N0D_L_8_ASM = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0D_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0D_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
+            this.ALWAYS_N0D_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
             this.tabPage01040C = new System.Windows.Forms.TabPage();
             this.panel26 = new System.Windows.Forms.Panel();
             this.TRAP_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.TRAP_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label129 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.TRAP_B0_UNIONKEY = new System.Windows.Forms.NumericUpDown();
+            this.TRAP_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.TRAP_J_0 = new System.Windows.Forms.Label();
             this.TRAP_UNIONTAB = new System.Windows.Forms.TabControl();
             this.TRAP_UNIONTAB_N01 = new System.Windows.Forms.TabPage();
+            this.TRAP_N01_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TRAP_N01_L_3_COMBO = new FEBuilderGBA.ComboBoxEx();
             this.TRAP_N01_L_1_MAPXY_2 = new System.Windows.Forms.Label();
             this.TRAP_N01_B3 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N01_J_4 = new System.Windows.Forms.Label();
@@ -362,6 +464,7 @@
             this.TRAP_N04_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N04_B1 = new System.Windows.Forms.NumericUpDown();
             this.label124 = new System.Windows.Forms.Label();
+            this.TRAP_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TRAP_UNIONTAB_N05 = new System.Windows.Forms.TabPage();
             this.TRAP_N05_J_5 = new System.Windows.Forms.Label();
             this.TRAP_N05_L_1_MAPXY_2 = new System.Windows.Forms.Label();
@@ -374,6 +477,8 @@
             this.TRAP_N05_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N05_B1 = new System.Windows.Forms.NumericUpDown();
             this.label25 = new System.Windows.Forms.Label();
+            this.TRAP_N05_L_3_COMBO = new FEBuilderGBA.ComboBoxEx();
+            this.TRAP_N05_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TRAP_UNIONTAB_N07 = new System.Windows.Forms.TabPage();
             this.TRAP_N07_J_5 = new System.Windows.Forms.Label();
             this.TRAP_N07_L_1_MAPXY_2 = new System.Windows.Forms.Label();
@@ -386,6 +491,7 @@
             this.TRAP_N07_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N07_B1 = new System.Windows.Forms.NumericUpDown();
             this.label30 = new System.Windows.Forms.Label();
+            this.TRAP_N07_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TRAP_UNIONTAB_N0C = new System.Windows.Forms.TabPage();
             this.TRAP_N0C_J_4 = new System.Windows.Forms.Label();
             this.TRAP_N0C_L_1_MAPXY_2 = new System.Windows.Forms.Label();
@@ -398,6 +504,7 @@
             this.TRAP_N0C_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N0C_B1 = new System.Windows.Forms.NumericUpDown();
             this.label140 = new System.Windows.Forms.Label();
+            this.TRAP_N0C_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TRAP_UNIONTAB_N08 = new System.Windows.Forms.TabPage();
             this.TRAP_N08_J_5 = new System.Windows.Forms.Label();
             this.TRAP_N08_L_1_MAPXY_2 = new System.Windows.Forms.Label();
@@ -410,6 +517,7 @@
             this.TRAP_N08_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N08_B1 = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
+            this.TRAP_N08_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TRAP_UNIONTAB_N0B = new System.Windows.Forms.TabPage();
             this.TRAP_N0B_J_5 = new System.Windows.Forms.Label();
             this.TRAP_N0B_L_1_MAPXY_2 = new System.Windows.Forms.Label();
@@ -422,27 +530,49 @@
             this.TRAP_N0B_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N0B_B1 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
+            this.TRAP_N0B_EXPLAIN = new FEBuilderGBA.TextBoxEx();
+            this.TRAP_UNIONTAB_N06 = new System.Windows.Forms.TabPage();
+            this.TRAP_N06_L_1_MAPXY_2 = new System.Windows.Forms.Label();
+            this.TRAP_N06_B3 = new System.Windows.Forms.NumericUpDown();
+            this.TRAP_N06_J_4_TEXT = new System.Windows.Forms.Label();
+            this.TRAP_N06_J_3 = new System.Windows.Forms.Label();
+            this.TRAP_N06_W4 = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.TRAP_N06_B2 = new System.Windows.Forms.NumericUpDown();
+            this.TRAP_N06_B1 = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
+            this.TRAP_N06_L_4_TEXT = new FEBuilderGBA.TextBoxEx();
+            this.TRAP_N06_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.panel27 = new System.Windows.Forms.Panel();
+            this.TRAP_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label130 = new System.Windows.Forms.Label();
+            this.TRAP_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label131 = new System.Windows.Forms.Label();
             this.TRAP_WriteButton = new System.Windows.Forms.Button();
             this.TRAP_Address = new System.Windows.Forms.NumericUpDown();
             this.label132 = new System.Windows.Forms.Label();
             this.tabPage1819 = new System.Windows.Forms.TabPage();
             this.Jump_TO_EventScript = new System.Windows.Forms.Label();
+            this.EXPLAIN_EVENT = new FEBuilderGBA.TextBoxEx();
             this.tabPage1011121314151617 = new System.Windows.Forms.TabPage();
             this.Jump_TO_EventUnit = new System.Windows.Forms.Label();
+            this.EXPLAIN_PLACER = new FEBuilderGBA.TextBoxEx();
             this.tabPageNOP = new System.Windows.Forms.TabPage();
             this.tabPageTutorial = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TUTORIAL_EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.TUTORIAL_L_0_NEWALLOC_EVENT = new System.Windows.Forms.Button();
             this.TUTORIAL_P0 = new System.Windows.Forms.NumericUpDown();
             this.TUTORIAL_J_0_EVENT = new System.Windows.Forms.Label();
+            this.TUTORIAL_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
             this.panel8 = new System.Windows.Forms.Panel();
             this.TUTORIAL_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.TUTORIAL_AddressList = new FEBuilderGBA.ListBoxEx();
             this.label60 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.TUTORIAL_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label61 = new System.Windows.Forms.Label();
+            this.TUTORIAL_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label71 = new System.Windows.Forms.Label();
             this.TUTORIAL_WriteButton = new System.Windows.Forms.Button();
             this.TUTORIAL_Address = new System.Windows.Forms.NumericUpDown();
@@ -450,6 +580,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.numericUpDown53 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox4 = new FEBuilderGBA.ComboBoxEx();
             this.numericUpDown61 = new System.Windows.Forms.NumericUpDown();
             this.label54 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
@@ -465,140 +596,9 @@
             this.label55 = new System.Windows.Forms.Label();
             this.numericUpDown59 = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label62 = new System.Windows.Forms.Label();
-            this.TRAP_UNIONTAB_N06 = new System.Windows.Forms.TabPage();
-            this.TRAP_N06_L_1_MAPXY_2 = new System.Windows.Forms.Label();
-            this.TRAP_N06_B3 = new System.Windows.Forms.NumericUpDown();
-            this.TRAP_N06_J_4_TEXT = new System.Windows.Forms.Label();
-            this.TRAP_N06_J_3 = new System.Windows.Forms.Label();
-            this.TRAP_N06_W4 = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.TRAP_N06_B2 = new System.Windows.Forms.NumericUpDown();
-            this.TRAP_N06_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.OBJECT_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.OBJECT_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N05_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N05_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N05_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N05_L_4_EVENTORCHEST = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N06_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N06_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N06_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N06_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N07_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N07_L_4_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.OBJECT_N07_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N07_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N07_L_4_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N08_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N08_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N08_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N08_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N0A_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.OBJECT_N0A_J_2_FLAG = new FEBuilderGBA.LabelEx();
-            this.OBJECT_N0A_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_N0A_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.OBJECT_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.TALK_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.TALK_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TALK_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.TALK_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_L_14_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALK_N03_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALK_N03_L_12_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TALK_N03_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N03_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_L_12_ASM = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALK_N04_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALK_N04_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALK_N04_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.TALKFE6_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TALKFE6_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N04_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N04_L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALKFE6_N04_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALKFE6_N04_L_9_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N04_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N04_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N0D_L_8_ASM = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N0D_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N0D_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.TALKFE6_N0D_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.N02_11_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.N02_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.N02_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.N02_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.N02_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.N02_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.N02_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N02_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.NFE702_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.NFE702_12_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.NFE702_L_12_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.NFE702_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.NFE702_L_10_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.NFE702_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.NFE702_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.NFE702_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.NFE702_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.ALWAYS_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.ALWAYS_N0B_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0B_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0B_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N01_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N01_L_8_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N01_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N01_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0E_L_8_ASM = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0E_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0E_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0E_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0D_L_8_ASM = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0D_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0D_L_2_FLAG = new FEBuilderGBA.TextBoxEx();
-            this.ALWAYS_N0D_L_4_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.TRAP_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TRAP_N01_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N01_L_3_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TRAP_N04_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N05_L_3_COMBO = new FEBuilderGBA.ComboBoxEx();
-            this.TRAP_N05_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N07_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N0C_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N08_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N0B_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N06_L_4_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_N06_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.TRAP_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.EXPLAIN_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.EXPLAIN_PLACER = new FEBuilderGBA.TextBoxEx();
-            this.TUTORIAL_EXPLAIN = new FEBuilderGBA.TextBoxEx();
-            this.TUTORIAL_L_0_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.TUTORIAL_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.TUTORIAL_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.TUTORIAL_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.comboBox4 = new FEBuilderGBA.ComboBoxEx();
             this.MAP_LISTBOX = new FEBuilderGBA.ListBoxEx();
-            this.FilterComboBox = new FEBuilderGBA.ComboBoxEx();
+            this.label62 = new System.Windows.Forms.Label();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.X_MAP_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -635,6 +635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).BeginInit();
             this.OBJECT_UNIONTAB_N08.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_B11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_B10)).BeginInit();
@@ -660,6 +661,8 @@
             this.panel12.SuspendLayout();
             this.TALK_UNIONTAB.SuspendLayout();
             this.TALK_UNIONTAB_N03.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_W14)).BeginInit();
@@ -676,6 +679,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_P12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_B8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_B9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_9_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_8_UNITICON)).BeginInit();
             this.tabPage03FE6.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel29.SuspendLayout();
@@ -685,6 +690,8 @@
             this.panel32.SuspendLayout();
             this.TALKFE6_UNIONTAB.SuspendLayout();
             this.TALKFE6_UNIONTAB_N04.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_9_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_8_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_B11)).BeginInit();
@@ -798,6 +805,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B1)).BeginInit();
+            this.TRAP_UNIONTAB_N06.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).BeginInit();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_Address)).BeginInit();
             this.tabPage1819.SuspendLayout();
@@ -818,18 +830,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown59)).BeginInit();
             this.panel14.SuspendLayout();
-            this.TRAP_UNIONTAB_N06.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_9_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_8_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_9_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_8_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_MAP_PIC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -870,6 +870,18 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(114, 25);
             this.ReadStartAddress.TabIndex = 52;
+            // 
+            // FilterComboBox
+            // 
+            this.FilterComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FilterComboBox.FormattingEnabled = true;
+            this.FilterComboBox.Location = new System.Drawing.Point(234, -2);
+            this.FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.FilterComboBox.Name = "FilterComboBox";
+            this.FilterComboBox.Size = new System.Drawing.Size(1038, 26);
+            this.FilterComboBox.TabIndex = 50;
+            this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -1032,6 +1044,20 @@
             this.panel22.Size = new System.Drawing.Size(238, 841);
             this.panel22.TabIndex = 191;
             // 
+            // OBJECT_AddressList
+            // 
+            this.OBJECT_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OBJECT_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.OBJECT_AddressList.FormattingEnabled = true;
+            this.OBJECT_AddressList.IntegralHeight = false;
+            this.OBJECT_AddressList.ItemHeight = 30;
+            this.OBJECT_AddressList.Location = new System.Drawing.Point(-1, 30);
+            this.OBJECT_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.OBJECT_AddressList.Name = "OBJECT_AddressList";
+            this.OBJECT_AddressList.Size = new System.Drawing.Size(238, 754);
+            this.OBJECT_AddressList.TabIndex = 109;
+            this.OBJECT_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
+            // 
             // OBJECT_AddressListExpandsButton
             // 
             this.OBJECT_AddressListExpandsButton.Location = new System.Drawing.Point(1, 807);
@@ -1079,6 +1105,23 @@
             this.OBJECT_W0_UNIONKEY.Name = "OBJECT_W0_UNIONKEY";
             this.OBJECT_W0_UNIONKEY.Size = new System.Drawing.Size(67, 25);
             this.OBJECT_W0_UNIONKEY.TabIndex = 142;
+            // 
+            // OBJECT_L_0_COMBO
+            // 
+            this.OBJECT_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_L_0_COMBO.FormattingEnabled = true;
+            this.OBJECT_L_0_COMBO.Items.AddRange(new object[] {
+            "00=-",
+            "05=制圧ポイントと民家",
+            "06=訪問村",
+            "07=宝箱",
+            "08=扉",
+            "0A=店"});
+            this.OBJECT_L_0_COMBO.Location = new System.Drawing.Point(275, 5);
+            this.OBJECT_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_L_0_COMBO.Name = "OBJECT_L_0_COMBO";
+            this.OBJECT_L_0_COMBO.Size = new System.Drawing.Size(306, 26);
+            this.OBJECT_L_0_COMBO.TabIndex = 49;
             // 
             // OBJECT_J_0
             // 
@@ -1134,6 +1177,29 @@
             this.OBJECT_UNIONTAB_N05.TabIndex = 2;
             this.OBJECT_UNIONTAB_N05.Text = "制圧ポイントと民家";
             // 
+            // OBJECT_N05_EXPLAIN
+            // 
+            this.OBJECT_N05_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N05_EXPLAIN.Location = new System.Drawing.Point(9, 229);
+            this.OBJECT_N05_EXPLAIN.Multiline = true;
+            this.OBJECT_N05_EXPLAIN.Name = "OBJECT_N05_EXPLAIN";
+            this.OBJECT_N05_EXPLAIN.Placeholder = "";
+            this.OBJECT_N05_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N05_EXPLAIN.Size = new System.Drawing.Size(575, 459);
+            this.OBJECT_N05_EXPLAIN.TabIndex = 242;
+            this.OBJECT_N05_EXPLAIN.Text = resources.GetString("OBJECT_N05_EXPLAIN.Text");
+            // 
+            // OBJECT_N05_L_2_FLAG
+            // 
+            this.OBJECT_N05_L_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N05_L_2_FLAG.Location = new System.Drawing.Point(273, 14);
+            this.OBJECT_N05_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N05_L_2_FLAG.Name = "OBJECT_N05_L_2_FLAG";
+            this.OBJECT_N05_L_2_FLAG.Placeholder = "";
+            this.OBJECT_N05_L_2_FLAG.ReadOnly = true;
+            this.OBJECT_N05_L_2_FLAG.Size = new System.Drawing.Size(310, 25);
+            this.OBJECT_N05_L_2_FLAG.TabIndex = 222;
+            // 
             // OBJECT_N05_L_4_NEWALLOC_EVENTORCHEST
             // 
             this.OBJECT_N05_L_4_NEWALLOC_EVENTORCHEST.Location = new System.Drawing.Point(332, 48);
@@ -1168,6 +1234,16 @@
             this.OBJECT_N05_J_11.Text = "??";
             this.OBJECT_N05_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // OBJECT_N05_L_10_COMBO
+            // 
+            this.OBJECT_N05_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_N05_L_10_COMBO.FormattingEnabled = true;
+            this.OBJECT_N05_L_10_COMBO.Location = new System.Drawing.Point(273, 116);
+            this.OBJECT_N05_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N05_L_10_COMBO.Name = "OBJECT_N05_L_10_COMBO";
+            this.OBJECT_N05_L_10_COMBO.Size = new System.Drawing.Size(310, 26);
+            this.OBJECT_N05_L_10_COMBO.TabIndex = 217;
+            // 
             // OBJECT_N05_B10
             // 
             this.OBJECT_N05_B10.Hexadecimal = true;
@@ -1181,6 +1257,7 @@
             this.OBJECT_N05_B10.Name = "OBJECT_N05_B10";
             this.OBJECT_N05_B10.Size = new System.Drawing.Size(67, 25);
             this.OBJECT_N05_B10.TabIndex = 216;
+            this.OBJECT_N05_B10.ValueChanged += new System.EventHandler(this.OBJECT_N05_B10_ValueChanged);
             // 
             // OBJECT_N05_J_10
             // 
@@ -1293,6 +1370,18 @@
             this.OBJECT_N05_L_8_MAPXY_9.TabIndex = 208;
             this.OBJECT_N05_L_8_MAPXY_9.Text = "座標";
             this.OBJECT_N05_L_8_MAPXY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N05_L_4_EVENTORCHEST
+            // 
+            this.OBJECT_N05_L_4_EVENTORCHEST.ErrorMessage = "";
+            this.OBJECT_N05_L_4_EVENTORCHEST.Location = new System.Drawing.Point(336, 49);
+            this.OBJECT_N05_L_4_EVENTORCHEST.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N05_L_4_EVENTORCHEST.Name = "OBJECT_N05_L_4_EVENTORCHEST";
+            this.OBJECT_N05_L_4_EVENTORCHEST.Placeholder = "";
+            this.OBJECT_N05_L_4_EVENTORCHEST.ReadOnly = true;
+            this.OBJECT_N05_L_4_EVENTORCHEST.Size = new System.Drawing.Size(247, 25);
+            this.OBJECT_N05_L_4_EVENTORCHEST.TabIndex = 243;
+            this.OBJECT_N05_L_4_EVENTORCHEST.Visible = false;
             // 
             // OBJECT_UNIONTAB_N06
             // 
@@ -1481,6 +1570,55 @@
             this.OBJECT_N06_L_8_MAPXY_9.TabIndex = 226;
             this.OBJECT_N06_L_8_MAPXY_9.Text = "座標";
             this.OBJECT_N06_L_8_MAPXY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N06_L_10_COMBO
+            // 
+            this.OBJECT_N06_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_N06_L_10_COMBO.FormattingEnabled = true;
+            this.OBJECT_N06_L_10_COMBO.Items.AddRange(new object[] {
+            "20=村の中心(盗賊のターゲット)",
+            "10=民家",
+            "0=--"});
+            this.OBJECT_N06_L_10_COMBO.Location = new System.Drawing.Point(273, 116);
+            this.OBJECT_N06_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N06_L_10_COMBO.Name = "OBJECT_N06_L_10_COMBO";
+            this.OBJECT_N06_L_10_COMBO.Size = new System.Drawing.Size(302, 26);
+            this.OBJECT_N06_L_10_COMBO.TabIndex = 235;
+            // 
+            // OBJECT_N06_EXPLAIN
+            // 
+            this.OBJECT_N06_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N06_EXPLAIN.Location = new System.Drawing.Point(9, 229);
+            this.OBJECT_N06_EXPLAIN.Multiline = true;
+            this.OBJECT_N06_EXPLAIN.Name = "OBJECT_N06_EXPLAIN";
+            this.OBJECT_N06_EXPLAIN.Placeholder = "";
+            this.OBJECT_N06_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N06_EXPLAIN.Size = new System.Drawing.Size(575, 459);
+            this.OBJECT_N06_EXPLAIN.TabIndex = 243;
+            this.OBJECT_N06_EXPLAIN.Text = resources.GetString("OBJECT_N06_EXPLAIN.Text");
+            // 
+            // OBJECT_N06_L_2_FLAG
+            // 
+            this.OBJECT_N06_L_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N06_L_2_FLAG.Location = new System.Drawing.Point(273, 16);
+            this.OBJECT_N06_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N06_L_2_FLAG.Name = "OBJECT_N06_L_2_FLAG";
+            this.OBJECT_N06_L_2_FLAG.Placeholder = "";
+            this.OBJECT_N06_L_2_FLAG.ReadOnly = true;
+            this.OBJECT_N06_L_2_FLAG.Size = new System.Drawing.Size(303, 25);
+            this.OBJECT_N06_L_2_FLAG.TabIndex = 240;
+            // 
+            // OBJECT_N06_L_4_EVENT
+            // 
+            this.OBJECT_N06_L_4_EVENT.ErrorMessage = "";
+            this.OBJECT_N06_L_4_EVENT.Location = new System.Drawing.Point(338, 49);
+            this.OBJECT_N06_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N06_L_4_EVENT.Name = "OBJECT_N06_L_4_EVENT";
+            this.OBJECT_N06_L_4_EVENT.Placeholder = "";
+            this.OBJECT_N06_L_4_EVENT.ReadOnly = true;
+            this.OBJECT_N06_L_4_EVENT.Size = new System.Drawing.Size(238, 25);
+            this.OBJECT_N06_L_4_EVENT.TabIndex = 244;
+            this.OBJECT_N06_L_4_EVENT.Visible = false;
             // 
             // OBJECT_UNIONTAB_N07
             // 
@@ -1726,6 +1864,65 @@
             this.OBJECT_N07_L_8_MAPXY_9.Text = "座標";
             this.OBJECT_N07_L_8_MAPXY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // OBJECT_N07_L_10_COMBO
+            // 
+            this.OBJECT_N07_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_N07_L_10_COMBO.FormattingEnabled = true;
+            this.OBJECT_N07_L_10_COMBO.Items.AddRange(new object[] {
+            "14=宝箱",
+            "0=--"});
+            this.OBJECT_N07_L_10_COMBO.Location = new System.Drawing.Point(278, 146);
+            this.OBJECT_N07_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N07_L_10_COMBO.Name = "OBJECT_N07_L_10_COMBO";
+            this.OBJECT_N07_L_10_COMBO.Size = new System.Drawing.Size(290, 26);
+            this.OBJECT_N07_L_10_COMBO.TabIndex = 198;
+            // 
+            // OBJECT_N07_L_4_ITEMICON
+            // 
+            this.OBJECT_N07_L_4_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.OBJECT_N07_L_4_ITEMICON.Location = new System.Drawing.Point(540, 47);
+            this.OBJECT_N07_L_4_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.OBJECT_N07_L_4_ITEMICON.Name = "OBJECT_N07_L_4_ITEMICON";
+            this.OBJECT_N07_L_4_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.OBJECT_N07_L_4_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.OBJECT_N07_L_4_ITEMICON.TabIndex = 245;
+            this.OBJECT_N07_L_4_ITEMICON.TabStop = false;
+            // 
+            // OBJECT_N07_EXPLAIN
+            // 
+            this.OBJECT_N07_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N07_EXPLAIN.Location = new System.Drawing.Point(9, 233);
+            this.OBJECT_N07_EXPLAIN.Multiline = true;
+            this.OBJECT_N07_EXPLAIN.Name = "OBJECT_N07_EXPLAIN";
+            this.OBJECT_N07_EXPLAIN.Placeholder = "";
+            this.OBJECT_N07_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N07_EXPLAIN.Size = new System.Drawing.Size(575, 449);
+            this.OBJECT_N07_EXPLAIN.TabIndex = 244;
+            this.OBJECT_N07_EXPLAIN.Text = "宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており" +
+    "、この「マップ変化」で空箱になります。";
+            // 
+            // OBJECT_N07_L_2_FLAG
+            // 
+            this.OBJECT_N07_L_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N07_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
+            this.OBJECT_N07_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N07_L_2_FLAG.Name = "OBJECT_N07_L_2_FLAG";
+            this.OBJECT_N07_L_2_FLAG.Placeholder = "";
+            this.OBJECT_N07_L_2_FLAG.ReadOnly = true;
+            this.OBJECT_N07_L_2_FLAG.Size = new System.Drawing.Size(299, 25);
+            this.OBJECT_N07_L_2_FLAG.TabIndex = 241;
+            // 
+            // OBJECT_N07_L_4_ITEM
+            // 
+            this.OBJECT_N07_L_4_ITEM.ErrorMessage = "";
+            this.OBJECT_N07_L_4_ITEM.Location = new System.Drawing.Point(314, 51);
+            this.OBJECT_N07_L_4_ITEM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N07_L_4_ITEM.Name = "OBJECT_N07_L_4_ITEM";
+            this.OBJECT_N07_L_4_ITEM.Placeholder = "";
+            this.OBJECT_N07_L_4_ITEM.ReadOnly = true;
+            this.OBJECT_N07_L_4_ITEM.Size = new System.Drawing.Size(219, 25);
+            this.OBJECT_N07_L_4_ITEM.TabIndex = 201;
+            // 
             // OBJECT_UNIONTAB_N08
             // 
             this.OBJECT_UNIONTAB_N08.BackColor = System.Drawing.SystemColors.Control;
@@ -1914,6 +2111,55 @@
             this.OBJECT_N08_L_8_MAPXY_9.Text = "座標";
             this.OBJECT_N08_L_8_MAPXY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // OBJECT_N08_L_10_COMBO
+            // 
+            this.OBJECT_N08_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_N08_L_10_COMBO.FormattingEnabled = true;
+            this.OBJECT_N08_L_10_COMBO.Items.AddRange(new object[] {
+            "12=扉",
+            "0=--"});
+            this.OBJECT_N08_L_10_COMBO.Location = new System.Drawing.Point(277, 114);
+            this.OBJECT_N08_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N08_L_10_COMBO.Name = "OBJECT_N08_L_10_COMBO";
+            this.OBJECT_N08_L_10_COMBO.Size = new System.Drawing.Size(294, 26);
+            this.OBJECT_N08_L_10_COMBO.TabIndex = 235;
+            // 
+            // OBJECT_N08_EXPLAIN
+            // 
+            this.OBJECT_N08_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N08_EXPLAIN.Location = new System.Drawing.Point(9, 229);
+            this.OBJECT_N08_EXPLAIN.Multiline = true;
+            this.OBJECT_N08_EXPLAIN.Name = "OBJECT_N08_EXPLAIN";
+            this.OBJECT_N08_EXPLAIN.Placeholder = "";
+            this.OBJECT_N08_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N08_EXPLAIN.Size = new System.Drawing.Size(575, 459);
+            this.OBJECT_N08_EXPLAIN.TabIndex = 245;
+            this.OBJECT_N08_EXPLAIN.Text = "扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であ" +
+    "れば、0x01の何もしないダミーイベントを設定してください。";
+            // 
+            // OBJECT_N08_L_2_FLAG
+            // 
+            this.OBJECT_N08_L_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N08_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
+            this.OBJECT_N08_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N08_L_2_FLAG.Name = "OBJECT_N08_L_2_FLAG";
+            this.OBJECT_N08_L_2_FLAG.Placeholder = "";
+            this.OBJECT_N08_L_2_FLAG.ReadOnly = true;
+            this.OBJECT_N08_L_2_FLAG.Size = new System.Drawing.Size(301, 25);
+            this.OBJECT_N08_L_2_FLAG.TabIndex = 242;
+            // 
+            // OBJECT_N08_L_4_EVENT
+            // 
+            this.OBJECT_N08_L_4_EVENT.ErrorMessage = "";
+            this.OBJECT_N08_L_4_EVENT.Location = new System.Drawing.Point(333, 48);
+            this.OBJECT_N08_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N08_L_4_EVENT.Name = "OBJECT_N08_L_4_EVENT";
+            this.OBJECT_N08_L_4_EVENT.Placeholder = "";
+            this.OBJECT_N08_L_4_EVENT.ReadOnly = true;
+            this.OBJECT_N08_L_4_EVENT.Size = new System.Drawing.Size(245, 25);
+            this.OBJECT_N08_L_4_EVENT.TabIndex = 246;
+            this.OBJECT_N08_L_4_EVENT.Visible = false;
+            // 
             // OBJECT_UNIONTAB_N0A
             // 
             this.OBJECT_UNIONTAB_N0A.BackColor = System.Drawing.SystemColors.Control;
@@ -2091,6 +2337,57 @@
             this.OBJECT_N0A_L_8_MAPXY_9.Text = "座標";
             this.OBJECT_N0A_L_8_MAPXY_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // OBJECT_N0A_L_10_COMBO
+            // 
+            this.OBJECT_N0A_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.OBJECT_N0A_L_10_COMBO.FormattingEnabled = true;
+            this.OBJECT_N0A_L_10_COMBO.Items.AddRange(new object[] {
+            "16=武器屋",
+            "17=道具屋",
+            "18=秘密の店",
+            "0=--"});
+            this.OBJECT_N0A_L_10_COMBO.Location = new System.Drawing.Point(271, 117);
+            this.OBJECT_N0A_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N0A_L_10_COMBO.Name = "OBJECT_N0A_L_10_COMBO";
+            this.OBJECT_N0A_L_10_COMBO.Size = new System.Drawing.Size(300, 26);
+            this.OBJECT_N0A_L_10_COMBO.TabIndex = 180;
+            // 
+            // OBJECT_N0A_J_2_FLAG
+            // 
+            this.OBJECT_N0A_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
+            this.OBJECT_N0A_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OBJECT_N0A_J_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N0A_J_2_FLAG.Location = new System.Drawing.Point(0, 13);
+            this.OBJECT_N0A_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OBJECT_N0A_J_2_FLAG.Name = "OBJECT_N0A_J_2_FLAG";
+            this.OBJECT_N0A_J_2_FLAG.Size = new System.Drawing.Size(193, 32);
+            this.OBJECT_N0A_J_2_FLAG.TabIndex = 145;
+            this.OBJECT_N0A_J_2_FLAG.Text = "達成フラグ";
+            this.OBJECT_N0A_J_2_FLAG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_N0A_EXPLAIN
+            // 
+            this.OBJECT_N0A_EXPLAIN.ErrorMessage = "";
+            this.OBJECT_N0A_EXPLAIN.Location = new System.Drawing.Point(9, 229);
+            this.OBJECT_N0A_EXPLAIN.Multiline = true;
+            this.OBJECT_N0A_EXPLAIN.Name = "OBJECT_N0A_EXPLAIN";
+            this.OBJECT_N0A_EXPLAIN.Placeholder = "";
+            this.OBJECT_N0A_EXPLAIN.ReadOnly = true;
+            this.OBJECT_N0A_EXPLAIN.Size = new System.Drawing.Size(575, 459);
+            this.OBJECT_N0A_EXPLAIN.TabIndex = 246;
+            this.OBJECT_N0A_EXPLAIN.Text = "座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。";
+            // 
+            // OBJECT_N0A_L_2_FLAG
+            // 
+            this.OBJECT_N0A_L_2_FLAG.ErrorMessage = "";
+            this.OBJECT_N0A_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
+            this.OBJECT_N0A_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_N0A_L_2_FLAG.Name = "OBJECT_N0A_L_2_FLAG";
+            this.OBJECT_N0A_L_2_FLAG.Placeholder = "";
+            this.OBJECT_N0A_L_2_FLAG.ReadOnly = true;
+            this.OBJECT_N0A_L_2_FLAG.Size = new System.Drawing.Size(299, 25);
+            this.OBJECT_N0A_L_2_FLAG.TabIndex = 243;
+            // 
             // panel23
             // 
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2106,6 +2403,17 @@
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(600, 76);
             this.panel23.TabIndex = 189;
+            // 
+            // OBJECT_BlockSize
+            // 
+            this.OBJECT_BlockSize.ErrorMessage = "";
+            this.OBJECT_BlockSize.Location = new System.Drawing.Point(86, 1);
+            this.OBJECT_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_BlockSize.Name = "OBJECT_BlockSize";
+            this.OBJECT_BlockSize.Placeholder = "";
+            this.OBJECT_BlockSize.ReadOnly = true;
+            this.OBJECT_BlockSize.Size = new System.Drawing.Size(112, 25);
+            this.OBJECT_BlockSize.TabIndex = 52;
             // 
             // OBJECT_WriteButton
             // 
@@ -2141,6 +2449,17 @@
             this.label20.TabIndex = 52;
             this.label20.Text = "Size:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OBJECT_SelectAddress
+            // 
+            this.OBJECT_SelectAddress.ErrorMessage = "";
+            this.OBJECT_SelectAddress.Location = new System.Drawing.Point(384, 3);
+            this.OBJECT_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OBJECT_SelectAddress.Name = "OBJECT_SelectAddress";
+            this.OBJECT_SelectAddress.Placeholder = "";
+            this.OBJECT_SelectAddress.ReadOnly = true;
+            this.OBJECT_SelectAddress.Size = new System.Drawing.Size(204, 25);
+            this.OBJECT_SelectAddress.TabIndex = 40;
             // 
             // label31
             // 
@@ -2199,6 +2518,20 @@
             this.TALK_AddressListExpandsButton.Text = "リストの拡張";
             this.TALK_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
+            // TALK_AddressList
+            // 
+            this.TALK_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALK_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TALK_AddressList.FormattingEnabled = true;
+            this.TALK_AddressList.IntegralHeight = false;
+            this.TALK_AddressList.ItemHeight = 30;
+            this.TALK_AddressList.Location = new System.Drawing.Point(1, 29);
+            this.TALK_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.TALK_AddressList.Name = "TALK_AddressList";
+            this.TALK_AddressList.Size = new System.Drawing.Size(238, 754);
+            this.TALK_AddressList.TabIndex = 109;
+            this.TALK_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
+            // 
             // label74
             // 
             this.label74.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2237,6 +2570,20 @@
             this.TALK_W0_UNIONKEY.Size = new System.Drawing.Size(67, 25);
             this.TALK_W0_UNIONKEY.TabIndex = 142;
             // 
+            // TALK_L_0_COMBO
+            // 
+            this.TALK_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TALK_L_0_COMBO.FormattingEnabled = true;
+            this.TALK_L_0_COMBO.Items.AddRange(new object[] {
+            "00=-",
+            "03=話す条件",
+            "04=話す条件ASM"});
+            this.TALK_L_0_COMBO.Location = new System.Drawing.Point(248, 8);
+            this.TALK_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_L_0_COMBO.Name = "TALK_L_0_COMBO";
+            this.TALK_L_0_COMBO.Size = new System.Drawing.Size(333, 26);
+            this.TALK_L_0_COMBO.TabIndex = 49;
+            // 
             // TALK_J_0
             // 
             this.TALK_J_0.AccessibleDescription = "@EVENTTYPE";
@@ -2265,6 +2612,17 @@
             this.panel21.Size = new System.Drawing.Size(594, 76);
             this.panel21.TabIndex = 192;
             // 
+            // TALK_BlockSize
+            // 
+            this.TALK_BlockSize.ErrorMessage = "";
+            this.TALK_BlockSize.Location = new System.Drawing.Point(86, 1);
+            this.TALK_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_BlockSize.Name = "TALK_BlockSize";
+            this.TALK_BlockSize.Placeholder = "";
+            this.TALK_BlockSize.ReadOnly = true;
+            this.TALK_BlockSize.Size = new System.Drawing.Size(116, 25);
+            this.TALK_BlockSize.TabIndex = 52;
+            // 
             // label75
             // 
             this.label75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2275,6 +2633,17 @@
             this.label75.TabIndex = 52;
             this.label75.Text = "Size:";
             this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALK_SelectAddress
+            // 
+            this.TALK_SelectAddress.ErrorMessage = "";
+            this.TALK_SelectAddress.Location = new System.Drawing.Point(384, 2);
+            this.TALK_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_SelectAddress.Name = "TALK_SelectAddress";
+            this.TALK_SelectAddress.Placeholder = "";
+            this.TALK_SelectAddress.ReadOnly = true;
+            this.TALK_SelectAddress.Size = new System.Drawing.Size(204, 25);
+            this.TALK_SelectAddress.TabIndex = 40;
             // 
             // label76
             // 
@@ -2379,6 +2748,40 @@
             this.TALK_UNIONTAB_N03.TabIndex = 0;
             this.TALK_UNIONTAB_N03.Text = "会話条件";
             // 
+            // TALK_N03_EXPLAIN
+            // 
+            this.TALK_N03_EXPLAIN.ErrorMessage = "";
+            this.TALK_N03_EXPLAIN.Location = new System.Drawing.Point(5, 297);
+            this.TALK_N03_EXPLAIN.Multiline = true;
+            this.TALK_N03_EXPLAIN.Name = "TALK_N03_EXPLAIN";
+            this.TALK_N03_EXPLAIN.Placeholder = "";
+            this.TALK_N03_EXPLAIN.ReadOnly = true;
+            this.TALK_N03_EXPLAIN.Size = new System.Drawing.Size(575, 385);
+            this.TALK_N03_EXPLAIN.TabIndex = 234;
+            this.TALK_N03_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
+            // 
+            // TALK_N03_L_14_FLAG
+            // 
+            this.TALK_N03_L_14_FLAG.ErrorMessage = "";
+            this.TALK_N03_L_14_FLAG.Location = new System.Drawing.Point(254, 228);
+            this.TALK_N03_L_14_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_14_FLAG.Name = "TALK_N03_L_14_FLAG";
+            this.TALK_N03_L_14_FLAG.Placeholder = "";
+            this.TALK_N03_L_14_FLAG.ReadOnly = true;
+            this.TALK_N03_L_14_FLAG.Size = new System.Drawing.Size(322, 25);
+            this.TALK_N03_L_14_FLAG.TabIndex = 224;
+            // 
+            // TALK_N03_L_2_FLAG
+            // 
+            this.TALK_N03_L_2_FLAG.ErrorMessage = "";
+            this.TALK_N03_L_2_FLAG.Location = new System.Drawing.Point(256, 15);
+            this.TALK_N03_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_2_FLAG.Name = "TALK_N03_L_2_FLAG";
+            this.TALK_N03_L_2_FLAG.Placeholder = "";
+            this.TALK_N03_L_2_FLAG.ReadOnly = true;
+            this.TALK_N03_L_2_FLAG.Size = new System.Drawing.Size(315, 25);
+            this.TALK_N03_L_2_FLAG.TabIndex = 223;
+            // 
             // TALK_N03_L_4_NEWALLOC_EVENT4
             // 
             this.TALK_N03_L_4_NEWALLOC_EVENT4.Location = new System.Drawing.Point(317, 43);
@@ -2387,6 +2790,18 @@
             this.TALK_N03_L_4_NEWALLOC_EVENT4.TabIndex = 222;
             this.TALK_N03_L_4_NEWALLOC_EVENT4.Text = "新規イベント";
             this.TALK_N03_L_4_NEWALLOC_EVENT4.UseVisualStyleBackColor = true;
+            // 
+            // TALK_N03_L_9_UNITICON
+            // 
+            this.TALK_N03_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALK_N03_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALK_N03_L_9_UNITICON.Location = new System.Drawing.Point(546, 123);
+            this.TALK_N03_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALK_N03_L_9_UNITICON.Name = "TALK_N03_L_9_UNITICON";
+            this.TALK_N03_L_9_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.TALK_N03_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALK_N03_L_9_UNITICON.TabIndex = 175;
+            this.TALK_N03_L_9_UNITICON.TabStop = false;
             // 
             // TALK_N03_J_9_UNIT
             // 
@@ -2398,6 +2813,18 @@
             this.TALK_N03_J_9_UNIT.TabIndex = 152;
             this.TALK_N03_J_9_UNIT.Text = "会話先";
             this.TALK_N03_J_9_UNIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALK_N03_L_8_UNITICON
+            // 
+            this.TALK_N03_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALK_N03_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALK_N03_L_8_UNITICON.Location = new System.Drawing.Point(546, 87);
+            this.TALK_N03_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALK_N03_L_8_UNITICON.Name = "TALK_N03_L_8_UNITICON";
+            this.TALK_N03_L_8_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.TALK_N03_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALK_N03_L_8_UNITICON.TabIndex = 174;
+            this.TALK_N03_L_8_UNITICON.TabStop = false;
             // 
             // TALK_N03_J_8_UNIT
             // 
@@ -2423,6 +2850,19 @@
             this.TALK_N03_W2.Name = "TALK_N03_W2";
             this.TALK_N03_W2.Size = new System.Drawing.Size(67, 25);
             this.TALK_N03_W2.TabIndex = 146;
+            // 
+            // TALK_N03_L_12_COMBO
+            // 
+            this.TALK_N03_L_12_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TALK_N03_L_12_COMBO.FormattingEnabled = true;
+            this.TALK_N03_L_12_COMBO.Items.AddRange(new object[] {
+            "00=追加条件なし",
+            "03=判定フラグがONならば"});
+            this.TALK_N03_L_12_COMBO.Location = new System.Drawing.Point(279, 196);
+            this.TALK_N03_L_12_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_12_COMBO.Name = "TALK_N03_L_12_COMBO";
+            this.TALK_N03_L_12_COMBO.Size = new System.Drawing.Size(296, 26);
+            this.TALK_N03_L_12_COMBO.TabIndex = 173;
             // 
             // TALK_N03_P4
             // 
@@ -2482,6 +2922,28 @@
             this.TALK_N03_J_12.TabIndex = 170;
             this.TALK_N03_J_12.Text = "追加判定";
             this.TALK_N03_J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALK_N03_L_9_UNIT
+            // 
+            this.TALK_N03_L_9_UNIT.ErrorMessage = "";
+            this.TALK_N03_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
+            this.TALK_N03_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_9_UNIT.Name = "TALK_N03_L_9_UNIT";
+            this.TALK_N03_L_9_UNIT.Placeholder = "";
+            this.TALK_N03_L_9_UNIT.ReadOnly = true;
+            this.TALK_N03_L_9_UNIT.Size = new System.Drawing.Size(281, 25);
+            this.TALK_N03_L_9_UNIT.TabIndex = 169;
+            // 
+            // TALK_N03_L_8_UNIT
+            // 
+            this.TALK_N03_L_8_UNIT.ErrorMessage = "";
+            this.TALK_N03_L_8_UNIT.Location = new System.Drawing.Point(252, 88);
+            this.TALK_N03_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_8_UNIT.Name = "TALK_N03_L_8_UNIT";
+            this.TALK_N03_L_8_UNIT.Placeholder = "";
+            this.TALK_N03_L_8_UNIT.ReadOnly = true;
+            this.TALK_N03_L_8_UNIT.Size = new System.Drawing.Size(281, 25);
+            this.TALK_N03_L_8_UNIT.TabIndex = 168;
             // 
             // TALK_N03_W14
             // 
@@ -2579,6 +3041,18 @@
             this.TALK_N03_B9.Name = "TALK_N03_B9";
             this.TALK_N03_B9.Size = new System.Drawing.Size(67, 25);
             this.TALK_N03_B9.TabIndex = 161;
+            // 
+            // TALK_N03_L_4_EVENT
+            // 
+            this.TALK_N03_L_4_EVENT.ErrorMessage = "";
+            this.TALK_N03_L_4_EVENT.Location = new System.Drawing.Point(317, 46);
+            this.TALK_N03_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N03_L_4_EVENT.Name = "TALK_N03_L_4_EVENT";
+            this.TALK_N03_L_4_EVENT.Placeholder = "";
+            this.TALK_N03_L_4_EVENT.ReadOnly = true;
+            this.TALK_N03_L_4_EVENT.Size = new System.Drawing.Size(254, 25);
+            this.TALK_N03_L_4_EVENT.TabIndex = 235;
+            this.TALK_N03_L_4_EVENT.Visible = false;
             // 
             // TALK_UNIONTAB_N04
             // 
@@ -2788,6 +3262,98 @@
             this.TALK_N04_B9.Size = new System.Drawing.Size(67, 25);
             this.TALK_N04_B9.TabIndex = 188;
             // 
+            // TALK_N04_L_12_ASM
+            // 
+            this.TALK_N04_L_12_ASM.ErrorMessage = "";
+            this.TALK_N04_L_12_ASM.Location = new System.Drawing.Point(323, 193);
+            this.TALK_N04_L_12_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N04_L_12_ASM.Name = "TALK_N04_L_12_ASM";
+            this.TALK_N04_L_12_ASM.Placeholder = "";
+            this.TALK_N04_L_12_ASM.ReadOnly = true;
+            this.TALK_N04_L_12_ASM.Size = new System.Drawing.Size(256, 25);
+            this.TALK_N04_L_12_ASM.TabIndex = 234;
+            // 
+            // TALK_N04_EXPLAIN
+            // 
+            this.TALK_N04_EXPLAIN.ErrorMessage = "";
+            this.TALK_N04_EXPLAIN.Location = new System.Drawing.Point(2, 253);
+            this.TALK_N04_EXPLAIN.Multiline = true;
+            this.TALK_N04_EXPLAIN.Name = "TALK_N04_EXPLAIN";
+            this.TALK_N04_EXPLAIN.Placeholder = "";
+            this.TALK_N04_EXPLAIN.ReadOnly = true;
+            this.TALK_N04_EXPLAIN.Size = new System.Drawing.Size(575, 432);
+            this.TALK_N04_EXPLAIN.TabIndex = 233;
+            this.TALK_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
+            // 
+            // TALK_N04_L_2_FLAG
+            // 
+            this.TALK_N04_L_2_FLAG.ErrorMessage = "";
+            this.TALK_N04_L_2_FLAG.Location = new System.Drawing.Point(252, 15);
+            this.TALK_N04_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N04_L_2_FLAG.Name = "TALK_N04_L_2_FLAG";
+            this.TALK_N04_L_2_FLAG.Placeholder = "";
+            this.TALK_N04_L_2_FLAG.ReadOnly = true;
+            this.TALK_N04_L_2_FLAG.Size = new System.Drawing.Size(325, 25);
+            this.TALK_N04_L_2_FLAG.TabIndex = 224;
+            // 
+            // TALK_N04_L_9_UNIT
+            // 
+            this.TALK_N04_L_9_UNIT.ErrorMessage = "";
+            this.TALK_N04_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
+            this.TALK_N04_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N04_L_9_UNIT.Name = "TALK_N04_L_9_UNIT";
+            this.TALK_N04_L_9_UNIT.Placeholder = "";
+            this.TALK_N04_L_9_UNIT.ReadOnly = true;
+            this.TALK_N04_L_9_UNIT.Size = new System.Drawing.Size(285, 25);
+            this.TALK_N04_L_9_UNIT.TabIndex = 193;
+            // 
+            // TALK_N04_L_8_UNIT
+            // 
+            this.TALK_N04_L_8_UNIT.ErrorMessage = "";
+            this.TALK_N04_L_8_UNIT.Location = new System.Drawing.Point(252, 89);
+            this.TALK_N04_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N04_L_8_UNIT.Name = "TALK_N04_L_8_UNIT";
+            this.TALK_N04_L_8_UNIT.Placeholder = "";
+            this.TALK_N04_L_8_UNIT.ReadOnly = true;
+            this.TALK_N04_L_8_UNIT.Size = new System.Drawing.Size(285, 25);
+            this.TALK_N04_L_8_UNIT.TabIndex = 192;
+            // 
+            // TALK_N04_L_9_UNITICON
+            // 
+            this.TALK_N04_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALK_N04_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALK_N04_L_9_UNITICON.Location = new System.Drawing.Point(550, 122);
+            this.TALK_N04_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALK_N04_L_9_UNITICON.Name = "TALK_N04_L_9_UNITICON";
+            this.TALK_N04_L_9_UNITICON.Size = new System.Drawing.Size(32, 29);
+            this.TALK_N04_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALK_N04_L_9_UNITICON.TabIndex = 199;
+            this.TALK_N04_L_9_UNITICON.TabStop = false;
+            // 
+            // TALK_N04_L_8_UNITICON
+            // 
+            this.TALK_N04_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALK_N04_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALK_N04_L_8_UNITICON.Location = new System.Drawing.Point(550, 86);
+            this.TALK_N04_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALK_N04_L_8_UNITICON.Name = "TALK_N04_L_8_UNITICON";
+            this.TALK_N04_L_8_UNITICON.Size = new System.Drawing.Size(32, 29);
+            this.TALK_N04_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALK_N04_L_8_UNITICON.TabIndex = 198;
+            this.TALK_N04_L_8_UNITICON.TabStop = false;
+            // 
+            // TALK_N04_L_4_EVENT
+            // 
+            this.TALK_N04_L_4_EVENT.ErrorMessage = "";
+            this.TALK_N04_L_4_EVENT.Location = new System.Drawing.Point(315, 50);
+            this.TALK_N04_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALK_N04_L_4_EVENT.Name = "TALK_N04_L_4_EVENT";
+            this.TALK_N04_L_4_EVENT.Placeholder = "";
+            this.TALK_N04_L_4_EVENT.ReadOnly = true;
+            this.TALK_N04_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
+            this.TALK_N04_L_4_EVENT.TabIndex = 236;
+            this.TALK_N04_L_4_EVENT.Visible = false;
+            // 
             // tabPage03FE6
             // 
             this.tabPage03FE6.BackColor = System.Drawing.SystemColors.Control;
@@ -2822,6 +3388,19 @@
             this.TALKFE6_AddressListExpandsButton.TabIndex = 112;
             this.TALKFE6_AddressListExpandsButton.Text = "リストの拡張";
             this.TALKFE6_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // TALKFE6_AddressList
+            // 
+            this.TALKFE6_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALKFE6_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TALKFE6_AddressList.FormattingEnabled = true;
+            this.TALKFE6_AddressList.IntegralHeight = false;
+            this.TALKFE6_AddressList.ItemHeight = 30;
+            this.TALKFE6_AddressList.Location = new System.Drawing.Point(0, 30);
+            this.TALKFE6_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.TALKFE6_AddressList.Name = "TALKFE6_AddressList";
+            this.TALKFE6_AddressList.Size = new System.Drawing.Size(238, 784);
+            this.TALKFE6_AddressList.TabIndex = 109;
             // 
             // label10
             // 
@@ -2861,6 +3440,20 @@
             this.TALKFE6_W0_UNIONKEY.Size = new System.Drawing.Size(67, 25);
             this.TALKFE6_W0_UNIONKEY.TabIndex = 142;
             // 
+            // TALKFE6_L_0_COMBO
+            // 
+            this.TALKFE6_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TALKFE6_L_0_COMBO.FormattingEnabled = true;
+            this.TALKFE6_L_0_COMBO.Items.AddRange(new object[] {
+            "00=-",
+            "04=話す条件",
+            "0D=話す条件ASM"});
+            this.TALKFE6_L_0_COMBO.Location = new System.Drawing.Point(249, 7);
+            this.TALKFE6_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_L_0_COMBO.Name = "TALKFE6_L_0_COMBO";
+            this.TALKFE6_L_0_COMBO.Size = new System.Drawing.Size(327, 26);
+            this.TALKFE6_L_0_COMBO.TabIndex = 49;
+            // 
             // label9
             // 
             this.label9.AccessibleDescription = "@EVENTTYPE";
@@ -2889,6 +3482,17 @@
             this.panel31.Size = new System.Drawing.Size(597, 76);
             this.panel31.TabIndex = 196;
             // 
+            // TALKFE6_BlockSize
+            // 
+            this.TALKFE6_BlockSize.ErrorMessage = "";
+            this.TALKFE6_BlockSize.Location = new System.Drawing.Point(86, 1);
+            this.TALKFE6_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_BlockSize.Name = "TALKFE6_BlockSize";
+            this.TALKFE6_BlockSize.Placeholder = "";
+            this.TALKFE6_BlockSize.ReadOnly = true;
+            this.TALKFE6_BlockSize.Size = new System.Drawing.Size(116, 25);
+            this.TALKFE6_BlockSize.TabIndex = 52;
+            // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2899,6 +3503,17 @@
             this.label11.TabIndex = 52;
             this.label11.Text = "Size:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALKFE6_SelectAddress
+            // 
+            this.TALKFE6_SelectAddress.ErrorMessage = "";
+            this.TALKFE6_SelectAddress.Location = new System.Drawing.Point(384, 2);
+            this.TALKFE6_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_SelectAddress.Name = "TALKFE6_SelectAddress";
+            this.TALKFE6_SelectAddress.Placeholder = "";
+            this.TALKFE6_SelectAddress.ReadOnly = true;
+            this.TALKFE6_SelectAddress.Size = new System.Drawing.Size(204, 25);
+            this.TALKFE6_SelectAddress.TabIndex = 40;
             // 
             // label12
             // 
@@ -2997,6 +3612,29 @@
             this.TALKFE6_UNIONTAB_N04.TabIndex = 0;
             this.TALKFE6_UNIONTAB_N04.Text = "会話条件";
             // 
+            // TALKFE6_N04_EXPLAIN
+            // 
+            this.TALKFE6_N04_EXPLAIN.ErrorMessage = "";
+            this.TALKFE6_N04_EXPLAIN.Location = new System.Drawing.Point(5, 249);
+            this.TALKFE6_N04_EXPLAIN.Multiline = true;
+            this.TALKFE6_N04_EXPLAIN.Name = "TALKFE6_N04_EXPLAIN";
+            this.TALKFE6_N04_EXPLAIN.Placeholder = "";
+            this.TALKFE6_N04_EXPLAIN.ReadOnly = true;
+            this.TALKFE6_N04_EXPLAIN.Size = new System.Drawing.Size(575, 437);
+            this.TALKFE6_N04_EXPLAIN.TabIndex = 234;
+            this.TALKFE6_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
+            // 
+            // TALKFE6_N04_L_2_FLAG
+            // 
+            this.TALKFE6_N04_L_2_FLAG.ErrorMessage = "";
+            this.TALKFE6_N04_L_2_FLAG.Location = new System.Drawing.Point(256, 15);
+            this.TALKFE6_N04_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N04_L_2_FLAG.Name = "TALKFE6_N04_L_2_FLAG";
+            this.TALKFE6_N04_L_2_FLAG.Placeholder = "";
+            this.TALKFE6_N04_L_2_FLAG.ReadOnly = true;
+            this.TALKFE6_N04_L_2_FLAG.Size = new System.Drawing.Size(315, 25);
+            this.TALKFE6_N04_L_2_FLAG.TabIndex = 223;
+            // 
             // TALKFE6_N04_L_4_NEWALLOC_EVENT4
             // 
             this.TALKFE6_N04_L_4_NEWALLOC_EVENT4.Location = new System.Drawing.Point(317, 43);
@@ -3005,6 +3643,18 @@
             this.TALKFE6_N04_L_4_NEWALLOC_EVENT4.TabIndex = 222;
             this.TALKFE6_N04_L_4_NEWALLOC_EVENT4.Text = "新規イベント";
             this.TALKFE6_N04_L_4_NEWALLOC_EVENT4.UseVisualStyleBackColor = true;
+            // 
+            // TALKFE6_N04_L_9_UNITICON
+            // 
+            this.TALKFE6_N04_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALKFE6_N04_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALKFE6_N04_L_9_UNITICON.Location = new System.Drawing.Point(544, 115);
+            this.TALKFE6_N04_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALKFE6_N04_L_9_UNITICON.Name = "TALKFE6_N04_L_9_UNITICON";
+            this.TALKFE6_N04_L_9_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.TALKFE6_N04_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALKFE6_N04_L_9_UNITICON.TabIndex = 175;
+            this.TALKFE6_N04_L_9_UNITICON.TabStop = false;
             // 
             // TALKFE6_N04_J_9_UNIT
             // 
@@ -3016,6 +3666,18 @@
             this.TALKFE6_N04_J_9_UNIT.TabIndex = 152;
             this.TALKFE6_N04_J_9_UNIT.Text = "会話先";
             this.TALKFE6_N04_J_9_UNIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALKFE6_N04_L_8_UNITICON
+            // 
+            this.TALKFE6_N04_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TALKFE6_N04_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TALKFE6_N04_L_8_UNITICON.Location = new System.Drawing.Point(544, 79);
+            this.TALKFE6_N04_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.TALKFE6_N04_L_8_UNITICON.Name = "TALKFE6_N04_L_8_UNITICON";
+            this.TALKFE6_N04_L_8_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.TALKFE6_N04_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TALKFE6_N04_L_8_UNITICON.TabIndex = 174;
+            this.TALKFE6_N04_L_8_UNITICON.TabStop = false;
             // 
             // TALKFE6_N04_J_8_UNIT
             // 
@@ -3077,6 +3739,28 @@
             this.TALKFE6_N04_J_10.TabIndex = 154;
             this.TALKFE6_N04_J_10.Text = "??";
             this.TALKFE6_N04_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TALKFE6_N04_L_9_UNIT
+            // 
+            this.TALKFE6_N04_L_9_UNIT.ErrorMessage = "";
+            this.TALKFE6_N04_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
+            this.TALKFE6_N04_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N04_L_9_UNIT.Name = "TALKFE6_N04_L_9_UNIT";
+            this.TALKFE6_N04_L_9_UNIT.Placeholder = "";
+            this.TALKFE6_N04_L_9_UNIT.ReadOnly = true;
+            this.TALKFE6_N04_L_9_UNIT.Size = new System.Drawing.Size(281, 25);
+            this.TALKFE6_N04_L_9_UNIT.TabIndex = 169;
+            // 
+            // TALKFE6_N04_L_8_UNIT
+            // 
+            this.TALKFE6_N04_L_8_UNIT.ErrorMessage = "";
+            this.TALKFE6_N04_L_8_UNIT.Location = new System.Drawing.Point(252, 88);
+            this.TALKFE6_N04_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N04_L_8_UNIT.Name = "TALKFE6_N04_L_8_UNIT";
+            this.TALKFE6_N04_L_8_UNIT.Placeholder = "";
+            this.TALKFE6_N04_L_8_UNIT.ReadOnly = true;
+            this.TALKFE6_N04_L_8_UNIT.Size = new System.Drawing.Size(281, 25);
+            this.TALKFE6_N04_L_8_UNIT.TabIndex = 168;
             // 
             // TALKFE6_N04_J_2_FLAG
             // 
@@ -3145,6 +3829,18 @@
             this.TALKFE6_N04_B9.Name = "TALKFE6_N04_B9";
             this.TALKFE6_N04_B9.Size = new System.Drawing.Size(67, 25);
             this.TALKFE6_N04_B9.TabIndex = 161;
+            // 
+            // TALKFE6_N04_L_4_EVENT
+            // 
+            this.TALKFE6_N04_L_4_EVENT.ErrorMessage = "";
+            this.TALKFE6_N04_L_4_EVENT.Location = new System.Drawing.Point(317, 46);
+            this.TALKFE6_N04_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N04_L_4_EVENT.Name = "TALKFE6_N04_L_4_EVENT";
+            this.TALKFE6_N04_L_4_EVENT.Placeholder = "";
+            this.TALKFE6_N04_L_4_EVENT.ReadOnly = true;
+            this.TALKFE6_N04_L_4_EVENT.Size = new System.Drawing.Size(254, 25);
+            this.TALKFE6_N04_L_4_EVENT.TabIndex = 235;
+            this.TALKFE6_N04_L_4_EVENT.Visible = false;
             // 
             // TALKFE6_UNIONTAB_N0D
             // 
@@ -3254,6 +3950,52 @@
             this.TALKFE6_N0D_P8.Size = new System.Drawing.Size(140, 25);
             this.TALKFE6_N0D_P8.TabIndex = 190;
             // 
+            // TALKFE6_N0D_L_8_ASM
+            // 
+            this.TALKFE6_N0D_L_8_ASM.ErrorMessage = "";
+            this.TALKFE6_N0D_L_8_ASM.Location = new System.Drawing.Point(321, 82);
+            this.TALKFE6_N0D_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N0D_L_8_ASM.Name = "TALKFE6_N0D_L_8_ASM";
+            this.TALKFE6_N0D_L_8_ASM.Placeholder = "";
+            this.TALKFE6_N0D_L_8_ASM.ReadOnly = true;
+            this.TALKFE6_N0D_L_8_ASM.Size = new System.Drawing.Size(256, 25);
+            this.TALKFE6_N0D_L_8_ASM.TabIndex = 234;
+            // 
+            // TALKFE6_N0D_EXPLAIN
+            // 
+            this.TALKFE6_N0D_EXPLAIN.ErrorMessage = "";
+            this.TALKFE6_N0D_EXPLAIN.Location = new System.Drawing.Point(2, 209);
+            this.TALKFE6_N0D_EXPLAIN.Multiline = true;
+            this.TALKFE6_N0D_EXPLAIN.Name = "TALKFE6_N0D_EXPLAIN";
+            this.TALKFE6_N0D_EXPLAIN.Placeholder = "";
+            this.TALKFE6_N0D_EXPLAIN.ReadOnly = true;
+            this.TALKFE6_N0D_EXPLAIN.Size = new System.Drawing.Size(575, 481);
+            this.TALKFE6_N0D_EXPLAIN.TabIndex = 233;
+            this.TALKFE6_N0D_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
+            // 
+            // TALKFE6_N0D_L_2_FLAG
+            // 
+            this.TALKFE6_N0D_L_2_FLAG.ErrorMessage = "";
+            this.TALKFE6_N0D_L_2_FLAG.Location = new System.Drawing.Point(252, 15);
+            this.TALKFE6_N0D_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N0D_L_2_FLAG.Name = "TALKFE6_N0D_L_2_FLAG";
+            this.TALKFE6_N0D_L_2_FLAG.Placeholder = "";
+            this.TALKFE6_N0D_L_2_FLAG.ReadOnly = true;
+            this.TALKFE6_N0D_L_2_FLAG.Size = new System.Drawing.Size(325, 25);
+            this.TALKFE6_N0D_L_2_FLAG.TabIndex = 224;
+            // 
+            // TALKFE6_N0D_L_4_EVENT
+            // 
+            this.TALKFE6_N0D_L_4_EVENT.ErrorMessage = "";
+            this.TALKFE6_N0D_L_4_EVENT.Location = new System.Drawing.Point(315, 50);
+            this.TALKFE6_N0D_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TALKFE6_N0D_L_4_EVENT.Name = "TALKFE6_N0D_L_4_EVENT";
+            this.TALKFE6_N0D_L_4_EVENT.Placeholder = "";
+            this.TALKFE6_N0D_L_4_EVENT.ReadOnly = true;
+            this.TALKFE6_N0D_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
+            this.TALKFE6_N0D_L_4_EVENT.TabIndex = 236;
+            this.TALKFE6_N0D_L_4_EVENT.Visible = false;
+            // 
             // tabPage02
             // 
             this.tabPage02.BackColor = System.Drawing.SystemColors.Control;
@@ -3293,6 +4035,29 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(598, 709);
             this.panel18.TabIndex = 192;
+            // 
+            // N02_11_EXPLAIN
+            // 
+            this.N02_11_EXPLAIN.ErrorMessage = "";
+            this.N02_11_EXPLAIN.Location = new System.Drawing.Point(3, 281);
+            this.N02_11_EXPLAIN.Multiline = true;
+            this.N02_11_EXPLAIN.Name = "N02_11_EXPLAIN";
+            this.N02_11_EXPLAIN.Placeholder = "";
+            this.N02_11_EXPLAIN.ReadOnly = true;
+            this.N02_11_EXPLAIN.Size = new System.Drawing.Size(589, 423);
+            this.N02_11_EXPLAIN.TabIndex = 232;
+            this.N02_11_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
+            // 
+            // N02_L_2_FLAG
+            // 
+            this.N02_L_2_FLAG.ErrorMessage = "";
+            this.N02_L_2_FLAG.Location = new System.Drawing.Point(262, 20);
+            this.N02_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_L_2_FLAG.Name = "N02_L_2_FLAG";
+            this.N02_L_2_FLAG.Placeholder = "";
+            this.N02_L_2_FLAG.ReadOnly = true;
+            this.N02_L_2_FLAG.Size = new System.Drawing.Size(326, 25);
+            this.N02_L_2_FLAG.TabIndex = 225;
             // 
             // N02_L_4_NEWALLOC_EVENT3
             // 
@@ -3365,6 +4130,20 @@
             this.N02_J_2_FLAG.TabIndex = 145;
             this.N02_J_2_FLAG.Text = "達成フラグ";
             this.N02_J_2_FLAG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N02_L_10_COMBO
+            // 
+            this.N02_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.N02_L_10_COMBO.FormattingEnabled = true;
+            this.N02_L_10_COMBO.Items.AddRange(new object[] {
+            "0=主人公ターンに実行",
+            "40=友軍ターンに実行",
+            "80=敵軍ターンに実行"});
+            this.N02_L_10_COMBO.Location = new System.Drawing.Point(263, 152);
+            this.N02_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_L_10_COMBO.Name = "N02_L_10_COMBO";
+            this.N02_L_10_COMBO.Size = new System.Drawing.Size(325, 26);
+            this.N02_L_10_COMBO.TabIndex = 155;
             // 
             // N02_J_10
             // 
@@ -3445,6 +4224,18 @@
             this.N02_B8.Size = new System.Drawing.Size(78, 25);
             this.N02_B8.TabIndex = 151;
             // 
+            // N02_L_4_EVENT
+            // 
+            this.N02_L_4_EVENT.ErrorMessage = "";
+            this.N02_L_4_EVENT.Location = new System.Drawing.Point(324, 51);
+            this.N02_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_L_4_EVENT.Name = "N02_L_4_EVENT";
+            this.N02_L_4_EVENT.Placeholder = "";
+            this.N02_L_4_EVENT.ReadOnly = true;
+            this.N02_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
+            this.N02_L_4_EVENT.TabIndex = 237;
+            this.N02_L_4_EVENT.Visible = false;
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3470,6 +4261,19 @@
             this.N02_W0.Name = "N02_W0";
             this.N02_W0.Size = new System.Drawing.Size(67, 25);
             this.N02_W0.TabIndex = 142;
+            // 
+            // N02_L_0_COMBO
+            // 
+            this.N02_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.N02_L_0_COMBO.FormattingEnabled = true;
+            this.N02_L_0_COMBO.Items.AddRange(new object[] {
+            "0=-",
+            "2=ターン条件"});
+            this.N02_L_0_COMBO.Location = new System.Drawing.Point(263, 2);
+            this.N02_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_L_0_COMBO.Name = "N02_L_0_COMBO";
+            this.N02_L_0_COMBO.Size = new System.Drawing.Size(325, 26);
+            this.N02_L_0_COMBO.TabIndex = 49;
             // 
             // N02_J_0
             // 
@@ -3504,6 +4308,19 @@
             this.N02_AddressListExpandsButton.Text = "リストの拡張";
             this.N02_AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
+            // N02_AddressList
+            // 
+            this.N02_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.N02_AddressList.FormattingEnabled = true;
+            this.N02_AddressList.IntegralHeight = false;
+            this.N02_AddressList.ItemHeight = 30;
+            this.N02_AddressList.Location = new System.Drawing.Point(1, 32);
+            this.N02_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N02_AddressList.Name = "N02_AddressList";
+            this.N02_AddressList.Size = new System.Drawing.Size(237, 784);
+            this.N02_AddressList.TabIndex = 109;
+            this.N02_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
+            // 
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3531,6 +4348,17 @@
             this.panel17.Size = new System.Drawing.Size(598, 81);
             this.panel17.TabIndex = 189;
             // 
+            // N02_BlockSize
+            // 
+            this.N02_BlockSize.ErrorMessage = "";
+            this.N02_BlockSize.Location = new System.Drawing.Point(86, 2);
+            this.N02_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_BlockSize.Name = "N02_BlockSize";
+            this.N02_BlockSize.Placeholder = "";
+            this.N02_BlockSize.ReadOnly = true;
+            this.N02_BlockSize.Size = new System.Drawing.Size(116, 25);
+            this.N02_BlockSize.TabIndex = 52;
+            // 
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3541,6 +4369,17 @@
             this.label22.TabIndex = 52;
             this.label22.Text = "Size:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N02_SelectAddress
+            // 
+            this.N02_SelectAddress.ErrorMessage = "";
+            this.N02_SelectAddress.Location = new System.Drawing.Point(384, 6);
+            this.N02_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N02_SelectAddress.Name = "N02_SelectAddress";
+            this.N02_SelectAddress.Placeholder = "";
+            this.N02_SelectAddress.ReadOnly = true;
+            this.N02_SelectAddress.Size = new System.Drawing.Size(204, 25);
+            this.N02_SelectAddress.TabIndex = 40;
             // 
             // label64
             // 
@@ -3628,6 +4467,19 @@
             this.NFE702_W0.Size = new System.Drawing.Size(67, 25);
             this.NFE702_W0.TabIndex = 142;
             // 
+            // NFE702_L_0_COMBO
+            // 
+            this.NFE702_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NFE702_L_0_COMBO.FormattingEnabled = true;
+            this.NFE702_L_0_COMBO.Items.AddRange(new object[] {
+            "0=-",
+            "2=ターン条件"});
+            this.NFE702_L_0_COMBO.Location = new System.Drawing.Point(260, 4);
+            this.NFE702_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_L_0_COMBO.Name = "NFE702_L_0_COMBO";
+            this.NFE702_L_0_COMBO.Size = new System.Drawing.Size(326, 26);
+            this.NFE702_L_0_COMBO.TabIndex = 49;
+            // 
             // NFE702_J_0
             // 
             this.NFE702_J_0.AccessibleDescription = "@EVENTTYPE";
@@ -3668,6 +4520,46 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(599, 710);
             this.panel3.TabIndex = 195;
+            // 
+            // NFE702_12_EXPLAIN
+            // 
+            this.NFE702_12_EXPLAIN.ErrorMessage = "";
+            this.NFE702_12_EXPLAIN.Location = new System.Drawing.Point(4, 285);
+            this.NFE702_12_EXPLAIN.Multiline = true;
+            this.NFE702_12_EXPLAIN.Name = "NFE702_12_EXPLAIN";
+            this.NFE702_12_EXPLAIN.Placeholder = "";
+            this.NFE702_12_EXPLAIN.ReadOnly = true;
+            this.NFE702_12_EXPLAIN.Size = new System.Drawing.Size(589, 420);
+            this.NFE702_12_EXPLAIN.TabIndex = 231;
+            this.NFE702_12_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
+            // 
+            // NFE702_L_12_COMBO
+            // 
+            this.NFE702_L_12_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NFE702_L_12_COMBO.FormattingEnabled = true;
+            this.NFE702_L_12_COMBO.Items.AddRange(new object[] {
+            "0=常に有効",
+            "1=エリウッド編のみ",
+            "2=ヘクトル編のみ",
+            "3=エリウッド編ハードモードのみ",
+            "4=ハードモードのみ",
+            "5=ヘクトル編ハードモードのみ"});
+            this.NFE702_L_12_COMBO.Location = new System.Drawing.Point(267, 217);
+            this.NFE702_L_12_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_L_12_COMBO.Name = "NFE702_L_12_COMBO";
+            this.NFE702_L_12_COMBO.Size = new System.Drawing.Size(319, 26);
+            this.NFE702_L_12_COMBO.TabIndex = 227;
+            // 
+            // NFE702_L_2_FLAG
+            // 
+            this.NFE702_L_2_FLAG.ErrorMessage = "";
+            this.NFE702_L_2_FLAG.Location = new System.Drawing.Point(262, 19);
+            this.NFE702_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_L_2_FLAG.Name = "NFE702_L_2_FLAG";
+            this.NFE702_L_2_FLAG.Placeholder = "";
+            this.NFE702_L_2_FLAG.ReadOnly = true;
+            this.NFE702_L_2_FLAG.Size = new System.Drawing.Size(324, 25);
+            this.NFE702_L_2_FLAG.TabIndex = 226;
             // 
             // NFE702_L_4_NEWALLOC_EVENT3
             // 
@@ -3766,6 +4658,20 @@
             this.NFE702_J_2_FLAG.Text = "達成フラグ";
             this.NFE702_J_2_FLAG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // NFE702_L_10_COMBO
+            // 
+            this.NFE702_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NFE702_L_10_COMBO.FormattingEnabled = true;
+            this.NFE702_L_10_COMBO.Items.AddRange(new object[] {
+            "0=主人公ターンに実行",
+            "40=友軍ターンに実行",
+            "80=敵軍ターンに実行"});
+            this.NFE702_L_10_COMBO.Location = new System.Drawing.Point(267, 150);
+            this.NFE702_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_L_10_COMBO.Name = "NFE702_L_10_COMBO";
+            this.NFE702_L_10_COMBO.Size = new System.Drawing.Size(319, 26);
+            this.NFE702_L_10_COMBO.TabIndex = 155;
+            // 
             // NFE702_J_10
             // 
             this.NFE702_J_10.AccessibleDescription = "@TURNCOND_WHOSE_TURN";
@@ -3845,6 +4751,18 @@
             this.NFE702_B8.Size = new System.Drawing.Size(78, 25);
             this.NFE702_B8.TabIndex = 151;
             // 
+            // NFE702_L_4_EVENT
+            // 
+            this.NFE702_L_4_EVENT.ErrorMessage = "";
+            this.NFE702_L_4_EVENT.Location = new System.Drawing.Point(322, 49);
+            this.NFE702_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_L_4_EVENT.Name = "NFE702_L_4_EVENT";
+            this.NFE702_L_4_EVENT.Placeholder = "";
+            this.NFE702_L_4_EVENT.ReadOnly = true;
+            this.NFE702_L_4_EVENT.Size = new System.Drawing.Size(271, 25);
+            this.NFE702_L_4_EVENT.TabIndex = 238;
+            this.NFE702_L_4_EVENT.Visible = false;
+            // 
             // panel15
             // 
             this.panel15.Controls.Add(this.NFE702_AddressListExpandsButton);
@@ -3865,6 +4783,20 @@
             this.NFE702_AddressListExpandsButton.TabIndex = 112;
             this.NFE702_AddressListExpandsButton.Text = "リストの拡張";
             this.NFE702_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // NFE702_AddressList
+            // 
+            this.NFE702_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NFE702_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.NFE702_AddressList.FormattingEnabled = true;
+            this.NFE702_AddressList.IntegralHeight = false;
+            this.NFE702_AddressList.ItemHeight = 30;
+            this.NFE702_AddressList.Location = new System.Drawing.Point(-1, 32);
+            this.NFE702_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.NFE702_AddressList.Name = "NFE702_AddressList";
+            this.NFE702_AddressList.Size = new System.Drawing.Size(239, 784);
+            this.NFE702_AddressList.TabIndex = 109;
+            this.NFE702_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -3894,6 +4826,17 @@
             this.panel25.Size = new System.Drawing.Size(599, 81);
             this.panel25.TabIndex = 193;
             // 
+            // NFE702_BlockSize
+            // 
+            this.NFE702_BlockSize.ErrorMessage = "";
+            this.NFE702_BlockSize.Location = new System.Drawing.Point(86, 2);
+            this.NFE702_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_BlockSize.Name = "NFE702_BlockSize";
+            this.NFE702_BlockSize.Placeholder = "";
+            this.NFE702_BlockSize.ReadOnly = true;
+            this.NFE702_BlockSize.Size = new System.Drawing.Size(114, 25);
+            this.NFE702_BlockSize.TabIndex = 52;
+            // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3904,6 +4847,17 @@
             this.label3.TabIndex = 52;
             this.label3.Text = "Size:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NFE702_SelectAddress
+            // 
+            this.NFE702_SelectAddress.ErrorMessage = "";
+            this.NFE702_SelectAddress.Location = new System.Drawing.Point(386, 5);
+            this.NFE702_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.NFE702_SelectAddress.Name = "NFE702_SelectAddress";
+            this.NFE702_SelectAddress.Placeholder = "";
+            this.NFE702_SelectAddress.ReadOnly = true;
+            this.NFE702_SelectAddress.Size = new System.Drawing.Size(206, 25);
+            this.NFE702_SelectAddress.TabIndex = 40;
             // 
             // label7
             // 
@@ -4003,6 +4957,21 @@
             this.ALWAYS_W0_UNIONKEY.Size = new System.Drawing.Size(67, 25);
             this.ALWAYS_W0_UNIONKEY.TabIndex = 142;
             // 
+            // ALWAYS_L_0_COMBO
+            // 
+            this.ALWAYS_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ALWAYS_L_0_COMBO.FormattingEnabled = true;
+            this.ALWAYS_L_0_COMBO.Items.AddRange(new object[] {
+            "00=-",
+            "01=常時条件",
+            "0B=範囲条件",
+            "0E=ASM条件"});
+            this.ALWAYS_L_0_COMBO.Location = new System.Drawing.Point(258, 4);
+            this.ALWAYS_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_L_0_COMBO.Name = "ALWAYS_L_0_COMBO";
+            this.ALWAYS_L_0_COMBO.Size = new System.Drawing.Size(322, 26);
+            this.ALWAYS_L_0_COMBO.TabIndex = 49;
+            // 
             // ALWAYS_J_0
             // 
             this.ALWAYS_J_0.AccessibleDescription = "@EVENTTYPE";
@@ -4031,6 +5000,17 @@
             this.panel7.Size = new System.Drawing.Size(593, 81);
             this.panel7.TabIndex = 175;
             // 
+            // ALWAYS_BlockSize
+            // 
+            this.ALWAYS_BlockSize.ErrorMessage = "";
+            this.ALWAYS_BlockSize.Location = new System.Drawing.Point(90, 1);
+            this.ALWAYS_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_BlockSize.Name = "ALWAYS_BlockSize";
+            this.ALWAYS_BlockSize.Placeholder = "";
+            this.ALWAYS_BlockSize.ReadOnly = true;
+            this.ALWAYS_BlockSize.Size = new System.Drawing.Size(111, 25);
+            this.ALWAYS_BlockSize.TabIndex = 52;
+            // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4041,6 +5021,17 @@
             this.label5.TabIndex = 52;
             this.label5.Text = "Size:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ALWAYS_SelectAddress
+            // 
+            this.ALWAYS_SelectAddress.ErrorMessage = "";
+            this.ALWAYS_SelectAddress.Location = new System.Drawing.Point(384, 5);
+            this.ALWAYS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_SelectAddress.Name = "ALWAYS_SelectAddress";
+            this.ALWAYS_SelectAddress.Placeholder = "";
+            this.ALWAYS_SelectAddress.ReadOnly = true;
+            this.ALWAYS_SelectAddress.Size = new System.Drawing.Size(195, 25);
+            this.ALWAYS_SelectAddress.TabIndex = 40;
             // 
             // label4
             // 
@@ -4098,6 +5089,20 @@
             this.Panel123.Name = "Panel123";
             this.Panel123.Size = new System.Drawing.Size(238, 849);
             this.Panel123.TabIndex = 188;
+            // 
+            // ALWAYS_AddressList
+            // 
+            this.ALWAYS_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ALWAYS_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ALWAYS_AddressList.FormattingEnabled = true;
+            this.ALWAYS_AddressList.IntegralHeight = false;
+            this.ALWAYS_AddressList.ItemHeight = 30;
+            this.ALWAYS_AddressList.Location = new System.Drawing.Point(-3, 30);
+            this.ALWAYS_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.ALWAYS_AddressList.Name = "ALWAYS_AddressList";
+            this.ALWAYS_AddressList.Size = new System.Drawing.Size(241, 784);
+            this.ALWAYS_AddressList.TabIndex = 109;
+            this.ALWAYS_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
             // 
             // ALWAYS_AddressListExpandsButton
             // 
@@ -4162,6 +5167,30 @@
             this.ALWAYS_UNIONTAB_N0B.Size = new System.Drawing.Size(590, 687);
             this.ALWAYS_UNIONTAB_N0B.TabIndex = 0;
             this.ALWAYS_UNIONTAB_N0B.Text = "範囲条件";
+            // 
+            // ALWAYS_N0B_EXPLAIN
+            // 
+            this.ALWAYS_N0B_EXPLAIN.ErrorMessage = "";
+            this.ALWAYS_N0B_EXPLAIN.Location = new System.Drawing.Point(3, 194);
+            this.ALWAYS_N0B_EXPLAIN.Multiline = true;
+            this.ALWAYS_N0B_EXPLAIN.Name = "ALWAYS_N0B_EXPLAIN";
+            this.ALWAYS_N0B_EXPLAIN.Placeholder = "";
+            this.ALWAYS_N0B_EXPLAIN.ReadOnly = true;
+            this.ALWAYS_N0B_EXPLAIN.Size = new System.Drawing.Size(581, 490);
+            this.ALWAYS_N0B_EXPLAIN.TabIndex = 230;
+            this.ALWAYS_N0B_EXPLAIN.Text = "指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加して" +
+    "ください。";
+            // 
+            // ALWAYS_N0B_L_2_FLAG
+            // 
+            this.ALWAYS_N0B_L_2_FLAG.ErrorMessage = "";
+            this.ALWAYS_N0B_L_2_FLAG.Location = new System.Drawing.Point(270, 18);
+            this.ALWAYS_N0B_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0B_L_2_FLAG.Name = "ALWAYS_N0B_L_2_FLAG";
+            this.ALWAYS_N0B_L_2_FLAG.Placeholder = "";
+            this.ALWAYS_N0B_L_2_FLAG.ReadOnly = true;
+            this.ALWAYS_N0B_L_2_FLAG.Size = new System.Drawing.Size(312, 25);
+            this.ALWAYS_N0B_L_2_FLAG.TabIndex = 226;
             // 
             // ALWAYS_N0B_L_4_NEWALLOC_EVENT2
             // 
@@ -4322,6 +5351,18 @@
             this.ALWAYS_N0B_B8.Size = new System.Drawing.Size(78, 25);
             this.ALWAYS_N0B_B8.TabIndex = 169;
             // 
+            // ALWAYS_N0B_L_4_EVENT
+            // 
+            this.ALWAYS_N0B_L_4_EVENT.ErrorMessage = "";
+            this.ALWAYS_N0B_L_4_EVENT.Location = new System.Drawing.Point(318, 118);
+            this.ALWAYS_N0B_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0B_L_4_EVENT.Name = "ALWAYS_N0B_L_4_EVENT";
+            this.ALWAYS_N0B_L_4_EVENT.Placeholder = "";
+            this.ALWAYS_N0B_L_4_EVENT.ReadOnly = true;
+            this.ALWAYS_N0B_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
+            this.ALWAYS_N0B_L_4_EVENT.TabIndex = 238;
+            this.ALWAYS_N0B_L_4_EVENT.Visible = false;
+            // 
             // ALWAYS_UNIONTAB_N01
             // 
             this.ALWAYS_UNIONTAB_N01.BackColor = System.Drawing.SystemColors.Control;
@@ -4472,6 +5513,52 @@
             this.ALWAYS_N01_J_4_EVENT.Text = "イベント";
             this.ALWAYS_N01_J_4_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ALWAYS_N01_EXPLAIN
+            // 
+            this.ALWAYS_N01_EXPLAIN.ErrorMessage = "";
+            this.ALWAYS_N01_EXPLAIN.Location = new System.Drawing.Point(3, 193);
+            this.ALWAYS_N01_EXPLAIN.Multiline = true;
+            this.ALWAYS_N01_EXPLAIN.Name = "ALWAYS_N01_EXPLAIN";
+            this.ALWAYS_N01_EXPLAIN.Placeholder = "";
+            this.ALWAYS_N01_EXPLAIN.ReadOnly = true;
+            this.ALWAYS_N01_EXPLAIN.Size = new System.Drawing.Size(581, 487);
+            this.ALWAYS_N01_EXPLAIN.TabIndex = 230;
+            this.ALWAYS_N01_EXPLAIN.Text = "「判定フラグ」が有効だった場合、指定したイベントを実行します。";
+            // 
+            // ALWAYS_N01_L_8_FLAG
+            // 
+            this.ALWAYS_N01_L_8_FLAG.ErrorMessage = "";
+            this.ALWAYS_N01_L_8_FLAG.Location = new System.Drawing.Point(270, 85);
+            this.ALWAYS_N01_L_8_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N01_L_8_FLAG.Name = "ALWAYS_N01_L_8_FLAG";
+            this.ALWAYS_N01_L_8_FLAG.Placeholder = "";
+            this.ALWAYS_N01_L_8_FLAG.ReadOnly = true;
+            this.ALWAYS_N01_L_8_FLAG.Size = new System.Drawing.Size(312, 25);
+            this.ALWAYS_N01_L_8_FLAG.TabIndex = 228;
+            // 
+            // ALWAYS_N01_L_2_FLAG
+            // 
+            this.ALWAYS_N01_L_2_FLAG.ErrorMessage = "";
+            this.ALWAYS_N01_L_2_FLAG.Location = new System.Drawing.Point(269, 20);
+            this.ALWAYS_N01_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N01_L_2_FLAG.Name = "ALWAYS_N01_L_2_FLAG";
+            this.ALWAYS_N01_L_2_FLAG.Placeholder = "";
+            this.ALWAYS_N01_L_2_FLAG.ReadOnly = true;
+            this.ALWAYS_N01_L_2_FLAG.Size = new System.Drawing.Size(312, 25);
+            this.ALWAYS_N01_L_2_FLAG.TabIndex = 227;
+            // 
+            // ALWAYS_N01_L_4_EVENT
+            // 
+            this.ALWAYS_N01_L_4_EVENT.ErrorMessage = "";
+            this.ALWAYS_N01_L_4_EVENT.Location = new System.Drawing.Point(345, 53);
+            this.ALWAYS_N01_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N01_L_4_EVENT.Name = "ALWAYS_N01_L_4_EVENT";
+            this.ALWAYS_N01_L_4_EVENT.Placeholder = "";
+            this.ALWAYS_N01_L_4_EVENT.ReadOnly = true;
+            this.ALWAYS_N01_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
+            this.ALWAYS_N01_L_4_EVENT.TabIndex = 237;
+            this.ALWAYS_N01_L_4_EVENT.Visible = false;
+            // 
             // ALWAYS_UNIONTAB_N0E
             // 
             this.ALWAYS_UNIONTAB_N0E.BackColor = System.Drawing.SystemColors.Control;
@@ -4580,6 +5667,52 @@
             this.ALWAYS_N0E_J_4_EVENT.Text = "イベント";
             this.ALWAYS_N0E_J_4_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ALWAYS_N0E_L_8_ASM
+            // 
+            this.ALWAYS_N0E_L_8_ASM.ErrorMessage = "";
+            this.ALWAYS_N0E_L_8_ASM.Location = new System.Drawing.Point(347, 91);
+            this.ALWAYS_N0E_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0E_L_8_ASM.Name = "ALWAYS_N0E_L_8_ASM";
+            this.ALWAYS_N0E_L_8_ASM.Placeholder = "";
+            this.ALWAYS_N0E_L_8_ASM.ReadOnly = true;
+            this.ALWAYS_N0E_L_8_ASM.Size = new System.Drawing.Size(237, 25);
+            this.ALWAYS_N0E_L_8_ASM.TabIndex = 235;
+            // 
+            // ALWAYS_N0E_EXPLAIN
+            // 
+            this.ALWAYS_N0E_EXPLAIN.ErrorMessage = "";
+            this.ALWAYS_N0E_EXPLAIN.Location = new System.Drawing.Point(9, 193);
+            this.ALWAYS_N0E_EXPLAIN.Multiline = true;
+            this.ALWAYS_N0E_EXPLAIN.Name = "ALWAYS_N0E_EXPLAIN";
+            this.ALWAYS_N0E_EXPLAIN.Placeholder = "";
+            this.ALWAYS_N0E_EXPLAIN.ReadOnly = true;
+            this.ALWAYS_N0E_EXPLAIN.Size = new System.Drawing.Size(573, 487);
+            this.ALWAYS_N0E_EXPLAIN.TabIndex = 229;
+            this.ALWAYS_N0E_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
+            // 
+            // ALWAYS_N0E_L_2_FLAG
+            // 
+            this.ALWAYS_N0E_L_2_FLAG.ErrorMessage = "";
+            this.ALWAYS_N0E_L_2_FLAG.Location = new System.Drawing.Point(271, 21);
+            this.ALWAYS_N0E_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0E_L_2_FLAG.Name = "ALWAYS_N0E_L_2_FLAG";
+            this.ALWAYS_N0E_L_2_FLAG.Placeholder = "";
+            this.ALWAYS_N0E_L_2_FLAG.ReadOnly = true;
+            this.ALWAYS_N0E_L_2_FLAG.Size = new System.Drawing.Size(311, 25);
+            this.ALWAYS_N0E_L_2_FLAG.TabIndex = 228;
+            // 
+            // ALWAYS_N0E_L_4_EVENT
+            // 
+            this.ALWAYS_N0E_L_4_EVENT.ErrorMessage = "";
+            this.ALWAYS_N0E_L_4_EVENT.Location = new System.Drawing.Point(347, 54);
+            this.ALWAYS_N0E_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0E_L_4_EVENT.Name = "ALWAYS_N0E_L_4_EVENT";
+            this.ALWAYS_N0E_L_4_EVENT.Placeholder = "";
+            this.ALWAYS_N0E_L_4_EVENT.ReadOnly = true;
+            this.ALWAYS_N0E_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
+            this.ALWAYS_N0E_L_4_EVENT.TabIndex = 236;
+            this.ALWAYS_N0E_L_4_EVENT.Visible = false;
+            // 
             // ALWAYS_UNIONTAB_N0D
             // 
             this.ALWAYS_UNIONTAB_N0D.BackColor = System.Drawing.SystemColors.Control;
@@ -4686,6 +5819,52 @@
             this.ALWAYS_N0D_L_4_NEWALLOC_EVENT5.Text = "新規イベント";
             this.ALWAYS_N0D_L_4_NEWALLOC_EVENT5.UseVisualStyleBackColor = true;
             // 
+            // ALWAYS_N0D_L_8_ASM
+            // 
+            this.ALWAYS_N0D_L_8_ASM.ErrorMessage = "";
+            this.ALWAYS_N0D_L_8_ASM.Location = new System.Drawing.Point(347, 91);
+            this.ALWAYS_N0D_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0D_L_8_ASM.Name = "ALWAYS_N0D_L_8_ASM";
+            this.ALWAYS_N0D_L_8_ASM.Placeholder = "";
+            this.ALWAYS_N0D_L_8_ASM.ReadOnly = true;
+            this.ALWAYS_N0D_L_8_ASM.Size = new System.Drawing.Size(237, 25);
+            this.ALWAYS_N0D_L_8_ASM.TabIndex = 239;
+            // 
+            // ALWAYS_N0D_EXPLAIN
+            // 
+            this.ALWAYS_N0D_EXPLAIN.ErrorMessage = "";
+            this.ALWAYS_N0D_EXPLAIN.Location = new System.Drawing.Point(9, 193);
+            this.ALWAYS_N0D_EXPLAIN.Multiline = true;
+            this.ALWAYS_N0D_EXPLAIN.Name = "ALWAYS_N0D_EXPLAIN";
+            this.ALWAYS_N0D_EXPLAIN.Placeholder = "";
+            this.ALWAYS_N0D_EXPLAIN.ReadOnly = true;
+            this.ALWAYS_N0D_EXPLAIN.Size = new System.Drawing.Size(573, 491);
+            this.ALWAYS_N0D_EXPLAIN.TabIndex = 238;
+            this.ALWAYS_N0D_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
+            // 
+            // ALWAYS_N0D_L_2_FLAG
+            // 
+            this.ALWAYS_N0D_L_2_FLAG.ErrorMessage = "";
+            this.ALWAYS_N0D_L_2_FLAG.Location = new System.Drawing.Point(271, 21);
+            this.ALWAYS_N0D_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0D_L_2_FLAG.Name = "ALWAYS_N0D_L_2_FLAG";
+            this.ALWAYS_N0D_L_2_FLAG.Placeholder = "";
+            this.ALWAYS_N0D_L_2_FLAG.ReadOnly = true;
+            this.ALWAYS_N0D_L_2_FLAG.Size = new System.Drawing.Size(311, 25);
+            this.ALWAYS_N0D_L_2_FLAG.TabIndex = 237;
+            // 
+            // ALWAYS_N0D_L_4_EVENT
+            // 
+            this.ALWAYS_N0D_L_4_EVENT.ErrorMessage = "";
+            this.ALWAYS_N0D_L_4_EVENT.Location = new System.Drawing.Point(349, 56);
+            this.ALWAYS_N0D_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ALWAYS_N0D_L_4_EVENT.Name = "ALWAYS_N0D_L_4_EVENT";
+            this.ALWAYS_N0D_L_4_EVENT.Placeholder = "";
+            this.ALWAYS_N0D_L_4_EVENT.ReadOnly = true;
+            this.ALWAYS_N0D_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
+            this.ALWAYS_N0D_L_4_EVENT.TabIndex = 240;
+            this.ALWAYS_N0D_L_4_EVENT.Visible = false;
+            // 
             // tabPage01040C
             // 
             this.tabPage01040C.BackColor = System.Drawing.SystemColors.Control;
@@ -4721,6 +5900,19 @@
             this.TRAP_AddressListExpandsButton.TabIndex = 112;
             this.TRAP_AddressListExpandsButton.Text = "リストの拡張";
             this.TRAP_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // TRAP_AddressList
+            // 
+            this.TRAP_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TRAP_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TRAP_AddressList.FormattingEnabled = true;
+            this.TRAP_AddressList.IntegralHeight = false;
+            this.TRAP_AddressList.ItemHeight = 30;
+            this.TRAP_AddressList.Location = new System.Drawing.Point(2, 32);
+            this.TRAP_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.TRAP_AddressList.Name = "TRAP_AddressList";
+            this.TRAP_AddressList.Size = new System.Drawing.Size(234, 784);
+            this.TRAP_AddressList.TabIndex = 109;
             // 
             // label129
             // 
@@ -4759,6 +5951,25 @@
             this.TRAP_B0_UNIONKEY.Name = "TRAP_B0_UNIONKEY";
             this.TRAP_B0_UNIONKEY.Size = new System.Drawing.Size(67, 25);
             this.TRAP_B0_UNIONKEY.TabIndex = 142;
+            // 
+            // TRAP_L_0_COMBO
+            // 
+            this.TRAP_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TRAP_L_0_COMBO.FormattingEnabled = true;
+            this.TRAP_L_0_COMBO.Items.AddRange(new object[] {
+            "00=-",
+            "01=アーチ配置",
+            "04=ダメージ床",
+            "05=毒ガス",
+            "07=神の矢",
+            "08=炎",
+            "0B=地雷",
+            "0C=ゴーゴンの卵"});
+            this.TRAP_L_0_COMBO.Location = new System.Drawing.Point(260, 5);
+            this.TRAP_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_L_0_COMBO.Name = "TRAP_L_0_COMBO";
+            this.TRAP_L_0_COMBO.Size = new System.Drawing.Size(317, 26);
+            this.TRAP_L_0_COMBO.TabIndex = 49;
             // 
             // TRAP_J_0
             // 
@@ -4811,6 +6022,33 @@
             this.TRAP_UNIONTAB_N01.Size = new System.Drawing.Size(593, 668);
             this.TRAP_UNIONTAB_N01.TabIndex = 1;
             this.TRAP_UNIONTAB_N01.Text = "アーチ配置";
+            // 
+            // TRAP_N01_EXPLAIN
+            // 
+            this.TRAP_N01_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N01_EXPLAIN.Location = new System.Drawing.Point(2, 157);
+            this.TRAP_N01_EXPLAIN.Multiline = true;
+            this.TRAP_N01_EXPLAIN.Name = "TRAP_N01_EXPLAIN";
+            this.TRAP_N01_EXPLAIN.Placeholder = "";
+            this.TRAP_N01_EXPLAIN.ReadOnly = true;
+            this.TRAP_N01_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N01_EXPLAIN.TabIndex = 235;
+            this.TRAP_N01_EXPLAIN.Text = "弓兵が利用できる「アーチ」を設置します。";
+            // 
+            // TRAP_N01_L_3_COMBO
+            // 
+            this.TRAP_N01_L_3_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TRAP_N01_L_3_COMBO.FormattingEnabled = true;
+            this.TRAP_N01_L_3_COMBO.Items.AddRange(new object[] {
+            "35=ロングアーチ",
+            "36=アイアンアーチ",
+            "37=キラーアーチ",
+            "0=--"});
+            this.TRAP_N01_L_3_COMBO.Location = new System.Drawing.Point(245, 52);
+            this.TRAP_N01_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_N01_L_3_COMBO.Name = "TRAP_N01_L_3_COMBO";
+            this.TRAP_N01_L_3_COMBO.Size = new System.Drawing.Size(281, 26);
+            this.TRAP_N01_L_3_COMBO.TabIndex = 176;
             // 
             // TRAP_N01_L_1_MAPXY_2
             // 
@@ -5073,6 +6311,18 @@
             this.label124.Text = "X:";
             this.label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_N04_EXPLAIN
+            // 
+            this.TRAP_N04_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N04_EXPLAIN.Location = new System.Drawing.Point(0, 171);
+            this.TRAP_N04_EXPLAIN.Multiline = true;
+            this.TRAP_N04_EXPLAIN.Name = "TRAP_N04_EXPLAIN";
+            this.TRAP_N04_EXPLAIN.Placeholder = "";
+            this.TRAP_N04_EXPLAIN.ReadOnly = true;
+            this.TRAP_N04_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N04_EXPLAIN.TabIndex = 236;
+            this.TRAP_N04_EXPLAIN.Text = "ダメージを与えるトラップを設置します";
+            // 
             // TRAP_UNIONTAB_N05
             // 
             this.TRAP_UNIONTAB_N05.BackColor = System.Drawing.SystemColors.Control;
@@ -5222,6 +6472,33 @@
             this.label25.Text = "X:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_N05_L_3_COMBO
+            // 
+            this.TRAP_N05_L_3_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TRAP_N05_L_3_COMBO.FormattingEnabled = true;
+            this.TRAP_N05_L_3_COMBO.Items.AddRange(new object[] {
+            "00=右から左",
+            "01=左から右",
+            "02=上から下",
+            "03=下から上"});
+            this.TRAP_N05_L_3_COMBO.Location = new System.Drawing.Point(245, 54);
+            this.TRAP_N05_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_N05_L_3_COMBO.Name = "TRAP_N05_L_3_COMBO";
+            this.TRAP_N05_L_3_COMBO.Size = new System.Drawing.Size(329, 26);
+            this.TRAP_N05_L_3_COMBO.TabIndex = 187;
+            // 
+            // TRAP_N05_EXPLAIN
+            // 
+            this.TRAP_N05_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N05_EXPLAIN.Location = new System.Drawing.Point(2, 169);
+            this.TRAP_N05_EXPLAIN.Multiline = true;
+            this.TRAP_N05_EXPLAIN.Name = "TRAP_N05_EXPLAIN";
+            this.TRAP_N05_EXPLAIN.Placeholder = "";
+            this.TRAP_N05_EXPLAIN.ReadOnly = true;
+            this.TRAP_N05_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N05_EXPLAIN.TabIndex = 237;
+            this.TRAP_N05_EXPLAIN.Text = "毒ガスが噴き出すトラップを設定します。";
+            // 
             // TRAP_UNIONTAB_N07
             // 
             this.TRAP_UNIONTAB_N07.BackColor = System.Drawing.SystemColors.Control;
@@ -5370,6 +6647,18 @@
             this.label30.Text = "X:";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_N07_EXPLAIN
+            // 
+            this.TRAP_N07_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N07_EXPLAIN.Location = new System.Drawing.Point(3, 181);
+            this.TRAP_N07_EXPLAIN.Multiline = true;
+            this.TRAP_N07_EXPLAIN.Name = "TRAP_N07_EXPLAIN";
+            this.TRAP_N07_EXPLAIN.Placeholder = "";
+            this.TRAP_N07_EXPLAIN.ReadOnly = true;
+            this.TRAP_N07_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N07_EXPLAIN.TabIndex = 238;
+            this.TRAP_N07_EXPLAIN.Text = "Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。";
+            // 
             // TRAP_UNIONTAB_N0C
             // 
             this.TRAP_UNIONTAB_N0C.BackColor = System.Drawing.SystemColors.Control;
@@ -5516,6 +6805,18 @@
             this.label140.Text = "X:";
             this.label140.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_N0C_EXPLAIN
+            // 
+            this.TRAP_N0C_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N0C_EXPLAIN.Location = new System.Drawing.Point(4, 165);
+            this.TRAP_N0C_EXPLAIN.Multiline = true;
+            this.TRAP_N0C_EXPLAIN.Name = "TRAP_N0C_EXPLAIN";
+            this.TRAP_N0C_EXPLAIN.Placeholder = "";
+            this.TRAP_N0C_EXPLAIN.ReadOnly = true;
+            this.TRAP_N0C_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N0C_EXPLAIN.TabIndex = 239;
+            this.TRAP_N0C_EXPLAIN.Text = "ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。";
+            // 
             // TRAP_UNIONTAB_N08
             // 
             this.TRAP_UNIONTAB_N08.BackColor = System.Drawing.SystemColors.Control;
@@ -5660,6 +6961,18 @@
             this.label18.TabIndex = 197;
             this.label18.Text = "X:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N08_EXPLAIN
+            // 
+            this.TRAP_N08_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N08_EXPLAIN.Location = new System.Drawing.Point(4, 166);
+            this.TRAP_N08_EXPLAIN.Multiline = true;
+            this.TRAP_N08_EXPLAIN.Name = "TRAP_N08_EXPLAIN";
+            this.TRAP_N08_EXPLAIN.Placeholder = "";
+            this.TRAP_N08_EXPLAIN.ReadOnly = true;
+            this.TRAP_N08_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N08_EXPLAIN.TabIndex = 240;
+            this.TRAP_N08_EXPLAIN.Text = "炎のトラップを設定します。";
             // 
             // TRAP_UNIONTAB_N0B
             // 
@@ -5806,6 +7119,161 @@
             this.label21.Text = "X:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_N0B_EXPLAIN
+            // 
+            this.TRAP_N0B_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N0B_EXPLAIN.Location = new System.Drawing.Point(0, 163);
+            this.TRAP_N0B_EXPLAIN.Multiline = true;
+            this.TRAP_N0B_EXPLAIN.Name = "TRAP_N0B_EXPLAIN";
+            this.TRAP_N0B_EXPLAIN.Placeholder = "";
+            this.TRAP_N0B_EXPLAIN.ReadOnly = true;
+            this.TRAP_N0B_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N0B_EXPLAIN.TabIndex = 241;
+            this.TRAP_N0B_EXPLAIN.Text = "地雷のトラップを設定します。";
+            // 
+            // TRAP_UNIONTAB_N06
+            // 
+            this.TRAP_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_1_MAPXY_2);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B3);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_4_TEXT);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_3);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_W4);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.label34);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B2);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B1);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.label35);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_4_TEXT);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_EXPLAIN);
+            this.TRAP_UNIONTAB_N06.Location = new System.Drawing.Point(4, 28);
+            this.TRAP_UNIONTAB_N06.Name = "TRAP_UNIONTAB_N06";
+            this.TRAP_UNIONTAB_N06.Padding = new System.Windows.Forms.Padding(3);
+            this.TRAP_UNIONTAB_N06.Size = new System.Drawing.Size(593, 668);
+            this.TRAP_UNIONTAB_N06.TabIndex = 8;
+            this.TRAP_UNIONTAB_N06.Text = "Vein";
+            // 
+            // TRAP_N06_L_1_MAPXY_2
+            // 
+            this.TRAP_N06_L_1_MAPXY_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_L_1_MAPXY_2.Location = new System.Drawing.Point(4, 12);
+            this.TRAP_N06_L_1_MAPXY_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_L_1_MAPXY_2.Name = "TRAP_N06_L_1_MAPXY_2";
+            this.TRAP_N06_L_1_MAPXY_2.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_L_1_MAPXY_2.TabIndex = 242;
+            this.TRAP_N06_L_1_MAPXY_2.Text = "配置座標";
+            this.TRAP_N06_L_1_MAPXY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_B3
+            // 
+            this.TRAP_N06_B3.Hexadecimal = true;
+            this.TRAP_N06_B3.Location = new System.Drawing.Point(171, 53);
+            this.TRAP_N06_B3.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.TRAP_N06_B3.Name = "TRAP_N06_B3";
+            this.TRAP_N06_B3.Size = new System.Drawing.Size(67, 25);
+            this.TRAP_N06_B3.TabIndex = 248;
+            // 
+            // TRAP_N06_J_4_TEXT
+            // 
+            this.TRAP_N06_J_4_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_J_4_TEXT.Location = new System.Drawing.Point(4, 84);
+            this.TRAP_N06_J_4_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_J_4_TEXT.Name = "TRAP_N06_J_4_TEXT";
+            this.TRAP_N06_J_4_TEXT.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_J_4_TEXT.TabIndex = 243;
+            this.TRAP_N06_J_4_TEXT.Text = "TextID";
+            this.TRAP_N06_J_4_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_J_3
+            // 
+            this.TRAP_N06_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_J_3.Location = new System.Drawing.Point(4, 48);
+            this.TRAP_N06_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_J_3.Name = "TRAP_N06_J_3";
+            this.TRAP_N06_J_3.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_J_3.TabIndex = 251;
+            this.TRAP_N06_J_3.Text = "VeinEffectID";
+            this.TRAP_N06_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_W4
+            // 
+            this.TRAP_N06_W4.Hexadecimal = true;
+            this.TRAP_N06_W4.Location = new System.Drawing.Point(171, 87);
+            this.TRAP_N06_W4.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_W4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.TRAP_N06_W4.Name = "TRAP_N06_W4";
+            this.TRAP_N06_W4.Size = new System.Drawing.Size(109, 25);
+            this.TRAP_N06_W4.TabIndex = 244;
+            // 
+            // label34
+            // 
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Location = new System.Drawing.Point(284, 14);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(28, 26);
+            this.label34.TabIndex = 250;
+            this.label34.Text = "Y:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_B2
+            // 
+            this.TRAP_N06_B2.Location = new System.Drawing.Point(318, 16);
+            this.TRAP_N06_B2.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B2.Name = "TRAP_N06_B2";
+            this.TRAP_N06_B2.Size = new System.Drawing.Size(78, 25);
+            this.TRAP_N06_B2.TabIndex = 249;
+            // 
+            // TRAP_N06_B1
+            // 
+            this.TRAP_N06_B1.Location = new System.Drawing.Point(202, 16);
+            this.TRAP_N06_B1.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B1.Name = "TRAP_N06_B1";
+            this.TRAP_N06_B1.Size = new System.Drawing.Size(78, 25);
+            this.TRAP_N06_B1.TabIndex = 247;
+            // 
+            // label35
+            // 
+            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label35.Location = new System.Drawing.Point(171, 14);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(28, 26);
+            this.label35.TabIndex = 246;
+            this.label35.Text = "X:";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_L_4_TEXT
+            // 
+            this.TRAP_N06_L_4_TEXT.ErrorMessage = "";
+            this.TRAP_N06_L_4_TEXT.Location = new System.Drawing.Point(287, 86);
+            this.TRAP_N06_L_4_TEXT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_N06_L_4_TEXT.Name = "TRAP_N06_L_4_TEXT";
+            this.TRAP_N06_L_4_TEXT.Placeholder = "";
+            this.TRAP_N06_L_4_TEXT.ReadOnly = true;
+            this.TRAP_N06_L_4_TEXT.Size = new System.Drawing.Size(281, 25);
+            this.TRAP_N06_L_4_TEXT.TabIndex = 254;
+            // 
+            // TRAP_N06_EXPLAIN
+            // 
+            this.TRAP_N06_EXPLAIN.ErrorMessage = "";
+            this.TRAP_N06_EXPLAIN.Location = new System.Drawing.Point(2, 162);
+            this.TRAP_N06_EXPLAIN.Multiline = true;
+            this.TRAP_N06_EXPLAIN.Name = "TRAP_N06_EXPLAIN";
+            this.TRAP_N06_EXPLAIN.Placeholder = "";
+            this.TRAP_N06_EXPLAIN.ReadOnly = true;
+            this.TRAP_N06_EXPLAIN.Size = new System.Drawing.Size(575, 506);
+            this.TRAP_N06_EXPLAIN.TabIndex = 253;
+            this.TRAP_N06_EXPLAIN.Text = resources.GetString("TRAP_N06_EXPLAIN.Text");
+            // 
             // panel27
             // 
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -5822,6 +7290,17 @@
             this.panel27.Size = new System.Drawing.Size(595, 81);
             this.panel27.TabIndex = 190;
             // 
+            // TRAP_BlockSize
+            // 
+            this.TRAP_BlockSize.ErrorMessage = "";
+            this.TRAP_BlockSize.Location = new System.Drawing.Point(84, 2);
+            this.TRAP_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_BlockSize.Name = "TRAP_BlockSize";
+            this.TRAP_BlockSize.Placeholder = "";
+            this.TRAP_BlockSize.ReadOnly = true;
+            this.TRAP_BlockSize.Size = new System.Drawing.Size(115, 25);
+            this.TRAP_BlockSize.TabIndex = 52;
+            // 
             // label130
             // 
             this.label130.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -5832,6 +7311,17 @@
             this.label130.TabIndex = 52;
             this.label130.Text = "Size:";
             this.label130.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_SelectAddress
+            // 
+            this.TRAP_SelectAddress.ErrorMessage = "";
+            this.TRAP_SelectAddress.Location = new System.Drawing.Point(386, 4);
+            this.TRAP_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TRAP_SelectAddress.Name = "TRAP_SelectAddress";
+            this.TRAP_SelectAddress.Placeholder = "";
+            this.TRAP_SelectAddress.ReadOnly = true;
+            this.TRAP_SelectAddress.Size = new System.Drawing.Size(202, 25);
+            this.TRAP_SelectAddress.TabIndex = 40;
             // 
             // label131
             // 
@@ -5904,6 +7394,17 @@
             this.Jump_TO_EventScript.Text = "選択されている開始/終了イベントを、イベント編集画面で開く";
             this.Jump_TO_EventScript.Click += new System.EventHandler(this.Jump_TO_EventScript_Click);
             // 
+            // EXPLAIN_EVENT
+            // 
+            this.EXPLAIN_EVENT.ErrorMessage = "";
+            this.EXPLAIN_EVENT.Location = new System.Drawing.Point(14, 182);
+            this.EXPLAIN_EVENT.Multiline = true;
+            this.EXPLAIN_EVENT.Name = "EXPLAIN_EVENT";
+            this.EXPLAIN_EVENT.Placeholder = "";
+            this.EXPLAIN_EVENT.ReadOnly = true;
+            this.EXPLAIN_EVENT.Size = new System.Drawing.Size(740, 657);
+            this.EXPLAIN_EVENT.TabIndex = 249;
+            // 
             // tabPage1011121314151617
             // 
             this.tabPage1011121314151617.BackColor = System.Drawing.SystemColors.Control;
@@ -5928,6 +7429,17 @@
             this.Jump_TO_EventUnit.TabIndex = 2;
             this.Jump_TO_EventUnit.Text = "選択されている配置情報を、ユニット配置画面で開く";
             this.Jump_TO_EventUnit.Click += new System.EventHandler(this.Jump_TO_EventUnit_Click);
+            // 
+            // EXPLAIN_PLACER
+            // 
+            this.EXPLAIN_PLACER.ErrorMessage = "";
+            this.EXPLAIN_PLACER.Location = new System.Drawing.Point(14, 182);
+            this.EXPLAIN_PLACER.Multiline = true;
+            this.EXPLAIN_PLACER.Name = "EXPLAIN_PLACER";
+            this.EXPLAIN_PLACER.Placeholder = "";
+            this.EXPLAIN_PLACER.ReadOnly = true;
+            this.EXPLAIN_PLACER.Size = new System.Drawing.Size(740, 657);
+            this.EXPLAIN_PLACER.TabIndex = 248;
             // 
             // tabPageNOP
             // 
@@ -5966,6 +7478,19 @@
             this.panel4.Size = new System.Drawing.Size(598, 756);
             this.panel4.TabIndex = 194;
             // 
+            // TUTORIAL_EXPLAIN
+            // 
+            this.TUTORIAL_EXPLAIN.ErrorMessage = "";
+            this.TUTORIAL_EXPLAIN.Location = new System.Drawing.Point(4, 262);
+            this.TUTORIAL_EXPLAIN.Multiline = true;
+            this.TUTORIAL_EXPLAIN.Name = "TUTORIAL_EXPLAIN";
+            this.TUTORIAL_EXPLAIN.Placeholder = "";
+            this.TUTORIAL_EXPLAIN.ReadOnly = true;
+            this.TUTORIAL_EXPLAIN.Size = new System.Drawing.Size(586, 492);
+            this.TUTORIAL_EXPLAIN.TabIndex = 247;
+            this.TUTORIAL_EXPLAIN.Text = "FE8のチュートリアルイベントを設定します。\r\nチュートリアルは謎が多く、まだ解析されていません。\r\nここで指定する自動実行されるチュートリアルイベントと、ターン" +
+    "イベントなどで設定されるイベントの中にあるチュートリアル分岐は、密接に結びついており、片方を変えるともう片方に影響します。";
+            // 
             // TUTORIAL_L_0_NEWALLOC_EVENT
             // 
             this.TUTORIAL_L_0_NEWALLOC_EVENT.Location = new System.Drawing.Point(330, 9);
@@ -6000,6 +7525,18 @@
             this.TUTORIAL_J_0_EVENT.Text = "イベント";
             this.TUTORIAL_J_0_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TUTORIAL_L_0_EVENT
+            // 
+            this.TUTORIAL_L_0_EVENT.ErrorMessage = "";
+            this.TUTORIAL_L_0_EVENT.Location = new System.Drawing.Point(332, 9);
+            this.TUTORIAL_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TUTORIAL_L_0_EVENT.Name = "TUTORIAL_L_0_EVENT";
+            this.TUTORIAL_L_0_EVENT.Placeholder = "";
+            this.TUTORIAL_L_0_EVENT.ReadOnly = true;
+            this.TUTORIAL_L_0_EVENT.Size = new System.Drawing.Size(264, 25);
+            this.TUTORIAL_L_0_EVENT.TabIndex = 248;
+            this.TUTORIAL_L_0_EVENT.Visible = false;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.TUTORIAL_AddressListExpandsButton);
@@ -6020,6 +7557,19 @@
             this.TUTORIAL_AddressListExpandsButton.TabIndex = 112;
             this.TUTORIAL_AddressListExpandsButton.Text = "リストの拡張";
             this.TUTORIAL_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // TUTORIAL_AddressList
+            // 
+            this.TUTORIAL_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TUTORIAL_AddressList.FormattingEnabled = true;
+            this.TUTORIAL_AddressList.IntegralHeight = false;
+            this.TUTORIAL_AddressList.ItemHeight = 18;
+            this.TUTORIAL_AddressList.Location = new System.Drawing.Point(0, 34);
+            this.TUTORIAL_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.TUTORIAL_AddressList.Name = "TUTORIAL_AddressList";
+            this.TUTORIAL_AddressList.Size = new System.Drawing.Size(233, 778);
+            this.TUTORIAL_AddressList.TabIndex = 109;
+            this.TUTORIAL_AddressList.SelectedIndexChanged += new System.EventHandler(this.TUTORIAL_AddressList_SelectedIndexChanged);
             // 
             // label60
             // 
@@ -6049,6 +7599,17 @@
             this.panel13.Size = new System.Drawing.Size(602, 81);
             this.panel13.TabIndex = 193;
             // 
+            // TUTORIAL_BlockSize
+            // 
+            this.TUTORIAL_BlockSize.ErrorMessage = "";
+            this.TUTORIAL_BlockSize.Location = new System.Drawing.Point(86, 2);
+            this.TUTORIAL_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TUTORIAL_BlockSize.Name = "TUTORIAL_BlockSize";
+            this.TUTORIAL_BlockSize.Placeholder = "";
+            this.TUTORIAL_BlockSize.ReadOnly = true;
+            this.TUTORIAL_BlockSize.Size = new System.Drawing.Size(116, 25);
+            this.TUTORIAL_BlockSize.TabIndex = 52;
+            // 
             // label61
             // 
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -6059,6 +7620,17 @@
             this.label61.TabIndex = 52;
             this.label61.Text = "Size:";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TUTORIAL_SelectAddress
+            // 
+            this.TUTORIAL_SelectAddress.ErrorMessage = "";
+            this.TUTORIAL_SelectAddress.Location = new System.Drawing.Point(382, 6);
+            this.TUTORIAL_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TUTORIAL_SelectAddress.Name = "TUTORIAL_SelectAddress";
+            this.TUTORIAL_SelectAddress.Placeholder = "";
+            this.TUTORIAL_SelectAddress.ReadOnly = true;
+            this.TUTORIAL_SelectAddress.Size = new System.Drawing.Size(192, 25);
+            this.TUTORIAL_SelectAddress.TabIndex = 40;
             // 
             // label71
             // 
@@ -6156,6 +7728,15 @@
             this.numericUpDown53.Name = "numericUpDown53";
             this.numericUpDown53.Size = new System.Drawing.Size(67, 25);
             this.numericUpDown53.TabIndex = 185;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(160, 72);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(159, 26);
+            this.comboBox4.TabIndex = 184;
             // 
             // numericUpDown61
             // 
@@ -6331,1601 +7912,6 @@
             this.panel14.Size = new System.Drawing.Size(234, 914);
             this.panel14.TabIndex = 187;
             // 
-            // label62
-            // 
-            this.label62.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label62.Location = new System.Drawing.Point(-1, 1);
-            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(234, 31);
-            this.label62.TabIndex = 106;
-            this.label62.Text = "マップ名";
-            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TRAP_UNIONTAB_N06
-            // 
-            this.TRAP_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_4_TEXT);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_1_MAPXY_2);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B3);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_4_TEXT);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_3);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_W4);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.label34);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B2);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B1);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.label35);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_EXPLAIN);
-            this.TRAP_UNIONTAB_N06.Location = new System.Drawing.Point(4, 28);
-            this.TRAP_UNIONTAB_N06.Name = "TRAP_UNIONTAB_N06";
-            this.TRAP_UNIONTAB_N06.Padding = new System.Windows.Forms.Padding(3);
-            this.TRAP_UNIONTAB_N06.Size = new System.Drawing.Size(593, 668);
-            this.TRAP_UNIONTAB_N06.TabIndex = 8;
-            this.TRAP_UNIONTAB_N06.Text = "Vein";
-            // 
-            // TRAP_N06_L_1_MAPXY_2
-            // 
-            this.TRAP_N06_L_1_MAPXY_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_L_1_MAPXY_2.Location = new System.Drawing.Point(4, 12);
-            this.TRAP_N06_L_1_MAPXY_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_L_1_MAPXY_2.Name = "TRAP_N06_L_1_MAPXY_2";
-            this.TRAP_N06_L_1_MAPXY_2.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_L_1_MAPXY_2.TabIndex = 242;
-            this.TRAP_N06_L_1_MAPXY_2.Text = "配置座標";
-            this.TRAP_N06_L_1_MAPXY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_B3
-            // 
-            this.TRAP_N06_B3.Hexadecimal = true;
-            this.TRAP_N06_B3.Location = new System.Drawing.Point(171, 53);
-            this.TRAP_N06_B3.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.TRAP_N06_B3.Name = "TRAP_N06_B3";
-            this.TRAP_N06_B3.Size = new System.Drawing.Size(67, 25);
-            this.TRAP_N06_B3.TabIndex = 248;
-            // 
-            // TRAP_N06_J_4_TEXT
-            // 
-            this.TRAP_N06_J_4_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_J_4_TEXT.Location = new System.Drawing.Point(4, 84);
-            this.TRAP_N06_J_4_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_J_4_TEXT.Name = "TRAP_N06_J_4_TEXT";
-            this.TRAP_N06_J_4_TEXT.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_J_4_TEXT.TabIndex = 243;
-            this.TRAP_N06_J_4_TEXT.Text = "TextID";
-            this.TRAP_N06_J_4_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_J_3
-            // 
-            this.TRAP_N06_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_J_3.Location = new System.Drawing.Point(4, 48);
-            this.TRAP_N06_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_J_3.Name = "TRAP_N06_J_3";
-            this.TRAP_N06_J_3.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_J_3.TabIndex = 251;
-            this.TRAP_N06_J_3.Text = "VeinEffectID";
-            this.TRAP_N06_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_W4
-            // 
-            this.TRAP_N06_W4.Hexadecimal = true;
-            this.TRAP_N06_W4.Location = new System.Drawing.Point(171, 87);
-            this.TRAP_N06_W4.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_W4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.TRAP_N06_W4.Name = "TRAP_N06_W4";
-            this.TRAP_N06_W4.Size = new System.Drawing.Size(109, 25);
-            this.TRAP_N06_W4.TabIndex = 244;
-            // 
-            // label34
-            // 
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Location = new System.Drawing.Point(284, 14);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(28, 26);
-            this.label34.TabIndex = 250;
-            this.label34.Text = "Y:";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_B2
-            // 
-            this.TRAP_N06_B2.Location = new System.Drawing.Point(318, 16);
-            this.TRAP_N06_B2.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B2.Name = "TRAP_N06_B2";
-            this.TRAP_N06_B2.Size = new System.Drawing.Size(78, 25);
-            this.TRAP_N06_B2.TabIndex = 249;
-            // 
-            // TRAP_N06_B1
-            // 
-            this.TRAP_N06_B1.Location = new System.Drawing.Point(202, 16);
-            this.TRAP_N06_B1.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B1.Name = "TRAP_N06_B1";
-            this.TRAP_N06_B1.Size = new System.Drawing.Size(78, 25);
-            this.TRAP_N06_B1.TabIndex = 247;
-            // 
-            // label35
-            // 
-            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label35.Location = new System.Drawing.Point(171, 14);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(28, 26);
-            this.label35.TabIndex = 246;
-            this.label35.Text = "X:";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(1081, 70);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(731, 882);
-            this.MapPictureBox.TabIndex = 222;
-            // 
-            // OBJECT_AddressList
-            // 
-            this.OBJECT_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.OBJECT_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.OBJECT_AddressList.FormattingEnabled = true;
-            this.OBJECT_AddressList.IntegralHeight = false;
-            this.OBJECT_AddressList.ItemHeight = 30;
-            this.OBJECT_AddressList.Location = new System.Drawing.Point(-1, 30);
-            this.OBJECT_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.OBJECT_AddressList.Name = "OBJECT_AddressList";
-            this.OBJECT_AddressList.Size = new System.Drawing.Size(238, 754);
-            this.OBJECT_AddressList.TabIndex = 109;
-            this.OBJECT_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
-            // 
-            // OBJECT_L_0_COMBO
-            // 
-            this.OBJECT_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_L_0_COMBO.FormattingEnabled = true;
-            this.OBJECT_L_0_COMBO.Items.AddRange(new object[] {
-            "00=-",
-            "05=制圧ポイントと民家",
-            "06=訪問村",
-            "07=宝箱",
-            "08=扉",
-            "0A=店"});
-            this.OBJECT_L_0_COMBO.Location = new System.Drawing.Point(275, 5);
-            this.OBJECT_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_L_0_COMBO.Name = "OBJECT_L_0_COMBO";
-            this.OBJECT_L_0_COMBO.Size = new System.Drawing.Size(306, 26);
-            this.OBJECT_L_0_COMBO.TabIndex = 49;
-            // 
-            // OBJECT_N05_EXPLAIN
-            // 
-            this.OBJECT_N05_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N05_EXPLAIN.Location = new System.Drawing.Point(9, 229);
-            this.OBJECT_N05_EXPLAIN.Multiline = true;
-            this.OBJECT_N05_EXPLAIN.Name = "OBJECT_N05_EXPLAIN";
-            this.OBJECT_N05_EXPLAIN.Placeholder = "";
-            this.OBJECT_N05_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N05_EXPLAIN.Size = new System.Drawing.Size(575, 459);
-            this.OBJECT_N05_EXPLAIN.TabIndex = 242;
-            this.OBJECT_N05_EXPLAIN.Text = resources.GetString("OBJECT_N05_EXPLAIN.Text");
-            // 
-            // OBJECT_N05_L_2_FLAG
-            // 
-            this.OBJECT_N05_L_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N05_L_2_FLAG.Location = new System.Drawing.Point(273, 14);
-            this.OBJECT_N05_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N05_L_2_FLAG.Name = "OBJECT_N05_L_2_FLAG";
-            this.OBJECT_N05_L_2_FLAG.Placeholder = "";
-            this.OBJECT_N05_L_2_FLAG.ReadOnly = true;
-            this.OBJECT_N05_L_2_FLAG.Size = new System.Drawing.Size(310, 25);
-            this.OBJECT_N05_L_2_FLAG.TabIndex = 222;
-            // 
-            // OBJECT_N05_L_10_COMBO
-            // 
-            this.OBJECT_N05_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_N05_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N05_L_10_COMBO.Items.AddRange(new object[] {
-            "11=制圧",
-            "20=村の中心(盗賊のターゲット)",
-            "10=民家",
-            "14=ランダム宝箱",
-            "0=--"});
-            this.OBJECT_N05_L_10_COMBO.Location = new System.Drawing.Point(273, 116);
-            this.OBJECT_N05_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N05_L_10_COMBO.Name = "OBJECT_N05_L_10_COMBO";
-            this.OBJECT_N05_L_10_COMBO.Size = new System.Drawing.Size(310, 26);
-            this.OBJECT_N05_L_10_COMBO.TabIndex = 217;
-            // 
-            // OBJECT_N05_L_4_EVENTORCHEST
-            // 
-            this.OBJECT_N05_L_4_EVENTORCHEST.ErrorMessage = "";
-            this.OBJECT_N05_L_4_EVENTORCHEST.Location = new System.Drawing.Point(336, 49);
-            this.OBJECT_N05_L_4_EVENTORCHEST.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N05_L_4_EVENTORCHEST.Name = "OBJECT_N05_L_4_EVENTORCHEST";
-            this.OBJECT_N05_L_4_EVENTORCHEST.Placeholder = "";
-            this.OBJECT_N05_L_4_EVENTORCHEST.ReadOnly = true;
-            this.OBJECT_N05_L_4_EVENTORCHEST.Size = new System.Drawing.Size(247, 25);
-            this.OBJECT_N05_L_4_EVENTORCHEST.TabIndex = 243;
-            this.OBJECT_N05_L_4_EVENTORCHEST.Visible = false;
-            // 
-            // OBJECT_N06_L_10_COMBO
-            // 
-            this.OBJECT_N06_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_N06_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N06_L_10_COMBO.Items.AddRange(new object[] {
-            "20=村の中心(盗賊のターゲット)",
-            "10=民家",
-            "0=--"});
-            this.OBJECT_N06_L_10_COMBO.Location = new System.Drawing.Point(273, 116);
-            this.OBJECT_N06_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N06_L_10_COMBO.Name = "OBJECT_N06_L_10_COMBO";
-            this.OBJECT_N06_L_10_COMBO.Size = new System.Drawing.Size(302, 26);
-            this.OBJECT_N06_L_10_COMBO.TabIndex = 235;
-            // 
-            // OBJECT_N06_EXPLAIN
-            // 
-            this.OBJECT_N06_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N06_EXPLAIN.Location = new System.Drawing.Point(9, 229);
-            this.OBJECT_N06_EXPLAIN.Multiline = true;
-            this.OBJECT_N06_EXPLAIN.Name = "OBJECT_N06_EXPLAIN";
-            this.OBJECT_N06_EXPLAIN.Placeholder = "";
-            this.OBJECT_N06_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N06_EXPLAIN.Size = new System.Drawing.Size(575, 459);
-            this.OBJECT_N06_EXPLAIN.TabIndex = 243;
-            this.OBJECT_N06_EXPLAIN.Text = resources.GetString("OBJECT_N06_EXPLAIN.Text");
-            // 
-            // OBJECT_N06_L_2_FLAG
-            // 
-            this.OBJECT_N06_L_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N06_L_2_FLAG.Location = new System.Drawing.Point(273, 16);
-            this.OBJECT_N06_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N06_L_2_FLAG.Name = "OBJECT_N06_L_2_FLAG";
-            this.OBJECT_N06_L_2_FLAG.Placeholder = "";
-            this.OBJECT_N06_L_2_FLAG.ReadOnly = true;
-            this.OBJECT_N06_L_2_FLAG.Size = new System.Drawing.Size(303, 25);
-            this.OBJECT_N06_L_2_FLAG.TabIndex = 240;
-            // 
-            // OBJECT_N06_L_4_EVENT
-            // 
-            this.OBJECT_N06_L_4_EVENT.ErrorMessage = "";
-            this.OBJECT_N06_L_4_EVENT.Location = new System.Drawing.Point(338, 49);
-            this.OBJECT_N06_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N06_L_4_EVENT.Name = "OBJECT_N06_L_4_EVENT";
-            this.OBJECT_N06_L_4_EVENT.Placeholder = "";
-            this.OBJECT_N06_L_4_EVENT.ReadOnly = true;
-            this.OBJECT_N06_L_4_EVENT.Size = new System.Drawing.Size(238, 25);
-            this.OBJECT_N06_L_4_EVENT.TabIndex = 244;
-            this.OBJECT_N06_L_4_EVENT.Visible = false;
-            // 
-            // OBJECT_N07_L_10_COMBO
-            // 
-            this.OBJECT_N07_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_N07_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N07_L_10_COMBO.Items.AddRange(new object[] {
-            "14=宝箱",
-            "0=--"});
-            this.OBJECT_N07_L_10_COMBO.Location = new System.Drawing.Point(278, 146);
-            this.OBJECT_N07_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N07_L_10_COMBO.Name = "OBJECT_N07_L_10_COMBO";
-            this.OBJECT_N07_L_10_COMBO.Size = new System.Drawing.Size(290, 26);
-            this.OBJECT_N07_L_10_COMBO.TabIndex = 198;
-            // 
-            // OBJECT_N07_L_4_ITEMICON
-            // 
-            this.OBJECT_N07_L_4_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.OBJECT_N07_L_4_ITEMICON.Location = new System.Drawing.Point(540, 47);
-            this.OBJECT_N07_L_4_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
-            this.OBJECT_N07_L_4_ITEMICON.Name = "OBJECT_N07_L_4_ITEMICON";
-            this.OBJECT_N07_L_4_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.OBJECT_N07_L_4_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.OBJECT_N07_L_4_ITEMICON.TabIndex = 245;
-            this.OBJECT_N07_L_4_ITEMICON.TabStop = false;
-            // 
-            // OBJECT_N07_EXPLAIN
-            // 
-            this.OBJECT_N07_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N07_EXPLAIN.Location = new System.Drawing.Point(9, 233);
-            this.OBJECT_N07_EXPLAIN.Multiline = true;
-            this.OBJECT_N07_EXPLAIN.Name = "OBJECT_N07_EXPLAIN";
-            this.OBJECT_N07_EXPLAIN.Placeholder = "";
-            this.OBJECT_N07_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N07_EXPLAIN.Size = new System.Drawing.Size(575, 449);
-            this.OBJECT_N07_EXPLAIN.TabIndex = 244;
-            this.OBJECT_N07_EXPLAIN.Text = "宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており" +
-    "、この「マップ変化」で空箱になります。";
-            // 
-            // OBJECT_N07_L_2_FLAG
-            // 
-            this.OBJECT_N07_L_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N07_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
-            this.OBJECT_N07_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N07_L_2_FLAG.Name = "OBJECT_N07_L_2_FLAG";
-            this.OBJECT_N07_L_2_FLAG.Placeholder = "";
-            this.OBJECT_N07_L_2_FLAG.ReadOnly = true;
-            this.OBJECT_N07_L_2_FLAG.Size = new System.Drawing.Size(299, 25);
-            this.OBJECT_N07_L_2_FLAG.TabIndex = 241;
-            // 
-            // OBJECT_N07_L_4_ITEM
-            // 
-            this.OBJECT_N07_L_4_ITEM.ErrorMessage = "";
-            this.OBJECT_N07_L_4_ITEM.Location = new System.Drawing.Point(314, 51);
-            this.OBJECT_N07_L_4_ITEM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N07_L_4_ITEM.Name = "OBJECT_N07_L_4_ITEM";
-            this.OBJECT_N07_L_4_ITEM.Placeholder = "";
-            this.OBJECT_N07_L_4_ITEM.ReadOnly = true;
-            this.OBJECT_N07_L_4_ITEM.Size = new System.Drawing.Size(219, 25);
-            this.OBJECT_N07_L_4_ITEM.TabIndex = 201;
-            // 
-            // OBJECT_N08_L_10_COMBO
-            // 
-            this.OBJECT_N08_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_N08_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N08_L_10_COMBO.Items.AddRange(new object[] {
-            "12=扉",
-            "0=--"});
-            this.OBJECT_N08_L_10_COMBO.Location = new System.Drawing.Point(277, 114);
-            this.OBJECT_N08_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N08_L_10_COMBO.Name = "OBJECT_N08_L_10_COMBO";
-            this.OBJECT_N08_L_10_COMBO.Size = new System.Drawing.Size(294, 26);
-            this.OBJECT_N08_L_10_COMBO.TabIndex = 235;
-            // 
-            // OBJECT_N08_EXPLAIN
-            // 
-            this.OBJECT_N08_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N08_EXPLAIN.Location = new System.Drawing.Point(9, 229);
-            this.OBJECT_N08_EXPLAIN.Multiline = true;
-            this.OBJECT_N08_EXPLAIN.Name = "OBJECT_N08_EXPLAIN";
-            this.OBJECT_N08_EXPLAIN.Placeholder = "";
-            this.OBJECT_N08_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N08_EXPLAIN.Size = new System.Drawing.Size(575, 459);
-            this.OBJECT_N08_EXPLAIN.TabIndex = 245;
-            this.OBJECT_N08_EXPLAIN.Text = "扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であ" +
-    "れば、0x01の何もしないダミーイベントを設定してください。";
-            // 
-            // OBJECT_N08_L_2_FLAG
-            // 
-            this.OBJECT_N08_L_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N08_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
-            this.OBJECT_N08_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N08_L_2_FLAG.Name = "OBJECT_N08_L_2_FLAG";
-            this.OBJECT_N08_L_2_FLAG.Placeholder = "";
-            this.OBJECT_N08_L_2_FLAG.ReadOnly = true;
-            this.OBJECT_N08_L_2_FLAG.Size = new System.Drawing.Size(301, 25);
-            this.OBJECT_N08_L_2_FLAG.TabIndex = 242;
-            // 
-            // OBJECT_N08_L_4_EVENT
-            // 
-            this.OBJECT_N08_L_4_EVENT.ErrorMessage = "";
-            this.OBJECT_N08_L_4_EVENT.Location = new System.Drawing.Point(333, 48);
-            this.OBJECT_N08_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N08_L_4_EVENT.Name = "OBJECT_N08_L_4_EVENT";
-            this.OBJECT_N08_L_4_EVENT.Placeholder = "";
-            this.OBJECT_N08_L_4_EVENT.ReadOnly = true;
-            this.OBJECT_N08_L_4_EVENT.Size = new System.Drawing.Size(245, 25);
-            this.OBJECT_N08_L_4_EVENT.TabIndex = 246;
-            this.OBJECT_N08_L_4_EVENT.Visible = false;
-            // 
-            // OBJECT_N0A_L_10_COMBO
-            // 
-            this.OBJECT_N0A_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.OBJECT_N0A_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N0A_L_10_COMBO.Items.AddRange(new object[] {
-            "16=武器屋",
-            "17=道具屋",
-            "18=秘密の店",
-            "0=--"});
-            this.OBJECT_N0A_L_10_COMBO.Location = new System.Drawing.Point(271, 117);
-            this.OBJECT_N0A_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N0A_L_10_COMBO.Name = "OBJECT_N0A_L_10_COMBO";
-            this.OBJECT_N0A_L_10_COMBO.Size = new System.Drawing.Size(300, 26);
-            this.OBJECT_N0A_L_10_COMBO.TabIndex = 180;
-            // 
-            // OBJECT_N0A_J_2_FLAG
-            // 
-            this.OBJECT_N0A_J_2_FLAG.AccessibleDescription = "@AchievementFlag";
-            this.OBJECT_N0A_J_2_FLAG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OBJECT_N0A_J_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N0A_J_2_FLAG.Location = new System.Drawing.Point(0, 13);
-            this.OBJECT_N0A_J_2_FLAG.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.OBJECT_N0A_J_2_FLAG.Name = "OBJECT_N0A_J_2_FLAG";
-            this.OBJECT_N0A_J_2_FLAG.Size = new System.Drawing.Size(193, 32);
-            this.OBJECT_N0A_J_2_FLAG.TabIndex = 145;
-            this.OBJECT_N0A_J_2_FLAG.Text = "達成フラグ";
-            this.OBJECT_N0A_J_2_FLAG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OBJECT_N0A_EXPLAIN
-            // 
-            this.OBJECT_N0A_EXPLAIN.ErrorMessage = "";
-            this.OBJECT_N0A_EXPLAIN.Location = new System.Drawing.Point(9, 229);
-            this.OBJECT_N0A_EXPLAIN.Multiline = true;
-            this.OBJECT_N0A_EXPLAIN.Name = "OBJECT_N0A_EXPLAIN";
-            this.OBJECT_N0A_EXPLAIN.Placeholder = "";
-            this.OBJECT_N0A_EXPLAIN.ReadOnly = true;
-            this.OBJECT_N0A_EXPLAIN.Size = new System.Drawing.Size(575, 459);
-            this.OBJECT_N0A_EXPLAIN.TabIndex = 246;
-            this.OBJECT_N0A_EXPLAIN.Text = "座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。";
-            // 
-            // OBJECT_N0A_L_2_FLAG
-            // 
-            this.OBJECT_N0A_L_2_FLAG.ErrorMessage = "";
-            this.OBJECT_N0A_L_2_FLAG.Location = new System.Drawing.Point(275, 16);
-            this.OBJECT_N0A_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_N0A_L_2_FLAG.Name = "OBJECT_N0A_L_2_FLAG";
-            this.OBJECT_N0A_L_2_FLAG.Placeholder = "";
-            this.OBJECT_N0A_L_2_FLAG.ReadOnly = true;
-            this.OBJECT_N0A_L_2_FLAG.Size = new System.Drawing.Size(299, 25);
-            this.OBJECT_N0A_L_2_FLAG.TabIndex = 243;
-            // 
-            // OBJECT_BlockSize
-            // 
-            this.OBJECT_BlockSize.ErrorMessage = "";
-            this.OBJECT_BlockSize.Location = new System.Drawing.Point(86, 1);
-            this.OBJECT_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_BlockSize.Name = "OBJECT_BlockSize";
-            this.OBJECT_BlockSize.Placeholder = "";
-            this.OBJECT_BlockSize.ReadOnly = true;
-            this.OBJECT_BlockSize.Size = new System.Drawing.Size(112, 25);
-            this.OBJECT_BlockSize.TabIndex = 52;
-            // 
-            // OBJECT_SelectAddress
-            // 
-            this.OBJECT_SelectAddress.ErrorMessage = "";
-            this.OBJECT_SelectAddress.Location = new System.Drawing.Point(384, 3);
-            this.OBJECT_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.OBJECT_SelectAddress.Name = "OBJECT_SelectAddress";
-            this.OBJECT_SelectAddress.Placeholder = "";
-            this.OBJECT_SelectAddress.ReadOnly = true;
-            this.OBJECT_SelectAddress.Size = new System.Drawing.Size(204, 25);
-            this.OBJECT_SelectAddress.TabIndex = 40;
-            // 
-            // TALK_AddressList
-            // 
-            this.TALK_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.TALK_AddressList.FormattingEnabled = true;
-            this.TALK_AddressList.IntegralHeight = false;
-            this.TALK_AddressList.ItemHeight = 30;
-            this.TALK_AddressList.Location = new System.Drawing.Point(1, 29);
-            this.TALK_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.TALK_AddressList.Name = "TALK_AddressList";
-            this.TALK_AddressList.Size = new System.Drawing.Size(238, 754);
-            this.TALK_AddressList.TabIndex = 109;
-            this.TALK_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
-            // 
-            // TALK_L_0_COMBO
-            // 
-            this.TALK_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TALK_L_0_COMBO.FormattingEnabled = true;
-            this.TALK_L_0_COMBO.Items.AddRange(new object[] {
-            "00=-",
-            "03=話す条件",
-            "04=話す条件ASM"});
-            this.TALK_L_0_COMBO.Location = new System.Drawing.Point(248, 8);
-            this.TALK_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_L_0_COMBO.Name = "TALK_L_0_COMBO";
-            this.TALK_L_0_COMBO.Size = new System.Drawing.Size(333, 26);
-            this.TALK_L_0_COMBO.TabIndex = 49;
-            // 
-            // TALK_BlockSize
-            // 
-            this.TALK_BlockSize.ErrorMessage = "";
-            this.TALK_BlockSize.Location = new System.Drawing.Point(86, 1);
-            this.TALK_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_BlockSize.Name = "TALK_BlockSize";
-            this.TALK_BlockSize.Placeholder = "";
-            this.TALK_BlockSize.ReadOnly = true;
-            this.TALK_BlockSize.Size = new System.Drawing.Size(116, 25);
-            this.TALK_BlockSize.TabIndex = 52;
-            // 
-            // TALK_SelectAddress
-            // 
-            this.TALK_SelectAddress.ErrorMessage = "";
-            this.TALK_SelectAddress.Location = new System.Drawing.Point(384, 2);
-            this.TALK_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_SelectAddress.Name = "TALK_SelectAddress";
-            this.TALK_SelectAddress.Placeholder = "";
-            this.TALK_SelectAddress.ReadOnly = true;
-            this.TALK_SelectAddress.Size = new System.Drawing.Size(204, 25);
-            this.TALK_SelectAddress.TabIndex = 40;
-            // 
-            // TALK_N03_EXPLAIN
-            // 
-            this.TALK_N03_EXPLAIN.ErrorMessage = "";
-            this.TALK_N03_EXPLAIN.Location = new System.Drawing.Point(5, 297);
-            this.TALK_N03_EXPLAIN.Multiline = true;
-            this.TALK_N03_EXPLAIN.Name = "TALK_N03_EXPLAIN";
-            this.TALK_N03_EXPLAIN.Placeholder = "";
-            this.TALK_N03_EXPLAIN.ReadOnly = true;
-            this.TALK_N03_EXPLAIN.Size = new System.Drawing.Size(575, 385);
-            this.TALK_N03_EXPLAIN.TabIndex = 234;
-            this.TALK_N03_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
-            // 
-            // TALK_N03_L_14_FLAG
-            // 
-            this.TALK_N03_L_14_FLAG.ErrorMessage = "";
-            this.TALK_N03_L_14_FLAG.Location = new System.Drawing.Point(254, 228);
-            this.TALK_N03_L_14_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_14_FLAG.Name = "TALK_N03_L_14_FLAG";
-            this.TALK_N03_L_14_FLAG.Placeholder = "";
-            this.TALK_N03_L_14_FLAG.ReadOnly = true;
-            this.TALK_N03_L_14_FLAG.Size = new System.Drawing.Size(322, 25);
-            this.TALK_N03_L_14_FLAG.TabIndex = 224;
-            // 
-            // TALK_N03_L_2_FLAG
-            // 
-            this.TALK_N03_L_2_FLAG.ErrorMessage = "";
-            this.TALK_N03_L_2_FLAG.Location = new System.Drawing.Point(256, 15);
-            this.TALK_N03_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_2_FLAG.Name = "TALK_N03_L_2_FLAG";
-            this.TALK_N03_L_2_FLAG.Placeholder = "";
-            this.TALK_N03_L_2_FLAG.ReadOnly = true;
-            this.TALK_N03_L_2_FLAG.Size = new System.Drawing.Size(315, 25);
-            this.TALK_N03_L_2_FLAG.TabIndex = 223;
-            // 
-            // TALK_N03_L_9_UNITICON
-            // 
-            this.TALK_N03_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_N03_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALK_N03_L_9_UNITICON.Location = new System.Drawing.Point(546, 123);
-            this.TALK_N03_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALK_N03_L_9_UNITICON.Name = "TALK_N03_L_9_UNITICON";
-            this.TALK_N03_L_9_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.TALK_N03_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALK_N03_L_9_UNITICON.TabIndex = 175;
-            this.TALK_N03_L_9_UNITICON.TabStop = false;
-            // 
-            // TALK_N03_L_8_UNITICON
-            // 
-            this.TALK_N03_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_N03_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALK_N03_L_8_UNITICON.Location = new System.Drawing.Point(546, 87);
-            this.TALK_N03_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALK_N03_L_8_UNITICON.Name = "TALK_N03_L_8_UNITICON";
-            this.TALK_N03_L_8_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.TALK_N03_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALK_N03_L_8_UNITICON.TabIndex = 174;
-            this.TALK_N03_L_8_UNITICON.TabStop = false;
-            // 
-            // TALK_N03_L_12_COMBO
-            // 
-            this.TALK_N03_L_12_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TALK_N03_L_12_COMBO.FormattingEnabled = true;
-            this.TALK_N03_L_12_COMBO.Items.AddRange(new object[] {
-            "00=追加条件なし",
-            "03=判定フラグがONならば"});
-            this.TALK_N03_L_12_COMBO.Location = new System.Drawing.Point(279, 196);
-            this.TALK_N03_L_12_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_12_COMBO.Name = "TALK_N03_L_12_COMBO";
-            this.TALK_N03_L_12_COMBO.Size = new System.Drawing.Size(296, 26);
-            this.TALK_N03_L_12_COMBO.TabIndex = 173;
-            // 
-            // TALK_N03_L_9_UNIT
-            // 
-            this.TALK_N03_L_9_UNIT.ErrorMessage = "";
-            this.TALK_N03_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
-            this.TALK_N03_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_9_UNIT.Name = "TALK_N03_L_9_UNIT";
-            this.TALK_N03_L_9_UNIT.Placeholder = "";
-            this.TALK_N03_L_9_UNIT.ReadOnly = true;
-            this.TALK_N03_L_9_UNIT.Size = new System.Drawing.Size(281, 25);
-            this.TALK_N03_L_9_UNIT.TabIndex = 169;
-            // 
-            // TALK_N03_L_8_UNIT
-            // 
-            this.TALK_N03_L_8_UNIT.ErrorMessage = "";
-            this.TALK_N03_L_8_UNIT.Location = new System.Drawing.Point(252, 88);
-            this.TALK_N03_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_8_UNIT.Name = "TALK_N03_L_8_UNIT";
-            this.TALK_N03_L_8_UNIT.Placeholder = "";
-            this.TALK_N03_L_8_UNIT.ReadOnly = true;
-            this.TALK_N03_L_8_UNIT.Size = new System.Drawing.Size(281, 25);
-            this.TALK_N03_L_8_UNIT.TabIndex = 168;
-            // 
-            // TALK_N03_L_4_EVENT
-            // 
-            this.TALK_N03_L_4_EVENT.ErrorMessage = "";
-            this.TALK_N03_L_4_EVENT.Location = new System.Drawing.Point(317, 46);
-            this.TALK_N03_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_4_EVENT.Name = "TALK_N03_L_4_EVENT";
-            this.TALK_N03_L_4_EVENT.Placeholder = "";
-            this.TALK_N03_L_4_EVENT.ReadOnly = true;
-            this.TALK_N03_L_4_EVENT.Size = new System.Drawing.Size(254, 25);
-            this.TALK_N03_L_4_EVENT.TabIndex = 235;
-            this.TALK_N03_L_4_EVENT.Visible = false;
-            // 
-            // TALK_N04_L_12_ASM
-            // 
-            this.TALK_N04_L_12_ASM.ErrorMessage = "";
-            this.TALK_N04_L_12_ASM.Location = new System.Drawing.Point(323, 193);
-            this.TALK_N04_L_12_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N04_L_12_ASM.Name = "TALK_N04_L_12_ASM";
-            this.TALK_N04_L_12_ASM.Placeholder = "";
-            this.TALK_N04_L_12_ASM.ReadOnly = true;
-            this.TALK_N04_L_12_ASM.Size = new System.Drawing.Size(256, 25);
-            this.TALK_N04_L_12_ASM.TabIndex = 234;
-            // 
-            // TALK_N04_EXPLAIN
-            // 
-            this.TALK_N04_EXPLAIN.ErrorMessage = "";
-            this.TALK_N04_EXPLAIN.Location = new System.Drawing.Point(2, 253);
-            this.TALK_N04_EXPLAIN.Multiline = true;
-            this.TALK_N04_EXPLAIN.Name = "TALK_N04_EXPLAIN";
-            this.TALK_N04_EXPLAIN.Placeholder = "";
-            this.TALK_N04_EXPLAIN.ReadOnly = true;
-            this.TALK_N04_EXPLAIN.Size = new System.Drawing.Size(575, 432);
-            this.TALK_N04_EXPLAIN.TabIndex = 233;
-            this.TALK_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
-            // 
-            // TALK_N04_L_2_FLAG
-            // 
-            this.TALK_N04_L_2_FLAG.ErrorMessage = "";
-            this.TALK_N04_L_2_FLAG.Location = new System.Drawing.Point(252, 15);
-            this.TALK_N04_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N04_L_2_FLAG.Name = "TALK_N04_L_2_FLAG";
-            this.TALK_N04_L_2_FLAG.Placeholder = "";
-            this.TALK_N04_L_2_FLAG.ReadOnly = true;
-            this.TALK_N04_L_2_FLAG.Size = new System.Drawing.Size(325, 25);
-            this.TALK_N04_L_2_FLAG.TabIndex = 224;
-            // 
-            // TALK_N04_L_9_UNIT
-            // 
-            this.TALK_N04_L_9_UNIT.ErrorMessage = "";
-            this.TALK_N04_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
-            this.TALK_N04_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N04_L_9_UNIT.Name = "TALK_N04_L_9_UNIT";
-            this.TALK_N04_L_9_UNIT.Placeholder = "";
-            this.TALK_N04_L_9_UNIT.ReadOnly = true;
-            this.TALK_N04_L_9_UNIT.Size = new System.Drawing.Size(285, 25);
-            this.TALK_N04_L_9_UNIT.TabIndex = 193;
-            // 
-            // TALK_N04_L_8_UNIT
-            // 
-            this.TALK_N04_L_8_UNIT.ErrorMessage = "";
-            this.TALK_N04_L_8_UNIT.Location = new System.Drawing.Point(252, 89);
-            this.TALK_N04_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N04_L_8_UNIT.Name = "TALK_N04_L_8_UNIT";
-            this.TALK_N04_L_8_UNIT.Placeholder = "";
-            this.TALK_N04_L_8_UNIT.ReadOnly = true;
-            this.TALK_N04_L_8_UNIT.Size = new System.Drawing.Size(285, 25);
-            this.TALK_N04_L_8_UNIT.TabIndex = 192;
-            // 
-            // TALK_N04_L_9_UNITICON
-            // 
-            this.TALK_N04_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_N04_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALK_N04_L_9_UNITICON.Location = new System.Drawing.Point(550, 122);
-            this.TALK_N04_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALK_N04_L_9_UNITICON.Name = "TALK_N04_L_9_UNITICON";
-            this.TALK_N04_L_9_UNITICON.Size = new System.Drawing.Size(32, 29);
-            this.TALK_N04_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALK_N04_L_9_UNITICON.TabIndex = 199;
-            this.TALK_N04_L_9_UNITICON.TabStop = false;
-            // 
-            // TALK_N04_L_8_UNITICON
-            // 
-            this.TALK_N04_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_N04_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALK_N04_L_8_UNITICON.Location = new System.Drawing.Point(550, 86);
-            this.TALK_N04_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALK_N04_L_8_UNITICON.Name = "TALK_N04_L_8_UNITICON";
-            this.TALK_N04_L_8_UNITICON.Size = new System.Drawing.Size(32, 29);
-            this.TALK_N04_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALK_N04_L_8_UNITICON.TabIndex = 198;
-            this.TALK_N04_L_8_UNITICON.TabStop = false;
-            // 
-            // TALK_N04_L_4_EVENT
-            // 
-            this.TALK_N04_L_4_EVENT.ErrorMessage = "";
-            this.TALK_N04_L_4_EVENT.Location = new System.Drawing.Point(315, 50);
-            this.TALK_N04_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N04_L_4_EVENT.Name = "TALK_N04_L_4_EVENT";
-            this.TALK_N04_L_4_EVENT.Placeholder = "";
-            this.TALK_N04_L_4_EVENT.ReadOnly = true;
-            this.TALK_N04_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
-            this.TALK_N04_L_4_EVENT.TabIndex = 236;
-            this.TALK_N04_L_4_EVENT.Visible = false;
-            // 
-            // TALKFE6_AddressList
-            // 
-            this.TALKFE6_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALKFE6_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.TALKFE6_AddressList.FormattingEnabled = true;
-            this.TALKFE6_AddressList.IntegralHeight = false;
-            this.TALKFE6_AddressList.ItemHeight = 30;
-            this.TALKFE6_AddressList.Location = new System.Drawing.Point(0, 30);
-            this.TALKFE6_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.TALKFE6_AddressList.Name = "TALKFE6_AddressList";
-            this.TALKFE6_AddressList.Size = new System.Drawing.Size(238, 784);
-            this.TALKFE6_AddressList.TabIndex = 109;
-            // 
-            // TALKFE6_L_0_COMBO
-            // 
-            this.TALKFE6_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TALKFE6_L_0_COMBO.FormattingEnabled = true;
-            this.TALKFE6_L_0_COMBO.Items.AddRange(new object[] {
-            "00=-",
-            "04=話す条件",
-            "0D=話す条件ASM"});
-            this.TALKFE6_L_0_COMBO.Location = new System.Drawing.Point(249, 7);
-            this.TALKFE6_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_L_0_COMBO.Name = "TALKFE6_L_0_COMBO";
-            this.TALKFE6_L_0_COMBO.Size = new System.Drawing.Size(327, 26);
-            this.TALKFE6_L_0_COMBO.TabIndex = 49;
-            // 
-            // TALKFE6_BlockSize
-            // 
-            this.TALKFE6_BlockSize.ErrorMessage = "";
-            this.TALKFE6_BlockSize.Location = new System.Drawing.Point(86, 1);
-            this.TALKFE6_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_BlockSize.Name = "TALKFE6_BlockSize";
-            this.TALKFE6_BlockSize.Placeholder = "";
-            this.TALKFE6_BlockSize.ReadOnly = true;
-            this.TALKFE6_BlockSize.Size = new System.Drawing.Size(116, 25);
-            this.TALKFE6_BlockSize.TabIndex = 52;
-            // 
-            // TALKFE6_SelectAddress
-            // 
-            this.TALKFE6_SelectAddress.ErrorMessage = "";
-            this.TALKFE6_SelectAddress.Location = new System.Drawing.Point(384, 2);
-            this.TALKFE6_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_SelectAddress.Name = "TALKFE6_SelectAddress";
-            this.TALKFE6_SelectAddress.Placeholder = "";
-            this.TALKFE6_SelectAddress.ReadOnly = true;
-            this.TALKFE6_SelectAddress.Size = new System.Drawing.Size(204, 25);
-            this.TALKFE6_SelectAddress.TabIndex = 40;
-            // 
-            // TALKFE6_N04_EXPLAIN
-            // 
-            this.TALKFE6_N04_EXPLAIN.ErrorMessage = "";
-            this.TALKFE6_N04_EXPLAIN.Location = new System.Drawing.Point(5, 249);
-            this.TALKFE6_N04_EXPLAIN.Multiline = true;
-            this.TALKFE6_N04_EXPLAIN.Name = "TALKFE6_N04_EXPLAIN";
-            this.TALKFE6_N04_EXPLAIN.Placeholder = "";
-            this.TALKFE6_N04_EXPLAIN.ReadOnly = true;
-            this.TALKFE6_N04_EXPLAIN.Size = new System.Drawing.Size(575, 437);
-            this.TALKFE6_N04_EXPLAIN.TabIndex = 234;
-            this.TALKFE6_N04_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
-            // 
-            // TALKFE6_N04_L_2_FLAG
-            // 
-            this.TALKFE6_N04_L_2_FLAG.ErrorMessage = "";
-            this.TALKFE6_N04_L_2_FLAG.Location = new System.Drawing.Point(256, 15);
-            this.TALKFE6_N04_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N04_L_2_FLAG.Name = "TALKFE6_N04_L_2_FLAG";
-            this.TALKFE6_N04_L_2_FLAG.Placeholder = "";
-            this.TALKFE6_N04_L_2_FLAG.ReadOnly = true;
-            this.TALKFE6_N04_L_2_FLAG.Size = new System.Drawing.Size(315, 25);
-            this.TALKFE6_N04_L_2_FLAG.TabIndex = 223;
-            // 
-            // TALKFE6_N04_L_9_UNITICON
-            // 
-            this.TALKFE6_N04_L_9_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALKFE6_N04_L_9_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALKFE6_N04_L_9_UNITICON.Location = new System.Drawing.Point(544, 115);
-            this.TALKFE6_N04_L_9_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALKFE6_N04_L_9_UNITICON.Name = "TALKFE6_N04_L_9_UNITICON";
-            this.TALKFE6_N04_L_9_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.TALKFE6_N04_L_9_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALKFE6_N04_L_9_UNITICON.TabIndex = 175;
-            this.TALKFE6_N04_L_9_UNITICON.TabStop = false;
-            // 
-            // TALKFE6_N04_L_8_UNITICON
-            // 
-            this.TALKFE6_N04_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALKFE6_N04_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALKFE6_N04_L_8_UNITICON.Location = new System.Drawing.Point(544, 79);
-            this.TALKFE6_N04_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALKFE6_N04_L_8_UNITICON.Name = "TALKFE6_N04_L_8_UNITICON";
-            this.TALKFE6_N04_L_8_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.TALKFE6_N04_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALKFE6_N04_L_8_UNITICON.TabIndex = 174;
-            this.TALKFE6_N04_L_8_UNITICON.TabStop = false;
-            // 
-            // TALKFE6_N04_L_9_UNIT
-            // 
-            this.TALKFE6_N04_L_9_UNIT.ErrorMessage = "";
-            this.TALKFE6_N04_L_9_UNIT.Location = new System.Drawing.Point(252, 122);
-            this.TALKFE6_N04_L_9_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N04_L_9_UNIT.Name = "TALKFE6_N04_L_9_UNIT";
-            this.TALKFE6_N04_L_9_UNIT.Placeholder = "";
-            this.TALKFE6_N04_L_9_UNIT.ReadOnly = true;
-            this.TALKFE6_N04_L_9_UNIT.Size = new System.Drawing.Size(281, 25);
-            this.TALKFE6_N04_L_9_UNIT.TabIndex = 169;
-            // 
-            // TALKFE6_N04_L_8_UNIT
-            // 
-            this.TALKFE6_N04_L_8_UNIT.ErrorMessage = "";
-            this.TALKFE6_N04_L_8_UNIT.Location = new System.Drawing.Point(252, 88);
-            this.TALKFE6_N04_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N04_L_8_UNIT.Name = "TALKFE6_N04_L_8_UNIT";
-            this.TALKFE6_N04_L_8_UNIT.Placeholder = "";
-            this.TALKFE6_N04_L_8_UNIT.ReadOnly = true;
-            this.TALKFE6_N04_L_8_UNIT.Size = new System.Drawing.Size(281, 25);
-            this.TALKFE6_N04_L_8_UNIT.TabIndex = 168;
-            // 
-            // TALKFE6_N04_L_4_EVENT
-            // 
-            this.TALKFE6_N04_L_4_EVENT.ErrorMessage = "";
-            this.TALKFE6_N04_L_4_EVENT.Location = new System.Drawing.Point(317, 46);
-            this.TALKFE6_N04_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N04_L_4_EVENT.Name = "TALKFE6_N04_L_4_EVENT";
-            this.TALKFE6_N04_L_4_EVENT.Placeholder = "";
-            this.TALKFE6_N04_L_4_EVENT.ReadOnly = true;
-            this.TALKFE6_N04_L_4_EVENT.Size = new System.Drawing.Size(254, 25);
-            this.TALKFE6_N04_L_4_EVENT.TabIndex = 235;
-            this.TALKFE6_N04_L_4_EVENT.Visible = false;
-            // 
-            // TALKFE6_N0D_L_8_ASM
-            // 
-            this.TALKFE6_N0D_L_8_ASM.ErrorMessage = "";
-            this.TALKFE6_N0D_L_8_ASM.Location = new System.Drawing.Point(321, 82);
-            this.TALKFE6_N0D_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N0D_L_8_ASM.Name = "TALKFE6_N0D_L_8_ASM";
-            this.TALKFE6_N0D_L_8_ASM.Placeholder = "";
-            this.TALKFE6_N0D_L_8_ASM.ReadOnly = true;
-            this.TALKFE6_N0D_L_8_ASM.Size = new System.Drawing.Size(256, 25);
-            this.TALKFE6_N0D_L_8_ASM.TabIndex = 234;
-            // 
-            // TALKFE6_N0D_EXPLAIN
-            // 
-            this.TALKFE6_N0D_EXPLAIN.ErrorMessage = "";
-            this.TALKFE6_N0D_EXPLAIN.Location = new System.Drawing.Point(2, 209);
-            this.TALKFE6_N0D_EXPLAIN.Multiline = true;
-            this.TALKFE6_N0D_EXPLAIN.Name = "TALKFE6_N0D_EXPLAIN";
-            this.TALKFE6_N0D_EXPLAIN.Placeholder = "";
-            this.TALKFE6_N0D_EXPLAIN.ReadOnly = true;
-            this.TALKFE6_N0D_EXPLAIN.Size = new System.Drawing.Size(575, 481);
-            this.TALKFE6_N0D_EXPLAIN.TabIndex = 233;
-            this.TALKFE6_N0D_EXPLAIN.Text = "会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。";
-            // 
-            // TALKFE6_N0D_L_2_FLAG
-            // 
-            this.TALKFE6_N0D_L_2_FLAG.ErrorMessage = "";
-            this.TALKFE6_N0D_L_2_FLAG.Location = new System.Drawing.Point(252, 15);
-            this.TALKFE6_N0D_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N0D_L_2_FLAG.Name = "TALKFE6_N0D_L_2_FLAG";
-            this.TALKFE6_N0D_L_2_FLAG.Placeholder = "";
-            this.TALKFE6_N0D_L_2_FLAG.ReadOnly = true;
-            this.TALKFE6_N0D_L_2_FLAG.Size = new System.Drawing.Size(325, 25);
-            this.TALKFE6_N0D_L_2_FLAG.TabIndex = 224;
-            // 
-            // TALKFE6_N0D_L_4_EVENT
-            // 
-            this.TALKFE6_N0D_L_4_EVENT.ErrorMessage = "";
-            this.TALKFE6_N0D_L_4_EVENT.Location = new System.Drawing.Point(315, 50);
-            this.TALKFE6_N0D_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALKFE6_N0D_L_4_EVENT.Name = "TALKFE6_N0D_L_4_EVENT";
-            this.TALKFE6_N0D_L_4_EVENT.Placeholder = "";
-            this.TALKFE6_N0D_L_4_EVENT.ReadOnly = true;
-            this.TALKFE6_N0D_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
-            this.TALKFE6_N0D_L_4_EVENT.TabIndex = 236;
-            this.TALKFE6_N0D_L_4_EVENT.Visible = false;
-            // 
-            // N02_11_EXPLAIN
-            // 
-            this.N02_11_EXPLAIN.ErrorMessage = "";
-            this.N02_11_EXPLAIN.Location = new System.Drawing.Point(3, 281);
-            this.N02_11_EXPLAIN.Multiline = true;
-            this.N02_11_EXPLAIN.Name = "N02_11_EXPLAIN";
-            this.N02_11_EXPLAIN.Placeholder = "";
-            this.N02_11_EXPLAIN.ReadOnly = true;
-            this.N02_11_EXPLAIN.Size = new System.Drawing.Size(589, 423);
-            this.N02_11_EXPLAIN.TabIndex = 232;
-            this.N02_11_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
-            // 
-            // N02_L_2_FLAG
-            // 
-            this.N02_L_2_FLAG.ErrorMessage = "";
-            this.N02_L_2_FLAG.Location = new System.Drawing.Point(262, 20);
-            this.N02_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_L_2_FLAG.Name = "N02_L_2_FLAG";
-            this.N02_L_2_FLAG.Placeholder = "";
-            this.N02_L_2_FLAG.ReadOnly = true;
-            this.N02_L_2_FLAG.Size = new System.Drawing.Size(326, 25);
-            this.N02_L_2_FLAG.TabIndex = 225;
-            // 
-            // N02_L_10_COMBO
-            // 
-            this.N02_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.N02_L_10_COMBO.FormattingEnabled = true;
-            this.N02_L_10_COMBO.Items.AddRange(new object[] {
-            "0=主人公ターンに実行",
-            "40=友軍ターンに実行",
-            "80=敵軍ターンに実行"});
-            this.N02_L_10_COMBO.Location = new System.Drawing.Point(263, 152);
-            this.N02_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_L_10_COMBO.Name = "N02_L_10_COMBO";
-            this.N02_L_10_COMBO.Size = new System.Drawing.Size(325, 26);
-            this.N02_L_10_COMBO.TabIndex = 155;
-            // 
-            // N02_L_4_EVENT
-            // 
-            this.N02_L_4_EVENT.ErrorMessage = "";
-            this.N02_L_4_EVENT.Location = new System.Drawing.Point(324, 51);
-            this.N02_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_L_4_EVENT.Name = "N02_L_4_EVENT";
-            this.N02_L_4_EVENT.Placeholder = "";
-            this.N02_L_4_EVENT.ReadOnly = true;
-            this.N02_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
-            this.N02_L_4_EVENT.TabIndex = 237;
-            this.N02_L_4_EVENT.Visible = false;
-            // 
-            // N02_L_0_COMBO
-            // 
-            this.N02_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.N02_L_0_COMBO.FormattingEnabled = true;
-            this.N02_L_0_COMBO.Items.AddRange(new object[] {
-            "0=-",
-            "2=ターン条件"});
-            this.N02_L_0_COMBO.Location = new System.Drawing.Point(263, 2);
-            this.N02_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_L_0_COMBO.Name = "N02_L_0_COMBO";
-            this.N02_L_0_COMBO.Size = new System.Drawing.Size(325, 26);
-            this.N02_L_0_COMBO.TabIndex = 49;
-            // 
-            // N02_AddressList
-            // 
-            this.N02_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.N02_AddressList.FormattingEnabled = true;
-            this.N02_AddressList.IntegralHeight = false;
-            this.N02_AddressList.ItemHeight = 30;
-            this.N02_AddressList.Location = new System.Drawing.Point(1, 32);
-            this.N02_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.N02_AddressList.Name = "N02_AddressList";
-            this.N02_AddressList.Size = new System.Drawing.Size(237, 784);
-            this.N02_AddressList.TabIndex = 109;
-            this.N02_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
-            // 
-            // N02_BlockSize
-            // 
-            this.N02_BlockSize.ErrorMessage = "";
-            this.N02_BlockSize.Location = new System.Drawing.Point(86, 2);
-            this.N02_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_BlockSize.Name = "N02_BlockSize";
-            this.N02_BlockSize.Placeholder = "";
-            this.N02_BlockSize.ReadOnly = true;
-            this.N02_BlockSize.Size = new System.Drawing.Size(116, 25);
-            this.N02_BlockSize.TabIndex = 52;
-            // 
-            // N02_SelectAddress
-            // 
-            this.N02_SelectAddress.ErrorMessage = "";
-            this.N02_SelectAddress.Location = new System.Drawing.Point(384, 6);
-            this.N02_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N02_SelectAddress.Name = "N02_SelectAddress";
-            this.N02_SelectAddress.Placeholder = "";
-            this.N02_SelectAddress.ReadOnly = true;
-            this.N02_SelectAddress.Size = new System.Drawing.Size(204, 25);
-            this.N02_SelectAddress.TabIndex = 40;
-            // 
-            // NFE702_L_0_COMBO
-            // 
-            this.NFE702_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NFE702_L_0_COMBO.FormattingEnabled = true;
-            this.NFE702_L_0_COMBO.Items.AddRange(new object[] {
-            "0=-",
-            "2=ターン条件"});
-            this.NFE702_L_0_COMBO.Location = new System.Drawing.Point(260, 4);
-            this.NFE702_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_L_0_COMBO.Name = "NFE702_L_0_COMBO";
-            this.NFE702_L_0_COMBO.Size = new System.Drawing.Size(326, 26);
-            this.NFE702_L_0_COMBO.TabIndex = 49;
-            // 
-            // NFE702_12_EXPLAIN
-            // 
-            this.NFE702_12_EXPLAIN.ErrorMessage = "";
-            this.NFE702_12_EXPLAIN.Location = new System.Drawing.Point(4, 285);
-            this.NFE702_12_EXPLAIN.Multiline = true;
-            this.NFE702_12_EXPLAIN.Name = "NFE702_12_EXPLAIN";
-            this.NFE702_12_EXPLAIN.Placeholder = "";
-            this.NFE702_12_EXPLAIN.ReadOnly = true;
-            this.NFE702_12_EXPLAIN.Size = new System.Drawing.Size(589, 420);
-            this.NFE702_12_EXPLAIN.TabIndex = 231;
-            this.NFE702_12_EXPLAIN.Text = "「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。";
-            // 
-            // NFE702_L_12_COMBO
-            // 
-            this.NFE702_L_12_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NFE702_L_12_COMBO.FormattingEnabled = true;
-            this.NFE702_L_12_COMBO.Items.AddRange(new object[] {
-            "0=常に有効",
-            "1=エリウッド編のみ",
-            "2=ヘクトル編のみ",
-            "3=エリウッド編ハードモードのみ",
-            "4=ハードモードのみ",
-            "5=ヘクトル編ハードモードのみ"});
-            this.NFE702_L_12_COMBO.Location = new System.Drawing.Point(267, 217);
-            this.NFE702_L_12_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_L_12_COMBO.Name = "NFE702_L_12_COMBO";
-            this.NFE702_L_12_COMBO.Size = new System.Drawing.Size(319, 26);
-            this.NFE702_L_12_COMBO.TabIndex = 227;
-            // 
-            // NFE702_L_2_FLAG
-            // 
-            this.NFE702_L_2_FLAG.ErrorMessage = "";
-            this.NFE702_L_2_FLAG.Location = new System.Drawing.Point(262, 19);
-            this.NFE702_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_L_2_FLAG.Name = "NFE702_L_2_FLAG";
-            this.NFE702_L_2_FLAG.Placeholder = "";
-            this.NFE702_L_2_FLAG.ReadOnly = true;
-            this.NFE702_L_2_FLAG.Size = new System.Drawing.Size(324, 25);
-            this.NFE702_L_2_FLAG.TabIndex = 226;
-            // 
-            // NFE702_L_10_COMBO
-            // 
-            this.NFE702_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NFE702_L_10_COMBO.FormattingEnabled = true;
-            this.NFE702_L_10_COMBO.Items.AddRange(new object[] {
-            "0=主人公ターンに実行",
-            "40=友軍ターンに実行",
-            "80=敵軍ターンに実行"});
-            this.NFE702_L_10_COMBO.Location = new System.Drawing.Point(267, 150);
-            this.NFE702_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_L_10_COMBO.Name = "NFE702_L_10_COMBO";
-            this.NFE702_L_10_COMBO.Size = new System.Drawing.Size(319, 26);
-            this.NFE702_L_10_COMBO.TabIndex = 155;
-            // 
-            // NFE702_L_4_EVENT
-            // 
-            this.NFE702_L_4_EVENT.ErrorMessage = "";
-            this.NFE702_L_4_EVENT.Location = new System.Drawing.Point(322, 49);
-            this.NFE702_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_L_4_EVENT.Name = "NFE702_L_4_EVENT";
-            this.NFE702_L_4_EVENT.Placeholder = "";
-            this.NFE702_L_4_EVENT.ReadOnly = true;
-            this.NFE702_L_4_EVENT.Size = new System.Drawing.Size(271, 25);
-            this.NFE702_L_4_EVENT.TabIndex = 238;
-            this.NFE702_L_4_EVENT.Visible = false;
-            // 
-            // NFE702_AddressList
-            // 
-            this.NFE702_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NFE702_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.NFE702_AddressList.FormattingEnabled = true;
-            this.NFE702_AddressList.IntegralHeight = false;
-            this.NFE702_AddressList.ItemHeight = 30;
-            this.NFE702_AddressList.Location = new System.Drawing.Point(-1, 32);
-            this.NFE702_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.NFE702_AddressList.Name = "NFE702_AddressList";
-            this.NFE702_AddressList.Size = new System.Drawing.Size(239, 784);
-            this.NFE702_AddressList.TabIndex = 109;
-            this.NFE702_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
-            // 
-            // NFE702_BlockSize
-            // 
-            this.NFE702_BlockSize.ErrorMessage = "";
-            this.NFE702_BlockSize.Location = new System.Drawing.Point(86, 2);
-            this.NFE702_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_BlockSize.Name = "NFE702_BlockSize";
-            this.NFE702_BlockSize.Placeholder = "";
-            this.NFE702_BlockSize.ReadOnly = true;
-            this.NFE702_BlockSize.Size = new System.Drawing.Size(114, 25);
-            this.NFE702_BlockSize.TabIndex = 52;
-            // 
-            // NFE702_SelectAddress
-            // 
-            this.NFE702_SelectAddress.ErrorMessage = "";
-            this.NFE702_SelectAddress.Location = new System.Drawing.Point(386, 5);
-            this.NFE702_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.NFE702_SelectAddress.Name = "NFE702_SelectAddress";
-            this.NFE702_SelectAddress.Placeholder = "";
-            this.NFE702_SelectAddress.ReadOnly = true;
-            this.NFE702_SelectAddress.Size = new System.Drawing.Size(206, 25);
-            this.NFE702_SelectAddress.TabIndex = 40;
-            // 
-            // ALWAYS_L_0_COMBO
-            // 
-            this.ALWAYS_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ALWAYS_L_0_COMBO.FormattingEnabled = true;
-            this.ALWAYS_L_0_COMBO.Items.AddRange(new object[] {
-            "00=-",
-            "01=常時条件",
-            "0B=範囲条件",
-            "0E=ASM条件"});
-            this.ALWAYS_L_0_COMBO.Location = new System.Drawing.Point(258, 4);
-            this.ALWAYS_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_L_0_COMBO.Name = "ALWAYS_L_0_COMBO";
-            this.ALWAYS_L_0_COMBO.Size = new System.Drawing.Size(322, 26);
-            this.ALWAYS_L_0_COMBO.TabIndex = 49;
-            // 
-            // ALWAYS_BlockSize
-            // 
-            this.ALWAYS_BlockSize.ErrorMessage = "";
-            this.ALWAYS_BlockSize.Location = new System.Drawing.Point(90, 1);
-            this.ALWAYS_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_BlockSize.Name = "ALWAYS_BlockSize";
-            this.ALWAYS_BlockSize.Placeholder = "";
-            this.ALWAYS_BlockSize.ReadOnly = true;
-            this.ALWAYS_BlockSize.Size = new System.Drawing.Size(111, 25);
-            this.ALWAYS_BlockSize.TabIndex = 52;
-            // 
-            // ALWAYS_SelectAddress
-            // 
-            this.ALWAYS_SelectAddress.ErrorMessage = "";
-            this.ALWAYS_SelectAddress.Location = new System.Drawing.Point(384, 5);
-            this.ALWAYS_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_SelectAddress.Name = "ALWAYS_SelectAddress";
-            this.ALWAYS_SelectAddress.Placeholder = "";
-            this.ALWAYS_SelectAddress.ReadOnly = true;
-            this.ALWAYS_SelectAddress.Size = new System.Drawing.Size(195, 25);
-            this.ALWAYS_SelectAddress.TabIndex = 40;
-            // 
-            // ALWAYS_AddressList
-            // 
-            this.ALWAYS_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ALWAYS_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ALWAYS_AddressList.FormattingEnabled = true;
-            this.ALWAYS_AddressList.IntegralHeight = false;
-            this.ALWAYS_AddressList.ItemHeight = 30;
-            this.ALWAYS_AddressList.Location = new System.Drawing.Point(-3, 30);
-            this.ALWAYS_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.ALWAYS_AddressList.Name = "ALWAYS_AddressList";
-            this.ALWAYS_AddressList.Size = new System.Drawing.Size(241, 784);
-            this.ALWAYS_AddressList.TabIndex = 109;
-            this.ALWAYS_AddressList.SelectedIndexChanged += new System.EventHandler(this.OBJECT_AddressList_SelectedIndexChanged);
-            // 
-            // ALWAYS_N0B_EXPLAIN
-            // 
-            this.ALWAYS_N0B_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0B_EXPLAIN.Location = new System.Drawing.Point(3, 194);
-            this.ALWAYS_N0B_EXPLAIN.Multiline = true;
-            this.ALWAYS_N0B_EXPLAIN.Name = "ALWAYS_N0B_EXPLAIN";
-            this.ALWAYS_N0B_EXPLAIN.Placeholder = "";
-            this.ALWAYS_N0B_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0B_EXPLAIN.Size = new System.Drawing.Size(581, 490);
-            this.ALWAYS_N0B_EXPLAIN.TabIndex = 230;
-            this.ALWAYS_N0B_EXPLAIN.Text = "指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加して" +
-    "ください。";
-            // 
-            // ALWAYS_N0B_L_2_FLAG
-            // 
-            this.ALWAYS_N0B_L_2_FLAG.ErrorMessage = "";
-            this.ALWAYS_N0B_L_2_FLAG.Location = new System.Drawing.Point(270, 18);
-            this.ALWAYS_N0B_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0B_L_2_FLAG.Name = "ALWAYS_N0B_L_2_FLAG";
-            this.ALWAYS_N0B_L_2_FLAG.Placeholder = "";
-            this.ALWAYS_N0B_L_2_FLAG.ReadOnly = true;
-            this.ALWAYS_N0B_L_2_FLAG.Size = new System.Drawing.Size(312, 25);
-            this.ALWAYS_N0B_L_2_FLAG.TabIndex = 226;
-            // 
-            // ALWAYS_N0B_L_4_EVENT
-            // 
-            this.ALWAYS_N0B_L_4_EVENT.ErrorMessage = "";
-            this.ALWAYS_N0B_L_4_EVENT.Location = new System.Drawing.Point(318, 118);
-            this.ALWAYS_N0B_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0B_L_4_EVENT.Name = "ALWAYS_N0B_L_4_EVENT";
-            this.ALWAYS_N0B_L_4_EVENT.Placeholder = "";
-            this.ALWAYS_N0B_L_4_EVENT.ReadOnly = true;
-            this.ALWAYS_N0B_L_4_EVENT.Size = new System.Drawing.Size(264, 25);
-            this.ALWAYS_N0B_L_4_EVENT.TabIndex = 238;
-            this.ALWAYS_N0B_L_4_EVENT.Visible = false;
-            // 
-            // ALWAYS_N01_EXPLAIN
-            // 
-            this.ALWAYS_N01_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N01_EXPLAIN.Location = new System.Drawing.Point(3, 193);
-            this.ALWAYS_N01_EXPLAIN.Multiline = true;
-            this.ALWAYS_N01_EXPLAIN.Name = "ALWAYS_N01_EXPLAIN";
-            this.ALWAYS_N01_EXPLAIN.Placeholder = "";
-            this.ALWAYS_N01_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N01_EXPLAIN.Size = new System.Drawing.Size(581, 487);
-            this.ALWAYS_N01_EXPLAIN.TabIndex = 230;
-            this.ALWAYS_N01_EXPLAIN.Text = "「判定フラグ」が有効だった場合、指定したイベントを実行します。";
-            // 
-            // ALWAYS_N01_L_8_FLAG
-            // 
-            this.ALWAYS_N01_L_8_FLAG.ErrorMessage = "";
-            this.ALWAYS_N01_L_8_FLAG.Location = new System.Drawing.Point(270, 85);
-            this.ALWAYS_N01_L_8_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N01_L_8_FLAG.Name = "ALWAYS_N01_L_8_FLAG";
-            this.ALWAYS_N01_L_8_FLAG.Placeholder = "";
-            this.ALWAYS_N01_L_8_FLAG.ReadOnly = true;
-            this.ALWAYS_N01_L_8_FLAG.Size = new System.Drawing.Size(312, 25);
-            this.ALWAYS_N01_L_8_FLAG.TabIndex = 228;
-            // 
-            // ALWAYS_N01_L_2_FLAG
-            // 
-            this.ALWAYS_N01_L_2_FLAG.ErrorMessage = "";
-            this.ALWAYS_N01_L_2_FLAG.Location = new System.Drawing.Point(269, 20);
-            this.ALWAYS_N01_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N01_L_2_FLAG.Name = "ALWAYS_N01_L_2_FLAG";
-            this.ALWAYS_N01_L_2_FLAG.Placeholder = "";
-            this.ALWAYS_N01_L_2_FLAG.ReadOnly = true;
-            this.ALWAYS_N01_L_2_FLAG.Size = new System.Drawing.Size(312, 25);
-            this.ALWAYS_N01_L_2_FLAG.TabIndex = 227;
-            // 
-            // ALWAYS_N01_L_4_EVENT
-            // 
-            this.ALWAYS_N01_L_4_EVENT.ErrorMessage = "";
-            this.ALWAYS_N01_L_4_EVENT.Location = new System.Drawing.Point(345, 53);
-            this.ALWAYS_N01_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N01_L_4_EVENT.Name = "ALWAYS_N01_L_4_EVENT";
-            this.ALWAYS_N01_L_4_EVENT.Placeholder = "";
-            this.ALWAYS_N01_L_4_EVENT.ReadOnly = true;
-            this.ALWAYS_N01_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
-            this.ALWAYS_N01_L_4_EVENT.TabIndex = 237;
-            this.ALWAYS_N01_L_4_EVENT.Visible = false;
-            // 
-            // ALWAYS_N0E_L_8_ASM
-            // 
-            this.ALWAYS_N0E_L_8_ASM.ErrorMessage = "";
-            this.ALWAYS_N0E_L_8_ASM.Location = new System.Drawing.Point(347, 91);
-            this.ALWAYS_N0E_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0E_L_8_ASM.Name = "ALWAYS_N0E_L_8_ASM";
-            this.ALWAYS_N0E_L_8_ASM.Placeholder = "";
-            this.ALWAYS_N0E_L_8_ASM.ReadOnly = true;
-            this.ALWAYS_N0E_L_8_ASM.Size = new System.Drawing.Size(237, 25);
-            this.ALWAYS_N0E_L_8_ASM.TabIndex = 235;
-            // 
-            // ALWAYS_N0E_EXPLAIN
-            // 
-            this.ALWAYS_N0E_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0E_EXPLAIN.Location = new System.Drawing.Point(9, 193);
-            this.ALWAYS_N0E_EXPLAIN.Multiline = true;
-            this.ALWAYS_N0E_EXPLAIN.Name = "ALWAYS_N0E_EXPLAIN";
-            this.ALWAYS_N0E_EXPLAIN.Placeholder = "";
-            this.ALWAYS_N0E_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0E_EXPLAIN.Size = new System.Drawing.Size(573, 487);
-            this.ALWAYS_N0E_EXPLAIN.TabIndex = 229;
-            this.ALWAYS_N0E_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
-            // 
-            // ALWAYS_N0E_L_2_FLAG
-            // 
-            this.ALWAYS_N0E_L_2_FLAG.ErrorMessage = "";
-            this.ALWAYS_N0E_L_2_FLAG.Location = new System.Drawing.Point(271, 21);
-            this.ALWAYS_N0E_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0E_L_2_FLAG.Name = "ALWAYS_N0E_L_2_FLAG";
-            this.ALWAYS_N0E_L_2_FLAG.Placeholder = "";
-            this.ALWAYS_N0E_L_2_FLAG.ReadOnly = true;
-            this.ALWAYS_N0E_L_2_FLAG.Size = new System.Drawing.Size(311, 25);
-            this.ALWAYS_N0E_L_2_FLAG.TabIndex = 228;
-            // 
-            // ALWAYS_N0E_L_4_EVENT
-            // 
-            this.ALWAYS_N0E_L_4_EVENT.ErrorMessage = "";
-            this.ALWAYS_N0E_L_4_EVENT.Location = new System.Drawing.Point(347, 54);
-            this.ALWAYS_N0E_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0E_L_4_EVENT.Name = "ALWAYS_N0E_L_4_EVENT";
-            this.ALWAYS_N0E_L_4_EVENT.Placeholder = "";
-            this.ALWAYS_N0E_L_4_EVENT.ReadOnly = true;
-            this.ALWAYS_N0E_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
-            this.ALWAYS_N0E_L_4_EVENT.TabIndex = 236;
-            this.ALWAYS_N0E_L_4_EVENT.Visible = false;
-            // 
-            // ALWAYS_N0D_L_8_ASM
-            // 
-            this.ALWAYS_N0D_L_8_ASM.ErrorMessage = "";
-            this.ALWAYS_N0D_L_8_ASM.Location = new System.Drawing.Point(347, 91);
-            this.ALWAYS_N0D_L_8_ASM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0D_L_8_ASM.Name = "ALWAYS_N0D_L_8_ASM";
-            this.ALWAYS_N0D_L_8_ASM.Placeholder = "";
-            this.ALWAYS_N0D_L_8_ASM.ReadOnly = true;
-            this.ALWAYS_N0D_L_8_ASM.Size = new System.Drawing.Size(237, 25);
-            this.ALWAYS_N0D_L_8_ASM.TabIndex = 239;
-            // 
-            // ALWAYS_N0D_EXPLAIN
-            // 
-            this.ALWAYS_N0D_EXPLAIN.ErrorMessage = "";
-            this.ALWAYS_N0D_EXPLAIN.Location = new System.Drawing.Point(9, 193);
-            this.ALWAYS_N0D_EXPLAIN.Multiline = true;
-            this.ALWAYS_N0D_EXPLAIN.Name = "ALWAYS_N0D_EXPLAIN";
-            this.ALWAYS_N0D_EXPLAIN.Placeholder = "";
-            this.ALWAYS_N0D_EXPLAIN.ReadOnly = true;
-            this.ALWAYS_N0D_EXPLAIN.Size = new System.Drawing.Size(573, 491);
-            this.ALWAYS_N0D_EXPLAIN.TabIndex = 238;
-            this.ALWAYS_N0D_EXPLAIN.Text = "ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。";
-            // 
-            // ALWAYS_N0D_L_2_FLAG
-            // 
-            this.ALWAYS_N0D_L_2_FLAG.ErrorMessage = "";
-            this.ALWAYS_N0D_L_2_FLAG.Location = new System.Drawing.Point(271, 21);
-            this.ALWAYS_N0D_L_2_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0D_L_2_FLAG.Name = "ALWAYS_N0D_L_2_FLAG";
-            this.ALWAYS_N0D_L_2_FLAG.Placeholder = "";
-            this.ALWAYS_N0D_L_2_FLAG.ReadOnly = true;
-            this.ALWAYS_N0D_L_2_FLAG.Size = new System.Drawing.Size(311, 25);
-            this.ALWAYS_N0D_L_2_FLAG.TabIndex = 237;
-            // 
-            // ALWAYS_N0D_L_4_EVENT
-            // 
-            this.ALWAYS_N0D_L_4_EVENT.ErrorMessage = "";
-            this.ALWAYS_N0D_L_4_EVENT.Location = new System.Drawing.Point(349, 56);
-            this.ALWAYS_N0D_L_4_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ALWAYS_N0D_L_4_EVENT.Name = "ALWAYS_N0D_L_4_EVENT";
-            this.ALWAYS_N0D_L_4_EVENT.Placeholder = "";
-            this.ALWAYS_N0D_L_4_EVENT.ReadOnly = true;
-            this.ALWAYS_N0D_L_4_EVENT.Size = new System.Drawing.Size(237, 25);
-            this.ALWAYS_N0D_L_4_EVENT.TabIndex = 240;
-            this.ALWAYS_N0D_L_4_EVENT.Visible = false;
-            // 
-            // TRAP_AddressList
-            // 
-            this.TRAP_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TRAP_AddressList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.TRAP_AddressList.FormattingEnabled = true;
-            this.TRAP_AddressList.IntegralHeight = false;
-            this.TRAP_AddressList.ItemHeight = 30;
-            this.TRAP_AddressList.Location = new System.Drawing.Point(2, 32);
-            this.TRAP_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.TRAP_AddressList.Name = "TRAP_AddressList";
-            this.TRAP_AddressList.Size = new System.Drawing.Size(234, 784);
-            this.TRAP_AddressList.TabIndex = 109;
-            // 
-            // TRAP_L_0_COMBO
-            // 
-            this.TRAP_L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TRAP_L_0_COMBO.FormattingEnabled = true;
-            this.TRAP_L_0_COMBO.Items.AddRange(new object[] {
-            "00=-",
-            "01=アーチ配置",
-            "04=ダメージ床",
-            "05=毒ガス",
-            "07=神の矢",
-            "08=炎",
-            "0B=地雷",
-            "0C=ゴーゴンの卵"});
-            this.TRAP_L_0_COMBO.Location = new System.Drawing.Point(260, 5);
-            this.TRAP_L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_L_0_COMBO.Name = "TRAP_L_0_COMBO";
-            this.TRAP_L_0_COMBO.Size = new System.Drawing.Size(317, 26);
-            this.TRAP_L_0_COMBO.TabIndex = 49;
-            // 
-            // TRAP_N01_EXPLAIN
-            // 
-            this.TRAP_N01_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N01_EXPLAIN.Location = new System.Drawing.Point(2, 157);
-            this.TRAP_N01_EXPLAIN.Multiline = true;
-            this.TRAP_N01_EXPLAIN.Name = "TRAP_N01_EXPLAIN";
-            this.TRAP_N01_EXPLAIN.Placeholder = "";
-            this.TRAP_N01_EXPLAIN.ReadOnly = true;
-            this.TRAP_N01_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N01_EXPLAIN.TabIndex = 235;
-            this.TRAP_N01_EXPLAIN.Text = "弓兵が利用できる「アーチ」を設置します。";
-            // 
-            // TRAP_N01_L_3_COMBO
-            // 
-            this.TRAP_N01_L_3_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TRAP_N01_L_3_COMBO.FormattingEnabled = true;
-            this.TRAP_N01_L_3_COMBO.Items.AddRange(new object[] {
-            "35=ロングアーチ",
-            "36=アイアンアーチ",
-            "37=キラーアーチ",
-            "0=--"});
-            this.TRAP_N01_L_3_COMBO.Location = new System.Drawing.Point(245, 52);
-            this.TRAP_N01_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_N01_L_3_COMBO.Name = "TRAP_N01_L_3_COMBO";
-            this.TRAP_N01_L_3_COMBO.Size = new System.Drawing.Size(281, 26);
-            this.TRAP_N01_L_3_COMBO.TabIndex = 176;
-            // 
-            // TRAP_N04_EXPLAIN
-            // 
-            this.TRAP_N04_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N04_EXPLAIN.Location = new System.Drawing.Point(0, 171);
-            this.TRAP_N04_EXPLAIN.Multiline = true;
-            this.TRAP_N04_EXPLAIN.Name = "TRAP_N04_EXPLAIN";
-            this.TRAP_N04_EXPLAIN.Placeholder = "";
-            this.TRAP_N04_EXPLAIN.ReadOnly = true;
-            this.TRAP_N04_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N04_EXPLAIN.TabIndex = 236;
-            this.TRAP_N04_EXPLAIN.Text = "ダメージを与えるトラップを設置します";
-            // 
-            // TRAP_N05_L_3_COMBO
-            // 
-            this.TRAP_N05_L_3_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TRAP_N05_L_3_COMBO.FormattingEnabled = true;
-            this.TRAP_N05_L_3_COMBO.Items.AddRange(new object[] {
-            "00=右から左",
-            "01=左から右",
-            "02=上から下",
-            "03=下から上"});
-            this.TRAP_N05_L_3_COMBO.Location = new System.Drawing.Point(245, 54);
-            this.TRAP_N05_L_3_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_N05_L_3_COMBO.Name = "TRAP_N05_L_3_COMBO";
-            this.TRAP_N05_L_3_COMBO.Size = new System.Drawing.Size(329, 26);
-            this.TRAP_N05_L_3_COMBO.TabIndex = 187;
-            // 
-            // TRAP_N05_EXPLAIN
-            // 
-            this.TRAP_N05_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N05_EXPLAIN.Location = new System.Drawing.Point(2, 169);
-            this.TRAP_N05_EXPLAIN.Multiline = true;
-            this.TRAP_N05_EXPLAIN.Name = "TRAP_N05_EXPLAIN";
-            this.TRAP_N05_EXPLAIN.Placeholder = "";
-            this.TRAP_N05_EXPLAIN.ReadOnly = true;
-            this.TRAP_N05_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N05_EXPLAIN.TabIndex = 237;
-            this.TRAP_N05_EXPLAIN.Text = "毒ガスが噴き出すトラップを設定します。";
-            // 
-            // TRAP_N07_EXPLAIN
-            // 
-            this.TRAP_N07_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N07_EXPLAIN.Location = new System.Drawing.Point(3, 181);
-            this.TRAP_N07_EXPLAIN.Multiline = true;
-            this.TRAP_N07_EXPLAIN.Name = "TRAP_N07_EXPLAIN";
-            this.TRAP_N07_EXPLAIN.Placeholder = "";
-            this.TRAP_N07_EXPLAIN.ReadOnly = true;
-            this.TRAP_N07_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N07_EXPLAIN.TabIndex = 238;
-            this.TRAP_N07_EXPLAIN.Text = "Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。";
-            // 
-            // TRAP_N0C_EXPLAIN
-            // 
-            this.TRAP_N0C_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N0C_EXPLAIN.Location = new System.Drawing.Point(4, 165);
-            this.TRAP_N0C_EXPLAIN.Multiline = true;
-            this.TRAP_N0C_EXPLAIN.Name = "TRAP_N0C_EXPLAIN";
-            this.TRAP_N0C_EXPLAIN.Placeholder = "";
-            this.TRAP_N0C_EXPLAIN.ReadOnly = true;
-            this.TRAP_N0C_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N0C_EXPLAIN.TabIndex = 239;
-            this.TRAP_N0C_EXPLAIN.Text = "ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。";
-            // 
-            // TRAP_N08_EXPLAIN
-            // 
-            this.TRAP_N08_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N08_EXPLAIN.Location = new System.Drawing.Point(4, 166);
-            this.TRAP_N08_EXPLAIN.Multiline = true;
-            this.TRAP_N08_EXPLAIN.Name = "TRAP_N08_EXPLAIN";
-            this.TRAP_N08_EXPLAIN.Placeholder = "";
-            this.TRAP_N08_EXPLAIN.ReadOnly = true;
-            this.TRAP_N08_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N08_EXPLAIN.TabIndex = 240;
-            this.TRAP_N08_EXPLAIN.Text = "炎のトラップを設定します。";
-            // 
-            // TRAP_N0B_EXPLAIN
-            // 
-            this.TRAP_N0B_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N0B_EXPLAIN.Location = new System.Drawing.Point(0, 163);
-            this.TRAP_N0B_EXPLAIN.Multiline = true;
-            this.TRAP_N0B_EXPLAIN.Name = "TRAP_N0B_EXPLAIN";
-            this.TRAP_N0B_EXPLAIN.Placeholder = "";
-            this.TRAP_N0B_EXPLAIN.ReadOnly = true;
-            this.TRAP_N0B_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N0B_EXPLAIN.TabIndex = 241;
-            this.TRAP_N0B_EXPLAIN.Text = "地雷のトラップを設定します。";
-            // 
-            // TRAP_N06_L_4_TEXT
-            // 
-            this.TRAP_N06_L_4_TEXT.ErrorMessage = "";
-            this.TRAP_N06_L_4_TEXT.Location = new System.Drawing.Point(287, 86);
-            this.TRAP_N06_L_4_TEXT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_N06_L_4_TEXT.Name = "TRAP_N06_L_4_TEXT";
-            this.TRAP_N06_L_4_TEXT.Placeholder = "";
-            this.TRAP_N06_L_4_TEXT.ReadOnly = true;
-            this.TRAP_N06_L_4_TEXT.Size = new System.Drawing.Size(281, 25);
-            this.TRAP_N06_L_4_TEXT.TabIndex = 254;
-            // 
-            // TRAP_N06_EXPLAIN
-            // 
-            this.TRAP_N06_EXPLAIN.ErrorMessage = "";
-            this.TRAP_N06_EXPLAIN.Location = new System.Drawing.Point(2, 162);
-            this.TRAP_N06_EXPLAIN.Multiline = true;
-            this.TRAP_N06_EXPLAIN.Name = "TRAP_N06_EXPLAIN";
-            this.TRAP_N06_EXPLAIN.Placeholder = "";
-            this.TRAP_N06_EXPLAIN.ReadOnly = true;
-            this.TRAP_N06_EXPLAIN.Size = new System.Drawing.Size(575, 506);
-            this.TRAP_N06_EXPLAIN.TabIndex = 253;
-            this.TRAP_N06_EXPLAIN.Text = resources.GetString("TRAP_N06_EXPLAIN.Text");
-            // 
-            // TRAP_BlockSize
-            // 
-            this.TRAP_BlockSize.ErrorMessage = "";
-            this.TRAP_BlockSize.Location = new System.Drawing.Point(84, 2);
-            this.TRAP_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_BlockSize.Name = "TRAP_BlockSize";
-            this.TRAP_BlockSize.Placeholder = "";
-            this.TRAP_BlockSize.ReadOnly = true;
-            this.TRAP_BlockSize.Size = new System.Drawing.Size(115, 25);
-            this.TRAP_BlockSize.TabIndex = 52;
-            // 
-            // TRAP_SelectAddress
-            // 
-            this.TRAP_SelectAddress.ErrorMessage = "";
-            this.TRAP_SelectAddress.Location = new System.Drawing.Point(386, 4);
-            this.TRAP_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TRAP_SelectAddress.Name = "TRAP_SelectAddress";
-            this.TRAP_SelectAddress.Placeholder = "";
-            this.TRAP_SelectAddress.ReadOnly = true;
-            this.TRAP_SelectAddress.Size = new System.Drawing.Size(202, 25);
-            this.TRAP_SelectAddress.TabIndex = 40;
-            // 
-            // EXPLAIN_EVENT
-            // 
-            this.EXPLAIN_EVENT.ErrorMessage = "";
-            this.EXPLAIN_EVENT.Location = new System.Drawing.Point(14, 182);
-            this.EXPLAIN_EVENT.Multiline = true;
-            this.EXPLAIN_EVENT.Name = "EXPLAIN_EVENT";
-            this.EXPLAIN_EVENT.Placeholder = "";
-            this.EXPLAIN_EVENT.ReadOnly = true;
-            this.EXPLAIN_EVENT.Size = new System.Drawing.Size(740, 657);
-            this.EXPLAIN_EVENT.TabIndex = 249;
-            // 
-            // EXPLAIN_PLACER
-            // 
-            this.EXPLAIN_PLACER.ErrorMessage = "";
-            this.EXPLAIN_PLACER.Location = new System.Drawing.Point(14, 182);
-            this.EXPLAIN_PLACER.Multiline = true;
-            this.EXPLAIN_PLACER.Name = "EXPLAIN_PLACER";
-            this.EXPLAIN_PLACER.Placeholder = "";
-            this.EXPLAIN_PLACER.ReadOnly = true;
-            this.EXPLAIN_PLACER.Size = new System.Drawing.Size(740, 657);
-            this.EXPLAIN_PLACER.TabIndex = 248;
-            // 
-            // TUTORIAL_EXPLAIN
-            // 
-            this.TUTORIAL_EXPLAIN.ErrorMessage = "";
-            this.TUTORIAL_EXPLAIN.Location = new System.Drawing.Point(4, 262);
-            this.TUTORIAL_EXPLAIN.Multiline = true;
-            this.TUTORIAL_EXPLAIN.Name = "TUTORIAL_EXPLAIN";
-            this.TUTORIAL_EXPLAIN.Placeholder = "";
-            this.TUTORIAL_EXPLAIN.ReadOnly = true;
-            this.TUTORIAL_EXPLAIN.Size = new System.Drawing.Size(586, 492);
-            this.TUTORIAL_EXPLAIN.TabIndex = 247;
-            this.TUTORIAL_EXPLAIN.Text = "FE8のチュートリアルイベントを設定します。\r\nチュートリアルは謎が多く、まだ解析されていません。\r\nここで指定する自動実行されるチュートリアルイベントと、ターン" +
-    "イベントなどで設定されるイベントの中にあるチュートリアル分岐は、密接に結びついており、片方を変えるともう片方に影響します。";
-            // 
-            // TUTORIAL_L_0_EVENT
-            // 
-            this.TUTORIAL_L_0_EVENT.ErrorMessage = "";
-            this.TUTORIAL_L_0_EVENT.Location = new System.Drawing.Point(332, 9);
-            this.TUTORIAL_L_0_EVENT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TUTORIAL_L_0_EVENT.Name = "TUTORIAL_L_0_EVENT";
-            this.TUTORIAL_L_0_EVENT.Placeholder = "";
-            this.TUTORIAL_L_0_EVENT.ReadOnly = true;
-            this.TUTORIAL_L_0_EVENT.Size = new System.Drawing.Size(264, 25);
-            this.TUTORIAL_L_0_EVENT.TabIndex = 248;
-            this.TUTORIAL_L_0_EVENT.Visible = false;
-            // 
-            // TUTORIAL_AddressList
-            // 
-            this.TUTORIAL_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TUTORIAL_AddressList.FormattingEnabled = true;
-            this.TUTORIAL_AddressList.IntegralHeight = false;
-            this.TUTORIAL_AddressList.ItemHeight = 18;
-            this.TUTORIAL_AddressList.Location = new System.Drawing.Point(0, 34);
-            this.TUTORIAL_AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.TUTORIAL_AddressList.Name = "TUTORIAL_AddressList";
-            this.TUTORIAL_AddressList.Size = new System.Drawing.Size(233, 778);
-            this.TUTORIAL_AddressList.TabIndex = 109;
-            this.TUTORIAL_AddressList.SelectedIndexChanged += new System.EventHandler(this.TUTORIAL_AddressList_SelectedIndexChanged);
-            // 
-            // TUTORIAL_BlockSize
-            // 
-            this.TUTORIAL_BlockSize.ErrorMessage = "";
-            this.TUTORIAL_BlockSize.Location = new System.Drawing.Point(86, 2);
-            this.TUTORIAL_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TUTORIAL_BlockSize.Name = "TUTORIAL_BlockSize";
-            this.TUTORIAL_BlockSize.Placeholder = "";
-            this.TUTORIAL_BlockSize.ReadOnly = true;
-            this.TUTORIAL_BlockSize.Size = new System.Drawing.Size(116, 25);
-            this.TUTORIAL_BlockSize.TabIndex = 52;
-            // 
-            // TUTORIAL_SelectAddress
-            // 
-            this.TUTORIAL_SelectAddress.ErrorMessage = "";
-            this.TUTORIAL_SelectAddress.Location = new System.Drawing.Point(382, 6);
-            this.TUTORIAL_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TUTORIAL_SelectAddress.Name = "TUTORIAL_SelectAddress";
-            this.TUTORIAL_SelectAddress.Placeholder = "";
-            this.TUTORIAL_SelectAddress.ReadOnly = true;
-            this.TUTORIAL_SelectAddress.Size = new System.Drawing.Size(192, 25);
-            this.TUTORIAL_SelectAddress.TabIndex = 40;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(160, 72);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(159, 26);
-            this.comboBox4.TabIndex = 184;
-            // 
             // MAP_LISTBOX
             // 
             this.MAP_LISTBOX.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -7939,17 +7925,26 @@
             this.MAP_LISTBOX.TabIndex = 1;
             this.MAP_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.MAP_LISTBOX_SelectedIndexChanged);
             // 
-            // FilterComboBox
+            // label62
             // 
-            this.FilterComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FilterComboBox.FormattingEnabled = true;
-            this.FilterComboBox.Location = new System.Drawing.Point(234, -2);
-            this.FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.FilterComboBox.Name = "FilterComboBox";
-            this.FilterComboBox.Size = new System.Drawing.Size(1038, 26);
-            this.FilterComboBox.TabIndex = 50;
-            this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
+            this.label62.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label62.Location = new System.Drawing.Point(-1, 1);
+            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(234, 31);
+            this.label62.TabIndex = 106;
+            this.label62.Text = "マップ名";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(1081, 70);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(731, 882);
+            this.MapPictureBox.TabIndex = 222;
             // 
             // X_MAP_PIC
             // 
@@ -8014,6 +8009,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_B8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).EndInit();
             this.OBJECT_UNIONTAB_N08.ResumeLayout(false);
             this.OBJECT_UNIONTAB_N08.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N08_B11)).EndInit();
@@ -8044,6 +8040,8 @@
             this.TALK_UNIONTAB.ResumeLayout(false);
             this.TALK_UNIONTAB_N03.ResumeLayout(false);
             this.TALK_UNIONTAB_N03.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_W2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_W14)).EndInit();
@@ -8061,6 +8059,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_P12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_B8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_B9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_9_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_8_UNITICON)).EndInit();
             this.tabPage03FE6.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
             this.panel29.ResumeLayout(false);
@@ -8072,6 +8072,8 @@
             this.TALKFE6_UNIONTAB.ResumeLayout(false);
             this.TALKFE6_UNIONTAB_N04.ResumeLayout(false);
             this.TALKFE6_UNIONTAB_N04.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_9_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_8_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_W2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_B11)).EndInit();
@@ -8202,6 +8204,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B1)).EndInit();
+            this.TRAP_UNIONTAB_N06.ResumeLayout(false);
+            this.TRAP_UNIONTAB_N06.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).EndInit();
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_Address)).EndInit();
@@ -8227,19 +8235,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown59)).EndInit();
             this.panel14.ResumeLayout(false);
-            this.TRAP_UNIONTAB_N06.ResumeLayout(false);
-            this.TRAP_UNIONTAB_N06.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_9_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N04_L_8_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_9_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALKFE6_N04_L_8_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_MAP_PIC)).EndInit();
             this.ResumeLayout(false);
 

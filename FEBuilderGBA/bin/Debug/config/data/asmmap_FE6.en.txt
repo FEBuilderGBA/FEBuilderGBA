@@ -1095,3 +1095,6 @@
 080344AC	AI's staff use judgment	Silence
 0803462C	AI's staff use judgment	Sleep	Berserk
 080347A4	AI's staff use judgment	Barrier
+08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
+0801729c	GetItemWRank
+086905B0	&TEXTBATCHSHORT	Class introduction text.

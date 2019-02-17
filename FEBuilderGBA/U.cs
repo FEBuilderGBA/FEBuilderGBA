@@ -2215,6 +2215,7 @@ namespace FEBuilderGBA
                 SupportUnitFE6Form.MakeAllDataLength(list);
                 WorldMapImageFE6Form.MakeAllDataLength(list, isPointerOnly);
                 MapSettingFE6Form.MakeAllDataLength(list);
+                OPClassAlphaNameFE6Form.MakeAllDataLength(list);
             }
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 5")) return list;
 
@@ -4913,6 +4914,26 @@ namespace FEBuilderGBA
             }
 
             return (addr - first) ;
+        }
+
+        //TextBatchの長さを求める
+        //
+        public static uint TextBatchShortLength(uint addr, ROM rom)
+        {
+            uint first = addr;
+
+            uint length = (uint)rom.Data.Length - 2;
+            for (; addr < length; addr += 2)
+            {
+                uint addr02 = rom.u16(addr);
+                if (addr02 == 0)
+                {
+                    addr += 2;
+                    break;
+                }
+            }
+
+            return (addr - first);
         }
 
         public static byte ToCharOneHex(byte a)

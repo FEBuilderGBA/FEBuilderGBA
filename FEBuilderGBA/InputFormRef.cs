@@ -8003,6 +8003,12 @@ namespace FEBuilderGBA
                 ((Button)writeButton).PerformClick();
                 return true;
             }
+            writeButton = FindObject(prefix, controls, "WriteTextButton");
+            if (writeButton != null && writeButton is Button)
+            {
+                ((Button)writeButton).PerformClick();
+                return true;
+            }
 
             if (prefix == "")
             {
@@ -8024,6 +8030,12 @@ namespace FEBuilderGBA
                 return true;
             }
             writeButton = FindObject(prefix, controls, "PaletteWriteButton");
+            if (writeButton != null && writeButton is Button)
+            {
+                ((Button)writeButton).PerformClick();
+                return true;
+            }
+            writeButton = FindObject(prefix, controls, "WriteTextButton");
             if (writeButton != null && writeButton is Button)
             {
                 ((Button)writeButton).PerformClick();
@@ -8593,7 +8605,7 @@ namespace FEBuilderGBA
             uint newdatasize = (newdatacount + 1);
             uint olddatasize = this.DataCount;
 
-            if (newdatasize <= olddatasize)
+            if (newdatasize <= olddatasize + 2)
             {//拡張する必要がない.(現在のベースアドレスを返す.)
                 return this.BaseAddress;
             }
@@ -9932,6 +9944,19 @@ namespace FEBuilderGBA
         {
             uint check_value;
             uint address = Program.ROM.RomInfo.patch_16_tracks_12_sounds(out check_value);
+            if (address == 0)
+            {
+                return false;
+            }
+            uint a = Program.ROM.u32(address);
+            return (a == check_value);
+        }
+
+        //StairsHack
+        public static bool SearchStairsHackPatch()
+        {
+            uint check_value;
+            uint address = Program.ROM.RomInfo.patch_stairs_hack(out check_value);
             if (address == 0)
             {
                 return false;

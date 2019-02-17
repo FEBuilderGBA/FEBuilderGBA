@@ -431,6 +431,10 @@ namespace FEBuilderGBA
             return r;
         }
 
+        public static Bitmap Stairs()
+        {
+            return VillageMapTile(4, 12);
+        }
         public static Bitmap Chest()
         {
             return FiledMapTile(1, 1);

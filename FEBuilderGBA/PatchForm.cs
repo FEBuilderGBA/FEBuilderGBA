@@ -2625,6 +2625,102 @@ namespace FEBuilderGBA
             return grepdata.ToArray();
         }
 
+        uint DefEASPORG(PatchSt patch
+            , string key
+            , string addrstring
+            , string value
+            , Undo.UndoData undodata)
+        {
+            uint v = U.atoi0x(value);
+            if (v <= 0)
+            {
+                return U.NOT_FOUND;
+            }
+
+            string typename = "";
+            if (key == "EA_EXTENDS_UNITMENU")
+            {
+                typename = "UNITMENU";
+            }
+            else if (key == "EA_EXTENDS_GAMEMENU")
+            {
+                typename = "GAMEMENU";
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
+            uint addr = MenuCommandForm.ExpandsArea(this, typename, v , undodata);
+            if (addr == U.NOT_FOUND)
+            {//割当に失敗
+                return U.NOT_FOUND;
+            }
+
+            //メニューの空きが連続している部分.
+            uint alloc = U.atoi0x(addrstring);
+            if (alloc == U.NOT_FOUND || alloc <= 0)
+            {
+                alloc = 1;
+            }
+            addr = MenuCommandForm.AllocNullMenuAddress(alloc , typename);
+            return addr;
+        }
+
+        uint DefEAFreearea(PatchSt patch
+            ,out uint out_sp_org
+            ,Undo.UndoData undodata)
+        {
+            uint freearea = 0;
+            out_sp_org = U.NOT_FOUND;
+
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string addrstring = U.at(sp, 1);
+                string value = pair.Value;
+
+                if (key == "FREEAREA")
+                {
+                    if (U.stringbool(value) == false)
+                    {//フリーエリアを利用しない
+                        freearea = U.NOT_FOUND;
+                    }
+                }
+                else if (key == "EXTENDS" )
+                {
+                    if (value == "TEXT")
+                    {
+                        uint textCount = U.atoi0x(addrstring);
+
+                        uint addr = TextForm.ExpandsArea(this, textCount, undodata);
+                        if (addr == U.NOT_FOUND)
+                        {//割当に失敗
+                            return U.NOT_FOUND;
+                        }
+                    }
+                }
+                else if (key == "EA_EXTENDS_UNITMENU" || key == "EA_EXTENDS_GAMEMENU")
+                {
+                    out_sp_org = DefEASPORG(patch
+                        , key
+                        , addrstring
+                        , value
+                        , undodata);
+                }
+            }
+
+            if (freearea == U.NOT_FOUND)
+            {//フリーエリアを利用しない
+                freearea = 0;
+            }
+            else
+            {//フリーエリアを利用する.
+                freearea = InputFormRef.AllocBinaryData(1024 * 1024); //とりあえず1MBの空きがあるところ.
+            }
+            return freearea;
+        }
+
         void LoadPatchEA(PatchSt patch)
         {
             PatchPage.Controls.Clear();
@@ -2647,8 +2743,6 @@ namespace FEBuilderGBA
             PatchPage.Controls.Add(writebutton);
             y += CONTROL_HEIGHT;
             y += 10;
-
-            uint freearea = InputFormRef.AllocBinaryData(1024 * 1024); //とりあえず1MBの空きがあるところ.
 
             string EAFilename = "";
             foreach (var pair in patch.Param)
@@ -2680,13 +2774,6 @@ namespace FEBuilderGBA
 
                     y += CONTROL_HEIGHT;
                 }
-                else if (key == "FREEAREA")
-                {
-                    if (U.stringbool(value) == false)
-                    {//フリーエリアを利用しない
-                        freearea = 0;
-                    }
-                }
             }
 
             //詳細と著者
@@ -2703,8 +2790,11 @@ namespace FEBuilderGBA
 
                 try
                 {
+                    uint org_sp = U.NOT_FOUND;
+                    uint freearea = DefEAFreearea(patch, out org_sp , undodata);
+
                     SymbolUtil.DebugSymbol storeSymbol = SymbolUtil.DebugSymbol.SaveComment;
-                    EventAssemblerForm.WriteEA(EAFilename, freearea, undodata, storeSymbol);
+                    EventAssemblerForm.WriteEA(EAFilename, freearea, org_sp, undodata, storeSymbol);
                 }
                 catch (PatchException exception)
                 {
@@ -4197,7 +4287,7 @@ namespace FEBuilderGBA
 
                         binMappings.Add(b);
                     }
-                    else if (data.DataType == EAUtil.DataEnum.ASM 
+                    else if (data.DataType == EAUtil.DataEnum.ASM
                         || data.DataType == EAUtil.DataEnum.MIX)
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
@@ -4269,10 +4359,10 @@ namespace FEBuilderGBA
                     {
                         //最後に書き込んだ部分から、ポインタと思われる部分を連続して検出する.
                         uint addr = lastMatchAddr;
-                        for (; addr + 3 < Program.ROM.Data.Length; addr+=4 )
+                        for (; addr + 3 < Program.ROM.Data.Length; addr += 4)
                         {
                             uint a = Program.ROM.u32(addr);
-                            if (! U.isSafetyPointer(a))
+                            if (!U.isSafetyPointer(a))
                             {
                                 break;
                             }
@@ -4331,6 +4421,35 @@ namespace FEBuilderGBA
             //データの位置を追跡
             TraceEditPatch(binMappings, patch);
             return binMappings;
+        }
+
+        static bool is_EA_EXTENDS_UNITMENU(PatchSt patch)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EA_EXTENDS_UNITMENU")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        static bool is_EA_EXTENDS_GAMEMENU(PatchSt patch)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "EA_EXTENDS_GAMEMENU")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         static string atMultiLine(PatchSt patch,string keyword)

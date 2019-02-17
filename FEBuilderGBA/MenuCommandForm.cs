@@ -34,7 +34,7 @@ namespace FEBuilderGBA
                 , 36
                 , (int i, uint addr) =>
                 {
-                    return U.isPointer(Program.ROM.u32(addr));
+                    return U.isPointer(Program.ROM.u32(addr+0xc));
                 }
                 , (int i, uint addr) =>
                 {
@@ -290,9 +290,24 @@ namespace FEBuilderGBA
 
             uint newaddr;
             {
+                InputFormRef.ExpandsEventArgs eearg = new InputFormRef.ExpandsEventArgs();
+
                 InputFormRef ifr = Init(null);
                 ifr.ReInitPointer(pointer);
-                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer());
+
+                eearg.OldBaseAddress = ifr.BaseAddress;
+                eearg.OldDataCount = ifr.DataCount;
+                eearg.BlockSize = ifr.BlockSize;
+
+                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, pointer);
+                if (newaddr == U.NOT_FOUND)
+                {
+                    return U.NOT_FOUND;
+                }
+
+                eearg.NewBaseAddress = newaddr;
+                eearg.NewDataCount = newdatacount ;
+                AddressListExpandsEventInner(form, eearg, undodata);
             }
             InputFormRef.ClearCacheDataCount();
             return newaddr;
@@ -304,8 +319,21 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(WriteButton, false);
 
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearAllocMenu");
+            AddressListExpandsEventInner(this, eearg, undodata);
+            eearg.NewDataCount -= 1;
+            eearg.IsReload = true;
+            Program.Undo.Push(undodata);
+        }
+
+        static void AddressListExpandsEventInner(Form from, InputFormRef.ExpandsEventArgs eearg, Undo.UndoData undodata)
+        {
             uint addr = eearg.NewBaseAddress;
             int count = (int)eearg.NewDataCount;
+            if (count <= 2)
+            {
+                return;
+            }
 
             uint rom_length = (uint)Program.ROM.Data.Length;
 
@@ -316,9 +344,8 @@ namespace FEBuilderGBA
             }
 
             //配置後アドレスを0クリアします.
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearAllocMenu");
             addr = addr + (eearg.OldDataCount * eearg.BlockSize);
-            for (int i = (int)eearg.OldDataCount; i < count; i++)
+            for (int i = (int)eearg.OldDataCount; i < count - 1; i++)
             {
                 if (addr + 36 > rom_length)
                 {
@@ -336,8 +363,95 @@ namespace FEBuilderGBA
                 addr += eearg.BlockSize;
             }
 
-            Program.Undo.Push(undodata);
-            eearg.IsReload = true;
+            {//終端
+                Program.ROM.write_u32(addr + 0, 0, undodata);
+                Program.ROM.write_u32(addr + 4, 0, undodata);
+                Program.ROM.write_u32(addr + 8, 0, undodata);
+                Program.ROM.write_u32(addr + 12, 0, undodata);
+                Program.ROM.write_u32(addr + 16, 0, undodata);
+                Program.ROM.write_u32(addr + 20, 0, undodata);
+                Program.ROM.write_u32(addr + 24, 0, undodata);
+                Program.ROM.write_u32(addr + 28, 0, undodata);
+                Program.ROM.write_u32(addr + 32, 0, undodata);
+                addr += eearg.BlockSize;
+            }
+
+            //最後のメニューと新規確保したメニューの位置を入れ替える.
+            if (eearg.OldDataCount < eearg.NewDataCount && eearg.OldDataCount >= 1)
+            {
+                uint oldEndAddr = eearg.NewBaseAddress + ((eearg.OldDataCount - 1) * eearg.BlockSize);
+                uint newEndAddr = eearg.NewBaseAddress + ((eearg.NewDataCount - 2) * eearg.BlockSize);
+                byte[] endEndData = Program.ROM.getBinaryData(oldEndAddr, eearg.BlockSize);
+                byte[] newEndData = Program.ROM.getBinaryData(newEndAddr, eearg.BlockSize);
+
+                Program.ROM.write_range(oldEndAddr, newEndData);
+                Program.ROM.write_range(newEndAddr, endEndData);
+            }
+        }
+
+        public static uint AllocNullMenuAddress(uint needCount, string typename)
+        {
+            uint pointer;
+            if (typename == "UNITMENU")
+            {
+                pointer = MenuDefinitionForm.GetUnitMenuPointer();
+            }
+            else if (typename == "GAMEMENU")
+            {
+                pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
+
+            uint alwayFalse = 0;
+            if (Program.ROM.RomInfo.version() != 6)
+            {
+                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
+            }
+
+            uint nullCount = 0;
+            uint foundAddr = U.NOT_FOUND;
+
+            InputFormRef ifr = Init(null);
+            ifr.ReInitPointer(pointer);
+
+            uint addr = ifr.BaseAddress;
+            for (int i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
+            {
+
+                uint a1 = Program.ROM.u32(addr + 0);
+                uint a2 = Program.ROM.u32(addr + 4);
+                uint a3 = Program.ROM.u32(addr + 8);
+                uint a4 = Program.ROM.u32(addr + 12); //常にメニューを表示しないを選択
+                uint a5 = Program.ROM.u32(addr + 16);
+                uint a6 = Program.ROM.u32(addr + 20);
+                uint a7 = Program.ROM.u32(addr + 24);
+                uint a8 = Program.ROM.u32(addr + 28);
+                uint a9 = Program.ROM.u32(addr + 32);
+
+                if (a1 == 0 && a2 == 0 && a3 == 0 && a4 == alwayFalse
+                    && a5 == 0 && a6 == 0 && a7 == 0 && a8 == 0 && a9 == 0)
+                {
+                    if (nullCount <= 0)
+                    {
+                        foundAddr = addr;
+                    }
+
+                    nullCount++;
+                    if (nullCount >= needCount)
+                    {
+                        return foundAddr;
+                    }
+                }
+                else
+                {
+                    nullCount = 0;
+                    foundAddr = U.NOT_FOUND;
+                }
+            }
+            return U.NOT_FOUND;
         }
     }
 }

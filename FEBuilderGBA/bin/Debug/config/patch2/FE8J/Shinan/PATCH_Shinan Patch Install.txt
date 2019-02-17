@@ -25,6 +25,10 @@ AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/shinan
 AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/shinan
 
 
+CONFLICT_IF:$FGREP4 ../ShinanEA/Shinan.dmp=0x00 0xB5 0x26 0x20
+CONFLICT_MESSAGE=Shinan EA
+
+
 
 INFO=指南イベントを作成します。\r\nこのパッチを適用すると、メニューの辞書が書き換えられます。\r\n辞書メニューを選択すると、各章ごとに設定したイベントを実行できます。\r\nイベントでは、その章をどのように攻略するかヒントを教えるイベントを作成できます。\r\n
 INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nWhen this patch is applied, the dictionary of the menu is rewritten.\r\nBy selecting the dictionary menu, you can execute the events set for each chapter.\r\nIn the event you can create an event to teach you how to capture that chapter.\r\n

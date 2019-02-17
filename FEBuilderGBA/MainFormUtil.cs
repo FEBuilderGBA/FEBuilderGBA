@@ -706,7 +706,7 @@ namespace FEBuilderGBA
             return true;
         }
 
-        static string MakeEAAutoDef(string target_filename, uint freearea)
+        static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -722,19 +722,23 @@ namespace FEBuilderGBA
                             sb.AppendLine("#define FreeSpace " + U.To0xHexString(freearea));
                         }
                         break;
-                    case "ItemImage":
-                        sb.AppendLine("#define ItemImage " 
-                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
-                        break;
-                    case "ItemPalette":
-                        sb.AppendLine("#define ItemPalette " 
-                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
-                        break;
-                    case "ItemTable":
-                        sb.AppendLine("#define ItemTable " 
-                            + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
-                        break;
                 }
+            }
+
+            sb.AppendLine("#define ItemImage " 
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
+            sb.AppendLine("#define ItemPalette " 
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
+            sb.AppendLine("#define ItemTable " 
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
+            sb.AppendLine("#define TextTable "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer())));
+            sb.AppendLine("#define PortraitTable "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.face_pointer())));
+
+            if (org_sp != U.NOT_FOUND)
+            {
+                sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));
             }
 
             Program.ExportFunction.ExportEA(sb);
@@ -804,7 +808,7 @@ namespace FEBuilderGBA
 
 
         //EventAssemblerで対象物をコンパイル
-        public static bool CompilerEventAssembler(string target_filename, uint freearea, out string output, out string out_symbol)
+        public static bool CompilerEventAssembler(string target_filename, uint freearea,uint org_sp, out string output, out string out_symbol)
         {
             output = "";
             out_symbol = "";
@@ -816,7 +820,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            string autoDef = MakeEAAutoDef(target_filename , freearea);
+            string autoDef = MakeEAAutoDef(target_filename, freearea, org_sp);
 
             string freeareadef_targetfile = "_FBG_Temp_" +　DateTime.Now.Ticks.ToString() + ".event";
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);

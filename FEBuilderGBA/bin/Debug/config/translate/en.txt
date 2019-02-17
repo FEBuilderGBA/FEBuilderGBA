@@ -1552,6 +1552,21 @@ New event
 :マップ
 Map
 
+:11=制圧
+11=Seize
+
+:20=村の中心(盗賊のターゲット)
+20=Village Center (Thief target)
+
+:10=民家
+10=Home
+
+:14=ランダム宝箱
+14=Random Chest
+
+:22=階段拡張
+22=Stairs Hack
+
 :0F=制圧
 0F=Seize
 
@@ -1690,18 +1705,6 @@ Range:
 :)～(
 ) ~ (
 
-:11=制圧
-11=Seize
-
-:20=村の中心(盗賊のターゲット)
-20=Village Center (Thief target)
-
-:10=民家
-10=Home
-
-:14=ランダム宝箱
-14=Random Chest
-
 :14=宝箱
 14=Chest Contents
 
@@ -1750,6 +1753,9 @@ Are you sure you want to disable this event?
 :オブジェクトのサイズを特定できませんでした
 Could not determine the size of the object
 
+:階段ID
+Stair ID.
+
 :イベント種類
 Event type
 
@@ -1762,17 +1768,38 @@ Event Pointer
 :マップオブジェクト
 Map Object
 
+:05=制圧ポイントと民家
+05=Seize or Visit Home
+
+:06=訪問村
+06=Visit Village
+
+:07=宝箱
+07=Chest
+
+:08=扉
+08=Door
+
+:0A=店
+0A=Shop
+
 :発生タイプ
 Generation Type
 
 :制圧ポイントと民家
 Suppression points and private houses
 
+:制圧ポイントと民家を設定します。\r\n制圧: 「制圧」コマンドで章をクリアできる制圧拠点を作成します。制圧拠点は城門などに設置されることが多いですが、どこにでも設置できます。また、複数設置もできます。通常は、制圧コマンド時は、「達成フラグ」で0x03を有効にして、イベントを0x1のダミーを指定します。フラグ0x03が指定され主人公が制圧で待機するので自動的に「終了イベント」が呼び出され、章クリアとなります。\r\n村の中心: 盗賊が狙う村の中心を作成します。\r\n民家: 情報を聞ける民家イベントを作成します。村訪問は発生タイプが違います。
+Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
+
 :座標
 Coordinate
 
 :訪問村
 Visit Village
+
+:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
+In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 “Home” event; this is the event that makes the “Visit” command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 “Village Center” event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
 
 :宝箱
 Chest
@@ -1783,8 +1810,14 @@ Gold
 :宝箱の中身
 Chest Contents
 
+:宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
+Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
+
 :扉
 Door
+
+:扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であれば、0x01の何もしないダミーイベントを設定してください。
+Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door position is executed and it will be able to pass.\r\nEvents can also be set, but if you do not need special effects such as conversation, please set a dummy event that does not do 0x01.
 
 :店
 Shop/Armory Editor
@@ -1798,17 +1831,35 @@ Shop Types
 :店の売り物
 Items Sold
 
+:座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。
+Shops will be set at the coordinates.\r\nHere units can purchase the items specified in "Shops/Armories".\r\nThe "Completion Flag" can be set, but this limits the player to one visit. As such, generally set 0x0.
+
 :話す条件
 Conditions to talk
 
+:03=話す条件
+03=Talk Condition
+
+:04=話す条件ASM
+04=Talk Condition(ASM)
+
 :会話条件
 Talk condition
+
+:会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。
+Create a conversation event.\r\nAn event is generated when "conversation source" talks to "conversation destination".
 
 :会話先
 To
 
 :会話元
 From
+
+:00=追加条件なし
+00=No Additional Condition
+
+:03=判定フラグがONならば
+03=Require "Trigger Flag" Condition(s)
 
 :このフラグが有効な場合に、会話イベントが有効になります。
 When this flag is enabled, the conversation Event is enabled.
@@ -1828,152 +1879,20 @@ Trigger ASM Function
 :話す条件FE6
 Talk Condition FE 6
 
-:ターン条件
-Turn Condition
-
-:終了ターン
-Turn End
-
-:ターン前指定
-Army Phase
-
-:開始ターン
-Turn Start
-
-:ターン条件FE7
-Turn Condition FE 7
-
-:編
-Editing
-
-:常時条件
-Conditional
-
-:範囲条件
-Range Condition
-
-:範囲開始
-Start Range
-
-:範囲終了
-End Range
-
-:このフラグが有効に場合に、イベントが動作します。
-If this flag is enabled, the event will work.
-
-:ASM条件
-ASM Condition
-
-:ASM条件FE6
-ASM condition FE 6
-
-:トラップ
-Trap
-
-:アーチ配置
-Ballista Arrangement
-
-:配置座標
-Coordinate
-
-:アーチの種類
-Ballista Type
-
-:トラップ床
-Trap Floor
-
-:リピートタイマー
-Repeat Timer
-
-:初期タイマー
-Initial Timer
-
-:毒ガス
-Poison Gas
-
-:ガスの方向
-Gas direction
-
-:神の矢
-Vertical Arrow
-
-:ゴーゴンの卵
-Gorgon's Egg
-
-:羽化開始
-Hatching Starts
-
-:炎
-Fire
-
-:地雷
-Mine
-
-:選択されている開始/終了イベントを、イベント編集画面で開く
-Open the selected start / end event in the Event edit screen
-
-:配置
-Placement
-
-:選択されている配置情報を、ユニット配置画面で開く
-Open the selected placement information in the Unit Placer screen
-
-:マップ名
-Map Name
-
-:05=制圧ポイントと民家
-05=Seize or Visit Home
-
-:06=訪問村
-06=Visit Village
-
-:07=宝箱
-07=Chest
-
-:08=扉
-08=Door
-
-:0A=店
-0A=Shop
-
-:制圧ポイントと民家を設定します。\r\n制圧: 「制圧」コマンドで章をクリアできる制圧拠点を作成します。制圧拠点は城門などに設置されることが多いですが、どこにでも設置できます。また、複数設置もできます。通常は、制圧コマンド時は、「達成フラグ」で0x03を有効にして、イベントを0x1のダミーを指定します。フラグ0x03が指定され主人公が制圧で待機するので自動的に「終了イベント」が呼び出され、章クリアとなります。\r\n村の中心: 盗賊が狙う村の中心を作成します。\r\n民家: 情報を聞ける民家イベントを作成します。村訪問は発生タイプが違います。
-Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
-
-:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
-In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 “Home” event; this is the event that makes the “Visit” command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 “Village Center” event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
-
-:宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
-Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
-
-:扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であれば、0x01の何もしないダミーイベントを設定してください。
-Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door position is executed and it will be able to pass.\r\nEvents can also be set, but if you do not need special effects such as conversation, please set a dummy event that does not do 0x01.
-
-:座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。
-Shops will be set at the coordinates.\r\nHere units can purchase the items specified in "Shops/Armories".\r\nThe "Completion Flag" can be set, but this limits the player to one visit. As such, generally set 0x0.
-
-:03=話す条件
-03=Talk Condition
-
-:04=話す条件ASM
-04=Talk Condition(ASM)
-
-:会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。
-Create a conversation event.\r\nAn event is generated when "conversation source" talks to "conversation destination".
-
-:00=追加条件なし
-00=No Additional Condition
-
-:03=判定フラグがONならば
-03=Require "Trigger Flag" Condition(s)
-
 :04=話す条件
 04=Conditions to Talk
 
 :0D=話す条件ASM
 0D=Talk Condition ASM
 
+:ターン条件
+Turn Condition
+
 :「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。
 Turn events run upon "Turn Start" or "Turn End".
+
+:終了ターン
+Turn End
 
 :0=主人公ターンに実行
 0=Run on Player Turn
@@ -1984,8 +1903,17 @@ Turn events run upon "Turn Start" or "Turn End".
 :80=敵軍ターンに実行
 80=Run on Enemy Turn
 
+:ターン前指定
+Army Phase
+
+:開始ターン
+Turn Start
+
 :2=ターン条件
 2=Turn Condition
+
+:ターン条件FE7
+Turn Condition FE 7
 
 :0=常に有効
 0=Conditional
@@ -2005,6 +1933,12 @@ Turn events run upon "Turn Start" or "Turn End".
 :5=ヘクトル編ハードモードのみ
 5=Hector Hard Mode
 
+:編
+Editing
+
+:常時条件
+Conditional
+
 :01=常時条件
 01=Conditional
 
@@ -2014,23 +1948,68 @@ Turn events run upon "Turn Start" or "Turn End".
 :0E=ASM条件
 0E=ASM Condition
 
+:範囲条件
+Range Condition
+
 :指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加してください。
 When a unit enters the specified range, the event is activated.\r\nTrigger is set whether unit is an enemy or ally.\r\nAdd a trigger within the event script to restrict to only enemy or ally units.
+
+:範囲開始
+Start Range
+
+:範囲終了
+End Range
+
+:このフラグが有効に場合に、イベントが動作します。
+If this flag is enabled, the event will work.
 
 :「判定フラグ」が有効だった場合、指定したイベントを実行します。
 If "Trigger Flag" is set, executes the specified event.
 
+:ASM条件
+ASM Condition
+
 :ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。
 Executes the ASM function and executes the specified event if the return value r0 is true.
+
+:ASM条件FE6
+ASM condition FE 6
+
+:トラップ
+Trap
 
 :01=アーチ配置
 01=Ballista Order
 
+:アーチ配置
+Ballista Arrangement
+
 :弓兵が利用できる「アーチ」を設置します。
 Make a Ballista that archers can use.
 
+:配置座標
+Coordinate
+
+:アーチの種類
+Ballista Type
+
+:トラップ床
+Trap Floor
+
+:リピートタイマー
+Repeat Timer
+
+:初期タイマー
+Initial Timer
+
 :ダメージを与えるトラップを設置します
 It will set up a trap that deals damage
+
+:毒ガス
+Poison Gas
+
+:ガスの方向
+Gas direction
 
 :00=右から左
 00=Right to Left
@@ -2047,14 +2026,29 @@ It will set up a trap that deals damage
 :毒ガスが噴き出すトラップを設定します。
 Place a Poison Gas trap.
 
+:神の矢
+Vertical Arrow
+
 :Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。
 Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
+
+:ゴーゴンの卵
+Gorgon's Egg
+
+:羽化開始
+Hatching Starts
 
 :ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。
 Place a Gorgon Egg.\r\nWhen enough turns have elapsed, it will hatch from the egg ("emergence start" time).
 
+:炎
+Fire
+
 :炎のトラップを設定します。
 Make a Instant Fire trap.
+
+:地雷
+Mine
 
 :地雷のトラップを設定します。
 Make a Mine trap.
@@ -2062,8 +2056,20 @@ Make a Mine trap.
 :SkillSystemsで追加されたDragonVeinを設定します。\r\n\r\nこのトラップを動作させるには、DragonVeinEffectIDを設定する必要があります。\r\nDragonVeinEffectは、Patchから設定します。\r\nこのトラップが発動した時に動作するイベントを記述します。\r\n\r\nゲーム中で、このトラップを有効にするには、Dragon's Bloodスキルを持ったユニットが訪れる必要があります。\r\n
 Set DragonVein added by SkillSystems.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
 
+:選択されている開始/終了イベントを、イベント編集画面で開く
+Open the selected start / end event in the Event edit screen
+
+:配置
+Placement
+
+:選択されている配置情報を、ユニット配置画面で開く
+Open the selected placement information in the Unit Placer screen
+
 :FE8のチュートリアルイベントを設定します。\r\nチュートリアルは謎が多く、まだ解析されていません。\r\nここで指定する自動実行されるチュートリアルイベントと、ターンイベントなどで設定されるイベントの中にあるチュートリアル分岐は、密接に結びついており、片方を変えるともう片方に影響します。
 Create the tutorial event of FE8.\r\nThe tutorial has many mysteries and has not been analyzed yet.\r\nThe tutorial event to be automatically executed here and the tutorial branch in the event set by the turn event etc. are closely related, and changing one side will affect the other side.
+
+:マップ名
+Map Name
 
 :イベント条件
 Event Condition
@@ -3541,6 +3547,9 @@ Classes Using This Palette:
 :ポインタ
 Pointer
 
+:独立
+Independence
+
 :キャラパレット
 Character Palette
 
@@ -4882,6 +4891,12 @@ Description
 :使用画面
 Use Screen
 
+:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
+The description field of the item is empty.\r\nIn FE 8, when emptying, you need to insert double spaces.
+
+:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例: \" [.]\"
+The description field of the item is empty.\r\nIn FE 8, to empty it, you need to enter a blank space and [.].\r\nExample: \\ "[.] \\ ".
+
 :物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。
 This item is a physical weapon, but "Damage effect" when attacking is set to "None".
 
@@ -5299,6 +5314,9 @@ Simple Menu
 :地形設定
 Terrain Editor
 
+:OPクラス紹介英語表記
+OP Class Reel English Names
+
 :詳細メニュー
 Advanced Editors
 
@@ -5322,6 +5340,12 @@ Sound room CG.
 
 :背を伸ばす
 Portrait Height
+
+:ゲームオプション
+Game Options
+
+:ゲームオプションの順番
+Order of Game Option
 
 :スキル拡張がありません。\r\nスキル拡張パッチをインストールしてから利用してください。
 There is no skill extension.\r\nPlease install skill extension patch before using.
@@ -5353,9 +5377,6 @@ Monster Spawn Rates
 :魔物所持品
 Monster Item Rates
 
-:OPクラス紹介英語表記
-OP Class Reel English Names
-
 :道エディタ
 Road Editor
 
@@ -5364,9 +5385,6 @@ Road Movement Editor
 
 :ソングトラック
 Song Track
-
-:ゲームオプション
-Game Options
 
 :ワールドマップBGM
 World Map BGM
@@ -5394,9 +5412,6 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
-
-:ゲームオプションの順番
-Order of Game Option
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -11323,5 +11338,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:独立
-Independence

@@ -83,6 +83,7 @@
             this.TextBox.Placeholder = "";
             this.TextBox.Size = new System.Drawing.Size(185, 25);
             this.TextBox.TabIndex = 77;
+            this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label14
             // 

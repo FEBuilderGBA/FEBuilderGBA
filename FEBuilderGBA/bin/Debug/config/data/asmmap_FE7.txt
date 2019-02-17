@@ -4598,3 +4598,7 @@
 08075FAC	マップ上で踊った時の効果音(0x2d6)を再生する	{J}
 08075798	マップ上で奏でた時の効果音(0x2d5)を再生する	{U}
 080757DC	マップ上で踊った時の効果音(0x2d6)を再生する	{U}
+
+0202BC23	Tactician_Birth_Month	{U}
+0202BC1F	Tactician_Birth_Month	{J}
+0802ebb0	GetTacticianNameStringPtr	{J}

@@ -69,7 +69,7 @@ namespace FEBuilderGBA
         public uint attribute_maxcount() { return 7; } // 属性の最大数
         public uint terrain_recovery_pointer() { return 0x192d0; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0x0; } // CC分岐の開始位置
-        public uint class_alphaname_pointer() { return 0x0; } // クラスのアルファベット表記の開始位置
+        public uint class_alphaname_pointer() { return 0x95B48; } // クラスのアルファベット表記の開始位置
         public uint map_terrain_name_pointer() { return 0x192c0; } // マップの地名表記の開始位置
         public uint image_chapter_title_pointer() { return 0x70d44; } // 章タイトルの開始位置
         public uint image_chapter_title_palette() { return 0x3094F4; } // 章タイトルのパレット 多分違う
@@ -375,6 +375,7 @@ namespace FEBuilderGBA
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
         public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x8DB8; } //一般兵の顔 拡張
+        public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x0; } //階段拡張
 
         public byte[] defualt_event_script_term_code() { return new byte[] { 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)

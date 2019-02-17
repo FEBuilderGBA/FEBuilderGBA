@@ -3423,7 +3423,7 @@
 0803e698	UpdateUnitHealingAIStatus	{U}
 0803e878	GetEscapePointStructThingMaybe	{U}
 0803ec98	StoreItemAndGetUnitAttack	{U}
-08042e98	CheckSomethingSomewhere	{U}
+08042e98	CheckGameLinkArenaBit	{U}
 080450ac	NameSelect_DrawName	{U}
 08045c14	New6C_SIOMAIN2	{U}
 0804e078	LoadOldUIPal	{U}
@@ -11629,3 +11629,26 @@
 08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
 0808BA78	セーブスロットに表示する章IDの取得	r0=@ChapterData	{J}
 08089768	セーブスロットに表示する章IDの取得	r0=@ChapterData	{U}
+08095024	PrepScreenTextHandler	{U}
+08095524	PrepScreenHandler	{U}
+08097304	PrepScreenTextHandler	{J}
+08097804	PrepScreenHandler	{J}
+080951B8	PrepMenu_PickUnits	{U}
+080951CC	PrepMenu_Items	{U}
+080951E0	PrepMenu_Support	{U}
+08095210	PrepMenu_Save	{U}
+08095240	PrepMenu_StartBattle	{U}
+08095264	PrepMenu_Broken_Unuse_ItFreeze	{U}
+08095284	PrepMenu_CheckMap_UnuseDummy	{U}
+08095290	PrepMenu_CheckMap_UnuseDummy2	{U}
+080952C0	PrepMenu_CheckMap	{U}
+08097498	PrepMenu_PickUnits	{J}
+080974AC	PrepMenu_Items	{J}
+080974C0	PrepMenu_Support	{J}
+080974F0	PrepMenu_Save	{J}
+08097520	PrepMenu_StartBattle	{J}
+08097544	PrepMenu_Broken_Unuse_ItFreeze	{J}
+08097564	PrepMenu_CheckMap_UnuseDummy	{J}
+08097570	PrepMenu_CheckMap_UnuseDummy2	{J}
+080975A0	PrepMenu_CheckMap	{J}
+080977E4	CheckMapID0x7D	{J}

@@ -62,6 +62,7 @@ namespace FEBuilderGBA
             uint write_pointer = this.InputFormRef.BaseAddress + (this.InputFormRef.BlockSize * (uint)this.AddressList.SelectedIndex);
             uint write_addr = Program.ROM.p32(write_pointer);
             this.AddressPointer.Text = write_addr.ToString("X");
+            InputFormRef.WriteButtonToYellow(this.WriteTextButton, false);
         }
 
         //地名リストを作る.
@@ -148,6 +149,11 @@ namespace FEBuilderGBA
                         , Address.DataTypeEnum.BIN);
                 }
             }
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            InputFormRef.WriteButtonToYellow(this.WriteTextButton, true);
         }
     }
 }

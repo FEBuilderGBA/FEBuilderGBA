@@ -1,0 +1,42 @@
+#include "Tools/Tool Helpers.txt"
+
+PUSH
+
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	shinan_string
+SHORT	$0edd $0ede		//右がヘルプ指定
+SHORT	$6304 0
+POIN	0x804F448 + 1       //show always
+POIN	GreenMenu0x26 + 1   //緑色表示
+POIN	Shinnan + 1         //指南を実行
+WORD	0 0 0
+
+POP
+
+Shinnan:
+#incbin "Shinan.dmp"
+POIN shinan_table
+
+GreenMenu0x26:
+#incbin "GreenMenu0x26.dmp"
+
+ALIGN 4
+#include "shinan_table.event"
+
+ALIGN 4
+shinan_string:
+#incbin "menuname_shinan_name.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+TxtData0xedd:
+#incbin "0xedd.bin"
+
+TxtData0xede:
+#incbin "0xede.bin"
+
+setText_WithHuffman(0xedd,TxtData0xedd)
+setText_WithHuffman(0xede,TxtData0xede)
+
+
+ALIGN 4

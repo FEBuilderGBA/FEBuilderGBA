@@ -882,3 +882,6 @@
 080344AC	AI的魔杖使用判断力	沉默之杖
 0803462C	AI的魔杖使用判断力	睡眠之杖	狂乱之杖
 080347A4	AI的魔杖使用判断力	魔防之杖
+08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
+0801729c	GetItemWRank
+086905B0	&TEXTBATCHSHORT	课程介绍文字。
