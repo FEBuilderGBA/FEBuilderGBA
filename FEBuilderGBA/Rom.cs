@@ -11,6 +11,8 @@ namespace FEBuilderGBA
     public interface IROMFEINFO
     {
         String game_id();    // ゲームバージョンコード
+        String VersionToFilename();
+        String TitleToFilename();
         uint mask_point_base_pointer(); // Huffman tree end (indirected twice)
         uint mask_pointer();  // Huffman tree start (indirected once)
         uint text_pointer(); // textの開始位置
@@ -756,47 +758,6 @@ namespace FEBuilderGBA
                 }
             }
             return U.NOT_FOUND;
-        }
-        public string TitleToFilename()
-        {
-            if (this.RomInfo.version() == 8)
-            {
-                return "FE8";
-            }
-            else if (this.RomInfo.version() == 7)
-            {
-                return "FE7";
-            }
-            else if (this.RomInfo.version() == 6)
-            {
-                return "FE6";
-            }
-            throw new Exception("unknown version:" + this.RomInfo.version().ToString());
-        }
-
-        public string VersionToFilename()
-        {
-            if (this.RomInfo.version() == 8)
-            {
-                if (this.RomInfo.is_multibyte())
-                {
-                    return "FE8J";
-                }
-                return "FE8U";
-            }
-            else if (this.RomInfo.version() == 7)
-            {
-                if (this.RomInfo.is_multibyte())
-                {
-                    return "FE7J";
-                }
-                return "FE7U";
-            }
-            else if (this.RomInfo.version() == 6)
-            {
-                return "FE6";
-            }
-            throw new Exception("unknown version:" + this.RomInfo.version().ToString() );
         }
         public void SetVirtualROMFlag(string srcfilename)
         {

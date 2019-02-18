@@ -2686,14 +2686,14 @@ namespace FEBuilderGBA
             string fullfilename;
             if (rom != null)
             {
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + "." + lang + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + lang + ".txt");
                 if (File.Exists(fullfilename))
                 {//言語指定がある
                     return fullfilename;
                 }
                 if (canSecondLanguageEnglish)
                 {//第2言語を英語にできるなら英語リソースを検索
-                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + "." + "en" + ".txt");
+                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + "en" + ".txt");
                     if (File.Exists(fullfilename))
                     {//言語指定がある
                         return fullfilename;
@@ -2701,7 +2701,7 @@ namespace FEBuilderGBA
                 }
 
                 //ないなら共通版
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + ".txt");
                 if (File.Exists(fullfilename))
                 {//各FEごとの設定がある
                     return fullfilename;
@@ -2740,7 +2740,7 @@ namespace FEBuilderGBA
             }
             else if (rom.IsVirtualROM)
             {//仮想ROMなのでファイル名はない
-                romtitle = "_Virtial_" + rom.VersionToFilename();
+                romtitle = "_Virtial_" + rom.RomInfo.VersionToFilename();
             }
             else
             {

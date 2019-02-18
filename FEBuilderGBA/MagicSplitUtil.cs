@@ -42,52 +42,30 @@ namespace FEBuilderGBA
 
         static magic_split_enum SearchMagicSplitLow()
         {
-            string filename = U.ConfigDataFilename("magic_split_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            InputFormRef.PatchTableSt[] table = new InputFormRef.PatchTableSt[] { 
+                new InputFormRef.PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
+                new InputFormRef.PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(InputFormRef.PatchTableSt t in table)
             {
-                return magic_split_enum.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "FE8NMAGIC")
+                if (t.name == "FE8NMAGIC")
                 {
 
                     return magic_split_enum.FE8NMAGIC;
                 }
-                if (sp[0] == "FE7UMAGIC")
+                if (t.name == "FE7UMAGIC")
                 {
                     return magic_split_enum.FE7UMAGIC;
                 }

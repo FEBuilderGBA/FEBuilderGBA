@@ -758,7 +758,7 @@ namespace FEBuilderGBA
         static string CompilerEventAssemblerInner(string compiler_exe ,string tooldir,string  freeareadef_targetfile_fullpath,string  output_target_rom,string  output_symFile)
         {
             string args = "A "
-                + Program.ROM.TitleToFilename() + " "
+                + Program.ROM.RomInfo.TitleToFilename() + " "
                 + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
                 + U.escape_shell_args("-output:" + output_target_rom) + " "
                 + U.escape_shell_args("-symOutput:" + output_symFile);
@@ -783,7 +783,7 @@ namespace FEBuilderGBA
             if (output.IndexOf("symOutput doesn't exist.") >= 0)
             {//古いEAらしいので、symOutputを外して実行する
                 args = "A "
-                    + Program.ROM.TitleToFilename() + " "
+                    + Program.ROM.RomInfo.TitleToFilename() + " "
                     + U.escape_shell_args("-input:" + freeareadef_targetfile_fullpath) + " "
                     + U.escape_shell_args("-output:" + output_target_rom);
                 Log.Notify(args);
@@ -993,6 +993,32 @@ namespace FEBuilderGBA
 
             return orignal_romfile;
         }
+
+
+        public struct ROMBaseTableSt
+        {
+            public string name;
+            public uint ver;
+            public string lang;
+            public string header;
+            public uint romsize;
+            public uint crc32;
+        };
+        static ROMBaseTableSt[] GetROMBaseTable()
+        {
+            return new ROMBaseTableSt[]{
+                new ROMBaseTableSt{name = "FE6J" , ver = 6, lang = "ja" , header = "AFEJ01", romsize = 0x800000, crc32 = 0xd38763e1},
+                new ROMBaseTableSt{name = "FE6U" , ver = 6, lang = "en" , header = "AFEJ01", romsize = 0x1000000, crc32 =0x35F5B06B},
+                new ROMBaseTableSt{name = "FE6CN" , ver = 6, lang = "zh" , header = "AFEJ01", romsize = 0x800000, crc32 = 	0x1F19D989},
+                new ROMBaseTableSt{name = "FE7J" , ver = 7, lang = "ja" , header = "AE7J01", romsize = 0x1000000, crc32 = 	0xf0c10e72},
+                new ROMBaseTableSt{name = "FE7U" , ver = 7, lang = "en" , header = "AE7E01", romsize = 0x1000000, crc32 = 	0x2a524221},
+                new ROMBaseTableSt{name = "FE7CN" , ver = 7, lang = "zh" , header = "AE7J01", romsize = 0x1000000, crc32 = 	0x5F286460},
+                new ROMBaseTableSt{name = "FE8J" , ver = 8, lang = "ja" , header = "BE8J01", romsize = 0x1000000, crc32 = 	0x9d76826f},
+                new ROMBaseTableSt{name = "FE8U" , ver = 8, lang = "en" , header = "BE8E01", romsize = 0x1000000, crc32 = 	0xa47246ae},
+                new ROMBaseTableSt{name = "FE8CN" , ver = 8, lang = "zh" , header = "BE8J01", romsize = 0x1000000, crc32 = 	0x79609D14},
+            };
+        }
+
         //現在のディレクトリにある未改造ROMの探索
         static string FindOrignalROMLow(string dir, string lang, SearchOption searchOption = SearchOption.TopDirectoryOnly)
         {
@@ -1019,39 +1045,28 @@ namespace FEBuilderGBA
             uint orignal_size = 0;
             uint orignal_crc32 = 0;
             
-            string data_filename = U.ConfigDataFilename("base_rom_info_");
-            string[] lines = File.ReadAllLines(data_filename);
-            for (int i = 0; i < lines.Length; i++)
+            ROMBaseTableSt[] table = GetROMBaseTable();
+            foreach(ROMBaseTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 6)
-                {
-                    continue;
-                }
                 //FE6U	ver	en	AFEJ01	0x1000000	0x35F5B06B
                 if (version != 0)
                 {
-                    if (version != U.atoi0x(sp[1]))
+                    if (version != t.ver)
                     {
                         continue;
                     }
                 }
                 if (lang != "")
                 {
-                    if (lang != sp[2])
+                    if (lang != t.lang)
                     {
                         continue;
                     }
                 }
 
-                orignal_header = sp[3];
-                orignal_size = U.atoi0x(sp[4]);
-                orignal_crc32 = U.atoi0x(sp[5]);
+                orignal_header = t.header;
+                orignal_size = t.romsize;
+                orignal_crc32 = t.crc32;
             }
 
             if (orignal_size == 0 || orignal_crc32 == 0)
@@ -1330,7 +1345,7 @@ namespace FEBuilderGBA
 
             //Core D FE8 ToEnd 0xA39768 none -input:fe8e.gba "-output:Prologue.event"
             string args = "D "
-                + Program.ROM.TitleToFilename() + " "
+                + Program.ROM.RomInfo.TitleToFilename() + " "
                 + endAddr  + " "
                 + U.To0xHexString(dumpAddr) + " "
                 + eaOption 
@@ -2252,22 +2267,10 @@ namespace FEBuilderGBA
             U.CRC32 crc32 = new U.CRC32();
             uint targetCRC32 = crc32.Calc(File.ReadAllBytes(filename));
 
-            string data_filename = U.ConfigDataFilename("base_rom_info_");
-            string[] lines = File.ReadAllLines(data_filename);
-            for (int i = 0; i < lines.Length; i++)
+            ROMBaseTableSt[] table = GetROMBaseTable();
+            foreach(ROMBaseTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 6)
-                {
-                    continue;
-                }
-                uint orignal_crc32 = U.atoi0x(sp[5]);
-                if (orignal_crc32 == targetCRC32)
+                if (t.crc32 == targetCRC32)
                 {//CRCマッチ
                     return "";
                 }

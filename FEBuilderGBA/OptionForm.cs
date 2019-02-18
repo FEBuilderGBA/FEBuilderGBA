@@ -1074,63 +1074,50 @@ namespace FEBuilderGBA
             }
         }
 
-
+        public struct TBLTableSt
+        {
+            public string name;
+            public uint ver;
+            public uint enc;
+            public uint pointer;
+            public byte[] data;
+        };
         public static void AutoUpdateTBLOption()
         {
-            string filename = U.ConfigDataFilename("tbl_cond_");
-            if (! U.IsRequiredFileExist(filename))
-            {
-                return;
-            }
+            //地形:平地 の名前の付け方でtblを判定します.
+            //平地は普通　変更しないだろうから
+            //NAME	VER	enc	POINTER VALUE
+            TBLTableSt[] table = new TBLTableSt[]{
+                new TBLTableSt{name = "FE6U" ,ver = 6,enc = 2,pointer = 0x60D010,data = new byte[]{0x82, 0xBD, 0x82 ,0xE6}},
+                new TBLTableSt{name = "FE6CN",ver = 6,enc = 1,pointer = 0x60D010,data = new byte[]{0x8C ,0xE2 ,0x85 ,0xE1}},
+                new TBLTableSt{name = "FE7CN",ver = 7,enc = 1,pointer = 0xC542F4,data = new byte[]{0x8D ,0xFC ,0x86 ,0x87}},
+                new TBLTableSt{name = "FE8CN",ver = 8,enc = 1,pointer = 0x8617CC,data = new byte[]{0x8D ,0xBD ,0x85 ,0xF9}}
+            }; 
 
-            string[] lines = File.ReadAllLines(filename);
             uint version = (uint)Program.ROM.RomInfo.version();
             uint tbl_index = 0;
 
-            for (int i = 0; i < lines.Length; i++)
+            foreach (TBLTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
+                if (t.ver != version)
                 {
                     continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 5)
-                {
-                    continue;
-                }
-                if (U.atoi(sp[1]) != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[4].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
                 }
 
                 //チェック開始アドレス 地形:平地
-                uint pointer = U.atoh(sp[3]);
-                if (!U.isSafetyOffset(pointer))
-                {
-                    continue;
-                }
-
-                uint start = Program.ROM.p32(pointer);
+                uint start = Program.ROM.p32(t.pointer);
                 if (!U.isSafetyOffset(start))
                 {
                     continue;
                 }
 
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(start, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
 
-                tbl_index = U.atoi(sp[2]);
+                tbl_index = t.enc;
                 break;
             }
             uint now_tbl = U.atoi(Program.Config.at("func_textencoding"));

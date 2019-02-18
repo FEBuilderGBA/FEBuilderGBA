@@ -10,6 +10,8 @@ namespace FEBuilderGBA
     sealed class ROMFE8JP : IROMFEINFO
     {
         public String game_id(){ return "BE8J01"; }    // ゲームバージョンコード
+        public String VersionToFilename() { return "FE8J"; }
+        public String TitleToFilename() { return "FE8"; }
         public uint mask_point_base_pointer() { return 0x0006DC; } // Huffman tree end (indirected twice)
         public uint mask_pointer() { return 0x0006E0; }  // Huffman tree start (indirected once)
         public uint text_pointer() { return 0x00A000; } // textの開始位置

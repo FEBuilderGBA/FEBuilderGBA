@@ -36,7 +36,7 @@ namespace FEBuilderGBA
         public static string GetPatchDirectory()
         {
             return
-                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.VersionToFilename());
+                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename());
         }
 
         //パッチをスキャンしなおす.
@@ -319,7 +319,7 @@ namespace FEBuilderGBA
                 name = U.at(patch.Param, "NAME");
             }
             sb.Append(R._("パッチ名:"));
-            sb.AppendLine(R._(name) + "  @" + Program.ROM.VersionToFilename());
+            sb.AppendLine(R._(name) + "  @" + Program.ROM.RomInfo.VersionToFilename());
 
             string author = atMultiLine(patch, "AUTHOR");
             if (author != "")

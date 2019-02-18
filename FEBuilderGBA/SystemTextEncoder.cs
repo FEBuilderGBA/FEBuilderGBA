@@ -29,7 +29,7 @@ namespace FEBuilderGBA
         {
             if (textencoding == OptionForm.textencoding_enum.ZH_TBL && rom != null)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.TitleToFilename() + ".tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
                 if (File.Exists(resoucefilename))
                 {
                     this.TBLEncode = new SystemTextEncoderTBLEncodeClass(resoucefilename);
@@ -40,7 +40,7 @@ namespace FEBuilderGBA
             }
             else if (textencoding == OptionForm.textencoding_enum.EN_TBL && rom != null)
             {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.TitleToFilename() + ".tbl");
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
                 if (File.Exists(resoucefilename))
                 {
                     this.TBLEncode = new SystemTextEncoderTBLEncodeClass(resoucefilename);

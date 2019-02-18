@@ -366,7 +366,7 @@ namespace FEBuilderGBA
             string FEVersion = "";
             if (Program.ROM != null)
             {
-                FEVersion = Program.ROM.VersionToFilename();
+                FEVersion = Program.ROM.RomInfo.VersionToFilename();
                 FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
 
                 U.CRC32 crc32 = new U.CRC32();

@@ -9676,47 +9676,27 @@ namespace FEBuilderGBA
         }
         static skill_system_enum SearchSkillSystemLow()
         {
-            string filename = U.ConfigDataFilename("skill_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="yugudora",	ver = "FE8J", addr = 0xEE594,data = new byte[]{0x4B ,0xFA ,0x2F ,0x59}},
+                new PatchTableSt{ name="FE8N",	ver = "FE8J", addr = 0x89268,data = new byte[]{0x00 ,0x4B ,0x9F ,0x46}},
+                new PatchTableSt{ name="midori",	ver = "FE8J", addr = 0xFE58E0,data = new byte[]{0x05 ,0x1C ,0x00 ,0xF0 ,0x25 ,0xF8 ,0x01 ,0x29 ,0x04 ,0xD0 ,0x28 ,0x1C ,0x00 ,0xF0 ,0x28 ,0xF8}},
+                new PatchTableSt{ name="SkillSystem",	ver = "FE8U", addr = 0x2ACF8,data = new byte[]{0x70 ,0x47}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                return skill_system_enum.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "FE8N")
+                if (t.name == "FE8N")
                 {
                     if (SkillConfigFE8NVer2SkillForm.IsFE8NVer2())
                     {
@@ -9724,15 +9704,15 @@ namespace FEBuilderGBA
                     }
                     return skill_system_enum.FE8N;
                 }
-                if (sp[0] == "yugudora")
+                if (t.name == "yugudora")
                 {
                     return skill_system_enum.yugudora;
                 }
-                if (sp[0] == "midori")
+                if (t.name == "midori")
                 {
                     return skill_system_enum.midori;
                 }
-                if (sp[0] == "SkillSystem")
+                if (t.name == "SkillSystem")
                 {
                     return skill_system_enum.SkillSystem;
                 }
@@ -9801,57 +9781,47 @@ namespace FEBuilderGBA
             }
             return g_Cache_draw_font_enum;
         }
+        public struct PatchTableSt
+        {
+            public string name;
+            public string ver;
+            public uint addr;
+            public byte[] data;
+        };
         public static draw_font_enum SearchDrawFontPatch(ROM rom)
         {
-            string filename = U.ConfigDataFilename("draw_font_extends_");
-            if (!U.IsRequiredFileExist(filename))
-            {
-                return draw_font_enum.NO;
-            }
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="DrawSingle",	ver = "FE7J", addr = 0x56e2,data = new byte[]{0x00, 0x00, 0x00, 0x49, 0x8F, 0x46}},
+                new PatchTableSt{ name="DrawSingle",	ver = "FE8J", addr = 0x40c2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x49 ,0x8F ,0x46}},
+                new PatchTableSt{ name="DrawMulti",	ver = "FE7U", addr = 0x5BD6,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x9F ,0x46}},
+                new PatchTableSt{ name="DrawMulti",	ver = "FE8U", addr = 0x44D2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x49 ,0x8F ,0x46}},
+                new PatchTableSt{ name="DrawUTF8",	ver = "FE7U", addr = 0x5B6A,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x18 ,0x47}},
+                new PatchTableSt{ name="DrawUTF8",	ver = "FE8U", addr = 0x44D2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x18 ,0x47}},
+            };
 
-            string[] lines = File.ReadAllLines(filename);
-            string version = rom.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
+            string version = rom.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
+                if (t.ver != version)
                 {
                     continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
                 }
 
                 //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = rom.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = rom.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "DrawSingle")
+                if (t.name == "DrawSingle")
                 {
                     return draw_font_enum.DrawSingleByte;
                 }
-                if (sp[0] == "DrawMulti")
+                if (t.name == "DrawMulti")
                 {
                     return draw_font_enum.DrawMultiByte;
                 }
-                if (sp[0] == "DrawUTF8")
+                if (t.name == "DrawUTF8")
                 {
                     return draw_font_enum.DrawUTF8;
                 }
@@ -10014,43 +9984,27 @@ namespace FEBuilderGBA
         //武器魔法を同時に利用できるパッチの判別.
         public static bool SearchMeleeAndMagicFixPatch()
         {
-            string filename = U.ConfigDataFilename("melee_and_magic_fix_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="GIRLS",	ver = "FE8J", addr = 0x18752,data = new byte[]{0x18}},
+                new PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8J", addr = 0x1876C,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7J", addr = 0x188CC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8U", addr = 0x18A58,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                //new PatchTableSt{ name="UnkMeleeAndMagicFix",	ver = "FE8U", addr = 0x87852,data = new byte[]{0x60 ,0xB4 ,0x00 ,0x26}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7U", addr = 0x184DC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE6", addr = 0x18188,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
             {
-                return false;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
@@ -10089,52 +10043,36 @@ namespace FEBuilderGBA
         }
         static portrait_extends SearchPortraitExtendsLow()
         {
-            string filename = U.ConfigDataFilename("portrait_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE8J", addr = 0x54da,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE8U", addr = 0x55D2,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE7U", addr = 0x6BCA,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE7J", addr = 0x6A5A,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8U", addr = 0x8540,data = new byte[]{0x0A ,0x1C}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8J", addr = 0x843C,data = new byte[]{0x0A ,0x1C}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8U", addr = 0x8540,data = new byte[]{0x01 ,0x3A}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8J", addr = 0x843C,data = new byte[]{0x01 ,0x3A}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                return portrait_extends.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
 
-                if (sp[0] == "MUG_EXCEED")
+                if (t.name == "MUG_EXCEED")
                 {
                     return portrait_extends.MUG_EXCEED;
                 }
-                if (sp[0] == "HALFBODY")
+                if (t.name == "HALFBODY")
                 {
                     return portrait_extends.HALFBODY;
                 }

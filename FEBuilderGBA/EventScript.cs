@@ -1473,7 +1473,7 @@ namespace FEBuilderGBA
             {
                 commandstr = "0x" + command.ToString("X02").ToUpper();
             }
-            string gametype = Program.ROM.TitleToFilename();
+            string gametype = Program.ROM.RomInfo.TitleToFilename();
 
             string[] files = Directory.GetFiles(@"C:\dropbox\FE8Edit7743\sample\Event Assembler V11.0.1\Language Raws\", "*.txt", SearchOption.AllDirectories);
             for (int i = 0; i < files.Length; i++)

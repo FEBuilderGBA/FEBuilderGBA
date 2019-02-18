@@ -6,4 +6,3 @@
 53=FEditor像这样BG扩大 YY=1 ON    YY=0 OFF
 1A=1F或错误的终止前需要
 1F=发出hit声（紧接之前需要1A的必要）
-
