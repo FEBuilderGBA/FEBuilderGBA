@@ -4199,9 +4199,9 @@ namespace FEBuilderGBA
 
 
             //データの位置を追跡
-            {
-                TraceEditPatch(binMappings, patch);
-            }
+            TraceEditPatch(binMappings, patch);
+            //メニューのデータを追加
+            AppendMenuPatch(patch, binMappings);
             return binMappings;
         }
 
@@ -4417,35 +4417,63 @@ namespace FEBuilderGBA
                     }
                 }
             }
-
             //データの位置を追跡
             TraceEditPatch(binMappings, patch);
+            //メニューのデータを追加
+            AppendMenuPatch(patch, binMappings);
             return binMappings;
         }
-
-        static bool is_EA_EXTENDS_UNITMENU(PatchSt patch)
+        //メニューを追加している場合、追加したメニューの場所を追跡する
+        static void AppendMenuPatch(PatchSt patch, List<BinMapping> binMappings)
         {
+            List<U.AddrResult> list;
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
                 string key = sp[0];
 
-                if (key == "EA_EXTENDS_UNITMENU")
+                if (pair.Key.IndexOf("EA_EXTENDS_UNITMENU") >= 0)
                 {
-                    return true;
+                    list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetUnitMenuPointer());
                 }
-            }
-            return false;
-        }
-        static bool is_EA_EXTENDS_GAMEMENU(PatchSt patch)
-        {
-            foreach (var pair in patch.Param)
-            {
-                string[] sp = pair.Key.Split(':');
-                string key = sp[0];
-
-                if (key == "EA_EXTENDS_GAMEMENU")
+                else if (pair.Key.IndexOf("EA_EXTENDS_GAMEMENU") >= 0)
                 {
+                    list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetGameMenuPointer());
+                }
+                else
+                {
+                    continue;
+                }
+
+                foreach(U.AddrResult ar in list)
+                {
+                    uint f = MenuCommandForm.GetEffectAddrByAddr(ar.addr);
+                    if (f != U.NOT_FOUND)
+                    {
+                        bool r = AppendMenuByAddr(ar.addr, f, binMappings);
+                        if (r)
+                        {
+                            continue;
+                        }
+                    }
+                }
+
+            }
+        }
+        static bool AppendMenuByAddr(uint menuAddr,uint menuFunc, List<BinMapping> binMappings)
+        {
+            for (int i = 0; i < binMappings.Count; i++)
+            {
+                if (binMappings[i].addr == menuFunc)
+                {
+                    BinMapping binmap = new BinMapping();
+                    binmap.addr = menuAddr;
+                    binmap.filename = "MENU";
+                    binmap.key = "MENU";
+                    binmap.length = 36;
+                    binmap.bin = Program.ROM.getBinaryData(binmap.addr, binmap.length);
+                    binmap.mask = new bool[binmap.addr]; //データなのでマスクは不要
+                    binMappings.Add(binmap);
                     return true;
                 }
             }
@@ -6304,7 +6332,16 @@ namespace FEBuilderGBA
                     //                    ^------もしXXを消す場合 A B 3 C
                     //                    ^------もしABを消す場合 1 X X C
                 }
+
+                if (map.key == "MENU")
+                {//メニューの表示判定関数が壊れてしまうならば、nullに補正する.
+                    if (MenuCommandForm.GetUsabilityAddrByAddr(map.addr) == U.NOT_FOUND)
+                    {
+                        MenuCommandForm.WriteNullMenu(map.addr, undodata);
+                    }
+                }
             }
+
 
             pleaseWait.DoEvents(R._("ROM末尾の最適化をしています"));
             StripROM(binmap, undodata);

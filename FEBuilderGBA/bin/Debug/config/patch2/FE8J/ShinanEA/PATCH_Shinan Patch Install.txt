@@ -18,9 +18,9 @@ AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/shinan
 FLAG:0x26=既読
 
 
-INFO=指南イベントを作成します。\r\nイベントでは、その章をどのように攻略するかヒントを教えるイベントを作成できます。\r\n
-INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nBy selecting the dictionary menu, you can execute the events set for each chapter.\r\nIn the event you can create an event to teach you how to capture that chapter.\r\n
-INFO.zh=我将创建一个指令事件。\r\n通过选择字典菜单，您可以执行为每个章节设置的事件。\r\n如果您可以创建活动来教您如何捕捉该章节。\r\n
+INFO=指南イベントを作成します。\r\nイベントでは、その章をどのように攻略するかヒントを教えるイベントを作成できます。\r\nこのパッチは、辞書を上書きせず、メニューの末尾に追加します。\r\n
+INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nBy selecting the dictionary menu, you can execute the events set for each chapter.\r\nIn the event you can create an event to teach you how to capture that chapter.\r\nThis patch does not overwrite the dictionary but adds it to the end of the menu.\r\n
+INFO.zh=我将创建一个指令事件。\r\n通过选择字典菜单，您可以执行为每个章节设置的事件。\r\n如果您可以创建活动来教您如何捕捉该章节。\r\n此修补程序不会覆盖字典，但会将其添加到菜单的末尾。\r\n
 
 CONFLICT_IFNOT:$GREP4 0x00 0xB5 0xC0 0x46 0x06 0x48 0xC0 0x46 0x06 0x49 0x89 0x7B 0x89 0x00 0x40 0x58 0x01 0x21 0x00 0xF0 0x02 0xF8 0x17 0x20 0x00 0xBD 0xC0 0x46 0x02 0x4B 0x9F 0x46=0x00 0xB5 0xC0 0x46
 CONFLICT_MESSAGE=Shinan

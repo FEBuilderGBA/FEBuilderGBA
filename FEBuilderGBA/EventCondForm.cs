@@ -4198,13 +4198,14 @@ namespace FEBuilderGBA
             {
                 OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
                 OBJECT_N05_L_2_FLAG.Hide();
+                OBJECT_N05_J_4_EVENTORCHEST.Text = R._("1を設定");
             }
             else
             {
                 OBJECT_N05_J_2_FLAG.Text = GetNameOfAchievementFlag();
                 OBJECT_N05_L_2_FLAG.Show();
+                OBJECT_N05_J_4_EVENTORCHEST.Text = R._("イベント");
             }
         }
-
     }
 }
