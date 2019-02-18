@@ -8692,19 +8692,19 @@ namespace FEBuilderGBA
                 //影響を受けるポインタサーチ
                 List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(orignal_addr);
 
+                if (movepointerlist.IndexOf(original_pointer) < 0)
+                {//元ポインターの書き換えが抜けているので追加する.
+                    movepointerlist.Add(original_pointer);
+                }
+
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
                     Program.ROM.write_u32(movepointerlist[i], U.toPointer(newFreeSapceAddr), undodata);
                 }
-                //元ポインターの書き換え(無駄かもしれないが念のため)
-                {
-                    Program.ROM.write_u32(original_pointer, U.toPointer(newFreeSapceAddr), undodata);
-                }
 
                 //データを新規領域にコピー.
-                undodata.list.Add(new Undo.UndoPostion(newFreeSapceAddr, original_size));
-                Program.ROM.write_range(newFreeSapceAddr, orignal_data);
+                Program.ROM.write_range(newFreeSapceAddr, orignal_data, undodata);
 
                 if (fillOption == ExpandsFillOption.FIRST)
                 {
@@ -8721,15 +8721,13 @@ namespace FEBuilderGBA
 
                 //元データをクリアします.
                 byte[] fill = U.FillArray(original_size, 0x00);
-                undodata.list.Add(new Undo.UndoPostion(orignal_addr, original_size));
-                Program.ROM.write_range(orignal_addr, fill);
+                Program.ROM.write_range(orignal_addr, fill, undodata);
 
                 //オリジナルサイズが0で、ある程度の大きさのデータを確保するときは、
                 //広大な空きデータと間違われないために、明かな終端フラグ 0xFFFFFFFFを入れよう.
                 if (use_ffffffff_term_data)
                 {
-                    undodata.list.Add(new Undo.UndoPostion(newFreeSapceAddr + searchFreespaceSize - 4, 4));
-                    Program.ROM.write_u32(newFreeSapceAddr + new_size, 0xFFFFFFFF);
+                    Program.ROM.write_u32(newFreeSapceAddr + new_size, 0xFFFFFFFF , undodata);
                 }
 
                 return newFreeSapceAddr;

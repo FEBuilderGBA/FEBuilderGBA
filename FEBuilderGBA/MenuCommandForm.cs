@@ -384,8 +384,8 @@ namespace FEBuilderGBA
                 byte[] endEndData = Program.ROM.getBinaryData(oldEndAddr, eearg.BlockSize);
                 byte[] newEndData = Program.ROM.getBinaryData(newEndAddr, eearg.BlockSize);
 
-                Program.ROM.write_range(oldEndAddr, newEndData);
-                Program.ROM.write_range(newEndAddr, endEndData);
+                Program.ROM.write_range(oldEndAddr, newEndData, undodata);
+                Program.ROM.write_range(newEndAddr, endEndData, undodata);
             }
         }
 
