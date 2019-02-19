@@ -127,8 +127,8 @@ namespace FEBuilderGBA
                             );
                     };
                     reason = R._("スキル拡張 FE8N が必要です。\r\n有効にしますか？");
-                    patchName1 = "Skill Extension FE8N 2018_06_09";///No Translate
-                    patchName2 = "skill_2018_06_09";///No Translate
+                    patchName1 = "Skill Extension FE8N 2019_02_19";///No Translate
+                    patchName2 = "skill_2019_02_19";///No Translate
                 }
                 else
                 {

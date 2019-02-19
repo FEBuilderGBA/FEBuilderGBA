@@ -1,0 +1,15 @@
+IF:0x016919=0x4B 0x18 0x47
+
+FORM=UnitForm
+J_38=スキル(自軍)
+J_39=スキル(上級職)
+J_49=スキル(敵、友軍)
+J_38:NAME=J_38_SKILLASSIGNMENT
+J_39:NAME=J_39_SKILLASSIGNMENT
+J_49:NAME=J_49_SKILLASSIGNMENT
+J_38.en=Skill(Player)
+J_39.en=Skill(Promoted)
+J_49.en=Skill(Enemy,ally)
+J_38.zh=技能（自军）
+J_39.zh=技能（高级职位）
+J_49.zh=技能（敌军,友军）

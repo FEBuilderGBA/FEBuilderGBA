@@ -1,6 +1,6 @@
-NAME=Skill Extension FE8N 2018_06_09(スキル拡張)
-NAME.en=Skill Extension FE8N 2018_06_09
-NAME.zh=技能延期FE8N 2018_06_09（技能扩展）
+NAME=Skill Extension FE8N 2019_02_19(スキル拡張)
+NAME.en=Skill Extension FE8N 2019_02_19
+NAME.zh=技能延期FE8N 2019_02_19（技能扩展）
 
 TYPE=BIN
 TAG=#ENGINE
