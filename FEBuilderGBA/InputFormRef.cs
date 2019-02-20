@@ -9904,8 +9904,9 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            //C48だけはNOT条件です
             uint a = Program.ROM.u32(address);
-            return (a == check_value);
+            return (a != check_value);
         }
         //sound16trackパッチの判別.
         public static bool Search16tracks12soundsPatch()
