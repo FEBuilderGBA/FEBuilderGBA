@@ -2424,6 +2424,10 @@ namespace FEBuilderGBA
             {
                 return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4);
             }
+            if (value.IndexOf("GREP3 ") == 0)
+            {
+                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 3);
+            }
             if (value.IndexOf("GREP2 ") == 0)
             {
                 return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 2);

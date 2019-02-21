@@ -1,0 +1,6 @@
+IF:0x02C078=0x01 0x4B 0xA5 0xF0
+
+FORM=ItemForm
+J_33=Debuffs
+J_33:HINT=SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。
+

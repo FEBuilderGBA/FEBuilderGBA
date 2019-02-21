@@ -506,7 +506,7 @@
             // B35
             // 
             this.B35.Hexadecimal = true;
-            this.B35.Location = new System.Drawing.Point(294, 28);
+            this.B35.Location = new System.Drawing.Point(343, 28);
             this.B35.Margin = new System.Windows.Forms.Padding(2);
             this.B35.Maximum = new decimal(new int[] {
             -559939585,
@@ -514,7 +514,7 @@
             54,
             0});
             this.B35.Name = "B35";
-            this.B35.Size = new System.Drawing.Size(69, 25);
+            this.B35.Size = new System.Drawing.Size(112, 25);
             this.B35.TabIndex = 52;
             // 
             // J_35
@@ -522,10 +522,10 @@
             this.J_35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_35.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_35.Location = new System.Drawing.Point(292, -1);
+            this.J_35.Location = new System.Drawing.Point(341, -1);
             this.J_35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_35.Name = "J_35";
-            this.J_35.Size = new System.Drawing.Size(71, 25);
+            this.J_35.Size = new System.Drawing.Size(114, 25);
             this.J_35.TabIndex = 51;
             this.J_35.Text = "??";
             this.J_35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -533,7 +533,7 @@
             // B34
             // 
             this.B34.Hexadecimal = true;
-            this.B34.Location = new System.Drawing.Point(213, 28);
+            this.B34.Location = new System.Drawing.Point(230, 28);
             this.B34.Margin = new System.Windows.Forms.Padding(2);
             this.B34.Maximum = new decimal(new int[] {
             -559939585,
@@ -541,7 +541,7 @@
             54,
             0});
             this.B34.Name = "B34";
-            this.B34.Size = new System.Drawing.Size(71, 25);
+            this.B34.Size = new System.Drawing.Size(101, 25);
             this.B34.TabIndex = 50;
             // 
             // J_34
@@ -549,10 +549,10 @@
             this.J_34.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_34.Location = new System.Drawing.Point(210, -1);
+            this.J_34.Location = new System.Drawing.Point(227, -1);
             this.J_34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_34.Name = "J_34";
-            this.J_34.Size = new System.Drawing.Size(75, 25);
+            this.J_34.Size = new System.Drawing.Size(104, 25);
             this.J_34.TabIndex = 49;
             this.J_34.Text = "??";
             this.J_34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -568,7 +568,7 @@
             54,
             0});
             this.B33.Name = "B33";
-            this.B33.Size = new System.Drawing.Size(80, 25);
+            this.B33.Size = new System.Drawing.Size(99, 25);
             this.B33.TabIndex = 48;
             // 
             // J_33
@@ -579,7 +579,7 @@
             this.J_33.Location = new System.Drawing.Point(118, -1);
             this.J_33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_33.Name = "J_33";
-            this.J_33.Size = new System.Drawing.Size(82, 25);
+            this.J_33.Size = new System.Drawing.Size(99, 25);
             this.J_33.TabIndex = 47;
             this.J_33.Text = "??";
             this.J_33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
