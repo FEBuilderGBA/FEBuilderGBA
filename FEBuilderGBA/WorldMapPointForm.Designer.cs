@@ -36,10 +36,10 @@
             this.L_3_WMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_2_WMICON_MAPDEF = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_28_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.L_11_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_10_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_9_MAP = new FEBuilderGBA.TextBoxEx();
-            this.L_8_MAP = new FEBuilderGBA.TextBoxEx();
+            this.L_11_BASEPOINT = new FEBuilderGBA.TextBoxEx();
+            this.L_10_BASEPOINT = new FEBuilderGBA.TextBoxEx();
+            this.L_9_BASEPOINT = new FEBuilderGBA.TextBoxEx();
+            this.L_8_BASEPOINT = new FEBuilderGBA.TextBoxEx();
             this.L_5_MAP = new FEBuilderGBA.TextBoxEx();
             this.L_4_MAP = new FEBuilderGBA.TextBoxEx();
             this.L_0_COMBO = new System.Windows.Forms.ComboBox();
@@ -58,13 +58,13 @@
             this.J_16_ITEMSHOP = new System.Windows.Forms.Label();
             this.J_12_ITEMSHOP = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
-            this.J_11_MAP = new System.Windows.Forms.Label();
+            this.J_11 = new System.Windows.Forms.Label();
             this.B10 = new System.Windows.Forms.NumericUpDown();
-            this.J_10_MAP = new System.Windows.Forms.Label();
+            this.J_10 = new System.Windows.Forms.Label();
             this.B9 = new System.Windows.Forms.NumericUpDown();
-            this.J_9_MAP = new System.Windows.Forms.Label();
+            this.J_9 = new System.Windows.Forms.Label();
             this.B8 = new System.Windows.Forms.NumericUpDown();
-            this.J_8_MAP = new System.Windows.Forms.Label();
+            this.J_8 = new System.Windows.Forms.Label();
             this.W6 = new System.Windows.Forms.NumericUpDown();
             this.J_6_FLAG = new System.Windows.Forms.Label();
             this.B5 = new System.Windows.Forms.NumericUpDown();
@@ -94,7 +94,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W26)).BeginInit();
@@ -136,10 +136,10 @@
             this.panel11.Controls.Add(this.L_3_WMICON);
             this.panel11.Controls.Add(this.L_2_WMICON_MAPDEF);
             this.panel11.Controls.Add(this.L_28_TEXT);
-            this.panel11.Controls.Add(this.L_11_MAP);
-            this.panel11.Controls.Add(this.L_10_MAP);
-            this.panel11.Controls.Add(this.L_9_MAP);
-            this.panel11.Controls.Add(this.L_8_MAP);
+            this.panel11.Controls.Add(this.L_11_BASEPOINT);
+            this.panel11.Controls.Add(this.L_10_BASEPOINT);
+            this.panel11.Controls.Add(this.L_9_BASEPOINT);
+            this.panel11.Controls.Add(this.L_8_BASEPOINT);
             this.panel11.Controls.Add(this.L_5_MAP);
             this.panel11.Controls.Add(this.L_4_MAP);
             this.panel11.Controls.Add(this.L_0_COMBO);
@@ -158,13 +158,13 @@
             this.panel11.Controls.Add(this.J_16_ITEMSHOP);
             this.panel11.Controls.Add(this.J_12_ITEMSHOP);
             this.panel11.Controls.Add(this.B11);
-            this.panel11.Controls.Add(this.J_11_MAP);
+            this.panel11.Controls.Add(this.J_11);
             this.panel11.Controls.Add(this.B10);
-            this.panel11.Controls.Add(this.J_10_MAP);
+            this.panel11.Controls.Add(this.J_10);
             this.panel11.Controls.Add(this.B9);
-            this.panel11.Controls.Add(this.J_9_MAP);
+            this.panel11.Controls.Add(this.J_9);
             this.panel11.Controls.Add(this.B8);
-            this.panel11.Controls.Add(this.J_8_MAP);
+            this.panel11.Controls.Add(this.J_8);
             this.panel11.Controls.Add(this.W6);
             this.panel11.Controls.Add(this.J_6_FLAG);
             this.panel11.Controls.Add(this.B5);
@@ -208,7 +208,6 @@
             // 
             // W26
             // 
-
             this.W26.Location = new System.Drawing.Point(412, 470);
             this.W26.Margin = new System.Windows.Forms.Padding(2);
             this.W26.Maximum = new decimal(new int[] {
@@ -222,7 +221,6 @@
             // 
             // W24
             // 
-
             this.W24.Location = new System.Drawing.Point(412, 440);
             this.W24.Margin = new System.Windows.Forms.Padding(2);
             this.W24.Maximum = new decimal(new int[] {
@@ -265,49 +263,49 @@
             this.L_28_TEXT.Size = new System.Drawing.Size(202, 25);
             this.L_28_TEXT.TabIndex = 236;
             // 
-            // L_11_MAP
+            // L_11_BASEPOINT
             // 
-            this.L_11_MAP.ErrorMessage = "";
-            this.L_11_MAP.Location = new System.Drawing.Point(487, 312);
-            this.L_11_MAP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_11_MAP.Name = "L_11_MAP";
-            this.L_11_MAP.Placeholder = "";
-            this.L_11_MAP.ReadOnly = true;
-            this.L_11_MAP.Size = new System.Drawing.Size(221, 25);
-            this.L_11_MAP.TabIndex = 235;
+            this.L_11_BASEPOINT.ErrorMessage = "";
+            this.L_11_BASEPOINT.Location = new System.Drawing.Point(487, 312);
+            this.L_11_BASEPOINT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_11_BASEPOINT.Name = "L_11_BASEPOINT";
+            this.L_11_BASEPOINT.Placeholder = "";
+            this.L_11_BASEPOINT.ReadOnly = true;
+            this.L_11_BASEPOINT.Size = new System.Drawing.Size(221, 25);
+            this.L_11_BASEPOINT.TabIndex = 235;
             // 
-            // L_10_MAP
+            // L_10_BASEPOINT
             // 
-            this.L_10_MAP.ErrorMessage = "";
-            this.L_10_MAP.Location = new System.Drawing.Point(487, 280);
-            this.L_10_MAP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_10_MAP.Name = "L_10_MAP";
-            this.L_10_MAP.Placeholder = "";
-            this.L_10_MAP.ReadOnly = true;
-            this.L_10_MAP.Size = new System.Drawing.Size(221, 25);
-            this.L_10_MAP.TabIndex = 234;
+            this.L_10_BASEPOINT.ErrorMessage = "";
+            this.L_10_BASEPOINT.Location = new System.Drawing.Point(487, 280);
+            this.L_10_BASEPOINT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_10_BASEPOINT.Name = "L_10_BASEPOINT";
+            this.L_10_BASEPOINT.Placeholder = "";
+            this.L_10_BASEPOINT.ReadOnly = true;
+            this.L_10_BASEPOINT.Size = new System.Drawing.Size(221, 25);
+            this.L_10_BASEPOINT.TabIndex = 234;
             // 
-            // L_9_MAP
+            // L_9_BASEPOINT
             // 
-            this.L_9_MAP.ErrorMessage = "";
-            this.L_9_MAP.Location = new System.Drawing.Point(487, 256);
-            this.L_9_MAP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_9_MAP.Name = "L_9_MAP";
-            this.L_9_MAP.Placeholder = "";
-            this.L_9_MAP.ReadOnly = true;
-            this.L_9_MAP.Size = new System.Drawing.Size(221, 25);
-            this.L_9_MAP.TabIndex = 233;
+            this.L_9_BASEPOINT.ErrorMessage = "";
+            this.L_9_BASEPOINT.Location = new System.Drawing.Point(487, 256);
+            this.L_9_BASEPOINT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_9_BASEPOINT.Name = "L_9_BASEPOINT";
+            this.L_9_BASEPOINT.Placeholder = "";
+            this.L_9_BASEPOINT.ReadOnly = true;
+            this.L_9_BASEPOINT.Size = new System.Drawing.Size(221, 25);
+            this.L_9_BASEPOINT.TabIndex = 233;
             // 
-            // L_8_MAP
+            // L_8_BASEPOINT
             // 
-            this.L_8_MAP.ErrorMessage = "";
-            this.L_8_MAP.Location = new System.Drawing.Point(487, 224);
-            this.L_8_MAP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_8_MAP.Name = "L_8_MAP";
-            this.L_8_MAP.Placeholder = "";
-            this.L_8_MAP.ReadOnly = true;
-            this.L_8_MAP.Size = new System.Drawing.Size(221, 25);
-            this.L_8_MAP.TabIndex = 232;
+            this.L_8_BASEPOINT.ErrorMessage = "";
+            this.L_8_BASEPOINT.Location = new System.Drawing.Point(487, 224);
+            this.L_8_BASEPOINT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_8_BASEPOINT.Name = "L_8_BASEPOINT";
+            this.L_8_BASEPOINT.Placeholder = "";
+            this.L_8_BASEPOINT.ReadOnly = true;
+            this.L_8_BASEPOINT.Size = new System.Drawing.Size(221, 25);
+            this.L_8_BASEPOINT.TabIndex = 232;
             // 
             // L_5_MAP
             // 
@@ -531,16 +529,16 @@
             this.B11.Size = new System.Drawing.Size(65, 25);
             this.B11.TabIndex = 206;
             // 
-            // J_11_MAP
+            // J_11
             // 
-            this.J_11_MAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_11_MAP.Location = new System.Drawing.Point(2, 316);
-            this.J_11_MAP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_11_MAP.Name = "J_11_MAP";
-            this.J_11_MAP.Size = new System.Drawing.Size(404, 26);
-            this.J_11_MAP.TabIndex = 205;
-            this.J_11_MAP.Text = "次の章のマップID(エフラム2回目)";
-            this.J_11_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_11.Location = new System.Drawing.Point(2, 316);
+            this.J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_11.Name = "J_11";
+            this.J_11.Size = new System.Drawing.Size(404, 26);
+            this.J_11.TabIndex = 205;
+            this.J_11.Text = "次の拠点ID(エフラム2回目)";
+            this.J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B10
             // 
@@ -556,16 +554,16 @@
             this.B10.Size = new System.Drawing.Size(65, 25);
             this.B10.TabIndex = 204;
             // 
-            // J_10_MAP
+            // J_10
             // 
-            this.J_10_MAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_10_MAP.Location = new System.Drawing.Point(2, 284);
-            this.J_10_MAP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_10_MAP.Name = "J_10_MAP";
-            this.J_10_MAP.Size = new System.Drawing.Size(404, 26);
-            this.J_10_MAP.TabIndex = 203;
-            this.J_10_MAP.Text = "次の章のマップID(エイリーク2回目)";
-            this.J_10_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_10.Location = new System.Drawing.Point(2, 286);
+            this.J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_10.Name = "J_10";
+            this.J_10.Size = new System.Drawing.Size(404, 26);
+            this.J_10.TabIndex = 203;
+            this.J_10.Text = "次の拠点ID(エイリーク2回目)";
+            this.J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B9
             // 
@@ -581,16 +579,16 @@
             this.B9.Size = new System.Drawing.Size(65, 25);
             this.B9.TabIndex = 202;
             // 
-            // J_9_MAP
+            // J_9
             // 
-            this.J_9_MAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_9_MAP.Location = new System.Drawing.Point(2, 256);
-            this.J_9_MAP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_9_MAP.Name = "J_9_MAP";
-            this.J_9_MAP.Size = new System.Drawing.Size(404, 26);
-            this.J_9_MAP.TabIndex = 201;
-            this.J_9_MAP.Text = "次の章のマップID(エフラム)";
-            this.J_9_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_9.Location = new System.Drawing.Point(2, 254);
+            this.J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_9.Name = "J_9";
+            this.J_9.Size = new System.Drawing.Size(404, 26);
+            this.J_9.TabIndex = 201;
+            this.J_9.Text = "次の拠点ID(エフラム)";
+            this.J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B8
             // 
@@ -606,16 +604,16 @@
             this.B8.Size = new System.Drawing.Size(65, 25);
             this.B8.TabIndex = 200;
             // 
-            // J_8_MAP
+            // J_8
             // 
-            this.J_8_MAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8_MAP.Location = new System.Drawing.Point(2, 224);
-            this.J_8_MAP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_8_MAP.Name = "J_8_MAP";
-            this.J_8_MAP.Size = new System.Drawing.Size(404, 26);
-            this.J_8_MAP.TabIndex = 199;
-            this.J_8_MAP.Text = "次の章のマップID(エイリーク)";
-            this.J_8_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_8.Location = new System.Drawing.Point(2, 224);
+            this.J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_8.Name = "J_8";
+            this.J_8.Size = new System.Drawing.Size(404, 26);
+            this.J_8.TabIndex = 199;
+            this.J_8.Text = "次の拠点ID(エイリーク)";
+            this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W6
             // 
@@ -840,7 +838,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(344, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
@@ -976,6 +973,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1076,13 +1074,13 @@
         private System.Windows.Forms.Label J_4_MAP;
         private System.Windows.Forms.NumericUpDown B3;
         private System.Windows.Forms.NumericUpDown B11;
-        private System.Windows.Forms.Label J_11_MAP;
+        private System.Windows.Forms.Label J_11;
         private System.Windows.Forms.NumericUpDown B10;
-        private System.Windows.Forms.Label J_10_MAP;
+        private System.Windows.Forms.Label J_10;
         private System.Windows.Forms.NumericUpDown B9;
-        private System.Windows.Forms.Label J_9_MAP;
+        private System.Windows.Forms.Label J_9;
         private System.Windows.Forms.NumericUpDown B8;
-        private System.Windows.Forms.Label J_8_MAP;
+        private System.Windows.Forms.Label J_8;
         private System.Windows.Forms.NumericUpDown B31;
         private System.Windows.Forms.Label J_31;
         private System.Windows.Forms.NumericUpDown B30;
@@ -1099,12 +1097,12 @@
         private System.Windows.Forms.NumericUpDown W28;
         private System.Windows.Forms.ComboBox L_0_COMBO;
         private FEBuilderGBA.TextBoxEx L_4_MAP;
-        private FEBuilderGBA.TextBoxEx L_9_MAP;
-        private FEBuilderGBA.TextBoxEx L_8_MAP;
+        private FEBuilderGBA.TextBoxEx L_9_BASEPOINT;
+        private FEBuilderGBA.TextBoxEx L_8_BASEPOINT;
         private FEBuilderGBA.TextBoxEx L_5_MAP;
         private FEBuilderGBA.TextBoxEx L_28_TEXT;
-        private FEBuilderGBA.TextBoxEx L_11_MAP;
-        private FEBuilderGBA.TextBoxEx L_10_MAP;
+        private FEBuilderGBA.TextBoxEx L_11_BASEPOINT;
+        private FEBuilderGBA.TextBoxEx L_10_BASEPOINT;
         private System.Windows.Forms.NumericUpDown W26;
         private System.Windows.Forms.NumericUpDown W24;
         private System.Windows.Forms.Panel panel6;

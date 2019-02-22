@@ -845,6 +845,11 @@ namespace FEBuilderGBA
                 ChangeDirect();
                 return;
             }
+            else if (e.KeyCode == Keys.Return)
+            {
+                ShowFloatingControlpanel();
+                return;
+            }
             else if ((e.Control && e.KeyCode == Keys.Divide) || (e.Control && e.KeyCode == Keys.OemQuestion))
             {
                 ChangeComment();

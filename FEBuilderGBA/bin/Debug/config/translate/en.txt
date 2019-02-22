@@ -73,6 +73,12 @@ Save
 :開くファイル名を選択してください
 Open
 
+:ファイルへエクスポート
+Export To File
+
+:ファイルからインポート
+Import from file
+
 :コメント
 Comment
 
@@ -115,12 +121,6 @@ Read Bytes
 :切替
 switching
 
-:ファイルへエクスポート
-Export To File
-
-:ファイルからインポート
-Import from file
-
 :盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。
 Thieves Set the priority of items used by AI to steal items.\r\nThe top of the list will be the item with the highest priority.
 
@@ -151,29 +151,59 @@ Target AI 30
 :標的AI38
 Target AI 38
 
+:もし致死ダメージを与えられる敵なら、この項目のTPは50固定です（優先度無視）\r\n\r\n致死ダメージを与えられない場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n加算されるTP上限は40です。（上限は優先度を乗算した値にかかります）
+If the enemies are given lethal damage, the TP of this item is fixed at 50 (ignoring priority).\r\n\r\nTP when not giving lethal damage calculates the value of "Accuracy x Damage / 100".The pursuit is not considered in this calculation.\r\nThe upper limit of TP to be added is 40.(The upper limit takes the value multiplied by the priority).
+
+:「20-敵の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。この計算が0以下になれば0です。\r\n例を挙げると、HP30の敵に25ダメージを与えられるとすると、敵の残りHPは5なので、20-5=15で「15」が計算結果です。
+It is calculated by "20 - enemy's rest HP".We will calculate assuming that all attacks are hit.It is 0 if this calculation falls below 0.\r\nFor example, suppose that you can give 25 enemies to HP 30 enemies,\r\nthe enemy's remaining HP is 5, so 20-5 = 15 and "15" is the calculation result.
+
+:動く前の位置関係もTPに加算されます。\r\n 加算されるTP上限は10です。\r\n
+The positional relationship before moving is also added to TP.\r\nThe upper limit of TP to be added is 10.\r\n
+
+:優先して狙うクラスの設定ができます。項目00～09に設定してある値と優先度を乗算したものがTPです。\r\n優先クラス設定のポインタ以降にあり、敵がどのクラスでもない場合は、09（ゼロ）を乗算します。\r\n\r\n指定されたクラスはこの値と「01の値」を乗算したものがTPです。\r\nただし、烈火・聖魔ではポインタのクラス指定がすべてゼロなので、意味がありません。封印だけに設定されています。\r\n\r\n加算されるTP上限は20です。
+You can preferentially target classes.TP multiplied by the value set for item 00 to 09 and priority.\r\nIf it is after the pointer of the priority class setting and the enemy is not in any class, it is multiplied by 09 (zero).\r\n\r\nThe specified class is TP multiplied by this value and "01 value".\r\nHowever, since it is all zeros of pointer class designation in FE7 or FE8, it is meaningless.It is set only for FE6.\r\n\r\nThe upper limit of TP to be added is 20.
+
+:現在のターン数がTPに加算されます
+The current turn number is added to TP.
+
+:反撃されない場合は、10の優先ポイントとなります。（警戒度無視）\r\n反撃を受ける場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n\r\n減算されるTP下限は40です。
+If not striking back, it will be a priority point of 10.(Ignore the alertness).\r\nWhen receiving a counterattack, TP will calculate the value of "Accuracy * Damage / 100".The pursuit is not considered in this calculation.\r\n\r\nThe lower TP limit subtracted is 40.
+
+:標的AIには攻撃するときの位置取りにも影響します。\r\n攻撃すると敵の攻撃範囲に入る場合、\r\n敵ごとに「力+一番強い武器の威力/2」の値を計算し、それを合算した値を8で除算した結果をTPから減算します。\r\n\r\n減算されるTP下限は20です。
+Target AI also affects positioning when attacking.\r\nWhen entering the attack range of an enemy when it attacks, the value of "power + power of the strongest weapon / 2" is calculated for each enemy,\r\nand the result obtained by dividing the sum by 8 is subtracted from TP.\r\n\r\nThe lower TP limit subtracted is 20.
+
+:「20-自分の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。\r\nこの計算が0以下になれば0です。
+It is calculated as "20 - your remaining HP".We will calculate assuming that all attacks are hit.\r\nIt is 0 if this calculation falls below 0.
+
+:AIは、ターゲットポイント（TP）を計算し、それがもっとも高くなった攻撃対象を攻撃します。\r\nTPの計算は、手持ちの装備を上から順に計算します。\r\nそして、装備ごとに範囲内の敵を出撃表の上から順に計算します。\r\nTPの量が被った場合は、武器、出撃表、共に下にある物を優先します。\r\n\r\nそれぞれの値を計算し、合計したものを40倍したものが合計TPです。\r\n\r\n出典 FEUniverse Crazycolorz5 / 翻訳 ngmansion aera\r\n詳細はリンクをクリックしてください。
+AI calculates the target point (TP) and attacks the attack target that is the highest.\r\nTo calculate TP, calculate the equipment on hand from the top.\r\nAnd calculate enemies within range for each equipment in order from the top of the scoring table.\r\nIf the amount of TP suffered, weapons, sorting charts, and things underneath will be given priority.\r\n\r\nTotal TP is calculated by calculating each value and multiplying the total by 40 times.\r\n\r\nSource FEUniverse Crazycolorz5 / translation ngmansion aera.\r\nFor details, please click the link.
+
+:それぞれのAIが何を優先するか指定します。詳細はこちらをクリック。
+Specify what each AI takes precedence.For details click here.
+
 :自分の残りHP警戒度
-My rest HP guard
+Penalty: Attacker's remaining HP
 
 :包囲警戒度
-Siege vigilance
+Penalty: Range and attack power of opponents
 
 :反撃ダメージ警戒度
-Counterattack Damage Alertness
+Bonus/Penalty: Defender can't counter + defender's expected damage
 
 :現在ターン優先度
-Current turn priority
+Bonus: Turn count
 
 :敵のクラス優先度
-Enemy class priority
+Bonus: Defender's class
 
 :敵との距離優先度
-Distance priority with enemies
+Bonus: Near allied units
 
 :敵の残りHP優先度
-Enemy remaining HP priority
+Bonus: Defender's remaining HP
 
 :致死ダメージ＆最終ダメージ優先度
-Lethal damage & final damage priority
+Bonus: Lethal damage + attacker's expected damage
 
 :標的AI
 Target AI
@@ -1755,6 +1785,9 @@ Could not determine the size of the object
 
 :階段ID
 Stair ID.
+
+:1を設定
+Set 1.
 
 :イベント種類
 Event type
@@ -7490,16 +7523,16 @@ Appearance Monster 1
 The class when coordinate settings of the leftmost 2 bytes is 5 = probability table
 
 :魔物が出現する拠点IDを指定します。
-Specify the base ID where the monster appears.
+Specify the World Map Node ID where the monster appears.
 
 :拠点ID
-Base ID
+World Map Node ID
 
 :それぞれのルートでクリアする章を指定します。\r\nこれは、まだクリアしていない拠点には魔物を出せないためです。
-Specify the chapter to clear on each route.\r\nThis is because you can not cast monsters to a base that has not cleared yet.
+Specify the chapter to clear on each route.\r\nThis is because you can not cast monsters to a World Map Node that has not cleared yet.
 
 :拠点ごとの魔物の発生確率を定義します。
-Define the probability of occurrence of monsters at each site.
+Define the probability of occurrence of monsters at each World Map Node.
 
 :全クラス共通
 Same for all classes
@@ -11189,7 +11222,7 @@ Update Check
 Open ROM
 
 :この拠点が、次の目的地となったときに再生するBGMを選択します。
-Select the BGM to play when this base becomes the next destination.
+Select the BGM to play when this World Map Node becomes the next destination.
 
 :対応するワールドマップイベント({0})が存在しません。
 The corresponding world map event ({0}) doesn't exist.
@@ -11204,7 +11237,7 @@ Eirika Ending
 Ephraim Ending
 
 :前の拠点クリア後に発生するイベント
-Events Post-Base
+Events Post-World Map Node
 
 :拠点選択後に発生するイベント
 Events Post-World-Map-Choice
@@ -11243,10 +11276,10 @@ World Map Node Icon
 Road Image
 
 :拠点画像2
-Nodes Image 2
+World Map Node Image 2
 
 :拠点画像1
-Nodes Image 1
+World Map Node Image 1
 
 :ミニマップ
 Mini Map
@@ -11308,17 +11341,17 @@ Coordinate Y
 :座標X
 Coordinate X
 
-:次の章のマップID(エフラム2回目)
-Next Chapter Map ID (Ephraim 2)
+:次の拠点ID(エフラム2回目)
+Next World Map Node ID (Ephraim 2)
 
-:次の章のマップID(エイリーク2回目)
-Next Chapter Map ID (Eirika 2)
+:次の拠点ID(エイリーク2回目)
+Next World Map Node ID (Eirika 2)
 
-:次の章のマップID(エフラム)
-Next Chapter Map ID (Ephraim 1)
+:次の拠点ID(エフラム)
+Next World Map Node ID (Ephraim 1)
 
-:次の章のマップID(エイリーク)
-Next Chapter Map ID (Eirika 1)
+:次の拠点ID(エイリーク)
+Next World Map Node ID (Eirika 1)
 
 :イベント分岐用フラグ
 Event Conditional Flag

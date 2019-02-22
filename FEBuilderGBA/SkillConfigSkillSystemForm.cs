@@ -142,45 +142,37 @@ namespace FEBuilderGBA
             return a + skip;
         }
 
+        public struct SkillSystemsTableSt
+        {
+            public string name;
+            public uint skip;
+            public byte[] data;
+        };
         static uint FindSkillPointer(string type)
         {
-            string filename = U.ConfigDataFilename("skill_extends_skillsystem_parse_");
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.RomInfo.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[0] != type)
-                {
-                    continue;
-                }
+            SkillSystemsTableSt[] table = new SkillSystemsTableSt[] { 
+                new SkillSystemsTableSt{ name="ASSIGN", skip =	16, data = new byte[]{0x01,0x35,0x02,0x36,0xF1,0xE7,0x00,0x20,0x28,0x70,0x29,0x1C,0x02,0x48,0x09,0x1A}},
+                new SkillSystemsTableSt{ name="ANIME", skip =	32, data = new byte[]{0x00,0x2B,0x00,0xD1,0x06,0x4B,0x38,0x1C,0x9E,0x46,0x00,0xF8,0x05,0x48,0x00,0x47}},
+                new SkillSystemsTableSt{ name="ICON", skip =	24, data = new byte[]{0x02,0x40,0x09,0x4C,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47}},
+                new SkillSystemsTableSt{ name="ICON2", skip =	8, data = new byte[]{0x08,0x42,0x04,0xD1,0x12,0x79,0xAA,0x42,0x01,0xD1,0x01,0x20,0x03,0xE0,0x01,0x34,0xBF,0x2C,0xEA,0xDD,0x00,0x20,0x30,0xBC,0x02,0xBC,0x08,0x47}},
+                new SkillSystemsTableSt{ name="TEXT", skip =	16, data = new byte[]{0x07,0x49,0x40,0x00,0x40,0x18,0x00,0x88,0x00,0x28,0x00,0xD1,0x06,0x48,0x21,0x1C}},
+            };
 
-                string[] hexStrings = sp[2].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
+            foreach (SkillSystemsTableSt t in table)
+            {
+                if (t.name != type)
                 {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
+                    continue;
                 }
 
                 //チェック開始アドレス
                 uint start = 0xB00000;
-
-                uint found = U.Grep(Program.ROM.Data, need, start, 0, 4);
+                uint found = U.Grep(Program.ROM.Data, t.data, start, 0, 4);
                 if (found == U.NOT_FOUND)
                 {
                     return U.NOT_FOUND;
                 }
-                uint skip = U.atoi(sp[1]);
-                return (uint)(found + need.Length + skip);
+                return (uint)(found + t.data.Length + t.skip);
             }
             return U.NOT_FOUND;
         }

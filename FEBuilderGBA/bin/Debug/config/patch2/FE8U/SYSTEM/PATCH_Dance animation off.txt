@@ -1,0 +1,19 @@
+NAME=踊りのアニメオフ（反撃時はＯＮ）
+NAME.en=Dance animation off
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix: 踊りのアニメオフ|FIX
+COMBO.en=default|OFF|Fix: Dance animation off|FIX
+COMBO.zh=default|OFF|Fix: Dance animation off|FIX
+
+DETERMINATION_ADDRESS=0x0576CA
+
+OFF:0x0576CA=0x48 0x80
+FIX:0x0576CA=0x54 0xE2
+
+AUTHOR=aera
+
+NAME.zh=关闭舞蹈动画（当反击开启时为ON）。

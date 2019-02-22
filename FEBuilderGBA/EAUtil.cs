@@ -367,5 +367,110 @@ namespace FEBuilderGBA
             return (file.IndexOf("_FBG_Temp_") == 0);
         }
 
+
+        public static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            EAUtil ea = new EAUtil(target_filename);
+            for (int i = 0; i < ea.IfNDefList.Count; i++)
+            {
+                string ifndef_keyword = ea.IfNDefList[i];
+                switch (ifndef_keyword)
+                {
+                    case "FreeSpace":
+                        if (freearea != 0)
+                        {
+                            sb.AppendLine("#define FreeSpace " + U.To0xHexString(freearea));
+                        }
+                        break;
+                }
+            }
+
+            sb.AppendLine("#define ItemImage "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
+            sb.AppendLine("#define ItemPalette "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
+            sb.AppendLine("#define ItemTable "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
+            sb.AppendLine("#define TextTable "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer())));
+            sb.AppendLine("#define PortraitTable "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.face_pointer())));
+
+            SupportActionRework(sb);
+
+            if (org_sp != U.NOT_FOUND)
+            {
+                sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));
+            }
+
+            Program.ExportFunction.ExportEA(sb);
+
+            if (freearea != 0)
+            {
+                sb.AppendLine(String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
+                    , U.To0xHexString(freearea), target_filename));
+            }
+            else
+            {
+                sb.AppendLine(String.Format("#include \"{0}\"\r\n"
+                    , Path.GetFileName(target_filename)));
+            }
+            return sb.ToString();
+        }
+
+        static void SupportActionRework(StringBuilder sb)
+        {
+            if (Program.ROM.RomInfo.is_multibyte())
+            {
+                return;
+            }
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return;
+            }
+            //FE8Uのみ StanのActionReworkへの対応.
+            if (Program.ROM.u32(0x3200C) != 0x4C03B510)
+            {//ActionReworkされていない
+                return;
+            }
+
+            uint hintAddr = Program.ROM.u32(0x3200C + 0x10);
+            if (U.isSafetyPointer(hintAddr) && U.IsValueOdd(hintAddr) )
+            {
+                hintAddr = U.toOffset(hintAddr) - 1;
+            }
+            else
+            {//仕方がないので、適当な値を
+                hintAddr = Program.ROM.RomInfo.compress_image_borderline_address();
+            }
+
+            string filename = Path.Combine(Program.BaseDirectory,"config", "patch2", "FE8U", "skill", "ApplyAction.bin");
+            if (!File.Exists(filename))
+            {
+                return;
+            }
+            byte[] bin = File.ReadAllBytes(filename);
+            uint addrApplyAction = U.GrepEnd(Program.ROM.Data, bin, hintAddr, 0, 4);
+            if (addrApplyAction == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            uint tablePointer = Program.ROM.u32(addrApplyAction);
+            if (! U.isSafetyPointer(tablePointer))
+            {
+                return;
+            }
+
+            uint tableAddr = U.toOffset(tablePointer);
+            sb.AppendLine("#define HAX_ACTION_APPLICATION_REWORK_EVENT");
+            sb.AppendLine("#define pActionRoutineTable " + U.To0xHexString(tableAddr)); ///No Translate
+            sb.AppendLine("#define NoActionRoutine \"WORD 0\"");    ///No Translate
+            sb.AppendLine("#define ActionRoutine(apRoutine) \"POIN apRoutine\"");   ///No Translate
+            sb.AppendLine("#define ActionRoutine(apRoutine, abForcedYeild) \"WORD (0x08000000 | apRoutine | (abForcedYeild << 28))\""); ///No Translate
+            sb.AppendLine("#define SetUnitAction(aActionId, adActionRoutine) \"PUSH; ORG (pActionRoutineTable + 4*(aActionId-1)); adActionRoutine; POP\""); ///No Translate
+        }
     }
 }

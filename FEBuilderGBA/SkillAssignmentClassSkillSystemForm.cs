@@ -208,10 +208,6 @@ namespace FEBuilderGBA
             {//スキルリストは特殊で終端データは、0x00 0x00 でないといけない
                 //終端コードを 0x00 0x00 にする.
                 Program.ROM.write_u16(termAddr, 0x0000, undodata);
-
-//                eearg.NewDataCount = eearg.NewDataCount - 1;
-                //再スキャンのやり直し(無駄だけど仕方ない.)
-//                N1_InputFormRef.ReInit(eearg.NewBaseAddress, eearg.NewDataCount);
             }
 
             //拡張したアドレスを書き込む.

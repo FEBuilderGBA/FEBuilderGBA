@@ -706,55 +706,6 @@ namespace FEBuilderGBA
             return true;
         }
 
-        static string MakeEAAutoDef(string target_filename, uint freearea, uint org_sp)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            EAUtil ea = new EAUtil(target_filename);
-            for (int i = 0; i < ea.IfNDefList.Count ; i++)
-            {
-                string ifndef_keyword = ea.IfNDefList[i];
-                switch (ifndef_keyword)
-                {
-                    case "FreeSpace":
-                        if (freearea != 0)
-                        {
-                            sb.AppendLine("#define FreeSpace " + U.To0xHexString(freearea));
-                        }
-                        break;
-                }
-            }
-
-            sb.AppendLine("#define ItemImage " 
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_pointer())));
-            sb.AppendLine("#define ItemPalette " 
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.icon_palette_pointer())));
-            sb.AppendLine("#define ItemTable " 
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.item_pointer())));
-            sb.AppendLine("#define TextTable "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer())));
-            sb.AppendLine("#define PortraitTable "
-                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.face_pointer())));
-
-            if (org_sp != U.NOT_FOUND)
-            {
-                sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));
-            }
-
-            Program.ExportFunction.ExportEA(sb);
-
-            if (freearea != 0)
-            {
-                sb.AppendLine( String.Format("ORG {0}\r\n#include \"{1}\"\r\n"
-                    , U.To0xHexString(freearea), target_filename));
-            }
-            else
-            {
-                sb.AppendLine( String.Format("#include \"{0}\"\r\n"
-                    , Path.GetFileName(target_filename)));
-            }
-            return sb.ToString();
-        }
         static string CompilerEventAssemblerInner(string compiler_exe ,string tooldir,string  freeareadef_targetfile_fullpath,string  output_target_rom,string  output_symFile)
         {
             string args = "A "
@@ -820,7 +771,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            string autoDef = MakeEAAutoDef(target_filename, freearea, org_sp);
+            string autoDef = EAUtil.MakeEAAutoDef(target_filename, freearea, org_sp);
 
             string freeareadef_targetfile = "_FBG_Temp_" +　DateTime.Now.Ticks.ToString() + ".event";
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);
@@ -1402,6 +1353,23 @@ namespace FEBuilderGBA
             }
             return url;
         }
+
+        public static string GetAboutTragetAI3()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:%E6%A8%99%E7%9A%84ai%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:about_targetai";
+            }
+            return url;
+        }
+
 
         public static void GotoReport7zURL()
         {

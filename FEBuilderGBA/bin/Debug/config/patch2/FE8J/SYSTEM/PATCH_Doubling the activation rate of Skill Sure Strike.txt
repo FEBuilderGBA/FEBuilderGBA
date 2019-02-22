@@ -1,0 +1,21 @@
+NAME=スキル必的の発動率を2倍にする
+NAME.en=Doubling the activation rate of Skill Sure Strike
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix 2倍|FIX
+COMBO.en=default|OFF|Fix 2x|FIX
+COMBO.zh=default|OFF|Fix 2x|FIX
+
+DETERMINATION_ADDRESS=0x02b1b6
+
+OFF:0x02b1b6=0x00 0x0C
+FIX:0x02b1b6=0xC0 0x0B
+
+AUTHOR=aera
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends
+NAME.zh=使技能要求的激活率翻倍。

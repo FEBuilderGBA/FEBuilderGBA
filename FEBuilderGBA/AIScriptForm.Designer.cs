@@ -30,28 +30,39 @@
         {
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.ListBoxPanel = new System.Windows.Forms.Panel();
+            this.EventToFileButton = new System.Windows.Forms.Button();
+            this.FileToEventButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
+            this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
+            this.ASMTextBox = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
             this.ScriptChangeButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.ParamValue4 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc4 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel4 = new System.Windows.Forms.Label();
             this.ParamSrc2 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel2 = new System.Windows.Forms.Label();
+            this.ParamValue5 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue3 = new FEBuilderGBA.TextBoxEx();
+            this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
             this.ParamSrc5 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel5 = new System.Windows.Forms.Label();
             this.ParamSrc3 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel3 = new System.Windows.Forms.Label();
             this.ParamSrc1 = new System.Windows.Forms.NumericUpDown();
             this.ParamLabel1 = new System.Windows.Forms.Label();
+            this.Script = new FEBuilderGBA.ListBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
@@ -63,24 +74,13 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.EventToFileButton = new System.Windows.Forms.Button();
-            this.FileToEventButton = new System.Windows.Forms.Button();
-            this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
-            this.ASMTextBox = new FEBuilderGBA.TextBoxEx();
-            this.ScriptCodeName = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue4 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue5 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue3 = new FEBuilderGBA.TextBoxEx();
-            this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
-            this.Script = new FEBuilderGBA.ListBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ListBoxPanel.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.ControlPanelCommand.SuspendLayout();
@@ -117,8 +117,30 @@
             this.ListBoxPanel.Location = new System.Drawing.Point(610, 73);
             this.ListBoxPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ListBoxPanel.Name = "ListBoxPanel";
-            this.ListBoxPanel.Size = new System.Drawing.Size(956, 610);
+            this.ListBoxPanel.Size = new System.Drawing.Size(956, 717);
             this.ListBoxPanel.TabIndex = 149;
+            // 
+            // EventToFileButton
+            // 
+            this.EventToFileButton.Location = new System.Drawing.Point(733, 683);
+            this.EventToFileButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventToFileButton.Name = "EventToFileButton";
+            this.EventToFileButton.Size = new System.Drawing.Size(219, 30);
+            this.EventToFileButton.TabIndex = 17;
+            this.EventToFileButton.Text = "ファイルへエクスポート";
+            this.EventToFileButton.UseVisualStyleBackColor = true;
+            this.EventToFileButton.Click += new System.EventHandler(this.EventToFileButton_Click);
+            // 
+            // FileToEventButton
+            // 
+            this.FileToEventButton.Location = new System.Drawing.Point(510, 683);
+            this.FileToEventButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FileToEventButton.Name = "FileToEventButton";
+            this.FileToEventButton.Size = new System.Drawing.Size(219, 30);
+            this.FileToEventButton.TabIndex = 18;
+            this.FileToEventButton.Text = "ファイルからインポート";
+            this.FileToEventButton.UseVisualStyleBackColor = true;
+            this.FileToEventButton.Click += new System.EventHandler(this.FileToEventButton_Click);
             // 
             // ControlPanel
             // 
@@ -188,6 +210,16 @@
             this.AddressTextBox.TabIndex = 203;
             this.AddressTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressTextBox_MouseDoubleClick);
             // 
+            // CommentTextBox
+            // 
+            this.CommentTextBox.ErrorMessage = "";
+            this.CommentTextBox.Location = new System.Drawing.Point(143, 8);
+            this.CommentTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CommentTextBox.Name = "CommentTextBox";
+            this.CommentTextBox.Placeholder = "";
+            this.CommentTextBox.Size = new System.Drawing.Size(679, 25);
+            this.CommentTextBox.TabIndex = 0;
+            // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -198,6 +230,16 @@
             this.label1.TabIndex = 201;
             this.label1.Text = "コメント";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ASMTextBox
+            // 
+            this.ASMTextBox.ErrorMessage = "";
+            this.ASMTextBox.Location = new System.Drawing.Point(143, 63);
+            this.ASMTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ASMTextBox.Name = "ASMTextBox";
+            this.ASMTextBox.Placeholder = "";
+            this.ASMTextBox.Size = new System.Drawing.Size(400, 25);
+            this.ASMTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -231,6 +273,17 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "バイナリコード";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ScriptCodeName
+            // 
+            this.ScriptCodeName.ErrorMessage = "";
+            this.ScriptCodeName.Location = new System.Drawing.Point(143, 36);
+            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
+            this.ScriptCodeName.Name = "ScriptCodeName";
+            this.ScriptCodeName.Placeholder = "";
+            this.ScriptCodeName.ReadOnly = true;
+            this.ScriptCodeName.Size = new System.Drawing.Size(677, 25);
+            this.ScriptCodeName.TabIndex = 1;
             // 
             // UpdateButton
             // 
@@ -275,6 +328,28 @@
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // ParamValue4
+            // 
+            this.ParamValue4.ErrorMessage = "";
+            this.ParamValue4.Location = new System.Drawing.Point(257, 67);
+            this.ParamValue4.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue4.Name = "ParamValue4";
+            this.ParamValue4.Placeholder = "";
+            this.ParamValue4.ReadOnly = true;
+            this.ParamValue4.Size = new System.Drawing.Size(216, 25);
+            this.ParamValue4.TabIndex = 54;
+            // 
+            // ParamValue2
+            // 
+            this.ParamValue2.ErrorMessage = "";
+            this.ParamValue2.Location = new System.Drawing.Point(257, 33);
+            this.ParamValue2.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue2.Name = "ParamValue2";
+            this.ParamValue2.Placeholder = "";
+            this.ParamValue2.ReadOnly = true;
+            this.ParamValue2.Size = new System.Drawing.Size(218, 25);
+            this.ParamValue2.TabIndex = 53;
             // 
             // ParamSrc4
             // 
@@ -323,6 +398,39 @@
             this.ParamLabel2.TabIndex = 43;
             this.ParamLabel2.Text = "パラメータ2";
             this.ParamLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ParamValue5
+            // 
+            this.ParamValue5.ErrorMessage = "";
+            this.ParamValue5.Location = new System.Drawing.Point(731, 67);
+            this.ParamValue5.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue5.Name = "ParamValue5";
+            this.ParamValue5.Placeholder = "";
+            this.ParamValue5.ReadOnly = true;
+            this.ParamValue5.Size = new System.Drawing.Size(218, 25);
+            this.ParamValue5.TabIndex = 40;
+            // 
+            // ParamValue3
+            // 
+            this.ParamValue3.ErrorMessage = "";
+            this.ParamValue3.Location = new System.Drawing.Point(731, 33);
+            this.ParamValue3.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue3.Name = "ParamValue3";
+            this.ParamValue3.Placeholder = "";
+            this.ParamValue3.ReadOnly = true;
+            this.ParamValue3.Size = new System.Drawing.Size(218, 25);
+            this.ParamValue3.TabIndex = 39;
+            // 
+            // ParamValue1
+            // 
+            this.ParamValue1.ErrorMessage = "";
+            this.ParamValue1.Location = new System.Drawing.Point(257, 4);
+            this.ParamValue1.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue1.Name = "ParamValue1";
+            this.ParamValue1.Placeholder = "";
+            this.ParamValue1.ReadOnly = true;
+            this.ParamValue1.Size = new System.Drawing.Size(218, 25);
+            this.ParamValue1.TabIndex = 38;
             // 
             // ParamSrc5
             // 
@@ -395,6 +503,21 @@
             this.ParamLabel1.TabIndex = 1;
             this.ParamLabel1.Text = "パラメータ1";
             this.ParamLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Script
+            // 
+            this.Script.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Script.FormattingEnabled = true;
+            this.Script.IntegralHeight = false;
+            this.Script.ItemHeight = 18;
+            this.Script.Location = new System.Drawing.Point(2, -1);
+            this.Script.Margin = new System.Windows.Forms.Padding(4);
+            this.Script.Name = "Script";
+            this.Script.Size = new System.Drawing.Size(953, 678);
+            this.Script.TabIndex = 0;
+            this.Script.SelectedIndexChanged += new System.EventHandler(this.Script_SelectedIndexChanged);
+            this.Script.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Script_KeyDown);
+            this.Script.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Script_MouseDoubleClick);
             // 
             // label8
             // 
@@ -500,12 +623,12 @@
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(12, 45);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(599, 638);
+            this.panel6.Size = new System.Drawing.Size(599, 745);
             this.panel6.TabIndex = 150;
             // 
             // AddressListExpandsButton_255
             // 
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(1, 603);
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-2, 714);
             this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
             this.AddressListExpandsButton_255.Size = new System.Drawing.Size(597, 30);
             this.AddressListExpandsButton_255.TabIndex = 115;
@@ -523,6 +646,19 @@
             this.label30.TabIndex = 106;
             this.label30.Text = "名前";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(599, 679);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // ReadCount
             // 
@@ -595,146 +731,12 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // EventToFileButton
-            // 
-            this.EventToFileButton.Location = new System.Drawing.Point(733, 579);
-            this.EventToFileButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EventToFileButton.Name = "EventToFileButton";
-            this.EventToFileButton.Size = new System.Drawing.Size(219, 30);
-            this.EventToFileButton.TabIndex = 17;
-            this.EventToFileButton.Text = "ファイルへエクスポート";
-            this.EventToFileButton.UseVisualStyleBackColor = true;
-            this.EventToFileButton.Click += new System.EventHandler(this.EventToFileButton_Click);
-            // 
-            // FileToEventButton
-            // 
-            this.FileToEventButton.Location = new System.Drawing.Point(510, 579);
-            this.FileToEventButton.Margin = new System.Windows.Forms.Padding(2);
-            this.FileToEventButton.Name = "FileToEventButton";
-            this.FileToEventButton.Size = new System.Drawing.Size(219, 30);
-            this.FileToEventButton.TabIndex = 18;
-            this.FileToEventButton.Text = "ファイルからインポート";
-            this.FileToEventButton.UseVisualStyleBackColor = true;
-            this.FileToEventButton.Click += new System.EventHandler(this.FileToEventButton_Click);
-            // 
-            // CommentTextBox
-            // 
-            this.CommentTextBox.ErrorMessage = "";
-            this.CommentTextBox.Location = new System.Drawing.Point(143, 8);
-            this.CommentTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.CommentTextBox.Name = "CommentTextBox";
-            this.CommentTextBox.Placeholder = "";
-            this.CommentTextBox.Size = new System.Drawing.Size(679, 25);
-            this.CommentTextBox.TabIndex = 0;
-            // 
-            // ASMTextBox
-            // 
-            this.ASMTextBox.ErrorMessage = "";
-            this.ASMTextBox.Location = new System.Drawing.Point(143, 63);
-            this.ASMTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ASMTextBox.Name = "ASMTextBox";
-            this.ASMTextBox.Placeholder = "";
-            this.ASMTextBox.Size = new System.Drawing.Size(400, 25);
-            this.ASMTextBox.TabIndex = 3;
-            // 
-            // ScriptCodeName
-            // 
-            this.ScriptCodeName.ErrorMessage = "";
-            this.ScriptCodeName.Location = new System.Drawing.Point(143, 36);
-            this.ScriptCodeName.Margin = new System.Windows.Forms.Padding(2);
-            this.ScriptCodeName.Name = "ScriptCodeName";
-            this.ScriptCodeName.Placeholder = "";
-            this.ScriptCodeName.ReadOnly = true;
-            this.ScriptCodeName.Size = new System.Drawing.Size(677, 25);
-            this.ScriptCodeName.TabIndex = 1;
-            // 
-            // ParamValue4
-            // 
-            this.ParamValue4.ErrorMessage = "";
-            this.ParamValue4.Location = new System.Drawing.Point(257, 67);
-            this.ParamValue4.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue4.Name = "ParamValue4";
-            this.ParamValue4.Placeholder = "";
-            this.ParamValue4.ReadOnly = true;
-            this.ParamValue4.Size = new System.Drawing.Size(216, 25);
-            this.ParamValue4.TabIndex = 54;
-            // 
-            // ParamValue2
-            // 
-            this.ParamValue2.ErrorMessage = "";
-            this.ParamValue2.Location = new System.Drawing.Point(257, 33);
-            this.ParamValue2.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue2.Name = "ParamValue2";
-            this.ParamValue2.Placeholder = "";
-            this.ParamValue2.ReadOnly = true;
-            this.ParamValue2.Size = new System.Drawing.Size(218, 25);
-            this.ParamValue2.TabIndex = 53;
-            // 
-            // ParamValue5
-            // 
-            this.ParamValue5.ErrorMessage = "";
-            this.ParamValue5.Location = new System.Drawing.Point(731, 67);
-            this.ParamValue5.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue5.Name = "ParamValue5";
-            this.ParamValue5.Placeholder = "";
-            this.ParamValue5.ReadOnly = true;
-            this.ParamValue5.Size = new System.Drawing.Size(218, 25);
-            this.ParamValue5.TabIndex = 40;
-            // 
-            // ParamValue3
-            // 
-            this.ParamValue3.ErrorMessage = "";
-            this.ParamValue3.Location = new System.Drawing.Point(731, 33);
-            this.ParamValue3.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue3.Name = "ParamValue3";
-            this.ParamValue3.Placeholder = "";
-            this.ParamValue3.ReadOnly = true;
-            this.ParamValue3.Size = new System.Drawing.Size(218, 25);
-            this.ParamValue3.TabIndex = 39;
-            // 
-            // ParamValue1
-            // 
-            this.ParamValue1.ErrorMessage = "";
-            this.ParamValue1.Location = new System.Drawing.Point(257, 4);
-            this.ParamValue1.Margin = new System.Windows.Forms.Padding(2);
-            this.ParamValue1.Name = "ParamValue1";
-            this.ParamValue1.Placeholder = "";
-            this.ParamValue1.ReadOnly = true;
-            this.ParamValue1.Size = new System.Drawing.Size(218, 25);
-            this.ParamValue1.TabIndex = 38;
-            // 
-            // Script
-            // 
-            this.Script.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Script.FormattingEnabled = true;
-            this.Script.ItemHeight = 18;
-            this.Script.Location = new System.Drawing.Point(2, -1);
-            this.Script.Margin = new System.Windows.Forms.Padding(4);
-            this.Script.Name = "Script";
-            this.Script.Size = new System.Drawing.Size(953, 580);
-            this.Script.TabIndex = 0;
-            this.Script.SelectedIndexChanged += new System.EventHandler(this.Script_SelectedIndexChanged);
-            this.Script.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Script_KeyDown);
-            this.Script.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Script_MouseDoubleClick);
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 28);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(599, 580);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
             // AIScriptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1567, 691);
+            this.ClientSize = new System.Drawing.Size(1567, 793);
             this.Controls.Add(this.ListBoxPanel);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);

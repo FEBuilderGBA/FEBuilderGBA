@@ -1,0 +1,20 @@
+NAME=騎馬が救出後、即降ろせる
+NAME.en=After rescuing a cavalry, you can drop immediately
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x02291E
+
+OFF:0x02291E=0x0F 0xD1
+FIX:0x02291E=0xc0 0x46
+
+AUTHOR=aera
+INFO=ユニットを救出した後、すぐに下せるようになります。
+INFO.en=After rescuing the unit, you will be able to take off immediately.
+
+NAME.zh=拯救骑兵后，你可以立即起飞。
+INFO.zh=在救出该装置后，您可以立即降低它。
