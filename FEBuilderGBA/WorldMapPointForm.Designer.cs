@@ -96,6 +96,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.L_1_COMBO = new System.Windows.Forms.ComboBox();
+            this.L_30_COMBO = new System.Windows.Forms.ComboBox();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W24)).BeginInit();
@@ -129,6 +131,8 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.L_30_COMBO);
+            this.panel11.Controls.Add(this.L_1_COMBO);
             this.panel11.Controls.Add(this.L_6_FLAG_SKIPFFFF);
             this.panel11.Controls.Add(this.MapPictureBox);
             this.panel11.Controls.Add(this.W26);
@@ -235,7 +239,7 @@
             // L_3_WMICON
             // 
             this.L_3_WMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_3_WMICON.Location = new System.Drawing.Point(571, 66);
+            this.L_3_WMICON.Location = new System.Drawing.Point(571, 71);
             this.L_3_WMICON.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_3_WMICON.Name = "L_3_WMICON";
             this.L_3_WMICON.Size = new System.Drawing.Size(77, 58);
@@ -245,7 +249,7 @@
             // L_2_WMICON_MAPDEF
             // 
             this.L_2_WMICON_MAPDEF.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_2_WMICON_MAPDEF.Location = new System.Drawing.Point(487, 66);
+            this.L_2_WMICON_MAPDEF.Location = new System.Drawing.Point(487, 71);
             this.L_2_WMICON_MAPDEF.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_2_WMICON_MAPDEF.Name = "L_2_WMICON_MAPDEF";
             this.L_2_WMICON_MAPDEF.Size = new System.Drawing.Size(77, 58);
@@ -335,6 +339,7 @@
             this.L_0_COMBO.FormattingEnabled = true;
             this.L_0_COMBO.Items.AddRange(new object[] {
             "0=イベントの時のみ",
+            "1=フレリア城",
             "2=魔物がいるときのみ",
             "3=いつでも入れる(塔・遺跡)"});
             this.L_0_COMBO.Location = new System.Drawing.Point(486, 8);
@@ -662,7 +667,7 @@
             this.J_5_MAP.Name = "J_5_MAP";
             this.J_5_MAP.Size = new System.Drawing.Size(404, 26);
             this.J_5_MAP.TabIndex = 193;
-            this.J_5_MAP.Text = "ルート";
+            this.J_5_MAP.Text = "章ID";
             this.J_5_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B4
@@ -687,7 +692,7 @@
             this.J_4_MAP.Name = "J_4_MAP";
             this.J_4_MAP.Size = new System.Drawing.Size(404, 26);
             this.J_4_MAP.TabIndex = 191;
-            this.J_4_MAP.Text = "ルート";
+            this.J_4_MAP.Text = "章ID";
             this.J_4_MAP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B3
@@ -762,7 +767,7 @@
             this.J_1.Name = "J_1";
             this.J_1.Size = new System.Drawing.Size(404, 26);
             this.J_1.TabIndex = 185;
-            this.J_1.Text = "??";
+            this.J_1.Text = "フリーマップの種類";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B0
@@ -817,7 +822,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Location = new System.Drawing.Point(-1, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 30);
@@ -828,7 +833,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(251, 0);
+            this.label2.Location = new System.Drawing.Point(251, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 30);
@@ -950,7 +955,7 @@
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(2, 0);
+            this.label23.Location = new System.Drawing.Point(2, -1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(85, 30);
@@ -975,10 +980,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 26);
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 634);
+            this.AddressList.Size = new System.Drawing.Size(249, 645);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -986,13 +991,40 @@
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(248, 26);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // L_1_COMBO
+            // 
+            this.L_1_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_1_COMBO.FormattingEnabled = true;
+            this.L_1_COMBO.Items.AddRange(new object[] {
+            "1=モンスターなし",
+            "2=モンスターが出現可能",
+            "3=タワーと遺跡"});
+            this.L_1_COMBO.Location = new System.Drawing.Point(486, 38);
+            this.L_1_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_1_COMBO.Name = "L_1_COMBO";
+            this.L_1_COMBO.Size = new System.Drawing.Size(221, 26);
+            this.L_1_COMBO.TabIndex = 244;
+            // 
+            // L_30_COMBO
+            // 
+            this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_30_COMBO.FormattingEnabled = true;
+            this.L_30_COMBO.Items.AddRange(new object[] {
+            "0=移動に船を利用しない",
+            "1=移動に船を利用する"});
+            this.L_30_COMBO.Location = new System.Drawing.Point(486, 530);
+            this.L_30_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_30_COMBO.Name = "L_30_COMBO";
+            this.L_30_COMBO.Size = new System.Drawing.Size(221, 26);
+            this.L_30_COMBO.TabIndex = 245;
             // 
             // WorldMapPointForm
             // 
@@ -1112,5 +1144,7 @@
         private InterpolatedPictureBox L_3_WMICON;
         private InterpolatedPictureBox L_2_WMICON_MAPDEF;
         private FEBuilderGBA.TextBoxEx L_6_FLAG_SKIPFFFF;
+        private System.Windows.Forms.ComboBox L_1_COMBO;
+        private System.Windows.Forms.ComboBox L_30_COMBO;
     }
 }

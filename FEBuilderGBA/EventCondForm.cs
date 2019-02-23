@@ -382,7 +382,7 @@ namespace FEBuilderGBA
                     }
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -398,7 +398,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_tern_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -422,7 +422,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_talk_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -439,7 +439,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_talk_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -459,7 +459,7 @@ namespace FEBuilderGBA
                 , 12
                 , (int i, uint addr) =>
                 {//00まで検索
-                    return Program.ROM.u8(addr + 0) != 0;
+                    return Program.ROM.u32(addr + 0) != 0;
                 }
                 , (int i, uint addr) =>
                 {
@@ -480,7 +480,7 @@ namespace FEBuilderGBA
                     , 12
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -497,7 +497,7 @@ namespace FEBuilderGBA
                     , 12
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -796,7 +796,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                for (; Program.ROM.u8(addr) != 0; addr += 12)
+                for (; Program.ROM.u32(addr) != 0; addr += 12)
                 {
                     if (!U.isSafetyOffset(addr + 12))
                     {
@@ -863,12 +863,13 @@ namespace FEBuilderGBA
                 {
                     for (int n = 0; addr < length  ; n++)
                     {
-                        uint type = Program.ROM.u8(addr);
-                        if (type == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
-                            
+
+                        uint type = Program.ROM.u8(addr);
+
                         list.Add(new U.AddrResult(addr, MapCond[i].Name, (uint)((n << 8) + (uint)filter_condtype)));
                         if (Program.ROM.RomInfo.version() == 7
                             && type == 1)
@@ -885,7 +886,7 @@ namespace FEBuilderGBA
                 {
                     for (int n = 0; addr < length; addr += Program.ROM.RomInfo.eventcond_talk_size(), n++)
                     {
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -909,7 +910,7 @@ namespace FEBuilderGBA
                 {
                     for (int n = 0; addr < length; addr += 12, n++)
                     {
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -1055,6 +1056,11 @@ namespace FEBuilderGBA
                             , R._("お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。", GetNameOfAchievementFlag())));
                     }
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                        , R._("マップオブジェクトに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
@@ -1076,6 +1082,13 @@ namespace FEBuilderGBA
 
                 FELint.CheckFlagErrors(flag, errors, CONDTYPE.TALK, addr);
                 FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.TALK, addr, false, tracelist);
+
+                if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.TALK, addr
+                        , R._("会話イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                    continue;
+                }
 
                 if (Program.ROM.RomInfo.version() == 6)
                 {
@@ -1146,6 +1159,11 @@ namespace FEBuilderGBA
                 else if (Program.ROM.RomInfo.version() == 8 && (type == 0x2))
                 {//FE8 には、ターン2がある
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
+                        , R._("ターンイベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
@@ -1186,10 +1204,15 @@ namespace FEBuilderGBA
                     uint asm = Program.ROM.u32(addr + 8);
                     FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.ALWAYS, addr);
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.ALWAYS, addr
+                        , R._("常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
-                    errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
-                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.ALWAYS, addr
+                        , R._("常時条件イベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                 }
             }
 
@@ -1457,8 +1480,8 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
-                        {
+                        if (Program.ROM.u32(addr) == 0)
+                        {//FE8では32ビットでの評価です。
                             break;
                         }
 
@@ -1839,7 +1862,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -2402,7 +2425,7 @@ namespace FEBuilderGBA
                             {
                                 break;
                             }
-                            uint type = Program.ROM.u8(base_addr);
+                            uint type = Program.ROM.u32(base_addr);
                             if (type == 0)
                             {
                                 break;
@@ -4207,5 +4230,6 @@ namespace FEBuilderGBA
                 OBJECT_N05_J_4_EVENTORCHEST.Text = R._("イベント");
             }
         }
+
     }
 }
