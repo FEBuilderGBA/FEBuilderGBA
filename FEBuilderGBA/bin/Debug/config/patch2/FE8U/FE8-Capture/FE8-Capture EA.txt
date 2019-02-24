@@ -1,0 +1,207 @@
+//FE8 Capture
+//By Tequila
+
+#ifdef _FE8_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+	#include "Tools/Tool Helpers.txt"
+	
+	PUSH
+
+	ORG $22CD0
+	jumpToHack(New_Attack_Map)
+	
+	//Only select targets in 1 range if you have a >1-range weapon
+	ORG $22D08
+	callHack_r3(New_Weapon_Select)
+	
+	//Only show 1 square for >1-range weapons if capturing
+	ORG $22DAC
+	callHack_r3(Show_Red_Squares)
+	
+	//clear the capturing bit when cancelling
+	ORG $22878
+	callHack_r3(Cancel_Capture)
+	
+	//Updated getters
+	ORG $191B0
+	jumpToHack(Str_Getter)
+	ORG $191D0
+	jumpToHack(Skl_Getter)
+	ORG $19210
+	jumpToHack(Spd_Getter)
+	ORG $19250
+	jumpToHack(Def_Getter)
+	ORG $19270
+	jumpToHack(Res_Getter)
+	ORG $19298
+	jumpToHack(Luk_Getter)
+	
+	//After battle, set the attacker and defender's rescue data
+	ORG $328F0
+	callHack_r3(After_Battle_Rescue)
+	SHORT 0xE014
+	
+	//Prevent enemy character data pointer from being zero'd out after dying (set byte 0x4 instead) (NOTE: This may lead to issues with saving/endgame? I hope not)
+	ORG $1840A
+	SHORT 0x46C0
+	
+	//Set bit 0x1 of byte 0xC if dropping a dead enemy
+	ORG $183B0
+	jumpToHack(Drop_Dead_Enemy)
+	
+	//Modify the trade check to be able to trade captured enemies
+	ORG $25224
+	callHack_r3(Trade_Captured_Enemy1)
+	SHORT 0x46C0
+	ORG $25298
+	callHack_r3(Trade_Captured_Enemy2)
+	SHORT 0xD00E
+	
+	//Fix the portraits when trading
+	ORG $2D7D4
+	callHack_r3(Trade_Portrait_Fix1)
+	ORG $2D7EC
+	callHack_r3(Trade_Portrait_Fix2)
+	
+	POP
+	
+	ALIGN 4
+	Capture_Usability:
+	#incbin "Capture_Usability_Func.dmp"
+	POIN ItemTable Fill_Capture_Range_Map
+	
+	ALIGN 4
+	Fill_Capture_Range_Map:
+	#incbin "Fill_Capture_Range_Map.dmp"
+	POIN Capture_Target_Check|1
+	
+	ALIGN 4
+	Capture_Target_Check:
+	#incbin "Capture_Target_Check.dmp"
+	
+	ALIGN 4
+	Capture_Effect_Func:
+	#incbin "Capture_Effect_Func.dmp"
+	
+	ALIGN 4
+	New_Attack_Map:
+	#incbin "New_Attack_Map.dmp"
+	POIN Is_Capture_Set ItemTable Fill_Capture_Range_Map
+	
+	ALIGN 4
+	New_Weapon_Select:
+	#incbin "New_Weapon_Select.dmp"
+	POIN Is_Capture_Set Fill_Capture_Range_Map
+	
+	ALIGN 4
+	Show_Red_Squares:
+	#incbin "Show_Red_Squares.dmp"
+	POIN Is_Capture_Set
+	
+	ALIGN 4
+	Is_Capture_Set:
+	#incbin "Is_Capture_Set.dmp"
+	
+	ALIGN 4
+	Cancel_Capture:
+	#incbin "Cancel_Capture.dmp"
+	
+	ALIGN 4
+	Str_Getter:
+	#incbin "Stat_Getters/Str_Getter.dmp"
+	POIN Is_Capture_Set
+	ALIGN 4
+	Skl_Getter:
+	#incbin "Stat_Getters/Skl_Getter.dmp"
+	POIN Is_Capture_Set
+	ALIGN 4
+	Spd_Getter:
+	#incbin "Stat_Getters/Spd_Getter.dmp"
+	POIN Is_Capture_Set
+	ALIGN 4
+	Def_Getter:
+	#incbin "Stat_Getters/Def_Getter.dmp"
+	POIN Is_Capture_Set
+	ALIGN 4
+	Res_Getter:
+	#incbin "Stat_Getters/Res_Getter.dmp"
+	POIN Is_Capture_Set
+	ALIGN 4
+	Luk_Getter:
+	#incbin "Stat_Getters/Luk_Getter.dmp"
+	POIN Is_Capture_Set
+	
+	ALIGN 4
+	After_Battle_Rescue:
+	#incbin "After_Battle_Rescue.dmp"
+	POIN Is_Capture_Set
+	
+	ALIGN 4
+	Drop_Dead_Enemy:
+	#incbin "Drop_Dead_Enemy.dmp"
+	
+	ALIGN 4
+	Trade_Captured_Enemy1:
+	#incbin "Trade_Captured_Enemy1.dmp"
+	ALIGN 4
+	Trade_Captured_Enemy2:
+	#incbin "Trade_Captured_Enemy2.dmp"
+	
+	ALIGN 4
+	Trade_Portrait_Fix1:
+	#incbin "Trade Portrait Fix1.dmp"
+	
+	ALIGN 4
+	Trade_Portrait_Fix2:
+	#incbin "Trade Portrait Fix2.dmp
+	
+	ALIGN 4
+	Blank_Portrait:
+	#incext PortraitFormatter "blank_portrait.png"
+	setMugEntry(0x1, Blank_Portrait, 3, 5, 3, 3)
+
+
+
+	#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+	#define NormalText 0x0
+	#define GrayText 0x1
+	#define BlueText 0x2
+	#define OrangeText 0x3
+	#define GreenText 0x4
+	#define BlackText 0x5
+
+	PUSH
+	ORG	FEBUILDER_EXTRA_ORG
+		POIN TxtData0xeda_sjis
+		SHORT 0xeda
+		SHORT 0xedb
+		BYTE  NormalText
+		BYTE  $4e
+		SHORT 0
+		POIN Capture_Usability|1
+		WORD 0
+		POIN Capture_Effect_Func|1
+		WORD 0
+		WORD 0
+		WORD 0
+	POP
+
+	TxtData0xeda:
+	#incbin "0xeda.bin"
+
+	TxtData0xeda_sjis:
+	#incbin "0xeda_sjis.bin"
+
+	TxtData0xedb:
+	#incbin "0xedb.bin"
+
+	setText_WithHuffman(0xeda,TxtData0xeda)
+	setText_WithHuffman(0xedb,TxtData0xedb)
+
+
+#else
+	ERROR "You're not assembling FE8 events!"
+#endif
