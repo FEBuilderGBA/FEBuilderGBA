@@ -238,7 +238,7 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
-    <Compile Include="TextID.cs" />
+    <Compile Include="UseTextID.cs" />
     <Compile Include="TextToSpeechForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1069,6 +1069,7 @@
     </Compile>
     <Compile Include="ROMUpdateWatcher.cs" />
     <Compile Include="UPSUtil.cs" />
+    <Compile Include="UseFlagID.cs" />
     <Compile Include="VersionForm.cs">
       <SubType>Form</SubType>
     </Compile>

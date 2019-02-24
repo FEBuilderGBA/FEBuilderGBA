@@ -5259,9 +5259,15 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+
+                if (datacount >= 0xffff)
+                {
+                    Debug.Assert(false);
+                    return;
                 }
             }
             else
@@ -5552,7 +5558,7 @@ namespace FEBuilderGBA
             return U.stringbool(v);
         }
 
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -5583,7 +5589,7 @@ namespace FEBuilderGBA
                 string name = U.at(patch.Param, "NAME");
 
                 uint textid = Program.ROM.u16(addr);
-                TextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
+                UseTextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
             }
         }
  
@@ -6315,8 +6321,7 @@ namespace FEBuilderGBA
                     Program.CommentCache.Remove(addr);
                     if (addr >= current_rom_length)
                     {
-                        Log.Error("OutOfRange: {0}/{1}", U.ToHexString8(addr), U.ToHexString8(current_rom_length));
-                        Debug.Assert(false);
+//                        Log.Error("OutOfRange: {0}/{1}", U.ToHexString8(addr), U.ToHexString8(current_rom_length));
                         continue;
                     }
 

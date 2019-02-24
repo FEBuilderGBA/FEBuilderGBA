@@ -297,7 +297,7 @@ namespace FEBuilderGBA
         }
 
         //テキストの取得
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             uint[] pointer;
 
@@ -329,7 +329,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                TextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 2 });
+                UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 2 });
             }
         }
     }

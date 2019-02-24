@@ -3036,7 +3036,7 @@ namespace FEBuilderGBA
         void UpdateRef(uint id)
         {
             AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
-            List<TextID> textIDList = map.GetTextIDArray();
+            List<UseTextID> textIDList = map.GetTextIDArray();
             if (textIDList == null)
             {
                 RefCountTextBox.Text = R._("計測中...");
@@ -3050,7 +3050,7 @@ namespace FEBuilderGBA
             int count = textIDList.Count;
             for (int i = 0; i < count; i++)
             {
-                TextID t = textIDList[i];
+                UseTextID t = textIDList[i];
                 if (t.ID != id)
                 {
                     continue;
@@ -3067,7 +3067,7 @@ namespace FEBuilderGBA
             {
                 return new Size(listbounds.X, listbounds.Y);
             }
-            TextID t = (TextID)lb.Items[index];
+            UseTextID t = (UseTextID)lb.Items[index];
 
             SolidBrush brush = new SolidBrush(lb.ForeColor);
             SolidBrush keywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
@@ -3139,7 +3139,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            TextID t = (TextID)this.RefListBox.Items[index];
+            UseTextID t = (UseTextID)this.RefListBox.Items[index];
             MainSimpleMenuEventErrorForm.GotoEvent(t.DataType, t.Addr, t.Tag, 0);
         }
 

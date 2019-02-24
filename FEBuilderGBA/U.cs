@@ -2278,9 +2278,9 @@ namespace FEBuilderGBA
                 OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
             }
         }
-        public static List<TextID> MakeTextIDArray()
+        public static List<UseTextID> MakeTextIDArray()
         {
-            List<TextID> list = new List<TextID>();
+            List<UseTextID> list = new List<UseTextID>();
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 1")) return list;
 
             UnitForm.MakeTextIDArray(list);

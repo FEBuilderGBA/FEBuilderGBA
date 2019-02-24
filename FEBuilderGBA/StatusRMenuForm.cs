@@ -261,10 +261,10 @@ namespace FEBuilderGBA
                 MakeAllDataLengthSub(list, p, pointer, foundDic, pointerIndexes);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.RMENU, InputFormRef, new uint[] { 18 });
+            UseTextID.AppendTextID(list, FELint.Type.RMENU, InputFormRef, new uint[] { 18 });
         }
     }
 }

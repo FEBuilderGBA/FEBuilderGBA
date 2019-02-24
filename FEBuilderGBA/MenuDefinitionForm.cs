@@ -212,7 +212,7 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             uint[] pointers = GetPointers();
 

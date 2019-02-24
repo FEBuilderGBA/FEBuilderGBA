@@ -80,10 +80,10 @@ namespace FEBuilderGBA
                     );
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.STATUS_GAME_OPTION, InputFormRef, new uint[] { 0, 4, 6, 12, 14, 20, 22, 28, 30 });
+            UseTextID.AppendTextID(list, FELint.Type.STATUS_GAME_OPTION, InputFormRef, new uint[] { 0, 4, 6, 12, 14, 20, 22, 28, 30 });
         }
 
         //アイコン

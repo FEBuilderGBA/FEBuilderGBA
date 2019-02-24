@@ -270,11 +270,11 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list, uint pointer)
+        public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
         {
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(pointer);
-            TextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
+            UseTextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
         }
 
         void Explain()

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FEBuilderGBA
 {
-    public class TextID
+    public class UseTextID
     {
         public FELint.Type DataType { get; private set; }
         public uint ID { get; private set; }
@@ -13,7 +13,7 @@ namespace FEBuilderGBA
         public uint Addr { get; private set; }
         public uint Tag { get; private set; }
 
-        public TextID(FELint.Type dataType,uint addr,string info,uint id,uint tag = U.NOT_FOUND)
+        public UseTextID(FELint.Type dataType,uint addr,string info,uint id,uint tag = U.NOT_FOUND)
         {
             this.DataType = dataType;
             this.Addr = addr;
@@ -21,15 +21,15 @@ namespace FEBuilderGBA
             this.ID = id;
             this.Tag = tag;
         }
-        public static void AppendTextID(List<TextID> list,FELint.Type dataType, uint addr, string info, uint id, uint tag = U.NOT_FOUND)
+        public static void AppendTextID(List<UseTextID> list,FELint.Type dataType, uint addr, string info, uint id, uint tag = U.NOT_FOUND)
         {
             if (id == 0)
             {
                 return;
             }
-            list.Add(new TextID(dataType, addr, info, id, tag));
+            list.Add(new UseTextID(dataType, addr, info, id, tag));
         }
-        public static void AppendTextID(List<TextID> list, FELint.Type dataType, InputFormRef ifr,uint[] textIDIndexes)
+        public static void AppendTextID(List<UseTextID> list, FELint.Type dataType, InputFormRef ifr,uint[] textIDIndexes)
         {
             List<U.AddrResult> arlist = ifr.MakeList();
             for (int i = 0; i < ifr.DataCount; i++)
@@ -42,11 +42,11 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    list.Add(new TextID(dataType, ar.addr, ar.name, id, (uint)i));
+                    list.Add(new UseTextID(dataType, ar.addr, ar.name, id, (uint)i));
                 }
             }
         }
-        public static void AppendTextIDPP(List<TextID> list, FELint.Type dataType, InputFormRef ifr, uint[] textIDIndexes)
+        public static void AppendTextIDPP(List<UseTextID> list, FELint.Type dataType, InputFormRef ifr, uint[] textIDIndexes)
         {
             List<U.AddrResult> arlist = ifr.MakeList();
             for (int i = 0; i < ifr.DataCount; i++)
@@ -64,11 +64,11 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    list.Add(new TextID(dataType, ar.addr, ar.name, id, (uint)i));
+                    list.Add(new UseTextID(dataType, ar.addr, ar.name, id, (uint)i));
                 }
             }
         }
-        public static void AppendByTestARList(List<TextID> list, FELint.Type dataType, List<U.AddrResult> text_arlist,uint event_addr, string basename)
+        public static void AppendByTestARList(List<UseTextID> list, FELint.Type dataType, List<U.AddrResult> text_arlist,uint event_addr, string basename)
         {
             int length = text_arlist.Count;
             for (int i = 0; i < length; i++)
@@ -81,7 +81,7 @@ namespace FEBuilderGBA
                 }
                 string name = basename + " " + ar.name;
 
-                list.Add(new TextID(dataType, event_addr, name, id, ar.tag ));
+                list.Add(new UseTextID(dataType, event_addr, name, id, ar.tag ));
             }
         }
     }

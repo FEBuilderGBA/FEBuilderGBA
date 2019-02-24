@@ -1292,8 +1292,8 @@ namespace FEBuilderGBA
         }
 
         //すべてのテキストの参照ID
-        List<TextID> TextIDArray = null;
-        public List<TextID> GetTextIDArray()
+        List<UseTextID> TextIDArray = null;
+        public List<UseTextID> GetTextIDArray()
         {
             return this.TextIDArray;
         }

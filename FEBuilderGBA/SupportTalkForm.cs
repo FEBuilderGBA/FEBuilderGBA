@@ -104,10 +104,10 @@ namespace FEBuilderGBA
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.SUPPORT_TALK, battletalk_addr, (uint)i);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.SUPPORT_TALK, InputFormRef, new uint[] { 4, 6, 8 });
+            UseTextID.AppendTextID(list, FELint.Type.SUPPORT_TALK, InputFormRef, new uint[] { 4, 6, 8 });
         }
 
     }

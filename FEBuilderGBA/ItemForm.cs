@@ -447,10 +447,10 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.ITEM, InputFormRef, new uint[] { 0 , 2, 4 });
+            UseTextID.AppendTextID(list, FELint.Type.ITEM, InputFormRef, new uint[] { 0 , 2, 4 });
         }
 
         private void JumpToITEMEFFECT_Click(object sender, EventArgs e)

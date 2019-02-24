@@ -5747,13 +5747,13 @@ Edit the ASM called with the instruction of the event script.
 Edit events occurring in the world map before the chapter starts.
 
 :FE8では、ワールドマップを自由に移動できるため、拠点を選択した時と、クリアした時の2種類のイベントを設定できます。
-With FE 8, you can move the world map freely, so you can set two types of events, one when you select a base and the other when it clears.
+With FE 8, you can move the world map freely, so you can set two types of events, one when you select a World Map Node and the other when it clears.
 
 :ワールドマップに描画される道の設定を行います。\r\nどの拠点間を結ぶかを指定します。
 Edit the way to be drawn on the world map.\r\nSpecify which base to connect.
 
 :ワールドマップの城や砦などの拠点を設定します。
-Edit the bases such as world map castle and fortress.
+Edit the World Map Node Location such as castle and fortress.
 
 :ワールドマップに利用される画像データの設定を行います。
 Edit the image data used for the world map.
@@ -11324,7 +11324,7 @@ Border
 The rightmost column is an eraser.\r\nSelect and erase over a road to remove it.
 
 :NULLの場合、拠点間を直線で通る
-0 if path is straight. Else: Pointer
+0 if Node to Node is straight. Else: Pointer
 
 :道を移動するパスのポインタ
 Movement Path Pointer

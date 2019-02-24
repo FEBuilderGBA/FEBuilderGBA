@@ -531,7 +531,7 @@ namespace FEBuilderGBA
         }
 
         //テキストの取得
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef ifr;
             if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
@@ -546,7 +546,7 @@ namespace FEBuilderGBA
                     return;
                 }
                 ifr = Init(null, basetextP);
-                TextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
+                UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
             }
         }
 

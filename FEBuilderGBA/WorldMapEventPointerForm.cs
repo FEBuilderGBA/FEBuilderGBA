@@ -281,7 +281,7 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             {
                 InputFormRef InputFormRef = Init(null);

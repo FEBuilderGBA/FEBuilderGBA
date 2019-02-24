@@ -3973,7 +3973,7 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得.
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             List<uint> tracelist = new List<uint>();
             uint mapmax = MapSettingForm.GetDataCount();
@@ -3991,11 +3991,11 @@ namespace FEBuilderGBA
 
                     string name = R._("マップ") + " " + U.ToHexString(mapid) + " " + ar.name; 
 
-                    TextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist ,ar.addr, name);
+                    UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist ,ar.addr, name);
                 }
             }
         }
-        public static void MakeTextIDArrayByEventPointer(List<TextID> list,uint event_pointer,string name)
+        public static void MakeTextIDArrayByEventPointer(List<UseTextID> list,uint event_pointer,string name)
         {
             event_pointer = U.toOffset(event_pointer);
             if (!U.isSafetyOffset(event_pointer))
@@ -4011,7 +4011,7 @@ namespace FEBuilderGBA
             List<uint> tracelist = new List<uint>();
             List<U.AddrResult> text_arlist = new List<U.AddrResult>();
             EventCondForm.MakeTextIDEventScan(ref text_arlist, event_addr, tracelist);
-            TextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist,event_addr, name);
+            UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist,event_addr, name);
         }
 
         public static uint GetMapID(List<Control> parentControls)
