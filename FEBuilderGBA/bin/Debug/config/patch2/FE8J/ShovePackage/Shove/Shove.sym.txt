@@ -1,0 +1,17 @@
+pUnitMenuCommands=$100002C
+prUnit_CanStandOnPosition=$1000488
+prMOVEUNIT_MoveTowards=$10004DC
+_prGetShoveTargetOffset=$1000534
+_prMakeShoveTargetList=$1000560
+prShoveUsability=$10005E8
+prShoveEffect=$100061C
+_prShoveSelection_OnSelection=$1000648
+_prShoveAction=$10006A8
+_pr6CShoveMoveWait_New=$100070C
+_pr6CShoveMoveWait_Destruct=$1000798
+_pr6CShoveMoveWait_PushAnim=$10007A8
+_pr6CShoveMoveWait_MainAnim=$10007C0
+_pr6CShoveMoveWait_MoveTowardsGoal=$10007FC
+_pr6CShoveMoveWait_MoveTowardsStart=$1000818
+_pShoveSelectorDefinition=$1000834
+_p6CShoveWaitForMove=$1000854

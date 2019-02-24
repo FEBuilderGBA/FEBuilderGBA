@@ -1,0 +1,12 @@
+#ifndef INSTALL_STAN_COMMON_ASM_EVENT
+#define INSTALL_STAN_COMMON_ASM_EVENT
+
+ALIGN 4
+prUnit_CanStandOnPosition:
+	#incbin "_CommonASM/CanUnitStandOnPosition.dmp"
+
+ALIGN 4
+prMOVEUNIT_MoveTowards:
+	#incbin "_CommonASM/MoveMOVEUNITTowards.dmp"
+
+#endif // INSTALL_STAN_COMMON_ASM_EVENT

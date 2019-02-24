@@ -11652,3 +11652,6 @@
 08097570	PrepMenu_CheckMap_UnuseDummy2	{J}
 080975A0	PrepMenu_CheckMap	{J}
 080977E4	CheckMapID0x7D	{J}
+
+08015384	AddSkipThread2
+08015394	SubSkipThread2

@@ -94,20 +94,27 @@ namespace FEBuilderGBA
         }
         public static uint GetEventByMapID(uint mapid,bool isBefore)
         {
-            uint wmapid = MapSettingForm.GetWorldMapEventIDWhereMapID(mapid);
-            if (wmapid == 0)
-            {//存在しない
-                return U.NOT_FOUND;
-            }
             //FE8はINDEX
             uint p;
             if (isBefore)
             {
+                uint wmapid = MapSettingForm.GetWorldMapEventIDWhereMapID(mapid);
+                if (wmapid == 0)
+                {//存在しない
+                    return U.NOT_FOUND;
+                }
+
                 InputFormRef InputFormRef = N_Init(null);
                 p = InputFormRef.IDToAddr(wmapid);
             }
             else
             {
+                uint wmapid = mapid;
+                if (wmapid == 0)
+                {//存在しない
+                    return U.NOT_FOUND;
+                }
+
                 InputFormRef InputFormRef = Init(null);
                 p = InputFormRef.IDToAddr(wmapid);
             }

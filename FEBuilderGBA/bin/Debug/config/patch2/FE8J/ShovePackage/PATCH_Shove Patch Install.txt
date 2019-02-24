@@ -1,0 +1,18 @@
+NAME=「体当たり」を実装します
+NAME.en=Implement "Shove"
+TYPE=EA
+TAG=#ENGINE
+
+EXTENDS:0x1000=TEXT
+EA_EXTENDS_UNITMENU:0x01=0x40
+
+EA=Shove/Shove.event
+PATCHED_IF:$FGREP4 Shove/asm/ShoveEffect.dmp=0x00 0xB5 0x06 0x4B
+
+AUTHOR=Stan
+
+INFO=StanのShoveをFE8Jに移植したものです。\r\nプレイヤーユニット同士が「体当たり」で1マス隣に移動させられるようになります。\r\n本来ならば、Skillと統合するべきなのだろうが、とりあえず単品でリリースします。
+
+INFO.en=It is a port of Stan's Shove to FE 8J.\r\nPlayer units will be able to move one square next to each other with "body contact".\r\nOriginally, it should be integrated with Skill, but we will release it as a single item for the time being.
+NAME.zh=实施“身体接触”。
+INFO.zh=它是Stan的Shove到FE 8J的一个港口。\r\n玩家单位可以通过“身体接触”移动一个方格彼此相邻。\r\n最初，它应与Skill集成，但我们暂时将其作为单个项目发布。

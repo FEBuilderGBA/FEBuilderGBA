@@ -1,0 +1,9 @@
+
+
+
+
+Shove Anim 6C:
+	2C | word  | Pointer to subject MOVEUNIT
+	30 | word  | Pointer to target  MOVEUNIT
+	34 | word  | Pointer to subject Unit Struct
+	38 | word  | Pointer to target Unit Struct

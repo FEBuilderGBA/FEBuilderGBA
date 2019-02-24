@@ -1,0 +1,5 @@
+prGetShoveTargetOffset=$84
+EALiterals=$84
+ClearRangeMap=$20
+AddUnitToTargetListIfShovable=$3C
+NoShov4U=$74

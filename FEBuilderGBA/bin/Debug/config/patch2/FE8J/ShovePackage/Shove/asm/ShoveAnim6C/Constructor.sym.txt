@@ -1,0 +1,2 @@
+pShoveAnimWait6CCode=$88
+EALiterals=$88

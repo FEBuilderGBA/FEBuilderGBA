@@ -1,0 +1,3 @@
+prWaitForMove6CNew=$60
+EALiterals=$60
+TestSkip=$3C
