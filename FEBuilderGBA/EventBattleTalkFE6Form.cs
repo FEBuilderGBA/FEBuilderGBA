@@ -162,8 +162,25 @@ namespace FEBuilderGBA
         }
         public static void MakeTextIDArray(List<UseTextID> list)
         {
-            InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            }
+            {
+                InputFormRef InputFormRef = N_Init(null);
+                UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            }
+        }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 8, 2);
+            }
+            {
+                InputFormRef InputFormRef = N_Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 8, 1);
+            }
         }
     }
 }

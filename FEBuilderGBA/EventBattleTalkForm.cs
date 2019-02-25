@@ -152,5 +152,12 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 8 });
         }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 6, 4);
+            }
+        }
     }
 }

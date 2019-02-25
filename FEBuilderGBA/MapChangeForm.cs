@@ -482,6 +482,19 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void MakeFlagIDArray(uint mapid,List<UseFlagID> list)
+        {
+            uint pointer;
+            uint change_addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid, out pointer);
+            if (change_addr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            InputFormRef N_InputFormRef = N_Init(null);
+            N_InputFormRef.ReInitPointer(pointer);
+            UseFlagID.AppendFlagIDFixedMapID(list, FELint.Type.MAPCHANGE, N_InputFormRef, 5, mapid);
+        }
 
     }
 }

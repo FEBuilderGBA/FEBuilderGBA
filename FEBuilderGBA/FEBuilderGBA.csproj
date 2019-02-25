@@ -238,6 +238,12 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
+    <Compile Include="ToolUseFlagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUseFlagForm.Designer.cs">
+      <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UseTextID.cs" />
     <Compile Include="TextToSpeechForm.cs">
       <SubType>Form</SubType>
@@ -2481,6 +2487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolUndoPopupDialogForm.resx">
       <DependentUpon>ToolUndoPopupDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolUseFlagForm.resx">
+      <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitCustomBattleAnimeForm.resx">
       <DependentUpon>UnitCustomBattleAnimeForm.cs</DependentUpon>

@@ -135,6 +135,7 @@
             // 
             // J_4
             // 
+            this.J_4.AccessibleDescription = "@SOUNDROOM_SOUNGTIME";
             this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_4.Location = new System.Drawing.Point(-1, 34);
             this.J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FEBuilderGBA
 {
-    class UseFlagID
+    public class UseFlagID
     {
         public FELint.Type DataType { get; private set; }
         public uint ID { get; private set; }
@@ -30,6 +30,48 @@ namespace FEBuilderGBA
                 return;
             }
             list.Add(new UseFlagID(dataType, addr, info, id,mapid, tag));
+        }
+
+        public static void AppendFlagID(List<UseFlagID> list, FELint.Type dataType, InputFormRef ifr, uint flagIDPlus, uint chapterIDPlus)
+        {
+            List<U.AddrResult> arlist = ifr.MakeList();
+            for (int i = 0; i < ifr.DataCount; i++)
+            {
+                U.AddrResult ar = arlist[i];
+                uint id = Program.ROM.u16(ar.addr + flagIDPlus);
+                if (id == 0)
+                {
+                    continue;
+                }
+                uint mapid = Program.ROM.u8(ar.addr + chapterIDPlus);
+                if (mapid >= 0xF0)
+                {
+                    mapid = U.NOT_FOUND;
+                }
+
+                list.Add(new UseFlagID(dataType, ar.addr, ar.name, id,mapid, (uint)i));
+            }
+        }
+
+        public static void AppendFlagIDFixedMapID(List<UseFlagID> list, FELint.Type dataType, InputFormRef ifr, uint flagIDPlus, uint chapterIDPlus)
+        {
+            List<U.AddrResult> arlist = ifr.MakeList();
+            for (int i = 0; i < ifr.DataCount; i++)
+            {
+                U.AddrResult ar = arlist[i];
+                uint id = Program.ROM.u16(ar.addr + flagIDPlus);
+                if (id == 0)
+                {
+                    continue;
+                }
+                uint mapid = Program.ROM.u8(ar.addr + chapterIDPlus);
+                if (mapid >= 0xF0)
+                {
+                    mapid = U.NOT_FOUND;
+                }
+
+                list.Add(new UseFlagID(dataType, ar.addr, ar.name, id, mapid, (uint)i));
+            }
         }
 
     }

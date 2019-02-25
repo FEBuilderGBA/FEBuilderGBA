@@ -291,9 +291,10 @@
 432C010000000000	_432C
 212BXXXX	_0x2B21[XXXX::Value1]
 222BXXXX	_0x2B22[XXXX::Value1]
-
-4032XXXXYYYY0000	_0x3240[XXXX:UNIT:人物][YY::Space]
-4232XXXXYYYY0000	_0x3242[XXXX::Value1][YY::Value2]
+4032XXXXYYZZ0000	Loads one Player unit with it's default parameters(SPAWN_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4132XXXXYYZZ0000	Loads one NPC(green) unit with it's default parameters(SPAWN_NPC)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4232XXXXYYZZ0000	Loads one Enemy unit with it's default parameters(SPAWN_ENEMY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4F32XXXXYYZZ0000	Loads one Player unit with it's default parameters,This unit will dissapear at the end of events.(SPAWN_CUTSCENE_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
 2F41XXXX	_0x412F[XXXX::Value1]
 4084XXXXYYYY0000	ID显示附近的地图详细规范[XXXX::值1][YY::值2]
 8088XXXXYYYYZZZZWWWWVVVV00000000	_0x8880[XXXX::Value1][YY::Value2][ZZ::Value3][WW::Value4][VV::Value5]
@@ -354,8 +355,9 @@
 410BYYYYXXXXXXXX	无条件跳转到0[XXXXXX:POINTER_EVENT:event][YYYY::param]
 400BYYYYXXXXXXXX	无条件跳转到1[XXXXXX:POINTER_EVENT:event][YYYY::param]
 203DXXXX	_203D[XXXX::value]
-2031XXXX	_2031[XXXX::value]
 213DXXXX	_213D[XXXX::value]
+2031XXXX	Shows movement & attack range for [XXXX:UNIT:Unit](SHOW_ATTACK_RANGE)
+21310000	Hides currently displayed movement & attack range(HIDE_ATTACK_RANGE)
 243BXXXX	_243B[XXXX::value]
 203C0000	_203C
 253BXXXX	_253B[XXXX::value]

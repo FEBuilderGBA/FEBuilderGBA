@@ -830,9 +830,8 @@ namespace FEBuilderGBA
         void FixedButton()
         {
 #if DEBUG
-//            ROMRebuildButton.Show();
 #else
-//            ROMRebuildButton.Hide();
+            ToolUseFlagButton.Hide();
 #endif
             if (!Program.ROM.RomInfo.is_multibyte())
             {//クラスの英語表記で別設定があるのは日本語版だけ
@@ -1046,6 +1045,11 @@ namespace FEBuilderGBA
         private void GameOptionOrderButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<StatusOptionOrderForm>();
+        }
+
+        private void ToolUseFlagButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolUseFlagForm>();
         }
     }
 

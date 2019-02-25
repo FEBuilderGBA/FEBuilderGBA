@@ -1301,6 +1301,8 @@ namespace FEBuilderGBA
         {
             this.TextIDArray = U.MakeTextIDArray();
         }
+
+
 #if DEBUG
         void MargeS(string filename)
         {

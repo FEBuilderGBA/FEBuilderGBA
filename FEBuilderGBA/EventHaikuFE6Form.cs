@@ -118,5 +118,10 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 , 12 });
         }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            InputFormRef InputFormRef = Init(null);
+            UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, InputFormRef, 8, 1);
+        }
     }
 }

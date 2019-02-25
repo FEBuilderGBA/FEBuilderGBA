@@ -1734,7 +1734,6 @@ namespace FEBuilderGBA
             }
         }
 
-
         //イベント命令　一覧の取得
         public static List<U.AddrResult> MakeEventScriptPointer(uint mapid)
         {
@@ -1760,6 +1759,11 @@ namespace FEBuilderGBA
                 {//0=ターン条件(02)
                     while (true)
                     {
+                        if (Program.ROM.u32(addr) == 0)
+                        {
+                            break;
+                        }
+
                         uint type = Program.ROM.u8(addr);
                         if (type == 0)
                         {
@@ -1801,7 +1805,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -1829,7 +1833,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -4231,5 +4235,197 @@ namespace FEBuilderGBA
             }
         }
 
+
+        static void MakeFlagIDArrayOne(uint mapid, uint event_addr, uint index, List<UseFlagID> flaglist)
+        {
+            List<U.AddrResult> list = new List<U.AddrResult>();
+            List<uint> tracelist = new List<uint>();
+            MakeFlagIDEventScan(ref list, event_addr, tracelist);
+            foreach (U.AddrResult ar in list)
+            {
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENTSCRIPT , ar.tag, ar.name, ar.addr, mapid, index);
+            }
+        }
+
+        static void MakeFlagIDEventScan(ref List<U.AddrResult> list, uint event_addr, List<uint> tracelist)
+        {
+            uint lastBranchAddr = 0;
+            int unknown_count = 0;
+            uint addr = event_addr;
+            while (true)
+            {
+                //バイト列をイベント命令としてDisassembler.
+                EventScript.OneCode code = Program.EventScript.DisAseemble(Program.ROM.Data, addr);
+                if (EventScript.IsExitCode(code, addr, lastBranchAddr))
+                {//終端命令
+                    break;
+                }
+                else if (code.Script.Has == EventScript.ScriptHas.UNKNOWN)
+                {
+                    unknown_count++;
+                    if (unknown_count > 10)
+                    {//不明命令が10個連続して続いたら打ち切る
+                        break;
+                    }
+                }
+                else
+                {
+                    //少なくとも不明ではない.
+                    unknown_count = 0;
+
+                    if (code.Script.Has == EventScript.ScriptHas.POINTER_UNIT_OR_EVENT)
+                    {//イベント命令へジャンプするものをもっているらしい.
+                        for (int i = 0; i < code.Script.Args.Length; i++)
+                        {
+                            EventScript.Arg arg = code.Script.Args[i];
+                            if (arg.Type == EventScript.ArgType.POINTER_EVENT)
+                            {
+                                uint v = EventScript.GetArgValue(code, arg);
+
+                                v = U.toOffset(v);
+                                if (U.isSafetyOffset(v)         //安全で
+                                    && tracelist.IndexOf(v) < 0 //まだ読んだことがなければ
+                                    )
+                                {
+                                    tracelist.Add(v);
+                                    MakeFlagIDEventScan(ref list, v, tracelist);
+                                }
+                            }
+                        }
+                    }
+                    else if (code.Script.Has == EventScript.ScriptHas.LABEL_CONDITIONAL)
+                    {//LABEL
+                        lastBranchAddr = 0;
+                    }
+                    else if (code.Script.Has == EventScript.ScriptHas.IF_CONDITIONAL)
+                    {//IF
+                        lastBranchAddr = addr;
+                    }
+                    else 
+                    {//テキスト関係の命令.
+                        for (int i = 0; i < code.Script.Args.Length; i++)
+                        {
+                            EventScript.Arg arg = code.Script.Args[i];
+                            if (arg.Type == EventScript.ArgType.FLAG
+                                )
+                            {
+                                uint v = EventScript.GetArgValue(code, arg);
+                                if (U.isPointer(v))
+                                {//ポインタだったら違う.
+                                    continue;
+                                }
+
+                                if (U.FindList(list, v) == U.NOT_FOUND)
+                                {
+                                    list.Add(new U.AddrResult(
+                                          v
+                                        , event_addr.ToString()
+                                        , addr
+                                    ));
+                                }
+                            }
+                        }
+                    }
+                }
+                addr += (uint)code.Script.Size;
+            }
+        }
+
+        public static void MakeFlagIDArray(uint mapid, List<UseFlagID> flaglist)
+        {
+            uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
+            if (!U.isSafetyOffset(mapcond_addr))
+            {
+                return;
+            }
+
+            List<uint> tracelist = new List<uint>();
+
+            List<U.AddrResult> list;
+            list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_OBJECT, addr, "", flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+            list = MakePointerListBox(mapid, CONDTYPE.TALK);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_TALK, addr, "", flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+
+            list = MakePointerListBox(mapid, CONDTYPE.TURN);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_TURN, addr, "", flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+            list = MakePointerListBox(mapid, CONDTYPE.ALWAYS);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint type = Program.ROM.u16(addr + 0);
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_ALWAYS, addr, "", flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 18)));
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 19)));
+
+                MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 14)));
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 15)));
+
+                MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+            else if (Program.ROM.RomInfo.version() == 6)
+            {
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
+
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+        }
     }
 }

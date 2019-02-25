@@ -4666,6 +4666,9 @@ Specify ROM to be used for translation hints.\r\nIt is used to retrieve translat
 :そのゲーム専用の翻訳データがあれば指定してください。\r\n
 Please specify if there is translation data exclusive for that game.\r\n
 
+:曲の長さは、ランダム再生時に利用されます。\r\n時間はミリ秒で指定します。\r\nただし内部ではフレーム秒で処理され端数は切り捨てられます。\r\n指定した時間に達すると曲がフェードアウトし、次の曲に切り替わります。
+The length of the song is used for random playback.\r\nSpecify the time in milliseconds.\r\nHowever, internally it is processed in frame seconds and the fractions are truncated.\r\nWhen the specified time is reached, the song fades out and switches to the next song.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -5460,6 +5463,9 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
+
+:利用フラグ一覧
+Usage flag list.
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -10983,6 +10989,9 @@ Save the current data as a UPS patch.\r\nUnless there is a special reason, pleas
 
 :差分をUPSパッチとして作成する
 Save modifications as a UPS patch
+
+:章で利用しているフラグ
+Flags used in the chapter.
 
 :。
 。
