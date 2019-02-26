@@ -27,6 +27,8 @@ namespace FEBuilderGBA
 
         string ParseCodeOnly(string code)
         {
+            code = code.Trim();
+
             string programCode;
             if (code.IndexOf(" BL 0x") >= 0)
             {
