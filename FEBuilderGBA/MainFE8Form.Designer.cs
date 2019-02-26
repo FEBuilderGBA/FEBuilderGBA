@@ -152,6 +152,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
             this.AIPerformStaffButton = new System.Windows.Forms.Button();
             this.ImageTSAAnime2Button = new System.Windows.Forms.Button();
@@ -218,7 +219,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ToolUseFlagButton = new System.Windows.Forms.Button();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -556,6 +557,7 @@
             this.EmulatorMemoryToolStripMenuItem,
             this.LogToolStripMenuItem,
             this.toolStripSeparatorEx2,
+            this.ToolUseFlagStripMenuItem6,
             this.FlagNameToolStripMenuItem,
             this.ExportEAEventToolStripMenuItem,
             this.toolStripSeparatorEx3,
@@ -1539,6 +1541,17 @@
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
             this.ControlPanel.TabIndex = 1;
             // 
+            // ToolUseFlagButton
+            // 
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(1017, 640);
+            this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ToolUseFlagButton.Name = "ToolUseFlagButton";
+            this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolUseFlagButton.TabIndex = 132;
+            this.ToolUseFlagButton.Text = "利用フラグ一覧";
+            this.ToolUseFlagButton.UseVisualStyleBackColor = true;
+            this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
+            // 
             // GameOptionOrderButton
             // 
             this.GameOptionOrderButton.Location = new System.Drawing.Point(1426, 452);
@@ -2265,16 +2278,12 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // ToolUseFlagButton
+            // ToolUseFlagStripMenuItem6
             // 
-            this.ToolUseFlagButton.Location = new System.Drawing.Point(1017, 640);
-            this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
-            this.ToolUseFlagButton.Name = "ToolUseFlagButton";
-            this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
-            this.ToolUseFlagButton.TabIndex = 132;
-            this.ToolUseFlagButton.Text = "利用フラグ一覧";
-            this.ToolUseFlagButton.UseVisualStyleBackColor = true;
-            this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
             // 
             // MainFE8Form
             // 
@@ -2495,6 +2504,7 @@
         private System.Windows.Forms.Button AIPerformStaffButton;
         private System.Windows.Forms.Button GameOptionOrderButton;
         private System.Windows.Forms.Button ToolUseFlagButton;
+        private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
     }
 }
 

@@ -94,11 +94,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<LogForm>();
         }
 
-        private void EventCondButton_Click(object sender, EventArgs e)
-        {
-            EventCondForm f = (EventCondForm)InputFormRef.JumpForm<EventCondForm>(U.NOT_FOUND);
-            f.JumpToMAPID((uint)MAP_LISTBOX.SelectedIndex);
-        }
 
         private void EventUnitButton_Click(object sender, EventArgs e)
         {
@@ -1449,6 +1444,28 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolProblemReportForm>();
         }
+
+        private void EventCond_Label_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {//Clickで処理するので不要
+                EventCondForm f = (EventCondForm)InputFormRef.JumpForm<EventCondForm>(U.NOT_FOUND);
+                f.JumpToMAPID((uint)MAP_LISTBOX.SelectedIndex);
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                ToolUseFlagForm f = (ToolUseFlagForm)InputFormRef.JumpForm<ToolUseFlagForm>(U.NOT_FOUND);
+                f.JumpToMAPID((uint)MAP_LISTBOX.SelectedIndex);
+            }
+
+        }
+
+        private void ToolUseFlagStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            ToolUseFlagForm f = (ToolUseFlagForm)InputFormRef.JumpForm<ToolUseFlagForm>(U.NOT_FOUND);
+            f.JumpToMAPID((uint)MAP_LISTBOX.SelectedIndex);
+        }
+
 
 
 

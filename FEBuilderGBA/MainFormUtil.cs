@@ -2213,6 +2213,10 @@ namespace FEBuilderGBA
             {
                 return R._("ゲームオプションの表示順番を設定します。");
             }
+            if (name == "ToolUseFlagButton")
+            {
+                return R._("章で利用しているフラグから、イベントを逆に参照します。");
+            }
             
             return "";
         }

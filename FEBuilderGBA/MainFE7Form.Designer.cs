@@ -196,6 +196,7 @@
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -830,6 +831,7 @@
             this.EmulatorMemoryToolStripMenuItem,
             this.LogToolStripMenuItem,
             this.toolStripSeparatorEx2,
+            this.ToolUseFlagStripMenuItem6,
             this.FlagNameToolStripMenuItem,
             this.ExportEAEventToolStripMenuItem,
             this.toolStripSeparatorEx3,
@@ -1977,6 +1979,13 @@
             this.ToolUseFlagButton.UseVisualStyleBackColor = true;
             this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
             // 
+            // ToolUseFlagStripMenuItem6
+            // 
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
+            // 
             // MainFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2173,5 +2182,6 @@
         private System.Windows.Forms.Button GameOptionButton;
         private System.Windows.Forms.Button GameOptionOrderButton;
         private System.Windows.Forms.Button ToolUseFlagButton;
+        private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
     }
 }

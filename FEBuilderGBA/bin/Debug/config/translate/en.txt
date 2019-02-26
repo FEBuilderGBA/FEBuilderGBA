@@ -5932,6 +5932,9 @@ Set up a table to determine the military attributes.
 :ゲームオプションの表示順番を設定します。
 Set the display order of game options.
 
+:章で利用しているフラグから、イベントを逆に参照します。
+Reverse the event from the flags used in the chapter.
+
 :ファイルが見つかりません
 File not found
 

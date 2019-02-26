@@ -49,7 +49,7 @@
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(351, 816);
+            this.panel14.Size = new System.Drawing.Size(303, 816);
             this.panel14.TabIndex = 189;
             // 
             // LabelFilter
@@ -59,7 +59,7 @@
             this.LabelFilter.Location = new System.Drawing.Point(0, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(349, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(301, 26);
             this.LabelFilter.TabIndex = 106;
             this.LabelFilter.Text = "マップ名";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -68,18 +68,18 @@
             // 
             this.panel1.Controls.Add(this.AddressList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(351, 27);
+            this.panel1.Location = new System.Drawing.Point(303, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 789);
+            this.panel1.Size = new System.Drawing.Size(794, 789);
             this.panel1.TabIndex = 190;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.ShowANYCheckBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(351, 0);
+            this.panel2.Location = new System.Drawing.Point(303, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 27);
+            this.panel2.Size = new System.Drawing.Size(794, 27);
             this.panel2.TabIndex = 191;
             // 
             // ShowANYCheckBox
@@ -101,7 +101,7 @@
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 0);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(746, 789);
+            this.AddressList.Size = new System.Drawing.Size(794, 789);
             this.AddressList.TabIndex = 0;
             this.AddressList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressList_MouseDoubleClick);
             // 
@@ -114,7 +114,7 @@
             this.MAP_LISTBOX.Location = new System.Drawing.Point(0, 26);
             this.MAP_LISTBOX.Margin = new System.Windows.Forms.Padding(4);
             this.MAP_LISTBOX.Name = "MAP_LISTBOX";
-            this.MAP_LISTBOX.Size = new System.Drawing.Size(349, 788);
+            this.MAP_LISTBOX.Size = new System.Drawing.Size(301, 788);
             this.MAP_LISTBOX.TabIndex = 0;
             this.MAP_LISTBOX.SelectedIndexChanged += new System.EventHandler(this.MAP_LISTBOX_SelectedIndexChanged);
             // 

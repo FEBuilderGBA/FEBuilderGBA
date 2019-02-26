@@ -26,6 +26,10 @@ namespace FEBuilderGBA
             this.MaximizeBox = true;
             U.SelectedIndexSafety(this.MAP_LISTBOX, 0);
         }
+        public void JumpToMAPID(uint mapid)
+        {
+            MAP_LISTBOX.SelectedIndex = (int)mapid;
+        }
 
         List<UseFlagID> FlagList = new List<UseFlagID>();
         void UpdateList()

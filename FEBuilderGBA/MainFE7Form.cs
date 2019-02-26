@@ -821,5 +821,10 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolUseFlagForm>();
         }
+
+        private void ToolUseFlagStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolUseFlagForm>();
+        }
     }
 }
