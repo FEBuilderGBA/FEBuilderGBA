@@ -27,8 +27,6 @@ namespace FEBuilderGBA
 
         string ParseCodeOnly(string code)
         {
-            code = code.Trim();
-
             string programCode;
             if (code.IndexOf(" BL 0x") >= 0)
             {
@@ -47,6 +45,8 @@ namespace FEBuilderGBA
 
         public void Init(DisASMInnerControl callbackWindow, string code)
         {
+            code = code.Trim();
+
             this.EditAddr = U.atoh(code);
             this.CallbackASMForm = callbackWindow;
 
