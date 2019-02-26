@@ -7,5 +7,5 @@ NAME.en=Attack miss Exp
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x258B8
+ADDRESS=0x258BA
 NAME.zh=进攻体验错过经验

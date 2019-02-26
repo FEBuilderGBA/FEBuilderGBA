@@ -135,6 +135,8 @@
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.UnitCustomBattleAnime = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.TacticianAffinity = new System.Windows.Forms.Button();
             this.SoundRoomCGButton = new System.Windows.Forms.Button();
             this.AIPerformStaffButton = new System.Windows.Forms.Button();
@@ -193,8 +195,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.GameOptionButton = new System.Windows.Forms.Button();
-            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1189,6 +1190,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.TacticianAffinity);
@@ -1303,6 +1305,28 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1623, 682);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // GameOptionOrderButton
+            // 
+            this.GameOptionOrderButton.Location = new System.Drawing.Point(1423, 372);
+            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
+            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionOrderButton.TabIndex = 136;
+            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
+            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
+            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            // 
+            // GameOptionButton
+            // 
+            this.GameOptionButton.Location = new System.Drawing.Point(1423, 336);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 135;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // TacticianAffinity
             // 
@@ -1427,7 +1451,7 @@
             // 
             // FlagNameToolButton
             // 
-            this.FlagNameToolButton.Location = new System.Drawing.Point(1216, 472);
+            this.FlagNameToolButton.Location = new System.Drawing.Point(1016, 580);
             this.FlagNameToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.FlagNameToolButton.Name = "FlagNameToolButton";
             this.FlagNameToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1942,27 +1966,16 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // GameOptionButton
+            // ToolUseFlagButton
             // 
-            this.GameOptionButton.Location = new System.Drawing.Point(1423, 336);
-            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionButton.Name = "GameOptionButton";
-            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionButton.TabIndex = 135;
-            this.GameOptionButton.Text = "ゲームオプション";
-            this.GameOptionButton.UseVisualStyleBackColor = true;
-            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
-            // 
-            // GameOptionOrderButton
-            // 
-            this.GameOptionOrderButton.Location = new System.Drawing.Point(1423, 372);
-            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
-            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionOrderButton.TabIndex = 136;
-            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
-            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
-            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(1016, 544);
+            this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ToolUseFlagButton.Name = "ToolUseFlagButton";
+            this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolUseFlagButton.TabIndex = 137;
+            this.ToolUseFlagButton.Text = "利用フラグ一覧";
+            this.ToolUseFlagButton.UseVisualStyleBackColor = true;
+            this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
             // 
             // MainFE7Form
             // 
@@ -2159,5 +2172,6 @@
         private System.Windows.Forms.Button TacticianAffinity;
         private System.Windows.Forms.Button GameOptionButton;
         private System.Windows.Forms.Button GameOptionOrderButton;
+        private System.Windows.Forms.Button ToolUseFlagButton;
     }
 }

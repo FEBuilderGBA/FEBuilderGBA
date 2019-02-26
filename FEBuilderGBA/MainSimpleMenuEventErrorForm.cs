@@ -161,7 +161,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.EVENTSCRIPT)
             {
-                text = R._("敵配置");
+                text = R._("イベント");
             }
             else if (dataType == FELint.Type.EVENT_COND_TUTORIAL)
             {

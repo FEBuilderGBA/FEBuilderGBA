@@ -6,6 +6,6 @@ NAME.zh=进攻体验错过经验
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x2C572
+ADDRESS=0x2C574
 
 INFO.en=Sets the experience gained for battles where the unit doesn't strike the foe.

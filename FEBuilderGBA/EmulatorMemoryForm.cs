@@ -509,7 +509,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, U.toOffset(cursolP));
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, cursolP);
             return EventScript.makeCommandComboText(code.Script, false);
         }
 
@@ -785,7 +785,7 @@ namespace FEBuilderGBA
                 addr = pd.ROMAddr;
             }
 
-            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, U.toOffset(addr));
+            EventScript.OneCode code = Program.ProcsScript.DisAseemble(Program.ROM.Data, addr);
             return EventScriptForm.DrawCode(lb, g, listbounds, isWithDraw, code);
         }
         bool IsEventCounter_Index(int index,ListBox lb)

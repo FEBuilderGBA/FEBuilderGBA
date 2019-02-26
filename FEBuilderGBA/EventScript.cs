@@ -781,6 +781,8 @@ namespace FEBuilderGBA
 
         public OneCode DisAseemble(byte[] data,uint startaddr)
         {
+            startaddr = U.toOffset(startaddr);
+
             OneCode code = new OneCode();
             uint leftsize = ((uint)data.Length) - startaddr;
             for(int i = 0 ; i < Scripts.Length ; i++)

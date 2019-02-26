@@ -757,5 +757,11 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<OPClassAlphaNameFE6Form>();
         }
+
+        private void ToolUseFlagButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolUseFlagForm>();
+        }
+
     }
 }

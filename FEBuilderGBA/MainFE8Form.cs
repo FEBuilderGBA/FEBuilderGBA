@@ -829,10 +829,6 @@ namespace FEBuilderGBA
 
         void FixedButton()
         {
-#if DEBUG
-#else
-            ToolUseFlagButton.Hide();
-#endif
             if (!Program.ROM.RomInfo.is_multibyte())
             {//クラスの英語表記で別設定があるのは日本語版だけ
                 OPClassAlphaNameButton.Hide();

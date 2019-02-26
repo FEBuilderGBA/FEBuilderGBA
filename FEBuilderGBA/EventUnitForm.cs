@@ -1145,34 +1145,27 @@ namespace FEBuilderGBA
             }
         }
 
+
         public static Size EVENT_LISTBOX_Draw(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
             if (index < 0 || index >= lb.Items.Count)
             {
                 return new Size(listbounds.X, listbounds.Y);
             }
-            string text = lb.Items[index].ToString();
-
-            SolidBrush brush = new SolidBrush(lb.ForeColor);
-            Font normalFont = lb.Font;
-            Font boldFont = new Font(lb.Font,FontStyle.Bold);
+            U.AddrResult ar = InputFormRef.SelectToAddrResult(lb, index);
             Rectangle bounds = listbounds;
 
             int lineHeight = (int)lb.Font.Height;
-            int maxHeight = (int)lb.Font.Height;
 
-            
-            Rectangle b = bounds;
-            b.Width = 1024;
-            b.Height = lineHeight;
-            U.DrawText(text, g, normalFont, brush, isWithDraw, b);
+            string text = lb.Items[index].ToString();
+            Size s = EventCondForm.DrawEventByAddr(text,lb, g, listbounds, isWithDraw);
 
+            int lineMaxWidth = bounds.X + s.Width;
             bounds.Y += lineHeight;
-            maxHeight = Math.Max(maxHeight, lineHeight);
 
             do
             {
-                uint addr = InputFormRef.SelectToAddr(lb, index);
+                uint addr = ar.addr;
                 if (!U.isSafetyOffset(addr))
                 {
                     break;
@@ -1183,10 +1176,11 @@ namespace FEBuilderGBA
                     Bitmap icon = EventUnitForm.DrawUnitIconOnly(addr);
                     U.MakeTransparent(icon);
 
-                    b = bounds;
+                    Rectangle b = bounds;
                     b.Width = 12;
                     b.Height = 12;
                     bounds.X += U.DrawPicture(icon, g, isWithDraw, b);
+                    lineMaxWidth = Math.Max(lineMaxWidth, bounds.X);
                     icon.Dispose();
 
                     addr += Program.ROM.RomInfo.eventunit_data_size();
@@ -1198,10 +1192,8 @@ namespace FEBuilderGBA
             }
             while (false);
 
-            brush.Dispose();
-            boldFont.Dispose();
-
-            bounds.Y += maxHeight;
+            bounds.X = lineMaxWidth;
+            bounds.Y += lineHeight;
             return new Size(bounds.X, bounds.Y);
         }
 
