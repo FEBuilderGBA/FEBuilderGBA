@@ -2695,6 +2695,12 @@ ASM function pointer "{0}" is invalid.
 :ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。
 The ASM function pointer "{0}" is an even number.\r\nIt must be Pointer + 1 to call Thumb instructions.
 
+:Procs関数ポインタ「{0}」が無効です。
+Procs function pointer '{0}' is invalid.
+
+:Procs関数ポインタ「{0}」が4バイト単位でありません。\r\n必ず4の倍数である必要があります。
+Procs function pointer "{0}" is not in units of 4 bytes.\r\nIt must be a multiple of 4.
+
 :利用できないフラグ「{0}」を利用しています。{1}
 You are attempting to use the flag "{0}" which can't be used.{1}.
 

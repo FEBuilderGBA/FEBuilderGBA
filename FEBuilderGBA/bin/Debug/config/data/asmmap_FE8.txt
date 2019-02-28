@@ -4547,7 +4547,6 @@
 08014B50	PlaySpacialSoundMaybe	{J}
 080152C8	GeneralVBlankHandler	{J}
 08015318	SomeUpdateRoutine	{J}
-08015374	AddSkipThread2	{J}
 080153A4	GetThread2SkipStack	{J}
 080153B0	SwitchPhases	{J}
 080153F8	CallBeginningEvents	{J}
@@ -11652,6 +11651,12 @@
 08097570	PrepMenu_CheckMap_UnuseDummy2	{J}
 080975A0	PrepMenu_CheckMap	{J}
 080977E4	CheckMapID0x7D	{J}
-
-08015384	AddSkipThread2
-08015394	SubSkipThread2
+08015384	AddSkipThread2	{J}
+08015394	SubSkipThread2	{J}
+080AD47C	DrawBlueBarForActiveItemInPrepScreenMenu	{U}
+080B1F1C	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
+08A9D904	&OAMREGS_ARRAY	Unk OAMREGS	25	{J}
+08A2099C	&OAMREGS_ARRAY	Unk OAMREGS	25	{U}
+08AD1734	&LZ77	ボツデータ	FE7のCGの一部の断片	{J}
+08AD1EC8	&PALETTE8	ボツデータ	FE7のCGのパレットの残骸	{J}
+08AD1FC8	&HEADERTSA	ボツデータ	FE7のCGのTSAの残骸	{J}

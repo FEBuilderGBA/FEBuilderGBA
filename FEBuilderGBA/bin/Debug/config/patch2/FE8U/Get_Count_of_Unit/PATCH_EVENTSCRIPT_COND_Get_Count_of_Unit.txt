@@ -1,0 +1,28 @@
+﻿NAME=特定の条件にマッチするユニットの数を取得するイベント命令
+NAME.en=Add Event: Get the number of units matching a specific condition.
+TYPE=BIN
+TAG=#EVENT
+
+INFO=現在マップに出撃しているユニットに対して、特定の条件にマッチするユニットの数を数えて、メモリスロットCに返します。
+INFO.en=This event is counts the number of units matching specific conditions for the unit currently deployed on the map and returns it to memory slot C.
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 Get_Count_of_Unit.dmp=0x30 0xB5 0x00 0x25
+
+EVENTSCRIPT:1=400D0000{$L1:Get_Count_of_Unit.dmp}	特定の条件にマッチするユニットの数を取得する(LOW)	{COND}
+EVENTSCRIPT:2=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW0000400D0000{$L1:Get_Count_of_Unit.dmp}	特定の条件にマッチするユニットの数を取得する[XXXX:UNIT:ユニット条件 00=ANY][YYYY:CLASS:クラス条件 00=ANY][ZZZZ:ITEM:アイテム条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件 FF=ANY]	{COND}
+
+EVENTSCRIPT:1.en=400D0000{$L1:Get_Count_of_Unit.dmp}	Get the number of units that match specific conditions(LOW)	{COND}
+EVENTSCRIPT:2.en=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW0000400D0000{$L1:Get_Count_of_Unit.dmp}	Get the number of units that match specific conditions[XXXX:UNIT:CheckUnit 00=ANY][YYYY:CLASS:CheckClass 00=ANY][ZZZZ:ITEM:CheckItem 00=ANY][WWWW:WMAPAFFILIATION:FF=ANY]	{COND}
+
+EVENTSCRIPT:1.zh=400D0000{$L1:Get_Count_of_Unit.dmp}	获取符合特定条件的人物数(LOW)	{COND}
+EVENTSCRIPT:2.zh=40050100XXXX000040050200YYYY000040050300ZZZZ000040050400WWWW0000400D0000{$L1:Get_Count_of_Unit.dmp}	获取符合特定条件的人物数[XXXX:UNIT:人物条件 00=ANY][YYYY:CLASS:职业条件 00=ANY][ZZZZ:ITEM:道具条件 00=ANY][WWWW:WMAPAFFILIATION:所属条件FF=ANY]	{COND}
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=Get_Count_of_Unit.dmp
+
+AUTHOR=7743
+
+NAME.zh=用于获取与特定条件匹配的人物数的事件指令
+INFO.zh=此事件指令计算与当前位于地图上的单元的特定条件匹配的人物数，并将其返回到内存MemorySlotC.
+

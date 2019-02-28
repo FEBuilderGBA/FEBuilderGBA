@@ -72,6 +72,7 @@ namespace FEBuilderGBA
             ,IMAGE_BATTLE_SCREEN //戦闘画面
             ,MAGIC_ANIME_EXTENDS //魔法拡張アニメ
             ,STATUS_GAME_OPTION //ゲームオプション
+            ,PROCS
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)
@@ -356,6 +357,20 @@ namespace FEBuilderGBA
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
             }
+        }
+        public static void CheckProcsPointerErrors(uint procs, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (!U.isSafetyPointer(procs))
+            {//無効なポインタ
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("Procs関数ポインタ「{0}」が無効です。", U.To0xHexString(procs)), tag));
+            }
+            else if (U.isPadding4(procs))
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("Procs関数ポインタ「{0}」が4バイト単位でありません。\r\n必ず4の倍数である必要があります。", U.To0xHexString(procs)), tag));
+            }
+
         }
         public static void CheckFlagErrors(uint flag, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
         {

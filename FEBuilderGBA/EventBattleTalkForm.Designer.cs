@@ -43,12 +43,16 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label55 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_12_NEWALLOC_ALTEVENT_W8 = new System.Windows.Forms.Button();
+            this.L_12_EVENT = new FEBuilderGBA.TextBoxEx();
+            this.J_12_EVENT = new System.Windows.Forms.Label();
+            this.P12 = new System.Windows.Forms.NumericUpDown();
             this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.J_5 = new System.Windows.Forms.Label();
             this.L_6_FLAG = new FEBuilderGBA.TextBoxEx();
             this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_4_MAP_ANYFE = new FEBuilderGBA.TextBoxEx();
+            this.L_4_MAP_ANYFF = new FEBuilderGBA.TextBoxEx();
             this.W2 = new System.Windows.Forms.NumericUpDown();
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.L_2_UNIT_ANY = new FEBuilderGBA.TextBoxEx();
@@ -70,16 +74,13 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_12_EVENT = new FEBuilderGBA.TextBoxEx();
-            this.J_12_EVENT = new System.Windows.Forms.Label();
-            this.P12 = new System.Windows.Forms.NumericUpDown();
-            this.L_12_NEWALLOC_ALTEVENT_W8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
@@ -91,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W8)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.P12)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -269,7 +269,7 @@
             this.panel2.Controls.Add(this.L_6_FLAG);
             this.panel2.Controls.Add(this.L_2_UNITICON);
             this.panel2.Controls.Add(this.L_0_UNITICON);
-            this.panel2.Controls.Add(this.L_4_MAP_ANYFE);
+            this.panel2.Controls.Add(this.L_4_MAP_ANYFF);
             this.panel2.Controls.Add(this.W2);
             this.panel2.Controls.Add(this.W0);
             this.panel2.Controls.Add(this.L_2_UNIT_ANY);
@@ -292,6 +292,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(885, 697);
             this.panel2.TabIndex = 70;
+            // 
+            // L_12_NEWALLOC_ALTEVENT_W8
+            // 
+            this.L_12_NEWALLOC_ALTEVENT_W8.Location = new System.Drawing.Point(313, 372);
+            this.L_12_NEWALLOC_ALTEVENT_W8.Name = "L_12_NEWALLOC_ALTEVENT_W8";
+            this.L_12_NEWALLOC_ALTEVENT_W8.Size = new System.Drawing.Size(300, 28);
+            this.L_12_NEWALLOC_ALTEVENT_W8.TabIndex = 247;
+            this.L_12_NEWALLOC_ALTEVENT_W8.Text = "新規イベント";
+            this.L_12_NEWALLOC_ALTEVENT_W8.UseVisualStyleBackColor = true;
+            // 
+            // L_12_EVENT
+            // 
+            this.L_12_EVENT.ErrorMessage = "";
+            this.L_12_EVENT.Location = new System.Drawing.Point(313, 374);
+            this.L_12_EVENT.Margin = new System.Windows.Forms.Padding(2);
+            this.L_12_EVENT.Name = "L_12_EVENT";
+            this.L_12_EVENT.Placeholder = "";
+            this.L_12_EVENT.ReadOnly = true;
+            this.L_12_EVENT.Size = new System.Drawing.Size(301, 25);
+            this.L_12_EVENT.TabIndex = 246;
+            this.L_12_EVENT.Visible = false;
+            // 
+            // J_12_EVENT
+            // 
+            this.J_12_EVENT.AccessibleDescription = "@ALTEVENT";
+            this.J_12_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_12_EVENT.Location = new System.Drawing.Point(2, 370);
+            this.J_12_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_12_EVENT.Name = "J_12_EVENT";
+            this.J_12_EVENT.Size = new System.Drawing.Size(150, 32);
+            this.J_12_EVENT.TabIndex = 245;
+            this.J_12_EVENT.Text = "イベント";
+            this.J_12_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // P12
+            // 
+            this.P12.Hexadecimal = true;
+            this.P12.Location = new System.Drawing.Point(160, 375);
+            this.P12.Margin = new System.Windows.Forms.Padding(2);
+            this.P12.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.P12.Name = "P12";
+            this.P12.Size = new System.Drawing.Size(149, 25);
+            this.P12.TabIndex = 244;
             // 
             // EXPLAIN
             // 
@@ -352,16 +399,16 @@
             this.L_0_UNITICON.TabIndex = 190;
             this.L_0_UNITICON.TabStop = false;
             // 
-            // L_4_MAP_ANYFE
+            // L_4_MAP_ANYFF
             // 
-            this.L_4_MAP_ANYFE.ErrorMessage = "";
-            this.L_4_MAP_ANYFE.Location = new System.Drawing.Point(242, 85);
-            this.L_4_MAP_ANYFE.Margin = new System.Windows.Forms.Padding(2);
-            this.L_4_MAP_ANYFE.Name = "L_4_MAP_ANYFE";
-            this.L_4_MAP_ANYFE.Placeholder = "";
-            this.L_4_MAP_ANYFE.ReadOnly = true;
-            this.L_4_MAP_ANYFE.Size = new System.Drawing.Size(339, 25);
-            this.L_4_MAP_ANYFE.TabIndex = 176;
+            this.L_4_MAP_ANYFF.ErrorMessage = "";
+            this.L_4_MAP_ANYFF.Location = new System.Drawing.Point(242, 85);
+            this.L_4_MAP_ANYFF.Margin = new System.Windows.Forms.Padding(2);
+            this.L_4_MAP_ANYFF.Name = "L_4_MAP_ANYFF";
+            this.L_4_MAP_ANYFF.Placeholder = "";
+            this.L_4_MAP_ANYFF.ReadOnly = true;
+            this.L_4_MAP_ANYFF.Size = new System.Drawing.Size(339, 25);
+            this.L_4_MAP_ANYFF.TabIndex = 176;
             // 
             // W2
             // 
@@ -614,59 +661,13 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 27);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(523, 652);
             this.AddressList.TabIndex = 143;
-            // 
-            // L_12_EVENT
-            // 
-            this.L_12_EVENT.ErrorMessage = "";
-            this.L_12_EVENT.Location = new System.Drawing.Point(313, 374);
-            this.L_12_EVENT.Margin = new System.Windows.Forms.Padding(2);
-            this.L_12_EVENT.Name = "L_12_EVENT";
-            this.L_12_EVENT.Placeholder = "";
-            this.L_12_EVENT.ReadOnly = true;
-            this.L_12_EVENT.Size = new System.Drawing.Size(301, 25);
-            this.L_12_EVENT.TabIndex = 246;
-            this.L_12_EVENT.Visible = false;
-            // 
-            // J_12_EVENT
-            // 
-            this.J_12_EVENT.AccessibleDescription = "@ALTEVENT";
-            this.J_12_EVENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_12_EVENT.Location = new System.Drawing.Point(2, 370);
-            this.J_12_EVENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_12_EVENT.Name = "J_12_EVENT";
-            this.J_12_EVENT.Size = new System.Drawing.Size(150, 32);
-            this.J_12_EVENT.TabIndex = 245;
-            this.J_12_EVENT.Text = "イベント";
-            this.J_12_EVENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // P12
-            // 
-            this.P12.Hexadecimal = true;
-            this.P12.Location = new System.Drawing.Point(160, 375);
-            this.P12.Margin = new System.Windows.Forms.Padding(2);
-            this.P12.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.P12.Name = "P12";
-            this.P12.Size = new System.Drawing.Size(149, 25);
-            this.P12.TabIndex = 244;
-            // 
-            // L_12_NEWALLOC_ALTEVENT_W8
-            // 
-            this.L_12_NEWALLOC_ALTEVENT_W8.Location = new System.Drawing.Point(313, 372);
-            this.L_12_NEWALLOC_ALTEVENT_W8.Name = "L_12_NEWALLOC_ALTEVENT_W8";
-            this.L_12_NEWALLOC_ALTEVENT_W8.Size = new System.Drawing.Size(300, 28);
-            this.L_12_NEWALLOC_ALTEVENT_W8.TabIndex = 247;
-            this.L_12_NEWALLOC_ALTEVENT_W8.Text = "新規イベント";
-            this.L_12_NEWALLOC_ALTEVENT_W8.UseVisualStyleBackColor = true;
             // 
             // EventBattleTalkForm
             // 
@@ -690,6 +691,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
@@ -701,7 +703,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W8)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.P12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -744,7 +745,7 @@
         private System.Windows.Forms.Button AddressListExpandsButton;
         private System.Windows.Forms.Label LabelFilter;
         private ListBoxEx AddressList;
-        private FEBuilderGBA.TextBoxEx L_4_MAP_ANYFE;
+        private FEBuilderGBA.TextBoxEx L_4_MAP_ANYFF;
         private InterpolatedPictureBox L_2_UNITICON;
         private InterpolatedPictureBox L_0_UNITICON;
         private FEBuilderGBA.TextBoxEx L_6_FLAG;

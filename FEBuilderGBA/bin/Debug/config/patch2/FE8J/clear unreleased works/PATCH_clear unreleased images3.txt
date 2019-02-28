@@ -1,0 +1,15 @@
+NAME=ボツデータの未使用画像3
+NAME.en=clear unreleased works: images3
+
+PATCHED_IF:0xAD1734=0x00 0x00 0x00 0x00
+IF:0xAD1734=0x10 0x00 0x08 0x00
+
+TYPE=BIN
+TAG=#ENGINE
+
+CLEAR:0xAD1734:0xD48=0xAD247C	//ボツデータ FE7のCGの残骸 FE8Jのみ
+
+INFO=ボツデータの画像を消します。その3\r\nこれにより、この領域をリビルド時に再利用できるようにします。\r\n0xD48 (3400) の空き領域を確保できます。
+INFO.en=Erase the image of the data.Part 3.\r\nThis makes it possible to reuse this area when rebuilding.\r\nFree space of 0xD48 (3400) bytes can be secured.
+NAME.zh=未使用的图像数据3
+INFO.zh=删除数据图像。第3部分。\r\n这使得重建时可以重用该区域。\r\n可以保证0xD48 (3400)字节的可用空间。

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.label30 = new System.Windows.Forms.Label();
             this.MainTab = new FEBuilderGBA.TabControlEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
             this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
             this.CommentTextBox = new FEBuilderGBA.TextBoxEx();
@@ -50,6 +50,19 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(352, 836);
             this.panel6.TabIndex = 150;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 29);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(350, 805);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -74,19 +87,6 @@
             this.MainTab.Size = new System.Drawing.Size(1278, 836);
             this.MainTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTab.TabIndex = 151;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 29);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(350, 805);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // ParamValue2
             // 
@@ -154,6 +154,7 @@
             this.Load += new System.EventHandler(this.ProcsScriptForm_Load);
             this.Shown += new System.EventHandler(this.ProcsScriptForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcsScriptForm_KeyDown);
+            this.Resize += new System.EventHandler(this.ProcsScriptForm_Resize);
             this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 

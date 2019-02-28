@@ -52,7 +52,7 @@ namespace FEBuilderGBA
                         + UnitForm.GetUnitNameAndANY(unit_id2) 
                         + " " 
                         + "(" 
-                            + MapSettingForm.GetMapNameAndANYFE(map_id) 
+                            + MapSettingForm.GetMapNameAndANYFF(map_id) 
                         + ")";
                 }
             );
