@@ -236,7 +236,8 @@ namespace FEBuilderGBA
             public string Name = "";
             public string ResultAndArgs = "";
             public string TypeName = "";
-            public uint Length;
+            public uint Length = 0;
+            public bool IsPointer = false;
 
             public string ToStringInfo()
             {
@@ -957,6 +958,7 @@ namespace FEBuilderGBA
                 p.ResultAndArgs = "";
                 p.Length = 0;
                 p.TypeName = typeName;
+                p.IsPointer = true;
 
                 if (p.Name == "")
                 {

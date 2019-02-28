@@ -259,7 +259,7 @@ namespace FEBuilderGBA
                         uint arg = Program.ROM.p32(addr + 4);
                         if (arg != 0)
                         {
-                            FEBuilderGBA.Address.AddFunction(list, addr + 4, "Procs: " + GetProcsName(a) + " CallASM");
+                            FEBuilderGBA.Address.AddFunction(list, addr + 4, GetProcsName(a) + " CallASM");
                         }
                     }
                     else if (code == 0x01)
