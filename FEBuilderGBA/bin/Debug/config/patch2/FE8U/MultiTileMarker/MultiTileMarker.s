@@ -51,9 +51,17 @@ bne loop
 check_flag:
 ldrh r0,[r7, #0x04]
 cmp  r0,#0x00
-beq  show_tile_marker
+beq  check_enenmy_class
 
 blh  0x08083DA8        @ CheckFlag
+cmp  r0,#0x00
+beq  loop
+
+check_enenmy_class:
+ldrb r0,[r7, #0x03]
+cmp  r0,#0x00
+beq  show_tile_marker
+bl   CheckEnemyClass
 cmp  r0,#0x00
 beq  loop
 
@@ -82,6 +90,51 @@ pop {r6,r7}
 
 ldr  r3, =0x0802754C  @FE8U 元々あるデータの表示を行う
 mov  pc, r3
+
+
+@ 特定の敵クラスがいるかどうか
+CheckEnemyClass:
+push {lr,r4}
+
+mov  r4,r0           @SearchClass
+
+ldr  r0,=0x0202CFBC  @FE8U 敵
+ldr r1,=#0x32 * 0x48 @Enemy
+add r1,r0
+
+sub r0,#0x48        @Because it is troublesome, first subtract
+CheckEnemyClass_loop:
+cmp r0,r1
+bgt CheckEnemyClass_break
+
+add r0,#0x48
+
+ldr r2, [r0]          @unitram->unit
+cmp r2, #0x00
+beq CheckEnemyClass_loop  @Check Empty
+
+check_enemy_class_id:
+ldr r2, [r0, #0x4]
+cmp r2, #0x00
+beq CheckEnemyClass_loop
+
+ldrb r2, [r2, #0x4]
+cmp r2,r4
+bne CheckEnemyClass_loop
+
+found_enenmy_id:
+mov  r0,#0x01
+b    CheckEnemyClass_Exit
+
+CheckEnemyClass_break:
+mov  r0,#0x00
+@b    CheckEnemyClass_Exit
+
+
+CheckEnemyClass_Exit:
+pop {r4}
+pop {r1}
+bx  r1
 
 
 .ltorg

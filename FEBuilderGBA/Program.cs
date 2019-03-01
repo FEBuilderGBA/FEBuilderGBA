@@ -431,11 +431,7 @@ namespace FEBuilderGBA
             ImageSystemIconForm.ClearCache();
 
             //EVENTとASMのキャッシュをクリア
-            if (AsmMapFileAsmCache == null)
-            {
-                AsmMapFileAsmCache = new FEBuilderGBA.AsmMapFileAsmCache();
-            }
-            AsmMapFileAsmCache.ClearCache();
+            AsmMapFileAsmCache = new FEBuilderGBA.AsmMapFileAsmCache();
 
             //RAM
             ReBuildRAM();
