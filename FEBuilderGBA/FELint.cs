@@ -365,7 +365,7 @@ namespace FEBuilderGBA
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("Procs関数ポインタ「{0}」が無効です。", U.To0xHexString(procs)), tag));
             }
-            else if (U.isPadding4(procs))
+            else if (!U.isPadding4(procs))
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("Procs関数ポインタ「{0}」が4バイト単位でありません。\r\n必ず4の倍数である必要があります。", U.To0xHexString(procs)), tag));
@@ -566,13 +566,13 @@ namespace FEBuilderGBA
         }
 
         public const uint SYSTEM_MAP_ID = 0xEEEEEEEE;
-        public static List<FELint.ErrorSt> ScanMAP(uint mapid)
+        public static List<FELint.ErrorSt> ScanMAP(uint mapid, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
 #if !DEBUG 
             try
             {
 #endif
-                return ScanMAPLow(mapid);
+                return ScanMAPLow(mapid, ldrmap);
 #if !DEBUG 
             }
             catch (Exception e)
@@ -586,12 +586,12 @@ namespace FEBuilderGBA
             }
 #endif
         }
-        static List<FELint.ErrorSt> ScanMAPLow(uint mapid)
+        static List<FELint.ErrorSt> ScanMAPLow(uint mapid, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             List<FELint.ErrorSt> errors = new List<ErrorSt>();
             if (mapid == SYSTEM_MAP_ID)
             {
-                ScanSystem(errors);
+                ScanSystem(errors, ldrmap);
                 return errors;
             }
 
@@ -653,7 +653,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static void ScanSystem(List<FELint.ErrorSt> errors)
+        static void ScanSystem(List<FELint.ErrorSt> errors, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             ROMCheck(errors);
 
@@ -696,6 +696,9 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "ScanSystem ImageMagic")) return;
             ImageMagicFEditorForm.MakeCheckError(errors);
             ImageMagicCSACreatorForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem Procs")) return;
+            ProcsScriptForm.MakeCheckError(errors, ldrmap);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

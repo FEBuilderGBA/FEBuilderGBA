@@ -66,7 +66,8 @@ namespace FEBuilderGBA
 
             Program.LintCache.Update(est.Addr, f.GetComment());
             Scan();
-            MainSimpleMenuForm.NeedSystemErrorCheck();
+            //EVENTとASMのキャッシュをクリア FELintの再生成を指示する
+            Program.AsmMapFileAsmCache.ClearCache();
         }
         private void ShowErrorButton_Click(object sender, EventArgs e)
         {
@@ -79,6 +80,8 @@ namespace FEBuilderGBA
 
             Program.LintCache.Update(est.Addr, "");
             Scan();
+            //EVENTとASMのキャッシュをクリア FELintの再生成を指示する
+            Program.AsmMapFileAsmCache.ClearCache();
         }
 
         uint MapID = U.NOT_FOUND;
@@ -92,12 +95,11 @@ namespace FEBuilderGBA
         }
         void Scan()
         {
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
-
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                this.ErrorList = FELint.ScanMAP(this.MapID);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
+
+                this.ErrorList = FELint.ScanMAP(this.MapID, ldrmap);
                 if (! this.ShowAllError.Checked)
                 {
                     this.ErrorList = FELint.HiddenErrorFilter(this.ErrorList);
@@ -979,11 +981,6 @@ namespace FEBuilderGBA
             }
         }
 
-        private void MainSimpleMenuEventErrorForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
-        }
 
     }
 }

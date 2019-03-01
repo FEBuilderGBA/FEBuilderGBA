@@ -206,8 +206,8 @@ namespace FEBuilderGBA
                     return;
                 }
 
-                List<FELint.ErrorSt> systemErrorList = FELint.ScanMAP(FELint.SYSTEM_MAP_ID);
-                if (systemErrorList.Count > 0)
+                List<FELint.ErrorSt> systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
+                if (systemErrorList != null && systemErrorList.Count > 0)
                 {
                     DialogResult dr =
                         R.ShowNoYes("警告\r\nこのROMにはシステムエラーがあるので、リビルドを実行するべきではありません。\r\n危険を承知した上でも、それでも実行しますか？");

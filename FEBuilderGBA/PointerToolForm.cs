@@ -770,7 +770,7 @@ namespace FEBuilderGBA
 
             this.OtherLoadName.Text = R._("別ゲームROM:{0}", Path.GetFileNameWithoutExtension(this.OtherROMFilename));
             //自分のLDRMAPをここで作る. 相手のROMに探索に利用する
-            this.LDRMAPs = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100, 0);
+            this.LDRMAPs = Program.AsmMapFileAsmCache.GetLDRMapCache();
             //相手のROMのLDRMAPを作る.
             this.OtherLDRMAPs = DisassemblerTrumb.MakeLDRMap(this.OtherROMData, 0x100, 0);
         }

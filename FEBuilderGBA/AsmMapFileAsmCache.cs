@@ -79,12 +79,17 @@ namespace FEBuilderGBA
             AsmMapFile map = MakeInstant();
             if (IsStopFlag) return map;
 
+            //LDRマップのクリア
+            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+            this.FELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
+
             List<DisassemblerTrumb.LDRPointer> ldrmap;
 #if !DEBUG 
             try
             {
 #endif
             ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+            this.LDRMapCache = ldrmap;
             if (IsStopFlag) return map;
 #if !DEBUG 
             }
@@ -94,7 +99,20 @@ namespace FEBuilderGBA
                 return map;
             }
 #endif
-
+#if !DEBUG 
+            try
+            {
+#endif
+            ScanFELintByThread(ldrmap);
+            if (IsStopFlag) return map;
+#if !DEBUG 
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString() );
+                return map;
+            }
+#endif
             List<Address> structlist;
 #if !DEBUG 
             try
@@ -543,6 +561,85 @@ namespace FEBuilderGBA
         public bool IsStopFlagOn()
         {
             return this.IsStopFlag;
+        }
+
+        //FELintも重くなったのでスレッド実行しましょう
+        Dictionary<uint, List<FELint.ErrorSt>> FELintCache = new Dictionary<uint,List<FELint.ErrorSt>>();
+        //キャッシュしているLint結果を取得します。
+        //準備中などで、データがない場合はnullを返す。
+        public List<FELint.ErrorSt> GetFELintCache(uint mapid)
+        {
+            if (FELintCache.ContainsKey(mapid))
+            {
+                return FELintCache[mapid];
+            }
+            return null;
+        }
+        delegate void FELintUpdateDelegate();
+
+        //新しいFELintデータに入れ替える
+        public void UpdateFELintCache(Dictionary<uint, List<FELint.ErrorSt>> newFELintCache)
+        {
+            this.FELintCache = newFELintCache;
+
+
+            if (Application.OpenForms.Count <= 0)
+            {//通知するべきフォームがない.
+                return;
+            }
+            Form f = Application.OpenForms[0];
+            if (f == null || f.IsDisposed)
+            {
+                return;
+            }
+
+            f = Program.MainForm();
+            if (f is MainSimpleMenuForm && f.IsDisposed == false)
+            {//メインフォームへ通知
+                MainSimpleMenuForm self = (MainSimpleMenuForm)f;
+                self.Invoke(new FELintUpdateDelegate(self.FELintUpdateCallback));
+            }
+        }
+        //FELintスキャン(スレッドで実行する)
+        void ScanFELintByThread(List<DisassemblerTrumb.LDRPointer> ldrmap)
+        {
+            Dictionary<uint, List<FELint.ErrorSt>> newFELintCache = new Dictionary<uint,List<FELint.ErrorSt>>();
+            //システム全体の問題
+            {
+                List<FELint.ErrorSt> errorList = FELint.ScanMAP(FELint.SYSTEM_MAP_ID, ldrmap);
+                errorList = FELint.HiddenErrorFilter(errorList);
+                newFELintCache[FELint.SYSTEM_MAP_ID] = errorList;
+            }
+
+            uint mapCount = MapSettingForm.GetDataCount();
+            for (int i = 0; i < mapCount ; i++)
+            {
+                if (IsStopFlag)
+                {
+                    return ;
+                }
+
+                uint mapid = (uint)i;
+
+                //このマップのエラースキャン
+                List<FELint.ErrorSt> errorList = FELint.ScanMAP(mapid, ldrmap);
+                errorList = FELint.HiddenErrorFilter(errorList);
+                newFELintCache[mapid] = errorList;
+            }
+            UpdateFELintCache(newFELintCache);
+        }
+
+        List<DisassemblerTrumb.LDRPointer> LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+        public List<DisassemblerTrumb.LDRPointer> GetLDRMapCache()
+        {
+            if (this.LDRMapCache.Count <= 0)
+            {//まだデータがないらしいので仕方ない更新する.
+                List<DisassemblerTrumb.LDRPointer> ldrmap;
+                ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                this.LDRMapCache = ldrmap;
+                return ldrmap;
+            }
+            return this.LDRMapCache;
         }
     }
 }

@@ -120,7 +120,6 @@
             this.Controls.Add(this.EventPanel);
             this.Name = "MainSimpleMenuEventErrorForm";
             this.Text = "エラー";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainSimpleMenuEventErrorForm_FormClosed);
             this.Load += new System.EventHandler(this.ErrorEventErrorForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainSimpleMenuEventErrorForm_KeyDown);
             this.EventPanel.ResumeLayout(false);

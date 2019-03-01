@@ -26,8 +26,8 @@ namespace FEBuilderGBA
                 this.AddressList.BeginUpdate();
                 this.AddressList.Items.Clear();
 
-                
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
 
                 this.ListOAM = new List<Address>();
                 List<Address> listOAM12 = new List<Address>();

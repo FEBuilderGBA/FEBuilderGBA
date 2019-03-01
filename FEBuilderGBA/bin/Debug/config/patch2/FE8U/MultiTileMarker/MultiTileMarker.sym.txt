@@ -1,0 +1,6 @@
+Table=$60
+loop=$0A
+check_mapid=$0C
+break_loop=$38
+check_flag=$16
+show_tile_marker=$26

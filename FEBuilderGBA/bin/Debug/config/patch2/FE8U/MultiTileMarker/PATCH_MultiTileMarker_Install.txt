@@ -1,0 +1,18 @@
+NAME=MultiTileMarker マップに複数の離脱マーカーを表示する(導入)
+NAME.en=MultiTileMarker Display multiple exit markers on the map.(Installer)
+NAME.zh=MultiTileMarker 在地图上显示多个转义标记(Installer)
+TYPE=EA
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:0x027534=0x00 0x4B 0x18 0x47
+
+EA=MultiTileMarker_Install.event
+EDIT_PATCH=PATCH_MultiTileMarker.txt
+
+AUTHOR=7743
+INFO=離脱ポイントを示すオレンジ色のマーカーを増やします。\r\nマップ設定で指定するマーカーの他に、マップ上に表示したいマーカーを指定できます。\r\n複数の離脱ポイントのマークを出したいときに利用します。\r\nまた、こちらの機能で設定するマーカーは、フラグで制御することができます。\r\n盗賊を倒したら、フラグを落として表示を消したり、盗賊の増援と一緒にフラグを立てて、マークを表示したりといった制御ができます。
+INFO.en=Thief Escape Increase the orange marker to indicate the Point.\r\nIn addition to markers specified in Chapter Editor, you can specify the markers you want to display on the map.\r\nUse this when you want to mark multiple Thief Escape Points.\r\nAlso, markers set with this function can be controlled with flags.\r\nIf you defeat the thief, you can control such as flags are dropped and the display is erased, flags are set with reinforcement of thieves, and marks are displayed.
+INFO.zh=增加指示分离点的橙色标记。\r\n除了地图设置中指定的标记外，您还可以指定要在地图上显示的标记。\r\n如果要标记多个分离点，请使用此选项。\r\n此外，使用此功能设置的标记可以使用标志进行控制。\r\n如果你击败小偷，你可以控制诸如标志被丢弃和显示被删除，标志被设置加强盗贼，并显示标记。
+
+

@@ -210,7 +210,7 @@ namespace FEBuilderGBA
                 return;
             }
             string fullfilename = Path.Combine(tempdir, Path.GetFileName(this.AttachDataFilename.Text));
-            File.Copy(this.AttachDataFilename.Text , fullfilename);
+            File.Copy(this.AttachDataFilename.Text , fullfilename , true);
         }
 
         void CopyEtcData(string tempdir)

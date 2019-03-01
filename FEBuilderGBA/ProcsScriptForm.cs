@@ -29,7 +29,7 @@ namespace FEBuilderGBA
                 pleaseWait.DoEvents(R._("準備しています"));
 
                 ProcsList = new List<Address>();
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
                 FindProc find = new FindProc(ProcsList,ldrmap);
 
                 this.AddressList.BeginUpdate();

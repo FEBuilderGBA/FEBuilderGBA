@@ -491,10 +491,9 @@ namespace FEBuilderGBA
             //MODの読込.
             ReLoadMod();
 
-            if (AsmMapFileAsmCache == null)
-            {
-                AsmMapFileAsmCache = new FEBuilderGBA.AsmMapFileAsmCache();
-            }
+            //ASMMapの再構築
+            //以前のデータが残っているとまずいので完全に捨てて再作成します.
+            AsmMapFileAsmCache = new FEBuilderGBA.AsmMapFileAsmCache();
             //asm mapキャッシュの更新.
             AsmMapFileAsmCache.ClearCache();
         }

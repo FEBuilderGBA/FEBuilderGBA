@@ -295,31 +295,7 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<PointerToolForm>();
         }
 
-        //システムエラーチェックをするべきかどうか
-        bool IsCheckSystemErrorCheck()
-        {
-            if (SystemErrorList == null)
-            {//まだチェックしていないのでするべき
-                return true;
-            }
-            //チェックしなくてよい.
-            return false;
-        }
-        //次回システムチェックをしてください.
-        public static void NeedSystemErrorCheck()
-        {
-            Form f = Program.MainForm();
-            if (f is MainSimpleMenuForm)
-            {
-                MainSimpleMenuForm self = (MainSimpleMenuForm)f;
-                //次回チェックするようにnullにする.
-                self.SystemErrorList = null;
-            }
-        }
-
-
         List<U.AddrResult> EventAddrList;
-
 
         public class UnitsAddr
         {
@@ -335,8 +311,7 @@ namespace FEBuilderGBA
 
         List<U.AddrResult> TurnZouenList;
 
-        List<FELint.ErrorSt> SystemErrorList;
-        List<FELint.ErrorSt> MapErrorList;
+        const uint FELINTBUZY_MESSAGE = 0xEECCCC00;
         const uint SYSTEMERROR_MESSAGE = 0xEEDDDD00;
         const uint MAPERROR_MESSAGE    = 0xEEEEEE00;
         const uint WORLDMAP_EVENT = 0xfb;
@@ -450,29 +425,24 @@ namespace FEBuilderGBA
             this.EventAddrList = new List<U.AddrResult>();
 
             //システムエラーのチェック.
-            if (IsCheckSystemErrorCheck())
-            {
-                //色々チェックして重たいので、一定期間でチェックすることにする.
-                this.SystemErrorList = FELint.ScanMAP(FELint.SYSTEM_MAP_ID);
-                if (this.SystemErrorList.Count > 0)
-                {
-                    this.SystemErrorList = FELint.HiddenErrorFilter(this.SystemErrorList);
-                }
+            List<FELint.ErrorSt>  systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
+            if (systemErrorList == null)
+            {//準備中という表記を出す.
+                this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
             }
-            if (this.SystemErrorList.Count > 0)
-            {
-                this.EventAddrList.Add(new U.AddrResult(SYSTEMERROR_MESSAGE, "", SYSTEMERROR_MESSAGE));
+            else if (systemErrorList.Count > 0)
+            {//エラーを表示する.
+                this.EventAddrList.Add(new U.AddrResult(SYSTEMERROR_MESSAGE, R._("{0}個のエラーがあります", systemErrorList.Count), SYSTEMERROR_MESSAGE));
             }
 
             //章内のエラーのチェック
-            this.MapErrorList = FELint.ScanMAP(mapid);
-            if (this.MapErrorList.Count > 0)
+            List<FELint.ErrorSt>  mapErrorList = Program.AsmMapFileAsmCache.GetFELintCache(mapid);
+            if (mapErrorList == null)
+            {//こちらは準備中にはできないので、消す
+            }
+            else if (mapErrorList.Count > 0)
             {
-                this.MapErrorList = FELint.HiddenErrorFilter(this.MapErrorList);
-                if (this.MapErrorList.Count > 0)
-                {
-                    this.EventAddrList.Add(new U.AddrResult(MAPERROR_MESSAGE, "", MAPERROR_MESSAGE));
-                }
+                this.EventAddrList.Add(new U.AddrResult(MAPERROR_MESSAGE, R._("{0}個のエラーがあります", mapErrorList.Count), MAPERROR_MESSAGE));
             }
 
             //開始イベント
@@ -533,19 +503,39 @@ namespace FEBuilderGBA
         //現在の章にエラーがあるか?
         public bool IsErrorFoundByCurrentChapter()
         {
-            if (this.SystemErrorList != null && this.SystemErrorList.Count > 0)
-            {
+            List<FELint.ErrorSt> systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
+            if (systemErrorList == null)
+            {//準備中です
+                return false; //とりあえずエラーはないと答える
+            }
+            else if (systemErrorList.Count > 0)
+            {//エラーがある
                 return true;
             }
-            if (this.MapErrorList != null && this.MapErrorList.Count > 0)
+            if (this.MAP_LISTBOX.SelectedIndex < 0)
             {
+                return false;
+            }
+
+            uint mapid = (uint)this.MAP_LISTBOX.SelectedIndex;
+
+            //章内のエラーのチェック
+            List<FELint.ErrorSt> mapErrorList = Program.AsmMapFileAsmCache.GetFELintCache(mapid);
+            if (mapErrorList == null)
+            {//こちらは準備中にはできないので、消す
+            }
+            else if (mapErrorList.Count > 0)
+            {//エラーがある
                 return true;
             }
+
+            //エラーはない
             return false;
         }
 
+
         //ユニット配置を検索して取得.
-        List<UnitsAddr>  DrawUnits(List<U.AddrResult> units, uint mapid)
+        List<UnitsAddr> DrawUnits(List<U.AddrResult> units, uint mapid)
         {
             List<UnitsAddr> list = new List<UnitsAddr>();
 
@@ -613,10 +603,6 @@ namespace FEBuilderGBA
         private void MAP_LISTBOX_SelectedIndexChanged(object sender, EventArgs e)
         {
             uint mapid = (uint)this.MAP_LISTBOX.SelectedIndex;
-            if (mapid < 0)
-            {
-                return;
-            }
 
             ScanMap(mapid);
             if (!this.Map.IsMapLoad())
@@ -887,39 +873,33 @@ namespace FEBuilderGBA
             uint tag = (uint)(ar.tag & 0xff);
 
             if (ar.tag == SYSTEMERROR_MESSAGE)
-            {//エラー
+            {
                 SolidBrush errorBrush = new SolidBrush(OptionForm.Color_Error_ForeColor());
                 text = R._("システムエラー:");
                 U.DrawText(text, g, boldFont, errorBrush, isWithDraw, bounds);
                 bounds.Y += lineHeight;
 
-                if (this.SystemErrorList == null)
-                {
-                    text = R._("計測中...");
-                }
-                else
-                {
-                    text = R._("{0}個のエラーがあります", this.SystemErrorList.Count);
-                }
-                U.DrawText(text, g, normalFont, errorBrush, isWithDraw, bounds);
+                U.DrawText(ar.name, g, normalFont, errorBrush, isWithDraw, bounds);
                 errorBrush.Dispose();
             }
             else if (ar.tag == MAPERROR_MESSAGE)
-            {//エラー
+            {
                 SolidBrush errorBrush = new SolidBrush(OptionForm.Color_Error_ForeColor());
                 text = R._("エラー:");
                 U.DrawText(text, g, boldFont, errorBrush, isWithDraw, bounds);
                 bounds.Y += lineHeight;
 
-                if (this.MapErrorList == null)
-                {
-                    text = R._("計測中...");
-                }
-                else
-                {
-                    text = R._("{0}個のエラーがあります", this.MapErrorList.Count);
-                }
-                U.DrawText(text, g, normalFont, errorBrush, isWithDraw, bounds);
+                U.DrawText(ar.name, g, normalFont, errorBrush, isWithDraw, bounds);
+                errorBrush.Dispose();
+            }
+            else if (ar.tag == FELINTBUZY_MESSAGE)
+            {//エラー計測中
+                SolidBrush errorBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
+                text = R._("FELint:");
+                U.DrawText(text, g, boldFont, errorBrush, isWithDraw, bounds);
+                bounds.Y += lineHeight;
+
+                U.DrawText(ar.name, g, normalFont, errorBrush, isWithDraw, bounds);
                 errorBrush.Dispose();
             }
             else if (tag == WORLDMAP_EVENT)
@@ -1466,8 +1446,26 @@ namespace FEBuilderGBA
             f.JumpToMAPID((uint)MAP_LISTBOX.SelectedIndex);
         }
 
+        bool IsFELintBusied()
+        {
+            foreach (var a in this.EventAddrList)
+            {
+                if (a.tag == FELINTBUZY_MESSAGE)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-
-
+        //別スレッドで実行しているFELintが完成した場合の通知
+        public void FELintUpdateCallback()
+        {
+            if (!IsFELintBusied())
+            {
+                return;
+            }
+            MAP_LISTBOX_SelectedIndexChanged(null, null);
+        }
     }
 }

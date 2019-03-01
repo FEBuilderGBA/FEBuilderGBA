@@ -1,0 +1,23 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $27534        //FE8U
+jumpToHack(MultiTileMarker)
+POP
+
+ALIGN 4
+MultiTileMarker:
+#incbin "MultiTileMarker.dmp"
+POIN MultiTileMarker_Table
+
+
+ALIGN 4
+#include "MultiTileMarker_Table.event"
+
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif
