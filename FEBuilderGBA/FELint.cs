@@ -73,6 +73,7 @@ namespace FEBuilderGBA
             ,MAGIC_ANIME_EXTENDS //魔法拡張アニメ
             ,STATUS_GAME_OPTION //ゲームオプション
             ,PROCS
+            ,AISCRIPT
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)

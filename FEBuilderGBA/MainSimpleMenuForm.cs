@@ -1144,12 +1144,17 @@ namespace FEBuilderGBA
                 f.Init(FELint.SYSTEM_MAP_ID, false);
                 return;
             }
-            else if (ar.tag == MAPERROR_MESSAGE)
+            if (ar.tag == MAPERROR_MESSAGE)
             {//章内のエラー
                 MainSimpleMenuEventErrorForm f = (MainSimpleMenuEventErrorForm)InputFormRef.JumpForm<MainSimpleMenuEventErrorForm>(U.NOT_FOUND);
                 f.Init(mapid, false);
                 return;
             }
+            if (ar.tag == FELINTBUZY_MESSAGE)
+            {//現在分析中
+                return;
+            }
+
             if (tag == WORLDMAP_EVENT)
             {//ワールドマップイベント
                 if (Program.ROM.RomInfo.version() == 6)

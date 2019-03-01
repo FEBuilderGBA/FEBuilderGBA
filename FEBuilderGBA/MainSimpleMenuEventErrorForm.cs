@@ -399,6 +399,14 @@ namespace FEBuilderGBA
                 show_tag = tag;
                 text = R._("FELint内部エラー");
             }
+            else if (dataType == FELint.Type.PROCS)
+            {
+                text = R._("PROCS");
+            }
+            else if (dataType == FELint.Type.AISCRIPT)
+            {
+                text = R._("AISCRIPT");
+            }
             else
             {
                 text = R._("不明");
@@ -475,6 +483,17 @@ namespace FEBuilderGBA
             {//イベント内で発生したエラー
                 EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
                 f.JumpTo(addr, tag);
+                return;
+            }
+            else if (dataType == FELint.Type.PROCS)
+            {
+                ProcsScriptForm f = (ProcsScriptForm)InputFormRef.JumpForm<ProcsScriptForm>(U.NOT_FOUND);
+                f.JumpTo(addr, tag);
+                return;
+            }
+            else if (dataType == FELint.Type.AISCRIPT)
+            {
+                AIScriptForm f = (AIScriptForm)InputFormRef.JumpForm<AIScriptForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.MAPSETTING_PLIST_OBJECT
@@ -853,7 +872,7 @@ namespace FEBuilderGBA
                         InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();
                     }
                 }
-                return ;
+                return;
             }
             else if (dataType == FELint.Type.RMENU)
             {
@@ -867,7 +886,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.PATCH)
             {
-                PatchForm f =(PatchForm) InputFormRef.JumpForm<PatchForm>();
+                PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
                 f.SelectPatchByTag(tag);
                 return;
             }
