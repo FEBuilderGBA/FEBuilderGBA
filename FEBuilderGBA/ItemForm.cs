@@ -506,5 +506,6 @@ namespace FEBuilderGBA
                 InputFormRef.JumpTo(B21, J_21, "SKILLASSIGNMENT", new string[] {} );
             }
         }
+
     }
 }

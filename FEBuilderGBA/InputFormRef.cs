@@ -5603,8 +5603,42 @@ namespace FEBuilderGBA
             {
                 SwapData(true);
             }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                ClearData();
+            }
         }
 
+        void ClearData()
+        {
+            if (this.UseMenuDeleteAction == false)
+            {//削除は利用できない
+                return;
+            }
+
+            uint destAddr = InputFormRef.SelectToAddr(this.AddressList);
+            if (destAddr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            DialogResult dr = R.ShowYesNo("このデータを消去してもよろしいですか？\r\nこのデータが終端になり、このデータまでが有効なデータとなります。");
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
+            byte[] data = new byte[this.BlockSize];
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm);
+            Program.ROM.write_range(destAddr, data, undodata);
+            Program.Undo.Push(undodata);
+
+            ReloadAddressList();
+
+            InputFormRef.ShowWriteNotifyAnimation(this.SelfForm, destAddr);
+            this.AddressList.Refresh();
+        }
         public void CopyToClipbord()
         {
             uint srcAddr = InputFormRef.SelectToAddr(this.AddressList);
@@ -7205,7 +7239,7 @@ namespace FEBuilderGBA
             f.Show();
 
             ListBox addressList = null;
-            if (selectedID != U.NOT_FOUND || injectionCallback != null)
+            if (selectedID != U.NOT_FOUND)
             {
                 addressList = JumpFormInner(f, selectedID, AddressListName, injectionCallback);
             }
@@ -11053,6 +11087,9 @@ namespace FEBuilderGBA
             listbox.ContextMenu = contextMenu;
         }
 
+        //削除を使える
+        bool UseMenuDeleteAction = false;
+
         public void MakeGeneralAddressListContextMenu(bool useUpDown = true, bool useClear = false, KeyEventHandler keyDown = null)
         {
             ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
@@ -11090,6 +11127,8 @@ namespace FEBuilderGBA
                 menuItem = new MenuItem(R._("無効化する(DEL)"));
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Delete));
                 contextMenu.MenuItems.Add(menuItem);
+
+                this.UseMenuDeleteAction = true;
             }
 
             this.AddressList.ContextMenu = contextMenu;

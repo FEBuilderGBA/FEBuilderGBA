@@ -497,7 +497,7 @@
             this.panel11.Controls.Add(this.B33);
             this.panel11.Controls.Add(this.J_33);
             this.panel11.Controls.Add(this.EXTRA);
-            this.panel11.Location = new System.Drawing.Point(2, 671);
+            this.panel11.Location = new System.Drawing.Point(1, 671);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(767, 55);
@@ -607,7 +607,7 @@
             this.panel10.Controls.Add(this.B30);
             this.panel10.Controls.Add(this.J_6_ITEMUSAGEPOINTER);
             this.panel10.Controls.Add(this.X_JUMP_USEITEM);
-            this.panel10.Location = new System.Drawing.Point(2, 612);
+            this.panel10.Location = new System.Drawing.Point(1, 612);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(767, 55);
@@ -719,16 +719,16 @@
             this.panel9.Controls.Add(this.B28);
             this.panel9.Controls.Add(this.label41);
             this.panel9.Controls.Add(this.J_28);
-            this.panel9.Location = new System.Drawing.Point(2, 556);
+            this.panel9.Location = new System.Drawing.Point(1, 556);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(769, 55);
+            this.panel9.Size = new System.Drawing.Size(767, 55);
             this.panel9.TabIndex = 72;
             // 
             // B32
             // 
             this.B32.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B32.Location = new System.Drawing.Point(467, 26);
+            this.B32.Location = new System.Drawing.Point(466, 26);
             this.B32.Margin = new System.Windows.Forms.Padding(2);
             this.B32.Maximum = new decimal(new int[] {
             255,
@@ -745,7 +745,7 @@
             this.J_32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_32.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_32.Location = new System.Drawing.Point(466, 0);
+            this.J_32.Location = new System.Drawing.Point(465, 0);
             this.J_32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_32.Name = "J_32";
             this.J_32.Size = new System.Drawing.Size(127, 25);
@@ -783,7 +783,7 @@
             this.J_29_ICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_29_ICON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_29_ICON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_29_ICON.Location = new System.Drawing.Point(329, -1);
+            this.J_29_ICON.Location = new System.Drawing.Point(328, -1);
             this.J_29_ICON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_29_ICON.Name = "J_29_ICON";
             this.J_29_ICON.Size = new System.Drawing.Size(66, 25);
@@ -811,7 +811,7 @@
             // B28
             // 
             this.B28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B28.Location = new System.Drawing.Point(119, 25);
+            this.B28.Location = new System.Drawing.Point(118, 25);
             this.B28.Margin = new System.Windows.Forms.Padding(2);
             this.B28.Maximum = new decimal(new int[] {
             255,
@@ -827,7 +827,7 @@
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label41.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label41.Location = new System.Drawing.Point(-1, 28);
+            this.label41.Location = new System.Drawing.Point(-2, 28);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(115, 25);
@@ -841,7 +841,7 @@
             this.J_28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_28.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_28.Location = new System.Drawing.Point(119, -1);
+            this.J_28.Location = new System.Drawing.Point(118, -1);
             this.J_28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_28.Name = "J_28";
             this.J_28.Size = new System.Drawing.Size(99, 25);
@@ -861,10 +861,10 @@
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.W26);
             this.panel8.Controls.Add(this.J_26);
-            this.panel8.Location = new System.Drawing.Point(2, 499);
+            this.panel8.Location = new System.Drawing.Point(1, 499);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(770, 55);
+            this.panel8.Size = new System.Drawing.Size(767, 55);
             this.panel8.TabIndex = 71;
             // 
             // label37
@@ -872,7 +872,7 @@
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label37.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label37.Location = new System.Drawing.Point(407, 0);
+            this.label37.Location = new System.Drawing.Point(405, 0);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(145, 25);
@@ -883,7 +883,7 @@
             // X_VALUE_SHINGEKI_SHOP
             // 
             this.X_VALUE_SHINGEKI_SHOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SHINGEKI_SHOP.Location = new System.Drawing.Point(406, 27);
+            this.X_VALUE_SHINGEKI_SHOP.Location = new System.Drawing.Point(404, 27);
             this.X_VALUE_SHINGEKI_SHOP.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SHINGEKI_SHOP.Maximum = new decimal(new int[] {
             -559939585,
@@ -900,7 +900,7 @@
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label36.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label36.Location = new System.Drawing.Point(255, 0);
+            this.label36.Location = new System.Drawing.Point(253, 0);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(145, 25);
@@ -911,7 +911,7 @@
             // X_VALUE_SHOP
             // 
             this.X_VALUE_SHOP.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SHOP.Location = new System.Drawing.Point(254, 27);
+            this.X_VALUE_SHOP.Location = new System.Drawing.Point(252, 27);
             this.X_VALUE_SHOP.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SHOP.Maximum = new decimal(new int[] {
             -559939585,
@@ -928,7 +928,7 @@
             this.label35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label35.Location = new System.Drawing.Point(560, 0);
+            this.label35.Location = new System.Drawing.Point(558, 0);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(145, 25);
@@ -939,7 +939,7 @@
             // X_VALUE_SEL
             // 
             this.X_VALUE_SEL.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_VALUE_SEL.Location = new System.Drawing.Point(559, 27);
+            this.X_VALUE_SEL.Location = new System.Drawing.Point(557, 27);
             this.X_VALUE_SEL.Margin = new System.Windows.Forms.Padding(2);
             this.X_VALUE_SEL.Maximum = new decimal(new int[] {
             -559939585,
@@ -956,7 +956,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label10.Location = new System.Drawing.Point(-1, 28);
+            this.label10.Location = new System.Drawing.Point(-3, 28);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(115, 25);
@@ -967,7 +967,7 @@
             // W26
             // 
             this.W26.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.W26.Location = new System.Drawing.Point(119, 27);
+            this.W26.Location = new System.Drawing.Point(117, 27);
             this.W26.Margin = new System.Windows.Forms.Padding(2);
             this.W26.Maximum = new decimal(new int[] {
             655535,
@@ -990,7 +990,7 @@
             this.J_26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_26.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_26.Location = new System.Drawing.Point(119, 0);
+            this.J_26.Location = new System.Drawing.Point(117, 0);
             this.J_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_26.Name = "J_26";
             this.J_26.Size = new System.Drawing.Size(126, 25);
@@ -1015,10 +1015,10 @@
             this.panel7.Controls.Add(this.J_24);
             this.panel7.Controls.Add(this.J_20);
             this.panel7.Controls.Add(this.B22);
-            this.panel7.Location = new System.Drawing.Point(2, 442);
+            this.panel7.Location = new System.Drawing.Point(1, 442);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(770, 55);
+            this.panel7.Size = new System.Drawing.Size(767, 55);
             this.panel7.TabIndex = 70;
             // 
             // L_25_COMBO
@@ -1044,7 +1044,7 @@
             this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label28.Location = new System.Drawing.Point(-1, 28);
+            this.label28.Location = new System.Drawing.Point(-3, 28);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(115, 25);
@@ -1055,7 +1055,7 @@
             // B21
             // 
             this.B21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B21.Location = new System.Drawing.Point(186, 28);
+            this.B21.Location = new System.Drawing.Point(184, 28);
             this.B21.Margin = new System.Windows.Forms.Padding(2);
             this.B21.Maximum = new decimal(new int[] {
             255,
@@ -1071,7 +1071,7 @@
             this.J_21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_21.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_21.Location = new System.Drawing.Point(186, 1);
+            this.J_21.Location = new System.Drawing.Point(184, 1);
             this.J_21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_21.Name = "J_21";
             this.J_21.Size = new System.Drawing.Size(64, 25);
@@ -1083,7 +1083,7 @@
             // B20
             // 
             this.B20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B20.Location = new System.Drawing.Point(118, 28);
+            this.B20.Location = new System.Drawing.Point(116, 28);
             this.B20.Margin = new System.Windows.Forms.Padding(2);
             this.B20.Maximum = new decimal(new int[] {
             255,
@@ -1100,7 +1100,7 @@
             this.J_22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_22.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_22.Location = new System.Drawing.Point(253, 1);
+            this.J_22.Location = new System.Drawing.Point(251, 1);
             this.J_22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_22.Name = "J_22";
             this.J_22.Size = new System.Drawing.Size(64, 25);
@@ -1111,7 +1111,7 @@
             // B23
             // 
             this.B23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B23.Location = new System.Drawing.Point(322, 28);
+            this.B23.Location = new System.Drawing.Point(320, 28);
             this.B23.Margin = new System.Windows.Forms.Padding(2);
             this.B23.Maximum = new decimal(new int[] {
             255,
@@ -1125,7 +1125,7 @@
             // B24
             // 
             this.B24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B24.Location = new System.Drawing.Point(389, 28);
+            this.B24.Location = new System.Drawing.Point(387, 28);
             this.B24.Margin = new System.Windows.Forms.Padding(2);
             this.B24.Maximum = new decimal(new int[] {
             255,
@@ -1142,7 +1142,7 @@
             this.J_25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_25.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_25.Location = new System.Drawing.Point(457, 1);
+            this.J_25.Location = new System.Drawing.Point(455, 1);
             this.J_25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_25.Name = "J_25";
             this.J_25.Size = new System.Drawing.Size(64, 25);
@@ -1155,7 +1155,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(457, 27);
+            this.B25.Location = new System.Drawing.Point(455, 27);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -1171,7 +1171,7 @@
             this.J_23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_23.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_23.Location = new System.Drawing.Point(322, 1);
+            this.J_23.Location = new System.Drawing.Point(320, 1);
             this.J_23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_23.Name = "J_23";
             this.J_23.Size = new System.Drawing.Size(64, 25);
@@ -1184,7 +1184,7 @@
             this.J_24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_24.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_24.Location = new System.Drawing.Point(389, 1);
+            this.J_24.Location = new System.Drawing.Point(387, 1);
             this.J_24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_24.Name = "J_24";
             this.J_24.Size = new System.Drawing.Size(64, 25);
@@ -1198,7 +1198,7 @@
             this.J_20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_20.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_20.Location = new System.Drawing.Point(118, 1);
+            this.J_20.Location = new System.Drawing.Point(116, 1);
             this.J_20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_20.Name = "J_20";
             this.J_20.Size = new System.Drawing.Size(64, 25);
@@ -1209,7 +1209,7 @@
             // B22
             // 
             this.B22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B22.Location = new System.Drawing.Point(253, 28);
+            this.B22.Location = new System.Drawing.Point(251, 28);
             this.B22.Margin = new System.Windows.Forms.Padding(2);
             this.B22.Maximum = new decimal(new int[] {
             255,
@@ -1227,7 +1227,7 @@
             this.panel5.Controls.Add(this.CLASS_LISTBOX);
             this.panel5.Controls.Add(this.P16);
             this.panel5.Controls.Add(this.J_16_ITEMCRTIICAL);
-            this.panel5.Location = new System.Drawing.Point(771, 440);
+            this.panel5.Location = new System.Drawing.Point(770, 442);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(351, 227);
@@ -1235,7 +1235,7 @@
             // 
             // L_16_NEWALLOC_ITEMCRTIICAL
             // 
-            this.L_16_NEWALLOC_ITEMCRTIICAL.Location = new System.Drawing.Point(-1, 145);
+            this.L_16_NEWALLOC_ITEMCRTIICAL.Location = new System.Drawing.Point(-2, 145);
             this.L_16_NEWALLOC_ITEMCRTIICAL.Name = "L_16_NEWALLOC_ITEMCRTIICAL";
             this.L_16_NEWALLOC_ITEMCRTIICAL.Size = new System.Drawing.Size(136, 77);
             this.L_16_NEWALLOC_ITEMCRTIICAL.TabIndex = 51;
@@ -1247,10 +1247,10 @@
             this.CLASS_LISTBOX.FormattingEnabled = true;
             this.CLASS_LISTBOX.IntegralHeight = false;
             this.CLASS_LISTBOX.ItemHeight = 18;
-            this.CLASS_LISTBOX.Location = new System.Drawing.Point(137, 0);
+            this.CLASS_LISTBOX.Location = new System.Drawing.Point(138, -1);
             this.CLASS_LISTBOX.Margin = new System.Windows.Forms.Padding(2);
             this.CLASS_LISTBOX.Name = "CLASS_LISTBOX";
-            this.CLASS_LISTBOX.Size = new System.Drawing.Size(210, 220);
+            this.CLASS_LISTBOX.Size = new System.Drawing.Size(212, 220);
             this.CLASS_LISTBOX.TabIndex = 30;
             // 
             // P16
@@ -1272,7 +1272,7 @@
             // 
             this.J_16_ITEMCRTIICAL.AccessibleDescription = "@ITEM_EFFECTIVENESS";
             this.J_16_ITEMCRTIICAL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_16_ITEMCRTIICAL.Location = new System.Drawing.Point(-1, 0);
+            this.J_16_ITEMCRTIICAL.Location = new System.Drawing.Point(-1, -1);
             this.J_16_ITEMCRTIICAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_16_ITEMCRTIICAL.Name = "J_16_ITEMCRTIICAL";
             this.J_16_ITEMCRTIICAL.Size = new System.Drawing.Size(136, 56);
@@ -1305,7 +1305,7 @@
             this.panel4.Controls.Add(this.label67);
             this.panel4.Controls.Add(this.P12);
             this.panel4.Controls.Add(this.J_12_ITEMSTATBOOSTER);
-            this.panel4.Location = new System.Drawing.Point(2, 379);
+            this.panel4.Location = new System.Drawing.Point(1, 379);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1120, 58);

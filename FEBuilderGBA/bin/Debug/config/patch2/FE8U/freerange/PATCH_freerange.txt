@@ -12,7 +12,7 @@ BIN:0x0172EA=000172EA.bin
 BIN:0x01ACD2=0001ACD2.bin
 BIN:0x01B46C=0001B46C.bin
 
-INFO=武器の攻撃レンジ4以上を正しく描画できるようにします。
+INFO=武器の攻撃範囲の攻撃レンジ4以上を正しく描画できるようにします。
 INFO.en=Patches the ROM to correctly draw weapon attack range 4 or more.\r\nImplemented with binary by icecube.\r\n
 INFO.zh=可以正确地绘制武器攻击范围4或更多。
 
