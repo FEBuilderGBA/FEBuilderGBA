@@ -371,6 +371,14 @@ namespace FEBuilderGBA
                     {
                         break;
                     }
+                    if (this.IsFELintInvoke)
+                    {
+                        Application.DoEvents();
+                    }
+                    if (AsyncResult == null)
+                    {
+                        break;
+                    }
                 }
             }
             catch (Exception e)
@@ -578,10 +586,14 @@ namespace FEBuilderGBA
         delegate void FELintUpdateDelegate();
 
         //新しいFELintデータに入れ替える
-        public void UpdateFELintCache(Dictionary<uint, List<FELint.ErrorSt>> newFELintCache)
+        void UpdateFELintCache(Dictionary<uint, List<FELint.ErrorSt>> newFELintCache)
         {
             this.FELintCache = newFELintCache;
 
+            if (IsStopFlag)
+            {
+                return;
+            }
 
             if (Application.OpenForms.Count <= 0)
             {//通知するべきフォームがない.
@@ -593,13 +605,22 @@ namespace FEBuilderGBA
                 return;
             }
 
+            this.IsFELintInvoke = true;
             f = Program.MainForm();
             if (f is MainSimpleMenuForm && f.IsDisposed == false)
             {//メインフォームへ通知
+                if (IsStopFlag)
+                {
+                    return;
+                }
                 MainSimpleMenuForm self = (MainSimpleMenuForm)f;
                 self.Invoke(new FELintUpdateDelegate(self.FELintUpdateCallback));
             }
+            this.IsFELintInvoke = false;
         }
+        //FELintの結果をInvokeしたときに、Joinで終了待ちすると、デッドロックするので、回避するプロセスを入れる.
+        bool IsFELintInvoke = false;
+
         //FELintスキャン(スレッドで実行する)
         void ScanFELintByThread(List<DisassemblerTrumb.LDRPointer> ldrmap)
         {

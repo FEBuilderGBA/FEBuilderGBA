@@ -175,6 +175,7 @@ namespace FEBuilderGBA
             f.EnableButton.Text = R._("{0}パッチを有効にする", patchShowName);
             f.EnableButton.Click += (sender, e) => {
 
+                f.Close();
                 PatchForm patchF = (PatchForm)InputFormRef.JumpForm<PatchForm>();
                 bool r = patchF.ApplyPatch(patchName1, patchName2, patchCombo); ///No Translate
                 if (!r)
@@ -187,5 +188,6 @@ namespace FEBuilderGBA
 
             return checkFunc();
         }
+
     }
 }
