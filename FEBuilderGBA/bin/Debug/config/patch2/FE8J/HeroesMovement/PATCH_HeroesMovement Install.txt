@@ -9,9 +9,10 @@ EA_EXTENDS_UNITMENU:0x05=0x40
 EA=HeroesMovement/HeroesMovement.event
 PATCHED_IF:$FGREP4 HeroesMovement/asm/Shove_TargetCheck.bin=0x10 0xB5 0x04 0x1C
 
-AUTHOR=Stan / Porting: 7743
+AUTHOR=Original work: Stan / Porting: 7743
 
-INFO=StanのHeroesMovementをFE8Jに移植したものです。\r\nプレイヤーユニットが「体当たり」(Shove)、「突飛ばし」(Smite)、「回込み」(Pivot)、「引き戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。\r\nもし、FE8N Skillが導入されていると、設定とは別に、スキルID0x30～スキル0x35でも設定できるようになります。
-INFO.en=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x30 to skill 0x35 separately from setting.
-INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x30 to skill 0x35 separately from setting.
+INFO=StanのHeroesMovementをFE8Jに移植したものです。\r\nプレイヤーユニットが「体当たり」(Shove)、「突飛ばし」(Smite)、「回込み」(Pivot)、「引き戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。\r\nもし、FE8N Skillが導入されていると、設定とは別に、スキルID0x3b～スキル0x3fでも設定できるようになります。\r\n\r\nこのパッチはスタンドアローンで動作させために、ActionReworkしていないため、0x16,0x18,0x1b,0x1cのUnitActionIDを利用します。
+
+INFO.en=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x3b to skill 0x3f separately from setting.\r\n\r\nSince this patch is not UnitActionRework unlike the original, we use UnitActionID of 0x16, 0x18, 0x1b, 0x1c.
+INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x3b to skill 0x3f separately from setting.\r\n\r\nSince this patch is not UnitActionRework unlike the original, we use UnitActionID of 0x16, 0x18, 0x1b, 0x1c.
 

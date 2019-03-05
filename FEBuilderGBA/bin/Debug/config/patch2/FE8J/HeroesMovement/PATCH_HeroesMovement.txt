@@ -1,6 +1,6 @@
 NAME=HeroesMovement Standalone 設定
-NAME.en=Setting HeroesMovement Standalone
-NAME.zh=Setting HeroesMovement Standalone
+NAME.en=HeroesMovement Standalone Setting
+NAME.zh=HeroesMovement Standalone Setting
 
 IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
 
@@ -23,8 +23,7 @@ B1:CLASS=Class(00=ANY)
 B2:ITEM=Item(00=ANY)
 B3:$COMBO HeroesMovement_combo.txt=SkillID
 
-AUTHOR=7743 / Original work: Stan
-
+AUTHOR=Original work: Stan / Stand-alone Ver: 7743
 
 INFO=FEHの移動スキルを使えるユニットを設定します。\r\nユニット、クラス、アイテムなどのさまざまな要件でスキルを利用可能かどうか設定できます。\r\nもし、このパッチをインストール時にFE8Nがあれば、この設定の前にスキルの所持も判断されます。
 INFO.en=Set up a unit that can use FEH's movement skill.\r\nYou can set whether you can use skills with various requirements such as units, classes and items.\r\nIf you have FE 8N at the time of installation of this patch, possession of the skill is also judged before this setting.

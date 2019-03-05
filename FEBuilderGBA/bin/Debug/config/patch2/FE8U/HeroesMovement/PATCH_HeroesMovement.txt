@@ -1,6 +1,6 @@
 NAME=HeroesMovement Standalone 設定
-NAME.en=Setting HeroesMovement Standalone
-NAME.zh=Setting HeroesMovement Standalone
+NAME.en=HeroesMovement Standalone (Setting)
+NAME.zh=HeroesMovement Standalone (Setting)
 
 IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
 
@@ -25,3 +25,5 @@ B3:$COMBO HeroesMovement_combo.txt=SkillID
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems
+
+AUTHOR=Original work: Stan / Stand-alone Ver: 7743

@@ -10,11 +10,13 @@ EA_EXTENDS_UNITMENU:0x05=0x40
 EA=HeroesMovement/HeroesMovement.event
 PATCHED_IF:$FGREP4 HeroesMovement/asm/Shove_TargetCheck.bin=0x10 0xB5 0x04 0x1C
 
-AUTHOR=Stan
+AUTHOR=Original work: Stan / Stand-alone Ver: 7743
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems
 
-INFO=StanのHeroesMovementをSkillSystemsから分離したものです。\r\nプレイヤーユニットが「体当り」(Shove)、「突飛ばし」(Smite)、「回込み」(Pivot)、「引戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。\r\nスキルとは分離したスタンドアローンバージョンです。
-INFO.en=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer units will be able to use "Shove", "Smite", "Pivot", "Reposition", "Swap".\r\nThis is a stand alone version.
-INFO.zh=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer units will be able to use "Shove", "Smite", "Pivot", "Reposition", "Swap".\r\nThis is a stand alone version.
+INFO=StanのHeroesMovementをSkillSystemsから分離したものです。\r\nプレイヤーユニットが「体当たり」(Shove)、「突飛ばし」(Smite)、「回り込み」(Pivot)、「引き戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。\r\nスキルとは分離したスタンドアローンバージョンです。\r\n\r\nこのパッチはスタンドアローンで動作させために、ActionReworkしていないため、0x16,0x18,0x1b,0x1cのUnitActionIDを利用します。
+
+INFO.en=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer units will be able to use "Shove", "Smite", "Pivot", "Reposition", "Swap".\r\nThis is a stand alone version.\r\n\r\nSince this patch is not UnitActionRework unlike the original, we use UnitActionID of 0x16, 0x18, 0x1b, 0x1c.
+
+INFO.en=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer units will be able to use "Shove", "Smite", "Pivot", "Reposition", "Swap".\r\nThis is a stand alone version.\r\n\r\nSince this patch is not UnitActionRework unlike the original, we use UnitActionID of 0x16, 0x18, 0x1b, 0x1c.
