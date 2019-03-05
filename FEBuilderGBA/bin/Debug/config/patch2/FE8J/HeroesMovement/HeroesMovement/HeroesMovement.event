@@ -8,11 +8,11 @@
 #include "Tools/Tool Helpers.txt"
 
 //スキルID
-#define ShoveID 48 //0x30 体当たり
-#define SmiteID 49 //0x31 突飛ばし
-#define PivotID 50 //0x32 回り込み
-#define RepositionID 51 //0x33 引き戻し
-#define SwapID 52 //0x34 入れ替え
+#define ShoveID 0x3b //体当たり
+#define SmiteID 0x3c //突飛ばし
+#define PivotID 0x3d //回り込み
+#define RepositionID 0x3e //引き戻し
+#define SwapID 0x3f //入れ替え
 
 
 //MSGを利用しないので、それぞれの条件はASMで書きます.
