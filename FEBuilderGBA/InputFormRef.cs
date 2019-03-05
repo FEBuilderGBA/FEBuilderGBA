@@ -8679,7 +8679,7 @@ namespace FEBuilderGBA
             uint new_size = new_count * block_size;
             uint original_size = original_count * block_size;
 
-            //拡張領域から探す気はアライメントを 4 にして探します.
+            //拡張領域から探す時はアライメントを 4 にして探します.
             uint searchFreespaceSize = U.Padding4(new_size);
             bool use_ffffffff_term_data = false;
             if (original_count <= 0 && new_size >= 1024)
@@ -8740,10 +8740,11 @@ namespace FEBuilderGBA
                 //データを新規領域にコピー.
                 Program.ROM.write_range(newFreeSapceAddr, orignal_data, undodata);
 
-                if (fillOption == ExpandsFillOption.FIRST)
+                if (fillOption == ExpandsFillOption.FIRST && new_size >= block_size)
                 {
                     //増やした部分は最初のデータで埋める.
                     byte[] first_data = Program.ROM.getBinaryData(orignal_addr, block_size);
+                    new_size -= block_size; //末尾は埋めてはいけない.
                     for (uint start = original_size; start < new_size; start += block_size)
                     {
                         Program.ROM.write_range(newFreeSapceAddr + start, first_data, undodata);
@@ -9960,6 +9961,19 @@ namespace FEBuilderGBA
         {
             uint check_value;
             uint address = Program.ROM.RomInfo.patch_stairs_hack(out check_value);
+            if (address == 0)
+            {
+                return false;
+            }
+            uint a = Program.ROM.u32(address);
+            return (a == check_value);
+        }
+
+        //UnitActionRework
+        public static bool SearchUnitActionReworkPatch()
+        {
+            uint check_value;
+            uint address = Program.ROM.RomInfo.patch_unitaction_rework_hack(out check_value);
             if (address == 0)
             {
                 return false;

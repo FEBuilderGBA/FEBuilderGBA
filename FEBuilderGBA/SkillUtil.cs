@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Text;
+using System.IO;
 
 namespace FEBuilderGBA
 {

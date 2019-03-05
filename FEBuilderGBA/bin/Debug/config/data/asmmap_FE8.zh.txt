@@ -5034,7 +5034,7 @@ r3=X tile position of menu of the right	{U}
 08032320	ActionSupport	{J}
 080323C8	ActionSteal	{J}
 080324A0	ActionSummon	{J}
-080324A0	ActionSummonDK	{J}
+080324cc	ActionSummonDK	{J}
 080326C0	BATTLE_GOTO1_IfNobodyIsDead	{J}
 08032700	DidUnitDie	{J}
 08032714	BATTLE_ProbablyMakesTheDeadUnitDissapear	{J}

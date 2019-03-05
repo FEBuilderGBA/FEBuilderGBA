@@ -38,6 +38,7 @@ namespace FEBuilderGBA
                 sb.Append(name);
                 sb.AppendLine(":");
                 sb.AppendLine("POP");
+                sb.AppendLine("#define " + name + " " + U.To0xHexString(addr));
             }
         }
 

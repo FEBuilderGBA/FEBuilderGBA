@@ -11038,6 +11038,15 @@ To
 :最新版
 Latest edition
 
+:このROMには、UnitAction Patchが適応されています。
+UnitAction Patch is applied to this ROM.
+
+:関数ポインタ
+Function pointer.
+
+:ユニットアクションポインタ
+Unit action pointer.
+
 :アニメ内容の先頭アドレス
 Start address of animation content
 

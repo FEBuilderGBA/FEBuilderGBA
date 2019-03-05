@@ -310,6 +310,7 @@ namespace FEBuilderGBA
         uint dic_title_pointer();    //辞書タイトルポインタ
         uint itemicon_mine_id();  // アイテムアイコンのフレイボムの位置
         uint item_gold_id();  // お金を取得するイベントに利用されるゴールドのID
+        uint unitaction_function_pointer();  // ユニットアクションポインタ
         uint lookup_table_battle_terrain_00_pointer(); //戦闘アニメの床
         uint lookup_table_battle_terrain_01_pointer(); //戦闘アニメの床
         uint lookup_table_battle_terrain_02_pointer(); //戦闘アニメの床
@@ -368,6 +369,7 @@ namespace FEBuilderGBA
         uint patch_skip_worldmap_fix(out uint enable_value); //skip_worldmap_fix patch
         uint patch_generic_enemy_portrait_extends(out uint enable_value);//一般兵の顔 拡張
         uint patch_stairs_hack(out uint enable_value); //階段拡張
+        uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
         byte[] defualt_event_script_term_code(); //イベント命令を終了させるディフォルトコード
         byte[] defualt_event_script_toplevel_code(); //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
         byte[] defualt_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)

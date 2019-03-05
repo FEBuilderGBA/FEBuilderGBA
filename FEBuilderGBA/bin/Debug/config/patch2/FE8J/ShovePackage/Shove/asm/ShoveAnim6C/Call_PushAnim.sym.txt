@@ -1,2 +1,0 @@
-prWaitMove6C_MoveTowardsGoal=$14
-EALiterals=$14

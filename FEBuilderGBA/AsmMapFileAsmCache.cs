@@ -609,12 +609,15 @@ namespace FEBuilderGBA
             f = Program.MainForm();
             if (f is MainSimpleMenuForm && f.IsDisposed == false)
             {//メインフォームへ通知
-                if (IsStopFlag)
+                try
                 {
-                    return;
+                    MainSimpleMenuForm self = (MainSimpleMenuForm)f;
+                    self.Invoke(new FELintUpdateDelegate(self.FELintUpdateCallback));
                 }
-                MainSimpleMenuForm self = (MainSimpleMenuForm)f;
-                self.Invoke(new FELintUpdateDelegate(self.FELintUpdateCallback));
+                catch (Exception e)
+                {
+                    Log.Error(e.ToString());
+                }
             }
             this.IsFELintInvoke = false;
         }

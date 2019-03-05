@@ -1,0 +1,6 @@
+0=--
+30=Shove 体当たり
+31=Smite 突飛ばし
+32=Pivot 回り込み
+33=Reposition 引き戻し
+34=Swap 入れ替え

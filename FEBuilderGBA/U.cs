@@ -1924,6 +1924,10 @@ namespace FEBuilderGBA
             }
 
             Debug.Assert(need.Length > 0);
+            if (need.Length <= 0)
+            {
+                return U.NOT_FOUND;
+            }
             if (start > end)
             {//データ数が足りない
                 return U.NOT_FOUND;

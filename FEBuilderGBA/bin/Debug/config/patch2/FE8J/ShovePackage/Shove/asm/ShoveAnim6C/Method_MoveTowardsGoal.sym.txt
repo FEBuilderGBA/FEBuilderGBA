@@ -1,2 +1,0 @@
-prMoveMOVEUNITTowards=$18
-EALiterals=$18

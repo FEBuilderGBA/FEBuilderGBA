@@ -1,3 +1,0 @@
-prGetShoveTargetOffset=$58
-EALiterals=$58
-ACTION_SHOVE=$5C

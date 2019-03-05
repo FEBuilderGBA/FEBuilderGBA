@@ -401,19 +401,6 @@ namespace FEBuilderGBA
                 addr += eearg.BlockSize;
             }
 
-            {//終端
-                Program.ROM.write_u32(addr + 0, 0, undodata);
-                Program.ROM.write_u32(addr + 4, 0, undodata);
-                Program.ROM.write_u32(addr + 8, 0, undodata);
-                Program.ROM.write_u32(addr + 12, 0, undodata);
-                Program.ROM.write_u32(addr + 16, 0, undodata);
-                Program.ROM.write_u32(addr + 20, 0, undodata);
-                Program.ROM.write_u32(addr + 24, 0, undodata);
-                Program.ROM.write_u32(addr + 28, 0, undodata);
-                Program.ROM.write_u32(addr + 32, 0, undodata);
-                addr += eearg.BlockSize;
-            }
-
             //最後のメニューと新規確保したメニューの位置を入れ替える.
             if (eearg.OldDataCount < eearg.NewDataCount && eearg.OldDataCount >= 1)
             {
@@ -424,6 +411,19 @@ namespace FEBuilderGBA
 
                 Program.ROM.write_range(oldEndAddr, newEndData, undodata);
                 Program.ROM.write_range(newEndAddr, endEndData, undodata);
+            }
+
+            {//終端
+                addr = eearg.NewBaseAddress + ((eearg.NewDataCount - 1) * eearg.BlockSize);
+                Program.ROM.write_u32(addr + 0, 0, undodata);
+                Program.ROM.write_u32(addr + 4, 0, undodata);
+                Program.ROM.write_u32(addr + 8, 0, undodata);
+                Program.ROM.write_u32(addr + 12, 0, undodata);
+                Program.ROM.write_u32(addr + 16, 0, undodata);
+                Program.ROM.write_u32(addr + 20, 0, undodata);
+                Program.ROM.write_u32(addr + 24, 0, undodata);
+                Program.ROM.write_u32(addr + 28, 0, undodata);
+                Program.ROM.write_u32(addr + 32, 0xFFFFFFFF, undodata); //nullが連続していると、間違われることがあるので、最終単に0xFFFFFFFFを入れる.
             }
         }
 

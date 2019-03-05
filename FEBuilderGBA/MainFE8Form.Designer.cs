@@ -76,6 +76,7 @@
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -219,7 +220,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -637,6 +637,13 @@
             // 
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
             this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
+            // 
+            // ToolUseFlagStripMenuItem6
+            // 
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
             // 
             // FlagNameToolStripMenuItem
             // 
@@ -1972,7 +1979,7 @@
             // 
             // EventFunctionPointerButton
             // 
-            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 566);
+            this.EventFunctionPointerButton.Location = new System.Drawing.Point(814, 564);
             this.EventFunctionPointerButton.Margin = new System.Windows.Forms.Padding(2);
             this.EventFunctionPointerButton.Name = "EventFunctionPointerButton";
             this.EventFunctionPointerButton.Size = new System.Drawing.Size(200, 36);
@@ -2277,13 +2284,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // ToolUseFlagStripMenuItem6
-            // 
-            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
-            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
-            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
-            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
             // 
             // MainFE8Form
             // 

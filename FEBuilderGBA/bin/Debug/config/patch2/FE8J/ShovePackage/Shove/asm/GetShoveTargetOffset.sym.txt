@@ -1,3 +1,0 @@
-prUnit_CanStandOnPosition=$28
-EALiterals=$28
-End=$20

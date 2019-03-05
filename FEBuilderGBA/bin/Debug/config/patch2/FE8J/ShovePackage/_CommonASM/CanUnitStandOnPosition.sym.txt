@@ -1,3 +1,0 @@
-ReturnFalse=$3A
-End=$3C
-EALiterals=$54

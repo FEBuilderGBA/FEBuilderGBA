@@ -1,2 +1,0 @@
-End=$4E
-EALiterals=$58

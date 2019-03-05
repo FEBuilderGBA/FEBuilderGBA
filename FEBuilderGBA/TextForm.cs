@@ -852,6 +852,28 @@ namespace FEBuilderGBA
             Debug.Assert(simpleList[6].Units[7] == 0x0);
         }
 
+        public static void TESTNOW_TEXTPARSE10()
+        {
+            string text =
+            "@000C@0010@0102@0080@001D@0016...@0004@0003\r\n" + ///No Translate
+            "@0080@001C.....@0005@0003" ; ///No Translate
+            List<TextBlock> simpleList;
+            ParseTextList(text, out simpleList);
+
+            //位置を更新
+            UpdatePosstion(ref simpleList);
+
+            Debug.Assert(simpleList[0].Code1 == 0xc);
+            Debug.Assert(simpleList[0].Code2 == 0x10); 
+            Debug.Assert(simpleList[0].Code3 == 0x102);
+            Debug.Assert(simpleList[0].SrcText == "@000C@0010@0102");///No Translate
+
+            Debug.Assert(simpleList[1].Code1 == 0xc);
+            Debug.Assert(simpleList[1].Code2 == 0x0);
+            Debug.Assert(simpleList[1].Code3 == 0x0);
+            Debug.Assert(simpleList[1].SrcText == "@0080@001D@0016...@0004@0003\r\n@0080@001C.....@0005@0003");///No Translate
+        }
+
 #endif
 
 
@@ -1622,24 +1644,42 @@ namespace FEBuilderGBA
         }
         static string StripDrawSerifText(TextBlock code)
         {
-            string text;
             if (code.SrcText.Length > 5 && code.SrcText[0] == '@')
             {//@0009セリフ みたいな普通の形式であれば、 @0009等の位置情報を削る.
-                if (code.Code1 <= 0xF)
+                if (code.Code1 > 0xF)
                 {
-                    text = code.SrcText.Substring(5);
+                    return code.SrcText;
                 }
-                else
-                {
-                    text = code.SrcText;
+
+                //削るコードが位置情報である確認
+                string stripCodeString = code.SrcText.Substring(1,5);
+                uint stripCode = U.atoh(stripCodeString);
+                if (stripCode > 0xF)
+                {//削ってはいけないコード
+                    return code.SrcText;
                 }
+
+                string text = code.SrcText.Substring(5);
+                return text;
             }
-            else
-            {
-                text = code.SrcText;
-            }
-            return text;
+            return code.SrcText;
         }
+
+        public static void TEST_StripDrawSerifText()
+        {//削っていいコードかどうか確認する.
+            TextBlock code = new TextBlock();
+            code.Code1 = 0xc;
+            code.Code2 = 0x0;
+            code.Code3 = 0x0;
+            code.Error = "";
+            code.isJump = false;
+            code.SrcText = "@0080@001D@0016...@0004@0003\r\n@0080@001C.....@0005@0003";///No Translate
+            
+            string a = StripDrawSerifText(code);
+            Debug.Assert(a == code.SrcText);
+        }
+
+
         void ShowFloatingControlpanel()
         {
             int y;

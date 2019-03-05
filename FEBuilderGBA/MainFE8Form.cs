@@ -1052,6 +1052,7 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolUseFlagForm>();
         }
+
     }
 
 }

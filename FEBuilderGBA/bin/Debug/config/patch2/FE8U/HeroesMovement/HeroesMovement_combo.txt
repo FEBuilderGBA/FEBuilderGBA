@@ -1,0 +1,6 @@
+0=--
+7a=Shove 体当たり
+7b=Smite 突飛ばし
+88=Pivot 回り込み
+89=Reposition 引き戻し
+8a=Swap 入れ替え

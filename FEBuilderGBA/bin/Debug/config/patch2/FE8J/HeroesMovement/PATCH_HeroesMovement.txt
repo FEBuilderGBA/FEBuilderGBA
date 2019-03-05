@@ -1,0 +1,24 @@
+NAME=HeroesMovement Standalone 設定
+NAME.en=Setting HeroesMovement Standalone
+NAME.zh=Setting HeroesMovement Standalone
+
+IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END HeroesMovement/asm/CheckHasSkillStandalone.bin
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO HeroesMovement_combo.txt=SkillID

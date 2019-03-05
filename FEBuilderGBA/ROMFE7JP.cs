@@ -312,6 +312,7 @@ namespace FEBuilderGBA
         public uint dic_title_pointer() { return 0x0; }   //辞書タイトルポインタ
         public uint itemicon_mine_id() { return 0x8c; }  // アイテムアイコンのフレイボムの位置
         public uint item_gold_id() { return 0x76; }  // お金を取得するイベントに利用されるゴールドのID
+        public uint unitaction_function_pointer() { return 0; }  // ユニットアクションポインタ
         public uint lookup_table_battle_terrain_00_pointer() { return 0x53214; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_01_pointer() { return 0x53198; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_02_pointer() { return 0x531A0; }//戦闘アニメの床
@@ -370,6 +371,7 @@ namespace FEBuilderGBA
         public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x7428; } //一般兵の顔 拡張
         public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x219F8; } //階段拡張
+        public uint patch_unitaction_rework_hack(out uint enable_value) { enable_value = 0; return 0x0; } //ユニットアクションの拡張
         public byte[] defualt_event_script_term_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
         public byte[] defualt_event_script_mapterm_code() { return new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード

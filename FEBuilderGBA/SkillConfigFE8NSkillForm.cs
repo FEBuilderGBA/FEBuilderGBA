@@ -332,5 +332,6 @@ namespace FEBuilderGBA
                 UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 2 });
             }
         }
+
     }
 }

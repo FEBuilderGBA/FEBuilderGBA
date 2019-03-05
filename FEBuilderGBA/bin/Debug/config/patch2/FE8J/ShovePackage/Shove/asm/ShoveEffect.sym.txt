@@ -1,3 +1,0 @@
-prMakeShoveTargetList=$24
-EALiterals=$24
-pShoveTargetSelectionDefinition=$28
