@@ -1,9 +1,9 @@
 #define csvmacro000(arg000,arg001,arg002,arg003) "BYTE arg000 arg001 arg002 arg003 "
 
 HeroesMovement_Table:
-csvmacro000(0x01,0x00,0x00,0x3b)      // ƒGƒCƒŠ[ƒN    Shove ‘Ì“–‚½‚è
-csvmacro000(0x02,0x00,0x00,0x3c)      // ƒ[ƒg          Smite ‚Ô‚¿‚©‚Ü‚µ
-csvmacro000(0x00,0x09,0x00,0x3c)      // ƒA[ƒ}[      Smite ‚Ô‚¿‚©‚Ü‚µ
-csvmacro000(0x00,0x05,0x00,0x3f)      // ƒ\ƒVƒAƒ‹      Swap “ü‚ê‘Ö‚¦
-csvmacro000(0x00,0x00,0x09,0x3e)      // ƒŒƒCƒsƒA      Reposition ˆø‚«–ß‚µ
+csvmacro000(0x01,0x00,0x00,0x3b)      // ã‚¨ã‚¤ãƒªãƒ¼ã‚¯    Shove ä½“å½“ãŸã‚Š
+csvmacro000(0x02,0x00,0x00,0x3c)      // ã‚¼ãƒˆ          Smite ã¶ã¡ã‹ã¾ã—
+csvmacro000(0x00,0x09,0x00,0x3c)      // ã‚¢ãƒ¼ãƒãƒ¼      Smite ã¶ã¡ã‹ã¾ã—
+csvmacro000(0x00,0x05,0x00,0x3f)      // ã‚½ã‚·ã‚¢ãƒ«      Swap å…¥ã‚Œæ›¿ãˆ
+csvmacro000(0x00,0x00,0x09,0x3e)      // ãƒ¬ã‚¤ãƒ”ã‚¢      Reposition å¼•ãæˆ»ã—
 BYTE 0x00 0x00 0x00 0x00    // term
