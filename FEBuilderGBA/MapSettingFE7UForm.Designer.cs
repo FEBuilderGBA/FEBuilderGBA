@@ -34,6 +34,9 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.W20 = new System.Windows.Forms.NumericUpDown();
             this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
@@ -95,7 +98,6 @@
             this.J_104 = new System.Windows.Forms.Label();
             this.J_100 = new System.Windows.Forms.Label();
             this.J_96 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
             this.W94 = new System.Windows.Forms.NumericUpDown();
             this.J_94 = new System.Windows.Forms.Label();
             this.B61 = new System.Windows.Forms.NumericUpDown();
@@ -164,8 +166,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.B45 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.L_42_SONGPLAY = new System.Windows.Forms.Button();
             this.L_42_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_40_SONGPLAY = new System.Windows.Forms.Button();
@@ -249,7 +249,7 @@
             this.B15 = new System.Windows.Forms.NumericUpDown();
             this.J_15 = new System.Windows.Forms.Label();
             this.B14 = new System.Windows.Forms.NumericUpDown();
-            this.B_14 = new System.Windows.Forms.Label();
+            this.J_14 = new System.Windows.Forms.Label();
             this.B13 = new System.Windows.Forms.NumericUpDown();
             this.J_13 = new System.Windows.Forms.Label();
             this.B12 = new System.Windows.Forms.NumericUpDown();
@@ -672,7 +672,7 @@
             this.panel3.Controls.Add(this.B15);
             this.panel3.Controls.Add(this.J_15);
             this.panel3.Controls.Add(this.B14);
-            this.panel3.Controls.Add(this.B_14);
+            this.panel3.Controls.Add(this.J_14);
             this.panel3.Controls.Add(this.B13);
             this.panel3.Controls.Add(this.J_13);
             this.panel3.Controls.Add(this.B12);
@@ -699,6 +699,39 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1640, 939);
             this.panel3.TabIndex = 189;
+            // 
+            // label68
+            // 
+            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label68.Location = new System.Drawing.Point(1103, -1);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(525, 32);
+            this.label68.TabIndex = 236;
+            this.label68.Text = "資産評価";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Location = new System.Drawing.Point(857, 370);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(240, 32);
+            this.label20.TabIndex = 167;
+            this.label20.Text = "経験評価";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(639, 370);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(219, 32);
+            this.label18.TabIndex = 166;
+            this.label18.Text = "攻略評価";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_20_DIFFCULTY
             // 
@@ -1398,17 +1431,6 @@
             this.J_96.Text = "エリウッドノーマル";
             this.J_96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label68
-            // 
-            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label68.Location = new System.Drawing.Point(1103, -1);
-            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(525, 32);
-            this.label68.TabIndex = 236;
-            this.label68.Text = "資産評価";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // W94
             // 
             this.W94.Location = new System.Drawing.Point(1021, 903);
@@ -2054,28 +2076,6 @@
             this.label21.TabIndex = 168;
             this.label21.Text = "Aエリウッドノーマル";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(857, 370);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(240, 32);
-            this.label20.TabIndex = 167;
-            this.label20.Text = "経験評価";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(639, 370);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(219, 32);
-            this.label18.TabIndex = 166;
-            this.label18.Text = "攻略評価";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_42_SONGPLAY
             // 
@@ -3030,13 +3030,14 @@
             // 
             // J_15
             // 
+            this.J_15.AccessibleDescription = "@MAPSETTING_ID2";
             this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_15.Location = new System.Drawing.Point(6, 370);
             this.J_15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_15.Name = "J_15";
             this.J_15.Size = new System.Drawing.Size(210, 32);
             this.J_15.TabIndex = 38;
-            this.J_15.Text = "???";
+            this.J_15.Text = "章タイトル画像2";
             this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B14
@@ -3053,17 +3054,17 @@
             this.B14.Size = new System.Drawing.Size(64, 25);
             this.B14.TabIndex = 10;
             // 
-            // B_14
+            // J_14
             // 
-            this.B_14.AccessibleDescription = "@MAPSETTING_ID";
-            this.B_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.B_14.Location = new System.Drawing.Point(6, 339);
-            this.B_14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.B_14.Name = "B_14";
-            this.B_14.Size = new System.Drawing.Size(210, 32);
-            this.B_14.TabIndex = 36;
-            this.B_14.Text = "ID";
-            this.B_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_14.AccessibleDescription = "@MAPSETTING_ID";
+            this.J_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_14.Location = new System.Drawing.Point(6, 339);
+            this.J_14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_14.Name = "J_14";
+            this.J_14.Size = new System.Drawing.Size(210, 32);
+            this.J_14.TabIndex = 36;
+            this.J_14.Text = "章タイトル画像";
+            this.J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B13
             // 
@@ -3081,6 +3082,7 @@
             // 
             // J_13
             // 
+            this.J_13.AccessibleDescription = "@MAPSETTING_PREP_SCREEN_BOOL";
             this.J_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_13.Location = new System.Drawing.Point(6, 308);
             this.J_13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -3728,7 +3730,7 @@
         private System.Windows.Forms.NumericUpDown B15;
         private System.Windows.Forms.Label J_15;
         private System.Windows.Forms.NumericUpDown B14;
-        private System.Windows.Forms.Label B_14;
+        private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.NumericUpDown B13;
         private System.Windows.Forms.Label J_13;
         private System.Windows.Forms.NumericUpDown B12;

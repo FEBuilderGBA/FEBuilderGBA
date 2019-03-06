@@ -3502,7 +3502,14 @@ namespace FEBuilderGBA
             }
             else if (linktype == "IMAGECHAPTER")
             {//章タイトル
-                InputFormRef.JumpForm<ImageChapterTitleForm>(value);
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte())
+                {
+                    InputFormRef.JumpForm<ImageChapterTitleFE7Form>(value, "AddressList", src_object);
+                }
+                else
+                {
+                    InputFormRef.JumpForm<ImageChapterTitleForm>(value);
+                }
             }
             else if (linktype == "UNITPALETTE")
             {//ユニットパレット
@@ -3510,11 +3517,11 @@ namespace FEBuilderGBA
                 {
                     value = value + 1;
                 }
-                InputFormRef.JumpForm<ImageUnitPaletteForm>(value - 1);
+                InputFormRef.JumpForm<ImageUnitPaletteForm>(value - 1, "AddressList", src_object);
             }
             else if (linktype == "UNITCUSTOMBATTLEANIME")
             {//ユニット専用アニメ
-                InputFormRef.JumpForm<UnitCustomBattleAnimeForm>(value, "N2_AddressList");
+                InputFormRef.JumpForm<UnitCustomBattleAnimeForm>(value, "N2_AddressList", src_object);
             }
             else if (linktype == "WORLDMAPEVENT")
             {//ワールドマップイベント
@@ -10447,7 +10454,42 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_ID")
             {
-                str = R._("マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n");
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    str = R._("章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
+                }
+                else
+                {
+                    str = R._("章タイトル画像を表示するためのIDです。");
+                }
+            }
+            else if (str == "@MAPSETTING_ID2")
+            {
+                if (Program.ROM.RomInfo.version() >= 8)
+                {
+                    str = R._("前作の残骸です。利用されません。");
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDです。");
+                }
+                else if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
+                }
+                else
+                {
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDです。");
+                }
+            }
+            else if (str == "@MAPSETTING_PREP_SCREEN_BOOL")
+            {
+                if (Program.ROM.RomInfo.version() >= 8)
+                {
+                    str = R._("前作の残骸です。利用されません。");
+                    str = str + "\r\n" + R._("以前は、進撃準備画面を利用するかどうかの判定に利用されていました。");
+                }
+                else
+                {
+                    str = R._("進撃準備画面を利用するかどうかのbool値です。\r\n0の場合、進撃準備画面は利用されません。\r\n1の場合、進撃準備画面が利用されます。");
+                }
             }
             else if (str == "@UNIT_ID")
             {
@@ -10554,10 +10596,6 @@ namespace FEBuilderGBA
                 {
                     str += R._("この値は、ワールドマップイベントテーブルへのIDです。");
                 }
-            }
-            else if (str == "@MAPSETTING_ID")
-            {
-                str = R._("マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n");
             }
             else if (str == "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY")
             {

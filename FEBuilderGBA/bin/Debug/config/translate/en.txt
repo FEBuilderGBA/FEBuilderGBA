@@ -4396,8 +4396,26 @@ Activate the event from "start turn" to "end turn".
 :誰のターンにイベントを動作させるかを選択します。\r\n例えば、敵ターンに増援イベントを作ると、敵が即動くので難易度があがってしまいます。
 You determine which turn the event occurs on.\r\nFor example, if you make reinforcement events on enemy turns, the enemy moves instantly and the difficulty level will rise.
 
-:マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n
-Determines Map ID.\r\nIn order to avoid confusion, specify this in the order as listed.\r\n
+:章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
+This is an ID for displaying the chapter title image.\r\nHowever,This is not used because FE7U uses text format data.
+
+:章タイトル画像を表示するためのIDです。
+Chapter title ID for displaying the title title image.
+
+:前作の残骸です。利用されません。
+Leftover data from previous FE. Unused in this game.
+
+:ヘクトル編の章タイトル画像を表示するためのIDです。
+This is the ID for displaying the chapter title image of Hector's edition.
+
+:ヘクトル編の章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
+This is an ID for displaying the chapter title image of Hector's edition.\r\nHowever,This is not used because FE7U uses text format data.
+
+:以前は、進撃準備画面を利用するかどうかの判定に利用されていました。
+Previously, it was used to judge whether to use the advancement preparation screen.
+
+:進撃準備画面を利用するかどうかのbool値です。\r\n0の場合、進撃準備画面は利用されません。\r\n1の場合、進撃準備画面が利用されます。
+It is a bool value as to whether or not to use the advancement preparation screen.\r\nIf it is 0, the attack advancement screen is not used.\r\nIf it is 1, the attack advancement screen will be used.
 
 :ユニットIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n
 Determines unit ID.\r\nIn order to avoid confusion, match with unit order as listed.\r\n
@@ -4494,9 +4512,6 @@ Determines what number of enemies must remain for the Victory BGM to play.\r\nNo
 
 :フラグ4を有効にした場合に、切り替える第2BGMを指定します。
 When flag 4 is enabled, set the map to use the secondary BGM.
-
-:前作の残骸です。利用されません。
-Leftover data from previous FE. Unused in this game.
 
 :{0}の▲マークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\nマークを消す場合は、255 , 0 を設定してください。\r\n
 The ▲ mark of {0} is displayed.\r\nHowever, it is only displayed.\r\n\r\nActual {0} is set from "{0}" in detail menu.\r\nTo erase the mark, set 255, 0.\r\n
@@ -6817,9 +6832,6 @@ Tactics Rank A
 :離脱ポイントへJump
 Edit Escape Point
 
-:章タイトルへJump
-Edit Chapter Title
-
 :クリア条件(表示のみ)
 Clear Condition
 
@@ -6841,6 +6853,12 @@ Enemy Phase BGM
 :味方フェーズBGM
 Player Phase BGM
 
+:初期座標
+Initial coord
+
+:章タイトル画像
+Chapter Title
+
 :戦闘準備の有無
 Battle Prep Y/N?
 
@@ -6861,6 +6879,15 @@ Object type (Plist)
 
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
+
+:資産評価
+Asset evaluation
+
+:経験評価
+Experience evaluation
+
+:攻略評価
+Tactics evaluation
 
 :00=None(制圧)
 00=Seize
@@ -6913,9 +6940,6 @@ Eliwood Hard
 :エリウッドノーマル
 Eliwood Normal
 
-:資産評価
-Asset evaluation
-
 :Dヘクトルハード
 D Hector Hard
 
@@ -6963,12 +6987,6 @@ A Eliwood Hard
 
 :Aエリウッドノーマル
 A Eliwood Normal
-
-:経験評価
-Experience evaluation
-
-:攻略評価
-Tactics evaluation
 
 :章プロローグBGM(ヘクトル編)
 Chapter Prologue BGM (Hector)
@@ -7018,8 +7036,8 @@ Enemy Phase BGM (Eliwood)
 :味方フェーズBGM(エリウッド編)
 Player Phase BGM (Eliwood)
 
-:初期座標
-Initial coord
+:章タイトル画像2
+Chapter Title 2
 
 :章タイトル文字(ヘクトル)
 Chapter Title Ch.(Hector)
@@ -7137,6 +7155,9 @@ Enemy Phase BGM 2 (X)
 
 :味方フェーズBGM2(X)
 Player Phase BGM 2 (X)
+
+:章タイトル画像2(X)
+Chapter title image 2 (X).
 
 :戦闘準備の有無(X)
 Enable Battle Prep? (X)
