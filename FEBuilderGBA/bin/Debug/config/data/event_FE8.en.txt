@@ -105,7 +105,7 @@
 211A0000	Removes bubbles and portraits Bundled(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
 2012XXXX	Change to[XXXX:MUSIC:Song](MUSC)	{MUSIC}
-2014XXXX	Change to[XXXX:MUSIC:Song](MUSS)
+2014XXXX	Change to[XXXX:MUSIC:Song] while saving the previous song(MUSS)
 2016XXXX	Change to[XXXX:SOUND:sound effect](SOUN)	{MUSIC}
 2213XXXX	Change to[XXXX:MUSIC:Song] With Fade out(MUSCFAST)	{MUSIC}
 2413XXXX	Change to[XXXX:MUSIC:Song] With Fade out(MUSCMID)	{MUSIC}

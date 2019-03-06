@@ -1,0 +1,18 @@
+NAME=HeroesMovement Standalone(Installer)
+NAME.en=HeroesMovement Standalone(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EXTENDS:0x2000=TEXT
+EA_EXTENDS_UNITMENU:0x05=0x40
+
+EA=HeroesMovement/HeroesMovement.event
+PATCHED_IF:$FGREP4 HeroesMovement/asm/Shove_TargetCheck.bin=0x10 0xB5 0x04 0x1C
+
+AUTHOR=Original work: Stan / Porting: 7743
+
+INFO=StanのHeroesMovementをFE8Jに移植したものです。\r\nプレイヤーユニットが「体当たり」(Shove)、「突飛ばし」(Smite)、「回込み」(Pivot)、「引き戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。
+
+INFO.en=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.
+INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.
+

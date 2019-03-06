@@ -55,7 +55,7 @@ namespace FEBuilderGBA
                     if (p == 0)
                     {//0は有効値だけど終端データもnullなのでその場合は、名前判定.
                         uint name = Program.ROM.u32(addr + 0);
-                        if (p == 0)
+                        if (name == 0)
                         {//名前もnullなのでデータではないと思われる.
                             return false;
                         }
@@ -65,7 +65,8 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    String name = Program.ROM.getString(addr,3);
+                    String name = Program.ROM.getString(addr,12);
+                    name = name.TrimEnd();
 
                     return U.ToHexString(i + 1) + U.SA(name) + InputFormRef.GetCommentSA(addr);
                 }
@@ -101,7 +102,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            return Program.ROM.getString(addr,3) + InputFormRef.GetCommentSA(addr);
+            return Program.ROM.getString(addr,12).TrimEnd() + InputFormRef.GetCommentSA(addr);
         }
         public static uint GetPaletteAddr(uint paletteid)
         {

@@ -1000,8 +1000,6 @@
 0809dce0	Div
 08022A94	GetROMUnitSupportingId
 08022AA8	GetUnitSupportingUnit
-0203CCE0	TEMP VALUE
-0804254C	Get[0x0203CCE0]
 08021164	Something in supportive relationship	r0=&UNIT
 085C3A60	:085C3A79	Something about face image related OAM 1
 085C3A7A	:085C3A93	Something about face image related OAM 2
@@ -1025,7 +1023,7 @@
 08001478	BGMapBGPaletteSync void
 08002c04	TileTransferInfoSync void
 08002d6c	OAM2BufferSync void
-08003908	Reset6CEngine Zeroes all 6C headers in Pool. Called on game startup.
+08003908	Initialize6CEngine Zeroes all 6C headers in Pool. Called on game startup.
 @BGMSTRUCT@00	byte	Music related flag 1
 @BGMSTRUCT@04	short	Playing BGM
 @BGMSTRUCT@06	byte	Music related flag 2
@@ -1059,9 +1057,9 @@
 0203CD00	@BATTLE_ANIME	Battle animation relationship 2
 0804807C	ekrBattleStarting_8055FA0
 080425f0	NewEkrBattle
-08003c28	Delete6C(Wrapper) Calls Isolate6C then Delete6C
+08003c28	Delete6C Calls Isolate6C then Delete6C
 08003e60	ClearLoop Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
-08003a04	Create6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
+08003a04	New6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
 08047500	Magical anime with frames and TSA images
 0203AB00	:0203AB0F	UnitSelectSFX patch	Use as patch to reproduce sound when unit is selected
 //Class Change (Promotion)
@@ -1098,3 +1096,27 @@
 08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
 0801729c	GetItemWRank
 086905B0	&TEXTBATCHSHORT	Class introduction text.
+0801597C	AddSkipThread2
+0801598C	SubSkipThread2
+080159A8	SwitchPhases
+080420E4	AddTarget
+0203C9E0	gTargetArray
+0203CCE0	gTargetArraySize
+08042138	LinkTargets
+08042180	TargetSelection_GetRealCursorPosition
+08042264	NewTargetSelection
+08042534	GetFirstTargetPointer
+08042420	GetFarthestTargetIndex
+08042388	LinkTargetsOrdered
+08042534	GetFirstTargetPointer
+08042480	LinkTargetsOrdered
+0804254C	GetTargetListSize
+08042558	GetTarget
+08042584	NewEkrBattleDeamon
+080425C4	EndEkrBattleDeamon
+080425D8	IsBattleDeamonActive
+0203CCE8	gpEkrBattleDeamon
+0203CCE0	gTargetArraySize
+0804256C	Set the value to "unknown flag for battle 4 bytes".
+08042578	Get "unknown flag for battle 4 bytes".
+0203CCE4	Unknown flag for battle 4 bytes.
