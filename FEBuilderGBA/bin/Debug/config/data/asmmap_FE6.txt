@@ -595,12 +595,11 @@
 
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -723,7 +722,6 @@
 080173D8	GetNextFreeUnitStructPtr
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
-0801751E	GetUnitItemCount
 08017578	LoadUnits
 08017868	IncreaseUnitStatsByLevelCount
 08017ABC	GetUnitByCharId
@@ -787,7 +785,6 @@
 0801ED7C	TakeUsability
 0801ECCC	TakeEffect
 0801ED7C	GiveUsability
-0801ECCC	GiveEffect
 0801EE80	TakeSelection_OnSelect
 0801EE80	GiveSelection_OnSelect
 0801F6A8	ItemCommandEffect
@@ -802,8 +799,7 @@
 080205EC	StealItemMenuCommand_Draw
 080207B4	RescueSelection_OnChange
 080207D8	DropSelection_OnConstruction
-0802019A	RideCommandEffect
-08020A02	AreUnitsAllied
+08020A04	AreUnitsAllied
 08020A16	IsSameAllegience
 08020A98	ForEachUnitInRange
 08020B70	ForEachPosInRange
@@ -1033,8 +1029,6 @@
 
 0804807C	ekrBattleStarting_8055FA0 
 080425f0	NewEkrBattle
-08003c28	Delete6C Calls Isolate6C then Delete6C
-08003e60	ClearLoop Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
 08003a04	New6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
 
 08047500	フレームとTSA画像による魔法のアニメ
@@ -1103,3 +1097,41 @@
 080425D8	IsBattleDeamonActive
 0203CCE8	gpEkrBattleDeamon
 0203CCE0	gTargetArraySize
+
+0801C700	FillWarpRangeMap
+08018670	CanUnitCrossTerrain
+0801EC94	RescueUsability
+0801ECCC	RescueCommandEffect
+0801ED00	DropUsability
+08017520	GetUnitItemCount
+0802c5e4	NewUnitInfoWindow_WithAllLines
+0802cb14	NewBottomHelpText
+080201A0	RideCommandEffect
+080181d4	MakeMOVEUNITForMapUnit
+08025644	SaveUnitFromBattle
+0805f874	MakeMOVEUNITForMapUnit
+0805fc54	_MOVEUNIT6C_SetDefaultFacingDirection
+08003B54	Delete6CInternal
+08003c80	Free6C
+08003C28    Delete6C
+08003d2c	Isolate6C
+08003E60 	Break6CLoop
+
+08028348	GameVBlank6C_Destructor
+08028354	GameVBlank6C_Loop
+
+//0800417c	Goto6CLabel
+08004248	DeleteEach6C
+08028394	BlockGameGraphicsLogic
+08001034	EnableBGPaletteSync void
+08004114	BlockEach6CMarked
+080283C8	UnblockGameGraphicsLogic
+
+0800417c	UnblockEach6CMarked
+08003e7c	Find6C
+08028360	SetupGameVBlank6C
+08002cb8	OAMBufferSyncInfoInitialize
+08002d54	GetSpriteNum1
+0802A028	ApplyUnitAction
+0203956C	gActionData
+0802A028	_6CE_PLAYERPAHSE_PrepareAction

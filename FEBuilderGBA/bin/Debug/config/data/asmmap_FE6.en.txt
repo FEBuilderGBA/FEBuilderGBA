@@ -616,11 +616,10 @@
 080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
 08018960	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with
@@ -639,12 +638,11 @@
 
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -734,7 +732,6 @@
 080173D8	GetNextFreeUnitStructPtr
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
-0801751E	GetUnitItemCount
 08017578	LoadUnits
 08017868	IncreaseUnitStatsByLevelCount
 08017ABC	GetUnitByCharId
@@ -813,8 +810,7 @@
 080205EC	StealItemMenuCommand_Draw
 080207B4	RescueSelection_OnChange
 080207D8	DropSelection_OnConstruction
-0802019A	RideCommandEffect
-08020A02	AreUnitsAllied
+08020A04	AreUnitsAllied
 08020A16	IsSameAllegience
 08020A98	ForEachUnitInRange
 08020B70	ForEachPosInRange
