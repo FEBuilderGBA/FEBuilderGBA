@@ -5,7 +5,7 @@
 
 push {r4-r5}
 
-ldr r4,[sp,#0x14]   @=0x203a958
+ldr r4,=0x203a958
 mov r5,#0x17        @(bought from armory - guaranteed safe!)
 strb r5,[r4,#0x11]
 ldr r4,[sp,#0x10]   @pointer to "next routine" - we change this to take us back into the unit menu
