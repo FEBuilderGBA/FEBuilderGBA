@@ -131,6 +131,8 @@ namespace FEBuilderGBA
 
             ChangeColorWriteButtonWhenChangingSetting();
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
+            ERROR_IsOldEA.Text += R._("最新版は{0}です。", CurrentEAVersion);
+            CheckEAVersion();
         }
 
         private void emulator_TextChanged(object sender, EventArgs e)
@@ -1072,6 +1074,11 @@ namespace FEBuilderGBA
             {
                 event_assembler.Text = r;
             }
+            CheckEAVersion();
+        }
+        void CheckEAVersion()
+        {
+            ERROR_IsOldEA.Visible = IsOldEA(event_assembler.Text);
         }
 
         public struct TBLTableSt
@@ -1331,6 +1338,26 @@ namespace FEBuilderGBA
         private void python3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             python3_button.PerformClick();
+        }
+
+        const double CurrentEAVersion = 11.1;
+        public bool IsOldEA()
+        {
+            return IsOldEA( Program.Config.at("event_assembler") );
+        }
+        public bool IsOldEA(string EAFilename)
+        {
+            if (! File.Exists(EAFilename))
+            {//ファイルがないので判別不可能
+                return false;
+            }
+            double version = U.GetOtherProgramVersion(EAFilename);
+            if (version < CurrentEAVersion)
+            {//古い
+                return true;
+            }
+            //新しいバージョン
+            return false;
         }
     }
 }

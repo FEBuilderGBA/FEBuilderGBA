@@ -106,9 +106,15 @@ namespace FEBuilderGBA
                     return;
                 }
             }
-            if (w > 100 || h > 100)
+            uint limitWidth = ImageUtilMap.GetLimitMapWidth(h);
+            if (limitWidth == 0)
             {
-                FEBuilderGBA.R.ShowStopError("マップサイズが100x100を超えています");
+                FEBuilderGBA.R.ShowStopError(FEBuilderGBA.R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", w, h));
+                return;
+            }
+            if (w > limitWidth)
+            {
+                FEBuilderGBA.R.ShowStopError(FEBuilderGBA.R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", w, h, limitWidth));
                 return;
             }
 

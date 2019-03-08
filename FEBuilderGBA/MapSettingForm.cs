@@ -660,14 +660,8 @@ namespace FEBuilderGBA
                         FELint.CheckLZ77Errors(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
                     }
 
-                    if (mapwidth > ImageUtilMap.MAP_MAX_WIDTH || mapheight > ImageUtilMap.MAP_MAX_HEIGHT || mapwidth * mapheight > ImageUtilMap.MAP_TILE_LIMIT)
-                    {
-                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                            , R._("マップが広すぎます。現在のサイズ:({0},{1})\r\n利用できる最大サイズは、幅はMinimapの制限である{2}です。\r\n縦方向へは、{3}までにするべきです。\r\nまた、幅*高さで計算できるタイル数にも制限があります。\r\nタイル数は、だいたい{4}ぐらいが限界のようです。\r\n"
-                            , mapwidth, mapheight, ImageUtilMap.MAP_MAX_WIDTH, ImageUtilMap.MAP_MAX_HEIGHT, ImageUtilMap.MAP_TILE_LIMIT)
-                            , mapid));
-                    }
-                    else if (mapwidth < ImageUtilMap.MAP_MIN_WIDTH || mapheight < ImageUtilMap.MAP_MIN_HEIGHT)
+                    uint limitWidth = ImageUtilMap.GetLimitMapWidth(mapheight);
+                    if (mapwidth < ImageUtilMap.MAP_MIN_WIDTH || mapheight < ImageUtilMap.MAP_MIN_HEIGHT)
                     {
                         if (Program.ROM.RomInfo.version() == 8 && mapid == 0x38)
                         {
@@ -681,6 +675,18 @@ namespace FEBuilderGBA
                                 , mapwidth, mapheight, ImageUtilMap.MAP_MIN_WIDTH, ImageUtilMap.MAP_MIN_HEIGHT)
                                 , mapid));
                         }
+                    }
+                    else if (limitWidth == 0)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", mapwidth, mapheight, limitWidth)
+                                ));
+                    }
+                    else if (mapwidth > limitWidth)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", mapwidth, mapheight, limitWidth)
+                                ));
                     }
                 }
             }

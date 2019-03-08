@@ -2217,6 +2217,10 @@ namespace FEBuilderGBA
             {
                 return R._("章で利用しているフラグから、イベントを逆に参照します。");
             }
+            if (name == "UnitActionPointerButton")
+            {
+                return R._("UnitActionテーブルを表示します。\r\nUnitActionテーブルは、マップ上のユニットの動作を定義するテーブルです。") + GetForHighLevelUser();
+            }
             
             return "";
         }

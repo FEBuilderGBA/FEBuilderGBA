@@ -4,7 +4,7 @@
 .set prUnitUnitMoveAnim_New, EALiterals+0x00
 
 MoveTargetUnitAction:
-	push {r4-r6}
+	push {r4-r6,lr}
 	
 	@ PART 1: SETTING UP THE ANIMATIONS
 	@ =================================
@@ -109,8 +109,6 @@ MoveTargetUnitAction:
 	
 	pop {r4-r6}
 	
-	@Rewrite to be called by switch. by 7743
-	pop {r4,r5}  @=0x80320AA+1	@FE8J
 	pop {r1}
 	bx r1
 

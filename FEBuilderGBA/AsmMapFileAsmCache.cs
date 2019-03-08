@@ -276,7 +276,12 @@ namespace FEBuilderGBA
         {
             //キャッシュを作り直す.
             IsStopFlag = false;
+            //LDRマップのクリア
+            this.LDRMapCache = new List<DisassemblerTrumb.LDRPointer>();
+            this.FELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
+
             GetAsmMapFile(true);
+
         }
 
         public AsmMapFile GetAsmMapFile(bool rebuild = false)

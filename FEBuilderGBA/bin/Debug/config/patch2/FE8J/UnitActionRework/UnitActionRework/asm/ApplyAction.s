@@ -3,7 +3,7 @@
 
 .set pActionEffectTable, EALiterals+0x00
 
-.set prActionStaffDoorChestUseItemNightmare, 0x0802FC48
+.set prActionStaffDoorChestUseItemNightmare, 0x0802FB98
 
 ApplyAction:
 	push {r4-r5, lr}

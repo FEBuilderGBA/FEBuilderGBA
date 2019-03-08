@@ -2154,8 +2154,6 @@
 0802EC18	GetUnitArenaWeight	{U}
 0802EE14	PrepareBalancedArenaFight	{U}
 0802EA48	AdjustArenaOpponentPower	{U}
-0802F328	ActionRescue	{U}
-0802F328	ActionDrop	{U}
 0802F434	ActionVisitAndSieze	{U}
 0802F4B0	ActionArena	{U}
 0802F4C4	ActionDance	{U}
@@ -2968,7 +2966,6 @@
 0802F2E0	PrepareBalancedArenaFight	{J}
 0802EF14	AdjustArenaOpponentPower	{J}
 0802F7F4	ActionRescue	{J}
-0802F7F4	ActionDrop	{J}
 0802F900	ActionVisitAndSieze	{J}
 0802F97C	ActionArena	{J}
 0802F990	ActionDance	{J}
@@ -4638,7 +4635,7 @@
 0803534C	CpPerform_PerformSteal	{U}
 08035398	CpPerform_LootWait	{U}
 08078C14	RunLocationEvents	{U}
-0802D008	ActionStaffDoorChestUseItem	{U}
+0802D00C	ActionStaffDoorChestUseItem	{U}
 0800AD40	NewPopupSimple	{U}
 08035458	CpPerform_StaffWait	{U}
 0803548C	CpPerform_DanceWait	{U}
@@ -4672,9 +4669,23 @@
 @ArenaTemp@16	short	プレイヤーの強さ
 @ArenaTemp@18	short	対戦相手の強さ
 
+0802f7f4	ActionRescue	{J}
+0802f328	ActionRescue	{U}
+0802f870	ActionDrop	{J}
+0802f3a4	ActionDrop	{U}
+0802f92c	ActionCombat	{J}
+0802f460	ActionCombat	{U}
+
 0203A7F0	@ArenaTemp	闘技場の一時データ	{J}
 0806c7cc	_MOVEUNIT6C_SetDefaultFacingDirection	{J}
 0806dd98	GetItemIconId	{J}
 0806C274	Make6CMOVEUNITForUnit	{J}
 0806c4a0	NewMOVEUNIT	{J}
 08025b80	GetUnitMapSpritePaletteIndex	{J}
+0203A7F4	@ArenaTemp	闘技場の一時データ	{U}
+0806BFE0	_MOVEUNIT6C_SetDefaultFacingDirection	{U}
+0806D5AC	GetItemIconId	{U}
+0806BA88	Make6CMOVEUNITForUnit	{U}
+0806BCB4	NewMOVEUNIT	{U}
+080256F4	GetUnitMapSpritePaletteIndex	{U}
+

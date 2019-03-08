@@ -35,6 +35,7 @@ namespace FEBuilderGBA
             ,Func_Clipbord_Copy
             ,Func_Clipbord_LittleEndian
             ,Func_Clipbord_NoDollBreakPoint
+            ,Func_Import
         };
         Func CallFunc = Func.Func_Cancel;
         public Func GetCallFunc()
@@ -396,6 +397,67 @@ namespace FEBuilderGBA
             return sb.ToString();
         }
 
+        public static void ImportTSV(InputFormRef ifr, bool isCSV, string filename, Undo.UndoData undodata)
+        {
+            List<Control> controls = InputFormRef.GetAllControls(ifr.SelfForm);
+            ListBox listbox = ifr.AddressList;
+            List<NameMapping> dic = MakeStruct(ifr, controls);
+
+            uint addr = ifr.BaseAddress;
+            string[] lines = File.ReadAllLines(filename);
+            for (int i = 1; i <= lines.Length; i++, addr += ifr.BlockSize)
+            {
+                if (i >= ifr.DataCount)
+                {
+                    break;
+                }
+                string line = lines[i];
+
+                uint[] array;
+                if (isCSV)
+                {
+                    array = U.ParseTSVLine(line, true, ',');
+                }
+                else
+                {
+                    array = U.ParseTSVLine(line,true);
+                }
+
+                for( int n = 0; n < dic.Count ; n ++)
+                {
+                    if (n >= array.Length)
+                    {
+                        break;
+                    }
+                    NameMapping nm = dic[n];
+
+                    uint v = array[n];
+
+                    if (nm.TypeName[0] == 'b')
+                    {
+                        Program.ROM.write_u8(addr + nm.Id , v , undodata);
+                    }
+                    else if (nm.TypeName[0] == 'B')
+                    {
+                        Program.ROM.write_u8(addr + nm.Id, v, undodata);
+                    }
+                    else if (nm.TypeName[0] == 'W')
+                    {
+                        Program.ROM.write_u16(addr + nm.Id, v, undodata);
+                    }
+                    else if (nm.TypeName[0] == 'D')
+                    {
+                        Program.ROM.write_u32(addr + nm.Id, v, undodata);
+                    }
+                    else if (nm.TypeName[0] == 'P')
+                    {
+                        Program.ROM.write_p32(addr + nm.Id, v, undodata);
+                    }
+                }
+
+            }
+        }
+
         string MakEA2String(InputFormRef ifr, uint target)
         {
             List<Control> controls = InputFormRef.GetAllControls(ifr.SelfForm);
@@ -666,6 +728,102 @@ namespace FEBuilderGBA
             return sb.ToString();
         }
 
+        void ImportTSV(InputFormRef ifr)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return ;
+            }
+
+            string title = R._("開くファイル名を選択してください");
+            string filter = R._("TSV形式|*.tsv|CSV形式|*.csv|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", open);
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return ;
+            }
+            if (!U.CanReadFileRetry(open))
+            {
+                return ;
+            }
+            Program.LastSelectedFilename.Save(this, "", open);
+            string filename = open.FileName;
+
+            bool isCSV = false;
+            if (U.GetFilenameExt(filename) == ".CSV")
+            {
+                isCSV = true;
+            }
+
+            if (! CheckImportData(ifr, filename, isCSV))
+            {//ユーザキャンセル
+                return;
+            }
+            
+            ImportTSV(ifr, filename,isCSV);
+            
+            ifr.ReloadAddressList();
+            R.ShowOK("データのインポートが完了しました。");
+
+            return;
+        }
+        void ImportTSV(InputFormRef ifr, string filename, bool isCSV)
+        {
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ImportTSV");
+            ImportTSV(ifr, isCSV, filename, undodata);
+            Program.Undo.Push(undodata);
+        }
+        bool CheckImportData(InputFormRef ifr, string filename, bool isCSV)
+        {
+            List<Control> controls = InputFormRef.GetAllControls(ifr.SelfForm);
+            ListBox listbox = ifr.AddressList;
+            List<NameMapping> dic = MakeStruct(ifr, controls);
+
+            uint addr = ifr.BaseAddress;
+            string[] lines = File.ReadAllLines(filename);
+            if (lines.Length > ifr.DataCount + 1)
+            {
+                DialogResult dr = R.ShowNoYes("件数が足りませんが、処理を続行しますか？\r\n現在{0}件しかテーブルを確保していませんが、インポートしようとしているファイルには、{1}件のデータがあります。\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？", ifr.DataCount, lines.Length - 1);
+                if (dr != System.Windows.Forms.DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+
+            for (int i = 1; i <= lines.Length; i++, addr += ifr.BlockSize)
+            {
+                if (i >= ifr.DataCount)
+                {
+                    break;
+                }
+                string line = lines[i];
+
+                uint[] array;
+                if (isCSV)
+                {
+                    array = U.ParseTSVLine(line, true, ',');
+                }
+                else
+                {
+                    array = U.ParseTSVLine(line, true);
+                }
+
+                if (dic.Count != array.Length)
+                {
+                    DialogResult dr = R.ShowNoYes("{0}行目のカラム数が想定の物と違いますが、処理を続行しますか？\r\nこの項目には、{1}件のデータカラム数が必要ですが、インポートしようとしているファイルには、{2}件のデータカラム数があります。\r\nこのファイルは正しいダンプファイルですか？\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？", i+1, dic.Count, array.Length);
+                    return (dr == System.Windows.Forms.DialogResult.Yes);
+                }
+            }
+            {
+                DialogResult dr = R.ShowYesNo("ファイル({0})の内容をインポートしてもよろしいですか？", Path.GetFileName(filename));
+                return (dr == System.Windows.Forms.DialogResult.Yes);
+            }
+        }
 
         string NameToArgs(string name,string prefix,out string[] out_args)
         {
@@ -994,6 +1152,11 @@ namespace FEBuilderGBA
                 filename = ifr.SelfForm.Name + ifr.Prefix + "_" + U.ToHexString8(ifr.BaseAddress) + ".nmm";
                 text = f.MakNMMString(ifr, basename, addFiles);
             }
+            else if (ff == DumpStructSelectDialogForm.Func.Func_Import)
+            {
+                f.ImportTSV(ifr);
+                return;
+            }
             else
             {
                 return;
@@ -1043,6 +1206,13 @@ namespace FEBuilderGBA
             string fullfilename = Path.Combine(saveDir, filename);
             File.WriteAllText(fullfilename, text);
             return fullfilename;
+        }
+
+        private void ImportButton_Click(object sender, EventArgs e)
+        {
+            this.CallFunc = Func.Func_Import;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
         }
     }
 }

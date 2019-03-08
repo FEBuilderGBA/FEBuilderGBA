@@ -11694,3 +11694,4 @@ r3=X tile position of menu of right	{U}
 08AD1734	&LZ77	Boot data.	A fragment of the CG of FE 7.	{J}
 08AD1EC8	&PALETTE8	Boot data.	Remnants of FE 7 CG pallet.	{J}
 08AD1FC8	&HEADERTSA	Boot data.	Remnants of TSE of CG of FE 7.	{J}
+0802D664	When exchanging items actually by item exchange.	{J}

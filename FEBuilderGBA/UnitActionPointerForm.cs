@@ -29,6 +29,8 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
+            bool isRework = InputFormRef.SearchUnitActionReworkPatch();
+
             InputFormRef ifr = null;
             ifr = new InputFormRef(self
                 , ""
@@ -37,22 +39,29 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     uint a = Program.ROM.u32(addr);
-                    if (a == 0x0)
-                    {
-                        return true;
-                    }
-                    if (!U.isSafetyPointer(a))
-                    {
-                        if ((a & 0x10000000) > 0)
+                    if (isRework == false)
+                    {//リワークされていない
+                        if (U.isSafetyPointer(a))
                         {
-                            if (U.isSafetyPointer(a & 0xDFFFFFFF ))
-                            {
-                                return true;
-                            }
+                            return true;
                         }
-                        return false;
                     }
-                    return true;
+                    else
+                    {//リワークされている
+                        if (a == U.NOT_FOUND)
+                        {
+                            return false;
+                        }
+                        if (a == 0)
+                        {
+                            return true;
+                        }
+                        if (U.isSafetyPointer(a & 0x0FFFFFFF))
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
                 }
                 , (int i, uint addr) =>
                 {
@@ -133,7 +142,7 @@ namespace FEBuilderGBA
 
             uint tableAddr = U.toOffset(tablePointer);
             sb.AppendLine("#define HAX_ACTION_APPLICATION_REWORK_EVENT");
-            sb.AppendLine("#define pActionRoutineTable " + U.To0xHexString(tableAddr)); ///No Translate
+            sb.AppendLine("#define pActionRoutineTable " + U.To0xHexString(tableAddr + 4)); ///No Translate
             sb.AppendLine("#define NoActionRoutine \"WORD 0\"");    ///No Translate
             sb.AppendLine("#define ActionRoutine(apRoutine) \"POIN apRoutine\"");   ///No Translate
             sb.AppendLine("#define ActionRoutine(apRoutine, abForcedYeild) \"WORD (0x08000000 | apRoutine | (abForcedYeild << 28))\""); ///No Translate

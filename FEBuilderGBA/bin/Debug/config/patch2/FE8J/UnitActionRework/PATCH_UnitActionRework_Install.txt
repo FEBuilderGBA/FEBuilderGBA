@@ -10,3 +10,5 @@ EA=UnitActionRework/UnitActionRework.event
 AUTHOR=Stan
 INFO=UnitActionで利用できるアクション数を増やします。\r\n空いているアクション数を大幅に増やします。\r\nマップ上のユニットに対してアニメーションを行いたいパッチの前提条件になるライブラリです。
 
+INFO.en=Increase the number of actions available for UnitAction.\r\nWe will greatly increase the number of free actions.\r\nThis library is a prerequisite for patches you want to animate on units on the map.
+INFO.zh=增加UnitAction可用的操作数。\r\n我们将大大增加自由行动的数量。\r\n此库是要为地图上的单位设置动画的修补程序的先决条件。

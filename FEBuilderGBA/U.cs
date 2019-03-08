@@ -2069,6 +2069,7 @@ namespace FEBuilderGBA
             ImageMagicFEditorForm.MakeAllDataLength(list , isPointerOnly);
             ImageMagicCSACreatorForm.MakeAllDataLength(list, isPointerOnly);
             TextCharCodeForm.MakeAllDataLength(list);
+            UnitActionPointerForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 2")) return list;
 
             if (Program.ROM.RomInfo.is_multibyte() == false)
@@ -5405,10 +5406,18 @@ namespace FEBuilderGBA
                 return 0;
             }
 
-            System.Diagnostics.FileVersionInfo vi =
-                System.Diagnostics.FileVersionInfo.GetVersionInfo(
-                    filename);
-            return U.atof(vi.FileVersion);
+            try
+            {
+                System.Diagnostics.FileVersionInfo vi =
+                    System.Diagnostics.FileVersionInfo.GetVersionInfo(
+                        filename);
+                return U.atof(vi.FileVersion);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString());
+                return 0;
+            }
         }
 
         /// 指定された拡張子に関連付けられた実行ファイルのパスを取得する。
@@ -5504,6 +5513,35 @@ namespace FEBuilderGBA
         public static bool Wordrap(char c)
         {
             return c == ' ' || c == '\t' || c == '\n';
+        }
+        public static uint[] ParseTSVLine(string line,bool skipFirst,char sep = '\t')
+        {
+            string[] arr = line.Split(sep);
+            List<uint> list = new List<uint>();
+            
+            for (int i = 0 ; i < arr.Length; i++)
+            {
+                string s = arr[i];
+                while (s.Length >= 1 && s[0] == '"')
+                {
+                    i++;
+                    if (i >= arr.Length)
+                    {
+                        break;
+                    }
+                    s += arr[i];
+                }
+
+                if (skipFirst)
+                {//最初のデータは名前なので捨てる
+                    skipFirst = false;
+                    continue;
+                }
+
+                uint v = U.atoi0x(s);
+                list.Add(v);
+            }
+            return list.ToArray();
         }
     }
 }

@@ -220,6 +220,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1409,6 +1410,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
             this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
@@ -2285,6 +2287,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // UnitActionPointerButton
+            // 
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 601);
+            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
+            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitActionPointerButton.TabIndex = 133;
+            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
+            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
+            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2505,6 +2518,7 @@
         private System.Windows.Forms.Button GameOptionOrderButton;
         private System.Windows.Forms.Button ToolUseFlagButton;
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
+        private System.Windows.Forms.Button UnitActionPointerButton;
     }
 }
 

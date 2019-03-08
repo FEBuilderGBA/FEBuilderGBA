@@ -1,23 +1,35 @@
 ﻿
 NAME=アイテムの交換 無制限にする
-NAME.en=Exchange items without limit.
+NAME.en=Limitless Trading
 NAME.zh=道具的交换无限制
 
 //アドレスパッチとして実装します
-TYPE=ADDR
+TYPE=SWITCH
 TAG=#ENGINE
 
-ADDRESS=0x22f18
-COMBO=default|0x16 0xD1|fix|0xc0 0x46
+DETERMINATION_ADDRESS=0x22f18
+COMBO=Default: 一度だけ|OFF|無制限 何度でも交換可能|FIX1|無制限2 さらに再度移動もできる|FIX2
+COMBO.en=Default: Once/Turn|OFF|Patched 1: Limitless|FIX1|Patched 2: Limitless and re-move|FIX2
+COMBO.zh=默认值：一次/转|OFF|无限 1|FIX1|无限 2 我可以再搬一次|FIX2
 
-COMBO.zh=默认|0x16 0xD1|修复|0xc0 0x46
+OFF:0x022f18=0x16 0xD1
+OFF:0x02D6AA=0x1B
+OFF:0x0A0658=0x1C
+OFF:0x0A0B92=0x1C
 
-AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+FIX1:0x022f18=0xc0 0x46
+FIX1:0x02D6AA=0x1B
+FIX1:0x0A0658=0x1C
+FIX1:0x0A0B92=0x1C
+
+FIX2:0x022f18=0x00 0x00
+FIX2:0x02D6AA=0x1D
+FIX2:0x0A0658=0x1D
+FIX2:0x0A0B92=0x1D
 
 
 
+AUTHOR=aera
 
 INFO=GBA FEでは、アイテム交換を各ユニットごとに1ターンに付き1回しかりようできません。\r\nSFC FEは、無制限にアイテムを交換することができます。\r\nこのパッチは、SFC FEのように、何度でもアイテムを交換できるようにします。\r\nアーマーキラーなどの特殊武器を使いまわしやすくなります。\r\n
 INFO.zh=在GBA FE中，每个单位每回合不能进行一次物品交换。\r\nSFC FE可以无限期交换项目。\r\n该修补程序允许您以SFC FE的次数交换项目。\r\n重甲特殊等武器变得容易。\r\n

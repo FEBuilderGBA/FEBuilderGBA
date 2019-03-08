@@ -904,6 +904,21 @@ Click the link or move to the function with J
 :クリックボードへ(Ctrl+C)
 To the click board (Ctrl+C)
 
+:TSV形式|*.tsv|CSV形式|*.csv|All files|*
+TSV format|*.tsv|CSV format|*.csv|All files|*
+
+:データのインポートが完了しました。
+The import of data is completed.
+
+:件数が足りませんが、処理を続行しますか？\r\n現在{0}件しかテーブルを確保していませんが、インポートしようとしているファイルには、{1}件のデータがあります。\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
+There are not enough cases, but will you continue processing? \r\nCurrently only {0} tables are allocated, but the file you are trying to import has {1} data.\r\n\r\nContinue processing and import until where you can import? 
+
+:{0}行目のカラム数が想定の物と違いますが、処理を続行しますか？\r\nこの項目には、{1}件のデータカラム数が必要ですが、インポートしようとしているファイルには、{2}件のデータカラム数があります。\r\nこのファイルは正しいダンプファイルですか？\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
+The number of columns on line {0} is different from the expected one, but will you continue processing? \r\nThis item requires {1} data columns, but the file you are trying to import has {2} data columns.\r\nIs this file a correct dump file? \r\n\r\nContinue processing and import until where you can import? 
+
+:ファイル({0})の内容をインポートしてもよろしいですか？
+Are you sure you want to import the contents of the file ({0})? 
+
 :選択しているアドレスをバイナリエディタで表示
 Open selected address in Hex Editor
 
@@ -948,6 +963,12 @@ Data Structure Options
 
 :値:
 Select:
+
+:インポート
+Import
+
+:ダンプしていたデータのインポート
+Importing dumped data
 
 :データを表示
 Data Address Editor
@@ -3889,6 +3910,12 @@ Are you sure you want to overwrite with clipboard data?
 :{0}と{1}を入れ替えもよろしいですか？
 Are you sure you want to replace {0} with {1}?
 
+:リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。
+Are you sure you want to slide the list down one? \r\nThe bottom item is pushed out and becomes the current line.
+
+:リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。
+Are you sure you want to slide the list up one? \r\nThe top item is extruded and becomes the current line.
+
 :アドレス({0}+{1})は、終端(2)を超えるので表示できません。
 The address ({0} + {1}) exceeds the termination (2) and can't be displayed.
 
@@ -4723,6 +4750,12 @@ Direct Edit(&N)
 :↓データ入れ替え(Ctrl + Alt + Down)
 ↓ Change data (Ctrl+Alt+Down)
 
+:↑↑データをシフトする(Ctrl + Alt + Shift + Up)
+↑↑ Shift list (Ctrl+Alt+Shift+Up)
+
+:↓↓データをシフトする(Ctrl + Alt + Shift + Down)
+↓↓ Shift list (Ctrl+Alt+Shift+Down)
+
 :無効化する(DEL)
 Invalidate (DEL)
 
@@ -5269,6 +5302,9 @@ Emulator Debug Tool
 :ログ
 Log
 
+:利用フラグ一覧
+Usage flag list
+
 :フラグ設定
 Event Flag Namer
 
@@ -5319,9 +5355,6 @@ Tileset Palette
 
 :マップエディタ
 Map Editor
-
-:利用フラグ一覧
-Usage flag list
 
 :OPクラス紹介英語表記
 OP Class Reel English Names
@@ -5394,6 +5427,9 @@ Simple Menu
 
 :地形設定
 Terrain Editor
+
+:ユニットアクションポインタ
+Unit action pointer.
 
 :詳細メニュー
 Advanced Editors
@@ -5962,6 +5998,9 @@ Set the display order of game options.
 :章で利用しているフラグから、イベントを逆に参照します。
 Reverse the event from the flags used in the chapter.
 
+:UnitActionテーブルを表示します。\r\nUnitActionテーブルは、マップ上のユニットの動作を定義するテーブルです。
+Display the UnitAction table.\r\nThe UnitAction table is a table that defines the behavior of units on a map.
+
 :ファイルが見つかりません
 File not found
 
@@ -6313,8 +6352,11 @@ Main Map can't be 15 x 10 or less in size.
 :サイズを1x1以下にはできません
 Size can't be 1 x 1 or less
 
-:マップサイズが100x100を超えています
-Map size exceeds 100 x 100
+:マップが広すぎます。\r\n現在のサイズ({0},{1})
+The map is too wide.\r\nCurrent size ({0}, {1}).
+
+:マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。
+The map is too wide.\r\nCurrent size ({0}, {1}).\r\nWith this width, the available height is up to {2} in width.
 
 :変更する
 Change
@@ -7065,9 +7107,6 @@ Object Type, Palette, and Tileset Config primarily determine map appearance (Til
 
 :PLIST({0})が無効です
 PLIST ({0}) is invalid
-
-:マップが広すぎます。現在のサイズ:({0},{1})\r\n利用できる最大サイズは、幅はMinimapの制限である{2}です。\r\n縦方向へは、{3}までにするべきです。\r\nまた、幅*高さで計算できるタイル数にも制限があります。\r\nタイル数は、だいたい{4}ぐらいが限界のようです。\r\n
-The map is too wide.Current size: ({0}, {1}).\r\nThe maximum size that can be used is the width of {2} which is the limit of Minimap.\r\nTo the vertical direction, it should be up to {3}.\r\nThere is also a limit on the number of tiles that can be calculated by width * height.\r\nThe number of tiles seems to be limited to about {4}.\r\n
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
@@ -7822,6 +7861,9 @@ Open directory location
 :関連付けされたアプリケーションで開く
 Open with associated application
 
+:最新版は{0}です。
+The latest version is {0}.
+
 :ツールを選択してください
 Please select a tool
 
@@ -8370,6 +8412,9 @@ File Export Settings
 
 :保存
 Save
+
+:警告: Event Assemblerのバージョンが古いです。
+Warning: Event Assembler version is outdated.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -9516,9 +9561,6 @@ Don't Loop
 
 :ループする
 Loop
-
-:インポート
-Import
 
 :ループ
 Loop
@@ -11064,9 +11106,6 @@ UnitAction Patch is applied to this ROM.
 
 :関数ポインタ
 Function pointer.
-
-:ユニットアクションポインタ
-Unit action pointer.
 
 :アニメ内容の先頭アドレス
 Start address of animation content

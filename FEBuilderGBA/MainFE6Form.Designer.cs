@@ -98,6 +98,7 @@
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -183,7 +184,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -843,6 +844,13 @@
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
             this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
             // 
+            // ToolUseFlagStripMenuItem6
+            // 
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
+            // 
             // FlagNameToolStripMenuItem
             // 
             this.FlagNameToolStripMenuItem.Name = "FlagNameToolStripMenuItem";
@@ -1039,7 +1047,7 @@
             // 
             // PatchButton
             // 
-            this.PatchButton.Location = new System.Drawing.Point(4, 606);
+            this.PatchButton.Location = new System.Drawing.Point(4, 680);
             this.PatchButton.Margin = new System.Windows.Forms.Padding(2);
             this.PatchButton.Name = "PatchButton";
             this.PatchButton.Size = new System.Drawing.Size(200, 36);
@@ -1083,6 +1091,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.OPClassAlphaNameButton);
             this.ControlPanel.Controls.Add(this.AIPerformStaffButton);
@@ -1184,12 +1193,12 @@
             this.ControlPanel.Location = new System.Drawing.Point(2, 80);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1640, 687);
+            this.ControlPanel.Size = new System.Drawing.Size(1640, 756);
             this.ControlPanel.TabIndex = 0;
             // 
             // ToolUseFlagButton
             // 
-            this.ToolUseFlagButton.Location = new System.Drawing.Point(1030, 566);
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(1030, 640);
             this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
             this.ToolUseFlagButton.Name = "ToolUseFlagButton";
             this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
@@ -1244,7 +1253,7 @@
             // 
             // ToolProblemReportToolButton
             // 
-            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1232, 603);
+            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1232, 677);
             this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
             this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1310,7 +1319,7 @@
             // 
             // FlagNameToolButton
             // 
-            this.FlagNameToolButton.Location = new System.Drawing.Point(1030, 606);
+            this.FlagNameToolButton.Location = new System.Drawing.Point(1030, 680);
             this.FlagNameToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.FlagNameToolButton.Name = "FlagNameToolButton";
             this.FlagNameToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1321,7 +1330,7 @@
             // 
             // ExportEAEventToolButton
             // 
-            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1232, 530);
+            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1232, 604);
             this.ExportEAEventToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportEAEventToolButton.Name = "ExportEAEventToolButton";
             this.ExportEAEventToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1332,7 +1341,7 @@
             // 
             // EmulatorMemoryToolButton
             // 
-            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1232, 566);
+            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1232, 640);
             this.EmulatorMemoryToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.EmulatorMemoryToolButton.Name = "EmulatorMemoryToolButton";
             this.EmulatorMemoryToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1411,7 +1420,7 @@
             // Patch0
             // 
             this.Patch0.AutoEllipsis = true;
-            this.Patch0.Location = new System.Drawing.Point(4, 644);
+            this.Patch0.Location = new System.Drawing.Point(4, 718);
             this.Patch0.Margin = new System.Windows.Forms.Padding(2);
             this.Patch0.Name = "Patch0";
             this.Patch0.Size = new System.Drawing.Size(200, 36);
@@ -1421,7 +1430,7 @@
             // 
             // PatchResult
             // 
-            this.PatchResult.Location = new System.Drawing.Point(9, 620);
+            this.PatchResult.Location = new System.Drawing.Point(9, 694);
             this.PatchResult.Name = "PatchResult";
             this.PatchResult.Size = new System.Drawing.Size(1209, 22);
             this.PatchResult.TabIndex = 88;
@@ -1443,7 +1452,7 @@
             // Patch5
             // 
             this.Patch5.AutoEllipsis = true;
-            this.Patch5.Location = new System.Drawing.Point(1028, 645);
+            this.Patch5.Location = new System.Drawing.Point(1028, 718);
             this.Patch5.Margin = new System.Windows.Forms.Padding(2);
             this.Patch5.Name = "Patch5";
             this.Patch5.Size = new System.Drawing.Size(190, 36);
@@ -1454,7 +1463,7 @@
             // Patch6
             // 
             this.Patch6.AutoEllipsis = true;
-            this.Patch6.Location = new System.Drawing.Point(1222, 645);
+            this.Patch6.Location = new System.Drawing.Point(1222, 718);
             this.Patch6.Margin = new System.Windows.Forms.Padding(2);
             this.Patch6.Name = "Patch6";
             this.Patch6.Size = new System.Drawing.Size(208, 36);
@@ -1465,7 +1474,7 @@
             // Patch1
             // 
             this.Patch1.AutoEllipsis = true;
-            this.Patch1.Location = new System.Drawing.Point(212, 644);
+            this.Patch1.Location = new System.Drawing.Point(212, 718);
             this.Patch1.Margin = new System.Windows.Forms.Padding(2);
             this.Patch1.Name = "Patch1";
             this.Patch1.Size = new System.Drawing.Size(200, 36);
@@ -1476,7 +1485,7 @@
             // Patch4
             // 
             this.Patch4.AutoEllipsis = true;
-            this.Patch4.Location = new System.Drawing.Point(824, 644);
+            this.Patch4.Location = new System.Drawing.Point(824, 718);
             this.Patch4.Margin = new System.Windows.Forms.Padding(2);
             this.Patch4.Name = "Patch4";
             this.Patch4.Size = new System.Drawing.Size(200, 36);
@@ -1487,7 +1496,7 @@
             // Patch2
             // 
             this.Patch2.AutoEllipsis = true;
-            this.Patch2.Location = new System.Drawing.Point(416, 644);
+            this.Patch2.Location = new System.Drawing.Point(416, 718);
             this.Patch2.Margin = new System.Windows.Forms.Padding(2);
             this.Patch2.Name = "Patch2";
             this.Patch2.Size = new System.Drawing.Size(200, 36);
@@ -1498,7 +1507,7 @@
             // Patch3
             // 
             this.Patch3.AutoEllipsis = true;
-            this.Patch3.Location = new System.Drawing.Point(620, 644);
+            this.Patch3.Location = new System.Drawing.Point(620, 718);
             this.Patch3.Margin = new System.Windows.Forms.Padding(2);
             this.Patch3.Name = "Patch3";
             this.Patch3.Size = new System.Drawing.Size(200, 36);
@@ -1814,19 +1823,23 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // ToolUseFlagStripMenuItem6
+            // UnitActionPointerButton
             // 
-            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
-            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
-            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
-            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(824, 584);
+            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
+            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitActionPointerButton.TabIndex = 139;
+            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
+            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
+            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
             // 
             // MainFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1370, 748);
+            this.ClientSize = new System.Drawing.Size(1370, 840);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);
@@ -2005,5 +2018,6 @@
         private System.Windows.Forms.Button OPClassAlphaNameButton;
         private System.Windows.Forms.Button ToolUseFlagButton;
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
+        private System.Windows.Forms.Button UnitActionPointerButton;
     }
 }

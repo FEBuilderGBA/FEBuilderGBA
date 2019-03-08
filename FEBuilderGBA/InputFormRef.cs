@@ -5602,6 +5602,14 @@ namespace FEBuilderGBA
             {
                 ClipbordToPaste();
             }
+            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Up)
+            {
+                ShiftData(false);
+            }
+            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Down)
+            {
+                ShiftData(true);
+            }
             else if (e.Control && e.Alt && e.KeyCode == Keys.Up)
             {
                 SwapData(false);
@@ -5768,6 +5776,66 @@ namespace FEBuilderGBA
             {
                 U.SelectedIndexSafety(this.AddressList, selected - 1);
             }
+        }
+
+        public void ShiftData(bool isDown)
+        {
+            if (this.AddressList == null)
+            {
+                return;
+            }
+            int totalCount = this.AddressList.Items.Count;
+            int selected = this.AddressList.SelectedIndex;
+            if (selected < 0)
+            {
+                return;
+            }
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm, "Shift");
+
+            U.AddrResult current = SelectToAddrResult(this.AddressList, selected);
+            if (isDown)
+            {
+                if (selected >= totalCount)
+                {
+                    return;
+                }
+                DialogResult dr = R.ShowYesNo(R._("リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。"));
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+                uint addr = current.addr + this.BlockSize;
+                byte[] last = Program.ROM.getBinaryData(this.BaseAddress + (uint)((totalCount - 1) * this.BlockSize), this.BlockSize);
+                byte[] move = Program.ROM.getBinaryData(current.addr, (uint)((totalCount - selected - 1) * this.BlockSize));
+
+                Program.ROM.write_range(current.addr + this.BlockSize, move, undodata);
+                Program.ROM.write_range(current.addr, last, undodata);
+            }
+            else
+            {
+                if (selected <= 0)
+                {
+                    return;
+                }
+                DialogResult dr = R.ShowYesNo(R._("リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。"));
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+
+                uint addr = this.BaseAddress + this.BlockSize;
+                byte[] last = Program.ROM.getBinaryData(this.BaseAddress, this.BlockSize);
+                byte[] move = Program.ROM.getBinaryData(this.BaseAddress + this.BlockSize, (uint)((selected) * this.BlockSize));
+
+                Program.ROM.write_range(this.BaseAddress, move, undodata);
+                Program.ROM.write_range(current.addr, last, undodata);
+            }
+
+            Program.Undo.Push(undodata);
+            ShowWriteNotifyAnimation(this.SelfForm, current.addr);
+            ReloadAddressList();
+            this.AddressList.Refresh();
         }
 
         //リストビューを更新して、現在選択しているところを再選択.
@@ -11169,6 +11237,16 @@ namespace FEBuilderGBA
                 contextMenu.MenuItems.Add(menuItem);
                 menuItem = new MenuItem(R._("↓データ入れ替え(Ctrl + Alt + Down)"));
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Down));
+                contextMenu.MenuItems.Add(menuItem);
+
+                menuItem = new MenuItem("-");
+                contextMenu.MenuItems.Add(menuItem);
+
+                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
+                contextMenu.MenuItems.Add(menuItem);
+                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
             }
             if (useClear)

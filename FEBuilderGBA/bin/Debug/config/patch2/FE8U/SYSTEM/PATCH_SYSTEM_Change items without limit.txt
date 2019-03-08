@@ -1,15 +1,33 @@
 NAME=アイテムの交換 無制限にする
 NAME.en=Limitless Trading
-NAME.zh=交换项目使其无限
+NAME.zh=道具的交换无限制
 
 //アドレスパッチとして実装します
-TYPE=ADDR
+TYPE=SWITCH
 TAG=#ENGINE
 
-ADDRESS=0x22f50
-COMBO=default|0x16 0xD1|fix|0xc0 0x46
-COMBO.en=Default: Once/Turn|0x16 0xD1|Patched: Limitless|0xc0 0x46
+DETERMINATION_ADDRESS=0x22f50
+COMBO=Default: 一度だけ|OFF|無制限 何度でも交換可能|FIX1|無制限2 さらに再度移動もできる|FIX2
+COMBO.en=Default: Once/Turn|OFF|Patched 1: Limitless|FIX1|Patched 2: Limitless and re-move|FIX2
+COMBO.zh=默认值：一次/转|OFF|无限 1|FIX1|无限 2 我可以再搬一次|FIX2
+
+OFF:0x022f50=0x16 0xD1
+OFF:0x02D772=0x1B
+OFF:0x09E3B8=0x1C
+OFF:0x09E8F2=0x1C
+
+FIX1:0x022f50=0xc0 0x46
+FIX1:0x02D772=0x1B
+FIX1:0x09E3B8=0x1C
+FIX1:0x09E8F2=0x1C
+
+FIX2:0x022f50=0x00 0x00
+FIX2:0x02D772=0x1D
+FIX2:0x09E3B8=0x1D
+FIX2:0x09E8F2=0x1D
 
 INFO=GBA FEでは、アイテム交換を各ユニットごとに1ターンに付き1回しかりようできません。\r\nSFC FEは、無制限にアイテムを交換することができます。\r\nこのパッチは、SFC FEのように、何度でもアイテムを交換できるようにします。\r\nアーマーキラーなどの特殊武器を使いまわしやすくなります。\r\n
 INFO.zh=在GBA FE中，每个单位每回合不能进行一次物品交换。\r\nSFC FE可以无限期交换项目。\r\n该修补程序允许您以SFC FE的次数交换项目。\r\n扭转盔甲杀手等特殊武器变得容易。\r\n
 INFO.en=Sets whether item trading is restricted to once per turn (Default) or is limitless (Patched).\r\nThis patch removes the item trade limit, making trade similar to the SNES Trade rules.
+
+AUTHOR=aera

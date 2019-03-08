@@ -59,8 +59,8 @@ pActionRoutineTable:
 	NoActionRoutine               // 0x18 ?
 	ActionRoutine(0x32345)        // 0x19 Arena
 	ActionRoutine(0x2FC49, True)  // 0x1A Use Item
-	NoActionRoutine               // 0x1B ?
-	NoActionRoutine               // 0x1C ?
+	NoActionRoutine               // 0x1B On Item exchange
+	NoActionRoutine               // 0x1C On Item exchange to Supply
 	NoActionRoutine               // 0x1D Post Trade/Supply
 	NoActionRoutine               // 0x1E Wait 2 (needs more research)
 	NoActionRoutine               // 0x1F Backing out (from a trap?)

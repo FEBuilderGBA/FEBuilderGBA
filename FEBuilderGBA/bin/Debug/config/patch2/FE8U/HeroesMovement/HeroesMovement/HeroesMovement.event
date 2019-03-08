@@ -58,11 +58,14 @@ prSmite_TargetLegality:
 	#incbin "asm/CheckUnitHasNotGuardAI.bin"
 
 
-//UnitActionReworkしないため、以下の空いているスロットを利用します
-#define ACTION_MOVETARGET 0x1C
-#define ACTION_MOVEACTIVE 0x1B
-#define ACTION_SWAP       0x18
-#define ACTION_PUSH       0x16
+#ifndef HAX_ACTION_APPLICATION_REWORK_EVENT
+	#include "../../UnitActionRework/UnitActionRework/UnitActionRework.event"
+#endif
+
+#define ACTION_MOVETARGET 0x23
+#define ACTION_MOVEACTIVE 0x24
+#define ACTION_SWAP       0x25
+#define ACTION_PUSH       0x26
 
 //下に出すテキスト
 #define TEXT_BOTTOMHELP_PIVOT      0
@@ -404,22 +407,22 @@ _prSelection_DestructMoveDisplay:
 
 ALIGN 4
 _prMoveActiveUnitAction:
-	#incbin "asm/MoveActiveUnitActionDirectDump.bin"
+	#incbin "asm/MoveActiveUnitAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prMoveTargetUnitAction:
-	#incbin "asm/MoveTargetUnitActionDirectDump.bin"
+	#incbin "asm/MoveTargetUnitAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prSwapAction:
-	#incbin "asm/SwapActionDirectDump.bin"
+	#incbin "asm/SwapAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prPushAction:
-	#incbin "asm/PushActionDirectDump.bin"
+	#incbin "asm/PushAction.bin"
 	POIN (_p6CUnitPushAnim_rConstruct+1)
 	POIN (_prPushAnim_BeginTargetPush+1)
 
@@ -521,19 +524,10 @@ __psName:
 
 }
 
-#define pActionRoutineTable 0x032060	//FE8U
-#define ActionRoutine(apRoutine) "POIN apRoutine"
-#define SetUnitAction(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable + 4*(aActionId-1)); adActionRoutine; POP"
 SetUnitAction(ACTION_MOVETARGET, ActionRoutine(_prMoveTargetUnitAction+1))
 SetUnitAction(ACTION_MOVEACTIVE, ActionRoutine(_prMoveActiveUnitAction+1))
 SetUnitAction(ACTION_SWAP,       ActionRoutine(_prSwapAction+1))
 SetUnitAction(ACTION_PUSH,       ActionRoutine(_prPushAction+1))
-
-//ActionReworkをしない場合、空き領域を使うのだが、0x1b ,0x1c は別の処理があるのでどける.
-#define pActionRoutineTable2 0x01D0D0	//FE8U
-#define SetUnitAction2(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable2 + 4*(aActionId-1)); adActionRoutine; POP"
-SetUnitAction2(ACTION_MOVETARGET,WORD 0x0801D1C8)	//FE8U
-SetUnitAction2(ACTION_MOVEACTIVE,WORD 0x0801D1C8)	//FE8U
 
 #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
 

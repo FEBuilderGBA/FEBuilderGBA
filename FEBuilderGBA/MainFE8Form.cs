@@ -1053,6 +1053,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolUseFlagForm>();
         }
 
+        private void UnitActionPointerButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<UnitActionPointerForm>();
+        }
+
     }
 
 }

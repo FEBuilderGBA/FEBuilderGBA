@@ -11568,3 +11568,4 @@ r3=X tile position of menu of the right	{U}
 08AD1734	&LZ77	引导数据。	FE 7的CG片段。	{J}
 08AD1EC8	&PALETTE8	引导数据。	FE 7 CG托盘的残余物。	{J}
 08AD1FC8	&HEADERTSA	引导数据。	FE 7的CG的TSE遗留物。	{J}
+0802D664	实际通过物品交换交换物品时。	{J}
