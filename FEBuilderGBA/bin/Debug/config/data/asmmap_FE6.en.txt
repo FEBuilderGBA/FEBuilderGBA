@@ -1116,3 +1116,64 @@
 0804256C	Set the value to "unknown flag for battle 4 bytes".
 08042578	Get "unknown flag for battle 4 bytes".
 0203CCE4	Unknown flag for battle 4 bytes.
+0801C700	FillWarpRangeMap
+08018670	CanUnitCrossTerrain
+0801EC94	RescueUsability
+0801ED00	DropUsability
+08017520	GetUnitItemCount
+0802c5e4	NewUnitInfoWindow_WithAllLines
+0802cb14	NewBottomHelpText
+080201A0	RideCommandEffect
+080181d4	MakeMOVEUNITForMapUnit
+08025644	SaveUnitFromBattle
+0805f874	MakeMOVEUNITForMapUnit
+0805fc54	_MOVEUNIT6C_SetDefaultFacingDirection
+08003B54	Delete6CInternal
+08003c80	Free6C
+08003C28    Delete6C
+08003d2c	Isolate6C
+08003E60 	Break6CLoop
+08028348	GameVBlank6C_Destructor
+08028354	GameVBlank6C_Loop
+08004248	DeleteEach6C
+08028394	BlockGameGraphicsLogic
+08001034	EnableBGPaletteSync void
+08004114	BlockEach6CMarked
+080283C8	UnblockGameGraphicsLogic
+0800417c	UnblockEach6CMarked
+08003e7c	Find6C
+08028360	SetupGameVBlank6C
+08002cb8	OAMBufferSyncInfoInitialize
+08002d54	GetSpriteNum1
+0802A028	ApplyUnitAction
+0203956C	gActionData
+0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A494	ActionSteal
+0802A138	ActionRescue
+0802A188	ActionDrop
+0802A3C0	ActionTalk
+0802A3EC	ActionSupport
+0802A208	ActionVisitAndSieze
+08027F98	ActionStaffDoorChestUseItem
+0802A30C	ActionCombat
+0802A370	ActionDance
+0802A35C	ActionArena
+@ArenaTemp@00	&Unit	Player unit.
+@ArenaTemp@04	&Unit	Opponent.
+@ArenaTemp@08	short	Premium.
+@ArenaTemp@0A	byte	Battle result.
+@ArenaTemp@0B	byte	Unknown 1
+@ArenaTemp@0C	byte	Uses
+@ArenaTemp@0D	byte	Item Editor
+@ArenaTemp@0E	byte	Unknown 2
+@ArenaTemp@0F	byte	Unknown 3.
+@ArenaTemp@10	short	Unknown 4.
+@ArenaTemp@12	byte	Unknown 5.
+@ArenaTemp@13	byte	Unknown 6.
+@ArenaTemp@14	short	Unknown 7.
+@ArenaTemp@15	short	Unknown 8.
+@ArenaTemp@16	short	The strength of the player.
+@ArenaTemp@18	short	Strength of the opponent.
+02039504	@ArenaTemp	Temporary data of the stadium.
+08022064	GetUnitMapSpritePaletteIndex
+08026504	When exchanging items actually by item exchange.

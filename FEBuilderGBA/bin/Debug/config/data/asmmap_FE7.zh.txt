@@ -4363,3 +4363,12 @@
 0806BCB4	NewMOVEUNIT	{U}
 080256F4	GetUnitMapSpritePaletteIndex	{U}
 0804B1A0	获得“战斗4字节的未知标志”。	{U}
+//This data is made with the aim of being readable by machine fast.
+{J}
+0802D00C	ActionStaffDoorChestUseItem	{U}
+0802B4DC	实际通过物品交换交换物品时。	{J}
+0802B02C	实际通过物品交换交换物品时。	{U}
+080973EC	在Advance Advance屏幕上接收来自运输商的物品。	{J}
+08096C60	在Advance Advance屏幕上接收来自运输商的物品。	{U}
+08097990	将物品发送到进度准备屏幕上的运输车。	{J}
+08097204	将物品发送到进度准备屏幕上的运输车。	{U}

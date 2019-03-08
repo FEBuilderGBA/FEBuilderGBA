@@ -66,7 +66,7 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     int id = i;
-                    return U.ToHexString(id) + " " + U.ToHexString(id);
+                    return U.ToHexString(id) + " " + U.at(UnitActionEffectList, id);
                 }
                 );
             return ifr;
@@ -118,6 +118,12 @@ namespace FEBuilderGBA
             }
 
             return addrApplyAction;
+        }
+
+        static Dictionary<uint, string> UnitActionEffectList;
+        public static void PreLoadResource(string fullfilename)
+        {
+            UnitActionEffectList = U.LoadDicResource(fullfilename);
         }
 
         public static void SupportActionRework(StringBuilder sb)

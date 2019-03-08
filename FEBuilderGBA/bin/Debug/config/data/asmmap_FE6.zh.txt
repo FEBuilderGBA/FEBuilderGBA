@@ -904,3 +904,64 @@
 0804256C	将值设置为“战斗4字节的未知标志”。
 08042578	获得“战斗4字节的未知标志”。
 0203CCE4	战斗4字节的未知标志。
+0801C700	FillWarpRangeMap
+08018670	CanUnitCrossTerrain
+0801EC94	RescueUsability
+0801ED00	DropUsability
+08017520	GetUnitItemCount
+0802c5e4	NewUnitInfoWindow_WithAllLines
+0802cb14	NewBottomHelpText
+080201A0	RideCommandEffect
+080181d4	MakeMOVEUNITForMapUnit
+08025644	SaveUnitFromBattle
+0805f874	MakeMOVEUNITForMapUnit
+0805fc54	_MOVEUNIT6C_SetDefaultFacingDirection
+08003B54	Delete6CInternal
+08003c80	Free6C
+08003C28    Delete6C
+08003d2c	Isolate6C
+08003E60 	Break6CLoop
+08028348	GameVBlank6C_Destructor
+08028354	GameVBlank6C_Loop
+08004248	DeleteEach6C
+08028394	BlockGameGraphicsLogic
+08001034	EnableBGPaletteSync void
+08004114	BlockEach6CMarked
+080283C8	UnblockGameGraphicsLogic
+0800417c	UnblockEach6CMarked
+08003e7c	Find6C
+08028360	SetupGameVBlank6C
+08002cb8	OAMBufferSyncInfoInitialize
+08002d54	GetSpriteNum1
+0802A028	ApplyUnitAction
+0203956C	gActionData
+0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A494	ActionSteal
+0802A138	ActionRescue
+0802A188	ActionDrop
+0802A3C0	ActionTalk
+0802A3EC	ActionSupport
+0802A208	ActionVisitAndSieze
+08027F98	ActionStaffDoorChestUseItem
+0802A30C	ActionCombat
+0802A370	ActionDance
+0802A35C	ActionArena
+@ArenaTemp@00	&Unit	球员单位。
+@ArenaTemp@04	&Unit	反对者。
+@ArenaTemp@08	short	锁存器。
+@ArenaTemp@0A	byte	战斗结果。
+@ArenaTemp@0B	byte	未知1
+@ArenaTemp@0C	byte	耐久
+@ArenaTemp@0D	byte	道具
+@ArenaTemp@0E	byte	未知2
+@ArenaTemp@0F	byte	未知3。
+@ArenaTemp@10	short	未知4。
+@ArenaTemp@12	byte	未知5。
+@ArenaTemp@13	byte	未知6。
+@ArenaTemp@14	short	未知7。
+@ArenaTemp@15	short	未知8。
+@ArenaTemp@16	short	玩家的力量。
+@ArenaTemp@18	short	对手的力量。
+02039504	@ArenaTemp	体育场的临时数据。
+08022064	GetUnitMapSpritePaletteIndex
+08026504	实际通过物品交换交换物品时。

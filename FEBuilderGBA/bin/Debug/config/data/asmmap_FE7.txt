@@ -2965,7 +2965,8 @@
 0802F0E4	GetUnitArenaWeight	{J}
 0802F2E0	PrepareBalancedArenaFight	{J}
 0802EF14	AdjustArenaOpponentPower	{J}
-0802F7F4	ActionRescue	{J}
+0802F7F4	
+	{J}
 0802F900	ActionVisitAndSieze	{J}
 0802F97C	ActionArena	{J}
 0802F990	ActionDance	{J}
@@ -4688,4 +4689,9 @@
 0806BA88	Make6CMOVEUNITForUnit	{U}
 0806BCB4	NewMOVEUNIT	{U}
 080256F4	GetUnitMapSpritePaletteIndex	{U}
-
+0802B4DC	アイテム交換で、実際にアイテムを交換した時	{J}
+0802B02C	アイテム交換で、実際にアイテムを交換した時	{U}
+080973EC	進撃準備画面で、輸送体からアイテムを受け取る	{J}
+08096C60	進撃準備画面で、輸送体からアイテムを受け取る	{U}
+08097990	進撃準備画面で、輸送体にアイテムを送る	{J}
+08097204	進撃準備画面で、輸送体にアイテムを送る	{U}

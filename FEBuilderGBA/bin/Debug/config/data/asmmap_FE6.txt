@@ -1135,3 +1135,33 @@
 0802A028	ApplyUnitAction
 0203956C	gActionData
 0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A494	ActionSteal
+0802A138	ActionRescue
+0802A188	ActionDrop
+0802A3C0	ActionTalk
+0802A3EC	ActionSupport
+0802A208	ActionVisitAndSieze
+08027F98	ActionStaffDoorChestUseItem
+0802A30C	ActionCombat
+0802A370	ActionDance
+0802A35C	ActionArena
+
+@ArenaTemp@00	&Unit	プレイヤーユニット
+@ArenaTemp@04	&Unit	対戦相手
+@ArenaTemp@08	short	掛け金
+@ArenaTemp@0A	byte	戦闘結果
+@ArenaTemp@0B	byte	不明1
+@ArenaTemp@0C	byte	耐久
+@ArenaTemp@0D	byte	アイテム
+@ArenaTemp@0E	byte	不明2
+@ArenaTemp@0F	byte	不明3
+@ArenaTemp@10	short	不明4
+@ArenaTemp@12	byte	不明5
+@ArenaTemp@13	byte	不明6
+@ArenaTemp@14	short	不明7
+@ArenaTemp@15	short	不明8
+@ArenaTemp@16	short	プレイヤーの強さ
+@ArenaTemp@18	short	対戦相手の強さ
+02039504	@ArenaTemp	闘技場の一時データ
+08022064	GetUnitMapSpritePaletteIndex
+08026504	アイテム交換で、実際にアイテムを交換した時

@@ -412,6 +412,8 @@ namespace FEBuilderGBA
 
             //SondEffectリスト
             SongTableForm.PreLoadResource(U.ConfigDataFilename("sound_"));
+            //UnitActionリスト
+            UnitActionPointerForm.PreLoadResource(U.ConfigDataFilename("unitaction_"));
 
             //ROM内アニメ
             ImageRomAnimeForm.PreLoadResource();

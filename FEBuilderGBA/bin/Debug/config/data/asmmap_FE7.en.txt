@@ -4377,3 +4377,11 @@
 //This data is made with the aim of being readable by machine fast.
 0802D00C	ActionStaffDoorChestUseItem	{U}
 0804B1A0	Get "unknown flag for battle 4 bytes".	{U}
+//This data is made with the aim of being readable by machine fast.
+{J}
+0802B4DC	When exchanging items actually by item exchange.	{J}
+0802B02C	When exchanging items actually by item exchange.	{U}
+080973EC	Receive items from transporters on the Advance Advance screen.	{J}
+08096C60	Receive items from transporters on the Advance Advance screen.	{U}
+08097990	Send the item to the transporter on the advancement preparation screen.	{J}
+08097204	Send the item to the transporter on the advancement preparation screen.	{U}
