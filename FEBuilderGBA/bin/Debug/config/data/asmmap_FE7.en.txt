@@ -1748,7 +1748,7 @@
 08019ABC	RefreshFogAndUnitMaps	{U}
 08019B08	GetTerrainNameString	{U}
 08019B20	GetTerrainHealAmount	{U}
-08019B30	GetTerrainSomething	{U}
+08019B30	GetTerrainRestoreBadStatus	{U}
 08019BA0	FillMovementMapForUnit	{U}
 08019BE0	FillMovementMapForUnitAndMovement	{U}
 08019C1C	FillMovementMapForUnitPosition	{U}
@@ -2594,7 +2594,7 @@
 08019E50	UpdateTrapHiddenStates	{J}
 08019EA4	RefreshFogAndUnitMaps	{J}
 08019F00	GetTerrainHealAmount	{J}
-08019F10	GetTerrainSomething	{J}
+08019F10	GetTerrainRestoreBadStatus	{J}
 08019F80	FillMovementMapForUnit	{J}
 08019FC0	FillMovementMapForUnitAndMovement	{J}
 08019FFC	FillMovementMapForUnitPosition	{J}

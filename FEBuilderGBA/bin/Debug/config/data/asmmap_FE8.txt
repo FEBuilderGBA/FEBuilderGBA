@@ -2924,7 +2924,7 @@
 0801a1f4	RefreshFogAndUnitMaps	{U}
 0801a240	GetTerrainNameString	{U}
 0801a258	GetTerrainHealAmount	{U}
-0801a268	GetTerrainSomething	{U}
+0801a268	GetTerrainRestoreBadStatus	{U}
 0801a2ec	RevertMapChangesById	{U}
 0801a38c	FillMovementMapForUnit	{U}
 0801a3cc	FillMovementMapForUnitAndMovement	{U}
@@ -4714,7 +4714,7 @@
 08019ECC	RefreshFogAndUnitMaps	{J}
 08019F18	0801a240	GetTerrainNameString	{J}
 08019F28	GetTerrainHealAmount	{J}
-08019F38	GetTerrainSomething	{J}
+08019F38	GetTerrainRestoreBadStatus	{J}
 08019FBC	RevertMapChangesById	{J}
 0801A05C	FillMovementMapForUnit	{J}
 0801A058	FillMovementMapForUnitAndMovement	{J}
@@ -11661,3 +11661,5 @@
 08AD1EC8	&PALETTE8	ボツデータ	FE7のCGのパレットの残骸	{J}
 08AD1FC8	&HEADERTSA	ボツデータ	FE7のCGのTSAの残骸	{J}
 0802D664	アイテム交換で、実際にアイテムを交換した時	{J}
+080358A8	AutoRestoreBadStatus	{J}
+080357A8	AutoRestoreBadStatus	{U}

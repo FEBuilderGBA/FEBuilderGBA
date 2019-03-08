@@ -754,7 +754,7 @@
 08018C6C	UpdateGameTileGfx
 08018D90	UpdateGameTilesGraphics
 080192C4	GetTerrainHealAmount
-080192D4	GetTerrainSomething
+080192D4	GetTerrainRestoreBadStatus
 08019384	FillMovementMapForUnitAndMovement
 08019454	FillMovementMapForUnitAt
 080194A4	FillMovementMap

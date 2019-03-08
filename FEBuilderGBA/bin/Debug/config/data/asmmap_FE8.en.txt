@@ -2977,7 +2977,7 @@ r3=X tile position of menu of right	{U}
 0801a1f4	RefreshFogAndUnitMaps	{U}
 0801a240	GetTerrainNameString	{U}
 0801a258	GetTerrainHealAmount	{U}
-0801a268	GetTerrainSomething	{U}
+0801a268	GetTerrainRestoreBadStatus	{U}
 0801a2ec	RevertMapChangesById	{U}
 0801a38c	FillMovementMapForUnit	{U}
 0801a3cc	FillMovementMapForUnitAndMovement	{U}
@@ -4773,7 +4773,7 @@ r3=X tile position of menu of right	{U}
 08019ECC	RefreshFogAndUnitMaps	{J}
 08019F18	0801a240	GetTerrainNameString	{J}
 08019F28	GetTerrainHealAmount	{J}
-08019F38	GetTerrainSomething	{J}
+08019F38	GetTerrainRestoreBadStatus	{J}
 08019FBC	RevertMapChangesById	{J}
 0801A05C	FillMovementMapForUnit	{J}
 0801A058	FillMovementMapForUnitAndMovement	{J}

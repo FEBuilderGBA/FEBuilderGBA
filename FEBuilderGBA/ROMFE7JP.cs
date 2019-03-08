@@ -64,6 +64,7 @@ namespace FEBuilderGBA
         public uint support_attribute_pointer() { return 0x26E24; }  //支援効果の開始位置
         public uint attribute_maxcount() { return 7; } // 属性の最大数
         public uint terrain_recovery_pointer() { return 0x19F0C; } //地形回復 全クラス共通
+        public uint terrain_bad_status_recovery_pointer() { return 0x019F1C; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0x0; } // CC分岐の開始位置
         public uint class_alphaname_pointer() { return 0x0; } // クラスのアルファベット表記の開始位置
         public uint map_terrain_name_pointer() { return 0x19efc; } // マップの地名表記の開始位置
