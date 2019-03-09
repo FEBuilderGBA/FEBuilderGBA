@@ -409,22 +409,22 @@ _prSelection_DestructMoveDisplay:
 
 ALIGN 4
 _prMoveActiveUnitAction:
-	#incbin "asm/MoveActiveUnitActionDirectDump.bin"
+	#incbin "asm/MoveActiveUnitAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prMoveTargetUnitAction:
-	#incbin "asm/MoveTargetUnitActionDirectDump.bin"
+	#incbin "asm/MoveTargetUnitAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prSwapAction:
-	#incbin "asm/SwapActionDirectDump.bin"
+	#incbin "asm/SwapAction.bin"
 	POIN (_p6CUnitMoveAnim_rConstruct+1)
 
 ALIGN 4
 _prPushAction:
-	#incbin "asm/PushActionDirectDump.bin"
+	#incbin "asm/PushAction.bin"
 	POIN (_p6CUnitPushAnim_rConstruct+1)
 	POIN (_prPushAnim_BeginTargetPush+1)
 

@@ -5,7 +5,7 @@
 .set prPushAnim_BeginTargetPush, EALiterals+0x04
 
 PushAction:
-	push {r4-r5}
+	push {r4-r5,lr}
 	
 	ldr r4, =pActionStruct
 	
@@ -60,9 +60,6 @@ PushAction:
 	
 TestSkip:
 	pop {r4-r5}
-	
-	@Rewrite to be called by switch. by 7743
-	pop {r4,r5}  @=0x802F7EC+1	@FE7J
 	pop {r1}
 	bx r1
 
