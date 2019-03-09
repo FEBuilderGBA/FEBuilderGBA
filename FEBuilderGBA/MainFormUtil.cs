@@ -1564,6 +1564,12 @@ namespace FEBuilderGBA
             return true;
         }
 
+        static bool IsMid2AgbBadFilename(string filename)
+        {
+            string name = Path.GetFileNameWithoutExtension(filename);
+            return ! RegexCache.IsMatch(name, "^[a-zA-Z][a-zA-Z0-9_]+$");
+        }
+
         //mid2agbでmidをsへコンパイル
         public static bool CompilerMID2AGB(string target_filename, int optuon_v, int optuon_r, out string output)
         {
@@ -1587,6 +1593,11 @@ namespace FEBuilderGBA
             if (optuon_r != 0)
             {
                 args += " " + "-R" + optuon_r.ToString();
+            }
+            bool isMid2AgbBadFilename = IsMid2AgbBadFilename(target_filename);
+            if (isMid2AgbBadFilename)
+            {
+                args += " " + "-Lfeb" + DateTime.Now.ToString("yyyyMMddHHmmss");
             }
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
