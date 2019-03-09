@@ -43,6 +43,7 @@ namespace FEBuilderGBA
         void ReScan()
         {
             this.Patchs = ScanPatchs(GetPatchDirectory(), false);
+            ReSort();
             ReFilter();
         }
         //フィルターする.
@@ -61,13 +62,28 @@ namespace FEBuilderGBA
             this.PatchList.EndUpdate();
             U.SelectedIndexSafety(this.PatchList, 0, true);
         }
-
+        void ReSort()
+        {
+            if (this.SortFilter == SortEnum.SortDateA)
+            {
+                this.Patchs.Sort((a, b) => { return DateTime.Compare(b.Date, a.Date); });
+            }
+            else if (this.SortFilter == SortEnum.SortDateD)
+            {
+                this.Patchs.Sort((a, b) => { return DateTime.Compare(a.Date, b.Date); });
+            }
+            else if (this.SortFilter == SortEnum.SortName)
+            {
+                this.Patchs.Sort((a, b) => { return string.Compare(a.Name, b.Name); });
+            }
+        }
 
         public class PatchSt
         {
             public string PatchFileName;
             public string Name;
             public string SearchData; //検索用データ
+            public DateTime Date;
 
             public Dictionary<string,string> Param;
         };
@@ -150,6 +166,9 @@ namespace FEBuilderGBA
                     patchs.Add(patch);
                 }
             }
+
+
+
             return patchs;
         }
 
@@ -246,6 +265,8 @@ namespace FEBuilderGBA
 
                 //検索用データ
                 p.SearchData = name + "\t" + search_filename + "\t" + U.at(p.Param, "INFO") + "\t" + U.at(p.Param, "AUTHOR") + "\t" + U.at(p.Param, "TAG");
+                //ソート用の日付
+                p.Date = U.GetFileDateLastWriteTime(fullfilename);
             }
             return p;
         }
@@ -4742,6 +4763,7 @@ namespace FEBuilderGBA
         {
             //フィルターをしていたらやめさせる.
             Filter.Text = "";
+            SortFilter = SortEnum.SortNone;
             //パッチの再スキャン
             ReScan();
 
@@ -6436,9 +6458,36 @@ namespace FEBuilderGBA
             return ((uint)i) - addr;
         }
 
+        enum SortEnum
+        {
+              SortNone
+            , SortDateA
+            , SortDateD
+            , SortName
+        }
+        SortEnum SortFilter = SortEnum.SortNone;
+
+        string GetSortFilterString()
+        {
+            if (this.SortFilter == SortEnum.SortName)
+            {
+                return "@SortName";
+            }
+            else if (this.SortFilter == SortEnum.SortDateA)
+            {
+                return "@SortDateA";
+            }
+            else if (this.SortFilter == SortEnum.SortDateD)
+            {
+                return "@SortDateD";
+            }
+            return "@SortNone";
+        }
+
         private void FilterExLabel_Click(object sender, EventArgs e)
         {
             PatchFilterExForm f = (PatchFilterExForm)InputFormRef.JumpFormLow<PatchFilterExForm>();
+            f.SetSort(GetSortFilterString());
             f.ShowDialog();
 
             if (f.DialogResult != System.Windows.Forms.DialogResult.OK)
@@ -6446,7 +6495,35 @@ namespace FEBuilderGBA
                 return;
             }
 
-            this.Filter.Text = f.TagFilter;
+            if (f.TagFilter == "@SortName")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortName;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortDateA")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortDateA;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortDateD")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortDateD;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortNone")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortNone;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else
+            {//検索フィルタ
+                this.Filter.Text = f.TagFilter;
+            }
+
             if (this.Filter.Text.Length > 1)
             {
                 this.Filter.Select(this.Filter.Text.Length, 0);

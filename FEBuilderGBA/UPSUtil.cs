@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             return src_crc32;
         }
 
-        public static bool ApplyUPS(ROM rom, string upsfilename)
+        public static bool ApplyUPS(ROM retrom, string upsfilename)
         {
             byte[] patch = File.ReadAllBytes(upsfilename);
             if (patch.Length < 16)
@@ -48,7 +48,7 @@ namespace FEBuilderGBA
                 }
             }
             {
-                uint src_calc_crc32 = crc32.Calc(rom.Data);
+                uint src_calc_crc32 = crc32.Calc(retrom.Data);
                 uint src_crc32 = U.u32(patch, (uint)(patch.Length - 12));
                 if (src_calc_crc32 != src_crc32)
                 {
@@ -61,9 +61,11 @@ namespace FEBuilderGBA
             uint source_size = read_val_code(patch, i, out i);
             uint dest_size = read_val_code(patch, i, out i);
 
-            rom.write_resize_data(dest_size);
-            uint romi = 0;
+            //無改造ROMのデータ
+            byte[] bin = new byte[dest_size];
+            Array.Copy(retrom.Data, 0, bin, 0, Math.Min(retrom.Data.Length,dest_size) );
 
+            uint romi = 0;
             uint end = (uint)(patch.Length - 4 * 3);
             for (; i < end; i++)
             {
@@ -71,12 +73,12 @@ namespace FEBuilderGBA
                 romi += skip_size;
                 for (; i < end; i++)
                 {
-                    if (romi >= rom.Data.Length)
+                    if (romi >= dest_size)
                     {
                         break;
                     }
 
-                    rom.Data[romi] = (byte)(rom.Data[romi] ^ patch[i]);
+                    bin[romi] = (byte)(bin[romi] ^ patch[i]);
                     romi++;
                     if (patch[i] == 0x00)
                     {
@@ -85,7 +87,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint dest_calc_crc32 = crc32.Calc(rom.Data);
+            uint dest_calc_crc32 = crc32.Calc(bin);
             uint dest_crc32 = U.u32(patch, (uint)(patch.Length - 8));
             if (dest_calc_crc32 != dest_crc32)
             {
@@ -93,6 +95,8 @@ namespace FEBuilderGBA
                 return false;
             }
 
+            retrom.SwapNewROMDataDirect(bin);
+            retrom.ClearModifiedFlag();
             return true;
         }
 

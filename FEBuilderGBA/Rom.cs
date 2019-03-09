@@ -845,6 +845,10 @@ namespace FEBuilderGBA
 
             return true;
         }
+        public void SwapNewROMDataDirect(byte[] newROMData)
+        {
+            this.Data = newROMData;
+        }
         public bool CompareByte(uint addr, byte[] bin)
         {
             if (addr + bin.Length >= this.Data.Length)

@@ -8512,6 +8512,21 @@ Event instruction (#EVENT)
 :定番の修正(#ESSENTIALFIXES)
 Essential Fixes(#ESSENTIALFIXES)
 
+:ソート
+Sort
+
+:ソートしない
+Do not sort
+
+:新しい日付でソート
+Sort by New date
+
+:古い日付でソート
+Sort by Old date
+
+:名前でソート
+Sort by Name
+
 :フィルタの適応
 Filter adaptation
 
