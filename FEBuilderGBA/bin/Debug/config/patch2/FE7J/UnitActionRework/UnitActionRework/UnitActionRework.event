@@ -1,0 +1,119 @@
+#ifndef HAX_ACTION_APPLICATION_REWORK_EVENT
+#define HAX_ACTION_APPLICATION_REWORK_EVENT
+
+#ifndef _FE7_
+	ERROR _file_ is to be assembled for FE8
+#endif // _FE7_
+
+#include "Extensions/Hack Installation.txt"
+#include "eastdlib.event"
+
+PUSH; ORG 0x2F6E4
+	replaceWithHack(prNewActionApplication)
+POP
+
+ALIGN 4
+prNewActionApplication:
+	#incbin "asm/ApplyAction.bin"
+	POIN pActionRoutineTable
+
+ALIGN 4
+prWaitAction:
+	#incbin "asm/WaitAction.bin"
+
+#ifndef ACTION_TABLE_SIZE
+	#define ACTION_TABLE_SIZE 0x50
+#endif
+
+#define NoActionRoutine "WORD 0"
+#define ActionRoutine(apRoutine) "POIN apRoutine"
+#define ActionRoutine(apRoutine, abForcedYeild) "WORD (0x08000000 | apRoutine | (abForcedYeild << 28))"
+
+#define SetUnitAction(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable + 4*aActionId); adActionRoutine; POP"
+
+pActionRoutineTable:
+	NoActionRoutine                // 0x00 ?
+	ActionRoutine(prWaitAction+1)  // 0x01 Wait
+	ActionRoutine(0x2f92c+1)       // 0x02 Combat
+	ActionRoutine(0x2d4cc+1, True) // 0x03 Staff
+	ActionRoutine(0x2f990+1)       // 0x04 Dance
+	NoActionRoutine                // 0x05 ?
+	ActionRoutine(0x2fab4+1)       // 0x06 Steal
+	ActionRoutine(0x2f7f4+1)       // 0x07 Rescue
+	ActionRoutine(0x2f870+1)       // 0x08 Drop
+	NoActionRoutine                // 0x09 Take
+	NoActionRoutine                // 0x0A Give
+	NoActionRoutine                // 0x0B ?
+	ActionRoutine(0x2f9e0+1)       // 0x0C Talk
+	ActionRoutine(0x2fa0c+1)       // 0x0D Support
+	ActionRoutine(0x2f900+1)       // 0x0E Visit
+	ActionRoutine(0x2f900+1)       // 0x0F Sieze
+	ActionRoutine(0x2d4cc+1, True) // 0x10 Door
+	NoActionRoutine                // 0x11 ?
+	ActionRoutine(0x2d4cc+1, True) // 0x12 Chest
+	NoActionRoutine                // 0x13 ?
+	NoActionRoutine                // 0x14 Post Shopping
+	NoActionRoutine                // 0x15 ?
+	ActionRoutine(0x2f97c+1)       // 0x16 Arena
+	ActionRoutine(0x2d4cc+1, True) // 0x17 Use Item
+	NoActionRoutine                // 0x18 On Item exchange
+	NoActionRoutine                // 0x19 On Item exchange to Supply
+	NoActionRoutine                // 0x1A Post Trade/Supply
+	NoActionRoutine                // 0x1B Wait 2 (needs more research)
+	NoActionRoutine                // 0x1C Backing out (from a trap?)
+	NoActionRoutine                // 0x1D ?
+	NoActionRoutine                // 0x1E Ride Ballista
+	NoActionRoutine                // 0x1F Exit Ballista
+	NoActionRoutine                // 0x20 ?
+	NoActionRoutine                // 0x21 ?
+	NoActionRoutine                // 0x22 ?
+	NoActionRoutine                // 0x23 FREE -> HeroesSkill patch
+	NoActionRoutine                // 0x24 FREE -> HeroesSkill patch
+	NoActionRoutine                // 0x25 FREE -> HeroesSkill patch
+	NoActionRoutine                // 0x26 FREE -> HeroesSkill patch
+	NoActionRoutine                // 0x27 FREE
+	NoActionRoutine                // 0x28 FREE
+	NoActionRoutine                // 0x29 FREE
+	NoActionRoutine                // 0x2A FREE
+	NoActionRoutine                // 0x2B FREE
+	NoActionRoutine                // 0x2C FREE
+	NoActionRoutine                // 0x2D FREE
+	NoActionRoutine                // 0x2E FREE
+	NoActionRoutine                // 0x2F FREE 
+	NoActionRoutine                // 0x30 FREE 
+	NoActionRoutine                // 0x31 FREE 
+	NoActionRoutine                // 0x32 FREE 
+	NoActionRoutine                // 0x33 FREE 
+	NoActionRoutine                // 0x34 FREE 
+	NoActionRoutine                // 0x35 FREE 
+	NoActionRoutine                // 0x36 FREE 
+	NoActionRoutine                // 0x37 FREE 
+	NoActionRoutine                // 0x38 FREE 
+	NoActionRoutine                // 0x39 FREE 
+	NoActionRoutine                // 0x3a FREE 
+	NoActionRoutine                // 0x3b FREE 
+	NoActionRoutine                // 0x3c FREE 
+	NoActionRoutine                // 0x3d FREE 
+	NoActionRoutine                // 0x3e FREE 
+	NoActionRoutine                // 0x3f FREE 
+	NoActionRoutine                // 0x40 FREE 
+	NoActionRoutine                // 0x41 FREE 
+	NoActionRoutine                // 0x42 FREE 
+	NoActionRoutine                // 0x43 FREE 
+	NoActionRoutine                // 0x44 FREE 
+	NoActionRoutine                // 0x45 FREE 
+	NoActionRoutine                // 0x46 FREE 
+	NoActionRoutine                // 0x47 FREE 
+	NoActionRoutine                // 0x48 FREE 
+	NoActionRoutine                // 0x49 FREE 
+	NoActionRoutine                // 0x4a FREE 
+	NoActionRoutine                // 0x4b FREE 
+	NoActionRoutine                // 0x4c FREE 
+	NoActionRoutine                // 0x4d FREE 
+	NoActionRoutine                // 0x4e FREE 
+	NoActionRoutine                // 0x4f FREE etc...
+	WORD 0xFFFFFFFF
+
+ORG (pActionRoutineTable+ACTION_TABLE_SIZE*4)
+
+#endif // HAX_ACTION_APPLICATION_REWORK_EVENT

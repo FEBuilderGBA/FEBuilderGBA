@@ -66,6 +66,10 @@ namespace FEBuilderGBA
                 , (int i, uint addr) =>
                 {
                     int id = i;
+                    if (isRework == false)
+                    {//リワークされていない
+                        id += 1; //0は範囲外
+                    }
                     return U.ToHexString(id) + " " + U.at(UnitActionEffectList, id);
                 }
                 );

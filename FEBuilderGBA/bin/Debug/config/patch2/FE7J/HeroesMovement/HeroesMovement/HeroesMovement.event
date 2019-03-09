@@ -60,11 +60,14 @@ prSmite_TargetLegality:
 	#incbin "asm/CheckUnitHasNotGuardAI.bin"
 
 
-//UnitActionReworkしないため、以下の空いているスロットを利用します
-#define ACTION_MOVETARGET 0x14  //FE7では、1Cが利用できないので、14にする。stairs patchと衝突するが仕方ない。
-#define ACTION_MOVEACTIVE 0x1B
-#define ACTION_SWAP       0x18
-#define ACTION_PUSH       0x16
+#ifndef HAX_ACTION_APPLICATION_REWORK_EVENT
+	#include "../../UnitActionRework/UnitActionRework/UnitActionRework.event"
+#endif
+
+#define ACTION_MOVETARGET 0x23
+#define ACTION_MOVEACTIVE 0x24
+#define ACTION_SWAP       0x25
+#define ACTION_PUSH       0x26
 
 //下に出すテキスト
 #define TEXT_BOTTOMHELP_PIVOT      0
@@ -523,18 +526,10 @@ __psName:
 
 }
 
-#define pActionRoutineTable 0x02F714	//FE7J
-#define ActionRoutine(apRoutine) "POIN apRoutine"
-#define SetUnitAction(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable + 4*(aActionId-1)); adActionRoutine; POP"
 SetUnitAction(ACTION_MOVETARGET, ActionRoutine(_prMoveTargetUnitAction+1))
 SetUnitAction(ACTION_MOVEACTIVE, ActionRoutine(_prMoveActiveUnitAction+1))
 SetUnitAction(ACTION_SWAP,       ActionRoutine(_prSwapAction+1))
 SetUnitAction(ACTION_PUSH,       ActionRoutine(_prPushAction+1))
-
-//ActionReworkをしない場合、空き領域を使うのだが、FE7では、 0x18 は別の処理があるのでどける.
-#define pActionRoutineTable2 0x01CE88	//FE7J
-#define SetUnitAction2(aActionId, adActionRoutine) "PUSH; ORG (pActionRoutineTable2 + 4*(aActionId-1)); adActionRoutine; POP"
-SetUnitAction2(ACTION_SWAP,WORD 0x0801CF6C)	//FE7J
 
 #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
 
