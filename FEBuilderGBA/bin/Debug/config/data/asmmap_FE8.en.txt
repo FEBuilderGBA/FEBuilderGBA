@@ -4797,7 +4797,7 @@ r3=X tile position of menu of right	{U}
 0801B80C	DebugMenu_MapIdle	{J}
 0801B820	DebugMenu_MapEffect	{J}
 0801BA20	DebugMapMenu_DisplayInfoIdle	{J}
-0801BA6E	DebugMapMenu_DisplayInfoEffect	{J}
+0801BA6C	DebugMapMenu_DisplayInfoEffect	{J}
 0801BA72	DebugMenu_WeatherDraw	{J}
 0801BC1C	DebugMenu_WeatherIdle	{J}
 0801BB94	DebugMenu_WeatherEffect	{J}
@@ -10227,10 +10227,10 @@ r3=X tile position of menu of right	{U}
 080D77B0	psZero	{U}
 080D77DC	gpGenericMiniMugPalettes	{U}
 080D78EC	gpDialogueTextBoxGfx	{U}
-080D79E8	gRangeTextIdArray	{U}
+080D79E8	&TEXTBATCH	gRangeTextIdArray	{U}
 080D7A10	gWRankTextIdArray	{U}
 080D7A30	gWRankNameIdArray	{U}
-080D7A38	gWTypeTextIdArray	{U}
+080D7A38	&TEXTBATCH	gWTypeTextIdArray	{U}
 080D7C40	gTradeMenuText_xLookup	{U}
 080D7C42	gTradeMenuText_yLookup	{U}
 080D7CB8	gNullString	{U}
@@ -11043,10 +11043,10 @@ r3=X tile position of menu of right	{U}
 080DC3F0	psZero	{J}
 080DC41C	gpGenericMiniMugPalettes	{J}
 080DC52C	gpDialogueTextBoxGfx	{J}
-080DC608	gRangeTextIdArray	{J}
+080DC608	&TEXTBATCH	gRangeTextIdArray	{J}
 080DC630	gWRankTextIdArray	{J}
 080DC650	gWRankNameIdArray	{J}
-080DC658	gWTypeTextIdArray	{J}
+080DC658	&TEXTBATCH	gWTypeTextIdArray	{J}
 080DC974	gTradeMenuText_xLookup	{J}
 080DC976	gTradeMenuText_yLookup	{J}
 080DC9EC	gNullString	{J}
@@ -11631,7 +11631,7 @@ r3=X tile position of menu of right	{U}
 08000AE8	Display build version and release year.	{J}
 08000B10	Display build version and release year.	{U}
 080286A4	Get character string of unit attribute.	{J}
-080DC94C	Attributes of unit.	{J}
+080DC94C	&TEXTBATCH	Attributes of unit.	{J}
 08072454	Load dragon zombie fighting animation data.	{J}
 0806FEA4	Load dragon zombie fighting animation data.	{U}
 080BA2F0	ActionArena	{J}
@@ -11695,3 +11695,15 @@ r3=X tile position of menu of right	{U}
 08AD1EC8	&PALETTE8	Boot data.	Remnants of FE 7 CG pallet.	{J}
 08AD1FC8	&HEADERTSA	Boot data.	Remnants of TSE of CG of FE 7.	{J}
 0802D664	When exchanging items actually by item exchange.	{J}
+080358A8	AutoRestoreBadStatus	{J}
+080357A8	AutoRestoreBadStatus	{U}
+080134E4	Unused function 1.	{J}
+080DC56C	:080DC583	Event34_MessWithUnitState_Data	{J}
+080DC584	:080DC593	Data referenced from unused function 1.	{J}
+080DC6C8	&ASM_POINTER_ARRAY	DebugMenuCommand	{J}
+0801342C	Unused function 1.	{U}
+080D793C	:080D7953	Event34_MessWithUnitState_Data	{U}
+080D7954	:080D7963	Data referenced from unused function 1.	{U}
+085E4E84	&LZ77	An image of something.	5	{J}
+08023D5C	SetUnitActionToSupport_Code0xF	{J}
+08023DA0	SetUnitActionToSupport_Code0xF	{U}

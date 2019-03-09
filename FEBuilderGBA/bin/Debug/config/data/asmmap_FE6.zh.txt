@@ -551,7 +551,7 @@
 08019A34	MapAddInRange
 0801A564	FillRangeMap
 0801A7D4	DebugMapMenu_DisplayInfoIdle
-0801A822	DebugMapMenu_DisplayInfoEffect
+0801A820	DebugMapMenu_DisplayInfoEffect
 0801A826	DebugMenu_WeatherDraw
 0801AA70	DebugMenu_ClearEffect
 0801AAE2	DEBUGONLY_Startup

@@ -1861,7 +1861,7 @@
 0801B244	Get8	{U}
 0801B250	Loop6C_WaitForSelectPress	{U}
 0801B61C	DebugMapMenu_DisplayInfoIdle	{U}
-0801B66E	DebugMapMenu_DisplayInfoEffect	{U}
+0801B66C	DebugMapMenu_DisplayInfoEffect	{U}
 0801B672	DebugMenu_WeatherDraw	{U}
 0801B7A0	DebugMenu_WeatherEffect	{U}
 0801B7A4	DebugMenu_ClearDraw	{U}
@@ -2702,7 +2702,7 @@
 0801B624	Get8	{J}
 0801B630	Loop6C_WaitForSelectPress	{J}
 0801B9E4	DebugMapMenu_DisplayInfoIdle	{J}
-0801BA36	DebugMapMenu_DisplayInfoEffect	{J}
+0801BA34	DebugMapMenu_DisplayInfoEffect	{J}
 0801BA3A	DebugMenu_WeatherDraw	{J}
 0801BBC4	DebugMenu_ClearIdle	{J}
 0801BC68	DebugMenu_ClearEffect	{J}

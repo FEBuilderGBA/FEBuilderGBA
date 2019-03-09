@@ -4738,7 +4738,7 @@
 0801B80C	DebugMenu_MapIdle	{J}
 0801B820	DebugMenu_MapEffect	{J}
 0801BA20	DebugMapMenu_DisplayInfoIdle	{J}
-0801BA6E	DebugMapMenu_DisplayInfoEffect	{J}
+0801BA6C	DebugMapMenu_DisplayInfoEffect	{J}
 0801BA72	DebugMenu_WeatherDraw	{J}
 0801BC1C	DebugMenu_WeatherIdle	{J}
 0801BB94	DebugMenu_WeatherEffect	{J}
@@ -10328,10 +10328,10 @@
 080D77B0	psZero	{U}
 080D77DC	gpGenericMiniMugPalettes	{U}
 080D78EC	gpDialogueTextBoxGfx	{U}
-080D79E8	gRangeTextIdArray	{U}
+080D79E8	&TEXTBATCH	gRangeTextIdArray	{U}
 080D7A10	gWRankTextIdArray	{U}
 080D7A30	gWRankNameIdArray	{U}
-080D7A38	gWTypeTextIdArray	{U}
+080D7A38	&TEXTBATCH	gWTypeTextIdArray	{U}
 080D7C40	gTradeMenuText_xLookup	{U}
 080D7C42	gTradeMenuText_yLookup	{U}
 080D7CB8	gNullString	{U}
@@ -11153,10 +11153,10 @@
 080DC3F0	psZero	{J}
 080DC41C	gpGenericMiniMugPalettes	{J}
 080DC52C	gpDialogueTextBoxGfx	{J}
-080DC608	gRangeTextIdArray	{J}
+080DC608	&TEXTBATCH	gRangeTextIdArray	{J}
 080DC630	gWRankTextIdArray	{J}
 080DC650	gWRankNameIdArray	{J}
-080DC658	gWTypeTextIdArray	{J}
+080DC658	&TEXTBATCH	gWTypeTextIdArray	{J}
 080DC974	gTradeMenuText_xLookup	{J}
 080DC976	gTradeMenuText_yLookup	{J}
 080DC9EC	gNullString	{J}
@@ -11597,7 +11597,7 @@
 080812C0	マップ上で踊る/奏でるの際に再生する効果音を登録する	{U}
 08000B10	ビルドバージョンとリリース年を表示	{U}
 080286A4	ユニットの属性の文字列を取得	{J}
-080DC94C	ユニットの属性	{J}
+080DC94C	&TEXTBATCH	ユニットの属性	{J}
 08072454	ドラゴンゾンビの戦闘アニメーションデータをロード	{J}
 080BA2F0	ActionArena	{J}
 080B9DA4	お店の販売価格の取得	{J}
@@ -11663,3 +11663,13 @@
 0802D664	アイテム交換で、実際にアイテムを交換した時	{J}
 080358A8	AutoRestoreBadStatus	{J}
 080357A8	AutoRestoreBadStatus	{U}
+080134E4	未使用関数1	{J}
+080DC56C	:080DC583	Event34_MessWithUnitState_Data	{J}
+080DC584	:080DC593	未使用関数1から参照されるデータ	{J}
+080DC6C8	&ASM_POINTER_ARRAY	DebugMenuCommand	{J}
+0801342C	未使用関数1	{U}
+080D793C	:080D7953	Event34_MessWithUnitState_Data	{U}
+080D7954	:080D7963	未使用関数1から参照されるデータ	{U}
+085E4E84	&LZ77	何かの画像	5	{J}
+08023D5C	SetUnitActionToSupport_Code0xF	{J}
+08023DA0	SetUnitActionToSupport_Code0xF	{U}
