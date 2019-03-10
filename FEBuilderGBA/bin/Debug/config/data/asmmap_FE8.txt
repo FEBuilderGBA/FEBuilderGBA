@@ -11673,3 +11673,5 @@
 085E4E84	&LZ77	何かの画像	5	{J}
 08023D5C	SetUnitActionToSupport_Code0xF	{J}
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
+0805A78C	LoadBattleAnimePalette	{J}
+080599E8	LoadBattleAnimePalette	{U}

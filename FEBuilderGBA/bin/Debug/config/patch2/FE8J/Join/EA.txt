@@ -29,13 +29,18 @@ ORG		0x228a4
 
 ///効果circle
 
+#ifdef HAX_ACTION_APPLICATION_REWORK_EVENT
+//救出のUnitActionを書き換える.
+SetUnitAction(0x9,ActionRoutine(Pair + 1))
+#else
+//Action Reworkを使わない場合
 ORG		0x32038
 WORD	0x46874800
 POIN	Pair
+#endif
 
 
 ////降ろしても非待機
-
 ORG		0x180bb
 BYTE	$D1	//$E0で非待機
 
