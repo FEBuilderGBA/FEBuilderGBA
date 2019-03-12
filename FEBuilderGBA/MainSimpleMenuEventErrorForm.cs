@@ -996,7 +996,8 @@ namespace FEBuilderGBA
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                EventList.SelectedIndex = EventList.IndexFromPoint(e.X, e.Y);
+                int index = EventList.IndexFromPoint(e.X, e.Y);
+                U.SelectedIndexSafety(EventList , index);
             }
         }
 

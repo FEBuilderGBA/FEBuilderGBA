@@ -3340,7 +3340,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    TextForm f = (TextForm)InputFormRef.JumpForm<TextForm>(U.NOT_FOUND, "AddressList", src_object);
+                    TextForm f = (TextForm)InputFormRef.JumpForm<TextForm>(value, "AddressList", src_object);
                     f.JumpTo(value);
                 }
             }
