@@ -32,9 +32,9 @@
             this.DragTargetPanel = new System.Windows.Forms.Panel();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
-            this.D0 = new System.Windows.Forms.NumericUpDown();
-            this.D4 = new System.Windows.Forms.NumericUpDown();
-            this.D8 = new System.Windows.Forms.NumericUpDown();
+            this.P0 = new System.Windows.Forms.NumericUpDown();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
+            this.P8 = new System.Windows.Forms.NumericUpDown();
             this.J_8 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.J_0 = new System.Windows.Forms.Label();
@@ -61,9 +61,9 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.DragTargetPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).BeginInit();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -90,9 +90,9 @@
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DragTargetPanel.Controls.Add(this.Comment);
             this.DragTargetPanel.Controls.Add(this.label4);
-            this.DragTargetPanel.Controls.Add(this.D0);
-            this.DragTargetPanel.Controls.Add(this.D4);
-            this.DragTargetPanel.Controls.Add(this.D8);
+            this.DragTargetPanel.Controls.Add(this.P0);
+            this.DragTargetPanel.Controls.Add(this.P4);
+            this.DragTargetPanel.Controls.Add(this.P8);
             this.DragTargetPanel.Controls.Add(this.J_8);
             this.DragTargetPanel.Controls.Add(this.J_4);
             this.DragTargetPanel.Controls.Add(this.J_0);
@@ -124,47 +124,47 @@
             this.label4.Text = "コメント";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // D0
+            // P0
             // 
-            this.D0.Hexadecimal = true;
-            this.D0.Location = new System.Drawing.Point(251, 10);
-            this.D0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D0.Maximum = new decimal(new int[] {
+            this.P0.Hexadecimal = true;
+            this.P0.Location = new System.Drawing.Point(251, 10);
+            this.P0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D0.Name = "D0";
-            this.D0.Size = new System.Drawing.Size(137, 25);
-            this.D0.TabIndex = 0;
+            this.P0.Name = "P0";
+            this.P0.Size = new System.Drawing.Size(137, 25);
+            this.P0.TabIndex = 0;
             // 
-            // D4
+            // P4
             // 
-            this.D4.Hexadecimal = true;
-            this.D4.Location = new System.Drawing.Point(251, 49);
-            this.D4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D4.Maximum = new decimal(new int[] {
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(251, 49);
+            this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D4.Name = "D4";
-            this.D4.Size = new System.Drawing.Size(137, 25);
-            this.D4.TabIndex = 1;
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(137, 25);
+            this.P4.TabIndex = 1;
             // 
-            // D8
+            // P8
             // 
-            this.D8.Hexadecimal = true;
-            this.D8.Location = new System.Drawing.Point(251, 90);
-            this.D8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D8.Maximum = new decimal(new int[] {
+            this.P8.Hexadecimal = true;
+            this.P8.Location = new System.Drawing.Point(251, 90);
+            this.P8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P8.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D8.Name = "D8";
-            this.D8.Size = new System.Drawing.Size(137, 25);
-            this.D8.TabIndex = 2;
+            this.P8.Name = "P8";
+            this.P8.Size = new System.Drawing.Size(137, 25);
+            this.P8.TabIndex = 2;
             // 
             // J_8
             // 
@@ -468,9 +468,9 @@
             this.Load += new System.EventHandler(this.ImageBGForm_Load);
             this.DragTargetPanel.ResumeLayout(false);
             this.DragTargetPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_BG_PIC)).EndInit();
             this.AddressPanel.ResumeLayout(false);
             this.AddressPanel.PerformLayout();
@@ -488,9 +488,9 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel DragTargetPanel;
-        private System.Windows.Forms.NumericUpDown D0;
-        private System.Windows.Forms.NumericUpDown D4;
-        private System.Windows.Forms.NumericUpDown D8;
+        private System.Windows.Forms.NumericUpDown P0;
+        private System.Windows.Forms.NumericUpDown P4;
+        private System.Windows.Forms.NumericUpDown P8;
         private System.Windows.Forms.Label J_8;
         private System.Windows.Forms.Label J_4;
         private System.Windows.Forms.Label J_0;

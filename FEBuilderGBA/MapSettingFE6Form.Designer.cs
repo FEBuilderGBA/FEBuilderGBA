@@ -416,7 +416,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 18);
             this.label4.TabIndex = 351;
-            this.label4.Text = "X:";
+            this.label4.Text = "Y:";
             // 
             // label120
             // 

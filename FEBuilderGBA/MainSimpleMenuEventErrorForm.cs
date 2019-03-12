@@ -326,6 +326,10 @@ namespace FEBuilderGBA
             {
                 text = R._("メニュー");
             }
+            else if (dataType == FELint.Type.MENU_DEFINE)
+            {
+                text = R._("メニュー定義");
+            }
             else if (dataType == FELint.Type.STATUS)
             {
                 text = R._("ステータスパラメータ");

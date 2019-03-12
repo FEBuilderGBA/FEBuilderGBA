@@ -57,6 +57,7 @@ namespace FEBuilderGBA
             ,SENSEKI //戦績
             ,DIC     //辞書
             ,MENU    //メニュー
+            ,MENU_DEFINE //メニュー定義
             ,STATUS  //ステータス
             ,ED      //エンディング
             ,TERRAIN //地形
@@ -215,17 +216,25 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
+        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
         {
-            CheckPointerErrors(event_addr, errors, EventCondToType(cond), addr);
+            CheckPointerErrors(event_addr, errors, EventCondToType(cond), addr, tag);
         }
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr)
+        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(event_addr))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ユニット配置ポインタ「{0}」が無効です。", U.To0xHexString(event_addr))));
+                    , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)),tag));
             }
+        }
+        public static void CheckPointerOrNullErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (event_addr == 0)
+            {
+                return;
+            }
+            CheckPointerErrors(event_addr, errors, cond, addr , tag);
         }
 
         public static void CheckEventPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
@@ -359,6 +368,14 @@ namespace FEBuilderGBA
                     , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
             }
         }
+        public static void CheckASMPointerOrNullErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (asm == 0)
+            {
+                return;
+            }
+            CheckASMPointerErrors( asm, errors, cond, addr,tag );
+        }
         public static void CheckProcsPointerErrors(uint procs, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(procs))
@@ -390,14 +407,24 @@ namespace FEBuilderGBA
         public static void ConversationTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.CheckConversationTextMessage(text);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage) , tag));
             }
         }
-        public static void CheckText(uint textid,string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void DeathQuoteTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            string text = FETextDecode.Direct(textid);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_DEATH_QUOTE_WIDTH);
+            if (errorMessage != "")
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage), tag));
+            }
+        }
+        public static void CheckText(uint textid, string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
             string errorMessage = TextForm.GetErrorMessage(text,arg1);
@@ -700,6 +727,9 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem Procs")) return;
             ProcsScriptForm.MakeCheckError(errors, ldrmap);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem MenuDefinition")) return;
+            MenuDefinitionForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

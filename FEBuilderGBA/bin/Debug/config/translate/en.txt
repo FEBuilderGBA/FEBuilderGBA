@@ -1591,14 +1591,14 @@ Battle conversation
 :FE7では、特別に、会話時に発動するイベントをここでも設定できます。
 In FE7, you can set events that trigger during a conversation here.
 
+:新規イベント
+New event
+
 :反撃側ユニット
 Defending Unit
 
 :攻撃側ユニット
 Attacking Unit
-
-:新規イベント
-New event
 
 :マップ
 Map
@@ -2695,8 +2695,8 @@ Extra unit
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
 
-:ユニット配置ポインタ「{0}」が無効です。
-Unit placement pointer "{0}" is invalid.
+:ポインタ「{0}」が無効です。
+The pointer "{0}" is invalid.
 
 :序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
 You are not join to the lord unit of UnitID: 0x01,0x02 and 0x03 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
@@ -3300,6 +3300,9 @@ Reference item
 
 :原寸大
 Actual Size
+
+:パレットの変更
+Change Palette
 
 :アイテムアイコン
 Item Icons
@@ -4717,6 +4720,12 @@ Please specify if there is translation data exclusive for that game.\r\n
 :曲の長さは、ランダム再生時に利用されます。\r\n時間はミリ秒で指定します。\r\nただし内部ではフレーム秒で処理され端数は切り捨てられます。\r\n指定した時間に達すると曲がフェードアウトし、次の曲に切り替わります。
 The length of the song is used for random playback.\r\nSpecify the time in milliseconds.\r\nHowever, internally it is processed in frame seconds and the fractions are truncated.\r\nWhen the specified time is reached, the song fades out and switches to the next song.
 
+:ユニットのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全ユニット共通になるので注意してください。
+You can change the unit's palette from the system icon.\r\nHowever, please note that the pallet is common to all units.
+
+:アイテムのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全アイテム共通になるので注意してください。
+You can change the item palette from the system icon.\r\nHowever, please note that the palette is common to all items.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -5022,6 +5031,9 @@ Promotion Item Name
 
 :CCアイテム
 Promotion Item
+
+:アイテム 
+Item
 
 :確率%
 Probability%
@@ -6349,14 +6361,14 @@ Import MAR
 :メインマップは 15x10 以下のサイズにできません。
 Main Map can't be 15 x 10 or less in size.
 
-:サイズを1x1以下にはできません
-Size can't be 1 x 1 or less
-
 :マップが広すぎます。\r\n現在のサイズ({0},{1})
 The map is too wide.\r\nCurrent size ({0}, {1}).
 
 :マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。
 The map is too wide.\r\nCurrent size ({0}, {1}).\r\nWith this width, the available height is up to {2} in width.
+
+:サイズを1x1以下にはできません
+Size can't be 1 x 1 or less
 
 :変更する
 Change

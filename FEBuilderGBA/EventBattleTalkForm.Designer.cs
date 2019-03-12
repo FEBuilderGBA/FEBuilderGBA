@@ -57,7 +57,7 @@
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.L_2_UNIT_ANY = new FEBuilderGBA.TextBoxEx();
             this.L_0_UNIT_ANY = new FEBuilderGBA.TextBoxEx();
-            this.L_8_TEXT_CONVERSATION = new FEBuilderGBA.TextBoxEx();
+            this.L_8_TEXT_DEATHQUOTE = new FEBuilderGBA.TextBoxEx();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.J_10 = new System.Windows.Forms.Label();
@@ -274,7 +274,7 @@
             this.panel2.Controls.Add(this.W0);
             this.panel2.Controls.Add(this.L_2_UNIT_ANY);
             this.panel2.Controls.Add(this.L_0_UNIT_ANY);
-            this.panel2.Controls.Add(this.L_8_TEXT_CONVERSATION);
+            this.panel2.Controls.Add(this.L_8_TEXT_DEATHQUOTE);
             this.panel2.Controls.Add(this.B11);
             this.panel2.Controls.Add(this.B10);
             this.panel2.Controls.Add(this.J_10);
@@ -460,17 +460,17 @@
             this.L_0_UNIT_ANY.Size = new System.Drawing.Size(296, 25);
             this.L_0_UNIT_ANY.TabIndex = 172;
             // 
-            // L_8_TEXT_CONVERSATION
+            // L_8_TEXT_DEATHQUOTE
             // 
-            this.L_8_TEXT_CONVERSATION.ErrorMessage = "";
-            this.L_8_TEXT_CONVERSATION.Location = new System.Drawing.Point(70, 225);
-            this.L_8_TEXT_CONVERSATION.Margin = new System.Windows.Forms.Padding(2);
-            this.L_8_TEXT_CONVERSATION.Multiline = true;
-            this.L_8_TEXT_CONVERSATION.Name = "L_8_TEXT_CONVERSATION";
-            this.L_8_TEXT_CONVERSATION.Placeholder = "";
-            this.L_8_TEXT_CONVERSATION.ReadOnly = true;
-            this.L_8_TEXT_CONVERSATION.Size = new System.Drawing.Size(746, 84);
-            this.L_8_TEXT_CONVERSATION.TabIndex = 171;
+            this.L_8_TEXT_DEATHQUOTE.ErrorMessage = "";
+            this.L_8_TEXT_DEATHQUOTE.Location = new System.Drawing.Point(70, 225);
+            this.L_8_TEXT_DEATHQUOTE.Margin = new System.Windows.Forms.Padding(2);
+            this.L_8_TEXT_DEATHQUOTE.Multiline = true;
+            this.L_8_TEXT_DEATHQUOTE.Name = "L_8_TEXT_DEATHQUOTE";
+            this.L_8_TEXT_DEATHQUOTE.Placeholder = "";
+            this.L_8_TEXT_DEATHQUOTE.ReadOnly = true;
+            this.L_8_TEXT_DEATHQUOTE.Size = new System.Drawing.Size(746, 84);
+            this.L_8_TEXT_DEATHQUOTE.TabIndex = 171;
             // 
             // B11
             // 
@@ -736,7 +736,7 @@
         private System.Windows.Forms.NumericUpDown W6;
         private System.Windows.Forms.NumericUpDown B5;
         private System.Windows.Forms.NumericUpDown B4;
-        private FEBuilderGBA.TextBoxEx L_8_TEXT_CONVERSATION;
+        private FEBuilderGBA.TextBoxEx L_8_TEXT_DEATHQUOTE;
         private System.Windows.Forms.NumericUpDown W2;
         private System.Windows.Forms.NumericUpDown W0;
         private FEBuilderGBA.TextBoxEx L_2_UNIT_ANY;

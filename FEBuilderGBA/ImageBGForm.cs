@@ -61,7 +61,7 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            X_BG_PIC.Image = DrawBG((uint)D0.Value, (uint)D8.Value, (uint)D4.Value);
+            X_BG_PIC.Image = DrawBG((uint)P0.Value, (uint)P8.Value, (uint)P4.Value);
         }
 
         public static string GetComment(uint id)
@@ -139,9 +139,9 @@ namespace FEBuilderGBA
             {
                 //画像等データの書き込み
                 Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-                this.InputFormRef.WriteImageData(this.D0, image, true, undodata);
-                this.InputFormRef.WriteImageData(this.D4, tsa, false, undodata);
-                this.InputFormRef.WriteImageData(this.D8, palette, false, undodata);
+                this.InputFormRef.WriteImageData(this.P0, image, true, undodata);
+                this.InputFormRef.WriteImageData(this.P4, tsa, false, undodata);
+                this.InputFormRef.WriteImageData(this.P8, palette, false, undodata);
                 Program.Undo.Push(undodata);
             }
 

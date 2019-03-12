@@ -110,7 +110,7 @@ namespace FEBuilderGBA
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
 
                 textid = Program.ROM.u16(haiku_addr + 12);
-                FELint.ConversationTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
+                FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
             }
         }
         public static void MakeTextIDArray(List<UseTextID> list)

@@ -161,7 +161,7 @@ namespace FEBuilderGBA
                     FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
-                    FELint.ConversationTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     if (textid <= 0)
                     {
@@ -185,7 +185,7 @@ namespace FEBuilderGBA
                     FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
-                    FELint.ConversationTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
                 }
             }
         }

@@ -360,5 +360,11 @@ namespace FEBuilderGBA
             }
         }
 
+        private void JumpToSystemPalette_Click(object sender, EventArgs e)
+        {
+            ImageSystemIconForm f = (ImageSystemIconForm)InputFormRef.JumpForm<ImageSystemIconForm>();
+            f.JumpToPage(1);
+        }
+
     }
 }

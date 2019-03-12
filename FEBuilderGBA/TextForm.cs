@@ -459,7 +459,7 @@ namespace FEBuilderGBA
                 }
                 else if (code.Code1 >= 0x8) 
                 {//セリフ
-                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, GetMaxSerifWidth(), 16 * 2, false);
+                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, MAX_SERIF_WIDTH, 16 * 2, false);
                     if (result != CheckBlockResult.NoError)
                     {
                         code.Error = ct.ErrorString;
@@ -1808,18 +1808,31 @@ namespace FEBuilderGBA
             TextToSpeechForm.OptionTextToSpeech(editor.Text2);
         }
 
-        public static int GetMaxSerifWidth()
-        {
-            return 214;
-        }
+        public const int MAX_SERIF_WIDTH = 214;
+        public const int MAX_DEATH_QUOTE_WIDTH = 143;
 
+        bool IsDeathQuoteSerif()
+        {
+            return (this.SelectDataTypeOf == FELint.Type.BATTTLE_TALK
+                || this.SelectDataTypeOf == FELint.Type.HAIKU);
+        }
 
         private void TextListSpSerifuTextBox_TextChanged(object sender, EventArgs e)
         {
             string text = GetEditorText(this.TextListSpSerifuTextBox);
             CheckText ct = new CheckText();
 
-            CheckBlockResult result = ct.CheckBlockBox(text, GetMaxSerifWidth(), 16 * 2, false);
+            int widthLimit ;
+            if (IsDeathQuoteSerif())
+            {
+                widthLimit = MAX_DEATH_QUOTE_WIDTH;
+            }
+            else
+            {
+                widthLimit = MAX_SERIF_WIDTH;
+            }
+
+            CheckBlockResult result = ct.CheckBlockBox(text, widthLimit, 16 * 2, false);
             if (result == CheckBlockResult.NoError)
             {
                 ERROR_SERIFU.Hide();
@@ -2693,13 +2706,17 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 2 * 16, false);
             }
+            if (arg1 == "MENUDETAIL3")
+            {
+                return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
+            }
             if (arg1 == "TERRAINNAME1")
             {
                 return CheckOneLineTextMessage(text, 5 * 8, 1 * 16, true);
             }
             if (arg1 == "OPCLASS2")
             {
-                return CheckOneLineTextMessage(text, GetMaxSerifWidth(), 2 * 16, false);
+                return CheckOneLineTextMessage(text, MAX_SERIF_WIDTH, 2 * 16, false);
             }
             if (arg1 == "ITEM3")
             {
@@ -2709,10 +2726,13 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
             }
-
             if (arg1 == "CONVERSATION")
             {
-                return CheckConversationTextMessage(text);
+                return CheckConversationTextMessage(text, MAX_SERIF_WIDTH);
+            }
+            if (arg1 == "DEATHQUOTE")
+            {
+                return CheckConversationTextMessage(text, MAX_DEATH_QUOTE_WIDTH);
             }
             return "";
         }
@@ -2977,7 +2997,7 @@ namespace FEBuilderGBA
         }
 
         //会話テキストのエラーチェック
-        public static string CheckConversationTextMessage(string text)
+        public static string CheckConversationTextMessage(string text, int widthLimit)
         {
             if (text.Length <= 0)
             {
@@ -3019,7 +3039,7 @@ namespace FEBuilderGBA
                 return CheckSystemTextMessage(text);
             }
 
-            return CheckParse(text, GetMaxSerifWidth(), 16 * 2, false);
+            return CheckParse(text, widthLimit, 16 * 2, false);
         }
         //システムメッセージのエラーチェック
         public static string CheckSystemTextMessage(string text)
@@ -3040,7 +3060,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            return CheckParse(text, GetMaxSerifWidth(), 16 * 5, false);
+            return CheckParse(text, MAX_SERIF_WIDTH, 16 * 5, false);
         }
         //一行テキストのエラーチェック
         public static string CheckOneLineTextMessage(string text, int width, int height,bool isItemFont)
@@ -3073,6 +3093,7 @@ namespace FEBuilderGBA
             this.TextTabControl.SelectedTab = this.RefPage;
         }
 
+        FELint.Type SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
         void UpdateRef(uint id)
         {
             AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
@@ -3080,6 +3101,7 @@ namespace FEBuilderGBA
             if (textIDList == null)
             {
                 RefCountTextBox.Text = R._("計測中...");
+                this.SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
                 return;
             }
 
@@ -3097,6 +3119,7 @@ namespace FEBuilderGBA
                 }
                 refCount++;
                 RefListBox.Items.Add(t);
+                this.SelectDataTypeOf = t.DataType;
             }
             RefListBox.EndUpdate();
             RefCountTextBox.Text = refCount.ToString();

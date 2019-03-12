@@ -270,6 +270,46 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint pointer)
+        {
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInitPointer(pointer);
+
+            uint p = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            {
+                uint paddr;
+                paddr = Program.ROM.u32(0 + p);
+                FELint.CheckPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                if (Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    uint name = Program.ROM.u16(4 + p);
+                    FELint.CheckText(name, "MENUNAME1", errors, FELint.Type.MENU, p, i);
+                }
+
+                uint detail = Program.ROM.u16(6 + p);
+                FELint.CheckText(detail, "MENUDETAIL3", errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(12 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(16 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(20 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(24 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(28 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(32 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+            }
+        }
         public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
         {
             InputFormRef InputFormRef = Init(null);

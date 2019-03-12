@@ -676,7 +676,7 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {
                 text = TextForm.Direct((v));
-                errormessage = TextForm.CheckConversationTextMessage(text);
+                errormessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
                 text = TextForm.StripAllCode(text);
             }
             else if (arg.Type == EventScript.ArgType.SYSTEM_TEXT)

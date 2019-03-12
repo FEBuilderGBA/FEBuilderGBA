@@ -32,8 +32,11 @@
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.W = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label14 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label15 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -41,9 +44,12 @@
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_21 = new System.Windows.Forms.Button();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.J_1 = new System.Windows.Forms.Label();
+            this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SHOP_LIST = new FEBuilderGBA.ListBoxEx();
             this.label30 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -51,14 +57,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.SHOP_LIST = new FEBuilderGBA.ListBoxEx();
-            this.L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.W.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
@@ -67,7 +68,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).BeginInit();
             this.SuspendLayout();
             // 
             // J_0_ITEM
@@ -75,15 +75,15 @@
             this.J_0_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_0_ITEM.Location = new System.Drawing.Point(282, 90);
             this.J_0_ITEM.Name = "J_0_ITEM";
-            this.J_0_ITEM.Size = new System.Drawing.Size(80, 30);
+            this.J_0_ITEM.Size = new System.Drawing.Size(90, 30);
             this.J_0_ITEM.TabIndex = 57;
-            this.J_0_ITEM.Text = "アイテム";
+            this.J_0_ITEM.Text = "アイテム ";
             this.J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B0
             // 
             this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(381, 91);
+            this.B0.Location = new System.Drawing.Point(380, 90);
             this.B0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
@@ -120,6 +120,15 @@
             this.label2.TabIndex = 182;
             this.label2.Text = "リストを縮める場合は、終端:0 を設定してください。";
             // 
+            // L_0_ITEMICON
+            // 
+            this.L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_ITEMICON.Location = new System.Drawing.Point(616, 91);
+            this.L_0_ITEMICON.Name = "L_0_ITEMICON";
+            this.L_0_ITEMICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_ITEMICON.TabIndex = 181;
+            this.L_0_ITEMICON.TabStop = false;
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -135,6 +144,17 @@
             this.panel5.Size = new System.Drawing.Size(510, 76);
             this.panel5.TabIndex = 96;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(97, 45);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -144,6 +164,17 @@
             this.label14.TabIndex = 52;
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(324, 46);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(169, 25);
+            this.SelectAddress.TabIndex = 40;
             // 
             // label15
             // 
@@ -189,7 +220,7 @@
             // 
             // B1
             // 
-            this.B1.Location = new System.Drawing.Point(381, 121);
+            this.B1.Location = new System.Drawing.Point(380, 120);
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(63, 25);
             this.B1.TabIndex = 61;
@@ -214,6 +245,18 @@
             this.AddressListExpandsButton_21.Text = "リストの拡張";
             this.AddressListExpandsButton_21.UseVisualStyleBackColor = true;
             // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(279, 526);
+            this.AddressList.TabIndex = 108;
+            // 
             // LabelFilter
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -231,10 +274,21 @@
             this.J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_1.Location = new System.Drawing.Point(282, 119);
             this.J_1.Name = "J_1";
-            this.J_1.Size = new System.Drawing.Size(80, 30);
+            this.J_1.Size = new System.Drawing.Size(90, 30);
             this.J_1.TabIndex = 60;
-            this.J_1.Text = "??";
+            this.J_1.Text = "00";
             this.J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_0_ITEM
+            // 
+            this.L_0_ITEM.ErrorMessage = "";
+            this.L_0_ITEM.Location = new System.Drawing.Point(451, 91);
+            this.L_0_ITEM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_ITEM.Name = "L_0_ITEM";
+            this.L_0_ITEM.Placeholder = "";
+            this.L_0_ITEM.ReadOnly = true;
+            this.L_0_ITEM.Size = new System.Drawing.Size(156, 25);
+            this.L_0_ITEM.TabIndex = 55;
             // 
             // panel1
             // 
@@ -245,6 +299,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(367, 620);
             this.panel1.TabIndex = 95;
+            // 
+            // SHOP_LIST
+            // 
+            this.SHOP_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SHOP_LIST.FormattingEnabled = true;
+            this.SHOP_LIST.IntegralHeight = false;
+            this.SHOP_LIST.ItemHeight = 18;
+            this.SHOP_LIST.Location = new System.Drawing.Point(-1, 25);
+            this.SHOP_LIST.Margin = new System.Windows.Forms.Padding(4);
+            this.SHOP_LIST.Name = "SHOP_LIST";
+            this.SHOP_LIST.Size = new System.Drawing.Size(367, 580);
+            this.SHOP_LIST.TabIndex = 108;
+            this.SHOP_LIST.SelectedIndexChanged += new System.EventHandler(this.SHOP_LIST_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -326,73 +393,6 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // SHOP_LIST
-            // 
-            this.SHOP_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SHOP_LIST.FormattingEnabled = true;
-            this.SHOP_LIST.IntegralHeight = false;
-            this.SHOP_LIST.ItemHeight = 18;
-            this.SHOP_LIST.Location = new System.Drawing.Point(-1, 25);
-            this.SHOP_LIST.Margin = new System.Windows.Forms.Padding(4);
-            this.SHOP_LIST.Name = "SHOP_LIST";
-            this.SHOP_LIST.Size = new System.Drawing.Size(367, 580);
-            this.SHOP_LIST.TabIndex = 108;
-            this.SHOP_LIST.SelectedIndexChanged += new System.EventHandler(this.SHOP_LIST_SelectedIndexChanged);
-            // 
-            // L_0_ITEMICON
-            // 
-            this.L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_ITEMICON.Location = new System.Drawing.Point(617, 92);
-            this.L_0_ITEMICON.Name = "L_0_ITEMICON";
-            this.L_0_ITEMICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_ITEMICON.TabIndex = 181;
-            this.L_0_ITEMICON.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(97, 45);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(324, 46);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(169, 25);
-            this.SelectAddress.TabIndex = 40;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(279, 526);
-            this.AddressList.TabIndex = 108;
-            // 
-            // L_0_ITEM
-            // 
-            this.L_0_ITEM.ErrorMessage = "";
-            this.L_0_ITEM.Location = new System.Drawing.Point(452, 92);
-            this.L_0_ITEM.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_ITEM.Name = "L_0_ITEM";
-            this.L_0_ITEM.Placeholder = "";
-            this.L_0_ITEM.ReadOnly = true;
-            this.L_0_ITEM.Size = new System.Drawing.Size(156, 25);
-            this.L_0_ITEM.TabIndex = 55;
-            // 
             // ItemShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -408,6 +408,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.W.ResumeLayout(false);
             this.W.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
@@ -417,7 +418,6 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_ITEMICON)).EndInit();
             this.ResumeLayout(false);
 
         }

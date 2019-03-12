@@ -683,7 +683,7 @@ namespace FEBuilderGBA
             if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {
                 string text = FETextDecode.Direct(v);
-                errormessage = TextForm.CheckConversationTextMessage(text);
+                errormessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
             }
             else if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {

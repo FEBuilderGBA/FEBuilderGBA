@@ -906,7 +906,10 @@ namespace FEBuilderGBA
             ImageSystemAreaForm f = (ImageSystemAreaForm)InputFormRef.JumpForm<ImageSystemAreaForm>();
             f.JumpToAddr((uint)systemarea_staff_gradation_palette.Value);
         }
-
+        public void JumpToPage(uint page)
+        {
+            this.WMTabControl.SelectedIndex = (int)page;
+        }
 
 
     }

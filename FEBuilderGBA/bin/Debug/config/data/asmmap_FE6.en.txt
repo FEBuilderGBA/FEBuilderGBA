@@ -1182,3 +1182,122 @@
 08033C8C	GetAiSafestAccessibleAdjacentPosition
 0803260c	AiGetPositionTerrainSafetyWeight
 0803264c	AiGetPositionUnitSafetyWeight
+087DFC44	&LZ77	Empty battle anime sheet.
+087C18C4	&LZ77	Empty battle anime sheet.
+08709AC8	&LZ77	Empty battle anime sheet.
+087C1C94	&LZ77	Empty battle anime sheet.
+08716F9C	&LZ77	Unused battle image.	Maybe
+08007d3c	RegisterObjectSafe
+085C39A8	&OAMREGS	OAMREGS
+085CAFE4	&OAMREGS	OAMREGS
+0810F544	&OAMREGS	OAMREGS
+085CB16C	&OAMREGS	OAMREGS
+0810F52A	&OAMREGS	OAMREGS
+085C39F0	&OAMREGS	OAMREGS
+085C3A00	&OAMREGS	OAMREGS
+085C39C0	&OAMREGS	OAMREGS
+085C3A08	&OAMREGS	OAMREGS
+0867917A	&OAMREGS	OAMREGS
+085C39E0	&OAMREGS	OAMREGS
+0868A568	&OAMREGS	OAMREGS
+08307D58	&LZ77	Something small compressed data.	01
+08307DD4	&LZ77	Something small compressed data.	02
+08308070	&LZ77	Something small compressed data.	03
+08307E50	&LZ77	Something small compressed data.	04
+08307CEC	&LZ77	Something small compressed data.	05
+08309408	&LZ77	Something small compressed data.	06
+082DC944	&LZ77	Something small compressed data.	07
+08379DCC	&LZ77	Something small compressed data.	08
+08015260	A routine for reading a palette of something
+08014218	A routine for reading a palette of something
+08375B64	&PALETTE	Palette of something.
+085C4E8C	&PALETTE	Palette of something.
+085C4EAC	&PALETTE	Palette of something.
+083758A8	&PALETTE	Palette of something.
+08375888	&PALETTE	Palette of something.
+0837AAC8	&PALETTE	Palette of something.
+0201F0E8	&PALETTE	Palette of something.
+02021708	&PALETTE	Palette of something.
+08100A08	&PALETTE	Palette of something.
+08100A28	&PALETTE	Palette of something.
+0810137C	&PALETTE	Palette of something.
+081017F4	&PALETTE	Palette of something.
+081021D8	&PALETTE	Palette of something.
+0810361C	&PALETTE	Palette of something.
+0810363C	&PALETTE	Palette of something.
+08104374	&PALETTE	Palette of something.
+081048D4	&PALETTE	Palette of something.
+08105194	&PALETTE	Palette of something.
+081056F0	&PALETTE	Palette of something.
+081099A0	&PALETTE	Palette of something.
+08109A00	&PALETTE	Palette of something.
+08109A80	&PALETTE	Palette of something.
+08109AC0	&PALETTE	Palette of something.
+08109B00	&PALETTE	Palette of something.
+08109BA0	&PALETTE	Palette of something.
+08109BE0	&PALETTE	Palette of something.
+08109C40	&PALETTE	Palette of something.
+08109C60	&PALETTE	Palette of something.
+0810BA80	&PALETTE	Palette of something.
+0810BAC0	&PALETTE	Palette of something.
+0810D134	&PALETTE	Palette of something.
+0810FF98	&PALETTE	Palette of something.
+08111BC4	&PALETTE	Palette of something.
+081B7650	&PALETTE	Palette of something.
+082AAD5C	&PALETTE	Palette of something.
+082D3398	&PALETTE	Palette of something.
+082D36E4	&PALETTE	Palette of something.
+082D37E4	&PALETTE	Palette of something.
+082D3864	&PALETTE	Palette of something.
+082DCD70	&PALETTE	Palette of something.
+082DD248	&PALETTE	Palette of something.
+082DD4C8	&PALETTE	Palette of something.
+082DD808	&PALETTE	Palette of something.
+082DF690	&PALETTE	Palette of something.
+082DF704	&PALETTE	Palette of something.
+082E10EC	&PALETTE	Palette of something.
+082E172C	&PALETTE	Palette of something.
+08308050	&PALETTE	Palette of something.
+08309298	&PALETTE	Palette of something.
+0830A770	&PALETTE	Palette of something.
+0830C414	&PALETTE	Palette of something.
+0830D5E4	&PALETTE	Palette of something.
+0830D93C	&PALETTE	Palette of something.
+0830D95C	&PALETTE	Palette of something.
+0831A248	&PALETTE	Palette of something.
+0831AABC	&PALETTE	Palette of something.
+08320D98	&PALETTE	Palette of something.
+08321EE4	&PALETTE	Palette of something.
+08326E64	&PALETTE	Palette of something.
+08327108	&PALETTE	Palette of something.
+083277BC	&PALETTE	Palette of something.
+083277DC	&PALETTE	Palette of something.
+083278AC	&PALETTE	Palette of something.
+0832BDE8	&PALETTE	Palette of something.
+0832C33C	&PALETTE	Palette of something.
+0832CA9C	&PALETTE	Palette of something.
+0832CC90	&PALETTE	Palette of something.
+0833BFDC	&PALETTE	Palette of something.
+0833C944	&PALETTE	Palette of something.
+08341DA0	&PALETTE	Palette of something.
+08342A98	&PALETTE	Palette of something.
+08342AB8	&PALETTE	Palette of something.
+08342AD8	&PALETTE	Palette of something.
+08345420	&PALETTE	Palette of something.
+08346184	&PALETTE	Palette of something.
+08353308	&PALETTE	Palette of something.
+08354760	&PALETTE	Palette of something.
+0835A5D0	&PALETTE	Palette of something.
+0835AB08	&PALETTE	Palette of something.
+0835C034	&PALETTE	Palette of something.
+0835F388	&PALETTE	Palette of something.
+08364418	&PALETTE	Palette of something.
+08364A94	&PALETTE	Palette of something.
+08379D0C	&PALETTE	Palette of something.
+0837AA68	&PALETTE	Palette of something.
+0837ACB0	&PALETTE	Palette of something.
+0837CB0C	&PALETTE	Palette of something.
+0837CB4C	&PALETTE	Palette of something.
+0837CB6C	&PALETTE	Palette of something.
+0837F418	&PALETTE	Palette of something.
+08380ECC	&PALETTE	Palette of something.

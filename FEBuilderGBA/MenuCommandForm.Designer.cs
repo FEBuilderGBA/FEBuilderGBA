@@ -37,7 +37,7 @@
             this.L_16_ASM = new FEBuilderGBA.TextBoxEx();
             this.L_12_ASM = new FEBuilderGBA.TextBoxEx();
             this.P32 = new System.Windows.Forms.NumericUpDown();
-            this.L_6_TEXT_MENUDETAIL2 = new FEBuilderGBA.TextBoxEx();
+            this.L_6_TEXT_MENUDETAIL3 = new FEBuilderGBA.TextBoxEx();
             this.L_4_TEXT_MENUNAME1 = new FEBuilderGBA.TextBoxEx();
             this.L_8_COMBO = new System.Windows.Forms.ComboBox();
             this.J_9 = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.panel4.Controls.Add(this.L_16_ASM);
             this.panel4.Controls.Add(this.L_12_ASM);
             this.panel4.Controls.Add(this.P32);
-            this.panel4.Controls.Add(this.L_6_TEXT_MENUDETAIL2);
+            this.panel4.Controls.Add(this.L_6_TEXT_MENUDETAIL3);
             this.panel4.Controls.Add(this.L_4_TEXT_MENUNAME1);
             this.panel4.Controls.Add(this.L_8_COMBO);
             this.panel4.Controls.Add(this.J_9);
@@ -243,17 +243,17 @@
             this.P32.Size = new System.Drawing.Size(130, 25);
             this.P32.TabIndex = 120;
             // 
-            // L_6_TEXT_MENUDETAIL2
+            // L_6_TEXT_MENUDETAIL3
             // 
-            this.L_6_TEXT_MENUDETAIL2.ErrorMessage = "";
-            this.L_6_TEXT_MENUDETAIL2.Location = new System.Drawing.Point(553, 66);
-            this.L_6_TEXT_MENUDETAIL2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_6_TEXT_MENUDETAIL2.Multiline = true;
-            this.L_6_TEXT_MENUDETAIL2.Name = "L_6_TEXT_MENUDETAIL2";
-            this.L_6_TEXT_MENUDETAIL2.Placeholder = "";
-            this.L_6_TEXT_MENUDETAIL2.ReadOnly = true;
-            this.L_6_TEXT_MENUDETAIL2.Size = new System.Drawing.Size(356, 79);
-            this.L_6_TEXT_MENUDETAIL2.TabIndex = 119;
+            this.L_6_TEXT_MENUDETAIL3.ErrorMessage = "";
+            this.L_6_TEXT_MENUDETAIL3.Location = new System.Drawing.Point(553, 66);
+            this.L_6_TEXT_MENUDETAIL3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_6_TEXT_MENUDETAIL3.Multiline = true;
+            this.L_6_TEXT_MENUDETAIL3.Name = "L_6_TEXT_MENUDETAIL3";
+            this.L_6_TEXT_MENUDETAIL3.Placeholder = "";
+            this.L_6_TEXT_MENUDETAIL3.ReadOnly = true;
+            this.L_6_TEXT_MENUDETAIL3.Size = new System.Drawing.Size(356, 79);
+            this.L_6_TEXT_MENUDETAIL3.TabIndex = 119;
             // 
             // L_4_TEXT_MENUNAME1
             // 
@@ -703,6 +703,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -856,7 +857,7 @@
         private System.Windows.Forms.Label J_6_TEXT;
         private System.Windows.Forms.Label J_9;
         private System.Windows.Forms.ComboBox L_8_COMBO;
-        private FEBuilderGBA.TextBoxEx L_6_TEXT_MENUDETAIL2;
+        private FEBuilderGBA.TextBoxEx L_6_TEXT_MENUDETAIL3;
         private FEBuilderGBA.TextBoxEx L_4_TEXT_MENUNAME1;
         private System.Windows.Forms.NumericUpDown P32;
         private FEBuilderGBA.TextBoxEx L_32_ASM;

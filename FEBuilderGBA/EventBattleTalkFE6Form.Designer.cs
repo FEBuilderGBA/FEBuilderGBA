@@ -56,7 +56,7 @@
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.L_1_UNIT_ANY = new FEBuilderGBA.TextBoxEx();
             this.L_0_UNIT_ANY = new FEBuilderGBA.TextBoxEx();
-            this.L_4_TEXT_CONVERSATION = new FEBuilderGBA.TextBoxEx();
+            this.L_4_TEXT_DEATHQUOTE = new FEBuilderGBA.TextBoxEx();
             this.J_10 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +78,8 @@
             this.N1_LabelFilter = new System.Windows.Forms.Label();
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.N_J_12 = new System.Windows.Forms.Label();
+            this.N_D12 = new System.Windows.Forms.NumericUpDown();
             this.N_L_8_FLAG = new FEBuilderGBA.TextBoxEx();
             this.N_L_1_MAP_ANYIFOVER = new FEBuilderGBA.TextBoxEx();
             this.N_J_2 = new System.Windows.Forms.Label();
@@ -89,7 +91,7 @@
             this.N_J_6 = new System.Windows.Forms.Label();
             this.N_B0 = new System.Windows.Forms.NumericUpDown();
             this.N_L_0_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.N_L_4_TEXT_CONVERSATION = new FEBuilderGBA.TextBoxEx();
+            this.N_L_4_TEXT_DEATHQUOTE = new FEBuilderGBA.TextBoxEx();
             this.N_B11 = new System.Windows.Forms.NumericUpDown();
             this.N_B10 = new System.Windows.Forms.NumericUpDown();
             this.N_B7 = new System.Windows.Forms.NumericUpDown();
@@ -114,8 +116,6 @@
             this.N_WriteButton = new System.Windows.Forms.Button();
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
-            this.N_J_12 = new System.Windows.Forms.Label();
-            this.N_D12 = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -137,6 +137,7 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_D12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_L_0_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_W8)).BeginInit();
@@ -153,7 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N_ReadStartAddress)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N_D12)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -335,7 +335,7 @@
             this.panel2.Controls.Add(this.B0);
             this.panel2.Controls.Add(this.L_1_UNIT_ANY);
             this.panel2.Controls.Add(this.L_0_UNIT_ANY);
-            this.panel2.Controls.Add(this.L_4_TEXT_CONVERSATION);
+            this.panel2.Controls.Add(this.L_4_TEXT_DEATHQUOTE);
             this.panel2.Controls.Add(this.J_10);
             this.panel2.Controls.Add(this.B11);
             this.panel2.Controls.Add(this.B10);
@@ -513,17 +513,17 @@
             this.L_0_UNIT_ANY.Size = new System.Drawing.Size(180, 25);
             this.L_0_UNIT_ANY.TabIndex = 172;
             // 
-            // L_4_TEXT_CONVERSATION
+            // L_4_TEXT_DEATHQUOTE
             // 
-            this.L_4_TEXT_CONVERSATION.ErrorMessage = "";
-            this.L_4_TEXT_CONVERSATION.Location = new System.Drawing.Point(43, 182);
-            this.L_4_TEXT_CONVERSATION.Margin = new System.Windows.Forms.Padding(2);
-            this.L_4_TEXT_CONVERSATION.Multiline = true;
-            this.L_4_TEXT_CONVERSATION.Name = "L_4_TEXT_CONVERSATION";
-            this.L_4_TEXT_CONVERSATION.Placeholder = "";
-            this.L_4_TEXT_CONVERSATION.ReadOnly = true;
-            this.L_4_TEXT_CONVERSATION.Size = new System.Drawing.Size(656, 84);
-            this.L_4_TEXT_CONVERSATION.TabIndex = 5;
+            this.L_4_TEXT_DEATHQUOTE.ErrorMessage = "";
+            this.L_4_TEXT_DEATHQUOTE.Location = new System.Drawing.Point(43, 182);
+            this.L_4_TEXT_DEATHQUOTE.Margin = new System.Windows.Forms.Padding(2);
+            this.L_4_TEXT_DEATHQUOTE.Multiline = true;
+            this.L_4_TEXT_DEATHQUOTE.Name = "L_4_TEXT_DEATHQUOTE";
+            this.L_4_TEXT_DEATHQUOTE.Placeholder = "";
+            this.L_4_TEXT_DEATHQUOTE.ReadOnly = true;
+            this.L_4_TEXT_DEATHQUOTE.Size = new System.Drawing.Size(656, 84);
+            this.L_4_TEXT_DEATHQUOTE.TabIndex = 5;
             // 
             // J_10
             // 
@@ -714,6 +714,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -759,6 +760,7 @@
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_AddressList.FormattingEnabled = true;
+            this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
             this.N_AddressList.Location = new System.Drawing.Point(-1, 24);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -782,7 +784,7 @@
             this.panel4.Controls.Add(this.N_J_6);
             this.panel4.Controls.Add(this.N_B0);
             this.panel4.Controls.Add(this.N_L_0_UNIT);
-            this.panel4.Controls.Add(this.N_L_4_TEXT_CONVERSATION);
+            this.panel4.Controls.Add(this.N_L_4_TEXT_DEATHQUOTE);
             this.panel4.Controls.Add(this.N_B11);
             this.panel4.Controls.Add(this.N_B10);
             this.panel4.Controls.Add(this.N_B7);
@@ -798,6 +800,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1148, 370);
             this.panel4.TabIndex = 153;
+            // 
+            // N_J_12
+            // 
+            this.N_J_12.AccessibleDescription = "";
+            this.N_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_J_12.Location = new System.Drawing.Point(2, 331);
+            this.N_J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_J_12.Name = "N_J_12";
+            this.N_J_12.Size = new System.Drawing.Size(153, 32);
+            this.N_J_12.TabIndex = 246;
+            this.N_J_12.Text = "??";
+            this.N_J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_D12
+            // 
+            this.N_D12.Hexadecimal = true;
+            this.N_D12.Location = new System.Drawing.Point(160, 336);
+            this.N_D12.Margin = new System.Windows.Forms.Padding(2);
+            this.N_D12.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.N_D12.Name = "N_D12";
+            this.N_D12.Size = new System.Drawing.Size(149, 25);
+            this.N_D12.TabIndex = 245;
             // 
             // N_L_8_FLAG
             // 
@@ -931,17 +959,17 @@
             this.N_L_0_UNIT.Size = new System.Drawing.Size(180, 25);
             this.N_L_0_UNIT.TabIndex = 172;
             // 
-            // N_L_4_TEXT_CONVERSATION
+            // N_L_4_TEXT_DEATHQUOTE
             // 
-            this.N_L_4_TEXT_CONVERSATION.ErrorMessage = "";
-            this.N_L_4_TEXT_CONVERSATION.Location = new System.Drawing.Point(45, 141);
-            this.N_L_4_TEXT_CONVERSATION.Margin = new System.Windows.Forms.Padding(2);
-            this.N_L_4_TEXT_CONVERSATION.Multiline = true;
-            this.N_L_4_TEXT_CONVERSATION.Name = "N_L_4_TEXT_CONVERSATION";
-            this.N_L_4_TEXT_CONVERSATION.Placeholder = "";
-            this.N_L_4_TEXT_CONVERSATION.ReadOnly = true;
-            this.N_L_4_TEXT_CONVERSATION.Size = new System.Drawing.Size(656, 84);
-            this.N_L_4_TEXT_CONVERSATION.TabIndex = 171;
+            this.N_L_4_TEXT_DEATHQUOTE.ErrorMessage = "";
+            this.N_L_4_TEXT_DEATHQUOTE.Location = new System.Drawing.Point(45, 141);
+            this.N_L_4_TEXT_DEATHQUOTE.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_4_TEXT_DEATHQUOTE.Multiline = true;
+            this.N_L_4_TEXT_DEATHQUOTE.Name = "N_L_4_TEXT_DEATHQUOTE";
+            this.N_L_4_TEXT_DEATHQUOTE.Placeholder = "";
+            this.N_L_4_TEXT_DEATHQUOTE.ReadOnly = true;
+            this.N_L_4_TEXT_DEATHQUOTE.Size = new System.Drawing.Size(656, 84);
+            this.N_L_4_TEXT_DEATHQUOTE.TabIndex = 171;
             // 
             // N_B11
             // 
@@ -1237,32 +1265,6 @@
             this.label20.Text = "アドレス";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // N_J_12
-            // 
-            this.N_J_12.AccessibleDescription = "";
-            this.N_J_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_J_12.Location = new System.Drawing.Point(2, 331);
-            this.N_J_12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N_J_12.Name = "N_J_12";
-            this.N_J_12.Size = new System.Drawing.Size(153, 32);
-            this.N_J_12.TabIndex = 246;
-            this.N_J_12.Text = "??";
-            this.N_J_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N_D12
-            // 
-            this.N_D12.Hexadecimal = true;
-            this.N_D12.Location = new System.Drawing.Point(160, 336);
-            this.N_D12.Margin = new System.Windows.Forms.Padding(2);
-            this.N_D12.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.N_D12.Name = "N_D12";
-            this.N_D12.Size = new System.Drawing.Size(149, 25);
-            this.N_D12.TabIndex = 245;
-            // 
             // EventBattleTalkFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1305,6 +1307,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N_D12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_L_0_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_W8)).EndInit();
@@ -1322,7 +1325,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_Address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N_D12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1356,7 +1358,7 @@
         private System.Windows.Forms.NumericUpDown B6;
         private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.Label J_10;
-        private FEBuilderGBA.TextBoxEx L_4_TEXT_CONVERSATION;
+        private FEBuilderGBA.TextBoxEx L_4_TEXT_DEATHQUOTE;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.NumericUpDown B0;
         private FEBuilderGBA.TextBoxEx L_1_UNIT_ANY;
@@ -1377,7 +1379,7 @@
         private System.Windows.Forms.Label N_J_6;
         private System.Windows.Forms.NumericUpDown N_B0;
         private FEBuilderGBA.TextBoxEx N_L_0_UNIT;
-        private FEBuilderGBA.TextBoxEx N_L_4_TEXT_CONVERSATION;
+        private FEBuilderGBA.TextBoxEx N_L_4_TEXT_DEATHQUOTE;
         private System.Windows.Forms.NumericUpDown N_B11;
         private System.Windows.Forms.NumericUpDown N_B10;
         private System.Windows.Forms.NumericUpDown N_B7;
