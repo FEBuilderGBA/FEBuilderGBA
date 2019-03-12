@@ -3040,11 +3040,11 @@ Automatic patch adaptation failed.\r\nPlease check whether an error is displayed
 :2=特殊指定不明
 2=special designation unknown
 
-:バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|FEditorシリアライズ形式|*.bin|アニメGIF|*.gif|Dump All|*.bin|All files|*
-Battle animation There is a comment|*.txt|Battle animation No comment|*.txt|FEditor Serialized format|*.bin|Animtion GIF|*.gif|Dump All|*.bin|All files|*
+:FEditorシリアライズ形式|*.bin|バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.bin|All files|*
+FEditor Serialized format|*.bin|Battle animation There is a comment|*.txt|Battle animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.bin|All files|*
 
-:バトルアニメ テキスト形式|*.txt|FEditorシリアライズ形式|*|All files|*
-Battle animation|*.txt|FEditor Serialized format|*|All files|*
+:FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
+FEditor Serialized format|*.bin|FEditor Serialized format(WildCard)|*|Battle animation|*.txt|All files|*
 
 :現在他の処理中です
 Other processing is currently in progress.
