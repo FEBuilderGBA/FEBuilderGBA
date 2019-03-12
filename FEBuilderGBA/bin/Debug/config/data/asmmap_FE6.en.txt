@@ -1177,3 +1177,8 @@
 02039504	@ArenaTemp	Temporary data of the stadium.
 08022064	GetUnitMapSpritePaletteIndex
 08026504	When exchanging items actually by item exchange.
+08033C04	AiTryDoStaff
+08033C84	gStaffAiPerformTable_2
+08033C8C	GetAiSafestAccessibleAdjacentPosition
+0803260c	AiGetPositionTerrainSafetyWeight
+0803264c	AiGetPositionUnitSafetyWeight

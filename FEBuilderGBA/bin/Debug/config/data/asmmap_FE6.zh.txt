@@ -965,3 +965,8 @@
 02039504	@ArenaTemp	体育场的临时数据。
 08022064	GetUnitMapSpritePaletteIndex
 08026504	实际通过物品交换交换物品时。
+08033C04	AiTryDoStaff
+08033C84	gStaffAiPerformTable_2
+08033C8C	GetAiSafestAccessibleAdjacentPosition
+0803260c	AiGetPositionTerrainSafetyWeight
+0803264c	AiGetPositionUnitSafetyWeight

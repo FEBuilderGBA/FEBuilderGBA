@@ -1012,7 +1012,6 @@
 08018160	GetUnitMagBy2Range
 08017190	GetItemAttributes
 08016538	CanUnitUseAsWeapon
-08017190	GetItemAttributes
 08016644	CanUnitUseAsStaff
 
 085C3CE8	RAMのテキストバッファへのポインタ
@@ -1165,3 +1164,8 @@
 02039504	@ArenaTemp	闘技場の一時データ
 08022064	GetUnitMapSpritePaletteIndex
 08026504	アイテム交換で、実際にアイテムを交換した時
+08033C04	AiTryDoStaff
+08033C84	gStaffAiPerformTable_2
+08033C8C	GetAiSafestAccessibleAdjacentPosition
+0803260c	AiGetPositionTerrainSafetyWeight
+0803264c	AiGetPositionUnitSafetyWeight

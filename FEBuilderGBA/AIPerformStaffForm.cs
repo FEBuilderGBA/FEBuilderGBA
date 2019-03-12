@@ -18,6 +18,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
         }
 
         public InputFormRef InputFormRef;
@@ -51,6 +52,16 @@ namespace FEBuilderGBA
 
             List<U.AddrResult> arlist = InputFormRef.MakeList();
             FEBuilderGBA.Address.AddFunctions(list, arlist, 4, "AIPerformStaff_ASM_");
+        }
+
+        void AddressListExpandsEvent(object sender, EventArgs arg)
+        {//杖テーブルの途中にある参照を変更する必要がある
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ai_preform_staff_asm_pointer() , addr + 4, undodata);
+            Program.Undo.Push(undodata);
         }
     }
 }

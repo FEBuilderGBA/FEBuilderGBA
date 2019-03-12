@@ -4385,3 +4385,17 @@
 08096C60	Receive items from transporters on the Advance Advance screen.	{U}
 08097990	Send the item to the transporter on the advancement preparation screen.	{J}
 08097204	Send the item to the transporter on the advancement preparation screen.	{U}
+080384EC	AiDoBerserkAction	{U}
+0803aad8	AiTryDoStaff	{U}
+0801727c	GetItemAttributes	{U}
+0803AB78	gStaffAiPerformTable_2	{U}
+0803AB80	GetAiSafestAccessibleAdjacentPosition	{U}
+08039304	AiGetPositionTerrainSafetyWeight	{U}
+08039344	AiGetPositionUnitSafetyWeight	{U}
+080389A0	AiDoBerserkAction	{J}
+0803AF8C	AiTryDoStaff	{J}
+08017684	GetItemAttributes	{J}
+0803B02C	gStaffAiPerformTable_2	{J}
+0803B034	GetAiSafestAccessibleAdjacentPosition	{J}
+080397B8	AiGetPositionTerrainSafetyWeight	{J}
+080397F8	AiGetPositionUnitSafetyWeight	{J}
