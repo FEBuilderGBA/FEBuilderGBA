@@ -758,7 +758,7 @@ namespace FEBuilderGBA
             int width = 32 * 8;
             int height = 32 * 8;
             int palette_count = MAX_MAP_PALETTE_COUNT;
-            if (bitmap.Width != width || bitmap.Height < 176)
+            if (bitmap.Width != width || bitmap.Height < 128)
             {
                 R.ShowStopError("画像サイズが正しくありません。\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}", bitmap.Width,bitmap.Height,width,height);
                 return;
