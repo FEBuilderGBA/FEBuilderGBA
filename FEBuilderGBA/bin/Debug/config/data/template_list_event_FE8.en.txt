@@ -1,23 +1,23 @@
 template_event_COND_UNITALIVE_FE8.txt	If the unit is alive
 template_event_COND_UNITALIVE_OR_ELSE_FE8.txt	If the unit is alive or dead
 template_event_COND_YES_OR_NO.txt	Conversation branch selector Yes / No.
-template_event_GAMEOVER_FE8.txt	Call the game over
-template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call the Preparation.
-template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
-template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show the frame on the unit to display the conversation
-template_event_MOVEPOS_AND_FRAME_FE8.txt	Move the camera to the coordinates, Show the frame in the coordinates to display the conversation
-template_event_TalkEventItem_FE8.txt	Talk and make items
 template_event_COND_TURN_ODD_FE8.txt	If odd number turn
 template_event_COND_TURN_EVEN_FE8.txt	If even number turn
 template_event_COND_TURN_3SCALE_FE8.txt	If the number of turns is a multiple of 3
 template_event_COND_TURN_LESS_10.txt	If it is within 10 turns
 template_event_COND_GOLD_MORE_5000.txt	If you own 5000 gold or more
 template_event_COND_UNITALIVE_AND_STIL.txt	If the unit alive and not join
-template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
-template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	Two critical attacks at the battle event and destroy enemy
-template_event_WarpIN_FE8.txt	Make a unit appear in warp.
-template_event_Gaiden.txt	Make a Big Branch.If you clear within 3 turns, it will be a Gaidai.
+template_event_COND_Gaiden.txt	Make a Big Branch.If you clear within 3 turns, it will be a Gaidai.
 template_event_COND_FLAG_ON_FE8.txt	If the flag 0x0A is ON.
 template_event_COND_FLAG_OFF_FE8.txt	If flag 0x0A is OFF.
 template_event_COND_HARDMODE_FE8.txt	If HardMode
 template_event_COND_HARDMODE_OR_ELSE_FE8.txt	If HardMode or else
+template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show the frame on the unit to display the conversation
+template_event_MOVEPOS_AND_FRAME_FE8.txt	Move the camera to the coordinates, Show the frame in the coordinates to display the conversation
+template_event_TalkEventItem_FE8.txt	Talk and make items
+template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
+template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	Two critical attacks at the battle event and destroy enemy
+template_event_WarpIN_FE8.txt	Make a unit appear in warp.
+template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
+template_event_GAMEOVER_FE8.txt	Call the game over
+template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call the Preparation.

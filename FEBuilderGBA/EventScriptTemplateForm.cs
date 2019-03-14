@@ -18,12 +18,11 @@ namespace FEBuilderGBA
             this.SampleEventListbox.OwnerDraw(DrawEvent, DrawMode.OwnerDrawVariable, false);
 
             U.AddCancelButton(this);
-            U.SelectedIndexSafety(this.TemplateListbox, 0);
         }
 
         private void EventScriptTemplateForm_Load(object sender, EventArgs e)
         {
-
+            U.SelectedIndexSafety(this.TemplateListbox, 0);
         }
 
         uint MapID;
@@ -110,7 +109,7 @@ namespace FEBuilderGBA
         }
         static string ToUShortToString(uint addr)
         {
-            return U.ToHexString8(U.ChangeEndian32(addr)).Substring(4);
+            return U.ToHexString8(U.ChangeEndian32(addr)).Substring(0,4);
         }
 
         void LoadCodes(EventTemplate et)
@@ -163,7 +162,7 @@ namespace FEBuilderGBA
         {
             for (uint id = startID; id < 0xffff; id++)
             {
-                if (! this.CurrentControl.IsUseLabelID(startID))
+                if (! this.CurrentControl.IsUseLabelID(id))
                 {
                     return id;
                 }

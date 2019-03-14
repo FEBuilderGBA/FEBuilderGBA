@@ -1,14 +1,14 @@
 23190000	//ターン数を取得(CHECK_TURNS)	{J}
 4005070001000000	//SVAL[MemorySlot:0x7 Slot7][設定する値:0x1]	{J}
 25067C0C	//SAND[PackedMemorySlot:0xC7C SlotC=SlotC&Slot7]	{J}
-400C01770C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x7701][MemorySlot2:0x0 常に0(書き込み禁止)]	{J}
+400CXXXX0C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x7701][MemorySlot2:0x0 常に0(書き込み禁止)]	{J}
 201BB809201D0000221B0000	//[会話テキスト:0x9B8]	{J}
-20080177	//LABEL[条件ID:0x7701]	{J}
+2008XXXX	//LABEL[条件ID:0x7701]	{J}
 
 
 23190000	//ターン数を取得(CHECK_TURNS)	{U}
 4005070001000000	//SVAL[MemorySlot:0x7 Slot7][設定する値:0x1]	{U}
 25067C0C	//SAND[PackedMemorySlot:0xC7C SlotC=SlotC&Slot7]	{U}
-400C01770C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x7701][MemorySlot2:0x0 常に0(書き込み禁止)]	{U}
+400CXXXX0C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x7701][MemorySlot2:0x0 常に0(書き込み禁止)]	{U}
 201BF709201D0000221B0000	//[会話テキスト:0x9F7]	{U}
-20080177	//LABEL[条件ID:0x7701]	{U}
+2008XXXX	//LABEL[条件ID:0x7701]	{U}
