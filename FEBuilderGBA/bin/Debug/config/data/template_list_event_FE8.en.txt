@@ -19,3 +19,5 @@ template_event_WarpIN_FE8.txt	Make a unit appear in warp.
 template_event_Gaiden.txt	Make a Big Branch.If you clear within 3 turns, it will be a Gaidai.
 template_event_COND_FLAG_ON_FE8.txt	If the flag 0x0A is ON.
 template_event_COND_FLAG_OFF_FE8.txt	If flag 0x0A is OFF.
+template_event_COND_HARDMODE_FE8.txt	If HardMode
+template_event_COND_HARDMODE_OR_ELSE_FE8.txt	If HardMode or else

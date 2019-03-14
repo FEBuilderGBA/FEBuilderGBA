@@ -19,3 +19,5 @@ template_event_WarpIN_FE8.txt	ユニットをワープで登場させる
 template_event_Gaiden.txt	外伝分岐を作る。もし、3ターン以内にクリアすれば外伝に。
 template_event_COND_FLAG_ON_FE8.txt	もし、フラグ0x0AがONであれば
 template_event_COND_FLAG_OFF_FE8.txt	もし、フラグ0x0AがOFFであれば
+template_event_COND_HARDMODE_FE8.txt	もし、ハードモードならば
+template_event_COND_HARDMODE_OR_ELSE_FE8.txt	もし、ハードモードならば、またはそれ以外ならば

@@ -27,10 +27,13 @@ namespace FEBuilderGBA
         }
 
         uint MapID;
-        public void Init(uint mapid)
+        EventScriptInnerControl CurrentControl;
+        public void Init(uint mapid, EventScriptInnerControl currentControl)
         {
             this.MapID = mapid;
+            this.CurrentControl = currentControl;
         }
+
 
         private Size DrawEvent(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -105,6 +108,10 @@ namespace FEBuilderGBA
             }
             return U.ToHexString8(U.ChangeEndian32(U.toPointer(addr)));
         }
+        static string ToUShortToString(uint addr)
+        {
+            return U.ToHexString8(U.ChangeEndian32(addr)).Substring(4);
+        }
 
         void LoadCodes(EventTemplate et)
         {
@@ -127,6 +134,17 @@ namespace FEBuilderGBA
                 XXXXXXXX = ToPointerToString(EventCondForm.GetPlayerUnits(this.MapID));
                 YYYYYYYY = ToPointerToString(EventCondForm.GetEnemyUnits(this.MapID));
             }
+            else if (et.Filename.IndexOf("_COND_") >= 0)
+            {
+                uint labelX = GetUnuseLabelID(0x9000);
+                XXXXXXXX = ToUShortToString(labelX);
+
+                if (et.Filename.IndexOf("_ELSE_") >= 0)
+                {
+                    uint labelY = GetUnuseLabelID(labelX + 1);
+                    YYYYYYYY = ToUShortToString(labelY);
+                }
+            }
 
 
             byte[] bin = EventScriptInnerControl.ConverteventTextToBin(fullfilename,false, XXXXXXXX, YYYYYYYY);
@@ -139,6 +157,18 @@ namespace FEBuilderGBA
                 addr += (uint)code.Script.Size;
             }
             this.SampleEventListbox.DummyAlloc(this.Codes.Count, 0);
+        }
+
+        uint GetUnuseLabelID(uint startID)
+        {
+            for (uint id = startID; id < 0xffff; id++)
+            {
+                if (! this.CurrentControl.IsUseLabelID(startID))
+                {
+                    return id;
+                }
+            }
+            return 0xffff;
         }
 
         private void SelectButton_Click(object sender, EventArgs e)

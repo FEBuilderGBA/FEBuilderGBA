@@ -2698,10 +2698,12 @@ namespace FEBuilderGBA
                 if (XXXXXXXX != null)
                 {
                     line = line.Replace("XXXXXXXX", XXXXXXXX);
+                    line = line.Replace("XXXX", XXXXXXXX);
                 }
                 if (YYYYYYYY != null)
                 {
                     line = line.Replace("YYYYYYYY", YYYYYYYY);
+                    line = line.Replace("YYYY", YYYYYYYY);
                 }
                 byte[] bin = LineToEventByte(line);
                 if (bin.Length < 4)
@@ -3074,7 +3076,7 @@ namespace FEBuilderGBA
             }
 
             EventScriptTemplateForm f = (EventScriptTemplateForm)InputFormRef.JumpFormLow<EventScriptTemplateForm>();
-            f.Init(this.MapID);
+            f.Init(this.MapID, this);
             f.ShowDialog();
 
             if (f.DialogResult != DialogResult.OK)
@@ -3109,6 +3111,23 @@ namespace FEBuilderGBA
             UseTemplate();
         }
 
+        public bool IsUseLabelID(uint checkLabelID)
+        {
+            for (int i = 0; i < this.EventAsm.Count; i++)
+            {
+                EventScript.OneCode code = this.EventAsm[i];
+                uint cond_id = GetScriptLabelID(code);
+                if (cond_id == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (cond_id == checkLabelID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
     }
 }

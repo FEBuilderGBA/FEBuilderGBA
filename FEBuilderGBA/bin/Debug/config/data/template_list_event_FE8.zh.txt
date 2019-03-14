@@ -21,3 +21,5 @@ template_event_WarpIN_FE8.txt	使单位出现扭曲
 template_event_Gaiden.txt	做一个大分支。如果你在3回合内清除，它将是一个Gaidai。
 template_event_COND_FLAG_ON_FE8.txt	如果标志0x0A为ON。
 template_event_COND_FLAG_OFF_FE8.txt	如果标志0x0A为OFF。
+template_event_COND_HARDMODE_FE8.txt	如果是HardMode
+template_event_COND_HARDMODE_OR_ELSE_FE8.txt	如果是HardMode或者其他
