@@ -5029,6 +5029,12 @@ WEXP Gain
 :3F=射程3-15(ロングアーチ)
 3F=3-15 Range (Ballista)
 
+:10=魔法/2(リザーブの杖)
+10=MP/2(Fortify Staff)
+
+:FF=全体(ラトナ)
+FF=Total(Latona)
+
 :CCアイテムの名前
 Promotion Item Name
 

@@ -24,7 +24,9 @@ DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
 LISTNAME=$W2:TEXT
 
 //データを定義します
-B0=Range
+B0:$COMBO RangeType.txt:.ja=射程
+B0:$COMBO RangeType.en.txt:.en=Range
+B0:$COMBO RangeType.zh.txt:.zh=射程
 B1=00
 W2:TEXT=String
 

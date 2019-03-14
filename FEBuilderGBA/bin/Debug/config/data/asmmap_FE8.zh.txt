@@ -11581,3 +11581,6 @@ r3=X tile position of menu of the right	{U}
 085E4E84	&LZ77	某事的图象。	5	{J}
 08023D5C	SetUnitActionToSupport_Code0xF	{J}
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
+0805A78C	LoadBattleAnimePalette	{J}
+080599E8	LoadBattleAnimePalette	{U}
+0203F101	用于判断并行扩展。	{J}

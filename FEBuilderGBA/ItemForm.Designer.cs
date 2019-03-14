@@ -1033,7 +1033,9 @@
             "22=射程2-2(弓)",
             "23=射程2-3(長弓)",
             "3A=射程3-10(サンダーストーム)",
-            "3F=射程3-15(ロングアーチ)"});
+            "3F=射程3-15(ロングアーチ)",
+            "10=魔法/2(リザーブの杖)",
+            "FF=全体(ラトナ)"});
             this.L_25_COMBO.Location = new System.Drawing.Point(529, 24);
             this.L_25_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_25_COMBO.Name = "L_25_COMBO";
@@ -1134,7 +1136,7 @@
             0,
             0});
             this.B24.Name = "B24";
-            this.B24.Size = new System.Drawing.Size(65, 25);
+            this.B24.Size = new System.Drawing.Size(68, 25);
             this.B24.TabIndex = 33;
             // 
             // J_25
@@ -1143,7 +1145,7 @@
             this.J_25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.J_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_25.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_25.Location = new System.Drawing.Point(455, 1);
+            this.J_25.Location = new System.Drawing.Point(461, 1);
             this.J_25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_25.Name = "J_25";
             this.J_25.Size = new System.Drawing.Size(64, 25);
@@ -1156,7 +1158,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(455, 27);
+            this.B25.Location = new System.Drawing.Point(461, 27);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -1188,7 +1190,7 @@
             this.J_24.Location = new System.Drawing.Point(387, 1);
             this.J_24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_24.Name = "J_24";
-            this.J_24.Size = new System.Drawing.Size(64, 25);
+            this.J_24.Size = new System.Drawing.Size(70, 25);
             this.J_24.TabIndex = 41;
             this.J_24.Text = "必殺";
             this.J_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

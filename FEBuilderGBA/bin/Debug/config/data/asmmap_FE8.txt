@@ -11675,3 +11675,4 @@
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
+0203F101	同行拡張の判定用	{J}
