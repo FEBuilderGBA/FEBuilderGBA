@@ -301,9 +301,9 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                FELint.CheckLZ77ImageErrorsPointer(addr + 0
+                FELint.CheckLZ77ImageErrorsPointerOrNull(addr + 0
                     , errors, FELint.Type.IMAGE_UNIT_MOVE_ICON, addr, 32, 0, (uint)i);
-                FELint.CheckAPErrorsPointer(addr + 4
+                FELint.CheckAPErrorsPointerOrNull(addr + 4
                     , errors, FELint.Type.IMAGE_UNIT_MOVE_ICON, addr, (uint)i);
             }
         }

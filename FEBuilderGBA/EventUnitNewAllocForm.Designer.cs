@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(16, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 325);
             this.panel1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // AllocButton
             // 
             this.AllocButton.Location = new System.Drawing.Point(296, 181);
-            this.AllocButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllocButton.Margin = new System.Windows.Forms.Padding(4);
             this.AllocButton.Name = "AllocButton";
             this.AllocButton.Size = new System.Drawing.Size(118, 41);
             this.AllocButton.TabIndex = 28;
@@ -74,9 +74,13 @@
             // 
             // AllocCountNumupdown
             // 
-
             this.AllocCountNumupdown.Location = new System.Drawing.Point(337, 114);
-            this.AllocCountNumupdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllocCountNumupdown.Margin = new System.Windows.Forms.Padding(4);
+            this.AllocCountNumupdown.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.AllocCountNumupdown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -119,7 +123,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(456, 355);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EventUnitNewAllocForm";
             this.Text = "ユニット配置　新割り当て";
             this.panel1.ResumeLayout(false);

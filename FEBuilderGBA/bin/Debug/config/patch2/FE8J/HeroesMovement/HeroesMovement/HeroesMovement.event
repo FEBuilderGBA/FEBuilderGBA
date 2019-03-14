@@ -550,7 +550,7 @@ ORG	FEBUILDER_EXTRA_ORG
 	POIN TxtData0xe13_sjis	//Shove	体当たり
 	SHORT 0xe13
 	SHORT 0xe14
-	BYTE  OrangeText
+	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
 	POIN prShoveCommand_Usability|1
@@ -563,7 +563,7 @@ ORG	FEBUILDER_EXTRA_ORG
 	POIN TxtData0xe15_sjis	//Smite	突飛ばし
 	SHORT 0xe15
 	SHORT 0xe16
-	BYTE  OrangeText
+	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
 	POIN prSmiteCommand_Usability|1
@@ -576,7 +576,7 @@ ORG	FEBUILDER_EXTRA_ORG
 	POIN TxtData0xe17_sjis	//Pivot	回り込み
 	SHORT 0xe17
 	SHORT 0xe18
-	BYTE  OrangeText
+	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
 	POIN prPivotCommand_Usability|1
@@ -589,7 +589,7 @@ ORG	FEBUILDER_EXTRA_ORG
 	POIN TxtData0xe19_sjis	//Reposition	引き戻し
 	SHORT 0xe19
 	SHORT 0xe1a
-	BYTE  OrangeText
+	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
 	POIN prRepositionCommand_Usability|1
@@ -602,7 +602,7 @@ ORG	FEBUILDER_EXTRA_ORG
 	POIN TxtData0xe1b_sjis	//Swap	入れ替え
 	SHORT 0xe1b
 	SHORT 0xe1c
-	BYTE  OrangeText
+	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
 	POIN prSwapCommand_Usability|1

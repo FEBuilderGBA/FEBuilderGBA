@@ -269,7 +269,7 @@ namespace FEBuilderGBA
             return Program.ROM.u8(addr + 28);
         }
 
-        public static string ChcekTextItem1ErrorMessage(uint id,string text, uint type)
+        public static string ChcekTextItem1ErrorMessage(uint id, string text, uint textid, uint type)
         {
             if (type <= 7 && type != 4)
             {
@@ -288,7 +288,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                string errormessage = TextForm.GetErrorMessage(text, "ITEM1");
+                string errormessage = TextForm.GetErrorMessage(text,textid, "ITEM1");
 
                 if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
                 {//FE7Uにはバグがある
@@ -301,20 +301,20 @@ namespace FEBuilderGBA
             }
             else
             {
-                return TextForm.GetErrorMessage(text, "ITEM3");
+                return TextForm.GetErrorMessage(text, textid, "ITEM3");
             }
         }
-        public static string ChcekTextItem2ErrorMessage(uint id, string text, uint type)
+        public static string ChcekTextItem2ErrorMessage(uint id, string text,uint textid, uint type)
         {
-            return TextForm.GetErrorMessage(text, "ITEM3");
+            return TextForm.GetErrorMessage(text,textid, "ITEM3");
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.AddressList.SelectedIndex > 0)
             {
-                L_2_TEXT_ITEM1.ErrorMessage = ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
-                L_4_TEXT_ITEM2.ErrorMessage = ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)B7.Value);
+                L_2_TEXT_ITEM1.ErrorMessage = ChcekTextItem1ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)W2.Value, (uint)B7.Value);
+                L_4_TEXT_ITEM2.ErrorMessage = ChcekTextItem2ErrorMessage((uint)B6.Value, L_2_TEXT_ITEM1.Text, (uint)W2.Value, (uint)B7.Value);
             }
             else
             {
@@ -427,14 +427,14 @@ namespace FEBuilderGBA
                     uint info = Program.ROM.u16(item_addr + 2);
                     uint info2 = Program.ROM.u16(item_addr + 4);
                     uint type = Program.ROM.u8(item_addr + 7);
-                    string errorMessage = ChcekTextItem1ErrorMessage(id , FETextDecode.Direct(info), type);
+                    string errorMessage = ChcekTextItem1ErrorMessage(id , FETextDecode.Direct(info),info, type);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)
                             , R._("TextID:{0}\r\n{1}", U.To0xHexString(info), errorMessage), i));
                     }
 
-                    errorMessage = ChcekTextItem2ErrorMessage(id , FETextDecode.Direct(info2), type);
+                    errorMessage = ChcekTextItem2ErrorMessage(id , FETextDecode.Direct(info2),info2, type);
                     if (errorMessage != "")
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.ITEM, U.toOffset(item_addr)

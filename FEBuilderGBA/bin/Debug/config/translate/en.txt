@@ -4910,22 +4910,22 @@ Item Pricing
 Price Per Use
 
 :11=射程1(剣)
-11 = 1 Range (Melee)
+11=1 Range (Melee)
 
 :12=射程1-2(魔法)
-12 = 1-2 Range (Magic)
+12=1-2 Range (Magic)
 
 :13=射程1-3
-13 = 1-3 Range
+13=1-3 Range
 
 :22=射程2-2(弓)
-22 = 2 Range (Bow)
+22=2 Range (Bow)
 
 :23=射程2-3(長弓)
-23 = 2-3 Range (Longbow)
+23=2-3 Range (Longbow)
 
 :3A=射程3-10(サンダーストーム)
-3A = 3-10 Range (Ballista)
+3A=3-10 Range (Bolting)
 
 :性能
 Weapon Stats
@@ -5025,6 +5025,9 @@ Item data is extremely low.It may be damaged.
 
 :武器LV熟練度
 WEXP Gain
+
+:3F=射程3-15(ロングアーチ)
+3F=3-15 Range (Ballista)
 
 :CCアイテムの名前
 Promotion Item Name

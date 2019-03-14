@@ -47,7 +47,7 @@ namespace FEBuilderGBA
             ,ITEM_WEAPON_EFFECT
             ,MOVECOST_NORMAL //普通
             ,MOVECOST_RAIN //雨
-            ,MOVECOST_SHOW //雪
+           ,MOVECOST_SHOW //雪
             ,MOVECOST_AVOID //地形回避
             ,MOVECOST_DEF //地形防御
             ,MOVECOST_RES //地形魔防
@@ -427,7 +427,7 @@ namespace FEBuilderGBA
         public static void CheckText(uint textid, string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.GetErrorMessage(text,arg1);
+            string errorMessage = TextForm.GetErrorMessage(text, textid, arg1);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
@@ -528,6 +528,15 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void CheckAPErrorsPointerOrNull(uint apAddress, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(apAddress);
+            if (p == 0)
+            {
+                return;
+            }
+            ImageUtilAP.CheckAPErrors(p, errors, cond, addr, tag);
+        }
 
         public static void CheckAPErrorsPointer(uint apAddress, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
         {
@@ -544,6 +553,16 @@ namespace FEBuilderGBA
             ImageUtilAP.CheckAPErrors(apAddress, errors, cond, addr, tag);
         }
 
+        public static void CheckLZ77ImageErrorsPointerOrNull(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(lz77pointer);
+            if (p == 0)
+            {
+                return;
+            }
+
+            CheckLZ77ImageErrors(p, errors, cond, addr, width, min_height, tag);
+        }
 
         public static void CheckLZ77ImageErrorsPointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
         {

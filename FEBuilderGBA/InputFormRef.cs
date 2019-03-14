@@ -205,7 +205,7 @@ namespace FEBuilderGBA
                     {
                         uint id = (uint)src_object.Value;
                         string str = TextForm.Direct(id);
-                        link_object.ErrorMessage = TextForm.GetErrorMessage(str, arg1);
+                        link_object.ErrorMessage = TextForm.GetErrorMessage(str, id, arg1);
                         link_object.Text = str;
                     };
                     link_object.DoubleClick += (sender, e) =>
@@ -2632,7 +2632,7 @@ namespace FEBuilderGBA
                         else
                         {
                             string str = TextForm.Direct(id);
-                            link_object.ErrorMessage = TextForm.GetErrorMessage(str, arg1);
+                            link_object.ErrorMessage = TextForm.GetErrorMessage(str, id, arg1);
                             link_object.Text = str;
                         }
                     };

@@ -1,0 +1,16 @@
+#ifdef _FE8_
+
+
+PUSH
+ORG $16A68
+#incbin "GetItemRangeString.dmp"
+POIN GetItemRangeString_Table
+POP
+
+ALIGN 4
+
+#include "GetItemRangeString_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

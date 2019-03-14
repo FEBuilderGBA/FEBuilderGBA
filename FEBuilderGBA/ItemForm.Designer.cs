@@ -1032,7 +1032,8 @@
             "13=射程1-3",
             "22=射程2-2(弓)",
             "23=射程2-3(長弓)",
-            "3A=射程3-10(サンダーストーム)"});
+            "3A=射程3-10(サンダーストーム)",
+            "3F=射程3-15(ロングアーチ)"});
             this.L_25_COMBO.Location = new System.Drawing.Point(529, 24);
             this.L_25_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_25_COMBO.Name = "L_25_COMBO";

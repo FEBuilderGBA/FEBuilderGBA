@@ -1171,6 +1171,10 @@ namespace FEBuilderGBA
             {
                 addressList.OwnerDraw(ListBoxEx.DrawBGAndText, DrawMode.OwnerDrawFixed);
             }
+            else if (listname == "TEXT")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -1222,6 +1226,10 @@ namespace FEBuilderGBA
             else if (listname == "BG")
             {
                 appendname = U.ToHexString(i);
+            }
+            else if (listname == "TEXT")
+            {
+                appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {

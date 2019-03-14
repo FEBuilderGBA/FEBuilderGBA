@@ -330,8 +330,7 @@ namespace FEBuilderGBA
 
         private void PatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InputFormRef.JumpForm<PatchForm>();
-            this.PatchMainFilter.CleanChache();
+            InputFormRef.JumpForm<PointerToolForm>();
         }
 
         private void GraphicsToolStripMenuItem_Click(object sender, EventArgs e)

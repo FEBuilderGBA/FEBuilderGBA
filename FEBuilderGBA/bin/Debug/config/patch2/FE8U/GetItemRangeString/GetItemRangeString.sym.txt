@@ -1,0 +1,5 @@
+GetItemRangeString_Table=$38
+Loop=$0C
+NOTFOUND=$1E
+FOUND=$1A
+GetString=$20

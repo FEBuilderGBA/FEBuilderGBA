@@ -270,6 +270,8 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
+
+
         public static void MakeCheckError(List<FELint.ErrorSt> errors, uint pointer)
         {
             InputFormRef InputFormRef = Init(null);

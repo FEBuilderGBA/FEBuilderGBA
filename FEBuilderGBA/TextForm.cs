@@ -2643,7 +2643,26 @@ namespace FEBuilderGBA
             this.TextArea.Focus();
         }
 
-        public static string GetErrorMessage(string text, string arg1)
+        static bool IsFE8SplitMenu(uint textid)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//FE8J
+            }
+            else
+            {//FE8U
+                if (textid == 0xc15 || textid == 0xc16)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static string GetErrorMessage(string text,uint textid ,string arg1)
         {
             if (text == "")
             {
@@ -2700,6 +2719,10 @@ namespace FEBuilderGBA
             }
             if (arg1 == "MENUNAME1")
             {
+                if (IsFE8SplitMenu(textid))
+                {
+                    return "";
+                }
                 return CheckOneLineTextMessage(text, 10 * 8, 1 * 16, true);
             }
             if (arg1 == "MENUDETAIL2")

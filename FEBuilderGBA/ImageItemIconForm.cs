@@ -42,20 +42,40 @@ namespace FEBuilderGBA
                 }
             });
         }
+
+        static uint GetIconMax()
+        {
+            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) != Program.ROM.RomInfo.icon_orignal_address())
+            {//リポイント済み
+                return 0xFE;
+            }
+            if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (Program.ROM.RomInfo.is_multibyte() == false)
+                {//FE7Uでは、アイテムアイコンの中にFEditorAdv AutoPatchのデータがある
+                    uint code = Program.ROM.u32(0xCB51A);
+                    if (code == 0x18404902)
+                    {//そのため、FE7UでFEditorAdv AutoPatchがあれば、個数は一つ下げる
+                        return Program.ROM.RomInfo.icon_orignal_max() - 1;
+                    }
+                }
+
+            }
+
+            return Program.ROM.RomInfo.icon_orignal_max();
+        }
+
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
+            uint itemMax = GetIconMax();
             return new InputFormRef(self
                 , ""
                 , Program.ROM.RomInfo.icon_pointer()
                 , (2 * 8 * 2 * 8) / 2 // /2しているのは16色のため
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) == Program.ROM.RomInfo.icon_orignal_address())
-                    {
-                        return i <= Program.ROM.RomInfo.icon_orignal_max();
-                    }
-                    return i <= 0xFE;
+                    return i <= itemMax;
                 }
                 , (int i, uint addr) =>
                 {
