@@ -1809,7 +1809,7 @@ namespace FEBuilderGBA
         }
 
         public const int MAX_SERIF_WIDTH = 214;
-        public const int MAX_DEATH_QUOTE_WIDTH = 143;
+        public const int MAX_DEATH_QUOTE_WIDTH = 152;
 
         bool IsDeathQuoteSerif()
         {
