@@ -44,6 +44,7 @@ namespace FEBuilderGBA
             , MagicPatch_By_Menu
             , Skill
             , SkipWorldmapFix
+            , ItemIconExpands
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -105,6 +106,14 @@ namespace FEBuilderGBA
                 checkFunc = InputFormRef.SearchMeleeAndMagicFixPatch;
                 reason = R._("武器と魔法を同時に利用するにはMeleeAndMagicPatchが必要です。\r\n有効にしますか？");
                 patchName1 = "MeleeAndMagicFix";///No Translate
+            }
+            else if (type == TYPE.ItemIconExpands)
+            {
+                checkFunc = InputFormRef.SearchIconExpandsPatch;
+                reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
+                patchName1 = "アイテムアイコンFEまで拡張";///No Translate
+                patchName2 = "Extend Item Icon List Length";///No Translate
+                patchCombo = "fix";
             }
             else if (type == TYPE.MagicPatch_By_Menu)
             {

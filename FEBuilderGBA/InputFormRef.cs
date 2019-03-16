@@ -4745,6 +4745,7 @@ namespace FEBuilderGBA
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
             g_Cache_class_type_enum = class_type_enum.NoCache;
+            g_Cache_itemicon_extends = itemicon_extends.NoCache;
         }
 
 
@@ -10203,6 +10204,63 @@ namespace FEBuilderGBA
             }
             return portrait_extends.NO;
         }
+
+        //顔画像拡張システム.
+        public enum itemicon_extends
+        {
+             NO             //なし
+           , IconExpands    //FEまで拡張
+           , NoCache = 0xFF
+        };
+        static itemicon_extends g_Cache_itemicon_extends = itemicon_extends.NoCache;
+        public static itemicon_extends SearchItemIconExtends()
+        {
+            if (g_Cache_itemicon_extends == itemicon_extends.NoCache)
+            {
+                g_Cache_itemicon_extends = SearchItemIconExpandsPatchLow();
+            }
+            return g_Cache_itemicon_extends;
+        }
+        public static bool SearchIconExpandsPatch()
+        {
+            return SearchItemIconExtends() != itemicon_extends.NO;
+        }
+        public struct PatchItemIconExpandsSt
+        {
+            public string name;
+            public string ver;
+            public uint addr;
+            public byte[] data;
+        };
+        public static itemicon_extends SearchItemIconExpandsPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="IconExpands",	ver = "FE8J", addr = 0x34FC,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
+                new PatchTableSt{ name="IconExpands",	ver = "FE8U", addr = 0x35B0,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "IconExpands")
+                {
+                    return itemicon_extends.IconExpands;
+                }
+            }
+            return itemicon_extends.NO;
+        }
+
 
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {

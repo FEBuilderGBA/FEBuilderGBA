@@ -1905,6 +1905,7 @@ namespace FEBuilderGBA
             combo.Location = new Point(x, y);
             combo.Size = new Size(550, CONTROL_HEIGHT);
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.Name = "PatchMainCombo";
             x += 600;
 
             int databyte = (int)atOffset(patch.Param, "DATASIZE", "1");
@@ -4827,6 +4828,11 @@ namespace FEBuilderGBA
 
                 ComboBox combo = (ComboBox)c;
                 combo.Text = patchCombo;
+
+                if (combo.SelectedIndex <= 0)
+                {
+                    U.SelectedIndexSafety(combo, 1);
+                }
                 return true;
             }
             return false;

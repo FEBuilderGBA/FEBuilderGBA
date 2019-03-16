@@ -3016,6 +3016,9 @@ The music score of this song has more than 12 tracks.\r\nIn order to play this s
 :武器と魔法を同時に利用するにはMeleeAndMagicPatchが必要です。\r\n有効にしますか？
 To use weapons and magic at the same time, you need the Melee And Magic Patch.\r\nWould you like to enable it?
 
+:アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？
+To extend the icon, you need to apply a patch before extending the table.\r\nDo you want to enable? 
+
 :スキル拡張 FE8N が必要です。\r\n有効にしますか？
 Skill extension FE8N is required.\r\nWould you like to enable it?
 

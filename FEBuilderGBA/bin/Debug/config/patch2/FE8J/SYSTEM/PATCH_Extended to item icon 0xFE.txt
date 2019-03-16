@@ -1,5 +1,5 @@
 ﻿NAME=アイテムアイコンFEまで拡張
-NAME.en=Extended to item icon 0xFE
+NAME.en=Extend Item Icon List Length
 NAME.zh=道具图标扩展到FE
 
 //アドレスパッチとして実装します

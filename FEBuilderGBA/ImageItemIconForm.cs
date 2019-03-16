@@ -263,6 +263,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.ItemIconExpands);
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"expands");
             uint newaddr = ExpandsArea(this, 0xFF, undodata);
