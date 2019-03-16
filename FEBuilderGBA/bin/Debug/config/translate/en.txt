@@ -3322,9 +3322,6 @@ Magic Animations
 :魔法テーブルを拡張してもよろしいですか？
 Are you sure you want to extend the magic table?
 
-:いったんフォームを閉じますので、開きなおしてください。
-Once the form is closed, please reopen it.
-
 :魔法アニメの書出し
 Export Magic Animation
 

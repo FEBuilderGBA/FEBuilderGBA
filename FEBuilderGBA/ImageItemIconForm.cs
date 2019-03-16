@@ -275,8 +275,7 @@ namespace FEBuilderGBA
             }
             Program.Undo.Push(undodata);
 
-            InputFormRef.ReInitPointer((Program.ROM.RomInfo.icon_pointer()));
-            this.ItemIconListExpandsButton.Enabled = false;
+            InputFormRef.ReOpenForm<ImageItemIconForm>();
         }
 
         private void JumpToSystemPalette_Click(object sender, EventArgs e)

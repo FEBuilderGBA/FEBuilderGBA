@@ -7235,6 +7235,23 @@ namespace FEBuilderGBA
             formst.Form.Close();
         }
 
+        public static void ReOpenForm<Type>()
+        {
+            FormSt formst;
+            int hashCode = typeof(Type).GetHashCode();
+            if (!Forms.TryGetValue(hashCode, out formst)
+                || formst.Form.IsDisposed
+                )
+            {//存在しない
+            }
+            else
+            {
+                formst.Form.Close();
+            }
+
+            JumpForm<Type>();
+        }
+
         static void OnCloseingCheckWriteConfirmation(object sender, FormClosingEventArgs e)
         {
             if (!(sender is Control))
@@ -10210,6 +10227,7 @@ namespace FEBuilderGBA
         {
              NO             //なし
            , IconExpands    //FEまで拡張
+           , SkillSystems   //SkillSystems
            , NoCache = 0xFF
         };
         static itemicon_extends g_Cache_itemicon_extends = itemicon_extends.NoCache;
@@ -10237,8 +10255,9 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="IconExpands",	ver = "FE8J", addr = 0x34FC,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
                 new PatchTableSt{ name="IconExpands",	ver = "FE8U", addr = 0x35B0,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
+                new PatchTableSt{ name="SkillSystems",	ver = "FE8U", addr = 0x3586,data = new byte[]{0x03, 0x4C, 0x00, 0xF0, 0x03, 0xF8, 0x10, 0xBC, 0x02, 0xBC, 0x08, 0x47, 0x20, 0x47}},
             };
-
+            
             string version = Program.ROM.RomInfo.VersionToFilename();
             foreach (PatchTableSt t in table)
             {
@@ -10256,6 +10275,10 @@ namespace FEBuilderGBA
                 if (t.name == "IconExpands")
                 {
                     return itemicon_extends.IconExpands;
+                }
+                if (t.name == "SkillSystems")
+                {
+                    return itemicon_extends.SkillSystems;
                 }
             }
             return itemicon_extends.NO;
