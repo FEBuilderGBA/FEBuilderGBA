@@ -17,10 +17,13 @@ DATASIZE=8
 //データ個数 00 が出てくるまで
 DATACOUNT=$GREP8 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF
 
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:MAP
+
 //データを定義します
 B0:MAP=Map
-B1:DECIMAL=X
-B2:DECIMAL=Y
+B1:MAPX=X
+B2:MAPY=Y
 B3:CLASS=敵クラスがいるかどうか(0=ANY)
 W4:FLAG=判定フラグ(0=Any)
 B3:CLASS.en=HasEnemyClass(0=ANY)

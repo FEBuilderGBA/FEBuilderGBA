@@ -454,6 +454,53 @@ namespace FEBuilderGBA
                 return this.TSANup != null ;
             }
         }
+        class StructMap
+        {
+            public uint MapIndex { get; private set; }
+            public NumericUpDown MapNup { get; private set; }
+            public string MapTypeName { get; private set; }
+            public uint XIndex { get; private set; }
+            public NumericUpDown XNup { get; private set; }
+            public string XTypeName { get; private set; }
+            public uint YIndex { get; private set; }
+            public NumericUpDown YNup { get; private set; }
+            public string YTypeName { get; private set; }
+
+            public void SetMapIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.MapIndex = index;
+                this.MapNup = nup;
+                this.MapTypeName = typename;
+            }
+            public void SetXIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.XIndex = index;
+                this.XNup = nup;
+                this.XTypeName = typename;
+            }
+            public void SetYIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.YIndex = index;
+                this.YNup = nup;
+                this.YTypeName = typename;
+            }
+            public bool HasMap()
+            {
+                return this.MapNup != null;
+            }
+            public bool HasXY()
+            {
+                return this.XNup != null && this.YNup != null ;
+            }
+        }
+        bool IsHexadecimal(string type)
+        {
+            if (type == "DECIMAL" || type == "MAPX" || type == "MAPY")
+            {
+                return false;
+            }
+            return true;
+        }
 
         void LoadPatchStruct(PatchSt patch)
         {
@@ -654,8 +701,11 @@ namespace FEBuilderGBA
             SelectAddress.Name = "SelectAddress";
             PatchPage.Controls.Add(SelectAddress);
 
-            y += 50;
-            StructImage image = new StructImage();
+            y += CONTROL_HEIGHT;
+            y += 5;
+
+            StructImage image = new StructImage(); //画像を表示するかどうか
+            StructMap map = new StructMap();       //地図を表示するかどうか
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
@@ -686,7 +736,7 @@ namespace FEBuilderGBA
 
                 NumericUpDown data = new NumericUpDown();
                 data.Increment = 1;
-                data.Hexadecimal = (type != "DECIMAL");
+                data.Hexadecimal = IsHexadecimal(type);
                 data.Location = new Point(405, y);
                 data.Size = new Size(100 - 5, CONTROL_HEIGHT);
                 data.Name = key;
@@ -789,6 +839,14 @@ namespace FEBuilderGBA
                     }
                     label.Name = "J_" + datanum;
                 }
+                else if (type == "MAPX")
+                {
+                    map.SetXIndex((uint)datanum, data, type);
+                }
+                else if (type == "MAPY")
+                {
+                    map.SetYIndex((uint)datanum, data, type);
+                }
                 else
                 {
                     TextBoxEx link = new TextBoxEx();
@@ -823,6 +881,10 @@ namespace FEBuilderGBA
 
                         play.Name = "L_" + datanum + "_SONGPLAY";
                         PatchPage.Controls.Add(play);
+                    }
+                    else if (type == "MAP")
+                    {
+                        map.SetMapIndex((uint)datanum, data, type);
                     }
                 }
 
@@ -866,6 +928,12 @@ namespace FEBuilderGBA
             {
                 LoadPatchStructWithImage(patch, AddressList, writebutton
                     , image, struct_address, datasize, "PatchImage");
+            }
+            //マップを表示する場合
+            if (map.HasMap())
+            {
+                LoadPatchStructWithMap(patch, AddressList, writebutton
+                    , map, struct_address, datasize);
             }
             //詳細と著者  (画像の場合、画像表示のついでにやるので問題なし)
             InfoAndAuthor(PatchPage, patch);
@@ -1138,7 +1206,36 @@ namespace FEBuilderGBA
             };
         }
 
-        void InitStructListName(PatchSt patch, string listname,ListBoxEx addressList,out Dictionary<uint, string> out_listname_combo_dic)
+        void LoadPatchStructWithMap(PatchSt patch
+            , ListBox addressList, Button writeButton, StructMap map
+            , uint struct_address, uint dataSize)
+        {
+            Control parent = this.PatchPage;
+            int y = LowestPositionY(parent);
+
+            //地図を表示
+            MapPictureBox m = new MapPictureBox();
+            m.Location = new Point(200, y - (CONTROL_HEIGHT));
+            m.Size = new Size(CONTROL_HEIGHT * 17, CONTROL_HEIGHT * 8);
+            m.Name = "MapPictureBox";
+            m.HideCommandBar();
+            PatchPage.Controls.Add(m);
+
+            map.MapNup.ValueChanged += (Object sender, EventArgs e) =>
+            {
+                m.LoadMap((uint)map.MapNup.Value);
+            };
+
+            m.LoadMap((uint)map.MapNup.Value);
+            if (map.HasXY())
+            {
+                Label dummy = new Label();
+                dummy.Name = "L_" + map.XIndex + "_MAPXY_"+ map.YIndex;
+                PatchPage.Controls.Add(dummy);
+            }
+        }
+
+        void InitStructListName(PatchSt patch, string listname, ListBoxEx addressList, out Dictionary<uint, string> out_listname_combo_dic)
         {
             out_listname_combo_dic = null;
 
@@ -2776,7 +2873,7 @@ namespace FEBuilderGBA
             writebutton.Name = "WriteButton";
             PatchPage.Controls.Add(writebutton);
             y += CONTROL_HEIGHT;
-            y += 10;
+            y += 5;
 
             string EAFilename = "";
             foreach (var pair in patch.Param)
@@ -2872,7 +2969,7 @@ namespace FEBuilderGBA
             writebutton.Name = "WriteButton";
             PatchPage.Controls.Add(writebutton);
             y += CONTROL_HEIGHT;
-            y += 10;
+            y += 5;
 
 
             Panel panel = new Panel();

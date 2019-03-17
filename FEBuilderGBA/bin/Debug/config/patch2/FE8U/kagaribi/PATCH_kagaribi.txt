@@ -22,22 +22,22 @@ LISTNAME=$B0:MAP
 
 //データを定義します
 B0:MAP=マップ
-B1:DECIMAL=X
-B2:DECIMAL=Y
+B1:MAPX=X
+B2:MAPY=Y
 B3:DECIMAL=視界の幅(1-15)
 W4:FLAG=判定フラグ(0=ANY)
 W6=00
 
 B0:MAP.en=Map
-B1:DECIMAL.en=X
-B2:DECIMAL.en=Y
+B1:MAPX.en=X
+B2:MAPY.en=Y
 B3:DECIMAL.en=Width of sight(1-15)
 W4:FLAG.en=Judgment flag(0=ANY)
 W6.en=00
 
 B0:MAP.zh=地图
-B1:DECIMAL.zh=X
-B2:DECIMAL.zh=Y
+B1:MAPX.zh=X
+B2:MAPY.zh=Y
 B3:DECIMAL.zh=视线(1-15)
 W4:FLAG.zh=判定标志(0=ANY)
 W6.zh=00
