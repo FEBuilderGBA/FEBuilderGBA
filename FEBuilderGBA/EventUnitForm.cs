@@ -502,6 +502,22 @@ namespace FEBuilderGBA
             }
         }
 
+        //アイコンの背丈の補正 中央に出すための補正値を取得
+        public static void GetDrawAddXY(Bitmap icon, out int draw_x_add, out int draw_y_add)
+        {
+            if (icon.Width >= 32)
+            {//でかいアイコン
+                draw_x_add = 16 - icon.Width + 8;
+                draw_y_add = 16 - icon.Height + 2;
+            }
+            else
+            {
+                //たまに背丈がでかくて16x16を超えてしまうやつがいるので補正する
+                draw_x_add = 16 - icon.Width;
+                draw_y_add = 16 - icon.Height;
+            }
+        }
+
         //ユニットの位置を描画 移動前->途中->移動後と、すべて出す
         List<MapPictureBox.StaticItem> DrawUnit2(uint class_id, uint unitgrow)
         {
@@ -512,9 +528,10 @@ namespace FEBuilderGBA
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
-            //たまに背丈がでかくて16x16を超えてしまうやつがいるので補正する
-            int draw_x_add = 16 - icon.Width;
-            int draw_y_add = 16 - icon.Height;
+            //アイコンの背丈の補正 中央に出すための補正値を取得
+            int draw_x_add;
+            int draw_y_add;
+            EventUnitForm.GetDrawAddXY(icon, out draw_x_add, out draw_y_add);
 
             uint assign = U.ParseUnitGrowAssign(unitgrow);
             int selected = FE8CoordListBox.SelectedIndex;
@@ -614,20 +631,10 @@ namespace FEBuilderGBA
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
+            //アイコンの背丈の補正 中央に出すための補正値を取得
             int draw_x_add;
             int draw_y_add;
-
-            if (icon.Width >= 32)
-            {
-                draw_x_add = 16 - icon.Width + 8;
-                draw_y_add = 16 - icon.Height + 2;
-            }
-            else
-            {
-                //たまに背丈がでかくて16x16を超えてしまうやつがいるので補正する
-                draw_x_add = 16 - icon.Width;
-                draw_y_add = 16 - icon.Height;
-            }
+            EventUnitForm.GetDrawAddXY(icon, out draw_x_add, out draw_y_add);
 
             uint assign = U.ParseUnitGrowAssign(unitgrow);
             int x = (int)U.ParseFE8UnitPosX(beforre_unitpos);

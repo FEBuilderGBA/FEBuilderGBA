@@ -386,9 +386,10 @@ namespace FEBuilderGBA
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
-            //たまに背丈がでかくて16x16を超えてしまうやつがいるので補正する
-            int draw_x_add = 16 - icon.Width;
-            int draw_y_add = 16 - icon.Height;
+            //アイコンの背丈の補正 中央に出すための補正値を取得
+            int draw_x_add;
+            int draw_y_add;
+            EventUnitForm.GetDrawAddXY(icon, out draw_x_add, out draw_y_add);
 
             uint assign = U.ParseUnitGrowAssign(unitgrow);
 
@@ -445,9 +446,10 @@ namespace FEBuilderGBA
 
             Bitmap icon = ClassForm.DrawWaitIcon(class_id, palette_type);
 
-            //たまに背丈がでかくて16x16を超えてしまうやつがいるので補正する
-            int draw_x_add = 16 - icon.Width;
-            int draw_y_add = 16 - icon.Height;
+            //アイコンの背丈の補正 中央に出すための補正値を取得
+            int draw_x_add;
+            int draw_y_add;
+            EventUnitForm.GetDrawAddXY(icon, out draw_x_add, out draw_y_add);
 
             uint assign = U.ParseUnitGrowAssign(unitgrow);
 
