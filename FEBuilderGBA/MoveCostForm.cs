@@ -24,6 +24,7 @@ namespace FEBuilderGBA
             this.FilterComboBox.SelectedIndex = 0;
             this.InputFormRef = Init(this);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
+            this.InputFormRef.IsSurrogateStructure = true;  //代理構造体で表示されているので警告不能
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             List<Control> controls = InputFormRef.GetAllControls(this);
