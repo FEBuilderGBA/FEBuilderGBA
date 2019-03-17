@@ -29,7 +29,7 @@ namespace FEBuilderGBA
             
             ImagePortraitButton.BackgroundImage = MakeTransparent(ImagePortraitForm.DrawPortraitUnit(2));
             ImageBattleAnimeButton.BackgroundImage = MakeTransparent(BattleZoom(ImageBattleAnimeForm.DrawBattleAnime(1, ImageBattleAnimeForm.ScaleTrim.SCALE_90)));
-            ImageUnitWaitIconButton.BackgroundImage = MakeTransparent(ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1,0,false));
+            ImageUnitWaitIconButton.BackgroundImage = MakeTransparent(ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap(1, 0, false));
             ImageUnitMoveIconButton.BackgroundImage = MakeTransparent(ImageUnitMoveIconFrom.DrawMoveUnitIconBitmap(3, 0,0));
             ImageIconButton.BackgroundImage = MakeTransparent(ImageItemIconForm.DrawIconWhereID(0xB));
             SystemIconButton.BackgroundImage = MakeTransparent(ImageSystemIconForm.YubiYoko());

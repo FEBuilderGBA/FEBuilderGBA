@@ -3667,3 +3667,5 @@ and defeating an enemy.
 コマンドナイト	Command Kn.
 メイド	Maid
 コマンダー	Harbinger
+勇王	the peerless warrior king
+穏健帝	the stalwart Silent Emperor

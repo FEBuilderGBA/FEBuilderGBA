@@ -266,7 +266,7 @@ namespace FEBuilderGBA
         }
 
         //待機アイコン
-        public static Bitmap DrawWaitIcon(uint cid,int palette_type = 0,bool height16_limit = false)
+        public static Bitmap DrawWaitIcon(uint cid, int palette_type = 0, bool height16_limit = false, bool centering = true)
         {
             if (cid <= 0)
             {

@@ -1589,7 +1589,7 @@ namespace FEBuilderGBA
                 {
                     PictureBox link_object = ((PictureBox)link_info);
 
-                    Bitmap bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)src_object.Value,0,false);
+                    Bitmap bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)src_object.Value, 0, false);
                     U.MakeTransparent(bitmap);
                     link_object.Image = bitmap;
 

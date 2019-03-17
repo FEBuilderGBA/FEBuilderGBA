@@ -1,0 +1,2 @@
+0=Always magic
+1=Range 1 is physical

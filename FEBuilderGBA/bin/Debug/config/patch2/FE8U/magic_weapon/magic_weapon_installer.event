@@ -1,0 +1,8 @@
+PUSH
+ORG 0x2A864
+#incbin "magic_weapon.bin"
+POIN magic_weapon_table
+POP
+
+#include magic_weapon_table.event
+

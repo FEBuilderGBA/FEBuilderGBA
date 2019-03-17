@@ -100,7 +100,7 @@ namespace FEBuilderGBA
             int palette_type = X_PALETTE.SelectedIndex;
 
             X_PIC.Image = LoadWaitUnitIcon(pic_address, palette_type, b2);
-            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address,b2,(int)X_ONE_STEP.Value, palette_type,false);
+            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, (int)X_ONE_STEP.Value, palette_type, false);
         }
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
@@ -108,12 +108,10 @@ namespace FEBuilderGBA
             uint pic_address = (uint)D4.Value;
             int step = (int)X_ONE_STEP.Value;
             int palette_type = X_PALETTE.SelectedIndex;
-            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, step, palette_type,false);
+            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, step, palette_type, false);
         }
 
-        public static Bitmap DrawWaitUnitIcon(
-            uint pic_address,  byte b2, int step ,int palette_type,bool height16_limit
-            )
+        public static Bitmap DrawWaitUnitIcon(uint pic_address, byte b2, int step, int palette_type, bool height16_limit)
         {
             Bitmap bmp = LoadWaitUnitIcon(pic_address, palette_type,b2);
             Rectangle rect;
@@ -215,8 +213,7 @@ namespace FEBuilderGBA
                     );
             }
         }
-        public static Bitmap DrawWaitUnitIconBitmap(uint icon_id, int palette_type, bool height16_limit
-            )
+        public static Bitmap DrawWaitUnitIconBitmap(uint icon_id, int palette_type, bool height16_limit)
         {
             InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(icon_id);

@@ -129,7 +129,7 @@ namespace FEBuilderGBA
                 }
                 if (ImageUtil.IsBlankBitmap(a))
                 {
-                    a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i + 1)*2, palette_type, true);
+                    a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i + 1) * 2, palette_type, true);
                 }
                 ImageUtil.BitBlt(bitmap, i * 16, 0, 16, 16, a, 0, 0);
             }
