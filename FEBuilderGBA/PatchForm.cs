@@ -1221,12 +1221,18 @@ namespace FEBuilderGBA
             m.HideCommandBar();
             PatchPage.Controls.Add(m);
 
+
             map.MapNup.ValueChanged += (Object sender, EventArgs e) =>
             {
                 m.LoadMap((uint)map.MapNup.Value);
             };
 
-            m.LoadMap((uint)map.MapNup.Value);
+            uint mapid = (uint)map.MapNup.Value;
+            m.Load += (Object sender, EventArgs e) =>
+            {
+                m.LoadMap(mapid);
+            };
+
             if (map.HasXY())
             {
                 Label dummy = new Label();
