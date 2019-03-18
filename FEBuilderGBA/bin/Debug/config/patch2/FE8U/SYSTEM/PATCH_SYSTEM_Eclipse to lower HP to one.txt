@@ -1,6 +1,6 @@
 NAME=イクリプスでHPを1にする
 NAME.en=Eclipse Damage (1)
-NAME.zh=使用Eclipse将HP设置为1
+NAME.zh=使用月食HP设置为1
 
 //アドレスパッチとして実装します
 TYPE=ADDR

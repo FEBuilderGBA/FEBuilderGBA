@@ -1,6 +1,6 @@
 NAME=支援会話をしても行動済みにしない
 NAME.en=Actions After Support (Contemporary Style)
-NAME.zh=即使我提供援助交谈，我也不会激活
+NAME.zh=即使我提供支援对话，还可以打开菜单
 
 TYPE=BIN
 TAG=#ENGINE
@@ -13,4 +13,4 @@ AUTHOR=circleseverywhere Compatability:7743 http://feuniverse.us/t/contemporary-
 
 INFO=ユニットが支援会話をしても行動済みの状態にしません。\r\n支援会話後にもメニューを開いてアイテムを交換したりできるようになります。
 INFO.en=Patches the ROM so that using "Support" doesn't consume a unit's action.\r\nThe unit can attack, use the menu, and trade afterward.\r\n"Talk" supercedes "Support" if both options are available.\r\n 
-INFO.zh=即使该单位提供援助交谈，也不会使其处于行动状态。\r\n支持对话后，您还可以打开菜单并交换项目。
+INFO.zh=即使该单位提供支援对话，也不会使其处于行动状态。\r\n支援对话后，您还可以打开菜单并交换道具。

@@ -1,6 +1,6 @@
 
 NAME=OPANIMEエフラム
-NAME.en=OPANIME Ephraim2
+NAME.en=OP Anime Ephraim (Zoom)
 NAME.zh=OP动画伊弗列姆
 
 //画像パッチとして実装します

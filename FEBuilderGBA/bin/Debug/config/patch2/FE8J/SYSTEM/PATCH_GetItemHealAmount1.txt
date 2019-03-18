@@ -1,6 +1,6 @@
-﻿
+
 NAME=ライブの杖の回復量
-NAME.en=Recovery amount of Heal Staff
+NAME.en=Set HP Recovered By Heal Staff
 
 IF:0x016D66=0x00 0x24
 

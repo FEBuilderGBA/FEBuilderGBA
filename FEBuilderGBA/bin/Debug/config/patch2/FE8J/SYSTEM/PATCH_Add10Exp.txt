@@ -1,6 +1,6 @@
 
 NAME=踊る、盗む、召喚等での経験値+10の値
-NAME.en=EXP Value in dance, steal, summons, etc. EXP+10
+NAME.en=EXP Value in dance, steal, Summons, etc. EXP+10
 
 //アドレスパッチとして実装します
 TYPE=ADDR

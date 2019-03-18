@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ネイミー
 NAME.en=OP Anime Face: Neimi
-NAME.zh=OPANIME_FACE_Namy
+NAME.zh=OP动画_脸_梅米
 
 TYPE=IMAGE
 TAG=#IMAGE

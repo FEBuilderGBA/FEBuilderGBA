@@ -1,6 +1,6 @@
 NAME=スキル必的_このクラスから
 NAME.en=Sure Strike Skill First Class
-NAME.zh=技能要求_从这堂课
+NAME.zh=技能必中_这个职业前
 
 //アドレスパッチとして実装します
 TYPE=ADDR

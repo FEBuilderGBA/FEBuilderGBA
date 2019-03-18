@@ -14,4 +14,4 @@ PALETTE=1
 KEEPIMAGE=TRUE //only palette
 
 AUTHOR=Fatih
-NAME.zh=选择难度的调色板当你做出困难的选择时，颜色不被选中
+NAME.zh=选择难度 非选择困难时的颜色

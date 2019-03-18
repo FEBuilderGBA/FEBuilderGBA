@@ -7,5 +7,7 @@ TAG=#ENGINE
 ADDRESS=0x29B64
 
 
-NAME.zh=Aphia的下降增长更正值
-NAME.en=Afa's Drops Growth Bonus
+NAME.zh=加成长的水滴的成长补正值?
+NAME.en=Metis's Tome Growth Bonus
+
+INFO.en=Boosts stat growth in all stats by specified value.

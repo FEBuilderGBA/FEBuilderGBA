@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ヴァルター
-NAME.en=OPANIME_FACE_Valter
+NAME=OPANIME_FACE_ヴァルター
+NAME.en=OP Anime Face: Valter
 
 TYPE=IMAGE
 TAG=#IMAGE

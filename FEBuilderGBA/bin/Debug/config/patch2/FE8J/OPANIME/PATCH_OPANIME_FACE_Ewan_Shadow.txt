@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ユアン_影
-NAME.en=OPANIME_FACE_Ewan_Shadow
+NAME=OPANIME_FACE_ユアン_影
+NAME.en=OP Anime Face: Ewan (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

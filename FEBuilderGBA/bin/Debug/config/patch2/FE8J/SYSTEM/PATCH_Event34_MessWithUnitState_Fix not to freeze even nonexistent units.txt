@@ -1,5 +1,5 @@
 NAME=命令0x34_ユニットの状態変更_存在しないユニットでもフリーズさせない
-NAME.en=Event34_MessWithUnitState_Fix not to freeze even nonexistent units
+NAME.en=Prevent Freeze For Unit State Event 0x34.
 
 
 //アドレスパッチとして実装します
@@ -14,6 +14,6 @@ COMBO.zh=默认|0x06 0x20|修正|0x00 0x20
 AUTHOR=7743
 
 INFO=存在しないキャラクターの、HPを変更したり、または、所属などの状態を変更したりすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。
-INFO.en=If you change the HP or change the state such as affiliation of a nonexistent character, it solves the problem of freezing.\r\nIgnore commands to characters that do not exist.
+INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, modifying the state of a non-existent character with 0x34 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n
 NAME.zh=指令0x34_单元状态改变_不冻结甚至不存在的单元
 INFO.zh=如果您更改HP或更改不存在的字符的隶属等状态，它可以解决冻结问题。\r\n忽略对不存在的字符的命令。

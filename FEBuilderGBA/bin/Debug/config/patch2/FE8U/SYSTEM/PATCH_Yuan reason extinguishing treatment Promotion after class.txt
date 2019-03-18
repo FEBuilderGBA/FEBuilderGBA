@@ -1,6 +1,6 @@
 NAME=ユアン理消滅処理 CC後クラス
 NAME.en=Ewan Promotes To Class For Weapon Rank Removal
-NAME.zh=元推理灭绝处理CC之后的课
+NAME.zh=尤恩理cc后处理职业
 
 //アドレスパッチとして実装します
 TYPE=ADDR

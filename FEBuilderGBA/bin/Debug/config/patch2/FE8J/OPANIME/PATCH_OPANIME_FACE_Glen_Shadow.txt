@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_グレン_影
-NAME.en=OPANIME_FACE_Glen_Shadow
+NAME=OPANIME_FACE_グレン_影
+NAME.en=OP Anime Face: Glen (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

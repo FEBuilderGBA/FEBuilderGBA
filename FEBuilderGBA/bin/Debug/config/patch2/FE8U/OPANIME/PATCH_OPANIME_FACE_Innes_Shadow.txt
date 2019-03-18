@@ -10,5 +10,5 @@ KEEPPALETTE=true
 
 ZIMAGE_POINTER=0x000C92D8//0x08AE4940
 PALETTE_POINTER=0x000C9200//0x08AE3734
-NAME.zh=OPANIME_FACE_Heanias _阴影
+NAME.zh=OP动画_脸_希尼亚斯_阴影
 INFO=Edit and import OP Anime Graphic for the Innes Face (Shadow) image.

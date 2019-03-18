@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_アスレイ
 NAME.en=OP Anime Face: Artur
-NAME.zh=OPANIME_FACE_ Athley
+NAME.zh=OP动画_脸_阿斯雷
 
 TYPE=IMAGE
 TAG=#IMAGE

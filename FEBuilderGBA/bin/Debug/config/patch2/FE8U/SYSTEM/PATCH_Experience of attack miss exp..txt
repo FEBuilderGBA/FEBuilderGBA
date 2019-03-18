@@ -1,6 +1,6 @@
 NAME=攻撃ミス経験値
 NAME.en=Attack Miss EXP
-NAME.zh=进攻体验错过经验
+NAME.zh=攻击Miss的经验值
 
 //アドレスパッチとして実装します
 TYPE=ADDR

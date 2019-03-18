@@ -1,5 +1,5 @@
 NAME=CC3分岐
-NAME.en=Promotion 3 branch
+NAME.en=3 Promotion Branch Options
 NAME.zh=转职3分岐
 
 //BINパッチとして実装します
@@ -17,7 +17,7 @@ BIN:0xD1B7A=D1B7A.BIN             //0x0D 0xE0
 BIN:0xD19D2=D19D2.BIN             //0x01
 
 INFO=CCは通常、CC分岐で指定された2クラスへの分岐CCとなりますが、分岐先にクラス設定のCC先指定を追加し、最大3クラスへと分岐できるように改変します。\r\nダブっていたら無視します(2分岐CCと判定します)\r\nオリジナルの作者:area ,移植 7743
-INFO.en=CC is usually CC to the specified two classes, but adds the CC destination specification of the class setting to the drawing and modifies it so that it can branch to the maximum 3 classes.\r\nIf you do it, ignore it (judge 2 votes CC)\r\norignal soruce code by area. Transplant by 7743
+INFO.en=Patches the ROM's promotion table to include the unused "Class Promotes To" byte in the Class Editor.\r\nThis combines with the standard branching promotion table to enable three total promotion options.\r\n
 AUTHOR=出典元:https://github.com/ngmansion/FE8/tree/master/ThreeGreens
 AUTHOR.en=Source By:https://github.com/ngmansion/FE8/tree/master/ThreeGreens
 INFO.zh=CC通常是由CC分支指定的两个类别的分支CC，但是将CC类别设置的目的地规范添加到分支目的地并对其进行修改，以使其可以分支到最多三个类别。\r\n忽略，如果是双（判断2分支CC）\r\n原作者:地区，移植7743

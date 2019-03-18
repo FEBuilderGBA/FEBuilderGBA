@@ -13,7 +13,7 @@ BIN:$FREEAREA:1=map_change_to_flag.bin
 JUMP:0x2E5E6:$r0=map_change_to_flag.bin
 
 INFO=マップ変化が発生したらフラグを立てます。ただのフラグなので何度でも立てます。
-INFO.zh=当地图发生变化时设置一个标志。这只是一个国旗，所以我可以尽可能多地设置。
+INFO.zh=当地图发生变化时设置一个标志。这只是一个标志旗，所以我可以尽可能多地设置。
 INFO.en=Patches the ROM with a reusable conditional event flag that is triggered upon a map tile change.\r\n
 
 AUTHOR=7743

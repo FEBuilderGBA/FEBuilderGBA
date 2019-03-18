@@ -1,4 +1,4 @@
-﻿NAME=常に間接モーション_なげおの
+NAME=常に間接モーション_なげおの
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -8,5 +8,5 @@ ADDRESS=0x0059170 0x005915c
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-NAME.en=Always indirect motion_Hatchet
+NAME.en=Always Ranged Animate: Hatchet
 NAME.zh=始终间接运动_轻斧

@@ -1,5 +1,5 @@
-﻿NAME=MUSIC_杖1_Healing
-NAME.en=MUSIC_Staff1_Healing
+NAME=MUSIC_杖1_Healing
+NAME.en=Healing Staff BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND

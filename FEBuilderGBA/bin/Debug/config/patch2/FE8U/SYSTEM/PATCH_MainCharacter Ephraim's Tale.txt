@@ -1,6 +1,6 @@
 NAME=主人公_エフラム編
 NAME.en=Main Character - Ephraim's Tale
-NAME.zh=主要人物_埃夫林故事
+NAME.zh=主要人物_伊弗列姆故事
 
 //アドレスパッチとして実装します
 TYPE=ADDR

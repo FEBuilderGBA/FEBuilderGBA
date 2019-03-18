@@ -1,6 +1,6 @@
 NAME=ソードマスター必殺補正
 NAME.en=Class Crit% Bonus
-NAME.zh=剑法师特殊行动修正
+NAME.zh=系统_剑圣的必杀补正
 
 //アドレスパッチとして実装します
 TYPE=ADDR

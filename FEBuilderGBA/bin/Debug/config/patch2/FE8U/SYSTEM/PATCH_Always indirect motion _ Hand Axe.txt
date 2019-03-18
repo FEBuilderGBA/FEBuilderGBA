@@ -1,6 +1,6 @@
 NAME=常に間接モーション_ておの
 NAME.en=Always Ranged Animate: Hand Axe
-NAME.zh=始终间接运动_ Toroona
+NAME.zh=始终间接运动_投斧
 
 //アドレスパッチとして実装します
 TYPE=ADDR

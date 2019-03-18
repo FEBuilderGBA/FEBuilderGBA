@@ -1,5 +1,5 @@
 NAME=指南パッチ導入
-NAME.en=Guide Event(Shinan) Patch (Installer)
+NAME.en=Guide Event Creator Installer
 NAME.zh=指南补丁引进
 TYPE=BIN
 TAG=#ENGINE
@@ -31,5 +31,5 @@ CONFLICT_MESSAGE=Shinan EA
 
 
 INFO=指南イベントを作成します。\r\nこのパッチを適用すると、メニューの辞書が書き換えられます。\r\n辞書メニューを選択すると、各章ごとに設定したイベントを実行できます。\r\nイベントでは、その章をどのように攻略するかヒントを教えるイベントを作成できます。\r\n
-INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nWhen this patch is applied, the dictionary of the menu is rewritten.\r\nBy selecting the dictionary menu, you can execute the events set for each chapter.\r\nIn the event you can create an event to teach you how to capture that chapter.\r\n
+INFO.en=Patches the ROM with a new table that enables creation of guide/tutorial events for each chapter.\r\nThese can give the player hints, demonstrate new concepts, etc.\r\nMust be installed to use "Guide Event Creator."\r\n
 INFO.zh=我将创建一个指令事件。\r\n当应用这个补丁时，菜单的字典被重写。\r\n通过选择字典菜单，您可以执行为每个章节设置的事件。\r\n如果您可以创建活动来教您如何捕捉该章节。\r\n

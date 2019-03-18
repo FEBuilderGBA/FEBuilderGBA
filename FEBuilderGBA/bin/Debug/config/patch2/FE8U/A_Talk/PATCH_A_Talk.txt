@@ -1,6 +1,6 @@
 NAME=支援Aの時のみ会話できる条件判定asm
 NAME.en=Add Event: Conditional Talk w/ A Support
-NAME.zh=仅当支持A是asm时才可以讨论的条件判断
+NAME.zh=只有在支援A的时候才能对话的条件判定asm
 
 TYPE=BIN
 TAG=#ENGINE
@@ -8,7 +8,7 @@ BIN:$FREEAREA=A_Talk.bin
 
 INFO=支援Aの時のみ会話が発生するASM会話を設定する
 INFO.en=Patches in an ASM "Talk" conditional event that is available only when characters have support rank A.\r\n
-INFO.zh=仅在支持A时才设置ASM对话
+INFO.zh=只有在支援A的时候设定会话的ASM会话
 
 AUTHOR=aera
 

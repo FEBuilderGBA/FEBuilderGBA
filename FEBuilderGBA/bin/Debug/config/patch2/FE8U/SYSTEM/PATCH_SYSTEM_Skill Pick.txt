@@ -10,7 +10,7 @@ ADDRESS_TYPE=CLASS
 AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
-NAME.zh=技能钥匙
+NAME.zh=技能开锁_职业
 
 AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 

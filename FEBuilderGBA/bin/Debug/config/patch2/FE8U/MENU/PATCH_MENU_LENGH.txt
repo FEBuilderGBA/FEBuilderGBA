@@ -1,7 +1,7 @@
 
 NAME=MENU メニューウィンドウの長さ
 NAME.en=Menu Window Width
-NAME.zh=MENU菜单窗口的长度
+NAME.zh=菜单窗口的长度
 
 //アドレスパッチとして実装します
 TYPE=ADDR

@@ -1,6 +1,6 @@
 NAME=敵の杖の最低命中率
 NAME.en=AI: Minimum Accuracy For Targeting With Status Staff 
-NAME.zh=敌方工作人员的最低精度
+NAME.zh=敌人杖的最低命中率
 
 //アドレスパッチとして実装します
 TYPE=ADDR

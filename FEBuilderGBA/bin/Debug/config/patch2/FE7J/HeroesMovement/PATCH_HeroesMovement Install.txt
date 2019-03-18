@@ -14,5 +14,5 @@ AUTHOR=Original work: Stan / Porting: 7743
 INFO=StanのHeroesMovementをFE8Jに移植したものです。\r\nプレイヤーユニットが「体当たり」(Shove)、「突飛ばし」(Smite)、「回込み」(Pivot)、「引き戻し」(Reposition)、「入れ替え」(Swap)、を使えるようになります。
 
 INFO.en=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.
-INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.
+INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x3b to skill 0x3f separately from setting.
 

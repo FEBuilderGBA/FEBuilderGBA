@@ -1,6 +1,6 @@
 NAME=CC不可レベル
 NAME.en=Minimum Promotion Level
-NAME.zh=CC不可用级别
+NAME.zh=转职没有级别
 
 //アドレスパッチとして実装します
 TYPE=ADDR

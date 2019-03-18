@@ -1,6 +1,6 @@
 
 NAME=ソードマスター必殺補正
-NAME.en=Critical correction of sword master
+NAME.en=Class Crit% Bonus
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -9,4 +9,6 @@ TAG=#ENGINE
 ADDRESS=0x028D32
 HEX=false
 
-NAME.zh=剑法师特殊行动修正
+NAME.zh=系统_剑圣的必杀补正
+
+INFO.en=Modifies the critical bonus granted by the class/character ability.\r\nConvert from hex to decimal for the value.

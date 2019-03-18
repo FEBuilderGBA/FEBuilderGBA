@@ -9,8 +9,8 @@ TAG=#ENGINE
 BIN:$FREEAREA=A_Talk.bin
 
 AUTHOR=aera
-NAME.en=Condition judgment that can be talked only when support A is asm
-INFO.en=Set ASM conversation where conversation occurs only when support A
+NAME.en=Add Event: Conditional Talk w/ A Support
+INFO.en=Patches in an ASM "Talk" conditional event that is available only when characters have support rank A.\r\n
 
 NAME.zh=只有在支援A的时候才能对话的条件判定asm
 INFO.zh=只有在支援A的时候设定会话的ASM会话

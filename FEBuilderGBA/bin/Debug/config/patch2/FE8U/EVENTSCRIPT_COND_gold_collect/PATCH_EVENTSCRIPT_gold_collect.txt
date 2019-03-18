@@ -1,6 +1,6 @@
 NAME=所持金を減らすイベント命令
 NAME.en=Add Event: Lose Gold
-NAME.zh=gold_collect
+NAME.zh=事件命令_所持金没收
 
 TYPE=BIN
 TAG=#EVENT
@@ -13,7 +13,7 @@ BIN:$FREEAREA:1=gold_collect.bin
 
 INFO=所持金から指定金額を没収します.
 INFO.en=Patches the ROM with a callable event that removes a specified amount of gold from the player.\r\n
-INFO.zh=我们将从占有资金中扣除规定的金额。
+INFO.zh=从所持有的钱上，被指定金额.
 
 AUTHOR.en=Kaito Port:7743
 

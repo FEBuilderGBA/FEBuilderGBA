@@ -1,6 +1,6 @@
 NAME=誰かとの支援をもっているか判定する条件式を作成するイベント命令
 NAME.en=Add Event Condition: Support Check
-NAME.zh=协助检查support_check
+NAME.zh=事件命令_协助检查
 
 TYPE=BIN
 TAG=#EVENT
@@ -13,7 +13,7 @@ BIN:$FREEAREA:1=wakaresaseya_find_support_check.bin
 
 INFO=操作キャラが支援を持っているかという条件を作ります.
 INFO.en=Patches the game to set event conditions based on whether a character has support.\r\n
-INFO.zh=制定操作角色有支持的条件。
+INFO.zh=制定操作角色有支援的条件。
 
 AUTHOR=怪盗パッチ 7743
 AUTHOR.en=Kaito Port:7743

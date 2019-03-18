@@ -1,5 +1,5 @@
 NAME=MUSIC_悲しみの中で
-NAME.en=MUSIC_In Sorrow's Shroud
+NAME.en=Unit Death BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x08079e60 0x08079eac
 ADDRESS_TYPE=SONG
 
-NAME.zh=MUSIC_悲伤
+NAME.zh=音乐_在悲伤中

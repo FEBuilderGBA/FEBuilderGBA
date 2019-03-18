@@ -1,6 +1,6 @@
 NAME=スキル大盾_このクラスまで
 NAME.en=Great Shield Last Class
-NAME.zh=技能大盾_对这个类
+NAME.zh=技能大盾_这个职业为止
 
 //アドレスパッチとして実装します
 TYPE=ADDR

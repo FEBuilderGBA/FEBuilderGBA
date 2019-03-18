@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ギリアム_影
-NAME.en=OPANIME_FACE_Gilliam_Shadow
+NAME=OPANIME_FACE_ギリアム_影
+NAME.en=OP Anime Face: Gilliam (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

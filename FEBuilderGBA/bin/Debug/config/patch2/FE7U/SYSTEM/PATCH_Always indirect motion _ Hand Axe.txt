@@ -8,5 +8,5 @@ ADDRESS=0x52D84 0x52D70
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-NAME.en=Always indirect motion_Hand Axe
-NAME.zh=始终间接运动_ Toroona
+NAME.en=Always Ranged Animate: Hand Axe
+NAME.zh=始终间接运动_投斧

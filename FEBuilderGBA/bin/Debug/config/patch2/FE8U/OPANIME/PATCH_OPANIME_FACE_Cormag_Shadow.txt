@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_クーガー_影
 NAME.en=OP Anime Face: Cormag (Shadow)
-NAME.zh=OPANIME_FACE_美洲狮_影子
+NAME.zh=OP动画_脸_库格_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

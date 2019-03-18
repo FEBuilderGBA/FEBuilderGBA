@@ -1,6 +1,6 @@
 NAME=召喚されるクラス
 NAME.en=Summon Skill: Edit Summoned Class
-NAME.zh=被召唤的类
+NAME.zh=被召唤的职业
 
 //アドレスパッチとして実装します
 TYPE=ADDR

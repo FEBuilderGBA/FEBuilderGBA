@@ -14,4 +14,4 @@ PALETTE=1
 KEEPIMAGE=TRUE //only palette
 
 AUTHOR=Fatih
-NAME.zh=选择难度的调色板未选择正常时的颜色
+NAME.zh=选择难度 非选择正常时的颜色

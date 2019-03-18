@@ -1,6 +1,6 @@
 
 NAME=最大レベル
-NAME.en=Maximum level
+NAME.en=Default Max Level
 
 
 //アドレスパッチとして実装します
@@ -14,7 +14,7 @@ HEX=false
 
 AUTHOR=Kao http://feuniverse.us/t/fe-builder-gba/2845/829
 INFO.zh=注意:最大31。要超过那个，需要上限突破补丁。
-INFO.en=Note: Up to 31.To exceed it we need a breakthrough patch.
+INFO.en=Sets the default max level for all playable units.
 
 
-NAME.zh=最高等级
+NAME.zh=最大等级

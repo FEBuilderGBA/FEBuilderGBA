@@ -1,6 +1,6 @@
 NAME=MUSIC_踊り
 NAME.en=Dance BGM
-NAME.zh=MUSIC_跳舞
+NAME.zh=音乐_舞蹈
 //アドレスパッチとして実装します
 
 TYPE=ADDR

@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ゼト
 NAME.en=OP Anime Face: Seth
-NAME.zh=OPANIME_FACE_ Zeto
+NAME.zh=OP动画_脸_塞思
 
 TYPE=IMAGE
 TAG=#IMAGE

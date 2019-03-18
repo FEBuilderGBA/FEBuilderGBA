@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_アメリア_影
 NAME.en=OP Anime Face: Amelia (Shadow)
-NAME.zh=OPANIME_FACE_Amelia_ Shadow
+NAME.zh=OP动画_脸_阿米莉亚_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

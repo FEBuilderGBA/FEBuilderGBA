@@ -58,4 +58,4 @@ EVENTSCRIPT:C.zh=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024F0D0
 
 
 NAME.zh=设置本机的各种参数
-INFO.zh=设置本机的各种参数。
+INFO.zh=设置本机的各种参数

@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_バネッサ_影
 NAME.en=OP Anime Face: Vanessa (Shadow)
-NAME.zh=OPANIME_FACE_ Vanessa_影子
+NAME.zh=OP动画_脸_瓦内萨_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

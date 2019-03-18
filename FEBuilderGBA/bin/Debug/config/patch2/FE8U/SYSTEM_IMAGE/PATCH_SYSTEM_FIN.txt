@@ -20,6 +20,6 @@ PALETTE_POINTER=0xB7494
 
 NAME.en=FIN
 
-NAME.zh=FIN
+NAME.zh=系统_FIN图像
 
 

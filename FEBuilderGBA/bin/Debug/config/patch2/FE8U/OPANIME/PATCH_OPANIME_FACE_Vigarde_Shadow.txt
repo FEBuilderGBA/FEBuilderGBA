@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ヴィガルド_影
 NAME.en=OP Anime Face: Vigarde (Shadow)
-NAME.zh=OPANIME_FACE_ VIGARDO _阴影
+NAME.zh=OP动画_脸_彼加尔德_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

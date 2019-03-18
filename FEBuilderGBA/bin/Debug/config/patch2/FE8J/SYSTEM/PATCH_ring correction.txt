@@ -12,7 +12,9 @@ NAME.zh=戒指补正
 
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-NAME.en=ring correction
+NAME.en=Ring Correction
 
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
+
+INFO.en=Set to 0A for all ring effects at once.\r\nFurther research required.\r\n

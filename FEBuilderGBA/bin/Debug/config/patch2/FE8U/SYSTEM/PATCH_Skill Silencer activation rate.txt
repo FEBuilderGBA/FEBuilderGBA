@@ -1,6 +1,6 @@
 NAME=瞬殺率_通常の瞬殺率
 NAME.en=Silencer Activation Rate
-NAME.zh=正常的休克率
+NAME.zh=瞬杀率_正常的瞬杀率
 
 //アドレスパッチとして実装します
 TYPE=ADDR

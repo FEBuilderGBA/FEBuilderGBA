@@ -1,4 +1,4 @@
-﻿NAME=常に間接モーション_ルーンソード
+NAME=常に間接モーション_ルーンソード
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -8,5 +8,5 @@ ADDRESS=0x00590f4 0x00590da
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-NAME.en=Always indirect motion_Rune Sword
+NAME.en=Always Ranged Animate: Rune Sword
 NAME.zh=始终间接运动_卢尼之剑

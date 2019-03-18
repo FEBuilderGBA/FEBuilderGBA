@@ -1,6 +1,6 @@
 NAME=瞬殺不可クラス
 NAME.en=Silencer-Immune Class
-NAME.zh=没有即时课程
+NAME.zh=瞬殺不可职业
 
 //アドレスパッチとして実装します
 TYPE=ADDR

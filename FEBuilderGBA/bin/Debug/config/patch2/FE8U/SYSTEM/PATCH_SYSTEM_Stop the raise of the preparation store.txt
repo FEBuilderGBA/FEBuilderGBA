@@ -1,6 +1,6 @@
 NAME=編成準備店の値上げをやめさせる
 NAME.en=Set Preparations Store Pricing
-NAME.zh=停止提高准备准备商店
+NAME.zh=系统_编成准备店的涨价停止
 
 //アドレスパッチとして実装します
 TYPE=ADDR

@@ -1,6 +1,6 @@
-﻿
+
 NAME=フリーマップに魔物を出さない
-NAME.en=Do not put Monster on world map skirmishes
+NAME.en=Toggle World Map Monster Skirmishes
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -25,5 +25,5 @@ COMBO.en=Do not put out demons|0x00 0x00 0x00 0x00|To put out demons|0xFB 0xF7 0
 COMBO.zh=不要放出恶魔|0x00 0x00 0x00 0x00|放出恶魔|0xFB 0xF7 0xCE 0xFB
 
 INFO=ワールドマップに魔物を登場させないようにします。\r\nワールドマップでのフリーマップ戦闘を抑制します。\r\n
-INFO.en=This patch is not make monsters appear on the world map.\r\nIt will erase the monster from the world map.\r\ndisable world map skirmishes.\r\n
+INFO.en=Sets whether or not monsters will spawn on the world map.\r\n
 INFO.zh=我们不会让怪物出现在世界地图上。\r\n我们将在世界地图上压制免费的地图战。\r\n

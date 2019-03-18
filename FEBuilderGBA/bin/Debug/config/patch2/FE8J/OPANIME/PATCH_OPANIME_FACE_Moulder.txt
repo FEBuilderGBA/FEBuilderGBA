@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_モルダー
-NAME.en=OPANIME_FACE_Moulder
+NAME=OPANIME_FACE_モルダー
+NAME.en=OP Anime Face: Moulder
 
 TYPE=IMAGE
 TAG=#IMAGE

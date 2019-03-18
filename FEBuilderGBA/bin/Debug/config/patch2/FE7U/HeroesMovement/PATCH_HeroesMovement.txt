@@ -1,5 +1,5 @@
 NAME=HeroesMovement Standalone 設定
-NAME.en=HeroesMovement Standalone Setting
+NAME.en=HeroesMovement Standalone (Setting)
 NAME.zh=HeroesMovement Standalone Setting
 
 IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C

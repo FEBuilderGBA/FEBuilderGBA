@@ -1,5 +1,5 @@
 NAME=MUSIC_闘技場_勝敗はいかに
-NAME.en=MUSIC_Arena Colosseum Defeat2
+NAME.en=Defeat in the Arena BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x0804024C 0x08040272
 ADDRESS_TYPE=SONG
 
-NAME.zh=音乐_体育场_如何赢/输
+NAME.zh=音乐_斗技场_胜败如何

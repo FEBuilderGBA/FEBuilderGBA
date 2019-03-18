@@ -1,6 +1,6 @@
 
 NAME=輸送隊解禁38章
-NAME.en=Transporter unlock chapter 38
+NAME.en=Supply Unlocks After Castle Frelia (Chapter 0x38)
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -16,7 +16,7 @@ AUTHOR.zh=来源:7743的写作\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%
 
 AUTHOR.en=From source: 7743's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 INFO=HINT:輸送体
-INFO.en=HINT:convoy,supply,transporter,merlinus,wagon
+INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 
 COMBO.en=Ban|0x38 0x28 0x01 0xD0|Authorization|0x00 0x00 0x00 0x00

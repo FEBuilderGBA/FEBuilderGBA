@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_モルダー
 NAME.en=OP Anime Face: Moulder
-NAME.zh=OPANIME_FACE_ Mulder
+NAME.zh=OP动画_脸_摩达
 
 TYPE=IMAGE
 TAG=#IMAGE

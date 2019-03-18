@@ -1,6 +1,6 @@
 NAME=きずぐすりの回復量
 NAME.en=Vulnerary Heal Amount
-NAME.zh=责骂的回收量
+NAME.zh=系统_伤药的回复量
 
 //アドレスパッチとして実装します
 TYPE=ADDR

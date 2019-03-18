@@ -1,6 +1,6 @@
 NAME=瞬殺率_対経験値ゼロ特性持ちの瞬殺率
 NAME.en=Silencer Activation Rate vs Exp 0
-NAME.zh=投篮率_对经验值瞬时比率的零点特征
+NAME.zh=瞬杀率_对经验值零的敌人，设置的瞬杀率
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -17,3 +17,5 @@ AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%8
 
 CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
 CONFLICT_MESSAGE=SkillSystems
+
+INFO.zh=为经验值为零的敌人设置瞬时速率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。

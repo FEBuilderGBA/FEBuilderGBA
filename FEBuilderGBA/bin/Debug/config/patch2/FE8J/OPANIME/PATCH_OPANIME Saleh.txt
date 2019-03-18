@@ -1,6 +1,6 @@
 
 NAME=OPANIMEサレフ
-NAME.en=OPANIME Saleh
+NAME.en=OP Anime Saleh
 NAME.zh=OP动画塞勒夫
 
 //画像パッチとして実装します

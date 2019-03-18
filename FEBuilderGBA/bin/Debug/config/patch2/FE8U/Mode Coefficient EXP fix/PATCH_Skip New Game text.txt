@@ -1,6 +1,6 @@
 NAME=オープニングの字幕をスキップ
 NAME.en=Toggle New Game Text
-NAME.zh=Skip New Game text
+NAME.zh=跳过新游戏文本
 
 TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
@@ -14,4 +14,4 @@ INFO.en=Edit field to toggle whether to skip the New Game opening text.\r\nThe R
 AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
 
 
-INFO.zh=跳过开场字幕。\r\n英雄英雄格拉多···不会显示字幕···。
+INFO.zh=跳过新的游戏文本

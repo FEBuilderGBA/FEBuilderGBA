@@ -1,4 +1,4 @@
-﻿NAME=アイテムチェック(全ユニットと輸送隊)
+NAME=アイテムチェック(全ユニットと輸送隊)
 TYPE=BIN
 TAG=#EVENT
 
@@ -14,8 +14,8 @@ BIN:$FREEAREA:1=item_find.bin
 
 INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.\r\nHINT:輸送体
 AUTHOR=怪盗パッチ 7743
-NAME.en=Item check(All units and transporters)
-INFO.en=We create a conditional expression that someone has a certain item including a transporter.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+NAME.en=Add Event Condition: Item Check(All units and transporters)
+INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.\r\nHINT:convoy,supply,transporter,merlinus,wagon
 AUTHOR.en=Kaito patch7743
 
 NAME.zh=事件命令_ 物品拥有运输队

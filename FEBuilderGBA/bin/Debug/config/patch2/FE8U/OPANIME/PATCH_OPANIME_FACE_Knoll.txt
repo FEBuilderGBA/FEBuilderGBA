@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ノール
 NAME.en=OP Anime Face: Knoll
-NAME.zh=OPANIME_FACE_诺德
+NAME.zh=OP动画_脸_诺鲁
 
 TYPE=IMAGE
 TAG=#IMAGE

@@ -1,6 +1,6 @@
 NAME=ユアン理消滅処理 CC前クラス
 NAME.en=Ewan Base Class For Weapon Rank Removal
-NAME.zh=元推理灭绝处理CC前一课
+NAME.zh=尤恩理cc前处理职业
 
 //アドレスパッチとして実装します
 TYPE=ADDR

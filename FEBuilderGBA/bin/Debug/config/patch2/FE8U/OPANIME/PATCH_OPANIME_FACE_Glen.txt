@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_グレン
 NAME.en=OP Anime Face: Glen
-NAME.zh=OPANIME_FACE_格伦
+NAME.zh=OP动画_脸_格伦
 
 TYPE=IMAGE
 TAG=#IMAGE

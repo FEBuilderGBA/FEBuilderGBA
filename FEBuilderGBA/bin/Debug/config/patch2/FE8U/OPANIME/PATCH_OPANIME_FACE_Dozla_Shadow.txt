@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ドズル_影
 NAME.en=OP Anime Face: Dozla (Shadow)
-NAME.zh=OPANIME_FACE_ Dizzle _ Shadow
+NAME.zh=OP动画_脸_多兹拉_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

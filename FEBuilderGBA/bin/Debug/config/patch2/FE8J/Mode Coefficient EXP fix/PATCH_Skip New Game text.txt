@@ -1,5 +1,5 @@
-﻿NAME=オープニングの字幕をスキップ
-NAME.en=Skip New Game text
+NAME=オープニングの字幕をスキップ
+NAME.en=Toggle New Game Text
 TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
 

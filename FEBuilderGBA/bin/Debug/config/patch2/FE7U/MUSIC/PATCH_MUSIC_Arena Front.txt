@@ -1,5 +1,5 @@
 NAME=MUSIC_闘技場_受付
-NAME.en=MUSIC_Arena Front
+NAME.en=Arena Entrance BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x080425C6 0x08042892 0x080B2F14
 ADDRESS_TYPE=SONG
 
-NAME.zh=音乐_体育场_接待
+NAME.zh=音乐_斗技场_接待

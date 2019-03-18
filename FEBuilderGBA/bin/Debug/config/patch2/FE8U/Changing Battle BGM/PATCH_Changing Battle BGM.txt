@@ -1,6 +1,6 @@
 NAME=章ごとに戦闘音楽変更
 NAME.en=Change Battle BGM By Chapter
-NAME.zh=为每个章节改变战斗音乐
+NAME.zh=每章战斗音乐变更
 
 TYPE=BIN
 TAG=#ENGINE #SOUND

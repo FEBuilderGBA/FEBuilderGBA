@@ -15,3 +15,4 @@ INFO.en=Updated version. Patches the ROM to be compatible with standard MIDI for
 INFO.zh=此修补程序对于以MIDI格式播放音乐至关重要。\r\n默认情况下，游戏的乐器不是MIDI乐器的顺序。\r\n该补丁提供了一套乐器，其中现有乐器按MIDI乐器的顺序重新排列。\r\n
 
 AUTHOR=Alusq http://feuniverse.us/t/native-instrument-map/69/9
+NAME.zh=声音_NIMAP 2(本土的乐器图)

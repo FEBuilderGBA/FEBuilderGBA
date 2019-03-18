@@ -1,6 +1,6 @@
 
 NAME=ステータスの戦績非表示
-NAME.en=Hide status victory
+NAME.en=Hide Victory Conditions From Status Screen
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -24,5 +24,5 @@ COMBO.zh=显示|0xD0|擦除|0xE0
 
 
 INFO=ステータスメニューに表示される勝利数、敗北数を消去します。
-INFO.en=Disables the win/lose condition display on the status screen.
+INFO.en=Toggles whether the win/lose condition is displayed on the Status Screen.\r\n
 INFO.zh=删除状态菜单中显示的胜利和失败次数。

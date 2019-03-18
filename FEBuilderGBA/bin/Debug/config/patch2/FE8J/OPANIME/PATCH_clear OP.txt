@@ -1,5 +1,5 @@
 NAME=オープニング領域をカットしてリビルド領域に回す
-NAME.en=Cut the opening area and turn it to the rebuild area.
+NAME.en=Clear the opening area and turn it to the rebuild area.
 
 PATCHED_IF:0xB4680C=0x00 0x00 0x00 0x00
 IF:0x00CB660=0xC0 0x46 //オープニングカットのパッチを適応しているか確認する.
@@ -13,6 +13,6 @@ BIN:0x0D0DD8=clear_OP_bx_lr.bin  //ロゴをロードしないようにASMを直
 BIN:0x0CB9A6=clear_OP_Skip_ImgLoad.bin  //ロゴをロードしないようにASMを直す.
 
 INFO=あなたの改造がオープニングを利用しない場合、オープニング領域をまるごと潰して、リビルド時にデータを格納する領域に回すことができます。\r\n408272バイトほど追加で確保できます。\r\nこのパッチを使うには、オープニングカットを利用していることが前提です。
-INFO.en=If your remodeling does not use the opening, you can crush whole opening area and turn it to the area where data is stored when rebuilding.\r\nYou can secure as much as 408272 bytes.\r\nTo use this patch, it is premised that you are using an opening cut.
+INFO.en=If your remodeling does not use the opening, you can crush whole opening area and turn it to the area where data is stored when rebuilding.\r\nYou can secure about 408794 bytes additional.\r\nTo use this patch, it is premised that you are using an opening cut.\r\nCurrently, this patch is under test.\r\nI am waiting for a motion report whether it works safely even if it adapts.
 NAME.zh=切开开口区域并将其转到重建区域
 INFO.zh=如果您的重塑不使用开口，您可以粉碎整个开口区域并将其转换到重建时存储数据的区域。\r\n您可以保护多达408272个字节。\r\n要使用此补丁，前提是您正在使用开口剪切。

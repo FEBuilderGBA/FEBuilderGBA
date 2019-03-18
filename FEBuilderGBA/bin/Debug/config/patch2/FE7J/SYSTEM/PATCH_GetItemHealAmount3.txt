@@ -1,6 +1,6 @@
 
 NAME=リカバーの杖の回復量
-NAME.en=Recovery amount of Recover Staff
+NAME.en=Set HP Recovered By Recover Staff
 
 IF:0x016FC2=0x00 0x24
 
@@ -12,4 +12,4 @@ ADDRESS=0x1712C
 DEFAULT=80
 HEX=FALSE
 
-NAME.zh=恢复甘蔗的恢复量
+NAME.zh=痊愈之杖的恢复量

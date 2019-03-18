@@ -1,6 +1,6 @@
 NAME=ステータスの戦績非表示
 NAME.en=Hide Victory Conditions From Status Screen
-NAME.zh=隐藏状态胜利
+NAME.zh=状态的战绩表示
 
 //アドレスパッチとして実装します
 TYPE=ADDR

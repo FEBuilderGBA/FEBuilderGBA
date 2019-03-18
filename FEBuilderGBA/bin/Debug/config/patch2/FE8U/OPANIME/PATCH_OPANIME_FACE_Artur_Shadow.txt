@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_アスレイ_影
 NAME.en=OP Anime Face: Artur (Shadow)
-NAME.zh=OPANIME_FACE_ Asuray_shadow
+NAME.zh=OP动画_脸_阿斯雷_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

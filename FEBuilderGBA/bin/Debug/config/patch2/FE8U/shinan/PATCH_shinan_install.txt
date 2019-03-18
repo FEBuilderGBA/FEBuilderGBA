@@ -1,6 +1,6 @@
 NAME=指南パッチ導入
 NAME.en=Guide Event Creator Installer
-NAME.zh=补丁的介绍
+NAME.zh=指南补丁引进
 
 TYPE=BIN
 TAG=#ENGINE

@@ -1,6 +1,6 @@
 NAME=(旧)個別アニメ導入 by EA
 NAME.zh=(旧)个人动画补丁介绍 by EA
-NAME.en=(Old)Character Custom Animation by EA Table Installer
+NAME.en=(Old)Character Custom Animation By EA Table Installer
 
 TYPE=EA
 TAG=#ENGINE

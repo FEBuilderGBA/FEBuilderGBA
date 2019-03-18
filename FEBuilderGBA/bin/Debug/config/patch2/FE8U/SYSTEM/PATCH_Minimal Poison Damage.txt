@@ -1,6 +1,6 @@
 NAME=最低毒ダメージ
 NAME.en=Minimum Poison Damage
-NAME.zh=最小的毒药伤害
+NAME.zh=最低毒伤害
 
 //アドレスパッチとして実装します
 TYPE=ADDR

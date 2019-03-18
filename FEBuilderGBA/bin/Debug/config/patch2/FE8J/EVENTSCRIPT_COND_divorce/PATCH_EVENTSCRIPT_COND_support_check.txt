@@ -1,4 +1,4 @@
-﻿TYPE=BIN
+TYPE=BIN
 TAG=#EVENT
 NAME=誰かとの支援をもっているか判定する条件式を作成するイベント命令
 
@@ -22,9 +22,9 @@ INFO.zh=制定操作角色有支援的条件。
 
 AUTHOR.zh=Kaito补丁7743
 
-NAME.en=Assistance check support_check
+NAME.en=Add Event Condition: Support Check
 
-INFO.en=Make a condition that the operation character has support.
+INFO.en=Patches the game to set event conditions based on whether a character has support.\r\n
 
 AUTHOR.en=Kaito patch7743
 

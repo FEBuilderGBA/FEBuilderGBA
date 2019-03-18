@@ -1,6 +1,6 @@
 NAME=MUSIC_メインテーマ
 NAME.en=Ch1-8 Player Phase BGM
-NAME.zh=MUSIC_主题
+NAME.zh=音乐_主题 0x43
 //アドレスパッチとして実装します
 
 //アドレスパッチとして実装します

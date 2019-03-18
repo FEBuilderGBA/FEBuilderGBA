@@ -1,6 +1,6 @@
 
 NAME=敵ターンのディレイ削除
-NAME.en=Delay deletion of enemy turn
+NAME.en=Delay Deletion of Enemy Turn
 NAME.zh=系统_敌人回合的延迟删除
 
 //アドレスパッチとして実装します

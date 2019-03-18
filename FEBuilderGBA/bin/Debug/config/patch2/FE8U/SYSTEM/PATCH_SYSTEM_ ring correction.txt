@@ -1,5 +1,5 @@
 NAME=指輪補正
-NAME.zh=SYSTEM_振铃校正
+NAME.zh=戒指补正
 NAME.en=Ring Correction
 
 //アドレスパッチとして実装します

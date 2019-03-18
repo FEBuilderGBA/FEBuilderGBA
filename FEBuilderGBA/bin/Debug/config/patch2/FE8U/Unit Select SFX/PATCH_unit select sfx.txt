@@ -1,6 +1,6 @@
 NAME=ユニットを選択した時に音声を再生する
 NAME.en=Unit Select SFX Editor
-NAME.zh=选择单位时播放音频
+NAME.zh=选择人物时播放音频
 
 IF:0x186B0=0x00 0x4B 0x18 0x47
 
@@ -38,6 +38,6 @@ W6:FLAG.en=Event Flag / ANY=0x00
 
 INFO=ユニットを選択した時に、音声を再生します。\r\nLeonarthのasmをベースに、条件を細かく設定できるようにしました。
 INFO.en=Sets the sound played upon unit select.\r\n"Unit Select SFX Installer" must be installed to use.\r\nBased on Leonarth's asm, with added conditional options.
-INFO.zh=当你选择一个单位时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。
+INFO.zh=当你选择一个人物时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。
 
 AUTHOR=Leonarth,7743 http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693

@@ -1,6 +1,6 @@
 
 NAME=ライブの杖の回復量
-NAME.en=Recovery amount of Heal Staff
+NAME.en=Set HP Recovered By Heal Staff
 
 IF:0x16B6E=0x00 0x24
 
@@ -11,4 +11,4 @@ TAG=#ENGINE
 ADDRESS=0x16CD0
 DEFAULT=10
 HEX=FALSE
-NAME.zh=活藤的恢复量
+NAME.zh=回复之杖的恢复量

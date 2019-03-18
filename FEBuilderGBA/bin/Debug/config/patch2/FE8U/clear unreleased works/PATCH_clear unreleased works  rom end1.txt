@@ -12,4 +12,4 @@ CLEAR:0xFE009C:5304=0xFE1553
 INFO=ROM末尾にある謎の領域を消去して、リビルド時に利用できるようにします。\r\n5304bytesを追加確保します。\r\n現在、このパッチはテスト中です。\r\n適応しても無事動作するかどうか動作報告をお待ちしています。
 INFO.en=Erase the enigmatic area at the end of the ROM and make it available for rebuild.\r\nWe will secure additional 5304 bytes.\r\nCurrently, this patch is under test.\r\nI am waiting for a motion report whether it works safely even if it adapts.
 NAME.zh=清除引导数据ROM结束1
-INFO.zh=擦除ROM末尾的神秘区域，使其可用于重建。\r\n我们将获得额外的5304字节。\r\n目前，这个补丁正在测试中。\r\n我正在等待一份动作报告，即使它适应了它是否安全有效。
+INFO.zh=擦除ROM末尾的神秘区域，使其可用于重建。\r\n我们将获得额外的5460字节。\r\n目前，这个补丁正在测试中。\r\n我正在等待一份动作报告，即使它适应了它是否安全有效。

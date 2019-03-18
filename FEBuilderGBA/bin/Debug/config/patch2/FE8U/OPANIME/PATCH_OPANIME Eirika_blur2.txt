@@ -1,6 +1,6 @@
 NAME=OPANIMEエイリーク blur2
 NAME.en=OP Anime Eirika (Blur 2)
-NAME.zh=OPANIME Eirika blur2
+NAME.zh=OP动画艾瑞珂 模糊2
 //画像パッチとして実装します
 
 TYPE=IMAGE

@@ -1,6 +1,6 @@
 NAME=スキル魔物特効_このクラスまで
 NAME.en=Slayer Skill Last Class
-NAME.zh=技能怪物特效_达到这个等级
+NAME.zh=技能魔物特效_这个职业为止
 
 //アドレスパッチとして実装します
 TYPE=ADDR

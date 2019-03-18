@@ -1,5 +1,5 @@
 NAME=章ごとに勝利近しの音楽変更
-NAME.en=Changing music close to victory for each chapter
+NAME.en=Set Victory BGM By Chapter
 NAME.zh=每章的胜利的音乐变更
 
 //PATCHED_IF:0x160d0=0x00 0x49 0x8F 0x46
@@ -22,7 +22,7 @@ BIN:0x209f8=kill_chapter_prologue_bgm3.bin
 
 
 INFO=敵が残り一体になったときに再生される勝利近しの曲を、章単位で変更できるようにします。
-INFO.en=Change the songs close to the victory that will be played when the enemies remain together in chapter units.
+INFO.en=Patches the ROM to enable per-chapter near-victory BGM via Chapter Editor byte 0x28.\r\nTo edit, enter the Chapter Editor and modify the Victory BGM field.\r\nBy default this isn't set to a Victory BGM and must be changed throughout the ROM.\r\n
 AUTHOR=7743
 
 INFO.zh=使您能够将歌曲接近以敌人在章节单位中保持在一起时播放的胜利。

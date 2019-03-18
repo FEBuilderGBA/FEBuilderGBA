@@ -1,5 +1,5 @@
 NAME=Sランクの制限を解除して、複数の武器をSランクで利用できるようにする
-NAME.en=Removing weapon S rank limits
+NAME.en=Modify S-Rank Limits
 
 TYPE=SWITCH
 TAG=#ENGINE
@@ -16,3 +16,4 @@ AUTHOR=Tequila
 COMBO.en=default|OFF|Removing S rank limit|ONN
 NAME.zh=取消对S等级的限制，并为S等级制造多种武器
 COMBO.zh=默认|OFF|发布S等级限制|ONN
+INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched).\r\n

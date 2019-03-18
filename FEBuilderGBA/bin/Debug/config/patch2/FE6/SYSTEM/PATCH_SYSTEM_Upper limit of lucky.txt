@@ -1,6 +1,6 @@
 
 NAME=幸運上限
-NAME.en=Luck Stat Cap
+NAME.en=Change Maximum Luck Cap
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -10,7 +10,7 @@ HEX=FALSE
 ADDRESS=0x6ee80 0x254ba 0x254be 0x17a70 0x17a74
 
 INFO=幸運の上限値を設定します。\r\n幸運は全クラス共通です。\r\nディフォルトでは、30が設定されています。\r\n
-INFO.en=Specifies the cap for the luck stat, which is constant for all classes.\r\nNormally this is capped at 30.\r\n
-NAME.zh=运气最大
+INFO.en=Determines the maximum luck stat in decimal.\r\nThis is a universal cap amongst all classes.
+NAME.zh=运气上限
 INFO.zh=设定运气的上限。\r\n运气对所有班级都很常见。\r\n默认情况下，设置为30。\r\n
 

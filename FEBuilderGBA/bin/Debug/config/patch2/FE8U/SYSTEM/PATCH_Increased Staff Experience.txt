@@ -1,6 +1,6 @@
 NAME=回復の杖を利用した場合得られる経験値
 NAME.en=Set Staff Experience
-NAME.zh=使用恢复棒获得的经验值
+NAME.zh=使用恢复杖获得的经验值
 
 //アドレスパッチとして実装します
 TYPE=ADDR

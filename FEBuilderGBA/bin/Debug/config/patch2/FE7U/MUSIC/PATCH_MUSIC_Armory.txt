@@ -1,5 +1,5 @@
 NAME=MUSIC_武器屋
-NAME.en=MUSIC_Armory
+NAME.en=Armory BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x080B1368
 ADDRESS_TYPE=SONG
 
-NAME.zh=MUSIC_武器商店
+NAME.zh=音乐_武器屋

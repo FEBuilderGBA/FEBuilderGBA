@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_バネッサ
 NAME.en=OP Anime Face: Vanessa
-NAME.zh=OPANIME_FACE_凡妮莎
+NAME.zh=OP动画_脸_瓦内萨
 
 TYPE=IMAGE
 TAG=#IMAGE

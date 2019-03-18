@@ -1,5 +1,5 @@
 NAME=MUSIC_道具屋
-NAME.en=MUSIC_Vendor
+NAME.en=Shop BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x080b219a
 ADDRESS_TYPE=SONG
 
-NAME.zh=MUSIC_工具店
+NAME.zh=音乐_道具屋

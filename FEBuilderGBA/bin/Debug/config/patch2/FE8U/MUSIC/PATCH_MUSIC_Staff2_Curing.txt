@@ -1,6 +1,6 @@
 NAME=MUSIC_杖2_Curing
 NAME.en=Curing Staff BGM
-NAME.zh=MUSIC_Wand 2_固化
+NAME.zh=音乐_杖 2_固化
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND

@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_マリカ_影
-NAME.en=OPANIME_FACE_Marisa_Shadow
+NAME=OPANIME_FACE_マリカ_影
+NAME.en=OP Anime Face: Marisa (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

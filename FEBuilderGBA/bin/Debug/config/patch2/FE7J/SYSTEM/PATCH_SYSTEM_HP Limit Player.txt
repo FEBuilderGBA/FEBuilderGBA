@@ -1,6 +1,6 @@
 
 NAME=HP上限 自軍
-NAME.en=HP Limit Player
+NAME.en=Playable Character HP Limit
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -10,4 +10,6 @@ HEX=FALSE
 ADDRESS=0x0001806c 0x00018076 0x00029e46 0x00029e5c 0x0009545e 0x000955f0
 
 
-NAME.zh=惠普上限你的军队
+NAME.zh=自军HP上限
+
+INFO.en=Change the value in decimal.\r\nHP exceeding 60 won't display properly without a patch.

@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ラーチェル
-NAME.en=OPANIME_FACE_L'Arachel
+NAME=OPANIME_FACE_ラーチェル
+NAME.en=OP Anime Face: L'Arachel
 
 TYPE=IMAGE
 TAG=#IMAGE

@@ -1,6 +1,6 @@
 NAME=ステータスケージMAX時の長さ
 NAME.en=Stat Bar Max Length
-NAME.zh=状态笼子最大长度
+NAME.zh=状态菜单最大长度
 
 //アドレスパッチとして実装します
 TYPE=ADDR

@@ -1,6 +1,6 @@
 NAME=ユニットごとに戦闘音楽変更(導入)
-NAME.en=Battle music change for each units(Install)
-NAME.zh=每人物战斗音乐变更（介绍）
+NAME.en=Unique Battle Music Per Unit Installer
+NAME.zh=每人物战斗音乐变更（介绍）引进
 
 TYPE=EA
 TAG=#ENGINE #SOUND
@@ -10,7 +10,7 @@ EDIT_PATCH=PATCH_Battle music change for each units.txt
 EA=install battle_music_changer2.event
 
 INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。
-INFO.en=Allows you to change the music played during battle in units.
+INFO.en=Patches in a unit music list that allows for custom battle music based on unit, chapter, battle anime, and event flags.\r\nMust be installed to use "Sound: Unique Battle Music Per Unit Editor".\r\n
 
 AUTHOR=7743
 INFO.zh=允许您以人物节为单位更改战斗中播放的音乐。

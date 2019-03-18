@@ -1,4 +1,4 @@
-﻿NAME=所持金を減らすイベント命令
+NAME=所持金を減らすイベント命令
 TYPE=BIN
 TAG=#EVENT
 
@@ -15,8 +15,8 @@ BIN:$FREEAREA:1=gold_collect.bin
 INFO=所持金から指定金額を没収します.
 NAME.zh=事件命令_所持金没收
 INFO.zh=从所持有的钱上，被指定金额.
-NAME.en=possession confiscation gold_collect
-INFO.en=We will forfeit the specified amount from the possession money.
+NAME.en=Add Event: Lose Gold
+INFO.en=Patches the ROM with a callable event that removes a specified amount of gold from the player.\r\n
 
 EVENTSCRIPT.en=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold] confiscated money extended instructions.	{GOLD}
 EVENTSCRIPT.zh=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:Gold]没收钱延长指示。	{GOLD}

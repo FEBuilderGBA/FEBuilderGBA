@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ルーテ
 NAME.en=OP Anime Face: Lute
-NAME.zh=OPANIME_FACE_Rute
+NAME.zh=OP动画_脸_露忒
 
 TYPE=IMAGE
 TAG=#IMAGE

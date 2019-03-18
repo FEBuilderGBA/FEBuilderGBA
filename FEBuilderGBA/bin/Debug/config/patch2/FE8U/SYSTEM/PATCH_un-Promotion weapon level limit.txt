@@ -1,6 +1,6 @@
 NAME=下級武器レベル制限
 NAME.en=Max Weapon Level for Unpromoted Classes
-NAME.zh=较低的武器级别限制
+NAME.zh=低级武器等级限制
 
 //アドレスパッチとして実装します
 TYPE=ADDR

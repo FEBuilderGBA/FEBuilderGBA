@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ガルシア
 NAME.en=OP Anime Face: Garcia
-NAME.zh=OPANIME_FACE_加西亚
+NAME.zh=OP动画_脸_加西亚_
 
 TYPE=IMAGE
 TAG=#IMAGE

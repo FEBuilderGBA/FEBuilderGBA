@@ -1,6 +1,6 @@
 NAME=最大レベル
 NAME.en=Default Max Level
-NAME.zh=最高级别
+NAME.zh=最大等级
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -12,3 +12,5 @@ HEX=false
 INFO.en=Sets the default max level for all playable units.
 
 
+
+INFO.zh=注意:最大31。要超过那个，需要上限突破补丁。

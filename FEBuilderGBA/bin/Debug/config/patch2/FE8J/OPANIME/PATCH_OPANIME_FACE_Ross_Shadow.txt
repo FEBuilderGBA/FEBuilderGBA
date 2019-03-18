@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ロス_影
-NAME.en=OPANIME_FACE_Ross_Shadow
+NAME=OPANIME_FACE_ロス_影
+NAME.en=OP Anime Face: Ross (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

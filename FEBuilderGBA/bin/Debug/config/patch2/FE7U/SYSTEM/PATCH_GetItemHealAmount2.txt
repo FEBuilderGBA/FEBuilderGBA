@@ -1,6 +1,6 @@
 
 NAME=リライブの杖の回復量
-NAME.en=Recovery amount of Mend Staff
+NAME.en=Set HP Recovered By Mend Staff
 
 IF:0x16B6E=0x00 0x24
 
@@ -11,4 +11,4 @@ TAG=#ENGINE
 ADDRESS=0x16CD4
 DEFAULT=20
 HEX=FALSE
-NAME.zh=重温手杖的恢复量
+NAME.zh=治疗之杖的恢复量

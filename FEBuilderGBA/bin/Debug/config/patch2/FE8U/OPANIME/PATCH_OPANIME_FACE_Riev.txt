@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_アーヴ
 NAME.en=OP Anime Face: Riev
-NAME.zh=OPANIME_FACE_阿姆阿姆
+NAME.zh=OP动画_脸_阿维
 
 TYPE=IMAGE
 TAG=#IMAGE

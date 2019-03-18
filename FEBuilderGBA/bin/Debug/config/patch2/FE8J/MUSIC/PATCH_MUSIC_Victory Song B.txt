@@ -1,5 +1,5 @@
 NAME=MUSIC_勝利の歌β
-NAME.en=MUSIC_Victory Song B
+NAME.en=Lagdou/Valni Full Clear BGM
 NAME.zh=音乐_胜利之歌β
 
 //アドレスパッチとして実装します

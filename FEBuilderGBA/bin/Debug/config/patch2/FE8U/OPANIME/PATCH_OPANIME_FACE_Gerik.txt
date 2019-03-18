@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ジスト
 NAME.en=OP Anime Face: Gerik
-NAME.zh=OPANIME_FACE_抵制
+NAME.zh=OP动画_脸_杰斯特
 
 TYPE=IMAGE
 TAG=#IMAGE
