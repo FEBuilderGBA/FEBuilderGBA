@@ -137,7 +137,7 @@
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.L_4_TEXT_ITEM2 = new FEBuilderGBA.TextBoxEx();
             this.B7 = new System.Windows.Forms.NumericUpDown();
-            this.L_2_TEXT_ITEM1 = new FEBuilderGBA.TextBoxEx();
+            this.L_2_TEXT_ITEMX = new FEBuilderGBA.TextBoxEx();
             this.L_7_COMBO = new System.Windows.Forms.ComboBox();
             this.W4 = new System.Windows.Forms.NumericUpDown();
             this.J_2_TEXT = new System.Windows.Forms.Label();
@@ -1669,7 +1669,7 @@
             this.panel3.Controls.Add(this.W0);
             this.panel3.Controls.Add(this.L_4_TEXT_ITEM2);
             this.panel3.Controls.Add(this.B7);
-            this.panel3.Controls.Add(this.L_2_TEXT_ITEM1);
+            this.panel3.Controls.Add(this.L_2_TEXT_ITEMX);
             this.panel3.Controls.Add(this.L_7_COMBO);
             this.panel3.Controls.Add(this.W4);
             this.panel3.Controls.Add(this.J_2_TEXT);
@@ -1791,17 +1791,17 @@
             this.B7.Size = new System.Drawing.Size(71, 25);
             this.B7.TabIndex = 3;
             // 
-            // L_2_TEXT_ITEM1
+            // L_2_TEXT_ITEMX
             // 
-            this.L_2_TEXT_ITEM1.ErrorMessage = "";
-            this.L_2_TEXT_ITEM1.Location = new System.Drawing.Point(474, 38);
-            this.L_2_TEXT_ITEM1.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_TEXT_ITEM1.Multiline = true;
-            this.L_2_TEXT_ITEM1.Name = "L_2_TEXT_ITEM1";
-            this.L_2_TEXT_ITEM1.Placeholder = "";
-            this.L_2_TEXT_ITEM1.ReadOnly = true;
-            this.L_2_TEXT_ITEM1.Size = new System.Drawing.Size(314, 84);
-            this.L_2_TEXT_ITEM1.TabIndex = 36;
+            this.L_2_TEXT_ITEMX.ErrorMessage = "";
+            this.L_2_TEXT_ITEMX.Location = new System.Drawing.Point(474, 38);
+            this.L_2_TEXT_ITEMX.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_TEXT_ITEMX.Multiline = true;
+            this.L_2_TEXT_ITEMX.Name = "L_2_TEXT_ITEMX";
+            this.L_2_TEXT_ITEMX.Placeholder = "";
+            this.L_2_TEXT_ITEMX.ReadOnly = true;
+            this.L_2_TEXT_ITEMX.Size = new System.Drawing.Size(314, 84);
+            this.L_2_TEXT_ITEMX.TabIndex = 36;
             // 
             // L_7_COMBO
             // 
@@ -2486,7 +2486,7 @@
         private System.Windows.Forms.Label J_7;
         private System.Windows.Forms.Label J_6;
         private FEBuilderGBA.TextBoxEx L_4_TEXT_ITEM2;
-        private FEBuilderGBA.TextBoxEx L_2_TEXT_ITEM1;
+        private FEBuilderGBA.TextBoxEx L_2_TEXT_ITEMX;
         private System.Windows.Forms.CheckBox L_11_BIT_80;
         private System.Windows.Forms.CheckBox L_11_BIT_40;
         private System.Windows.Forms.CheckBox L_11_BIT_20;

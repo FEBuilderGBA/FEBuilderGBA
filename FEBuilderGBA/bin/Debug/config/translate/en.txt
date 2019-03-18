@@ -2755,6 +2755,9 @@ An internal error occurred.\r\nPlease send report 7z.\r\n{0}
 :ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。
 ROM capacity exceeds 32 MB.\r\nWith GBA, ROM that exceeds 32 MB can not be executed.
 
+:ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。
+The logo area at the top of the ROM is destroyed.\r\nNormally, this area can not be rewritten.
+
 :@0080の後に、@命令が続いていません。@001Cで補正します。
 There is no @ command following @ 0080. Fix with @ 001C.
 

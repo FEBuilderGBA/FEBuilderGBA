@@ -698,6 +698,19 @@ namespace FEBuilderGBA
                     , R._("ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。"
                 )));
             }
+
+            //ROM Headerのチェック
+            //ロゴは商標があるので、ここには書けません。
+            //よって、CRC32を取得してチェックしましょう
+            byte[] logo = Program.ROM.getBinaryData(0x0, 0xA0);
+            U.CRC32 crc32 = new U.CRC32();
+            uint logo_crc32 = crc32.Calc(logo);
+            if (logo_crc32 != 0x96b08a28)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.FELINT_SYSTEM_ERROR, U.NOT_FOUND
+                    , R._("ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。"
+                )));
+            }
         }
 
         static void ScanSystem(List<FELint.ErrorSt> errors, List<DisassemblerTrumb.LDRPointer> ldrmap)

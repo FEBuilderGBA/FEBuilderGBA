@@ -2749,6 +2749,10 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
             }
+            if (arg1 == "ITEMX")
+            {//とりあえず3行でチェック
+                return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
+            }
             if (arg1 == "CONVERSATION")
             {
                 return CheckConversationTextMessage(text, MAX_SERIF_WIDTH);
