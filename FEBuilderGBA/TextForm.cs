@@ -274,7 +274,7 @@ namespace FEBuilderGBA
 
             return  (FETextEncode.IsUnHuffmanPatchPointer(write_addr));
         }
-        private void WriteTextButton_Click(object sender, EventArgs e)
+        private void TextWriteButton_Click(object sender, EventArgs e)
         {
             if (InputFormRef.IsPleaseWaitDialog(this))
             {
@@ -288,9 +288,10 @@ namespace FEBuilderGBA
 
             string text = GetEditorText(this.TextArea);
 
+            uint textid = (uint)this.AddressList.SelectedIndex;
             uint write_addr = WriteText(InputFormRef.BaseAddress
                 , InputFormRef.DataCount
-                , (uint)this.AddressList.SelectedIndex
+                , textid
                 , text
                 );
             if(write_addr == U.NOT_FOUND)
@@ -300,7 +301,7 @@ namespace FEBuilderGBA
             InputFormRef.ReloadAddressList();
             InputFormRef.ShowWriteNotifyAnimation(this, write_addr);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
-            InputFormRef.UpdateAllNumericUpDown();
+            InputFormRef.UpdateAllTextID(textid);
         }
 
         public static uint WriteText(

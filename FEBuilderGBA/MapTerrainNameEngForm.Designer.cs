@@ -33,7 +33,7 @@
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.WriteTextButton = new System.Windows.Forms.Button();
+            this.TextWriteButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -112,14 +112,14 @@
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // WriteTextButton
+            // TextWriteButton
             // 
-            this.WriteTextButton.Location = new System.Drawing.Point(765, -2);
-            this.WriteTextButton.Name = "WriteTextButton";
-            this.WriteTextButton.Size = new System.Drawing.Size(167, 30);
-            this.WriteTextButton.TabIndex = 9;
-            this.WriteTextButton.Text = "書き込み";
-            this.WriteTextButton.UseVisualStyleBackColor = true;
+            this.TextWriteButton.Location = new System.Drawing.Point(765, -2);
+            this.TextWriteButton.Name = "TextWriteButton";
+            this.TextWriteButton.Size = new System.Drawing.Size(167, 30);
+            this.TextWriteButton.TabIndex = 9;
+            this.TextWriteButton.Text = "書き込み";
+            this.TextWriteButton.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -204,7 +204,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.AddressPointer);
             this.panel5.Controls.Add(this.BlockSize);
-            this.panel5.Controls.Add(this.WriteTextButton);
+            this.panel5.Controls.Add(this.TextWriteButton);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(286, 49);
@@ -297,7 +297,7 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button WriteTextButton;
+        private System.Windows.Forms.Button TextWriteButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ReloadListButton;
         private System.Windows.Forms.Label label8;

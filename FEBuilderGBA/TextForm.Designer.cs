@@ -214,7 +214,7 @@
             this.AllWriteButton.TabIndex = 9;
             this.AllWriteButton.Text = "書き込み";
             this.AllWriteButton.UseVisualStyleBackColor = true;
-            this.AllWriteButton.Click += new System.EventHandler(this.WriteTextButton_Click);
+            this.AllWriteButton.Click += new System.EventHandler(this.TextWriteButton_Click);
             // 
             // label3
             // 

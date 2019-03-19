@@ -100,7 +100,7 @@ namespace FEBuilderGBA
             return MakeOtherTextMap();
         }
 
-        private void WriteTextButton_Click(object sender, EventArgs e)
+        private void TextWriteButton_Click(object sender, EventArgs e)
         {
             U.AddrResult ar = InputFormRef.SelectToAddrResult(AddressList, AddressList.SelectedIndex);
             if (ar.isNULL())

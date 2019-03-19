@@ -62,7 +62,7 @@ namespace FEBuilderGBA
             uint write_pointer = this.InputFormRef.BaseAddress + (this.InputFormRef.BlockSize * (uint)this.AddressList.SelectedIndex);
             uint write_addr = Program.ROM.p32(write_pointer);
             this.AddressPointer.Text = write_addr.ToString("X");
-            InputFormRef.WriteButtonToYellow(this.WriteTextButton, false);
+            InputFormRef.WriteButtonToYellow(this.TextWriteButton, false);
         }
 
         //地名リストを作る.
@@ -101,7 +101,7 @@ namespace FEBuilderGBA
             return Program.ROM.getString(c_addr);
         }
 
-        private void WriteTextButton_Click(object sender, EventArgs e)
+        private void TextWriteButton_Click(object sender, EventArgs e)
         {
             byte[] stringbyte = Program.SystemTextEncoder.Encode(TextBox.Text);
             stringbyte = U.ArrayAppend(stringbyte, new byte[] { 0x00 });
@@ -153,7 +153,7 @@ namespace FEBuilderGBA
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            InputFormRef.WriteButtonToYellow(this.WriteTextButton, true);
+            InputFormRef.WriteButtonToYellow(this.TextWriteButton, true);
         }
     }
 }

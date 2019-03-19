@@ -330,18 +330,19 @@ namespace FEBuilderGBA
             {//同一
                 return;
             }
-            if (this.AddressListExpandsEvent == null)
-            {//イベントがない
-                return;
+
+            if (this.AddressListExpandsEvent != null)
+            {
+                InputFormRef.ExpandsEventArgs eventarg = new InputFormRef.ExpandsEventArgs();
+                eventarg.OldBaseAddress = addr;
+                eventarg.BlockSize = 0;
+                eventarg.OldDataCount = 0;
+                eventarg.NewBaseAddress = newaddr;
+                eventarg.NewDataCount = 0;
+                this.AddressListExpandsEvent(this.AddressList, eventarg);
             }
 
-            InputFormRef.ExpandsEventArgs eventarg = new InputFormRef.ExpandsEventArgs();
-            eventarg.OldBaseAddress = addr;
-            eventarg.BlockSize = 0;
-            eventarg.OldDataCount = 0;
-            eventarg.NewBaseAddress = newaddr;
-            eventarg.NewDataCount = 0;
-            this.AddressListExpandsEvent(this.AddressList, eventarg);
+            InputFormRef.UpdateChangePointer(addr,newaddr);
 
             //asm mapキャッシュの更新.
             Program.AsmMapFileAsmCache.ClearCache();

@@ -5513,6 +5513,8 @@ namespace FEBuilderGBA
                         ReInit(eventarg.NewBaseAddress, eventarg.NewDataCount);
                     }
                 }
+
+                UpdateChangePointer(eventarg.OldBaseAddress, eventarg.NewBaseAddress);
                 return 0;
             }
             );
@@ -7173,6 +7175,142 @@ namespace FEBuilderGBA
             InputFormRef.ReColor(f);
         }
 
+        static bool IsWriteButton(Control c)
+        {
+            if (c is Button)
+            {
+                if (c.Name.IndexOf("WriteButton") >= 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static void UpdateAllTextID(uint textid)
+        {
+            foreach (var pair in Forms)
+            {
+                Form f = pair.Value.Form;
+                if (f.IsDisposed)
+                {
+                    continue;
+                }
+
+                //全てのコントロールの列挙
+                List<Control> controls = GetAllControls(f);
+
+                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
+                List<Button> buttonList = new List<Button>();
+                foreach (Control c in controls)
+                {
+                    if (IsWriteButton(c))
+                    {
+                        Button b = (Button)c;
+                        if (IsWriteButtonToYellow(b) == false)
+                        {//黄色くない書き込みボタンなので記録
+                            buttonList.Add(b);
+                        }
+                    }
+
+                    if (!(c is NumericUpDown))
+                    {
+                        continue;
+                    }
+                    if (!RegexCache.IsMatch(c.Name, "[W|D][0-9]+"))
+                    {
+                        continue;
+                    }
+
+                    NumericUpDown nup = (NumericUpDown)c;
+                    if (!nup.Hexadecimal)
+                    {
+                        continue;
+                    }
+
+                    uint value = (uint)nup.Value;
+                    if (value != textid)
+                    {
+                        continue;
+                    }
+                    //TextIDの中身が変わったので再設定することで、関連付けられたイベントを発動させる
+                    U.ForceUpdate(nup, nup.Value);
+                }
+
+                foreach (Button writeButton in buttonList)
+                {
+                    WriteButtonToYellow(writeButton, false);
+                }
+            }
+
+        }
+
+        public static void UpdateChangePointer(uint oldaddr, uint newaddr)
+        {
+            oldaddr = U.toPointer(oldaddr);
+            newaddr = U.toPointer(newaddr);
+
+            foreach (var pair in Forms)
+            {
+                Form f = pair.Value.Form;
+                if (f.IsDisposed)
+                {
+                    continue;
+                }
+
+                //全てのコントロールの列挙
+                List<Control> controls = GetAllControls(f);
+
+                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
+                List<Button> buttonList = new List<Button>();
+                foreach (Control c in controls)
+                {
+                    if (IsWriteButton(c))
+                    {
+                        Button b = (Button)c;
+                        if (IsWriteButtonToYellow(b) == false)
+                        {//黄色くない書き込みボタンなので記録
+                            buttonList.Add(b);
+                        }
+                    }
+
+                    if (! (c is NumericUpDown))
+                    {
+                        continue;
+                    }
+                    if (!RegexCache.IsMatch(c.Name, "[D|P][0-9]+"))
+                    {
+                        continue;
+                    }
+
+                    NumericUpDown nup = (NumericUpDown)c;
+                    if (! nup.Hexadecimal)
+                    {
+                        continue;
+                    }
+                    if (nup.Maximum <= 0xFFFF)
+                    {
+                        continue;
+                    }
+
+                    uint value = U.toPointer((uint)nup.Value);
+                    if (value != oldaddr)
+                    {
+                        continue;
+                    }
+
+                    //古いポインタが見つかったので、新しいのに書き換える.
+                    nup.Value = newaddr;
+                }
+
+                foreach (Button writeButton in buttonList)
+                {
+                    WriteButtonToYellow(writeButton, false);
+                }
+            }
+        }
+
         //フォームを表示する.
         class FormSt
         {
@@ -7546,61 +7684,6 @@ namespace FEBuilderGBA
             }
         }
 
-        //すべての NumericUpDownを再評価する
-        public static void UpdateAllNumericUpDown()
-        {
-            foreach (var pair in Forms)
-            {
-                Form f = pair.Value.Form;
-                if (f.IsDisposed)
-                {
-                    continue;
-                }
-
-                List<Control> controls = GetAllControls(f);
-
-                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
-                List<Button> buttonList = new List<Button>();
-                foreach (Control info in controls)
-                {
-                    if (!(info is Button))
-                    {
-                        continue;
-                    }
-                    if (info.Name.IndexOf("WriteButton") >= 0)
-                    {
-                        Button writeButton = ((Button)info);
-                        if (! IsWriteButtonToYellow(writeButton))
-                        {
-                            buttonList.Add(writeButton);
-                        }
-                    }
-                }
-
-                foreach (Control info in controls)
-                {
-                    if (!(info is NumericUpDown))
-                    {
-                        continue;
-                    }
-                    string name = info.Name;
-                    if (name.IndexOf("ReadCount") >= 0
-                        || name.IndexOf("Address") >= 0)
-                    {
-                        continue;
-                    }
-
-                    NumericUpDown info_object = ((NumericUpDown)info);
-                    U.ForceUpdate(info_object, info_object.Value);
-                }
-
-                foreach (Button writeButton in buttonList)
-                {
-                    WriteButtonToYellow(writeButton, false);
-
-                }
-            }
-        }
 
 
         //タイトルバーにROM名を出す.
