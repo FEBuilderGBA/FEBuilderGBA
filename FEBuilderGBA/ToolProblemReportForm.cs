@@ -312,6 +312,8 @@ namespace FEBuilderGBA
                 PickupSaveData(tempdir, "" + i + ".sgm");
                 PickupSaveData(tempdir, ".emulator.ss" + i);
                 PickupSaveData(tempdir, ".ss" + i);
+                PickupSaveData(tempdir, ".emulator.sg" + i);
+                PickupSaveData(tempdir, ".sg" + i);
             }
         }
 

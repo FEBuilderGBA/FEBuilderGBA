@@ -3045,9 +3045,9 @@ namespace FEBuilderGBA
             }
             if (!found_required2_words)
             {
-                if (text != "不要")
+                if (text != "不要") ///No Translate
                 {//FE7J のルイーズとの支援会話
-                    return R._("警告:\r\n会話用のテキストなのに@0003等の記号がありません。");
+                    return ConvertEscapeToFEditor(R._("警告:\r\n会話用のテキストなのに@0003等の記号がありません。"));
                 }
             }
 

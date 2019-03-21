@@ -65,6 +65,7 @@ namespace FEBuilderGBA
         public uint terrain_recovery_pointer() { return 0x1A264; } //地形回復 全クラス共通
         public uint terrain_bad_status_recovery_pointer() { return 0x01A274; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0xCC7D0; } // CC分岐の開始位置
+        public uint ccbranch2_pointer() { return 0xCC7C8; } // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
         public uint class_alphaname_pointer() { return 0x0; } //英語版ではクラスの文字ID TEXTが、そのまま使われるらしいので不要
         public uint map_terrain_name_pointer() { return 0x1a254; } //マップの地名表記の開始位置
         public uint image_chapter_title_pointer() { return 0x89668; } //章タイトルの開始位置

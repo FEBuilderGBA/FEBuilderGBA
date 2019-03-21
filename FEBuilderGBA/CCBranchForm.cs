@@ -226,7 +226,16 @@ namespace FEBuilderGBA
         public static uint ExpandsArea(Form form, uint current_count,uint newdatacount, Undo.UndoData undodata)
         {
             InputFormRef InputFormRef = Init(null, (int)current_count);
-            return InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.ccbranch_pointer());
+            uint newaddr = InputFormRef.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.ccbranch_pointer());
+            if (newaddr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            //見習いのCC分岐には1箇所だけ、CCテーブル+1された箇所が存在する.
+            uint ccbranch2 = Program.ROM.RomInfo.ccbranch2_pointer();
+            Program.ROM.write_p32(ccbranch2, newaddr + 1, undodata);
+
+            return newaddr;
         }
 
         //全データの取得

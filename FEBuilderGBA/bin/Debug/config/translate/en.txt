@@ -3995,7 +3995,7 @@ Queue Size
 The memory slot is from 0x00 to 0x0D.
 
 :警告: 下限を超えています
-warning:The lower limit is exceeded
+Warning:The lower limit is exceeded
 
 :警告: MemorySlot0に書き込もうとしています。
 Warning: Write to MemorySlot 0.
@@ -4037,7 +4037,7 @@ Egg
 LightRune
 
 :警告: 上限を超えています
-warning:It exceeds the upper limit
+Warning:It exceeds the upper limit
 
 :フレリア、ロストン
 Frelia, Rausten
@@ -7910,7 +7910,7 @@ Determine the first screen that ROM is opened.\r\nThe default is a simple menu t
 Set the refresh interval to update this software automatically.
 
 :テキストに利用するエスケープシーケンスをどうするかを決定します。\r\nProjectFEGBA形式(@0003)、\r\nFEditor形式[A]、\r\nどちらを利用するかを決定します
-Decide what to do with escape sequence to use for text.\r\nProjectFEGBA format (@ 0003),\r\nFEditor format [A],\r\nWill decide which to use
+Decide what to do with escape sequence to use for text.\r\nProjectFEGBA format (@0003),\r\nFEditor format [A],\r\nWill decide which to use
 
 :データを書き込んだときに、書き込み増したという通知を画面下に出しますが、\r\nあの表示の表示時間を決定します
 When data is written, a notification that writing has been increased will be displayed at the bottom of the screen,\r\nDecide display time of that display
@@ -10067,13 +10067,13 @@ Warning: Too many lines of text.\r\nEstimated dot number ({0},{1})\r\n{2}
 No need.
 
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
-warning:.\r\nAlthough it is text for conversation, there are no symbols such as @ 0003.
+Warning:\r\nAlthough it is text for conversation, there are no symbols such as @0003.
 
 :警告:\r\nシステムメッセージなのに{0}があります。
 Warning:\r\nThere is {0} even though it is a system message.
 
 :警告:\r\n{0}行メッセージなのに{1}があります。
-warning:\r\nThere is a {0} line message but {1}.
+Warning:\r\nThere is a {0} line message but {1}.
 
 :話す人:
 Talk:

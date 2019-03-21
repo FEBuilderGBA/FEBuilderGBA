@@ -176,9 +176,10 @@ namespace FEBuilderGBA
                 );
                 if (match.Groups.Count < 2)
                 {
-                    Log.Error(contents);
-                    Log.Error(U.var_dump(match.Groups));
-                    return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                    return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n" 
+                        + "browser_download_url not found" + "\r\n"
+                        + "contents:\r\n" +  contents + "\r\n"
+                        + "match.Groups:\r\n" +  U.var_dump(match.Groups);
                 }
                 downloadurl = match.Groups[1].Value;
             }
@@ -189,9 +190,10 @@ namespace FEBuilderGBA
                 );
                 if (match.Groups.Count < 2)
                 {
-                    Log.Error(contents);
-                    Log.Error(U.var_dump(match.Groups));
-                    return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                    return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n" 
+                        + "download/ver_ not found" + "\r\n"
+                        + "contents:\r\n" + contents + "\r\n"
+                        + "match.Groups:\r\n" + U.var_dump(match.Groups);
                 }
                 out_version = match.Groups[1].Value;
 
@@ -200,9 +202,10 @@ namespace FEBuilderGBA
                 {
                     if (net_version == 0)
                     {
-                        Log.Error(contents);
-                        Log.Error(U.var_dump(match.Groups));
-                        return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                        return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n" 
+                            + "version can not parse" + "\r\n"
+                            + "contents:\r\n" + contents + "\r\n"
+                            + "match.Groups:\r\n" + U.var_dump(match.Groups);
                     }
                     return R._("現在のバージョンが最新です。version:{0}", version);
                 }
@@ -242,9 +245,10 @@ namespace FEBuilderGBA
             Log.Error(U.var_dump(match.Groups));
             if (match.Groups.Count < 2)
             {
-                Log.Error(contents);
-                Log.Error(U.var_dump(match.Groups));
-                return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n"
+                    + "href can not parse" + "\r\n"
+                    + "contents:\r\n" + contents + "\r\n"
+                    + "match.Groups:\r\n" + U.var_dump(match.Groups);
             }
 
             out_version = match.Groups[2].Value;
@@ -253,9 +257,10 @@ namespace FEBuilderGBA
             {
                 if (net_version == 0)
                 {
-                    Log.Error(contents);
-                    Log.Error(U.var_dump(match.Groups));
-                    return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                    return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n"
+                        + "version can not parse" + "\r\n"
+                        + "contents:\r\n" + contents + "\r\n"
+                        + "match.Groups:\r\n" + U.var_dump(match.Groups);
                 }
                 return R._("現在のバージョンが最新です。version:{0}", version);
             }
@@ -263,9 +268,10 @@ namespace FEBuilderGBA
             double yyyymmdd = U.atof(DateTime.Now.AddDays(3).ToString("yyyyMMdd.HH"));
             if (net_version > yyyymmdd)
             {//いたずらで変な日付のものが挙げられた可能性あり
-                Log.Error(contents.ToString());
-                Log.Error(U.var_dump(match.Groups));
-                return R._("サイトの結果が期待外でした。\r\n{0}", url);
+                return R._("サイトの結果が期待外でした。\r\n{0}", url) + "\r\n\r\n"
+                    + "date can not parse" + "\r\n"
+                    + "contents:\r\n" + contents + "\r\n"
+                    + "match.Groups:\r\n" + U.var_dump(match.Groups);
             }
 
             out_url = match.Groups[1].Value;
