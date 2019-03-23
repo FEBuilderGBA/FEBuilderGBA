@@ -1,0 +1,62 @@
+#ifndef HP_BARS
+#define HP_BARS
+
+#include "Extensions/Hack Installation.txt" 
+
+// HP Bars, Effectiveness warning icons and talk indicators.
+// hack by circleseverywhere, with additions by Tequila
+
+#ifdef _FE8_
+
+  {
+
+  PUSH
+    ORG $276b4
+      jumpToHack(HPBars)
+
+    ORG $15690 // Change width of loaded image
+      // BYTE $20
+      BYTE $18
+
+    ORG $156ac // Repoint loaded image
+      POIN HPBarGraphic
+
+    ORG $35718 // Force Subtitle Help (option replaced by hp bars toggle)
+      SHORT $46C0
+  POP
+
+  ALIGN 4
+  HPFrames:
+    #incbin "bin/HPFrames.bin"
+
+  ALIGN 4
+  HPFramePointers:
+    POIN HPFrames
+    POIN HPFrames+8
+    POIN HPFrames+16
+    POIN HPFrames+24
+    POIN HPFrames+32
+    POIN HPFrames+40
+    POIN HPFrames+48
+    POIN HPFrames+56
+    POIN HPFrames+64
+    POIN HPFrames+72
+    POIN HPFrames+80
+    POIN HPFrames+88
+
+  ALIGN 4
+  HPBars:
+    #incbin "asm/WarningAndHpBars.dmp"
+    POIN HPFramePointers
+
+  ALIGN 4
+  HPBarGraphic:
+    #incext Png2Dmp "bin/WarningHpSheet.png" --lz77
+
+  }
+
+#else // _FE8_
+  ERROR HpBars hack is for FE8
+#endif // _FE8_
+
+#endif // HP_BARS

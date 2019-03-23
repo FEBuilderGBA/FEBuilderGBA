@@ -2284,9 +2284,6 @@ Please set the unit to be read
 :ラベルをクリックして領域を確保してください
 Please click on the label to reserve space
 
-:10進数
-Decimal
-
 :EAでエクスポートできませんでした。\r\n{0}
 Unable to export with EA.\r\n{0}
 
@@ -4005,6 +4002,9 @@ Warning: You are accessing MemorySlotD or later.
 
 :フレーム秒({0}秒)
 frame sec({0} sec)
+
+:10進数
+Decimal
 
 :アーチ
 Ballista
@@ -10062,9 +10062,6 @@ Warning: Text is too long in the side.\r\nEstimated number of dots: ({0},{1})\r\
 
 :警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
 Warning: Too many lines of text.\r\nEstimated dot number ({0},{1})\r\n{2}
-
-:不要
-No need.
 
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
 Warning:\r\nAlthough it is text for conversation, there are no symbols such as @0003.
