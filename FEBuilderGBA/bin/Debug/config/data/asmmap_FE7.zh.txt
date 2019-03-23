@@ -4386,3 +4386,10 @@
 0803B034	GetAiSafestAccessibleAdjacentPosition	{J}
 080397B8	AiGetPositionTerrainSafetyWeight	{J}
 080397F8	AiGetPositionUnitSafetyWeight	{J}
+//This data is made with the aim of being readable by machine fast.
+0809F950	GGM_IsCharacterKnown	{J}
+0809BB98	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{J}
+0809F770	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{J}
+0809EF14	GGM_IsCharacterKnown	{U}
+0809B1C4	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{U}
+0809ED34	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{U}

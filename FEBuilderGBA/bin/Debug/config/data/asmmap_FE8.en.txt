@@ -11710,3 +11710,13 @@ r3=X tile position of menu of right	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
 0203F101	For judgment of parallel extension.	{J}
+080A5E48	Support screen.	Display the number of remaining supportive conversations.	(If remaining in the game / from the extra menu, the number of conversations not reached yet).	{J}
+080A5F9C	Support screen.	Display support list of target units.	{J}
+080A48BC	Support screen.	Get support status achieved by the unit from gStringBufferAlt.	{J}
+080A4A28	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{J}
+080A8030	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{J}
+080A207C	Support screen.	Display the number of remaining supportive conversations.	(If remaining in the game / from the extra menu, the number of conversations not reached yet).	{U}
+080A21D0	Support screen.	Display support list of target units.	{U}
+080A0AD4	Support screen.	Get support status achieved by the unit from gStringBufferAlt.	{U}
+080A0C40	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{U}
+080A35EC	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}

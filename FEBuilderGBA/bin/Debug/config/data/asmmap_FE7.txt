@@ -4709,3 +4709,12 @@
 0803B034	GetAiSafestAccessibleAdjacentPosition	{J}
 080397B8	AiGetPositionTerrainSafetyWeight	{J}
 080397F8	AiGetPositionUnitSafetyWeight	{J}
+
+0809F950	GGM_IsCharacterKnown	{J}
+0809BB98	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	メイン	{J}
+0809F770	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	1ユニット	{J}
+0809EF14	GGM_IsCharacterKnown	{U}
+0809B1C4	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	メイン	{U}
+0809ED34	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	1ユニット	{U}
+
+

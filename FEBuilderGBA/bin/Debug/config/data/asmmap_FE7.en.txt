@@ -4399,3 +4399,10 @@
 0803B034	GetAiSafestAccessibleAdjacentPosition	{J}
 080397B8	AiGetPositionTerrainSafetyWeight	{J}
 080397F8	AiGetPositionUnitSafetyWeight	{J}
+//This data is made with the aim of being readable by machine fast.
+0809F950	GGM_IsCharacterKnown	{J}
+0809BB98	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{J}
+0809F770	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{J}
+0809EF14	GGM_IsCharacterKnown	{U}
+0809B1C4	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{U}
+0809ED34	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}

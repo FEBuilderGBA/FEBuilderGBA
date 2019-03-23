@@ -11584,3 +11584,13 @@ r3=X tile position of menu of the right	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
 0203F101	用于判断并行扩展。	{J}
+080A5E48	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{J}
+080A5F9C	支持屏幕。	显示目标单位的支持列表。	{J}
+080A48BC	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{J}
+080A4A28	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{J}
+080A8030	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{J}
+080A207C	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{U}
+080A21D0	支持屏幕。	显示目标单位的支持列表。	{U}
+080A0AD4	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{U}
+080A0C40	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{U}
+080A35EC	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{U}
