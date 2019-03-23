@@ -6371,6 +6371,46 @@ namespace FEBuilderGBA
             }
             return U.at(Cache_ramunit_param_dic, num);
         }
+        public static string GetRAM_UNIT_VALUE(uint prevValue, uint num, out string errorMessae)
+        {
+            errorMessae = "";
+
+            if (prevValue == 0xC)
+            {//状態
+                return GetRAM_UNIT_STATE(num, out errorMessae);
+            }
+            else if (prevValue == 0x1E || prevValue == 0x20 || prevValue == 0x22 || prevValue == 0x24 || prevValue == 0x26)
+            {//アイテム
+                return ItemForm.GetItemName(num);
+            }
+            else if (prevValue == 0x30)
+            {//状態とターン
+                return GetBADSTATUS(num);
+            }
+//            else if (prevValue == 0x40)
+//            {//AI3
+//            }
+//            else if (prevValue == 0x41)
+//            {//AI4
+//            }
+            else if (prevValue == 0x42)
+            {//AI1
+                return GetAI1(num);
+            }
+            else if (prevValue == 0x44)
+            {//AI2
+                return GetAI2(num);
+            }
+            return InputFormRef.GetDigitHint(num);
+        }
+        public static string GetDigitHint(uint v)
+        {
+            if (v >= 10)
+            {
+                return v.ToString() + "<=(" + R._("10進数") + ")";
+            }
+            return "";
+        }
         public static string GetBOOL(uint num)
         {
             if (num == 0)

@@ -936,6 +936,14 @@ namespace FEBuilderGBA
             {//RAM_UNIT_PARAM
                 text = " " + InputFormRef.GetRAM_UNIT_PARAM(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.RAM_UNIT_VALUE)
+            {//RAM_UNIT_PARAM
+                uint prevIndex = EventScript.GetRAMUnitParamIndex(code);
+                uint prevValue = 0;
+                EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                text = " " + InputFormRef.GetRAM_UNIT_VALUE(prevValue, v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.BOOL)
             {//BOOL
                 text = " " + InputFormRef.GetBOOL(v);
@@ -963,10 +971,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
-                if (v >= 10)
-                {
-                    text = " " + v.ToString() + "<=(" + R._("10進数") + ")";
-                }
+                text = " " + InputFormRef.GetDigitHint(v);
             }
 
             U.MakeTransparent(image);
@@ -2546,6 +2551,16 @@ namespace FEBuilderGBA
                         string dummy;
                         sb.Append(InputFormRef.GetRAM_UNIT_PARAM(v, out dummy));
                     }
+                    else if (arg.Type == EventScript.ArgType.RAM_UNIT_VALUE)
+                    {//RAM_UNIT_PARAM
+                        uint prevIndex = EventScript.GetRAMUnitParamIndex(code);
+                        uint prevValue = 0;
+                        EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                        string dummy;
+                        sb.Append(InputFormRef.GetRAM_UNIT_VALUE(prevValue, v, out dummy));
+                    }
+
                     else if (arg.Type == EventScript.ArgType.BOOL)
                     {//BOOL
                         sb.Append(" ");

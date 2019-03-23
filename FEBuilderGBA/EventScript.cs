@@ -85,7 +85,8 @@ namespace FEBuilderGBA
             , SKILL             //
             , MAPEMOTION        //マップ絵文字
             , COUNTER           //カウンタ(ビットシフト)
-            , RAM_UNIT_PARAM    //RAMユニット
+            , RAM_UNIT_PARAM    //RAMユニット 設定名
+            , RAM_UNIT_VALUE    //RAMユニット 設定値
             , BOOL              //BOOL値型
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
@@ -657,6 +658,9 @@ namespace FEBuilderGBA
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
+                 break;
+             case "RAM_UNIT_VALUE":
+                 type = ArgType.RAM_UNIT_VALUE;
                  break;
              case "BOOL":
                  type = ArgType.BOOL;
@@ -1598,6 +1602,18 @@ namespace FEBuilderGBA
                 return true;
             }
             return false;
+        }
+        public static uint GetRAMUnitParamIndex(EventScript.OneCode code)
+        {
+            for (int n = 0; n < code.Script.Args.Length; n++)
+            {
+                EventScript.Arg arg = code.Script.Args[n];
+                if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+                {
+                    return (uint)n;
+                }
+            }
+            return 0x0;
         }
     }
 }

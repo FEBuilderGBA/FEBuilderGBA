@@ -52,7 +52,7 @@ beq check_item_id
 
 ldr r2, [r0, #0x4]    @unitram->class
 cmp r2, #0x00
-beq break_loop
+beq next_loop
 
 ldrb r2, [r2, #0x4]   @unitram->class->id
 cmp  r2, r3
