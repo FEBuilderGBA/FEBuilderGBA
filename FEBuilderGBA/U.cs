@@ -1423,7 +1423,7 @@ namespace FEBuilderGBA
             {
                 if (ShowMessage)
                 {
-                    R.ShowStopError("アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}", U.To0xHexString(addr), U.To0xHexString(ProtectedAddress));
+                    R.ShowStopError("アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。", U.To0xHexString(addr), U.To0xHexString(ProtectedAddress));
                 }
                 return false;
             }

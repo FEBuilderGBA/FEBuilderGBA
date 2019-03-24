@@ -11113,8 +11113,8 @@ Flags used in the chapter.
 :。
 。
 
-:アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}
-You can not write to address 0-address {1}.\r\nThe address you tried to write: {0}.
+:アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
+You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile and might break the rom.
 
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.
