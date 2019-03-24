@@ -1,0 +1,2 @@
+Impale: Deal 4x damage.[N]
+(Skill % activation)[X]

@@ -1,0 +1,2 @@
+Capture: Capture an enemy after[N]
+defeating it with reduced stats.[X]

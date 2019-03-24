@@ -181,3 +181,11 @@
 0B5=Devil's Luck
 0B6=Devil's Pact
 0B7=Devil's Whim
+0B8=Poison Strike
+0B9=Grisly Wound
+0BA=Hex
+0BB=Barricade
+0BC=Barricade+
+0BD=Point Blank
+0BE=Perfectionist
+0BF=Puissance

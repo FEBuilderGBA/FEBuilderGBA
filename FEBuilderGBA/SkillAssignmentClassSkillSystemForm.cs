@@ -184,6 +184,8 @@ namespace FEBuilderGBA
 
             //他のクラスでこのデータを参照しているならば、独立ボタンを出す.
             IndependencePanel.Visible = UpdateIndependencePanel();
+            //N1の書き込みボタンが反応してしまうときがあるのでやめさせる.
+            InputFormRef.WriteButtonToYellow(this.N1_WriteButton, false);
         }
 
         private void N1_B1_ValueChanged(object sender, EventArgs e)
