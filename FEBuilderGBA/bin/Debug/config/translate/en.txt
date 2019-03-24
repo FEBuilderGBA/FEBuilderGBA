@@ -991,12 +991,6 @@ Roy A Support
 :ロング版
 Long version
 
-:エイリーク編
-Eirika's Tale
-
-:エフラム編
-Ephraim's Tale
-
 :ED関係
 Character Endings
 
@@ -1035,6 +1029,12 @@ After Retreat
 
 :撤退指定 02
 Retreat designation 02
+
+:エイリーク編
+Eirika's Tale
+
+:エフラム編
+Ephraim's Tale
 
 :戦績悪
 Lose Record
@@ -8602,9 +8602,6 @@ Selected address
 :このアドレスは危険です。
 This address is dangerous.
 
-:アドレス0番地-0x100番地には書き込むことができません。
-Unable to write to addresses 0 to 0x100.
-
 :更新するべきデータがありません keyword:{0}
 There is no data to updatekeyword: {0}
 
@@ -11115,6 +11112,9 @@ Flags used in the chapter.
 
 :。
 。
+
+:アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}
+You can not write to address 0-address {1}.\r\nThe address you tried to write: {0}.
 
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.

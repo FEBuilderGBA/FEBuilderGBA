@@ -1333,7 +1333,7 @@ namespace FEBuilderGBA
                 {
                     addr = U.toOffset(addr);
                 }
-                if (!U.CheckZeroAddressWrite(addr))
+                if (!U.CheckZeroAddressWriteHigh(addr))
                 {
                     addr = 0;
                 }

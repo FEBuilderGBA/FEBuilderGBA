@@ -910,7 +910,7 @@ namespace FEBuilderGBA
                 return;
             }
             uint addr = (uint)Address.Value;
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!U.CheckZeroAddressWriteHigh(addr))
             {
                 return;
             }

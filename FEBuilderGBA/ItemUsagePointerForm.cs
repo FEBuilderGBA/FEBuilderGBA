@@ -22,6 +22,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.StatBoosterItemLink);
 
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.FilterComboBox.SelectedIndex = 0;
         }

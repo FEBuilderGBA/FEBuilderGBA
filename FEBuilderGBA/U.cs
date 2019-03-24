@@ -1410,14 +1410,20 @@ namespace FEBuilderGBA
             Array.Copy(a, pos , r, pos + b.Length, a.Length - pos);
             return r;
         }
-        //0番地に書き込みを拒否する
-        public static bool CheckZeroAddressWrite(uint addr,bool ShowMessage = true)
+
+        public static bool CheckZeroAddressWriteHigh(uint addr, bool ShowMessage = true)
         {
-            if (addr == U.NOT_FOUND || addr <= 0x100)
+            return CheckZeroAddressWrite(addr, ShowMessage, Program.ROM.RomInfo.compress_image_borderline_address() );
+        }
+
+        //0番地に書き込みを拒否する
+        public static bool CheckZeroAddressWrite(uint addr,bool ShowMessage = true , uint ProtectedAddress = 0x100)
+        {
+            if (addr == U.NOT_FOUND || addr <= ProtectedAddress)
             {
                 if (ShowMessage)
                 {
-                    R.ShowStopError("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr));
+                    R.ShowStopError("アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}", U.To0xHexString(addr), U.To0xHexString(ProtectedAddress));
                 }
                 return false;
             }

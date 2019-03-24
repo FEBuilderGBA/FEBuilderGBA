@@ -564,7 +564,7 @@ namespace FEBuilderGBA
         public static uint MakePaletteUIToROM(Form self, uint palette_address, bool isCompress,int palette_index)
         {
             uint addr = U.toOffset(palette_address);
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!U.CheckZeroAddressWriteHigh(addr))
             {
                 return U.NOT_FOUND;
             }
@@ -631,7 +631,7 @@ namespace FEBuilderGBA
         public static void MakePaletteColorPaletteToROM(Form self, ColorPalette pal, uint palette_address, int palette_count, Undo.UndoData undodata)
         {
             uint addr = U.toOffset(palette_address);
-            if (!U.CheckZeroAddressWrite(palette_address))
+            if (!U.CheckZeroAddressWriteHigh(palette_address))
             {
                 return;
             }

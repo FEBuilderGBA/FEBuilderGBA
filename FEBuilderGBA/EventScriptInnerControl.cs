@@ -253,7 +253,7 @@ namespace FEBuilderGBA
                 addr = U.toOffset(addr);
                 ReadStartAddress.Value = addr;
             }
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!U.CheckZeroAddressWriteHigh(addr))
             {
                 return;
             }

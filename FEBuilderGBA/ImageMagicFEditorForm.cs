@@ -312,7 +312,7 @@ namespace FEBuilderGBA
 
             U.AddrResult ar = InputFormRef.SelectToAddrResult(this.AddressList);
             Debug.Assert(ar.tag != 0);
-            if (!U.CheckZeroAddressWrite(ar.tag))
+            if (!U.CheckZeroAddressWriteHigh(ar.tag))
             {
                 return;
             }

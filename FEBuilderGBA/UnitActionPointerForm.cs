@@ -16,7 +16,8 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
-            InputFormRef.ReInitPointer(SearchActionPointer());
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
+            this.InputFormRef.ReInitPointer(SearchActionPointer());
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             if (InputFormRef.SearchUnitActionReworkPatch())

@@ -1520,7 +1520,7 @@ namespace FEBuilderGBA
                     uint addr = U.toOffset(U.atoi0x(address));
                     if (!U.CheckZeroAddressWrite(addr))
                     {
-                        throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                        throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
                     }
 
                     string[] changevalueSP = value.Split(' ');
@@ -3213,7 +3213,7 @@ namespace FEBuilderGBA
         {
             if (!U.CheckZeroAddressWrite(addr))
             {
-                throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
             }
 
             if (addr + b.Length > Program.ROM.Data.Length)
@@ -3433,7 +3433,7 @@ namespace FEBuilderGBA
             uint addr = convertBinAddressString(sp[1], (uint)b.Length, 0x100 , basedir);
             if (!U.CheckZeroAddressWrite(addr))
             {
-                throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
             }
             WriteBB(addr, filename, b, binBlocks, undodata);
         }

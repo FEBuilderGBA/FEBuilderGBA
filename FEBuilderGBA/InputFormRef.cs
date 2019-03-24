@@ -5306,7 +5306,7 @@ namespace FEBuilderGBA
             }
 
             addr = U.toOffset(addr);
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!CheckZeroAddressWrite(addr))
             {//先頭には書き込めません!
                 return;
             }
@@ -5353,6 +5353,18 @@ namespace FEBuilderGBA
             if (PostWriteHandler != null)
             {
                 PostWriteHandler(sender, e);
+            }
+        }
+        public bool CheckProtectionAddrHigh = true; //高い範囲のアドレスを自動保護する
+        public bool CheckZeroAddressWrite(uint addr)
+        {
+            if (this.CheckProtectionAddrHigh)
+            {
+                return U.CheckZeroAddressWriteHigh(addr);
+            }
+            else
+            {
+                return U.CheckZeroAddressWrite(addr);
             }
         }
 
@@ -9196,7 +9208,7 @@ namespace FEBuilderGBA
         public uint WriteImageData10(NumericUpDown numObj, byte[] image, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
             uint addr = U.toOffset((uint)numObj.Value);
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!CheckZeroAddressWrite(addr))
             {
                 return U.NOT_FOUND;
             }
@@ -9263,11 +9275,12 @@ namespace FEBuilderGBA
             }
             return true;
         }
+
         public static void WriteOnePointer(uint pointer, NumericUpDown numObj, Undo.UndoData undodata)
         {
             uint addr = U.toOffset(pointer);
             if (!U.CheckZeroAddressWrite(addr))
-            {
+            {//ポインタなので、 CheckZeroAddressWriteHighは無理.
                 return;
             }
 
@@ -9433,7 +9446,7 @@ namespace FEBuilderGBA
             write_pointer_value = U.toPointer(write_pointer_value);
 
             if (!U.CheckZeroAddressWrite(write_addr))
-            {
+            {//ポインタなので CheckZeroAddressWriteHighは過剰
                 return;
             }
 
