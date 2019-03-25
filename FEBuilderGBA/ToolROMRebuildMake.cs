@@ -520,11 +520,16 @@ namespace FEBuilderGBA
                 List<uint> ldrtable = new List<uint>();
                 uint calclength = DisassemblerTrumb.CalcLength(Program.ROM.Data
                     , address.Addr, (uint)Program.ROM.Data.Length, ldrtable);
-                //既存サイズの方が大きい場合は、大きい方を取る
-                address.Length = Math.Max(calclength, address.Length);
-
-                //発見したLDRを追加
-                ReScanLDR(address);
+                if (address.Length >= calclength)
+                {
+                }
+                else
+                {
+                    //既存サイズの方が大きい場合は、大きい方を取る
+                    address.Length = Math.Max(calclength, address.Length);
+                    //発見したLDRを追加
+                    ReScanLDR(address);
+                }
 
 //克服できたかも
 //                if (isRebuildAddress(address.Addr))

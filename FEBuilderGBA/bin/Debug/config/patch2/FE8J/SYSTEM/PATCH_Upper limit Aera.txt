@@ -13,6 +13,6 @@ HEX=FALSE
 NAME.zh=竞技场上限
 
 
-INFO=闘技場の敵のステータスの上限です。\r\nプレイヤーユニットのクラスのように、闘技場の敵にもステータスの上限が設定されています。\r\nこの値を変更するパッチです。\r\n
-INFO.en=Sets the maximum stats for foes in the arena.
-INFO.zh=这是竞技场敌人状态的上限。\r\n与玩家单位等级一样，状态的上限是为竞技场的敌人设定的。\r\n这是修改此值的补丁。\r\n
+INFO=闘技場の対戦相手のステータスがこの値以下だったら、対戦相手にステータスに+1の補正ボーナスを与えます。
+INFO.en=If the opponent's status in the arena is below this value, give the opponent +1 correction bonus on the status.
+INFO.zh=如果对手在竞技场中的状态低于此值，则给对手一个+1状态校正加值。
