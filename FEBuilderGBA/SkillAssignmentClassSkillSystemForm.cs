@@ -128,6 +128,12 @@ namespace FEBuilderGBA
         //Skill + テキストを書くルーチン
         Size DrawSkillAndText(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
+            return DrawSkillAndText(lb, index, g, listbounds, isWithDraw, this.IconBaseAddress);
+        }
+
+        //Skill + テキストを書くルーチン
+        public static Size DrawSkillAndText(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw, uint iconBaseAddress)
+        {
             if (index < 0 || index >= lb.Items.Count)
             {
                 return new Size(listbounds.X, listbounds.Y);
@@ -141,7 +147,7 @@ namespace FEBuilderGBA
             int textmargineY = (ListBoxEx.OWNER_DRAW_ICON_SIZE - (int)lb.Font.Height) / 2;
 
             uint icon = U.atoh(text);
-            Bitmap bitmap = SkillConfigSkillSystemForm.DrawIcon(icon, this.IconBaseAddress);
+            Bitmap bitmap = SkillConfigSkillSystemForm.DrawIcon(icon, iconBaseAddress);
             U.MakeTransparent(bitmap);
 
             //アイコンを描く.
@@ -284,6 +290,7 @@ namespace FEBuilderGBA
                 }
             }
         }
+
         public static void ExportAllData(string filename)
         {
             InputFormRef InputFormRef;
@@ -498,65 +505,24 @@ namespace FEBuilderGBA
                 skillCount++;
             }
 
-
-            //レベルアップで覚えるスキル.
-            Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
-            InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
-
-            uint assignLevelUpAddr = assignLevelUp + (cid * 4);
-            if (!U.isSafetyOffset(assignLevelUpAddr))
-            {
-                return skillCount;
-            }
-
-            uint levelupList = Program.ROM.p32(assignLevelUpAddr);
-            if (!U.isSafetyOffset(levelupList))
-            {
-                return skillCount;
-            }
-            N1_InputFormRef.ReInit(levelupList);
-            List<U.AddrResult> levelupSkillList = N1_InputFormRef.MakeList();
-            for (int i = 0; i < levelupSkillList.Count; i++)
-            {
-                uint levelUpSkillAddr = levelupSkillList[i].addr;
-                uint level = Program.ROM.u8(levelUpSkillAddr + 0);
-                uint skill = Program.ROM.u8(levelUpSkillAddr + 1);
-
-                if (skill <= 0)
-                {
-                    continue;
-                }
-
-                Bitmap bitmap = SkillConfigSkillSystemForm.DrawIcon(skill, icon);
-                U.MakeTransparent(bitmap);
-                buttons[skillCount].BackgroundImage = bitmap;
-                buttons[skillCount].Tag = skill;
-
-                string skillCaption = SkillConfigSkillSystemForm.GetSkillText(skill, text);
-                if (level > 0 && level < 0xFF)
-                {
-                    skillCaption = skillCaption + "\r\n" + R._("(Lv{0}で習得)",level);
-                }
-                tooltip.SetToolTipOverraide(buttons[skillCount], skillCaption);
-                skillCount++;
-                if (skillCount >= buttons.Length)
-                {
-                    break;
-                }
-            }
-
+            MakeUnitSkillButtonsList(cid, buttons, tooltip, assignLevelUpP, icon, text, skillCount);
             return skillCount;
         }
 
         //他のクラスでこのデータを参照しているか?
         bool UpdateIndependencePanel()
         {
-            if (this.AddressList.SelectedIndex < 0)
+            return UpdateIndependencePanel(this.AddressList, this.AssignLevelUpBaseAddress);
+        }
+
+        public static bool UpdateIndependencePanel(ListBox addressList,uint assignLevelUpBaseAddress)
+        {
+            if (addressList.SelectedIndex < 0)
             {
                 return false;
             }
-            uint classid = (uint)U.atoh(this.AddressList.Text);
-            uint setting = this.AssignLevelUpBaseAddress + (classid * 4);
+            uint classid = (uint)U.atoh(addressList.Text);
+            uint setting = assignLevelUpBaseAddress + (classid * 4);
             if (!U.isSafetyOffset(setting))
             {
                 return false;
@@ -567,14 +533,14 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            uint class_count = (uint)this.AddressList.Items.Count;
+            uint class_count = (uint)addressList.Items.Count;
             for (uint i = 0; i < class_count; i++)
             {
                 if (i == classid)
                 {//自分自身
                     continue;
                 }
-                uint c = this.AssignLevelUpBaseAddress + (uint)(i * 4);
+                uint c = assignLevelUpBaseAddress + (uint)(i * 4);
                 uint p = Program.ROM.p32(c);
 
                 if (p == currentP)
@@ -629,5 +595,61 @@ namespace FEBuilderGBA
             ZeroPointerPanel.Visible = InputFormRef.ShowZeroPointerPanel(this.AddressList, this.N1_ReadStartAddress);
         }
 
+        public static int MakeUnitSkillButtonsList(uint id, Button[] buttons, ToolTipEx tooltip, uint assignLevelUpP, uint icon, uint text, int skillCount)
+        {
+            uint assignLevelUp = Program.ROM.p32(assignLevelUpP);
+            if (!U.isSafetyOffset(assignLevelUp))
+            {
+                return skillCount;
+            }
+
+            uint assignLevelUpAddr = assignLevelUp + (id * 4);
+            if (!U.isSafetyOffset(assignLevelUpAddr))
+            {
+                return skillCount;
+            }
+
+            uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+            if (!U.isSafetyOffset(levelupList))
+            {
+                return skillCount;
+            }
+
+            //レベルアップで覚えるスキル.
+            Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
+            InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
+            N1_InputFormRef.ReInit(levelupList);
+
+            List<U.AddrResult> levelupSkillList = N1_InputFormRef.MakeList();
+            for (int i = 0; i < levelupSkillList.Count; i++)
+            {
+                uint levelUpSkillAddr = levelupSkillList[i].addr;
+                uint level = Program.ROM.u8(levelUpSkillAddr + 0);
+                uint skill = Program.ROM.u8(levelUpSkillAddr + 1);
+
+                if (skill <= 0)
+                {
+                    continue;
+                }
+
+                Bitmap bitmap = SkillConfigSkillSystemForm.DrawIcon(skill, icon);
+                U.MakeTransparent(bitmap);
+                buttons[skillCount].BackgroundImage = bitmap;
+                buttons[skillCount].Tag = skill;
+
+                string skillCaption = SkillConfigSkillSystemForm.GetSkillText(skill, text);
+                if (level > 0 && level < 0xFF)
+                {
+                    skillCaption = skillCaption + "\r\n" + R._("(Lv{0}で習得)", level);
+                }
+                tooltip.SetToolTipOverraide(buttons[skillCount], skillCaption);
+                skillCount++;
+                if (skillCount >= buttons.Length)
+                {
+                    break;
+                }
+            }
+            return skillCount;
+        }
     }
 }

@@ -108,6 +108,10 @@ namespace FEBuilderGBA
         {
             return FindSkillPointerToPointer("LEVELUP", 0);
         }
+        public static uint FindAssignUnitLevelUpSkillPointer()
+        {
+            return FindSkillPointerToPointer("LEVELUP", 4);
+        }
         public static uint FindIconPointer()
         {
             uint r = FindSkillPointerToPointer("ICON", 0);

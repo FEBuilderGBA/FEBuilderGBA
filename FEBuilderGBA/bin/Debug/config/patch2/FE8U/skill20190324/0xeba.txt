@@ -1,2 +1,2 @@
-Hawkeye: User will[N]
-always hit the enemy.[X]
+Vantage+: User always attacks first,[N]
+even if attacked. Negates crits.[X]

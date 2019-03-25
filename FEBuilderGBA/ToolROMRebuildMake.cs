@@ -103,6 +103,10 @@ namespace FEBuilderGBA
                 {//BATTLEFRAME
                     a_point += 0x30;
                 }
+                else if (a.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
+                {//NEW_TARGET_SELECTION_STRUCT
+                    a_point += 0x20;
+                }
                 else if (Address.IsLZ77(a.DataType) && a.Length > 0)
                 {//LZ77
                     a_point += 0x10;
@@ -1953,6 +1957,11 @@ namespace FEBuilderGBA
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ASM)
+            {//ポインタ
+                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                sb.Append("@MIX ");
+            }
+            else if (address.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
             {//ポインタ
                 bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");

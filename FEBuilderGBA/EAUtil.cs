@@ -18,6 +18,8 @@ namespace FEBuilderGBA
             ,BIN //incbinされたデータ BIN
             ,LYN //lynによってインポートされるelfファイル
             ,POINTER_ARRAY
+            ,NEW_TARGET_SELECTION_STRUCT
+            ,PROCS
         }
         public class Data
         {
@@ -25,17 +27,20 @@ namespace FEBuilderGBA
             public uint ORGAddr { get; private set; }
             public byte[] BINData { get; private set; }
             public DataEnum DataType { get; private set; }
+            public uint Append { get; private set; }
 
-            public Data(uint orgaddr, DataEnum dataType)
+            public Data(uint orgaddr, DataEnum dataType, uint append = 0)
             {
                 this.ORGAddr = orgaddr;
                 this.DataType = dataType;
+                this.Append = append;
             }
-            public Data(string name, byte[] data, DataEnum dataType)
+            public Data(string name, byte[] data, DataEnum dataType,uint append = 0)
             {
                 this.Name = name;
                 this.BINData = data;
                 this.DataType = dataType;
+                this.Append = append;
             }
         }
         public List<Data> DataList { get; private set; }
@@ -82,7 +87,8 @@ namespace FEBuilderGBA
                 ParseLynELF(line, lines[i]);
                 ParseLynHook(line, lines[i]);
                 ParsePng2Dmp(line, lines[i]);
-                ParseLabel(line , lines[i]);
+                ParseString(line, lines[i]);
+                ParseLabel(line, lines[i]);
             }
         }
         void ParseLabel(string line, string orignalIine)
@@ -98,7 +104,20 @@ namespace FEBuilderGBA
 
             if (orignalIine.IndexOf("HINT=POINTER_ARRAY", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.POINTER_ARRAY);
+                uint append = ParseAdd(orignalIine);
+                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.POINTER_ARRAY, append);
+                this.DataList.Add(data);
+            }
+            else if (orignalIine.IndexOf("HINT=NEW_TARGET_SELECTION_STRUCT", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                uint append = ParseAdd(orignalIine);
+                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.NEW_TARGET_SELECTION_STRUCT, append);
+                this.DataList.Add(data);
+            }
+            else if (orignalIine.IndexOf("HINT=PROCS", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                uint append = ParseAdd(orignalIine);
+                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.PROCS, append);
                 this.DataList.Add(data);
             }
 
@@ -254,6 +273,32 @@ namespace FEBuilderGBA
             Elf elf = new Elf(fullbinname);
             Data data = new Data(filename, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
+            return true;
+        }
+        bool ParseString(string line, string orignalIine)
+        {
+            int start = line.IndexOf("String(");
+            if (start < 0)
+            {
+                return false;
+            }
+
+            start += 7;
+            int term = line.IndexOf(')', start);
+            if (term <= 0)
+            {
+                return false;
+            }
+            string str = line.Substring(start, term - start);
+            byte[] lowbin = System.Text.Encoding.GetEncoding("Shift_JIS").GetBytes(str);
+
+            uint size = (uint)lowbin.Length + 1;
+            byte[] bin = new byte[size];
+            Array.Copy(lowbin, bin, lowbin.Length);
+
+            Data data = new Data("String("+str+")", bin,DataEnum.BIN);
+            this.DataList.Add(data);
+
             return true;
         }
 
@@ -419,6 +464,19 @@ namespace FEBuilderGBA
             }
             return sb.ToString();
         }
-
+        uint ParseAdd(string orignalIine)
+        {
+            int hint_pos = orignalIine.IndexOf("HINT=");
+            if (hint_pos < 0)
+            {
+                return 0;
+            }
+            int add_pos = orignalIine.IndexOf("ADD=", hint_pos + 5);
+            if (add_pos < 0)
+            {
+                return 0;
+            }
+            return U.atoi(orignalIine.Substring(add_pos + 4));
+        }
     }
 }

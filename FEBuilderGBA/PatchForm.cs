@@ -4495,6 +4495,9 @@ namespace FEBuilderGBA
                     else if (data.DataType == EAUtil.DataEnum.POINTER_ARRAY)
                     {
                         //最後に書き込んだ部分から、ポインタと思われる部分を連続して検出する.
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+
                         uint addr = lastMatchAddr;
                         for (; addr + 3 < Program.ROM.Data.Length; addr += 4)
                         {
@@ -4520,6 +4523,54 @@ namespace FEBuilderGBA
                         b.bin = Program.ROM.getBinaryData(addr, length);
                         b.mask = MakeFullMask(length);
                         b.type = Address.DataTypeEnum.POINTER_ARRAY;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.NEW_TARGET_SELECTION_STRUCT)
+                    {
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+
+                        uint addr = lastMatchAddr;
+                        uint length = 8 * 4;
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeFullMask(length);
+                        b.type = Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.PROCS)
+                    {
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+                        
+                        uint addr = lastMatchAddr;
+                        uint length = ProcsScriptForm.CalcLengthAndCheck(addr);
+                        if (length == U.NOT_FOUND)
+                        {
+                            continue;
+                        }
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeFullMask(length);
+                        b.type = Address.DataTypeEnum.PROCS;
 
                         binMappings.Add(b);
 
@@ -5196,18 +5247,37 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                FEBuilderGBA.Address.AddAddress(list
-                    , a
-                    , isPointerOnly ? 0 : m.length
-                    , U.NOT_FOUND
-                    , patch.Name + "@" + m.filename + "@EA"
-                    , m.type);
                 if (m.type == Address.DataTypeEnum.POINTER_ARRAY)
                 {
                     FEBuilderGBA.Address.AddPointerArray(list,
                         a, m.length,
                         patch.Name + "@" + m.filename + "@Pointer_Array",
                         Address.DataTypeEnum.MIX);
+                }
+                else if (m.type == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
+                {
+                    FEBuilderGBA.Address.AddNewTargetSelectionStruct(list,
+                        a,U.NOT_FOUND,
+                        patch.Name + "@" + m.filename + "@NEW_TARGET_SELECTION_STRUCT");
+                }
+                else if (m.type == Address.DataTypeEnum.PROCS)
+                {
+                    FEBuilderGBA.Address.AddAddress(list
+                        , a
+                        , isPointerOnly ? 0 : m.length
+                        , U.NOT_FOUND
+                        , patch.Name + "@" + m.filename + "@PROCS"
+                        , Address.DataTypeEnum.PROCS
+                        );
+                }
+                else
+                {
+                    FEBuilderGBA.Address.AddAddress(list
+                        , a
+                        , isPointerOnly ? 0 : m.length
+                        , U.NOT_FOUND
+                        , patch.Name + "@" + m.filename + "@EA"
+                        , m.type);
                 }
 
                 if (isStoreSymbol && m.filename != "")

@@ -204,7 +204,7 @@ _prPivot_TargetCheck:
 	POIN (prPivot_TargetLegality+1)
 
 ALIGN 4
-_pPivotSelectorDefinition:
+_pPivotSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=12
 	POIN (_prPivotSelection_OnConstruction+1) // Constructor
 	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
 	WORD 0 // idk (actually ik kinda, see my notes)
@@ -247,7 +247,7 @@ _prReposition_TargetCheck:
 	POIN (prReposition_TargetLegality+1)
 
 ALIGN 4
-_pRepositionSelectorDefinition:
+_pRepositionSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=12
 	POIN (_prRepositionSelection_OnConstruction+1) // Constructor
 	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
 	WORD 0 // idk (actually ik kinda, see my notes)
@@ -287,7 +287,7 @@ _prSwap_TargetCheck:
 	POIN (prSwap_TargetLegality+1)
 
 ALIGN 4
-_pSwapSelectorDefinition:
+_pSwapSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
 	POIN (_prSwapSelection_OnConstruction+1) // Constructor
 	WORD 0 // Destructor
 	WORD 0 // idk (actually ik kinda, see my notes)
@@ -336,7 +336,7 @@ _prGetShovePosition:
 	WORD 1 // Max number of tiles you can be pushed
 
 ALIGN 4
-_pShoveSelectorDefinition:
+_pShoveSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
 	POIN (_prShoveSelection_OnConstruction+1) // Constructor
 	WORD 0 // Destructor
 	WORD 0 // idk (actually ik kinda, see my notes)
@@ -386,7 +386,7 @@ _prGetSmitePosition:
 	WORD 2 // Max number of tiles you can be pushed
 
 ALIGN 4
-_pSmiteSelectorDefinition:
+_pSmiteSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
 	POIN (_prSmiteSelection_OnConstruction+1) // Constructor
 	WORD 0 // Destructor
 	WORD 0 // idk (actually ik kinda, see my notes)
@@ -470,7 +470,7 @@ _p6CUnitPushAnim_rReturnLoop:
 	WORD 4 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
 
 ALIGN 4
-_p6CSingleUnitMovementAnim:
+_p6CSingleUnitMovementAnim:		//HINT=PROCS	ADD=8
 {
 
 #ifndef NDEBUG
@@ -498,7 +498,7 @@ __psName:
 }
 
 ALIGN 4
-_p6CSingleUnitPushAnim:
+_p6CSingleUnitPushAnim:		//HINT=PROCS
 {
 
 #ifndef NDEBUG

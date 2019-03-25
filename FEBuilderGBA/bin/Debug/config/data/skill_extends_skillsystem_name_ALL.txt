@@ -149,9 +149,9 @@
 095=Death Blow
 096=Life and Death
 097=Catch Em All
-098=Hawkeye
-099=Solidarity
-09a=Vantage+
+098=Vantage+
+099=Hawkeye
+09a=Solidarity
 09b=Bracing Stance
 09c=Darting Stance
 09d=Fierce Stance

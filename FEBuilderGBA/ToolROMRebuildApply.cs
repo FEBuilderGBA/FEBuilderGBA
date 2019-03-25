@@ -298,7 +298,6 @@ namespace FEBuilderGBA
             if (!r)
             {
                 R.ShowStopError("適応した結果にエラーがあるようです。\r\nログを確認してください。\r\nログ:{0}", GetLogFilename(filename));
-                return false;
             }
 
             wait.DoEvents("ApplyVanillaROM");
@@ -344,10 +343,13 @@ namespace FEBuilderGBA
             {//エラーがあれば出力する.
                 sb.Insert(0,"== ERROR! ==\r\n");
                 isOK = false;
+
+                Log.Error(sb.ToString());
             }
 
             sb.AppendLine("== MAPPING ==");
             sb.Append(this.ApplyLog);
+
 
             File.WriteAllText(logfilename, sb.ToString());
             return isOK;
