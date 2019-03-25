@@ -1066,7 +1066,7 @@
 080176DA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{U}
 0802E76E	Count_Items_In_Convoy	RET=Number of items in convoy	{U}
 08023926	Add_Gold_To_Cashpile	r0=amount of gold	{U}
-080174C4	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{U}
+080174C0	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{U}
 08017734	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data	{U}
 080167F4	Shuffle_Used_Item	r0=char data ptr	r1=invetory slot	{U}
 080190AC	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{U}
@@ -1099,7 +1099,7 @@
 08017ACA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{J}
 0802EC3A	Count_Items_In_Convoy	RET=Number of items in convoy	{J}
 08023DB2	Add_Gold_To_Cashpile	r0=amount of gold	{J}
-080174C4	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{J}
+080174C0	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{J}
 08017B24	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data	{J}
 08016C54	Shuffle_Used_Item	r0=char data ptr	r1=invetory slot	{J}
 08019494	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{J}
@@ -1658,7 +1658,7 @@
 080172E0	GetItemWeaponEffect	{U}
 0801746A	GetItemMaxCost	{U}
 08017494	GetItemWExp	{U}
-080174C4	GetROMItemStructPtr	{U}
+080174C0	GetROMItemStructPtr	{U}
 080174D8	ClearUnits	{U}
 08017508	ClearUnitStruct	{U}
 08017530	CopyUnitStruct	{U}
@@ -4393,3 +4393,4 @@
 0809EF14	GGM_IsCharacterKnown	{U}
 0809B1C4	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{U}
 0809ED34	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{U}
+080178B4	GetROMItemStructPtr	{J}

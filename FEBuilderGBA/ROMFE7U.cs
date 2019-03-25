@@ -72,7 +72,7 @@ namespace FEBuilderGBA
         public uint image_chapter_title_pointer() { return 0x0; } //不明 章タイトルの開始位置
         public uint image_chapter_title_palette() { return 0x3FE438; } // 章タイトルのパレット 多分違う
         public uint image_unit_palette_pointer() { return 0x541F8; } // ユニットパレットの開始位置
-        public uint item_pointer() { return 0x16060; } //アイテムの開始位置
+        public uint item_pointer() { return 0x174D4; } //アイテムの開始位置
         public uint item_datasize() { return 36; } // アイテムのデータサイズ
         public uint item_effect_pointer() { return 0x052B24; } // アイテムエフェクトの開始位置
         public uint sound_table_pointer() { return 0x3F50; } // ソングテーブルの開始位置
