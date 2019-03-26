@@ -2980,6 +2980,10 @@ namespace FEBuilderGBA
                     }
 
                     uint width = MeasureTextWidthOneLine(line, IsItemFont);
+                    if (code0003Pos > 0)
+                    {//@0003がある場合、2ドット使えるサイズが小さいらしい.
+                        width += 2;
+                    }
                     if (width > maxwidth)
                     {
                         maxwidth = width;
