@@ -90,7 +90,7 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            uint pic_address = (uint)D0.Value;
+            uint pic_address = (uint)P0.Value;
             X_ONE_STEP.Value = 0;
             int palette_type = X_PALETTE.SelectedIndex;
 
@@ -99,7 +99,7 @@ namespace FEBuilderGBA
         }
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
-            uint pic_address = (uint)D0.Value;
+            uint pic_address = (uint)P0.Value;
             int step = (int)X_ONE_STEP.Value;
             int palette_type = X_PALETTE.SelectedIndex;
             X_ONE_PIC.Image = DrawMoveUnitIcon(pic_address, palette_type, step);
@@ -191,7 +191,7 @@ namespace FEBuilderGBA
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            uint pic_address = (uint)D0.Value;
+            uint pic_address = (uint)P0.Value;
             int palette_type = X_PALETTE.SelectedIndex;
 
             Bitmap bitmap = DrawMoveUnitIcon(pic_address, palette_type);
@@ -249,7 +249,7 @@ namespace FEBuilderGBA
 
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            this.InputFormRef.WriteImageData(this.D0, image, true, undodata);
+            this.InputFormRef.WriteImageData(this.P0, image, true, undodata);
             Program.Undo.Push(undodata);
 
             //ポインタの書き込み
@@ -369,7 +369,7 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
                 byte[] ap = File.ReadAllBytes(filename);
-                uint ap_address = U.toOffset((uint)D4.Value);
+                uint ap_address = U.toOffset((uint)P4.Value);
 
                 string undoname = this.Text + " AP:" + U.ToHexString(ap_address);
                 Undo.UndoData undodata = Program.Undo.NewUndoData(undoname);
@@ -387,7 +387,7 @@ namespace FEBuilderGBA
                 }
                 Program.Undo.Push(undodata);
 
-                this.D4.Value = U.toPointer(newaddr);
+                this.P4.Value = U.toPointer(newaddr);
             }
 
             //ポインタの書き込み
@@ -417,7 +417,7 @@ namespace FEBuilderGBA
             string filename = save.FileNames[0];
             Program.LastSelectedFilename.Save(this, "", save);
 
-            uint ap_address = U.toOffset((uint)D4.Value);
+            uint ap_address = U.toOffset((uint)P4.Value);
             uint ap_length = ImageUtilAP.CalcAPLength(ap_address);
             if (ap_length == 0)
             {

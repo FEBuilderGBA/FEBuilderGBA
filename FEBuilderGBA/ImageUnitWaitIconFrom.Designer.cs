@@ -43,6 +43,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.D4 = new System.Windows.Forms.NumericUpDown();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.B3 = new System.Windows.Forms.NumericUpDown();
             this.B2 = new System.Windows.Forms.NumericUpDown();
@@ -66,7 +67,6 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
-            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -76,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
@@ -260,7 +260,7 @@
             this.DragTargetPanel.Controls.Add(this.label6);
             this.DragTargetPanel.Controls.Add(this.X_ONE_PIC);
             this.DragTargetPanel.Controls.Add(this.X_PIC);
-            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.P4);
             this.DragTargetPanel.Controls.Add(this.label5);
             this.DragTargetPanel.Controls.Add(this.B3);
             this.DragTargetPanel.Controls.Add(this.B2);
@@ -272,6 +272,21 @@
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(907, 392);
             this.DragTargetPanel.TabIndex = 57;
+            // 
+            // JumpToSystemPalette
+            // 
+            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
+            this.JumpToSystemPalette.AutoSize = true;
+            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JumpToSystemPalette.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.JumpToSystemPalette.Location = new System.Drawing.Point(697, 370);
+            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
+            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
+            this.JumpToSystemPalette.TabIndex = 201;
+            this.JumpToSystemPalette.Text = "パレットの変更";
+            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
             // 
             // Comment
             // 
@@ -369,19 +384,19 @@
             this.X_PIC.TabIndex = 67;
             this.X_PIC.TabStop = false;
             // 
-            // D4
+            // P4
             // 
-            this.D4.Hexadecimal = true;
-            this.D4.Location = new System.Drawing.Point(165, 56);
-            this.D4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D4.Maximum = new decimal(new int[] {
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(165, 56);
+            this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D4.Name = "D4";
-            this.D4.Size = new System.Drawing.Size(130, 25);
-            this.D4.TabIndex = 63;
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(130, 25);
+            this.P4.TabIndex = 63;
             // 
             // label5
             // 
@@ -556,21 +571,6 @@
             this.DragTargetPanel2.Size = new System.Drawing.Size(906, 56);
             this.DragTargetPanel2.TabIndex = 58;
             // 
-            // JumpToSystemPalette
-            // 
-            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
-            this.JumpToSystemPalette.AutoSize = true;
-            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JumpToSystemPalette.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.JumpToSystemPalette.Location = new System.Drawing.Point(697, 370);
-            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
-            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
-            this.JumpToSystemPalette.TabIndex = 201;
-            this.JumpToSystemPalette.Text = "パレットの変更";
-            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
-            // 
             // ImageUnitWaitIconFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -597,7 +597,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
@@ -632,7 +632,7 @@
         private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.NumericUpDown B0;
-        private System.Windows.Forms.NumericUpDown D4;
+        private System.Windows.Forms.NumericUpDown P4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown X_ONE_STEP;
         private System.Windows.Forms.Panel panel6;

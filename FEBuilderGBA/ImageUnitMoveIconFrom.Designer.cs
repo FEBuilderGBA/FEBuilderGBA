@@ -29,20 +29,24 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.D4 = new System.Windows.Forms.NumericUpDown();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.X_JUMP_WAITICON = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
-            this.D0 = new System.Windows.Forms.NumericUpDown();
+            this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.X_ONE_STEP = new System.Windows.Forms.NumericUpDown();
+            this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,26 +56,24 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ImportAPButton = new System.Windows.Forms.Button();
             this.ExportAPButton = new System.Windows.Forms.Button();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
-            this.JumpToSystemPalette = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.Comment = new FEBuilderGBA.TextBoxEx();
-            this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.X_ONE_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.DragTargetPanel.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -79,8 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
             this.DragTargetPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -94,19 +94,19 @@
             this.label6.Text = "表示例";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // D4
+            // P4
             // 
-            this.D4.Hexadecimal = true;
-            this.D4.Location = new System.Drawing.Point(170, 55);
-            this.D4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D4.Maximum = new decimal(new int[] {
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(170, 55);
+            this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D4.Name = "D4";
-            this.D4.Size = new System.Drawing.Size(130, 25);
-            this.D4.TabIndex = 63;
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(130, 25);
+            this.P4.TabIndex = 63;
             // 
             // J_0
             // 
@@ -163,19 +163,33 @@
             this.DragTargetPanel.Controls.Add(this.label8);
             this.DragTargetPanel.Controls.Add(this.panel4);
             this.DragTargetPanel.Controls.Add(this.X_PALETTE);
-            this.DragTargetPanel.Controls.Add(this.D0);
+            this.DragTargetPanel.Controls.Add(this.P0);
             this.DragTargetPanel.Controls.Add(this.label7);
             this.DragTargetPanel.Controls.Add(this.J_4);
             this.DragTargetPanel.Controls.Add(this.X_ONE_STEP);
             this.DragTargetPanel.Controls.Add(this.label6);
             this.DragTargetPanel.Controls.Add(this.X_ONE_PIC);
-            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.P4);
             this.DragTargetPanel.Controls.Add(this.J_0);
             this.DragTargetPanel.Location = new System.Drawing.Point(330, 62);
             this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(902, 406);
             this.DragTargetPanel.TabIndex = 101;
+            // 
+            // JumpToSystemPalette
+            // 
+            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
+            this.JumpToSystemPalette.AutoSize = true;
+            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JumpToSystemPalette.Location = new System.Drawing.Point(699, 384);
+            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
+            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
+            this.JumpToSystemPalette.TabIndex = 77;
+            this.JumpToSystemPalette.Text = "パレットの変更";
+            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
             // 
             // label4
             // 
@@ -188,6 +202,15 @@
             this.label4.TabIndex = 203;
             this.label4.Text = "ユニットが移動する時のアニメーションを定義します。\r\nGBAFEでは、ClassIDの値が、そのまま利用する移動アイコンのデータになります。\r\n\r\nAPは特殊クラ" +
     "スの踊り子(バード)以外は、全員同じデータなので変更する必要はありません。\r\n特殊クラスを移植したい場合のみ、APもインポートしてください。";
+            // 
+            // Comment
+            // 
+            this.Comment.ErrorMessage = "";
+            this.Comment.Location = new System.Drawing.Point(170, 138);
+            this.Comment.Name = "Comment";
+            this.Comment.Placeholder = "";
+            this.Comment.Size = new System.Drawing.Size(338, 25);
+            this.Comment.TabIndex = 202;
             // 
             // label8
             // 
@@ -210,6 +233,17 @@
             this.panel4.Size = new System.Drawing.Size(138, 400);
             this.panel4.TabIndex = 106;
             // 
+            // X_PIC
+            // 
+            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_PIC.Location = new System.Drawing.Point(0, 0);
+            this.X_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_PIC.Name = "X_PIC";
+            this.X_PIC.Size = new System.Drawing.Size(138, 400);
+            this.X_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.X_PIC.TabIndex = 67;
+            this.X_PIC.TabStop = false;
+            // 
             // X_PALETTE
             // 
             this.X_PALETTE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -227,19 +261,19 @@
             this.X_PALETTE.TabIndex = 104;
             this.X_PALETTE.SelectedIndexChanged += new System.EventHandler(this.X_ONE_STEP_ValueChanged);
             // 
-            // D0
+            // P0
             // 
-            this.D0.Hexadecimal = true;
-            this.D0.Location = new System.Drawing.Point(170, 8);
-            this.D0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D0.Maximum = new decimal(new int[] {
+            this.P0.Hexadecimal = true;
+            this.P0.Location = new System.Drawing.Point(170, 8);
+            this.P0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D0.Name = "D0";
-            this.D0.Size = new System.Drawing.Size(130, 25);
-            this.D0.TabIndex = 72;
+            this.P0.Name = "P0";
+            this.P0.Size = new System.Drawing.Size(130, 25);
+            this.P0.TabIndex = 72;
             // 
             // label7
             // 
@@ -278,6 +312,17 @@
             this.X_ONE_STEP.Size = new System.Drawing.Size(60, 25);
             this.X_ONE_STEP.TabIndex = 70;
             this.X_ONE_STEP.ValueChanged += new System.EventHandler(this.X_ONE_STEP_ValueChanged);
+            // 
+            // X_ONE_PIC
+            // 
+            this.X_ONE_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_ONE_PIC.Location = new System.Drawing.Point(696, 5);
+            this.X_ONE_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_ONE_PIC.Name = "X_ONE_PIC";
+            this.X_ONE_PIC.Size = new System.Drawing.Size(136, 136);
+            this.X_ONE_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.X_ONE_PIC.TabIndex = 68;
+            this.X_ONE_PIC.TabStop = false;
             // 
             // ReloadListButton
             // 
@@ -385,6 +430,28 @@
             this.AddressPanel.Size = new System.Drawing.Size(902, 30);
             this.AddressPanel.TabIndex = 99;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(308, 0);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(83, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(550, -1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(138, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
             // label22
             // 
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -443,6 +510,19 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 27);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(313, 488);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
             // ImportAPButton
             // 
             this.ImportAPButton.Location = new System.Drawing.Point(11, 44);
@@ -479,86 +559,6 @@
             this.DragTargetPanel2.Size = new System.Drawing.Size(902, 78);
             this.DragTargetPanel2.TabIndex = 102;
             // 
-            // JumpToSystemPalette
-            // 
-            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
-            this.JumpToSystemPalette.AutoSize = true;
-            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.JumpToSystemPalette.Location = new System.Drawing.Point(699, 384);
-            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
-            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
-            this.JumpToSystemPalette.TabIndex = 77;
-            this.JumpToSystemPalette.Text = "パレットの変更";
-            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 27);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(313, 488);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // Comment
-            // 
-            this.Comment.ErrorMessage = "";
-            this.Comment.Location = new System.Drawing.Point(170, 138);
-            this.Comment.Name = "Comment";
-            this.Comment.Placeholder = "";
-            this.Comment.Size = new System.Drawing.Size(338, 25);
-            this.Comment.TabIndex = 202;
-            // 
-            // X_PIC
-            // 
-            this.X_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_PIC.Location = new System.Drawing.Point(0, 0);
-            this.X_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(138, 400);
-            this.X_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.X_PIC.TabIndex = 67;
-            this.X_PIC.TabStop = false;
-            // 
-            // X_ONE_PIC
-            // 
-            this.X_ONE_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_ONE_PIC.Location = new System.Drawing.Point(696, 5);
-            this.X_ONE_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_ONE_PIC.Name = "X_ONE_PIC";
-            this.X_ONE_PIC.Size = new System.Drawing.Size(136, 136);
-            this.X_ONE_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.X_ONE_PIC.TabIndex = 68;
-            this.X_ONE_PIC.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(308, 0);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(83, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(550, -1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(138, 25);
-            this.SelectAddress.TabIndex = 40;
-            // 
             // ImageUnitMoveIconFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -574,13 +574,15 @@
             this.Name = "ImageUnitMoveIconFrom";
             this.Text = "移動アイコン";
             this.Load += new System.EventHandler(this.ImageUnitMoveIconFrom_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             this.DragTargetPanel.ResumeLayout(false);
             this.DragTargetPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -590,8 +592,6 @@
             this.panel6.ResumeLayout(false);
             this.DragTargetPanel2.ResumeLayout(false);
             this.DragTargetPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,10 +599,10 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown D4;
+        private System.Windows.Forms.NumericUpDown P4;
         private System.Windows.Forms.Label J_0;
         private System.Windows.Forms.Panel DragTargetPanel;
-        private System.Windows.Forms.NumericUpDown D0;
+        private System.Windows.Forms.NumericUpDown P0;
         private System.Windows.Forms.Label J_4;
         private System.Windows.Forms.NumericUpDown X_ONE_STEP;
         private System.Windows.Forms.Button ReloadListButton;
