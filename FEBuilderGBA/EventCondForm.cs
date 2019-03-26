@@ -545,7 +545,7 @@ namespace FEBuilderGBA
 
         private void EventCondForm_Load(object sender, EventArgs e)
         {
-            this.MAP_LISTBOX.SelectedIndex = 0;
+            U.SelectedIndexSafety(this.MAP_LISTBOX , 0);
 
             N02_11_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTurn();
             NFE702_12_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTurnFE7();

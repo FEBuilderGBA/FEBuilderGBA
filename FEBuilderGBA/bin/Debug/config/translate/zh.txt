@@ -3046,8 +3046,8 @@ CSA_Creator是一个支持更多分辨率的即将到来的神奇系统。\r\n
 :FEditorシリアライズ形式|*.bin|バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.bin|All files|*
 FEditor序列化格式|*.bin|有一个战斗动画评论|*.txt|战斗动画没有评论|*.txt|卡通片GIF|*.gif|Dump All|*.bin|所有文件|*
 
-:FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
-战斗动画文本格式|*.bin|战斗动画文本格式(WildCard)|*|FEditor序列化格式|*.txt|所有文件|*
+:戦闘アニメ|*.bin;*.txt|FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
+战斗动画|*.bin;*.txt|战斗动画文本格式|*.bin|战斗动画文本格式(WildCard)|*|FEditor序列化格式|*.txt|所有文件|*
 
 :現在他の処理中です
 我们正在处理其他
@@ -8925,6 +8925,12 @@ IF解析错误，这个值没有空格\r\n{0} = {1}
 
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
 它不兼容ROM。\r\n游戏版本= {0}\r\n大小= {1}
+
+:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}
+发生了GDI +异常。\r\n请再试一次。\r\n如果您有多次重复，请发送report7z。\r\nErrorCode：{0} {1}。\r\n消息：。\r\n{2}。\r\n3}。
+
+:System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+发生了System.UnauthorizedAccessException。\r\n如果您有多次重复，请发送report7z。\r\n消息：。\r\n{0}。\r\n{1}。
 
 :警告
 警报

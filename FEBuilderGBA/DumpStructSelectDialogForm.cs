@@ -405,7 +405,7 @@ namespace FEBuilderGBA
 
             uint addr = ifr.BaseAddress;
             string[] lines = File.ReadAllLines(filename);
-            for (int i = 1; i <= lines.Length; i++, addr += ifr.BlockSize)
+            for (int i = 1; i < lines.Length; i++, addr += ifr.BlockSize)
             {
                 if (i >= ifr.DataCount)
                 {

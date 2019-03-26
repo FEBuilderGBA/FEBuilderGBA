@@ -858,7 +858,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
             }
@@ -872,7 +872,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return 0;
             }
@@ -891,7 +891,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
             }
@@ -908,7 +908,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return new Size(0, 0);
             }
@@ -929,7 +929,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
                 catch (System.OutOfMemoryException e)
@@ -3483,7 +3483,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(),e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return bitmap;
             }
@@ -5548,6 +5548,37 @@ namespace FEBuilderGBA
                 list.Add(v);
             }
             return list.ToArray();
+        }
+
+
+        [DllImport("kernel32.dll")]
+        static extern uint FormatMessage(
+          uint dwFlags, IntPtr lpSource,
+          uint dwMessageId, uint dwLanguageId,
+          StringBuilder lpBuffer, int nSize,
+          IntPtr Arguments);
+        const uint FORMAT_MESSAGE_ALLOCATE_BUFFER = 0x00000100;
+        const uint FORMAT_MESSAGE_IGNORE_INSERTS = 0x00000200;
+        const uint FORMAT_MESSAGE_FROM_SYSTEM = 0x00001000;
+        const uint FORMAT_MESSAGE_ARGUMENT_ARRAY = 0x00002000;
+        const uint FORMAT_MESSAGE_FROM_HMODULE = 0x00000800;
+        const uint FORMAT_MESSAGE_FROM_STRING = 0x00000400;
+
+        //https://www.atmarkit.co.jp/fdotnet/dotnettips/741win32errmsg/win32errmsg.html
+        public static string HRESULTtoString(int errCode) 
+        {
+            StringBuilder message = new StringBuilder(1024);
+
+            FormatMessage(
+              FORMAT_MESSAGE_FROM_SYSTEM,
+              IntPtr.Zero,
+              (uint)errCode,
+              0,
+              message,
+              message.Capacity,
+              IntPtr.Zero);
+
+            return message.ToString();
         }
     }
 }

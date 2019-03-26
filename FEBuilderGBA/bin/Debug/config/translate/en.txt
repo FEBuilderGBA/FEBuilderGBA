@@ -3046,8 +3046,8 @@ Automatic patch adaptation failed.\r\nPlease check whether an error is displayed
 :FEditorシリアライズ形式|*.bin|バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.bin|All files|*
 FEditor Serialized format|*.bin|Battle animation There is a comment|*.txt|Battle animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.bin|All files|*
 
-:FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
-FEditor Serialized format|*.bin|FEditor Serialized format(WildCard)|*|Battle animation|*.txt|All files|*
+:戦闘アニメ|*.bin;*.txt|FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
+Battle Animation|*.bin;*.txt|FEditor Serialized format|*.bin|FEditor Serialized format(WildCard)|*|Battle animation|*.txt|All files|*
 
 :現在他の処理中です
 Other processing is currently in progress.
@@ -8925,6 +8925,12 @@ Searching
 
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
 Incompatible ROM.\r\ngameversion = {0}\r\nSize = {1}
+
+:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}
+GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, please send report7z.\r\nErrorCode: {0} {1}.\r\nMessage :.\r\n{2}.\r\n3}.
+
+:System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
 
 :警告
 Alert

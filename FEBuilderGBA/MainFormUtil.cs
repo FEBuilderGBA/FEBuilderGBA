@@ -1027,48 +1027,55 @@ namespace FEBuilderGBA
 
             U.CRC32 crc32 = new U.CRC32();
 
-            string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
-            for (int i = 0; i < files.Length; i++)
+            try
             {
-                string filename = Path.GetFileName(files[i]);
-                if (filename.IndexOf(".backup.") > 0)
+                string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
+                for (int i = 0; i < files.Length; i++)
                 {
-                    continue;
-                }
-                if (filename.IndexOf(".emulator.") > 0)
-                {
-                    continue;
-                }
-                if (filename.IndexOf(".emulator2.") > 0)
-                {
-                    continue;
-                }
-                if (filename.IndexOf(".sappy.") > 0)
-                {
-                    continue;
-                }
-                if (filename.IndexOf(".binary_editor.") > 0)
-                {
-                    continue;
-                }
+                    string filename = Path.GetFileName(files[i]);
+                    if (filename.IndexOf(".backup.") > 0)
+                    {
+                        continue;
+                    }
+                    if (filename.IndexOf(".emulator.") > 0)
+                    {
+                        continue;
+                    }
+                    if (filename.IndexOf(".emulator2.") > 0)
+                    {
+                        continue;
+                    }
+                    if (filename.IndexOf(".sappy.") > 0)
+                    {
+                        continue;
+                    }
+                    if (filename.IndexOf(".binary_editor.") > 0)
+                    {
+                        continue;
+                    }
 
-                if (U.GetFileSize(files[i]) != orignal_size)
-                {
-                    continue;
-                }
+                    if (U.GetFileSize(files[i]) != orignal_size)
+                    {
+                        continue;
+                    }
 
-                byte[] file = File.ReadAllBytes(files[i]);
-                if (U.getASCIIString(file, 0xAC, 6) != orignal_header)
-                {
-                    continue;
+                    byte[] file = File.ReadAllBytes(files[i]);
+                    if (U.getASCIIString(file, 0xAC, 6) != orignal_header)
+                    {
+                        continue;
+                    }
+                    uint crc = crc32.Calc(file);
+                    if (crc != orignal_crc32)
+                    {
+                        continue;
+                    }
+                    //発見!
+                    return files[i];
                 }
-                uint crc = crc32.Calc(file);
-                if (crc != orignal_crc32)
-                {
-                    continue;
-                }
-                //発見!
-                return files[i];
+            }
+            catch (System.UnauthorizedAccessException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
             }
 
             //ない

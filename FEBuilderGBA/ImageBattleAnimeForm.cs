@@ -605,7 +605,7 @@ namespace FEBuilderGBA
            else
            {
                string title = R._("開くファイル名を選択してください");
-               string filter = R._("FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*");
+               string filter = R._("戦闘アニメ|*.bin;*.txt|FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*");
 
                OpenFileDialog open = new OpenFileDialog();
                open.Title = title;

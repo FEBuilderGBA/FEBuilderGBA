@@ -1644,8 +1644,35 @@ namespace FEBuilderGBA
                 }
             }
         }
-
         public static void ExportBattleAnime(string filehint //もっと詳しい情報 01 ロード 槍 みたいなの
+            , bool enableComment //コメントを出すかどうか
+            , string filename    //書き込むファイル名
+            , uint sectionData
+            , uint frameData
+            , uint rightToLeftOAM
+            , uint palettes
+            , int palette_count)
+        {
+            try
+            {
+                ExportBattleAnimeLow(filehint //もっと詳しい情報 01 ロード 槍 みたいなの
+                    , enableComment //コメントを出すかどうか
+                    , filename    //書き込むファイル名
+                    , sectionData
+                    , frameData
+                    , rightToLeftOAM
+                    , palettes
+                    , palette_count
+                    );
+            }
+            catch (System.Runtime.InteropServices.ExternalException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
+            }
+        }
+
+
+        static void ExportBattleAnimeLow(string filehint //もっと詳しい情報 01 ロード 槍 みたいなの
             , bool enableComment //コメントを出すかどうか
             , string filename    //書き込むファイル名
             , uint sectionData
@@ -1982,6 +2009,34 @@ namespace FEBuilderGBA
             , int palette_count
             )
         {
+            try
+            {
+                ExportBattleAnimeGIFLow(
+                          filename    //書き込むファイル名
+                        , sectionDataIndex
+                        , sectionData
+                        , frameData
+                        , rightToLeftOAM
+                        , palettes
+                        , palette_count
+                    );
+            }
+            catch (System.Runtime.InteropServices.ExternalException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
+            }
+        }
+
+        static void ExportBattleAnimeGIFLow(
+              string filename    //書き込むファイル名
+            , uint sectionDataIndex
+            , uint sectionData
+            , uint frameData
+            , uint rightToLeftOAM
+            , uint palettes
+            , int palette_count
+            )
+        {
 
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
             uint frameData_offset = U.toOffset(frameData);     //画像をどう切り出すかを提起したデータ
@@ -2235,8 +2290,28 @@ namespace FEBuilderGBA
             }
             return null;
         }
-
         public static string ImportBattleAnime(string filename
+            , uint battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
+            , uint top_battleanime_baseaddress
+            , uint bottum_battleanime_baseaddress
+            )
+        {
+            try
+            {
+                return 
+                    ImportBattleAnimeLow(filename
+                    , battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
+                    , top_battleanime_baseaddress
+                    , bottum_battleanime_baseaddress
+                    );
+            }
+            catch (System.Runtime.InteropServices.ExternalException e)
+            {
+                return R.ExceptionToString(e);
+            }
+        }
+
+        static string ImportBattleAnimeLow(string filename
             , uint battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
             , uint top_battleanime_baseaddress
             , uint bottum_battleanime_baseaddress
@@ -2779,9 +2854,40 @@ namespace FEBuilderGBA
             }
             return "";
         }
-
         //java シリアライズみたいな形式で取得
         public static void ExportBattleAnimeOnFEditorSerialize(
+              string filename    //書き込むファイル名
+            , uint hintData
+            , uint sectionData
+            , uint frameData
+            , uint rightToLeftOAM
+            , uint leftToRightOAM
+            , uint palettes
+            , int palette_count
+            )
+        {
+            try
+            {
+                ExportBattleAnimeOnFEditorSerializeLow(
+                      filename    //書き込むファイル名
+                    , hintData
+                    , sectionData
+                    , frameData
+                    , rightToLeftOAM
+                    , leftToRightOAM
+                    , palettes
+                    , palette_count
+                    );
+            }
+            catch (System.Runtime.InteropServices.ExternalException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
+            }
+        }
+
+
+        //java シリアライズみたいな形式で取得
+        static void ExportBattleAnimeOnFEditorSerializeLow(
               string filename    //書き込むファイル名
             , uint hintData
             , uint sectionData
@@ -2939,9 +3045,31 @@ namespace FEBuilderGBA
             File.WriteAllBytes(filename, binData.ToArray());
             return;
         }
-
         //FE Editorの java シリアライズされたバトルアニメの読み込み
         public static string ImportBattleAnimeOnFEditorSerialize(string filename
+            , uint battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
+            , uint top_battleanime_baseaddress
+            , uint bottum_battleanime_baseaddress
+            )
+        {
+            try
+            {
+                return 
+                    ImportBattleAnimeOnFEditorSerializeLow( filename
+                    , battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
+                    , top_battleanime_baseaddress
+                    , bottum_battleanime_baseaddress
+                    );
+            }
+            catch (System.Runtime.InteropServices.ExternalException e)
+            {
+                return R.ExceptionToString(e);
+            }
+        }
+
+
+        //FE Editorの java シリアライズされたバトルアニメの読み込み
+        static string ImportBattleAnimeOnFEditorSerializeLow(string filename
             , uint battleanime_baseaddress   //戦闘アニメの書き換えるアドレス
             , uint top_battleanime_baseaddress
             , uint bottum_battleanime_baseaddress
