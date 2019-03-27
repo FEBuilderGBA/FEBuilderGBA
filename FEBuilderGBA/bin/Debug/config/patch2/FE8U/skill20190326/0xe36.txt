@@ -1,0 +1,2 @@
+Bowbreaker: +50 Hit/Avo when[N]
+enemy has a bow equipped.[X]

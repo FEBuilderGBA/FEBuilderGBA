@@ -1543,6 +1543,7 @@ namespace FEBuilderGBA
                 }
 
                 Program.Undo.Push(undodata);
+                ClearCheckIF();
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
 
@@ -1901,6 +1902,7 @@ namespace FEBuilderGBA
                     }
                 }
                 Program.Undo.Push(undodata);
+                ClearCheckIF();
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
 
@@ -2066,6 +2068,7 @@ namespace FEBuilderGBA
                     Program.ROM.write_range(addr, value, undodata);
                 }
                 Program.Undo.Push(undodata);
+                ClearCheckIF();
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
 
@@ -2947,6 +2950,7 @@ namespace FEBuilderGBA
                 }
 
                 Program.Undo.Push(undodata);
+                ClearCheckIF();
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
 
@@ -3107,6 +3111,7 @@ namespace FEBuilderGBA
                     }
 
                     Program.Undo.Push(undodata);
+                    ClearCheckIF();
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
                     U.ReSelectList(this.PatchList);
 
@@ -4373,7 +4378,6 @@ namespace FEBuilderGBA
             Debug.Assert(type == "EA");
 
             List<BinMapping> binMappings = new List<BinMapping>();
-
             string dir = Path.GetDirectoryName(patch.PatchFileName);
             string[] files = Directory.GetFiles(dir, "*.event", SearchOption.AllDirectories);
 
@@ -6446,7 +6450,48 @@ namespace FEBuilderGBA
 
         }
 #endif
-        bool UnInstallPatch(PatchSt patch , bool isAutomatic)
+        void AppnedInstallMapping(PatchSt patch, List<BinMapping> binmap)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string addrstring = U.at(sp, 1);
+                string value = pair.Value;
+
+                if (!(key == "PATCHED_IF" || key == "IF" || key == "PATCHED_IFNOT" || key == "IFNOT"))
+                {
+                    continue;
+                }
+
+                uint address = convertBinAddressString(addrstring, 0, 0x100, basedir);
+                if (address == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                string[] args = value.Split(' ');
+                byte[] need = new byte[args.Length];
+                for (int i = 0; i < args.Length; i++)
+                {
+                    need[i] = (byte)U.atoi0x(args[i]);
+                }
+
+                BinMapping bm = new BinMapping();
+                bm.length = (uint)need.Length;
+                bm.bin = need;
+                bm.mask = new bool[need.Length];
+                bm.filename = key;
+                bm.addr = address;
+                bm.type = Address.DataTypeEnum.BIN;
+                bm.key = key;
+                binmap.Add(bm);
+            }
+        }
+
+
+        bool UnInstallPatch(PatchSt patch, bool isAutomatic)
         {
             string type = U.at(patch.Param, "TYPE");
             if (type != "BIN" && type != "EA")
@@ -6455,6 +6500,7 @@ namespace FEBuilderGBA
                 return false;
             }
             List<BinMapping> binmap = TracePatchedMapping(patch);
+            AppnedInstallMapping(patch, binmap);
 
             //パッチを含んでいないファイルを提示してもらう.
             PatchFormUninstallDialogForm f = (PatchFormUninstallDialogForm)InputFormRef.JumpFormLow<PatchFormUninstallDialogForm>();
@@ -6483,6 +6529,7 @@ namespace FEBuilderGBA
                     return false;
                 }
                 Program.Undo.Push(undodata);
+                ClearCheckIF();
                 Program.ReLoadSetting();
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
 
@@ -6811,24 +6858,53 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+
                 pleaseWait.DoEvents(R._("ポインタ更新しています。{0}: {1}->{2}",name,oldaddr,newaddr));
-                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr);
+                if (oldaddr == newaddr)
+                {
+                    continue;
+                }
+
+                //何度も探索す るので本当はよくないが面倒なので気にしないことにした.
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
-                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
+                    if (U.IsValueOdd(oldValue))
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
+                    }
+                    else
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    }
+
+                    
                 }
                 //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1); //Thumb
+                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1 ,isSilent: true ); //Thumb
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
-                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
+                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
+                    if (U.IsValueOdd(oldValue))
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr | 1), undodata);
+                    }
+                    else
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    }
+                    
                 }
             }
+            
             Program.Undo.Push(undodata);
+            ClearCheckIF();
             Program.ReLoadSetting();
+            Debug.Assert(Program.ROM.u32(0xB64E6C) == 0x08B6097D);
+
         }
 
         PatchSt GetUpdatePatch(PatchSt patch,out string out_error)
@@ -6937,20 +7013,28 @@ namespace FEBuilderGBA
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
                 if (File.Exists(SkillAssignmentClassSkillSystem))
                 {
+                    
                     SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
                     File.Delete(SkillAssignmentClassSkillSystem);
+                    
                 }
                 if (File.Exists(SkillAssignmentUnitSkillSystem))
                 {
+                    
                     SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
                     File.Delete(SkillAssignmentUnitSkillSystem);
+                    
                 }
                 if (File.Exists(SkillConfigSkillSystem))
                 {
+                    
                     SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
                     File.Delete(SkillConfigSkillSystem);
+                    
                 }
+                
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
+                
             }
             else
             {
@@ -7021,28 +7105,36 @@ namespace FEBuilderGBA
                         return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
                     }
                 }
+                ClearCheckIF();
                 Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
                     foreach (var p in dependsList)
                     {
+                        
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
+                        
                     }
 
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
+                        
                         ImportPatchAll(p, tempdir.Dir);
+                        
                     }
                 }
 
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
+                    
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
+                    
                 }
             }
 
+            
             return "";
         }
 
@@ -7064,6 +7156,7 @@ namespace FEBuilderGBA
                 R.ShowStopError(error);
                 return;
             }
+            ClearCheckIF();
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
             U.ReSelectList(this.PatchList);
 

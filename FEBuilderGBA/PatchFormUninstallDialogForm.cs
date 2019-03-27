@@ -23,9 +23,10 @@ namespace FEBuilderGBA
         bool IsAutomatic; //自動でアンインストールを開始する.
         public void Init(List<PatchForm.BinMapping> binmap)
         {
-            this.TargetBinMAP = binmap;
             this.IsAutomatic = true;
+            this.TargetBinMAP = binmap;
         }
+
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)
         {
@@ -65,10 +66,13 @@ namespace FEBuilderGBA
                 byte[] rom = MainFormUtil.OpenROMToByte(
                       filename
                     , this.FindBackup.OrignalFilename);
-                if (!SearchNotContainThisPatchBy(rom))
+                if (!IsOrignalROM(rom))
                 {
-                    R.ShowStopError("このROMはアンインストール対象のパッチを含んでいるので利用できません。");
-                    return;
+                    if (SearchContainThisPatchBy(rom))
+                    {
+                        R.ShowStopError("このROMはアンインストール対象のパッチを含んでいるので利用できません。");
+                        return;
+                    }
                 }
             }
             //利用できるらしい.
@@ -106,46 +110,63 @@ namespace FEBuilderGBA
             {
                 return this.FindBackup.OrignalFilename;
             }
-            for (int i = 0; i < this.FindBackup.Files.Count; i++)
+
+            int i = BinarySearchNotContainThisPatch(pleaseWait , 0 , this.FindBackup.Files.Count);
+            if (i >= 0)
             {
-                pleaseWait.DoEvents(R._("パッチを含まないバックアップを探索中。進捗:{1}/{2} {0}"
-                    , Path.GetFileName(this.FindBackup.Files[i].FilePath)
-                    , i, this.FindBackup.Files.Count));
+                return this.FindBackup.Files[i].FilePath;
+            }
+            return this.FindBackup.OrignalFilename;
+        }
+        int BinarySearchNotContainThisPatch(InputFormRef.AutoPleaseWait pleaseWait, int imin, int imax )
+        {
+            if (imax <= imin)
+            {//見つからない
+                return -1;
+            }
+            int imid = imin + (imax - imin) / 2;
 
-                if (this.FindBackup.OrignalFilename == this.FindBackup.Files[i].FilePath)
-                {//無改造ROMなので無条件にOK
-                    return this.FindBackup.Files[i].FilePath;
-                }
+            pleaseWait.DoEvents(R._("パッチを含まないバックアップを探索中。進捗:{1}/{2} {0}"
+                , Path.GetFileName(this.FindBackup.Files[imid].FilePath)
+                , imid, this.FindBackup.Files.Count));
 
-                byte[] rom = MainFormUtil.OpenROMToByte(
-                     this.FindBackup.Files[i].FilePath
-                    ,this.FindBackup.OrignalFilename);
-                if (rom.Length <= 0)
-                {//このバックアップは壊れている!
-                    continue;
-                }
-
-                if (SearchNotContainThisPatchBy(rom))
-                {
-                    return this.FindBackup.Files[i].FilePath;
+            byte[] rom = MainFormUtil.OpenROMToByte(
+                    this.FindBackup.Files[imid].FilePath
+                , this.FindBackup.OrignalFilename);
+            if (rom.Length <= 0)
+            {//このバックアップは壊れている!
+            }
+            else
+            {
+                if (!SearchContainThisPatchBy(rom))
+                {//このROMは、差分を含んでいないので利用可能
+                 //ただし、もっと新しいバージョンがあるかもしれないのでさらに探索.
+                    int prev = BinarySearchNotContainThisPatch(pleaseWait, imin , imid - 1);
+                    if (prev < 0 || prev > imid)
+                    {//前方にない場合は、自分が発見したものを返す.
+                        return imid;
+                    }
+                    return prev;
                 }
             }
 
-            return this.FindBackup.OrignalFilename;
+            //未発見なので、後方へ検索する
+            return BinarySearchNotContainThisPatch(pleaseWait, imid + 1, imax);
+        }
+        bool IsOrignalROM(byte[] rom)
+        {
+            uint orignal_crc32 = Program.ROM.RomInfo.orignal_crc32();
+            U.CRC32 crc32 = new U.CRC32();
+            if (orignal_crc32 == crc32.Calc(rom))
+            {//無改造ROM
+                return true;
+            }
+            return false;
         }
 
         //このROMはパッチを含んでいませんか?
-        bool SearchNotContainThisPatchBy(byte[] rom)
+        bool SearchContainThisPatchBy(byte[] rom)
         {
-            {
-                uint orignal_crc32 = Program.ROM.RomInfo.orignal_crc32();
-                U.CRC32 crc32 = new U.CRC32();
-                if (orignal_crc32 == crc32.Calc(rom))
-                {//無改造ROM
-                    return false;
-                }
-            }
-
             uint limit = (uint)rom.Length;
             for (int i = 0; i < this.TargetBinMAP.Count; i++)
             {
@@ -162,12 +183,12 @@ namespace FEBuilderGBA
                 byte[] bin = U.getBinaryData(rom, t.addr, length);
                 if (U.memcmp(bin, t.bin) == 0)
                 {//含んでいる
-                    return false;
+                    return true;
                 }
             }
 
             //含んでいない
-            return true;
+            return false;
         }
 
 
