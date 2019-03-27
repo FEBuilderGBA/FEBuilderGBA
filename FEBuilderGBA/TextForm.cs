@@ -208,7 +208,15 @@ namespace FEBuilderGBA
                     error.AppendLine(tb.Error + "\r\n --> " + tb.SrcText + "\r\n");
                 }
             }
-            if (error.Length == 0)
+
+            bool isSystemReserve = IsSystemReserve((uint)this.AddressList.SelectedIndex);
+            if (error.Length == 0 && isSystemReserve && this.SimpleList.Count == 0)
+            {//空いているけど予約されているので使わないでくださいという表示
+                this.DetailErrorMessageBox.ErrorMessage = "";
+                this.DetailErrorMessageBox.Text = R._("この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。");
+                this.DetailErrorMessageBox.Show();
+            }
+            else if (error.Length == 0)
             {
                 this.DetailErrorMessageBox.Hide();
             }
@@ -218,6 +226,30 @@ namespace FEBuilderGBA
                 this.DetailErrorMessageBox.Text = error.ToString();
                 this.DetailErrorMessageBox.Show();
             }
+        }
+
+        //システム予約
+        public static bool IsSystemReserve(uint textid)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    if (textid >= 0xE00 && textid <= 0xEFF)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    if (textid >= 0xE00 && textid <= 0xFFF)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr, bool useUnHuffmanPatch)

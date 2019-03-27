@@ -613,6 +613,7 @@ EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 (LearnSkill)[YY:SKILL:SkillID]	{UNIT}
 
 EXPORT:1=skillGetter.dmp	Skill_Getter
+EXPORT:2=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
 
 DEPRECATED=1
 UPDATE_PATCH=..\skill20190326\PATCH_Skill20190326.txt

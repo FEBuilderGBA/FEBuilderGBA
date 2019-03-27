@@ -1542,8 +1542,8 @@ namespace FEBuilderGBA
                     throw new SyntaxException(R.Error("更新するべきデータがありません keyword:{0}", keyword));
                 }
 
-                Program.Undo.Push(undodata);
                 ClearCheckIF();
+                Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
 
@@ -1901,8 +1901,8 @@ namespace FEBuilderGBA
                         Program.ROM.write_u32(addr, (uint)AddrValue.Value, undodata);
                     }
                 }
-                Program.Undo.Push(undodata);
                 ClearCheckIF();
+                Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
 
@@ -2067,8 +2067,8 @@ namespace FEBuilderGBA
                     addr = U.toOffset(U.atoi0x(address_sp[i]));
                     Program.ROM.write_range(addr, value, undodata);
                 }
-                Program.Undo.Push(undodata);
                 ClearCheckIF();
+                Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
 
@@ -2949,8 +2949,8 @@ namespace FEBuilderGBA
                     throw; //再送
                 }
 
-                Program.Undo.Push(undodata);
                 ClearCheckIF();
+                Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
 
@@ -3110,8 +3110,8 @@ namespace FEBuilderGBA
                         throw; //再送
                     }
 
-                    Program.Undo.Push(undodata);
                     ClearCheckIF();
+                    Program.Undo.Push(undodata);
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
                     U.ReSelectList(this.PatchList);
 
@@ -6528,8 +6528,8 @@ namespace FEBuilderGBA
                     R.ShowStopError("アンインストールに失敗しました.\r\n\r\n{0}", error);
                     return false;
                 }
-                Program.Undo.Push(undodata);
                 ClearCheckIF();
+                Program.Undo.Push(undodata);
                 Program.ReLoadSetting();
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
 
@@ -6899,11 +6899,10 @@ namespace FEBuilderGBA
                     
                 }
             }
-            
-            Program.Undo.Push(undodata);
+
             ClearCheckIF();
+            Program.Undo.Push(undodata);
             Program.ReLoadSetting();
-            Debug.Assert(Program.ROM.u32(0xB64E6C) == 0x08B6097D);
 
         }
 
