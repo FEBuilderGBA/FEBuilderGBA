@@ -34,7 +34,7 @@
 @0012	文字列を普通の速度で表示する[NormalPrint]	{SPEED}
 @0013	文字列を早く表示する[FastPrint]	{SPEED}
 @0014	口パクを早くする[CloseSpeechFast]	{CHOOSE}
-@0015	口パクを遅くする[CloseSpeechSlow]	{CHOOSE}
+@0015	口パクを遅くする。吹き出しを消す効果もあり[CloseSpeechSlow]	{CHOOSE}
 @0016	口の動きのオンフオ[ToggleMouthMove]	{TOGGLE}
 @0017	笑顔のオンフオ[ToggleSmile]	{TOGGLE}
 @0018	選択子Yes[Yes]	{CHOOSE}

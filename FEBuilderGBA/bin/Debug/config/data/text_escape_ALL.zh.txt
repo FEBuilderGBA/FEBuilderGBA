@@ -34,7 +34,7 @@
 @0012	以正常速度显示字符串[NormalPrint]	{SPEED}
 @0013	快速显示字符串[FastPrint]	{SPEED}
 @0014	加油口[CloseSpeechFast]	{CHOOSE}
-@0015	慢喉舌[CloseSpeechSlow]	{CHOOSE}
+@0015	慢喉舌。放出气球也有效果。[CloseSpeechSlow]	{CHOOSE}
 @0016	口腔运动[ToggleMouthMove]	{TOGGLE}
 @0017	在Huo上微笑[ToggleSmile]	{TOGGLE}
 @0018	选择器是[是]	{CHOOSE}
