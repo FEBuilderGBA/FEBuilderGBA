@@ -1265,7 +1265,7 @@ r3=X tile position of menu of the right	{U}
 @ChapterData@00	word	Clock
 @ChapterData@04	word	Unk4
 @ChapterData@08	word	Money
-@ChapterData@0C	byte	SaveBonusClaimFlags
+@ChapterData@0C	byte	saveSlotIndex
 @ChapterData@0D	byte	Vision Range	(0 if there's no fog)
 @ChapterData@0E	byte	Chapter ID
 @ChapterData@0F	byte	Phase	(0x0=player, 0x40=allied, 0x80=enemy)
@@ -1274,14 +1274,25 @@ r3=X tile position of menu of the right	{U}
 @ChapterData@13	byte	Cursor y position	(only when displaying a menu?)
 @ChapterData@14	byte	Chapter Stuff	&01=Stat screen page 1 (Inventory) (0=stats) (these are set after backing out of the stat menu)	&02=Stat screen page 2 (Difficulty)	&10=Set when on prep screen	&40=Set for hard mode	&80=Don't gain weapon exp (not sure what this is for)
 @ChapterData@15	byte	Weather	(0=clear, 1=snow, 2=snowstorm, 4=rain) (funnily enough, if non-zero, arena battles take support bonuses into account)
-@ChapterData@16	short	Number of support points gained this chapter?
-@ChapterData@18	short	Unk18
-@ChapterData@1A	byte	Unk1a
+@ChapterData@16	short	Support Gain Total
+@ChapterData@18	short	playthroughId
+@ChapterData@1A	byte	lastUnitListSortType
 @ChapterData@1B	byte	Mode	(1=prologue-8, 2=Eirika 3=Ephraim)
+@ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
+@ChapterData@20	byte	tactician name(0x20-0x2B)
+@ChapterData@2B	word	tactician name term 0x00
+@ChapterData@2C	word	unk2C
+@ChapterData@30	word	fundsTotalDifference
+@ChapterData@34	word	unk34
+@ChapterData@38	short	padding_38
 @ChapterData@40	byte	Option1	 &02=Terrain window (set=off, not set=on)  &04=Unit window (set=burst, not set=panel) &08=Unit window (set=off, not set=panel)  &10=Autocursor (set=off, not set=on)
 &20=Text speed (set=normal, not set=slow)  &40=Text speed (set=fast, not set=slow, set + 0x20 also set=max)  &80=Game speed (set=fast, not set=normal)
 @ChapterData@41	byte	Option2	&01=Music (set=off, not set=on) &02=Sound effects (set=off, not set=on) &04=Window color (set=orange, not set=blue) &08=Window color (set=green, not set=blue, set + 0x08 also set=black) &10=Something about displaying B/W/L on the stat screen &40=Autoend turns (set=off, not set=on) &80=Subtitle help (set=off, not set=on)
 @ChapterData@42	byte	Option3	&01=Show objective (set=off, not set=on) &02=Combat animations off (if both 2 and 4 are set, combat animations are on with backgrounds on) &04=Combat animations solo (if both 2 and 4 are not set, combat animations are on with backgrounds off) &08=Combat info window (set=detail, not set=strat) &10=Combat info window (set=off, not set=strat)
+@ChapterData@43	byte	Unk43
+@ChapterData@44	word	Unk44
+@ChapterData@48	short	Unk48
+@ChapterData@4A	short	Unk4A
 @CharacterBattleStatistic@00	byte	Losses
 @CharacterBattleStatistic@01	short	Number of times a unit performs an action (seems to increase by 2) (non-aligned halfword)
 @CharacterBattleStatistic@03	byte	Number of times selected (caps at 199)
