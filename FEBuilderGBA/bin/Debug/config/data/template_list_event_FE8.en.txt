@@ -12,6 +12,7 @@ template_event_COND_FLAG_ON_FE8.txt	If the flag 0x0A is ON.
 template_event_COND_FLAG_OFF_FE8.txt	If flag 0x0A is OFF.
 template_event_COND_HARDMODE_FE8.txt	If HardMode
 template_event_COND_HARDMODE_OR_ELSE_FE8.txt	If HardMode or else
+template_event_COND_DEPLOY_FE8.txt	If Unit is deployed
 template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show the frame on the unit to display the conversation
 template_event_MOVEPOS_AND_FRAME_FE8.txt	Move the camera to the coordinates, Show the frame in the coordinates to display the conversation
 template_event_TalkEventItem_FE8.txt	Talk and make items

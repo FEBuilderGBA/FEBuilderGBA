@@ -12,6 +12,7 @@ template_event_COND_FLAG_ON_FE8.txt	もし、フラグ0x0AがONであれば
 template_event_COND_FLAG_OFF_FE8.txt	もし、フラグ0x0AがOFFであれば
 template_event_COND_HARDMODE_FE8.txt	もし、ハードモードならば
 template_event_COND_HARDMODE_OR_ELSE_FE8.txt	もし、ハードモードならば、またはそれ以外ならば
+template_event_COND_DEPLOY_FE8.txt	もし、マップに配置されていれば
 template_event_MOVEPOS_AND_FRAME_FE8.txt	カメラを座標に移動させ、座標に枠を点灯させて会話を表示
 template_event_MOVEUNIT_AND_FRAME_FE8.txt	ユニットに枠を点灯させて会話を表示
 template_event_TalkEventItem_FE8.txt	会話してアイテム入手

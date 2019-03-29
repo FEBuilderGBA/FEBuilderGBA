@@ -4407,3 +4407,20 @@
 0809B1C4	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{U}
 0809ED34	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}
 080178B4	GetROMItemStructPtr	{J}
+//This data is made with the aim of being readable by machine fast.
+@ChapterData@00	word	Clock
+@ChapterData@04	word	Unk4
+@ChapterData@0C	byte	saveSlotIndex
+@ChapterData@18	short	playthroughId
+@ChapterData@1A	byte	lastUnitListSortType
+@ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
+@ChapterData@20	byte	Master's name tactician name (0x20-0x2B).
+@ChapterData@2B	word	tactician name term 0x00
+@ChapterData@2C	word	unk2C
+@ChapterData@30	word	fundsTotalDifference
+@ChapterData@34	word	unk34
+@ChapterData@38	short	padding_38
+@ChapterData@43	byte	Unk43
+@ChapterData@44	word	Unk44
+@ChapterData@48	short	Unk48
+@ChapterData@4A	short	Unk4A

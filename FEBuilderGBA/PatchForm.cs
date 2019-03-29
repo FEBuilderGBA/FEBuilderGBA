@@ -6940,7 +6940,7 @@ namespace FEBuilderGBA
             out_error = "";
             return new_patchSt;
         }
-        void MakeDependsPatchList(List<PatchSt> dependsList, PatchSt patch)
+        void MakeDependsPatchList(List<PatchSt> dependsList, PatchSt patch, string UPDATE_DEPENDS = "UPDATE_DEPENDS")
         {
             dependsList.Add(patch);
 
@@ -6949,7 +6949,7 @@ namespace FEBuilderGBA
             {
                 string[] sp = pair.Key.Split(':');
                 string key = sp[0];
-                if (key != "UPDATE_DEPENDS")
+                if (key != UPDATE_DEPENDS)
                 {
                     continue;
                 }
@@ -6973,7 +6973,7 @@ namespace FEBuilderGBA
                 }
 
                 //このパッチもアップデート
-                Log.Debug("UPDATE_DEPENDS", depends_patchSt.PatchFileName);
+                Log.Debug(UPDATE_DEPENDS, depends_patchSt.PatchFileName);
                 MakeDependsPatchList(dependsList, depends_patchSt);
             }
         }
@@ -7065,7 +7065,11 @@ namespace FEBuilderGBA
             List<PatchSt> dependsList = new List<PatchSt>();
             //新しくインストールしたパッチのリスト
             List<PatchSt> newInstallPatchList = new List<PatchSt>();
-            MakeDependsPatchList(dependsList, patch);
+            //アンインストールだけをするパッチのリストを作成する.
+            List<PatchSt> uninstallOnlyList = new List<PatchSt>();
+
+            MakeDependsPatchList(dependsList, patch, "UPDATE_DEPENDS");
+            MakeDependsPatchList(uninstallOnlyList, patch, "UPDATE_UNINSTALL");
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
@@ -7075,6 +7079,14 @@ namespace FEBuilderGBA
                     foreach (var p in dependsList)
                     {
                         ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction, p);
+                    }
+                }
+                foreach (var p in uninstallOnlyList)
+                {
+                    bool r = UnInstallPatch(p, true);
+                    if (!r)
+                    {
+                        return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", p.PatchFileName);
                     }
                 }
                 foreach (var p in dependsList)
