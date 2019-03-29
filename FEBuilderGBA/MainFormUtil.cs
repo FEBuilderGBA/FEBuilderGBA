@@ -41,7 +41,7 @@ namespace FEBuilderGBA
             string ext = U.GetFilenameExt(romfilename);
             if (ext == ".UPS")
             {
-                ToolUPSOpenSimpleForm ups = new ToolUPSOpenSimpleForm();
+                ToolUPSOpenSimpleForm ups = (ToolUPSOpenSimpleForm)InputFormRef.JumpFormLow<ToolUPSOpenSimpleForm>();
                 ups.OpenUPS(romfilename, useReOpen, forceversion);
                 ups.ShowDialog();
 
@@ -49,7 +49,7 @@ namespace FEBuilderGBA
             }
             else if (ext == ".REBUILD")
             {
-                ToolROMRebuildOpenSimpleForm ROMRebuild = new ToolROMRebuildOpenSimpleForm();
+                ToolROMRebuildOpenSimpleForm ROMRebuild = (ToolROMRebuildOpenSimpleForm)InputFormRef.JumpFormLow<ToolROMRebuildOpenSimpleForm>();
                 ROMRebuild.OpenROMRebuild(romfilename, useReOpen, forceversion);
                 ROMRebuild.ShowDialog();
 
