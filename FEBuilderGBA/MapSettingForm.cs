@@ -21,6 +21,13 @@ namespace FEBuilderGBA
             U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref L_19_COMBO , true);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            uint shinan = InputFormRef.SearchShinanTablePatch();
+            if (shinan != U.NOT_FOUND)
+            {
+                InputFormRef.markupJumpLabel(X_JUMP_SHINAN);
+                X_JUMP_SHINAN.Show();
+            }
         }
         private void MapSettingForm_Load(object sender, EventArgs e)
         {
@@ -756,6 +763,33 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112,114,136,138 });
+        }
+
+        private void X_JUMP_SHINAN_Click(object sender, EventArgs e)
+        {
+            uint shinan = InputFormRef.SearchShinanTablePatch();
+            if (shinan == U.NOT_FOUND)
+            {
+                return;
+            }
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+            uint selected = (uint)this.AddressList.SelectedIndex;
+            uint addr = shinan + (selected * 4);
+            if ( !U.isSafetyOffset(addr) )
+            {
+                return;
+            }
+            uint eventAddr = Program.ROM.p32(addr);
+            if ( !U.isSafetyOffset(eventAddr))
+            {
+                return;
+            }
+
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
+            f.JumpTo(eventAddr);
         }
 
     }

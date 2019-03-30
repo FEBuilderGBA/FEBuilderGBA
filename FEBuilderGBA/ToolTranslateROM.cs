@@ -20,8 +20,8 @@ namespace FEBuilderGBA
         uint MaxTextCount;
         uint TextBaseAddress;
         bool UseGoolgeTranslate;
-        
-        void WriteText(uint id,string text)
+
+        void WriteText(uint id, string text, Undo.UndoData undodata)
         {
             //無効なID
             if (id <= 0)
@@ -42,7 +42,8 @@ namespace FEBuilderGBA
                 TextForm.WriteText(this.TextBaseAddress
                     , this.MaxTextCount
                     , id
-                    , writetext);
+                    , writetext
+                    , undodata);
                 return;
             }
             if (!U.isSafetyPointer(id))
@@ -57,14 +58,13 @@ namespace FEBuilderGBA
                 Log.Error("ポインタではありません", id.ToString(), text);
                 return;
             }
-            uint new_textpointer = CStringForm.WriteCString(text_pointer, writetext);
+            uint new_textpointer = CStringForm.WriteCString(text_pointer, writetext, undodata);
             if (new_textpointer == U.NOT_FOUND)
             {
                 return;
             }
 
-            Program.Undo.Push("CSTRING_P",p_text_pointer,4);
-            Program.ROM.write_p32(p_text_pointer, new_textpointer);
+            Program.ROM.write_p32(p_text_pointer, new_textpointer, undodata);
         }
         void ApplyAntiHuffmanPatch()
         {
@@ -106,7 +106,9 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(self, "", open);
             string filename = open.FileNames[0];
 
+
             ImportAllText(self, filename);
+            
         }
 
         public void ImportAllText(Form self,string filename)
@@ -114,6 +116,8 @@ namespace FEBuilderGBA
             //少し時間がかかるので、しばらくお待ちください表示.
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {
+                Undo.UndoData undodata = Program.Undo.NewUndoData("ImportAllText" + Path.GetFileName(filename)　);
+
                 uint id = U.NOT_FOUND;
                 string text = "";
                 string[] lines = File.ReadAllLines(filename);
@@ -139,7 +143,7 @@ namespace FEBuilderGBA
 
                     //次の数字があったので、現在のテキストの書き込み.
                     pleaseWait.DoEvents("Write:" + U.To0xHexString(id));
-                    WriteText(id, text);
+                    WriteText(id, text, undodata);
 
                     //次のテキスト
                     id = U.atoh(U.substr(line, 1));
@@ -147,7 +151,9 @@ namespace FEBuilderGBA
                 }
 
                 //最後のデータ
-                WriteText(id, text);
+                WriteText(id, text, undodata);
+
+                Program.Undo.Push(undodata);
             }
         }
 

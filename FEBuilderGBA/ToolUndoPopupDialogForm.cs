@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         public void Init(string version)
         {
             FormIcon.Image = SystemIcons.Question.ToBitmap();
-            Info.Text = R._("このバージョン({{0}})に戻してもよろしいですか？");
+            Info.Text = R._("このバージョン({0})に戻してもよろしいですか？",version);
         }
 
         private void TestPlayButton_Click(object sender, EventArgs e)

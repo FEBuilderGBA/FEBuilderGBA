@@ -4736,6 +4736,9 @@ namespace FEBuilderGBA
             MapPointerForm.ClearPlistCache();
             U.ClearMigemoCache();
             MagicSplitUtil.ClearCache();
+            SkillConfigFE8NSkillForm.ClearCache();
+            SkillConfigFE8NVer2SkillForm.ClearCache();
+            SkillConfigSkillSystemForm.ClearCache();
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
@@ -4746,6 +4749,7 @@ namespace FEBuilderGBA
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
             g_Cache_class_type_enum = class_type_enum.NoCache;
             g_Cache_itemicon_extends = itemicon_extends.NoCache;
+            g_Cache_shinan_table = NO_CACHE;
         }
 
 
@@ -9891,11 +9895,12 @@ namespace FEBuilderGBA
             Program.ROM.write_u32(data_offset - 4, (uint)count);
         }
 
+        public const uint NO_CACHE = 0xff;
         public enum SpecialHack_enum
         {
             No
             ,MoDUPS  //FE6でマップデータの形式が拡張されているパッチ
-            , NoCache = 0xff
+            , NoCache = (int)NO_CACHE
         }
         static SpecialHack_enum g_SpecialHack = SpecialHack_enum.NoCache;
         public static SpecialHack_enum SearchSpecialHack()
@@ -9927,7 +9932,7 @@ namespace FEBuilderGBA
            , yugudora       //for FE8J   FE8Nのカスタマイズ
            , midori         //for FE8J   初期から独自スキルを実装していた拡張
            , SkillSystem    //for FE8U
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static skill_system_enum g_Cache_skill_system_enum = skill_system_enum.NoCache;
         public static skill_system_enum SearchSkillSystem()
@@ -9989,7 +9994,7 @@ namespace FEBuilderGBA
         {
              NO             //なし
            , SkillSystems_Rework          //for FE8U
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static class_type_enum g_Cache_class_type_enum = class_type_enum.NoCache;
         public static class_type_enum SearchClassType()
@@ -10033,7 +10038,7 @@ namespace FEBuilderGBA
            , DrawMultiByte  //FE7U/FE8Uに日本語を描画するパッチ
            , DrawSingleByte //FE7J/FE8Uに英語を描画するパッチ
            , DrawUTF8       //FE8UにUTF-8を描画するパッチ
-           , NoCache = 0xff
+           , NoCache = (int)NO_CACHE
         };
         //DrawFontPatch(DrawMultiByte/DrawSingleByte)の判別.
         static draw_font_enum g_Cache_draw_font_enum = draw_font_enum.NoCache;
@@ -10290,7 +10295,53 @@ namespace FEBuilderGBA
             }
             return false;
         }
-        //タイルをテキストから自動生成するパッチがあるか判別.
+
+        //指南パッチの設定アドレスの場所
+        static uint g_Cache_shinan_table = NO_CACHE;
+        public static uint SearchShinanTablePatch()
+        {
+            if (g_Cache_shinan_table == NO_CACHE)
+            {
+                g_Cache_shinan_table = SearchShinanTablePatchLow();
+            }
+            return g_Cache_shinan_table;
+        }
+        static uint SearchShinanTablePatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Shinan",	ver = "FE8J", addr = 0xDB000,data = new byte[]{0x00,0xB5,0xC0,0x46,0x06,0x48,0xC0,0x46,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x00,0xF0,0x02,0xF8,0x17,0x20,0x00,0xBD,0xC0,0x46,0x02,0x4B,0x9F,0x46}},
+                new PatchTableSt{ name="ShinanEA",	ver = "FE8J", addr = 0xDB000,data = new byte[]{0x00,0xB5,0x26,0x20,0x07,0x4B,0x9E,0x46,0x00,0xF8,0x09,0x48,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x05,0x4B,0x9E,0x46,0x00,0xF8,0x17,0x20,0x02,0xBC,0x08,0x47,0x00,0x00,0xA8,0x60,0x08,0x08,0xEC,0xBC,0x02,0x02,0x40,0xD3,0x00,0x08}},
+                new PatchTableSt{ name="Shinan",	ver = "FE8U", addr = 0xDB000,data = new byte[]{0x00,0xB5,0xC0,0x46,0x06,0x48,0xC0,0x46,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x00,0xF0,0x02,0xF8,0x17,0x20,0x00,0xBD,0xC0,0x46,0x02,0x4B,0x9F,0x46}},
+                new PatchTableSt{ name="ShinanEA",	ver = "FE8U", addr = 0xDB000,data = new byte[]{0x00,0xB5,0x26,0x20,0x07,0x4B,0x9E,0x46,0x00,0xF8,0x09,0x48,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x05,0x4B,0x9E,0x46,0x00,0xF8,0x17,0x20,0x02,0xBC,0x08,0x47,0x00,0x00,0x80,0x3D,0x08,0x08,0xF0,0xBC,0x02,0x02,0x7C,0xD0,0x00,0x08}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                uint addr = U.GrepEnd(Program.ROM.Data, t.data, t.addr, 0, 4, 0 ,true);
+                if (addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (! U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+                addr = Program.ROM.p32(addr);
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+                return U.toOffset(addr);
+            }
+            return U.NOT_FOUND;
+        }
+        //タイトルをテキストから自動生成するパッチがあるか判別.
         public static bool SearchChaptorNamesAsTextFixPatch()
         {
             uint check_value;
@@ -10308,7 +10359,7 @@ namespace FEBuilderGBA
              NO             //なし
            , MUG_EXCEED     //tikiの顔画像拡張
            , HALFBODY       //上半身表示拡張
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static portrait_extends g_Cache_portrait_extends = portrait_extends.NoCache;
         public static portrait_extends SearchPortraitExtends()
@@ -10364,7 +10415,7 @@ namespace FEBuilderGBA
              NO             //なし
            , IconExpands    //FEまで拡張
            , SkillSystems   //SkillSystems
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static itemicon_extends g_Cache_itemicon_extends = itemicon_extends.NoCache;
         public static itemicon_extends SearchItemIconExtends()

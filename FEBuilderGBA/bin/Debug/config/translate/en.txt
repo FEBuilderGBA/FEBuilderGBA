@@ -11041,8 +11041,8 @@ Revert to This Version
 :このバージョンをエミュレータでテストプレイ
 Test This Version With Emulator
 
-:このバージョン({{0}})に戻してもよろしいですか？
-Confirm Revert to This Version ({{0}})
+:このバージョン({0})に戻してもよろしいですか？
+Confirm Revert to This Version ({0})
 
 :会話グループ
 Conversation group

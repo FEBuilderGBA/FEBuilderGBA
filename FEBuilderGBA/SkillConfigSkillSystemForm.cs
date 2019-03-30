@@ -96,34 +96,85 @@ namespace FEBuilderGBA
 
         }
 
+        public static void ClearCache()
+        {
+            g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
+        }
+
+        static uint g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignPersonalSkillPointer()
         {
-            return FindSkillPointerToPointer("ASSIGN", 0);
+            if (g_Cache_FindAssignPersonalSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignPersonalSkillPointer = FindSkillPointerToPointer("ASSIGN", 0);
+            }
+            return g_Cache_FindAssignPersonalSkillPointer;
         }
+
+        static uint g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignClassSkillPointer()
         {
-            return FindSkillPointerToPointer("ASSIGN", 4);
+            if (g_Cache_FindAssignClassSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignClassSkillPointer = FindSkillPointerToPointer("ASSIGN", 4);
+            }
+            return g_Cache_FindAssignClassSkillPointer;
         }
+
+        static uint g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignClassLevelUpSkillPointer()
         {
-            return FindSkillPointerToPointer("LEVELUP", 0);
+            if (g_Cache_FindAssignClassLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignClassLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 0);
+            }
+            return g_Cache_FindAssignClassLevelUpSkillPointer;
         }
+
+        static uint g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignUnitLevelUpSkillPointer()
         {
-            return FindSkillPointerToPointer("LEVELUP", 4);
+            if (g_Cache_FindAssignUnitLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignUnitLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 4);
+            }
+            return g_Cache_FindAssignUnitLevelUpSkillPointer;
         }
+
+        static uint g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
         public static uint FindIconPointer()
         {
-            uint r = FindSkillPointerToPointer("ICON", 0);
-            return r;
+            if (g_Cache_FindIconPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindIconPointer = FindSkillPointerToPointer("ICON", 0);
+            }
+            return g_Cache_FindIconPointer;
         }
+
+        static uint g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
         public static uint FindTextPointer()
         {
-            return FindSkillPointerToPointer("TEXT", 0);
+            if (g_Cache_FindTextPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindTextPointer = FindSkillPointerToPointer("TEXT", 0);
+            }
+            return g_Cache_FindTextPointer;
         }
+
+        static uint g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
         public static uint FindAnimePointer()
         {
-            return FindSkillPointerToPointer("ANIME", 0);
+            if (g_Cache_FindAnimePointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAnimePointer = FindSkillPointerToPointer("ANIME", 0);
+            }
+            return g_Cache_FindAnimePointer;
         }
 
         static uint FindSkillPointerToPointer(string type,uint skip = 0)

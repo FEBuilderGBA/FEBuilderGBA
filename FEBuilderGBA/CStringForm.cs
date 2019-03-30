@@ -59,13 +59,12 @@ namespace FEBuilderGBA
             this.Close();
         }
 
-        public static uint WriteCString(uint pointer,string text)
+        public static uint WriteCString(uint pointer,string text,Undo.UndoData undodata)
         {
             byte[] stringbyte = Program.SystemTextEncoder.Encode(text);
             stringbyte = U.ArrayAppend(stringbyte, new byte[] { 0x00 });
 
             string undoname = text + ":" + U.ToHexString(pointer);
-            Undo.UndoData undodata = Program.Undo.NewUndoData(undoname);
 
             pointer = InputFormRef.WriteBinaryData(null
                 ,pointer
@@ -73,14 +72,23 @@ namespace FEBuilderGBA
                 , get_cstring_data_pos_callback
                 , undodata
             );
+            return pointer;
+        }
+        public static uint WriteCString(uint pointer, string text)
+        {
+            string undoname = text + ":" + U.ToHexString(pointer);
+            Undo.UndoData undodata = Program.Undo.NewUndoData(undoname);
 
+            pointer = WriteCString(pointer, text, undodata);
             if (pointer == U.NOT_FOUND)
             {
+                Program.Undo.Rollback(undodata);
                 return U.NOT_FOUND;
             }
             Program.Undo.Push(undodata);
             return pointer;
         }
+
         static MoveToUnuseSpace.ADDR_AND_LENGTH get_cstring_data_pos_callback(uint addr)
         {
             int length = 0;

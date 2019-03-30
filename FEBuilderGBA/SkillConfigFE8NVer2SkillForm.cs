@@ -190,7 +190,20 @@ namespace FEBuilderGBA
             );
         }
 
+        public static void ClearCache()
+        {
+            g_Cache_Pointers = null;
+        }
+        static uint[] g_Cache_Pointers = null;
         public static uint[] FindSkillFE8NVer2IconPointers()
+        {
+            if (g_Cache_Pointers == null)
+            {
+                g_Cache_Pointers = FindSkillFE8NVer2IconPointersLow();
+            }
+            return g_Cache_Pointers;
+        }
+        static uint[] FindSkillFE8NVer2IconPointersLow()
         {
             uint iconExPointer = Program.ROM.u32(0x89268 + 4);
             if (!U.isSafetyPointer(iconExPointer))

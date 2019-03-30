@@ -70,7 +70,7 @@ namespace FEBuilderGBA
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 return;
             }
-            if (f.DialogResult == System.Windows.Forms.DialogResult.Yes)
+            if (f.DialogResult == System.Windows.Forms.DialogResult.Retry)
             {
                 Program.Undo.TestPlayThisVersion(rollbackPOS);
                 return;

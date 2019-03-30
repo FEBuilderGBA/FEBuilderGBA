@@ -308,7 +308,7 @@ namespace FEBuilderGBA
         delegate AsmMapFile AsyncMethodCaller();
         AsyncMethodCaller Caller = null;
         IAsyncResult AsyncResult = null;
-        bool IsBusyThread()
+        public bool IsBusyThread()
         {
             return Caller != null && AsyncResult != null;
         }
