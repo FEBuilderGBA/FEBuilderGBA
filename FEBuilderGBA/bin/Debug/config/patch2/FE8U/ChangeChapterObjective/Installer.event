@@ -1,0 +1,62 @@
+#ifndef CHAPTEROBJECTIVE
+#define CHAPTEROBJECTIVE
+
+#ifdef _FE8_
+
+// ChangeChapterObjective. Hack by Zeta/Gilgamesh
+// Rewrite:7743
+// Free to use/modify
+
+#include "Extensions/Hack Installation.txt"
+
+//#define SetChapterObjectiveText(textid, textid2) "SVAL 0x1 textid; SVAL 0x2 textid2; ASMC SetChapterObjective"
+
+ALIGN 4
+FindChapterObjectiveTrap:
+#incbin "FindChapterObjectiveTrap.dmp"
+
+ALIGN 4
+GetChapterObjective:
+#incbin "GetChapterObjective.dmp"
+POIN FindChapterObjectiveTrap
+
+ALIGN 4
+SetChapterObjective:
+#incbin "SetChapterObjective.dmp"
+POIN FindChapterObjectiveTrap
+
+ALIGN 4
+ReadObjective:
+#incbin "ReadObjective.dmp"
+POIN GetChapterObjective
+
+ALIGN 4
+ReadStatusScreenObjective:
+#incbin "ReadStatusScreenObjective.dmp"
+POIN GetChapterObjective
+
+//
+//ALIGN 4
+//ReadPrepScreenObjective:
+//#incbin "ReadPrepScreenObjective.dmp"
+//POIN GetChapterObjective
+
+PUSH
+ORG 0x8D2D8		//FE8U
+//ORG 0x8F5D4		//FE8J
+jumpToHack(ReadObjective)
+
+ORG 0x8E538		//FE8U
+//ORG 0x9080C		//FE8J
+jumpToHack(ReadStatusScreenObjective)
+
+//ORG 0x95A90	//FE8U
+////ORG 0x97D70	//FE8J
+//jumpToHack(ReadPrepScreenObjective)
+POP
+
+#else // _FE8_
+  ERROR ChangeChapterObjective is for FE8
+#endif // _FE8_
+
+#endif // CHAPTEROBJECTIVE

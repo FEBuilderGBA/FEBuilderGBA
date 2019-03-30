@@ -1,0 +1,4 @@
+FindChapterObjectiveTrap=$34
+EALiterals=$34
+SetObject=$1E
+Exit=$28

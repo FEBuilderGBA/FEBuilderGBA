@@ -9,6 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 
 
 namespace FEBuilderGBA
@@ -2608,6 +2609,10 @@ namespace FEBuilderGBA
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 28, true);
             }
+            if (value.IndexOf("GREP4END+A ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, false);
+            }
             if (value.IndexOf("GREP_ENABLE_POINTER ") == 0)
             {
                 return U.GrepEnablePointer(Program.ROM.Data, start_offset, 0);
@@ -4738,15 +4743,20 @@ namespace FEBuilderGBA
         }
         static string ReplaceL1Macro(string patched_message,string filename,uint addr)
         {
-            uint p0 = U.toPointer(addr);
-            uint p1 = U.toPointer(addr + 1);
-            uint littleEndian = U.ChangeEndian32(p0);
-            uint littleEndianPlus1 = U.ChangeEndian32(p1);
+            int pos = 0;
+            while (true)
+            {
+                Match m = RegexCache.Match(patched_message , @"{\$L([0-9a-zA-Z]+):" + filename + "}");
+                if (! m.Success)
+                {
+                    break;
+                }
+                string w = m.Groups[1].Value;
+                uint plus = U.atoh(w);
+                uint littleEndianPlus = U.ChangeEndian32(U.toPointer(addr + plus));
 
-            patched_message = patched_message.Replace("{$B:" + filename + "}", p0.ToString("X08"));
-            patched_message = patched_message.Replace("{$B1:" + filename + "}", p1.ToString("X08"));
-            patched_message = patched_message.Replace("{$L:" + filename + "}", littleEndian.ToString("X08"));
-            patched_message = patched_message.Replace("{$L1:" + filename + "}", littleEndianPlus1.ToString("X08"));
+                patched_message = patched_message.Substring(0, m.Index) + U.ToHexString(littleEndianPlus) + patched_message.Substring(m.Index + m.Length);
+            }
             return patched_message;
         }
 
