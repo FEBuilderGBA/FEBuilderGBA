@@ -283,6 +283,12 @@ namespace FEBuilderGBA
 
         private void PaletteWriteButton_Click(object sender, EventArgs e)
         {
+            if (PALETTE_ADDRESS.Value == 0)
+            {
+                R.ShowStopError("パレット領域が割り当てられていません。\r\nまずは、「新規パレット割り当て」ボタンを押して領域を確保してください。");
+                return;
+            }
+
             int paletteIndex = this.PaletteIndexComboBox.SelectedIndex;
             uint newAddr = PaletteFormRef.MakePaletteUIToROM(this, (uint)PALETTE_ADDRESS.Value, true, paletteIndex);
             if (newAddr == U.NOT_FOUND)

@@ -3598,6 +3598,9 @@ Export AP
 :移動アイコン
 Moving Map Anime
 
+:パレット領域が割り当てられていません。\r\nまずは、「新規パレット割り当て」ボタンを押して領域を確保してください。
+Palette area has not been allocated.\r\nFirst, please press the "New Palette Assessment" button to allocate the area.
+
 :FE8の色決定ルーチンは以下のようになります。\r\n{0}から、ユニットの現在所属しているクラスに適合するパレットがあるかどうか探索します。\r\nもし、パレットが見つかれば、{1}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n
 The battle palette determination routine of FE 8 works as follows.\r\nThe game searches for a palette from {0}, that conforms to the class of this unit.\r\nIf a palette is found, the color declared in {1} is used.\r\nIf a palette isn't found, the generic class battle animation palette will be used.\r\n
 
