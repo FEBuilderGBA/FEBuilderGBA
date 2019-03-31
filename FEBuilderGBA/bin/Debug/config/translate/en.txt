@@ -7232,7 +7232,7 @@ Chapter title image 2 (X).
 Enable Battle Prep? (X)
 
 :指南へJump
-Jump to the instruction.
+Jump to the Shinan
 
 :利用マップ:{0}
 Usage map: {0}
@@ -7310,7 +7310,7 @@ File size is too small. Requires 9216 bytes.
 Don't Import Palette
 
 :パレットもインポートする
-Import Another Palette
+Import palette at same time
 
 :0=通常
 0=Normal

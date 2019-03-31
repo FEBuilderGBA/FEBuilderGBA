@@ -42,5 +42,5 @@ UPDATE_FROM_NAME=Individual animation
 
 INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\nこのバージョンは、ルーチンをフックするのにr1レジスタを利用するバージョンです。(それ以外に違いは特にありません)\r\nユニット設定で、個別アニメフラグに1を立てるのを忘れないようにしてください。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
 
-INFO.en=Do not forget to set 1 for the individual animation flag in unit setting.\r\nIf you define a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new securing button appears.\r\n
+INFO.en=Do not forget to set 1 for the individual animation flag in unit setting.\r\nIf you define a new animation, specify 0 for Anime.\r\nWhen 0 is specified for the Anime, a new securing button appears.\r\n
 INFO.zh=不要忘记在单位设置中为个人动画标志设置1。\r\n如果您定义了新动画，请将动画设置指定为0。\r\n当为动画设置指定0时，会出现一个新的保护按钮。\r\n

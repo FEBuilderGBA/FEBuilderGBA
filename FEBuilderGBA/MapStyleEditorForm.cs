@@ -798,7 +798,7 @@ namespace FEBuilderGBA
                 MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.OBJECT, obj_plist, newaddr, undodata);
 
                 //分割されたデータを書き込み
-                newaddr = InputFormRef.WriteBinaryData(this, (uint)ObjAddress.Value, image2Z, InputFormRef.get_data_pos_callback_lz77, undodata);
+                newaddr = InputFormRef.WriteBinaryData(this, (uint)ObjAddress2.Value, image2Z, InputFormRef.get_data_pos_callback_lz77, undodata);
                 if (newaddr == U.NOT_FOUND)
                 {
                     Program.Undo.Rollback(undodata);
