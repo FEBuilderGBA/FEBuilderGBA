@@ -11234,6 +11234,14 @@ namespace FEBuilderGBA
             {
                 str = R._("アイテムのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全アイテム共通になるので注意してください。");
             }
+            else if (str == "@OP_CLASSDEMO_BATTLEANIME_PALETTE")
+            {
+                str = R._("指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。");
+            }
+            else if (str == "@OP_CLASSDEMO_BATTLEANIME")
+            {
+                str = R._("指定したID+1の戦闘アニメで描画されます。");
+            }
             else
             {
                 //未定義のヒント

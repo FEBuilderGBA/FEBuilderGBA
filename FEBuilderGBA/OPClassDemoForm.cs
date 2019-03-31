@@ -145,6 +145,21 @@ namespace FEBuilderGBA
             UseTextID.AppendTextID(list, FELint.Type.OP_CLASS_DEMO, InputFormRef, new uint[] { 4 });
         }
 
+        private void B16_ValueChanged(object sender, EventArgs e)
+        {
+            if (B13.Value == 0xFF)
+            {//標準パレット
+                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
+                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, 0, 0, 0, (int)B15.Value);
+            }
+            else
+            {
+                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B16.Value + 1
+                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B13.Value + 1, 0, 0, (int)B15.Value);
+            }
+
+        }
+
 
     }
 }
