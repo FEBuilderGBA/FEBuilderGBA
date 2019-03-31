@@ -75,7 +75,7 @@ namespace FEBuilderGBA
             return InputFormRef.MakeList();
         }
         //全データの取得
-        public static void MakeAllDataLength(List<Address> list)
+        public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
             {
                 InputFormRef InputFormRef = Init(null);
@@ -84,13 +84,15 @@ namespace FEBuilderGBA
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
                 {
+                    string name = "OPClassDemo_Anime_" + U.ToHexString(i);
                     FEBuilderGBA.Address.AddCString(list, 0 + addr);
 
-                    uint jpName = Program.ROM.p32(addr + 8);
-                    if (!U.isSafetyOffset(jpName))
-                    {
-                        continue;
-                    }
+                    FEBuilderGBA.Address.AddLZ77Pointer(list
+                        , addr + 8
+                        , name + "_JP_NAME_IMG"
+                        , isPointerOnly 
+                        , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
+
                     uint anime = Program.ROM.p32(addr + 28);
                     if (!U.isSafetyOffset(anime))
                     {
@@ -99,9 +101,15 @@ namespace FEBuilderGBA
 
                     InputFormRef N2_InputFormRef = N2_Init(null);
                     N2_InputFormRef.ReInitPointer(addr + 28);
-                    FEBuilderGBA.Address.AddAddress(list, N2_InputFormRef, "OPClassDemo_Anime", new uint[] { });
+                    FEBuilderGBA.Address.AddAddress(list, N2_InputFormRef, name + "_Anime", new uint[] { });
                 }
             }
+
+            FEBuilderGBA.Address.AddPointer(list
+                , JP_FONT_PALETTE_POINTER
+                , 2 * 16
+                , "OPClassDemo_CommonPalette"
+                , FEBuilderGBA.Address.DataTypeEnum.PAL);
         }
         public static void MakeTextIDArray(List<UseTextID> list)
         {
@@ -122,6 +130,39 @@ namespace FEBuilderGBA
                     , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B14.Value + 1, 0, 0, (int)B16.Value);
             }
 
+        }
+
+        const uint JP_FONT_PALETTE_POINTER = 0x0B0038;
+        private void P8_ValueChanged(object sender, EventArgs e)
+        {
+            uint addr = U.toOffset((uint)P8.Value);
+            if (!U.isSafetyOffset(addr))
+            {
+                X_NAME_IMG.Image = null;
+                return ;
+            }
+            byte[] img = LZ77.decompress(Program.ROM.Data,addr);
+            if (img.Length <= 0)
+            {
+                X_NAME_IMG.Image = null;
+                return;
+            }
+            uint paletteAddr = Program.ROM.p32(JP_FONT_PALETTE_POINTER);
+            if (!U.isSafetyOffset(paletteAddr))
+            {
+                X_NAME_IMG.Image = null;
+                return;
+            }
+            X_NAME_IMG.Image = ImageUtil.ByteToImage16Tile(32 * 8, 4 * 8, img, 0, Program.ROM.Data, (int)paletteAddr);
+        }
+
+        private void X_GOTO_GRAPHICS_TOOL_JP_NAME_Click(object sender, EventArgs e)
+        {
+            uint addr = U.toOffset((uint)P8.Value);
+            uint paletteAddr = Program.ROM.p32(JP_FONT_PALETTE_POINTER);
+
+            GraphicsToolForm f = (GraphicsToolForm)InputFormRef.JumpForm<GraphicsToolForm>(U.NOT_FOUND);
+            f.Jump(32 * 8, 4 * 8, addr, 0, 0, 0, paletteAddr, 0, 1 , 0);
         }
     }
 }

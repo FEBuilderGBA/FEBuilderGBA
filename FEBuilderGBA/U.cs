@@ -2201,7 +2201,7 @@ namespace FEBuilderGBA
                     ImageChapterTitleFE7Form.MakeAllDataLength(list, isPointerOnly);
                     MapSettingFE7Form.MakeAllDataLength(list);
                     ImageCGForm.MakeAllDataLength(list, isPointerOnly);
-                    OPClassDemoFE7Form.MakeAllDataLength(list);
+                    OPClassDemoFE7Form.MakeAllDataLength(list , isPointerOnly);
                 }
                 else
                 {
