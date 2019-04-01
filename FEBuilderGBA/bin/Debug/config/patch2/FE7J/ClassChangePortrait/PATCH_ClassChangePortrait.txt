@@ -16,8 +16,10 @@ TAG=#ENGINE
 IF:0xc4a92c=0x85 0x9A 0x06 0x08
 PATCHED_IF_NOT:0xc4a92c=0x85 0x9A 0x06 0x08
 
-JUMP:0x8018fc8:$r1:=GetUnitPortraitID.bin
+BIN:$FREEAREA:1=GetUnitPortraitID.bin
+BIN:$FREEAREA:2=LoadClassChangePortrait.bin
+JUMP:0x8018fc8:$r1=GetUnitPortraitID.bin
 JUMP:0x8c4a92c:$NONE:+1=LoadClassChangePortrait.bin
-BIN:$FREEAREA=PromotedUnitPortraitTable.bin
-JUMP:GetUnitPortraitID.bin+0x2A:$NONE=PromotedUnitPortraitTable.bin
-JUMP:LoadClassChangePortrait.bin+0x134:$NONE=PromotedUnitPortraitTable.bin
+BIN:$FREEAREA:3=PromotedUnitPortraitTable.bin
+//JUMP:GetUnitPortraitID.bin+0x2A:$NONE=PromotedUnitPortraitTable.bin
+//JUMP:LoadClassChangePortrait.bin+0x134:$NONE=PromotedUnitPortraitTable.bin
