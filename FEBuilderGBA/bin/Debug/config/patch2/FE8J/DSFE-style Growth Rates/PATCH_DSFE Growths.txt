@@ -1,12 +1,12 @@
 
 NAME=DSFEスタイルの成長(成長率=ユニット成長 + クラス成長)
-NAME.en=DSFE Growths(Total growth = character growth + class growth)
+NAME.en=Modern Character Growths (Growth = Character Growth + Class Growth)
 
 PATCHED_IF:0x02B970=0xF0 0xB5 0x4E 0x46 0x45 0x46 0x60 0xB4 0x87 0xB0 0x07 0x1C 0xFF 0xF7 0xDE 0xFF
 
 
 INFO=このパッチでは、キャラクターの統計の成長率は、個人的な成長と、与えられた統計に対するクラスの成長の合計とみなされます。\r\nこれはゲームの自動レベルルーチンを変更しないので、成長率を変更する際にはこのことを念頭に置いてください。\r\n成長率=ユニット成長 + クラス成長
-INFO.en=This patch makes the game consider a character's stat growth rates to be the sum of their personal growth and their class's growth for the given stat.\r\nNote that this does not alter the game's auto-level routines, so keep this in mind when changing growth rates.\r\nTotal growth = character growth + class growth
+INFO.en=Patches the game to calculate growths using a different formula.\r\nCharacter Growths Per Stat = Growth Rate (Character Editor) + Growth Rate (Class Editor)\r\nNote that this does not alter the game's auto-level routines, so keep this in mind when changing growth rates.\r\n
 
 TYPE=BIN
 TAG=#ENGINE

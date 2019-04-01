@@ -107,16 +107,21 @@ namespace FEBuilderGBA
                 FELint.CheckFlagErrors(flag, errors, FELint.Type.HAIKU, haiku_addr, i);
 
                 uint textid = Program.ROM.u16(haiku_addr + 4);
-                FELint.ConversationTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
+                FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
 
                 textid = Program.ROM.u16(haiku_addr + 12);
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 , 12 });
+            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 , 12 });
+        }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            InputFormRef InputFormRef = Init(null);
+            UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, InputFormRef, 8, 1);
         }
     }
 }

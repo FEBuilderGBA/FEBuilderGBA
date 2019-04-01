@@ -1,5 +1,5 @@
 NAME=撃破経験値にプラス補正がかかる相手クラス
-NAME.zh=SYSTEM_Destroyed经验价值体验价值
+NAME.zh=在击破经验值上加上敌方职业
 NAME.en=Enemy Class Grants Bonus EXP
 
 //アドレスパッチとして実装します

@@ -1,0 +1,8 @@
+IF:0x02C078=0x01 0x4B 0xA5 0xF0
+
+FORM=ItemForm
+J_33=Debuffs
+J_33:HINT=SkillSystemsのDebuffsの値を設定します。\r\n0の場合はDebuffsはありません。\r\n1以降の場合、利用したいDebuffsTableの値を設定します。\r\nDebuffsTableの値はPatchから設定可能です。
+
+J_33:HINT.en=Set the value of Debuffs of SkillSystems.\r\nIf it is 0, there is no Debuffs.\r\nIn case of 1 or later, set the value of DebuffsTable you want to use.\r\nThe value of DebuffsTable can be set from Patch.
+J_33:HINT.zh=设置SkillSystems的Debuffs的值。\r\n如果为0，则没有Debuff。\r\n如果是1或更高，请设置要使用的DebuffsTable的值。\r\nDebuffsTable的值可以从Patch设置。

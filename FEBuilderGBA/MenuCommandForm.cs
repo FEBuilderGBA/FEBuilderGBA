@@ -34,7 +34,7 @@ namespace FEBuilderGBA
                 , 36
                 , (int i, uint addr) =>
                 {
-                    return U.isPointer(Program.ROM.u32(addr));
+                    return U.isPointer(Program.ROM.u32(addr+0xc));
                 }
                 , (int i, uint addr) =>
                 {
@@ -135,6 +135,35 @@ namespace FEBuilderGBA
 
             FilterComboBox.SelectedIndex = selected;
             this.InputFormRef.ReInit(addr);
+        }
+
+        public static uint GetUsabilityAddrByAddr(uint addr)
+        {
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return U.NOT_FOUND;
+            }
+
+            uint func = Program.ROM.u32(addr + 12);
+            if (U.IsValueOdd(func) && U.isSafetyPointer(func))
+            {
+                return U.toOffset(func) - 1;
+            }
+            return U.NOT_FOUND;
+        }
+        public static uint GetEffectAddrByAddr(uint addr)
+        {
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return U.NOT_FOUND;
+            }
+
+            uint func = Program.ROM.u32(addr + 20);
+            if (U.IsValueOdd(func) && U.isSafetyPointer(func))
+            {
+                return U.toOffset(func) - 1;
+            }
+            return U.NOT_FOUND;
         }
 
         public static List<U.AddrResult> MakeListPointer(uint pointer = U.NOT_FOUND)
@@ -241,11 +270,53 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list, uint pointer)
+
+
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, uint pointer)
         {
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(pointer);
-            TextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
+
+            uint p = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            {
+                uint paddr;
+                paddr = Program.ROM.u32(0 + p);
+                FELint.CheckPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                if (Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    uint name = Program.ROM.u16(4 + p);
+                    FELint.CheckText(name, "MENUNAME1", errors, FELint.Type.MENU, p, i);
+                }
+
+                uint detail = Program.ROM.u16(6 + p);
+                FELint.CheckText(detail, "MENUDETAIL3", errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(12 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(16 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(20 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(24 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(28 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+
+                paddr = Program.ROM.u32(32 + p);
+                FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU, p, i);
+            }
+        }
+        public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
+        {
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInitPointer(pointer);
+            UseTextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
         }
 
         void Explain()
@@ -290,9 +361,24 @@ namespace FEBuilderGBA
 
             uint newaddr;
             {
+                InputFormRef.ExpandsEventArgs eearg = new InputFormRef.ExpandsEventArgs();
+
                 InputFormRef ifr = Init(null);
                 ifr.ReInitPointer(pointer);
-                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, Program.ROM.RomInfo.text_pointer());
+
+                eearg.OldBaseAddress = ifr.BaseAddress;
+                eearg.OldDataCount = ifr.DataCount;
+                eearg.BlockSize = ifr.BlockSize;
+
+                newaddr = ifr.ExpandsArea(form, newdatacount, undodata, pointer);
+                if (newaddr == U.NOT_FOUND)
+                {
+                    return U.NOT_FOUND;
+                }
+
+                eearg.NewBaseAddress = newaddr;
+                eearg.NewDataCount = newdatacount ;
+                AddressListExpandsEventInner(form, eearg, undodata);
             }
             InputFormRef.ClearCacheDataCount();
             return newaddr;
@@ -304,10 +390,100 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(WriteButton, false);
 
             InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearAllocMenu");
+            AddressListExpandsEventInner(this, eearg, undodata);
+            eearg.NewDataCount -= 1;
+            eearg.IsReload = true;
+            Program.Undo.Push(undodata);
+        }
+
+        public static void WriteNullMenu(uint addr, Undo.UndoData undodata)
+        {
+            if (! U.isSafetyOffset(addr + 36))
+            {
+                return;
+            }
+            uint alwayFalse = 0;
+            if (Program.ROM.RomInfo.version() != 6)
+            {
+                alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
+            }
+
+            Program.ROM.write_u32(addr + 0, 0, undodata);
+            Program.ROM.write_u32(addr + 4, 0, undodata);
+            Program.ROM.write_u32(addr + 8, 0, undodata);
+            Program.ROM.write_u32(addr + 12, alwayFalse, undodata); //常にメニューを表示しないを選択
+            Program.ROM.write_u32(addr + 16, 0, undodata);
+            Program.ROM.write_u32(addr + 20, 0, undodata);
+            Program.ROM.write_u32(addr + 24, 0, undodata);
+            Program.ROM.write_u32(addr + 28, 0, undodata);
+            Program.ROM.write_u32(addr + 32, 0, undodata);
+        }
+
+        static void AddressListExpandsEventInner(Form from, InputFormRef.ExpandsEventArgs eearg, Undo.UndoData undodata)
+        {
             uint addr = eearg.NewBaseAddress;
             int count = (int)eearg.NewDataCount;
+            if (count <= 2)
+            {
+                return;
+            }
 
             uint rom_length = (uint)Program.ROM.Data.Length;
+
+            //配置後アドレスを0クリアします.
+            addr = addr + (eearg.OldDataCount * eearg.BlockSize);
+            for (int i = (int)eearg.OldDataCount; i < count - 1; i++)
+            {
+                if (addr + 36 > rom_length)
+                {
+                    break;
+                }
+                WriteNullMenu(addr, undodata);
+                addr += eearg.BlockSize;
+            }
+
+            //最後のメニューと新規確保したメニューの位置を入れ替える.
+            if (eearg.OldDataCount < eearg.NewDataCount && eearg.OldDataCount >= 1)
+            {
+                uint oldEndAddr = eearg.NewBaseAddress + ((eearg.OldDataCount - 1) * eearg.BlockSize);
+                uint newEndAddr = eearg.NewBaseAddress + ((eearg.NewDataCount - 2) * eearg.BlockSize);
+                byte[] endEndData = Program.ROM.getBinaryData(oldEndAddr, eearg.BlockSize);
+                byte[] newEndData = Program.ROM.getBinaryData(newEndAddr, eearg.BlockSize);
+
+                Program.ROM.write_range(oldEndAddr, newEndData, undodata);
+                Program.ROM.write_range(newEndAddr, endEndData, undodata);
+            }
+
+            {//終端
+                addr = eearg.NewBaseAddress + ((eearg.NewDataCount - 1) * eearg.BlockSize);
+                Program.ROM.write_u32(addr + 0, 0, undodata);
+                Program.ROM.write_u32(addr + 4, 0, undodata);
+                Program.ROM.write_u32(addr + 8, 0, undodata);
+                Program.ROM.write_u32(addr + 12, 0, undodata);
+                Program.ROM.write_u32(addr + 16, 0, undodata);
+                Program.ROM.write_u32(addr + 20, 0, undodata);
+                Program.ROM.write_u32(addr + 24, 0, undodata);
+                Program.ROM.write_u32(addr + 28, 0, undodata);
+                Program.ROM.write_u32(addr + 32, 0xFFFFFFFF, undodata); //nullが連続していると、間違われることがあるので、最終単に0xFFFFFFFFを入れる.
+            }
+        }
+
+        public static uint AllocNullMenuAddress(uint needCount, string typename)
+        {
+            uint pointer;
+            if (typename == "UNITMENU")
+            {
+                pointer = MenuDefinitionForm.GetUnitMenuPointer();
+            }
+            else if (typename == "GAMEMENU")
+            {
+                pointer = MenuDefinitionForm.GetGameMenuPointer();
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
 
             uint alwayFalse = 0;
             if (Program.ROM.RomInfo.version() != 6)
@@ -315,29 +491,47 @@ namespace FEBuilderGBA
                 alwayFalse = U.toPointer(Program.ROM.RomInfo.MenuCommand_UsabilityNever() + 1);
             }
 
-            //配置後アドレスを0クリアします.
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "ClearAllocMenu");
-            addr = addr + (eearg.OldDataCount * eearg.BlockSize);
-            for (int i = (int)eearg.OldDataCount; i < count; i++)
-            {
-                if (addr + 36 > rom_length)
-                {
-                    break;
-                }
-                Program.ROM.write_u32(addr + 0, 0, undodata);
-                Program.ROM.write_u32(addr + 4, 0, undodata);
-                Program.ROM.write_u32(addr + 8, 0, undodata);
-                Program.ROM.write_u32(addr + 12, alwayFalse, undodata); //常にメニューを表示しないを選択
-                Program.ROM.write_u32(addr + 16, 0, undodata);
-                Program.ROM.write_u32(addr + 20, 0, undodata);
-                Program.ROM.write_u32(addr + 24, 0, undodata);
-                Program.ROM.write_u32(addr + 28, 0, undodata);
-                Program.ROM.write_u32(addr + 32, 0, undodata);
-                addr += eearg.BlockSize;
-            }
+            uint nullCount = 0;
+            uint foundAddr = U.NOT_FOUND;
 
-            Program.Undo.Push(undodata);
-            eearg.IsReload = true;
+            InputFormRef ifr = Init(null);
+            ifr.ReInitPointer(pointer);
+
+            uint addr = ifr.BaseAddress;
+            for (int i = 0; i < ifr.DataCount; i++, addr += ifr.BlockSize)
+            {
+
+                uint a1 = Program.ROM.u32(addr + 0);
+                uint a2 = Program.ROM.u32(addr + 4);
+                uint a3 = Program.ROM.u32(addr + 8);
+                uint a4 = Program.ROM.u32(addr + 12); //常にメニューを表示しないを選択
+                uint a5 = Program.ROM.u32(addr + 16);
+                uint a6 = Program.ROM.u32(addr + 20);
+                uint a7 = Program.ROM.u32(addr + 24);
+                uint a8 = Program.ROM.u32(addr + 28);
+                uint a9 = Program.ROM.u32(addr + 32);
+
+                if (a1 == 0 && a2 == 0 && a3 == 0 && a4 == alwayFalse
+                    && a5 == 0 && a6 == 0 && a7 == 0 && a8 == 0 && a9 == 0)
+                {
+                    if (nullCount <= 0)
+                    {
+                        foundAddr = addr;
+                    }
+
+                    nullCount++;
+                    if (nullCount >= needCount)
+                    {
+                        return foundAddr;
+                    }
+                }
+                else
+                {
+                    nullCount = 0;
+                    foundAddr = U.NOT_FOUND;
+                }
+            }
+            return U.NOT_FOUND;
         }
     }
 }

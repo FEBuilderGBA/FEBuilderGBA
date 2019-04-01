@@ -45,7 +45,6 @@
             this.UNITCLASS_LIST = new FEBuilderGBA.ListBoxEx();
             this.label21 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.B11 = new System.Windows.Forms.NumericUpDown();
             this.B10 = new System.Windows.Forms.NumericUpDown();
             this.B9 = new System.Windows.Forms.NumericUpDown();
@@ -54,11 +53,10 @@
             this.B2 = new System.Windows.Forms.NumericUpDown();
             this.B1 = new System.Windows.Forms.NumericUpDown();
             this.B0 = new System.Windows.Forms.NumericUpDown();
-            this.L_0_SPLITSTRING_2 = new FEBuilderGBA.TextBoxEx();
+            this.L_0_SPLITSTRING_10 = new FEBuilderGBA.TextBoxEx();
             this.numericUpDown26 = new System.Windows.Forms.NumericUpDown();
             this.P12 = new System.Windows.Forms.NumericUpDown();
             this.B6 = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.B5 = new System.Windows.Forms.NumericUpDown();
             this.B4 = new System.Windows.Forms.NumericUpDown();
@@ -337,7 +335,6 @@
             this.panel4.Controls.Add(this.UNITCLASS_LIST);
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.B11);
             this.panel4.Controls.Add(this.B10);
             this.panel4.Controls.Add(this.B9);
@@ -346,11 +343,10 @@
             this.panel4.Controls.Add(this.B2);
             this.panel4.Controls.Add(this.B1);
             this.panel4.Controls.Add(this.B0);
-            this.panel4.Controls.Add(this.L_0_SPLITSTRING_2);
+            this.panel4.Controls.Add(this.L_0_SPLITSTRING_10);
             this.panel4.Controls.Add(this.numericUpDown26);
             this.panel4.Controls.Add(this.P12);
             this.panel4.Controls.Add(this.B6);
-            this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.B5);
             this.panel4.Controls.Add(this.B4);
@@ -475,21 +471,10 @@
             this.label2.Text = "00";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, 112);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 30);
-            this.label1.TabIndex = 174;
-            this.label1.Text = "00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // B11
             // 
             this.B11.Hexadecimal = true;
-            this.B11.Location = new System.Drawing.Point(204, 150);
+            this.B11.Location = new System.Drawing.Point(135, 148);
             this.B11.Margin = new System.Windows.Forms.Padding(2);
             this.B11.Maximum = new decimal(new int[] {
             65535,
@@ -503,7 +488,7 @@
             // B10
             // 
             this.B10.Hexadecimal = true;
-            this.B10.Location = new System.Drawing.Point(135, 150);
+            this.B10.Location = new System.Drawing.Point(344, 114);
             this.B10.Margin = new System.Windows.Forms.Padding(2);
             this.B10.Maximum = new decimal(new int[] {
             65535,
@@ -598,15 +583,15 @@
             this.B0.Size = new System.Drawing.Size(60, 25);
             this.B0.TabIndex = 157;
             // 
-            // L_0_SPLITSTRING_2
+            // L_0_SPLITSTRING_10
             // 
-            this.L_0_SPLITSTRING_2.ErrorMessage = "";
-            this.L_0_SPLITSTRING_2.Location = new System.Drawing.Point(135, 12);
-            this.L_0_SPLITSTRING_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_0_SPLITSTRING_2.Name = "L_0_SPLITSTRING_2";
-            this.L_0_SPLITSTRING_2.Placeholder = "";
-            this.L_0_SPLITSTRING_2.Size = new System.Drawing.Size(205, 25);
-            this.L_0_SPLITSTRING_2.TabIndex = 155;
+            this.L_0_SPLITSTRING_10.ErrorMessage = "";
+            this.L_0_SPLITSTRING_10.Location = new System.Drawing.Point(135, 12);
+            this.L_0_SPLITSTRING_10.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_SPLITSTRING_10.Name = "L_0_SPLITSTRING_10";
+            this.L_0_SPLITSTRING_10.Placeholder = "";
+            this.L_0_SPLITSTRING_10.Size = new System.Drawing.Size(205, 25);
+            this.L_0_SPLITSTRING_10.TabIndex = 155;
             // 
             // numericUpDown26
             // 
@@ -650,17 +635,6 @@
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(60, 25);
             this.B6.TabIndex = 71;
-            // 
-            // label11
-            // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(-1, 81);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 30);
-            this.label11.TabIndex = 68;
-            this.label11.Text = "00";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -2493,18 +2467,16 @@
         private System.Windows.Forms.NumericUpDown B2;
         private System.Windows.Forms.NumericUpDown B1;
         private System.Windows.Forms.NumericUpDown B0;
-        private FEBuilderGBA.TextBoxEx L_0_SPLITSTRING_2;
+        private FEBuilderGBA.TextBoxEx L_0_SPLITSTRING_10;
         private System.Windows.Forms.NumericUpDown numericUpDown26;
         private System.Windows.Forms.NumericUpDown P12;
         private System.Windows.Forms.NumericUpDown B6;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown B5;
         private System.Windows.Forms.NumericUpDown B4;
         private System.Windows.Forms.NumericUpDown B3;
         private System.Windows.Forms.Label J_0;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label LabelFilter;

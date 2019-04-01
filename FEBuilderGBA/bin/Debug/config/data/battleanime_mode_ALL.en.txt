@@ -5,6 +5,6 @@
 07=Dodge Melee Attack
 08=Dodge Ranged Attack
 09=Equiped with Melee Weapon
-0A=standing motions?
+0A=Standing motions
 0B=Equiped with Ranged weapon
 0C=Attack Missed Animation

@@ -10,6 +10,8 @@ namespace FEBuilderGBA
     sealed class ROMFE8U : IROMFEINFO
     {
         public String game_id() { return "BE8E01"; }    // ゲームバージョンコード
+        public String VersionToFilename() { return "FE8U"; }
+        public String TitleToFilename() { return "FE8"; }
         public uint mask_point_base_pointer() { return 0x0006DC; } // Huffman tree end (indirected twice)
         public uint mask_pointer() { return 0x0006E0; }  // Huffman tree start (indirected once)
         public uint text_pointer() { return 0x00A2A0; } // textの開始位置
@@ -61,13 +63,15 @@ namespace FEBuilderGBA
         public uint support_attribute_pointer() { return 0x28534; }  //支援効果の開始位置
         public uint attribute_maxcount() { return 7; } // 属性の最大数
         public uint terrain_recovery_pointer() { return 0x1A264; } //地形回復 全クラス共通
+        public uint terrain_bad_status_recovery_pointer() { return 0x01A274; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0xCC7D0; } // CC分岐の開始位置
+        public uint ccbranch2_pointer() { return 0xCC7C8; } // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
         public uint class_alphaname_pointer() { return 0x0; } //英語版ではクラスの文字ID TEXTが、そのまま使われるらしいので不要
         public uint map_terrain_name_pointer() { return 0x1a254; } //マップの地名表記の開始位置
         public uint image_chapter_title_pointer() { return 0x89668; } //章タイトルの開始位置
         public uint image_chapter_title_palette() { return 0xA19CAC; } // 章タイトルのパレット 多分違う
         public uint image_unit_palette_pointer() { return 0x59BFC; } // ユニットパレットの開始位置
-        public uint item_pointer() { return 0x16410; } // アイテムの開始位置
+        public uint item_pointer() { return 0x177C0; } // アイテムの開始位置
         public uint item_datasize() { return 36; } // アイテムのデータサイズ
         public uint item_effect_pointer() { return 0x58014; } // アイテムエフェクトの開始位置
         public uint sound_table_pointer() { return 0x28BC; } // ソングテーブルの開始位置
@@ -284,6 +288,7 @@ namespace FEBuilderGBA
         public uint ai3_pointer() { return 0x3E1DC; }  //AI3ポインタ
         public uint ai_steal_item_pointer() { return 0x3B7C0; }  //AI盗むAI アイテム評価テーブル 0x5A83A4
         public uint ai_preform_staff_pointer() { return 0x3FA3C; }  //AI杖 杖評価テーブル
+        public uint ai_preform_staff_asm_pointer() { return 0x3FAE0; }  //AI杖 杖評価テーブル ai_preform_staff_pointer+4への参照
         public uint ai_map_setting_pointer() { return 0x3970C; }  //AI 章ごとの設定テーブル 0xD8538
         public uint item_usability_array_pointer() { return 0x288AC; } //アイテムを利用できるか判定する
         public uint item_usability_array_switch2_address() { return 0x2889A; }
@@ -310,6 +315,7 @@ namespace FEBuilderGBA
         public uint dic_title_pointer() { return 0xCE23C; }   //辞書タイトルポインタ
         public uint itemicon_mine_id() { return 0x8c; }  // アイテムアイコンのフレイボムの位置
         public uint item_gold_id() { return 0x77; }  // お金を取得するイベントに利用されるゴールドのID
+        public uint unitaction_function_pointer() { return 0x3205C; }  // ユニットアクションポインタ
         public uint lookup_table_battle_terrain_00_pointer() { return 0x57ECC; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_01_pointer() { return 0x57E20; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_02_pointer() { return 0x57E28; }//戦闘アニメの床
@@ -368,6 +374,8 @@ namespace FEBuilderGBA
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x89624; } //章の名前をテキストにするパッチ
         public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0xE0B8; return 0xBD070; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x5F6C; } //一般兵の顔 拡張
+        public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x225F8; } //階段拡張
+        public uint patch_unitaction_rework_hack(out uint enable_value) { enable_value = 0x4C03B510; return 0x03200C; } //ユニットアクションの拡張
         public byte[] defualt_event_script_term_code() { return new byte[] { 0x28, 0x02, 0x07, 0x00, 0x20, 0x01, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x28, 0x02, 0x07, 0x00, 0x20, 0x01, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_mapterm_code() { return new byte[] { 0x20, 0x01, 0x00, 0x00 }; } //ワールドマップイベント命令を終了させるディフォルトコード

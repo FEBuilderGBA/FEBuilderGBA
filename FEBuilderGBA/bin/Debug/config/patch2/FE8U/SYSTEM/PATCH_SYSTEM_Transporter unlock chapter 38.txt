@@ -1,6 +1,6 @@
 NAME=輸送隊解禁38章
 NAME.en=Supply Unlocks After Castle Frelia (Chapter 0x38)
-NAME.zh=运输车起重38
+NAME.zh=运输体解禁38章
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -16,4 +16,4 @@ INFO=\r\nHINT:輸送体
 INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 CONFLICT_IF:0x023F66=0x00 0x00 0x00 0x4B 0x18 0x47
-INFO.zh=\r\n提示：运输车。
+INFO.zh=提示：运输车。

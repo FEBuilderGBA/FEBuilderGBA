@@ -3,8 +3,9 @@ TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x32038=0x00 0x48 0x87 0x46
+PATCHED_IF:0x228a4=0x00 0xB5 0x43 0x48
 EA=EA.txt
+EA_EXTENDS_UNITMENU:0x01=0x40
 
 INFO=ユニットを救出するのではなく、相手側から同行で救出してもらうことができるようになります。\r\nこのコマンドは"奏でる"を""同行"に変化させます。\r\n
 

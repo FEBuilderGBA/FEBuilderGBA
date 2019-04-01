@@ -206,7 +206,7 @@ namespace FEBuilderGBA
             return ret;
         }
 
-        public static List<uint> SearchPointer(uint moveAddress)
+        public static List<uint> SearchPointer(uint moveAddress, bool isSilent = false)
         {
             List<uint> ret = new List<uint>();
             if (moveAddress == 0)
@@ -219,19 +219,25 @@ namespace FEBuilderGBA
             {
                 string text = R.Error("空き領域のポインタまたはサイズが正しくありません。\r\n0x0 - 0x100までの領域は危険なので移動できません");
                 string title = R._("エラー");
-                MessageBox.Show(text
-                    , title
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Error);
+                if (!isSilent)
+                {
+                    MessageBox.Show(text
+                        , title
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+                }
                 return ret;
             }
             bool isFixedASM = Program.AsmMapFileAsmCache.IsFixedASM(moveAddress);
             if (isFixedASM)
             {
-                DialogResult dr = R.ShowNoYes("このアドレス({0})は、プログラムコードを指しているようです。\r\n通常プログラムコードの領域をリポイントすることはありえません。\r\n本当にリポイントを継続してもよろしいですか？\r\n", U.ToHexString8(moveAddress));
-                if (dr != DialogResult.Yes)
+                if (!isSilent)
                 {
-                    return ret;
+                    DialogResult dr = R.ShowNoYes("このアドレス({0})は、プログラムコードを指しているようです。\r\n通常プログラムコードの領域をリポイントすることはありえません。\r\n本当にリポイントを継続してもよろしいですか？\r\n", U.ToHexString8(moveAddress));
+                    if (dr != DialogResult.Yes)
+                    {
+                        return ret;
+                    }
                 }
             }
 
@@ -247,11 +253,14 @@ namespace FEBuilderGBA
                 ret = U.GrepPointerAll(Program.ROM.Data, U.toPointer(moveAddress));
                 if(ret.Count >= 2)
                 {
-                    DialogResult dr = R.ShowYesNo("LDRとイベントでは、該当するポインタ値が見つかりませんでした。\r\nROMをバイナリ検索をしたら、値が見つかりましたが、誤爆の可能性もあります。\r\nこの処理を続行してもよろしいですか?\r\n\r\n「はい」の場合、バイナリ検索でヒットした値を利用します。 \r\nそれ以外の場合は、見つからなかったとして処理します。");
-                    if (dr != DialogResult.Yes)
+                    if (!isSilent)
                     {
-                        ret = new List<uint>();
-                        return ret;
+                        DialogResult dr = R.ShowYesNo("LDRとイベントでは、該当するポインタ値が見つかりませんでした。\r\nROMをバイナリ検索をしたら、値が見つかりましたが、誤爆の可能性もあります。\r\nこの処理を続行してもよろしいですか?\r\n\r\n「はい」の場合、バイナリ検索でヒットした値を利用します。 \r\nそれ以外の場合は、見つからなかったとして処理します。");
+                        if (dr != DialogResult.Yes)
+                        {
+                            ret = new List<uint>();
+                            return ret;
+                        }
                     }
                 }
             }

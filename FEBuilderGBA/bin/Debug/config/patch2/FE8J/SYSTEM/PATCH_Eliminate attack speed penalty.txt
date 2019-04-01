@@ -1,0 +1,19 @@
+NAME=攻速落ちしない
+NAME.en=Eliminate attack speed penalty
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0x02ab02
+
+OFF:0x02ab02=0x40 0x1A
+FIX:0x02ab02=0xC0 0x46
+
+AUTHOR=aera
+INFO=武器の重さに、体格が劣っているときでも、攻撃速度を下げないようにします。
+INFO.en=Do not lower attack speed even when your physique is inferior to the weight of the weapon.
+NAME.zh=不要跌倒。
+INFO.zh=即使你的体格不如武器的重量，也不要降低攻击速度。

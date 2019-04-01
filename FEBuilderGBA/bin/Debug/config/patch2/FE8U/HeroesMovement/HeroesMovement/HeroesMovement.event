@@ -1,0 +1,675 @@
+#ifndef HAX_HEROES_MOVEMENTS_EVENT
+#define HAX_HEROES_MOVEMENTS_EVENT
+
+#ifndef _FE8_
+	ERROR HEROES MOVEMENT is for FE8
+#endif // _FE8_
+
+#include "Tools/Tool Helpers.txt"
+
+//スキルID
+#define ShoveID 0x7a //体当たり
+#define SmiteID 0x7b //突飛ばし
+#define PivotID 0x88 //回り込み
+#define RepositionID 0x89 //引き戻し
+#define SwapID 0x8a //入れ替え
+
+
+//MSGを利用しないので、それぞれの条件はASMで書きます.
+
+//利用できるかどうかの判定
+HasSkill:
+	#incbin "asm/CheckHasSkillStandalone.bin"
+	POIN HeroesMovement_Table
+
+prPivotCommand_Availability:
+	#incbin "asm/CheckHasSkillAndNotCantoing.bin"
+	POIN HasSkill
+	WORD PivotID
+
+prRepositionCommand_Availability:
+	#incbin "asm/CheckHasSkillAndNotCantoing.bin"
+	POIN HasSkill
+	WORD RepositionID
+
+prSwapCommand_Availability:
+	#incbin "asm/CheckHasSkillAndNotCantoing.bin"
+	POIN HasSkill
+	WORD SwapID
+
+prShoveCommand_Availability:
+	#incbin "asm/CheckHasSkillAndNotCantoing.bin"
+	POIN HasSkill
+	WORD ShoveID
+
+prSmiteCommand_Availability:
+	#incbin "asm/CheckHasSkillAndNotCantoing.bin"
+	POIN HasSkill
+	WORD SmiteID
+
+// checking for same allegiance
+prPivot_TargetLegality:
+prReposition_TargetLegality:
+prSwap_TargetLegality:
+	#incbin "asm/CheckUnitAreAllied.bin"
+
+prShove_TargetLegality:
+prSmite_TargetLegality:
+	#incbin "asm/CheckUnitHasNotGuardAI.bin"
+
+
+#ifndef HAX_ACTION_APPLICATION_REWORK_EVENT
+	#include "../../UnitActionRework/UnitActionRework/UnitActionRework.event"
+#endif
+
+#define ACTION_MOVETARGET 0x23
+#define ACTION_MOVEACTIVE 0x24
+#define ACTION_SWAP       0x25
+#define ACTION_PUSH       0x26
+
+//下に出すテキスト
+#define TEXT_BOTTOMHELP_PIVOT      0
+#define TEXT_BOTTOMHELP_REPOSITION 0
+#define TEXT_BOTTOMHELP_SWAP       0
+#define TEXT_BOTTOMHELP_SHOVE      0
+#define TEXT_BOTTOMHELP_SMITE      0
+
+
+// The following need to be defined:
+/*
+ * ACTION_MOVETARGET (free action index)
+ * ACTION_MOVEACTIVE (free action index)
+ * ACTION_SWAP       (free action index)
+ * ACTION_PUSH       (free action index)
+ 
+ * prPivotCommand_Availability      (routine offset)
+ * prRepositionCommand_Availability (routine offset)
+ * prSwapCommand_Availability       (routine offset)
+ * prShoveCommand_Availability      (routine offset)
+ 
+ * prPivot_TargetLegality      (routine offset)
+ * prReposition_TargetLegality (routine offset)
+ * prSwap_TargetLegality       (routine offset)
+ * prShove_TargetLegality      (routine offset)
+ 
+ * TEXT_BOTTOMHELP_PIVOT      (text id)
+ * TEXT_BOTTOMHELP_REPOSITION (text id)
+ * TEXT_BOTTOMHELP_SWAP       (text id)
+ * TEXT_BOTTOMHELP_SHOVE      (text id)
+ */
+
+/// ==================================================================================================
+/// WARNING: WIZARD-ONLY ZONE, PLEASE DO NOT MESS WITH THIS FILE IF YOU DO NOT KNOW WHAT YOU ARE DOING
+/// ==================================================================================================
+
+#include "../_StanHaxCommon/StanCommonASM.event"
+
+#include "_6CDefinitions.event"
+
+// PUBLIC ASM
+// ----------
+
+ALIGN 4
+prSmiteCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSmite_MakeTargetList+1)
+	POIN (prSmiteCommand_Availability+1) // Availability
+
+ALIGN 4
+prSmiteCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSmite_MakeTargetList+1)
+	POIN _pSmiteSelectorDefinition
+
+ALIGN 4
+prShoveCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prShove_MakeTargetList+1)
+	POIN (prShoveCommand_Availability+1) // Availability
+
+ALIGN 4
+prShoveCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prShove_MakeTargetList+1)
+	POIN _pShoveSelectorDefinition
+
+ALIGN 4
+prPivotCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prPivot_MakeTargetList+1)
+	POIN (prPivotCommand_Availability+1) // Availability
+
+ALIGN 4
+prPivotCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prPivot_MakeTargetList+1)
+	POIN _pPivotSelectorDefinition
+
+ALIGN 4
+prRepositionCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prReposition_MakeTargetList+1)
+	POIN (prRepositionCommand_Availability+1)
+
+ALIGN 4
+prRepositionCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prReposition_MakeTargetList+1)
+	POIN _pRepositionSelectorDefinition
+
+ALIGN 4
+prSwapCommand_Usability:
+	#incbin "asm/TargetCommandUsability.bin"
+	POIN (_prSwap_MakeTargetList+1)
+	POIN (prSwapCommand_Availability+1)
+
+ALIGN 4
+prSwapCommand_Effect:
+	#incbin "asm/TargetCommandEffect.bin"
+	POIN (_prSwap_MakeTargetList+1)
+	POIN _pSwapSelectorDefinition
+
+// PIVOT STUFF
+// -----------
+
+ALIGN 4
+_prPivotSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_PIVOT
+
+ALIGN 4
+_prPivotSelection_OnSelection:
+	#incbin "asm/PivotSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVEACTIVE
+
+ALIGN 4
+_prPivotSelection_OnChange:
+	#incbin "asm/ActiveMoverSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prPivot_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prPivot_TargetCheck+1)
+
+ALIGN 4
+_prPivot_TargetCheck:
+	#incbin "asm/Pivot_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prPivot_TargetLegality+1)
+
+ALIGN 4
+_pPivotSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=12
+	POIN (_prPivotSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prPivotSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prPivotSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)	//FE8U
+	WORD 0 // idk (same)
+
+// REPOSITION STUFF
+// ----------------
+
+ALIGN 4
+_prRepositionSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_REPOSITION
+
+ALIGN 4
+_prRepositionSelection_OnSelection:
+	#incbin "asm/RepositionSelection_OnSelection.bin"
+	POIN (_prGetOppositePosition+1)
+	WORD ACTION_MOVETARGET
+
+ALIGN 4
+_prRepositionSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetOppositePosition+1)
+
+ALIGN 4
+_prReposition_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prReposition_TargetCheck+1)
+
+ALIGN 4
+_prReposition_TargetCheck:
+	#incbin "asm/Reposition_TargetCheck.bin"
+	POIN (_prGetOppositePosition+1)
+	POIN (prUnit_CanBeOnPosition+1)
+	POIN (prReposition_TargetLegality+1)
+
+ALIGN 4
+_pRepositionSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=12
+	POIN (_prRepositionSelection_OnConstruction+1) // Constructor
+	POIN (_prSelection_DestructMoveDisplay+1) // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prRepositionSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prRepositionSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)	//FE8U
+	WORD 0 // idk (same)
+
+// SWAP STUFF
+// ----------
+
+ALIGN 4
+_prSwapSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SWAP
+
+ALIGN 4
+_prSwapSelection_OnChange:
+	#incbin "asm/SwapSelection_OnChange.bin"
+
+ALIGN 4
+_prSwapSelection_OnSelection:
+	#incbin "asm/SwapSelection_OnSelection.bin"
+	WORD ACTION_SWAP
+
+ALIGN 4
+_prSwap_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSwap_TargetCheck+1)
+
+ALIGN 4
+_prSwap_TargetCheck:
+	#incbin "asm/Swap_TargetCheck.bin"
+	POIN (prUnit_CanStandOnPosition+1)
+	POIN (prSwap_TargetLegality+1)
+
+ALIGN 4
+_pSwapSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
+	POIN (_prSwapSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSwapSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSwapSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)	//FE8U
+	WORD 0 // idk (same)
+
+// SHOVE STUFF
+// ----------
+
+ALIGN 4
+_prShoveSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SHOVE
+
+ALIGN 4
+_prShoveSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetShovePosition+1)
+
+ALIGN 4
+_prShoveSelection_OnSelection:
+	#incbin "asm/ShoveSelection_OnSelection.bin"
+	POIN (_prGetShovePosition+1)
+	POIN (prClearRangeAndMoveMap+1)
+	WORD ACTION_PUSH
+
+ALIGN 4
+_prShove_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prShove_TargetCheck+1)
+
+ALIGN 4
+_prShove_TargetCheck:
+	#incbin "asm/Shove_TargetCheck.bin"
+	POIN (_prGetShovePosition+1)
+	POIN (prShove_TargetLegality+1)
+
+ALIGN 4
+_prGetShovePosition:
+	#incbin "asm/GetPushPosition.bin"
+	POIN (prUnit_CanBeOnPosition+1)
+	WORD 1 // Max number of tiles you can be pushed
+
+ALIGN 4
+_pShoveSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
+	POIN (_prShoveSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prShoveSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prShoveSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)	//FE8U
+	WORD 0 // idk (same)
+
+// SMITE STUFF
+// -----------
+// This is exacly the same stuff as shove but the max push distance is bumped up one
+
+ALIGN 4
+_prSmiteSelection_OnConstruction:
+	#incbin "asm/TargetSelection_OnConstruction.bin"
+	WORD TEXT_BOTTOMHELP_SMITE
+
+ALIGN 4
+_prSmiteSelection_OnChange:
+	#incbin "asm/TargetMoverSelection_OnChange.bin"
+	POIN (_prGetSmitePosition+1)
+
+ALIGN 4
+_prSmiteSelection_OnSelection:
+	#incbin "asm/ShoveSelection_OnSelection.bin"
+	POIN (_prGetSmitePosition+1)
+	POIN (prClearRangeAndMoveMap+1)
+	WORD ACTION_PUSH
+
+ALIGN 4
+_prSmite_MakeTargetList:
+	#incbin "asm/MakeAdjacentTargetList.bin"
+	POIN (prClearRangeMap+1)
+	POIN (_prSmite_TargetCheck+1)
+
+ALIGN 4
+_prSmite_TargetCheck:
+	#incbin "asm/Shove_TargetCheck.bin"
+	POIN (_prGetSmitePosition+1)
+	POIN (prSmite_TargetLegality+1)
+
+ALIGN 4
+_prGetSmitePosition:
+	#incbin "asm/GetPushPosition.bin"
+	POIN (prUnit_CanBeOnPosition+1)
+	WORD 2 // Max number of tiles you can be pushed
+
+ALIGN 4
+_pSmiteSelectorDefinition:	//HINT=NEW_TARGET_SELECTION_STRUCT	ADD=8
+	POIN (_prSmiteSelection_OnConstruction+1) // Constructor
+	WORD 0 // Destructor
+	WORD 0 // idk (actually ik kinda, see my notes)
+	POIN (_prSmiteSelection_OnChange+1) // target change
+	WORD 0 // idk (same)
+	POIN (_prSmiteSelection_OnSelection+1) // A Press
+	POIN 0x22749 // B Press (Generic Vanilla One that calls the unit menu back)	//FE8U
+	WORD 0 // idk (same)
+
+// COMMON STUFF
+// ------------
+
+ALIGN 4
+_prGetOppositePosition:
+	#incbin "asm/GetOppositePosition.bin"
+
+ALIGN 4
+_prSelection_DestructMoveDisplay:
+	#incbin "asm/KillRangeDisplay.bin"
+
+ALIGN 4
+_prMoveActiveUnitAction:
+	#incbin "asm/MoveActiveUnitAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_prMoveTargetUnitAction:
+	#incbin "asm/MoveTargetUnitAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_prSwapAction:
+	#incbin "asm/SwapAction.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_prPushAction:
+	#incbin "asm/PushAction.bin"
+	POIN (_p6CUnitPushAnim_rConstruct+1)
+	POIN (_prPushAnim_BeginTargetPush+1)
+
+ALIGN 4
+_prPushAnim_BeginTargetPush:
+	#incbin "asm/PushAnim_BeginTargetPush.bin"
+	POIN (_p6CUnitMoveAnim_rConstruct+1)
+
+ALIGN 4
+_p6CUnitMoveAnim_rConstruct:
+	#incbin "asm/6CUnitMoveAnim/Constructor.bin"
+	POIN _p6CSingleUnitMovementAnim
+
+ALIGN 4
+_p6CUnitMoveAnim_rDestruct:
+	#incbin "asm/6CUnitMoveAnim/Destructor.bin"
+
+ALIGN 4
+_p6CUnitMoveAnim_rLoop:
+	#incbin "asm/6CUnitMoveAnim/Loopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 5 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CUnitPushAnim_rConstruct:
+	#incbin "asm/6CUnitPushAnim/Constructor.bin"
+	POIN _p6CSingleUnitPushAnim
+
+ALIGN 4
+_p6CUnitPushAnim_rDestruct:
+	#incbin "asm/6CUnitPushAnim/Destructor.bin"
+
+ALIGN 4
+_p6CUnitPushAnim_rPushLoop:
+	#incbin "asm/6CUnitPushAnim/PushLoopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 5 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CUnitPushAnim_rReturnLoop:
+	#incbin "asm/6CUnitPushAnim/ReturnLoopor.bin"
+	POIN (prMOVEUNIT_MoveTowards+1)
+	WORD 4 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
+
+ALIGN 4
+_p6CSingleUnitMovementAnim:		//HINT=PROCS	ADD=8
+{
+
+#ifndef NDEBUG
+	_6C_SET_NAME(__psName)
+#endif
+
+	_6C_SET_DESTRUCTOR(_p6CUnitMoveAnim_rDestruct+1)
+	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
+	
+	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
+	_6C_YIELD
+	
+	// Actual animation
+	_6C_LOOP_ROUTINE(_p6CUnitMoveAnim_rLoop+1)
+	
+	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
+	_6C_END
+	
+#ifndef NDEBUG
+__psName:
+	String(UnitMoveAnim)
+	BYTE 0
+#endif
+
+}
+
+ALIGN 4
+_p6CSingleUnitPushAnim:		//HINT=PROCS
+{
+
+#ifndef NDEBUG
+	_6C_SET_NAME(__psName)
+#endif
+
+	_6C_SET_DESTRUCTOR(_p6CUnitPushAnim_rDestruct+1)
+	_6C_CALL_ROUTINE(0x15361) // Block 6C Thread 2	//FE8U
+	
+	// Start Animation on Next frame only (ensuring the 6C is properly constructed)
+	_6C_YIELD
+	
+	// Actual animation
+	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rPushLoop+1)
+	_6C_LOOP_ROUTINE(_p6CUnitPushAnim_rReturnLoop+1)
+	
+	_6C_CALL_ROUTINE(0x15371) // Unblock 6C Thread 2	//FE8U
+	_6C_END
+	
+#ifndef NDEBUG
+__psName:
+	String(UnitPushAnim)
+	BYTE 0
+#endif
+
+}
+
+SetUnitAction(ACTION_MOVETARGET, ActionRoutine(_prMoveTargetUnitAction+1))
+SetUnitAction(ACTION_MOVEACTIVE, ActionRoutine(_prMoveActiveUnitAction+1))
+SetUnitAction(ACTION_SWAP,       ActionRoutine(_prSwapAction+1))
+SetUnitAction(ACTION_PUSH,       ActionRoutine(_prPushAction+1))
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+#define NormalText 0x0
+#define GrayText 0x1
+#define BlueText 0x2
+#define OrangeText 0x3
+#define GreenText 0x4
+#define BlackText 0x5
+
+//Menu FE8Jの場合、先頭の文字列ポインタを利用するため、FE8U用に作られた MenuCommandは利用できない
+//そのついでにFE8Uバージョンを作ったので、そのまま引き継ぎます.
+PUSH
+ORG	FEBUILDER_EXTRA_ORG
+	POIN TxtData0xe13_sjis	//Shove	体当たり
+	SHORT 0xe13
+	SHORT 0xe14
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN prShoveCommand_Usability|1
+	WORD 0
+	POIN prShoveCommand_Effect|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+	POIN TxtData0xe15_sjis	//Smite	突飛ばし
+	SHORT 0xe15
+	SHORT 0xe16
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN prSmiteCommand_Usability|1
+	WORD 0
+	POIN prSmiteCommand_Effect|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+	POIN TxtData0xe17_sjis	//Pivot	回り込み
+	SHORT 0xe17
+	SHORT 0xe18
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN prPivotCommand_Usability|1
+	WORD 0
+	POIN prPivotCommand_Effect|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+	POIN TxtData0xe19_sjis	//Reposition	引き戻し
+	SHORT 0xe19
+	SHORT 0xe1a
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN prRepositionCommand_Usability|1
+	WORD 0
+	POIN prRepositionCommand_Effect|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+	POIN TxtData0xe1b_sjis	//Swap	入れ替え
+	SHORT 0xe1b
+	SHORT 0xe1c
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN prSwapCommand_Usability|1
+	WORD 0
+	POIN prSwapCommand_Effect|1
+	WORD 0
+	WORD 0
+	WORD 0
+POP
+
+//Shove	体当たり
+TxtData0xe13:
+#incbin "./text/0xe13.bin"
+
+TxtData0xe13_sjis:
+#incbin "./text/0xe13_sjis.bin"
+
+TxtData0xe14:
+#incbin "./text/0xe14.bin"
+setText_WithHuffman(0xe13,TxtData0xe13)
+setText_WithHuffman(0xe14,TxtData0xe14)
+
+//Smite	突飛ばし
+TxtData0xe15:
+#incbin "./text/0xe15.bin"
+
+TxtData0xe15_sjis:
+#incbin "./text/0xe15_sjis.bin"
+
+TxtData0xe16:
+#incbin "./text/0xe16.bin"
+setText_WithHuffman(0xe15,TxtData0xe15)
+setText_WithHuffman(0xe16,TxtData0xe16)
+
+//Pivot	回り込み
+TxtData0xe17:
+#incbin "./text/0xe17.bin"
+
+TxtData0xe17_sjis:
+#incbin "./text/0xe17_sjis.bin"
+
+TxtData0xe18:
+#incbin "./text/0xe18.bin"
+setText_WithHuffman(0xe17,TxtData0xe17)
+setText_WithHuffman(0xe18,TxtData0xe18)
+
+//Reposition	引き戻し
+TxtData0xe19:
+#incbin "./text/0xe19.bin"
+
+TxtData0xe19_sjis:
+#incbin "./text/0xe19_sjis.bin"
+
+TxtData0xe1a:
+#incbin "./text/0xe1a.bin"
+setText_WithHuffman(0xe19,TxtData0xe19)
+setText_WithHuffman(0xe1a,TxtData0xe1a)
+
+//Swap	入れ替え
+TxtData0xe1b:
+#incbin "./text/0xe1b.bin"
+
+TxtData0xe1b_sjis:
+#incbin "./text/0xe1b_sjis.bin"
+
+TxtData0xe1c:
+#incbin "./text/0xe1c.bin"
+setText_WithHuffman(0xe1B,TxtData0xe1b)
+setText_WithHuffman(0xe1C,TxtData0xe1c)
+
+#include "HeroesMovement_Table.event"  //将来Skillと統合したい。とりあえずスタンドアローンで提供する
+
+ALIGN 4 // For good measure
+
+#endif // HAX_HEROES_MOVEMENTS_EVENT

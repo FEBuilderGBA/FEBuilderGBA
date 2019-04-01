@@ -17,6 +17,6 @@ PALETTE=1
 
 INFO=闘技場の受付の背景を指定します。
 INFO.en=Specifies the background image showing the front of the arena building.
-NAME.zh=竞技场接受
+NAME.zh=系统_斗技场接待处
 INFO.zh=指定体育场接待的背景。
 

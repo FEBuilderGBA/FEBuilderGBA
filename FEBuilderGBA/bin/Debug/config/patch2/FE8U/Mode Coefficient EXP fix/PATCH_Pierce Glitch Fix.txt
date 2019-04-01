@@ -1,6 +1,6 @@
 NAME=Pierce Glitch Fix
 NAME.en=Remove Pierce Glitch
-NAME.zh=Pierce Glitch Fix
+NAME.zh=故障修复
 
 TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
@@ -15,3 +15,5 @@ AUTHOR.en=Brendor http://feuniverse.us/t/pierce-fix/699
 AUTHOR.zh=credit Brendor http://feuniverse.us/t/pierce-fix/699
 
 
+
+INFO.zh=故障修复

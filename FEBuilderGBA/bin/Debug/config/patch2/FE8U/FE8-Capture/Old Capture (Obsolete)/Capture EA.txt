@@ -1,0 +1,72 @@
+//FE8 Capture
+//By Tequila
+
+#ifdef _FE8_
+
+	#include "Extensions/Hack Installation.txt"
+	#include EAstdlib.event
+	
+	#ifndef Free_Space
+		#define Free_Space 0xB2B200
+		ORG Free_Space
+	#endif
+	#ifndef Item_Table
+		#define Item_Table 0x809B10
+	#endif
+	PUSH
+	
+	//check for 'drop last item' flag/capture stuff
+	ORG $3292C
+	jumpToHack(Call_Capture_Events)
+	
+	//use the old number of uses if they're non-zero
+	ORG $16540
+	#incbin "Old Uses.dmp"
+	POIN Item_Table
+	
+	POP
+	
+	ALIGN 4
+	Call_Capture_Events:
+	#incbin "Call Capture Events.dmp"
+	POIN Capture_Events Substitution_Table
+	
+	ALIGN 4
+	Put_Item_In_Slot3:
+	#incbin "Put Item in Slot3.dmp"
+	
+	ALIGN 4
+	Capture_Events:
+	SETVAL 0x5 0x0
+	LABEL 0xFF //Loop_Through_Inventory:
+	ASMC Put_Item_In_Slot3|1 //grabs item at slot 4 and puts in r3, updates 4 with ptr to next item, updates counter
+	GIVEITEMTO 0xFFFF
+	BNE 0xFF 0x4 0x0 //if slot 4 isn't zero (ie, there's still an item to get)
+	ENDA
+	
+	
+	ALIGN 4
+	Substitution_Table:
+	BYTE PoisonAxe IronAxe
+	BYTE 0
+	
+	
+#else
+	ERROR "You're not assembling FE8 events!"
+#endif
+
+/*
+	ORG $2D7D4
+	callHack_r3(Trade_Portrait_Fix1)
+	
+	ORG $2D7EC
+	callHack_r3(Trade_Portrait_Fix2)
+	
+	ALIGN 4
+	Trade_Portrait_Fix1:
+	#incbin "Trade Portrait Fix1.dmp"
+	
+	ALIGN 4
+	Trade_Portrait_Fix2:
+	#incbin "Trade Portrait Fix2.dmp
+	*/

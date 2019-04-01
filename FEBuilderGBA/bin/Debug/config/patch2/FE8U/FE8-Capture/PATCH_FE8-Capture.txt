@@ -1,0 +1,22 @@
+NAME=トラキアのように、素早さ減で敵を攻撃し、捕獲できるようにする
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x22CD0=0x00 0x4B 0x18 0x47
+
+EA=FE8-Capture EA.txt
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/29
+
+EA_EXTENDS_UNITMENU:0x01=0x40
+EXTENDS:0x1000=TEXT
+
+INFO=このパッチは、FE5のように素早さ減の状態で敵を攻撃し、敵を捕らえることができるようにします。
+
+NAME.en=Attack and capture enemies with reduced speed like FE5
+INFO.en=This patch will attack enemies in a state of reduced speed like FE 5 so that you can capture enemies.
+NAME.zh=能够以像色雷斯一样的速度攻击和捕获敌人
+INFO.zh=我们将像色雷斯一样以速度降低的状态攻击敌人，以便我们能够抓住敌人。\r\n进入此补丁后，您无法与敌人交换物品或释放它，除非您输入敌人捕获补丁。\r\n请稍后添加发布补丁。\r\n
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

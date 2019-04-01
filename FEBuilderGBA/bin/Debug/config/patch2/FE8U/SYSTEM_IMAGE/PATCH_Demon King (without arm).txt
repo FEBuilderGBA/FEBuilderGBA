@@ -15,4 +15,4 @@ PALETTE_POINTER=0x0702F8//0x7F85DC
 
 AUTHOR=qps http://feuniverse.us/t/fe-builder-gba/2845/570
 NAME.en=Demon King Image (Armless)
-NAME.zh=恶魔没有手臂
+NAME.zh=魔王没有手臂

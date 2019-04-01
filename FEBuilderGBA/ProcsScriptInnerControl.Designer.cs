@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.ListBoxPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.FileToEventButton = new System.Windows.Forms.Button();
+            this.EventToFileButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.ParamValue2 = new FEBuilderGBA.TextBoxEx();
             this.ParamValue1 = new FEBuilderGBA.TextBoxEx();
@@ -58,9 +61,8 @@
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.EventToFileButton = new System.Windows.Forms.Button();
-            this.FileToEventButton = new System.Windows.Forms.Button();
             this.ListBoxPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.ControlPanelCommand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ParamSrc2)).BeginInit();
@@ -73,15 +75,47 @@
             // ListBoxPanel
             // 
             this.ListBoxPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListBoxPanel.Controls.Add(this.EventToFileButton);
-            this.ListBoxPanel.Controls.Add(this.FileToEventButton);
+            this.ListBoxPanel.Controls.Add(this.panel1);
             this.ListBoxPanel.Controls.Add(this.ControlPanel);
             this.ListBoxPanel.Controls.Add(this.Script);
-            this.ListBoxPanel.Location = new System.Drawing.Point(3, 31);
+            this.ListBoxPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListBoxPanel.Location = new System.Drawing.Point(0, 29);
             this.ListBoxPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ListBoxPanel.Name = "ListBoxPanel";
-            this.ListBoxPanel.Size = new System.Drawing.Size(1089, 798);
+            this.ListBoxPanel.Size = new System.Drawing.Size(1097, 804);
             this.ListBoxPanel.TabIndex = 151;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.FileToEventButton);
+            this.panel1.Controls.Add(this.EventToFileButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 760);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1095, 42);
+            this.panel1.TabIndex = 17;
+            // 
+            // FileToEventButton
+            // 
+            this.FileToEventButton.Location = new System.Drawing.Point(464, 10);
+            this.FileToEventButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FileToEventButton.Name = "FileToEventButton";
+            this.FileToEventButton.Size = new System.Drawing.Size(219, 30);
+            this.FileToEventButton.TabIndex = 16;
+            this.FileToEventButton.Text = "ファイルからインポート";
+            this.FileToEventButton.UseVisualStyleBackColor = true;
+            this.FileToEventButton.Click += new System.EventHandler(this.FileToEventButton_Click);
+            // 
+            // EventToFileButton
+            // 
+            this.EventToFileButton.Location = new System.Drawing.Point(687, 10);
+            this.EventToFileButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventToFileButton.Name = "EventToFileButton";
+            this.EventToFileButton.Size = new System.Drawing.Size(219, 30);
+            this.EventToFileButton.TabIndex = 15;
+            this.EventToFileButton.Text = "ファイルへエクスポート";
+            this.EventToFileButton.UseVisualStyleBackColor = true;
+            this.EventToFileButton.Click += new System.EventHandler(this.EventToFileButton_Click);
             // 
             // ControlPanel
             // 
@@ -333,13 +367,14 @@
             // 
             // Script
             // 
-            this.Script.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Script.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Script.FormattingEnabled = true;
+            this.Script.IntegralHeight = false;
             this.Script.ItemHeight = 18;
-            this.Script.Location = new System.Drawing.Point(-1, -1);
+            this.Script.Location = new System.Drawing.Point(0, 0);
             this.Script.Margin = new System.Windows.Forms.Padding(4);
             this.Script.Name = "Script";
-            this.Script.Size = new System.Drawing.Size(1089, 760);
+            this.Script.Size = new System.Drawing.Size(1095, 802);
             this.Script.TabIndex = 0;
             this.Script.SelectedIndexChanged += new System.EventHandler(this.Script_SelectedIndexChanged);
             this.Script.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Script_KeyDown);
@@ -354,9 +389,10 @@
             this.panel5.Controls.Add(this.AllWriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1089, 29);
+            this.panel5.Size = new System.Drawing.Size(1097, 29);
             this.panel5.TabIndex = 150;
             // 
             // N_ReloadListButton
@@ -436,28 +472,6 @@
             this.label16.Text = "アドレス";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // EventToFileButton
-            // 
-            this.EventToFileButton.Location = new System.Drawing.Point(857, 764);
-            this.EventToFileButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EventToFileButton.Name = "EventToFileButton";
-            this.EventToFileButton.Size = new System.Drawing.Size(219, 30);
-            this.EventToFileButton.TabIndex = 15;
-            this.EventToFileButton.Text = "ファイルへエクスポート";
-            this.EventToFileButton.UseVisualStyleBackColor = true;
-            this.EventToFileButton.Click += new System.EventHandler(this.EventToFileButton_Click);
-            // 
-            // FileToEventButton
-            // 
-            this.FileToEventButton.Location = new System.Drawing.Point(634, 764);
-            this.FileToEventButton.Margin = new System.Windows.Forms.Padding(2);
-            this.FileToEventButton.Name = "FileToEventButton";
-            this.FileToEventButton.Size = new System.Drawing.Size(219, 30);
-            this.FileToEventButton.TabIndex = 16;
-            this.FileToEventButton.Text = "ファイルからインポート";
-            this.FileToEventButton.UseVisualStyleBackColor = true;
-            this.FileToEventButton.Click += new System.EventHandler(this.FileToEventButton_Click);
-            // 
             // ProcsScriptInnerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -469,6 +483,7 @@
             this.Size = new System.Drawing.Size(1097, 833);
             this.Load += new System.EventHandler(this.ProcsScriptInnerControl_Load);
             this.ListBoxPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
             this.ControlPanelCommand.ResumeLayout(false);
@@ -516,5 +531,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button EventToFileButton;
         private System.Windows.Forms.Button FileToEventButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

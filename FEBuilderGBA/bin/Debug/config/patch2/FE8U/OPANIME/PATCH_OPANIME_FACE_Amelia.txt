@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_アメリア
 NAME.en=OP Anime Face: Amelia
-NAME.zh=OPANIME_FACE_阿米莉亚
+NAME.zh=OP动画_脸_阿米莉亚
 
 TYPE=IMAGE
 TAG=#IMAGE

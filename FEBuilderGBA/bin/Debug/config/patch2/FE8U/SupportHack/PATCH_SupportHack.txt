@@ -1,0 +1,15 @@
+NAME=支援会話を5回ではなく5人に変更する(By Circle)
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x028338=0x00 0x4B 0x18 0x47
+
+INFO=支援会話を5回ではなく、5人に変更します。\r\n合計5*2回=10+1回会話できるようになります。\r\nただしAにできるのは一人だけです。
+AUTHOR=Circle
+
+EA=SupportHack.event
+NAME.en=Change support conversation to 5 people instead of 5 times(By Circle)
+INFO.en=Change the support conversation to 5 people instead of 5 times.\r\nYou will be able to talk a total of 5 * 2 times = 10 + 1 time.\r\nHowever, only one person can do it.
+NAME.zh=将支持对话更改为5人而不是5次(By Circle)
+INFO.zh=我会将支持对话更改为5人而不是5次。\r\n你总共可以说5 * 2次= 10 + 1次。\r\n但是，只有一个人可以做到这一点。

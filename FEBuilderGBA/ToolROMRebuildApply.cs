@@ -72,10 +72,10 @@ namespace FEBuilderGBA
 
         ToolROMRebuildFreeArea FreeArea;
 
-        uint Alloc(uint size)
+        uint Alloc(uint size, uint current_addr)
         {
             //フリー領域を使えるか?
-            uint writeaddr = FreeArea.CanAllocFreeArea(size);
+            uint writeaddr = FreeArea.CanAllocFreeArea(size, current_addr);
             if (writeaddr == U.NOT_FOUND)
             {//フリーがない場合末尾から確保
                 writeaddr = this.WriteOffset;
@@ -298,7 +298,6 @@ namespace FEBuilderGBA
             if (!r)
             {
                 R.ShowStopError("適応した結果にエラーがあるようです。\r\nログを確認してください。\r\nログ:{0}", GetLogFilename(filename));
-                return false;
             }
 
             wait.DoEvents("ApplyVanillaROM");
@@ -344,10 +343,13 @@ namespace FEBuilderGBA
             {//エラーがあれば出力する.
                 sb.Insert(0,"== ERROR! ==\r\n");
                 isOK = false;
+
+                Log.Error(sb.ToString());
             }
 
             sb.AppendLine("== MAPPING ==");
             sb.Append(this.ApplyLog);
+
 
             File.WriteAllText(logfilename, sb.ToString());
             return isOK;
@@ -580,7 +582,7 @@ namespace FEBuilderGBA
                     }
                 }
                 //リポイントが必須
-                writeaddr = Alloc((uint)bin.Length);
+                writeaddr = Alloc((uint)bin.Length, addr);
             }
 
             U.write_range(this.WriteROMData32MB, writeaddr, bin);
@@ -747,7 +749,7 @@ namespace FEBuilderGBA
             }
             else
             {//リポイントが必要
-                writeaddr = Alloc(datasize);
+                writeaddr = Alloc(datasize, addr);
             }
             List<byte> bin = WriteBytes(0, sp, writeaddr, writeaddr, debugInfo);
 
@@ -790,7 +792,7 @@ namespace FEBuilderGBA
             }
             else
             {//リポイントが必要
-                writeaddr = Alloc((uint)newbin.Length);
+                writeaddr = Alloc((uint)newbin.Length, addr);
             }
             //データの書き込み
             U.write_range(this.WriteROMData32MB, writeaddr, newbin);
@@ -818,7 +820,7 @@ namespace FEBuilderGBA
             else
             {//リポイントが必要
 
-                writeaddr = Alloc(blocksize * count);
+                writeaddr = Alloc(blocksize * count, addr);
                 uint writeaddr_pointer = U.toPointer(writeaddr);
 
                 //データのコピー

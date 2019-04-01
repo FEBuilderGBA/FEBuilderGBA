@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ナターシャ_影
-NAME.en=OPANIME_FACE_Natasha_Shadow
+NAME=OPANIME_FACE_ナターシャ_影
+NAME.en=OP Anime Face: Natasha (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

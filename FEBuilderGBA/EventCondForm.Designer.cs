@@ -422,6 +422,16 @@
             this.TRAP_N0B_B2 = new System.Windows.Forms.NumericUpDown();
             this.TRAP_N0B_B1 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
+            this.TRAP_UNIONTAB_N06 = new System.Windows.Forms.TabPage();
+            this.TRAP_N06_L_1_MAPXY_2 = new System.Windows.Forms.Label();
+            this.TRAP_N06_B3 = new System.Windows.Forms.NumericUpDown();
+            this.TRAP_N06_J_4_TEXT = new System.Windows.Forms.Label();
+            this.TRAP_N06_J_3 = new System.Windows.Forms.Label();
+            this.TRAP_N06_W4 = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.TRAP_N06_B2 = new System.Windows.Forms.NumericUpDown();
+            this.TRAP_N06_B1 = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
             this.label130 = new System.Windows.Forms.Label();
             this.label131 = new System.Windows.Forms.Label();
@@ -466,16 +476,6 @@
             this.numericUpDown59 = new System.Windows.Forms.NumericUpDown();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label62 = new System.Windows.Forms.Label();
-            this.TRAP_UNIONTAB_N06 = new System.Windows.Forms.TabPage();
-            this.TRAP_N06_L_1_MAPXY_2 = new System.Windows.Forms.Label();
-            this.TRAP_N06_B3 = new System.Windows.Forms.NumericUpDown();
-            this.TRAP_N06_J_4_TEXT = new System.Windows.Forms.Label();
-            this.TRAP_N06_J_3 = new System.Windows.Forms.Label();
-            this.TRAP_N06_W4 = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.TRAP_N06_B2 = new System.Windows.Forms.NumericUpDown();
-            this.TRAP_N06_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.OBJECT_AddressList = new FEBuilderGBA.ListBoxEx();
             this.OBJECT_L_0_COMBO = new FEBuilderGBA.ComboBoxEx();
@@ -798,6 +798,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B1)).BeginInit();
+            this.TRAP_UNIONTAB_N06.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).BeginInit();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_Address)).BeginInit();
             this.tabPage1819.SuspendLayout();
@@ -818,11 +823,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown59)).BeginInit();
             this.panel14.SuspendLayout();
-            this.TRAP_UNIONTAB_N06.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).BeginInit();
@@ -1069,7 +1069,7 @@
             // OBJECT_W0_UNIONKEY
             // 
             this.OBJECT_W0_UNIONKEY.Hexadecimal = true;
-            this.OBJECT_W0_UNIONKEY.Location = new System.Drawing.Point(201, 7);
+            this.OBJECT_W0_UNIONKEY.Location = new System.Drawing.Point(201, 8);
             this.OBJECT_W0_UNIONKEY.Margin = new System.Windows.Forms.Padding(2);
             this.OBJECT_W0_UNIONKEY.Maximum = new decimal(new int[] {
             255,
@@ -1181,6 +1181,7 @@
             this.OBJECT_N05_B10.Name = "OBJECT_N05_B10";
             this.OBJECT_N05_B10.Size = new System.Drawing.Size(67, 25);
             this.OBJECT_N05_B10.TabIndex = 216;
+            this.OBJECT_N05_B10.ValueChanged += new System.EventHandler(this.OBJECT_N05_B10_ValueChanged);
             // 
             // OBJECT_N05_J_10
             // 
@@ -5806,6 +5807,126 @@
             this.label21.Text = "X:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TRAP_UNIONTAB_N06
+            // 
+            this.TRAP_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_1_MAPXY_2);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B3);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_4_TEXT);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_3);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_W4);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.label34);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B2);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B1);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.label35);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_4_TEXT);
+            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_EXPLAIN);
+            this.TRAP_UNIONTAB_N06.Location = new System.Drawing.Point(4, 28);
+            this.TRAP_UNIONTAB_N06.Name = "TRAP_UNIONTAB_N06";
+            this.TRAP_UNIONTAB_N06.Padding = new System.Windows.Forms.Padding(3);
+            this.TRAP_UNIONTAB_N06.Size = new System.Drawing.Size(593, 668);
+            this.TRAP_UNIONTAB_N06.TabIndex = 8;
+            this.TRAP_UNIONTAB_N06.Text = "Vein";
+            // 
+            // TRAP_N06_L_1_MAPXY_2
+            // 
+            this.TRAP_N06_L_1_MAPXY_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_L_1_MAPXY_2.Location = new System.Drawing.Point(4, 12);
+            this.TRAP_N06_L_1_MAPXY_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_L_1_MAPXY_2.Name = "TRAP_N06_L_1_MAPXY_2";
+            this.TRAP_N06_L_1_MAPXY_2.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_L_1_MAPXY_2.TabIndex = 242;
+            this.TRAP_N06_L_1_MAPXY_2.Text = "配置座標";
+            this.TRAP_N06_L_1_MAPXY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_B3
+            // 
+            this.TRAP_N06_B3.Hexadecimal = true;
+            this.TRAP_N06_B3.Location = new System.Drawing.Point(171, 53);
+            this.TRAP_N06_B3.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.TRAP_N06_B3.Name = "TRAP_N06_B3";
+            this.TRAP_N06_B3.Size = new System.Drawing.Size(67, 25);
+            this.TRAP_N06_B3.TabIndex = 248;
+            // 
+            // TRAP_N06_J_4_TEXT
+            // 
+            this.TRAP_N06_J_4_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_J_4_TEXT.Location = new System.Drawing.Point(4, 84);
+            this.TRAP_N06_J_4_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_J_4_TEXT.Name = "TRAP_N06_J_4_TEXT";
+            this.TRAP_N06_J_4_TEXT.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_J_4_TEXT.TabIndex = 243;
+            this.TRAP_N06_J_4_TEXT.Text = "TextID";
+            this.TRAP_N06_J_4_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_J_3
+            // 
+            this.TRAP_N06_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRAP_N06_J_3.Location = new System.Drawing.Point(4, 48);
+            this.TRAP_N06_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TRAP_N06_J_3.Name = "TRAP_N06_J_3";
+            this.TRAP_N06_J_3.Size = new System.Drawing.Size(158, 32);
+            this.TRAP_N06_J_3.TabIndex = 251;
+            this.TRAP_N06_J_3.Text = "VeinEffectID";
+            this.TRAP_N06_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_W4
+            // 
+            this.TRAP_N06_W4.Hexadecimal = true;
+            this.TRAP_N06_W4.Location = new System.Drawing.Point(171, 87);
+            this.TRAP_N06_W4.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_W4.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.TRAP_N06_W4.Name = "TRAP_N06_W4";
+            this.TRAP_N06_W4.Size = new System.Drawing.Size(109, 25);
+            this.TRAP_N06_W4.TabIndex = 244;
+            // 
+            // label34
+            // 
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Location = new System.Drawing.Point(284, 14);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(28, 26);
+            this.label34.TabIndex = 250;
+            this.label34.Text = "Y:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TRAP_N06_B2
+            // 
+            this.TRAP_N06_B2.Location = new System.Drawing.Point(318, 16);
+            this.TRAP_N06_B2.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B2.Name = "TRAP_N06_B2";
+            this.TRAP_N06_B2.Size = new System.Drawing.Size(78, 25);
+            this.TRAP_N06_B2.TabIndex = 249;
+            // 
+            // TRAP_N06_B1
+            // 
+            this.TRAP_N06_B1.Location = new System.Drawing.Point(202, 16);
+            this.TRAP_N06_B1.Margin = new System.Windows.Forms.Padding(2);
+            this.TRAP_N06_B1.Name = "TRAP_N06_B1";
+            this.TRAP_N06_B1.Size = new System.Drawing.Size(78, 25);
+            this.TRAP_N06_B1.TabIndex = 247;
+            // 
+            // label35
+            // 
+            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label35.Location = new System.Drawing.Point(171, 14);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(28, 26);
+            this.label35.TabIndex = 246;
+            this.label35.Text = "X:";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel27
             // 
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -6343,126 +6464,6 @@
             this.label62.Text = "マップ名";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // TRAP_UNIONTAB_N06
-            // 
-            this.TRAP_UNIONTAB_N06.BackColor = System.Drawing.SystemColors.Control;
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_4_TEXT);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_L_1_MAPXY_2);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B3);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_4_TEXT);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_J_3);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_W4);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.label34);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B2);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_B1);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.label35);
-            this.TRAP_UNIONTAB_N06.Controls.Add(this.TRAP_N06_EXPLAIN);
-            this.TRAP_UNIONTAB_N06.Location = new System.Drawing.Point(4, 28);
-            this.TRAP_UNIONTAB_N06.Name = "TRAP_UNIONTAB_N06";
-            this.TRAP_UNIONTAB_N06.Padding = new System.Windows.Forms.Padding(3);
-            this.TRAP_UNIONTAB_N06.Size = new System.Drawing.Size(593, 668);
-            this.TRAP_UNIONTAB_N06.TabIndex = 8;
-            this.TRAP_UNIONTAB_N06.Text = "Vein";
-            // 
-            // TRAP_N06_L_1_MAPXY_2
-            // 
-            this.TRAP_N06_L_1_MAPXY_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_L_1_MAPXY_2.Location = new System.Drawing.Point(4, 12);
-            this.TRAP_N06_L_1_MAPXY_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_L_1_MAPXY_2.Name = "TRAP_N06_L_1_MAPXY_2";
-            this.TRAP_N06_L_1_MAPXY_2.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_L_1_MAPXY_2.TabIndex = 242;
-            this.TRAP_N06_L_1_MAPXY_2.Text = "配置座標";
-            this.TRAP_N06_L_1_MAPXY_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_B3
-            // 
-            this.TRAP_N06_B3.Hexadecimal = true;
-            this.TRAP_N06_B3.Location = new System.Drawing.Point(171, 53);
-            this.TRAP_N06_B3.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.TRAP_N06_B3.Name = "TRAP_N06_B3";
-            this.TRAP_N06_B3.Size = new System.Drawing.Size(67, 25);
-            this.TRAP_N06_B3.TabIndex = 248;
-            // 
-            // TRAP_N06_J_4_TEXT
-            // 
-            this.TRAP_N06_J_4_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_J_4_TEXT.Location = new System.Drawing.Point(4, 84);
-            this.TRAP_N06_J_4_TEXT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_J_4_TEXT.Name = "TRAP_N06_J_4_TEXT";
-            this.TRAP_N06_J_4_TEXT.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_J_4_TEXT.TabIndex = 243;
-            this.TRAP_N06_J_4_TEXT.Text = "TextID";
-            this.TRAP_N06_J_4_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_J_3
-            // 
-            this.TRAP_N06_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRAP_N06_J_3.Location = new System.Drawing.Point(4, 48);
-            this.TRAP_N06_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TRAP_N06_J_3.Name = "TRAP_N06_J_3";
-            this.TRAP_N06_J_3.Size = new System.Drawing.Size(158, 32);
-            this.TRAP_N06_J_3.TabIndex = 251;
-            this.TRAP_N06_J_3.Text = "VeinEffectID";
-            this.TRAP_N06_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_W4
-            // 
-            this.TRAP_N06_W4.Hexadecimal = true;
-            this.TRAP_N06_W4.Location = new System.Drawing.Point(171, 87);
-            this.TRAP_N06_W4.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_W4.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.TRAP_N06_W4.Name = "TRAP_N06_W4";
-            this.TRAP_N06_W4.Size = new System.Drawing.Size(109, 25);
-            this.TRAP_N06_W4.TabIndex = 244;
-            // 
-            // label34
-            // 
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Location = new System.Drawing.Point(284, 14);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(28, 26);
-            this.label34.TabIndex = 250;
-            this.label34.Text = "Y:";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TRAP_N06_B2
-            // 
-            this.TRAP_N06_B2.Location = new System.Drawing.Point(318, 16);
-            this.TRAP_N06_B2.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B2.Name = "TRAP_N06_B2";
-            this.TRAP_N06_B2.Size = new System.Drawing.Size(78, 25);
-            this.TRAP_N06_B2.TabIndex = 249;
-            // 
-            // TRAP_N06_B1
-            // 
-            this.TRAP_N06_B1.Location = new System.Drawing.Point(202, 16);
-            this.TRAP_N06_B1.Margin = new System.Windows.Forms.Padding(2);
-            this.TRAP_N06_B1.Name = "TRAP_N06_B1";
-            this.TRAP_N06_B1.Size = new System.Drawing.Size(78, 25);
-            this.TRAP_N06_B1.TabIndex = 247;
-            // 
-            // label35
-            // 
-            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label35.Location = new System.Drawing.Point(171, 14);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(28, 26);
-            this.label35.TabIndex = 246;
-            this.label35.Text = "X:";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MapPictureBox
             // 
             this.MapPictureBox.AutoScroll = true;
@@ -6530,12 +6531,6 @@
             // 
             this.OBJECT_N05_L_10_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.OBJECT_N05_L_10_COMBO.FormattingEnabled = true;
-            this.OBJECT_N05_L_10_COMBO.Items.AddRange(new object[] {
-            "11=制圧",
-            "20=村の中心(盗賊のターゲット)",
-            "10=民家",
-            "14=ランダム宝箱",
-            "0=--"});
             this.OBJECT_N05_L_10_COMBO.Location = new System.Drawing.Point(273, 116);
             this.OBJECT_N05_L_10_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.OBJECT_N05_L_10_COMBO.Name = "OBJECT_N05_L_10_COMBO";
@@ -8202,6 +8197,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_N0B_B1)).EndInit();
+            this.TRAP_UNIONTAB_N06.ResumeLayout(false);
+            this.TRAP_UNIONTAB_N06.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).EndInit();
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TRAP_Address)).EndInit();
@@ -8227,12 +8228,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown56)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown59)).EndInit();
             this.panel14.ResumeLayout(false);
-            this.TRAP_UNIONTAB_N06.ResumeLayout(false);
-            this.TRAP_UNIONTAB_N06.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_W4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TRAP_N06_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OBJECT_N07_L_4_ITEMICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_9_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).EndInit();

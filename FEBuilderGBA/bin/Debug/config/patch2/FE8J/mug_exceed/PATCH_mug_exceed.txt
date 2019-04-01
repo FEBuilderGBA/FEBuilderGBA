@@ -1,5 +1,5 @@
-﻿NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する)
-NAME.en=MugExceed / Exceed the Portrait Hackbox(Extend Portrait by 4 tiles)
+NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する)
+NAME.en=Exceed The Portrait Hackbox By 4 Tiles
 
 TYPE=EA
 TAG=#ENGINE
@@ -13,7 +13,7 @@ AUTHOR=tiki http://feuniverse.us/t/fe7-exceed-the-portrait-hackbox/2044 Transpor
 
 
 INFO=顔画像で利用できるタイルを増やします。
-INFO.en=Increase the number of tiles available for facial images.
+INFO.en=Patches the ROM to increase the number of tiles available for portraits by 4.\r\nThese bytes control the new portrait info:\r\nByte 17: Left Tile X-Coordinate\r\nByte 18: Left Tile Y-Coordinate\r\nByte 19: Right Tile X-Coordinate\r\nByte 20: Right Tile Y-Coordinate\r\nByte 27: Flags whether selected portrait has expanded hackbox or not\r\n
 NAME.zh=MugExceed/超过头像hack框（扩大面部图像4块）
 INFO.zh=增加可用于面部图像的图块数量。
 

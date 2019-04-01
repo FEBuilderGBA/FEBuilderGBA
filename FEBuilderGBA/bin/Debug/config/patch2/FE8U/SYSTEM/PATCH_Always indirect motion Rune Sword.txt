@@ -1,6 +1,6 @@
 NAME=常に間接モーション_ルーンソード
 NAME.en=Always Ranged Animate: Rune Sword
-NAME.zh=始终间接运动_符文剑
+NAME.zh=始终间接运动_卢尼之剑
 
 //アドレスパッチとして実装します
 TYPE=ADDR

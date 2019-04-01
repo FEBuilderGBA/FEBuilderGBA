@@ -1,6 +1,6 @@
 
 NAME=フレイボム(地雷)のダメージ量
-NAME.en=Change Mine Damage
+NAME.en=Mine Damage Value
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -14,4 +14,4 @@ AUTHOR=Crazycolorz5
 
 
 
-NAME.zh=Freybom（地雷）的伤害
+NAME.zh=（地雷）的伤害

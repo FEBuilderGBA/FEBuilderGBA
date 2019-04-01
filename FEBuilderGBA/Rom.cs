@@ -11,6 +11,8 @@ namespace FEBuilderGBA
     public interface IROMFEINFO
     {
         String game_id();    // ゲームバージョンコード
+        String VersionToFilename();
+        String TitleToFilename();
         uint mask_point_base_pointer(); // Huffman tree end (indirected twice)
         uint mask_pointer();  // Huffman tree start (indirected once)
         uint text_pointer(); // textの開始位置
@@ -62,7 +64,9 @@ namespace FEBuilderGBA
         uint support_attribute_pointer();  //支援効果の開始位置
         uint attribute_maxcount(); // 属性の最大数
         uint terrain_recovery_pointer(); //地形回復 全クラス共通
+        uint terrain_bad_status_recovery_pointer(); //地形回復 全クラス共通
         uint ccbranch_pointer(); // CC分岐の開始位置
+        uint ccbranch2_pointer(); // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
         uint class_alphaname_pointer(); // クラスのアルファベット表記の開始位置
         uint map_terrain_name_pointer(); // マップの地名表記の開始位置
         uint image_chapter_title_pointer(); // 章タイトルの開始位置
@@ -282,6 +286,7 @@ namespace FEBuilderGBA
         uint ai3_pointer();  //AI3ポインタ
         uint ai_steal_item_pointer();  //AI盗む アイテム評価テーブル
         uint ai_preform_staff_pointer();  //AI杖 杖評価テーブル
+        uint ai_preform_staff_asm_pointer();  //AI杖 杖評価テーブル ai_preform_staff_pointer+4への参照
         uint ai_map_setting_pointer();  //AI 章ごとの設定テーブル
         uint item_usability_array_pointer(); //アイテムを利用できるか判定する
         uint item_usability_array_switch2_address();
@@ -308,6 +313,7 @@ namespace FEBuilderGBA
         uint dic_title_pointer();    //辞書タイトルポインタ
         uint itemicon_mine_id();  // アイテムアイコンのフレイボムの位置
         uint item_gold_id();  // お金を取得するイベントに利用されるゴールドのID
+        uint unitaction_function_pointer();  // ユニットアクションポインタ
         uint lookup_table_battle_terrain_00_pointer(); //戦闘アニメの床
         uint lookup_table_battle_terrain_01_pointer(); //戦闘アニメの床
         uint lookup_table_battle_terrain_02_pointer(); //戦闘アニメの床
@@ -365,6 +371,8 @@ namespace FEBuilderGBA
         uint patch_chaptor_names_text_fix(out uint enable_value); //章の名前をテキストにするパッチ
         uint patch_skip_worldmap_fix(out uint enable_value); //skip_worldmap_fix patch
         uint patch_generic_enemy_portrait_extends(out uint enable_value);//一般兵の顔 拡張
+        uint patch_stairs_hack(out uint enable_value); //階段拡張
+        uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
         byte[] defualt_event_script_term_code(); //イベント命令を終了させるディフォルトコード
         byte[] defualt_event_script_toplevel_code(); //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)
         byte[] defualt_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)
@@ -756,47 +764,6 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
-        public string TitleToFilename()
-        {
-            if (this.RomInfo.version() == 8)
-            {
-                return "FE8";
-            }
-            else if (this.RomInfo.version() == 7)
-            {
-                return "FE7";
-            }
-            else if (this.RomInfo.version() == 6)
-            {
-                return "FE6";
-            }
-            throw new Exception("unknown version:" + this.RomInfo.version().ToString());
-        }
-
-        public string VersionToFilename()
-        {
-            if (this.RomInfo.version() == 8)
-            {
-                if (this.RomInfo.is_multibyte())
-                {
-                    return "FE8J";
-                }
-                return "FE8U";
-            }
-            else if (this.RomInfo.version() == 7)
-            {
-                if (this.RomInfo.is_multibyte())
-                {
-                    return "FE7J";
-                }
-                return "FE7U";
-            }
-            else if (this.RomInfo.version() == 6)
-            {
-                return "FE6";
-            }
-            throw new Exception("unknown version:" + this.RomInfo.version().ToString() );
-        }
         public void SetVirtualROMFlag(string srcfilename)
         {
             this.Filename = srcfilename + ".VIRTUAL";
@@ -879,6 +846,10 @@ namespace FEBuilderGBA
             this.write_range(0, newROMData);
 
             return true;
+        }
+        public void SwapNewROMDataDirect(byte[] newROMData)
+        {
+            this.Data = newROMData;
         }
         public bool CompareByte(uint addr, byte[] bin)
         {

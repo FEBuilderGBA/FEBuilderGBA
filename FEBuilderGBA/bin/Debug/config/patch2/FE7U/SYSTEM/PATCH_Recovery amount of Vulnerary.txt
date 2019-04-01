@@ -1,6 +1,6 @@
 
 NAME=きずぐすりの回復量
-NAME.en=Recovery amount of Vulnerary
+NAME.en=Vulnerary Heal Amount
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -9,4 +9,6 @@ TAG=#ENGINE
 ADDRESS=0x2d1e2
 
 
-NAME.zh=责骂的回收量
+NAME.zh=系统_伤药的回复量
+
+INFO.en=Specifies the amount that vulneraries heal in hex. Convert to decimal for value.\r\nDefault is (0x0A) 10 HP.

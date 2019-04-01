@@ -42,33 +42,31 @@
             this.N2_W0 = new System.Windows.Forms.NumericUpDown();
             this.N2_J_0_TEXT = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.N2_FilterComboBox = new System.Windows.Forms.ComboBox();
-            this.N2_ReloadListButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.N2_ReadCount = new System.Windows.Forms.NumericUpDown();
+            this.N2_ReloadListButton = new System.Windows.Forms.Button();
             this.N2_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.N2_ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel8 = new System.Windows.Forms.Panel();
             this.N2_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label18 = new System.Windows.Forms.Label();
             this.N2_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label19 = new System.Windows.Forms.Label();
-            this.WriteButton = new System.Windows.Forms.Button();
+            this.N2_WriteButton = new System.Windows.Forms.Button();
             this.N2_Address = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.N2_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.N2_LabelFilter = new System.Windows.Forms.Label();
             this.N2_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_W6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_W4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_W0)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N2_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_ReadStartAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N2_ReadCount)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).BeginInit();
             this.panel11.SuspendLayout();
@@ -238,8 +236,6 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.N2_FilterComboBox);
             this.panel7.Controls.Add(this.label16);
             this.panel7.Controls.Add(this.label17);
             this.panel7.Controls.Add(this.N2_ReloadListButton);
@@ -250,28 +246,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1153, 30);
             this.panel7.TabIndex = 71;
-            // 
-            // N2_FilterComboBox
-            // 
-            this.N2_FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.N2_FilterComboBox.FormattingEnabled = true;
-            this.N2_FilterComboBox.Items.AddRange(new object[] {
-            "エイリーク編",
-            "エフラム編"});
-            this.N2_FilterComboBox.Location = new System.Drawing.Point(79, 2);
-            this.N2_FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N2_FilterComboBox.Name = "N2_FilterComboBox";
-            this.N2_FilterComboBox.Size = new System.Drawing.Size(187, 26);
-            this.N2_FilterComboBox.TabIndex = 156;
-            // 
-            // N2_ReloadListButton
-            // 
-            this.N2_ReloadListButton.Location = new System.Drawing.Point(711, -1);
-            this.N2_ReloadListButton.Name = "N2_ReloadListButton";
-            this.N2_ReloadListButton.Size = new System.Drawing.Size(112, 30);
-            this.N2_ReloadListButton.TabIndex = 25;
-            this.N2_ReloadListButton.Text = "再取得";
-            this.N2_ReloadListButton.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -293,12 +267,14 @@
             this.label17.Text = "読込数";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // N2_ReadCount
+            // N2_ReloadListButton
             // 
-            this.N2_ReadCount.Location = new System.Drawing.Point(622, 2);
-            this.N2_ReadCount.Name = "N2_ReadCount";
-            this.N2_ReadCount.Size = new System.Drawing.Size(78, 25);
-            this.N2_ReadCount.TabIndex = 28;
+            this.N2_ReloadListButton.Location = new System.Drawing.Point(711, -1);
+            this.N2_ReloadListButton.Name = "N2_ReloadListButton";
+            this.N2_ReloadListButton.Size = new System.Drawing.Size(112, 30);
+            this.N2_ReloadListButton.TabIndex = 25;
+            this.N2_ReloadListButton.Text = "再取得";
+            this.N2_ReloadListButton.UseVisualStyleBackColor = true;
             // 
             // N2_ReadStartAddress
             // 
@@ -313,6 +289,13 @@
             this.N2_ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.N2_ReadStartAddress.TabIndex = 27;
             // 
+            // N2_ReadCount
+            // 
+            this.N2_ReadCount.Location = new System.Drawing.Point(622, 2);
+            this.N2_ReadCount.Name = "N2_ReadCount";
+            this.N2_ReadCount.Size = new System.Drawing.Size(78, 25);
+            this.N2_ReadCount.TabIndex = 28;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -320,7 +303,7 @@
             this.panel8.Controls.Add(this.label18);
             this.panel8.Controls.Add(this.N2_SelectAddress);
             this.panel8.Controls.Add(this.label19);
-            this.panel8.Controls.Add(this.WriteButton);
+            this.panel8.Controls.Add(this.N2_WriteButton);
             this.panel8.Controls.Add(this.N2_Address);
             this.panel8.Controls.Add(this.label20);
             this.panel8.Location = new System.Drawing.Point(284, 42);
@@ -370,14 +353,14 @@
             this.label19.Text = "選択アドレス:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // WriteButton
+            // N2_WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(716, 0);
-            this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(167, 30);
-            this.WriteButton.TabIndex = 9;
-            this.WriteButton.Text = "書き込み";
-            this.WriteButton.UseVisualStyleBackColor = true;
+            this.N2_WriteButton.Location = new System.Drawing.Point(716, 0);
+            this.N2_WriteButton.Name = "N2_WriteButton";
+            this.N2_WriteButton.Size = new System.Drawing.Size(167, 30);
+            this.N2_WriteButton.TabIndex = 9;
+            this.N2_WriteButton.Text = "書き込み";
+            this.N2_WriteButton.UseVisualStyleBackColor = true;
             // 
             // N2_Address
             // 
@@ -438,23 +421,13 @@
             // 
             this.N2_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
             this.N2_AddressList.Location = new System.Drawing.Point(1, 26);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N2_AddressList.Name = "N2_AddressList";
             this.N2_AddressList.Size = new System.Drawing.Size(265, 724);
             this.N2_AddressList.TabIndex = 108;
-            // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(-1, -1);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 34);
-            this.label2.TabIndex = 157;
-            this.label2.Text = "条件:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EDFE6Form
             // 
@@ -477,8 +450,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.N2_W2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_W0)).EndInit();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N2_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N2_ReadStartAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N2_ReadCount)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N2_Address)).EndInit();
@@ -501,10 +474,9 @@
         private System.Windows.Forms.Label label18;
         private FEBuilderGBA.TextBoxEx N2_SelectAddress;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button WriteButton;
+        private System.Windows.Forms.Button N2_WriteButton;
         private System.Windows.Forms.NumericUpDown N2_Address;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox N2_FilterComboBox;
         private System.Windows.Forms.NumericUpDown N2_W0;
         private System.Windows.Forms.Label N2_J_0_TEXT;
         private FEBuilderGBA.TextBoxEx N2_L_0_TEXT_EDAFTER6;
@@ -521,6 +493,5 @@
         private FEBuilderGBA.TextBoxEx N2_L_2_TEXT_EDAFTER6;
         private System.Windows.Forms.NumericUpDown N2_W2;
         private System.Windows.Forms.Label N2_J_2_TEXT;
-        private System.Windows.Forms.Label label2;
     }
 }

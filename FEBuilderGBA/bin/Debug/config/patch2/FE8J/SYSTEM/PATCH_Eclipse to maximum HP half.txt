@@ -1,6 +1,6 @@
-﻿
+
 NAME=イクリプスを最大HP半分に
-NAME.en=Eclipse to maximum HP half
+NAME.en=Eclipse Damage (1/2)
 NAME.zh=月食最大hp减半
 
 //アドレスパッチとして実装します
@@ -19,3 +19,5 @@ COMBO.en=Half of HP|0x13|Half of maximum HP|0x14
 COMBO.zh=HP的一半|0x13|最大HP的一半|0x14
 
 
+
+INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or deals damage equal to 1/2 of max HP (Patched).\r\n

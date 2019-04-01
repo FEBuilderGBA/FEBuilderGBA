@@ -1,6 +1,6 @@
 NAME=Silence New Game music
 NAME.en=Toggle New Game Music On/Off
-NAME.zh=Silence New Game music
+NAME.zh=沉默新游戏音乐
 
 TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
@@ -15,3 +15,5 @@ AUTHOR=circleseverywhere
 
 
 
+
+INFO.zh=沉默新游戏音乐

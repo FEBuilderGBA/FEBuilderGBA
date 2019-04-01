@@ -239,6 +239,7 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
+            this.ERROR_IsOldEA = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -266,6 +267,7 @@
             // tabPagePath
             // 
             this.tabPagePath.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPagePath.Controls.Add(this.ERROR_IsOldEA);
             this.tabPagePath.Controls.Add(this.label51);
             this.tabPagePath.Controls.Add(this.label50);
             this.tabPagePath.Controls.Add(this.X_EXPLAIN_NECESSARY_PROGRAM);
@@ -329,7 +331,7 @@
             // mid2agb_default
             // 
             this.mid2agb_default.AutoSize = true;
-            this.mid2agb_default.Location = new System.Drawing.Point(230, 453);
+            this.mid2agb_default.Location = new System.Drawing.Point(230, 459);
             this.mid2agb_default.Name = "mid2agb_default";
             this.mid2agb_default.Size = new System.Drawing.Size(337, 22);
             this.mid2agb_default.TabIndex = 51;
@@ -339,7 +341,7 @@
             // 
             // mid2agb_button
             // 
-            this.mid2agb_button.Location = new System.Drawing.Point(734, 422);
+            this.mid2agb_button.Location = new System.Drawing.Point(734, 430);
             this.mid2agb_button.Margin = new System.Windows.Forms.Padding(2);
             this.mid2agb_button.Name = "mid2agb_button";
             this.mid2agb_button.Size = new System.Drawing.Size(82, 28);
@@ -351,7 +353,7 @@
             // mid2agb
             // 
             this.mid2agb.ErrorMessage = "";
-            this.mid2agb.Location = new System.Drawing.Point(228, 422);
+            this.mid2agb.Location = new System.Drawing.Point(228, 428);
             this.mid2agb.Margin = new System.Windows.Forms.Padding(2);
             this.mid2agb.Name = "mid2agb";
             this.mid2agb.Placeholder = "";
@@ -363,7 +365,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(8, 426);
+            this.label31.Location = new System.Drawing.Point(8, 432);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(69, 18);
@@ -373,7 +375,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(10, 386);
+            this.label4.Location = new System.Drawing.Point(10, 392);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(808, 30);
@@ -2774,6 +2776,16 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // ERROR_IsOldEA
+            // 
+            this.ERROR_IsOldEA.AutoSize = true;
+            this.ERROR_IsOldEA.Location = new System.Drawing.Point(225, 365);
+            this.ERROR_IsOldEA.Name = "ERROR_IsOldEA";
+            this.ERROR_IsOldEA.Size = new System.Drawing.Size(350, 18);
+            this.ERROR_IsOldEA.TabIndex = 56;
+            this.ERROR_IsOldEA.Text = "警告: Event Assemblerのバージョンが古いです。";
+            this.ERROR_IsOldEA.Visible = false;
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.WriteButton;
@@ -3015,5 +3027,6 @@
         private System.Windows.Forms.Button python3_button;
         private System.Windows.Forms.Label label62;
         private TextBoxEx python3;
+        private System.Windows.Forms.Label ERROR_IsOldEA;
     }
 }

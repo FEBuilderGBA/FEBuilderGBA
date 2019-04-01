@@ -1,0 +1,12 @@
+next_loop=$0E
+break_loop=$98
+check_unit_id=$24
+check_class_id=$32
+check_item_id=$44
+check_affiliation=$70
+item_match=$70
+affiliation_match=$94
+check_affiliation_enemy=$90
+check_affiliation_npc=$86
+check_affiliation_player=$80
+found=$94

@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ティティス_影
-NAME.en=OPANIME_FACE_Tethys_Shadow
+NAME=OPANIME_FACE_ティティス_影
+NAME.en=OP Anime Face: Tethys (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

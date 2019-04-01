@@ -2,7 +2,7 @@ NAME=オープニングのワールドマップを利用したイベントを省
 NAME.en=Skip the event using the opening world map
 
 INFO=このパッチは、"マギ・ヴァル大陸。古より大陸にはびこっていた魔が滅び平穏が戻ってから約８００年・・・"から始まるワールドマップを表示したオープニングイベントをスキップします。
-INFO.en=This patch is skip by "The continent of Magvel.For some 800 years, a quiet peace reigned in the absence of the terrible darkness."\r\nSkipping the opening event using the world map.
+INFO.en=This patch is skip by "The continent of Magvel.For some 800 years, a quiet peace reigned in the absence of the terrible darkness."\r\nSkipping the opening event using the world map.\r\n(skip the intro cutscene with the world map)
 
 TYPE=BIN
 BIN:0xA39768=SkipOpeningWorldmapEvent.bin

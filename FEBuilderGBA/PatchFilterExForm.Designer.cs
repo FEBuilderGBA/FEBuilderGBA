@@ -35,11 +35,13 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.EventButton = new System.Windows.Forms.Button();
             this.ESSENTIALFIXESButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SortFilterComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // InstalledButton
             // 
-            this.InstalledButton.Location = new System.Drawing.Point(12, 90);
+            this.InstalledButton.Location = new System.Drawing.Point(12, 78);
             this.InstalledButton.Name = "InstalledButton";
             this.InstalledButton.Size = new System.Drawing.Size(435, 43);
             this.InstalledButton.TabIndex = 1;
@@ -49,7 +51,7 @@
             // 
             // ImageButton
             // 
-            this.ImageButton.Location = new System.Drawing.Point(12, 159);
+            this.ImageButton.Location = new System.Drawing.Point(12, 134);
             this.ImageButton.Name = "ImageButton";
             this.ImageButton.Size = new System.Drawing.Size(435, 43);
             this.ImageButton.TabIndex = 2;
@@ -59,7 +61,7 @@
             // 
             // SoundButton
             // 
-            this.SoundButton.Location = new System.Drawing.Point(12, 230);
+            this.SoundButton.Location = new System.Drawing.Point(12, 188);
             this.SoundButton.Name = "SoundButton";
             this.SoundButton.Size = new System.Drawing.Size(435, 43);
             this.SoundButton.TabIndex = 3;
@@ -69,7 +71,7 @@
             // 
             // EngineButton
             // 
-            this.EngineButton.Location = new System.Drawing.Point(12, 298);
+            this.EngineButton.Location = new System.Drawing.Point(12, 241);
             this.EngineButton.Name = "EngineButton";
             this.EngineButton.Size = new System.Drawing.Size(435, 43);
             this.EngineButton.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             // EventButton
             // 
-            this.EventButton.Location = new System.Drawing.Point(12, 365);
+            this.EventButton.Location = new System.Drawing.Point(12, 293);
             this.EventButton.Name = "EventButton";
             this.EventButton.Size = new System.Drawing.Size(435, 43);
             this.EventButton.TabIndex = 5;
@@ -99,7 +101,7 @@
             // 
             // ESSENTIALFIXESButton
             // 
-            this.ESSENTIALFIXESButton.Location = new System.Drawing.Point(12, 437);
+            this.ESSENTIALFIXESButton.Location = new System.Drawing.Point(12, 345);
             this.ESSENTIALFIXESButton.Name = "ESSENTIALFIXESButton";
             this.ESSENTIALFIXESButton.Size = new System.Drawing.Size(435, 43);
             this.ESSENTIALFIXESButton.TabIndex = 6;
@@ -107,11 +109,38 @@
             this.ESSENTIALFIXESButton.UseVisualStyleBackColor = true;
             this.ESSENTIALFIXESButton.Click += new System.EventHandler(this.ESSENTIALFIXESButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 419);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ソート";
+            // 
+            // SortFilterComboBox
+            // 
+            this.SortFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SortFilterComboBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SortFilterComboBox.FormattingEnabled = true;
+            this.SortFilterComboBox.Items.AddRange(new object[] {
+            "ソートしない",
+            "新しい日付でソート",
+            "古い日付でソート",
+            "名前でソート"});
+            this.SortFilterComboBox.Location = new System.Drawing.Point(12, 450);
+            this.SortFilterComboBox.Name = "SortFilterComboBox";
+            this.SortFilterComboBox.Size = new System.Drawing.Size(435, 32);
+            this.SortFilterComboBox.TabIndex = 8;
+            this.SortFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.SortFilterComboBox_SelectedIndexChanged);
+            // 
             // PatchFilterExForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(469, 540);
+            this.ClientSize = new System.Drawing.Size(469, 510);
+            this.Controls.Add(this.SortFilterComboBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ESSENTIALFIXESButton);
             this.Controls.Add(this.EventButton);
             this.Controls.Add(this.ClearButton);
@@ -122,6 +151,7 @@
             this.Name = "PatchFilterExForm";
             this.Text = "フィルタの適応";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +164,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button EventButton;
         private System.Windows.Forms.Button ESSENTIALFIXESButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox SortFilterComboBox;
     }
 }

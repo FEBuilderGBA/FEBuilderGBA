@@ -1,0 +1,12 @@
+NAME=セレクトボタンで危険範囲を表示
+NAME.en=Map Danger Zone (Select: Toggle)
+NAME.zh=Danger Zone (select button)
+
+PATCHED_IF:0x1CB6C=0x00 0x00 0x04 0x78
+
+INFO.en=Patches the ROM to enable viewing the full-map danger-zone by pressing Select.
+
+TYPE=EA
+TAG=#ENGINE
+EA=DangerZone.event
+AUTHOR=circleseverywhere

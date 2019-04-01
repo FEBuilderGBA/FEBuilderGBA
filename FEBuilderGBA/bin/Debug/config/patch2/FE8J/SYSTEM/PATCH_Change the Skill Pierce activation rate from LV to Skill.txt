@@ -1,0 +1,21 @@
+NAME=スキル貫通の発動率をLVから技%にする
+NAME.en=Change the Skill Pierce activation rate from LV to Skill
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix 技%|FIX
+COMBO.en=default|OFF|Fix Skill%|FIX
+COMBO.zh=default|OFF|Fix 技%|FIX
+
+DETERMINATION_ADDRESS=0x02b222
+
+OFF:0x02b222=0x08
+FIX:0x02b222=0x15
+
+AUTHOR=aera
+
+CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+CONFLICT_MESSAGE=FE8N Skill Extends
+NAME.zh=将技能渗透激活率从LV移至技能％。

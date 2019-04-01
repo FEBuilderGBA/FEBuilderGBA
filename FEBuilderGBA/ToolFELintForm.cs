@@ -90,6 +90,9 @@ namespace FEBuilderGBA
             List<U.AddrResult> errorMapUI = new List<U.AddrResult>();
             List<U.AddrResult> maps = MapSettingForm.MakeMapIDList();
 
+            List<DisassemblerTrumb.LDRPointer> ldrmap;
+            ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
+
             //システム全体の問題
             {
                 if (pleaseWait != null)
@@ -97,7 +100,7 @@ namespace FEBuilderGBA
                     pleaseWait.DoEvents(R._("システムチェック中"));
                 }
 
-                List<FELint.ErrorSt> errorList = FELint.ScanMAP(FELint.SYSTEM_MAP_ID);
+                List<FELint.ErrorSt> errorList = FELint.ScanMAP(FELint.SYSTEM_MAP_ID, ldrmap);
                 if (! useIgnoreData)
                 {
                     errorList = FELint.HiddenErrorFilter(errorList);
@@ -125,7 +128,7 @@ namespace FEBuilderGBA
                 U.AddrResult ar = new U.AddrResult();
 
                 //このマップのエラースキャン
-                List<FELint.ErrorSt> errorList = FELint.ScanMAP(mapid);
+                List<FELint.ErrorSt> errorList = FELint.ScanMAP(mapid, ldrmap);
                 if (! useIgnoreData)
                 {
                     errorList = FELint.HiddenErrorFilter(errorList);

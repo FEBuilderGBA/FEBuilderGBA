@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_レナック_影
-NAME.en=OPANIME_FACE_Rennac_Shadow
+NAME=OPANIME_FACE_レナック_影
+NAME.en=OP Anime Face: Rennac (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

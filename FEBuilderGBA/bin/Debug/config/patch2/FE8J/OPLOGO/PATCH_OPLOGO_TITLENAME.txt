@@ -1,6 +1,6 @@
 
 NAME=OPLOGOタイトル名
-NAME.en=OPLOGO TITLE NAME
+NAME.en=OP Title Screen Game Title
 NAME.zh=OP界面标题名
 
 //画像パッチとして実装します

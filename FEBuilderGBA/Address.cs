@@ -66,6 +66,7 @@ namespace FEBuilderGBA
             ,MAGICOAM   //魔法拡張のOAM
             ,ROMANIMEFRAME //ROM内アニメのフレーム
             ,JUMPTOHACK //ハックへジャンプするコード
+            ,NEW_TARGET_SELECTION_STRUCT    //NewTargetSelectionStruct
             ,FFor00    //空いてそうなデータ
             ,UnkMIX    //不明なデータ おそらくポインタを含む(rebuild内で利用)
             ,Comment   //コメントデータ
@@ -399,7 +400,7 @@ namespace FEBuilderGBA
             AddROMTCSPointer(list, addr, pointer, info, isPointerOnly);
         }
 
-        static void AddProcsAddress(List<Address> list, uint addr, uint pointer, string info, bool isPointerOnly)
+        public static void AddProcsAddress(List<Address> list, uint addr, uint pointer, string info, bool isPointerOnly)
         {
             addr = U.toOffset(addr);
             if (!U.isSafetyOffset(addr))
@@ -458,6 +459,52 @@ namespace FEBuilderGBA
                 list.Add(new Address(addr, 0, p, info + n, innerType));
             }
         }
+        static public void AddNewTargetSelectionStruct(List<Address> list,uint addr, uint pointer, string info)
+        {
+            list.Add(new Address(addr, 4 * 8, pointer, info, DataTypeEnum.NEW_TARGET_SELECTION_STRUCT));
+
+            uint p = addr + 0;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@Constructor");
+            }
+            p = addr + 4;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@Destructor");
+            }
+            p = addr + 8;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@idk1");
+            }
+            p = addr + 12;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@OnChange");
+            }
+            p = addr + 16;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@idk2");
+            }
+            p = addr + 20;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@OnSelection");
+            }
+            p = addr + 24;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@OnPressB");
+            }
+            p = addr + 28;
+            if (U.isSafetyPointer(Program.ROM.u32(p)))
+            {
+                AddFunction(list, p, info + "@idk3");
+            }
+        }
+
         
         public static bool IsLZ77(DataTypeEnum type)
         {
@@ -530,6 +577,7 @@ namespace FEBuilderGBA
                 || dataType == Address.DataTypeEnum.JUMPTOHACK
                 || dataType == Address.DataTypeEnum.PATCH_ASM
                 || dataType == Address.DataTypeEnum.BL_ASM
+                || dataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT
                 || dataType == Address.DataTypeEnum.UnkMIX
                 ;
         }

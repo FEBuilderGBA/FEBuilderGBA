@@ -10,6 +10,8 @@ namespace FEBuilderGBA
     sealed class ROMFE6JP : IROMFEINFO
     {
         public String game_id() { return "AFEJ01"; }    // ゲームバージョンコード
+        public String VersionToFilename() { return "FE6"; }
+        public String TitleToFilename() { return "FE6"; }
         public uint mask_point_base_pointer() { return 0x0006DC; } // Huffman tree end (indirected twice)
         public uint mask_pointer() { return 0x0006E0; }  // Huffman tree start (indirected once)
         public uint text_pointer() { return 0x13B10; } // textの開始位置
@@ -68,8 +70,10 @@ namespace FEBuilderGBA
         public uint support_attribute_pointer() { return 0x22dbc; }  //支援効果の開始位置
         public uint attribute_maxcount() { return 7; } // 属性の最大数
         public uint terrain_recovery_pointer() { return 0x192d0; } //地形回復 全クラス共通
+        public uint terrain_bad_status_recovery_pointer() { return 0x0192E0; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0x0; } // CC分岐の開始位置
-        public uint class_alphaname_pointer() { return 0x0; } // クラスのアルファベット表記の開始位置
+        public uint ccbranch2_pointer() { return 0x0; } // CC分岐の開始位置2 見習いのCCにのみ利用 CC分岐の開始位置+1の場所を指す
+        public uint class_alphaname_pointer() { return 0x95B48; } // クラスのアルファベット表記の開始位置
         public uint map_terrain_name_pointer() { return 0x192c0; } // マップの地名表記の開始位置
         public uint image_chapter_title_pointer() { return 0x70d44; } // 章タイトルの開始位置
         public uint image_chapter_title_palette() { return 0x3094F4; } // 章タイトルのパレット 多分違う
@@ -291,6 +295,7 @@ namespace FEBuilderGBA
         public uint ai3_pointer() { return 0x0325AC; }  //AI3ポインタ
         public uint ai_steal_item_pointer() { return 0x30228; }  //AI盗む アイテム評価テーブル 0x085C8834
         public uint ai_preform_staff_pointer() { return 0x33C00;  }  //AI杖 杖評価テーブル
+        public uint ai_preform_staff_asm_pointer() { return 0x33C84; }  //AI杖 杖評価テーブル ai_preform_staff_pointer+4への参照
         public uint ai_map_setting_pointer() { return 0x2E520; }  //AI 章ごとの設定テーブル 0x0810DA20
         public uint item_usability_array_pointer() { return 0x22ff8; } //アイテムを利用できるか判定する
         public uint item_usability_array_switch2_address() { return 0x22fe6; }
@@ -317,6 +322,7 @@ namespace FEBuilderGBA
         public uint dic_title_pointer() { return 0x0; }   //辞書タイトルポインタ
         public uint itemicon_mine_id(){ return 0x0;}  // アイテムアイコンのフレイボムの位置
         public uint item_gold_id() { return 0x6f;  }  // お金を取得するイベントに利用されるゴールドのID
+        public uint unitaction_function_pointer() { return 0x2A054; }  // ユニットアクションポインタ
         public uint lookup_table_battle_terrain_00_pointer() { return 0x49CF8; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_01_pointer() { return 0x49CA4; } //戦闘アニメの床
         public uint lookup_table_battle_terrain_02_pointer() { return 0x49CAC; }//戦闘アニメの床
@@ -375,6 +381,8 @@ namespace FEBuilderGBA
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
         public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x8DB8; } //一般兵の顔 拡張
+        public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x0; } //階段拡張
+        public uint patch_unitaction_rework_hack(out uint enable_value) { enable_value = 0x4C03B510; return 0x02A028; } //ユニットアクションの拡張
 
         public byte[] defualt_event_script_term_code() { return new byte[] { 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード
         public byte[] defualt_event_script_toplevel_code() { return new byte[] { 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }; } //イベント命令を終了させるディフォルトコード(各章のトップレベルのイベント)

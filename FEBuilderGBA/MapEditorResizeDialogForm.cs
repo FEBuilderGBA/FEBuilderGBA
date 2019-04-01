@@ -97,6 +97,18 @@ namespace FEBuilderGBA
                     FEBuilderGBA.R.ShowStopError(FEBuilderGBA.R._("メインマップは 15x10 以下のサイズにできません。"));
                     return;
                 }
+
+                uint limitWidth = ImageUtilMap.GetLimitMapWidth(h);
+                if (limitWidth == 0)
+                {
+                    FEBuilderGBA.R.ShowStopError(FEBuilderGBA.R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", w, h));
+                    return;
+                }
+                if (w > limitWidth)
+                {
+                    FEBuilderGBA.R.ShowStopError(FEBuilderGBA.R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", w, h, limitWidth));
+                    return;
+                }
             }
             else
             {//変更
@@ -105,11 +117,6 @@ namespace FEBuilderGBA
                     FEBuilderGBA.R.ShowStopError("サイズを1x1以下にはできません");
                     return;
                 }
-            }
-            if (w > 100 || h > 100)
-            {
-                FEBuilderGBA.R.ShowStopError("マップサイズが100x100を超えています");
-                return;
             }
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;

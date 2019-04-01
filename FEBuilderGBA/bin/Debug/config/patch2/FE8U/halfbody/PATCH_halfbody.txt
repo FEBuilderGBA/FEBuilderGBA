@@ -9,7 +9,7 @@ AUTHOR=Kirb
 
 INFO=肖像画のハーフボディ拡張を有効にします。\r\n肖像画を2つ同時に利用することによってハーフボディを描画します。\r\n注意:既存の顔画像との互換性が壊れます。\r\nまた、実装の上の制約で画面に表示できる顔画像は2つまでになります。\r\n\r\nこのパッチは、SkillSystemsのRandom Mugと競合します。\r\nこのパッチを利用するときは、Random Mugを利用しないでください。
 INFO.en=Activate the half body extension of the portrait.\r\nDraw half bodies by using two portraits at the same time.\r\nNote: Compatibility with existing face images will be broken.\r\nAlso, due to implementation restrictions, you can display up to two face images on the screen.\r\n\r\nThis patch conflicts with Random Mug of SkillSystems.\r\nPlease do not use Random Mug when using this patch.
-INFO.zh=激活肖像的半身延伸。\r\n通过同时使用两幅肖像画出半身。\r\n注意：与现有面部图像的兼容性将被破坏。\r\n此外，由于实施限制，您最多可以在屏幕上显示两个面部图像。\r\n\r\n此补丁与Random Mug of SkillSystems冲突。\r\n使用此补丁时请不要使用Random Mug。
+INFO.zh=激活肖像的半身延伸。\r\n通过同时使用两幅肖像画出半身。\r\n注意：与现有面部图像的兼容性将被破坏。\r\n此外，由于实施限制，您最多可以在屏幕上显示两个面部图像。
 
 CONFLICT_IF:0x55D2=0xC0 0x46 0x01 0xB0 0x03 0x4B
 CONFLICT_MESSAGE=mug_exceed

@@ -138,7 +138,7 @@ namespace FEBuilderGBA
                     FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
-                    FELint.ConversationTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
                 }
             }
             {
@@ -156,14 +156,31 @@ namespace FEBuilderGBA
                     FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
-                    FELint.ConversationTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
                 }
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
-            InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            }
+            {
+                InputFormRef InputFormRef = N_Init(null);
+                UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 4 });
+            }
+        }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 8, 2);
+            }
+            {
+                InputFormRef InputFormRef = N_Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 8, 1);
+            }
         }
     }
 }

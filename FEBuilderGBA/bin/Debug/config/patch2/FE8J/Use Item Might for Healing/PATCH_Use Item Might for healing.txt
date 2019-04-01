@@ -1,11 +1,11 @@
 
 NAME=魔力に基づいて回復の杖の効果を決定する(回復量=(魔力/2)+杖の威力)
-NAME.en=Use Item Might for healing(Recovery HP=(Magic / 2) + Staff power)
+NAME.en=Healing Formula: Staff Might: MAG/2 + Staff Might = Heal
 
 PATCHED_IF:0x16D60=0x10 0xB5 0x03 0x1C 0x0A 0x1C 0x24 0x24 0xFF 0x21 0x11 0x40 0x61 0x43 0x00 0x24 0x0B 0x48
 
 INFO=回復量を杖で一律にするのではなく、魔力などを利用して決定します。\r\n回復量=(魔力/2)+杖の威力\r\nこのパッチはアイテムテーブルのアドレスに依存しているので、アイテムテーブルを拡張してリポイントする前にインストールしてください。
-INFO.en=Normally, the base power of healing staff items is hardcoded. This patch uses the staff item's power instead.\r\nRecovered HP=(Magic / 2) + Staff power\r\nThis patch depends on the address of the item table, so please install it before extending the item table.
+INFO.en=By default, staffs heal for hardcoded amounts and use the formula Heal = Magic + Value.\r\nThis patches healing staffs to use staff might instead of the hardcoded value.\r\nPatched Formula for healing = Magic / 2 + Staff's Might\r\nThis patch modifies the item table and must be installed prior to item table expansion.\r\n
 
 TYPE=BIN
 TAG=#ENGINE

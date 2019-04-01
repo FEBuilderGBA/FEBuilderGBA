@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ラーチェル
 NAME.en=OP Anime Face: L'Arachel
-NAME.zh=OPANIME_FACE_ Rachel
+NAME.zh=OP动画_脸_拉切尔
 
 TYPE=IMAGE
 TAG=#IMAGE

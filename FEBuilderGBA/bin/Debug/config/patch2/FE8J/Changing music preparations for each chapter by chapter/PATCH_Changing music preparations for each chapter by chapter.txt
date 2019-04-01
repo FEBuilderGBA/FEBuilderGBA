@@ -1,5 +1,5 @@
 NAME=章ごとに進撃準備の音楽変更
-NAME.en=Changing music preparations for each chapter
+NAME.en=Set Preparation BGM By Chapter
 NAME.zh=每章进击准备的音乐变更
 
 PATCHED_IF:0x988c2=0x9B 0xF7 0x03 0xFC
@@ -28,7 +28,7 @@ JUMP:0x9ef6e:$BL=0xB692C
 JUMP:0xd13d2:$BL=0xB692C
 
 INFO=進撃準備画面で再生される曲を章単位で変更できるようにします。
-INFO.en=Allows you to change the songs play on the Preparation screen in chapter units.
+INFO.en=Patches the ROM to enable per-chapter preparation screen BGM via Chapter Editor byte 0x26.\r\nTo edit, enter the Chapter Editor and modify the Preparation BGM field.\r\nBy default this isn't set to a Prep BGM and must be changed throughout the ROM.\r\n
 
 AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/RePreparation
 AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/RePreparation。

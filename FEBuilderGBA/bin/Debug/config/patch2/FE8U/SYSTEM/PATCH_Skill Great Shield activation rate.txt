@@ -1,6 +1,6 @@
 NAME=大盾発動率
 NAME.en=Great Shield Activation Rate
-NAME.zh=大盾激活率
+NAME.zh=大盾发动率
 
 //アドレスパッチとして実装します
 TYPE=ADDR

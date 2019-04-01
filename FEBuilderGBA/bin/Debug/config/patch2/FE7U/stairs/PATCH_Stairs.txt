@@ -1,0 +1,21 @@
+NAME=階段
+NAME.en=Stairs
+NAME.zh=楼梯
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x21580=0x00 0x4B 0x18 0x47
+
+EA=Stairs.event
+
+INFO=マップオブジェクトを利用して階段を作れるようにします。\r\n階段を作るには、イベント条件で、「マップオブジェクト」を選択し、「0x5=制圧ポイントと民家」、「種類」で「22=階段拡張」を選択してください。\r\n階段は、同じ階段IDを持つマップオブジェクトを2つ作る必要があります。
+AUTHOR=Snakey1
+
+EA_EXTENDS_UNITMENU:0x01=0x40
+EXTENDS:0x1400=TEXT
+INFO.en=Make the stairs by using the map object.\r\nTo create a staircase, select "Map object" in the event condition, select "05=Seize or Visit Home" and "22=Stairs Hack" \r\nFor the stairs, you need to create two map objects with the same stair ID.
+INFO.zh=使用地图对象制作楼梯。\r\n要创建楼梯，请在事件条件中选择“地图对象”，选择“05=制圧点和民家房屋”，“22=楼梯扩张”。\r\n对于楼梯，您需要创建具有相同楼梯ID的两个地图对象。
+
+CONFLICT_IF:0x02F6E4=0x10 0xB5 0x03 0x4C 0x00 0xF0 0x03 0xF8 0x10 0xBC 0x02 0xBC 0x08 0x47 0x20 0x47
+CONFLICT_MESSAGE=UnitActionRework

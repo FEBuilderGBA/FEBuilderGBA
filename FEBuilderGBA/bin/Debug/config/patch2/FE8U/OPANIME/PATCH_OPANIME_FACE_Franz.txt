@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_フランツ
 NAME.en=OP Anime Face: Franz
-NAME.zh=OPANIME_FACE_ Franz
+NAME.zh=OP动画_脸_弗朗茨
 
 TYPE=IMAGE
 TAG=#IMAGE

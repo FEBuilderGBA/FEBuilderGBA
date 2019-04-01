@@ -1,5 +1,5 @@
-﻿NAME=出撃禁止パッチ 導入
-NAME.en=Deny Deployment (Installer)
+NAME=出撃禁止パッチ 導入
+NAME.en=Deny Deployment From Preparations Installer
 TYPE=BIN
 TAG=#ENGINE
 
@@ -13,7 +13,7 @@ JUMP:0x00097AD8:$r0=kesseki.bin
 INFO=FE8にも出撃禁止機能を搭載する.
 AUTHOR=aera ,7743  FE8 kesseki patch
 
-INFO.en=It also has a sortie prohibition function on FE 8.
+INFO.en=Patches the ROM to create a table that prevents certain units from taking part in certain chapters.\r\nAlso has a sortie prohibition feature in FE8.\r\nMust be installed to use "Deny Deployment From Preparations Editor."\r\n
 NAME.zh=禁止出击补丁引进
 INFO.zh=FE 8具有禁止出击功能。
 

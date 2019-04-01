@@ -1,0 +1,2 @@
+Pavise: Nullify a physical attack.[N]
+(Skill % activation)[X]

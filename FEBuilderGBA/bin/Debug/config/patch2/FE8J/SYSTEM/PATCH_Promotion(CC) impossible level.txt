@@ -1,6 +1,6 @@
 
 NAME=CC不可レベル
-NAME.en=Promotion(CC) impossible level
+NAME.en=Minimum Promotion Level
 NAME.zh=转职没有级别
 
 //アドレスパッチとして実装します
@@ -15,3 +15,5 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
+
+INFO.en=Specifies the minimum level that units can promote at by using promotion items.\r\nMinimum level is value specified + 1. Default is (9+1) 10.

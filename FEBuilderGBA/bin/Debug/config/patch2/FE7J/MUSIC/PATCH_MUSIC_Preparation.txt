@@ -1,5 +1,5 @@
 NAME=MUSIC_進撃準備
-NAME.en=MUSIC_Preparation
+NAME.en=Preparation Screen BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x080495cc 0x080af17e 0x08031654 0x08090048 0x080960b4 0x0809b880 0x0809c7f6
 ADDRESS_TYPE=SONG
 
-NAME.zh=MUSIC_提前准备
+NAME.zh=音乐_进击准备

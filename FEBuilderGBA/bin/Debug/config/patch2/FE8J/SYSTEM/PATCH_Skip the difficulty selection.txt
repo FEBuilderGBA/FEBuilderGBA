@@ -1,5 +1,5 @@
 NAME=難易度選択画面をスキップする
-NAME.en=Skip the difficulty selection.
+NAME.en=Toggle Difficulty Select Skip
 
 TYPE=SWITCH
 TAG=#ENGINE

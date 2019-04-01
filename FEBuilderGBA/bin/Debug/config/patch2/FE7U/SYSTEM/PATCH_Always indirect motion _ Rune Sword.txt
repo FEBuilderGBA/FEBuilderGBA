@@ -8,5 +8,5 @@ ADDRESS=0x0052D58 0x0052D40
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-NAME.en=Always indirect motion_Rune Sword
-NAME.zh=始终间接运动_符文剑
+NAME.en=Always Ranged Animate: Rune Sword
+NAME.zh=始终间接运动_卢尼之剑

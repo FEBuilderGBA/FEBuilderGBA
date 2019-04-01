@@ -1,6 +1,6 @@
 NAME=MUSIC_悲しみの中で
 NAME.en=Unit Death BGM
-NAME.zh=MUSIC_悲伤
+NAME.zh=音乐_在悲伤中
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND

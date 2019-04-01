@@ -1,0 +1,2 @@
+Perfectionist: +15 Hit/Avoid when[N]
+user's HP is at maximum.[X]

@@ -187,10 +187,10 @@
             // J_8
             // 
             this.J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_8.Location = new System.Drawing.Point(8, 130);
+            this.J_8.Location = new System.Drawing.Point(5, 130);
             this.J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_8.Name = "J_8";
-            this.J_8.Size = new System.Drawing.Size(114, 30);
+            this.J_8.Size = new System.Drawing.Size(130, 30);
             this.J_8.TabIndex = 70;
             this.J_8.Text = "章タイトル";
             this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,10 +198,10 @@
             // J_4
             // 
             this.J_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4.Location = new System.Drawing.Point(8, 68);
+            this.J_4.Location = new System.Drawing.Point(5, 68);
             this.J_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_4.Name = "J_4";
-            this.J_4.Size = new System.Drawing.Size(114, 30);
+            this.J_4.Size = new System.Drawing.Size(130, 30);
             this.J_4.TabIndex = 69;
             this.J_4.Text = "章画像";
             this.J_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,10 +209,10 @@
             // J_0
             // 
             this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0.Location = new System.Drawing.Point(8, 11);
+            this.J_0.Location = new System.Drawing.Point(5, 11);
             this.J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_0.Name = "J_0";
-            this.J_0.Size = new System.Drawing.Size(114, 30);
+            this.J_0.Size = new System.Drawing.Size(130, 30);
             this.J_0.TabIndex = 68;
             this.J_0.Text = "セーブ画像";
             this.J_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -284,15 +284,15 @@
             this.panel2.Location = new System.Drawing.Point(285, 77);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(914, 359);
+            this.panel2.Size = new System.Drawing.Size(914, 437);
             this.panel2.TabIndex = 67;
             // 
             // ImportButton3
             // 
-            this.ImportButton3.Location = new System.Drawing.Point(474, 260);
+            this.ImportButton3.Location = new System.Drawing.Point(573, 260);
             this.ImportButton3.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton3.Name = "ImportButton3";
-            this.ImportButton3.Size = new System.Drawing.Size(212, 30);
+            this.ImportButton3.Size = new System.Drawing.Size(250, 30);
             this.ImportButton3.TabIndex = 64;
             this.ImportButton3.Text = "章タイトル読込";
             this.ImportButton3.UseVisualStyleBackColor = true;
@@ -310,10 +310,10 @@
             // 
             // ImportButton2
             // 
-            this.ImportButton2.Location = new System.Drawing.Point(239, 260);
+            this.ImportButton2.Location = new System.Drawing.Point(276, 260);
             this.ImportButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton2.Name = "ImportButton2";
-            this.ImportButton2.Size = new System.Drawing.Size(212, 30);
+            this.ImportButton2.Size = new System.Drawing.Size(268, 30);
             this.ImportButton2.TabIndex = 62;
             this.ImportButton2.Text = "章画像読込";
             this.ImportButton2.UseVisualStyleBackColor = true;
@@ -321,10 +321,10 @@
             // 
             // ExportButton3
             // 
-            this.ExportButton3.Location = new System.Drawing.Point(474, 212);
+            this.ExportButton3.Location = new System.Drawing.Point(573, 212);
             this.ExportButton3.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton3.Name = "ExportButton3";
-            this.ExportButton3.Size = new System.Drawing.Size(212, 30);
+            this.ExportButton3.Size = new System.Drawing.Size(250, 30);
             this.ExportButton3.TabIndex = 63;
             this.ExportButton3.Text = "章タイトル取出し";
             this.ExportButton3.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.ImportButton1.Location = new System.Drawing.Point(2, 260);
             this.ImportButton1.Margin = new System.Windows.Forms.Padding(2);
             this.ImportButton1.Name = "ImportButton1";
-            this.ImportButton1.Size = new System.Drawing.Size(212, 30);
+            this.ImportButton1.Size = new System.Drawing.Size(252, 30);
             this.ImportButton1.TabIndex = 60;
             this.ImportButton1.Text = "セーブ画像読込";
             this.ImportButton1.UseVisualStyleBackColor = true;
@@ -353,10 +353,10 @@
             // 
             // ExportButton2
             // 
-            this.ExportButton2.Location = new System.Drawing.Point(239, 212);
+            this.ExportButton2.Location = new System.Drawing.Point(276, 212);
             this.ExportButton2.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton2.Name = "ExportButton2";
-            this.ExportButton2.Size = new System.Drawing.Size(212, 30);
+            this.ExportButton2.Size = new System.Drawing.Size(268, 30);
             this.ExportButton2.TabIndex = 61;
             this.ExportButton2.Text = "章画像取出し";
             this.ExportButton2.UseVisualStyleBackColor = true;
@@ -367,7 +367,7 @@
             this.ExportButton1.Location = new System.Drawing.Point(2, 212);
             this.ExportButton1.Margin = new System.Windows.Forms.Padding(2);
             this.ExportButton1.Name = "ExportButton1";
-            this.ExportButton1.Size = new System.Drawing.Size(212, 30);
+            this.ExportButton1.Size = new System.Drawing.Size(252, 30);
             this.ExportButton1.TabIndex = 59;
             this.ExportButton1.Text = "セーブ画像取出し";
             this.ExportButton1.UseVisualStyleBackColor = true;
@@ -444,12 +444,12 @@
             this.panel6.Location = new System.Drawing.Point(20, 47);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(258, 390);
+            this.panel6.Size = new System.Drawing.Size(258, 468);
             this.panel6.TabIndex = 112;
             // 
             // AddressListExpandsButton
             // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 359);
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 434);
             this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton.Name = "AddressListExpandsButton";
             this.AddressListExpandsButton.Size = new System.Drawing.Size(252, 30);
@@ -473,11 +473,12 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 30);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(259, 328);
+            this.AddressList.Size = new System.Drawing.Size(259, 398);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -486,7 +487,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1208, 448);
+            this.ClientSize = new System.Drawing.Size(1208, 526);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

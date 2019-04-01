@@ -1,0 +1,31 @@
+NAME=HeroesMovement Standalone 設定
+NAME.en=HeroesMovement Standalone (Setting)
+NAME.zh=HeroesMovement Standalone Setting
+
+IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END HeroesMovement/asm/CheckHasSkillStandalone.bin
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO HeroesMovement_combo.txt=SkillID
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
+
+AUTHOR=Original work: Stan / Stand-alone Ver: 7743
+
+INFO.zh=设置一个可以使用FEH移动技能的单位。\r\n您可以设置是否可以使用具有各种要求的技能，例如单元，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。

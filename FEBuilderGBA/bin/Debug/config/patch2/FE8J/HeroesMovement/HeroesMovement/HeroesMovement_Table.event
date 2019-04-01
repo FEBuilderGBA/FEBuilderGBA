@@ -1,0 +1,9 @@
+#define csvmacro000(arg000,arg001,arg002,arg003) "BYTE arg000 arg001 arg002 arg003 "
+
+HeroesMovement_Table:
+csvmacro000(0x01,0x00,0x00,0x3b)      // エイリーク    Shove 体当たり
+csvmacro000(0x02,0x00,0x00,0x3c)      // ゼト          Smite ぶちかまし
+csvmacro000(0x00,0x09,0x00,0x3c)      // アーマー      Smite ぶちかまし
+csvmacro000(0x00,0x05,0x00,0x3f)      // ソシアル      Swap 入れ替え
+csvmacro000(0x00,0x00,0x09,0x3e)      // レイピア      Reposition 引き戻し
+BYTE 0x00 0x00 0x00 0x00    // term

@@ -94,26 +94,24 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             byte b2 = (byte)B2.Value;
-            uint pic_address = (uint)D4.Value;
+            uint pic_address = (uint)P4.Value;
             X_ONE_STEP.Value = 0;
 
             int palette_type = X_PALETTE.SelectedIndex;
 
             X_PIC.Image = LoadWaitUnitIcon(pic_address, palette_type, b2);
-            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address,b2,(int)X_ONE_STEP.Value, palette_type,false);
+            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, (int)X_ONE_STEP.Value, palette_type, false);
         }
         private void X_ONE_STEP_ValueChanged(object sender, EventArgs e)
         {
             byte b2 = (byte)B2.Value;
-            uint pic_address = (uint)D4.Value;
+            uint pic_address = (uint)P4.Value;
             int step = (int)X_ONE_STEP.Value;
             int palette_type = X_PALETTE.SelectedIndex;
-            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, step, palette_type,false);
+            X_ONE_PIC.Image = DrawWaitUnitIcon(pic_address, b2, step, palette_type, false);
         }
 
-        public static Bitmap DrawWaitUnitIcon(
-            uint pic_address,  byte b2, int step ,int palette_type,bool height16_limit
-            )
+        public static Bitmap DrawWaitUnitIcon(uint pic_address, byte b2, int step, int palette_type, bool height16_limit)
         {
             Bitmap bmp = LoadWaitUnitIcon(pic_address, palette_type,b2);
             Rectangle rect;
@@ -215,8 +213,7 @@ namespace FEBuilderGBA
                     );
             }
         }
-        public static Bitmap DrawWaitUnitIconBitmap(uint icon_id, int palette_type, bool height16_limit
-            )
+        public static Bitmap DrawWaitUnitIconBitmap(uint icon_id, int palette_type, bool height16_limit)
         {
             InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(icon_id);
@@ -233,7 +230,7 @@ namespace FEBuilderGBA
         private void ExportButton_Click(object sender, EventArgs e)
         {
             byte b2 = (byte)B2.Value;
-            uint pic_address = (uint)D4.Value;
+            uint pic_address = (uint)P4.Value;
             X_ONE_STEP.Value = 0;
 
             int palette_type = X_PALETTE.SelectedIndex;
@@ -305,7 +302,7 @@ namespace FEBuilderGBA
 
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            this.InputFormRef.WriteImageData(this.D4, image, true, undodata);
+            this.InputFormRef.WriteImageData(this.P4, image, true, undodata);
             Program.Undo.Push(undodata);
 
             this.B2.Value = b2;
@@ -355,9 +352,15 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                FELint.CheckLZ77ImageErrorsPointer(addr + 4
+                FELint.CheckLZ77ImageErrorsPointerOrNull(addr + 4
                     , errors, FELint.Type.IMAGE_UNIT_WAIT_ICON, addr, 32, 0, (uint)i);
             }
+        }
+
+        private void JumpToSystemPalette_Click(object sender, EventArgs e)
+        {
+            ImageSystemIconForm f = (ImageSystemIconForm)InputFormRef.JumpForm<ImageSystemIconForm>();
+            f.JumpToPage(1);
         }
 
     }

@@ -33,6 +33,7 @@
             this.label55 = new System.Windows.Forms.Label();
             this.B0 = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.L_8_NEWALLOC_ALTEVENT_W4 = new System.Windows.Forms.Button();
             this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.L_8_EVENT = new FEBuilderGBA.TextBoxEx();
             this.L_12_FLAG = new FEBuilderGBA.TextBoxEx();
@@ -47,7 +48,7 @@
             this.J_2 = new System.Windows.Forms.Label();
             this.L_1_MAP_ANYFF = new FEBuilderGBA.TextBoxEx();
             this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_4_TEXT_CONVERSATION = new FEBuilderGBA.TextBoxEx();
+            this.L_4_TEXT_DEATHQUOTE = new FEBuilderGBA.TextBoxEx();
             this.B15 = new System.Windows.Forms.NumericUpDown();
             this.B14 = new System.Windows.Forms.NumericUpDown();
             this.J_14 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.L_8_NEWALLOC_ALTEVENT_W4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
@@ -164,7 +164,7 @@
             this.panel2.Controls.Add(this.B0);
             this.panel2.Controls.Add(this.L_1_MAP_ANYFF);
             this.panel2.Controls.Add(this.L_0_UNIT);
-            this.panel2.Controls.Add(this.L_4_TEXT_CONVERSATION);
+            this.panel2.Controls.Add(this.L_4_TEXT_DEATHQUOTE);
             this.panel2.Controls.Add(this.B15);
             this.panel2.Controls.Add(this.B14);
             this.panel2.Controls.Add(this.J_14);
@@ -179,6 +179,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(864, 590);
             this.panel2.TabIndex = 74;
+            // 
+            // L_8_NEWALLOC_ALTEVENT_W4
+            // 
+            this.L_8_NEWALLOC_ALTEVENT_W4.Location = new System.Drawing.Point(341, 262);
+            this.L_8_NEWALLOC_ALTEVENT_W4.Name = "L_8_NEWALLOC_ALTEVENT_W4";
+            this.L_8_NEWALLOC_ALTEVENT_W4.Size = new System.Drawing.Size(300, 28);
+            this.L_8_NEWALLOC_ALTEVENT_W4.TabIndex = 245;
+            this.L_8_NEWALLOC_ALTEVENT_W4.Text = "新規イベント";
+            this.L_8_NEWALLOC_ALTEVENT_W4.UseVisualStyleBackColor = true;
             // 
             // EXPLAIN
             // 
@@ -346,17 +355,17 @@
             this.L_0_UNIT.Size = new System.Drawing.Size(221, 25);
             this.L_0_UNIT.TabIndex = 172;
             // 
-            // L_4_TEXT_CONVERSATION
+            // L_4_TEXT_DEATHQUOTE
             // 
-            this.L_4_TEXT_CONVERSATION.ErrorMessage = "";
-            this.L_4_TEXT_CONVERSATION.Location = new System.Drawing.Point(12, 142);
-            this.L_4_TEXT_CONVERSATION.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.L_4_TEXT_CONVERSATION.Multiline = true;
-            this.L_4_TEXT_CONVERSATION.Name = "L_4_TEXT_CONVERSATION";
-            this.L_4_TEXT_CONVERSATION.Placeholder = "";
-            this.L_4_TEXT_CONVERSATION.ReadOnly = true;
-            this.L_4_TEXT_CONVERSATION.Size = new System.Drawing.Size(654, 84);
-            this.L_4_TEXT_CONVERSATION.TabIndex = 171;
+            this.L_4_TEXT_DEATHQUOTE.ErrorMessage = "";
+            this.L_4_TEXT_DEATHQUOTE.Location = new System.Drawing.Point(12, 142);
+            this.L_4_TEXT_DEATHQUOTE.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.L_4_TEXT_DEATHQUOTE.Multiline = true;
+            this.L_4_TEXT_DEATHQUOTE.Name = "L_4_TEXT_DEATHQUOTE";
+            this.L_4_TEXT_DEATHQUOTE.Placeholder = "";
+            this.L_4_TEXT_DEATHQUOTE.ReadOnly = true;
+            this.L_4_TEXT_DEATHQUOTE.Size = new System.Drawing.Size(654, 84);
+            this.L_4_TEXT_DEATHQUOTE.TabIndex = 171;
             // 
             // B15
             // 
@@ -626,21 +635,13 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 28);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(351, 544);
             this.AddressList.TabIndex = 0;
-            // 
-            // L_8_NEWALLOC_ALTEVENT_W4
-            // 
-            this.L_8_NEWALLOC_ALTEVENT_W4.Location = new System.Drawing.Point(341, 262);
-            this.L_8_NEWALLOC_ALTEVENT_W4.Name = "L_8_NEWALLOC_ALTEVENT_W4";
-            this.L_8_NEWALLOC_ALTEVENT_W4.Size = new System.Drawing.Size(300, 28);
-            this.L_8_NEWALLOC_ALTEVENT_W4.TabIndex = 245;
-            this.L_8_NEWALLOC_ALTEVENT_W4.Text = "新規イベント";
-            this.L_8_NEWALLOC_ALTEVENT_W4.UseVisualStyleBackColor = true;
             // 
             // EventHaikuFE7Form
             // 
@@ -690,7 +691,7 @@
         private System.Windows.Forms.Panel panel2;
         private FEBuilderGBA.TextBoxEx L_1_MAP_ANYFF;
         private FEBuilderGBA.TextBoxEx L_0_UNIT;
-        private FEBuilderGBA.TextBoxEx L_4_TEXT_CONVERSATION;
+        private FEBuilderGBA.TextBoxEx L_4_TEXT_DEATHQUOTE;
         private System.Windows.Forms.NumericUpDown B15;
         private System.Windows.Forms.NumericUpDown B14;
         private System.Windows.Forms.Label J_14;

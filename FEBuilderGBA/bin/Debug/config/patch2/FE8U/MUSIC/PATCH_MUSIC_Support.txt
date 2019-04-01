@@ -1,6 +1,6 @@
 NAME=MUSIC_支援_きずな
 NAME.en=Support Room BGM
-NAME.zh=MUSIC_支持_ KIZUNA
+NAME.zh=音乐_支援_羁绊
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND

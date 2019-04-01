@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_リオン_影
-NAME.en=OPANIME_FACE_Lyon_Shadow
+NAME=OPANIME_FACE_リオン_影
+NAME.en=OP Anime Face: Lyon (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

@@ -845,6 +845,11 @@ namespace FEBuilderGBA
                 ChangeDirect();
                 return;
             }
+            else if (e.KeyCode == Keys.Return)
+            {
+                ShowFloatingControlpanel();
+                return;
+            }
             else if ((e.Control && e.KeyCode == Keys.Divide) || (e.Control && e.KeyCode == Keys.OemQuestion))
             {
                 ChangeComment();
@@ -1328,7 +1333,7 @@ namespace FEBuilderGBA
                 {
                     addr = U.toOffset(addr);
                 }
-                if (!U.CheckZeroAddressWrite(addr))
+                if (!U.CheckZeroAddressWriteHigh(addr))
                 {
                     addr = 0;
                 }

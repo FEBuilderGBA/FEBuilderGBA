@@ -1,6 +1,6 @@
-﻿
+
 NAME=ユアン理消滅処理 CC後クラス
-NAME.en=Ewan Weapon Rank Removal: Destination Class
+NAME.en=Ewan Promotes To Class For Weapon Rank Removal
 NAME.zh=尤恩理cc后处理职业
 
 //アドレスパッチとして実装します
@@ -17,7 +17,7 @@ AUTHOR.en=From aera's material\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%
 
 INFO=ユアンが特定のクラスにCCした時に忘れる処理をするかどうかを決定します。\r\nユアンが、もう一つのパッチで設定するクラスから、このパッチで設定したクラスへCCした場合、特定の武器を忘れさせる処理が実行されます。\r\n
 INFO.zh=决定Euan是否上某个阶层时是否忘记去做。\r\n如果你从一个你用另一个补丁设置的类中使用此补丁设置的类别CC，将会执行忘记特定武器的过程。\r\n
-INFO.en=In FE8, when Ewan promotes from Pupil to Mage he loses the ability to use dark magic. This patch specifies the promoted class (normally Mage) that triggers this event.\r\nThis can be used to create your own weapon class forgetting events.\r\n
+INFO.en=By default, when Ewan promotes from Pupil to Shaman he loses the ability to use Anima magic.\r\nThis patch specifies the promoted class that triggers this event.\r\n This can be used to create unique weapon class removing events.\r\n
 
 
 CONFLICT_IF:0x2BC30=0x00 0x23 0x3C 0x1C 0xE2 0x18 0x11 0x78 0x68 0x68 0x2C 0x30 0xC0 0x18 0x00 0x78 0x00 0x28 0x01 0xD1 0x00 0x21 0x03 0xE0 0x09 0x18 0xFB 0x29 0x00 0xDD 0xFB 0x21

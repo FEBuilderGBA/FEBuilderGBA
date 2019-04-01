@@ -683,7 +683,7 @@ namespace FEBuilderGBA
             if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {
                 string text = FETextDecode.Direct(v);
-                errormessage = TextForm.CheckConversationTextMessage(text);
+                errormessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
             }
             else if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {
@@ -1362,6 +1362,17 @@ namespace FEBuilderGBA
                             isENumText = true;
                             string dummy;
                             text = " " + InputFormRef.GetRAM_UNIT_PARAM(v,out dummy);
+                        }
+                        else if (arg.Type == EventScript.ArgType.RAM_UNIT_VALUE)
+                        {//RAM_UNIT_VALUE
+                            isENumText = true;
+
+                            uint prevIndex = EventScript.GetRAMUnitParamIndex(code);
+                            uint prevValue = 0;
+                            EventScript.GetArg(code, (int)prevIndex, out prevValue);
+ 
+                            string dummy;
+                            text = " " + InputFormRef.GetRAM_UNIT_VALUE(prevValue , v, out dummy);
                         }
                         else if (arg.Type == EventScript.ArgType.BOOL)
                         {//BOOL

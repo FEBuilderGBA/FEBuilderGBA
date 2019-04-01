@@ -1,6 +1,6 @@
 NAME=アイテム没収(全ユニットと輸送隊)
 NAME.en=Add Event: Lose Item(All units and transporters)
-NAME.zh=Add Event: Lose Item(All units and transporters)
+NAME.zh=事件命令_ 物品没收
 
 TYPE=BIN
 TAG=#EVENT

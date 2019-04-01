@@ -1,6 +1,6 @@
 NAME=終章MAPID:15,22とのターン数合算をやめる
 NAME.en=Final Chapter Turn Count
-NAME.zh=停止与最后一章的圈数总和MAPID:15，22
+NAME.zh=终章地图ID:15,停止与22的回合数合并
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -13,7 +13,7 @@ COMBO.en=Default:Inherit Turn Count|0x15|Patched:Individual Turn Count|0x7f
 
 INFO=FE8では、MAPID:0x15と0x22は特別な章です。\r\n魔王と戦うための章です。\r\nこの章では、前の章のターン数を継承します。\r\nMAPID 0x14と0x15、0x21と0x22のクリアターン数がそれぞれ合計されます。\r\n\r\n終章ターン=MAPID.0x14のターン数 + MAPID.0x15のターン数\r\nor\r\n終章ターン=MAPID.0x21のターン数 + MAPID.0x22のターン数\r\n\r\nこれは、別の章として0x15と0x22を使用したい場合、邪魔になります。\r\nこのパッチは、この合算するプロセスを消去します。\r\n
 INFO.en=Chapter 0x16 and 0x23 are the Demon King half of the Final Chapter for Eirika and Ephraim Route.\r\nBy default, these "Chapters" inherit their base turncount from Chapter 0x15 and 0x22, respectively.\r\nThis may cause problems if these chapters have been separated while hacking.\r\nThis patch resolves that by resetting the turn count between these chapters.\r\n
-INFO.zh=在FE8中，MAPID:0x15和0x22是特殊章节。\r\n这是一个对抗魔鬼的章节。\r\n在本章中，我们将继承前一章中的转数。\r\nMAPID 0x14和0x15，0x21和0x22的清除圈数分别合计。\r\n\r\n结束章节转= MAPID。转数字0x14 + MAPID。0 x 15圈的数量。\r\n或\r\n结束章节转= MAPID。打开0x21 + MAPID号码。转数为0x22。\r\n\r\n如果你想使用0x15和0x22作为单独的章节，这将会阻碍你。\r\n这个补丁擦除了这个加法过程。\r\n
+INFO.zh=在FE8中，MAPID:0x15和0x22是特殊章节。\r\n这是一个对抗魔王的章节。\r\n在本章中，我们将继承前一章中的回合数。\r\nMAPID 0x14和0x15，0x21和0x22的清除回合数分别合计。\r\n\r\n结束章节回合= MAPID。回合数0x14 + MAP ID。0x15的回合数。\r\n或\r\n结束章节回合= MAPID。打开0x21 + MAPID号码。回合数为0x22。\r\n\r\n如果你想使用0x15和0x22作为单独的章节，这将会阻碍你。\r\n这个补丁擦除了这个加法过程。\r\n
 
 AUTHOR=aeraさんの書き込みより
 AUTHOR.zh=从aera的写

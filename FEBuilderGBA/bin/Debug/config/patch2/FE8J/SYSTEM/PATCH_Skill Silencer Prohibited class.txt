@@ -1,5 +1,5 @@
 NAME=瞬殺不可クラス
-NAME.en=Skill Silencer Prohibited class
+NAME.en=Silencer-Immune Class
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -16,3 +16,5 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
+
+INFO.en=The designated class is immune to Silencer.

@@ -190,7 +190,20 @@ namespace FEBuilderGBA
             );
         }
 
+        public static void ClearCache()
+        {
+            g_Cache_Pointers = null;
+        }
+        static uint[] g_Cache_Pointers = null;
         public static uint[] FindSkillFE8NVer2IconPointers()
+        {
+            if (g_Cache_Pointers == null)
+            {
+                g_Cache_Pointers = FindSkillFE8NVer2IconPointersLow();
+            }
+            return g_Cache_Pointers;
+        }
+        static uint[] FindSkillFE8NVer2IconPointersLow()
         {
             uint iconExPointer = Program.ROM.u32(0x89268 + 4);
             if (!U.isSafetyPointer(iconExPointer))
@@ -935,7 +948,7 @@ namespace FEBuilderGBA
         }
 
         //テキストの取得
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef ifr;
             if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.FE8N_ver2)
@@ -954,7 +967,7 @@ namespace FEBuilderGBA
             }
 
             ifr = Init(null, pointer[4]);
-            TextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
+            UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
         }
 
 

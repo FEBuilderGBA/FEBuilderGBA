@@ -1,7 +1,7 @@
 NAME=霧の中でも特定の座標に視界を確保します。
 INFO=FE5の離脱ポイントは霧の中でも視界が確保されていたように、霧の中でも特定の位置に視界を確保します。\r\n離脱地点を死滅灯りや、かがり火として利用してください。\r\nまた、フラグが有効な場合のみ視界を確保できるようにもできます。\r\n演出に利用してください。\r\nプレイヤーターンにしか、追加の視界が現れない制限がありますが、気にしないでください。
 
-IF:0x19E3C=0x00 0x4B	//{J}
+IF:0x19E3C=0x00 0x4B
 
 //データへのポインタ
 POINTER=$GREP4END 0x00 0xF8 0x00 0x28 0xEF 0xD0 0x70 0x78 0xB1 0x78 0xF2 0x78 0x01 0x23 0x05 0x4B 0x9E 0x46 0x00 0xF8 0xE7 0xE7 0xF0 0xBC 0x01 0xBC 0x00 0x47 0xEC 0xBC 0x02 0x02 0xD0 0x60 0x08 0x08 0x98 0xA7 0x01 0x08
@@ -21,23 +21,23 @@ LISTNAME=$B0:MAP
 
 //データを定義します
 B0:MAP=マップ
-B1:DECIMAL=X
-B2:DECIMAL=Y
+B1:MAPX=X
+B2:MAPY=Y
 B3:DECIMAL=視界の幅(1-15)
 W4:FLAG=判定フラグ(0=ANY)
 W6=00
 
 
 B0:MAP.en=Map
-B1:DECIMAL.en=X
-B2:DECIMAL.en=Y
+B1:MAPX.en=X
+B2:MAPY.en=Y
 B3:DECIMAL.en=Width of sight(1-15)
 W4:FLAG.en=Judgment flag(0=ANY)
 W6.en=00
 
 B0:MAP.zh=地图
-B1:DECIMAL.zh=X
-B2:DECIMAL.zh=Y
+B1:MAPX.zh=X
+B2:MAPY.zh=Y
 B3:DECIMAL.zh=视线(1-15)
 W4:FLAG.zh=判定标志(0=ANY)
 W6.zh=00

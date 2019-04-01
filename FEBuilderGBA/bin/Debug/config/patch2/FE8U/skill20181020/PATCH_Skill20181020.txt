@@ -657,8 +657,11 @@ EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 EXPORT:1=skillGetter.dmp	Skill_Getter
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20181209\PATCH_Skill20181209.txt
+UPDATE_PATCH=..\skill20190326\PATCH_Skill20190326.txt
 UPDATE_METHOD=SKILLSYSTEM
+UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
+UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
+UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
 UPDATE_DEPENDS:1=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
 UPDATE_DEPENDS:2=..\class_save_fix\PATCH_class_save_fix.txt
 UPDATE_DEPENDS:3=..\Class expansion\PATCH_class_save_fix.txt

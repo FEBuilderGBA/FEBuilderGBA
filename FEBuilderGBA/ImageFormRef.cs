@@ -500,7 +500,7 @@ namespace FEBuilderGBA
         //上書き禁止アドレスかどうか調べる.
         public static bool checkForceSeparationAddress(uint addr,uint[] forceSeparationAddress)
         {
-            if(!U.CheckZeroAddressWrite(U.toOffset(addr),false))
+            if (!U.CheckZeroAddressWrite(U.toOffset(addr), false))
             {//危険なアドレスなので、上書きしてはいけない
                 return true;
             }

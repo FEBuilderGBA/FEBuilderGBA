@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.D4 = new System.Windows.Forms.NumericUpDown();
+            this.P4 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.X_JUMP_WAITICON = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
             this.DragTargetPanel = new System.Windows.Forms.Panel();
+            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Comment = new FEBuilderGBA.TextBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.X_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.X_PALETTE = new System.Windows.Forms.ComboBox();
-            this.D0 = new System.Windows.Forms.NumericUpDown();
+            this.P0 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.J_4 = new System.Windows.Forms.Label();
             this.X_ONE_STEP = new System.Windows.Forms.NumericUpDown();
@@ -66,11 +67,11 @@
             this.ImportAPButton = new System.Windows.Forms.Button();
             this.ExportAPButton = new System.Windows.Forms.Button();
             this.DragTargetPanel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             this.DragTargetPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).BeginInit();
             this.panel1.SuspendLayout();
@@ -93,19 +94,19 @@
             this.label6.Text = "表示例";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // D4
+            // P4
             // 
-            this.D4.Hexadecimal = true;
-            this.D4.Location = new System.Drawing.Point(170, 55);
-            this.D4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D4.Maximum = new decimal(new int[] {
+            this.P4.Hexadecimal = true;
+            this.P4.Location = new System.Drawing.Point(170, 55);
+            this.P4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P4.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D4.Name = "D4";
-            this.D4.Size = new System.Drawing.Size(130, 25);
-            this.D4.TabIndex = 63;
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(130, 25);
+            this.P4.TabIndex = 63;
             // 
             // J_0
             // 
@@ -123,7 +124,7 @@
             this.X_JUMP_WAITICON.AutoSize = true;
             this.X_JUMP_WAITICON.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X_JUMP_WAITICON.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.X_JUMP_WAITICON.Location = new System.Drawing.Point(744, 54);
+            this.X_JUMP_WAITICON.Location = new System.Drawing.Point(699, 54);
             this.X_JUMP_WAITICON.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.X_JUMP_WAITICON.Name = "X_JUMP_WAITICON";
             this.X_JUMP_WAITICON.Size = new System.Drawing.Size(152, 18);
@@ -156,24 +157,39 @@
             // DragTargetPanel
             // 
             this.DragTargetPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel.Controls.Add(this.JumpToSystemPalette);
             this.DragTargetPanel.Controls.Add(this.label4);
             this.DragTargetPanel.Controls.Add(this.Comment);
             this.DragTargetPanel.Controls.Add(this.label8);
             this.DragTargetPanel.Controls.Add(this.panel4);
             this.DragTargetPanel.Controls.Add(this.X_PALETTE);
-            this.DragTargetPanel.Controls.Add(this.D0);
+            this.DragTargetPanel.Controls.Add(this.P0);
             this.DragTargetPanel.Controls.Add(this.label7);
             this.DragTargetPanel.Controls.Add(this.J_4);
             this.DragTargetPanel.Controls.Add(this.X_ONE_STEP);
             this.DragTargetPanel.Controls.Add(this.label6);
             this.DragTargetPanel.Controls.Add(this.X_ONE_PIC);
-            this.DragTargetPanel.Controls.Add(this.D4);
+            this.DragTargetPanel.Controls.Add(this.P4);
             this.DragTargetPanel.Controls.Add(this.J_0);
             this.DragTargetPanel.Location = new System.Drawing.Point(330, 62);
             this.DragTargetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DragTargetPanel.Name = "DragTargetPanel";
             this.DragTargetPanel.Size = new System.Drawing.Size(902, 406);
             this.DragTargetPanel.TabIndex = 101;
+            // 
+            // JumpToSystemPalette
+            // 
+            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_UNITICON_SYSTEM_PALETTE";
+            this.JumpToSystemPalette.AutoSize = true;
+            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JumpToSystemPalette.Location = new System.Drawing.Point(699, 384);
+            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
+            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
+            this.JumpToSystemPalette.TabIndex = 77;
+            this.JumpToSystemPalette.Text = "パレットの変更";
+            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
             // 
             // label4
             // 
@@ -223,7 +239,8 @@
             this.X_PIC.Location = new System.Drawing.Point(0, 0);
             this.X_PIC.Margin = new System.Windows.Forms.Padding(5);
             this.X_PIC.Name = "X_PIC";
-            this.X_PIC.Size = new System.Drawing.Size(137, 400);
+            this.X_PIC.Size = new System.Drawing.Size(138, 400);
+            this.X_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.X_PIC.TabIndex = 67;
             this.X_PIC.TabStop = false;
             // 
@@ -237,31 +254,31 @@
             "2=敵軍",
             "3=グレー",
             "4=4軍"});
-            this.X_PALETTE.Location = new System.Drawing.Point(781, 181);
+            this.X_PALETTE.Location = new System.Drawing.Point(778, 200);
             this.X_PALETTE.Margin = new System.Windows.Forms.Padding(2);
             this.X_PALETTE.Name = "X_PALETTE";
-            this.X_PALETTE.Size = new System.Drawing.Size(117, 26);
+            this.X_PALETTE.Size = new System.Drawing.Size(120, 26);
             this.X_PALETTE.TabIndex = 104;
             this.X_PALETTE.SelectedIndexChanged += new System.EventHandler(this.X_ONE_STEP_ValueChanged);
             // 
-            // D0
+            // P0
             // 
-            this.D0.Hexadecimal = true;
-            this.D0.Location = new System.Drawing.Point(170, 8);
-            this.D0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.D0.Maximum = new decimal(new int[] {
+            this.P0.Hexadecimal = true;
+            this.P0.Location = new System.Drawing.Point(170, 8);
+            this.P0.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.P0.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.D0.Name = "D0";
-            this.D0.Size = new System.Drawing.Size(130, 25);
-            this.D0.TabIndex = 72;
+            this.P0.Name = "P0";
+            this.P0.Size = new System.Drawing.Size(130, 25);
+            this.P0.TabIndex = 72;
             // 
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(696, 181);
+            this.label7.Location = new System.Drawing.Point(696, 200);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 31);
@@ -284,7 +301,7 @@
             // X_ONE_STEP
             // 
             this.X_ONE_STEP.Hexadecimal = true;
-            this.X_ONE_STEP.Location = new System.Drawing.Point(762, 127);
+            this.X_ONE_STEP.Location = new System.Drawing.Point(762, 146);
             this.X_ONE_STEP.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.X_ONE_STEP.Maximum = new decimal(new int[] {
             14,
@@ -302,7 +319,7 @@
             this.X_ONE_PIC.Location = new System.Drawing.Point(696, 5);
             this.X_ONE_PIC.Margin = new System.Windows.Forms.Padding(5);
             this.X_ONE_PIC.Name = "X_ONE_PIC";
-            this.X_ONE_PIC.Size = new System.Drawing.Size(120, 115);
+            this.X_ONE_PIC.Size = new System.Drawing.Size(136, 136);
             this.X_ONE_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.X_ONE_PIC.TabIndex = 68;
             this.X_ONE_PIC.TabStop = false;
@@ -557,12 +574,13 @@
             this.Name = "ImageUnitMoveIconFrom";
             this.Text = "移動アイコン";
             this.Load += new System.EventHandler(this.ImageUnitMoveIconFrom_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             this.DragTargetPanel.ResumeLayout(false);
             this.DragTargetPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.X_PIC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_STEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_ONE_PIC)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -581,10 +599,10 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown D4;
+        private System.Windows.Forms.NumericUpDown P4;
         private System.Windows.Forms.Label J_0;
         private System.Windows.Forms.Panel DragTargetPanel;
-        private System.Windows.Forms.NumericUpDown D0;
+        private System.Windows.Forms.NumericUpDown P0;
         private System.Windows.Forms.Label J_4;
         private System.Windows.Forms.NumericUpDown X_ONE_STEP;
         private System.Windows.Forms.Button ReloadListButton;
@@ -618,6 +636,7 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label JumpToSystemPalette;
 
     }
 }

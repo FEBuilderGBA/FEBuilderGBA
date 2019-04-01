@@ -1,5 +1,5 @@
-﻿NAME=オープニングカット いきなりタイトルロゴ
-NAME.en=OPENING_CUT
+NAME=オープニングカット いきなりタイトルロゴ
+NAME.en=Skip:Opening(OPENING_CUT)
 NAME.zh=跳过标题logo
 
 //アドレスパッチとして実装します
@@ -24,3 +24,5 @@ COMBO.zh=跳过|ONN|不跳过|OFF
 
 
 
+
+INFO.en=H&S,Nintendo log,IS Logo,Opening Demo.\r\nSkip all these.

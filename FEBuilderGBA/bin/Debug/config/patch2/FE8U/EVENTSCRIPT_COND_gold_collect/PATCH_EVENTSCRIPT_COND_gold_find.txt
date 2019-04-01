@@ -12,7 +12,7 @@ BIN:$FREEAREA:1=gold_find.bin
 
 INFO=所持金をもっているかという条件式を作成します.
 INFO.en=Patches the ROM with an event conditional statement that checks if the player has amassed a specific amount of gold.\r\n
-INFO.zh=我会创造一个有条件的表达方式来决定我是否有资金持有。
+INFO.zh=所持金的拥有的条件式作成
 
 AUTHOR=怪盗パッチ 7743
 AUTHOR.zh=Kaito补丁7743
@@ -27,4 +27,4 @@ EVENTSCRIPT.en=400DYYYY{$L1:gold_find.bin}	[YYYY:DECIMAL:Gold] Determine whether
 EVENTSCRIPT.zh=400DYYYY{$L1:gold_find.bin}	[YYYY:DECIMAL:Gold]确定是否有资金扩展订单。	{COND}	{GOLD}
 
 
-NAME.zh=事件命令创建条件表达式是否有钱
+NAME.zh=事件命令_所持金检查

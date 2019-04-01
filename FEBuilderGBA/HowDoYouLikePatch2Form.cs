@@ -56,7 +56,7 @@ namespace FEBuilderGBA
                     return ImageUtilMagic.SearchMagicSystem() != ImageUtilMagic.magic_system_enum.NO; 
                 };
                 title = R._("魔法を追加するには、魔法システムパッチが必要です。");
-                string version = Program.ROM.VersionToFilename();
+                string version = Program.ROM.RomInfo.VersionToFilename();
                 if (version == "FE6")
                 {//FE6
                     //patchName1 = "FEditorMagicCSASystem_FE6";///No Translate

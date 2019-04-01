@@ -73,6 +73,12 @@ Save
 :開くファイル名を選択してください
 Open
 
+:ファイルへエクスポート
+Export To File
+
+:ファイルからインポート
+Import from file
+
 :コメント
 Comment
 
@@ -115,12 +121,6 @@ Read Bytes
 :切替
 switching
 
-:ファイルへエクスポート
-Export To File
-
-:ファイルからインポート
-Import from file
-
 :盗賊AIが、アイテムを盗むときに利用する、アイテムの優先度を設定します。\r\nリストの先頭がもっとも優先度が高いアイテムになります。
 Thieves Set the priority of items used by AI to steal items.\r\nThe top of the list will be the item with the highest priority.
 
@@ -151,29 +151,59 @@ Target AI 30
 :標的AI38
 Target AI 38
 
+:もし致死ダメージを与えられる敵なら、この項目のTPは50固定です（優先度無視）\r\n\r\n致死ダメージを与えられない場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n加算されるTP上限は40です。（上限は優先度を乗算した値にかかります）
+If the enemies are given lethal damage, the TP of this item is fixed at 50 (ignoring priority).\r\n\r\nTP when not giving lethal damage calculates the value of "Accuracy x Damage / 100".The pursuit is not considered in this calculation.\r\nThe upper limit of TP to be added is 40.(The upper limit takes the value multiplied by the priority).
+
+:「20-敵の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。この計算が0以下になれば0です。\r\n例を挙げると、HP30の敵に25ダメージを与えられるとすると、敵の残りHPは5なので、20-5=15で「15」が計算結果です。
+It is calculated by "20 - enemy's rest HP".We will calculate assuming that all attacks are hit.It is 0 if this calculation falls below 0.\r\nFor example, suppose that you can give 25 enemies to HP 30 enemies,\r\nthe enemy's remaining HP is 5, so 20-5 = 15 and "15" is the calculation result.
+
+:動く前の位置関係もTPに加算されます。\r\n 加算されるTP上限は10です。\r\n
+The positional relationship before moving is also added to TP.\r\nThe upper limit of TP to be added is 10.\r\n
+
+:優先して狙うクラスの設定ができます。項目00～09に設定してある値と優先度を乗算したものがTPです。\r\n優先クラス設定のポインタ以降にあり、敵がどのクラスでもない場合は、09（ゼロ）を乗算します。\r\n\r\n指定されたクラスはこの値と「01の値」を乗算したものがTPです。\r\nただし、烈火・聖魔ではポインタのクラス指定がすべてゼロなので、意味がありません。封印だけに設定されています。\r\n\r\n加算されるTP上限は20です。
+You can preferentially target classes.TP multiplied by the value set for item 00 to 09 and priority.\r\nIf it is after the pointer of the priority class setting and the enemy is not in any class, it is multiplied by 09 (zero).\r\n\r\nThe specified class is TP multiplied by this value and "01 value".\r\nHowever, since it is all zeros of pointer class designation in FE7 or FE8, it is meaningless.It is set only for FE6.\r\n\r\nThe upper limit of TP to be added is 20.
+
+:現在のターン数がTPに加算されます
+The current turn number is added to TP.
+
+:反撃されない場合は、10の優先ポイントとなります。（警戒度無視）\r\n反撃を受ける場合のTPは「命中率xダメージ/100」の値を計算します。なお、この計算に追撃は考慮されません。\r\n\r\n減算されるTP下限は40です。
+If not striking back, it will be a priority point of 10.(Ignore the alertness).\r\nWhen receiving a counterattack, TP will calculate the value of "Accuracy * Damage / 100".The pursuit is not considered in this calculation.\r\n\r\nThe lower TP limit subtracted is 40.
+
+:標的AIには攻撃するときの位置取りにも影響します。\r\n攻撃すると敵の攻撃範囲に入る場合、\r\n敵ごとに「力+一番強い武器の威力/2」の値を計算し、それを合算した値を8で除算した結果をTPから減算します。\r\n\r\n減算されるTP下限は20です。
+Target AI also affects positioning when attacking.\r\nWhen entering the attack range of an enemy when it attacks, the value of "power + power of the strongest weapon / 2" is calculated for each enemy,\r\nand the result obtained by dividing the sum by 8 is subtracted from TP.\r\n\r\nThe lower TP limit subtracted is 20.
+
+:「20-自分の残りHP」で計算されます。全部の攻撃が当たると想定して計算します。\r\nこの計算が0以下になれば0です。
+It is calculated as "20 - your remaining HP".We will calculate assuming that all attacks are hit.\r\nIt is 0 if this calculation falls below 0.
+
+:AIは、ターゲットポイント（TP）を計算し、それがもっとも高くなった攻撃対象を攻撃します。\r\nTPの計算は、手持ちの装備を上から順に計算します。\r\nそして、装備ごとに範囲内の敵を出撃表の上から順に計算します。\r\nTPの量が被った場合は、武器、出撃表、共に下にある物を優先します。\r\n\r\nそれぞれの値を計算し、合計したものを40倍したものが合計TPです。\r\n\r\n出典 FEUniverse Crazycolorz5 / 翻訳 ngmansion aera\r\n詳細はリンクをクリックしてください。
+AI calculates the target point (TP) and attacks the attack target that is the highest.\r\nTo calculate TP, calculate the equipment on hand from the top.\r\nAnd calculate enemies within range for each equipment in order from the top of the scoring table.\r\nIf the amount of TP suffered, weapons, sorting charts, and things underneath will be given priority.\r\n\r\nTotal TP is calculated by calculating each value and multiplying the total by 40 times.\r\n\r\nSource FEUniverse Crazycolorz5 / translation ngmansion aera.\r\nFor details, please click the link.
+
+:それぞれのAIが何を優先するか指定します。詳細はこちらをクリック。
+Specify what each AI takes precedence.For details click here.
+
 :自分の残りHP警戒度
-My rest HP guard
+Penalty: Attacker's remaining HP
 
 :包囲警戒度
-Siege vigilance
+Penalty: Range and attack power of opponents
 
 :反撃ダメージ警戒度
-Counterattack Damage Alertness
+Bonus/Penalty: Defender can't counter + defender's expected damage
 
 :現在ターン優先度
-Current turn priority
+Bonus: Turn count
 
 :敵のクラス優先度
-Enemy class priority
+Bonus: Defender's class
 
 :敵との距離優先度
-Distance priority with enemies
+Bonus: Near allied units
 
 :敵の残りHP優先度
-Enemy remaining HP priority
+Bonus: Defender's remaining HP
 
 :致死ダメージ＆最終ダメージ優先度
-Lethal damage & final damage priority
+Bonus: Lethal damage + attacker's expected damage
 
 :標的AI
 Target AI
@@ -874,6 +904,21 @@ Click the link or move to the function with J
 :クリックボードへ(Ctrl+C)
 To the click board (Ctrl+C)
 
+:TSV形式|*.tsv|CSV形式|*.csv|All files|*
+TSV format|*.tsv|CSV format|*.csv|All files|*
+
+:データのインポートが完了しました。
+The import of data is completed.
+
+:件数が足りませんが、処理を続行しますか？\r\n現在{0}件しかテーブルを確保していませんが、インポートしようとしているファイルには、{1}件のデータがあります。\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
+There are not enough cases, but will you continue processing? \r\nCurrently only {0} tables are allocated, but the file you are trying to import has {1} data.\r\n\r\nContinue processing and import until where you can import? 
+
+:{0}行目のカラム数が想定の物と違いますが、処理を続行しますか？\r\nこの項目には、{1}件のデータカラム数が必要ですが、インポートしようとしているファイルには、{2}件のデータカラム数があります。\r\nこのファイルは正しいダンプファイルですか？\r\n\r\n処理を続行して、インポートできるところまで、インポートしますか？
+The number of columns on line {0} is different from the expected one, but will you continue processing? \r\nThis item requires {1} data columns, but the file you are trying to import has {2} data columns.\r\nIs this file a correct dump file? \r\n\r\nContinue processing and import until where you can import? 
+
+:ファイル({0})の内容をインポートしてもよろしいですか？
+Are you sure you want to import the contents of the file ({0})? 
+
 :選択しているアドレスをバイナリエディタで表示
 Open selected address in Hex Editor
 
@@ -919,6 +964,12 @@ Data Structure Options
 :値:
 Select:
 
+:インポート
+Import
+
+:ダンプしていたデータのインポート
+Importing dumped data
+
 :データを表示
 Data Address Editor
 
@@ -939,12 +990,6 @@ Roy A Support
 
 :ロング版
 Long version
-
-:エイリーク編
-Eirika's Tale
-
-:エフラム編
-Ephraim's Tale
 
 :ED関係
 Character Endings
@@ -984,6 +1029,12 @@ After Retreat
 
 :撤退指定 02
 Retreat designation 02
+
+:エイリーク編
+Eirika's Tale
+
+:エフラム編
+Ephraim's Tale
 
 :戦績悪
 Lose Record
@@ -1540,17 +1591,32 @@ Battle conversation
 :FE7では、特別に、会話時に発動するイベントをここでも設定できます。
 In FE7, you can set events that trigger during a conversation here.
 
+:新規イベント
+New event
+
 :反撃側ユニット
 Defending Unit
 
 :攻撃側ユニット
 Attacking Unit
 
-:新規イベント
-New event
-
 :マップ
 Map
+
+:11=制圧
+11=Seize
+
+:20=村の中心(盗賊のターゲット)
+20=Village Center (Thief target)
+
+:10=民家
+10=Home
+
+:14=ランダム宝箱
+14=Random Chest
+
+:22=階段拡張
+22=Stairs Hack
 
 :0F=制圧
 0F=Seize
@@ -1621,17 +1687,29 @@ Although it is a shop, "{0}" is set for the type.
 :お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。
 "{0}" is set in the shop.\r\nWith this setting, once you enter the store, you can not enter again again.\r\nYou should not set "{0}" here unless you are doing intentionally.
 
+:マップオブジェクトに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
+The map object has incorrect termination data.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+
 :マップオブジェクトに不明なタイプ「{0}」が利用されました。
 An unknown type "{0}" was used for the map object.
+
+:会話イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
+The conversation event has incorrect termination data.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
 
 :会話イベントに不明なタイプ「{0}」が利用されました。
 An unknown type "{0}" was used for the conversation event.
 
+:ターンイベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
+There is incorrect termination data in the turn event.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+
 :ターンイベントに不明なタイプ「{0}」が利用されました。
 An unknown type "{0}" was used for the turn event.
 
-:チュートリアル
-Tutorial
+:常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
+There is incorrect termination data in the constant condition event at all times.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+
+:常時条件イベントに不明なタイプ「{0}」が利用されました。
+An unknown type "{0}" was used for the always-on condition event.
 
 :新規にイベント命令の領域を割り当てますか？
 Allocate the area of ​​the event instruction to new space?
@@ -1678,9 +1756,6 @@ Turn:
 :{0}ゴールド
 {0} Gold
 
-:話す:
-Talk:
-
 :常時条件:
 Conditional:
 
@@ -1689,18 +1764,6 @@ Range:
 
 :)～(
 ) ~ (
-
-:11=制圧
-11=Seize
-
-:20=村の中心(盗賊のターゲット)
-20=Village Center (Thief target)
-
-:10=民家
-10=Home
-
-:14=ランダム宝箱
-14=Random Chest
 
 :14=宝箱
 14=Chest Contents
@@ -1749,6 +1812,12 @@ Are you sure you want to disable this event?
 
 :オブジェクトのサイズを特定できませんでした
 Could not determine the size of the object
+
+:階段ID
+Stair ID.
+
+:1を設定
+Set 1.
 
 :イベント種類
 Event type
@@ -1917,6 +1986,9 @@ Placement
 
 :選択されている配置情報を、ユニット配置画面で開く
 Open the selected placement information in the Unit Placer screen
+
+:チュートリアル
+Tutorial
 
 :マップ名
 Map Name
@@ -2211,9 +2283,6 @@ Please set the unit to be read
 
 :ラベルをクリックして領域を確保してください
 Please click on the label to reserve space
-
-:10進数
-Decimal
 
 :EAでエクスポートできませんでした。\r\n{0}
 Unable to export with EA.\r\n{0}
@@ -2623,8 +2692,8 @@ Extra unit
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
 
-:ユニット配置ポインタ「{0}」が無効です。
-Unit placement pointer "{0}" is invalid.
+:ポインタ「{0}」が無効です。
+The pointer "{0}" is invalid.
 
 :序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
 You are not join to the lord unit of UnitID: 0x01,0x02 and 0x03 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
@@ -2643,6 +2712,12 @@ ASM function pointer "{0}" is invalid.
 
 :ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。
 The ASM function pointer "{0}" is an even number.\r\nIt must be Pointer + 1 to call Thumb instructions.
+
+:Procs関数ポインタ「{0}」が無効です。
+Procs function pointer '{0}' is invalid.
+
+:Procs関数ポインタ「{0}」が4バイト単位でありません。\r\n必ず4の倍数である必要があります。
+Procs function pointer "{0}" is not in units of 4 bytes.\r\nIt must be a multiple of 4.
 
 :利用できないフラグ「{0}」を利用しています。{1}
 You are attempting to use the flag "{0}" which can't be used.{1}.
@@ -2676,6 +2751,9 @@ An internal error occurred.\r\nPlease send report 7z.\r\n{0}
 
 :ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。
 ROM capacity exceeds 32 MB.\r\nWith GBA, ROM that exceeds 32 MB can not be executed.
+
+:ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。
+The logo area at the top of the ROM is destroyed.\r\nNormally, this area can not be rewritten.
 
 :@0080の後に、@命令が続いていません。@001Cで補正します。
 There is no @ command following @ 0080. Fix with @ 001C.
@@ -2938,6 +3016,9 @@ The music score of this song has more than 12 tracks.\r\nIn order to play this s
 :武器と魔法を同時に利用するにはMeleeAndMagicPatchが必要です。\r\n有効にしますか？
 To use weapons and magic at the same time, you need the Melee And Magic Patch.\r\nWould you like to enable it?
 
+:アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？
+To extend the icon, you need to apply a patch before extending the table.\r\nDo you want to enable? 
+
 :スキル拡張 FE8N が必要です。\r\n有効にしますか？
 Skill extension FE8N is required.\r\nWould you like to enable it?
 
@@ -2962,11 +3043,11 @@ Automatic patch adaptation failed.\r\nPlease check whether an error is displayed
 :2=特殊指定不明
 2=special designation unknown
 
-:バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|FEditorシリアライズ形式|*.bin|アニメGIF|*.gif|Dump All|*.bin|All files|*
-Battle animation There is a comment|*.txt|Battle animation No comment|*.txt|FEditor Serialized format|*.bin|Animtion GIF|*.gif|Dump All|*.bin|All files|*
+:FEditorシリアライズ形式|*.bin|バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.bin|All files|*
+FEditor Serialized format|*.bin|Battle animation There is a comment|*.txt|Battle animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.bin|All files|*
 
-:バトルアニメ テキスト形式|*.txt|FEditorシリアライズ形式|*|All files|*
-Battle animation|*.txt|FEditor Serialized format|*|All files|*
+:戦闘アニメ|*.bin;*.txt|FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*
+Battle Animation|*.bin;*.txt|FEditor Serialized format|*.bin|FEditor Serialized format(WildCard)|*|Battle animation|*.txt|All files|*
 
 :現在他の処理中です
 Other processing is currently in progress.
@@ -3223,6 +3304,9 @@ Reference item
 :原寸大
 Actual Size
 
+:パレットの変更
+Change Palette
+
 :アイテムアイコン
 Item Icons
 
@@ -3237,9 +3321,6 @@ Magic Animations
 
 :魔法テーブルを拡張してもよろしいですか？
 Are you sure you want to extend the magic table?
-
-:いったんフォームを閉じますので、開きなおしてください。
-Once the form is closed, please reopen it.
 
 :魔法アニメの書出し
 Export Magic Animation
@@ -3517,6 +3598,9 @@ Export AP
 :移動アイコン
 Moving Map Anime
 
+:パレット領域が割り当てられていません。\r\nまずは、「新規パレット割り当て」ボタンを押して領域を確保してください。
+Palette area has not been allocated.\r\nFirst, please press the "New Palette Assessment" button to allocate the area.
+
 :FE8の色決定ルーチンは以下のようになります。\r\n{0}から、ユニットの現在所属しているクラスに適合するパレットがあるかどうか探索します。\r\nもし、パレットが見つかれば、{1}を利用します。\r\nパレットで見つからなければ、戦闘アニメーションの汎用色のパレットが利用されます。\r\n
 The battle palette determination routine of FE 8 works as follows.\r\nThe game searches for a palette from {0}, that conforms to the class of this unit.\r\nIf a palette is found, the color declared in {1} is used.\r\nIf a palette isn't found, the generic class battle animation palette will be used.\r\n
 
@@ -3540,6 +3624,9 @@ Classes Using This Palette:
 
 :ポインタ
 Pointer
+
+:独立
+Independence
 
 :キャラパレット
 Character Palette
@@ -3820,11 +3907,20 @@ Address {0} is out of range, unable to write.\r\nThe ROM may be bricked if writi
 :アドレス{0}は範囲外なので、書き込むことができません。\r\n範囲外へ書き込むとROMを破壊する危険性があるため、設定オプションで拒否する設定になっています。\r\nデータ数を安全に増やすには、「リストの拡張」ボタンを利用してください。
 Address {0} is out of range and can't be written to.\r\nThe ROM may be bricked if writing outside the range, so it is set to reject with the setting option.\r\nTo securely expand the data, please use the "Extend List" button.
 
+:このデータを消去してもよろしいですか？\r\nこのデータが終端になり、このデータまでが有効なデータとなります。
+Are you sure you want to delete this data? \r\nThis data is terminated, and up to this data is valid data.
+
 :クリップボードのデータで上書きしてもよろしいですか？
 Are you sure you want to overwrite with clipboard data?
 
 :{0}と{1}を入れ替えもよろしいですか？
 Are you sure you want to replace {0} with {1}?
+
+:リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。
+Are you sure you want to slide the list down one? \r\nThe bottom item is pushed out and becomes the current line.
+
+:リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。
+Are you sure you want to slide the list up one? \r\nThe top item is extruded and becomes the current line.
 
 :アドレス({0}+{1})は、終端(2)を超えるので表示できません。
 The address ({0} + {1}) exceeds the termination (2) and can't be displayed.
@@ -3899,7 +3995,7 @@ Queue Size
 The memory slot is from 0x00 to 0x0D.
 
 :警告: 下限を超えています
-warning:The lower limit is exceeded
+Warning:The lower limit is exceeded
 
 :警告: MemorySlot0に書き込もうとしています。
 Warning: Write to MemorySlot 0.
@@ -3909,6 +4005,9 @@ Warning: You are accessing MemorySlotD or later.
 
 :フレーム秒({0}秒)
 frame sec({0} sec)
+
+:10進数
+Decimal
 
 :アーチ
 Ballista
@@ -3941,7 +4040,7 @@ Egg
 LightRune
 
 :警告: 上限を超えています
-warning:It exceeds the upper limit
+Warning:It exceeds the upper limit
 
 :フレリア、ロストン
 Frelia, Rausten
@@ -4333,8 +4432,26 @@ Activate the event from "start turn" to "end turn".
 :誰のターンにイベントを動作させるかを選択します。\r\n例えば、敵ターンに増援イベントを作ると、敵が即動くので難易度があがってしまいます。
 You determine which turn the event occurs on.\r\nFor example, if you make reinforcement events on enemy turns, the enemy moves instantly and the difficulty level will rise.
 
-:マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n
-Determines Map ID.\r\nIn order to avoid confusion, specify this in the order as listed.\r\n
+:章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
+This is an ID for displaying the chapter title image.\r\nHowever,This is not used because FE7U uses text format data.
+
+:章タイトル画像を表示するためのIDです。
+Chapter title ID for displaying the title title image.
+
+:前作の残骸です。利用されません。
+Leftover data from previous FE. Unused in this game.
+
+:ヘクトル編の章タイトル画像を表示するためのIDです。
+This is the ID for displaying the chapter title image of Hector's edition.
+
+:ヘクトル編の章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。
+This is an ID for displaying the chapter title image of Hector's edition.\r\nHowever,This is not used because FE7U uses text format data.
+
+:以前は、進撃準備画面を利用するかどうかの判定に利用されていました。
+Previously, it was used to judge whether to use the advancement preparation screen.
+
+:進撃準備画面を利用するかどうかのbool値です。\r\n0の場合、進撃準備画面は利用されません。\r\n1の場合、進撃準備画面が利用されます。
+It is a bool value as to whether or not to use the advancement preparation screen.\r\nIf it is 0, the attack advancement screen is not used.\r\nIf it is 1, the attack advancement screen will be used.
 
 :ユニットIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n
 Determines unit ID.\r\nIn order to avoid confusion, match with unit order as listed.\r\n
@@ -4348,8 +4465,8 @@ Also, units in Arena are a Unit of {0}.\r\nOther than that this is not used.\r\n
 :クラスを識別するIDです。\r\nFEでは、クラスIDが移動アイコンのIDとなります。\r\nそのため、この値を変更するときは、移動アイコンも変更する必要があります。\r\nたいていは、混乱を避けるため、リストにある並び順通りに設定します。
 Determines what ID the class can be called by.\r\nThe Moving Map Animation is determined by this value.\r\nTo avoid complications, it is best to avoid changing this value.\r\nInstead, change the Moving Map Animation from the Moving Map Anime Editor linked.
 
-:イベントの種類を定義します。\r\n必ず所定の値を設定してください。\r\nまた、0x00を指定した場合は、イベントリストの終端と扱われます。\r\n
-Define Type of Event.\r\nBe sure to set a predetermined value.\r\nAlso, when 0x00 is supported, it is treated as the end of the Event list.\r\n
+:イベントの種類を定義します。\r\n必ず所定の値を設定してください。\r\n終端にする場合は、0x00を設定し、フラグにも、0x00を設定してください。
+Define the type of event.\r\nBe sure to set a predetermined value.\r\nTo terminate, set 0x00 and also set 0x00 to the flag.
 
 :マップオブジェクトの種類を指定します。\r\n必ず所定の値を指定してください。0x00のままだと動作しません。\r\n
 Specify the type of map object.\r\nBe sure to specify a predetermined value.It will not work if it remains 0x00.\r\n
@@ -4431,9 +4548,6 @@ Determines what number of enemies must remain for the Victory BGM to play.\r\nNo
 
 :フラグ4を有効にした場合に、切り替える第2BGMを指定します。
 When flag 4 is enabled, set the map to use the secondary BGM.
-
-:前作の残骸です。利用されません。
-Leftover data from previous FE. Unused in this game.
 
 :{0}の▲マークを表示します。\r\nただし、表示するだけです。\r\n\r\n実際の{0}は、詳細メニューの「{0}」から設定されます。\r\nマークを消す場合は、255 , 0 を設定してください。\r\n
 The ▲ mark of {0} is displayed.\r\nHowever, it is only displayed.\r\n\r\nActual {0} is set from "{0}" in detail menu.\r\nTo erase the mark, set 255, 0.\r\n
@@ -4609,6 +4723,21 @@ Specify ROM to be used for translation hints.\r\nIt is used to retrieve translat
 :そのゲーム専用の翻訳データがあれば指定してください。\r\n
 Please specify if there is translation data exclusive for that game.\r\n
 
+:曲の長さは、ランダム再生時に利用されます。\r\n時間はミリ秒で指定します。\r\nただし内部ではフレーム秒で処理され端数は切り捨てられます。\r\n指定した時間に達すると曲がフェードアウトし、次の曲に切り替わります。
+The length of the song is used for random playback.\r\nSpecify the time in milliseconds.\r\nHowever, internally it is processed in frame seconds and the fractions are truncated.\r\nWhen the specified time is reached, the song fades out and switches to the next song.
+
+:ユニットのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全ユニット共通になるので注意してください。
+You can change the unit's palette from the system icon.\r\nHowever, please note that the pallet is common to all units.
+
+:アイテムのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全アイテム共通になるので注意してください。
+You can change the item palette from the system icon.\r\nHowever, please note that the palette is common to all items.
+
+:指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。
+Drawn with the specified palette of ID +1.\r\nIf you do not use a custom palette, specify 0xFF.
+
+:指定したID+1の戦闘アニメで描画されます。
+Drawn with the specified battle animation of ID + 1.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -4641,6 +4770,12 @@ Direct Edit(&N)
 
 :↓データ入れ替え(Ctrl + Alt + Down)
 ↓ Change data (Ctrl+Alt+Down)
+
+:↑↑データをシフトする(Ctrl + Alt + Shift + Up)
+↑↑ Shift list (Ctrl+Alt+Shift+Up)
+
+:↓↓データをシフトする(Ctrl + Alt + Shift + Down)
+↓↓ Shift list (Ctrl+Alt+Shift+Down)
 
 :無効化する(DEL)
 Invalidate (DEL)
@@ -4787,22 +4922,22 @@ Item Pricing
 Price Per Use
 
 :11=射程1(剣)
-11 = 1 Range (Melee)
+11=1 Range (Melee)
 
 :12=射程1-2(魔法)
-12 = 1-2 Range (Magic)
+12=1-2 Range (Magic)
 
 :13=射程1-3
-13 = 1-3 Range
+13=1-3 Range
 
 :22=射程2-2(弓)
-22 = 2 Range (Bow)
+22=2 Range (Bow)
 
 :23=射程2-3(長弓)
-23 = 2-3 Range (Longbow)
+23=2-3 Range (Longbow)
 
 :3A=射程3-10(サンダーストーム)
-3A = 3-10 Range (Ballista)
+3A=3-10 Range (Bolting)
 
 :性能
 Weapon Stats
@@ -4882,6 +5017,12 @@ Description
 :使用画面
 Use Screen
 
+:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
+The description field of the item is empty.\r\nIn FE 8, when emptying, you need to insert double spaces.
+
+:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例: \" [.]\"
+The description field of the item is empty.\r\nIn FE 8, to empty it, you need to enter a blank space and [.].\r\nExample: \\ "[.] \\ ".
+
 :物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。
 This item is a physical weapon, but "Damage effect" when attacking is set to "None".
 
@@ -4897,11 +5038,23 @@ Item data is extremely low.It may be damaged.
 :武器LV熟練度
 WEXP Gain
 
+:3F=射程3-15(ロングアーチ)
+3F=3-15 Range (Ballista)
+
+:10=魔法/2(リザーブの杖)
+10=MP/2(Fortify Staff)
+
+:FF=全体(ラトナ)
+FF=Total(Latona)
+
 :CCアイテムの名前
 Promotion Item Name
 
 :CCアイテム
 Promotion Item
+
+:アイテム 
+Item
 
 :確率%
 Probability%
@@ -4959,6 +5112,9 @@ ASM pointer
 
 :7=ドーピングアイテムとCCアイテムかどうかを定義する
 7=Define whether it is Stat Booster and Promotion Items
+
+:関連項目
+Related item.
 
 :アイテム利用効果
 Item "Use" Effect
@@ -5179,6 +5335,9 @@ Emulator Debug Tool
 :ログ
 Log
 
+:利用フラグ一覧
+Usage flag list
+
 :フラグ設定
 Event Flag Namer
 
@@ -5229,6 +5388,9 @@ Tileset Palette
 
 :マップエディタ
 Map Editor
+
+:OPクラス紹介英語表記
+OP Class Reel English Names
 
 :地形背景対応表
 Terrain BG table
@@ -5299,6 +5461,9 @@ Simple Menu
 :地形設定
 Terrain Editor
 
+:ユニットアクションポインタ
+Unit action pointer.
+
 :詳細メニュー
 Advanced Editors
 
@@ -5313,6 +5478,12 @@ Class Reel Editor
 
 :個別アニメ
 Individual Animation
+
+:ゲームオプションの順番
+Order of Game Option
+
+:ゲームオプション
+Game Options
 
 :軍師属性
 Military attribute.
@@ -5353,9 +5524,6 @@ Monster Spawn Rates
 :魔物所持品
 Monster Item Rates
 
-:OPクラス紹介英語表記
-OP Class Reel English Names
-
 :道エディタ
 Road Editor
 
@@ -5364,9 +5532,6 @@ Road Movement Editor
 
 :ソングトラック
 Song Track
-
-:ゲームオプション
-Game Options
 
 :ワールドマップBGM
 World Map BGM
@@ -5394,9 +5559,6 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
-
-:ゲームオプションの順番
-Order of Game Option
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -5684,13 +5846,13 @@ Edit the ASM called with the instruction of the event script.
 Edit events occurring in the world map before the chapter starts.
 
 :FE8では、ワールドマップを自由に移動できるため、拠点を選択した時と、クリアした時の2種類のイベントを設定できます。
-With FE 8, you can move the world map freely, so you can set two types of events, one when you select a base and the other when it clears.
+With FE 8, you can move the world map freely, so you can set two types of events, one when you select a World Map Node and the other when it clears.
 
 :ワールドマップに描画される道の設定を行います。\r\nどの拠点間を結ぶかを指定します。
 Edit the way to be drawn on the world map.\r\nSpecify which base to connect.
 
 :ワールドマップの城や砦などの拠点を設定します。
-Edit the bases such as world map castle and fortress.
+Edit the World Map Node Location such as castle and fortress.
 
 :ワールドマップに利用される画像データの設定を行います。
 Edit the image data used for the world map.
@@ -5866,6 +6028,12 @@ Set up a table to determine the military attributes.
 :ゲームオプションの表示順番を設定します。
 Set the display order of game options.
 
+:章で利用しているフラグから、イベントを逆に参照します。
+Reverse the event from the flags used in the chapter.
+
+:UnitActionテーブルを表示します。\r\nUnitActionテーブルは、マップ上のユニットの動作を定義するテーブルです。
+Display the UnitAction table.\r\nThe UnitAction table is a table that defines the behavior of units on a map.
+
 :ファイルが見つかりません
 File not found
 
@@ -5977,14 +6145,14 @@ Hide This Error?
 :エラーを非表示にする
 Hide Errors
 
-:システムエラー:
-Engine Error:
-
 :計測中...
 Measuring.
 
 :{0}個のエラーがあります
 There are {0} errors.
+
+:システムエラー:
+Engine Error:
 
 :ワールドマップイベント:
 World Map Events:
@@ -5997,6 +6165,9 @@ End Event:
 
 :壊れています:{0}
 Corrupted: {0}
+
+:話す:
+Talk:
 
 :DIFFツール
 DIFF Tool
@@ -6211,11 +6382,14 @@ Import MAR
 :メインマップは 15x10 以下のサイズにできません。
 Main Map can't be 15 x 10 or less in size.
 
+:マップが広すぎます。\r\n現在のサイズ({0},{1})
+The map is too wide.\r\nCurrent size ({0}, {1}).
+
+:マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。
+The map is too wide.\r\nCurrent size ({0}, {1}).\r\nWith this width, the available height is up to {2} in width.
+
 :サイズを1x1以下にはできません
 Size can't be 1 x 1 or less
-
-:マップサイズが100x100を超えています
-Map size exceeds 100 x 100
 
 :変更する
 Change
@@ -6733,9 +6907,6 @@ Tactics Rank A
 :離脱ポイントへJump
 Edit Escape Point
 
-:章タイトルへJump
-Edit Chapter Title
-
 :クリア条件(表示のみ)
 Clear Condition
 
@@ -6757,6 +6928,12 @@ Enemy Phase BGM
 :味方フェーズBGM
 Player Phase BGM
 
+:初期座標
+Initial coord
+
+:章タイトル画像
+Chapter Title
+
 :戦闘準備の有無
 Battle Prep Y/N?
 
@@ -6777,6 +6954,15 @@ Object type (Plist)
 
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
+
+:資産評価
+Asset evaluation
+
+:経験評価
+Experience evaluation
+
+:攻略評価
+Tactics evaluation
 
 :00=None(制圧)
 00=Seize
@@ -6829,9 +7015,6 @@ Eliwood Hard
 :エリウッドノーマル
 Eliwood Normal
 
-:資産評価
-Asset evaluation
-
 :Dヘクトルハード
 D Hector Hard
 
@@ -6879,12 +7062,6 @@ A Eliwood Hard
 
 :Aエリウッドノーマル
 A Eliwood Normal
-
-:経験評価
-Experience evaluation
-
-:攻略評価
-Tactics evaluation
 
 :章プロローグBGM(ヘクトル編)
 Chapter Prologue BGM (Hector)
@@ -6934,8 +7111,8 @@ Enemy Phase BGM (Eliwood)
 :味方フェーズBGM(エリウッド編)
 Player Phase BGM (Eliwood)
 
-:初期座標
-Initial coord
+:章タイトル画像2
+Chapter Title 2
 
 :章タイトル文字(ヘクトル)
 Chapter Title Ch.(Hector)
@@ -6963,9 +7140,6 @@ Object Type, Palette, and Tileset Config primarily determine map appearance (Til
 
 :PLIST({0})が無効です
 PLIST ({0}) is invalid
-
-:マップが広すぎます。現在のサイズ:({0},{1})\r\n利用できる最大サイズは、幅はMinimapの制限である{2}です。\r\n縦方向へは、{3}までにするべきです。\r\nまた、幅*高さで計算できるタイル数にも制限があります。\r\nタイル数は、だいたい{4}ぐらいが限界のようです。\r\n
-The map is too wide.Current size: ({0}, {1}).\r\nThe maximum size that can be used is the width of {2} which is the limit of Minimap.\r\nTo the vertical direction, it should be up to {3}.\r\nThere is also a limit on the number of tiles that can be calculated by width * height.\r\nThe number of tiles seems to be limited to about {4}.\r\n
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
@@ -7054,8 +7228,14 @@ Enemy Phase BGM 2 (X)
 :味方フェーズBGM2(X)
 Player Phase BGM 2 (X)
 
+:章タイトル画像2(X)
+Chapter title image 2 (X).
+
 :戦闘準備の有無(X)
 Enable Battle Prep? (X)
+
+:指南へJump
+Jump to the Shinan
 
 :利用マップ:{0}
 Usage map: {0}
@@ -7133,7 +7313,7 @@ File size is too small. Requires 9216 bytes.
 Don't Import Palette
 
 :パレットもインポートする
-Import Another Palette
+Import palette at same time
 
 :0=通常
 0=Normal
@@ -7475,16 +7655,16 @@ Appearance Monster 1
 The class when coordinate settings of the leftmost 2 bytes is 5 = probability table
 
 :魔物が出現する拠点IDを指定します。
-Specify the base ID where the monster appears.
+Specify the World Map Node ID where the monster appears.
 
 :拠点ID
-Base ID
+World Map Node ID
 
 :それぞれのルートでクリアする章を指定します。\r\nこれは、まだクリアしていない拠点には魔物を出せないためです。
-Specify the chapter to clear on each route.\r\nThis is because you can not cast monsters to a base that has not cleared yet.
+Specify the chapter to clear on each route.\r\nThis is because you can not cast monsters to a World Map Node that has not cleared yet.
 
 :拠点ごとの魔物の発生確率を定義します。
-Define the probability of occurrence of monsters at each site.
+Define the probability of occurrence of monsters at each World Map Node.
 
 :全クラス共通
 Same for all classes
@@ -7494,6 +7674,9 @@ Tile movement cost incorrect.\r\nTiles that can not be moved must be set to 255,
 
 :移動コスト: 天気普通
 Movement Cost: Clear sky
+
+:地形ステータス異常回復
+Terrain recovery bad status.
 
 :使用中のクラス
 Class in use
@@ -7717,6 +7900,9 @@ Open directory location
 :関連付けされたアプリケーションで開く
 Open with associated application
 
+:最新版は{0}です。
+The latest version is {0}.
+
 :ツールを選択してください
 Please select a tool
 
@@ -7736,7 +7922,7 @@ Determine the first screen that ROM is opened.\r\nThe default is a simple menu t
 Set the refresh interval to update this software automatically.
 
 :テキストに利用するエスケープシーケンスをどうするかを決定します。\r\nProjectFEGBA形式(@0003)、\r\nFEditor形式[A]、\r\nどちらを利用するかを決定します
-Decide what to do with escape sequence to use for text.\r\nProjectFEGBA format (@ 0003),\r\nFEditor format [A],\r\nWill decide which to use
+Decide what to do with escape sequence to use for text.\r\nProjectFEGBA format (@0003),\r\nFEditor format [A],\r\nWill decide which to use
 
 :データを書き込んだときに、書き込み増したという通知を画面下に出しますが、\r\nあの表示の表示時間を決定します
 When data is written, a notification that writing has been increased will be displayed at the bottom of the screen,\r\nDecide display time of that display
@@ -8266,6 +8452,9 @@ File Export Settings
 :保存
 Save
 
+:警告: Event Assemblerのバージョンが古いです。
+Warning: Event Assembler version is outdated.
+
 :その他ROM直値テキスト
 Other ROM Direct Text
 
@@ -8359,6 +8548,21 @@ Event instruction (#EVENT)
 :定番の修正(#ESSENTIALFIXES)
 Essential Fixes(#ESSENTIALFIXES)
 
+:ソート
+Sort
+
+:ソートしない
+Do not sort
+
+:新しい日付でソート
+Sort by New date
+
+:古い日付でソート
+Sort by Old date
+
+:名前でソート
+Sort by Name
+
 :フィルタの適応
 Filter adaptation
 
@@ -8409,9 +8613,6 @@ Selected address
 
 :このアドレスは危険です。
 This address is dangerous.
-
-:アドレス0番地-0x100番地には書き込むことができません。
-Unable to write to addresses 0 to 0x100.
 
 :更新するべきデータがありません keyword:{0}
 There is no data to updatekeyword: {0}
@@ -8736,6 +8937,12 @@ Searching
 
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
 Incompatible ROM.\r\ngameversion = {0}\r\nSize = {1}
+
+:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}
+GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, please send report7z.\r\nErrorCode: {0} {1}.\r\nMessage :.\r\n{2}.\r\n3}.
+
+:System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
 
 :警告
 Alert
@@ -9412,9 +9619,6 @@ Don't Loop
 :ループする
 Loop
 
-:インポート
-Import
-
 :ループ
 Loop
 
@@ -9784,6 +9988,9 @@ Text to Speech
 :エスケープコード(&N)
 Script Notation(&N)
 
+:この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。
+This area is reserved as a string area for patches that extend the system.\r\nPlease do not use.
+
 :以下のテキストにエラーがあります。\r\nエラーを修正して、「書き込み」ボタンを押してください。
 There is an error in the following text.\r\nCorrect the error and push "Write" button.
 
@@ -9874,17 +10081,14 @@ Warning: Text is too long in the side.\r\nEstimated number of dots: ({0},{1})\r\
 :警告:テキストの行数が多すぎます。\r\n想定ドット数({0} , {1})\r\n{2}
 Warning: Too many lines of text.\r\nEstimated dot number ({0},{1})\r\n{2}
 
-:不要
-No need.
-
 :警告:\r\n会話用のテキストなのに@0003等の記号がありません。
-warning:.\r\nAlthough it is text for conversation, there are no symbols such as @ 0003.
+Warning:\r\nAlthough it is text for conversation, there are no symbols such as @0003.
 
 :警告:\r\nシステムメッセージなのに{0}があります。
 Warning:\r\nThere is {0} even though it is a system message.
 
 :警告:\r\n{0}行メッセージなのに{1}があります。
-warning:\r\nThere is a {0} line message but {1}.
+Warning:\r\nThere is a {0} line message but {1}.
 
 :話す人:
 Talk:
@@ -10849,8 +11053,8 @@ Revert to This Version
 :このバージョンをエミュレータでテストプレイ
 Test This Version With Emulator
 
-:このバージョン({{0}})に戻してもよろしいですか？
-Confirm Revert to This Version ({{0}})
+:このバージョン({0})に戻してもよろしいですか？
+Confirm Revert to This Version ({0})
 
 :会話グループ
 Conversation group
@@ -10921,8 +11125,17 @@ Save the current data as a UPS patch.\r\nUnless there is a special reason, pleas
 :差分をUPSパッチとして作成する
 Save modifications as a UPS patch
 
+:全マップ共通のフラグも表示する
+Also display flags common to all maps.
+
+:章で利用しているフラグ
+Flags used in the chapter.
+
 :。
 。
+
+:アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
+You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile and might break the rom.
 
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.
@@ -10947,6 +11160,12 @@ To
 
 :最新版
 Latest edition
+
+:このROMには、UnitAction Patchが適応されています。
+UnitAction Patch is applied to this ROM.
+
+:関数ポインタ
+Function pointer.
 
 :アニメ内容の先頭アドレス
 Start address of animation content
@@ -11174,7 +11393,7 @@ Update Check
 Open ROM
 
 :この拠点が、次の目的地となったときに再生するBGMを選択します。
-Select the BGM to play when this base becomes the next destination.
+Select the BGM to play when this World Map Node becomes the next destination.
 
 :対応するワールドマップイベント({0})が存在しません。
 The corresponding world map event ({0}) doesn't exist.
@@ -11189,7 +11408,7 @@ Eirika Ending
 Ephraim Ending
 
 :前の拠点クリア後に発生するイベント
-Events Post-Base
+Events Post-World Map Node
 
 :拠点選択後に発生するイベント
 Events Post-World-Map-Choice
@@ -11228,10 +11447,10 @@ World Map Node Icon
 Road Image
 
 :拠点画像2
-Nodes Image 2
+World Map Node Image 2
 
 :拠点画像1
-Nodes Image 1
+World Map Node Image 1
 
 :ミニマップ
 Mini Map
@@ -11261,7 +11480,7 @@ Border
 The rightmost column is an eraser.\r\nSelect and erase over a road to remove it.
 
 :NULLの場合、拠点間を直線で通る
-0 if path is straight. Else: Pointer
+0 if Node to Node is straight. Else: Pointer
 
 :道を移動するパスのポインタ
 Movement Path Pointer
@@ -11275,8 +11494,20 @@ Pointer to Road Data
 :秘密の店
 Secret Shop
 
+:この拠点の場所に移動して、章を開始したときにロードされるマップを指定します。\r\nまた、ワールドマップから読み込まれたときに呼び出される、ワールドマップイベントテーブルの参照位置にも関係します。
+The map which is loaded when this location is moved to and a chapter is started.\r\nThis also corresponds to the "World Map Events" entry which is called when the location is loaded on the map.
+
+:もし、イベント分岐用フラグが、TRUEであれば、2回目が評価されます。\r\n例えば、主人公がエイリークで、イベント分岐用フラグがTRUEであれば、次の拠点ID(エイリーク2回目)が利用されます。
+"Event Conditional Flag" controls whether Eirika 1/Ephraim 1 or Eirika 2/Ephraim 2 is loaded.\r\n(1 if FALSE, 2 if TRUE).\r\nMaybe it could be called "Flag to check for Next Location 2".\r\nFFFF means do not check a flag.
+
+:章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。
+This is the destination which you will go to when ChapterID is completed.\r\nDifferent destinations can be specified for Ephraim and Eirika mode, and Event Conditional Flag can be used to specify 2 more destinations.\r\nA value of 0xFF means there is no "next chapter" (used for Tower, Ruins, extra map Melkaen Coast).\r\n*To make the map able to be visited any number of times (like the Tower or Ruins),\r\n"Next Location" all values must be 0xFF and "Placement Flag" value must be 0x03.
+
 :0=イベントの時のみ
 0=With Progression Event
+
+:1=フレリア城
+1=Frelia Castle.
 
 :2=魔物がいるときのみ
 2=With Monster Spawn
@@ -11293,23 +11524,20 @@ Coordinate Y
 :座標X
 Coordinate X
 
-:次の章のマップID(エフラム2回目)
-Next Chapter Map ID (Ephraim 2)
+:次の拠点ID(エフラム2回目)
+Next World Map Node ID (Ephraim 2)
 
-:次の章のマップID(エイリーク2回目)
-Next Chapter Map ID (Eirika 2)
+:次の拠点ID(エイリーク2回目)
+Next World Map Node ID (Eirika 2)
 
-:次の章のマップID(エフラム)
-Next Chapter Map ID (Ephraim 1)
+:次の拠点ID(エフラム)
+Next World Map Node ID (Ephraim 1)
 
-:次の章のマップID(エイリーク)
-Next Chapter Map ID (Eirika 1)
+:次の拠点ID(エイリーク)
+Next World Map Node ID (Eirika 1)
 
 :イベント分岐用フラグ
 Event Conditional Flag
-
-:ルート
-Paths
 
 :クリア後アイコン
 Post-Clear Icon
@@ -11317,11 +11545,27 @@ Post-Clear Icon
 :クリア前アイコン
 Pre-Clear Icon
 
+:フリーマップの種類
+Map Skirmish Type
+
 :いつでも入れるかどうか
 Placement Flag
+
+:1=モンスターなし
+1=NO Monsters
+
+:2=モンスターが出現可能
+2=Monsters can appear
+
+:3=タワーと遺跡
+3=Tower/Ruins behavior
+
+:0=移動に船を利用しない
+0=Do not use Ship to travel.
+
+:1=移動に船を利用する
+1=Use ship to travel.
 
 :ワールドマップ拠点
 World Map Nodes
 
-:独立
-Independence

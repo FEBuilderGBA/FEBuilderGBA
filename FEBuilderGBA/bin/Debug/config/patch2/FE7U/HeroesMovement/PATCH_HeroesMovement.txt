@@ -1,0 +1,30 @@
+NAME=HeroesMovement Standalone 設定
+NAME.en=HeroesMovement Standalone (Setting)
+NAME.zh=HeroesMovement Standalone Setting
+
+IF:$FGREP4 HeroesMovement/asm/CheckHasSkillStandalone.bin=0x30 0xB5 0x04 0x1C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END HeroesMovement/asm/CheckHasSkillStandalone.bin
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//データを定義します
+B0:UNIT=Unit(00=ANY)
+B1:CLASS=Class(00=ANY)
+B2:ITEM=Item(00=ANY)
+B3:$COMBO HeroesMovement_combo.txt=SkillID
+
+AUTHOR=Original work: Stan / Stand-alone Ver: 7743
+
+INFO=FEHの移動スキルを使えるユニットを設定します。\r\nユニット、クラス、アイテムなどのさまざまな要件でスキルを利用可能かどうか設定できます。\r\nもし、このパッチをインストール時にFE8Nがあれば、この設定の前にスキルの所持も判断されます。
+INFO.en=Set up a unit that can use FEH's movement skill.\r\nYou can set whether you can use skills with various requirements such as units, classes and items.\r\nIf you have FE 8N at the time of installation of this patch, possession of the skill is also judged before this setting.
+INFO.zh=设置一个可以使用FEH移动技能的单位。\r\n您可以设置是否可以使用具有各种要求的技能，例如单元，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。

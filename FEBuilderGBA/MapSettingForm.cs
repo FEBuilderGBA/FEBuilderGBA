@@ -21,6 +21,13 @@ namespace FEBuilderGBA
             U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref L_19_COMBO , true);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            uint shinan = InputFormRef.SearchShinanTablePatch();
+            if (shinan != U.NOT_FOUND)
+            {
+                InputFormRef.markupJumpLabel(X_JUMP_SHINAN);
+                X_JUMP_SHINAN.Show();
+            }
         }
         private void MapSettingForm_Load(object sender, EventArgs e)
         {
@@ -660,14 +667,8 @@ namespace FEBuilderGBA
                         FELint.CheckLZ77Errors(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
                     }
 
-                    if (mapwidth > ImageUtilMap.MAP_MAX_WIDTH || mapheight > ImageUtilMap.MAP_MAX_HEIGHT || mapwidth * mapheight > ImageUtilMap.MAP_TILE_LIMIT)
-                    {
-                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                            , R._("マップが広すぎます。現在のサイズ:({0},{1})\r\n利用できる最大サイズは、幅はMinimapの制限である{2}です。\r\n縦方向へは、{3}までにするべきです。\r\nまた、幅*高さで計算できるタイル数にも制限があります。\r\nタイル数は、だいたい{4}ぐらいが限界のようです。\r\n"
-                            , mapwidth, mapheight, ImageUtilMap.MAP_MAX_WIDTH, ImageUtilMap.MAP_MAX_HEIGHT, ImageUtilMap.MAP_TILE_LIMIT)
-                            , mapid));
-                    }
-                    else if (mapwidth < ImageUtilMap.MAP_MIN_WIDTH || mapheight < ImageUtilMap.MAP_MIN_HEIGHT)
+                    uint limitWidth = ImageUtilMap.GetLimitMapWidth(mapheight);
+                    if (mapwidth < ImageUtilMap.MAP_MIN_WIDTH || mapheight < ImageUtilMap.MAP_MIN_HEIGHT)
                     {
                         if (Program.ROM.RomInfo.version() == 8 && mapid == 0x38)
                         {
@@ -681,6 +682,18 @@ namespace FEBuilderGBA
                                 , mapwidth, mapheight, ImageUtilMap.MAP_MIN_WIDTH, ImageUtilMap.MAP_MIN_HEIGHT)
                                 , mapid));
                         }
+                    }
+                    else if (limitWidth == 0)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", mapwidth, mapheight, limitWidth)
+                                ));
+                    }
+                    else if (mapwidth > limitWidth)
+                    {
+                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", mapwidth, mapheight, limitWidth)
+                                ));
                     }
                 }
             }
@@ -746,10 +759,37 @@ namespace FEBuilderGBA
             B9.Value = f.GetANIME1PLIST();
             B10.Value = f.GetANIME2PLIST();
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112,114,136,138 });
+            UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112,114,136,138 });
+        }
+
+        private void X_JUMP_SHINAN_Click(object sender, EventArgs e)
+        {
+            uint shinan = InputFormRef.SearchShinanTablePatch();
+            if (shinan == U.NOT_FOUND)
+            {
+                return;
+            }
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+            uint selected = (uint)this.AddressList.SelectedIndex;
+            uint addr = shinan + (selected * 4);
+            if ( !U.isSafetyOffset(addr) )
+            {
+                return;
+            }
+            uint eventAddr = Program.ROM.p32(addr);
+            if ( !U.isSafetyOffset(eventAddr))
+            {
+                return;
+            }
+
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
+            f.JumpTo(eventAddr);
         }
 
     }

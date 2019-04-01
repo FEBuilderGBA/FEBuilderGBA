@@ -1,0 +1,2 @@
+Seal Speed: Debuff opponent's Spd[N]
+by 6 after combat. (Recover 1/turn)[X]

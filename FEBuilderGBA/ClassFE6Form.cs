@@ -348,6 +348,12 @@ namespace FEBuilderGBA
                 , "MoveCost ref"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
+            //全クラス共通地形バッドステータス回復
+            FEBuilderGBA.Address.AddPointer(list,
+                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer()
+                , 52
+                , "MoveCost ref"
+                , FEBuilderGBA.Address.DataTypeEnum.BIN);
         }
 
         public static bool isMeleeMagicMix(uint addr)

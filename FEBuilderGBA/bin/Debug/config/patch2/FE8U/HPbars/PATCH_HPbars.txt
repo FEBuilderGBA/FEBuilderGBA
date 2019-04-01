@@ -12,3 +12,5 @@ INFO=HPbarを追加します。\r\n単独で動作するので、SkillSystemsか
 AUTHOR=Circles
 INFO.en=Add HPbar.\r\nSince it operates alone, it is separated from SkillSystems.\r\nPlease install if you need HP Bar.\r\nfor the slow one that also has the effectiveness warnings
 INFO.zh=添加HPbar。\r\n由于它单独运行，因此它与SkillSystems分开。\r\n如果您需要HP Bar，请安装。
+
+DEPRECATED=1

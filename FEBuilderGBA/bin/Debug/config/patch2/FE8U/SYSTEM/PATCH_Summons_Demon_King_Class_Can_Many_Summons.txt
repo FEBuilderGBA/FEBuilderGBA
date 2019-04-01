@@ -1,6 +1,6 @@
 NAME=呼魔_魔王の一度に大量に召喚するを実行できるクラス
 NAME.en=Demon King Multi-Summon Class
-NAME.zh=一个可以在Mutsugi_Maou一次性执行大量的类
+NAME.zh=技能呼魔_可以召唤大量的职业
 
 //アドレスパッチとして実装します
 TYPE=ADDR

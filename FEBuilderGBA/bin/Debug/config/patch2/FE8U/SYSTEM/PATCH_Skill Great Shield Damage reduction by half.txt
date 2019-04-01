@@ -1,6 +1,6 @@
 NAME=大盾ダメージ半減化
 NAME.en=Great Shield Damage Reduction
-NAME.zh=一半的伤害减半
+NAME.zh=大盾伤害减半化
 
 //アドレスパッチとして実装します
 TYPE=ADDR

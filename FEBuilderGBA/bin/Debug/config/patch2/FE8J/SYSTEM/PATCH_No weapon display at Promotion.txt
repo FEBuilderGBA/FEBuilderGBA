@@ -1,6 +1,6 @@
 
 NAME=CC時に武器表示無し
-NAME.en=No weapon display at Promotion
+NAME.en=Display/Hide Weapon On Promote
 NAME.zh=系统_在转职时没有武器显示
 
 TYPE=SWITCH

@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ラーチェル_影
 NAME.en=OP Anime Face: L'Arachel (Shadow)
-NAME.zh=OPANIME_FACE_瑞秋_影子
+NAME.zh=OP动画_脸_拉切尔_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

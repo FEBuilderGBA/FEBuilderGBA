@@ -1,0 +1,2 @@
+Pivot: Allows unit to move to the[N]
+opposite side of an adjacent ally.[X]

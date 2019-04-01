@@ -10,7 +10,7 @@ EDIT_PATCH=PATCH_ChangePortrait.txt
 EA=Installer.event
 
 AUTHOR=7743
-NAME.en=Switch Portrait images by class, chapter, flag. (Installer)
+NAME.en=Switch Portrait images by class, chapter, flag.(Installer)
 INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.
 NAME.zh=按类，章，旗切换面部图像引进
 INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。

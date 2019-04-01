@@ -505,7 +505,7 @@ namespace FEBuilderGBA
            }
 
            string title = R._("保存するファイル名を選択してください");
-           string filter = R._("バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|FEditorシリアライズ形式|*.bin|アニメGIF|*.gif|Dump All|*.bin|All files|*");
+           string filter = R._("FEditorシリアライズ形式|*.bin|バトルアニメ コメントあり|*.txt|バトルアニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.bin|All files|*");
            
            SaveFileDialog save = new SaveFileDialog();
            save.Title = title;
@@ -571,7 +571,7 @@ namespace FEBuilderGBA
                ImageUtilOAM.ExportBattleAnimeGIF(filename, showSectionData
                     , sectionData, frameData, rightToLeftOAM, palettes, palette_count);
            }
-           else if (save.FilterIndex == 3 || ext == ".BIN")
+           else if (save.FilterIndex == 0 || ext == ".BIN")
            {
                ImageUtilOAM.ExportBattleAnimeOnFEditorSerialize(filename, battleanime_baseaddress
                     , sectionData, frameData, rightToLeftOAM, leftToRightOAM, palettes, palette_count);
@@ -579,7 +579,7 @@ namespace FEBuilderGBA
            else
            {
                bool enableComment = true;
-               if (save.FilterIndex == 2)
+               if (save.FilterIndex == 3)
                {
                    enableComment = false;
                }
@@ -605,7 +605,7 @@ namespace FEBuilderGBA
            else
            {
                string title = R._("開くファイル名を選択してください");
-               string filter = R._("バトルアニメ テキスト形式|*.txt|FEditorシリアライズ形式|*|All files|*");
+               string filter = R._("戦闘アニメ|*.bin;*.txt|FEditorシリアライズ形式|*.bin|FEditorシリアライズ形式(ワイルドカード)|*|バトルアニメ テキスト形式|*.txt|All files|*");
 
                OpenFileDialog open = new OpenFileDialog();
                open.Title = title;

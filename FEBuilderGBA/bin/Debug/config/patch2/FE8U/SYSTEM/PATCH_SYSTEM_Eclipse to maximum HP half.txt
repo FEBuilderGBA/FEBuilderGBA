@@ -1,6 +1,6 @@
 NAME=イクリプスを最大HP半分に
 NAME.en=Eclipse Damage (1/2)
-NAME.zh=日食达到一半HP
+NAME.zh=月食最大hp减半
 
 //アドレスパッチとして実装します
 TYPE=ADDR

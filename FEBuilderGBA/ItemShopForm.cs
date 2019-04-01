@@ -15,6 +15,8 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
+
+            this.SHOP_LIST.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
             this.InputFormRef = Init(this);

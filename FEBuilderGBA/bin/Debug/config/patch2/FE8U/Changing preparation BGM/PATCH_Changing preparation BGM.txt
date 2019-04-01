@@ -1,6 +1,6 @@
 NAME=章ごとに進撃準備の音楽変更
 NAME.en=Set Preparation BGM By Chapter
-NAME.zh=按章节更改每章的音乐准备
+NAME.zh=每章进击准备的音乐变更
 
 //PATCHED_IF:0x988c2=0x9B 0xF7 0x03 0xFC	//FE8J
 PATCHED_IF:0x965DC=0x9D 0xF7 0xF2 0xFD	//FE8U

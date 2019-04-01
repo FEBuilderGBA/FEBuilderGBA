@@ -1,4 +1,4 @@
-﻿NAME=操作しているキャラの保持している支援をすべて消します
+NAME=操作しているキャラの保持している支援をすべて消します
 TYPE=BIN
 TAG=#EVENT
 
@@ -21,8 +21,8 @@ NAME.zh=事件命令_消除支援
 
 INFO.zh=从操作角色的支援全部消除，从支援角色也会自动地消失.
 AUTHOR.zh=Kaitou补丁7743
-NAME.en=turn off assistance divorce
-INFO.en=Erase all support from the operation character.It automatically disappears from supported characters.
+NAME.en=Add Event: Remove Support/Divorce
+INFO.en=Patches the ROM with a callable event that erases all supports from a designated character.\r\n
 AUTHOR.en=Kaitou patch7743
 
 

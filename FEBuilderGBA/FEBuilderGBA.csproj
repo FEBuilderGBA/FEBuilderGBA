@@ -238,7 +238,13 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
-    <Compile Include="TextID.cs" />
+    <Compile Include="ToolUseFlagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolUseFlagForm.Designer.cs">
+      <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UseTextID.cs" />
     <Compile Include="TextToSpeechForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1069,6 +1075,7 @@
     </Compile>
     <Compile Include="ROMUpdateWatcher.cs" />
     <Compile Include="UPSUtil.cs" />
+    <Compile Include="UseFlagID.cs" />
     <Compile Include="VersionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1876,6 +1883,18 @@
     <Compile Include="StatusOptionOrderForm.Designer.cs">
       <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OPClassAlphaNameFE6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPClassAlphaNameFE6Form.Designer.cs">
+      <DependentUpon>OPClassAlphaNameFE6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitActionPointerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitActionPointerForm.Designer.cs">
+      <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2475,6 +2494,9 @@
     <EmbeddedResource Include="ToolUndoPopupDialogForm.resx">
       <DependentUpon>ToolUndoPopupDialogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolUseFlagForm.resx">
+      <DependentUpon>ToolUseFlagForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnitCustomBattleAnimeForm.resx">
       <DependentUpon>UnitCustomBattleAnimeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2775,6 +2797,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusOptionOrderForm.resx">
       <DependentUpon>StatusOptionOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPClassAlphaNameFE6Form.resx">
+      <DependentUpon>OPClassAlphaNameFE6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitActionPointerForm.resx">
+      <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

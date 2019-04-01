@@ -1,0 +1,16 @@
+NAME=顔画像をクラス、章、フラグごとに切り替える 導入
+INFO=ステータス画面と、MiniMugをクラス、章、フラグことに切り替えます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x018FC8=0x00 0x4B
+EDIT_PATCH=PATCH_ChangePortrait.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Switch Portrait images by class, chapter, flag.(Installer)
+INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.
+NAME.zh=按类，章，旗切换面部图像引进
+INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。

@@ -28,3 +28,5 @@ INFO=シングルバイトフォントを出力できるように修正します
 INFO.en=Fix to be able to output singlebyte font.
 
 INFO.zh=修复能够输出单字节字体。
+
+NAME.zh=修复能够输出单字节字体

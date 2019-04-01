@@ -6,11 +6,12 @@ TAG=#ENGINE
 PATCHED_IF:0x16328=0x00 0x48 0x87 0x46
 
 EA=EA.event
+EA_EXTENDS_UNITMENU:0x01=0x40
 
 INFO=トラキアのように素早さ減の状態で敵を攻撃し、敵を捕らえることができるようにします。\r\nこのパッチを入れた後に、敵捕獲パッチを入れないと、敵とのアイテム交換や解放ができません。\r\n解放パッチを後から追加してください。\r\n
 
 AUTHOR=aera , Original idea: Tequila
-NAME.en=Make it possible to attack and capture enemies with reduced speed like Thrace
-INFO.en=We will attack the enemy in a state of reduced speed like Thrace, so that we can catch enemies.\r\nAfter entering this patch, you can not exchange items with the enemy or release it unless you enter an enemy capture patch.\r\nPlease add a release patch later.\r\n
+NAME.en=Attack and capture enemies with reduced speed like FE5
+INFO.en=This patch will attack enemies in a state of reduced speed like FE 5 so that you can capture enemies.
 NAME.zh=能够以像色雷斯一样的速度攻击和捕获敌人
 INFO.zh=我们将像色雷斯一样以速度降低的状态攻击敌人，以便我们能够抓住敌人。\r\n进入此补丁后，您无法与敌人交换物品或释放它，除非您输入敌人捕获补丁。\r\n请稍后添加发布补丁。\r\n

@@ -1,0 +1,35 @@
+NAME=武器の射程の文字列を変更する
+NAME.en=Change weapon's range text
+
+INFO=アイテムの射程の説明用のテキストを変更します。\r\n射程3-4等の武器の説明を表示ことができます。\r\nただし、武器の攻撃範囲の射程のタイルを正しく描画するには、freerange patchが別途必要です。\r\nこのパッチはRボタンを押したときの射程のテキストを変更するためのものです。
+
+
+IF:0x16A68=0x00 0xB5 0x0A 0x4B 0x9E 0x46 0x00 0xF8 0x0B 0x4B 0x04 0x3B 0x04 0x33 0x19 0x68
+AUTHOR=7743
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END GetItemRangeString.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのは射程名です
+LISTNAME=$W2:TEXT
+
+//データを定義します
+B0:$COMBO RangeType.txt:.ja=射程
+B0:$COMBO RangeType.en.txt:.en=Range
+B0:$COMBO RangeType.zh.txt:.zh=射程
+B1=00
+W2:TEXT=String
+
+INFO.en=Change the text for the item's range description.\r\nYou can display the description of the weapon such as range 3-4.\r\nHowever, freerange patch is required separately to draw tiles of range of attack range of weapon properly.\r\nThis patch is for changing the text of the range when you press the R button.
+NAME.zh=更改武器的范围文本。
+INFO.zh=更改项目范围说明的文本。\r\n您可以显示武器的描述，例如范围3-4。\r\n但是，需要单独使用自由范围补丁来适当地绘制武器攻击范围的瓦片。\r\n此补丁用于在按下R按钮时更改范围的文本。

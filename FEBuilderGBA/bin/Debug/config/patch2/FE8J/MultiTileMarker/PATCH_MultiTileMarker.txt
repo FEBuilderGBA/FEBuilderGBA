@@ -1,0 +1,40 @@
+NAME=MultiTileMarker マップに複数の離脱マーカーを表示する
+NAME.en=MultiTileMarker Display multiple exit markers on the map.
+NAME.zh=MultiTileMarker 在地图上显示多个转义标记
+
+IF:0x0274D8=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiTileMarker.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=Map
+B1:MAPX=X
+B2:MAPY=Y
+B3:CLASS=敵クラスがいるかどうか(0=ANY)
+W4:FLAG=判定フラグ(0=Any)
+B3:CLASS.en=HasEnemyClass(0=ANY)
+W4:FLAG.en=Judgment flag(0=Any)
+B3:CLASS.zh=HasEnemyClass(0=ANY)
+W4:FLAG.zh=Judgment flag(0=Any)
+W6=00
+
+INFO=離脱ポイントを示すオレンジ色のマーカーを増やします。\r\nマップ設定で指定するマーカーの他に、マップ上に表示したいマーカーを指定できます。\r\n複数の離脱ポイントのマークを出したいときに利用します。\r\nまた、こちらの機能で設定するマーカーは、フラグで制御することができます。\r\n盗賊を倒したら、フラグを落として表示を消したり、盗賊の増援と一緒にフラグを立てて、マークを表示したりといった制御ができます。\r\n"敵クラスがいるかどうか"を使うと、特定の敵がいる時だけ、その離脱ポイントマークを表示します。主に盗賊クラスを指定することを想定しています。\r\n"判定フラグ"を使うと、そのフラグが有効な時だけ、離脱ポイントマークを表示します。
+
+INFO.en=Thief Escape Increase the orange marker to indicate the Point.\r\nIn addition to markers specified in Chapter Editor, you can specify the markers you want to display on the map.\r\nUse this when you want to mark multiple Thief Escape Points.\r\nAlso, markers set with this function can be controlled with flags.\r\nIf you defeat the thief, you can control such as flags are dropped and the display is erased, flags are set with reinforcement of thieves, and marks are displayed.\r\nUsing "HasEnemyClass" will show that Thief Escape only when there are certain enemies.I am assuming to mainly design thieves class.\r\nUsing "Judgment flag", Thief Escape is displayed only when the flag is valid.
+INFO.zh=增加指示分离点的橙色标记。\r\n除了地图设置中指定的标记外，您还可以指定要在地图上显示的标记。\r\n如果要标记多个分离点，请使用此选项。\r\n此外，使用此功能设置的标记可以使用标志进行控制。\r\n如果你击败小偷，你可以控制诸如标志被丢弃和显示被删除，标志被设置加强盗贼，并显示标记。\r\nUsing "HasEnemyClass" will show that Thief Escape only when there are certain enemies.I am assuming to mainly design thieves class.\r\nUsing "Judgment flag", Thief Escape is displayed only when the flag is valid.
+
+AUTHOR=7743

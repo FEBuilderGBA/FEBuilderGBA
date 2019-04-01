@@ -1,0 +1,35 @@
+#ifndef HAX_6C_DEFINITIONS_EVENT
+#define HAX_6C_DEFINITIONS_EVENT
+
+// 6C Definitions for writing 6C code
+
+#define _6C_END                                     "SHORT 0x00 0 0 0"
+#define _6C_SET_NAME(apsNamePointer)                "SHORT 0x01 0; POIN apsNamePointer"
+#define _6C_CALL_ROUTINE(aprRoutine)                "SHORT 0x02 0; POIN aprRoutine"
+#define _6C_LOOP_ROUTINE(aprRoutine)                "SHORT 0x03 0; POIN aprRoutine"
+#define _6C_SET_DESTRUCTOR(aprRoutine)              "SHORT 0x04 0; POIN aprRoutine"
+#define _6C_NEW_CHILD(ap6CChild)                    "SHORT 0x05 0; POIN ap6CChild"
+#define _6C_NEW_CHILD_BLOCKING(ap6CChild)           "SHORT 0x06 0; POIN ap6CChild"
+#define _6C_NEW_MAIN_BUGGED(ap6CMain)
+#define _6C_UNIL_EXISTS(ap6CToCheck)                "SHORT 0x08 0; POIN ap6CToCheck"
+#define _6C_END_ALL(ap6CToCheck)                    "SHORT 0x09 0; POIN ap6CToCheck"
+#define _6C_BREAK_ALL_LOOP(ap6CToCheck)             "SHORT 0x0A 0; POIN ap6CToCheck"
+#define _6C_LABEL(aLabelId)                         "SHORT 0x0B aLabelId 0 0"
+#define _6C_GOTO(aLabelId)                          "SHORT 0x0C aLabelId 0 0"
+#define _6C_JUMP(ap6CCode)                          "SHORT 0x0D 0; POIN ap6CCode"
+#define _6C_SLEEP(aTime)                            "SHORT 0x0E aTime 0 0"
+#define _6C_SET_MARK(aMark)                         "SHORT 0x0F aMark 0 0"
+#define _6C_BLOCK                                   "SHORT 0x10 0 0 0"
+#define _6C_END_IF_DUPLICATE                        "SHORT 0x11 0 0 0"
+#define _6C_SET_BIT4                                "SHORT 0x12 0 0 0"
+#define _6C_13
+#define _6C_WHILE_ROUTINE(aprRoutine)               "SHORT 0x14 0; POIN aprRoutine"
+#define _6C_15
+#define _6C_CALL_ROUTINE_2(aprRoutine)              "SHORT 0x16 0; POIN aprRoutine"
+#define _6C_END_DUPLICATES                          "SHORT 0x17 0 0 0"
+#define _6C_CALL_ROUTINE_ARG(aprRoutine, aArgument) "SHORT 0x18 aArgument; POIN aprRoutine"
+#define _6C_19
+
+#define _6C_YIELD "_6C_SLEEP(0)"
+
+#endif // HAX_6C_DEFINITIONS_EVENT

@@ -1,0 +1,24 @@
+NAME=defWeaponDebuffsTable
+IF:0x02C078=0x01 0x4B 0xA5 0xF0
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+//データへのポインタ
+POINTER=$FGREP4END+8 Set_Debuffs.dmp
+
+//データサイズ(10進数)
+DATASIZE=3
+
+//データ個数 00 が出てくるまで
+//DATACOUNT=$GREP3 0x00 0x00 0x00
+DATACOUNT=2
+
+//データを定義します
+B0=(skl<<4)|str
+B1=(def<<4)|spd
+B2=(luk<<4)|res
+
+INFO=ステータスを減らす武器の設定をします。\r\n残念ながら、テーブルは4ビットごとの定義のため、設定は複雑です。\r\nアイテムテーブルの0x21番目の値で、利用するDebuffs効果を選択します。\r\n0番目はDebuffs無効です。\r\n1番目からDebuffsの設定を記述します。
+INFO.en=Set weapons to reduce status.\r\nUnfortunately, because the table is a 4 bit definition, the configuration is complicated.\r\nIn the item table 0x21st value, select the Debuffs effect to use.\r\nThe 0th is invalid Debuffs.\r\nWrite Debuffs settings from the first.
+INFO.zh=设置武器以减少状态。\r\n不幸的是，因为该表是4位定义，所以配置很复杂。\r\n在项目表0x21st值中，选择要使用的Debuffs效果。\r\n第0个是无效的Debuff。\r\n从第一个开始写Debuffs设置。

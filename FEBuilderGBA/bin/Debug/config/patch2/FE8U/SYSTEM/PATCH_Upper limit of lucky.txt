@@ -1,6 +1,6 @@
 NAME=幸運上限
 NAME.en=Change Maximum Luck Cap
-NAME.zh=运气最大
+NAME.zh=运气上限
 
 //アドレスパッチとして実装します
 TYPE=ADDR

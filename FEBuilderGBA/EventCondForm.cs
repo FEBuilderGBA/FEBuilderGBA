@@ -81,6 +81,7 @@ namespace FEBuilderGBA
             //イベント条件の指定を忘れる人が多いので、アイコンをつけて目立たせる.
             this.FilterComboBox.OwnerDraw(DrawFilterCombo, DrawMode.OwnerDrawFixed);
 
+            this.MAP_LISTBOX.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             InputFormRef.TabControlHideTabOption(CondTabControl);
 
             //マップIDリストを作る.
@@ -131,10 +132,21 @@ namespace FEBuilderGBA
 
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8.
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("11=制圧"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x11, ImageSystemIconForm.Throne()); //11=制圧
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("20=村の中心(盗賊のターゲット)"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x20, ImageSystemIconForm.VillageCenter()); //20=村の中心(盗賊のターゲット)
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("10=民家"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.House()); //10=民家
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("14=ランダム宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x14, ImageSystemIconForm.Chest()); //14=ランダム宝箱
+                if (InputFormRef.SearchStairsHackPatch())
+                {
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
+                }
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("0=--"));
+
 
                 OBJECT_N06_L_10_COMBO.AddIcon(0x20, ImageSystemIconForm.VillageCenter()); //20=村の中心(盗賊のターゲット)
                 OBJECT_N06_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.Village()); //10=民家
@@ -157,7 +169,6 @@ namespace FEBuilderGBA
 
             //FE7とFE6はイベントオブジェクトの種類のIDが違う.
             OBJECT_N05_L_10_COMBO.BeginUpdate();
-            OBJECT_N05_L_10_COMBO.Items.Clear();
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0F=制圧"));
             OBJECT_N05_L_10_COMBO.Items.Add(R._("1D=村の中心(盗賊のターゲット)"));
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0E=民家"));
@@ -170,6 +181,11 @@ namespace FEBuilderGBA
             {//FE6には、イベント付き宝箱がある
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("12=イベント付き宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Chest());
+            }
+            if (InputFormRef.SearchStairsHackPatch())
+            {
+                OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
+                OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
             }
             OBJECT_N05_L_10_COMBO.Items.Add(R._("0=不明"));
             OBJECT_N05_L_10_COMBO.EndUpdate();
@@ -366,7 +382,7 @@ namespace FEBuilderGBA
                     }
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -382,7 +398,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_tern_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -406,7 +422,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_talk_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -423,7 +439,7 @@ namespace FEBuilderGBA
                     , Program.ROM.RomInfo.eventcond_talk_size()
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -443,7 +459,7 @@ namespace FEBuilderGBA
                 , 12
                 , (int i, uint addr) =>
                 {//00まで検索
-                    return Program.ROM.u8(addr + 0) != 0;
+                    return Program.ROM.u32(addr + 0) != 0;
                 }
                 , (int i, uint addr) =>
                 {
@@ -464,7 +480,7 @@ namespace FEBuilderGBA
                     , 12
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -481,7 +497,7 @@ namespace FEBuilderGBA
                     , 12
                     , (int i, uint addr) =>
                     {//00まで検索
-                        return Program.ROM.u8(addr + 0) != 0;
+                        return Program.ROM.u32(addr + 0) != 0;
                     }
                     , (int i, uint addr) =>
                     {
@@ -529,7 +545,7 @@ namespace FEBuilderGBA
 
         private void EventCondForm_Load(object sender, EventArgs e)
         {
-            this.MAP_LISTBOX.SelectedIndex = 0;
+            U.SelectedIndexSafety(this.MAP_LISTBOX , 0);
 
             N02_11_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTurn();
             NFE702_12_EXPLAIN.Text += "\r\n\r\n" + ExplainSampleCondTurnFE7();
@@ -780,7 +796,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                for (; Program.ROM.u8(addr) != 0; addr += 12)
+                for (; Program.ROM.u32(addr) != 0; addr += 12)
                 {
                     if (!U.isSafetyOffset(addr + 12))
                     {
@@ -847,12 +863,13 @@ namespace FEBuilderGBA
                 {
                     for (int n = 0; addr < length  ; n++)
                     {
-                        uint type = Program.ROM.u8(addr);
-                        if (type == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
-                            
+
+                        uint type = Program.ROM.u8(addr);
+
                         list.Add(new U.AddrResult(addr, MapCond[i].Name, (uint)((n << 8) + (uint)filter_condtype)));
                         if (Program.ROM.RomInfo.version() == 7
                             && type == 1)
@@ -869,7 +886,7 @@ namespace FEBuilderGBA
                 {
                     for (int n = 0; addr < length; addr += Program.ROM.RomInfo.eventcond_talk_size(), n++)
                     {
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -889,11 +906,23 @@ namespace FEBuilderGBA
                         list.Add(new U.AddrResult(addr, MapCond[i].Name, (uint)((n << 8) + (uint)filter_condtype)));
                     }
                 }
+                else if (filter_condtype == CONDTYPE.OBJECT)
+                {
+                    for (int n = 0; addr < length; addr += 12, n++)
+                    {
+                        if (Program.ROM.u32(addr) == 0)
+                        {
+                            break;
+                        }
+
+                        list.Add(new U.AddrResult(addr, MapCond[i].Name, (uint)((n << 8) + (uint)filter_condtype)));
+                    }
+                }
                 else
                 {
                     for (int n = 0; addr < length; addr += 12, n++)
                     {
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -979,6 +1008,9 @@ namespace FEBuilderGBA
                         else if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfDoor))
                         {//FE6ではドアを指定してもいいらしい.
                         }
+                        else if ((object_type == 0x22) && InputFormRef.SearchStairsHackPatch())
+                        {//階段拡張
+                        }
                         else if (!(object_type == objectTypeOfSeize || object_type == objectTypeOfTownCenter || object_type == objectTypeOfHouse))
                         {
                             errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
@@ -1036,6 +1068,11 @@ namespace FEBuilderGBA
                             , R._("お店に「{0}」が設定されています。\r\nこの設定では、一度入店すると、再度入店できません。\r\n意図的にやっている場合を除き、ここに「{0}」を設定するべきではありません。", GetNameOfAchievementFlag())));
                     }
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
+                        , R._("マップオブジェクトに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
@@ -1057,6 +1094,13 @@ namespace FEBuilderGBA
 
                 FELint.CheckFlagErrors(flag, errors, CONDTYPE.TALK, addr);
                 FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.TALK, addr, false, tracelist);
+
+                if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.TALK, addr
+                        , R._("会話イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                    continue;
+                }
 
                 if (Program.ROM.RomInfo.version() == 6)
                 {
@@ -1127,6 +1171,11 @@ namespace FEBuilderGBA
                 else if (Program.ROM.RomInfo.version() == 8 && (type == 0x2))
                 {//FE8 には、ターン2がある
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
+                        , R._("ターンイベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
                     errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
@@ -1167,10 +1216,15 @@ namespace FEBuilderGBA
                     uint asm = Program.ROM.u32(addr + 8);
                     FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.ALWAYS, addr);
                 }
+                else if (type == 0x00 && flag > 0)
+                {
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.ALWAYS, addr
+                        , R._("常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。", U.To0xHexString(flag))));
+                }
                 else
                 {
-                    errors.Add(new FELint.ErrorSt(CONDTYPE.TURN, addr
-                        , R._("ターンイベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
+                    errors.Add(new FELint.ErrorSt(CONDTYPE.ALWAYS, addr
+                        , R._("常時条件イベントに不明なタイプ「{0}」が利用されました。", U.To0xHexString(type))));
                 }
             }
 
@@ -1316,6 +1370,7 @@ namespace FEBuilderGBA
             return false;
         }
 
+
         //配置イベントだけのリストを作る.
         public static List<U.AddrResult> MakeUnitPointer(uint mapid)
         {
@@ -1362,9 +1417,7 @@ namespace FEBuilderGBA
                         uint event_addr = Program.ROM.p32(addr + 4);
                         if (U.isSafetyOffset(event_addr))
                         {
-                            uint tern = Program.ROM.u8(addr + 8);
-                            string name = "turn:" + tern.ToString() + " " + MapCond[i].Name;
-                            MakeUnitPointerEventScan(ref list, name, event_addr, mapid, tracelist);
+                            MakeUnitPointerEventScan(ref list, MapCond[i].Name + " " + U.To0xHexString(addr), event_addr, mapid, tracelist);
                         }
 
                         if (isFE7 && type == 1)
@@ -1395,10 +1448,7 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        uint from_unit = Program.ROM.u8(addr + 8);
-                        uint to_unit = Program.ROM.u8(addr + 9);
-                        string name = UnitForm.GetUnitName(from_unit) + "-" + UnitForm.GetUnitName(to_unit) + " " + MapCond[i].Name;
-                        MakeUnitPointerEventScan(ref list, name, event_addr, mapid, tracelist);
+                        MakeUnitPointerEventScan(ref list, MapCond[i].Name + " " + U.To0xHexString(addr), event_addr, mapid, tracelist);
                     }
                 }
                 else if (condtype == CONDTYPE.OBJECT)
@@ -1426,7 +1476,7 @@ namespace FEBuilderGBA
                         }
                         else
                         {//それ以外
-                            MakeUnitPointerEventScan(ref list, MapCond[i].Name, event_addr, mapid,tracelist);
+                            MakeUnitPointerEventScan(ref list, MapCond[i].Name + " " + U.To0xHexString(addr), event_addr, mapid, tracelist);
                         }
                     }
                 }
@@ -1438,8 +1488,8 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
-                        {
+                        if (Program.ROM.u32(addr) == 0)
+                        {//FE8では32ビットでの評価です。
                             break;
                         }
 
@@ -1449,27 +1499,7 @@ namespace FEBuilderGBA
                             continue;
                         }
 
-                        uint areaevent = Program.ROM.u8(addr + 0);
-                        string name = "";
-                        if (areaevent == 0x01)
-                        {
-                            uint flag = Program.ROM.u8(addr + 8);
-                            name = "FLAG:" + flag.ToString() + " " + MapCond[i].Name;
-                        }
-                        else if (areaevent == 0x0B)
-                        {
-                            uint sx = Program.ROM.u8(addr + 8);
-                            uint sy = Program.ROM.u8(addr + 9);
-                            uint ex = Program.ROM.u8(addr + 10);
-                            uint ey = Program.ROM.u8(addr + 11);
-                            name = "(" + sx.ToString() + "," + sy.ToString() + "-" + ex.ToString() + "," + ey.ToString() + ")" + " " + MapCond[i].Name;
-                        }
-                        else
-                        {
-                            name = MapCond[i].Name;
-                        }
-
-                        MakeUnitPointerEventScan(ref list, name, event_addr, mapid,tracelist);
+                        MakeUnitPointerEventScan(ref list, MapCond[i].Name + " " + U.To0xHexString(addr), event_addr, mapid, tracelist);
                     }
                 }
                 else if (condtype == CONDTYPE.TUTORIAL)
@@ -1490,8 +1520,7 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        string name = R._("チュートリアル") + " " + MapCond[i].Name;
-                        MakeUnitPointerEventScan(ref list, name, event_addr, mapid, tracelist);
+                        MakeUnitPointerEventScan(ref list, MapCond[i].Name + " " + U.To0xHexString(addr), event_addr, mapid, tracelist);
                     }
                 }
                 else if (
@@ -1692,7 +1721,6 @@ namespace FEBuilderGBA
             }
         }
 
-
         //イベント命令　一覧の取得
         public static List<U.AddrResult> MakeEventScriptPointer(uint mapid)
         {
@@ -1718,6 +1746,11 @@ namespace FEBuilderGBA
                 {//0=ターン条件(02)
                     while (true)
                     {
+                        if (Program.ROM.u32(addr) == 0)
+                        {
+                            break;
+                        }
+
                         uint type = Program.ROM.u8(addr);
                         if (type == 0)
                         {
@@ -1731,11 +1764,9 @@ namespace FEBuilderGBA
                         uint event_addr = Program.ROM.p32(addr + 4);
                         if (U.isSafetyOffset(event_addr))
                         {
-                            uint tern = Program.ROM.u8(addr + 8);
-                            string name = "turn:" + tern.ToString() + " " + MapCond[i].Name;
                             list.Add(new U.AddrResult(
                                   event_addr
-                                , name
+                                , MapCond[i].Name
                                 , mapid
                             ));
                         }
@@ -1759,7 +1790,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -1769,12 +1800,9 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        uint from_unit = Program.ROM.u8(addr + 8);
-                        uint to_unit = Program.ROM.u8(addr + 9);
-                        string name = UnitForm.GetUnitName(from_unit) + "-" + UnitForm.GetUnitName(to_unit) + " " + MapCond[i].Name;
                         list.Add(new U.AddrResult(
                               event_addr
-                            , name
+                            , MapCond[i].Name
                             , mapid
                         ));
                     }
@@ -1787,7 +1815,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -1820,7 +1848,7 @@ namespace FEBuilderGBA
                         {
                             break;
                         }
-                        if (Program.ROM.u8(addr) == 0)
+                        if (Program.ROM.u32(addr) == 0)
                         {
                             break;
                         }
@@ -1831,25 +1859,9 @@ namespace FEBuilderGBA
                             continue;
                         }
 
-                        uint areaevent = Program.ROM.u8(addr + 0);
-                        string name = "";
-                        if (areaevent == 0x01)
-                        {
-                            uint flag = Program.ROM.u8(addr + 8);
-                            name = "FLAG:" + flag.ToString() + " " + MapCond[i].Name;
-                        }
-                        else if (areaevent == 0x0B)
-                        {
-                            uint sx = Program.ROM.u8(addr + 8);
-                            uint sy = Program.ROM.u8(addr + 9);
-                            uint ex = Program.ROM.u8(addr + 10);
-                            uint ey = Program.ROM.u8(addr + 11);
-                            name = "(" + sx.ToString() + "," + sy.ToString() + "-" + ex.ToString() + "," + ey.ToString() + ")" + " " + MapCond[i].Name;
-                        }
-
                         list.Add(new U.AddrResult(
                              event_addr
-                            ,name
+                            , MapCond[i].Name
                             , mapid
                         ));
                     }
@@ -1872,10 +1884,9 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        string name = R._("チュートリアル") + " " + MapCond[i].Name;
                         list.Add(new U.AddrResult(
                              event_addr
-                            , name
+                            , MapCond[i].Name
                             , mapid
                         ));
                     }
@@ -2383,7 +2394,7 @@ namespace FEBuilderGBA
                             {
                                 break;
                             }
-                            uint type = Program.ROM.u8(base_addr);
+                            uint type = Program.ROM.u32(base_addr);
                             if (type == 0)
                             {
                                 break;
@@ -2854,7 +2865,7 @@ namespace FEBuilderGBA
             Rectangle bounds = listbounds;
 
             int lineHeight = (int)lb.Font.Height;
-            int maxHeight = (int)lb.Font.Height;
+            int maxHeight = lineHeight;
 
             uint start_turn = Program.ROM.u8(ar.addr + 8);
             uint end_turn = Program.ROM.u8(ar.addr + 9);
@@ -2899,6 +2910,57 @@ namespace FEBuilderGBA
             bounds.X = Math.Max(maxWidth, bounds.X);
 
             bounds.Y += maxHeight;
+            brush.Dispose();
+            boldFont.Dispose();
+            return new Size(bounds.X, bounds.Y);
+        }
+
+        public static Size DrawEventListTurnOneLiner(uint addr, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+
+            Font normalFont = lb.Font;
+            Font boldFont = new Font(lb.Font, FontStyle.Bold);
+
+            string text;
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+            int maxHeight = lineHeight;
+
+            uint start_turn = Program.ROM.u8(addr + 8);
+            uint end_turn = Program.ROM.u8(addr + 9);
+            if (start_turn < end_turn)
+            {
+                text = R._("ターン:") + start_turn + "～" + end_turn;
+            }
+            else
+            {
+                text = R._("ターン:") + start_turn;
+            }
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+            uint turntype = Program.ROM.u8(addr + 10);
+            if (turntype == 0)
+            {
+                text = R._("(自ターン)");
+            }
+            else if (turntype == 0x40)
+            {
+                text = R._("(友軍ターン)");
+            }
+            else if (turntype == 0x80)
+            {
+                text = R._("(敵軍ターン)");
+            }
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            bounds.Y += lineHeight;
+
             brush.Dispose();
             boldFont.Dispose();
             return new Size(bounds.X, bounds.Y);
@@ -3123,13 +3185,11 @@ namespace FEBuilderGBA
             Rectangle bounds = listbounds;
 
             int lineHeight = (int)lb.Font.Height;
-            int maxHeight = (int)lb.Font.Height;
+            int maxHeight = lineHeight;
 
             //話す
             uint from_unit = Program.ROM.u8(ar.addr + 8);
             uint to_unit = Program.ROM.u8(ar.addr + 9);
-//            text = R._("話す:");
-//            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
 
             Bitmap from_unit_image = UnitForm.DrawUnitMapFacePicture(from_unit);
             Bitmap to_unit_image = UnitForm.DrawUnitMapFacePicture(to_unit);
@@ -3169,6 +3229,55 @@ namespace FEBuilderGBA
             bounds.X = Math.Max(maxWidth, bounds.X);
 
             bounds.Y += maxHeight;
+            brush.Dispose();
+            boldFont.Dispose();
+            return new Size(bounds.X, bounds.Y);
+        }
+        public static Size DrawEventListTalkOneLiner(uint addr, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+
+            Font normalFont = lb.Font;
+            Font boldFont = new Font(lb.Font, FontStyle.Bold);
+
+            string text;
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+
+            //話す
+            uint from_unit = Program.ROM.u8(addr + 8);
+            uint to_unit = Program.ROM.u8(addr + 9);
+
+            Bitmap from_unit_image = UnitForm.DrawUnitMapFacePicture(from_unit);
+            Bitmap to_unit_image = UnitForm.DrawUnitMapFacePicture(to_unit);
+
+            U.MakeTransparent(from_unit_image);
+            U.MakeTransparent(to_unit_image);
+
+            Rectangle b = bounds;
+            b.Width = lineHeight;
+            b.Height = lineHeight;
+            bounds.X += U.DrawPicture(from_unit_image, g, isWithDraw, b);
+
+            text = " -> ";
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+            b = bounds;
+            b.Width = lineHeight;
+            b.Height = lineHeight;
+            bounds.X += U.DrawPicture(to_unit_image, g, isWithDraw, b);
+
+            from_unit_image.Dispose();
+            to_unit_image.Dispose();
+            int maxWidth = bounds.X;
+
+            bounds.Y += lineHeight;
             brush.Dispose();
             boldFont.Dispose();
             return new Size(bounds.X, bounds.Y);
@@ -3284,11 +3393,101 @@ namespace FEBuilderGBA
             boldFont.Dispose();
             return new Size(bounds.X, bounds.Y);
         }
-
-        string GetObjectName(U.AddrResult ar,out Bitmap out_bitmap)
+        public static Size DrawEventListAlwaysOneLiner(uint addr, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
-            uint type = Program.ROM.u8(ar.addr + 0);
-            uint objecttype = Program.ROM.u8(ar.addr + 10);
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+
+            Font normalFont = lb.Font;
+            Font boldFont = new Font(lb.Font, FontStyle.Bold);
+
+            string text;
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+
+            uint type = Program.ROM.u8(addr + 0);
+            if (type == 0x1)
+            {//常時条件 判定フラグ
+                uint flag = Program.ROM.u16(addr + 8);
+
+                Bitmap bitmap = ImageSystemIconForm.MusicIcon(13);
+                Rectangle b = bounds;
+                b.Width = lineHeight;
+                b.Height = lineHeight;
+                bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+                text = R._("常時条件:");
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+                if (Program.FlagCache.TryGetValue(flag, out text))
+                {
+                    text = U.To0xHexString(flag) + "(" + text + ")";
+                }
+                else
+                {
+                    text = U.To0xHexString(flag);
+                }
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            }
+            else if (type == 0xB)
+            {//範囲条件
+                Bitmap bitmap = ImageSystemIconForm.MusicIcon(11);
+                Rectangle b = bounds;
+                b.Width = lineHeight;
+                b.Height = lineHeight;
+                bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+                text = R._("範囲条件:");
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+                uint x1 = Program.ROM.u8(addr + 8);
+                uint y1 = Program.ROM.u8(addr + 9);
+                uint x2 = Program.ROM.u8(addr + 10);
+                uint y2 = Program.ROM.u8(addr + 11);
+
+                text = "(" + x1 + "," + y1 + ")～(" + x2 + "," + y2 + ")";
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            }
+            else
+            {//常時条件asm
+                Bitmap bitmap = ImageSystemIconForm.MusicIcon(3);
+                Rectangle b = bounds;
+                b.Width = lineHeight;
+                b.Height = lineHeight;
+                bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+                text = R._("常時条件:");
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+
+                uint asmPointer = Program.ROM.u32(addr + 8);
+                string dummy;
+                string asmName = Program.AsmMapFileAsmCache.GetASMName(asmPointer, false, out dummy);
+                if (asmName == "")
+                {
+                    text = "(ASM:" + U.To0xHexString(U.toOffset(asmPointer)) + ")";
+                }
+                else
+                {
+                    text = "(ASM:" + asmName + ")";
+                }
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            }
+
+            bounds.Y += lineHeight;
+            brush.Dispose();
+            boldFont.Dispose();
+            return new Size(bounds.X, bounds.Y);
+        }
+
+        public static string GetObjectName(uint addr, out Bitmap out_bitmap)
+        {
+            uint type = Program.ROM.u8(addr + 0);
+            uint objecttype = Program.ROM.u8(addr + 10);
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (objecttype == 0x11)
@@ -3396,7 +3595,112 @@ namespace FEBuilderGBA
                 }
             }
 
+            if (objecttype == 0x22 && type == 0x5)
+            {
+                out_bitmap = ImageSystemIconForm.Stairs();
+                return U.ToHexString(type) + ":" + R._("22=階段拡張");
+            }
+
             out_bitmap = ImageSystemIconForm.Cursol();
+            return U.ToHexString(type) + ":" + U.ToHexString(objecttype) + "=" + "???";
+        }
+
+        public static string GetObjectName(uint addr)
+        {
+            uint type = Program.ROM.u8(addr + 0);
+            uint objecttype = Program.ROM.u8(addr + 10);
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (objecttype == 0x11)
+                {
+                    return U.ToHexString(type) + ":" + R._("11=制圧");
+                }
+                else if (objecttype == 0x20)
+                {
+                    return U.ToHexString(type) + ":" + R._("20=村の中心(盗賊のターゲット)");
+                }
+                else if (objecttype == 0x10 && type == 0x5)
+                {
+                    return U.ToHexString(type) + ":" + R._("10=民家");
+                }
+                else if (objecttype == 0x10)
+                {
+                    return U.ToHexString(type) + ":" + R._("10=民家");
+                }
+                else if (objecttype == 0x14 && type == 0x5)
+                {
+                    return U.ToHexString(type) + ":" + R._("14=ランダム宝箱");
+                }
+                else if (objecttype == 0x14 && type == 0x7)
+                {
+                    return U.ToHexString(type) + ":" + R._("14=宝箱");
+                }
+                else if (objecttype == 0x12 && type == 0x8)
+                {
+                    return U.ToHexString(type) + ":" + R._("12=扉");
+                }
+                else if (objecttype == 0x16)
+                {
+                    return U.ToHexString(type) + ":" + R._("16=武器屋");
+                }
+                else if (objecttype == 0x17)
+                {
+                    return U.ToHexString(type) + ":" + R._("17=道具屋");
+                }
+                else if (objecttype == 0x18)
+                {
+                    return U.ToHexString(type) + ":" + R._("18=秘密の店");
+                }
+            }
+            else
+            {
+                if (objecttype == 0xF)
+                {
+                    return U.ToHexString(type) + ":" + R._("0F=制圧");
+                }
+                else if (objecttype == 0x1D)
+                {
+                    return U.ToHexString(type) + ":" + R._("1D=村の中心(盗賊のターゲット)");
+                }
+                else if (objecttype == 0xE && type == 0x5)
+                {
+                    return U.ToHexString(type) + ":" + R._("0E=民家");
+                }
+                else if (objecttype == 0xE)
+                {
+                    return U.ToHexString(type) + ":" + R._("0E=民家");
+                }
+                else if (objecttype == 0x12 && type == 0x5 && Program.ROM.RomInfo.version() == 6)
+                {//FE6のみ
+                    return U.ToHexString(type) + ":" + R._("12=イベント付き宝箱");
+                }
+                else if (objecttype == 0x12 && type == 0x7)
+                {
+                    return U.ToHexString(type) + ":" + R._("12=宝箱");
+                }
+                else if (objecttype == 0x10 && type == 0x8)
+                {
+                    return U.ToHexString(type) + ":" + R._("10=扉");
+                }
+                else if (objecttype == 0x13)
+                {
+                    return U.ToHexString(type) + ":" + R._("13=武器屋");
+                }
+                else if (objecttype == 0x14)
+                {
+                    return U.ToHexString(type) + ":" + R._("14=道具屋");
+                }
+                else if (objecttype == 0x15)
+                {
+                    return U.ToHexString(type) + ":" + R._("15=秘密の店");
+                }
+            }
+
+            if (objecttype == 0x22 && type == 0x5)
+            {
+                return U.ToHexString(type) + ":" + R._("22=階段拡張");
+            }
+
             return U.ToHexString(type) + ":" + U.ToHexString(objecttype) + "=" + "???";
         }
 
@@ -3428,7 +3732,7 @@ namespace FEBuilderGBA
             int y = (int)Program.ROM.u8(ar.addr + 9);
 
             Bitmap bitmap;
-            text = GetObjectName(ar, out bitmap);
+            text = GetObjectName(ar.addr, out bitmap);
 
             Rectangle b = bounds;
             b.Width = lineHeight * 2;
@@ -3479,6 +3783,46 @@ namespace FEBuilderGBA
             boldFont.Dispose();
             return new Size(bounds.X, bounds.Y);
         }
+
+        public static Size DrawEventListObjectOneLiner(uint addr ,ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (!U.isSafetyOffset(addr + 12))
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+
+            SolidBrush brush = new SolidBrush(lb.ForeColor);
+
+            Font normalFont = lb.Font;
+            Font boldFont = new Font(lb.Font, FontStyle.Bold);
+
+            string text;
+            Rectangle bounds = listbounds;
+
+            int lineHeight = (int)lb.Font.Height;
+
+            //オブジェクト
+            int x = (int)Program.ROM.u8(addr + 8);
+            int y = (int)Program.ROM.u8(addr + 9);
+
+            Bitmap bitmap;
+            text = GetObjectName(addr, out bitmap);
+
+            Rectangle b = bounds;
+            b.Width = lineHeight;
+            b.Height = lineHeight;
+            bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
+
+            bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            bitmap.Dispose();
+
+            brush.Dispose();
+            boldFont.Dispose();
+
+            bounds.Y += lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+
 
         private Size DrawEventListTrap(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -3636,7 +3980,11 @@ namespace FEBuilderGBA
         //達成フラグの描画
         public static int DrawAchievementFlag(U.AddrResult ar, Graphics g, Font font, bool isWithDraw, Rectangle bounds)
         {
-            uint flag = Program.ROM.u16(ar.addr+2);
+            return DrawAchievementFlag(ar.addr, g, font, isWithDraw, bounds);
+        }
+        public static int DrawAchievementFlag(uint addr, Graphics g, Font font, bool isWithDraw, Rectangle bounds)
+        {
+            uint flag = Program.ROM.u16(addr+2);
             if (flag <= 0)
             {//フラグが0なので描画しない
                 return bounds.X;
@@ -3925,7 +4273,7 @@ namespace FEBuilderGBA
         }
 
         //テキストIDの取得.
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             List<uint> tracelist = new List<uint>();
             uint mapmax = MapSettingForm.GetDataCount();
@@ -3943,11 +4291,11 @@ namespace FEBuilderGBA
 
                     string name = R._("マップ") + " " + U.ToHexString(mapid) + " " + ar.name; 
 
-                    TextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist ,ar.addr, name);
+                    UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist ,ar.addr, name);
                 }
             }
         }
-        public static void MakeTextIDArrayByEventPointer(List<TextID> list,uint event_pointer,string name)
+        public static void MakeTextIDArrayByEventPointer(List<UseTextID> list,uint event_pointer,string name)
         {
             event_pointer = U.toOffset(event_pointer);
             if (!U.isSafetyOffset(event_pointer))
@@ -3963,7 +4311,7 @@ namespace FEBuilderGBA
             List<uint> tracelist = new List<uint>();
             List<U.AddrResult> text_arlist = new List<U.AddrResult>();
             EventCondForm.MakeTextIDEventScan(ref text_arlist, event_addr, tracelist);
-            TextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist,event_addr, name);
+            UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist,event_addr, name);
         }
 
         public static uint GetMapID(List<Control> parentControls)
@@ -4165,6 +4513,263 @@ namespace FEBuilderGBA
         {
             //イベントの関連アイコンを取得しなおしたい
             EventRelationIconsCache.Clear();
+        }
+
+        private void OBJECT_N05_B10_ValueChanged(object sender, EventArgs e)
+        {
+            if (OBJECT_N05_B10.Value == 0x22)
+            {
+                OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
+                OBJECT_N05_L_2_FLAG.Hide();
+                OBJECT_N05_J_4_EVENTORCHEST.Text = R._("1を設定");
+            }
+            else
+            {
+                OBJECT_N05_J_2_FLAG.Text = GetNameOfAchievementFlag();
+                OBJECT_N05_L_2_FLAG.Show();
+                OBJECT_N05_J_4_EVENTORCHEST.Text = R._("イベント");
+            }
+        }
+
+
+        static void MakeFlagIDArrayOne(uint mapid, uint event_addr, uint index, List<UseFlagID> flaglist)
+        {
+            List<U.AddrResult> list = new List<U.AddrResult>();
+            List<uint> tracelist = new List<uint>();
+            MakeFlagIDEventScan(ref list, event_addr, tracelist);
+            foreach (U.AddrResult ar in list)
+            {
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENTSCRIPT, U.atoi(ar.name),"", ar.addr, mapid, ar.tag);
+            }
+        }
+
+        static void MakeFlagIDEventScan(ref List<U.AddrResult> list, uint event_addr, List<uint> tracelist)
+        {
+            uint lastBranchAddr = 0;
+            int unknown_count = 0;
+            uint addr = event_addr;
+            while (true)
+            {
+                //バイト列をイベント命令としてDisassembler.
+                EventScript.OneCode code = Program.EventScript.DisAseemble(Program.ROM.Data, addr);
+                if (EventScript.IsExitCode(code, addr, lastBranchAddr))
+                {//終端命令
+                    break;
+                }
+                else if (code.Script.Has == EventScript.ScriptHas.UNKNOWN)
+                {
+                    unknown_count++;
+                    if (unknown_count > 10)
+                    {//不明命令が10個連続して続いたら打ち切る
+                        break;
+                    }
+                }
+                else
+                {
+                    //少なくとも不明ではない.
+                    unknown_count = 0;
+
+                    if (code.Script.Has == EventScript.ScriptHas.POINTER_UNIT_OR_EVENT)
+                    {//イベント命令へジャンプするものをもっているらしい.
+                        for (int i = 0; i < code.Script.Args.Length; i++)
+                        {
+                            EventScript.Arg arg = code.Script.Args[i];
+                            if (arg.Type == EventScript.ArgType.POINTER_EVENT)
+                            {
+                                uint v = EventScript.GetArgValue(code, arg);
+
+                                v = U.toOffset(v);
+                                if (U.isSafetyOffset(v)         //安全で
+                                    && tracelist.IndexOf(v) < 0 //まだ読んだことがなければ
+                                    )
+                                {
+                                    tracelist.Add(v);
+                                    MakeFlagIDEventScan(ref list, v, tracelist);
+                                }
+                            }
+                        }
+                    }
+                    else if (code.Script.Has == EventScript.ScriptHas.LABEL_CONDITIONAL)
+                    {//LABEL
+                        lastBranchAddr = 0;
+                    }
+                    else 
+                    {//テキスト関係の命令.
+                        if (code.Script.Has == EventScript.ScriptHas.IF_CONDITIONAL)
+                        {//IF
+                            lastBranchAddr = addr;
+                        }
+
+                        for (int i = 0; i < code.Script.Args.Length; i++)
+                        {
+                            EventScript.Arg arg = code.Script.Args[i];
+                            if (arg.Type == EventScript.ArgType.FLAG
+                                )
+                            {
+                                uint v = EventScript.GetArgValue(code, arg);
+
+                                if (U.FindList(list, v) == U.NOT_FOUND)
+                                {
+                                    list.Add(new U.AddrResult(
+                                          v
+                                        , event_addr.ToString()
+                                        , addr
+                                    ));
+                                }
+                            }
+                        }
+                    }
+                }
+                addr += (uint)code.Script.Size;
+            }
+        }
+
+        public static void MakeFlagIDArray(uint mapid, List<UseFlagID> flaglist)
+        {
+            uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
+            if (!U.isSafetyOffset(mapcond_addr))
+            {
+                return;
+            }
+
+            List<uint> tracelist = new List<uint>();
+
+            List<U.AddrResult> list;
+            list = MakePointerListBox(mapid, CONDTYPE.OBJECT);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_OBJECT, addr, list[i].name, flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+            list = MakePointerListBox(mapid, CONDTYPE.TALK);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + Program.ROM.RomInfo.eventcond_talk_size()))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_TALK, addr, list[i].name, flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+
+            list = MakePointerListBox(mapid, CONDTYPE.TURN);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_TURN, addr, list[i].name, flag, mapid, (uint)i);
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+            }
+
+            list = MakePointerListBox(mapid, CONDTYPE.ALWAYS);
+            for (int i = 0; i < list.Count; i++)
+            {
+                uint addr = list[i].addr;
+                if (!U.isSafetyOffset(addr + 12))
+                {
+                    break;
+                }
+                uint type = Program.ROM.u16(addr + 0);
+                uint flag = Program.ROM.u16(addr + 2);
+                uint event_addr = Program.ROM.u32(addr + 4);
+
+                UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_ALWAYS, addr, list[i].name, flag, mapid, (uint)i);
+                if (type == 1)
+                {
+                    uint use_flag = Program.ROM.u16(addr + 8);
+                    UseFlagID.AppendUseFlagID(flaglist, FELint.Type.EVENT_COND_ALWAYS, addr, list[i].name, use_flag, mapid, (uint)i);
+                }
+                MakeFlagIDArrayOne(mapid, event_addr, (uint)i, flaglist);
+
+            }
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 18)));
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 19)));
+
+                MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 14)));
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 15)));
+
+                MakeFlagIDArrayOne(mapid, start_addr, 0, flaglist);
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+            else if (Program.ROM.RomInfo.version() == 6)
+            {
+                uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
+
+                MakeFlagIDArrayOne(mapid, end_addr, 0, flaglist);
+            }
+        }
+
+        public static Size DrawEventByAddr(string eventtext, ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {//設計失敗した。イベントの種類とアドレスがわからん
+         //こういうことはやりたくないが、名前に入れるしか方法がない・・・
+
+            int pos = eventtext.IndexOf(" 0x");
+            if (pos >= 0)
+            {
+                uint eventAddr = U.atoh(eventtext.Substring(pos + 3));
+                eventtext = eventtext.Substring(0, pos);
+
+                for (int n = 0; n < MapCond.Count; n++)
+                {
+                    if (MapCond[n].Name == eventtext)
+                    {
+                        CONDTYPE type = MapCond[n].Type;
+                        switch (type)
+                        {
+                            case CONDTYPE.ALWAYS:
+                                return DrawEventListAlwaysOneLiner(eventAddr, lb, g, listbounds, isWithDraw);
+                            case CONDTYPE.OBJECT:
+                                return DrawEventListObjectOneLiner(eventAddr, lb, g, listbounds, isWithDraw);
+                            case CONDTYPE.TALK:
+                                return DrawEventListTalkOneLiner(eventAddr, lb, g, listbounds, isWithDraw);
+                            case CONDTYPE.TURN:
+                                return DrawEventListTurnOneLiner(eventAddr, lb, g, listbounds, isWithDraw);
+                        }
+                    }
+                }
+            }
+
+
+            //不明なイベントなのでそのまま描画する.
+            {
+                SolidBrush brush = new SolidBrush(lb.ForeColor);
+                Font normalFont = lb.Font;
+                Rectangle b = listbounds;
+                b.Width = 1024;
+                b.Height = normalFont.Height;
+                listbounds.X += U.DrawText(eventtext, g, normalFont, brush, isWithDraw, b);
+                brush.Dispose();
+
+                return new Size(listbounds.X, listbounds.Y);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿
+
 NAME=OPANIMEエフラム blur1
-NAME.en=OPANIME Ephraim blur1
+NAME.en=OP Anime Ephraim (Blur 1)
 NAME.zh=OP动画伊弗列姆 模糊1
 
 TYPE=IMAGE

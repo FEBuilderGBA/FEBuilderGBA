@@ -1,6 +1,6 @@
-﻿
+
 NAME=OPANIMEエイリーク立ち絵
-NAME.en=OPANIME Eirika1
+NAME.en=OP Anime Eirika (Distant)
 NAME.zh=OP动画艾瑞珂立画
 
 //画像パッチとして実装します

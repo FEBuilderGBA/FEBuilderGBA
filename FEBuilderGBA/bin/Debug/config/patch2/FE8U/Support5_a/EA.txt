@@ -1,0 +1,23 @@
+PUSH
+
+//////残り会話数
+
+ORG	0x000A0F30
+#incbin "kaiwa.bin" //HINT=ASM
+
+ORG	0x28338
+WORD	$46874800   //jumptoHack_r0
+POIN	Support5
+
+//ORG 0xF161C //残り人数
+//#incbin "Text_0536.bin"  //HINT=BIN
+
+//ORG 0xF1624 //人
+//#incbin "Text_0537.bin"  //HINT=BIN
+
+
+//////////////////
+POP
+Support5:
+#incbin "Sien_Kaisu.bin" //HINT=ASM
+ALIGN 4

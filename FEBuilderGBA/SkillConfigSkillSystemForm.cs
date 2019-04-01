@@ -96,34 +96,85 @@ namespace FEBuilderGBA
 
         }
 
+        public static void ClearCache()
+        {
+            g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
+        }
+
+        static uint g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignPersonalSkillPointer()
         {
-            return FindSkillPointerToPointer("ASSIGN", 0);
+            if (g_Cache_FindAssignPersonalSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignPersonalSkillPointer = FindSkillPointerToPointer("ASSIGN", 0);
+            }
+            return g_Cache_FindAssignPersonalSkillPointer;
         }
+
+        static uint g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignClassSkillPointer()
         {
-            return FindSkillPointerToPointer("ASSIGN", 4);
+            if (g_Cache_FindAssignClassSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignClassSkillPointer = FindSkillPointerToPointer("ASSIGN", 4);
+            }
+            return g_Cache_FindAssignClassSkillPointer;
         }
+
+        static uint g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
         public static uint FindAssignClassLevelUpSkillPointer()
         {
-            return FindSkillPointerToPointer("ASSIGN", 8);
+            if (g_Cache_FindAssignClassLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignClassLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 0);
+            }
+            return g_Cache_FindAssignClassLevelUpSkillPointer;
         }
+
+        static uint g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
+        public static uint FindAssignUnitLevelUpSkillPointer()
+        {
+            if (g_Cache_FindAssignUnitLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAssignUnitLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 4);
+            }
+            return g_Cache_FindAssignUnitLevelUpSkillPointer;
+        }
+
+        static uint g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
         public static uint FindIconPointer()
         {
-            uint r = FindSkillPointerToPointer("ICON", 0);
-            if (r == U.NOT_FOUND)
+            if (g_Cache_FindIconPointer == InputFormRef.NO_CACHE)
             {
-                r = FindSkillPointerToPointer("ICON2", 0);
+                g_Cache_FindIconPointer = FindSkillPointerToPointer("ICON", 0);
             }
-            return r;
+            return g_Cache_FindIconPointer;
         }
+
+        static uint g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
         public static uint FindTextPointer()
         {
-            return FindSkillPointerToPointer("TEXT", 0);
+            if (g_Cache_FindTextPointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindTextPointer = FindSkillPointerToPointer("TEXT", 0);
+            }
+            return g_Cache_FindTextPointer;
         }
+
+        static uint g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
         public static uint FindAnimePointer()
         {
-            return FindSkillPointerToPointer("ANIME", 0);
+            if (g_Cache_FindAnimePointer == InputFormRef.NO_CACHE)
+            {
+                g_Cache_FindAnimePointer = FindSkillPointerToPointer("ANIME", 0);
+            }
+            return g_Cache_FindAnimePointer;
         }
 
         static uint FindSkillPointerToPointer(string type,uint skip = 0)
@@ -142,45 +193,40 @@ namespace FEBuilderGBA
             return a + skip;
         }
 
+        public struct SkillSystemsTableSt
+        {
+            public string name;
+            public uint skip;
+            public byte[] data;
+        };
         static uint FindSkillPointer(string type)
         {
-            string filename = U.ConfigDataFilename("skill_extends_skillsystem_parse_");
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[0] != type)
-                {
-                    continue;
-                }
+            SkillSystemsTableSt[] table = new SkillSystemsTableSt[] { 
+                new SkillSystemsTableSt{ name="ASSIGN", skip =	16, data = new byte[]{0x01,0x35,0x02,0x36,0xF1,0xE7,0x00,0x20,0x28,0x70,0x29,0x1C,0x02,0x48,0x09,0x1A}},
+                new SkillSystemsTableSt{ name="LEVELUP", skip =	16 + 8, data = new byte[]{0x01,0x35,0x02,0x36,0xF1,0xE7,0x00,0x20,0x28,0x70,0x29,0x1C,0x02,0x48,0x09,0x1A}},
+                new SkillSystemsTableSt{ name="ASSIGN", skip =	16, data = new byte[]{0x29,0x1C,0xFF,0xF7,0xFA,0xFF,0x01,0x1C,0x08,0x78,0x00,0x28,0xEF,0xD0,0x01,0x31,0xFA,0xE7,0x00,0x00}},
+                new SkillSystemsTableSt{ name="LEVELUP", skip =	0, data = new byte[]{0x0A,0xD0,0x1A,0x78,0x00,0x2A,0x07,0xD0,0x8A,0x42,0x01,0xD0,0x02,0x33,0xF8,0xE7,0x5A,0x78,0x22,0x70,0x01,0x34,0xF9,0xE7,0x00,0x20,0x20,0x70,0x31,0xBC,0x70,0x47}},
+                new SkillSystemsTableSt{ name="ANIME", skip =	32, data = new byte[]{0x00,0x2B,0x00,0xD1,0x06,0x4B,0x38,0x1C,0x9E,0x46,0x00,0xF8,0x05,0x48,0x00,0x47}},
+                new SkillSystemsTableSt{ name="ICON", skip =	24, data = new byte[]{0x02,0x40,0x09,0x4C,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47,0x05,0x48,0x00,0x47}},
+                new SkillSystemsTableSt{ name="ICON", skip =	8, data = new byte[]{0x08,0x42,0x04,0xD1,0x12,0x79,0xAA,0x42,0x01,0xD1,0x01,0x20,0x03,0xE0,0x01,0x34,0xBF,0x2C,0xEA,0xDD,0x00,0x20,0x30,0xBC,0x02,0xBC,0x08,0x47}},
+                new SkillSystemsTableSt{ name="TEXT", skip =	16, data = new byte[]{0x07,0x49,0x40,0x00,0x40,0x18,0x00,0x88,0x00,0x28,0x00,0xD1,0x06,0x48,0x21,0x1C}},
+            };
 
-                string[] hexStrings = sp[2].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
+            foreach (SkillSystemsTableSt t in table)
+            {
+                if (t.name != type)
                 {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
+                    continue;
                 }
 
                 //チェック開始アドレス
                 uint start = 0xB00000;
-
-                uint found = U.Grep(Program.ROM.Data, need, start, 0, 4);
+                uint found = U.Grep(Program.ROM.Data, t.data, start, 0, 4);
                 if (found == U.NOT_FOUND)
                 {
-                    return U.NOT_FOUND;
+                    continue;
                 }
-                uint skip = U.atoi(sp[1]);
-                return (uint)(found + need.Length + skip);
+                return (uint)(found + t.data.Length + t.skip);
             }
             return U.NOT_FOUND;
         }
@@ -539,7 +585,7 @@ namespace FEBuilderGBA
         }
 
         //テキストの取得
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef ifr;
             if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
@@ -554,7 +600,7 @@ namespace FEBuilderGBA
                     return;
                 }
                 ifr = Init(null, basetextP);
-                TextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
+                UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
             }
         }
 

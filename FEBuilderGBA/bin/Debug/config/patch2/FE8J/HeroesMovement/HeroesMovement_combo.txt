@@ -1,0 +1,6 @@
+0=--
+3b=Shove 体当たり
+3c=Smite 突飛ばし
+3d=Pivot 回り込み
+3e=Reposition 引き戻し
+3f=Swap 入れ替え

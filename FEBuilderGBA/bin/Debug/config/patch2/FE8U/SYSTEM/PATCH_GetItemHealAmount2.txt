@@ -10,4 +10,4 @@ TAG=#ENGINE
 ADDRESS=0x16FF2
 DEFAULT=20
 HEX=FALSE
-NAME.zh=重温手杖的恢复量
+NAME.zh=治疗之杖的恢复量

@@ -1,5 +1,5 @@
 NAME=大盾発動率
-NAME.en=Skill Great Shield activation rate
+NAME.en=Great Shield Activation Rate
 
 //アドレスパッチとして実装します
 TYPE=ADDR

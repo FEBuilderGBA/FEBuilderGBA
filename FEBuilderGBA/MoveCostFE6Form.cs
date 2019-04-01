@@ -22,6 +22,7 @@ namespace FEBuilderGBA
             this.FilterComboBox.SelectedIndex = 0;
             this.InputFormRef = Init(this);
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
+            this.InputFormRef.IsSurrogateStructure = true;  //代理構造体で表示されているので警告不能
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             List<Control> controls = InputFormRef.GetAllControls(this);
@@ -103,8 +104,8 @@ namespace FEBuilderGBA
         {
             int filter = FilerFE6ToFE8(this.FilterComboBox.SelectedIndex);
 
-            if (filter == 6)
-            {//地形回復 全クラス共通
+            if (filter == 6 || filter == 7)
+            {//地形回復/地形ステータス異常回復 全クラス共通
                 IndependenceButton.Enabled = false;
                 CLASS_LISTBOX.Items.Clear();
                 CLASS_LISTBOX.Items.Add(R._("全クラス共通"));

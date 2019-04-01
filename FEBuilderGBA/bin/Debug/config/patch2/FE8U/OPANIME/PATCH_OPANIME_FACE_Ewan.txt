@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ユアン
 NAME.en=OP Anime Face: Ewan
-NAME.zh=OPANIME_FACE_元
+NAME.zh=OP动画_脸_尤恩
 
 TYPE=IMAGE
 TAG=#IMAGE

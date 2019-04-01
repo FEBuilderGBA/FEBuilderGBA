@@ -1,0 +1,5 @@
+FindChapterObjectiveTrap=$3C
+EALiterals=$3C
+GetObject=$22
+Return=$2A
+Exit=$2C

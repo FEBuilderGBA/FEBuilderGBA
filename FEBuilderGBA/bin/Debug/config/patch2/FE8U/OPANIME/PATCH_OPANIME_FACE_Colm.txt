@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_コーマ
 NAME.en=OP Anime Face: Colm
-NAME.zh=OPANIME_FACE_精梳
+NAME.zh=OP动画_脸_科曼
 
 TYPE=IMAGE
 TAG=#IMAGE

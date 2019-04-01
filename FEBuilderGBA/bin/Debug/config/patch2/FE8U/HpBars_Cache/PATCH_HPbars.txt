@@ -1,0 +1,14 @@
+NAME=HPBars_with_warnings Cache
+NAME.en=HPBars_with_warnings Cache
+NAME.zh=HPBars_with_warnings Cache
+
+TYPE=EA
+TAG=#ENGINE
+EA=HpBars.event
+
+PATCHED_IF:0x276b4=0x00 0x4B 0x18 0x47
+
+INFO=HPbarを追加します。\r\n単独で動作するので、SkillSystemsから分離しています。\r\nHP Barが必要な場合、インストールしてください。\r\nこのバージョンは、RAMにデータをキャッシュして、高速に動作するバージョンです。
+AUTHOR=Circles with additions by Tequila
+INFO.en=Add HPbar.\r\nSince it operates alone, it is separated from SkillSystems.\r\nPlease install if you need HP Bar.\r\nfor the slow one that also has the effectiveness warnings\r\nThis version is a high speed version that caches data in RAM.
+INFO.zh=添加HPbar。\r\n由于它单独运行，因此它与SkillSystems分开。\r\n如果您需要HP Bar，请安装。\r\n此版本是一个高速版本，可将数据缓存在RAM中。

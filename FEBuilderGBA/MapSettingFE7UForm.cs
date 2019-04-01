@@ -129,10 +129,10 @@ namespace FEBuilderGBA
             B10.Value = f.GetANIME2PLIST();
 
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112, 114, 116, 118, 122, 124, 126, 128, 140, 142 });
+            UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112, 114, 116, 118, 122, 124, 126, 128, 140, 142 });
         }
 
     }

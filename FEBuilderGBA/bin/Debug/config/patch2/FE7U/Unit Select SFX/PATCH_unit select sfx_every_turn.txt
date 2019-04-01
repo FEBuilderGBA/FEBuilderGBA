@@ -1,5 +1,5 @@
 NAME=ユニットを選択した時に音声を再生する(毎ターン再生する)
-NAME.en=unit select sfx(Play every turn)
+NAME.en=Unit Select SFX Frequency
 
 IF:0x18140=0x00 0x4B 0x18 0x47
 
@@ -16,7 +16,7 @@ COMBO=章ごとに1回だけ再生|0x05 0xD1|毎ターン再生|0x00 0x00
 COMBO.en=Play once per chapter|0x05 0xD1|Play every turn|0x00 0x00
 
 INFO=音声を毎ターン再生するかを選択します。
-INFO.en=Select whether to play audio every turn.
-NAME.zh=选择单位时播放声音（每回合播放一次）
+INFO.en=Select whether unit select audio plays every turn or every chapter.\r\n"Unit Select SFX Installer" must be installed to use.\r\n
+NAME.zh=选择人物时播放声音（每回合播放一次）
 INFO.zh=选择是否每次播放音频。
 COMBO.zh=每章只播放一次|0x05 0xD1|每回合都玩|0x00 0x00

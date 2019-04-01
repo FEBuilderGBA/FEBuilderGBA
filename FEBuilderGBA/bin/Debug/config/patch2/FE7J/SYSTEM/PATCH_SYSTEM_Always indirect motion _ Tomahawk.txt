@@ -8,5 +8,5 @@ ADDRESS=0x0053594 0x0053580
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-NAME.en=Always indirect motion_Tomahawk
-NAME.zh=始终间接运动_战斧
+NAME.en=Always Ranged Animate: Tomahawk
+NAME.zh=始终间接运动_回旋斧

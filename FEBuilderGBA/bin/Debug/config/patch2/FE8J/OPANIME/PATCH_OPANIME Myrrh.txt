@@ -1,6 +1,6 @@
 
 NAME=OPANIMEミルラ
-NAME.en=OPANIME Myrrh
+NAME.en=OP Anime Myrrh
 NAME.zh=OP动画梅尔
 
 //画像パッチとして実装します

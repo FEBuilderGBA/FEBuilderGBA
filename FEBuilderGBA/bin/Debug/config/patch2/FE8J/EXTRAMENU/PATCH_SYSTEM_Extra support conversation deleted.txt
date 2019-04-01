@@ -1,4 +1,4 @@
-﻿
+
 NAME=エクストラ 支援会話 削除
 NAME.en=Remove Support Viewer
 NAME.zh=系统_删除额外支援对话
@@ -17,7 +17,7 @@ AUTHOR.en=COMBO.zh=显示|0xF7 0xF7 0xC1 0xFC|删除|0x00 0x00 0x00 0x20
 
 
 COMBO.zh=显示|0xF7 0xF7 0xC1 0xFC|删除|0x00 0x00 0x00 0x20
-INFO.en=Delete support talk for extra menu.\r\nUse it when you do not want to show support talk events.
+INFO.en=Sets whether the Support Conversations option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent the player from accessing the Support Room.
 INFO.zh=删除额外菜单的支援对话。\r\n当您不想显示支援会话事件时使用它。
 
 AUTHOR=Aera

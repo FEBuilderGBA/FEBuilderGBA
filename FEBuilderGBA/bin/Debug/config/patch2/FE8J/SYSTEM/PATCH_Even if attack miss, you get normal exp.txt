@@ -1,0 +1,20 @@
+
+NAME=攻撃をミスしても通常の経験値を得られる
+NAME.en=Even if attack mistake, you get normal exp
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix|ONN
+DETERMINATION_ADDRESS=0x2c4ae
+
+ONN:0x02c4ae=0x00 0x00
+OFF:0x02c4ae=0x1A 0xE0
+
+AUTHOR=7743
+
+INFO=たとえ、攻撃をミスしたり、ノーダメージだったとしても、固定のミス経験値ではなく、通常のダメージを与えたときと同じ経験値を得ることができるようにします。\r\nがんばって攻撃したという努力を評価するようにします。
+INFO.en=Even if you make an attack mistake or no damage, you can get the same experience value as when you give normal damage, not fixed mistake experience value.\r\nI will try to evaluate the effort that I tried my best and attacked.
+NAME.zh=即使你犯了一个攻击错误，你也可以获得正常的体验。
+INFO.zh=即使您犯了攻击错误或没有造成伤害，您也可以获得与正常伤害时相同的经验值，而不是固定的错误经验值。\r\n我将尝试评估我尽我所能并受到攻击的努力。

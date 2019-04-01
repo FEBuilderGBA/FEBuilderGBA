@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_フォルデ_影
-NAME.en=OPANIME_FACE_Forde_Shadow
+NAME=OPANIME_FACE_フォルデ_影
+NAME.en=OP Anime Face: Forde (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

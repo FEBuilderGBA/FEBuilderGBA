@@ -1,6 +1,6 @@
 NAME=常に間接モーション_なげおの
 NAME.en=Always Ranged Animate: Hatchet
-NAME.zh=总是间接运动_运气
+NAME.zh=始终间接运动_轻斧
 
 //アドレスパッチとして実装します
 TYPE=ADDR

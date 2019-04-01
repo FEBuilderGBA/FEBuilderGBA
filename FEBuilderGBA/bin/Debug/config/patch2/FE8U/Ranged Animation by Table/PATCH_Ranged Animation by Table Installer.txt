@@ -1,6 +1,6 @@
 NAME=常に間接モーションを表示する武器を複数設定できるパッチ 導入
 NAME.en=Range-Animated Weapons List Installer
-NAME.zh=可以设置总是显示间接运动的多种武器的补丁引进
+NAME.zh=可以设置总是显示远程攻击动画的武器补丁引进
 
 TYPE=EA
 TAG=#ENGINE

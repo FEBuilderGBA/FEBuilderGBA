@@ -25,6 +25,7 @@ namespace FEBuilderGBA
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawImagePortraitAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             ReInit(this.InputFormRef);

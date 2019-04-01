@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ジスト_影
 NAME.en=OP Anime Face: Gerik (Shadow)
-NAME.zh=OPANIME_FACE_jist_影子
+NAME.zh=OP动画_脸_杰斯特_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

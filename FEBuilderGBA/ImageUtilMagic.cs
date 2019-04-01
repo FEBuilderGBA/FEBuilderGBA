@@ -43,65 +43,56 @@ namespace FEBuilderGBA
             return SearchMagicSystem(out baseaddr, out dimaddr, out nodimaddr);
         }
 
+        public struct MagicPatchTableSt
+        {
+            public string name;
+            public string ver;
+            public uint addr;
+            public byte[] data;
+            public uint dim;
+            public uint no_dim;
+        };
         public static magic_system_enum SearchMagicSystem(out uint baseaddr, out uint dimaddr, out uint nodimaddr)
         {
-            string filename = U.ConfigDataFilename("magic_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            MagicPatchTableSt[] table = new MagicPatchTableSt[] { 
+                new MagicPatchTableSt{ name="SCA_Creator",	ver = "FE8U", addr = 0x95d780,data = new byte[]{0x01 ,0x00 ,0x00 ,0x00 ,0x90 ,0xD7 ,0x95 ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0xD9 ,0xD8 ,0x95 ,0x08},dim = 0x95d7ed,no_dim = 0x95d899},
+                new MagicPatchTableSt{ name="FEditor",	ver = "FE8U", addr = 0x95d780,data = new byte[]{0x01 ,0x00 ,0x00 ,0x00 ,0x90 ,0xD7 ,0x95 ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0x39 ,0xD9 ,0x95 ,0x08},dim = 0x95D7ED,no_dim = 0x95D8EF},
+                new MagicPatchTableSt{ name="SCA_Creator",	ver = "FE8J", addr = 0x9cd3bc,data = new byte[]{0x01 ,0x00 ,0x00 ,0x00 ,0xCC ,0xD3 ,0x9C ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0x15 ,0xD5 ,0x9C ,0x08},dim = 0x9CD429,no_dim = 0x9CD4D5},
+                new MagicPatchTableSt{ name="SCA_Creator",	ver = "FE8J", addr = 0x5BDC80,data = new byte[]{0x01 ,0x00 ,0x00 ,0x00 ,0xCC ,0xD3 ,0x9C ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0x15 ,0xD5 ,0x9C ,0x08},dim = 0x5BDCED,no_dim = 0x5BDD99},	//fixed version
+                new MagicPatchTableSt{ name="FEditor",	ver = "FE8J", addr = 0xEFBE00,data = new byte[]{0x01 ,0x00 ,0x00 ,0x00 ,0x10 ,0xBE ,0xEF ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0xB9 ,0xBF ,0xEF ,0x08},dim = 0xEFBE6D,no_dim = 0xEFBF6F},
+                new MagicPatchTableSt{ name="SCA_Creator",	ver = "FE7U", addr = 0xCB680,data = new byte[]{0x19 ,0x00 ,0x00 ,0x00 ,0x90 ,0xB6 ,0x0C ,0x08 ,0x03 ,0x00 ,0x00 ,0x00 ,0xD9 ,0xB7 ,0x0C ,0x08},dim = 0xCB6ED,no_dim = 0xCB799},
+                new MagicPatchTableSt{ name="FEditor",	ver = "FE7U", addr = 0xCB680,data = new byte[]{0x9C ,0x17 ,0x00 ,0x08 ,0x20 ,0x00 ,0x00 ,0x00 ,0xF0 ,0x32 ,0x00 ,0x08 ,0x08 ,0x00 ,0x00 ,0x00},dim = 0xCB699,no_dim = 0xCB787},
+                new MagicPatchTableSt{ name="FEditor",	ver = "FE7J", addr = 0xC69B4,data = new byte[]{0x19 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x00 ,0x00 ,0x00 ,0x29 ,0x6B ,0x0C ,0x08},dim = 0xC69CD,no_dim = 0xC69CD},
+                new MagicPatchTableSt{ name="SCA_Creator",	ver = "FE6", addr = 0x2DC078,data = new byte[]{0x19 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x00 ,0x00 ,0x00 ,0x61 ,0xC1 ,0x2D ,0x08},dim = 0x2DC091,no_dim = 0x2dc129},
+                new MagicPatchTableSt{ name="FEditor",	ver = "FE6", addr = 0x2DC078,data = new byte[]{0x19 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x00 ,0x03 ,0x00 ,0x00 ,0x00 ,0xC5 ,0xC1 ,0x2D ,0x08},dim = 0x2dc091,no_dim = 0x2DC17F },
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(MagicPatchTableSt t in table)
             {
-                baseaddr = U.NOT_FOUND;
-                dimaddr = U.NOT_FOUND;
-                nodimaddr = U.NOT_FOUND;
-                g_Cache_magic_system_enum = magic_system_enum.NO;
-                return g_Cache_magic_system_enum;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "FEditor")
+                if (t.name == "FEditor")
                 {
-                    baseaddr = start;
-                    dimaddr = U.atoh(sp[4]);
-                    nodimaddr = U.atoh(sp[5]);
+                    baseaddr = t.addr;
+                    dimaddr = t.dim;
+                    nodimaddr = t.no_dim;
                     g_Cache_magic_system_enum = magic_system_enum.FEDITOR_ADV;
                     return g_Cache_magic_system_enum;
                 }
-                if (sp[0] == "SCA_Creator")
+                if (t.name == "SCA_Creator")
                 {
-                    baseaddr = start;
-                    dimaddr = U.atoh(sp[4]);
-                    nodimaddr = U.atoh(sp[5]);
+                    baseaddr = t.addr;
+                    dimaddr = t.dim;
+                    nodimaddr = t.no_dim;
                     g_Cache_magic_system_enum = magic_system_enum.CSA_CREATOR;
                     return g_Cache_magic_system_enum;
                 }
@@ -130,49 +121,49 @@ namespace FEBuilderGBA
             Debug.Assert(Program.ROM.p32(g_Cache_CSASpellTablePointer) == g_Cache_CSASpellTableAddr);
             return g_Cache_CSASpellTableAddr;
         }
+
+        public struct SpellTableSt
+        {
+            public string name;
+            public string ver;
+            public byte[] data;
+        };
         static uint FindCSASpellTableLow(string type, out uint out_pointer)
         {
+            SpellTableSt[] table = new SpellTableSt[] { 
+                new SpellTableSt{ name="SCA_Creator",	ver = "FE8U",data = new byte[]{0x1C ,0x58 ,0x05 ,0x08 ,0x00 ,0x01 ,0x00 ,0x80 ,0xED ,0xD7 ,0x95 ,0x08 ,0x99 ,0xD8 ,0x95 ,0x08}},
+                new SpellTableSt{ name="FEditor",	ver = "FE8U",data = new byte[]{0x01 ,0xB4 ,0x7D ,0xE7 ,0x34 ,0xFF ,0x03 ,0x02 ,0x80 ,0xD7 ,0x95 ,0x08 ,0x1A ,0xE1 ,0x03 ,0x02}},
+                new SpellTableSt{ name="SCA_Creator",	ver = "FE8J",data = new byte[]{0xB8 ,0x67 ,0x05 ,0x08 ,0x00 ,0x01 ,0x00 ,0x80 ,0x29 ,0xD4 ,0x9C ,0x08 ,0xD5 ,0xD4 ,0x9C ,0x08}},
+                new SpellTableSt{ name="FEditor",	ver = "FE8J",data = new byte[]{0x01 ,0xB4 ,0x7D ,0xE7 ,0x34 ,0xFF ,0x03 ,0x02 ,0x00 ,0xBE ,0xEF ,0x08 ,0x16 ,0xE1 ,0x03 ,0x02}},
+                new SpellTableSt{ name="SCA_Creator",	ver = "FE7U",data = new byte[]{0x0C ,0x06 ,0x05 ,0x08 ,0x00 ,0x01 ,0x00 ,0x80 ,0xED ,0xB6 ,0x0C ,0x08 ,0x99 ,0xB7 ,0x0C ,0x08}},
+                new SpellTableSt{ name="FEditor",	ver = "FE7U",data = new byte[]{0x01 ,0xB4 ,0x79 ,0xE7 ,0x34 ,0xFF ,0x03 ,0x02 ,0x80 ,0xB6 ,0x0C ,0x08 ,0x26 ,0xE0 ,0x03 ,0x02}},
+                new SpellTableSt{ name="FEditor",	ver = "FE7J",data = new byte[]{0x01 ,0xB4 ,0x79 ,0xE7 ,0x34 ,0xFF ,0x03 ,0x02 ,0xB4 ,0x69 ,0x0C ,0x08 ,0xFE ,0xDF ,0x03 ,0x02}},
+                new SpellTableSt{ name="SCA_Creator",	ver = "FE6",data = new byte[]{0x48 ,0x19 ,0x02 ,0x02 ,0x00 ,0x01 ,0x00 ,0x80 ,0x91 ,0xC0 ,0x2D ,0x08 ,0x29 ,0xC1 ,0x2D ,0x08}},
+                new SpellTableSt{ name="FEditor",	ver = "FE6",data = new byte[]{0xE7 ,0x7D ,0xB4 ,0x01 ,0x34 ,0xFF ,0x03 ,0x02 ,0x80 ,0xD7 ,0x95 ,0x08 ,0x1A ,0xE1 ,0x03 ,0x02}},
+            };
+
+
             out_pointer = U.NOT_FOUND;
-
-            string filename = U.ConfigDataFilename("magic_csa_spell_table_");
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (SpellTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
+                if (t.name != type)
                 {
                     continue;
                 }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
+                if (t.ver != version)
                 {
                     continue;
-                }
-                if (sp[0] != type)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[2].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
                 }
 
                 //チェック開始アドレス
                 uint start = 0x10000;
-                uint f = U.Grep(Program.ROM.Data, need, start, 0, 4);
+                uint f = U.Grep(Program.ROM.Data, t.data, start, 0, 4);
                 if (f == U.NOT_FOUND)
                 {
                     continue;
                 }
-                uint csa_spell_table_pointer = f + (uint)need.Length;
+                uint csa_spell_table_pointer = f + (uint)t.data.Length;
                 out_pointer = csa_spell_table_pointer;
 
                 uint csa_spell_table = Program.ROM.p32(csa_spell_table_pointer);

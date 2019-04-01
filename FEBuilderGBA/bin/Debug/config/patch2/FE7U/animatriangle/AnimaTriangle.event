@@ -1,0 +1,12 @@
+
+//HINT=LYN_HOOK=0x2A1E0
+
+#inctext lyn "AnimaTriangle.elf" "Definitions.elf"
+// Example lists:
+FireList:
+BYTE 0x38 0x3A 0x00
+ThunderList:
+BYTE 0x39 0x3b 0x00
+WindList:
+BYTE 0x3e 0x00
+

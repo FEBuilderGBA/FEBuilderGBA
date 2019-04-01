@@ -1,6 +1,6 @@
 NAME=HP上限 自軍
 NAME.en=Playable Character HP Limit
-NAME.zh=惠普上限你的军队
+NAME.zh=自军HP上限
 
 //アドレスパッチとして実装します
 TYPE=ADDR

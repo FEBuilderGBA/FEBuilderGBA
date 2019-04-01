@@ -127,7 +127,7 @@
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.L_4_TEXT_ITEM2 = new FEBuilderGBA.TextBoxEx();
             this.B7 = new System.Windows.Forms.NumericUpDown();
-            this.L_2_TEXT_ITEM1 = new FEBuilderGBA.TextBoxEx();
+            this.L_2_TEXT_ITEMX = new FEBuilderGBA.TextBoxEx();
             this.L_7_COMBO = new System.Windows.Forms.ComboBox();
             this.W4 = new System.Windows.Forms.NumericUpDown();
             this.J_2_TEXT = new System.Windows.Forms.Label();
@@ -873,7 +873,7 @@
             "22=射程2-2(弓)",
             "23=射程2-3(長弓)",
             "3A=射程3-10(サンダーストーム)"});
-            this.L_25_COMBO.Location = new System.Drawing.Point(489, 25);
+            this.L_25_COMBO.Location = new System.Drawing.Point(494, 25);
             this.L_25_COMBO.Margin = new System.Windows.Forms.Padding(2);
             this.L_25_COMBO.Name = "L_25_COMBO";
             this.L_25_COMBO.Size = new System.Drawing.Size(202, 26);
@@ -950,7 +950,7 @@
             // B23
             // 
             this.B23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B23.Location = new System.Drawing.Point(285, 28);
+            this.B23.Location = new System.Drawing.Point(284, 28);
             this.B23.Margin = new System.Windows.Forms.Padding(2);
             this.B23.Maximum = new decimal(new int[] {
             255,
@@ -964,7 +964,7 @@
             // B24
             // 
             this.B24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B24.Location = new System.Drawing.Point(352, 28);
+            this.B24.Location = new System.Drawing.Point(351, 28);
             this.B24.Margin = new System.Windows.Forms.Padding(2);
             this.B24.Maximum = new decimal(new int[] {
             255,
@@ -972,7 +972,7 @@
             0,
             0});
             this.B24.Name = "B24";
-            this.B24.Size = new System.Drawing.Size(65, 25);
+            this.B24.Size = new System.Drawing.Size(70, 25);
             this.B24.TabIndex = 33;
             // 
             // label13
@@ -981,7 +981,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label13.Location = new System.Drawing.Point(421, 1);
+            this.label13.Location = new System.Drawing.Point(425, 1);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 25);
@@ -994,7 +994,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(421, 26);
+            this.B25.Location = new System.Drawing.Point(425, 26);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -1010,7 +1010,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label24.Location = new System.Drawing.Point(285, 1);
+            this.label24.Location = new System.Drawing.Point(284, 1);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(64, 25);
@@ -1023,10 +1023,10 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label23.Location = new System.Drawing.Point(352, 1);
+            this.label23.Location = new System.Drawing.Point(351, 1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 25);
+            this.label23.Size = new System.Drawing.Size(70, 25);
             this.label23.TabIndex = 41;
             this.label23.Text = "必殺";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1506,7 +1506,7 @@
             this.panel3.Controls.Add(this.W0);
             this.panel3.Controls.Add(this.L_4_TEXT_ITEM2);
             this.panel3.Controls.Add(this.B7);
-            this.panel3.Controls.Add(this.L_2_TEXT_ITEM1);
+            this.panel3.Controls.Add(this.L_2_TEXT_ITEMX);
             this.panel3.Controls.Add(this.L_7_COMBO);
             this.panel3.Controls.Add(this.W4);
             this.panel3.Controls.Add(this.J_2_TEXT);
@@ -1628,17 +1628,17 @@
             this.B7.Size = new System.Drawing.Size(73, 25);
             this.B7.TabIndex = 3;
             // 
-            // L_2_TEXT_ITEM1
+            // L_2_TEXT_ITEMX
             // 
-            this.L_2_TEXT_ITEM1.ErrorMessage = "";
-            this.L_2_TEXT_ITEM1.Location = new System.Drawing.Point(461, 41);
-            this.L_2_TEXT_ITEM1.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_TEXT_ITEM1.Multiline = true;
-            this.L_2_TEXT_ITEM1.Name = "L_2_TEXT_ITEM1";
-            this.L_2_TEXT_ITEM1.Placeholder = "";
-            this.L_2_TEXT_ITEM1.ReadOnly = true;
-            this.L_2_TEXT_ITEM1.Size = new System.Drawing.Size(281, 84);
-            this.L_2_TEXT_ITEM1.TabIndex = 36;
+            this.L_2_TEXT_ITEMX.ErrorMessage = "";
+            this.L_2_TEXT_ITEMX.Location = new System.Drawing.Point(461, 41);
+            this.L_2_TEXT_ITEMX.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_TEXT_ITEMX.Multiline = true;
+            this.L_2_TEXT_ITEMX.Name = "L_2_TEXT_ITEMX";
+            this.L_2_TEXT_ITEMX.Placeholder = "";
+            this.L_2_TEXT_ITEMX.ReadOnly = true;
+            this.L_2_TEXT_ITEMX.Size = new System.Drawing.Size(281, 84);
+            this.L_2_TEXT_ITEMX.TabIndex = 36;
             // 
             // L_7_COMBO
             // 
@@ -2318,7 +2318,7 @@
         private System.Windows.Forms.Label J_7;
         private System.Windows.Forms.Label J_6;
         private FEBuilderGBA.TextBoxEx L_4_TEXT_ITEM2;
-        private FEBuilderGBA.TextBoxEx L_2_TEXT_ITEM1;
+        private FEBuilderGBA.TextBoxEx L_2_TEXT_ITEMX;
         private System.Windows.Forms.CheckBox L_11_BIT_80;
         private System.Windows.Forms.CheckBox L_11_BIT_40;
         private System.Windows.Forms.CheckBox L_11_BIT_20;

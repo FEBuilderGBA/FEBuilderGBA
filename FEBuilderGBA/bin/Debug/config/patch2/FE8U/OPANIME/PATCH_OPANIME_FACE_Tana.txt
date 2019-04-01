@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ターナ
 NAME.en=OP Anime Face: Tana
-NAME.zh=OPANIME_FACE_特纳
+NAME.zh=OP动画_脸_塔娜
 
 TYPE=IMAGE
 TAG=#IMAGE

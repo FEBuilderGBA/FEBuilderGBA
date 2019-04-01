@@ -47,7 +47,7 @@ namespace FEBuilderGBA
             ,ITEM_WEAPON_EFFECT
             ,MOVECOST_NORMAL //普通
             ,MOVECOST_RAIN //雨
-            ,MOVECOST_SHOW //雪
+           ,MOVECOST_SHOW //雪
             ,MOVECOST_AVOID //地形回避
             ,MOVECOST_DEF //地形防御
             ,MOVECOST_RES //地形魔防
@@ -57,6 +57,7 @@ namespace FEBuilderGBA
             ,SENSEKI //戦績
             ,DIC     //辞書
             ,MENU    //メニュー
+            ,MENU_DEFINE //メニュー定義
             ,STATUS  //ステータス
             ,ED      //エンディング
             ,TERRAIN //地形
@@ -72,6 +73,8 @@ namespace FEBuilderGBA
             ,IMAGE_BATTLE_SCREEN //戦闘画面
             ,MAGIC_ANIME_EXTENDS //魔法拡張アニメ
             ,STATUS_GAME_OPTION //ゲームオプション
+            ,PROCS
+            ,AISCRIPT
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)
@@ -213,17 +216,25 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
+        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
         {
-            CheckPointerErrors(event_addr, errors, EventCondToType(cond), addr);
+            CheckPointerErrors(event_addr, errors, EventCondToType(cond), addr, tag);
         }
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr)
+        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(event_addr))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ユニット配置ポインタ「{0}」が無効です。", U.To0xHexString(event_addr))));
+                    , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)),tag));
             }
+        }
+        public static void CheckPointerOrNullErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (event_addr == 0)
+            {
+                return;
+            }
+            CheckPointerErrors(event_addr, errors, cond, addr , tag);
         }
 
         public static void CheckEventPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
@@ -357,6 +368,28 @@ namespace FEBuilderGBA
                     , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
             }
         }
+        public static void CheckASMPointerOrNullErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (asm == 0)
+            {
+                return;
+            }
+            CheckASMPointerErrors( asm, errors, cond, addr,tag );
+        }
+        public static void CheckProcsPointerErrors(uint procs, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (!U.isSafetyPointer(procs))
+            {//無効なポインタ
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("Procs関数ポインタ「{0}」が無効です。", U.To0xHexString(procs)), tag));
+            }
+            else if (!U.isPadding4(procs))
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("Procs関数ポインタ「{0}」が4バイト単位でありません。\r\n必ず4の倍数である必要があります。", U.To0xHexString(procs)), tag));
+            }
+
+        }
         public static void CheckFlagErrors(uint flag, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
         {
             CheckFlagErrors(flag, errors, EventCondToType(cond), addr);
@@ -374,17 +407,27 @@ namespace FEBuilderGBA
         public static void ConversationTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.CheckConversationTextMessage(text);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
                     , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage) , tag));
             }
         }
-        public static void CheckText(uint textid,string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void DeathQuoteTextMessage(uint textid, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string text = FETextDecode.Direct(textid);
-            string errorMessage = TextForm.GetErrorMessage(text,arg1);
+            string errorMessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_DEATH_QUOTE_WIDTH);
+            if (errorMessage != "")
+            {
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("TextID:{0}\r\n{1}", U.To0xHexString(textid), errorMessage), tag));
+            }
+        }
+        public static void CheckText(uint textid, string arg1, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            string text = FETextDecode.Direct(textid);
+            string errorMessage = TextForm.GetErrorMessage(text, textid, arg1);
             if (errorMessage != "")
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
@@ -485,6 +528,15 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void CheckAPErrorsPointerOrNull(uint apAddress, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(apAddress);
+            if (p == 0)
+            {
+                return;
+            }
+            ImageUtilAP.CheckAPErrors(p, errors, cond, addr, tag);
+        }
 
         public static void CheckAPErrorsPointer(uint apAddress, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
         {
@@ -501,6 +553,16 @@ namespace FEBuilderGBA
             ImageUtilAP.CheckAPErrors(apAddress, errors, cond, addr, tag);
         }
 
+        public static void CheckLZ77ImageErrorsPointerOrNull(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        {
+            uint p = Program.ROM.p32(lz77pointer);
+            if (p == 0)
+            {
+                return;
+            }
+
+            CheckLZ77ImageErrors(p, errors, cond, addr, width, min_height, tag);
+        }
 
         public static void CheckLZ77ImageErrorsPointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
         {
@@ -551,13 +613,13 @@ namespace FEBuilderGBA
         }
 
         public const uint SYSTEM_MAP_ID = 0xEEEEEEEE;
-        public static List<FELint.ErrorSt> ScanMAP(uint mapid)
+        public static List<FELint.ErrorSt> ScanMAP(uint mapid, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
 #if !DEBUG 
             try
             {
 #endif
-                return ScanMAPLow(mapid);
+                return ScanMAPLow(mapid, ldrmap);
 #if !DEBUG 
             }
             catch (Exception e)
@@ -571,12 +633,12 @@ namespace FEBuilderGBA
             }
 #endif
         }
-        static List<FELint.ErrorSt> ScanMAPLow(uint mapid)
+        static List<FELint.ErrorSt> ScanMAPLow(uint mapid, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             List<FELint.ErrorSt> errors = new List<ErrorSt>();
             if (mapid == SYSTEM_MAP_ID)
             {
-                ScanSystem(errors);
+                ScanSystem(errors, ldrmap);
                 return errors;
             }
 
@@ -636,9 +698,22 @@ namespace FEBuilderGBA
                     , R._("ROMの容量が32MBを超えています。\r\nGBAでは、32MBを超えたROMは実行できません。"
                 )));
             }
+
+            //ROM Headerのチェック
+            //ロゴは商標があるので、ここには書けません。
+            //よって、CRC32を取得してチェックしましょう
+            byte[] logo = Program.ROM.getBinaryData(0x0, 0xA0);
+            U.CRC32 crc32 = new U.CRC32();
+            uint logo_crc32 = crc32.Calc(logo);
+            if (logo_crc32 != 0x96b08a28)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.FELINT_SYSTEM_ERROR, U.NOT_FOUND
+                    , R._("ROM先頭にあるロゴ領域が破壊されています。\r\n通常この領域を書き換えることはありえません。"
+                )));
+            }
         }
 
-        static void ScanSystem(List<FELint.ErrorSt> errors)
+        static void ScanSystem(List<FELint.ErrorSt> errors, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
             ROMCheck(errors);
 
@@ -681,6 +756,12 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "ScanSystem ImageMagic")) return;
             ImageMagicFEditorForm.MakeCheckError(errors);
             ImageMagicCSACreatorForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem Procs")) return;
+            ProcsScriptForm.MakeCheckError(errors, ldrmap);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem MenuDefinition")) return;
+            MenuDefinitionForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

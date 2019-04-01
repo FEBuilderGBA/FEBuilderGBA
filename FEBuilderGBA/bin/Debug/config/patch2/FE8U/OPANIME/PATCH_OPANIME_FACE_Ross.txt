@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ロス
 NAME.en=OP Anime Face: Ross
-NAME.zh=OPANIME_FACE_丢失
+NAME.zh=OP动画_脸_罗斯
 
 TYPE=IMAGE
 TAG=#IMAGE

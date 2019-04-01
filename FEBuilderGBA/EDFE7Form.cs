@@ -146,23 +146,23 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, name + "_3b", new uint[] { });
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             {
                 InputFormRef InputFormRef = N3_Init(null);
-                TextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 ,8 });
+                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 ,8 });
             }
             {
                 InputFormRef InputFormRef = N1_Init(null);
-                TextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 });
+                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 });
             }
             {
                 InputFormRef InputFormRef = N2_Init(null);
-                TextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
+                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
 
                 InputFormRef.ReInitPointer
                     ((Program.ROM.RomInfo.ed_3b_pointer()));
-                TextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
+                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
             }
         }
     }

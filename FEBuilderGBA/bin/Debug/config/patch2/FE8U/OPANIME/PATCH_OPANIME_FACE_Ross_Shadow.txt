@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ロス_影
 NAME.en=OP Anime Face: Ross (Shadow)
-NAME.zh=OPANIME_FACE_ROSS _阴影
+NAME.zh=OP动画_脸_罗斯_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

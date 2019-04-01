@@ -14,6 +14,6 @@ COMBO.zh=显示|0xF7 0xF7 0xFB 0xFC|删除|0x00 0x00 0x00 0x20
 
 INFO=エクストラメニューの支援会話を削除します。\r\n支援会話イベントを見せたくない場合に利用します。
 INFO.en=Sets whether the Support Conversations option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent the player from accessing the Support Room.
-INFO.zh=删除额外菜单的支持对话。\r\n当您不想显示支持会话事件时使用它。
+INFO.zh=删除额外菜单的支援对话。\r\n当您不想显示支援会话事件时使用它。
 
 AUTHOR=Aera

@@ -1,0 +1,8 @@
+0=Sword
+1=Lance
+2=Axs
+3=Bow
+4=Staff
+5=Anima
+6=Light
+7=Dark

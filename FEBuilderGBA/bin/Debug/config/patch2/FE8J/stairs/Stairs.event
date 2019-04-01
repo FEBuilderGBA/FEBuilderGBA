@@ -1,0 +1,65 @@
+#include "Extensions/Hack Installation.txt"
+
+	//HINT=LYN_HOOK=0x184AE
+	//HINT=LYN_HOOK=0x1C7D8
+	ALIGN 4
+	#inctext lyn "Stairs.elf" "Hooks.elf"
+	ALIGN 4
+	StairErrorTextLocation:
+	SHORT 0xee1
+	
+	PUSH
+	ORG $320A0
+	jumpToHack(UnsetMoveDebuff)
+	ORG $320AA
+	SHORT 0xE7F9 // b #0x08032152. At the end of the switch, part of the jump to UnsetMoveDebuff.
+	ORG $31FFC
+	POIN ActionPickRepoint
+	
+	ORG $225C4
+	jumpToHack(EndTurnFix)
+	POP
+
+	MESSAGE StairASM usability is at StairsUsability
+	MESSAGE StairASM effect is at StairsEffect
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+#define NormalText 0x0
+#define GrayText 0x1
+#define BlueText 0x2
+#define OrangeText 0x3
+#define GreenText 0x4
+#define BlackText 0x5
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG
+	POIN TxtData0xedf_sjis
+	SHORT 0xedf
+	SHORT 0xee0
+	BYTE  GreenText
+	BYTE  $4e
+	SHORT 0
+	POIN StairsUsability|1
+	WORD 0
+	POIN StairsEffect|1
+	WORD 0
+	WORD 0
+	WORD 0
+POP
+
+TxtData0xedf:
+#incbin "0xedf.bin"
+
+TxtData0xedf_sjis:
+#incbin "0xedf_sjis.bin"
+
+TxtData0xee0:
+#incbin "0xee0.bin"
+
+TxtData0xee1:
+#incbin "0xee1.bin"
+
+setText_WithHuffman(0xedf,TxtData0xedf)
+setText_WithHuffman(0xee0,TxtData0xee0)
+setText_WithHuffman(0xee1,TxtData0xee1)

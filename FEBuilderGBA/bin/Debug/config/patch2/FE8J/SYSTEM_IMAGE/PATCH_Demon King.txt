@@ -1,5 +1,5 @@
-﻿NAME=魔王
-NAME.en=Demon King
+NAME=魔王
+NAME.en=Demon King Image (Whole)
 
 TYPE=IMAGE
 TAG=#IMAGE

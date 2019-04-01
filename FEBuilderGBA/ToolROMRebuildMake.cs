@@ -103,6 +103,10 @@ namespace FEBuilderGBA
                 {//BATTLEFRAME
                     a_point += 0x30;
                 }
+                else if (a.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
+                {//NEW_TARGET_SELECTION_STRUCT
+                    a_point += 0x20;
+                }
                 else if (Address.IsLZ77(a.DataType) && a.Length > 0)
                 {//LZ77
                     a_point += 0x10;
@@ -516,11 +520,16 @@ namespace FEBuilderGBA
                 List<uint> ldrtable = new List<uint>();
                 uint calclength = DisassemblerTrumb.CalcLength(Program.ROM.Data
                     , address.Addr, (uint)Program.ROM.Data.Length, ldrtable);
-                //既存サイズの方が大きい場合は、大きい方を取る
-                address.Length = Math.Max(calclength, address.Length);
-
-                //発見したLDRを追加
-                ReScanLDR(address);
+                if (address.Length >= calclength)
+                {
+                }
+                else
+                {
+                    //既存サイズの方が大きい場合は、大きい方を取る
+                    address.Length = Math.Max(calclength, address.Length);
+                    //発見したLDRを追加
+                    ReScanLDR(address);
+                }
 
 //克服できたかも
 //                if (isRebuildAddress(address.Addr))
@@ -1953,6 +1962,11 @@ namespace FEBuilderGBA
                 sb.Append("@MIX ");
             }
             else if (address.DataType == Address.DataTypeEnum.POINTER_ASM)
+            {//ポインタ
+                bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
+                sb.Append("@MIX ");
+            }
+            else if (address.DataType == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
             {//ポインタ
                 bool r = WildCard(refCmd, infsb, Program.ROM.Data, address.Addr, address.Length, ASMC_Delect.ASM);
                 sb.Append("@MIX ");

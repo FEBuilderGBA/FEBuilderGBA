@@ -9,4 +9,4 @@ HEIGHT=16
 
 ZIMAGE_POINTER=0x073DA8//0x5BB0C8
 PALETTE_POINTER=0x073DB4//0x5BB2DC
-NAME.zh=LevelUp图像（仅当关闭战斗动画时）
+NAME.zh=Level Up图像（仅当关闭战斗动画时）

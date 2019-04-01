@@ -1,6 +1,6 @@
 NAME=アイテムアイコンFEまで拡張
 NAME.en=Extend Item Icon List Length
-NAME.zh=扩展到项目图标FE
+NAME.zh=道具图标扩展到FE
 
 //アドレスパッチとして実装します
 TYPE=ADDR

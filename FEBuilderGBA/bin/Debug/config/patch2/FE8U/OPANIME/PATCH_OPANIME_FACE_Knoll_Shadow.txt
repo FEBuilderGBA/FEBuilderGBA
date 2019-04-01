@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ノーム_影
 NAME.en=OP Anime Face: Knoll (Shadow)
-NAME.zh=OPANIME_FACE_Nome_影子
+NAME.zh=OP动画_脸_诺鲁_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

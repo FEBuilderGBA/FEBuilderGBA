@@ -44,11 +44,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ValueTextBox = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ImportButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BinaryButton
             // 
-            this.BinaryButton.Location = new System.Drawing.Point(12, 88);
+            this.BinaryButton.Location = new System.Drawing.Point(12, 70);
             this.BinaryButton.Name = "BinaryButton";
             this.BinaryButton.Size = new System.Drawing.Size(655, 51);
             this.BinaryButton.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // EAALLButton
             // 
-            this.EAALLButton.Location = new System.Drawing.Point(12, 439);
+            this.EAALLButton.Location = new System.Drawing.Point(12, 380);
             this.EAALLButton.Name = "EAALLButton";
             this.EAALLButton.Size = new System.Drawing.Size(655, 51);
             this.EAALLButton.TabIndex = 5;
@@ -68,7 +70,7 @@
             // 
             // TSVALLButton
             // 
-            this.TSVALLButton.Location = new System.Drawing.Point(12, 556);
+            this.TSVALLButton.Location = new System.Drawing.Point(12, 489);
             this.TSVALLButton.Name = "TSVALLButton";
             this.TSVALLButton.Size = new System.Drawing.Size(655, 51);
             this.TSVALLButton.TabIndex = 7;
@@ -78,7 +80,7 @@
             // 
             // CSVButton
             // 
-            this.CSVButton.Location = new System.Drawing.Point(12, 499);
+            this.CSVButton.Location = new System.Drawing.Point(12, 435);
             this.CSVButton.Name = "CSVButton";
             this.CSVButton.Size = new System.Drawing.Size(655, 51);
             this.CSVButton.TabIndex = 6;
@@ -88,7 +90,7 @@
             // 
             // STRUCTButton
             // 
-            this.STRUCTButton.Location = new System.Drawing.Point(12, 648);
+            this.STRUCTButton.Location = new System.Drawing.Point(12, 574);
             this.STRUCTButton.Name = "STRUCTButton";
             this.STRUCTButton.Size = new System.Drawing.Size(655, 51);
             this.STRUCTButton.TabIndex = 8;
@@ -98,7 +100,7 @@
             // 
             // NMMButton
             // 
-            this.NMMButton.Location = new System.Drawing.Point(12, 705);
+            this.NMMButton.Location = new System.Drawing.Point(12, 629);
             this.NMMButton.Name = "NMMButton";
             this.NMMButton.Size = new System.Drawing.Size(655, 51);
             this.NMMButton.TabIndex = 10;
@@ -109,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 411);
+            this.label1.Location = new System.Drawing.Point(12, 355);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 75;
@@ -117,7 +119,7 @@
             // 
             // CopyNoDollGBARadBreakPoint
             // 
-            this.CopyNoDollGBARadBreakPoint.Location = new System.Drawing.Point(13, 342);
+            this.CopyNoDollGBARadBreakPoint.Location = new System.Drawing.Point(13, 301);
             this.CopyNoDollGBARadBreakPoint.Margin = new System.Windows.Forms.Padding(4);
             this.CopyNoDollGBARadBreakPoint.Name = "CopyNoDollGBARadBreakPoint";
             this.CopyNoDollGBARadBreakPoint.Size = new System.Drawing.Size(651, 44);
@@ -128,7 +130,7 @@
             // 
             // CopyLittleEndian
             // 
-            this.CopyLittleEndian.Location = new System.Drawing.Point(13, 292);
+            this.CopyLittleEndian.Location = new System.Drawing.Point(13, 252);
             this.CopyLittleEndian.Margin = new System.Windows.Forms.Padding(4);
             this.CopyLittleEndian.Name = "CopyLittleEndian";
             this.CopyLittleEndian.Size = new System.Drawing.Size(651, 44);
@@ -139,7 +141,7 @@
             // 
             // CopyPointer
             // 
-            this.CopyPointer.Location = new System.Drawing.Point(13, 189);
+            this.CopyPointer.Location = new System.Drawing.Point(13, 153);
             this.CopyPointer.Margin = new System.Windows.Forms.Padding(4);
             this.CopyPointer.Name = "CopyPointer";
             this.CopyPointer.Size = new System.Drawing.Size(651, 44);
@@ -150,7 +152,7 @@
             // 
             // CopyClipboard
             // 
-            this.CopyClipboard.Location = new System.Drawing.Point(13, 241);
+            this.CopyClipboard.Location = new System.Drawing.Point(13, 203);
             this.CopyClipboard.Margin = new System.Windows.Forms.Padding(4);
             this.CopyClipboard.Name = "CopyClipboard";
             this.CopyClipboard.Size = new System.Drawing.Size(651, 44);
@@ -162,7 +164,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 167);
+            this.label2.Location = new System.Drawing.Point(12, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 80;
@@ -171,7 +173,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 67);
+            this.label3.Location = new System.Drawing.Point(12, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 81;
@@ -180,7 +182,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 627);
+            this.label4.Location = new System.Drawing.Point(12, 553);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 18);
             this.label4.TabIndex = 82;
@@ -189,7 +191,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 17);
+            this.label5.Location = new System.Drawing.Point(17, 14);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 18);
@@ -200,19 +202,40 @@
             // 
             this.ValueTextBox.AutoSize = true;
             this.ValueTextBox.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ValueTextBox.Location = new System.Drawing.Point(83, 9);
+            this.ValueTextBox.Location = new System.Drawing.Point(83, 6);
             this.ValueTextBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ValueTextBox.Name = "ValueTextBox";
             this.ValueTextBox.Size = new System.Drawing.Size(72, 28);
             this.ValueTextBox.TabIndex = 85;
             this.ValueTextBox.Text = "1234";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 690);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 18);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "インポート";
+            // 
+            // ImportButton
+            // 
+            this.ImportButton.Location = new System.Drawing.Point(12, 713);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(655, 51);
+            this.ImportButton.TabIndex = 86;
+            this.ImportButton.Text = "ダンプしていたデータのインポート";
+            this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
+            // 
             // DumpStructSelectDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(679, 776);
+            this.ClientSize = new System.Drawing.Size(679, 792);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.ValueTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -255,5 +278,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label ValueTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button ImportButton;
     }
 }

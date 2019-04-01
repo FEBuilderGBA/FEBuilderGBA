@@ -1,6 +1,6 @@
 NAME=OPANIME MAP
 NAME.en=OP Anime World Map
-NAME.zh=OPANIME MAP
+NAME.zh=OP动画迷你世界地图
 
 //画像パッチとして実装します
 

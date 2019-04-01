@@ -205,7 +205,7 @@ namespace FEBuilderGBA
                     {
                         uint id = (uint)src_object.Value;
                         string str = TextForm.Direct(id);
-                        link_object.ErrorMessage = TextForm.GetErrorMessage(str, arg1);
+                        link_object.ErrorMessage = TextForm.GetErrorMessage(str, id, arg1);
                         link_object.Text = str;
                     };
                     link_object.DoubleClick += (sender, e) =>
@@ -1589,7 +1589,7 @@ namespace FEBuilderGBA
                 {
                     PictureBox link_object = ((PictureBox)link_info);
 
-                    Bitmap bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)src_object.Value,0,false);
+                    Bitmap bitmap = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)src_object.Value, 0, false);
                     U.MakeTransparent(bitmap);
                     link_object.Image = bitmap;
 
@@ -2632,7 +2632,7 @@ namespace FEBuilderGBA
                         else
                         {
                             string str = TextForm.Direct(id);
-                            link_object.ErrorMessage = TextForm.GetErrorMessage(str, arg1);
+                            link_object.ErrorMessage = TextForm.GetErrorMessage(str, id, arg1);
                             link_object.Text = str;
                         }
                     };
@@ -3340,7 +3340,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    TextForm f = (TextForm)InputFormRef.JumpForm<TextForm>(U.NOT_FOUND, "AddressList", src_object);
+                    TextForm f = (TextForm)InputFormRef.JumpForm<TextForm>(value, "AddressList", src_object);
                     f.JumpTo(value);
                 }
             }
@@ -3502,7 +3502,14 @@ namespace FEBuilderGBA
             }
             else if (linktype == "IMAGECHAPTER")
             {//章タイトル
-                InputFormRef.JumpForm<ImageChapterTitleForm>(value);
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte())
+                {
+                    InputFormRef.JumpForm<ImageChapterTitleFE7Form>(value, "AddressList", src_object);
+                }
+                else
+                {
+                    InputFormRef.JumpForm<ImageChapterTitleForm>(value);
+                }
             }
             else if (linktype == "UNITPALETTE")
             {//ユニットパレット
@@ -3510,11 +3517,11 @@ namespace FEBuilderGBA
                 {
                     value = value + 1;
                 }
-                InputFormRef.JumpForm<ImageUnitPaletteForm>(value - 1);
+                InputFormRef.JumpForm<ImageUnitPaletteForm>(value - 1, "AddressList", src_object);
             }
             else if (linktype == "UNITCUSTOMBATTLEANIME")
             {//ユニット専用アニメ
-                InputFormRef.JumpForm<UnitCustomBattleAnimeForm>(value, "N2_AddressList");
+                InputFormRef.JumpForm<UnitCustomBattleAnimeForm>(value, "N2_AddressList", src_object);
             }
             else if (linktype == "WORLDMAPEVENT")
             {//ワールドマップイベント
@@ -4729,6 +4736,9 @@ namespace FEBuilderGBA
             MapPointerForm.ClearPlistCache();
             U.ClearMigemoCache();
             MagicSplitUtil.ClearCache();
+            SkillConfigFE8NSkillForm.ClearCache();
+            SkillConfigFE8NVer2SkillForm.ClearCache();
+            SkillConfigSkillSystemForm.ClearCache();
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
@@ -4738,6 +4748,8 @@ namespace FEBuilderGBA
             g_Cache_skill_system_enum = skill_system_enum.NoCache;
             g_Cache_draw_font_enum = draw_font_enum.NoCache;
             g_Cache_class_type_enum = class_type_enum.NoCache;
+            g_Cache_itemicon_extends = itemicon_extends.NoCache;
+            g_Cache_shinan_table = NO_CACHE;
         }
 
 
@@ -5298,7 +5310,7 @@ namespace FEBuilderGBA
             }
 
             addr = U.toOffset(addr);
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!CheckZeroAddressWrite(addr))
             {//先頭には書き込めません!
                 return;
             }
@@ -5345,6 +5357,18 @@ namespace FEBuilderGBA
             if (PostWriteHandler != null)
             {
                 PostWriteHandler(sender, e);
+            }
+        }
+        public bool CheckProtectionAddrHigh = true; //高い範囲のアドレスを自動保護する
+        public bool CheckZeroAddressWrite(uint addr)
+        {
+            if (this.CheckProtectionAddrHigh)
+            {
+                return U.CheckZeroAddressWriteHigh(addr);
+            }
+            else
+            {
+                return U.CheckZeroAddressWrite(addr);
             }
         }
 
@@ -5505,6 +5529,8 @@ namespace FEBuilderGBA
                         ReInit(eventarg.NewBaseAddress, eventarg.NewDataCount);
                     }
                 }
+
+                UpdateChangePointer(eventarg.OldBaseAddress, eventarg.NewBaseAddress);
                 return 0;
             }
             );
@@ -5595,6 +5621,14 @@ namespace FEBuilderGBA
             {
                 ClipbordToPaste();
             }
+            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Up)
+            {
+                ShiftData(false);
+            }
+            else if (e.Control && e.Alt && e.Shift && e.KeyCode == Keys.Down)
+            {
+                ShiftData(true);
+            }
             else if (e.Control && e.Alt && e.KeyCode == Keys.Up)
             {
                 SwapData(false);
@@ -5603,8 +5637,42 @@ namespace FEBuilderGBA
             {
                 SwapData(true);
             }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                ClearData();
+            }
         }
 
+        void ClearData()
+        {
+            if (this.UseMenuDeleteAction == false)
+            {//削除は利用できない
+                return;
+            }
+
+            uint destAddr = InputFormRef.SelectToAddr(this.AddressList);
+            if (destAddr == U.NOT_FOUND)
+            {
+                return;
+            }
+
+            DialogResult dr = R.ShowYesNo("このデータを消去してもよろしいですか？\r\nこのデータが終端になり、このデータまでが有効なデータとなります。");
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+
+            byte[] data = new byte[this.BlockSize];
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm);
+            Program.ROM.write_range(destAddr, data, undodata);
+            Program.Undo.Push(undodata);
+
+            ReloadAddressList();
+
+            InputFormRef.ShowWriteNotifyAnimation(this.SelfForm, destAddr);
+            this.AddressList.Refresh();
+        }
         public void CopyToClipbord()
         {
             uint srcAddr = InputFormRef.SelectToAddr(this.AddressList);
@@ -5727,6 +5795,66 @@ namespace FEBuilderGBA
             {
                 U.SelectedIndexSafety(this.AddressList, selected - 1);
             }
+        }
+
+        public void ShiftData(bool isDown)
+        {
+            if (this.AddressList == null)
+            {
+                return;
+            }
+            int totalCount = this.AddressList.Items.Count;
+            int selected = this.AddressList.SelectedIndex;
+            if (selected < 0)
+            {
+                return;
+            }
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this.SelfForm, "Shift");
+
+            U.AddrResult current = SelectToAddrResult(this.AddressList, selected);
+            if (isDown)
+            {
+                if (selected >= totalCount)
+                {
+                    return;
+                }
+                DialogResult dr = R.ShowYesNo(R._("リストを1つ下にスライドさせてよろしいですか？\r\n一番下の項目は、押し出されて、現在の行になります。"));
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+                uint addr = current.addr + this.BlockSize;
+                byte[] last = Program.ROM.getBinaryData(this.BaseAddress + (uint)((totalCount - 1) * this.BlockSize), this.BlockSize);
+                byte[] move = Program.ROM.getBinaryData(current.addr, (uint)((totalCount - selected - 1) * this.BlockSize));
+
+                Program.ROM.write_range(current.addr + this.BlockSize, move, undodata);
+                Program.ROM.write_range(current.addr, last, undodata);
+            }
+            else
+            {
+                if (selected <= 0)
+                {
+                    return;
+                }
+                DialogResult dr = R.ShowYesNo(R._("リストを1つ上にスライドさせてよろしいですか？\r\n一番上の項目は、押し出されて、現在の行になります。"));
+                if (dr != DialogResult.Yes)
+                {
+                    return;
+                }
+
+                uint addr = this.BaseAddress + this.BlockSize;
+                byte[] last = Program.ROM.getBinaryData(this.BaseAddress, this.BlockSize);
+                byte[] move = Program.ROM.getBinaryData(this.BaseAddress + this.BlockSize, (uint)((selected) * this.BlockSize));
+
+                Program.ROM.write_range(this.BaseAddress, move, undodata);
+                Program.ROM.write_range(current.addr, last, undodata);
+            }
+
+            Program.Undo.Push(undodata);
+            ShowWriteNotifyAnimation(this.SelfForm, current.addr);
+            ReloadAddressList();
+            this.AddressList.Refresh();
         }
 
         //リストビューを更新して、現在選択しているところを再選択.
@@ -6258,6 +6386,46 @@ namespace FEBuilderGBA
                 Cache_ramunit_param_dic = U.LoadDicResource(filename);
             }
             return U.at(Cache_ramunit_param_dic, num);
+        }
+        public static string GetRAM_UNIT_VALUE(uint prevValue, uint num, out string errorMessae)
+        {
+            errorMessae = "";
+
+            if (prevValue == 0xC)
+            {//状態
+                return GetRAM_UNIT_STATE(num, out errorMessae);
+            }
+            else if (prevValue == 0x1E || prevValue == 0x20 || prevValue == 0x22 || prevValue == 0x24 || prevValue == 0x26)
+            {//アイテム
+                return ItemForm.GetItemName(num);
+            }
+            else if (prevValue == 0x30)
+            {//状態とターン
+                return GetBADSTATUS(num);
+            }
+//            else if (prevValue == 0x40)
+//            {//AI3
+//            }
+//            else if (prevValue == 0x41)
+//            {//AI4
+//            }
+            else if (prevValue == 0x42)
+            {//AI1
+                return GetAI1(num);
+            }
+            else if (prevValue == 0x44)
+            {//AI2
+                return GetAI2(num);
+            }
+            return InputFormRef.GetDigitHint(num);
+        }
+        public static string GetDigitHint(uint v)
+        {
+            if (v >= 10)
+            {
+                return v.ToString() + "<=(" + R._("10進数") + ")";
+            }
+            return "";
         }
         public static string GetBOOL(uint num)
         {
@@ -7063,6 +7231,142 @@ namespace FEBuilderGBA
             InputFormRef.ReColor(f);
         }
 
+        static bool IsWriteButton(Control c)
+        {
+            if (c is Button)
+            {
+                if (c.Name.IndexOf("WriteButton") >= 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static void UpdateAllTextID(uint textid)
+        {
+            foreach (var pair in Forms)
+            {
+                Form f = pair.Value.Form;
+                if (f.IsDisposed)
+                {
+                    continue;
+                }
+
+                //全てのコントロールの列挙
+                List<Control> controls = GetAllControls(f);
+
+                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
+                List<Button> buttonList = new List<Button>();
+                foreach (Control c in controls)
+                {
+                    if (IsWriteButton(c))
+                    {
+                        Button b = (Button)c;
+                        if (IsWriteButtonToYellow(b) == false)
+                        {//黄色くない書き込みボタンなので記録
+                            buttonList.Add(b);
+                        }
+                    }
+
+                    if (!(c is NumericUpDown))
+                    {
+                        continue;
+                    }
+                    if (!RegexCache.IsMatch(c.Name, "[W|D][0-9]+"))
+                    {
+                        continue;
+                    }
+
+                    NumericUpDown nup = (NumericUpDown)c;
+                    if (!nup.Hexadecimal)
+                    {
+                        continue;
+                    }
+
+                    uint value = (uint)nup.Value;
+                    if (value != textid)
+                    {
+                        continue;
+                    }
+                    //TextIDの中身が変わったので再設定することで、関連付けられたイベントを発動させる
+                    U.ForceUpdate(nup, nup.Value);
+                }
+
+                foreach (Button writeButton in buttonList)
+                {
+                    WriteButtonToYellow(writeButton, false);
+                }
+            }
+
+        }
+
+        public static void UpdateChangePointer(uint oldaddr, uint newaddr)
+        {
+            oldaddr = U.toPointer(oldaddr);
+            newaddr = U.toPointer(newaddr);
+
+            foreach (var pair in Forms)
+            {
+                Form f = pair.Value.Form;
+                if (f.IsDisposed)
+                {
+                    continue;
+                }
+
+                //全てのコントロールの列挙
+                List<Control> controls = GetAllControls(f);
+
+                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
+                List<Button> buttonList = new List<Button>();
+                foreach (Control c in controls)
+                {
+                    if (IsWriteButton(c))
+                    {
+                        Button b = (Button)c;
+                        if (IsWriteButtonToYellow(b) == false)
+                        {//黄色くない書き込みボタンなので記録
+                            buttonList.Add(b);
+                        }
+                    }
+
+                    if (! (c is NumericUpDown))
+                    {
+                        continue;
+                    }
+                    if (!RegexCache.IsMatch(c.Name, "[D|P][0-9]+"))
+                    {
+                        continue;
+                    }
+
+                    NumericUpDown nup = (NumericUpDown)c;
+                    if (! nup.Hexadecimal)
+                    {
+                        continue;
+                    }
+                    if (nup.Maximum <= 0xFFFF)
+                    {
+                        continue;
+                    }
+
+                    uint value = U.toPointer((uint)nup.Value);
+                    if (value != oldaddr)
+                    {
+                        continue;
+                    }
+
+                    //古いポインタが見つかったので、新しいのに書き換える.
+                    nup.Value = newaddr;
+                }
+
+                foreach (Button writeButton in buttonList)
+                {
+                    WriteButtonToYellow(writeButton, false);
+                }
+            }
+        }
+
         //フォームを表示する.
         class FormSt
         {
@@ -7123,6 +7427,23 @@ namespace FEBuilderGBA
                 return;
             }
             formst.Form.Close();
+        }
+
+        public static void ReOpenForm<Type>()
+        {
+            FormSt formst;
+            int hashCode = typeof(Type).GetHashCode();
+            if (!Forms.TryGetValue(hashCode, out formst)
+                || formst.Form.IsDisposed
+                )
+            {//存在しない
+            }
+            else
+            {
+                formst.Form.Close();
+            }
+
+            JumpForm<Type>();
         }
 
         static void OnCloseingCheckWriteConfirmation(object sender, FormClosingEventArgs e)
@@ -7205,7 +7526,7 @@ namespace FEBuilderGBA
             f.Show();
 
             ListBox addressList = null;
-            if (selectedID != U.NOT_FOUND || injectionCallback != null)
+            if (selectedID != U.NOT_FOUND)
             {
                 addressList = JumpFormInner(f, selectedID, AddressListName, injectionCallback);
             }
@@ -7419,61 +7740,6 @@ namespace FEBuilderGBA
             }
         }
 
-        //すべての NumericUpDownを再評価する
-        public static void UpdateAllNumericUpDown()
-        {
-            foreach (var pair in Forms)
-            {
-                Form f = pair.Value.Form;
-                if (f.IsDisposed)
-                {
-                    continue;
-                }
-
-                List<Control> controls = GetAllControls(f);
-
-                //既に黄色いボタンを消すわけにはいかないので、黄色がついていないボタンだけ得る.
-                List<Button> buttonList = new List<Button>();
-                foreach (Control info in controls)
-                {
-                    if (!(info is Button))
-                    {
-                        continue;
-                    }
-                    if (info.Name.IndexOf("WriteButton") >= 0)
-                    {
-                        Button writeButton = ((Button)info);
-                        if (! IsWriteButtonToYellow(writeButton))
-                        {
-                            buttonList.Add(writeButton);
-                        }
-                    }
-                }
-
-                foreach (Control info in controls)
-                {
-                    if (!(info is NumericUpDown))
-                    {
-                        continue;
-                    }
-                    string name = info.Name;
-                    if (name.IndexOf("ReadCount") >= 0
-                        || name.IndexOf("Address") >= 0)
-                    {
-                        continue;
-                    }
-
-                    NumericUpDown info_object = ((NumericUpDown)info);
-                    U.ForceUpdate(info_object, info_object.Value);
-                }
-
-                foreach (Button writeButton in buttonList)
-                {
-                    WriteButtonToYellow(writeButton, false);
-
-                }
-            }
-        }
 
 
         //タイトルバーにROM名を出す.
@@ -8003,6 +8269,12 @@ namespace FEBuilderGBA
                 ((Button)writeButton).PerformClick();
                 return true;
             }
+            writeButton = FindObject(prefix, controls, "WriteTextButton");
+            if (writeButton != null && writeButton is Button)
+            {
+                ((Button)writeButton).PerformClick();
+                return true;
+            }
 
             if (prefix == "")
             {
@@ -8024,6 +8296,12 @@ namespace FEBuilderGBA
                 return true;
             }
             writeButton = FindObject(prefix, controls, "PaletteWriteButton");
+            if (writeButton != null && writeButton is Button)
+            {
+                ((Button)writeButton).PerformClick();
+                return true;
+            }
+            writeButton = FindObject(prefix, controls, "WriteTextButton");
             if (writeButton != null && writeButton is Button)
             {
                 ((Button)writeButton).PerformClick();
@@ -8593,7 +8871,7 @@ namespace FEBuilderGBA
             uint newdatasize = (newdatacount + 1);
             uint olddatasize = this.DataCount;
 
-            if (newdatasize <= olddatasize)
+            if (newdatasize <= olddatasize + 2)
             {//拡張する必要がない.(現在のベースアドレスを返す.)
                 return this.BaseAddress;
             }
@@ -8633,7 +8911,7 @@ namespace FEBuilderGBA
             uint new_size = new_count * block_size;
             uint original_size = original_count * block_size;
 
-            //拡張領域から探す気はアライメントを 4 にして探します.
+            //拡張領域から探す時はアライメントを 4 にして探します.
             uint searchFreespaceSize = U.Padding4(new_size);
             bool use_ffffffff_term_data = false;
             if (original_count <= 0 && new_size >= 1024)
@@ -8680,24 +8958,25 @@ namespace FEBuilderGBA
                 //影響を受けるポインタサーチ
                 List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(orignal_addr);
 
+                if (movepointerlist.IndexOf(original_pointer) < 0)
+                {//元ポインターの書き換えが抜けているので追加する.
+                    movepointerlist.Add(original_pointer);
+                }
+
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
                     Program.ROM.write_u32(movepointerlist[i], U.toPointer(newFreeSapceAddr), undodata);
                 }
-                //元ポインターの書き換え(無駄かもしれないが念のため)
-                {
-                    Program.ROM.write_u32(original_pointer, U.toPointer(newFreeSapceAddr), undodata);
-                }
 
                 //データを新規領域にコピー.
-                undodata.list.Add(new Undo.UndoPostion(newFreeSapceAddr, original_size));
-                Program.ROM.write_range(newFreeSapceAddr, orignal_data);
+                Program.ROM.write_range(newFreeSapceAddr, orignal_data, undodata);
 
-                if (fillOption == ExpandsFillOption.FIRST)
+                if (fillOption == ExpandsFillOption.FIRST && new_size >= block_size)
                 {
                     //増やした部分は最初のデータで埋める.
                     byte[] first_data = Program.ROM.getBinaryData(orignal_addr, block_size);
+                    new_size -= block_size; //末尾は埋めてはいけない.
                     for (uint start = original_size; start < new_size; start += block_size)
                     {
                         Program.ROM.write_range(newFreeSapceAddr + start, first_data, undodata);
@@ -8709,15 +8988,13 @@ namespace FEBuilderGBA
 
                 //元データをクリアします.
                 byte[] fill = U.FillArray(original_size, 0x00);
-                undodata.list.Add(new Undo.UndoPostion(orignal_addr, original_size));
-                Program.ROM.write_range(orignal_addr, fill);
+                Program.ROM.write_range(orignal_addr, fill, undodata);
 
                 //オリジナルサイズが0で、ある程度の大きさのデータを確保するときは、
                 //広大な空きデータと間違われないために、明かな終端フラグ 0xFFFFFFFFを入れよう.
                 if (use_ffffffff_term_data)
                 {
-                    undodata.list.Add(new Undo.UndoPostion(newFreeSapceAddr + searchFreespaceSize - 4, 4));
-                    Program.ROM.write_u32(newFreeSapceAddr + new_size, 0xFFFFFFFF);
+                    Program.ROM.write_u32(newFreeSapceAddr + new_size, 0xFFFFFFFF , undodata);
                 }
 
                 return newFreeSapceAddr;
@@ -8935,7 +9212,7 @@ namespace FEBuilderGBA
         public uint WriteImageData10(NumericUpDown numObj, byte[] image, Undo.UndoData undodata, uint[] forceSeparationAddress = null)
         {
             uint addr = U.toOffset((uint)numObj.Value);
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!CheckZeroAddressWrite(addr))
             {
                 return U.NOT_FOUND;
             }
@@ -9002,11 +9279,12 @@ namespace FEBuilderGBA
             }
             return true;
         }
+
         public static void WriteOnePointer(uint pointer, NumericUpDown numObj, Undo.UndoData undodata)
         {
             uint addr = U.toOffset(pointer);
             if (!U.CheckZeroAddressWrite(addr))
-            {
+            {//ポインタなので、 CheckZeroAddressWriteHighは無理.
                 return;
             }
 
@@ -9172,7 +9450,7 @@ namespace FEBuilderGBA
             write_pointer_value = U.toPointer(write_pointer_value);
 
             if (!U.CheckZeroAddressWrite(write_addr))
-            {
+            {//ポインタなので CheckZeroAddressWriteHighは過剰
                 return;
             }
 
@@ -9617,11 +9895,12 @@ namespace FEBuilderGBA
             Program.ROM.write_u32(data_offset - 4, (uint)count);
         }
 
+        public const uint NO_CACHE = 0xff;
         public enum SpecialHack_enum
         {
             No
             ,MoDUPS  //FE6でマップデータの形式が拡張されているパッチ
-            , NoCache = 0xff
+            , NoCache = (int)NO_CACHE
         }
         static SpecialHack_enum g_SpecialHack = SpecialHack_enum.NoCache;
         public static SpecialHack_enum SearchSpecialHack()
@@ -9653,7 +9932,7 @@ namespace FEBuilderGBA
            , yugudora       //for FE8J   FE8Nのカスタマイズ
            , midori         //for FE8J   初期から独自スキルを実装していた拡張
            , SkillSystem    //for FE8U
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static skill_system_enum g_Cache_skill_system_enum = skill_system_enum.NoCache;
         public static skill_system_enum SearchSkillSystem()
@@ -9666,47 +9945,27 @@ namespace FEBuilderGBA
         }
         static skill_system_enum SearchSkillSystemLow()
         {
-            string filename = U.ConfigDataFilename("skill_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="yugudora",	ver = "FE8J", addr = 0xEE594,data = new byte[]{0x4B ,0xFA ,0x2F ,0x59}},
+                new PatchTableSt{ name="FE8N",	ver = "FE8J", addr = 0x89268,data = new byte[]{0x00 ,0x4B ,0x9F ,0x46}},
+                new PatchTableSt{ name="midori",	ver = "FE8J", addr = 0xFE58E0,data = new byte[]{0x05 ,0x1C ,0x00 ,0xF0 ,0x25 ,0xF8 ,0x01 ,0x29 ,0x04 ,0xD0 ,0x28 ,0x1C ,0x00 ,0xF0 ,0x28 ,0xF8}},
+                new PatchTableSt{ name="SkillSystem",	ver = "FE8U", addr = 0x2ACF8,data = new byte[]{0x70 ,0x47}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                return skill_system_enum.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "FE8N")
+                if (t.name == "FE8N")
                 {
                     if (SkillConfigFE8NVer2SkillForm.IsFE8NVer2())
                     {
@@ -9714,15 +9973,15 @@ namespace FEBuilderGBA
                     }
                     return skill_system_enum.FE8N;
                 }
-                if (sp[0] == "yugudora")
+                if (t.name == "yugudora")
                 {
                     return skill_system_enum.yugudora;
                 }
-                if (sp[0] == "midori")
+                if (t.name == "midori")
                 {
                     return skill_system_enum.midori;
                 }
-                if (sp[0] == "SkillSystem")
+                if (t.name == "SkillSystem")
                 {
                     return skill_system_enum.SkillSystem;
                 }
@@ -9735,7 +9994,7 @@ namespace FEBuilderGBA
         {
              NO             //なし
            , SkillSystems_Rework          //for FE8U
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static class_type_enum g_Cache_class_type_enum = class_type_enum.NoCache;
         public static class_type_enum SearchClassType()
@@ -9779,7 +10038,7 @@ namespace FEBuilderGBA
            , DrawMultiByte  //FE7U/FE8Uに日本語を描画するパッチ
            , DrawSingleByte //FE7J/FE8Uに英語を描画するパッチ
            , DrawUTF8       //FE8UにUTF-8を描画するパッチ
-           , NoCache = 0xff
+           , NoCache = (int)NO_CACHE
         };
         //DrawFontPatch(DrawMultiByte/DrawSingleByte)の判別.
         static draw_font_enum g_Cache_draw_font_enum = draw_font_enum.NoCache;
@@ -9791,57 +10050,47 @@ namespace FEBuilderGBA
             }
             return g_Cache_draw_font_enum;
         }
+        public struct PatchTableSt
+        {
+            public string name;
+            public string ver;
+            public uint addr;
+            public byte[] data;
+        };
         public static draw_font_enum SearchDrawFontPatch(ROM rom)
         {
-            string filename = U.ConfigDataFilename("draw_font_extends_");
-            if (!U.IsRequiredFileExist(filename))
-            {
-                return draw_font_enum.NO;
-            }
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="DrawSingle",	ver = "FE7J", addr = 0x56e2,data = new byte[]{0x00, 0x00, 0x00, 0x49, 0x8F, 0x46}},
+                new PatchTableSt{ name="DrawSingle",	ver = "FE8J", addr = 0x40c2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x49 ,0x8F ,0x46}},
+                new PatchTableSt{ name="DrawMulti",	ver = "FE7U", addr = 0x5BD6,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x9F ,0x46}},
+                new PatchTableSt{ name="DrawMulti",	ver = "FE8U", addr = 0x44D2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x49 ,0x8F ,0x46}},
+                new PatchTableSt{ name="DrawUTF8",	ver = "FE7U", addr = 0x5B6A,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x18 ,0x47}},
+                new PatchTableSt{ name="DrawUTF8",	ver = "FE8U", addr = 0x44D2,data = new byte[]{0x00 ,0x00 ,0x00 ,0x4B ,0x18 ,0x47}},
+            };
 
-            string[] lines = File.ReadAllLines(filename);
-            string version = rom.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
+            string version = rom.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                if (U.IsComment(lines[i]))
+                if (t.ver != version)
                 {
                     continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    continue;
-                }
-
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
                 }
 
                 //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = rom.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = rom.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
-                if (sp[0] == "DrawSingle")
+                if (t.name == "DrawSingle")
                 {
                     return draw_font_enum.DrawSingleByte;
                 }
-                if (sp[0] == "DrawMulti")
+                if (t.name == "DrawMulti")
                 {
                     return draw_font_enum.DrawMultiByte;
                 }
-                if (sp[0] == "DrawUTF8")
+                if (t.name == "DrawUTF8")
                 {
                     return draw_font_enum.DrawUTF8;
                 }
@@ -9924,14 +10173,41 @@ namespace FEBuilderGBA
             {
                 return false;
             }
+            //C48だけはNOT条件です
             uint a = Program.ROM.u32(address);
-            return (a == check_value);
+            return (a != check_value);
         }
         //sound16trackパッチの判別.
         public static bool Search16tracks12soundsPatch()
         {
             uint check_value;
             uint address = Program.ROM.RomInfo.patch_16_tracks_12_sounds(out check_value);
+            if (address == 0)
+            {
+                return false;
+            }
+            uint a = Program.ROM.u32(address);
+            return (a == check_value);
+        }
+
+        //StairsHack
+        public static bool SearchStairsHackPatch()
+        {
+            uint check_value;
+            uint address = Program.ROM.RomInfo.patch_stairs_hack(out check_value);
+            if (address == 0)
+            {
+                return false;
+            }
+            uint a = Program.ROM.u32(address);
+            return (a == check_value);
+        }
+
+        //UnitActionRework
+        public static bool SearchUnitActionReworkPatch()
+        {
+            uint check_value;
+            uint address = Program.ROM.RomInfo.patch_unitaction_rework_hack(out check_value);
             if (address == 0)
             {
                 return false;
@@ -9991,43 +10267,27 @@ namespace FEBuilderGBA
         //武器魔法を同時に利用できるパッチの判別.
         public static bool SearchMeleeAndMagicFixPatch()
         {
-            string filename = U.ConfigDataFilename("melee_and_magic_fix_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="GIRLS",	ver = "FE8J", addr = 0x18752,data = new byte[]{0x18}},
+                new PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8J", addr = 0x1876C,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7J", addr = 0x188CC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8U", addr = 0x18A58,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                //new PatchTableSt{ name="UnkMeleeAndMagicFix",	ver = "FE8U", addr = 0x87852,data = new byte[]{0x60 ,0xB4 ,0x00 ,0x26}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7U", addr = 0x184DC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE6", addr = 0x18188,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
             {
-                return false;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
@@ -10035,7 +10295,53 @@ namespace FEBuilderGBA
             }
             return false;
         }
-        //タイルをテキストから自動生成するパッチがあるか判別.
+
+        //指南パッチの設定アドレスの場所
+        static uint g_Cache_shinan_table = NO_CACHE;
+        public static uint SearchShinanTablePatch()
+        {
+            if (g_Cache_shinan_table == NO_CACHE)
+            {
+                g_Cache_shinan_table = SearchShinanTablePatchLow();
+            }
+            return g_Cache_shinan_table;
+        }
+        static uint SearchShinanTablePatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Shinan",	ver = "FE8J", addr = 0xDB000,data = new byte[]{0x00,0xB5,0xC0,0x46,0x06,0x48,0xC0,0x46,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x00,0xF0,0x02,0xF8,0x17,0x20,0x00,0xBD,0xC0,0x46,0x02,0x4B,0x9F,0x46}},
+                new PatchTableSt{ name="ShinanEA",	ver = "FE8J", addr = 0xDB000,data = new byte[]{0x00,0xB5,0x26,0x20,0x07,0x4B,0x9E,0x46,0x00,0xF8,0x09,0x48,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x05,0x4B,0x9E,0x46,0x00,0xF8,0x17,0x20,0x02,0xBC,0x08,0x47,0x00,0x00,0xA8,0x60,0x08,0x08,0xEC,0xBC,0x02,0x02,0x40,0xD3,0x00,0x08}},
+                new PatchTableSt{ name="Shinan",	ver = "FE8U", addr = 0xDB000,data = new byte[]{0x00,0xB5,0xC0,0x46,0x06,0x48,0xC0,0x46,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x00,0xF0,0x02,0xF8,0x17,0x20,0x00,0xBD,0xC0,0x46,0x02,0x4B,0x9F,0x46}},
+                new PatchTableSt{ name="ShinanEA",	ver = "FE8U", addr = 0xDB000,data = new byte[]{0x00,0xB5,0x26,0x20,0x07,0x4B,0x9E,0x46,0x00,0xF8,0x09,0x48,0x06,0x49,0x89,0x7B,0x89,0x00,0x40,0x58,0x01,0x21,0x05,0x4B,0x9E,0x46,0x00,0xF8,0x17,0x20,0x02,0xBC,0x08,0x47,0x00,0x00,0x80,0x3D,0x08,0x08,0xF0,0xBC,0x02,0x02,0x7C,0xD0,0x00,0x08}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                uint addr = U.GrepEnd(Program.ROM.Data, t.data, t.addr, 0, 4, 0 ,true);
+                if (addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (! U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+                addr = Program.ROM.p32(addr);
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+                return U.toOffset(addr);
+            }
+            return U.NOT_FOUND;
+        }
+        //タイトルをテキストから自動生成するパッチがあるか判別.
         public static bool SearchChaptorNamesAsTextFixPatch()
         {
             uint check_value;
@@ -10053,7 +10359,7 @@ namespace FEBuilderGBA
              NO             //なし
            , MUG_EXCEED     //tikiの顔画像拡張
            , HALFBODY       //上半身表示拡張
-           , NoCache = 0xFF
+           , NoCache = (int)NO_CACHE
         };
         static portrait_extends g_Cache_portrait_extends = portrait_extends.NoCache;
         public static portrait_extends SearchPortraitExtends()
@@ -10066,58 +10372,105 @@ namespace FEBuilderGBA
         }
         static portrait_extends SearchPortraitExtendsLow()
         {
-            string filename = U.ConfigDataFilename("portrait_extends_");
-            if (!U.IsRequiredFileExist(filename))
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE8J", addr = 0x54da,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE8U", addr = 0x55D2,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE7U", addr = 0x6BCA,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="MUG_EXCEED",	ver = "FE7J", addr = 0x6A5A,data = new byte[]{0xC0 ,0x46 ,0x01 ,0xB0 ,0x03 ,0x4B}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8U", addr = 0x8540,data = new byte[]{0x0A ,0x1C}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8J", addr = 0x843C,data = new byte[]{0x0A ,0x1C}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8U", addr = 0x8540,data = new byte[]{0x01 ,0x3A}},
+                new PatchTableSt{ name="HALFBODY",	ver = "FE8J", addr = 0x843C,data = new byte[]{0x01 ,0x3A}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach(PatchTableSt t in table)
             {
-                return portrait_extends.NO;
-            }
-
-            string[] lines = File.ReadAllLines(filename);
-            string version = Program.ROM.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
+                if (t.ver != version)
                 {
                     continue;
                 }
 
-                string[] hexStrings = sp[3].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //チェック開始アドレス
-                uint start = U.atoh(sp[2]);
-
-                byte[] data = Program.ROM.getBinaryData(start, need.Length);
-                if (U.memcmp(need, data) != 0)
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
                 {
                     continue;
                 }
 
-                if (sp[0] == "MUG_EXCEED")
+                if (t.name == "MUG_EXCEED")
                 {
                     return portrait_extends.MUG_EXCEED;
                 }
-                if (sp[0] == "HALFBODY")
+                if (t.name == "HALFBODY")
                 {
                     return portrait_extends.HALFBODY;
                 }
             }
             return portrait_extends.NO;
         }
+
+        //顔画像拡張システム.
+        public enum itemicon_extends
+        {
+             NO             //なし
+           , IconExpands    //FEまで拡張
+           , SkillSystems   //SkillSystems
+           , NoCache = (int)NO_CACHE
+        };
+        static itemicon_extends g_Cache_itemicon_extends = itemicon_extends.NoCache;
+        public static itemicon_extends SearchItemIconExtends()
+        {
+            if (g_Cache_itemicon_extends == itemicon_extends.NoCache)
+            {
+                g_Cache_itemicon_extends = SearchItemIconExpandsPatchLow();
+            }
+            return g_Cache_itemicon_extends;
+        }
+        public static bool SearchIconExpandsPatch()
+        {
+            return SearchItemIconExtends() != itemicon_extends.NO;
+        }
+        public struct PatchItemIconExpandsSt
+        {
+            public string name;
+            public string ver;
+            public uint addr;
+            public byte[] data;
+        };
+        public static itemicon_extends SearchItemIconExpandsPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="IconExpands",	ver = "FE8J", addr = 0x34FC,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
+                new PatchTableSt{ name="IconExpands",	ver = "FE8U", addr = 0x35B0,data = new byte[]{0xFE, 0x01, 0x00, 0x01, 0x90, 0x6E, 0x02, 0x02}},
+                new PatchTableSt{ name="SkillSystems",	ver = "FE8U", addr = 0x3586,data = new byte[]{0x03, 0x4C, 0x00, 0xF0, 0x03, 0xF8, 0x10, 0xBC, 0x02, 0xBC, 0x08, 0x47, 0x20, 0x47}},
+            };
+            
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "IconExpands")
+                {
+                    return itemicon_extends.IconExpands;
+                }
+                if (t.name == "SkillSystems")
+                {
+                    return itemicon_extends.SkillSystems;
+                }
+            }
+            return itemicon_extends.NO;
+        }
+
 
         public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
         {
@@ -10437,7 +10790,42 @@ namespace FEBuilderGBA
             }
             else if (str == "@MAPSETTING_ID")
             {
-                str = R._("マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n");
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    str = R._("章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
+                }
+                else
+                {
+                    str = R._("章タイトル画像を表示するためのIDです。");
+                }
+            }
+            else if (str == "@MAPSETTING_ID2")
+            {
+                if (Program.ROM.RomInfo.version() >= 8)
+                {
+                    str = R._("前作の残骸です。利用されません。");
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDです。");
+                }
+                else if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDですが、\r\nFE7Uではテキスト形式のデータを利用するため、利用されません。");
+                }
+                else
+                {
+                    str = R._("ヘクトル編の章タイトル画像を表示するためのIDです。");
+                }
+            }
+            else if (str == "@MAPSETTING_PREP_SCREEN_BOOL")
+            {
+                if (Program.ROM.RomInfo.version() >= 8)
+                {
+                    str = R._("前作の残骸です。利用されません。");
+                    str = str + "\r\n" + R._("以前は、進撃準備画面を利用するかどうかの判定に利用されていました。");
+                }
+                else
+                {
+                    str = R._("進撃準備画面を利用するかどうかのbool値です。\r\n0の場合、進撃準備画面は利用されません。\r\n1の場合、進撃準備画面が利用されます。");
+                }
             }
             else if (str == "@UNIT_ID")
             {
@@ -10471,7 +10859,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@EVENTTYPE")
             {
-                str = R._("イベントの種類を定義します。\r\n必ず所定の値を設定してください。\r\nまた、0x00を指定した場合は、イベントリストの終端と扱われます。\r\n");
+                str = R._("イベントの種類を定義します。\r\n必ず所定の値を設定してください。\r\n終端にする場合は、0x00を設定し、フラグにも、0x00を設定してください。");
             }
             else if (str == "@MAPOBJECTTYPE")
             {
@@ -10544,10 +10932,6 @@ namespace FEBuilderGBA
                 {
                     str += R._("この値は、ワールドマップイベントテーブルへのIDです。");
                 }
-            }
-            else if (str == "@MAPSETTING_ID")
-            {
-                str = R._("マップIDです。\r\n通常は、混乱を避けるため、リストにある順番通りの順番を指定します。\r\n");
             }
             else if (str == "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY")
             {
@@ -10838,6 +11222,26 @@ namespace FEBuilderGBA
             {
                 str = R._("そのゲーム専用の翻訳データがあれば指定してください。\r\n");
             }
+            else if (str == "@SOUNDROOM_SOUNGTIME")
+            {
+                str = R._("曲の長さは、ランダム再生時に利用されます。\r\n時間はミリ秒で指定します。\r\nただし内部ではフレーム秒で処理され端数は切り捨てられます。\r\n指定した時間に達すると曲がフェードアウトし、次の曲に切り替わります。");
+            }
+            else if (str == "@EXPLAIN_UNITICON_SYSTEM_PALETTE")
+            {
+                str = R._("ユニットのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全ユニット共通になるので注意してください。");
+            }
+            else if (str == "@EXPLAIN_ITEMICON_SYSTEM_PALETTE")
+            {
+                str = R._("アイテムのパレットを変更はシステムアイコンから行えます。\r\nただし、パレットは全アイテム共通になるので注意してください。");
+            }
+            else if (str == "@OP_CLASSDEMO_BATTLEANIME_PALETTE")
+            {
+                str = R._("指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。");
+            }
+            else if (str == "@OP_CLASSDEMO_BATTLEANIME")
+            {
+                str = R._("指定したID+1の戦闘アニメで描画されます。");
+            }
             else
             {
                 //未定義のヒント
@@ -11087,6 +11491,9 @@ namespace FEBuilderGBA
             listbox.ContextMenu = contextMenu;
         }
 
+        //削除を使える
+        bool UseMenuDeleteAction = false;
+
         public void MakeGeneralAddressListContextMenu(bool useUpDown = true, bool useClear = false, KeyEventHandler keyDown = null)
         {
             ContextMenu contextMenu = new System.Windows.Forms.ContextMenu();
@@ -11115,6 +11522,16 @@ namespace FEBuilderGBA
                 menuItem = new MenuItem(R._("↓データ入れ替え(Ctrl + Alt + Down)"));
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
+
+                menuItem = new MenuItem("-");
+                contextMenu.MenuItems.Add(menuItem);
+
+                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
+                contextMenu.MenuItems.Add(menuItem);
+                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
+                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
+                contextMenu.MenuItems.Add(menuItem);
             }
             if (useClear)
             {
@@ -11124,6 +11541,8 @@ namespace FEBuilderGBA
                 menuItem = new MenuItem(R._("無効化する(DEL)"));
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Delete));
                 contextMenu.MenuItems.Add(menuItem);
+
+                this.UseMenuDeleteAction = true;
             }
 
             this.AddressList.ContextMenu = contextMenu;

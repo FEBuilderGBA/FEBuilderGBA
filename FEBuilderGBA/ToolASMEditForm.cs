@@ -45,6 +45,8 @@ namespace FEBuilderGBA
 
         public void Init(DisASMInnerControl callbackWindow, string code)
         {
+            code = code.Trim();
+
             this.EditAddr = U.atoh(code);
             this.CallbackASMForm = callbackWindow;
 

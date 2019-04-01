@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ケセルダ
 NAME.en=OP Anime Face: Caellach
-NAME.zh=OPANIME_FACE_ Keserda
+NAME.zh=OP动画_脸_凯瑟达
 
 TYPE=IMAGE
 TAG=#IMAGE

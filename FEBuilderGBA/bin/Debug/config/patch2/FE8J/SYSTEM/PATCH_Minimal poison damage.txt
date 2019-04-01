@@ -1,6 +1,6 @@
-﻿
+
 NAME=最低毒ダメージ
-NAME.en=Poison Damage Amount
+NAME.en=Minimum Poison Damage
 
 
 //アドレスパッチとして実装します
@@ -15,7 +15,7 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 INFO=毒で受けるダメージを変更します。\r\nFEはHPが少ないゲームなので、ダメージ数を増やすと、序盤では毒が脅威になります。
-INFO.en=Changes the amount of damage dealt per turn by the poison status condition.\r\nSince FE is a game with few HP, increasing the number of damage will make poison a threat at the beginning.
+INFO.en=Sets the minimum amount of damage dealt per turn by the poison status condition.\r\nSetting high numbers can make poison especially dangerous during the early game.
 NAME.zh=最低毒伤害
 INFO.zh=我会改变毒药受到的伤害。\r\nFE是一款HP几乎没有的游戏，因此增加伤害次数会在开始时对毒药构成威胁。
 

@@ -103,6 +103,7 @@
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -135,6 +136,9 @@
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.UnitCustomBattleAnime = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ToolUseFlagButton = new System.Windows.Forms.Button();
+            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.TacticianAffinity = new System.Windows.Forms.Button();
             this.SoundRoomCGButton = new System.Windows.Forms.Button();
             this.AIPerformStaffButton = new System.Windows.Forms.Button();
@@ -193,8 +197,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.GameOptionButton = new System.Windows.Forms.Button();
-            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -829,6 +832,7 @@
             this.EmulatorMemoryToolStripMenuItem,
             this.LogToolStripMenuItem,
             this.toolStripSeparatorEx2,
+            this.ToolUseFlagStripMenuItem6,
             this.FlagNameToolStripMenuItem,
             this.ExportEAEventToolStripMenuItem,
             this.toolStripSeparatorEx3,
@@ -908,6 +912,13 @@
             // 
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
             this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
+            // 
+            // ToolUseFlagStripMenuItem6
+            // 
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
             // 
             // FlagNameToolStripMenuItem
             // 
@@ -1134,7 +1145,7 @@
             // 
             // PatchButton
             // 
-            this.PatchButton.Location = new System.Drawing.Point(2, 591);
+            this.PatchButton.Location = new System.Drawing.Point(2, 624);
             this.PatchButton.Margin = new System.Windows.Forms.Padding(2);
             this.PatchButton.Name = "PatchButton";
             this.PatchButton.Size = new System.Drawing.Size(200, 36);
@@ -1189,6 +1200,8 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
+            this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
             this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.TacticianAffinity);
@@ -1301,8 +1314,41 @@
             this.ControlPanel.Location = new System.Drawing.Point(0, 74);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1623, 682);
+            this.ControlPanel.Size = new System.Drawing.Size(1623, 716);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // ToolUseFlagButton
+            // 
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(1016, 584);
+            this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ToolUseFlagButton.Name = "ToolUseFlagButton";
+            this.ToolUseFlagButton.Size = new System.Drawing.Size(200, 36);
+            this.ToolUseFlagButton.TabIndex = 137;
+            this.ToolUseFlagButton.Text = "利用フラグ一覧";
+            this.ToolUseFlagButton.UseVisualStyleBackColor = true;
+            this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
+            // 
+            // GameOptionOrderButton
+            // 
+            this.GameOptionOrderButton.Location = new System.Drawing.Point(1423, 372);
+            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
+            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionOrderButton.TabIndex = 136;
+            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
+            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
+            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            // 
+            // GameOptionButton
+            // 
+            this.GameOptionButton.Location = new System.Drawing.Point(1423, 336);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 135;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // TacticianAffinity
             // 
@@ -1361,7 +1407,7 @@
             // 
             // ToolProblemReportToolButton
             // 
-            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1216, 580);
+            this.ToolProblemReportToolButton.Location = new System.Drawing.Point(1216, 620);
             this.ToolProblemReportToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ToolProblemReportToolButton.Name = "ToolProblemReportToolButton";
             this.ToolProblemReportToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1372,7 +1418,7 @@
             // 
             // ROMRebuildButton
             // 
-            this.ROMRebuildButton.Location = new System.Drawing.Point(1420, 580);
+            this.ROMRebuildButton.Location = new System.Drawing.Point(1420, 620);
             this.ROMRebuildButton.Margin = new System.Windows.Forms.Padding(2);
             this.ROMRebuildButton.Name = "ROMRebuildButton";
             this.ROMRebuildButton.Size = new System.Drawing.Size(200, 36);
@@ -1427,7 +1473,7 @@
             // 
             // FlagNameToolButton
             // 
-            this.FlagNameToolButton.Location = new System.Drawing.Point(1216, 472);
+            this.FlagNameToolButton.Location = new System.Drawing.Point(1016, 620);
             this.FlagNameToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.FlagNameToolButton.Name = "FlagNameToolButton";
             this.FlagNameToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1438,7 +1484,7 @@
             // 
             // ExportEAEventToolButton
             // 
-            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1216, 510);
+            this.ExportEAEventToolButton.Location = new System.Drawing.Point(1216, 550);
             this.ExportEAEventToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExportEAEventToolButton.Name = "ExportEAEventToolButton";
             this.ExportEAEventToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1449,7 +1495,7 @@
             // 
             // EmulatorMemoryToolButton
             // 
-            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1216, 546);
+            this.EmulatorMemoryToolButton.Location = new System.Drawing.Point(1216, 586);
             this.EmulatorMemoryToolButton.Margin = new System.Windows.Forms.Padding(4);
             this.EmulatorMemoryToolButton.Name = "EmulatorMemoryToolButton";
             this.EmulatorMemoryToolButton.Size = new System.Drawing.Size(200, 36);
@@ -1461,7 +1507,7 @@
             // Patch0
             // 
             this.Patch0.AutoEllipsis = true;
-            this.Patch0.Location = new System.Drawing.Point(2, 632);
+            this.Patch0.Location = new System.Drawing.Point(2, 665);
             this.Patch0.Margin = new System.Windows.Forms.Padding(2);
             this.Patch0.Name = "Patch0";
             this.Patch0.Size = new System.Drawing.Size(200, 36);
@@ -1471,7 +1517,7 @@
             // 
             // PatchResult
             // 
-            this.PatchResult.Location = new System.Drawing.Point(8, 606);
+            this.PatchResult.Location = new System.Drawing.Point(8, 639);
             this.PatchResult.Name = "PatchResult";
             this.PatchResult.Size = new System.Drawing.Size(1209, 22);
             this.PatchResult.TabIndex = 96;
@@ -1482,7 +1528,7 @@
             // Patch7
             // 
             this.Patch7.AutoEllipsis = true;
-            this.Patch7.Location = new System.Drawing.Point(1424, 632);
+            this.Patch7.Location = new System.Drawing.Point(1424, 665);
             this.Patch7.Margin = new System.Windows.Forms.Padding(2);
             this.Patch7.Name = "Patch7";
             this.Patch7.Size = new System.Drawing.Size(200, 36);
@@ -1493,7 +1539,7 @@
             // Patch5
             // 
             this.Patch5.AutoEllipsis = true;
-            this.Patch5.Location = new System.Drawing.Point(1023, 632);
+            this.Patch5.Location = new System.Drawing.Point(1023, 665);
             this.Patch5.Margin = new System.Windows.Forms.Padding(2);
             this.Patch5.Name = "Patch5";
             this.Patch5.Size = new System.Drawing.Size(190, 36);
@@ -1504,7 +1550,7 @@
             // Patch6
             // 
             this.Patch6.AutoEllipsis = true;
-            this.Patch6.Location = new System.Drawing.Point(1220, 632);
+            this.Patch6.Location = new System.Drawing.Point(1220, 665);
             this.Patch6.Margin = new System.Windows.Forms.Padding(2);
             this.Patch6.Name = "Patch6";
             this.Patch6.Size = new System.Drawing.Size(200, 36);
@@ -1515,7 +1561,7 @@
             // Patch1
             // 
             this.Patch1.AutoEllipsis = true;
-            this.Patch1.Location = new System.Drawing.Point(208, 632);
+            this.Patch1.Location = new System.Drawing.Point(208, 665);
             this.Patch1.Margin = new System.Windows.Forms.Padding(2);
             this.Patch1.Name = "Patch1";
             this.Patch1.Size = new System.Drawing.Size(200, 36);
@@ -1526,7 +1572,7 @@
             // Patch4
             // 
             this.Patch4.AutoEllipsis = true;
-            this.Patch4.Location = new System.Drawing.Point(818, 632);
+            this.Patch4.Location = new System.Drawing.Point(818, 665);
             this.Patch4.Margin = new System.Windows.Forms.Padding(2);
             this.Patch4.Name = "Patch4";
             this.Patch4.Size = new System.Drawing.Size(200, 36);
@@ -1537,7 +1583,7 @@
             // Patch2
             // 
             this.Patch2.AutoEllipsis = true;
-            this.Patch2.Location = new System.Drawing.Point(410, 632);
+            this.Patch2.Location = new System.Drawing.Point(410, 665);
             this.Patch2.Margin = new System.Windows.Forms.Padding(2);
             this.Patch2.Name = "Patch2";
             this.Patch2.Size = new System.Drawing.Size(200, 36);
@@ -1548,7 +1594,7 @@
             // Patch3
             // 
             this.Patch3.AutoEllipsis = true;
-            this.Patch3.Location = new System.Drawing.Point(614, 632);
+            this.Patch3.Location = new System.Drawing.Point(614, 665);
             this.Patch3.Margin = new System.Windows.Forms.Padding(2);
             this.Patch3.Name = "Patch3";
             this.Patch3.Size = new System.Drawing.Size(200, 36);
@@ -1658,7 +1704,7 @@
             // 
             // WelcomeDialogButton
             // 
-            this.WelcomeDialogButton.Location = new System.Drawing.Point(1422, 472);
+            this.WelcomeDialogButton.Location = new System.Drawing.Point(1422, 512);
             this.WelcomeDialogButton.Margin = new System.Windows.Forms.Padding(4);
             this.WelcomeDialogButton.Name = "WelcomeDialogButton";
             this.WelcomeDialogButton.Size = new System.Drawing.Size(202, 36);
@@ -1867,7 +1913,7 @@
             // 
             // MainSimpleMenuImageSubButton
             // 
-            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1420, 508);
+            this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1420, 548);
             this.MainSimpleMenuImageSubButton.Margin = new System.Windows.Forms.Padding(4);
             this.MainSimpleMenuImageSubButton.Name = "MainSimpleMenuImageSubButton";
             this.MainSimpleMenuImageSubButton.Size = new System.Drawing.Size(202, 36);
@@ -1900,7 +1946,7 @@
             // 
             // SimpleMenuButton
             // 
-            this.SimpleMenuButton.Location = new System.Drawing.Point(1420, 544);
+            this.SimpleMenuButton.Location = new System.Drawing.Point(1420, 584);
             this.SimpleMenuButton.Margin = new System.Windows.Forms.Padding(2);
             this.SimpleMenuButton.Name = "SimpleMenuButton";
             this.SimpleMenuButton.Size = new System.Drawing.Size(202, 36);
@@ -1942,34 +1988,23 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // GameOptionButton
+            // UnitActionPointerButton
             // 
-            this.GameOptionButton.Location = new System.Drawing.Point(1423, 336);
-            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionButton.Name = "GameOptionButton";
-            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionButton.TabIndex = 135;
-            this.GameOptionButton.Text = "ゲームオプション";
-            this.GameOptionButton.UseVisualStyleBackColor = true;
-            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
-            // 
-            // GameOptionOrderButton
-            // 
-            this.GameOptionOrderButton.Location = new System.Drawing.Point(1423, 372);
-            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
-            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionOrderButton.TabIndex = 136;
-            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
-            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
-            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 581);
+            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
+            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitActionPointerButton.TabIndex = 138;
+            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
+            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
+            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
             // 
             // MainFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1631, 748);
+            this.ClientSize = new System.Drawing.Size(1631, 780);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);
@@ -2159,5 +2194,8 @@
         private System.Windows.Forms.Button TacticianAffinity;
         private System.Windows.Forms.Button GameOptionButton;
         private System.Windows.Forms.Button GameOptionOrderButton;
+        private System.Windows.Forms.Button ToolUseFlagButton;
+        private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
+        private System.Windows.Forms.Button UnitActionPointerButton;
     }
 }

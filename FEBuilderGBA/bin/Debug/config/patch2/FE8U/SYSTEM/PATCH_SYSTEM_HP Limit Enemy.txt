@@ -1,6 +1,6 @@
 NAME=HP上限 敵軍
 NAME.en=Foe HP Limit
-NAME.zh=惠普上限敌军
+NAME.zh=敌军HP上限
 
 //アドレスパッチとして実装します
 TYPE=ADDR

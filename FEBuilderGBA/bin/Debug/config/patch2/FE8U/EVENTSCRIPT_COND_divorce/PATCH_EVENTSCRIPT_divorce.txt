@@ -1,6 +1,6 @@
 NAME=操作しているキャラの保持している支援をすべて消します
 NAME.en=Add Event: Remove Support/Divorce
-NAME.zh=关闭援助离婚
+NAME.zh=事件命令_消除支援
 
 TYPE=BIN
 TAG=#EVENT
@@ -12,7 +12,7 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0xC0 0x46 0x18 0x48 0x05 0x68 0x32 0x24 0x28 0x5D 0x
 BIN:$FREEAREA:1=wakaresaseya_run_divorce.bin
 
 INFO=操作キャラから支援をすべて消します. 被支援キャラからも自動的に消えます.
-INFO.zh=删除操作角色的所有支持。它会自动从支持的字符中消失。
+INFO.zh=从操作角色的支援全部消除，从支援角色也会自动地消失.
 INFO.en=Patches the ROM with a callable event that erases all supports from a designated character.\r\n
 
 AUTHOR=怪盗パッチ 7743

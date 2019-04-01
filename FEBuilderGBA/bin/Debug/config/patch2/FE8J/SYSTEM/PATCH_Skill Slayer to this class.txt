@@ -1,5 +1,5 @@
 NAME=スキル魔物特効_このクラスから
-NAME.en=Skill Slayer from this class
+NAME.en=Slayer Skill First Class
 NAME.zh=技能魔物特效_这个职业前
 
 //アドレスパッチとして実装します

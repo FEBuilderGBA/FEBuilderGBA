@@ -1,5 +1,5 @@
-﻿NAME=瞬殺率_対経験値ゼロ特性持ちの瞬殺率
-NAME.en=Skill Silencer activation rate on Exp 0 Units
+NAME=瞬殺率_対経験値ゼロ特性持ちの瞬殺率
+NAME.en=Silencer Activation Rate vs Exp 0
 
 
 //アドレスパッチとして実装します
@@ -20,5 +20,5 @@ AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:
 
 
 INFO=経験値ゼロの特性を持っている敵に対する瞬殺率を設定します。\r\n設定する値は、クリティカルヒットが瞬殺になる確率です。
-INFO.en=Changes the activation chance for the Silencer ability against units worth no experience points.\r\nThe number given is the chance of a critical hit being converted into a Silencer hit.
+INFO.en=Modifies the Silencer activation rate vs Exp 0 foes in decimal digits.\r\nNumber = % chance of critical becoming Silencer.\r\n
 INFO.zh=为经验值为零的敌人设置瞬时速率。\r\n要设置的值是一次致命一击是瞬发击杀的概率。

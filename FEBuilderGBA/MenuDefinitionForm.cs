@@ -212,10 +212,12 @@ namespace FEBuilderGBA
                     , FEBuilderGBA.Address.DataTypeEnum.ASM);
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        //エラーチェック
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             uint[] pointers = GetPointers();
 
+            InputFormRef InputFormRef = Init(null);
             for (int n = 0; n < pointers.Length; n++)
             {
                 if (pointers[n] == 0)
@@ -223,7 +225,53 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                InputFormRef InputFormRef = Init(null);
+                InputFormRef.ReInitPointer(pointers[n]);
+                uint p = InputFormRef.BaseAddress;
+                for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+                {
+                    string name = "MenuDef" + i + "_";
+                    uint paddr;
+
+                    paddr = Program.ROM.p32(8 + p);
+                    if (!U.isSafetyOffset(paddr))
+                    {
+                        continue;
+                    }
+                    FELint.CheckPointerErrors( U.toPointer(paddr), errors, FELint.Type.MENU_DEFINE, p, i);
+                    MenuCommandForm.MakeCheckError(errors, 8 + p);
+
+                    paddr = Program.ROM.u32(12 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+
+                    paddr = Program.ROM.u32(16 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+
+                    paddr = Program.ROM.u32(20 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+
+                    paddr = Program.ROM.u32(24 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+
+                    paddr = Program.ROM.u32(28 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+
+                    paddr = Program.ROM.u32(32 + p);
+                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                }
+            }
+        }
+        public static void MakeTextIDArray(List<UseTextID> list)
+        {
+            uint[] pointers = GetPointers();
+
+            InputFormRef InputFormRef = Init(null);
+            for (int n = 0; n < pointers.Length; n++)
+            {
+                if (pointers[n] == 0)
+                {
+                    continue;
+                }
+
                 InputFormRef.ReInitPointer(pointers[n]);
                 uint p = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)

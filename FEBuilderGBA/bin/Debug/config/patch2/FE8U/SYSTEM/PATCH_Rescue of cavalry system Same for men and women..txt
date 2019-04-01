@@ -1,6 +1,6 @@
 NAME=騎馬系の救出値男女で同じ
 NAME.en=Toggle Gender-Neutral Cavalry Rescue
-NAME.zh=骑兵系统的救援男性和女性都一样
+NAME.zh=骑马的救出值男女一样
 
 //アドレスパッチとして実装します
 TYPE=ADDR

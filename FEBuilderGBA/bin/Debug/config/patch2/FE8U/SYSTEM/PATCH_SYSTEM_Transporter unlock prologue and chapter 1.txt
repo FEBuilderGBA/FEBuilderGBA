@@ -1,6 +1,6 @@
 NAME=輸送隊解禁序章と1章
 NAME.en=Supply Unlock Prologue and Chapter 1
-NAME.zh=禁止运输和第1章
+NAME.zh=运输体解禁序章与1章
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -16,4 +16,4 @@ CONFLICT_IF:0x023F66=0x00 0x00 0x00 0x4B 0x18 0x47
 
 INFO=\r\nHINT=輸送体
 INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
-INFO.zh=\r\nHIN转运。
+INFO.zh=提示：运输车。

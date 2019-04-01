@@ -1,6 +1,6 @@
 NAME=常に間接モーション_トマホーク
 NAME.en=Always Ranged Animate: Tomahawk
-NAME.zh=始终间接运动_战斧
+NAME.zh=始终间接运动_回旋斧
 
 //アドレスパッチとして実装します
 TYPE=ADDR

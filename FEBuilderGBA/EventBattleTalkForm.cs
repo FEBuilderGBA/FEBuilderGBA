@@ -52,7 +52,7 @@ namespace FEBuilderGBA
                         + UnitForm.GetUnitNameAndANY(unit_id2) 
                         + " " 
                         + "(" 
-                            + MapSettingForm.GetMapNameAndANYFE(map_id) 
+                            + MapSettingForm.GetMapNameAndANYFF(map_id) 
                         + ")";
                 }
             );
@@ -138,7 +138,7 @@ namespace FEBuilderGBA
                 FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                 uint textid = Program.ROM.u16(battletalk_addr + 8);
-                FELint.ConversationTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                 if (textid <= 0)
                 {
@@ -147,10 +147,17 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 8 });
+            UseTextID.AppendTextID(list, FELint.Type.BATTTLE_TALK, InputFormRef, new uint[] { 8 });
+        }
+        public static void MakeFlagIDArray(List<UseFlagID> list)
+        {
+            {
+                InputFormRef InputFormRef = Init(null);
+                UseFlagID.AppendFlagID(list, FELint.Type.BATTTLE_TALK, InputFormRef, 6, 4);
+            }
         }
     }
 }

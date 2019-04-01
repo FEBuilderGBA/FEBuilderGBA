@@ -1,0 +1,28 @@
+NAME=支援会話ルーム全開
+NAME.en=Support conversations room unlock.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+
+COMBO=通常|OFF|全開|ONN
+COMBO.en=Normal|OFF|All open|ONN
+COMBO.zh=平时|OFF|完全打开|ONN
+
+AUTHOR=7743
+INFO=エクストラのシステムメニューから、支援会話を表示した時、すべての支援会話を見れるように修正します。
+
+DETERMINATION_ADDRESS=0xA8108
+OFF:0xA8108=0x10 0x40	//
+OFF:0xB03F2=0x03 0xD0	//
+OFF:0xA8268=0x00
+ONN:0xA8108=0x03 0x20	//必ず支援3まであると返す
+ONN:0xB03F2=0x00 0x00	//必ずエクストラ支援画面を表示する
+ONN:0xA8268=0x01		//GGM_IsCharacterKnown always 1
+
+
+
+INFO.en=From the Extras system menu, when you display a support conversation, modify it to see all the support conversations.
+NAME.zh=支持会话室全开。
+INFO.zh=在Extras系统菜单中，当您显示支持对话时，请对其进行修改以查看所有支持对话。

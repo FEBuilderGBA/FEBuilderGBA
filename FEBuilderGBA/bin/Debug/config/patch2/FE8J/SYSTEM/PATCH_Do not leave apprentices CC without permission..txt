@@ -1,6 +1,6 @@
 
 NAME=見習い共を勝手にCCさせない
-NAME.en=Do not leave apprentices CC without permission.
+NAME.en=Toggle Trainee Automatic Promotion
 NAME.zh=系统_见习职业转职要经许可
 
 //アドレスパッチとして実装します
@@ -21,3 +21,5 @@ AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:
 COMBO.en=Do not let CC arbitrarily|0xC0 0x46|Let's do CC selfishly|0x00 0xDA
 
 
+
+INFO.en=Toggle automatic promotion events for trainee classes upon reaching level 10.\r\n

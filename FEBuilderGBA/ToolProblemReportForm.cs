@@ -210,7 +210,7 @@ namespace FEBuilderGBA
                 return;
             }
             string fullfilename = Path.Combine(tempdir, Path.GetFileName(this.AttachDataFilename.Text));
-            File.Copy(this.AttachDataFilename.Text , fullfilename);
+            File.Copy(this.AttachDataFilename.Text , fullfilename , true);
         }
 
         void CopyEtcData(string tempdir)
@@ -312,6 +312,8 @@ namespace FEBuilderGBA
                 PickupSaveData(tempdir, "" + i + ".sgm");
                 PickupSaveData(tempdir, ".emulator.ss" + i);
                 PickupSaveData(tempdir, ".ss" + i);
+                PickupSaveData(tempdir, ".emulator.sg" + i);
+                PickupSaveData(tempdir, ".sg" + i);
             }
         }
 
@@ -366,7 +368,7 @@ namespace FEBuilderGBA
             string FEVersion = "";
             if (Program.ROM != null)
             {
-                FEVersion = Program.ROM.VersionToFilename();
+                FEVersion = Program.ROM.RomInfo.VersionToFilename();
                 FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
 
                 U.CRC32 crc32 = new U.CRC32();

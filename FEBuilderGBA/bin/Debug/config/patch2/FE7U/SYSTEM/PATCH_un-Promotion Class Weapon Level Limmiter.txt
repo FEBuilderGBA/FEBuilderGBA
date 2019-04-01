@@ -1,6 +1,6 @@
 
 NAME=下級武器レベル制限
-NAME.en=un-Promotion Class Weapon Level Limmiter
+NAME.en=Max Weapon Level for Unpromoted Classes
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -8,4 +8,6 @@ TAG=#ENGINE
 
 ADDRESS=0x29bd8 0x29bdc
 
-NAME.zh=较低的武器级别限制
+NAME.zh=低级武器等级限制
+
+INFO.en=Sets the maximum amount of weapon experience unpromoted classes can have in hex. Default is B5 (A Rank).\r\nConvert to decimal for specific value.

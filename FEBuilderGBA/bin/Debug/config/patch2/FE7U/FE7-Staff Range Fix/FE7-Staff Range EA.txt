@@ -1,0 +1,261 @@
+//FE7 Staff Range Fix
+//By Tequila
+
+#include EAstdlib.event
+#include "Extensions/Hack Installation.txt"
+	
+#ifdef _FE7_
+	//Redefine as needed
+	#define Usability_Table 0x26D10
+//	#define ItemTable 0xBE222C //It can be defined automatically by FEBuilderGBA.
+	
+	//Shouldn't have to touch these
+	#define New_Use(item) "ORG Usability_Table+4*(item-0x4A); POIN 0x26E54"
+	#define New_Target(offset) "ORG offset; POIN Target_Routine_For_Non_Unlock|1"
+	#define FE7_gotoHackWithR3(offset) "SHORT 0x4B01; BL(0xBFC58); SHORT 0xE001; POIN (offset|0x1)"
+	#define LL_Entry(staff, pointer) "WORD staff; POIN pointer"
+	
+	//###### USABILITY TABLE ######
+	//Repoint staffs (except Unlock/Torch) to go to the same place, in this case, the heal routine
+	New_Use(Physic)
+	New_Use(Fortify)
+	New_Use(Restore)
+	New_Use(Silence)
+	New_Use(Sleep)
+	New_Use(Berserk)
+	New_Use(Warp)
+	New_Use(Rescue)
+	New_Use(Hammerne)
+	New_Use(Barrier)
+	
+	//Update Torch pointer
+	ORG Usability_Table+4*(TorchStaff-0x4A)
+	POIN Torch_Fix
+	
+	//Update the pointer at the heal routine to take us to the right place
+	ORG $26E58
+	POIN Usability_Routine_For_Non_Unlock|1
+	
+	//Update the pointer at the unlock routine to take us to the right place
+	ORG $26EB0
+	POIN Usability_Routine_For_Unlock|1
+	
+	//####### TARGET TABLE #######
+	//Can't do the same thing here that we did with the usability table because they don't all branch to the same place
+	New_Target($27204) 	//Heal/Mend/Recover
+	New_Target($27214)	//Physic
+	New_Target($27234)	//Restore
+	New_Target($2723C)	//Silence
+	New_Target($27244)	//Sleep
+	New_Target($27254)	//Berserk
+	New_Target($27224)	//Rescue
+	
+	//For the special snowflakes
+	ORG $27268 //Unlock
+	POIN Target_Routine_For_Unlock|1
+	ORG $27D66 //Barrier
+	BL(Non_Unlock_Jump)
+	ORG $27AEA //Hammerne
+	BL(Non_Unlock_Jump)
+	ORG $279BA //Warp
+	BL(Non_Unlock_Jump)
+	ORG $2C834 //UBER-SPECIAL-SNOWFLAKE Fortify
+	BL(Fortify_Jump)
+	
+	//####### HIGHLIGHTED SQUARES #######
+	ORG $168AC //Shows the correct range numbers when displaying an item's R-menu 
+	#incbin "R Button Range Display.dmp"
+	POIN ItemTable
+	
+	ORG $1C56A //When first selecting a unit, for weapons
+	BL(All_Weapons_All_Squares)
+	
+	ORG $21B80 //After moving to a specific square, for weapons
+	FE7_gotoHackWithR3(All_Weapons_One_Square)
+	
+	ORG $21CB4 //When selecting target (technically it's one weapon, but uses the same functions, so yay)
+	FE7_gotoHackWithR3(All_Weapons_One_Square)
+	
+	ORG $314B0 //Dunno when this is called, or even why it exists, but I'm putting it here just in case. 
+	SHORT 0x4B01
+	BL(0xBFC58)
+	SHORT 0xE01A
+	POIN Unknown_Function|1
+	
+	ORG $1B1A6 //Gets called a bunch of times; mag/2 weapons don't work here, so I need a fix
+	SHORT 0x46C0
+	FE7_gotoHackWithR3(Weapon_Attack)
+	SHORT 0x46C0
+	
+	ORG $1C55A //When first selecting a unit, for staffs
+	BL(All_Staffs_All_Squares)
+	
+	ORG $229F4 //After moving to a specific square, for staffs
+	SHORT 0x480F 0x6800 0x2100 //ldr r0,RangeMap; ldr r0,[0]; mov r1,0
+	BL(0x190AC)
+	SHORT 0x480C 0x6800 0x2401 0x4264 0x1C21 //ldr r0,AttackMap; ldr r0,[r0]; mov r4,1; neg r4,r4; mov r1,r4
+	BL(0x190AC)
+	SHORT 0x6828 0x1C21 //ldr r0,[r5]; mov r1,r4
+	FE7_gotoHackWithR3(All_Staffs_One_Square)
+	SHORT 0x46C0 //nop
+	
+	ORG $22ACE //When selecting target (staffs)
+	SHORT 0x343C 0x2000 0x5620 //add r4,3C; mov r0,0; ldsb r0,[r4,r0]
+	BL(0x1DFC0)
+	SHORT 0x480E 0x6800 0x2101 0x4249 //ldr r0,AttackMap; ldr r0,[r0]; mov r1,1; neg r1,r1
+	BL(0x190AC)
+	SHORT 0x480C 0x6800 0x2100 //ldr r0,RangeMap; ldr r0,[r0]; mov r1,0
+	BL(0x190AC)
+	SHORT 0x6828 0x2100 0x5661
+	FE7_gotoHackWithR3(All_Staffs_One_Square)
+	SHORT 0x46C0 //nop
+	
+	ORG $167E0 //when selecting a target
+	SHORT 0x46C0 0x46C0 //skips a check that ensures min<max, which doesn't play nice with mag/2
+	
+	ORG $28926 //determines whether you can actually attack the target
+	SHORT 0x1C2A //mov r2,r5 (r5 has battle struct, but that should be fine)
+	BL(Can_Attack_Target)
+	
+	//************** FREE SPACE IN BL RANGE, SO DON'T MOVE THIS IF YOU DON'T KNOW WHAT YOU'RE DOING *********************
+	
+	ORG $1A4D4 // Writes the attackable squares for each square that can be moved to.
+	All_Weapons_All_Squares:
+	#incbin "All Weapons All Squares.dmp"
+	POIN All_Moveable_Squares|1
+	
+	ALIGN 4
+	All_Staffs_All_Squares:
+	#incbin "All Staffs All Squares.dmp"
+	POIN All_Moveable_Squares|1
+	
+	ALIGN 4
+	Non_Unlock_Jump: //ldr r3, bx r3
+	SHORT 0x4B00 0x4718
+	POIN Target_Routine_For_Non_Unlock|1
+	
+	Fortify_Jump:
+	SHORT 0x4B00 0x4718
+	POIN Target_Routine_For_Fortify|1
+	
+	ALIGN 4
+	Can_Attack_Target:
+	#incbin "Can Attack Target.dmp"
+	POIN ItemTable
+	
+	//************** CAN BE WRITTEN TO WHEREVER IF YOU WANT THIS SPACE FOR OTHER ASSEMBLY STUFF *********************
+
+	ALIGN 4
+	All_Weapons_One_Square:
+	#incbin "All Weapons One Square.dmp"
+	POIN Return_Range_Bitfield|1
+	POIN Write_Range|1
+	
+	ALIGN 4
+	All_Staffs_One_Square:
+	#incbin "All Staffs One Square.dmp"
+	POIN Return_Range_Bitfield|1
+	POIN Write_Range|1	
+	
+	ALIGN 4
+	All_Moveable_Squares:
+	#incbin "All Moveable Squares.dmp" 
+	POIN Return_Range_Bitfield|1
+	POIN Write_Range|1
+	
+	ALIGN 4
+	Return_Range_Bitfield:
+	#incbin "Return Range Bitfield.dmp"
+	POIN Get_Item_Range|1
+	
+	ALIGN 4
+	Get_Item_Range:
+	#incbin "Get Item Range.dmp"
+	POIN ItemTable
+	
+	ALIGN 4
+	Write_Range:
+	#incbin "Write Range.dmp"
+	
+	ALIGN 4
+	Unknown_Function:
+	#incbin "Unknown Function.dmp"
+	POIN Return_Range_Bitfield|1
+	POIN Write_Range|1
+	
+	ALIGN 4
+	Weapon_Attack:
+	#incbin "Weapon Attack.dmp"
+	
+	ALIGN 4
+	//####### RANGE WRITING STUFF ######
+	Usability_Routine_For_Non_Unlock: //push r14; mov r1,r5; bl somewhere; pop r0; bx r0 (r5 has item id/uses halfword)
+	SHORT 0xB500 0x1C29
+	BL(Non_Unlock_Range)
+	SHORT 0xBC01 0x4700
+	
+	Usability_Routine_For_Unlock:
+	SHORT 0xB500 0x1C29
+	BL(Unlock_Range)
+	SHORT 0xBC01 0x4700
+	
+	Target_Routine_For_Non_Unlock: //push r14; mov r1,r4; bl somewhere; pop r0; bx r0 (need a new function because of compiler shenanigans)
+	SHORT 0xB500 0x1C21
+	BL(Non_Unlock_Range)
+	SHORT 0xBC01 0x4700
+	
+	Target_Routine_For_Unlock:
+	SHORT 0xB500 0x1C21
+	BL(Unlock_Range)
+	SHORT 0xBC01 0x4700	
+	
+	Target_Routine_For_Fortify: //push r14; ldrb r1,[r4,#0x12]; lsl r1,r1,#0x1; add r1,#0x1E; add r1,r1,r0; ldrh r1,[r1]; bl somewhere; pop r0; bx r0 (r4+0x12 has inventory slot, r0 has char data)
+	SHORT 0xB500 0x7CA1 0x0049 0x311E 0x1809 0x8809
+	BL(Non_Unlock_Range)
+	SHORT 0xBC01 0x4700	
+	
+	ALIGN 4
+	Non_Unlock_Range:
+	SHORT 0xB500
+	BL(Range_Write)
+	#incbin "Non Unlock Range.dmp"
+	POIN Function_List
+	
+	ALIGN 4
+	Unlock_Range:
+	SHORT 0xB500
+	BL(Range_Write)
+	#incbin "Unlock Range.dmp"
+	
+	ALIGN 4
+	Range_Write:
+	#incbin "Range Write.dmp"
+	POIN ItemTable
+	
+	ALIGN 4
+	Function_List: //These functions do extra checks (check if person in range has less than max hp, has a non-zero status byte, etc), along with some other stuff
+	LL_Entry(Heal, 0x24539)
+	LL_Entry(Mend, 0x24539)
+	LL_Entry(Recover, 0x24539)
+	LL_Entry(Physic, 0x24539)
+	LL_Entry(Fortify, 0x24539)
+	LL_Entry(Restore, 0x2460D)
+	LL_Entry(Silence, 0x24775)
+	LL_Entry(Sleep, 0x247C1)
+	LL_Entry(Berserk, 0x2480D)
+	LL_Entry(Warp, 0x248D1)
+	LL_Entry(Rescue, 0x24715)
+	LL_Entry(Torch, 0x24539) //shouldn't ever be go here, but just in case...
+	LL_Entry(Hammerne, 0x24971)
+	LL_Entry(Unlock, 0x24219) //shouldn't go here either, since it's a special snowflake
+	LL_Entry(Barrier, 0x24691)
+	LL_Entry(0, 0x24539) //The catch-all, in case you add a custom staff and forget to update this table
+	
+	ALIGN 4
+	Torch_Fix:
+	#incbin "Torch Fix.dmp"
+	POIN Range_Write|1
+	
+#else
+	ERROR "You're not assembling FE7 events!"
+#endif

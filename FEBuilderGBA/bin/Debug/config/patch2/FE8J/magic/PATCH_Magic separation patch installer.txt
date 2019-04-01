@@ -13,3 +13,6 @@ INFO=魔力の項目を新設して、魔法を分離します。\r\n力や魔�
 INFO.en=We will set up magical items and separate magic.\r\nInstead of expressing magical powers by using force and magic defense items, we will create a new item of magical powers by using the free space.
 NAME.zh=魔法分离补丁（介绍）
 INFO.zh=我们将设置魔法物品并分开魔法。\r\n通过使用武力和魔法防御物品来代替魔法力量，我们将通过使用自由空间来创造一个新的魔力项目。
+
+//CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
+//CONFLICT_MESSAGE=FE8N Skill Extends

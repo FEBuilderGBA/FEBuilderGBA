@@ -112,8 +112,6 @@ namespace FEBuilderGBA
             InputFormRef.ClearCacheDataCount();
             //EVENTとASMのキャッシュをクリア
             Program.AsmMapFileAsmCache.ClearCache();
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
         }
         public void Rollback(UndoData ud)
         {
@@ -158,8 +156,6 @@ namespace FEBuilderGBA
             InputFormRef.ClearCacheDataCount();
             //EVENTとASMのキャッシュをクリア
             Program.AsmMapFileAsmCache.ClearCache();
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
             //すべてのフォームを再描画
             InputFormRef.InvalidateALLForms();
         }

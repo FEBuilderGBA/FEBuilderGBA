@@ -25,7 +25,12 @@ B2:UNIT=UNIT
 B3:CLASS=CLASS(0xFF=ANY or 0x00=ANY)
 B4:MAP_ANYFF=MAPID(0xFF=ANY)
 B5:CHAPTORMODE_ANYFF=編(1=序盤/2=エイリーク編/3=エフラム編/FF=全編)
+B5:CHAPTORMODE_ANYFF.en=Edtion(1=EarlyStage/2=Eirika/3=Ephraim/FF=ANY)
+B5:CHAPTORMODE_ANYFF.zh=Edtion(1=EarlyStage/2=Eirika/3=Ephraim/FF=ANY)
 W6:FLAG=Flag(0x00=ANY)
+
+
+
 
 NAME.en=Switch Portrait images by class, chapter, flag.
 INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.

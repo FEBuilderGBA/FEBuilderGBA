@@ -58,6 +58,7 @@
             this.ItemIconListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.JumpToSystemPalette = new System.Windows.Forms.Label();
             this.DragTargetPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -73,6 +74,7 @@
             // DragTargetPanel2
             // 
             this.DragTargetPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DragTargetPanel2.Controls.Add(this.JumpToSystemPalette);
             this.DragTargetPanel2.Controls.Add(this.ImportButton);
             this.DragTargetPanel2.Controls.Add(this.ExportButton);
             this.DragTargetPanel2.Location = new System.Drawing.Point(286, 418);
@@ -313,7 +315,7 @@
             this.X_ICON_REF_ITEM.Location = new System.Drawing.Point(525, 9);
             this.X_ICON_REF_ITEM.Margin = new System.Windows.Forms.Padding(4);
             this.X_ICON_REF_ITEM.Name = "X_ICON_REF_ITEM";
-            this.X_ICON_REF_ITEM.Size = new System.Drawing.Size(256, 238);
+            this.X_ICON_REF_ITEM.Size = new System.Drawing.Size(256, 318);
             this.X_ICON_REF_ITEM.TabIndex = 92;
             // 
             // label5
@@ -416,6 +418,20 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // JumpToSystemPalette
+            // 
+            this.JumpToSystemPalette.AccessibleDescription = "@EXPLAIN_ITEMICON_SYSTEM_PALETTE";
+            this.JumpToSystemPalette.AutoSize = true;
+            this.JumpToSystemPalette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpToSystemPalette.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.JumpToSystemPalette.Location = new System.Drawing.Point(525, 20);
+            this.JumpToSystemPalette.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JumpToSystemPalette.Name = "JumpToSystemPalette";
+            this.JumpToSystemPalette.Size = new System.Drawing.Size(111, 18);
+            this.JumpToSystemPalette.TabIndex = 201;
+            this.JumpToSystemPalette.Text = "パレットの変更";
+            this.JumpToSystemPalette.Click += new System.EventHandler(this.JumpToSystemPalette_Click);
+            // 
             // ImageItemIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -432,6 +448,7 @@
             this.Text = "アイテムアイコン";
             this.Load += new System.EventHandler(this.ImageIconForm_Load);
             this.DragTargetPanel2.ResumeLayout(false);
+            this.DragTargetPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
@@ -479,5 +496,6 @@
         private TextBoxEx Comment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button WriteButton;
+        private System.Windows.Forms.Label JumpToSystemPalette;
     }
 }

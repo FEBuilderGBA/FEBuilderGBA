@@ -74,7 +74,7 @@
             this.J_0_ITEM.Name = "J_0_ITEM";
             this.J_0_ITEM.Size = new System.Drawing.Size(123, 30);
             this.J_0_ITEM.TabIndex = 57;
-            this.J_0_ITEM.Text = "アイテム";
+            this.J_0_ITEM.Text = "アイテム ";
             this.J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_0_ITEM

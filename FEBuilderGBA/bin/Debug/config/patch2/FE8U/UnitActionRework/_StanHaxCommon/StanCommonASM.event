@@ -1,0 +1,31 @@
+#ifndef INSTALL_STAN_COMMON_ASM_EVENT
+#define INSTALL_STAN_COMMON_ASM_EVENT
+
+ALIGN 4
+prUnit_CanBeOnPosition: {
+	SHORT $2300 $B570 $4299 $DB20 $429A $DB1E $4C11 $2300 $5EE5 $2300 $428D $DD18 $2502 $5F64 $4294 $DD14 $4C0D $6824 $0092 $58A4 $5C64 $429C $D10D $4C0B $6824 $58A4 $5C64 $07E4 $D407 $4B09 $681B $589B $5C59 $4B08 $F000 $F810 $0003 $0018 $BC70 $BC02 $4708 $46C0
+	BYTE $D4 $E4 $02 $02 $D8 $E4 $02 $02 $EC $E4 $02 $02 $DC $E4 $02 $02 $9D $94 $01 $08
+	SHORT $4718 $46C0
+}
+
+ALIGN 4
+prUnit_CanStandOnPosition:
+	#incbin "asm/CanUnitStandOnPosition.bin"
+
+ALIGN 4
+prMOVEUNIT_MoveTowards:
+	#incbin "asm/MoveMOVEUNITTowards.bin"
+
+ALIGN 4
+prClearRangeMap:
+	#incbin "asm/ClearRangeMap.bin"
+
+ALIGN 4
+prClearMoveMap:
+	#incbin "asm/ClearMoveMap.bin"
+
+ALIGN 4
+prClearRangeAndMoveMap:
+	#incbin "asm/ClearRangeAndMoveMap.bin"
+
+#endif // INSTALL_STAN_COMMON_ASM_EVENT

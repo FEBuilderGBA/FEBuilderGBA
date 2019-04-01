@@ -33,6 +33,14 @@ namespace FEBuilderGBA
             Log.Error(s);
             return s;
         }
+        public static string ExceptionToString(System.Runtime.InteropServices.ExternalException e)
+        {
+            return R._("GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}", e.ErrorCode, U.HRESULTtoString(e.ErrorCode), e.ToString(), e.StackTrace);
+        }
+        public static string ExceptionToString(System.UnauthorizedAccessException e)
+        {
+            return R._("System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}", e.ToString(), e.StackTrace);
+        }
 
         //エラーメッセージ OKだけ
         public static void ShowStopError(string str, params object[] args)

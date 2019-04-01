@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ギリアム
 NAME.en=OP Anime Face: Gilliam
-NAME.zh=OPANIME_FACE_ Gilliam
+NAME.zh=OP动画_脸_吉利安姆
 
 TYPE=IMAGE
 TAG=#IMAGE

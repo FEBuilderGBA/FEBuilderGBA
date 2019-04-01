@@ -253,7 +253,7 @@ namespace FEBuilderGBA
                 addr = U.toOffset(addr);
                 ReadStartAddress.Value = addr;
             }
-            if (!U.CheckZeroAddressWrite(addr))
+            if (!U.CheckZeroAddressWriteHigh(addr))
             {
                 return;
             }
@@ -330,18 +330,19 @@ namespace FEBuilderGBA
             {//同一
                 return;
             }
-            if (this.AddressListExpandsEvent == null)
-            {//イベントがない
-                return;
+
+            if (this.AddressListExpandsEvent != null)
+            {
+                InputFormRef.ExpandsEventArgs eventarg = new InputFormRef.ExpandsEventArgs();
+                eventarg.OldBaseAddress = addr;
+                eventarg.BlockSize = 0;
+                eventarg.OldDataCount = 0;
+                eventarg.NewBaseAddress = newaddr;
+                eventarg.NewDataCount = 0;
+                this.AddressListExpandsEvent(this.AddressList, eventarg);
             }
 
-            InputFormRef.ExpandsEventArgs eventarg = new InputFormRef.ExpandsEventArgs();
-            eventarg.OldBaseAddress = addr;
-            eventarg.BlockSize = 0;
-            eventarg.OldDataCount = 0;
-            eventarg.NewBaseAddress = newaddr;
-            eventarg.NewDataCount = 0;
-            this.AddressListExpandsEvent(this.AddressList, eventarg);
+            InputFormRef.UpdateChangePointer(addr,newaddr);
 
             //asm mapキャッシュの更新.
             Program.AsmMapFileAsmCache.ClearCache();
@@ -676,7 +677,7 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.CONVERSATION_TEXT)
             {
                 text = TextForm.Direct((v));
-                errormessage = TextForm.CheckConversationTextMessage(text);
+                errormessage = TextForm.CheckConversationTextMessage(text, TextForm.MAX_SERIF_WIDTH);
                 text = TextForm.StripAllCode(text);
             }
             else if (arg.Type == EventScript.ArgType.SYSTEM_TEXT)
@@ -935,6 +936,14 @@ namespace FEBuilderGBA
             {//RAM_UNIT_PARAM
                 text = " " + InputFormRef.GetRAM_UNIT_PARAM(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.RAM_UNIT_VALUE)
+            {//RAM_UNIT_PARAM
+                uint prevIndex = EventScript.GetRAMUnitParamIndex(code);
+                uint prevValue = 0;
+                EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                text = " " + InputFormRef.GetRAM_UNIT_VALUE(prevValue, v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.BOOL)
             {//BOOL
                 text = " " + InputFormRef.GetBOOL(v);
@@ -962,10 +971,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
-                if (v >= 10)
-                {
-                    text = " " + v.ToString() + "<=(" + R._("10進数") + ")";
-                }
+                text = " " + InputFormRef.GetDigitHint(v);
             }
 
             U.MakeTransparent(image);
@@ -2545,6 +2551,16 @@ namespace FEBuilderGBA
                         string dummy;
                         sb.Append(InputFormRef.GetRAM_UNIT_PARAM(v, out dummy));
                     }
+                    else if (arg.Type == EventScript.ArgType.RAM_UNIT_VALUE)
+                    {//RAM_UNIT_PARAM
+                        uint prevIndex = EventScript.GetRAMUnitParamIndex(code);
+                        uint prevValue = 0;
+                        EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                        string dummy;
+                        sb.Append(InputFormRef.GetRAM_UNIT_VALUE(prevValue, v, out dummy));
+                    }
+
                     else if (arg.Type == EventScript.ArgType.BOOL)
                     {//BOOL
                         sb.Append(" ");
@@ -2698,10 +2714,12 @@ namespace FEBuilderGBA
                 if (XXXXXXXX != null)
                 {
                     line = line.Replace("XXXXXXXX", XXXXXXXX);
+                    line = line.Replace("XXXX", XXXXXXXX);
                 }
                 if (YYYYYYYY != null)
                 {
                     line = line.Replace("YYYYYYYY", YYYYYYYY);
+                    line = line.Replace("YYYY", YYYYYYYY);
                 }
                 byte[] bin = LineToEventByte(line);
                 if (bin.Length < 4)
@@ -2726,7 +2744,7 @@ namespace FEBuilderGBA
             bool r;
             try
             {
-                r = MainFormUtil.CompilerEventAssembler(filename, 0, out errorOutput, out symbolOutput);
+                r = MainFormUtil.CompilerEventAssembler(filename, 0, U.NOT_FOUND, out errorOutput, out symbolOutput);
             }
             catch (Win32Exception e)
             {
@@ -3074,7 +3092,7 @@ namespace FEBuilderGBA
             }
 
             EventScriptTemplateForm f = (EventScriptTemplateForm)InputFormRef.JumpFormLow<EventScriptTemplateForm>();
-            f.Init(this.MapID);
+            f.Init(this.MapID, this);
             f.ShowDialog();
 
             if (f.DialogResult != DialogResult.OK)
@@ -3109,6 +3127,23 @@ namespace FEBuilderGBA
             UseTemplate();
         }
 
+        public bool IsUseLabelID(uint checkLabelID)
+        {
+            for (int i = 0; i < this.EventAsm.Count; i++)
+            {
+                EventScript.OneCode code = this.EventAsm[i];
+                uint cond_id = GetScriptLabelID(code);
+                if (cond_id == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (cond_id == checkLabelID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
     }
 }

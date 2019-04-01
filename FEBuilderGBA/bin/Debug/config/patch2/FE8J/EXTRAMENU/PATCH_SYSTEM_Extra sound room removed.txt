@@ -1,4 +1,4 @@
-﻿
+
 NAME=エクストラ サウンドルーム 削除
 NAME.en=Remove Sound Room
 
@@ -17,6 +17,6 @@ INFO.zh=COMBO.zh=显示|0xF7 0xF7 0xC8 0xFC|删除|0x00 0x00 0x00 0x20
 
 
 COMBO.zh=显示|0xF7 0xF7 0xC8 0xFC|删除|0x00 0x00 0x00 0x20
-INFO.en=Delete the sound room from the extra menu.\r\nIt is used when you do not want to use the sound room.
+INFO.en=Sets whether the "Sound Room" option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent player access to the Sound Room.
 
 AUTHOR=Aera

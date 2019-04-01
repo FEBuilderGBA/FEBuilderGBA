@@ -595,12 +595,11 @@
 
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -723,7 +722,6 @@
 080173D8	GetNextFreeUnitStructPtr
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
-0801751E	GetUnitItemCount
 08017578	LoadUnits
 08017868	IncreaseUnitStatsByLevelCount
 08017ABC	GetUnitByCharId
@@ -746,14 +744,14 @@
 08018C6C	UpdateGameTileGfx
 08018D90	UpdateGameTilesGraphics
 080192C4	GetTerrainHealAmount
-080192D4	GetTerrainSomething
+080192D4	GetTerrainRestoreBadStatus
 08019384	FillMovementMapForUnitAndMovement
 08019454	FillMovementMapForUnitAt
 080194A4	FillMovementMap
 08019A34	MapAddInRange
 0801A564	FillRangeMap
 0801A7D4	DebugMapMenu_DisplayInfoIdle
-0801A822	DebugMapMenu_DisplayInfoEffect
+0801A820	DebugMapMenu_DisplayInfoEffect
 0801A826	DebugMenu_WeatherDraw
 0801AA70	DebugMenu_ClearEffect
 0801AAE2	DEBUGONLY_Startup
@@ -787,7 +785,6 @@
 0801ED7C	TakeUsability
 0801ECCC	TakeEffect
 0801ED7C	GiveUsability
-0801ECCC	GiveEffect
 0801EE80	TakeSelection_OnSelect
 0801EE80	GiveSelection_OnSelect
 0801F6A8	ItemCommandEffect
@@ -802,8 +799,7 @@
 080205EC	StealItemMenuCommand_Draw
 080207B4	RescueSelection_OnChange
 080207D8	DropSelection_OnConstruction
-0802019A	RideCommandEffect
-08020A02	AreUnitsAllied
+08020A04	AreUnitsAllied
 08020A16	IsSameAllegience
 08020A98	ForEachUnitInRange
 08020B70	ForEachPosInRange
@@ -970,8 +966,6 @@
 080183c8	GetUnitMaxHP
 0809dce0	Div
 
-0203CCE0	TEMP VALUE
-0804254C	Get[0x0203CCE0]
 08021164	支援関係の何か	r0=&UNIT
 085C3A60	:085C3A79	顔画像関係のOAMの何か1
 085C3A7A	:085C3A93	顔画像関係のOAMの何か2
@@ -996,7 +990,7 @@
 08001478	BGMapBGPaletteSync void
 08002c04	TileTransferInfoSync void
 08002d6c	OAM2BufferSync void
-08003908	Reset6CEngine Zeroes all 6C headers in Pool. Called on game startup.
+08003908	Initialize6CEngine Zeroes all 6C headers in Pool. Called on game startup.
 
 @BGMSTRUCT@00	byte	音楽関係のフラグ1
 @BGMSTRUCT@04	short	再生しているBGM
@@ -1018,7 +1012,6 @@
 08018160	GetUnitMagBy2Range
 08017190	GetItemAttributes
 08016538	CanUnitUseAsWeapon
-08017190	GetItemAttributes
 08016644	CanUnitUseAsStaff
 
 085C3CE8	RAMのテキストバッファへのポインタ
@@ -1035,9 +1028,7 @@
 
 0804807C	ekrBattleStarting_8055FA0 
 080425f0	NewEkrBattle
-08003c28	Delete6C(Wrapper) Calls Isolate6C then Delete6C
-08003e60	ClearLoop Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
-08003a04	Create6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
+08003a04	New6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
 
 08047500	フレームとTSA画像による魔法のアニメ
 
@@ -1055,7 +1046,7 @@
 08042704	MainUpdate_804FEE4
 
 08007cc4	ClearIntermediateOAMBuffer	DON'T CALL THIS YOURSELF (called in main loop); resets buffers
-0801599c	GetThread2SkipStack 
+0801599c	GetThread2SkipStack
 08007e78	FlushIntermediateOAMBuffer
 0800722c	AIS_ExecAll
 08008E00	一般兵の顔画像のパレットを転送する
@@ -1079,3 +1070,223 @@
 
 08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
 0801729c	GetItemWRank
+
+086905B0	&TEXTBATCHSHORT	クラス紹介テキスト
+0804256C	"戦闘用の不明なフラグ4バイト"に値を設定
+08042578	"戦闘用の不明なフラグ4バイト"を取得する
+0203CCE4	戦闘用の不明なフラグ4バイト
+0801597C	AddSkipThread2
+0801598C	SubSkipThread2
+080159A8	SwitchPhases
+080420E4	AddTarget
+0203C9E0	gTargetArray
+0203CCE0	gTargetArraySize
+08042138	LinkTargets
+08042180	TargetSelection_GetRealCursorPosition
+08042264	NewTargetSelection
+08042534	GetFirstTargetPointer
+08042420	GetFarthestTargetIndex
+08042388	LinkTargetsOrdered
+08042534	GetFirstTargetPointer
+08042480	LinkTargetsOrdered
+0804254C	GetTargetListSize
+08042558	GetTarget
+08042584	NewEkrBattleDeamon
+080425C4	EndEkrBattleDeamon
+080425D8	IsBattleDeamonActive
+0203CCE8	gpEkrBattleDeamon
+0203CCE0	gTargetArraySize
+
+0801C700	FillWarpRangeMap
+08018670	CanUnitCrossTerrain
+0801EC94	RescueUsability
+0801ECCC	RescueCommandEffect
+0801ED00	DropUsability
+08017520	GetUnitItemCount
+0802c5e4	NewUnitInfoWindow_WithAllLines
+0802cb14	NewBottomHelpText
+080201A0	RideCommandEffect
+080181d4	MakeMOVEUNITForMapUnit
+08025644	SaveUnitFromBattle
+0805f874	MakeMOVEUNITForMapUnit
+0805fc54	_MOVEUNIT6C_SetDefaultFacingDirection
+08003B54	Delete6CInternal
+08003c80	Free6C
+08003C28    Delete6C
+08003d2c	Isolate6C
+08003E60 	Break6CLoop
+
+08028348	GameVBlank6C_Destructor
+08028354	GameVBlank6C_Loop
+
+//0800417c	Goto6CLabel
+08004248	DeleteEach6C
+08028394	BlockGameGraphicsLogic
+08001034	EnableBGPaletteSync void
+08004114	BlockEach6CMarked
+080283C8	UnblockGameGraphicsLogic
+
+0800417c	UnblockEach6CMarked
+08003e7c	Find6C
+08028360	SetupGameVBlank6C
+08002cb8	OAMBufferSyncInfoInitialize
+08002d54	GetSpriteNum1
+0802A028	ApplyUnitAction
+0203956C	gActionData
+0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A494	ActionSteal
+0802A138	ActionRescue
+0802A188	ActionDrop
+0802A3C0	ActionTalk
+0802A3EC	ActionSupport
+0802A208	ActionVisitAndSieze
+08027F98	ActionStaffDoorChestUseItem
+0802A30C	ActionCombat
+0802A370	ActionDance
+0802A35C	ActionArena
+
+@ArenaTemp@00	&Unit	プレイヤーユニット
+@ArenaTemp@04	&Unit	対戦相手
+@ArenaTemp@08	short	掛け金
+@ArenaTemp@0A	byte	戦闘結果
+@ArenaTemp@0B	byte	不明1
+@ArenaTemp@0C	byte	耐久
+@ArenaTemp@0D	byte	アイテム
+@ArenaTemp@0E	byte	不明2
+@ArenaTemp@0F	byte	不明3
+@ArenaTemp@10	short	不明4
+@ArenaTemp@12	byte	不明5
+@ArenaTemp@13	byte	不明6
+@ArenaTemp@14	short	不明7
+@ArenaTemp@15	short	不明8
+@ArenaTemp@16	short	プレイヤーの強さ
+@ArenaTemp@18	short	対戦相手の強さ
+02039504	@ArenaTemp	闘技場の一時データ
+08022064	GetUnitMapSpritePaletteIndex
+08026504	アイテム交換で、実際にアイテムを交換した時
+08033C04	AiTryDoStaff
+08033C84	gStaffAiPerformTable_2
+08033C8C	GetAiSafestAccessibleAdjacentPosition
+0803260c	AiGetPositionTerrainSafetyWeight
+0803264c	AiGetPositionUnitSafetyWeight
+087DFC44	&LZ77	空の戦闘アニメシート
+087C18C4	&LZ77	空の戦闘アニメシート
+08709AC8	&LZ77	空の戦闘アニメシート
+087C1C94	&LZ77	空の戦闘アニメシート
+08716F9C	&LZ77	未使用戦闘画像	Maybe
+08007d3c	RegisterObjectSafe
+085C39A8	&OAMREGS	OAMREGS
+085CAFE4	&OAMREGS	OAMREGS
+0810F544	&OAMREGS	OAMREGS
+085CB16C	&OAMREGS	OAMREGS
+0810F52A	&OAMREGS	OAMREGS
+085C39F0	&OAMREGS	OAMREGS
+085C3A00	&OAMREGS	OAMREGS
+085C39C0	&OAMREGS	OAMREGS
+085C3A08	&OAMREGS	OAMREGS
+0867917A	&OAMREGS	OAMREGS
+085C39E0	&OAMREGS	OAMREGS
+0868A568	&OAMREGS	OAMREGS
+
+08307D58	&LZ77	何か小さい圧縮データ	01
+08307DD4	&LZ77	何か小さい圧縮データ	02
+08308070	&LZ77	何か小さい圧縮データ	03
+08307E50	&LZ77	何か小さい圧縮データ	04
+08307CEC	&LZ77	何か小さい圧縮データ	05
+08309408	&LZ77	何か小さい圧縮データ	06
+082DC944	&LZ77	何か小さい圧縮データ	07
+08379DCC	&LZ77	何か小さい圧縮データ	08
+08015260	何かのパレットを読込むルーチン1
+08014218	何かのパレットを読込むルーチン2
+08375B64	&PALETTE	何かのパレット
+085C4E8C	&PALETTE	何かのパレット
+085C4EAC	&PALETTE	何かのパレット
+083758A8	&PALETTE	何かのパレット
+08375888	&PALETTE	何かのパレット
+0837AAC8	&PALETTE	何かのパレット
+
+0201F0E8	&PALETTE	何かのパレット
+02021708	&PALETTE	何かのパレット
+08100A08	&PALETTE	何かのパレット
+08100A28	&PALETTE	何かのパレット
+0810137C	&PALETTE	何かのパレット
+081017F4	&PALETTE	何かのパレット
+081021D8	&PALETTE	何かのパレット
+0810361C	&PALETTE	何かのパレット
+0810363C	&PALETTE	何かのパレット
+08104374	&PALETTE	何かのパレット
+081048D4	&PALETTE	何かのパレット
+08105194	&PALETTE	何かのパレット
+081056F0	&PALETTE	何かのパレット
+081099A0	&PALETTE	何かのパレット
+08109A00	&PALETTE	何かのパレット
+08109A80	&PALETTE	何かのパレット
+08109AC0	&PALETTE	何かのパレット
+08109B00	&PALETTE	何かのパレット
+08109BA0	&PALETTE	何かのパレット
+08109BE0	&PALETTE	何かのパレット
+08109C40	&PALETTE	何かのパレット
+08109C60	&PALETTE	何かのパレット
+0810BA80	&PALETTE	何かのパレット
+0810BAC0	&PALETTE	何かのパレット
+0810D134	&PALETTE	何かのパレット
+0810FF98	&PALETTE	何かのパレット
+08111BC4	&PALETTE	何かのパレット
+081B7650	&PALETTE	何かのパレット
+082AAD5C	&PALETTE	何かのパレット
+082D3398	&PALETTE	何かのパレット
+082D36E4	&PALETTE	何かのパレット
+082D37E4	&PALETTE	何かのパレット
+082D3864	&PALETTE	何かのパレット
+082DCD70	&PALETTE	何かのパレット
+082DD248	&PALETTE	何かのパレット
+082DD4C8	&PALETTE	何かのパレット
+082DD808	&PALETTE	何かのパレット
+082DF690	&PALETTE	何かのパレット
+082DF704	&PALETTE	何かのパレット
+082E10EC	&PALETTE	何かのパレット
+082E172C	&PALETTE	何かのパレット
+08308050	&PALETTE	何かのパレット
+08309298	&PALETTE	何かのパレット
+0830A770	&PALETTE	何かのパレット
+0830C414	&PALETTE	何かのパレット
+0830D5E4	&PALETTE	何かのパレット
+0830D93C	&PALETTE	何かのパレット
+0830D95C	&PALETTE	何かのパレット
+0831A248	&PALETTE	何かのパレット
+0831AABC	&PALETTE	何かのパレット
+08320D98	&PALETTE	何かのパレット
+08321EE4	&PALETTE	何かのパレット
+08326E64	&PALETTE	何かのパレット
+08327108	&PALETTE	何かのパレット
+083277BC	&PALETTE	何かのパレット
+083277DC	&PALETTE	何かのパレット
+083278AC	&PALETTE	何かのパレット
+0832BDE8	&PALETTE	何かのパレット
+0832C33C	&PALETTE	何かのパレット
+0832CA9C	&PALETTE	何かのパレット
+0832CC90	&PALETTE	何かのパレット
+0833BFDC	&PALETTE	何かのパレット
+0833C944	&PALETTE	何かのパレット
+08341DA0	&PALETTE	何かのパレット
+08342A98	&PALETTE	何かのパレット
+08342AB8	&PALETTE	何かのパレット
+08342AD8	&PALETTE	何かのパレット
+08345420	&PALETTE	何かのパレット
+08346184	&PALETTE	何かのパレット
+08353308	&PALETTE	何かのパレット
+08354760	&PALETTE	何かのパレット
+0835A5D0	&PALETTE	何かのパレット
+0835AB08	&PALETTE	何かのパレット
+0835C034	&PALETTE	何かのパレット
+0835F388	&PALETTE	何かのパレット
+08364418	&PALETTE	何かのパレット
+08364A94	&PALETTE	何かのパレット
+08379D0C	&PALETTE	何かのパレット
+0837AA68	&PALETTE	何かのパレット
+0837ACB0	&PALETTE	何かのパレット
+0837CB0C	&PALETTE	何かのパレット
+0837CB4C	&PALETTE	何かのパレット
+0837CB6C	&PALETTE	何かのパレット
+0837F418	&PALETTE	何かのパレット
+08380ECC	&PALETTE	何かのパレット

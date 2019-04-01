@@ -1,6 +1,6 @@
 
 NAME=騎馬系の救出値男女で同じ
-NAME.en=Rescue of cavalry system Same for men and women.
+NAME.en=Toggle Gender-Neutral Cavalry Rescue
 NAME.zh=骑马的救出值男女一样
 
 //アドレスパッチとして実装します
@@ -23,4 +23,4 @@ AUTHOR.zh=FE 6分析资料
 
 INFO=騎兵が救出を行うときに、男女で基礎値を変えているのを抑制します。\r\n男性キャラクター "25-体格=救出できる体格"\r\n女性キャラクター "20-体格=救出できる体格"\r\n女性の方が体格が小さいユニットが多いため、ゲームバランスを取るための処置だと思います。\r\nこのパッチは、これを抑制し、女性でも男性と同じ25の値を利用するようにします。\r\n女性の騎兵、ペガサスナイトなどがより便利になります。
 INFO.zh=当骑兵获救时，它会抑制男人和女人基础价值的变化。\r\n男性角色“25  - 体质=可以获救的体质”\r\n女性角色“20  - 体质=可以获救的体质”\r\n因为女性是规模较小的较小单位，我认为这是衡量游戏平衡的一个方法。\r\n这个补丁压制了这一点，所以女性使用与男性相同的价值观。\r\n女骑兵，飞马座之夜等将更加方便。
-INFO.en=This patch suppresses a difference in the calculation when a male or female cavalry unit attempts to rescue another unit.\r\nBy default, the CON value that can be rescued is calculated as (25 - rescuer's CON) for male cavalry units and (20 - rescuer's CON) for female cavalry units.\r\nThis was likely intended for game balance due to female units' lower CON scores.\r\nThis patch suppresses this, so that women use the same '25' value as men.\r\nThus, female cavalry, Pegasus Knights, and so on will have higher rescuing ability.
+INFO.en=Toggles whether mounted females use the female Aid calculation (Default) or the male aid calculation (Patched).\r\nDefault mounted Aid calculation is: 25 (male) or 20 (female) - unit's CON\r\nThis patch removes the female aid penalty and treats all mounted aid calcs as 25 - CON.\r\nBecause of their default lower CON, this will likely make female mounted units better at rescuing.\r\n

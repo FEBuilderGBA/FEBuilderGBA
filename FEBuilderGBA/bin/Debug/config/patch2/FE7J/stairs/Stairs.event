@@ -1,0 +1,68 @@
+#include "Extensions/Hack Installation.txt"
+
+	//HINT=LYN_HOOK=0x18634
+	//HINT=LYN_HOOK=0x1C8D4
+	ALIGN 4
+	#inctext lyn "Stairs.elf" "Hooks.elf"
+	ALIGN 4
+	StairErrorTextLocation:
+	SHORT 0x1302 //StairsBlockedText
+	
+	PUSH
+	ORG $2F71C
+	POIN RepointThatAction
+	ORG $2F750
+	POIN RepointThatAction
+	ORG $2F758
+	POIN RepointThatAction
+	ORG $2F76C
+	POIN RepointThatAction
+	ORG $2F7EC // GOOD FOR FE7
+	SHORT 0xE7F8 // b #0x0802F314
+	ORG $2F7E0
+	jumpToHack(UnsetMoveDebuff)
+	
+	ORG $219F8 // GOOD FOR FE7
+	jumpToHack(EndTurnFix)
+	POP
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+#define NormalText 0x0
+#define GrayText 0x1
+#define BlueText 0x2
+#define OrangeText 0x3
+#define GreenText 0x4
+#define BlackText 0x5
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG
+	POIN TxtData0x1300_sjis
+	SHORT 0x1300
+	SHORT 0x1301
+	BYTE  GreenText
+	BYTE  $4e
+	SHORT 0
+	POIN StairsUsability|1
+	WORD 0
+	POIN StairsEffect|1
+	WORD 0
+	WORD 0
+	WORD 0
+POP
+
+TxtData0x1300:
+#incbin "0x1300.bin"
+
+TxtData0x1300_sjis:
+#incbin "0x1300_sjis.bin"
+
+TxtData0x1301:
+#incbin "0x1301.bin"
+
+TxtData0x1302:
+#incbin "0x1302.bin"
+
+setText_WithHuffman(0x1300,TxtData0x1300)
+setText_WithHuffman(0x1301,TxtData0x1301)
+setText_WithHuffman(0x1302,TxtData0x1302)

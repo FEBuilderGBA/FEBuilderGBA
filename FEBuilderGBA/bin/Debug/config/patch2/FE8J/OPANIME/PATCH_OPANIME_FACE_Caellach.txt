@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ケセルダ
-NAME.en=OPANIME_FACE_Caellach
+NAME=OPANIME_FACE_ケセルダ
+NAME.en=OP Anime Face: Caellach
 
 TYPE=IMAGE
 TAG=#IMAGE

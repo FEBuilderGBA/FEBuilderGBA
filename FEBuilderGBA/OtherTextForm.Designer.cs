@@ -32,7 +32,7 @@
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.TextBox = new FEBuilderGBA.TextBoxEx();
             this.label14 = new System.Windows.Forms.Label();
-            this.WriteTextButton = new System.Windows.Forms.Button();
+            this.TextWriteButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.AddressPointer = new FEBuilderGBA.TextBoxEx();
@@ -85,15 +85,15 @@
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // WriteTextButton
+            // TextWriteButton
             // 
-            this.WriteTextButton.Location = new System.Drawing.Point(764, -1);
-            this.WriteTextButton.Name = "WriteTextButton";
-            this.WriteTextButton.Size = new System.Drawing.Size(167, 30);
-            this.WriteTextButton.TabIndex = 9;
-            this.WriteTextButton.Text = "書き込み";
-            this.WriteTextButton.UseVisualStyleBackColor = true;
-            this.WriteTextButton.Click += new System.EventHandler(this.WriteTextButton_Click);
+            this.TextWriteButton.Location = new System.Drawing.Point(764, -1);
+            this.TextWriteButton.Name = "TextWriteButton";
+            this.TextWriteButton.Size = new System.Drawing.Size(167, 30);
+            this.TextWriteButton.TabIndex = 9;
+            this.TextWriteButton.Text = "書き込み";
+            this.TextWriteButton.UseVisualStyleBackColor = true;
+            this.TextWriteButton.Click += new System.EventHandler(this.TextWriteButton_Click);
             // 
             // label16
             // 
@@ -110,7 +110,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.AddressPointer);
             this.panel5.Controls.Add(this.BlockSize);
-            this.panel5.Controls.Add(this.WriteTextButton);
+            this.panel5.Controls.Add(this.TextWriteButton);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(286, 9);
@@ -200,7 +200,7 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button WriteTextButton;
+        private System.Windows.Forms.Button TextWriteButton;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;

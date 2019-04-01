@@ -85,7 +85,8 @@ namespace FEBuilderGBA
             , SKILL             //
             , MAPEMOTION        //マップ絵文字
             , COUNTER           //カウンタ(ビットシフト)
-            , RAM_UNIT_PARAM    //RAMユニット
+            , RAM_UNIT_PARAM    //RAMユニット 設定名
+            , RAM_UNIT_VALUE    //RAMユニット 設定値
             , BOOL              //BOOL値型
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
@@ -658,6 +659,9 @@ namespace FEBuilderGBA
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
                  break;
+             case "RAM_UNIT_VALUE":
+                 type = ArgType.RAM_UNIT_VALUE;
+                 break;
              case "BOOL":
                  type = ArgType.BOOL;
                  break;
@@ -781,6 +785,8 @@ namespace FEBuilderGBA
 
         public OneCode DisAseemble(byte[] data,uint startaddr)
         {
+            startaddr = U.toOffset(startaddr);
+
             OneCode code = new OneCode();
             uint leftsize = ((uint)data.Length) - startaddr;
             for(int i = 0 ; i < Scripts.Length ; i++)
@@ -1473,7 +1479,7 @@ namespace FEBuilderGBA
             {
                 commandstr = "0x" + command.ToString("X02").ToUpper();
             }
-            string gametype = Program.ROM.TitleToFilename();
+            string gametype = Program.ROM.RomInfo.TitleToFilename();
 
             string[] files = Directory.GetFiles(@"C:\dropbox\FE8Edit7743\sample\Event Assembler V11.0.1\Language Raws\", "*.txt", SearchOption.AllDirectories);
             for (int i = 0; i < files.Length; i++)
@@ -1596,6 +1602,18 @@ namespace FEBuilderGBA
                 return true;
             }
             return false;
+        }
+        public static uint GetRAMUnitParamIndex(EventScript.OneCode code)
+        {
+            for (int n = 0; n < code.Script.Args.Length; n++)
+            {
+                EventScript.Arg arg = code.Script.Args[n];
+                if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+                {
+                    return (uint)n;
+                }
+            }
+            return 0x0;
         }
     }
 }

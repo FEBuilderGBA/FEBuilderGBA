@@ -66,7 +66,8 @@ namespace FEBuilderGBA
 
             Program.LintCache.Update(est.Addr, f.GetComment());
             Scan();
-            MainSimpleMenuForm.NeedSystemErrorCheck();
+            //EVENTとASMのキャッシュをクリア FELintの再生成を指示する
+            Program.AsmMapFileAsmCache.ClearCache();
         }
         private void ShowErrorButton_Click(object sender, EventArgs e)
         {
@@ -79,6 +80,8 @@ namespace FEBuilderGBA
 
             Program.LintCache.Update(est.Addr, "");
             Scan();
+            //EVENTとASMのキャッシュをクリア FELintの再生成を指示する
+            Program.AsmMapFileAsmCache.ClearCache();
         }
 
         uint MapID = U.NOT_FOUND;
@@ -92,12 +95,11 @@ namespace FEBuilderGBA
         }
         void Scan()
         {
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
-
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
-                this.ErrorList = FELint.ScanMAP(this.MapID);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
+
+                this.ErrorList = FELint.ScanMAP(this.MapID, ldrmap);
                 if (! this.ShowAllError.Checked)
                 {
                     this.ErrorList = FELint.HiddenErrorFilter(this.ErrorList);
@@ -161,7 +163,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.EVENTSCRIPT)
             {
-                text = R._("敵配置");
+                text = R._("イベント");
             }
             else if (dataType == FELint.Type.EVENT_COND_TUTORIAL)
             {
@@ -324,6 +326,10 @@ namespace FEBuilderGBA
             {
                 text = R._("メニュー");
             }
+            else if (dataType == FELint.Type.MENU_DEFINE)
+            {
+                text = R._("メニュー定義");
+            }
             else if (dataType == FELint.Type.STATUS)
             {
                 text = R._("ステータスパラメータ");
@@ -396,6 +402,14 @@ namespace FEBuilderGBA
             {
                 show_tag = tag;
                 text = R._("FELint内部エラー");
+            }
+            else if (dataType == FELint.Type.PROCS)
+            {
+                text = R._("PROCS");
+            }
+            else if (dataType == FELint.Type.AISCRIPT)
+            {
+                text = R._("AISCRIPT");
             }
             else
             {
@@ -473,6 +487,17 @@ namespace FEBuilderGBA
             {//イベント内で発生したエラー
                 EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
                 f.JumpTo(addr, tag);
+                return;
+            }
+            else if (dataType == FELint.Type.PROCS)
+            {
+                ProcsScriptForm f = (ProcsScriptForm)InputFormRef.JumpForm<ProcsScriptForm>(U.NOT_FOUND);
+                f.JumpTo(addr, tag);
+                return;
+            }
+            else if (dataType == FELint.Type.AISCRIPT)
+            {
+                AIScriptForm f = (AIScriptForm)InputFormRef.JumpForm<AIScriptForm>(tag);
                 return;
             }
             else if (dataType == FELint.Type.MAPSETTING_PLIST_OBJECT
@@ -851,7 +876,7 @@ namespace FEBuilderGBA
                         InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();
                     }
                 }
-                return ;
+                return;
             }
             else if (dataType == FELint.Type.RMENU)
             {
@@ -865,7 +890,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.PATCH)
             {
-                PatchForm f =(PatchForm) InputFormRef.JumpForm<PatchForm>();
+                PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
                 f.SelectPatchByTag(tag);
                 return;
             }
@@ -975,15 +1000,11 @@ namespace FEBuilderGBA
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                EventList.SelectedIndex = EventList.IndexFromPoint(e.X, e.Y);
+                int index = EventList.IndexFromPoint(e.X, e.Y);
+                U.SelectedIndexSafety(EventList , index);
             }
         }
 
-        private void MainSimpleMenuEventErrorForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //次回システムチェックをする.
-            MainSimpleMenuForm.NeedSystemErrorCheck();
-        }
 
     }
 }

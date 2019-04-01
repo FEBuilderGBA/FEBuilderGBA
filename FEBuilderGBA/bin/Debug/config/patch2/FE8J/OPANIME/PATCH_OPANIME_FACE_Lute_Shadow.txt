@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ルーテ_影
-NAME.en=OPANIME_FACE_Lute_Shadow
+NAME=OPANIME_FACE_ルーテ_影
+NAME.en=OP Anime Face: Lute (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ヒーニアス
 NAME.en=OP Anime Face: Innes
-NAME.zh=OPANIME_FACE_ Hiniasu
+NAME.zh=OP动画_脸_希尼亚斯
 
 TYPE=IMAGE
 TAG=#IMAGE

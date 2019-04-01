@@ -616,11 +616,10 @@
 080184A8	Res_Getter	RET=Character's resistance	r0=ram char data ptr
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
 08018960	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with
@@ -639,12 +638,11 @@
 
 08016988	Get_Equipped_Weapon	RET=equipped weapon id/uses halfword	r0=ram char data ptr
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
-08020A02	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
+08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
 08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
-0801751E	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -734,7 +732,6 @@
 080173D8	GetNextFreeUnitStructPtr
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
-0801751E	GetUnitItemCount
 08017578	LoadUnits
 08017868	IncreaseUnitStatsByLevelCount
 08017ABC	GetUnitByCharId
@@ -757,14 +754,14 @@
 08018C6C	UpdateGameTileGfx
 08018D90	UpdateGameTilesGraphics
 080192C4	GetTerrainHealAmount
-080192D4	GetTerrainSomething
+080192D4	GetTerrainRestoreBadStatus
 08019384	FillMovementMapForUnitAndMovement
 08019454	FillMovementMapForUnitAt
 080194A4	FillMovementMap
 08019A34	MapAddInRange
 0801A564	FillRangeMap
 0801A7D4	DebugMapMenu_DisplayInfoIdle
-0801A822	DebugMapMenu_DisplayInfoEffect
+0801A820	DebugMapMenu_DisplayInfoEffect
 0801A826	DebugMenu_WeatherDraw
 0801AA70	DebugMenu_ClearEffect
 0801AAE2	DEBUGONLY_Startup
@@ -813,8 +810,7 @@
 080205EC	StealItemMenuCommand_Draw
 080207B4	RescueSelection_OnChange
 080207D8	DropSelection_OnConstruction
-0802019A	RideCommandEffect
-08020A02	AreUnitsAllied
+08020A04	AreUnitsAllied
 08020A16	IsSameAllegience
 08020A98	ForEachUnitInRange
 08020B70	ForEachPosInRange
@@ -1000,8 +996,6 @@
 0809dce0	Div
 08022A94	GetROMUnitSupportingId
 08022AA8	GetUnitSupportingUnit
-0203CCE0	TEMP VALUE
-0804254C	Get[0x0203CCE0]
 08021164	Something in supportive relationship	r0=&UNIT
 085C3A60	:085C3A79	Something about face image related OAM 1
 085C3A7A	:085C3A93	Something about face image related OAM 2
@@ -1025,7 +1019,7 @@
 08001478	BGMapBGPaletteSync void
 08002c04	TileTransferInfoSync void
 08002d6c	OAM2BufferSync void
-08003908	Reset6CEngine Zeroes all 6C headers in Pool. Called on game startup.
+08003908	Initialize6CEngine Zeroes all 6C headers in Pool. Called on game startup.
 @BGMSTRUCT@00	byte	Music related flag 1
 @BGMSTRUCT@04	short	Playing BGM
 @BGMSTRUCT@06	byte	Music related flag 2
@@ -1059,9 +1053,9 @@
 0203CD00	@BATTLE_ANIME	Battle animation relationship 2
 0804807C	ekrBattleStarting_8055FA0
 080425f0	NewEkrBattle
-08003c28	Delete6C(Wrapper) Calls Isolate6C then Delete6C
+08003c28	Delete6C Calls Isolate6C then Delete6C
 08003e60	ClearLoop Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
-08003a04	Create6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
+08003a04	New6C Allocates a new 6C with code pointer (field 0x00&0x04) set to argument r0=A r1=Parent is argument
 08047500	Magical anime with frames and TSA images
 0203AB00	:0203AB0F	UnitSelectSFX patch	Use as patch to reproduce sound when unit is selected
 //Class Change (Promotion)
@@ -1095,3 +1089,215 @@
 080344AC	AI's staff use judgment	Silence
 0803462C	AI's staff use judgment	Sleep	Berserk
 080347A4	AI's staff use judgment	Barrier
+08017174	Get_Weapon_Type	RET=Item's weapon type	r0=item id
+0801729c	GetItemWRank
+086905B0	&TEXTBATCHSHORT	Class introduction text.
+0801597C	AddSkipThread2
+0801598C	SubSkipThread2
+080159A8	SwitchPhases
+080420E4	AddTarget
+0203C9E0	gTargetArray
+0203CCE0	gTargetArraySize
+08042138	LinkTargets
+08042180	TargetSelection_GetRealCursorPosition
+08042264	NewTargetSelection
+08042534	GetFirstTargetPointer
+08042420	GetFarthestTargetIndex
+08042388	LinkTargetsOrdered
+08042534	GetFirstTargetPointer
+08042480	LinkTargetsOrdered
+0804254C	GetTargetListSize
+08042558	GetTarget
+08042584	NewEkrBattleDeamon
+080425C4	EndEkrBattleDeamon
+080425D8	IsBattleDeamonActive
+0203CCE8	gpEkrBattleDeamon
+0203CCE0	gTargetArraySize
+0804256C	Set the value to "unknown flag for battle 4 bytes".
+08042578	Get "unknown flag for battle 4 bytes".
+0203CCE4	Unknown flag for battle 4 bytes.
+0801C700	FillWarpRangeMap
+08018670	CanUnitCrossTerrain
+0801EC94	RescueUsability
+0801ED00	DropUsability
+08017520	GetUnitItemCount
+0802c5e4	NewUnitInfoWindow_WithAllLines
+0802cb14	NewBottomHelpText
+080201A0	RideCommandEffect
+080181d4	MakeMOVEUNITForMapUnit
+08025644	SaveUnitFromBattle
+0805f874	MakeMOVEUNITForMapUnit
+0805fc54	_MOVEUNIT6C_SetDefaultFacingDirection
+08003B54	Delete6CInternal
+08003c80	Free6C
+08003C28    Delete6C
+08003d2c	Isolate6C
+08003E60 	Break6CLoop
+08028348	GameVBlank6C_Destructor
+08028354	GameVBlank6C_Loop
+08004248	DeleteEach6C
+08028394	BlockGameGraphicsLogic
+08001034	EnableBGPaletteSync void
+08004114	BlockEach6CMarked
+080283C8	UnblockGameGraphicsLogic
+0800417c	UnblockEach6CMarked
+08003e7c	Find6C
+08028360	SetupGameVBlank6C
+08002cb8	OAMBufferSyncInfoInitialize
+08002d54	GetSpriteNum1
+0802A028	ApplyUnitAction
+0203956C	gActionData
+0802A028	_6CE_PLAYERPAHSE_PrepareAction
+0802A494	ActionSteal
+0802A138	ActionRescue
+0802A188	ActionDrop
+0802A3C0	ActionTalk
+0802A3EC	ActionSupport
+0802A208	ActionVisitAndSieze
+08027F98	ActionStaffDoorChestUseItem
+0802A30C	ActionCombat
+0802A370	ActionDance
+0802A35C	ActionArena
+@ArenaTemp@00	&Unit	Player unit.
+@ArenaTemp@04	&Unit	Opponent.
+@ArenaTemp@08	short	Premium.
+@ArenaTemp@0A	byte	Battle result.
+@ArenaTemp@0B	byte	Unknown 1
+@ArenaTemp@0C	byte	Uses
+@ArenaTemp@0D	byte	Item Editor
+@ArenaTemp@0E	byte	Unknown 2
+@ArenaTemp@0F	byte	Unknown 3.
+@ArenaTemp@10	short	Unknown 4.
+@ArenaTemp@12	byte	Unknown 5.
+@ArenaTemp@13	byte	Unknown 6.
+@ArenaTemp@14	short	Unknown 7.
+@ArenaTemp@15	short	Unknown 8.
+@ArenaTemp@16	short	The strength of the player.
+@ArenaTemp@18	short	Strength of the opponent.
+02039504	@ArenaTemp	Temporary data of the stadium.
+08022064	GetUnitMapSpritePaletteIndex
+08026504	When exchanging items actually by item exchange.
+08033C04	AiTryDoStaff
+08033C84	gStaffAiPerformTable_2
+08033C8C	GetAiSafestAccessibleAdjacentPosition
+0803260c	AiGetPositionTerrainSafetyWeight
+0803264c	AiGetPositionUnitSafetyWeight
+087DFC44	&LZ77	Empty battle anime sheet.
+087C18C4	&LZ77	Empty battle anime sheet.
+08709AC8	&LZ77	Empty battle anime sheet.
+087C1C94	&LZ77	Empty battle anime sheet.
+08716F9C	&LZ77	Unused battle image.	Maybe
+08007d3c	RegisterObjectSafe
+085C39A8	&OAMREGS	OAMREGS
+085CAFE4	&OAMREGS	OAMREGS
+0810F544	&OAMREGS	OAMREGS
+085CB16C	&OAMREGS	OAMREGS
+0810F52A	&OAMREGS	OAMREGS
+085C39F0	&OAMREGS	OAMREGS
+085C3A00	&OAMREGS	OAMREGS
+085C39C0	&OAMREGS	OAMREGS
+085C3A08	&OAMREGS	OAMREGS
+0867917A	&OAMREGS	OAMREGS
+085C39E0	&OAMREGS	OAMREGS
+0868A568	&OAMREGS	OAMREGS
+08307D58	&LZ77	Something small compressed data.	01
+08307DD4	&LZ77	Something small compressed data.	02
+08308070	&LZ77	Something small compressed data.	03
+08307E50	&LZ77	Something small compressed data.	04
+08307CEC	&LZ77	Something small compressed data.	05
+08309408	&LZ77	Something small compressed data.	06
+082DC944	&LZ77	Something small compressed data.	07
+08379DCC	&LZ77	Something small compressed data.	08
+08015260	A routine for reading a palette of something
+08014218	A routine for reading a palette of something
+08375B64	&PALETTE	Palette of something.
+085C4E8C	&PALETTE	Palette of something.
+085C4EAC	&PALETTE	Palette of something.
+083758A8	&PALETTE	Palette of something.
+08375888	&PALETTE	Palette of something.
+0837AAC8	&PALETTE	Palette of something.
+0201F0E8	&PALETTE	Palette of something.
+02021708	&PALETTE	Palette of something.
+08100A08	&PALETTE	Palette of something.
+08100A28	&PALETTE	Palette of something.
+0810137C	&PALETTE	Palette of something.
+081017F4	&PALETTE	Palette of something.
+081021D8	&PALETTE	Palette of something.
+0810361C	&PALETTE	Palette of something.
+0810363C	&PALETTE	Palette of something.
+08104374	&PALETTE	Palette of something.
+081048D4	&PALETTE	Palette of something.
+08105194	&PALETTE	Palette of something.
+081056F0	&PALETTE	Palette of something.
+081099A0	&PALETTE	Palette of something.
+08109A00	&PALETTE	Palette of something.
+08109A80	&PALETTE	Palette of something.
+08109AC0	&PALETTE	Palette of something.
+08109B00	&PALETTE	Palette of something.
+08109BA0	&PALETTE	Palette of something.
+08109BE0	&PALETTE	Palette of something.
+08109C40	&PALETTE	Palette of something.
+08109C60	&PALETTE	Palette of something.
+0810BA80	&PALETTE	Palette of something.
+0810BAC0	&PALETTE	Palette of something.
+0810D134	&PALETTE	Palette of something.
+0810FF98	&PALETTE	Palette of something.
+08111BC4	&PALETTE	Palette of something.
+081B7650	&PALETTE	Palette of something.
+082AAD5C	&PALETTE	Palette of something.
+082D3398	&PALETTE	Palette of something.
+082D36E4	&PALETTE	Palette of something.
+082D37E4	&PALETTE	Palette of something.
+082D3864	&PALETTE	Palette of something.
+082DCD70	&PALETTE	Palette of something.
+082DD248	&PALETTE	Palette of something.
+082DD4C8	&PALETTE	Palette of something.
+082DD808	&PALETTE	Palette of something.
+082DF690	&PALETTE	Palette of something.
+082DF704	&PALETTE	Palette of something.
+082E10EC	&PALETTE	Palette of something.
+082E172C	&PALETTE	Palette of something.
+08308050	&PALETTE	Palette of something.
+08309298	&PALETTE	Palette of something.
+0830A770	&PALETTE	Palette of something.
+0830C414	&PALETTE	Palette of something.
+0830D5E4	&PALETTE	Palette of something.
+0830D93C	&PALETTE	Palette of something.
+0830D95C	&PALETTE	Palette of something.
+0831A248	&PALETTE	Palette of something.
+0831AABC	&PALETTE	Palette of something.
+08320D98	&PALETTE	Palette of something.
+08321EE4	&PALETTE	Palette of something.
+08326E64	&PALETTE	Palette of something.
+08327108	&PALETTE	Palette of something.
+083277BC	&PALETTE	Palette of something.
+083277DC	&PALETTE	Palette of something.
+083278AC	&PALETTE	Palette of something.
+0832BDE8	&PALETTE	Palette of something.
+0832C33C	&PALETTE	Palette of something.
+0832CA9C	&PALETTE	Palette of something.
+0832CC90	&PALETTE	Palette of something.
+0833BFDC	&PALETTE	Palette of something.
+0833C944	&PALETTE	Palette of something.
+08341DA0	&PALETTE	Palette of something.
+08342A98	&PALETTE	Palette of something.
+08342AB8	&PALETTE	Palette of something.
+08342AD8	&PALETTE	Palette of something.
+08345420	&PALETTE	Palette of something.
+08346184	&PALETTE	Palette of something.
+08353308	&PALETTE	Palette of something.
+08354760	&PALETTE	Palette of something.
+0835A5D0	&PALETTE	Palette of something.
+0835AB08	&PALETTE	Palette of something.
+0835C034	&PALETTE	Palette of something.
+0835F388	&PALETTE	Palette of something.
+08364418	&PALETTE	Palette of something.
+08364A94	&PALETTE	Palette of something.
+08379D0C	&PALETTE	Palette of something.
+0837AA68	&PALETTE	Palette of something.
+0837ACB0	&PALETTE	Palette of something.
+0837CB0C	&PALETTE	Palette of something.
+0837CB4C	&PALETTE	Palette of something.
+0837CB6C	&PALETTE	Palette of something.
+0837F418	&PALETTE	Palette of something.
+08380ECC	&PALETTE	Palette of something.

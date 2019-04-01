@@ -128,6 +128,11 @@ namespace FEBuilderGBA
                         continue;
                     }
 
+                    if (pair.Value.IsPointer)
+                    {//ポインタデータは不要
+                        continue;
+                    }
+
                     //長いと不便なので、名前以外不要.
                     string name = pair.Value.Name;
                     name = U.term(name, "\t");

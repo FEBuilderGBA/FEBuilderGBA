@@ -1,5 +1,5 @@
-﻿NAME=AIが最大HPのユニットを回復させるのを停止させる
-NAME.en=stop them from healing max hp units(healer ai fix)
+NAME=AIが最大HPのユニットを回復させるのを停止させる
+NAME.en=AI: Prevent Healer Mistarget
 
 //アドレスパッチとして実装します
 TYPE=SWITCH
@@ -17,3 +17,5 @@ OFF:0x3FC1D=0xD8
 
 AUTHOR=Magrika is Now Canon Transport:7743
 NAME.zh=阻止他们治疗最大hp单位（治疗者ai修复）
+
+INFO.en=Toggles whether to prevent healers from targeting full health units (patched) or not (default).\r\n

@@ -1,6 +1,6 @@
 NAME=AIが最大HPのユニットを回復させるのを停止させる
 NAME.en=AI: Prevent Healer Mistarget
-NAME.zh=停止将AI恢复到最大HP单位
+NAME.zh=阻止他们治疗最大hp单位（治疗者ai修复）
 
 //アドレスパッチとして実装します
 TYPE=SWITCH

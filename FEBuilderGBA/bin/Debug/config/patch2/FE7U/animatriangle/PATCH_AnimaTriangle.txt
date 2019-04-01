@@ -1,0 +1,17 @@
+NAME=Anima Triangle
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x2A1E0=0x78 0x47 0xC0 0x46 0x00 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+
+EA=AnimaTriangle.event
+
+INFO=同じ属性の武器の中でも、三すくみを作れるようにします。
+AUTHOR=Snakey1
+INFO.en=Even among the weapons of the same attribute, create weapon triangle.
+INFO.zh=即使在具有相同属性的武器中，我们也可以创建三个。
+
+EDIT_PATCH:1=PATCH_AnimaTriangle_FireList.txt
+EDIT_PATCH:2=PATCH_AnimaTriangle_ThunderList.txt
+EDIT_PATCH:3=PATCH_AnimaTriangle_WindList.txt

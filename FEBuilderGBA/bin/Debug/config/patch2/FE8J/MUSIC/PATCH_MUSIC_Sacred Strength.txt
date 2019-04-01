@@ -1,7 +1,7 @@
 NAME=MUSIC_聖なる力
 NAME.zh=音乐_神圣之力
 
-NAME.en=MUSIC_Sacred Strength
+NAME.en=Sacred Weapons BGM BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND

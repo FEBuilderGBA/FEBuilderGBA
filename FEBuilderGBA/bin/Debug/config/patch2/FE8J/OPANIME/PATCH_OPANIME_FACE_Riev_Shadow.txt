@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_アーヴ_影
-NAME.en=OPANIME_FACE_Riev_Shadow
+NAME=OPANIME_FACE_アーヴ_影
+NAME.en=OP Anime Face: Riev (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

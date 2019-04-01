@@ -858,7 +858,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
             }
@@ -872,7 +872,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return 0;
             }
@@ -891,7 +891,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
             }
@@ -908,7 +908,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return new Size(0, 0);
             }
@@ -929,7 +929,7 @@ namespace FEBuilderGBA
                 }
                 catch (ExternalException e)
                 {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                    Log.Error("GDI+ Exception", e.ToString(), e.ErrorCode.ToString(), e.StackTrace);
+                    Log.Error(R.ExceptionToString(e));
                     Debug.Assert(false);
                 }
                 catch (System.OutOfMemoryException e)
@@ -1410,14 +1410,20 @@ namespace FEBuilderGBA
             Array.Copy(a, pos , r, pos + b.Length, a.Length - pos);
             return r;
         }
-        //0番地に書き込みを拒否する
-        public static bool CheckZeroAddressWrite(uint addr,bool ShowMessage = true)
+
+        public static bool CheckZeroAddressWriteHigh(uint addr, bool ShowMessage = true)
         {
-            if (addr == U.NOT_FOUND || addr <= 0x100)
+            return CheckZeroAddressWrite(addr, ShowMessage, Program.ROM.RomInfo.compress_image_borderline_address() );
+        }
+
+        //0番地に書き込みを拒否する
+        public static bool CheckZeroAddressWrite(uint addr,bool ShowMessage = true , uint ProtectedAddress = 0x100)
+        {
+            if (addr == U.NOT_FOUND || addr <= ProtectedAddress)
             {
                 if (ShowMessage)
                 {
-                    R.ShowStopError("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr));
+                    R.ShowStopError("アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。", U.To0xHexString(addr), U.To0xHexString(ProtectedAddress));
                 }
                 return false;
             }
@@ -1924,6 +1930,10 @@ namespace FEBuilderGBA
             }
 
             Debug.Assert(need.Length > 0);
+            if (need.Length <= 0)
+            {
+                return U.NOT_FOUND;
+            }
             if (start > end)
             {//データ数が足りない
                 return U.NOT_FOUND;
@@ -2065,6 +2075,7 @@ namespace FEBuilderGBA
             ImageMagicFEditorForm.MakeAllDataLength(list , isPointerOnly);
             ImageMagicCSACreatorForm.MakeAllDataLength(list, isPointerOnly);
             TextCharCodeForm.MakeAllDataLength(list);
+            UnitActionPointerForm.MakeAllDataLength(list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 2")) return list;
 
             if (Program.ROM.RomInfo.is_multibyte() == false)
@@ -2190,7 +2201,7 @@ namespace FEBuilderGBA
                     ImageChapterTitleFE7Form.MakeAllDataLength(list, isPointerOnly);
                     MapSettingFE7Form.MakeAllDataLength(list);
                     ImageCGForm.MakeAllDataLength(list, isPointerOnly);
-                    OPClassDemoFE7Form.MakeAllDataLength(list);
+                    OPClassDemoFE7Form.MakeAllDataLength(list , isPointerOnly);
                 }
                 else
                 {
@@ -2215,6 +2226,7 @@ namespace FEBuilderGBA
                 SupportUnitFE6Form.MakeAllDataLength(list);
                 WorldMapImageFE6Form.MakeAllDataLength(list, isPointerOnly);
                 MapSettingFE6Form.MakeAllDataLength(list);
+                OPClassAlphaNameFE6Form.MakeAllDataLength(list);
             }
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 5")) return list;
 
@@ -2277,9 +2289,9 @@ namespace FEBuilderGBA
                 OAMSPForm.MakeAllDataLength(structlist, structlist, ldrmap);
             }
         }
-        public static List<TextID> MakeTextIDArray()
+        public static List<UseTextID> MakeTextIDArray()
         {
-            List<TextID> list = new List<TextID>();
+            List<UseTextID> list = new List<UseTextID>();
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 1")) return list;
 
             UnitForm.MakeTextIDArray(list);
@@ -2685,14 +2697,14 @@ namespace FEBuilderGBA
             string fullfilename;
             if (rom != null)
             {
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + "." + lang + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + lang + ".txt");
                 if (File.Exists(fullfilename))
                 {//言語指定がある
                     return fullfilename;
                 }
                 if (canSecondLanguageEnglish)
                 {//第2言語を英語にできるなら英語リソースを検索
-                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + "." + "en" + ".txt");
+                    fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + "." + "en" + ".txt");
                     if (File.Exists(fullfilename))
                     {//言語指定がある
                         return fullfilename;
@@ -2700,7 +2712,7 @@ namespace FEBuilderGBA
                 }
 
                 //ないなら共通版
-                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.TitleToFilename() + ".txt");
+                fullfilename = Path.Combine(Program.BaseDirectory, "config", "data", type + rom.RomInfo.TitleToFilename() + ".txt");
                 if (File.Exists(fullfilename))
                 {//各FEごとの設定がある
                     return fullfilename;
@@ -2739,7 +2751,7 @@ namespace FEBuilderGBA
             }
             else if (rom.IsVirtualROM)
             {//仮想ROMなのでファイル名はない
-                romtitle = "_Virtial_" + rom.VersionToFilename();
+                romtitle = "_Virtial_" + rom.RomInfo.VersionToFilename();
             }
             else
             {
@@ -3471,7 +3483,7 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
-                Log.Error("GDI+ Exception", e.ToString(),e.ErrorCode.ToString(), e.StackTrace);
+                Log.Error(R.ExceptionToString(e));
                 Debug.Assert(false);
                 return bitmap;
             }
@@ -4915,6 +4927,26 @@ namespace FEBuilderGBA
             return (addr - first) ;
         }
 
+        //TextBatchの長さを求める
+        //
+        public static uint TextBatchShortLength(uint addr, ROM rom)
+        {
+            uint first = addr;
+
+            uint length = (uint)rom.Data.Length - 2;
+            for (; addr < length; addr += 2)
+            {
+                uint addr02 = rom.u16(addr);
+                if (addr02 == 0)
+                {
+                    addr += 2;
+                    break;
+                }
+            }
+
+            return (addr - first);
+        }
+
         public static byte ToCharOneHex(byte a)
         {
             if (a >= 10)
@@ -5380,10 +5412,18 @@ namespace FEBuilderGBA
                 return 0;
             }
 
-            System.Diagnostics.FileVersionInfo vi =
-                System.Diagnostics.FileVersionInfo.GetVersionInfo(
-                    filename);
-            return U.atof(vi.FileVersion);
+            try
+            {
+                System.Diagnostics.FileVersionInfo vi =
+                    System.Diagnostics.FileVersionInfo.GetVersionInfo(
+                        filename);
+                return U.atof(vi.FileVersion);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.ToString());
+                return 0;
+            }
         }
 
         /// 指定された拡張子に関連付けられた実行ファイルのパスを取得する。
@@ -5479,6 +5519,66 @@ namespace FEBuilderGBA
         public static bool Wordrap(char c)
         {
             return c == ' ' || c == '\t' || c == '\n';
+        }
+        public static uint[] ParseTSVLine(string line,bool skipFirst,char sep = '\t')
+        {
+            string[] arr = line.Split(sep);
+            List<uint> list = new List<uint>();
+            
+            for (int i = 0 ; i < arr.Length; i++)
+            {
+                string s = arr[i];
+                while (s.Length >= 1 && s[0] == '"')
+                {
+                    i++;
+                    if (i >= arr.Length)
+                    {
+                        break;
+                    }
+                    s += arr[i];
+                }
+
+                if (skipFirst)
+                {//最初のデータは名前なので捨てる
+                    skipFirst = false;
+                    continue;
+                }
+
+                uint v = U.atoi0x(s);
+                list.Add(v);
+            }
+            return list.ToArray();
+        }
+
+
+        [DllImport("kernel32.dll")]
+        static extern uint FormatMessage(
+          uint dwFlags, IntPtr lpSource,
+          uint dwMessageId, uint dwLanguageId,
+          StringBuilder lpBuffer, int nSize,
+          IntPtr Arguments);
+        const uint FORMAT_MESSAGE_ALLOCATE_BUFFER = 0x00000100;
+        const uint FORMAT_MESSAGE_IGNORE_INSERTS = 0x00000200;
+        const uint FORMAT_MESSAGE_FROM_SYSTEM = 0x00001000;
+        const uint FORMAT_MESSAGE_ARGUMENT_ARRAY = 0x00002000;
+        const uint FORMAT_MESSAGE_FROM_HMODULE = 0x00000800;
+        const uint FORMAT_MESSAGE_FROM_STRING = 0x00000400;
+
+        //https://www.atmarkit.co.jp/fdotnet/dotnettips/741win32errmsg/win32errmsg.html
+        public static string HRESULTtoString(int errCode) 
+        {
+            StringBuilder message = new StringBuilder(1024);
+
+            FormatMessage(
+              FORMAT_MESSAGE_FROM_SYSTEM,
+              IntPtr.Zero,
+              (uint)errCode,
+              0,
+              message,
+              message.Capacity,
+              IntPtr.Zero);
+
+            return message.ToString();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
             Comment_85command_Dic = U.LoadDicResource(U.ConfigDataFilename("battleanime_85command_"));
         }
         Dictionary<uint, string> Comment_85command_Dic;

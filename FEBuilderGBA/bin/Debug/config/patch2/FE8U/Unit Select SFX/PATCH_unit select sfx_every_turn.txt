@@ -1,6 +1,6 @@
 NAME=ユニットを選択した時に音声を再生する(毎ターン再生する)
 NAME.en=Unit Select SFX Frequency
-NAME.zh=选择单位时播放声音（每回合播放一次）
+NAME.zh=选择人物时播放声音（每回合播放一次）
 
 IF:0x186B0=0x00 0x4B 0x18 0x47
 

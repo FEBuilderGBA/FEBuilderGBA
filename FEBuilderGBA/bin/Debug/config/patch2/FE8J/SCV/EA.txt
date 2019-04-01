@@ -1,12 +1,8 @@
 PUSH
 
-先頭指定
-ORG	0x5C56FC
-WORD	$085C534C
-
-ORG $5C534C
-
-WORD	$080DCC00
+//先頭指定
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	KikenString
 SHORT $0000 $0661 $7400 0
 WORD	$080501BD 0
 POIN	OutKiken|1
@@ -15,6 +11,12 @@ POP
 
 OutKiken:
  #incbin KikenOut_80.bin
+
+ALIGN 4
+KikenString:
+ #incbin KikenString.bin
+
+
 ALIGN 4
 
 PUSH

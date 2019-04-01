@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_ターナ_影
 NAME.en=OP Anime Face: Tana (Shadow)
-NAME.zh=OPANIME_FACE_Turner_影子
+NAME.zh=OP动画_脸_塔娜_阴影
 
 TYPE=IMAGE
 TAG=#IMAGE

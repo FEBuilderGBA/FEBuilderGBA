@@ -208,7 +208,15 @@ namespace FEBuilderGBA
                     error.AppendLine(tb.Error + "\r\n --> " + tb.SrcText + "\r\n");
                 }
             }
-            if (error.Length == 0)
+
+            bool isSystemReserve = IsSystemReserve((uint)this.AddressList.SelectedIndex);
+            if (error.Length == 0 && isSystemReserve && this.SimpleList.Count == 0)
+            {//空いているけど予約されているので使わないでくださいという表示
+                this.DetailErrorMessageBox.ErrorMessage = "";
+                this.DetailErrorMessageBox.Text = R._("この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。");
+                this.DetailErrorMessageBox.Show();
+            }
+            else if (error.Length == 0)
             {
                 this.DetailErrorMessageBox.Hide();
             }
@@ -218,6 +226,30 @@ namespace FEBuilderGBA
                 this.DetailErrorMessageBox.Text = error.ToString();
                 this.DetailErrorMessageBox.Show();
             }
+        }
+
+        //システム予約
+        public static bool IsSystemReserve(uint textid)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {
+                    if (textid >= 0xE00 && textid <= 0xEFF)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    if (textid >= 0xE00 && textid <= 0xFFF)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr, bool useUnHuffmanPatch)
@@ -274,7 +306,7 @@ namespace FEBuilderGBA
 
             return  (FETextEncode.IsUnHuffmanPatchPointer(write_addr));
         }
-        private void WriteTextButton_Click(object sender, EventArgs e)
+        private void TextWriteButton_Click(object sender, EventArgs e)
         {
             if (InputFormRef.IsPleaseWaitDialog(this))
             {
@@ -288,9 +320,10 @@ namespace FEBuilderGBA
 
             string text = GetEditorText(this.TextArea);
 
+            uint textid = (uint)this.AddressList.SelectedIndex;
             uint write_addr = WriteText(InputFormRef.BaseAddress
                 , InputFormRef.DataCount
-                , (uint)this.AddressList.SelectedIndex
+                , textid
                 , text
                 );
             if(write_addr == U.NOT_FOUND)
@@ -300,7 +333,7 @@ namespace FEBuilderGBA
             InputFormRef.ReloadAddressList();
             InputFormRef.ShowWriteNotifyAnimation(this, write_addr);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
-            InputFormRef.UpdateAllNumericUpDown();
+            InputFormRef.UpdateAllTextID(textid);
         }
 
         public static uint WriteText(
@@ -459,7 +492,7 @@ namespace FEBuilderGBA
                 }
                 else if (code.Code1 >= 0x8) 
                 {//セリフ
-                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, GetMaxSerifWidth(), 16 * 2, false);
+                    CheckBlockResult result = ct.CheckBlockBox(code.SrcText, MAX_SERIF_WIDTH, 16 * 2, false);
                     if (result != CheckBlockResult.NoError)
                     {
                         code.Error = ct.ErrorString;
@@ -850,6 +883,28 @@ namespace FEBuilderGBA
             Debug.Assert(simpleList[6].Units[5] == 0x0);
             Debug.Assert(simpleList[6].Units[6] == 0x0);
             Debug.Assert(simpleList[6].Units[7] == 0x0);
+        }
+
+        public static void TESTNOW_TEXTPARSE10()
+        {
+            string text =
+            "@000C@0010@0102@0080@001D@0016...@0004@0003\r\n" + ///No Translate
+            "@0080@001C.....@0005@0003" ; ///No Translate
+            List<TextBlock> simpleList;
+            ParseTextList(text, out simpleList);
+
+            //位置を更新
+            UpdatePosstion(ref simpleList);
+
+            Debug.Assert(simpleList[0].Code1 == 0xc);
+            Debug.Assert(simpleList[0].Code2 == 0x10); 
+            Debug.Assert(simpleList[0].Code3 == 0x102);
+            Debug.Assert(simpleList[0].SrcText == "@000C@0010@0102");///No Translate
+
+            Debug.Assert(simpleList[1].Code1 == 0xc);
+            Debug.Assert(simpleList[1].Code2 == 0x0);
+            Debug.Assert(simpleList[1].Code3 == 0x0);
+            Debug.Assert(simpleList[1].SrcText == "@0080@001D@0016...@0004@0003\r\n@0080@001C.....@0005@0003");///No Translate
         }
 
 #endif
@@ -1622,24 +1677,42 @@ namespace FEBuilderGBA
         }
         static string StripDrawSerifText(TextBlock code)
         {
-            string text;
             if (code.SrcText.Length > 5 && code.SrcText[0] == '@')
             {//@0009セリフ みたいな普通の形式であれば、 @0009等の位置情報を削る.
-                if (code.Code1 <= 0xF)
+                if (code.Code1 > 0xF)
                 {
-                    text = code.SrcText.Substring(5);
+                    return code.SrcText;
                 }
-                else
-                {
-                    text = code.SrcText;
+
+                //削るコードが位置情報である確認
+                string stripCodeString = code.SrcText.Substring(1,5);
+                uint stripCode = U.atoh(stripCodeString);
+                if (stripCode > 0xF)
+                {//削ってはいけないコード
+                    return code.SrcText;
                 }
+
+                string text = code.SrcText.Substring(5);
+                return text;
             }
-            else
-            {
-                text = code.SrcText;
-            }
-            return text;
+            return code.SrcText;
         }
+
+        public static void TEST_StripDrawSerifText()
+        {//削っていいコードかどうか確認する.
+            TextBlock code = new TextBlock();
+            code.Code1 = 0xc;
+            code.Code2 = 0x0;
+            code.Code3 = 0x0;
+            code.Error = "";
+            code.isJump = false;
+            code.SrcText = "@0080@001D@0016...@0004@0003\r\n@0080@001C.....@0005@0003";///No Translate
+            
+            string a = StripDrawSerifText(code);
+            Debug.Assert(a == code.SrcText);
+        }
+
+
         void ShowFloatingControlpanel()
         {
             int y;
@@ -1768,18 +1841,31 @@ namespace FEBuilderGBA
             TextToSpeechForm.OptionTextToSpeech(editor.Text2);
         }
 
-        public static int GetMaxSerifWidth()
-        {
-            return 214;
-        }
+        public const int MAX_SERIF_WIDTH = 214;
+        public const int MAX_DEATH_QUOTE_WIDTH = 152;
 
+        bool IsDeathQuoteSerif()
+        {
+            return (this.SelectDataTypeOf == FELint.Type.BATTTLE_TALK
+                || this.SelectDataTypeOf == FELint.Type.HAIKU);
+        }
 
         private void TextListSpSerifuTextBox_TextChanged(object sender, EventArgs e)
         {
             string text = GetEditorText(this.TextListSpSerifuTextBox);
             CheckText ct = new CheckText();
 
-            CheckBlockResult result = ct.CheckBlockBox(text, GetMaxSerifWidth(), 16 * 2, false);
+            int widthLimit ;
+            if (IsDeathQuoteSerif())
+            {
+                widthLimit = MAX_DEATH_QUOTE_WIDTH;
+            }
+            else
+            {
+                widthLimit = MAX_SERIF_WIDTH;
+            }
+
+            CheckBlockResult result = ct.CheckBlockBox(text, widthLimit, 16 * 2, false);
             if (result == CheckBlockResult.NoError)
             {
                 ERROR_SERIFU.Hide();
@@ -2590,7 +2676,26 @@ namespace FEBuilderGBA
             this.TextArea.Focus();
         }
 
-        public static string GetErrorMessage(string text, string arg1)
+        static bool IsFE8SplitMenu(uint textid)
+        {
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//FE8J
+            }
+            else
+            {//FE8U
+                if (textid == 0xc15 || textid == 0xc16)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static string GetErrorMessage(string text,uint textid ,string arg1)
         {
             if (text == "")
             {
@@ -2647,11 +2752,19 @@ namespace FEBuilderGBA
             }
             if (arg1 == "MENUNAME1")
             {
+                if (IsFE8SplitMenu(textid))
+                {
+                    return "";
+                }
                 return CheckOneLineTextMessage(text, 10 * 8, 1 * 16, true);
             }
             if (arg1 == "MENUDETAIL2")
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 2 * 16, false);
+            }
+            if (arg1 == "MENUDETAIL3")
+            {
+                return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
             }
             if (arg1 == "TERRAINNAME1")
             {
@@ -2659,7 +2772,7 @@ namespace FEBuilderGBA
             }
             if (arg1 == "OPCLASS2")
             {
-                return CheckOneLineTextMessage(text, GetMaxSerifWidth(), 2 * 16, false);
+                return CheckOneLineTextMessage(text, MAX_SERIF_WIDTH, 2 * 16, false);
             }
             if (arg1 == "ITEM3")
             {
@@ -2669,10 +2782,17 @@ namespace FEBuilderGBA
             {
                 return CheckOneLineTextMessage(text, 24 * 8, 1 * 16, false);
             }
-
+            if (arg1 == "ITEMX")
+            {//とりあえず3行でチェック
+                return CheckOneLineTextMessage(text, 24 * 8, 3 * 16, false);
+            }
             if (arg1 == "CONVERSATION")
             {
-                return CheckConversationTextMessage(text);
+                return CheckConversationTextMessage(text, MAX_SERIF_WIDTH);
+            }
+            if (arg1 == "DEATHQUOTE")
+            {
+                return CheckConversationTextMessage(text, MAX_DEATH_QUOTE_WIDTH);
             }
             return "";
         }
@@ -2892,6 +3012,10 @@ namespace FEBuilderGBA
                     }
 
                     uint width = MeasureTextWidthOneLine(line, IsItemFont);
+                    if (code0003Pos > 0)
+                    {//@0003がある場合、2ドット使えるサイズが小さいらしい.
+                        width += 2;
+                    }
                     if (width > maxwidth)
                     {
                         maxwidth = width;
@@ -2937,7 +3061,7 @@ namespace FEBuilderGBA
         }
 
         //会話テキストのエラーチェック
-        public static string CheckConversationTextMessage(string text)
+        public static string CheckConversationTextMessage(string text, int widthLimit)
         {
             if (text.Length <= 0)
             {
@@ -2957,9 +3081,9 @@ namespace FEBuilderGBA
             }
             if (!found_required2_words)
             {
-                if (text != "不要")
+                if (text != "不要") ///No Translate
                 {//FE7J のルイーズとの支援会話
-                    return R._("警告:\r\n会話用のテキストなのに@0003等の記号がありません。");
+                    return ConvertEscapeToFEditor(R._("警告:\r\n会話用のテキストなのに@0003等の記号がありません。"));
                 }
             }
 
@@ -2979,7 +3103,7 @@ namespace FEBuilderGBA
                 return CheckSystemTextMessage(text);
             }
 
-            return CheckParse(text, GetMaxSerifWidth(), 16 * 2, false);
+            return CheckParse(text, widthLimit, 16 * 2, false);
         }
         //システムメッセージのエラーチェック
         public static string CheckSystemTextMessage(string text)
@@ -3000,7 +3124,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            return CheckParse(text, GetMaxSerifWidth(), 16 * 5, false);
+            return CheckParse(text, MAX_SERIF_WIDTH, 16 * 5, false);
         }
         //一行テキストのエラーチェック
         public static string CheckOneLineTextMessage(string text, int width, int height,bool isItemFont)
@@ -3033,13 +3157,15 @@ namespace FEBuilderGBA
             this.TextTabControl.SelectedTab = this.RefPage;
         }
 
+        FELint.Type SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
         void UpdateRef(uint id)
         {
             AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
-            List<TextID> textIDList = map.GetTextIDArray();
+            List<UseTextID> textIDList = map.GetTextIDArray();
             if (textIDList == null)
             {
                 RefCountTextBox.Text = R._("計測中...");
+                this.SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
                 return;
             }
 
@@ -3050,13 +3176,14 @@ namespace FEBuilderGBA
             int count = textIDList.Count;
             for (int i = 0; i < count; i++)
             {
-                TextID t = textIDList[i];
+                UseTextID t = textIDList[i];
                 if (t.ID != id)
                 {
                     continue;
                 }
                 refCount++;
                 RefListBox.Items.Add(t);
+                this.SelectDataTypeOf = t.DataType;
             }
             RefListBox.EndUpdate();
             RefCountTextBox.Text = refCount.ToString();
@@ -3067,7 +3194,7 @@ namespace FEBuilderGBA
             {
                 return new Size(listbounds.X, listbounds.Y);
             }
-            TextID t = (TextID)lb.Items[index];
+            UseTextID t = (UseTextID)lb.Items[index];
 
             SolidBrush brush = new SolidBrush(lb.ForeColor);
             SolidBrush keywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
@@ -3139,7 +3266,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            TextID t = (TextID)this.RefListBox.Items[index];
+            UseTextID t = (UseTextID)this.RefListBox.Items[index];
             MainSimpleMenuEventErrorForm.GotoEvent(t.DataType, t.Addr, t.Tag, 0);
         }
 

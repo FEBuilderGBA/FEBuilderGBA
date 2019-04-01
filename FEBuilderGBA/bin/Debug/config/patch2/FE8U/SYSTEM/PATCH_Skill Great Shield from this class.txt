@@ -1,6 +1,6 @@
 NAME=スキル大盾_このクラスから
 NAME.en=Great Shield First Class
-NAME.zh=技能大盾_来自这个班级
+NAME.zh=技能大盾_这个职业前
 
 //アドレスパッチとして実装します
 TYPE=ADDR

@@ -1,5 +1,5 @@
 NAME=ユニットを選択した時に音声を再生する(導入)
-NAME.en=unit select sfx(Installer)
+NAME.en=Unit Select SFX Installer
 
 TYPE=EA
 TAG=#ENGINE #SOUND
@@ -12,6 +12,6 @@ EDIT_PATCH=PATCH_unit select sfx.txt
 AUTHOR=Orignal:Leonarth Remodeling:7743 http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693
 
 INFO=ユニットを選択した時に、音声を再生します。\r\nLeonarthのasmをベースに、条件を細かく設定できるようにしました。
-INFO.en=When you select a unit, play sound.\r\nBased on Leonarth's asm, I made it possible to set conditions finely.\r\n
-NAME.zh=选择单位时播放音频（介绍）
-INFO.zh=当你选择一个单位时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。
+INFO.en=Sets the sound played upon unit select.\r\nMust be installed to use "Unit Select SFX Editor" and "Unit Select SFX Frequency."\r\nBased on Leonarth's asm, with added conditional options.\r\n
+NAME.zh=选择人物时播放音频（介绍）引进
+INFO.zh=当你选择一个人物时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。

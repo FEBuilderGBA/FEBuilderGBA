@@ -44,6 +44,7 @@ namespace FEBuilderGBA
             , MagicPatch_By_Menu
             , Skill
             , SkipWorldmapFix
+            , ItemIconExpands
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -106,6 +107,14 @@ namespace FEBuilderGBA
                 reason = R._("武器と魔法を同時に利用するにはMeleeAndMagicPatchが必要です。\r\n有効にしますか？");
                 patchName1 = "MeleeAndMagicFix";///No Translate
             }
+            else if (type == TYPE.ItemIconExpands)
+            {
+                checkFunc = InputFormRef.SearchIconExpandsPatch;
+                reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
+                patchName1 = "アイテムアイコンFEまで拡張";///No Translate
+                patchName2 = "Extend Item Icon List Length";///No Translate
+                patchCombo = "fix";
+            }
             else if (type == TYPE.MagicPatch_By_Menu)
             {
                 return HowDoYouLikePatch2Form.CheckAndShowPopupDialog(HowDoYouLikePatch2Form.TYPE.MagicPatch_By_Menu);
@@ -127,8 +136,8 @@ namespace FEBuilderGBA
                             );
                     };
                     reason = R._("スキル拡張 FE8N が必要です。\r\n有効にしますか？");
-                    patchName1 = "Skill Extension FE8N 2018_06_09";///No Translate
-                    patchName2 = "skill_2018_06_09";///No Translate
+                    patchName1 = "Skill Extension FE8N 2019_02_19";///No Translate
+                    patchName2 = "skill_2019_02_19";///No Translate
                 }
                 else
                 {
@@ -137,8 +146,8 @@ namespace FEBuilderGBA
                         return InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem;
                     };
                     reason = R._("スキル拡張 SkillSystems が必要です。\r\n有効にしますか？");
-                    patchName1 = "Skill20181209";///No Translate
-                    patchName2 = "Skill20181209";///No Translate
+                    patchName1 = "Skill20190326";///No Translate
+                    patchName2 = "Skill20190326";///No Translate
                 }
             }
             else if (type == TYPE.SkipWorldmapFix)
@@ -175,6 +184,7 @@ namespace FEBuilderGBA
             f.EnableButton.Text = R._("{0}パッチを有効にする", patchShowName);
             f.EnableButton.Click += (sender, e) => {
 
+                f.Close();
                 PatchForm patchF = (PatchForm)InputFormRef.JumpForm<PatchForm>();
                 bool r = patchF.ApplyPatch(patchName1, patchName2, patchCombo); ///No Translate
                 if (!r)
@@ -187,5 +197,6 @@ namespace FEBuilderGBA
 
             return checkFunc();
         }
+
     }
 }

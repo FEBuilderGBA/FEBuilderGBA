@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_リオン
 NAME.en=OP Anime Face: Lyon
-NAME.zh=OPANIME_FACE_利昂
+NAME.zh=OP动画_脸_利昂
 
 TYPE=IMAGE
 TAG=#IMAGE

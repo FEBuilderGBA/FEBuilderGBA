@@ -412,8 +412,8 @@
 0801932C	FlushTerrainData(You need to call that in order to have the map changes properly applied?)	{U}
 0804B4D8	AddTarget Adds Target to the list	void	r0=x	r1=y	r2=Unit Index	r3=Extra/Trap Id?	{J}
 0804ACFC	AddTarget Adds Target to the list	void	r0=x	r1=y	r2=Unit Index	r3=Extra/Trap Id?	{U}
-0804B97C	GetTargetListSize Gets list size (used to check for empty lists in usability routines)	Number of entries in the list	{J}
-0804B1A0	GetTargetListSize Gets list size (used to check for empty lists in usability routines)	Number of entries in the list	{U}
+0804B950	GetTargetListSize Gets list size (used to check for empty lists in usability routines)	Number of entries in the list	{J}
+0804b174	GetTargetListSize Gets list size (used to check for empty lists in usability routines)	Number of entries in the list	{U}
 0804B95C	GetTarget Gets Target Struct by Index	Target Struct for given Index (= pTargetList + i*sizeof(TargetStruct))	r0=Target Index	{J}
 0804B180	GetTarget Gets Target Struct by Index	Target Struct for given Index (= pTargetList + i*sizeof(TargetStruct))	r0=Target Index	{U}
 0804B4C0	InitTargets Inits Target List (and clears it)	void	r0=x, r1=y (the position is used internally for sorting later)	{J}
@@ -1073,7 +1073,7 @@
 080176DA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{U}
 0802E76E	Count_Items_In_Convoy	RET=Number of items in convoy	{U}
 08023926	Add_Gold_To_Cashpile	r0=amount of gold	{U}
-080174C4	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{U}
+080174C0	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{U}
 08017734	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data	{U}
 080167F4	Shuffle_Used_Item	r0=char data ptr	r1=invetory slot	{U}
 080190AC	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{U}
@@ -1106,7 +1106,7 @@
 08017ACA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{J}
 0802EC3A	Count_Items_In_Convoy	RET=Number of items in convoy	{J}
 08023DB2	Add_Gold_To_Cashpile	r0=amount of gold	{J}
-080174C4	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{J}
+080174C0	Get_Item_Data	This function is (at least, in fe8) literally never used	RET=Pointer to item data	r0=item id/uses short	{J}
 08017B24	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data	{J}
 08016C54	Shuffle_Used_Item	r0=char data ptr	r1=invetory slot	{J}
 08019494	Fill_Map	Used for clearing maps (unit, range, movement, fog, etc). Also stores r0 to 30049A0	void	r0=map's row pointer table, r1=byte to fill with	{J}
@@ -1245,74 +1245,74 @@
 02024E20	@6CStructHeader@[40]	PoolOf6C	{J}
 02026928	@6CPointer@[40]	Lookup6C	{U}
 02026920	@6CPointer@[40]	Lookup6C	{J}
-02026A2C	Alloc6CIt	Pointer to the next available slot in the Lookup6C table	{U}
-02026A24	Alloc6CIt	Pointer to the next available slot in the Lookup6C table	{J}
+02026A2C	Alloc6CIt	{U}
+02026A24	Alloc6CIt	{J}
 02026A30	@6CPointer@[7]	MainArray	{U}
 02026A28	@6CPointer@[7]	MainArray	{J}
 
-08004420	Reset6CEngine	Zeroes all 6C headers in Pool. Called on game startup.	{U}
-080042FC	Reset6CEngine	Zeroes all 6C headers in Pool. Called on game startup.	{J}
-08004494	Create6C	Allocates a new 6C with code pointer (field 0x00&0x04) set to argument	r0=A	r1=Parent is argument	{U}
-08004370	Create6C	Allocates a new 6C with code pointer (field 0x00&0x04) set to argument	r0=A	r1=Parent is argument	{J}
-080044F8	Create6CBlockingCalls	Create6C, sets 6C (R:r0) field 27 bit 2. Increments 6C (R:r0) parent (field 0x14) Block Counter.	{U}
-080043D4	Create6CBlockingCalls	Create6C, sets 6C (R:r0) field 27 bit 2. Increments 6C (R:r0) parent (field 0x14) Block Counter.	{J}
-08004528	Delete6C	Calls Delete6C for 6C (A:r0) children. Calls 6C (A:r0) Destructor (field 0x08). Calls Free6C.	{U}
-08004404	Delete6C	Calls Delete6C for 6C (A:r0) children. Calls 6C (A:r0) Destructor (field 0x08). Calls Free6C.	{J}
+08004420	Initialize6CEngine	{U}
+080042FC	Initialize6CEngine	{J}
+08004494	New6C	{U}
+08004370	New6C	{J}
+080044F8	NewBlocking6C	{U}
+080043D4	NewBlocking6C	{J}
+08004528	Delete6CInternal	{U}
+08004404	Delete6CInternal	{J}
 
-08004584	Delete6C(Wrapper)	Calls Isolate6C then Delete6C	{U}
-08004460	Delete6C(Wrapper)	Calls Isolate6C then Delete6C	{J}
-0800459C	Allocate6C	Increments Alloc6CIt, returns pointer to next free 6C	{U}
-08004478	Allocate6C	Increments Alloc6CIt, returns pointer to next free 6C	{J}
-080045AC	Free6C	Wierd, but I assume it frees the 6C (A:r0)	{U}
-08004488	Free6C	Wierd, but I assume it frees the 6C (A:r0)	{J}
-080045BC	InsertMain6C	Sets 6C (A:r0) as first Main 6C in array index (A:r1) after linking previous first main accordingly.	{U}
-08004498	InsertMain6C	Sets 6C (A:r0) as first Main 6C in array index (A:r1) after linking previous first main accordingly.	{J}
-080045DC	InsertChild6C	Sets 6C (A:r0) as first child of 6C (A:r1) after linking related 6Cs accordingly.	{U}
-080044B8	InsertChild6C	Sets 6C (A:r0) as first child of 6C (A:r1) after linking related 6Cs accordingly.	{J}
-080045F0	Isolate6C	Clears 6C (A:r0) Parent, Next & Previous fields (after linking them accordingly). Called during destruction.	{U}
-080044CC	Isolate6C	Clears 6C (A:r0) Parent, Next & Previous fields (after linking them accordingly). Called during destruction.	{J}
-08004690	Exec6C (Wrapper)	{U}
-0800456C	Exec6C (Wrapper)	{J}
-08004634	Exec6C	{U}
-08004510	Exec6C	{J}
-080046A0	ClearLoop	Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)	{U}
-0800457C	ClearLoop	Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)	{J}
-080046A8	Find6C	Returns first 6C (R:r0) whose code start pointer (field 0x0) matches argument (A:r0)	{U}
-08004584	Find6C	Returns first 6C (R:r0) whose code start pointer (field 0x0) matches argument (A:r0)	{J}
-080046C8	Find6CRunning	Same as Find6C, except it will skip 6Cs that are not currently running (Block Counter (field 0x28) != 0)	{U}
-080045A4	Find6CRunning	Same as Find6C, except it will skip 6Cs that are not currently running (Block Counter (field 0x28) != 0)	{J}
-080046F4	Find6CByMark	Returns first 6C (R:r0) whose Mark (field 0x26) matches argument (A:r0)	{U}
-080045D0	Find6CByMark	Returns first 6C (R:r0) whose Mark (field 0x26) matches argument (A:r0)	{J}
-08004720	Goto6CLabel	Sets 6C (A:r0) code cursor (field 0x04) to after the first label (code 0x0B:sarg) matching argument (A:r1) (*)	{U}
-080045FC	Goto6CLabel	Sets 6C (A:r0) code cursor (field 0x04) to after the first label (code 0x0B:sarg) matching argument (A:r1) (*)	{J}
-08004758	Goto6CPointer	Sets 6C (A:r0) code cursor (field 0x04) to argument (A:r1). Clears 6C loop routine (field 0x0C)	{U}
-08004634	Goto6CPointer	Sets 6C (A:r0) code cursor (field 0x04) to argument (A:r1). Clears 6C loop routine (field 0x0C)	{J}
-08004760	Set6CMark	Sets 6C (A:r0) Mark (field 0x26) to argument (A:r1)	{U}
-0800463C	Set6CMark	Sets 6C (A:r0) Mark (field 0x26) to argument (A:r1)	{J}
-08004768	Set6CDestructor	Sets 6C (A:r0) Destructor routine (field 0x08) to argument (A:r1)	{U}
-08004644	Set6CDestructor	Sets 6C (A:r0) Destructor routine (field 0x08) to argument (A:r1)	{J}
-0800476C	ForAll6C	Executes routine (A:r0) for each existing 6C (r0 passes the 6C pointer)	{U}
-08004648	ForAll6C	Executes routine (A:r0) for each existing 6C (r0 passes the 6C pointer)	{J}
-08004794	ForEach6C	Executes routine (A:r0) for each 6C whose code pointer matches argument (A:r1) (r0 passes the 6C pointer)	{U}
-08004670	ForEach6C	Executes routine (A:r0) for each 6C whose code pointer matches argument (A:r1) (r0 passes the 6C pointer)	{J}
-080047BC	ForEach6CMarked	Included for the sake of completeness. Doesn't seem to be ever used (at least in FE8U)	{U}
-08005E04	ForEach6CMarked	Included for the sake of completeness. Doesn't seem to be ever used (at least in FE8U)	{J}
-080047E8	BlockEach6CMarked	Increments Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)	{U}
-080046C4	BlockEach6CMarked	Increments Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)	{J}
-0800480C	UnblockEach6CMarked	Decrements Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)	{U}
-080046E8	UnblockEach6CMarked	Decrements Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)	{J}
-08004834	DeleteEach6CMarked	Deletes each 6C whose mark (field 0x26) matches argument (A:r0)	{U}
-08004710	DeleteEach6CMarked	Deletes each 6C whose mark (field 0x26) matches argument (A:r0)	{J}
-08004860	Delete6C (Wrapper)	Calls Delete6C. Called only by DeleteEach6C	{U}
-0800473C	Delete6C (Wrapper)	Calls Delete6C. Called only by DeleteEach6C	{J}
-0800486C	DeleteEach6C	Deletes each 6C whose code pointer matches argument (A:r0)	{U}
-08004748	DeleteEach6C	Deletes each 6C whose code pointer matches argument (A:r0)	{J}
-0800487C	ClearLoop (Wrapper)	Calls ClearLoop. Called only by ClearEach6CLoop	{U}
-08004758	ClearLoop (Wrapper)	Calls ClearLoop. Called only by ClearEach6CLoop	{J}
-08004888	ClearEach6CLoop	Clears Loop Routine (field 0x0C) for each 6C whose code pointer matches argument (A:r0)	{U}
-08004764	ClearEach6CLoop	Clears Loop Routine (field 0x0C) for each 6C whose code pointer matches argument (A:r0)	{J}
-08004898	ForAll6CFollowing	Executes routine (A:r1) for 6C (A:r0). Recursively calls ForAll6CFollowing for 6C (A:r0) Next & First Child.	{U}
-08004774	ForAll6CFollowing	Executes routine (A:r1) for 6C (A:r0). Recursively calls ForAll6CFollowing for 6C (A:r0) Next & First Child.	{J}
+08004584	Delete6C	{U}
+08004460	Delete6C	{J}
+0800459C	Allocate6C	{U}
+08004478	Allocate6C	{J}
+080045AC	Free6C	{U}
+08004488	Free6C	{J}
+080045BC	InsertMain6C	{U}
+08004498	InsertMain6C	{J}
+080045DC	InsertChild6C	{U}
+080044B8	InsertChild6C	{J}
+080045F0	Isolate6C	{U}
+080044CC	Isolate6C	{J}
+08004690	Exec6C	{U}
+0800456C	Exec6C	{J}
+08004634	Exec6C_	{U}
+08004510	Exec6C_	{J}
+080046A0	Break6CLoop	{U}
+0800457C	Break6CLoop	{J}
+080046A8	Find6C	{U}
+08004584	Find6C	{J}
+080046C8	Find6CRunning	{U}
+080045A4	Find6CRunning	{J}
+080046F4	Find6CByMark	{U}
+080045D0	Find6CByMark	{J}
+08004720	Goto6CLabel	{U}
+080045FC	Goto6CLabel	{J}
+08004758	Goto6CPointer	{U}
+08004634	Goto6CPointer	{J}
+08004760	Set6CMark	{U}
+0800463C	Set6CMark	{J}
+08004768	Set6CDestructor	{U}
+08004644	Set6CDestructor	{J}
+0800476C	ForAll6C	{U}
+08004648	ForAll6C	{J}
+08004794	ForEach6C	{U}
+08004670	ForEach6C	{J}
+080047BC	ForEach6CMarked	{U}
+08005E04	ForEach6CMarked	{J}
+080047E8	BlockEach6CMarked	{U}
+080046C4	BlockEach6CMarked	{J}
+0800480C	UnblockEach6CMarked	{U}
+080046E8	UnblockEach6CMarked	{J}
+08004834	DeleteEach6CMarked	{U}
+08004710	DeleteEach6CMarked	{J}
+08004860	Delete6C (Wrapper)	{U}
+0800473C	Delete6C (Wrapper)	{J}
+0800486C	DeleteEach6C	{U}
+08004748	DeleteEach6C	{J}
+0800487C	Clear6CLoopWrapper	{U}
+08004758	Clear6CLoopWrapper	{J}
+08004888	ClearEach6CLoop	{U}
+08004764	ClearEach6CLoop	{J}
+08004898	ForAll6CFollowing	{U}
+08004774	ForAll6CFollowing	{J}
 
 
 //https://doc.feuniverse.us/static/stan/HiddenMapFlags.txt
@@ -1603,7 +1603,6 @@
 08014D80	PlaySpacialSoundMaybe	{U}
 0801524C	GeneralVBlankHandler	{U}
 0801529C	SomeUpdateRoutine	{U}
-080152F8	AddSkipThread2	{U}
 08015328	GetThread2SkipStack	{U}
 08015334	SwitchPhases	{U}
 080153E0	MakePhaseController6C	{U}
@@ -1670,7 +1669,7 @@
 080172E0	GetItemWeaponEffect	{U}
 0801746A	GetItemMaxCost	{U}
 08017494	GetItemWExp	{U}
-080174C4	GetROMItemStructPtr	{U}
+080174C0	GetROMItemStructPtr	{U}
 080174D8	ClearUnits	{U}
 08017508	ClearUnitStruct	{U}
 08017530	CopyUnitStruct	{U}
@@ -1749,7 +1748,7 @@
 08019ABC	RefreshFogAndUnitMaps	{U}
 08019B08	GetTerrainNameString	{U}
 08019B20	GetTerrainHealAmount	{U}
-08019B30	GetTerrainSomething	{U}
+08019B30	GetTerrainRestoreBadStatus	{U}
 08019BA0	FillMovementMapForUnit	{U}
 08019BE0	FillMovementMapForUnitAndMovement	{U}
 08019C1C	FillMovementMapForUnitPosition	{U}
@@ -1768,7 +1767,7 @@
 0801B244	Get8	{U}
 0801B250	Loop6C_WaitForSelectPress	{U}
 0801B61C	DebugMapMenu_DisplayInfoIdle	{U}
-0801B66E	DebugMapMenu_DisplayInfoEffect	{U}
+0801B66C	DebugMapMenu_DisplayInfoEffect	{U}
 0801B672	DebugMenu_WeatherDraw	{U}
 0801B7A0	DebugMenu_WeatherEffect	{U}
 0801B7A4	DebugMenu_ClearDraw	{U}
@@ -2314,7 +2313,7 @@
 080843D6	MenuCommand_DrawRouteSplit	{U}
 08080270	DrawUnitScreenSupportList	{U}
 08080360	DrawUnitWeaponRank	{U}
-08081C94	Create6CRText	{U}
+08081C94	New6CRText	{U}
 08084730	GetCameraMovementSpeedMaybe	{U}
 08084858	Loop6CUI1_DisplayTransition	{U}
 080849D0	Loop6CUI1_HideTransition	{U}
@@ -2595,7 +2594,7 @@
 08019E50	UpdateTrapHiddenStates	{J}
 08019EA4	RefreshFogAndUnitMaps	{J}
 08019F00	GetTerrainHealAmount	{J}
-08019F10	GetTerrainSomething	{J}
+08019F10	GetTerrainRestoreBadStatus	{J}
 08019F80	FillMovementMapForUnit	{J}
 08019FC0	FillMovementMapForUnitAndMovement	{J}
 08019FFC	FillMovementMapForUnitPosition	{J}
@@ -2612,7 +2611,7 @@
 0801B624	Get8	{J}
 0801B630	Loop6C_WaitForSelectPress	{J}
 0801B9E4	DebugMapMenu_DisplayInfoIdle	{J}
-0801BA36	DebugMapMenu_DisplayInfoEffect	{J}
+0801BA34	DebugMapMenu_DisplayInfoEffect	{J}
 0801BA3A	DebugMenu_WeatherDraw	{J}
 0801BBC4	DebugMenu_ClearIdle	{J}
 0801BC68	DebugMenu_ClearEffect	{J}
@@ -3106,7 +3105,7 @@
 08084DD2	MenuCommand_DrawRouteSplit	{J}
 08080FB8	DrawUnitScreenSupportList	{J}
 080810A8	DrawUnitWeaponRank	{J}
-080829F4	Create6CRText	{J}
+080829F4	New6CRText	{J}
 0808512C	GetCameraMovementSpeedMaybe	{J}
 08085254	Loop6CUI1_DisplayTransition	{J}
 080853CC	Loop6CUI1_HideTransition	{J}
@@ -4280,3 +4279,148 @@
 08075FAC	Play sound effect (0x2d6) when dancing on the map.	{J}
 08075798	Play sound effect (0x2d5) when playing on the map.	{U}
 080757DC	Play sound effect (0x2d6) when dancing on the map.	{U}
+0202BC23	Tactician_Birth_Month	{U}
+0202BC1F	Tactician_Birth_Month	{J}
+0802ebb0	GetTacticianNameStringPtr	{J}
+080157B0	SwitchPhases	{J}
+08015308	AddSkipThread2	{U}
+08015318	SubSkipThread2	{U}
+08015784	AddSkipThread2	{J}
+08015794	SubSkipThread2	{J}
+0808E344	PrepScreenTextHandler	{J}
+0808E4D4	PrepMenu_PickUnits	{J}
+0808E558	PrepMenu_StartBattle	{J}
+0808E57C	PrepMenu_CheckMap_UnuseDummy	{J}
+080AA390	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
+0808DA04	PrepScreenTextHandler	{U}
+0808DF9C	PrepScreenHandler	{U}
+0808DB94	PrepMenu_PickUnits	{U}
+0808DC18	PrepMenu_StartBattle	{U}
+080A947C	DrawBlueBarForActiveItemInPrepScreenMenu	{U}
+0806c8f0	MOVEUNIT6C_ChangeFutureMovement	r0=pointer to MOVEUNIT	r1=pointer to movement buffer	{J}
+0806c738	MOVEUNIT6C_SetSpriteDirection	r0=pointer to MOVEUNIT	r1=direction id (use prGetFacingDirectionId, or 0xB for idle)	{J}
+0806e2c8	MU_Show	{J}
+0806fc64	GetFacingDirection	{J}
+0806C104	MOVEUNIT6C_ChangeFutureMovement	r0=pointer to MOVEUNIT	r1=pointer to movement buffer	{U}
+0806BF4C	MOVEUNIT6C_SetSpriteDirection	r0=pointer to MOVEUNIT	r1=direction id (use prGetFacingDirectionId, or 0xB for idle)	{U}
+0806DADC	MU_Show	{U}
+0806F478	GetFacingDirection	{U}
+0802F218	ApplyUnitAction	{U}
+0803530C	CpPerform_PerformEscape	{U}
+0803534C	CpPerform_PerformSteal	{U}
+08035398	CpPerform_LootWait	{U}
+08078C14	RunLocationEvents	{U}
+0802D008	ActionStaffDoorChestUseItem	{U}
+0800AD40	NewPopupSimple	{U}
+08035458	CpPerform_StaffWait	{U}
+0803548C	CpPerform_DanceWait	{U}
+08035490	CpPerform_TalkWait	{U}
+080354D4	CpPerform_ExitBallistaWait	{U}
+02020140	gGenericBuffer	{J}
+02020140	gGenericBuffer	{U}
+//This data is made with the aim of being readable by machine fast.
+0802f6e4	ApplyUnitAction	{J}
+080357E4	CpPerform_PerformEscape	{J}
+08035824	CpPerform_PerformSteal	{J}
+08035870	CpPerform_LootWait	{J}
+080793e4	RunLocationEvents	{J}
+0802d4cc	ActionStaffDoorChestUseItem	{J}
+0800ace8	NewPopupSimple	{J}
+08035930	CpPerform_StaffWait	{J}
+08035964	CpPerform_DanceWait	{J}
+08035968	CpPerform_TalkWait	{J}
+080359AC	CpPerform_ExitBallistaWait	{J}
+08050ABC	Set the value to "unknown flag for battle 4 bytes".	{J}
+08050AC8	Get "unknown flag for battle 4 bytes".	{J}
+0203E0EC	Unknown flag for battle 4 bytes.	{J}
+0804B194	Set the value to "unknown flag for battle 4 bytes".	{U}
+0203DFFC	Unknown flag for battle 4 bytes.	{U}
+0804B9B4	EndEkrBattleDeamon	{J}
+0804B9C4	IsBattleDeamonActive	{J}
+//This data is made with the aim of being readable by machine fast.
+@ArenaTemp@00	&Unit	Player unit.
+@ArenaTemp@04	&Unit	Opponent.
+@ArenaTemp@08	short	Premium.
+@ArenaTemp@0A	byte	Battle result.
+@ArenaTemp@0B	byte	Unknown 1
+@ArenaTemp@0C	byte	Uses
+@ArenaTemp@0D	byte	Item Editor
+@ArenaTemp@0E	byte	Unknown 2
+@ArenaTemp@0F	byte	Unknown 3.
+@ArenaTemp@10	short	Unknown 4.
+@ArenaTemp@12	byte	Unknown 5.
+@ArenaTemp@13	byte	Unknown 6.
+@ArenaTemp@14	short	Unknown 7.
+@ArenaTemp@15	short	Unknown 8.
+@ArenaTemp@16	short	The strength of the player.
+@ArenaTemp@18	short	Strength of the opponent.
+0802f7f4	ActionRescue	{J}
+0802f328	ActionRescue	{U}
+0802f870	ActionDrop	{J}
+0802f3a4	ActionDrop	{U}
+0802f92c	ActionCombat	{J}
+0802f460	ActionCombat	{U}
+
+0203A7F0	@ArenaTemp	Temporary data of Arena	{J}
+0806c7cc	_MOVEUNIT6C_SetDefaultFacingDirection	{J}
+0806dd98	GetItemIconId	{J}
+0806C274	Make6CMOVEUNITForUnit	{J}
+0806c4a0	NewMOVEUNIT	{J}
+08025b80	GetUnitMapSpritePaletteIndex	{J}
+0203A7F4	@ArenaTemp	Temporary data of Arena	{U}
+0806BFE0	_MOVEUNIT6C_SetDefaultFacingDirection	{U}
+0806D5AC	GetItemIconId	{U}
+0806BA88	Make6CMOVEUNITForUnit	{U}
+0806BCB4	NewMOVEUNIT	{U}
+080256F4	GetUnitMapSpritePaletteIndex	{U}
+
+//This data is made with the aim of being readable by machine fast.
+0802D00C	ActionStaffDoorChestUseItem	{U}
+0804B1A0	Get "unknown flag for battle 4 bytes".	{U}
+//This data is made with the aim of being readable by machine fast.
+{J}
+0802B4DC	When exchanging items actually by item exchange.	{J}
+0802B02C	When exchanging items actually by item exchange.	{U}
+080973EC	Receive items from transporters on the Advance Advance screen.	{J}
+08096C60	Receive items from transporters on the Advance Advance screen.	{U}
+08097990	Send the item to the transporter on the advancement preparation screen.	{J}
+08097204	Send the item to the transporter on the advancement preparation screen.	{U}
+080384EC	AiDoBerserkAction	{U}
+0803aad8	AiTryDoStaff	{U}
+0801727c	GetItemAttributes	{U}
+0803AB78	gStaffAiPerformTable_2	{U}
+0803AB80	GetAiSafestAccessibleAdjacentPosition	{U}
+08039304	AiGetPositionTerrainSafetyWeight	{U}
+08039344	AiGetPositionUnitSafetyWeight	{U}
+080389A0	AiDoBerserkAction	{J}
+0803AF8C	AiTryDoStaff	{J}
+08017684	GetItemAttributes	{J}
+0803B02C	gStaffAiPerformTable_2	{J}
+0803B034	GetAiSafestAccessibleAdjacentPosition	{J}
+080397B8	AiGetPositionTerrainSafetyWeight	{J}
+080397F8	AiGetPositionUnitSafetyWeight	{J}
+//This data is made with the aim of being readable by machine fast.
+0809F950	GGM_IsCharacterKnown	{J}
+0809BB98	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{J}
+0809F770	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{J}
+0809EF14	GGM_IsCharacterKnown	{U}
+0809B1C4	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	Maine.	{U}
+0809ED34	Support screen.	Construct a gStringBufferAlt that caches the support relationships of units.	1 unit.	{U}
+080178B4	GetROMItemStructPtr	{J}
+//This data is made with the aim of being readable by machine fast.
+@ChapterData@00	word	Clock
+@ChapterData@04	word	Unk4
+@ChapterData@0C	byte	saveSlotIndex
+@ChapterData@18	short	playthroughId
+@ChapterData@1A	byte	lastUnitListSortType
+@ChapterData@1C	word	Weapon type lookup by weapon specifying which character ids may bypass the unusable bit?????
+@ChapterData@20	byte	Master's name tactician name (0x20-0x2B).
+@ChapterData@2B	word	tactician name term 0x00
+@ChapterData@2C	word	unk2C
+@ChapterData@30	word	fundsTotalDifference
+@ChapterData@34	word	unk34
+@ChapterData@38	short	padding_38
+@ChapterData@43	byte	Unk43
+@ChapterData@44	word	Unk44
+@ChapterData@48	short	Unk48
+@ChapterData@4A	short	Unk4A

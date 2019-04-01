@@ -9,6 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 
 
 namespace FEBuilderGBA
@@ -36,13 +37,14 @@ namespace FEBuilderGBA
         public static string GetPatchDirectory()
         {
             return
-                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.VersionToFilename());
+                Path.Combine(Program.BaseDirectory, "config", "patch2", Program.ROM.RomInfo.VersionToFilename());
         }
 
         //パッチをスキャンしなおす.
         void ReScan()
         {
             this.Patchs = ScanPatchs(GetPatchDirectory(), false);
+            ReSort();
             ReFilter();
         }
         //フィルターする.
@@ -61,13 +63,28 @@ namespace FEBuilderGBA
             this.PatchList.EndUpdate();
             U.SelectedIndexSafety(this.PatchList, 0, true);
         }
-
+        void ReSort()
+        {
+            if (this.SortFilter == SortEnum.SortDateA)
+            {
+                this.Patchs.Sort((a, b) => { return DateTime.Compare(b.Date, a.Date); });
+            }
+            else if (this.SortFilter == SortEnum.SortDateD)
+            {
+                this.Patchs.Sort((a, b) => { return DateTime.Compare(a.Date, b.Date); });
+            }
+            else if (this.SortFilter == SortEnum.SortName)
+            {
+                this.Patchs.Sort((a, b) => { return string.Compare(a.Name, b.Name); });
+            }
+        }
 
         public class PatchSt
         {
             public string PatchFileName;
             public string Name;
             public string SearchData; //検索用データ
+            public DateTime Date;
 
             public Dictionary<string,string> Param;
         };
@@ -150,6 +167,9 @@ namespace FEBuilderGBA
                     patchs.Add(patch);
                 }
             }
+
+
+
             return patchs;
         }
 
@@ -246,6 +266,8 @@ namespace FEBuilderGBA
 
                 //検索用データ
                 p.SearchData = name + "\t" + search_filename + "\t" + U.at(p.Param, "INFO") + "\t" + U.at(p.Param, "AUTHOR") + "\t" + U.at(p.Param, "TAG");
+                //ソート用の日付
+                p.Date = U.GetFileDateLastWriteTime(fullfilename);
             }
             return p;
         }
@@ -319,7 +341,7 @@ namespace FEBuilderGBA
                 name = U.at(patch.Param, "NAME");
             }
             sb.Append(R._("パッチ名:"));
-            sb.AppendLine(R._(name) + "  @" + Program.ROM.VersionToFilename());
+            sb.AppendLine(R._(name) + "  @" + Program.ROM.RomInfo.VersionToFilename());
 
             string author = atMultiLine(patch, "AUTHOR");
             if (author != "")
@@ -432,6 +454,53 @@ namespace FEBuilderGBA
             {
                 return this.TSANup != null ;
             }
+        }
+        class StructMap
+        {
+            public uint MapIndex { get; private set; }
+            public NumericUpDown MapNup { get; private set; }
+            public string MapTypeName { get; private set; }
+            public uint XIndex { get; private set; }
+            public NumericUpDown XNup { get; private set; }
+            public string XTypeName { get; private set; }
+            public uint YIndex { get; private set; }
+            public NumericUpDown YNup { get; private set; }
+            public string YTypeName { get; private set; }
+
+            public void SetMapIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.MapIndex = index;
+                this.MapNup = nup;
+                this.MapTypeName = typename;
+            }
+            public void SetXIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.XIndex = index;
+                this.XNup = nup;
+                this.XTypeName = typename;
+            }
+            public void SetYIndex(uint index, NumericUpDown nup, string typename)
+            {
+                this.YIndex = index;
+                this.YNup = nup;
+                this.YTypeName = typename;
+            }
+            public bool HasMap()
+            {
+                return this.MapNup != null;
+            }
+            public bool HasXY()
+            {
+                return this.XNup != null && this.YNup != null ;
+            }
+        }
+        bool IsHexadecimal(string type)
+        {
+            if (type == "DECIMAL" || type == "MAPX" || type == "MAPY")
+            {
+                return false;
+            }
+            return true;
         }
 
         void LoadPatchStruct(PatchSt patch)
@@ -633,8 +702,11 @@ namespace FEBuilderGBA
             SelectAddress.Name = "SelectAddress";
             PatchPage.Controls.Add(SelectAddress);
 
-            y += 50;
-            StructImage image = new StructImage();
+            y += CONTROL_HEIGHT;
+            y += 5;
+
+            StructImage image = new StructImage(); //画像を表示するかどうか
+            StructMap map = new StructMap();       //地図を表示するかどうか
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
@@ -665,7 +737,7 @@ namespace FEBuilderGBA
 
                 NumericUpDown data = new NumericUpDown();
                 data.Increment = 1;
-                data.Hexadecimal = (type != "DECIMAL");
+                data.Hexadecimal = IsHexadecimal(type);
                 data.Location = new Point(405, y);
                 data.Size = new Size(100 - 5, CONTROL_HEIGHT);
                 data.Name = key;
@@ -768,6 +840,14 @@ namespace FEBuilderGBA
                     }
                     label.Name = "J_" + datanum;
                 }
+                else if (type == "MAPX")
+                {
+                    map.SetXIndex((uint)datanum, data, type);
+                }
+                else if (type == "MAPY")
+                {
+                    map.SetYIndex((uint)datanum, data, type);
+                }
                 else
                 {
                     TextBoxEx link = new TextBoxEx();
@@ -802,6 +882,10 @@ namespace FEBuilderGBA
 
                         play.Name = "L_" + datanum + "_SONGPLAY";
                         PatchPage.Controls.Add(play);
+                    }
+                    else if (type == "MAP")
+                    {
+                        map.SetMapIndex((uint)datanum, data, type);
                     }
                 }
 
@@ -845,6 +929,12 @@ namespace FEBuilderGBA
             {
                 LoadPatchStructWithImage(patch, AddressList, writebutton
                     , image, struct_address, datasize, "PatchImage");
+            }
+            //マップを表示する場合
+            if (map.HasMap())
+            {
+                LoadPatchStructWithMap(patch, AddressList, writebutton
+                    , map, struct_address, datasize);
             }
             //詳細と著者  (画像の場合、画像表示のついでにやるので問題なし)
             InfoAndAuthor(PatchPage, patch);
@@ -1117,7 +1207,42 @@ namespace FEBuilderGBA
             };
         }
 
-        void InitStructListName(PatchSt patch, string listname,ListBoxEx addressList,out Dictionary<uint, string> out_listname_combo_dic)
+        void LoadPatchStructWithMap(PatchSt patch
+            , ListBox addressList, Button writeButton, StructMap map
+            , uint struct_address, uint dataSize)
+        {
+            Control parent = this.PatchPage;
+            int y = LowestPositionY(parent);
+
+            //地図を表示
+            MapPictureBox m = new MapPictureBox();
+            m.Location = new Point(200, y - (CONTROL_HEIGHT));
+            m.Size = new Size(CONTROL_HEIGHT * 17, CONTROL_HEIGHT * 8);
+            m.Name = "MapPictureBox";
+            m.HideCommandBar();
+            PatchPage.Controls.Add(m);
+
+
+            map.MapNup.ValueChanged += (Object sender, EventArgs e) =>
+            {
+                m.LoadMap((uint)map.MapNup.Value);
+            };
+
+            uint mapid = (uint)map.MapNup.Value;
+            m.Load += (Object sender, EventArgs e) =>
+            {
+                m.LoadMap(mapid);
+            };
+
+            if (map.HasXY())
+            {
+                Label dummy = new Label();
+                dummy.Name = "L_" + map.XIndex + "_MAPXY_"+ map.YIndex;
+                PatchPage.Controls.Add(dummy);
+            }
+        }
+
+        void InitStructListName(PatchSt patch, string listname, ListBoxEx addressList, out Dictionary<uint, string> out_listname_combo_dic)
         {
             out_listname_combo_dic = null;
 
@@ -1149,6 +1274,10 @@ namespace FEBuilderGBA
             else if (listname == "BG")
             {
                 addressList.OwnerDraw(ListBoxEx.DrawBGAndText, DrawMode.OwnerDrawFixed);
+            }
+            else if (listname == "TEXT")
+            {
+                addressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
@@ -1201,6 +1330,10 @@ namespace FEBuilderGBA
             else if (listname == "BG")
             {
                 appendname = U.ToHexString(i);
+            }
+            else if (listname == "TEXT")
+            {
+                appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
@@ -1388,7 +1521,7 @@ namespace FEBuilderGBA
                     uint addr = U.toOffset(U.atoi0x(address));
                     if (!U.CheckZeroAddressWrite(addr))
                     {
-                        throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                        throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
                     }
 
                     string[] changevalueSP = value.Split(' ');
@@ -1410,6 +1543,7 @@ namespace FEBuilderGBA
                     throw new SyntaxException(R.Error("更新するべきデータがありません keyword:{0}", keyword));
                 }
 
+                ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
@@ -1768,6 +1902,7 @@ namespace FEBuilderGBA
                         Program.ROM.write_u32(addr, (uint)AddrValue.Value, undodata);
                     }
                 }
+                ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
@@ -1876,6 +2011,7 @@ namespace FEBuilderGBA
             combo.Location = new Point(x, y);
             combo.Size = new Size(550, CONTROL_HEIGHT);
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.Name = "PatchMainCombo";
             x += 600;
 
             int databyte = (int)atOffset(patch.Param, "DATASIZE", "1");
@@ -1932,6 +2068,7 @@ namespace FEBuilderGBA
                     addr = U.toOffset(U.atoi0x(address_sp[i]));
                     Program.ROM.write_range(addr, value, undodata);
                 }
+                ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, addr_address);
                 U.ReSelectList(this.PatchList);
@@ -2424,6 +2561,10 @@ namespace FEBuilderGBA
             {
                 return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4);
             }
+            if (value.IndexOf("GREP3 ") == 0)
+            {
+                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 3);
+            }
             if (value.IndexOf("GREP2 ") == 0)
             {
                 return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 2);
@@ -2467,6 +2608,10 @@ namespace FEBuilderGBA
             if (value.IndexOf("GREP4END+28 ") == 0)
             {
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 28, true);
+            }
+            if (value.IndexOf("GREP4END+A ") == 0)
+            {
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, false);
             }
             if (value.IndexOf("GREP_ENABLE_POINTER ") == 0)
             {
@@ -2625,6 +2770,102 @@ namespace FEBuilderGBA
             return grepdata.ToArray();
         }
 
+        uint DefEASPORG(PatchSt patch
+            , string key
+            , string addrstring
+            , string value
+            , Undo.UndoData undodata)
+        {
+            uint v = U.atoi0x(value);
+            if (v <= 0)
+            {
+                return U.NOT_FOUND;
+            }
+
+            string typename = "";
+            if (key == "EA_EXTENDS_UNITMENU")
+            {
+                typename = "UNITMENU";
+            }
+            else if (key == "EA_EXTENDS_GAMEMENU")
+            {
+                typename = "GAMEMENU";
+            }
+            else
+            {
+                return U.NOT_FOUND;
+            }
+            uint addr = MenuCommandForm.ExpandsArea(this, typename, v , undodata);
+            if (addr == U.NOT_FOUND)
+            {//割当に失敗
+                return U.NOT_FOUND;
+            }
+
+            //メニューの空きが連続している部分.
+            uint alloc = U.atoi0x(addrstring);
+            if (alloc == U.NOT_FOUND || alloc <= 0)
+            {
+                alloc = 1;
+            }
+            addr = MenuCommandForm.AllocNullMenuAddress(alloc , typename);
+            return addr;
+        }
+
+        uint DefEAFreearea(PatchSt patch
+            ,out uint out_sp_org
+            ,Undo.UndoData undodata)
+        {
+            uint freearea = 0;
+            out_sp_org = U.NOT_FOUND;
+
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string addrstring = U.at(sp, 1);
+                string value = pair.Value;
+
+                if (key == "FREEAREA")
+                {
+                    if (U.stringbool(value) == false)
+                    {//フリーエリアを利用しない
+                        freearea = U.NOT_FOUND;
+                    }
+                }
+                else if (key == "EXTENDS" )
+                {
+                    if (value == "TEXT")
+                    {
+                        uint textCount = U.atoi0x(addrstring);
+
+                        uint addr = TextForm.ExpandsArea(this, textCount, undodata);
+                        if (addr == U.NOT_FOUND)
+                        {//割当に失敗
+                            return U.NOT_FOUND;
+                        }
+                    }
+                }
+                else if (key == "EA_EXTENDS_UNITMENU" || key == "EA_EXTENDS_GAMEMENU")
+                {
+                    out_sp_org = DefEASPORG(patch
+                        , key
+                        , addrstring
+                        , value
+                        , undodata);
+                }
+            }
+
+            if (freearea == U.NOT_FOUND)
+            {//フリーエリアを利用しない
+                freearea = 0;
+            }
+            else
+            {//フリーエリアを利用する.
+                freearea = InputFormRef.AllocBinaryData(1024 * 1024); //とりあえず1MBの空きがあるところ.
+            }
+            return freearea;
+        }
+
         void LoadPatchEA(PatchSt patch)
         {
             PatchPage.Controls.Clear();
@@ -2646,9 +2887,7 @@ namespace FEBuilderGBA
             writebutton.Name = "WriteButton";
             PatchPage.Controls.Add(writebutton);
             y += CONTROL_HEIGHT;
-            y += 10;
-
-            uint freearea = InputFormRef.AllocBinaryData(1024 * 1024); //とりあえず1MBの空きがあるところ.
+            y += 5;
 
             string EAFilename = "";
             foreach (var pair in patch.Param)
@@ -2680,13 +2919,6 @@ namespace FEBuilderGBA
 
                     y += CONTROL_HEIGHT;
                 }
-                else if (key == "FREEAREA")
-                {
-                    if (U.stringbool(value) == false)
-                    {//フリーエリアを利用しない
-                        freearea = 0;
-                    }
-                }
             }
 
             //詳細と著者
@@ -2703,8 +2935,11 @@ namespace FEBuilderGBA
 
                 try
                 {
+                    uint org_sp = U.NOT_FOUND;
+                    uint freearea = DefEAFreearea(patch, out org_sp , undodata);
+
                     SymbolUtil.DebugSymbol storeSymbol = SymbolUtil.DebugSymbol.SaveComment;
-                    EventAssemblerForm.WriteEA(EAFilename, freearea, undodata, storeSymbol);
+                    EventAssemblerForm.WriteEA(EAFilename, freearea, org_sp, undodata, storeSymbol);
                 }
                 catch (PatchException exception)
                 {
@@ -2719,6 +2954,7 @@ namespace FEBuilderGBA
                     throw; //再送
                 }
 
+                ClearCheckIF();
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
                 U.ReSelectList(this.PatchList);
@@ -2748,7 +2984,7 @@ namespace FEBuilderGBA
             writebutton.Name = "WriteButton";
             PatchPage.Controls.Add(writebutton);
             y += CONTROL_HEIGHT;
-            y += 10;
+            y += 5;
 
 
             Panel panel = new Panel();
@@ -2879,6 +3115,7 @@ namespace FEBuilderGBA
                         throw; //再送
                     }
 
+                    ClearCheckIF();
                     Program.Undo.Push(undodata);
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
                     U.ReSelectList(this.PatchList);
@@ -2986,7 +3223,7 @@ namespace FEBuilderGBA
         {
             if (!U.CheckZeroAddressWrite(addr))
             {
-                throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
             }
 
             if (addr + b.Length > Program.ROM.Data.Length)
@@ -3136,7 +3373,11 @@ namespace FEBuilderGBA
             int addaddr = 0;
             if (sp.Length > 3)
             {
-                if (sp[3][0] == '-')
+                if (sp[3] == "")
+                {
+                    addaddr = 0;
+                }
+                else if (sp[3][0] == '-')
                 {
                     addaddr = -1 * (int)U.atoi0x(sp[3].Substring(1));
                 }
@@ -3202,7 +3443,7 @@ namespace FEBuilderGBA
             uint addr = convertBinAddressString(sp[1], (uint)b.Length, 0x100 , basedir);
             if (!U.CheckZeroAddressWrite(addr))
             {
-                throw new SyntaxException(R.Error("アドレス0番地-0x100番地には書き込むことができません。", U.To0xHexString(addr)));
+                throw new SyntaxException(R.Error("このアドレスは危険です。", U.To0xHexString(addr)));
             }
             WriteBB(addr, filename, b, binBlocks, undodata);
         }
@@ -4105,9 +4346,9 @@ namespace FEBuilderGBA
 
 
             //データの位置を追跡
-            {
-                TraceEditPatch(binMappings, patch);
-            }
+            TraceEditPatch(binMappings, patch);
+            //メニューのデータを追加
+            AppendMenuPatch(patch, binMappings);
             return binMappings;
         }
 
@@ -4142,7 +4383,6 @@ namespace FEBuilderGBA
             Debug.Assert(type == "EA");
 
             List<BinMapping> binMappings = new List<BinMapping>();
-
             string dir = Path.GetDirectoryName(patch.PatchFileName);
             string[] files = Directory.GetFiles(dir, "*.event", SearchOption.AllDirectories);
 
@@ -4193,7 +4433,7 @@ namespace FEBuilderGBA
 
                         binMappings.Add(b);
                     }
-                    else if (data.DataType == EAUtil.DataEnum.ASM 
+                    else if (data.DataType == EAUtil.DataEnum.ASM
                         || data.DataType == EAUtil.DataEnum.MIX)
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
@@ -4264,11 +4504,14 @@ namespace FEBuilderGBA
                     else if (data.DataType == EAUtil.DataEnum.POINTER_ARRAY)
                     {
                         //最後に書き込んだ部分から、ポインタと思われる部分を連続して検出する.
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+
                         uint addr = lastMatchAddr;
-                        for (; addr + 3 < Program.ROM.Data.Length; addr+=4 )
+                        for (; addr + 3 < Program.ROM.Data.Length; addr += 4)
                         {
                             uint a = Program.ROM.u32(addr);
-                            if (! U.isSafetyPointer(a))
+                            if (!U.isSafetyPointer(a))
                             {
                                 break;
                             }
@@ -4289,6 +4532,54 @@ namespace FEBuilderGBA
                         b.bin = Program.ROM.getBinaryData(addr, length);
                         b.mask = MakeFullMask(length);
                         b.type = Address.DataTypeEnum.POINTER_ARRAY;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.NEW_TARGET_SELECTION_STRUCT)
+                    {
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+
+                        uint addr = lastMatchAddr;
+                        uint length = 8 * 4;
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeFullMask(length);
+                        b.type = Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
+                    else if (data.DataType == EAUtil.DataEnum.PROCS)
+                    {
+                        lastMatchAddr += data.Append;
+                        lastMatchAddr = U.Padding4(lastMatchAddr);
+                        
+                        uint addr = lastMatchAddr;
+                        uint length = ProcsScriptForm.CalcLengthAndCheck(addr);
+                        if (length == U.NOT_FOUND)
+                        {
+                            continue;
+                        }
+
+                        BinMapping b = new BinMapping();
+                        b.key = data.DataType.ToString();
+                        b.filename = data.Name;
+                        b.addr = addr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr, length);
+                        b.mask = MakeFullMask(length);
+                        b.type = Address.DataTypeEnum.PROCS;
 
                         binMappings.Add(b);
 
@@ -4323,10 +4614,67 @@ namespace FEBuilderGBA
                     }
                 }
             }
-
             //データの位置を追跡
             TraceEditPatch(binMappings, patch);
+            //メニューのデータを追加
+            AppendMenuPatch(patch, binMappings);
             return binMappings;
+        }
+        //メニューを追加している場合、追加したメニューの場所を追跡する
+        static void AppendMenuPatch(PatchSt patch, List<BinMapping> binMappings)
+        {
+            List<U.AddrResult> list;
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (pair.Key.IndexOf("EA_EXTENDS_UNITMENU") >= 0)
+                {
+                    list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetUnitMenuPointer());
+                }
+                else if (pair.Key.IndexOf("EA_EXTENDS_GAMEMENU") >= 0)
+                {
+                    list = MenuCommandForm.MakeListPointer(MenuDefinitionForm.GetGameMenuPointer());
+                }
+                else
+                {
+                    continue;
+                }
+
+                foreach(U.AddrResult ar in list)
+                {
+                    uint f = MenuCommandForm.GetEffectAddrByAddr(ar.addr);
+                    if (f != U.NOT_FOUND)
+                    {
+                        bool r = AppendMenuByAddr(ar.addr, f, binMappings);
+                        if (r)
+                        {
+                            continue;
+                        }
+                    }
+                }
+
+            }
+        }
+        static bool AppendMenuByAddr(uint menuAddr,uint menuFunc, List<BinMapping> binMappings)
+        {
+            for (int i = 0; i < binMappings.Count; i++)
+            {
+                if (binMappings[i].addr == menuFunc)
+                {
+                    BinMapping binmap = new BinMapping();
+                    binmap.addr = menuAddr;
+                    binmap.filename = "MENU";
+                    binmap.key = "MENU";
+                    binmap.length = 36;
+                    binmap.bin = Program.ROM.getBinaryData(binmap.addr, binmap.length);
+                    binmap.mask = new bool[binmap.addr]; //データなのでマスクは不要
+                    binMappings.Add(binmap);
+                    return true;
+                }
+            }
+            return false;
         }
 
         static string atMultiLine(PatchSt patch,string keyword)
@@ -4395,15 +4743,20 @@ namespace FEBuilderGBA
         }
         static string ReplaceL1Macro(string patched_message,string filename,uint addr)
         {
-            uint p0 = U.toPointer(addr);
-            uint p1 = U.toPointer(addr + 1);
-            uint littleEndian = U.ChangeEndian32(p0);
-            uint littleEndianPlus1 = U.ChangeEndian32(p1);
+            int pos = 0;
+            while (true)
+            {
+                Match m = RegexCache.Match(patched_message , @"{\$L([0-9a-zA-Z]+):" + filename + "}");
+                if (! m.Success)
+                {
+                    break;
+                }
+                string w = m.Groups[1].Value;
+                uint plus = U.atoh(w);
+                uint littleEndianPlus = U.ChangeEndian32(U.toPointer(addr + plus));
 
-            patched_message = patched_message.Replace("{$B:" + filename + "}", p0.ToString("X08"));
-            patched_message = patched_message.Replace("{$B1:" + filename + "}", p1.ToString("X08"));
-            patched_message = patched_message.Replace("{$L:" + filename + "}", littleEndian.ToString("X08"));
-            patched_message = patched_message.Replace("{$L1:" + filename + "}", littleEndianPlus1.ToString("X08"));
+                patched_message = patched_message.Substring(0, m.Index) + U.ToHexString(littleEndianPlus) + patched_message.Substring(m.Index + m.Length);
+            }
             return patched_message;
         }
 
@@ -4587,6 +4940,7 @@ namespace FEBuilderGBA
         {
             //フィルターをしていたらやめさせる.
             Filter.Text = "";
+            SortFilter = SortEnum.SortNone;
             //パッチの再スキャン
             ReScan();
 
@@ -4642,6 +4996,11 @@ namespace FEBuilderGBA
 
                 ComboBox combo = (ComboBox)c;
                 combo.Text = patchCombo;
+
+                if (combo.SelectedIndex <= 0)
+                {
+                    U.SelectedIndexSafety(combo, 1);
+                }
                 return true;
             }
             return false;
@@ -4902,18 +5261,37 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                FEBuilderGBA.Address.AddAddress(list
-                    , a
-                    , isPointerOnly ? 0 : m.length
-                    , U.NOT_FOUND
-                    , patch.Name + "@" + m.filename + "@EA"
-                    , m.type);
                 if (m.type == Address.DataTypeEnum.POINTER_ARRAY)
                 {
                     FEBuilderGBA.Address.AddPointerArray(list,
                         a, m.length,
                         patch.Name + "@" + m.filename + "@Pointer_Array",
                         Address.DataTypeEnum.MIX);
+                }
+                else if (m.type == Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT)
+                {
+                    FEBuilderGBA.Address.AddNewTargetSelectionStruct(list,
+                        a,U.NOT_FOUND,
+                        patch.Name + "@" + m.filename + "@NEW_TARGET_SELECTION_STRUCT");
+                }
+                else if (m.type == Address.DataTypeEnum.PROCS)
+                {
+                    FEBuilderGBA.Address.AddAddress(list
+                        , a
+                        , isPointerOnly ? 0 : m.length
+                        , U.NOT_FOUND
+                        , patch.Name + "@" + m.filename + "@PROCS"
+                        , Address.DataTypeEnum.PROCS
+                        );
+                }
+                else
+                {
+                    FEBuilderGBA.Address.AddAddress(list
+                        , a
+                        , isPointerOnly ? 0 : m.length
+                        , U.NOT_FOUND
+                        , patch.Name + "@" + m.filename + "@EA"
+                        , m.type);
                 }
 
                 if (isStoreSymbol && m.filename != "")
@@ -5104,9 +5482,15 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+
+                if (datacount >= 0xffff)
+                {
+                    Debug.Assert(false);
+                    return;
                 }
             }
             else
@@ -5397,7 +5781,7 @@ namespace FEBuilderGBA
             return U.stringbool(v);
         }
 
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -5428,7 +5812,7 @@ namespace FEBuilderGBA
                 string name = U.at(patch.Param, "NAME");
 
                 uint textid = Program.ROM.u16(addr);
-                TextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
+                UseTextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
             }
         }
  
@@ -6076,7 +6460,48 @@ namespace FEBuilderGBA
 
         }
 #endif
-        bool UnInstallPatch(PatchSt patch , bool isAutomatic)
+        void AppnedInstallMapping(PatchSt patch, List<BinMapping> binmap)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+                string addrstring = U.at(sp, 1);
+                string value = pair.Value;
+
+                if (!(key == "PATCHED_IF" || key == "IF" || key == "PATCHED_IFNOT" || key == "IFNOT"))
+                {
+                    continue;
+                }
+
+                uint address = convertBinAddressString(addrstring, 0, 0x100, basedir);
+                if (address == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                string[] args = value.Split(' ');
+                byte[] need = new byte[args.Length];
+                for (int i = 0; i < args.Length; i++)
+                {
+                    need[i] = (byte)U.atoi0x(args[i]);
+                }
+
+                BinMapping bm = new BinMapping();
+                bm.length = (uint)need.Length;
+                bm.bin = need;
+                bm.mask = new bool[need.Length];
+                bm.filename = key;
+                bm.addr = address;
+                bm.type = Address.DataTypeEnum.BIN;
+                bm.key = key;
+                binmap.Add(bm);
+            }
+        }
+
+
+        bool UnInstallPatch(PatchSt patch, bool isAutomatic)
         {
             string type = U.at(patch.Param, "TYPE");
             if (type != "BIN" && type != "EA")
@@ -6085,6 +6510,7 @@ namespace FEBuilderGBA
                 return false;
             }
             List<BinMapping> binmap = TracePatchedMapping(patch);
+            AppnedInstallMapping(patch, binmap);
 
             //パッチを含んでいないファイルを提示してもらう.
             PatchFormUninstallDialogForm f = (PatchFormUninstallDialogForm)InputFormRef.JumpFormLow<PatchFormUninstallDialogForm>();
@@ -6112,6 +6538,7 @@ namespace FEBuilderGBA
                     R.ShowStopError("アンインストールに失敗しました.\r\n\r\n{0}", error);
                     return false;
                 }
+                ClearCheckIF();
                 Program.Undo.Push(undodata);
                 Program.ReLoadSetting();
                 InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -6160,8 +6587,7 @@ namespace FEBuilderGBA
                     Program.CommentCache.Remove(addr);
                     if (addr >= current_rom_length)
                     {
-                        Log.Error("OutOfRange: {0}/{1}", U.ToHexString8(addr), U.ToHexString8(current_rom_length));
-                        Debug.Assert(false);
+//                        Log.Error("OutOfRange: {0}/{1}", U.ToHexString8(addr), U.ToHexString8(current_rom_length));
                         continue;
                     }
 
@@ -6181,7 +6607,16 @@ namespace FEBuilderGBA
                     //                    ^------もしXXを消す場合 A B 3 C
                     //                    ^------もしABを消す場合 1 X X C
                 }
+
+                if (map.key == "MENU")
+                {//メニューの表示判定関数が壊れてしまうならば、nullに補正する.
+                    if (MenuCommandForm.GetUsabilityAddrByAddr(map.addr) == U.NOT_FOUND)
+                    {
+                        MenuCommandForm.WriteNullMenu(map.addr, undodata);
+                    }
+                }
             }
+
 
             pleaseWait.DoEvents(R._("ROM末尾の最適化をしています"));
             StripROM(binmap, undodata);
@@ -6267,9 +6702,36 @@ namespace FEBuilderGBA
             return ((uint)i) - addr;
         }
 
+        enum SortEnum
+        {
+              SortNone
+            , SortDateA
+            , SortDateD
+            , SortName
+        }
+        SortEnum SortFilter = SortEnum.SortNone;
+
+        string GetSortFilterString()
+        {
+            if (this.SortFilter == SortEnum.SortName)
+            {
+                return "@SortName";
+            }
+            else if (this.SortFilter == SortEnum.SortDateA)
+            {
+                return "@SortDateA";
+            }
+            else if (this.SortFilter == SortEnum.SortDateD)
+            {
+                return "@SortDateD";
+            }
+            return "@SortNone";
+        }
+
         private void FilterExLabel_Click(object sender, EventArgs e)
         {
             PatchFilterExForm f = (PatchFilterExForm)InputFormRef.JumpFormLow<PatchFilterExForm>();
+            f.SetSort(GetSortFilterString());
             f.ShowDialog();
 
             if (f.DialogResult != System.Windows.Forms.DialogResult.OK)
@@ -6277,7 +6739,35 @@ namespace FEBuilderGBA
                 return;
             }
 
-            this.Filter.Text = f.TagFilter;
+            if (f.TagFilter == "@SortName")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortName;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortDateA")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortDateA;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortDateD")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortDateD;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else if (f.TagFilter == "@SortNone")
+            {//ソートフィルタ
+                this.SortFilter = SortEnum.SortNone;
+                ReScan();
+                this.Filter_TextChanged(sender, e);
+            }
+            else
+            {//検索フィルタ
+                this.Filter.Text = f.TagFilter;
+            }
+
             if (this.Filter.Text.Length > 1)
             {
                 this.Filter.Select(this.Filter.Text.Length, 0);
@@ -6378,24 +6868,52 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+
                 pleaseWait.DoEvents(R._("ポインタ更新しています。{0}: {1}->{2}",name,oldaddr,newaddr));
-                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr);
+                if (oldaddr == newaddr)
+                {
+                    continue;
+                }
+
+                //何度も探索す るので本当はよくないが面倒なので気にしないことにした.
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
-                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
+                    if (U.IsValueOdd(oldValue))
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
+                    }
+                    else
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    }
+
+                    
                 }
                 //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1); //Thumb
+                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1 ,isSilent: true ); //Thumb
                 //影響を受けるポインタの書き換え.
                 for (int i = 0; i < movepointerlist.Count; i++)
                 {
-                    Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
+                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
+                    if (U.IsValueOdd(oldValue))
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr | 1), undodata);
+                    }
+                    else
+                    {
+                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
+                    }
+                    
                 }
             }
+
+            ClearCheckIF();
             Program.Undo.Push(undodata);
             Program.ReLoadSetting();
+
         }
 
         PatchSt GetUpdatePatch(PatchSt patch,out string out_error)
@@ -6432,7 +6950,7 @@ namespace FEBuilderGBA
             out_error = "";
             return new_patchSt;
         }
-        void MakeDependsPatchList(List<PatchSt> dependsList, PatchSt patch)
+        void MakeDependsPatchList(List<PatchSt> dependsList, PatchSt patch, string UPDATE_DEPENDS = "UPDATE_DEPENDS")
         {
             dependsList.Add(patch);
 
@@ -6441,7 +6959,7 @@ namespace FEBuilderGBA
             {
                 string[] sp = pair.Key.Split(':');
                 string key = sp[0];
-                if (key != "UPDATE_DEPENDS")
+                if (key != UPDATE_DEPENDS)
                 {
                     continue;
                 }
@@ -6465,7 +6983,7 @@ namespace FEBuilderGBA
                 }
 
                 //このパッチもアップデート
-                Log.Debug("UPDATE_DEPENDS", depends_patchSt.PatchFileName);
+                Log.Debug(UPDATE_DEPENDS, depends_patchSt.PatchFileName);
                 MakeDependsPatchList(dependsList, depends_patchSt);
             }
         }
@@ -6504,20 +7022,28 @@ namespace FEBuilderGBA
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
                 if (File.Exists(SkillAssignmentClassSkillSystem))
                 {
+                    
                     SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
                     File.Delete(SkillAssignmentClassSkillSystem);
+                    
                 }
                 if (File.Exists(SkillAssignmentUnitSkillSystem))
                 {
+                    
                     SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
                     File.Delete(SkillAssignmentUnitSkillSystem);
+                    
                 }
                 if (File.Exists(SkillConfigSkillSystem))
                 {
+                    
                     SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
                     File.Delete(SkillConfigSkillSystem);
+                    
                 }
+                
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
+                
             }
             else
             {
@@ -6549,7 +7075,11 @@ namespace FEBuilderGBA
             List<PatchSt> dependsList = new List<PatchSt>();
             //新しくインストールしたパッチのリスト
             List<PatchSt> newInstallPatchList = new List<PatchSt>();
-            MakeDependsPatchList(dependsList, patch);
+            //アンインストールだけをするパッチのリストを作成する.
+            List<PatchSt> uninstallOnlyList = new List<PatchSt>();
+
+            MakeDependsPatchList(dependsList, patch, "UPDATE_DEPENDS");
+            MakeDependsPatchList(uninstallOnlyList, patch, "UPDATE_UNINSTALL");
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
@@ -6559,6 +7089,14 @@ namespace FEBuilderGBA
                     foreach (var p in dependsList)
                     {
                         ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction, p);
+                    }
+                }
+                foreach (var p in uninstallOnlyList)
+                {
+                    bool r = UnInstallPatch(p, true);
+                    if (!r)
+                    {
+                        return R.Error("アンインストールに失敗しました.\r\n\r\n{0}", p.PatchFileName);
                     }
                 }
                 foreach (var p in dependsList)
@@ -6588,28 +7126,36 @@ namespace FEBuilderGBA
                         return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
                     }
                 }
+                ClearCheckIF();
                 Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
                     foreach (var p in dependsList)
                     {
+                        
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
+                        
                     }
 
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
+                        
                         ImportPatchAll(p, tempdir.Dir);
+                        
                     }
                 }
 
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
+                    
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
+                    
                 }
             }
 
+            
             return "";
         }
 
@@ -6631,6 +7177,7 @@ namespace FEBuilderGBA
                 R.ShowStopError(error);
                 return;
             }
+            ClearCheckIF();
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
             U.ReSelectList(this.PatchList);
 

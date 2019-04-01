@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ティティス
-NAME.en=OPANIME_FACE_Tethys
+NAME=OPANIME_FACE_ティティス
+NAME.en=OP Anime Face: Tethys
 
 TYPE=IMAGE
 TAG=#IMAGE

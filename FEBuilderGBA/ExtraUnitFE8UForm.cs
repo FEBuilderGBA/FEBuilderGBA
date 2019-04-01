@@ -17,6 +17,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
 
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
         }
 
         //エクストラユニットは、FE8JとFE8Uで実装が違う

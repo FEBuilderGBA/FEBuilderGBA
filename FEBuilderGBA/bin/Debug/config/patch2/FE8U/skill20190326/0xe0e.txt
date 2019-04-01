@@ -1,0 +1,2 @@
+Leave opponent with[N]
+at least 1 HP.[X]

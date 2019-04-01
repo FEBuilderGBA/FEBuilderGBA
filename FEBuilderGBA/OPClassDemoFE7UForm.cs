@@ -98,10 +98,24 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.OP_CLASS_DEMO, InputFormRef, new uint[] { 4 });
+            UseTextID.AppendTextID(list, FELint.Type.OP_CLASS_DEMO, InputFormRef, new uint[] { 4 });
+        }
+
+        private void B13_ValueChanged(object sender, EventArgs e)
+        {
+            if (B10.Value == 0xFF)
+            {//標準パレット
+                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B13.Value + 1
+                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, 0, 0, 0, (int)B12.Value);
+            }
+            else
+            {
+                X_BATTLEANIMEICON.Image = ImageBattleAnimeForm.DrawBattleAnime((uint)B13.Value + 1
+                    , ImageBattleAnimeForm.ScaleTrim.SCALE_90, (uint)B10.Value + 1, 0, 0, (int)B12.Value);
+            }
         }
     }
 }

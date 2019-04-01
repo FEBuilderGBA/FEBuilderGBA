@@ -331,7 +331,6 @@ namespace FEBuilderGBA
         private void PatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<PatchForm>();
-            this.PatchMainFilter.CleanChache();
         }
 
         private void GraphicsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -753,9 +752,25 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<AIPerformStaffForm>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OPClassAlphaNameButton_Click(object sender, EventArgs e)
         {
-            //InputFormRef.JumpForm<ASMEditForm>();
+            InputFormRef.JumpForm<OPClassAlphaNameFE6Form>();
         }
+
+        private void ToolUseFlagButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolUseFlagForm>();
+        }
+
+        private void ToolUseFlagStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolUseFlagForm>();
+        }
+
+        private void UnitActionPointerButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<UnitActionPointerForm>();
+        }
+
     }
 }

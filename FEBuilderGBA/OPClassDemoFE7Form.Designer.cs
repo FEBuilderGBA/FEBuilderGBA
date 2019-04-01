@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.L_17_BATTLEANIMEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME = new System.Windows.Forms.Button();
+            this.X_NAME_IMG = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_24_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_23_TERRAINBATTLEICON_PLUS1 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_BATTLEANIMEICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_16_COMBO = new System.Windows.Forms.ComboBox();
             this.L_24_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
             this.L_23_TERRAINBATTLE_PLUS1 = new FEBuilderGBA.TextBoxEx();
@@ -117,7 +121,10 @@
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_17_BATTLEANIMEICON_PLUS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_NAME_IMG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_24_TERRAINBATTLEICON_PLUS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_23_TERRAINBATTLEICON_PLUS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIMEICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B26)).BeginInit();
@@ -156,7 +163,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.L_17_BATTLEANIMEICON_PLUS1);
+            this.panel2.Controls.Add(this.X_GOTO_GRAPHICS_TOOL_JP_NAME);
+            this.panel2.Controls.Add(this.X_NAME_IMG);
+            this.panel2.Controls.Add(this.L_24_TERRAINBATTLEICON_PLUS1);
+            this.panel2.Controls.Add(this.L_23_TERRAINBATTLEICON_PLUS1);
+            this.panel2.Controls.Add(this.X_BATTLEANIMEICON);
             this.panel2.Controls.Add(this.L_16_COMBO);
             this.panel2.Controls.Add(this.L_24_TERRAINBATTLE_PLUS1);
             this.panel2.Controls.Add(this.L_23_TERRAINBATTLE_PLUS1);
@@ -204,18 +215,64 @@
             this.panel2.Location = new System.Drawing.Point(270, 68);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1256, 700);
+            this.panel2.Size = new System.Drawing.Size(1256, 760);
             this.panel2.TabIndex = 67;
             // 
-            // L_17_BATTLEANIMEICON_PLUS1
+            // X_GOTO_GRAPHICS_TOOL_JP_NAME
             // 
-            this.L_17_BATTLEANIMEICON_PLUS1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_17_BATTLEANIMEICON_PLUS1.Location = new System.Drawing.Point(518, 152);
-            this.L_17_BATTLEANIMEICON_PLUS1.Margin = new System.Windows.Forms.Padding(2);
-            this.L_17_BATTLEANIMEICON_PLUS1.Name = "L_17_BATTLEANIMEICON_PLUS1";
-            this.L_17_BATTLEANIMEICON_PLUS1.Size = new System.Drawing.Size(203, 166);
-            this.L_17_BATTLEANIMEICON_PLUS1.TabIndex = 194;
-            this.L_17_BATTLEANIMEICON_PLUS1.TabStop = false;
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.Location = new System.Drawing.Point(339, 184);
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.Name = "X_GOTO_GRAPHICS_TOOL_JP_NAME";
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.Size = new System.Drawing.Size(172, 29);
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.TabIndex = 199;
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.Text = "グラフィックツール";
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.UseVisualStyleBackColor = true;
+            this.X_GOTO_GRAPHICS_TOOL_JP_NAME.Click += new System.EventHandler(this.X_GOTO_GRAPHICS_TOOL_JP_NAME_Click);
+            // 
+            // X_NAME_IMG
+            // 
+            this.X_NAME_IMG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.X_NAME_IMG.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_NAME_IMG.Location = new System.Drawing.Point(0, 594);
+            this.X_NAME_IMG.Margin = new System.Windows.Forms.Padding(2);
+            this.X_NAME_IMG.Name = "X_NAME_IMG";
+            this.X_NAME_IMG.Size = new System.Drawing.Size(501, 67);
+            this.X_NAME_IMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.X_NAME_IMG.TabIndex = 198;
+            this.X_NAME_IMG.TabStop = false;
+            this.X_NAME_IMG.Click += new System.EventHandler(this.X_GOTO_GRAPHICS_TOOL_JP_NAME_Click);
+            // 
+            // L_24_TERRAINBATTLEICON_PLUS1
+            // 
+            this.L_24_TERRAINBATTLEICON_PLUS1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_24_TERRAINBATTLEICON_PLUS1.Location = new System.Drawing.Point(355, 669);
+            this.L_24_TERRAINBATTLEICON_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_24_TERRAINBATTLEICON_PLUS1.Name = "L_24_TERRAINBATTLEICON_PLUS1";
+            this.L_24_TERRAINBATTLEICON_PLUS1.Size = new System.Drawing.Size(146, 80);
+            this.L_24_TERRAINBATTLEICON_PLUS1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.L_24_TERRAINBATTLEICON_PLUS1.TabIndex = 197;
+            this.L_24_TERRAINBATTLEICON_PLUS1.TabStop = false;
+            // 
+            // L_23_TERRAINBATTLEICON_PLUS1
+            // 
+            this.L_23_TERRAINBATTLEICON_PLUS1.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_23_TERRAINBATTLEICON_PLUS1.Location = new System.Drawing.Point(196, 668);
+            this.L_23_TERRAINBATTLEICON_PLUS1.Margin = new System.Windows.Forms.Padding(2);
+            this.L_23_TERRAINBATTLEICON_PLUS1.Name = "L_23_TERRAINBATTLEICON_PLUS1";
+            this.L_23_TERRAINBATTLEICON_PLUS1.Size = new System.Drawing.Size(155, 82);
+            this.L_23_TERRAINBATTLEICON_PLUS1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.L_23_TERRAINBATTLEICON_PLUS1.TabIndex = 196;
+            this.L_23_TERRAINBATTLEICON_PLUS1.TabStop = false;
+            // 
+            // X_BATTLEANIMEICON
+            // 
+            this.X_BATTLEANIMEICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_BATTLEANIMEICON.Location = new System.Drawing.Point(525, 447);
+            this.X_BATTLEANIMEICON.Margin = new System.Windows.Forms.Padding(2);
+            this.X_BATTLEANIMEICON.Name = "X_BATTLEANIMEICON";
+            this.X_BATTLEANIMEICON.Size = new System.Drawing.Size(300, 300);
+            this.X_BATTLEANIMEICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.X_BATTLEANIMEICON.TabIndex = 194;
+            this.X_BATTLEANIMEICON.TabStop = false;
             // 
             // L_16_COMBO
             // 
@@ -437,7 +494,7 @@
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Location = new System.Drawing.Point(518, 337);
+            this.groupBox1.Location = new System.Drawing.Point(525, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -835,6 +892,7 @@
             this.B17.Name = "B17";
             this.B17.Size = new System.Drawing.Size(67, 25);
             this.B17.TabIndex = 21;
+            this.B17.ValueChanged += new System.EventHandler(this.B17_ValueChanged);
             // 
             // J_18_ITEMEFFECT
             // 
@@ -860,9 +918,11 @@
             this.B16.Name = "B16";
             this.B16.Size = new System.Drawing.Size(67, 25);
             this.B16.TabIndex = 19;
+            this.B16.ValueChanged += new System.EventHandler(this.B17_ValueChanged);
             // 
             // J_17_BATTLEANIME
             // 
+            this.J_17_BATTLEANIME.AccessibleDescription = "@OP_CLASSDEMO_BATTLEANIME";
             this.J_17_BATTLEANIME.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_17_BATTLEANIME.Location = new System.Drawing.Point(2, 368);
             this.J_17_BATTLEANIME.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -921,6 +981,7 @@
             this.B14.Name = "B14";
             this.B14.Size = new System.Drawing.Size(67, 25);
             this.B14.TabIndex = 17;
+            this.B14.ValueChanged += new System.EventHandler(this.B17_ValueChanged);
             // 
             // J_15_CLASS
             // 
@@ -935,6 +996,7 @@
             // 
             // J_14_UNITPALETTE_PLUS1
             // 
+            this.J_14_UNITPALETTE_PLUS1.AccessibleDescription = "@OP_CLASSDEMO_BATTLEANIME_PALETTE";
             this.J_14_UNITPALETTE_PLUS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_14_UNITPALETTE_PLUS1.Location = new System.Drawing.Point(2, 277);
             this.J_14_UNITPALETTE_PLUS1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -982,6 +1044,7 @@
             this.P8.Name = "P8";
             this.P8.Size = new System.Drawing.Size(130, 25);
             this.P8.TabIndex = 14;
+            this.P8.ValueChanged += new System.EventHandler(this.P8_ValueChanged);
             // 
             // label6
             // 
@@ -1252,14 +1315,14 @@
             this.panel12.Location = new System.Drawing.Point(12, 38);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(257, 730);
+            this.panel12.Size = new System.Drawing.Size(257, 790);
             this.panel12.TabIndex = 162;
             // 
             // LabelFilter
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(0, 0);
+            this.LabelFilter.Location = new System.Drawing.Point(0, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(256, 26);
@@ -1273,10 +1336,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Location = new System.Drawing.Point(0, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(256, 688);
+            this.AddressList.Size = new System.Drawing.Size(256, 753);
             this.AddressList.TabIndex = 0;
             // 
             // OPClassDemoFE7Form
@@ -1284,7 +1347,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1538, 781);
+            this.ClientSize = new System.Drawing.Size(1538, 829);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -1295,7 +1358,10 @@
             this.Load += new System.EventHandler(this.ClassOPDemoFE7Form_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.L_17_BATTLEANIMEICON_PLUS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_NAME_IMG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_24_TERRAINBATTLEICON_PLUS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_23_TERRAINBATTLEICON_PLUS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_BATTLEANIMEICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B26)).EndInit();
@@ -1424,6 +1490,10 @@
         private FEBuilderGBA.TextBoxEx L_17_BATTLEANIME_PLUS1;
         private System.Windows.Forms.ComboBox L_16_COMBO;
         private CustomColorGroupBox groupBox1;
-        private InterpolatedPictureBox L_17_BATTLEANIMEICON_PLUS1;
+        private InterpolatedPictureBox X_BATTLEANIMEICON;
+        private InterpolatedPictureBox L_24_TERRAINBATTLEICON_PLUS1;
+        private InterpolatedPictureBox L_23_TERRAINBATTLEICON_PLUS1;
+        private InterpolatedPictureBox X_NAME_IMG;
+        private System.Windows.Forms.Button X_GOTO_GRAPHICS_TOOL_JP_NAME;
     }
 }

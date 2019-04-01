@@ -1,4 +1,4 @@
-﻿
+
 NAME=エクストラ 通信闘技場 削除
 NAME.en=Remove Link Arena Option
 NAME.zh=系统_删除额外通信竞技场
@@ -16,7 +16,7 @@ INFO=エクストラメニューにある、通信闘技場を削除します。
 COMBO.zh=显示|0xF7 0xF7 0xB5 0xFC|删除|0x00 0x00 0x00 0x20
 
 
-INFO.en=Delete the Link Arena in the extra menu.\r\nIt is used when collapsing resources used in the communication stadium.
+INFO.en=Sets whether the "Link Arena" option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent player access when Link Arena resources have been removed.
 INFO.zh=删除额外菜单中的通讯竞技场。\r\n在通信竞技场使用的资源崩溃时使用。
 
 AUTHOR=Aera

@@ -1,0 +1,13 @@
+Table=$A4
+loop=$0A
+check_mapid=$0C
+break_loop=$46
+check_flag=$16
+check_enenmy_class=$26
+show_tile_marker=$34
+CheckEnemyClass=$60
+CheckEnemyClass_loop=$6C
+CheckEnemyClass_break=$88
+check_enemy_class_id=$78
+found_enenmy_id=$84
+CheckEnemyClass_Exit=$8A

@@ -758,7 +758,7 @@ namespace FEBuilderGBA
             int width = 32 * 8;
             int height = 32 * 8;
             int palette_count = MAX_MAP_PALETTE_COUNT;
-            if (bitmap.Width != width || bitmap.Height < 176)
+            if (bitmap.Width != width || bitmap.Height < 128)
             {
                 R.ShowStopError("画像サイズが正しくありません。\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}", bitmap.Width,bitmap.Height,width,height);
                 return;
@@ -798,7 +798,7 @@ namespace FEBuilderGBA
                 MapPointerForm.Write_Plsit(MapPointerForm.PLIST_TYPE.OBJECT, obj_plist, newaddr, undodata);
 
                 //分割されたデータを書き込み
-                newaddr = InputFormRef.WriteBinaryData(this, (uint)ObjAddress.Value, image2Z, InputFormRef.get_data_pos_callback_lz77, undodata);
+                newaddr = InputFormRef.WriteBinaryData(this, (uint)ObjAddress2.Value, image2Z, InputFormRef.get_data_pos_callback_lz77, undodata);
                 if (newaddr == U.NOT_FOUND)
                 {
                     Program.Undo.Rollback(undodata);
@@ -1091,7 +1091,7 @@ namespace FEBuilderGBA
             save.Title = title;
             save.Filter = filter;
             save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, Program.ROM.TitleToFilename() + "_" + config_plist + ".mapchip_config" );
+            Program.LastSelectedFilename.Load(this, "", save, Program.ROM.RomInfo.TitleToFilename() + "_" + config_plist + ".mapchip_config" );
 
             DialogResult dr = save.ShowDialog();
             if (dr != DialogResult.OK)

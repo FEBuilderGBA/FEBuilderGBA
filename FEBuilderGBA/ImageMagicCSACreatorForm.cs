@@ -315,7 +315,7 @@ namespace FEBuilderGBA
 
             U.AddrResult ar = InputFormRef.SelectToAddrResult(this.AddressList);
             Debug.Assert(ar.tag != 0);
-            if (!U.CheckZeroAddressWrite(ar.tag))
+            if (!U.CheckZeroAddressWriteHigh(ar.tag))
             {
                 return;
             }
@@ -511,8 +511,7 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
 
             //開きなおす.
-            R.ShowWarning("いったんフォームを閉じますので、開きなおしてください。");
-            this.Close();
+            InputFormRef.ReOpenForm<ImageMagicCSACreatorForm>();
         }
 
         private void X_N_JumpEditor_Click(object sender, EventArgs e)

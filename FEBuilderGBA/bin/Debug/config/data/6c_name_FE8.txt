@@ -715,3 +715,6 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0008F17C=Serif	{U}	//08A01DBC
 00011658=NewItemGotProc	{J}	//085BA094
 0001156C=NewItemGotProc	{U}	//085922D0
+000AD49C=DrawBlueBarInPrepScreenMenu	{U}	//08A20C1C
+000B1F3C=DrawBlueBarInPrepScreenMenu	{J}	//08A9DB84
+005C2734=TerrainHealLoop	{J}	//5C6830

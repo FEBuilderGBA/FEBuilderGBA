@@ -1,6 +1,6 @@
 NAME=OPANIME_FACE_セライナ
 NAME.en=OP Anime Face: Selena
-NAME.zh=OPANIME_FACE_ Celina
+NAME.zh=OP动画_脸_塞莱娜
 
 TYPE=IMAGE
 TAG=#IMAGE

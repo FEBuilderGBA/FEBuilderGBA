@@ -1,6 +1,6 @@
 NAME=瞬殺率_対敵将の瞬殺率
 NAME.en=Silencer Activation Rate vs Boss
-NAME.zh=枪杀率_反敌的枪战率
+NAME.zh=瞬殺率_对敌将的瞬杀率
 
 //アドレスパッチとして実装します
 TYPE=ADDR

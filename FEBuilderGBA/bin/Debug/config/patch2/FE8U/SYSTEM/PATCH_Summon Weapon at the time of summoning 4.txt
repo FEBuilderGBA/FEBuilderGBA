@@ -10,4 +10,4 @@ ADDRESS_TYPE=ITEM
 
 
 AUTHOR=7743
-NAME.zh=武器召唤4
+NAME.zh=召唤时的武器4

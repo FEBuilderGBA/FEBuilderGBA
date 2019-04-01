@@ -1,6 +1,6 @@
 NAME=CC3分岐
 NAME.en=3 Promotion Branch Options
-NAME.zh=CC3分支
+NAME.zh=转职3分岐
 
 //BINパッチとして実装します
 TYPE=BIN

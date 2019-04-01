@@ -1,6 +1,6 @@
 NAME=フレイボム(地雷)のダメージ量
 NAME.en=Mine Damage Value
-NAME.zh=Freybom（地雷）的伤害
+NAME.zh=（地雷）的伤害
 
 //アドレスパッチとして実装します
 TYPE=ADDR

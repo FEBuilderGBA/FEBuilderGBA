@@ -33,6 +33,9 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.L_20_DIFFCULTY = new FEBuilderGBA.TextBoxEx();
             this.W20 = new System.Windows.Forms.NumericUpDown();
             this.J_20_DIFFCULTY = new System.Windows.Forms.Label();
@@ -87,7 +90,6 @@
             this.label70 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
             this.W94 = new System.Windows.Forms.NumericUpDown();
             this.J_94 = new System.Windows.Forms.Label();
             this.B61 = new System.Windows.Forms.NumericUpDown();
@@ -156,8 +158,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.B45 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.L_42_SONGPLAY = new System.Windows.Forms.Button();
             this.L_42_SONG = new FEBuilderGBA.TextBoxEx();
             this.L_40_SONGPLAY = new System.Windows.Forms.Button();
@@ -171,7 +171,6 @@
             this.W38 = new System.Windows.Forms.NumericUpDown();
             this.J_38_SONG = new System.Windows.Forms.Label();
             this.J_ID_MAPEXITPOINT = new System.Windows.Forms.Label();
-            this.J_14_IMAGECHAPTER = new System.Windows.Forms.Label();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.B44 = new System.Windows.Forms.NumericUpDown();
             this.B143 = new System.Windows.Forms.NumericUpDown();
@@ -241,9 +240,9 @@
             this.label120 = new System.Windows.Forms.Label();
             this.L_16_MAPXY_17 = new System.Windows.Forms.Label();
             this.B15 = new System.Windows.Forms.NumericUpDown();
-            this.J_15 = new System.Windows.Forms.Label();
+            this.J_15_IMAGECHAPTER = new System.Windows.Forms.Label();
             this.B14 = new System.Windows.Forms.NumericUpDown();
-            this.J_14 = new System.Windows.Forms.Label();
+            this.J_14_IMAGECHAPTER = new System.Windows.Forms.Label();
             this.B13 = new System.Windows.Forms.NumericUpDown();
             this.J_13 = new System.Windows.Forms.Label();
             this.B12 = new System.Windows.Forms.NumericUpDown();
@@ -571,7 +570,6 @@
             this.panel3.Controls.Add(this.W38);
             this.panel3.Controls.Add(this.J_38_SONG);
             this.panel3.Controls.Add(this.J_ID_MAPEXITPOINT);
-            this.panel3.Controls.Add(this.J_14_IMAGECHAPTER);
             this.panel3.Controls.Add(this.MapPictureBox);
             this.panel3.Controls.Add(this.B44);
             this.panel3.Controls.Add(this.B143);
@@ -645,9 +643,9 @@
             this.panel3.Controls.Add(this.label120);
             this.panel3.Controls.Add(this.L_16_MAPXY_17);
             this.panel3.Controls.Add(this.B15);
-            this.panel3.Controls.Add(this.J_15);
+            this.panel3.Controls.Add(this.J_15_IMAGECHAPTER);
             this.panel3.Controls.Add(this.B14);
-            this.panel3.Controls.Add(this.J_14);
+            this.panel3.Controls.Add(this.J_14_IMAGECHAPTER);
             this.panel3.Controls.Add(this.B13);
             this.panel3.Controls.Add(this.J_13);
             this.panel3.Controls.Add(this.B12);
@@ -674,6 +672,39 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1628, 939);
             this.panel3.TabIndex = 189;
+            // 
+            // label68
+            // 
+            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label68.Location = new System.Drawing.Point(1103, 1);
+            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(519, 32);
+            this.label68.TabIndex = 69;
+            this.label68.Text = "資産評価";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Location = new System.Drawing.Point(856, 372);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(238, 32);
+            this.label20.TabIndex = 167;
+            this.label20.Text = "経験評価";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(638, 372);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(219, 32);
+            this.label18.TabIndex = 166;
+            this.label18.Text = "攻略評価";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_20_DIFFCULTY
             // 
@@ -725,7 +756,7 @@
             // J_ID_MAPEDITOR
             // 
             this.J_ID_MAPEDITOR.AutoSize = true;
-            this.J_ID_MAPEDITOR.Location = new System.Drawing.Point(1102, 905);
+            this.J_ID_MAPEDITOR.Location = new System.Drawing.Point(1107, 905);
             this.J_ID_MAPEDITOR.Name = "J_ID_MAPEDITOR";
             this.J_ID_MAPEDITOR.Size = new System.Drawing.Size(153, 18);
             this.J_ID_MAPEDITOR.TabIndex = 345;
@@ -1288,17 +1319,6 @@
             this.label72.TabIndex = 237;
             this.label72.Text = "エリウッドノーマル";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label68
-            // 
-            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label68.Location = new System.Drawing.Point(1103, 1);
-            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(519, 32);
-            this.label68.TabIndex = 69;
-            this.label68.Text = "資産評価";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // W94
             // 
@@ -1946,28 +1966,6 @@
             this.label21.Text = "Aエリウッドノーマル";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
-            // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(856, 372);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(238, 32);
-            this.label20.TabIndex = 167;
-            this.label20.Text = "経験評価";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(638, 372);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(219, 32);
-            this.label18.TabIndex = 166;
-            this.label18.Text = "攻略評価";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // L_42_SONGPLAY
             // 
             this.L_42_SONGPLAY.Location = new System.Drawing.Point(595, 869);
@@ -2109,20 +2107,11 @@
             // J_ID_MAPEXITPOINT
             // 
             this.J_ID_MAPEXITPOINT.AutoSize = true;
-            this.J_ID_MAPEXITPOINT.Location = new System.Drawing.Point(1305, 905);
+            this.J_ID_MAPEXITPOINT.Location = new System.Drawing.Point(1310, 905);
             this.J_ID_MAPEXITPOINT.Name = "J_ID_MAPEXITPOINT";
             this.J_ID_MAPEXITPOINT.Size = new System.Drawing.Size(154, 18);
             this.J_ID_MAPEXITPOINT.TabIndex = 103;
             this.J_ID_MAPEXITPOINT.Text = "離脱ポイントへJump";
-            // 
-            // J_14_IMAGECHAPTER
-            // 
-            this.J_14_IMAGECHAPTER.AutoSize = true;
-            this.J_14_IMAGECHAPTER.Location = new System.Drawing.Point(1469, 905);
-            this.J_14_IMAGECHAPTER.Name = "J_14_IMAGECHAPTER";
-            this.J_14_IMAGECHAPTER.Size = new System.Drawing.Size(135, 18);
-            this.J_14_IMAGECHAPTER.TabIndex = 104;
-            this.J_14_IMAGECHAPTER.Text = "章タイトルへJump";
             // 
             // MapPictureBox
             // 
@@ -2939,16 +2928,17 @@
             this.B15.Size = new System.Drawing.Size(64, 25);
             this.B15.TabIndex = 12;
             // 
-            // J_15
+            // J_15_IMAGECHAPTER
             // 
-            this.J_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_15.Location = new System.Drawing.Point(6, 380);
-            this.J_15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_15.Name = "J_15";
-            this.J_15.Size = new System.Drawing.Size(210, 32);
-            this.J_15.TabIndex = 38;
-            this.J_15.Text = "???";
-            this.J_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_15_IMAGECHAPTER.AccessibleDescription = "@MAPSETTING_ID2";
+            this.J_15_IMAGECHAPTER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_15_IMAGECHAPTER.Location = new System.Drawing.Point(6, 380);
+            this.J_15_IMAGECHAPTER.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_15_IMAGECHAPTER.Name = "J_15_IMAGECHAPTER";
+            this.J_15_IMAGECHAPTER.Size = new System.Drawing.Size(210, 32);
+            this.J_15_IMAGECHAPTER.TabIndex = 38;
+            this.J_15_IMAGECHAPTER.Text = "章タイトル画像2";
+            this.J_15_IMAGECHAPTER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B14
             // 
@@ -2964,17 +2954,17 @@
             this.B14.Size = new System.Drawing.Size(64, 25);
             this.B14.TabIndex = 11;
             // 
-            // J_14
+            // J_14_IMAGECHAPTER
             // 
-            this.J_14.AccessibleDescription = "@MAPSETTING_ID";
-            this.J_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_14.Location = new System.Drawing.Point(6, 349);
-            this.J_14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_14.Name = "J_14";
-            this.J_14.Size = new System.Drawing.Size(210, 32);
-            this.J_14.TabIndex = 36;
-            this.J_14.Text = "ID";
-            this.J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_14_IMAGECHAPTER.AccessibleDescription = "@MAPSETTING_ID";
+            this.J_14_IMAGECHAPTER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_14_IMAGECHAPTER.Location = new System.Drawing.Point(6, 349);
+            this.J_14_IMAGECHAPTER.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_14_IMAGECHAPTER.Name = "J_14_IMAGECHAPTER";
+            this.J_14_IMAGECHAPTER.Size = new System.Drawing.Size(210, 32);
+            this.J_14_IMAGECHAPTER.TabIndex = 36;
+            this.J_14_IMAGECHAPTER.Text = "章タイトル画像";
+            this.J_14_IMAGECHAPTER.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B13
             // 
@@ -2992,6 +2982,7 @@
             // 
             // J_13
             // 
+            this.J_13.AccessibleDescription = "@MAPSETTING_PREP_SCREEN_BOOL";
             this.J_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_13.Location = new System.Drawing.Point(6, 318);
             this.J_13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -3567,7 +3558,6 @@
         private System.Windows.Forms.Label J_36_SONG;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label J_ID_MAPEXITPOINT;
-        private System.Windows.Forms.Label J_14_IMAGECHAPTER;
         private MapPictureBox MapPictureBox;
         private System.Windows.Forms.NumericUpDown B44;
         private System.Windows.Forms.NumericUpDown B143;
@@ -3636,9 +3626,9 @@
         private System.Windows.Forms.Label label120;
         private System.Windows.Forms.Label L_16_MAPXY_17;
         private System.Windows.Forms.NumericUpDown B15;
-        private System.Windows.Forms.Label J_15;
+        private System.Windows.Forms.Label J_15_IMAGECHAPTER;
         private System.Windows.Forms.NumericUpDown B14;
-        private System.Windows.Forms.Label J_14;
+        private System.Windows.Forms.Label J_14_IMAGECHAPTER;
         private System.Windows.Forms.NumericUpDown B13;
         private System.Windows.Forms.Label J_13;
         private System.Windows.Forms.NumericUpDown B12;

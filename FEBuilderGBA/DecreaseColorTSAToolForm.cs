@@ -194,39 +194,46 @@ namespace FEBuilderGBA
                 return;
             }
 
-            //少し時間がかかるので、しばらくお待ちください表示.
-            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            try
             {
-                DecreaseColor dc = new DecreaseColor();
-
-                Bitmap src = new Bitmap(AFilename.Text);
-
-                int width = (int)this.ConvertWidth.Value;
-                int height = (int)this.ConvertHeight.Value;
-                int yohaku = (int)this.ConvertYohaku.Value;
-                int paletteno = (int)this.ConvertPaletteNo.Value;
-                bool isReserve1stColor = (this.ConvertReserveColor.SelectedIndex == 1);
-
-                Bitmap src2;
-                if(this.ConvertSizeMethod.SelectedIndex == 0)
+                //少し時間がかかるので、しばらくお待ちください表示.
+                using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    src2 = ImageUtil.BitmapSizeChange(src,0,0,width,height);
-                }
-                else
-                {
-                    src2 = ImageUtil.BitmapScale(src,width,height);
-                }
-                bool ignoreTSA = IgnoreTSA.Checked;
-                Bitmap dest = dc.Convert(src2, paletteno, yohaku, isReserve1stColor, ignoreTSA);
+                    DecreaseColor dc = new DecreaseColor();
 
-                dest.Save(BFilename.Text);
+                    Bitmap src = new Bitmap(AFilename.Text);
 
-                src.Dispose();
-                src2.Dispose();
-                dest.Dispose();
+                    int width = (int)this.ConvertWidth.Value;
+                    int height = (int)this.ConvertHeight.Value;
+                    int yohaku = (int)this.ConvertYohaku.Value;
+                    int paletteno = (int)this.ConvertPaletteNo.Value;
+                    bool isReserve1stColor = (this.ConvertReserveColor.SelectedIndex == 1);
+
+                    Bitmap src2;
+                    if (this.ConvertSizeMethod.SelectedIndex == 0)
+                    {
+                        src2 = ImageUtil.BitmapSizeChange(src, 0, 0, width, height);
+                    }
+                    else
+                    {
+                        src2 = ImageUtil.BitmapScale(src, width, height);
+                    }
+                    bool ignoreTSA = IgnoreTSA.Checked;
+                    Bitmap dest = dc.Convert(src2, paletteno, yohaku, isReserve1stColor, ignoreTSA);
+
+                    dest.Save(BFilename.Text);
+
+                    src.Dispose();
+                    src2.Dispose();
+                    dest.Dispose();
+                }
+                //エクスプローラで選択しよう
+                U.SelectFileByExplorer(BFilename.Text);
             }
-            //エクスプローラで選択しよう
-            U.SelectFileByExplorer(BFilename.Text);
+            catch (System.Runtime.InteropServices.ExternalException ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+            }
         }
 
         private void AFilename_DoubleClick(object sender, EventArgs e)

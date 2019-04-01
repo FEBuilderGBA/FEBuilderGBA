@@ -1,6 +1,6 @@
-﻿
+
 NAME=ユアン理消滅処理 ゼロにする武器種
-NAME.en=Ewan Weapon Rank Removal: Weapon Type
+NAME.en=Ewan Weapon Rank Removal On Promotion
 NAME.zh=系统_尤恩理cc忘记武器的种类
 
 //アドレスパッチとして実装します
@@ -21,7 +21,7 @@ AUTHOR.en=From aera's material\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%
 
 INFO=ユアンが特定のクラスへCCした時に、忘れる武器の種類を設定します。
 INFO.zh=当尤恩CC到某个职业时，设置忘记武器的种类。
-INFO.en=In FE8, when Ewan promotes from Pupil to Mage he loses the ability to use dark magic.\r\nThis patch specifies the weapon class that is removed when this promotion takes place. This can be used to create your own weapon class forgetting events.\r\n
+INFO.en=By default, when Ewan promotes from Pupil to Shaman he loses the ability to use Anima magic.\r\nThis patch specifies the weapon type that is removed when this promotion takes place.\r\n This can be used to create unique weapon type removing events.\r\n
 
 
 CONFLICT_IF:0x2BC30=0x00 0x23 0x3C 0x1C 0xE2 0x18 0x11 0x78 0x68 0x68 0x2C 0x30 0xC0 0x18 0x00 0x78 0x00 0x28 0x01 0xD1 0x00 0x21 0x03 0xE0 0x09 0x18 0xFB 0x29 0x00 0xDD 0xFB 0x21

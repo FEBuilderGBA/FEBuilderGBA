@@ -1,5 +1,5 @@
 NAME=MUSIC_杖2_Curing
-NAME.en=MUSIC_Staff2_Curing
+NAME.en=Curing Staff BGM
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
@@ -7,4 +7,4 @@ TAG=#SOUND
 ADDRESS=0x080680AA
 ADDRESS_TYPE=SONG
 
-NAME.zh=MUSIC_Wand 2_固化
+NAME.zh=音乐_杖 2_固化

@@ -1,7 +1,7 @@
 
 NAME=OPANIMEエフラム blur3
 NAME.en=OPANIME Ephraim blur3
-NAME.zh=OP动画伊弗列姆 blur3
+NAME.zh=OP动画伊弗列姆 模糊3
 
 TYPE=IMAGE
 TAG=#IMAGE

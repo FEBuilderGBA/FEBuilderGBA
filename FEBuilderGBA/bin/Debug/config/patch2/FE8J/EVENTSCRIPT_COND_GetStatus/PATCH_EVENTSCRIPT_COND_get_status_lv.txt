@@ -1,5 +1,5 @@
 NAME=ユニットのレベルを取得するイベント命令
-NAME.en=AddEvent: Get Level
+NAME.en=AddEvent:Get Level
 TYPE=BIN
 TAG=#EVENT
 

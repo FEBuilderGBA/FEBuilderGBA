@@ -1,6 +1,6 @@
 NAME=(旧)個別アニメ導入
 NAME.zh=(旧)个人动画补丁介绍
-NAME.en=(Old)Individual animation patch(custom animation) (Installer)
+NAME.en=(Old)Character Custom Animation Table Installer
 
 TYPE=BIN
 TAG=#ENGINE
@@ -17,7 +17,7 @@ JUMP:0x58168:$r0:+0x50=main.bin
 
 
 INFO=このパッチは、FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n
-INFO.en=This patch, like FE 7, assigns individual animation (custom animation) for each unit.\r\n
+INFO.en=Patches a table into the ROM for custom animations by character like in FE7.\r\nMust be installed to use "Character Custom Animation Table Editor."\r\n
 INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定义动画）\r\n
 
 CONFLICT_IF:0x058168=0x00 0x49 0x8f 0x46

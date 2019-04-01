@@ -3,6 +3,7 @@ NAME.en=When there is a unit receiving damage, HP bar is displayed.
 INFO=ダメージを受けているキャラがいると、HPバーを表示します。\r\nそのほか、危険位置を表示したり、エンジンをいろいろ修正するパッチ集です。\r\nHPBars,Danger
 
 PATCHED_IF:0x156AC=0x18 0x22
+EA_EXTENDS_GAMEMENU:0x01=0x20
 TYPE=EA
 TAG=#ENGINE
 

@@ -18,7 +18,7 @@ namespace FEBuilderGBA
             U.AddCancelButton(this);
         }
 
-        public string TagFilter ;
+        public string TagFilter  { get; private set; }
 
         void Close(string filter)
         {
@@ -62,5 +62,51 @@ namespace FEBuilderGBA
             Close("#ESSENTIALFIXES ");
         }
 
+        private void SortFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == false)
+            {
+                return;
+            }
+
+            string filter ;
+            if (SortFilterComboBox.SelectedIndex == 1)
+            {
+                filter = "@SortDateA";
+            }
+            else if (SortFilterComboBox.SelectedIndex == 2)
+            {
+                filter = "@SortDateD";
+            }
+            else if (SortFilterComboBox.SelectedIndex == 3)
+            {
+                filter = "@SortName";
+            }
+            else
+            {
+                filter = "@SortNone";
+            }
+
+            Close(filter);
+        }
+        public void SetSort(string filter)
+        {
+            if (filter == "@SortDateA")
+            {
+                this.SortFilterComboBox.SelectedIndex = 1;
+            }
+            else if (filter == "@SortDateD")
+            {
+                this.SortFilterComboBox.SelectedIndex = 2;
+            }
+            else if (filter == "@SortName")
+            {
+                this.SortFilterComboBox.SelectedIndex = 3;
+            }
+            else if (filter == "@SortNone")
+            {
+                this.SortFilterComboBox.SelectedIndex = 0;
+            }
+        }
     }
 }

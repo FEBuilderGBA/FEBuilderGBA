@@ -15,4 +15,4 @@ PALETTE_POINTER=0x03FAA0
 
 
 
-NAME.zh=攻击的背景
+NAME.zh=系统_进击开始的背景

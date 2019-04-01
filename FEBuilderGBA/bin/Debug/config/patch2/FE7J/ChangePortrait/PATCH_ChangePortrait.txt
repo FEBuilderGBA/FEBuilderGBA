@@ -1,0 +1,36 @@
+NAME=顔画像をクラス、章、フラグごとに切り替える
+INFO=ステータス画面と、MiniMugをクラス、章、フラグことに切り替えます。
+
+IF:0x18FC8=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE #IMAGE
+
+//データへのポインタ
+POINTER=$FGREP4END ChangePortraitMiniMug.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B2:UNIT
+
+//データを定義します
+W0:PORTRAIT=PORTRAIT
+B2:UNIT=UNIT
+B3:CLASS=CLASS(0xFF=ANY or 0x00=ANY)
+B4:MAP_ANYFF=MAPID(0xFF=ANY)
+B5:CHAPTORMODE_ANYFF=編(1=リン/2=エリウッド/3=ヘクトル/FF=全編)
+B5:CHAPTORMODE_ANYFF.en=Edtion(1=Lyn/2=Eliwood/3=Hextor/FF=ANY)
+B5:CHAPTORMODE_ANYFF.zh=Edtion(1=Lyn/2=Eliwood/3=Hextor/FF=ANY)
+W6:FLAG=Flag(0x00=ANY)
+
+
+NAME.en=Switch Portrait images by class, chapter, flag.
+INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.
+NAME.zh=按类，章，旗切换面部图像
+INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。

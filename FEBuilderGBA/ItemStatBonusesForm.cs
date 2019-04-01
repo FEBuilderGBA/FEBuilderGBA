@@ -24,6 +24,8 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(false);
 
             InputFormRef.markupJumpLabel(X_EXPAIN_HOWTOADD);
+
+            this.BlockSize.Text = "12";
         }
 
         public InputFormRef InputFormRef;

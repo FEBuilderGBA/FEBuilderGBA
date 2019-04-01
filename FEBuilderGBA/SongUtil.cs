@@ -3164,7 +3164,7 @@ namespace FEBuilderGBA
 
             string[] lines = File.ReadAllLines(filename);
 
-            string version = Program.ROM.VersionToFilename();
+            string version = Program.ROM.RomInfo.VersionToFilename();
             for (int i = 0; i < lines.Length; i++)
             {
                 if (U.IsComment(lines[i]))

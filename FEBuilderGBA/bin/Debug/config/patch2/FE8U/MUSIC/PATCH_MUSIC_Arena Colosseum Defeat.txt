@@ -10,4 +10,4 @@ ADDRESS=0x080458FC 0x08045922
 ADDRESS_TYPE=SONG
 
 INFO=Select the song to be played when defeated during an Arena Battle.
-NAME.zh=MUSIC_ Stadium _如何赢/输
+NAME.zh=音乐_斗技场_胜败如何

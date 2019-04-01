@@ -236,7 +236,8 @@ namespace FEBuilderGBA
             public string Name = "";
             public string ResultAndArgs = "";
             public string TypeName = "";
-            public uint Length;
+            public uint Length = 0;
+            public bool IsPointer = false;
 
             public string ToStringInfo()
             {
@@ -799,6 +800,11 @@ namespace FEBuilderGBA
                 p.Length = U.TextBatchLength(U.toOffset(pointer), rom);
                 p.Name += " Count_" + ((p.Length) / 8);
             }
+            else if (type == "TEXTBATCHSHORT")
+            {
+                p.Length = U.TextBatchShortLength(U.toOffset(pointer), rom);
+                p.Name += " Count_" + ((p.Length) / 2);
+            }
             else if (type == "EVENT")
             {
                 p.Length = EventScript.SearchEveneLength(rom.Data, U.toOffset(pointer));
@@ -952,6 +958,7 @@ namespace FEBuilderGBA
                 p.ResultAndArgs = "";
                 p.Length = 0;
                 p.TypeName = typeName;
+                p.IsPointer = true;
 
                 if (p.Name == "")
                 {
@@ -1287,8 +1294,8 @@ namespace FEBuilderGBA
         }
 
         //すべてのテキストの参照ID
-        List<TextID> TextIDArray = null;
-        public List<TextID> GetTextIDArray()
+        List<UseTextID> TextIDArray = null;
+        public List<UseTextID> GetTextIDArray()
         {
             return this.TextIDArray;
         }
@@ -1296,6 +1303,8 @@ namespace FEBuilderGBA
         {
             this.TextIDArray = U.MakeTextIDArray();
         }
+
+
 #if DEBUG
         void MargeS(string filename)
         {

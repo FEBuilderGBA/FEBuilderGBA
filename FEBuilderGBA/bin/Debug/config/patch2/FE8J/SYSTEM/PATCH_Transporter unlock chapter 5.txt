@@ -1,6 +1,6 @@
 
 NAME=輸送隊解禁 5x章
-NAME.en=Transporter unlock chapter 5x
+NAME.en=Supply Unlocks At Chapter 5x
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -15,7 +15,7 @@ AUTHOR.zh=来源:7743的写作\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%
 AUTHOR.en=From source: 7743's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 COMBO.zh=禁止|0x05 0x28 0x03 0xD1|允许|0x04 0xE0 0x00 0x00
 INFO=HINT:輸送体
-INFO.en=HINT:convoy,supply,transporter,merlinus,wagon
+INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
 
 COMBO.en=Ban|0x05 0x28 0x03 0xD1|Authorization|0x04 0xE0 0x00 0x00
 

@@ -19,7 +19,7 @@ ZHEADERTSA_POINTER=0x88644
 //非圧縮パレット
 PALETTE_POINTER=0x88640
 
-NAME.zh=状态屏幕背景
+NAME.zh=系统_状态画面的背景
 
 INFO=ステータス画面の背景画像を変更します。
 INFO.en=Change the background image of the status screen(stat screen).

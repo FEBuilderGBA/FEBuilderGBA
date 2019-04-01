@@ -34,7 +34,7 @@
 @0012	Display speech at normal speed [NormalPrint]	{SPEED}
 @0013	Display speech at quickly [FastPrint]	{SPEED}
 @0014	[CloseSpeechFast]	{CHOOSE}
-@0015	[CloseSpeechSlow]	{CHOOSE}
+@0015	Also effect of Hide Text bubble[CloseSpeechSlow]	{CHOOSE}
 @0016	[ToggleMouthMove]	{TOGGLE}
 @0017	[ToggleSmile]	{TOGGLE}
 @0018	[Yes]	{CHOOSE}

@@ -16,4 +16,4 @@ PALETTE=1
 ZIMAGE_POINTER=0x80718
 //非圧縮パレット
 PALETTE_POINTER=0xa44fc
-NAME.zh=攻击的背景
+NAME.zh=系统_进击开始的背景

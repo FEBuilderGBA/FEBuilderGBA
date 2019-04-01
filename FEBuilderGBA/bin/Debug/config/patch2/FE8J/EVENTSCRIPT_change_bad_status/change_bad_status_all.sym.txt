@@ -1,0 +1,6 @@
+next_loop=$16
+break_loop=$64
+check_unit_id=$2C
+check_class_id=$3A
+found=$46
+Change=$5E

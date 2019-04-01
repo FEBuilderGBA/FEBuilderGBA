@@ -1,6 +1,6 @@
 NAME=リザイアバグ修正
 NAME.en=Nosferatu Bug Fix
-NAME.zh=Resizer Bug修复
+NAME.zh=HP溢出错误修复
 
 //アドレスパッチとして実装します
 TYPE=ADDR

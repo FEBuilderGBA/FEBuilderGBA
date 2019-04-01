@@ -1,6 +1,6 @@
 NAME=アフアのしずく成長率補正値
 NAME.en=Metis's Tome Growth Bonus
-NAME.zh=Aphia的下降增长更正值
+NAME.zh=加成长的水滴的成长补正值?
 
 TYPE=ADDR
 TAG=#ENGINE

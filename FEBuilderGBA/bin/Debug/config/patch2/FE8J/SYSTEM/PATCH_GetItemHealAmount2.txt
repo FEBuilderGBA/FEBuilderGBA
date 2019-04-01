@@ -1,6 +1,6 @@
-﻿
+
 NAME=リライブの杖の回復量
-NAME.en=Recovery amount of Mend Staff
+NAME.en=Set HP Recovered By Mend Staff
 
 IF:0x016D66=0x00 0x24
 

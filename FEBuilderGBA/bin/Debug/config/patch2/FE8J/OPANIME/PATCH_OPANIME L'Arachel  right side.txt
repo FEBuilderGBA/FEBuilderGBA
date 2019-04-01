@@ -1,6 +1,6 @@
-﻿
+
 NAME=OPANIMEラーチェル right side
-NAME.en=OPANIME L'Arachel  right side
+NAME.en=OP Anime L'Arachel (Right)
 
 //画像パッチとして実装します
 TYPE=IMAGE

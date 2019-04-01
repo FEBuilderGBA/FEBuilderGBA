@@ -155,10 +155,10 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextIDPP(list, FELint.Type.UNIT, InputFormRef, new uint[] { 12 });
+            UseTextID.AppendTextIDPP(list, FELint.Type.UNIT, InputFormRef, new uint[] { 12 });
         }
     }
 }

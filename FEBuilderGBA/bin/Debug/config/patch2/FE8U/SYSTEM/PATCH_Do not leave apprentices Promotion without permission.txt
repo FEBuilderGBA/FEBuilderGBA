@@ -1,6 +1,6 @@
 NAME=見習い共を勝手にCCさせない
 NAME.en=Toggle Trainee Automatic Promotion
-NAME.zh=未经允许不要离开学徒CC
+NAME.zh=系统_见习职业转职要经许可
 
 //アドレスパッチとして実装します
 TYPE=ADDR

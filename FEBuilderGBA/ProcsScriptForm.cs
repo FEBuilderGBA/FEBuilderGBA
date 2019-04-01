@@ -29,8 +29,8 @@ namespace FEBuilderGBA
                 pleaseWait.DoEvents(R._("準備しています"));
 
                 ProcsList = new List<Address>();
-                List<DisassemblerTrumb.LDRPointer> ldrmap = DisassemblerTrumb.MakeLDRMap(Program.ROM.Data, 0x100);
-                FindProc find = new FindProc(ProcsList, null,ldrmap);
+                List<DisassemblerTrumb.LDRPointer> ldrmap = Program.AsmMapFileAsmCache.GetLDRMapCache();
+                FindProc find = new FindProc(ProcsList,ldrmap);
 
                 this.AddressList.BeginUpdate();
                 this.AddressList.Items.Clear();
@@ -103,20 +103,27 @@ namespace FEBuilderGBA
             return name;
         }
 
+        public static bool hasASMRoutine(uint code)
+        {//2 or 3 or 4 or 14 or 16 or 18 は、内部にASM関数を持っている
+            return (code == 0x2 || code == 0x3 || code == 0x4 || code == 0x14 || code == 0x16 || code == 0x18) ;
+        }
+        public static bool hasChildProcs(uint code)
+        {//5 or 6 or 7 or 8 or 9 or A or Dは、内部にProcsをネストする
+            return (code >= 0x5 && code <= 0xA) || code == 0xD;
+        }
+
         class FindProc
         {
             Dictionary<uint, string> ProcsName;
             Dictionary<uint, string> ProcsNameByAddr;
             Dictionary<uint, bool> AlreadyMatch = new Dictionary<uint, bool>();
             List<Address> List;
-            List<Address> SubDataList;
 
-            public FindProc(List<Address> list, List<Address> subDataList, List<DisassemblerTrumb.LDRPointer> ldrmap)
+            public FindProc(List<Address> list, List<DisassemblerTrumb.LDRPointer> ldrmap)
             {
                 this.ProcsName = U.LoadDicResource(U.ConfigDataFilename("6c_name_"));
                 this.ProcsNameByAddr = MakeProcNameByAddr(this.ProcsName);
                 this.List = list;
-                this.SubDataList = subDataList;
 
                 for (int i = 0; i < ldrmap.Count; i++)
                 {
@@ -205,9 +212,8 @@ namespace FEBuilderGBA
                 for (; addr < end; addr += 8 )
                 {
                     uint code = Program.ROM.u8(addr);
-                    //uint code = Program.ROM.u16(addr + 0);
-                    if (code >= 5 && code <= 0xA)
-                    {//5 or 6 or 7 or 8 or 9 or Aは、内部にProcsをネストする
+                    if (ProcsScriptForm.hasChildProcs(code))
+                    {
                         uint arg = Program.ROM.p32(addr + 4);
 
                         bool result;
@@ -220,20 +226,86 @@ namespace FEBuilderGBA
                         }
                         FindProcOne(addr + 4, arg, true);
                     }
-                    else if (code == 0x01)
-                    {//Set name
-                        if (this.SubDataList != null)
-                        {
-                            FEBuilderGBA.Address.AddCString(this.SubDataList, addr + 4);
-                        }
-                    }
                 }
             }
         }
 
+        static string GetProcsName(Address a)
+        {
+            if (a.Info == "Procs ")
+            {
+                return a.Info + U.ToHexString(a.Addr);
+            }
+            return a.Info;
+        }
+
         public static void MakeAllDataLength(List<Address> list, List<DisassemblerTrumb.LDRPointer> ldrmap)
         {
-            FindProc find = new FindProc(list,list, ldrmap);
+            List<Address> procs = new List<Address>();
+            FindProc find = new FindProc(procs, ldrmap);
+            list.AddRange(procs); //発見したProcsを追加.
+
+            //Procsに付属するデータを発見する
+            foreach (Address a in procs)
+            {
+                uint addr = a.Addr;
+                uint end = addr + a.Length;
+                for (; addr < end; addr += 8)
+                {
+                    uint code = Program.ROM.u8(addr);
+
+                    if (ProcsScriptForm.hasASMRoutine(code))
+                    {//呼び出しているASM関数
+                        uint arg = Program.ROM.p32(addr + 4);
+                        if (arg != 0)
+                        {
+                            FEBuilderGBA.Address.AddFunction(list, addr + 4, GetProcsName(a) + " CallASM");
+                        }
+                    }
+                    else if (code == 0x01)
+                    {//Set name
+                        FEBuilderGBA.Address.AddCString(list, addr + 4);
+                    }
+                }
+            }
+        }
+        public static void MakeCheckError(List<FELint.ErrorSt> errors, List<DisassemblerTrumb.LDRPointer> ldrmap)
+        {
+            List<Address> procs = new List<Address>();
+            FindProc find = new FindProc(procs, ldrmap);
+
+            //Procsに付属するデータを発見する
+            foreach (Address a in procs)
+            {
+                uint addr = a.Addr;
+                uint end = addr + a.Length;
+                for (; addr < end; addr += 8)
+                {
+                    uint code = Program.ROM.u8(addr);
+
+                    if (ProcsScriptForm.hasASMRoutine(code))
+                    {//呼び出しているASM関数
+                        uint arg = Program.ROM.u32(addr + 4);
+                        if (arg != 0)
+                        {
+                            FELint.CheckASMPointerErrors(arg, errors, FELint.Type.PROCS, a.Addr, addr);
+                        }
+                    }
+                    else if (ProcsScriptForm.hasChildProcs(code))
+                    {//子Procsの確認
+                        uint arg = Program.ROM.u32(addr + 4);
+                        if (arg != 0)
+                        {
+                            FELint.CheckProcsPointerErrors(arg, errors, FELint.Type.PROCS, a.Addr, addr);
+                        }
+                    }
+                    else if (code == 0x01)
+                    {//Set name
+                        uint name = Program.ROM.u32(addr + 4);
+                        FELint.CheckText(name, "PROCS", errors, FELint.Type.SOUNDROOM, a.Addr, addr);
+                    }
+                }
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -618,6 +690,26 @@ namespace FEBuilderGBA
             }
             //終端命令へ
             return addr - 8;
+        }
+
+        private void ProcsScriptForm_Resize(object sender, EventArgs e)
+        {
+            for (int i = 0; i < MainTab.TabCount; i++)
+            {
+                TabPage tab = MainTab.TabPages[i];
+                for (int n = 0; n < tab.Controls.Count; n++)
+                {
+                    Control c = tab.Controls[n];
+                    if (c is ProcsScriptInnerControl)
+                    {
+                        {//フォントサイズ中と小
+                            c.Width = tab.Width;
+                            c.Height = tab.Height;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

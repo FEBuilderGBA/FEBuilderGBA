@@ -214,7 +214,7 @@
             this.AllWriteButton.TabIndex = 9;
             this.AllWriteButton.Text = "書き込み";
             this.AllWriteButton.UseVisualStyleBackColor = true;
-            this.AllWriteButton.Click += new System.EventHandler(this.WriteTextButton_Click);
+            this.AllWriteButton.Click += new System.EventHandler(this.TextWriteButton_Click);
             // 
             // label3
             // 
@@ -336,7 +336,7 @@
             this.AddressListExpandsButton_32766.Location = new System.Drawing.Point(-1, 822);
             this.AddressListExpandsButton_32766.Margin = new System.Windows.Forms.Padding(2);
             this.AddressListExpandsButton_32766.Name = "AddressListExpandsButton_32766";
-            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(219, 30);
+            this.AddressListExpandsButton_32766.Size = new System.Drawing.Size(307, 30);
             this.AddressListExpandsButton_32766.TabIndex = 114;
             this.AddressListExpandsButton_32766.Text = "リストの拡張";
             this.AddressListExpandsButton_32766.UseVisualStyleBackColor = true;

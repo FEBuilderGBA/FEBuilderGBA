@@ -37,20 +37,18 @@ namespace FEBuilderGBA
             Dictionary<uint, bool> knownDic = MakeKnownListToDic(knownList);
             MakeFreeDataList(RecycleFreeAreaList, knownDic, FREEAREA_BLOCK_SIZE+16+16, data, RebuildAddress, useMap);
 
-            for (int i = 0; i < this.RecycleFreeAreaList.Count; i++)
+            for (int i = 0; i < this.RecycleFreeAreaList.Count; )
             {
                 Address p = this.RecycleFreeAreaList[i];
 
                 //頭としっぽはくれてやれ
-                if (p.Length < 32)
+                if (p.Length < 64)
                 {
-                    p.ResizeAddress(p.Addr, 0);
+                    this.RecycleFreeAreaList.RemoveAt(i);
+                    continue;
                 }
-                else
-                {
-                    p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
-                }
-
+                p.ResizeAddress(p.Addr + 16, p.Length - 16 - 16);
+                i++;
             }
         }
         Dictionary<uint,bool> MakeKnownListToDic(List<Address> knownList)
@@ -64,9 +62,10 @@ namespace FEBuilderGBA
                 }
 
                 uint addr = U.toOffset(a.Addr);
-
                 ret[addr] = true;
-                for (uint i = 0; i < a.Length; i += (FREEAREA_BLOCK_SIZE / 2))
+
+                addr = U.Padding4(addr);
+                for (uint i = 0; i < a.Length; i += 4)
                 {
                     ret[addr + i] = true;
                 }
@@ -94,62 +93,65 @@ namespace FEBuilderGBA
             for (; addr < length; addr += 4)
             {
                 byte filldata;
-                if (data[addr] == 0x00 || data[addr] == 0xFF)
+                if (!(data[addr] == 0x00 || data[addr] == 0xFF))
                 {
-                    if (useMap.ContainsKey(addr)
-                        || knownDic.ContainsKey(addr))
-                    {
-                        continue;
-                    }
-                    filldata = data[addr];
-
-                    uint start = addr;
-                    addr++;
-                    for (; ; addr++)
-                    {
-                        if (addr >= length)
-                        {
-                            uint matchsize = addr - start;
-                            if (matchsize >= needSize)
-                            {
-                                if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
-                                FEBuilderGBA.Address.AddAddress(list
-                                    , start
-                                    , matchsize
-                                    , U.NOT_FOUND
-                                    , ""
-                                    , Address.DataTypeEnum.FFor00);
-                            }
-                            break;
-                        }
-                        if (data[addr] != filldata
-                            ||  useMap.ContainsKey(addr)
-                            ||  knownDic.ContainsKey(addr))
-                        {
-                            uint matchsize = addr - start;
-                            if (matchsize >= needSize)
-                            {
-                                if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(addr))) return;
-                                FEBuilderGBA.Address.AddAddress(list
-                                    , start
-                                    , matchsize
-                                    , U.NOT_FOUND
-                                    , ""
-                                    , Address.DataTypeEnum.FFor00);
-                            }
-                            break;
-                        }
-                    }
-
-                    addr = U.Padding4(addr);
+                    continue;
                 }
+                if (useMap.ContainsKey(addr)
+                    || knownDic.ContainsKey(addr))
+                {
+                    continue;
+                }
+                uint checkData = Program.ROM.u32(addr);
+                if (!(checkData == 0x00 || checkData == 0xFFFFFFFF))
+                {
+                    continue;
+                }
+
+                filldata = data[addr];
+
+                uint start = addr;
+                addr++;
+                for (; addr < length ; addr++)
+                {
+                    if (data[addr] != filldata
+                        ||  useMap.ContainsKey(addr)
+                        ||  knownDic.ContainsKey(addr))
+                    {
+                        uint matchsize = addr - start;
+                        if (matchsize >= needSize)
+                        {
+                            AppendList(list, start, matchsize,data);
+                        }
+                        break;
+                    }
+                }
+
+                addr = U.Padding4(addr);
             }
+        }
+        void AppendList(List<Address> list ,uint start,uint matchsize,byte[] data)
+        {
+            uint checkData = U.u32(data,start);
+            if (!(checkData == 0x00 || checkData == 0xFFFFFFFF))
+            {
+                Debug.Assert(false);
+                return;
+            }
+
+            if (InputFormRef.DoEvents(null, "MakeFreeDataList " + U.ToHexString(start))) return;
+            FEBuilderGBA.Address.AddAddress(list
+                , start
+                , matchsize
+                , U.NOT_FOUND
+                , ""
+                , Address.DataTypeEnum.FFor00);
         }
 
         
         
         //空き領域から割り当てができるか?
-        public uint CanAllocFreeArea(uint needSize)
+        public uint CanAllocFreeArea(uint needSize, uint current_addr)
         {
             //4の倍数に格納する
             needSize = U.Padding4(needSize);
@@ -157,21 +159,29 @@ namespace FEBuilderGBA
             for (int i = 0; i < this.RecycleFreeAreaList.Count; i++)
             {
                 Address p = this.RecycleFreeAreaList[i];
-                if (p.Length >= needSize)
+                if (p.Length < needSize)
                 {
-                    uint use_addr = U.Padding4(p.Addr);
-
-                    uint endaddr = U.Padding4(use_addr + needSize);
-                    uint length = U.Sub(p.Length, (endaddr - use_addr));
-
-                    p.ResizeAddress(endaddr, length);
-                    if (p.Length < 4)
-                    {//もう空きがない.
-                        this.RecycleFreeAreaList.RemoveAt(i);
-                    }
-
-                    return use_addr;
+                    continue;
                 }
+                uint use_addr = U.Padding4(p.Addr);
+
+                if (current_addr < use_addr)
+                {//非拡張領域を処理しているときに、
+                 //現在処理している領域より先の領域を割り当ててはいけない。
+                 //あとあと、上書きされるかもしれないので
+                    continue;
+                }
+
+                uint endaddr = U.Padding4(use_addr + needSize);
+                uint length = U.Sub(p.Length, (endaddr - use_addr));
+
+                p.ResizeAddress(endaddr, length);
+                if (p.Length < 4)
+                {//もう空きがない.
+                    this.RecycleFreeAreaList.RemoveAt(i);
+                }
+
+                return use_addr;
             }
             //割当不可能
             return U.NOT_FOUND;

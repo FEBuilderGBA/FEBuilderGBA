@@ -1,6 +1,6 @@
 
 NAME=OPANIMEテティス
-NAME.en=OPANIME Tethys
+NAME.en=OP Anime Tethys
 NAME.zh=OP动画特缇斯
 
 //画像パッチとして実装します

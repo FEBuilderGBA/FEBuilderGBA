@@ -1,5 +1,5 @@
 NAME=スキル魔物特効_このクラスまで
-NAME.en=Skill Slayer to this class
+NAME.en=Slayer Skill Last Class
 NAME.zh=技能魔物特效_这个职业为止
 
 //アドレスパッチとして実装します

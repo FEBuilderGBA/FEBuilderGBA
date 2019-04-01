@@ -1,5 +1,5 @@
-﻿NAME=MUSIC_メインテーマ
-NAME.en=MUSIC_Main theme song
+NAME=MUSIC_メインテーマ
+NAME.en=Ch1-8 Player Phase BGM
 
 //アドレスパッチとして実装します
 TYPE=ADDR

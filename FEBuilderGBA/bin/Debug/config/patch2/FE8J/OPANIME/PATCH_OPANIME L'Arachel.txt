@@ -1,6 +1,6 @@
 
 NAME=OPANIMEラーチェル
-NAME.en=OPANIME L'Arachel
+NAME.en=OP Anime L'Arachel (Main)
 NAME.zh=OP动画拉切尔
 
 //画像パッチとして実装します

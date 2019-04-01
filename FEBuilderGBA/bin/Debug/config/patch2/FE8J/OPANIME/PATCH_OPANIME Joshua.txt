@@ -1,6 +1,6 @@
 
 NAME=OPANIMEヨシュア
-NAME.en=OPANIME Joshua
+NAME.en=OP Anime Joshua
 NAME.zh=OP动画约书亚
 
 //画像パッチとして実装します

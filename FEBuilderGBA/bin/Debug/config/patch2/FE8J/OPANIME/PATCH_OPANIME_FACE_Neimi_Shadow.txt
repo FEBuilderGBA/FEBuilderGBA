@@ -1,5 +1,5 @@
-﻿NAME=OPANIME_FACE_ネイミー_影
-NAME.en=OPANIME_FACE_Neimi_Shadow
+NAME=OPANIME_FACE_ネイミー_影
+NAME.en=OP Anime Face: Neimi (Shadow)
 
 TYPE=IMAGE
 TAG=#IMAGE

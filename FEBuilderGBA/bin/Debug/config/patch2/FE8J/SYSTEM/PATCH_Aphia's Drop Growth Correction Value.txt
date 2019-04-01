@@ -1,9 +1,11 @@
-﻿
+
 NAME=アフアのしずく成長率補正値
 NAME.zh=加成长的水滴的成长补正值?
-NAME.en=Afa's Drops Growth Bonus
+NAME.en=Metis's Tome Growth Bonus
 
 TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x2b9e2
+
+INFO.en=Boosts stat growth in all stats by specified value.

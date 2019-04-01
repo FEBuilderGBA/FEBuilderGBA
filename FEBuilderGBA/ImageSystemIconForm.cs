@@ -129,7 +129,7 @@ namespace FEBuilderGBA
                 }
                 if (ImageUtil.IsBlankBitmap(a))
                 {
-                    a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i + 1)*2, palette_type, true);
+                    a = ImageUnitWaitIconFrom.DrawWaitUnitIconBitmap((uint)(i + 1) * 2, palette_type, true);
                 }
                 ImageUtil.BitBlt(bitmap, i * 16, 0, 16, 16, a, 0, 0);
             }
@@ -431,6 +431,10 @@ namespace FEBuilderGBA
             return r;
         }
 
+        public static Bitmap Stairs()
+        {
+            return VillageMapTile(4, 12);
+        }
         public static Bitmap Chest()
         {
             return FiledMapTile(1, 1);
@@ -902,7 +906,10 @@ namespace FEBuilderGBA
             ImageSystemAreaForm f = (ImageSystemAreaForm)InputFormRef.JumpForm<ImageSystemAreaForm>();
             f.JumpToAddr((uint)systemarea_staff_gradation_palette.Value);
         }
-
+        public void JumpToPage(uint page)
+        {
+            this.WMTabControl.SelectedIndex = (int)page;
+        }
 
 
     }

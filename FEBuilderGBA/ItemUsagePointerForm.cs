@@ -16,7 +16,13 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
+            PromotionItemExplain.Hide();
+            InputFormRef.markupJumpLabel(this.PromotionItemLink);
+            StatBoosterItemExplain.Hide();
+            InputFormRef.markupJumpLabel(this.StatBoosterItemLink);
+
             this.InputFormRef = Init(this);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.FilterComboBox.SelectedIndex = 0;
         }
@@ -85,6 +91,9 @@ namespace FEBuilderGBA
 
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PromotionItemExplain.Hide();
+            StatBoosterItemExplain.Hide();
+
             int selected = FilterComboBox.SelectedIndex;
             string configFilename = "";
             switch (selected)
@@ -98,9 +107,11 @@ namespace FEBuilderGBA
                     break;
                 case 2: //2=CCアイテムを使った場合の処理を定義する
                     configFilename = (U.ConfigDataFilename("item_promotion1_array_"));
+                    PromotionItemExplain.Show();
                     break;
                 case 3: //3=CCアイテムかどうかを定義する(FE7のみ)
                     configFilename = (U.ConfigDataFilename("item_promotion2_array_"));
+                    PromotionItemExplain.Show();
                     break;
                 case 4: //4=アイテムのターゲット選択の方法を定義する(多分)
                     configFilename = (U.ConfigDataFilename("item_staff1_array_"));
@@ -110,9 +121,11 @@ namespace FEBuilderGBA
                     break;
                 case 6: //6=ドーピングアイテムを利用した時のメッセージを定義する
                     configFilename = (U.ConfigDataFilename("item_statbooster1_array_"));
+                    StatBoosterItemExplain.Show();
                     break;
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する
                     configFilename = (U.ConfigDataFilename("item_statbooster2_array_"));
+                    StatBoosterItemExplain.Show();
                     break;
             }
 
@@ -135,6 +148,7 @@ namespace FEBuilderGBA
                 }
                 this.L_0_COMBO.EndUpdate();
             }
+            
             uint addr = ReInit(selected, this.InputFormRef);
             if (addr == U.NOT_FOUND)
             {
@@ -337,6 +351,18 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
 
             ReInit(selected,this.InputFormRef);
+        }
+
+        private void PromotionItemLink_Click(object sender, EventArgs e)
+        {
+            uint itemid = U.atoh(this.AddressList.Text);
+            InputFormRef.JumpForm<ItemPromotionForm>(itemid, "ITEM_LIST");
+        }
+
+        private void StatBoosterItemLink_Click(object sender, EventArgs e)
+        {
+            uint itemid = U.atoh(this.AddressList.Text);
+            InputFormRef.JumpForm<ItemStatBonusesForm>(itemid);
         }
 
     }

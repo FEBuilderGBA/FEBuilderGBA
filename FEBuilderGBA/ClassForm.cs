@@ -266,7 +266,7 @@ namespace FEBuilderGBA
         }
 
         //待機アイコン
-        public static Bitmap DrawWaitIcon(uint cid,int palette_type = 0,bool height16_limit = false)
+        public static Bitmap DrawWaitIcon(uint cid, int palette_type = 0, bool height16_limit = false, bool centering = true)
         {
             if (cid <= 0)
             {
@@ -484,6 +484,10 @@ namespace FEBuilderGBA
                         return addr + 60; //地形防御
                     case 5:
                         return addr + 64; //地形魔防
+                    case 6:
+                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                    case 7:
+                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer(); //地形ステータス異常回復
                     default:
                         return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
                 }
@@ -504,6 +508,10 @@ namespace FEBuilderGBA
                         return addr + 72; //地形防御
                     case 5:
                         return addr + 76; //地形魔防
+                    case 6:
+                        return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
+                    case 7:
+                        return Program.ROM.RomInfo.terrain_bad_status_recovery_pointer(); //地形ステータス異常回復
                     default:
                         return Program.ROM.RomInfo.terrain_recovery_pointer(); //地形回復
                 }
@@ -730,6 +738,12 @@ namespace FEBuilderGBA
                 , "MoveCost ref"
                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
 
+            //全クラス共通地形バッドステータス回復
+            FEBuilderGBA.Address.AddPointer(list,
+                  Program.ROM.RomInfo.terrain_bad_status_recovery_pointer()
+                , 66
+                , "MoveCost ref"
+                , FEBuilderGBA.Address.DataTypeEnum.BIN);
         }
 
         //リストが拡張されたとき
@@ -1078,10 +1092,10 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
         }
 
-        public static void MakeTextIDArray(List<TextID> list)
+        public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            TextID.AppendTextID(list, FELint.Type.CLASS, InputFormRef, new uint[] { 0, 2 });
+            UseTextID.AppendTextID(list, FELint.Type.CLASS, InputFormRef, new uint[] { 0, 2 });
         }
 
         void InitFE8ClassType(List<Control> controls)

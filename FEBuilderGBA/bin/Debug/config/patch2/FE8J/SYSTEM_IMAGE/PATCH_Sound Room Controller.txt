@@ -1,0 +1,14 @@
+NAME=サウンドルームのコントローラー
+INFO=スタートボタンやセレクト操作などの、サウンドルームの左側にあるパネルの画像です。
+NAME.en=Sound Room Controller
+INFO.en=This is the image of the panel on the left side of the sound room, such as the start button and select operation.
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x0B4400//0xAAAC4C
+PALETTE_POINTER=0x0B4408//0xAAB440
+NAME.zh=声音室控制器。
+INFO.zh=这是声音室左侧面板的图像，例如开始按钮和选择操作。

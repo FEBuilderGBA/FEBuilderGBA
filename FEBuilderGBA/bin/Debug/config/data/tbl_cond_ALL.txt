@@ -1,7 +1,0 @@
-//地形:平地 の名前の付け方でtblを判定します.
-//平地は普通　変更しないだろうから
-//NAME	VER	enc	POINTER VALUE
-FE6U	6	2	60D010	82 BD 82 E6
-FE6CN	6	1	60D010	8C E2 85 E1
-FE7CN	7	1	C542F4	8D FC 86 87
-FE8CN	8	1	8617CC	8D BD 85 F9
