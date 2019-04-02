@@ -88,7 +88,7 @@
 4132XXXXYYZZ0000	Loads one NPC(green) unit with it's default parameters(SPAWN_NPC)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
 4232XXXXYYZZ0000	Loads one Enemy unit with it's default parameters(SPAWN_ENEMY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
 4F32XXXXYYZZ0000	Loads one Player unit with it's default parameters,This unit will dissapear at the end of events.(SPAWN_CUTSCENE_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
-4036XXXXYYZZWWTT	Whether the unit is within the area(CHECK_INAREA)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	Returns 1 if it is within range, 0 if it is out of range.	@STOREC	{COND}
+4036XXXXYYZZWWTT	Whether the unit is within the area(CHECK_INAREA)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	Returns 0 if it is within range, 0 if it is out of range.	@STOREC	{COND}
 202EXXYY	Get unit ID of coordinates.(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y]	@STOREC	{COND}
 2F41XXXX	_0x412F[XXXX::Value1]
 4084XXXXYYYY0000	Map detail specification near ID display[XXXX::Value 1][YY::Value 2]
