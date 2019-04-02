@@ -136,13 +136,20 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                MakeAllDataLength(list, pointers[n]);
+                MakeAllDataLength(list, pointers[n], isDirectAddress: false);
             }
         }
-        public static void MakeAllDataLength(List<Address> list,uint pointer)
+        public static void MakeAllDataLength(List<Address> list, uint pointer, bool isDirectAddress)
         {
             InputFormRef InputFormRef = Init(null);
-            InputFormRef.ReInitPointer(pointer);
+            if (isDirectAddress)
+            {
+                InputFormRef.ReInit(pointer);
+            }
+            else
+            {
+                InputFormRef.ReInitPointer(pointer);
+            }
             FEBuilderGBA.Address.AddAddress(list
                 , InputFormRef
                 , "MenuDefinition"
@@ -266,10 +273,10 @@ namespace FEBuilderGBA
 
             for (int n = 0; n < pointers.Length; n++)
             {
-                MakeTextIDArray(list, pointers[n]);
+                MakeTextIDArray(list, pointers[n], isDirectAddress: false);
             }
         }
-        public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
+        public static void MakeTextIDArray(List<UseTextID> list, uint pointer,bool isDirectAddress)
         {
             if (pointer == 0)
             {
@@ -277,7 +284,14 @@ namespace FEBuilderGBA
             }
 
             InputFormRef InputFormRef = Init(null);
-            InputFormRef.ReInitPointer(pointer);
+            if (isDirectAddress)
+            {
+                InputFormRef.ReInit(pointer);
+            }
+            else
+            {
+                InputFormRef.ReInitPointer(pointer);
+            }
             uint p = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
             {

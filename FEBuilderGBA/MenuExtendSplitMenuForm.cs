@@ -269,12 +269,12 @@ namespace FEBuilderGBA
         //全データの取得
         public static void RecycleOldData(ref List<Address> recycle, uint script_pointer)
         {
-            MenuDefinitionForm.MakeAllDataLength(recycle, script_pointer);
+            MenuDefinitionForm.MakeAllDataLength(recycle, script_pointer , isDirectAddress: true);
         }
 
         public static void MakeTextIDArray(List<UseTextID> list, uint script_pointer)
         {
-            MenuDefinitionForm.MakeTextIDArray(list, script_pointer);
+            MenuDefinitionForm.MakeTextIDArray(list, script_pointer, isDirectAddress: true);
         }
 
     }
