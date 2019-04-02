@@ -316,7 +316,7 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(pointer);
-            UseTextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4 });
+            UseTextID.AppendTextID(list, FELint.Type.MENU, InputFormRef, new uint[] { 4, 6 });
         }
 
         void Explain()

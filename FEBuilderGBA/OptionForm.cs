@@ -117,7 +117,6 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_write_notify_time,(int)FindComboboxText(write_notify_time().ToString(), func_write_notify_time));
             U.SelectedIndexSafety(func_write_out_of_range,(int)write_out_of_range());
             U.SelectedIndexSafety(func_select_in_explorer_when_export,(int)select_in_explorer_when_export());
-            U.SelectedIndexSafety(func_sgm_jump,(int)sgm_jump());
             U.SelectedIndexSafety(func_lookup_feditor,(int)lookup_feditor());
             U.SelectedIndexSafety(func_lint_text_skip_bug,(int)lint_text_skip_bug());
             U.SelectedIndexSafety(func_show_class_extends,(int)show_class_extends());
@@ -262,7 +261,6 @@ namespace FEBuilderGBA
             Program.Config["func_write_notify_time"] = U.SelectValueComboboxText(func_write_notify_time.Text);
             Program.Config["func_write_out_of_range"] = U.SelectValueComboboxText(func_write_out_of_range.Text);
             Program.Config["func_select_in_explorer_when_export"] = U.SelectValueComboboxText(func_select_in_explorer_when_export.Text);
-            Program.Config["func_sgm_jump"] = U.SelectValueComboboxText(func_sgm_jump.Text);
             Program.Config["func_lookup_feditor"] = U.SelectValueComboboxText(func_lookup_feditor.Text);
             Program.Config["func_lint_text_skip_bug"] = U.SelectValueComboboxText(func_lint_text_skip_bug.Text);
             Program.Config["func_midi_importer"] = mid2agb_default.Checked ? "1" : "0";
@@ -803,16 +801,6 @@ namespace FEBuilderGBA
             return (select_in_explorer_when_export_enum)U.atoi(Program.Config.at("func_select_in_explorer_when_export", "1"));
         }
 
-        public enum sgm_jump_enum
-        {
-            None = 0
-          , Jump = 1
-        };
-        public static sgm_jump_enum sgm_jump()
-        {
-            return (sgm_jump_enum)U.atoi(Program.Config.at("func_sgm_jump", "1")); 
-        }
-
         public enum lookup_feditor_enum
         {
             None = 0
@@ -1283,7 +1271,6 @@ namespace FEBuilderGBA
             explain_func_write_notify_time.AccessibleDescription = R._("データを書き込んだときに、書き込み増したという通知を画面下に出しますが、\r\nあの表示の表示時間を決定します");
             explain_func_write_out_of_range.AccessibleDescription = R._("範囲外に書き込みそうになった時に、\r\n自動的に拒否するか、警告を出すか、何もしないかを決定します。");
             explain_func_select_in_explorer_when_export.AccessibleDescription = R._("ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します");
-            explain_func_sgm_jump.AccessibleDescription = R._("VBA-MでQSをした後で、エミュレータを終了すると、\r\n最後に実行していたイベントのある場所へ自動的にジャンプします。");
             explain_func_lookup_feditor.AccessibleDescription = R._("既存の改造ROMを開くときの設定です。\r\n通常はオフにしてください。\r\n他の改造ツールで作られた既存ROMを開くときだけ利用してください。\r\n\r\nFEditorは、アドレスの枠外(開始アドレス-4)にデータの個数を書き込みます。\r\nこの値を参考にするかどうかを決定します。");
             explain_func_lint_text_skip_bug.AccessibleDescription = R._("Lintが改行などが正しくないテキストもバグとして報告するかどうかを決定します。\r\n例えば、セリフは2行しか利用できませんが、そこに3行目を入れた場合、バグとして検出します。\r\n");
             explain_func_show_class_extends.AccessibleDescription = R._("クラス拡張ボタンを表示するかどうかを決定します。\r\nクラス拡張はさまざまな問題を引き起こしますので、ディフォルトは非表示になっています。\r\n私は、クラスを拡張しないことをお勧めします。FEには利用されていないクラスがたくさんあります。\r\n危険を伴うクラスの拡張ではなく、利用されていないクラスを再利用するべきです。");

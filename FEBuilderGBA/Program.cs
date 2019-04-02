@@ -499,6 +499,7 @@ namespace FEBuilderGBA
         static void ReLoadEventScript()
         {
             FlagCache = new EtcCacheFLag();
+            UseTextIDCache = new EtcCacheTextID();
             LintCache = new EtcCache("lint_");
             CommentCache = new EtcCache("comment_");
             ExportFunction = new ExportFunction();
@@ -576,6 +577,7 @@ namespace FEBuilderGBA
         public static SystemTextEncoder SystemTextEncoder { get; private set; }
         public static LastSelectedFilename LastSelectedFilename { get; private set; }
         public static Mod Mod { get; private set; }
+        public static EtcCacheTextID UseTextIDCache { get; private set; }
         public static EtcCacheFLag FlagCache { get; private set; }
         public static EtcCache LintCache { get; private set; }
         public static EtcCache CommentCache { get; private set; }

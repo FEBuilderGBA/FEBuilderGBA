@@ -264,27 +264,32 @@ namespace FEBuilderGBA
         {
             uint[] pointers = GetPointers();
 
-            InputFormRef InputFormRef = Init(null);
             for (int n = 0; n < pointers.Length; n++)
             {
-                if (pointers[n] == 0)
+                MakeTextIDArray(list, pointers[n]);
+            }
+        }
+        public static void MakeTextIDArray(List<UseTextID> list, uint pointer)
+        {
+            if (pointer == 0)
+            {
+                return;
+            }
+
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInitPointer(pointer);
+            uint p = InputFormRef.BaseAddress;
+            for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            {
+                uint paddr;
+                paddr = Program.ROM.p32(8 + p);
+                if (!U.isSafetyOffset(paddr))
                 {
                     continue;
                 }
-
-                InputFormRef.ReInitPointer(pointers[n]);
-                uint p = InputFormRef.BaseAddress;
-                for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
-                {
-                    uint paddr;
-                    paddr = Program.ROM.p32(8 + p);
-                    if (!U.isSafetyOffset(paddr))
-                    {
-                        continue;
-                    }
-                    MenuCommandForm.MakeTextIDArray(list, 8 + p);
-                }
+                MenuCommandForm.MakeTextIDArray(list, 8 + p);
             }
+
         }
 
         public static uint GetUnitMenuPointer()

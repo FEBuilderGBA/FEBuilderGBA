@@ -267,6 +267,7 @@ namespace FEBuilderGBA
             Program.CommentCache.Save(Program.ROM.Filename);
             Program.FlagCache.Save(Program.ROM.Filename);
             Program.LintCache.Save(Program.ROM.Filename);
+            Program.UseTextIDCache.Save(Program.ROM.Filename);
         }
 
         public static void SaveAs(Form self)
@@ -290,6 +291,7 @@ namespace FEBuilderGBA
             Program.CommentCache.Save(save.FileName);
             Program.FlagCache.Save(save.FileName);
             Program.LintCache.Save(save.FileName);
+            Program.UseTextIDCache.Save(Program.ROM.Filename);
         }
 
         public static void Quit(Form self)

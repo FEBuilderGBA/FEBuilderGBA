@@ -81,7 +81,10 @@ namespace FEBuilderGBA
         public uint event_ballte_talk_pointer() { return 0x846AC; } //交戦時セリフの開始位置
         public uint event_ballte_talk2_pointer() { return 0; } // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         public uint event_haiku_pointer() { return 0x8472c; } //死亡時セリフの開始位置
+        public uint event_haiku_tutorial_1_pointer() { return 0x0; } // リン編チュートリアル 死亡時セリフの開始位置 FE7のみ
+        public uint event_haiku_tutorial_2_pointer() { return 0x0; } // エリウッド編チュートリアル 死亡時セリフの開始位置 FE7のみ
         public uint event_force_sortie_pointer() { return 0x8483C; } // 強制出撃の開始位置
+        public uint event_tutorial_pointer() { return 0x0; } //イベントチュートリアルポインタ FE7のみ
         public uint map_exit_point_pointer() { return 0x3E8AC; } // 離脱ポイント開始サイズ
         public uint map_exit_point_npc_blockadd() { return 65; } // arr[+65] からNPCらしい.
         public uint map_exit_point_blank() { return 0xD84E0; } // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
@@ -364,7 +367,9 @@ namespace FEBuilderGBA
         public uint status_game_option_pointer() { return 0xB17D8; } //ゲームオプション
         public uint status_game_option_order_pointer() { return 0xB16F8; } //ゲームオプションの並び順
         public uint status_game_option_order_count_address() { return 0xB1A32; } //ゲームオプションの個数
+        public uint status_units_menu_pointer() { return 0x92290; } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0x0; } //軍師属性(FE7のみ)
+        public uint event_final_serif_pointer() { return 0x0; } //終章セリフ(FE7のみ)
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
 
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x0FC2B500; return 0x2BA4; } //anti-Huffman patch

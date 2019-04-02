@@ -87,9 +87,12 @@ namespace FEBuilderGBA
             this.FlagNameTextBox.Text = this.BaseFlag[ar.addr];
         }
 
+        uint MapID = U.NOT_FOUND;
+
         EventHandler UpdateCallbackEventHandler;
-        public void JumpTo(uint value,EventHandler updateCallbackEventHandler)
+        public void JumpTo(uint value, EventHandler updateCallbackEventHandler, uint mapid)
         {
+            this.MapID = mapid;
             this.UpdateCallbackEventHandler = updateCallbackEventHandler;
             uint selected = InputFormRef.AddrToSelect(this.AddressList, value);
             if (selected == U.NOT_FOUND)
@@ -111,6 +114,12 @@ namespace FEBuilderGBA
 
             this.UpdateCallbackEventHandler(sender,args);
             this.Close();
+        }
+
+        private void ToolUseFlagButton_Click(object sender, EventArgs e)
+        {
+            ToolUseFlagForm f = (ToolUseFlagForm)InputFormRef.JumpFormLow<ToolUseFlagForm>();
+            f.JumpToMAPID(this.MapID);
         }
 
     }

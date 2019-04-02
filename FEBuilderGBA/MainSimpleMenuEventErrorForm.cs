@@ -411,6 +411,34 @@ namespace FEBuilderGBA
             {
                 text = R._("AISCRIPT");
             }
+            else if (dataType == FELint.Type.ASM)
+            {
+                text = R._("ASM");
+            }
+            else if (dataType == FELint.Type.ASMDATA)
+            {
+                text = R._("ASMDATA");
+            }
+            else if (dataType == FELint.Type.STATUS_UNITS_MENU)
+            {
+                text = R._("部隊メニュー");
+            }
+            else if (dataType == FELint.Type.TEXTID_FOR_SYSTEM)
+            {
+                text = R._("テキストID システム予約");
+            }
+            else if (dataType == FELint.Type.TEXTID_FOR_USER)
+            {
+                text = R._("テキストID ユーザ定義");
+            }
+            else if (dataType == FELint.Type.POINTER_TALKGROUP)
+            {
+                text = R._("会話グループ");
+            }
+            else if (dataType == FELint.Type.POINTER_MENUEXTENDS)
+            {
+                text = R._("分岐拡張");
+            }
             else
             {
                 text = R._("不明");
@@ -924,6 +952,43 @@ namespace FEBuilderGBA
                 InputFormRef.JumpForm<ImageBattleScreenForm>();
                 return;
             }
+            else if (dataType == FELint.Type.ASM)
+            {
+                DisASMForm f = (DisASMForm)InputFormRef.JumpForm<DisASMForm>(U.NOT_FOUND);
+                f.JumpTo(DisassemblerTrumb.ProgramAddrToPlain(tag));
+                return;
+            }
+            else if (dataType == FELint.Type.ASMDATA)
+            {
+                HexEditorForm f = (HexEditorForm)InputFormRef.JumpForm<HexEditorForm>();
+                f.JumpTo(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.STATUS_UNITS_MENU)
+            {
+                InputFormRef.JumpForm<StatusUnitsMenuForm>(tag);
+                return;
+            }
+            else if (dataType == FELint.Type.TEXTID_FOR_SYSTEM)
+            {
+                return;
+            }
+            else if (dataType == FELint.Type.TEXTID_FOR_USER)
+            {
+                return;
+            }
+            else if (dataType == FELint.Type.POINTER_TALKGROUP)
+            {
+                EventTalkGroupFE7Form f = (EventTalkGroupFE7Form) InputFormRef.JumpForm<EventTalkGroupFE7Form>();
+                f.JumpToAddr(addr);
+                return;
+            }
+            else if (dataType == FELint.Type.POINTER_MENUEXTENDS)
+            {
+                MenuExtendSplitMenuForm f = (MenuExtendSplitMenuForm) InputFormRef.JumpForm<MenuExtendSplitMenuForm>();
+                f.JumpToAddr(addr);
+                return;
+            }
             else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)
             {
                 if (tag >= Program.ROM.RomInfo.magic_effect_original_data_count())
@@ -940,10 +1005,7 @@ namespace FEBuilderGBA
             }
             else if (dataType == FELint.Type.STATUS_GAME_OPTION)
             {
-                if (Program.ROM.RomInfo.version() == 8)
-                {
-                    InputFormRef.JumpForm<TextDicForm>(tag);
-                }
+                InputFormRef.JumpForm<StatusOptionForm>(tag);
                 return;
             }
 

@@ -82,7 +82,10 @@ namespace FEBuilderGBA
         public uint event_ballte_talk_pointer() { return 0x792e0; } //交戦時セリフの開始位置
         public uint event_ballte_talk2_pointer() { return 0x79454; } // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         public uint event_haiku_pointer() { return 0x79550; } //死亡時セリフの開始位置
+        public uint event_haiku_tutorial_1_pointer() { return 0x7955C; } // リン編チュートリアル 死亡時セリフの開始位置 FE7のみ
+        public uint event_haiku_tutorial_2_pointer() { return 0x79558; } // エリウッド編チュートリアル 死亡時セリフの開始位置 FE7のみ
         public uint event_force_sortie_pointer() { return 0x8DDCC; } // 強制出撃の開始位置
+        public uint event_tutorial_pointer() { return 0x79000; } //イベントチュートリアルポインタ FE7のみ
         public uint map_exit_point_pointer() { return 0x39970; } // 離脱ポxxイント開始サイズ
         public uint map_exit_point_npc_blockadd() { return 0x30; } // arr[+0x30] からNPCらしい.
         public uint map_exit_point_blank() { return 0x1D3A5C; } // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
@@ -241,8 +244,8 @@ namespace FEBuilderGBA
         public uint eventcond_tern_size() { return 16; } //イベント条件 ターン条件のサイズ FE7->16 FE8->12
         public uint eventcond_talk_size() { return 16; } //イベント条件 話す会話条件のサイズ FE6->12 FE7->16 FE8->16
         public uint oping_event_pointer() { return 0xca0544; }
-        public uint ending1_event_pointer() { return 0x0; }
-        public uint ending2_event_pointer() { return 0x0; }
+        public uint ending1_event_pointer() { return 0x12A94; }
+        public uint ending2_event_pointer() { return 0x12AA4; }
         public uint workmemory_player_units_address() { return 0x0202BD50; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_enemy_units_address() { return 0x0202CEC0; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_npc_units_address() { return 0x0202DCD0; }    //ワークメモリ PLAYER UNIT
@@ -366,7 +369,9 @@ namespace FEBuilderGBA
         public uint status_game_option_pointer() { return 0xADCAC; } //ゲームオプション
         public uint status_game_option_order_pointer() { return 0xCE586C; } //ゲームオプションの並び順
         public uint status_game_option_order_count_address() { return 0xCE5868; } //ゲームオプションの個数
+        public uint status_units_menu_pointer() { return 0x8AC88; } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0x1C024; } //軍師属性(FE7のみ)
+        public uint event_final_serif_pointer() { return 0x7DC48; } //終章セリフ(FE7のみ)
         public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x1C284902; return 0x12C6C; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0x0000D124; return 0x67B0; } //C01 patch

@@ -1270,7 +1270,7 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.FLAG)
             {
                 ToolFlagNameForm f = (ToolFlagNameForm)InputFormRef.JumpForm<ToolFlagNameForm>(U.NOT_FOUND);
-                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object));
+                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , this.MapID);
             }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
             {//RAM_UNIT_STATE

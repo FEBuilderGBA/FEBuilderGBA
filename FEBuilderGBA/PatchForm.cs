@@ -4743,7 +4743,6 @@ namespace FEBuilderGBA
         }
         static string ReplaceL1Macro(string patched_message,string filename,uint addr)
         {
-            int pos = 0;
             while (true)
             {
                 Match m = RegexCache.Match(patched_message , @"{\$L([0-9a-zA-Z]+):" + filename + "}");
@@ -5793,28 +5792,136 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                string basedir = Path.GetDirectoryName(patch.PatchFileName);
                 string type = U.at(patch.Param, "TYPE");
-                if (type != "ADDR")
+                if (type == "ADDR")
                 {
+                    MakeTextIDArrayForAddr(list, patch , i);
                     continue;
                 }
-                string addressType = U.at(patch.Param, "ADDRESS_TYPE");
-                if (addressType != "TEXT")
+                else if (type == "STRUCT")
                 {
-                    continue;
+                    MakeTextIDArrayForStruct(list, patch , i);
                 }
-                uint addr = atOffset(patch.Param, "ADDRESS", basedir: basedir);
-                if (!U.isSafetyOffset(addr))
-                {
-                    continue;
-                }
-                string name = U.at(patch.Param, "NAME");
-
-                uint textid = Program.ROM.u16(addr);
-                UseTextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
             }
         }
+        public static void MakeTextIDArrayForAddr(List<UseTextID> list, PatchSt patch , int tag)
+        {
+            string addressType = U.at(patch.Param, "ADDRESS_TYPE");
+            if (addressType != "TEXT")
+            {
+                return;
+            }
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            uint addr = atOffset(patch.Param, "ADDRESS", basedir: basedir);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            string name = U.at(patch.Param, "NAME");
+
+            uint textid = Program.ROM.u16(addr);
+            UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+        }
+        static void MakeTextIDArrayForStruct(List<UseTextID> list, PatchSt patch, int tag)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            uint struct_address = 0;
+            uint struct_pointer = U.NOT_FOUND;
+            string pointer_str = U.at(patch.Param, "POINTER");
+            if (pointer_str != "")
+            {
+                struct_pointer = convertBinAddressString(pointer_str, 8, 0, basedir);
+                if (!U.isSafetyOffset(struct_pointer))
+                {
+                    return;
+                }
+                struct_address = Program.ROM.p32(struct_pointer);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+            }
+            else
+            {
+                string address_str = U.at(patch.Param, "ADDRESS");
+                if (address_str == "")
+                {
+                    return;
+                }
+                struct_address = convertBinAddressString(address_str, 8, 0, basedir);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+                struct_pointer = U.NOT_FOUND;
+            }
+
+            uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+            if (datasize <= 0)
+            {
+                return;
+            }
+
+            uint datacount;
+            string datacount_str = U.at(patch.Param, "DATACOUNT");
+            if (datacount_str.Length > 0 && datacount_str[0] == '$')
+            {//grep等
+                datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
+                if (datacount == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (datacount >= struct_address)
+                {
+                    datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+
+                if (datacount >= 0xffff)
+                {
+                    Debug.Assert(false);
+                    return;
+                }
+            }
+            else
+            {//直値
+                datacount = U.atoi0x(datacount_str);
+            }
+            if (datacount <= 0)
+            {
+                if (datacount_str == "")
+                {
+                    return;
+                }
+            }
+            string[] typeArray;
+            Address.DataTypeEnum iftType;
+            uint[] pointerIndexes = MakePointerIndexes(patch, out typeArray, out iftType);
+
+            string patchname = patch.Name + "@STRUCT";
+
+            List<uint> tracelist = new List<uint>();
+            uint addr = struct_address;
+            for (int i = 0; i < datacount; i++, addr += datasize)
+            {
+                for (int n = 0; n < pointerIndexes.Length; n++)
+                {
+                    uint p = addr + pointerIndexes[n];
+                    string type = typeArray[n];
+                    if (type == "EVENT")
+                    {//イベント呼び出し
+                        string name = patchname + " DATA " + n;
+                        EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                    }
+                    else if (type == "TEXT")
+                    {//イベント呼び出し
+                        uint textid = Program.ROM.u16(p);
+                        string name = patchname + " DATA " + n;
+                        UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                    }
+                }
+            }
+        }
+
  
 
         //パッチが知っているアドレスをすべて取得します.

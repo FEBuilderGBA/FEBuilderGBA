@@ -23,7 +23,7 @@ namespace FEBuilderGBA
         }
         public static void AppendTextID(List<UseTextID> list,FELint.Type dataType, uint addr, string info, uint id, uint tag = U.NOT_FOUND)
         {
-            if (id == 0)
+            if (id == 0 || id >= 0x7FFF)
             {
                 return;
             }
@@ -38,7 +38,7 @@ namespace FEBuilderGBA
                 for (int n = 0; n < textIDIndexes.Length; n++)
                 {
                     uint id = Program.ROM.u16(ar.addr + textIDIndexes[n]);
-                    if (id == 0)
+                    if (id == 0 || id >= 0x7FFF)
                     {
                         continue;
                     }
@@ -46,6 +46,30 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public static void AppendTextID(List<UseTextID> list, FELint.Type dataType, InputFormRef ifr, uint[] textIDIndexes, uint eventIndex)
+        {
+            List<uint> tracelist = new List<uint>();
+            List<U.AddrResult> arlist = ifr.MakeList();
+            for (int i = 0; i < ifr.DataCount; i++)
+            {
+                U.AddrResult ar = arlist[i];
+                for (int n = 0; n < textIDIndexes.Length; n++)
+                {
+                    uint id = Program.ROM.u16(ar.addr + textIDIndexes[n]);
+                    if (id == 0 || id >= 0x7FFF)
+                    {
+                        continue;
+                    }
+                    list.Add(new UseTextID(dataType, ar.addr, ar.name, id, (uint)i));
+                }
+                uint eventAddr = Program.ROM.p32(ar.addr + eventIndex);
+                if (U.isSafetyOffset(eventAddr))
+                {
+                    EventCondForm.MakeTextIDArrayByEventAddress(list, eventAddr, ar.name, tracelist);
+                }
+            }
+        }
+
         public static void AppendTextIDPP(List<UseTextID> list, FELint.Type dataType, InputFormRef ifr, uint[] textIDIndexes)
         {
             List<U.AddrResult> arlist = ifr.MakeList();
@@ -60,7 +84,7 @@ namespace FEBuilderGBA
                         continue;
                     }
                     uint id = Program.ROM.u32(pointer);
-                    if (id == 0)
+                    if (id == 0 || id >= 0x7FFF)
                     {
                         continue;
                     }
@@ -68,21 +92,25 @@ namespace FEBuilderGBA
                 }
             }
         }
-        public static void AppendByTestARList(List<UseTextID> list, FELint.Type dataType, List<U.AddrResult> text_arlist,uint event_addr, string basename)
+        public static void AppendASMDATATextID(List<UseTextID> list, AsmMapFile.AsmMapSt p,uint startaddr, uint sizeof_)
         {
-            int length = text_arlist.Count;
-            for (int i = 0; i < length; i++)
+            uint end = startaddr + p.Length;
+            for (uint addr = startaddr; addr < end; addr += sizeof_ )
             {
-                U.AddrResult ar = text_arlist[i];
-                uint id = ar.addr; //text_arlistの場合、addrにテキストIDが入っている.
-                if (id == 0)
-                {
-                    continue;
-                }
-                string name = basename + " " + ar.name;
-
-                list.Add(new UseTextID(dataType, event_addr, name, id, ar.tag ));
+                uint id = Program.ROM.u16(addr);
+                list.Add(new UseTextID(FELint.Type.ASMDATA, addr, p.Name, id , addr ));
             }
+        }
+
+        public static Dictionary<uint, bool> ConvertMaps(List<UseTextID> textIDList)
+        {
+            Dictionary<uint, bool> textmap = new Dictionary<uint, bool>();
+            textmap[0] = true;
+            foreach(var p in textIDList)
+            {
+                textmap[p.ID] = true;
+            }
+            return textmap;
         }
     }
 }

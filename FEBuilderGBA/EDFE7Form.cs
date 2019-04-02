@@ -154,7 +154,7 @@ namespace FEBuilderGBA
             }
             {
                 InputFormRef InputFormRef = N1_Init(null);
-                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 });
+                UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 4 });
             }
             {
                 InputFormRef InputFormRef = N2_Init(null);

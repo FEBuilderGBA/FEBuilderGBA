@@ -293,6 +293,11 @@ namespace FEBuilderGBA
         //タイムスタンプのコピー
         public static void CopyTimeStamp(string srcFilename,string destFilename)
         {
+#if DEBUG
+#else
+            try
+            {
+#endif
             // 作成日時
             File.SetCreationTime(destFilename, File.GetCreationTime(srcFilename));
 
@@ -301,6 +306,14 @@ namespace FEBuilderGBA
 
             // アクセス日時
             File.SetLastAccessTime(destFilename, File.GetLastAccessTime(srcFilename));
+#if DEBUG
+#else
+            }
+            catch(Exception e)
+            {
+               Log.Error(e.ToString());
+            }
+#endif
         }
 
         public static string MakeFilename(string addname,string override_ext=null)
@@ -2129,6 +2142,7 @@ namespace FEBuilderGBA
                 ImageTSAAnime2Form.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionOrderForm.MakeAllDataLength(list);
+                StatusUnitsMenuForm.MakeAllDataLength(list);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);
@@ -2195,6 +2209,7 @@ namespace FEBuilderGBA
                 TacticianAffinityFE7.MakeAllDataLength(list);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionOrderForm.MakeAllDataLength(list);
+                EventFinalSerifFE7Form.MakeAllDataLength(list);
 
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
@@ -2308,14 +2323,17 @@ namespace FEBuilderGBA
             }
             else
             {
-                MenuDefinitionForm.MakeTextIDArray(list);
                 StatusParamForm.MakeTextIDArray(list);
+                MapTerrainNameEngForm.MakeTextIDArray(list);
             }
+            MenuDefinitionForm.MakeTextIDArray(list);
+            StatusRMenuForm.MakeTextIDArray(list);
 
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 4")) return list;
             if (Program.ROM.RomInfo.version() == 8)
             {
                 StatusOptionForm.MakeTextIDArray(list);
+                StatusUnitsMenuForm.MakeTextIDArray(list);
                 MapSettingForm.MakeTextIDArray(list);
                 SupportTalkForm.MakeTextIDArray(list);
                 EDForm.MakeTextIDArray(list);
@@ -2343,29 +2361,39 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
                     MapSettingFE7Form.MakeTextIDArray(list);
+                    OPClassDemoFE7Form.MakeTextIDArray(list);
                 }
                 else
                 {
                     MapSettingFE7UForm.MakeTextIDArray(list);
+                    OPClassDemoFE7UForm.MakeTextIDArray(list);
                 }
+                StatusOptionForm.MakeTextIDArray(list);
+                StatusUnitsMenuForm.MakeTextIDArray(list);
                 SupportTalkFE7Form.MakeTextIDArray(list);
                 EDFE7Form.MakeTextIDArray(list);
                 EventHaikuFE7Form.MakeTextIDArray(list);
                 EventBattleTalkFE7Form.MakeTextIDArray(list);
                 SoundRoomForm.MakeTextIDArray(list);
                 EDSensekiCommentForm.MakeTextIDArray(list);
+                EventFinalSerifFE7Form.MakeTextIDArray(list);
+                WorldMapEventPointerFE7Form.MakeTextIDArray(list);
             }
             else
             {//6
                 MapSettingFE6Form.MakeTextIDArray(list);
+//                OPClassDemoFE6Form.MakeTextIDArray(list);
                 SupportTalkFE6Form.MakeTextIDArray(list);
                 EDFE6Form.MakeTextIDArray(list);
                 EventHaikuFE6Form.MakeTextIDArray(list);
                 EventBattleTalkFE6Form.MakeTextIDArray(list);
                 SoundRoomFE6Form.MakeTextIDArray(list);
+                WorldMapEventPointerFE6Form.MakeTextIDArray(list);
             }
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 2")) return list;
             PatchForm.MakeTextIDArray(list);
+
+            Program.AsmMapFileAsmCache.MakeTextIDArray(list);
 
             return list;
         }
@@ -5579,6 +5607,40 @@ namespace FEBuilderGBA
               IntPtr.Zero);
 
             return message.ToString();
+        }
+
+        public static bool[] MakeMask2(byte[] bin, byte code, byte code2)
+        {
+            bool[] mask = new bool[bin.Length];
+            for (int i = 0; i < bin.Length; i++)
+            {
+                if (bin[i] == code)
+                {
+                    mask[i] = true;
+                }
+                else if (bin[i] == code2)
+                {
+                    mask[i] = true;
+                }
+            }
+            return mask;
+        }
+        public static byte[] PickupBinaryBattern(byte[] pickup,byte[] bin,byte code)
+        {
+            List<byte> match = new List<byte>();
+            for (int i = 0; i < bin.Length; i++)
+            {
+                if (i >= pickup.Length)
+                {
+                    break;
+                }
+                if (bin[i] != code)
+                {
+                    continue;
+                }
+                match.Add(bin[i]);
+            }
+            return match.ToArray();
         }
     }
 }

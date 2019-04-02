@@ -670,5 +670,11 @@ namespace FEBuilderGBA
             }
             return this.LDRMapCache;
         }
+        public void MakeTextIDArray(List<UseTextID> list)
+        {
+            AsmMapFile map = GetAsmMapFile();
+            map.MakeTextIDArray(list);
+        }
+
     }
 }

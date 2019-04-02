@@ -271,5 +271,11 @@ namespace FEBuilderGBA
         {
             MenuDefinitionForm.MakeAllDataLength(recycle, script_pointer);
         }
+
+        public static void MakeTextIDArray(List<UseTextID> list, uint script_pointer)
+        {
+            MenuDefinitionForm.MakeTextIDArray(list, script_pointer);
+        }
+
     }
 }

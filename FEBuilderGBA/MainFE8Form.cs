@@ -1058,6 +1058,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<UnitActionPointerForm>();
         }
 
+        private void StatusUnitsMenuButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusUnitsMenuForm>();
+        }
+
     }
 
 }

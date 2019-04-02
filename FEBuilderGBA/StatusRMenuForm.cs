@@ -261,10 +261,61 @@ namespace FEBuilderGBA
                 MakeAllDataLengthSub(list, p, pointer, foundDic, pointerIndexes);
             }
         }
+        static void MakeTextIDArraySub(List<UseTextID> list, uint p,uint pointer,Dictionary<uint, bool> foundDic)
+        {
+            string name = "RMENU " + U.To0xHexString(Program.ROM.u16(p + 18));
+            if (!foundDic.ContainsKey(p))
+            {
+                uint id = Program.ROM.u16(p + 18);
+                UseTextID.AppendTextID(list, FELint.Type.RMENU, p + 18, "RMENU", id, p);
+            }
+            foundDic[p] = true;
+
+            uint pp;
+            pp = Program.ROM.p32(p + 0);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeTextIDArraySub(list, pp, p + 0, foundDic);
+            }
+            pp = Program.ROM.p32(p + 4);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeTextIDArraySub(list, pp, p + 4, foundDic);
+            }
+            pp = Program.ROM.p32(p + 8);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeTextIDArraySub(list, pp, p + 8, foundDic);
+            }
+            pp = Program.ROM.p32(p + 12);
+            if (U.isSafetyOffset(pp) && !foundDic.ContainsKey(pp))
+            {
+                MakeTextIDArraySub(list, pp, p + 12, foundDic);
+            }
+        }
+
+        //全データの取得
         public static void MakeTextIDArray(List<UseTextID> list)
         {
-            InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.RMENU, InputFormRef, new uint[] { 18 });
+            Dictionary<uint, bool> foundDic = new Dictionary<uint, bool>();
+            uint[] addlist = new uint[] { Program.ROM.RomInfo.status_rmenu1_pointer()
+                , Program.ROM.RomInfo.status_rmenu2_pointer()
+                , Program.ROM.RomInfo.status_rmenu3_pointer()
+                , Program.ROM.RomInfo.status_rmenu4_pointer()
+                , Program.ROM.RomInfo.status_rmenu5_pointer()
+                , Program.ROM.RomInfo.status_rmenu6_pointer()
+            };
+
+            for (int n = 0; n < addlist.Length; n++)
+            {
+                uint pointer = addlist[n];
+                if (pointer == 0)
+                {
+                    continue;
+                }
+                uint p = Program.ROM.p32(pointer + 0);
+                MakeTextIDArraySub(list, p, pointer, foundDic);
+            }
         }
     }
 }

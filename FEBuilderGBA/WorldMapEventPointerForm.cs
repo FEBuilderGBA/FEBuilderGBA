@@ -290,32 +290,19 @@ namespace FEBuilderGBA
         //テキストIDの取得
         public static void MakeTextIDArray(List<UseTextID> list)
         {
+            List<uint> tracelist = new List<uint>();
             {
                 InputFormRef InputFormRef = Init(null);
 
-                string basename;
-
-                if (Program.ROM.RomInfo.version() == 8)
-                {
-                    basename = "WorldMapEvent Before ";
-                }
-                else
-                {
-                    basename = "WorldMapEvent ";
-                }
+                string basename = "WorldMapEvent Before ";
 
                 uint p = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = basename + U.To0xHexString((uint)i);
-                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name);
+                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
                 }
             }
-            if (Program.ROM.RomInfo.version() != 8)
-            {
-                return;
-            }
-
 
             //FE8だけ、フリーマップがあるので複雑なイベントが設定されています.
             {
@@ -325,23 +312,23 @@ namespace FEBuilderGBA
                 for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
                 {
                     string name = "WorldMapEvent After " + U.To0xHexString((uint)i);
-                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name);
+                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
                 }
             }
             {
                 uint p = Program.ROM.RomInfo.oping_event_pointer();
                 string name = R._("オープニングイベント");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name);
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending1_event_pointer();
                 string name = R._("エイリークエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name);
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
             }
             {
                 uint p = Program.ROM.RomInfo.ending2_event_pointer();
                 string name = R._("エフラムエンディング");
-                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name);
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
             }
         }
 

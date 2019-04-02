@@ -17,9 +17,12 @@ namespace FEBuilderGBA
 
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
-
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            this.N1_AddressList.OwnerDraw(ListBoxEx.DrawUnitAndText, DrawMode.OwnerDrawFixed);
+            this.N1_InputFormRef = N1_Init(this);
+            this.N1_InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
         public InputFormRef InputFormRef;
@@ -51,9 +54,35 @@ namespace FEBuilderGBA
             );
         }
 
+        public InputFormRef N1_InputFormRef;
+        static InputFormRef N1_Init(Form self)
+        {
+            return new InputFormRef(self
+                , "N1_"
+                , 0
+                , 12
+                , (int i, uint addr) =>
+                {//読込最大値検索
+                    if (Program.ROM.u8(addr) == 0x0)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                , (int i, uint addr) =>
+                {
+                    uint unit_id = (uint)Program.ROM.u8(addr);
+                    uint map_id = (uint)Program.ROM.u8(addr + 1);
+                    return U.ToHexString(unit_id) + " " + UnitForm.GetUnitNameAndANY(unit_id) +
+                        " " + "(" + MapSettingForm.GetMapNameAndANYFF(map_id) + ")";
+                }
+            );
+        }
+
 
         private void EventHaikuForm_Load(object sender, EventArgs e)
         {
+            this.N1_FilterComboBox.SelectedIndex = 0;
         }
         public void JumpTo(uint search_unit_id, uint search_map_id)
         {
@@ -110,6 +139,28 @@ namespace FEBuilderGBA
 
                 EventScriptForm.ScanScript(list, addr + 8, true, false, event_name , tracelist);
             }
+
+            InputFormRef N1_InputFormRef = N1_Init(null);
+            uint[] pointers = new uint[] { Program.ROM.RomInfo.event_haiku_tutorial_1_pointer(), Program.ROM.RomInfo.event_haiku_tutorial_2_pointer() };
+            for (int n = 0; n < pointers.Length; n++)
+            {
+                N1_InputFormRef.ReInitPointer(pointers[n]);
+                string name = "Haiku tutorial_" + n;
+                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 4 });
+                addr = N1_InputFormRef.BaseAddress;
+                for (int i = 0; i < N1_InputFormRef.DataCount; i++, addr += N1_InputFormRef.BlockSize)
+                {
+                    uint spEventP = Program.ROM.u32(addr + 4);
+                    if (!U.isSafetyPointer(spEventP))
+                    {
+                        continue;
+                    }
+                    uint unitid = Program.ROM.u8(addr + 0);
+                    string event_name = name + " " + U.ToHexString(unitid) + " " + UnitForm.GetUnitName(unitid);
+
+                    EventScriptForm.ScanScript(list, addr + 4, true, false, event_name, tracelist);
+                }
+            }
         }
 
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
@@ -142,12 +193,38 @@ namespace FEBuilderGBA
         public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 });
+            UseTextID.AppendTextID(list, FELint.Type.HAIKU, InputFormRef, new uint[] { 4 } , 8);
+
+            InputFormRef N1_InputFormRef = N1_Init(null);
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+            UseTextID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4);
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+            UseTextID.AppendTextID(list, FELint.Type.HAIKU, N1_InputFormRef, new uint[] { }, 4);
         }
         public static void MakeFlagIDArray(List<UseFlagID> list)
         {
             InputFormRef InputFormRef = Init(null);
             UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, InputFormRef, 12, 1);
+
+            InputFormRef N1_InputFormRef = N1_Init(null);
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+            UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, N1_InputFormRef, 8, 1);
+            N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+            UseFlagID.AppendFlagID(list, FELint.Type.HAIKU, N1_InputFormRef, 8, 1);
         }
+
+        private void N1_FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            uint filter = U.atoh(N1_FilterComboBox.Text);
+            if (filter == 1)
+            {
+                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_2_pointer());
+            }
+            else
+            {
+                this.N1_InputFormRef.ReInitPointer(Program.ROM.RomInfo.event_haiku_tutorial_1_pointer());
+            }
+        }
+
     }
 }

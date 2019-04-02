@@ -6454,10 +6454,10 @@ r3=X tile position of menu of the right	{U}
 080CE95C	处理字典文本	{U}
 080CE95C	处理字典文本	{J}
 
-08A727B4	&TEXTBATCH	TextBatch1	{J}
-08A73BF4	&TEXTBATCH	TextBatch2	{J}
-08A006FC	&TEXTBATCH	TextBatch1	{U}
-08A01B3C	&TEXTBATCH	TextBatch2	{U}
+08A727B4	InitTextBatch1	{J}
+08A73BF4	InitTextBatch2	{J}
+08A006FC	InitTextBatch1	{U}
+08A01B3C	InitTextBatch2	{U}
 
 08B1FA40	:08B1FE3F	UNK FREE_R LIST	{U}
 08B1FE40	UNK FREE_R LIST TERM	{U}
@@ -8376,7 +8376,7 @@ r3=X tile position of menu of the right	{U}
 080BA5BC	Arena	Pay premium	{J}
 080BA600	Arena	Serif of "Can cancel with B button"	{J}
 080BA614	Arena	Cancel	To be cool or to go away	{J}
-080BA624	Arena	Play Changling's sound	{J}
+080BA628	Arena	Play Changling's sound	{J}
 080BA638	Arena	Combat start	{J}
 080BA69C	Arena	Serve as a result of winning or losing	{J}
 080B5C04	Arena	Show serif	{U}

@@ -2140,6 +2140,12 @@ Create the tutorial event of FE8.\r\nThe tutorial has many mysteries and has not
 :イベント条件
 Event Condition
 
+:セリフ
+Serif
+
+:終章セリフ
+The last chapter serif.
+
 :強制出撃ポイント再取得
 Reload Forced Sorting Points
 
@@ -2187,6 +2193,12 @@ Death
 
 :死亡セリフ
 Death Quotes
+
+:0=リン編チュートリアルでの死亡セリフ
+0=Death serif in the phosphorus edition tutorial.
+
+:1=エリウッド編チュートリアルでの死亡セリフ
+1=Death line in Eriwood Hen Tutorial.
 
 :変化データポインタ
 Change data pointer
@@ -2328,9 +2340,6 @@ Events added with this template
 
 :テンプレートを選択してください
 Please select a template
-
-:セリフ
-Serif
 
 :イベント会話グループ
 Event conversation group
@@ -5479,6 +5488,9 @@ Class Reel Editor
 :個別アニメ
 Individual Animation
 
+:部隊メニュー
+UnitsMenu
+
 :ゲームオプションの順番
 Order of Game Option
 
@@ -6126,6 +6138,18 @@ Menu
 
 :FELint内部エラー
 FELint internal error
+
+:テキストID システム予約
+Text ID System reservation.
+
+:テキストID ユーザ定義
+Text ID User defined.
+
+:会話グループ
+Conversation group
+
+:分岐拡張
+Branch extension.
 
 :このエラーは非表示になっています。理由:「{0}」
 This error is hidden.Reason: "{0}".
@@ -7933,9 +7957,6 @@ When it seems to be out of range,\r\nDecide whether to automatically reject, iss
 :ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します
 After exporting the file,\r\nDecide whether to open the location where that file is located in Explorer and select it
 
-:VBA-MでQSをした後で、エミュレータを終了すると、\r\n最後に実行していたイベントのある場所へ自動的にジャンプします。
-When QS is done with VBA-M and then the emulator is terminated,\r\nIt jumps automatically to the place where the event which was last executed is located.
-
 :既存の改造ROMを開くときの設定です。\r\n通常はオフにしてください。\r\n他の改造ツールで作られた既存ROMを開くときだけ利用してください。\r\n\r\nFEditorは、アドレスの枠外(開始アドレス-4)にデータの個数を書き込みます。\r\nこの値を参考にするかどうかを決定します。
 This is setting when opening an existing modified ROM.\r\nNormally turn it off.\r\nPlease use it only when opening an existing ROM made with another remodeling tool.\r\n\r\nFEditor writes the number of data to the outside of the address (start address -4).\r\nDecide whether to refer to this value.
 
@@ -7986,6 +8007,9 @@ In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlea
 
 :パス
 Path
+
+:警告: Event Assemblerのバージョンが古いです。
+Warning: Event Assembler version is outdated.
 
 :Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。
 Press Ctrl + F5 to start up this emulator and debug.
@@ -8326,17 +8350,8 @@ Automatic conversion of single/double-byte space
 :エミュレータへ自動接続
 Emulator Debugger Settings
 
-:0=ジャンプしない
-0=Do not jump.
-
-:1=ジャンプする
-1=Enable Jump
-
 :範囲外書き込みについて
 Out of Range Options
-
-:VBA-MでQSすると、自動ジャンプ
-QS in VBA-M, Automatic Jump
 
 :0=警告も何もしない(推奨しません)
 0=Disable Out of Range User Warnings (Not Recommended)
@@ -8451,9 +8466,6 @@ File Export Settings
 
 :保存
 Save
-
-:警告: Event Assemblerのバージョンが古いです。
-Warning: Event Assembler version is outdated.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -9835,6 +9847,12 @@ Left RMenu Pointer
 :右 RMenuPointer
 Right RMenu Pointer
 
+:参照データ
+Reference data.
+
+:順番
+In order.
+
 :ユニット依存
 Unit Dependent
 
@@ -10090,6 +10108,9 @@ Warning:\r\nThere is {0} even though it is a system message.
 :警告:\r\n{0}行メッセージなのに{1}があります。
 Warning:\r\nThere is a {0} line message but {1}.
 
+:現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。
+Currently, the text being referenced is being branched.\r\nPlease execute again after the branch processing is completed.
+
 :話す人:
 Talk:
 
@@ -10129,11 +10150,14 @@ New Addition
 :ソーステキスト
 Source Text
 
+:未参照の空き領域の探索
+Search for\r\nunreferenced free space
+
 :ID テキスト
 ID Text
 
 :検索ワード
-Search Word
+Search
 
 :すべてのテキストをファイルに取り出して保存したり、ファイルから読みこむことができます。\r\n文字列の置換を行いたい場合は、この機能を利用してください。
 Use "Export All Text" to save the game's text to a file.\r\nUse "Import All Text" to retrieve all the text from a file.\r\nThis function replaces the designated parts of the text.
@@ -10189,11 +10213,29 @@ Be careful not to overload google translate; please be patient.
 :参照箇所
 Reference place
 
+:参照情報の追加
+Add reference information.
+
+:この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。
+This string doesn't seem to be referenced from anywhere.\r\nIf it is referenced, please enter the information.
+
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
 
 :このテキストを利用している箇所
 Where this text is used
+
+:参照される場所について説明してください
+Please explain where it is referenced.
+
+:この文字列の参照を追加しますか？
+Do you want to add a reference to this string? 
+
+:参照の更新
+Reference update.
+
+:文字列の参照を追加
+Add string reference.
 
 :テキスト-エスケープコード選択
 Text - Escape code selection
@@ -10566,6 +10608,9 @@ Erase Custom Flag
 
 :フラグの名前
 Custom Flag Name
+
+:章内で利用しているフラグの確認
+Check the flags used in the chapter.
 
 :フラグに名前設定
 Event Flag Namer
@@ -11056,9 +11101,6 @@ Test This Version With Emulator
 :このバージョン({0})に戻してもよろしいですか？
 Confirm Revert to This Version ({0})
 
-:会話グループ
-Conversation group
-
 :会話グループを選択してください
 Please select a conversation group
 
@@ -11397,6 +11439,12 @@ Select the BGM to play when this World Map Node becomes the next destination.
 
 :対応するワールドマップイベント({0})が存在しません。
 The corresponding world map event ({0}) doesn't exist.
+
+:エリウッドエンディング
+Eriwood ending.
+
+:ヘクトルエンディング
+Heck enduring.
 
 :オープニングイベント
 Opening Event

@@ -97,14 +97,24 @@ namespace FEBuilderGBA
         //全データの取得
         public static void MakeAllDataLength(List<Address> list)
         {
-            InputFormRef InputFormRef = N_Init(null);
-            FEBuilderGBA.Address.AddAddress(list, InputFormRef, "WorldMapEvent ", new uint[] { 0 });
-
             List<uint> tracelist = new List<uint>();
-            uint p = InputFormRef.BaseAddress;
-            for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            uint mapmax = MapSettingForm.GetDataCount();
+            for (uint mapid = 0; mapid < mapmax; mapid++)
             {
-                string name = "WorldMapEvent " + U.To0xHexString(i) + " ";
+                uint wmapid = MapSettingForm.GetWorldMapEventIDWhereMapID(mapid);
+                if (wmapid == 0)
+                {//存在しない
+                    continue;
+                }
+                //FE6はPLISTが格納されている.
+                uint p;
+                uint event_addr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.WORLDMAP_FE6ONLY, wmapid, out p);
+                if (event_addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                string name = "WorldMapEvent " + U.To0xHexString(mapid) + " ";
                 EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
             }
         }
@@ -129,6 +139,32 @@ namespace FEBuilderGBA
             {
                 FELint.CheckEventErrors(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
             }
+        }
+
+        //テキストIDの取得
+        public static void MakeTextIDArray(List<UseTextID> list)
+        {
+            List<uint> tracelist = new List<uint>();
+            uint mapmax = MapSettingForm.GetDataCount();
+            for (uint mapid = 0; mapid < mapmax; mapid++)
+            {
+                uint wmapid = MapSettingForm.GetWorldMapEventIDWhereMapID(mapid);
+                if (wmapid == 0)
+                {//存在しない
+                    continue;
+                }
+                //FE6はPLISTが格納されている.
+                uint p;
+                uint event_addr = MapPointerForm.PlistToOffsetAddrFast(MapPointerForm.PLIST_TYPE.WORLDMAP_FE6ONLY, wmapid, out p);
+                if (event_addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                string name = "WorldMapEvent " + U.To0xHexString(mapid) + " ";
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+            }
+
         }
     }
 }

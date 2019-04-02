@@ -153,7 +153,6 @@ namespace FEBuilderGBA
                         if (IsEmulatorProcess(pair.Key))
                         {
                             EmulatorMemoryForm.CloseIfAutoClose();
-                            SGMJump.Jump(pair.Key);
                         }
 
                         reloop = true; //削除があったのでループは最初からやり直す.

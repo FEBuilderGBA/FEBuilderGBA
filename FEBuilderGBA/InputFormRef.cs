@@ -3881,7 +3881,7 @@ namespace FEBuilderGBA
             else if (linktype == "FLAG")
             {
                 ToolFlagNameForm f = (ToolFlagNameForm)InputFormRef.JumpForm<ToolFlagNameForm>(U.NOT_FOUND);
-                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object));
+                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , U.NOT_FOUND);
             }
             else if (linktype == "TALKGROUP")
             {

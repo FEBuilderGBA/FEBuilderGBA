@@ -1721,6 +1721,60 @@ namespace FEBuilderGBA
             }
         }
 
+        //FE7のチュートリアルイベントの一覧の取得
+        public static List<U.AddrResult> MakeEventScriptForFE7Tutorial(uint mapid)
+        {
+            List<U.AddrResult> list = new List<U.AddrResult>();
+            Debug.Assert(Program.ROM.RomInfo.version() == 7);
+
+            if (mapid > 0x30)
+            {
+                return list;
+            }
+
+            uint tutorial_pointer = Program.ROM.RomInfo.event_tutorial_pointer();
+            uint tutorial_addr = Program.ROM.p32(tutorial_pointer);
+
+            tutorial_addr = tutorial_addr + (mapid * 4);
+            if (!U.isSafetyOffset(tutorial_addr))
+            {
+                return list;
+            }
+            uint addr = Program.ROM.p32(tutorial_addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return list;
+            }
+
+            {//3=範囲条件及び、勝利条件などの常時条件(0B,01)
+                for (; true; addr += 12)
+                {
+                    if (!U.isSafetyOffset(addr + 12))
+                    {
+                        break;
+                    }
+                    if (Program.ROM.u32(addr) == 0)
+                    {
+                        break;
+                    }
+
+                    uint event_addr = Program.ROM.p32(addr + 4);
+                    if (!U.isSafetyOffset(event_addr))
+                    {
+                        continue;
+                    }
+
+                    list.Add(new U.AddrResult(
+                            event_addr
+                        , "Tutorial FE7"
+                        , mapid
+                    ));
+                }
+            }
+            return list;
+        }
+
+
         //イベント命令　一覧の取得
         public static List<U.AddrResult> MakeEventScriptPointer(uint mapid)
         {
@@ -2527,7 +2581,7 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void MakeTextIDEventScan(ref List<U.AddrResult> list, uint event_addr, List<uint> tracelist)
+        static void MakeTextIDEventScan(List<UseTextID> list, uint event_addr, List<uint> tracelist)
         {
             uint lastBranchAddr = 0;
             int unknown_count = 0;
@@ -2552,56 +2606,7 @@ namespace FEBuilderGBA
                 {
                     //少なくとも不明ではない.
                     unknown_count = 0;
-
-                    if (code.Script.Has == EventScript.ScriptHas.POINTER_UNIT_OR_EVENT)
-                    {//イベント命令へジャンプするものをもっているらしい.
-                        for (int i = 0; i < code.Script.Args.Length; i++)
-                        {
-                            EventScript.Arg arg = code.Script.Args[i];
-                            if (arg.Type == EventScript.ArgType.POINTER_EVENT)
-                            {
-                                uint v = EventScript.GetArgValue(code, arg);
-
-                                v = U.toOffset(v);
-                                if (U.isSafetyOffset(v)         //安全で
-                                    && tracelist.IndexOf(v) < 0 //まだ読んだことがなければ
-                                    )
-                                {
-                                    tracelist.Add(v);
-                                    MakeTextIDEventScan(ref list, v, tracelist);
-                                }
-                            }
-                        }
-                    }
-                    else if (code.Script.Has == EventScript.ScriptHas.TEXT)
-                    {//テキスト関係の命令.
-                        for (int i = 0; i < code.Script.Args.Length; i++)
-                        {
-                            EventScript.Arg arg = code.Script.Args[i];
-                            if (arg.Type == EventScript.ArgType.TEXT
-                                || arg.Type == EventScript.ArgType.CONVERSATION_TEXT
-                                || arg.Type == EventScript.ArgType.SYSTEM_TEXT
-                                || arg.Type == EventScript.ArgType.ONELINE_TEXT
-                                )
-                            {
-                                uint v = EventScript.GetArgValue(code, arg);
-                                if (U.isPointer(v))
-                                {//ポインタだったら違う.
-                                    continue;
-                                }
-
-                                if ( U.FindList(list, v) == U.NOT_FOUND)
-                                {
-                                    list.Add(new U.AddrResult(
-                                          v
-                                        , event_addr.ToString()
-                                        , addr
-                                    ));
-                                }
-                            }
-                        }
-                    }
-                    else if (code.Script.Has == EventScript.ScriptHas.LABEL_CONDITIONAL)
+                    if (code.Script.Has == EventScript.ScriptHas.LABEL_CONDITIONAL)
                     {//LABEL
                         lastBranchAddr = 0;
                     }
@@ -2609,8 +2614,106 @@ namespace FEBuilderGBA
                     {//IF
                         lastBranchAddr = addr;
                     }
+
+                    for (int i = 0; i < code.Script.Args.Length; i++)
+                    {
+                        EventScript.Arg arg = code.Script.Args[i];
+                        if (arg.Type == EventScript.ArgType.TEXT
+                            || arg.Type == EventScript.ArgType.CONVERSATION_TEXT
+                            || arg.Type == EventScript.ArgType.SYSTEM_TEXT
+                            || arg.Type == EventScript.ArgType.ONELINE_TEXT
+                            )
+                        {//テキスト関係の命令.
+                            uint v = EventScript.GetArgValue(code, arg);
+                            UseTextID.AppendTextID(list, FELint.Type.EVENTSCRIPT, addr, "", v, event_addr);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_MENUEXTENDS)
+                        {//分岐メニュー拡張
+                            uint v = EventScript.GetArgValue(code, arg);
+                            MenuExtendSplitMenuForm.MakeTextIDArray(list, v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_TALKGROUP)
+                        {//会話グループ拡張
+                            uint v = EventScript.GetArgValue(code, arg);
+                            EventTalkGroupFE7Form.MakeTextIDArray(list, v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
+                        {//イベント命令へジャンプするものをもっているらしい.
+                            uint v = EventScript.GetArgValue(code, arg);
+
+                            v = U.toOffset(v);
+                            if (U.isSafetyOffset(v)         //安全で
+                                && tracelist.IndexOf(v) < 0 //まだ読んだことがなければ
+                                )
+                            {
+                                tracelist.Add(v);
+                                MakeTextIDEventScan(list, v, tracelist);
+                            }
+                        }
+                    }
                 }
                 addr += (uint)code.Script.Size;
+            }
+
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                MakeTextIDEventScanFE8SPEvent(list, event_addr, addr);
+            }
+        }
+        static void MakeTextIDEventScanFE8SPEvent(List<UseTextID> list, uint event_addr, uint end_addr)
+        {
+            byte[][] table = new byte[][] { 
+                 //ヴィガルドさんたちの悪巧み
+                 new byte[]{ 0x20, 0x12, 0x2E, 0x00, 0x40, 0x05, 0x02, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x40, 0x05, 0x03, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x40, 0x05, 0x04, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x40, 0x0A, 0x00, 0x00 ,0xEE,0xEE,0xEE,0xEE },
+                 //ノベラさん
+                 new byte[]{ 0x40,0x05,0x07,0x00,0x01,0x00,0x00,0x00,0x40,0x0C,0x01,0x00,0x0C,0x00,0x07,0x00,0x40,0x05,0x07,0x00,0x02,0x00,0x00,0x00,0x40,0x0C,0x02,0x00,0x0C,0x00,0x07,0x00,0x20,0x08,0x00,0x00,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x09,0x03,0x00,0x20,0x08,0x01,0x00,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x09,0x03,0x00,0x20,0x08,0x02,0x00,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x08,0x03,0x00,0x20,0x1A,0x00,0x00,0x20,0x1B,0xEE,0xEE},
+                 //レナックイベント
+                 new byte[]{ 0x40,0x05,0x04,0x00,0xEE,0xEE,0x00,0x00,0x40,0x05,0x0D,0x00,0x00,0x00,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x05,0x01,0x00,0xFF,0xFF,0x00,0x00,0x21,0x07,0x00,0x00,0x40,0x0A,0x00,0x00,0xEE,0xEE,0xEE,0xEE },
+                 //ルーテさんイベント ユニットが生きていたら分岐
+                 new byte[]{ 0x22,0x33,0xEE,0x00,0x40,0x0C,0xEE,0xEE,0x0C,0x00,0x00,0x00,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x09,0xEE,0xEE,0x20,0x08,0xEE,0xEE,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x08,0xEE,0xEE,0x20,0x1B,0xEE,0xEE,0x20,0x1D,0x00,0x00,0x22,0x1B,0x00,0x00},
+                 //編分岐
+                 new byte[]{ 0x20,0x19,0x00,0x00,0x40,0x05,0x01,0x00,0x02,0x00,0x00,0x00,0x41,0x0C,0xEE,0xEE,0x0C,0x00,0x01,0x00,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x09,0xEE,0xEE,0x20,0x08,0xEE,0xEE,0x40,0x05,0x02,0x00,0xFF,0xFF,0x00,0x00,0x20,0x08,0xEE,0xEE,0x20,0x1A,0x00,0x00,0x20,0x1B,0xEE,0xEE},
+            };
+
+
+            foreach(byte[] bin in table)
+            {
+                uint addr = event_addr;
+                bool[] mask = U.MakeMask2(bin, 0xFF, 0xEE);
+                while(true)
+                {
+                    addr = U.GrepPatternMatch(Program.ROM.Data, bin, mask, addr, end_addr, 4);
+                    if (addr == U.NOT_FOUND)
+                    {
+                        break;
+                    }
+
+                    string name = event_addr.ToString();
+                    List<UseTextID> tempList = new List<UseTextID>();
+                    for (uint i = 0; i < bin.Length; i += 2)
+                    {
+                        if (bin[i] != 0xFF)
+                        {
+                            continue;
+                        }
+
+                        uint textid = Program.ROM.u16(addr + i);
+                        if (textid <= 0 || textid >= 0x7FFF)
+                        {//規約違反があったので、これは探していたデータではない
+                            tempList.Clear();
+                            break;
+                        }
+                        UseTextID.AppendTextID(tempList, FELint.Type.EVENTSCRIPT, addr + i, "", textid, event_addr);
+                    }
+
+                    if (tempList.Count <= 0)
+                    {
+                        continue;
+                    }
+
+                    list.AddRange(tempList);
+                    addr += (uint)bin.Length;
+                }
             }
         }
 
@@ -4282,20 +4385,23 @@ namespace FEBuilderGBA
                 if (InputFormRef.DoEvents(null, "MakeTextIDArray "+ U.ToHexString(mapid))) return;
 
                 List<U.AddrResult> eventCondList = MakeEventScriptPointer(mapid);
+
+                if (Program.ROM.RomInfo.version() == 7)
+                {
+                    List<U.AddrResult> tutorialCondList = MakeEventScriptForFE7Tutorial(mapid);
+                    eventCondList.AddRange(tutorialCondList);
+                }
+
                 int count = eventCondList.Count;
                 for (int i = 0; i < count; i++)
                 {
                     U.AddrResult ar = eventCondList[i];
-                    List<U.AddrResult> text_arlist = new List<U.AddrResult>();
-                    EventCondForm.MakeTextIDEventScan(ref text_arlist, ar.addr, tracelist);
-
-                    string name = R._("マップ") + " " + U.ToHexString(mapid) + " " + ar.name; 
-
-                    UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist ,ar.addr, name);
+                    EventCondForm.MakeTextIDEventScan(list, ar.addr, tracelist);
                 }
+
             }
         }
-        public static void MakeTextIDArrayByEventPointer(List<UseTextID> list,uint event_pointer,string name)
+        public static void MakeTextIDArrayByEventPointer(List<UseTextID> list, uint event_pointer, string name, List<uint> tracelist)
         {
             event_pointer = U.toOffset(event_pointer);
             if (!U.isSafetyOffset(event_pointer))
@@ -4303,15 +4409,16 @@ namespace FEBuilderGBA
                 return;
             }
             uint event_addr = Program.ROM.p32(event_pointer);
+            MakeTextIDArrayByEventAddress(list,event_addr , name , tracelist);
+        }
+        public static void MakeTextIDArrayByEventAddress(List<UseTextID> list, uint event_addr, string name, List<uint> tracelist)
+        {
             if (!U.isSafetyOffset(event_addr))
             {
                 return;
             }
 
-            List<uint> tracelist = new List<uint>();
-            List<U.AddrResult> text_arlist = new List<U.AddrResult>();
-            EventCondForm.MakeTextIDEventScan(ref text_arlist, event_addr, tracelist);
-            UseTextID.AppendByTestARList(list, FELint.Type.EVENTSCRIPT, text_arlist,event_addr, name);
+            EventCondForm.MakeTextIDEventScan(list, event_addr, tracelist);
         }
 
         public static uint GetMapID(List<Control> parentControls)

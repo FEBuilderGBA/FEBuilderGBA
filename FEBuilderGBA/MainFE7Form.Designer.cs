@@ -136,6 +136,8 @@
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.UnitCustomBattleAnime = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
+            this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
             this.GameOptionButton = new System.Windows.Forms.Button();
@@ -197,7 +199,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.UnitActionPointerButton = new System.Windows.Forms.Button();
+            this.EventFinalSerifButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1200,6 +1202,8 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.EventFinalSerifButton);
+            this.ControlPanel.Controls.Add(this.StatusUnitsMenuButton);
             this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
@@ -1316,6 +1320,28 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1623, 716);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // StatusUnitsMenuButton
+            // 
+            this.StatusUnitsMenuButton.Location = new System.Drawing.Point(1422, 408);
+            this.StatusUnitsMenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StatusUnitsMenuButton.Name = "StatusUnitsMenuButton";
+            this.StatusUnitsMenuButton.Size = new System.Drawing.Size(200, 36);
+            this.StatusUnitsMenuButton.TabIndex = 139;
+            this.StatusUnitsMenuButton.Text = "部隊メニュー";
+            this.StatusUnitsMenuButton.UseVisualStyleBackColor = true;
+            this.StatusUnitsMenuButton.Click += new System.EventHandler(this.StatusUnitsMenuButton_Click);
+            // 
+            // UnitActionPointerButton
+            // 
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 581);
+            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
+            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitActionPointerButton.TabIndex = 138;
+            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
+            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
+            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
             // 
             // ToolUseFlagButton
             // 
@@ -1988,16 +2014,16 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // UnitActionPointerButton
+            // EventFinalSerifButton
             // 
-            this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 581);
-            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
-            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
-            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
-            this.UnitActionPointerButton.TabIndex = 138;
-            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
-            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
-            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
+            this.EventFinalSerifButton.Location = new System.Drawing.Point(1016, 258);
+            this.EventFinalSerifButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventFinalSerifButton.Name = "EventFinalSerifButton";
+            this.EventFinalSerifButton.Size = new System.Drawing.Size(200, 36);
+            this.EventFinalSerifButton.TabIndex = 140;
+            this.EventFinalSerifButton.Text = "終章セリフ";
+            this.EventFinalSerifButton.UseVisualStyleBackColor = true;
+            this.EventFinalSerifButton.Click += new System.EventHandler(this.EventFinalSerifButton_Click);
             // 
             // MainFE7Form
             // 
@@ -2197,5 +2223,7 @@
         private System.Windows.Forms.Button ToolUseFlagButton;
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
         private System.Windows.Forms.Button UnitActionPointerButton;
+        private System.Windows.Forms.Button StatusUnitsMenuButton;
+        private System.Windows.Forms.Button EventFinalSerifButton;
     }
 }

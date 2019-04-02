@@ -5466,7 +5466,7 @@
             this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
             this.CHEAT_ITEM_COUNT.TabIndex = 5;
             this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
-            1,
+            60,
             0,
             0,
             0});

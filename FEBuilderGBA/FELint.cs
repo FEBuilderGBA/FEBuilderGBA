@@ -47,7 +47,7 @@ namespace FEBuilderGBA
             ,ITEM_WEAPON_EFFECT
             ,MOVECOST_NORMAL //普通
             ,MOVECOST_RAIN //雨
-           ,MOVECOST_SHOW //雪
+            ,MOVECOST_SHOW //雪
             ,MOVECOST_AVOID //地形回避
             ,MOVECOST_DEF //地形防御
             ,MOVECOST_RES //地形魔防
@@ -73,8 +73,16 @@ namespace FEBuilderGBA
             ,IMAGE_BATTLE_SCREEN //戦闘画面
             ,MAGIC_ANIME_EXTENDS //魔法拡張アニメ
             ,STATUS_GAME_OPTION //ゲームオプション
+            ,STATUS_UNITS_MENU //部隊メニュー
             ,PROCS
             ,AISCRIPT
+            ,ASM
+            ,ASMDATA
+            ,POINTER_TALKGROUP
+            ,POINTER_MENUEXTENDS
+            ,EVENT_FINAL_SERIF
+            ,TEXTID_FOR_SYSTEM  //テキストID システム予約
+            ,TEXTID_FOR_USER    //テキストID ユーザ定義
             ,FELINT_SYSTEM_ERROR   //FELintシステムエラー
         }
         public static EventCondForm.CONDTYPE TypeToEventCond(Type filterCondtype)

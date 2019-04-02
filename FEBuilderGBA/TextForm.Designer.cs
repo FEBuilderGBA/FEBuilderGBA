@@ -87,6 +87,7 @@
             this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
             this.TextArea = new FEBuilderGBA.RichTextBoxEx();
             this.SearchTabPage = new System.Windows.Forms.TabPage();
+            this.SearcFreeArea = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -104,6 +105,9 @@
             this.Translate_from = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.RefPage = new System.Windows.Forms.TabPage();
+            this.RefNotFoundPanel = new System.Windows.Forms.Panel();
+            this.AddRefButton = new System.Windows.Forms.Button();
+            this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.label19 = new System.Windows.Forms.Label();
             this.RefListBox = new FEBuilderGBA.ListBoxEx();
@@ -130,6 +134,7 @@
             this.ImportPage.SuspendLayout();
             this.translatePage.SuspendLayout();
             this.RefPage.SuspendLayout();
+            this.RefNotFoundPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddressPanel
@@ -817,6 +822,7 @@
             // SearchTabPage
             // 
             this.SearchTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.SearchTabPage.Controls.Add(this.SearcFreeArea);
             this.SearchTabPage.Controls.Add(this.SearchButton);
             this.SearchTabPage.Controls.Add(this.label12);
             this.SearchTabPage.Controls.Add(this.label11);
@@ -828,6 +834,17 @@
             this.SearchTabPage.Size = new System.Drawing.Size(807, 796);
             this.SearchTabPage.TabIndex = 2;
             this.SearchTabPage.Text = "検索";
+            // 
+            // SearcFreeArea
+            // 
+            this.SearcFreeArea.Location = new System.Drawing.Point(522, 2);
+            this.SearcFreeArea.Margin = new System.Windows.Forms.Padding(2);
+            this.SearcFreeArea.Name = "SearcFreeArea";
+            this.SearcFreeArea.Size = new System.Drawing.Size(283, 55);
+            this.SearcFreeArea.TabIndex = 116;
+            this.SearcFreeArea.Text = "未参照の空き領域の探索";
+            this.SearcFreeArea.UseVisualStyleBackColor = true;
+            this.SearcFreeArea.Click += new System.EventHandler(this.SearcFreeArea_Click);
             // 
             // SearchButton
             // 
@@ -870,9 +887,11 @@
             this.SearchResultListBox.Location = new System.Drawing.Point(19, 80);
             this.SearchResultListBox.Margin = new System.Windows.Forms.Padding(2);
             this.SearchResultListBox.Name = "SearchResultListBox";
-            this.SearchResultListBox.Size = new System.Drawing.Size(786, 688);
+            this.SearchResultListBox.Size = new System.Drawing.Size(786, 685);
             this.SearchResultListBox.TabIndex = 3;
             this.SearchResultListBox.SelectedIndexChanged += new System.EventHandler(this.SearchResultListBox_SelectedIndexChanged);
+            this.SearchResultListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchResultListBox_KeyDown);
+            this.SearchResultListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SearchResultListBox_MouseDoubleClick);
             // 
             // SearchTextBox
             // 
@@ -1028,6 +1047,7 @@
             // RefPage
             // 
             this.RefPage.BackColor = System.Drawing.SystemColors.Control;
+            this.RefPage.Controls.Add(this.RefNotFoundPanel);
             this.RefPage.Controls.Add(this.labelEx1);
             this.RefPage.Controls.Add(this.label19);
             this.RefPage.Controls.Add(this.RefListBox);
@@ -1037,6 +1057,37 @@
             this.RefPage.Size = new System.Drawing.Size(807, 796);
             this.RefPage.TabIndex = 4;
             this.RefPage.Text = "参照箇所";
+            // 
+            // RefNotFoundPanel
+            // 
+            this.RefNotFoundPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RefNotFoundPanel.Controls.Add(this.AddRefButton);
+            this.RefNotFoundPanel.Controls.Add(this.labelEx2);
+            this.RefNotFoundPanel.Location = new System.Drawing.Point(10, 110);
+            this.RefNotFoundPanel.Name = "RefNotFoundPanel";
+            this.RefNotFoundPanel.Size = new System.Drawing.Size(781, 257);
+            this.RefNotFoundPanel.TabIndex = 8;
+            this.RefNotFoundPanel.Visible = false;
+            // 
+            // AddRefButton
+            // 
+            this.AddRefButton.Location = new System.Drawing.Point(16, 93);
+            this.AddRefButton.Name = "AddRefButton";
+            this.AddRefButton.Size = new System.Drawing.Size(367, 39);
+            this.AddRefButton.TabIndex = 9;
+            this.AddRefButton.Text = "参照情報の追加";
+            this.AddRefButton.UseVisualStyleBackColor = true;
+            this.AddRefButton.Click += new System.EventHandler(this.AddRefButton_Click);
+            // 
+            // labelEx2
+            // 
+            this.labelEx2.AutoSize = true;
+            this.labelEx2.ErrorMessage = "";
+            this.labelEx2.Location = new System.Drawing.Point(13, 21);
+            this.labelEx2.Name = "labelEx2";
+            this.labelEx2.Size = new System.Drawing.Size(392, 36);
+            this.labelEx2.TabIndex = 8;
+            this.labelEx2.Text = "この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。";
             // 
             // labelEx1
             // 
@@ -1069,8 +1120,8 @@
             this.RefListBox.Name = "RefListBox";
             this.RefListBox.Size = new System.Drawing.Size(786, 670);
             this.RefListBox.TabIndex = 5;
-            this.RefListBox.DoubleClick += new System.EventHandler(this.RefListBox_DoubleClick);
             this.RefListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RefListBox_KeyDown);
+            this.RefListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RefListBox_MouseDoubleClick);
             // 
             // TextForm
             // 
@@ -1122,6 +1173,8 @@
             this.translatePage.PerformLayout();
             this.RefPage.ResumeLayout(false);
             this.RefPage.PerformLayout();
+            this.RefNotFoundPanel.ResumeLayout(false);
+            this.RefNotFoundPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1207,5 +1260,9 @@
         private ListBoxEx RefListBox;
         private LabelEx labelEx1;
         private TextBoxEx DetailErrorMessageBox;
+        private System.Windows.Forms.Button SearcFreeArea;
+        private System.Windows.Forms.Panel RefNotFoundPanel;
+        private System.Windows.Forms.Button AddRefButton;
+        private LabelEx labelEx2;
     }
 }

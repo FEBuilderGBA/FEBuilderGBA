@@ -1039,6 +1039,32 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, U.toOffset(pair.Key),pair.Value.Length , U.NOT_FOUND, pair.Value.Name + "\t"+pair.Value.ResultAndArgs , Address.DataTypeEnum.POINTER );
             }
         }
+        public void MakeTextIDArray(List<UseTextID> list)
+        {
+            List<uint> tracelist = new List<uint>();
+            foreach (var pair in this.AsmMap)
+            {
+                if (pair.Value.Length <= 0)
+                {
+                    continue;
+                }
+
+                if (pair.Value.TypeName == "TEXTBATCH")
+                {
+                    UseTextID.AppendASMDATATextID(list, pair.Value ,U.toOffset(pair.Key), 4);
+                }
+                else if (pair.Value.TypeName == "TEXTBATCHSHORT")
+                {
+                    UseTextID.AppendASMDATATextID(list, pair.Value, U.toOffset(pair.Key), 2);
+                }
+                else if (pair.Value.TypeName == "EVENT")
+                {
+                    uint event_addr = U.toOffset(pair.Key);
+                    string name = pair.Value.Name;
+                    EventCondForm.MakeTextIDArrayByEventAddress(list, event_addr, name, tracelist);
+                }
+            }
+        }
 
         public static string GetSWI_GBA_BIOS_CALL(uint swicode)
         {

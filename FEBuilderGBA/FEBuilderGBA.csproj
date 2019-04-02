@@ -852,8 +852,6 @@
       <DependentUpon>SearchHelperControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ArchSevenZip.cs" />
-    <Compile Include="SGMJump.cs" />
-    <Compile Include="SGMLoader.cs" />
     <Compile Include="SkillAssignmentUnitFE8NForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1895,6 +1893,25 @@
     <Compile Include="UnitActionPointerForm.Designer.cs">
       <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextRefAddDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextRefAddDialogForm.Designer.cs">
+      <DependentUpon>TextRefAddDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EtcCacheText.cs" />
+    <Compile Include="StatusUnitsMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusUnitsMenuForm.Designer.cs">
+      <DependentUpon>StatusUnitsMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventFinalSerifFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventFinalSerifFE7Form.Designer.cs">
+      <DependentUpon>EventFinalSerifFE7Form.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2803,6 +2820,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UnitActionPointerForm.resx">
       <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextRefAddDialogForm.resx">
+      <DependentUpon>TextRefAddDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusUnitsMenuForm.resx">
+      <DependentUpon>StatusUnitsMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventFinalSerifFE7Form.resx">
+      <DependentUpon>EventFinalSerifFE7Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

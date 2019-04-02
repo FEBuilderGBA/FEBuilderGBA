@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePath = new System.Windows.Forms.TabPage();
+            this.ERROR_IsOldEA = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.X_EXPLAIN_NECESSARY_PROGRAM = new System.Windows.Forms.Label();
@@ -209,9 +210,7 @@
             this.explain_func_texteditor_auto_convert_space = new System.Windows.Forms.Label();
             this.func_auto_connect_emulator = new System.Windows.Forms.ComboBox();
             this.explain_func_auto_connect_emulator = new System.Windows.Forms.Label();
-            this.func_sgm_jump = new System.Windows.Forms.ComboBox();
             this.explain_func_write_out_of_range = new System.Windows.Forms.Label();
-            this.explain_func_sgm_jump = new System.Windows.Forms.Label();
             this.func_write_out_of_range = new System.Windows.Forms.ComboBox();
             this.explain_func_rom_extends_option = new System.Windows.Forms.Label();
             this.func_rom_extends_option = new System.Windows.Forms.ComboBox();
@@ -239,7 +238,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.ERROR_IsOldEA = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -299,6 +297,16 @@
             this.tabPagePath.Size = new System.Drawing.Size(842, 703);
             this.tabPagePath.TabIndex = 0;
             this.tabPagePath.Text = "パス";
+            // 
+            // ERROR_IsOldEA
+            // 
+            this.ERROR_IsOldEA.AutoSize = true;
+            this.ERROR_IsOldEA.Location = new System.Drawing.Point(225, 365);
+            this.ERROR_IsOldEA.Name = "ERROR_IsOldEA";
+            this.ERROR_IsOldEA.Size = new System.Drawing.Size(350, 18);
+            this.ERROR_IsOldEA.TabIndex = 56;
+            this.ERROR_IsOldEA.Text = "警告: Event Assemblerのバージョンが古いです。";
+            this.ERROR_IsOldEA.Visible = false;
             // 
             // label51
             // 
@@ -2084,9 +2092,7 @@
             this.tabPageFunc.Controls.Add(this.explain_func_texteditor_auto_convert_space);
             this.tabPageFunc.Controls.Add(this.func_auto_connect_emulator);
             this.tabPageFunc.Controls.Add(this.explain_func_auto_connect_emulator);
-            this.tabPageFunc.Controls.Add(this.func_sgm_jump);
             this.tabPageFunc.Controls.Add(this.explain_func_write_out_of_range);
-            this.tabPageFunc.Controls.Add(this.explain_func_sgm_jump);
             this.tabPageFunc.Controls.Add(this.func_write_out_of_range);
             this.tabPageFunc.Controls.Add(this.explain_func_rom_extends_option);
             this.tabPageFunc.Controls.Add(this.func_rom_extends_option);
@@ -2137,7 +2143,7 @@
             this.func_overraide_simple_error_check.Items.AddRange(new object[] {
             "0=チェックしない",
             "1=簡易エラーチェックをする"});
-            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(420, 648);
+            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(420, 605);
             this.func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2);
             this.func_overraide_simple_error_check.Name = "func_overraide_simple_error_check";
             this.func_overraide_simple_error_check.Size = new System.Drawing.Size(408, 26);
@@ -2146,7 +2152,7 @@
             // explain_func_overraide_simple_error_check
             // 
             this.explain_func_overraide_simple_error_check.AccessibleDescription = "";
-            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(6, 652);
+            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(6, 609);
             this.explain_func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_overraide_simple_error_check.Name = "explain_func_overraide_simple_error_check";
             this.explain_func_overraide_simple_error_check.Size = new System.Drawing.Size(405, 18);
@@ -2161,7 +2167,7 @@
             this.func_create_nodoll_gba_sym.Items.AddRange(new object[] {
             "0=SYMファイルを作成しない",
             "1=自動的にSYMファイル作成する"});
-            this.func_create_nodoll_gba_sym.Location = new System.Drawing.Point(420, 338);
+            this.func_create_nodoll_gba_sym.Location = new System.Drawing.Point(420, 295);
             this.func_create_nodoll_gba_sym.Margin = new System.Windows.Forms.Padding(2);
             this.func_create_nodoll_gba_sym.Name = "func_create_nodoll_gba_sym";
             this.func_create_nodoll_gba_sym.Size = new System.Drawing.Size(408, 26);
@@ -2170,7 +2176,7 @@
             // explain_func_create_nodoll_gba_sym
             // 
             this.explain_func_create_nodoll_gba_sym.AccessibleDescription = "";
-            this.explain_func_create_nodoll_gba_sym.Location = new System.Drawing.Point(10, 339);
+            this.explain_func_create_nodoll_gba_sym.Location = new System.Drawing.Point(10, 296);
             this.explain_func_create_nodoll_gba_sym.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_create_nodoll_gba_sym.Name = "explain_func_create_nodoll_gba_sym";
             this.explain_func_create_nodoll_gba_sym.Size = new System.Drawing.Size(405, 18);
@@ -2181,7 +2187,7 @@
             // label40
             // 
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Location = new System.Drawing.Point(8, 495);
+            this.label40.Location = new System.Drawing.Point(8, 452);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(822, 30);
@@ -2192,7 +2198,7 @@
             // label37
             // 
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(8, 372);
+            this.label37.Location = new System.Drawing.Point(8, 329);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(822, 30);
@@ -2249,7 +2255,7 @@
             // explain_func_auto_backup
             // 
             this.explain_func_auto_backup.AccessibleDescription = "";
-            this.explain_func_auto_backup.Location = new System.Drawing.Point(10, 538);
+            this.explain_func_auto_backup.Location = new System.Drawing.Point(10, 495);
             this.explain_func_auto_backup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_auto_backup.Name = "explain_func_auto_backup";
             this.explain_func_auto_backup.Size = new System.Drawing.Size(405, 18);
@@ -2265,7 +2271,7 @@
             "0=作成しない",
             "1=保存する前にバックアップを作成する",
             "2=保存する前にバックアップを作成する(7z圧縮)"});
-            this.func_auto_backup.Location = new System.Drawing.Point(420, 538);
+            this.func_auto_backup.Location = new System.Drawing.Point(420, 495);
             this.func_auto_backup.Margin = new System.Windows.Forms.Padding(2);
             this.func_auto_backup.Name = "func_auto_backup";
             this.func_auto_backup.Size = new System.Drawing.Size(408, 26);
@@ -2278,7 +2284,7 @@
             this.func_show_class_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_class_extends.Location = new System.Drawing.Point(420, 612);
+            this.func_show_class_extends.Location = new System.Drawing.Point(420, 569);
             this.func_show_class_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_class_extends.Name = "func_show_class_extends";
             this.func_show_class_extends.Size = new System.Drawing.Size(408, 26);
@@ -2287,7 +2293,7 @@
             // explain_func_show_class_extends
             // 
             this.explain_func_show_class_extends.AccessibleDescription = "";
-            this.explain_func_show_class_extends.Location = new System.Drawing.Point(10, 614);
+            this.explain_func_show_class_extends.Location = new System.Drawing.Point(10, 571);
             this.explain_func_show_class_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_class_extends.Name = "explain_func_show_class_extends";
             this.explain_func_show_class_extends.Size = new System.Drawing.Size(405, 18);
@@ -2298,7 +2304,7 @@
             // explain_func_rom_extends
             // 
             this.explain_func_rom_extends.AccessibleDescription = "";
-            this.explain_func_rom_extends.Location = new System.Drawing.Point(10, 412);
+            this.explain_func_rom_extends.Location = new System.Drawing.Point(10, 369);
             this.explain_func_rom_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_rom_extends.Name = "explain_func_rom_extends";
             this.explain_func_rom_extends.Size = new System.Drawing.Size(405, 18);
@@ -2339,7 +2345,7 @@
             this.func_rom_extends.Items.AddRange(new object[] {
             "0=拡張を認めない",
             "1=ROMサイズを32MBまで拡張を認める"});
-            this.func_rom_extends.Location = new System.Drawing.Point(420, 412);
+            this.func_rom_extends.Location = new System.Drawing.Point(420, 369);
             this.func_rom_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends.Name = "func_rom_extends";
             this.func_rom_extends.Size = new System.Drawing.Size(408, 26);
@@ -2394,40 +2400,16 @@
             this.explain_func_auto_connect_emulator.Text = "エミュレータへ自動接続";
             this.explain_func_auto_connect_emulator.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // func_sgm_jump
-            // 
-            this.func_sgm_jump.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_sgm_jump.FormattingEnabled = true;
-            this.func_sgm_jump.Items.AddRange(new object[] {
-            "0=ジャンプしない",
-            "1=ジャンプする"});
-            this.func_sgm_jump.Location = new System.Drawing.Point(420, 297);
-            this.func_sgm_jump.Margin = new System.Windows.Forms.Padding(2);
-            this.func_sgm_jump.Name = "func_sgm_jump";
-            this.func_sgm_jump.Size = new System.Drawing.Size(408, 26);
-            this.func_sgm_jump.TabIndex = 26;
-            // 
             // explain_func_write_out_of_range
             // 
             this.explain_func_write_out_of_range.AccessibleDescription = "";
-            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(10, 574);
+            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(10, 531);
             this.explain_func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_write_out_of_range.Name = "explain_func_write_out_of_range";
             this.explain_func_write_out_of_range.Size = new System.Drawing.Size(405, 18);
             this.explain_func_write_out_of_range.TabIndex = 21;
             this.explain_func_write_out_of_range.Text = "範囲外書き込みについて";
             this.explain_func_write_out_of_range.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // explain_func_sgm_jump
-            // 
-            this.explain_func_sgm_jump.AccessibleDescription = "";
-            this.explain_func_sgm_jump.Location = new System.Drawing.Point(10, 298);
-            this.explain_func_sgm_jump.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_sgm_jump.Name = "explain_func_sgm_jump";
-            this.explain_func_sgm_jump.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_sgm_jump.TabIndex = 25;
-            this.explain_func_sgm_jump.Text = "VBA-MでQSすると、自動ジャンプ";
-            this.explain_func_sgm_jump.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // func_write_out_of_range
             // 
@@ -2437,7 +2419,7 @@
             "0=警告も何もしない(推奨しません)",
             "1=書き込みを警告する",
             "2=書き込みを禁止する"});
-            this.func_write_out_of_range.Location = new System.Drawing.Point(420, 574);
+            this.func_write_out_of_range.Location = new System.Drawing.Point(420, 531);
             this.func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2);
             this.func_write_out_of_range.Name = "func_write_out_of_range";
             this.func_write_out_of_range.Size = new System.Drawing.Size(408, 26);
@@ -2446,7 +2428,7 @@
             // explain_func_rom_extends_option
             // 
             this.explain_func_rom_extends_option.AccessibleDescription = "";
-            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 447);
+            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 404);
             this.explain_func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_rom_extends_option.Name = "explain_func_rom_extends_option";
             this.explain_func_rom_extends_option.Size = new System.Drawing.Size(405, 18);
@@ -2464,7 +2446,7 @@
             "2=0x09000000以降 0xFFが8192連続",
             "3=0x08000000以降 0x00が8192連続",
             "4=0x08000000以降 0xFFが8192連続"});
-            this.func_rom_extends_option.Location = new System.Drawing.Point(420, 447);
+            this.func_rom_extends_option.Location = new System.Drawing.Point(420, 404);
             this.func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends_option.Name = "func_rom_extends_option";
             this.func_rom_extends_option.Size = new System.Drawing.Size(408, 26);
@@ -2776,16 +2758,6 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // ERROR_IsOldEA
-            // 
-            this.ERROR_IsOldEA.AutoSize = true;
-            this.ERROR_IsOldEA.Location = new System.Drawing.Point(225, 365);
-            this.ERROR_IsOldEA.Name = "ERROR_IsOldEA";
-            this.ERROR_IsOldEA.Size = new System.Drawing.Size(350, 18);
-            this.ERROR_IsOldEA.TabIndex = 56;
-            this.ERROR_IsOldEA.Text = "警告: Event Assemblerのバージョンが古いです。";
-            this.ERROR_IsOldEA.Visible = false;
-            // 
             // OptionForm
             // 
             this.AcceptButton = this.WriteButton;
@@ -2959,8 +2931,6 @@
         private System.Windows.Forms.Label explain_func_write_out_of_range;
         private System.Windows.Forms.ComboBox func_select_in_explorer_when_export;
         private System.Windows.Forms.Label explain_func_select_in_explorer_when_export;
-        private System.Windows.Forms.ComboBox func_sgm_jump;
-        private System.Windows.Forms.Label explain_func_sgm_jump;
         private System.Windows.Forms.ComboBox ShortCutValue15;
         private FEBuilderGBA.TextBoxEx ShortCutKey15;
         private System.Windows.Forms.Label label55;

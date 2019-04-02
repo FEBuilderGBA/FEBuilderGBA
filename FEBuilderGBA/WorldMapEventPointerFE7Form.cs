@@ -17,6 +17,9 @@ namespace FEBuilderGBA
 
             this.N_InputFormRef = N_Init(this);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            ENDING1_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending1_event_pointer());
+            ENDING2_EVENT.Value = Program.ROM.p32(Program.ROM.RomInfo.ending2_event_pointer());
         }
 
 
@@ -117,6 +120,16 @@ namespace FEBuilderGBA
                     EventScriptForm.ScanScript( list, p, true, true, name , tracelist);
                 }
             }
+            {
+                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                string name = R._("エリウッドエンディング");
+                EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
+            }
+            {
+                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                string name = R._("ヘクトルエンディング");
+                EventScriptForm.ScanScript(list, p, true, true, name, tracelist);
+            }
         }
         //エラー検出
         public static void MakeCheckErrors(uint mapid, List<FELint.ErrorSt> errors)
@@ -141,6 +154,54 @@ namespace FEBuilderGBA
                 uint event_addr = Program.ROM.u32(p);
                 FELint.CheckEventPointerErrors(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
             }
+
+        }
+        //テキストIDの取得
+        public static void MakeTextIDArray(List<UseTextID> list)
+        {
+            List<uint> tracelist = new List<uint>();
+            {
+                InputFormRef ifr = N_Init(null);
+
+                string basename;
+                basename = "WorldMapEvent ";
+
+                uint p = ifr.BaseAddress;
+                for (int i = 0; i < ifr.DataCount; i++, p += ifr.BlockSize)
+                {
+                    string name = basename + U.To0xHexString((uint)i);
+                    EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                }
+            }
+            {
+                uint p = Program.ROM.RomInfo.ending1_event_pointer();
+                string name = R._("エリウッドエンディング");
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+            }
+            {
+                uint p = Program.ROM.RomInfo.ending2_event_pointer();
+                string name = R._("ヘクトルエンディング");
+                EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+            }
+        }
+
+        private void JUMP_ENDING1_EVENT_Click(object sender, EventArgs e)
+        {
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>();
+            f.JumpTo((uint)ENDING1_EVENT.Value);
+        }
+
+        private void JUMP_ENDING2_EVENT_Click(object sender, EventArgs e)
+        {
+            EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>();
+            f.JumpTo((uint)ENDING2_EVENT.Value);
+        }
+
+        private void EventWriteButton_Click(object sender, EventArgs e)
+        {
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending1_event_pointer(), (uint)ENDING1_EVENT.Value);
+            Program.ROM.write_p32(Program.ROM.RomInfo.ending2_event_pointer(), (uint)ENDING2_EVENT.Value);
+            InputFormRef.ShowWriteNotifyAnimation(this,U.NOT_FOUND);
         }
     }
 }

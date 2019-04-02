@@ -1506,9 +1506,9 @@ namespace FEBuilderGBA
                         return new U.AddrResult();
                     }
                     string name;
-                    if (str.Length - hitpos >= 20)
+                    if (str.Length - hitpos >= 40)
                     {
-                        name = ar.name + " " + str.Substring(hitpos, 20) + "...";
+                        name = ar.name + " " + str.Substring(hitpos, 40) + "...";
                     }
                     else
                     {
@@ -1524,14 +1524,6 @@ namespace FEBuilderGBA
             }
         }
 
-        private void SearchResultListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = (int)U.atoh(SearchResultListBox.Text);
-            if (id < AddressList.Items.Count)
-            {
-                U.ForceUpdate(AddressList,id);
-            }
-        }
         private void HideFloatingControlpanel()
         {
             if (ControlPanel.Visible)
@@ -3166,6 +3158,7 @@ namespace FEBuilderGBA
             {
                 RefCountTextBox.Text = R._("計測中...");
                 this.SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
+                this.RefNotFoundPanel.Hide();
                 return;
             }
 
@@ -3185,8 +3178,27 @@ namespace FEBuilderGBA
                 RefListBox.Items.Add(t);
                 this.SelectDataTypeOf = t.DataType;
             }
+
+            {
+                UseTextID t = Program.UseTextIDCache.MakeUseTextID(id);
+                if (t != null)
+                {
+                    refCount++;
+                    RefListBox.Items.Add(t);
+                }
+            }
+
             RefListBox.EndUpdate();
             RefCountTextBox.Text = refCount.ToString();
+
+            if (refCount <= 0 && id > 0)
+            {
+                this.RefNotFoundPanel.Show();
+            }
+            else
+            {
+                this.RefNotFoundPanel.Hide();
+            }
         }
         private Size DrawRefTextList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -3255,10 +3267,6 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
-        private void RefListBox_DoubleClick(object sender, EventArgs e)
-        {
-            GotoRef();
-        }
         void GotoRef()
         {
             int index = this.RefListBox.SelectedIndex;
@@ -3267,6 +3275,11 @@ namespace FEBuilderGBA
                 return;
             }
             UseTextID t = (UseTextID)this.RefListBox.Items[index];
+            if (t.DataType == FELint.Type.TEXTID_FOR_USER)
+            {
+                ShowRefAddDialog();
+                return;
+            }
             MainSimpleMenuEventErrorForm.GotoEvent(t.DataType, t.Addr, t.Tag, 0);
         }
 
@@ -3376,5 +3389,115 @@ namespace FEBuilderGBA
 
             return write_pointer;
         }
+
+
+
+        private void SearcFreeArea_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+
+            AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
+            List<UseTextID> textIDList = map.GetTextIDArray();
+            if (textIDList == null)
+            {
+                R.ShowStopError("現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。");
+                return;
+            }
+            Program.UseTextIDCache.AppendList(textIDList);
+
+            string lang = OptionForm.lang();
+            bool isJP = (lang == "ja");
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                Dictionary<uint, bool> textmap = UseTextID.ConvertMaps(textIDList);
+
+                FETextDecode textdecoder = new FETextDecode();
+                uint id = 0;
+                List<U.AddrResult> result = InputFormRef.MakeList((U.AddrResult ar) =>
+                {
+                    if ( textmap.ContainsKey(id++))
+                    {//HIT
+                        return new U.AddrResult();
+                    }
+                    
+                    int size;
+                    string str = textdecoder.DecodeAddr(ar.addr, out size);
+                    str = StripAllCode(str);
+                    string name;
+                    if (str.Length >= 40)
+                    {
+                        name = ar.name + " " + str.Substring(0, 40) + "...";
+                    }
+                    else
+                    {
+                        name = ar.name + " " + str;
+                    }
+
+                    Debug.Print(name.Replace(" ","\t").Replace("\r\n"," ") + "\t{J}");
+                    return new U.AddrResult(ar.addr, name, ar.tag);
+                });
+
+                SearchResultListBox.Items.Clear();
+
+                U.ConvertListBox(result, ref this.SearchResultListBox);
+            }
+        }
+
+        private void AddRefButton_Click(object sender, EventArgs e)
+        {
+            ShowRefAddDialog();
+        }
+        void ShowRefAddDialog()
+        {
+            string text = GetEditorText(this.TextArea);
+            uint textid = (uint)AddressList.SelectedIndex;
+
+            TextRefAddDialogForm f = (TextRefAddDialogForm)InputFormRef.JumpFormLow<TextRefAddDialogForm>();
+            f.Init(textid , text);
+            DialogResult dr = f.ShowDialog();
+            if (dr != System.Windows.Forms.DialogResult.OK)
+            {
+                return;
+            }
+            Program.UseTextIDCache.Update(textid, f.GetComment());
+            UpdateRef(textid);
+        }
+
+        void JumpFromSearchResult()
+        {
+            int id = (int)U.atoh(SearchResultListBox.Text);
+            if (id < AddressList.Items.Count)
+            {
+                U.ForceUpdate(AddressList, id);
+            }
+        }
+
+        private void SearchResultListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            JumpFromSearchResult();
+        }
+        private void SearchResultListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                JumpFromSearchResult();
+            }
+        }
+
+        private void SearchResultListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            JumpFromSearchResult();
+        }
+
+        private void RefListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GotoRef();
+        }
+
+
     }
 }

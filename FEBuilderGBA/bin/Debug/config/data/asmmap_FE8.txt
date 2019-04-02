@@ -6488,10 +6488,10 @@
 080CE95C	辞書の本文の処理	{U}
 080CE95C	辞書の本文の処理	{J}
 
-08A727B4	&TEXTBATCH	TextBatch1	{J}
-08A73BF4	&TEXTBATCH	TextBatch2	{J}
-08A006FC	&TEXTBATCH	TextBatch1	{U}
-08A01B3C	&TEXTBATCH	TextBatch2	{U}
+08A727B4	InitTextBatch1	{J}
+08A73BF4	InitTextBatch2	{J}
+08A006FC	InitTextBatch1	{U}
+08A01B3C	InitTextBatch2	{U}
 
 08B1FA40	:08B1FE3F	UNK FREE_R LIST	{U}
 08B1FE40	UNK FREE_R LIST TERM	{U}
@@ -8436,7 +8436,7 @@
 080BA5BC	闘技場	掛け金を支払う	{J}
 080BA600	闘技場	"Bボタンでキャンセルできるぜ"のセリフ	{J}
 080BA614	闘技場	キャンセル	冷やかしかあっちにいきな	{J}
-080BA624	闘技場	チャンリンという音を再生する	{J}
+080BA628	闘技場	チャンリンという音を再生する	{J}
 080BA638	闘技場	戦闘開始	{J}
 080BA69C	闘技場	勝敗の結果のセリフ	{J}
 
@@ -11694,3 +11694,10 @@
 080A0AD4	支援画面	ユニットが達成している支援状況をgStringBufferAltから取得する	{U}
 080A0C40	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	メイン	{U}
 080A35EC	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	1ユニット	{U}
+08A93F50	&TEXTBATCH	進撃準備画面1	{J}
+08A18204	&TEXTBATCH	進撃準備画面1	{U}
+08A93F7C	&TEXTBATCH	進撃準備画面2	{J}
+08A18230	&TEXTBATCH	進撃準備画面2	{U}
+08A9463C	&TEXTBATCH	TextBatch5	{J}
+0808B128	HelpDialog	{J}
+08088E9C	HelpDialog	{U}
