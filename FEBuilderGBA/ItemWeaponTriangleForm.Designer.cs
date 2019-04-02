@@ -58,6 +58,7 @@
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label3 = new System.Windows.Forms.Label();
             this.AddressPanel = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -183,7 +184,7 @@
             this.panel2.Location = new System.Drawing.Point(362, 71);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 418);
+            this.panel2.Size = new System.Drawing.Size(907, 528);
             this.panel2.TabIndex = 83;
             // 
             // L_1_WEAPONTYPEICON
@@ -355,22 +356,24 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(347, 418);
+            this.AddressList.Size = new System.Drawing.Size(347, 502);
             this.AddressList.TabIndex = 108;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.AddressListExpandsButton);
             this.panel3.Controls.Add(this.AddressList);
             this.panel3.Controls.Add(this.LabelFilter);
             this.panel3.Location = new System.Drawing.Point(14, 44);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(347, 446);
+            this.panel3.Size = new System.Drawing.Size(347, 556);
             this.panel3.TabIndex = 86;
             // 
             // LabelFilter
@@ -445,12 +448,22 @@
             this.AddressPanel.Size = new System.Drawing.Size(907, 30);
             this.AddressPanel.TabIndex = 84;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(-1, 526);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(344, 30);
+            this.AddressListExpandsButton.TabIndex = 145;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // ItemWeaponTriangleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1274, 500);
+            this.ClientSize = new System.Drawing.Size(1274, 610);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -509,5 +522,6 @@
         private System.Windows.Forms.ComboBox L_0_COMBO;
         private InterpolatedPictureBox L_0_WEAPONTYPEICON;
         private InterpolatedPictureBox L_1_WEAPONTYPEICON;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }

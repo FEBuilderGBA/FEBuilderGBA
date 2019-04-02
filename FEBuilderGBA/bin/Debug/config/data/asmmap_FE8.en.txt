@@ -8709,10 +8709,10 @@ r3=X tile position of menu of right	{U}
 08AA70B4	&PALETTE4	Something's palette	215	{J}
 08AB6788	&PALETTE7	Something's palette	216	{J}
 08AB7144	&PALETTE	Something's palette	217	{J}
-08A1FB08	TEXTBATCH	TextBatch3	{U}
-08A9CA34	TEXTBATCH	TextBatch3	{J}
-08A196BC	TEXTBATCH	TextBatch4	{U}
-08A188F8	TEXTBATCH	TextBatch5	{U}
+08A1FB08	&TEXTBATCH	&TEXTBATCH3	{U}
+08A9CA34	&TEXTBATCH	&TEXTBATCH3	{J}
+08A196BC	&TEXTBATCH	&TEXTBATCH4	{U}
+08A188F8	&TEXTBATCH	&TEXTBATCH5	{U}
 08A18614	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
 08A94358	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
 08A1D850	&PALETTE	Something's palette	218	{U}
@@ -8822,8 +8822,8 @@ r3=X tile position of menu of right	{U}
 085C2438	&ASM_POINTER_ARRAY	UnLZ77Decompress_Inner	{J}
 08599F94	&PALETTE	Something's palette	263	{U}
 085C1D10	&PALETTE	Something's palette	263	{U}
-0859A598	&TEXTBATCH	TextBatch6	{U}
-085C2A18	&TEXTBATCH	TextBatch6	{J}
+0859A598	&TEXTBATCH	&TEXTBATCH6	{U}
+085C2A18	&TEXTBATCH	&TEXTBATCH6	{J}
 08A0A9F8	&HEADERTSA	Something's TSA	22	{U}
 08A7DCB8	&HEADERTSA	Something's TSA	22	{J}
 08A20B08	&OAMREGS_ARRAY	Unk OAMREGS	24	{U}
@@ -11486,8 +11486,6 @@ r3=X tile position of menu of right	{U}
 080726AC	Determine battle BGM	{U}
 08002620	Switch BGM (another commandPart 5)	r0=BGM number: MUSIC	{U}
 080728D0	Get BossBGM	{U}
-@ChapterData@1C	byte	Unk1c
-@ChapterData@1D	byte	Unk1d
 080976FC	CanCharacterBePrepSwap	{J}
 08089100	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{J}
 08000CD8	GetGameClock	{J}
@@ -11735,6 +11733,6 @@ r3=X tile position of menu of right	{U}
 08A18204	&TEXTBATCH	Advance preparation screen 1.	{U}
 08A93F7C	&TEXTBATCH	Advance preparation screen 2.	{J}
 08A18230	&TEXTBATCH	Advance preparation screen 2.	{U}
-08A9463C	&TEXTBATCH	TextBatch5	{J}
+08A9463C	&TEXTBATCH	&TEXTBATCH5	{J}
 0808B128	HelpDialog	{J}
 08088E9C	HelpDialog	{U}
