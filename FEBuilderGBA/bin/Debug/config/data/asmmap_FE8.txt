@@ -8647,6 +8647,7 @@
 08A1FB08	&TEXTBATCH	TextBatch3	{U}
 08A9CA34	&TEXTBATCH	TextBatch3	{J}
 08A196BC	&TEXTBATCH	TextBatch4	{U}
+08A95410	&TEXTBATCH	TextBatch4	{J}
 08A188F8	&TEXTBATCH	TextBatch5	{U}
 08A18614	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
 08A94358	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
@@ -11715,6 +11716,7 @@
 080B9030	店	買い会話	/	ゴールドだ。それでいいのかい？	/	お金が足りねえぜ	{J}
 080B8F30	店	どれがほしいんだい	{J}
 080B8ED8	店	売る会話	/	売るものがねえじゃねえか	{J}
+080B8CF0	店	会話を表示	{J}
 080B49B8	店	他の売るものがあるか？	{U}
 080B49CC	店	他に用があるか？	{U}
 080B49F8	店	また来てくれよな	{U}
@@ -11729,3 +11731,4 @@
 080B44A8	店	買い会話	/	ゴールドだ。それでいいのかい？	/	お金が足りねえぜ	{U}
 080B43A8	店	どれがほしいんだい	{U}
 080B4350	店	売る会話	/	売るものがねえじゃねえか	{U}
+080B4168	店	会話を表示	{U}

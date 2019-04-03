@@ -11624,6 +11624,7 @@ r3=X tile position of menu of the right	{U}
 080B9030	Shop	Buy event	/	How does @0080@0005 sound to you?	{J}
 080B8F30	Shop	What would you like?	{J}
 080B8ED8	Shop	Sell event	/	You've got nothing to sell!	{J}
+080B8CF0	Shop	Show the conversation	{J}
 080B49B8	Shop	Selling anything else?	{U}
 080B49CC	Shop	Do you need anything else?	{U}
 080B49F8	Shop	Come back again	{U}
@@ -11638,3 +11639,4 @@ r3=X tile position of menu of the right	{U}
 080B44A8	Shop	Buy event	/	How does @0080@0005 sound to you?	{U}
 080B43A8	Shop	What would you like?	{U}
 080B4350	Shop	Sell event	/	You've got nothing to sell!	{U}
+080B4168	Shop	Show the conversation	{U}
