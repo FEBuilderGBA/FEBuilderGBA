@@ -3473,6 +3473,12 @@ namespace FEBuilderGBA
                     {
                         break;
                     }
+                    if (frameData_UZ[i + 3] == 0x85)
+                    {
+                        FELint.Check85Command(errors, frameData_UZ, i, FELint.Type.BATTLE_ANIME, battleanime_baseaddress , id);
+                        continue;
+                    }
+                    
                     if (frameData_UZ[i + 3] != 0x86)
                     {
                         continue;

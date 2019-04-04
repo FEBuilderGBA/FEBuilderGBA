@@ -432,7 +432,7 @@ namespace FEBuilderGBA
             }
         }
 
-        //全データの取得
+        //エラーチェック
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             string name;

@@ -9436,8 +9436,8 @@ Drum Set
 :警告\r\nマップで再生する音楽は、SongTableのPriority(PlayerType)で、0x00010001を指定する必要があります。\r\n現在の設定:{0}
 Alert\r\nMusic to be played on the map must be Priority (PlayerType) of SongTable and 0x00010001 must be specified.\r\nCurrent setting: {0}
 
-:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00060006または、0x00070007を指定する必要があります。\r\n現在の設定:{0}
-Alert\r\nFor music to be used for sound effect, Priority (PlayerType) of SongTable, 0x00060006 or 0x00070007 must be specified.\r\nCurrent setting: {0}
+:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
+Alert\r\nMusic used for sound effects needs to specify a value greater than 0x00030003 in Priority (PlayerType) of SongTable.\r\nCurrent setting: {0}.
 
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
 Displays the instrument table that composes songs.\r\nNormally this doesn't need to be edited.\r\nUseful for developers.

@@ -6072,7 +6072,7 @@ namespace FEBuilderGBA
             return list;
         }
 
-        static void ExportEmbedFunction(PatchSt patch, Dictionary<string,uint> mapping)
+        static void ExportEmbedFunction(PatchSt patch, List<MappingConvert> mapping)
         {
             List<string> lines = new List<string>();
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -6093,7 +6093,8 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        mapping[scriptbin] = addr;
+
+                        MappingConvert.AddList(mapping, scriptbin, addr);
                     }
                 }
                 else if (pair.Key.IndexOf("EXPORT") == 0 )
@@ -6116,7 +6117,7 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        mapping["EXPORT_"+scriptbin] = addr;
+                        MappingConvert.AddList(mapping, "EXPORT_" + scriptbin, addr);
                     }
                 }
             }
@@ -6963,57 +6964,44 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.PatchList, loopI);
         }
 
-        void UpdateEmbedFunction(Dictionary<string, uint> mappingSRCEmbedFunction, Dictionary<string, uint> mappingDESTEmbedFunction, InputFormRef.AutoPleaseWait pleaseWait)
+        void UpdateEmbedFunction(
+              List<MappingConvert> mappingSRCEmbedFunction
+            , List<MappingConvert> mappingDESTEmbedFunction
+            , InputFormRef.AutoPleaseWait pleaseWait)
         {
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, "UpdateEmbedFunction");
             foreach (var src in mappingSRCEmbedFunction)
             {
-                string name = src.Key;
-                uint oldaddr = src.Value;
-                uint newaddr;
-                if (!mappingDESTEmbedFunction.TryGetValue(name, out newaddr))
-                {
+                if (src.OldValueList.Count <= 0)
+                {//参照されていないので書き換える必要もない
                     continue;
                 }
 
-                pleaseWait.DoEvents(R._("ポインタ更新しています。{0}: {1}->{2}",name,oldaddr,newaddr));
-                if (oldaddr == newaddr)
+                MappingConvert dest;
+                if (! MappingConvert.TryGet(mappingDESTEmbedFunction, src.Filename, out dest))
                 {
                     continue;
                 }
-
-                //何度も探索す るので本当はよくないが面倒なので気にしないことにした.
-                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
-                //影響を受けるポインタの書き換え.
-                for (int i = 0; i < movepointerlist.Count; i++)
+                if (src.Addr == dest.Addr)
                 {
-                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
-                    if (U.IsValueOdd(oldValue))
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
-                    }
-                    else
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
-                    }
-
-                    
+                    continue;
                 }
-                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1 ,isSilent: true ); //Thumb
-                //影響を受けるポインタの書き換え.
-                for (int i = 0; i < movepointerlist.Count; i++)
+                if (src.IsASM != dest.IsASM)
+                {//ASMだったものが、ASMでなくなっている
+                    Debug.Assert(false);
+                    continue;
+                }
+
+                pleaseWait.DoEvents(R.Notify("ポインタ更新しています。{0}: {1}->{2}",src.Filename, U.ToHexString8(src.Addr),U.ToHexString8(src.Addr) ));
+                foreach(var addr in src.OldValueList)
                 {
-                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
-                    if (U.IsValueOdd(oldValue))
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr | 1), undodata);
+                    uint oldValue = Program.ROM.p32(addr);
+                    if (oldValue != src.Addr)
+                    {//昔と値が違う. re-point時に書き換えられたのかも. 変更してはいけない.
+                        continue;
                     }
-                    else
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
-                    }
-                    
+
+                    Program.ROM.write_p32(addr, dest.Addr , undodata);
                 }
             }
 
@@ -7095,7 +7083,7 @@ namespace FEBuilderGBA
             }
         }
         void ExportPatchSetting(string tempdir
-            , Dictionary<string, uint> mappingSRCEmbedFunction
+            , List<MappingConvert> mappingSRCEmbedFunction
             , PatchSt patch
             )
         {
@@ -7117,7 +7105,7 @@ namespace FEBuilderGBA
             }
         }
         void ImportPatchSetting(string tempdir
-            , Dictionary<string, uint> mappingDESTEmbedFunction
+            , List<MappingConvert> mappingDESTEmbedFunction
             , PatchSt patch
             )
         {
@@ -7129,28 +7117,21 @@ namespace FEBuilderGBA
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
                 if (File.Exists(SkillAssignmentClassSkillSystem))
                 {
-                    
                     SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
                     File.Delete(SkillAssignmentClassSkillSystem);
-                    
                 }
                 if (File.Exists(SkillAssignmentUnitSkillSystem))
                 {
-                    
                     SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
                     File.Delete(SkillAssignmentUnitSkillSystem);
-                    
                 }
                 if (File.Exists(SkillConfigSkillSystem))
                 {
-                    
                     SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
                     File.Delete(SkillConfigSkillSystem);
-                    
                 }
                 
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
-                
             }
             else
             {
@@ -7160,6 +7141,53 @@ namespace FEBuilderGBA
             ExportEmbedFunction(patch, mappingDESTEmbedFunction);
         }
 
+        class MappingConvert
+        {
+            public string Filename { get; private set; } //マップするファイル名
+            public uint Addr{ get; private set; }        //マップされたアドレス
+            public List<uint> OldValueList { get; private set; }//書き換え対象のアドレス
+            public bool IsASM { get; private set; }
+
+            MappingConvert(string filename,uint addr,bool isASM, List<uint> oldValueList)
+            {
+                this.Filename = filename;
+                this.Addr = addr;
+                this.OldValueList = oldValueList;
+                this.IsASM = isASM;
+            }
+            static bool CheckASM(string filename)
+            {
+                return filename.IndexOf("ASMC_") >= 0 || filename.IndexOf("ASM_") >= 0;
+            }
+            public static void AddList(List<MappingConvert> list, string filename, uint oldaddr)
+            {
+                bool isASM = CheckASM(filename);
+                if (isASM)
+                {
+                    oldaddr = oldaddr | 1;
+                }
+                else
+                {
+                    oldaddr = DisassemblerTrumb.ProgramAddrToPlain(oldaddr);
+                }
+
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
+                list.Add(new MappingConvert(filename , U.toOffset(oldaddr),isASM , movepointerlist) );
+            }
+            public static bool TryGet(List<MappingConvert> list,string filename , out MappingConvert out_map)
+            {
+                foreach(var p in list)
+                {
+                    if (p.Filename == filename)
+                    {
+                        out_map = p;
+                        return true;
+                    }
+                }
+                out_map = null;
+                return false;
+            }
+        };
 
         //バージョンアップデート
         string UpdatePatchUI(PatchSt patch)
@@ -7189,7 +7217,7 @@ namespace FEBuilderGBA
             MakeDependsPatchList(uninstallOnlyList, patch, "UPDATE_UNINSTALL");
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
-                Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
+                List<MappingConvert> mappingSRCEmbedFunction = new List<MappingConvert>();
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
@@ -7234,31 +7262,26 @@ namespace FEBuilderGBA
                     }
                 }
                 ClearCheckIF();
-                Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
+
+                List<MappingConvert> mappingDESTEmbedFunction = new List<MappingConvert>();
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
                     foreach (var p in dependsList)
                     {
-                        
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
-                        
                     }
 
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
-                        
                         ImportPatchAll(p, tempdir.Dir);
-                        
                     }
                 }
 
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
-                    
                 }
             }
 

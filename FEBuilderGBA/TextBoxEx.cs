@@ -81,7 +81,7 @@ namespace FEBuilderGBA
                     }
 
                     //エラーがあれば枠の色を変える.
-                    if (_ErrorMessage.Length > 0 && _ToolTipEx != null)
+                    if (_ErrorMessage.Length > 0)
                     {
                         Pen pen = new Pen(OptionForm.Color_Error_ForeColor(), 3);
                         g.DrawRectangle(pen, this.ClientRectangle);

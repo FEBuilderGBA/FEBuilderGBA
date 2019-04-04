@@ -890,6 +890,20 @@ namespace FEBuilderGBA
                 return 0;
             }
         }
+
+        //エラーの赤枠を描画する.
+        public static void DrawErrorRectangle(Graphics g,bool isWithDraw,Rectangle listbounds)
+        {
+            if ( !isWithDraw)
+            {
+                return;
+            }
+
+            Pen pen = new Pen(OptionForm.Color_Error_ForeColor(), 3);
+            g.DrawRectangle(pen, listbounds);
+            pen.Dispose();
+        }
+
         public static Size DrawTextMulti(String text, Graphics g, Font font, SolidBrush brush, bool isWithDraw, Rectangle bounds)
         {
             Debug.Assert(bounds.Height > 0);

@@ -1,0 +1,3 @@
+Swift Stance: +4 speed[N]
+and resistance when[N]
+foe initiates battle.[X]

@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             this.AnimeList = new List<AnimeSt>();
             this.AnimeObj = new Dictionary<string, Bitmap>();
             this.AnimeBG = new Dictionary<string, Bitmap>();
-      
+
             this.DummyBitmap = ImageUtil.Blank(ImageUtilOAM.SCREEN_TILE_WIDTH_M1 * 8, ImageUtilOAM.SCREEN_TILE_HEIGHT * 8);
             {
                 U.SelectedIndexSafety(this.BattleFocus, 0);
@@ -45,7 +45,7 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 6)
                 {//FE6には背景は存在しない.
                     List<U.AddrResult> list = new List<U.AddrResult>();
-                    list.Add(new U.AddrResult(1,    R._("00 マップを表示")));
+                    list.Add(new U.AddrResult(1, R._("00 マップを表示")));
                     list.Add(new U.AddrResult(0x100, R._("100 パレット0")));
                     list.Add(new U.AddrResult(0x101, R._("101 黒単色")));
                     U.ConvertComboBox(list, ref this.BattleBG);
@@ -54,9 +54,9 @@ namespace FEBuilderGBA
                 else
                 {
                     List<U.AddrResult> list = ImageBattleBGForm.MakeList();
-                    list.Insert(0,new U.AddrResult(1, R._("00 マップを表示")));
-                    list.Insert(1,new U.AddrResult(0x100, R._("100 パレット0")));
-                    list.Insert(2,new U.AddrResult(0x101, R._("101 黒単色")));
+                    list.Insert(0, new U.AddrResult(1, R._("00 マップを表示")));
+                    list.Insert(1, new U.AddrResult(0x100, R._("100 パレット0")));
+                    list.Insert(2, new U.AddrResult(0x101, R._("101 黒単色")));
                     U.ConvertComboBox(list, ref this.BattleBG);
 
                     U.SelectedIndexSafety(this.BattleBG, 0x4 + 3 - 1);
@@ -79,29 +79,34 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 8)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x6F);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x6F);
                 }
                 else if (Program.ROM.RomInfo.version() == 7)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x6F);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x6F);
                 }
                 else
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x23);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x12);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x12);
                 }
                 InputFormRef.LoadComboResource(TargetEnemySection, U.ConfigDataFilename("battleanime_mode_"));
                 InputFormRef.LoadComboResource(PlayerUnitSection, U.ConfigDataFilename("battleanime_mode_"));
                 U.SelectedIndexSafety(this.TargetEnemySection, 0);
                 U.SelectedIndexSafety(this.PlayerUnitSection, 0);
             }
+            {
+                ToolTipEx tooltip = InputFormRef.GetToolTip<ToolAnimationCreatorForm>();
+                SoundInfo.SetToolTipEx(tooltip);
+                SkillSoundInfo.SetToolTipEx(tooltip);
+            }
 
             List<Control> controls = InputFormRef.GetAllControls(this);
-            InputFormRef.makeLinkEventHandler("", controls, Sound, SoundInfo, 0, "SONG", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, Sound, SoundInfo, 0, "SONG", new string[] { "SFX" });
             InputFormRef.makeLinkEventHandler("", controls, Sound, SoundPlaySoundButton, 0, "SONGPLAY", new string[] { });
 
-            InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillSoundInfo, 0, "SONG", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillSoundInfo, 0, "SONG", new string[] { "SFX" });
             InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillPlaySoundButton, 0, "SONGPLAY", new string[] { });
 
             //読みやすいようにコメントを入れます.
@@ -688,6 +693,12 @@ namespace FEBuilderGBA
                 bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
                 bitmap.Dispose();
                 maxHeight = Math.Max(maxHeight, b.Height);
+
+                string errorMessage = SongTableForm.GetErrorMessage(v , "SFX");
+                if (errorMessage != "")
+                {
+                    U.DrawErrorRectangle(g, isWithDraw, listbounds);
+                }
             }
             else if (code.type == AnimeStEnum.Image)
             {
@@ -2726,7 +2737,6 @@ namespace FEBuilderGBA
             uint sound = (uint)this.Sound.Value;
             InputFormRef.JumpForm<SongTableForm>(sound);
         }
-
 
 
 

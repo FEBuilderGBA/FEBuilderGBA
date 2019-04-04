@@ -1,0 +1,2 @@
+Even Rhythm: +10 Hit and Avoid[N]
+on even numbered turns.[X]

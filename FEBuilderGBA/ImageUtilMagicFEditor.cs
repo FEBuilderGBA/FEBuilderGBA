@@ -844,6 +844,7 @@ namespace FEBuilderGBA
                 {
                     if (frameData[i + 3] == 0x85)
                     {
+                        FELint.Check85Command(errors, frameData, i, FELint.Type.MAGIC_ANIME_EXTENDS, magic_baseaddress, magicindex);
                         continue;
                     }
                     //不明な命令.

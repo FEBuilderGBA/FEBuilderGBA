@@ -605,6 +605,27 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void Check85Command(List<FELint.ErrorSt> errors, byte[] frameData_UZ, uint offset,Type cond, uint addr, uint tag)
+        {
+            Debug.Assert(frameData_UZ[offset + 3] == 0x85); //0x85 コマンド
+            if (frameData_UZ[offset] == 0x48)
+            {//音楽再生
+                uint song_id = U.u16(frameData_UZ, offset + 1);
+                if (song_id <= 0)
+                {
+                    return ;
+                }
+
+                string errorMessage = SongTableForm.GetErrorMessage(song_id, "SFX");
+                if (errorMessage == "")
+                {
+                    return;
+                }
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , errorMessage + " " + R._("SongID: {0}", U.ToHexString(song_id)), tag));
+            }
+        }
+
         public static List<FELint.ErrorSt> HiddenErrorFilter(List<FELint.ErrorSt> errors)
         {
             for (int i = 0; i < errors.Count; )

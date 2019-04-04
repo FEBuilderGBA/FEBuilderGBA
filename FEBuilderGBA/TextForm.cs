@@ -1044,9 +1044,7 @@ namespace FEBuilderGBA
 
             if (code.Error != "")
             {
-                Pen pen = new Pen(OptionForm.Color_Error_ForeColor(), 3);
-                g.DrawRectangle(pen, listbounds);
-                pen.Dispose();
+                U.DrawErrorRectangle(g, isWithDraw, listbounds);
             }
 
             brush.Dispose();
