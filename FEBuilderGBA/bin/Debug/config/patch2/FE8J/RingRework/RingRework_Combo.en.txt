@@ -1,7 +1,7 @@
 0=None
 1=Poison
 2=Sleep
-3=Sirez
+3=Silence
 4=Berserk
 5=Attack
 6=Defence
