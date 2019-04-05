@@ -610,11 +610,19 @@ namespace FEBuilderGBA
             if (freeSpaceAddr + newSize + paddingSize> Program.ROM.Data.Length)
             {//ファイル末尾に追加するなどで、既存のデータ領域を超えてしまう場合は、データを延ばす.
                 paddingSize = 0; //末尾に入れる場合 paddingいる？
-                Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                bool isResizeSuccess  = Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
             if (freeSpaceAddr + paddingSize + movesize > Program.ROM.Data.Length)
             {//newSizeが元サイズより小さい場合???
-                Program.ROM.write_resize_data(freeSpaceAddr + paddingSize + movesize);
+                bool isResizeSuccess = Program.ROM.write_resize_data(freeSpaceAddr + paddingSize + movesize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
 
             //移動後の場所
@@ -730,7 +738,11 @@ namespace FEBuilderGBA
             if (freeSpaceAddr + newSize + paddingSize > Program.ROM.Data.Length)
             {//ファイル末尾に追加するなどで、既存のデータ領域を超えてしまう場合は、データを延ばす.
                 paddingSize = 0; //末尾に入れる場合 paddingいる？
-                Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                bool isResizeSuccess = Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
 
             //移動後の場所

@@ -193,7 +193,11 @@ namespace FEBuilderGBA
                 uint length = this.HexBox.getDataLength();
                 if (length > Program.ROM.Data.Length)
                 {
-                    Program.ROM.write_resize_data(length);
+                    bool isResizeSuccess = Program.ROM.write_resize_data(length);
+                    if (isResizeSuccess == false)
+                    {
+                        return ;
+                    }
                 }
             }
 

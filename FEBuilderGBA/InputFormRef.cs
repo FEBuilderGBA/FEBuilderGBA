@@ -8690,7 +8690,11 @@ namespace FEBuilderGBA
 
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             //文字列の書き込み
@@ -8784,7 +8788,11 @@ namespace FEBuilderGBA
             if ( U.Padding4(addr + original_size)  == Program.ROM.Data.Length)
             {
                 //ROMサイズを増設.
-                Program.ROM.write_resize_data(U.Padding4(addr + (uint)dataByte.Length) );
+                bool isResizeSuccess = Program.ROM.write_resize_data(U.Padding4(addr + (uint)dataByte.Length));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
 
                 Program.ROM.write_range(addr, dataByte, undodata);
                 return addr;
@@ -8816,7 +8824,11 @@ namespace FEBuilderGBA
             uint newFreeSapceAddr = freespace;
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
@@ -8947,11 +8959,19 @@ namespace FEBuilderGBA
                 uint newFreeSapceAddr = freespace;
                 if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
                 {//必要サイズがROMサイズを超えていたら増設する.
-                    Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                    bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                    if (isResizeSuccess == false)
+                    {
+                        return U.NOT_FOUND;
+                    }
                 }
                 if (newFreeSapceAddr + original_size > Program.ROM.Data.Length)
                 {//必要サイズがROMサイズを超えていたら増設する.
-                    Program.ROM.write_resize_data((uint)(newFreeSapceAddr + original_size));
+                    bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + original_size));
+                    if (isResizeSuccess == false)
+                    {
+                        return U.NOT_FOUND;
+                    }
                 }
 
                 //LDRとEVEVNT
@@ -9035,7 +9055,12 @@ namespace FEBuilderGBA
             uint newFreeSapceAddr = freespace;
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
+
                 //終端だったら気にしない.
                 use_null_term_data = false;
             }
@@ -9093,7 +9118,11 @@ namespace FEBuilderGBA
             //新規サイズ
             if (addr + size > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(addr + size));
+                bool isResizeSuccess  = Program.ROM.write_resize_data((uint)(addr + size));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             //文字列の書き込み

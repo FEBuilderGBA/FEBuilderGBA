@@ -1,5 +1,5 @@
 PUSH
-ORG 0x28eb4  //FE8J
+ORG 0x28eb4  //FE7U
 #incbin "RingRework.dmp"
 POIN RingRework_Table
 POP

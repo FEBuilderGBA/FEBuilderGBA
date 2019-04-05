@@ -186,6 +186,7 @@ namespace FEBuilderGBA
             }
             if (!U.isSafetyOffset(addr))
             {
+                this.AddressList.DummyAlloc(this.EventAsm.Count, this.AddressList.SelectedIndex);
                 return;
             }
 

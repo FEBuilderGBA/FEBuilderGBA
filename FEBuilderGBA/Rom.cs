@@ -586,11 +586,16 @@ namespace FEBuilderGBA
             Modified = true;
         }
 
-        public void write_resize_data(uint resize)
+        public bool write_resize_data(uint resize)
         {
             if (this.Data.Length == resize)
             {//サイズが同一なら何もしない
-                return;
+                return true;
+            }
+            if (resize > 0x02000000)
+            {
+                R.ShowStopError("32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}", U.ToHexString(resize));
+                return false;
             }
             if (Program.CommentCache != null)
             {
@@ -604,6 +609,8 @@ namespace FEBuilderGBA
             Array.Resize(ref _d, (int)U.Padding4(resize));
             this.Data = _d;
             Modified = true;
+
+            return true;
         }
         public void write_range(uint addr, byte[] write_data)
         {
@@ -846,7 +853,11 @@ namespace FEBuilderGBA
 
             if (newROMData.Length != this.Data.Length)
             {//長さが増える場合、ROMを増設する.
-                this.write_resize_data((uint)newROMData.Length);
+                bool isResizeSuccess = this.write_resize_data((uint)newROMData.Length);
+                if (isResizeSuccess == false)
+                {
+                    return false;
+                }
             }
             this.write_range(0, newROMData);
 

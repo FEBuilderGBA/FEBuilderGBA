@@ -20,8 +20,8 @@ MAX_EXPLANDS_SIZE=16
 
 //リストに表示されるのはマップ名です
 LISTNAME.ja=$COMBO RingRework_Combo.ja.txt
-LISTNAME.en=$COMBO:RingRework_Combo.en.txt
-LISTNAME.zh=$COMBO:RingRework_Combo.zh.txt
+LISTNAME.en=$COMBO RingRework_Combo.en.txt
+LISTNAME.zh=$COMBO RingRework_Combo.zh.txt
 
 //データを定義します
 B0:DECIMAL.ja=攻撃

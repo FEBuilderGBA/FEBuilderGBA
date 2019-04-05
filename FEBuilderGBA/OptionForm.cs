@@ -1199,6 +1199,7 @@ namespace FEBuilderGBA
             if (r != "")
             {
                 mid2agb.Text = r;
+                mid2agb_default.Checked = true;
             }
         }
 

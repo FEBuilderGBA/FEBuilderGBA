@@ -3228,7 +3228,11 @@ namespace FEBuilderGBA
 
             if (addr + b.Length > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(addr + b.Length));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(addr + b.Length));
+                if (isResizeSuccess == false)
+                {
+                    throw new SyntaxException(R.Error("32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}", U.To0xHexString((uint)(addr + b.Length))));
+                }
             }
 
             Program.ROM.write_range(addr, b, undodata);
