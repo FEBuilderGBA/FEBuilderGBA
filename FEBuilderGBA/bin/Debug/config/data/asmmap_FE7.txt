@@ -2055,7 +2055,7 @@
 0802848C	SetupBattleStructFromUnitAndWeapon	{U}
 080285D4	CopyUnitToBattleStruct	{U}
 080286B8	CopyUnitToBattleStructRawStats	{U}
-080286EE	WriteBattleStructTerrainBonuses	{U}
+080286F0	WriteBattleStructTerrainBonuses	{U}
 08028728	BattleSetupTerrainData	{U}
 0802896C	SetupBattleBallistaWeaponData	{U}
 080289B0	FillPreBattleStats	{U}
@@ -2883,7 +2883,7 @@
 08028918	SetupBattleStructFromUnitAndWeapon	{J}
 08028A60	CopyUnitToBattleStruct	{J}
 08028B44	CopyUnitToBattleStructRawStats	{J}
-08028B7A	WriteBattleStructTerrainBonuses	{J}
+08028B7C	WriteBattleStructTerrainBonuses	{J}
 08028BB4	BattleSetupTerrainData	{J}
 08028DE8	SetupBattleBallistaWeaponData	{J}
 08028E2C	FillPreBattleStats	{J}
@@ -4732,3 +4732,21 @@
 0809B1C4	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	メイン	{U}
 0809ED34	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	1ユニット	{U}
 080178B4	GetROMItemStructPtr	{J}
+08028f8c	BattleLoadAttack	{J}
+080290f8	BattleLoadAvoid	{J}
+080291ec	BattleLoadDodge	{J}
+08028ea0	BattleApplyMiscBonuses	{J}
+08029364	BattleComputeBuffStatus	{J}
+080291f8	ComputeHit	{J}
+08029224	ComputeCrit	{J}
+08028EA0	BattleApplyMiscBonuses	{J}
+08034ba0	GetBallistaItemAt	{J}
+08028b10	BattleLoadAttack	{U}
+08028c50	BattleLoadAvoid	{U}
+08028d3c	BattleLoadDodge	{U}
+08028a24	BattleApplyMiscBonuses	{U}
+08028eb4	BattleComputeBuffStatus	{U}
+08028d48	ComputeHit	{U}
+08028d74	ComputeCrit	{U}
+08028A24	BattleApplyMiscBonuses	{U}
+080346c8	GetBallistaItemAt	{U}

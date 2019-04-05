@@ -7145,6 +7145,16 @@ r3=X tile position of menu of right	{U}
 0203A535	Right side with battle animation.Additional information flag 2.	{J}
 0203A536	Right side with battle animation.Additional information flag 3.	{J}
 0203A537	Right side with battle animation.Additional information flag 4.	{J}
+0203A542	Right side with battle animation.Attack	{J}
+0203A544	Right side with battle animation.Defence	{J}
+0203A546	Right side with battle animation.Speed	{J}
+0203A548	Right side with battle animation.Hit	{J}
+0203A54a	Right side with battle animation.Avoid	{J}
+0203A54c	Right side with battle animation.??	{J}
+0203A54e	Right side with battle animation.Crital	{J}
+0203A550	Right side with battle animation.Luck	{J}
+
+
 0203A534	Right side with battle animation.Additional information unknown 1.	{U}
 0203A535	Right side with battle animation.Additional information unknown 2.	{U}
 0203A536	Right side with battle animation.Additional information unknown 3.	{U}
@@ -7153,6 +7163,18 @@ r3=X tile position of menu of right	{U}
 0203A539	Right side with battle animation.Additional information flag 2.	{U}
 0203A53A	Right side with battle animation.Additional information flag 3.	{U}
 0203A53B	Right side with battle animation.Additional information flag 4.	{U}
+0203A535	Right side with battle animation.Additional information flag 2.	{J}
+0203A536	Right side with battle animation.Additional information flag 3.	{J}
+0203A537	Right side with battle animation.Additional information flag 4.	{J}
+0203A546	Right side with battle animation.Attack	{U}
+0203A548	Right side with battle animation.Defence	{U}
+0203A54a	Right side with battle animation.Speed	{U}
+0203A54c	Right side with battle animation.Hit	{U}
+0203A54e	Right side with battle animation.Avoid	{U}
+0203A550	Right side with battle animation.??	{U}
+0203A552	Right side with battle animation.Crital	{U}
+0203A554	Right side with battle animation.Luck	{U}
+
 //thanks hypergammaspaces
 //Class Change (Promotion)
 08B1271C	ccramify	PROCS	Promotion(Class Change)	{U}

@@ -1,0 +1,7 @@
+PUSH
+ORG 0x2AD90   //FE8U
+#incbin "RingRework.dmp"
+POIN RingRework_Table
+POP
+
+#include "RingRework_Table.event"
