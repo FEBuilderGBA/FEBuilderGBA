@@ -119,6 +119,8 @@
 0108=SE:エイルカリバー音1
 0109=SE:エイルカリバー音2
 010A=SE:Flux charging
+010C=SE:Ekkesachs Range Attack
+010D=SE:Sword of the seal Range Attack
 010E=SE:Live staff
 010F=SE:Live staff
 0110=SE:Relive staff
