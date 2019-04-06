@@ -7150,7 +7150,7 @@ r3=X tile position of menu of right	{U}
 0203A546	Right side with battle animation.Speed	{J}
 0203A548	Right side with battle animation.Hit	{J}
 0203A54a	Right side with battle animation.Avoid	{J}
-0203A54c	Right side with battle animation.??	{J}
+0203A54c	Right side with battle animation.Weapon Triangle Bonus	{J}
 0203A54e	Right side with battle animation.Crital	{J}
 0203A550	Right side with battle animation.Luck	{J}
 
@@ -7171,7 +7171,7 @@ r3=X tile position of menu of right	{U}
 0203A54a	Right side with battle animation.Speed	{U}
 0203A54c	Right side with battle animation.Hit	{U}
 0203A54e	Right side with battle animation.Avoid	{U}
-0203A550	Right side with battle animation.??	{U}
+0203A550	Right side with battle animation.Weapon Triangle Bonus	{U}
 0203A552	Right side with battle animation.Crital	{U}
 0203A554	Right side with battle animation.Luck	{U}
 

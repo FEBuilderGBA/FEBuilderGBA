@@ -7018,14 +7018,14 @@ r3=X tile position of menu of the right	{U}
 0203A535	右侧有战斗动画。附加信息标志2	{J}
 0203A536	右侧有战斗动画。附加信息标志3	{J}
 0203A537	右侧有战斗动画。附加信息标志4	{J}
-0203A542	戦闘アニメで右側。攻撃	{J}
-0203A544	戦闘アニメで右側。防衛	{J}
-0203A546	戦闘アニメで右側。速さ	{J}
-0203A548	戦闘アニメで右側。命中	{J}
-0203A54a	戦闘アニメで右側。回避	{J}
-0203A54c	戦闘アニメで右側。??	{J}
-0203A54e	戦闘アニメで右側。必殺	{J}
-0203A550	戦闘アニメで右側。幸運	{J}
+0203A542	Right side with battle animation.Attack	{J}
+0203A544	Right side with battle animation.Defence	{J}
+0203A546	Right side with battle animation.Speed	{J}
+0203A548	Right side with battle animation.Hit	{J}
+0203A54a	Right side with battle animation.Avoid	{J}
+0203A54c	Right side with battle animation.Weapon Triangle Bonus	{J}
+0203A54e	Right side with battle animation.Crital	{J}
+0203A550	Right side with battle animation.Luck	{J}
 
 0203A534	右侧有战斗动画。其他信息未知1	{U}
 0203A535	右侧有战斗动画。未知其他信息2	{U}
@@ -7040,7 +7040,7 @@ r3=X tile position of menu of the right	{U}
 0203A54a	Right side with battle animation.Speed	{U}
 0203A54c	Right side with battle animation.Hit	{U}
 0203A54e	Right side with battle animation.Avoid	{U}
-0203A550	Right side with battle animation.??	{U}
+0203A550	Right side with battle animation.Weapon Triangle Bonus	{U}
 0203A552	Right side with battle animation.Crital	{U}
 0203A554	Right side with battle animation.Luck	{U}
 

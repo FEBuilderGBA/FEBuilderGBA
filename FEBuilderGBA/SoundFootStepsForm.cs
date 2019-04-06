@@ -20,6 +20,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //switchを変更するので、保護を無効にする.
 
             ReInit(this.InputFormRef);
         }
