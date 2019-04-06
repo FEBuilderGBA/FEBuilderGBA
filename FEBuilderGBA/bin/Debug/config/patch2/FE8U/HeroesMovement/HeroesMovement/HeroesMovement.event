@@ -468,7 +468,7 @@ _p6CUnitPushAnim_rReturnLoop:
 	WORD 4 // Speed (don't try to put that to 8 or more because if you do you'll have a good chance of softlocking the game when using the movement commands)
 
 ALIGN 4
-_p6CSingleUnitMovementAnim:		//HINT=PROCS	ADD=8
+_p6CSingleUnitMovementAnim:		//HINT=PROCS	STRING="UnitMoveAnim"
 {
 
 #ifndef NDEBUG
@@ -496,7 +496,7 @@ __psName:
 }
 
 ALIGN 4
-_p6CSingleUnitPushAnim:		//HINT=PROCS
+_p6CSingleUnitPushAnim:		//HINT=PROCS	STRING="UnitPushAnim"
 {
 
 #ifndef NDEBUG

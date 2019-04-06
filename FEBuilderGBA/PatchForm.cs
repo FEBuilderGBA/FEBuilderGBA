@@ -4570,6 +4570,15 @@ namespace FEBuilderGBA
                         lastMatchAddr = U.Padding4(lastMatchAddr);
                         
                         uint addr = lastMatchAddr;
+                        if (data.BINData.Length > 0)
+                        {
+                            uint foundAddr = U.Grep(Program.ROM.Data, data.BINData, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                            if (foundAddr != U.NOT_FOUND)
+                            {
+                                addr = foundAddr;
+                            }
+                        }
+
                         uint length = ProcsScriptForm.CalcLengthAndCheck(addr);
                         if (length == U.NOT_FOUND)
                         {

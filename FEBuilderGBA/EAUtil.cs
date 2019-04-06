@@ -117,10 +117,35 @@ namespace FEBuilderGBA
             else if (orignalIine.IndexOf("HINT=PROCS", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 uint append = ParseAdd(orignalIine);
-                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.PROCS, append);
+                byte[] procsTopBIN = ParseProcs(orignalIine);
+                Data data = new Data(this.CurrentLabel, procsTopBIN, DataEnum.PROCS, append);
                 this.DataList.Add(data);
             }
+        }
+        byte[] ParseProcs(string orignalIine)
+        {
+            int pos = orignalIine.IndexOf("HINT=PROCS");
+            if (pos < 0)
+            {
+                return new byte[] { };
+            }
+            string str = orignalIine.Substring(pos);
+            str = U.cut(str, "\"", "\"");
+            if (str == "")
+            {
+                return new byte[] { };
+            }
+            byte[] needString =  Program.SystemTextEncoder.Encode(str);
+            uint hintStringAddr = U.Grep(Program.ROM.Data, needString, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            if (hintStringAddr == U.NOT_FOUND)
+            {
+                return new byte[] { };
+            }
+            byte[] needProcString = new byte[8] ;
+            U.write_u8(needProcString , 0 , 0x01);
+            U.write_p32(needProcString, 4, hintStringAddr);
 
+            return needProcString;
         }
         int FindJumpToHack(string line)
         {
