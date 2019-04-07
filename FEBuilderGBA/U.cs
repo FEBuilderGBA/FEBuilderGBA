@@ -945,6 +945,37 @@ namespace FEBuilderGBA
             return str.Split('\n').Length;
         }
 
+        public static bool BitmapSave(Bitmap bitmap, string saveToFile)
+        {
+            string errorMessage;
+            try
+            {
+                string ext = U.GetFilenameExt(saveToFile);
+                if (ext == ".PNG")
+                {
+                    bitmap.Save(saveToFile, System.Drawing.Imaging.ImageFormat.Png);
+                }
+                else
+                {
+                    bitmap.Save(saveToFile);
+                }
+                return true;
+            }
+            catch (ExternalException e)
+            {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
+                errorMessage = R.ExceptionToString(e);
+            }
+            catch (System.OutOfMemoryException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
+            catch (System.UnauthorizedAccessException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
+            R.ShowStopError(errorMessage);
+            return false;
+        }
 
         public static int DrawPicture(Bitmap pic, Graphics g, bool isWithDraw, Rectangle bounds)
         {

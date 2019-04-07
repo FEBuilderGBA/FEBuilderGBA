@@ -827,9 +827,7 @@ namespace FEBuilderGBA
                     //利用していないパレットを消す.
                     ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
 
-                    bitmap.Save(Path.Combine(basedir, imagefilename)
-                        , System.Drawing.Imaging.ImageFormat.Png);
-
+                    U.BitmapSave(bitmap, Path.Combine(basedir, imagefilename) );
                     string line = "1" + " " + imagefilename;
                     lines.Add(line);
                 }
@@ -875,8 +873,7 @@ namespace FEBuilderGBA
                         //利用していないパレットを消す.
                         ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
 
-                        bitmap.Save(Path.Combine(basedir, imagefilename)
-                            , System.Drawing.Imaging.ImageFormat.Png);
+                        U.BitmapSave(bitmap, Path.Combine(basedir, imagefilename));
 
                         animeHash[id] = bitmap;
                     }

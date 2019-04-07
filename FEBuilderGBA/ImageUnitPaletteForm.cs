@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         public ImageUnitPaletteForm()
         {
             InitializeComponent();
+            SetExplain();
             this.UNITCLASS_LIST.OwnerDraw(ListBoxEx.DrawUnitAndClassAndText, DrawMode.OwnerDrawFixed);
             if (Program.ROM.RomInfo.version()==8)
             {
@@ -35,6 +36,11 @@ namespace FEBuilderGBA
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);
+        }
+
+        void SetExplain()
+        {
+            this.PaletteOverradeALL.AccessibleDescription = R._("チェックされている場合、敵やNPCの時のパレットにも同じパレットに設定します。\r\nこのパレットを利用するユニットが、自軍以外で登場する場合は、それぞれのパレットも用意する必要があります。\r\n例えば、敵軍として登場する場合は、敵軍用のパレットを用意する必要があります。\r\nこのチェックがされている場合、自動的にそれらのパレットにも同じ値を設定します。");
         }
 
         public InputFormRef InputFormRef;
@@ -290,6 +296,10 @@ namespace FEBuilderGBA
             }
 
             int paletteIndex = this.PaletteIndexComboBox.SelectedIndex;
+            if (PaletteOverradeALL.Visible && PaletteOverradeALL.Checked)
+            {//全部同じパレットにする
+                paletteIndex = PaletteFormRef.OVERRAIDE_ALL_PALETTE;
+            }
             uint newAddr = PaletteFormRef.MakePaletteUIToROM(this, (uint)PALETTE_ADDRESS.Value, true, paletteIndex);
             if (newAddr == U.NOT_FOUND)
             {
@@ -370,6 +380,7 @@ namespace FEBuilderGBA
         private void PaletteIndexComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             PALETTE_POINTER_ValueChanged(null, null);
+            PaletteOverradeALL.Visible = (PaletteIndexComboBox.SelectedIndex == 0);
         }
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)

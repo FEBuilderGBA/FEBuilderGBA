@@ -3868,10 +3868,8 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-//                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
-//            ret.Save("err.png");
             return ret;
         }
 
@@ -3900,12 +3898,10 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-                //                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
             retBitmap.Dispose();
 
-            //            ret.Save("err.png");
             return ret;
         }
 
@@ -3946,12 +3942,10 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-//                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
             retBitmap.Dispose();
 
-//            ret.Save("err.png");
             return ret;
         }
 
@@ -4593,7 +4587,7 @@ namespace FEBuilderGBA
             Bitmap dummy = ImageUtil.Blank(width, height);
             ImageUtil.BlackOutUnnecessaryColors(dummy);
             string path = Path.Combine(basedir,basename);
-            dummy.Save(path);
+            U.BitmapSave(dummy, path);
             dummy.Dispose();
 
             return path;

@@ -3607,6 +3607,9 @@ Export AP
 :移動アイコン
 Moving Map Anime
 
+:チェックされている場合、敵やNPCの時のパレットにも同じパレットに設定します。\r\nこのパレットを利用するユニットが、自軍以外で登場する場合は、それぞれのパレットも用意する必要があります。\r\n例えば、敵軍として登場する場合は、敵軍用のパレットを用意する必要があります。\r\nこのチェックがされている場合、自動的にそれらのパレットにも同じ値を設定します。
+If checked, the enemy and NPC's palettes will also be set to the same palette.\r\nIf units using this pallet appear outside of palyer army, you will need to prepare each pallet as well.\r\nFor example, if the unit appear as an enemy army, you need to prepare a palette for the enemy army.\r\nIf this check is done, automatically set the same value to those palettes.
+
 :パレット領域が割り当てられていません。\r\nまずは、「新規パレット割り当て」ボタンを押して領域を確保してください。
 Palette area has not been allocated.\r\nFirst, please press the "New Palette Assessment" button to allocate the area.
 
@@ -3633,6 +3636,9 @@ Classes Using This Palette:
 
 :ポインタ
 Pointer
+
+:敵とNPC、グレーも同じ色に設定する
+Set the enemy, NPC, and gray to the same color.
 
 :独立
 Independence
@@ -8530,6 +8536,9 @@ Unable to decompress lz 77 palette.
 :パレットを解凍できません.
 Unable to decompress the palette.
 
+:無圧縮パレットなので、すべて同じパレットにすることはできません。
+It is an uncompressed palette, so it can not all be the same palette.
+
 :R:{0}, G:{1}, B:{2} (現在選択中)
 R:{0}, G:{1}, B:{2} (Currently selected)
 
@@ -8958,6 +8967,9 @@ GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, 
 
 :System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+
+:System.OutOfMemoryExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+A System.OutOfMemoryException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
 
 :警告
 Alert

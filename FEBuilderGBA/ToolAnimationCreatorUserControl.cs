@@ -994,7 +994,8 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+
+                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
                 }
             }
             File.WriteAllLines(filename, lines);
@@ -1129,7 +1130,8 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+
+                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
                 }
                 else if (code.type == AnimeStEnum.Loop)
                 {
@@ -1350,11 +1352,11 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
 
                     Debug.Assert(this.AnimeBG.ContainsKey(code.bg));
                     imagefullfilename = Path.Combine(basedir, code.bg);
-                    this.AnimeBG[code.bg].Save(imagefullfilename);
+                    U.BitmapSave(this.AnimeBG[code.bg], imagefullfilename);
                 }
                 else if (code.type == AnimeStEnum.Sound)
                 {

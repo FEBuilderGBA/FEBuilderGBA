@@ -1835,8 +1835,7 @@ namespace FEBuilderGBA
                         ImageUtil.BlackOutUnnecessaryColors(bitmap, palette_count);
 
                         framefilename = basename + seatnumber.ToString("000") + ".png";
-                        bitmap.Save(Path.Combine(basedir, framefilename)
-                            , System.Drawing.Imaging.ImageFormat.Png);
+                        U.BitmapSave(bitmap, Path.Combine(basedir, framefilename));
                         bitmap.Dispose();
                     }
                     else
@@ -2952,7 +2951,7 @@ namespace FEBuilderGBA
                         bitmap = ImageUtil.Copy(bitmap, 0, 0, SEAT_TILE_WIDTH * 8 + 8, SEAT_TILE_HEIGHT * 8);
                         ImageUtil.AppendPaletteMark(bitmap, palette_count);
                         ImageUtil.BlackOutUnnecessaryColors(bitmap, palette_count);
-                        bitmap.Save(imagefilename);
+                        U.BitmapSave(bitmap, imagefilename);
                         bitmap.Dispose();
                     }
                     //ポインタを相対番号に変換します.

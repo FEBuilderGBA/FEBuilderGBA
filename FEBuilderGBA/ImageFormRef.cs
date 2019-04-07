@@ -1435,14 +1435,9 @@ namespace FEBuilderGBA
                 Program.LastSelectedFilename.Save(self, "", save);
             }
 
-            string ext = U.GetFilenameExt(filename);
-            if (ext == ".BMP")
+            if (! U.BitmapSave(bitmap, filename) )
             {
-                bitmap.Save(filename);
-            }
-            else
-            {
-                bitmap.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
+                return "";
             }
             return filename;
         }

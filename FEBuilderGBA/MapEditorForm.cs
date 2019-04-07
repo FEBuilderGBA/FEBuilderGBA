@@ -1681,7 +1681,8 @@ this.MapObjImage);
 
             Bitmap mapchipset =  BuildMapchipSet();
             ImageUtil.BlackOutUnnecessaryColors(mapchipset, 5);
-            mapchipset.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+            U.BitmapSave(mapchipset, path);
+            mapchipset.Dispose();
         }
         
 
@@ -1793,14 +1794,14 @@ this.MapObjImage);
             {
                 Bitmap frontBitmap = (Bitmap)basemap.Clone();
                 ImageUtil.BlackOutUnnecessaryColors(frontBitmap, 5);
-                frontBitmap.Save(filename);
+                U.BitmapSave(frontBitmap, filename);
                 frontBitmap.Dispose();
             }
             {
                 Bitmap fogBitmap = ImageUtil.SwapPalette(basemap, 5, 0x10 * 5);
                 ImageUtil.BlackOutUnnecessaryColors(fogBitmap, 5);
                 string fogFilename = U.ChangeExtFilename(filename , ".png","_fog");
-                fogBitmap.Save(fogFilename);
+                U.BitmapSave(fogBitmap, fogFilename);
                 fogBitmap.Dispose();
             }
             basemap.Dispose();
