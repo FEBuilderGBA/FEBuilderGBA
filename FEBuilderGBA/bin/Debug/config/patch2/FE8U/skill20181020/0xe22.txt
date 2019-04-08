@@ -1,2 +1,0 @@
-Acrobat: All traversable[N]
-terrain costs 1 movement.[X]

@@ -1,2 +1,0 @@
-Opportunist: +4 damage[N]
-if the foe cannot counter.[X]

@@ -1,2 +1,0 @@
-Quick Draw: +4 Damage[N]
-when initiating battle.[X]

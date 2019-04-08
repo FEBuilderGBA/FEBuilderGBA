@@ -1,2 +1,0 @@
-Steal+: Unit can steal unequipped[N]
-weapons and staffs if con>weight.[X]

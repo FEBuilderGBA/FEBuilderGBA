@@ -1,2 +1,0 @@
-Spur Defense: Adjacent allies[N]
-take -4 physical damage.[X]

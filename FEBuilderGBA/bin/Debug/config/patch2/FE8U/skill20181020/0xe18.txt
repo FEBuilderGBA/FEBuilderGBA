@@ -1,2 +1,0 @@
-Move to opposite side of[N]
-an adjacent ally.[X]

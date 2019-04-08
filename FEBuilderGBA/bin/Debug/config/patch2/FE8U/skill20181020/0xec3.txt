@@ -1,2 +1,0 @@
-Steady Stance: +6 defense[N]
-when foe initiates battle.[X]

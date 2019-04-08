@@ -1,2 +1,0 @@
-Reposition: Allows unit to pull an[N]
-adjacent ally to its opposite side.[X]

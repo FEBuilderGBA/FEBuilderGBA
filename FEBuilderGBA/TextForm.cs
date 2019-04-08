@@ -2531,7 +2531,7 @@ namespace FEBuilderGBA
 		        ,"@001A","[Buy/Sell]"    ///No Translate
 		        ,"@001B","[ShopContinue]"    ///No Translate
                 ,"@001C","[SendToBack]"    ///No Translate
-                ,"@001D","[FastPrint]"    ///No Translate
+                ,"@001D","[FastPrint2]"    ///No Translate
                 ,"@001F","[.]"    ///No Translate
                 ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
                 ,"@0040","[@]"    ///No Translate  @を出す

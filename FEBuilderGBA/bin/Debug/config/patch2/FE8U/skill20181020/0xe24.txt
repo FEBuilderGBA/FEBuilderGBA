@@ -1,2 +1,0 @@
-Canto+: Can move again after[N]
-attacking and other actions.[X]

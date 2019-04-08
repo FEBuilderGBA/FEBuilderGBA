@@ -1,2 +1,0 @@
-Renewal: Restore 30% of max HP[N]
-at the start of each turn.[X]

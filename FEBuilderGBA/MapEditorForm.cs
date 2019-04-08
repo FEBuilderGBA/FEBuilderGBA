@@ -1188,7 +1188,7 @@ this.MapObjImage);
             return "";
         }
 
-        public static int FindStyle(List<MapEditConfst> mapceditonf, uint obj_plist,uint palette_plist,uint config_plist)
+        public static uint FindStyle(List<MapEditConfst> mapceditonf, uint obj_plist,uint palette_plist,uint config_plist)
         {
             for (int i = 0; i < mapceditonf.Count; i++)
             {
@@ -1197,10 +1197,10 @@ this.MapObjImage);
                    || mapceditonf[i].config_plist == config_plist
                     )
                 {
-                    return i;
+                    return (uint)i;
                 }
             }
-            return -1;
+            return U.NOT_FOUND;
         }
         //マップスタイルの検索
         public static int FindMapStyle(List<MapEditConfst> mapceditonf, MapSettingForm.PLists plists)
@@ -1249,7 +1249,7 @@ this.MapObjImage);
                 //最初の一行目からスタイルの検索
                 line = reader.ReadLine();
                 string[] sp = line.Split('-');
-                int newStyle = 0;
+                uint newStyle = (uint)MapStyle.SelectedIndex;
                 if (sp.Length >= 3)
                 {
                     line = sp[2].Trim();
@@ -1258,8 +1258,8 @@ this.MapObjImage);
                         uint obj_plist = U.atoh(line.Substring(0, 4));
                         uint palette_plist = U.atoh(line.Substring(4, 2));
                         uint config_plist = U.atoh(line.Substring(6, 2));
-                        int styleindex = FindStyle(this.MapEditConf, obj_plist, palette_plist, config_plist);
-                        if (styleindex >= 0)
+                        uint styleindex = FindStyle(this.MapEditConf, obj_plist, palette_plist, config_plist);
+                        if (styleindex != U.NOT_FOUND)
                         {
                             newStyle = styleindex;
                         }
@@ -1295,7 +1295,7 @@ this.MapObjImage);
 
                 PushUndo();
 
-                this.MapStyle.SelectedIndex = newStyle;
+                U.SelectedIndexSafety(this.MapStyle, newStyle);
                 this.MapWidth = width;
                 this.MapHeight = height;
                 this.MAR = newMAR;
@@ -1307,6 +1307,37 @@ this.MapObjImage);
             SetModified();
             return "";
         }
+        static uint StripStyle(string line)
+        {
+            System.Text.RegularExpressions.Match match =
+                RegexCache.Match(line, "([0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])");
+            if (match.Groups.Count <= 1)
+            {//ダメ元でatoh
+                return U.atoh(line);
+            }
+            string v = match.Groups[1].Value;
+            return U.atoh(v);
+        }
+
+        static uint StripTMXStyle(string line)
+        {
+            string l = U.cut(line, "name=\"", "\"");
+            return StripStyle(l);
+        }
+#if DEBUG
+        public static void TEST_StripTMXStyle_1()
+        {
+            string l = "<tileset firstgid=\"1\" name=\"FE8 - Village - 0e000f10\" tilewidth=\"16\" tileheight=\"16\">";
+            uint r = StripTMXStyle(l);
+            Debug.Assert(r == 0x0e000f10);
+        }
+        public static void TEST_StripTMXStyle_2()
+        {
+            string l = "<tileset firstgid=\"1\" name=\"0E000F10\" tilewidth=\"16\" tileheight=\"16\">";
+            uint r = StripTMXStyle(l);
+            Debug.Assert(r == 0x0e000f10);
+        }
+#endif
         //TMX形式の読み込み
         string LoadAsTMX(string mapfilename)
         {
@@ -1315,14 +1346,14 @@ this.MapObjImage);
                 string line;
                 line = U.skipLine(reader, "<tileset ");
 
-                uint style = U.atoh(U.cut(line, "name=\"", "\""));
+                uint style = StripTMXStyle(line);
                 uint obj_plist = U.ByteSwap16(style / 1000);
                 uint palette_plist = (style / 10) & 0xFF;
                 uint config_plist = style  & 0xFF;
 
-                int newStyle = 0;
-                int styleindex = FindStyle(this.MapEditConf, obj_plist, palette_plist, config_plist);
-                if (styleindex >= 0)
+                uint newStyle = (uint)this.MapStyle.SelectedIndex;
+                uint styleindex = FindStyle(this.MapEditConf, obj_plist, palette_plist, config_plist);
+                if (styleindex != U.NOT_FOUND)
                 {
                     newStyle = styleindex;
                 }
@@ -1350,7 +1381,7 @@ this.MapObjImage);
 
                 PushUndo();
 
-                this.MapStyle.SelectedIndex = newStyle;
+                U.SelectedIndexSafety(this.MapStyle, newStyle);
                 this.MapWidth = width;
                 this.MapHeight = height;
                 this.MAR = newMAR;
@@ -1532,8 +1563,8 @@ this.MapObjImage);
             //メインマップに戻す.
             U.ReSelectList(MAPCOMBO);
 
-            //マップスタイルが最初に戻ってしまうので、現在状態を保存する.
-            U.SelectedIndexSafety(MapStyle, mapStyle);
+            //マップスタイルが最初に戻ってしまうので、現在状態に戻す.
+            //U.SelectedIndexSafety(MapStyle, mapStyle);
 
             return "";
         }

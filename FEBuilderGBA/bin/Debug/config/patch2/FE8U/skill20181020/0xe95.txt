@@ -1,2 +1,0 @@
-Critical Force: Base critical is[N]
-Skl * 1.5.[X]

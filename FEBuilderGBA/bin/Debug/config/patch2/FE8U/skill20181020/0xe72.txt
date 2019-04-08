@@ -1,2 +1,0 @@
-Locktouch: Can open locks[N]
-without keys or picks.[X]

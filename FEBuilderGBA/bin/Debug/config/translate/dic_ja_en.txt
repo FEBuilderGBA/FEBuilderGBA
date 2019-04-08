@@ -3669,3 +3669,5 @@ and defeating an enemy.
 コマンダー	Harbinger
 勇王	the peerless warrior king
 穏健帝	the stalwart Silent Emperor
+エレシュキガル	Ereshkigal
+ルーチェ	Luse

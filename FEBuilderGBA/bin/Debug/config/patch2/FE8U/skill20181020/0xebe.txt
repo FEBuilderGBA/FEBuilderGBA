@@ -1,2 +1,0 @@
-Darting Stance: +6 speed[N]
-when foe initiates battle.[X]

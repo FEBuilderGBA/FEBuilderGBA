@@ -1,2 +1,0 @@
-Darting Blow: +5 Attack Speed[N]
-when initiating battle.[X]

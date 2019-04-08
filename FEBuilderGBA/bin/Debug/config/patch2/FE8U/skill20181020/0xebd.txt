@@ -1,3 +1,0 @@
-Bracing Stance: +4 defense[N]
-and resistance when[N]
-foe initiates battle.[X]

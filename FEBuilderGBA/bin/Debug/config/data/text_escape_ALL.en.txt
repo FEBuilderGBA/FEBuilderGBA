@@ -42,7 +42,7 @@
 @001A	Shop,Buy or Sell Selector[Buy/Sell]	{CHOOSE}
 @001B	Shop,Continue trading[ShopContinue]	{CHOOSE}
 @001C	[SendToBack]	{CHOOSE}
-@001D	Display a character string quickly 2 [FastPrint]	{SPEED}
+@001D	Display a character string quickly 2 [FastPrint2]	{SPEED}
 @001F	Fill in the string margin[.]	{DISPLAY}
 @0040	Display of @[@]	{DISPLAY}
 @0010	Loading the next Portrait [LoadFace]	{MOVE_LOAD}

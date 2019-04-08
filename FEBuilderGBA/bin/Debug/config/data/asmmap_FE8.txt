@@ -11750,3 +11750,7 @@
 080B4350	店	売る会話	/	売るものがねえじゃねえか	{U}
 080B4168	店	会話を表示	{U}
 0203f100	:0203f9FF	DebuffTable	{U}
+08006ED4	ParseTextEscape	テキスト中にあるエスケープシーケンの処理	{J}
+08007758	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{J}
+08006FD0	ParseTextEscape	テキスト中にあるエスケープシーケンの処理	{U}
+08007854	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{U}

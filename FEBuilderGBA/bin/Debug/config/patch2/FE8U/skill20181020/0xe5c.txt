@@ -1,2 +1,0 @@
-Spur Speed: Adjacent allies[N]
-gain +4 Attack Speed.[X]

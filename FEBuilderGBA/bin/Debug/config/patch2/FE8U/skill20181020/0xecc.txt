@@ -1,2 +1,0 @@
-Fortress Defense:[N]
-+5 Def, -3 Atk/Mag[X]

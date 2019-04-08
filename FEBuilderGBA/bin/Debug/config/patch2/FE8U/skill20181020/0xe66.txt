@@ -1,2 +1,0 @@
-Rally Skill: +4 Skill[N]
-to allies within 2 tiles.[X]

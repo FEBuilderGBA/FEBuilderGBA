@@ -1,2 +1,0 @@
-Canto: Can move again[N]
-after certain actions.[X]

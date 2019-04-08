@@ -1,2 +1,0 @@
-Tomebreaker: +50 Hit/Avo when[N]
-enemy has a tome equipped.[X]
