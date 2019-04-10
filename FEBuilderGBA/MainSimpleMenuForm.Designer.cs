@@ -69,6 +69,7 @@
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
@@ -104,7 +105,6 @@
             this.EventList = new FEBuilderGBA.ListBoxEx();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.MapListPanel.SuspendLayout();
             this.MapPanel.SuspendLayout();
@@ -451,6 +451,13 @@
             this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
             this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
             // 
+            // ToolUseFlagStripMenuItem6
+            // 
+            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
+            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
+            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
+            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
+            // 
             // FlagNameToolStripMenuItem
             // 
             this.FlagNameToolStripMenuItem.Name = "FlagNameToolStripMenuItem";
@@ -774,13 +781,6 @@
             this.MenuPanel.Size = new System.Drawing.Size(1574, 41);
             this.MenuPanel.TabIndex = 1;
             // 
-            // ToolUseFlagStripMenuItem6
-            // 
-            this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
-            this.ToolUseFlagStripMenuItem6.Size = new System.Drawing.Size(445, 32);
-            this.ToolUseFlagStripMenuItem6.Text = "利用フラグ一覧";
-            this.ToolUseFlagStripMenuItem6.Click += new System.EventHandler(this.ToolUseFlagStripMenuItem6_Click);
-            // 
             // MainSimpleMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -798,6 +798,7 @@
             this.Text = "簡易メニュー";
             this.Activated += new System.EventHandler(this.MainSimpleMenuForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFE8Form_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainSimpleMenuForm_FormClosed);
             this.Load += new System.EventHandler(this.MainSimpleMenuForm_Load);
             this.Resize += new System.EventHandler(this.MainSimpleMenuForm_Resize);
             this.menuStrip1.ResumeLayout(false);

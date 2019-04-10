@@ -11754,3 +11754,5 @@
 08007758	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{J}
 08006FD0	ParseTextEscape	テキスト中にあるエスケープシーケンの処理	{U}
 08007854	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{U}
+0808B824	LoadChapterTitlePalette	{J}
+080B083C	セーブスロット選択画面でのパレット選択	{J}

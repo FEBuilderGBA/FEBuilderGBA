@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Text;
+using Microsoft.Win32;
 
 namespace FEBuilderGBA
 {
@@ -36,6 +36,9 @@ namespace FEBuilderGBA
             Map.MapMouseDownEvent += MapMouseDownEvent;
             Map.MapDoubleClickEvent += MapDoubleClickEvent;
             U.SelectedIndexSafety(MAP_LISTBOX,0);
+
+            SystemEvents.SessionEnding +=
+                    new SessionEndingEventHandler(SystemEvents_SessionEnding);
         }
 
         private void UnitButton_Click(object sender, EventArgs e)
@@ -268,6 +271,14 @@ namespace FEBuilderGBA
 #endif
             if (! MainFormUtil.IsNotSaveYet(this))
             {
+                e.Cancel = true;
+            }
+        }
+
+        private void SystemEvents_SessionEnding(object sender, SessionEndingEventArgs e)
+        {
+            if (!MainFormUtil.IsNotSaveYet(this))
+            {//キャンセルをリクエスト
                 e.Cancel = true;
             }
         }
@@ -1471,6 +1482,12 @@ namespace FEBuilderGBA
                 return;
             }
             MAP_LISTBOX_SelectedIndexChanged(null, null);
+        }
+
+        private void MainSimpleMenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SystemEvents.SessionEnding -=
+                    new SessionEndingEventHandler(SystemEvents_SessionEnding);
         }
     }
 }
