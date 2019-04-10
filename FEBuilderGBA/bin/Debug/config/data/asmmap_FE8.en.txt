@@ -154,94 +154,6 @@
 080D63D8	VBlankIntrWait	{J}
 080D16DC	VBlankIntrWait	{U}
 
-// Spell Anmations
-//thumb
-//08056BC9	NoneSpellAnimation	void	int a1	{J}
-//08056C41	ThrowingAxeSpellAnimation	void	int a1	{J}
-//	08056F98	ArrowSpellAnimation	void	int a1	{J}
-//	08057120	Javelin1SpellAnimation	void	int a1	{J}
-//0805717C	Javelin2SpellAnimation	void	int a1	{J}
-//080571D8	Javelin3SpellAnimation	void	int a1	{J}
-//08057234	Javelin4SpellAnimation	void	int a1	{J}
-//08057290	Javelin5SpellAnimation	void	int a1	{J}
-//080572EC	Javelin6SpellAnimation	void	int a1	{J}
-//08057348	Javelin7SpellAnimation	void	int a1	{J}
-//080573A4	Javelin8SpellAnimation	void	int a1	{J}
-//08057400	Javelin9SpellAnimation	void	int a1	{J}
-//0805745C	Javelin10SpellAnimation	void	int a1	{J}
-//080574B8	Javelin11SpellAnimation	void	int a1	{J}
-//08057664	DancePlay1SpellAnimation	void	int a1	{J}
-//08057924	DancePlay2SpellAnimation	void	int a1	{J}
-//08057A6C	BalistaArrowSpellAnimation	void	int a1	{J}
-//08057C24	ExaccusWaveSpellAnimation	void	int a1	{J}
-//08057F84	SoSFireSpellAnimation	void	int a1	{J}
-//08058120	FlametongueSpellAnimation	void	int a1	{J}
-//0805843C	FaHolyDragonStoneSpellAnimation	void	int a1	{J}
-//08058584	IdunDarkDragonStoneSpellAnimation	void	int a1	{J}
-//08058B28	FireSpellAnimation	void	int a1	{J}
-//08058B6C	ElfireSpellAnimation	void	int a1	{J}
-//0805ABD8	ForblazeSpellAnimation	void	int a1	{J}
-//0805882C	ThunderSpellAnimation	void	int a1	{J}
-//0805979C	BoltingSpellAnimation	void	int a1	{J}
-//08059138	FimbulvetrSpellAnimation	void	int a1	{J}
-//08059BF0	AircaliburSpellAnimation	void	int a1	{J}
-//08059BF4	FluxSpellAnimation	void	int a1	{J}
-//0805A090	NosferatuSpellAnimation	void	int a1	{J}
-//0805A60C	LightningSpellAnimation	void	int a1	{J}
-//0805A838	PurgeSpellAnimation	void	int a1	{J}
-//0805BA78	AureolaSpellAnimation	void	int a1	{J}
-//0805B678	DivineSpellAnimation	void	int a1	{J}
-//0805C3D4	ApocalypseSpellAnimation	void	int a1	{J}
-//0805C3D8	EclipseSpellAnimation	void	int a1	{J}
-//0805CA38	FenrirSpellAnimation	void	int a1	{J}
-//0805D1D8	HealSpellAnimation	void	int a1	{J}
-//0805D328	MendSpellAnimation	void	int a1	{J}
-//0805D4CC	RecoverSpellAnimation	void	int a1	{J}
-//0805D670	PhysicSpellAnimation	void	int a1	{J}
-//0805DEC0	FortifySpellAnimation	void	int a1	{J}
-//0805DEF0	FortifyGreenSpellAnimation	void	int a1	{J}
-//0805E3B0	RestoreSpellAnimation	void	int a1	{J}
-//0805E650	SilenceSpellAnimation	void	int a1	{J}
-//0805E8E8	SleepSpellAnimation	void	int a1	{J}
-//0805EC08	HammerneSpellAnimation	void	int a1	{J}
-//0805EE84	BerserkSpellAnimation	void	int a1	{J}
-//0805F48C	BarrierSpellAnimation	void	int a1	{J}
-//0805F6F8	ShineSpellAnimation	void	int a1	{J}
-//0805FBE8	LunaSpellAnimation	void	int a1	{J}
-//080605A4	ExcaliburSpellAnimation	void	int a1	{J}
-//08060E70	GespenstSpellAnimation	void	int a1	{J}
-//080615C4	AuraSpellAnimation	void	int a1	{J}
-//08061BE0	LuceSpellAnimation	void	int a1	{J}
-//08062350	ErishkigalAnimation	void	int a1	{J}
-//08062AAC	FillaMight1SpellAnimation	void	int a1	{J}
-//08062AE8	NinisGraceSpellAnimation	void	int a1	{J}
-//08062B24	ThorIreSpellAnimation	void	int a1	{J}
-//08062B60	SetLitanySpellAnimation	void	int a1	{J}
-
-// Spell Animation Engine
-//arm
-//8002BCC	SpellCallBack	void *funcSequence, signed int callNum	{J}
-//804EC74	ScrollScreen	int a1, unsigned __int16 a2	{J}
-//80689D0	PlaySFX		int SFXID, int a2, int a3, int a4	{J}
-//80017E8	memClear2K	void	void *mem, int num	{J}
-//8001188	LCDIOMapSync	{J}
-//8001320	GetBGnCNTBufferAddr	u16*	u16 *result	{J}
-//80016C4	BGMapBGPaletteSync	void	{J}
-//8000FD4	SetBGMapSyncFlag	void	u8 flag	{J}
-//8000FF0	EnableBGMapSync	void	u8 n	{J}
-//8001034	EnableBGPaletteSync	void	{J}
-//8001048	DisablePaletteSync	void	{J}
-//800105C	OutputToBGPaletteBuffer	void	void *src, signed int paletteOffset, signed int len	{J}
-//80010CC	OutputToBGPaletteBufferWithAlpha	void	_WORD *src, signed int paletteOffset, int len, int alpha	{J}
-//	8003054	TileTransferInfoSync	void	{J}
-//	8002EB8	TileTransferInfoClear	void	{J}
-//	8002F54	TileTransferInfoAdd	void	void *src, void *dst, int len	{J}
-//	8002FD8	TileIntializeInfoAdd	void	void *src, void *dst, int len	{J}
-//	8003214	OAM1BufferSync	void	{J}
-//	80031BC	OAM2BufferSync void	{J}
-//	8003108	OAMBufferSyncInfoInitialize	void	int SpriteNum1	{J}
-//	80031A4	GetSpriteNum1	int	{J}
-//	8003264	SetOBJAttribute	void	int OBJIndex, __int16 Attribute0, __int16 Attribute1, __int16 Attribute2, __int16 RSParameter	{J}
 8012F94	OutputBitmapToVRAM	void	unsigned int *bitmap, void *dst	{J}
 8012EDC	OutputBitmapToVRAM	void	unsigned int *bitmap, void *dst	{U}
 8013008	AutoCopyOrDecompressImageToVRAM	void	_BYTE *src, int dst	{J}
@@ -1241,20 +1153,72 @@ r3=X tile position of menu of right	{U}
 08003EAC	GetStringTextCenteredPos	Returns pos of Text for given string to be center given arg length	r0=tile width	r1=String pointer	{J}
 08004374	DrawTextInline	Draws text on screen without *needing* a text struct	r0=Text Struct (0 for temporary), r1=Output tile pointer root	r2=color id	r3=local x start	[sp]=tile width	[sp+4]=String pointer	{J}
 
-@GameData@00	byte	nazo1
-@GameData@01	byte	6C Main 2 Skip Counted	(Main 2 6C Exec will be skipped if this is non 0)
-@GameData@02	byte	nazo2
-@GameData@03	byte	GameData State bitfield	&0x01:? &0x02:? &0x04:? &0x08:? &0x10:? &0x20:? &0x40:When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?) &0x80:?
-@GameData@04	short	VerticalCounter	(IOReg:04000006) state at end of last main loop iteration
-@GameData@0C	word	Current Real Camera Pos?
-@GameData@10	word	nazo3
-@GameData@14	word	Target Map Camera Pos?
-@GameData@18	word	nazo4
-@GameData@1C	word	Another Real Camera Pos?
-@GameData@20	word	ANOTHER Real Camera Pos.
-@GameData@24	word	Some Real Camera *Offset* (Used When Setting Up Backgrounds)
-0202BCB0	@GameData	GameData	{U}
-0202BCAC	@GameData	GameData	{J}
+@AiDecision@00	byte	decisionType;
+@AiDecision@01	byte	unitIndex
+@AiDecision@02	byte	xMovement
+@AiDecision@03	byte	yMovement
+@AiDecision@04	byte	pad_04
+@AiDecision@05	byte	pad_06
+@AiDecision@06	byte	unitTargetIndex
+@AiDecision@07	byte	usedItemSlot
+@AiDecision@08	byte	xOther
+@AiDecision@09	byte	yOther
+@AiDecision@0A	byte	decisionTaken
+
+@AiData@00	byte	aiUnits
+@AiData@74	byte	aiUnitIt
+@AiData@78	byte	cpOrderNext
+@AiData@79	byte	cpDecideNext
+@AiData@7A	byte	dangerMapActive
+@AiData@7B	byte	aiConfig
+@AiData@7C	byte	_pad7C
+@AiData@85	byte	highestBlueMov
+@AiData@86	byte	_pad86
+@AiData@90	@AiDecision	decision
+
+@ActionData@00	short	_u00
+@ActionData@06	short	unk6
+@ActionData@08	short	unk8
+@ActionData@0C	byte	subjectIndex
+@ActionData@0D	byte	targetIndex
+@ActionData@0E	byte	xMove
+@ActionData@0F	byte	xMove
+@ActionData@10	byte	moveCount
+@ActionData@11	byte	unitActionType
+@ActionData@12	byte	itemSlotIndex
+@ActionData@13	byte	xOther
+@ActionData@14	byte	yOther
+@ActionData@15	byte	trapType
+@ActionData@16	byte	suspendPointType
+
+@Vec2@00	short	x
+@Vec2@02	short	y
+@Vec2l@00	word	x
+@Vec2l@04	word	y
+@Vec2u@00	short	x_unsigned
+@Vec2u@02	short	y_unsigned
+@Vec2lu@00	word	x_unsigned
+@Vec2lu@04	word	y_unsigned
+
+@BattleMapState@00	byte	boolMainLoopEnded
+@BattleMapState@01	byte	proc2LockCount
+@BattleMapState@02	byte	gfxLockCount
+@BattleMapState@03	byte	_unk03
+@BattleMapState@04	byte	statebits
+@BattleMapState@06	short	savedVCount
+@BattleMapState@08	word	_unk08
+@BattleMapState@08	@Vec2u	cameraRealPos
+@BattleMapState@0C	@Vec2u	cameraRealPos
+@BattleMapState@10	@Vec2u	_unk10
+@BattleMapState@14	@Vec2u	cursorMapPos
+@BattleMapState@18	@Vec2u	cursorMapPosPrev
+@BattleMapState@1C	@Vec2u	_unk1C
+@BattleMapState@20	@Vec2u	cursorDisplayRealPos
+@BattleMapState@24	@Vec2u	_unk24
+@BattleMapState@28	byte	_pad28
+@BattleMapState@3c	byte	_pad3c
+@BattleMapState@3d	byte	partialActionTaken
+
 @KeyStatusBuffer@00	byte	FirstTickDelay
 @KeyStatusBuffer@01	byte	NextTickDelay
 @KeyStatusBuffer@02	byte	TickDownCounter	(decreased by one each frame, reset to FirstTickDelay when Presses change and NextTickDelay when reaches 0)
@@ -1347,22 +1311,22 @@ r3=X tile position of menu of right	{U}
 @MapSize@2	short	Height
 0202E4D4	@MapSize	MapSize	{U}
 0202E4D0	@MapSize	MapSize	{J}
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
-0203A4D4	@AttackerBattleStruct	AttackerBattleStruct	{U}
-0203A4D0	@AttackerBattleStruct	AttackerBattleStruct	{J}
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
-0203A5EC	@DefenderBattleStruct	DefenderBattleStruct	{U}
-0203A5E8	@DefenderBattleStruct	DefenderBattleStruct	{J}
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	@Unit	taUnitA
+@BattleStats@14	@Unit	taUnitB
+0203A4D4	@BattleStats	BattleStats	{U}
+0203A4D0	@BattleStats	BattleStats	{J}
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 @ActionBattleStruct@06	byte	Apparently sometimes has item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
 @ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
@@ -1404,7 +1368,9 @@ r3=X tile position of menu of right	{U}
 @ChapterData@44	word	Unk44
 @ChapterData@48	short	Unk48
 @ChapterData@4A	short	Unk4A
-0202BCF0	@ChapterData	ChapterData	{U}
+0202BCF0	@ChapterData	gChapterData	{U}
+0202BCEC	@ChapterData	gChapterData	{J}
+
 @CharacterBattleStatistic@00	byte	Losses
 @CharacterBattleStatistic@01	short	Number of times a unit performs an action (seems to increase by 2) (non-aligned halfword)
 @CharacterBattleStatistic@03	byte	Number of times selected (caps at 199)
@@ -1574,9 +1540,6 @@ r3=X tile position of menu of right	{U}
 
 08016FB8	Heal_Amount_Getter	RET=Amount to heal	r0=ram char data ptr	r1=item id/uses	{U}
 08016D60	Heal_Amount_Getter	RET=Amount to heal	r0=ram char data ptr	r1=item id/uses	{J}
-
-080177F4	Clear_Character_Data	Clears a person's ram character struct except for allegiance byte	r0=ram char data ptr	{U}
-0801759C	Clear_Character_Data	Clears a person's ram character struct except for allegiance byte	r0=ram char data ptr	{J}
 
 
 080178D8	Set_Character_Status	Orr's status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{U}
@@ -1975,10 +1938,54 @@ r3=X tile position of menu of right	{U}
 0203E18C	RAM pointer to unit data to attacker (0203A56C(Left) or 0203A4EC(Right))	{U}
 0203E184	RAM pointer to unit data to defenser (0203a568(Left) or 0203a4e8(Right))	{J}
 0203E188	RAM pointer to unit data to defenser (0203A56C(Left) or 0203A4EC(Right))	{U}
-0203a4e8	@Unit	Copy unit data of Right	{J}
-0203A4EC	@Unit	Copy unit data of Right	{U}
-0203a568	@Unit	Copy unit data of Left	{J}
-0203A56C	@Unit	Copy unit data of Left	{U}
+
+@BattleUnit@00	@Unit	CopyUnit
+@BattleUnit@48	short	weapon
+@BattleUnit@4A	short	weaponBefore
+@BattleUnit@4C	word	weaponAttributes
+@BattleUnit@50	byte	weaponType
+@BattleUnit@51	byte	weaponSlotIndex
+@BattleUnit@52	byte	canCounter
+@BattleUnit@53	byte	wTriangleHitBonus
+@BattleUnit@54	byte	wTriangleDmgBonus
+@BattleUnit@55	byte	terrainId
+@BattleUnit@56	byte	terrainDefense
+@BattleUnit@57	byte	terrainAvoid
+@BattleUnit@58	byte	terrainResistance
+@BattleUnit@59	byte	pad
+@BattleUnit@5a	short	battleAttack
+@BattleUnit@5c	short	battleDefense
+@BattleUnit@5e	short	battleSpeed
+@BattleUnit@60	short	battleHitRate
+@BattleUnit@62	short	battleAvoidRate
+@BattleUnit@64	short	battleEffectiveHitRate
+@BattleUnit@66	short	battleCritRate
+@BattleUnit@68	short	battleDodgeRate
+@BattleUnit@6a	short	battleEffectiveCritRate
+@BattleUnit@6c	short	battleSilencerRate
+@BattleUnit@6e	byte	expGain
+@BattleUnit@6f	byte	statusOut
+@BattleUnit@70	byte	levelPrevious
+@BattleUnit@71	byte	expPrevious
+@BattleUnit@72	byte	hpInitial
+@BattleUnit@73	byte	changeHP
+@BattleUnit@74	byte	changePow
+@BattleUnit@75	byte	changeSkl
+@BattleUnit@76	byte	changeSpd
+@BattleUnit@77	byte	changeDef
+@BattleUnit@78	byte	changeRes
+@BattleUnit@79	byte	changeLck
+@BattleUnit@7a	byte	changeCon
+@BattleUnit@7b	byte	wexpMultiplier
+@BattleUnit@7c	byte	nonZeroDamage
+@BattleUnit@7d	byte	weaponBroke
+@BattleUnit@7e	byte	hasItemEffectTarget
+@BattleUnit@7f	byte	pad7f
+
+0203a4e8	@BattleUnit	gBattleActor	Copy unit data of Right	{J}
+0203A4EC	@BattleUnit	gBattleActor	Copy unit data of Right	{U}
+0203a568	@BattleUnit	gBattleTarget	Copy unit data of Left	{J}
+0203A56C	@BattleUnit	gBattleTarget	Copy unit data of Left	{U}
 
 //Circles\ASM\Modular Stat Screens\mss_defs.s
 080870BC	Stat Screens DrawBar	{U}
@@ -2085,24 +2092,46 @@ r3=X tile position of menu of right	{U}
 @ROMTCSFrameData@02	short	xScale
 @ROMTCSFrameData@04	short	yScale
 
-@TheConfusingStruct@00	&ROMTCS	Pointer to ROMTCS
-@TheConfusingStruct@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
-@TheConfusingStruct@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
-@TheConfusingStruct@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
-@TheConfusingStruct@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
-@TheConfusingStruct@14	pointer	Pointer Current Rot/Scale Data
-@TheConfusingStruct@18	short	Cycle Timer
-@TheConfusingStruct@1A	short	Cycle Time Step (0x100 is one frame)
-@TheConfusingStruct@1C	short	Sub frame time offset or something
-@TheConfusingStruct@1E	short	OAM Index?
-@TheConfusingStruct@20	byte	bool defining whether gfx needs update
-@TheConfusingStruct@21	byte	Rotation/Scale OAM Index
-@TheConfusingStruct@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
-@TheConfusingStruct@24	pointer	Gfx Pointer
+@APHandle@00	&ROMTCS	Pointer to ROMTCS
+@APHandle@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
+@APHandle@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
+@APHandle@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
+@APHandle@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
+@APHandle@14	pointer	Pointer Current Rot/Scale Data
+@APHandle@18	short	Cycle Timer
+@APHandle@1A	short	Cycle Time Step (0x100 is one frame)
+@APHandle@1C	short	Sub frame time offset or something
+@APHandle@1E	short	OAM Index?
+@APHandle@20	byte	bool defining whether gfx needs update
+@APHandle@21	byte	Rotation/Scale OAM Index
+@APHandle@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
+@APHandle@24	pointer	Gfx Pointer
 
-03000108	TheConfusingStruct	{U}
-03000100	TheConfusingStruct	{J}
+03000108	@APHandle	gApPool	{U}
+03000100	@APHandle	gApPool	{J}
 
+@AnimationInterpreter@00	short	state
+@AnimationInterpreter@02	short	xPosition
+@AnimationInterpreter@04	short	yPosition
+@AnimationInterpreter@06	short	delayTimer
+@AnimationInterpreter@08	short	oam2base
+@AnimationInterpreter@0a	short	drawLayerPriority
+@AnimationInterpreter@0c	short	state2
+@AnimationInterpreter@0e	short	nextRoundId
+@AnimationInterpreter@10	short	state3
+@AnimationInterpreter@12	byte	currentRoundType
+@AnimationInterpreter@13	byte	frameIndex
+@AnimationInterpreter@14	byte	queuedCommandCount
+@AnimationInterpreter@15	byte	commandQueue
+@AnimationInterpreter@20	word	pCurrentFrame
+@AnimationInterpreter@24	word	pStartFrame
+@AnimationInterpreter@28	word	pUnk28
+@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@30	word	pStartObjData
+@AnimationInterpreter@34	@AnimationInterpreter pPrev
+@AnimationInterpreter@38	@AnimationInterpreter pNext
+@AnimationInterpreter@40	@AnimationInterpreter pUnk40
+@AnimationInterpreter@44	@AnimationInterpreter pUnk44
 
 03000008	Call blah and put value??	{U}
 030000E8	render_info: for cutscenes.	{U}
@@ -2142,7 +2171,6 @@ r3=X tile position of menu of right	{U}
 //Zane's Stuff\Doc\Master MMB Doc.txt
 02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will BG Maps be written to.	{U}
 0808CCC8	MMBSetup	This is main routine for setting up minimug box. It determines where to put box and things on it.	{U}
-0202BCB0	MiscRAMData	This section of memory has information on cursor position,  phases, chapter number, gold, and a bunch of other things	{U}
 0202E4D8	BaseRowPointer	This is part of a system for getting elements on map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to first 'row pointer'. .set value above is this pointer to first row pointer. I think an example would demonstrate better.	{U}
 08A01828	Table of bytes, either 0x00, 0x01, or 0xFF for determining position of windows such as  minimug box, goal window, or terrain window	{U}
 08A018AC	MMBStructType	This is type of 0x6C struct used when drawing box.	{U}
@@ -2535,13 +2563,13 @@ r3=X tile position of menu of right	{U}
 08004b94	DrawDecNumber	{U}
 08004e40	AIS_ExecAll	{U}
 08004eb8	ClearAISArray	{U}
-08004f48	AIS_New	{U}
+08004f48	AIS_New	RET=@AnimationInterpreter	{U}
 08004fac	AISArray_Sort	{U}
-08005004	AIS_Free	{U}
-08005034	AIS_Display	{U}
+08005004	AIS_Free	r0=@AnimationInterpreter	{U}
+08005034	AIS_Display	r0=@AnimationInterpreter	{U}
 08005040	HandleNextAISFrame	{U}
 080051c0	LinkAIS	{U}
-08005208	_AIS_Display	{U}
+08005208	_AIS_Display	r0=@AnimationInterpreter	{U}
 08005458	FlushIntermediateOAMBuffer	{U}
 08005514	GetPortraitStructPointer	{U}
 08005528	ResetFaces	{U}
@@ -2898,10 +2926,10 @@ r3=X tile position of menu of right	{U}
 08017798	GetItemWExp	{U}
 080177b0	GetROMItemStructPtr	{U}
 080177c4	ClearUnits	{U}
-080177f4	ClearUnitStruct	{U}
-0801781c	CopyUnitStruct	{U}
-08017838	GetNextFreeUnitStructPtr	{U}
-08017870	GetNextFreePlayerUnitStruct	{U}
+080177f4	ClearUnitStruct	r0=@Unit	{U}
+0801781c	CopyUnitStruct	r0=@Unit	r1=@Unit	{U}
+08017838	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{U}
+08017870	GetNextFreePlayerUnitStruct	RET=@Unit	{U}
 080178a8	GetUnitFogViewRange	{U}
 080178d8	SetUnitNewStatus	{U}
 080178f4	WriteUnitStatusDuration	{U}
@@ -3641,7 +3669,7 @@ r3=X tile position of menu of right	{U}
 08058bc8	BattleAIS_ExecCommands	{U}
 0805990c	NewEkrChienCHR	{U}
 0805993c	RegisterAISSheetGraphics	{U}
-0805a16c	GetAISSubjectId	{U}
+0805a16c	GetAISSubjectId	r0=@AnimationInterpreter	{U}
 0805a184	GetSomeBoolean	{U}
 0805a2b4	GetCoreAIStruct	{U}
 0805a310	GetSomeAISRelatedIndexMaybe	{U}
@@ -4351,13 +4379,13 @@ r3=X tile position of menu of right	{U}
 08004A9C	DrawDecNumber	{J}
 08004D48	AIS_ExecAll	{J}
 08004DC0	ClearAISArray	{J}
-08004E50	AIS_New	{J}
+08004E50	AIS_New	RET=@AnimationInterpreter	{J}
 08004EB4	AISArray_Sort	{J}
-08004F0C	AIS_Free	{J}
-08004F3C	AIS_Display	{J}
+08004F0C	AIS_Free	r0=@AnimationInterpreter	{J}
+08004F3C	AIS_Display	r0=@AnimationInterpreter	{J}
 08004F48	HandleNextAISFrame	{J}
 080050C8	LinkAIS	{J}
-08005110	_AIS_Display	{J}
+08005110	_AIS_Display	r0=@AnimationInterpreter	{J}
 08005360	FlushIntermediateOAMBuffer	{J}
 0800541C	GetPortraitStructPointer	{J}
 08005430	ResetFaces	{J}
@@ -4695,10 +4723,10 @@ r3=X tile position of menu of right	{U}
 08017540	GetItemWExp	{J}
 08017558	GetROMItemStructPtr	{J}
 0801756C	ClearUnits	{J}
-0801759C	ClearUnitStruct	{J}
-080175C4	CopyUnitStruct	{J}
-080175E0	GetNextFreeUnitStructPtr	{J}
-08017618	GetNextFreePlayerUnitStruct	{J}
+0801759C	ClearUnitStruct	r0=@Unit	{J}
+080175C4	CopyUnitStruct	r0=@Unit	r1=@Unit	{J}
+080175E0	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{J}
+08017618	GetNextFreePlayerUnitStruct	RET=@Unit	{J}
 08017650	GetUnitFogViewRange	{J}
 08017680	SetUnitNewStatus	{J}
 0801769C	WriteUnitStatusDuration	{J}
@@ -5427,7 +5455,7 @@ r3=X tile position of menu of right	{U}
 080599F8	BattleAIS_ExecCommands	{J}
 0805A6B0	NewEkrChienCHR	{J}
 0805A6E0	RegisterAISSheetGraphics	{J}
-0805AF10	GetAISSubjectId	{J}
+0805AF10	GetAISSubjectId	r0=@AnimationInterpreter	{J}
 0805AF28	GetSomeBoolean	{J}
 0805B058	GetCoreAIStruct	{J}
 0805B0B4	GetSomeAISRelatedIndexMaybe	{J}
@@ -6867,20 +6895,7 @@ r3=X tile position of menu of right	{U}
 02028f78	gAISArray	{U}
 0202a68c	gFaceGfxData	{U}
 0202b6b0	gPaletteFadeBuffer	{U}
-0202bcb0	gMainLoopEndedFlag	{U}
-0202bcb1	gGameLogicSemaphore	{U}
-0202bcb2	gGameGfxSemaphore	{U}
-0202bcb4	gGameStatebits	{U}
-0202bcb6	gSavedVCLY	{U}
-0202bcbc	gCurrentRealCameraPos	{U}
-0202bcc4	gCursorMapPosition	{U}
-0202bccc	gSomeRealCameraPosition	{U}
-0202bcd0	gCursorDisplayPosition	{U}
-0202bcd4	gSomeRealCameraOffset	{U}
-0202bcd8	gSomeRealCameraOffsetTarget	{U}
-0202bcdc	gItemGotButNotYet	{U}
-0202bcde	gThatsAnItem2	{U}
-0202bcf0	gChapterData	{U}
+0202bcb0	@BattleMapState	gGameState	{U}
 0202bd3c	gPreviousCursorDisplayPosition	{U}
 0202bd40	gCursorAnimationClockReference	{U}
 0202bd44	gSomeCameraMovementTableMaybe	{U}
@@ -6914,7 +6929,7 @@ r3=X tile position of menu of right	{U}
 0203a4c8	gSMSHandleIt	{U}
 0203a4cc	gSMSSyncFlag	{U}
 0203a4d0	gMapSpriteSwitchHoverTimer	{U}
-0203a5ec	gRoundArray	{U}
+0203a5ec	@BattleRound	gRoundArray	{U}
 0203a608	gpCurrentRound	{U}
 0203a610	gpTradeMenuProc	{U}
 0203a814	gTrapArrayBack	{U}
@@ -6922,8 +6937,8 @@ r3=X tile position of menu of right	{U}
 0203a8e8	gpSomeUnitIt	{U}
 0203a8ec	gSomeUnitCounter	{U}
 0203a910	gArenaOpponent	{U}
-0203a958	gActionData	{U}
-0203aa04	gAiData	{U}
+0203a958	@ActionData	gActionData	{U}
+0203aa04	@AiData	gAiData	{U}
 0203dde8	gTargetPosition	{U}
 0203ddec	gTargetArray	{U}
 0203e0ec	gTargetArraySize	{U}
@@ -6994,20 +7009,7 @@ r3=X tile position of menu of right	{U}
 02028F74	gAISArray	{J}
 0202A688	gFaceGfxData	{J}
 0202B6AC	gPaletteFadeBuffer	{J}
-0202BCAC	gMainLoopEndedFlag	{J}
-0202BCAD	gGameLogicSemaphore	{J}
-0202BCAE	gGameGfxSemaphore	{J}
-0202bcb0	gGameStatebits	{J}
-0202bcb2	gSavedVCLY	{J}
-0202bcb8	gCurrentRealCameraPos	{J}
-0202bcc0	gCursorMapPosition	{J}
-0202bcc8	gSomeRealCameraPosition	{J}
-0202BCCC	gCursorDisplayPosition	{J}
-0202bcd0	gSomeRealCameraOffset	{J}
-0202bcd4	gSomeRealCameraOffsetTarget	{J}
-0202bcd8	gItemGotButNotYet	{J}
-0202BCDA	gThatsAnItem2	{J}
-0202BCEC	gChapterData	{J}
+0202BCAC	@BattleMapState	gGameState	{J}
 0202bd38	gPreviousCursorDisplayPosition	{J}
 0202bd3c	gCursorAnimationClockReference	{J}
 0202BD40	gSomeCameraMovementTableMaybe	{J}
@@ -7041,7 +7043,7 @@ r3=X tile position of menu of right	{U}
 0203A4C4	gSMSHandleIt	{J}
 0203A4C8	gSMSSyncFlag	{J}
 0203A4CC	gMapSpriteSwitchHoverTimer	{J}
-0203A5E8	gRoundArray	{J}
+0203A5E8	@BattleRound	gRoundArray	{J}
 0203A604	gpCurrentRound	{J}
 0203A60C	gpTradeMenuProc	{J}
 0203A810	gTrapArrayBack	{J}
@@ -7049,8 +7051,8 @@ r3=X tile position of menu of right	{U}
 0203A8E4	gpSomeUnitIt	{J}
 0203A8E8	gSomeUnitCounter	{J}
 0203A90C	gArenaOpponent	{J}
-0203A954	gActionData	{J}
-0203AA00	gAiData	{J}
+0203A954	@ActionData	gActionData	{J}
+0203AA00	@AiData	gAiData	{J}
 0203DDE4	gTargetPosition	{J}
 0203DDE8	gTargetArray	{J}
 0203E0E8	gTargetArraySize	{J}
@@ -8828,7 +8830,7 @@ r3=X tile position of menu of right	{U}
 086A5698	&PALETTE	Something's palette	250	unused	{J}
 086A56B8	&PALETTE	Something's palette	251	unused	{J}
 086A56D8	&PALETTE	Something's palette	252	unused	{J}
-086A56F8	&PALETTE	Something's palette	253	{J}
+086A56F8	&PALETTE16	Something's palette	253	{J}
 086A58F8	&LZ77	Image of something	1	unused	{J}
 086A5E7C	:086A66DB	Unknown	Unused data	1	{J}
 086AB620	:086AB9DB	Unknown	Unused data	2	{J}

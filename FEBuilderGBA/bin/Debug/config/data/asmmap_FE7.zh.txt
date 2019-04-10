@@ -975,20 +975,22 @@
 @MapSize@2	short	Height
 0202E3D8	@MapSize	MapSize	{U}
 0202E3D4	@MapSize	MapSize	{J}
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
-0203A3D8	@AttackerBattleStruct	AttackerBattleStruct	{U}	//maybe
-0203A3D4	@AttackerBattleStruct	AttackerBattleStruct	{J}	//maybe
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	@Unit	taUnitA
+@BattleStats@14	@Unit	taUnitB
+0203A3D8	@BattleStats	BattleStats	{U}	//maybe
+0203A3D4	@BattleStats	BattleStats	{J}	//maybe
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
 @ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
@@ -1049,10 +1051,10 @@
 0203EBD8	@ClearTurn@[24]	章清除转	{J}
 0203EC00	@ClearTurn@[24]	章清除转	{U}
 
-@ITEMSTOCK@00	byte	项目ID
-@ITEMSTOCK@01	byte	项目数量
-0203A46C	@ITEMSTOCK@[64]	运输清单	{J}
-0203A470	@ITEMSTOCK@[64]	运输清单	{U}
+//@ITEMSTOCK@00	byte	项目ID
+//@ITEMSTOCK@01	byte	项目数量
+//0203A46C	@ITEMSTOCK@[64]	运输清单	{J}
+//0203A470	@ITEMSTOCK@[64]	运输清单	{U}
 
 08012C60	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
 08013318	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
@@ -1077,7 +1079,6 @@
 0801725C	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{U}
 080315BC	Get_Chapter_Events	RET=Pointer to that chapter's events	r0=chapter number	{U}
 08017D34	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{U}
-08017508	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{U}
 080175E6	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{U}
 080176DA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{U}
 0802E76E	Count_Items_In_Convoy	RET=Number of items in convoy	{U}
@@ -1109,7 +1110,6 @@
 08017664	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{J}
 080315BC	Get_Chapter_Events	RET=Pointer to that chapter's events	r0=chapter number	{J}
 08018124	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
-080178F8	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{J}
 080179D6	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{J}
 0800105C	Write_Palette	r0=pointer to palette	{J}
 08017ACA	Get_Open_Inventory_Space	RET=Slot of next open inventory space (0-4, 5 = full)	r0=char data ptr	{J}
@@ -1334,13 +1334,56 @@
 0802D794	阅读地图瓷砖动画2（调色板动画）		{J}
 0802D2D4	阅读地图瓷砖动画2（调色板动画）		{U}
 0203E070	指向攻击者的单位数据的RAM指针（至0203A3EC）	{J}
-0203E098	指向攻击者的单元数据的RAM指针（至0203 A 3 F 0）	{U}
-0203E06C	RAM指向单元数据的攻击方（至0203 A 46 C）	{J}
-0203E094	RAM指向要攻击的单元数据（到0203 A 470）	{U}
-0203A3EC	@Unit	复制攻击方的单位数据	{J}
-0203A3F0	@Unit	复制攻击方的单位数据	{U}
+0203E098	指向攻击者的单元数据的RAM指针（至0203A3F0）	{U}
+0203E06C	RAM指向单元数据的攻击方（至0203A46C）	{J}
+0203E094	RAM指向要攻击的单元数据（到0203A470）	{U}
+@BattleUnit@00	@Unit	CopyUnit
+@BattleUnit@48	short	weapon
+@BattleUnit@4A	short	weaponBefore
+@BattleUnit@4C	word	weaponAttributes
+@BattleUnit@50	byte	weaponType
+@BattleUnit@51	byte	weaponSlotIndex
+@BattleUnit@52	byte	canCounter
+@BattleUnit@53	byte	wTriangleHitBonus
+@BattleUnit@54	byte	wTriangleDmgBonus
+@BattleUnit@55	byte	terrainId
+@BattleUnit@56	byte	terrainDefense
+@BattleUnit@57	byte	terrainAvoid
+@BattleUnit@58	byte	terrainResistance
+@BattleUnit@59	byte	pad
+@BattleUnit@5a	short	battleAttack
+@BattleUnit@5c	short	battleDefense
+@BattleUnit@5e	short	battleSpeed
+@BattleUnit@60	short	battleHitRate
+@BattleUnit@62	short	battleAvoidRate
+@BattleUnit@64	short	battleEffectiveHitRate
+@BattleUnit@66	short	battleCritRate
+@BattleUnit@68	short	battleDodgeRate
+@BattleUnit@6a	short	battleEffectiveCritRate
+@BattleUnit@6c	short	battleSilencerRate
+@BattleUnit@6e	byte	expGain
+@BattleUnit@6f	byte	statusOut
+@BattleUnit@70	byte	levelPrevious
+@BattleUnit@71	byte	expPrevious
+@BattleUnit@72	byte	hpInitial
+@BattleUnit@73	byte	changeHP
+@BattleUnit@74	byte	changePow
+@BattleUnit@75	byte	changeSkl
+@BattleUnit@76	byte	changeSpd
+@BattleUnit@77	byte	changeDef
+@BattleUnit@78	byte	changeRes
+@BattleUnit@79	byte	changeLck
+@BattleUnit@7a	byte	changeCon
+@BattleUnit@7b	byte	wexpMultiplier
+@BattleUnit@7c	byte	nonZeroDamage
+@BattleUnit@7d	byte	weaponBroke
+@BattleUnit@7e	byte	hasItemEffectTarget
+@BattleUnit@7f	byte	pad7f
 
-
+0203A3EC	@BattleUnit	gBattleActor	{J}
+0203A3F0	@BattleUnit	gBattleActor	{U}
+0203A46C	@BattleUnit	gBattleTarget	{J}
+0203A470	@BattleUnit	gBattleTarget	{U}
 
 08080A94	Stat Screens DrawBar	{J}
 0807FD28	Stat Screens DrawBar	{U}
@@ -1419,23 +1462,46 @@
 @ROMTCSFrameData@02	short	xScale
 @ROMTCSFrameData@04	short	yScale
 
-@TheConfusingStruct@00	&ROMTCS	Pointer to ROMTCS
-@TheConfusingStruct@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
-@TheConfusingStruct@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
-@TheConfusingStruct@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
-@TheConfusingStruct@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
-@TheConfusingStruct@14	pointer	Pointer Current Rot/Scale Data
-@TheConfusingStruct@18	short	Cycle Timer
-@TheConfusingStruct@1A	short	Cycle Time Step (0x100 is one frame)
-@TheConfusingStruct@1C	short	Sub frame time offset or something
-@TheConfusingStruct@1E	short	OAM Index?
-@TheConfusingStruct@20	byte	bool defining whether gfx needs update
-@TheConfusingStruct@21	byte	Rotation/Scale OAM Index
-@TheConfusingStruct@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
-@TheConfusingStruct@24	pointer	Gfx Pointer
+@APHandle@00	&ROMTCS	Pointer to ROMTCS
+@APHandle@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
+@APHandle@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
+@APHandle@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
+@APHandle@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
+@APHandle@14	pointer	Pointer Current Rot/Scale Data
+@APHandle@18	short	Cycle Timer
+@APHandle@1A	short	Cycle Time Step (0x100 is one frame)
+@APHandle@1C	short	Sub frame time offset or something
+@APHandle@1E	short	OAM Index?
+@APHandle@20	byte	bool defining whether gfx needs update
+@APHandle@21	byte	Rotation/Scale OAM Index
+@APHandle@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
+@APHandle@24	pointer	Gfx Pointer
 
-03000110	TheConfusingStruct	{U}
-03000110	TheConfusingStruct	{J}
+03000110	@APHandle	gApPool	{U}
+03000110	@APHandle	gApPool	{J}
+
+@AnimationInterpreter@00	short	state
+@AnimationInterpreter@02	short	xPosition
+@AnimationInterpreter@04	short	yPosition
+@AnimationInterpreter@06	short	delayTimer
+@AnimationInterpreter@08	short	oam2base
+@AnimationInterpreter@0a	short	drawLayerPriority
+@AnimationInterpreter@0c	short	state2
+@AnimationInterpreter@0e	short	nextRoundId
+@AnimationInterpreter@10	short	state3
+@AnimationInterpreter@12	byte	currentRoundType
+@AnimationInterpreter@13	byte	frameIndex
+@AnimationInterpreter@14	byte	queuedCommandCount
+@AnimationInterpreter@15	byte	commandQueue
+@AnimationInterpreter@20	word	pCurrentFrame
+@AnimationInterpreter@24	word	pStartFrame
+@AnimationInterpreter@28	word	pUnk28
+@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@30	word	pStartObjData
+@AnimationInterpreter@34	@AnimationInterpreter pPrev
+@AnimationInterpreter@38	@AnimationInterpreter pNext
+@AnimationInterpreter@40	@AnimationInterpreter pUnk40
+@AnimationInterpreter@44	@AnimationInterpreter pUnk44
 
 //Zane's Stuff\Doc\Master MMB Doc.txt
 02024C60	an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.	{J}
@@ -1676,10 +1742,10 @@
 08017494	GetItemWExp	{U}
 080174C0	GetROMItemStructPtr	{U}
 080174D8	ClearUnits	{U}
-08017508	ClearUnitStruct	{U}
-08017530	CopyUnitStruct	{U}
-0801754C	GetNextFreeUnitStructPtr	{U}
-08017584	GetNextFreePlayerUnitStruct	{U}
+08017508	ClearUnitStruct	r0=@Unit	{U}
+08017530	CopyUnitStruct	r0=@Unit	r1=@Unit	{U}
+0801754C	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{U}
+08017584	GetNextFreePlayerUnitStruct	RET=@Unit	{U}
 080175BA	GetUnitFogViewRange	{U}
 080175E6	SetUnitNewStatus	{U}
 08017600	WriteUnitStatusDuration	{U}
@@ -2524,10 +2590,10 @@
 08017872	GetItemMaxCost	{J}
 0801789C	GetItemWExp	{J}
 080178C8	ClearUnits	{J}
-080178F8	ClearUnitStruct	{J}
-08017920	CopyUnitStruct	{J}
-0801793C	GetNextFreeUnitStructPtr	{J}
-08017974	GetNextFreePlayerUnitStruct	{J}
+080178F8	ClearUnitStruct	r0=@Unit	{J}
+08017920	CopyUnitStruct	r0=@Unit	r1=@Unit	{J}
+0801793C	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{J}
+08017974	GetNextFreePlayerUnitStruct	RET=@Unit	{J}
 080179AA	GetUnitFogViewRange	{J}
 080179D6	SetUnitNewStatus	{J}
 080179F0	WriteUnitStatusDuration	{J}

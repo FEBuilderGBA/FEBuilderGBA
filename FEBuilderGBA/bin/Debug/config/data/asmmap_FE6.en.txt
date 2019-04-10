@@ -552,19 +552,21 @@
 @MapSize@0	short	Width
 @MapSize@2	short	Height
 0202D200	@MapSize	MapSize
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
-02039200	@AttackerBattleStruct	AttackerBattleStruct	//maybe
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	@Unit	taUnitA
+@BattleStats@14	@Unit	taUnitB
+02039200	@BattleStats	BattleStats	//maybe
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
 @ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
@@ -618,7 +620,6 @@
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
-08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -641,7 +642,6 @@
 08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
-08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
@@ -727,9 +727,9 @@
 08016D0A	GetUnitItemSlot
 08016DA2	GetWeaponRangeMask
 08017364	ClearUnits
-08017394	ClearUnitStruct
-080173BC	CopyUnitStruct
-080173D8	GetNextFreeUnitStructPtr
+08017394	ClearUnitStruct	r0=@Unit
+080173BC	CopyUnitStruct	r0=@Unit	r1=@Unit
+080173D8	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
 08017578	LoadUnits
