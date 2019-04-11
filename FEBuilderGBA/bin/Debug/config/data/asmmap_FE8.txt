@@ -6733,7 +6733,6 @@
 
 08A727B4	InitTextBatch1	{J}
 08A73BF4	InitTextBatch2	{J}
-08A006FC	InitTextBatch1	{U}
 08A01B3C	InitTextBatch2	{U}
 
 08B1FA40	:08B1FE3F	UNK FREE_R LIST	{U}
@@ -10585,7 +10584,7 @@
 080D8690	gStaffAiPerformTable_2	{U}
 080D86F4	gSpecialItemAiPerformTable	{U}
 080D9EFC	gSioMenuProcLookup	{U}
-080D9FE4	gBgConfig_80D9FE4	{U}
+080D9FE4	&BGCONFIG	gBgConfig_80D9FE4	{U}
 080DAE96	gBattleAnimRoundTypeLookup_2Miss	{U}
 080DAEA0	gBattleAnimRoundTypeLookup_2Crit	{U}
 080DAEAA	gBattleAnimRoundTypeLookup_Miss	{U}
@@ -10772,7 +10771,7 @@
 08A3CB04	gOverallRankWeightLookup	{U}
 08A3CB1E	gOverallRankLookup	{U}
 08A3D728	gWMFaceGfxData	{U}
-08AA213C	gBgConfig_8AA213C	{U}
+08AA213C	&BGCONFIG	gBgConfig_8AA213C	{U}
 08AA7760	&LZ77	gGfx_TitleScreen	{U}
 08AAB3F4	&PALETTE	gPal_TitleScreen	{U}
 08AF1AE8	&LZ77	gGfxBarIntro	{U}
@@ -11409,7 +11408,7 @@
 080DD36C	gStaffAiPerformTable_2	{J}
 080DD3D0	gSpecialItemAiPerformTable	{J}
 080DEEBC	gSioMenuProcLookup	{J}
-080DEFD0	gBgConfig_80D9FE4	{J}
+080DEFD0	&BGCONFIG	gBgConfig_80D9FE4	{J}
 080DFEA6	gBattleAnimRoundTypeLookup_2Miss	{J}
 080DFEB0	gBattleAnimRoundTypeLookup_2Crit	{J}
 080DFEBA	gBattleAnimRoundTypeLookup_Miss	{J}
@@ -11957,7 +11956,6 @@
 08097564	PrepMenu_CheckMap_UnuseDummy	{J}
 08097570	PrepMenu_CheckMap_UnuseDummy2	{J}
 080975A0	PrepMenu_CheckMap	{J}
-080977E4	CheckMapID0x7D	{J}
 08015384	AddSkipThread2	{J}
 08015394	SubSkipThread2	{J}
 080AD47C	DrawBlueBarForActiveItemInPrepScreenMenu	{U}
@@ -12037,3 +12035,360 @@
 08007854	ParseLoadFaceOnText	テキスト中にある顔画像の読み込みのパース	{U}
 0808B824	LoadChapterTitlePalette	{J}
 080B083C	セーブスロット選択画面でのパレット選択	{J}
+
+08A029A8	&LZ77	YellowTextBox	{U}
+08A02A1C	&LZ77	gGfx_YellowTextBox2	{U}
+08A02A94	&LZ77	gGfx_YellowTextBox3	{U}
+08A02B3C	&LZ77	gGfx_YellowTextBox4	{U}
+08A02BAC	&LZ77	gGfx_YellowTextBox5	{U}
+08A032AC	&LZ77	gGfx_StatusClearFx	{U}
+08A20C64	&BGCONFIG	gObj_8A20C64	{U}
+08A20C9C	&BGCONFIG	gObj_8A20C9C	{U}
+08A20CD4	&BGCONFIG	gObj_8A20CD4	{U}
+08A20D0C	&BGCONFIG	gObj_8A20D0C	{U}
+08A20D44	&BGCONFIG	gObj_8A20D44	{U}
+08A20D58	&BGCONFIG	gObj_8A20D58	{U}
+08205C70	&BGCONFIG	gFaceConfig_8205C70	{U}
+08A74A60	&LZ77	YellowTextBox	{J}
+08A74AD4	&LZ77	gGfx_YellowTextBox2	{J}
+08A74B4C	&LZ77	gGfx_YellowTextBox3	{J}
+08A74BF4	&LZ77	gGfx_YellowTextBox4	{J}
+08A74C64	&LZ77	gGfx_YellowTextBox5	{J}
+08A75364	&LZ77	gGfx_StatusClearFx	{J}
+08A9DBCC	&BGCONFIG	gObj_8A20C64	{J}
+08A9DC04	&BGCONFIG	gObj_8A20C9C	{J}
+08A9DC3C	&BGCONFIG	gObj_8A20CD4	{J}
+08A9DC74	&BGCONFIG	gObj_8A20D0C	{J}
+08A9DCAC	&BGCONFIG	gObj_8A20D44	{J}
+08A9DCC0	&BGCONFIG	gObj_8A20D58	{J}
+081F55EC	&BGCONFIG	gFaceConfig_8205C70	{J}
+
+08001C78	HandleResetSequence	{U}
+08005F38	StartFaceFadeOut	{U}
+080081A8	Dialogue_ClearTextBoxes	{U}
+080081EC	Dialogue_ClearText	{U}
+08009CE0	GameControl_PostChapterSwitch	{U}
+08009E98	CallGameEndingEvent	{U}
+08010748	EventDisplayCursorProc_Loop	{U}
+0801098C	DecodeEventScriptedBattle	{U}
+08010E50	ClearDialogueAndFaces	{U}
+08010E6C	DisplayFlashingCursor	{U}
+0801240C	PositionUnitsAccordingToDeployment	{U}
+0801247C	PositionUnitAccordingToDeployment	{U}
+08013844	MapBrightnessFadeExists	{U}
+08015D84	CenterCameraOntoPosition	{U}
+080168E0	DrawItemMenuLineLong	{U}
+08016A2C	DrawItemStatScreenLine	{U}
+08017478	SetItemUnsealedForCharacter	{U}
+08018A9C	GetUnitKeyItemSlotForTerrain	{U}
+08018AF0	GetUnitAidIconId	{U}
+08018EB8	ClearTemporaryUnits	{U}
+08019034	CountRedUnits	{U}
+08019074	CountGreenUnits	{U}
+08019360	SetUnitLeaderCharId	{U}
+08019840	BmMapFillEdges	{U}
+08019B8C	DisplayMovementViewTile	{U}
+08019D28	UpdateBmMapDisplay	{U}
+08019E08	RenderBmMapColumn	{U}
+08019ED4	RenderBmMapLine	{U}
+08028014	SMS_DisplayWindowBlended	{U}
+0802A13C	BattleGenerateSimulationInternal	{U}
+0802A20C	BattleGenerateRealInternal	{U}
+0802A350	BattleGenerateReal	{U}
+0802A384	BattleGenerateBallistaReal	{U}
+0802A398	BattleGenerate	{U}
+0802B92C	BattleApplyExpGains	{U}
+0802BC00	ApplyUnitDefaultPromotion	{U}
+0802BD50	ApplyUnitPromotion	{U}
+0802BEA0	GenerateBattleUnitStatGainsComparatively	{U}
+0802C2D4	UpdateUnitDuringBattle	{U}
+0802C368	GetUnitRoundExp	{U}
+0802C3D8	GetUnitClassKillExpBonus	{U}
+0802C40C	GetUnitExpMultiplier	{U}
+0802C450	GetUnitKillExpBonus	{U}
+0802C4F0	ModifyUnitSpecialExp	{U}
+0802C740	BattleUnitTargetCheckCanCounter	{U}
+0802CA70	GetUnitSoloBattleAnimType	{U}
+0802CA98	GetBattleAnimType	{U}
+0802CAFC	BattlePrintDebugHitInfo	{U}
+0802CD64	BattleGenerateArena	{U}
+0802CEBC	SetScriptedBattle	{U}
+0802CF4C	BattleUnwindScripted	{U}
+0802D0BC	UnitLevelUp_unused	{U}
+0802D2B4	BattleHitAdvance	{U}
+0802D2C4	BattleHitTerminate	{U}
+0803334C	ClosePrepScreenMapMenu	{U}
+08033358	PrepScreenMapMenu_OnViewMap	{U}
+0803336C	PrepScreenMapMenu_OnFormation	{U}
+080333A4	PrepScreenMapMenu_OnStartPress	{U}
+080333C4	PrepScreenMapMenu_OnBPress	{U}
+0803341C	PrepScreenMapMenu_OnOptions	{U}
+08033458	PrepScreenMapMenu_OnSave	{U}
+08033468	PrepScreenMapMenu_OnDebug	{U}
+080334BC	PrepScreenProc_InitMapMenu	{U}
+080334CC	PrepScreenProc_DimMapImmediate	{U}
+080334E8	PrepScreenProc_StartBrightenMap	{U}
+08033514	PrepScreenProc_StartDimMap	{U}
+08033634	PrepScreenMapMenu_OnEnd	{U}
+08033648	PrepScreenProc_StartMapMenu	{U}
+080338C0	InitPrepScreenCursorPosition	{U}
+08033978	PrepScreenProc_MapIdle	{U}
+08033C90	PrepScreen_UnitSwapIdle	{U}
+08033E08	PrepScreen_StartUnitSwapAnim	{U}
+08033E8C	InitMapChangeGraphicsIfFog	{U}
+08033EA4	DisplayMapChangeIfFog	{U}
+08033EC0	PrepScreenProc_StartConfigMenu	{U}
+08034078	PrepScreenProc_Cleanup	{U}
+0804F714	GetOverriddenUnusableMenuCommands	{U}
+0804F754	SetOverriddenUnusableMenuCommands	{U}
+0804F77C	SetMenuCommandOverride	{U}
+0804F7AC	GetOverriddenMenuCommandUsability	{U}
+0804F7E8	GetOverriddenMenuCommandEffect	{U}
+08079D74	MuCtr_StartDefinedMove	{U}
+0808A518	SetDialogueBoxConfig	{U}
+0808A524	GetDialogueBoxConfig	{U}
+0808B178	BoxDialogueInterpreter_Main	{U}
+0808DDF8	CountUnitsByFaction	{U}
+08094FF4	CanPrepScreenSave	{U}
+08095498	AtMenu_AddPrepScreenSupportMenuItem	{U}
+08095504	CanPrepScreenCheckMap	{U}
+08095AD8	AtMenu_8095AD8	{U}
+08095B30	ClearPrepScreenMenuHelpText	{U}
+08095B64	DrawPrepScreenMenuHelpText	{U}
+08095B94	DisplayPrepScreenMenuHelpText	{U}
+08095BD8	UpdatePrepScreenMenuHelp_Clear	{U}
+08095BE8	UpdatePrepScreenMenuHelp_Draw	{U}
+08095BF4	UpdatePrepScreenMenuHelp_Display	{U}
+08095C00	StartUpdatePrepScreenMenuHelp	{U}
+08095EBC	AtMenu_EndIfNoUnits	{U}
+08095F2C	AtMenu_MaintainPrepScreenMenuHelp	{U}
+08096390	AtMenu_OnSubmenuEnd	{U}
+08096454	StartAtMenu	{U}
+08096468	StartAtMenu_LinkArena	{U}
+080966B0	AtMenuExists	{U}
+08096CCC	PrepScreenMenu_OnInit	{U}
+08096D10	PrepScreenMenu_OnActiveLoop	{U}
+08096F44	PrepScreenMenu_OnLoop_2	{U}
+08096F6C	PrepScreenMenu_OnLoop_0	{U}
+08096F98	PrepScreenMenu_OnEnd	{U}
+08096FAC	StartPrepScreenMenu	{U}
+08096FD0	SetPrepScreenMenuOnBPress	{U}
+08096FEC	SetPrepScreenMenuOnStartPress	{U}
+08097008	SetPrepScreenMenuOnEnd	{U}
+080970CC	SetPrepScreenMenuSelectedItem	{U}
+0809710C	GetActivePrepScreenMenuItemId	{U}
+08097154	DrawPrepScreenMenuFrameAt	{U}
+08097200	SetPrepScreenMenuPosition	{U}
+080972B0	EndPrepScreenMenu	{U}
+080972D4	ClearPrepScreenMenu	{U}
+08097340	PrepScreenMenuExists	{U}
+0809735C	DisablePrepScreenMenu	{U}
+08097394	EnablePrepScreenMenu	{U}
+0809BF10	DrawPrepScreenItemUseStatLabels	{U}
+0809C0B4	DrawPrepScreenItemUseStatBars	{U}
+0809C254	DrawPrepScreenItemUseStatValues	{U}
+0809C3EC	DrawPrepScreenItemUseItemUseDesc	{U}
+0809C4B4	PrepScreenItemUseScreen_OnUpdateSMS	{U}
+0809C4D8	PrepScreenItemUseScreen_OnInit	{U}
+0809C4E4	PrepScreenItemUseScreen_InitDisplay	{U}
+0809C820	PrepScreenItemUseScreen_OnIdle	{U}
+0809C958	DisplayAreYouSureYNBoxText	{U}
+0809C9F4	PrepScreenItemUseScreen_AreUSureBoxInit	{U}
+0809CA14	PrepScreenItemUseScreen_AreUSureBoxLoop	{U}
+0809CCFC	StartPrepScreenItemUseScreen	{U}
+080A095C	CanPrepScreenSupport	{U}
+080A2DE4	InitSaveGeneralGameMetadata	{U}
+080A3898	VerifySavedRankingChecksum	{U}
+080A3984	SaveRankings	{U}
+080A3DD8	SaveEndgameRankingsMaybe	{U}
+080A4C14	RegisterCompletedPlaythrough	{U}
+080A5A00	LoadGMMonsterRnState	{U}
+080A6B70	GetTrialMapSavedMapAddress	{U}
+080A6B90	GetTrialMapSavedMapSize	{U}
+080A6BB4	GetTrialMapSavedChapterAddress	{U}
+080A6BD4	GetTrialMapSavedChapterSize	{U}
+080AA144	StartTrialMap_Maybe	{U}
+080AD564	HidePrepScreenHandCursor	{U}
+080AD580	EndPrepScreenHandCursor	{U}
+080B8E60	GMProc_80B8E60	{U}
+080BA61C	GMapScreenVSync_OnInit	{U}
+080BA628	GMapScreenVSync_OnUpdate	{U}
+080BCFB4	GM_ClearAllStoryLocations	{U}
+080C4048	GM_GetBaseMenuProc	{U}
+080CC940	StartTraineePromotion	{U}
+080CC990	StartPrepScreenPromotion	{U}
+020111A4	gPrepScreenMenuHelpTextArray	{U}
+02028E74	gLang	{U}
+0202E36C	gUnitArrayPurple	{U}
+0203DDE0	gHandCursorPosition	{U}
+0203DDE4	gPreviousHandCursorUpdateTime	{U}
+0203E788	gHelpTextOriginTile	{U}
+0203EF44	gTrialMapData	{U}
+0300000C	gSoftResetEnabled	{U}
+03000428	gEvent1EData	{U}
+030017A0	gDungeonState	{U}
+080D793F	gMenuCommandEventDisableList	{U}
+080D794E	gMenuCommandEventGrayList	{U}
+
+08001bd0	HandleResetSequence	{J}
+08005E3C	StartFaceFadeOut	{J}
+080080A4	Dialogue_ClearTextBoxes	{J}
+080080E8	Dialogue_ClearText	{J}
+08009C40	GameControl_PostChapterSwitch	{J}
+08009DF8	CallGameEndingEvent	{J}
+08010890	EventDisplayCursorProc_Loop	{J}
+08010AD0	DecodeEventScriptedBattle	{J}
+08010F98	ClearDialogueAndFaces	{J}
+08010FB4	DisplayFlashingCursor	{J}
+080124DC	PositionUnitsAccordingToDeployment	{J}
+0801254C	PositionUnitAccordingToDeployment	{J}
+080138FC	MapBrightnessFadeExists	{J}
+08015D90	CenterCameraOntoPosition	{J}
+08016688	DrawItemMenuLineLong	{J}
+080167D4	DrawItemStatScreenLine	{J}
+08017220	SetItemUnsealedForCharacter	{J}
+080187B0	GetUnitKeyItemSlotForTerrain	{J}
+08018804	GetUnitAidIconId	{J}
+08018BCC	ClearTemporaryUnits	{J}
+08018D48	CountRedUnits	{J}
+08018D88	CountGreenUnits	{J}
+08019038	SetUnitLeaderCharId	{J}
+08019518	BmMapFillEdges	{J}
+08019864	DisplayMovementViewTile	{J}
+08019A00	UpdateBmMapDisplay	{J}
+08019AE0	RenderBmMapColumn	{J}
+08019BAC	RenderBmMapLine	{J}
+08027FA8	SMS_DisplayWindowBlended	{J}
+0802A0C8	BattleGenerateSimulationInternal	{J}
+0802A198	BattleGenerateRealInternal	{J}
+0802A2DC	BattleGenerateReal	{J}
+0802A310	BattleGenerateBallistaReal	{J}
+0802A324	BattleGenerate	{J}
+0802B874	BattleApplyExpGains	{J}
+0802BB48	ApplyUnitDefaultPromotion	{J}
+0802BC98	ApplyUnitPromotion	{J}
+0802BDE8	GenerateBattleUnitStatGainsComparatively	{J}
+0802C21C	UpdateUnitDuringBattle	{J}
+0802C2B0	GetUnitRoundExp	{J}
+0802C320	GetUnitClassKillExpBonus	{J}
+0802C354	GetUnitExpMultiplier	{J}
+0802c398	GetUnitKillExpBonus	{J}
+0802C428	ModifyUnitSpecialExp	{J}
+0802C678	BattleUnitTargetCheckCanCounter	{J}
+0802C9A8	GetUnitSoloBattleAnimType	{J}
+0802C9D0	GetBattleAnimType	{J}
+0802ca34	BattlePrintDebugHitInfo	{J}
+0802CC9C	BattleGenerateArena	{J}
+0802cdf4	SetScriptedBattle	{J}
+0802CE84	BattleUnwindScripted	{J}
+0802CFF4	UnitLevelUp_unused	{J}
+0802D1EC	BattleHitAdvance	{J}
+0802D1FC	BattleHitTerminate	{J}
+0803325C	ClosePrepScreenMapMenu	{J}
+08033268	PrepScreenMapMenu_OnViewMap	{J}
+0803327C	PrepScreenMapMenu_OnFormation	{J}
+080332B4	PrepScreenMapMenu_OnStartPress	{J}
+080332D4	PrepScreenMapMenu_OnBPress	{J}
+0803332C	PrepScreenMapMenu_OnOptions	{J}
+08033368	PrepScreenMapMenu_OnSave	{J}
+08033378	PrepScreenMapMenu_OnDebug	{J}
+080333CC	PrepScreenProc_InitMapMenu	{J}
+080333DC	PrepScreenProc_DimMapImmediate	{J}
+080333F8	PrepScreenProc_StartBrightenMap	{J}
+08033424	PrepScreenProc_StartDimMap	{J}
+08033544	PrepScreenMapMenu_OnEnd	{J}
+08033558	PrepScreenProc_StartMapMenu	{J}
+080337D0	InitPrepScreenCursorPosition	{J}
+08033888	PrepScreenProc_MapIdle	{J}
+08033B9C	PrepScreen_UnitSwapIdle	{J}
+08033D10	PrepScreen_StartUnitSwapAnim	{J}
+08033D94	InitMapChangeGraphicsIfFog	{J}
+08033DAC	DisplayMapChangeIfFog	{J}
+08033DC8	PrepScreenProc_StartConfigMenu	{J}
+08033F80	PrepScreenProc_Cleanup	{J}
+08050488	GetOverriddenUnusableMenuCommands	{J}
+080504C8	SetOverriddenUnusableMenuCommands	{J}
+080504F0	SetMenuCommandOverride	{J}
+08050520	GetOverriddenMenuCommandUsability	{J}
+0805055C	GetOverriddenMenuCommandEffect	{J}
+0807C178	MuCtr_StartDefinedMove	{J}
+0808C828	SetDialogueBoxConfig	{J}
+0808C834	GetDialogueBoxConfig	{J}
+0808D488	BoxDialogueInterpreter_Main	{J}
+080900E0	CountUnitsByFaction	{J}
+080972D4	CanPrepScreenSave	{J}
+08097778	AtMenu_AddPrepScreenSupportMenuItem	{J}
+080977E4	CanPrepScreenCheckMap	{J}
+08097DB8	AtMenu_8095AD8	{J}
+08097E10	ClearPrepScreenMenuHelpText	{J}
+08097E44	DrawPrepScreenMenuHelpText	{J}
+08097E74	DisplayPrepScreenMenuHelpText	{J}
+08097EB8	UpdatePrepScreenMenuHelp_Clear	{J}
+08097EC8	UpdatePrepScreenMenuHelp_Draw	{J}
+08097ED4	UpdatePrepScreenMenuHelp_Display	{J}
+08097EE0	StartUpdatePrepScreenMenuHelp	{J}
+0809819C	AtMenu_EndIfNoUnits	{J}
+0809820C	AtMenu_MaintainPrepScreenMenuHelp	{J}
+08098674	AtMenu_OnSubmenuEnd	{J}
+08098738	StartAtMenu	{J}
+0809874C	StartAtMenu_LinkArena	{J}
+08098994	AtMenuExists	{J}
+08098FB0	PrepScreenMenu_OnInit	{J}
+08098FF4	PrepScreenMenu_OnActiveLoop	{J}
+08099228	PrepScreenMenu_OnLoop_2	{J}
+08099250	PrepScreenMenu_OnLoop_0	{J}
+0809927C	PrepScreenMenu_OnEnd	{J}
+08099290	StartPrepScreenMenu	{J}
+080992B4	SetPrepScreenMenuOnBPress	{J}
+080992D0	SetPrepScreenMenuOnStartPress	{J}
+080992EC	SetPrepScreenMenuOnEnd	{J}
+080993B0	SetPrepScreenMenuSelectedItem	{J}
+080993F0	GetActivePrepScreenMenuItemId	{J}
+08099438	DrawPrepScreenMenuFrameAt	{J}
+080994E4	SetPrepScreenMenuPosition	{J}
+08099594	EndPrepScreenMenu	{J}
+080995B8	ClearPrepScreenMenu	{J}
+08099624	PrepScreenMenuExists	{J}
+08099640	DisablePrepScreenMenu	{J}
+08099678	EnablePrepScreenMenu	{J}
+0809E1D4	DrawPrepScreenItemUseStatLabels	{J}
+0809E37C	DrawPrepScreenItemUseStatBars	{J}
+0809E51C	DrawPrepScreenItemUseStatValues	{J}
+0809E6B4	DrawPrepScreenItemUseItemUseDesc	{J}
+0809E764	PrepScreenItemUseScreen_OnUpdateSMS	{J}
+0809E788	PrepScreenItemUseScreen_OnInit	{J}
+0809E794	PrepScreenItemUseScreen_InitDisplay	{J}
+0809EAC4	PrepScreenItemUseScreen_OnIdle	{J}
+0809EBFC	DisplayAreYouSureYNBoxText	{J}
+0809EC98	PrepScreenItemUseScreen_AreUSureBoxInit	{J}
+0809ECB8	PrepScreenItemUseScreen_AreUSureBoxLoop	{J}
+0809EF94	StartPrepScreenItemUseScreen	{J}
+080A2C10	CanPrepScreenSupport	{J}
+080A7828	InitSaveGeneralGameMetadata	{J}
+080A82DC	VerifySavedRankingChecksum	{J}
+080A83C8	SaveRankings	{J}
+080A881C	SaveEndgameRankingsMaybe	{J}
+080A9658	RegisterCompletedPlaythrough	{J}
+080AA418	LoadGMMonsterRnState	{J}
+080AB588	GetTrialMapSavedMapAddress	{J}
+080AB5A8	GetTrialMapSavedMapSize	{J}
+080AB5CC	GetTrialMapSavedChapterAddress	{J}
+080AB5EC	GetTrialMapSavedChapterSize	{J}
+080AEB98	StartTrialMap_Maybe	{J}
+080B2004	HidePrepScreenHandCursor	{J}
+080B2020	EndPrepScreenHandCursor	{J}
+080BDD28	GMProc_80B8E60	{J}
+080BF4B4	GMapScreenVSync_OnInit	{J}
+080BF4C0	GMapScreenVSync_OnUpdate	{J}
+080C1DC0	GM_ClearAllStoryLocations	{J}
+080C8E00	GM_GetBaseMenuProc	{J}
+080D165C	StartTraineePromotion	{J}
+080D16AC	StartPrepScreenPromotion	{J}
+020111A4	gPrepScreenMenuHelpTextArray	{J}
+0203DDDC	gHandCursorPosition	{J}
+0203DDE0	gPreviousHandCursorUpdateTime	{J}
+0203E784	gHelpTextOriginTile	{J}
+0203EF40	gTrialMapData	{J}
+03001798	gDungeonState	{J}
+080DC56F	gMenuCommandEventDisableList	{J}
+080DC57E	gMenuCommandEventGrayList	{J}

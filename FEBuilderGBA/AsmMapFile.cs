@@ -897,6 +897,10 @@ namespace FEBuilderGBA
             {
                 p.Length = 0;
             }
+            else if (type == "BGCONFIG")
+            {
+                p.Length = 10 * 2;
+            }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
         {
@@ -1348,7 +1352,7 @@ namespace FEBuilderGBA
                 name = name.Replace(",", "");
 
                 uint addr = U.atoi0x(sp[2]);
-                if (sp[0] == "SET_ABS_FUNC")
+                if (sp[0] == "SET_FUNC")
                 {
                     addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
                 }
