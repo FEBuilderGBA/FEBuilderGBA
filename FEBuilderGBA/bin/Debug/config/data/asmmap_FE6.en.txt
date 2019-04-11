@@ -560,8 +560,8 @@
 @BattleStats@0A	short	Battle hit
 @BattleStats@0C	short	Battle crit
 @BattleStats@0E	short	Lethality chance
-@BattleStats@10	@Unit	taUnitA
-@BattleStats@14	@Unit	taUnitB
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 02039200	@BattleStats	BattleStats	//maybe
 @BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
 @BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
@@ -1158,23 +1158,26 @@
 0802A30C	ActionCombat
 0802A370	ActionDance
 0802A35C	ActionArena
-@ArenaTemp@00	&Unit	Player unit.
-@ArenaTemp@04	&Unit	Opponent.
-@ArenaTemp@08	short	Premium.
-@ArenaTemp@0A	byte	Battle result.
-@ArenaTemp@0B	byte	Unknown 1
-@ArenaTemp@0C	byte	Uses
-@ArenaTemp@0D	byte	Item Editor
-@ArenaTemp@0E	byte	Unknown 2
-@ArenaTemp@0F	byte	Unknown 3.
-@ArenaTemp@10	short	Unknown 4.
-@ArenaTemp@12	byte	Unknown 5.
-@ArenaTemp@13	byte	Unknown 6.
-@ArenaTemp@14	short	Unknown 7.
-@ArenaTemp@15	short	Unknown 8.
-@ArenaTemp@16	short	The strength of the player.
-@ArenaTemp@18	short	Strength of the opponent.
-02039504	@ArenaTemp	Temporary data of the stadium.
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+02039504	@ArenaData	Temporary data of the stadium.
 08022064	GetUnitMapSpritePaletteIndex
 08026504	When exchanging items actually by item exchange.
 08033C04	AiTryDoStaff

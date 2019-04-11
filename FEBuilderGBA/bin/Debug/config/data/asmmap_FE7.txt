@@ -457,10 +457,146 @@
 @AnimationInterpreter@28	word	pUnk28
 @AnimationInterpreter@2c	word	pUnk2C
 @AnimationInterpreter@30	word	pStartObjData
-@AnimationInterpreter@34	@AnimationInterpreter pPrev
-@AnimationInterpreter@38	@AnimationInterpreter pNext
-@AnimationInterpreter@40	@AnimationInterpreter pUnk40
-@AnimationInterpreter@44	@AnimationInterpreter pUnk44
+@AnimationInterpreter@34	&AnimationInterpreter	pPrev
+@AnimationInterpreter@38	&AnimationInterpreter	pNext
+@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+
+@WaveData@00	short	type
+@WaveData@02	short	status
+@WaveData@04	word	freq
+@WaveData@08	word	loopStart
+@WaveData@0c	word	size
+@WaveData@10	byte	data_array
+
+@ToneData@00	byte	type
+@ToneData@01	byte	key
+@ToneData@02	byte	length
+@ToneData@03	byte	pan_sweep
+@ToneData@04	&WaveData	wav
+@ToneData@0c	byte	attack
+@ToneData@0d	byte	decay
+@ToneData@0e	byte	sustain
+@ToneData@0f	byte	release
+
+@SoundChannel@00	byte	status
+@SoundChannel@01	byte	type
+@SoundChannel@02	byte	rightVolume
+@SoundChannel@03	byte	leftVolume
+@SoundChannel@04	byte	attack
+@SoundChannel@05	byte	decay
+@SoundChannel@06	byte	sustain
+@SoundChannel@07	byte	release
+@SoundChannel@08	byte	ky
+@SoundChannel@09	byte	ev
+@SoundChannel@0a	byte	er
+@SoundChannel@0b	byte	el
+@SoundChannel@0c	byte	echoVolume
+@SoundChannel@0d	byte	echoLength
+@SoundChannel@0e	byte	d1
+@SoundChannel@0f	byte	d2
+@SoundChannel@10	byte	gt
+@SoundChannel@11	byte	mk
+@SoundChannel@12	byte	ve
+@SoundChannel@13	byte	pr
+@SoundChannel@14	byte	rp
+@SoundChannel@15	byte	d3_0
+@SoundChannel@16	byte	d3_1
+@SoundChannel@17	byte	d3_2
+@SoundChannel@18	word	ct
+@SoundChannel@1C	word	fw
+@SoundChannel@20	word	freq
+@SoundChannel@24	&WaveData	wav
+@SoundChannel@28	word	cp
+@SoundChannel@2c	&MusicPlayerTrack track
+@SoundChannel@30	word	pp
+@SoundChannel@34	word	np
+@SoundChannel@38	word	d4
+@SoundChannel@3C	word	xpi
+@SoundChannel@40	word	xpc
+
+@MusicPlayerTrack@00	byte	flags
+@MusicPlayerTrack@01	byte	wait
+@MusicPlayerTrack@02	byte	patternLevel
+@MusicPlayerTrack@03	byte	repN
+@MusicPlayerTrack@04	byte	gateTime
+@MusicPlayerTrack@05	byte	key
+@MusicPlayerTrack@06	byte	velocity
+@MusicPlayerTrack@07	byte	runningStatus
+@MusicPlayerTrack@08	byte	keyM
+@MusicPlayerTrack@09	byte	pitM
+@MusicPlayerTrack@0a	byte	keyShift
+@MusicPlayerTrack@0b	byte	keyShiftX
+@MusicPlayerTrack@0c	byte	tune
+@MusicPlayerTrack@0d	byte	pitX
+@MusicPlayerTrack@0e	byte	bend
+@MusicPlayerTrack@0f	byte	bendRange
+@MusicPlayerTrack@10	byte	volMR
+@MusicPlayerTrack@11	byte	volML
+@MusicPlayerTrack@12	byte	vol
+@MusicPlayerTrack@13	byte	volX
+@MusicPlayerTrack@14	byte	pan
+@MusicPlayerTrack@15	byte	panX
+@MusicPlayerTrack@16	byte	modM
+@MusicPlayerTrack@17	byte	mod
+@MusicPlayerTrack@18	byte	modT
+@MusicPlayerTrack@19	byte	lfoSpeed
+@MusicPlayerTrack@1a	byte	lfoSpeedC
+@MusicPlayerTrack@1b	byte	lfoDelay
+@MusicPlayerTrack@1c	byte	lfoDelayC
+@MusicPlayerTrack@1d	byte	priority
+@MusicPlayerTrack@1e	byte	echoVolume
+@MusicPlayerTrack@1f	byte	echoLength
+@MusicPlayerTrack@20	&SoundChannel	chan
+@MusicPlayerTrack@24	@ToneData	tone
+@MusicPlayerTrack@34	byte	_gap34
+@MusicPlayerTrack@3a	short	_unk_3A
+@MusicPlayerTrack@3c	short	_unk_3C
+@MusicPlayerTrack@40	word	cmdPtr
+@MusicPlayerTrack@44	byte	patternStack0
+@MusicPlayerTrack@45	byte	patternStack1
+@MusicPlayerTrack@46	byte	patternStack2
+@MusicPlayerTrack@47	byte	_pad47
+
+@SongHeader@00	byte	trackCount
+@SongHeader@01	byte	blockCount
+@SongHeader@02	byte	priority
+@SongHeader@03	byte	reverb
+@SongHeader@04	&ToneData	tone
+@SongHeader@08	byte	part_array
+
+@MusicPlayerInfo@00	&SongHeader	songHeader
+@MusicPlayerInfo@04	word	status
+@MusicPlayerInfo@08	byte	trackCount
+@MusicPlayerInfo@09	byte	priority
+@MusicPlayerInfo@0a	byte	cmd
+@MusicPlayerInfo@0b	byte	unk_B
+@MusicPlayerInfo@0c	word	clock
+@MusicPlayerInfo@10	byte	gap	//[8]
+@MusicPlayerInfo@18	word	memAccAreaPtr
+@MusicPlayerInfo@1c	short	tempoD
+@MusicPlayerInfo@1e	short	tempoU
+@MusicPlayerInfo@20	short	tempoI
+@MusicPlayerInfo@22	short	tempoC
+@MusicPlayerInfo@24	short	fadeOI
+@MusicPlayerInfo@26	short	fadeOC
+@MusicPlayerInfo@28	short	fadeOV
+@MusicPlayerInfo@2a	short	_pad2A
+@MusicPlayerInfo@2c	&MusicPlayerTrack	tracks
+@MusicPlayerInfo@30	&ToneData	tone
+@MusicPlayerInfo@34	word	ident
+@MusicPlayerInfo@38	word	func
+@MusicPlayerInfo@3c	word	intp
+
+@MusicPlayer@00	&MusicPlayerInfo	info
+@MusicPlayer@04	&MusicPlayerTrack	track
+@MusicPlayer@08	byte	_unk_8
+@MusicPlayer@09	byte	_pad09
+@MusicPlayer@0a	byte	_unk_A
+
+@Song@00	&SongHeader	header
+@Song@04	short	ms
+@Song@06	short	me
 
 //from https://doc.feuniverse.us/static/stan/RangeMoveDisplayNotes.txt
 0801D6A4	DisplayMoveRangeGraphics Creates relevant 6C and sets relevant stuff in game data	void	r0=type bitfield (see above)	{J}
@@ -1110,8 +1246,8 @@
 @BattleStats@0A	short	Battle hit
 @BattleStats@0C	short	Battle crit
 @BattleStats@0E	short	Lethality chance
-@BattleStats@10	@Unit	taUnitA
-@BattleStats@14	@Unit	taUnitB
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 
 0203A3D8	@BattleStats	BattleStats	{U}	//maybe
 0203A3D4	@BattleStats	BattleStats	{J}	//maybe
@@ -4735,22 +4871,25 @@
 0804B9B4	EndEkrBattleDeamon	{J}
 0804B9C4	IsBattleDeamonActive	{J}
 
-@ArenaTemp@00	&Unit	プレイヤーユニット
-@ArenaTemp@04	&Unit	対戦相手
-@ArenaTemp@08	short	掛け金
-@ArenaTemp@0A	byte	戦闘結果
-@ArenaTemp@0B	byte	不明1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	アイテム
-@ArenaTemp@0E	byte	不明2
-@ArenaTemp@0F	byte	不明3
-@ArenaTemp@10	short	不明4
-@ArenaTemp@12	byte	不明5
-@ArenaTemp@13	byte	不明6
-@ArenaTemp@14	short	不明7
-@ArenaTemp@15	short	不明8
-@ArenaTemp@16	short	プレイヤーの強さ
-@ArenaTemp@18	short	対戦相手の強さ
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
 
 0802f7f4	ActionRescue	{J}
 0802f328	ActionRescue	{U}
@@ -4759,13 +4898,13 @@
 0802f92c	ActionCombat	{J}
 0802f460	ActionCombat	{U}
 
-0203A7F0	@ArenaTemp	闘技場の一時データ	{J}
+0203A7F0	@ArenaData	闘技場の一時データ	{J}
 0806c7cc	_MOVEUNIT6C_SetDefaultFacingDirection	{J}
 0806dd98	GetItemIconId	{J}
 0806C274	Make6CMOVEUNITForUnit	{J}
 0806c4a0	NewMOVEUNIT	{J}
 08025b80	GetUnitMapSpritePaletteIndex	{J}
-0203A7F4	@ArenaTemp	闘技場の一時データ	{U}
+0203A7F4	@ArenaData	闘技場の一時データ	{U}
 0806BFE0	_MOVEUNIT6C_SetDefaultFacingDirection	{U}
 0806D5AC	GetItemIconId	{U}
 0806BA88	Make6CMOVEUNITForUnit	{U}

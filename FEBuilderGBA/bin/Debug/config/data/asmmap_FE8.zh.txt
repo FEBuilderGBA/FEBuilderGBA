@@ -1152,11 +1152,14 @@ r3=X tile position of menu of the right	{U}
 @AiData@7C	byte	_pad7C
 @AiData@85	byte	highestBlueMov
 @AiData@86	byte	_pad86
-@AiData@90	@AiDecision	decision
+@AiData@90	&AiDecision	decision
+
+@BattleHit@00	word	attributes_info_hpChange
 
 @ActionData@00	short	_u00
 @ActionData@06	short	unk6
 @ActionData@08	short	unk8
+@ActionData@0A	short	unkA
 @ActionData@0C	byte	subjectIndex
 @ActionData@0D	byte	targetIndex
 @ActionData@0E	byte	xMove
@@ -1168,6 +1171,8 @@ r3=X tile position of menu of the right	{U}
 @ActionData@14	byte	yOther
 @ActionData@15	byte	trapType
 @ActionData@16	byte	suspendPointType
+@ActionData@18	&BattleHit	scriptedBattleHits
+@ActionData@1C	byte	_Unk1C
 
 @Vec2@00	short	x
 @Vec2@02	short	y
@@ -1297,8 +1302,8 @@ r3=X tile position of menu of the right	{U}
 @BattleStats@0A	short	Battle hit
 @BattleStats@0C	short	Battle crit
 @BattleStats@0E	short	Lethality chance
-@BattleStats@10	@Unit	taUnitA
-@BattleStats@14	@Unit	taUnitB
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 0203A4D4	@BattleStats	BattleStats	{U}
 0203A4D0	@BattleStats	BattleStats	{J}
 @BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
@@ -2062,10 +2067,146 @@ r3=X tile position of menu of the right	{U}
 @AnimationInterpreter@28	word	pUnk28
 @AnimationInterpreter@2c	word	pUnk2C
 @AnimationInterpreter@30	word	pStartObjData
-@AnimationInterpreter@34	@AnimationInterpreter pPrev
-@AnimationInterpreter@38	@AnimationInterpreter pNext
-@AnimationInterpreter@40	@AnimationInterpreter pUnk40
-@AnimationInterpreter@44	@AnimationInterpreter pUnk44
+@AnimationInterpreter@34	&AnimationInterpreter	pPrev
+@AnimationInterpreter@38	&AnimationInterpreter	pNext
+@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+
+@WaveData@00	short	type
+@WaveData@02	short	status
+@WaveData@04	word	freq
+@WaveData@08	word	loopStart
+@WaveData@0c	word	size
+@WaveData@10	byte	data_array
+
+@ToneData@00	byte	type
+@ToneData@01	byte	key
+@ToneData@02	byte	length
+@ToneData@03	byte	pan_sweep
+@ToneData@04	&WaveData	wav
+@ToneData@0c	byte	attack
+@ToneData@0d	byte	decay
+@ToneData@0e	byte	sustain
+@ToneData@0f	byte	release
+
+@SoundChannel@00	byte	status
+@SoundChannel@01	byte	type
+@SoundChannel@02	byte	rightVolume
+@SoundChannel@03	byte	leftVolume
+@SoundChannel@04	byte	attack
+@SoundChannel@05	byte	decay
+@SoundChannel@06	byte	sustain
+@SoundChannel@07	byte	release
+@SoundChannel@08	byte	ky
+@SoundChannel@09	byte	ev
+@SoundChannel@0a	byte	er
+@SoundChannel@0b	byte	el
+@SoundChannel@0c	byte	echoVolume
+@SoundChannel@0d	byte	echoLength
+@SoundChannel@0e	byte	d1
+@SoundChannel@0f	byte	d2
+@SoundChannel@10	byte	gt
+@SoundChannel@11	byte	mk
+@SoundChannel@12	byte	ve
+@SoundChannel@13	byte	pr
+@SoundChannel@14	byte	rp
+@SoundChannel@15	byte	d3_0
+@SoundChannel@16	byte	d3_1
+@SoundChannel@17	byte	d3_2
+@SoundChannel@18	word	ct
+@SoundChannel@1C	word	fw
+@SoundChannel@20	word	freq
+@SoundChannel@24	&WaveData	wav
+@SoundChannel@28	word	cp
+@SoundChannel@2c	&MusicPlayerTrack track
+@SoundChannel@30	word	pp
+@SoundChannel@34	word	np
+@SoundChannel@38	word	d4
+@SoundChannel@3C	word	xpi
+@SoundChannel@40	word	xpc
+
+@MusicPlayerTrack@00	byte	flags
+@MusicPlayerTrack@01	byte	wait
+@MusicPlayerTrack@02	byte	patternLevel
+@MusicPlayerTrack@03	byte	repN
+@MusicPlayerTrack@04	byte	gateTime
+@MusicPlayerTrack@05	byte	key
+@MusicPlayerTrack@06	byte	velocity
+@MusicPlayerTrack@07	byte	runningStatus
+@MusicPlayerTrack@08	byte	keyM
+@MusicPlayerTrack@09	byte	pitM
+@MusicPlayerTrack@0a	byte	keyShift
+@MusicPlayerTrack@0b	byte	keyShiftX
+@MusicPlayerTrack@0c	byte	tune
+@MusicPlayerTrack@0d	byte	pitX
+@MusicPlayerTrack@0e	byte	bend
+@MusicPlayerTrack@0f	byte	bendRange
+@MusicPlayerTrack@10	byte	volMR
+@MusicPlayerTrack@11	byte	volML
+@MusicPlayerTrack@12	byte	vol
+@MusicPlayerTrack@13	byte	volX
+@MusicPlayerTrack@14	byte	pan
+@MusicPlayerTrack@15	byte	panX
+@MusicPlayerTrack@16	byte	modM
+@MusicPlayerTrack@17	byte	mod
+@MusicPlayerTrack@18	byte	modT
+@MusicPlayerTrack@19	byte	lfoSpeed
+@MusicPlayerTrack@1a	byte	lfoSpeedC
+@MusicPlayerTrack@1b	byte	lfoDelay
+@MusicPlayerTrack@1c	byte	lfoDelayC
+@MusicPlayerTrack@1d	byte	priority
+@MusicPlayerTrack@1e	byte	echoVolume
+@MusicPlayerTrack@1f	byte	echoLength
+@MusicPlayerTrack@20	&SoundChannel	chan
+@MusicPlayerTrack@24	@ToneData	tone
+@MusicPlayerTrack@34	byte	_gap34
+@MusicPlayerTrack@3a	short	_unk_3A
+@MusicPlayerTrack@3c	short	_unk_3C
+@MusicPlayerTrack@40	word	cmdPtr
+@MusicPlayerTrack@44	byte	patternStack0
+@MusicPlayerTrack@45	byte	patternStack1
+@MusicPlayerTrack@46	byte	patternStack2
+@MusicPlayerTrack@47	byte	_pad47
+
+@SongHeader@00	byte	trackCount
+@SongHeader@01	byte	blockCount
+@SongHeader@02	byte	priority
+@SongHeader@03	byte	reverb
+@SongHeader@04	&ToneData	tone
+@SongHeader@08	byte	part_array
+
+@MusicPlayerInfo@00	&SongHeader	songHeader
+@MusicPlayerInfo@04	word	status
+@MusicPlayerInfo@08	byte	trackCount
+@MusicPlayerInfo@09	byte	priority
+@MusicPlayerInfo@0a	byte	cmd
+@MusicPlayerInfo@0b	byte	unk_B
+@MusicPlayerInfo@0c	word	clock
+@MusicPlayerInfo@10	byte	gap	//[8]
+@MusicPlayerInfo@18	word	memAccAreaPtr
+@MusicPlayerInfo@1c	short	tempoD
+@MusicPlayerInfo@1e	short	tempoU
+@MusicPlayerInfo@20	short	tempoI
+@MusicPlayerInfo@22	short	tempoC
+@MusicPlayerInfo@24	short	fadeOI
+@MusicPlayerInfo@26	short	fadeOC
+@MusicPlayerInfo@28	short	fadeOV
+@MusicPlayerInfo@2a	short	_pad2A
+@MusicPlayerInfo@2c	&MusicPlayerTrack	tracks
+@MusicPlayerInfo@30	&ToneData	tone
+@MusicPlayerInfo@34	word	ident
+@MusicPlayerInfo@38	word	func
+@MusicPlayerInfo@3c	word	intp
+
+@MusicPlayer@00	&MusicPlayerInfo	info
+@MusicPlayer@04	&MusicPlayerTrack	track
+@MusicPlayer@08	byte	_unk_8
+@MusicPlayer@09	byte	_pad09
+@MusicPlayer@0a	byte	_unk_A
+
+@Song@00	&SongHeader	header
+@Song@04	short	ms
+@Song@06	short	me
 
 03000008	Call blah and put value	{U}
 030000E8	render_info: for cutscenes.	{U}
@@ -9464,24 +9605,27 @@ r3=X tile position of menu of the right	{U}
 080B6504	ComputeChapterRankings	{U}
 080D74C0	ComputeChecksum32	{U}
 080dc0fc	ComputeChecksum32	{J}
-@ArenaTemp@00	&Unit	球员单位
-@ArenaTemp@04	&Unit	反对者
-@ArenaTemp@08	short	额外费用
-@ArenaTemp@0A	byte	战斗结果
-@ArenaTemp@0B	byte	未知1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	道具
-@ArenaTemp@0E	byte	未知2
-@ArenaTemp@0F	byte	未知3
-@ArenaTemp@10	short	未知4
-@ArenaTemp@12	byte	未知5
-@ArenaTemp@13	byte	未知6
-@ArenaTemp@14	short	未知7
-@ArenaTemp@15	short	未知8
-@ArenaTemp@16	short	球员实力
-@ArenaTemp@18	short	对手的实力
-0203A8EC	@ArenaTemp	竞技场的临时数据	{J}
-0203A8F0	@ArenaTemp	竞技场的临时数据	{U}
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+0203A8EC	@ArenaData	竞技场的临时数据	{J}
+0203A8F0	@ArenaData	竞技场的临时数据	{U}
 
 08031960	GetUnitArenaWeight	{J}
 0807C8DC	GetAdjustedPositionForNewUnit	{J}
@@ -10212,8 +10356,8 @@ r3=X tile position of menu of the right	{U}
 03001850	gStr_3001850	{U}
 03001C38	gSummonedUnitDefinitionBuffer	{U}
 03004BB0	gCurrentMovCostTable	{U}
-03006440	gMusicPlayerInfo_3006440	{U}
-03006650	gMusicPlayerInfo_3006650	{U}
+03006440	@MusicPlayer	gMusicPlayerInfo	{U}
+03006650	@MusicPlayer	gMusicPlayerInfo	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -11499,6 +11643,78 @@ r3=X tile position of menu of the right	{U}
 02017728	gBattleAnimeCounter
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
+02000000	gAISFrontLeft	{J}
+02000004	gAISBackLeft	{J}
+02000008	gAISFrontRight	{J}
+0200000C	gAISBackRight	{J}
+0200005C	gpBattleAnimFrameStartLookup	{J}
+02001168	gBonusClaimItemList	{J}
+0200278C	gTradeMenuTextHandles	{J}
+020041C8	gAISOAM_20041C8	{J}
+0200F1C8	gAISFrames_Left	{J}
+02011BC8	gAISFrames_Right	{J}
+020121CC	gPrepScreenUnitList	{J}
+0201772C	gBool_SpellFxActive	{J}
+02017734	gBool_EfxDeathActive	{J}
+02017790	gSpellAnimBgGfxBuffer_Maybe	{J}
+0201A790	gSpellAnimObjGfxBuffer_Maybe	{J}
+0201FAD0	gBattleAnimBoolEkrNamewinAppearActive	{J}
+0201FB04	gBattleAnimBoolEndedRounds	{J}
+0201FB18	gpEkrAnimeDrvProc	{J}
+0201FB1C	gpBattleAnimSomeSheetData	{J}
+0202013C	gBattleAnimTriangleAttackEnded	{J}
+020228C8	gPalette1Buffer	{J}
+020228E8	gPalette2Buffer	{J}
+02022908	gPalette3Buffer	{J}
+02022928	gPalette4Buffer	{J}
+02022968	gPalette6Buffer	{J}
+02022988	gPalette7Buffer	{J}
+02022A68	gPaletteEBuffer	{J}
+02022A88	gPaletteFBuffer	{J}
+02022AE8	gPalette12Buffer	{J}
+02022B08	gPalette13Buffer	{J}
+02022B28	gPalette14Buffer	{J}
+02022B48	gPalette15Buffer	{J}
+02022B68	gPalette16Buffer	{J}
+02022B88	gPalette17Buffer	{J}
+02022BA8	gPalette18Buffer	{J}
+02022BC8	gPalette19Buffer	{J}
+02022BE8	gPalette1ABuffer	{J}
+02022C08	gPalette1BBuffer	{J}
+02022C28	gPalette1CBuffer	{J}
+02022C48	gPalette1DBuffer	{J}
+02022C68	gPalette1EBuffer	{J}
+02022C88	gPalette1FBuffer	{J}
+02024CAC	gBg1MapTarget	{J}
+02024CB0	gBg2MapTarget	{J}
+02024CB4	gBg3MapTarget	{J}
+02024CB8	gpMainCallback	{J}
+02028E74	gSpecialUiCharAllocationTable	{J}
+02029D84	gpAISFirst	{J}
+0203A98C	gMovementArrowData	{J}
+0203DD18	gNameSelectNameBoxText	{J}
+0203E108	gStoredBattleAnimId21Ptr	{J}
+0203E10A	gStoredBattleAnimId22Ptr	{J}
+0203E152	gRoundDamageValuesMaybe	{J}
+0203E190	gpExtraUnit1	{J}
+0203E194	gpExtraUnit2	{J}
+0203E1A0	gBattleAnimBoolLockSheetGraphicsMaybe	{J}
+0203E1A8	gBattleHpDisplayedValue	{J}
+0203EDB0	gBonusContentFlags	{J}
+0203EF60	gSaveMenuRTextData	{J}
+03000000	gRNState	{J}
+03000038	gpMusicProcA	{J}
+0300003C	gpMusicProcB	{J}
+030005F8	gSomeUnitWordArray	{J}
+030007F8	gSomeUtilityTextHandle	{J}
+030017D8	gSioBaudRate	{J}
+03004B50	gCurrentMovCostTable	{J}
+03006430	@MusicPlayer	gMusicPlayerInfo	{J}
+03006640	@MusicPlayer	gMusicPlayerInfo	{J}
+03007FF0	gpM4aMainThing	{J}
+04000002	Undocumented_GreenSwap	{J}
+04000300	Undocumented_PostBootFlag	{J}
+04000301	Undocumented_PowerDownControl	{J}
 08032114	UpdateMapAndUnit	{J}
 0807E160	绘制地图动画图形对话框。	{J}
 0807DFF0	用于管理地图动画帧的例程。	{J}

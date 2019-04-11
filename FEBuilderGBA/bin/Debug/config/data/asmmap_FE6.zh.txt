@@ -377,8 +377,8 @@
 @BattleStats@0A	short	Battle hit
 @BattleStats@0C	short	Battle crit
 @BattleStats@0E	short	Lethality chance
-@BattleStats@10	@Unit	taUnitA
-@BattleStats@14	@Unit	taUnitB
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 02039200	@BattleStats	BattleStats	//maybe
 @BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
 @BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
@@ -947,23 +947,26 @@
 0802A30C	ActionCombat
 0802A370	ActionDance
 0802A35C	ActionArena
-@ArenaTemp@00	&Unit	球员单位。
-@ArenaTemp@04	&Unit	反对者。
-@ArenaTemp@08	short	锁存器。
-@ArenaTemp@0A	byte	战斗结果。
-@ArenaTemp@0B	byte	未知1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	道具
-@ArenaTemp@0E	byte	未知2
-@ArenaTemp@0F	byte	未知3。
-@ArenaTemp@10	short	未知4。
-@ArenaTemp@12	byte	未知5。
-@ArenaTemp@13	byte	未知6。
-@ArenaTemp@14	short	未知7。
-@ArenaTemp@15	short	未知8。
-@ArenaTemp@16	short	玩家的力量。
-@ArenaTemp@18	short	对手的力量。
-02039504	@ArenaTemp	体育场的临时数据。
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+02039504	@ArenaData	体育场的临时数据。
 08022064	GetUnitMapSpritePaletteIndex
 08026504	实际通过物品交换交换物品时。
 08033C04	AiTryDoStaff
