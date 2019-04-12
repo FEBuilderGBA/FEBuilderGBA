@@ -87,13 +87,13 @@ namespace FEBuilderGBA
             sb.Append(ud.time);
             sb.Append(' ');
 
-            for (int i = 0; i < ud.list.Count; i++)
-            {
-                sb.Append(U.ToHexString(ud.list[i].addr));
-                sb.Append(" l=");
-                sb.Append(U.ToHexString(ud.list[i].data.Length));
-                sb.Append(',');
-            }
+//            for (int i = 0; i < ud.list.Count; i++)
+//            {
+//                sb.Append(U.ToHexString(ud.list[i].addr));
+//                sb.Append(" l=");
+//                sb.Append(U.ToHexString(ud.list[i].data.Length));
+//                sb.Append(',');
+//            }
             Log.Notify(sb.ToString());
         }
         public void Push(UndoData ud)

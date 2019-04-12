@@ -283,7 +283,7 @@
 0807308C	动画释放Mamukuto的转变	{J}
 08070AE4	动画释放Mamukuto的转变	{U}
 08072FBC	处理执行Mamukuto的转换动画	{J}
-08070A16	处理执行Mamukuto的转换动画	{U}
+08070A14	处理执行Mamukuto的转换动画	{U}
 08072F14	通过Mamukuto转换声音开始和完成的处理	{J}
 0807096C	通过Mamukuto转换声音开始和完成的处理	{U}
 08072EA4	Mumukut转变和“攻击”	{J}
@@ -7489,7 +7489,7 @@ r3=X tile position of menu of the right	{U}
 08AAFCF4	&PALETTE	Something's palette	95	{U}
 08AB0114	&PALETTE	Something's palette	96	{U}
 08AB0B24	&PALETTE	Something's palette	97	{U}
-08AB210C	&PALETTE	Something's palette	98	{U}
+08AB210C	&PALETTE3	Something's palette	98	{U}
 08AB21B8	&PALETTE	Something's palette	99	{U}
 085C25C0	&PALETTE	Something's palette	01	{J}
 085C73C0	&PALETTE	Something's palette	02	{J}
@@ -7586,7 +7586,7 @@ r3=X tile position of menu of the right	{U}
 08B48918	&PALETTE	Something's palette	95	{J}
 08B48D38	&PALETTE	Something's palette	96	{J}
 08B49B4C	&PALETTE	Something's palette	97	{J}
-08B4B134	&PALETTE	Something's palette	98	{J}
+08B4B134	&PALETTE3	Something's palette	98	{J}
 08B4B1E0	&PALETTE	Something's palette	99	{J}
 089B7414	&LZ77	Something small compressed data	35	{U}
 089B743C	&LZ77	Something small compressed data	36	{U}
@@ -12331,3 +12331,20 @@ r3=X tile position of menu of the right	{U}
 03001798	gDungeonState	{J}
 080DC56F	gMenuCommandEventDisableList	{J}
 080DC57E	gMenuCommandEventGrayList	{J}
+0202bcb1	gGameLogicSemaphore	{U}
+0202bcb2	gGameGfxSemaphore	{U}
+0202bcb4	gGameStatebits	{U}
+0202bcb6	gSavedVCLY	{U}
+0202bcbc	gCurrentRealCameraPos	{U}
+0202bcc4	gCursorMapPosition	{U}
+0202bccc	gSomeRealCameraPosition	{U}
+0202bcd0	gCursorDisplayPosition	{U}
+0202bcd4	gSomeRealCameraOffset	{U}
+0202bcd8	gSomeRealCameraOffsetTarget	{U}
+0202bcdc	gItemGotButNotYet	{U}
+0202bcde	gThatsAnItem2	{U}
+08BB1DBC	:08BB1F27	神秘的数据。	它似乎与本章开头的章节标题显示有关。	{J}
+081F5674	:081F567b	神秘的数据。	8个字节。	{J}
+081F5680	:081F5687	神秘的数据。	8个字节。	{J}
+081F5690	:081F5697	神秘的数据。	8个字节。	{J}
+08B18D68	:08B18ED3	神秘的数据。	它似乎与本章开头的章节标题显示有关。	{U}

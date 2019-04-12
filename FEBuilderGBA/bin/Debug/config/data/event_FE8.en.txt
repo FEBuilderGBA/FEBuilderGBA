@@ -242,12 +242,12 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 40050200XX000000400A0000E8E29E08	Change to[XX:BG:Background]	{BG}	{U}
 40050200XXXXXXXX400A0000AC03A608	Reinforcments[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
 40050200XXXXXXXX400A000074E29E08	Reinforcments[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
-40050200XXXXXXXX400A0000D403A608	Hard mode exclusive reinforcments[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{J}
-40050200XXXXXXXX400A00009CE29E08	Hard mode exclusive reinforcments[XXXXXXXX:POINTER_UNIT:Units]	{LOADUNIT}	{U}
-40050200XX000000400A0000D402A608	When[XX:UNIT:Character]stops in range (it is set at head of event destination of range condition (0 B))	{COND}	{J}
-40050200XX000000400A00009CE19E08	When[XX:UNIT:Character]stops in range (it is set at head of event destination of range condition (0 B))	{COND}	{U}
-4005020000000000400A0000F002A608	Whoever passes if you are in army (set at beginning of event destination of ※ range condition (0B))	{COND}	{J}
-4005020000000000400A0000B8E19E08	Whoever passes if you are in army (set at beginning of event destination of ※ range condition (0B))	{COND}	{U}
+40050200XXXXXXXX400A0000D403A608	Hard mode exclusive reinforcments[XXXXXXXX:POINTER_UNIT:Units]	Only in hard mode difficulty will perform the specified reinforcement.	{LOADUNIT}	{J}
+40050200XXXXXXXX400A00009CE29E08	Hard mode exclusive reinforcments[XXXXXXXX:POINTER_UNIT:Units]	Only in hard mode difficulty will perform the specified reinforcement.	{LOADUNIT}	{U}
+40050200XX000000400A0000D402A608	When[XX:UNIT:Character]stops in range (it is set at head of event destination of range condition)	{COND}	{J}
+40050200XX000000400A00009CE19E08	When[XX:UNIT:Character]stops in range (it is set at head of event destination of range condition)	{COND}	{U}
+4005020000000000400A0000F002A608	Whoever passes if you are in army (set at beginning of event destination of range condition)	{COND}	{J}
+4005020000000000400A0000B8E19E08	Whoever passes if you are in army (set at beginning of event destination of range condition)	{COND}	{U}
 40050200XX000000400A00005406A608	Warp erase[XX:UNIT:Character]	{UNITREMOVE}	{J}
 40050200XX000000400A00001CE59E08	Warp erase[XX:UNIT:Character]	{UNITREMOVE}	{U}
 40050200XX000000400A0000D805A608	Add[XX:UNIT:Character]to a group	{UNITPERSOLNAL}	{J}
@@ -302,10 +302,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 400502004F000000400A00002004A60821171000201000004040XX00ZZ00YY002010040020171000	Force Promotion[XX:UNIT:Character]to[ZZ:CLASS:class]with[YY:ITEM:item ID (display only)]	{UNITPERSOLNAL}	{CC}	{J}
 4005020035000000400A0000E8E29E0821171000201000004040XX00ZZ00YY002010040020171000	Force Promotion[XX:UNIT:Character]to[ZZ:CLASS:class]with[YY:ITEM:item ID (display only)]	{UNITPERSOLNAL}	{CC}	{U}
 2A3400002C3400002B340000	Erase all units(CLEA+CLEN+CLEE)	{CLEAR}	{UNITREMOVE}
-410D000099810408	Call name input screen(it use @0080@0020)(LOW)	{J}
-410D000081820408	Call name input screen(it use @0080@0020)(LOW)	{U}
-211A0000410D00009981040820220000	Call name input screen(it use @0080@0020)	{MAP}	{J}
-211A0000410D00008182040820220000	Call name input screen(it use @0080@0020)	{MAP}	{U}
+410D000099810408	Call name input screen(it use Tact)(LOW)	{J}
+410D000081820408	Call name input screen(it use Tact)(LOW)	{U}
+211A0000410D00009981040820220000	Call name input screen(it use Tact)	{MAP}	{J}
+211A0000410D00008182040820220000	Call name input screen(it use Tact)	{MAP}	{U}
 410D000075040808	Effects when using Stone from the Devil	{MAPEFFECT}	{U}
 40A600000000ZZZZ212AXXXX	Goto Next Chapter With WORLDMAP by Designate base.[ZZ:WMLOCATION:World Map Node][XXXX:MAPCHAPTER:Chapter_ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
 212AXXXX	Goto Next Chapter With WORLDMAP.[XXXX:MAPCHAPTER:Chapter_ID](MNCH)	@MNCHBUG	{MAP}
@@ -328,14 +328,14 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Movement of units move to WMAP[
 
 
 20190000	CHECK_MODE	1=Prologue-Ch8,2=Eirika,3=Ephraim	@STOREC	{COND}
-22190000	CHECK_HARD	Difficulty If you are hard, you will get 1, otherwise you will get 0.	@STOREC	{COND}
+22190000	CHECK_HARD	If you are on hard mode difficulty, it will return 1. Otherwise, it will return 0.	@STOREC	{COND}
 23190000	CHECK_TURNS	Get number of turns.	@STOREC	{COND}
 24190000	CHECK_ENEMIES	Get the number of enemy.	@STOREC	{COND}
 25190000	CHECK_OTHERS	Get the number of ally(Green NPC)	@STOREC	{COND}
 26190000	CHECK_SKIRMISH	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command.
-27190000	CHECK_TUTORIAL	Difficulty Level 1 if it is easy, 0 if not.	@STOREC	{COND}
-28190000	CHECK_MONEY	We will acquire the possession money.	@STOREC	{GOLD}	{COND}
-29190000	CHECK_FLAGID(CHECK_EVENTID)	Get the achievement flag associated with the current event get.	@STOREC	{COND}	{FLAG}
+27190000	CHECK_TUTORIAL	If you are on easy mode difficulty(tutorial), it will return 1. Otherwise, it will return 0.	@STOREC	{COND}
+28190000	CHECK_MONEY	Stores your current amount of gold.	@STOREC	{GOLD}	{COND}
+29190000	CHECK_FLAGID(CHECK_EVENTID)	Get the Completion Flag associated with the current event get.	@STOREC	{COND}	{FLAG}
 2A190000	CHECK_POSTGAME	Checks your Mode byte; likely checks to see if you are in the postgame
 21190000	CHECK_CHAPTER_NUMBER(#CHECK_SOMETHING)	Get the current chapter ID get.	@STOREC	{COND}
 2103XXXX	Confirm whether the flag is valid[XXXX:FLAG:Flag](CHECK_EVENTID)	1 if it is valid, 0 otherwise.	@STOREC	CHECK_FLAG	{COND}	{FLAG}

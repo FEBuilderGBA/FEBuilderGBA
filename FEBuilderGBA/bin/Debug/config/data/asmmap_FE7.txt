@@ -4956,3 +4956,6 @@
 08028d74	ComputeCrit	{U}
 08028A24	BattleApplyMiscBonuses	{U}
 080346c8	GetBallistaItemAt	{U}
+0842D19C	:0842D1A3	謎のデータ	8バイト	{J}
+0842D1A8	:0842D1AF	謎のデータ	8バイト	{J}
+0842D1B8	:0842D1BF	謎のデータ	8バイト	{J}

@@ -4634,3 +4634,27 @@
 @ChapterData@44	word	Unk44
 @ChapterData@48	short	Unk48
 @ChapterData@4A	short	Unk4A
+//This data is made with the aim of being readable by machine fast.
+080286F0	WriteBattleStructTerrainBonuses	{U}
+08028B7C	WriteBattleStructTerrainBonuses	{J}
+08028f8c	BattleLoadAttack	{J}
+080290f8	BattleLoadAvoid	{J}
+080291ec	BattleLoadDodge	{J}
+08028ea0	BattleApplyMiscBonuses	{J}
+08029364	BattleComputeBuffStatus	{J}
+080291f8	ComputeHit	{J}
+08029224	ComputeCrit	{J}
+08028EA0	BattleApplyMiscBonuses	{J}
+08034ba0	GetBallistaItemAt	{J}
+08028b10	BattleLoadAttack	{U}
+08028c50	BattleLoadAvoid	{U}
+08028d3c	BattleLoadDodge	{U}
+08028a24	BattleApplyMiscBonuses	{U}
+08028eb4	BattleComputeBuffStatus	{U}
+08028d48	ComputeHit	{U}
+08028d74	ComputeCrit	{U}
+08028A24	BattleApplyMiscBonuses	{U}
+080346c8	GetBallistaItemAt	{U}
+0842D19C	:0842D1A3	Mysterious data.	8 bytes.	{J}
+0842D1A8	:0842D1AF	Mysterious data.	8 bytes.	{J}
+0842D1B8	:0842D1BF	Mysterious data.	8 bytes.	{J}
