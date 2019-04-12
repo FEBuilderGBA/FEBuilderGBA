@@ -292,22 +292,22 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 1700XXXXYYYYYYYY	Conversation display by talk group 2[XX::Value][YYYY:POINTER_TALKGROUP:talk group]	{U}
 18000000XXXX0000YYYY0000	Conversation branch by military's gender 2[XX:CONVERSATION_TEXT:Male][YY:CONVERSATION_TEXT:female](MORETEXTIFTACTF)	{J}
 19000000XXXX0000YYYY0000	Conversation branch by military's gender 2[XX:CONVERSATION_TEXT:Male][YY:CONVERSATION_TEXT:female](MORETEXTIFTACTF)	{U}
-7600XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{J}
-7800XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{U}
-7700XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{J}
-7900XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{U}
-7800XXXX	[XX:FSEC:Speed]fade music(MURE)	{MUSIC}	{J}
-7A00XXXX	[XX:FSEC:Speed]fade music(MURE)	{MUSIC}	{U}
+7600XXXX	Change BGM to [XX:MUSIC:MUSIC](MUSC)	{MUSIC}	{J}
+7800XXXX	Change BGM to [XX:MUSIC:MUSIC](MUSC)	{MUSIC}	{U}
+7700XXXX	Change BGM to [XX:MUSIC:MUSIC] while saving the previous song(MUSS)	{MUSIC}	{J}
+7900XXXX	Change BGM to [XX:MUSIC:MUSIC] while saving the previous song(MUSS)	{MUSIC}	{U}
+7800XXXX	[XX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}	{J}
+7A00XXXX	[XX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}	{U}
 7900XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{J}
 7B00XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{U}
 7A00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
 7B00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
 7B000000	Decrease the volume(MUSI)	{MUSIC}	{J}
 7D000000	Decrease the volume(MUSI)	{MUSIC}	{U}
-7C000000	Restore volume(MUNO)	{MUSIC}	{J}
-7E000000	Restore volume(MUNO)	{MUSIC}	{U}
-7D00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
-7F00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{U}
+7C000000	Increase BGM volume(MUNO)	{MUSIC}	{J}
+7E000000	Increase BGM volume(MUNO)	{MUSIC}	{U}
+7D00XXXX	Play SFX [XX:SOUND:sound effect](SOUN)	{MUSIC}	{J}
+7F00XXXX	Play SFX [XX:SOUND:sound effect](SOUN)	{MUSIC}	{U}
 63000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{J}
 65000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{U}
 7B0000008C001000900000000500XXXX8D001000910000000D000000YYYY0000090000007C000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{J}
