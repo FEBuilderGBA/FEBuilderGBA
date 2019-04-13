@@ -9355,14 +9355,26 @@ Classification.
 :この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？
 Are you sure you want to port this music ({0}) to (1) in ROM?
 
+:この曲のデータ構造は壊れているようです。\r\nインポートを強行しますか？\r\n強行する場合は、正しく認識できたトラックのみをインポートします。
+The data structure of this song seems to be broken.\r\nDo you want to force import? \r\nIf you want to force, only the tracks that were recognized correctly will be imported.
+
+:この曲のデータ構造は壊れているため、Rip出来ませんでした。
+I could not Rip because the data structure of this song is broken.
+
 :データサイズを({0})確保できません。\r\nROM容量がもうないか、音楽のパースに失敗しています。
 Unable to secure data size ({0}).\r\nThere was an error parsing the music because there is no ROM capacity anymore.
 
-:Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n
-There was also Multi or Drum in Multi or Drum.\r\nIgnoring such complicated things can't be dealt with.\r\n
+:DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size
+There was strange data in DirectSound.I will ignore it.sample_location: {0}> {1} ROM Size.
 
 :Multi または Drumの中に、おかしなデータがありました。無視します。 OverHZ Sample:{0} bytes ({1} *1024 hz)
 There was strange data in Multi or Drum. It has been removed from song.OverHZ Sample: {0} bytes ({1} * 1024 hz).
+
+:MultiSampleの中に、おかしなデータがありました。無視します。 multisample_voices:{0} sample_location:{1} > {2} ROM Size
+There was strange data in MultiSample.I will ignore it.multisample_voices: {0} sample_location: {1}> {2} ROM Size.
+
+:Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n
+There was also Multi or Drum in Multi or Drum.\r\nIgnoring such complicated things can't be dealt with.\r\n
 
 :<---------\r\n選択した曲を\r\n移植する\r\n<---------
 <---------\r\nImport the\r\nselected song\r\n<---------
