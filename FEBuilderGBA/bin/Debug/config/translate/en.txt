@@ -10642,6 +10642,72 @@ Check the flags used in the chapter.
 :フラグに名前設定
 Event Flag Namer
 
+:利用言語
+Usage language.
+
+:初期設定ウィザード
+Initial setup wizard.
+
+:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「ツール」->「初期設定ウィザード」を選択してください。
+Welcome to FEBuilderGBA.\r\n\r\nHere, initial settings are performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to run again, please select "Menu"-> "Tool"-> "Setup Wizard".
+
+:始める
+start
+
+:mGBAをダウンロードする
+Download mGBA.
+
+:または、
+Or
+
+:安定して動作するバージョンのVBA-Mをダウンロードする
+Download the stable version of VBA-M.
+
+:エミュレータ:
+emulator:.
+
+:設定して次へ
+Set up and go to the next.
+
+:テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。
+Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the emulator.\r\nIf there is no problem in testing with the emulator, writing to ROM is the development method.
+
+:設定しない
+Not set.
+
+:最新版のEAをダウンロードする
+Download the latest version of EA.
+
+:EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
+Please set EA.\r\nSome patches are written in EA, so you need EA to use them.
+
+:Sappyを設定しない
+Do not set Sappy.
+
+:Sappyをダウンロードする
+Download Sappy.
+
+:Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。
+Please specify Sappy.\r\nIf you set Sappy, you can watch music with the ♪ button.
+
+:アセンブラ:
+assembler:.
+
+:最新版を自動的にダウンロードします。
+Download the latest version automatically.
+
+:デバッカー:
+Debucker :.
+
+:開発環境を設定してください。\r\n開発環境をインストールすると、ASMコードの開発とデバッグができます。
+Please set the development environment.\r\nInstalling a development environment allows you to develop and debug ASM code.
+
+:開発のやり方\r\n\r\n何か変更したら、F5キーを押して、エミュレータを起動します。\r\n動作を確認します。\r\n\r\n期待通りに動作していたら、\"メニュー\"->\"ファイル\"->\"保存\"でセーブします。\r\n\r\nもし、予想外の動作をしていたら、保存せずにFEBuilderGBAを終了してください。\r\nそうすれば、ROMを壊すことなく開発できるでしょう。\r\n\r\nどうしても解決できない問題が発生した場合は、report7zをコミニティに送ってください。\r\nreport7zを作成するには、\"メニュー\"->\"ファイル\"->\"report7z\"を選択してください。
+Way of development.\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nCheck the operation.\r\n\r\nIf it works as expected, save it with \\ "Menu \\"-> \\ "File \\"-> \\ "Save \\".\r\n\r\nIf you're doing something unexpected, quit FEBuilderGBA without saving.\r\nThen you can develop without breaking the ROM.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the community.\r\nTo create report7z, select \\ "Menu \\"-> \\ "File \\"-> \\ "report7z \\".
+
+:すべての設定が完了しました。
+All settings are complete.
+
 :解凍する
 Decompress
 
@@ -10836,9 +10902,6 @@ The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not 
 
 :どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
 Which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nWe added items because there are too many people who do not mention which chapter a problem occurs.
-
-:始める
-start
 
 :どの章？
 Which chapter? 

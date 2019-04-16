@@ -11,4 +11,4 @@ INFO=OP CLASS REELで、非ASCIIの文字列でクラス名が書かれていた
 
 AUTHOR=7743
 INFO.en=In OP CLASS REEL, add data that can get a new class name for when a class name is written with a non-ASCII character string.\r\nWhen you add this patch, we get the class name from the TextID defined in another table.\r\nIf this value is set, this name will be used instead of the class name.\r\nIf it is undefined by 0, I will refer to the name of the class as before.\r\n
-INFO.zh=在OP CLASS REEL中，添加可以在使用非ASCII字符串写入类名时获取新类名的数据。\r\n添加此补丁时，我们从另一个表中定义的TextID中获取类名。\r\n如果设置了此值，则将使用此名称而不是类名。\r\n如果未定义为0，我将像以前一样引用类的名称。\r\n
+INFO.zh=在OP CLASS REEL中，添加可以在使用非ASCII字符串写入类名时获取新类名的数据。\r\n添加此补丁时，我们从另一个表中定义的TextID中获取类名。\r\n如果设置了此值，则将使用此名称而不是类名。\r\n如果未定义为0，像以前一样引用类的名称。\r\n

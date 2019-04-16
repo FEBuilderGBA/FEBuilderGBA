@@ -1,0 +1,9 @@
+#define csvmacro000(arg000,arg001) "BYTE arg000 0x00; SHORT arg001;
+
+DrawSpecialChapter_Table:
+//csvmacro000(0x00,0xe3)   //Prologue やらなくても自動的に出せます
+csvmacro000(0x15,0xe2)    //final
+csvmacro000(0x16,0xe2)    //final
+csvmacro000(0x22,0xe2)    //final
+csvmacro000(0x23,0xe2)    //final
+csvmacro000(0x00,0x00)    //TERM

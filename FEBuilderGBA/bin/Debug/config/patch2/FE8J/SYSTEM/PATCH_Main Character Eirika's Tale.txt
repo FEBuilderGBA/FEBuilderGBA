@@ -12,4 +12,4 @@ ADDRESS_TYPE=UNIT
 AUTHOR=7743
 INFO=拠点を制圧できる主人公ユニットを設定します。
 INFO.en=Set the leading character unit that can seize the base.
-INFO.zh=设置一个可以控制基地的主角单位。
+INFO.zh=设置一个可以控制基地的主角人物。

@@ -12394,3 +12394,7 @@ r3=X tile position of menu of right	{U}
 081F5680	:081F5687	Mysterious data.	8 bytes.	{J}
 081F5690	:081F5697	Mysterious data.	8 bytes.	{J}
 08B18D68	:08B18ED3	Mysterious data.	It seems to be related to the chapter title display at the beginning of the chapter.	{U}
+080BB240	ending.	Unit results.	If the unit has died.	Get the string "At, the end is over".	{J}
+080B6768	ending.	Unit results.	If the unit has died.	Get the string "At, the end is over".	{U}
+080B3564	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{J}
+080b6674	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{U}

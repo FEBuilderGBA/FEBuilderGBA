@@ -26,7 +26,7 @@ P0:EVENT=イベントポインタ
 
 INFO=指南イベントを定義します。\r\nその章をどのようにクリアするか、ユーザに教えるイベントを作ってください。\r\n新規にイベントを割り当てたい場合は、イベントポインタを0に指定してください。\r\nイベントポインタを0にすると、新規に確保するボタンが出てきます\r\n
 INFO.en=Edits the table created by "Guide Event Creator Installer"\r\nThis table enables the creation of guide/tutorial events for each chapter.\r\nThese can be used to give the player hints, demonstrate new concepts, etc.\r\nTo assign a new event, overwrite the "Event Pointer" as 0 and press the enter key.\r\nWhen set to 0, a secured button will appear. Clicking this will create a new pointer in free space.\r\n
-INFO.zh=我将定义一个指令事件。\r\n请发出一个事件告诉用户如何清除该章节。\r\n要分配新事件，请将0指定为事件指针。\r\n当您将事件指针设置为0时，会出现一个新的安全按钮\r\n
+INFO.zh=定义一个指令事件。\r\n请发出一个事件告诉用户如何清除该章节。\r\n要分配新事件，请将0指定为事件指针。\r\n当您将事件指针设置为0时，会出现一个新的安全按钮\r\n
 
 AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/shinan
 AUTHOR.en=shinan source: https://github.com/ngmansion/FE8/tree/master/shinan

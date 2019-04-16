@@ -238,6 +238,12 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
+    <Compile Include="ToolInitWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolInitWizardForm.Designer.cs">
+      <DependentUpon>ToolInitWizardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolUseFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2262,6 +2268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLongMessageDialogForm.resx">
       <DependentUpon>ErrorLongMessageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolInitWizardForm.resx">
+      <DependentUpon>ToolInitWizardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolLZ77Form.resx">
       <DependentUpon>ToolLZ77Form.cs</DependentUpon>

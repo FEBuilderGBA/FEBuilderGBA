@@ -17,7 +17,6 @@ namespace FEBuilderGBA
         public MainSimpleMenuForm()
         {
             InitializeComponent();
-//            MainFormUtil.MakeExplainFunctions(this.MenuPanel);
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
@@ -437,9 +436,12 @@ namespace FEBuilderGBA
 
             //システムエラーのチェック.
             List<FELint.ErrorSt>  systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
-            if (systemErrorList == null)
+            if (systemErrorList == null )
             {//準備中という表記を出す.
-                this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
+                if (Program.AsmMapFileAsmCache.IsBusyThread())
+                {
+                    this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
+                }
             }
             else if (systemErrorList.Count > 0)
             {//エラーを表示する.
