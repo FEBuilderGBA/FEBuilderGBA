@@ -59,8 +59,9 @@ namespace FEBuilderGBA
             {
                 return name.Trim() + U.SA(comment) + U.SA(emptyTrackMessage);
             }
+
             //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + U.SA(comment) + U.SA(emptyTrackMessage);
+            return U.at(SoundEffectList, song_id) + U.SA(comment) + U.SA(emptyTrackMessage);
         }
 
         //名前の取得   アドレスを指定できるので、早く取得できる 
@@ -78,7 +79,7 @@ namespace FEBuilderGBA
                 return name.Trim() + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
             }
             //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
+            return U.at(SoundEffectList, song_id) + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
         }
 
         static bool IsEmptyTrack(uint song_id , uint addr)

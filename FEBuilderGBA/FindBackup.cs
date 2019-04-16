@@ -131,13 +131,15 @@ namespace FEBuilderGBA
         }
         DateTime GetFileDate(string filepath)
         {
+            filepath = Path.GetFileNameWithoutExtension(filepath);
+
             int backupIndex = filepath.IndexOf(".backup.");
             if (backupIndex < 0)
             {
                 return File.GetLastWriteTime(filepath);
             }
             backupIndex += ".backup.".Length;
-            string s = filepath.Substring(backupIndex);
+            string s = U.substr(filepath, backupIndex,4+2+2+2+2+2);
 
             DateTime rdate;
             bool r = DateTime.TryParseExact(s, "yyyyMMddHHmmss", null, System.Globalization.DateTimeStyles.None, out rdate);
