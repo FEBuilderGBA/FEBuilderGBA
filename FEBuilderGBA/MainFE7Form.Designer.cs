@@ -136,6 +136,7 @@
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.UnitCustomBattleAnime = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.EventFinalSerifButton = new System.Windows.Forms.Button();
             this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
@@ -199,7 +200,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.EventFinalSerifButton = new System.Windows.Forms.Button();
+            this.InitWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -992,6 +994,8 @@
             // 
             this.OptionSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingOptionToolStripMenuItem,
+            this.InitWizardToolStripMenuItem,
+            this.toolStripSeparatorEx5,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
             this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
@@ -1000,14 +1004,14 @@
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -1320,6 +1324,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1623, 716);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // EventFinalSerifButton
+            // 
+            this.EventFinalSerifButton.Location = new System.Drawing.Point(1016, 258);
+            this.EventFinalSerifButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EventFinalSerifButton.Name = "EventFinalSerifButton";
+            this.EventFinalSerifButton.Size = new System.Drawing.Size(200, 36);
+            this.EventFinalSerifButton.TabIndex = 140;
+            this.EventFinalSerifButton.Text = "終章セリフ";
+            this.EventFinalSerifButton.UseVisualStyleBackColor = true;
+            this.EventFinalSerifButton.Click += new System.EventHandler(this.EventFinalSerifButton_Click);
             // 
             // StatusUnitsMenuButton
             // 
@@ -2014,16 +2029,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // EventFinalSerifButton
+            // InitWizardToolStripMenuItem
             // 
-            this.EventFinalSerifButton.Location = new System.Drawing.Point(1016, 258);
-            this.EventFinalSerifButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EventFinalSerifButton.Name = "EventFinalSerifButton";
-            this.EventFinalSerifButton.Size = new System.Drawing.Size(200, 36);
-            this.EventFinalSerifButton.TabIndex = 140;
-            this.EventFinalSerifButton.Text = "終章セリフ";
-            this.EventFinalSerifButton.UseVisualStyleBackColor = true;
-            this.EventFinalSerifButton.Click += new System.EventHandler(this.EventFinalSerifButton_Click);
+            this.InitWizardToolStripMenuItem.Name = "InitWizardToolStripMenuItem";
+            this.InitWizardToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
+            this.InitWizardToolStripMenuItem.Text = "初期設定ウィザード";
+            this.InitWizardToolStripMenuItem.Click += new System.EventHandler(this.InitWizardToolStripMenuItem_Click);
+            // 
+            // toolStripSeparatorEx5
+            // 
+            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
+            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
             // 
             // MainFE7Form
             // 
@@ -2225,5 +2241,7 @@
         private System.Windows.Forms.Button UnitActionPointerButton;
         private System.Windows.Forms.Button StatusUnitsMenuButton;
         private System.Windows.Forms.Button EventFinalSerifButton;
+        private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
+        private ToolStripSeparatorEx toolStripSeparatorEx5;
     }
 }

@@ -136,7 +136,7 @@ namespace FEBuilderGBA
                 Mid2AGBOKButton.Enabled = false;
                 this.tabControl1.SelectedIndex = 0;
             }
-            Mid2agbV.Value = 127;
+            Mid2agbV.Value = 80;
             //Mid2agbR.SelectedIndex = 0;
         }
 

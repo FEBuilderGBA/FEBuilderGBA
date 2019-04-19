@@ -772,5 +772,10 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<UnitActionPointerForm>();
         }
 
+        private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.RunToolInitWizard();
+        }
+
     }
 }

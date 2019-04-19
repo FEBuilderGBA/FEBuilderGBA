@@ -78,6 +78,8 @@ namespace FEBuilderGBA
                 WelcomeForm f = (WelcomeForm)InputFormRef.JumpFormLow<WelcomeForm>();
                 if (Program.ROM == null)
                 {//ROMが読み込めない場合、welcomeダイアログを出す.
+                    WelcomeForm.CheckInitWizard();
+
                     f.ShowDialog();
                     if (Program.ROM == null)
                     {//それでもROMが読み込めない場合、終了.
@@ -111,8 +113,6 @@ namespace FEBuilderGBA
             }
             while (Program.doReOpen); //メインフォームを作り直すためループにする.
 
-            //設定の保存.
-            Program.Config.Save();
             //キャッシュスレッドが動いていたら止める
             if (AsmMapFileAsmCache != null)
             {
@@ -438,9 +438,11 @@ namespace FEBuilderGBA
             //RAM
             ReBuildRAM();
 
-            if (fullfilename != "")
+            if (fullfilename != ""
+                && fullfilename != Program.Config.at("Last_Rom_Filename"))
             {//最後に開いたファイル名を保存する.
                 Program.Config["Last_Rom_Filename"] = fullfilename;
+                Program.Config.Save();
             }
             Log.Notify("InitSystem:Complate");
         }
@@ -465,6 +467,19 @@ namespace FEBuilderGBA
 
         public static void ReLoadSetting()
         {
+            if (Program.ROM == null)
+            {//ROMを読込んでいない場合は、システムの初期化だけ行う
+
+                //システム側のテキストエンコード いかにしてUnicodeにするかどうか.
+                ReBuildSystemTextEncoder();
+
+                //多言語切り替え
+                ReLoadTranslateResource();
+
+                return;
+            }
+
+
             if (AsmMapFileAsmCache != null)
             {
                 //探索スレッドが動いているとまずいので停止させる.

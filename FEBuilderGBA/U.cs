@@ -2712,6 +2712,7 @@ namespace FEBuilderGBA
         {
             return Path.GetExtension(filename).ToUpper();
         }
+
         public static long GetFileSize(string filename)
         {
             FileInfo info = new FileInfo(filename);
@@ -3901,6 +3902,54 @@ namespace FEBuilderGBA
             return request;
         }
 
+        public static string GetURLBaseServer(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return uri.Scheme + "://" + uri.Authority + "/";
+        }
+        public static string GetURLBaseDir(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return uri.Scheme + "://" + uri.Authority + Path.GetDirectoryName(uri.LocalPath).Replace("\\","/") + "/" ;
+        }
+        public static string GetURLFilename(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return Path.GetFileName(uri.LocalPath);
+        }
+#if DEBUG
+        public static void TEST_GetURLBaseServer()
+        {
+            string r = GetURLBaseServer("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "http://foo.local/");
+        }
+        public static void TEST_GetURLBaseDir()
+        {
+            string r = GetURLBaseDir("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "http://foo.local/aaa/ddd/");
+        }
+        public static void TEST_GetURLFilename()
+        {
+            string r = GetURLFilename("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "file.zip");
+        }
+#endif
+
+        //URLを整形してフルパスにします.
+        public static string MakeFullURLPath(string baseurl,string targeturl)
+        {
+            if (targeturl.IndexOf("http") == 0)
+            {//フルパス
+                return targeturl;
+            }
+            Uri uri = new Uri(baseurl);
+            if (targeturl.IndexOf("/") == 0)
+            {
+                return uri.Scheme + "://" + uri.Authority + targeturl;
+            }
+            return uri.Scheme + "://" + uri.Authority + Path.GetDirectoryName(uri.LocalPath) + "/" + targeturl;
+        }
+
         //https://qiita.com/Takezoh/items/3eff6806a59152656ddc
         //MONOには証明書が入っていないので別処理
         private static bool OnRemoteCertificateValidationCallback(
@@ -4008,7 +4057,14 @@ namespace FEBuilderGBA
                     if (pleaseWait != null)
                     {
                         readTotalSize += bytesRead;
-                        pleaseWait.DoEvents("read " + readTotalSize + "/" + totalSize);
+                        if (totalSize == -1)
+                        {
+                            pleaseWait.DoEvents("Download: " + readTotalSize + "/" + "???");
+                        }
+                        else
+                        {
+                            pleaseWait.DoEvents("Download: " + readTotalSize + "/" + totalSize);
+                        }
                     }
                 }
             }

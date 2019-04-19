@@ -1,0 +1,8 @@
+#define csvmacro000(arg000,arg001) "BYTE arg000 0x00; SHORT arg001;
+
+DrawSpecialChapter_Table:
+csvmacro000(0x15,0x0159)    //final
+csvmacro000(0x16,0x0159)    //final
+csvmacro000(0x22,0x0159)    //final
+csvmacro000(0x23,0x0159)    //final
+csvmacro000(0x00,0x00)    //TERM

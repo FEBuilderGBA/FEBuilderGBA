@@ -127,6 +127,7 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.OPClassAlphaNameButton = new System.Windows.Forms.Button();
             this.AIPerformStaffButton = new System.Windows.Forms.Button();
@@ -184,7 +185,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.UnitActionPointerButton = new System.Windows.Forms.Button();
+            this.InitWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -914,6 +916,8 @@
             // 
             this.OptionSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingOptionToolStripMenuItem,
+            this.InitWizardToolStripMenuItem,
+            this.toolStripSeparatorEx5,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
             this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
@@ -922,14 +926,14 @@
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -1195,6 +1199,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1640, 756);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // UnitActionPointerButton
+            // 
+            this.UnitActionPointerButton.Location = new System.Drawing.Point(824, 584);
+            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
+            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
+            this.UnitActionPointerButton.TabIndex = 139;
+            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
+            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
+            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
             // 
             // ToolUseFlagButton
             // 
@@ -1823,16 +1838,17 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // UnitActionPointerButton
+            // InitWizardToolStripMenuItem
             // 
-            this.UnitActionPointerButton.Location = new System.Drawing.Point(824, 584);
-            this.UnitActionPointerButton.Margin = new System.Windows.Forms.Padding(2);
-            this.UnitActionPointerButton.Name = "UnitActionPointerButton";
-            this.UnitActionPointerButton.Size = new System.Drawing.Size(200, 36);
-            this.UnitActionPointerButton.TabIndex = 139;
-            this.UnitActionPointerButton.Text = "ユニットアクションポインタ";
-            this.UnitActionPointerButton.UseVisualStyleBackColor = true;
-            this.UnitActionPointerButton.Click += new System.EventHandler(this.UnitActionPointerButton_Click);
+            this.InitWizardToolStripMenuItem.Name = "InitWizardToolStripMenuItem";
+            this.InitWizardToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
+            this.InitWizardToolStripMenuItem.Text = "初期設定ウィザード";
+            this.InitWizardToolStripMenuItem.Click += new System.EventHandler(this.InitWizardToolStripMenuItem_Click);
+            // 
+            // toolStripSeparatorEx5
+            // 
+            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
+            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
             // 
             // MainFE6Form
             // 
@@ -2019,5 +2035,7 @@
         private System.Windows.Forms.Button ToolUseFlagButton;
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
         private System.Windows.Forms.Button UnitActionPointerButton;
+        private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
+        private ToolStripSeparatorEx toolStripSeparatorEx5;
     }
 }

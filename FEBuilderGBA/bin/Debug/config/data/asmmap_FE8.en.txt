@@ -1526,8 +1526,6 @@ r3=X tile position of menu of right	{U}
 
 080192B8	Get_Portrait	Either short 0x6 of char data or (if character doesn't have a character portrait) short 0x8 of class data	RET=index of character's portrait	r0=char data ptr	{U}
 
-08019444	Get_Class_Data	RET=Pointer to entry in class data table	r0=class number	{U}
-0801911C	Get_Class_Data	RET=Pointer to entry in class data table	r0=class number	{J}
 08017548	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{U}
 080172F0	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{J}
 
@@ -3136,9 +3134,9 @@ r3=X tile position of menu of right	{U}
 080193a4	UnitTryHeal	{U}
 080193e8	GetRescuingUnitNameId	{U}
 08019414	WriteStatusTextToRAM	{U}
-08019430	GetUnitStruct	{U}
-08019444	GetROMClassStruct	{U}
-08019464	GetROMCharStruct	{U}
+08019430	GetUnitStruct	RET=RAM Unit:@UNIT	{U}
+08019444	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{U}
+08019464	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{U}
 08019484	UnitRemoveItem	{U}
 0801949c	CanUnitCrossTerrain	{U}
 080194bc	InitChapterMap	{U}
@@ -4932,9 +4930,9 @@ r3=X tile position of menu of right	{U}
 0801907C	UnitTryHeal	{J}
 080190C0	GetRescuingUnitNameId	{J}
 080190EC	WriteStatusTextToRAM	{J}
-08019108	GetUnitStruct	{J}
-0801911C	GetROMClassStruct	{J}
-0801913C	GetROMCharStruct	{J}
+08019108	GetUnitStruct	RET=RAM Unit:@UNIT	{J}
+0801911C	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{J}
+0801913C	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{J}
 0801915C	UnitRemoveItem	{J}
 08019174	CanUnitCrossTerrain	{J}
 08019194	InitChapterMap	{J}
@@ -12398,3 +12396,7 @@ r3=X tile position of menu of right	{U}
 080B6768	ending.	Unit results.	If the unit has died.	Get the string "At, the end is over".	{U}
 080B3564	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{J}
 080b6674	ending.	Unit results.	Format the name of the chapter where the unit died.	Perform special notation such as end chapter / beginning.	{U}
+080B7800	Clear turn list drawing.	{U}
+080b3538	AppendTextBuffer_080b3538	{J}
+080aeabc	AppendTextBuffer_080aeabc	{U}
+080AEBEC	Div10_Safe	{U}

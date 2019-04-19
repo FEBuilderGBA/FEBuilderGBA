@@ -5404,6 +5404,9 @@ Tileset Palette
 :マップエディタ
 Map Editor
 
+:ユニットアクションポインタ
+Unit action pointer.
+
 :OPクラス紹介英語表記
 OP Class Reel English Names
 
@@ -5476,8 +5479,8 @@ Simple Menu
 :地形設定
 Terrain Editor
 
-:ユニットアクションポインタ
-Unit action pointer.
+:初期設定ウィザード
+Initial setup wizard.
 
 :詳細メニュー
 Advanced Editors
@@ -7929,6 +7932,9 @@ Open directory location
 
 :関連付けされたアプリケーションで開く
 Open with associated application
+
+:auto=自動判別
+auto=Automatic
 
 :最新版は{0}です。
 The latest version is {0}.
@@ -10642,71 +10648,98 @@ Check the flags used in the chapter.
 :フラグに名前設定
 Event Flag Namer
 
-:利用言語
-Usage language.
+:ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}
+Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfilename: {2}.
 
-:初期設定ウィザード
-Initial setup wizard.
+:ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
-:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「ツール」->「初期設定ウィザード」を選択してください。
-Welcome to FEBuilderGBA.\r\n\r\nHere, initial settings are performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to run again, please select "Menu"-> "Tool"-> "Setup Wizard".
+:ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+The downloaded file could not be decompressed.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
+
+:ダウンロードしたファイルに目的のファイルがありません。\r\nPATH:{0}\r\nfindEXE:{1}
+There is no target file in the downloaded file.\r\nPATH: {0}.\r\nfindEXE: {1}.
+
+:ダウンロード先が見つかりませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}\r\npattern:{3}
+The download destination could not be found.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.\r\npattern: {3}.
+
+:既にVB6ランタイムがインストールされているようです。\r\nランタイムインストールを省略しますか？
+It seems that VB6 runtime has already been installed.\r\nDo you want to skip runtime installation? 
+
+:SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
+Sappy is written in VB6, so you need to install the runtime.\r\nLaunch the runtime installer.
+
+:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「設定」->「初期設定ウィザード」を選択してください。
+Welcome to FEBuilderGBA.\r\n\r\nHere, initial settings are performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to execute again, please select "Menu"-> "Settings"-> "Initial Setup Wizard".
+
+:黒背景
+Black background
+
+:白背景
+White background
 
 :始める
-start
+Start
+
+:戻る
+Return
 
 :mGBAをダウンロードする
-Download mGBA.
+Download mGBA
 
 :または、
 Or
 
 :安定して動作するバージョンのVBA-Mをダウンロードする
-Download the stable version of VBA-M.
+Download the stable version of VBA-M
 
 :エミュレータ:
-emulator:.
+Emulator:
 
 :設定して次へ
-Set up and go to the next.
-
-:テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。
-Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the emulator.\r\nIf there is no problem in testing with the emulator, writing to ROM is the development method.
+Set up and go to the next
 
 :設定しない
-Not set.
+Not set
 
 :最新版のEAをダウンロードする
-Download the latest version of EA.
-
-:EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
-Please set EA.\r\nSome patches are written in EA, so you need EA to use them.
+Download the latest version of EA
 
 :Sappyを設定しない
-Do not set Sappy.
+Do not set Sappy
 
 :Sappyをダウンロードする
-Download Sappy.
-
-:Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。
-Please specify Sappy.\r\nIf you set Sappy, you can watch music with the ♪ button.
+Download Sappy
 
 :アセンブラ:
-assembler:.
+Assembler:
 
 :最新版を自動的にダウンロードします。
 Download the latest version automatically.
 
-:デバッカー:
-Debucker :.
+:デバッガー:
+Debugger:
+
+:開発のやり方\r\n\r\n何か変更したら、F5キーを押して、エミュレータを起動します。\r\n動作を確認します。\r\n\r\n期待通りに動作していたら、「メニュー」->「ファイル」->「上書き保存」でセーブします。\r\n\r\nもし、予想外の動作をしていたら、保存せずにFEBuilderGBAを終了してください。\r\nそうすれば、ROMを壊すことなく開発できるでしょう。\r\n\r\nどうしても解決できない問題が発生した場合は、report7zをコミニティに送ってください。\r\nreport7zを作成するには、「メニュー」->「ファイル」->「問題報告ツール」を選択してください。
+Way of development.\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nCheck the operation.\r\n\r\nIf it works as expected, save it with "Menu" -> "File" -> "Save".\r\n\r\nIf you're doing something unexpected, quit FEBuilderGBA without saving.\r\nThen you can develop without breaking the ROM.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the community.\r\nTo create report7z, select "Menu" -> "File" -> "Create Report Issue".
+
+:すべての設定が完了しました。
+All settings are complete.
+
+:テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。
+Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the emulator.\r\nIf there is no problem in testing with the emulator, writing to ROM is the development method.
+
+:EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
+Please set EA.\r\nSome patches are written in EA, so you need EA to use them.
+
+:Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。
+Please specify Sappy.\r\nIf you set Sappy, you can watch music with the ♪ button.
 
 :開発環境を設定してください。\r\n開発環境をインストールすると、ASMコードの開発とデバッグができます。
 Please set the development environment.\r\nInstalling a development environment allows you to develop and debug ASM code.
 
-:開発のやり方\r\n\r\n何か変更したら、F5キーを押して、エミュレータを起動します。\r\n動作を確認します。\r\n\r\n期待通りに動作していたら、\"メニュー\"->\"ファイル\"->\"保存\"でセーブします。\r\n\r\nもし、予想外の動作をしていたら、保存せずにFEBuilderGBAを終了してください。\r\nそうすれば、ROMを壊すことなく開発できるでしょう。\r\n\r\nどうしても解決できない問題が発生した場合は、report7zをコミニティに送ってください。\r\nreport7zを作成するには、\"メニュー\"->\"ファイル\"->\"report7z\"を選択してください。
-Way of development.\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nCheck the operation.\r\n\r\nIf it works as expected, save it with \\ "Menu \\"-> \\ "File \\"-> \\ "Save \\".\r\n\r\nIf you're doing something unexpected, quit FEBuilderGBA without saving.\r\nThen you can develop without breaking the ROM.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the community.\r\nTo create report7z, select \\ "Menu \\"-> \\ "File \\"-> \\ "report7z \\".
-
-:すべての設定が完了しました。
-All settings are complete.
+:必要なプログラムのダウンロードと、設定をしています。
+I have downloaded and set the necessary programs.
 
 :解凍する
 Decompress
@@ -10903,23 +10936,17 @@ The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not 
 :どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
 Which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nWe added items because there are too many people who do not mention which chapter a problem occurs.
 
-:どの章？
-Which chapter? 
-
-:次へ
-next
-
-:戻る
-Return
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
-
 :この機能の説明
 Explanation of this function.
 
 :このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
 This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
+
+:どの章？
+Which chapter? 
+
+:次へ
+next
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
@@ -10932,6 +10959,9 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
+
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.

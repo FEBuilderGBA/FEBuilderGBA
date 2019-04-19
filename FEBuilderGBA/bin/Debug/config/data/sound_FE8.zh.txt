@@ -395,7 +395,7 @@
 0267=SE:@C85_2B
 0268=SE:
 0269=SE:
-026A=SE:
+026A=SE:earthquake
 026B=SE:
 026C=SE:
 02BC=SE:Shine attack

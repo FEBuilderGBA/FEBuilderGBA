@@ -153,6 +153,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
@@ -221,7 +222,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
+            this.InitWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -717,6 +719,8 @@
             // 
             this.OptionSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingOptionToolStripMenuItem,
+            this.InitWizardToolStripMenuItem,
+            this.toolStripSeparatorEx5,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
             this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
@@ -725,14 +729,14 @@
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -1552,6 +1556,17 @@
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
             this.ControlPanel.TabIndex = 1;
             // 
+            // StatusUnitsMenuButton
+            // 
+            this.StatusUnitsMenuButton.Location = new System.Drawing.Point(1426, 491);
+            this.StatusUnitsMenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StatusUnitsMenuButton.Name = "StatusUnitsMenuButton";
+            this.StatusUnitsMenuButton.Size = new System.Drawing.Size(200, 36);
+            this.StatusUnitsMenuButton.TabIndex = 134;
+            this.StatusUnitsMenuButton.Text = "部隊メニュー";
+            this.StatusUnitsMenuButton.UseVisualStyleBackColor = true;
+            this.StatusUnitsMenuButton.Click += new System.EventHandler(this.StatusUnitsMenuButton_Click);
+            // 
             // UnitActionPointerButton
             // 
             this.UnitActionPointerButton.Location = new System.Drawing.Point(814, 601);
@@ -2300,16 +2315,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // StatusUnitsMenuButton
+            // InitWizardToolStripMenuItem
             // 
-            this.StatusUnitsMenuButton.Location = new System.Drawing.Point(1426, 491);
-            this.StatusUnitsMenuButton.Margin = new System.Windows.Forms.Padding(2);
-            this.StatusUnitsMenuButton.Name = "StatusUnitsMenuButton";
-            this.StatusUnitsMenuButton.Size = new System.Drawing.Size(200, 36);
-            this.StatusUnitsMenuButton.TabIndex = 134;
-            this.StatusUnitsMenuButton.Text = "部隊メニュー";
-            this.StatusUnitsMenuButton.UseVisualStyleBackColor = true;
-            this.StatusUnitsMenuButton.Click += new System.EventHandler(this.StatusUnitsMenuButton_Click);
+            this.InitWizardToolStripMenuItem.Name = "InitWizardToolStripMenuItem";
+            this.InitWizardToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
+            this.InitWizardToolStripMenuItem.Text = "初期設定ウィザード";
+            this.InitWizardToolStripMenuItem.Click += new System.EventHandler(this.InitWizardToolStripMenuItem_Click);
+            // 
+            // toolStripSeparatorEx5
+            // 
+            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
+            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
             // 
             // MainFE8Form
             // 
@@ -2533,6 +2549,8 @@
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
         private System.Windows.Forms.Button UnitActionPointerButton;
         private System.Windows.Forms.Button StatusUnitsMenuButton;
+        private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
+        private ToolStripSeparatorEx toolStripSeparatorEx5;
     }
 }
 

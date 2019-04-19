@@ -2341,5 +2341,18 @@ namespace FEBuilderGBA
 
             Process.Start(editor , args);
         }
+        public static void RunToolInitWizard()
+        {
+            do
+            {
+                ToolInitWizardForm f = (ToolInitWizardForm)InputFormRef.JumpFormLow<ToolInitWizardForm>();
+                DialogResult dr = f.ShowDialog();
+                if (dr != DialogResult.Retry)
+                {
+                    break;
+                }
+            }
+            while (true);
+        }
     }
 }

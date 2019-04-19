@@ -16,11 +16,27 @@ namespace FEBuilderGBA
             InitializeComponent();
             MakeExplainFunctions();
 
-            InputFormRef.LoadComboResource(func_lang, U.ConfigDataFilename("func_lang_"));
+            func_lang.Items.Clear();
+            func_lang.Items.Add("auto=自動判別");
+            func_lang.Items.Add("ja=日本語");     ///No Translate
+            func_lang.Items.Add("en=English");    ///No Translate
+            func_lang.Items.Add("zh=中文");       ///No Translate
+
             InputFormRef.markupJumpLabel(X_EXPLAIN_NECESSARY_PROGRAM);
             this.Icon = Properties.Resources.icon_settings;
         }
 
+        public void AutoClose(int autocolor = 0)
+        {
+            OptionForm_Load(null, null);
+            if (autocolor == 1 || autocolor == 2) 
+            {
+                ColorSetComboBox.SelectedIndex = autocolor;
+            }
+
+            Save();
+            this.Close();
+        }
 
         private void OptionForm_Load(object sender, EventArgs e)
         {
@@ -276,17 +292,17 @@ namespace FEBuilderGBA
             //configの保存
             Program.Config.Save();
 
-
             Program.Config.UpdateShortcutKeys();
 
             Program.ReLoadSetting();
-            
+
             //すべてのフォームを再描画
             InputFormRef.InvalidateALLForms();
 
             InputFormRef.WriteButtonToYellow(this.WriteButton, false);
             this.Close();
         }
+
         public static void ClearCache()
         {
             g_Cache_write_text_escape_enum = text_escape_enum.NoCache;
@@ -295,7 +311,7 @@ namespace FEBuilderGBA
             g_Cache_textencoding = textencoding_enum.NoChace;
         }
 
-        string EXESearch(string first_filter)
+        public static string EXESearch(string first_filter)
         {
             string title = R._("ツールを選択してください");
             string filter = first_filter + "EXE|*.exe|All files|*";
@@ -1035,6 +1051,7 @@ namespace FEBuilderGBA
                 return;
             }
         }
+        
 
         private void KeyFinder_KeyDown(object sender, KeyEventArgs e)
         {
