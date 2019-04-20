@@ -194,5 +194,27 @@ namespace FEBuilderGBA
               J_6_FLAG.AccessibleDescription = R._("もし、イベント分岐用フラグが、TRUEであれば、2回目が評価されます。\r\n例えば、主人公がエイリークで、イベント分岐用フラグがTRUEであれば、次の拠点ID(エイリーク2回目)が利用されます。");
               J_8.AccessibleDescription = R._("章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。");
         }
+
+        private void W24_ValueChanged(object sender, EventArgs e)
+        {
+            CheckXYError();
+        }
+
+        private void W26_ValueChanged(object sender, EventArgs e)
+        {
+            CheckXYError();
+        }
+
+        void CheckXYError()
+        {
+            if (((W24.Value % 8) != 0) || ((W26.Value % 8) != 0))
+            {
+                ERROR_MapXY.Visible = true;
+            }
+            else
+            {
+                ERROR_MapXY.Visible = false;
+            }
+        }
     }
 }

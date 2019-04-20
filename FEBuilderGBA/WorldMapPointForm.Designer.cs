@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel11 = new System.Windows.Forms.Panel();
+            this.ERROR_MapXY = new System.Windows.Forms.Label();
+            this.L_30_COMBO = new System.Windows.Forms.ComboBox();
+            this.L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.L_6_FLAG_SKIPFFFF = new FEBuilderGBA.TextBoxEx();
             this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.W26 = new System.Windows.Forms.NumericUpDown();
@@ -96,8 +99,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.L_1_COMBO = new System.Windows.Forms.ComboBox();
-            this.L_30_COMBO = new System.Windows.Forms.ComboBox();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W24)).BeginInit();
@@ -131,6 +132,7 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.ERROR_MapXY);
             this.panel11.Controls.Add(this.L_30_COMBO);
             this.panel11.Controls.Add(this.L_1_COMBO);
             this.panel11.Controls.Add(this.L_6_FLAG_SKIPFFFF);
@@ -189,6 +191,44 @@
             this.panel11.Size = new System.Drawing.Size(1465, 639);
             this.panel11.TabIndex = 179;
             // 
+            // ERROR_MapXY
+            // 
+            this.ERROR_MapXY.ForeColor = System.Drawing.Color.Red;
+            this.ERROR_MapXY.Location = new System.Drawing.Point(547, 410);
+            this.ERROR_MapXY.Name = "ERROR_MapXY";
+            this.ERROR_MapXY.Size = new System.Drawing.Size(160, 85);
+            this.ERROR_MapXY.TabIndex = 247;
+            this.ERROR_MapXY.Text = "座標が8の倍数でないと選択できないことがあります。";
+            this.ERROR_MapXY.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ERROR_MapXY.Visible = false;
+            // 
+            // L_30_COMBO
+            // 
+            this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_30_COMBO.FormattingEnabled = true;
+            this.L_30_COMBO.Items.AddRange(new object[] {
+            "0=移動に船を利用しない",
+            "1=移動に船を利用する"});
+            this.L_30_COMBO.Location = new System.Drawing.Point(486, 530);
+            this.L_30_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_30_COMBO.Name = "L_30_COMBO";
+            this.L_30_COMBO.Size = new System.Drawing.Size(221, 26);
+            this.L_30_COMBO.TabIndex = 245;
+            // 
+            // L_1_COMBO
+            // 
+            this.L_1_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_1_COMBO.FormattingEnabled = true;
+            this.L_1_COMBO.Items.AddRange(new object[] {
+            "1=モンスターなし",
+            "2=モンスターが出現可能",
+            "3=タワーと遺跡"});
+            this.L_1_COMBO.Location = new System.Drawing.Point(486, 38);
+            this.L_1_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_1_COMBO.Name = "L_1_COMBO";
+            this.L_1_COMBO.Size = new System.Drawing.Size(221, 26);
+            this.L_1_COMBO.TabIndex = 244;
+            // 
             // L_6_FLAG_SKIPFFFF
             // 
             this.L_6_FLAG_SKIPFFFF.ErrorMessage = "";
@@ -212,6 +252,11 @@
             // 
             // W26
             // 
+            this.W26.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.W26.Location = new System.Drawing.Point(412, 470);
             this.W26.Margin = new System.Windows.Forms.Padding(2);
             this.W26.Maximum = new decimal(new int[] {
@@ -222,9 +267,15 @@
             this.W26.Name = "W26";
             this.W26.Size = new System.Drawing.Size(130, 25);
             this.W26.TabIndex = 241;
+            this.W26.ValueChanged += new System.EventHandler(this.W26_ValueChanged);
             // 
             // W24
             // 
+            this.W24.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.W24.Location = new System.Drawing.Point(412, 440);
             this.W24.Margin = new System.Windows.Forms.Padding(2);
             this.W24.Maximum = new decimal(new int[] {
@@ -235,6 +286,7 @@
             this.W24.Name = "W24";
             this.W24.Size = new System.Drawing.Size(130, 25);
             this.W24.TabIndex = 240;
+            this.W24.ValueChanged += new System.EventHandler(this.W24_ValueChanged);
             // 
             // L_3_WMICON
             // 
@@ -999,33 +1051,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // L_1_COMBO
-            // 
-            this.L_1_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_1_COMBO.FormattingEnabled = true;
-            this.L_1_COMBO.Items.AddRange(new object[] {
-            "1=モンスターなし",
-            "2=モンスターが出現可能",
-            "3=タワーと遺跡"});
-            this.L_1_COMBO.Location = new System.Drawing.Point(486, 38);
-            this.L_1_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_1_COMBO.Name = "L_1_COMBO";
-            this.L_1_COMBO.Size = new System.Drawing.Size(221, 26);
-            this.L_1_COMBO.TabIndex = 244;
-            // 
-            // L_30_COMBO
-            // 
-            this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_30_COMBO.FormattingEnabled = true;
-            this.L_30_COMBO.Items.AddRange(new object[] {
-            "0=移動に船を利用しない",
-            "1=移動に船を利用する"});
-            this.L_30_COMBO.Location = new System.Drawing.Point(486, 530);
-            this.L_30_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_30_COMBO.Name = "L_30_COMBO";
-            this.L_30_COMBO.Size = new System.Drawing.Size(221, 26);
-            this.L_30_COMBO.TabIndex = 245;
-            // 
             // WorldMapPointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1146,5 +1171,6 @@
         private FEBuilderGBA.TextBoxEx L_6_FLAG_SKIPFFFF;
         private System.Windows.Forms.ComboBox L_1_COMBO;
         private System.Windows.Forms.ComboBox L_30_COMBO;
+        private System.Windows.Forms.Label ERROR_MapXY;
     }
 }
