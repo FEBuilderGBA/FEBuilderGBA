@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel11 = new System.Windows.Forms.Panel();
-            this.ERROR_MapXY = new System.Windows.Forms.Label();
             this.L_30_COMBO = new System.Windows.Forms.ComboBox();
             this.L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.L_6_FLAG_SKIPFFFF = new FEBuilderGBA.TextBoxEx();
@@ -55,8 +54,8 @@
             this.B30 = new System.Windows.Forms.NumericUpDown();
             this.J_30 = new System.Windows.Forms.Label();
             this.J_28_TEXT = new System.Windows.Forms.Label();
-            this.J_26 = new System.Windows.Forms.Label();
-            this.L_24_MAPXY_26 = new System.Windows.Forms.Label();
+            this.J_26 = new FEBuilderGBA.LabelEx();
+            this.L_24_MAPXY_26 = new FEBuilderGBA.LabelEx();
             this.J_20_ITEMSHOP = new System.Windows.Forms.Label();
             this.J_16_ITEMSHOP = new System.Windows.Forms.Label();
             this.J_12_ITEMSHOP = new System.Windows.Forms.Label();
@@ -132,7 +131,6 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.ERROR_MapXY);
             this.panel11.Controls.Add(this.L_30_COMBO);
             this.panel11.Controls.Add(this.L_1_COMBO);
             this.panel11.Controls.Add(this.L_6_FLAG_SKIPFFFF);
@@ -191,17 +189,6 @@
             this.panel11.Size = new System.Drawing.Size(1465, 639);
             this.panel11.TabIndex = 179;
             // 
-            // ERROR_MapXY
-            // 
-            this.ERROR_MapXY.ForeColor = System.Drawing.Color.Red;
-            this.ERROR_MapXY.Location = new System.Drawing.Point(547, 410);
-            this.ERROR_MapXY.Name = "ERROR_MapXY";
-            this.ERROR_MapXY.Size = new System.Drawing.Size(160, 85);
-            this.ERROR_MapXY.TabIndex = 247;
-            this.ERROR_MapXY.Text = "座標が8の倍数でないと選択できないことがあります。";
-            this.ERROR_MapXY.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ERROR_MapXY.Visible = false;
-            // 
             // L_30_COMBO
             // 
             this.L_30_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -252,11 +239,6 @@
             // 
             // W26
             // 
-            this.W26.Increment = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
             this.W26.Location = new System.Drawing.Point(412, 470);
             this.W26.Margin = new System.Windows.Forms.Padding(2);
             this.W26.Maximum = new decimal(new int[] {
@@ -271,12 +253,7 @@
             // 
             // W24
             // 
-            this.W24.Increment = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.W24.Location = new System.Drawing.Point(412, 440);
+            this.W24.Location = new System.Drawing.Point(412, 441);
             this.W24.Margin = new System.Windows.Forms.Padding(2);
             this.W24.Maximum = new decimal(new int[] {
             65535,
@@ -520,6 +497,7 @@
             // J_26
             // 
             this.J_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_26.ErrorMessage = "";
             this.J_26.Location = new System.Drawing.Point(2, 472);
             this.J_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_26.Name = "J_26";
@@ -531,6 +509,7 @@
             // L_24_MAPXY_26
             // 
             this.L_24_MAPXY_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_24_MAPXY_26.ErrorMessage = "";
             this.L_24_MAPXY_26.Location = new System.Drawing.Point(2, 438);
             this.L_24_MAPXY_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_24_MAPXY_26.Name = "L_24_MAPXY_26";
@@ -785,6 +764,7 @@
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(65, 25);
             this.B2.TabIndex = 188;
+            this.B2.ValueChanged += new System.EventHandler(this.B2_ValueChanged);
             // 
             // J_2
             // 
@@ -1143,8 +1123,7 @@
         private System.Windows.Forms.NumericUpDown B30;
         private System.Windows.Forms.Label J_30;
         private System.Windows.Forms.Label J_28_TEXT;
-        private System.Windows.Forms.Label J_26;
-        private System.Windows.Forms.Label L_24_MAPXY_26;
+        private FEBuilderGBA.LabelEx J_26;
         private System.Windows.Forms.Label J_20_ITEMSHOP;
         private System.Windows.Forms.Label J_16_ITEMSHOP;
         private System.Windows.Forms.Label J_12_ITEMSHOP;
@@ -1171,6 +1150,6 @@
         private FEBuilderGBA.TextBoxEx L_6_FLAG_SKIPFFFF;
         private System.Windows.Forms.ComboBox L_1_COMBO;
         private System.Windows.Forms.ComboBox L_30_COMBO;
-        private System.Windows.Forms.Label ERROR_MapXY;
+        private FEBuilderGBA.LabelEx L_24_MAPXY_26;
     }
 }
