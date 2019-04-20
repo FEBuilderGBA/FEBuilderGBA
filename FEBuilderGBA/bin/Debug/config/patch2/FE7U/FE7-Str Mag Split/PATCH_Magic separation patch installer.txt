@@ -15,3 +15,4 @@ EDIT_PATCH:1=PATCH_Mag Char Editor.txt
 EDIT_PATCH:2=PATCH_Mag Class Editor.txt
 INFO.en=We will set up magical items and separate magic.\r\nInstead of expressing magical powers using power and magic defense items, we will create a new magical item.\r\nFE 7 - StrMag
 INFO.zh=我们将设置魔法物品并分开魔法。\r\n通过使用武力和魔法防御物品来代替魔法力量，我们将通过使用自由空间来创造一个新的魔力项目。
+REPLACE_POINTER:0xC51538=ITEM

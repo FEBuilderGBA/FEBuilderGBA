@@ -591,6 +591,7 @@ AUTHOR=Credits:\r\nCircleseverywhere\r\nMonkeybard & Black Mage for most of the 
 
 
 NAME.zh=技能SkillSystems20181020（技能扩展）
+REPLACE_POINTER:0x809B10=ITEM
 
 
 EVENTSCRIPT:1=400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)(LOW)	@STOREC

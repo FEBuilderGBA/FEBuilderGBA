@@ -526,6 +526,7 @@ AUTHOR=circleseverywhere Skill System v1.0.0 Donate to Circles http://donorbox.o
 AUTHOR.zh=Credits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
 
 NAME.zh=技能SkillSystems20180515（技能扩展）
+REPLACE_POINTER:0x809B10=ITEM
 
 EVENTSCRIPT:1=400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)(LOW)	@STOREC
 EVENTSCRIPT:2=40050200XX00000040050100YY000000400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)[XX:UNIT:Unit][YY:SKILL:SkillID]	@STOREC	{UNIT}	{COND}

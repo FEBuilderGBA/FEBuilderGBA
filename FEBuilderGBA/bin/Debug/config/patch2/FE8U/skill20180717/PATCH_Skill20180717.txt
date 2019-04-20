@@ -524,6 +524,7 @@ INFO=This is the most recent revision of the Custom Skill System and is recommen
 AUTHOR=Credits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark, sd9k, blademaster for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
 
 NAME.zh=技能SkillSystems20180717（技能扩展）
+REPLACE_POINTER:0x809B10=ITEM
 
 
 EVENTSCRIPT:1=400D0000{$L1:ASMC_HasSkill.bin}	ユニットがスキルを持っているかどうか判定(HasSkill)(LOW)	@STOREC

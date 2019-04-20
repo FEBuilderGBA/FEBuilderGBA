@@ -2953,6 +2953,7 @@ namespace FEBuilderGBA
                     Program.Undo.Rollback(undodata);  //操作の取り消し
                     throw; //再送
                 }
+                ReplacePointers(patch, undodata);
 
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
@@ -3114,6 +3115,8 @@ namespace FEBuilderGBA
                         Program.Undo.Rollback(undodata);  //操作の取り消し
                         throw; //再送
                     }
+
+                    ReplacePointers(patch,undodata);
 
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
@@ -7686,6 +7689,48 @@ namespace FEBuilderGBA
             }
             File.WriteAllText(filename, sb.ToString());
         }
+        void ReplacePointers(PatchSt patch,Undo.UndoData undodata)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "REPLACE_POINTER" && pair.Value != "")
+                {
+                    ReplacePointerSub( atOffset(sp,1),pair.Value, patch, undodata);
+                }
+            }
+        }
+        void ReplacePointerSub(uint searchPointer,string typeName , PatchSt patch, Undo.UndoData undodata)
+        {
+            uint newPointer;
+            if (typeName == "ITEM")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_pointer());
+            }
+            else
+            {
+                Debug.Assert(false);
+                return;
+            }
+
+            searchPointer = U.toPointer(searchPointer);
+            if (newPointer == searchPointer)
+            {//リポイントされていいないので変更する必要がない.
+                return;
+            }
+
+            //変更した部分で、旧ポインタを探します.
+            List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(searchPointer, isSilent: true);
+
+            //データを更新する.
+            foreach (var addr in movepointerlist)
+            {
+                Program.ROM.write_u32(addr , newPointer , undodata);
+            }
+        }
+
 
 
     }
