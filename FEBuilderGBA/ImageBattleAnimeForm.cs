@@ -93,9 +93,11 @@ namespace FEBuilderGBA
                 , 32
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    //12 16 がポインタであればデータがあると考える.
+                    //12 20 24 がポインタであればデータがあると考える.
                     if (U.isPointer(Program.ROM.u32(addr + 12))
-                        && U.isPointer(Program.ROM.u32(addr + 16)))
+                        && U.isPointer(Program.ROM.u32(addr + 20))
+                        && U.isPointer(Program.ROM.u32(addr + 24))
+                        )
                     {
                         return true;
                     }

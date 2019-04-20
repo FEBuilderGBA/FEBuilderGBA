@@ -41,15 +41,12 @@ namespace FEBuilderGBA
         public static Bitmap DrawBattleAnime(uint showSectionData, uint showFrameData, uint sectionData, uint frameData, uint rightToLeftOAM, uint palettes)
         {
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
-            uint frameData_offset = U.toOffset(frameData);     //
-            uint rightToLeftOAM_offset = U.toOffset(rightToLeftOAM); //OAM
-            uint palettes_offset = U.toOffset(palettes);             //パレット
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
             if (frameData_UZ.Length <= 0 || rightToLeftOAM_UZ.Length <= 0 || palettes_UZ.Length <= 0)
             {
                 return ImageUtil.BlankDummy();
@@ -1671,6 +1668,59 @@ namespace FEBuilderGBA
             }
         }
 
+        //圧縮されていないフレームの長さを求める
+        //通常フレームは圧縮されているが、昔のツールでは圧縮されていないフレームがあった。
+        static uint CalcUnCompressFrameLength(uint frameData_offset)
+        {
+            //圧縮されていないデータなので、事故防止のため リミッターをかける.
+            uint limitter = frameData_offset + 1024 * 1024; //1MBサーチしたらもうあきらめる.
+            limitter = (uint)Math.Min(limitter, Program.ROM.Data.Length);
+            byte[] frameData = Program.ROM.Data;
+            uint i;
+            uint frameCount = 0;
+            for (i = frameData_offset; i < limitter; i += 4)
+            {
+                if (frameData[i + 3] == 0x80)
+                {//終端データ
+                    frameCount++;
+                    i += 4;
+                    if (frameCount > 0xC)
+                    {//アニメはフレーム0xCまである
+                        break;
+                    }
+                    continue;
+                }
+                else if (frameData[i + 3] != 0x86)
+                {
+                    if (frameData[i + 3] == 0x85)
+                    {
+                        continue;
+                    }
+                    //不明な命令.
+                    continue;
+                }
+                i += 8;
+            }
+            return i - frameData_offset;
+        }
+
+        static byte[] UnCompressFrame(uint frameAddr)
+        {
+            //FEの戦闘アニメフレームはlz77で圧縮されています。
+            //しかし、昔のツールでは、フレームの圧縮ができなかったため、無圧縮フレームというデータ構造があるらしい
+            if (FETextEncode.IsUnHuffmanPatchPointer(frameAddr))
+            {
+                frameAddr = FETextEncode.ConvertUnHuffmanPatchToPointer(frameAddr);
+                frameAddr = U.toOffset(frameAddr);
+                uint length = CalcUnCompressFrameLength(frameAddr);
+                return Program.ROM.getBinaryData(frameAddr, length);
+            }
+            else
+            {
+                frameAddr = U.toOffset(frameAddr);
+                return LZ77.decompress(Program.ROM.Data, frameAddr);
+            }
+        }
 
         static void ExportBattleAnimeLow(string filehint //もっと詳しい情報 01 ロード 槍 みたいなの
             , bool enableComment //コメントを出すかどうか
@@ -1685,15 +1735,12 @@ namespace FEBuilderGBA
             string basedir = Path.GetDirectoryName(filename);
 
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
-            uint frameData_offset = U.toOffset(frameData);     //画像をどう切り出すかを提起したデータ
-            uint rightToLeftOAM_offset = U.toOffset(rightToLeftOAM); //OAM
-            uint palettes_offset = U.toOffset(palettes);             //パレット
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
 
             //読みやすいようにコメントを入れます.
             Dictionary<uint, string> Comment_85command_Dic = U.LoadDicResource(U.ConfigDataFilename("battleanime_85command_"));
@@ -1878,15 +1925,12 @@ namespace FEBuilderGBA
             )
         {
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
-            uint frameData_offset = U.toOffset(frameData);     //画像をどう切り出すかを提起したデータ
-            uint rightToLeftOAM_offset = U.toOffset(rightToLeftOAM); //OAM
-            uint palettes_offset = U.toOffset(palettes);             //パレット
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
 
             //武器をもっていないモーションかどうか
             //武器をもっていないモーションなので、0x01と0x03のような貫通している武器モーションは存在しない.
@@ -2036,17 +2080,13 @@ namespace FEBuilderGBA
             , int palette_count
             )
         {
-
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
-            uint frameData_offset = U.toOffset(frameData);     //画像をどう切り出すかを提起したデータ
-            uint rightToLeftOAM_offset = U.toOffset(rightToLeftOAM); //OAM
-            uint palettes_offset = U.toOffset(palettes);             //パレット
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
 
             //武器をもっていないモーションかどうか
             //武器をもっていないモーションなので、0x01と0x03のような貫通している武器モーションは存在しない.
@@ -2902,17 +2942,13 @@ namespace FEBuilderGBA
 
             uint hintData_offset = U.toOffset(hintData); //名前のヒント
             uint sectionData_offset = U.toOffset(sectionData); //int[0xC]個 ヘッダの区切りバイト 絶対値
-            uint frameData_offset = U.toOffset(frameData);     //画像をどう切り出すかを提起したデータ
-            uint rightToLeftOAM_offset = U.toOffset(rightToLeftOAM); //OAM
-            uint leftToRightOAM_offset = U.toOffset(leftToRightOAM); //OAM
-            uint palettes_offset = U.toOffset(palettes);             //パレット
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, leftToRightOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(rightToLeftOAM)); //OAM
+            byte[] leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(leftToRightOAM)); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, U.toOffset(palettes)); //Palette
 
             List<uint> animeSeet = new List<uint>();
 
@@ -3306,7 +3342,7 @@ namespace FEBuilderGBA
 
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
+            byte[] frameData_UZ = UnCompressFrame(frameData_offset); //画像をどう切り出すかを提起したデータ
 
             FEBuilderGBA.Address.AddAddress(list,sectionData
                 , 0xC * 4
@@ -3410,11 +3446,10 @@ namespace FEBuilderGBA
             //解凍する.
             //固定長のsectionData以外はLZ77で圧縮されている.
             byte[] sectionData = Program.ROM.getBinaryData(sectionData_offset, 4 * 12);
-            byte[] frameData_UZ = LZ77.decompress(Program.ROM.Data, frameData_offset);
-            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset);
-            byte[] leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, leftToRightOAM_offset);
-            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset);
-
+            byte[] frameData_UZ = UnCompressFrame(frameData_offset); //画像をどう切り出すかを提起したデータ
+            byte[] rightToLeftOAM_UZ = LZ77.decompress(Program.ROM.Data, rightToLeftOAM_offset); //OAM
+            byte[] leftToRightOAM_UZ = LZ77.decompress(Program.ROM.Data, leftToRightOAM_offset); //OAM
+            byte[] palettes_UZ = LZ77.decompress(Program.ROM.Data, palettes_offset); //Palette
             if (frameData_UZ.Length < 4)
             {
                 errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress

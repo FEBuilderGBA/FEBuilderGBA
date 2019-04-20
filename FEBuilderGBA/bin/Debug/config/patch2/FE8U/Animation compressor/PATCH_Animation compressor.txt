@@ -1,0 +1,15 @@
+TYPE=EA
+TAG=#ENGINE
+NAME=Animation compressor
+NAME.en=Animation compressor
+
+EA=AnimCompressPatch.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x1c3280=0x00 0xB5 0x80 0x22 0x12 0x06 0x10 0x42
+
+INFO=これは、現代では適応する必要がないパッチです。\r\n昔のツールが、lz77圧縮された戦闘フレームを処理できなかったために、戦闘フレームを無圧縮形式に変更するパッチです。\r\n戦闘アニメポインタを +0x80 00 00 00 することで、無圧縮形式が利用されます。\r\n\r\n現代のツールは、圧縮フレームをサポートしているため、利用する必要はありません。\r\n互換性のために用意されています。
+NAME.zh=Animation compressor
+
+DEPRECATED=1
+AUTHOR=circle
