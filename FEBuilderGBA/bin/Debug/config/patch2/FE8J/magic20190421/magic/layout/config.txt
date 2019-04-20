@@ -1,0 +1,9 @@
+word_id_skill:
+WORD $78 //"Ｓｋｉｌｌｓ"の文字ID
+
+word_id_zokusei:
+WORD $480 //"属性"の文字ID
+
+word_id_shiki:
+WORD $6D //"指揮"の文字ID
+

@@ -1,0 +1,17 @@
+IF:0x2a542=0x30 0x1C
+
+FORM=ClassForm
+//いろいろな内容を設定しないといけないので、フォームを改造する設定はC#側に持ちます.
+
+J_80=魔法分離で予約
+MagicExtClassBaseLabel:HINT=魔力の基礎値を設定します。\r\n魔法分離パッチで増設されました。\r\n実際の設定値は、offset+81に設定されます。
+MagicExtClassGrowLabel:HINT=敵の魔力の成長率を設定します。\r\n魔法分離パッチで増設されました。\r\n実際の設定値は、offset+82に設定されます。
+MagicExtClassPromotionGainLabel:HINT=魔力のCCボーナスを設定します。\r\n魔法分離パッチで増設されました。\r\n実際の設定値は、offset+83に設定されます。
+J_25=魔力
+J_25:HINT=魔力の上限を設定します。\r\n体格値の項目に、魔法分離パッチで設定されました。\r\n魔力を伸ばすアイテムを作るには、ボディリングを利用します。\r\n体格を伸ばすと魔力が伸びます。
+J_80.en=Reserve with magic separation
+J_25.en=Magic
+J_25:HINT.en=Set the upper limit of magical power.\r\nIn the item of physique value, it was set with magic separation patch.\r\nTo make items that extend magical power, use body ring.\r\nThe magical power grows when you extend your physique.
+J_80.zh=保留魔术分离
+J_25.zh=魔力
+J_25:HINT.zh=设定魔力的上限。\r\n在体质值的项目中，它被设置为魔术分离补丁。\r\n要制作能够扩展魔法力量的物品，请使用戒指。\r\n当你延长体质时，魔力会增长。

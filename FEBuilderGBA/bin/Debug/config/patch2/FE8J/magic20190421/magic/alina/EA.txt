@@ -1,0 +1,39 @@
+PUSH
+
+ORG	0x31b64
+BL(0x3192C)
+ORG	0x31b9c
+BL(0x31934)
+
+ORG	0x31924
+WORD	$468F4900
+POIN	magic_alina_isMagic
+ORG	0x3192C
+WORD	$468F4900
+POIN	magic_alina_loadPowerOwn
+ORG	0x31934
+WORD	$468F4900
+POIN	magic_alina_loadPowerOther
+
+ORG	0x31960
+ #incbin calcAbility.bin
+
+//幸運強化＞魔力強化
+ORG 0x031d5e
+SHORT $7e8a
+SHORT $201a
+ORG 0x031dd6
+SHORT $7e8a
+SHORT $201a
+
+POP
+
+magic_alina_isMagic:
+#incbin "isMagic.bin"
+ALIGN 4
+magic_alina_loadPowerOwn:
+#incbin "loadPowerOwn.bin"
+ALIGN 4
+magic_alina_loadPowerOther:
+#incbin "loadPowerOther.bin"
+ALIGN 4

@@ -1,0 +1,30 @@
+
+PUSH
+ORG	0x18ec4
+WORD	$468F4900
+POIN	strong
+
+ORG	0x18ecc
+WORD	$468F4900
+POIN	magicn
+
+//被救出値
+ORG	0x1804a
+SHORT	$2100
+//救出値
+ORG	0x186ee
+SHORT	$2100
+ORG	0x1870c
+SHORT	$2000
+ORG	0x18720
+SHORT	$2000
+
+ORG	0x34992	//救出前表示
+SHORT	$2000
+
+POP
+strong:
+	#incbin "strong.bin"
+
+magicn:
+	#incbin "magicn.bin"

@@ -1,0 +1,10 @@
+IF:0x2a542=0x30 0x1C
+
+FORM=ItemStatBonusesForm
+
+J_8=魔力
+J_8:HINT=魔力の上限を設定します。\r\n体格値の項目に、魔法分離パッチで設定されました。\r\n魔力を伸ばすアイテムを作るには、ボディリングを利用します。\r\n体格を伸ばすと魔力が伸びます。
+J_8.en=Magical power
+J_8:HINT.en=Set the upper limit of magical power.\r\nIn the item of physique value, it was set with magic separation patch.\r\nTo make items that extend magical power, use body ring.\r\nThe magical power grows when you extend your physique.
+J_8.zh=神奇的力量
+J_8:HINT.zh=设定魔力的上限。\r\n在体质值的项目中，它被设置为魔术分离补丁。\r\n要制作能够扩展魔法力量的物品，请使用戒指。\r\n当你延长体质时，魔力会增长。

@@ -1,0 +1,14 @@
+IF:0x2a542=0x30 0x1C
+
+FORM=UnitForm
+
+J_50=魔法分離で予約
+J_51=魔法分離で予約
+
+MagicExtUnitBaseLabel:HINT=魔力の基礎値を設定します。\r\n魔法分離パッチで増設されました。\r\n実際の設定値は、offset+50に設定されます。
+MagicExtUnitGrowLabel:HINT=魔力の成長率を設定します。\r\n魔法分離パッチで増設されました。\r\n実際の設定値は、offset+51に設定されます。
+//いろいろな内容を設定しないといけないので、フォームを改造する設定はC#側に持ちます.
+J_50.en=Reserve with magic separation
+J_51.en=Reserve with magic separation
+J_50.zh=保留魔术分离
+J_51.zh=保留魔术分离

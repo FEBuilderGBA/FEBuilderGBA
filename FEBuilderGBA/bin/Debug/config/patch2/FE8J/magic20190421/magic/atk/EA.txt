@@ -1,0 +1,26 @@
+
+
+//攻撃力計算分岐
+PUSH
+ORG	0x2aac0
+WORD	$468F4900
+POIN	divide
+
+
+
+//魔法剣攻撃力変換無視
+ORG	0x2ad76
+SHORT	$46C0
+//ステータス画面2ルンソ
+ORG	0x2a42a
+SHORT	$8811
+SHORT	$1A09
+SHORT	$201A
+SHORT	$5620
+SHORT	$1809
+
+POP
+
+divide:
+#incbin	"divide.bin"
+ALIGN 4
