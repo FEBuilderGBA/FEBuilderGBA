@@ -2025,10 +2025,6 @@
 08018D4C	checks if character is riding a ballista and what the weather is	Usually called before calling 1A4CC, this function checks if character is riding a ballista and what the weather is.	movement cost table entry	r0=ram char data ptr	{U}
 08018A60	checks if character is riding a ballista and what the weather is	Usually called , this function checks if character is riding a ballista and what the weather is.	movement cost table entry	r0=ram char data ptr	{J}
 
-
-0800A240	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom to 202A6AC; also stores the text id at 202B6AC.		r0=text id	{U}
-08009FA8	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
-
 08019150	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{U}
 08018E64	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{J}
 

@@ -1335,8 +1335,8 @@
 //0203A46C	@ITEMSTOCK@[64]	輸送隊在庫	{J}
 //0203A470	@ITEMSTOCK@[64]	輸送隊在庫	{U}
 
-08012C60	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
-08013318	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
+08012C60	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
+08013318	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
 
 //https://www.dropbox.com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions.txt
 08019CE0	Copies movement	cost entry (0x40 bytes long) from the rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{U}

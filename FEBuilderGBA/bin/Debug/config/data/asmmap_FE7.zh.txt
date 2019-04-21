@@ -1056,8 +1056,8 @@
 //0203A46C	@ITEMSTOCK@[64]	运输清单	{J}
 //0203A470	@ITEMSTOCK@[64]	运输清单	{U}
 
-08012C60	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
-08013318	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
+08012C60	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
+08013318	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
 08019CE0	Copies movement	cost entry (0x40 bytes long) from the rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{U}
 08018D0C	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte	{U}
 08017610	checks if character is riding a ballista and what the weather is	Usually called before calling 1A4CC, this function checks if character is riding a ballista and what the weather is.	movement cost table entry	r0=ram char data ptr	{U}

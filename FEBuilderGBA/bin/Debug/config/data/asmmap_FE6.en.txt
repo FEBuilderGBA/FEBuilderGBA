@@ -480,7 +480,7 @@
 0202BCE8	@Unit@[32]	Enemy
 
 030044B0	&Unit	Pointer to the work memory of the operation character
-08013AD0	Copy_Text_To_RAM
+08013AD0	GetStringFromIndex
 02021B08	BG 0 wram buffer
 02021B88	BG 1 wram buffer
 02021C08	BG 2 wram buffer
