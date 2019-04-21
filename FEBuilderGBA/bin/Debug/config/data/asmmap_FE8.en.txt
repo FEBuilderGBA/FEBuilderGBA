@@ -8099,7 +8099,7 @@ r3=X tile position of menu of right	{U}
 08A65730	&EVENT	Any event function	Bifurcation to Ephrata	{J}
 08A6E7A4	&EVENT	Any event function	Mystery reinforcement data	{J}
 08A71538	&EVENT	Any event function	Mystery	7	{J}
-08A71CE8	&EVENT	Debug Room Event	details unknown	{J}
+08A71CE8	&EVENT	skirmish beginning events	{J}
 085B9D6C	&EVENT	Any event function	Mystery	8	{J}
 085B9D80	&EVENT	Any event function	Mystery	9	{J}
 085B9D8C	&EVENT	Any event function	Mystery	10	{J}
@@ -8738,7 +8738,6 @@ r3=X tile position of menu of right	{U}
 0804874C	Delete all saved data	{J}
 0804C46C	Communication stadium	Battle end	{J}
 08A0035C	&EVENT	Empty event	1	{U}
-089FFC30	&EVENT	Empty event	2	{U}
 0859BC64	&EVENT	Tutorial	Inventory change	1	{U}
 0859BCA8	&EVENT	Tutorial	Inventory change	2	{U}
 0859BCF4	&EVENT	Tutorial	Inventory change	3	{U}
@@ -8746,7 +8745,7 @@ r3=X tile position of menu of right	{U}
 085A9F48	&EVENT	For debugging	Would you like to delete all saved data?	{U}
 085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
 085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
-089FFC30	&EVENT	For debugging	Mysterious branch	{U}
+089FFC30	&EVENT	skirmish beginning events	{U}
 089FFE84	&EVENT	For debugging	Branch	1	{U}
 089FFF14	&EVENT	For debugging	Branch	2	{U}
 089FFF8C	&EVENT	For debugging	Branch	3	{U}
