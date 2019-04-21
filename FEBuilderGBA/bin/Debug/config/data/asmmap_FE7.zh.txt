@@ -4639,3 +4639,6 @@
 0842D19C	:0842D1A3	神秘的数据。	8个字节。	{J}
 0842D1A8	:0842D1AF	神秘的数据。	8个字节。	{J}
 0842D1B8	:0842D1BF	神秘的数据。	8个字节。	{J}
+//This data is made with the aim of being readable by machine fast.
+0800562E	未知角色的心脏特征。	{J}
+0800571A	未知角色的心脏特征。	{J}

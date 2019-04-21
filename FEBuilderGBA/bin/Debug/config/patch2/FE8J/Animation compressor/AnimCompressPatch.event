@@ -1,3 +1,5 @@
+#include "Extensions/Hack Installation.txt"
+
 //Animation compressorJP
 ORG $5A8AC	//59b08
 BL(AnimCompressPatch)

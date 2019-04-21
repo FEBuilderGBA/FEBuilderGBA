@@ -13,3 +13,5 @@ NAME.zh=Animation compressor
 
 DEPRECATED=1
 AUTHOR=circle
+INFO.en=This is a patch that does not have to be adapted in modern times.\r\nThis is a patch that changes the battle frame to uncompressed format because the old tool could not process the lz77 compressed battle frame.\r\nUncompressed format is used by setting the battle animation pointer to + 0x80 00 00 00.\r\n\r\nModern tools do not need to be used because they support compressed frames.\r\nIt is provided for compatibility.
+INFO.zh=这是一个不需要在现代适应的补丁。\r\n这是一个将战斗帧更改为未压缩格式的补丁，因为旧工具无法处理lz77压缩战斗帧。\r\n通过将战斗动画指针设置为+ 0x80 00 00 00来使用未压缩格式。\r\n\r\n不需要使用现代工具，因为它们支持压缩帧。\r\n它是为了兼容性而提供的。

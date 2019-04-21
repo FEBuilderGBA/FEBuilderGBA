@@ -1304,3 +1304,22 @@
 0837CB6C	&PALETTE	Palette of something.
 0837F418	&PALETTE	Palette of something.
 08380ECC	&PALETTE	Palette of something.
+@@ArenaData@00	&Unit	playerUnit
+08005a78	Text_SetParameters	r0=Text Struct	r1=cursor	r2=color id
+08005da4	Text_AppendString
+08005ab4	Text_Draw
+08006f50	DrawDecNumber
+08004cf8	DrawIcon
+08016720	DrawItemMenuLineLong
+08006e74	DrawSpecialUiChar
+080167E4	DrawTextAndIconForItem
+080059e0	Text_SetXCursor
+08005a60	Text_GetColorId
+08016860	DrawItemStatScreenLine
+02027BCC	TextParams
+080064b4	Text_AppendStringSimple
+08005E78	Text_AppendDecNumber
+08005f40	Text_AppendChar
+080FFD50	psZero
+08005E5C	Heart character of unknown character.
+08005FEA	Heart character of unknown character.

@@ -4658,3 +4658,6 @@
 0842D19C	:0842D1A3	Mysterious data.	8 bytes.	{J}
 0842D1A8	:0842D1AF	Mysterious data.	8 bytes.	{J}
 0842D1B8	:0842D1BF	Mysterious data.	8 bytes.	{J}
+//This data is made with the aim of being readable by machine fast.
+0800562E	Heart character of unknown character.	{J}
+0800571A	Heart character of unknown character.	{J}

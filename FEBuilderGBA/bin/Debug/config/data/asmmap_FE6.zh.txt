@@ -1093,3 +1093,22 @@
 0837CB6C	&PALETTE	调色板的东西。
 0837F418	&PALETTE	调色板的东西。
 08380ECC	&PALETTE	调色板的东西。
+@@ArenaData@00	&Unit	playerUnit
+08005a78	Text_SetParameters	r0=Text Struct	r1=cursor	r2=color id
+08005da4	Text_AppendString
+08005ab4	Text_Draw
+08006f50	DrawDecNumber
+08004cf8	DrawIcon
+08016720	DrawItemMenuLineLong
+08006e74	DrawSpecialUiChar
+080167E4	DrawTextAndIconForItem
+080059e0	Text_SetXCursor
+08005a60	Text_GetColorId
+08016860	DrawItemStatScreenLine
+02027BCC	TextParams
+080064b4	Text_AppendStringSimple
+08005E78	Text_AppendDecNumber
+08005f40	Text_AppendChar
+080FFD50	psZero
+08005E5C	未知角色的心脏特征。
+08005FEA	未知角色的心脏特征。
