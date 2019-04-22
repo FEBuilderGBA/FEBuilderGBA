@@ -35,6 +35,7 @@
             this.MyOKButton = new System.Windows.Forms.Button();
             this.MyCancelButton = new System.Windows.Forms.Button();
             this.DiaplayFilename = new System.Windows.Forms.Label();
+            this.MyDisplayErrorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -70,7 +71,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Location = new System.Drawing.Point(17, 286);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(972, 129);
+            this.label3.Size = new System.Drawing.Size(1059, 129);
             this.label3.TabIndex = 28;
             this.label3.Text = "ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセ" +
     "ージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。";
@@ -78,7 +79,7 @@
             // MyOKButton
             // 
             this.MyOKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.MyOKButton.Location = new System.Drawing.Point(300, 147);
+            this.MyOKButton.Location = new System.Drawing.Point(20, 128);
             this.MyOKButton.Name = "MyOKButton";
             this.MyOKButton.Size = new System.Drawing.Size(324, 51);
             this.MyOKButton.TabIndex = 0;
@@ -89,10 +90,10 @@
             // MyCancelButton
             // 
             this.MyCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.MyCancelButton.Location = new System.Drawing.Point(651, 147);
+            this.MyCancelButton.Location = new System.Drawing.Point(745, 128);
             this.MyCancelButton.Name = "MyCancelButton";
             this.MyCancelButton.Size = new System.Drawing.Size(331, 51);
-            this.MyCancelButton.TabIndex = 1;
+            this.MyCancelButton.TabIndex = 2;
             this.MyCancelButton.Text = "キャンセル";
             this.MyCancelButton.UseVisualStyleBackColor = true;
             this.MyCancelButton.Click += new System.EventHandler(this.MyCancelButton_Click);
@@ -105,13 +106,25 @@
             this.DiaplayFilename.Size = new System.Drawing.Size(972, 41);
             this.DiaplayFilename.TabIndex = 29;
             // 
+            // MyDisplayErrorButton
+            // 
+            this.MyDisplayErrorButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.MyDisplayErrorButton.Location = new System.Drawing.Point(385, 128);
+            this.MyDisplayErrorButton.Name = "MyDisplayErrorButton";
+            this.MyDisplayErrorButton.Size = new System.Drawing.Size(324, 51);
+            this.MyDisplayErrorButton.TabIndex = 1;
+            this.MyDisplayErrorButton.Text = "エラーを表示";
+            this.MyDisplayErrorButton.UseVisualStyleBackColor = true;
+            this.MyDisplayErrorButton.Click += new System.EventHandler(this.MyDisplayErrorButton_Click);
+            // 
             // OverraideCheckWithErrorDialog
             // 
             this.AcceptButton = this.MyOKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.MyCancelButton;
-            this.ClientSize = new System.Drawing.Size(1000, 435);
+            this.ClientSize = new System.Drawing.Size(1088, 435);
+            this.Controls.Add(this.MyDisplayErrorButton);
             this.Controls.Add(this.DiaplayFilename);
             this.Controls.Add(this.MyCancelButton);
             this.Controls.Add(this.MyOKButton);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.Button MyOKButton;
         private System.Windows.Forms.Button MyCancelButton;
         private System.Windows.Forms.Label DiaplayFilename;
+        private System.Windows.Forms.Button MyDisplayErrorButton;
     }
 }

@@ -400,7 +400,15 @@ namespace FEBuilderGBA
         string DownloadProgram_DirectOneFile(string url, string path, string filename)
         {
             string tempFilename = Path.GetTempFileName();
-            U.HttpDownload(tempFilename, url, U.GetURLBaseDir(url), this.SettingPleaseWait);
+            try
+            {
+                U.HttpDownload(tempFilename, url, U.GetURLBaseDir(url), this.SettingPleaseWait);
+            }
+            catch (Exception e)
+            {
+                File.Delete(tempFilename);
+                return R.Error("ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}", url, path, filename) + "\r\n" + e.ToString();
+            }
             if (!File.Exists(tempFilename))
             {
                 File.Delete(tempFilename);
@@ -413,7 +421,16 @@ namespace FEBuilderGBA
         string DownloadProgram_Direct(string url, string dir, string findEXE)
         {
             string tempFilename = Path.GetTempFileName();
-            U.HttpDownload(tempFilename, url, U.GetURLBaseDir(url), this.SettingPleaseWait);
+            try
+            {
+                U.HttpDownload(tempFilename, url, U.GetURLBaseDir(url), this.SettingPleaseWait);
+            }
+            catch (Exception e)
+            {
+                File.Delete(tempFilename);
+                return R.Error("ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE) + "\r\n" + e.ToString();
+            }
+
             if (! File.Exists(tempFilename))
             {
                 File.Delete(tempFilename);
@@ -453,7 +470,7 @@ namespace FEBuilderGBA
         string GrepFile(string dir , string findEXE)
         {
             this.SettingPleaseWait.DoEvents("Grep... :" + findEXE);
-            string[] exeList = Directory.GetFiles(dir, findEXE, SearchOption.AllDirectories);
+            string[] exeList = U.Directory_GetFiles_Safe(dir, findEXE, SearchOption.AllDirectories);
             if (exeList.Length <= 0)
             {
                 return R.Error("ダウンロードしたファイルに目的のファイルがありません。\r\nPATH:{0}\r\nfindEXE:{1}", dir, findEXE);
@@ -496,8 +513,15 @@ namespace FEBuilderGBA
 
             R.ShowOK("SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。");
 
-            Process p = Process.Start(sappyInstaller);
-            p.WaitForExit();
+            try
+            {
+                Process p = Process.Start(sappyInstaller);
+                p.WaitForExit();
+            }
+            catch (Exception ee)
+            {
+                R.ShowStopError(ee.ToString());
+            }
         }
 
         private void EndButton_Click(object sender, EventArgs e)

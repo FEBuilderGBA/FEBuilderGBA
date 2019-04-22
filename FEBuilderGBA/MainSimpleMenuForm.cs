@@ -513,38 +513,6 @@ namespace FEBuilderGBA
             U.ConvertListBox(this.EventAddrList, ref EventList);
         }
 
-        //現在の章にエラーがあるか?
-        public bool IsErrorFoundByCurrentChapter()
-        {
-            List<FELint.ErrorSt> systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
-            if (systemErrorList == null)
-            {//準備中です
-                return false; //とりあえずエラーはないと答える
-            }
-            else if (systemErrorList.Count > 0)
-            {//エラーがある
-                return true;
-            }
-            if (this.MAP_LISTBOX.SelectedIndex < 0)
-            {
-                return false;
-            }
-
-            uint mapid = (uint)this.MAP_LISTBOX.SelectedIndex;
-
-            //章内のエラーのチェック
-            List<FELint.ErrorSt> mapErrorList = Program.AsmMapFileAsmCache.GetFELintCache(mapid);
-            if (mapErrorList == null)
-            {//こちらは準備中にはできないので、消す
-            }
-            else if (mapErrorList.Count > 0)
-            {//エラーがある
-                return true;
-            }
-
-            //エラーはない
-            return false;
-        }
 
 
         //ユニット配置を検索して取得.
@@ -1350,11 +1318,6 @@ namespace FEBuilderGBA
             {
                 EnterEvent(canDirectAccess: false);
             }
-        }
-
-        private void SaveWithLintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.SaveWithLint(this);
         }
 
         private void ASMInsertToolStripMenuItem_Click(object sender, EventArgs e)

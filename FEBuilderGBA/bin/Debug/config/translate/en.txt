@@ -5284,9 +5284,6 @@ Save
 :別名保存
 Save As
 
-:エラーがなければ上書き保存
-Save If NoError
-
 :UPS差分で保存
 Save As UPS Patch
 
@@ -5373,6 +5370,9 @@ Settings
 
 :オプション
 Options
+
+:初期設定ウィザード
+Initial setup wizard.
 
 :バージョン
 Version
@@ -5478,9 +5478,6 @@ Simple Menu
 
 :地形設定
 Terrain Editor
-
-:初期設定ウィザード
-Initial setup wizard.
 
 :詳細メニュー
 Advanced Editors
@@ -8496,6 +8493,9 @@ Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM ba
 
 :はい
 Yes
+
+:エラーを表示
+Show error.
 
 :リセット
 Reset

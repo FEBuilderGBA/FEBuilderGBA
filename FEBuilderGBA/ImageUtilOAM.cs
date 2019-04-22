@@ -2690,7 +2690,7 @@ namespace FEBuilderGBA
         static Dictionary<uint, ReColorMap> MakeReColorRule(uint top_battleanime_baseaddress, uint bottum_battleanime_baseaddress)
         {
             Dictionary<uint, ReColorMap> map = new Dictionary<uint, ReColorMap>();
-            for (uint p = top_battleanime_baseaddress; p < bottum_battleanime_baseaddress; p += 32)
+            for (uint p = top_battleanime_baseaddress; p <= bottum_battleanime_baseaddress; p += 32)
             {
                 uint palette = Program.ROM.p32(p + 28);
                 if (! U.isSafetyOffset(palette))
@@ -3406,7 +3406,7 @@ namespace FEBuilderGBA
 
         static void subConfilctArea(RecycleAddress ra,uint battleanime_baseaddress,uint top_battleanime_baseaddress,uint bottum_battleanime_baseaddress)
         {
-            for (uint p = top_battleanime_baseaddress; p < bottum_battleanime_baseaddress; p += 32)
+            for (uint p = top_battleanime_baseaddress; p <= bottum_battleanime_baseaddress; p += 32)
             {
                 if (p == battleanime_baseaddress)
                 {//自アニメ　別探索するので不要.

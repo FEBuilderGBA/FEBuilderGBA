@@ -2950,7 +2950,7 @@ namespace FEBuilderGBA
                         {
                             return true;
                         }
-                        if (n == 0 && size.Width == 124 && size.Height == 48 &&
+                        if (n == 0 && size.Width == 126 && size.Height == 48 &&
                             str.IndexOf("My name is Serra.") > 0) ///No Translate
                         {
                             return true;

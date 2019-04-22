@@ -73,7 +73,7 @@ namespace FEBuilderGBA
 
         private void ExplainLink_Click(object sender, EventArgs e)
         {
-            MainFormUtil.OpenURL( MainFormUtil.GetAboutTragetAI3() );
+            U.OpenURLOrFile( MainFormUtil.GetAboutTragetAI3() );
         }
         void MakeExplainFunctions()
         {

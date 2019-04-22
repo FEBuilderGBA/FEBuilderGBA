@@ -1249,7 +1249,7 @@ namespace FEBuilderGBA
         }
         private void X_EXPLAIN_NECESSARY_PROGRAM_Click(object sender, EventArgs e)
         {
-            MainFormUtil.OpenURL(MainFormUtil.GetNecessaryProgramURL());
+            U.OpenURLOrFile(MainFormUtil.GetNecessaryProgramURL());
         }
 
         //利用しているエミュレータの種類を知りたいので、名前を取得する

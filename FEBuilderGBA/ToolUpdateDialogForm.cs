@@ -45,7 +45,7 @@ namespace FEBuilderGBA
                 DialogResult dr = R.ShowQ("未保存の変更があるようです。\r\n保存してもよろしいですか？");
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MainFormUtil.SaveForce();
+                    MainFormUtil.SaveForce(Program.MainForm());
                 }
                 else if (dr == System.Windows.Forms.DialogResult.Cancel)
                 {
@@ -240,14 +240,7 @@ namespace FEBuilderGBA
 
         void OpenBrower()
         {
-            try
-            {
-                Process.Start(this.URL);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
+            U.OpenURLOrFile(this.URL);
         }
     }
 }

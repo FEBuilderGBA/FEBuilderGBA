@@ -4391,7 +4391,7 @@ namespace FEBuilderGBA
 
             List<BinMapping> binMappings = new List<BinMapping>();
             string dir = Path.GetDirectoryName(patch.PatchFileName);
-            string[] files = Directory.GetFiles(dir, "*.event", SearchOption.AllDirectories);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.event", SearchOption.AllDirectories);
 
             //メイン処理のファイルが.txtなどで発見できていない場合、追加してあげる.
             {
@@ -4878,7 +4878,7 @@ namespace FEBuilderGBA
 
         private void PatchOpenButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(PatchFilename.Text);
+            U.OpenURLOrFile(PatchFilename.Text);
         }
 
         private void RealodButton_Click(object sender, EventArgs e)

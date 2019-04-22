@@ -3205,7 +3205,7 @@ namespace FEBuilderGBA
 
         public static string FindFileOne(string path, string toolname)
         {
-            string[] files = Directory.GetFiles(path, toolname, SearchOption.AllDirectories);
+            string[] files = U.Directory_GetFiles_Safe(path, toolname, SearchOption.AllDirectories);
             if (files.Length <= 0)
             {
                 return "";
@@ -5743,6 +5743,52 @@ namespace FEBuilderGBA
             }
             return match.ToArray();
         }
+
+        //U.Directory_GetFiles_Safe の安全な実装.
+        public static string[] Directory_GetFiles_Safe(string path, string filter, SearchOption op = SearchOption.TopDirectoryOnly)
+        {
+            if (op == SearchOption.TopDirectoryOnly)
+            {
+                return Directory.GetFiles(path, filter);
+            }
+
+            List<string> files = new List<string>();
+            Directory_GetFiles_AllFile_Safe_Low(files , path , filter);
+            return files.ToArray();
+        }
+        static void Directory_GetFiles_AllFile_Safe_Low(List<string> files , string path, string filter)
+        {
+            try
+            {
+                string[] l = Directory.GetFiles(path , filter);
+                foreach(string s in l)
+                {
+                    files.Add(s);
+                }
+
+                l = Directory.GetDirectories(path);
+                foreach(string s in l)
+                {
+                    Directory_GetFiles_AllFile_Safe_Low(files , s , filter);
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {//Skip
+            }
+        }
+
+        public static void OpenURLOrFile(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch (Exception ee)
+            {
+                R.ShowStopError(ee.ToString());
+            }
+        }
+
     }
 }
 

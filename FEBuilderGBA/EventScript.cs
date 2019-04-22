@@ -1481,7 +1481,7 @@ namespace FEBuilderGBA
             }
             string gametype = Program.ROM.RomInfo.TitleToFilename();
 
-            string[] files = Directory.GetFiles(@"C:\dropbox\FE8Edit7743\sample\Event Assembler V11.0.1\Language Raws\", "*.txt", SearchOption.AllDirectories);
+            string[] files = U.Directory_GetFiles_Safe(@"C:\dropbox\FE8Edit7743\sample\Event Assembler V11.0.1\Language Raws\", "*.txt", SearchOption.AllDirectories);
             for (int i = 0; i < files.Length; i++)
             {
                 string[] lines = File.ReadAllLines(files[i]);

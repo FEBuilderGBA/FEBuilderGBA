@@ -8025,8 +8025,8 @@ namespace FEBuilderGBA
                         case 17: //17=ROMを別名で保存する
                             MainFormUtil.SaveAs(self);
                             break;
-                        case 18: //18=Lintして問題なければ上書き保存する
-                            MainFormUtil.SaveWithLint(self);
+                        case 18: //18=Lintして問題なければ上書き保存する(この機能はSaveOverraideに統合されました)
+                            MainFormUtil.SaveOverraide(self , forceCheck: true );
                             break;
                         case 19: //19=リストから次を検索
                             InputFormRef.SearchNextByListBox(self);

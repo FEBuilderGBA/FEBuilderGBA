@@ -22,14 +22,7 @@ namespace FEBuilderGBA
 
         private void RunAsButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start(LastSelectedFilename.Text);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
+            U.OpenURLOrFile(LastSelectedFilename.Text);
         }
 
         private void OpenDirButton_Click(object sender, EventArgs e)

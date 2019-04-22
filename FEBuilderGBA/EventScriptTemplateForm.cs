@@ -193,7 +193,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            System.Diagnostics.Process.Start(fullfilename);
+            U.OpenURLOrFile(fullfilename);
         }
     }
 }

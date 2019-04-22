@@ -35,5 +35,11 @@ namespace FEBuilderGBA
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.Close();
         }
+
+        private void MyDisplayErrorButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Retry;
+            this.Close();
+        }
     }
 }

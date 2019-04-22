@@ -486,6 +486,11 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
+                if (sp.Length <= 1)
+                {
+                    Debug.Assert(false);
+                    continue;
+                }
                 uint wait = U.atoi(command);
                 string image = sp[1];
 

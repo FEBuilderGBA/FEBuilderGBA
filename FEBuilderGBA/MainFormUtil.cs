@@ -83,7 +83,7 @@ namespace FEBuilderGBA
             f.Close();
         }
 
-        public static void SaveWithLint(Form self)
+        static void SaveWithLint(Form self)
         {
             ToolFELintForm f = (ToolFELintForm)InputFormRef.JumpForm<ToolFELintForm>();
             bool IsOnceRejected = false;
@@ -102,13 +102,7 @@ namespace FEBuilderGBA
                     }
                     //エラーがないのでウィンドウを閉じる
                     f.Close();
-
-                    if (Program.ROM.IsVirtualROM)
-                    {
-                        SaveAs(self);
-                        return;
-                    }
-                    SaveForce();
+                    SaveForce(self);
                 }
                 else
                 {
@@ -119,36 +113,43 @@ namespace FEBuilderGBA
                 }
             };
         }
-        public static void SaveOverraide(Form self)
+        public static void SaveOverraide(Form self, bool forceCheck = false)
         {
-            if (Program.ROM.IsVirtualROM)
-            {
-                SaveAs(self);
-                return;
-            }
-
             if (OptionForm.overraide_simple_error_check() == OptionForm.overraide_simple_error_check_enum.None)
             {
-                Save(self);
-                return;
-            }
-
-            Form f = Program.MainForm();
-            if (f is MainSimpleMenuForm)
-            {
-                MainSimpleMenuForm ff = (MainSimpleMenuForm)f;
-                if (ff.IsErrorFoundByCurrentChapter())
+                if (forceCheck == false)
                 {
-                    OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
-                    DialogResult r = dialog.ShowDialog();
-                    if (r != System.Windows.Forms.DialogResult.Yes)
-                    {
-                        return;
-                    }
-                    SaveForce();
+                    Save(self);
                     return;
                 }
             }
+
+            AsmMapFileAsmCache.HasError_Enum hasError = Program.AsmMapFileAsmCache.HasError();
+            if (hasError == AsmMapFileAsmCache.HasError_Enum.HAS_ERROR)
+            {//エラーがある場合
+                OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
+                DialogResult r = dialog.ShowDialog();
+                if (r == System.Windows.Forms.DialogResult.Retry)
+                {//エラーを表示する
+                    hasError = AsmMapFileAsmCache.HasError_Enum.NOT_PREP;
+                }
+                else if (r == System.Windows.Forms.DialogResult.Yes)
+                {//保存する
+                    SaveForce(self);
+                    return;
+                }
+                else
+                {//保存しない
+                    return;
+                }
+            }
+            if (hasError == AsmMapFileAsmCache.HasError_Enum.NOT_PREP)
+            {
+                SaveWithLint(self);
+                return;
+            }
+
+            //エラーはないので保存する.
             Save(self);
         }
 
@@ -172,7 +173,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            SaveForce();
+            SaveForce(self);
         }
 
         static void RunAutoBackup7ZWithThread(string backupFullPath)
@@ -237,8 +238,14 @@ namespace FEBuilderGBA
 
         }
 
-        public static void SaveForce()
+        public static void SaveForce(Form self)
         {
+            if (Program.ROM.IsVirtualROM)
+            {
+                SaveAs(self);
+                return;
+            }
+
             try
             {
                 //上書きする前に自動バックアップ
@@ -1031,7 +1038,7 @@ namespace FEBuilderGBA
 
             try
             {
-                string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
+                string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
                 for (int i = 0; i < files.Length; i++)
                 {
                     string filename = Path.GetFileName(files[i]);
@@ -1142,7 +1149,7 @@ namespace FEBuilderGBA
 
             U.CRC32 crc32 = new U.CRC32();
 
-            string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
             for (int i = 0; i < files.Length; i++)
             {
                 string filename = Path.GetFileName(files[i]);
@@ -1327,21 +1334,9 @@ namespace FEBuilderGBA
             return true;
         }
 
-        public static void OpenURL(string url)
-        {
-            try
-            {
-                Process.Start(url);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
-        }
-
         public static void GotoManual()
         {
-            OpenURL(GetManualURL());
+            U.OpenURLOrFile(GetManualURL());
         }
         public static string GetCommunitiesURL()
         {
@@ -1382,7 +1377,7 @@ namespace FEBuilderGBA
 
         public static void GotoReport7zURL()
         {
-            OpenURL(GetReport7zURL());
+            U.OpenURLOrFile(GetReport7zURL());
         }
         public static string GetReport7zURL()
         {
@@ -1467,26 +1462,18 @@ namespace FEBuilderGBA
         public static void GotoCommunities()
         {
             string url = GetCommunitiesURL();
-
-            try
-            {
-                Process.Start(url);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
+            U.OpenURLOrFile(url);
         }
         static bool OpenGBA7ZROM(string romfilename, bool useReOpen, string forceversion)
         {
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 ArchSevenZip.Extract(romfilename, tempdir.Dir);
-                string[] files = Directory.GetFiles(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
+                string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                 if (files.Length < 1)
                 {
                     //ROMがなければupsを調べてみよう.
-                    files = Directory.GetFiles(tempdir.Dir, "*.ups", SearchOption.AllDirectories);
+                    files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.ups", SearchOption.AllDirectories);
                     if (files.Length < 1)
                     {//upsもない
                         return false;
@@ -1646,7 +1633,7 @@ namespace FEBuilderGBA
                 using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
                 {
                     ArchSevenZip.Extract(path, tempdir.Dir);
-                    string[] files = Directory.GetFiles(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
+                    string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                     if (files.Length < 1)
                     {
                         return new byte[0];

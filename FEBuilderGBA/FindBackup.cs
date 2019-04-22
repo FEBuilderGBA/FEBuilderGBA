@@ -84,7 +84,7 @@ namespace FEBuilderGBA
 
         public bool Scan(string dir,string prefix)
         {
-            string[] files = Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*", SearchOption.TopDirectoryOnly);
             foreach (string filepath in files)
             {
                 string ext = U.GetFilenameExt(filepath);
