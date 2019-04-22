@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HintTextBox.Text" xml:space="preserve">
+    <value>ROMに書き込まなくても、F5キーを押すと、テストプレイできます。
+ROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。
+
+このメッセージを表示しないためには、検出されているエラーを修正してください。
+または、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。
+
+解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。</value>
+  </data>
 </root>

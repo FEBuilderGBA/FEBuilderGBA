@@ -19,6 +19,7 @@ namespace FEBuilderGBA
         private void OverraideCheckDialog_Load(object sender, EventArgs e)
         {
             DiaplayFilename.Text = Program.ROM.Filename;
+            this.HintTextBox.Text += "\r\n" + MainFormUtil.GetReport7zURL();
 
             this.MyCancelButton.Focus();
             System.Media.SystemSounds.Hand.Play();

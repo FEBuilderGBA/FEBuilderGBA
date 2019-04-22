@@ -8482,14 +8482,16 @@ Other ROM Direct Text
 :このROMには、エラーがありますが、保存してもよろしいですか？
 There is an error in this ROM, are you sure to save it?
 
-:現在の内容を以下のファイルに書き込んでもよろしいですか？\t\t
-Are you sure to write the current contents to the following file? 
+:現在の内容を以下のファイルに書き込んでもよろしいですか？
+Are you sure to write the current contents to the following file?
 
 :ヒント
 Tips
 
-:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".
+:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are in trouble with an unresolvable error,create report7z and consult with the community.
+
+
 
 :はい
 Yes

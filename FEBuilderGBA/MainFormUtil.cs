@@ -83,6 +83,7 @@ namespace FEBuilderGBA
             f.Close();
         }
 
+
         static void SaveWithLint(Form self)
         {
             ToolFELintForm f = (ToolFELintForm)InputFormRef.JumpForm<ToolFELintForm>();
@@ -113,6 +114,53 @@ namespace FEBuilderGBA
                 }
             };
         }
+
+        static void SaveWithLintInErrorDialog(Form self)
+        {
+            ToolFELintForm f = (ToolFELintForm)InputFormRef.JumpForm<ToolFELintForm>();
+            bool IsOnceRejected = false;
+            f.OnErrorEventHandler += (sender, arg) =>
+            {
+                OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
+                DialogResult r = dialog.ShowDialog();
+                if (r == System.Windows.Forms.DialogResult.Retry)
+                {//エラーを表示する
+                    IsOnceRejected = true;
+                }
+                else if (r == System.Windows.Forms.DialogResult.Yes)
+                {//保存する
+                    f.Close();
+                    //保存する.
+                    SaveForce(self);
+                }
+                else
+                {//保存しない
+                    f.Close();
+                }
+            };
+            f.OnNoErrorEventHandler += (sender, arg) =>
+            {
+                if (IsOnceRejected)
+                {
+                    DialogResult dr = R.ShowYesNo("エラーがなくなりました。\r\nファイルを保存しますか？");
+                    if (dr != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                    //エラーがないのでウィンドウを閉じる
+                    f.Close();
+                    SaveForce(self);
+                }
+                else
+                {
+                    //エラーがないのでウィンドウを閉じる
+                    f.Close();
+                    //保存する.
+                    Save(self);
+                }
+            };
+        }
+
         public static void SaveOverraide(Form self, bool forceCheck = false)
         {
             if (OptionForm.overraide_simple_error_check() == OptionForm.overraide_simple_error_check_enum.None)
@@ -125,27 +173,26 @@ namespace FEBuilderGBA
             }
 
             AsmMapFileAsmCache.HasError_Enum hasError = Program.AsmMapFileAsmCache.HasError();
+            if (hasError == AsmMapFileAsmCache.HasError_Enum.NOT_PREP)
+            {//まだ準備できていない!
+                SaveWithLintInErrorDialog(self);
+                return;
+            }
             if (hasError == AsmMapFileAsmCache.HasError_Enum.HAS_ERROR)
             {//エラーがある場合
                 OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
                 DialogResult r = dialog.ShowDialog();
                 if (r == System.Windows.Forms.DialogResult.Retry)
                 {//エラーを表示する
-                    hasError = AsmMapFileAsmCache.HasError_Enum.NOT_PREP;
+                    SaveWithLint(self);
                 }
                 else if (r == System.Windows.Forms.DialogResult.Yes)
                 {//保存する
                     SaveForce(self);
-                    return;
                 }
                 else
                 {//保存しない
-                    return;
                 }
-            }
-            if (hasError == AsmMapFileAsmCache.HasError_Enum.NOT_PREP)
-            {
-                SaveWithLint(self);
                 return;
             }
 
