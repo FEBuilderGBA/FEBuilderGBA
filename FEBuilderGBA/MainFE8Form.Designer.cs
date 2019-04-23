@@ -222,6 +222,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
+            this.FE8SpellMenuExtendsButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1411,6 +1412,7 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.FE8SpellMenuExtendsButton);
             this.ControlPanel.Controls.Add(this.StatusUnitsMenuButton);
             this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
@@ -2311,6 +2313,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
+            // FE8SpellMenuExtendsButton
+            // 
+            this.FE8SpellMenuExtendsButton.Location = new System.Drawing.Point(204, 452);
+            this.FE8SpellMenuExtendsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FE8SpellMenuExtendsButton.Name = "FE8SpellMenuExtendsButton";
+            this.FE8SpellMenuExtendsButton.Size = new System.Drawing.Size(200, 36);
+            this.FE8SpellMenuExtendsButton.TabIndex = 135;
+            this.FE8SpellMenuExtendsButton.Text = "外伝風の魔法拡張";
+            this.FE8SpellMenuExtendsButton.UseVisualStyleBackColor = true;
+            this.FE8SpellMenuExtendsButton.Click += new System.EventHandler(this.FE8SpellMenuExtendsButton_Click);
+            // 
             // MainFE8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2533,6 +2546,7 @@
         private System.Windows.Forms.Button StatusUnitsMenuButton;
         private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
         private ToolStripSeparatorEx toolStripSeparatorEx5;
+        private System.Windows.Forms.Button FE8SpellMenuExtendsButton;
     }
 }
 

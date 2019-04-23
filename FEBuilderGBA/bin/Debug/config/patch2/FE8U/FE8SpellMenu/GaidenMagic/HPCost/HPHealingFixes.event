@@ -1,0 +1,75 @@
+PUSH
+ORG $52354
+POIN NewEfxHPBar
+
+ORG $52a40
+POIN NewEfxHPBarLive
+
+ORG $585bc
+jumpToHack(hpstealing_showanim)
+
+ORG $52364
+jumpToHack(efxHPBarParent)
+
+ORG $52a50
+jumpToHack(efxHPBarLiveParent)
+
+ORG $58668 //loads the 3rd byte i.e. damage. we change this to the 5th byte.
+BYTE 5
+
+ORG $58602
+BYTE 5
+
+ORG $816da
+SHORT 0
+jumpToHack(animsoff_hpdrain)
+
+ORG $2b758
+BYTE 00 $48 00 $47 //jumptohack with r0
+POIN NosferaFix|1
+POP
+
+NewEfxHPBar:
+WORD 1
+POIN $da3e4
+WORD 3
+POIN efxHPBarRoutine|1
+
+WORD 3
+POIN $52505
+WORD 3
+POIN $525a5
+WORD 0 0
+
+NewEfxHPBarLive: //for healing
+WORD 1
+POIN $da3e4
+WORD 3
+POIN efxHPBarLiveRoutine|1
+
+WORD 3
+POIN $52505
+WORD 3
+POIN $525a5
+WORD 0 0
+
+efxHPBarRoutine:
+#incbin "efxHPBar.dmp"
+
+efxHPBarParent:
+#incbin "efxHPBar_parent.dmp"
+
+efxHPBarLiveParent:
+#incbin "efxHPBarLive_parent.dmp"
+
+efxHPBarLiveRoutine:
+#incbin "efxHPBarLive.dmp"
+
+hpstealing_showanim:
+#incbin "hpstealing_showanim.dmp"
+
+NosferaFix:
+#incbin "nosferafix.dmp"
+
+animsoff_hpdrain:
+#incbin "animsoff_hpdrain.dmp"

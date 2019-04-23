@@ -111,7 +111,7 @@ namespace FEBuilderGBA
             {
                 checkFunc = InputFormRef.SearchIconExpandsPatch;
                 reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
-                patchName1 = "アイテムアイコンFEまで拡張";///No Translate
+                patchName1 = "Extended to item icon 0xFE";///No Translate
                 patchName2 = "Extend Item Icon List Length";///No Translate
                 patchCombo = "fix";
             }

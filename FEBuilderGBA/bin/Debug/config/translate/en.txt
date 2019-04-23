@@ -2698,6 +2698,33 @@ New Assignment
 :エクストラユニット
 Extra unit
 
+:FE8SpellMagic: GaidenStyleパッチがインストールされていません。
+FE8SpellMagic: GaidenStyle patch is not installed.
+
+:レベルアップで取得する魔法の先頭アドレス
+Beginning address of magic to get at level up.
+
+:上級職のみ
+Only Promoted.
+
+:領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
+Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
+
+:選択クラスの分離独立
+Separate independence of selected classes
+
+:このテーブルは、複数のクラスで参照されています。
+This table is referenced in more than one class.
+
+:習得レベル
+Level of acquisition
+
+:魔法
+magic.
+
+:レベル
+Level
+
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
 
@@ -3084,15 +3111,6 @@ Weapon type
 
 :アニメ番号
 Animation ID
-
-:領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
-Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
-
-:選択クラスの分離独立
-Separate independence of selected classes
-
-:このテーブルは、複数のクラスで参照されています。
-This table is referenced in more than one class.
 
 :エディタ
 Editor
@@ -4918,9 +4936,6 @@ Effect
 :ダメージ追加効果
 Damage Ddditional Effect
 
-:レベル
-Level
-
 :進撃準備店
 Preparation Price
 
@@ -5577,6 +5592,9 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
+
+:外伝風の魔法拡張
+Gaiden-style Spell
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -8482,22 +8500,17 @@ Other ROM Direct Text
 :このROMには、エラーがありますが、保存してもよろしいですか？
 There is an error in this ROM, are you sure to save it?
 
-:現在の内容を以下のファイルに書き込んでもよろしいですか？
-Are you sure to write the current contents to the following file?
-
 :ヒント
 Tips
-
-:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are in trouble with an unresolvable error,create report7z and consult with the community.
-
-
 
 :はい
 Yes
 
 :エラーを表示
 Show error.
+
+:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are in trouble with an unresolvable error,create report7z and consult with the community.
 
 :リセット
 Reset
@@ -9068,9 +9081,6 @@ Skill enhancement SkillSystem's level up skill can't be acquired.
 
 :(Lv{0}で習得)
 (Learned with Lv {0})
-
-:習得レベル
-Level of acquisition
 
 :レベルアップで取得するスキルの先頭アドレス
 Leading address of skill to acquire in level up

@@ -1,0 +1,19 @@
+#define MagicMenuCommand(optionNumber) "WORD $080D7CB8; SHORT 0; SHORT 0; BYTE 0 optionNumber 0 0; POIN (SpellUsability+1); POIN (SpellDrawingRoutine+1); POIN (SpellEffectRoutine+1); WORD 0; POIN (SpellOnHover+1); POIN (SpellOnUnhover+1)"
+#define MagicMenuCommandEnd "WORD 0 0 0 0 0 0 0 0 0"
+
+MagicMenuDefs:
+BYTE $01 $01 $0E $00
+WORD $0
+POIN MagicMenuCommandDefs
+WORD $0 $0 $0
+POIN MagicMenuBPress+1
+WORD $0804F521
+WORD $08024589
+
+MagicMenuCommandDefs:
+	MagicMenuCommand($49)
+	MagicMenuCommand($4A)
+	MagicMenuCommand($4B)
+	MagicMenuCommand($4C)
+	MagicMenuCommand($4D)
+MagicMenuCommandEnd

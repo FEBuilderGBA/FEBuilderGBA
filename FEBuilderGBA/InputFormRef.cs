@@ -4739,6 +4739,7 @@ namespace FEBuilderGBA
             SkillConfigFE8NSkillForm.ClearCache();
             SkillConfigFE8NVer2SkillForm.ClearCache();
             SkillConfigSkillSystemForm.ClearCache();
+            FE8SpellMenuExtendsForm.ClearCache();
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;

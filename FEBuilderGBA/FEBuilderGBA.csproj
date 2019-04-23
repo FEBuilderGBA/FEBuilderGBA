@@ -1918,6 +1918,12 @@
     <Compile Include="EventFinalSerifFE7Form.Designer.cs">
       <DependentUpon>EventFinalSerifFE7Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="FE8SpellMenuExtendsForm.Designer.cs">
+      <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FE8SpellMenuExtendsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -1954,6 +1960,9 @@
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
+      <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolASMEditForm.resx">
       <DependentUpon>ToolASMEditForm.cs</DependentUpon>

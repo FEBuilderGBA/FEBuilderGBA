@@ -832,11 +832,13 @@ namespace FEBuilderGBA
             if (!Program.ROM.RomInfo.is_multibyte())
             {//クラスの英語表記で別設定があるのは日本語版だけ
                 OPClassAlphaNameButton.Hide();
+                FE8SpellMenuExtendsButton.Show();
             }
             else
             {//日本語版
                 //FE8Nのスキル割り当てはユニットの??領域を使うので専用画面は不要.
                 SkillAssignmentUnitButton.Hide();
+                FE8SpellMenuExtendsButton.Hide();
             }
         }
 
@@ -1061,6 +1063,11 @@ namespace FEBuilderGBA
         private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainFormUtil.RunToolInitWizard();
+        }
+
+        private void FE8SpellMenuExtendsButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<FE8SpellMenuExtendsForm>();
         }
 
     }

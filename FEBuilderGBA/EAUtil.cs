@@ -467,6 +467,12 @@ namespace FEBuilderGBA
                 + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.text_pointer())));
             sb.AppendLine("#define PortraitTable "
                 + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.face_pointer())));
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                sb.AppendLine("#define SummonUnitTable "
+                    + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer())));
+            }
+            
 
             UnitActionPointerForm.SupportActionRework(sb);
 

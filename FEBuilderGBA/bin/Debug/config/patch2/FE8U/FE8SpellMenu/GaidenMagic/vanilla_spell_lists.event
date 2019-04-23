@@ -1,0 +1,72 @@
+//Spell list by character ID
+//level learned, spell ID
+//promoted-only spells indicated by an $80 + level
+
+EirikaSpellList:
+BYTE $01 Fire
+BYTE $05 Thunder
+BYTE $0A Aura
+BYTE $00 $00
+ALIGN 4
+
+MoulderSpellList:
+BYTE $81 Lightning
+BYTE $84 Shine
+BYTE $86 Divine
+BYTE $00 $00
+ALIGN 4
+
+LuteSpellList:
+BYTE $01 Fire
+BYTE $04 Thunder
+BYTE $09 Elfire
+BYTE $0F Bolting
+BYTE $8A Excalibur
+BYTE $00 $00
+ALIGN 4
+
+NatashaSpellList:
+BYTE $81 Lightning
+BYTE $85 Divine
+BYTE $8A Purge
+BYTE $8F Aura
+BYTE $00 $00
+ALIGN 4
+
+ArturSpellList:
+BYTE $01 Lightning
+BYTE $05 Shine
+BYTE $0A Purge
+BYTE $0F Aura
+BYTE $00 $00
+ALIGN 4
+
+SalehSpellList:
+BYTE $01 Fire
+BYTE $05 Thunder
+BYTE $08 Purge
+BYTE $0F Aura
+BYTE $00 $00
+ALIGN 4
+
+EwanSpellList:
+BYTE $01 Fire
+BYTE $81 Thunder
+BYTE $81 Flux
+BYTE $85 Nosferatu
+BYTE $00 $00
+ALIGN 4
+
+LarachelSpellList:
+BYTE $81 Fire
+BYTE $81 Lightning
+BYTE $88 Bolting
+BYTE $88 Purge
+BYTE $00 $00
+ALIGN 4
+
+KnollSpellList:
+BYTE $01 Nosferatu
+BYTE $05 Eclipse
+BYTE $00 $00
+ALIGN 4

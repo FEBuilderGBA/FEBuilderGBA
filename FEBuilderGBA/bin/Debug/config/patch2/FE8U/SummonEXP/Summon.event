@@ -1,0 +1,22 @@
+
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+
+
+PUSH
+
+ORG SummonUnitTable
+SummonCharacterTable:
+
+ORG $2BA04
+jumpToHack(SummonEXPHack)
+
+ORG $2C528
+WORD 0x0 0x0// Remove that stupid hardcoded phantom check in the EXP routine that kept setting the phantom's EXP to 0 when it hit.
+POP
+
+ALIGN 4
+#inctext lyn "SummonEXPMaster.elf" "Hooks.elf"
+
+PhantomIDSummonASM:
+BYTE GhostFighter 0x00

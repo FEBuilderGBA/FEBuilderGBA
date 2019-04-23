@@ -2230,6 +2230,7 @@ namespace FEBuilderGBA
                     OPClassFontFE8UForm.MakeAllDataLength(list, isPointerOnly);
                     OPClassDemoFE8UForm.MakeAllDataLength(list);
                     ExtraUnitFE8UForm.MakeAllDataLength(list);
+                    FE8SpellMenuExtendsForm.MakeAllDataLength(list);
                 }
 
             }
