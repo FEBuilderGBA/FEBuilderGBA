@@ -372,7 +372,7 @@ namespace FEBuilderGBA
         public uint status_units_menu_pointer() { return 0x8AC88; } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0x1C024; } //軍師属性(FE7のみ)
         public uint event_final_serif_pointer() { return 0x7DC48; } //終章セリフ(FE7のみ)
-        public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
+        public uint compress_image_borderline_address() { return 0xCBEE4; } //これ以降に圧縮画像が登場するというアドレス
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0x1C284902; return 0x12C6C; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0x0000D124; return 0x67B0; } //C01 patch
         public uint patch_C48_hack(out uint enable_value) { enable_value = 0x08067AB0; return 0x67920; } //C48 patch
