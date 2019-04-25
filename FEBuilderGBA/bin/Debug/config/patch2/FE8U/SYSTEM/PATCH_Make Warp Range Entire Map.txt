@@ -1,0 +1,20 @@
+NAME=ワープの射程をマップ全体にする
+NAME.en=Make Warp Range Entire Map
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Defualt: 射程は魔力|DEFAULT|射程はマップ全体|ALL
+COMBO.en=Defualt: Range is magic|DEFAULT|Range is the entire map|ALL
+
+DEFAULT:0x01E380=0xFA 0xF7 0x4C 0xFB
+ALL:0x01E380=0xF7 0x20 0x00 0x00
+
+
+AUTHOR=7743
+INFO=ワープの射程を変更します
+INFO.en=Change the range of the warp.
+NAME.zh=使扭曲范围成为整个地图
+INFO.zh=改变扭曲的范围
+COMBO.zh=Defualt：范围是神奇的|DEFAULT|范围是整个地图|ALL

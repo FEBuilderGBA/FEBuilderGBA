@@ -632,7 +632,14 @@ namespace FEBuilderGBA
         {
             Bitmap bitmap = BaseImage();
             Bitmap ret = ImageUtil.Blank(16, 16, bitmap);
-            ImageUtil.BitBlt(ret, 8, 8, 8, 8, bitmap, 136, 16);
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                ImageUtil.BitBlt(ret, 4, 8, 8, 8, bitmap, 32, 0);
+            }
+            else
+            {
+                ImageUtil.BitBlt(ret, 8, 8, 8, 8, bitmap, 136, 16);
+            }
             return ret;
         }
         public static Bitmap Allows(int number)

@@ -1,0 +1,14 @@
+NAME=ステータス表示を抑制するクラスを複数定義する(導入)
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x1C594=0x00 0x4B 0x18 0x47
+
+
+
+AUTHOR=7743
+EA=DisabledStatusScreen.event
+EDIT_PATCH=PATCH_DisabledStatusScreen.txt
+NAME.en=Define multiple classes to suppress status display (introduction).
+NAME.zh=定义多个类以禁止状态显示（简介）。

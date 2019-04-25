@@ -4961,3 +4961,15 @@
 0842D1B8	:0842D1BF	謎のデータ	8バイト	{J}
 0800562E	不明文字のハート文字	{J}
 0800571A	不明文字のハート文字	{J}
+08004C08	LoadIconPalettes	{J}
+08004C20	LoadIconPalette	{J}
+02026D08	gIconDataToIndexLookup	{J}
+02026A48	gIconIndexToDataLookup	{J}
+08004D2C	LoadIconPalettes	{U}
+08004D44	LoadIconPalette	{U}
+02026D10	gIconDataToIndexLookup	{U}
+02026A50	gIconIndexToDataLookup	{U}
+08004BC4	ResetIconGraphics_	{J}
+08004BD0	ResetIconGraphics	{J}
+08004CE8	ResetIconGraphics_	{U}
+08004CF4	ResetIconGraphics	{U}

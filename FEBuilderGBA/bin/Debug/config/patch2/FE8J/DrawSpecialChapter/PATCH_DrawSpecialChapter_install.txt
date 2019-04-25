@@ -6,6 +6,7 @@ TAG=#ENGINE
 PATCHED_IF:0xB3594=0x00 0x4B 0x18 0x47
 
 INFO=エンディングのクリアターン数表示や、ユニットが死亡したマップを表示する場所で、「第21章」ではなく「終章」と表示するように、特定の章に別の名前を割り当てます。
+EDIT_PATCH=PATCH_DrawSpecialChapter.txt
 
 
 AUTHOR=7743

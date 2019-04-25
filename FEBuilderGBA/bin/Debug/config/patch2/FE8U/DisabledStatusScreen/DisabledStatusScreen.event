@@ -1,0 +1,28 @@
+#include "Extensions/Hack Installation.txt"
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG 0x874AC
+jumpToHack(DrawUnitItemScreen)
+
+ORG 0x879C4
+jumpToHack_r1(DisabledStatusScreen2)
+
+ORG 0x1C92C
+jumpToHack(DisabledStatusScreen)
+
+POP
+
+DrawUnitItemScreen:
+#incbin "DrawUnitItemScreen.dmp"
+POIN DisabledStatusScreen_Table
+
+DisabledStatusScreen:
+#incbin "DisabledStatusScreen.dmp"
+POIN DisabledStatusScreen_Table
+
+DisabledStatusScreen2:
+#incbin "DisabledStatusScreen2.dmp"
+POIN DisabledStatusScreen_Table
+
+#include "DisabledStatusScreen_Table.event"

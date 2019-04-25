@@ -1,0 +1,15 @@
+NAME=カーラ出現イベント_バートルのUnitID
+NAME.en=Karla appearance event: Bartre's UnitID
+NAME.zh=卡尔拉出场事件_巴特尔的人物ID
+
+INFO=カーラとバートルのイベント
+INFO.en=Karla and Bartre Events
+INFO.zh=卡尔拉 巴特尔 事件
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x07D9E6 0x079D22
+ADDRESS_TYPE=UNIT
+
+AUTHOR=7743

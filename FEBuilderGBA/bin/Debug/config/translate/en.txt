@@ -2704,6 +2704,9 @@ FE8SpellMagic: GaidenStyle patch is not installed.
 :レベルアップで取得する魔法の先頭アドレス
 Beginning address of magic to get at level up.
 
+:レベル
+Level
+
 :上級職のみ
 Only Promoted.
 
@@ -2721,9 +2724,6 @@ Level of acquisition
 
 :魔法
 magic.
-
-:レベル
-Level
 
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
