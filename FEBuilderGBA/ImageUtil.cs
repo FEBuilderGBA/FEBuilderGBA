@@ -3124,8 +3124,9 @@ namespace FEBuilderGBA
             IntPtr src = bmpData.Scan0;
 
             ColorPalette openpal = bitmap.Palette;
-            newpal.Entries[0] = openpal.Entries[0];
-            newpal.Entries[1] = openpal.Entries[1];
+            newpal.Entries[0] = U.at(openpal.Entries, 0, Color.Black);
+            newpal.Entries[1] = U.at(openpal.Entries, 1, Color.Black);
+
             for (int i = 0x2; i <= 0xff; i++)
             {
                 newpal.Entries[i] = Color.Black;

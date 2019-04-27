@@ -130,6 +130,15 @@ namespace FEBuilderGBA
             return list[at];
         }
 
+        [MethodImpl(256)]
+        public static Color at(Color[] list, int at, Color def)
+        {
+            if (at >= list.Length)
+            {
+                return def;
+            }
+            return list[at];
+        }
 
 
         public static double atof(String a)
