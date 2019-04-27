@@ -493,10 +493,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<MainSimpleMenuImageSubForm>();
         }
 
-        private void ItemEtcButton_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ItemEtcFE7Form>();
-        }
 
         private void diffToolStripMenuItem_Click(object sender, EventArgs e)
         {

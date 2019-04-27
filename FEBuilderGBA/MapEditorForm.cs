@@ -2042,13 +2042,21 @@ this.MapObjImage);
                 return;
             }
 
-            MapSizeChange(mapChangeIndex
-                , (int)f.X.Value
-                , (int)f.Y.Value
-                , (int)f.L.Value
-                , (int)f.T.Value
-                , (int)f.R.Value
-                , (int)f.B.Value);
+            try
+            {
+                MapSizeChange(mapChangeIndex
+                    , (int)f.X.Value
+                    , (int)f.Y.Value
+                    , (int)f.L.Value
+                    , (int)f.T.Value
+                    , (int)f.R.Value
+                    , (int)f.B.Value);
+            }
+            catch (Exception ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+                RunUndo();
+            }
         }
         void MapSizeChange(int mapChangeIndex,int xx,int yy,int left,int top,int right,int bottom)
         {

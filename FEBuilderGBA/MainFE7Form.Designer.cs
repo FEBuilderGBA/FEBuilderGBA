@@ -192,7 +192,6 @@
             this.OtherTextButton = new System.Windows.Forms.Button();
             this.HexEditorButton = new System.Windows.Forms.Button();
             this.ImageMagicButton = new System.Windows.Forms.Button();
-            this.ItemEtcButton = new System.Windows.Forms.Button();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.WorldMapImageButton = new System.Windows.Forms.Button();
             this.EventForceSortieButton = new System.Windows.Forms.Button();
@@ -1259,7 +1258,6 @@
             this.ControlPanel.Controls.Add(this.OtherTextButton);
             this.ControlPanel.Controls.Add(this.HexEditorButton);
             this.ControlPanel.Controls.Add(this.ImageMagicButton);
-            this.ControlPanel.Controls.Add(this.ItemEtcButton);
             this.ControlPanel.Controls.Add(this.MainSimpleMenuImageSubButton);
             this.ControlPanel.Controls.Add(this.WorldMapImageButton);
             this.ControlPanel.Controls.Add(this.EventForceSortieButton);
@@ -1937,17 +1935,6 @@
             this.ImageMagicButton.UseVisualStyleBackColor = true;
             this.ImageMagicButton.Click += new System.EventHandler(this.ImageMagicButton_Click);
             // 
-            // ItemEtcButton
-            // 
-            this.ItemEtcButton.Location = new System.Drawing.Point(411, 328);
-            this.ItemEtcButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ItemEtcButton.Name = "ItemEtcButton";
-            this.ItemEtcButton.Size = new System.Drawing.Size(200, 36);
-            this.ItemEtcButton.TabIndex = 31;
-            this.ItemEtcButton.Text = "アイテムその他";
-            this.ItemEtcButton.UseVisualStyleBackColor = true;
-            this.ItemEtcButton.Click += new System.EventHandler(this.ItemEtcButton_Click);
-            // 
             // MainSimpleMenuImageSubButton
             // 
             this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1420, 548);
@@ -2137,7 +2124,6 @@
         private System.Windows.Forms.Button EventForceSortieButton;
         private System.Windows.Forms.Button WorldMapImageButton;
         private System.Windows.Forms.Button MainSimpleMenuImageSubButton;
-        private System.Windows.Forms.Button ItemEtcButton;
         private System.Windows.Forms.ToolStripMenuItem diffToolStripMenuItem;
         private System.Windows.Forms.Button ImageMagicButton;
         private System.Windows.Forms.ToolStripMenuItem eventAssembler;

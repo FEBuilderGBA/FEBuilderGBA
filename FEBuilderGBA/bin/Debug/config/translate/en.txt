@@ -4840,90 +4840,6 @@ To shrink the list, please set all three items to 00 and put a terminal symbol.
 :アイテム間接エフェクトポインタテーブル
 Indirect effect pointer table
 
-:武器Sボーナス
-Weapon S Rank Bonus
-
-:きずぐすりの回復量とかはパッチの方にあります。
-The amount healed by Vulnarary is located in the patch.
-
-:武器Sボーナス 項目2の値
-Weapon S Value of Bonus Item 2
-
-:武器Sボーナス 項目2
-Weapon S Bonus Item 2
-
-:武器Sボーナス 項目1の値
-Weapon S Value of Bonus Item 1
-
-:武器Sボーナス 項目
-Weapon S Bonus Item
-
-:武器レベルSになれる武器経験値
-WEXP for S Rank
-
-:神器フラッシュ
-Sacred Flash
-
-:もし、使用武器アイテムIDが・・・・・
-If the equipped weapon item ID is ...
-
-:-> 神器ではない
--> Not Sacred Treasure
-
-:-> 神器である
--> Sacred Treasure
-
-:条件4
-Condition 4
-
-:条件3
-Condition 3
-
-:条件2
-Condition 2
-
-:条件1
-Condition 1
-
-:アイテムその他
-Sacred Weapons
-
-:-> 条件6へ
-->To Condition 6
-
-:条件10
-Condition 10
-
-:条件9
-Condition 9
-
-:条件8
-Condition 8
-
-:条件7
-Condition 7
-
-:条件6
-Condition 6
-
-:条件5
-Condition 5
-
-:-> 条件7へ
-->To Condition 7
-
-:神器特効係数
-Sacred Effectiveness
-
-:-> 2倍特効
--> 2x Effectiveness
-
-:-> 3倍特効
--> 3x Effectiveness
-
-:-> 条件5へ
--> Go to Condition 5
-
 :間接エフェクト Jump
 Edit Magic Animations
 
@@ -5566,6 +5482,9 @@ Road Movement Editor
 :ソングトラック
 Song Track
 
+:外伝風の魔法拡張
+Gaiden-style Spell
+
 :ワールドマップBGM
 World Map BGM
 
@@ -5592,9 +5511,6 @@ Assign Skill by Unit
 
 :スキル拡張設定
 Skill Config
-
-:外伝風の魔法拡張
-Gaiden-style Spell
 
 :エラーがなくなりました。\r\nファイルを保存しますか？
 No errors remain.\r\nSave the file?
@@ -8991,6 +8907,9 @@ A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrenc
 
 :System.OutOfMemoryExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 A System.OutOfMemoryException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+
+:例外が発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+Exception occured.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
 
 :警告
 Alert

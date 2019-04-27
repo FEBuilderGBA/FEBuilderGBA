@@ -442,12 +442,6 @@
     <Compile Include="InterpolatedPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ItemEtcForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemEtcForm.Designer.cs">
-      <DependentUpon>ItemEtcForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="LastSelectedFilename.cs" />
     <Compile Include="ErrorLongMessageDialogForm.cs">
       <SubType>Form</SubType>
@@ -1368,12 +1362,6 @@
     <Compile Include="WorldMapImageFE6Form.Designer.cs">
       <DependentUpon>WorldMapImageFE6Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemEtcFE7Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemEtcFE7Form.Designer.cs">
-      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="ImageMagicCSACreatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2259,12 +2247,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemEffectivenessForm.resx">
       <DependentUpon>ItemEffectivenessForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemEtcFE7Form.resx">
-      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemEtcForm.resx">
-      <DependentUpon>ItemEtcForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>

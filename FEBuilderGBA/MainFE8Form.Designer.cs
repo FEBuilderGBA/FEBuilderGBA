@@ -153,6 +153,7 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.FE8SpellMenuExtendsButton = new System.Windows.Forms.Button();
             this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
@@ -217,12 +218,10 @@
             this.SkillAssignmentClassButton = new System.Windows.Forms.Button();
             this.SkillAssignmentUnitButton = new System.Windows.Forms.Button();
             this.SkillConfigButton = new System.Windows.Forms.Button();
-            this.ItemEtcButton = new System.Windows.Forms.Button();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.FE8SpellMenuExtendsButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1478,7 +1477,6 @@
             this.ControlPanel.Controls.Add(this.SkillAssignmentClassButton);
             this.ControlPanel.Controls.Add(this.SkillAssignmentUnitButton);
             this.ControlPanel.Controls.Add(this.SkillConfigButton);
-            this.ControlPanel.Controls.Add(this.ItemEtcButton);
             this.ControlPanel.Controls.Add(this.MainSimpleMenuImageSubButton);
             this.ControlPanel.Controls.Add(this.UnitButton);
             this.ControlPanel.Controls.Add(this.SimpleMenuButton);
@@ -1553,6 +1551,17 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
             this.ControlPanel.TabIndex = 1;
+            // 
+            // FE8SpellMenuExtendsButton
+            // 
+            this.FE8SpellMenuExtendsButton.Location = new System.Drawing.Point(204, 452);
+            this.FE8SpellMenuExtendsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FE8SpellMenuExtendsButton.Name = "FE8SpellMenuExtendsButton";
+            this.FE8SpellMenuExtendsButton.Size = new System.Drawing.Size(200, 36);
+            this.FE8SpellMenuExtendsButton.TabIndex = 135;
+            this.FE8SpellMenuExtendsButton.Text = "外伝風の魔法拡張";
+            this.FE8SpellMenuExtendsButton.UseVisualStyleBackColor = true;
+            this.FE8SpellMenuExtendsButton.Click += new System.EventHandler(this.FE8SpellMenuExtendsButton_Click);
             // 
             // StatusUnitsMenuButton
             // 
@@ -2258,17 +2267,6 @@
             this.SkillConfigButton.UseVisualStyleBackColor = true;
             this.SkillConfigButton.Click += new System.EventHandler(this.SkillConfigButton_Click);
             // 
-            // ItemEtcButton
-            // 
-            this.ItemEtcButton.Location = new System.Drawing.Point(406, 339);
-            this.ItemEtcButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ItemEtcButton.Name = "ItemEtcButton";
-            this.ItemEtcButton.Size = new System.Drawing.Size(200, 36);
-            this.ItemEtcButton.TabIndex = 36;
-            this.ItemEtcButton.Text = "アイテムその他";
-            this.ItemEtcButton.UseVisualStyleBackColor = true;
-            this.ItemEtcButton.Click += new System.EventHandler(this.ItemEtcButton_Click);
-            // 
             // MainSimpleMenuImageSubButton
             // 
             this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1426, 602);
@@ -2312,17 +2310,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // FE8SpellMenuExtendsButton
-            // 
-            this.FE8SpellMenuExtendsButton.Location = new System.Drawing.Point(204, 452);
-            this.FE8SpellMenuExtendsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.FE8SpellMenuExtendsButton.Name = "FE8SpellMenuExtendsButton";
-            this.FE8SpellMenuExtendsButton.Size = new System.Drawing.Size(200, 36);
-            this.FE8SpellMenuExtendsButton.TabIndex = 135;
-            this.FE8SpellMenuExtendsButton.Text = "外伝風の魔法拡張";
-            this.FE8SpellMenuExtendsButton.UseVisualStyleBackColor = true;
-            this.FE8SpellMenuExtendsButton.Click += new System.EventHandler(this.FE8SpellMenuExtendsButton_Click);
             // 
             // MainFE8Form
             // 
@@ -2450,7 +2437,6 @@
         private System.Windows.Forms.Button SimpleMenuButton;
         public System.Windows.Forms.Panel ControlPanel;
         private System.Windows.Forms.Button MainSimpleMenuImageSubButton;
-        private System.Windows.Forms.Button ItemEtcButton;
         private System.Windows.Forms.ToolStripMenuItem diffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventAssembler;
         private System.Windows.Forms.Button SkillAssignmentUnitButton;
