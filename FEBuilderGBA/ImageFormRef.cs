@@ -1529,6 +1529,7 @@ namespace FEBuilderGBA
             if (GetDragFilePath(out filename))
             {
                 //drag されているファイルがあるらしい.
+                Program.LastSelectedFilename.Save(self, addName , filename);
             }
             else
             {

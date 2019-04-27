@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -737,8 +738,38 @@ namespace FEBuilderGBA
 
         private void ObjExportButton_Click(object sender, EventArgs e)
         {
-            Bitmap newbitmap = this.MapObjImage;
-            ImageFormRef.ExportImage(this,newbitmap, InputFormRef.MakeSaveImageFilename(this, MapStyle), MAX_MAP_PALETTE_COUNT);
+            uint palIndex = CalcPatelleIndex();
+            if (palIndex == 0 || palIndex == U.NOT_FOUND)
+            {//パレットは正しい順場
+                Bitmap newbitmap = this.MapObjImage;
+                ImageFormRef.ExportImage(this, newbitmap, InputFormRef.MakeSaveImageFilename(this, MapStyle), MAX_MAP_PALETTE_COUNT);
+            }
+            else
+            {//現在選択しているパレット
+                Bitmap newbitmap = ImageUtil.SwapPalette(this.MapObjImage, (int)palIndex);
+                string name = MapStyle.Text + "_swap_" + palIndex;
+                ImageFormRef.ExportImage(this, newbitmap, InputFormRef.MakeSaveImageFilename(this, name), MAX_MAP_PALETTE_COUNT);
+            }
+        }
+
+        //ファイル名にある _swap_[0-9] にある番号で、パレットを切り替える.
+        Bitmap PaletteSwapper(Bitmap bitmap)
+        {
+            string lastFilename = Program.LastSelectedFilename.Load(this, "");
+
+            Match m = RegexCache.Match(lastFilename, "_swap_([0-9])");
+            if (m.Groups.Count < 2)
+            {
+                return bitmap;
+            }
+            int palIndex = (int)U.atoh(m.Groups[1].Value);
+            if (palIndex <= 0 || palIndex >= 10)
+            {
+                return bitmap;
+            }
+
+            Bitmap newbitmap = ImageUtil.SwapPalette(bitmap, (int)palIndex);
+            return newbitmap;
         }
 
         private void ObjImportButton_Click(object sender, EventArgs e)
@@ -773,6 +804,7 @@ namespace FEBuilderGBA
                     R.ShowStopError("パレット数が正しくありません。\r\n{1}種類以下(16色*{1}種類) でなければなりません。\r\n\r\n選択された画像のパレット種類:{0}種類", bitmap_palette_count, palette_count);
                     return;
                 }
+                bitmap = PaletteSwapper(bitmap);
             }
 
             //画像
