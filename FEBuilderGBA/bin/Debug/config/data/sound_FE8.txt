@@ -99,7 +99,7 @@
 00B8=SE:UI or status-related sound effect?
 00B9=SE:Gold changing
 00BA=SE:Poison vent
-00BC=SE:
+00BC=SE:神の矢 Vertical Arrow
 00BD=SE:Water tile going under
 00BE=SE:Water tile coming up
 00BF=SE:Fire tile

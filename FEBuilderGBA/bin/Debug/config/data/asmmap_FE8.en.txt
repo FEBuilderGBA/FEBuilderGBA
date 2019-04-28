@@ -12396,3 +12396,5 @@ r3=X tile position of menu of right	{U}
 080b3538	AppendTextBuffer_080b3538	{J}
 080aeabc	AppendTextBuffer_080aeabc	{U}
 080AEBEC	Div10_Safe	{U}
+080797BC	Reproduce the click sound click.	SongID:0x147	{J}
+08077398	Reproduce the click sound click.	SongID:0x147	{U}
