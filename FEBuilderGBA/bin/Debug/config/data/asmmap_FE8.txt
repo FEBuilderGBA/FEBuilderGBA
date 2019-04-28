@@ -12399,3 +12399,4 @@
 080b3538	AppendTextBuffer_080b3538	{J}
 080aeabc	AppendTextBuffer_080aeabc	{U}
 080AEBEC	Div10_Safe	{U}
+080797BC	カチッという点火音を再生	SongID:0x147	{J}
