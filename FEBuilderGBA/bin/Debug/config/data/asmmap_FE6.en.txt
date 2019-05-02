@@ -1219,8 +1219,6 @@
 083758A8	&PALETTE	Palette of something.
 08375888	&PALETTE	Palette of something.
 0837AAC8	&PALETTE	Palette of something.
-0201F0E8	&PALETTE	Palette of something.
-02021708	&PALETTE	Palette of something.
 08100A08	&PALETTE	Palette of something.
 08100A28	&PALETTE	Palette of something.
 0810137C	&PALETTE	Palette of something.
@@ -1323,3 +1321,7 @@
 080FFD50	psZero
 08005E5C	Heart character of unknown character.
 08005FEA	Heart character of unknown character.
+0201F0E8	gGenericBuffer
+02021708	Palette wram buffer
+0809dcd8	CPUFastSet
+0809dcf4	LZ77UnCompWram

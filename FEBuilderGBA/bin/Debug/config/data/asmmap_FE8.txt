@@ -815,14 +815,6 @@
 03003080	@IORegisters	IORegisters	{U}
 03003020	@IORegisters	IORegisters	{J}
 
-02022CA8	BG0 Map Buffer	{U}
-02022CA8	BG0 Map Buffer	{J}
-020234A8	BG1 Map Buffer	{U}
-020234A8	BG1 Map Buffer	{J}
-02023CA8	BG2 Map Buffer	{U}
-02023CA8	BG2 Map Buffer	{J}
-020244A8	BG3 Map Buffer	{U}
-020244A8	BG3 Map Buffer	{J}
 0300000D	BG Update Flag 		bit 0 | (bool) BG0 Map to be updated	bit 1 | (bool) BG1 Map to be updated	bit 2 | (bool) BG2 Map to be updated	bit 3 | (bool) BG3 Map to be updated	{U}
 0300000C	BG Update Flag 		bit 0 | (bool) BG0 Map to be updated	bit 1 | (bool) BG1 Map to be updated	bit 2 | (bool) BG2 Map to be updated	bit 3 | (bool) BG3 Map to be updated	{J}
 
@@ -10550,8 +10542,8 @@
 03001850	gStr_3001850	{U}
 03001C38	gSummonedUnitDefinitionBuffer	{U}
 03004BB0	gCurrentMovCostTable	{U}
-03006440	@MusicPlayer	gMusicPlayerInfo	{U}
-03006650	@MusicPlayer	gMusicPlayerInfo	{U}
+03006440	@MusicPlayer	gMusicPlayerInfo1	{U}
+03006650	@MusicPlayer	gMusicPlayerInfo2	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -11769,8 +11761,14 @@
 030007F8	gSomeUtilityTextHandle	{J}
 030017D8	gSioBaudRate	{J}
 03004B50	gCurrentMovCostTable	{J}
-03006430	@MusicPlayer	gMusicPlayerInfo	{J}
-03006640	@MusicPlayer	gMusicPlayerInfo	{J}
+03006430	@MusicPlayer	gMusicPlayerInfo0	{J}
+03006640	@MusicPlayer	gMusicPlayerInfo1	{J}
+03006680	@MusicPlayer	gMusicSEPlayerInfo2	{J}
+030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
+03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
+03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
+
+
 03007FF0	gpM4aMainThing	{J}
 04000002	Undocumented_GreenSwap	{J}
 04000300	Undocumented_PostBootFlag	{J}

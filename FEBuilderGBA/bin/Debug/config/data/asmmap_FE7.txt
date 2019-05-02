@@ -1121,7 +1121,7 @@
 0202CEC0	@Unit@[32]	Enemy	{U}
 0202DCD0	@Unit@[14]	Ally	{U}
 
-//020228A8	Palette wram buffer
+02022860	Palette wram buffer
 02022C60	BG 0 wram buffer
 02023460	BG 1 wram buffer
 02023C60	BG 2 wram buffer

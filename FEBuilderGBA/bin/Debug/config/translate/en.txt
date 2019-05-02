@@ -1099,6 +1099,21 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
+:序盤
+The beginning of the game.
+
+:リン編
+Lyn's Tale
+
+:難易度:難しい
+Difficulty: difficult.
+
+:難易度:初めて
+Difficulty: First time.
+
+:難易度:普通
+Difficulty: Normal.
+
 :自動的に更新する
 Automatically update
 
@@ -1131,6 +1146,12 @@ This is the call history of events recorded from data acquired from the emulator
 
 :より古い↓
 Older↓
+
+:再生されている音楽
+Music being played.
+
+:編
+Editing
 
 :支援フラグ
 Support Flag
@@ -1911,9 +1932,6 @@ Turn Start
 
 :ターン条件FE7
 Turn Condition FE 7
-
-:編
-Editing
 
 :常時条件
 Conditional
@@ -2994,6 +3012,9 @@ Reverse
 
 :リトルエンディアン
 Little Endian
+
+:4バイト単位
+4 byte units.
 
 :バイナリエディタ - 検索
 Hex Editor Search

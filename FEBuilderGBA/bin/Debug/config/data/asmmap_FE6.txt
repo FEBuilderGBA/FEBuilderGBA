@@ -1209,8 +1209,6 @@
 08375888	&PALETTE	何かのパレット
 0837AAC8	&PALETTE	何かのパレット
 
-0201F0E8	&PALETTE	何かのパレット
-02021708	&PALETTE	何かのパレット
 08100A08	&PALETTE	何かのパレット
 08100A28	&PALETTE	何かのパレット
 0810137C	&PALETTE	何かのパレット
@@ -1312,3 +1310,7 @@
 080FFD50	psZero
 08005E5C	不明文字のハート文字
 08005FEA	不明文字のハート文字
+0201F0E8	gGenericBuffer
+02021708	Palette wram buffer
+0809dcd8	CPUFastSet
+0809dcf4	LZ77UnCompWram

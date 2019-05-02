@@ -209,11 +209,11 @@ namespace FEBuilderGBA
             {
                 if (e.Shift)
                 {
-                    Search(this.LastSearch, this.LastSearchLittleEndian, true, true);
+                    Search(this.LastSearch, this.LastSearchLittleEndian, true, false,true);
                 }
                 else
                 {
-                    Search(this.LastSearch, this.LastSearchLittleEndian, false, true);
+                    Search(this.LastSearch, this.LastSearchLittleEndian, false, false, true);
                 }
                 return;
             }
@@ -486,6 +486,7 @@ namespace FEBuilderGBA
         public uint Search(string addrString
             ,bool isLittleEndian
             ,bool isRev
+            ,bool isAlign4
             ,bool isNext)
         {
             if (addrString.Length <= 0)
@@ -559,6 +560,12 @@ namespace FEBuilderGBA
                 mask = littlemask;
             }
 
+            uint blockSize = 1;
+            if (isAlign4)
+            {
+                blockSize = 4;
+            }
+
             uint searchStart = this.CursolPosStart;
             uint found ;
             if (isRev)
@@ -578,11 +585,11 @@ namespace FEBuilderGBA
 
                 if (useMask)
                 {
-                    found = GrepPatternMatchRev(this.Data, need, mask, searchStart , 1);
+                    found = GrepPatternMatchRev(this.Data, need, mask, searchStart, blockSize);
                 }
                 else
                 {
-                    found = GrepRev(this.Data, need, searchStart, 1);
+                    found = GrepRev(this.Data, need, searchStart, blockSize);
                 }
             }
             else
@@ -602,11 +609,11 @@ namespace FEBuilderGBA
 
                 if (useMask)
                 {
-                    found = U.GrepPatternMatch(this.Data, need, mask, searchStart, (uint)this.Data.Length, 1);
+                    found = U.GrepPatternMatch(this.Data, need, mask, searchStart, (uint)this.Data.Length, blockSize);
                 }
                 else
                 {
-                    found = U.Grep(this.Data, need, searchStart, (uint)this.Data.Length, 1);
+                    found = U.Grep(this.Data, need, searchStart, (uint)this.Data.Length, blockSize);
                 }
             }
 

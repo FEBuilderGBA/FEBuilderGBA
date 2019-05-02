@@ -266,6 +266,16 @@ namespace FEBuilderGBA
         public uint function_event_engine_loop_address() { return 0x0800B2CC + 1; } //イベントエンジン
         public uint workmemory_reference_procs_event_address_offset() { return 0x2C; } //Procsのイベントエンジンでのイベントのアドレスを格納するuser変数の場所
         public uint workmemory_procs_game_main_address() { return 0x02024E20; } //ワークメモリ Procsの中でのGAMEMAIN
+        public uint workmemory_palette_address() { return 0x02022860; } //RAMに記録されているダブルバッファのパレット領域
+        public uint workmemory_sound_player_00_address() { return 0x03005A30; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_01_address() { return 0x03005C40; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_02_address() { return 0x03005C80; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_03_address() { return 0x03005D50; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_04_address() { return 0x03005CC0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_05_address() { return 0x030059B0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_06_address() { return 0x030059F0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_07_address() { return 0x03005C00; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_08_address() { return 0x03005D10; } //RAMに設定されているサウンドプレイヤーバッファ
         public uint Procs_game_main_address() { return 0x8C01744; } //PROCSのGAME MAIN 
         public uint summon_unit_pointer() { return 0; } //召喚
         public uint summons_demon_king_pointer() { return 0; } //呼魔

@@ -70,6 +70,7 @@ namespace FEBuilderGBA
             InitRunningEventList();
             InitCheat(controls);
             InitParty();
+            InitPaletteEtc();
             
             //メモリの内容を取得.
             UpdateALL();
@@ -178,6 +179,7 @@ namespace FEBuilderGBA
             UpdateRunningEventList();
             UpdateControlUnit();
             UpdateParty();
+            UpdatePaletteEtc();
         }
         void UpdateUserStack()
         {
@@ -2229,5 +2231,298 @@ namespace FEBuilderGBA
             return null;
         }
 
+
+
+        void InitPaletteEtc()
+        {
+            this.Edition = U.NOT_FOUND;
+            this.Diffeclty = U.NOT_FOUND;
+            this.PaletteCheckBuffer = new byte[2 * 16 * 16 * 2];
+            this.PaletteList.OwnerDraw(DrawPalette, DrawMode.OwnerDrawVariable, false);
+            this.PaletteList.DummyAlloc(32, 0);
+
+            this.SongWorkingRAMs = new uint[]{
+                Program.ROM.RomInfo.workmemory_sound_player_00_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_01_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_02_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_03_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_04_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_05_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_06_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_07_address()
+                ,Program.ROM.RomInfo.workmemory_sound_player_08_address()
+            };
+            this.SongIDBuffer = new uint[this.SongWorkingRAMs.Length];
+            this.SoundList.OwnerDraw(DrawSongList, DrawMode.OwnerDrawVariable, false);
+            this.SoundList.DummyAlloc(this.SongWorkingRAMs.Length, 0);
+        }
+        //編を求める
+        uint GetEdition()
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {//6には編が存在しない.
+                return U.NOT_FOUND;
+            }
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+            uint ramPointer = stageStructAddr + 0x1B;
+            return Program.RAM.u8(ramPointer);
+        }
+        string ConvertEditionToString(uint v)
+        {
+            if (v == U.NOT_FOUND)
+            {
+                return "";
+            }
+            string ret = U.ToHexString(v) + "=";
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (v == 0)
+                {
+                    return ret + R._("序盤");
+                }
+                if (v == 1)
+                {
+                    return ret + R._("エイリーク編");
+                }
+                if (v == 2)
+                {
+                    return ret + R._("エフラム編");
+                }
+                return ret + "???";
+            }
+            if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (v == 1)
+                {
+                    return ret + R._("リン編");
+                }
+                if (v == 2)
+                {
+                    return ret + R._("エリウッド編");
+                }
+                if (v == 3)
+                {
+                    return ret + R._("ヘクトル編");
+                }
+            }
+            return ret + "???";
+        }
+        //難易度を求める.
+        uint GetDiffecly()
+        {
+            uint ret = 0;
+            uint stageStructAddr = Program.ROM.RomInfo.workmemory_mapid_address() - 0xE;
+
+            uint ramPointer1 = stageStructAddr + 0x14;
+            uint v = Program.RAM.u8(ramPointer1);
+            if ((v & 0x40) == 0x40)
+            {
+                ret = ret | 0x40;//難しい
+            }
+
+            uint ramPointer2 = stageStructAddr + 0x42;
+            v = Program.RAM.u8(ramPointer2);
+            if ((v & 0x20) == 0x20)
+            {
+                ret = ret | 0x20;//初めて
+            }
+
+            return ret;
+        }
+        string ConvertDiffeclyToString(uint v)
+        {
+            string ret = "";
+            if ((v & 0x40) == 0x40)
+            {
+                ret += R._("難易度:難しい");
+                ret += " ";
+            }
+            if ((v & 0x20) == 0x20)
+            {
+                ret += R._("難易度:初めて");
+                ret += " ";
+            }
+            if (ret == "")
+            {
+                ret += R._("難易度:普通");
+                ret += " ";
+            }
+            return ret;
+        }
+        void UpdatePaletteEtc()
+        {
+            {
+                uint v = GetEdition();
+                if (v != this.Edition)
+                {
+                    this.Edition = v;
+                    this.X_ETC_Edition_Text.Text = ConvertEditionToString(v);
+                }
+            }
+            {
+                uint v = GetDiffecly();
+                if (v != this.Diffeclty)
+                {
+                    this.Diffeclty = v;
+                    this.X_ETC_Diffculty_Text.Text = ConvertDiffeclyToString(v);
+                }
+            }
+
+            bool isInvalidateSongList = false;
+            for (int i = 0; i < this.SongWorkingRAMs.Length; i++)
+            {
+                uint p = this.SongWorkingRAMs[i];
+                if (p == 0x0)
+                {
+                    continue;
+                }
+                uint v = Program.RAM.u32(p);
+                if (v != this.SongIDBuffer[i])
+                {
+                    this.SongIDBuffer[i] = v;
+                    isInvalidateSongList = true;
+                }
+            }
+            if (isInvalidateSongList)
+            {
+                this.SoundList.Invalidate();
+            }
+
+            byte[] bin = Program.RAM.getBinaryData(
+                  Program.ROM.RomInfo.workmemory_palette_address()
+                , this.PaletteCheckBuffer.Length);
+            if (U.memcmp(this.PaletteCheckBuffer, bin) != 0)
+            {
+                //変更有
+                this.PaletteCheckBuffer = bin;
+                this.PartyListBox.Invalidate();
+            }
+        }
+        Size DrawPalette(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+
+            string name;
+            if (index >= 16)
+            {
+                name = "OGP"+(index-16).ToString("X");
+            }
+            else
+            {
+                name = "BGP"+index.ToString("X");
+            }
+            U.DrawText(name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            int namelength = 40;
+
+            uint oneWidth = (uint)(listbounds.Width - namelength) / 16;
+            uint lineHeight = 12;
+            for (uint i = 0; i < 16; i++)
+            {
+                uint a = (uint)((i * 2) + (index * 16 * 2));
+                uint rgb = U.u16(this.PaletteCheckBuffer, a);
+                Color c = ImageUtil.GBARGBToColor(rgb);
+                Brush b = new SolidBrush(c);
+                Rectangle rc = new Rectangle(
+                        (int)(i * oneWidth + namelength)
+                    , listbounds.Y
+                    , (int)oneWidth
+                    , (int)lineHeight);
+                if (isWithDraw)
+                {
+                    g.FillRectangle(b, rc);
+                }
+            }
+
+            bounds.X += listbounds.Width;
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+        Size DrawSongList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
+        {
+            if (index < 0 || index >= lb.Items.Count)
+            {
+                return new Size(listbounds.X, listbounds.Y);
+            }
+            Rectangle bounds = listbounds;
+            uint lineHeight = 12;
+
+            uint addr = SongWorkingRAMs[index];
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            U.DrawText("->", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 20;
+
+            addr = SongIDBuffer[index];
+            U.DrawText(U.ToHexString8(addr), g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 60;
+
+            U.DrawText("->", g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+            bounds.X += 20;
+
+            string name = SongTableForm.GetSongNameWhereSongHeader(addr);
+            bounds.X += U.DrawText(name, g, lb.Font, this.ListBoxForeBrush, isWithDraw, bounds);
+
+            bounds.Y += (int)lineHeight;
+            return new Size(bounds.X, bounds.Y);
+        }
+        uint Edition;
+        uint Diffeclty;
+        byte[] PaletteCheckBuffer;
+        uint[] SongIDBuffer;
+        uint[] SongWorkingRAMs;
+
+        private void PaletteSearchButton_Click(object sender, EventArgs e)
+        {
+            HexEditorForm hex = (HexEditorForm)InputFormRef.JumpForm<HexEditorForm>();
+            hex.Search(SelectPalette.Text,isAlign4:true );
+        }
+
+        private void PaletteList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = PaletteList.SelectedIndex;
+            if (index < 0 || index >= PaletteList.Items.Count)
+            {
+                SelectPalette.Text = "";
+                return ;
+            }
+            StringBuilder sb = new StringBuilder();
+            for (uint i = 0; i < 16; i++)
+            {
+                uint a = (uint)((i * 2) + (index * 16 * 2));
+                sb.Append(U.ToHexString(U.u8(this.PaletteCheckBuffer, a)));
+                sb.Append(' ');
+                sb.Append(U.ToHexString(U.u8(this.PaletteCheckBuffer, a + 1)));
+                sb.Append(' ');
+            }
+            SelectPalette.Text = sb.ToString();
+        }
+
+        private void PaletteList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            PaletteList_SelectedIndexChanged(null, null);
+            PaletteSearchButton.PerformClick();
+        }
+
+        private void SoundList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = SoundList.SelectedIndex;
+            if (index < 0 || index >= SoundList.Items.Count)
+            {
+                return;
+            }
+            uint addr = SongIDBuffer[index];
+            string name = SongTableForm.GetSongNameWhereSongHeader(addr);
+            uint song_id = U.atoh(name);
+            if (song_id <= 0)
+            {
+                return;
+            }
+            InputFormRef.JumpForm<SongTableForm>(song_id);
+        }
     }
 }

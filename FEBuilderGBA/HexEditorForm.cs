@@ -135,14 +135,20 @@ namespace FEBuilderGBA
                 return;
             }
             string addr = f.AddrComboBox.Text;
-            if (this.SearchHistory.IndexOf(addr) < 0)
+            Search(addr
+                , f.LittleEndianCheckBox.Checked
+                , f.RevCheckBox.Checked
+                , f.Align4.Checked)
+                ;
+        }
+        public void Search(string need, bool isLitteEndian = false, bool isRev = false, bool isAlign4 = false)
+        {
+            if (this.SearchHistory.IndexOf(need) < 0)
             {
-                this.SearchHistory.Add(addr);
+                this.SearchHistory.Add(need);
             }
-            bool LittleEndian = f.LittleEndianCheckBox.Checked;
-            bool isRev = f.RevCheckBox.Checked;
             this.HexBox.Focus();
-            this.HexBox.Search(addr, LittleEndian, isRev, false);
+            this.HexBox.Search(need, isLitteEndian, isRev, isAlign4, false);
         }
 
         private void HexBox_KeyDown(object sender, KeyEventArgs e)

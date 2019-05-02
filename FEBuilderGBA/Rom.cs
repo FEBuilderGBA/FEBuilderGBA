@@ -265,6 +265,16 @@ namespace FEBuilderGBA
         uint workmemory_reference_procs_event_address_offset(); //Procsのイベントエンジンでのイベントのアドレスを格納するuser変数の場所
         uint workmemory_procs_game_main_address(); //ワークメモリ Procsの中でのGAMEMAIN
         uint Procs_game_main_address(); //PROCSのGAME MAIN 
+        uint workmemory_palette_address(); //RAMに記録されているダブルバッファのパレット領域
+        uint workmemory_sound_player_00_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_01_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_02_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_03_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_04_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_05_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_06_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_07_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_08_address(); //RAMに設定されているサウンドプレイヤーバッファ
         uint summon_unit_pointer(); //召喚
         uint summons_demon_king_pointer(); //呼魔
         uint summons_demon_king_count_address(); //呼魔リストの数

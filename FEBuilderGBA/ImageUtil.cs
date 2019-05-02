@@ -1585,6 +1585,13 @@ namespace FEBuilderGBA
                 + (((uint)(c.B >> 3) & 0x1F) << 10)
                 ;
         }
+        public static Color GBARGBToColor(uint  c)
+        {
+            uint r = c & 0x1F;
+            uint g = (c >> 5 )& 0x1F;
+            uint b = (c >> 10 )& 0x1F;
+            return Color.FromArgb((int)r << 3, (int)g << 3, (int)b << 3);
+        }
 
         //パレットからバイト列.
         public static byte[] ImageToPalette(Bitmap bitmap,int palette_count = 1)
