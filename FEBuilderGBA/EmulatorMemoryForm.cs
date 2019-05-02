@@ -2276,15 +2276,15 @@ namespace FEBuilderGBA
             string ret = U.ToHexString(v) + "=";
             if (Program.ROM.RomInfo.version() == 8)
             {
-                if (v == 0)
+                if (v == 1)
                 {
                     return ret + R._("序盤");
                 }
-                if (v == 1)
+                if (v == 2)
                 {
                     return ret + R._("エイリーク編");
                 }
-                if (v == 2)
+                if (v == 3)
                 {
                     return ret + R._("エフラム編");
                 }

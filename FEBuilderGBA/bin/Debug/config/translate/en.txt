@@ -1100,19 +1100,19 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 Display translated subtitles using translation resources.
 
 :序盤
-The beginning of the game.
+Tutorial Mode
 
 :リン編
 Lyn's Tale
 
 :難易度:難しい
-Difficulty: difficult.
+Difficulty: Hard
 
 :難易度:初めて
-Difficulty: First time.
+Difficulty: Easy
 
 :難易度:普通
-Difficulty: Normal.
+Difficulty: Normal
 
 :自動的に更新する
 Automatically update
