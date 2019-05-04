@@ -12399,3 +12399,35 @@
 080AEBEC	Div10_Safe	{U}
 080797BC	カチッという点火音を再生	SongID:0x147	{J}
 08077398	カチッという点火音を再生	SongID:0x147	{U}
+0800D5C8	CallEvent	イベント "支援レベルが上がった"	{J}
+0800D5F4	CallEvent	イベント "フェードイン、フェードアウトして会話"	{J}
+0800D618	CallEvent	イベント "退却しますか？"	{J}
+0800D640	CallEvent	イベント "中断しますか？"	{J}
+0800D568	CallEvent	イベント "マップ変化を実行0xFFFDを実行"	{J}
+0800D524	CallEvent	イベント "会話0xFFFF"	{J}
+0800D304	CallEvent	イベント "支援レベルが上がった"	{U}
+0800D330	CallEvent	イベント "フェードイン、フェードアウトして会話"	{U}
+0800D354	CallEvent	イベント "退却しますか？"	{U}
+0800D37C	CallEvent	イベント "中断しますか？"	{U}
+0800D2A4	CallEvent	イベント "マップ変化を実行0xFFFDを実行"	{U}
+0800D260	CallEvent	イベント "会話0xFFFF"	{U}
+0805B80C	StartAnime_EkrUnitMain	{J}
+0805AA68	StartAnime_EkrUnitMain	{U}
+085F14DC	:085F1567	StartEkrsubAnime1Data1	{J}
+085F1568	:085F15E7	StartEkrsubAnime1Data2	{J}
+085F15E8	:085F1667	StartEkrsubAnime1Data3	{J}
+085F1668	:085F16E3	StartEkrsubAnime1Data4	{J}
+085C72AC	:085C7337	StartEkrsubAnime1Data1	{U}
+085C7338	:085C73B7	StartEkrsubAnime1Data2	{U}
+085C73B8	:085C7437	StartEkrsubAnime1Data3	{U}
+085C7438	:085C74B3	StartEkrsubAnime1Data4	{U}
+0805BBFC	StartAnime_EkrUnitMain_Sub	{J}
+0805AE58	StartAnime_EkrUnitMain_Sub	{U}
+085E4088	:085E411F	StartEkrsubAnime2Data1	0x98 byte data	{J}
+085E4120	:085E41B7	StartEkrsubAnime2Data2	0x98 byte data	{J}
+085E41B8	:085E424F	StartEkrsubAnime2Data3	0x98 byte data	{J}
+085E4250	:085E42E7	StartEkrsubAnime2Data4	0x98 byte data	{J}
+085B9E58	:085B9EEF	StartEkrsubAnime2Data1	0x98 byte data	{U}
+085B9EF0	:085B9F87	StartEkrsubAnime2Data2	0x98 byte data	{U}
+085B9F88	:085BA01F	StartEkrsubAnime2Data3	0x98 byte data	{U}
+085BA020	:085BA0B7	StartEkrsubAnime2Data4	0x98 byte data	{U}
