@@ -1,0 +1,13 @@
+#ifndef FIX_MNC2_MAYBE
+#define FIX_MNC2_MAYBE
+
+PUSH
+	ORG $00F664
+		POIN MoveToChapter2Hook
+POP
+
+ALIGN 4
+MoveToChapter2Hook:
+#incbin "MNC2Fix.dmp"
+
+#endif // FIX_MNC2_MAYBE

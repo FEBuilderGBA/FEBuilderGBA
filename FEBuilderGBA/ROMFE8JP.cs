@@ -387,7 +387,6 @@ namespace FEBuilderGBA
         public uint patch_C48_hack(out uint enable_value) { enable_value = 0x0805A440; return 0x59B94; } //C48 patch
         public uint patch_16_tracks_12_sounds(out uint enable_value) { enable_value = 0x00000010; return 0x02140BC; } //16_tracks_12_sounds patch
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
-        public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0xE0B8; return 0xc1e7c; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x5E70; } //一般兵の顔 拡張
         public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x225C4; } //階段拡張
         public uint patch_unitaction_rework_hack(out uint enable_value) { enable_value = 0x4C03B510; return 0x031F58; } //ユニットアクションの拡張

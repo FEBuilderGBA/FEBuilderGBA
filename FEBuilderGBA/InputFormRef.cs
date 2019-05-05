@@ -4751,6 +4751,7 @@ namespace FEBuilderGBA
             g_Cache_class_type_enum = class_type_enum.NoCache;
             g_Cache_itemicon_extends = itemicon_extends.NoCache;
             g_Cache_shinan_table = NO_CACHE;
+            g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
         }
 
 
@@ -10246,17 +10247,58 @@ namespace FEBuilderGBA
             return (a == check_value);
         }
 
-        public static bool SearchSkipWorldMapPatch()
+        //ワールドマップスキップパッチが適応されているかどうか判定する
+        public enum mnc2_fix_enum
         {
-            uint check_value;
-            uint address = Program.ROM.RomInfo.patch_skip_worldmap_fix(out check_value);
-            if (address == 0)
+             NO             //なし
+           , OldFix         //古いルーチン
+           , Stan_20190505  //Stanが2019/5/5 に提案した方式
+           , NoCache = (int)NO_CACHE
+        };
+        static mnc2_fix_enum g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
+        public static mnc2_fix_enum SearchSkipWorldMapPatch()
+        {
+            if (g_Cache_SkipWorldMap_enum == mnc2_fix_enum.NoCache)
             {
-                return false;
+                g_Cache_SkipWorldMap_enum = SearchSkipWorldMapPatchLow();
             }
-            uint a = Program.ROM.u16(address);
-            return (a == check_value);
+            return g_Cache_SkipWorldMap_enum;
         }
+        static mnc2_fix_enum SearchSkipWorldMapPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="OldFix",	ver = "FE8J", addr = 0xc1e7c,data = new byte[]{0xB8, 0xE0}},
+                new PatchTableSt{ name="Stan_20190505",	ver = "FE8J", addr = 0x0F664,data = new byte[]{0x94, 0xF6, 0x00, 0x08}}, //NOT条件
+                new PatchTableSt{ name="OldFix",	ver = "FE8U", addr = 0xBD070,data = new byte[]{0xB8, 0xE0}},
+                new PatchTableSt{ name="Stan_20190505",	ver = "FE8U", addr = 0x0F464,data = new byte[]{0x98, 0xF4, 0x00, 0x08}}, //NOT条件
+            };
+        
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    if (t.name == "Stan_20190505")
+                    {
+                        return mnc2_fix_enum.Stan_20190505;
+                    }
+                    continue;
+                }
+                if (t.name == "OldFix")
+                {
+                    return mnc2_fix_enum.OldFix;
+                }
+            }
+            return mnc2_fix_enum.NO;
+        }
+
         public static bool SearchGenericEnemyPortraitExtendsPatch(out uint out_pointer)
         {
             uint check_value;
