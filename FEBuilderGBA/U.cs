@@ -5782,8 +5782,10 @@ namespace FEBuilderGBA
                     Directory_GetFiles_AllFile_Safe_Low(files , s , filter);
                 }
             }
-            catch (UnauthorizedAccessException)
+            catch (Exception e)
             {//Skip
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
             }
         }
 
