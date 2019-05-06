@@ -9127,7 +9127,7 @@ r3=X tile position of menu of the right	{U}
 0872A05C	&PALETTE	东西的调色板	374	{U}
 0872A07C	&PALETTE	东西的调色板	375	{U}
 0872A09C	&PALETTE	东西的调色板	376	{U}
-0872A0BC	&PALETTE	东西的调色板	377	{U}
+0872A0BC	&PALETTE8	东西的调色板	377	{U}
 0872A0DC	&PALETTE	东西的调色板	378	{U}
 0872A0FC	&PALETTE	东西的调色板	379	{U}
 0872A11C	&PALETTE	东西的调色板	380	{U}
@@ -9284,7 +9284,7 @@ r3=X tile position of menu of the right	{U}
 0867F1AC	&PALETTE	东西的调色板	374	{J}
 0867F1CC	&PALETTE	东西的调色板	375	{J}
 0867F1EC	&PALETTE	东西的调色板	376	{J}
-0867F20C	&PALETTE	东西的调色板	377	{J}
+0867F20C	&PALETTE8	东西的调色板	377	{J}
 08756CB4	&PALETTE	东西的调色板	378	{J}
 08756CD4	&PALETTE	东西的调色板	379	{J}
 08756CF4	&PALETTE	东西的调色板	380	{J}

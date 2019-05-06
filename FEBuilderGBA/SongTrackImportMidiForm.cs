@@ -18,7 +18,7 @@ namespace FEBuilderGBA
         }
         void PickupInstrument()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"));
+            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), this.OrignalInstrumentAddr);
             U.ConvertComboBox(iset, ref InstrumentSelectComboBox);
 
             if (iset.Count >= 1)
@@ -87,8 +87,10 @@ namespace FEBuilderGBA
             OKButton_Click(sender, e);
         }
 
+        uint OrignalInstrumentAddr;
         public void Init(uint instrumentAddr)
         {
+            this.OrignalInstrumentAddr = instrumentAddr;
             this.Instrument.Value = instrumentAddr;
             PickupInstrument();
         }

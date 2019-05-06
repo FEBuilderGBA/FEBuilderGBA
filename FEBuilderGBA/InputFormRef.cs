@@ -10324,7 +10324,7 @@ namespace FEBuilderGBA
 
         public static bool SearchNIMAP()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"));
+            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), 100);
             for (int i = 0; i < iset.Count; i++)
             {
                 string name = iset[i].name;
