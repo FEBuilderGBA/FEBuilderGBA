@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.AddressPanel = new System.Windows.Forms.Panel();
-            this.RefCountTextBox = new FEBuilderGBA.TextBoxEx();
-            this.AddressPointer = new FEBuilderGBA.TextBoxEx();
             this.label18 = new System.Windows.Forms.Label();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label13 = new System.Windows.Forms.Label();
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +44,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.TextTabControl = new System.Windows.Forms.TabControl();
             this.EasyTabPage = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,18 +51,13 @@
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.TextListSpTab = new System.Windows.Forms.TabControl();
             this.TextListSpTextPage = new System.Windows.Forms.TabPage();
-            this.TextListSpTextTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.TextListSpSerifuPage = new System.Windows.Forms.TabPage();
-            this.TextListSpSerifuCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TextListSpSerifuPosComboBox = new System.Windows.Forms.ComboBox();
             this.ERROR_SERIFU = new System.Windows.Forms.Label();
-            this.TextListSpSerifuTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.TextListSpShowPage = new System.Windows.Forms.TabPage();
-            this.TextListSpShowCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.TextListSpShowCharLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.TextListSpShowCharComboBox = new System.Windows.Forms.ComboBox();
             this.TextListSpShowPosComboBox = new System.Windows.Forms.ComboBox();
             this.TextListSpHidePage = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,17 +73,12 @@
             this.NewButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
-            this.TextList = new FEBuilderGBA.ListBoxEx();
             this.SrcTabPage = new System.Windows.Forms.TabPage();
-            this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
-            this.TextArea = new FEBuilderGBA.RichTextBoxEx();
             this.SearchTabPage = new System.Windows.Forms.TabPage();
             this.SearcFreeArea = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.SearchResultListBox = new FEBuilderGBA.ListBoxEx();
-            this.SearchTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.ImportPage = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Export = new System.Windows.Forms.Button();
@@ -107,10 +93,25 @@
             this.RefPage = new System.Windows.Forms.TabPage();
             this.RefNotFoundPanel = new System.Windows.Forms.Panel();
             this.AddRefButton = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TextListSpShowCharNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.TextListSpTextTextBox = new FEBuilderGBA.RichTextBoxEx();
+            this.TextListSpSerifuCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
+            this.TextListSpSerifuTextBox = new FEBuilderGBA.RichTextBoxEx();
+            this.TextListSpShowCharText = new FEBuilderGBA.TextBoxEx();
+            this.TextListSpShowCharPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
+            this.TextList = new FEBuilderGBA.ListBoxEx();
+            this.DetailErrorMessageBox = new FEBuilderGBA.TextBoxEx();
+            this.TextArea = new FEBuilderGBA.RichTextBoxEx();
+            this.SearchResultListBox = new FEBuilderGBA.ListBoxEx();
+            this.SearchTextBox = new FEBuilderGBA.RichTextBoxEx();
             this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.labelEx1 = new FEBuilderGBA.LabelEx();
-            this.label19 = new System.Windows.Forms.Label();
             this.RefListBox = new FEBuilderGBA.ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.RefCountTextBox = new FEBuilderGBA.TextBoxEx();
+            this.AddressPointer = new FEBuilderGBA.TextBoxEx();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.AddressPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -123,9 +124,7 @@
             this.TextListSpTab.SuspendLayout();
             this.TextListSpTextPage.SuspendLayout();
             this.TextListSpSerifuPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextListSpSerifuCharPictureBox)).BeginInit();
             this.TextListSpShowPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharPictureBox)).BeginInit();
             this.TextListSpHidePage.SuspendLayout();
             this.TextListSpMovePage.SuspendLayout();
             this.TextListSpJumpPage.SuspendLayout();
@@ -135,6 +134,9 @@
             this.translatePage.SuspendLayout();
             this.RefPage.SuspendLayout();
             this.RefNotFoundPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpSerifuCharPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AddressPanel
@@ -153,30 +155,6 @@
             this.AddressPanel.Size = new System.Drawing.Size(816, 30);
             this.AddressPanel.TabIndex = 42;
             // 
-            // RefCountTextBox
-            // 
-            this.RefCountTextBox.ErrorMessage = "";
-            this.RefCountTextBox.ForeColor = System.Drawing.Color.OrangeRed;
-            this.RefCountTextBox.Location = new System.Drawing.Point(525, 2);
-            this.RefCountTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.RefCountTextBox.Name = "RefCountTextBox";
-            this.RefCountTextBox.Placeholder = "";
-            this.RefCountTextBox.ReadOnly = true;
-            this.RefCountTextBox.Size = new System.Drawing.Size(78, 25);
-            this.RefCountTextBox.TabIndex = 78;
-            this.RefCountTextBox.DoubleClick += new System.EventHandler(this.RefCountTextBox_DoubleClick);
-            // 
-            // AddressPointer
-            // 
-            this.AddressPointer.ErrorMessage = "";
-            this.AddressPointer.Location = new System.Drawing.Point(90, 2);
-            this.AddressPointer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.AddressPointer.Name = "AddressPointer";
-            this.AddressPointer.Placeholder = "";
-            this.AddressPointer.ReadOnly = true;
-            this.AddressPointer.Size = new System.Drawing.Size(164, 25);
-            this.AddressPointer.TabIndex = 53;
-            // 
             // label18
             // 
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -187,17 +165,6 @@
             this.label18.TabIndex = 54;
             this.label18.Text = "参照";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(345, 2);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
             // 
             // label13
             // 
@@ -358,19 +325,6 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 26);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(310, 796);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
             // TextTabControl
             // 
             this.TextTabControl.Controls.Add(this.EasyTabPage);
@@ -461,20 +415,6 @@
             this.TextListSpTextPage.TabIndex = 0;
             this.TextListSpTextPage.Text = "テキスト";
             // 
-            // TextListSpTextTextBox
-            // 
-            this.TextListSpTextTextBox.ErrorMessage = "";
-            this.TextListSpTextTextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TextListSpTextTextBox.Location = new System.Drawing.Point(7, 7);
-            this.TextListSpTextTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TextListSpTextTextBox.Name = "TextListSpTextTextBox";
-            this.TextListSpTextTextBox.Placeholder = "";
-            this.TextListSpTextTextBox.Size = new System.Drawing.Size(768, 461);
-            this.TextListSpTextTextBox.TabIndex = 32;
-            this.TextListSpTextTextBox.Text = "";
-            this.TextListSpTextTextBox.TextChanged += new System.EventHandler(this.TextListSpTextTextBox_TextChanged);
-            this.TextListSpTextTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
-            // 
             // TextListSpSerifuPage
             // 
             this.TextListSpSerifuPage.BackColor = System.Drawing.SystemColors.Control;
@@ -490,16 +430,6 @@
             this.TextListSpSerifuPage.Size = new System.Drawing.Size(788, 464);
             this.TextListSpSerifuPage.TabIndex = 1;
             this.TextListSpSerifuPage.Text = "セリフ";
-            // 
-            // TextListSpSerifuCharPictureBox
-            // 
-            this.TextListSpSerifuCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TextListSpSerifuCharPictureBox.Location = new System.Drawing.Point(646, 31);
-            this.TextListSpSerifuCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.TextListSpSerifuCharPictureBox.Name = "TextListSpSerifuCharPictureBox";
-            this.TextListSpSerifuCharPictureBox.Size = new System.Drawing.Size(138, 121);
-            this.TextListSpSerifuCharPictureBox.TabIndex = 40;
-            this.TextListSpSerifuCharPictureBox.TabStop = false;
             // 
             // label4
             // 
@@ -531,27 +461,14 @@
             this.ERROR_SERIFU.TabIndex = 41;
             this.ERROR_SERIFU.Text = "警告:\r\nセリフが\r\n3行以上に\r\nなっています";
             // 
-            // TextListSpSerifuTextBox
-            // 
-            this.TextListSpSerifuTextBox.ErrorMessage = "";
-            this.TextListSpSerifuTextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TextListSpSerifuTextBox.Location = new System.Drawing.Point(4, 32);
-            this.TextListSpSerifuTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TextListSpSerifuTextBox.Name = "TextListSpSerifuTextBox";
-            this.TextListSpSerifuTextBox.Placeholder = "";
-            this.TextListSpSerifuTextBox.Size = new System.Drawing.Size(637, 432);
-            this.TextListSpSerifuTextBox.TabIndex = 33;
-            this.TextListSpSerifuTextBox.Text = "";
-            this.TextListSpSerifuTextBox.TextChanged += new System.EventHandler(this.TextListSpSerifuTextBox_TextChanged);
-            this.TextListSpSerifuTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
-            // 
             // TextListSpShowPage
             // 
             this.TextListSpShowPage.BackColor = System.Drawing.SystemColors.Control;
+            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharText);
+            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharNumericUpDown);
             this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharPictureBox);
-            this.TextListSpShowPage.Controls.Add(this.label6);
+            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharLabel);
             this.TextListSpShowPage.Controls.Add(this.label5);
-            this.TextListSpShowPage.Controls.Add(this.TextListSpShowCharComboBox);
             this.TextListSpShowPage.Controls.Add(this.TextListSpShowPosComboBox);
             this.TextListSpShowPage.Location = new System.Drawing.Point(4, 28);
             this.TextListSpShowPage.Margin = new System.Windows.Forms.Padding(2);
@@ -560,25 +477,16 @@
             this.TextListSpShowPage.TabIndex = 5;
             this.TextListSpShowPage.Text = "キャラ登場";
             // 
-            // TextListSpShowCharPictureBox
+            // TextListSpShowCharLabel
             // 
-            this.TextListSpShowCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TextListSpShowCharPictureBox.Location = new System.Drawing.Point(500, 18);
-            this.TextListSpShowCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.TextListSpShowCharPictureBox.Name = "TextListSpShowCharPictureBox";
-            this.TextListSpShowCharPictureBox.Size = new System.Drawing.Size(138, 121);
-            this.TextListSpShowCharPictureBox.TabIndex = 39;
-            this.TextListSpShowCharPictureBox.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 65);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 18);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "登場する人:";
+            this.TextListSpShowCharLabel.AutoSize = true;
+            this.TextListSpShowCharLabel.Location = new System.Drawing.Point(2, 65);
+            this.TextListSpShowCharLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TextListSpShowCharLabel.Name = "TextListSpShowCharLabel";
+            this.TextListSpShowCharLabel.Size = new System.Drawing.Size(95, 18);
+            this.TextListSpShowCharLabel.TabIndex = 38;
+            this.TextListSpShowCharLabel.Text = "登場する人:";
+            this.TextListSpShowCharLabel.Click += new System.EventHandler(this.TextListSpShowCharLabel_Click);
             // 
             // label5
             // 
@@ -589,17 +497,6 @@
             this.label5.Size = new System.Drawing.Size(113, 18);
             this.label5.TabIndex = 37;
             this.label5.Text = "登場する場所:";
-            // 
-            // TextListSpShowCharComboBox
-            // 
-            this.TextListSpShowCharComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TextListSpShowCharComboBox.FormattingEnabled = true;
-            this.TextListSpShowCharComboBox.Location = new System.Drawing.Point(138, 62);
-            this.TextListSpShowCharComboBox.Margin = new System.Windows.Forms.Padding(2);
-            this.TextListSpShowCharComboBox.Name = "TextListSpShowCharComboBox";
-            this.TextListSpShowCharComboBox.Size = new System.Drawing.Size(357, 26);
-            this.TextListSpShowCharComboBox.TabIndex = 36;
-            this.TextListSpShowCharComboBox.SelectedIndexChanged += new System.EventHandler(this.TextListSpShowCharComboBox_SelectedIndexChanged);
             // 
             // TextListSpShowPosComboBox
             // 
@@ -767,20 +664,6 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // TextList
-            // 
-            this.TextList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.TextList.IntegralHeight = false;
-            this.TextList.ItemHeight = 18;
-            this.TextList.Location = new System.Drawing.Point(2, 2);
-            this.TextList.Margin = new System.Windows.Forms.Padding(2);
-            this.TextList.Name = "TextList";
-            this.TextList.Size = new System.Drawing.Size(798, 756);
-            this.TextList.TabIndex = 0;
-            this.TextList.SelectedIndexChanged += new System.EventHandler(this.TextList_SelectedIndexChanged);
-            this.TextList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextList_KeyDown);
-            this.TextList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TextList_MouseDoubleClick);
-            // 
             // SrcTabPage
             // 
             this.SrcTabPage.BackColor = System.Drawing.SystemColors.Control;
@@ -793,31 +676,6 @@
             this.SrcTabPage.Size = new System.Drawing.Size(807, 796);
             this.SrcTabPage.TabIndex = 1;
             this.SrcTabPage.Text = "ソーステキスト";
-            // 
-            // DetailErrorMessageBox
-            // 
-            this.DetailErrorMessageBox.ErrorMessage = "";
-            this.DetailErrorMessageBox.Location = new System.Drawing.Point(11, 672);
-            this.DetailErrorMessageBox.Multiline = true;
-            this.DetailErrorMessageBox.Name = "DetailErrorMessageBox";
-            this.DetailErrorMessageBox.Placeholder = "";
-            this.DetailErrorMessageBox.ReadOnly = true;
-            this.DetailErrorMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DetailErrorMessageBox.Size = new System.Drawing.Size(763, 103);
-            this.DetailErrorMessageBox.TabIndex = 0;
-            // 
-            // TextArea
-            // 
-            this.TextArea.ErrorMessage = "";
-            this.TextArea.Location = new System.Drawing.Point(11, 0);
-            this.TextArea.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TextArea.Name = "TextArea";
-            this.TextArea.Placeholder = "";
-            this.TextArea.Size = new System.Drawing.Size(791, 779);
-            this.TextArea.TabIndex = 31;
-            this.TextArea.Text = "";
-            this.TextArea.TextChanged += new System.EventHandler(this.TextArea_TextChanged);
-            this.TextArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
             // 
             // SearchTabPage
             // 
@@ -878,33 +736,6 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "検索ワード";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SearchResultListBox
-            // 
-            this.SearchResultListBox.FormattingEnabled = true;
-            this.SearchResultListBox.IntegralHeight = false;
-            this.SearchResultListBox.ItemHeight = 18;
-            this.SearchResultListBox.Location = new System.Drawing.Point(19, 80);
-            this.SearchResultListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.SearchResultListBox.Name = "SearchResultListBox";
-            this.SearchResultListBox.Size = new System.Drawing.Size(786, 685);
-            this.SearchResultListBox.TabIndex = 3;
-            this.SearchResultListBox.SelectedIndexChanged += new System.EventHandler(this.SearchResultListBox_SelectedIndexChanged);
-            this.SearchResultListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchResultListBox_KeyDown);
-            this.SearchResultListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SearchResultListBox_MouseDoubleClick);
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.ErrorMessage = "";
-            this.SearchTextBox.Location = new System.Drawing.Point(127, 20);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.SearchTextBox.Multiline = false;
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Placeholder = "";
-            this.SearchTextBox.Size = new System.Drawing.Size(220, 25);
-            this.SearchTextBox.TabIndex = 0;
-            this.SearchTextBox.Text = "";
-            this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
             // 
             // ImportPage
             // 
@@ -1048,8 +879,8 @@
             // 
             this.RefPage.BackColor = System.Drawing.SystemColors.Control;
             this.RefPage.Controls.Add(this.RefNotFoundPanel);
-            this.RefPage.Controls.Add(this.labelEx1);
             this.RefPage.Controls.Add(this.label19);
+            this.RefPage.Controls.Add(this.labelEx1);
             this.RefPage.Controls.Add(this.RefListBox);
             this.RefPage.Location = new System.Drawing.Point(4, 28);
             this.RefPage.Name = "RefPage";
@@ -1079,6 +910,158 @@
             this.AddRefButton.UseVisualStyleBackColor = true;
             this.AddRefButton.Click += new System.EventHandler(this.AddRefButton_Click);
             // 
+            // label19
+            // 
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Location = new System.Drawing.Point(5, 87);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(786, 20);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "このテキストを利用している箇所";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TextListSpShowCharNumericUpDown
+            // 
+            this.TextListSpShowCharNumericUpDown.Hexadecimal = true;
+            this.TextListSpShowCharNumericUpDown.Location = new System.Drawing.Point(138, 65);
+            this.TextListSpShowCharNumericUpDown.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.TextListSpShowCharNumericUpDown.Name = "TextListSpShowCharNumericUpDown";
+            this.TextListSpShowCharNumericUpDown.Size = new System.Drawing.Size(108, 25);
+            this.TextListSpShowCharNumericUpDown.TabIndex = 40;
+            this.TextListSpShowCharNumericUpDown.ValueChanged += new System.EventHandler(this.TextListSpShowCharNumericUpDown_ValueChanged);
+            // 
+            // TextListSpTextTextBox
+            // 
+            this.TextListSpTextTextBox.ErrorMessage = "";
+            this.TextListSpTextTextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TextListSpTextTextBox.Location = new System.Drawing.Point(7, 7);
+            this.TextListSpTextTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TextListSpTextTextBox.Name = "TextListSpTextTextBox";
+            this.TextListSpTextTextBox.Placeholder = "";
+            this.TextListSpTextTextBox.Size = new System.Drawing.Size(768, 461);
+            this.TextListSpTextTextBox.TabIndex = 32;
+            this.TextListSpTextTextBox.Text = "";
+            this.TextListSpTextTextBox.TextChanged += new System.EventHandler(this.TextListSpTextTextBox_TextChanged);
+            this.TextListSpTextTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
+            // 
+            // TextListSpSerifuCharPictureBox
+            // 
+            this.TextListSpSerifuCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TextListSpSerifuCharPictureBox.Location = new System.Drawing.Point(646, 31);
+            this.TextListSpSerifuCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TextListSpSerifuCharPictureBox.Name = "TextListSpSerifuCharPictureBox";
+            this.TextListSpSerifuCharPictureBox.Size = new System.Drawing.Size(138, 121);
+            this.TextListSpSerifuCharPictureBox.TabIndex = 40;
+            this.TextListSpSerifuCharPictureBox.TabStop = false;
+            // 
+            // TextListSpSerifuTextBox
+            // 
+            this.TextListSpSerifuTextBox.ErrorMessage = "";
+            this.TextListSpSerifuTextBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TextListSpSerifuTextBox.Location = new System.Drawing.Point(4, 32);
+            this.TextListSpSerifuTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TextListSpSerifuTextBox.Name = "TextListSpSerifuTextBox";
+            this.TextListSpSerifuTextBox.Placeholder = "";
+            this.TextListSpSerifuTextBox.Size = new System.Drawing.Size(637, 432);
+            this.TextListSpSerifuTextBox.TabIndex = 33;
+            this.TextListSpSerifuTextBox.Text = "";
+            this.TextListSpSerifuTextBox.TextChanged += new System.EventHandler(this.TextListSpSerifuTextBox_TextChanged);
+            this.TextListSpSerifuTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
+            // 
+            // TextListSpShowCharText
+            // 
+            this.TextListSpShowCharText.ErrorMessage = "";
+            this.TextListSpShowCharText.Location = new System.Drawing.Point(255, 64);
+            this.TextListSpShowCharText.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TextListSpShowCharText.Name = "TextListSpShowCharText";
+            this.TextListSpShowCharText.Placeholder = "";
+            this.TextListSpShowCharText.ReadOnly = true;
+            this.TextListSpShowCharText.Size = new System.Drawing.Size(238, 25);
+            this.TextListSpShowCharText.TabIndex = 54;
+            // 
+            // TextListSpShowCharPictureBox
+            // 
+            this.TextListSpShowCharPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TextListSpShowCharPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.TextListSpShowCharPictureBox.Location = new System.Drawing.Point(500, 18);
+            this.TextListSpShowCharPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.TextListSpShowCharPictureBox.Name = "TextListSpShowCharPictureBox";
+            this.TextListSpShowCharPictureBox.Size = new System.Drawing.Size(138, 121);
+            this.TextListSpShowCharPictureBox.TabIndex = 39;
+            this.TextListSpShowCharPictureBox.TabStop = false;
+            this.TextListSpShowCharPictureBox.Click += new System.EventHandler(this.TextListSpShowCharPictureBox_Click);
+            // 
+            // TextList
+            // 
+            this.TextList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.TextList.IntegralHeight = false;
+            this.TextList.ItemHeight = 18;
+            this.TextList.Location = new System.Drawing.Point(2, 2);
+            this.TextList.Margin = new System.Windows.Forms.Padding(2);
+            this.TextList.Name = "TextList";
+            this.TextList.Size = new System.Drawing.Size(798, 756);
+            this.TextList.TabIndex = 0;
+            this.TextList.SelectedIndexChanged += new System.EventHandler(this.TextList_SelectedIndexChanged);
+            this.TextList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextList_KeyDown);
+            this.TextList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TextList_MouseDoubleClick);
+            // 
+            // DetailErrorMessageBox
+            // 
+            this.DetailErrorMessageBox.ErrorMessage = "";
+            this.DetailErrorMessageBox.Location = new System.Drawing.Point(11, 672);
+            this.DetailErrorMessageBox.Multiline = true;
+            this.DetailErrorMessageBox.Name = "DetailErrorMessageBox";
+            this.DetailErrorMessageBox.Placeholder = "";
+            this.DetailErrorMessageBox.ReadOnly = true;
+            this.DetailErrorMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.DetailErrorMessageBox.Size = new System.Drawing.Size(763, 103);
+            this.DetailErrorMessageBox.TabIndex = 0;
+            // 
+            // TextArea
+            // 
+            this.TextArea.ErrorMessage = "";
+            this.TextArea.Location = new System.Drawing.Point(11, 0);
+            this.TextArea.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TextArea.Name = "TextArea";
+            this.TextArea.Placeholder = "";
+            this.TextArea.Size = new System.Drawing.Size(791, 779);
+            this.TextArea.TabIndex = 31;
+            this.TextArea.Text = "";
+            this.TextArea.TextChanged += new System.EventHandler(this.TextArea_TextChanged);
+            this.TextArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextArea_KeyDown);
+            // 
+            // SearchResultListBox
+            // 
+            this.SearchResultListBox.FormattingEnabled = true;
+            this.SearchResultListBox.IntegralHeight = false;
+            this.SearchResultListBox.ItemHeight = 18;
+            this.SearchResultListBox.Location = new System.Drawing.Point(19, 80);
+            this.SearchResultListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchResultListBox.Name = "SearchResultListBox";
+            this.SearchResultListBox.Size = new System.Drawing.Size(786, 685);
+            this.SearchResultListBox.TabIndex = 3;
+            this.SearchResultListBox.SelectedIndexChanged += new System.EventHandler(this.SearchResultListBox_SelectedIndexChanged);
+            this.SearchResultListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchResultListBox_KeyDown);
+            this.SearchResultListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SearchResultListBox_MouseDoubleClick);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.ErrorMessage = "";
+            this.SearchTextBox.Location = new System.Drawing.Point(127, 20);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchTextBox.Multiline = false;
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Placeholder = "";
+            this.SearchTextBox.Size = new System.Drawing.Size(220, 25);
+            this.SearchTextBox.TabIndex = 0;
+            this.SearchTextBox.Text = "";
+            this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
+            // 
             // labelEx2
             // 
             this.labelEx2.AutoSize = true;
@@ -1099,17 +1082,6 @@
             this.labelEx1.TabIndex = 7;
             this.labelEx1.Text = "この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。";
             // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(5, 87);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(786, 20);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "このテキストを利用している箇所";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // RefListBox
             // 
             this.RefListBox.FormattingEnabled = true;
@@ -1122,6 +1094,54 @@
             this.RefListBox.TabIndex = 5;
             this.RefListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RefListBox_KeyDown);
             this.RefListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.RefListBox_MouseDoubleClick);
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 26);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(310, 796);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
+            // RefCountTextBox
+            // 
+            this.RefCountTextBox.ErrorMessage = "";
+            this.RefCountTextBox.ForeColor = System.Drawing.Color.OrangeRed;
+            this.RefCountTextBox.Location = new System.Drawing.Point(525, 2);
+            this.RefCountTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.RefCountTextBox.Name = "RefCountTextBox";
+            this.RefCountTextBox.Placeholder = "";
+            this.RefCountTextBox.ReadOnly = true;
+            this.RefCountTextBox.Size = new System.Drawing.Size(78, 25);
+            this.RefCountTextBox.TabIndex = 78;
+            this.RefCountTextBox.DoubleClick += new System.EventHandler(this.RefCountTextBox_DoubleClick);
+            // 
+            // AddressPointer
+            // 
+            this.AddressPointer.ErrorMessage = "";
+            this.AddressPointer.Location = new System.Drawing.Point(90, 2);
+            this.AddressPointer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.AddressPointer.Name = "AddressPointer";
+            this.AddressPointer.Placeholder = "";
+            this.AddressPointer.ReadOnly = true;
+            this.AddressPointer.Size = new System.Drawing.Size(164, 25);
+            this.AddressPointer.TabIndex = 53;
+            // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(345, 2);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
             // 
             // TextForm
             // 
@@ -1154,10 +1174,8 @@
             this.TextListSpTextPage.ResumeLayout(false);
             this.TextListSpSerifuPage.ResumeLayout(false);
             this.TextListSpSerifuPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextListSpSerifuCharPictureBox)).EndInit();
             this.TextListSpShowPage.ResumeLayout(false);
             this.TextListSpShowPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharPictureBox)).EndInit();
             this.TextListSpHidePage.ResumeLayout(false);
             this.TextListSpHidePage.PerformLayout();
             this.TextListSpMovePage.ResumeLayout(false);
@@ -1175,6 +1193,9 @@
             this.RefPage.PerformLayout();
             this.RefNotFoundPanel.ResumeLayout(false);
             this.RefNotFoundPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpSerifuCharPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextListSpShowCharPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1214,9 +1235,8 @@
         private System.Windows.Forms.Button NewButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox TextListSpSerifuPosComboBox;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label TextListSpShowCharLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox TextListSpShowCharComboBox;
         private System.Windows.Forms.ComboBox TextListSpShowPosComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox TextListSpHidePosComboBox;
@@ -1264,5 +1284,7 @@
         private System.Windows.Forms.Panel RefNotFoundPanel;
         private System.Windows.Forms.Button AddRefButton;
         private LabelEx labelEx2;
+        private System.Windows.Forms.NumericUpDown TextListSpShowCharNumericUpDown;
+        private TextBoxEx TextListSpShowCharText;
     }
 }

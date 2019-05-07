@@ -10201,14 +10201,14 @@ Reference place
 :参照情報の追加
 Add reference information.
 
+:このテキストを利用している箇所
+Where this text is used
+
 :この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。
 This string doesn't seem to be referenced from anywhere.\r\nIf it is referenced, please enter the information.
 
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
-
-:このテキストを利用している箇所
-Where this text is used
 
 :参照される場所について説明してください
 Please explain where it is referenced.
