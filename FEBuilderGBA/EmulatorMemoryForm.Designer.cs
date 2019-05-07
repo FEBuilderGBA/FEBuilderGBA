@@ -213,10 +213,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
+            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
+            this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label91 = new System.Windows.Forms.Label();
             this.SoundList = new FEBuilderGBA.ListBoxEx();
-            this.PaletteSearchButton = new System.Windows.Forms.Button();
-            this.label92 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
@@ -383,8 +383,8 @@
             this.PaletteList = new FEBuilderGBA.ListBoxEx();
             this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
             this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
-            this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
+            this.label92 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
             this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
             this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
@@ -3152,6 +3152,7 @@
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PaletteSearchButton);
             this.EtcPage.Controls.Add(this.label91);
             this.EtcPage.Controls.Add(this.SoundList);
@@ -3162,7 +3163,6 @@
             this.EtcPage.Controls.Add(this.PaletteList);
             this.EtcPage.Controls.Add(this.X_ETC_Diffculty_Text);
             this.EtcPage.Controls.Add(this.X_ETC_Edition_Text);
-            this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PartyListBox);
             this.EtcPage.Controls.Add(this.label92);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
@@ -3171,6 +3171,29 @@
             this.EtcPage.Size = new System.Drawing.Size(1646, 888);
             this.EtcPage.TabIndex = 4;
             this.EtcPage.Text = "Etc";
+            // 
+            // PartyCombo
+            // 
+            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PartyCombo.FormattingEnabled = true;
+            this.PartyCombo.Items.AddRange(new object[] {
+            "00=PLAYER",
+            "40=NPC",
+            "80=Enemy"});
+            this.PartyCombo.Location = new System.Drawing.Point(320, 10);
+            this.PartyCombo.Name = "PartyCombo";
+            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
+            this.PartyCombo.TabIndex = 313;
+            // 
+            // PaletteSearchButton
+            // 
+            this.PaletteSearchButton.Location = new System.Drawing.Point(1562, 453);
+            this.PaletteSearchButton.Name = "PaletteSearchButton";
+            this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
+            this.PaletteSearchButton.TabIndex = 324;
+            this.PaletteSearchButton.Text = "検索";
+            this.PaletteSearchButton.UseVisualStyleBackColor = true;
+            this.PaletteSearchButton.Click += new System.EventHandler(this.PaletteSearchButton_Click);
             // 
             // label91
             // 
@@ -3193,27 +3216,6 @@
             this.SoundList.Size = new System.Drawing.Size(851, 175);
             this.SoundList.TabIndex = 326;
             this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
-            // 
-            // PaletteSearchButton
-            // 
-            this.PaletteSearchButton.Location = new System.Drawing.Point(1562, 453);
-            this.PaletteSearchButton.Name = "PaletteSearchButton";
-            this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
-            this.PaletteSearchButton.TabIndex = 324;
-            this.PaletteSearchButton.Text = "検索";
-            this.PaletteSearchButton.UseVisualStyleBackColor = true;
-            this.PaletteSearchButton.Click += new System.EventHandler(this.PaletteSearchButton_Click);
-            // 
-            // label92
-            // 
-            this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label92.Location = new System.Drawing.Point(792, 452);
-            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(851, 30);
-            this.label92.TabIndex = 319;
-            this.label92.Text = "パレット";
-            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label58
             // 
@@ -5312,7 +5314,7 @@
             // label56
             // 
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(0, 5);
+            this.label56.Location = new System.Drawing.Point(1, 8);
             this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(778, 42);
@@ -5363,19 +5365,6 @@
             this.X_ETC_Edition_Text.Size = new System.Drawing.Size(298, 25);
             this.X_ETC_Edition_Text.TabIndex = 316;
             // 
-            // PartyCombo
-            // 
-            this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.PartyCombo.FormattingEnabled = true;
-            this.PartyCombo.Items.AddRange(new object[] {
-            "00=PLAYER",
-            "40=NPC",
-            "80=Enemy"});
-            this.PartyCombo.Location = new System.Drawing.Point(319, 5);
-            this.PartyCombo.Name = "PartyCombo";
-            this.PartyCombo.Size = new System.Drawing.Size(459, 26);
-            this.PartyCombo.TabIndex = 313;
-            // 
             // PartyListBox
             // 
             this.PartyListBox.FormattingEnabled = true;
@@ -5390,6 +5379,17 @@
             this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
+            // 
+            // label92
+            // 
+            this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label92.Location = new System.Drawing.Point(792, 452);
+            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(851, 30);
+            this.label92.TabIndex = 319;
+            this.label92.Text = "パレット";
+            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheatPage
             // 
