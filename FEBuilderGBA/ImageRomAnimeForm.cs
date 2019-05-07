@@ -203,7 +203,27 @@ namespace FEBuilderGBA
                 return i;
             }
         }
- 
+
+        public static uint GetPaletteFrameCountLow(byte[] rom, uint frameAddr)
+        {
+            //圧縮されていないデータなので、事故防止のため リミッターをかける.
+            uint addr = frameAddr;
+            uint limitter = addr + 1024 * 1024; //1MBサーチしたらもうあきらめる.
+            limitter = (uint)Math.Min(limitter, rom.Length);
+
+            uint i;
+            for (i = 0; addr < limitter; i++, addr += 2)
+            {
+                uint data = U.u16(rom,addr);
+
+                if (data >= 0xFFFE)
+                {
+                    break;
+                }
+            }
+            return i;
+        }
+
         private void ShowFrameUpDown_ValueChanged(object sender, EventArgs e)
         {
             Draw((int)this.ShowFrameUpDown.Value);

@@ -814,6 +814,10 @@ namespace FEBuilderGBA
             {
                 p.Length = ImageUtil.CalcByteLengthForHeaderTSAData(rom.Data, (int)U.toOffset(pointer));
             }
+            else if (type == "ROMPALETTEANIMEFRAME")
+            {
+                p.Length = ImageRomAnimeForm.GetPaletteFrameCountLow(rom.Data, U.toOffset(pointer)) * 2;
+            }
             else if (type == "PALETTE")
             {
                 p.Length = 0x20;
@@ -864,7 +868,7 @@ namespace FEBuilderGBA
             }
             else if (type == "SECONDARYOAM_ARRAY")
             {
-                p.Length = ScanSECONDARYOAMTable(pointer,p.Name, rom);
+                p.Length = ScanSECONDARYOAMTable(pointer, p.Name, rom);
             }
             else if (type == "CSTRING")
             {
@@ -875,7 +879,7 @@ namespace FEBuilderGBA
             }
             else if (type == "SOUND_85COMMAND_POINTER_ARRAY")
             {
-                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name , rom);
+                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name, rom);
             }
             else if (type == "ASM_POINTER_ARRAY")
             {

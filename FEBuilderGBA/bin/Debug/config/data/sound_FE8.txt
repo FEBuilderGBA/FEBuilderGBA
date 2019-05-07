@@ -575,7 +575,7 @@
 03B7=SE:@C85_60
 03B8=SE:Stone 1 SFX
 03B9=SE:Stone 2 SFX
-03BA=SE:[[不明 知っていたら教えて]]
+03BA=SE:Stone Map SFX
 03BB=SE:Manakete ミルラ step
 03BC=SE:ch18 Someone's ftep
 03BD=SE:[[不明 知っていたら教えて]]
@@ -589,7 +589,7 @@
 03C7=SE:Crimson Eye
 03C9=SE:Egg grow
 03CA=SE:Egg birth
-03CF=SE:[[不明 知っていたら教えて]]
+03CF=SE:@C85_1F @C85_20 @C85_21
 03D0=SE:[[不明 知っていたら教えて]]
 03D1=SE:スキル発動音
 03D2=SE:[[不明 知っていたら教えて]]
