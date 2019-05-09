@@ -47,8 +47,8 @@ namespace FEBuilderGBA
 
             if (this.IsHeaderTSA)
             {
-                this.Width8 = 256 / 8;
-                this.Height8 = 256 / 8;
+                this.Width8 = Math.Max(256 / 8, this.Width8);
+                this.Height8 = Math.Max(160 / 8, this.Height8);
             }
 
             if (this.PalettePointer == U.NOT_FOUND)
@@ -198,7 +198,7 @@ namespace FEBuilderGBA
                 }
                 if (this.IsHeaderTSA)
                 {
-                    this.Map = ImageUtil.ByteToHeaderTSA(tsadata, 0, (int)32 * 8, (int)32 * 8);
+                    this.Map = ImageUtil.ByteToHeaderTSA(tsadata, 0, (int)this.Width8 * 8, (int)this.Height8 * 8);
                 }
                 else
                 {
@@ -209,7 +209,7 @@ namespace FEBuilderGBA
             {
                 if (this.IsHeaderTSA)
                 {
-                    this.Map = ImageUtil.ByteToHeaderTSA(Program.ROM.Data, (int)tsapos, (int)32 * 8, (int)32 * 8);
+                    this.Map = ImageUtil.ByteToHeaderTSA(Program.ROM.Data, (int)tsapos, (int)this.Width8 * 8, (int)this.Height8 * 8);
                 }
                 else
                 {
@@ -226,9 +226,8 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"TSA Editor");
             if (this.IsHeaderTSA)
             {
-                uint tsa = Program.ROM.p32(this.TSAPointer);
-                uint tsaHeaderX = Program.ROM.u8(tsa) + 1;
-                uint tsaHeaderY = Program.ROM.u8(tsa + 1) + 1;
+                uint tsaHeaderX = this.Width8;
+                uint tsaHeaderY = this.Height8;
 
                 uint tsa_width_margin = 32 - tsaHeaderX;
                 tsaHeaderX += tsa_width_margin;
