@@ -2216,7 +2216,7 @@ Death Quotes
 0=Death serif in the phosphorus edition tutorial.
 
 :1=エリウッド編チュートリアルでの死亡セリフ
-1=Death line in Eriwood Hen Tutorial.
+1=Death line in Eliwood Hen Tutorial.
 
 :変化データポインタ
 Change data pointer
@@ -2953,9 +2953,6 @@ Image Address
 :幅/8
 Width / 8
 
-:圧縮画像No
-Compressed image No
-
 :画像が利用している16色パレットの個数
 Number of Palettes Image Uses
 
@@ -3591,6 +3588,18 @@ Behavior range Tile color
 
 :BADステータス
 BAD status
+
+:ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。
+The background of the status screen is in the patch.\r\nPlease click here.
+
+:他の画像
+Other images.
+
+:ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
+Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
+
+:パッチにもない場合は、未発見の画像である可能性があります。\r\nその場合は、グラフィックツールから探してください。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> グラフィックツール、を選択してください。
+If there is no patch, it may be an undiscovered image.\r\nIn that case, please search from the graphic tool.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Graphic Tools.
 
 :システムアイコン
 System Icon
@@ -10918,6 +10927,18 @@ Open Discord Community URL with Complete button
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
 
+:過去のバックアップが1つもありません。\r\n過去のバックアップが別名で保存されていますか？\r\n問題が発生ずに、正しく動作するバックアップがある場合は、パスを指定してください。
+There is no past backup.\r\nAre past backups saved under another name? \r\nIf you have a backup that works properly without problems, specify a path.
+
+:過去のバックアップがありません
+There is no past backup.
+
+:savファイルが含まれていないようです。\r\n問題を確実に再現するためには、savファイルが必要です。\r\n対応するsavがある場合は、パスを指定してください。
+The sav file not included.\r\nIn order to reproduce the problem reliably, We need a sav file.\r\nIf there is a corresponding sav, please specify the path.
+
+:savファイルがありません
+There is no sav file.
+
 :ファイル({1})がありません。\r\n行数:{0}\r\n
 File ({1}) is missing.\r\nNumber of rows: {0}\r\n
 
@@ -11513,10 +11534,10 @@ Select the BGM to play when this World Map Node becomes the next destination.
 The corresponding world map event ({0}) doesn't exist.
 
 :エリウッドエンディング
-Eriwood ending.
+Eliwood ending
 
 :ヘクトルエンディング
-Heck enduring.
+Hextor ending
 
 :オープニングイベント
 Opening Event

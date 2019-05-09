@@ -6,7 +6,7 @@ IF:0xC5724=0x00 0x4B 0x18 0x47
 
 //画像パッチとして実装します
 TYPE=IMAGE
-TAG=#ENGINE #IMAGE
+TAG=#ENGINE
 
 //幅と高さ
 WIDTH=240

@@ -244,6 +244,18 @@
     <Compile Include="ToolInitWizardForm.Designer.cs">
       <DependentUpon>ToolInitWizardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolProblemReportSearchBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchBackupForm.Designer.cs">
+      <DependentUpon>ToolProblemReportSearchBackupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchSavForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchSavForm.Designer.cs">
+      <DependentUpon>ToolProblemReportSearchSavForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolUseFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2489,6 +2501,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolProblemReportForm.resx">
       <DependentUpon>ToolProblemReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolProblemReportSearchBackupForm.resx">
+      <DependentUpon>ToolProblemReportSearchBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolProblemReportSearchSavForm.resx">
+      <DependentUpon>ToolProblemReportSearchSavForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolSubtitleOverlayForm.resx">
       <DependentUpon>ToolSubtitleOverlayForm.cs</DependentUpon>

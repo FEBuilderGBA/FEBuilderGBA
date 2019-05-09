@@ -6302,6 +6302,13 @@ namespace FEBuilderGBA
             this.Filter.Text = filter;
             U.SelectedIndexSafety(this.PatchList, index, true);
         }
+        public void JumpTo(string filter, int index, SortEnum sortFilter)
+        {
+            this.SortFilter = sortFilter;
+            ReScan();
+
+            JumpTo(filter, index);
+        }
 
 #if DEBUG
         //重たいのでフルテストの時のみ実行
@@ -6826,7 +6833,7 @@ namespace FEBuilderGBA
             return ((uint)i) - addr;
         }
 
-        enum SortEnum
+        public enum SortEnum
         {
               SortNone
             , SortDateA

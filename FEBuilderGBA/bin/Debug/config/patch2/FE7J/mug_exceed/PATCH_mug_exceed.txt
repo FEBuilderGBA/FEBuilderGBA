@@ -2,7 +2,7 @@ NAME=MugExceed / Exceed the Portrait Hackbox (顔画像を4タイル拡張する
 NAME.en=Exceed The Portrait Hackbox By 4 Tiles
 
 TYPE=EA
-TAG=#ENGINE #IMAGE
+TAG=#ENGINE
 EA=EA.txt
 
 //既に適応されたかどうか

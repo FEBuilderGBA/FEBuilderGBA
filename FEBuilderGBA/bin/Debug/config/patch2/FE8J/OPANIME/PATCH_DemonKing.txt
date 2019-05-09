@@ -1,5 +1,6 @@
-NAME=DemonKing
-NAME.zh=魔王
+NAME=OP-DemonKing
+NAME.en=OP-DemonKing
+NAME.zh=OP-魔王
 
 TYPE=IMAGE
 TAG=#IMAGE

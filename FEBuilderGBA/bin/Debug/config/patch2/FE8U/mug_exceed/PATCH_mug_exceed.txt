@@ -3,7 +3,7 @@ NAME.en=Exceed The Portrait Hackbox By 4 Tiles
 NAME.zh=MugExceed/超过头像hack框（扩大面部图像4块）
 
 TYPE=EA
-TAG=#ENGINE #IMAGE
+TAG=#ENGINE
 EA=EA.txt
 
 //既に適応されたかどうか

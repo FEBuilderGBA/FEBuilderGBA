@@ -64,9 +64,9 @@
             this.groupBox1.Controls.Add(this.DeCompressSRCSelectButton);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(16, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(670, 174);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -74,9 +74,11 @@
             // 
             // DeCompressDESTFilename
             // 
+            this.DeCompressDESTFilename.ErrorMessage = "";
             this.DeCompressDESTFilename.Location = new System.Drawing.Point(310, 88);
-            this.DeCompressDESTFilename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressDESTFilename.Name = "DeCompressDESTFilename";
+            this.DeCompressDESTFilename.Placeholder = "";
             this.DeCompressDESTFilename.Size = new System.Drawing.Size(346, 25);
             this.DeCompressDESTFilename.TabIndex = 97;
             this.DeCompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressDESTFilename_MouseDoubleClick);
@@ -84,7 +86,7 @@
             // DeCompressDESTSelectButton
             // 
             this.DeCompressDESTSelectButton.Location = new System.Drawing.Point(172, 85);
-            this.DeCompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressDESTSelectButton.Name = "DeCompressDESTSelectButton";
             this.DeCompressDESTSelectButton.Size = new System.Drawing.Size(130, 31);
             this.DeCompressDESTSelectButton.TabIndex = 96;
@@ -106,7 +108,7 @@
             // DeCompressFireButton
             // 
             this.DeCompressFireButton.Location = new System.Drawing.Point(172, 132);
-            this.DeCompressFireButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressFireButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressFireButton.Name = "DeCompressFireButton";
             this.DeCompressFireButton.Size = new System.Drawing.Size(462, 31);
             this.DeCompressFireButton.TabIndex = 90;
@@ -118,7 +120,7 @@
             // 
             this.DeCompressAddress.Hexadecimal = true;
             this.DeCompressAddress.Location = new System.Drawing.Point(172, 58);
-            this.DeCompressAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressAddress.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressAddress.Maximum = new decimal(new int[] {
             1874919423,
             2328306,
@@ -141,17 +143,20 @@
             // 
             // DeCompressSRCFilename
             // 
+            this.DeCompressSRCFilename.ErrorMessage = "";
             this.DeCompressSRCFilename.Location = new System.Drawing.Point(310, 24);
-            this.DeCompressSRCFilename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressSRCFilename.Name = "DeCompressSRCFilename";
+            this.DeCompressSRCFilename.Placeholder = "";
             this.DeCompressSRCFilename.Size = new System.Drawing.Size(346, 25);
             this.DeCompressSRCFilename.TabIndex = 87;
+            this.DeCompressSRCFilename.TextChanged += new System.EventHandler(this.DeCompressSRCFilename_TextChanged);
             this.DeCompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressSRCFilename_MouseDoubleClick);
             // 
             // DeCompressSRCSelectButton
             // 
             this.DeCompressSRCSelectButton.Location = new System.Drawing.Point(172, 20);
-            this.DeCompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeCompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeCompressSRCSelectButton.Name = "DeCompressSRCSelectButton";
             this.DeCompressSRCSelectButton.Size = new System.Drawing.Size(130, 31);
             this.DeCompressSRCSelectButton.TabIndex = 86;
@@ -169,6 +174,7 @@
             this.label9.TabIndex = 85;
             this.label9.Text = "SRC";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // groupBox2
             // 
@@ -181,9 +187,9 @@
             this.groupBox2.Controls.Add(this.CompressSRCSelectButton);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(14, 196);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(670, 156);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -191,9 +197,11 @@
             // 
             // CompressDESTFilename
             // 
+            this.CompressDESTFilename.ErrorMessage = "";
             this.CompressDESTFilename.Location = new System.Drawing.Point(310, 55);
-            this.CompressDESTFilename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompressDESTFilename.Margin = new System.Windows.Forms.Padding(4);
             this.CompressDESTFilename.Name = "CompressDESTFilename";
+            this.CompressDESTFilename.Placeholder = "";
             this.CompressDESTFilename.Size = new System.Drawing.Size(346, 25);
             this.CompressDESTFilename.TabIndex = 94;
             this.CompressDESTFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressDESTFilename_MouseDoubleClick);
@@ -201,7 +209,7 @@
             // CompressDESTSelectButton
             // 
             this.CompressDESTSelectButton.Location = new System.Drawing.Point(172, 52);
-            this.CompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompressDESTSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressDESTSelectButton.Name = "CompressDESTSelectButton";
             this.CompressDESTSelectButton.Size = new System.Drawing.Size(130, 31);
             this.CompressDESTSelectButton.TabIndex = 93;
@@ -223,7 +231,7 @@
             // CompressFireButton
             // 
             this.CompressFireButton.Location = new System.Drawing.Point(172, 96);
-            this.CompressFireButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompressFireButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressFireButton.Name = "CompressFireButton";
             this.CompressFireButton.Size = new System.Drawing.Size(462, 31);
             this.CompressFireButton.TabIndex = 91;
@@ -233,17 +241,19 @@
             // 
             // CompressSRCFilename
             // 
+            this.CompressSRCFilename.ErrorMessage = "";
             this.CompressSRCFilename.Location = new System.Drawing.Point(310, 25);
-            this.CompressSRCFilename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompressSRCFilename.Margin = new System.Windows.Forms.Padding(4);
             this.CompressSRCFilename.Name = "CompressSRCFilename";
+            this.CompressSRCFilename.Placeholder = "";
             this.CompressSRCFilename.Size = new System.Drawing.Size(346, 25);
             this.CompressSRCFilename.TabIndex = 90;
             this.CompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CompressSRCFilename_MouseDoubleClick);
             // 
             // CompressSRCSelectButton
             // 
-            this.CompressSRCSelectButton.Location = new System.Drawing.Point(172, 32);
-            this.CompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CompressSRCSelectButton.Location = new System.Drawing.Point(172, 23);
+            this.CompressSRCSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.CompressSRCSelectButton.Name = "CompressSRCSelectButton";
             this.CompressSRCSelectButton.Size = new System.Drawing.Size(130, 31);
             this.CompressSRCSelectButton.TabIndex = 89;
@@ -262,7 +272,7 @@
             this.label2.Text = "SRC";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LZ77ToolForm
+            // ToolLZ77Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -270,8 +280,8 @@
             this.ClientSize = new System.Drawing.Size(698, 366);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "LZ77ToolForm";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "ToolLZ77Form";
             this.Text = "LZ77ツール";
             this.Load += new System.EventHandler(this.LZ77ToolForm_Load);
             this.groupBox1.ResumeLayout(false);

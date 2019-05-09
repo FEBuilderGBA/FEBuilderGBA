@@ -176,7 +176,7 @@ namespace FEBuilderGBA
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 string orignalFilename = OrignalFilename.Text;
-                byte[] s = File.ReadAllBytes(orignalFilename); 
+                byte[] s = File.ReadAllBytes(orignalFilename);
 
                 //セーブデータの回収
                 CollectSaveData(tempdir.Dir);
@@ -233,12 +233,12 @@ namespace FEBuilderGBA
             }
         }
 
-        void MakeUPS(string tempdir, byte[] s, string targetFilename)
+        bool MakeUPS(string tempdir, byte[] s, string targetFilename)
         {
             string filename_only = Path.GetFileName(targetFilename);
             if (filename_only.IndexOf(".backup.") <= -1)
             {
-                return;
+                return false;
             }
             InputFormRef.DoEvents(this, "=>" + Path.GetFileName(targetFilename));
 
@@ -248,26 +248,55 @@ namespace FEBuilderGBA
             string ups = Path.Combine(tempdir, Path.GetFileNameWithoutExtension(targetFilename) + ".ups");
             UPSUtil.MakeUPS(s, d, ups);
             U.CopyTimeStamp(targetFilename, ups); //タイムスタンプを元のファイルに合わせる.
+
+            return true;
         }
 
         //動作しないUPSと動作するUPSデータの回収
         void CollectUPSs(string tempdir, byte[] s)
         {
+            bool r = CollectUPSsInner(tempdir, s);
+            if (r)
+            {
+                return;
+            }
+
+            //１つもバックアップがない場合は聞く.
+            ToolProblemReportSearchBackupForm f =
+                (ToolProblemReportSearchBackupForm)InputFormRef.JumpFormLow<ToolProblemReportSearchBackupForm>();
+            DialogResult dr = f.ShowDialog();
+            if (dr != System.Windows.Forms.DialogResult.OK)
+            {
+                return;
+            }
+
+            string moreOlderFilename = f.GetFilename();
+            MakeUPS(tempdir, s, moreOlderFilename);
+        }
+        bool CollectUPSsInner(string tempdir, byte[] s)
+        {
+            bool found = false;
+
             //古いバックアップがあれば取得する
-            int[] olderPickup = new int[] { 0, 1 , 2 , 3 , 4 , 5, 6, 10, 15, 20, 30, 40, 60, 80, 100, 140, 180, 250, 300, 400 , 600,  800 , 1000 };
+            int[] olderPickup = new int[] { 0, 1 , 2 , 4 , 6, 10, 15, 20, 30, 60, 100, 300, 600,  800 , 1000 };
             for (int i = 0; i < olderPickup.Length; i++)
             {
                 string moreOlderFilename = FindSrcByFilename(olderPickup[i]);
                 if (moreOlderFilename != ""
                     && File.Exists(moreOlderFilename))
                 {
-                    MakeUPS(tempdir, s, moreOlderFilename);
+                    bool r = MakeUPS(tempdir, s, moreOlderFilename);
+                    if (r)
+                    {
+                        found = true;
+                    }
                 }
                 else
                 {
                     break;
                 }
             }
+            return found;
         }
 
         //現在のROMのUPSデータの回収
@@ -297,27 +326,76 @@ namespace FEBuilderGBA
         //セーブデータの回収
         void CollectSaveData(string tempdir)
         {
+            bool r = CollectSaveDataInner(tempdir);
+            if (r)
+            {
+                return;
+            }
+
+            //セーブデータがない場合は、聞く.
+            ToolProblemReportSearchSavForm f = 
+                (ToolProblemReportSearchSavForm)InputFormRef.JumpFormLow<ToolProblemReportSearchSavForm>();
+            DialogResult dr = f.ShowDialog();
+            if (dr != System.Windows.Forms.DialogResult.OK)
+            {
+                return ;
+            }
+
+            string savFilename = f.GetFilename();
+            PickupOneFile(tempdir , savFilename);
+        }
+        bool CollectSaveDataInner(string tempdir)
+        {
+            bool foundSav = false;
             bool r = PickupSaveData(tempdir, ".sav");
             if (r == false)
             {
                 //no$gbaの場合は、BATTERYフォルダの下にある.
-                CollectNoDollSaveData(tempdir, ".sav");
+                foundSav = CollectNoDollSaveData(tempdir, ".sav");
             }
 
-            PickupSaveData(tempdir, ".emulator.sav");
+            r = PickupSaveData(tempdir, ".emulator.sav");
+            if (r)
+            {
+                foundSav = true;
+            }
 
             for (int i = 1; i < 10; i++)
             {
-                PickupSaveData(tempdir, ".emulator" + i + ".sgm");
-                PickupSaveData(tempdir, "" + i + ".sgm");
-                PickupSaveData(tempdir, ".emulator.ss" + i);
-                PickupSaveData(tempdir, ".ss" + i);
-                PickupSaveData(tempdir, ".emulator.sg" + i);
-                PickupSaveData(tempdir, ".sg" + i);
+                string[] pathes = new string[] {
+                    ".emulator" + i + ".sgm",
+                    "" + i + ".sgm",
+                    ".emulator.ss" + i,
+                    ".ss" + i,
+                    ".emulator.sg" + i,
+                    ".sg" + i,
+                    ".sa" + i,
+                };
+                foreach(string path in pathes)
+                {
+                    r = PickupSaveData(tempdir, path);
+                    if (r)
+                    {
+                        foundSav = true;
+                    }
+                }
             }
+
+            return foundSav;
         }
 
-        bool PickupSaveData(string tempdir,string needExt)
+        bool PickupOneFile(string tempdir, string target)
+        {
+            if (!File.Exists(target))
+            {
+                return false;
+            }
+            string destFilename = Path.Combine(tempdir, Path.GetFileName(target));
+            File.Copy(target, destFilename, true);
+            return true;
+        }
+
+        bool PickupSaveData(string tempdir, string needExt)
         {
             string dir  = Path.GetDirectoryName(Program.ROM.Filename);
             string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
@@ -332,18 +410,18 @@ namespace FEBuilderGBA
             return true;
         }
         //no$gbaの場合は、BATTERYフォルダの下にある.
-        void CollectNoDollSaveData(string tempdir, string needExt)
+        bool CollectNoDollSaveData(string tempdir, string needExt)
         {
             string emudir = Program.Config.at("emulator");
             if (emudir == "")
             {
-                return;
+                return false;
             }
             emudir = Path.GetDirectoryName(emudir);
             string dir = Path.Combine(emudir , "BATTERY");
             if (! Directory.Exists(dir))
             {
-                return;
+                return false;
             }
 
             string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
@@ -351,11 +429,13 @@ namespace FEBuilderGBA
             string savFilename = Path.Combine(dir, file + needExt);
             if (!File.Exists(savFilename))
             {
-                return;
+                return false;
             }
             string destFilename = Path.Combine(tempdir, file + needExt);
             InputFormRef.DoEvents(this, "=>" + Path.GetFileName(savFilename));
             File.Copy(savFilename, destFilename, true);
+
+            return true;
         }
 
         string MakeReportLog()

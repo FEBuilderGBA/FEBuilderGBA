@@ -179,5 +179,15 @@ namespace FEBuilderGBA
             U.SelectFileByExplorer(CompressDESTFilename.Text);
         }
 
+        private void DeCompressSRCFilename_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
