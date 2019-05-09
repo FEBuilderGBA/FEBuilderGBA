@@ -121,7 +121,8 @@ namespace FEBuilderGBA
 
         static bool IsBadBaseAddress(uint addr)
         {
-            if (addr == 0 || addr == U.NOT_FOUND)
+//            if (addr == 0 || addr == U.NOT_FOUND)
+            if (addr == 0)
             {
                 return true;
             }

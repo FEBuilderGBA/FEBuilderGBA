@@ -316,6 +316,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!U.CheckPaddingALIGN4(ar.tag))
+            {
+                return;
+            }
 
             if (DimComboBox.SelectedIndex == 0)
             {//dim

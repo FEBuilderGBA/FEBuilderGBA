@@ -4946,6 +4946,11 @@ namespace FEBuilderGBA
                 return;
             }
 
+            if (blocksize <= 3)
+            {//4の倍数ではないので、チェックは無理
+                this.CheckProtectionPaddingALIGN4 = false;
+            }
+
             this.Controls = GetAllControls(self);
 
             //まず主要ボタンの検出を行います.
@@ -5324,6 +5329,10 @@ namespace FEBuilderGBA
             { //先頭のID:0x00は書き込み禁止になっていた
                 return;
             }
+            if (!CheckPaddingALIGN4(addr))
+            {//ALIGN4ではないアドレスに書き込みをした
+                return;
+            }
 
             if (PreWriteHandler != null)
             {
@@ -5372,6 +5381,17 @@ namespace FEBuilderGBA
             {
                 return U.CheckZeroAddressWrite(addr);
             }
+        }
+
+        public bool CheckProtectionPaddingALIGN4 = true; //常にALIGN4である必要があるデータ
+        bool CheckPaddingALIGN4(uint addr)
+        {
+            if (CheckProtectionPaddingALIGN4)
+            {
+                return U.CheckPaddingALIGN4(addr);
+            }
+            //確認不能.
+            return true;
         }
 
         //ID:0x00を書き込み禁止にするかどうか. ディフォルトはしない.

@@ -42,6 +42,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
             InputFormRef = Init(this, textP);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false;
 
             ShowZoomComboBox.SelectedIndex = 0;
             U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);

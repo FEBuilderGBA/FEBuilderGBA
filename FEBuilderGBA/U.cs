@@ -1496,6 +1496,20 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        //Check ALIGN 4
+        public static bool CheckPaddingALIGN4(uint addr, bool ShowMessage = true)
+        {
+            if (! U.isPadding4(addr) )
+            {
+                if (ShowMessage)
+                {
+                    R.ShowStopError("書き込もうとしているアドレスが4の倍数でないので、書き込みを拒否します。\r\nあなたが書き込もうとしたアドレス:{0}\r\n4の倍数でないアドレスへの書き込みは、ほぼ間違っています。", U.To0xHexString(addr));
+                }
+                return false;
+            }
+            return true;
+        }
+
         public static uint ParseUnitGrowAssign(uint unitgrow)
         {
             return (unitgrow >> 1) & 0x3;

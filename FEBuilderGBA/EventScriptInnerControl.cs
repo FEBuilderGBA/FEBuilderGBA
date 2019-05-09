@@ -258,6 +258,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!U.CheckPaddingALIGN4(addr))
+            {
+                return;
+            }
 
             bool isWorldMapEvent = WorldMapEventPointerForm.isWorldMapEvent(addr);
             bool isTopLevelEvent = false;

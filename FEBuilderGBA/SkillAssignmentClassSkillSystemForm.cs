@@ -57,6 +57,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.J_0_SKILLASSIGNMENT);
             InputFormRef = Init(this, assignClassP);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false;
         }
 
         public InputFormRef InputFormRef;

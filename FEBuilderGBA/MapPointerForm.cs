@@ -388,6 +388,15 @@ namespace FEBuilderGBA
             }
 
             addr = PlistToOffsetAddr(type, plist, out pointer);
+            if (addr == U.NOT_FOUND || pointer == U.NOT_FOUND)
+            {
+#if DEBUG
+                Debug.Assert(false);
+                addr = PlistToOffsetAddr(type, plist, out pointer);
+#endif //DEBUG
+                out_pointer = pointer;
+                return addr;
+            }
             PlistCache[key] = pointer;
 
             out_pointer = pointer;

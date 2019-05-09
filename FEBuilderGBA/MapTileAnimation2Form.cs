@@ -71,6 +71,10 @@ namespace FEBuilderGBA
 
                 uint addr = MapPointerForm.PlistToOffsetAddr(MapPointerForm.PLIST_TYPE.ANIMATION2, plist.anime2_plist);
                 string name = R._("タイルアニメーション2 パレットアニメ:{0}", U.ToHexString(plist.anime2_plist));
+                if (addr == U.NOT_FOUND)
+                {
+                    name += R._("(破損)");
+                }
                 U.AddrResult ar = new U.AddrResult(addr, name, plist.anime2_plist);
                 ret_list.Add(ar);
 
