@@ -1,0 +1,16 @@
+NAME=ドロップでお金が手に入るアイテムID1。ここまで
+NAME.en=Item ID 1 for which you can get money by drop.End
+NAME.zh=道具ID 1，您可以逐个获得金钱。到这里
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x1169A
+ADDRESS_TYPE=ITEM
+
+AUTHOR=7743
+
+INFO=ドロップでお金を入手できるアイテム群を設定します。\r\nこれらのアイテムをドロップする敵を倒すと、単価*回数のゴールドを入手できます。
+INFO.en=Set items that can get money by drop.\r\nIf you defeat the enemy that drops these items, you will receive a * price * number of gold.
+INFO.zh=设置可以逐个获取的项目。\r\n如果你击败掉落这些物品的敌人，你将收到一个*价格*的黄金数量。

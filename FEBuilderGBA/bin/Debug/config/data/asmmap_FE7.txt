@@ -1934,7 +1934,7 @@
 08015C04	StoreAdjustedCameraPositions	{U}
 08015CE0	EnsureCameraOntoPosition	{U}
 08015D70	ShouldMoveCameraPosSomething	{U}
-08015EAA	GetCurrentMapMusicIndex	{U}
+08015E9C	GetCurrentMapMusicIndex	{U}
 08016040	GetItemPowBonus	{U}
 0801606C	GetItemSklBonus	{U}
 08016098	GetItemSpdBonus	{U}
@@ -2781,7 +2781,7 @@
 08016080	StoreAdjustedCameraPositions	{J}
 0801615C	EnsureCameraOntoPosition	{J}
 080161EC	ShouldMoveCameraPosSomething	{J}
-08016326	GetCurrentMapMusicIndex	{J}
+08016318	GetCurrentMapMusicIndex	{J}
 080164BA	GetItemPowBonus	{J}
 080164BA	GetItemSklBonus	{J}
 080164BA	GetItemSpdBonus	{J}
