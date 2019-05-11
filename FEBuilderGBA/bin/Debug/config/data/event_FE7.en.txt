@@ -300,7 +300,7 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 7A00XXXX	[XX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}	{U}
 7900XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{J}
 7B00XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{U}
-7A00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
+7A00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{J}
 7B00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
 7B000000	Decrease the volume(MUSI)	{MUSIC}	{J}
 7D000000	Decrease the volume(MUSI)	{MUSIC}	{U}

@@ -69,8 +69,8 @@
 2029XXXX	[XXXX:FOG:Sight range]Change fog sight distance(VCWF)	{WEATHER}
 2028XXXX	[XX:WEATHER:Weather]Weather change	{WEATHER}
 2128XXXX	[XX:WEATHER:Weather]Weather change 2(WEA1)
-2113FF7F	Erase BGM	{MUSIC}
-2113XXXX	_MUSICSOMETHING[XXXX::Something]
+2113FF7F	Mute, Erase BGM(_MUSICSOMETHING 0x7FFF)	{MUSIC}
+2113XXXX	_MUSICSOMETHING[XXXX:MUSIC:Song]	{MUSIC}
 482F0000YYYYZZWW	Set move (ver2)[YY:UNIT:Character][ZZ:MAPX:X][WW:MAPY:Y]
 221A0000	Conversation start of CG scene(CGTEXTSTART)
 251A0000	_0x1A25
@@ -104,9 +104,11 @@
 221B0000	Conversation end(REMA)
 211A0000	Removes speech bubbles and portraits(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
+2012FF7F	Mute, Turn off the BGM.(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	Change BGM to[XXXX:MUSIC:Song](MUSC)	{MUSIC}
 2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)
 2016XXXX	Play SFX[XXXX:SOUND:sound effect](SOUN)	{MUSIC}
+2013FF7F	Mute, Fade out and turn off the BGM.(MUSCFAST 0x7FFF)	{MUSIC}
 2213XXXX	Change BGM to[XXXX:MUSIC:Song] with fast fade out(MUSCFAST)	{MUSIC}
 2413XXXX	Change BGM to[XXXX:MUSIC:Song] with fade out(MUSCMID)	{MUSIC}
 2613XXXX	Change BGM to[XXXX:MUSIC:Song] with slow fade out(MUSCSLOW)	{MUSIC}
