@@ -4946,7 +4946,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            if (blocksize <= 3)
+            if (! U.isPadding4(blocksize))
             {//4の倍数ではないので、チェックは無理
                 this.CheckProtectionPaddingALIGN4 = false;
             }
