@@ -959,7 +959,7 @@ namespace FEBuilderGBA
                 InsertSkill(skillSound, skillType);
             }
         }
-        void ExportSkillAnimeWrite(string filename)
+        bool ExportSkillAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -995,10 +995,13 @@ namespace FEBuilderGBA
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
 
-                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
             }
-            File.WriteAllLines(filename, lines);
+            return U.WriteAllLinesInError(filename, lines);
         }
 
 
@@ -1108,7 +1111,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        void ExportBattleAnimeWrite(string filename)
+        bool ExportBattleAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -1131,7 +1134,10 @@ namespace FEBuilderGBA
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
 
-                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
                 else if (code.type == AnimeStEnum.Loop)
                 {
@@ -1149,7 +1155,8 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+
+            return U.WriteAllLinesInError(filename, lines);
         }
 
 
@@ -1324,7 +1331,7 @@ namespace FEBuilderGBA
                 i--;
             }
         }
-        void ExportMagicAnimeWrite(string filename)
+        bool ExportMagicAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -1352,11 +1359,17 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
 
                     Debug.Assert(this.AnimeBG.ContainsKey(code.bg));
                     imagefullfilename = Path.Combine(basedir, code.bg);
-                    U.BitmapSave(this.AnimeBG[code.bg], imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeBG[code.bg], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
                 else if (code.type == AnimeStEnum.Sound)
                 {
@@ -1369,7 +1382,7 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+            return U.WriteAllLinesInError(filename, lines);
         }
         
         void AppendCode(uint code)
@@ -2322,7 +2335,10 @@ namespace FEBuilderGBA
                 string filename = Path.Combine(tempdir.Dir, "anime.txt");
                 if (this.AnimationType == AnimationTypeEnum.BattleAnime)
                 {
-                    ExportBattleAnimeWrite(filename);
+                    if (!ExportBattleAnimeWrite(filename))
+                    {
+                        return;
+                    }
 
                     ImageBattleAnimeForm f = (ImageBattleAnimeForm)InputFormRef.JumpForm<ImageBattleAnimeForm>(U.NOT_FOUND);
                     string error = f.BattleAnimeImportDirect(this.ID, filename);
@@ -2334,7 +2350,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.MagicAnime_CSACreator)
                 {
-                    ExportMagicAnimeWrite(filename);
+                    if (! ExportMagicAnimeWrite(filename))
+                    {
+                        return;
+                    }
 
                     ImageMagicCSACreatorForm f = (ImageMagicCSACreatorForm)InputFormRef.JumpForm<ImageMagicCSACreatorForm>(U.NOT_FOUND);
                     string error = f.MagicAnimeImportDirect(this.ID, filename);
@@ -2346,7 +2365,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.MagicAnime_FEEDitor)
                 {
-                    ExportMagicAnimeWrite(filename);
+                    if (! ExportMagicAnimeWrite(filename) )
+                    {
+                        return;
+                    }
 
                     ImageMagicFEditorForm f = (ImageMagicFEditorForm)InputFormRef.JumpForm<ImageMagicFEditorForm>(U.NOT_FOUND);
                     string error = f.MagicAnimeImportDirect(this.ID, filename);
@@ -2358,7 +2380,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.Skill)
                 {
-                    ExportSkillAnimeWrite(filename);
+                    if (! ExportSkillAnimeWrite(filename) )
+                    {
+                        return;
+                    }
 
                     InputFormRef.skill_system_enum skillsystem = InputFormRef.SearchSkillSystem();
                     if (skillsystem == InputFormRef.skill_system_enum.FE8N_ver2)

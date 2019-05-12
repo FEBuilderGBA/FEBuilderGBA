@@ -982,6 +982,10 @@ namespace FEBuilderGBA
             {
                 errorMessage = R.ExceptionToString(e);
             }
+            catch (IOException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
             R.ShowStopError(errorMessage);
             return false;
         }
@@ -5814,7 +5818,19 @@ namespace FEBuilderGBA
                 R.ShowStopError(ee.ToString());
             }
         }
-
+        public static bool WriteAllLinesInError(string filename, List<string> lines)
+        {
+            try
+            {
+                File.WriteAllLines(filename, lines);
+            }
+            catch (IOException ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+                return false;
+            }
+            return true;
+        }
     }
 }
 

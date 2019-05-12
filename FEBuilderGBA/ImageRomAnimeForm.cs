@@ -902,7 +902,7 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+            U.WriteAllLinesInError(filename, lines);
         }
 
         class anime

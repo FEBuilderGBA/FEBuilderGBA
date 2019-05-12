@@ -513,7 +513,7 @@ namespace FEBuilderGBA
             }
             UInt16[] tile = new UInt16[size];
 
-            int length = tsa_pos + (size * 2);
+            int length = tsa_pos + (size * 2) + 2;
             length = Math.Min(length, tsa.Length);
 
             i += 2;

@@ -231,6 +231,7 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list, image, imagelength, pointer, "worldmap_big_image" + i , Address.DataTypeEnum.IMG);
 
 
+
                     uint tsa = Program.ROM.p32(tsamap);
                     uint tsalength = 256 / 8 * 256 / 8;
                     FEBuilderGBA.Address.AddAddress(list, tsa, tsalength, tsamap, "worldmap_big_tsa" + i, Address.DataTypeEnum.TSA);
@@ -244,7 +245,7 @@ namespace FEBuilderGBA
                     , Address.DataTypeEnum.LZ77IMG);
                 FEBuilderGBA.Address.AddLZ77Pointer(list
                     , Program.ROM.RomInfo.worldmap_event_tsa_pointer()
-                    , "worldmap_event_image"
+                    , "worldmap_event_tsa"
                     , isPointerOnly
                     , Address.DataTypeEnum.LZ77TSA);
                 FEBuilderGBA.Address.AddPointer(list
