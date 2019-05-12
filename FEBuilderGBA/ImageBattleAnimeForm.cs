@@ -118,6 +118,11 @@ namespace FEBuilderGBA
 
         private void ImageBattleAnimeForm_Load(object sender, EventArgs e)
         {
+#if DEBUG
+            uint top_battleanime_baseaddress = N_InputFormRef.BaseAddress;
+            uint bottum_battleanime_baseaddress = N_InputFormRef.BaseAddress + (N_InputFormRef.BlockSize * N_InputFormRef.DataCount);
+//            ImageUtilOAM.MakeReColorRule(top_battleanime_baseaddress, bottum_battleanime_baseaddress);
+#endif
         }
 
         private void CLASS_LISTBOX_SelectedIndexChanged(object sender, EventArgs e)

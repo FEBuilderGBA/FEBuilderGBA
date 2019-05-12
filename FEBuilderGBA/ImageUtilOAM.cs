@@ -2684,13 +2684,15 @@ namespace FEBuilderGBA
             return map;
         }
 
-
+#if DEBUG
         //ReColor用の色割り当てを作成します。
         //既存のバトルアニメの色配色から、カラー割り当てを模倣します.
-        static Dictionary<uint, ReColorMap> MakeReColorRule(uint top_battleanime_baseaddress, uint bottum_battleanime_baseaddress)
+        public static Dictionary<uint, ReColorMap> MakeReColorRule(uint top_battleanime_baseaddress, uint bottum_battleanime_baseaddress)
         {
-            Dictionary<uint, ReColorMap> map = new Dictionary<uint, ReColorMap>();
-            for (uint p = top_battleanime_baseaddress; p <= bottum_battleanime_baseaddress; p += 32)
+//            Dictionary<uint, ReColorMap> map = new Dictionary<uint, ReColorMap>();
+            Dictionary<uint, ReColorMap> map = LoadReColorRule();
+            uint id = 0;
+            for (uint p = top_battleanime_baseaddress; p <= bottum_battleanime_baseaddress; p += 32 , id++ )
             {
                 uint palette = Program.ROM.p32(p + 28);
                 if (! U.isSafetyOffset(palette))
@@ -2715,7 +2717,7 @@ namespace FEBuilderGBA
                     uint enemy = U.u16(palette_bin, (i * 2) + (2 * 16 * 1));
                     uint npc = U.u16(palette_bin, (i * 2) + (2 * 16 * 2));
                     uint gray = U.u16(palette_bin, (i * 2) + (2 * 16 * 3));
-                    if (player == enemy && player == npc && player == gray )
+                    if (player == enemy || player == npc || player == gray )
                     {//同じ色が使われているので無視.
                         continue;
                     }
@@ -2723,8 +2725,8 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-
-                    Log.Debug("{{",U.To0xHexString(player),"},{",U.To0xHexString(enemy),"},{",U.To0xHexString(npc),"},{",U.To0xHexString(gray),"}}");
+                    string name = Program.ROM.getString(p);
+                    Log.Debug(U.ToHexString(player) + "\t" + U.ToHexString(enemy) + "\t" + U.ToHexString(npc) + "\t" + U.ToHexString(gray) + "//" + U.To0xHexString(id) + " " + name);
                     ReColorMap m = new ReColorMap();
                     m.Enemy = enemy;
                     m.NPC = npc;
@@ -2735,6 +2737,7 @@ namespace FEBuilderGBA
 
             return map;
         }
+#endif
         static bool checkOAMSize(int size)
         {
             int limit;

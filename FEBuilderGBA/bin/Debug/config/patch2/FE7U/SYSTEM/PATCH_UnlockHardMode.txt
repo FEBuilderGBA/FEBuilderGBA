@@ -1,0 +1,24 @@
+NAME=最初から難易度やモードセレクトを解禁する
+NAME.en=Unlocking mode select from start
+
+INFO=スタート時の難易度セレクトでハードモードや、ヘクトル編を解禁します。
+INFO.en=The hard mode and Hector's edition will be prohibited by the difficulty selection at the start.
+
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=Doesnt https://feuniverse.us/t/unlocking-mode-select-from-start-solved/751/9
+
+COMBO=Default|OFF|All Open|ALL
+OFF:0x09E9FC=0x30 0xB5 0x99 0xB0
+ALL:0x09E9FC=0x1F 0x20 0x70 0x47
+
+//bit x1 = Lyn Hard is open
+//bit x2 = Eliwood Normal is open
+//bit x4 = Eliwood Hard is open (only selectable if x2 is also set)
+//bit x8 = Hector Normal is open
+//bit x10 = Hector Hard is open (only selectable if x8 is also set)
+NAME.zh=从头开始打开难度级别和模式选择。
+INFO.zh=一开始难度选择将禁止硬模式和Hector版本。
