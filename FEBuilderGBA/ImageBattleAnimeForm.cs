@@ -23,6 +23,8 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(ShowZoomComboBox, 0);
             U.SelectedIndexSafety(ShowPaletteComboBox,0);
 
+//            X_LZ77_INFO.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
+//            X_LZ77_INFO.BackColor = OptionForm.Color_InputDecimal_BackColor();
 
             this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
@@ -150,8 +152,26 @@ namespace FEBuilderGBA
         {
             U.ForceUpdate(ShowSectionCombo, 0);
             U.ForceUpdate(ShowFrameUpDown, 0);
-            DrawSelectedAnime();    
+            DrawSelectedAnime();
+            X_LZ77_INFO.Text = GetLZ77Info();
         }
+
+        string GetLZ77Info()
+        {
+            string text = "Un-LZ77 ";
+            uint frame = U.toOffset((uint)N_P16.Value);
+            uint oam   = U.toOffset((uint)N_P20.Value);
+            if (U.isSafetyOffset(frame))
+            {
+                text += "Frame: " + LZ77.getUncompressSize(Program.ROM.Data, frame) + " ";
+            }
+            if (U.isSafetyOffset(oam))
+            {
+                text += "OAM: " + LZ77.getUncompressSize(Program.ROM.Data, oam) + " ";
+            }
+            return text;
+        }
+
         void DrawSelectedAnime()
         {
             uint showSectionData = U.atoh(ShowSectionCombo.Text) - 1;
