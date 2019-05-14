@@ -130,7 +130,7 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.N_AddressListExpandsButton_32766 = new System.Windows.Forms.Button();
-            this.X_LZ77_INFO = new System.Windows.Forms.TextBox();
+            this.X_LZ77_INFO = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -1458,11 +1458,13 @@
             // 
             // X_LZ77_INFO
             // 
-            this.X_LZ77_INFO.Location = new System.Drawing.Point(3, 451);
+            this.X_LZ77_INFO.ErrorMessage = "";
+            this.X_LZ77_INFO.Location = new System.Drawing.Point(1, 452);
             this.X_LZ77_INFO.Name = "X_LZ77_INFO";
+            this.X_LZ77_INFO.Placeholder = "";
             this.X_LZ77_INFO.ReadOnly = true;
-            this.X_LZ77_INFO.Size = new System.Drawing.Size(433, 25);
-            this.X_LZ77_INFO.TabIndex = 201;
+            this.X_LZ77_INFO.Size = new System.Drawing.Size(435, 25);
+            this.X_LZ77_INFO.TabIndex = 202;
             // 
             // ImageBattleAnimeForm
             // 
@@ -1636,6 +1638,6 @@
         private System.Windows.Forms.Label ZeroPointerPanel;
         private TextBoxEx N_Comment;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox X_LZ77_INFO;
+        private TextBoxEx X_LZ77_INFO;
     }
 }

@@ -2579,10 +2579,12 @@ namespace FEBuilderGBA
                 return R._("アニメーションが途中で終ってしまいました。\r\nアニメーションはモード12まで必要です。\r\nこのファイルにはモード({0})までしかありません。\r\n\r\n戦闘アニメーションには、1,3,5,6,7,8,9,10,11,12 のモードが必要です。\r\nおそらく、どれかのモードが欠落しています。\r\nすべてのモードが正しく書かれているか、確認してください。\r\n", mode);
             }
 
-
-
             if (! checkOAMSize(oam.GetOAMSize()))
             {//OAMサイズ警告
+                return R._("ユーザによって取り消されました。");
+            }
+            if (!checkFrameSize(frameData.Count))
+            {//フレームサイズ警告
                 return R._("ユーザによって取り消されました。");
             }
 
@@ -2740,6 +2742,20 @@ namespace FEBuilderGBA
 #endif
         static bool checkOAMSize(int size)
         {
+            string error = checkOAMSizeSimple(size);
+            if (error == "")
+            {
+                return true;
+            }
+            DialogResult dr = R.ShowYesNo(error + "\r\n" + R._("GBAは携帯機なので利用できるメモリには限界があります。\r\n正常に動作しない可能性があります。\r\n処理を続行してもよろしいですか？\r\n"));
+            if (dr == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static string checkOAMSizeSimple(int size)
+        {
             int limit;
             if (Program.ROM.RomInfo.version() == 6)
             {
@@ -2749,19 +2765,43 @@ namespace FEBuilderGBA
             else
             {
                 //かなり甘めのチェックでいいと思う.
-                limit = 25000; //もっと甘めにしよう
+                limit = 23000; //もっと甘めにしよう
             }
 
             if (size > limit)
             {
-                DialogResult dr = R.ShowYesNo("このアニメーションは、あまりに巨大です。消費OAMデータ{0}バイト\r\nGBAは携帯機なので利用できるメモリには限界があります。\r\n正常に動作しない可能性があります。\r\n処理を続行してもよろしいですか？\r\n", size);
-                if (dr != DialogResult.Yes)
-                {
-                    return false;
-                }
+                string error = R._("このアニメーションは、あまりに巨大です。\r\n消費OAMデータ{0}バイト\r\n限界OAMサイズ{1}バイト\r\n", size, limit);
+                return error;
             }
-            return true;
+            return "";
         }
+        static bool checkFrameSize(int size)
+        {
+            string error = checkFrameSizeSimple(size);
+            if (error == "")
+            {
+                return true;
+            }
+            DialogResult dr = R.ShowYesNo(error + "\r\n" + R._("GBAは携帯機なので利用できるメモリには限界があります。\r\n正常に動作しない可能性があります。\r\n処理を続行してもよろしいですか？\r\n"));
+            if (dr == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static string checkFrameSizeSimple(int size)
+        {
+            int limit;
+            limit = 8000;
+
+            if (size > limit)
+            {
+                string error = R._("このアニメーションは、あまりに巨大です。\r\n消費フレームデータ{0}バイト\r\n限界フレームサイズ{1}バイト\r\n", size, limit);
+                return error;
+            }
+            return "";
+        }
+
         static bool checkCCode(string[] lines, uint search_code, char syntaxsuger = ' ')
         {
             for (int i = 0; i < lines.Length; i++)
@@ -3261,6 +3301,16 @@ namespace FEBuilderGBA
             }
 
             InputFormRef.DoEvents(null, "Term");
+
+
+            if (!checkOAMSize(rightToLeftOAM.Count))
+            {//OAMサイズ警告
+                return R._("ユーザによって取り消されました。");
+            }
+            if (!checkFrameSize(frame.Count))
+            {//フレームサイズ警告
+                return R._("ユーザによって取り消されました。");
+            }
 
             //上書きされる古いアニメデータの領域を使いまわす.
             List<Address> recycle = new List<Address>();

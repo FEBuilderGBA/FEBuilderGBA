@@ -153,23 +153,41 @@ namespace FEBuilderGBA
             U.ForceUpdate(ShowSectionCombo, 0);
             U.ForceUpdate(ShowFrameUpDown, 0);
             DrawSelectedAnime();
-            X_LZ77_INFO.Text = GetLZ77Info();
+
+            UpdateLZ77Info();
         }
 
-        string GetLZ77Info()
+        void UpdateLZ77Info()
         {
+            string error = "";
             string text = "Un-LZ77 ";
             uint frame = U.toOffset((uint)N_P16.Value);
             uint oam   = U.toOffset((uint)N_P20.Value);
             if (U.isSafetyOffset(frame))
             {
-                text += "Frame: " + LZ77.getUncompressSize(Program.ROM.Data, frame) + " ";
+                uint size = LZ77.getUncompressSize(Program.ROM.Data, frame);
+                text += "Frame: " + size + " ";
+
+                string r = ImageUtilOAM.checkFrameSizeSimple((int)size);
+                if (r != "")
+                {
+                    error += r;
+                }
             }
             if (U.isSafetyOffset(oam))
             {
-                text += "OAM: " + LZ77.getUncompressSize(Program.ROM.Data, oam) + " ";
+                uint size = LZ77.getUncompressSize(Program.ROM.Data, oam);
+                text += "OAM: " + size + " ";
+
+                string r = ImageUtilOAM.checkOAMSizeSimple((int)size);
+                if (r != "")
+                {
+                    error += r;
+                }
             }
-            return text;
+
+            X_LZ77_INFO.Text = text;
+            X_LZ77_INFO.ErrorMessage = error;
         }
 
         void DrawSelectedAnime()
