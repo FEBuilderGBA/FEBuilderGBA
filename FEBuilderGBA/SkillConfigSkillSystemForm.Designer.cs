@@ -97,7 +97,6 @@
             // 
             // ReloadListButton
             // 
-
             this.ReloadListButton.Location = new System.Drawing.Point(480, 1);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
@@ -217,7 +216,6 @@
             // 
             // WriteButton
             // 
-
             this.WriteButton.Location = new System.Drawing.Point(716, -1);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
@@ -290,6 +288,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-2, 22);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -313,9 +312,9 @@
             this.panel1.Controls.Add(this.J_0_TEXT);
             this.panel1.Controls.Add(this.SKILLICON);
             this.panel1.Controls.Add(this.panel10);
-            this.panel1.Location = new System.Drawing.Point(263, 80);
+            this.panel1.Location = new System.Drawing.Point(262, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(903, 762);
+            this.panel1.Size = new System.Drawing.Size(904, 762);
             this.panel1.TabIndex = 97;
             // 
             // AnimationExportButton

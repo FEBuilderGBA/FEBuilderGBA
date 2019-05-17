@@ -36,6 +36,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
@@ -304,7 +305,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -543,6 +543,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1155, 34);
             this.panel3.TabIndex = 91;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(1, -1);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 34);
+            this.label2.TabIndex = 158;
+            this.label2.Text = "条件:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReloadListButton
             // 
@@ -3889,7 +3900,7 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(259, 43);
+            this.panel5.Location = new System.Drawing.Point(259, 42);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(906, 34);
@@ -3931,23 +3942,13 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-2, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
             this.AddressList.Size = new System.Drawing.Size(246, 742);
             this.AddressList.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(1, -1);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 34);
-            this.label2.TabIndex = 158;
-            this.label2.Text = "条件:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SkillConfigFE8NSkillForm
             // 

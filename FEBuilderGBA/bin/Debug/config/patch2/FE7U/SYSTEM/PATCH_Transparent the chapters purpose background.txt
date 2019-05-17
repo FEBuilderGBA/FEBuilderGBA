@@ -1,0 +1,23 @@
+NAME=章の目的の背景を透過させる
+NAME.en=Transparent the chapter's purpose background.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=7743
+
+
+OFF:0x085D7C=0x3F 0xF0 0x1A 0xFD
+OFF:0x085D9A=0x3F 0xF0 0x0B 0xFD
+TRA:0x085D7C=0xC0 0x46 0xC0 0x46
+TRA:0x085D9A=0xC0 0x46 0xC0 0x46
+
+INFO=章のクリア目的の背景を透過にします。
+
+COMBO=ディフォルト|OFF|透過処理|TRA
+COMBO.en=Default|OFF|Transparent|TRA
+INFO.en=Clear the chapter Make the desired background transparent.
+NAME.zh=使章节目的背景透明。
+INFO.zh=清除章节使所需背景透明。
+COMBO.zh=默认。|OFF|透明处理。|TRA
