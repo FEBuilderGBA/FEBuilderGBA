@@ -189,8 +189,8 @@ A700XXXXYYYYWWWWZZZZ0000	Shows_text_with_specific_bubble_type_and_position[XX::B
 3E00000039A90708	Do not display unit image of map	{U}
 3C00000049B40708	Display message frame for CG scene	{J}
 3E000000D5A90708	Display message frame for CG scene	{U}
-3C000000BDEB0008	Disappear face grave and speech ball of conversation scene	{J}
-3E000000B1EC0008	Disappear face grave and speech ball of conversation scene	{U}
+3C000000BDEB0008	Disappear portrait grave and speech of conversation scene	{J}
+3E000000B1EC0008	Disappear portrait grave and speech of conversation scene	{U}
 3D000000C9F50708	Ancient fire dragon arrangement (in pixels)	{J}
 3F0000000DE80708	Ancient fire dragon arrangement (in pixels)	{U}
 3C000000A1B70708	End of shaking the screen (earthquake)	{MAPEFFECT}	{J}
@@ -244,7 +244,7 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 3C000000BDE30708	Stop an earthquake	{MAPEFFECT}	{J}
 3C000000C9B70708	Stop shaking	{J}
 3C000000F1E20708	White out mainly Sogna	{FADE}	{J}
-3C00000009EC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{J}
+3C00000009EC0008	To turn into the CG scene, turn off portrait grass and balloon	{CLEAR}	{J}
 3C0000001DE70708	Ninian goes back to people	{J}
 3C00000025E60708	Short flash	{FADE}	{J}
 3C0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{J}
@@ -260,7 +260,7 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 3E00000089D60708 	Stop an earthquake	{MAPEFFECT}	{U}
 3E00000055AD0708	Stop shaking	{MAPEFFECT}	{U}
 3E000000BDD50708	White out mainly Sogna	{FADE}	{U}
-3E000000FDEC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{U}
+3E000000FDEC0008	To turn into the CG scene, turn off portrait grass and balloon	{CLEAR}	{U}
 3E000000CDD90708	Ninian goes back to people	{U}
 3E000000D5D80708	Short flash	{FADE}	{U}
 3E0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{U}
@@ -454,8 +454,8 @@ AF000000	Erase the image displayed on the world map	{WMAP}	{J}
 AE000000	Erase the image displayed on the world map	{WMAP}	{U}
 B2000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
 B1000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
-B3000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{J}
-B2000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{U}
+B3000000XX00000000YY0000ZZ000000	Erase portrait map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{J}
+B2000000XX00000000YY0000ZZ000000	Erase portrait map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{U}
 B4000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{J}
 B3000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{U}
 B6000000	Display message frame of world map (on screen)(TEXTBOXTOTOP)	{WMAPTEXT}	{J}

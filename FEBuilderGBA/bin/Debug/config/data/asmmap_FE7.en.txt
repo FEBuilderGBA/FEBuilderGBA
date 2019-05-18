@@ -4731,3 +4731,19 @@
 0827C008	&PALETTE	efxFirebreathBGCOLPalette	{U}
 0826A7E8	&PALETTE16	efxLiveSomePalette	{U}
 
+0807C658	Creates the Fire Ring effect, and causes the screen to redden	{J}
+0807BCEC	Terminate "Unk08CA762C" Procs	{J}
+0807C1FC	Terminate "Dragon's flame effect" Procs	{J}
+0807B70C	Creates shaking screen	{J}
+0807BCD8	Run "Unk08CA762C" Procs	{J}
+0807CD48	Goto Label 0x00 "Unk08CA77AC" Procs	{J}
+0807CD60	Goto Label 0x01 "Unk08CA77AC" Procs	{J}
+
+0807BBE4	Creates the Fire Ring effect, and causes the screen to redden	{U}
+0807B278	Terminate "Unk08CA762C" Procs	{U}
+0807B788	Terminate "Dragon's flame effect" Procs	{U}
+0807AC98	Creates shaking screen	{U}
+0807B264	Run "Unk08CA762C" Procs	{U}
+0807C2D4	Goto Label 0x00 "Unk08CA77AC" Procs	{U}
+0807C2EC	Goto Label 0x01 "Unk08CA77AC" Procs	{U}
+0807C304	Terminate "Unk08CA77AC" Procs	{U}
