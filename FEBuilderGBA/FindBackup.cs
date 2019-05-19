@@ -84,18 +84,40 @@ namespace FEBuilderGBA
 
         public bool Scan(string dir,string prefix)
         {
+            uint smallest_rom_size = U.toOffset( Program.ROM.RomInfo.extends_address());
+
             string[] files = U.Directory_GetFiles_Safe(dir, "*", SearchOption.TopDirectoryOnly);
             foreach (string filepath in files)
             {
-                string ext = U.GetFilenameExt(filepath);
-                if (!(ext == ".GBA" || ext == ".7Z" || ext == ".BIN" || ext == ".UPS"))
-                {
-                    continue;
-                }
-
                 string filename = Path.GetFileNameWithoutExtension(filepath);
                 if (filename.IndexOf(prefix) != 0)
                 {//prefixを保持していない.
+                    continue;
+                }
+
+                string ext = U.GetFilenameExt(filepath);
+                if (ext == ".GBA" || ext == ".BIN")
+                {
+                    long filesize = U.GetFileSize(filepath);
+                    if (filesize < smallest_rom_size)
+                    {//ファイルサイズが小さすぎる
+                        continue;
+                    }
+                    if (filesize > 32 * 1024 * 1024)
+                    {//ファイルサイズが大きすぎる
+                        continue;
+                    }
+                }
+                else if (ext == ".7Z" || ext == ".UPS")
+                {
+                    long filesize = U.GetFileSize(filepath);
+                    if (filesize <= 10)
+                    {//ファイルサイズが小さすぎる
+                        continue;
+                    }
+                }
+                else
+                {//不明なファイル
                     continue;
                 }
 
