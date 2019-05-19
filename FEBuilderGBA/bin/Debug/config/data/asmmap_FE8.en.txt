@@ -12517,3 +12517,5 @@ r3=X tile position of menu of right	{U}
 08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
 08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
 086700D4	&PALETTE16	efxLiveSomePalette	{U}
+0803190C	Arena.	Selection of opponents.	{U}
+08031858	Arena.	Selection of opponents.	{J}

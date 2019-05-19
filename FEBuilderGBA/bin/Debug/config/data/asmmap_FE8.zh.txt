@@ -12472,3 +12472,5 @@ r3=X tile position of menu of the right	{U}
 08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
 08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
 086700D4	&PALETTE16	efxLiveSomePalette	{U}
+0803190C	竞技场。	选择对手。	{U}
+08031858	竞技场。	选择对手。	{J}

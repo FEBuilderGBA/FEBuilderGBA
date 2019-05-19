@@ -7450,6 +7450,18 @@ namespace FEBuilderGBA
             }
             formst.Form.Close();
         }
+        public static Form GetForm<Type>()
+        {
+            FormSt formst;
+            int hashCode = typeof(Type).GetHashCode();
+            if (!Forms.TryGetValue(hashCode, out formst)
+                || formst.Form.IsDisposed
+                )
+            {//存在しない
+                return null;
+            }
+            return formst.Form;
+        }
 
         public static void ReOpenForm<Type>()
         {

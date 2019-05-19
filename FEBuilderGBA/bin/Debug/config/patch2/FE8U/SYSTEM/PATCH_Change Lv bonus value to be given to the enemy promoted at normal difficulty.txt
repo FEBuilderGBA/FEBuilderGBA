@@ -1,0 +1,17 @@
+NAME=難易度普通の時に、敵の上級職に付与するLvボーナス値
+NAME.en=Change Lv bonus value to be given to the enemy's promoted at normal difficulty
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+AUTHOR=7743
+
+ADDRESS=0x37B52
+HEX=false
+
+INFO=敵がクラス成長するとき、上級職は、Lvボーナスがもらえます。\r\n通常モードは、Lv+9で、ハードモードは、+19です。\r\nこの時の、通常モードのLvボーナスを変更します。
+
+INFO.en=As enemies grow in class, senior positions receive an Lv bonus.\r\nThe normal mode is Lv + 9 and the hard mode is +19.\r\nAt this time, change the Lv bonus of normal mode.
+NAME.zh=难度等级Lv奖励值在正常时间给予敌人的高级职业。
+INFO.zh=随着敌人在课堂上成长，高级职位获得Lv奖金。\r\n正常模式为Lv + 9，硬模式为+19。\r\n此时，更改正常模式的Lv加值。

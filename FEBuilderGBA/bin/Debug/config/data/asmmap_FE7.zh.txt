@@ -4728,3 +4728,6 @@
 0807C2D4	Goto Label 0x00 "Unk08CA77AC" Procs	{U}
 0807C2EC	Goto Label 0x01 "Unk08CA77AC" Procs	{U}
 0807C304	Terminate "Unk08CA77AC" Procs	{U}
+//This data is made with the aim of being readable by machine fast.
+0802EFE4	竞技场。	选择对手。	{J}
+0802EB18	竞技场。	选择对手。	{U}

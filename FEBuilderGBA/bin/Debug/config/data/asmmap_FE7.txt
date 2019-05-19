@@ -5047,3 +5047,8 @@
 0807C2D4	Goto Label 0x00 "Unk08CA77AC" Procs	{U}
 0807C2EC	Goto Label 0x01 "Unk08CA77AC" Procs	{U}
 0807C304	Terminate "Unk08CA77AC" Procs	{U}
+0802EFE4	闘技場	相手の選出	{J}
+0802EB18	闘技場	相手の選出	{U}
+
+08034d44	GetCurrentPromotedLevelBonus	{J}
+0803486c	GetCurrentPromotedLevelBonus	{U}

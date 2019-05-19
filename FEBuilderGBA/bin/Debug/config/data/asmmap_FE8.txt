@@ -12513,3 +12513,5 @@
 08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
 08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
 086700D4	&PALETTE16	efxLiveSomePalette	{U}
+0803190C	闘技場	相手の選出	{U}
+08031858	闘技場	相手の選出	{J}
