@@ -227,8 +227,10 @@ namespace FEBuilderGBA
                 byte one = 0;
                 for (int x = 0; x < width; x++)
                 {
-                    byte a = Marshal.ReadByte(adr, (x + 0) + bmpData.Stride * y);
-                    one = (byte)(one | ((a & 0x03) << (n * 2)));
+                    byte a = Marshal.ReadByte(adr, x + bmpData.Stride * y);
+                    a = (byte)(a & 0x03);
+                    a = (byte)(a << (n * 2));
+                    one = (byte)(one | a);
                     n++;
                     if (n >= 4)
                     {

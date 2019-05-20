@@ -360,9 +360,19 @@ namespace FEBuilderGBA
             }
 
             bool IsItemFont = (this.FontType.SelectedIndex == 0);
+            int w = (int)FontWidth.Value;
 
             Color bgcolor = GetFontColor(IsItemFont);
-            Bitmap paletteHint = ImageUtil.ByteToImage4(16, 0xD, new byte[64], 0, bgcolor);
+            Bitmap paletteHint;
+            if (IsItemFont)
+            {
+                paletteHint = ImageUtil.ByteToImage4ZH(w + 1, 0xD, new byte[64], 0, bgcolor);
+            }
+            else
+            {
+                paletteHint = ImageUtil.ByteToImage4ZH(w, 0xD, new byte[64], 0, bgcolor);
+            }
+
             Bitmap bitmap = ImageUtil.LoadAndCheckPaletteUI(this
                 , paletteHint
                 , 0, 0);

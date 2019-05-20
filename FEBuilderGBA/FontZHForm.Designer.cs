@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.FontType = new System.Windows.Forms.ComboBox();
-            this.SearchChar = new FEBuilderGBA.TextBoxEx();
             this.SearchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,26 +38,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ZoomComboBox = new System.Windows.Forms.ComboBox();
             this.FontWidth = new System.Windows.Forms.NumericUpDown();
-            this.FontSample = new FEBuilderGBA.TextBoxEx();
             this.label4 = new System.Windows.Forms.Label();
-            this.FontPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.ImportButton = new System.Windows.Forms.Button();
-            this.ExportButton = new System.Windows.Forms.Button();
-            this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.UseFontNameButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.UseFontNameTextEdit = new FEBuilderGBA.TextBoxEx();
             this.AutoGenbutton = new System.Windows.Forms.Button();
+            this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
+            this.ImportButton = new System.Windows.Forms.Button();
+            this.ExportButton = new System.Windows.Forms.Button();
+            this.FontSample = new FEBuilderGBA.TextBoxEx();
+            this.FontPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SearchChar = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FontWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FontPictureBox)).BeginInit();
-            this.customColorGroupBox2.SuspendLayout();
             this.customColorGroupBox1.SuspendLayout();
+            this.customColorGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // FontType
@@ -74,17 +74,6 @@
             this.FontType.Size = new System.Drawing.Size(380, 26);
             this.FontType.TabIndex = 0;
             this.FontType.SelectedIndexChanged += new System.EventHandler(this.FontType_SelectedIndexChanged);
-            // 
-            // SearchChar
-            // 
-            this.SearchChar.ErrorMessage = "";
-            this.SearchChar.Location = new System.Drawing.Point(242, 46);
-            this.SearchChar.Margin = new System.Windows.Forms.Padding(2);
-            this.SearchChar.Name = "SearchChar";
-            this.SearchChar.Placeholder = "";
-            this.SearchChar.Size = new System.Drawing.Size(100, 25);
-            this.SearchChar.TabIndex = 1;
-            this.SearchChar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchChar_KeyDown);
             // 
             // SearchButton
             // 
@@ -202,17 +191,6 @@
             this.FontWidth.TabIndex = 38;
             this.FontWidth.ValueChanged += new System.EventHandler(this.FontWidth_ValueChanged);
             // 
-            // FontSample
-            // 
-            this.FontSample.ErrorMessage = "";
-            this.FontSample.Location = new System.Drawing.Point(242, 16);
-            this.FontSample.Margin = new System.Windows.Forms.Padding(2);
-            this.FontSample.Name = "FontSample";
-            this.FontSample.Placeholder = "";
-            this.FontSample.Size = new System.Drawing.Size(310, 25);
-            this.FontSample.TabIndex = 37;
-            this.FontSample.TextChanged += new System.EventHandler(this.FontSample_TextChanged);
-            // 
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -223,16 +201,6 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "サンプル";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FontPictureBox
-            // 
-            this.FontPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.FontPictureBox.Location = new System.Drawing.Point(40, 50);
-            this.FontPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.FontPictureBox.Name = "FontPictureBox";
-            this.FontPictureBox.Size = new System.Drawing.Size(512, 126);
-            this.FontPictureBox.TabIndex = 35;
-            this.FontPictureBox.TabStop = false;
             // 
             // label3
             // 
@@ -255,41 +223,6 @@
             this.WriteButton.Text = "書き込み";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
-            // 
-            // ImportButton
-            // 
-            this.ImportButton.Location = new System.Drawing.Point(31, 33);
-            this.ImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(199, 30);
-            this.ImportButton.TabIndex = 92;
-            this.ImportButton.Text = "画像読込";
-            this.ImportButton.UseVisualStyleBackColor = true;
-            this.ImportButton.Visible = false;
-            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.Location = new System.Drawing.Point(248, 33);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(175, 30);
-            this.ExportButton.TabIndex = 91;
-            this.ExportButton.Text = "画像取出";
-            this.ExportButton.UseVisualStyleBackColor = true;
-            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
-            // 
-            // customColorGroupBox2
-            // 
-            this.customColorGroupBox2.BorderColor = System.Drawing.Color.Empty;
-            this.customColorGroupBox2.Controls.Add(this.ImportButton);
-            this.customColorGroupBox2.Controls.Add(this.ExportButton);
-            this.customColorGroupBox2.Location = new System.Drawing.Point(12, 574);
-            this.customColorGroupBox2.Name = "customColorGroupBox2";
-            this.customColorGroupBox2.Size = new System.Drawing.Size(568, 80);
-            this.customColorGroupBox2.TabIndex = 39;
-            this.customColorGroupBox2.TabStop = false;
-            this.customColorGroupBox2.Text = "インポート/エクスポート";
             // 
             // customColorGroupBox1
             // 
@@ -352,6 +285,73 @@
             this.AutoGenbutton.UseVisualStyleBackColor = true;
             this.AutoGenbutton.Click += new System.EventHandler(this.AutoGenbutton_Click);
             // 
+            // customColorGroupBox2
+            // 
+            this.customColorGroupBox2.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox2.Controls.Add(this.ImportButton);
+            this.customColorGroupBox2.Controls.Add(this.ExportButton);
+            this.customColorGroupBox2.Location = new System.Drawing.Point(12, 574);
+            this.customColorGroupBox2.Name = "customColorGroupBox2";
+            this.customColorGroupBox2.Size = new System.Drawing.Size(568, 80);
+            this.customColorGroupBox2.TabIndex = 39;
+            this.customColorGroupBox2.TabStop = false;
+            this.customColorGroupBox2.Text = "インポート/エクスポート";
+            // 
+            // ImportButton
+            // 
+            this.ImportButton.Location = new System.Drawing.Point(31, 33);
+            this.ImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(199, 30);
+            this.ImportButton.TabIndex = 92;
+            this.ImportButton.Text = "画像読込";
+            this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.Visible = false;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.Location = new System.Drawing.Point(248, 33);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(175, 30);
+            this.ExportButton.TabIndex = 91;
+            this.ExportButton.Text = "画像取出";
+            this.ExportButton.UseVisualStyleBackColor = true;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
+            // FontSample
+            // 
+            this.FontSample.ErrorMessage = "";
+            this.FontSample.Location = new System.Drawing.Point(242, 16);
+            this.FontSample.Margin = new System.Windows.Forms.Padding(2);
+            this.FontSample.Name = "FontSample";
+            this.FontSample.Placeholder = "";
+            this.FontSample.Size = new System.Drawing.Size(310, 25);
+            this.FontSample.TabIndex = 37;
+            this.FontSample.TextChanged += new System.EventHandler(this.FontSample_TextChanged);
+            // 
+            // FontPictureBox
+            // 
+            this.FontPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.FontPictureBox.Location = new System.Drawing.Point(40, 50);
+            this.FontPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FontPictureBox.Name = "FontPictureBox";
+            this.FontPictureBox.Size = new System.Drawing.Size(512, 126);
+            this.FontPictureBox.TabIndex = 35;
+            this.FontPictureBox.TabStop = false;
+            // 
+            // SearchChar
+            // 
+            this.SearchChar.ErrorMessage = "";
+            this.SearchChar.Location = new System.Drawing.Point(242, 46);
+            this.SearchChar.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchChar.Name = "SearchChar";
+            this.SearchChar.Placeholder = "";
+            this.SearchChar.Size = new System.Drawing.Size(100, 25);
+            this.SearchChar.TabIndex = 1;
+            this.SearchChar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchChar_KeyDown);
+            // 
             // FontZHForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -372,10 +372,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FontWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FontPictureBox)).EndInit();
-            this.customColorGroupBox2.ResumeLayout(false);
             this.customColorGroupBox1.ResumeLayout(false);
             this.customColorGroupBox1.PerformLayout();
+            this.customColorGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FontPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
