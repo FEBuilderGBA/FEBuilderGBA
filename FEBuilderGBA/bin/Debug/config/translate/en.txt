@@ -6349,6 +6349,9 @@ Could not write address ({1}) to PLIST ({0})
 :マップ変化に割り当てを拒否されました。MAPID:{0}
 The Tile Changes was refused assignment.MAPID: {0}.
 
+:現在マップエディタで表示されているマップの、タイル変化データが変更されました。\r\n作成中のマップを無視して、再読み込みしてもよろしいですか？\r\n\r\n「はい」の場合は、再読み込みします。\r\n「いいえ」の場合は、何もしません。自分でマップエディタを閉じて、再読み込みしてください。
+The tile change data of the map currently displayed in the map editor has changed.\r\nAre you sure you want to ignore the map you are creating and reload it? \r\n\r\nIf "Yes\\r\nIf "No\Close the map editor yourself and reload.
+
 :サイズ変更
 Resize
 
@@ -11277,6 +11280,15 @@ Flags used in the chapter.
 
 :。
 。
+
+:tranInputがありません
+There is no tranInput.
+
+:翻訳データがnullになりました。\r\nURL:{0}\r\nSRC:{1}
+Translation data is null.\r\nURL: {0}.\r\nSRC: {1}.
+
+:山を食べる
+Eat the mountain.
 
 :アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
 You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile and might break the rom.

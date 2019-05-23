@@ -436,6 +436,7 @@ namespace FEBuilderGBA
                 }
 
                 TranslateGoogle engine = new TranslateGoogle();
+//                TranslateMiraiHonyaku engine = new TranslateMiraiHonyaku();
                 string transline = engine.Trans(oneline, from, to);
 
                 if (use0001)

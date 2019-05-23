@@ -3904,7 +3904,7 @@ namespace FEBuilderGBA
             return UserAgent;
         }
 
-        static HttpWebRequest HttpMakeRequest(string url, string referer)
+        static HttpWebRequest HttpMakeRequest(string url, string referer, System.Net.CookieContainer cookie = null)
         {
             ServicePointManager.ServerCertificateValidationCallback = OnRemoteCertificateValidationCallback;
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //TLS 1.2 
@@ -3926,6 +3926,11 @@ namespace FEBuilderGBA
             if (referer != "")
             {
                 request.Referer = referer;
+            }
+            if (cookie != null)
+            {
+                request.CookieContainer = new System.Net.CookieContainer();
+                request.CookieContainer.Add(cookie.GetCookies(request.RequestUri));
             }
             return request;
         }
@@ -4048,9 +4053,9 @@ namespace FEBuilderGBA
         }
 
         //httpでそこそこ怪しまれずに通信する
-        public static string HttpGet(string url,string referer = "")
+        public static string HttpGet(string url, string referer = "", System.Net.CookieContainer cookie = null)
         {
-            HttpWebRequest request = HttpMakeRequest(url,referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
             string r = "";
 
             WebResponse rsp = request.GetResponse();
@@ -4063,12 +4068,18 @@ namespace FEBuilderGBA
             }
             rsp.Close();
 
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
+
             return r;
         }
 
-        public static void HttpDownload(string savefilename, string url, string referer = "", InputFormRef.AutoPleaseWait pleaseWait = null)
+        public static void HttpDownload(string savefilename, string url, string referer = "", InputFormRef.AutoPleaseWait pleaseWait = null, System.Net.CookieContainer cookie = null)
         {
-            HttpWebRequest request = HttpMakeRequest(url, referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
 
             WebResponse rsp = request.GetResponse();
             using (Stream output = File.OpenWrite(savefilename))
@@ -4098,8 +4109,14 @@ namespace FEBuilderGBA
             }
 
             rsp.Close();
+
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
         }
-        public static string HttpPost(string url, Dictionary<string,string> args, string referer = "")
+        public static string HttpPost(string url, Dictionary<string, string> args, string referer = "", System.Net.CookieContainer cookie = null)
         {
             bool isFirst = true;
             StringBuilder sb = new StringBuilder();
@@ -4118,7 +4135,7 @@ namespace FEBuilderGBA
             string postArgs = sb.ToString();
             byte[] data = Encoding.ASCII.GetBytes(postArgs);
 
-            HttpWebRequest request = HttpMakeRequest(url, referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = data.Length;
@@ -4137,6 +4154,12 @@ namespace FEBuilderGBA
                 stm.Close();
             }
             rsp.Close();
+
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
 
             return r;
         }
