@@ -1650,6 +1650,31 @@ namespace FEBuilderGBA
                 InputFormRef.ShowWriteNotifyAnimation(this.SelfForm, U.toOffset(this.IMAGEPointer));
             };
         }
+        public static string SaveDialogPngOrGIF(InputFormRef ifr)
+        {
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("PNG|*.png|アニメGIF|*.gif|All files|*");
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            save.AddExtension = true;
+            Program.LastSelectedFilename.Load(ifr.SelfForm, "", save, ifr.MakeSaveImageFilename());
+
+            DialogResult dr = save.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return "";
+            }
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return "";
+            }
+            string filename = save.FileNames[0];
+            Program.LastSelectedFilename.Save(ifr.SelfForm, "", save);
+
+            return filename;
+        }
 
     }
 }

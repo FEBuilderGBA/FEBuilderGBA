@@ -235,8 +235,50 @@ namespace FEBuilderGBA
 
             int palette_type = X_PALETTE.SelectedIndex;
 
-            Bitmap bitmap = LoadWaitUnitIcon(pic_address, palette_type, b2);
-            ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename());
+            string filename = ImageFormRef.SaveDialogPngOrGIF(InputFormRef);
+            if (filename == "")
+            {
+                return;
+            }
+
+            string ext = U.GetFilenameExt(filename);
+            if (ext == ".GIF")
+            {
+                bool r = SaveAnimeGif(filename, pic_address, palette_type, b2);
+                if (!r)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Bitmap bitmap = LoadWaitUnitIcon(pic_address, palette_type, b2);
+                ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
+                U.BitmapSave(bitmap, filename);
+            }
+
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(filename);
+        }
+
+        bool SaveAnimeGif(string filename, uint pic_address, int palette_type, byte b2)
+        {
+            List<ImageUtilAnimeGif.Frame> bitmaps = new List<ImageUtilAnimeGif.Frame>();
+            for (int showFrame = 0; showFrame < 3; showFrame++)
+            {
+                Bitmap bitmap = DrawWaitUnitIcon(pic_address, b2, showFrame, palette_type, false);
+                ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
+                uint wait = 10;
+                if (showFrame == 0)
+                {
+                    wait = 30;
+                }
+                bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
+            }
+
+            //アニメgif生成
+            ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps);
+            return true;
         }
 
         private void ImportButton_Click(object sender, EventArgs e)

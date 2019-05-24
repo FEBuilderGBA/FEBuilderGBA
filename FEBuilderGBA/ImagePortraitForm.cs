@@ -1071,28 +1071,13 @@ namespace FEBuilderGBA
                 return;
             }
 
-            string title = R._("保存するファイル名を選択してください");
-            string filter = R._("PNG|*.png|アニメGIF|*.gif|All files|*");
-
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = title;
-            save.Filter = filter;
-            save.AddExtension = true;
-            Program.LastSelectedFilename.Load(this, "", save, InputFormRef.MakeSaveImageFilename());
-
-            DialogResult dr = save.ShowDialog();
-            if (dr != DialogResult.OK)
+            string filename = ImageFormRef.SaveDialogPngOrGIF(InputFormRef);
+            if (filename == "")
             {
                 return;
             }
-            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
-            {
-                return;
-            }
-            string filename = save.FileNames[0];
-            Program.LastSelectedFilename.Save(this, "", save);
 
-            string ext = U.GetFilenameExt(save.FileName);
+            string ext = U.GetFilenameExt(filename);
             if (ext == ".GIF")
             {
                 bool r = SaveAnimeGif(filename, (uint)this.AddressList.SelectedIndex);
