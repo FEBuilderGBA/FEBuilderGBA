@@ -3406,6 +3406,9 @@ Portrait Editor
 :顔画像で nullが1000個連続して出てきたので探索を打ち切りました.
 Since 1000 nulls came out consecutively in the Portrait, search was aborted.
 
+:PNG|*.png|アニメGIF|*.gif|All files|*
+PNG|*.png|Anime GIF|*.gif|All files|*
+
 :口
 Mouth
 
@@ -11286,9 +11289,6 @@ There is no tranInput.
 
 :翻訳データがnullになりました。\r\nURL:{0}\r\nSRC:{1}
 Translation data is null.\r\nURL: {0}.\r\nSRC: {1}.
-
-:山を食べる
-Eat the mountain.
 
 :アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
 You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile and might break the rom.

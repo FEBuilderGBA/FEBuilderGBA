@@ -134,9 +134,6 @@ namespace FEBuilderGBA
 #if DEBUG
         public static void TEST_TranslateMiraiHonyaku()
         {
-//            string q = "山を食べる";
-//            TranslateMiraiHonyaku t = new TranslateMiraiHonyaku();
-//            string e = t.Trans(q,"ja","en");
         }
 #endif
     }

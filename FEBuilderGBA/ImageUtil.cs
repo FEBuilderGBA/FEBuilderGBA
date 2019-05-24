@@ -347,6 +347,7 @@ namespace FEBuilderGBA
 
             //BITMAP生成.
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
+
             //パレットの読込.
             pic.Palette = ByteToPalette(pic.Palette, palette, palette_pos);
             if (image_pos < 0) 
