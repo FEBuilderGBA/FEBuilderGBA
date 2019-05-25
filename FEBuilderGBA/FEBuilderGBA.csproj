@@ -1924,7 +1924,6 @@
     <Compile Include="FE8SpellMenuExtendsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TranslateMiraiHonyaku.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />

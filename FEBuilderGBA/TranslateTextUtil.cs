@@ -179,6 +179,8 @@ namespace FEBuilderGBA
                     key = sp[0];
                     value = sp[1];
                 }
+                key = key.Replace("\\r\\n", "\r\n");
+                value = value.Replace("\\r\\n", "\r\n");
 
                 key = key.ToUpper();
                 if (dic.ContainsKey(key))
@@ -437,7 +439,6 @@ namespace FEBuilderGBA
                 }
 
                 TranslateGoogle engine = new TranslateGoogle();
-//                TranslateMiraiHonyaku engine = new TranslateMiraiHonyaku();
                 string transline = engine.Trans(oneline, from, to);
 
                 if (use0001)
