@@ -840,6 +840,7 @@ Baldr
 オルン	Orun
 モルドレッド	Mordred
 ミルディン	Myrddin
+カルド	Caldo
 運命の息吹	Dawn of Destiny
 ベルンの王女	The Princess of Bern
 後れてきた者	Latecomer's Sorrow
@@ -4441,6 +4442,28 @@ and defeating an enemy.
 バルタン	Baltan
 ゴースト	Ghost
 　捕獲	 Capture
+　『大盾』（技％）\r\n相手の物理攻撃を半減する	Pavise (Lv%)\r\nReduces physical damage by half.
+　『再動』（幸運％）\r\n行動終了後にもう一度行動ができる	Re-Move (Luck%)\r\nAct again after completing an action.
+　『疾風迅雷』\r\n敵撃破後に１度だけ再行動	Galeforce\r\nAct again after defeating an\r\nenemy (once per turn).
+　『魔道特効』\r\n魔道士に対して与ダメージ＋１０	Magekiller\r\n+10 damage to magic users.
+　『魔物特効』\r\n魔物に対して与ダメージ＋１０	Slayer\r\n+10 damage to monsters.
+　『遠距離防御』\r\n受けた間接攻撃を６ダメージ減	Tower Shield\r\n-6 damage when attacked at range.
+　『攻め立て』\r\n自分から攻めると先制追撃	Desperation\r\nFollow-up attacks will occur immediately.
+　『鬼神の一撃』\r\n自ら攻めると攻撃＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking
+　『金剛の一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
+　『持ち替え』\r\n反撃可能な武器を装備する	Shift\r\nCan change weapons when attacked\r\nif unable to counterattack.
+　『奥義の律動』\r\n３ターンに１回奥義が確定発動	Mysterious Rhythm\r\nOnce every 3 turns, skills occur\r\nat a 100% activation rate.
+　『神風招来』\r\n杖使用後に１度だけ再行動	Powerstaff\r\nTake another action after using\r\na staff (once per turn).
+　『突撃』\r\nＨＰと攻速が上回ると戦闘継続	Charge (HP%)\r\nInitiates another round of combat.
+　『風なぎ』\r\n自ら攻めると反撃阻止　追撃不可	Moonlight\r\nInstead of performing a follow-up attack,\r\nnegates the opponent's counterattack.
+　『近距離防御』\r\n受けた直接攻撃を６ダメージ減	Short Shield\r\n-6 damage when attacked up close.
+　『奮迅』\r\n戦闘後ＨＰ６減するが戦闘力上昇	Fury\r\nStr/Spd/Def/Res +2, but take\r\n6 damage after attacking.
+　『相性激化』\r\n武器相性の影響が２倍	Triangle Adept\r\nDoubles weapon traingle effects.
+奥義『天空』（ＬＶ％）\r\n敵の守備を８割減し与ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
+　『王の器』\r\nスキル発動率が１０％上昇	Skill 『Rightful King』\r\nIncreases skill activation by 10%.
+奥義『華炎』（技％）\r\n魔力か力の半分を攻撃力に加える	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
+　『神の器』\r\nスキル発動率が３０％上昇	Rightful God\r\n+30% to skill activation rate.
+　『プロミネンス』\r\n周囲５マスに範囲攻撃\r\nＨＰ１の敵は撃破する	Prominence\r\nRange attack on 5 squares around.
 攻速を落として攻撃し\r\n敵を倒せれば捕獲できます	Attack with slowing down attack speed\r\nYou can catch if can defeat the enemy
 　体当たり	 Shove
 相手を１マスだけ\r\n押し出します	Push an adjacent unit one\r\ntile away.
@@ -4597,3 +4620,8 @@ and defeating an enemy.
 剣の柄にジュウの機構を取り入れた武器
 パワーボウ	Power Bow
 力を増幅させる不思議な弓
+必殺Ｍ	Crit.M
+突撃Ｍ	Charge.M
+月光Ｍ	Luna.M
+太陽Ｍ	Sol.M
+強奪Ｍ	Despoil.M
