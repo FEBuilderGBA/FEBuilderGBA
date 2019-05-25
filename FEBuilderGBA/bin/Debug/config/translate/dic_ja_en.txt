@@ -2041,6 +2041,7 @@ HPの薬	HP Tonic
 白い理想	White Ideal
 黒い理想	Black Ideal
 青い理想	Blue Ideal
+黄き理想	Yellow Ideal
 ノーブル	Noble
 ノ‐ブルレイピア	Noble Rapier
 ノーブルレイピア	Noble Rapier
@@ -3548,7 +3549,7 @@ and defeating an enemy.
 エトルリア兵	Etrurian
 書で覚えた\r\nスキルを消します	Removes any skills\r\nlearned via manuals.
 祈りペンダント	Prayer Amlt
-祈りお守り	Prayer Amlt
+祈りのお守り	Prayer Amlt
 鉄の盾	Iron Shield
 ゾット団	Zot's
 銀の盾	Silv. Shield
@@ -3738,10 +3739,9 @@ and defeating an enemy.
 ３０ターン以内に全員離脱	Escape in 30 turns
 玉座の制圧	Seize throne
 ヴァルカン　と会話	Talk to Vulcan
-城門の制圧	Seize the castle\r\ngate
+城門の制圧	Seize the gate
 玉座の制圧	Seize throne
 敵部隊の全滅	Rout enemy
-城門の制圧	Seize the castle\r\ngate
 魔物の全滅	Rout monters
 ボス　ヒューゲルの撃破	Defeat Hyuuga
 主人公の１３ターン生存\r\n（またはハグロの撃破）	Survive for 13 turns,\r\nor defeat Haguro
@@ -4303,15 +4303,15 @@ and defeating an enemy.
 　『エリート』\r\n通常よりも多くの経験値を得る	Paragon\r\nEXP gain is doubled.
 奥義『太陽』（技％）\r\n与ダメージの半分を回復する	Sol (Skill%)\r\nRestore HP equal to half\r\nof damage dealt.
 奥義『月光』（技％）\r\n相手の守備を半減して攻撃	Luna (Skill%)\r\nHalve opponent's defense.
-奥義『流星』（ＬＶ％）\r\n目にもとまらぬ連続攻撃	Astra (Lv%)\r\nAttack 5 times at half damage.
+秘技『流星』（ＬＶ％）\r\n目にもとまらぬ連続攻撃	Astra (Lv%)\r\nAttack 5 times at half damage.
 奥義『鳴動』（技％）\r\nダメージに自分の体格を加算する	Colossus (Skill%)\r\nAdd Con to damage.
 奥義『復讐』（技％）\r\n減少したＨＰ半分をダメージに加算	Vengeance (Skill%)\r\nAdd half of lost HP to damage.
-奥義『天空』（ＬＶ％）\r\n敵の守備を８割減し　ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
+奥義『天空』（ＬＶ％）\r\n敵の守備を半減し　ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
 奥義『瞬殺』（特殊％）\r\n通常の５倍のダメージを与える	Shootout (Random%)\r\nDeal quintuple damage.
-　『怒り』\r\nＨＰが１ケタのとき必殺＋５０％	Wrath\r\nCrit +50% when HP is at 1.
+　『怒り』\r\nＨＰが１ケタのとき必殺＋５０	Wrath\r\nCrit +50% when HP is at 1.
 　『キャンセル』（技％）\r\n相手の反撃を封じる	Cancel\r\nNegates the opponent's counterattack.
-　『待ち伏せ』\r\n常に先制攻撃をおこなう	Ambush\r\nAlways attack first.
-　『見切り』\r\n相手の戦闘スキルを無効にする	Nihil\r\nIgnore opponent's combat skills.
+　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
+　『見切り』\r\n相手の戦闘スキルを無効化	Nihil\r\nIgnore opponent's combat skills.
 　『祈り』（幸運％）\r\n致命攻撃をＨＰ１で耐える	Miracle (Luck%)\r\nSurvive a fatal blow with 1 HP.
 　『再行動』（幸運％）\r\n行動終了後にもう一度行動ができる	Re-Move (Luck%)\r\nAct again after completing an action.
 　『カリスマ』\r\n３マス以内の味方の命中回避＋１０％	Charm\r\nAllies within 3 spaces gain +10 hit.
@@ -4337,8 +4337,8 @@ and defeating an enemy.
 　『メンテナンス』\r\n『盗み』と『担ぎ』を無効にする	Watchful\r\nCannot be captured or stolen from.
 『練達』\r\n自分への特効を無効にする	Nullify\r\nNegates effective damage.
 　『聖盾』（技％）\r\n魔法による攻撃を無効化	Aegis (Skill%)\r\nNullify a magical attack.
-奥義『華炎』（技％）\r\n物理攻撃では魔力の半分\r\n魔法攻撃では力の半分を加算	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
-『連撃防御』\r\n被追撃時、１回目以降の\r\nダメージを半減する	Bunker\r\nReduces follow-up damage received by half.
+奥義『華炎』（技％）\r\n魔力か力の半分を与ダメージに加える	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
+『連撃防御』\r\n２撃目以降を半減	Bunker\r\nReduces follow-up damage received by half.
 『虚無』\r\n取得する経験値が０になる	Void Curse\r\nUnit gives no experience\r\npoints upon being defeated.
 奥義『竜牙』（技％）\r\n相手に与えるダメージに\r\n攻撃力の半分を追加	Rend Heaven (Skill%)\r\nAdds half of the opponent's\r\nstrength to your attack.
 　『再移動』\r\n攻撃後に再移動が可能	Canto\r\nCan use remaining movement\r\nafter performing any action.
@@ -4347,14 +4347,14 @@ and defeating an enemy.
 『必殺』\r\n必殺率が１５％上昇する	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
 『攻め立て』\r\n自分の追撃を連続で行う	Desperation\r\nFollow-up attacks will occur immediately.
 『武器殺し』\r\n相手が特定の武器を装備している場合\r\n優位になれる補正が付く	Breaker\r\n+50 Hit/Avo against the\r\nspecified weapon.
-奥義『撃破』（技％）\r\n相手に与えるダメージを２倍する\r\n（必殺時は４倍）	Impale (Skill%)\r\nDeals double damage. Deals quadruple\r\ndamage if it will defeat the opponent.
+奥義『撃破』（技％）\r\nダメージ２倍の攻撃	Impale (Skill%)\r\nDeals double damage. Deals quadruple\r\ndamage if it will defeat the opponent.
 『生命吸収』\r\n自ら敵を撃破で最大ＨＰ半分回復	Lifetaker\r\nRestore 50%HP after attacking\r\nand defeating an enemy.
-『鬼神の一撃』\r\n自分から攻撃時に\r\n与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
+『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
 『死線』\r\n与ダメージと被ダメージ＋１０	Life and Death\r\nDamage dealt and recieved +10.
 『持ち替え』\r\n反撃時、その距離に見合った武器に\r\n持ち替えて戦闘を行う	Shift\r\nCan change weapons when attacked\r\nif unable to counterattack.
-奥義『ジハード』（ＬＶ％）\r\nＨＰ半減時、元の攻撃力の２倍のダメージと\r\n与ダメの半分を回復する\r\n	Crusade (Lv%)\r\nWhen HP is half or less, deal double damage\r\nand restore HP equal to damage dealt.
+奥義『ジハード』\r\n攻撃力２倍　与ダメージ半分回復	Crusade (Lv%)\r\nWhen HP is half or less, deal double damage\r\nand restore HP equal to damage dealt.
 『奥義の拍動』\r\n４ターンに１回だけ、\r\n確率スキルの発動率が１００％になる	Mysterious Rhythm\r\nOnce every 4 turns, skills occur\r\nat a 100% activation rate.
-奥義『月食』（技％）\r\n相手のＨＰを１に\r\n（撃破できる場合には発動しない）	Eclipse (Skill%)\r\nIf the attack does not defeat the\r\nopponent, it reduces their HP to 1.
+奥義『月食』（技％）\r\n相手のＨＰを１に	Eclipse (Skill%)\r\nIf the attack does not defeat the\r\nopponent, it reduces their HP to 1.
 ディール	Deil
 フレリア城	Castle Frelia
 イムの村	Ide
@@ -4409,13 +4409,18 @@ and defeating an enemy.
 丈夫で優れた性能を誇る\r\n特別な盾	+2 Defense and +3 Resistance.\r\nFor Lizzy only.
 スリープの剣	Sleep Sword
 サンダーソード	Levin Sword
+目的：玉座制圧	Seize throne
+目的：宝箱開く	Open the Chests
+多くアイテムをつる	Fish a lot of items
+アイテムをつる	Fish an item
+
 致命攻撃を必ずＨＰ１で耐える\r\n不思議なお守り	When held, survive a\r\nfatal blow with 1 HP.
-遠距離攻撃を得意とする戦車\r\n装備『弓』	Heavy tanks specialized in attacking\r\nfrom a long range. Equip: Ballistae.『遠距離防御』\r\n被間接攻撃時、受けるダメージー６	Tower Shield\r\n-6 damage when attacked at range.
+遠距離攻撃を得意とする戦車\r\n装備『弓』	Heavy tanks specialized in attacking\r\nfrom a long range. Equip: Ballistae.　『遠距離防御』\r\n遠距離攻撃を半減	Tower Shield\r\nhalf damage when attacked at range.
 『電撃戦闘』\r\n互いに２回連続攻撃	Continue\r\nDoubles the amount of\r\nrounds of all combat.
 『奮迅』\r\n戦闘時、大幅に強化されるが\r\n戦闘終了時にＨＰが６減少する	Fury\r\nStr/Spd/Def/Res +2, but take\r\n6 damage after attacking.
 『相性激化』\r\n３すくみの効果が２倍になる	Triangle Adept\r\nDoubles weapon traingle effects.
-『遠距離無効』\r\n敵の間接攻撃を無効化する	Tower Shield+\r\nNegates all ranged attacks.
-『神の器』\r\n自分のスキル発動率＋３０	Rightful God\r\n+30% to skill activation rate.
+『遠距離無効』\r\n遠距離攻撃を無効化	Tower Shield+\r\nNegates all ranged attacks.
+『神の器』\r\nスキル発動率を３０％上昇させる	Rightful God\r\n+30% to skill activation rate.
 ドラゴンシールド	Drg. Shield
 フェリクス	Phelix
 ワルキューレ	Valkyrie
@@ -4435,3 +4440,160 @@ and defeating an enemy.
 フラッグ	Flag
 バルタン	Baltan
 ゴースト	Ghost
+　捕獲	 Capture
+攻速を落として攻撃し\r\n敵を倒せれば捕獲できます	Attack with slowing down attack speed\r\nYou can catch if can defeat the enemy
+　体当たり	 Shove
+相手を１マスだけ\r\n押し出します	Push an adjacent unit one\r\ntile away.
+　突飛ばし	 Smite
+　ぶちかまし Smite
+相手を２マスだけ\r\n突き飛ばします	Push an adjacent unit two\r\ntiles away.
+　回り込み	 Pivot
+自分が味方の\r\n反対側の位置に移動する	Move to opposite side of\r\nan adjacent ally.
+　引き戻し	 Repos
+味方を自分の\r\n反対側の位置に移動させる	Move adjacent ally to this\r\nunit's opposite side.
+　入れ替え	 Swap
+自分と味方の\r\n位置を入れ替える	Swap positions with adjacent\r\nally.
+　演説	 Speech
+熱い理想を語り\r\n味方を再行動可能にします	Talking hot ideals\r\nyour allies to move again.
+　危険	Range
+　指南	Shinan
+攻略情報を\r\n表示します	Display capture information.
+守らないといけない旗	Flag that you must protect
+イリア騎士団	Ilia
+イリア騎士	Ilia
+北方の地イリアの\r\n傭兵騎士団	Mercenary knights of Ilia.
+ジュテ族	Djute
+　同行	 Refuge
+　『杖の達人』\r\nＨＰ回復杖の射程を伸ばす	Staff Savant\r\nIncrease maximum staff range by 1.
+　『守備隊形』\r\n戦闘で追撃が起こらない	Wary Fighter\r\nPrevents all follow-up attacks.
+　『魔物特効』\r\n魔物に対して常に特効	Slayer\r\nDeal effective damage to monsters.
+　『草なぎ』\r\n自分から攻撃したとき、追撃が絶対に\r\n出来ない代わりに相手の反撃を絶対に防ぐ	Moonlight\r\nInstead of performing a follow-up attack,\r\nnegates the opponent's counterattack.
+『王の器』\r\nスキル発動率を１０％上昇させる	Skill 『Rightful King』\r\nIncreases skill activation by 10%.
+　『カリスマ』\r\n３マス以内の味方の命中回避＋１０	Charm\r\nAllies within 3 spaces gain +10 hit.
+奥義『竜穽』（技％）\r\n攻撃力１．５倍で攻撃	Dragon Fang (Skill%)\r\nMultiplies damage by 1.5x.
+ノトス	Notos
+オルファン	Olfan
+ホウダイ	Battery
+装備するとスキル「待ち伏せ」を持つ剣
+　『必殺上昇』\r\n必殺率＋１５	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
+シュラム	Shrum
+別大陸の魔剣。守備と魔防＋５
+エネルギー弾	Energy bullet
+特殊なエネルギーが宿った不思議な弾丸
+使うと移動と体格以外が２アップします
+大盾Ｍ	Pavise.M
+使用するとスキル「大盾」を習得	Learning skill "Pavise" when used
+祈りＭ	Miracle.M
+使用するとスキル「祈り」を習得	Learning skill "Miracle" when used
+使用するとスキル「「祈り」を習得	Learning skill "Miracle" when used
+見切りＭ	Nihil.M
+使用するとスキル「見切り」を習得	Learning skill "Nihil" when used
+練達Ｍ	Nullify.M
+使用するとスキル「練達」を習得する	Learning skill "Nullify" when used
+キャンセルＭ	Cancel.M
+使用するとスキル「キャンセル」習得	Learning skill "Cancel" when used
+デルフィの守り	Delphi Shield
+ニニスの守護	Ninis's Grace
+味方１人の守備＋１０魔防＋１０
+キングスプルフ	King Seal
+アルスを\r\nクラスチェンジさせます
+リンカネ－ション	Linkation
+レベル１０以上の上級ユニットを\r\nクリーチャーに転生させます
+ロングシャイン	Long Shine
+遠くまで攻撃の届くシャイン
+鬼神の一撃Ｍ	Death Blow.M
+　『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
+恐怖Ｍ	Intimidate.M
+治癒Ｍ	Boon.M
+金ごうの一撃Ｍ	Armormed Blow.M
+　『金ごうの一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
+閃光のブレス
+まばゆい閃光で相手を殲滅する
+ふしぎなアメ	RareCandy
+拠点で使用します	Use at base
+リーダーバッジ	Leader Badge
+持っているとそれぞれ異なる\r\nリーダースキルを発動させれます
+魔物の爪	Monster's claw
+キャノンホウ	Cannon
+戦車の弾	Tank's bullets
+ペトロクラウド	Petrocloud
+ブリューナク	Brunak
+強者にのみにしか扱えない大型の槍
+ゴーストリング	Ghost Ring
+上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます
+ヘパイスの黒雷
+暗黒の雷で相手を攻撃する
+ヴンダーガスト	Vundergast
+大型の風魔法。速さ＋２
+妖刀かまいたち
+攻撃範囲がかなり広い刀。非常に貴重
+モンゴルの剣	MongolianSword
+モンゴルで作られた剣。当たると毒になる
+バサークダガー	Berserk Dagger
+攻撃が命中すると相手にバサークをかける
+女王の剣	Queen's Sword
+女王の加護により力が増幅された封印の剣
+まばゆいビームサーベル
+オデッセイの剣
+大型魔法「オデッセイ」を宿した剣
+ヘリオスの疾風
+大型の風魔法　飛行特攻
+テティスの氷石
+氷のつぶての雨を相手に降らせる
+アトラスの業火
+炎の竜を呼び覚まし相手に突撃する
+モンゴルの剣
+モンゴルで作られた剣。当たると毒になる
+フレイムロッド
+炎を宿した杖。魔法ではなく物理
+タワーシールド
+持つと守備を＋２にする盾
+投石	ThrowingStone
+投げれる石
+持っていると一度だけ祈りスキル発動	Miracle skill activation only once\r\nif you have one
+漆黒の斬鉄斧
+漆黒に覆われた斧。武器スキル『キャンセル』
+ラビアンローズ	La Vie en rose
+女性専用　ＨＰ成長率をアップさせる
+閃光の弓
+レイピアと同じ特攻効果を持つ弓
+バルダシールド
+そこそこ強い盾。守備＋５
+エリートの長弓	ParagonLongBow
+装備するとエリートのスキルが付く長弓
+見切りの盾	Nihil shield
+装備時見切りのスキルを得る盾　攻撃不可
+聖なる盾	Holy shield
+装備時聖盾のスキルを得る　攻撃不可
+重装の盾
+とても重くて硬い盾
+強運を呼ぶ盾
+装備時強運のスキルを得る盾　攻撃不可
+ヘルパニッシャ－	Hell Punisher
+地獄より舞い降りた剣　必殺無効
+グラムロック	Gram lock
+装備時　スキル連撃防御を得る　守備＋２
+雷神の弓
+必殺無効　体力を吸収する
+風神の弓
+必殺無効　毒を与える
+待ち伏せＭ	Ambush.M
+　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
+連続Ｍ	Adept.M
+エリートＭ	Paragon.M
+マージキラー	MageKiller
+魔法系ユニットに特攻を持つ弓
+クラウ・ソラス	Crow Soras
+相性反転効果のある魔法剣
+ヴォルケイトス	Volkeithos
+ヴォルケナ火山から発見された幻の槍
+エリートの剣	Paragon Sword
+装備するとスキル「エリート」を得る剣
+バルダアーマー	Balder Armor
+耐久に優れた鎧	Durable armor
+エイトセンシズ	EighthSense
+使うと移動と体格以外が２アップします
+ガンブレード	Gan Blade
+剣の柄にジュウの機構を取り入れた武器
+パワーボウ	Power Bow
+力を増幅させる不思議な弓
