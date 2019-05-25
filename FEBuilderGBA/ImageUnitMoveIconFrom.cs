@@ -228,10 +228,6 @@ namespace FEBuilderGBA
                 Bitmap bitmap = DrawMoveUnitIcon(pic_address, palette_type, showFrame);
                 ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
                 uint wait = 10;
-//                if (showFrame == 0)
-//                {
-//                    wait = 30;
-//                }
                 bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
             }
 

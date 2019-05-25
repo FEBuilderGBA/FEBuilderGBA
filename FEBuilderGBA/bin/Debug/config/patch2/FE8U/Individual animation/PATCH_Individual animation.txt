@@ -42,7 +42,7 @@ P4:BATTLEANIMEPOINTER.zh=战斗动画
 UPDATE_FROM_NAME=Individual animation
 
 INFO=FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n新規にアニメーションを定義した場合は、アニメ設定に0を指定してください。\r\nアニメ設定に0が指定されると、新規確保ボタンが出てきます。\r\n
-INFO.en=Edit the custom animation table patched in by "Character Custom Animation Table Installer."\r\nWhen defining a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new secure button appears.\r\n
+INFO.en=Edit the custom animation table patched in by "Character Custom Animation Table Installer."\r\nWhen defining a new animation, specify 0 for animation setting.\r\nWhen 0 is specified for the animation setting, a new secure button appears.\r\n\r\nAlias: Personal Animation
 INFO.zh=不要忘记在单位设置中为个人动画标志设置1。\r\n如果您定义了新动画，请将动画设置指定为0。\r\n当为动画设置指定0时，会出现一个新的保护按钮。\r\n
 
 AUTHOR=7743
