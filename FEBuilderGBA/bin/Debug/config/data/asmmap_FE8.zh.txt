@@ -9488,7 +9488,7 @@ r3=X tile position of menu of the right	{U}
 0803830C	战斗记录显示	{J}
 080381E0	战斗记录显示	{U}
 080BD02C	绘制捕获评估	结束	{J}
-080BCC90	设置屏幕背景以评估捕获	结束	我有一个bug。	{J}
+080BCC90	设置屏幕背景以评估捕获	结束	我有一个bug	{J}
 080BC044	显示Fin屏幕Procs启动	{J}
 08AC5558	&PALETTE	战略评估屏幕调色板	1	{J}
 08AC6C58	&PALETTE	战略评估屏幕调色板	2	{J}
@@ -11620,22 +11620,22 @@ r3=X tile position of menu of the right	{U}
 0808F270	DeleteSerifProcs	{U}
 0808F284	IsExistSerifProcs	{U}
 0808F2A0	GotoLabel0BySerifProcs	{U}
-080E1184	&LZ77	东西是TSA。	26	{U}
-080E1400	&LZ77	某事的图象。	1	{U}
-080E6564	&LZ77	东西是TSA。	26	{J}
-080E67E0	&LZ77	某事的图象。	1	{J}
+080E1184	&LZ77	东西是TSA	26	{U}
+080E1400	&LZ77	某事的图象	1	{U}
+080E6564	&LZ77	东西是TSA	26	{J}
+080E67E0	&LZ77	某事的图象	1	{J}
 02029D84	gpAISFirst	{J}
 08022f50	TradeCommandEffect2	{J}
 08022BD8	AttackCommandEffect_DrawFace	{U}
 08022BA0	AttackCommandEffect_DrawFace	{J}
-08023550	当我选择随餐菜单时。	列出所有物品清单。	{U}
-08023514	当我选择随餐菜单时。	列出所有物品清单。	{J}
-08073CE8	显示升级屏幕。	{U}
-08076170	显示升级屏幕。	{J}
-080BBF78	切换BGM（另一个命令No.6）。	r0=BGM号码：MUSIC。	{J}
-080B74CC	切换BGM（另一个命令No.6）。	r0=BGM号码：MUSIC。	{U}
-08021668	在事件效果结束时重绘地图。	{U}
-08021360	在事件效果结束时重绘地图。	{J}
+08023550	当我选择随餐菜单时	列出所有物品清单	{U}
+08023514	当我选择随餐菜单时	列出所有物品清单	{J}
+08073CE8	显示升级屏幕	{U}
+08076170	显示升级屏幕	{J}
+080BBF78	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{J}
+080B74CC	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{U}
+08021668	在事件效果结束时重绘地图	{U}
+08021360	在事件效果结束时重绘地图	{J}
 02017728	gBattleAnimeCounter
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
@@ -11712,98 +11712,96 @@ r3=X tile position of menu of the right	{U}
 04000300	Undocumented_PostBootFlag	{J}
 04000301	Undocumented_PowerDownControl	{J}
 08032114	UpdateMapAndUnit	{J}
-0807E160	绘制地图动画图形对话框。	{J}
-0807DFF0	用于管理地图动画帧的例程。	{J}
-0807DD70	在地图动画条形图上绘制数字。	{J}
+0807E160	绘制地图动画图形对话框	{J}
+0807DFF0	用于管理地图动画帧的例程	{J}
+0807DD70	在地图动画条形图上绘制数字	{J}
 080321C8	UpdateMapAndUnit	{U}
-0807BE1C	绘制地图动画图形对话框。	{U}
-0807BCA8	用于管理地图动画帧的例程。	{U}
-0807BA28	在地图动画条形图上绘制数字。	{U}
-0803581C	在屏幕底部显示一条消息。	BB功能。	{J}
-08035EDC	恢复示范的开始。	{J}
-08038320	清除塔楼或废墟时的战争记录显示。	{J}
-0804B1CC	显示项目选择菜单。	{J}
-08082354	使用石头时的效果2。	它与从事件指令调用的指令不同。	{J}
-080943D4	绘制从菜单中选择的单位画面。	{J}
-0809442C	显示动画设置单个动画设置屏幕。	{J}
-0809445C	绘制从菜单2中选择的单位画面。	{J}
-0809448C	绘制从菜单3中选择的单位画面。	{J}
-0809E124	从攻击推进屏幕调用的单元之间的项目交换。	{J}
-080A4868	让屏幕不自然地变亮。	{J}
-080AD1E0	显示MiniMap。	Non-Blocking	{J}
-080AD1F4	显示MiniMap。	Blocking	{J}
+0807BE1C	绘制地图动画图形对话框	{U}
+0807BCA8	用于管理地图动画帧的例程	{U}
+0807BA28	在地图动画条形图上绘制数字	{U}
+0803581C	在屏幕底部显示一条消息	BB功能	{J}
+08035EDC	恢复示范的开始	{J}
+0804B1CC	显示项目选择菜单	{J}
+08082354	使用石头时的效果2	它与从事件指令调用的指令不同	{J}
+080943D4	绘制从菜单中选择的单位画面	{J}
+0809442C	显示动画设置单个动画设置屏幕	{J}
+0809445C	绘制从菜单2中选择的单位画面	{J}
+0809448C	绘制从菜单3中选择的单位画面	{J}
+0809E124	从攻击推进屏幕调用的单元之间的项目交换	{J}
+080A4868	让屏幕不自然地变亮	{J}
+080AD1E0	显示MiniMap	Non-Blocking	{J}
+080AD1F4	显示MiniMap	Blocking	{J}
 080B2D94	Run FadeIn Procs	{J}
 080B2DB8	Run FadeOut Procs	{J}
 080B2E74	Run FadeIn Procs2	{J}
 080B2E98	Run FadeOut Procs2	{J}
-080B4B34	显示音响室屏幕。	{J}
-080BE718	显示字典屏幕。	{J}
-080BE794	显示设定画面。	{J}
-080BE810	显示世界地图的状态图。	{J}
-080CA1D4	显示OP字幕。	{J}
-080CB370	显示游戏标题OP。	{J}
-080CB390	显示游戏标题OP 2。	{J}
-080CB3A8	显示光环后显示OP。	{J}
-08035DDC	恢复示范的开始。	{U}
-080381F4	清除塔楼或废墟时的战争记录显示。	{U}
-0804A430	显示项目选择菜单。	{U}
-08080014	使用石头时的效果2。	它与从事件指令调用的指令不同。	{U}
-0809BE60	从攻击推进屏幕调用的单元之间的项目交换。	{U}
-080A87C8	显示MiniMap。	Non-Blocking	{U}
-080A87DC	显示MiniMap。	Blocking	{U}
+080B4B34	显示音响室屏幕	{J}
+080BE718	显示字典屏幕	{J}
+080BE794	显示设定画面	{J}
+080BE810	显示世界地图的状态图	{J}
+080CA1D4	显示OP字幕	{J}
+080CB370	显示游戏标题OP	{J}
+080CB390	显示游戏标题OP 2	{J}
+080CB3A8	显示光环后显示OP	{J}
+08035DDC	恢复示范的开始	{U}
+0804A430	显示项目选择菜单	{U}
+08080014	使用石头时的效果2	它与从事件指令调用的指令不同	{U}
+0809BE60	从攻击推进屏幕调用的单元之间的项目交换	{U}
+080A87C8	显示MiniMap	Non-Blocking	{U}
+080A87DC	显示MiniMap	Blocking	{U}
 080AE318	Run FadeIn Procs	{U}
 080AE33C	Run FadeOut Procs	{U}
 080AE3F8	Run FadeIn Procs2	{U}
 080AE41C	Run FadeOut Procs2	{U}
-080AFF1C	显示音响室屏幕。	{U}
-080C541C	显示OP字幕。	{U}
-080C6424	显示游戏标题OP。	{U}
-080C6444	显示游戏标题OP 2。	{U}
-080C645C	显示光环后显示OP。	{U}
-0203E0EC	战斗4字节的未知标志。	{J}
-080868F4	打开标志0x82。	{J}
-08086900	标志0x82的状态获取。	{J}
-08050ABC	设置“战斗4字节的未知标志”的值。	{J}
-08050AC8	获得“战斗4字节的未知标志”。	{J}
-08059938	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）。	{J}
-08084628	打开标志0x82。	{U}
-08084634	标志0x82的状态获取。	{U}
-0804FD48	设置“战斗4字节的未知标志”的值。	{U}
-0804FD54	获得“战斗4字节的未知标志”。	{U}
-08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）。	{U}
+080AFF1C	显示音响室屏幕	{U}
+080C541C	显示OP字幕	{U}
+080C6424	显示游戏标题OP	{U}
+080C6444	显示游戏标题OP 2	{U}
+080C645C	显示光环后显示OP	{U}
+0203E0EC	战斗4字节的未知标志	{J}
+080868F4	打开标志0x82	{J}
+08086900	标志0x82的状态获取	{J}
+08050ABC	设置“战斗4字节的未知标志”的值	{J}
+08050AC8	获得“战斗4字节的未知标志”	{J}
+08059938	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{J}
+08084628	打开标志0x82	{U}
+08084634	标志0x82的状态获取	{U}
+0804FD48	设置“战斗4字节的未知标志”的值	{U}
+0804FD54	获得“战斗4字节的未知标志”	{U}
+08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{U}
 080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
 080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
 080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
-080B3FE8	SoundRoom	显示歌曲ID。	{J}
-080B4414	SoundRoom	播放指定的歌曲。	{J}
-080B4A0C	SoundRoom	显示播放时间。	{J}
-080B4B48	SoundRoom	显示歌曲标题。	{J}
-080B4C30	SoundRoom	显示歌曲标题2。	{J}
-080B4F3C	SoundRoom	绘制声音室的关系。	{J}
+080B3FE8	SoundRoom	显示歌曲ID	{J}
+080B4414	SoundRoom	播放指定的歌曲	{J}
+080B4A0C	SoundRoom	显示播放时间	{J}
+080B4B48	SoundRoom	显示歌曲标题	{J}
+080B4C30	SoundRoom	显示歌曲标题2	{J}
+080B4F3C	SoundRoom	绘制声音室的关系	{J}
 080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
 080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
 080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
-080AF3C8	SoundRoom	显示歌曲ID。	{U}
-080AF7F4	SoundRoom	播放指定的歌曲。	{U}
-080AFDF4	SoundRoom	显示播放时间。	{U}
-080AFF30	SoundRoom	显示歌曲标题。	{U}
-080B0018	SoundRoom	显示歌曲标题2。	{U}
-080B0324	SoundRoom	绘制声音室的关系。	{U}
-08A73924	:08A7394B	Something的FillTileRect磁贴表。	{J}
-08A9D64C	:08A9D667	文本ID，例如“开始”。	{J}
-0860754C	:086078C5	未知数据。	OAMSP Maybe	10	{J}
-0860821C	:086094B3	未知数据。	OAMSP Maybe	11	{J}
-0874E5D4	:0874F211	未知数据。	OAMSP Maybe	12	{J}
-08A1D320	:08A1D8BF	未知数据。	OAMSP Maybe	13	{J}
-0808B93C	保存菜单项的背景。	{J}
+080AF3C8	SoundRoom	显示歌曲ID	{U}
+080AF7F4	SoundRoom	播放指定的歌曲	{U}
+080AFDF4	SoundRoom	显示播放时间	{U}
+080AFF30	SoundRoom	显示歌曲标题	{U}
+080B0018	SoundRoom	显示歌曲标题2	{U}
+080B0324	SoundRoom	绘制声音室的关系	{U}
+08A73924	:08A7394B	Something的FillTileRect磁贴表	{J}
+08A9D64C	:08A9D667	文本ID，例如“开始”	{J}
+0860754C	:086078C5	未知数据	OAMSP Maybe	10	{J}
+0860821C	:086094B3	未知数据	OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	未知数据	OAMSP Maybe	12	{J}
+08A1D320	:08A1D8BF	未知数据	OAMSP Maybe	13	{J}
+0808B93C	保存菜单项的背景	{J}
 0808B8DC	LoadChapterTitleGfx2	{J}
 02000000	gAISFrontLeft	{U}
 02000000	gAISFrontLeft	{J}
-0808BAAC	要获取章节名称，请获取要读取的章节标题ID。	{J}
-0808BA30	要获取保存槽的章节名称，请获取要读取的章节标题ID。	{J}
-08089678	保存菜单项的背景。	{U}
-0808979C	要获取章节名称，请获取要读取的章节标题ID。	{U}
-08089720	要获取保存槽的章节名称，请获取要读取的章节标题ID。	{U}
+0808BAAC	要获取章节名称，请获取要读取的章节标题ID	{J}
+0808BA30	要获取保存槽的章节名称，请获取要读取的章节标题ID	{J}
+08089678	保存菜单项的背景	{U}
+0808979C	要获取章节名称，请获取要读取的章节标题ID	{U}
+08089720	要获取保存槽的章节名称，请获取要读取的章节标题ID	{U}
 08000228	&ARM	gStart_ARMCopy	{U}
 080003e0	&ARM	ARM_BgMapCopyRect	{U}
 08000228	&ARM	gStart_ARMCopy	{J}
@@ -11826,46 +11824,46 @@ r3=X tile position of menu of the right	{U}
 080D36E4	guMess3ReWrite_80CE9E8	{J}
 080D3C0C	Guide_80CEF10	{J}
 080D4140	Guide_80CF448	{J}
-08083688	在地图上播放时播放音效（0x2d5）。	{J}
-080836C4	在地图上跳舞时播放音效（0x2d6）。	{J}
-08083600	在地图上跳舞/玩耍时注册要播放的音效。	{J}
-08081348	在地图上播放时播放音效（0x2d5）。	{U}
-08081348	在地图上跳舞时播放音效（0x2d6）。	{U}
-080812C0	在地图上跳舞/玩耍时注册要播放的音效。	{U}
-08000AE8	显示构建版本和发布年份。	{J}
-08000B10	显示构建版本和发布年份。	{U}
-080286A4	获取单位属性的字符串。	{J}
-080DC94C	&TEXTBATCH	单位的属性。	{J}
-08072454	加载龙僵尸格斗动画数据。	{J}
-0806FEA4	加载龙僵尸格斗动画数据。	{U}
+08083688	在地图上播放时播放音效（0x2d5）	{J}
+080836C4	在地图上跳舞时播放音效（0x2d6）	{J}
+08083600	在地图上跳舞/玩耍时注册要播放的音效	{J}
+08081348	在地图上播放时播放音效（0x2d5）	{U}
+08081348	在地图上跳舞时播放音效（0x2d6）	{U}
+080812C0	在地图上跳舞/玩耍时注册要播放的音效	{U}
+08000AE8	显示构建版本和发布年份	{J}
+08000B10	显示构建版本和发布年份	{U}
+080286A4	获取单位属性的字符串	{J}
+080DC94C	&TEXTBATCH	单位的属性	{J}
+08072454	加载龙僵尸格斗动画数据	{J}
+0806FEA4	加载龙僵尸格斗动画数据	{U}
 080BA2F0	ActionArena	{J}
 080B576C	ActionArena	{U}
-080B9DA4	收购商店的售价。	{J}
-080B5220	收购商店的售价。	{U}
-080A4DD0	用于浏览支持对话的屏幕。	提高成就率。	{J}
-080A7F88	用于浏览支持对话的屏幕。	获得支持对话成就率。	{J}
-080a7f44	用于浏览支持对话的屏幕。	获得支持对话成就数（分子）。	{J}
-080a7f10	用于浏览支持对话的屏幕。	获得支持对话的总数（分母）。	{J}
-080A5774	用于浏览支持对话的屏幕。	绘制单位名称（颜色根据支持状态而变化）。	{J}
-080A5048	用于浏览支持对话的屏幕。	要绘制的函数的顶部。	{J}
-080A4CA8	用于浏览支持对话的屏幕。	绘制一个单位图标。	{J}
-0809af14	绘制菜单的框架。	{J}
-080A5388	用于浏览支持对话的屏幕。	主循环。	{J}
-080A0FE8	用于浏览支持对话的屏幕。	提高成就率。	{U}
-080A3544	用于浏览支持对话的屏幕。	获得支持对话成就率。	{U}
-080A3500	用于浏览支持对话的屏幕。	获得支持对话成就数（分子）。	{U}
-080A34CC	用于浏览支持对话的屏幕。	获得支持对话的总数（分母）。	{U}
-080A199C	用于浏览支持对话的屏幕。	绘制单位名称（颜色根据支持状态而变化）。	{U}
-080A1270	用于浏览支持对话的屏幕。	要绘制的函数的顶部。	{U}
-080A0EC0	用于浏览支持对话的屏幕。	绘制一个单位图标。	{U}
-080950E8	绘制菜单的框架。	{U}
-080A15B0	用于浏览支持对话的屏幕。	主循环。	{U}
-080D4178	字典	判断是否有新项目。	{J}
-080CF480	字典	判断是否有新项目。	{U}
+080B9DA4	收购商店的售价	{J}
+080B5220	收购商店的售价	{U}
+080A4DD0	用于浏览支持对话的屏幕	提高成就率	{J}
+080A7F88	用于浏览支持对话的屏幕	获得支持对话成就率	{J}
+080a7f44	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{J}
+080a7f10	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{J}
+080A5774	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{J}
+080A5048	用于浏览支持对话的屏幕	要绘制的函数的顶部	{J}
+080A4CA8	用于浏览支持对话的屏幕	绘制一个单位图标	{J}
+0809af14	绘制菜单的框架	{J}
+080A5388	用于浏览支持对话的屏幕	主循环	{J}
+080A0FE8	用于浏览支持对话的屏幕	提高成就率	{U}
+080A3544	用于浏览支持对话的屏幕	获得支持对话成就率	{U}
+080A3500	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{U}
+080A34CC	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{U}
+080A199C	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{U}
+080A1270	用于浏览支持对话的屏幕	要绘制的函数的顶部	{U}
+080A0EC0	用于浏览支持对话的屏幕	绘制一个单位图标	{U}
+080950E8	绘制菜单的框架	{U}
+080A15B0	用于浏览支持对话的屏幕	主循环	{U}
+080D4178	字典	判断是否有新项目	{J}
+080CF480	字典	判断是否有新项目	{U}
 08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
 08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
-0808BA78	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{J}
-08089768	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{U}
+0808BA78	获取要在保存槽中显示的章节ID	r0=@ChapterData	{J}
+08089768	获取要在保存槽中显示的章节ID	r0=@ChapterData	{U}
 08095024	PrepScreenTextHandler	{U}
 08095524	PrepScreenHandler	{U}
 08097304	PrepScreenTextHandler	{J}
@@ -11895,35 +11893,35 @@ r3=X tile position of menu of the right	{U}
 080B1F1C	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
 08A9D904	&OAMREGS_ARRAY	Unk OAMREGS	25	{J}
 08A2099C	&OAMREGS_ARRAY	Unk OAMREGS	25	{U}
-08AD1734	&LZ77	引导数据。	FE 7的CG片段。	{J}
-08AD1EC8	&PALETTE8	引导数据。	FE 7 CG托盘的残余物。	{J}
-08AD1FC8	&HEADERTSA	引导数据。	FE 7的CG的TSE遗留物。	{J}
-0802D664	实际通过物品交换交换物品时。	{J}
+08AD1734	&LZ77	引导数据	FE 7的CG片段	{J}
+08AD1EC8	&PALETTE8	引导数据	FE 7 CG托盘的残余物	{J}
+08AD1FC8	&HEADERTSA	引导数据	FE 7的CG的TSE遗留物	{J}
+0802D664	实际通过物品交换交换物品时	{J}
 080358A8	AutoRestoreBadStatus	{J}
 080357A8	AutoRestoreBadStatus	{U}
-080134E4	未使用的功能1。	{J}
+080134E4	未使用的功能1	{J}
 080DC56C	:080DC583	Event34_MessWithUnitState_Data	{J}
-080DC584	:080DC593	从未使用的功能1引用的数据。	{J}
+080DC584	:080DC593	从未使用的功能1引用的数据	{J}
 080DC6C8	&ASM_POINTER_ARRAY	DebugMenuCommand	{J}
-0801342C	未使用的功能1。	{U}
+0801342C	未使用的功能1	{U}
 080D793C	:080D7953	Event34_MessWithUnitState_Data	{U}
-080D7954	:080D7963	从未使用的功能1引用的数据。	{U}
-085E4E84	&LZ77	某事的图象。	5	{J}
+080D7954	:080D7963	从未使用的功能1引用的数据	{U}
+085E4E84	&LZ77	某事的图象	5	{J}
 08023D5C	SetUnitActionToSupport_Code0xF	{J}
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
-0203F101	用于判断并行扩展。	{J}
-080A5E48	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{J}
-080A5F9C	支持屏幕。	显示目标单位的支持列表。	{J}
-080A48BC	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{J}
-080A4A28	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{J}
-080A8030	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{J}
-080A207C	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{U}
-080A21D0	支持屏幕。	显示目标单位的支持列表。	{U}
-080A0AD4	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{U}
-080A0C40	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{U}
-080A35EC	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{U}
+0203F101	用于判断并行扩展	{J}
+080A5E48	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{J}
+080A5F9C	支持屏幕	显示目标单位的支持列表	{J}
+080A48BC	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{J}
+080A4A28	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{J}
+080A8030	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	1个单位	{J}
+080A207C	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{U}
+080A21D0	支持屏幕	显示目标单位的支持列表	{U}
+080A0AD4	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{U}
+080A0C40	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{U}
+080A35EC	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	1个单位	{U}
 08A93F50	&TEXTBATCH	Prep screen 1.	{J}
 08A18204	&TEXTBATCH	Prep screen 1.	{U}
 08A93F7C	&TEXTBATCH	Prep screen 2.	{J}
@@ -11963,12 +11961,12 @@ r3=X tile position of menu of the right	{U}
 080B4168	Shop	Show the conversation	{U}
 0203f100	:0203f9FF	DebuffTable	{U}
 08A95410	&TEXTBATCH	TextBatch4	{J}
-08006ED4	ParseTextEscape	处理文本中的转义序列。	{J}
-08007758	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点。	{J}
-08006FD0	ParseTextEscape	处理文本中的转义序列。	{U}
-08007854	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点。	{U}
+08006ED4	ParseTextEscape	处理文本中的转义序列	{J}
+08007758	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点	{J}
+08006FD0	ParseTextEscape	处理文本中的转义序列	{U}
+08007854	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点	{U}
 0808B824	LoadChapterTitlePalette	{J}
-080B083C	保存槽选择屏幕上的调色板选择。	{J}
+080B083C	保存槽选择屏幕上的调色板选择	{J}
 
 
 08A029A8	&LZ77	YellowTextBox	{U}
@@ -12339,37 +12337,37 @@ r3=X tile position of menu of the right	{U}
 0202bcd8	gSomeRealCameraOffsetTarget	{U}
 0202bcdc	gItemGotButNotYet	{U}
 0202bcde	gThatsAnItem2	{U}
-08BB1DBC	:08BB1F27	神秘的数据。	它似乎与本章开头的章节标题显示有关。	{J}
-081F5674	:081F567b	神秘的数据。	8个字节。	{J}
-081F5680	:081F5687	神秘的数据。	8个字节。	{J}
-081F5690	:081F5697	神秘的数据。	8个字节。	{J}
-08B18D68	:08B18ED3	神秘的数据。	它似乎与本章开头的章节标题显示有关。	{U}
-080BB240	结束。	单位结果。	如果该单位已经死亡。	获取字符串“At，结束已结束”。	{J}
-080B6768	结束。	单位结果。	如果该单位已经死亡。	获取字符串“At，结束已结束”。	{U}
-080B3564	结束。	单位结果。	格式化单位死亡的章节的名称。	执行特殊符号，例如结束章节/开头。	{J}
-080b6674	结束。	单位结果。	格式化单位死亡的章节的名称。	执行特殊符号，例如结束章节/开头。	{U}
-080B7800	清除转弯清单图纸。	{U}
+08BB1DBC	:08BB1F27	神秘的数据	它似乎与本章开头的章节标题显示有关	{J}
+081F5674	:081F567b	神秘的数据	8个字节	{J}
+081F5680	:081F5687	神秘的数据	8个字节	{J}
+081F5690	:081F5697	神秘的数据	8个字节	{J}
+08B18D68	:08B18ED3	神秘的数据	它似乎与本章开头的章节标题显示有关	{U}
+080BB240	结束	单位结果	如果该单位已经死亡	获取字符串“At，结束已结束”	{J}
+080B6768	结束	单位结果	如果该单位已经死亡	获取字符串“At，结束已结束”	{U}
+080B3564	结束	单位结果	格式化单位死亡的章节的名称	执行特殊符号，例如结束章节/开头	{J}
+080b6674	结束	单位结果	格式化单位死亡的章节的名称	执行特殊符号，例如结束章节/开头	{U}
+080B7800	清除转弯清单图纸	{U}
 080b3538	AppendTextBuffer_080b3538	{J}
 080aeabc	AppendTextBuffer_080aeabc	{U}
 080AEBEC	Div10_Safe	{U}
-080797BC	重现点击声音点击。	SongID:0x147	{J}
-08077398	重现点击声音点击。	SongID:0x147	{U}
+080797BC	重现点击声音点击	SongID:0x147	{J}
+08077398	重现点击声音点击	SongID:0x147	{U}
 03006680	@MusicPlayer	gMusicSEPlayerInfo2	{J}
 030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
 03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
 03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
-0800D5C8	CallEvent	事件“支持水平上升”。	{J}
-0800D5F4	CallEvent	活动“淡入，淡出和谈话”。	{J}
-0800D618	CallEvent	事件“你想撤退吗？”。	{J}
-0800D640	CallEvent	事件“你想中止吗？”。	{J}
-0800D568	CallEvent	事件“执行映射更改执行0xFFFD”。	{J}
-0800D524	CallEvent	事件“对话0xFFFF”。	{J}
-0800D304	CallEvent	事件“支持水平上升”。	{U}
-0800D330	CallEvent	活动“淡入，淡出和谈话”。	{U}
-0800D354	CallEvent	事件“你想撤退吗？”。	{U}
-0800D37C	CallEvent	事件“你想中止吗？”。	{U}
-0800D2A4	CallEvent	事件“执行映射更改执行0xFFFD”。	{U}
-0800D260	CallEvent	事件“对话0xFFFF”。	{U}
+0800D5C8	CallEvent	事件“支持水平上升”	{J}
+0800D5F4	CallEvent	活动“淡入，淡出和谈话”	{J}
+0800D618	CallEvent	事件“你想撤退吗？”	{J}
+0800D640	CallEvent	事件“你想中止吗？”	{J}
+0800D568	CallEvent	事件“执行映射更改执行0xFFFD”	{J}
+0800D524	CallEvent	事件“对话0xFFFF”	{J}
+0800D304	CallEvent	事件“支持水平上升”	{U}
+0800D330	CallEvent	活动“淡入，淡出和谈话”	{U}
+0800D354	CallEvent	事件“你想撤退吗？”	{U}
+0800D37C	CallEvent	事件“你想中止吗？”	{U}
+0800D2A4	CallEvent	事件“执行映射更改执行0xFFFD”	{U}
+0800D260	CallEvent	事件“对话0xFFFF”	{U}
 0805B80C	StartAnime_EkrUnitMain	{J}
 0805AA68	StartAnime_EkrUnitMain	{U}
 085F14DC	:085F1567	StartEkrsubAnime1Data1	{J}
@@ -12472,5 +12470,12 @@ r3=X tile position of menu of the right	{U}
 08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
 08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
 086700D4	&PALETTE16	efxLiveSomePalette	{U}
-0803190C	竞技场。	选择对手。	{U}
-08031858	竞技场。	选择对手。	{J}
+0803190C	竞技场	选择对手	{U}
+08031858	竞技场	选择对手	{J}
+08038320	清除塔楼和废墟时。	显示结果。	{J}
+080381F4	清除塔楼和废墟时。	显示结果。	{U}
+08037CF8	清除塔楼和废墟时。	显示结果后完成后。	{U}
+08085c7c	清除塔楼和废墟时。	轻量化生产。	LowLevel	{U}
+08087F3C	清除塔楼和废墟时。	轻量化生产。	{J}
+08037D90	清除塔楼和废墟时。	显示结果后完成后。	{J}
+08087F48	清除塔楼和废墟时。	轻量化生产。	LowLevel	{J}

@@ -98,6 +98,7 @@ NNNの拠点到達	Earn NNN points
 必殺	Crit
 耐久	Uses
 回避	Avoid
+回避	Avo
 必殺無効	Negate Criticals
 飛行特攻無効	Negate Flier Effectiveness
 修理不可	Unrepairable
@@ -1630,6 +1631,7 @@ HPの薬	HP Tonic
 全滅	Defeat All
 防衛	Defense
 中断	Suspend
+中断	 Suspend
 記録	Save
 移動方法	How to Move
 アイテム整理	Item Management
@@ -4414,7 +4416,6 @@ and defeating an enemy.
 目的：宝箱開く	Open the Chests
 多くアイテムをつる	Fish a lot of items
 アイテムをつる	Fish an item
-
 致命攻撃を必ずＨＰ１で耐える\r\n不思議なお守り	When held, survive a\r\nfatal blow with 1 HP.
 遠距離攻撃を得意とする戦車\r\n装備『弓』	Heavy tanks specialized in attacking\r\nfrom a long range. Equip: Ballistae.　『遠距離防御』\r\n遠距離攻撃を半減	Tower Shield\r\nhalf damage when attacked at range.
 『電撃戦闘』\r\n互いに２回連続攻撃	Continue\r\nDoubles the amount of\r\nrounds of all combat.
@@ -4426,7 +4427,7 @@ and defeating an enemy.
 フェリクス	Phelix
 ワルキューレ	Valkyrie
 ハルトマン隊	Haltmann's
-必避	AvdCrt
+必避	Ddg
 ブレンサンダ	Brenthunder
 敵軍の攻撃範囲を\r\n表示します	Attack an enemy and\r\nattempt to capture them.
 エンゼルナイト	AngelKnight
@@ -4478,8 +4479,8 @@ and defeating an enemy.
 自分と味方の\r\n位置を入れ替える	Swap positions with adjacent\r\nally.
 　演説	 Speech
 熱い理想を語り\r\n味方を再行動可能にします	Talking hot ideals\r\nyour allies to move again.
-　危険	Range
-　指南	Shinan
+　危険	 Range
+　指南	 Shinan
 攻略情報を\r\n表示します	Display capture information.
 守らないといけない旗	Flag that you must protect
 イリア騎士団	Ilia
@@ -4497,13 +4498,14 @@ and defeating an enemy.
 ノトス	Notos
 オルファン	Olfan
 ホウダイ	Battery
-装備するとスキル「待ち伏せ」を持つ剣
+装備するとスキル「待ち伏せ」を持つ剣	With skill "Ambush" when Equip.
+特殊なエネルギーが宿った不思議な弾丸
+別大陸の魔剣。守備と魔防＋５	Sword of another continent.Def,Res +5.
+使うと移動と体格以外が２アップします
+アルスを\r\nクラスチェンジさせます
 　『必殺上昇』\r\n必殺率＋１５	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
 シュラム	Shrum
-別大陸の魔剣。守備と魔防＋５
 エネルギー弾	Energy bullet
-特殊なエネルギーが宿った不思議な弾丸
-使うと移動と体格以外が２アップします
 大盾Ｍ	Pavise.M
 使用するとスキル「大盾」を習得	Learning skill "Pavise" when used
 祈りＭ	Miracle.M
@@ -4519,11 +4521,10 @@ and defeating an enemy.
 ニニスの守護	Ninis's Grace
 味方１人の守備＋１０魔防＋１０
 キングスプルフ	King Seal
-アルスを\r\nクラスチェンジさせます
 リンカネ－ション	Linkation
-レベル１０以上の上級ユニットを\r\nクリーチャーに転生させます
+レベル１０以上の上級ユニットを\r\nクリーチャーに転生させます	Transform a level 10\r\nor higher Promoted into a creature
 ロングシャイン	Long Shine
-遠くまで攻撃の届くシャイン
+遠くまで攻撃の届くシャイン	Long range Shine
 鬼神の一撃Ｍ	Death Blow.M
 　『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
 恐怖Ｍ	Intimidate.M
@@ -4535,7 +4536,7 @@ and defeating an enemy.
 ふしぎなアメ	RareCandy
 拠点で使用します	Use at base
 リーダーバッジ	Leader Badge
-持っているとそれぞれ異なる\r\nリーダースキルを発動させれます
+持っているとそれぞれ異なる\r\nリーダースキルを発動させれます	Different leader skills\r\ncan be triggered by having
 魔物の爪	Monster's claw
 キャノンホウ	Cannon
 戦車の弾	Tank's bullets
@@ -4543,7 +4544,7 @@ and defeating an enemy.
 ブリューナク	Brunak
 強者にのみにしか扱えない大型の槍
 ゴーストリング	Ghost Ring
-上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます
+上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます	If has Promoted アルス,ナインツ,ホワイト,\r\ncan transform ghost\r\nwith "Ride" command
 ヘパイスの黒雷
 暗黒の雷で相手を攻撃する
 ヴンダーガスト	Vundergast
@@ -4577,29 +4578,29 @@ and defeating an enemy.
 漆黒の斬鉄斧
 漆黒に覆われた斧。武器スキル『キャンセル』
 ラビアンローズ	La Vie en rose
-女性専用　ＨＰ成長率をアップさせる
+女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate.
 閃光の弓
-レイピアと同じ特攻効果を持つ弓
-バルダシールド
-そこそこ強い盾。守備＋５
+レイピアと同じ特攻効果を持つ弓	With the same effectiveness Rapier.
+バルダシールド	Balda Shield
+そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5.
 エリートの長弓	ParagonLongBow
-装備するとエリートのスキルが付く長弓
+装備するとエリートのスキルが付く長弓	With skill "Paragon" when Equip.
 見切りの盾	Nihil shield
-装備時見切りのスキルを得る盾　攻撃不可
+装備時見切りのスキルを得る盾　攻撃不可	With skill "Nihil" when Equip.Not attackable
 聖なる盾	Holy shield
-装備時聖盾のスキルを得る　攻撃不可
+装備時聖盾のスキルを得る　攻撃不可	With skill "Aegis" when Equip.Not attackable
 重装の盾
 とても重くて硬い盾
-強運を呼ぶ盾
-装備時強運のスキルを得る盾　攻撃不可
+強運を呼ぶ盾	Blessing Shield
+装備時強運のスキルを得る盾　攻撃不可	With skill "Blessing" when Equip.Not attackable
 ヘルパニッシャ－	Hell Punisher
-地獄より舞い降りた剣　必殺無効
+地獄より舞い降りた剣　必殺無効	Sword that has descended from hell.Negate Criticals.
 グラムロック	Gram lock
-装備時　スキル連撃防御を得る　守備＋２
+装備時　スキル連撃防御を得る　守備＋２	With skill "Bunker" when Equip.Def+2
 雷神の弓
-必殺無効　体力を吸収する
+必殺無効　体力を吸収する	Negate Criticals.Lifetaker.
 風神の弓
-必殺無効　毒を与える
+必殺無効　毒を与える	Negate Criticals.Poison the enemy.
 待ち伏せＭ	Ambush.M
 　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
 連続Ｍ	Adept.M
@@ -4607,11 +4608,11 @@ and defeating an enemy.
 マージキラー	MageKiller
 魔法系ユニットに特攻を持つ弓
 クラウ・ソラス	Crow Soras
-相性反転効果のある魔法剣
+相性反転効果のある魔法剣	Magic sword with a Reaver Effect.
 ヴォルケイトス	Volkeithos
 ヴォルケナ火山から発見された幻の槍
 エリートの剣	Paragon Sword
-装備するとスキル「エリート」を得る剣
+装備するとスキル「エリート」を得る剣	With skill "Paragon" when Equip.
 バルダアーマー	Balder Armor
 耐久に優れた鎧	Durable armor
 エイトセンシズ	EighthSense
@@ -4625,3 +4626,8 @@ and defeating an enemy.
 月光Ｍ	Luna.M
 太陽Ｍ	Sol.M
 強奪Ｍ	Despoil.M
+敵の必殺を回避する能力です\r\nこの値だけ　敵の必殺が減ります	Ability to avoid critical\r\nhits. Affected by luck.
+敵軍の攻撃範囲を\r\n表示します	Attack an enemy and\r\nattempt to capture them.
+オートセーブ	Auto Save
+毎ターン	Each Turn
+オートセーブの設定を切り換えます	Switch the auto save setting

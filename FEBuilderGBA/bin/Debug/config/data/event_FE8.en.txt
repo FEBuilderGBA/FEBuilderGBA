@@ -57,7 +57,7 @@
 210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter (bitshift) 0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
 
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
-202A0000	Return to title screen(MNTS)	{ENDING}
+202AXXXX	Return to title screen[XXXX::Value 1](MNTS)	{ENDING}
 
 402FXXXXYYYYZZWW20300000	Move[YY:UNIT:Character]to[ZZ:MAPX:X][WW:MAPY:Y]with[XXXX:FSEC:Speed](MOVE+ENUN)	{UNITMOVE}
 412FXXXXYYYYZZZZ20300000	Move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVEONTO+ENUN)	{UNITMOVE}

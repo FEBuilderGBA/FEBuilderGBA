@@ -11765,7 +11765,7 @@ r3=X tile position of menu of right	{U}
 0807BA28	Draw numbers on map animation bar graph.	{U}
 0803581C	Display a message at bottom of screen.	BB function.	{J}
 08035EDC	start of recovery demonstration.	{J}
-08038320	A war record display when clearing a tower or ruins.	{J}
+08038320	When clearing towers and ruins	Show record display	{J}
 0804B1CC	Display item selection menu.	{J}
 08082354	Effect when using stone 2.	It is different from instruction called from event instruction.	{J}
 080943D4	Draw screen of unit selected from menu.	{J}
@@ -11789,7 +11789,7 @@ r3=X tile position of menu of right	{U}
 080CB390	Display game title OP 2.	{J}
 080CB3A8	Show OP after displaying ring of light.	{J}
 08035DDC	start of recovery demonstration.	{U}
-080381F4	A war record display when clearing a tower or ruins.	{U}
+080381F4	When clearing towers and ruins	Show record display	{U}
 0804A430	Display item selection menu.	{U}
 08080014	Effect when using stone 2.	It is different from instruction called from event instruction.	{U}
 0809BE60	Item exchanges between units called from attack advancement screen.	{U}
@@ -12517,5 +12517,10 @@ r3=X tile position of menu of right	{U}
 08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
 08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
 086700D4	&PALETTE16	efxLiveSomePalette	{U}
-0803190C	Arena.	Selection of opponents.	{U}
-08031858	Arena.	Selection of opponents.	{J}
+0803190C	Arena	Selection of opponents	{U}
+08031858	Arena	Selection of opponents	{J}
+08037CF8	When clearing towers and ruins	After the display of results	{U}
+08085c7c	When clearing towers and ruins	Light production	LowLevel	{U}
+08087F3C	When clearing towers and ruins	Light production	{J}
+08037D90	When clearing towers and ruins	After the display of results	{J}
+08087F48	When clearing towers and ruins	Light production	LowLevel	{J}
