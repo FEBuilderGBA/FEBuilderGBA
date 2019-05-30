@@ -3230,6 +3230,10 @@ namespace FEBuilderGBA
 
             return (relativePath);
         }
+        public static string UrlDecode(string urlString)
+        {
+            return Uri.UnescapeDataString(urlString);
+        }
 
         public static string FindFileOne(string path, string toolname)
         {
@@ -5853,6 +5857,13 @@ namespace FEBuilderGBA
                 return false;
             }
             return true;
+        }
+
+        static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        public static DateTime FromUnitTime(uint unixTime)
+        {
+            // UNIXエポックからの経過秒数で得られるローカル日付
+            return UNIX_EPOCH.AddSeconds(unixTime).ToLocalTime();
         }
     }
 }
