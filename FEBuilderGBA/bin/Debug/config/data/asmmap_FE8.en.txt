@@ -12524,3 +12524,7 @@ r3=X tile position of menu of right	{U}
 08087F3C	When clearing towers and ruins	Light production	{J}
 08037D90	When clearing towers and ruins	After the display of results	{J}
 08087F48	When clearing towers and ruins	Light production	LowLevel	{J}
+08037888	ExecTrapForDropUnit_Sub	{J}
+08032104	ExecTrapForDropUnit	{J}
+080377F0	ExecTrapForDropUnit_Sub	{U}
+080321B8	ExecTrapForDropUnit	{U}

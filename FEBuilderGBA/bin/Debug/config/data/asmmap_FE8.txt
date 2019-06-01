@@ -12521,3 +12521,7 @@
 08087F3C	塔や遺跡をクリアしたとき	ライト演出	{J}
 08037D90	塔や遺跡をクリアしたとき	戦績表示の後の後始末	{J}
 08087F48	塔や遺跡をクリアしたとき	ライト演出	LowLevel	{J}
+08037888	ExecTrapForDropUnit_Sub	{J}
+08032104	ExecTrapForDropUnit	{J}
+080377F0	ExecTrapForDropUnit_Sub	{U}
+080321B8	ExecTrapForDropUnit	{U}

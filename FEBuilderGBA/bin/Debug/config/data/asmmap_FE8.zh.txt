@@ -12479,3 +12479,7 @@ r3=X tile position of menu of the right	{U}
 08087F3C	清除塔楼和废墟时。	轻量化生产。	{J}
 08037D90	清除塔楼和废墟时。	显示结果后完成后。	{J}
 08087F48	清除塔楼和废墟时。	轻量化生产。	LowLevel	{J}
+08037888	ExecTrapForDropUnit_Sub	{J}
+08032104	ExecTrapForDropUnit	{J}
+080377F0	ExecTrapForDropUnit_Sub	{U}
+080321B8	ExecTrapForDropUnit	{U}
