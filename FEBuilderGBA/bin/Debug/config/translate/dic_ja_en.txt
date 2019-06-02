@@ -577,8 +577,8 @@ Baldr
 まもりの剣	Safeguard
 守りの剣	Safeguard
 バリアの剣	Barrier Blade
-ほのおの剣	Flame sword
-炎の剣	Flame sword
+ほのおの剣	Flame Sword
+炎の剣	Flame Sword
 いかずちの剣	Lightning Sword
 雷の剣	Lightning Sword
 かぜの剣	Wind Sword
@@ -1187,6 +1187,8 @@ Ide	イム
 トールハンマー	Mjolnir
 魔殺しの雷	Superior Jolt
 カタリナの雷糸	Katarina's Bolt
+カタリナ	Katarina
+ミカヤ	Micaiah
 ミィル	Flux
 ルイン	Ruin
 イル	Waste
@@ -2031,6 +2033,8 @@ HPの薬	HP Tonic
 ポロロ	Pororo
 探偵	Detective
 怪盗	Kaitou
+大探偵	GreatDetective
+大怪盗	GreatKaitou
 ルナ	Lua
 アドラー	Adler
 警官隊	Police
@@ -4499,10 +4503,9 @@ and defeating an enemy.
 オルファン	Olfan
 ホウダイ	Battery
 装備するとスキル「待ち伏せ」を持つ剣	With skill "Ambush" when Equip.
-特殊なエネルギーが宿った不思議な弾丸
+特殊なエネルギーが宿った不思議な弾丸	Mysterious bullet with energy.
 別大陸の魔剣。守備と魔防＋５	Sword of another continent.Def,Res +5.
-使うと移動と体格以外が２アップします
-アルスを\r\nクラスチェンジさせます
+アルスを\r\nクラスチェンジさせます	Promote Arus.
 　『必殺上昇』\r\n必殺率＋１５	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
 シュラム	Shrum
 エネルギー弾	Energy bullet
@@ -4531,8 +4534,8 @@ and defeating an enemy.
 治癒Ｍ	Boon.M
 金ごうの一撃Ｍ	Armormed Blow.M
 　『金ごうの一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
-閃光のブレス
-まばゆい閃光で相手を殲滅する
+閃光のブレス	Flash of breath
+まばゆい閃光で相手を殲滅する	Destroy the other party with a dazzling flash
 ふしぎなアメ	RareCandy
 拠点で使用します	Use at base
 リーダーバッジ	Leader Badge
@@ -4542,71 +4545,70 @@ and defeating an enemy.
 戦車の弾	Tank's bullets
 ペトロクラウド	Petrocloud
 ブリューナク	Brunak
-強者にのみにしか扱えない大型の槍
+強者にのみにしか扱えない大型の槍	Large bowl that can only be handled\r\nby strong people.
 ゴーストリング	Ghost Ring
-上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます	If has Promoted アルス,ナインツ,ホワイト,\r\ncan transform ghost\r\nwith "Ride" command
-ヘパイスの黒雷
-暗黒の雷で相手を攻撃する
+上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます	If has Promoted Arus,Ninz,White,\r\ncan transform ghost\r\nwith "Ride" command
+ヘパイスの黒雷	Black Thunder
+暗黒の雷で相手を攻撃する	Attack with dark lightning
 ヴンダーガスト	Vundergast
 大型の風魔法。速さ＋２
-妖刀かまいたち
-攻撃範囲がかなり広い刀。非常に貴重
+妖刀かまいたち	Kamaitachi
+攻撃範囲がかなり広い刀。非常に貴重	fairly wide attack range.Very valuable.
 モンゴルの剣	MongolianSword
-モンゴルで作られた剣。当たると毒になる
-バサークダガー	Berserk Dagger
-攻撃が命中すると相手にバサークをかける
+バサークダガー	BerserkDagger
+攻撃が命中すると相手にバサークをかける	If hit, Put Berserk
 女王の剣	Queen's Sword
 女王の加護により力が増幅された封印の剣
-まばゆいビームサーベル
-オデッセイの剣
-大型魔法「オデッセイ」を宿した剣
-ヘリオスの疾風
-大型の風魔法　飛行特攻
-テティスの氷石
+まばゆいビームサーベル	Dazzling beam saber
+オデッセイの剣	Odyssey Sword
+大型魔法「オデッセイ」を宿した剣	Sword with the large magic "Odyssey"
+ヘリオスの疾風	Helios Gale
+大型の風魔法　飛行特攻	Large-scale wind magic. Effective fliers
+テティスの氷石	Ice Rock
 氷のつぶての雨を相手に降らせる
-アトラスの業火
-炎の竜を呼び覚まし相手に突撃する
-モンゴルの剣
-モンゴルで作られた剣。当たると毒になる
-フレイムロッド
-炎を宿した杖。魔法ではなく物理
-タワーシールド
-持つと守備を＋２にする盾
+アトラスの業火	Atlas's Flame
+炎の竜を呼び覚まし相手に突撃する	Wake up the fire dragon and assault.
+モンゴルの剣	Mongolian sword
+モンゴルで作られた剣。当たると毒になる	Made in Mongolia. poison when hit.
+フレイムロッド	Flame Rod
+炎を宿した杖。魔法ではなく物理	Has flame power. Physical attack not magic.
+タワーシールド	Tower Shield
+持つと守備を＋２にする盾	Shield that makes Def+2
 投石	ThrowingStone
-投げれる石
+投げれる石	Stone to be thrown
 持っていると一度だけ祈りスキル発動	Miracle skill activation only once\r\nif you have one
-漆黒の斬鉄斧
+漆黒の斬鉄斧	Jet-Black Axe
 漆黒に覆われた斧。武器スキル『キャンセル』
 ラビアンローズ	La Vie en rose
-女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate.
-閃光の弓
-レイピアと同じ特攻効果を持つ弓	With the same effectiveness Rapier.
+女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate
+閃光の弓	Flash Bow
+レイピアと同じ特攻効果を持つ弓	With the same effectiveness Rapier
 バルダシールド	Balda Shield
-そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5.
+そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5
 エリートの長弓	ParagonLongBow
-装備するとエリートのスキルが付く長弓	With skill "Paragon" when Equip.
+装備するとエリートのスキルが付く長弓	With skill "Paragon" when Equip
 見切りの盾	Nihil shield
 装備時見切りのスキルを得る盾　攻撃不可	With skill "Nihil" when Equip.Not attackable
 聖なる盾	Holy shield
 装備時聖盾のスキルを得る　攻撃不可	With skill "Aegis" when Equip.Not attackable
-重装の盾
-とても重くて硬い盾
+重装の盾	Heavy Shield
+とても重くて硬い盾	Very heavy and hard shield
 強運を呼ぶ盾	Blessing Shield
 装備時強運のスキルを得る盾　攻撃不可	With skill "Blessing" when Equip.Not attackable
 ヘルパニッシャ－	Hell Punisher
 地獄より舞い降りた剣　必殺無効	Sword that has descended from hell.Negate Criticals.
 グラムロック	Gram lock
 装備時　スキル連撃防御を得る　守備＋２	With skill "Bunker" when Equip.Def+2
-雷神の弓
+雷神の弓	Raijin Yumi
+風神の弓	Fujin Yumi
 必殺無効　体力を吸収する	Negate Criticals.Lifetaker.
-風神の弓
 必殺無効　毒を与える	Negate Criticals.Poison the enemy.
 待ち伏せＭ	Ambush.M
 　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
 連続Ｍ	Adept.M
 エリートＭ	Paragon.M
 マージキラー	MageKiller
-魔法系ユニットに特攻を持つ弓
+魔法系ユニットに特攻を持つ弓	Effective Mage
 クラウ・ソラス	Crow Soras
 相性反転効果のある魔法剣	Magic sword with a Reaver Effect.
 ヴォルケイトス	Volkeithos
@@ -4616,11 +4618,11 @@ and defeating an enemy.
 バルダアーマー	Balder Armor
 耐久に優れた鎧	Durable armor
 エイトセンシズ	EighthSense
-使うと移動と体格以外が２アップします
+使うと移動と体格以外が２アップします	Increases All by 2 point.\r\nexcept MOV and CON.
 ガンブレード	Gan Blade
-剣の柄にジュウの機構を取り入れた武器
+剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into the sword
 パワーボウ	Power Bow
-力を増幅させる不思議な弓
+力を増幅させる不思議な弓	Mysterious bow That amplifies the power
 必殺Ｍ	Crit.M
 突撃Ｍ	Charge.M
 月光Ｍ	Luna.M
@@ -4631,3 +4633,158 @@ and defeating an enemy.
 オートセーブ	Auto Save
 毎ターン	Each Turn
 オートセーブの設定を切り換えます	Switch the auto save setting
+アルス	Arus
+ナインツ	Ninz
+ホワイト	White
+飛行特攻の剣	Sword in Effective fliers
+『神将器』　業火の理　幸運＋５	The Infernal Truth. Luck +5
+『神将器』　至高の光　魔防＋５	The Glorious Acension. Res +5
+『神将器』　黙示の闇　魔力＋５	The Elder Revelation. Mag +5
+地にまい降りた天使の衣\r\n最大ＨＰ＋５　使うと失われます	Increases Max HP by\r\n5 point. Vanishes after use.
+戦う力を高める魔法のリング\r\n力＋２　使うと失われます	Increases Strength by\r\n2 point. Vanishes after use.
+戦いのわざを伝える書\r\n技＋２　使うと失われます	Increases Skill by 2 points.\r\nVanishes after use.
+最もすばやい天馬の羽根\r\n速さ＋２　使うと失われます	Increases speed by\r\n2 points. Vanishes after use.
+ほほえむ幸運の女神\r\n幸運＋４　使うと失われます	Increases Luck by\r\n4 points. Vanishes after use.
+竜のウロコでつくられた盾\r\n守備＋２　使うと失われます	Increases defense by\r\n2 points. Vanishes after use.
+敵の魔法を払うお守り\r\n魔防＋２　使うと失われます		Increases resistance by\r\n2 points. Vanishes after use.
+魔法がかかったブーツ\r\n移動力＋２　使うと失われます	Increases movement by\r\n2 points. Vanishes after use.
+使うと移動と体格以外が２アップします	Boosts all stats except\r\nMov and Con by 2.
+１ターンの間のみ味方１人の攻撃＋１０	Boosts one ally's Atk by 10\r\nfor one turn.
+味方１人の守備＋１０魔防＋１０	Boosts an ally's Def/Res by 10\r\nfor one turn.
+１ターンの間のみ味方１人の必殺＋１０	Boost's an ally's Crit by 10\r\nfor one turn.
+１ターンの間のみ味方１人の回避＋１０	Boosts an ally's Avo by 10\r\nfor one turn.
+間接攻撃可能な燃えさかる炎の剣	Indirect attackable burning flame sword.
+ゲン	Gen
+ドレイセン	Dreisen
+マイティ	Mighty
+レイド	Raid
+シルキー	Silky
+マックス	Max
+ミッド	Mid
+ジルエット	Gillette
+アレックス	Alex
+セルニード	Serneid
+ルヴィ	Rubi
+サテュラ	Satura
+カレノレ	Karenole
+メリル	Meryl
+ネフティ	Nefti
+ジャクソン	Jackson
+カーティス	Curtis
+アンジェリカ	Angelica
+ミハエル	Michael
+エレナ	Elena
+シヴィアス	Severes
+スティーブ	Steve
+アニゼット	Anizet
+ゼファー	Zephyr
+エリュオン	Eluon
+ネロ	Nero
+カイ	Kai
+カノープス	Canopus
+ネレイ	Nerei
+リオン	Lyon
+ジャスティン	Justin
+ワンダ	Wanda
+エレンディア	Elendia
+ヴァルトス	Valtos
+イズカ	Izuka
+ヴィランドゥ	Villaundu
+ヘイデン	Hayden
+マルシュ	Marsh
+アシュレイ	Ashley
+マローダ	Maroda
+ロアン	Roan
+黄天化	Yellowing
+グッドマン	Goodman
+対戦相手	Enemy
+対戦相手	Enemy
+対戦相手	Enemy
+対戦相手	Enemy
+対戦相手	Enemy
+亡霊戦士	Phantom
+サモン	Summon
+サマナーン	Summonern
+亡霊戦士	Phantom
+リオン	Lyon
+ムルヴァ	Morva
+オブスキュラ	Obscura
+ヴァルトス	Valtos
+エレンディア	Elendia
+ヴァルトス	Valtos
+ベン	Ben
+シュピーデル	Spider
+バドラック	Badac
+デュラハン	Durahan
+ホイップ	Olaf
+クルス	Cruz
+御名方守矢	Moriya
+ボルガザード	Borghazard
+サーケー	Sir
+マルディオン	Mardion
+アルス	Ars
+ドルミン	Dormin
+シェスタ	Schesta
+ケンゴ	Kengo
+ケンゴ	Kengo
+グリムアーツ	Grim Arts
+イズカ	Izuka
+黄天化	Koutenka
+カルマ	Karma
+ウナレフ	Unaref
+守護モルフ	Guardian
+オルナーデン	Ornaden
+バドラック団	Badac Team
+シンゴ	Shingo
+ダリエム	Dariem
+トルネキア	Tornechia
+オブスキュラ	Obscura
+暗黒教団員	Dark Cult
+しかばねの兵	Risen
+したっぱ団員	Grunt
+モンゴル兵士	Mongolian
+バドラック団	Badac Team
+エトルリア兵	Etrurian
+ウィロウ	Willow
+ダラ	Dara
+ライフＳＷ	Life SW
+ミリィ	Milli
+ケン	Ken
+リキア地方ラウス公しゃく家の末えい\r\n争いを好まない性格	The descendants of the\r\nDuke of Routh, Lykia region.\r\nHe who does not like fighting.
+レーン村の村長\r\n歴戦をくぐりぬけた元騎士	Village chief of Lane village\r\nA former knight who\r\npassed through the war.
+ゲンの弟子\r\n正義感あふれる重騎士	Gen's apprentice. A very\r\njust man.
+フェレ家の騎士\r\n騎士アレンの遠い子孫	The descendant of Sir\r\nAllen of Pherae.
+エトルリア王国の僧侶\r\nかつてはエリミーヌ教団に所属していた	A monk in the Kingdom of Etruria who\r\nused to belong to the Elimine Church.
+ジルエットと共に行動する天馬騎士	A pegasus knight travelling\r\nwith Gillette.
+西方出身のかけだし兵士\r\nアレックスの息子	The son of Alex.
+アシュレイの弟\r\n気弱な性格	Ashley's younger brother.
+シルキーと共に各地を飛び回り\r\n宝を探している空賊	A thief roaming around the area with\r\nSilky searching for treasure.
+西方出身の戦士\r\nマックスの父	The father of the warrior Max.\r\n
+アルスの親友でありライバル\r\n兄貴分的存在	Ars's best friend and rival.
+様々な軍に付く傭兵\r\n剣聖カレル？	Mercenaries attached to various armies.\r\nSword St. Karel??
+様々な町を訪れている少女\r\nよくナンパしてる	A girl who visits various towns.\r\nShe's always hitting on mans.
+ベルン王国出身の兵士\r\nメリルの友達	Meryl's friend. From Bern.
+廃きょを好んで様々な\r\n廃きょを訪れている少女	A girl who likes to go out and visit\r\nvarious places.
+サカ領主・・・の亡霊	The ghost of the Sacae lord
+リグレ公爵家の最高指揮官\r\nモルフにされてしまった	Chief commander of the Duke of Ligure.\r\nHe has been made into a morph
+サカ出身の女剣士で\r\n修行の旅に出ている	A female swordsman from\r\nSacae on a training trip.
+エトルリアの魔道軍将を夢見る少年\r\n歳に合わずしっかりした性格	A boy who dreams of the Etrurian\r\nmagistrate.
+ロアンの妻\r\n元エリミーヌ教団員	Roanne's wife, former member\r\nof the Elimine Church.
+ベルン国王子ヴィランドゥの妹\r\nアンジェリカとは親友の関係	Berne's princess,\r\nVillanuda's sister.
+暗黒教団に恨みを持つ男\r\nホワイトの親友	Man with grudge against the Dark cult.\r\nWhite's best friend.
+ベルン王国の王子\r\n国王ダリエムの息子	The son of King Dariem of the\r\nKingdom of Bern.
+キュアン王子の遺児\r\nレンスター王家の生き残り	The son of Prince Quan\r\nof Leonster.
+カフチ島生まれの少年\r\nわけあってリキアにいる	An orphan boy travelling with Ars.
+ミッドの兄\r\n好戦的な性格	Mid's older, more militant brother.
+元エリミーヌ教団の司祭\r\nアルスの恩師	Former priest of the Elimine Church.
+暗黒教団の一員	One of the eight great generals who\r\nthe Dark Church raised.
+暗黒教団がよみがえらせた\r\n八神将の一人	One of the eight great generals who\r\nthe Dark Church raised.
+バドラック団の手下	The subordinates of Badac's team.
+ブルーニャの遠い子孫\r\nシヴィアスとは親友の関係	Distant offspring of Brunnya\r\nSeveres's best friend.
+エトルリア三軍将の一人\r\n『騎士軍将』	One of Etruria's three generals\r\n『Knight General.』
+大きな成長を遂げた魔術士\r\nスキル「回復」「陽光」	A mage who has made great\r\nprogress in their magical studies.\r\nSkill:Renewal,Flare
+高い移動力と攻守に優れた力を持つ\r\n装備『剣・槍・杖』　奥義『太陽』	A knight with superior movement\r\nand well-rounded abilities.\r\nOccult:Sol
+剣の達人　素早い動きと一撃必殺の技\r\n装備『剣』　スキル『連続』	Lightning-fast swordsmen of peerless\r\nand lethal skill. Equip: Swords.\r\nSkill:Adept
+謎の力を秘めた石\r\n防御無視	A stone with mysterious power\r\nNegate Defenses.
+扉や宝箱を開けます	Open the door and\r\nthe treasure chest.
+誰でも使える\r\n万能カギです	A universal key\r\nthat anyone can use.
