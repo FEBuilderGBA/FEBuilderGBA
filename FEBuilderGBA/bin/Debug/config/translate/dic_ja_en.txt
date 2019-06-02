@@ -1634,6 +1634,7 @@ HPの薬	HP Tonic
 防衛	Defense
 中断	Suspend
 中断	 Suspend
+　中断	 Suspend
 記録	Save
 移動方法	How to Move
 アイテム整理	Item Management
@@ -4238,6 +4239,7 @@ and defeating an enemy.
 戦う力を高める魔法の粉\r\n魔力＋２　使うと失われます	Increases magic by\r\n2 points. Vanishes after use.
 １０レベル以上の　下位クラス\r\nユニットが使います	For some units Lv. 10 and up\r\nwho have not changed class.
 奥義のＳランク条件を\r\n撤廃する	Removes a weapon rank at S.
+
 回復Ｍ	回復Ｍ
 味方を再行動させます	Allows allies\r\nto move again.
 『移動力』が増えます	Raises movement.
@@ -4417,7 +4419,7 @@ and defeating an enemy.
 スリープの剣	Sleep Sword
 サンダーソード	Levin Sword
 目的：玉座制圧	Seize throne
-目的：宝箱開く	Open the Chests
+目的：宝箱開く	Open Chests
 多くアイテムをつる	Fish a lot of items
 アイテムをつる	Fish an item
 致命攻撃を必ずＨＰ１で耐える\r\n不思議なお守り	When held, survive a\r\nfatal blow with 1 HP.
@@ -4545,40 +4547,40 @@ and defeating an enemy.
 戦車の弾	Tank's bullets
 ペトロクラウド	Petrocloud
 ブリューナク	Brunak
-強者にのみにしか扱えない大型の槍	Large bowl that can only be handled\r\nby strong people.
+強者にのみにしか扱えない大型の槍	Large bowl can only use strong people.
 ゴーストリング	Ghost Ring
 上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます	If has Promoted Arus,Ninz,White,\r\ncan transform ghost\r\nwith "Ride" command
 ヘパイスの黒雷	Black Thunder
 暗黒の雷で相手を攻撃する	Attack with dark lightning
 ヴンダーガスト	Vundergast
-大型の風魔法。速さ＋２
+大型の風魔法。速さ＋２	Large-scale wind magic.Speed+2.
 妖刀かまいたち	Kamaitachi
 攻撃範囲がかなり広い刀。非常に貴重	fairly wide attack range.Very valuable.
 モンゴルの剣	MongolianSword
 バサークダガー	BerserkDagger
 攻撃が命中すると相手にバサークをかける	If hit, Put Berserk
 女王の剣	Queen's Sword
-女王の加護により力が増幅された封印の剣
+女王の加護により力が増幅された封印の剣	Sealed sword blessed by the queen
 まばゆいビームサーベル	Dazzling beam saber
 オデッセイの剣	Odyssey Sword
-大型魔法「オデッセイ」を宿した剣	Sword with the large magic "Odyssey"
+大型魔法「オデッセイ」を宿した剣	Sword with the large magic Odyssey
 ヘリオスの疾風	Helios Gale
 大型の風魔法　飛行特攻	Large-scale wind magic. Effective fliers
-テティスの氷石	Ice Rock
-氷のつぶての雨を相手に降らせる
+テティスの氷石	Tethys's Ice
+氷のつぶての雨を相手に降らせる	Rain of ice Rock at Enenmy.
 アトラスの業火	Atlas's Flame
 炎の竜を呼び覚まし相手に突撃する	Wake up the fire dragon and assault.
 モンゴルの剣	Mongolian sword
 モンゴルで作られた剣。当たると毒になる	Made in Mongolia. poison when hit.
 フレイムロッド	Flame Rod
-炎を宿した杖。魔法ではなく物理	Has flame power. Physical attack not magic.
+炎を宿した杖。魔法ではなく物理	Has flame power. Physical not magic.
 タワーシールド	Tower Shield
 持つと守備を＋２にする盾	Shield that makes Def+2
 投石	ThrowingStone
 投げれる石	Stone to be thrown
 持っていると一度だけ祈りスキル発動	Miracle skill activation only once\r\nif you have one
 漆黒の斬鉄斧	Jet-Black Axe
-漆黒に覆われた斧。武器スキル『キャンセル』
+漆黒に覆われた斧。武器スキル『キャンセル』	Jetty covered Axs.Skill "Cancel"
 ラビアンローズ	La Vie en rose
 女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate
 閃光の弓	Flash Bow
@@ -4586,19 +4588,19 @@ and defeating an enemy.
 バルダシールド	Balda Shield
 そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5
 エリートの長弓	ParagonLongBow
-装備するとエリートのスキルが付く長弓	With skill "Paragon" when Equip
+装備するとエリートのスキルが付く長弓	With skill Paragon when Equip
 見切りの盾	Nihil shield
-装備時見切りのスキルを得る盾　攻撃不可	With skill "Nihil" when Equip.Not attackable
+装備時見切りのスキルを得る盾　攻撃不可	With skill Nihil when Equip.NotAttack
 聖なる盾	Holy shield
-装備時聖盾のスキルを得る　攻撃不可	With skill "Aegis" when Equip.Not attackable
+装備時聖盾のスキルを得る　攻撃不可	With skill Aegis when Equip.NotAttack
 重装の盾	Heavy Shield
 とても重くて硬い盾	Very heavy and hard shield
 強運を呼ぶ盾	Blessing Shield
-装備時強運のスキルを得る盾　攻撃不可	With skill "Blessing" when Equip.Not attackable
+装備時強運のスキルを得る盾　攻撃不可	With skill Blessing when Equip.NotAttack
 ヘルパニッシャ－	Hell Punisher
-地獄より舞い降りた剣　必殺無効	Sword that has descended from hell.Negate Criticals.
+地獄より舞い降りた剣　必殺無効	Sword from hell.Negate Criticals.
 グラムロック	Gram lock
-装備時　スキル連撃防御を得る　守備＋２	With skill "Bunker" when Equip.Def+2
+装備時　スキル連撃防御を得る　守備＋２	With skill Bunker when Equip.Def+2
 雷神の弓	Raijin Yumi
 風神の弓	Fujin Yumi
 必殺無効　体力を吸収する	Negate Criticals.Lifetaker.
@@ -4612,15 +4614,16 @@ and defeating an enemy.
 クラウ・ソラス	Crow Soras
 相性反転効果のある魔法剣	Magic sword with a Reaver Effect.
 ヴォルケイトス	Volkeithos
-ヴォルケナ火山から発見された幻の槍
+ヴォルケナ火山から発見された幻の槍	Illusionary Lance discover Mt Volkena.
 エリートの剣	Paragon Sword
-装備するとスキル「エリート」を得る剣	With skill "Paragon" when Equip.
+装備するとスキル「エリート」を得る剣	With skill Paragon when Equip.
 バルダアーマー	Balder Armor
 耐久に優れた鎧	Durable armor
 エイトセンシズ	EighthSense
 使うと移動と体格以外が２アップします	Increases All by 2 point.\r\nexcept MOV and CON.
 ガンブレード	Gan Blade
-剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into the sword
+剣の柄にジュウの機構を取り入れた武器	Incorporates gun mechanism into sword
+剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into sword
 パワーボウ	Power Bow
 力を増幅させる不思議な弓	Mysterious bow That amplifies the power
 必殺Ｍ	Crit.M
@@ -4640,6 +4643,9 @@ and defeating an enemy.
 『神将器』　業火の理　幸運＋５	The Infernal Truth. Luck +5
 『神将器』　至高の光　魔防＋５	The Glorious Acension. Res +5
 『神将器』　黙示の闇　魔力＋５	The Elder Revelation. Mag +5
+『神将器』　氷雪の槍　技＋５	The Ice snow Lance. Skill +5
+『神将器』　烈火の剣　力＋５	The Blazing Bld. Pow +5
+
 地にまい降りた天使の衣\r\n最大ＨＰ＋５　使うと失われます	Increases Max HP by\r\n5 point. Vanishes after use.
 戦う力を高める魔法のリング\r\n力＋２　使うと失われます	Increases Strength by\r\n2 point. Vanishes after use.
 戦いのわざを伝える書\r\n技＋２　使うと失われます	Increases Skill by 2 points.\r\nVanishes after use.
@@ -4788,3 +4794,41 @@ and defeating an enemy.
 謎の力を秘めた石\r\n防御無視	A stone with mysterious power\r\nNegate Defenses.
 扉や宝箱を開けます	Open the door and\r\nthe treasure chest.
 誰でも使える\r\n万能カギです	A universal key\r\nthat anyone can use.
+ｎ邪の宝剣	Bakuya
+莫邪の宝剣	Bakuya
+死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
+英雄ハルトムートの剣　間接攻撃可能	Hero Hartmut's sword. RangeAttack.
+矢が遠くまで届く大型の弓	Large bow that the arrow can reach far.
+様々な武器を扱う上級騎士\r\n武器『剣・槍・弓・杖』	Advanced knights who handle various weapons\r\nEquip: Sword, Lance, Axs, Bow.
+光の翼をもつ騎士\r\n武器『剣・光・闇・理』	A knight with wings of light.\r\nEquip: Sword, Light, Dark, Anima.
+力は弱いが　安定した能力を持つ\r\n装備『理・光』	Magic wielders with solid skills but low\r\nphysical strength. Equip: Anima, Light.
+理と光魔法を使う　魔道騎士\r\n装備『理・光・剣』　スキル『回復』	Mage knights who using Anima and Light magic.\r\nEquip: Anima, Light, Sword.\r\nSkill: Renewal.
+攻撃は魔道士を超えるが　速さに劣る\r\n装備『闇・理』	Wielders of magic who are stronger,\r\nbut slower, than mages. Equip: Dark, Anima.
+魔力が高く　高位の魔法をあやつる\r\n装備『闇・理・杖』　スキル『月食』	Wielders of deep and ancient magic.\r\nEquip: Dark, anima, Staves.\r\nSkill: Luna.
+死を経験し　よみがえった剣士\r\n装備『剣・闇』スキル『すりぬけ』	Swordsman who has experienced death and has risen.\r\nEquip: Sword, Dark.\r\nSkill: Pass.
+全ての魔法を使いこなす　魔女\r\n装備『理・闇・光』　奥義『生命吸収』	Magicians with a mastery of all magics.\r\nEquip: Anima, Light, Dark.\r\nOccult: Lifetaker.
+自らの意思でアンデットと化した道化師\r\nスキル「回復」「相性激化」	Clown who turned himself into Andet.\r\nSkill: Renewal, Triangle Adept.
+別大陸から送り込まれた\r\n戦闘車両	Combat vehicles sent\r\nfrom another continent.
+世界を動かす強国の王\r\nきわめて高い能力をほこる	King of power that moves the world.\r\nHe have a very high ability.
+遠距離からの攻撃に優れる発射台	Launch pad that is excellent for\r\nlong range attacks
+死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
+神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.\r\nSkill: Pass
+武器レベル	Weapon level
+人こう的に創られた魔法	Artificially created magic
+人工的に創られた魔法	Artificially created magic
+二回攻撃することができる雷魔法	Lightning magic that can attacked twice
+孤独に一人旅を続けた\r\n戦災孤児	War orphan who continued\r\ntraveling alone in solitude.
+元エリミーヌ教団員のシャーマン	Sherman of the\r\nformer Elimine Church
+イリアの\r\nエデッサ天馬騎士団の一員	Member of Ilia's Edessa\r\npegasus knights
+小さな村で密かに暮らす少女\r\n魔法の修行をしてる	A girl who lives secretly in small village\r\nShe is practicing magic
+サカの民を守る為に戦う正義感の強い男	A man with a strong sense of justice\r\nwho fights to protect the people of Sacae.
+ベルン三竜将の一人\r\n高い魔道能力を持つ	She is one of Bern's three dragon generals\r\nand has high magic ability
+非道な生物実験をしている\r\n生物学者	A biologist who is experimenting\r\nwith biological experiments
+バドラック団に村を襲われた\r\n女盗賊	A female thief\r\nwho has been attacked by a village of Badac's
+兵士養成学校出身の兵士\r\n少々おくびょうな性格	Soldiers from a soldier training school.\r\nHe has a slightly timid character.
+遠い大陸から来た戦士\r\n語尾に「さ」を付ける癖がある	Warrior from a distant continent\r\nHe has a habit of adding "sa" at the end.
+コスモランドから渡ってきた\r\nブルームーン軍の将軍	General of the BlueMoon army\r\nwho came from Cosmoland
+トルネキアの最高傑作である\r\n青い肌のモルフ	Morph of blue skin which is\r\nthe masterpiece of Tornechia
+ベルン国王\r\n暗黒教団に操られてる	King Bern but is manipulated\r\nby the Dark Church
+暗黒教団を統べる者\r\nエレブ大陸を支配しようとしている	Person who leads the dark cult.\r\nHe is trying to rule the Ereb continent.
+
