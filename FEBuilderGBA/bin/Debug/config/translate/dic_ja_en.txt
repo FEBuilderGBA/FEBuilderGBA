@@ -1634,7 +1634,6 @@ HPの薬	HP Tonic
 防衛	Defense
 中断	Suspend
 中断	 Suspend
-　中断	 Suspend
 記録	Save
 移動方法	How to Move
 アイテム整理	Item Management
@@ -3657,7 +3656,6 @@ and defeating an enemy.
 傭兵団	Mercenary
 剣闘士	Gladiator
 宝あらし	Hunter
-対戦相手	Enemy
 市民	Citizen
 市民	Civilian
 神官	Priest
@@ -3846,7 +3844,6 @@ and defeating an enemy.
 市民	Citizen
 ルネスの民	Renais Cit.
 市民	Civilian
-対戦相手	Enemy
 壊れる壁	Wall
 古木	Snag
 マーク	Mark
@@ -4419,7 +4416,7 @@ and defeating an enemy.
 スリープの剣	Sleep Sword
 サンダーソード	Levin Sword
 目的：玉座制圧	Seize throne
-目的：宝箱開く	Open Chests
+目的：宝箱開く	Open the Chests
 多くアイテムをつる	Fish a lot of items
 アイテムをつる	Fish an item
 致命攻撃を必ずＨＰ１で耐える\r\n不思議なお守り	When held, survive a\r\nfatal blow with 1 HP.
@@ -4534,11 +4531,11 @@ and defeating an enemy.
 　『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
 恐怖Ｍ	Intimidate.M
 治癒Ｍ	Boon.M
-金ごうの一撃Ｍ	Armormed Blow.M
+金ごうの一撃Ｍ	ArmormedBlow.M
 　『金ごうの一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
 閃光のブレス	Flash of breath
 まばゆい閃光で相手を殲滅する	Destroy the other party with a dazzling flash
-ふしぎなアメ	RareCandy
+ふしぎなアメ	Rare Candy
 拠点で使用します	Use at base
 リーダーバッジ	Leader Badge
 持っているとそれぞれ異なる\r\nリーダースキルを発動させれます	Different leader skills\r\ncan be triggered by having
@@ -4562,7 +4559,7 @@ and defeating an enemy.
 女王の剣	Queen's Sword
 女王の加護により力が増幅された封印の剣	Sealed sword blessed by the queen
 まばゆいビームサーベル	Dazzling beam saber
-オデッセイの剣	Odyssey Sword
+オデッセイの剣	OdysseySword
 大型魔法「オデッセイ」を宿した剣	Sword with the large magic Odyssey
 ヘリオスの疾風	Helios Gale
 大型の風魔法　飛行特攻	Large-scale wind magic. Effective fliers
@@ -4570,24 +4567,24 @@ and defeating an enemy.
 氷のつぶての雨を相手に降らせる	Rain of ice Rock at Enenmy.
 アトラスの業火	Atlas's Flame
 炎の竜を呼び覚まし相手に突撃する	Wake up the fire dragon and assault.
-モンゴルの剣	Mongolian sword
+モンゴルの剣	MongolianSWD
 モンゴルで作られた剣。当たると毒になる	Made in Mongolia. poison when hit.
 フレイムロッド	Flame Rod
-炎を宿した杖。魔法ではなく物理	Has flame power. Physical not magic.
+炎を宿した杖。魔法ではなく物理	Has flame power. Physical attack not magic.
 タワーシールド	Tower Shield
 持つと守備を＋２にする盾	Shield that makes Def+2
 投石	ThrowingStone
 投げれる石	Stone to be thrown
 持っていると一度だけ祈りスキル発動	Miracle skill activation only once\r\nif you have one
-漆黒の斬鉄斧	Jet-Black Axe
+漆黒の斬鉄斧	Jet-BlackAxe
 漆黒に覆われた斧。武器スキル『キャンセル』	Jetty covered Axs.Skill "Cancel"
-ラビアンローズ	La Vie en rose
+ラビアンローズ	LaVieEnRose
 女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate
 閃光の弓	Flash Bow
 レイピアと同じ特攻効果を持つ弓	With the same effectiveness Rapier
-バルダシールド	Balda Shield
+バルダシールド	BaldaShield
 そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5
-エリートの長弓	ParagonLongBow
+エリートの長弓	ParagonBow
 装備するとエリートのスキルが付く長弓	With skill Paragon when Equip
 見切りの盾	Nihil shield
 装備時見切りのスキルを得る盾　攻撃不可	With skill Nihil when Equip.NotAttack
@@ -4614,16 +4611,16 @@ and defeating an enemy.
 クラウ・ソラス	Crow Soras
 相性反転効果のある魔法剣	Magic sword with a Reaver Effect.
 ヴォルケイトス	Volkeithos
-ヴォルケナ火山から発見された幻の槍	Illusionary Lance discover Mt Volkena.
-エリートの剣	Paragon Sword
+ヴォルケナ火山から発見された幻の槍	Illusionary Lance discovered Mount Volkena.
+エリートの剣	ParagonSWD
 装備するとスキル「エリート」を得る剣	With skill Paragon when Equip.
-バルダアーマー	Balder Armor
+バルダアーマー	BalderArmor
 耐久に優れた鎧	Durable armor
 エイトセンシズ	EighthSense
 使うと移動と体格以外が２アップします	Increases All by 2 point.\r\nexcept MOV and CON.
-ガンブレード	Gan Blade
-剣の柄にジュウの機構を取り入れた武器	Incorporates gun mechanism into sword
-剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into sword
+ガンブレード	Gun Blade
+剣の柄にジュウの機構を取り入れた武器	Incorporates gun mechanism into the sword
+剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into the sword
 パワーボウ	Power Bow
 力を増幅させる不思議な弓	Mysterious bow That amplifies the power
 必殺Ｍ	Crit.M
@@ -4645,7 +4642,6 @@ and defeating an enemy.
 『神将器』　黙示の闇　魔力＋５	The Elder Revelation. Mag +5
 『神将器』　氷雪の槍　技＋５	The Ice snow Lance. Skill +5
 『神将器』　烈火の剣　力＋５	The Blazing Bld. Pow +5
-
 地にまい降りた天使の衣\r\n最大ＨＰ＋５　使うと失われます	Increases Max HP by\r\n5 point. Vanishes after use.
 戦う力を高める魔法のリング\r\n力＋２　使うと失われます	Increases Strength by\r\n2 point. Vanishes after use.
 戦いのわざを伝える書\r\n技＋２　使うと失われます	Increases Skill by 2 points.\r\nVanishes after use.
@@ -4703,11 +4699,6 @@ and defeating an enemy.
 ロアン	Roan
 黄天化	Yellowing
 グッドマン	Goodman
-対戦相手	Enemy
-対戦相手	Enemy
-対戦相手	Enemy
-対戦相手	Enemy
-対戦相手	Enemy
 亡霊戦士	Phantom
 サモン	Summon
 サマナーン	Summonern
@@ -4814,21 +4805,3 @@ and defeating an enemy.
 死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
 神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.\r\nSkill: Pass
 武器レベル	Weapon level
-人こう的に創られた魔法	Artificially created magic
-人工的に創られた魔法	Artificially created magic
-二回攻撃することができる雷魔法	Lightning magic that can attacked twice
-孤独に一人旅を続けた\r\n戦災孤児	War orphan who continued\r\ntraveling alone in solitude.
-元エリミーヌ教団員のシャーマン	Sherman of the\r\nformer Elimine Church
-イリアの\r\nエデッサ天馬騎士団の一員	Member of Ilia's Edessa\r\npegasus knights
-小さな村で密かに暮らす少女\r\n魔法の修行をしてる	A girl who lives secretly in small village\r\nShe is practicing magic
-サカの民を守る為に戦う正義感の強い男	A man with a strong sense of justice\r\nwho fights to protect the people of Sacae.
-ベルン三竜将の一人\r\n高い魔道能力を持つ	She is one of Bern's three dragon generals\r\nand has high magic ability
-非道な生物実験をしている\r\n生物学者	A biologist who is experimenting\r\nwith biological experiments
-バドラック団に村を襲われた\r\n女盗賊	A female thief\r\nwho has been attacked by a village of Badac's
-兵士養成学校出身の兵士\r\n少々おくびょうな性格	Soldiers from a soldier training school.\r\nHe has a slightly timid character.
-遠い大陸から来た戦士\r\n語尾に「さ」を付ける癖がある	Warrior from a distant continent\r\nHe has a habit of adding "sa" at the end.
-コスモランドから渡ってきた\r\nブルームーン軍の将軍	General of the BlueMoon army\r\nwho came from Cosmoland
-トルネキアの最高傑作である\r\n青い肌のモルフ	Morph of blue skin which is\r\nthe masterpiece of Tornechia
-ベルン国王\r\n暗黒教団に操られてる	King Bern but is manipulated\r\nby the Dark Church
-暗黒教団を統べる者\r\nエレブ大陸を支配しようとしている	Person who leads the dark cult.\r\nHe is trying to rule the Ereb continent.
-
