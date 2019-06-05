@@ -1,0 +1,27 @@
+//comment this define out if you don't want to use Select to display growths
+#define Display_Growths_Toggle
+
+//Write 0 if you don't want fixed growth mode to exist, or 1 if you want it to be an option
+#define Growth_Opt1 0
+
+//Write 0 if you want crusader scrolls and metis tome to affect growths when fixed mode is on, or 1 if they should NOT affect growths
+#define Growth_Opt2 1
+
+//Write 0 if you want only the first crusader scroll in a person's inventory to affect growths, or 1 for multiple ones to stack
+#define Growth_Opt3 1
+
+//Write 0 if you don't want fixed growths mode to apply to enemy/npc autolevels, or 1 if you do
+#define Growth_Opt4 1
+
+//Write 0 if you don't want the color of the stat name to reflect the unit's growth in that stat, or 1 if you do (player units only)
+#define Stat_Colors 1
+
+//Select the metis tome boost (applies to all growths)
+#define Metis_Tome_Boost 5
+
+//If fixed growth mode is enabled, select the permanent event id to use to toggle it on
+#define Fixed_Growths_ID 0xB0
+
+//Don't touch these
+#define Growth_Options "Growth_Opt1|(Growth_Opt2<<1)|(Growth_Opt3<<2)|(Growth_Opt4<<3)|(Stat_Colors<<4)|(Metis_Tome_Boost<<8)|((Fixed_Growths_ID&0xFF)<<0x10)|((Fixed_Growths_ID&0xFF00)<<0x10)"
+#define Stat_Page_Ram_Loc 0x203FFFF

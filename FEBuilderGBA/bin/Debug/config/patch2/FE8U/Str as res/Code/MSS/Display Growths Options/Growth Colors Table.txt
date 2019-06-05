@@ -1,0 +1,17 @@
+/*
+The first number is the growth; second number is palette group index (sort of). You can also use 0-4; those are the normal text colors (white, blue, grey, yellow, and glowy-green). If the unit's growth (with bonuses/debuffs) is lower than the first number, that palette index will be used.
+
+Palette group indices 5-14 (inclusive) correspond to the colors defined in "New Palette.txt". Currently, they progress from 5 ( green, high growth) to 14 (red, low growth). Debuffs, both to stats and growths, will use index 14 (dark red), so you may want to leave this one alone. The rest can be defined as you wish. You can see what the current colors look like in 'example text.png', made by L95.
+*/
+
+BYTE 20 14
+BYTE 30 13
+BYTE 40 12
+BYTE 45 11
+BYTE 50 10
+BYTE 60 9
+BYTE 70 8
+BYTE 80 7
+BYTE 90 6
+BYTE 100 5
+BYTE 0 0 	//terminator
