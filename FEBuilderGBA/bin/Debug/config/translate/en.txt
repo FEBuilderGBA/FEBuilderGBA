@@ -2560,35 +2560,17 @@ To make an item fall on FE 7, enable the bit of the drop item of characteristic 
 :標的と回復AI
 Target AI
 
-:00=標的00
-00=Target 00
-
-:08=標的08
-08=target 08
-
-:10=標的10
-10=Target 10
-
-:18=標的18
-18=target 18
-
-:20=標的20
-20=target 20
-
-:28=標的28
-28=target 28
-
 :00=50%以下で回復モード、100%回復したら戻る
-00=Recovery mode when HP 50% or less, return after HP 100%
+00=Recovery mode when HP 50%, return HP 100%
 
 :01=30%以下で回復ﾓｰﾄﾞ、80%以上回復したら戻る
-01=Recovery mode when HP 30% or less, return after HP 80% or more
+01=Recovery mode when HP 30%, return HP 80%
 
 :02=10%以下で回復ﾓｰﾄﾞ、50%以上回復したら戻る
-02=Recovery mode when HP 10% or less, return after HP 50% or more
+02=Recovery mode when HP 10%, return HP 50%
 
 :03=80%以下で回復ﾓｰﾄﾞ、100%回復したら戻る
-03=Recovery mode when HP 80% or less, return after HP 100%
+03=Recovery mode when HP 80%, return HP 100%
 
 :04=回復モードにならない
 04=Not in recovery mode
@@ -2671,15 +2653,6 @@ It is not possible to erase all the coordinates of the unit.
 :ユニット配置で、自軍のユニットID({0})が重複して書かれています。\r\n進撃開始に利用する自軍配置以外で、このような書き方をするのは極めてまれです。\r\nユニットの所属を友軍か敵軍と間違えてませんか？\r\n自軍の場合、同一ユニットIDは、一つのユニットにまとめられます。
 Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare to do this kind of writing other than arranging your army to use for starting the attack.\r\nHave you mistaken the affiliation of the unit as a friendly or enemy army?\r\nIn the case of your army, the same unit ID is grouped into one unit.
 
-:/60秒
-/60sec
-
-:0=普通
-0=Normal
-
-:1=鈍足
-1=Heavy Steps
-
 :特殊:
 Special:
 
@@ -2688,6 +2661,15 @@ After Moving
 
 :配置後座標格納アドレス
 Post-place coordinate storage
+
+:/60秒
+/60sec
+
+:0=普通
+0=Normal
+
+:1=鈍足
+1=Heavy Steps
 
 :アイテムドロップする
 Drop item
@@ -9861,6 +9843,24 @@ Reference data.
 
 :順番
 In order.
+
+:00=標的00
+00=Target 00
+
+:08=標的08
+08=target 08
+
+:10=標的10
+10=Target 10
+
+:18=標的18
+18=target 18
+
+:20=標的20
+20=target 20
+
+:28=標的28
+28=target 28
 
 :ユニット依存
 Unit Dependent

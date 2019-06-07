@@ -24,25 +24,10 @@ namespace FEBuilderGBA
             //マップIDリストを作る.
             U.ConvertListBox(MapSettingForm.MakeMapIDList(), ref this.MAP_LISTBOX);
 
-            //AIで狙うキャラアドレスをちゃんと埋める.
-            L_12_COMBO.BeginUpdate();
-            L_12_COMBO.Items.Clear();
-            for (int i = 0; i < EventUnitForm.AI1.Count; i++)
-            {
-                L_12_COMBO.Items.Add(EventUnitForm.AI1[i].Name);
-            }
-            L_12_COMBO.EndUpdate();
-            L_12_COMBO.SelectedIndex = 0;
-
-            L_13_COMBO.BeginUpdate();
-            L_13_COMBO.Items.Clear();
-            for (int i = 0; i < EventUnitForm.AI2.Count; i++)
-            {
-                L_13_COMBO.Items.Add(EventUnitForm.AI2[i].Name);
-            }
-            L_13_COMBO.EndUpdate();
-            L_13_COMBO.SelectedIndex = 0;
-
+            //AI
+            EventUnitForm.AI1ToCombo(L_12_COMBO);
+            EventUnitForm.AI2ToCombo(L_13_COMBO);
+            EventUnitForm.AI3ToCombo(L_14_AI3_HYOUTEKI);
 
             //右クリックメニューを出す.
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);

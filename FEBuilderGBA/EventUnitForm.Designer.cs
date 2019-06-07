@@ -772,17 +772,10 @@
             // 
             this.L_18_AI3_HYOUTEKI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_18_AI3_HYOUTEKI.FormattingEnabled = true;
-            this.L_18_AI3_HYOUTEKI.Items.AddRange(new object[] {
-            "00=標的00",
-            "08=標的08",
-            "10=標的10",
-            "18=標的18",
-            "20=標的20",
-            "28=標的28"});
-            this.L_18_AI3_HYOUTEKI.Location = new System.Drawing.Point(638, 157);
+            this.L_18_AI3_HYOUTEKI.Location = new System.Drawing.Point(624, 157);
             this.L_18_AI3_HYOUTEKI.Margin = new System.Windows.Forms.Padding(5);
             this.L_18_AI3_HYOUTEKI.Name = "L_18_AI3_HYOUTEKI";
-            this.L_18_AI3_HYOUTEKI.Size = new System.Drawing.Size(246, 26);
+            this.L_18_AI3_HYOUTEKI.Size = new System.Drawing.Size(262, 26);
             this.L_18_AI3_HYOUTEKI.TabIndex = 15;
             // 
             // L_15_ITEMICON
@@ -917,7 +910,7 @@
             this.L_18_AI3_KAIFUKU.Location = new System.Drawing.Point(199, 157);
             this.L_18_AI3_KAIFUKU.Margin = new System.Windows.Forms.Padding(5);
             this.L_18_AI3_KAIFUKU.Name = "L_18_AI3_KAIFUKU";
-            this.L_18_AI3_KAIFUKU.Size = new System.Drawing.Size(428, 26);
+            this.L_18_AI3_KAIFUKU.Size = new System.Drawing.Size(421, 26);
             this.L_18_AI3_KAIFUKU.TabIndex = 14;
             // 
             // L_17_COMBO

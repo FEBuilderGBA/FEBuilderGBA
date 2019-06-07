@@ -406,9 +406,10 @@ namespace FEBuilderGBA
             //イベント条件の解釈リスト
             EventCondForm.PreLoadResource(U.ConfigDataFilename("eventcond_"));
 
-            //AI1 と 2
+            //AI1 と 2, 3
             EventUnitForm.PreLoadResourceAI1(U.ConfigDataFilename("ai1_"));
             EventUnitForm.PreLoadResourceAI2(U.ConfigDataFilename("ai2_"));
+            EventUnitForm.PreLoadResourceAI3(U.ConfigDataFilename("ai3_"));
 
             //SondEffectリスト
             SongTableForm.PreLoadResource(U.ConfigDataFilename("sound_"));

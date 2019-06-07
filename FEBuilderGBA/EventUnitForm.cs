@@ -29,6 +29,7 @@ namespace FEBuilderGBA
 
             EventUnitForm.AI1ToCombo(L_16_COMBO);
             EventUnitForm.AI2ToCombo(L_17_COMBO);
+            EventUnitForm.AI3ToCombo(L_18_AI3_HYOUTEKI);
 
             //右クリックメニューを出す.
             this.InputFormRef.MakeGeneralAddressListContextMenu(true, false,(sender,e)=>{
@@ -115,6 +116,17 @@ namespace FEBuilderGBA
             for (int i = 0; i < AI2.Count; i++)
             {
                 combo.Items.Add(AI2[i].Name);
+            }
+            combo.EndUpdate();
+            combo.SelectedIndex = 0;
+        }
+        public static void AI3ToCombo(ComboBox combo)
+        {
+            combo.BeginUpdate();
+            combo.Items.Clear();
+            for (int i = 0; i < AI3.Count; i++)
+            {
+                combo.Items.Add(AI3[i].Name);
             }
             combo.EndUpdate();
             combo.SelectedIndex = 0;
@@ -1380,8 +1392,13 @@ namespace FEBuilderGBA
         {
             public string Name;
         };
+        public class AI3TargetSt
+        {
+            public string Name;
+        };
         public static List<AI1st> AI1 { get; private set; }
         public static List<AI2st> AI2 { get; private set; }
+        public static List<AI3TargetSt> AI3 { get; private set; }
 
         public static void PreLoadResourceAI1(string fullfilename)
         {
@@ -1475,6 +1492,39 @@ namespace FEBuilderGBA
                 AI2.Add(p);
             }
         }
+        public static void PreLoadResourceAI3(string fullfilename)
+        {
+            AI3 = new List<AI3TargetSt>();
+            if (!U.IsRequiredFileExist(fullfilename))
+            {
+                return;
+            }
+
+            using (StreamReader reader = File.OpenText(fullfilename))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    {
+                        continue;
+                    }
+                    string[] sp = line.Split('\t');
+                    if (sp.Length <= 0)
+                    {
+                        continue;
+                    }
+
+                    string str = sp[0];
+                    AI3TargetSt p = new AI3TargetSt();
+
+                    //[0x5D2908]のユニット みたいなアドレス表記を埋める
+                    str = InputFormRef.ConvertAddToValue(str);
+                    p.Name = str;
+                    AI3.Add(p);
+                }
+            }
+        }
 
         static string GetAINameByAddrOrID(int i, uint addr)
         {
@@ -1504,6 +1554,14 @@ namespace FEBuilderGBA
                 return "";
             }
             return AI2[(int)ai].Name;
+        }
+        public static string GetAIName3(uint ai)
+        {
+            if (ai >= AI3.Count)
+            {
+                return "";
+            }
+            return AI3[(int)ai].Name;
         }
 
         //新規に確保した領域

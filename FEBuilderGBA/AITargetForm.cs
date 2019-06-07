@@ -36,6 +36,11 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
+                    string name = EventUnitForm.GetAIName3((uint)i);
+                    if (name != "")
+                    {
+                        return name;
+                    }
                     switch (i)
                     {
                         case 0:
