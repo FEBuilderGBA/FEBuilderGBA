@@ -1,0 +1,19 @@
+NAME=ResをMagicとして利用するパッチ 20171125(導入)
+NAME.en=Patch that uses Res as Magic 20171125(Install)
+
+TYPE=EA
+TAG=#ENGINE #SOUND
+
+//既に適応されたかどうか
+PATCHED_IF:0x2AB50=0x01 0x4B 0x9E 0x46 0x00 0xF8 0x01 0xE0
+
+EA=StrenghtAsRes.txt
+
+INFO=魔力の項目を新設して、魔法を分離します。\r\nこのパッチは魔防を魔力として扱います。
+INFO.en=This Patch will set up magical items and separate magic.\r\nThis patch treats Res as Magic.
+NAME.zh=Patch that uses Res as Magic 20171125（介绍）
+INFO.zh=我们将设置魔法物品并分开魔法。
+
+AUTHOR=Kirb https://feuniverse.us/t/kirbs-subpar-asm/2847/8
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

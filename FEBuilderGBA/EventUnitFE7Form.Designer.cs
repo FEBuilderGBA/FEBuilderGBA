@@ -723,17 +723,10 @@
             // 
             this.L_14_AI3_HYOUTEKI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_14_AI3_HYOUTEKI.FormattingEnabled = true;
-            this.L_14_AI3_HYOUTEKI.Items.AddRange(new object[] {
-            "00=標的00",
-            "08=標的08",
-            "10=標的10",
-            "18=標的18",
-            "20=標的20",
-            "28=標的28"});
-            this.L_14_AI3_HYOUTEKI.Location = new System.Drawing.Point(646, 160);
+            this.L_14_AI3_HYOUTEKI.Location = new System.Drawing.Point(624, 160);
             this.L_14_AI3_HYOUTEKI.Margin = new System.Windows.Forms.Padding(5);
             this.L_14_AI3_HYOUTEKI.Name = "L_14_AI3_HYOUTEKI";
-            this.L_14_AI3_HYOUTEKI.Size = new System.Drawing.Size(230, 26);
+            this.L_14_AI3_HYOUTEKI.Size = new System.Drawing.Size(259, 26);
             this.L_14_AI3_HYOUTEKI.TabIndex = 11;
             // 
             // L_14_AI3_KAIFUKU
@@ -749,7 +742,7 @@
             this.L_14_AI3_KAIFUKU.Location = new System.Drawing.Point(205, 161);
             this.L_14_AI3_KAIFUKU.Margin = new System.Windows.Forms.Padding(5);
             this.L_14_AI3_KAIFUKU.Name = "L_14_AI3_KAIFUKU";
-            this.L_14_AI3_KAIFUKU.Size = new System.Drawing.Size(423, 26);
+            this.L_14_AI3_KAIFUKU.Size = new System.Drawing.Size(415, 26);
             this.L_14_AI3_KAIFUKU.TabIndex = 10;
             // 
             // L_11_ITEMICON
@@ -867,7 +860,7 @@
             this.L_15_COMBO.Location = new System.Drawing.Point(205, 196);
             this.L_15_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_15_COMBO.Name = "L_15_COMBO";
-            this.L_15_COMBO.Size = new System.Drawing.Size(671, 26);
+            this.L_15_COMBO.Size = new System.Drawing.Size(678, 26);
             this.L_15_COMBO.TabIndex = 12;
             // 
             // L_13_COMBO
@@ -877,17 +870,17 @@
             this.L_13_COMBO.Location = new System.Drawing.Point(205, 129);
             this.L_13_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_13_COMBO.Name = "L_13_COMBO";
-            this.L_13_COMBO.Size = new System.Drawing.Size(672, 26);
+            this.L_13_COMBO.Size = new System.Drawing.Size(678, 26);
             this.L_13_COMBO.TabIndex = 9;
             // 
             // L_12_COMBO
             // 
             this.L_12_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_12_COMBO.FormattingEnabled = true;
-            this.L_12_COMBO.Location = new System.Drawing.Point(205, 94);
+            this.L_12_COMBO.Location = new System.Drawing.Point(205, 97);
             this.L_12_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_12_COMBO.Name = "L_12_COMBO";
-            this.L_12_COMBO.Size = new System.Drawing.Size(672, 26);
+            this.L_12_COMBO.Size = new System.Drawing.Size(678, 26);
             this.L_12_COMBO.TabIndex = 8;
             // 
             // B15

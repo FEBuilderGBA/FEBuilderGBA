@@ -221,7 +221,7 @@ namespace FEBuilderGBA
                     bool ignoreTSA = IgnoreTSA.Checked;
                     Bitmap dest = dc.Convert(src2, paletteno, yohaku, isReserve1stColor, ignoreTSA);
 
-                    dest.Save(BFilename.Text);
+                    U.BitmapSave(dest, BFilename.Text);
 
                     src.Dispose();
                     src2.Dispose();

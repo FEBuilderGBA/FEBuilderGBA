@@ -2,7 +2,7 @@ NAME=OPタイトルに256色の画像を利用する。(導入)
 NAME.en=256 Color Title Background Installer
 
 TYPE=EA
-TAG=#ENGINE #IMAGE
+TAG=#ENGINE
 
 PATCHED_IF:0xCA4F4=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_256 colors titlebackground.txt

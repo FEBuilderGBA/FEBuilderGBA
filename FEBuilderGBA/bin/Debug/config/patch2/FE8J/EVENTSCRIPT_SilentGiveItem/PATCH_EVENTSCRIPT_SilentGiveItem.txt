@@ -1,0 +1,41 @@
+NAME=ユニットにアイテムを密かにアイテムを渡す
+NAME.en=Add Event: SilentGiveItem
+NAME.zh=秘密地给予该人物的道具
+
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 SilentGiveItem.dmp=0x30 0xB5 0x84 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=SilentGiveItem.dmp
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DXXYY{$L1:SilentGiveItem.dmp}	[XX:UNIT:ユニット][YY:ITEM:アイテム]ユニットにアイテムを密かにアイテムを渡す	{ITEM}
+EVENTSCRIPT:2=410D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:アイテム]SVAL1のユニットにアイテムを密かにアイテムを渡す(LOW)	{ITEM}
+EVENTSCRIPT:3=4B0D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:アイテム]SVALBの座標のユニットにアイテムを密かにアイテムを渡す(LOW)	{ITEM}
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:SilentGiveItem.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]ユニットに[YY:ITEM:アイテム]を密かにアイテムを渡す	{ITEM}
+EVENTSCRIPT:5=212E00002006C100410D00YY{$L1:SilentGiveItem.dmp}	現在操作しているユニットを密かに[YY:ITEM:アイテム]を渡す
+EVENTSCRIPT:6=420D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:アイテム]輸送隊に密かにアイテムを渡す	{ITEM}
+
+
+EVENTSCRIPT:1.en=400DXXYY{$L1:SilentGiveItem.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]Silent give to Item on the Unit	{ITEM}
+EVENTSCRIPT:2.en=410D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]Silent give to Item on SVAL1's Unit(LOW)	{ITEM}
+EVENTSCRIPT:3.en=4B0D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]Silent give to Item on SVALB's Unit coordinates(LOW)	{ITEM}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:SilentGiveItem.dmp}	[ZZ:MAPX:X][WW:MAPY:Y]Silent give [YY:ITEM:Item] to the Unit	{ITEM}
+EVENTSCRIPT:5.en=212E00002006C100410D00YY{$L1:SilentGiveItem.dmp}	Silent give [YY:ITEM:Item] to the Unit currently operated	{ITEM}
+EVENTSCRIPT:6.en=420D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]Silent give item to the Supply	{ITEM}
+
+
+EVENTSCRIPT:1.zh=400DXXYY{$L1:SilentGiveItem.dmp}	[XX:UNIT:Unit][YY:ITEM:Item]秘密地给予该人物的道具	{ITEM}
+EVENTSCRIPT:2.zh=410D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]秘密地给SVAL1人物的道具(LOW)	{ITEM}
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]秘密地给出SVALB人物坐标上的项目(LOW)	{ITEM}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:SilentGiveItem.dmp}	[ZZ:MAPX:X][WW:MAPY:Y]秘密地将[YY:ITEM:Item]交给当前运营的人物	{ITEM}
+EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:SilentGiveItem.dmp}	秘密地将[YY:ITEM:Item]交给当前运营的人物	{ITEM}
+EVENTSCRIPT:6.zh=420D00YY{$L1:SilentGiveItem.dmp}	[YY:ITEM:Item]秘密地将道具交给供应商	{ITEM}
+
+INFO=ユニットまたは、輸送隊に、指定したアイテムを密かに渡します。(静かに渡します。)\r\nこの機能は、アイテムを入手したというホップアップを表示しません。\r\n敵や輸送隊にも渡すことができます。\r\n味方のアイテムの空きがなければ、自動的に輸送隊に送られます。\r\nもし、輸送隊も満杯であれば、指令は無視されます。\r\nそのため、重要なアイテムで使う場合は注意してください。
+INFO.en=Secretly give the specified item to the unit or Supply.\r\nThis feature does not show a hopup that says you got an item. You can also Enemy and Supply.\r\nIf there is no space for a player unit's item, it will be sent to Supply automatically.\r\nIf Supply is also full, the directive will be ignored.\r\nTherefore, be careful when using it with important items.
+INFO.zh=秘密地将指定的项目提供给人物或供应。\r\n此功能不显示表示您有项目的跳跃。您也可以传递给敌人和供应。\r\n如果玩家人物的道具没有空间，它将自动发送到供应。\r\n如果供应也已满，指令将被忽略。\r\n因此，是与重要道具一起使用时要小心。

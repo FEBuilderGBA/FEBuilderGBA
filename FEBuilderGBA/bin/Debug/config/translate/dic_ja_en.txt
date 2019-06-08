@@ -98,6 +98,7 @@ NNNの拠点到達	Earn NNN points
 必殺	Crit
 耐久	Uses
 回避	Avoid
+回避	Avo
 必殺無効	Negate Criticals
 飛行特攻無効	Negate Flier Effectiveness
 修理不可	Unrepairable
@@ -576,8 +577,8 @@ Baldr
 まもりの剣	Safeguard
 守りの剣	Safeguard
 バリアの剣	Barrier Blade
-ほのおの剣	Flame sword
-炎の剣	Flame sword
+ほのおの剣	Flame Sword
+炎の剣	Flame Sword
 いかずちの剣	Lightning Sword
 雷の剣	Lightning Sword
 かぜの剣	Wind Sword
@@ -840,6 +841,7 @@ Baldr
 オルン	Orun
 モルドレッド	Mordred
 ミルディン	Myrddin
+カルド	Caldo
 運命の息吹	Dawn of Destiny
 ベルンの王女	The Princess of Bern
 後れてきた者	Latecomer's Sorrow
@@ -1185,6 +1187,8 @@ Ide	イム
 トールハンマー	Mjolnir
 魔殺しの雷	Superior Jolt
 カタリナの雷糸	Katarina's Bolt
+カタリナ	Katarina
+ミカヤ	Micaiah
 ミィル	Flux
 ルイン	Ruin
 イル	Waste
@@ -1629,6 +1633,7 @@ HPの薬	HP Tonic
 全滅	Defeat All
 防衛	Defense
 中断	Suspend
+中断	 Suspend
 記録	Save
 移動方法	How to Move
 アイテム整理	Item Management
@@ -2028,6 +2033,8 @@ HPの薬	HP Tonic
 ポロロ	Pororo
 探偵	Detective
 怪盗	Kaitou
+大探偵	GreatDetective
+大怪盗	GreatKaitou
 ルナ	Lua
 アドラー	Adler
 警官隊	Police
@@ -2041,6 +2048,7 @@ HPの薬	HP Tonic
 白い理想	White Ideal
 黒い理想	Black Ideal
 青い理想	Blue Ideal
+黄き理想	Yellow Ideal
 ノーブル	Noble
 ノ‐ブルレイピア	Noble Rapier
 ノーブルレイピア	Noble Rapier
@@ -3399,7 +3407,6 @@ HPの薬	HP Tonic
 ペルシーダ	Perushida
 ドラゴンシールド	Dragon Shield
 祈りペンダント	MiraclePendant
-アロンダイト	Aroundight
 グレートソード	Great Sword
 グレートランス	Great Lance
 グレートアクス	Great Axe
@@ -3548,7 +3555,8 @@ and defeating an enemy.
 ネームネス	Nameless
 エトルリア兵	Etrurian
 書で覚えた\r\nスキルを消します	Removes any skills\r\nlearned via manuals.
-祈りペンダント	Prayer Amlt.
+祈りペンダント	Prayer Amlt
+祈りのお守り	Prayer Amlt
 鉄の盾	Iron Shield
 ゾット団	Zot's
 銀の盾	Silv. Shield
@@ -3648,7 +3656,6 @@ and defeating an enemy.
 傭兵団	Mercenary
 剣闘士	Gladiator
 宝あらし	Hunter
-対戦相手	Enemy
 市民	Citizen
 市民	Civilian
 神官	Priest
@@ -3669,3 +3676,1132 @@ and defeating an enemy.
 コマンダー	Harbinger
 勇王	the peerless warrior king
 穏健帝	the stalwart Silent Emperor
+エレシュキガル	Ereshkigal
+ルーチェ	Luse
+その他作品より	Victory Cond
+ブライアン	Brian
+シュヴァルツ	Nameless
+烈火の剣	The Binding Blade
+鋼の盾	Stl. Shield
+エトルリア兵	Etrurian
+西方『賊』	Pirate
+テイルズ	Tales
+ワイルドギース	Legionnaire
+書で覚えたスキルを\r\n書に戻します	Removes any skills\r\nlearned via manuals.
+祈りペンダント	Prayer Amlt.
+ハルバーディア	Halberdier
+ウィンド	Wind
+指揮	Ldr
+ユニットの持つ指揮能力です\r\n値につき自軍の戦闘力があがります	Leadership ability. Your army's\r\npower increases with each star.
+シュヴァリエ	Chevalier
+渡り鳥のように戦場を流れ歩く猛者\r\n装備『剣』『斧』	A mercenary with a commanding\r\nprescence. Equip: Swords, axes★★	★★
+★	Prf
+★★★	★★★
+鉄の盾	Iron Shield
+★★★★	★★★★
+スキル	Skills
+軍師	Tactician
+ゾット団	Zot's
+銀の盾	Silv. Shield
+レザー	Lthr. Shield
+レジスタンス	Resistance
+封印の剣	Binding Bld
+バッカス	Berkus
+ペルシーダ	Spellshield
+エレファント	Pachyderm
+クインクレイン	Arrowspate
+ストンヘッジ	Stonehoist
+スキルの書	Skill Manual
+指揮の書	Cmd Manual
+アイザック	Isaac
+ボルガノン	Bolganone
+烈火の剣	Blazing Bld
+天雷の斧	Armads
+至高の光	Radiate
+★★★★★　	★★★★★　
+マーゲイ	Hugh
+モールス	Morris
+ハグロ	Haguro
+ヴォルフ	Wolf
+ノアール	Schwarz
+火竜	Fire Dragon
+ジェスト	Jester
+かがり火	Beacon
+解除Ｍ	Clear Skill
+ムラサメ	Murasame
+イーリス	Elise
+アイアンレイン	Iron Rain
+『ツバメ返し』\r\n剣を専門に使うクラスに対して常に特効	Swordslayer\r\nDeal effective damage to swords.
+ララム	Lalum
+リディ専用	+2 Defense and +3 Resistance.\r\nFor Lizzy only.
+エルフィン	Elfin
+コマンダー	Harbinger
+ラ・ピュセル	La Pucelle
+アルベイン	Alvein
+エキドナ	Echidna
+自由を求めて	Freedom
+山賊団の全滅	Rout bandits
+２５ターン以内にボス撃破	Defeat boss in 20 turns
+３０ターン以内に全員離脱	Escape in 30 turns
+玉座の制圧	Seize throne
+ヴァルカン　と会話	Talk to Vulcan
+城門の制圧	Seize the gate
+玉座の制圧	Seize throne
+敵部隊の全滅	Rout enemy
+魔物の全滅	Rout monters
+ボス　ヒューゲルの撃破	Defeat Hyuuga
+主人公の１３ターン生存\r\n（またはハグロの撃破）	Survive for 13 turns,\r\nor defeat Haguro
+アイザックの離脱\r\n（またはボスの撃破）	Escape or defeat boss
+リディ　と会話	Talk to Lizzy
+目的：解放軍との共闘	Collaborate with the Liberation
+拠点の防衛	Defend base
+玉座の制圧	Seize throne
+２つの城の制圧	Seize two castles
+一年前	1 year ago
+一年半前	1 1/2 years ago
+アリアナ	Ariana
+ゼト	Seth
+リヒター	Richter
+オルソン	Olson
+モルダ	Moulder
+ケルベス	Kerbes
+ロス	Ross
+ファリス	Ferris
+カーラ	Kara
+バレル	Barelle
+デュラン	Dylan
+ボリス	Boris
+オドレイ	Audrey
+アルティ	Artie
+リディ	Lizzy
+セレーネ	Selene
+ハミルトン	Olga
+リリア	Lillia
+タイター	Titor
+ブラン	Schnee
+ジョン	John
+クロエ	Chloe
+ヴィルヘルム	Wilhelm
+レム	Rem
+ソフィア	Sofia
+ドズラ	Dozla
+ジーナ	Jeana
+ヘルメス	Hermes
+ジョニー	Johnny
+ミルラ	Myrrh
+クロノス	Kronos
+ヴァルカン	Vulcan
+ダリス	Darth
+ミスラ	Mythra
+リオン	Leon
+ムルヴァ	Morva
+オルソン	Orson
+ロザリー	Rosalie
+アリシア	Alicia
+ブレゲ	Breguet
+ミケ	Mike
+バズバ	Bazba
+ザール	Saar
+ノーマ	Numa
+マーレイ	Murray
+ティラード	Tirado
+ゾット	Zot
+パブロ	Pablo
+アイアス	Aias
+カーライル	Carlyle
+ケセルダ	Caellach
+デミ	Deni
+アーヴ	Alvin
+ゲブ	Gheb
+ベルナ	Beran
+オニール	O'Neill
+ガリウス	Amon
+ハーディス	ハーディス
+ヴィガルド	Vigarde
+グラド兵	Soldier
+グラド残党	Remnant
+ならずもの	Bandit
+宝あらし	Hunter
+カルチノ兵	Sellsword
+ヒューゲル隊	Hyuuga's
+傭兵団	Mercenary
+バズバ団	Bazba's
+魔物	Warrior
+魔物	Monster
+マミー	Entombed
+剣闘士	Gladiator
+解放軍	Liberation
+フォデス	Fomortiis
+ファード	Fado
+ヘイデン	Hayden
+クリムト	Klimt
+マンセル	Mansel
+ヒューゲル	Hyuuga
+イシュメア	Ismaire
+ドラグーン隊	Dragoon
+フレリア兵	Frelian
+ロストン兵	Rausten
+市民	Citizen
+ルネスの民	Renais Cit.
+市民	Civilian
+壊れる壁	Wall
+古木	Snag
+マーク	Mark
+イビル	Evil
+サマナーン	Summonern
+船長	Captain
+ロード	Lord
+オフィシエ	Commandeur
+ソードナイト	Cavalier
+パラディン	Paladin
+ランスアーマー	Knight
+ジェネラル	General
+盗賊	Thief
+傭兵	Mercenary
+勇者	Hero
+剣士	Myrmidon
+ソードマスター	Swordmaster
+アサシン	Assassin
+アーチャー	Archer
+スナイパー	Sniper
+(ﾌｫﾚｽﾄﾅｲﾄ)	Ranger
+ドラゴンナイト	Wyvern Rider
+(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)	Wyvern Lord
+(ﾜｲﾊﾞｰﾝﾅｲﾄ)	Wyvern Kn.
+魔道士	Mage
+賢者	Sage
+マージナイト	Mage Knight
+司祭	Bishop
+ダークペガサス	Dark Flier
+マムクート	Manakete
+かけだし戦士	Journeyman
+魔道士見習い	Pupil
+新人兵士	Recruit
+ローグ	Rogue
+戦士	Fighter
+ウォーリア	Warrior
+山賊	Brigand
+バーサーカー	Berserker
+グレートナイト	Great Knight
+ダークマージ	Shaman
+ソーサラー	Druid
+サマナー	Summoner
+修道士	Monk
+バード	Bard
+神官	Priest
+ペガサスナイト	Pegasus Kn.
+(ﾌｧﾙｺﾝﾅｲﾄ)	Falcoknight
+シスター	Cleric
+トルバドール	Troubadour
+ヴァルキュリア	Valkyrie
+踊り子	Dancer
+ソルジャー	Soldier
+海賊	Pirate
+ネクロマンサー	Necromancer
+船団	Fleet
+亡霊戦士	Phantom
+メイド	Maid
+ウォーモンク	Entombed
+遊牧民	Nomad
+遊牧騎兵	Nmd Troop
+バール	Spider
+エルダバール	Arachnid
+ストレイシーフ	Stray Thief
+(ﾓｰｻﾄﾞｩｰｸﾞ)	Hellhound
+ケルベロス	Cerberus
+アクスナイト	Cavalier
+ドラグーン	Dragoon
+バロン	Baron
+マスターナイト	Master Kn.
+バリスタ	Ballistician
+コマンドナイト	Command Kn.
+アクスアーマー	Gargoyle
+(ﾃﾞｽｶﾞｰｺﾞｲﾙ)	Deathgoyle
+(ﾄﾞﾗｺﾞﾝｿﾞﾝﾋﾞ)	Dracozombie
+魔王	Demon King
+市民	Civilian
+教皇	King
+女王	Queen
+輸送隊	Transporter
+領地をおさめる君主の後継\r\nまだ年若い　未完の大器	A young monarch who protects\r\ntheir home. Equip: Swords.
+領地をおさめる君主の後継\r\nまだ年若い　未完の大器	Noble heirs to a ruling house.\r\nThey possess great potential.
+己が信じる正義と誇りに誓った騎士\r\n装備『剣・槍』　奥義『太陽』	A knight sworn to fight for\r\njustice. Equip: Sword, lance.
+前線に立ち周囲を先導する指揮官\r\n敵に絶望を　味方に勇気を与える	An inspiring commander who strikes fear\r\ninto his enemies. Equip: Sword, axe.
+移動力にすぐれる騎士\r\n装備『剣』	Mounted knights with swift\r\nmovement. Equip: Swords.
+高い移動力と攻守に優れた力を持つ\r\n装備『剣・槍』　奥義『太陽』	Mounted knights with superior abilities.\r\nEquip: Swords, lances.
+守備力に優れるが速さや移動力に劣る\r\n装備『槍』	Heavily armored knights with high\r\ndefenses. Equip: Lances.
+攻撃・守備力に優れるが移動力は低い\r\n装備『槍・斧』　スキル『大盾』	Knights of great skill.\r\nEquip: Lances, axes.
+盗みなど様々な能力をもつ\r\n装備『剣』	Multitalented knaves with an eye for\r\nriches. Equip: Swords, staves.
+全能力のバランスが安定している\r\n装備『剣』	Well-balanced professional soldiers-\r\nfor-hire. Equip: Swords.
+攻守ともに優れる　戦場の主役\r\n装備『剣・斧』　奥義『天空』	Seasoned veterans with remarkable\r\nskill. Equip: Swords, axes.
+技・速さに優れ　必殺の一撃を放つ\r\n装備『剣』	Talented swordsmen skilled in swift\r\nkilling strokes. Equip: Swords.
+剣の達人　素早い動きと一撃必殺の技\r\n装備『剣』　奥義『流星』	Lightning-fast swordsmen of peerless\r\nand lethal skill. Equip: Swords.
+一撃で敵を葬る　瞬殺の奥義をもつ\r\n装備『剣・弓』　スキル『すり抜け』	Masters of the killing arts.\r\nEquip: Swords, bows.
+弓を用い　離れた敵に攻撃できる\r\n装備『弓』	Warriors who use bows to attack from\r\nafar. Equip: Bows.
+正確無比な弓のエキスパート\r\n装備『弓』　スキル『神射手』	Archers of unparralled accuracy that can\r\nshoot from a longer distance. Equip: Bows.
+弓と剣を使い分け　移動力にすぐれる\r\n装備『剣・弓』　スキル『近接射撃』	Fighters skilled in both sword and bow.\r\nEquip: Swords, bows.
+弓・魔法以外に弱点はない　竜騎士\r\n装備『槍』	High-flying knights vulnerable only to\r\nbows and magic. Equip: Lances.
+攻撃・防御力が高いが　魔防に劣る\r\n装備『槍・斧』　奥義『衝撃』	Wyvern-mounted knights of superior\r\nskill. Equip: Lances, axes.
+戦場を駆け　敵を圧倒する\r\n装備『槍』　スキル『疾風迅雷』	Powerful pegasi who trample over\r\ntheir foes. Equip: Lances.
+力は弱いが　安定した能力を持つ\r\n装備『理』	Magic wielders with solid skills but low\r\nphysical strength. Equip: Anima.
+魔法に精通し安定した力を発揮する\r\n装備『理・光・杖』　奥義『陽光』	Advanced scholars of magical codices.\r\nEquip: Anima, light, staves.
+理と剣を扱う　華炎の奥義をもつ\r\n装備『理・剣』　スキル『待ち伏せ』	Knights trained in both anima and\r\nswords. Equip: Swords, anima.
+魔道士に対し絶大な力を発揮する\r\n装備『光・杖』　スキル『魔道特効』	Seasoned priests with strong healing\r\nskills. Equip: Light, staves.
+攻撃・守備力に優れるが移動力は低い\r\n装備『剣・槍』　スキル『月光』	Knights of great skill.\r\nEquip: Swords, lances.
+攻撃・防御力が高いが　魔防に劣る\r\n装備『剣・槍』　奥義『太陽』	Wyvern-mounted knights of superior\r\nskill. Equip: Swords, lances.
+竜の姿になり　強力なブレスで攻撃\r\n装備『竜石』	Mysterious tribesmen who can turn\r\ninto dragons. Equip: Dragonstone.
+これからの成長が期待される戦士\r\n装備『斧』	Young fighters with high\r\nexpectations. Equip: Axes.
+これからの成長が期待される魔道士\r\n装備『理』	Mages in training with lofty\r\naspirations. Equip: Anima.
+神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.
+力は強いが守備は弱い『あらくれ』\r\n装備『斧』	Ruffians with great strength but\r\npoor defense. Equip: Axes.
+圧倒的な攻撃力をほこる猛者\r\n装備『斧・弓』　奥義『鳴動』	Stalwart warriors whose power is\r\ntheir pride. Equip: Axes, bows.
+力が強く山を得意とする『あらくれ』\r\n装備『斧』	Mighty mercenaries who thrive\r\nin mountains. Equip: Axes.
+山や海に強く会心の一撃を放つ猛者\r\n装備『斧』　奥義『復讐』	Fighters at home both in mountains\r\nand at sea. Equip: Axes.
+高い守備力と機動力を誇る騎士\r\n装備『剣・槍・斧』　奥義『月光』	Knights with great mobility and\r\ndefense. Equip: Swords, lances, axes.
+攻撃は魔道士を超えるが　速さに劣る\r\n装備『闇』	Wielders of magic who are stronger,\r\nbut slower, than mages. Equip: Dark.
+魔力が高く　高位の魔法をあやつる\r\n装備『闇・理・杖』　奥義『月食』	Wielders of deep and ancient magic.\r\nEquip: Dark, anima, staves.
+高位闇魔法と亡霊戦士の召喚を行う\r\n装備『闇・理』　スキル『召喚』	Master sorcerers who summon fighters.\r\nEquip: Anima, dark.
+光魔法をあやつり　魔防に優れる\r\n装備『光・杖』	Spiritual guides who use sacred staves\r\nto heal allies. Equip: Light, staves.
+聖なる杖で味方を助ける男性\r\n装備『杖・光』	聖なる杖で味方を助ける男性\r\n装備『杖・光』
+優しい音色で　仲間を助ける\r\n攻撃はできない	Musicians whose melodies aid\r\nallies. Unable to attack.
+これからの成長が期待される騎士\r\n装備『槍』	Unproven knights with dreams\r\nof glory. Equip: Lances.
+敵の魔法に強いが弓に弱い天の騎士\r\n装備『槍』	Airborne knights who resist magic but\r\nare weak against bows. Equip: Lances.
+速さ・魔防にすぐれる　天の騎士\r\n装備『剣・槍・杖』　奥義『叫喚』	Swift sky warriors who shrug off magic\r\nattacks. Equip: Swords, lances, staves.
+聖なる杖で味方を助ける女性\r\n装備『杖・光』	Holy women who use sacred staves to heal\r\ntheir allies. Equip: Light, staves.
+馬上で杖を用いる乙女\r\n装備『杖』	Maidens who wield staves from\r\nhorseback. Equip: Staves.
+馬上で杖と魔法を使う　戦乙女\r\n装備『理・杖』　スキル『聖盾』『聖杖』	Battle maidens who wield both staves\r\nand anima magic. Equip: Anima, staves.
+美しい舞いで　仲間に再び動く元気を\r\n与える　攻撃はできない	Dancers whose dances revitalize\r\ntheir allies. They cannot attack.
+ふつうの下級兵士\r\nとりたてて目立った能力はない	Standard infantry with high\r\ndurability. Equip: Lances.
+力が強く海を得意とする『あらくれ』\r\n装備『斧』	Tough brawlers who call the\r\nsea their home. Equip: Axes.
+【魔石】の強大な力を得て\r\n最高位の闇魔道と屍をあやつる	Master of the Dark Stone who uses\r\ndark magic to command corpses.
+海上を移動する軍船\r\n広い射程を誇るシューターを持つ	Warships that patrol the open seas.\r\nThey carry powerful ballistae.
+戦士と同じ能力を持つが\r\n攻撃を受けると消えてしまう	Phantom warriors who possess great strength\r\nbut vanish when attacked. Equip: Axes.
+敵の防御を貫く　一撃を放つ\r\n装備『槍』　スキル『月光』	Wyvern riders who can pierce enemy\r\ndefenses. Equip: Lances.
+人や物資を運ぶ馬車\r\n戦う力は　もっていない	人や物資を運ぶ馬車\r\n戦う力は　もっていない
+弓を使い　移動力にすぐれる\r\n装備『弓』	Plainsmen with high speed and\r\nstrong movement. Equip: Bows.
+全ての魔法を使いこなす　魔女\r\n装備『理・闇・光』　スキル『生命吸収』	Magicians with a mastery of all magics.\r\nEquip: Anima, light, dark.
+巨大な毒グモ\r\n山地を自由に動き回り　爪に毒をもつ	Giant poisonous mountain spiders with\r\nvenom-filled fangs.
+魔の力により　強大な力を得たバール\r\nその鋭い爪には　猛毒を備えている	Giant spiders infused with tremendous\r\nmagical strength. Their venom is lethal.
+義賊の王たる資質を備えた者の称号\r\n装備『斧』　スキル『見切り』	Mountain theives who attack with\r\nrazor sharp axes. Equip: Axes.
+血に飢えた　凶暴な魔獣\r\n鋭い牙で襲い掛かる	Blood-hungry demon dogs that attack\r\nwith keen-edged fangs.
+三つの頭をもつ　飢えた魔獣\r\n鋭い三つの牙で襲い掛かる	Savage, three-headed hellhounds.\r\nTheir fangs are cruel death dealers.
+移動力にすぐれる騎士\r\n装備『斧』	Mounted knights with swift\r\nmovement. Equip: Axes.
+戦経験をつんだ遊牧民の称号\r\n装備『剣・弓』　スキル『連続』	An honorific bestowed upon nomads\r\nof great skill. Equip: Swords, bows.
+高い守備力に様々な武器を使いこなす\r\n装備『剣・弓・杖・光』\r\nスキル『大盾』『聖盾』	Titans in heavy armor who wield many\r\nweapons. Equip: Sword, bow, staff, light.
+槍を極めた上級騎士\r\n防御を許さぬ必殺の技を持つ\r\n装備『槍』　スキル『竜牙』	Powerful soldiers with highly trained\r\noffensive techniques. Equip: Lances.
+高い守備力に様々な武器を使いこなす\r\n装備『槍・斧・理・闇』\r\nスキル『大盾』『聖盾』	Titans in heavy armor who wield many\r\nweapons. Equip: Lance, axe, anima, dark.
+策を立て　自軍を優位に動かす者\r\n装備『剣』『理』『杖』	Strong leaders who command their allies\r\nto victory. Equip: Sword, anima, staff.
+あらゆる武器を使いこなす騎士の頂\r\n装備『剣・槍・理・杖』\r\nスキル『大盾』『聖盾』	Knights who have trained in a variety of\r\nweapons. Equip: Sword, lance, staff, anima.
+あらゆる武器を使いこなす騎士の頂\r\n装備『斧・弓・闇・光』\r\nスキル『大盾』『聖盾』	Knights who have trained in a variety of\r\nweapons. Equip: Axe, bow, light, dark.
+死してよみがえったドラゴン\r\n腐敗のブレスは　万物を破滅に導く	The revived corpse of a dragon. Its\r\nputrid breath decays all it touches.
+全ての魔物の頂点に立つ\r\nその能力は人知をはるかに超える	This foul being is the master of the\r\ndark. Its power exceeds mortal ken.
+この地で暮らす　ふつうの人々\r\n戦う力はもっていない	An innocent peasant lacking any\r\ncombat skills at all.
+全教会を統率する　最高位聖職者\r\n司祭ラトナを祖に持つ	Spiritual leader of Rausten. He claims\r\nancestry with the saintly Latona.
+あらゆる任務を達成させてきた強者\r\nその存在はあらゆる戦場を覆す\r\n	Army commanders whose footsteps leave\r\ndeath in their wake. Equip: Axe, dark.
+てつの剣	Iron Sword
+ほそみの剣	Slim Sword
+はがねの剣	Steel Sword
+ぎんの剣	Silver Sword
+てつの大剣	Iron Blade
+はがねの大剣	Steel Blade
+ぎんの大剣	Silver Blade
+どくの剣	Poison Sword
+レイピア	Rapier
+勇者の剣	Brave Sword
+シャムシール	Shamshir
+キルソード	Killing Edge
+アーマーキラー	Armorslayer
+ドラゴンキラー	Wyrmslayer
+ひかりの剣	Light Brand
+ルーンソード	Runesword
+ランスバスター	Lancereaver
+斬馬刀	Zanbato
+グラムブレイズ	Grannblaze
+アウドムラ	Audhulma
+かぜの剣	Wind Sword
+てつの槍	Iron Lance
+ほそみの槍	Slim Lance
+はがねの槍	Steel Lance
+ぎんの槍	Silver Lance
+どくの槍	Toxin Lance
+勇者の槍	Brave Lance
+キラーランス	Killer Lance
+ホースキラー	Horseslayer
+手槍	Javelin
+スレンドスピア	Spear
+アクスバスター	Axereaver
+ウィングスピア	Wing Spear
+ジ・エターナル	Eternal
+ヴィドフニル	Vidofnir
+ドラゴンスピア	Dragonspear
+つらぬきの槍	Heavy Lance
+ショートスピア	Short Spear
+てつの斧	Iron Axe
+はがねの斧	Steel Axe
+ぎんの斧	Silver Axe
+どくの斧	Poison Axe
+勇者の斧	Brave Axe
+キラーアクス	Killer Axe
+ハルベルト	Halberd
+ハンマー	Hammer
+デビルアクス	Devil Axe
+手斧	Hand Axe
+トマホーク	Tomahawk
+ソードバスター	Swordreaver
+ソードキラー	Swordslayer
+ドラゴンアクス	Dragon Axe
+バトルアクス	Battleaxe
+ガルム	Garm
+なげおの	Hatchet
+てつの弓	Iron Bow
+はがねの弓	Steel Bow
+ぎんの弓	Silver Bow
+どくの弓	Poison Bow
+キラーボウ	Killer Bow
+勇者の弓	Brave Bow
+短弓	Short Bow
+長弓	Longbow
+ロングアーチ	Iron Ballista
+アイアンアーチ	Long Ballista
+キラーアーチ	Killer Ballista
+ニーズヘッグ	Nighogg
+腐敗のブレス	Wretched Air
+竜石	Dragonstone
+ブリザード	Blizzard
+不浄の魔光	Demon Light
+滅びの魔拳	Ravager
+漆黒の悪夢	Nightmare
+するどい爪	Deadly Claw
+くさった爪	Rotten Claw
+くさった長爪	Fetid Claw
+どくの爪	Poison Claw
+もうどくの爪	Lethal Claw
+灼熱の牙	Fiery Fang
+焦熱の牙	Hellfang
+グレートソード	Greatsword
+グレートランス	Greatlance
+グレートアクス	Greataxe
+グレートボウ	Greatbow
+ファイアー	Fire
+サンダー	Thunder
+エルファイアー	Elfire
+エイルカリバー	Elcalibur
+(ｻﾝﾀﾞｰｽﾄｰﾑ)	Bolting
+トロン	Thoron
+エクスカリバー	Excalibur
+ライトニング	Lightning
+シャイン	Shine
+ディヴァイン	Divine
+パージ	Purge
+オーラ	Aura
+イーヴァルディ	Ivaldi
+ミィル	Flux
+ルイン	Ruin
+リザイア	Nosferatu
+イクリプス	Eclipse
+ノスフェラート	Necro
+グレイプニル	Gleipnir
+ナグルファル	Nagalfar
+ストーン	Stone
+イービルアイ	Evil Eye
+フレイムランス	Flame Lance
+魔幻の波動	Demon Surge
+暗黒の魔弾	Shadowshot
+ライブ	Heal
+リライブ	Mend
+リカバー	Recover
+リブロー	Physic
+リザーブ	Fortify
+レスト	Restore
+サイレス	Silence
+スリープ	Sleep
+バサーク	Berserk
+ワープ	Warp
+レスキュー	Rescue
+トーチ	Torch
+ハマーン	Hammerne
+アンロック	Unlock
+Ｍシールド	Barrier
+ラトナ	Latona
+踊る	Dance
+奏でる	Play
+天使の衣	Angelic Robe
+エナジーリング	Energy Ring
+秘伝の書	Skill Book
+はやての羽	Speedwing
+女神のぞう	Goddess Icon
+竜のたて	Dracoshield
+魔よけ	Talisman
+ブーツ	Boots
+魔力のこな	Spirit Dust
+英雄の証	Hero Crest
+騎士の勲章	Knight Crest
+オリオンの矢	Orion's Bolt
+天空のムチ	Elysian Whip
+導きの指輪	Guiding Ring
+たからのかぎ	Chest Key
+とびらのかぎ	Door Key
+ばんのうかぎ	Lockpick
+きずぐすり	Vulnerary
+とっこうやく	Elixir
+せいすい	Pure Water
+どくけし	Antitoxin
+たいまつ	Torch
+フィーリの守護	Fili Shield
+メンバーカード	Member Card
+シルバーカード	Silver Card
+金の宝玉	Gold Gem
+黒の宝玉	Black Gem
+白の宝玉	White Gem
+青の宝玉	Blue Gem
+赤の宝玉	Red Gem
+ゴールド	Gold
+ホプロンの守護	Iron Rune
+マスタープルフ	Master Seal
+メティスの書	Metis Tome
+覇者の証	Ocean Seal
+勇将Ｍ	勇将Ｍ
+待ち伏せＭ	待ち伏せＭ
+１Ｇ	1G
+５Ｇ	5G
+１０Ｇ	10G
+５０Ｇ	50G
+１００Ｇ	100G
+１５０Ｇ	150G
+２００Ｇ	200G
+３０００Ｇ	3000G
+５０００Ｇ	5000G
+ジュナの実	Juna Fruit
+ダミー	Dummy
+毒がぬられた剣	Coated in lethal poison.
+騎馬系・重歩兵系に有効	Effective against infantry.
+２回続けて攻撃できる剣	Can strike consecutively.
+必殺がでやすい砂漠の国の剣	Improves critical hit rate.
+必殺がでやすい剣	Improves critical hit rate.
+重歩兵系に有効な剣	Effective against knights.
+竜系に有効な剣	Effective against wyverns.
+間接攻撃も可能な光魔法の剣	Suffused with light magic.
+間接攻撃も可能な闇魔法の剣	Imbued with dark magic.
+槍に強く　斧に弱い剣	Strong against spears.
+騎馬系に有効な剣	Effective against cavalry.
+竜と契約した力を秘めると伝えられる魔剣\r\n	Magic. Effective against monsters.
+双聖器『氷剣アウドムラ』魔防＋５	The Sacred Twin ice blade. Res +5.
+間接攻撃も可能な理魔法の剣	Magic. Capable of indirect attacks.
+毒がぬられた槍	Coated in lethal poison.
+２回続けて攻撃できる槍	Can strike consecutively.
+必殺がでやすい槍	Improves critical hit rate.
+騎馬系に有効な槍	Effective against cavalry.
+間接攻撃も可能な投げ槍	Doubles as ranged attack.
+扱いやすく間接攻撃可能な投げ槍	Doubles as ranged attack.
+斧に強く　剣に弱い槍	Strong against axes.
+アロンダイト	Alondite
+時間（とき）を操ると伝えられる魔剣\r\n	A blade able to control time.
+双聖器『翼槍ヴィドフニル』守備＋５	The Sacred Twin winged lance. Def +5.
+竜系に有効な槍	Effective against wyverns.
+重歩兵系に有効な槍	Effective against knights.
+間接攻撃も可能な投げ槍	Doubles as ranged attack.
+魔法攻撃　バリスタに有効	Effective against ballisticians.
+毒がぬられた斧	Coated in lethal poison.
+２回続けて攻撃できる斧	Can strike consecutively.
+必殺がでやすい斧	Improves critical hit rate.
+騎馬系に有効な斧	Effective against cavalry.
+重歩兵系に有効な斧	Effective against knights.
+使い手に傷を負わせることも	Might injure its wielder.
+間接攻撃も可能な投げ斧	Doubles as ranged attack.
+扱いやすく間接攻撃可能な投げ斧	Doubles as ranged attack.
+剣に強く　槍に弱い斧	Strong against swords.
+剣歩兵系に有効　剣に強く槍に弱い	Good against swordfighters.
+竜系に有効な斧	Effective against wyverns.
+『神将器』　天雷の斧　守備＋５	A legendary axe. Defense +5.
+扱いづらいが威力は大きな斧	Strong, but difficult to wield.
+軽く命中しやすい斧	Doubles as ranged attack.
+毒がぬられた弓	Coated in lethal poison.
+必殺がでやすい弓	Improves critical hit rate.
+２回攻撃　飛行系に有効	Can strike consecutively.
+必殺がでやすい東方の弓	Improves critical hit rate.
+３マス先の相手に攻撃できる弓	Extended attack range.
+離れた敵にとどく発射台	Long-range weapon.
+より離れた敵に届く発射台	Super long-range weapon.
+必殺がでやすい発射台	Improves critical hit rate.
+飛行系に有効	Effective against fliers.
+必殺が高い	Long-range magic attack.
+敵の魔防を無視	Negates enemy resistance.
+ダメージ半分のＨＰ吸収	Drains enemy HP into caster.
+毒を与える	Reduces enemy HP by half.
+石化させ数ターン行動不能にします	Turns targets to stone for a while.
+遠距離	Long-range dark magic bolt.
+竜のウロコでつくられた盾\r\n守備＋２　使うと失われます	Increases defense by\r\n2 points. Vanishes after use.
+敵の魔法を払うお守り\r\n魔防＋２　使うと失われます	Increases resistance by\r\n2 points. Vanishes after use.
+魔法がかかったブーツ\r\n移動力＋１　使うと失われます	Increases movement by\r\n2 points. Vanishes after use.
+戦う力を高める魔法の粉\r\n魔力＋２　使うと失われます	Increases magic by\r\n2 points. Vanishes after use.
+１０レベル以上の　下位クラス\r\nユニットが使います	For some units Lv. 10 and up\r\nwho have not changed class.
+奥義のＳランク条件を\r\n撤廃する	Removes a weapon rank at S.
+
+回復Ｍ	回復Ｍ
+味方を再行動させます	Allows allies\r\nto move again.
+『移動力』が増えます	Raises movement.
+『魔力』が増えます	Raises magic.
+スキルを習得します	Teaches a new skill.
+魔法攻撃で受ける\r\nダメージを減らします	Reduces damage\r\nfrom magic attacks.
+毒を消し去り\r\n正常にします	Cures poison.
+守備＋２\r\n一部クラスが所持すると\r\n効果がある盾	+2 Defense.\r\nOnly usable by military.
+守備＋１\r\n全てのクラスで使える盾	+1 Defense.\r\nEasily used by anybody.
+魔力	Mag
+ほんとうに使いますか？	Are you sure?
+戦	B
+勝	W
+敗	L
+総合ターン	Total
+総資産	Assets
+タイム	Time
+総合	Total
+ノーマル	Normal
+ハード	Hard
+全	Complete
+面	Total
+キャラクターを	Character
+選んでください	Choose
+戦いの評価	Evaluation
+軍師の評価	Evaluation
+攻略占い	Capture
+支援関係	Support
+占いメニュー	Fortune
+攻略評価	Capture
+生存評価	Survival
+資産評価	Assets
+経験評価	EXP
+戦闘評価	Combat
+目的評価	Goals
+マップを見る	View Map
+並び替え	Formation
+買取金額	Value
+あずける	Give
+うけとる	Take
+在庫	Stock
+あと	Pick
+人えらべます	Units Left
+不要なアイテムを買い取ります	Sell unwanted items.
+それでよろしいですか？	Are you sure?
+何をしますかね？	What'll you do?
+あずかりますよ	I'll take it.
+おわたししますね	Here you go!
+何もありません	Nothing
+所持者：	Owner:
+達成率	Success
+残り支援人数	Remaining
+人	x
+キャラクターを選んでください	Choose unit
+『プロミネンス』\r\n自分の周囲５マス以内の敵へ炎を巻き上げる	Prominence\r\nPlaceholder.
+奥義『ジェノサイド』（現在ＨＰ％）\r\n自身の能力を格段に上昇させ\r\nスキルを封じて、２ラウンド戦闘を行う	Genocide (HP%)\r\nIncreases all stats, negates all skills,\r\nand attacks twice consecutively.
+『突撃』（現在ＨＰ％）\r\n自身が攻撃可能な時だけ\r\n２ラウンド戦闘を行う	Charge (HP%)\r\nInitiates another round of combat.
+　『治癒』\r\n状態異常を治癒する	Boon\r\nHeals all status effects at\r\nthe start of every turn.
+　『草なぎ』\r\n自分から攻撃したとき、追撃が絶対に\r\n出来ない代わりに相手の反撃を絶対に防ぐ\r\n	Moonlight\r\nInstead of performing a follow-up attack,\r\nnegates the opponent's counterattack.
+武器屋・道具屋	Armory & Shop
+アイテム整理	Item Management
+『近接防御』\r\n敵攻撃時に直接攻撃を\r\n－６ダメージ	Short Shield\r\n-6 damage when attacked up close.
+『コンゴウの一撃』\r\n自分から攻撃時に\r\n受けるダメージー１０	Armormed Blow\r\nDef +10 when attacking.
+レベルアップ	Leveling Up
+クラスチェンジ	Changing Classes
+ノーブル	Noble Rapier
+『神風招来』\r\n杖を使った場合、一度だけ\r\n確実に再行動ができる	Powerstaff\r\nTake another action after using\r\na staff (once per turn).
+風の精霊セチの加護\r\n１ターン　味方の回避を上げます	A dance that increases an\r\nallies' avoid by 10 for a turn.
+　『秘伝』\r\nスキル発動率を１０％上昇させる	Rightful King\r\n+10% to skill activation rate.
+　『エリート』\r\n通常よりも多くの経験値を得る	Paragon\r\nEXP gain is doubled.
+奥義『太陽』（技％）\r\n与ダメージの半分を回復する	Sol (Skill%)\r\nRestore HP equal to half\r\nof damage dealt.
+奥義『月光』（技％）\r\n相手の守備を半減して攻撃	Luna (Skill%)\r\nHalve opponent's defense.
+秘技『流星』（ＬＶ％）\r\n目にもとまらぬ連続攻撃	Astra (Lv%)\r\nAttack 5 times at half damage.
+奥義『鳴動』（技％）\r\nダメージに自分の体格を加算する	Colossus (Skill%)\r\nAdd Con to damage.
+奥義『復讐』（技％）\r\n減少したＨＰ半分をダメージに加算	Vengeance (Skill%)\r\nAdd half of lost HP to damage.
+奥義『天空』（ＬＶ％）\r\n敵の守備を半減し　ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
+奥義『瞬殺』（特殊％）\r\n通常の５倍のダメージを与える	Shootout (Random%)\r\nDeal quintuple damage.
+　『怒り』\r\nＨＰが１ケタのとき必殺＋５０	Wrath\r\nCrit +50% when HP is at 1.
+　『キャンセル』（技％）\r\n相手の反撃を封じる	Cancel\r\nNegates the opponent's counterattack.
+　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
+　『見切り』\r\n相手の戦闘スキルを無効化	Nihil\r\nIgnore opponent's combat skills.
+　『祈り』（幸運％）\r\n致命攻撃をＨＰ１で耐える	Miracle (Luck%)\r\nSurvive a fatal blow with 1 HP.
+　『再行動』（幸運％）\r\n行動終了後にもう一度行動ができる	Re-Move (Luck%)\r\nAct again after completing an action.
+　『カリスマ』\r\n３マス以内の味方の命中回避＋１０％	Charm\r\nAllies within 3 spaces gain +10 hit.
+　『恐怖』\r\n３マス以内の敵の回避必殺－１０	Intimidate\r\nEnemies within 3 tiles lose 10 avoid.
+　『連続』（技％）\r\n２回連続攻撃	Adept (Skill%)\r\nInitiates another attack.
+　『回復』\r\n毎ターン最大ＨＰの２０％分回復	Renewal\r\nRestore 20%HP at the\r\nstart of every turn.
+　『疾風迅雷』\r\n攻撃後にも通常の再移動が可能	Galeforce\r\nAct again after defeating an\r\nenemy (once per turn).
+奥義『陽光』（技％）\r\n敵の魔防を半減し　ダメージ半分回復	Flare (Skill%)\r\nHalve the foes's resistance and heal\r\nHP equal to half of damage dealt.
+　『魔道特効』\r\n魔道士に対して常に特効	Magekiller\r\nDeal effective damage to magic users.
+　『大盾』（ＬＶ％）\r\n相手の物理攻撃を半減する	Pavise (Lv%)\r\nReduces physical damage by half.
+　『召喚』\r\n異形の者を召喚する	Summon\r\nSummons a phantom.
+奥義『衝撃』（技％）\r\n相手をバサーク状態にする	Enrage (Skill%)\r\nMakes the opponent go berserk.
+　『近接射撃』\r\n弓による直接攻撃が可能	Proximity Shot\r\nCan use bows at close range.
+　『神射手』\r\n弓による攻撃の射程を伸ばす	Bowrange+\r\n+1 maximum attack range\r\nwhile using a bow.
+　『必的』（技％）\r\n時々必ず攻撃が当たる	Sure Shot (Skill%)\r\nThe attack will not miss.
+　『すり抜け』\r\n敵ユニットに通過を防がれない	Pass\r\nMove through enemy units.
+　『神盾』\r\n被ダメージを常時半減	Divine Shield\r\nHalves all damage received.
+　『かぎ開』\r\n扉や宝箱を開けられる	Locktouch\r\nOpen doors and chests without keys.
+　『盗む』\r\n装備していないアイテムを奪える	Steal\r\nSteal unequipped items when\r\nspeed is higher than target's.
+奥義『叫喚』（技％）\r\n相手を石化状態にする	Petrify (Skill%)\r\nTurns the opponent to stone.
+『勇将』\r\nＨＰ半分以下でスキル発動率上昇	Hero\r\nWhen HP is less than half,\r\nskill activation rate +30%.
+『強運』\r\n必殺の一撃を受けない	Blessing\r\nCannot be defeated by enemy attacks.
+　『メンテナンス』\r\n『盗み』と『担ぎ』を無効にする	Watchful\r\nCannot be captured or stolen from.
+『練達』\r\n自分への特効を無効にする	Nullify\r\nNegates effective damage.
+　『聖盾』（技％）\r\n魔法による攻撃を無効化	Aegis (Skill%)\r\nNullify a magical attack.
+奥義『華炎』（技％）\r\n魔力か力の半分を与ダメージに加える	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
+『連撃防御』\r\n２撃目以降を半減	Bunker\r\nReduces follow-up damage received by half.
+『虚無』\r\n取得する経験値が０になる	Void Curse\r\nUnit gives no experience\r\npoints upon being defeated.
+奥義『竜牙』（技％）\r\n相手に与えるダメージに\r\n攻撃力の半分を追加	Rend Heaven (Skill%)\r\nAdds half of the opponent's\r\nstrength to your attack.
+　『再移動』\r\n攻撃後に再移動が可能	Canto\r\nCan use remaining movement\r\nafter performing any action.
+　『聖杖』\r\n杖の射程がリブローと同じになる	Staff Savant\r\nIncrease maximum staff range by 1.
+　『守備隊形』\r\nこの戦闘では追撃が発生しない	Wary Fighter\r\nPrevents all follow-up attacks.
+『必殺』\r\n必殺率が１５％上昇する	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
+『攻め立て』\r\n自分の追撃を連続で行う	Desperation\r\nFollow-up attacks will occur immediately.
+『武器殺し』\r\n相手が特定の武器を装備している場合\r\n優位になれる補正が付く	Breaker\r\n+50 Hit/Avo against the\r\nspecified weapon.
+奥義『撃破』（技％）\r\nダメージ２倍の攻撃	Impale (Skill%)\r\nDeals double damage. Deals quadruple\r\ndamage if it will defeat the opponent.
+『生命吸収』\r\n自ら敵を撃破で最大ＨＰ半分回復	Lifetaker\r\nRestore 50%HP after attacking\r\nand defeating an enemy.
+『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
+『死線』\r\n与ダメージと被ダメージ＋１０	Life and Death\r\nDamage dealt and recieved +10.
+『持ち替え』\r\n反撃時、その距離に見合った武器に\r\n持ち替えて戦闘を行う	Shift\r\nCan change weapons when attacked\r\nif unable to counterattack.
+奥義『ジハード』\r\n攻撃力２倍　与ダメージ半分回復	Crusade (Lv%)\r\nWhen HP is half or less, deal double damage\r\nand restore HP equal to damage dealt.
+『奥義の拍動』\r\n４ターンに１回だけ、\r\n確率スキルの発動率が１００％になる	Mysterious Rhythm\r\nOnce every 4 turns, skills occur\r\nat a 100% activation rate.
+奥義『月食』（技％）\r\n相手のＨＰを１に	Eclipse (Skill%)\r\nIf the attack does not defeat the\r\nopponent, it reduces their HP to 1.
+ディール	Deil
+フレリア城	Castle Frelia
+イムの村	Ide
+馬を自在にあやつり移動力にすぐれる騎士\r\nもっとも攻撃・守備・速さのバランスがよい	Mounted knights with superior movement.\r\nWell balanced for speed, defense, & attack.
+馬をたくみにあやつる　華麗なる騎士\r\n全ての能力においてソシアルナイトを上回る	A title earned only by those cavaliers whose\r\nlives have been dedicated to justice.
+あついよろいで身をかためる重騎士\r\n守備力に優れるが　速さや移動力に劣る	Heavily armored knights. Superior defense\r\noutweighs their poor movement and speed.
+重厚なよろいに身をつつむ　誇り高き重騎士\r\n攻撃力　守備力ともにすぐれている	Lordly knights in heavy armor. They possess\r\nexcellent defensive and offensive skills.
+宝を求めて戦場をかけ回る者たち\r\n戦闘能力はひくいが　さまざまな特技をもつ	Rogues and fortune hunters. They possess\r\nweak attacks but many other skills.
+傭兵・用心棒などを仕事とする戦闘のプロ\r\n全ての能力バランスに優れている	Professional soldiers-for-hire. They are well\r\nbalanced, with superior abilities all around.
+活躍し　名声を得た傭兵に与えられる称号\r\n攻守ともに優れた　戦闘のエキスパート	The finest of all mercenary warriors.\r\nExpert in all fields of combat.
+舞うがごとく剣をあつかう　剣の使い手たち\r\n技・速さに優れ　必殺の一撃を得意とする	Swordsmen who possess superior speed and\r\ntechnique. They specialize in killing strokes.
+その道を極めた剣士に与えられる称号\r\n素早い動きと一撃必殺の技を持つ剣の達人	A title given to those dedicated to the\r\nsword. Incredible speed and killing strokes.
+暗殺を生業とする者の名\r\n一瞬で標的に死をもたらす瞬殺の技を持つ	Masters of the killing arts. They have the\r\nability to kill a foe with a single stroke.
+軽い防具を身にまとい弓を用いて戦う\r\n少し離れた位置の敵に攻撃ができる	Lightly protected warriors armed with bows.\r\nThey can attack from a distance.
+弓を極めんとする者たち\r\n正確無比な弓のエキスパート	Archers dedicated to mastering their art.\r\nNone can match their skill with the bow.
+馬術に優れ　臨機応変に戦う騎士\r\n機動力があり　剣と弓を使いこなす	Mounted knights who charge into battle with\r\nsword and bow. They possess great mobility.
+飛竜をあやつり　空を制する騎士\r\n弓・魔法以外の攻撃に　圧倒的な強さを誇る	Knights who rule the skies from wyvern-back.\r\nThey are vulnerable to only bows and magic.
+飛竜をわが身のごとくあやつる　空の騎士\r\n移動・攻撃・防御　全てにすぐれている	Knights united with their wyvern mounts.\r\nThey have better movement and combat skill.
+『理（ことわり）』の魔道を使う者たち\r\n守備の高い敵に強いが武器による攻撃に弱い	Mages schooled in anima magic. They bypass\r\ndefenses but are weak against weapons.
+修行をつんだ魔道士におくられる称号\r\n多くの魔法に加え　聖なる杖をもあやつる	A title given to advanced mages. They wield\r\nmagic and can carry staves.
+『さとり』をひらいた僧侶が昇格する\r\n聖なる力で攻撃魔法をあつかうようになる	A title given to monks who have attained\r\nenlightenment. Wields magic for offense.
+幾多もの戦場を乗り越えた槍の達人\r\n装備『槍』スキル『見切り』	Veteran soldiers who overcome\r\nany challenge. Equip: Lances.
+竜石の力によって　竜へと姿を変える\r\n伝説とされし存在	Dragonkin who live in Darkling Woods.\r\nDragonstones can transform them.
+道を究めた　盗賊の中の盗賊\r\nかぎを持たずに　扉・宝箱をあける	Adventurer-thieves with skills so great they\r\ncan open chests and doors without tools.
+斧をもちいて戦う　『あらくれ』たち\r\n力は強いが　守備力におとる	Axe-wielding powerhouses whose wild fighting\r\nstyle leaves them with poor defenses.
+強さを認められた戦士に与えられる称号\r\n目をみはる攻撃力で　他を圧倒する	A title awarded to battle-tested warriors.\r\nThe strongest of all fighters.
+斧をもちいて戦う　『山のあらくれ』たち\r\nうでっぷしが強く　山での戦闘を得意とする	Mighty axe fighters especially skilled\r\nin mountain combat.
+戦に生き　戦に死す覇者の称号\r\n山や海などに強く　必殺の一撃を得意とする	A title for those who live to fight. Strong in\r\nmountains or at sea. Skilled in killing blows.
+高い守備力と機動力をあわせ持つ騎士\r\n剣・斧・槍を使い　あらゆる敵を打ちのめす	Knights with high defense and mobility. They\r\nuse swords, axes, and lances equally well.
+いにしえの『闇』魔道を　あやつる者たち\r\n魔道士を上回る攻撃力を持つが　速さに劣る	Masters of elder black magic. They are very\r\npowerful, but very slow as well.
+闇魔道を極めんとする者たち\r\nあやつる高位『闇』魔法の前に敵はひれ伏す	A title granted to powerful shamans. Those\r\nwho battle them cower in fear of their might.
+闇魔道の禁忌に手を染めた者たち\r\nその力によって　亡霊戦士を召喚する	A title granted to shamans who have used\r\nforbidden magic to learn the summoning arts.
+聖なる力『光』の魔道書を使う修行僧\r\n命中率に優れるが　威力は弱い	Ascetic wielders of sacred light magic.\r\nSuperior ability to hit but low attack power.
+聖なる杖で味方を助ける\r\n聖職者　攻撃はできない	Members of the clergy who wield sacred\r\nstaves to aid allies. They wield no weapons.
+主人のために尽くす召使い\r\n装備『剣・杖』　スキル『魔殺し』	Loyal servents who heal and defend\r\ntheir masters. Equip: Sword, staff.
+天馬をあやつり　空をかける女騎士たち\r\n魔法による攻撃に強いが　弓の攻撃に弱い	Knights who soar through the skies. They\r\nresist magic but are weak against bows.
+天馬を自在にあやつる　天空の女騎士たち\r\n速さ・魔防に抜きんでた力をもつ	Knights united with their pegasus mounts.\r\nThey have superior skill and resistance.
+聖なる杖をもちいて味方を助ける\r\n武器を使えないので　攻撃はできない	Wielders of sacred staves who aid allies in\r\nbattle. They refuse to take arms in combat.
+馬上より聖なる杖で味方を助ける乙女たち\r\n移動力に優れるが　武器は使えない	Mounted maidens whose sacred staves aid\r\nallies. They are swift but will not fight.
+美しいおどりで　仲間を助ける存在\r\n武器を使わないので　攻撃はできない	Dancers whose grace soothes allies.\r\nThey do not fight in combat.
+槍を用いて戦う　一般的な下級兵士\r\nとりたてて目立った能力はない	Average foot soldiers possessing no unique\r\nabilities. They bear spears in combat.
+斧をもちいて戦う　『海のあらくれ』たち\r\nうでっぷしが強く　海での戦闘を得意とする	Axe-wielding privateers trained to\r\nfight on the high seas.
+『指揮上昇』\r\n指揮が２、上昇します	Increases leadership stars by 2.
+マスターソード	Master Swd
+魔の力により　強大な力を得たバール\r\nその鋭い爪には　猛毒を備えている	Giant spiders infused with tremendous\r\nmagical strength. Their venom is lethal.
+『指揮上昇』\r\n指揮が１、増えます	Increases leadership stars by 1.
+主人のために尽くす召使い\r\n杖と剣を使い主人をサポートする	Savage demon hounds that thirst for blood.\r\nThese agile beasts have razor-sharp fangs.
+三つの首をもつ　飢えた魔獣\r\n襲いくる３つの牙をかわすのは　至難の業	Ferocious, three-headed hellhounds. Their\r\ntriple-fanged bites are difficult to dodge.
+好戦的で野蛮な魔物\r\n巨大な斧を手に　疾風のごとく駆けまわる	Belligerent man-beasts. Like hurricanes they\r\nroam, wreaking havoc with their giant axes.
+エトルリアの元騎士隊長で\r\n貴族の出身\r\n現在は傭兵隊長として皆を導く	A former chief of the Etrurian\r\nmilatary, from a noble family.\r\nNow the leader of a mercenary band.
+守備＋８　魔防＋２\r\n指揮官が好んで使う\r\n優れた防御力を誇る盾	+8 Defense and +2 Resistance.\r\nOnly usable by military.
+丈夫で優れた性能を誇る\r\n特別な盾	+2 Defense and +3 Resistance.\r\nFor Lizzy only.
+スリープの剣	Sleep Sword
+サンダーソード	Levin Sword
+目的：玉座制圧	Seize throne
+目的：宝箱開く	Open the Chests
+多くアイテムをつる	Fish a lot of items
+アイテムをつる	Fish an item
+致命攻撃を必ずＨＰ１で耐える\r\n不思議なお守り	When held, survive a\r\nfatal blow with 1 HP.
+遠距離攻撃を得意とする戦車\r\n装備『弓』	Heavy tanks specialized in attacking\r\nfrom a long range. Equip: Ballistae.　『遠距離防御』\r\n遠距離攻撃を半減	Tower Shield\r\nhalf damage when attacked at range.
+『電撃戦闘』\r\n互いに２回連続攻撃	Continue\r\nDoubles the amount of\r\nrounds of all combat.
+『奮迅』\r\n戦闘時、大幅に強化されるが\r\n戦闘終了時にＨＰが６減少する	Fury\r\nStr/Spd/Def/Res +2, but take\r\n6 damage after attacking.
+『相性激化』\r\n３すくみの効果が２倍になる	Triangle Adept\r\nDoubles weapon traingle effects.
+『遠距離無効』\r\n遠距離攻撃を無効化	Tower Shield+\r\nNegates all ranged attacks.
+『神の器』\r\nスキル発動率を３０％上昇させる	Rightful God\r\n+30% to skill activation rate.
+ドラゴンシールド	Drg. Shield
+フェリクス	Phelix
+ワルキューレ	Valkyrie
+ハルトマン隊	Haltmann's
+必避	Ddg
+ブレンサンダ	Brenthunder
+敵軍の攻撃範囲を\r\n表示します	Attack an enemy and\r\nattempt to capture them.
+エンゼルナイト	AngelKnight
+ウォーロック	Warlock
+大賢者	Archsage
+知を究めた魔道士の称号\r\nあらゆる魔法と　杖を知る	An honorific bestowed upon\r\nthe wisest of sages.
+道士	Taoist
+ブレードソウル	BladeSolh
+リッチ	Lich
+ヲールランナー	WallRunner
+戦車	Tank
+フラッグ	Flag
+バルタン	Baltan
+ゴースト	Ghost
+　捕獲	 Capture
+　『大盾』（技％）\r\n相手の物理攻撃を半減する	Pavise (Lv%)\r\nReduces physical damage by half.
+　『再動』（幸運％）\r\n行動終了後にもう一度行動ができる	Re-Move (Luck%)\r\nAct again after completing an action.
+　『疾風迅雷』\r\n敵撃破後に１度だけ再行動	Galeforce\r\nAct again after defeating an\r\nenemy (once per turn).
+　『魔道特効』\r\n魔道士に対して与ダメージ＋１０	Magekiller\r\n+10 damage to magic users.
+　『魔物特効』\r\n魔物に対して与ダメージ＋１０	Slayer\r\n+10 damage to monsters.
+　『遠距離防御』\r\n受けた間接攻撃を６ダメージ減	Tower Shield\r\n-6 damage when attacked at range.
+　『攻め立て』\r\n自分から攻めると先制追撃	Desperation\r\nFollow-up attacks will occur immediately.
+　『鬼神の一撃』\r\n自ら攻めると攻撃＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking
+　『金剛の一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
+　『持ち替え』\r\n反撃可能な武器を装備する	Shift\r\nCan change weapons when attacked\r\nif unable to counterattack.
+　『奥義の律動』\r\n３ターンに１回奥義が確定発動	Mysterious Rhythm\r\nOnce every 3 turns, skills occur\r\nat a 100% activation rate.
+　『神風招来』\r\n杖使用後に１度だけ再行動	Powerstaff\r\nTake another action after using\r\na staff (once per turn).
+　『突撃』\r\nＨＰと攻速が上回ると戦闘継続	Charge (HP%)\r\nInitiates another round of combat.
+　『風なぎ』\r\n自ら攻めると反撃阻止　追撃不可	Moonlight\r\nInstead of performing a follow-up attack,\r\nnegates the opponent's counterattack.
+　『近距離防御』\r\n受けた直接攻撃を６ダメージ減	Short Shield\r\n-6 damage when attacked up close.
+　『奮迅』\r\n戦闘後ＨＰ６減するが戦闘力上昇	Fury\r\nStr/Spd/Def/Res +2, but take\r\n6 damage after attacking.
+　『相性激化』\r\n武器相性の影響が２倍	Triangle Adept\r\nDoubles weapon traingle effects.
+奥義『天空』（ＬＶ％）\r\n敵の守備を８割減し与ダメージ半分回復	Aether (Lv%)\r\nPerform Luna and Sol consecutively.
+　『王の器』\r\nスキル発動率が１０％上昇	Skill 『Rightful King』\r\nIncreases skill activation by 10%.
+奥義『華炎』（技％）\r\n魔力か力の半分を攻撃力に加える	Ignis (Skill%)\r\nAdd Str/2 when attacking magically.\r\nAdd Mag/2 when attacking physically.
+　『神の器』\r\nスキル発動率が３０％上昇	Rightful God\r\n+30% to skill activation rate.
+　『プロミネンス』\r\n周囲５マスに範囲攻撃\r\nＨＰ１の敵は撃破する	Prominence\r\nRange attack on 5 squares around.
+攻速を落として攻撃し\r\n敵を倒せれば捕獲できます	Attack with slowing down attack speed\r\nYou can catch if can defeat the enemy
+　体当たり	 Shove
+相手を１マスだけ\r\n押し出します	Push an adjacent unit one\r\ntile away.
+　突飛ばし	 Smite
+　ぶちかまし Smite
+相手を２マスだけ\r\n突き飛ばします	Push an adjacent unit two\r\ntiles away.
+　回り込み	 Pivot
+自分が味方の\r\n反対側の位置に移動する	Move to opposite side of\r\nan adjacent ally.
+　引き戻し	 Repos
+味方を自分の\r\n反対側の位置に移動させる	Move adjacent ally to this\r\nunit's opposite side.
+　入れ替え	 Swap
+自分と味方の\r\n位置を入れ替える	Swap positions with adjacent\r\nally.
+　演説	 Speech
+熱い理想を語り\r\n味方を再行動可能にします	Talking hot ideals\r\nyour allies to move again.
+　危険	 Range
+　指南	 Shinan
+攻略情報を\r\n表示します	Display capture information.
+守らないといけない旗	Flag that you must protect
+イリア騎士団	Ilia
+イリア騎士	Ilia
+北方の地イリアの\r\n傭兵騎士団	Mercenary knights of Ilia.
+ジュテ族	Djute
+　同行	 Refuge
+　『杖の達人』\r\nＨＰ回復杖の射程を伸ばす	Staff Savant\r\nIncrease maximum staff range by 1.
+　『守備隊形』\r\n戦闘で追撃が起こらない	Wary Fighter\r\nPrevents all follow-up attacks.
+　『魔物特効』\r\n魔物に対して常に特効	Slayer\r\nDeal effective damage to monsters.
+　『草なぎ』\r\n自分から攻撃したとき、追撃が絶対に\r\n出来ない代わりに相手の反撃を絶対に防ぐ	Moonlight\r\nInstead of performing a follow-up attack,\r\nnegates the opponent's counterattack.
+『王の器』\r\nスキル発動率を１０％上昇させる	Skill 『Rightful King』\r\nIncreases skill activation by 10%.
+　『カリスマ』\r\n３マス以内の味方の命中回避＋１０	Charm\r\nAllies within 3 spaces gain +10 hit.
+奥義『竜穽』（技％）\r\n攻撃力１．５倍で攻撃	Dragon Fang (Skill%)\r\nMultiplies damage by 1.5x.
+ノトス	Notos
+オルファン	Olfan
+ホウダイ	Battery
+装備するとスキル「待ち伏せ」を持つ剣	With skill "Ambush" when Equip.
+特殊なエネルギーが宿った不思議な弾丸	Mysterious bullet with energy.
+別大陸の魔剣。守備と魔防＋５	Sword of another continent.Def,Res +5.
+アルスを\r\nクラスチェンジさせます	Promote Arus.
+　『必殺上昇』\r\n必殺率＋１５	Crit+15\r\nGrants +15 to\r\ncritical hit rate.
+シュラム	Shrum
+エネルギー弾	Energy bullet
+大盾Ｍ	Pavise.M
+使用するとスキル「大盾」を習得	Learning skill "Pavise" when used
+祈りＭ	Miracle.M
+使用するとスキル「祈り」を習得	Learning skill "Miracle" when used
+使用するとスキル「「祈り」を習得	Learning skill "Miracle" when used
+見切りＭ	Nihil.M
+使用するとスキル「見切り」を習得	Learning skill "Nihil" when used
+練達Ｍ	Nullify.M
+使用するとスキル「練達」を習得する	Learning skill "Nullify" when used
+キャンセルＭ	Cancel.M
+使用するとスキル「キャンセル」習得	Learning skill "Cancel" when used
+デルフィの守り	Delphi Shield
+ニニスの守護	Ninis's Grace
+味方１人の守備＋１０魔防＋１０
+キングスプルフ	King Seal
+リンカネ－ション	Linkation
+レベル１０以上の上級ユニットを\r\nクリーチャーに転生させます	Transform a level 10\r\nor higher Promoted into a creature
+ロングシャイン	Long Shine
+遠くまで攻撃の届くシャイン	Long range Shine
+鬼神の一撃Ｍ	Death Blow.M
+　『鬼神の一撃』\r\n自ら攻めると与ダメージ＋５必殺＋１５	Death Blow\r\nDamage +5 when attacking.
+恐怖Ｍ	Intimidate.M
+治癒Ｍ	Boon.M
+金ごうの一撃Ｍ	ArmormedBlow.M
+　『金ごうの一撃』\r\n自ら攻めると被ダメージ－１０	Armormed Blow\r\nDef +10 when attacking.
+閃光のブレス	Flash of breath
+まばゆい閃光で相手を殲滅する	Destroy the other party with a dazzling flash
+ふしぎなアメ	Rare Candy
+拠点で使用します	Use at base
+リーダーバッジ	Leader Badge
+持っているとそれぞれ異なる\r\nリーダースキルを発動させれます	Different leader skills\r\ncan be triggered by having
+魔物の爪	Monster's claw
+キャノンホウ	Cannon
+戦車の弾	Tank's bullets
+ペトロクラウド	Petrocloud
+ブリューナク	Brunak
+強者にのみにしか扱えない大型の槍	Large bowl can only use strong people.
+ゴーストリング	Ghost Ring
+上級のアルス・ナインツ・ホワイトに\r\n持たせると「乗る」コマンドで\r\nゴーストになれます	If has Promoted Arus,Ninz,White,\r\ncan transform ghost\r\nwith "Ride" command
+ヘパイスの黒雷	Black Thunder
+暗黒の雷で相手を攻撃する	Attack with dark lightning
+ヴンダーガスト	Vundergast
+大型の風魔法。速さ＋２	Large-scale wind magic.Speed+2.
+妖刀かまいたち	Kamaitachi
+攻撃範囲がかなり広い刀。非常に貴重	fairly wide attack range.Very valuable.
+モンゴルの剣	MongolianSword
+バサークダガー	BerserkDagger
+攻撃が命中すると相手にバサークをかける	If hit, Put Berserk
+女王の剣	Queen's Sword
+女王の加護により力が増幅された封印の剣	Sealed sword blessed by the queen
+まばゆいビームサーベル	Dazzling beam saber
+オデッセイの剣	OdysseySword
+大型魔法「オデッセイ」を宿した剣	Sword with the large magic Odyssey
+ヘリオスの疾風	Helios Gale
+大型の風魔法　飛行特攻	Large-scale wind magic. Effective fliers
+テティスの氷石	Tethys's Ice
+氷のつぶての雨を相手に降らせる	Rain of ice Rock at Enenmy.
+アトラスの業火	Atlas's Flame
+炎の竜を呼び覚まし相手に突撃する	Wake up the fire dragon and assault.
+モンゴルの剣	MongolianSWD
+モンゴルで作られた剣。当たると毒になる	Made in Mongolia. poison when hit.
+フレイムロッド	Flame Rod
+炎を宿した杖。魔法ではなく物理	Has flame power. Physical attack not magic.
+タワーシールド	Tower Shield
+持つと守備を＋２にする盾	Shield that makes Def+2
+投石	ThrowingStone
+投げれる石	Stone to be thrown
+持っていると一度だけ祈りスキル発動	Miracle skill activation only once\r\nif you have one
+漆黒の斬鉄斧	Jet-BlackAxe
+漆黒に覆われた斧。武器スキル『キャンセル』	Jetty covered Axs.Skill "Cancel"
+ラビアンローズ	LaVieEnRose
+女性専用　ＨＰ成長率をアップさせる	Only women.HP growth rate
+閃光の弓	Flash Bow
+レイピアと同じ特攻効果を持つ弓	With the same effectiveness Rapier
+バルダシールド	BaldaShield
+そこそこ強い盾。守備＋５	Somewhat strong shield.Def+5
+エリートの長弓	ParagonBow
+装備するとエリートのスキルが付く長弓	With skill Paragon when Equip
+見切りの盾	Nihil shield
+装備時見切りのスキルを得る盾　攻撃不可	With skill Nihil when Equip.NotAttack
+聖なる盾	Holy shield
+装備時聖盾のスキルを得る　攻撃不可	With skill Aegis when Equip.NotAttack
+重装の盾	Heavy Shield
+とても重くて硬い盾	Very heavy and hard shield
+強運を呼ぶ盾	Blessing Shield
+装備時強運のスキルを得る盾　攻撃不可	With skill Blessing when Equip.NotAttack
+ヘルパニッシャ－	Hell Punisher
+地獄より舞い降りた剣　必殺無効	Sword from hell.Negate Criticals.
+グラムロック	Gram lock
+装備時　スキル連撃防御を得る　守備＋２	With skill Bunker when Equip.Def+2
+雷神の弓	Raijin Yumi
+風神の弓	Fujin Yumi
+必殺無効　体力を吸収する	Negate Criticals.Lifetaker.
+必殺無効　毒を与える	Negate Criticals.Poison the enemy.
+待ち伏せＭ	Ambush.M
+　『待ち伏せ』\r\n敵ターンに先制攻撃	Ambush\r\nAlways attack first.
+連続Ｍ	Adept.M
+エリートＭ	Paragon.M
+マージキラー	MageKiller
+魔法系ユニットに特攻を持つ弓	Effective Mage
+クラウ・ソラス	Crow Soras
+相性反転効果のある魔法剣	Magic sword with a Reaver Effect.
+ヴォルケイトス	Volkeithos
+ヴォルケナ火山から発見された幻の槍	Illusionary Lance discovered Mount Volkena.
+エリートの剣	ParagonSWD
+装備するとスキル「エリート」を得る剣	With skill Paragon when Equip.
+バルダアーマー	BalderArmor
+耐久に優れた鎧	Durable armor
+エイトセンシズ	EighthSense
+使うと移動と体格以外が２アップします	Increases All by 2 point.\r\nexcept MOV and CON.
+ガンブレード	Gun Blade
+剣の柄にジュウの機構を取り入れた武器	Incorporates gun mechanism into the sword
+剣の柄に銃の機構を取り入れた武器	Incorporates gun mechanism into the sword
+パワーボウ	Power Bow
+力を増幅させる不思議な弓	Mysterious bow That amplifies the power
+必殺Ｍ	Crit.M
+突撃Ｍ	Charge.M
+月光Ｍ	Luna.M
+太陽Ｍ	Sol.M
+強奪Ｍ	Despoil.M
+敵の必殺を回避する能力です\r\nこの値だけ　敵の必殺が減ります	Ability to avoid critical\r\nhits. Affected by luck.
+敵軍の攻撃範囲を\r\n表示します	Attack an enemy and\r\nattempt to capture them.
+オートセーブ	Auto Save
+毎ターン	Each Turn
+オートセーブの設定を切り換えます	Switch the auto save setting
+アルス	Arus
+ナインツ	Ninz
+ホワイト	White
+飛行特攻の剣	Sword in Effective fliers
+『神将器』　業火の理　幸運＋５	The Infernal Truth. Luck +5
+『神将器』　至高の光　魔防＋５	The Glorious Acension. Res +5
+『神将器』　黙示の闇　魔力＋５	The Elder Revelation. Mag +5
+『神将器』　氷雪の槍　技＋５	The Ice snow Lance. Skill +5
+『神将器』　烈火の剣　力＋５	The Blazing Bld. Pow +5
+地にまい降りた天使の衣\r\n最大ＨＰ＋５　使うと失われます	Increases Max HP by\r\n5 point. Vanishes after use.
+戦う力を高める魔法のリング\r\n力＋２　使うと失われます	Increases Strength by\r\n2 point. Vanishes after use.
+戦いのわざを伝える書\r\n技＋２　使うと失われます	Increases Skill by 2 points.\r\nVanishes after use.
+最もすばやい天馬の羽根\r\n速さ＋２　使うと失われます	Increases speed by\r\n2 points. Vanishes after use.
+ほほえむ幸運の女神\r\n幸運＋４　使うと失われます	Increases Luck by\r\n4 points. Vanishes after use.
+竜のウロコでつくられた盾\r\n守備＋２　使うと失われます	Increases defense by\r\n2 points. Vanishes after use.
+敵の魔法を払うお守り\r\n魔防＋２　使うと失われます		Increases resistance by\r\n2 points. Vanishes after use.
+魔法がかかったブーツ\r\n移動力＋２　使うと失われます	Increases movement by\r\n2 points. Vanishes after use.
+使うと移動と体格以外が２アップします	Boosts all stats except\r\nMov and Con by 2.
+１ターンの間のみ味方１人の攻撃＋１０	Boosts one ally's Atk by 10\r\nfor one turn.
+味方１人の守備＋１０魔防＋１０	Boosts an ally's Def/Res by 10\r\nfor one turn.
+１ターンの間のみ味方１人の必殺＋１０	Boost's an ally's Crit by 10\r\nfor one turn.
+１ターンの間のみ味方１人の回避＋１０	Boosts an ally's Avo by 10\r\nfor one turn.
+間接攻撃可能な燃えさかる炎の剣	Indirect attackable burning flame sword.
+ゲン	Gen
+ドレイセン	Dreisen
+マイティ	Mighty
+レイド	Raid
+シルキー	Silky
+マックス	Max
+ミッド	Mid
+ジルエット	Gillette
+アレックス	Alex
+セルニード	Serneid
+ルヴィ	Rubi
+サテュラ	Satura
+カレノレ	Karenole
+メリル	Meryl
+ネフティ	Nefti
+ジャクソン	Jackson
+カーティス	Curtis
+アンジェリカ	Angelica
+ミハエル	Michael
+エレナ	Elena
+シヴィアス	Severes
+スティーブ	Steve
+アニゼット	Anizet
+ゼファー	Zephyr
+エリュオン	Eluon
+ネロ	Nero
+カイ	Kai
+カノープス	Canopus
+ネレイ	Nerei
+リオン	Lyon
+ジャスティン	Justin
+ワンダ	Wanda
+エレンディア	Elendia
+ヴァルトス	Valtos
+イズカ	Izuka
+ヴィランドゥ	Villaundu
+ヘイデン	Hayden
+マルシュ	Marsh
+アシュレイ	Ashley
+マローダ	Maroda
+ロアン	Roan
+黄天化	Yellowing
+グッドマン	Goodman
+亡霊戦士	Phantom
+サモン	Summon
+サマナーン	Summonern
+亡霊戦士	Phantom
+リオン	Lyon
+ムルヴァ	Morva
+オブスキュラ	Obscura
+ヴァルトス	Valtos
+エレンディア	Elendia
+ヴァルトス	Valtos
+ベン	Ben
+シュピーデル	Spider
+バドラック	Badac
+デュラハン	Durahan
+ホイップ	Olaf
+クルス	Cruz
+御名方守矢	Moriya
+ボルガザード	Borghazard
+サーケー	Sir
+マルディオン	Mardion
+アルス	Ars
+ドルミン	Dormin
+シェスタ	Schesta
+ケンゴ	Kengo
+ケンゴ	Kengo
+グリムアーツ	Grim Arts
+イズカ	Izuka
+黄天化	Koutenka
+カルマ	Karma
+ウナレフ	Unaref
+守護モルフ	Guardian
+オルナーデン	Ornaden
+バドラック団	Badac Team
+シンゴ	Shingo
+ダリエム	Dariem
+トルネキア	Tornechia
+オブスキュラ	Obscura
+暗黒教団員	Dark Cult
+しかばねの兵	Risen
+したっぱ団員	Grunt
+モンゴル兵士	Mongolian
+バドラック団	Badac Team
+エトルリア兵	Etrurian
+ウィロウ	Willow
+ダラ	Dara
+ライフＳＷ	Life SW
+ミリィ	Milli
+ケン	Ken
+リキア地方ラウス公しゃく家の末えい\r\n争いを好まない性格	The descendants of the\r\nDuke of Routh, Lykia region.\r\nHe who does not like fighting.
+レーン村の村長\r\n歴戦をくぐりぬけた元騎士	Village chief of Lane village\r\nA former knight who\r\npassed through the war.
+ゲンの弟子\r\n正義感あふれる重騎士	Gen's apprentice. A very\r\njust man.
+フェレ家の騎士\r\n騎士アレンの遠い子孫	The descendant of Sir\r\nAllen of Pherae.
+エトルリア王国の僧侶\r\nかつてはエリミーヌ教団に所属していた	A monk in the Kingdom of Etruria who\r\nused to belong to the Elimine Church.
+ジルエットと共に行動する天馬騎士	A pegasus knight travelling\r\nwith Gillette.
+西方出身のかけだし兵士\r\nアレックスの息子	The son of Alex.
+アシュレイの弟\r\n気弱な性格	Ashley's younger brother.
+シルキーと共に各地を飛び回り\r\n宝を探している空賊	A thief roaming around the area with\r\nSilky searching for treasure.
+西方出身の戦士\r\nマックスの父	The father of the warrior Max.\r\n
+アルスの親友でありライバル\r\n兄貴分的存在	Ars's best friend and rival.
+様々な軍に付く傭兵\r\n剣聖カレル？	Mercenaries attached to various armies.\r\nSword St. Karel??
+様々な町を訪れている少女\r\nよくナンパしてる	A girl who visits various towns.\r\nShe's always hitting on mans.
+ベルン王国出身の兵士\r\nメリルの友達	Meryl's friend. From Bern.
+廃きょを好んで様々な\r\n廃きょを訪れている少女	A girl who likes to go out and visit\r\nvarious places.
+サカ領主・・・の亡霊	The ghost of the Sacae lord
+リグレ公爵家の最高指揮官\r\nモルフにされてしまった	Chief commander of the Duke of Ligure.\r\nHe has been made into a morph
+サカ出身の女剣士で\r\n修行の旅に出ている	A female swordsman from\r\nSacae on a training trip.
+エトルリアの魔道軍将を夢見る少年\r\n歳に合わずしっかりした性格	A boy who dreams of the Etrurian\r\nmagistrate.
+ロアンの妻\r\n元エリミーヌ教団員	Roanne's wife, former member\r\nof the Elimine Church.
+ベルン国王子ヴィランドゥの妹\r\nアンジェリカとは親友の関係	Berne's princess,\r\nVillanuda's sister.
+暗黒教団に恨みを持つ男\r\nホワイトの親友	Man with grudge against the Dark cult.\r\nWhite's best friend.
+ベルン王国の王子\r\n国王ダリエムの息子	The son of King Dariem of the\r\nKingdom of Bern.
+キュアン王子の遺児\r\nレンスター王家の生き残り	The son of Prince Quan\r\nof Leonster.
+カフチ島生まれの少年\r\nわけあってリキアにいる	An orphan boy travelling with Ars.
+ミッドの兄\r\n好戦的な性格	Mid's older, more militant brother.
+元エリミーヌ教団の司祭\r\nアルスの恩師	Former priest of the Elimine Church.
+暗黒教団の一員	One of the eight great generals who\r\nthe Dark Church raised.
+暗黒教団がよみがえらせた\r\n八神将の一人	One of the eight great generals who\r\nthe Dark Church raised.
+バドラック団の手下	The subordinates of Badac's team.
+ブルーニャの遠い子孫\r\nシヴィアスとは親友の関係	Distant offspring of Brunnya\r\nSeveres's best friend.
+エトルリア三軍将の一人\r\n『騎士軍将』	One of Etruria's three generals\r\n『Knight General.』
+大きな成長を遂げた魔術士\r\nスキル「回復」「陽光」	A mage who has made great\r\nprogress in their magical studies.\r\nSkill:Renewal,Flare
+高い移動力と攻守に優れた力を持つ\r\n装備『剣・槍・杖』　奥義『太陽』	A knight with superior movement\r\nand well-rounded abilities.\r\nOccult:Sol
+剣の達人　素早い動きと一撃必殺の技\r\n装備『剣』　スキル『連続』	Lightning-fast swordsmen of peerless\r\nand lethal skill. Equip: Swords.\r\nSkill:Adept
+謎の力を秘めた石\r\n防御無視	A stone with mysterious power\r\nNegate Defenses.
+扉や宝箱を開けます	Open the door and\r\nthe treasure chest.
+誰でも使える\r\n万能カギです	A universal key\r\nthat anyone can use.
+ｎ邪の宝剣	Bakuya
+莫邪の宝剣	Bakuya
+死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
+英雄ハルトムートの剣　間接攻撃可能	Hero Hartmut's sword. RangeAttack.
+矢が遠くまで届く大型の弓	Large bow that the arrow can reach far.
+様々な武器を扱う上級騎士\r\n武器『剣・槍・弓・杖』	Advanced knights who handle various weapons\r\nEquip: Sword, Lance, Axs, Bow.
+光の翼をもつ騎士\r\n武器『剣・光・闇・理』	A knight with wings of light.\r\nEquip: Sword, Light, Dark, Anima.
+力は弱いが　安定した能力を持つ\r\n装備『理・光』	Magic wielders with solid skills but low\r\nphysical strength. Equip: Anima, Light.
+理と光魔法を使う　魔道騎士\r\n装備『理・光・剣』　スキル『回復』	Mage knights who using Anima and Light magic.\r\nEquip: Anima, Light, Sword.\r\nSkill: Renewal.
+攻撃は魔道士を超えるが　速さに劣る\r\n装備『闇・理』	Wielders of magic who are stronger,\r\nbut slower, than mages. Equip: Dark, Anima.
+魔力が高く　高位の魔法をあやつる\r\n装備『闇・理・杖』　スキル『月食』	Wielders of deep and ancient magic.\r\nEquip: Dark, anima, Staves.\r\nSkill: Luna.
+死を経験し　よみがえった剣士\r\n装備『剣・闇』スキル『すりぬけ』	Swordsman who has experienced death and has risen.\r\nEquip: Sword, Dark.\r\nSkill: Pass.
+全ての魔法を使いこなす　魔女\r\n装備『理・闇・光』　奥義『生命吸収』	Magicians with a mastery of all magics.\r\nEquip: Anima, Light, Dark.\r\nOccult: Lifetaker.
+自らの意思でアンデットと化した道化師\r\nスキル「回復」「相性激化」	Clown who turned himself into Andet.\r\nSkill: Renewal, Triangle Adept.
+別大陸から送り込まれた\r\n戦闘車両	Combat vehicles sent\r\nfrom another continent.
+世界を動かす強国の王\r\nきわめて高い能力をほこる	King of power that moves the world.\r\nHe have a very high ability.
+遠距離からの攻撃に優れる発射台	Launch pad that is excellent for\r\nlong range attacks
+死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
+神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.\r\nSkill: Pass
+武器レベル	Weapon level

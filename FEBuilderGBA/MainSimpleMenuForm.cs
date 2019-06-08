@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Text;
+using Microsoft.Win32;
 
 namespace FEBuilderGBA
 {
@@ -17,7 +17,6 @@ namespace FEBuilderGBA
         public MainSimpleMenuForm()
         {
             InitializeComponent();
-//            MainFormUtil.MakeExplainFunctions(this.MenuPanel);
         }
         private void MainSimpleMenuForm_Load(object sender, EventArgs e)
         {
@@ -36,6 +35,9 @@ namespace FEBuilderGBA
             Map.MapMouseDownEvent += MapMouseDownEvent;
             Map.MapDoubleClickEvent += MapDoubleClickEvent;
             U.SelectedIndexSafety(MAP_LISTBOX,0);
+
+            SystemEvents.SessionEnding +=
+                    new SessionEndingEventHandler(SystemEvents_SessionEnding);
         }
 
         private void UnitButton_Click(object sender, EventArgs e)
@@ -272,6 +274,14 @@ namespace FEBuilderGBA
             }
         }
 
+        private void SystemEvents_SessionEnding(object sender, SessionEndingEventArgs e)
+        {
+            if (!MainFormUtil.IsNotSaveYet(this))
+            {//キャンセルをリクエスト
+                e.Cancel = true;
+            }
+        }
+
         private void DetailMenuButton_Click(object sender, EventArgs e)
         {
             if (Program.ROM.RomInfo.version() == 6)
@@ -426,9 +436,12 @@ namespace FEBuilderGBA
 
             //システムエラーのチェック.
             List<FELint.ErrorSt>  systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
-            if (systemErrorList == null)
+            if (systemErrorList == null )
             {//準備中という表記を出す.
-                this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
+                if (Program.AsmMapFileAsmCache.IsBusyThread())
+                {
+                    this.EventAddrList.Add(new U.AddrResult(FELINTBUZY_MESSAGE, R._("計測中..."), FELINTBUZY_MESSAGE));
+                }
             }
             else if (systemErrorList.Count > 0)
             {//エラーを表示する.
@@ -500,38 +513,6 @@ namespace FEBuilderGBA
             U.ConvertListBox(this.EventAddrList, ref EventList);
         }
 
-        //現在の章にエラーがあるか?
-        public bool IsErrorFoundByCurrentChapter()
-        {
-            List<FELint.ErrorSt> systemErrorList = Program.AsmMapFileAsmCache.GetFELintCache(FELint.SYSTEM_MAP_ID);
-            if (systemErrorList == null)
-            {//準備中です
-                return false; //とりあえずエラーはないと答える
-            }
-            else if (systemErrorList.Count > 0)
-            {//エラーがある
-                return true;
-            }
-            if (this.MAP_LISTBOX.SelectedIndex < 0)
-            {
-                return false;
-            }
-
-            uint mapid = (uint)this.MAP_LISTBOX.SelectedIndex;
-
-            //章内のエラーのチェック
-            List<FELint.ErrorSt> mapErrorList = Program.AsmMapFileAsmCache.GetFELintCache(mapid);
-            if (mapErrorList == null)
-            {//こちらは準備中にはできないので、消す
-            }
-            else if (mapErrorList.Count > 0)
-            {//エラーがある
-                return true;
-            }
-
-            //エラーはない
-            return false;
-        }
 
 
         //ユニット配置を検索して取得.
@@ -1339,11 +1320,6 @@ namespace FEBuilderGBA
             }
         }
 
-        private void SaveWithLintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.SaveWithLint(this);
-        }
-
         private void ASMInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolASMInsertForm>();
@@ -1471,6 +1447,17 @@ namespace FEBuilderGBA
                 return;
             }
             MAP_LISTBOX_SelectedIndexChanged(null, null);
+        }
+
+        private void MainSimpleMenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SystemEvents.SessionEnding -=
+                    new SessionEndingEventHandler(SystemEvents_SessionEnding);
+        }
+
+        private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.RunToolInitWizard();
         }
     }
 }

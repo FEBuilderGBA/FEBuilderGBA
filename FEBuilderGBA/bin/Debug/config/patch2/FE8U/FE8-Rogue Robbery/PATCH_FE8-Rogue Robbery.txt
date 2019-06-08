@@ -12,4 +12,4 @@ INFO=ローグが装備していないアイテムを盗めるようにします
 INFO.en=This hack allows rogues to steal unequipped weapons and staffs, provided the rogue's constitution is higher than the weapon's weight (items and staffs skip this check). 
 
 AUTHOR=Tequila
-INFO.zh=我将尝试窃取Rogue没有的物品。
+INFO.zh=尝试窃取Rogue没有的物品。

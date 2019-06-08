@@ -160,7 +160,7 @@ namespace FEBuilderGBA
 
         public void ExportallText(Form self)
         {
-            ExportallText(self, false, "", "", "", "" , false, true);
+            ExportallText(self, false, "", "", "", "" , false, true , false);
         }
         public void ExportallText(Form self
             , bool useAutoTranslateCheckBox
@@ -170,6 +170,7 @@ namespace FEBuilderGBA
             , string TranslateToROMFilename
             , bool useGoolgeTranslate
             , bool modifiedTextOnly
+            , bool isOneLiner
             )
         {
             string title = R._("保存するファイル名を選択してください");
@@ -213,12 +214,12 @@ namespace FEBuilderGBA
             }
 
             this.UseGoolgeTranslate = useGoolgeTranslate;
-            ExportallText(self, save.FileNames[0], from, to, fromrom, torom, modifiedTextOnly);
+            ExportallText(self, save.FileNames[0], from, to, fromrom, torom, modifiedTextOnly, isOneLiner);
 
             U.SelectFileByExplorer(save.FileNames[0]);
         }
 
-        void ExportText(StreamWriter writer,uint id, string text, string tralnslate_from, string tralnslate_to,Dictionary<string,string> transDic, bool modifiedTextOnly)
+        void ExportText(StreamWriter writer,uint id, string text, string tralnslate_from, string tralnslate_to,Dictionary<string,string> transDic, bool isModifiedTextOnly, bool isOneLiner)
         {
             string translatetext;
             if (tralnslate_from == "" || tralnslate_to == "")
@@ -235,7 +236,7 @@ namespace FEBuilderGBA
                         , tralnslate_to
                         , transDic
                         , this.UseGoolgeTranslate
-                        , modifiedTextOnly);
+                        , isModifiedTextOnly);
                     if (translatetext == "[@SKIP]")
                     {
                         return;
@@ -257,6 +258,12 @@ namespace FEBuilderGBA
             //エスケープシーケンスの変換
             translatetext = TextForm.ConvertEscapeText(translatetext);
 
+            if (isOneLiner)
+            {//ワンライナー
+                writer.Write(translatetext.Replace("\r\n", "\\r\\n")+"\r\n");
+                return;
+            }
+
             writer.Write("[" + U.ToHexString(id) + "]\r\n");
             writer.Write(translatetext + "\r\n");
         }
@@ -266,7 +273,8 @@ namespace FEBuilderGBA
             , string writeTextFileName
             , string tralnslate_from, string tralnslate_to
             , string rom_from, string rom_to
-            , bool modifiedTextOnly
+            , bool isModifiedTextOnly
+            , bool isOneLiner
             )
         {
             //少し時間がかかるので、しばらくお待ちください表示.
@@ -285,7 +293,7 @@ namespace FEBuilderGBA
                             string text = decode.Decode((uint)i);
 
                             pleaseWait.DoEvents("Text:" + U.To0xHexString((uint)i));
-                            ExportText(writer, (uint)i, text, tralnslate_from, tralnslate_to, transDic,  modifiedTextOnly);
+                            ExportText(writer, (uint)i, text, tralnslate_from, tralnslate_to, transDic,  isModifiedTextOnly, isOneLiner);
                         }
                     }
 
@@ -320,7 +328,7 @@ namespace FEBuilderGBA
                                 }
 
                                 pleaseWait.DoEvents("Menu:" + U.To0xHexString(textid));
-                                ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic,  modifiedTextOnly);
+                                ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic, isModifiedTextOnly, isOneLiner);
                             }
                         }
                     }
@@ -344,7 +352,7 @@ namespace FEBuilderGBA
                             }
 
                             pleaseWait.DoEvents("Terrain:" + U.To0xHexString(textid));
-                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic,  modifiedTextOnly);
+                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic, isModifiedTextOnly, isOneLiner);
                         }
                     }
 
@@ -368,7 +376,7 @@ namespace FEBuilderGBA
                             }
 
                             pleaseWait.DoEvents("SoundRoom:" + U.To0xHexString(textid));
-                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic,  modifiedTextOnly);
+                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic, isModifiedTextOnly, isOneLiner);
                         }
                     }
                     //その他文字列
@@ -389,7 +397,7 @@ namespace FEBuilderGBA
                             }
 
                             pleaseWait.DoEvents("Other:" + U.To0xHexString(p_str));
-                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic,  modifiedTextOnly);
+                            ExportText(writer, U.toPointer(text_pointer), str, tralnslate_from, tralnslate_to, transDic, isModifiedTextOnly, isOneLiner);
                         }
                     }
                 }

@@ -9,7 +9,7 @@
 @0080@001E	目を半分閉じる[HalfCloseEyes]	{TOGGLE}
 @0080@001F	ウィンクをする[Wink]	{TOGGLE}
 @0080@0020	軍師名の表示[Tact]	{DISPLAY}
-@0080@0021	テキストを赤字にする(システムメッセージのみ)[ToggleRed]	{TOGGLE}
+@0080@0021	テキストを赤字にする[ToggleRed]	{TOGGLE}
 @0080@0022	アイテム名の表示[Item]	{DISPLAY}
 @0080@0023	名前の入力[SetName]	{CHOOSE}
 @0080@0024	軍師名の表示2[Tact2]	{DISPLAY}
@@ -42,7 +42,7 @@
 @001A	店で買う売るの選択子[Buy/Sell]	{CHOOSE}
 @001B	店での売買の継続の是非[ShopContinue]	{CHOOSE}
 @001C	SendToBack[SendToBack]	{CHOOSE}
-@001D	文字列を早く表示する2[FastPrint]	{SPEED}
+@001D	文字列を早く表示する2[FastPrint2]	{SPEED}
 @001F	文字列余白を埋める(英語版のみ)[.]	{DISPLAY}
 @0040	@の表示[@]	{DISPLAY}
 @0010	次の顔画像のロード[LoadFace]	{MOVE_LOAD}

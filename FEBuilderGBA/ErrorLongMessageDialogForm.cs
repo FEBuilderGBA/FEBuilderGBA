@@ -33,7 +33,7 @@ namespace FEBuilderGBA
 
         private void ErrorMessage_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(e.LinkText);
+            U.OpenURLOrFile(e.LinkText);
         }
 
         private void ErrorLongMessageDialogForm_KeyDown(object sender, KeyEventArgs e)

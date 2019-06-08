@@ -30,10 +30,8 @@
         {
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -124,7 +122,6 @@
             this.PALETTE_P_9 = new System.Windows.Forms.Label();
             this.PALETTE_R_10 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image1_Import = new System.Windows.Forms.Button();
             this.image1_Export = new System.Windows.Forms.Button();
             this.image1_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -133,11 +130,12 @@
             this.UndoButton = new System.Windows.Forms.Button();
             this.PaletteIndexComboBox = new System.Windows.Forms.ComboBox();
             this.Zoom = new System.Windows.Forms.ComboBox();
+            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
+            this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_ADDRESS)).BeginInit();
@@ -190,8 +188,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -213,19 +213,6 @@
             this.panel1.Size = new System.Drawing.Size(91, 847);
             this.panel1.TabIndex = 3;
             // 
-            // CHIPLIST
-            // 
-            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
-            this.CHIPLIST.Name = "CHIPLIST";
-            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CHIPLIST.TabIndex = 1;
-            this.CHIPLIST.TabStop = false;
-            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
-            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
-            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
@@ -244,19 +231,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1289, 625);
             this.panel3.TabIndex = 360;
-            // 
-            // Battle
-            // 
-            this.Battle.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.Battle.Location = new System.Drawing.Point(0, 0);
-            this.Battle.Name = "Battle";
-            this.Battle.Size = new System.Drawing.Size(32, 32);
-            this.Battle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Battle.TabIndex = 1;
-            this.Battle.TabStop = false;
-            this.Battle.Paint += new System.Windows.Forms.PaintEventHandler(this.WorldMap_Paint);
-            this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TSAEditor_MouseDown);
-            this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
             // 
             // tabControl1
             // 
@@ -1641,17 +1615,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "メイン画像";
             // 
-            // image1_Picture
-            // 
-            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image1_Picture.Location = new System.Drawing.Point(306, 11);
-            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image1_Picture.Name = "image1_Picture";
-            this.image1_Picture.Size = new System.Drawing.Size(316, 128);
-            this.image1_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image1_Picture.TabIndex = 110;
-            this.image1_Picture.TabStop = false;
-            // 
             // image1_Import
             // 
             this.image1_Import.Location = new System.Drawing.Point(0, 59);
@@ -1761,18 +1724,55 @@
             this.Zoom.TabIndex = 360;
             this.Zoom.SelectedIndexChanged += new System.EventHandler(this.Zoom_SelectedIndexChanged);
             // 
+            // CHIPLIST
+            // 
+            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
+            this.CHIPLIST.Name = "CHIPLIST";
+            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CHIPLIST.TabIndex = 1;
+            this.CHIPLIST.TabStop = false;
+            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
+            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
+            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
+            // 
+            // Battle
+            // 
+            this.Battle.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.Battle.Location = new System.Drawing.Point(0, 0);
+            this.Battle.Name = "Battle";
+            this.Battle.Size = new System.Drawing.Size(32, 32);
+            this.Battle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Battle.TabIndex = 1;
+            this.Battle.TabStop = false;
+            this.Battle.Paint += new System.Windows.Forms.PaintEventHandler(this.WorldMap_Paint);
+            this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TSAEditor_MouseDown);
+            this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
+            // 
+            // image1_Picture
+            // 
+            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image1_Picture.Location = new System.Drawing.Point(306, 11);
+            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image1_Picture.Name = "image1_Picture";
+            this.image1_Picture.Size = new System.Drawing.Size(316, 128);
+            this.image1_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image1_Picture.TabIndex = 110;
+            this.image1_Picture.TabStop = false;
+            // 
             // ImageTSAEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1395, 886);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Zoom);
             this.Controls.Add(this.PaletteIndexComboBox);
             this.Controls.Add(this.RedoButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.UndoButton);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.AllWriteButton);
             this.Name = "ImageTSAEditorForm";
             this.Text = "TSAエディタ";
@@ -1780,11 +1780,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageTSAEditorForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1839,8 +1837,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             this.ResumeLayout(false);
 
         }

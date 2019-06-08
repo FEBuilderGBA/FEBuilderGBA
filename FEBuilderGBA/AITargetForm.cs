@@ -36,6 +36,11 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
+                    string name = EventUnitForm.GetAIName3((uint)i);
+                    if (name != "")
+                    {
+                        return name;
+                    }
                     switch (i)
                     {
                         case 0:
@@ -73,7 +78,7 @@ namespace FEBuilderGBA
 
         private void ExplainLink_Click(object sender, EventArgs e)
         {
-            MainFormUtil.OpenURL( MainFormUtil.GetAboutTragetAI3() );
+            U.OpenURLOrFile( MainFormUtil.GetAboutTragetAI3() );
         }
         void MakeExplainFunctions()
         {

@@ -1,0 +1,12 @@
+NAME=敵を解放した時に、フレイボムでバグる問題の修正
+TYPE=BIN
+TAG=#ENGINE #ESSENTIALFIXES
+
+NAME.en=Fixed issue with glitch on mine when drop enemy
+
+//既に適応されたかどうか
+PATCHED_IF:0x321BC=0x00 0x4B 0x9F 0x46
+
+BIN:$FREEAREA=Fixed issue with glitch on mine when drop enemy.dmp
+JUMP:0x321BC:$r3:+1=Fixed issue with glitch on mine when drop enemy.dmp
+NAME.zh=修复了释放敌人时导致帧中出现错误的错误。

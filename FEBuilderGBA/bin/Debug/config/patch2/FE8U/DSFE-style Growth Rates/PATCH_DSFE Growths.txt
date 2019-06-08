@@ -14,3 +14,4 @@ INFO.zh=在这个补丁中，角色的统计增长率被视为个人增长和类
 AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/8
 
 SHOW_WARNING=true
+REPLACE_POINTER:0x809B10=ITEM

@@ -45,22 +45,9 @@ namespace FEBuilderGBA
         public static string GetSongName(uint song_id)
         {
             InputFormRef InputFormRef = Init(null);
-            string comment = InputFormRef.GetComment(song_id);
 
-            string emptyTrackMessage = "";
             uint addr = InputFormRef.IDToAddr(song_id);
-            if (IsEmptyTrack(song_id, addr))
-            {
-                emptyTrackMessage = R._("[空きトラック]");
-            }
-
-            string name = SoundRoomForm.GetSongNameWhereSongID(song_id);
-            if (name != "")
-            {
-                return name.Trim() + U.SA(comment) + U.SA(emptyTrackMessage);
-            }
-            //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + U.SA(comment) + U.SA(emptyTrackMessage);
+            return GetSongNameFast(song_id, addr);
         }
 
         //名前の取得   アドレスを指定できるので、早く取得できる 
@@ -78,7 +65,7 @@ namespace FEBuilderGBA
                 return name.Trim() + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
             }
             //サウンドルームにない音楽はSEだろうから、SE Listから検索する.
-            return U.at(SoundEffectList, (int)song_id) + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
+            return U.at(SoundEffectList, song_id) + InputFormRef.GetCommentSA(addr) + U.SA(emptyTrackMessage);
         }
 
         static bool IsEmptyTrack(uint song_id , uint addr)
@@ -173,15 +160,11 @@ namespace FEBuilderGBA
             }
             else if (type == "SFX")
             {
-                if (playerType == 0x00060006)
+                if (playerType >= 0x00030003)
                 {
                     return ""; //OK
                 }
-                if (playerType == 0x00070007)
-                {
-                    return ""; //OK
-                }
-                return R._("警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00060006または、0x00070007を指定する必要があります。\r\n現在の設定:{0}", U.To0xHexString(playerType));
+                return R._("警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}", U.To0xHexString(playerType));
             }
             return "";
         }
@@ -215,6 +198,23 @@ namespace FEBuilderGBA
                     SongInstrumentForm.RecycleOldInstrument(ref list, name, instpointer);
                 }
             }
+        }
+        //SongHeaderアドレスから曲名への逆変換
+        public static string GetSongNameWhereSongHeader(uint headerAddr)
+        {
+            headerAddr = U.toOffset(headerAddr);
+
+            InputFormRef InputFormRef = Init(null);
+            uint songpointer = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, songpointer += InputFormRef.BlockSize)
+            {
+                uint songaddr = Program.ROM.p32(songpointer);
+                if (songaddr == headerAddr)
+                {
+                    return U.ToHexString(i) + " " +GetSongNameFast(i, songpointer);
+                }
+            }
+            return "";
         }
     }
 }

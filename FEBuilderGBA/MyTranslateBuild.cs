@@ -49,7 +49,7 @@ namespace FEBuilderGBA
 
             //ソースコードスキャン
             {
-                string[] files = Directory.GetFiles(source_path, "*.cs", SearchOption.TopDirectoryOnly);
+                string[] files = U.Directory_GetFiles_Safe(source_path, "*.cs", SearchOption.TopDirectoryOnly);
                 foreach (string fullfilename in files)
                 {
                     InputFormRef.DoEvents(null, fullfilename);
@@ -603,7 +603,7 @@ namespace FEBuilderGBA
 
             //デザインのソースコードスキャンして日本語文字列を置き換え.
             {
-                string[] files = Directory.GetFiles(source_path, "*.Designer.cs", SearchOption.TopDirectoryOnly);
+                string[] files = U.Directory_GetFiles_Safe(source_path, "*.Designer.cs", SearchOption.TopDirectoryOnly);
                 foreach (string fullfilename in files)
                 {
                     InputFormRef.DoEvents(null, fullfilename);
@@ -731,7 +731,7 @@ namespace FEBuilderGBA
 
             //デザインのソースコードスキャンして英語等の言語を日本語文字列に置き換え.
             {
-                string[] files = Directory.GetFiles(source_path, "*.Designer.cs", SearchOption.TopDirectoryOnly);
+                string[] files = U.Directory_GetFiles_Safe(source_path, "*.Designer.cs", SearchOption.TopDirectoryOnly);
                 foreach (string fullfilename in files)
                 {
                     InputFormRef.DoEvents(null, fullfilename);
@@ -746,7 +746,7 @@ namespace FEBuilderGBA
         public void ScanPatch()
         {
             string path = System.IO.Path.Combine(Program.BaseDirectory, "config", "patch2");
-            string[] patchs = Directory.GetFiles(path, "PATCH_*.txt", SearchOption.AllDirectories);
+            string[] patchs = U.Directory_GetFiles_Safe(path, "PATCH_*.txt", SearchOption.AllDirectories);
             for (int i = 0; i < patchs.Length ; i++)
             {
                 if (U.GetFileSize(patchs[i]) < 10)
@@ -771,7 +771,7 @@ namespace FEBuilderGBA
         public void ScanMOD()
         {
             string path = System.IO.Path.Combine(Program.BaseDirectory, "config", "patch2");
-            string[] mods = Directory.GetFiles(path, "MOD_*.txt", SearchOption.AllDirectories);
+            string[] mods = U.Directory_GetFiles_Safe(path, "MOD_*.txt", SearchOption.AllDirectories);
             for (int i = 0; i < mods.Length; i++)
             {
                 UpdateMODAttributeJ(mods[i]);
@@ -948,7 +948,7 @@ namespace FEBuilderGBA
         public void ScanData()
         {
             string path = System.IO.Path.Combine(Program.BaseDirectory, "config", "data");
-            string[] data = Directory.GetFiles(path, "*.txt", SearchOption.TopDirectoryOnly);
+            string[] data = U.Directory_GetFiles_Safe(path, "*.txt", SearchOption.TopDirectoryOnly);
             for (int i = 0; i < data.Length; i++)
             {
                 string filename = Path.GetFileNameWithoutExtension(data[i]);

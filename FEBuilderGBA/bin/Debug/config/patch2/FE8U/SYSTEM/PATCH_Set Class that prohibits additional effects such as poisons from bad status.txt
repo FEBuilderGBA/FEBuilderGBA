@@ -1,0 +1,15 @@
+NAME=状態異常の毒などの追加効果を禁止するクラス
+NAME.en=Set Class that prohibits additional effects such as poisons from bad status
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002B62C
+ADDRESS_TYPE=CLASS
+
+NAME.zh=禁止额外影响的类别，例如异常情况下的毒药。
+
+INFO=ディフォルトではClass ID:0x66 魔王が設定されています。\r\n毒や状態異常剣パッチのスリープなどを抑制できます。ただし、石化は抑制できません。
+INFO.en=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.
+INFO.zh=By default, Class ID: 0x66 Demon King.\r\nYou can ignore the sleep of poison at bad status sword patch. However, it is not suppress by stone.

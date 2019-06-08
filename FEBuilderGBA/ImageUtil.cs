@@ -227,8 +227,10 @@ namespace FEBuilderGBA
                 byte one = 0;
                 for (int x = 0; x < width; x++)
                 {
-                    byte a = Marshal.ReadByte(adr, (x + 0) + bmpData.Stride * y);
-                    one = (byte)(one | ((a & 0x03) << (n * 2)));
+                    byte a = Marshal.ReadByte(adr, x + bmpData.Stride * y);
+                    a = (byte)(a & 0x03);
+                    a = (byte)(a << (n * 2));
+                    one = (byte)(one | a);
                     n++;
                     if (n >= 4)
                     {
@@ -345,6 +347,7 @@ namespace FEBuilderGBA
 
             //BITMAP生成.
             Bitmap pic = new Bitmap(width, height, PixelFormat.Format8bppIndexed);
+
             //パレットの読込.
             pic.Palette = ByteToPalette(pic.Palette, palette, palette_pos);
             if (image_pos < 0) 
@@ -513,7 +516,7 @@ namespace FEBuilderGBA
             }
             UInt16[] tile = new UInt16[size];
 
-            int length = tsa_pos + (size * 2);
+            int length = tsa_pos + (size * 2) + 2;
             length = Math.Min(length, tsa.Length);
 
             i += 2;
@@ -1584,6 +1587,13 @@ namespace FEBuilderGBA
                 + (((uint)(c.G >> 3) & 0x1F) << 5)
                 + (((uint)(c.B >> 3) & 0x1F) << 10)
                 ;
+        }
+        public static Color GBARGBToColor(uint  c)
+        {
+            uint r = c & 0x1F;
+            uint g = (c >> 5 )& 0x1F;
+            uint b = (c >> 10 )& 0x1F;
+            return Color.FromArgb((int)r << 3, (int)g << 3, (int)b << 3);
         }
 
         //パレットからバイト列.
@@ -3124,8 +3134,9 @@ namespace FEBuilderGBA
             IntPtr src = bmpData.Scan0;
 
             ColorPalette openpal = bitmap.Palette;
-            newpal.Entries[0] = openpal.Entries[0];
-            newpal.Entries[1] = openpal.Entries[1];
+            newpal.Entries[0] = U.at(openpal.Entries, 0, Color.Black);
+            newpal.Entries[1] = U.at(openpal.Entries, 1, Color.Black);
+
             for (int i = 0x2; i <= 0xff; i++)
             {
                 newpal.Entries[i] = Color.Black;
@@ -3868,10 +3879,8 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-//                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
-//            ret.Save("err.png");
             return ret;
         }
 
@@ -3900,12 +3909,10 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-                //                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
             retBitmap.Dispose();
 
-            //            ret.Save("err.png");
             return ret;
         }
 
@@ -3946,12 +3953,10 @@ namespace FEBuilderGBA
             retBitmap.Dispose();
             if (ret == null)
             {
-//                retBitmap.Save("err.png");
                 throw new Exception(errormessage);
             }
             retBitmap.Dispose();
 
-//            ret.Save("err.png");
             return ret;
         }
 
@@ -4593,7 +4598,7 @@ namespace FEBuilderGBA
             Bitmap dummy = ImageUtil.Blank(width, height);
             ImageUtil.BlackOutUnnecessaryColors(dummy);
             string path = Path.Combine(basedir,basename);
-            dummy.Save(path);
+            U.BitmapSave(dummy, path);
             dummy.Dispose();
 
             return path;

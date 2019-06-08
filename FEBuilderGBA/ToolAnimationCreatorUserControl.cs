@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             this.AnimeList = new List<AnimeSt>();
             this.AnimeObj = new Dictionary<string, Bitmap>();
             this.AnimeBG = new Dictionary<string, Bitmap>();
-      
+
             this.DummyBitmap = ImageUtil.Blank(ImageUtilOAM.SCREEN_TILE_WIDTH_M1 * 8, ImageUtilOAM.SCREEN_TILE_HEIGHT * 8);
             {
                 U.SelectedIndexSafety(this.BattleFocus, 0);
@@ -45,7 +45,7 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 6)
                 {//FE6には背景は存在しない.
                     List<U.AddrResult> list = new List<U.AddrResult>();
-                    list.Add(new U.AddrResult(1,    R._("00 マップを表示")));
+                    list.Add(new U.AddrResult(1, R._("00 マップを表示")));
                     list.Add(new U.AddrResult(0x100, R._("100 パレット0")));
                     list.Add(new U.AddrResult(0x101, R._("101 黒単色")));
                     U.ConvertComboBox(list, ref this.BattleBG);
@@ -54,9 +54,9 @@ namespace FEBuilderGBA
                 else
                 {
                     List<U.AddrResult> list = ImageBattleBGForm.MakeList();
-                    list.Insert(0,new U.AddrResult(1, R._("00 マップを表示")));
-                    list.Insert(1,new U.AddrResult(0x100, R._("100 パレット0")));
-                    list.Insert(2,new U.AddrResult(0x101, R._("101 黒単色")));
+                    list.Insert(0, new U.AddrResult(1, R._("00 マップを表示")));
+                    list.Insert(1, new U.AddrResult(0x100, R._("100 パレット0")));
+                    list.Insert(2, new U.AddrResult(0x101, R._("101 黒単色")));
                     U.ConvertComboBox(list, ref this.BattleBG);
 
                     U.SelectedIndexSafety(this.BattleBG, 0x4 + 3 - 1);
@@ -79,29 +79,34 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.version() == 8)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x6F);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x6F);
                 }
                 else if (Program.ROM.RomInfo.version() == 7)
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x19);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x6F);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x6F);
                 }
                 else
                 {
                     U.SelectedIndexSafety(this.TargetEnemy, 0x23);
-                    U.SelectedIndexSafety(this.PlayerUnit,  0x12);
+                    U.SelectedIndexSafety(this.PlayerUnit, 0x12);
                 }
                 InputFormRef.LoadComboResource(TargetEnemySection, U.ConfigDataFilename("battleanime_mode_"));
                 InputFormRef.LoadComboResource(PlayerUnitSection, U.ConfigDataFilename("battleanime_mode_"));
                 U.SelectedIndexSafety(this.TargetEnemySection, 0);
                 U.SelectedIndexSafety(this.PlayerUnitSection, 0);
             }
+            {
+                ToolTipEx tooltip = InputFormRef.GetToolTip<ToolAnimationCreatorForm>();
+                SoundInfo.SetToolTipEx(tooltip);
+                SkillSoundInfo.SetToolTipEx(tooltip);
+            }
 
             List<Control> controls = InputFormRef.GetAllControls(this);
-            InputFormRef.makeLinkEventHandler("", controls, Sound, SoundInfo, 0, "SONG", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, Sound, SoundInfo, 0, "SONG", new string[] { "SFX" });
             InputFormRef.makeLinkEventHandler("", controls, Sound, SoundPlaySoundButton, 0, "SONGPLAY", new string[] { });
 
-            InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillSoundInfo, 0, "SONG", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillSoundInfo, 0, "SONG", new string[] { "SFX" });
             InputFormRef.makeLinkEventHandler("", controls, SkillSound, SkillPlaySoundButton, 0, "SONGPLAY", new string[] { });
 
             //読みやすいようにコメントを入れます.
@@ -688,6 +693,12 @@ namespace FEBuilderGBA
                 bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
                 bitmap.Dispose();
                 maxHeight = Math.Max(maxHeight, b.Height);
+
+                string errorMessage = SongTableForm.GetErrorMessage(v , "SFX");
+                if (errorMessage != "")
+                {
+                    U.DrawErrorRectangle(g, isWithDraw, listbounds);
+                }
             }
             else if (code.type == AnimeStEnum.Image)
             {
@@ -948,7 +959,7 @@ namespace FEBuilderGBA
                 InsertSkill(skillSound, skillType);
             }
         }
-        void ExportSkillAnimeWrite(string filename)
+        bool ExportSkillAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -983,10 +994,14 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
             }
-            File.WriteAllLines(filename, lines);
+            return U.WriteAllLinesInError(filename, lines);
         }
 
 
@@ -1096,7 +1111,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        void ExportBattleAnimeWrite(string filename)
+        bool ExportBattleAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -1118,7 +1133,11 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
                 else if (code.type == AnimeStEnum.Loop)
                 {
@@ -1136,7 +1155,8 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+
+            return U.WriteAllLinesInError(filename, lines);
         }
 
 
@@ -1311,7 +1331,7 @@ namespace FEBuilderGBA
                 i--;
             }
         }
-        void ExportMagicAnimeWrite(string filename)
+        bool ExportMagicAnimeWrite(string filename)
         {
             string basedir = Path.GetDirectoryName(filename);
 
@@ -1339,11 +1359,17 @@ namespace FEBuilderGBA
 
                     Debug.Assert(this.AnimeObj.ContainsKey(code.obj));
                     string imagefullfilename = Path.Combine(basedir, code.obj);
-                    this.AnimeObj[code.obj].Save(imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeObj[code.obj], imagefullfilename))
+                    {
+                        return false;
+                    }
 
                     Debug.Assert(this.AnimeBG.ContainsKey(code.bg));
                     imagefullfilename = Path.Combine(basedir, code.bg);
-                    this.AnimeBG[code.bg].Save(imagefullfilename);
+                    if (!U.BitmapSave(this.AnimeBG[code.bg], imagefullfilename))
+                    {
+                        return false;
+                    }
                 }
                 else if (code.type == AnimeStEnum.Sound)
                 {
@@ -1356,7 +1382,7 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+            return U.WriteAllLinesInError(filename, lines);
         }
         
         void AppendCode(uint code)
@@ -2309,7 +2335,10 @@ namespace FEBuilderGBA
                 string filename = Path.Combine(tempdir.Dir, "anime.txt");
                 if (this.AnimationType == AnimationTypeEnum.BattleAnime)
                 {
-                    ExportBattleAnimeWrite(filename);
+                    if (!ExportBattleAnimeWrite(filename))
+                    {
+                        return;
+                    }
 
                     ImageBattleAnimeForm f = (ImageBattleAnimeForm)InputFormRef.JumpForm<ImageBattleAnimeForm>(U.NOT_FOUND);
                     string error = f.BattleAnimeImportDirect(this.ID, filename);
@@ -2321,7 +2350,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.MagicAnime_CSACreator)
                 {
-                    ExportMagicAnimeWrite(filename);
+                    if (! ExportMagicAnimeWrite(filename))
+                    {
+                        return;
+                    }
 
                     ImageMagicCSACreatorForm f = (ImageMagicCSACreatorForm)InputFormRef.JumpForm<ImageMagicCSACreatorForm>(U.NOT_FOUND);
                     string error = f.MagicAnimeImportDirect(this.ID, filename);
@@ -2333,7 +2365,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.MagicAnime_FEEDitor)
                 {
-                    ExportMagicAnimeWrite(filename);
+                    if (! ExportMagicAnimeWrite(filename) )
+                    {
+                        return;
+                    }
 
                     ImageMagicFEditorForm f = (ImageMagicFEditorForm)InputFormRef.JumpForm<ImageMagicFEditorForm>(U.NOT_FOUND);
                     string error = f.MagicAnimeImportDirect(this.ID, filename);
@@ -2345,7 +2380,10 @@ namespace FEBuilderGBA
                 }
                 else if (this.AnimationType == AnimationTypeEnum.Skill)
                 {
-                    ExportSkillAnimeWrite(filename);
+                    if (! ExportSkillAnimeWrite(filename) )
+                    {
+                        return;
+                    }
 
                     InputFormRef.skill_system_enum skillsystem = InputFormRef.SearchSkillSystem();
                     if (skillsystem == InputFormRef.skill_system_enum.FE8N_ver2)
@@ -2726,7 +2764,6 @@ namespace FEBuilderGBA
             uint sound = (uint)this.Sound.Value;
             InputFormRef.JumpForm<SongTableForm>(sound);
         }
-
 
 
 

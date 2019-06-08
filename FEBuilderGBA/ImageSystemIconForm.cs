@@ -76,17 +76,20 @@ namespace FEBuilderGBA
 
                 systemmenu_badstatus_panel.Height = systemmenu_badstatus_panel.Height * 2;
                 systemmenu_badstatus_Picture.Height = systemmenu_badstatus_Picture.Height * 2;
+                InputFormRef.markupJumpLabel(X_StatusBackgroundLink);
             }
             else if (Program.ROM.RomInfo.version() >= 7)
             {//FE7
                 systemmenu_badstatus = new ImageFormRef(this, "systemmenu_badstatus", 32, 8 * 4, 1, Program.ROM.RomInfo.systemmenu_badstatus_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
                 systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
+                X_StatusBackgroundLink.Hide();
             }
             else
             {//FE6
                 systemmenu_old_badstatus = new ImageFormRef(this, "systemmenu_old_badstatus", 256, 32, 1, Program.ROM.RomInfo.systemmenu_badstatus_old_image_pointer(), 0, Program.ROM.RomInfo.systemmenu_badstatus_palette_pointer());
                 systemmenu_badstatus_panel.Hide();
                 systemmenu_old_badstatus_panel.Location = systemmenu_badstatus_panel.Location;
+                X_StatusBackgroundLink.Hide();
             }
             systemmenu_terrain = new ImageFormRef(this, "systemmenu_terrain", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer(), Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer(), Program.ROM.RomInfo.systemmenu_common_palette_pointer());
             systemmenu_name = new ImageFormRef(this, "systemmenu_name", 256, 256, 4, Program.ROM.RomInfo.systemmenu_name_image_pointer(), Program.ROM.RomInfo.systemmenu_name_tsa_pointer(), Program.ROM.RomInfo.systemmenu_name_palette_pointer());
@@ -96,6 +99,10 @@ namespace FEBuilderGBA
             systemarea_attack_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_attack_gradation_palette_pointer());
             systemarea_staff_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_staff_gradation_palette_pointer());
 
+            InputFormRef.markupJumpLabel(X_Jump_Patch);
+            InputFormRef.markupJumpLabel(X_GraphicsTool);
+            systemIconPictureBox1.Image = ImageSystemIconForm.Allows(8);
+            systemIconPictureBox2.Image = ImageSystemIconForm.Fort();
             IconRedraw();
         }
 
@@ -632,7 +639,14 @@ namespace FEBuilderGBA
         {
             Bitmap bitmap = BaseImage();
             Bitmap ret = ImageUtil.Blank(16, 16, bitmap);
-            ImageUtil.BitBlt(ret, 8, 8, 8, 8, bitmap, 136, 16);
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                ImageUtil.BitBlt(ret, 4, 8, 8, 8, bitmap, 32, 0);
+            }
+            else
+            {
+                ImageUtil.BitBlt(ret, 8, 8, 8, 8, bitmap, 136, 16);
+            }
             return ret;
         }
         public static Bitmap Allows(int number)
@@ -909,6 +923,23 @@ namespace FEBuilderGBA
         public void JumpToPage(uint page)
         {
             this.WMTabControl.SelectedIndex = (int)page;
+        }
+
+        private void X_StatusBackgroundLink_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("StatusBackground", 1);
+        }
+
+        private void X_GraphicsTool_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<GraphicsToolForm>();
+        }
+
+        private void X_Jump_Patch_Click(object sender, EventArgs e)
+        {
+            PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+            f.JumpTo("#IMAGE", 0, PatchForm.SortEnum.SortName);
         }
 
 

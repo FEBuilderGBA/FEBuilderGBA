@@ -644,11 +644,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolFELintForm>();
         }
 
-        private void SaveWithLintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.SaveWithLint(this);
-        }
-
         private void ASMInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolASMInsertForm>();
@@ -770,6 +765,11 @@ namespace FEBuilderGBA
         private void UnitActionPointerButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<UnitActionPointerForm>();
+        }
+
+        private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.RunToolInitWizard();
         }
 
     }

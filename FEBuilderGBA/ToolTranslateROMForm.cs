@@ -85,7 +85,7 @@ namespace FEBuilderGBA
             }
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            trans.ExportallText(this, useAutoTranslateCheckBox.Checked, from, to, fromrom, torom, useGoolgeTranslate, X_MODIFIED_TEXT_ONLY.Checked);
+            trans.ExportallText(this, useAutoTranslateCheckBox.Checked, from, to, fromrom, torom, useGoolgeTranslate, X_MODIFIED_TEXT_ONLY.Checked , X_ONELINER_CHECK.Checked);
         }
 
 
@@ -284,7 +284,7 @@ namespace FEBuilderGBA
             {
                 string writeTextFileName = Path.GetTempFileName();
 
-                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false);
+                trans.ExportallText(this, writeTextFileName, from, to, fromrom, torom,  false,false);
                 trans.ImportAllText(this, writeTextFileName);
 
                 ToolTranslateROMFont transFont = new ToolTranslateROMFont();

@@ -1,0 +1,7 @@
+Table=$54
+Loop=$04
+NotFound=$20
+Found=$14
+last_chapter=$3A
+first_chapter=$30
+gaiden_chapter=$34

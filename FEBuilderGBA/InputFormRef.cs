@@ -3881,7 +3881,7 @@ namespace FEBuilderGBA
             else if (linktype == "FLAG")
             {
                 ToolFlagNameForm f = (ToolFlagNameForm)InputFormRef.JumpForm<ToolFlagNameForm>(U.NOT_FOUND);
-                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object));
+                f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , U.NOT_FOUND);
             }
             else if (linktype == "TALKGROUP")
             {
@@ -4739,6 +4739,7 @@ namespace FEBuilderGBA
             SkillConfigFE8NSkillForm.ClearCache();
             SkillConfigFE8NVer2SkillForm.ClearCache();
             SkillConfigSkillSystemForm.ClearCache();
+            FE8SpellMenuExtendsForm.ClearCache();
 
             Cache_TerrainSet = null;
             Cache_ramunit_state_checkbox = null;
@@ -4750,6 +4751,7 @@ namespace FEBuilderGBA
             g_Cache_class_type_enum = class_type_enum.NoCache;
             g_Cache_itemicon_extends = itemicon_extends.NoCache;
             g_Cache_shinan_table = NO_CACHE;
+            g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
         }
 
 
@@ -4942,6 +4944,11 @@ namespace FEBuilderGBA
             {//静的データ取得.
                 CalcDataCountWhenSelfNULL();
                 return;
+            }
+
+            if (! U.isPadding4(blocksize))
+            {//4の倍数ではないので、チェックは無理
+                this.CheckProtectionPaddingALIGN4 = false;
             }
 
             this.Controls = GetAllControls(self);
@@ -5322,6 +5329,10 @@ namespace FEBuilderGBA
             { //先頭のID:0x00は書き込み禁止になっていた
                 return;
             }
+            if (!CheckPaddingALIGN4(addr))
+            {//ALIGN4ではないアドレスに書き込みをした
+                return;
+            }
 
             if (PreWriteHandler != null)
             {
@@ -5370,6 +5381,17 @@ namespace FEBuilderGBA
             {
                 return U.CheckZeroAddressWrite(addr);
             }
+        }
+
+        public bool CheckProtectionPaddingALIGN4 = true; //常にALIGN4である必要があるデータ
+        bool CheckPaddingALIGN4(uint addr)
+        {
+            if (CheckProtectionPaddingALIGN4)
+            {
+                return U.CheckPaddingALIGN4(addr);
+            }
+            //確認不能.
+            return true;
         }
 
         //ID:0x00を書き込み禁止にするかどうか. ディフォルトはしない.
@@ -7428,6 +7450,18 @@ namespace FEBuilderGBA
             }
             formst.Form.Close();
         }
+        public static Form GetForm<Type>()
+        {
+            FormSt formst;
+            int hashCode = typeof(Type).GetHashCode();
+            if (!Forms.TryGetValue(hashCode, out formst)
+                || formst.Form.IsDisposed
+                )
+            {//存在しない
+                return null;
+            }
+            return formst.Form;
+        }
 
         public static void ReOpenForm<Type>()
         {
@@ -8025,8 +8059,8 @@ namespace FEBuilderGBA
                         case 17: //17=ROMを別名で保存する
                             MainFormUtil.SaveAs(self);
                             break;
-                        case 18: //18=Lintして問題なければ上書き保存する
-                            MainFormUtil.SaveWithLint(self);
+                        case 18: //18=Lintして問題なければ上書き保存する(この機能はSaveOverraideに統合されました)
+                            MainFormUtil.SaveOverraide(self , forceCheck: true );
                             break;
                         case 19: //19=リストから次を検索
                             InputFormRef.SearchNextByListBox(self);
@@ -8690,7 +8724,11 @@ namespace FEBuilderGBA
 
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             //文字列の書き込み
@@ -8784,7 +8822,11 @@ namespace FEBuilderGBA
             if ( U.Padding4(addr + original_size)  == Program.ROM.Data.Length)
             {
                 //ROMサイズを増設.
-                Program.ROM.write_resize_data(U.Padding4(addr + (uint)dataByte.Length) );
+                bool isResizeSuccess = Program.ROM.write_resize_data(U.Padding4(addr + (uint)dataByte.Length));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
 
                 Program.ROM.write_range(addr, dataByte, undodata);
                 return addr;
@@ -8816,7 +8858,11 @@ namespace FEBuilderGBA
             uint newFreeSapceAddr = freespace;
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
@@ -8947,11 +8993,19 @@ namespace FEBuilderGBA
                 uint newFreeSapceAddr = freespace;
                 if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
                 {//必要サイズがROMサイズを超えていたら増設する.
-                    Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                    bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                    if (isResizeSuccess == false)
+                    {
+                        return U.NOT_FOUND;
+                    }
                 }
                 if (newFreeSapceAddr + original_size > Program.ROM.Data.Length)
                 {//必要サイズがROMサイズを超えていたら増設する.
-                    Program.ROM.write_resize_data((uint)(newFreeSapceAddr + original_size));
+                    bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + original_size));
+                    if (isResizeSuccess == false)
+                    {
+                        return U.NOT_FOUND;
+                    }
                 }
 
                 //LDRとEVEVNT
@@ -9035,7 +9089,12 @@ namespace FEBuilderGBA
             uint newFreeSapceAddr = freespace;
             if (newFreeSapceAddr + searchFreespaceSize > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(newFreeSapceAddr + searchFreespaceSize));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
+
                 //終端だったら気にしない.
                 use_null_term_data = false;
             }
@@ -9093,7 +9152,11 @@ namespace FEBuilderGBA
             //新規サイズ
             if (addr + size > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(addr + size));
+                bool isResizeSuccess  = Program.ROM.write_resize_data((uint)(addr + size));
+                if (isResizeSuccess == false)
+                {
+                    return U.NOT_FOUND;
+                }
             }
 
             //文字列の書き込み
@@ -10216,17 +10279,58 @@ namespace FEBuilderGBA
             return (a == check_value);
         }
 
-        public static bool SearchSkipWorldMapPatch()
+        //ワールドマップスキップパッチが適応されているかどうか判定する
+        public enum mnc2_fix_enum
         {
-            uint check_value;
-            uint address = Program.ROM.RomInfo.patch_skip_worldmap_fix(out check_value);
-            if (address == 0)
+             NO             //なし
+           , OldFix         //古いルーチン
+           , Stan_20190505  //Stanが2019/5/5 に提案した方式
+           , NoCache = (int)NO_CACHE
+        };
+        static mnc2_fix_enum g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
+        public static mnc2_fix_enum SearchSkipWorldMapPatch()
+        {
+            if (g_Cache_SkipWorldMap_enum == mnc2_fix_enum.NoCache)
             {
-                return false;
+                g_Cache_SkipWorldMap_enum = SearchSkipWorldMapPatchLow();
             }
-            uint a = Program.ROM.u16(address);
-            return (a == check_value);
+            return g_Cache_SkipWorldMap_enum;
         }
+        static mnc2_fix_enum SearchSkipWorldMapPatchLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="OldFix",	ver = "FE8J", addr = 0xc1e7c,data = new byte[]{0xB8, 0xE0}},
+                new PatchTableSt{ name="Stan_20190505",	ver = "FE8J", addr = 0x0F664,data = new byte[]{0x94, 0xF6, 0x00, 0x08}}, //NOT条件
+                new PatchTableSt{ name="OldFix",	ver = "FE8U", addr = 0xBD070,data = new byte[]{0xB8, 0xE0}},
+                new PatchTableSt{ name="Stan_20190505",	ver = "FE8U", addr = 0x0F464,data = new byte[]{0x98, 0xF4, 0x00, 0x08}}, //NOT条件
+            };
+        
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    if (t.name == "Stan_20190505")
+                    {
+                        return mnc2_fix_enum.Stan_20190505;
+                    }
+                    continue;
+                }
+                if (t.name == "OldFix")
+                {
+                    return mnc2_fix_enum.OldFix;
+                }
+            }
+            return mnc2_fix_enum.NO;
+        }
+
         public static bool SearchGenericEnemyPortraitExtendsPatch(out uint out_pointer)
         {
             uint check_value;
@@ -10252,7 +10356,7 @@ namespace FEBuilderGBA
 
         public static bool SearchNIMAP()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"));
+            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), 100);
             for (int i = 0; i < iset.Count; i++)
             {
                 string name = iset[i].name;

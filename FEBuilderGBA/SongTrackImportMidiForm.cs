@@ -18,7 +18,7 @@ namespace FEBuilderGBA
         }
         void PickupInstrument()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"));
+            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), this.OrignalInstrumentAddr);
             U.ConvertComboBox(iset, ref InstrumentSelectComboBox);
 
             if (iset.Count >= 1)
@@ -87,8 +87,10 @@ namespace FEBuilderGBA
             OKButton_Click(sender, e);
         }
 
+        uint OrignalInstrumentAddr;
         public void Init(uint instrumentAddr)
         {
+            this.OrignalInstrumentAddr = instrumentAddr;
             this.Instrument.Value = instrumentAddr;
             PickupInstrument();
         }
@@ -136,7 +138,7 @@ namespace FEBuilderGBA
                 Mid2AGBOKButton.Enabled = false;
                 this.tabControl1.SelectedIndex = 0;
             }
-            Mid2agbV.Value = 127;
+            Mid2agbV.Value = 80;
             //Mid2agbR.SelectedIndex = 0;
         }
 

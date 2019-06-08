@@ -1,0 +1,12 @@
+GetUnitInfoBySVAL1=$24
+GetUnitInfoByCoord=$28
+GetUnitInfoByCurrent=$1E
+SetSupply=$50
+GetUnitInfo=$2A
+CheckUnitInfo=$30
+Term=$7C
+ItemLoop=$3C
+ItemFull=$4A
+StoreItem=$6E
+Error=$6A
+SupplyItemLoop=$5C

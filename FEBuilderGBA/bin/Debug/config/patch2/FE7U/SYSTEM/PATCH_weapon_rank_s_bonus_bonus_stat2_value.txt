@@ -1,0 +1,14 @@
+NAME=武器レベルS ボーナス 項目2の値
+NAME.en=Weapon S Value of Bonus Item 2 Value
+NAME.zh=武器S奖金道具2的价值
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x028EAA
+HEX=false
+
+INFO=武器レベルSの時に、指定した項目にこの補正ボーナスが加わります
+INFO.en=At weapon level S, this correction bonus is added to the specified item.
+INFO.zh=在武器等级S，此修正加值被添加到指定项目。

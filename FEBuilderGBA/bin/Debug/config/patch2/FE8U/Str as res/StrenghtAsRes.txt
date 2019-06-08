@@ -1,0 +1,44 @@
+#define BLH(offset) "BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN offset"
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+#include "Tools/Tool Helpers.txt"
+PUSH
+	//Replace the load str routine by a check to load either str or mag
+	ORG 0x2AB50
+	BLH(LoadMagOrStr)
+	BYTE 0 0
+	
+	//Loads mag instead of str for magic swords
+	ORG 0x2A4C0
+	BLH(MagicSword)
+	BYTE 0 0
+	
+	//Change list of stat text IDS
+	ORG $7373A
+	SHORT 0x46C0 0x46C0
+	ORG $7375C
+	POIN Promo_Stat_Name_Table
+POP
+ALIGN 4
+LoadMagOrStr:
+#incbin "Code/loadstrormag.dmp"
+
+ALIGN 4
+MagicSword:
+#incbin "Code/MagicSword.dmp"
+
+ALIGN 4
+PUSH
+ORG 0xE15CC
+New_Stat_Location_Table:
+BYTE $62 $01 $A2 $01 $22 $02 $6A $01 $AA $01 $EA $01 $E2 $01 $2A $02   
+POP
+
+
+
+ALIGN 4
+Promo_Stat_Name_Table:
+#incbin "Code/Promo Stat Name Table.dmp"
+
+ALIGN 4
+#include "Code/ModularStatScreen.event"

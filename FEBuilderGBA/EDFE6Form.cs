@@ -62,7 +62,7 @@ namespace FEBuilderGBA
             {
                 InputFormRef InputFormRef = N2_Init(null);
                 UseTextID.AppendTextID(list, FELint.Type.ED, InputFormRef, new uint[] { 0 ,2 , 4, 6 });
-           }
+            }
         }
     }
 }

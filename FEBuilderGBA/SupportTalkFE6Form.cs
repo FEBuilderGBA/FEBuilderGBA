@@ -95,20 +95,20 @@ namespace FEBuilderGBA
             {
                 uint id = (uint)i;
 
-                uint textid = Program.ROM.u16(battletalk_addr + 4);
+                uint textid = Program.ROM.u32(battletalk_addr + 4);
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.SUPPORT_TALK, battletalk_addr, (uint)i);
 
-                textid = Program.ROM.u16(battletalk_addr + 6);
+                textid = Program.ROM.u32(battletalk_addr + 8);
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.SUPPORT_TALK, battletalk_addr, (uint)i);
 
-                textid = Program.ROM.u16(battletalk_addr + 8);
+                textid = Program.ROM.u32(battletalk_addr + 12);
                 FELint.ConversationTextMessage(textid, errors, FELint.Type.SUPPORT_TALK, battletalk_addr, (uint)i);
             }
         }
         public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef InputFormRef = Init(null);
-            UseTextID.AppendTextID(list, FELint.Type.SUPPORT_TALK, InputFormRef, new uint[] { 4, 6, 8 });
+            UseTextID.AppendTextID(list, FELint.Type.SUPPORT_TALK, InputFormRef, new uint[] { 4, 8, 12 });
         }
 
     }

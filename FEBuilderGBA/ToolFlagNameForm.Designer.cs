@@ -31,13 +31,14 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.WriteButton = new System.Windows.Forms.Button();
             this.FlagNameTextBox = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
+            this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             // AddressList
             // 
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -89,6 +91,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ToolUseFlagButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.DeleteButton);
             this.panel1.Controls.Add(this.WriteButton);
@@ -148,6 +151,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "フラグの名前";
             // 
+            // ToolUseFlagButton
+            // 
+            this.ToolUseFlagButton.Location = new System.Drawing.Point(3, 369);
+            this.ToolUseFlagButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ToolUseFlagButton.Name = "ToolUseFlagButton";
+            this.ToolUseFlagButton.Size = new System.Drawing.Size(580, 44);
+            this.ToolUseFlagButton.TabIndex = 5;
+            this.ToolUseFlagButton.Text = "章内で利用しているフラグの確認";
+            this.ToolUseFlagButton.UseVisualStyleBackColor = true;
+            this.ToolUseFlagButton.Click += new System.EventHandler(this.ToolUseFlagButton_Click);
+            // 
             // ToolFlagNameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -178,5 +192,6 @@
         private System.Windows.Forms.Button WriteButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ToolUseFlagButton;
     }
 }

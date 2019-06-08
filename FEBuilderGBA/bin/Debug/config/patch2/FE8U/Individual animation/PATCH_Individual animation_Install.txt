@@ -14,7 +14,7 @@ BIN:$FREEAREA:0x09000000=IndividualAnimation7743.bin
 JUMP:0x0571E8:$r0=IndividualAnimation7743.bin
 
 INFO=このパッチは、FE7のように、ユニットごとに個別アニメ(カスタムアニメ)を割り当てます。\r\n
-INFO.en=Patches a table into the ROM for custom animations by character like in FE7.\r\nMust be installed to use "Character Custom Animation Table Editor."\r\n
+INFO.en=Patches a table into the ROM for custom animations by character like in FE7.\r\nMust be installed to use "Character Custom Animation Table Editor."\r\n\r\nAlias: Personal Animation
 INFO.zh=该补丁与FE 7一样，为每个单元分配单独的动画（自定义动画）\r\n
 
 AUTHOR=7743

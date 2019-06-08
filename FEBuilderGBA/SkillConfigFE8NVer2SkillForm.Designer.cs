@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.N1_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N1_L_0_UNIT = new FEBuilderGBA.TextBoxEx();
             this.N1_J_0_CLASS = new System.Windows.Forms.Label();
             this.N1_B0 = new System.Windows.Forms.NumericUpDown();
@@ -81,6 +82,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.N2_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N2_L_0_CLASS = new FEBuilderGBA.TextBoxEx();
             this.N2_J_0_CLASS = new System.Windows.Forms.Label();
             this.N2_B0 = new System.Windows.Forms.NumericUpDown();
@@ -121,6 +123,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.N3_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N3_L_0_ITEM = new FEBuilderGBA.TextBoxEx();
             this.N3_J_0_CLASS = new System.Windows.Forms.Label();
             this.N3_B0 = new System.Windows.Forms.NumericUpDown();
@@ -195,9 +198,6 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.N1_ZeroPointerPanel = new System.Windows.Forms.Label();
-            this.N2_ZeroPointerPanel = new System.Windows.Forms.Label();
-            this.N3_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -350,10 +350,10 @@
             this.panel4.Controls.Add(this.SKILLICON);
             this.panel4.Controls.Add(this.W0);
             this.panel4.Controls.Add(this.J_0_TEXT);
-            this.panel4.Location = new System.Drawing.Point(258, 73);
+            this.panel4.Location = new System.Drawing.Point(259, 73);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(905, 771);
+            this.panel4.Size = new System.Drawing.Size(904, 771);
             this.panel4.TabIndex = 96;
             // 
             // ImportButton
@@ -551,6 +551,15 @@
             this.panel12.Size = new System.Drawing.Size(657, 449);
             this.panel12.TabIndex = 118;
             // 
+            // N1_ZeroPointerPanel
+            // 
+            this.N1_ZeroPointerPanel.Location = new System.Drawing.Point(3, 378);
+            this.N1_ZeroPointerPanel.Name = "N1_ZeroPointerPanel";
+            this.N1_ZeroPointerPanel.Size = new System.Drawing.Size(498, 65);
+            this.N1_ZeroPointerPanel.TabIndex = 123;
+            this.N1_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
+            this.N1_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // N1_L_0_UNIT
             // 
             this.N1_L_0_UNIT.ErrorMessage = "";
@@ -621,6 +630,7 @@
             // 
             this.N1_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N1_AddressList.FormattingEnabled = true;
+            this.N1_AddressList.IntegralHeight = false;
             this.N1_AddressList.ItemHeight = 18;
             this.N1_AddressList.Location = new System.Drawing.Point(0, 29);
             this.N1_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -854,6 +864,7 @@
             // 
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.IntegralHeight = false;
             this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(0, 29);
             this.listBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -902,6 +913,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(657, 449);
             this.panel8.TabIndex = 125;
+            // 
+            // N2_ZeroPointerPanel
+            // 
+            this.N2_ZeroPointerPanel.Location = new System.Drawing.Point(3, 391);
+            this.N2_ZeroPointerPanel.Name = "N2_ZeroPointerPanel";
+            this.N2_ZeroPointerPanel.Size = new System.Drawing.Size(498, 56);
+            this.N2_ZeroPointerPanel.TabIndex = 124;
+            this.N2_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
+            this.N2_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // N2_L_0_CLASS
             // 
@@ -1093,6 +1113,7 @@
             // 
             this.N2_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N2_AddressList.FormattingEnabled = true;
+            this.N2_AddressList.IntegralHeight = false;
             this.N2_AddressList.ItemHeight = 18;
             this.N2_AddressList.Location = new System.Drawing.Point(0, 29);
             this.N2_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1326,6 +1347,7 @@
             // 
             this.listBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox3.FormattingEnabled = true;
+            this.listBox3.IntegralHeight = false;
             this.listBox3.ItemHeight = 18;
             this.listBox3.Location = new System.Drawing.Point(0, 29);
             this.listBox3.Margin = new System.Windows.Forms.Padding(4);
@@ -1373,6 +1395,15 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(657, 449);
             this.panel15.TabIndex = 119;
+            // 
+            // N3_ZeroPointerPanel
+            // 
+            this.N3_ZeroPointerPanel.Location = new System.Drawing.Point(5, 386);
+            this.N3_ZeroPointerPanel.Name = "N3_ZeroPointerPanel";
+            this.N3_ZeroPointerPanel.Size = new System.Drawing.Size(498, 60);
+            this.N3_ZeroPointerPanel.TabIndex = 125;
+            this.N3_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
+            this.N3_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // N3_L_0_ITEM
             // 
@@ -1564,6 +1595,7 @@
             // 
             this.N3_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N3_AddressList.FormattingEnabled = true;
+            this.N3_AddressList.IntegralHeight = false;
             this.N3_AddressList.ItemHeight = 18;
             this.N3_AddressList.Location = new System.Drawing.Point(0, 29);
             this.N3_AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1798,6 +1830,7 @@
             // 
             this.listBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox5.FormattingEnabled = true;
+            this.listBox5.IntegralHeight = false;
             this.listBox5.ItemHeight = 18;
             this.listBox5.Location = new System.Drawing.Point(0, 29);
             this.listBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -2117,10 +2150,10 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(257, 40);
+            this.panel5.Location = new System.Drawing.Point(258, 39);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(906, 34);
+            this.panel5.Size = new System.Drawing.Size(905, 34);
             this.panel5.TabIndex = 94;
             // 
             // BlockSize
@@ -2182,7 +2215,7 @@
             // Address
             // 
             this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(90, 4);
+            this.Address.Location = new System.Drawing.Point(90, 3);
             this.Address.Margin = new System.Windows.Forms.Padding(2);
             this.Address.Maximum = new decimal(new int[] {
             -559939585,
@@ -2196,10 +2229,10 @@
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(1, 0);
+            this.label23.Location = new System.Drawing.Point(-1, -1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(84, 30);
+            this.label23.Size = new System.Drawing.Size(85, 30);
             this.label23.TabIndex = 53;
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2242,6 +2275,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -2249,33 +2283,6 @@
             this.AddressList.Size = new System.Drawing.Size(246, 742);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // N1_ZeroPointerPanel
-            // 
-            this.N1_ZeroPointerPanel.Location = new System.Drawing.Point(3, 378);
-            this.N1_ZeroPointerPanel.Name = "N1_ZeroPointerPanel";
-            this.N1_ZeroPointerPanel.Size = new System.Drawing.Size(498, 65);
-            this.N1_ZeroPointerPanel.TabIndex = 123;
-            this.N1_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
-            this.N1_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // N2_ZeroPointerPanel
-            // 
-            this.N2_ZeroPointerPanel.Location = new System.Drawing.Point(3, 391);
-            this.N2_ZeroPointerPanel.Name = "N2_ZeroPointerPanel";
-            this.N2_ZeroPointerPanel.Size = new System.Drawing.Size(498, 56);
-            this.N2_ZeroPointerPanel.TabIndex = 124;
-            this.N2_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
-            this.N2_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // N3_ZeroPointerPanel
-            // 
-            this.N3_ZeroPointerPanel.Location = new System.Drawing.Point(5, 386);
-            this.N3_ZeroPointerPanel.Name = "N3_ZeroPointerPanel";
-            this.N3_ZeroPointerPanel.Size = new System.Drawing.Size(498, 60);
-            this.N3_ZeroPointerPanel.TabIndex = 125;
-            this.N3_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
-            this.N3_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SkillConfigFE8NVer2SkillForm
             // 

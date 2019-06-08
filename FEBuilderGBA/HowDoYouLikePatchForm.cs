@@ -111,7 +111,7 @@ namespace FEBuilderGBA
             {
                 checkFunc = InputFormRef.SearchIconExpandsPatch;
                 reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
-                patchName1 = "アイテムアイコンFEまで拡張";///No Translate
+                patchName1 = "Extended to item icon 0xFE";///No Translate
                 patchName2 = "Extend Item Icon List Length";///No Translate
                 patchCombo = "fix";
             }
@@ -146,8 +146,8 @@ namespace FEBuilderGBA
                         return InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem;
                     };
                     reason = R._("スキル拡張 SkillSystems が必要です。\r\n有効にしますか？");
-                    patchName1 = "Skill20190326";///No Translate
-                    patchName2 = "Skill20190326";///No Translate
+                    patchName1 = "Skill20190404";///No Translate
+                    patchName2 = "Skill20190404";///No Translate
                 }
             }
             else if (type == TYPE.SkipWorldmapFix)
@@ -157,8 +157,14 @@ namespace FEBuilderGBA
                     return false;
                 }
 
-                checkFunc = InputFormRef.SearchSkipWorldMapPatch;
+                checkFunc = () =>
+                {
+                    return InputFormRef.SearchSkipWorldMapPatch() != InputFormRef.mnc2_fix_enum.NO;
+                };
                 reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
+//                patchName1 = "MNC2Fix";///No Translate
+//                patchName2 = "MNC2Fix";///No Translate
+//                patchShowName = "Skip Worldmap";
                 patchName1 = "Eliminate the constraint of freezing unless it enters from the world map";///No Translate
                 patchName2 = "Eliminate the constraint of freezing unless it enters from the world map.";///No Translate
                 patchShowName = "Skip Worldmap";

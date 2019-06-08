@@ -54,6 +54,7 @@ namespace FEBuilderGBA
             InputFormRef.markupJumpLabel(this.J_0_SKILLASSIGNMENT);
             InputFormRef = Init(this, assignUnit);
             InputFormRef.MakeGeneralAddressListContextMenu(true);
+            InputFormRef.CheckProtectionPaddingALIGN4 = false;
 
             this.N1_AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
             InputFormRef.markupJumpLabel(this.N1_J_1_SKILLASSIGNMENT);
@@ -152,7 +153,7 @@ namespace FEBuilderGBA
                 }
             }
         }
-        //全データの取得
+
         public static void ExportAllData(string filename)
         {
             InputFormRef InputFormRef;
@@ -163,23 +164,83 @@ namespace FEBuilderGBA
 
             List<string> lines = new List<string>();
             {
+                uint iconP = SkillConfigSkillSystemForm.FindIconPointer();
+                uint textP = SkillConfigSkillSystemForm.FindTextPointer();
                 uint assignUnitP = SkillConfigSkillSystemForm.FindAssignPersonalSkillPointer();
+                uint assignLevelUpP = SkillConfigSkillSystemForm.FindAssignUnitLevelUpSkillPointer();
+
+                if (iconP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (textP == U.NOT_FOUND)
+                {
+                    return;
+                }
                 if (assignUnitP == U.NOT_FOUND)
                 {
                     return;
                 }
 
                 InputFormRef = Init(null, assignUnitP);
-                uint p = InputFormRef.BaseAddress;
-                for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+
+                Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
+                InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
+
+                uint classBaseSkillAddr = InputFormRef.BaseAddress;
+
+                if (assignLevelUpP == U.NOT_FOUND)
+                {//旧バージョン
+                    InputFormRef = Init(null, assignUnitP);
+                    uint p = InputFormRef.BaseAddress;
+                    for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append(U.ToHexString(Program.ROM.u8(p + 0)));
+                        sb.Append("\t");
+                        sb.Append("0");
+                        lines.Add(sb.ToString());
+                    }
+                }
+                else
                 {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append(U.ToHexString(Program.ROM.u8(p + 0)));
-                    lines.Add(sb.ToString());
+                    uint assignLevelUpAddr = Program.ROM.p32(assignLevelUpP);
+                    for (uint i = 0; i < InputFormRef.DataCount;
+                        i++, assignLevelUpAddr += 4, classBaseSkillAddr += 1)
+                    {
+                        if (!U.isSafetyOffset(assignLevelUpAddr))
+                        {
+                            break;
+                        }
+
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append(U.ToHexString(Program.ROM.u8(classBaseSkillAddr + 0)));
+
+                        uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+                        sb.Append("\t");
+                        sb.Append(U.ToHexString(levelupList));
+                        if (!U.isSafetyOffset(levelupList))
+                        {
+                            lines.Add(sb.ToString());
+                            continue;
+                        }
+
+                        N1_InputFormRef.ReInitPointer(assignLevelUpAddr);
+                        uint levelupAddr = N1_InputFormRef.BaseAddress;
+                        for (uint n = 0; n < N1_InputFormRef.DataCount; n++, levelupAddr += 2)
+                        {
+                            sb.Append("\t");
+                            sb.Append(U.ToHexString(Program.ROM.u8(levelupAddr + 0)));
+                            sb.Append("\t");
+                            sb.Append(U.ToHexString(Program.ROM.u8(levelupAddr + 1)));
+                        }
+                        lines.Add(sb.ToString());
+                    }
                 }
             }
             File.WriteAllLines(filename, lines);
         }
+
         public static void ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
@@ -190,26 +251,82 @@ namespace FEBuilderGBA
 
             string[] lines = File.ReadAllLines(filename);
             {
+                uint iconP = SkillConfigSkillSystemForm.FindIconPointer();
+                uint textP = SkillConfigSkillSystemForm.FindTextPointer();
                 uint assignUnitP = SkillConfigSkillSystemForm.FindAssignPersonalSkillPointer();
+                uint assignLevelUpP = SkillConfigSkillSystemForm.FindAssignUnitLevelUpSkillPointer();
+
+                if (iconP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (textP == U.NOT_FOUND)
+                {
+                    return;
+                }
                 if (assignUnitP == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (assignLevelUpP == U.NOT_FOUND)
                 {
                     return;
                 }
 
                 InputFormRef = Init(null, assignUnitP);
-                uint p = InputFormRef.BaseAddress;
-                for (int i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+
+                Dictionary<uint, string> skillNames = new Dictionary<uint, string>();
+                InputFormRef N1_InputFormRef = N1_Init(null, skillNames);
+
+                uint classBaseSkillAddr = InputFormRef.BaseAddress;
+                uint assignLevelUpAddr = Program.ROM.p32(assignLevelUpP);
+                for (uint i = 0; i < InputFormRef.DataCount;
+                    i++, assignLevelUpAddr += 4, classBaseSkillAddr += 1)
                 {
+                    if (!U.isSafetyOffset(assignLevelUpAddr))
+                    {
+                        break;
+                    }
                     if (i >= lines.Length)
                     {
                         break;
                     }
-                    uint skill = U.atoh(lines[i]);
-                    Program.ROM.write_u8(p + 0 , skill);
+                    string[] sp = lines[i].Split('\t');
+                    if (sp.Length < 2)
+                    {
+                        continue;
+                    }
+                    {
+                        uint skill = U.atoh(sp[0]);
+                        Program.ROM.write_u8(classBaseSkillAddr + 0, skill);
+                    }
+
+                    uint levelupSkillAddr = U.atoh(sp[1]);
+                    if (U.isExtrendsROMArea(levelupSkillAddr) || levelupSkillAddr == 0)
+                    {//拡張領域、または0の値が設定されている場合は書き戻す
+                        Program.ROM.write_p32(assignLevelUpAddr, levelupSkillAddr);
+                        continue;
+                    }
+
+                    uint levelupList = Program.ROM.p32(assignLevelUpAddr);
+                    if (!U.isSafetyOffset(levelupList))
+                    {
+                        continue;
+                    }
+
+                    N1_InputFormRef.ReInitPointer(assignLevelUpAddr);
+                    uint levelupAddr = N1_InputFormRef.BaseAddress;
+                    for (uint n = 0; n < N1_InputFormRef.DataCount; n++, levelupAddr += 2)
+                    {
+                        uint level = U.atoh(U.at(sp, 2 + (n * 2) + 0));
+                        uint skill = U.atoh(U.at(sp, 2 + (n * 2) + 1));
+                        Program.ROM.write_u8(levelupAddr + 0, level);
+                        Program.ROM.write_u8(levelupAddr + 1, skill);
+                    }
                 }
             }
-            File.WriteAllLines(filename, lines);
         }
+
         public static int MakeUnitSkillButtons(uint uid, Button[] buttons, ToolTipEx tooltip)
         {
             uint iconP = SkillConfigSkillSystemForm.FindIconPointer();

@@ -1,0 +1,52 @@
+/*
+Use "example text.png" as a, well, example to see how to set things up. The colors are actually in the opposite order of the picture and go from green to red.
+
+Each palette bank has 1 background color and 5 groups of 3. The background color isn't used, so don't bother changing it. In each group, the first color is the secondary fill, second color is the main fill, and third color is the outline. The image has these in the wrong order (sorry), but you should be able to figure it out.
+
+Note that value is first divided by 8, so the example image is very slightly different from what will be seen in-game. There's no difference, for instance, between (247, 247, 247) and (240, 240, 240).
+*/
+
+#define RGB2HEX(red, green, blue) "SHORT (red>>3)|((green>>3)<<5)|((blue>>3)<<10)"
+RGB2HEX(0, 0, 0)
+
+RGB2HEX(86, 156, 73)
+RGB2HEX(56, 201, 20)
+RGB2HEX(24, 88, 24)
+
+RGB2HEX(86, 156, 73)
+RGB2HEX(133, 197, 105)
+RGB2HEX(24, 88, 24)
+
+RGB2HEX(86, 156, 73)
+RGB2HEX(172, 213, 98)
+RGB2HEX(24, 88, 24)
+
+RGB2HEX(86, 156, 73)
+RGB2HEX(201, 232, 136)
+RGB2HEX(24, 88, 24)
+
+RGB2HEX(86, 156, 73)
+RGB2HEX(235, 252, 116)
+RGB2HEX(71, 56, 27)
+
+RGB2HEX(0, 0, 0)
+
+RGB2HEX(177, 99, 129)
+RGB2HEX(255, 231, 145)
+RGB2HEX(85, 28, 33)
+
+RGB2HEX(155, 74, 97)
+RGB2HEX(255, 173, 91)
+RGB2HEX(85, 28, 33)
+
+RGB2HEX(155, 74, 97)
+RGB2HEX(254, 132, 101)
+RGB2HEX(85, 28, 33)
+
+RGB2HEX(155, 74, 97)
+RGB2HEX(255, 91, 96)
+RGB2HEX(85, 28, 33)
+
+RGB2HEX(155, 74, 97)
+RGB2HEX(255, 64, 69)
+RGB2HEX(85, 28, 33)

@@ -118,9 +118,20 @@ namespace FEBuilderGBA
 
             SimpleNewDataCount.Focus();
         }
+
+        static bool IsBadBaseAddress(uint addr)
+        {
+//            if (addr == 0 || addr == U.NOT_FOUND)
+            if (addr == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         int CalcFillDataOnListExpamds(InputFormRef inputFormRef)
         {
-            if (inputFormRef.BaseAddress == 0)
+            if (IsBadBaseAddress(inputFormRef.BaseAddress))
             {//ベースアドレスが指定されていないので、何をしても無駄.
                 return 0; //0番目で埋める
             }
@@ -209,7 +220,7 @@ namespace FEBuilderGBA
         public static List<uint> SearchPointer(uint moveAddress, bool isSilent = false)
         {
             List<uint> ret = new List<uint>();
-            if (moveAddress == 0)
+            if (IsBadBaseAddress(moveAddress))
             {//新規確保だけ
                 return ret;
             }
@@ -519,7 +530,7 @@ namespace FEBuilderGBA
             }
 
             //もともとのアドレスが0の場合は確保だけやる.
-            if (this.MoveAddress.Value == 0)
+            if (IsBadBaseAddress((uint)this.MoveAddress.Value))
             {
                 AllocOnly();
                 return;
@@ -610,11 +621,19 @@ namespace FEBuilderGBA
             if (freeSpaceAddr + newSize + paddingSize> Program.ROM.Data.Length)
             {//ファイル末尾に追加するなどで、既存のデータ領域を超えてしまう場合は、データを延ばす.
                 paddingSize = 0; //末尾に入れる場合 paddingいる？
-                Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                bool isResizeSuccess  = Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
             if (freeSpaceAddr + paddingSize + movesize > Program.ROM.Data.Length)
             {//newSizeが元サイズより小さい場合???
-                Program.ROM.write_resize_data(freeSpaceAddr + paddingSize + movesize);
+                bool isResizeSuccess = Program.ROM.write_resize_data(freeSpaceAddr + paddingSize + movesize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
 
             //移動後の場所
@@ -730,7 +749,11 @@ namespace FEBuilderGBA
             if (freeSpaceAddr + newSize + paddingSize > Program.ROM.Data.Length)
             {//ファイル末尾に追加するなどで、既存のデータ領域を超えてしまう場合は、データを延ばす.
                 paddingSize = 0; //末尾に入れる場合 paddingいる？
-                Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                bool isResizeSuccess = Program.ROM.write_resize_data(freeSpaceAddr + newSize + paddingSize);
+                if (isResizeSuccess == false)
+                {
+                    return;
+                }
             }
 
             //移動後の場所

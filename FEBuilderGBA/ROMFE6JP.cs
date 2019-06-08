@@ -88,7 +88,10 @@ namespace FEBuilderGBA
         public uint event_ballte_talk_pointer() { return 0x6b660; } // 交戦時セリフの開始位置
         public uint event_ballte_talk2_pointer() { return 0x6b744;} // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         public uint event_haiku_pointer() { return 0x6b7fc; } // 死亡時セリフの開始位置
+        public uint event_haiku_tutorial_1_pointer() { return 0x0; } // リン編チュートリアル 死亡時セリフの開始位置 FE7のみ
+        public uint event_haiku_tutorial_2_pointer() { return 0x0; } // エリウッド編チュートリアル 死亡時セリフの開始位置 FE7のみ
         public uint event_force_sortie_pointer() { return 0x0; } // 強制出撃の開始位置
+        public uint event_tutorial_pointer() { return 0x0; } //イベントチュートリアルポインタ FE7のみ
         public uint map_exit_point_pointer() { return 0x32c60; } // 離脱ポイント開始サイズ
         public uint map_exit_point_npc_blockadd() { return 0x2d; } // NPC離脱.
         public uint map_exit_point_blank() { return 0x10DA1C; } // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
@@ -270,6 +273,16 @@ namespace FEBuilderGBA
         public uint function_event_engine_loop_address() { return 0x0800DEDC + 1; } //イベントエンジン
         public uint workmemory_reference_procs_event_address_offset() { return 0x2C; } //Procsのイベントエンジンでのイベントのアドレスを格納するuser変数の場所
         public uint workmemory_procs_game_main_address() { return 0x02023CC4; } //ワークメモリ Procsの中でのGAMEMAIN
+        public uint workmemory_palette_address() { return 0x02021708; } //RAMに記録されているダブルバッファのパレット領域
+        public uint workmemory_sound_player_00_address() { return 0x030062E0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_01_address() { return 0x030064F0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_02_address() { return 0x03006530; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_03_address() { return 0x03006600; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_04_address() { return 0x03006570; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_05_address() { return 0x03006260; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_06_address() { return 0x030062A0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_07_address() { return 0x030064B0; } //RAMに設定されているサウンドプレイヤーバッファ
+        public uint workmemory_sound_player_08_address() { return 0x030065C0; } //RAMに設定されているサウンドプレイヤーバッファ
         public uint Procs_game_main_address() { return 0x85C4A34; } //PROCSのGAME MAIN 
         public uint summon_unit_pointer() { return 0; } //召喚
         public uint summons_demon_king_pointer() { return 0; } //呼魔
@@ -371,15 +384,16 @@ namespace FEBuilderGBA
         public uint status_game_option_pointer() { return 0; } //ゲームオプション
         public uint status_game_option_order_pointer() { return 0; } //ゲームオプションの並び順
         public uint status_game_option_order_count_address() { return 0; } //ゲームオプションの個数
+        public uint status_units_menu_pointer() { return 0;  } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0; } //軍師属性(FE7のみ)
-        public uint compress_image_borderline_address() { return 0xDB000; } //これ以降に圧縮画像が登場するというアドレス
+        public uint event_final_serif_pointer() { return 0x0; } //終章セリフ(FE7のみ)
+        public uint compress_image_borderline_address() { return 0xF9D80; } //これ以降に圧縮画像が登場するというアドレス
 
         public uint patch_anti_Huffman(out uint enable_value) { enable_value = 0xB002B503; return 0x384c; } //anti-Huffman patch
         public uint patch_C01_hack(out uint enable_value) { enable_value = 0xFD32F568; return 0x2DBF5C; } //C01 patch
         public uint patch_C48_hack(out uint enable_value) { enable_value = 0x082DBF74;  return 0x4A768; } //C48 patch
         public uint patch_16_tracks_12_sounds(out uint enable_value) { enable_value = 0x0; return 0x0; } //16_tracks_12_sounds patch
         public uint patch_chaptor_names_text_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //章の名前をテキストにするパッチ
-        public uint patch_skip_worldmap_fix(out uint enable_value) { enable_value = 0x0; return 0x0; } //ワールドマップをスキップするパッチ
         public uint patch_generic_enemy_portrait_extends(out uint enable_value) { enable_value = 0x21FFB500; return 0x8DB8; } //一般兵の顔 拡張
         public uint patch_stairs_hack(out uint enable_value) { enable_value = 0x47184b00; return 0x0; } //階段拡張
         public uint patch_unitaction_rework_hack(out uint enable_value) { enable_value = 0x4C03B510; return 0x02A028; } //ユニットアクションの拡張

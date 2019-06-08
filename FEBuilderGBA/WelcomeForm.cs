@@ -115,5 +115,13 @@ namespace FEBuilderGBA
         {
             this.VersionLabel.BackColor = this.pictureBox1.BackColor;
         }
+
+        public static void CheckInitWizard()
+        {
+            if (ToolInitWizardForm.IsShowWizard())
+            {//初期設定がされていない場合は、ウィザードを起動する.
+                MainFormUtil.RunToolInitWizard();
+            }
+        }
     }
 }

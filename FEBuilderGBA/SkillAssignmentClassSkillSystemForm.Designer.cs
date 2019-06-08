@@ -191,10 +191,10 @@
             this.panel4.Controls.Add(this.SKILLICON);
             this.panel4.Controls.Add(this.B0);
             this.panel4.Controls.Add(this.J_0_SKILLASSIGNMENT);
-            this.panel4.Location = new System.Drawing.Point(258, 73);
+            this.panel4.Location = new System.Drawing.Point(259, 73);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(905, 771);
+            this.panel4.Size = new System.Drawing.Size(904, 771);
             this.panel4.TabIndex = 96;
             // 
             // SKILLNAME
@@ -625,10 +625,10 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(257, 40);
+            this.panel5.Location = new System.Drawing.Point(258, 39);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(906, 34);
+            this.panel5.Size = new System.Drawing.Size(905, 34);
             this.panel5.TabIndex = 94;
             // 
             // BlockSize
@@ -703,7 +703,7 @@
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(1, 0);
+            this.label23.Location = new System.Drawing.Point(-1, -1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(84, 30);

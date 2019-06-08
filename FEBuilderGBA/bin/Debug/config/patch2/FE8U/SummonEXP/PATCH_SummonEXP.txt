@@ -1,0 +1,18 @@
+TYPE=EA
+TAG=#ENGINE
+NAME=SummonEXP: 召喚されたモンスターが、敵を倒すと召喚士が経験値を得るようにする.
+NAME.en=SummonEXP: When summoned monster defeats an enemy, the summoner gains EXP.
+
+EA=Summon.event
+
+//既に適応されたかどうか
+PATCHED_IF:0x2BA04=0x00 0x4B
+
+INFO=召喚されたモンスターが、敵を倒すと召喚士が経験値を得るようになります。\r\nこれは召喚士をより使いやすくするパッチです。
+
+
+AUTHOR=Snakey1 https://feuniverse.us/t/snakes-pit-of-asm-and-other-stuff/3627/45
+INFO.en=When a summoned monster defeats the enemy, the summoner gains experience points.\r\nThis is a patch that makes the Summoner easier to use.
+NAME.zh=SummonEXP：一个被召唤的怪物让召唤者获得经验，如果他击败了敌人。
+INFO.zh=当被召唤的怪物击败敌人时，召唤者获得经验值。\r\n这是一个使召唤师更容易使用的补丁。
+

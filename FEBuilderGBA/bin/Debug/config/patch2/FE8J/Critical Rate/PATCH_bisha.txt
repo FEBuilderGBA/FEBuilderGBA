@@ -1,0 +1,33 @@
+NAME=必殺補正値をクラスごとに設定する
+TYPE=STRUCT
+TAG=#ENGINE
+
+EA=bisha.event
+IF:0x2ABA8=0x00 0x49 0x8F 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END bisha.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=255
+
+//リストに表示されるのはCLASS IDです
+LISTNAME=CLASS
+
+//データを定義します
+B0:DECIMAL:=必殺率
+B0:DECIMAL:.en=Critical Rate
+B0:DECIMAL:.zh=必杀
+
+AUTHOR=アインズ・ウール・ゴウン
+AUTHOR.en=Ainz Ooal Gown
+AUTHOR.zh=Ainz Ooal Gown
+NAME.en=Set the deadly correction value for each class.
+NAME.zh=设置每个类的致命校正值。

@@ -1,0 +1,31 @@
+NAME=終章などの特殊な章表記を行う
+TYPE=STRUCT
+TAG=#ENGINE
+
+//既に適応されたかどうか
+IF:0xB3594=0x00 0x4B 0x18 0x47
+
+INFO=エンディングのクリアターン数表示や、ユニットが死亡したマップを表示する場所で、「第21章」ではなく「終章」と表示するように、特定の章に別の名前を割り当てます。
+
+
+AUTHOR=7743
+
+//データへのポインタ
+POINTER=$FGREP4END DrawSpecialChapter_turns.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=MapID
+B1=00
+W2:TEXT=Text
+NAME.en=Perform special chapter notation such as end chapters.
+INFO.en=Assign a different name to a specific chapter so that it displays "End of Chapter" instead of "Chapter 21" where the ending clear turn count or where the unit's dead map is displayed.
+NAME.zh=执行特殊章节表示法，例如结束章节。
+INFO.zh=为特定章节指定不同的名称，以便显示“章节末尾”而不是“章节21”，其中结束清除转弯计数或显示单位的死图。

@@ -24,6 +24,7 @@ namespace FEBuilderGBA
             this.InputFormRef.IsMemoryNotContinuous = true; //メモリは連続していないので、警告不能.
             this.InputFormRef.IsSurrogateStructure = true;  //代理構造体で表示されているので警告不能
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false;
 
             List<Control> controls = InputFormRef.GetAllControls(this);
             for (int i = 0; i < 50 + 1; i++)

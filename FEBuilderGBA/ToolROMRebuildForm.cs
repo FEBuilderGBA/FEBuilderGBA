@@ -19,7 +19,7 @@ namespace FEBuilderGBA
             OrignalFilename.AllowDropFilename();
             U.AddCancelButton(this);
 
-            UseFreeAreaComboBox.SelectedIndex = 1;
+            UseFreeAreaComboBox.SelectedIndex = 0;
         }
 
         private void OrignalSelectButton_Click(object sender, EventArgs e)

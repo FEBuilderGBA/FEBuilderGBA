@@ -1064,17 +1064,37 @@ namespace FEBuilderGBA
         private void ExportButton_Click(object sender, EventArgs e)
         {
             uint unit_face = (uint)this.D0.Value;
-            if (unit_face != 0)
+            if (unit_face == 0)
             {
-                Bitmap seetbitmap = DrawPortraitSeet((uint)this.AddressList.SelectedIndex);
-                ImageFormRef.ExportImage(this,seetbitmap, InputFormRef.MakeSaveImageFilename());
+                Bitmap classbitmap = DrawPortraitClass((uint)this.AddressList.SelectedIndex);
+                ImageFormRef.ExportImage(this, classbitmap, InputFormRef.MakeSaveImageFilename());
+                return;
+            }
+
+            string filename = ImageFormRef.SaveDialogPngOrGIF(InputFormRef);
+            if (filename == "")
+            {
+                return;
+            }
+
+            string ext = U.GetFilenameExt(filename);
+            if (ext == ".GIF")
+            {
+                bool r = SaveAnimeGif(filename, (uint)this.AddressList.SelectedIndex);
+                if (!r)
+                {
+                    return;
+                }
             }
             else
             {
-                Bitmap classbitmap = DrawPortraitClass((uint)this.AddressList.SelectedIndex);
-                ImageFormRef.ExportImage(this,classbitmap, InputFormRef.MakeSaveImageFilename());
+                Bitmap seetbitmap = DrawPortraitSeet((uint)this.AddressList.SelectedIndex);
+                ImageUtil.BlackOutUnnecessaryColors(seetbitmap, 1);
+                U.BitmapSave(seetbitmap, filename);
             }
 
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(filename);
         }
 
         Bitmap Convert16Color(Bitmap fullColor, string imagefilename)
@@ -1574,5 +1594,46 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             return InputFormRef.MakeList();
         }
+
+        bool SaveAnimeGif(string filename, uint id)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            //現在のIDに対応するデータ
+            uint addr = InputFormRef.IDToAddr(id);
+            if (!U.isSafetyOffset(addr))
+            {
+                return false;
+            }
+            uint unit_face = Program.ROM.u32(addr + 0);
+            uint map_face = Program.ROM.u32(addr + 4);
+            uint palette = Program.ROM.u32(addr + 8);
+            uint mouth = Program.ROM.u32(addr + 12);
+            uint class_face = Program.ROM.u32(addr + 16);
+            byte mouth_x = (byte)Program.ROM.u8(addr + 20);
+            byte mouth_y = (byte)Program.ROM.u8(addr + 21);
+            byte eye_x = (byte)Program.ROM.u8(addr + 22);
+            byte eye_y = (byte)Program.ROM.u8(addr + 23);
+            byte state = (byte)Program.ROM.u8(addr + 24);
+            byte b26 = (byte)Program.ROM.u8(addr + 26) ;
+
+            List<ImageUtilAnimeGif.Frame> bitmaps = new List<ImageUtilAnimeGif.Frame>();
+            for (int showFrame = 0; showFrame < 9; showFrame++ )
+            {
+                Bitmap bitmap = DrawPortraitUnit(unit_face, palette, mouth, mouth_x, mouth_y, eye_x, eye_y, b26, class_face, state, showFrame);
+                ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
+                uint wait = 10;
+                if (showFrame == 0)
+                {
+                    wait = 30;
+                }
+                bitmaps.Add(new ImageUtilAnimeGif.Frame(bitmap, wait));
+            }
+
+            //アニメgif生成
+            ImageUtilAnimeGif.SaveAnimatedGif(filename, bitmaps);
+            return true;
+        }
+
     }
 }

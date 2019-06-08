@@ -56,6 +56,8 @@ namespace FEBuilderGBA
             MakeEditListboxContextMenuText(this.TextList, this.TextList_KeyDown);
             U.SetIcon(Export, Properties.Resources.icon_arrow);
             U.SetIcon(Import, Properties.Resources.icon_upload);
+
+            InputFormRef.markupJumpLabel(this.TextListSpShowCharLabel);
         }
         void InitRichEditEx(RichTextBoxEx editor)
         {
@@ -1044,9 +1046,7 @@ namespace FEBuilderGBA
 
             if (code.Error != "")
             {
-                Pen pen = new Pen(OptionForm.Color_Error_ForeColor(), 3);
-                g.DrawRectangle(pen, listbounds);
-                pen.Dispose();
+                U.DrawErrorRectangle(g, isWithDraw, listbounds);
             }
 
             brush.Dispose();
@@ -1089,26 +1089,16 @@ namespace FEBuilderGBA
                 combo.SelectedIndex = (int)pos;
             }
         }
-        void MakePortaitCombo(ref ComboBox combo, TextBlock code)
+        void MakePortait(ref NumericUpDown nud, TextBlock code)
         {
-            U.ConvertComboBox(ImagePortraitForm.MakePortraitList(), ref combo);
-            combo.Items.Add(GetUnitNameWhereFaceID100(0xFFFF));
-
             if (code.Code3 == 0xFFFF)
             {//最後にある FFFF訪問したキャラ
-                combo.SelectedIndex = combo.Items.Count - 1;
+                U.SelectedIndexSafety(nud, 0xFFFF);
             }
             else if (code.Code3 >= 0x100)
             {
                 int faceid = (int)code.Code3 - 0x100;
-                if (faceid < combo.Items.Count)
-                {
-                    combo.SelectedIndex = faceid;
-                }
-                else
-                {
-                    combo.SelectedIndex = -1;
-                }
+                U.SelectedIndexSafety(nud, (uint)faceid);
             }
         }
 
@@ -1187,7 +1177,7 @@ namespace FEBuilderGBA
             }
             //キャラ登場
             U.CopyCombo(this.TextListSpSerifuPosComboBox, ref this.TextListSpShowPosComboBox);
-            MakePortaitCombo(ref this.TextListSpShowCharComboBox,code);
+            MakePortait(ref this.TextListSpShowCharNumericUpDown, code);
             //キャラ消去
             U.CopyCombo(this.TextListSpSerifuPosComboBox, ref this.TextListSpHidePosComboBox);
             //移動
@@ -1242,13 +1232,15 @@ namespace FEBuilderGBA
             {//表示
                 code.Code1 = (uint)this.TextListSpShowPosComboBox.SelectedIndex + 0x8;
                 code.Code2 = 0x10;
-                if (this.TextListSpShowCharComboBox.SelectedIndex >= this.TextListSpShowCharComboBox.Items.Count - 1)
+
+                uint portraitID = (uint)TextListSpShowCharNumericUpDown.Value;
+                if (portraitID >= 0xF000)
                 {
-                    code.Code3 = 0xFFFF;
+                    code.Code3 = portraitID;
                 }
                 else
                 {
-                    code.Code3 = (uint)this.TextListSpShowCharComboBox.SelectedIndex  + 0x100;
+                    code.Code3 = portraitID + 0x100;
                 }
                 code.SrcText = "@" + code.Code1.ToString("X04") 
                     + "@" + code.Code2.ToString("X04")  
@@ -1392,12 +1384,6 @@ namespace FEBuilderGBA
             return ret;
         }
 
-        private void TextListSpShowCharComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TextListSpShowCharPictureBox.Image =
-                ImagePortraitForm.DrawPortraitAuto
-                    ((uint)TextListSpShowCharComboBox.SelectedIndex);
-        }
 
         private void TextListSpSerifuPosComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1506,9 +1492,9 @@ namespace FEBuilderGBA
                         return new U.AddrResult();
                     }
                     string name;
-                    if (str.Length - hitpos >= 20)
+                    if (str.Length - hitpos >= 40)
                     {
-                        name = ar.name + " " + str.Substring(hitpos, 20) + "...";
+                        name = ar.name + " " + str.Substring(hitpos, 40) + "...";
                     }
                     else
                     {
@@ -1524,14 +1510,6 @@ namespace FEBuilderGBA
             }
         }
 
-        private void SearchResultListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = (int)U.atoh(SearchResultListBox.Text);
-            if (id < AddressList.Items.Count)
-            {
-                U.ForceUpdate(AddressList,id);
-            }
-        }
         private void HideFloatingControlpanel()
         {
             if (ControlPanel.Visible)
@@ -2541,7 +2519,7 @@ namespace FEBuilderGBA
 		        ,"@001A","[Buy/Sell]"    ///No Translate
 		        ,"@001B","[ShopContinue]"    ///No Translate
                 ,"@001C","[SendToBack]"    ///No Translate
-                ,"@001D","[FastPrint]"    ///No Translate
+                ,"@001D","[FastPrint2]"    ///No Translate
                 ,"@001F","[.]"    ///No Translate
                 ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
                 ,"@0040","[@]"    ///No Translate  @を出す
@@ -2960,7 +2938,7 @@ namespace FEBuilderGBA
                         {
                             return true;
                         }
-                        if (n == 0 && size.Width == 124 && size.Height == 48 &&
+                        if (n == 0 && size.Width == 126 && size.Height == 48 &&
                             str.IndexOf("My name is Serra.") > 0) ///No Translate
                         {
                             return true;
@@ -3166,6 +3144,7 @@ namespace FEBuilderGBA
             {
                 RefCountTextBox.Text = R._("計測中...");
                 this.SelectDataTypeOf = FELint.Type.FELINT_SYSTEM_ERROR;
+                this.RefNotFoundPanel.Hide();
                 return;
             }
 
@@ -3185,8 +3164,27 @@ namespace FEBuilderGBA
                 RefListBox.Items.Add(t);
                 this.SelectDataTypeOf = t.DataType;
             }
+
+            {
+                UseTextID t = Program.UseTextIDCache.MakeUseTextID(id);
+                if (t != null)
+                {
+                    refCount++;
+                    RefListBox.Items.Add(t);
+                }
+            }
+
             RefListBox.EndUpdate();
             RefCountTextBox.Text = refCount.ToString();
+
+            if (refCount <= 0 && id > 0)
+            {
+                this.RefNotFoundPanel.Show();
+            }
+            else
+            {
+                this.RefNotFoundPanel.Hide();
+            }
         }
         private Size DrawRefTextList(ListBox lb, int index, Graphics g, Rectangle listbounds, bool isWithDraw)
         {
@@ -3255,10 +3253,6 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
-        private void RefListBox_DoubleClick(object sender, EventArgs e)
-        {
-            GotoRef();
-        }
         void GotoRef()
         {
             int index = this.RefListBox.SelectedIndex;
@@ -3267,6 +3261,11 @@ namespace FEBuilderGBA
                 return;
             }
             UseTextID t = (UseTextID)this.RefListBox.Items[index];
+            if (t.DataType == FELint.Type.TEXTID_FOR_USER)
+            {
+                ShowRefAddDialog();
+                return;
+            }
             MainSimpleMenuEventErrorForm.GotoEvent(t.DataType, t.Addr, t.Tag, 0);
         }
 
@@ -3376,5 +3375,153 @@ namespace FEBuilderGBA
 
             return write_pointer;
         }
+
+
+
+        private void SearcFreeArea_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+
+            AsmMapFile map = Program.AsmMapFileAsmCache.GetAsmMapFile();
+            List<UseTextID> textIDList = map.GetTextIDArray();
+            if (textIDList == null)
+            {
+                R.ShowStopError("現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。");
+                return;
+            }
+            Program.UseTextIDCache.AppendList(textIDList);
+
+            string lang = OptionForm.lang();
+            bool isJP = (lang == "ja");
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                Dictionary<uint, bool> textmap = UseTextID.ConvertMaps(textIDList);
+
+                FETextDecode textdecoder = new FETextDecode();
+                uint id = 0;
+                List<U.AddrResult> result = InputFormRef.MakeList((U.AddrResult ar) =>
+                {
+                    if ( textmap.ContainsKey(id++))
+                    {//HIT
+                        return new U.AddrResult();
+                    }
+                    
+                    int size;
+                    string str = textdecoder.DecodeAddr(ar.addr, out size);
+                    str = StripAllCode(str);
+                    string name;
+                    if (str.Length >= 40)
+                    {
+                        name = ar.name + " " + str.Substring(0, 40) + "...";
+                    }
+                    else
+                    {
+                        name = ar.name + " " + str;
+                    }
+
+                    Debug.Print(name.Replace(" ","\t").Replace("\r\n"," ") + "\t{J}");
+                    return new U.AddrResult(ar.addr, name, ar.tag);
+                });
+
+                SearchResultListBox.Items.Clear();
+
+                U.ConvertListBox(result, ref this.SearchResultListBox);
+            }
+        }
+
+        private void AddRefButton_Click(object sender, EventArgs e)
+        {
+            ShowRefAddDialog();
+        }
+        void ShowRefAddDialog()
+        {
+            string text = GetEditorText(this.TextArea);
+            uint textid = (uint)AddressList.SelectedIndex;
+
+            TextRefAddDialogForm f = (TextRefAddDialogForm)InputFormRef.JumpFormLow<TextRefAddDialogForm>();
+            f.Init(textid , text);
+            DialogResult dr = f.ShowDialog();
+            if (dr != System.Windows.Forms.DialogResult.OK)
+            {
+                return;
+            }
+            Program.UseTextIDCache.Update(textid, f.GetComment());
+            UpdateRef(textid);
+        }
+
+        void JumpFromSearchResult()
+        {
+            int id = (int)U.atoh(SearchResultListBox.Text);
+            if (id < AddressList.Items.Count)
+            {
+                U.ForceUpdate(AddressList, id);
+            }
+        }
+
+        private void SearchResultListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            JumpFromSearchResult();
+        }
+        private void SearchResultListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                JumpFromSearchResult();
+            }
+        }
+
+        private void SearchResultListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            JumpFromSearchResult();
+        }
+
+        private void RefListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            GotoRef();
+        }
+
+        private void TextListSpShowCharPictureBox_Click(object sender, EventArgs e)
+        {
+            TextListSpShowCharLabel_Click(sender,e);
+        }
+
+        private void TextListSpShowCharLabel_Click(object sender, EventArgs e)
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                InputFormRef.JumpForm<ImagePortraitFE6Form>((uint)TextListSpShowCharNumericUpDown.Value, "AddressList", TextListSpShowCharNumericUpDown);
+            }
+            else
+            {
+                InputFormRef.JumpForm<ImagePortraitForm>((uint)TextListSpShowCharNumericUpDown.Value, "AddressList", TextListSpShowCharNumericUpDown);
+            }
+        }
+
+        private void TextListSpShowCharNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            uint portraitID = (uint)TextListSpShowCharNumericUpDown.Value;
+            if (portraitID == 0xFFFF)
+            {
+                this.TextListSpShowCharText.Text = R._("FFFF訪問したキャラ");
+            }
+            else
+            {
+                this.TextListSpShowCharText.Text = U.ToHexString(portraitID) + " " + ImagePortraitForm.GetPortraitName(portraitID);
+            }
+
+            TextListSpShowCharPictureBox.Image =
+                ImagePortraitForm.DrawPortraitAuto(portraitID);
+        }
+
+        private void TextListSpShowCharComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

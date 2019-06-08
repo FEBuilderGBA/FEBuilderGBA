@@ -1,0 +1,15 @@
+NAME=カーラ出現イベント_バートルの最小Level
+NAME.en=Karla appearance event: Bartre's Minimum level
+NAME.zh=卡尔拉出场事件_巴特尔的最低水平
+
+INFO=カーラとバートルのイベント(このレベル+1が必要)
+INFO.en=Karla and Bartre Events(This level needs +1).
+INFO.zh=卡尔拉 巴特尔 事件(我需要这个级别+1)
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x7DA04
+HEX=FALSE
+
+AUTHOR=7743

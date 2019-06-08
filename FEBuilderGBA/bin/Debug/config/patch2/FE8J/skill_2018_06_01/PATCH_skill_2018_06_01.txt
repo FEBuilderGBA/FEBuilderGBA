@@ -205,3 +205,5 @@ AUTHOR.zh=来源:https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N
 AUTHOR.en=Source: https://github.com/ngmansion/FE8N/tree/master/Engine%20Hacks/_N/_Skills
 
 
+DEPRECATED=1
+UPDATE_PATCH=..\skill_2019_02_19\PATCH_Skill20181028.txt

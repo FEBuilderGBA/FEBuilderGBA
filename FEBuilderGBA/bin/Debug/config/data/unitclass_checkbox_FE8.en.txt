@@ -26,7 +26,7 @@
 27=Triangle Attack 2	Enables participation in a three-Knight Triangle Attack.
 28=NPC	Unknown
 //特性4
-31=Disable Exp Gain	Prevents experience gain and disables the Silencer skill.\r\nBy default, set to final bosses.\r\nCan be set on any unit to meet user needs.
+31=Do Not Grant Exp	Disables player units from gaining exp when fighting this unit\r\nand prevents the Silencer skill from activating.
 32=Silencer/Lethality	Grants the Silencer / Lethality skill.\r\nActivation % is 1/2 on critical hit.\r\nDefault set to the Assassin class.
 33=Magic Seal	Grants a Magic Sealing area surrounding a unit.\r\nEnemy-only.
 34=Summoning	Grants the Summon skill.\r\nUnit must have summon data in the Summon Ability tool to enable skill.\r\nDefault set to the Summoner class.

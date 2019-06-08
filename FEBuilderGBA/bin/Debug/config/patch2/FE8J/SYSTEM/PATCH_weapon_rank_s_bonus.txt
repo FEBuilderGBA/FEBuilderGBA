@@ -1,0 +1,11 @@
+NAME=武器レベルSになれる武器経験値
+NAME.en=Weapon S Rank WEXP
+NAME.zh=武器经验值可以是武器级别S
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02ACE4
+HEX=false
+

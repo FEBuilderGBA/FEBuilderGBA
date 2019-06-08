@@ -214,6 +214,10 @@
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
+            this.PaletteSearchButton = new System.Windows.Forms.Button();
+            this.label91 = new System.Windows.Forms.Label();
+            this.SoundList = new FEBuilderGBA.ListBoxEx();
+            this.label58 = new System.Windows.Forms.Label();
             this.Party_ControlPanel = new System.Windows.Forms.Panel();
             this.Party_CloseButton = new System.Windows.Forms.Button();
             this.PARTY_Address = new System.Windows.Forms.NumericUpDown();
@@ -375,7 +379,12 @@
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
+            this.SelectPalette = new FEBuilderGBA.TextBoxEx();
+            this.PaletteList = new FEBuilderGBA.ListBoxEx();
+            this.X_ETC_Diffculty_Text = new FEBuilderGBA.TextBoxEx();
+            this.X_ETC_Edition_Text = new FEBuilderGBA.TextBoxEx();
             this.PartyListBox = new FEBuilderGBA.ListBoxEx();
+            this.label92 = new System.Windows.Forms.Label();
             this.CheatPage = new System.Windows.Forms.TabPage();
             this.CHEAT_ALL_ENEMY_UNIT_HP_1 = new System.Windows.Forms.Button();
             this.CHEAT_ALL_UNIT_GROW = new System.Windows.Forms.Button();
@@ -3144,15 +3153,24 @@
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
             this.EtcPage.Controls.Add(this.PartyCombo);
+            this.EtcPage.Controls.Add(this.PaletteSearchButton);
+            this.EtcPage.Controls.Add(this.label91);
+            this.EtcPage.Controls.Add(this.SoundList);
+            this.EtcPage.Controls.Add(this.label58);
             this.EtcPage.Controls.Add(this.Party_ControlPanel);
             this.EtcPage.Controls.Add(this.label56);
+            this.EtcPage.Controls.Add(this.SelectPalette);
+            this.EtcPage.Controls.Add(this.PaletteList);
+            this.EtcPage.Controls.Add(this.X_ETC_Diffculty_Text);
+            this.EtcPage.Controls.Add(this.X_ETC_Edition_Text);
             this.EtcPage.Controls.Add(this.PartyListBox);
+            this.EtcPage.Controls.Add(this.label92);
             this.EtcPage.Location = new System.Drawing.Point(4, 28);
             this.EtcPage.Name = "EtcPage";
             this.EtcPage.Padding = new System.Windows.Forms.Padding(3);
             this.EtcPage.Size = new System.Drawing.Size(1646, 888);
             this.EtcPage.TabIndex = 4;
-            this.EtcPage.Text = "etc";
+            this.EtcPage.Text = "Etc";
             // 
             // PartyCombo
             // 
@@ -3162,10 +3180,53 @@
             "00=PLAYER",
             "40=NPC",
             "80=Enemy"});
-            this.PartyCombo.Location = new System.Drawing.Point(324, 6);
+            this.PartyCombo.Location = new System.Drawing.Point(320, 10);
             this.PartyCombo.Name = "PartyCombo";
             this.PartyCombo.Size = new System.Drawing.Size(459, 26);
             this.PartyCombo.TabIndex = 313;
+            // 
+            // PaletteSearchButton
+            // 
+            this.PaletteSearchButton.Location = new System.Drawing.Point(1562, 453);
+            this.PaletteSearchButton.Name = "PaletteSearchButton";
+            this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
+            this.PaletteSearchButton.TabIndex = 324;
+            this.PaletteSearchButton.Text = "検索";
+            this.PaletteSearchButton.UseVisualStyleBackColor = true;
+            this.PaletteSearchButton.Click += new System.EventHandler(this.PaletteSearchButton_Click);
+            // 
+            // label91
+            // 
+            this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label91.Location = new System.Drawing.Point(792, 245);
+            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(851, 30);
+            this.label91.TabIndex = 325;
+            this.label91.Text = "再生されている音楽";
+            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SoundList
+            // 
+            this.SoundList.FormattingEnabled = true;
+            this.SoundList.IntegralHeight = false;
+            this.SoundList.ItemHeight = 18;
+            this.SoundList.Location = new System.Drawing.Point(792, 274);
+            this.SoundList.Name = "SoundList";
+            this.SoundList.Size = new System.Drawing.Size(851, 175);
+            this.SoundList.TabIndex = 326;
+            this.SoundList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SoundList_MouseDoubleClick);
+            // 
+            // label58
+            // 
+            this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label58.Location = new System.Drawing.Point(792, 3);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(142, 30);
+            this.label58.TabIndex = 315;
+            this.label58.Text = "編";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Party_ControlPanel
             // 
@@ -3177,7 +3238,7 @@
             this.Party_ControlPanel.Controls.Add(this.label4);
             this.Party_ControlPanel.Controls.Add(this.panel3);
             this.Party_ControlPanel.Controls.Add(this.button1);
-            this.Party_ControlPanel.Location = new System.Drawing.Point(5, 153);
+            this.Party_ControlPanel.Location = new System.Drawing.Point(0, 151);
             this.Party_ControlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.Party_ControlPanel.Name = "Party_ControlPanel";
             this.Party_ControlPanel.Size = new System.Drawing.Size(778, 730);
@@ -5253,7 +5314,7 @@
             // label56
             // 
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(5, 7);
+            this.label56.Location = new System.Drawing.Point(1, 8);
             this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(778, 42);
@@ -5261,13 +5322,56 @@
             this.label56.Text = "パーティー";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // SelectPalette
+            // 
+            this.SelectPalette.ErrorMessage = "";
+            this.SelectPalette.Location = new System.Drawing.Point(884, 453);
+            this.SelectPalette.Name = "SelectPalette";
+            this.SelectPalette.Placeholder = "";
+            this.SelectPalette.Size = new System.Drawing.Size(672, 25);
+            this.SelectPalette.TabIndex = 322;
+            // 
+            // PaletteList
+            // 
+            this.PaletteList.FormattingEnabled = true;
+            this.PaletteList.IntegralHeight = false;
+            this.PaletteList.ItemHeight = 18;
+            this.PaletteList.Location = new System.Drawing.Point(792, 481);
+            this.PaletteList.Name = "PaletteList";
+            this.PaletteList.Size = new System.Drawing.Size(851, 407);
+            this.PaletteList.TabIndex = 321;
+            this.PaletteList.SelectedIndexChanged += new System.EventHandler(this.PaletteList_SelectedIndexChanged);
+            this.PaletteList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PaletteList_MouseDoubleClick);
+            // 
+            // X_ETC_Diffculty_Text
+            // 
+            this.X_ETC_Diffculty_Text.ErrorMessage = "";
+            this.X_ETC_Diffculty_Text.Location = new System.Drawing.Point(1251, 2);
+            this.X_ETC_Diffculty_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.X_ETC_Diffculty_Text.Name = "X_ETC_Diffculty_Text";
+            this.X_ETC_Diffculty_Text.Placeholder = "";
+            this.X_ETC_Diffculty_Text.ReadOnly = true;
+            this.X_ETC_Diffculty_Text.Size = new System.Drawing.Size(390, 25);
+            this.X_ETC_Diffculty_Text.TabIndex = 318;
+            // 
+            // X_ETC_Edition_Text
+            // 
+            this.X_ETC_Edition_Text.ErrorMessage = "";
+            this.X_ETC_Edition_Text.Location = new System.Drawing.Point(938, 3);
+            this.X_ETC_Edition_Text.Margin = new System.Windows.Forms.Padding(2);
+            this.X_ETC_Edition_Text.Name = "X_ETC_Edition_Text";
+            this.X_ETC_Edition_Text.Placeholder = "";
+            this.X_ETC_Edition_Text.ReadOnly = true;
+            this.X_ETC_Edition_Text.Size = new System.Drawing.Size(298, 25);
+            this.X_ETC_Edition_Text.TabIndex = 316;
+            // 
             // PartyListBox
             // 
             this.PartyListBox.FormattingEnabled = true;
             this.PartyListBox.HorizontalScrollbar = true;
             this.PartyListBox.IntegralHeight = false;
             this.PartyListBox.ItemHeight = 18;
-            this.PartyListBox.Location = new System.Drawing.Point(5, 51);
+            this.PartyListBox.Location = new System.Drawing.Point(0, 49);
             this.PartyListBox.Margin = new System.Windows.Forms.Padding(2);
             this.PartyListBox.Name = "PartyListBox";
             this.PartyListBox.Size = new System.Drawing.Size(778, 832);
@@ -5275,6 +5379,17 @@
             this.PartyListBox.SelectedIndexChanged += new System.EventHandler(this.PartyListBox_SelectedIndexChanged);
             this.PartyListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PartyListBox_KeyDown);
             this.PartyListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PartyListBox_MouseDoubleClick);
+            // 
+            // label92
+            // 
+            this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label92.Location = new System.Drawing.Point(792, 452);
+            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(851, 30);
+            this.label92.TabIndex = 319;
+            this.label92.Text = "パレット";
+            this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheatPage
             // 
@@ -5466,7 +5581,7 @@
             this.CHEAT_ITEM_COUNT.Size = new System.Drawing.Size(65, 25);
             this.CHEAT_ITEM_COUNT.TabIndex = 5;
             this.CHEAT_ITEM_COUNT.Value = new decimal(new int[] {
-            1,
+            60,
             0,
             0,
             0});
@@ -6197,6 +6312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PROCS_P0)).EndInit();
             this.EtcPage.ResumeLayout(false);
+            this.EtcPage.PerformLayout();
             this.Party_ControlPanel.ResumeLayout(false);
             this.Party_ControlPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PARTY_Address)).EndInit();
@@ -6706,5 +6822,14 @@
         private System.Windows.Forms.Button CHEAT_ALL_UNIT_GROW;
         private SystemIconPictureBox systemIconPictureBox4;
         private System.Windows.Forms.Button CHEAT_ALL_ENEMY_UNIT_HP_1;
+        private TextBoxEx X_ETC_Edition_Text;
+        private System.Windows.Forms.Label label58;
+        private TextBoxEx X_ETC_Diffculty_Text;
+        private System.Windows.Forms.Label label92;
+        private ListBoxEx PaletteList;
+        private System.Windows.Forms.Button PaletteSearchButton;
+        private TextBoxEx SelectPalette;
+        private System.Windows.Forms.Label label91;
+        private ListBoxEx SoundList;
     }
 }

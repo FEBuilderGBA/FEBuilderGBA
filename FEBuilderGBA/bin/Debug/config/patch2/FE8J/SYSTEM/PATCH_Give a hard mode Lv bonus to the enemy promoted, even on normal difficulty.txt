@@ -1,0 +1,21 @@
+NAME=難易度普通でも、敵の上級職にハードモードのLvボーナスを与える
+NAME.en=Give a hard mode Lv bonus to the enemy promoted, even on normal difficulty
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=aera
+
+
+OFF:0x037BE9=0xD1
+TRA:0x037BE9=0xE0
+
+INFO=敵がクラス成長するとき、上級職は、Lvボーナスがもらえます。\r\n通常モードは、Lv+9で、ハードモードは、+19です。\r\nこのパッチは、これを変更して通常モードでも、ハードモードのLvボーナスを与え、上級職の敵をより強くします。\r\nこのパッチは、"ふつうでも上級職が程よく強い"を元に作成しました。
+
+COMBO=ディフォルト|OFF|敵を強くする|TRA
+INFO.en=As enemies grow in class, promoted positions receive an Lv bonus.\r\nThe normal mode is Lv + 9 and the hard mode is +19.\r\nThis patch changes this to give a hard mode Lv bonus, even in normal mode, to make enemies in promoted positions stronger.\r\nThis patch was created based on "Normally strong promoteds".
+COMBO.en=default.|OFF|Make the enemy stronger.|TRA
+INFO.zh=随着敌人在课堂上成长，高级职位获得Lv奖金。\r\n正常模式为Lv + 9，硬模式为+19。\r\n这个补丁改变了这一点，即使在正常模式下也能给出硬模式Lv加值，使高级位置的敌人变得更强。\r\n这个补丁是基于“普通强壮的老年人”创建的。
+COMBO.zh=默认。|OFF|让敌人更强大。|TRA
+NAME.zh=即使遇到困难，也可以在硬模式下为敌人提供更高级别的LV加值。

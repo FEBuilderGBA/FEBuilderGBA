@@ -5,7 +5,7 @@ IF:0x18FC8=0x00 0x4B
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
-TAG=#ENGINE #IMAGE
+TAG=#ENGINE
 
 //データへのポインタ
 POINTER=$FGREP4END ChangePortraitMiniMug.dmp

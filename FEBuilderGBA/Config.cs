@@ -55,7 +55,7 @@ namespace FEBuilderGBA
             }
             return;
         }
-        string ConfigFilename;
+        public string ConfigFilename{ get; private set; }
 
         public void Load(string fullfilename)
         {

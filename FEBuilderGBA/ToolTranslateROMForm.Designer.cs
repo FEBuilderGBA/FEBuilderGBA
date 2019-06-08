@@ -32,17 +32,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SimpleTranslateToTranslateDataFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateToTranslateDataFilenameButton = new System.Windows.Forms.Button();
             this.LabelSimpleTranslateToTranslateDataFilename = new System.Windows.Forms.Label();
             this.SimpleFireButton = new System.Windows.Forms.Button();
             this.LabelSimpleTranslateToROMFilename = new System.Windows.Forms.Label();
-            this.SimpleTranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateToROMFilenameSelectButton = new System.Windows.Forms.Button();
             this.LabelSimpleTranslateFromROMFilename = new System.Windows.Forms.Label();
-            this.SimpleTranslateFromROMFilename = new FEBuilderGBA.TextBoxEx();
             this.SimpleTranslateFormROMFilenameSelectButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SimpleTranslateToTranslateDataFilename = new FEBuilderGBA.TextBoxEx();
+            this.SimpleTranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
+            this.SimpleTranslateFromROMFilename = new FEBuilderGBA.TextBoxEx();
             this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
             this.FontAutoGenelatePanel = new System.Windows.Forms.Panel();
             this.UseFontNameButton = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.customColorGroupBox3 = new FEBuilderGBA.CustomColorGroupBox();
             this.customColorGroupBox4 = new FEBuilderGBA.CustomColorGroupBox();
             this.TranslatePanel = new System.Windows.Forms.Panel();
+            this.X_ONELINER_CHECK = new System.Windows.Forms.CheckBox();
             this.X_MODIFIED_TEXT_ONLY = new System.Windows.Forms.CheckBox();
             this.LabelTranslateToROMFilename = new System.Windows.Forms.Label();
             this.TranslateToROMFilename = new FEBuilderGBA.TextBoxEx();
@@ -134,17 +135,6 @@
             this.panel1.Size = new System.Drawing.Size(894, 192);
             this.panel1.TabIndex = 2;
             // 
-            // SimpleTranslateToTranslateDataFilename
-            // 
-            this.SimpleTranslateToTranslateDataFilename.ErrorMessage = "";
-            this.SimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(204, 86);
-            this.SimpleTranslateToTranslateDataFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SimpleTranslateToTranslateDataFilename.Name = "SimpleTranslateToTranslateDataFilename";
-            this.SimpleTranslateToTranslateDataFilename.Placeholder = "";
-            this.SimpleTranslateToTranslateDataFilename.Size = new System.Drawing.Size(623, 25);
-            this.SimpleTranslateToTranslateDataFilename.TabIndex = 100;
-            this.SimpleTranslateToTranslateDataFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SimpleTranslateToTranslateDataFilename_MouseDoubleClick);
-            // 
             // SimpleTranslateToTranslateDataFilenameButton
             // 
             this.SimpleTranslateToTranslateDataFilenameButton.Location = new System.Drawing.Point(833, 81);
@@ -190,17 +180,6 @@
             this.LabelSimpleTranslateToROMFilename.Text = "定型文ROM TO";
             this.LabelSimpleTranslateToROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SimpleTranslateToROMFilename
-            // 
-            this.SimpleTranslateToROMFilename.ErrorMessage = "";
-            this.SimpleTranslateToROMFilename.Location = new System.Drawing.Point(204, 46);
-            this.SimpleTranslateToROMFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SimpleTranslateToROMFilename.Name = "SimpleTranslateToROMFilename";
-            this.SimpleTranslateToROMFilename.Placeholder = "";
-            this.SimpleTranslateToROMFilename.Size = new System.Drawing.Size(623, 25);
-            this.SimpleTranslateToROMFilename.TabIndex = 4;
-            this.SimpleTranslateToROMFilename.DoubleClick += new System.EventHandler(this.TranslateToROMFilename_DoubleClick);
-            // 
             // SimpleTranslateToROMFilenameSelectButton
             // 
             this.SimpleTranslateToROMFilenameSelectButton.Location = new System.Drawing.Point(833, 41);
@@ -223,17 +202,6 @@
             this.LabelSimpleTranslateFromROMFilename.TabIndex = 94;
             this.LabelSimpleTranslateFromROMFilename.Text = "定型文ROM FROM";
             this.LabelSimpleTranslateFromROMFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SimpleTranslateFromROMFilename
-            // 
-            this.SimpleTranslateFromROMFilename.ErrorMessage = "";
-            this.SimpleTranslateFromROMFilename.Location = new System.Drawing.Point(205, 9);
-            this.SimpleTranslateFromROMFilename.Margin = new System.Windows.Forms.Padding(4);
-            this.SimpleTranslateFromROMFilename.Name = "SimpleTranslateFromROMFilename";
-            this.SimpleTranslateFromROMFilename.Placeholder = "";
-            this.SimpleTranslateFromROMFilename.Size = new System.Drawing.Size(623, 25);
-            this.SimpleTranslateFromROMFilename.TabIndex = 2;
-            this.SimpleTranslateFromROMFilename.DoubleClick += new System.EventHandler(this.TranslateFormROMFilename_DoubleClick);
             // 
             // SimpleTranslateFormROMFilenameSelectButton
             // 
@@ -258,6 +226,39 @@
             this.tabPage2.Size = new System.Drawing.Size(908, 754);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "詳細";
+            // 
+            // SimpleTranslateToTranslateDataFilename
+            // 
+            this.SimpleTranslateToTranslateDataFilename.ErrorMessage = "";
+            this.SimpleTranslateToTranslateDataFilename.Location = new System.Drawing.Point(204, 86);
+            this.SimpleTranslateToTranslateDataFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SimpleTranslateToTranslateDataFilename.Name = "SimpleTranslateToTranslateDataFilename";
+            this.SimpleTranslateToTranslateDataFilename.Placeholder = "";
+            this.SimpleTranslateToTranslateDataFilename.Size = new System.Drawing.Size(623, 25);
+            this.SimpleTranslateToTranslateDataFilename.TabIndex = 100;
+            this.SimpleTranslateToTranslateDataFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SimpleTranslateToTranslateDataFilename_MouseDoubleClick);
+            // 
+            // SimpleTranslateToROMFilename
+            // 
+            this.SimpleTranslateToROMFilename.ErrorMessage = "";
+            this.SimpleTranslateToROMFilename.Location = new System.Drawing.Point(204, 46);
+            this.SimpleTranslateToROMFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SimpleTranslateToROMFilename.Name = "SimpleTranslateToROMFilename";
+            this.SimpleTranslateToROMFilename.Placeholder = "";
+            this.SimpleTranslateToROMFilename.Size = new System.Drawing.Size(623, 25);
+            this.SimpleTranslateToROMFilename.TabIndex = 4;
+            this.SimpleTranslateToROMFilename.DoubleClick += new System.EventHandler(this.TranslateToROMFilename_DoubleClick);
+            // 
+            // SimpleTranslateFromROMFilename
+            // 
+            this.SimpleTranslateFromROMFilename.ErrorMessage = "";
+            this.SimpleTranslateFromROMFilename.Location = new System.Drawing.Point(205, 9);
+            this.SimpleTranslateFromROMFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.SimpleTranslateFromROMFilename.Name = "SimpleTranslateFromROMFilename";
+            this.SimpleTranslateFromROMFilename.Placeholder = "";
+            this.SimpleTranslateFromROMFilename.Size = new System.Drawing.Size(623, 25);
+            this.SimpleTranslateFromROMFilename.TabIndex = 2;
+            this.SimpleTranslateFromROMFilename.DoubleClick += new System.EventHandler(this.TranslateFormROMFilename_DoubleClick);
             // 
             // customColorGroupBox2
             // 
@@ -391,6 +392,7 @@
             this.customColorGroupBox4.BorderColor = System.Drawing.Color.Empty;
             this.customColorGroupBox4.Controls.Add(this.TranslatePanel);
             this.customColorGroupBox4.Controls.Add(this.useAutoTranslateCheckBox);
+            this.customColorGroupBox4.Controls.Add(this.X_ONELINER_CHECK);
             this.customColorGroupBox4.Location = new System.Drawing.Point(9, 59);
             this.customColorGroupBox4.Name = "customColorGroupBox4";
             this.customColorGroupBox4.Size = new System.Drawing.Size(877, 211);
@@ -416,6 +418,16 @@
             this.TranslatePanel.Name = "TranslatePanel";
             this.TranslatePanel.Size = new System.Drawing.Size(876, 152);
             this.TranslatePanel.TabIndex = 1;
+            // 
+            // X_ONELINER_CHECK
+            // 
+            this.X_ONELINER_CHECK.AutoSize = true;
+            this.X_ONELINER_CHECK.Location = new System.Drawing.Point(6, 65);
+            this.X_ONELINER_CHECK.Name = "X_ONELINER_CHECK";
+            this.X_ONELINER_CHECK.Size = new System.Drawing.Size(103, 22);
+            this.X_ONELINER_CHECK.TabIndex = 99;
+            this.X_ONELINER_CHECK.Text = "OneLiner";
+            this.X_ONELINER_CHECK.UseVisualStyleBackColor = true;
             // 
             // X_MODIFIED_TEXT_ONLY
             // 
@@ -700,5 +712,6 @@
         private TextBoxEx SimpleTranslateToTranslateDataFilename;
         private System.Windows.Forms.Button SimpleTranslateToTranslateDataFilenameButton;
         private System.Windows.Forms.Label LabelSimpleTranslateToTranslateDataFilename;
+        private System.Windows.Forms.CheckBox X_ONELINER_CHECK;
     }
 }

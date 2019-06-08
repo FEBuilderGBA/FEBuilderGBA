@@ -179,6 +179,8 @@ namespace FEBuilderGBA
                     key = sp[0];
                     value = sp[1];
                 }
+                key = key.Replace("\\r\\n", "\r\n");
+                value = value.Replace("\\r\\n", "\r\n");
 
                 key = key.ToUpper();
                 if (dic.ContainsKey(key))
@@ -424,6 +426,7 @@ namespace FEBuilderGBA
                     }
                     continue;
                 }
+                oneline = Cat0003(oneline , i, list);
 
                 //英語の場合、改行はスペースを兼ねるので。
                 if (from == "en")
@@ -447,6 +450,33 @@ namespace FEBuilderGBA
 
             string resultext = string.Join("", list);
             return resultext;
+        }
+        static string Cat0003(string oneline ,int index,List<string> list)
+        {
+            string ret = oneline;
+            //次のデータが@0003ならば結合できる可能性を検討する.
+            for (int i = index + 1; i < list.Count; i++)
+            {
+                string nextline = list[i];
+                if (nextline.IndexOf("@0003") < 0)
+                {//@0003ではないらしい
+                    break;
+                }
+                if (i + 1 >= list.Count)
+                {
+                    break;
+                }
+
+                string morenextline = list[i + 1];
+                if (morenextline.IndexOf("@") >= 0)
+                {//次に続くのが@命令らしい
+                    break;
+                }
+                list[i] = "";//結合したので、不要なので消す.
+                list[i+1] = "";//結合したので、不要なので消す.
+                ret += "\r\n" + morenextline;
+            }
+            return ret;
         }
         //テキストを翻訳する(時間がかかるので注意)
         public static string TranslateText(uint fromkey,string text, string from, string to, Dictionary<string, string> transDic, bool useGoolgeTranslate, bool modifiedTextOnly)

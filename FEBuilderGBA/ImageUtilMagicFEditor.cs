@@ -153,8 +153,11 @@ namespace FEBuilderGBA
             ImageUtil.BlackOutUnnecessaryColors(retImage, 1);
 
             framefilename = basename + seatnumber.ToString("000") + ".png";
-            retImage.Save(Path.Combine(basedir, framefilename)
-                , System.Drawing.Imaging.ImageFormat.Png);
+            if (!U.BitmapSave(retImage, Path.Combine(basedir, framefilename)))
+            {
+                return "";
+            }
+
             return framefilename;
         }
 
@@ -219,8 +222,11 @@ namespace FEBuilderGBA
             ImageUtil.BlackOutUnnecessaryColors(retImage, 1);
 
             framefilename = basename + seatnumber.ToString("000") + ".png";
-            retImage.Save(Path.Combine(basedir, framefilename)
-                , System.Drawing.Imaging.ImageFormat.Png);
+            if (!U.BitmapSave(retImage, Path.Combine(basedir, framefilename)))
+            {
+                return "";
+            }
+            retImage.Dispose();
             return framefilename;
         }
 
@@ -392,7 +398,6 @@ namespace FEBuilderGBA
                     height = 64;
                 }
                 Bitmap obj = ImageUtil.ByteToImage16Tile(width, height, obj_UZ, 0, objPalette, 0);
-                //            obj.Save("s" + U.ToHexString(frame) + ".png");
 
                 {
                     //利用するOAMデータの開始位置
@@ -844,6 +849,7 @@ namespace FEBuilderGBA
                 {
                     if (frameData[i + 3] == 0x85)
                     {
+                        FELint.Check85Command(errors, frameData, i, FELint.Type.MAGIC_ANIME_EXTENDS, magic_baseaddress, magicindex);
                         continue;
                     }
                     //不明な命令.

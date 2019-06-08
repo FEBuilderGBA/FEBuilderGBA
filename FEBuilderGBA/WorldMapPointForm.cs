@@ -135,7 +135,7 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            CheckXY();
         }
 
         public static void DrawBasePointAddr(Bitmap map,uint addr)
@@ -194,5 +194,57 @@ namespace FEBuilderGBA
               J_6_FLAG.AccessibleDescription = R._("もし、イベント分岐用フラグが、TRUEであれば、2回目が評価されます。\r\n例えば、主人公がエイリークで、イベント分岐用フラグがTRUEであれば、次の拠点ID(エイリーク2回目)が利用されます。");
               J_8.AccessibleDescription = R._("章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。");
         }
+        private void W24_ValueChanged(object sender, EventArgs e)
+        {
+            CheckXY();
+        }
+
+        private void W26_ValueChanged(object sender, EventArgs e)
+        {
+            CheckXY();
+        }
+        private void B2_ValueChanged(object sender, EventArgs e)
+        {
+            CheckXY();
+        }
+
+        void CheckXY()
+        {
+            if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)
+            {
+                this.L_24_MAPXY_26.ErrorMessage = "";
+                this.J_26.ErrorMessage = "";
+                return;
+            }
+            Bitmap icon = WorldMapImageForm.DrawWorldMapIcon((uint)B2.Value);
+            int width  = icon.Width;
+            int height = icon.Height;
+            if (width <= 8)
+            {
+                int modx = ((int)W24.Value - (width / 2)) % 16;
+                if (modx >= 1 && modx <= 8)
+                {
+                    this.L_24_MAPXY_26.ErrorMessage = "";
+                }
+                else
+                {
+                    this.L_24_MAPXY_26.ErrorMessage = R._("この座標はカーソルで選択しにくい可能性があります。\r\nカーソルは16ドット単位で移動します。\r\nそのため、16ドットより幅が小さいオブジェクトは、設置位地を調整する必要があります。");
+                }
+            }
+            if (height <= 8)
+            {
+                int mody = ((int)W26.Value - (height / 2)) % 16;
+                if (mody >= 1 && mody <= 8)
+                {
+                    this.J_26.ErrorMessage = "";
+                }
+                else
+                {
+                    this.J_26.ErrorMessage = R._("この座標はカーソルで選択しにくい可能性があります。\r\nカーソルは16ドット単位で移動します。\r\nそのため、16ドットより幅が小さいオブジェクトは、設置位地を調整する必要があります。");
+                }
+            }
+            icon.Dispose();
+        }
+
     }
 }

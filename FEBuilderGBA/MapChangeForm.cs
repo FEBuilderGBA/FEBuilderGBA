@@ -23,6 +23,7 @@ namespace FEBuilderGBA
 
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
+            this.N_InputFormRef.PostWriteHandler += N_PostWriteEvent;
         }
 
         public InputFormRef InputFormRef;
@@ -220,6 +221,18 @@ namespace FEBuilderGBA
         void N_AddressListExpandsEvent(object sender, EventArgs arg)
         {
             U.ReSelectList(this.AddressList);
+        }
+        void N_PostWriteEvent(object sender, EventArgs arg)
+        {
+            Form f = InputFormRef.GetForm<MapEditorForm>();
+            if (f == null)
+            {
+                return;
+            }
+            uint mapid = (uint)AddressList.SelectedIndex;
+
+            MapEditorForm mapeditor = (MapEditorForm)f;
+            mapeditor.OnUpdateMapChangeForm(mapid);
         }
 
         //マップ変化のベース領域がなければ割り当てる

@@ -106,6 +106,7 @@ namespace FEBuilderGBA
 
             //エラーが発生した場合、次回起動時にアップデートチェックするようにしてみよう.
             Program.Config["LastUpdateCheck"] = "0";
+            Program.Config.Save();
 
             CheckNeedUpdateMsg();
             this.UserMessage.Placeholder = R._("例:戦闘アニメをインポートしようとしたら、エラーが表示された。\r\n試した戦闘アニメは、 http://mydata.example.com/aaa/ から、ダウンロードしたものだ。\r\nバグってるだろうおおおお\r\n");

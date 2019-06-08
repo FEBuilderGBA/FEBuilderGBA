@@ -25,7 +25,7 @@ POIN CustomAnimeTable
 
 CustomAnimeTable:
 BYTE 0x01  //Unit: Eirika
-BYTE 0x02  //Class: Load
+BYTE 0x02  //Class: Lord
 BYTE 0x00  //dummy
 BYTE 0x00  //dummy
 WORD 0x088AEFFC //Eirika Master Load Battle Animation.

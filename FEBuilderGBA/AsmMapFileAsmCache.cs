@@ -550,7 +550,7 @@ namespace FEBuilderGBA
             {//長さが判明しているということはおそらくASM関数ではない.
                 return false;
             }
-            if (plainAddr > Program.ROM.RomInfo.compress_image_borderline_address())
+            if (plainAddr >= Program.ROM.RomInfo.compress_image_borderline_address())
             {//画像ボーダーよりも向こう側
                 return false;
             }
@@ -582,9 +582,12 @@ namespace FEBuilderGBA
         //準備中などで、データがない場合はnullを返す。
         public List<FELint.ErrorSt> GetFELintCache(uint mapid)
         {
-            if (FELintCache.ContainsKey(mapid))
+            lock (FELintLock)
             {
-                return FELintCache[mapid];
+                if (FELintCache.ContainsKey(mapid))
+                {
+                    return FELintCache[mapid];
+                }
             }
             return null;
         }
@@ -593,7 +596,10 @@ namespace FEBuilderGBA
         //新しいFELintデータに入れ替える
         void UpdateFELintCache(Dictionary<uint, List<FELint.ErrorSt>> newFELintCache)
         {
-            this.FELintCache = newFELintCache;
+            lock (FELintLock)
+            {
+                this.FELintCache = newFELintCache;
+            }
 
             if (IsStopFlag)
             {
@@ -628,6 +634,36 @@ namespace FEBuilderGBA
         }
         //FELintの結果をInvokeしたときに、Joinで終了待ちすると、デッドロックするので、回避するプロセスを入れる.
         bool IsFELintInvoke = false;
+
+        public enum HasError_Enum
+        {
+             NO_ERROR     //エラーはない
+            ,NOT_PREP     //準備できていない
+            ,HAS_ERROR    //エラーがある
+        };
+
+        object FELintLock = new object();
+
+        //すべての章に何かエラーがあるか?
+        public HasError_Enum HasError()
+        {
+            lock (FELintLock)
+            {
+                if (this.FELintCache.Count <= 1)
+                {//準備中です
+                    return HasError_Enum.NOT_PREP;
+                }
+                foreach (var list in this.FELintCache)
+                {
+                    if (list.Value.Count >= 1)
+                    {//エラーがある
+                        return HasError_Enum.HAS_ERROR;
+                    }
+                }
+                //エラーはない
+                return HasError_Enum.NO_ERROR;
+            }
+        }
 
         //FELintスキャン(スレッドで実行する)
         void ScanFELintByThread(List<DisassemblerTrumb.LDRPointer> ldrmap)
@@ -670,5 +706,11 @@ namespace FEBuilderGBA
             }
             return this.LDRMapCache;
         }
+        public void MakeTextIDArray(List<UseTextID> list)
+        {
+            AsmMapFile map = GetAsmMapFile();
+            map.MakeTextIDArray(list);
+        }
+
     }
 }

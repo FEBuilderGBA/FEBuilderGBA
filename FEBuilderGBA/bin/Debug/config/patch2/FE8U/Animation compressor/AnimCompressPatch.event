@@ -1,0 +1,16 @@
+#include "Extensions/Hack Installation.txt"
+
+//Animation compressor
+ORG $59b08
+BL(AnimCompressPatch)
+ORG $59a26
+BL(AnimCompressPatch)
+ORG $5a64a
+BL(AnimCompressPatch)
+
+ORG $59b08
+BL(AnimCompressPatch)
+
+ORG $1c3280
+AnimCompressPatch:
+#incbin "AnimCompressPatch.dmp"

@@ -78,6 +78,19 @@ namespace FEBuilderGBA
             key = MakeKey(self, "open", addName);
             UpdateOther(key, d.FileName);
         }
+        public void Save(Control self, string addName, string filename)
+        {
+            LastSelected ls = new LastSelected();
+            ls.FileName = filename;
+            ls.FilterIndex = 0;
+
+            string key;
+            key = MakeKey(self, "save", addName);
+            this.Dic[key] = ls;
+
+            key = MakeKey(self, "open", addName);
+            UpdateOther(key, filename);
+        }
 
         string MakeKey(Control self, string type, string addName)
         {
@@ -92,6 +105,18 @@ namespace FEBuilderGBA
             }
             key += " " + type + " " + addName;
             return key;
+        }
+        public string Load(Control self, string addName)
+        {
+            string key = MakeKey(self, "open", addName);
+
+            if (!this.Dic.ContainsKey(key))
+            {
+                return "";
+            }
+            LastSelected ls = this.Dic[key];
+
+            return ls.FileName;
         }
 
         public void Load(Control self, string addName, OpenFileDialog d)

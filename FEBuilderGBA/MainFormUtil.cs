@@ -83,7 +83,8 @@ namespace FEBuilderGBA
             f.Close();
         }
 
-        public static void SaveWithLint(Form self)
+
+        static void SaveWithLint(Form self)
         {
             ToolFELintForm f = (ToolFELintForm)InputFormRef.JumpForm<ToolFELintForm>();
             bool IsOnceRejected = false;
@@ -102,13 +103,7 @@ namespace FEBuilderGBA
                     }
                     //エラーがないのでウィンドウを閉じる
                     f.Close();
-
-                    if (Program.ROM.IsVirtualROM)
-                    {
-                        SaveAs(self);
-                        return;
-                    }
-                    SaveForce();
+                    SaveForce(self);
                 }
                 else
                 {
@@ -119,36 +114,89 @@ namespace FEBuilderGBA
                 }
             };
         }
-        public static void SaveOverraide(Form self)
+
+        static void SaveWithLintInErrorDialog(Form self)
         {
-            if (Program.ROM.IsVirtualROM)
+            ToolFELintForm f = (ToolFELintForm)InputFormRef.JumpForm<ToolFELintForm>();
+            bool IsOnceRejected = false;
+            f.OnErrorEventHandler += (sender, arg) =>
             {
-                SaveAs(self);
-                return;
-            }
-
-            if (OptionForm.overraide_simple_error_check() == OptionForm.overraide_simple_error_check_enum.None)
+                OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
+                DialogResult r = dialog.ShowDialog();
+                if (r == System.Windows.Forms.DialogResult.Retry)
+                {//エラーを表示する
+                    IsOnceRejected = true;
+                }
+                else if (r == System.Windows.Forms.DialogResult.Yes)
+                {//保存する
+                    f.Close();
+                    //保存する.
+                    SaveForce(self);
+                }
+                else
+                {//保存しない
+                    f.Close();
+                }
+            };
+            f.OnNoErrorEventHandler += (sender, arg) =>
             {
-                Save(self);
-                return;
-            }
-
-            Form f = Program.MainForm();
-            if (f is MainSimpleMenuForm)
-            {
-                MainSimpleMenuForm ff = (MainSimpleMenuForm)f;
-                if (ff.IsErrorFoundByCurrentChapter())
+                if (IsOnceRejected)
                 {
-                    OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
-                    DialogResult r = dialog.ShowDialog();
-                    if (r != System.Windows.Forms.DialogResult.Yes)
+                    DialogResult dr = R.ShowYesNo("エラーがなくなりました。\r\nファイルを保存しますか？");
+                    if (dr != DialogResult.Yes)
                     {
                         return;
                     }
-                    SaveForce();
+                    //エラーがないのでウィンドウを閉じる
+                    f.Close();
+                    SaveForce(self);
+                }
+                else
+                {
+                    //エラーがないのでウィンドウを閉じる
+                    f.Close();
+                    //保存する.
+                    Save(self);
+                }
+            };
+        }
+
+        public static void SaveOverraide(Form self, bool forceCheck = false)
+        {
+            if (OptionForm.overraide_simple_error_check() == OptionForm.overraide_simple_error_check_enum.None)
+            {
+                if (forceCheck == false)
+                {
+                    Save(self);
                     return;
                 }
             }
+
+            AsmMapFileAsmCache.HasError_Enum hasError = Program.AsmMapFileAsmCache.HasError();
+            if (hasError == AsmMapFileAsmCache.HasError_Enum.NOT_PREP)
+            {//まだ準備できていない!
+                SaveWithLintInErrorDialog(self);
+                return;
+            }
+            if (hasError == AsmMapFileAsmCache.HasError_Enum.HAS_ERROR)
+            {//エラーがある場合
+                OverraideCheckWithErrorDialog dialog = (OverraideCheckWithErrorDialog)InputFormRef.JumpFormLow<OverraideCheckWithErrorDialog>();
+                DialogResult r = dialog.ShowDialog();
+                if (r == System.Windows.Forms.DialogResult.Retry)
+                {//エラーを表示する
+                    SaveWithLint(self);
+                }
+                else if (r == System.Windows.Forms.DialogResult.Yes)
+                {//保存する
+                    SaveForce(self);
+                }
+                else
+                {//保存しない
+                }
+                return;
+            }
+
+            //エラーはないので保存する.
             Save(self);
         }
 
@@ -172,7 +220,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            SaveForce();
+            SaveForce(self);
         }
 
         static void RunAutoBackup7ZWithThread(string backupFullPath)
@@ -237,8 +285,14 @@ namespace FEBuilderGBA
 
         }
 
-        public static void SaveForce()
+        public static void SaveForce(Form self)
         {
+            if (Program.ROM.IsVirtualROM)
+            {
+                SaveAs(self);
+                return;
+            }
+
             try
             {
                 //上書きする前に自動バックアップ
@@ -267,6 +321,7 @@ namespace FEBuilderGBA
             Program.CommentCache.Save(Program.ROM.Filename);
             Program.FlagCache.Save(Program.ROM.Filename);
             Program.LintCache.Save(Program.ROM.Filename);
+            Program.UseTextIDCache.Save(Program.ROM.Filename);
         }
 
         public static void SaveAs(Form self)
@@ -290,6 +345,7 @@ namespace FEBuilderGBA
             Program.CommentCache.Save(save.FileName);
             Program.FlagCache.Save(save.FileName);
             Program.LintCache.Save(save.FileName);
+            Program.UseTextIDCache.Save(Program.ROM.Filename);
         }
 
         public static void Quit(Form self)
@@ -1029,7 +1085,7 @@ namespace FEBuilderGBA
 
             try
             {
-                string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
+                string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
                 for (int i = 0; i < files.Length; i++)
                 {
                     string filename = Path.GetFileName(files[i]);
@@ -1140,7 +1196,7 @@ namespace FEBuilderGBA
 
             U.CRC32 crc32 = new U.CRC32();
 
-            string[] files = Directory.GetFiles(dir, "*.gba", searchOption);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
             for (int i = 0; i < files.Length; i++)
             {
                 string filename = Path.GetFileName(files[i]);
@@ -1325,21 +1381,9 @@ namespace FEBuilderGBA
             return true;
         }
 
-        public static void OpenURL(string url)
-        {
-            try
-            {
-                Process.Start(url);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
-        }
-
         public static void GotoManual()
         {
-            OpenURL(GetManualURL());
+            U.OpenURLOrFile(GetManualURL());
         }
         public static string GetCommunitiesURL()
         {
@@ -1380,7 +1424,7 @@ namespace FEBuilderGBA
 
         public static void GotoReport7zURL()
         {
-            OpenURL(GetReport7zURL());
+            U.OpenURLOrFile(GetReport7zURL());
         }
         public static string GetReport7zURL()
         {
@@ -1465,26 +1509,18 @@ namespace FEBuilderGBA
         public static void GotoCommunities()
         {
             string url = GetCommunitiesURL();
-
-            try
-            {
-                Process.Start(url);
-            }
-            catch (Exception ee)
-            {
-                R.ShowStopError(ee.ToString());
-            }
+            U.OpenURLOrFile(url);
         }
         static bool OpenGBA7ZROM(string romfilename, bool useReOpen, string forceversion)
         {
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
                 ArchSevenZip.Extract(romfilename, tempdir.Dir);
-                string[] files = Directory.GetFiles(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
+                string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                 if (files.Length < 1)
                 {
                     //ROMがなければupsを調べてみよう.
-                    files = Directory.GetFiles(tempdir.Dir, "*.ups", SearchOption.AllDirectories);
+                    files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.ups", SearchOption.AllDirectories);
                     if (files.Length < 1)
                     {//upsもない
                         return false;
@@ -1644,7 +1680,7 @@ namespace FEBuilderGBA
                 using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
                 {
                     ArchSevenZip.Extract(path, tempdir.Dir);
-                    string[] files = Directory.GetFiles(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
+                    string[] files = U.Directory_GetFiles_Safe(tempdir.Dir, "*.gba", SearchOption.AllDirectories);
                     if (files.Length < 1)
                     {
                         return new byte[0];
@@ -2338,6 +2374,19 @@ namespace FEBuilderGBA
             }
 
             Process.Start(editor , args);
+        }
+        public static void RunToolInitWizard()
+        {
+            do
+            {
+                ToolInitWizardForm f = (ToolInitWizardForm)InputFormRef.JumpFormLow<ToolInitWizardForm>();
+                DialogResult dr = f.ShowDialog();
+                if (dr != DialogResult.Retry)
+                {
+                    break;
+                }
+            }
+            while (true);
         }
     }
 }

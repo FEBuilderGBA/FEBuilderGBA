@@ -1,0 +1,116 @@
+
+PUSH
+/////////////ステータス1常に力
+ORG	0x89434
+SHORT	$E016
+
+//ステータス画面3
+
+ORG	0x89A3C
+BYTE	$28 $1C $8D $F7 $AF $F8 $02 $1C $05 $34 $A4 $19 $60 $00 $40 $44 $40 $1E
+ORG	0x89AC4
+BYTE	$70 $B5 $00 $24 $00 $25 $C0 $46 $15 $4E $F6 $68 $28 $36 $70 $5D $00 $28 $16 $D0 $20 $1C $2B $1C $00 $28 $01 $D1 $01 $21 $01 $22 $01 $28 $01 $D1 $09 $21 $01 $22 $02 $28 $01 $D1 $01 $21 $03 $22 $03 $28 $01 $D1 $09 $21 $03 $22 $FF $F7 $80 $FF $01 $34 $04 $2C $09 $D0 $04 $2D $07 $D0 $03 $2D $00 $D1 $04 $25 $07 $2D $00 $D1 $03 $25 $01 $35 $DB $E7 $FF $F7 $F9 $FE $70 $BC $01 $BC $00 $47 $FC $3B $00 $02
+
+ORG	0x89ac0	//ゲージ位置左
+WORD	$0200472A
+
+//杖回復
+ORG	0x16dba
+BL(0x18ecc)
+
+//杖命中
+ORG	0x2cc1a
+BL(0x18ecc)
+
+//杖範囲
+ORG	0x1874e
+SHORT	$46C0
+WORD	$468F4900
+POIN mgc_tuehani
+
+//シンプルレイアウト
+ORG	0x894e8	//技
+BYTE	5
+ORG	0x8a64e	//下降矢印
+BYTE	$48
+ORG	0x89532	//速さ
+BYTE	7
+ORG	0x8954e	//幸運
+BYTE	9
+ORG	0x89570	//守備
+BYTE	11
+ORG	0x89592	//魔防
+BYTE	13
+ORG	0x895b6	//体格
+#incbin "taiku.bin"
+
+ORG	0x896d8	//戦績削除
+SHORT	$46C0 $46C0
+
+ORG	0x896DC	//魔力追加
+WORD	$469F4B00
+POIN	mgc_hack1
+
+//文字
+ORG	0x89434//魔力文字分岐消し
+SHORT	$E016
+
+ORG	0x89454//文字リスト移動
+POIN	mgc_mojimoji
+
+ORG	0xA7287C//文字メモリ(武器レベル分解放)
+WORD	$02003CDC $3 $02003CE4 $1 $02003CEC $1 $02003CF4 $1
+
+//Rヘルプ移動
+ORG	0xA72C94//魔力分岐潰し
+WORD	0
+ORG	0xA72CAA
+SHORT	$04DC	//技＞魔力
+ORG	0xA72CC6
+SHORT	$04DD	//速さ＞技
+ORG	0xA72CE2
+SHORT	$04DE	//幸運＞速さ
+ORG	0xA72CFE
+SHORT	$04DF	//守備＞幸運
+
+ORG	0xA72D08//魔防
+WORD	$08A72CEC 
+POIN	mgc_sitahelp
+WORD	$08A72C0C
+WORD	$08A72DB0
+SHORT	$6866 $04E0	//魔防＞守備
+
+ORG	0xA72C50//経験値右方向
+POIN mgc_sitahelp
+
+ORG	0x1F550A	//武器レベルヘルプ上書き
+SHORT	$800 $800 $800 $800 $800 $800 $800 $800
+
+POP
+mgc_sitahelp:
+WORD	$08A72D08 $0 $08A72C44 $08A72DB0
+SHORT	$7866 $04E1
+WORD	0 0
+
+mgc_mojimoji:
+WORD	$02003CDC $02003DEE $3 $081F591C //魔力
+
+BYTE	$34 $3C $00 $02 $6E $3E $00 $02 $03 $04 $00 $00 $24 $32 $A7 $08 //技
+BYTE	$3C $3C $00 $02 $EE $3E $00 $02 $03 $00 $00 $00 $28 $32 $A7 $08 //速さ
+BYTE	$44 $3C $00 $02 $6E $3F $00 $02 $03 $00 $00 $00 $34 $32 $A7 $08 //幸運
+BYTE	$4C $3C $00 $02 $EE $3F $00 $02 $03 $00 $00 $00 $2C $32 $A7 $08 //守備
+BYTE	$54 $3C $00 $02 $6E $40 $00 $02 $03 $00 $00 $00 $30 $32 $A7 $08 //魔防
+BYTE	$5C $3C $00 $02 $7E $3D $00 $02 $03 $00 $00 $00 $40 $32 $A7 $08 
+BYTE	$64 $3C $00 $02 $FE $3D $00 $02 $03 $00 $00 $00 $38 $32 $A7 $08 
+BYTE	$6C $3C $00 $02 $7E $3E $00 $02 $03 $00 $00 $00 $3C $32 $A7 $08 
+BYTE	$74 $3C $00 $02 $FE $3E $00 $02 $03 $00 $00 $00 $44 $32 $A7 $08 
+BYTE	$7C $3C $00 $02 $7E $3F $00 $02 $03 $00 $00 $00 $48 $32 $A7 $08 
+BYTE	$84 $3C $00 $02 $FE $3F $00 $02 $03 $00 $00 $00 $60 $32 $A7 $08
+WORD	0 0
+
+mgc_tuehani:
+#incbin "tuehani.bin"
+ALIGN 4
+mgc_hack1:
+#incbin "tuika.bin"
+ALIGN 4

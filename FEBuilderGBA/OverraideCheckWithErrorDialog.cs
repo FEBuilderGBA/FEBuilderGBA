@@ -19,6 +19,7 @@ namespace FEBuilderGBA
         private void OverraideCheckDialog_Load(object sender, EventArgs e)
         {
             DiaplayFilename.Text = Program.ROM.Filename;
+            this.HintTextBox.Text += "\r\n" + MainFormUtil.GetReport7zURL();
 
             this.MyCancelButton.Focus();
             System.Media.SystemSounds.Hand.Play();
@@ -33,6 +34,12 @@ namespace FEBuilderGBA
         private void MyOKButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.Close();
+        }
+
+        private void MyDisplayErrorButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.Close();
         }
     }

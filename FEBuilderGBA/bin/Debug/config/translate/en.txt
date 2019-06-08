@@ -1099,6 +1099,21 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
+:序盤
+Tutorial Mode
+
+:リン編
+Lyn's Tale
+
+:難易度:難しい
+Difficulty: Hard
+
+:難易度:初めて
+Difficulty: Easy
+
+:難易度:普通
+Difficulty: Normal
+
 :自動的に更新する
 Automatically update
 
@@ -1131,6 +1146,12 @@ This is the call history of events recorded from data acquired from the emulator
 
 :より古い↓
 Older↓
+
+:再生されている音楽
+Music being played.
+
+:編
+Editing
 
 :支援フラグ
 Support Flag
@@ -1912,9 +1933,6 @@ Turn Start
 :ターン条件FE7
 Turn Condition FE 7
 
-:編
-Editing
-
 :常時条件
 Conditional
 
@@ -2140,6 +2158,12 @@ Create the tutorial event of FE8.\r\nThe tutorial has many mysteries and has not
 :イベント条件
 Event Condition
 
+:セリフ
+Serif
+
+:終章セリフ
+The last chapter serif.
+
 :強制出撃ポイント再取得
 Reload Forced Sorting Points
 
@@ -2187,6 +2211,12 @@ Death
 
 :死亡セリフ
 Death Quotes
+
+:0=リン編チュートリアルでの死亡セリフ
+0=Death serif in the phosphorus edition tutorial.
+
+:1=エリウッド編チュートリアルでの死亡セリフ
+1=Death line in Eliwood Hen Tutorial.
 
 :変化データポインタ
 Change data pointer
@@ -2328,9 +2358,6 @@ Events added with this template
 
 :テンプレートを選択してください
 Please select a template
-
-:セリフ
-Serif
 
 :イベント会話グループ
 Event conversation group
@@ -2533,35 +2560,17 @@ To make an item fall on FE 7, enable the bit of the drop item of characteristic 
 :標的と回復AI
 Target AI
 
-:00=標的00
-00=Target 00
-
-:08=標的08
-08=target 08
-
-:10=標的10
-10=Target 10
-
-:18=標的18
-18=target 18
-
-:20=標的20
-20=target 20
-
-:28=標的28
-28=target 28
-
 :00=50%以下で回復モード、100%回復したら戻る
-00=Recovery mode when HP 50% or less, return after HP 100%
+00=Recovery mode when HP 50%, return HP 100%
 
 :01=30%以下で回復ﾓｰﾄﾞ、80%以上回復したら戻る
-01=Recovery mode when HP 30% or less, return after HP 80% or more
+01=Recovery mode when HP 30%, return HP 80%
 
 :02=10%以下で回復ﾓｰﾄﾞ、50%以上回復したら戻る
-02=Recovery mode when HP 10% or less, return after HP 50% or more
+02=Recovery mode when HP 10%, return HP 50%
 
 :03=80%以下で回復ﾓｰﾄﾞ、100%回復したら戻る
-03=Recovery mode when HP 80% or less, return after HP 100%
+03=Recovery mode when HP 80%, return HP 100%
 
 :04=回復モードにならない
 04=Not in recovery mode
@@ -2644,15 +2653,6 @@ It is not possible to erase all the coordinates of the unit.
 :ユニット配置で、自軍のユニットID({0})が重複して書かれています。\r\n進撃開始に利用する自軍配置以外で、このような書き方をするのは極めてまれです。\r\nユニットの所属を友軍か敵軍と間違えてませんか？\r\n自軍の場合、同一ユニットIDは、一つのユニットにまとめられます。
 Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare to do this kind of writing other than arranging your army to use for starting the attack.\r\nHave you mistaken the affiliation of the unit as a friendly or enemy army?\r\nIn the case of your army, the same unit ID is grouped into one unit.
 
-:/60秒
-/60sec
-
-:0=普通
-0=Normal
-
-:1=鈍足
-1=Heavy Steps
-
 :特殊:
 Special:
 
@@ -2661,6 +2661,15 @@ After Moving
 
 :配置後座標格納アドレス
 Post-place coordinate storage
+
+:/60秒
+/60sec
+
+:0=普通
+0=Normal
+
+:1=鈍足
+1=Heavy Steps
 
 :アイテムドロップする
 Drop item
@@ -2688,6 +2697,33 @@ New Assignment
 
 :エクストラユニット
 Extra unit
+
+:FE8SpellMagic: GaidenStyleパッチがインストールされていません。
+FE8SpellMagic: GaidenStyle patch is not installed.
+
+:レベルアップで取得する魔法の先頭アドレス
+Beginning address of magic to get at level up.
+
+:レベル
+Level
+
+:上級職のみ
+Only Promoted.
+
+:領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
+Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
+
+:選択クラスの分離独立
+Separate independence of selected classes
+
+:このテーブルは、複数のクラスで参照されています。
+This table is referenced in more than one class.
+
+:習得レベル
+Level of acquisition
+
+:魔法
+magic.
 
 :イベント「{0}」 存在しないラベル「{1}」へジャンプしています。
 Event "{0}" Jumping to nonexistent label "{1}".
@@ -2899,9 +2935,6 @@ Image Address
 :幅/8
 Width / 8
 
-:圧縮画像No
-Compressed image No
-
 :画像が利用している16色パレットの個数
 Number of Palettes Image Uses
 
@@ -2958,6 +2991,9 @@ Reverse
 
 :リトルエンディアン
 Little Endian
+
+:4バイト単位
+4 byte units.
 
 :バイナリエディタ - 検索
 Hex Editor Search
@@ -3075,15 +3111,6 @@ Weapon type
 
 :アニメ番号
 Animation ID
-
-:領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
-Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
-
-:選択クラスの分離独立
-Separate independence of selected classes
-
-:このテーブルは、複数のクラスで参照されています。
-This table is referenced in more than one class.
 
 :エディタ
 Editor
@@ -3285,6 +3312,9 @@ Attempted to maintain TSA but could not get original TSA
 
 :画像の読み込みに失敗しました。\r\n\r\n{0}
 Failed to load image.\r\n\r\n{0}
+
+:PNG|*.png|アニメGIF|*.gif|All files|*
+PNG|*.png|Anime GIF|*.gif|All files|*
 
 :拡張パッチがインストールされているため、この設定は利用できません。パッチの方から修正してください。
 This setting can not be used because the extended patch is installed.Please correct from the patch side.
@@ -3544,6 +3574,18 @@ Behavior range Tile color
 :BADステータス
 BAD status
 
+:ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。
+The background of the status screen is in the patch.\r\nPlease click here.
+
+:他の画像
+Other images.
+
+:ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
+Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
+
+:パッチにもない場合は、未発見の画像である可能性があります。\r\nその場合は、グラフィックツールから探してください。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> グラフィックツール、を選択してください。
+If there is no patch, it may be an undiscovered image.\r\nIn that case, please search from the graphic tool.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Graphic Tools.
+
 :システムアイコン
 System Icon
 
@@ -3598,6 +3640,9 @@ Export AP
 :移動アイコン
 Moving Map Anime
 
+:チェックされている場合、敵やNPCの時のパレットにも同じパレットに設定します。\r\nこのパレットを利用するユニットが、自軍以外で登場する場合は、それぞれのパレットも用意する必要があります。\r\n例えば、敵軍として登場する場合は、敵軍用のパレットを用意する必要があります。\r\nこのチェックがされている場合、自動的にそれらのパレットにも同じ値を設定します。
+If checked, the enemy and NPC's palettes will also be set to the same palette.\r\nIf units using this pallet appear outside of palyer army, you will need to prepare each pallet as well.\r\nFor example, if the unit appear as an enemy army, you need to prepare a palette for the enemy army.\r\nIf this check is done, automatically set the same value to those palettes.
+
 :パレット領域が割り当てられていません。\r\nまずは、「新規パレット割り当て」ボタンを押して領域を確保してください。
 Palette area has not been allocated.\r\nFirst, please press the "New Palette Assessment" button to allocate the area.
 
@@ -3624,6 +3669,9 @@ Classes Using This Palette:
 
 :ポインタ
 Pointer
+
+:敵とNPC、グレーも同じ色に設定する
+Set the enemy, NPC, and gray to the same color.
 
 :独立
 Independence
@@ -3790,8 +3838,14 @@ An error occurred.\r\nFile:{0}line: {1}\r\n\r\nError:\r\n{2}
 :アニメーションが途中で終ってしまいました。\r\nアニメーションはモード12まで必要です。\r\nこのファイルにはモード({0})までしかありません。\r\n\r\n戦闘アニメーションには、1,3,5,6,7,8,9,10,11,12 のモードが必要です。\r\nおそらく、どれかのモードが欠落しています。\r\nすべてのモードが正しく書かれているか、確認してください。\r\n
 The animation ended prematurely.\r\nAnimation is required until mode 12.\r\nThere is only mode ({0}) in this file.\r\n\r\nBattle animation requires 1, 3, 5, 6, 7, 8, 9, 10, 11, 12 modes.\r\nProbably, one of the modes is missing.Please make sure all modes are written correctly.\r\n
 
-:このアニメーションは、あまりに巨大です。消費OAMデータ{0}バイト\r\nGBAは携帯機なので利用できるメモリには限界があります。\r\n正常に動作しない可能性があります。\r\n処理を続行してもよろしいですか？\r\n
-This animation is too large and consumes OAM data {0} bytes.\r\nSince GBA is a portable device, memory available is limited.\r\nIt may not work properly.\r\nContinue anyway?\r\n
+:GBAは携帯機なので利用できるメモリには限界があります。\r\n正常に動作しない可能性があります。\r\n処理を続行してもよろしいですか？\r\n
+Since GBA is a portable device, there is a limit to the available memory.\r\nIt may not work properly.\r\nAre you sure you want to proceed? \r\n
+
+:このアニメーションは、あまりに巨大です。\r\n消費OAMデータ{0}バイト\r\n限界OAMサイズ{1}バイト\r\n
+This animation is too huge.\r\nConsumed OAM data {0} bytes.\r\nLimit OAM size {1} bytes.\r\n
+
+:このアニメーションは、あまりに巨大です。\r\n消費フレームデータ{0}バイト\r\n限界フレームサイズ{1}バイト\r\n
+This animation is too huge.\r\nConsumed frame data {0} bytes.\r\nLimit frame size {1} bytes.\r\n
 
 :このスクリプトには、 C26命令が含まれています。\r\nこの命令があると正しくインポートできません。\r\nC26命令をコメントアウトしてから再インポートすることをお勧めします。\r\n\r\nそれでも、インポート処理を続行してもよろしいですか？
 This script contains C26 instructions.\r\nThis command can't be imported correctly.\r\nIt is recommended to comment out the C26 instruction and re-import.\r\n\r\nProceed without doing this?
@@ -4807,90 +4861,6 @@ To shrink the list, please set all three items to 00 and put a terminal symbol.
 :アイテム間接エフェクトポインタテーブル
 Indirect effect pointer table
 
-:武器Sボーナス
-Weapon S Rank Bonus
-
-:きずぐすりの回復量とかはパッチの方にあります。
-The amount healed by Vulnarary is located in the patch.
-
-:武器Sボーナス 項目2の値
-Weapon S Value of Bonus Item 2
-
-:武器Sボーナス 項目2
-Weapon S Bonus Item 2
-
-:武器Sボーナス 項目1の値
-Weapon S Value of Bonus Item 1
-
-:武器Sボーナス 項目
-Weapon S Bonus Item
-
-:武器レベルSになれる武器経験値
-WEXP for S Rank
-
-:神器フラッシュ
-Sacred Flash
-
-:もし、使用武器アイテムIDが・・・・・
-If the equipped weapon item ID is ...
-
-:-> 神器ではない
--> Not Sacred Treasure
-
-:-> 神器である
--> Sacred Treasure
-
-:条件4
-Condition 4
-
-:条件3
-Condition 3
-
-:条件2
-Condition 2
-
-:条件1
-Condition 1
-
-:アイテムその他
-Sacred Weapons
-
-:-> 条件6へ
-->To Condition 6
-
-:条件10
-Condition 10
-
-:条件9
-Condition 9
-
-:条件8
-Condition 8
-
-:条件7
-Condition 7
-
-:条件6
-Condition 6
-
-:条件5
-Condition 5
-
-:-> 条件7へ
-->To Condition 7
-
-:神器特効係数
-Sacred Effectiveness
-
-:-> 2倍特効
--> 2x Effectiveness
-
-:-> 3倍特効
--> 3x Effectiveness
-
-:-> 条件5へ
--> Go to Condition 5
-
 :間接エフェクト Jump
 Edit Magic Animations
 
@@ -4902,9 +4872,6 @@ Effect
 
 :ダメージ追加効果
 Damage Ddditional Effect
-
-:レベル
-Level
 
 :進撃準備店
 Preparation Price
@@ -5269,9 +5236,6 @@ Save
 :別名保存
 Save As
 
-:エラーがなければ上書き保存
-Save If NoError
-
 :UPS差分で保存
 Save As UPS Patch
 
@@ -5359,6 +5323,9 @@ Settings
 :オプション
 Options
 
+:初期設定ウィザード
+Initial setup wizard.
+
 :バージョン
 Version
 
@@ -5388,6 +5355,9 @@ Tileset Palette
 
 :マップエディタ
 Map Editor
+
+:ユニットアクションポインタ
+Unit action pointer.
 
 :OPクラス紹介英語表記
 OP Class Reel English Names
@@ -5461,9 +5431,6 @@ Simple Menu
 :地形設定
 Terrain Editor
 
-:ユニットアクションポインタ
-Unit action pointer.
-
 :詳細メニュー
 Advanced Editors
 
@@ -5478,6 +5445,9 @@ Class Reel Editor
 
 :個別アニメ
 Individual Animation
+
+:部隊メニュー
+UnitsMenu
 
 :ゲームオプションの順番
 Order of Game Option
@@ -5532,6 +5502,9 @@ Road Movement Editor
 
 :ソングトラック
 Song Track
+
+:外伝風の魔法拡張
+Gaiden-style Spell
 
 :ワールドマップBGM
 World Map BGM
@@ -6127,6 +6100,18 @@ Menu
 :FELint内部エラー
 FELint internal error
 
+:テキストID システム予約
+Text ID System reservation.
+
+:テキストID ユーザ定義
+Text ID User defined.
+
+:会話グループ
+Conversation group
+
+:分岐拡張
+Branch extension.
+
 :このエラーは非表示になっています。理由:「{0}」
 This error is hidden.Reason: "{0}".
 
@@ -6348,6 +6333,9 @@ Could not write address ({1}) to PLIST ({0})
 
 :マップ変化に割り当てを拒否されました。MAPID:{0}
 The Tile Changes was refused assignment.MAPID: {0}.
+
+:現在マップエディタで表示されているマップの、タイル変化データが変更されました。\r\n作成中のマップを無視して、再読み込みしてもよろしいですか？\r\n\r\n「はい」の場合は、再読み込みします。\r\n「いいえ」の場合は、何もしません。自分でマップエディタを閉じて、再読み込みしてください。
+The tile change data of the map currently displayed in the map editor has changed.\r\nAre you sure you want to ignore the map you are creating and reload it? \r\n\r\nIf "Yes\\r\nIf "No\Close the map editor yourself and reload.
 
 :サイズ変更
 Resize
@@ -7357,6 +7345,9 @@ Location Name
 :タイルアニメーション1:{0}
 Tile animation 1: {0}
 
+:(破損)
+(Corruption).
+
 :マップアニメ1|*.mapanime1.txt|All files|*
 Map animation 1 | *.mapanime 1.txt | All files | *.
 
@@ -7900,6 +7891,9 @@ Open directory location
 :関連付けされたアプリケーションで開く
 Open with associated application
 
+:auto=自動判別
+auto=Automatic
+
 :最新版は{0}です。
 The latest version is {0}.
 
@@ -7932,9 +7926,6 @@ When it seems to be out of range,\r\nDecide whether to automatically reject, iss
 
 :ファイルをエクスポートした後に、\r\nそのファイルがある場所をエクスプローラで開いて選択するかどうかを決定します
 After exporting the file,\r\nDecide whether to open the location where that file is located in Explorer and select it
-
-:VBA-MでQSをした後で、エミュレータを終了すると、\r\n最後に実行していたイベントのある場所へ自動的にジャンプします。
-When QS is done with VBA-M and then the emulator is terminated,\r\nIt jumps automatically to the place where the event which was last executed is located.
 
 :既存の改造ROMを開くときの設定です。\r\n通常はオフにしてください。\r\n他の改造ツールで作られた既存ROMを開くときだけ利用してください。\r\n\r\nFEditorは、アドレスの枠外(開始アドレス-4)にデータの個数を書き込みます。\r\nこの値を参考にするかどうかを決定します。
 This is setting when opening an existing modified ROM.\r\nNormally turn it off.\r\nPlease use it only when opening an existing ROM made with another remodeling tool.\r\n\r\nFEditor writes the number of data to the outside of the address (start address -4).\r\nDecide whether to refer to this value.
@@ -7986,6 +7977,9 @@ In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlea
 
 :パス
 Path
+
+:警告: Event Assemblerのバージョンが古いです。
+Warning: Event Assembler version is outdated.
 
 :Ctrl+F5キーを押すと、このエミュレータを起動して、デバッグを行います。
 Press Ctrl + F5 to start up this emulator and debug.
@@ -8326,17 +8320,8 @@ Automatic conversion of single/double-byte space
 :エミュレータへ自動接続
 Emulator Debugger Settings
 
-:0=ジャンプしない
-0=Do not jump.
-
-:1=ジャンプする
-1=Enable Jump
-
 :範囲外書き込みについて
 Out of Range Options
-
-:VBA-MでQSすると、自動ジャンプ
-QS in VBA-M, Automatic Jump
 
 :0=警告も何もしない(推奨しません)
 0=Disable Out of Range User Warnings (Not Recommended)
@@ -8452,26 +8437,23 @@ File Export Settings
 :保存
 Save
 
-:警告: Event Assemblerのバージョンが古いです。
-Warning: Event Assembler version is outdated.
-
 :その他ROM直値テキスト
 Other ROM Direct Text
 
 :このROMには、エラーがありますが、保存してもよろしいですか？
 There is an error in this ROM, are you sure to save it?
 
-:現在の内容を以下のファイルに書き込んでもよろしいですか？\t\t
-Are you sure to write the current contents to the following file? 
-
 :ヒント
 Tips
 
-:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。
-Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".
-
 :はい
 Yes
+
+:エラーを表示
+Show error.
+
+:ROMに書き込まなくても、F5キーを押すと、テストプレイできます。\r\nROMのバックアップは、ROMと同じディレクトリに日付形式で保存されます。\r\n\r\nこのメッセージを表示しないためには、検出されているエラーを修正してください。\r\nまたは、設定で、「上書き時の簡易チェック」を「チェックしない」にしてください。\r\n\r\n解決できないエラーに困っている場合は、report7zを作成してコミニティに相談してください。
+Even if you do not write to ROM, you can test play by pressing F5 key.\r\nROM backups are saved in date format in the same directory as ROM.\r\n\r\nIn order not to display this message, correct the detected error.\r\nOr, in the setting, when you save overwrite, set "Simple check at overwrite" to "Do not check".\r\n\r\nIf you are in trouble with an unresolvable error,create report7z and consult with the community.
 
 :リセット
 Reset
@@ -8517,6 +8499,9 @@ Unable to decompress lz 77 palette.
 
 :パレットを解凍できません.
 Unable to decompress the palette.
+
+:無圧縮パレットなので、すべて同じパレットにすることはできません。
+It is an uncompressed palette, so it can not all be the same palette.
 
 :R:{0}, G:{1}, B:{2} (現在選択中)
 R:{0}, G:{1}, B:{2} (Currently selected)
@@ -8649,6 +8634,9 @@ This patch changes the text so you need the Anti-Huffman patch before installing
 
 :不明なキーワードです : {0}
 Unknown Keyword: {0}
+
+:32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}
+You can not allocate more than 32MB (0x02000000).\r\nRequested size: {0}.
 
 :コピー先アドレスの指定が正しくありません dest:{0}
 Copy destination address specification incorrectdest: {0}
@@ -8944,6 +8932,12 @@ GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, 
 :System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
 
+:System.OutOfMemoryExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+A System.OutOfMemoryException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+
+:例外が発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
+Exception occured.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.
+
 :警告
 Alert
 
@@ -9033,9 +9027,6 @@ Skill enhancement SkillSystem's level up skill can't be acquired.
 
 :(Lv{0}で習得)
 (Learned with Lv {0})
-
-:習得レベル
-Level of acquisition
 
 :レベルアップで取得するスキルの先頭アドレス
 Leading address of skill to acquire in level up
@@ -9328,14 +9319,26 @@ Classification.
 :この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？
 Are you sure you want to port this music ({0}) to (1) in ROM?
 
+:この曲のデータ構造は壊れているようです。\r\nインポートを強行しますか？\r\n強行する場合は、正しく認識できたトラックのみをインポートします。
+The data structure of this song seems to be broken.\r\nDo you want to force import? \r\nIf you want to force, only the tracks that were recognized correctly will be imported.
+
+:この曲のデータ構造は壊れているため、Rip出来ませんでした。
+I could not Rip because the data structure of this song is broken.
+
 :データサイズを({0})確保できません。\r\nROM容量がもうないか、音楽のパースに失敗しています。
 Unable to secure data size ({0}).\r\nThere was an error parsing the music because there is no ROM capacity anymore.
 
-:Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n
-There was also Multi or Drum in Multi or Drum.\r\nIgnoring such complicated things can't be dealt with.\r\n
+:DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size
+There was strange data in DirectSound.I will ignore it.sample_location: {0}> {1} ROM Size.
 
 :Multi または Drumの中に、おかしなデータがありました。無視します。 OverHZ Sample:{0} bytes ({1} *1024 hz)
 There was strange data in Multi or Drum. It has been removed from song.OverHZ Sample: {0} bytes ({1} * 1024 hz).
+
+:MultiSampleの中に、おかしなデータがありました。無視します。 multisample_voices:{0} sample_location:{1} > {2} ROM Size
+There was strange data in MultiSample.I will ignore it.multisample_voices: {0} sample_location: {1}> {2} ROM Size.
+
+:Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n
+There was also Multi or Drum in Multi or Drum.\r\nIgnoring such complicated things can't be dealt with.\r\n
 
 :<---------\r\n選択した曲を\r\n移植する\r\n<---------
 <---------\r\nImport the\r\nselected song\r\n<---------
@@ -9424,8 +9427,8 @@ Drum Set
 :警告\r\nマップで再生する音楽は、SongTableのPriority(PlayerType)で、0x00010001を指定する必要があります。\r\n現在の設定:{0}
 Alert\r\nMusic to be played on the map must be Priority (PlayerType) of SongTable and 0x00010001 must be specified.\r\nCurrent setting: {0}
 
-:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00060006または、0x00070007を指定する必要があります。\r\n現在の設定:{0}
-Alert\r\nFor music to be used for sound effect, Priority (PlayerType) of SongTable, 0x00060006 or 0x00070007 must be specified.\r\nCurrent setting: {0}
+:警告\r\n効果音で利用する音楽は、SongTableのPriority(PlayerType)で、0x00030003より大きい値を指定する必要があります。\r\n現在の設定:{0}
+Alert\r\nMusic used for sound effects needs to specify a value greater than 0x00030003 in Priority (PlayerType) of SongTable.\r\nCurrent setting: {0}.
 
 :曲を構成する楽器テーブルを表示します。\r\n通常は気にする必要はありません。開発者向けの機能です。
 Displays the instrument table that composes songs.\r\nNormally this doesn't need to be edited.\r\nUseful for developers.
@@ -9835,6 +9838,30 @@ Left RMenu Pointer
 :右 RMenuPointer
 Right RMenu Pointer
 
+:参照データ
+Reference data.
+
+:順番
+In order.
+
+:00=標的00
+00=Target 00
+
+:08=標的08
+08=target 08
+
+:10=標的10
+10=Target 10
+
+:18=標的18
+18=target 18
+
+:20=標的20
+20=target 20
+
+:28=標的28
+28=target 28
+
 :ユニット依存
 Unit Dependent
 
@@ -10090,6 +10117,9 @@ Warning:\r\nThere is {0} even though it is a system message.
 :警告:\r\n{0}行メッセージなのに{1}があります。
 Warning:\r\nThere is a {0} line message but {1}.
 
+:現在、参照されているテキストを分岐中です。\r\n分岐処理が終わってから再度実行してください。
+Currently, the text being referenced is being branched.\r\nPlease execute again after the branch processing is completed.
+
 :話す人:
 Talk:
 
@@ -10129,11 +10159,14 @@ New Addition
 :ソーステキスト
 Source Text
 
+:未参照の空き領域の探索
+Search for\r\nunreferenced free space
+
 :ID テキスト
 ID Text
 
 :検索ワード
-Search Word
+Search
 
 :すべてのテキストをファイルに取り出して保存したり、ファイルから読みこむことができます。\r\n文字列の置換を行いたい場合は、この機能を利用してください。
 Use "Export All Text" to save the game's text to a file.\r\nUse "Import All Text" to retrieve all the text from a file.\r\nThis function replaces the designated parts of the text.
@@ -10189,11 +10222,29 @@ Be careful not to overload google translate; please be patient.
 :参照箇所
 Reference place
 
-:この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
-This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
+:参照情報の追加
+Add reference information.
 
 :このテキストを利用している箇所
 Where this text is used
+
+:この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。
+This string doesn't seem to be referenced from anywhere.\r\nIf it is referenced, please enter the information.
+
+:この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
+This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
+
+:参照される場所について説明してください
+Please explain where it is referenced.
+
+:この文字列の参照を追加しますか？
+Do you want to add a reference to this string? 
+
+:参照の更新
+Reference update.
+
+:文字列の参照を追加
+Add string reference.
 
 :テキスト-エスケープコード選択
 Text - Escape code selection
@@ -10567,8 +10618,104 @@ Erase Custom Flag
 :フラグの名前
 Custom Flag Name
 
+:章内で利用しているフラグの確認
+Check the flags used in the chapter.
+
 :フラグに名前設定
 Event Flag Namer
+
+:ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}
+Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfilename: {2}.
+
+:ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
+
+:ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+The downloaded file could not be decompressed.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
+
+:ダウンロードしたファイルに目的のファイルがありません。\r\nPATH:{0}\r\nfindEXE:{1}
+There is no target file in the downloaded file.\r\nPATH: {0}.\r\nfindEXE: {1}.
+
+:ダウンロード先が見つかりませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}\r\npattern:{3}
+The download destination could not be found.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.\r\npattern: {3}.
+
+:既にVB6ランタイムがインストールされているようです。\r\nランタイムインストールを省略しますか？
+It seems that VB6 runtime has already been installed.\r\nDo you want to skip runtime installation? 
+
+:SappyはVB6で書かれているので、ランタイムをインストールする必要があります。\r\nランタイムのインストーラーを起動します。
+Sappy is written in VB6, so you need to install the runtime.\r\nLaunch the runtime installer.
+
+:FEBuilderGBAへようこそ。\r\n\r\nここでは初期設定を行います。\r\n\r\nこのウィザードを使用したくない場合は、このウィンドウを閉じしてください。\r\n再び、実行したい場合は、「メニュー」->「設定」->「初期設定ウィザード」を選択してください。
+Welcome to FEBuilderGBA.\r\n\r\nHere, initial settings are performed.\r\n\r\nClose this window if you do not want to use this wizard.\r\nIf you want to execute again, please select "Menu"-> "Settings"-> "Initial Setup Wizard".
+
+:黒背景
+Black background
+
+:白背景
+White background
+
+:始める
+Start
+
+:戻る
+Return
+
+:mGBAをダウンロードする
+Download mGBA
+
+:または、
+Or
+
+:安定して動作するバージョンのVBA-Mをダウンロードする
+Download the stable version of VBA-M
+
+:エミュレータ:
+Emulator:
+
+:設定して次へ
+Set up and go to the next
+
+:設定しない
+Not set
+
+:最新版のEAをダウンロードする
+Download the latest version of EA
+
+:Sappyを設定しない
+Do not set Sappy
+
+:Sappyをダウンロードする
+Download Sappy
+
+:アセンブラ:
+Assembler:
+
+:最新版を自動的にダウンロードします。
+Download the latest version automatically.
+
+:デバッガー:
+Debugger:
+
+:開発のやり方\r\n\r\n何か変更したら、F5キーを押して、エミュレータを起動します。\r\n動作を確認します。\r\n\r\n期待通りに動作していたら、「メニュー」->「ファイル」->「上書き保存」でセーブします。\r\n\r\nもし、予想外の動作をしていたら、保存せずにFEBuilderGBAを終了してください。\r\nそうすれば、ROMを壊すことなく開発できるでしょう。\r\n\r\nどうしても解決できない問題が発生した場合は、report7zをコミニティに送ってください。\r\nreport7zを作成するには、「メニュー」->「ファイル」->「問題報告ツール」を選択してください。
+Way of development.\r\n\r\nAfter making any changes, press the F5 key to launch the emulator.\r\nCheck the operation.\r\n\r\nIf it works as expected, save it with "Menu" -> "File" -> "Save".\r\n\r\nIf you're doing something unexpected, quit FEBuilderGBA without saving.\r\nThen you can develop without breaking the ROM.\r\n\r\nIf you encounter a problem that you can not solve, send report7z to the community.\r\nTo create report7z, select "Menu" -> "File" -> "Create Report Issue".
+
+:すべての設定が完了しました。
+All settings are complete.
+
+:テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。
+Specify the emulator to use for testing.\r\n\r\nWith FEBuilderGBA, you can press the F5 key to launch and test the emulator.\r\nIf there is no problem in testing with the emulator, writing to ROM is the development method.
+
+:EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。
+Please set EA.\r\nSome patches are written in EA, so you need EA to use them.
+
+:Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。
+Please specify Sappy.\r\nIf you set Sappy, you can watch music with the ♪ button.
+
+:開発環境を設定してください。\r\n開発環境をインストールすると、ASMコードの開発とデバッグができます。
+Please set the development environment.\r\nInstalling a development environment allows you to develop and debug ASM code.
+
+:必要なプログラムのダウンロードと、設定をしています。
+I have downloaded and set the necessary programs.
 
 :解凍する
 Decompress
@@ -10765,26 +10912,17 @@ The size is too big.Please set it to 2MB.\r\nI limit the size so that I can not 
 :どの章でエラーが発生しますか？\r\n問題を再現するためには、どの章で誰が何をすると、どんな問題が発生するのかを知る必要があります。\r\nどの章で問題が発生するかを記載しない人があまりに多いので、項目を追加しました。
 Which chapter does the error occur? \r\nIn order to reproduce the problem, we need to know who will do what and what problems will occur in which chapter.\r\nWe added items because there are too many people who do not mention which chapter a problem occurs.
 
-:始める
-start
+:この機能の説明
+Explanation of this function.
+
+:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
+This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
 :どの章？
 Which chapter? 
 
 :次へ
 next
-
-:戻る
-Return
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
-
-:この機能の説明
-Explanation of this function.
-
-:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
@@ -10798,8 +10936,23 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
 
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
+
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
+
+:過去のバックアップが1つもありません。\r\n過去のバックアップが別名で保存されていますか？\r\n問題が発生ずに、正しく動作するバックアップがある場合は、パスを指定してください。
+There is no past backup.\r\nAre past backups saved under another name? \r\nIf you have a backup that works properly without problems, specify a path.
+
+:過去のバックアップがありません
+There is no past backup.
+
+:savファイルが含まれていないようです。\r\n問題を確実に再現するためには、savファイルが必要です。\r\n対応するsavがある場合は、パスを指定してください。
+The sav file not included.\r\nIn order to reproduce the problem reliably, We need a sav file.\r\nIf there is a corresponding sav, please specify the path.
+
+:savファイルがありません
+There is no sav file.
 
 :ファイル({1})がありません。\r\n行数:{0}\r\n
 File ({1}) is missing.\r\nNumber of rows: {0}\r\n
@@ -11056,9 +11209,6 @@ Test This Version With Emulator
 :このバージョン({0})に戻してもよろしいですか？
 Confirm Revert to This Version ({0})
 
-:会話グループ
-Conversation group
-
 :会話グループを選択してください
 Please select a conversation group
 
@@ -11136,6 +11286,9 @@ Flags used in the chapter.
 
 :アドレス0番地-{1}番地には書き込むことができません。\r\nあなたが書き込もうとしたアドレス:{0}\r\nこの範囲への書き込みは危険です。
 You can not write to address 0-{1}.\r\nThe address you tried to write: {0}.\r\nThe data in this area is fragile and might break the rom.
+
+:書き込もうとしているアドレスが4の倍数でないので、書き込みを拒否します。\r\nあなたが書き込もうとしたアドレス:{0}\r\n4の倍数でないアドレスへの書き込みは、ほぼ間違っています。
+Reject the write because the address you are trying to write is not a multiple of four.\r\nThe address you tried to write: {0}.\r\nWriting to an address that is not a multiple of 4 is nearly incorrect.
 
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.
@@ -11398,6 +11551,12 @@ Select the BGM to play when this World Map Node becomes the next destination.
 :対応するワールドマップイベント({0})が存在しません。
 The corresponding world map event ({0}) doesn't exist.
 
+:エリウッドエンディング
+Eliwood ending
+
+:ヘクトルエンディング
+Hextor ending
+
 :オープニングイベント
 Opening Event
 
@@ -11503,6 +11662,24 @@ The map which is loaded when this location is moved to and a chapter is started.
 :章をクリアした後に行く先を指定します。\r\nエフラム編とエイリーク編では異なる章を指定でき、さらに2つの宛先を指定するためにイベント分岐用フラグを使用できます。\r\n値が0xFFは、「次の章」がないことを意味します。（塔、遺跡、メルカナ海岸に使用）\r\n*マップを何度も訪問できるようにするには（塔や遺跡のように）、 次の値をすべて0xFFにして、 いつでも入れるかどうかの値に、0x03にする必要があります。
 This is the destination which you will go to when ChapterID is completed.\r\nDifferent destinations can be specified for Ephraim and Eirika mode, and Event Conditional Flag can be used to specify 2 more destinations.\r\nA value of 0xFF means there is no "next chapter" (used for Tower, Ruins, extra map Melkaen Coast).\r\n*To make the map able to be visited any number of times (like the Tower or Ruins),\r\n"Next Location" all values must be 0xFF and "Placement Flag" value must be 0x03.
 
+:この座標はカーソルで選択しにくい可能性があります。\r\nカーソルは16ドット単位で移動します。\r\nそのため、16ドットより幅が小さいオブジェクトは、設置位地を調整する必要があります。
+This coordinate may be difficult to select with the cursor.\r\nThe cursor moves in units of 16 dots.\r\nTherefore, objects smaller than 16 dots need to be adjusted.
+
+:0=移動に船を利用しない
+0=Do not use Ship to travel.
+
+:1=移動に船を利用する
+1=Use ship to travel.
+
+:1=モンスターなし
+1=NO Monsters
+
+:2=モンスターが出現可能
+2=Monsters can appear
+
+:3=タワーと遺跡
+3=Tower/Ruins behavior
+
 :0=イベントの時のみ
 0=With Progression Event
 
@@ -11550,21 +11727,6 @@ Map Skirmish Type
 
 :いつでも入れるかどうか
 Placement Flag
-
-:1=モンスターなし
-1=NO Monsters
-
-:2=モンスターが出現可能
-2=Monsters can appear
-
-:3=タワーと遺跡
-3=Tower/Ruins behavior
-
-:0=移動に船を利用しない
-0=Do not use Ship to travel.
-
-:1=移動に船を利用する
-1=Use ship to travel.
 
 :ワールドマップ拠点
 World Map Nodes

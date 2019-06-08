@@ -317,7 +317,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 31);
             this.label9.TabIndex = 83;
-            this.label9.Text = "圧縮画像No";
+            this.label9.Text = "No";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // USE_PALETTE_NUMBER

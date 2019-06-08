@@ -627,7 +627,7 @@ namespace FEBuilderGBA
 
                 if (KeepTSAComboBox.SelectedIndex == 1)
                 {
-                    patch += "KeepTSA=true\r\n";
+                    patch += "KEEPTSA=true\r\n";
                 }
             }
 

@@ -203,7 +203,27 @@ namespace FEBuilderGBA
                 return i;
             }
         }
- 
+
+        public static uint GetPaletteFrameCountLow(byte[] rom, uint frameAddr)
+        {
+            //圧縮されていないデータなので、事故防止のため リミッターをかける.
+            uint addr = frameAddr;
+            uint limitter = addr + 1024 * 1024; //1MBサーチしたらもうあきらめる.
+            limitter = (uint)Math.Min(limitter, rom.Length);
+
+            uint i;
+            for (i = 0; addr < limitter; i++, addr += 2)
+            {
+                uint data = U.u16(rom,addr);
+
+                if (data >= 0xFFFE)
+                {
+                    break;
+                }
+            }
+            return i;
+        }
+
         private void ShowFrameUpDown_ValueChanged(object sender, EventArgs e)
         {
             Draw((int)this.ShowFrameUpDown.Value);
@@ -827,9 +847,7 @@ namespace FEBuilderGBA
                     //利用していないパレットを消す.
                     ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
 
-                    bitmap.Save(Path.Combine(basedir, imagefilename)
-                        , System.Drawing.Imaging.ImageFormat.Png);
-
+                    U.BitmapSave(bitmap, Path.Combine(basedir, imagefilename) );
                     string line = "1" + " " + imagefilename;
                     lines.Add(line);
                 }
@@ -875,8 +893,7 @@ namespace FEBuilderGBA
                         //利用していないパレットを消す.
                         ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
 
-                        bitmap.Save(Path.Combine(basedir, imagefilename)
-                            , System.Drawing.Imaging.ImageFormat.Png);
+                        U.BitmapSave(bitmap, Path.Combine(basedir, imagefilename));
 
                         animeHash[id] = bitmap;
                     }
@@ -885,7 +902,7 @@ namespace FEBuilderGBA
                     lines.Add(line);
                 }
             }
-            File.WriteAllLines(filename, lines);
+            U.WriteAllLinesInError(filename, lines);
         }
 
         class anime

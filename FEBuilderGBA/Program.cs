@@ -78,6 +78,8 @@ namespace FEBuilderGBA
                 WelcomeForm f = (WelcomeForm)InputFormRef.JumpFormLow<WelcomeForm>();
                 if (Program.ROM == null)
                 {//ROMが読み込めない場合、welcomeダイアログを出す.
+                    WelcomeForm.CheckInitWizard();
+
                     f.ShowDialog();
                     if (Program.ROM == null)
                     {//それでもROMが読み込めない場合、終了.
@@ -111,8 +113,6 @@ namespace FEBuilderGBA
             }
             while (Program.doReOpen); //メインフォームを作り直すためループにする.
 
-            //設定の保存.
-            Program.Config.Save();
             //キャッシュスレッドが動いていたら止める
             if (AsmMapFileAsmCache != null)
             {
@@ -406,9 +406,10 @@ namespace FEBuilderGBA
             //イベント条件の解釈リスト
             EventCondForm.PreLoadResource(U.ConfigDataFilename("eventcond_"));
 
-            //AI1 と 2
+            //AI1 と 2, 3
             EventUnitForm.PreLoadResourceAI1(U.ConfigDataFilename("ai1_"));
             EventUnitForm.PreLoadResourceAI2(U.ConfigDataFilename("ai2_"));
+            EventUnitForm.PreLoadResourceAI3(U.ConfigDataFilename("ai3_"));
 
             //SondEffectリスト
             SongTableForm.PreLoadResource(U.ConfigDataFilename("sound_"));
@@ -438,9 +439,11 @@ namespace FEBuilderGBA
             //RAM
             ReBuildRAM();
 
-            if (fullfilename != "")
+            if (fullfilename != ""
+                && fullfilename != Program.Config.at("Last_Rom_Filename"))
             {//最後に開いたファイル名を保存する.
                 Program.Config["Last_Rom_Filename"] = fullfilename;
+                Program.Config.Save();
             }
             Log.Notify("InitSystem:Complate");
         }
@@ -465,6 +468,19 @@ namespace FEBuilderGBA
 
         public static void ReLoadSetting()
         {
+            if (Program.ROM == null)
+            {//ROMを読込んでいない場合は、システムの初期化だけ行う
+
+                //システム側のテキストエンコード いかにしてUnicodeにするかどうか.
+                ReBuildSystemTextEncoder();
+
+                //多言語切り替え
+                ReLoadTranslateResource();
+
+                return;
+            }
+
+
             if (AsmMapFileAsmCache != null)
             {
                 //探索スレッドが動いているとまずいので停止させる.
@@ -499,6 +515,7 @@ namespace FEBuilderGBA
         static void ReLoadEventScript()
         {
             FlagCache = new EtcCacheFLag();
+            UseTextIDCache = new EtcCacheTextID();
             LintCache = new EtcCache("lint_");
             CommentCache = new EtcCache("comment_");
             ExportFunction = new ExportFunction();
@@ -576,6 +593,7 @@ namespace FEBuilderGBA
         public static SystemTextEncoder SystemTextEncoder { get; private set; }
         public static LastSelectedFilename LastSelectedFilename { get; private set; }
         public static Mod Mod { get; private set; }
+        public static EtcCacheTextID UseTextIDCache { get; private set; }
         public static EtcCacheFLag FlagCache { get; private set; }
         public static EtcCache LintCache { get; private set; }
         public static EtcCache CommentCache { get; private set; }

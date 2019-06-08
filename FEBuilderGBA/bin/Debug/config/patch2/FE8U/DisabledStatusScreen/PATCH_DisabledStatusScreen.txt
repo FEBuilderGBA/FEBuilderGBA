@@ -1,0 +1,23 @@
+NAME=ステータス表示を抑制するクラスを複数定義する
+TYPE=STRUCT
+TAG=#ENGINE
+
+//既に適応されたかどうか
+IF:0x1C92C=0x00 0x4B 0x18 0x47
+AUTHOR=7743
+
+//データへのポインタ
+POINTER=$FGREP4END DisabledStatusScreen.dmp
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数00が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+LISTNAME=$B0:CLASS
+
+//データを定義します
+B0:CLASS=Class
+NAME.en=Define multiple classes to suppress status display.
+NAME.zh=定义多个类以禁止状态显示。

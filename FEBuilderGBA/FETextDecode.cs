@@ -275,9 +275,9 @@ namespace FEBuilderGBA
                         return "";
                     }
                     if (this.ROM.u32(addr + 4) == 0x0)
-                    {
-                        out_DataSize = 0;
-                        return "";
+                    {//終端2
+                        out_DataSize = (int)(addr - addr_start);
+                        return listbyte_to_string(str.ToArray(), str.Count);
                     }
                 }
 
@@ -317,7 +317,6 @@ namespace FEBuilderGBA
                     uint code = data & 0xFFFF;
                     if (code <= 0 || (code & 0xFF) == 0) 
 				    {//終端
-                        //Debug.Assert(code <= 0);
                         out_DataSize = (int)(addr - addr_start);
 					    return listbyte_to_string(str.ToArray(), str.Count);
 				    }

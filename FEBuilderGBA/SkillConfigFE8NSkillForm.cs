@@ -33,6 +33,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false;
 
             this.FilterComboBox.BeginUpdate();
             for (int i = 0; i < this.Pointers.Length; i++)

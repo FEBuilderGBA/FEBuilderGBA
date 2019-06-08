@@ -41,19 +41,23 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveWithLintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.UPSSimpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolProblemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExecuteRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsEmulatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsDebuggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsBinaryEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsSappyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.eventAssembler = new System.Windows.Forms.ToolStripMenuItem();
             this.ASMInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.OpenLastUsedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunAsProgram2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,21 +68,27 @@
             this.PatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GraphicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SongImportOtherROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.lintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DiffDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EmulatorMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.ToolUseFlagStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.FlagNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportEAEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DecreaseColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LZ77ToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TranslateROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.DisassemblerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PointerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingOptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InitWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx5 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.SettingVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnlineHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,6 +153,8 @@
             this.SongTrackButton = new System.Windows.Forms.Button();
             this.SimpleMenuButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.FE8SpellMenuExtendsButton = new System.Windows.Forms.Button();
+            this.StatusUnitsMenuButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.GameOptionOrderButton = new System.Windows.Forms.Button();
@@ -206,21 +218,10 @@
             this.SkillAssignmentClassButton = new System.Windows.Forms.Button();
             this.SkillAssignmentUnitButton = new System.Windows.Forms.Button();
             this.SkillConfigButton = new System.Windows.Forms.Button();
-            this.ItemEtcButton = new System.Windows.Forms.Button();
             this.MainSimpleMenuImageSubButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.toolStripMenuItem1 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripMenuItem2 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripMenuItem4 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripMenuItem5 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripSeparatorEx1 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripSeparatorEx2 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripSeparatorEx3 = new FEBuilderGBA.ToolStripSeparatorEx();
-            this.toolStripSeparatorEx4 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -359,8 +360,6 @@
             this.SaveToolStripMenuItem,
             this.SaveAsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.SaveWithLintToolStripMenuItem,
-            this.toolStripMenuItem2,
             this.UPSSimpleToolStripMenuItem,
             this.ToolProblemReportToolStripMenuItem,
             this.toolStripMenuItem3,
@@ -372,49 +371,57 @@
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.OpenToolStripMenuItem.Text = "開く";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 6);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.SaveToolStripMenuItem.Text = "上書き保存";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.SaveAsToolStripMenuItem.Text = "別名保存";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
-            // SaveWithLintToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.SaveWithLintToolStripMenuItem.Name = "SaveWithLintToolStripMenuItem";
-            this.SaveWithLintToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
-            this.SaveWithLintToolStripMenuItem.Text = "エラーがなければ上書き保存";
-            this.SaveWithLintToolStripMenuItem.Click += new System.EventHandler(this.SaveWithLintToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
             // 
             // UPSSimpleToolStripMenuItem
             // 
             this.UPSSimpleToolStripMenuItem.Name = "UPSSimpleToolStripMenuItem";
-            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.UPSSimpleToolStripMenuItem.Text = "UPS差分で保存";
             this.UPSSimpleToolStripMenuItem.Click += new System.EventHandler(this.UPSSimpleToolStripMenuItem_Click);
             // 
             // ToolProblemReportToolStripMenuItem
             // 
             this.ToolProblemReportToolStripMenuItem.Name = "ToolProblemReportToolStripMenuItem";
-            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.ToolProblemReportToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.ToolProblemReportToolStripMenuItem.Text = "問題報告ツール";
             this.ToolProblemReportToolStripMenuItem.Click += new System.EventHandler(this.ToolProblemReportToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(207, 6);
             // 
             // QuitToolStripMenuItem
             // 
             this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
-            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(318, 32);
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.QuitToolStripMenuItem.Text = "終了";
             this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -466,6 +473,11 @@
             this.RunAsSappyToolStripMenuItem.Text = "Sappyで開く";
             this.RunAsSappyToolStripMenuItem.Click += new System.EventHandler(this.RunAsSappyToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
+            // 
             // eventAssembler
             // 
             this.eventAssembler.Name = "eventAssembler";
@@ -479,6 +491,11 @@
             this.ASMInsertToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
             this.ASMInsertToolStripMenuItem.Text = "ASM/Cで追加";
             this.ASMInsertToolStripMenuItem.Click += new System.EventHandler(this.ASMInsertToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
             // 
             // OpenLastUsedToolStripMenuItem
             // 
@@ -571,6 +588,11 @@
             this.SongImportOtherROMToolStripMenuItem.Text = "別ROMから曲のインポート";
             this.SongImportOtherROMToolStripMenuItem.Click += new System.EventHandler(this.SongImportOtherROMToolStripMenuItem_Click);
             // 
+            // toolStripSeparatorEx1
+            // 
+            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
+            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
+            // 
             // lintToolStripMenuItem
             // 
             this.lintToolStripMenuItem.Name = "lintToolStripMenuItem";
@@ -599,6 +621,11 @@
             this.LogToolStripMenuItem.Text = "ログ";
             this.LogToolStripMenuItem.Click += new System.EventHandler(this.LogToolStripMenuItem_Click);
             // 
+            // toolStripSeparatorEx2
+            // 
+            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
+            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
+            // 
             // ToolUseFlagStripMenuItem6
             // 
             this.ToolUseFlagStripMenuItem6.Name = "ToolUseFlagStripMenuItem6";
@@ -619,6 +646,11 @@
             this.ExportEAEventToolStripMenuItem.Size = new System.Drawing.Size(445, 32);
             this.ExportEAEventToolStripMenuItem.Text = "Event Assemblerでイベントのエクスポート";
             this.ExportEAEventToolStripMenuItem.Click += new System.EventHandler(this.ExportEAEventToolStripMenuItem_Click);
+            // 
+            // toolStripSeparatorEx3
+            // 
+            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
+            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
             // 
             // DecreaseColorToolStripMenuItem
             // 
@@ -648,6 +680,11 @@
             this.TranslateROMToolStripMenuItem.Text = "ROM翻訳ツール";
             this.TranslateROMToolStripMenuItem.Click += new System.EventHandler(this.TranslateROMToolStripMenuItem_Click);
             // 
+            // toolStripSeparatorEx4
+            // 
+            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
+            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
+            // 
             // DisassemblerToolStripMenuItem
             // 
             this.DisassemblerToolStripMenuItem.Name = "DisassemblerToolStripMenuItem";
@@ -666,6 +703,8 @@
             // 
             this.OptionSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingOptionToolStripMenuItem,
+            this.InitWizardToolStripMenuItem,
+            this.toolStripSeparatorEx5,
             this.SettingVersionToolStripMenuItem});
             this.OptionSettingToolStripMenuItem.Name = "OptionSettingToolStripMenuItem";
             this.OptionSettingToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
@@ -674,14 +713,26 @@
             // SettingOptionToolStripMenuItem
             // 
             this.SettingOptionToolStripMenuItem.Name = "SettingOptionToolStripMenuItem";
-            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingOptionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingOptionToolStripMenuItem.Text = "オプション";
             this.SettingOptionToolStripMenuItem.Click += new System.EventHandler(this.SettingOptionToolStripMenuItem_Click);
+            // 
+            // InitWizardToolStripMenuItem
+            // 
+            this.InitWizardToolStripMenuItem.Name = "InitWizardToolStripMenuItem";
+            this.InitWizardToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
+            this.InitWizardToolStripMenuItem.Text = "初期設定ウィザード";
+            this.InitWizardToolStripMenuItem.Click += new System.EventHandler(this.InitWizardToolStripMenuItem_Click);
+            // 
+            // toolStripSeparatorEx5
+            // 
+            this.toolStripSeparatorEx5.Name = "toolStripSeparatorEx5";
+            this.toolStripSeparatorEx5.Size = new System.Drawing.Size(243, 6);
             // 
             // SettingVersionToolStripMenuItem
             // 
             this.SettingVersionToolStripMenuItem.Name = "SettingVersionToolStripMenuItem";
-            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(174, 32);
+            this.SettingVersionToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.SettingVersionToolStripMenuItem.Text = "バージョン";
             this.SettingVersionToolStripMenuItem.Click += new System.EventHandler(this.SettingVersionToolStripMenuItem_Click);
             // 
@@ -1360,6 +1411,8 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.FE8SpellMenuExtendsButton);
+            this.ControlPanel.Controls.Add(this.StatusUnitsMenuButton);
             this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
@@ -1424,7 +1477,6 @@
             this.ControlPanel.Controls.Add(this.SkillAssignmentClassButton);
             this.ControlPanel.Controls.Add(this.SkillAssignmentUnitButton);
             this.ControlPanel.Controls.Add(this.SkillConfigButton);
-            this.ControlPanel.Controls.Add(this.ItemEtcButton);
             this.ControlPanel.Controls.Add(this.MainSimpleMenuImageSubButton);
             this.ControlPanel.Controls.Add(this.UnitButton);
             this.ControlPanel.Controls.Add(this.SimpleMenuButton);
@@ -1499,6 +1551,28 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1630, 758);
             this.ControlPanel.TabIndex = 1;
+            // 
+            // FE8SpellMenuExtendsButton
+            // 
+            this.FE8SpellMenuExtendsButton.Location = new System.Drawing.Point(204, 452);
+            this.FE8SpellMenuExtendsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FE8SpellMenuExtendsButton.Name = "FE8SpellMenuExtendsButton";
+            this.FE8SpellMenuExtendsButton.Size = new System.Drawing.Size(200, 36);
+            this.FE8SpellMenuExtendsButton.TabIndex = 135;
+            this.FE8SpellMenuExtendsButton.Text = "外伝風の魔法拡張";
+            this.FE8SpellMenuExtendsButton.UseVisualStyleBackColor = true;
+            this.FE8SpellMenuExtendsButton.Click += new System.EventHandler(this.FE8SpellMenuExtendsButton_Click);
+            // 
+            // StatusUnitsMenuButton
+            // 
+            this.StatusUnitsMenuButton.Location = new System.Drawing.Point(1426, 491);
+            this.StatusUnitsMenuButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StatusUnitsMenuButton.Name = "StatusUnitsMenuButton";
+            this.StatusUnitsMenuButton.Size = new System.Drawing.Size(200, 36);
+            this.StatusUnitsMenuButton.TabIndex = 134;
+            this.StatusUnitsMenuButton.Text = "部隊メニュー";
+            this.StatusUnitsMenuButton.UseVisualStyleBackColor = true;
+            this.StatusUnitsMenuButton.Click += new System.EventHandler(this.StatusUnitsMenuButton_Click);
             // 
             // UnitActionPointerButton
             // 
@@ -2193,17 +2267,6 @@
             this.SkillConfigButton.UseVisualStyleBackColor = true;
             this.SkillConfigButton.Click += new System.EventHandler(this.SkillConfigButton_Click);
             // 
-            // ItemEtcButton
-            // 
-            this.ItemEtcButton.Location = new System.Drawing.Point(406, 339);
-            this.ItemEtcButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ItemEtcButton.Name = "ItemEtcButton";
-            this.ItemEtcButton.Size = new System.Drawing.Size(200, 36);
-            this.ItemEtcButton.TabIndex = 36;
-            this.ItemEtcButton.Text = "アイテムその他";
-            this.ItemEtcButton.UseVisualStyleBackColor = true;
-            this.ItemEtcButton.Click += new System.EventHandler(this.ItemEtcButton_Click);
-            // 
             // MainSimpleMenuImageSubButton
             // 
             this.MainSimpleMenuImageSubButton.Location = new System.Drawing.Point(1426, 602);
@@ -2247,56 +2310,6 @@
             this.Filter.TabIndex = 0;
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(315, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(315, 6);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(315, 6);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(370, 6);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(370, 6);
-            // 
-            // toolStripSeparatorEx1
-            // 
-            this.toolStripSeparatorEx1.Name = "toolStripSeparatorEx1";
-            this.toolStripSeparatorEx1.Size = new System.Drawing.Size(442, 6);
-            // 
-            // toolStripSeparatorEx2
-            // 
-            this.toolStripSeparatorEx2.Name = "toolStripSeparatorEx2";
-            this.toolStripSeparatorEx2.Size = new System.Drawing.Size(442, 6);
-            // 
-            // toolStripSeparatorEx3
-            // 
-            this.toolStripSeparatorEx3.Name = "toolStripSeparatorEx3";
-            this.toolStripSeparatorEx3.Size = new System.Drawing.Size(442, 6);
-            // 
-            // toolStripSeparatorEx4
-            // 
-            this.toolStripSeparatorEx4.Name = "toolStripSeparatorEx4";
-            this.toolStripSeparatorEx4.Size = new System.Drawing.Size(442, 6);
             // 
             // MainFE8Form
             // 
@@ -2424,7 +2437,6 @@
         private System.Windows.Forms.Button SimpleMenuButton;
         public System.Windows.Forms.Panel ControlPanel;
         private System.Windows.Forms.Button MainSimpleMenuImageSubButton;
-        private System.Windows.Forms.Button ItemEtcButton;
         private System.Windows.Forms.ToolStripMenuItem diffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventAssembler;
         private System.Windows.Forms.Button SkillAssignmentUnitButton;
@@ -2454,7 +2466,6 @@
         private System.Windows.Forms.Button MapTileAnimation2Button;
         private System.Windows.Forms.Button MapTileAnimation1Button;
         private ToolStripSeparatorEx toolStripMenuItem1;
-        private ToolStripSeparatorEx toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem UPSSimpleToolStripMenuItem;
         private ToolStripSeparatorEx toolStripMenuItem3;
         private System.Windows.Forms.Button OAMSPButton;
@@ -2467,7 +2478,6 @@
         private System.Windows.Forms.ToolStripMenuItem DiffDebugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lintToolStripMenuItem;
         private ToolStripSeparatorEx toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem SaveWithLintToolStripMenuItem;
         private ToolStripSeparatorEx toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem ASMInsertToolStripMenuItem;
         private ToolStripSeparatorEx toolStripMenuItem5;
@@ -2519,6 +2529,10 @@
         private System.Windows.Forms.Button ToolUseFlagButton;
         private System.Windows.Forms.ToolStripMenuItem ToolUseFlagStripMenuItem6;
         private System.Windows.Forms.Button UnitActionPointerButton;
+        private System.Windows.Forms.Button StatusUnitsMenuButton;
+        private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
+        private ToolStripSeparatorEx toolStripSeparatorEx5;
+        private System.Windows.Forms.Button FE8SpellMenuExtendsButton;
     }
 }
 

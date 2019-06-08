@@ -1,0 +1,115 @@
+//first we repoint the BWL stuff
+PUSH //let 0x202b6d0 + charnum * 10 = available spells
+
+	ORG $16B2C
+	jumpToHack(NewGetUnitEquippedWeapon)
+	
+	ORG $16B5C
+	jumpToHack(NewGetUnitEquippedWeaponSlot)
+	
+	ORG $2A736
+	SHORT $B4C8 //push {r3, r6, r7}
+	ORG $2A738
+	jumpToHack(NewSetupBattleWeaponData)
+	
+	ORG $2A8D0
+	BYTE $FE $28 //nop the "zero out equipped weapon after battle" ballista check (TODO: fix so doesn't break ballistae)
+
+	ORG $2c1f4
+	jumpToHack(ZeroOutSpellAtBattleEnd)
+
+	ORG $a474c
+	BYTE $70 $47
+	ORG $a478c
+	BYTE $70 $47
+	ORG $a4a34
+	BYTE $70 $47
+
+	ORG $a464c //only save 1 byte when dying (as opposed to 3)
+	BYTE 1
+
+	ORG $a4140
+	SHORT 0 //nop the 0x200000
+
+POP
+
+#define SelectedSpellPointer $0203F080
+//#define SpellAssociationTable $e47180
+
+NewGetUnitEquippedWeapon:
+#incbin "NewGetUnitEquippedWeapon.dmp"
+WORD SelectedSpellPointer
+
+NewGetUnitEquippedWeaponSlot:
+#incbin "NewGetUnitEquippedWeaponSlot.dmp"
+WORD SelectedSpellPointer
+
+NewSetupBattleWeaponData:
+#incbin "NewSetupBattleWeaponData.dmp"
+WORD SelectedSpellPointer
+
+ZeroOutSpellAtBattleEnd:
+#incbin "ZeroOutSpellAtBattleEnd.dmp"
+WORD SelectedSpellPointer
+
+Spells_Getter:
+#incbin "SpellsGetter.dmp"
+POIN SpellAssociationTable
+
+RangeHoverFix:
+#incbin "RangeHoverFix.dmp"
+POIN Spells_Getter
+
+PUSH
+	ORG $1C1F14
+	SpellHoverHelper:
+	#incbin "SpellHoverHelper.dmp"
+	WORD SelectedSpellPointer
+	POIN Spells_Getter
+POP
+
+//add anything with messaging a new spell learn here
+
+//TO DO: show spells on status screen, implement spell learn messaging
+
+
+//define spell menu funcs here
+
+MagicMenuBPress:
+#incbin "MagicMenuBPress.dmp"
+WORD SelectedSpellPointer
+
+SpellUsability:
+#incbin "SpellUsability.dmp" 			//wip - concerned with level at which unit learns spell
+POIN Spells_Getter
+SpellDrawingRoutine:
+#incbin "SpellDrawingRoutine.dmp"		//need to put within BL range
+POIN Spells_Getter
+SpellEffectRoutine:
+#incbin "SpellEffectRoutine.dmp" 		//wip - concerns greying out if not enough HP, etc
+WORD SelectedSpellPointer
+POIN Spells_Getter
+SpellOnHover:
+#incbin "SpellOnHover.dmp" 				//wip
+POIN SpellHoverHelper
+SpellOnUnhover:
+#incbin "SpellOnUnhover.dmp"			//wip 
+WORD SelectedSpellPointer
+#include "spell_menu.event"
+
+NewExitBattleForecast:
+#incbin "NewExitBattleForecast.dmp"
+POIN MagicUMCommandEffect
+WORD SelectedSpellPointer
+
+PUSH
+	ORG $171EC
+	jumpToHack(RangeHoverFix)
+	
+	ORG $59b654
+	POIN (NewExitBattleForecast+1)
+POP
+
+BuildSelectSpellMenu:
+#incbin "BuildSelectSpellMenu.dmp"
+POIN MagicMenuDefs

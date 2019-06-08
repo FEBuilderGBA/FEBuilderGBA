@@ -610,10 +610,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<MainSimpleMenuImageSubForm>();
         }
 
-        private void ItemEtcButton_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ItemEtcForm>();
-        }
 
         private void diffToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -832,11 +828,13 @@ namespace FEBuilderGBA
             if (!Program.ROM.RomInfo.is_multibyte())
             {//クラスの英語表記で別設定があるのは日本語版だけ
                 OPClassAlphaNameButton.Hide();
+                FE8SpellMenuExtendsButton.Show();
             }
             else
             {//日本語版
                 //FE8Nのスキル割り当てはユニットの??領域を使うので専用画面は不要.
                 SkillAssignmentUnitButton.Hide();
+                FE8SpellMenuExtendsButton.Hide();
             }
         }
 
@@ -881,11 +879,6 @@ namespace FEBuilderGBA
         private void lintToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<ToolFELintForm>();
-        }
-
-        private void SaveWithLintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.SaveWithLint(this);
         }
 
         private void ASMInsertToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1056,6 +1049,21 @@ namespace FEBuilderGBA
         private void UnitActionPointerButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<UnitActionPointerForm>();
+        }
+
+        private void StatusUnitsMenuButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusUnitsMenuForm>();
+        }
+
+        private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.RunToolInitWizard();
+        }
+
+        private void FE8SpellMenuExtendsButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<FE8SpellMenuExtendsForm>();
         }
 
     }

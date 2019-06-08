@@ -814,6 +814,10 @@ namespace FEBuilderGBA
             {
                 p.Length = ImageUtil.CalcByteLengthForHeaderTSAData(rom.Data, (int)U.toOffset(pointer));
             }
+            else if (type == "ROMPALETTEANIMEFRAME")
+            {
+                p.Length = ImageRomAnimeForm.GetPaletteFrameCountLow(rom.Data, U.toOffset(pointer)) * 2;
+            }
             else if (type == "PALETTE")
             {
                 p.Length = 0x20;
@@ -864,7 +868,7 @@ namespace FEBuilderGBA
             }
             else if (type == "SECONDARYOAM_ARRAY")
             {
-                p.Length = ScanSECONDARYOAMTable(pointer,p.Name, rom);
+                p.Length = ScanSECONDARYOAMTable(pointer, p.Name, rom);
             }
             else if (type == "CSTRING")
             {
@@ -875,7 +879,7 @@ namespace FEBuilderGBA
             }
             else if (type == "SOUND_85COMMAND_POINTER_ARRAY")
             {
-                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name , rom);
+                p.Length = ScanSOUND85COMMANDPointerTable(pointer, p.Name, rom);
             }
             else if (type == "ASM_POINTER_ARRAY")
             {
@@ -896,6 +900,10 @@ namespace FEBuilderGBA
             else if (type == "ASM")
             {
                 p.Length = 0;
+            }
+            else if (type == "BGCONFIG")
+            {
+                p.Length = 10 * 2;
             }
         }
         public void AppendMAP(List<Address> list,string typeName = "")
@@ -1037,6 +1045,32 @@ namespace FEBuilderGBA
                     continue;
                 }
                 FEBuilderGBA.Address.AddAddress(list, U.toOffset(pair.Key),pair.Value.Length , U.NOT_FOUND, pair.Value.Name + "\t"+pair.Value.ResultAndArgs , Address.DataTypeEnum.POINTER );
+            }
+        }
+        public void MakeTextIDArray(List<UseTextID> list)
+        {
+            List<uint> tracelist = new List<uint>();
+            foreach (var pair in this.AsmMap)
+            {
+                if (pair.Value.Length <= 0)
+                {
+                    continue;
+                }
+
+                if (pair.Value.TypeName == "TEXTBATCH")
+                {
+                    UseTextID.AppendASMDATATextID(list, pair.Value ,U.toOffset(pair.Key), 4);
+                }
+                else if (pair.Value.TypeName == "TEXTBATCHSHORT")
+                {
+                    UseTextID.AppendASMDATATextID(list, pair.Value, U.toOffset(pair.Key), 2);
+                }
+                else if (pair.Value.TypeName == "EVENT")
+                {
+                    uint event_addr = U.toOffset(pair.Key);
+                    string name = pair.Value.Name;
+                    EventCondForm.MakeTextIDArrayByEventAddress(list, event_addr, name, tracelist);
+                }
             }
         }
 
@@ -1322,7 +1356,7 @@ namespace FEBuilderGBA
                 name = name.Replace(",", "");
 
                 uint addr = U.atoi0x(sp[2]);
-                if (sp[0] == "SET_ABS_FUNC")
+                if (sp[0] == "SET_FUNC")
                 {
                     addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
                 }

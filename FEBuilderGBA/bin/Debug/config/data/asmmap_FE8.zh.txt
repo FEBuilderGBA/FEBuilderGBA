@@ -283,7 +283,7 @@
 0807308C	动画释放Mamukuto的转变	{J}
 08070AE4	动画释放Mamukuto的转变	{U}
 08072FBC	处理执行Mamukuto的转换动画	{J}
-08070A16	处理执行Mamukuto的转换动画	{U}
+08070A14	处理执行Mamukuto的转换动画	{U}
 08072F14	通过Mamukuto转换声音开始和完成的处理	{J}
 0807096C	通过Mamukuto转换声音开始和完成的处理	{U}
 08072EA4	Mumukut转变和“攻击”	{J}
@@ -1130,20 +1130,78 @@ r3=X tile position of menu of the right	{U}
 08003E0C	GetStringTextWidth	Returns length of given string as drawn text given current font	r0=String pointer (null terminated ofc)	{J}
 08003EAC	GetStringTextCenteredPos	Returns pos of Text for the given string to be center given arg length	r0=tile width	r1=String pointer	{J}
 08004374	DrawTextInline	Draws text on screen without *needing* a text struct	r0=Text Struct (0 for temporary), r1=Output tile pointer root	r2=color id	r3=local x start	[sp]=tile width	[sp+4]=String pointer	{J}
-@GameData@00	byte	nazo1
-@GameData@01	byte	6C Main 2 Skip Counted	(Main 2 6C Exec will be skipped if this is non 0)
-@GameData@02	byte	nazo2
-@GameData@03	byte	GameData State bitfield	&0x01:? &0x02:? &0x04:? &0x08:? &0x10:? &0x20:? &0x40:When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?) &0x80:?
-@GameData@04	short	VerticalCounter	(IOReg:04000006) state at the end of the last main loop iteration
-@GameData@0C	word	Current Real Camera Pos?
-@GameData@10	word	nazo3
-@GameData@14	word	Target Map Camera Pos?
-@GameData@18	word	nazo4
-@GameData@1C	word	Another Real Camera Pos?
-@GameData@20	word	ANOTHER Real Camera Pos.
-@GameData@24	word	Some Real Camera *Offset* (Used When Setting Up Backgrounds)
-0202BCB0	@GameData	GameData	{U}
-0202BCAC	@GameData	GameData	{J}
+
+@AiDecision@00	byte	decisionType;
+@AiDecision@01	byte	unitIndex
+@AiDecision@02	byte	xMovement
+@AiDecision@03	byte	yMovement
+@AiDecision@04	byte	pad_04
+@AiDecision@05	byte	pad_06
+@AiDecision@06	byte	unitTargetIndex
+@AiDecision@07	byte	usedItemSlot
+@AiDecision@08	byte	xOther
+@AiDecision@09	byte	yOther
+@AiDecision@0A	byte	decisionTaken
+
+@AiData@00	byte	aiUnits
+@AiData@74	byte	aiUnitIt
+@AiData@78	byte	cpOrderNext
+@AiData@79	byte	cpDecideNext
+@AiData@7A	byte	dangerMapActive
+@AiData@7B	byte	aiConfig
+@AiData@7C	byte	_pad7C
+@AiData@85	byte	highestBlueMov
+@AiData@86	byte	_pad86
+@AiData@90	&AiDecision	decision
+
+@BattleHit@00	word	attributes_info_hpChange
+
+@ActionData@00	short	_u00
+@ActionData@06	short	unk6
+@ActionData@08	short	unk8
+@ActionData@0A	short	unkA
+@ActionData@0C	byte	subjectIndex
+@ActionData@0D	byte	targetIndex
+@ActionData@0E	byte	xMove
+@ActionData@0F	byte	xMove
+@ActionData@10	byte	moveCount
+@ActionData@11	byte	unitActionType
+@ActionData@12	byte	itemSlotIndex
+@ActionData@13	byte	xOther
+@ActionData@14	byte	yOther
+@ActionData@15	byte	trapType
+@ActionData@16	byte	suspendPointType
+@ActionData@18	&BattleHit	scriptedBattleHits
+@ActionData@1C	byte	_Unk1C
+
+@Vec2@00	short	x
+@Vec2@02	short	y
+@Vec2l@00	word	x
+@Vec2l@04	word	y
+@Vec2u@00	short	x_unsigned
+@Vec2u@02	short	y_unsigned
+@Vec2lu@00	word	x_unsigned
+@Vec2lu@04	word	y_unsigned
+
+@BattleMapState@00	byte	boolMainLoopEnded
+@BattleMapState@01	byte	proc2LockCount
+@BattleMapState@02	byte	gfxLockCount
+@BattleMapState@03	byte	_unk03
+@BattleMapState@04	byte	statebits
+@BattleMapState@06	short	savedVCount
+@BattleMapState@08	word	_unk08
+@BattleMapState@08	@Vec2u	cameraRealPos
+@BattleMapState@0C	@Vec2u	cameraRealPos
+@BattleMapState@10	@Vec2u	_unk10
+@BattleMapState@14	@Vec2u	cursorMapPos
+@BattleMapState@18	@Vec2u	cursorMapPosPrev
+@BattleMapState@1C	@Vec2u	_unk1C
+@BattleMapState@20	@Vec2u	cursorDisplayRealPos
+@BattleMapState@24	@Vec2u	_unk24
+@BattleMapState@28	byte	_pad28
+@BattleMapState@3c	byte	_pad3c
+@BattleMapState@3d	byte	partialActionTaken
+
 @KeyStatusBuffer@00	byte	FirstTickDelay
 @KeyStatusBuffer@01	byte	NextTickDelay
 @KeyStatusBuffer@02	byte	TickDownCounter	(decreased by one each frame, reset to FirstTickDelay when Presses change and NextTickDelay when reaches 0)
@@ -1236,22 +1294,22 @@ r3=X tile position of menu of the right	{U}
 @MapSize@2	short	Height
 0202E4D4	@MapSize	MapSize	{U}
 0202E4D0	@MapSize	MapSize	{J}
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
-0203A4D4	@AttackerBattleStruct	AttackerBattleStruct	{U}
-0203A4D0	@AttackerBattleStruct	AttackerBattleStruct	{J}
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
-0203A5EC	@DefenderBattleStruct	DefenderBattleStruct	{U}
-0203A5E8	@DefenderBattleStruct	DefenderBattleStruct	{J}
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
+0203A4D4	@BattleStats	BattleStats	{U}
+0203A4D0	@BattleStats	BattleStats	{J}
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
 @ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
@@ -1395,7 +1453,6 @@ r3=X tile position of menu of the right	{U}
 08019108	Get_Char_Data	Given the allegiance byte (0xB in unit data), returns the beginning of said data. Used for looping through units.	RET=RAM character data pointer	r0=allegiance byte	{J}
 08018D4C	checks if character is riding a ballista and what the weather is	Usually called before calling 1A4CC, this function checks if character is riding a ballista and what the weather is.	movement cost table entry	r0=ram char data ptr	{U}
 08018A60	checks if character is riding a ballista and what the weather is	Usually called , this function checks if character is riding a ballista and what the weather is.	movement cost table entry	r0=ram char data ptr	{J}
-08009FA8	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
 08019150	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{U}
 08018E64	Current_HP_Getter	RET=Gets current hp, adds equipped weapon bonus, checks to make sure current hp <= max hp.	Character's current hp	r0=ram char data ptr	{J}
 08019190	Max_HP_Getter	RET=Character's max hp	r0=ram char data ptr	{U}
@@ -1425,8 +1482,6 @@ r3=X tile position of menu of the right	{U}
 0803C818	AI_Compare_Allegiance_Func	Checks current unit's allegiance	RET=True if not on the same team	r0=allegiance byte of target	{U}
 0803C7A8	AI_Compare_Allegiance_Func	Checks current unit's allegiance	RET=True if not on the same team	r0=allegiance byte of target	{J}
 080192B8	Get_Portrait	Either short 0x6 of char data or (if character doesn't have a character portrait) short 0x8 of class data	RET=index of character's portrait	r0=char data ptr	{U}
-08019444	Get_Class_Data	RET=Pointer to entry in class data table	r0=class number	{U}
-0801911C	Get_Class_Data	RET=Pointer to entry in class data table	r0=class number	{J}
 08017548	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{U}
 080172F0	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{J}
 080346B0	Get_Chapter_Events	RET=Pointer to that chapter's events	r0=chapter number	{U}
@@ -1437,8 +1492,6 @@ r3=X tile position of menu of the right	{U}
 08017FB0	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
 08016FB8	Heal_Amount_Getter	RET=Amount to heal	r0=ram char data ptr	r1=item id/uses	{U}
 08016D60	Heal_Amount_Getter	RET=Amount to heal	r0=ram char data ptr	r1=item id/uses	{J}
-080177F4	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{U}
-0801759C	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{J}
 080178D8	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{U}
 08017680	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{J}
 08000D68	Write_Palette	r0=pointer to palette	{J}
@@ -1821,10 +1874,53 @@ r3=X tile position of menu of the right	{U}
 0203E18C	指向攻击者的单元数据的RAM指针（0203A56C(左) or 0203A4EC(右)）	{U}
 0203E184	RAM指向单元数据的攻击方（0203a568(左) or 0203a4e8(右)）	{J}
 0203E188	RAM指向单元数据的攻击方（0203A56C(左) or 0203A4EC(右)）	{U}
-0203a4e8	@Unit	复制攻击方的单位数据	{J}
-0203A4EC	@Unit	复制攻击方的单位数据	{U}
-0203a568	@Unit	攻击方的单位数据的副本	{J}
-0203A56C	@Unit	攻击方的单位数据的副本	{U}
+@BattleUnit@00	@Unit	CopyUnit
+@BattleUnit@48	short	weapon
+@BattleUnit@4A	short	weaponBefore
+@BattleUnit@4C	word	weaponAttributes
+@BattleUnit@50	byte	weaponType
+@BattleUnit@51	byte	weaponSlotIndex
+@BattleUnit@52	byte	canCounter
+@BattleUnit@53	byte	wTriangleHitBonus
+@BattleUnit@54	byte	wTriangleDmgBonus
+@BattleUnit@55	byte	terrainId
+@BattleUnit@56	byte	terrainDefense
+@BattleUnit@57	byte	terrainAvoid
+@BattleUnit@58	byte	terrainResistance
+@BattleUnit@59	byte	pad
+@BattleUnit@5a	short	battleAttack
+@BattleUnit@5c	short	battleDefense
+@BattleUnit@5e	short	battleSpeed
+@BattleUnit@60	short	battleHitRate
+@BattleUnit@62	short	battleAvoidRate
+@BattleUnit@64	short	battleEffectiveHitRate
+@BattleUnit@66	short	battleCritRate
+@BattleUnit@68	short	battleDodgeRate
+@BattleUnit@6a	short	battleEffectiveCritRate
+@BattleUnit@6c	short	battleSilencerRate
+@BattleUnit@6e	byte	expGain
+@BattleUnit@6f	byte	statusOut
+@BattleUnit@70	byte	levelPrevious
+@BattleUnit@71	byte	expPrevious
+@BattleUnit@72	byte	hpInitial
+@BattleUnit@73	byte	changeHP
+@BattleUnit@74	byte	changePow
+@BattleUnit@75	byte	changeSkl
+@BattleUnit@76	byte	changeSpd
+@BattleUnit@77	byte	changeDef
+@BattleUnit@78	byte	changeRes
+@BattleUnit@79	byte	changeLck
+@BattleUnit@7a	byte	changeCon
+@BattleUnit@7b	byte	wexpMultiplier
+@BattleUnit@7c	byte	nonZeroDamage
+@BattleUnit@7d	byte	weaponBroke
+@BattleUnit@7e	byte	hasItemEffectTarget
+@BattleUnit@7f	byte	pad7f
+
+0203a4e8	@BattleUnit	gBattleActor	Copy unit data of Right	{J}
+0203A4EC	@BattleUnit	gBattleActor	Copy unit data of Right	{U}
+0203a568	@BattleUnit	gBattleTarget	Copy unit data of Left	{J}
+0203A56C	@BattleUnit	gBattleTarget	Copy unit data of Left	{U}
 
 //Circles\ASM\Modular Stat Screens\mss_defs.s
 080870BC	Stat Screens DrawBar	{U}
@@ -1932,23 +2028,182 @@ r3=X tile position of menu of the right	{U}
 @ROMTCSFrameData@02	short	xScale
 @ROMTCSFrameData@04	short	yScale
 
-@TheConfusingStruct@00	&ROMTCS	Pointer to ROMTCS
-@TheConfusingStruct@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
-@TheConfusingStruct@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
-@TheConfusingStruct@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
-@TheConfusingStruct@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
-@TheConfusingStruct@14	pointer	Pointer Current Rot/Scale Data
-@TheConfusingStruct@18	short	Cycle Timer
-@TheConfusingStruct@1A	short	Cycle Time Step (0x100 is one frame)
-@TheConfusingStruct@1C	short	Sub frame time offset or something
-@TheConfusingStruct@1E	short	OAM Index?
-@TheConfusingStruct@20	byte	bool defining whether gfx needs update
-@TheConfusingStruct@21	byte	Rotation/Scale OAM Index
-@TheConfusingStruct@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
-@TheConfusingStruct@24	pointer	Gfx Pointer
+@APHandle@00	&ROMTCS	Pointer to ROMTCS
+@APHandle@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
+@APHandle@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
+@APHandle@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
+@APHandle@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
+@APHandle@14	pointer	Pointer Current Rot/Scale Data
+@APHandle@18	short	Cycle Timer
+@APHandle@1A	short	Cycle Time Step (0x100 is one frame)
+@APHandle@1C	short	Sub frame time offset or something
+@APHandle@1E	short	OAM Index?
+@APHandle@20	byte	bool defining whether gfx needs update
+@APHandle@21	byte	Rotation/Scale OAM Index
+@APHandle@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
+@APHandle@24	pointer	Gfx Pointer
 
-03000108	TheConfusingStruct	{U}
-03000100	TheConfusingStruct	{J}
+03000108	@APHandle	gApPool	{U}
+03000100	@APHandle	gApPool	{J}
+
+@AnimationInterpreter@00	short	state
+@AnimationInterpreter@02	short	xPosition
+@AnimationInterpreter@04	short	yPosition
+@AnimationInterpreter@06	short	delayTimer
+@AnimationInterpreter@08	short	oam2base
+@AnimationInterpreter@0a	short	drawLayerPriority
+@AnimationInterpreter@0c	short	state2
+@AnimationInterpreter@0e	short	nextRoundId
+@AnimationInterpreter@10	short	state3
+@AnimationInterpreter@12	byte	currentRoundType
+@AnimationInterpreter@13	byte	frameIndex
+@AnimationInterpreter@14	byte	queuedCommandCount
+@AnimationInterpreter@15	byte	commandQueue
+@AnimationInterpreter@20	word	pCurrentFrame
+@AnimationInterpreter@24	word	pStartFrame
+@AnimationInterpreter@28	word	pUnk28
+@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@30	word	pStartObjData
+@AnimationInterpreter@34	&AnimationInterpreter	pPrev
+@AnimationInterpreter@38	&AnimationInterpreter	pNext
+@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+
+@WaveData@00	short	type
+@WaveData@02	short	status
+@WaveData@04	word	freq
+@WaveData@08	word	loopStart
+@WaveData@0c	word	size
+@WaveData@10	byte	data_array
+
+@ToneData@00	byte	type
+@ToneData@01	byte	key
+@ToneData@02	byte	length
+@ToneData@03	byte	pan_sweep
+@ToneData@04	&WaveData	wav
+@ToneData@0c	byte	attack
+@ToneData@0d	byte	decay
+@ToneData@0e	byte	sustain
+@ToneData@0f	byte	release
+
+@SoundChannel@00	byte	status
+@SoundChannel@01	byte	type
+@SoundChannel@02	byte	rightVolume
+@SoundChannel@03	byte	leftVolume
+@SoundChannel@04	byte	attack
+@SoundChannel@05	byte	decay
+@SoundChannel@06	byte	sustain
+@SoundChannel@07	byte	release
+@SoundChannel@08	byte	ky
+@SoundChannel@09	byte	ev
+@SoundChannel@0a	byte	er
+@SoundChannel@0b	byte	el
+@SoundChannel@0c	byte	echoVolume
+@SoundChannel@0d	byte	echoLength
+@SoundChannel@0e	byte	d1
+@SoundChannel@0f	byte	d2
+@SoundChannel@10	byte	gt
+@SoundChannel@11	byte	mk
+@SoundChannel@12	byte	ve
+@SoundChannel@13	byte	pr
+@SoundChannel@14	byte	rp
+@SoundChannel@15	byte	d3_0
+@SoundChannel@16	byte	d3_1
+@SoundChannel@17	byte	d3_2
+@SoundChannel@18	word	ct
+@SoundChannel@1C	word	fw
+@SoundChannel@20	word	freq
+@SoundChannel@24	&WaveData	wav
+@SoundChannel@28	word	cp
+@SoundChannel@2c	&MusicPlayerTrack track
+@SoundChannel@30	word	pp
+@SoundChannel@34	word	np
+@SoundChannel@38	word	d4
+@SoundChannel@3C	word	xpi
+@SoundChannel@40	word	xpc
+
+@MusicPlayerTrack@00	byte	flags
+@MusicPlayerTrack@01	byte	wait
+@MusicPlayerTrack@02	byte	patternLevel
+@MusicPlayerTrack@03	byte	repN
+@MusicPlayerTrack@04	byte	gateTime
+@MusicPlayerTrack@05	byte	key
+@MusicPlayerTrack@06	byte	velocity
+@MusicPlayerTrack@07	byte	runningStatus
+@MusicPlayerTrack@08	byte	keyM
+@MusicPlayerTrack@09	byte	pitM
+@MusicPlayerTrack@0a	byte	keyShift
+@MusicPlayerTrack@0b	byte	keyShiftX
+@MusicPlayerTrack@0c	byte	tune
+@MusicPlayerTrack@0d	byte	pitX
+@MusicPlayerTrack@0e	byte	bend
+@MusicPlayerTrack@0f	byte	bendRange
+@MusicPlayerTrack@10	byte	volMR
+@MusicPlayerTrack@11	byte	volML
+@MusicPlayerTrack@12	byte	vol
+@MusicPlayerTrack@13	byte	volX
+@MusicPlayerTrack@14	byte	pan
+@MusicPlayerTrack@15	byte	panX
+@MusicPlayerTrack@16	byte	modM
+@MusicPlayerTrack@17	byte	mod
+@MusicPlayerTrack@18	byte	modT
+@MusicPlayerTrack@19	byte	lfoSpeed
+@MusicPlayerTrack@1a	byte	lfoSpeedC
+@MusicPlayerTrack@1b	byte	lfoDelay
+@MusicPlayerTrack@1c	byte	lfoDelayC
+@MusicPlayerTrack@1d	byte	priority
+@MusicPlayerTrack@1e	byte	echoVolume
+@MusicPlayerTrack@1f	byte	echoLength
+@MusicPlayerTrack@20	&SoundChannel	chan
+@MusicPlayerTrack@24	@ToneData	tone
+@MusicPlayerTrack@34	byte	_gap34
+@MusicPlayerTrack@3a	short	_unk_3A
+@MusicPlayerTrack@3c	short	_unk_3C
+@MusicPlayerTrack@40	word	cmdPtr
+@MusicPlayerTrack@44	byte	patternStack0
+@MusicPlayerTrack@45	byte	patternStack1
+@MusicPlayerTrack@46	byte	patternStack2
+@MusicPlayerTrack@47	byte	_pad47
+
+@SongHeader@00	byte	trackCount
+@SongHeader@01	byte	blockCount
+@SongHeader@02	byte	priority
+@SongHeader@03	byte	reverb
+@SongHeader@04	&ToneData	tone
+@SongHeader@08	byte	part_array
+
+@MusicPlayerInfo@00	&SongHeader	songHeader
+@MusicPlayerInfo@04	word	status
+@MusicPlayerInfo@08	byte	trackCount
+@MusicPlayerInfo@09	byte	priority
+@MusicPlayerInfo@0a	byte	cmd
+@MusicPlayerInfo@0b	byte	unk_B
+@MusicPlayerInfo@0c	word	clock
+@MusicPlayerInfo@10	byte	gap	//[8]
+@MusicPlayerInfo@18	word	memAccAreaPtr
+@MusicPlayerInfo@1c	short	tempoD
+@MusicPlayerInfo@1e	short	tempoU
+@MusicPlayerInfo@20	short	tempoI
+@MusicPlayerInfo@22	short	tempoC
+@MusicPlayerInfo@24	short	fadeOI
+@MusicPlayerInfo@26	short	fadeOC
+@MusicPlayerInfo@28	short	fadeOV
+@MusicPlayerInfo@2a	short	_pad2A
+@MusicPlayerInfo@2c	&MusicPlayerTrack	tracks
+@MusicPlayerInfo@30	&ToneData	tone
+@MusicPlayerInfo@34	word	ident
+@MusicPlayerInfo@38	word	func
+@MusicPlayerInfo@3c	word	intp
+
+@MusicPlayer@00	&MusicPlayerInfo	info
+@MusicPlayer@04	&MusicPlayerTrack	track
+@MusicPlayer@08	byte	_unk_8
+@MusicPlayer@09	byte	_pad09
+@MusicPlayer@0a	byte	_unk_A
+
+@Song@00	&SongHeader	header
+@Song@04	short	ms
+@Song@06	short	me
 
 03000008	Call blah and put value	{U}
 030000E8	render_info: for cutscenes.	{U}
@@ -1988,7 +2243,6 @@ r3=X tile position of menu of the right	{U}
 //Zane's Stuff\Doc\Master MMB Doc.txt
 02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.	{U}
 0808CCC8	MMBSetup	This is the main routine for setting up the minimug box. It determines where to put the box and the things on it.	{U}
-0202BCB0	MiscRAMData	This section of memory has information on cursor position,  phases, chapter number, gold, and a bunch of other things	{U}
 0202E4D8	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.	{U}
 08A01828	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{U}
 08A018AC	MMBStructType	This is the type of 0x6C struct used when drawing the box.	{U}
@@ -2095,7 +2349,6 @@ r3=X tile position of menu of the right	{U}
 //Zane's Stuff\Doc\Master MMB Doc.txt
 02024CA8	an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.	{J}
 0808EFC4	MMBSetup	This is the main routine for setting up the minimug box. It determines where to put the box and the things on it.	{J}
-0202BCAC	MiscRAMData	This section of memory has information on cursor position,  phases, chapter number, gold, and a bunch of other things	{J}
 0202E4D4	BaseRowPointer	This is part of a system for getting elements on the map.  It begins with two shorts that go 0xXX 0xXX 0xYY 0xYY  followed by a pointer to the first 'row pointer'. The .set value above is this pointer to the first row pointer. I think an example would demonstrate better.	{J}
 08A738E0	Table of bytes, either 0x00, 0x01, or 0xFF for determining the position of windows such as the  minimug box, goal window, or terrain window	{J}
 08A73964	MMBStructType	This is the type of 0x6C struct used when drawing the box.	{J}
@@ -2378,13 +2631,13 @@ r3=X tile position of menu of the right	{U}
 08004b94	DrawDecNumber	{U}
 08004e40	AIS_ExecAll	{U}
 08004eb8	ClearAISArray	{U}
-08004f48	AIS_New	{U}
+08004f48	AIS_New	RET=@AnimationInterpreter	{U}
 08004fac	AISArray_Sort	{U}
-08005004	AIS_Free	{U}
-08005034	AIS_Display	{U}
+08005004	AIS_Free	r0=@AnimationInterpreter	{U}
+08005034	AIS_Display	r0=@AnimationInterpreter	{U}
 08005040	HandleNextAISFrame	{U}
 080051c0	LinkAIS	{U}
-08005208	_AIS_Display	{U}
+08005208	_AIS_Display	r0=@AnimationInterpreter	{U}
 08005458	FlushIntermediateOAMBuffer	{U}
 08005514	GetPortraitStructPointer	{U}
 08005528	ResetFaces	{U}
@@ -2741,10 +2994,10 @@ r3=X tile position of menu of the right	{U}
 08017798	GetItemWExp	{U}
 080177b0	GetROMItemStructPtr	{U}
 080177c4	ClearUnits	{U}
-080177f4	ClearUnitStruct	{U}
-0801781c	CopyUnitStruct	{U}
-08017838	GetNextFreeUnitStructPtr	{U}
-08017870	GetNextFreePlayerUnitStruct	{U}
+080177f4	ClearUnitStruct	r0=@Unit	{U}
+0801781c	CopyUnitStruct	r0=@Unit	r1=@Unit	{U}
+08017838	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{U}
+08017870	GetNextFreePlayerUnitStruct	RET=@Unit	{U}
 080178a8	GetUnitFogViewRange	{U}
 080178d8	SetUnitNewStatus	{U}
 080178f4	WriteUnitStatusDuration	{U}
@@ -2810,9 +3063,9 @@ r3=X tile position of menu of the right	{U}
 080193a4	UnitTryHeal	{U}
 080193e8	GetRescuingUnitNameId	{U}
 08019414	WriteStatusTextToRAM	{U}
-08019430	GetUnitStruct	{U}
-08019444	GetROMClassStruct	{U}
-08019464	GetROMCharStruct	{U}
+08019430	GetUnitStruct	RET=RAM Unit:@UNIT	{U}
+08019444	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{U}
+08019464	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{U}
 08019484	UnitRemoveItem	{U}
 0801949c	CanUnitCrossTerrain	{U}
 080194bc	InitChapterMap	{U}
@@ -3484,7 +3737,7 @@ r3=X tile position of menu of the right	{U}
 08058bc8	BattleAIS_ExecCommands	{U}
 0805990c	NewEkrChienCHR	{U}
 0805993c	RegisterAISSheetGraphics	{U}
-0805a16c	GetAISSubjectId	{U}
+0805a16c	GetAISSubjectId	r0=@AnimationInterpreter	{U}
 0805a184	GetSomeBoolean	{U}
 0805a2b4	GetCoreAIStruct	{U}
 0805a310	GetSomeAISRelatedIndexMaybe	{U}
@@ -4194,13 +4447,13 @@ r3=X tile position of menu of the right	{U}
 08004A9C	DrawDecNumber	{J}
 08004D48	AIS_ExecAll	{J}
 08004DC0	ClearAISArray	{J}
-08004E50	AIS_New	{J}
+08004E50	AIS_New	RET=@AnimationInterpreter	{J}
 08004EB4	AISArray_Sort	{J}
-08004F0C	AIS_Free	{J}
-08004F3C	AIS_Display	{J}
+08004F0C	AIS_Free	r0=@AnimationInterpreter	{J}
+08004F3C	AIS_Display	r0=@AnimationInterpreter	{J}
 08004F48	HandleNextAISFrame	{J}
 080050C8	LinkAIS	{J}
-08005110	_AIS_Display	{J}
+08005110	_AIS_Display	r0=@AnimationInterpreter	{J}
 08005360	FlushIntermediateOAMBuffer	{J}
 0800541C	GetPortraitStructPointer	{J}
 08005430	ResetFaces	{J}
@@ -4538,10 +4791,10 @@ r3=X tile position of menu of the right	{U}
 08017540	GetItemWExp	{J}
 08017558	GetROMItemStructPtr	{J}
 0801756C	ClearUnits	{J}
-0801759C	ClearUnitStruct	{J}
-080175C4	CopyUnitStruct	{J}
-080175E0	GetNextFreeUnitStructPtr	{J}
-08017618	GetNextFreePlayerUnitStruct	{J}
+0801759C	ClearUnitStruct	r0=@Unit	{J}
+080175C4	CopyUnitStruct	r0=@Unit	r1=@Unit	{J}
+080175E0	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{J}
+08017618	GetNextFreePlayerUnitStruct	RET=@Unit	{J}
 08017650	GetUnitFogViewRange	{J}
 08017680	SetUnitNewStatus	{J}
 0801769C	WriteUnitStatusDuration	{J}
@@ -4606,9 +4859,9 @@ r3=X tile position of menu of the right	{U}
 0801907C	UnitTryHeal	{J}
 080190C0	GetRescuingUnitNameId	{J}
 080190EC	WriteStatusTextToRAM	{J}
-08019108	GetUnitStruct	{J}
-0801911C	GetROMClassStruct	{J}
-0801913C	GetROMCharStruct	{J}
+08019108	GetUnitStruct	RET=RAM Unit:@UNIT	{J}
+0801911C	GetROMClassStruct	RET=class data table:CLASS	r0=class_id	{J}
+0801913C	GetROMCharStruct	RET=unit data table:UNIT	r0=unit_id	{J}
 0801915C	UnitRemoveItem	{J}
 08019174	CanUnitCrossTerrain	{J}
 08019194	InitChapterMap	{J}
@@ -5270,7 +5523,7 @@ r3=X tile position of menu of the right	{U}
 080599F8	BattleAIS_ExecCommands	{J}
 0805A6B0	NewEkrChienCHR	{J}
 0805A6E0	RegisterAISSheetGraphics	{J}
-0805AF10	GetAISSubjectId	{J}
+0805AF10	GetAISSubjectId	r0=@AnimationInterpreter	{J}
 0805AF28	GetSomeBoolean	{J}
 0805B058	GetCoreAIStruct	{J}
 0805B0B4	GetSomeAISRelatedIndexMaybe	{J}
@@ -6454,10 +6707,10 @@ r3=X tile position of menu of the right	{U}
 080CE95C	处理字典文本	{U}
 080CE95C	处理字典文本	{J}
 
-08A727B4	&TEXTBATCH	TextBatch1	{J}
-08A73BF4	&TEXTBATCH	TextBatch2	{J}
-08A006FC	&TEXTBATCH	TextBatch1	{U}
-08A01B3C	&TEXTBATCH	TextBatch2	{U}
+08A727B4	InitTextBatch1	{J}
+08A73BF4	InitTextBatch2	{J}
+08A006FC	InitTextBatch1	{U}
+08A01B3C	InitTextBatch2	{U}
 
 08B1FA40	:08B1FE3F	UNK FREE_R LIST	{U}
 08B1FE40	UNK FREE_R LIST TERM	{U}
@@ -6742,20 +6995,8 @@ r3=X tile position of menu of the right	{U}
 02028f78	gAISArray	{U}
 0202a68c	gFaceGfxData	{U}
 0202b6b0	gPaletteFadeBuffer	{U}
-0202bcb0	gMainLoopEndedFlag	{U}
-0202bcb1	gGameLogicSemaphore	{U}
-0202bcb2	gGameGfxSemaphore	{U}
-0202bcb4	gGameStatebits	{U}
-0202bcb6	gSavedVCLY	{U}
-0202bcbc	gCurrentRealCameraPos	{U}
-0202bcc4	gCursorMapPosition	{U}
-0202bccc	gSomeRealCameraPosition	{U}
-0202bcd0	gCursorDisplayPosition	{U}
-0202bcd4	gSomeRealCameraOffset	{U}
-0202bcd8	gSomeRealCameraOffsetTarget	{U}
-0202bcdc	gItemGotButNotYet	{U}
-0202bcde	gThatsAnItem2	{U}
-0202bcf0	gChapterData	{U}
+0202bcb0	@BattleMapState	gGameState	{U}
+0202bcf0	@ChapterData	gChapterData	{U}
 0202bd3c	gPreviousCursorDisplayPosition	{U}
 0202bd40	gCursorAnimationClockReference	{U}
 0202bd44	gSomeCameraMovementTableMaybe	{U}
@@ -6789,7 +7030,7 @@ r3=X tile position of menu of the right	{U}
 0203a4c8	gSMSHandleIt	{U}
 0203a4cc	gSMSSyncFlag	{U}
 0203a4d0	gMapSpriteSwitchHoverTimer	{U}
-0203a5ec	gRoundArray	{U}
+0203a5ec	@BattleRound	gRoundArray	{U}
 0203a608	gpCurrentRound	{U}
 0203a610	gpTradeMenuProc	{U}
 0203a814	gTrapArrayBack	{U}
@@ -6797,8 +7038,8 @@ r3=X tile position of menu of the right	{U}
 0203a8e8	gpSomeUnitIt	{U}
 0203a8ec	gSomeUnitCounter	{U}
 0203a910	gArenaOpponent	{U}
-0203a958	gActionData	{U}
-0203aa04	gAiData	{U}
+0203a958	@ActionData	gActionData	{U}
+0203aa04	@AiData	gAiData	{U}
 0203dde8	gTargetPosition	{U}
 0203ddec	gTargetArray	{U}
 0203e0ec	gTargetArraySize	{U}
@@ -6868,20 +7109,8 @@ r3=X tile position of menu of the right	{U}
 02028F74	gAISArray	{J}
 0202A688	gFaceGfxData	{J}
 0202B6AC	gPaletteFadeBuffer	{J}
-0202BCAC	gMainLoopEndedFlag	{J}
-0202BCAD	gGameLogicSemaphore	{J}
-0202BCAE	gGameGfxSemaphore	{J}
-0202bcb0	gGameStatebits	{J}
-0202bcb2	gSavedVCLY	{J}
-0202bcb8	gCurrentRealCameraPos	{J}
-0202bcc0	gCursorMapPosition	{J}
-0202bcc8	gSomeRealCameraPosition	{J}
-0202BCCC	gCursorDisplayPosition	{J}
-0202bcd0	gSomeRealCameraOffset	{J}
-0202bcd4	gSomeRealCameraOffsetTarget	{J}
-0202bcd8	gItemGotButNotYet	{J}
-0202BCDA	gThatsAnItem2	{J}
-0202BCEC	gChapterData	{J}
+0202BCAC	@BattleMapState	gGameState	{U}
+0202BCEC	@ChapterData	gChapterData	{J}
 0202bd38	gPreviousCursorDisplayPosition	{J}
 0202bd3c	gCursorAnimationClockReference	{J}
 0202BD40	gSomeCameraMovementTableMaybe	{J}
@@ -6915,7 +7144,7 @@ r3=X tile position of menu of the right	{U}
 0203A4C4	gSMSHandleIt	{J}
 0203A4C8	gSMSSyncFlag	{J}
 0203A4CC	gMapSpriteSwitchHoverTimer	{J}
-0203A5E8	gRoundArray	{J}
+0203A5E8	@BattleRound	gRoundArray	{J}
 0203A604	gpCurrentRound	{J}
 0203A60C	gpTradeMenuProc	{J}
 0203A810	gTrapArrayBack	{J}
@@ -6923,8 +7152,8 @@ r3=X tile position of menu of the right	{U}
 0203A8E4	gpSomeUnitIt	{J}
 0203A8E8	gSomeUnitCounter	{J}
 0203A90C	gArenaOpponent	{J}
-0203A954	gActionData	{J}
-0203AA00	gAiData	{J}
+0203A954	@ActionData	gActionData	{J}
+0203AA00	@AiData	gAiData	{J}
 0203DDE4	gTargetPosition	{J}
 0203DDE8	gTargetArray	{J}
 0203E0E8	gTargetArraySize	{J}
@@ -7018,6 +7247,15 @@ r3=X tile position of menu of the right	{U}
 0203A535	右侧有战斗动画。附加信息标志2	{J}
 0203A536	右侧有战斗动画。附加信息标志3	{J}
 0203A537	右侧有战斗动画。附加信息标志4	{J}
+0203A542	Right side with battle animation.Attack	{J}
+0203A544	Right side with battle animation.Defence	{J}
+0203A546	Right side with battle animation.Speed	{J}
+0203A548	Right side with battle animation.Hit	{J}
+0203A54a	Right side with battle animation.Avoid	{J}
+0203A54c	Right side with battle animation.(AttackerHit - DefinerAvoid)	{J}
+0203A54e	Right side with battle animation.Crital	{J}
+0203A550	Right side with battle animation.Luck	{J}
+
 0203A534	右侧有战斗动画。其他信息未知1	{U}
 0203A535	右侧有战斗动画。未知其他信息2	{U}
 0203A536	右侧有战斗动画。其他信息未知3	{U}
@@ -7026,6 +7264,15 @@ r3=X tile position of menu of the right	{U}
 0203A539	右侧有战斗动画。附加信息标志2	{U}
 0203A53A	右侧有战斗动画。附加信息标志3	{U}
 0203A53B	右侧有战斗动画。附加信息标志4	{U}
+0203A546	Right side with battle animation.Attack	{U}
+0203A548	Right side with battle animation.Defence	{U}
+0203A54a	Right side with battle animation.Speed	{U}
+0203A54c	Right side with battle animation.Hit	{U}
+0203A54e	Right side with battle animation.Avoid	{U}
+0203A550	Right side with battle animation.(AttackerHit - DefinerAvoid)	{U}
+0203A552	Right side with battle animation.Crital	{U}
+0203A554	Right side with battle animation.Luck	{U}
+
 //thanks hypergammaspaces
 //Class Change (Promotion)
 08B1271C	ccramify	PROCS	Promotion(Class Change)	{U}
@@ -7239,7 +7486,7 @@ r3=X tile position of menu of the right	{U}
 08AAFCF4	&PALETTE	Something's palette	95	{U}
 08AB0114	&PALETTE	Something's palette	96	{U}
 08AB0B24	&PALETTE	Something's palette	97	{U}
-08AB210C	&PALETTE	Something's palette	98	{U}
+08AB210C	&PALETTE3	Something's palette	98	{U}
 08AB21B8	&PALETTE	Something's palette	99	{U}
 085C25C0	&PALETTE	Something's palette	01	{J}
 085C73C0	&PALETTE	Something's palette	02	{J}
@@ -7336,7 +7583,7 @@ r3=X tile position of menu of the right	{U}
 08B48918	&PALETTE	Something's palette	95	{J}
 08B48D38	&PALETTE	Something's palette	96	{J}
 08B49B4C	&PALETTE	Something's palette	97	{J}
-08B4B134	&PALETTE	Something's palette	98	{J}
+08B4B134	&PALETTE3	Something's palette	98	{J}
 08B4B1E0	&PALETTE	Something's palette	99	{J}
 089B7414	&LZ77	Something small compressed data	35	{U}
 089B743C	&LZ77	Something small compressed data	36	{U}
@@ -7807,7 +8054,7 @@ r3=X tile position of menu of the right	{U}
 08A65730	&EVENT	Any event function	Bifurcation to Ephrata	{J}
 08A6E7A4	&EVENT	Any event function	Mystery reinforcement data	{J}
 08A71538	&EVENT	Any event function	Mystery	7	{J}
-08A71CE8	&EVENT	Debug Room Event	details unknown	{J}
+08A71CE8	&EVENT	skirmish beginning events	{J}
 085B9D6C	&EVENT	Any event function	Mystery	8	{J}
 085B9D80	&EVENT	Any event function	Mystery	9	{J}
 085B9D8C	&EVENT	Any event function	Mystery	10	{J}
@@ -8376,7 +8623,7 @@ r3=X tile position of menu of the right	{U}
 080BA5BC	Arena	Pay premium	{J}
 080BA600	Arena	Serif of "Can cancel with B button"	{J}
 080BA614	Arena	Cancel	To be cool or to go away	{J}
-080BA624	Arena	Play Changling's sound	{J}
+080BA628	Arena	Play Changling's sound	{J}
 080BA638	Arena	Combat start	{J}
 080BA69C	Arena	Serve as a result of winning or losing	{J}
 080B5C04	Arena	Show serif	{U}
@@ -8446,7 +8693,6 @@ r3=X tile position of menu of the right	{U}
 0804874C	Delete all saved data	{J}
 0804C46C	Communication stadium	Battle end	{J}
 08A0035C	&EVENT	Empty event	1	{U}
-089FFC30	&EVENT	Empty event	2	{U}
 0859BC64	&EVENT	Tutorial	Inventory change	1	{U}
 0859BCA8	&EVENT	Tutorial	Inventory change	2	{U}
 0859BCF4	&EVENT	Tutorial	Inventory change	3	{U}
@@ -8454,7 +8700,7 @@ r3=X tile position of menu of the right	{U}
 085A9F48	&EVENT	For debugging	Would you like to delete all saved data?	{U}
 085AA2B4	&EVENT	Communication stadium	Do you surrender?	{U}
 085AA2D8	&EVENT	Communication stadium	I can not give damage.Do you want to end it? 	{U}
-089FFC30	&EVENT	For debugging	Mysterious branch	{U}
+089FFC30	&EVENT	skirmish beginning events	{U}
 089FFE84	&EVENT	For debugging	Branch	1	{U}
 089FFF14	&EVENT	For debugging	Branch	2	{U}
 089FFF8C	&EVENT	For debugging	Branch	3	{U}
@@ -8582,10 +8828,10 @@ r3=X tile position of menu of the right	{U}
 08AA70B4	&PALETTE4	Something's palette	215	{J}
 08AB6788	&PALETTE7	Something's palette	216	{J}
 08AB7144	&PALETTE	Something's palette	217	{J}
-08A1FB08	TEXTBATCH	TextBatch3	{U}
-08A9CA34	TEXTBATCH	TextBatch3	{J}
-08A196BC	TEXTBATCH	TextBatch4	{U}
-08A188F8	TEXTBATCH	TextBatch5	{U}
+08A1FB08	&TEXTBATCH	&TEXTBATCH3	{U}
+08A9CA34	&TEXTBATCH	&TEXTBATCH3	{J}
+08A196BC	&TEXTBATCH	&TEXTBATCH4	{U}
+08A188F8	&TEXTBATCH	&TEXTBATCH5	{U}
 08A18614	&OAMREGS_ARRAY	Unk OAMREGS	20	{U}
 08A94358	&OAMREGS_ARRAY	Unk OAMREGS	20	{J}
 08A1D850	&PALETTE	Something's palette	218	{U}
@@ -8674,7 +8920,7 @@ r3=X tile position of menu of the right	{U}
 086A5698	&PALETTE	东西的调色板	250	未使用	{J}
 086A56B8	&PALETTE	东西的调色板	251	未使用	{J}
 086A56D8	&PALETTE	东西的调色板	252	未使用	{J}
-086A56F8	&PALETTE	东西的调色板	253	{J}
+086A56F8	&PALETTE16	东西的调色板	253	{J}
 086A58F8	&LZ77	某事的形象	1	未使用	{J}
 086A5E7C	:086A66DB	未知	未使用的数据	1	{J}
 086AB620	:086AB9DB	未知	未使用的数据	2	{J}
@@ -8695,8 +8941,8 @@ r3=X tile position of menu of the right	{U}
 085C2438	&ASM_POINTER_ARRAY	UnLZ77Decompress_Inner	{J}
 08599F94	&PALETTE	东西的调色板	263	{U}
 085C1D10	&PALETTE	东西的调色板	263	{U}
-0859A598	&TEXTBATCH	TextBatch6	{U}
-085C2A18	&TEXTBATCH	TextBatch6	{J}
+0859A598	&TEXTBATCH	&TEXTBATCH6	{U}
+085C2A18	&TEXTBATCH	&TEXTBATCH6	{J}
 08A0A9F8	&HEADERTSA	东西是TSA	22	{U}
 08A7DCB8	&HEADERTSA	东西是TSA	22	{J}
 08A20B08	&OAMREGS_ARRAY	Unk OAMREGS	24	{U}
@@ -8881,7 +9127,7 @@ r3=X tile position of menu of the right	{U}
 0872A05C	&PALETTE	东西的调色板	374	{U}
 0872A07C	&PALETTE	东西的调色板	375	{U}
 0872A09C	&PALETTE	东西的调色板	376	{U}
-0872A0BC	&PALETTE	东西的调色板	377	{U}
+0872A0BC	&PALETTE8	东西的调色板	377	{U}
 0872A0DC	&PALETTE	东西的调色板	378	{U}
 0872A0FC	&PALETTE	东西的调色板	379	{U}
 0872A11C	&PALETTE	东西的调色板	380	{U}
@@ -9038,7 +9284,7 @@ r3=X tile position of menu of the right	{U}
 0867F1AC	&PALETTE	东西的调色板	374	{J}
 0867F1CC	&PALETTE	东西的调色板	375	{J}
 0867F1EC	&PALETTE	东西的调色板	376	{J}
-0867F20C	&PALETTE	东西的调色板	377	{J}
+0867F20C	&PALETTE8	东西的调色板	377	{J}
 08756CB4	&PALETTE	东西的调色板	378	{J}
 08756CD4	&PALETTE	东西的调色板	379	{J}
 08756CF4	&PALETTE	东西的调色板	380	{J}
@@ -9242,7 +9488,7 @@ r3=X tile position of menu of the right	{U}
 0803830C	战斗记录显示	{J}
 080381E0	战斗记录显示	{U}
 080BD02C	绘制捕获评估	结束	{J}
-080BCC90	设置屏幕背景以评估捕获	结束	我有一个bug。	{J}
+080BCC90	设置屏幕背景以评估捕获	结束	我有一个bug	{J}
 080BC044	显示Fin屏幕Procs启动	{J}
 08AC5558	&PALETTE	战略评估屏幕调色板	1	{J}
 08AC6C58	&PALETTE	战略评估屏幕调色板	2	{J}
@@ -9355,24 +9601,27 @@ r3=X tile position of menu of the right	{U}
 080B6504	ComputeChapterRankings	{U}
 080D74C0	ComputeChecksum32	{U}
 080dc0fc	ComputeChecksum32	{J}
-@ArenaTemp@00	&Unit	球员单位
-@ArenaTemp@04	&Unit	反对者
-@ArenaTemp@08	short	额外费用
-@ArenaTemp@0A	byte	战斗结果
-@ArenaTemp@0B	byte	未知1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	道具
-@ArenaTemp@0E	byte	未知2
-@ArenaTemp@0F	byte	未知3
-@ArenaTemp@10	short	未知4
-@ArenaTemp@12	byte	未知5
-@ArenaTemp@13	byte	未知6
-@ArenaTemp@14	short	未知7
-@ArenaTemp@15	short	未知8
-@ArenaTemp@16	short	球员实力
-@ArenaTemp@18	short	对手的实力
-0203A8EC	@ArenaTemp	竞技场的临时数据	{J}
-0203A8F0	@ArenaTemp	竞技场的临时数据	{U}
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+0203A8EC	@ArenaData	竞技场的临时数据	{J}
+0203A8F0	@ArenaData	竞技场的临时数据	{U}
 
 08031960	GetUnitArenaWeight	{J}
 0807C8DC	GetAdjustedPositionForNewUnit	{J}
@@ -10103,8 +10352,8 @@ r3=X tile position of menu of the right	{U}
 03001850	gStr_3001850	{U}
 03001C38	gSummonedUnitDefinitionBuffer	{U}
 03004BB0	gCurrentMovCostTable	{U}
-03006440	gMusicPlayerInfo_3006440	{U}
-03006650	gMusicPlayerInfo_3006650	{U}
+03006440	@MusicPlayer	gMusicPlayerInfo	{U}
+03006650	@MusicPlayer	gMusicPlayerInfo	{U}
 03007FF0	gpM4aMainThing	{U}
 04000002	Undocumented_GreenSwap	{U}
 04000300	Undocumented_PostBootFlag	{U}
@@ -11360,8 +11609,6 @@ r3=X tile position of menu of the right	{U}
 080726AC	确定战斗BG​​M	{U}
 08002620	切换BGM（另一个命令第5部分）	r0=BGM号码：MUSIC	{U}
 080728D0	获取BossBGM	{U}
-@ChapterData@1C	byte	Unk1c
-@ChapterData@1D	byte	Unk1d
 080976FC	CanCharacterBePrepSwap	{J}
 08089100	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{J}
 08000CD8	GetGameClock	{J}
@@ -11373,118 +11620,188 @@ r3=X tile position of menu of the right	{U}
 0808F270	DeleteSerifProcs	{U}
 0808F284	IsExistSerifProcs	{U}
 0808F2A0	GotoLabel0BySerifProcs	{U}
-080E1184	&LZ77	东西是TSA。	26	{U}
-080E1400	&LZ77	某事的图象。	1	{U}
-080E6564	&LZ77	东西是TSA。	26	{J}
-080E67E0	&LZ77	某事的图象。	1	{J}
+080E1184	&LZ77	东西是TSA	26	{U}
+080E1400	&LZ77	某事的图象	1	{U}
+080E6564	&LZ77	东西是TSA	26	{J}
+080E67E0	&LZ77	某事的图象	1	{J}
 02029D84	gpAISFirst	{J}
 08022f50	TradeCommandEffect2	{J}
 08022BD8	AttackCommandEffect_DrawFace	{U}
 08022BA0	AttackCommandEffect_DrawFace	{J}
-08023550	当我选择随餐菜单时。	列出所有物品清单。	{U}
-08023514	当我选择随餐菜单时。	列出所有物品清单。	{J}
-08073CE8	显示升级屏幕。	{U}
-08076170	显示升级屏幕。	{J}
-080BBF78	切换BGM（另一个命令No.6）。	r0=BGM号码：MUSIC。	{J}
-080B74CC	切换BGM（另一个命令No.6）。	r0=BGM号码：MUSIC。	{U}
-08021668	在事件效果结束时重绘地图。	{U}
-08021360	在事件效果结束时重绘地图。	{J}
+08023550	当我选择随餐菜单时	列出所有物品清单	{U}
+08023514	当我选择随餐菜单时	列出所有物品清单	{J}
+08073CE8	显示升级屏幕	{U}
+08076170	显示升级屏幕	{J}
+080BBF78	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{J}
+080B74CC	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{U}
+08021668	在事件效果结束时重绘地图	{U}
+08021360	在事件效果结束时重绘地图	{J}
 02017728	gBattleAnimeCounter
 0203E152	gRoundDamageValuesMaybe	{J}
 0203E154	gRoundDamageValuesMaybe2	{J}
+02000000	gAISFrontLeft	{J}
+02000004	gAISBackLeft	{J}
+02000008	gAISFrontRight	{J}
+0200000C	gAISBackRight	{J}
+0200005C	gpBattleAnimFrameStartLookup	{J}
+02001168	gBonusClaimItemList	{J}
+0200278C	gTradeMenuTextHandles	{J}
+020041C8	gAISOAM_20041C8	{J}
+0200F1C8	gAISFrames_Left	{J}
+02011BC8	gAISFrames_Right	{J}
+020121CC	gPrepScreenUnitList	{J}
+0201772C	gBool_SpellFxActive	{J}
+02017734	gBool_EfxDeathActive	{J}
+02017790	gSpellAnimBgGfxBuffer_Maybe	{J}
+0201A790	gSpellAnimObjGfxBuffer_Maybe	{J}
+0201FAD0	gBattleAnimBoolEkrNamewinAppearActive	{J}
+0201FB04	gBattleAnimBoolEndedRounds	{J}
+0201FB18	gpEkrAnimeDrvProc	{J}
+0201FB1C	gpBattleAnimSomeSheetData	{J}
+0202013C	gBattleAnimTriangleAttackEnded	{J}
+020228C8	gPalette1Buffer	{J}
+020228E8	gPalette2Buffer	{J}
+02022908	gPalette3Buffer	{J}
+02022928	gPalette4Buffer	{J}
+02022968	gPalette6Buffer	{J}
+02022988	gPalette7Buffer	{J}
+02022A68	gPaletteEBuffer	{J}
+02022A88	gPaletteFBuffer	{J}
+02022AE8	gPalette12Buffer	{J}
+02022B08	gPalette13Buffer	{J}
+02022B28	gPalette14Buffer	{J}
+02022B48	gPalette15Buffer	{J}
+02022B68	gPalette16Buffer	{J}
+02022B88	gPalette17Buffer	{J}
+02022BA8	gPalette18Buffer	{J}
+02022BC8	gPalette19Buffer	{J}
+02022BE8	gPalette1ABuffer	{J}
+02022C08	gPalette1BBuffer	{J}
+02022C28	gPalette1CBuffer	{J}
+02022C48	gPalette1DBuffer	{J}
+02022C68	gPalette1EBuffer	{J}
+02022C88	gPalette1FBuffer	{J}
+02024CAC	gBg1MapTarget	{J}
+02024CB0	gBg2MapTarget	{J}
+02024CB4	gBg3MapTarget	{J}
+02024CB8	gpMainCallback	{J}
+02028E74	gSpecialUiCharAllocationTable	{J}
+02029D84	gpAISFirst	{J}
+0203A98C	gMovementArrowData	{J}
+0203DD18	gNameSelectNameBoxText	{J}
+0203E108	gStoredBattleAnimId21Ptr	{J}
+0203E10A	gStoredBattleAnimId22Ptr	{J}
+0203E152	gRoundDamageValuesMaybe	{J}
+0203E190	gpExtraUnit1	{J}
+0203E194	gpExtraUnit2	{J}
+0203E1A0	gBattleAnimBoolLockSheetGraphicsMaybe	{J}
+0203E1A8	gBattleHpDisplayedValue	{J}
+0203EDB0	gBonusContentFlags	{J}
+0203EF60	gSaveMenuRTextData	{J}
+03000000	gRNState	{J}
+03000038	gpMusicProcA	{J}
+0300003C	gpMusicProcB	{J}
+030005F8	gSomeUnitWordArray	{J}
+030007F8	gSomeUtilityTextHandle	{J}
+030017D8	gSioBaudRate	{J}
+03004B50	gCurrentMovCostTable	{J}
+03006430	@MusicPlayer	gMusicPlayerInfo	{J}
+03006640	@MusicPlayer	gMusicPlayerInfo	{J}
+03007FF0	gpM4aMainThing	{J}
+04000002	Undocumented_GreenSwap	{J}
+04000300	Undocumented_PostBootFlag	{J}
+04000301	Undocumented_PowerDownControl	{J}
 08032114	UpdateMapAndUnit	{J}
-0807E160	绘制地图动画图形对话框。	{J}
-0807DFF0	用于管理地图动画帧的例程。	{J}
-0807DD70	在地图动画条形图上绘制数字。	{J}
+0807E160	绘制地图动画图形对话框	{J}
+0807DFF0	用于管理地图动画帧的例程	{J}
+0807DD70	在地图动画条形图上绘制数字	{J}
 080321C8	UpdateMapAndUnit	{U}
-0807BE1C	绘制地图动画图形对话框。	{U}
-0807BCA8	用于管理地图动画帧的例程。	{U}
-0807BA28	在地图动画条形图上绘制数字。	{U}
-0803581C	在屏幕底部显示一条消息。	BB功能。	{J}
-08035EDC	恢复示范的开始。	{J}
-08038320	清除塔楼或废墟时的战争记录显示。	{J}
-0804B1CC	显示项目选择菜单。	{J}
-08082354	使用石头时的效果2。	它与从事件指令调用的指令不同。	{J}
-080943D4	绘制从菜单中选择的单位画面。	{J}
-0809442C	显示动画设置单个动画设置屏幕。	{J}
-0809445C	绘制从菜单2中选择的单位画面。	{J}
-0809448C	绘制从菜单3中选择的单位画面。	{J}
-0809E124	从攻击推进屏幕调用的单元之间的项目交换。	{J}
-080A4868	让屏幕不自然地变亮。	{J}
-080AD1E0	显示MiniMap。	Non-Blocking	{J}
-080AD1F4	显示MiniMap。	Blocking	{J}
+0807BE1C	绘制地图动画图形对话框	{U}
+0807BCA8	用于管理地图动画帧的例程	{U}
+0807BA28	在地图动画条形图上绘制数字	{U}
+0803581C	在屏幕底部显示一条消息	BB功能	{J}
+08035EDC	恢复示范的开始	{J}
+0804B1CC	显示项目选择菜单	{J}
+08082354	使用石头时的效果2	它与从事件指令调用的指令不同	{J}
+080943D4	绘制从菜单中选择的单位画面	{J}
+0809442C	显示动画设置单个动画设置屏幕	{J}
+0809445C	绘制从菜单2中选择的单位画面	{J}
+0809448C	绘制从菜单3中选择的单位画面	{J}
+0809E124	从攻击推进屏幕调用的单元之间的项目交换	{J}
+080A4868	让屏幕不自然地变亮	{J}
+080AD1E0	显示MiniMap	Non-Blocking	{J}
+080AD1F4	显示MiniMap	Blocking	{J}
 080B2D94	Run FadeIn Procs	{J}
 080B2DB8	Run FadeOut Procs	{J}
 080B2E74	Run FadeIn Procs2	{J}
 080B2E98	Run FadeOut Procs2	{J}
-080B4B34	显示音响室屏幕。	{J}
-080BE718	显示字典屏幕。	{J}
-080BE794	显示设定画面。	{J}
-080BE810	显示世界地图的状态图。	{J}
-080CA1D4	显示OP字幕。	{J}
-080CB370	显示游戏标题OP。	{J}
-080CB390	显示游戏标题OP 2。	{J}
-080CB3A8	显示光环后显示OP。	{J}
-08035DDC	恢复示范的开始。	{U}
-080381F4	清除塔楼或废墟时的战争记录显示。	{U}
-0804A430	显示项目选择菜单。	{U}
-08080014	使用石头时的效果2。	它与从事件指令调用的指令不同。	{U}
-0809BE60	从攻击推进屏幕调用的单元之间的项目交换。	{U}
-080A87C8	显示MiniMap。	Non-Blocking	{U}
-080A87DC	显示MiniMap。	Blocking	{U}
+080B4B34	显示音响室屏幕	{J}
+080BE718	显示字典屏幕	{J}
+080BE794	显示设定画面	{J}
+080BE810	显示世界地图的状态图	{J}
+080CA1D4	显示OP字幕	{J}
+080CB370	显示游戏标题OP	{J}
+080CB390	显示游戏标题OP 2	{J}
+080CB3A8	显示光环后显示OP	{J}
+08035DDC	恢复示范的开始	{U}
+0804A430	显示项目选择菜单	{U}
+08080014	使用石头时的效果2	它与从事件指令调用的指令不同	{U}
+0809BE60	从攻击推进屏幕调用的单元之间的项目交换	{U}
+080A87C8	显示MiniMap	Non-Blocking	{U}
+080A87DC	显示MiniMap	Blocking	{U}
 080AE318	Run FadeIn Procs	{U}
 080AE33C	Run FadeOut Procs	{U}
 080AE3F8	Run FadeIn Procs2	{U}
 080AE41C	Run FadeOut Procs2	{U}
-080AFF1C	显示音响室屏幕。	{U}
-080C541C	显示OP字幕。	{U}
-080C6424	显示游戏标题OP。	{U}
-080C6444	显示游戏标题OP 2。	{U}
-080C645C	显示光环后显示OP。	{U}
-0203E0EC	战斗4字节的未知标志。	{J}
-080868F4	打开标志0x82。	{J}
-08086900	标志0x82的状态获取。	{J}
-08050ABC	设置“战斗4字节的未知标志”的值。	{J}
-08050AC8	获得“战斗4字节的未知标志”。	{J}
-08059938	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）。	{J}
-08084628	打开标志0x82。	{U}
-08084634	标志0x82的状态获取。	{U}
-0804FD48	设置“战斗4字节的未知标志”的值。	{U}
-0804FD54	获得“战斗4字节的未知标志”。	{U}
-08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）。	{U}
+080AFF1C	显示音响室屏幕	{U}
+080C541C	显示OP字幕	{U}
+080C6424	显示游戏标题OP	{U}
+080C6444	显示游戏标题OP 2	{U}
+080C645C	显示光环后显示OP	{U}
+0203E0EC	战斗4字节的未知标志	{J}
+080868F4	打开标志0x82	{J}
+08086900	标志0x82的状态获取	{J}
+08050ABC	设置“战斗4字节的未知标志”的值	{J}
+08050AC8	获得“战斗4字节的未知标志”	{J}
+08059938	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{J}
+08084628	打开标志0x82	{U}
+08084634	标志0x82的状态获取	{U}
+0804FD48	设置“战斗4字节的未知标志”的值	{U}
+0804FD54	获得“战斗4字节的未知标志”	{U}
+08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{U}
 080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
 080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
 080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
-080B3FE8	SoundRoom	显示歌曲ID。	{J}
-080B4414	SoundRoom	播放指定的歌曲。	{J}
-080B4A0C	SoundRoom	显示播放时间。	{J}
-080B4B48	SoundRoom	显示歌曲标题。	{J}
-080B4C30	SoundRoom	显示歌曲标题2。	{J}
-080B4F3C	SoundRoom	绘制声音室的关系。	{J}
+080B3FE8	SoundRoom	显示歌曲ID	{J}
+080B4414	SoundRoom	播放指定的歌曲	{J}
+080B4A0C	SoundRoom	显示播放时间	{J}
+080B4B48	SoundRoom	显示歌曲标题	{J}
+080B4C30	SoundRoom	显示歌曲标题2	{J}
+080B4F3C	SoundRoom	绘制声音室的关系	{J}
 080AEC94	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{U}
 080AECB4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{U}
 080AED10	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{U}
-080AF3C8	SoundRoom	显示歌曲ID。	{U}
-080AF7F4	SoundRoom	播放指定的歌曲。	{U}
-080AFDF4	SoundRoom	显示播放时间。	{U}
-080AFF30	SoundRoom	显示歌曲标题。	{U}
-080B0018	SoundRoom	显示歌曲标题2。	{U}
-080B0324	SoundRoom	绘制声音室的关系。	{U}
-08A73924	:08A7394B	Something的FillTileRect磁贴表。	{J}
-08A9D64C	:08A9D667	文本ID，例如“开始”。	{J}
-0860754C	:086078C5	未知数据。	OAMSP Maybe	10	{J}
-0860821C	:086094B3	未知数据。	OAMSP Maybe	11	{J}
-0874E5D4	:0874F211	未知数据。	OAMSP Maybe	12	{J}
-08A1D320	:08A1D8BF	未知数据。	OAMSP Maybe	13	{J}
-0808B93C	保存菜单项的背景。	{J}
+080AF3C8	SoundRoom	显示歌曲ID	{U}
+080AF7F4	SoundRoom	播放指定的歌曲	{U}
+080AFDF4	SoundRoom	显示播放时间	{U}
+080AFF30	SoundRoom	显示歌曲标题	{U}
+080B0018	SoundRoom	显示歌曲标题2	{U}
+080B0324	SoundRoom	绘制声音室的关系	{U}
+08A73924	:08A7394B	Something的FillTileRect磁贴表	{J}
+08A9D64C	:08A9D667	文本ID，例如“开始”	{J}
+0860754C	:086078C5	未知数据	OAMSP Maybe	10	{J}
+0860821C	:086094B3	未知数据	OAMSP Maybe	11	{J}
+0874E5D4	:0874F211	未知数据	OAMSP Maybe	12	{J}
+08A1D320	:08A1D8BF	未知数据	OAMSP Maybe	13	{J}
+0808B93C	保存菜单项的背景	{J}
 0808B8DC	LoadChapterTitleGfx2	{J}
 02000000	gAISFrontLeft	{U}
 02000000	gAISFrontLeft	{J}
-0808BAAC	要获取章节名称，请获取要读取的章节标题ID。	{J}
-0808BA30	要获取保存槽的章节名称，请获取要读取的章节标题ID。	{J}
-08089678	保存菜单项的背景。	{U}
-0808979C	要获取章节名称，请获取要读取的章节标题ID。	{U}
-08089720	要获取保存槽的章节名称，请获取要读取的章节标题ID。	{U}
+0808BAAC	要获取章节名称，请获取要读取的章节标题ID	{J}
+0808BA30	要获取保存槽的章节名称，请获取要读取的章节标题ID	{J}
+08089678	保存菜单项的背景	{U}
+0808979C	要获取章节名称，请获取要读取的章节标题ID	{U}
+08089720	要获取保存槽的章节名称，请获取要读取的章节标题ID	{U}
 08000228	&ARM	gStart_ARMCopy	{U}
 080003e0	&ARM	ARM_BgMapCopyRect	{U}
 08000228	&ARM	gStart_ARMCopy	{J}
@@ -11507,46 +11824,46 @@ r3=X tile position of menu of the right	{U}
 080D36E4	guMess3ReWrite_80CE9E8	{J}
 080D3C0C	Guide_80CEF10	{J}
 080D4140	Guide_80CF448	{J}
-08083688	在地图上播放时播放音效（0x2d5）。	{J}
-080836C4	在地图上跳舞时播放音效（0x2d6）。	{J}
-08083600	在地图上跳舞/玩耍时注册要播放的音效。	{J}
-08081348	在地图上播放时播放音效（0x2d5）。	{U}
-08081348	在地图上跳舞时播放音效（0x2d6）。	{U}
-080812C0	在地图上跳舞/玩耍时注册要播放的音效。	{U}
-08000AE8	显示构建版本和发布年份。	{J}
-08000B10	显示构建版本和发布年份。	{U}
-080286A4	获取单位属性的字符串。	{J}
-080DC94C	&TEXTBATCH	单位的属性。	{J}
-08072454	加载龙僵尸格斗动画数据。	{J}
-0806FEA4	加载龙僵尸格斗动画数据。	{U}
+08083688	在地图上播放时播放音效（0x2d5）	{J}
+080836C4	在地图上跳舞时播放音效（0x2d6）	{J}
+08083600	在地图上跳舞/玩耍时注册要播放的音效	{J}
+08081348	在地图上播放时播放音效（0x2d5）	{U}
+08081348	在地图上跳舞时播放音效（0x2d6）	{U}
+080812C0	在地图上跳舞/玩耍时注册要播放的音效	{U}
+08000AE8	显示构建版本和发布年份	{J}
+08000B10	显示构建版本和发布年份	{U}
+080286A4	获取单位属性的字符串	{J}
+080DC94C	&TEXTBATCH	单位的属性	{J}
+08072454	加载龙僵尸格斗动画数据	{J}
+0806FEA4	加载龙僵尸格斗动画数据	{U}
 080BA2F0	ActionArena	{J}
 080B576C	ActionArena	{U}
-080B9DA4	收购商店的售价。	{J}
-080B5220	收购商店的售价。	{U}
-080A4DD0	用于浏览支持对话的屏幕。	提高成就率。	{J}
-080A7F88	用于浏览支持对话的屏幕。	获得支持对话成就率。	{J}
-080a7f44	用于浏览支持对话的屏幕。	获得支持对话成就数（分子）。	{J}
-080a7f10	用于浏览支持对话的屏幕。	获得支持对话的总数（分母）。	{J}
-080A5774	用于浏览支持对话的屏幕。	绘制单位名称（颜色根据支持状态而变化）。	{J}
-080A5048	用于浏览支持对话的屏幕。	要绘制的函数的顶部。	{J}
-080A4CA8	用于浏览支持对话的屏幕。	绘制一个单位图标。	{J}
-0809af14	绘制菜单的框架。	{J}
-080A5388	用于浏览支持对话的屏幕。	主循环。	{J}
-080A0FE8	用于浏览支持对话的屏幕。	提高成就率。	{U}
-080A3544	用于浏览支持对话的屏幕。	获得支持对话成就率。	{U}
-080A3500	用于浏览支持对话的屏幕。	获得支持对话成就数（分子）。	{U}
-080A34CC	用于浏览支持对话的屏幕。	获得支持对话的总数（分母）。	{U}
-080A199C	用于浏览支持对话的屏幕。	绘制单位名称（颜色根据支持状态而变化）。	{U}
-080A1270	用于浏览支持对话的屏幕。	要绘制的函数的顶部。	{U}
-080A0EC0	用于浏览支持对话的屏幕。	绘制一个单位图标。	{U}
-080950E8	绘制菜单的框架。	{U}
-080A15B0	用于浏览支持对话的屏幕。	主循环。	{U}
-080D4178	字典	判断是否有新项目。	{J}
-080CF480	字典	判断是否有新项目。	{U}
+080B9DA4	收购商店的售价	{J}
+080B5220	收购商店的售价	{U}
+080A4DD0	用于浏览支持对话的屏幕	提高成就率	{J}
+080A7F88	用于浏览支持对话的屏幕	获得支持对话成就率	{J}
+080a7f44	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{J}
+080a7f10	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{J}
+080A5774	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{J}
+080A5048	用于浏览支持对话的屏幕	要绘制的函数的顶部	{J}
+080A4CA8	用于浏览支持对话的屏幕	绘制一个单位图标	{J}
+0809af14	绘制菜单的框架	{J}
+080A5388	用于浏览支持对话的屏幕	主循环	{J}
+080A0FE8	用于浏览支持对话的屏幕	提高成就率	{U}
+080A3544	用于浏览支持对话的屏幕	获得支持对话成就率	{U}
+080A3500	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{U}
+080A34CC	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{U}
+080A199C	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{U}
+080A1270	用于浏览支持对话的屏幕	要绘制的函数的顶部	{U}
+080A0EC0	用于浏览支持对话的屏幕	绘制一个单位图标	{U}
+080950E8	绘制菜单的框架	{U}
+080A15B0	用于浏览支持对话的屏幕	主循环	{U}
+080D4178	字典	判断是否有新项目	{J}
+080CF480	字典	判断是否有新项目	{U}
 08097024	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{U}
 08099308	AddPrepMenuEntry	adds an entry to the prep screen menu	r0=Index(at least I think, but it's weird)	r1=Effect function pointer	r2=Usability(if 0, works fine, if 1, greyed out)	r3=Text ID	[sp+0]=Unk	{J}
-0808BA78	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{J}
-08089768	获取要在保存槽中显示的章节ID。	r0=@ChapterData	{U}
+0808BA78	获取要在保存槽中显示的章节ID	r0=@ChapterData	{J}
+08089768	获取要在保存槽中显示的章节ID	r0=@ChapterData	{U}
 08095024	PrepScreenTextHandler	{U}
 08095524	PrepScreenHandler	{U}
 08097304	PrepScreenTextHandler	{J}
@@ -11576,32 +11893,593 @@ r3=X tile position of menu of the right	{U}
 080B1F1C	DrawBlueBarForActiveItemInPrepScreenMenu	{J}
 08A9D904	&OAMREGS_ARRAY	Unk OAMREGS	25	{J}
 08A2099C	&OAMREGS_ARRAY	Unk OAMREGS	25	{U}
-08AD1734	&LZ77	引导数据。	FE 7的CG片段。	{J}
-08AD1EC8	&PALETTE8	引导数据。	FE 7 CG托盘的残余物。	{J}
-08AD1FC8	&HEADERTSA	引导数据。	FE 7的CG的TSE遗留物。	{J}
-0802D664	实际通过物品交换交换物品时。	{J}
+08AD1734	&LZ77	引导数据	FE 7的CG片段	{J}
+08AD1EC8	&PALETTE8	引导数据	FE 7 CG托盘的残余物	{J}
+08AD1FC8	&HEADERTSA	引导数据	FE 7的CG的TSE遗留物	{J}
+0802D664	实际通过物品交换交换物品时	{J}
 080358A8	AutoRestoreBadStatus	{J}
 080357A8	AutoRestoreBadStatus	{U}
-080134E4	未使用的功能1。	{J}
+080134E4	未使用的功能1	{J}
 080DC56C	:080DC583	Event34_MessWithUnitState_Data	{J}
-080DC584	:080DC593	从未使用的功能1引用的数据。	{J}
+080DC584	:080DC593	从未使用的功能1引用的数据	{J}
 080DC6C8	&ASM_POINTER_ARRAY	DebugMenuCommand	{J}
-0801342C	未使用的功能1。	{U}
+0801342C	未使用的功能1	{U}
 080D793C	:080D7953	Event34_MessWithUnitState_Data	{U}
-080D7954	:080D7963	从未使用的功能1引用的数据。	{U}
-085E4E84	&LZ77	某事的图象。	5	{J}
+080D7954	:080D7963	从未使用的功能1引用的数据	{U}
+085E4E84	&LZ77	某事的图象	5	{J}
 08023D5C	SetUnitActionToSupport_Code0xF	{J}
 08023DA0	SetUnitActionToSupport_Code0xF	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
-0203F101	用于判断并行扩展。	{J}
-080A5E48	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{J}
-080A5F9C	支持屏幕。	显示目标单位的支持列表。	{J}
-080A48BC	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{J}
-080A4A28	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{J}
-080A8030	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{J}
-080A207C	支持屏幕。	显示剩余的支持性对话的数量。	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）。	{U}
-080A21D0	支持屏幕。	显示目标单位的支持列表。	{U}
-080A0AD4	支持屏幕。	从gStringBufferAlt获取单元实现的支持状态。	{U}
-080A0C40	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	主。	{U}
-080A35EC	支持屏幕。	构造一个缓存单元支持关系的gStringBufferAlt。	1个单位。	{U}
+0203F101	用于判断并行扩展	{J}
+080A5E48	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{J}
+080A5F9C	支持屏幕	显示目标单位的支持列表	{J}
+080A48BC	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{J}
+080A4A28	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{J}
+080A8030	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	1个单位	{J}
+080A207C	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{U}
+080A21D0	支持屏幕	显示目标单位的支持列表	{U}
+080A0AD4	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{U}
+080A0C40	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{U}
+080A35EC	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	1个单位	{U}
+08A93F50	&TEXTBATCH	Prep screen 1.	{J}
+08A18204	&TEXTBATCH	Prep screen 1.	{U}
+08A93F7C	&TEXTBATCH	Prep screen 2.	{J}
+08A18230	&TEXTBATCH	Prep screen 2.	{U}
+08A9463C	&TEXTBATCH	&TEXTBATCH5	{J}
+0808B128	HelpDialog	{J}
+08088E9C	HelpDialog	{U}
+080B9540	Shop	Selling anything else?	{J}
+080B9554	Shop	Do you need anything else?	{J}
+080B9580	Shop	Come back again	{J}
+080B95C8	Shop	Welcome to the armory! These are the weapons we have for sale	{J}
+080B8EB4	Shop	Welcome to the armory.I deal in all sorts of goods.	{J}
+080B92FC	Shop	What do you want to sell?	{J}
+080B92E8	Shop	Anything else?	{J}
+080B92D4	Shop	Your storage is full, too! Rearrange your things!	{J}
+080B92A4	Shop	Right. I'll send it now.	{J}
+080B9254	Shop	No? Too bad. You could take it if you made room.	{J}
+080B91D4	Shop	Looks like you're full.Send it to storage?	{J}
+080B9030	Shop	Buy event	/	How does @0080@0005 sound to you?	{J}
+080B8F30	Shop	What would you like?	{J}
+080B8ED8	Shop	Sell event	/	You've got nothing to sell!	{J}
+080B8CF0	Shop	Show the conversation	{J}
+080B49B8	Shop	Selling anything else?	{U}
+080B49CC	Shop	Do you need anything else?	{U}
+080B49F8	Shop	Come back again	{U}
+080B4494	Shop	Welcome to the armory! These are the weapons we have for sale	{U}
+080B432C	Shop	Welcome to the armory.I deal in all sorts of goods.	{U}
+080B4774	Shop	What do you want to sell?	{U}
+080B4760	Shop	Anything else?	{U}
+080B474C	Shop	Your storage is full, too! Rearrange your things!	{U}
+080B471C	Shop	Right. I'll send it now.	{U}
+080B46CC	Shop	No? Too bad. You could take it if you made room.	{U}
+080B464C	Shop	Looks like you're full.Send it to storage?	{U}
+080B44A8	Shop	Buy event	/	How does @0080@0005 sound to you?	{U}
+080B43A8	Shop	What would you like?	{U}
+080B4350	Shop	Sell event	/	You've got nothing to sell!	{U}
+080B4168	Shop	Show the conversation	{U}
+0203f100	:0203f9FF	DebuffTable	{U}
+08A95410	&TEXTBATCH	TextBatch4	{J}
+08006ED4	ParseTextEscape	处理文本中的转义序列	{J}
+08007758	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点	{J}
+08006FD0	ParseTextEscape	处理文本中的转义序列	{U}
+08007854	ParseLoadFaceOnText	关于阅读文本中的脸部图像的观点	{U}
+0808B824	LoadChapterTitlePalette	{J}
+080B083C	保存槽选择屏幕上的调色板选择	{J}
+
+
+08A029A8	&LZ77	YellowTextBox	{U}
+08A02A1C	&LZ77	gGfx_YellowTextBox2	{U}
+08A02A94	&LZ77	gGfx_YellowTextBox3	{U}
+08A02B3C	&LZ77	gGfx_YellowTextBox4	{U}
+08A02BAC	&LZ77	gGfx_YellowTextBox5	{U}
+08A032AC	&LZ77	gGfx_StatusClearFx	{U}
+08A20C64	&BGCONFIG	gObj_8A20C64	{U}
+08A20C9C	&BGCONFIG	gObj_8A20C9C	{U}
+08A20CD4	&BGCONFIG	gObj_8A20CD4	{U}
+08A20D0C	&BGCONFIG	gObj_8A20D0C	{U}
+08A20D44	&BGCONFIG	gObj_8A20D44	{U}
+08A20D58	&BGCONFIG	gObj_8A20D58	{U}
+08205C70	&BGCONFIG	gFaceConfig_8205C70	{U}
+08A74A60	&LZ77	YellowTextBox	{J}
+08A74AD4	&LZ77	gGfx_YellowTextBox2	{J}
+08A74B4C	&LZ77	gGfx_YellowTextBox3	{J}
+08A74BF4	&LZ77	gGfx_YellowTextBox4	{J}
+08A74C64	&LZ77	gGfx_YellowTextBox5	{J}
+08A75364	&LZ77	gGfx_StatusClearFx	{J}
+08A9DBCC	&BGCONFIG	gObj_8A20C64	{J}
+08A9DC04	&BGCONFIG	gObj_8A20C9C	{J}
+08A9DC3C	&BGCONFIG	gObj_8A20CD4	{J}
+08A9DC74	&BGCONFIG	gObj_8A20D0C	{J}
+08A9DCAC	&BGCONFIG	gObj_8A20D44	{J}
+08A9DCC0	&BGCONFIG	gObj_8A20D58	{J}
+081F55EC	&BGCONFIG	gFaceConfig_8205C70	{J}
+
+08001C78	HandleResetSequence	{U}
+08005F38	StartFaceFadeOut	{U}
+080081A8	Dialogue_ClearTextBoxes	{U}
+080081EC	Dialogue_ClearText	{U}
+08009CE0	GameControl_PostChapterSwitch	{U}
+08009E98	CallGameEndingEvent	{U}
+08010748	EventDisplayCursorProc_Loop	{U}
+0801098C	DecodeEventScriptedBattle	{U}
+08010E50	ClearDialogueAndFaces	{U}
+08010E6C	DisplayFlashingCursor	{U}
+0801240C	PositionUnitsAccordingToDeployment	{U}
+0801247C	PositionUnitAccordingToDeployment	{U}
+08013844	MapBrightnessFadeExists	{U}
+08015D84	CenterCameraOntoPosition	{U}
+080168E0	DrawItemMenuLineLong	{U}
+08016A2C	DrawItemStatScreenLine	{U}
+08017478	SetItemUnsealedForCharacter	{U}
+08018A9C	GetUnitKeyItemSlotForTerrain	{U}
+08018AF0	GetUnitAidIconId	{U}
+08018EB8	ClearTemporaryUnits	{U}
+08019034	CountRedUnits	{U}
+08019074	CountGreenUnits	{U}
+08019360	SetUnitLeaderCharId	{U}
+08019840	BmMapFillEdges	{U}
+08019B8C	DisplayMovementViewTile	{U}
+08019D28	UpdateBmMapDisplay	{U}
+08019E08	RenderBmMapColumn	{U}
+08019ED4	RenderBmMapLine	{U}
+08028014	SMS_DisplayWindowBlended	{U}
+0802A13C	BattleGenerateSimulationInternal	{U}
+0802A20C	BattleGenerateRealInternal	{U}
+0802A350	BattleGenerateReal	{U}
+0802A384	BattleGenerateBallistaReal	{U}
+0802A398	BattleGenerate	{U}
+0802B92C	BattleApplyExpGains	{U}
+0802BC00	ApplyUnitDefaultPromotion	{U}
+0802BD50	ApplyUnitPromotion	{U}
+0802BEA0	GenerateBattleUnitStatGainsComparatively	{U}
+0802C2D4	UpdateUnitDuringBattle	{U}
+0802C368	GetUnitRoundExp	{U}
+0802C3D8	GetUnitClassKillExpBonus	{U}
+0802C40C	GetUnitExpMultiplier	{U}
+0802C450	GetUnitKillExpBonus	{U}
+0802C4F0	ModifyUnitSpecialExp	{U}
+0802C740	BattleUnitTargetCheckCanCounter	{U}
+0802CA70	GetUnitSoloBattleAnimType	{U}
+0802CA98	GetBattleAnimType	{U}
+0802CAFC	BattlePrintDebugHitInfo	{U}
+0802CD64	BattleGenerateArena	{U}
+0802CEBC	SetScriptedBattle	{U}
+0802CF4C	BattleUnwindScripted	{U}
+0802D0BC	UnitLevelUp_unused	{U}
+0802D2B4	BattleHitAdvance	{U}
+0802D2C4	BattleHitTerminate	{U}
+0803334C	ClosePrepScreenMapMenu	{U}
+08033358	PrepScreenMapMenu_OnViewMap	{U}
+0803336C	PrepScreenMapMenu_OnFormation	{U}
+080333A4	PrepScreenMapMenu_OnStartPress	{U}
+080333C4	PrepScreenMapMenu_OnBPress	{U}
+0803341C	PrepScreenMapMenu_OnOptions	{U}
+08033458	PrepScreenMapMenu_OnSave	{U}
+08033468	PrepScreenMapMenu_OnDebug	{U}
+080334BC	PrepScreenProc_InitMapMenu	{U}
+080334CC	PrepScreenProc_DimMapImmediate	{U}
+080334E8	PrepScreenProc_StartBrightenMap	{U}
+08033514	PrepScreenProc_StartDimMap	{U}
+08033634	PrepScreenMapMenu_OnEnd	{U}
+08033648	PrepScreenProc_StartMapMenu	{U}
+080338C0	InitPrepScreenCursorPosition	{U}
+08033978	PrepScreenProc_MapIdle	{U}
+08033C90	PrepScreen_UnitSwapIdle	{U}
+08033E08	PrepScreen_StartUnitSwapAnim	{U}
+08033E8C	InitMapChangeGraphicsIfFog	{U}
+08033EA4	DisplayMapChangeIfFog	{U}
+08033EC0	PrepScreenProc_StartConfigMenu	{U}
+08034078	PrepScreenProc_Cleanup	{U}
+0804F714	GetOverriddenUnusableMenuCommands	{U}
+0804F754	SetOverriddenUnusableMenuCommands	{U}
+0804F77C	SetMenuCommandOverride	{U}
+0804F7AC	GetOverriddenMenuCommandUsability	{U}
+0804F7E8	GetOverriddenMenuCommandEffect	{U}
+08079D74	MuCtr_StartDefinedMove	{U}
+0808A518	SetDialogueBoxConfig	{U}
+0808A524	GetDialogueBoxConfig	{U}
+0808B178	BoxDialogueInterpreter_Main	{U}
+0808DDF8	CountUnitsByFaction	{U}
+08094FF4	CanPrepScreenSave	{U}
+08095498	AtMenu_AddPrepScreenSupportMenuItem	{U}
+08095504	CanPrepScreenCheckMap	{U}
+08095AD8	AtMenu_8095AD8	{U}
+08095B30	ClearPrepScreenMenuHelpText	{U}
+08095B64	DrawPrepScreenMenuHelpText	{U}
+08095B94	DisplayPrepScreenMenuHelpText	{U}
+08095BD8	UpdatePrepScreenMenuHelp_Clear	{U}
+08095BE8	UpdatePrepScreenMenuHelp_Draw	{U}
+08095BF4	UpdatePrepScreenMenuHelp_Display	{U}
+08095C00	StartUpdatePrepScreenMenuHelp	{U}
+08095EBC	AtMenu_EndIfNoUnits	{U}
+08095F2C	AtMenu_MaintainPrepScreenMenuHelp	{U}
+08096390	AtMenu_OnSubmenuEnd	{U}
+08096454	StartAtMenu	{U}
+08096468	StartAtMenu_LinkArena	{U}
+080966B0	AtMenuExists	{U}
+08096CCC	PrepScreenMenu_OnInit	{U}
+08096D10	PrepScreenMenu_OnActiveLoop	{U}
+08096F44	PrepScreenMenu_OnLoop_2	{U}
+08096F6C	PrepScreenMenu_OnLoop_0	{U}
+08096F98	PrepScreenMenu_OnEnd	{U}
+08096FAC	StartPrepScreenMenu	{U}
+08096FD0	SetPrepScreenMenuOnBPress	{U}
+08096FEC	SetPrepScreenMenuOnStartPress	{U}
+08097008	SetPrepScreenMenuOnEnd	{U}
+080970CC	SetPrepScreenMenuSelectedItem	{U}
+0809710C	GetActivePrepScreenMenuItemId	{U}
+08097154	DrawPrepScreenMenuFrameAt	{U}
+08097200	SetPrepScreenMenuPosition	{U}
+080972B0	EndPrepScreenMenu	{U}
+080972D4	ClearPrepScreenMenu	{U}
+08097340	PrepScreenMenuExists	{U}
+0809735C	DisablePrepScreenMenu	{U}
+08097394	EnablePrepScreenMenu	{U}
+0809BF10	DrawPrepScreenItemUseStatLabels	{U}
+0809C0B4	DrawPrepScreenItemUseStatBars	{U}
+0809C254	DrawPrepScreenItemUseStatValues	{U}
+0809C3EC	DrawPrepScreenItemUseItemUseDesc	{U}
+0809C4B4	PrepScreenItemUseScreen_OnUpdateSMS	{U}
+0809C4D8	PrepScreenItemUseScreen_OnInit	{U}
+0809C4E4	PrepScreenItemUseScreen_InitDisplay	{U}
+0809C820	PrepScreenItemUseScreen_OnIdle	{U}
+0809C958	DisplayAreYouSureYNBoxText	{U}
+0809C9F4	PrepScreenItemUseScreen_AreUSureBoxInit	{U}
+0809CA14	PrepScreenItemUseScreen_AreUSureBoxLoop	{U}
+0809CCFC	StartPrepScreenItemUseScreen	{U}
+080A095C	CanPrepScreenSupport	{U}
+080A2DE4	InitSaveGeneralGameMetadata	{U}
+080A3898	VerifySavedRankingChecksum	{U}
+080A3984	SaveRankings	{U}
+080A3DD8	SaveEndgameRankingsMaybe	{U}
+080A4C14	RegisterCompletedPlaythrough	{U}
+080A5A00	LoadGMMonsterRnState	{U}
+080A6B70	GetTrialMapSavedMapAddress	{U}
+080A6B90	GetTrialMapSavedMapSize	{U}
+080A6BB4	GetTrialMapSavedChapterAddress	{U}
+080A6BD4	GetTrialMapSavedChapterSize	{U}
+080AA144	StartTrialMap_Maybe	{U}
+080AD564	HidePrepScreenHandCursor	{U}
+080AD580	EndPrepScreenHandCursor	{U}
+080B8E60	GMProc_80B8E60	{U}
+080BA61C	GMapScreenVSync_OnInit	{U}
+080BA628	GMapScreenVSync_OnUpdate	{U}
+080BCFB4	GM_ClearAllStoryLocations	{U}
+080C4048	GM_GetBaseMenuProc	{U}
+080CC940	StartTraineePromotion	{U}
+080CC990	StartPrepScreenPromotion	{U}
+020111A4	gPrepScreenMenuHelpTextArray	{U}
+02028E74	gLang	{U}
+0202E36C	gUnitArrayPurple	{U}
+0203DDE0	gHandCursorPosition	{U}
+0203DDE4	gPreviousHandCursorUpdateTime	{U}
+0203E788	gHelpTextOriginTile	{U}
+0203EF44	gTrialMapData	{U}
+0300000C	gSoftResetEnabled	{U}
+03000428	gEvent1EData	{U}
+030017A0	gDungeonState	{U}
+080D793F	gMenuCommandEventDisableList	{U}
+080D794E	gMenuCommandEventGrayList	{U}
+
+08001bd0	HandleResetSequence	{J}
+08005E3C	StartFaceFadeOut	{J}
+080080A4	Dialogue_ClearTextBoxes	{J}
+080080E8	Dialogue_ClearText	{J}
+08009C40	GameControl_PostChapterSwitch	{J}
+08009DF8	CallGameEndingEvent	{J}
+08010890	EventDisplayCursorProc_Loop	{J}
+08010AD0	DecodeEventScriptedBattle	{J}
+08010F98	ClearDialogueAndFaces	{J}
+08010FB4	DisplayFlashingCursor	{J}
+080124DC	PositionUnitsAccordingToDeployment	{J}
+0801254C	PositionUnitAccordingToDeployment	{J}
+080138FC	MapBrightnessFadeExists	{J}
+08015D90	CenterCameraOntoPosition	{J}
+08016688	DrawItemMenuLineLong	{J}
+080167D4	DrawItemStatScreenLine	{J}
+08017220	SetItemUnsealedForCharacter	{J}
+080187B0	GetUnitKeyItemSlotForTerrain	{J}
+08018804	GetUnitAidIconId	{J}
+08018BCC	ClearTemporaryUnits	{J}
+08018D48	CountRedUnits	{J}
+08018D88	CountGreenUnits	{J}
+08019038	SetUnitLeaderCharId	{J}
+08019518	BmMapFillEdges	{J}
+08019864	DisplayMovementViewTile	{J}
+08019A00	UpdateBmMapDisplay	{J}
+08019AE0	RenderBmMapColumn	{J}
+08019BAC	RenderBmMapLine	{J}
+08027FA8	SMS_DisplayWindowBlended	{J}
+0802A0C8	BattleGenerateSimulationInternal	{J}
+0802A198	BattleGenerateRealInternal	{J}
+0802A2DC	BattleGenerateReal	{J}
+0802A310	BattleGenerateBallistaReal	{J}
+0802A324	BattleGenerate	{J}
+0802B874	BattleApplyExpGains	{J}
+0802BB48	ApplyUnitDefaultPromotion	{J}
+0802BC98	ApplyUnitPromotion	{J}
+0802BDE8	GenerateBattleUnitStatGainsComparatively	{J}
+0802C21C	UpdateUnitDuringBattle	{J}
+0802C2B0	GetUnitRoundExp	{J}
+0802C320	GetUnitClassKillExpBonus	{J}
+0802C354	GetUnitExpMultiplier	{J}
+0802c398	GetUnitKillExpBonus	{J}
+0802C428	ModifyUnitSpecialExp	{J}
+0802C678	BattleUnitTargetCheckCanCounter	{J}
+0802C9A8	GetUnitSoloBattleAnimType	{J}
+0802C9D0	GetBattleAnimType	{J}
+0802ca34	BattlePrintDebugHitInfo	{J}
+0802CC9C	BattleGenerateArena	{J}
+0802cdf4	SetScriptedBattle	{J}
+0802CE84	BattleUnwindScripted	{J}
+0802CFF4	UnitLevelUp_unused	{J}
+0802D1EC	BattleHitAdvance	{J}
+0802D1FC	BattleHitTerminate	{J}
+0803325C	ClosePrepScreenMapMenu	{J}
+08033268	PrepScreenMapMenu_OnViewMap	{J}
+0803327C	PrepScreenMapMenu_OnFormation	{J}
+080332B4	PrepScreenMapMenu_OnStartPress	{J}
+080332D4	PrepScreenMapMenu_OnBPress	{J}
+0803332C	PrepScreenMapMenu_OnOptions	{J}
+08033368	PrepScreenMapMenu_OnSave	{J}
+08033378	PrepScreenMapMenu_OnDebug	{J}
+080333CC	PrepScreenProc_InitMapMenu	{J}
+080333DC	PrepScreenProc_DimMapImmediate	{J}
+080333F8	PrepScreenProc_StartBrightenMap	{J}
+08033424	PrepScreenProc_StartDimMap	{J}
+08033544	PrepScreenMapMenu_OnEnd	{J}
+08033558	PrepScreenProc_StartMapMenu	{J}
+080337D0	InitPrepScreenCursorPosition	{J}
+08033888	PrepScreenProc_MapIdle	{J}
+08033B9C	PrepScreen_UnitSwapIdle	{J}
+08033D10	PrepScreen_StartUnitSwapAnim	{J}
+08033D94	InitMapChangeGraphicsIfFog	{J}
+08033DAC	DisplayMapChangeIfFog	{J}
+08033DC8	PrepScreenProc_StartConfigMenu	{J}
+08033F80	PrepScreenProc_Cleanup	{J}
+08050488	GetOverriddenUnusableMenuCommands	{J}
+080504C8	SetOverriddenUnusableMenuCommands	{J}
+080504F0	SetMenuCommandOverride	{J}
+08050520	GetOverriddenMenuCommandUsability	{J}
+0805055C	GetOverriddenMenuCommandEffect	{J}
+0807C178	MuCtr_StartDefinedMove	{J}
+0808C828	SetDialogueBoxConfig	{J}
+0808C834	GetDialogueBoxConfig	{J}
+0808D488	BoxDialogueInterpreter_Main	{J}
+080900E0	CountUnitsByFaction	{J}
+080972D4	CanPrepScreenSave	{J}
+08097778	AtMenu_AddPrepScreenSupportMenuItem	{J}
+080977E4	CanPrepScreenCheckMap	{J}
+08097DB8	AtMenu_8095AD8	{J}
+08097E10	ClearPrepScreenMenuHelpText	{J}
+08097E44	DrawPrepScreenMenuHelpText	{J}
+08097E74	DisplayPrepScreenMenuHelpText	{J}
+08097EB8	UpdatePrepScreenMenuHelp_Clear	{J}
+08097EC8	UpdatePrepScreenMenuHelp_Draw	{J}
+08097ED4	UpdatePrepScreenMenuHelp_Display	{J}
+08097EE0	StartUpdatePrepScreenMenuHelp	{J}
+0809819C	AtMenu_EndIfNoUnits	{J}
+0809820C	AtMenu_MaintainPrepScreenMenuHelp	{J}
+08098674	AtMenu_OnSubmenuEnd	{J}
+08098738	StartAtMenu	{J}
+0809874C	StartAtMenu_LinkArena	{J}
+08098994	AtMenuExists	{J}
+08098FB0	PrepScreenMenu_OnInit	{J}
+08098FF4	PrepScreenMenu_OnActiveLoop	{J}
+08099228	PrepScreenMenu_OnLoop_2	{J}
+08099250	PrepScreenMenu_OnLoop_0	{J}
+0809927C	PrepScreenMenu_OnEnd	{J}
+08099290	StartPrepScreenMenu	{J}
+080992B4	SetPrepScreenMenuOnBPress	{J}
+080992D0	SetPrepScreenMenuOnStartPress	{J}
+080992EC	SetPrepScreenMenuOnEnd	{J}
+080993B0	SetPrepScreenMenuSelectedItem	{J}
+080993F0	GetActivePrepScreenMenuItemId	{J}
+08099438	DrawPrepScreenMenuFrameAt	{J}
+080994E4	SetPrepScreenMenuPosition	{J}
+08099594	EndPrepScreenMenu	{J}
+080995B8	ClearPrepScreenMenu	{J}
+08099624	PrepScreenMenuExists	{J}
+08099640	DisablePrepScreenMenu	{J}
+08099678	EnablePrepScreenMenu	{J}
+0809E1D4	DrawPrepScreenItemUseStatLabels	{J}
+0809E37C	DrawPrepScreenItemUseStatBars	{J}
+0809E51C	DrawPrepScreenItemUseStatValues	{J}
+0809E6B4	DrawPrepScreenItemUseItemUseDesc	{J}
+0809E764	PrepScreenItemUseScreen_OnUpdateSMS	{J}
+0809E788	PrepScreenItemUseScreen_OnInit	{J}
+0809E794	PrepScreenItemUseScreen_InitDisplay	{J}
+0809EAC4	PrepScreenItemUseScreen_OnIdle	{J}
+0809EBFC	DisplayAreYouSureYNBoxText	{J}
+0809EC98	PrepScreenItemUseScreen_AreUSureBoxInit	{J}
+0809ECB8	PrepScreenItemUseScreen_AreUSureBoxLoop	{J}
+0809EF94	StartPrepScreenItemUseScreen	{J}
+080A2C10	CanPrepScreenSupport	{J}
+080A7828	InitSaveGeneralGameMetadata	{J}
+080A82DC	VerifySavedRankingChecksum	{J}
+080A83C8	SaveRankings	{J}
+080A881C	SaveEndgameRankingsMaybe	{J}
+080A9658	RegisterCompletedPlaythrough	{J}
+080AA418	LoadGMMonsterRnState	{J}
+080AB588	GetTrialMapSavedMapAddress	{J}
+080AB5A8	GetTrialMapSavedMapSize	{J}
+080AB5CC	GetTrialMapSavedChapterAddress	{J}
+080AB5EC	GetTrialMapSavedChapterSize	{J}
+080AEB98	StartTrialMap_Maybe	{J}
+080B2004	HidePrepScreenHandCursor	{J}
+080B2020	EndPrepScreenHandCursor	{J}
+080BDD28	GMProc_80B8E60	{J}
+080BF4B4	GMapScreenVSync_OnInit	{J}
+080BF4C0	GMapScreenVSync_OnUpdate	{J}
+080C1DC0	GM_ClearAllStoryLocations	{J}
+080C8E00	GM_GetBaseMenuProc	{J}
+080D165C	StartTraineePromotion	{J}
+080D16AC	StartPrepScreenPromotion	{J}
+020111A4	gPrepScreenMenuHelpTextArray	{J}
+0203DDDC	gHandCursorPosition	{J}
+0203DDE0	gPreviousHandCursorUpdateTime	{J}
+0203E784	gHelpTextOriginTile	{J}
+0203EF40	gTrialMapData	{J}
+03001798	gDungeonState	{J}
+080DC56F	gMenuCommandEventDisableList	{J}
+080DC57E	gMenuCommandEventGrayList	{J}
+0202bcb1	gGameLogicSemaphore	{U}
+0202bcb2	gGameGfxSemaphore	{U}
+0202bcb4	gGameStatebits	{U}
+0202bcb6	gSavedVCLY	{U}
+0202bcbc	gCurrentRealCameraPos	{U}
+0202bcc4	gCursorMapPosition	{U}
+0202bccc	gSomeRealCameraPosition	{U}
+0202bcd0	gCursorDisplayPosition	{U}
+0202bcd4	gSomeRealCameraOffset	{U}
+0202bcd8	gSomeRealCameraOffsetTarget	{U}
+0202bcdc	gItemGotButNotYet	{U}
+0202bcde	gThatsAnItem2	{U}
+08BB1DBC	:08BB1F27	神秘的数据	它似乎与本章开头的章节标题显示有关	{J}
+081F5674	:081F567b	神秘的数据	8个字节	{J}
+081F5680	:081F5687	神秘的数据	8个字节	{J}
+081F5690	:081F5697	神秘的数据	8个字节	{J}
+08B18D68	:08B18ED3	神秘的数据	它似乎与本章开头的章节标题显示有关	{U}
+080BB240	结束	单位结果	如果该单位已经死亡	获取字符串“At，结束已结束”	{J}
+080B6768	结束	单位结果	如果该单位已经死亡	获取字符串“At，结束已结束”	{U}
+080B3564	结束	单位结果	格式化单位死亡的章节的名称	执行特殊符号，例如结束章节/开头	{J}
+080b6674	结束	单位结果	格式化单位死亡的章节的名称	执行特殊符号，例如结束章节/开头	{U}
+080B7800	清除转弯清单图纸	{U}
+080b3538	AppendTextBuffer_080b3538	{J}
+080aeabc	AppendTextBuffer_080aeabc	{U}
+080AEBEC	Div10_Safe	{U}
+080797BC	重现点击声音点击	SongID:0x147	{J}
+08077398	重现点击声音点击	SongID:0x147	{U}
+03006680	@MusicPlayer	gMusicSEPlayerInfo2	{J}
+030066C0	@MusicPlayer	gMusicSEPlayerInfo3	{J}
+03006710	@MusicPlayer	gMusicSEPlayerInfo4	{J}
+03006750	@MusicPlayer	gMusicSEPlayerInfo5	{J}
+0800D5C8	CallEvent	事件“支持水平上升”	{J}
+0800D5F4	CallEvent	活动“淡入，淡出和谈话”	{J}
+0800D618	CallEvent	事件“你想撤退吗？”	{J}
+0800D640	CallEvent	事件“你想中止吗？”	{J}
+0800D568	CallEvent	事件“执行映射更改执行0xFFFD”	{J}
+0800D524	CallEvent	事件“对话0xFFFF”	{J}
+0800D304	CallEvent	事件“支持水平上升”	{U}
+0800D330	CallEvent	活动“淡入，淡出和谈话”	{U}
+0800D354	CallEvent	事件“你想撤退吗？”	{U}
+0800D37C	CallEvent	事件“你想中止吗？”	{U}
+0800D2A4	CallEvent	事件“执行映射更改执行0xFFFD”	{U}
+0800D260	CallEvent	事件“对话0xFFFF”	{U}
+0805B80C	StartAnime_EkrUnitMain	{J}
+0805AA68	StartAnime_EkrUnitMain	{U}
+085F14DC	:085F1567	StartEkrsubAnime1Data1	{J}
+085F1568	:085F15E7	StartEkrsubAnime1Data2	{J}
+085F15E8	:085F1667	StartEkrsubAnime1Data3	{J}
+085F1668	:085F16E3	StartEkrsubAnime1Data4	{J}
+085C72AC	:085C7337	StartEkrsubAnime1Data1	{U}
+085C7338	:085C73B7	StartEkrsubAnime1Data2	{U}
+085C73B8	:085C7437	StartEkrsubAnime1Data3	{U}
+085C7438	:085C74B3	StartEkrsubAnime1Data4	{U}
+0805BBFC	StartAnime_EkrUnitMain_Sub	{J}
+0805AE58	StartAnime_EkrUnitMain_Sub	{U}
+085E4088	:085E411F	StartEkrsubAnime2Data1	0x98 byte data	{J}
+085E4120	:085E41B7	StartEkrsubAnime2Data2	0x98 byte data	{J}
+085E41B8	:085E424F	StartEkrsubAnime2Data3	0x98 byte data	{J}
+085E4250	:085E42E7	StartEkrsubAnime2Data4	0x98 byte data	{J}
+085B9E58	:085B9EEF	StartEkrsubAnime2Data1	0x98 byte data	{U}
+085B9EF0	:085B9F87	StartEkrsubAnime2Data2	0x98 byte data	{U}
+085B9F88	:085BA01F	StartEkrsubAnime2Data3	0x98 byte data	{U}
+085BA020	:085BA0B7	StartEkrsubAnime2Data4	0x98 byte data	{U}
+081F5840	&TEXTBATCH	章节号文本ID	{J}
+081F5900	&TEXTBATCH	状态屏幕上的HP等字符串	{J}
+08205EDC	&TEXTBATCH	状态屏幕上的HP等字符串	{U}
+080DF424	&ROMPALETTEANIMEFRAME	efxNoDamagePaletteAnimeFrame	{J}
+080DFC44	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1	{J}
+080DFC6E	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame2	{J}
+080DFCC6	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame	{J}
+080DFCF6	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame	{J}
+080E0036	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame	{J}
+080E1A4A	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{J}
+080E1AD0	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame	{J}
+080E1C48	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame	{J}
+080E1D34	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame	{J}
+080E1A4A	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{J}
+080E1AD0	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame	{J}
+080E1E58	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame	{J}
+080E20B8	&ROMPALETTEANIMEFRAME	efxAlacaliburBGCOLPaletteAnimeFrame	{J}
+080E2780	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame	{J}
+080E29A4	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame	{J}
+080E30FA	&ROMPALETTEANIMEFRAME	efxShineBGCOLPaletteAnimeFrame	{J}
+080E317A	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame	{J}
+080E3242	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOLPaletteAnimeFrame	{J}
+080E32C0	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOL2PaletteAnimeFrame	{J}
+080E32F8	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOL3PaletteAnimeFrame	{J}
+080E33D6	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame	{J}
+080E3A8E	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame	{J}
+080E3FB6	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame	{J}
+080E41BE	&ROMPALETTEANIMEFRAME	efxCrimsonEyeBGFinish1PaletteAnimeFrame	{J}
+080E4484	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame	{J}
+080E4566	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame	{J}
+080E4682	&ROMPALETTEANIMEFRAME	efxMagfcastBG1PaletteAnimeFrame	{J}
+080E4698	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame	{J}
+080E4A24	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame	{J}
+080E4A88	&ROMPALETTEANIMEFRAME	efxOpThunderBGPaletteAnimeFrame	{J}
+080E4AA6	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame	{J}
+080E4B10	&ROMPALETTEANIMEFRAME	efxopLiveBGPaletteAnimeFrame	{J}
+080E4B28	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame	{J}
+080E4BAE	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame	{J}
+080E4C78	&ROMPALETTEANIMEFRAME	efxopMistyrainBGPaletteAnimeFrame	{J}
+087526A8	&PALETTE	efxFirebreathBGCOLPalette	{J}
+08752984	&PALETTE	efxDrzDrakbreathBGCOLPalette	{J}
+0869EBD8	&PALETTE16	efxLiveSomePalette	{J}
+
+080DA438	&ROMPALETTEANIMEFRAME	efxNoDamagePaletteAnimeFrame	{U}
+080DAC58	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1	{U}
+080DAC82	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame2	{U}
+080DACDA	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame	{U}
+080DAD0A	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame	{U}
+080DB026	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame	{U}
+080DCBD4	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{U}
+080DCA5C	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame	{U}
+080DCBD4	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame	{U}
+080DCCC0	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame	{U}
+080DCBD4	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{U}
+080DCA5C	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame	{U}
+080DCDE4	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame	{U}
+080DD044	&ROMPALETTEANIMEFRAME	efxAlacaliburBGCOLPaletteAnimeFrame	{U}
+080DD70C	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame	{U}
+080DD930	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame	{U}
+080DE086	&ROMPALETTEANIMEFRAME	efxShineBGCOLPaletteAnimeFrame	{U}
+080DE106	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame	{U}
+080DE1CE	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOLPaletteAnimeFrame	{U}
+080DE24C	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOL2PaletteAnimeFrame	{U}
+080DE284	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOL3PaletteAnimeFrame	{U}
+080DE2E2	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame	{U}
+080DE792	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame	{U}
+080DECBA	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame	{U}
+080DEEC2	&ROMPALETTEANIMEFRAME	efxCrimsonEyeBGFinish1PaletteAnimeFrame	{U}
+080DF188	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame	{U}
+080DF26A	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame	{U}
+080DF386	&ROMPALETTEANIMEFRAME	efxMagfcastBG1PaletteAnimeFrame	{U}
+080DF39C	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame	{U}
+080DF644	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame	{U}
+080DF6A8	&ROMPALETTEANIMEFRAME	efxOpThunderBGPaletteAnimeFrame	{U}
+080DF6C6	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame	{U}
+080DF730	&ROMPALETTEANIMEFRAME	efxopLiveBGPaletteAnimeFrame	{U}
+080DF748	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame	{U}
+080DF7CE	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame	{U}
+080DF898	&ROMPALETTEANIMEFRAME	efxopMistyrainBGPaletteAnimeFrame	{U}
+08725AD0	&PALETTE	efxFirebreathBGCOLPalette	{U}
+08725DAC	&PALETTE	efxDrzDrakbreathBGCOLPalette	{U}
+086700D4	&PALETTE16	efxLiveSomePalette	{U}
+0803190C	竞技场	选择对手	{U}
+08031858	竞技场	选择对手	{J}
+08038320	清除塔楼和废墟时。	显示结果。	{J}
+080381F4	清除塔楼和废墟时。	显示结果。	{U}
+08037CF8	清除塔楼和废墟时。	显示结果后完成后。	{U}
+08085c7c	清除塔楼和废墟时。	轻量化生产。	LowLevel	{U}
+08087F3C	清除塔楼和废墟时。	轻量化生产。	{J}
+08037D90	清除塔楼和废墟时。	显示结果后完成后。	{J}
+08087F48	清除塔楼和废墟时。	轻量化生产。	LowLevel	{J}
+08037888	ExecTrapForDropUnit_Sub	{J}
+08032104	ExecTrapForDropUnit	{J}
+080377F0	ExecTrapForDropUnit_Sub	{U}
+080321B8	ExecTrapForDropUnit	{U}

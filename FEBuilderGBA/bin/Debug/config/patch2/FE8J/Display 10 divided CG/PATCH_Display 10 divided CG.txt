@@ -7,7 +7,7 @@ TYPE=BIN
 TAG=#ENGINE
 
 //既に適応されたかどうか(この例ではNOTで、適応されていないかどうかを調べてる)
-PATCHED_IFNOT:0x080bb182=0x45 0x46 0xE0 0xB4
+PATCHED_IF:0x0bb182=0x00 0x00
 
 BIN:$FREEAREA:1=show_10split_image.bin
 

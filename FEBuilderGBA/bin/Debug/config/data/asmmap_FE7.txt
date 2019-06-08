@@ -421,23 +421,182 @@
 @ROMTCSFrameData@02	short	xScale
 @ROMTCSFrameData@04	short	yScale
 
-@TheConfusingStruct@00	&ROMTCS	Pointer to ROMTCS
-@TheConfusingStruct@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
-@TheConfusingStruct@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
-@TheConfusingStruct@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
-@TheConfusingStruct@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
-@TheConfusingStruct@14	pointer	Pointer Current Rot/Scale Data
-@TheConfusingStruct@18	short	Cycle Timer
-@TheConfusingStruct@1A	short	Cycle Time Step (0x100 is one frame)
-@TheConfusingStruct@1C	short	Sub frame time offset or something
-@TheConfusingStruct@1E	short	OAM Index?
-@TheConfusingStruct@20	byte	bool defining whether gfx needs update
-@TheConfusingStruct@21	byte	Rotation/Scale OAM Index
-@TheConfusingStruct@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
-@TheConfusingStruct@24	pointer	Gfx Pointer
+@APHandle@00	&ROMTCS	Pointer to ROMTCS
+@APHandle@04	&ROMTCSFrameData	Pointer to Frame Data Ref (from ROMTCS)
+@APHandle@08	&ROMTCSAnimData	Pointer to Current Anim Data (Start, where you go back on loop)
+@APHandle@0C	&ROMTCSAnimData	Pointer to Current Anim Data (Cursor)
+@APHandle@10	&ROMTCSFrameData	Pointer to Current Frame/OAM Data
+@APHandle@14	pointer	Pointer Current Rot/Scale Data
+@APHandle@18	short	Cycle Timer
+@APHandle@1A	short	Cycle Time Step (0x100 is one frame)
+@APHandle@1C	short	Sub frame time offset or something
+@APHandle@1E	short	OAM Index?
+@APHandle@20	byte	bool defining whether gfx needs update
+@APHandle@21	byte	Rotation/Scale OAM Index
+@APHandle@22	short	OAM Extra Data (Tile Index Root & OAM2 Stuff)
+@APHandle@24	pointer	Gfx Pointer
 
-03000110	TheConfusingStruct	{U}
-03000110	TheConfusingStruct	{J}
+03000110	@APHandle	gApPool	{U}
+03000110	@APHandle	gApPool	{J}
+
+@AnimationInterpreter@00	short	state
+@AnimationInterpreter@02	short	xPosition
+@AnimationInterpreter@04	short	yPosition
+@AnimationInterpreter@06	short	delayTimer
+@AnimationInterpreter@08	short	oam2base
+@AnimationInterpreter@0a	short	drawLayerPriority
+@AnimationInterpreter@0c	short	state2
+@AnimationInterpreter@0e	short	nextRoundId
+@AnimationInterpreter@10	short	state3
+@AnimationInterpreter@12	byte	currentRoundType
+@AnimationInterpreter@13	byte	frameIndex
+@AnimationInterpreter@14	byte	queuedCommandCount
+@AnimationInterpreter@15	byte	commandQueue
+@AnimationInterpreter@20	word	pCurrentFrame
+@AnimationInterpreter@24	word	pStartFrame
+@AnimationInterpreter@28	word	pUnk28
+@AnimationInterpreter@2c	word	pUnk2C
+@AnimationInterpreter@30	word	pStartObjData
+@AnimationInterpreter@34	&AnimationInterpreter	pPrev
+@AnimationInterpreter@38	&AnimationInterpreter	pNext
+@AnimationInterpreter@40	&AnimationInterpreter	pUnk40
+@AnimationInterpreter@44	&AnimationInterpreter	pUnk44
+
+@WaveData@00	short	type
+@WaveData@02	short	status
+@WaveData@04	word	freq
+@WaveData@08	word	loopStart
+@WaveData@0c	word	size
+@WaveData@10	byte	data_array
+
+@ToneData@00	byte	type
+@ToneData@01	byte	key
+@ToneData@02	byte	length
+@ToneData@03	byte	pan_sweep
+@ToneData@04	&WaveData	wav
+@ToneData@0c	byte	attack
+@ToneData@0d	byte	decay
+@ToneData@0e	byte	sustain
+@ToneData@0f	byte	release
+
+@SoundChannel@00	byte	status
+@SoundChannel@01	byte	type
+@SoundChannel@02	byte	rightVolume
+@SoundChannel@03	byte	leftVolume
+@SoundChannel@04	byte	attack
+@SoundChannel@05	byte	decay
+@SoundChannel@06	byte	sustain
+@SoundChannel@07	byte	release
+@SoundChannel@08	byte	ky
+@SoundChannel@09	byte	ev
+@SoundChannel@0a	byte	er
+@SoundChannel@0b	byte	el
+@SoundChannel@0c	byte	echoVolume
+@SoundChannel@0d	byte	echoLength
+@SoundChannel@0e	byte	d1
+@SoundChannel@0f	byte	d2
+@SoundChannel@10	byte	gt
+@SoundChannel@11	byte	mk
+@SoundChannel@12	byte	ve
+@SoundChannel@13	byte	pr
+@SoundChannel@14	byte	rp
+@SoundChannel@15	byte	d3_0
+@SoundChannel@16	byte	d3_1
+@SoundChannel@17	byte	d3_2
+@SoundChannel@18	word	ct
+@SoundChannel@1C	word	fw
+@SoundChannel@20	word	freq
+@SoundChannel@24	&WaveData	wav
+@SoundChannel@28	word	cp
+@SoundChannel@2c	&MusicPlayerTrack track
+@SoundChannel@30	word	pp
+@SoundChannel@34	word	np
+@SoundChannel@38	word	d4
+@SoundChannel@3C	word	xpi
+@SoundChannel@40	word	xpc
+
+@MusicPlayerTrack@00	byte	flags
+@MusicPlayerTrack@01	byte	wait
+@MusicPlayerTrack@02	byte	patternLevel
+@MusicPlayerTrack@03	byte	repN
+@MusicPlayerTrack@04	byte	gateTime
+@MusicPlayerTrack@05	byte	key
+@MusicPlayerTrack@06	byte	velocity
+@MusicPlayerTrack@07	byte	runningStatus
+@MusicPlayerTrack@08	byte	keyM
+@MusicPlayerTrack@09	byte	pitM
+@MusicPlayerTrack@0a	byte	keyShift
+@MusicPlayerTrack@0b	byte	keyShiftX
+@MusicPlayerTrack@0c	byte	tune
+@MusicPlayerTrack@0d	byte	pitX
+@MusicPlayerTrack@0e	byte	bend
+@MusicPlayerTrack@0f	byte	bendRange
+@MusicPlayerTrack@10	byte	volMR
+@MusicPlayerTrack@11	byte	volML
+@MusicPlayerTrack@12	byte	vol
+@MusicPlayerTrack@13	byte	volX
+@MusicPlayerTrack@14	byte	pan
+@MusicPlayerTrack@15	byte	panX
+@MusicPlayerTrack@16	byte	modM
+@MusicPlayerTrack@17	byte	mod
+@MusicPlayerTrack@18	byte	modT
+@MusicPlayerTrack@19	byte	lfoSpeed
+@MusicPlayerTrack@1a	byte	lfoSpeedC
+@MusicPlayerTrack@1b	byte	lfoDelay
+@MusicPlayerTrack@1c	byte	lfoDelayC
+@MusicPlayerTrack@1d	byte	priority
+@MusicPlayerTrack@1e	byte	echoVolume
+@MusicPlayerTrack@1f	byte	echoLength
+@MusicPlayerTrack@20	&SoundChannel	chan
+@MusicPlayerTrack@24	@ToneData	tone
+@MusicPlayerTrack@34	byte	_gap34
+@MusicPlayerTrack@3a	short	_unk_3A
+@MusicPlayerTrack@3c	short	_unk_3C
+@MusicPlayerTrack@40	word	cmdPtr
+@MusicPlayerTrack@44	byte	patternStack0
+@MusicPlayerTrack@45	byte	patternStack1
+@MusicPlayerTrack@46	byte	patternStack2
+@MusicPlayerTrack@47	byte	_pad47
+
+@SongHeader@00	byte	trackCount
+@SongHeader@01	byte	blockCount
+@SongHeader@02	byte	priority
+@SongHeader@03	byte	reverb
+@SongHeader@04	&ToneData	tone
+@SongHeader@08	byte	part_array
+
+@MusicPlayerInfo@00	&SongHeader	songHeader
+@MusicPlayerInfo@04	word	status
+@MusicPlayerInfo@08	byte	trackCount
+@MusicPlayerInfo@09	byte	priority
+@MusicPlayerInfo@0a	byte	cmd
+@MusicPlayerInfo@0b	byte	unk_B
+@MusicPlayerInfo@0c	word	clock
+@MusicPlayerInfo@10	byte	gap	//[8]
+@MusicPlayerInfo@18	word	memAccAreaPtr
+@MusicPlayerInfo@1c	short	tempoD
+@MusicPlayerInfo@1e	short	tempoU
+@MusicPlayerInfo@20	short	tempoI
+@MusicPlayerInfo@22	short	tempoC
+@MusicPlayerInfo@24	short	fadeOI
+@MusicPlayerInfo@26	short	fadeOC
+@MusicPlayerInfo@28	short	fadeOV
+@MusicPlayerInfo@2a	short	_pad2A
+@MusicPlayerInfo@2c	&MusicPlayerTrack	tracks
+@MusicPlayerInfo@30	&ToneData	tone
+@MusicPlayerInfo@34	word	ident
+@MusicPlayerInfo@38	word	func
+@MusicPlayerInfo@3c	word	intp
+
+@MusicPlayer@00	&MusicPlayerInfo	info
+@MusicPlayer@04	&MusicPlayerTrack	track
+@MusicPlayer@08	byte	_unk_8
+@MusicPlayer@09	byte	_pad09
+@MusicPlayer@0a	byte	_unk_A
+
+@Song@00	&SongHeader	header
+@Song@04	short	ms
+@Song@06	short	me
 
 //from https://doc.feuniverse.us/static/stan/RangeMoveDisplayNotes.txt
 0801D6A4	DisplayMoveRangeGraphics Creates relevant 6C and sets relevant stuff in game data	void	r0=type bitfield (see above)	{J}
@@ -962,7 +1121,7 @@
 0202CEC0	@Unit@[32]	Enemy	{U}
 0202DCD0	@Unit@[14]	Ally	{U}
 
-//020228A8	Palette wram buffer
+02022860	Palette wram buffer
 02022C60	BG 0 wram buffer
 02023460	BG 1 wram buffer
 02023C60	BG 2 wram buffer
@@ -1079,26 +1238,28 @@
 
 
 //Just before the attacker's battle struct is data used to display the pre-battle numbers and calculate the rounds data
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 
-0203A3D8	@AttackerBattleStruct	AttackerBattleStruct	{U}	//maybe
-0203A3D4	@AttackerBattleStruct	AttackerBattleStruct	{J}	//maybe
+0203A3D8	@BattleStats	BattleStats	{U}	//maybe
+0203A3D4	@BattleStats	BattleStats	{J}	//maybe
 
 
 
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 
-//FE8U 0203A5EC	@DefenderBattleStruct	DefenderBattleStruct	{U}
+//FE8U 0203A5EC	@BattleRound	BattleRound	{U}
 
 
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
@@ -1169,13 +1330,13 @@
 0203EC00	@ClearTurn@[24]	章クリアターン	{U}
 
 
-@ITEMSTOCK@00	byte	アイテムID
-@ITEMSTOCK@01	byte	アイテム個数
-0203A46C	@ITEMSTOCK@[64]	輸送隊在庫	{J}
-0203A470	@ITEMSTOCK@[64]	輸送隊在庫	{U}
+//@ITEMSTOCK@00	byte	アイテムID
+//@ITEMSTOCK@01	byte	アイテム個数
+//0203A46C	@ITEMSTOCK@[64]	輸送隊在庫	{J}
+//0203A470	@ITEMSTOCK@[64]	輸送隊在庫	{U}
 
-08012C60	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
-08013318	Copy_Text_To_RAM	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
+08012C60	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{U}
+08013318	GetStringFromIndex	Calls some functions in IRAM to copy text from the rom		r0=text id	{J}
 
 //https://www.dropbox.com/sh/zymc1h221nnxpm9/AACrgal3LFRvbDKL-5qDxF3-a/Tequila/Teq%20Doq?dl=0&preview=Useful+functions.txt
 08019CE0	Copies movement	cost entry (0x40 bytes long) from the rom to 3004BB0, for use in calculating which squares can be moved to.	r0=movement cost entry pointer	{U}
@@ -1200,7 +1361,6 @@
 080315BC	Get_Chapter_Events	RET=Pointer to that chapter's events	r0=chapter number	{U}
 08017D34	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{U}
 
-08017508	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{U}
 080175E6	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{U}
 08001084	Write_Palette	r0=pointer to palette	{U}
 08034740	Add_Ballista_Data	r0=x	r1=y	r2=ballista item index	{U}
@@ -1238,7 +1398,6 @@
 08017664	Get_Weapon_Type	RET=Item's weapon type	r0=item id	{J}
 08018124	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)	{J}
 
-080178F8	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr	{J}
 080179D6	Set_Character_Status	Orr's the status nibble with 0x50 (duration) and stores to char data+0x30 if nonzero; stores 0 otherwise	r0=ram char data ptr, r1=status id	{J}
 0800105C	Write_Palette	r0=pointer to palette	{J}
 08034C18	Add_Ballista_Data	r0=x	r1=y	r2=ballista item index	{J}
@@ -1471,10 +1630,54 @@
 0203E098	戦闘アニメで攻撃側へのRAMポインタ(0203A3F0へ)	{U}
 0203E06C	戦闘アニメで防御側へのRAMポインタ(0203A46Cへ)	{J}
 0203E094	戦闘アニメで防御側へのRAMポインタ(0203A470へ)	{U}
-0203A3EC	@Unit	戦闘アニメで右側。自軍、友軍のユニットデータのコピー	{J}
-0203A3F0	@Unit	戦闘アニメで右側。自軍、友軍のユニットデータのコピー	{U}
-0203A46C	@Unit	戦闘アニメで左側。敵軍のユニットデータのコピー	{J}
-0203A470	@Unit	戦闘アニメで左側。敵軍のユニットデータのコピー	{U}
+
+@BattleUnit@00	@Unit	CopyUnit
+@BattleUnit@48	short	weapon
+@BattleUnit@4A	short	weaponBefore
+@BattleUnit@4C	word	weaponAttributes
+@BattleUnit@50	byte	weaponType
+@BattleUnit@51	byte	weaponSlotIndex
+@BattleUnit@52	byte	canCounter
+@BattleUnit@53	byte	wTriangleHitBonus
+@BattleUnit@54	byte	wTriangleDmgBonus
+@BattleUnit@55	byte	terrainId
+@BattleUnit@56	byte	terrainDefense
+@BattleUnit@57	byte	terrainAvoid
+@BattleUnit@58	byte	terrainResistance
+@BattleUnit@59	byte	pad
+@BattleUnit@5a	short	battleAttack
+@BattleUnit@5c	short	battleDefense
+@BattleUnit@5e	short	battleSpeed
+@BattleUnit@60	short	battleHitRate
+@BattleUnit@62	short	battleAvoidRate
+@BattleUnit@64	short	battleEffectiveHitRate
+@BattleUnit@66	short	battleCritRate
+@BattleUnit@68	short	battleDodgeRate
+@BattleUnit@6a	short	battleEffectiveCritRate
+@BattleUnit@6c	short	battleSilencerRate
+@BattleUnit@6e	byte	expGain
+@BattleUnit@6f	byte	statusOut
+@BattleUnit@70	byte	levelPrevious
+@BattleUnit@71	byte	expPrevious
+@BattleUnit@72	byte	hpInitial
+@BattleUnit@73	byte	changeHP
+@BattleUnit@74	byte	changePow
+@BattleUnit@75	byte	changeSkl
+@BattleUnit@76	byte	changeSpd
+@BattleUnit@77	byte	changeDef
+@BattleUnit@78	byte	changeRes
+@BattleUnit@79	byte	changeLck
+@BattleUnit@7a	byte	changeCon
+@BattleUnit@7b	byte	wexpMultiplier
+@BattleUnit@7c	byte	nonZeroDamage
+@BattleUnit@7d	byte	weaponBroke
+@BattleUnit@7e	byte	hasItemEffectTarget
+@BattleUnit@7f	byte	pad7f
+
+0203A3EC	@BattleUnit	gBattleActor	戦闘アニメで右側。	{J}
+0203A3F0	@BattleUnit	gBattleActor	戦闘アニメで右側。	{U}
+0203A46C	@BattleUnit	gBattleTarget	戦闘アニメで左側。	{J}
+0203A470	@BattleUnit	gBattleTarget	戦闘アニメで左側。	{U}
 
 
 08080A94	Stat Screens DrawBar	{J}
@@ -1731,7 +1934,7 @@
 08015C04	StoreAdjustedCameraPositions	{U}
 08015CE0	EnsureCameraOntoPosition	{U}
 08015D70	ShouldMoveCameraPosSomething	{U}
-08015EAA	GetCurrentMapMusicIndex	{U}
+08015E9C	GetCurrentMapMusicIndex	{U}
 08016040	GetItemPowBonus	{U}
 0801606C	GetItemSklBonus	{U}
 08016098	GetItemSpdBonus	{U}
@@ -1781,10 +1984,10 @@
 08017494	GetItemWExp	{U}
 080174C0	GetROMItemStructPtr	{U}
 080174D8	ClearUnits	{U}
-08017508	ClearUnitStruct	{U}
-08017530	CopyUnitStruct	{U}
-0801754C	GetNextFreeUnitStructPtr	{U}
-08017584	GetNextFreePlayerUnitStruct	{U}
+08017508	ClearUnitStruct	r0=@Unit	{U}
+08017530	CopyUnitStruct	r0=@Unit	r1=@Unit	{U}
+0801754C	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{U}
+08017584	GetNextFreePlayerUnitStruct	RET=@Unit	{U}
 080175BA	GetUnitFogViewRange	{U}
 080175E6	SetUnitNewStatus	{U}
 08017600	WriteUnitStatusDuration	{U}
@@ -2055,7 +2258,7 @@
 0802848C	SetupBattleStructFromUnitAndWeapon	{U}
 080285D4	CopyUnitToBattleStruct	{U}
 080286B8	CopyUnitToBattleStructRawStats	{U}
-080286EE	WriteBattleStructTerrainBonuses	{U}
+080286F0	WriteBattleStructTerrainBonuses	{U}
 08028728	BattleSetupTerrainData	{U}
 0802896C	SetupBattleBallistaWeaponData	{U}
 080289B0	FillPreBattleStats	{U}
@@ -2578,7 +2781,7 @@
 08016080	StoreAdjustedCameraPositions	{J}
 0801615C	EnsureCameraOntoPosition	{J}
 080161EC	ShouldMoveCameraPosSomething	{J}
-08016326	GetCurrentMapMusicIndex	{J}
+08016318	GetCurrentMapMusicIndex	{J}
 080164BA	GetItemPowBonus	{J}
 080164BA	GetItemSklBonus	{J}
 080164BA	GetItemSpdBonus	{J}
@@ -2626,10 +2829,10 @@
 08017872	GetItemMaxCost	{J}
 0801789C	GetItemWExp	{J}
 080178C8	ClearUnits	{J}
-080178F8	ClearUnitStruct	{J}
-08017920	CopyUnitStruct	{J}
-0801793C	GetNextFreeUnitStructPtr	{J}
-08017974	GetNextFreePlayerUnitStruct	{J}
+080178F8	ClearUnitStruct	r0=@Unit	{J}
+08017920	CopyUnitStruct	r0=@Unit	r1=@Unit	{J}
+0801793C	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction	{J}
+08017974	GetNextFreePlayerUnitStruct	RET=@Unit	{J}
 080179AA	GetUnitFogViewRange	{J}
 080179D6	SetUnitNewStatus	{J}
 080179F0	WriteUnitStatusDuration	{J}
@@ -2883,7 +3086,7 @@
 08028918	SetupBattleStructFromUnitAndWeapon	{J}
 08028A60	CopyUnitToBattleStruct	{J}
 08028B44	CopyUnitToBattleStructRawStats	{J}
-08028B7A	WriteBattleStructTerrainBonuses	{J}
+08028B7C	WriteBattleStructTerrainBonuses	{J}
 08028BB4	BattleSetupTerrainData	{J}
 08028DE8	SetupBattleBallistaWeaponData	{J}
 08028E2C	FillPreBattleStats	{J}
@@ -4668,22 +4871,25 @@
 0804B9B4	EndEkrBattleDeamon	{J}
 0804B9C4	IsBattleDeamonActive	{J}
 
-@ArenaTemp@00	&Unit	プレイヤーユニット
-@ArenaTemp@04	&Unit	対戦相手
-@ArenaTemp@08	short	掛け金
-@ArenaTemp@0A	byte	戦闘結果
-@ArenaTemp@0B	byte	不明1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	アイテム
-@ArenaTemp@0E	byte	不明2
-@ArenaTemp@0F	byte	不明3
-@ArenaTemp@10	short	不明4
-@ArenaTemp@12	byte	不明5
-@ArenaTemp@13	byte	不明6
-@ArenaTemp@14	short	不明7
-@ArenaTemp@15	short	不明8
-@ArenaTemp@16	short	プレイヤーの強さ
-@ArenaTemp@18	short	対戦相手の強さ
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
 
 0802f7f4	ActionRescue	{J}
 0802f328	ActionRescue	{U}
@@ -4692,13 +4898,13 @@
 0802f92c	ActionCombat	{J}
 0802f460	ActionCombat	{U}
 
-0203A7F0	@ArenaTemp	闘技場の一時データ	{J}
+0203A7F0	@ArenaData	闘技場の一時データ	{J}
 0806c7cc	_MOVEUNIT6C_SetDefaultFacingDirection	{J}
 0806dd98	GetItemIconId	{J}
 0806C274	Make6CMOVEUNITForUnit	{J}
 0806c4a0	NewMOVEUNIT	{J}
 08025b80	GetUnitMapSpritePaletteIndex	{J}
-0203A7F4	@ArenaTemp	闘技場の一時データ	{U}
+0203A7F4	@ArenaData	闘技場の一時データ	{U}
 0806BFE0	_MOVEUNIT6C_SetDefaultFacingDirection	{U}
 0806D5AC	GetItemIconId	{U}
 0806BA88	Make6CMOVEUNITForUnit	{U}
@@ -4732,3 +4938,117 @@
 0809B1C4	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	メイン	{U}
 0809ED34	支援画面	ユニットの支援関係をキャッシュするgStringBufferAltを構築する	1ユニット	{U}
 080178B4	GetROMItemStructPtr	{J}
+08028f8c	BattleLoadAttack	{J}
+080290f8	BattleLoadAvoid	{J}
+080291ec	BattleLoadDodge	{J}
+08028ea0	BattleApplyMiscBonuses	{J}
+08029364	BattleComputeBuffStatus	{J}
+080291f8	ComputeHit	{J}
+08029224	ComputeCrit	{J}
+08028EA0	BattleApplyMiscBonuses	{J}
+08034ba0	GetBallistaItemAt	{J}
+08028b10	BattleLoadAttack	{U}
+08028c50	BattleLoadAvoid	{U}
+08028d3c	BattleLoadDodge	{U}
+08028a24	BattleApplyMiscBonuses	{U}
+08028eb4	BattleComputeBuffStatus	{U}
+08028d48	ComputeHit	{U}
+08028d74	ComputeCrit	{U}
+08028A24	BattleApplyMiscBonuses	{U}
+080346c8	GetBallistaItemAt	{U}
+0842D19C	:0842D1A3	謎のデータ	8バイト	{J}
+0842D1A8	:0842D1AF	謎のデータ	8バイト	{J}
+0842D1B8	:0842D1BF	謎のデータ	8バイト	{J}
+0800562E	不明文字のハート文字	{J}
+0800571A	不明文字のハート文字	{J}
+08004C08	LoadIconPalettes	{J}
+08004C20	LoadIconPalette	{J}
+02026D08	gIconDataToIndexLookup	{J}
+02026A48	gIconIndexToDataLookup	{J}
+08004D2C	LoadIconPalettes	{U}
+08004D44	LoadIconPalette	{U}
+02026D10	gIconDataToIndexLookup	{U}
+02026A50	gIconIndexToDataLookup	{U}
+08004BC4	ResetIconGraphics_	{J}
+08004BD0	ResetIconGraphics	{J}
+08004CE8	ResetIconGraphics_	{U}
+08004CF4	ResetIconGraphics	{U}
+
+081DE00C	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1	{J}
+081DE036	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame2	{J}
+081DE058	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame	{J}
+081DE07A	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame	{J}
+081DE2B8	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame	{J}
+081EDCDE	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{J}
+081EDD00	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame	{J}
+081EDE20	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame	{J}
+081EDECC	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame	{J}
+081EDCDE	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{J}
+081EDD00	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame	{J}
+081EDF96	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame	{J}
+081EE7E4	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame	{J}
+081EE97E	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame	{J}
+081EE7E4	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame	{J}
+081EEF7A	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOLPaletteAnimeFrame	{J}
+081EF02A	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame	{J}
+081EDF40	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame	{J}
+081EDD00	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame	{J}
+081EDF40	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame	{J}
+081EF2C4	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame	{J}
+081EF346	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame	{J}
+081EDF0E	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame	{J}
+081EDECC	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame	{J}
+081EE7E4	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame	{J}
+081EE248	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame	{J}
+08281C7C	&PALETTE	efxFirebreathBGCOLPalette	{J}
+0827045C	&PALETTE16	efxLiveSomePalette	{J}
+081D8398	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1	{U}
+081D83C2	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame2	{U}
+081D83E4	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame	{U}
+081D8406	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame	{U}
+081D8644	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame	{U}
+081E806A	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{U}
+081E808C	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame	{U}
+081E81AC	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame	{U}
+081E8258	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame	{U}
+081E806A	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame	{U}
+081E808C	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame	{U}
+081E8322	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame	{U}
+081E8B70	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame	{U}
+081E8D0A	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame	{U}
+081E8B70	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame	{U}
+081E9306	&ROMPALETTEANIMEFRAME	efxExcaliburBGCOLPaletteAnimeFrame	{U}
+081E93B6	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame	{U}
+081E82CC	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame	{U}
+081E808C	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame	{U}
+081E82CC	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame	{U}
+081E9650	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame	{U}
+081E96D2	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame	{U}
+081E829A	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame	{U}
+081E8258	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame	{U}
+081E8B70	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame	{U}
+081E85D4	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame	{U}
+0827C008	&PALETTE	efxFirebreathBGCOLPalette	{U}
+0826A7E8	&PALETTE16	efxLiveSomePalette	{U}
+
+0807C658	Creates the Fire Ring effect, and causes the screen to redden	{J}
+0807BCEC	Terminate "Unk08CA762C" Procs	{J}
+0807C1FC	Terminate "Dragon's flame effect" Procs	{J}
+0807B70C	Creates shaking screen	{J}
+0807BCD8	Run "Unk08CA762C" Procs	{J}
+0807CD48	Goto Label 0x00 "Unk08CA77AC" Procs	{J}
+0807CD60	Goto Label 0x01 "Unk08CA77AC" Procs	{J}
+
+0807BBE4	Creates the Fire Ring effect, and causes the screen to redden	{U}
+0807B278	Terminate "Unk08CA762C" Procs	{U}
+0807B788	Terminate "Dragon's flame effect" Procs	{U}
+0807AC98	Creates shaking screen	{U}
+0807B264	Run "Unk08CA762C" Procs	{U}
+0807C2D4	Goto Label 0x00 "Unk08CA77AC" Procs	{U}
+0807C2EC	Goto Label 0x01 "Unk08CA77AC" Procs	{U}
+0807C304	Terminate "Unk08CA77AC" Procs	{U}
+0802EFE4	闘技場	相手の選出	{J}
+0802EB18	闘技場	相手の選出	{U}
+
+08034d44	GetCurrentPromotedLevelBonus	{J}
+0803486c	GetCurrentPromotedLevelBonus	{U}

@@ -13,4 +13,4 @@ AUTHOR=aera
 NAME.en=Join command
 INFO.en=Instead of rescuing units, you will be able to rescue them from the other side with you.\r\nThis command changes "playing" to "Join".\r\n
 NAME.zh=同行命令
-INFO.zh=您可以从另一侧救出他们，而不是救出单位。\r\n此命令将“播放”更改为“同行”。\r\n
+INFO.zh=您可以从另一侧救出他们，而不是救出人物。\r\n此命令将“播放”更改为“同行”。\r\n

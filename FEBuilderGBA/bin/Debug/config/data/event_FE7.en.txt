@@ -19,7 +19,7 @@
 3200000002000000XXXXXXXX	Normal mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{J}
 3400000002000000XXXXXXXX	Normal mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{U}
 3200000003000000XXXXXXXX	Hard mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{J}
-3400000003000000XXXXXXXX	Hard mode exclusive Load Units unit[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{U}
+3400000003000000XXXXXXXX	Hard mode exclusive Load Units[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{LOADUNIT}	{U}
 3200000002000100XXXXXXXX	Normal mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{J}
 3400000002000100XXXXXXXX	Normal mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{U}
 3200000003000100XXXXXXXX	Hard mode exclusive Load Units 2[XXXX:POINTER_UNIT:Units](LOUFILTERED)	{J}
@@ -189,8 +189,8 @@ A700XXXXYYYYWWWWZZZZ0000	Shows_text_with_specific_bubble_type_and_position[XX::B
 3E00000039A90708	Do not display unit image of map	{U}
 3C00000049B40708	Display message frame for CG scene	{J}
 3E000000D5A90708	Display message frame for CG scene	{U}
-3C000000BDEB0008	Disappear face grave and speech ball of conversation scene	{J}
-3E000000B1EC0008	Disappear face grave and speech ball of conversation scene	{U}
+3C000000BDEB0008	Disappear portrait grave and speech of conversation scene	{J}
+3E000000B1EC0008	Disappear portrait grave and speech of conversation scene	{U}
 3D000000C9F50708	Ancient fire dragon arrangement (in pixels)	{J}
 3F0000000DE80708	Ancient fire dragon arrangement (in pixels)	{U}
 3C000000A1B70708	End of shaking the screen (earthquake)	{MAPEFFECT}	{J}
@@ -244,7 +244,7 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 3C000000BDE30708	Stop an earthquake	{MAPEFFECT}	{J}
 3C000000C9B70708	Stop shaking	{J}
 3C000000F1E20708	White out mainly Sogna	{FADE}	{J}
-3C00000009EC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{J}
+3C00000009EC0008	To turn into the CG scene, turn off portrait grass and balloon	{CLEAR}	{J}
 3C0000001DE70708	Ninian goes back to people	{J}
 3C00000025E60708	Short flash	{FADE}	{J}
 3C0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{J}
@@ -260,7 +260,7 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 3E00000089D60708 	Stop an earthquake	{MAPEFFECT}	{U}
 3E00000055AD0708	Stop shaking	{MAPEFFECT}	{U}
 3E000000BDD50708	White out mainly Sogna	{FADE}	{U}
-3E000000FDEC0008	To turn into the CG scene, turn off face grass and balloon	{CLEAR}	{U}
+3E000000FDEC0008	To turn into the CG scene, turn off portrait grass and balloon	{CLEAR}	{U}
 3E000000CDD90708	Ninian goes back to people	{U}
 3E000000D5D80708	Short flash	{FADE}	{U}
 3E0000002DB30708	Turn off the units on the map	{CLEAR}	{UNITREMOVE}	{U}
@@ -292,22 +292,22 @@ C3000000XXXX0000YYYY0000	Taking black of unit image[XXXX:WMAP 2 AFFILIATION:Affi
 1700XXXXYYYYYYYY	Conversation display by talk group 2[XX::Value][YYYY:POINTER_TALKGROUP:talk group]	{U}
 18000000XXXX0000YYYY0000	Conversation branch by military's gender 2[XX:CONVERSATION_TEXT:Male][YY:CONVERSATION_TEXT:female](MORETEXTIFTACTF)	{J}
 19000000XXXX0000YYYY0000	Conversation branch by military's gender 2[XX:CONVERSATION_TEXT:Male][YY:CONVERSATION_TEXT:female](MORETEXTIFTACTF)	{U}
-7600XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{J}
-7800XXXX	[XX:MUSIC:MUSIC]BGM change(MUSC)	{MUSIC}	{U}
-7700XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{J}
-7900XXXX	[XX:MUSIC:MUSIC]BGM change(MUSS)	{MUSIC}	{U}
-7800XXXX	[XX:FSEC:Speed]fade music(MURE)	{MUSIC}	{J}
-7A00XXXX	[XX:FSEC:Speed]fade music(MURE)	{MUSIC}	{U}
+7600XXXX	Change BGM to [XX:MUSIC:MUSIC](MUSC)	{MUSIC}	{J}
+7800XXXX	Change BGM to [XX:MUSIC:MUSIC](MUSC)	{MUSIC}	{U}
+7700XXXX	Change BGM to [XX:MUSIC:MUSIC] while saving the previous song(MUSS)	{MUSIC}	{J}
+7900XXXX	Change BGM to [XX:MUSIC:MUSIC] while saving the previous song(MUSS)	{MUSIC}	{U}
+7800XXXX	[XX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}	{J}
+7A00XXXX	[XX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}	{U}
 7900XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{J}
 7B00XXXXYYYY0000	[XX:MUSIC:MUSIC][Y:FSEC:Speed]Change BGM at specified speed (basic 06)(MUSM)	{MUSIC}	{U}
-7A00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUEN)	{MUSIC}	{J}
+7A00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{J}
 7B00XXXX	[XX:FSEC:Speed]BGM silencing (basic 02) with music fadeout(MUSM)	{MUSIC}	{U}
 7B000000	Decrease the volume(MUSI)	{MUSIC}	{J}
 7D000000	Decrease the volume(MUSI)	{MUSIC}	{U}
-7C000000	Restore volume(MUNO)	{MUSIC}	{J}
-7E000000	Restore volume(MUNO)	{MUSIC}	{U}
-7D00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{J}
-7F00XXXX	[XX:SOUND:SOUND]Sound sound effect	{MUSIC}	{U}
+7C000000	Increase BGM volume(MUNO)	{MUSIC}	{J}
+7E000000	Increase BGM volume(MUNO)	{MUSIC}	{U}
+7D00XXXX	Play SFX [XX:SOUND:sound effect](SOUN)	{MUSIC}	{J}
+7F00XXXX	Play SFX [XX:SOUND:sound effect](SOUN)	{MUSIC}	{U}
 63000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{J}
 65000000ZZ000000XX000000	[ZZ:UNIT:Unit][XX:AFFILIATION:Affiliation]Change of unit affiliation(CUSI)	{UNITPERSOLNAL}	{U}
 7B0000008C001000900000000500XXXX8D001000910000000D000000YYYY0000090000007C000000	Decrease volume to conversation event[XX:BG:BG][YYYY:CONVERSATION_TEXT:conversation TEXT](MUSI)	{TEXT}	{J}
@@ -454,8 +454,8 @@ AF000000	Erase the image displayed on the world map	{WMAP}	{J}
 AE000000	Erase the image displayed on the world map	{WMAP}	{U}
 B2000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{J}
 B1000000XX000000YY000000ZZWW0000VV000000	[X:ID_of_the_portrait][Y:PORTRAIT:Portrait][Z:Coordinates:Position][W::Loading_way][V:DECIMAL:Delay](SHOWPORTRAIT)	{WMAPTEXT}	{U}
-B3000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{J}
-B2000000XX00000000YY0000ZZ000000	Erase face map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{U}
+B3000000XX00000000YY0000ZZ000000	Erase portrait map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{J}
+B2000000XX00000000YY0000ZZ000000	Erase portrait map of world map[X:ID_of_the_portrait][Y:PORTRAIT_DIRECTION:Removing_way][Z:DECIMAL:Delay](REMOVEPORTRAIT)	{WMAPTEXT}	{U}
 B4000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{J}
 B3000000XXXX0000	Display of world map message[XX:TEXT:TEXT](TEXTWM)	{WMAPTEXT}	{U}
 B6000000	Display message frame of world map (on screen)(TEXTBOXTOTOP)	{WMAPTEXT}	{J}
@@ -587,3 +587,8 @@ E2000000XXXXXXXXYYYYYYYY	_DD[XXXX::Value][YYYYYYYY::Value]	{J}
 DD000000XXXXXXXXYYYYYYYY	_DD[XXXX::Value][YYYYYYYY::Value]	{U}
 CD000000XXXX000000000000	_CD[XXXX::Value]	{U}
 2D000000XX000000	_2D[XXXX::Value]	{U}
+02001E0001000000	ENDA3 Ending event 3[TERM]	{TERM}
+8A000000	_8C	{J}
+8C000000	_8C	{U}
+D3000000XXXXXXXXYYYYYYYYZZZZZZZZ	_D0[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2][ZZZZ::Value2]	{TEXT}	{J}
+D0000000XXXXXXXXYYYYYYYYZZZZZZZZ	_D0[XXXX:CONVERSATION_TEXT:Conversation][YYYY::Value2][ZZZZ::Value2]	{TEXT}	{U}

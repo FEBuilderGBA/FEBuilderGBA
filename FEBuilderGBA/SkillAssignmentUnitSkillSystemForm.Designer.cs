@@ -35,6 +35,38 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.UnitLevelUpSkill = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.N1_ReloadListButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
+            this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.ZeroPointerPanel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.IndependencePanel = new System.Windows.Forms.Panel();
+            this.IndependenceButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
+            this.N1_J_0 = new System.Windows.Forms.Label();
+            this.N1_B0 = new System.Windows.Forms.NumericUpDown();
+            this.N1_J_1_SKILLASSIGNMENT = new System.Windows.Forms.Label();
+            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
+            this.N1_B1 = new System.Windows.Forms.NumericUpDown();
+            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.N1_LabelFilter = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.label6 = new System.Windows.Forms.Label();
+            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.label7 = new System.Windows.Forms.Label();
+            this.N1_WriteButton = new System.Windows.Forms.Button();
+            this.N1_Address = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.SKILLTEXT = new FEBuilderGBA.TextBoxEx();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
@@ -52,47 +84,14 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.ZeroPointerPanel = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.IndependencePanel = new System.Windows.Forms.Panel();
-            this.IndependenceButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.N1_SKILLNAME = new FEBuilderGBA.TextBoxEx();
-            this.N1_J_0 = new System.Windows.Forms.Label();
-            this.N1_B0 = new System.Windows.Forms.NumericUpDown();
-            this.N1_J_1_SKILLASSIGNMENT = new System.Windows.Forms.Label();
-            this.N1_SKILLTEXT = new FEBuilderGBA.TextBoxEx();
-            this.N1_B1 = new System.Windows.Forms.NumericUpDown();
-            this.N1_SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.N1_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N1_SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.N1_AddressListExpandsButton = new System.Windows.Forms.Button();
-            this.N1_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.N1_LabelFilter = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.N1_Address = new System.Windows.Forms.NumericUpDown();
-            this.N1_WriteButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.N1_ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.N1_ReadCount = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.N1_ReloadListButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.UnitLevelUpSkill = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.UnitLevelUpSkill.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).BeginInit();
             this.panel8.SuspendLayout();
             this.ZeroPointerPanel.SuspendLayout();
             this.IndependencePanel.SuspendLayout();
@@ -100,12 +99,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.UnitLevelUpSkill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -196,207 +196,88 @@
             this.panel4.Size = new System.Drawing.Size(905, 771);
             this.panel4.TabIndex = 96;
             // 
-            // SKILLNAME
+            // UnitLevelUpSkill
             // 
-            this.SKILLNAME.ErrorMessage = "";
-            this.SKILLNAME.Location = new System.Drawing.Point(38, 39);
-            this.SKILLNAME.Name = "SKILLNAME";
-            this.SKILLNAME.Placeholder = "";
-            this.SKILLNAME.ReadOnly = true;
-            this.SKILLNAME.Size = new System.Drawing.Size(178, 25);
-            this.SKILLNAME.TabIndex = 120;
+            this.UnitLevelUpSkill.Controls.Add(this.panel1);
+            this.UnitLevelUpSkill.Controls.Add(this.panel8);
+            this.UnitLevelUpSkill.Controls.Add(this.panel2);
+            this.UnitLevelUpSkill.Controls.Add(this.panel7);
+            this.UnitLevelUpSkill.Location = new System.Drawing.Point(-1, 175);
+            this.UnitLevelUpSkill.Name = "UnitLevelUpSkill";
+            this.UnitLevelUpSkill.Size = new System.Drawing.Size(905, 560);
+            this.UnitLevelUpSkill.TabIndex = 125;
             // 
-            // SKILLTEXT
+            // panel1
             // 
-            this.SKILLTEXT.ErrorMessage = "";
-            this.SKILLTEXT.Location = new System.Drawing.Point(230, 69);
-            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLTEXT.Multiline = true;
-            this.SKILLTEXT.Name = "SKILLTEXT";
-            this.SKILLTEXT.Placeholder = "";
-            this.SKILLTEXT.ReadOnly = true;
-            this.SKILLTEXT.Size = new System.Drawing.Size(348, 97);
-            this.SKILLTEXT.TabIndex = 109;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.N1_ReloadListButton);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.N1_ReadCount);
+            this.panel1.Controls.Add(this.N1_ReadStartAddress);
+            this.panel1.Location = new System.Drawing.Point(4, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(905, 34);
+            this.panel1.TabIndex = 121;
             // 
-            // SKILLICON
+            // N1_ReloadListButton
             // 
-            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.SKILLICON.Location = new System.Drawing.Point(229, 0);
-            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
-            this.SKILLICON.Name = "SKILLICON";
-            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
-            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SKILLICON.TabIndex = 102;
-            this.SKILLICON.TabStop = false;
+            this.N1_ReloadListButton.Location = new System.Drawing.Point(739, 0);
+            this.N1_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_ReloadListButton.Name = "N1_ReloadListButton";
+            this.N1_ReloadListButton.Size = new System.Drawing.Size(112, 30);
+            this.N1_ReloadListButton.TabIndex = 27;
+            this.N1_ReloadListButton.Text = "再取得";
+            this.N1_ReloadListButton.UseVisualStyleBackColor = true;
             // 
-            // B0
+            // label1
             // 
-            this.B0.Hexadecimal = true;
-            this.B0.Location = new System.Drawing.Point(137, 7);
-            this.B0.Margin = new System.Windows.Forms.Padding(2);
-            this.B0.Maximum = new decimal(new int[] {
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(-1, -1);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(371, 36);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "レベルアップで取得するスキルの先頭アドレス";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(512, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 34);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "読込数";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N1_ReadCount
+            // 
+            this.N1_ReadCount.Location = new System.Drawing.Point(602, 3);
+            this.N1_ReadCount.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_ReadCount.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.N1_ReadCount.Name = "N1_ReadCount";
+            this.N1_ReadCount.Size = new System.Drawing.Size(78, 25);
+            this.N1_ReadCount.TabIndex = 26;
+            // 
+            // N1_ReadStartAddress
+            // 
+            this.N1_ReadStartAddress.Hexadecimal = true;
+            this.N1_ReadStartAddress.Location = new System.Drawing.Point(372, 5);
+            this.N1_ReadStartAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_ReadStartAddress.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.B0.Name = "B0";
-            this.B0.Size = new System.Drawing.Size(79, 25);
-            this.B0.TabIndex = 0;
-            this.B0.ValueChanged += new System.EventHandler(this.B0_ValueChanged);
-            // 
-            // J_0_SKILLASSIGNMENT
-            // 
-            this.J_0_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0_SKILLASSIGNMENT.Location = new System.Drawing.Point(-2, 2);
-            this.J_0_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.J_0_SKILLASSIGNMENT.Name = "J_0_SKILLASSIGNMENT";
-            this.J_0_SKILLASSIGNMENT.Size = new System.Drawing.Size(135, 30);
-            this.J_0_SKILLASSIGNMENT.TabIndex = 24;
-            this.J_0_SKILLASSIGNMENT.Text = "スキル";
-            this.J_0_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.BlockSize);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.SelectAddress);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.WriteButton);
-            this.panel5.Controls.Add(this.Address);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(258, 40);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(906, 34);
-            this.panel5.TabIndex = 94;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(314, 4);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 58;
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(231, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 30);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Size:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
-            this.SelectAddress.TabIndex = 57;
-            // 
-            // label22
-            // 
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Location = new System.Drawing.Point(408, 1);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(122, 30);
-            this.label22.TabIndex = 56;
-            this.label22.Text = "選択アドレス:";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // WriteButton
-            // 
-            this.WriteButton.Location = new System.Drawing.Point(702, -1);
-            this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.WriteButton.Name = "WriteButton";
-            this.WriteButton.Size = new System.Drawing.Size(168, 30);
-            this.WriteButton.TabIndex = 55;
-            this.WriteButton.Text = "書き込み";
-            this.WriteButton.UseVisualStyleBackColor = true;
-            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
-            // 
-            // Address
-            // 
-            this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(90, 4);
-            this.Address.Margin = new System.Windows.Forms.Padding(2);
-            this.Address.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(130, 25);
-            this.Address.TabIndex = 0;
-            // 
-            // label23
-            // 
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(-1, -1);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(84, 36);
-            this.label23.TabIndex = 53;
-            this.label23.Text = "アドレス";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.AddressListExpandsButton);
-            this.panel6.Controls.Add(this.LabelFilter);
-            this.panel6.Controls.Add(this.AddressList);
-            this.panel6.Location = new System.Drawing.Point(8, 42);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(245, 802);
-            this.panel6.TabIndex = 97;
-            // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 768);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
-            this.AddressListExpandsButton.TabIndex = 114;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
-            // 
-            // LabelFilter
-            // 
-            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-2, -3);
-            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(246, 26);
-            this.LabelFilter.TabIndex = 55;
-            this.LabelFilter.Text = "名前";
-            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-2, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(246, 742);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            this.N1_ReadStartAddress.Name = "N1_ReadStartAddress";
+            this.N1_ReadStartAddress.Size = new System.Drawing.Size(130, 25);
+            this.N1_ReadStartAddress.TabIndex = 25;
             // 
             // panel8
             // 
@@ -545,28 +426,6 @@
             this.N1_SKILLICON.TabIndex = 116;
             this.N1_SKILLICON.TabStop = false;
             // 
-            // N1_BlockSize
-            // 
-            this.N1_BlockSize.ErrorMessage = "";
-            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
-            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_BlockSize.Name = "N1_BlockSize";
-            this.N1_BlockSize.Placeholder = "";
-            this.N1_BlockSize.ReadOnly = true;
-            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.N1_BlockSize.TabIndex = 58;
-            // 
-            // N1_SelectAddress
-            // 
-            this.N1_SelectAddress.ErrorMessage = "";
-            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
-            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N1_SelectAddress.Name = "N1_SelectAddress";
-            this.N1_SelectAddress.Placeholder = "";
-            this.N1_SelectAddress.ReadOnly = true;
-            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
-            this.N1_SelectAddress.TabIndex = 57;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.N1_AddressListExpandsButton);
@@ -611,63 +470,6 @@
             this.N1_LabelFilter.Text = "名前";
             this.N1_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
-            // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(1, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 30);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "アドレス";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // N1_Address
-            // 
-            this.N1_Address.Hexadecimal = true;
-            this.N1_Address.Location = new System.Drawing.Point(123, 5);
-            this.N1_Address.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_Address.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.N1_Address.Name = "N1_Address";
-            this.N1_Address.Size = new System.Drawing.Size(130, 25);
-            this.N1_Address.TabIndex = 0;
-            // 
-            // N1_WriteButton
-            // 
-            this.N1_WriteButton.Location = new System.Drawing.Point(263, 35);
-            this.N1_WriteButton.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_WriteButton.Name = "N1_WriteButton";
-            this.N1_WriteButton.Size = new System.Drawing.Size(168, 30);
-            this.N1_WriteButton.TabIndex = 55;
-            this.N1_WriteButton.Text = "書き込み";
-            this.N1_WriteButton.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(-1, 35);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 30);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "選択アドレス:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(263, 1);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 30);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "Size:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -684,88 +486,286 @@
             this.panel7.Size = new System.Drawing.Size(655, 75);
             this.panel7.TabIndex = 123;
             // 
-            // N1_ReadStartAddress
+            // N1_BlockSize
             // 
-            this.N1_ReadStartAddress.Hexadecimal = true;
-            this.N1_ReadStartAddress.Location = new System.Drawing.Point(372, 5);
-            this.N1_ReadStartAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_ReadStartAddress.Maximum = new decimal(new int[] {
+            this.N1_BlockSize.ErrorMessage = "";
+            this.N1_BlockSize.Location = new System.Drawing.Point(353, 5);
+            this.N1_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_BlockSize.Name = "N1_BlockSize";
+            this.N1_BlockSize.Placeholder = "";
+            this.N1_BlockSize.ReadOnly = true;
+            this.N1_BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.N1_BlockSize.TabIndex = 58;
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(263, 1);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 30);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Size:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N1_SelectAddress
+            // 
+            this.N1_SelectAddress.ErrorMessage = "";
+            this.N1_SelectAddress.Location = new System.Drawing.Point(124, 36);
+            this.N1_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N1_SelectAddress.Name = "N1_SelectAddress";
+            this.N1_SelectAddress.Placeholder = "";
+            this.N1_SelectAddress.ReadOnly = true;
+            this.N1_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N1_SelectAddress.TabIndex = 57;
+            // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(-1, 35);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 30);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "選択アドレス:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N1_WriteButton
+            // 
+            this.N1_WriteButton.Location = new System.Drawing.Point(263, 35);
+            this.N1_WriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_WriteButton.Name = "N1_WriteButton";
+            this.N1_WriteButton.Size = new System.Drawing.Size(168, 30);
+            this.N1_WriteButton.TabIndex = 55;
+            this.N1_WriteButton.Text = "書き込み";
+            this.N1_WriteButton.UseVisualStyleBackColor = true;
+            // 
+            // N1_Address
+            // 
+            this.N1_Address.Hexadecimal = true;
+            this.N1_Address.Location = new System.Drawing.Point(123, 5);
+            this.N1_Address.Margin = new System.Windows.Forms.Padding(2);
+            this.N1_Address.Maximum = new decimal(new int[] {
             -559939585,
             902409669,
             54,
             0});
-            this.N1_ReadStartAddress.Name = "N1_ReadStartAddress";
-            this.N1_ReadStartAddress.Size = new System.Drawing.Size(130, 25);
-            this.N1_ReadStartAddress.TabIndex = 25;
+            this.N1_Address.Name = "N1_Address";
+            this.N1_Address.Size = new System.Drawing.Size(130, 25);
+            this.N1_Address.TabIndex = 0;
             // 
-            // N1_ReadCount
+            // label10
             // 
-            this.N1_ReadCount.Location = new System.Drawing.Point(602, 3);
-            this.N1_ReadCount.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_ReadCount.Maximum = new decimal(new int[] {
-            256,
-            0,
-            0,
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(1, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 30);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "アドレス";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SKILLNAME
+            // 
+            this.SKILLNAME.ErrorMessage = "";
+            this.SKILLNAME.Location = new System.Drawing.Point(38, 39);
+            this.SKILLNAME.Name = "SKILLNAME";
+            this.SKILLNAME.Placeholder = "";
+            this.SKILLNAME.ReadOnly = true;
+            this.SKILLNAME.Size = new System.Drawing.Size(178, 25);
+            this.SKILLNAME.TabIndex = 120;
+            // 
+            // SKILLTEXT
+            // 
+            this.SKILLTEXT.ErrorMessage = "";
+            this.SKILLTEXT.Location = new System.Drawing.Point(230, 69);
+            this.SKILLTEXT.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLTEXT.Multiline = true;
+            this.SKILLTEXT.Name = "SKILLTEXT";
+            this.SKILLTEXT.Placeholder = "";
+            this.SKILLTEXT.ReadOnly = true;
+            this.SKILLTEXT.Size = new System.Drawing.Size(348, 97);
+            this.SKILLTEXT.TabIndex = 109;
+            // 
+            // SKILLICON
+            // 
+            this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.SKILLICON.Location = new System.Drawing.Point(229, 0);
+            this.SKILLICON.Margin = new System.Windows.Forms.Padding(2);
+            this.SKILLICON.Name = "SKILLICON";
+            this.SKILLICON.Size = new System.Drawing.Size(64, 64);
+            this.SKILLICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SKILLICON.TabIndex = 102;
+            this.SKILLICON.TabStop = false;
+            // 
+            // B0
+            // 
+            this.B0.Hexadecimal = true;
+            this.B0.Location = new System.Drawing.Point(137, 7);
+            this.B0.Margin = new System.Windows.Forms.Padding(2);
+            this.B0.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
             0});
-            this.N1_ReadCount.Name = "N1_ReadCount";
-            this.N1_ReadCount.Size = new System.Drawing.Size(78, 25);
-            this.N1_ReadCount.TabIndex = 26;
+            this.B0.Name = "B0";
+            this.B0.Size = new System.Drawing.Size(79, 25);
+            this.B0.TabIndex = 0;
+            this.B0.ValueChanged += new System.EventHandler(this.B0_ValueChanged);
             // 
-            // label2
+            // J_0_SKILLASSIGNMENT
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(512, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 34);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "読込数";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J_0_SKILLASSIGNMENT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_0_SKILLASSIGNMENT.Location = new System.Drawing.Point(-2, 2);
+            this.J_0_SKILLASSIGNMENT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.J_0_SKILLASSIGNMENT.Name = "J_0_SKILLASSIGNMENT";
+            this.J_0_SKILLASSIGNMENT.Size = new System.Drawing.Size(135, 30);
+            this.J_0_SKILLASSIGNMENT.TabIndex = 24;
+            this.J_0_SKILLASSIGNMENT.Text = "スキル";
+            this.J_0_SKILLASSIGNMENT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // panel5
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 36);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "レベルアップで取得するスキルの先頭アドレス";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.BlockSize);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.SelectAddress);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Controls.Add(this.WriteButton);
+            this.panel5.Controls.Add(this.Address);
+            this.panel5.Controls.Add(this.label23);
+            this.panel5.Location = new System.Drawing.Point(258, 40);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(905, 34);
+            this.panel5.TabIndex = 94;
             // 
-            // N1_ReloadListButton
+            // BlockSize
             // 
-            this.N1_ReloadListButton.Location = new System.Drawing.Point(739, 0);
-            this.N1_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
-            this.N1_ReloadListButton.Name = "N1_ReloadListButton";
-            this.N1_ReloadListButton.Size = new System.Drawing.Size(112, 30);
-            this.N1_ReloadListButton.TabIndex = 27;
-            this.N1_ReloadListButton.Text = "再取得";
-            this.N1_ReloadListButton.UseVisualStyleBackColor = true;
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(314, 4);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 58;
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.N1_ReloadListButton);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.N1_ReadCount);
-            this.panel1.Controls.Add(this.N1_ReadStartAddress);
-            this.panel1.Location = new System.Drawing.Point(4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 34);
-            this.panel1.TabIndex = 121;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(231, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 30);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Size:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UnitLevelUpSkill
+            // SelectAddress
             // 
-            this.UnitLevelUpSkill.Controls.Add(this.panel1);
-            this.UnitLevelUpSkill.Controls.Add(this.panel8);
-            this.UnitLevelUpSkill.Controls.Add(this.panel2);
-            this.UnitLevelUpSkill.Controls.Add(this.panel7);
-            this.UnitLevelUpSkill.Location = new System.Drawing.Point(-1, 175);
-            this.UnitLevelUpSkill.Name = "UnitLevelUpSkill";
-            this.UnitLevelUpSkill.Size = new System.Drawing.Size(905, 560);
-            this.UnitLevelUpSkill.TabIndex = 125;
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(532, 2);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(150, 25);
+            this.SelectAddress.TabIndex = 57;
+            // 
+            // label22
+            // 
+            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label22.Location = new System.Drawing.Point(408, 1);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(122, 30);
+            this.label22.TabIndex = 56;
+            this.label22.Text = "選択アドレス:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WriteButton
+            // 
+            this.WriteButton.Location = new System.Drawing.Point(702, -1);
+            this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(168, 30);
+            this.WriteButton.TabIndex = 55;
+            this.WriteButton.Text = "書き込み";
+            this.WriteButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
+            // 
+            // Address
+            // 
+            this.Address.Hexadecimal = true;
+            this.Address.Location = new System.Drawing.Point(90, 4);
+            this.Address.Margin = new System.Windows.Forms.Padding(2);
+            this.Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(130, 25);
+            this.Address.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label23.Location = new System.Drawing.Point(-1, -1);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(84, 36);
+            this.label23.TabIndex = 53;
+            this.label23.Text = "アドレス";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressListExpandsButton);
+            this.panel6.Controls.Add(this.LabelFilter);
+            this.panel6.Controls.Add(this.AddressList);
+            this.panel6.Location = new System.Drawing.Point(8, 42);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(245, 802);
+            this.panel6.TabIndex = 97;
+            // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 768);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
+            this.AddressListExpandsButton.TabIndex = 114;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // LabelFilter
+            // 
+            this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelFilter.Location = new System.Drawing.Point(-2, -3);
+            this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelFilter.Name = "LabelFilter";
+            this.LabelFilter.Size = new System.Drawing.Size(246, 26);
+            this.LabelFilter.TabIndex = 55;
+            this.LabelFilter.Text = "名前";
+            this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-2, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(246, 742);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // SkillAssignmentUnitSkillSystemForm
             // 
@@ -785,12 +785,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
-            this.panel6.ResumeLayout(false);
+            this.UnitLevelUpSkill.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ZeroPointerPanel.ResumeLayout(false);
@@ -799,13 +797,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.N1_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N1_SKILLICON)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.N1_ReadCount)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.UnitLevelUpSkill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N1_Address)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

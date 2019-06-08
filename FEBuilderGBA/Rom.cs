@@ -82,7 +82,10 @@ namespace FEBuilderGBA
         uint event_ballte_talk_pointer(); // 交戦時セリフの開始位置
         uint event_ballte_talk2_pointer(); // 交戦時セリフの開始位置2 (FE6だとボス汎用会話テーブルがある)
         uint event_haiku_pointer(); // 死亡時セリフの開始位置
+        uint event_haiku_tutorial_1_pointer(); // リン編チュートリアル 死亡時セリフの開始位置 FE7のみ
+        uint event_haiku_tutorial_2_pointer(); // エリウッド編チュートリアル 死亡時セリフの開始位置 FE7のみ
         uint event_force_sortie_pointer(); // 強制出撃の開始位置
+        uint event_tutorial_pointer(); //イベントチュートリアルポインタ FE7のみ
         uint map_exit_point_pointer(); // 離脱ポイント開始サイズ
         uint map_exit_point_npc_blockadd() ; // arr[+65] からNPCらしい.
         uint map_exit_point_blank(); // 一つも離脱ポインタがない時のNULLマーク 共通で使われる.
@@ -262,6 +265,16 @@ namespace FEBuilderGBA
         uint workmemory_reference_procs_event_address_offset(); //Procsのイベントエンジンでのイベントのアドレスを格納するuser変数の場所
         uint workmemory_procs_game_main_address(); //ワークメモリ Procsの中でのGAMEMAIN
         uint Procs_game_main_address(); //PROCSのGAME MAIN 
+        uint workmemory_palette_address(); //RAMに記録されているダブルバッファのパレット領域
+        uint workmemory_sound_player_00_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_01_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_02_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_03_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_04_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_05_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_06_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_07_address(); //RAMに設定されているサウンドプレイヤーバッファ
+        uint workmemory_sound_player_08_address(); //RAMに設定されているサウンドプレイヤーバッファ
         uint summon_unit_pointer(); //召喚
         uint summons_demon_king_pointer(); //呼魔
         uint summons_demon_king_count_address(); //呼魔リストの数
@@ -362,14 +375,15 @@ namespace FEBuilderGBA
         uint status_game_option_pointer(); //ゲームオプション
         uint status_game_option_order_pointer(); //ゲームオプションの並び順
         uint status_game_option_order_count_address(); //ゲームオプションの個数
+        uint status_units_menu_pointer(); //部隊メニュー
         uint tactician_affinity_pointer(); //軍師属性(FE7のみ)
+        uint event_final_serif_pointer(); //終章セリフ(FE7のみ)
         uint compress_image_borderline_address(); //これ以降に圧縮画像が登場するというアドレス
         uint patch_anti_Huffman(out uint enable_value); //anti-Huffman patch
         uint patch_C01_hack(out uint enable_value); //C01 patch
         uint patch_C48_hack(out uint enable_value); //C48 patch
         uint patch_16_tracks_12_sounds(out uint enable_value); //16_tracks_12_sounds patch
         uint patch_chaptor_names_text_fix(out uint enable_value); //章の名前をテキストにするパッチ
-        uint patch_skip_worldmap_fix(out uint enable_value); //skip_worldmap_fix patch
         uint patch_generic_enemy_portrait_extends(out uint enable_value);//一般兵の顔 拡張
         uint patch_stairs_hack(out uint enable_value); //階段拡張
         uint patch_unitaction_rework_hack(out uint enable_value); //ユニットアクションの拡張
@@ -581,11 +595,16 @@ namespace FEBuilderGBA
             Modified = true;
         }
 
-        public void write_resize_data(uint resize)
+        public bool write_resize_data(uint resize)
         {
             if (this.Data.Length == resize)
             {//サイズが同一なら何もしない
-                return;
+                return true;
+            }
+            if (resize > 0x02000000)
+            {
+                R.ShowStopError("32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}", U.ToHexString(resize));
+                return false;
             }
             if (Program.CommentCache != null)
             {
@@ -599,6 +618,8 @@ namespace FEBuilderGBA
             Array.Resize(ref _d, (int)U.Padding4(resize));
             this.Data = _d;
             Modified = true;
+
+            return true;
         }
         public void write_range(uint addr, byte[] write_data)
         {
@@ -841,7 +862,11 @@ namespace FEBuilderGBA
 
             if (newROMData.Length != this.Data.Length)
             {//長さが増える場合、ROMを増設する.
-                this.write_resize_data((uint)newROMData.Length);
+                bool isResizeSuccess = this.write_resize_data((uint)newROMData.Length);
+                if (isResizeSuccess == false)
+                {
+                    return false;
+                }
             }
             this.write_range(0, newROMData);
 

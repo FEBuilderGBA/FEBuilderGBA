@@ -1435,14 +1435,9 @@ namespace FEBuilderGBA
                 Program.LastSelectedFilename.Save(self, "", save);
             }
 
-            string ext = U.GetFilenameExt(filename);
-            if (ext == ".BMP")
+            if (! U.BitmapSave(bitmap, filename) )
             {
-                bitmap.Save(filename);
-            }
-            else
-            {
-                bitmap.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
+                return "";
             }
             return filename;
         }
@@ -1534,6 +1529,7 @@ namespace FEBuilderGBA
             if (GetDragFilePath(out filename))
             {
                 //drag されているファイルがあるらしい.
+                Program.LastSelectedFilename.Save(self, addName , filename);
             }
             else
             {
@@ -1653,6 +1649,31 @@ namespace FEBuilderGBA
                 Program.Undo.Push(undodata);
                 InputFormRef.ShowWriteNotifyAnimation(this.SelfForm, U.toOffset(this.IMAGEPointer));
             };
+        }
+        public static string SaveDialogPngOrGIF(InputFormRef ifr)
+        {
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("PNG|*.png|アニメGIF|*.gif|All files|*");
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            save.AddExtension = true;
+            Program.LastSelectedFilename.Load(ifr.SelfForm, "", save, ifr.MakeSaveImageFilename());
+
+            DialogResult dr = save.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return "";
+            }
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return "";
+            }
+            string filename = save.FileNames[0];
+            Program.LastSelectedFilename.Save(ifr.SelfForm, "", save);
+
+            return filename;
         }
 
     }

@@ -1,0 +1,16 @@
+NAME=召喚された亡霊戦士の武器レベルを保有武器のレベルにします
+NAME.en=Fix the weapon level of the Summoned Phantom's weapon level of the possessed weapon.
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x7D296=0x00 0x00 0x00 0x49 0x8F 0x46
+BIN:$FREEAREA:1=fix_summoned_Phantom_weapon_level.dmp
+JUMP:0x0807D296:$r1=fix_summoned_Phantom_weapon_level.dmp
+
+INFO=召喚された亡霊戦士の武器レベルの規則を変更します。\r\n召喚者のレベルではなく、保有する武器レベルを割り振るようにします。
+
+AUTHOR=7743
+INFO.en=Change the weapon level rules of the summoned Ghost Warrior.\r\nAllocate weapon levels you own, not the summons level.
+NAME.zh=使召唤幽灵战士的武器等级成为拥有武器的等级。
+INFO.zh=改变被召唤的幽灵战士的武器等级规则。\r\n分配你拥有的武器等级，而不是召唤等级。

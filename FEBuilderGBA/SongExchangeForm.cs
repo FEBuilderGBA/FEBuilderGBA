@@ -35,6 +35,7 @@ namespace FEBuilderGBA
         List<SongSt> OtherSongList;
         byte[] OtherROMData;
         string OtherROMFilename;
+        string ErrorMessage;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -181,7 +182,25 @@ namespace FEBuilderGBA
             InstrumentMap instrument_map = new InstrumentMap(srcdata, srcsong.voices);
             List<List<byte>> trackdata = new List<List<byte>>();
 
-            Rip(srcdata, srcsong, instrument_map, trackdata);
+            if (instrument_map.ErrorMessage != "")
+            {
+                DialogResult dr = R.ShowNoYes("この曲のデータ構造は壊れているようです。\r\nインポートを強行しますか？\r\n強行する場合は、正しく認識できたトラックのみをインポートします。" + "\r\n\r\n" + instrument_map.ErrorMessage);
+                if (dr != System.Windows.Forms.DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+
+            //曲の取出し.
+            this.ErrorMessage = "";
+            bool success = Rip(srcdata, srcsong, instrument_map, trackdata);
+            if (success == false)
+            {
+                R.ShowStopError("この曲のデータ構造は壊れているため、Rip出来ませんでした。" + "\r\n\r\n" + this.ErrorMessage);
+                return;
+            }
+
+            //取り出した曲を書き込む.
             Burn(destsong, instrument_map, trackdata);
         }
 
@@ -347,7 +366,7 @@ namespace FEBuilderGBA
         }
 
 
-        void Rip(byte[] data, SongSt song, InstrumentMap instrument_map, List<List<byte>> trackdata)
+        bool Rip(byte[] data, SongSt song, InstrumentMap instrument_map, List<List<byte>> trackdata)
         {
             //Rip
             for (uint track = 0; track < song.tracks; track++)
@@ -356,7 +375,9 @@ namespace FEBuilderGBA
                 uint songtrackdata_pointer = U.u32(data, songtrack_pointer);
                 if (!U.isPointer(songtrackdata_pointer))
                 {
-                    throw new Exception("track:" + track.ToString() + " can not pointer! addr:" + songtrack_pointer.ToString("X08") + " data:" + songtrackdata_pointer.ToString("X08"));
+                    this.ErrorMessage += "\r\n" +
+                        R.Error("track:" + track.ToString() + " can not pointer! addr:" + songtrack_pointer.ToString("X08") + " data:" + songtrackdata_pointer.ToString("X08"));
+                    return false;
                 }
                 songtrackdata_pointer = U.toOffset(songtrackdata_pointer);
 
@@ -366,6 +387,7 @@ namespace FEBuilderGBA
             }
             //ドラムがない曲の場合、それは困るので、ダミーのドラムを追加する.
             instrument_map.appendDrumIfNoDrum();
+            return true;
         }
 
         List<byte> process_track(byte[] data, uint songtrackdata_pointer, InstrumentMap instrument_map)
@@ -400,10 +422,6 @@ namespace FEBuilderGBA
                     if (translated == 0)
                     {
                         percussion = next_byte;
-                    }
-                    else
-                    {
-//                        percussion = 0;
                     }
                     ret.Add((byte)translated);
                 }
@@ -447,11 +465,11 @@ namespace FEBuilderGBA
             public List<byte> Instrument_codes;
             public List<byte> Sample_data;
 
-
-
             public Dictionary<string, uint> Instrument_mapping;
             byte[] Data;
             uint Instrument_map_offset;
+
+            public string ErrorMessage;
 
             //Maps non-percussion instruments to sequential values 1..n,
             //and extracts the corresponding samples. If percussion is
@@ -460,6 +478,7 @@ namespace FEBuilderGBA
             //values in the same mapping.
             public InstrumentMap(byte[] data,uint instrument_map_pointer)
             {
+                this.ErrorMessage = "";
                 this.Instrument_codes = new List<byte>();
                 this.Sample_data = new List<byte>();
                 this.Instrument_mapping = new Dictionary<string, uint>();
@@ -555,7 +574,137 @@ namespace FEBuilderGBA
                     0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
             }
 
-            uint _prepare(byte[] instrument_code,string key,bool is_deps)
+            bool _prepare_DirectSound(byte[] instrument_code, string key, bool is_deps)
+            {
+                Debug.Assert(SongInstrumentForm.IsDirectSound(instrument_code[0]));
+                uint sample_location = U.p32(instrument_code, 4);
+                if (sample_location > this.Data.Length)
+                {
+                    this.ErrorMessage += "\r\n" + 
+                        R.Error("DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size"
+                        , U.To0xHexString(sample_location), U.To0xHexString(this.Data.Length));
+
+                    //ダメな楽器として認識する.
+                    return false;
+                }
+                uint sample_hz1024 = U.u32(this.Data, sample_location + 4) / 1024;
+                uint sample_length = U.u32(this.Data, sample_location + 12);
+                Log.Debug(R._("DirectSound Sample:{0} bytes ({1} *1024 hz)", sample_length, sample_hz1024));
+
+                if (is_deps)
+                {
+                    if (sample_length > 1024*1024 * 1   //1MB
+                        || sample_hz1024 > 48 * 1024    //48khz Over
+                        )
+                    {
+                        this.ErrorMessage += "\r\n" +
+                            R.Error("Multi または Drumの中に、おかしなデータがありました。無視します。 OverHZ Sample:{0} bytes ({1} *1024 hz)", sample_length, sample_hz1024);
+
+                        //ダメな楽器として認識する.
+                        return false;
+                    }
+                }
+
+                List<byte> current_sample = U.subrangeToList(this.Data, sample_location, sample_location + 16 + sample_length);
+                //4バイトアライメント
+                while ((current_sample.Count % 4) != 0)
+                {
+                    current_sample.Add(0);
+                }
+
+                Log.Debug(Instrument_mapping.Count.ToString(), sample_length.ToString("X"), this.Sample_data.Count.ToString("X"));
+
+                U.write_u32(instrument_code, 4, (uint)this.Sample_data.Count);
+                this.Sample_data.AddRange(current_sample);
+                Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
+
+                return true;
+            }
+            bool _prepare_WaveMemory(byte[] instrument_code, string key, bool is_deps)
+            {
+                Debug.Assert(SongInstrumentForm.IsWaveMemory(instrument_code[0]));
+                uint sample_location = U.p32(instrument_code,4);
+                if (sample_location > this.Data.Length)
+                {
+                    this.ErrorMessage += "\r\n" +
+                        R.Error("DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size"
+                            , U.To0xHexString(sample_location),U.To0xHexString(this.Data.Length));
+
+                    //ダメな楽器として認識する.
+                    return false;
+                }
+           
+                List<byte> current_sample = U.subrangeToList(this.Data,sample_location ,sample_location + 16 );
+
+                //4バイトアライメント
+                while ((current_sample.Count % 4) != 0)
+                {
+                    current_sample.Add(0);
+                }
+
+                Log.Debug(U.HexDump(instrument_code));
+                    
+                U.write_u32(instrument_code,4,(uint)this.Sample_data.Count);
+                this.Sample_data.AddRange(current_sample);
+                Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
+
+                return true;
+            }
+
+            bool _prepare_MultiSample(byte[] instrument_code, string key, bool is_deps)
+            {
+                Log.Debug("multisample");
+
+                uint multisample_voices = U.p32(instrument_code, 4);
+                uint sample_location = U.p32(instrument_code, 8);
+                if (multisample_voices > this.Data.Length)
+                {
+                    this.ErrorMessage += "\r\n" +
+                        R.Error("MultiSampleの中に、おかしなデータがありました。無視します。 multisample_voices:{0} sample_location:{1} > {2} ROM Size"
+                            , U.To0xHexString(multisample_voices), U.To0xHexString(sample_location), U.To0xHexString(this.Data.Length));
+
+                    //ダメな楽器として認識する.
+                    return false;
+                }
+                if (sample_location > this.Data.Length)
+                {
+                    this.ErrorMessage += "\r\n" +
+                        R.Error("MultiSampleの中に、おかしなデータがありました。無視します。 multisample_voices:{0} sample_location:{1} > {2} ROM Size"
+                            , U.To0xHexString(multisample_voices), U.To0xHexString(sample_location), U.To0xHexString(this.Data.Length));
+
+                    //ダメな楽器として認識する.
+                    return false;
+                }
+
+                List<byte> current_sample = U.subrangeToList(this.Data, sample_location, sample_location + 128);
+
+                Dictionary<int, uint> dic = new Dictionary<int, uint>();
+                for (int i = 0; i < current_sample.Count; i++)
+                {
+                    int id = current_sample[i];
+                    if (id > 0x7F)
+                    {
+                        continue;
+                    }
+                    if (!dic.ContainsKey(id))
+                    {
+                        dic[id] = this.translate_multisample((uint)id, multisample_voices);
+
+                    }
+                    current_sample[i] = (byte)dic[id];
+                }
+
+                U.write_u32(instrument_code, 4, 0); //follow instrument start posstion
+                U.write_u32(instrument_code, 8, (uint)this.Sample_data.Count);
+                this.Sample_data.AddRange(current_sample);
+
+                Log.Debug(U.HexDump(instrument_code));
+                Log.Debug(U.HexDump(current_sample));
+                Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
+
+                return true;
+            }
+            uint _prepare(byte[] instrument_code, string key, bool is_deps)
             {
                 // Fix instrument pointer to be an offset relative to start of sample data.
                 // The pointer for the first instrument - which is the percussion map - is
@@ -566,66 +715,27 @@ namespace FEBuilderGBA
                     //print "song in song error!"
                     //print hexdump(instrument_code)
                     Log.Error(U.HexDump(instrument_code));
-                    Log.Error(R._("Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n"));
+                    this.ErrorMessage += "\r\n" +
+                        R.Error("Multi または Drumの中に、さらにMulti または Drumがありました。\r\nこういう複雑なものは対応できないので無視します。\r\n");
+
                     instrument_code = bad_inst();
                     Debug.Assert(false);
                 }
                 else if (SongInstrumentForm.IsDirectSound(instrument_code[0]))
                 {
-                    uint sample_location = U.p32(instrument_code,4);
-                    uint sample_hz1024 = U.u32(this.Data, sample_location + 4) / 1024;
-                    uint sample_length = U.u32(this.Data, sample_location + 12);
-                    Log.Debug(R._("DirectSound Sample:{0} bytes ({1} *1024 hz)", sample_length, sample_hz1024));
-
-                    bool badData = false;
-                    if (is_deps)
+                    bool success = _prepare_DirectSound(instrument_code, key, is_deps);
+                    if (success == false)
                     {
-                        if (sample_length > 1024*1024 * 1   //1MB
-                            || sample_hz1024 > 48 * 1024    //48khz Over
-                            )
-                        {
-                            Log.Error(R._("Multi または Drumの中に、おかしなデータがありました。無視します。 OverHZ Sample:{0} bytes ({1} *1024 hz)", sample_length, sample_hz1024));
-                            badData = true;
-                        }
-                    }
-
-                    if (badData)
-                    {//ダメな楽器として認識する.
                         instrument_code = bad_inst();
-                    }
-                    else
-                    {
-                        List<byte> current_sample = U.subrangeToList(this.Data, sample_location, sample_location + 16 + sample_length);
-                        //4バイトアライメント
-                        while ((current_sample.Count % 4) != 0)
-                        {
-                            current_sample.Add(0);
-                        }
-
-                        Log.Debug(Instrument_mapping.Count.ToString(), sample_length.ToString("X"), this.Sample_data.Count.ToString("X"));
-
-                        U.write_u32(instrument_code, 4, (uint)this.Sample_data.Count);
-                        this.Sample_data.AddRange(current_sample);
-                        Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
                     }
                 }
                 else if (SongInstrumentForm.IsWaveMemory(instrument_code[0]))
                 {
-                    uint sample_location = U.p32(instrument_code,4);
-           
-                    List<byte> current_sample = U.subrangeToList(this.Data,sample_location ,sample_location + 16 );
-
-                    //4バイトアライメント
-                    while ((current_sample.Count % 4) != 0)
+                    bool success = _prepare_WaveMemory(instrument_code, key, is_deps);
+                    if (success == false)
                     {
-                        current_sample.Add(0);
+                        instrument_code = bad_inst();
                     }
-
-                    Log.Debug(U.HexDump(instrument_code));
-                    
-                    U.write_u32(instrument_code,4,(uint)this.Sample_data.Count);
-                    this.Sample_data.AddRange(current_sample);
-                    Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
                 }
                 else if (instrument_code[0] == 0x80)
                 {
@@ -638,36 +748,11 @@ namespace FEBuilderGBA
                 }
                 else if (instrument_code[0] == 0x40)
                 {
-                    Log.Debug("multisample");
-
-                    uint multisample_voices = U.p32(instrument_code, 4);
-                    uint sample_location = U.p32(instrument_code, 8);
-
-                    List<byte> current_sample = U.subrangeToList(this.Data, sample_location, sample_location + 128);
-
-                    Dictionary<int, uint> dic = new Dictionary<int, uint>();
-                    for (int i = 0; i < current_sample.Count; i++)
+                    bool success = _prepare_MultiSample(instrument_code, key, is_deps);
+                    if (success == false)
                     {
-                        int id = current_sample[i];
-                        if (id > 0x7F)
-                        {
-                            continue;
-                        }
-                        if (!dic.ContainsKey(id))
-                        {
-                            dic[id] = this.translate_multisample((uint)id, multisample_voices);
-
-                        }
-                        current_sample[i] = (byte)dic[id];
+                        instrument_code = bad_inst();
                     }
-
-                    U.write_u32(instrument_code, 4, 0); //follow instrument start posstion
-                    U.write_u32(instrument_code, 8, (uint)this.Sample_data.Count);
-                    this.Sample_data.AddRange(current_sample);
-
-                    Log.Debug(U.HexDump(instrument_code));
-                    Log.Debug(U.HexDump(current_sample));
-                    Log.Debug(R._("SampleData:{0} bytes (append({1}bytes))", this.Sample_data.Count, current_sample.Count));
                 }
                 else
                 {

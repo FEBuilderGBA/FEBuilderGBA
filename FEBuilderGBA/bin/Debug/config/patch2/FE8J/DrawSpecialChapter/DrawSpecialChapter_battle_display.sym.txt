@@ -1,0 +1,5 @@
+Table=$3C
+Loop=$06
+NotFound=$1E
+Found=$16
+first_chapter=$26

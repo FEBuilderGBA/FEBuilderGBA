@@ -16,3 +16,8 @@ INFO.zh=指定、法拉之力、妮妮斯的守护、托尔之怒、塞奇之祈
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+
+
+
+CONFLICT_IF:0x2AD90=0x10 0xB5 0x30 0x21
+CONFLICT_MESSAGE=RingRework

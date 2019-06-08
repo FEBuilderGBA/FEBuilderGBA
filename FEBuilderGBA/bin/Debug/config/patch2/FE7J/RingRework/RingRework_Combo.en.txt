@@ -1,0 +1,16 @@
+0=None
+1=Poison
+2=Sleep
+3=Silence
+4=Berserk
+5=Attack
+6=Defence
+7=Crtical
+8=Avoid
+9=??
+A=??
+B=Stone
+C=??
+D=??
+E=??
+F=??

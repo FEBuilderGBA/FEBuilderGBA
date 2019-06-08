@@ -20,7 +20,7 @@
 0806f324	ステータス3武器レベル
 0807030C	Rメニューの設定
 030044B0	&Unit	操作キャラのワークメモリへのポインタ
-08013AD0	Copy_Text_To_RAM
+08013AD0	GetStringFromIndex
 08279d28	:08279e60	地形の日本語表記
 08279e60	:0827a924	地形やキャラの名前がASCIIで入力されている
 0827a924	:0827B018	スタッフロールがASCIIで入力されている 利用されない
@@ -511,21 +511,23 @@
 
 
 //Just before the attacker's battle struct is data used to display the pre-battle numbers and calculate the rounds data
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
 
-02039200	@AttackerBattleStruct	AttackerBattleStruct	//maybe
+02039200	@BattleStats	BattleStats	//maybe
 
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 
 
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
@@ -598,7 +600,6 @@
 08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
 
-08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 
@@ -717,9 +718,9 @@
 08016D0A	GetUnitItemSlot
 08016DA2	GetWeaponRangeMask
 08017364	ClearUnits
-08017394	ClearUnitStruct
-080173BC	CopyUnitStruct
-080173D8	GetNextFreeUnitStructPtr
+08017394	ClearUnitStruct	r0=@Unit
+080173BC	CopyUnitStruct	r0=@Unit	r1=@Unit
+080173D8	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
 08017578	LoadUnits
@@ -1018,7 +1019,7 @@
 02029404	TextBufferOffset	This is the buffer text is written to.
 03000038	TextBufferOffsetで次に表示する位置
 03000074	価格などの数字 文章中の @0080@0005 で取得できる数字
-0800C304	会話@0080@0005で参照できるところに数字を書く	void	r0=表示したい数字	{J}
+0800C304	会話@0080@0005で参照できるところに数字を書く	void	r0=表示したい数字
 
 08049bac	GetBattleAnimationId
 @BATTLE_ANIME@04	左側	戦闘アニメID-1
@@ -1145,23 +1146,26 @@
 0802A370	ActionDance
 0802A35C	ActionArena
 
-@ArenaTemp@00	&Unit	プレイヤーユニット
-@ArenaTemp@04	&Unit	対戦相手
-@ArenaTemp@08	short	掛け金
-@ArenaTemp@0A	byte	戦闘結果
-@ArenaTemp@0B	byte	不明1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	アイテム
-@ArenaTemp@0E	byte	不明2
-@ArenaTemp@0F	byte	不明3
-@ArenaTemp@10	short	不明4
-@ArenaTemp@12	byte	不明5
-@ArenaTemp@13	byte	不明6
-@ArenaTemp@14	short	不明7
-@ArenaTemp@15	short	不明8
-@ArenaTemp@16	short	プレイヤーの強さ
-@ArenaTemp@18	short	対戦相手の強さ
-02039504	@ArenaTemp	闘技場の一時データ
+@@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+02039504	@ArenaData	闘技場の一時データ
 08022064	GetUnitMapSpritePaletteIndex
 08026504	アイテム交換で、実際にアイテムを交換した時
 08033C04	AiTryDoStaff
@@ -1205,8 +1209,6 @@
 08375888	&PALETTE	何かのパレット
 0837AAC8	&PALETTE	何かのパレット
 
-0201F0E8	&PALETTE	何かのパレット
-02021708	&PALETTE	何かのパレット
 08100A08	&PALETTE	何かのパレット
 08100A28	&PALETTE	何かのパレット
 0810137C	&PALETTE	何かのパレット
@@ -1290,3 +1292,52 @@
 0837CB6C	&PALETTE	何かのパレット
 0837F418	&PALETTE	何かのパレット
 08380ECC	&PALETTE	何かのパレット
+08005a78	Text_SetParameters	r0=Text Struct	r1=cursor	r2=color id
+08005da4	Text_AppendString
+08005ab4	Text_Draw
+08006f50	DrawDecNumber
+08004cf8	DrawIcon
+08016720	DrawItemMenuLineLong
+08006e74	DrawSpecialUiChar
+080167E4	DrawTextAndIconForItem
+080059e0	Text_SetXCursor
+08005a60	Text_GetColorId
+08016860	DrawItemStatScreenLine
+02027BCC	TextParams
+080064b4	Text_AppendStringSimple
+08005E78	Text_AppendDecNumber
+08005f40	Text_AppendChar
+080FFD50	psZero
+08005E5C	不明文字のハート文字
+08005FEA	不明文字のハート文字
+0201F0E8	gGenericBuffer
+02021708	Palette wram buffer
+0809dcd8	CPUFastSet
+0809dcf4	LZ77UnCompWram
+081120F8	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1
+08112122	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame
+08112144	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame
+08112370	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame
+08119D56	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame
+08119E30	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame
+08119EDC	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame
+08119D56	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame
+08119FA6	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame
+0811A8F2	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame
+0811A8F2	&ROMPALETTEANIMEFRAME	efxLive2BGPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame
+0811AE34	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame
+0811AEB6	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame
+08119EDC	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame
+0811A27C	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame
+081ABCA0	&PALETTE16	efxLiveSomePalette
+080299BC	闘技場	相手の選出

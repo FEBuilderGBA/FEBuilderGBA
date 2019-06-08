@@ -1,0 +1,17 @@
+NAME=All Instrument
+NAME.en=All Instrument
+NAME.zh=All Instrument
+
+TYPE=EA
+TAG=#ENGINE #SOUND
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ../../FE7U/AllInstrumentEA/0x46MULTI_0x69.bin=0x00 0x00 0x00 0x40
+
+EA=../../FE7U/AllInstrumentEA/AllInstrument.event
+
+INFO=すべての高音質なMidi楽器を使えるようにするパッチです。\r\nかなり大きい約1.5MBの容量を消費しますが、高音質の音楽を再生できるようになります。
+INFO.en=This patch allows you to use all high-quality Midi instruments.\r\nIt uses up about 1.5 MB of space, which is quite large, but it can play back high-quality music.
+INFO.zh=是可以使用所有高音质的Midi乐器的补丁。\r\n消耗了相当大的约1.5 MB容量,能够播放高音质的音乐。
+
+AUTHOR=Blazer

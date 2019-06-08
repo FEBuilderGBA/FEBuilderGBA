@@ -561,6 +561,8 @@ namespace FEBuilderGBA
             return palttebyte;
         }
 
+        public const int OVERRAIDE_ALL_PALETTE = 0xff;
+
         public static uint MakePaletteUIToROM(Form self, uint palette_address, bool isCompress,int palette_index)
         {
             uint addr = U.toOffset(palette_address);
@@ -578,13 +580,22 @@ namespace FEBuilderGBA
                 byte[] currentdata = LZ77.decompress(Program.ROM.Data,addr);
                 if (currentdata.Length <= 0)
                 {//解凍できない アドレスを強引に書き換えたりしたのだろうか.
-                    if (palette_index > 0)
+                    if (palette_index != 0 && palette_index != OVERRAIDE_ALL_PALETTE)
                     {
                         Log.Error("パレットを解凍できません.", U.To0xHexString(addr));
                         return U.NOT_FOUND;
                     }
                     //解凍できないけど、最初のパレットに書き込むなら、サイズは16*2で固定だから関係ない.
                     currentdata = palttebyte;
+                }
+                else if (palette_index == OVERRAIDE_ALL_PALETTE)
+                {//複数あるパレットですべて同じパレットに設定する
+                    int paletteCount = currentdata.Length / 0x20;
+                    for (int i = 0; i < paletteCount; i++)
+                    {
+                        uint write_addr = (uint)(i * 0x20);
+                        U.write_range(currentdata, write_addr, palttebyte);
+                    }
                 }
                 else
                 {//複数あるパレットの一部を書き換える.
@@ -611,6 +622,13 @@ namespace FEBuilderGBA
             }
             else
             {//無圧縮パレット
+                if (palette_index == OVERRAIDE_ALL_PALETTE)
+                {//無圧縮パレットでは、パレットのサイズがわからないので、すべて同じ色にすることは不可能
+                    R.Error("無圧縮パレットなので、すべて同じパレットにすることはできません。");
+                    Debug.Assert(false);
+                    return U.NOT_FOUND;
+                }
+
                 addr = addr + (uint)(palette_index * 0x20);
 
                 Program.Undo.Push(undo_name, addr, (uint)palttebyte.Length);

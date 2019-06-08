@@ -42,6 +42,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
             InputFormRef = Init(this, textP);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionPaddingALIGN4 = false;
 
             ShowZoomComboBox.SelectedIndex = 0;
             U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);
@@ -771,12 +772,7 @@ namespace FEBuilderGBA
         //ShadowGiftがWeaponLockExを壊す問題を修正する
         public static void FixWeaponLockEx()
         {
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
-            {
-                return;
-            }
-
-            if (!U.isPointer(Program.ROM.u32(0x16740)))
+            if (!U.isSafetyPointer(Program.ROM.u32(0x16740)))
             {//おそらく WeaponLockExはインストールされていない
                 return;
             }

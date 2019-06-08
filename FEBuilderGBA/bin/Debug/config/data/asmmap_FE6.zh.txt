@@ -297,7 +297,7 @@
 0202BCE8	@Unit@[32]	Enemy
 
 030044B0	&Unit	指向操作角色的工作内存
-08013AD0	Copy_Text_To_RAM
+08013AD0	GetStringFromIndex
 02021B08	BG 0 wram buffer
 02021B88	BG 1 wram buffer
 02021C08	BG 2 wram buffer
@@ -369,19 +369,21 @@
 @MapSize@0	short	Width
 @MapSize@2	short	Height
 0202D200	@MapSize	MapSize
-@AttackerBattleStruct@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
-@AttackerBattleStruct@02	short	Type of animation?	No idea, really. -Appears to be range
-@AttackerBattleStruct@04	short	Damage	(Attack - defense)
-@AttackerBattleStruct@06	short	Attack
-@AttackerBattleStruct@08	short	Defense
-@AttackerBattleStruct@0A	short	Battle hit
-@AttackerBattleStruct@0C	short	Battle crit
-@AttackerBattleStruct@0E	short	Lethality chance
-02039200	@AttackerBattleStruct	AttackerBattleStruct	//maybe
-@DefenderBattleStruct@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
-@DefenderBattleStruct@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
-@DefenderBattleStruct@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
-@DefenderBattleStruct@03	byte	Damage
+@BattleStats@00	short	Seems to be a bitfield	(0x2 seems to be 'battle hasn't started yet') (0x20 is arena)
+@BattleStats@02	short	Type of animation?	No idea, really. -Appears to be range
+@BattleStats@04	short	Damage	(Attack - defense)
+@BattleStats@06	short	Attack
+@BattleStats@08	short	Defense
+@BattleStats@0A	short	Battle hit
+@BattleStats@0C	short	Battle crit
+@BattleStats@0E	short	Lethality chance
+@BattleStats@10	&Unit	taUnitA
+@BattleStats@14	&Unit	taUnitB
+02039200	@BattleStats	BattleStats	//maybe
+@BattleRound@00	byte	Option1	0x01=Critical 0x02=Miss 0x04=? 0x08=? 0x10=Brave 0x20=? 0x40=Poison 0x80=Devil
+@BattleRound@01	byte	Option2	0x01=Steal HP 0x02=? 0x04=Triangle attack 0x08=Lethality 0x10=? 0x20=Petrified 0x40=Sure Shot 0x80=Great Shield
+@BattleRound@02	byte	Option3	0x01=Pierce 0x02=? 0x04=? 0x08=End Battle 0x10=?
+@BattleRound@03	byte	Damage
 @ActionBattleStruct@06	byte	Apparently sometimes has the item id
 @ActionBattleStruct@0C	byte	Current character's allegiance
 @ActionBattleStruct@0D	byte	Target's allegiance	Target's allegiance byte (once selected)
@@ -434,7 +436,6 @@
 08020A16	Compare_Allegiance_Func1	True if both units are of the same allegiance	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08020A04	Compare_Allegiance_Func2	RET=True if both units are either both enemies or are both blue/green	r0=allegiance bytes (0xB of RAM char data ptr)	r1=same
 08017ABC	Find_Character	Useful for supports, I guess.	RET=Ram char data ptr	r0=character number (rom character, that is)
-08017394	Clear_Character_Data	Clears a person's ram character struct except for the allegiance byte	r0=ram char data ptr
 0800105C	Write_Palette	r0=pointer to palette
 08020A7A	Add_Gold_To_Cashpile	r0=amount of gold
 08017578	Create_Unit	Creates a unit with the given characteristics	RET=number of units made	r0=pointer to list of UNIT data
@@ -517,9 +518,9 @@
 08016D0A	GetUnitItemSlot
 08016DA2	GetWeaponRangeMask
 08017364	ClearUnits
-08017394	ClearUnitStruct
-080173BC	CopyUnitStruct
-080173D8	GetNextFreeUnitStructPtr
+08017394	ClearUnitStruct	r0=@Unit
+080173BC	CopyUnitStruct	r0=@Unit	r1=@Unit
+080173D8	GetNextFreeUnitStructPtr	RET=@Unit	r0=faction
 080174AA	UnitAddItem
 080174CC	RemoveUnitBlankItems
 08017578	LoadUnits
@@ -946,23 +947,26 @@
 0802A30C	ActionCombat
 0802A370	ActionDance
 0802A35C	ActionArena
-@ArenaTemp@00	&Unit	球员单位。
-@ArenaTemp@04	&Unit	反对者。
-@ArenaTemp@08	short	锁存器。
-@ArenaTemp@0A	byte	战斗结果。
-@ArenaTemp@0B	byte	未知1
-@ArenaTemp@0C	byte	耐久
-@ArenaTemp@0D	byte	道具
-@ArenaTemp@0E	byte	未知2
-@ArenaTemp@0F	byte	未知3。
-@ArenaTemp@10	short	未知4。
-@ArenaTemp@12	byte	未知5。
-@ArenaTemp@13	byte	未知6。
-@ArenaTemp@14	short	未知7。
-@ArenaTemp@15	short	未知8。
-@ArenaTemp@16	short	玩家的力量。
-@ArenaTemp@18	short	对手的力量。
-02039504	@ArenaTemp	体育场的临时数据。
+@ArenaData@00	&Unit	playerUnit
+@ArenaData@04	&Unit	opponentUnit
+@ArenaData@08	short	betMoney
+@ArenaData@0A	byte	battleResults
+@ArenaData@0B	byte	unk0B
+@ArenaData@0C	byte	range
+@ArenaData@0D	byte	playerWpnType
+@ArenaData@0E	byte	opponentWpnType
+@ArenaData@0F	byte	playerClassId
+@ArenaData@10	byte	opponentClassId
+@ArenaData@11	byte	playerLevel
+@ArenaData@12	byte	oppenentLevel
+@ArenaData@13	byte	playerIsMagic
+@ArenaData@14	byte	opponentIsMagic
+@ArenaData@15	byte	_pad_15
+@ArenaData@16	short	playerPowerWeight
+@ArenaData@18	short	opponentPowerWeight
+@ArenaData@1a	short	playerWeapon
+@ArenaData@1c	short	opponentWeapon
+02039504	@ArenaData	体育场的临时数据。
 08022064	GetUnitMapSpritePaletteIndex
 08026504	实际通过物品交换交换物品时。
 08033C04	AiTryDoStaff
@@ -974,7 +978,7 @@
 087C18C4	&LZ77	空战斗动漫表。
 08709AC8	&LZ77	空战斗动漫表。
 087C1C94	&LZ77	空战斗动漫表。
-08716F9C	&LZ77	未使用的战斗形象。	Maybe
+08716F9C	&LZ77	未使用的战斗形象	Maybe
 08007d3c	RegisterObjectSafe
 085C39A8	&OAMREGS	OAMREGS
 085CAFE4	&OAMREGS	OAMREGS
@@ -988,14 +992,14 @@
 0867917A	&OAMREGS	OAMREGS
 085C39E0	&OAMREGS	OAMREGS
 0868A568	&OAMREGS	OAMREGS
-08307D58	&LZ77	一些小的压缩数据。	01
-08307DD4	&LZ77	一些小的压缩数据。	02
-08308070	&LZ77	一些小的压缩数据。	03
-08307E50	&LZ77	一些小的压缩数据。	04
-08307CEC	&LZ77	一些小的压缩数据。	05
-08309408	&LZ77	一些小的压缩数据。	06
-082DC944	&LZ77	一些小的压缩数据。	07
-08379DCC	&LZ77	一些小的压缩数据。	08
+08307D58	&LZ77	一些小的压缩数据	01
+08307DD4	&LZ77	一些小的压缩数据	02
+08308070	&LZ77	一些小的压缩数据	03
+08307E50	&LZ77	一些小的压缩数据	04
+08307CEC	&LZ77	一些小的压缩数据	05
+08309408	&LZ77	一些小的压缩数据	06
+082DC944	&LZ77	一些小的压缩数据	07
+08379DCC	&LZ77	一些小的压缩数据	08
 08015260	阅读某种调色板的例程
 08014218	阅读某种调色板的例程
 08375B64	&PALETTE	调色板的东西。
@@ -1004,8 +1008,6 @@
 083758A8	&PALETTE	调色板的东西。
 08375888	&PALETTE	调色板的东西。
 0837AAC8	&PALETTE	调色板的东西。
-0201F0E8	&PALETTE	调色板的东西。
-02021708	&PALETTE	调色板的东西。
 08100A08	&PALETTE	调色板的东西。
 08100A28	&PALETTE	调色板的东西。
 0810137C	&PALETTE	调色板的东西。
@@ -1089,3 +1091,53 @@
 0837CB6C	&PALETTE	调色板的东西。
 0837F418	&PALETTE	调色板的东西。
 08380ECC	&PALETTE	调色板的东西。
+@@ArenaData@00	&Unit	playerUnit
+08005a78	Text_SetParameters	r0=Text Struct	r1=cursor	r2=color id
+08005da4	Text_AppendString
+08005ab4	Text_Draw
+08006f50	DrawDecNumber
+08004cf8	DrawIcon
+08016720	DrawItemMenuLineLong
+08006e74	DrawSpecialUiChar
+080167E4	DrawTextAndIconForItem
+080059e0	Text_SetXCursor
+08005a60	Text_GetColorId
+08016860	DrawItemStatScreenLine
+02027BCC	TextParams
+080064b4	Text_AppendStringSimple
+08005E78	Text_AppendDecNumber
+08005f40	Text_AppendChar
+080FFD50	psZero
+08005E5C	未知角色的心脏特征。
+08005FEA	未知角色的心脏特征。
+0201F0E8	gGenericBuffer
+02021708	Palette wram buffer
+0809dcd8	CPUFastSet
+0809dcf4	LZ77UnCompWram
+081120F8	&ROMPALETTEANIMEFRAME	efxHPBarColorChangePaletteAnimeFrame1
+08112122	&ROMPALETTEANIMEFRAME	efxStatusUnitPaletteAnimeFrame
+08112144	&ROMPALETTEANIMEFRAME	efxWeaponIconPaletteAnimeFrame
+08112370	&ROMPALETTEANIMEFRAME	ekrTogiColorPaletteAnimeFrame
+08119D56	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOLPaletteAnimeFrame
+08119E30	&ROMPALETTEANIMEFRAME	efxDarkbreathBGCOLPaletteAnimeFrame
+08119EDC	&ROMPALETTEANIMEFRAME	efxThunderBGCOLPaletteAnimeFrame
+08119D56	&ROMPALETTEANIMEFRAME	efxEckesachsBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxFirebreathBGCOL2PaletteAnimeFrame
+08119FA6	&ROMPALETTEANIMEFRAME	efxElfireBGCOLPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxFenrirBGCOLPaletteAnimeFrame
+0811A8F2	&ROMPALETTEANIMEFRAME	efxLiveBGPaletteAnimeFrame
+0811A8F2	&ROMPALETTEANIMEFRAME	efxLive2BGPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxLunaBGCOLPaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxGespenstBGCOL2PaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxMaohFlashBGCOLPaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxDrzDrakbreathBGCOLPaletteAnimeFrame
+08119CDC	&ROMPALETTEANIMEFRAME	efxChillEffectBGCOLPaletteAnimeFrame
+0811AE34	&ROMPALETTEANIMEFRAME	efxPierceCriticalEffectBGCOLPaletteAnimeFrame
+0811AEB6	&ROMPALETTEANIMEFRAME	efxMagfcastBG2PaletteAnimeFrame
+08119F1E	&ROMPALETTEANIMEFRAME	efxOpFireBGPaletteAnimeFrame
+08119EDC	&ROMPALETTEANIMEFRAME	efxOpThunderBGCOLPaletteAnimeFrame
+0811A758	&ROMPALETTEANIMEFRAME	efxopLiveBGCOLPaletteAnimeFrame
+0811A27C	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame
+081ABCA0	&PALETTE16	efxLiveSomePalette
+080299BC	竞技场	选择对手

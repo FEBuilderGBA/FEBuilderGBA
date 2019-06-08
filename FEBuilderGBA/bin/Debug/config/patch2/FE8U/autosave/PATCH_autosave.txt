@@ -13,3 +13,6 @@ AUTHOR=aera,FE8 Girls
 INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.
 NAME.zh=自动保存功能
 INFO.zh=从中断恢复时，添加可在转弯开始时返回的设置，而不是最后一个操作。
+
+CONFLICT_IF:0x0A6408=0x2A 0x20 0x70 0x47 0x06 0x49 0x07 0x4C
+CONFLICT_MESSAGE=ExModularSave

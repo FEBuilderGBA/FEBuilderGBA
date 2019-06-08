@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_14_AI3_HYOUTEKI = new System.Windows.Forms.ComboBox();
+            this.L_14_AI3_KAIFUKU = new System.Windows.Forms.ComboBox();
             this.EVENTUNIT_AFTER_COORD = new FEBuilderGBA.PanelEx();
             this.L_6_MAPXY_7 = new System.Windows.Forms.Label();
             this.J_6 = new System.Windows.Forms.Label();
@@ -63,7 +65,6 @@
             this.J_0_UNIT = new System.Windows.Forms.Label();
             this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_14_COMBO = new System.Windows.Forms.ComboBox();
             this.L_11_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_10_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_9_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
@@ -164,6 +165,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.L_14_AI3_HYOUTEKI);
+            this.panel3.Controls.Add(this.L_14_AI3_KAIFUKU);
             this.panel3.Controls.Add(this.EVENTUNIT_AFTER_COORD);
             this.panel3.Controls.Add(this.B0);
             this.panel3.Controls.Add(this.EVENTUNIT_BEFORE_COORD);
@@ -180,7 +183,6 @@
             this.panel3.Controls.Add(this.J_0_UNIT);
             this.panel3.Controls.Add(this.L_2_UNITICON);
             this.panel3.Controls.Add(this.L_0_UNITICON);
-            this.panel3.Controls.Add(this.L_14_COMBO);
             this.panel3.Controls.Add(this.L_11_ITEMICON);
             this.panel3.Controls.Add(this.L_10_ITEMICON);
             this.panel3.Controls.Add(this.L_9_ITEMICON);
@@ -214,6 +216,32 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(889, 458);
             this.panel3.TabIndex = 47;
+            // 
+            // L_14_AI3_HYOUTEKI
+            // 
+            this.L_14_AI3_HYOUTEKI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_14_AI3_HYOUTEKI.FormattingEnabled = true;
+            this.L_14_AI3_HYOUTEKI.Location = new System.Drawing.Point(625, 160);
+            this.L_14_AI3_HYOUTEKI.Margin = new System.Windows.Forms.Padding(5);
+            this.L_14_AI3_HYOUTEKI.Name = "L_14_AI3_HYOUTEKI";
+            this.L_14_AI3_HYOUTEKI.Size = new System.Drawing.Size(256, 26);
+            this.L_14_AI3_HYOUTEKI.TabIndex = 253;
+            // 
+            // L_14_AI3_KAIFUKU
+            // 
+            this.L_14_AI3_KAIFUKU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_14_AI3_KAIFUKU.FormattingEnabled = true;
+            this.L_14_AI3_KAIFUKU.Items.AddRange(new object[] {
+            "00=50%以下で回復モード、100%回復したら戻る",
+            "01=30%以下で回復ﾓｰﾄﾞ、80%以上回復したら戻る",
+            "02=10%以下で回復ﾓｰﾄﾞ、50%以上回復したら戻る",
+            "03=80%以下で回復ﾓｰﾄﾞ、100%回復したら戻る",
+            "04=回復モードにならない"});
+            this.L_14_AI3_KAIFUKU.Location = new System.Drawing.Point(206, 161);
+            this.L_14_AI3_KAIFUKU.Margin = new System.Windows.Forms.Padding(5);
+            this.L_14_AI3_KAIFUKU.Name = "L_14_AI3_KAIFUKU";
+            this.L_14_AI3_KAIFUKU.Size = new System.Drawing.Size(415, 26);
+            this.L_14_AI3_KAIFUKU.TabIndex = 252;
             // 
             // EVENTUNIT_AFTER_COORD
             // 
@@ -620,23 +648,6 @@
             this.L_0_UNITICON.TabIndex = 220;
             this.L_0_UNITICON.TabStop = false;
             // 
-            // L_14_COMBO
-            // 
-            this.L_14_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_14_COMBO.FormattingEnabled = true;
-            this.L_14_COMBO.Items.AddRange(new object[] {
-            "00=威力 > 命中",
-            "02=威力 > 命中",
-            "09=威力 > 剣装備のロイ > 命中",
-            "10=リブロー持ち",
-            "20=弓兵",
-            "30=特効武器持ち"});
-            this.L_14_COMBO.Location = new System.Drawing.Point(206, 159);
-            this.L_14_COMBO.Margin = new System.Windows.Forms.Padding(5);
-            this.L_14_COMBO.Name = "L_14_COMBO";
-            this.L_14_COMBO.Size = new System.Drawing.Size(676, 26);
-            this.L_14_COMBO.TabIndex = 14;
-            // 
             // L_11_ITEMICON
             // 
             this.L_11_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
@@ -796,7 +807,7 @@
             this.J_14.Name = "J_14";
             this.J_14.Size = new System.Drawing.Size(128, 32);
             this.J_14.TabIndex = 84;
-            this.J_14.Text = "優先";
+            this.J_14.Text = "標的と回復AI";
             this.J_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B13
@@ -1392,8 +1403,6 @@
         private System.Windows.Forms.ComboBox L_12_COMBO;
         private System.Windows.Forms.NumericUpDown B15;
         private System.Windows.Forms.Label J_15;
-        private System.Windows.Forms.NumericUpDown B14;
-        private System.Windows.Forms.Label J_14;
         private System.Windows.Forms.NumericUpDown B13;
         private System.Windows.Forms.Label J_13;
         private System.Windows.Forms.NumericUpDown B12;
@@ -1413,7 +1422,6 @@
         private System.Windows.Forms.Panel panel2;
         private MapPictureBox MapPictureBox;
         private System.Windows.Forms.Label L_6_MAPXY_7;
-        private System.Windows.Forms.ComboBox L_14_COMBO;
         private System.Windows.Forms.NumericUpDown B7;
         private System.Windows.Forms.Label J_7;
         private System.Windows.Forms.NumericUpDown B6;
@@ -1467,5 +1475,9 @@
         private System.Windows.Forms.NumericUpDown B0;
         private PanelEx EVENTUNIT_AFTER_COORD;
         private PanelEx EVENTUNIT_BEFORE_COORD;
+        private System.Windows.Forms.NumericUpDown B14;
+        private System.Windows.Forms.Label J_14;
+        private System.Windows.Forms.ComboBox L_14_AI3_HYOUTEKI;
+        private System.Windows.Forms.ComboBox L_14_AI3_KAIFUKU;
     }
 }

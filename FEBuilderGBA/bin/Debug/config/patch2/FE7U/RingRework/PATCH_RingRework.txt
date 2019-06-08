@@ -1,0 +1,57 @@
+NAME=踊り子が使う指輪の効果の設定を拡張
+INFO=踊り子が使うファーラの守護などの指輪(リング)の効果を拡張します。\r\n指輪の効果は特定パラメータを一律で+10する効果ですが、これをもっと詳細に変更できるようにします。\r\n指輪の効果は、バッドステータスと同一として表現されるため、バッドステータス時にデバフを設定することもできます。
+
+IF:0x28eb4=0x10 0xB5 0x30 0x21
+
+//データへのポインタ
+POINTER=$FGREP4END RingRework.dmp
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数
+DATACOUNT=16
+//最大拡張数
+MAX_EXPLANDS_SIZE=16
+
+//リストに表示されるのはマップ名です
+LISTNAME.ja=$COMBO RingRework_Combo.ja.txt
+LISTNAME.en=$COMBO RingRework_Combo.en.txt
+LISTNAME.zh=$COMBO RingRework_Combo.zh.txt
+
+//データを定義します
+B0:DECIMAL.ja=攻撃
+B1:DECIMAL.ja=防御
+B2:DECIMAL.ja=速さ
+B3:DECIMAL.ja=命中
+B4:DECIMAL.ja=回避
+B5:DECIMAL.ja=00
+B6:DECIMAL.ja=必殺
+B7:DECIMAL.ja=幸運
+
+B0:DECIMAL.en=Attack
+B1:DECIMAL.en=Defince
+B2:DECIMAL.en=Speed
+B3:DECIMAL.en=Hit
+B4:DECIMAL.en=Avoid
+B5:DECIMAL.en=00
+B6:DECIMAL.en=Crit
+B7:DECIMAL.en=Luck
+
+B0:DECIMAL.zh=攻击
+B1:DECIMAL.zh=防御
+B2:DECIMAL.zh=速度
+B3:DECIMAL.zh=命中
+B4:DECIMAL.zh=躲避
+B5:DECIMAL.zh=00
+B6:DECIMAL.zh=必杀
+B7:DECIMAL.zh=幸运
+
+NAME.en=Expanded the setting of the ring effect used by dancers.
+INFO.en=Expands the effects of rings such as the guardians of Farah used by dancers.\r\nThe effect of the ring is an effect that uniformly +10 a specific parameter, but this allows you to change it in more detail.\r\nThe effect of the ring is expressed as identical to the bad status, so you can also set a debuff during the bad status.
+NAME.zh=扩展了舞者使用的铃声效果的设置
+INFO.zh=扩大戒指的效果，例如舞者使用法拉的守护者。\r\n环的效果是一个+10特定参数的效果，但这允许您更详细地更改它。\r\n环的效果表示为与不良状态相同，因此您也可以在不良状态下设置debuff。

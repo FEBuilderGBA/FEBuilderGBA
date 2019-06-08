@@ -238,6 +238,24 @@
       <DependentUpon>SkillSystemsEffectivenessReworkClassTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SymbolUtil.cs" />
+    <Compile Include="ToolInitWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolInitWizardForm.Designer.cs">
+      <DependentUpon>ToolInitWizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchBackupForm.Designer.cs">
+      <DependentUpon>ToolProblemReportSearchBackupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchSavForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolProblemReportSearchSavForm.Designer.cs">
+      <DependentUpon>ToolProblemReportSearchSavForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolUseFlagForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,12 +453,6 @@
     <Compile Include="ImageUtilMagicFEditor.cs" />
     <Compile Include="InterpolatedPictureBox.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ItemEtcForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemEtcForm.Designer.cs">
-      <DependentUpon>ItemEtcForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LastSelectedFilename.cs" />
     <Compile Include="ErrorLongMessageDialogForm.cs">
@@ -852,8 +864,6 @@
       <DependentUpon>SearchHelperControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ArchSevenZip.cs" />
-    <Compile Include="SGMJump.cs" />
-    <Compile Include="SGMLoader.cs" />
     <Compile Include="SkillAssignmentUnitFE8NForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1363,12 +1373,6 @@
     </Compile>
     <Compile Include="WorldMapImageFE6Form.Designer.cs">
       <DependentUpon>WorldMapImageFE6Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEtcFE7Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemEtcFE7Form.Designer.cs">
-      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageMagicCSACreatorForm.cs">
       <SubType>Form</SubType>
@@ -1895,6 +1899,31 @@
     <Compile Include="UnitActionPointerForm.Designer.cs">
       <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextRefAddDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextRefAddDialogForm.Designer.cs">
+      <DependentUpon>TextRefAddDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EtcCacheText.cs" />
+    <Compile Include="StatusUnitsMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusUnitsMenuForm.Designer.cs">
+      <DependentUpon>StatusUnitsMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventFinalSerifFE7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventFinalSerifFE7Form.Designer.cs">
+      <DependentUpon>EventFinalSerifFE7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FE8SpellMenuExtendsForm.Designer.cs">
+      <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FE8SpellMenuExtendsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -1931,6 +1960,9 @@
     <EmbeddedResource Include="ArenaClassForm.resx">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
+      <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolASMEditForm.resx">
       <DependentUpon>ToolASMEditForm.cs</DependentUpon>
@@ -2228,12 +2260,6 @@
     <EmbeddedResource Include="ItemEffectivenessForm.resx">
       <DependentUpon>ItemEffectivenessForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemEtcFE7Form.resx">
-      <DependentUpon>ItemEtcFE7Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemEtcForm.resx">
-      <DependentUpon>ItemEtcForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2245,6 +2271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLongMessageDialogForm.resx">
       <DependentUpon>ErrorLongMessageDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolInitWizardForm.resx">
+      <DependentUpon>ToolInitWizardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolLZ77Form.resx">
       <DependentUpon>ToolLZ77Form.cs</DependentUpon>
@@ -2472,6 +2501,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolProblemReportForm.resx">
       <DependentUpon>ToolProblemReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolProblemReportSearchBackupForm.resx">
+      <DependentUpon>ToolProblemReportSearchBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolProblemReportSearchSavForm.resx">
+      <DependentUpon>ToolProblemReportSearchSavForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolSubtitleOverlayForm.resx">
       <DependentUpon>ToolSubtitleOverlayForm.cs</DependentUpon>
@@ -2803,6 +2838,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UnitActionPointerForm.resx">
       <DependentUpon>UnitActionPointerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextRefAddDialogForm.resx">
+      <DependentUpon>TextRefAddDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusUnitsMenuForm.resx">
+      <DependentUpon>StatusUnitsMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventFinalSerifFE7Form.resx">
+      <DependentUpon>EventFinalSerifFE7Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -390,9 +390,7 @@ namespace FEBuilderGBA
                     //利用していないパレットを消す.
                     ImageUtil.BlackOutUnnecessaryColors(bitmap, paletteCount);
 
-                    bitmap.Save(Path.Combine(basedir, imagefilename)
-                        , System.Drawing.Imaging.ImageFormat.Png);
-
+                    U.BitmapSave(bitmap, Path.Combine(basedir, imagefilename));
                     animeHash[id] = bitmap;
                 }
 
@@ -486,6 +484,11 @@ namespace FEBuilderGBA
                 }
                 if (!(U.isNumString(command) && sp.Length >= 2))
                 {
+                    continue;
+                }
+                if (sp.Length <= 1)
+                {
+                    Debug.Assert(false);
                     continue;
                 }
                 uint wait = U.atoi(command);

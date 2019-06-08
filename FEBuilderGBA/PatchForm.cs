@@ -2953,6 +2953,7 @@ namespace FEBuilderGBA
                     Program.Undo.Rollback(undodata);  //操作の取り消し
                     throw; //再送
                 }
+                ReplacePointers(patch, undodata);
 
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
@@ -3115,6 +3116,8 @@ namespace FEBuilderGBA
                         throw; //再送
                     }
 
+                    ReplacePointers(patch,undodata);
+
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
                     InputFormRef.ShowWriteNotifyAnimation(this, 0);
@@ -3228,7 +3231,11 @@ namespace FEBuilderGBA
 
             if (addr + b.Length > Program.ROM.Data.Length)
             {//必要サイズがROMサイズを超えていたら増設する.
-                Program.ROM.write_resize_data((uint)(addr + b.Length));
+                bool isResizeSuccess = Program.ROM.write_resize_data((uint)(addr + b.Length));
+                if (isResizeSuccess == false)
+                {
+                    throw new SyntaxException(R.Error("32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}", U.To0xHexString((uint)(addr + b.Length))));
+                }
             }
 
             Program.ROM.write_range(addr, b, undodata);
@@ -4384,7 +4391,7 @@ namespace FEBuilderGBA
 
             List<BinMapping> binMappings = new List<BinMapping>();
             string dir = Path.GetDirectoryName(patch.PatchFileName);
-            string[] files = Directory.GetFiles(dir, "*.event", SearchOption.AllDirectories);
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.event", SearchOption.AllDirectories);
 
             //メイン処理のファイルが.txtなどで発見できていない場合、追加してあげる.
             {
@@ -4566,6 +4573,15 @@ namespace FEBuilderGBA
                         lastMatchAddr = U.Padding4(lastMatchAddr);
                         
                         uint addr = lastMatchAddr;
+                        if (data.BINData.Length > 0)
+                        {
+                            uint foundAddr = U.Grep(Program.ROM.Data, data.BINData, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                            if (foundAddr != U.NOT_FOUND)
+                            {
+                                addr = foundAddr;
+                            }
+                        }
+
                         uint length = ProcsScriptForm.CalcLengthAndCheck(addr);
                         if (length == U.NOT_FOUND)
                         {
@@ -4743,7 +4759,6 @@ namespace FEBuilderGBA
         }
         static string ReplaceL1Macro(string patched_message,string filename,uint addr)
         {
-            int pos = 0;
             while (true)
             {
                 Match m = RegexCache.Match(patched_message , @"{\$L([0-9a-zA-Z]+):" + filename + "}");
@@ -4863,7 +4878,7 @@ namespace FEBuilderGBA
 
         private void PatchOpenButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(PatchFilename.Text);
+            U.OpenURLOrFile(PatchFilename.Text);
         }
 
         private void RealodButton_Click(object sender, EventArgs e)
@@ -5793,28 +5808,136 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                string basedir = Path.GetDirectoryName(patch.PatchFileName);
                 string type = U.at(patch.Param, "TYPE");
-                if (type != "ADDR")
+                if (type == "ADDR")
                 {
+                    MakeTextIDArrayForAddr(list, patch , i);
                     continue;
                 }
-                string addressType = U.at(patch.Param, "ADDRESS_TYPE");
-                if (addressType != "TEXT")
+                else if (type == "STRUCT")
                 {
-                    continue;
+                    MakeTextIDArrayForStruct(list, patch , i);
                 }
-                uint addr = atOffset(patch.Param, "ADDRESS", basedir: basedir);
-                if (!U.isSafetyOffset(addr))
-                {
-                    continue;
-                }
-                string name = U.at(patch.Param, "NAME");
-
-                uint textid = Program.ROM.u16(addr);
-                UseTextID.AppendTextID(list, FELint.Type.PATCH, addr,name, textid, (uint)i);
             }
         }
+        public static void MakeTextIDArrayForAddr(List<UseTextID> list, PatchSt patch , int tag)
+        {
+            string addressType = U.at(patch.Param, "ADDRESS_TYPE");
+            if (addressType != "TEXT")
+            {
+                return;
+            }
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            uint addr = atOffset(patch.Param, "ADDRESS", basedir: basedir);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            string name = U.at(patch.Param, "NAME");
+
+            uint textid = Program.ROM.u16(addr);
+            UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+        }
+        static void MakeTextIDArrayForStruct(List<UseTextID> list, PatchSt patch, int tag)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            uint struct_address = 0;
+            uint struct_pointer = U.NOT_FOUND;
+            string pointer_str = U.at(patch.Param, "POINTER");
+            if (pointer_str != "")
+            {
+                struct_pointer = convertBinAddressString(pointer_str, 8, 0, basedir);
+                if (!U.isSafetyOffset(struct_pointer))
+                {
+                    return;
+                }
+                struct_address = Program.ROM.p32(struct_pointer);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+            }
+            else
+            {
+                string address_str = U.at(patch.Param, "ADDRESS");
+                if (address_str == "")
+                {
+                    return;
+                }
+                struct_address = convertBinAddressString(address_str, 8, 0, basedir);
+                if (!U.isSafetyOffset(struct_address))
+                {
+                    return;
+                }
+                struct_pointer = U.NOT_FOUND;
+            }
+
+            uint datasize = U.atoi0x(U.at(patch.Param, "DATASIZE"));
+            if (datasize <= 0)
+            {
+                return;
+            }
+
+            uint datacount;
+            string datacount_str = U.at(patch.Param, "DATACOUNT");
+            if (datacount_str.Length > 0 && datacount_str[0] == '$')
+            {//grep等
+                datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
+                if (datacount == U.NOT_FOUND)
+                {
+                    return;
+                }
+                if (datacount >= struct_address)
+                {
+                    datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
+                }
+
+                if (datacount >= 0xffff)
+                {
+                    Debug.Assert(false);
+                    return;
+                }
+            }
+            else
+            {//直値
+                datacount = U.atoi0x(datacount_str);
+            }
+            if (datacount <= 0)
+            {
+                if (datacount_str == "")
+                {
+                    return;
+                }
+            }
+            string[] typeArray;
+            Address.DataTypeEnum iftType;
+            uint[] pointerIndexes = MakePointerIndexes(patch, out typeArray, out iftType);
+
+            string patchname = patch.Name + "@STRUCT";
+
+            List<uint> tracelist = new List<uint>();
+            uint addr = struct_address;
+            for (int i = 0; i < datacount; i++, addr += datasize)
+            {
+                for (int n = 0; n < pointerIndexes.Length; n++)
+                {
+                    uint p = addr + pointerIndexes[n];
+                    string type = typeArray[n];
+                    if (type == "EVENT")
+                    {//イベント呼び出し
+                        string name = patchname + " DATA " + n;
+                        EventCondForm.MakeTextIDArrayByEventPointer(list, p, name, tracelist);
+                    }
+                    else if (type == "TEXT")
+                    {//イベント呼び出し
+                        uint textid = Program.ROM.u16(p);
+                        string name = patchname + " DATA " + n;
+                        UseTextID.AppendTextID(list, FELint.Type.PATCH, addr, name, textid, (uint)tag);
+                    }
+                }
+            }
+        }
+
  
 
         //パッチが知っているアドレスをすべて取得します.
@@ -5965,7 +6088,7 @@ namespace FEBuilderGBA
             return list;
         }
 
-        static void ExportEmbedFunction(PatchSt patch, Dictionary<string,uint> mapping)
+        static void ExportEmbedFunction(PatchSt patch, List<MappingConvert> mapping)
         {
             List<string> lines = new List<string>();
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
@@ -5986,7 +6109,8 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        mapping[scriptbin] = addr;
+
+                        MappingConvert.AddList(mapping, scriptbin, addr);
                     }
                 }
                 else if (pair.Key.IndexOf("EXPORT") == 0 )
@@ -6009,7 +6133,7 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
-                        mapping["EXPORT_"+scriptbin] = addr;
+                        MappingConvert.AddList(mapping, "EXPORT_" + scriptbin, addr);
                     }
                 }
             }
@@ -6177,6 +6301,13 @@ namespace FEBuilderGBA
         {
             this.Filter.Text = filter;
             U.SelectedIndexSafety(this.PatchList, index, true);
+        }
+        public void JumpTo(string filter, int index, SortEnum sortFilter)
+        {
+            this.SortFilter = sortFilter;
+            ReScan();
+
+            JumpTo(filter, index);
         }
 
 #if DEBUG
@@ -6702,7 +6833,7 @@ namespace FEBuilderGBA
             return ((uint)i) - addr;
         }
 
-        enum SortEnum
+        public enum SortEnum
         {
               SortNone
             , SortDateA
@@ -6856,57 +6987,44 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(this.PatchList, loopI);
         }
 
-        void UpdateEmbedFunction(Dictionary<string, uint> mappingSRCEmbedFunction, Dictionary<string, uint> mappingDESTEmbedFunction, InputFormRef.AutoPleaseWait pleaseWait)
+        void UpdateEmbedFunction(
+              List<MappingConvert> mappingSRCEmbedFunction
+            , List<MappingConvert> mappingDESTEmbedFunction
+            , InputFormRef.AutoPleaseWait pleaseWait)
         {
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, "UpdateEmbedFunction");
             foreach (var src in mappingSRCEmbedFunction)
             {
-                string name = src.Key;
-                uint oldaddr = src.Value;
-                uint newaddr;
-                if (!mappingDESTEmbedFunction.TryGetValue(name, out newaddr))
-                {
+                if (src.OldValueList.Count <= 0)
+                {//参照されていないので書き換える必要もない
                     continue;
                 }
 
-                pleaseWait.DoEvents(R._("ポインタ更新しています。{0}: {1}->{2}",name,oldaddr,newaddr));
-                if (oldaddr == newaddr)
+                MappingConvert dest;
+                if (! MappingConvert.TryGet(mappingDESTEmbedFunction, src.Filename, out dest))
                 {
                     continue;
                 }
-
-                //何度も探索す るので本当はよくないが面倒なので気にしないことにした.
-                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
-                //影響を受けるポインタの書き換え.
-                for (int i = 0; i < movepointerlist.Count; i++)
+                if (src.Addr == dest.Addr)
                 {
-                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
-                    if (U.IsValueOdd(oldValue))
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr|1), undodata);
-                    }
-                    else
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
-                    }
-
-                    
+                    continue;
                 }
-                //何度も探索するので本当はよくないが面倒なので気にしないことにした.
-                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr|1 ,isSilent: true ); //Thumb
-                //影響を受けるポインタの書き換え.
-                for (int i = 0; i < movepointerlist.Count; i++)
+                if (src.IsASM != dest.IsASM)
+                {//ASMだったものが、ASMでなくなっている
+                    Debug.Assert(false);
+                    continue;
+                }
+
+                pleaseWait.DoEvents(R.Notify("ポインタ更新しています。{0}: {1}->{2}",src.Filename, U.ToHexString8(src.Addr),U.ToHexString8(src.Addr) ));
+                foreach(var addr in src.OldValueList)
                 {
-                    uint oldValue = Program.ROM.p32(movepointerlist[i]);
-                    if (U.IsValueOdd(oldValue))
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr | 1), undodata);
+                    uint oldValue = Program.ROM.p32(addr);
+                    if (oldValue != src.Addr)
+                    {//昔と値が違う. re-point時に書き換えられたのかも. 変更してはいけない.
+                        continue;
                     }
-                    else
-                    {
-                        Program.ROM.write_u32(movepointerlist[i], U.toPointer(newaddr), undodata);
-                    }
-                    
+
+                    Program.ROM.write_p32(addr, dest.Addr , undodata);
                 }
             }
 
@@ -6988,7 +7106,7 @@ namespace FEBuilderGBA
             }
         }
         void ExportPatchSetting(string tempdir
-            , Dictionary<string, uint> mappingSRCEmbedFunction
+            , List<MappingConvert> mappingSRCEmbedFunction
             , PatchSt patch
             )
         {
@@ -7010,7 +7128,7 @@ namespace FEBuilderGBA
             }
         }
         void ImportPatchSetting(string tempdir
-            , Dictionary<string, uint> mappingDESTEmbedFunction
+            , List<MappingConvert> mappingDESTEmbedFunction
             , PatchSt patch
             )
         {
@@ -7022,28 +7140,21 @@ namespace FEBuilderGBA
                 string SkillConfigSkillSystem = Path.Combine(tempdir, "SkillConfigSkillSystemForm.tsv");
                 if (File.Exists(SkillAssignmentClassSkillSystem))
                 {
-                    
                     SkillAssignmentClassSkillSystemForm.ImportAllData(SkillAssignmentClassSkillSystem);
                     File.Delete(SkillAssignmentClassSkillSystem);
-                    
                 }
                 if (File.Exists(SkillAssignmentUnitSkillSystem))
                 {
-                    
                     SkillAssignmentUnitSkillSystemForm.ImportAllData(SkillAssignmentUnitSkillSystem);
                     File.Delete(SkillAssignmentUnitSkillSystem);
-                    
                 }
                 if (File.Exists(SkillConfigSkillSystem))
                 {
-                    
                     SkillConfigSkillSystemForm.ImportAllData(SkillConfigSkillSystem);
                     File.Delete(SkillConfigSkillSystem);
-                    
                 }
                 
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
-                
             }
             else
             {
@@ -7053,6 +7164,53 @@ namespace FEBuilderGBA
             ExportEmbedFunction(patch, mappingDESTEmbedFunction);
         }
 
+        class MappingConvert
+        {
+            public string Filename { get; private set; } //マップするファイル名
+            public uint Addr{ get; private set; }        //マップされたアドレス
+            public List<uint> OldValueList { get; private set; }//書き換え対象のアドレス
+            public bool IsASM { get; private set; }
+
+            MappingConvert(string filename,uint addr,bool isASM, List<uint> oldValueList)
+            {
+                this.Filename = filename;
+                this.Addr = addr;
+                this.OldValueList = oldValueList;
+                this.IsASM = isASM;
+            }
+            static bool CheckASM(string filename)
+            {
+                return filename.IndexOf("ASMC_") >= 0 || filename.IndexOf("ASM_") >= 0;
+            }
+            public static void AddList(List<MappingConvert> list, string filename, uint oldaddr)
+            {
+                bool isASM = CheckASM(filename);
+                if (isASM)
+                {
+                    oldaddr = oldaddr | 1;
+                }
+                else
+                {
+                    oldaddr = DisassemblerTrumb.ProgramAddrToPlain(oldaddr);
+                }
+
+                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
+                list.Add(new MappingConvert(filename , U.toOffset(oldaddr),isASM , movepointerlist) );
+            }
+            public static bool TryGet(List<MappingConvert> list,string filename , out MappingConvert out_map)
+            {
+                foreach(var p in list)
+                {
+                    if (p.Filename == filename)
+                    {
+                        out_map = p;
+                        return true;
+                    }
+                }
+                out_map = null;
+                return false;
+            }
+        };
 
         //バージョンアップデート
         string UpdatePatchUI(PatchSt patch)
@@ -7082,7 +7240,7 @@ namespace FEBuilderGBA
             MakeDependsPatchList(uninstallOnlyList, patch, "UPDATE_UNINSTALL");
             using (U.MakeTempDirectory tempdir = new U.MakeTempDirectory())
             {
-                Dictionary<string, uint> mappingSRCEmbedFunction = new Dictionary<string, uint>();
+                List<MappingConvert> mappingSRCEmbedFunction = new List<MappingConvert>();
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
@@ -7127,31 +7285,26 @@ namespace FEBuilderGBA
                     }
                 }
                 ClearCheckIF();
-                Dictionary<string, uint> mappingDESTEmbedFunction = new Dictionary<string, uint>();
+
+                List<MappingConvert> mappingDESTEmbedFunction = new List<MappingConvert>();
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
                     foreach (var p in dependsList)
                     {
-                        
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
-                        
                     }
 
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
-                        
                         ImportPatchAll(p, tempdir.Dir);
-                        
                     }
                 }
 
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
-                    
                 }
             }
 
@@ -7543,6 +7696,48 @@ namespace FEBuilderGBA
             }
             File.WriteAllText(filename, sb.ToString());
         }
+        void ReplacePointers(PatchSt patch,Undo.UndoData undodata)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "REPLACE_POINTER" && pair.Value != "")
+                {
+                    ReplacePointerSub( atOffset(sp,1),pair.Value, patch, undodata);
+                }
+            }
+        }
+        void ReplacePointerSub(uint searchPointer,string typeName , PatchSt patch, Undo.UndoData undodata)
+        {
+            uint newPointer;
+            if (typeName == "ITEM")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_pointer());
+            }
+            else
+            {
+                Debug.Assert(false);
+                return;
+            }
+
+            searchPointer = U.toPointer(searchPointer);
+            if (newPointer == searchPointer)
+            {//リポイントされていいないので変更する必要がない.
+                return;
+            }
+
+            //変更した部分で、旧ポインタを探します.
+            List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(searchPointer, isSilent: true);
+
+            //データを更新する.
+            foreach (var addr in movepointerlist)
+            {
+                Program.ROM.write_u32(addr , newPointer , undodata);
+            }
+        }
+
 
 
     }

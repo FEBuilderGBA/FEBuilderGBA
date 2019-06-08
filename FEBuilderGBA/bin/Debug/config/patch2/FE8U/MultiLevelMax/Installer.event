@@ -15,7 +15,7 @@ POIN DataListTable
 
 DataListTable:
 BYTE 0x01 //Unit:  eirika
-BYTE 0x02 //Class: Load
+BYTE 0x02 //Class: Lord
 BYTE 30   //MaxLevel 30
 BYTE 0    //padding
 

@@ -12,17 +12,17 @@
 0B=クリティカルヒット
 0C=クリティカルヒット
 0D=攻撃アニメ終了 前に06が来る
-0E=Start of dodging frames (should go after standing frame and before dodging animation)
-0F=Unused; does nothing
-10=Unused; does nothing
-11=Unused; does nothing
-12=Unused; does nothing
+0E=回避フレームの開始。棒立ちフレームの後にこのコマンドを入れてください。
+0F=未使用　何もなし
+10=未使用　何もなし
+11=未使用　何もなし
+12=未使用　何もなし
 13=ヘクトルの手斧
 14=画面揺れる　アルマーズ
 15=画面揺れる　小さい
-16=Unused; does nothing
-17==Unused; does nothing
-18=Use this instead of 02 to dodge toward the foreground instead of toward the background
+16=未使用　何もなし
+17=未使用　何もなし
+18=正面に回避する。背面ではなく正面に回避するには、C02の代わりにこの命令を使います
 19=弓を引く音
 1A=ノーマルヒット
 1B=足音
@@ -34,7 +34,7 @@
 21=クリティカル効果音
 22=リンロードの剣を振る音
 23=剣を振る音　小さい
-24=Play sword slashing air SFE
+24=剣で空を切る音
 25=ブンという音
 26=勇者の剣を投げる奴
 27=勇者の盾を投げる奴
@@ -43,7 +43,7 @@
 2A=空き 
 2B=アーマー系の鎧音の再生
 2C=FE6:ロイ封印クリティカルの炎エフェクト
-2D=? (Assassin critical) (Lethality activator that is dependent on other commands?)
+2D=アサシンの必殺(瞬殺の分身?)
 2E=賢者の魔法エフェクト　効果音なし
 2F=賢者のクリティカルエフェクト　効果音あり
 30=リンロードのクリティカル時の砂煙

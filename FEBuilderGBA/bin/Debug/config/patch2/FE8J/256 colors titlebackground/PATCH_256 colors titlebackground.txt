@@ -7,7 +7,7 @@ AUTHOR=Leonarth Transport:7743 http://feuniverse.us/t/fe8-and-maybe-fe7-leonarth
 
 //画像パッチとして実装します
 TYPE=IMAGE
-TAG=#IMAGE #ENGINE
+TAG=#ENGINE
 
 //幅と高さ
 WIDTH=240

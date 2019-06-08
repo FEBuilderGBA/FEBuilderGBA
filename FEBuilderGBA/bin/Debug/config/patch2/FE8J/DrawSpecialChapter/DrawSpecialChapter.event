@@ -1,0 +1,20 @@
+#include "Extensions/Hack Installation.txt" 
+
+PUSH
+
+ORG 0x0B3594
+jumpToHack(DrawSpecialChapter_battle_display)
+
+ORG 0x0BC380
+jumpToHack(DrawSpecialChapter_turns)
+POP
+
+DrawSpecialChapter_battle_display:
+#incbin "DrawSpecialChapter_battle_display.dmp"
+POIN DrawSpecialChapter_Table
+
+DrawSpecialChapter_turns:
+#incbin "DrawSpecialChapter_turns.dmp"
+POIN DrawSpecialChapter_Table
+
+#include "DrawSpecialChapter_Table.event"

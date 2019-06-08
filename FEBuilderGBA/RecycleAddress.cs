@@ -41,23 +41,28 @@ namespace FEBuilderGBA
         }
         public bool SubRecycle(uint addr, uint length)
         {
-            //既に登録されている場合は登録しない.
-            for (int i = 0; i < this.Recycle.Count; i++)
+            bool ret = false;
+            //既に登録されている場合は削除する
+            for (int i = 0; i < this.Recycle.Count; )
             {
-                if (this.Recycle[i].Addr >= addr
-                    && this.Recycle[i].Addr < addr + length)
+                Address a = this.Recycle[i];
+                if (a.Addr >= addr
+                    && a.Addr < addr + length)
                 {//登録されているので解除する.
                     this.Recycle.RemoveAt(i);
-                    return true;
+                    ret = true;
+                    continue;
                 }
-                if (this.Recycle[i].Addr + this.Recycle[i].Length >= addr
-                    && this.Recycle[i].Addr + this.Recycle[i].Length < addr + length)
+                if (a.Addr + a.Length >= addr
+                    && a.Addr + a.Length < addr + length)
                 {//登録されているので解除する.
                     this.Recycle.RemoveAt(i);
-                    return true;
+                    ret = true;
+                    continue;
                 }
+                i++;
             }
-            return false;
+            return ret;
         }
 
 

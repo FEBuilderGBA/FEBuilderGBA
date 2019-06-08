@@ -5,7 +5,7 @@
 	mov	r0, r5
 	ldr r5,[sp]
 	mov r2,#0x17
-	strb r2,[r4,#0x11
+	strb r2,[r4,#0x11]
 	ldr r4, [r5,#4]
 	sub r4, #0x30
 	str r4, [r5,#4]

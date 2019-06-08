@@ -28,4 +28,4 @@ CONFLICT_MESSAGE=SkillSystems
 
 AUTHOR=Original work: Stan / Stand-alone Ver: 7743
 
-INFO.zh=设置一个可以使用FEH移动技能的单位。\r\n您可以设置是否可以使用具有各种要求的技能，例如单元，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。
+INFO.zh=设置一个可以使用FEH移动技能的人物。\r\n您可以设置是否可以使用具有各种要求的技能，例如单元，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。

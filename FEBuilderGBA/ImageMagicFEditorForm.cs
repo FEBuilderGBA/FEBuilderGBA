@@ -316,6 +316,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            if (!U.CheckPaddingALIGN4(ar.tag))
+            {
+                return;
+            }
 
             if (DimComboBox.SelectedIndex == 0)
             {//dim
@@ -432,7 +436,7 @@ namespace FEBuilderGBA
             }
         }
 
-        //全データの取得
+        //エラーチェック
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
             string name;

@@ -23,6 +23,8 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(ShowZoomComboBox, 0);
             U.SelectedIndexSafety(ShowPaletteComboBox,0);
 
+//            X_LZ77_INFO.ForeColor = OptionForm.Color_InputDecimal_ForeColor();
+//            X_LZ77_INFO.BackColor = OptionForm.Color_InputDecimal_BackColor();
 
             this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassAndText, DrawMode.OwnerDrawFixed);
             this.CLASS_LISTBOX.ItemListToJumpForm("CLASS");
@@ -93,9 +95,11 @@ namespace FEBuilderGBA
                 , 32
                 , (int i, uint addr) =>
                 {//読込最大値検索
-                    //12 16 がポインタであればデータがあると考える.
+                    //12 20 24 がポインタであればデータがあると考える.
                     if (U.isPointer(Program.ROM.u32(addr + 12))
-                        && U.isPointer(Program.ROM.u32(addr + 16)))
+                        && U.isPointer(Program.ROM.u32(addr + 20))
+                        && U.isPointer(Program.ROM.u32(addr + 24))
+                        )
                     {
                         return true;
                     }
@@ -116,6 +120,11 @@ namespace FEBuilderGBA
 
         private void ImageBattleAnimeForm_Load(object sender, EventArgs e)
         {
+#if DEBUG
+            uint top_battleanime_baseaddress = N_InputFormRef.BaseAddress;
+            uint bottum_battleanime_baseaddress = N_InputFormRef.BaseAddress + (N_InputFormRef.BlockSize * N_InputFormRef.DataCount);
+//            ImageUtilOAM.MakeReColorRule(top_battleanime_baseaddress, bottum_battleanime_baseaddress);
+#endif
         }
 
         private void CLASS_LISTBOX_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,8 +152,44 @@ namespace FEBuilderGBA
         {
             U.ForceUpdate(ShowSectionCombo, 0);
             U.ForceUpdate(ShowFrameUpDown, 0);
-            DrawSelectedAnime();    
+            DrawSelectedAnime();
+
+            UpdateLZ77Info();
         }
+
+        void UpdateLZ77Info()
+        {
+            string error = "";
+            string text = "Un-LZ77 ";
+            uint frame = U.toOffset((uint)N_P16.Value);
+            uint oam   = U.toOffset((uint)N_P20.Value);
+            if (U.isSafetyOffset(frame))
+            {
+                uint size = LZ77.getUncompressSize(Program.ROM.Data, frame);
+                text += "Frame: " + size + " ";
+
+                string r = ImageUtilOAM.checkFrameSizeSimple((int)size);
+                if (r != "")
+                {
+                    error += r;
+                }
+            }
+            if (U.isSafetyOffset(oam))
+            {
+                uint size = LZ77.getUncompressSize(Program.ROM.Data, oam);
+                text += "OAM: " + size + " ";
+
+                string r = ImageUtilOAM.checkOAMSizeSimple((int)size);
+                if (r != "")
+                {
+                    error += r;
+                }
+            }
+
+            X_LZ77_INFO.Text = text;
+            X_LZ77_INFO.ErrorMessage = error;
+        }
+
         void DrawSelectedAnime()
         {
             uint showSectionData = U.atoh(ShowSectionCombo.Text) - 1;

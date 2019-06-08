@@ -1337,6 +1337,10 @@ namespace FEBuilderGBA
                 {
                     addr = 0;
                 }
+                if (!U.CheckPaddingALIGN4(addr))
+                {
+                    addr = 0;
+                }
             }
 
 

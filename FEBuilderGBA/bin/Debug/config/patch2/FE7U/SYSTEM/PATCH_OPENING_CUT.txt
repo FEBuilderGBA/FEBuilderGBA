@@ -1,0 +1,21 @@
+NAME=オープニングカット いきなりタイトルロゴ
+NAME.en=Skip:Opening(OPENING_CUT)
+NAME.zh=跳过标题logo
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+COMBO=カットしない|ONN|いきなりタイトルロゴ|OFF
+COMBO.en=no cut|ONN|cut|OFF
+
+ONN:0x0BC58E=0x0D 0xD0
+ONN:0x0BC580=0x14 0xD0
+
+OFF:0x0BC58E=0x00 0x00 //Skip the intro cutscene
+OFF:0x0BC580=0x00 0x00 //Allow the first “2003 Nintendo Presents” message to be skipped
+
+
+AUTHOR=gray https://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225
+COMBO.zh=跳过|ONN|不跳过|OFF
+
+INFO.en=Nintendo log,IS Logo,Opening Demo.\r\nSkip all these.

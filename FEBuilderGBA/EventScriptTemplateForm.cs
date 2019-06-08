@@ -138,11 +138,8 @@ namespace FEBuilderGBA
                 uint labelX = GetUnuseLabelID(0x9000);
                 XXXXXXXX = ToUShortToString(labelX);
 
-                if (et.Filename.IndexOf("_ELSE_") >= 0)
-                {
-                    uint labelY = GetUnuseLabelID(labelX + 1);
-                    YYYYYYYY = ToUShortToString(labelY);
-                }
+                uint labelY = GetUnuseLabelID(labelX + 1);
+                YYYYYYYY = ToUShortToString(labelY);
             }
 
 
@@ -196,7 +193,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            System.Diagnostics.Process.Start(fullfilename);
+            U.OpenURLOrFile(fullfilename);
         }
     }
 }

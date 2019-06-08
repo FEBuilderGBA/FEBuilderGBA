@@ -231,7 +231,7 @@ namespace FEBuilderGBA
             {
                 if (sjisstr[i] == '@')
                 {
-                    uint code = at_code_to_binary(sjisstr, i , out i);
+                    uint code1 = at_code_to_binary(sjisstr, i , out i);
 
                     //unHuffman patchでは可変長デコードらしい.
                     //@0009 -> 0x09
@@ -241,7 +241,7 @@ namespace FEBuilderGBA
                     //0x10だけ別処理が必要.
                     //0x10の後、+2バイト後に 終端0xFFがあることがある.
 
-                    if (code == 0x80)
+                    if (code1 == 0x80)
                     {
                         uint code2 = 0x1C;
                         if (i < sjisstr.Length && sjisstr[i] == '@')
@@ -253,10 +253,10 @@ namespace FEBuilderGBA
                             //一番無害な、 0x1C 目を開ける で補正しよう
                             Log.Error("@0080の後に、@命令が続いていません。@001Cで補正します。");
                         }
-                        ret.Add((byte)(code));     //@0080
+                        ret.Add((byte)(code1));     //@0080
                         ret.Add((byte)(code2));    //@0000
                     }
-                    else if (code == 0x10)
+                    else if (code1 == 0x10)
                     {
                         uint code2 = 0x0101;
                         if (i < sjisstr.Length && sjisstr[i] == '@')
@@ -285,7 +285,7 @@ namespace FEBuilderGBA
                             Log.Error(R._("@0010命令が途中で終わってしまいました。"));
                         }
 
-                        ret.Add((byte)(code));     //@0010
+                        ret.Add((byte)(code1));     //@0010
 
                         ret.Add((byte)(code2 & 0xFF));    //@0000       //@0102 みたいなのは、リトルエンディアン化する必要がある
                         ret.Add((byte)((code2 >> 8) & 0xFF));    //@0000
@@ -297,7 +297,7 @@ namespace FEBuilderGBA
                     }
                     else
                     {//@0080 と @0010 以外は1バイトで格納
-                        ret.Add((byte)(code & 0xFF));
+                        ret.Add((byte)(code1 & 0xFF));
                     }
                     continue;
                 }
@@ -308,15 +308,15 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    byte code = sjisstr[i];
+                    byte code1 = sjisstr[i];
                     byte code2 = sjisstr[i + 1];
                     if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8 
-                        && code >= 0xC0 && code >= 0x80)
+                        && code1 >= 0xC0 && code1 >= 0x80)
                     {
                         i += U.AppendUTF8(ret, sjisstr, i);
                     }
                     else if (priorityCode == InputFormRef.PRIORITY_CODE.SJIS
-                        && U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
+                        && U.isSJIS1stCode(code1) && U.isSJIS2ndCode(code2))
                     {
                         ret.Add(sjisstr[i]); i++;
                         ret.Add(sjisstr[i]); i++;

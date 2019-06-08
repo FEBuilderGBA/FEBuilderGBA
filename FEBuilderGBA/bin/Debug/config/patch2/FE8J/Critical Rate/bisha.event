@@ -1,0 +1,18 @@
+//每个职业不同必杀值
+
+#include "Extensions/Hack Installation.txt" 
+
+PUSH //必杀随意设置
+ORG $2ABA8  //勾在这里 
+WORD	$468F4900
+POIN	bisha
+
+
+POP
+ALIGN 4
+bisha:
+#incbin "bisha.dmp"
+POIN zhiye
+
+zhiye:
+#incbin "zhiye.bin"

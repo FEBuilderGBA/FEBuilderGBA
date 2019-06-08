@@ -5,7 +5,7 @@ NAME.en=MODE SELECT Hero who can seize the Eliwood Editing
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x348C6
+ADDRESS=0x348C6 0x034890
 ADDRESS_TYPE=UNIT
 
 AUTHOR=Source: http://feuniverse.us/t/fe7-replace-hector-mode/3169/8

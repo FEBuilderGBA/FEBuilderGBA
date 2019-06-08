@@ -1,0 +1,6 @@
+#define csvmacro000(arg000) "BYTE arg000;"
+
+DisabledStatusScreen_Table:
+csvmacro000(0x62)    //卵1
+csvmacro000(0x34)    //卵2
+csvmacro000(0x00)    //TERM

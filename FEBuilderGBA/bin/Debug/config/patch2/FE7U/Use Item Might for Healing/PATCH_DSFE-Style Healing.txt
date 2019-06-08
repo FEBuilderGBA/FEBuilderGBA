@@ -14,3 +14,4 @@ AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
 NAME.zh=DSFE风格复原（恢复量=（魔法力量/ 2）+手杖力量+武器Lv修正）
 INFO.zh=而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔法力量/ 2）+手杖+武器力量修正\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
 
+REPLACE_POINTER:0xC51538=ITEM

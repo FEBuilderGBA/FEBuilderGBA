@@ -493,10 +493,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<MainSimpleMenuImageSubForm>();
         }
 
-        private void ItemEtcButton_Click(object sender, EventArgs e)
-        {
-            InputFormRef.JumpForm<ItemEtcFE7Form>();
-        }
 
         private void diffToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -689,10 +685,6 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolFELintForm>();
         }
 
-        private void SaveWithLintToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainFormUtil.SaveWithLint(this);
-        }
 
         private void ASMInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -830,6 +822,21 @@ namespace FEBuilderGBA
         private void UnitActionPointerButton_Click(object sender, EventArgs e)
         {
             InputFormRef.JumpForm<UnitActionPointerForm>();
+        }
+
+        private void StatusUnitsMenuButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusUnitsMenuForm>();
+        }
+
+        private void EventFinalSerifButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<EventFinalSerifFE7Form>();
+        }
+
+        private void InitWizardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.RunToolInitWizard();
         }
     }
 }

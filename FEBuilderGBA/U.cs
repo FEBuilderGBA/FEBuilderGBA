@@ -130,6 +130,15 @@ namespace FEBuilderGBA
             return list[at];
         }
 
+        [MethodImpl(256)]
+        public static Color at(Color[] list, int at, Color def)
+        {
+            if (at >= list.Length)
+            {
+                return def;
+            }
+            return list[at];
+        }
 
 
         public static double atof(String a)
@@ -293,6 +302,11 @@ namespace FEBuilderGBA
         //タイムスタンプのコピー
         public static void CopyTimeStamp(string srcFilename,string destFilename)
         {
+#if DEBUG
+#else
+            try
+            {
+#endif
             // 作成日時
             File.SetCreationTime(destFilename, File.GetCreationTime(srcFilename));
 
@@ -301,6 +315,14 @@ namespace FEBuilderGBA
 
             // アクセス日時
             File.SetLastAccessTime(destFilename, File.GetLastAccessTime(srcFilename));
+#if DEBUG
+#else
+            }
+            catch(Exception e)
+            {
+               Log.Error(e.ToString());
+            }
+#endif
         }
 
         public static string MakeFilename(string addname,string override_ext=null)
@@ -877,6 +899,20 @@ namespace FEBuilderGBA
                 return 0;
             }
         }
+
+        //エラーの赤枠を描画する.
+        public static void DrawErrorRectangle(Graphics g,bool isWithDraw,Rectangle listbounds)
+        {
+            if ( !isWithDraw)
+            {
+                return;
+            }
+
+            Pen pen = new Pen(OptionForm.Color_Error_ForeColor(), 3);
+            g.DrawRectangle(pen, listbounds);
+            pen.Dispose();
+        }
+
         public static Size DrawTextMulti(String text, Graphics g, Font font, SolidBrush brush, bool isWithDraw, Rectangle bounds)
         {
             Debug.Assert(bounds.Height > 0);
@@ -918,6 +954,41 @@ namespace FEBuilderGBA
             return str.Split('\n').Length;
         }
 
+        public static bool BitmapSave(Bitmap bitmap, string saveToFile)
+        {
+            string errorMessage;
+            try
+            {
+                string ext = U.GetFilenameExt(saveToFile);
+                if (ext == ".PNG")
+                {
+                    bitmap.Save(saveToFile, System.Drawing.Imaging.ImageFormat.Png);
+                }
+                else
+                {
+                    bitmap.Save(saveToFile);
+                }
+                return true;
+            }
+            catch (ExternalException e)
+            {//まれにGDI+内部でエラーが発生することがるらしい.原因不明
+                errorMessage = R.ExceptionToString(e);
+            }
+            catch (System.OutOfMemoryException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
+            catch (System.UnauthorizedAccessException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
+            catch (IOException e)
+            {
+                errorMessage = R.ExceptionToString(e);
+            }
+            R.ShowStopError(errorMessage);
+            return false;
+        }
 
         public static int DrawPicture(Bitmap pic, Graphics g, bool isWithDraw, Rectangle bounds)
         {
@@ -1429,6 +1500,20 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        //Check ALIGN 4
+        public static bool CheckPaddingALIGN4(uint addr, bool ShowMessage = true)
+        {
+            if (! U.isPadding4(addr) )
+            {
+                if (ShowMessage)
+                {
+                    R.ShowStopError("書き込もうとしているアドレスが4の倍数でないので、書き込みを拒否します。\r\nあなたが書き込もうとしたアドレス:{0}\r\n4の倍数でないアドレスへの書き込みは、ほぼ間違っています。", U.To0xHexString(addr));
+                }
+                return false;
+            }
+            return true;
+        }
+
         public static uint ParseUnitGrowAssign(uint unitgrow)
         {
             return (unitgrow >> 1) & 0x3;
@@ -2129,6 +2214,7 @@ namespace FEBuilderGBA
                 ImageTSAAnime2Form.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionOrderForm.MakeAllDataLength(list);
+                StatusUnitsMenuForm.MakeAllDataLength(list);
                 LinkArenaDenyUnitForm.MakeAllDataLength(list);
                 TextDicForm.MakeAllDataLength(list);
                 ImageTSAAnimeForm.MakeAllDataLength(list, isPointerOnly);
@@ -2171,6 +2257,7 @@ namespace FEBuilderGBA
                     OPClassFontFE8UForm.MakeAllDataLength(list, isPointerOnly);
                     OPClassDemoFE8UForm.MakeAllDataLength(list);
                     ExtraUnitFE8UForm.MakeAllDataLength(list);
+                    FE8SpellMenuExtendsForm.MakeAllDataLength(list);
                 }
 
             }
@@ -2195,6 +2282,7 @@ namespace FEBuilderGBA
                 TacticianAffinityFE7.MakeAllDataLength(list);
                 StatusOptionForm.MakeAllDataLength(list, isPointerOnly);
                 StatusOptionOrderForm.MakeAllDataLength(list);
+                EventFinalSerifFE7Form.MakeAllDataLength(list);
 
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
@@ -2308,14 +2396,17 @@ namespace FEBuilderGBA
             }
             else
             {
-                MenuDefinitionForm.MakeTextIDArray(list);
                 StatusParamForm.MakeTextIDArray(list);
+                MapTerrainNameEngForm.MakeTextIDArray(list);
             }
+            MenuDefinitionForm.MakeTextIDArray(list);
+            StatusRMenuForm.MakeTextIDArray(list);
 
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 4")) return list;
             if (Program.ROM.RomInfo.version() == 8)
             {
                 StatusOptionForm.MakeTextIDArray(list);
+                StatusUnitsMenuForm.MakeTextIDArray(list);
                 MapSettingForm.MakeTextIDArray(list);
                 SupportTalkForm.MakeTextIDArray(list);
                 EDForm.MakeTextIDArray(list);
@@ -2343,29 +2434,39 @@ namespace FEBuilderGBA
                 if (Program.ROM.RomInfo.is_multibyte())
                 {
                     MapSettingFE7Form.MakeTextIDArray(list);
+                    OPClassDemoFE7Form.MakeTextIDArray(list);
                 }
                 else
                 {
                     MapSettingFE7UForm.MakeTextIDArray(list);
+                    OPClassDemoFE7UForm.MakeTextIDArray(list);
                 }
+                StatusOptionForm.MakeTextIDArray(list);
+                StatusUnitsMenuForm.MakeTextIDArray(list);
                 SupportTalkFE7Form.MakeTextIDArray(list);
                 EDFE7Form.MakeTextIDArray(list);
                 EventHaikuFE7Form.MakeTextIDArray(list);
                 EventBattleTalkFE7Form.MakeTextIDArray(list);
                 SoundRoomForm.MakeTextIDArray(list);
                 EDSensekiCommentForm.MakeTextIDArray(list);
+                EventFinalSerifFE7Form.MakeTextIDArray(list);
+                WorldMapEventPointerFE7Form.MakeTextIDArray(list);
             }
             else
             {//6
                 MapSettingFE6Form.MakeTextIDArray(list);
+//                OPClassDemoFE6Form.MakeTextIDArray(list);
                 SupportTalkFE6Form.MakeTextIDArray(list);
                 EDFE6Form.MakeTextIDArray(list);
                 EventHaikuFE6Form.MakeTextIDArray(list);
                 EventBattleTalkFE6Form.MakeTextIDArray(list);
                 SoundRoomFE6Form.MakeTextIDArray(list);
+                WorldMapEventPointerFE6Form.MakeTextIDArray(list);
             }
             if (InputFormRef.DoEvents(null, "MakeTextIDArray 2")) return list;
             PatchForm.MakeTextIDArray(list);
+
+            Program.AsmMapFileAsmCache.MakeTextIDArray(list);
 
             return list;
         }
@@ -2639,6 +2740,7 @@ namespace FEBuilderGBA
         {
             return Path.GetExtension(filename).ToUpper();
         }
+
         public static long GetFileSize(string filename)
         {
             FileInfo info = new FileInfo(filename);
@@ -3128,10 +3230,14 @@ namespace FEBuilderGBA
 
             return (relativePath);
         }
+        public static string UrlDecode(string urlString)
+        {
+            return Uri.UnescapeDataString(urlString);
+        }
 
         public static string FindFileOne(string path, string toolname)
         {
-            string[] files = Directory.GetFiles(path, toolname, SearchOption.AllDirectories);
+            string[] files = U.Directory_GetFiles_Safe(path, toolname, SearchOption.AllDirectories);
             if (files.Length <= 0)
             {
                 return "";
@@ -3802,7 +3908,7 @@ namespace FEBuilderGBA
             return UserAgent;
         }
 
-        static HttpWebRequest HttpMakeRequest(string url, string referer)
+        static HttpWebRequest HttpMakeRequest(string url, string referer, System.Net.CookieContainer cookie = null)
         {
             ServicePointManager.ServerCertificateValidationCallback = OnRemoteCertificateValidationCallback;
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; //TLS 1.2 
@@ -3825,7 +3931,60 @@ namespace FEBuilderGBA
             {
                 request.Referer = referer;
             }
+            if (cookie != null)
+            {
+                request.CookieContainer = new System.Net.CookieContainer();
+                request.CookieContainer.Add(cookie.GetCookies(request.RequestUri));
+            }
             return request;
+        }
+
+        public static string GetURLBaseServer(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return uri.Scheme + "://" + uri.Authority + "/";
+        }
+        public static string GetURLBaseDir(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return uri.Scheme + "://" + uri.Authority + Path.GetDirectoryName(uri.LocalPath).Replace("\\","/") + "/" ;
+        }
+        public static string GetURLFilename(string baseurl)
+        {
+            Uri uri = new Uri(baseurl);
+            return Path.GetFileName(uri.LocalPath);
+        }
+#if DEBUG
+        public static void TEST_GetURLBaseServer()
+        {
+            string r = GetURLBaseServer("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "http://foo.local/");
+        }
+        public static void TEST_GetURLBaseDir()
+        {
+            string r = GetURLBaseDir("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "http://foo.local/aaa/ddd/");
+        }
+        public static void TEST_GetURLFilename()
+        {
+            string r = GetURLFilename("http://foo.local/aaa/ddd/file.zip?dl=123");
+            Debug.Assert(r == "file.zip");
+        }
+#endif
+
+        //URLを整形してフルパスにします.
+        public static string MakeFullURLPath(string baseurl,string targeturl)
+        {
+            if (targeturl.IndexOf("http") == 0)
+            {//フルパス
+                return targeturl;
+            }
+            Uri uri = new Uri(baseurl);
+            if (targeturl.IndexOf("/") == 0)
+            {
+                return uri.Scheme + "://" + uri.Authority + targeturl;
+            }
+            return uri.Scheme + "://" + uri.Authority + Path.GetDirectoryName(uri.LocalPath) + "/" + targeturl;
         }
 
         //https://qiita.com/Takezoh/items/3eff6806a59152656ddc
@@ -3898,9 +4057,9 @@ namespace FEBuilderGBA
         }
 
         //httpでそこそこ怪しまれずに通信する
-        public static string HttpGet(string url,string referer = "")
+        public static string HttpGet(string url, string referer = "", System.Net.CookieContainer cookie = null)
         {
-            HttpWebRequest request = HttpMakeRequest(url,referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
             string r = "";
 
             WebResponse rsp = request.GetResponse();
@@ -3913,12 +4072,18 @@ namespace FEBuilderGBA
             }
             rsp.Close();
 
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
+
             return r;
         }
 
-        public static void HttpDownload(string savefilename, string url, string referer = "", InputFormRef.AutoPleaseWait pleaseWait = null)
+        public static void HttpDownload(string savefilename, string url, string referer = "", InputFormRef.AutoPleaseWait pleaseWait = null, System.Net.CookieContainer cookie = null)
         {
-            HttpWebRequest request = HttpMakeRequest(url, referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
 
             WebResponse rsp = request.GetResponse();
             using (Stream output = File.OpenWrite(savefilename))
@@ -3935,14 +4100,27 @@ namespace FEBuilderGBA
                     if (pleaseWait != null)
                     {
                         readTotalSize += bytesRead;
-                        pleaseWait.DoEvents("read " + readTotalSize + "/" + totalSize);
+                        if (totalSize == -1)
+                        {
+                            pleaseWait.DoEvents("Download: " + readTotalSize + "/" + "???");
+                        }
+                        else
+                        {
+                            pleaseWait.DoEvents("Download: " + readTotalSize + "/" + totalSize);
+                        }
                     }
                 }
             }
 
             rsp.Close();
+
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
         }
-        public static string HttpPost(string url, Dictionary<string,string> args, string referer = "")
+        public static string HttpPost(string url, Dictionary<string, string> args, string referer = "", System.Net.CookieContainer cookie = null)
         {
             bool isFirst = true;
             StringBuilder sb = new StringBuilder();
@@ -3961,7 +4139,7 @@ namespace FEBuilderGBA
             string postArgs = sb.ToString();
             byte[] data = Encoding.ASCII.GetBytes(postArgs);
 
-            HttpWebRequest request = HttpMakeRequest(url, referer);
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = data.Length;
@@ -3980,6 +4158,12 @@ namespace FEBuilderGBA
                 stm.Close();
             }
             rsp.Close();
+
+            if (cookie != null)
+            {
+                System.Net.CookieCollection cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                cookie.Add(cookies);
+            }
 
             return r;
         }
@@ -5579,6 +5763,107 @@ namespace FEBuilderGBA
               IntPtr.Zero);
 
             return message.ToString();
+        }
+
+        public static bool[] MakeMask2(byte[] bin, byte code, byte code2)
+        {
+            bool[] mask = new bool[bin.Length];
+            for (int i = 0; i < bin.Length; i++)
+            {
+                if (bin[i] == code)
+                {
+                    mask[i] = true;
+                }
+                else if (bin[i] == code2)
+                {
+                    mask[i] = true;
+                }
+            }
+            return mask;
+        }
+        public static byte[] PickupBinaryBattern(byte[] pickup,byte[] bin,byte code)
+        {
+            List<byte> match = new List<byte>();
+            for (int i = 0; i < bin.Length; i++)
+            {
+                if (i >= pickup.Length)
+                {
+                    break;
+                }
+                if (bin[i] != code)
+                {
+                    continue;
+                }
+                match.Add(bin[i]);
+            }
+            return match.ToArray();
+        }
+
+        //U.Directory_GetFiles_Safe の安全な実装.
+        public static string[] Directory_GetFiles_Safe(string path, string filter, SearchOption op = SearchOption.TopDirectoryOnly)
+        {
+            if (op == SearchOption.TopDirectoryOnly)
+            {
+                return Directory.GetFiles(path, filter);
+            }
+
+            List<string> files = new List<string>();
+            Directory_GetFiles_AllFile_Safe_Low(files , path , filter);
+            return files.ToArray();
+        }
+        static void Directory_GetFiles_AllFile_Safe_Low(List<string> files , string path, string filter)
+        {
+            try
+            {
+                string[] l = Directory.GetFiles(path , filter);
+                foreach(string s in l)
+                {
+                    files.Add(s);
+                }
+
+                l = Directory.GetDirectories(path);
+                foreach(string s in l)
+                {
+                    Directory_GetFiles_AllFile_Safe_Low(files , s , filter);
+                }
+            }
+            catch (Exception e)
+            {//Skip
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
+            }
+        }
+
+        public static void OpenURLOrFile(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch (Exception ee)
+            {
+                R.ShowStopError(ee.ToString());
+            }
+        }
+        public static bool WriteAllLinesInError(string filename, List<string> lines)
+        {
+            try
+            {
+                File.WriteAllLines(filename, lines);
+            }
+            catch (IOException ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+                return false;
+            }
+            return true;
+        }
+
+        static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        public static DateTime FromUnitTime(uint unixTime)
+        {
+            // UNIXエポックからの経過秒数で得られるローカル日付
+            return UNIX_EPOCH.AddSeconds(unixTime).ToLocalTime();
         }
     }
 }
