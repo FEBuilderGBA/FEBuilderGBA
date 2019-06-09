@@ -14,6 +14,11 @@ namespace FEBuilderGBA
         public EventUnitNewAllocForm()
         {
             InitializeComponent();
+
+//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            {//SkillSystemsがインストールされている場合、同時にロードできるユニット数は16体
+//                AllocCountNumupdown.Maximum = 16;
+//            }
         }
 
         public uint AllocCount { get; private set; }
@@ -22,6 +27,11 @@ namespace FEBuilderGBA
             AllocCount = (uint)AllocCountNumupdown.Value;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
+        }
+
+        private void EventUnitNewAllocForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

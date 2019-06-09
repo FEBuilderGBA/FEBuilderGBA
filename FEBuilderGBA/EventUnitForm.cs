@@ -46,6 +46,11 @@ namespace FEBuilderGBA
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
 
+//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            {//SkillSystemsがインストールされている場合、同時にロードできるユニット数は16体
+//                this.InputFormRef.AddressListExpandsMax = 16;
+//            }
+
             this.MapPictureBox.MapMouseDownEvent += MapMouseDownEvent;
             this.MapPictureBox.MapMouseDownEvent += MapDoubleClickEvent;
 
@@ -1802,7 +1807,7 @@ namespace FEBuilderGBA
                 return R._("ユニットを読みこむポインタの指定が正しくありません。: {0}", U.To0xHexString(units_address));
             }
 
-            uint lvCap = Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
+            uint lvCap = InputFormRef.GetLevelMaxCaps();
 
             int count = 0;
             uint addr = units_address;
@@ -1815,11 +1820,6 @@ namespace FEBuilderGBA
                 }
 
                 string errorMessage;
-                //errorMessage = CheckUnitMeleeAndRange(addr);
-                //if (errorMessage.Length > 0)
-                //{
-                //    return R._("ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}", U.To0xHexString(units_address), count, errorMessage);
-                //}
                 errorMessage = CheckPlayerUnitLevelCap(addr, lvCap);
                 if (errorMessage.Length > 0)
                 {
@@ -1836,8 +1836,45 @@ namespace FEBuilderGBA
                 count ++;
             }
 
+            if (IsIgnoreEventFE8(units_address))
+            {
+                return "";
+            }
+//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            {
+//                if (count > 16)
+//                {
+//                    return R._("ユニットを読込 {0} 、SkillSystemsを利用している場合、16人以上のユニットを同時にロードできません。", U.To0xHexString(units_address));
+//                }
+//            }
+            if (count > 50)
+            {
+                return R._("ユニットを読込 {0} 、50人以上のユニットを同時にロードできません。", U.To0xHexString(units_address));
+            }
+
             return "";
         }
+
+        static bool IsIgnoreEventFE8(uint units_address)
+        {
+            //メレカナ海岸で、51体の敵をロードしているので、無視するように指示する.
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//FE8J
+                if (units_address == 0x924118)
+                {
+                    return true;
+                }
+            }
+            else
+            {//FE8U
+                if (units_address == 0x8cfcc4)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         static string CheckPlayerUnitLevelCap(uint addr, uint lvCap)
         {
             uint unitGrow = Program.ROM.u8(addr + 3);

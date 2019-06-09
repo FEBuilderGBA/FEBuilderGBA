@@ -2440,6 +2440,21 @@ Pointer to read unit is specified incorrectly.: {0}.
 :ユニットを読込 {0} 、 {1}番目のユニットのデータに問題があります。:{2}
 Reading unit There is a problem with the data of the {0}, {1} th unit.: {2}.
 
+:00=50%以下で回復モード、100%回復したら戻る
+00=Recovery mode when HP 50%, return HP 100%
+
+:01=30%以下で回復ﾓｰﾄﾞ、80%以上回復したら戻る
+01=Recovery mode when HP 30%, return HP 80%
+
+:02=10%以下で回復ﾓｰﾄﾞ、50%以上回復したら戻る
+02=Recovery mode when HP 10%, return HP 50%
+
+:03=80%以下で回復ﾓｰﾄﾞ、100%回復したら戻る
+03=Recovery mode when HP 80%, return HP 100%
+
+:04=回復モードにならない
+04=Not in recovery mode
+
 :配置後座標
 Post-placement
 
@@ -2485,24 +2500,6 @@ Commander
 :ユニット番号
 Unit Number
 
-:00=威力 > 命中
-00=Power > Hit
-
-:02=威力 > 命中
-02=power > Hit
-
-:09=威力 > 剣装備のロイ > 命中
-09=Power > sword-equipped Roy > hit
-
-:10=リブロー持ち
-10=Physic holder
-
-:20=弓兵
-20=Bow troops
-
-:30=特効武器持ち
-30=Special weapon holders
-
 :死亡時セリフへJump
 Jump to Death Quote
 
@@ -2518,8 +2515,8 @@ Jump to Battle Quote
 :退避AI
 Retreat AI
 
-:優先
-Priority
+:標的と回復AI
+Target AI
 
 :2次AI
 Secondary AI
@@ -2556,24 +2553,6 @@ Item Drop: No
 
 :FE7でアイテムを落とすようにするには、ユニットまたはクラスの特性4のドロップアイテムのビットを有効にしてください。\r\n
 To make an item fall on FE 7, enable the bit of the drop item of characteristic 4 of unit or class.\r\n
-
-:標的と回復AI
-Target AI
-
-:00=50%以下で回復モード、100%回復したら戻る
-00=Recovery mode when HP 50%, return HP 100%
-
-:01=30%以下で回復ﾓｰﾄﾞ、80%以上回復したら戻る
-01=Recovery mode when HP 30%, return HP 80%
-
-:02=10%以下で回復ﾓｰﾄﾞ、50%以上回復したら戻る
-02=Recovery mode when HP 10%, return HP 50%
-
-:03=80%以下で回復ﾓｰﾄﾞ、100%回復したら戻る
-03=Recovery mode when HP 80%, return HP 100%
-
-:04=回復モードにならない
-04=Not in recovery mode
 
 :アイテムドロップ
 Item Drop
@@ -2641,6 +2620,12 @@ After placement coordinates, all data is FF.: {0} Count: {1}.
 :ユニットに想定と異なるクラスを割り当てています。\r\nこれでは、武器レベルで近接と魔法を混在させることになります。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。
 You assigned different classes to the unit.\r\nWith this, you will mix proximity and magic at the weapon level.\r\nIf combining proximity and magic in a state where patches enabling mixing can not be applied, battle animation will not operate properly.
 
+:ユニットを読込 {0} 、SkillSystemsを利用している場合、16人以上のユニットを同時にロードできません。
+Reading Units {0} If you are using SkillSystems, you can not load more than 16 units simultaneously.
+
+:ユニットを読込 {0} 、50人以上のユニットを同時にロードできません。
+Load unit {0}, can not load more than 50 units simultaneously.
+
 :自軍ユニットに、レベル上限({0})より大きいレベル({1})が指定されています。
 A level ({1}) greater than the upper limit ({0}) is specified for your unit.
 
@@ -2653,15 +2638,6 @@ It is not possible to erase all the coordinates of the unit.
 :ユニット配置で、自軍のユニットID({0})が重複して書かれています。\r\n進撃開始に利用する自軍配置以外で、このような書き方をするのは極めてまれです。\r\nユニットの所属を友軍か敵軍と間違えてませんか？\r\n自軍の場合、同一ユニットIDは、一つのユニットにまとめられます。
 Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare to do this kind of writing other than arranging your army to use for starting the attack.\r\nHave you mistaken the affiliation of the unit as a friendly or enemy army?\r\nIn the case of your army, the same unit ID is grouped into one unit.
 
-:特殊:
-Special:
-
-:移動後座標
-After Moving
-
-:配置後座標格納アドレス
-Post-place coordinate storage
-
 :/60秒
 /60sec
 
@@ -2670,6 +2646,15 @@ Post-place coordinate storage
 
 :1=鈍足
 1=Heavy Steps
+
+:特殊:
+Special:
+
+:移動後座標
+After Moving
+
+:配置後座標格納アドレス
+Post-place coordinate storage
 
 :アイテムドロップする
 Drop item

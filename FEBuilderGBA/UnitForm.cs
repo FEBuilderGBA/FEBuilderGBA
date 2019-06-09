@@ -782,6 +782,5 @@ namespace FEBuilderGBA
             uint flag2 = Program.ROM.u8(addr + 41);
             return ((flag2 & 0x20) == 0x20);
         }
-
     }
 }
