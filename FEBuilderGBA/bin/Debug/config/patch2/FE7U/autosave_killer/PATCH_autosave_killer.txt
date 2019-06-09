@@ -1,0 +1,14 @@
+NAME=オートセーブキラー
+NAME.en=Autosave Killer
+NAME.zh=关掉自动存档
+
+AUTHOR=laqieer
+
+INFO=オートセーブ機能を削除します。
+INFO.en=Remove autosave.
+INFO.zh=关掉自动存档。
+
+TYPE=ADDR
+
+ADDRESS=0x1548E 0x1BC28 0x1C186 0x1CB80 0x2A75A 0x2F10E 0x3454E 0x34D24
+COMBO=off|0 0 0 0
