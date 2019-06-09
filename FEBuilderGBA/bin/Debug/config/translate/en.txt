@@ -2368,6 +2368,13 @@ Do you want to allocate new Events?
 :新規にイベント領域を割り振り、空のイベントを定義します。
 Allocate a new event area and define an Empty Event.
 
+:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトなし)
+Allocate a new event area and define an Empty Event.(No Fade)
+
+:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトあり)
+Allocate a new event area and define an Empty Event.(With Fade)
+
+
 :民家での会話イベントを作成
 Create a conversation event at a private house
 

@@ -29,31 +29,39 @@ namespace FEBuilderGBA
 
         private void BLANK_Button_Click(object sender, EventArgs e)
         {
-            this.GenCode = Program.ROM.RomInfo.defualt_event_script_toplevel_code();
+            this.GenCode = Program.ROM.RomInfo.defualt_event_script_term_code();
             this.Close();
         }
 
         private void EnterByPlayer_button_Click(object sender, EventArgs e)
         {
-            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_PLAYER_"));
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_PLAYER_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
             this.Close();
         }
 
         private void EnterByUnit_button_Click(object sender, EventArgs e)
         {
-            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_UNIT_"));
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_ENTER_BY_UNIT_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
             this.Close();
         }
 
         private void GameOver_Button_Click(object sender, EventArgs e)
         {
-            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_EnterByUnitToGameOver_"));
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_EnterByUnitToGameOver_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
             this.Close();
         }
 
         private void DesertTreasure_Button_Click(object sender, EventArgs e)
         {
-            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_DESERTT_REASURE_"));
+            this.GenCode = EventScriptInnerControl.ConverteventTextToBin(U.ConfigDataFilename("template_event_DESERTT_REASURE_")
+                , EventScriptInnerControl.TermCode.SimpleTermCode
+                );
             this.Close();
         }
 

@@ -2786,7 +2786,9 @@ namespace FEBuilderGBA
                     || arg1 == "EVENT2"
                     || arg1 == "EVENT3"
                     || arg1 == "EVENT4"
-                    || arg1 == "EVENT5")
+                    || arg1 == "EVENT5"
+                    || arg1 == "EVENT6"
+                    )
                 {//イベントテンプレートは複雑なので別処理
                     AllocEvent_EventTemplate(arg1, link_object, src_object, prefix, controls, writeButton);
                     return;
@@ -2811,6 +2813,7 @@ namespace FEBuilderGBA
                 || arg1 == "EVENT3"
                 || arg1 == "EVENT4"
                 || arg1 == "EVENT5"
+                || arg1 == "EVENT6"
                 || arg1 == "ALTEVENT"
                 )
             {
@@ -2977,6 +2980,15 @@ namespace FEBuilderGBA
             else if (arg1 == "EVENT5")
             {
                 EventTemplate5Form f = (EventTemplate5Form)InputFormRef.JumpFormLow<EventTemplate5Form>();
+                f.Init(controls);
+                f.ShowDialog();
+                alloc = f.GenCode;
+                callEventAddr = f.CallEventAddr;
+                needFlag03 = f.NeedFlag03;
+            }
+            else if (arg1 == "EVENT6")
+            {
+                EventTemplate6Form f = (EventTemplate6Form)InputFormRef.JumpFormLow<EventTemplate6Form>();
                 f.Init(controls);
                 f.ShowDialog();
                 alloc = f.GenCode;

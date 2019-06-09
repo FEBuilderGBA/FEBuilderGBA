@@ -143,7 +143,9 @@ namespace FEBuilderGBA
             }
 
 
-            byte[] bin = EventScriptInnerControl.ConverteventTextToBin(fullfilename,false, XXXXXXXX, YYYYYYYY);
+            byte[] bin = EventScriptInnerControl.ConverteventTextToBin(fullfilename
+                ,EventScriptInnerControl.TermCode.NoTerm 
+                ,XXXXXXXX , YYYYYYYY);
             uint addr = 0;
             uint limit = (uint)bin.Length;
             while (addr < limit)

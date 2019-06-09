@@ -2701,8 +2701,14 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public enum TermCode
+        {
+            NoTerm,
+            DefaultTermCode,
+            SimpleTermCode,
+        }
         public static byte[] ConverteventTextToBin(string filename
-            ,bool addTerm = true
+            , TermCode addTerm = TermCode.DefaultTermCode
             ,string XXXXXXXX = null,string YYYYYYYY = null)
         {
             List<byte> binarray = new List<byte>();
@@ -2734,7 +2740,11 @@ namespace FEBuilderGBA
                 binarray.AddRange(bin);
             }
 
-            if (addTerm)
+            if (addTerm == TermCode.DefaultTermCode)
+            {//終端の追加.
+                binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
+            }
+            else if (addTerm == TermCode.SimpleTermCode)
             {//終端の追加.
                 binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
             }
