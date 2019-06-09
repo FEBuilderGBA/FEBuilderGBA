@@ -57,7 +57,7 @@ namespace FEBuilderGBA
 
         public static int ClassMaxLevel(uint classs_id)
         {
-            int max_level = (int)Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
+            int max_level = (int)InputFormRef.GetLevelMaxCaps();
             if (ClassForm.isHighClass(classs_id))
             {//上級職は、最大LV+10として計算します.
                 return max_level + 10;

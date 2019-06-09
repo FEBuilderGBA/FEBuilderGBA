@@ -99,7 +99,7 @@ namespace FEBuilderGBA
                 NewDataCount.Value = inputFormRef.DataCount * 2;
             }
 
-            uint expandsmax = inputFormRef.GetAddressListExpandsMax();
+            uint expandsmax = inputFormRef.AddressListExpandsMax;
             if (expandsmax != U.NOT_FOUND)
             {//拡張上限が設定されている場合はそこで止める.
                 if (NewDataCount.Value > expandsmax)

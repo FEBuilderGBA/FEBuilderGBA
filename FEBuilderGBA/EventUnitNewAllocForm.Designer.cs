@@ -126,6 +126,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EventUnitNewAllocForm";
             this.Text = "ユニット配置　新割り当て";
+            this.Load += new System.EventHandler(this.EventUnitNewAllocForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AllocCountNumupdown)).EndInit();
             this.ResumeLayout(false);

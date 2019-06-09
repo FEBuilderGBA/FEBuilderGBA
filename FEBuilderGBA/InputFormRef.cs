@@ -4752,6 +4752,7 @@ namespace FEBuilderGBA
             g_Cache_itemicon_extends = itemicon_extends.NoCache;
             g_Cache_shinan_table = NO_CACHE;
             g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
+            g_LevelMaxCaps = NO_CACHE;
         }
 
 
@@ -4946,7 +4947,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            if (! U.isPadding4(blocksize))
+            if (!U.isPadding4(blocksize))
             {//4の倍数ではないので、チェックは無理
                 this.CheckProtectionPaddingALIGN4 = false;
             }
@@ -5157,6 +5158,9 @@ namespace FEBuilderGBA
             {//リストの拡張
                 //リストの拡張ボタンを押したとき
                 this.AddressListExpandsButton.Click += this.OnAddressListExpandsEventHandler;
+
+                //拡張上限が設定されていれば設定する.
+                this.AddressListExpandsMax = GetAddressListExpandsMax();
             }
             if (this.ReadStartAddress != null)
             {
@@ -5557,8 +5561,11 @@ namespace FEBuilderGBA
             }
             );
         }
+
+        public uint AddressListExpandsMax = U.NOT_FOUND;
+
         //拡張できる上限
-        public uint GetAddressListExpandsMax()
+        uint GetAddressListExpandsMax()
         {
             string expands = U.substr(this.AddressListExpandsButton.Name, this.Prefix.Length);
             string[] sp = expands.Split('_');
@@ -9984,6 +9991,24 @@ namespace FEBuilderGBA
                 }
             }
             return SpecialHack_enum.No;
+        }
+
+        //最大レベルの検索
+        static uint g_LevelMaxCaps = NO_CACHE;
+        public static uint GetLevelMaxCaps()
+        {
+            if (g_LevelMaxCaps == NO_CACHE)
+            {
+                if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+                {//不明なので31とする
+                    g_LevelMaxCaps = 31;
+                }
+                else
+                {
+                    g_LevelMaxCaps = Program.ROM.u8(Program.ROM.RomInfo.max_level_address());
+                }
+            }
+            return g_LevelMaxCaps;
         }
 
         //スキルシステムの判別. ちょっとだけコストがかかる.
