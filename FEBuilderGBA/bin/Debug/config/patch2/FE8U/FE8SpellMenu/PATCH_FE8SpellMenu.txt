@@ -8,7 +8,7 @@ EA_EXTENDS_UNITMENU:0x01=0x40
 EXTENDS:0x1000=TEXT
 
 //既に適応されたかどうか
-PATCHED_IF:0x2B3EC=0x00 0x4B
+PATCHED_IF:$FGREP4 GaidenMagic/NewSetupBattleWeaponData.dmp=0x05 0x1C 0x0B 0x1C
 
 INFO=Gaidenスタイルの魔法メニューを実装します。\r\nLvごとに魔法を覚え、この魔法は武器とは別に利用することができます。\r\nこのパッチの設定は、詳細メニューの"外伝風の魔法拡張"からできます。
 
