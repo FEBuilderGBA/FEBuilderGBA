@@ -494,6 +494,7 @@ namespace FEBuilderGBA
             HideFloatingControlpanel();
         }
 
+
         private void ASMTextBox_Leave(object sender, EventArgs e)
         {
             OneLineDisassembler();
