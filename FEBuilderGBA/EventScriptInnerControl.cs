@@ -88,7 +88,8 @@ namespace FEBuilderGBA
             for (int i = 0; i < code.Script.Args.Length; i++)
             {
                 EventScript.Arg arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.IF_CONDITIONAL)
+                if (arg.Type == EventScript.ArgType.IF_CONDITIONAL
+                    || arg.Type == EventScript.ArgType.GOTO_CONDITIONAL)
                 {
                     uint v = EventScript.GetArgValue(code, arg);
                     return v;
@@ -148,14 +149,20 @@ namespace FEBuilderGBA
                 {
                     code.JisageCount = jisageCount ++;
                     uint conditional_id = GetScriptConditionalID(code);
-                    needLabel.Add(conditional_id);
+                    if (conditional_id != U.NOT_FOUND)
+                    {
+                        needLabel.Add(conditional_id);
+                    }
                     isBeforeGoto = false;
                 }
                 else if (code.Script.Has == EventScript.ScriptHas.GOTO_CONDITIONAL)
                 {
                     code.JisageCount = jisageCount;
                     uint conditional_id = GetScriptConditionalID(code);
-                    needLabel.Add(conditional_id);
+                    if (conditional_id != U.NOT_FOUND)
+                    {
+                        needLabel.Add(conditional_id);
+                    }
                     isBeforeGoto = true;
                 }
                 else
