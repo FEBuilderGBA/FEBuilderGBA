@@ -1,0 +1,13 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $19FFE  //FE8U
+BYTE 0 0
+jumpToHack(HackLocation)
+POP
+
+HackLocation:
+#incbin "kagaribi2.dmp"
+POIN KAGARIBI2_Table
+
+#include "kagaribi2_table.event"

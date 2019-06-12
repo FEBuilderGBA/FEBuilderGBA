@@ -135,6 +135,7 @@ namespace FEBuilderGBA
                 , this.FindBackup.OrignalFilename);
             if (rom.Length <= 0)
             {//このバックアップは壊れている!
+
             }
             else
             {
@@ -176,7 +177,7 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                if (length <= 2)
+                if (length <= 0)
                 {
                     continue;
                 }

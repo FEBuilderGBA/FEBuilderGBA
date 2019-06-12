@@ -1,0 +1,6 @@
+KAGARIBI_Table=$5C
+Loop=$06
+Term=$36
+AddPoint=$26
+SkipEnd=$44
+Join=$46

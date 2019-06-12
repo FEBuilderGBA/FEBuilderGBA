@@ -7370,8 +7370,7 @@ namespace FEBuilderGBA
             string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
             if (updateFromName == "")
             {
-                Debug.Assert(false);
-                return;
+                updateFromName = Path.GetFileNameWithoutExtension(editpatchSt.PatchFileName);
             }
             string targetFilename = Path.Combine(tempdir, updateFromName);
             if (! File.Exists(targetFilename))
@@ -7564,8 +7563,7 @@ namespace FEBuilderGBA
             string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
             if (updateFromName == "")
             {
-                Debug.Assert(false);
-                return;
+                updateFromName = Path.GetFileNameWithoutExtension(editpatchSt.PatchFileName);
             }
             string targetFilename = Path.Combine(tempdir, updateFromName);
             string type = U.at(editpatchSt.Param, "TYPE");
