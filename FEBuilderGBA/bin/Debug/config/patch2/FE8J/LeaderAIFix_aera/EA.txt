@@ -1,0 +1,12 @@
+PUSH
+
+ORG	0x3f4f0
+WORD	$46874800
+POIN	LeaderAIFix
+
+POP
+////////////
+
+LeaderAIFix:
+#incbin "leader.dmp"
+ALIGN 4

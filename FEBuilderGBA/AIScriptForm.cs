@@ -203,59 +203,72 @@ namespace FEBuilderGBA
         {
             uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer(), Program.ROM.RomInfo.ai2_pointer()};
 
-            for (int n = 0; n < addlist.Length; n++)
+            for (int aiType = 0; aiType < addlist.Length; aiType++)
             {
-                uint addr = addlist[n];
-                if (addr == 0)
+                uint aiAddr = addlist[aiType];
+                if (aiAddr == 0)
+                {
+                    continue;
+                }
+                MakeAllDataLengthSub(list,isPointerOnly,aiAddr,aiType);
+            }
+        }
+        public static void MakeAllDataLengthSub(List<Address> list, bool isPointerOnly,uint aiAddr,int aiType)
+        {
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInitPointer(aiAddr);
+            string name = "AI" + (aiType + 1);
+            FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 });
+
+            uint p = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            {
+                if (!U.isSafetyOffset(p))
                 {
                     continue;
                 }
 
-                InputFormRef InputFormRef = Init(null);
-                InputFormRef.ReInitPointer(addlist[n]);
-                string name = "AI" + n;
-                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 });
-
-                for (int i = 0; i < InputFormRef.DataCount; i++)
+                name = "AI" + (aiType + 1) + " ";
+                if (aiType == 0)
                 {
-                    uint p = InputFormRef.BaseAddress + (uint)i * InputFormRef.BlockSize;
-                    if (!U.isSafetyOffset(p))
-                    {
-                        continue;
-                    }
-                    uint aiscript = Program.ROM.p32(p);
-                    uint length = CalcLength(aiscript);
+                    name += EventUnitForm.GetAIName1(i);
+                }
+                else
+                {
+                    name += EventUnitForm.GetAIName2(i);
+                }
 
-                    FEBuilderGBA.Address.AddAddress(list, aiscript, length, p, name, FEBuilderGBA.Address.DataTypeEnum.AISCRIPT);
-                    for (uint k = 0; k < length; k += 16)
+                uint aiscript = Program.ROM.p32(p);
+                uint length = CalcLength(aiscript);
+
+                FEBuilderGBA.Address.AddAddress(list, aiscript, length, p, name, FEBuilderGBA.Address.DataTypeEnum.AISCRIPT);
+
+                uint end = aiscript + length;
+                for (uint k = aiscript; k < end; k += 16)
+                {
+                    uint pp;
+                    pp = Program.ROM.u32(k + 8);
+                    if (U.isPointer(pp))
                     {
-                        uint pp;
-                        pp = Program.ROM.p32(p + 8);
-                        if (U.isPointer(pp))
-                        {
-                            if ((pp % 2) == 1)
-                            {//thumbプログラムコード
-                                FEBuilderGBA.Address.AddAddress(list,pp
-                                    , 0 //たいていプログラムなので長さ不明.
-                                    , p + 8, name
-                                    , FEBuilderGBA.Address.DataTypeEnum.ASM);
-                            }
-                            else
-                            {//データ
-                                FEBuilderGBA.Address.AddAddress(list,pp
-                                    , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
-                                    , p + 8, name
-                                    , FEBuilderGBA.Address.DataTypeEnum.BIN);
-                            }
+                        if ((pp % 2) == 1)
+                        {//thumbプログラムコード
+                            FEBuilderGBA.Address.AddFunction(list, k + 8, name + " CallASM");
                         }
-                        pp = Program.ROM.p32(p + 12);
-                        if (U.isPointer(pp))
-                        {
-                            FEBuilderGBA.Address.AddAddress(list,pp
+                        else
+                        {//データ
+                            FEBuilderGBA.Address.AddAddress(list, pp
                                 , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
-                                , p + 12, name
+                                , k + 8, name
                                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
                         }
+                    }
+                    pp = Program.ROM.u32(k + 12);
+                    if (U.isPointer(pp))
+                    {
+                        FEBuilderGBA.Address.AddAddress(list, pp
+                            , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
+                            , k + 12, name
+                            , FEBuilderGBA.Address.DataTypeEnum.BIN);
                     }
                 }
             }

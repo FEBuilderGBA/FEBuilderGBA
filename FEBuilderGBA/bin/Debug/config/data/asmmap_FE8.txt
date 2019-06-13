@@ -12525,3 +12525,7 @@
 08032104	ExecTrapForDropUnit	{J}
 080377F0	ExecTrapForDropUnit_Sub	{U}
 080321B8	ExecTrapForDropUnit	{U}
+0203AA86	AIScript Result1	{J}
+0203AA87	AIScript Result2	{J}
+0203AA8A	AIScript Result1	{U}
+0203AA8B	AIScript Result2	{U}

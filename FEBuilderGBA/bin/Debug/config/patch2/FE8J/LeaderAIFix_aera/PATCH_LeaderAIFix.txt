@@ -1,0 +1,14 @@
+NAME=LeaderAIFix
+NAME.en=LeaderAIFix
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x3f4f0=0x00 0x48 0x87 0x46
+EA=EA.txt
+
+AUTHOR=aera
+
+INFO=AI1 "0x0D 指揮官の行動範囲に敵がいたら攻撃"のバグを修正します。\r\n指揮官が倒された場合、配下の兵を突撃AI(00=行動確率100%)に変更するようにします。
+INFO.en=Fix the bug of AI1 "0x0D Attack if enemy is in the range of commander".\r\nIf the leader is defeated, change his men to charge assault AI (00 = Chance of Action 100%).
+INFO.zh=修复AI1的错误“0x0D指挥官的行动范围有敌人攻击”。\r\n如果领导者被击败，改变他的手下冲锋AI（00=行动概率100%）
