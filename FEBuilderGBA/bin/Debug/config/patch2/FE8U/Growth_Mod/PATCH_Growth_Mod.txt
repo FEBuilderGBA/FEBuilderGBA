@@ -4,7 +4,8 @@ TYPE=BIN
 PATCHED_IF:0x02BA2A=0x4E 0x46 0x45 0x46 0x60 0xB4 0x8B 0xB0 0x07 0x1C 0xFF 0xF7 0xDE 0xFF 0x00 0x06 0x00 0x28 0x00 0xD1 0x8E 0xE0 0x78 0x7A 0x63 0x28 0x00 0xD8 0x8A 0xE0 0x03 0x1C 0x64 0x3B 0x7B 0x72 0x38 0x7A 0x42 0x1C 0x3A 0x72 0x38 0x68 0x79 0x68 0x80 0x6A 0x89 0x6A 0x08 0x43 0x80 0x21 0x09 0x03 0x08 0x40 0x00 0x28 0x04 0xD0 0x10 0x06 0x00 0x16 0x0A 0x28 0x0B 0xD1 0x03 0xE0 0x10 0x06 0x00 0x16 0x14 0x28 0x06
 BIN:0x02BA2A=0002BA2A.bin
 
-INFO=アイテムに、Growth Rateの変更の効果を付与します。\r\nアイテムの34バイト目のGrowth_Modに、1を設定すると、成長率補正の効果を持たせることができます。\r\nこのパッチは、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。\r\n
+INFO=アイテムに、Growth Rateの変更の効果を付与します。\r\nこのパッチを動作させるには、Passive Boosts Patchesが必要です。\r\nアイテムの34バイト目のGrowth_Modに、1を設定すると、成長率補正の効果を持たせることができます。\r\nこのパッチは、通常のstatboosterよりも大きいデータを必要とします。\r\nこの拡張フラグを1に設定した後で、statbooster領域を確保してください。\r\n既に確保している場合は、statboosterアドレスを0に設定して再確保してください。\r\n
 AUTHOR=Venno
-INFO.en=Give the item the effect of changing Growth Rate.\r\nIf you set 1 to Growth_Mod of the 34nd byte of an item, you can have the effect of growth rate correction.\r\nThis patch requires more data than a normal statbooster.\r\nAfter setting this extension flag to 1, secure the statbooster area.\r\nIf you have already secured, set the statbooster address to 0 and reserve it again.\r\n
-INFO.zh=给项目改变增长率的效果。\r\n如果将1设置为项目的第34个字节的Growth_Mod，则可以获得增长率修正的效果。\r\n此补丁需要比普通statbooster更多的数据。\r\n将此扩展标志设置为1后，保护statbooster区域。\r\n如果您已经安全，请将statbooster地址设置为0并再次保留。\r\n
+
+INFO.en=Give the item the effect of changing Growth Rate.\r\nYou need Passive Boosts Patches for this patch to work.\r\nIf you set 1 to Growth_Mod of the 34nd byte of an item, you can have the effect of growth rate correction.\r\nThis patch requires more data than a normal statbooster.\r\nAfter setting this extension flag to 1, secure the statbooster area.\r\nIf you have already secured, set the statbooster address to 0 and reserve it again.\r\n
+INFO.zh=给项目改变增长率的效果。\r\n如果将1设置为项目的第34个字节的Growth_Mod，则可以获得增长率修正的效果。\r\n您需要Passive Boosts补丁才能使用此补丁。\r\n此补丁需要比普通statbooster更多的数据。\r\n将此扩展标志设置为1后，保护statbooster区域。\r\n如果您已经安全，请将statbooster地址设置为0并再次保留。\r\n

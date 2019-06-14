@@ -1463,6 +1463,11 @@ namespace FEBuilderGBA
                 {//フラグ
                     bitmap = ImageSystemIconForm.FlagIcon();
                 }
+                else if (code.Script.Category.IndexOf("{EVBIT}") >= 0)
+                {//EVBIT
+                    bitmap = ImageSystemIconForm.YubiYoko();
+                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipY);
+                }
 
                 if (bitmap != null)
                 {

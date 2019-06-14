@@ -4120,8 +4120,8 @@ Grado-South
 :一番下
 The bottom
 
-:イベントスキップを止める
-Stop event skipping
+:イベントスキップ中
+scene-skipping
 
 :フェードインを解除
 Unfade fade in
@@ -4131,9 +4131,6 @@ Fading in
 
 :カメラを主人公に固定
 Fix the camera to the main character
-
-:不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。
-Unknown EVBIT.\r\nEVBIT is from 0x00 to 0x0E.
 
 :霧無し
 No fog

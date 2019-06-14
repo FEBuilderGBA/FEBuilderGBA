@@ -6638,19 +6638,19 @@ namespace FEBuilderGBA
             switch (num)
             {
                 case 0x00:
-                    return "?";///No Translate
+                    return R._("呼び出された親イベントに戻らないで終了する");///No Translate
                 case 0x01:
                     return "?";///No Translate
                 case 0x02:
-                    return R._("イベントスキップを止める");
+                    return R._("イベントスキップ中");
                 case 0x03:
-                    return "?";///No Translate
+                    return R._("テキストスキップ中");///No Translate
                 case 0x04:
-                    return "?";///No Translate
+                    return R._("スタートボタンでのイベントスキップ防止");///No Translate
                 case 0x05:
-                    return "?";///No Translate
+                    return R._("Bボタンでのテキストスキップ防止");///No Translate
                 case 0x06:
-                    return "?";///No Translate
+                    return R._("Aボタン等でのテキスト早送りを防止");///No Translate
                 case 0x07:
                     return R._("フェードインを解除");
                 case 0x08:
@@ -6669,7 +6669,6 @@ namespace FEBuilderGBA
                     return "?";///No Translate
             }
 
-//            out_errorMessage = R._("不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。");
             return "";
         }
 
