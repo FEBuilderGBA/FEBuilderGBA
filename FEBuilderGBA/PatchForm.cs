@@ -4057,7 +4057,7 @@ namespace FEBuilderGBA
                 {
                     return U.NOT_FOUND;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                 }
@@ -4068,6 +4068,11 @@ namespace FEBuilderGBA
             }
             if (datacount <= 0)
             {
+                return U.NOT_FOUND;
+            }
+            if (datacount * datasize > 1024*1024)
+            {//1MB越えの可能性
+                Log.Error("パッチのデータが壊れています。データサイズ1MBを超えました", editpatchSt.PatchFileName, U.To0xHexString(datacount), U.To0xHexString(datasize));
                 return U.NOT_FOUND;
             }
 
