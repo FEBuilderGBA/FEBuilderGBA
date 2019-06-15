@@ -2464,8 +2464,6 @@ namespace FEBuilderGBA
                 X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
             }
         }
-
-
     }
 
 }
