@@ -289,7 +289,7 @@ namespace FEBuilderGBA
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler");
                     //https://feuniverse.us/t/event-assembler/1749
-                    string url = "https://www.dropbox.com/s/o9fsm5wdqwp0n9g/Event%20Assembler%20V11.1.1.zip?dl=1";
+                    string url = "https://www.dropbox.com/s/4mql123thxb78kw/Event%20Assembler%20V11.1.3.zip?dl=1";
                     string r = DownloadProgram_Direct(url, dir, "Core.exe");
                     if (IsErrorResult(r))
                     {
@@ -300,7 +300,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler", "Tools");
-                    string url = "https://github.com/StanHash/lyn/releases/download/release0.2.5/lyn.exe";
+                    string url = "https://github.com/StanHash/lyn/releases/download/v2.5.1/lyn.exe";
                     string r = DownloadProgram_DirectOneFile(url, dir, "lyn.exe");
                     if (IsErrorResult(r))
                     {

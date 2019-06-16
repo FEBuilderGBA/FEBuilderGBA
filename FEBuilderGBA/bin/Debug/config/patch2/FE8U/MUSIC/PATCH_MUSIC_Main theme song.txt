@@ -1,6 +1,6 @@
-NAME=MUSIC_メインテーマ
-NAME.en=Ch1-8 Player Phase BGM
-NAME.zh=音乐_主题 0x43
+NAME=MUSIC_エイリークのテーマ
+NAME.en=Eirika's BGM
+NAME.zh=音乐_艾瑞珂的BGM
 //アドレスパッチとして実装します
 
 //アドレスパッチとして実装します

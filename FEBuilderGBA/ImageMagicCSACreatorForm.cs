@@ -161,7 +161,7 @@ namespace FEBuilderGBA
         private void MagicAnimeExportButton_Click(object sender, EventArgs e)
         {
             string title = R._("保存するファイル名を選択してください");
-            string filter = R._("魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|All files|*");
+            string filter = R._("魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*");
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;
@@ -181,21 +181,27 @@ namespace FEBuilderGBA
             string filename = save.FileNames[0];
             Program.LastSelectedFilename.Save(this, "", save);
 
-            bool enableComment = true;
             if (save.FilterIndex == 2)
-            {
-                enableComment = false;
+            {//コメントなし
+                bool enableComment = false;
+                ImageUtilMagicCSACreator.Export(enableComment, filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
             }
-
-           string ext = U.GetFilenameExt(save.FileName);
-           if (ext == ".GIF")
-           {
-               ImageUtilMagicCSACreator.ExportGif(filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
-           }
-           else
-           {
-               ImageUtilMagicCSACreator.Export(enableComment, filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
-           }
+            else if (save.FilterIndex == 3)
+            {//GIF
+                ImageUtilMagicCSACreator.ExportGif(filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
+            }
+            else if (save.FilterIndex == 4)
+            {//All
+                bool enableComment = false;
+                ImageUtilMagicCSACreator.Export(enableComment, filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
+                filename = U.ChangeExtFilename(filename, ".gif");
+                ImageUtilMagicCSACreator.ExportGif(filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
+            }
+            else
+            {//コメントあり
+                bool enableComment = true;
+                ImageUtilMagicCSACreator.Export(enableComment, filename, (uint)P0.Value, (uint)P4.Value, (uint)P12.Value);
+            }
 
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(filename);

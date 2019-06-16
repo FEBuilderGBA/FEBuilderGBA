@@ -1,5 +1,5 @@
-NAME=MUSIC_メインテーマ
-NAME.en=Ch1-8 Player Phase BGM
+NAME=MUSIC_エイリークのテーマ
+NAME.en=Eirika's BGM
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -8,4 +8,4 @@ TAG=#SOUND
 ADDRESS=0x080cb356 0x080cb380 0x08009998 0x08009a0e
 ADDRESS_TYPE=SONG
 
-NAME.zh=音乐_主题 0x43
+NAME.zh=音乐_艾瑞珂的BGM

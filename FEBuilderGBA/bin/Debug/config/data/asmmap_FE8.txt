@@ -12529,3 +12529,5 @@
 0203AA87	AIScript Result2	{J}
 0203AA8A	AIScript Result1	{U}
 0203AA8B	AIScript Result2	{U}
+08A9A9E0	何かのTSA	27	{J}
+089DD4E8	何かのTSA	27	{U}

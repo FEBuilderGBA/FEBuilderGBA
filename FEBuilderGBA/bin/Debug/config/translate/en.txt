@@ -3334,8 +3334,8 @@ Item Icons
 :魔法リストの拡張がされていません。\r\nリストの拡張を選択して、魔法リストを増やしてください。
 Please select the extension of the list and increase the magic list.
 
-:魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|All files|*
-Magic Animation With Comment|*.txt|Magic Animation No comment|*.txt|Animtion GIF|*.gif|All files|*
+:魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
+Magic Animation With Comment|*.txt|Magic Animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.txt|All files|*
 
 :追加魔法
 Magic Animations
@@ -4178,7 +4178,7 @@ Berserk
 Critical
 
 :回避
-Evade
+Avoid
 
 :ストーン
 Stone
@@ -8683,6 +8683,9 @@ IF parse error, this address ({2}) is dangerous.\r\n{0}={1}\r\n{0} = {1}
 :IFパースエラー、この値にはスペースがありません\r\n{0}={1}
 IF parse error, this value has no space.\r\n{0}={1}
 
+:パッチのデータが壊れています。データサイズ1MBを超えました
+The patch data is broken.Data size exceeded 1 MB.
+
 :以下の競合するパッチのいずれかがインストールされているため、利用できません。
 It can not be used because one of the following conflicting patches is installed.
 
@@ -9253,8 +9256,8 @@ There is not a specified number of pointers for skill extension FE 8 Nver 2.\r\n
 :(友軍時のみ)
 (Only for NPC(ally) army)
 
-:スキルアニメスクリプト|*.txt|アニメGIF|*.gif|All files|*
-Skill animation script|*.txt|animation GIF|*.gif|All files|*
+:スキルアニメスクリプト|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
+Skill animation script|*.txt|animation GIF|*.gif|Dump All|*.txt|All files|*
 
 :スキルアニメスクリプト|*.txt|All files|*
 Skill animation script|*.txt|All files|*
@@ -9863,7 +9866,7 @@ Summoned Unit
 Summoner Unit
 
 :必殺回避
-Crit Evade
+Crit Avoid
 
 :防御
 Defense
