@@ -995,7 +995,15 @@ namespace FEBuilderGBA
                 {
                     tag -= Program.ROM.RomInfo.magic_effect_original_data_count();
                 }
-                InputFormRef.JumpForm<ImageMagicFEditorForm>(tag);
+                ImageUtilMagic.magic_system_enum magic = ImageUtilMagic.SearchMagicSystem();
+                if (magic == ImageUtilMagic.magic_system_enum.FEDITOR_ADV)
+                {
+                    InputFormRef.JumpForm<ImageMagicFEditorForm>(tag);
+                }
+                else if (magic == ImageUtilMagic.magic_system_enum.CSA_CREATOR)
+                {
+                    InputFormRef.JumpForm<ImageMagicCSACreatorForm>(tag);
+                }
                 return;
             }
             else if (dataType == FELint.Type.FELINT_SYSTEM_ERROR)
