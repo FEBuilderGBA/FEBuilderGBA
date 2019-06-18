@@ -50,7 +50,7 @@
             this.customColorGroupBox1.Size = new System.Drawing.Size(1153, 234);
             this.customColorGroupBox1.TabIndex = 0;
             this.customColorGroupBox1.TabStop = false;
-            this.customColorGroupBox1.Text = "UPSを開く";
+            this.customColorGroupBox1.Text = "UPSで保存する";
             // 
             // label1
             // 
@@ -114,7 +114,7 @@
             this.ClientSize = new System.Drawing.Size(1177, 260);
             this.Controls.Add(this.customColorGroupBox1);
             this.Name = "ToolUPSPatchSimpleForm";
-            this.Text = "UPSを開く";
+            this.Text = "UPSで保存する";
             this.Load += new System.EventHandler(this.UPSPatchForm_Load);
             this.customColorGroupBox1.ResumeLayout(false);
             this.customColorGroupBox1.PerformLayout();

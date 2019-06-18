@@ -23,6 +23,10 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.makeLinkEventHandler("", controls, this.X_MapID, this.X_MapName, 0, "MAP", new string[]{ });
             U.ForceUpdate(this.X_MapID,0);
+            InputFormRef.makeLinkEventHandler("", controls, this.X_UnitID, this.X_UnitName, 0, "UNIT", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, this.X_UnitID, this.X_UnitIcon, 0, "UNITICON", new string[] { });
+            
+            U.ForceUpdate(this.X_UnitID, 1);
 
             this.Problem.Placeholder = R._("例: 主人公が戦闘しようとするとフリーズします。\r\n主人公以外のキャラクタでも発生します。\r\n武器や魔法を変更してもフリーズします。\r\n序章で、エイリークがグラド兵と戦闘するとフリーズを再現できます。\r\n(どういう問題があるか、どうしたら問題を再現できるか、できるだけ詳しい情報を書いてください)");
             this.URLTextBoxEx.Text = MainFormUtil.GetCommunitiesURL();
@@ -461,6 +465,9 @@ namespace FEBuilderGBA
 
             sb.AppendLine("MapID:");
             sb.AppendLine(U.ToHexString(this.X_MapID.Value) + ":" + this.X_MapName.Text);
+
+            sb.AppendLine("UnitID:");
+            sb.AppendLine(U.ToHexString(this.X_UnitID.Value) + ":" + this.X_UnitName.Text);
 
             //ユーザが書いた問題点
             sb.AppendLine("Problem:");

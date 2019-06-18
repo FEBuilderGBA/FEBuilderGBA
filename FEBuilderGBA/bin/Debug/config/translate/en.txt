@@ -10906,14 +10906,20 @@ Which chapter does the error occur? \r\nIn order to reproduce the problem, we ne
 :この機能の説明
 Explanation of this function.
 
-:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
-
 :どの章？
 Which chapter? 
 
 :次へ
 next
+
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
+
+:誰？
+Who?
+
+:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
+This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
@@ -10926,9 +10932,6 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
@@ -11257,8 +11260,8 @@ Open UPS patch
 :作成するUPSファイル名を選択してください
 Please select the UPS file name to create
 
-:UPSを開く
-Open UPS
+:UPSで保存する
+Save by UPS
 
 :現在のデータをUPSパッチとして保存します。\r\n特別な理由がない限り、通常の保存をしたあとで利用してください。
 Save the current data as a UPS patch.\r\nUnless there is a special reason, please use it after normal saving.
