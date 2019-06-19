@@ -8185,6 +8185,15 @@ Shortcut Key 2
 :19=リストから次を検索
 19=Search next from list
 
+:20=ユニット画面を開く
+20=Open the unit screen.
+
+:21=クラス画面を開く
+21=Open the class screen.
+
+:22=アイテム画面を開く
+22=Open the item screen.
+
 :ショートカットキー1
 Shortcut Key 1
 

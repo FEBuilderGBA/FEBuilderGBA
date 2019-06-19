@@ -1876,7 +1876,10 @@
             "16=ROMを上書き保存する",
             "17=ROMを別名で保存する",
             "18=エラーがなければ上書き保存",
-            "19=リストから次を検索"});
+            "19=リストから次を検索",
+            "20=ユニット画面を開く",
+            "21=クラス画面を開く",
+            "22=アイテム画面を開く"});
             this.ShortCutValue1.Location = new System.Drawing.Point(380, 14);
             this.ShortCutValue1.Margin = new System.Windows.Forms.Padding(2);
             this.ShortCutValue1.Name = "ShortCutValue1";

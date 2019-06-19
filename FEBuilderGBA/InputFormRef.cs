@@ -8083,6 +8083,40 @@ namespace FEBuilderGBA
                         case 19: //19=リストから次を検索
                             InputFormRef.SearchNextByListBox(self);
                             break;
+                        case 20: //20=ユニット画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<UnitFE6Form>();
+                            }
+                            else if (Program.ROM.RomInfo.version() == 7)
+                            {
+                                InputFormRef.JumpForm<UnitFE7Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<UnitForm>();
+                            }
+                            break;
+                        case 21: //21=クラス画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<ClassFE6Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<ClassForm>();
+                            }
+                            break;
+                        case 22: //22=アイテム画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<ItemFE6Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<ItemForm>();
+                            }
+                            break;
                         case 0xFF: //未定義
                             R.ShowStopError("ショートカットキーの設定がされていません。\r\nメニューの、設定→オプションから、ショートカットキーを定義してください。");
                             break;
