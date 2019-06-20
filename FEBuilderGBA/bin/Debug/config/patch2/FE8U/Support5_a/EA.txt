@@ -2,12 +2,15 @@ PUSH
 
 //////残り会話数
 
-ORG	0x000A0F30
+ORG	0xA0F30
 #incbin "kaiwa.bin" //HINT=ASM
 
 ORG	0x28338
 WORD	$46874800   //jumptoHack_r0
 POIN	Support5
+
+ORG 0x028286
+BYTE 0x00 0x20
 
 //ORG 0xF161C //残り人数
 //#incbin "Text_0536.bin"  //HINT=BIN

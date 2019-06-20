@@ -1,0 +1,22 @@
+/////盗む可能条件(味方のみ)
+PUSH
+ORG	0x25BA0
+#incbin "nusumu.bin"
+POP
+/////盗むアイテム条件
+PUSH
+ORG	0x1706E
+BYTE	$C0 $46 $00 $48 $87 $46
+POIN	stealhack
+POP
+
+stealhack:
+ #incbin "steal.dmp"
+ALIGN 4
+
+
+/////盗む可能条件(敵？)
+PUSH
+
+
+POP
