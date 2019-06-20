@@ -36,4 +36,4 @@ EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	擦除�
 EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:items]擦除当前操作单元	{UNITPERSOLNAL}
 
 
-INFO.zh=我们将没收该单位的某些物品。
+INFO.zh=该补丁还没收该单位的某些物品。

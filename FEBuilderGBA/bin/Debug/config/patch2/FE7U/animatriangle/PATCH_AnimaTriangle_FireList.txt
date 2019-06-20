@@ -25,4 +25,4 @@ B0:ITEM.en=Item ID
 AUTHOR=Snakey1
 INFO=AnimaTriangleでFireに分類する武器を作ります。\r\nFireはThunderに弱く、FireはWindに強くなります。\r\n
 INFO.en=Make weapons to classify as Fire in AnimaTriangle.\r\nFire is weak against Thunder and Fire becomes strong against Wind.\r\n
-INFO.zh=我们将制作武器在AnimaTriangle中归类为Fire。\r\n火力对雷霆来说很弱，火力对抗强大。\r\n
+INFO.zh=该补丁还制作武器在AnimaTriangle中归类为Fire。\r\n火力对雷霆来说很弱，火力对抗强大。\r\n

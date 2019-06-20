@@ -13,7 +13,7 @@ AUTHOR=7743
 INFO=双聖器フラッシュを簡易設定できるようにします。\r\n指定したアイテムIDでフラッシュを表示できるようにします。
 INFO.en=Simple setting of "A Sacred Twin tome"\r\nEnables you to display the flash with the specified item ID.
 NAME.zh=神圣闪光的简化设置（介绍）
-INFO.zh=我们将更容易设置biloba冲洗。\r\n使您可以显示具有指定项目ID的闪存。
+INFO.zh=该补丁还更容易设置biloba冲洗。\r\n使您可以显示具有指定项目ID的闪存。
 
 DEPRECATED=1
 UPDATE_PATCH=..\SacredWeapons2\PATCH_weapon_battle_flash2_installer.txt

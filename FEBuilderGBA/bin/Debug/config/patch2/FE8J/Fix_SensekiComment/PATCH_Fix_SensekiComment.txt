@@ -14,5 +14,5 @@ EVENTSCRIPT:1.en=211A0000400D0000{$L1:Fix_SensekiComment.dmp}	Display Strategy e
 EVENTSCRIPT:1.zh=211A0000400D0000{$L1:Fix_SensekiComment.dmp}	显示捕获评估等级和性能评估	{ENDING}
 NAME.en=Add Event: Show Bonding Comment
 INFO.en=Unused Procs calling strategy evaluation's battle comment can not be executed because there is a problem with the calling convention.\r\nThis is a routine to correct this.\r\nWhen this patch is installed, the event command of the BK record comment will be effective.
-NAME.zh=我们将利用弓记录评论
+NAME.=该补丁还利用弓记录评论
 INFO.zh=未使用的Procs调用策略评估的战斗评论无法执行，因为调用约定存在问题。\r\n这是纠正此问题的常规方法。\r\n安装此修补程序后，BK记录注释的事件命令将生效。

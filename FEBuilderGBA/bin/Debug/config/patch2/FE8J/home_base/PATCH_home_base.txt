@@ -11,6 +11,6 @@ BIN:0x00023d1e=00023d1e.bin
 
 AUTHOR=aera
 INFO=拠点マップ(ディフォルトは、MAPID:0x39)以外では、支援をできないようにします。
-INFO.en=We will not be able to support other than the base camp (default: MAPID: 0x39).
+INFO.en=This patch also not be able to support other than the base camp (default: MAPID: 0x39).
 NAME.zh=基地补丁
-INFO.zh=我们将无法支持除基本映射之外的其他映射（默认值：MAPID：0x39）
+INFO.zh=该补丁还无法支持除基本映射之外的其他映射（默认值：MAPID：0x39）

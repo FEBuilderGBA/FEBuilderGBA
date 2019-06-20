@@ -12,4 +12,4 @@ INFO=以下の修正をします。\r\n杖の経験値は杖の重による。\r
 INFO.en=This Patch make the following corrections.\r\nStaff exp varies depends on staff's weight\r\nAmount healed depends on item/staff's might
 
 AUTHOR=Tequila
-INFO.zh=我们将进行以下更正。\r\n手杖的经验值取决于手杖的重量。\r\n恢复的量取决于手杖的力量。
+INFO.zh=该补丁还进行以下更正。\r\n手杖的经验值取决于手杖的重量。\r\n恢复的量取决于手杖的力量。
