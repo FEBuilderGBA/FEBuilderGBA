@@ -8,7 +8,14 @@ INFO=オートセーブ機能を削除します。
 INFO.en=Remove autosave.
 INFO.zh=关掉自动存档。
 
-TYPE=ADDR
+TYPE=BIN
 
-ADDRESS=0x154FE 0x1C318 0x1C89E 0x1D22C 0x2CDDE 0x31F06 0x377A2 0x39AF4
-COMBO=off|0 0 0 0
+PATCHED_IF:0x154FE=0x00 0x00 0x00 0x00
+BIN:0x154FE=nop4byte.bin
+BIN:0x1C318=nop4byte.bin
+BIN:0x1C89E=nop4byte.bin
+BIN:0x1D22C=nop4byte.bin
+BIN:0x2CDDE=nop4byte.bin
+BIN:0x31F06=nop4byte.bin
+BIN:0x377A2=nop4byte.bin
+BIN:0x39AF4=nop4byte.bin
