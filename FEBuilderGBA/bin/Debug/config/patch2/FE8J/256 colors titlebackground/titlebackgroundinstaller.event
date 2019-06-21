@@ -2,15 +2,6 @@
 
 	#include "Extensions/Hack Installation.txt" 
 
-//	ALIGN 4
-//	titlebackgroundimage:
-//	#incext compress "titlebackgroundimage.img.bin"
-//	
-//	ALIGN 4
-//	
-//	titlebackgroundpalette:
-//	#incext png2dmp "titlebackgroundimage.png" --palette-only
-//	
 	ALIGN 4
 	
 	titlebackgroundtsa:

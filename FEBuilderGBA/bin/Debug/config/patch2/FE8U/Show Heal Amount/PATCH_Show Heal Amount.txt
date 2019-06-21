@@ -14,3 +14,4 @@ TEXTADV:0xedc=0xedc.txt
 
 AUTHOR=Tequila
 NAME.=该补丁还用活杖显示恢复量
+NAME.zh=用活棒显示恢复量。

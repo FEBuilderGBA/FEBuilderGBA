@@ -99,7 +99,7 @@
   ALIGN 4
 
 NewPageNameGraphic:
-#incext Png2Dmp "MSS/pagenamegraphic.png" --lz77
+#incbin "MSS/pagenamegraphic.png.dmp"	//HINT=BIN
 
 ALIGN 4
 NewPageNameLayout:

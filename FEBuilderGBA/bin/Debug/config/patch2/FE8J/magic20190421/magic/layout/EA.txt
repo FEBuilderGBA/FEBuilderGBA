@@ -12,7 +12,7 @@ ORG 0x89670
 WORD $02003DEE
 
 ORG	0xA741A8
- #incext Png2Dmp Equipment8.png --lz77
+#incbin "Equipment8.png.dmp"	//HINT=BIN
 ORG 0x089348
     WORD $020040f8 //アイコン開始位置
     WORD 4 //アイコンの間隔

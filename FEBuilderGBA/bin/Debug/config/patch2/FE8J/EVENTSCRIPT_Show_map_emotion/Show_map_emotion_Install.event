@@ -22,60 +22,60 @@ BYTE $03 $00 $00 $00; WORD 0x0807AFE0+1 //Set Loop routine And Yield
 BYTE $00 $00 $00 $00 $00 $00 $00 $00 //Deletes self
 
 emotion01_umm:
-#incext Png2Dmp 01_umm_7743.png --lz77
+#incbin "01_umm_7743.png.dmp"	//HINT=BIN
 
 emotion02_heart:
-#incext Png2Dmp 02_heart_kenpuku.png --lz77
+#incbin "02_heart_kenpuku.png.dmp"	//HINT=BIN
 
 emotion03_nazo:
-#incext Png2Dmp 03_anger_kenpuku.png --lz77
+#incbin "03_anger_kenpuku.png.dmp"	//HINT=BIN
 
 emotion04_cold_sweat:
-#incext Png2Dmp 04_cold_sweat_kenpuku.png --lz77
+#incbin "04_cold_sweat_kenpuku.png.dmp"	//HINT=BIN
 
 emotion05_failed:
-#incext Png2Dmp 05_failed_kenpuku.png --lz77
+#incbin "05_failed_kenpuku.png.dmp"	//HINT=BIN
 
 emotion06_hatena:
-#incext Png2Dmp 06_hatena_kenpuku.png --lz77
+#incbin "06_hatena_kenpuku.png.dmp"	//HINT=BIN
 
 emotion07_inspiration:
-#incext Png2Dmp 07_inspiration_kenpuku.png --lz77
+#incbin "07_inspiration_kenpuku.png.dmp"	//HINT=BIN
 
 emotion08_lucky:
-#incext Png2Dmp 08_lucky_kenpuku.png --lz77
+#incbin "08_lucky_kenpuku.png.dmp"	//HINT=BIN
 
 emotion09_tenten:
-#incext Png2Dmp 09_tenten_kenpuku.png --lz77
+#incbin "09_tenten_kenpuku.png.dmp"	//HINT=BIN
 
 emotion10_zzz:
-#incext Png2Dmp 10_zzz_kenpuku.png --lz77
+#incbin "10_zzz_kenpuku.png.dmp"	//HINT=BIN
 
 emotion11_waiwai:
-#incext Png2Dmp 11_waiwai_kenpuku.png --lz77
+#incbin "11_waiwai_kenpuku.png.dmp"	//HINT=BIN
 
 emotion12_age:
-#incext Png2Dmp 12_age_kenpuku.png --lz77
+#incbin "12_age_kenpuku.png.dmp"	//HINT=BIN
 
 emotion13_sage:
-#incext Png2Dmp 13_sage_kenpuku.png --lz77
+#incbin "13_sage_kenpuku.png.dmp"	//HINT=BIN
 
 emotion14_blush:
-#incext Png2Dmp 14_blush_kenpuku.png --lz77
+#incbin "14_blush_kenpuku.png.dmp"	//HINT=BIN
 
 emotion15_gaan:
-#incext Png2Dmp 15_gaan_kenpuku.png --lz77
+#incbin "15_gaan_kenpuku.png.dmp"	//HINT=BIN
 
 emotion16_dollmark:
-#incext Png2Dmp 16_dollmark_kenpuku.png --lz77
+#incbin "16_dollmark_kenpuku.png.dmp"	//HINT=BIN
 
 emotion17_beer:
-#incext Png2Dmp 17_beer_kenpuku.png --lz77
+#incbin "17_beer_kenpuku.png.dmp"	//HINT=BIN
 
 
 ALIGN 4
 Show_map_emotion_Table:
-WORD 0x08A1E3D4 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00   //0=!É}Å[ÉNå¯â âπ
+WORD 0x08A1E3D4 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00   //0=!„Éû„Éº„ÇØÂäπÊûúÈü≥
 POIN emotion01_umm; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
 POIN emotion02_heart; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
 POIN emotion03_nazo; WORD 0x08A19580; POIN Show_map_emotion_Proc_without_SE; SHORT 0x77 0x00
