@@ -6818,7 +6818,7 @@ Change map style
 Edit Map
 
 :勝利BGMに変わる敵数
-Victory BGM(# Foes Left =)
+VictoryBGM(# Foes Left)
 
 :ワールドマップポイントY
 World map point Y
