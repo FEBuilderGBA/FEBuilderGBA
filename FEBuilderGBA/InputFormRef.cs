@@ -2643,6 +2643,16 @@ namespace FEBuilderGBA
                     return;
                 }
             }
+            if (linktype == "TILE")
+            {//ユニット名とリンク.
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    //タイル名の取得
+                    link_object.Text = MapTerrainNameForm.GetName((uint)src_object.Value);
+                };
+                return;
+            }
             
 #if DEBUG            
             throw new Exception("linkerror linktype(" + linktype + ") error  link_info:" + link_info.Name);

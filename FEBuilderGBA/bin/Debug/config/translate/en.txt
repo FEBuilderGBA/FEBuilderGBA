@@ -208,6 +208,12 @@ Bonus: Lethal damage + attacker's expected damage
 :標的AI
 Target AI
 
+:タイル
+tile.
+
+:AIの対象タイル
+Target tile of AI.
+
 :ユニット
 Unit
 
@@ -7090,6 +7096,9 @@ Player Phase BGM (Eliwood)
 :章タイトル画像2
 Chapter Title 2
 
+:開始イベント前に暗転
+Dark Before Initial Event
+
 :章タイトル文字(ヘクトル)
 Chapter Title Ch.(Hector)
 
@@ -7185,9 +7194,6 @@ Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
 
 :15=草原?
 15=Plains?
-
-:開始イベント前に暗転
-Dark Before Initial Event
 
 :マップ名2(X)
 Map Name 2 (X)

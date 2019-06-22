@@ -78,6 +78,7 @@ namespace FEBuilderGBA
             , PACKED_MEMORYSLOT //メモリスロットFE8 パック形式
             , POINTER_AIUNIT //AIで使用する ushort型のユニットリスト
             , POINTER_TEXT //C言語文字列表記 6Cで登場
+            , POINTER_AITILE //AIで使用するBYTE型タイルリスト
             , RAM_UNIT_STATE     //ユニットの状態変更 FE7->(01＝透明にする 02＝行動済みにする 03＝透明にした後行動済みにする)
             , WMAP_SPRITE_ID    //ワールドマップに表示するスプライト番号
             , EVBIT             //EVBIT FE8のみ
@@ -90,6 +91,7 @@ namespace FEBuilderGBA
             , BOOL              //BOOL値型
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
+            , TILE              //マップのタイル名
         };
 
         public class Arg
@@ -656,6 +658,9 @@ namespace FEBuilderGBA
              case "FSEC":
                  type = ArgType.FSEC;
                  break;
+             case "TILE":
+                 type = ArgType.TILE;
+                 break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
                  break;
@@ -676,6 +681,9 @@ namespace FEBuilderGBA
                  break;
              case "POINTER_AIUNIT":
                  type = ArgType.POINTER_AIUNIT;
+                 break;
+             case "POINTER_AITILE":
+                 type = ArgType.POINTER_AITILE;
                  break;
              case "POINTER_TEXT":
                  type = ArgType.POINTER_TEXT;

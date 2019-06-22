@@ -1930,6 +1930,12 @@
     <Compile Include="EventTemplate6Form.Designer.cs">
       <DependentUpon>EventTemplate6Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="AITilesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AITilesForm.Designer.cs">
+      <DependentUpon>AITilesForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2856,6 +2862,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventTemplate6Form.resx">
       <DependentUpon>EventTemplate6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AITilesForm.resx">
+      <DependentUpon>AITilesForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

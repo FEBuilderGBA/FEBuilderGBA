@@ -81,7 +81,6 @@ namespace FEBuilderGBA
         {
             if (!Program.ROM.RomInfo.is_multibyte())
             {
-                
                 string name = MapTerrainNameEngForm.GetName(id);
                 name = TextForm.StripAllCode(name);
                 return name;
@@ -99,6 +98,14 @@ namespace FEBuilderGBA
                 return "";
             }
             return Program.ROM.getString(c_addr);
+        }
+        public static string GetNameExcept00(uint id)
+        {
+            if (id == 0)
+            {
+                return "";
+            }
+            return GetName(id);
         }
 
         private void TextWriteButton_Click(object sender, EventArgs e)
