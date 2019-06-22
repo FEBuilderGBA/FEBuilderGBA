@@ -13,5 +13,5 @@ AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO=ターン開始にカーソルを合わせるユニットを、主人公ではなく、名簿の一番上のユニットにします。
 INFO.en=Place the cursor on the beginning of the turn as the top unit of the roster, not the hero.
-NAME.zh=使自动光标成为名单顶部的单位
-INFO.zh=将光标放置在回合的开始位置，作为名单的首要单位，而不是英雄。
+NAME.zh=使自动光标成为名单顶部的人物
+INFO.zh=将光标放置在回合的开始位置，作为名单的首要人物，而不是英雄。

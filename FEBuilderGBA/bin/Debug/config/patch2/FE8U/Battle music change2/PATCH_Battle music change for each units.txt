@@ -6,7 +6,7 @@ IF:0x726CA=0x00 0x00 0x00 0x4B 0x18 0x47
 
 INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。
 INFO.en=In order to use "Sound: Unique Battle Music Per Unit Installer" must be installed.\r\nThis editor modifies the new unit music list.\r\nAllows for custom battle music based on unit, chapter, battle anime, and event flags.\r\n
-INFO.zh=允许您以人物节为单位更改战斗中播放的音乐。
+INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。
 
 AUTHOR=7743
 

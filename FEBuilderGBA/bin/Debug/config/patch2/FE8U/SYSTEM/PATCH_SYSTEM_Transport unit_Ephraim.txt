@@ -1,6 +1,6 @@
 NAME=輸送隊ユニット エフラム編
 NAME.en=Ephraim Campaign Supply
-NAME.zh=运输单位 伊弗列姆故事
+NAME.zh=运输人物 伊弗列姆故事
 
 TYPE=ADDR
 TAG=#ENGINE

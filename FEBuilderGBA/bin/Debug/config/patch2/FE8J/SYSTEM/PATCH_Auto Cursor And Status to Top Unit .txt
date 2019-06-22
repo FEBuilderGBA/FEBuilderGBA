@@ -13,5 +13,5 @@ AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO=ターン開始にカーソルを合わせるユニットを、主人公ではなく、名簿の一番上のユニットにします。\r\nまた、ステータス画面に表示されるリーダーを、同じく、主人公ではなく、名簿の一番上のユニットにします。
 INFO.en=Toggles whether the ROM's autocursor seeks the first deployed unit or the first roster unit.\r\nBy default it seeks the first roster unit (Eirika/Ephraim).\r\n
-NAME.zh=使自动光标和状态屏幕成为列表顶部的单位
-INFO.zh=将光标放置在回合的开始位置，作为名单的首要单位，而不是英雄。\r\n此外，让状态屏幕上的领导者显示在名单的顶部单位而不是主角。
+NAME.zh=使自动光标和状态屏幕成为列表顶部的人物
+INFO.zh=将光标放置在回合的开始位置，作为名单的首要人物，而不是英雄。\r\n此外，让状态屏幕上的领导者显示在名单的顶部人物而不是主角。

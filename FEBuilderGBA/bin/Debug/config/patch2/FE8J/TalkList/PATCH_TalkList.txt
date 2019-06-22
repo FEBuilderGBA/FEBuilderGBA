@@ -11,5 +11,5 @@ INFO=会話ができるユニットを部隊一覧表に表示します。\r\n�
 AUTHOR=aera
 NAME.en=List the units that can talk
 INFO.en=The unit that can talk is displayed in the unit list.\r\nIt is a function that can confirm the unit with conversation like the trajectory wind of pheasant.
-NAME.zh=列出可以说话的单位
-INFO.zh=可以说话的单位显示在单位列表中。\r\n这是一个可以像野鸡的轨迹风那样通过对话来确认单位的功能。
+NAME.zh=列出可以说话的人物
+INFO.zh=可以说话的人物显示在人物列表中。\r\n这是一个可以像野鸡的轨迹风那样通过对话来确认人物的功能。

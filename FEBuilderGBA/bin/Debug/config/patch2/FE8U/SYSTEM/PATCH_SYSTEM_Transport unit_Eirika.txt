@@ -1,6 +1,6 @@
 NAME=輸送隊ユニット 序盤とエイリーク編
 NAME.en=Eirika Campaign Supply
-NAME.zh=运输单位 序章艾瑞克故事
+NAME.zh=运输人物 序章艾瑞克故事
 
 TYPE=ADDR
 TAG=#ENGINE

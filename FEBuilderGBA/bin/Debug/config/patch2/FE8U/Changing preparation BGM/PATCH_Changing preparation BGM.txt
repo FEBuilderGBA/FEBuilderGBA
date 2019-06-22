@@ -41,7 +41,7 @@ JUMP:0xCC6B6:$BL=0xB1D0C	//FE8U
 
 INFO=進撃準備画面で再生される曲を章単位で変更できるようにします。
 INFO.en=Patches the ROM to enable per-chapter preparation screen BGM via Chapter Editor byte 0x26.\r\nTo edit, enter the Chapter Editor and modify the Preparation BGM field.\r\nBy default this isn't set to a Prep BGM and must be changed throughout the ROM.\r\n
-INFO.zh=允许您以章节为单位更改在攻击提升屏幕上播放的歌曲。
+INFO.zh=允许您以章节为人物更改在攻击提升屏幕上播放的歌曲。
 
 AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/RePreparation 移植:7743
 AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/RePreparation端口:7743。

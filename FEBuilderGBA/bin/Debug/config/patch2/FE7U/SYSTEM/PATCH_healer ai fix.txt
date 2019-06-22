@@ -14,6 +14,6 @@ ONN:0x3AF0D=0xD2
 OFF:0x3AF0D=0xD8
 
 AUTHOR=Magrika is Now Canon Transport:7743
-NAME.zh=阻止他们治疗最大hp单位（治疗者ai修复）
+NAME.zh=阻止他们治疗最大hp人物（治疗者ai修复）
 
 INFO.en=Toggles whether to prevent healers from targeting full health units (patched) or not (default).\r\n

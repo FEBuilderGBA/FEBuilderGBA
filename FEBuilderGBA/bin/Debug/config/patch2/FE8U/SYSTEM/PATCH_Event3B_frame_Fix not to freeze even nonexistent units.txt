@@ -1,6 +1,6 @@
 NAME=命令0x3B_ユニットに枠_存在しないユニットでもフリーズさせない
 NAME.en=Prevent Freeze For Event 0x3B.
-NAME.zh=指令0x3B_框架中的单位_不冻结不存在的单位
+NAME.zh=指令0x3B_框架中的人物_不冻结不存在的人物
 
 //アドレスパッチとして実装します
 TYPE=ADDR

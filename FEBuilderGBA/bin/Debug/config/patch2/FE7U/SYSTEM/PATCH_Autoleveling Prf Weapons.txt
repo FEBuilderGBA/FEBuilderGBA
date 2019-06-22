@@ -16,4 +16,4 @@ COMBO.zh=default|0x0D 0x49|Prf Weapons also grows|0x00 0x21
 
 AUTHOR=Datagne http://feuniverse.us/t/fe8-psa-autoleveling-prf-weapons/4584
 NAME.zh=即使它是阶级成长的专用武器
-INFO.zh=在单位安排中，如果我们将其设定为阶级增长，则武器等级将是拥有物品的等级。但是，专有武器的武器等级不会增加。解决这个问题。
+INFO.zh=在人物安排中，如果我们将其设定为阶级增长，则武器等级将是拥有物品的等级。但是，专有武器的武器等级不会增加。解决这个问题。

@@ -11,6 +11,6 @@ COMBO=Lock|0x44 0x1C|Unlock|0xFF 0x24
 
 AUTHOR=出典:FE6解析資料
 AUTHOR.en=Source: FE 6 analysis material
-NAME.zh=额外单位的扩展
+NAME.zh=额外人物的扩展
 AUTHOR.zh=来源:FE 6分析资料
 

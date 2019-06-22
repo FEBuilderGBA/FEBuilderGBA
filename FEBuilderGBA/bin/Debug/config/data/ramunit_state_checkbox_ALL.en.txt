@@ -22,7 +22,7 @@
 23=Super Arena2	Use it with Super Arena Mode.
 24=Super Arena Mode	If this and either Super Arena1 0r Super Arena2 is set,\r\nactivates a "super arena" with harder enemies and glitchy alternate text if you enter the arena
 25=Not Deployed Last Chapter
-26=Unk26
+26=Waiting for FE7 OOBB
 27=Second portrait	Increase portrait index by 1
 28=Unk28
 //特性4

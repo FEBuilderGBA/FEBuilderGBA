@@ -32,8 +32,8 @@ EVENTSCRIPT:1.zh=400DXXYY{$L1:item_collect_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:I
 EVENTSCRIPT:2.zh=410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]从设备中删除SVAL1的项目(LOW)
 EVENTSCRIPT:3.zh=4B0D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:Item]清除SVALB坐标的项目将从设备中删除
 (LOW)
-EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	擦除坐标[ZZ:MAPX:X][WW:MAPY:Y]单位具有项目[YY:ITEM:Item]
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_collect_by_unit.dmp}	擦除坐标[ZZ:MAPX:X][WW:MAPY:Y]人物具有项目[YY:ITEM:Item]
 EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:item_collect_by_unit.dmp}	[YY:ITEM:items]擦除当前操作单元	{UNITPERSOLNAL}
 
 
-INFO.zh=该补丁还没收该单位的某些物品。
+INFO.zh=该补丁还没收该人物的某些物品。

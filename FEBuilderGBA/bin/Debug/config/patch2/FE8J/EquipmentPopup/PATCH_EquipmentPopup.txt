@@ -12,4 +12,4 @@ AUTHOR=aera
 NAME.en=Pop up equipment items
 INFO.en=On the map, when you move the cursor to the unit, it pops up the item name that is equipped, not the unit name.
 NAME.zh=弹出设备项目
-INFO.zh=在地图上，当您将光标移动到单位时，它会弹出配备的项目名称，而不是单位名称。
+INFO.zh=在地图上，当您将光标移动到人物时，它会弹出配备的项目名称，而不是人物名称。

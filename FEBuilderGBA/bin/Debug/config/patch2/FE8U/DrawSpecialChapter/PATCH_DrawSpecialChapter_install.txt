@@ -14,4 +14,4 @@ EA=DrawSpecialChapter.event
 NAME.en=Perform special chapter notation such as the last chapter (introduction).
 INFO.en=Assign a different name to a specific chapter so that it displays "End of Chapter" instead of "Chapter 21" where the ending clear turn count or where the unit's dead map is displayed.
 NAME.zh=执行特殊的章节表示法，例如最后一章（介绍）。
-INFO.zh=为特定章节指定不同的名称，以便显示“章节末尾”而不是“章节21”，其中结束清除转弯计数或显示单位的死图。
+INFO.zh=为特定章节指定不同的名称，以便显示“章节末尾”而不是“章节21”，其中结束清除转弯计数或显示人物的死图。
