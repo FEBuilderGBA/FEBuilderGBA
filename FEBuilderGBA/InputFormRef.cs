@@ -2601,7 +2601,8 @@ namespace FEBuilderGBA
             }
             if (linktype == "RAMUNITSTATE" 
                 || linktype == "ROMUNITPOINTER" 
-                || linktype == "ROMCLASSPOINTER" 
+                || linktype == "ROMCLASSPOINTER"
+                || linktype == "RAMUNITAID"
                 || linktype == "PatchImage"
                 || linktype == "AP"
                 )

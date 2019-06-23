@@ -300,7 +300,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler", "Tools");
-                    string url = "https://github.com/StanHash/lyn/releases/download/release0.2.5/lyn.exe";
+                    string url = "https://github.com/StanHash/lyn/releases/download/v2.5.2/lyn.exe";
                     string r = DownloadProgram_DirectOneFile(url, dir, "lyn.exe");
                     if (IsErrorResult(r))
                     {

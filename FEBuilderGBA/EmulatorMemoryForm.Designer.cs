@@ -326,7 +326,7 @@
             this.label66 = new System.Windows.Forms.Label();
             this.PARTY_B29 = new System.Windows.Forms.NumericUpDown();
             this.label65 = new System.Windows.Forms.Label();
-            this.PARTY_L_27_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.PARTY_RAMUNITAID = new FEBuilderGBA.TextBoxEx();
             this.PARTY_B27 = new System.Windows.Forms.NumericUpDown();
             this.label64 = new System.Windows.Forms.Label();
             this.PARTY_B26 = new System.Windows.Forms.NumericUpDown();
@@ -3407,7 +3407,7 @@
             this.panel3.Controls.Add(this.label66);
             this.panel3.Controls.Add(this.PARTY_B29);
             this.panel3.Controls.Add(this.label65);
-            this.panel3.Controls.Add(this.PARTY_L_27_UNIT);
+            this.panel3.Controls.Add(this.PARTY_RAMUNITAID);
             this.panel3.Controls.Add(this.PARTY_B27);
             this.panel3.Controls.Add(this.label64);
             this.panel3.Controls.Add(this.PARTY_B26);
@@ -4687,16 +4687,17 @@
             this.label65.Text = "移動＋";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PARTY_L_27_UNIT
+            // PARTY_RAMUNITAID
             // 
-            this.PARTY_L_27_UNIT.ErrorMessage = "";
-            this.PARTY_L_27_UNIT.Location = new System.Drawing.Point(605, 152);
-            this.PARTY_L_27_UNIT.Margin = new System.Windows.Forms.Padding(2);
-            this.PARTY_L_27_UNIT.Name = "PARTY_L_27_UNIT";
-            this.PARTY_L_27_UNIT.Placeholder = "";
-            this.PARTY_L_27_UNIT.ReadOnly = true;
-            this.PARTY_L_27_UNIT.Size = new System.Drawing.Size(157, 25);
-            this.PARTY_L_27_UNIT.TabIndex = 319;
+            this.PARTY_RAMUNITAID.ErrorMessage = "";
+            this.PARTY_RAMUNITAID.Location = new System.Drawing.Point(605, 152);
+            this.PARTY_RAMUNITAID.Margin = new System.Windows.Forms.Padding(2);
+            this.PARTY_RAMUNITAID.Name = "PARTY_RAMUNITAID";
+            this.PARTY_RAMUNITAID.Placeholder = "";
+            this.PARTY_RAMUNITAID.ReadOnly = true;
+            this.PARTY_RAMUNITAID.Size = new System.Drawing.Size(157, 25);
+            this.PARTY_RAMUNITAID.TabIndex = 319;
+            this.PARTY_RAMUNITAID.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_RAMUNITAID_MouseDoubleClick);
             // 
             // PARTY_B27
             // 
@@ -4888,6 +4889,7 @@
             this.PARTY_ROMCLASSPOINTER.ReadOnly = true;
             this.PARTY_ROMCLASSPOINTER.Size = new System.Drawing.Size(481, 25);
             this.PARTY_ROMCLASSPOINTER.TabIndex = 300;
+            this.PARTY_ROMCLASSPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMCLASSPOINTER_MouseDoubleClick);
             // 
             // PARTY_B10
             // 
@@ -5275,6 +5277,7 @@
             this.PARTY_ROMUNITPOINTER.ReadOnly = true;
             this.PARTY_ROMUNITPOINTER.Size = new System.Drawing.Size(481, 25);
             this.PARTY_ROMUNITPOINTER.TabIndex = 202;
+            this.PARTY_ROMUNITPOINTER.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PARTY_ROMUNITPOINTER_MouseDoubleClick);
             // 
             // PARTY_P0
             // 
@@ -6708,7 +6711,7 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.NumericUpDown PARTY_B27;
         private System.Windows.Forms.Label label64;
-        private TextBoxEx PARTY_L_27_UNIT;
+        private TextBoxEx PARTY_RAMUNITAID;
         private System.Windows.Forms.NumericUpDown PARTY_B28;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.NumericUpDown PARTY_B29;
