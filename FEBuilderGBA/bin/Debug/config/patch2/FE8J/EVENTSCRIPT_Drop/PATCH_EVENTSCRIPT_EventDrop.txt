@@ -1,6 +1,6 @@
 ﻿NAME=強制的に救出しているユニットを降ろします
 NAME.en=Add Event: Force drop to Event
-NAME.zh=强行救出该人物
+NAME.zh=强行放下该人物
 
 TYPE=BIN
 TAG=#EVENT

@@ -139,6 +139,8 @@
 402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
 422C0000XXXXXXXX	Load one unit[XXXXXXXX:POINTER_UNIT:Units](LOAD3)
 402C0100FFFFFFFF	Load reinforcement unit for internal processing(LOW)
+412C0100FFFFFFFF	Load unit for internal processing(LOAD2)(LOW)
+
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]
 40050B00XXXXYYYY2041ZZZZ	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y][ZZZZ:UNIT:Unit](LOW)
