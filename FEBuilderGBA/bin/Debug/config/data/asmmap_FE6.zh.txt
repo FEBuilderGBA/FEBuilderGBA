@@ -61,9 +61,9 @@
 0807030C	R菜单设置
 08018A88	加载地图调色板
 08018B00	映射调色板加载2
-0809E0B4	师往下（Div）
+0809E0B4	师往下(Div)
 0809DD00	RegisterRamReset
-0809DF4C	师往下（Div）
+0809DF4C	师往下(Div)
 
 
 0202AA57	フェイズ 0=你的军队，0x40 =友善，0x80 =敌军
@@ -450,13 +450,13 @@
 //https://doc.feuniverse.us/static/stan/HardcodedChecks.txt
 0802B788	Item checks for Magic Swords
 080169B6	IsItemCoveringRange	Item Table is read directly for range
-0203CD80	指向攻击者的单元数据的RAM指针（至02039214）	{J}
-0203CD7C	指向要攻击的单元数据的RAM指针（至02039290）	{J}
+0203CD80	指向攻击者的单元数据的RAM指针(至02039214)	{J}
+0203CD7C	指向要攻击的单元数据的RAM指针(至02039290)	{J}
 02039214	@Unit	复制攻击方的单位数据
 02039290	@Unit	攻击方的单位数据的副本
 
 02003108	Stat Screens StatScreenStruct
-08056DB4	战斗动画脚本C26（投掷盾牌）/ C27（投掷剑）指挥判断
+08056DB4	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断
 080478DC	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??
 08279d28	:08279e60	日本的地形符号
 08279e60	:0827a924	地形和字符的名字是用ASCII码输入的
@@ -752,9 +752,9 @@
 0806C578	是否拥有5000金币以上？
 0806BAA0	硬模式判断
 0806CFD0	ASM的BGM：2A演奏
-08012798	处理使BGM静音（1）
+08012798	处理使BGM静音(1)
 0806CFB8	在ASM的BGM：2 B演奏
-08012780	静音BGM的过程（2）
+08012780	静音BGM的过程(2)
 080127B0	使背景音乐[2A]在演奏中静音的过程
 0806D620	ch 14x设置脚手架
 0806D000	风雨如磐BGS

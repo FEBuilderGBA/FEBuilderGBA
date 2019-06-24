@@ -9,12 +9,12 @@
 @0080@001E	中途闭上眼睛[HalfCloseEyes]	{TOGGLE}
 @0080@001F	眨眼[Wink]	{TOGGLE}
 @0080@0020	显示武术名称[Tact]	{DISPLAY}
-@0080@0021	使文本变为红色（仅限系统消息）[ToggleRed]	{TOGGLE}
+@0080@0021	使文本变为红色(仅限系统消息)[ToggleRed]	{TOGGLE}
 @0080@0022	显示项目名称[项目]	{DISPLAY}
 @0080@0023	输入名称[SetName]	{CHOOSE}
 @0080@0024	显示军事名称2 [Tact 2]	{DISPLAY}
 @0080@0025	反转颜色[ToggleColorInvert]	{TOGGLE}
-@0001	我会打破界限（它与输入键的含义相同）[NL]	{LINEBREAK}
+@0001	我会打破界限(它与输入键的含义相同)[NL]	{LINEBREAK}
 @0002	删除气球中的所有文字[清除]	{LINEBREAK}
 @0002	两条线断了[2NL]	{LINEBREAK}
 @0003	我们等待玩家对serif feed的输入[A]	{LINEBREAK}
@@ -43,7 +43,7 @@
 @001B	是否继续在商店进行交易[ShopContinue]	{CHOOSE}
 @001C	SendToBack[SendToBack]	{CHOOSE}
 @001D	快速显示字符串2 [FastPrint2]	{SPEED}
-@001F	填写字符串边距（仅限英文版）[.]	{DISPLAY}
+@001F	填写字符串边距(仅限英文版)[.]	{DISPLAY}
 @0040	显示@ [@]	{DISPLAY}
 @0010	加载下一张肖像[LoadFace]	{MOVE_LOAD}
 @0080@000A	移到最左边[MoveFarLeft]	{MOVE_LOAD}
