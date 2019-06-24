@@ -4806,3 +4806,6 @@ and defeating an enemy.
 神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.\r\nSkill: Pass
 武器レベル	Weapon level
 ウェリネ	Verrine
+ロムファイア	Romfire
+ヴラスキャルヴ	Valaskjalf
+クライディレド	Creiddylad

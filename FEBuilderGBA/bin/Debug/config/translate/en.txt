@@ -9664,6 +9664,9 @@ The number of tracks exceeds 16 tracks. With GBA, you can only use songs of up t
 :.equは2つの引数が必要です.\r\n例: .equ name, value\r\n\r\nFile:{0} Line:{1}
 .equ requires two arguments ..\r\nExample: .equ name, value\r\n\r\nFile:{0} Line:{1}
 
+:説明:\r\n
+Description:.\r\n
+
 :global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
 global has been defined twice.
 

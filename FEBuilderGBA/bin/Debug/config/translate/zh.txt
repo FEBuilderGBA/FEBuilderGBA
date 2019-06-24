@@ -9664,6 +9664,9 @@ Midi头部缺失
 :.equは2つの引数が必要です.\r\n例: .equ name, value\r\n\r\nFile:{0} Line:{1}
 equ需要两个参数。\r\n例如：平等的名字，价值。\r\n\r\n文件：{0}行：{1}
 
+:説明:\r\n
+说明：。\r\n
+
 :global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
 全球已被定义两次。\r\n例如：全球AAA\r\n\r\n文件：{0}行：{1}
 
