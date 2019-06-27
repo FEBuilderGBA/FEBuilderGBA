@@ -9,6 +9,6 @@ TAG=#ENGINE
 ADDRESS=0x02BC2C
 COMBO=Default|0x00 0x16|Fix|0x00 0x0E
 
-AUTHOR=出典元:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-AUTHOR.zh=来源:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-AUTHOR.en=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR=7743 出典元:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.zh=7743 来源:https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
+AUTHOR.en=7743 https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

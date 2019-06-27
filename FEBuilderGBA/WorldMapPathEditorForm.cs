@@ -87,6 +87,11 @@ namespace FEBuilderGBA
                 return ;
             }
             uint p = Program.ROM.p32(addr+0);
+            if (!U.isSafetyOffset(p))
+            {
+                return;
+            }
+
             if (Program.ROM.u32(p) == 0x0)
             {//道データがnull 必須0x01 があるので 0はありえない
                 return;

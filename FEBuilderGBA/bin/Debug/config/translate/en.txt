@@ -10642,6 +10642,9 @@ Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 :ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
 The downloaded file could not be decompressed.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
+:ダウンロードしたファイルを開けませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+Could not open downloaded file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
+
 :ダウンロードしたファイルに目的のファイルがありません。\r\nPATH:{0}\r\nfindEXE:{1}
 There is no target file in the downloaded file.\r\nPATH: {0}.\r\nfindEXE: {1}.
 

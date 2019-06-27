@@ -9289,7 +9289,12 @@ namespace FEBuilderGBA
                 //ここには書き込めないため、新規領域を確保する.
                 newAddr = AppendBinaryData(image, undodata);
             }
-            else if (ImageFormRef.checkForceSeparationAddress(addr , forceSeparationAddress))
+            else if (!U.isSafetyOffset(U.toOffset(addr) + (uint)image.Length - 1))
+            {
+                //十分な余白がないので、新規拡張する必要がある.
+                newAddr = AppendBinaryData(image, undodata);
+            }
+            else if (ImageFormRef.checkForceSeparationAddress(addr, forceSeparationAddress))
             {//汎用TSAアドレスなので絶対に上書きしてはいけない
                 newAddr = AppendBinaryData(image, undodata);
             }

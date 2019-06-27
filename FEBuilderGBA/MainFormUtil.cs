@@ -1133,6 +1133,10 @@ namespace FEBuilderGBA
             {
                 R.ShowStopError(R.ExceptionToString(e));
             }
+            catch (System.IO.IOException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
+            }
 
             //ない
             return "";

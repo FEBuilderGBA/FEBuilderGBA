@@ -266,7 +266,6 @@ namespace FEBuilderGBA
                 }
                 else
                 {//10分割
-                    if (isPointerOnly == false)
                     {
                         uint imageSPZ = image;
                         for (int n = 0; n < 10; n++, imageSPZ += 4)
