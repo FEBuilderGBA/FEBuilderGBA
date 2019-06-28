@@ -6649,19 +6649,19 @@ namespace FEBuilderGBA
             switch (num)
             {
                 case 0x00:
-                    return R._("呼び出された親イベントに戻らないで終了する");///No Translate
+                    return R._("呼び出された親イベントに戻らないで終了する");
                 case 0x01:
                     return "?";///No Translate
                 case 0x02:
                     return R._("イベントスキップ中");
                 case 0x03:
-                    return R._("テキストスキップ中");///No Translate
+                    return R._("テキストスキップ中");
                 case 0x04:
-                    return R._("スタートボタンでのイベントスキップ防止");///No Translate
+                    return R._("スタートボタンでのイベントスキップ防止");
                 case 0x05:
-                    return R._("Bボタンでのテキストスキップ防止");///No Translate
+                    return R._("Bボタンでのテキストスキップ防止");
                 case 0x06:
-                    return R._("Aボタン等でのテキスト早送りを防止");///No Translate
+                    return R._("Aボタン等でのテキスト早送りを防止");
                 case 0x07:
                     return R._("フェードインを解除");
                 case 0x08:
@@ -9259,7 +9259,33 @@ namespace FEBuilderGBA
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = LZ77.getCompressedSize(Program.ROM.Data, addr);
+            UpdateLZ77Padding(ref aal);
+
             return aal;
+        }
+        public static void UpdateLZ77Padding(ref MoveToUnuseSpace.ADDR_AND_LENGTH aal)
+        {
+            if (U.isPadding4(aal.length))
+            {
+                return;
+            }
+            uint mod = aal.length % 4;
+            if (!U.isSafetyOffset(aal.addr + U.Padding4(aal.length) - 1))
+            {//ROM末尾を超えている
+                return;
+            }
+
+            for (uint i = 0; i < mod; i++)
+            {
+                uint addr = aal.addr + aal.length + i;
+                uint a = Program.ROM.u8(addr);
+                if (a != 0)
+                {//0ではないのでpaddingではない.
+                    return;
+                }
+            }
+            //最大値の算出しなおし.
+            aal.length = U.Padding4(aal.length);
         }
 
         //画像みたいなデータの書き込み.

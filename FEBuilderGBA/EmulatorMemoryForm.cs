@@ -2349,7 +2349,7 @@ namespace FEBuilderGBA
             v = Program.RAM.u8(ramPointer2);
             if ((v & 0x20) == 0x20)
             {
-                ret = ret | 0x20;//初めて
+                ret = ret | 0x20;//初めてではない
             }
 
             return ret;
@@ -2362,7 +2362,7 @@ namespace FEBuilderGBA
                 ret += R._("難易度:難しい");
                 ret += " ";
             }
-            if ((v & 0x20) == 0x20)
+            if ((v & 0x20) != 0x20)
             {
                 ret += R._("難易度:初めて");
                 ret += " ";
