@@ -11739,15 +11739,15 @@ namespace FEBuilderGBA
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
 
-                menuItem = new MenuItem("-");
-                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem("-");
+//                contextMenu.MenuItems.Add(menuItem);
 
-                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
-                contextMenu.MenuItems.Add(menuItem);
-                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
-                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
+//                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
+//                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
+//                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
+//                contextMenu.MenuItems.Add(menuItem);
             }
             if (useClear)
             {

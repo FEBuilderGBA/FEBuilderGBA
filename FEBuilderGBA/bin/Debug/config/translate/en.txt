@@ -10045,14 +10045,17 @@ This area is reserved as a string area for patches that extend the system.\r\nPl
 :以下のテキストにエラーがあります。\r\nエラーを修正して、「書き込み」ボタンを押してください。
 There is an error in the following text.\r\nCorrect the error and push "Write" button.
 
+:RAMエリアのため、書き込めません.
+Unable to write to RAM area.
+
+:テキストを書き込み中にエラーが発生しました。
+An error occurred while writing the text.
+
 :文字:{0}はシステムに登録されていません。
 The character: {0} is not registered in the system.
 
 :文字テーブル範囲外のため、書き込めません.
 Unable to write data because it is out of the character table range.
-
-:RAMエリアのため、書き込めません.
-Unable to write to RAM area.
 
 :ユニットの位置が0x08から0xFの範囲にありません。
 Unit position is not in the range 0x08 to 0xF.

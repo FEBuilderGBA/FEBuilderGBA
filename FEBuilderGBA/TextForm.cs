@@ -323,6 +323,12 @@ namespace FEBuilderGBA
             string text = GetEditorText(this.TextArea);
 
             uint textid = (uint)this.AddressList.SelectedIndex;
+            if (Is_RAMPointerArea(InputFormRef.BaseAddress, textid))
+            {
+                R.ShowStopError("RAMエリアのため、書き込めません." + U.To0xHexString(textid));
+                return;
+            }
+
             uint write_addr = WriteText(InputFormRef.BaseAddress
                 , InputFormRef.DataCount
                 , textid
@@ -330,6 +336,7 @@ namespace FEBuilderGBA
                 );
             if(write_addr == U.NOT_FOUND)
             {
+                R.ShowStopError("テキストを書き込み中にエラーが発生しました。" + U.To0xHexString(textid));
                 return;
             }
             InputFormRef.ReloadAddressList();

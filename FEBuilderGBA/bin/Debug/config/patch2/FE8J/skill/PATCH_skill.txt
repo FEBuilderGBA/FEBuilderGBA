@@ -96,6 +96,7 @@ TEXT:0x0e20=0x0e20.txt
 TEXT:0x0e21=0x0e21.txt
 TEXT:0x0e22=0x0e22.txt
 TEXT:0x0e23=0x0e23.txt
+//0xeff 予約
 
 INFO=aeraさんが作ったFE8Nからスキル機能だけを抜き出したものです。
 INFO.en=This is the one which extracted skill function only from FE8N made by aera.
