@@ -9270,14 +9270,15 @@ namespace FEBuilderGBA
                 return;
             }
             uint mod = aal.length % 4;
-            if (!U.isSafetyOffset(aal.addr + U.Padding4(aal.length) - 1))
-            {//ROM末尾を超えている
-                return;
-            }
 
             for (uint i = 0; i < mod; i++)
             {
                 uint addr = aal.addr + aal.length + i;
+                if (!U.isSafetyOffset(addr))
+                {//ROM末尾を超えている
+                    return;
+                }
+
                 uint a = Program.ROM.u8(addr);
                 if (a != 0)
                 {//0ではないのでpaddingではない.
