@@ -5,23 +5,26 @@ INFO=イベント「名前入力画面の呼び出し」で、入力できる名
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|9文字|ON9
+COMBO=default|OFF|8文字|ON8|9文字|ON9
 
 DETERMINATION_ADDRESS=0x044800
 
 //max name length
 OFF:0x44800=0x5
+ON8:0x44800=0x8
 ON9:0x44800=0x9
 
 //max cursor position
 OFF:0x482bA=0x5
+ON8:0x482bA=0x8
 ON9:0x482bA=0x9
 
 AUTHOR=circleseverywhere https://feuniverse.us/t/fe8-tactician-naming/2924
 
 NAME.en=Change the maximum value of the name input screen.
-INFO.en=In the event "call name input screen\
-COMBO.en=default|OFF|9 characters.|ON9
-NAME.zh=更改名称输入屏幕的最大值。
-INFO.zh=在“呼叫名称输入屏幕”中，将可输入的名称从5个字符更改为9个字符。
-COMBO.zh=default|OFF|9个字符。|ON9
+INFO.en=In the event "Call name input screen", change the name that can be input from 5 characters to 9 characters.
+
+COMBO.en=default|OFF|8 characters|ON8|9 characters|ON9
+NAME.zh=更改名称输入屏幕的最大值
+INFO.zh=在“呼叫姓名输入屏幕”中，将可输入的名称从5个字符更改为9个字符。
+COMBO.zh=default|OFF|8个字符|ON8|9个字符|ON9
