@@ -2152,6 +2152,7 @@ namespace FEBuilderGBA
             }
 
             EventScript.Script script = form.Script;
+            EventScript.SetDefaultFrameTo60(script);
 
             //選択した命令を代入
             byte[] selectedByteData = script.Data;
@@ -2160,7 +2161,6 @@ namespace FEBuilderGBA
 
             //イベントを逆アセンブルして確定する.
             OneLineDisassembler();
-
 
             //値1を自動選択
             if (ParamSrc1.Visible)

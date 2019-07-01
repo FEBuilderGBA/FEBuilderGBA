@@ -13,7 +13,7 @@ COMBO.zh=默认|0x06 0x20|修正|0x00 0x20
 
 AUTHOR=7743
 
-INFO=存在しないキャラクターへカメラを移動しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。
-INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, moving the camera to a nonexistent character with 0x26 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n
-NAME.zh=指令0x26_将摄像机移动到设备_不要冻结甚至不存在的设备
-INFO.zh=试图将相机移至不存在的角色将解决冻结问题。\r\n忽略对不存在的字符的命令。
+INFO=存在しないキャラクターへカメラを移動しようとすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。\r\n(CAM1,CAM2)
+INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, moving the camera to a nonexistent character with 0x26 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n(CAM1,CAM2)
+INFO.zh=试图将相机移至不存在的角色将解决冻结问题。\r\n忽略对不存在的字符的命令。\r\n(CAM1,CAM2)
+NAME.zh=命令0x26_Move Camera to Unit_不会冻结甚至不存在的单位。

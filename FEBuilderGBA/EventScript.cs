@@ -1623,5 +1623,26 @@ namespace FEBuilderGBA
             }
             return 0x0;
         }
+        public static void SetDefaultFrameTo60(EventScript.Script script)
+        {
+            for(int i = 0 ; i < script.Args.Length ; i++ )
+            {
+                if (script.Args[i].Type == ArgType.FSEC)
+                {
+                    if ( script.Args[i].Size == 1)
+                    {
+                        U.write_u8(script.Data, (uint)script.Args[i].Position, 60);
+                    }
+                    else if (script.Args[i].Size == 2)
+                    {
+                        U.write_u16(script.Data, (uint)script.Args[i].Position, 60);
+                    }
+                    else if (script.Args[i].Size == 4)
+                    {
+                        U.write_u32(script.Data, (uint)script.Args[i].Position, 60);
+                    }
+                }
+            }
+        }
     }
 }

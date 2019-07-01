@@ -2305,6 +2305,9 @@ Performs the specified wait processing.
 :この領域は利用できません
 Unable to use this area.
 
+:マップ{0}にMNC2で移動するには「Skip Worldmap」パッチが必要です。
+In order to move to map {0} with MNC2, the "Skip Worldmap" patch is required.
+
 :イベント「{0}」の先に多数の無効な命令が連続して現れました。\r\nイベントポインタが間違っている可能性があります。
 Many invalid commands appeared consecutively before the event "{0}".\r\nThe event pointer may be incorrect.
 

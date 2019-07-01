@@ -746,14 +746,44 @@ namespace FEBuilderGBA
             {//EVBIT
                 InputFormRef.GetEVBIT(v, out errormessage);
             }
-            else if (arg.Type == EventScript.ArgType.SCREENX || arg.Type == EventScript.ArgType.SCREENY)
+            else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
-                //NOP
+                if (code.Script.LowCode == "222AXXXX")
+                {//MNC2
+                    CheckMNC2(v, out errormessage);
+                }
             }
 
             return errormessage;
         }
 
+        public static void CheckMNC2(uint mapid,out string errormessage)
+        {
+            errormessage = "";
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return;
+            }
+            InputFormRef.mnc2_fix_enum mnc2fix = InputFormRef.SearchSkipWorldMapPatch();
+            if (mnc2fix != InputFormRef.mnc2_fix_enum.NO)
+            {//MNC2 Fixが導入されている
+                return;
+            }
+            switch(mapid)
+            {
+                case 0x02: case 0x03:case 0x04:
+                case 0x06: case 0x07:case 0x08:case 0x09:case 0x0A:case 0x0B:case 0x0D:case 0x0E:
+                case 0x10: case 0x11:case 0x12:case 0x13:case 0x14:
+                case 0x17: case 0x18:
+                case 0x1A: case 0x1B:case 0x1C:case 0x1D:case 0x1E:case 0x1F:case 0x20:case 0x21:
+                case 0x48: case 0x49:case 0x4A:case 0x4B:case 0x4C:case 0x4D:case 0x4E:
+
+                errormessage = R._("マップ{0}にMNC2で移動するには「Skip Worldmap」パッチが必要です。", U.To0xHexString(mapid));
+                return;
+            }
+
+            return;
+        }
 
         //有効なイベントかどうかテストする
         public static void CheckEnableEvenet(uint start_addr, bool isWorldMapEvent, List<FELint.ErrorSt> errors, List<uint> tracelist)
