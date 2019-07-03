@@ -10396,6 +10396,7 @@ namespace FEBuilderGBA
         public enum mnc2_fix_enum
         {
              NO             //なし
+           , Aera_Version   //aeraさんの作ったバージョン
            , OldFix         //古いルーチン
            , Stan_20190505  //Stanが2019/5/5 に提案した方式
            , NoCache = (int)NO_CACHE
@@ -10414,6 +10415,7 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="OldFix",	ver = "FE8J", addr = 0xc1e7c,data = new byte[]{0xB8, 0xE0}},
                 new PatchTableSt{ name="Stan_20190505",	ver = "FE8J", addr = 0x0F664,data = new byte[]{0x94, 0xF6, 0x00, 0x08}}, //NOT条件
+                new PatchTableSt{ name="Aera_Version" ,	ver = "FE8J", addr = 0xc03e0,data = new byte[]{0x01, 0x48, 0x80, 0x7B, 0x70, 0x47, 0x00, 0x00, 0xEC, 0xBC, 0x02, 0x02}},
                 new PatchTableSt{ name="OldFix",	ver = "FE8U", addr = 0xBD070,data = new byte[]{0xB8, 0xE0}},
                 new PatchTableSt{ name="Stan_20190505",	ver = "FE8U", addr = 0x0F464,data = new byte[]{0x98, 0xF4, 0x00, 0x08}}, //NOT条件
             };
@@ -10439,6 +10441,10 @@ namespace FEBuilderGBA
                 if (t.name == "OldFix")
                 {
                     return mnc2_fix_enum.OldFix;
+                }
+                if (t.name == "Aera_Version")
+                {
+                    return mnc2_fix_enum.Aera_Version;
                 }
             }
             return mnc2_fix_enum.NO;
