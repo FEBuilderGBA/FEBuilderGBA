@@ -1,0 +1,13 @@
+
+NAME=要追撃攻速差
+NAME.en=Changing the Universal Doubling Threshold(attack speend)
+NAME.zh=追击攻速差
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+
+ADDRESS=0x029518 0x02952A
+
+AUTHOR=aera

@@ -1352,3 +1352,5 @@
 0811A27C	&ROMPALETTEANIMEFRAME	efxopLightningBGPaletteAnimeFrame
 081ABCA0	&PALETTE16	efxLiveSomePalette
 080299BC	Arena.	Selection of opponents.
+08024B40	BattleCheckDoubling
+080172f8	GetItemWeaponEffect

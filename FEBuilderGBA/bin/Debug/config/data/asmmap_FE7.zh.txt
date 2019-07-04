@@ -4731,3 +4731,7 @@
 //This data is made with the aim of being readable by machine fast.
 0802EFE4	竞技场	选择对手	{J}
 0802EB18	竞技场	选择对手	{U}
+08034d44	GetCurrentPromotedLevelBonus	{J}
+0803486c	GetCurrentPromotedLevelBonus	{U}
+0801782c	GetItemWeaponEffect	{J}
+08017424	GetItemWeaponEffect	{U}
