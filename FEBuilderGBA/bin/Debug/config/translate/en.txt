@@ -4132,6 +4132,9 @@ The bottom
 :呼び出された親イベントに戻らないで終了する
 Exit without returning to called parent event.
 
+:キューに入っているイベント呼び出しを待機させる
+queued event engine calls will wait
+
 :イベントスキップ中
 scene-skipping
 
@@ -4155,6 +4158,15 @@ Fading in
 
 :カメラを主人公に固定
 Fix the camera to the main character
+
+:別の章に移動中(?)
+moving to another chapter (?)
+
+:ゲームモードを変更中(GAMECTRLフィールドの0x29を変化?)
+changing "game mode" (GAMECTRL field 0x29 was changed?)
+
+:グラフィックがイベントによってロック中(codes 0x23/0x24)
+set when the game graphics have been locked through events (codes 0x23/0x24)
 
 :霧無し
 No fog

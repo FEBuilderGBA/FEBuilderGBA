@@ -6651,7 +6651,7 @@ namespace FEBuilderGBA
                 case 0x00:
                     return R._("呼び出された親イベントに戻らないで終了する");
                 case 0x01:
-                    return "?";///No Translate
+                    return R._("キューに入っているイベント呼び出しを待機させる");
                 case 0x02:
                     return R._("イベントスキップ中");
                 case 0x03:
@@ -6669,11 +6669,11 @@ namespace FEBuilderGBA
                 case 0x09:
                     return R._("カメラを主人公に固定");
                 case 0x0A:
-                    return "?";///No Translate
+                    return R._("別の章に移動中(?)");
                 case 0x0B:
-                    return "?";///No Translate
+                    return R._("ゲームモードを変更中(GAMECTRLフィールドの0x29を変化?)");
                 case 0x0C:
-                    return "?";///No Translate
+                    return R._("グラフィックがイベントによってロック中(codes 0x23/0x24)");
                 case 0x0D:
                     return "?";///No Translate
                 case 0x0E:
