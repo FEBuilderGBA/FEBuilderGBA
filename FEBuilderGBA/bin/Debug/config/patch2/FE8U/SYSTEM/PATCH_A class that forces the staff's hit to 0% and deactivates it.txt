@@ -1,0 +1,19 @@
+
+NAME=杖の命中を強制的に0%にして、無効化するクラス
+NAME.en=These class force the staff to hit 0% and deactivate it
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002CD3C
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+
+INFO=これらのクラスは、スリープ、バサーク、サイレスの命中率の命中率を0%にします。\r\nディフォルトでは、0x66 魔王が設定されています。
+INFO.en=These class have a hit rate of 0% for Sleep, Berserk, and Silence. By default, 0x66 Deamon King.
+
+
+
+NAME.zh=强制甘蔗击中0％并停用它的类。
+INFO.zh=Sleep，Bataque和Siles的这些类的命中率为0％。\r\n默认情况下，设置为0x66。

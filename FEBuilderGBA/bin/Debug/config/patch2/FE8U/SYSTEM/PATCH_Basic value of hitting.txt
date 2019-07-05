@@ -10,5 +10,5 @@ ADDRESS=0x002cd30
 HEX=false
 
 INFO=杖の命中率の基礎値となる値を定義します。
-INFO.en=Define the value that will be the base value of the wand's hit rate.
+INFO.en=Define the value that will be the base value of the staff's hit rate.
 INFO.zh=定义将成为魔杖命中率基值的值。\r\n它用于狂暴，睡眠，沉默等。
