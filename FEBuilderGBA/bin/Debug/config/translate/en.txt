@@ -5270,7 +5270,7 @@ Create Report Issue
 End
 
 :実行
-Open
+Run
 
 :エミュレータで実行([F5])
 Run on Emulator 1 [F5]
@@ -5291,16 +5291,16 @@ Insert ASM/C
 Last Used File
 
 :プログラム1で開く
-Open in Program 1
+Run in Program 1
 
 :プログラム2で開く
-Open in Program 2
+Run in Program 2
 
 :プログラム3で開く
-Open in Program 3
+Run in Program 3
 
 :任意のプログラムで開く
-Open in External Program
+Run in External Program
 
 :ツール
 Tools
@@ -10604,7 +10604,7 @@ Dump tables, such as units, classes, items.
 Export of main table
 
 :インポートは、メニューの「実行」->「Event Assemblerで追加」で追加から実行してください。
-To import events in EA format, return to the main menu and navigate to "Open" -> "Insert Events Via Event Assembler."
+To import events in EA format, return to the main menu and navigate to "Run" -> "Insert Events Via Event Assembler."
 
 :エクスポート時にaddEndGuardsを付与する
 Add End Guards
