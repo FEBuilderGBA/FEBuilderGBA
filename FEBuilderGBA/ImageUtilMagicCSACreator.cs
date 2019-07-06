@@ -275,7 +275,15 @@ namespace FEBuilderGBA
             //int width = 264; //FEditorAdv
             //int height = 64;
             int width = 256 - 8 - 8;
-            int height = 160;
+            int height = ImageUtil.CalcHeight(width, bg_UZ.Length);
+            if (height >= 160)
+            {
+                height = 160;
+            }
+            else
+            {
+                height = 64;
+            }
             Bitmap retImage = ImageUtil.Blank(width, height, bgPalette, 0);
             
             Bitmap bg = ImageUtil.ByteToImage16Tile(width, height, bg_UZ, 0, bgPalette, 0, bgTSA_UZ, 0, 0);
@@ -1034,7 +1042,7 @@ namespace FEBuilderGBA
                 return null;
             }
 
-            magic_animedata = oam.MakeMagicAnime(imagefilename, true);
+            magic_animedata = oam.MakeMagicAnime(imagefilename);
             if (magic_animedata == null)
             {
                 errormessage = oam.ErrorMessage;

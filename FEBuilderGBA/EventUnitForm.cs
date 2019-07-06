@@ -112,7 +112,7 @@ namespace FEBuilderGBA
                 combo.Items.Add(AI1[i].Name);
             }
             combo.EndUpdate();
-            combo.SelectedIndex = 0;
+            U.SelectedIndexSafety(combo, 0);
         }
         public static void AI2ToCombo(ComboBox combo)
         {
@@ -123,7 +123,7 @@ namespace FEBuilderGBA
                 combo.Items.Add(AI2[i].Name);
             }
             combo.EndUpdate();
-            combo.SelectedIndex = 0;
+            U.SelectedIndexSafety(combo, 0);
         }
         public static void AI3ToCombo(ComboBox combo)
         {
@@ -134,7 +134,7 @@ namespace FEBuilderGBA
                 combo.Items.Add(AI3[i].Name);
             }
             combo.EndUpdate();
-            combo.SelectedIndex = 0;
+            U.SelectedIndexSafety(combo, 0);
         }
 
         public InputFormRef InputFormRef;
@@ -2464,8 +2464,6 @@ namespace FEBuilderGBA
                 X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
             }
         }
-
-
     }
 
 }

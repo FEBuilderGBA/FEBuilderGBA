@@ -20,7 +20,7 @@ AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:
 
 
 INFO=杖の命中率の基礎値となる値を定義します。\r\nバーサク、スリープ、サイレスなどで利用されます。
-INFO.en=Define the value that will be the base value of the wand's hit rate.
+INFO.en=Define the value that will be the base value of the staff's hit rate.
 
 
 

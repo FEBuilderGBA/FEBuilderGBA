@@ -1,0 +1,13 @@
+NAME=マムクートのパレット(ドラゴンに変身したした時のユニットのパレット)
+NAME.en=ManaketePalette(Pallet of the unit when transform dragon)
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=32
+HEIGHT=488
+
+ZIMAGE_POINTER=0x9A2E68//0x1C95B4
+PALETTE_POINTER=0x07ACA8//0x9A8F74
+KEEPIMAGE=true
+NAME.zh=Mamkuto的调色板（转换成龙时的人物调色板）。

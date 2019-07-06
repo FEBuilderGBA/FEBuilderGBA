@@ -33,35 +33,35 @@
 080A4350	功能写清转	r0=202bcec固定？	{U}
 08002c30	6C结构脚本加载	r0=6 C结构地址=6CSTRUCT	r1=未知	{J}
 08002CE0	6C结构脚本加载	r0=6 C结构地址=6CSTRUCT	r1=未知	{U}
-08000d68	调色板读入	r0=调色板地址=PAL	r1=转发目的地	r2=大小（全部为0x20）	{J}
-08000DB8	调色板读入	r0=调色板地址=PAL	r1=转发目的地	r2=大小（全部为0x20）	{U}
+08000d68	调色板读入	r0=调色板地址=PAL	r1=转发目的地	r2=大小(全部为0x20)	{J}
+08000DB8	调色板读入	r0=调色板地址=PAL	r1=转发目的地	r2=大小(全部为0x20)	{U}
 08013008	LZ77压缩数据的解压缩	r0=压缩数据	r1=提取位置	{J}
 08012f50	LZ77压缩数据的解压缩	r0=压缩数据	r1=提取位置	{U}
 080dc0dc	未压缩的TSA读数	        r0=未知 r1=未压缩的TSA	r2=未知	r3=未知	{J}
 080D7498	未压缩的TSA读数 	r0=未知	r1=未压缩的TSA	r2=未知	r3=未知	{U}
 08008914	在对话@0080@0005中写下你可以参考的号码	r0=你想要显示的号码	{J}
 08008A18	在对话@0080@0005中写下你可以参考的号码	r0=你想要显示的号码	{U}
-08002424	开关背景音乐（最高）	r0=BGM号码=MUSIC	r1=未知	{J}
-080024D4	开关背景音乐（最高）	r0=BGM号码=MUSIC	r1=未知	{U}
-080023C8	开关背景音乐（添加当前背景音乐）	r0=BGM号码=MUSIC	r1=未知	r2=未知	{J}
-08002478	开关背景音乐（添加当前背景音乐）	r0=BGM号码=MUSIC	r1=未知	r2=未知	{U}
-08002398	开关BGM（低层）	r0=BGM号码=MUSIC	{J}
-08002448	开关BGM（低层）	r0=BGM号码=MUSIC	{U}
-08002434 	开关BGM（另一个命令第1部分）	r0=BGM号码=MUSIC	{J}
-080024E4	开关BGM（另一个命令第1部分）	r0=BGM号码=MUSIC	{U}
-08073f38	开关BGM（另一个命令第2部分）	r0=背景音乐编号=MUSIC	{J}
-08071A54	开关BGM（另一个命令第2部分）	r0=BGM号码=MUSIC	{U}
-08002938	开关BGM（另一个命令第3部分）	r0=背景音乐编号=MUSIC	r1=神秘	r2=神秘	{J}
-080029E8	开关BGM（另一个命令第3部分）	r0=背景音乐编号=MUSIC	r1=神秘	r2=神秘	{U}
-0800290c	开关BGM（另一个命令第4部分）	r0=BGM番号:MUSIC	r1=謎	{J}
-080029BC	开关BGM（另一个命令第4部分）	r0=BGM番号:MUSIC	r1=謎	{U}
+08002424	开关背景音乐(最高)	r0=BGM号码=MUSIC	r1=未知	{J}
+080024D4	开关背景音乐(最高)	r0=BGM号码=MUSIC	r1=未知	{U}
+080023C8	开关背景音乐(添加当前背景音乐)	r0=BGM号码=MUSIC	r1=未知	r2=未知	{J}
+08002478	开关背景音乐(添加当前背景音乐)	r0=BGM号码=MUSIC	r1=未知	r2=未知	{U}
+08002398	开关BGM(低层)	r0=BGM号码=MUSIC	{J}
+08002448	开关BGM(低层)	r0=BGM号码=MUSIC	{U}
+08002434 	开关BGM(另一个命令第1部分)	r0=BGM号码=MUSIC	{J}
+080024E4	开关BGM(另一个命令第1部分)	r0=BGM号码=MUSIC	{U}
+08073f38	开关BGM(另一个命令第2部分)	r0=背景音乐编号=MUSIC	{J}
+08071A54	开关BGM(另一个命令第2部分)	r0=BGM号码=MUSIC	{U}
+08002938	开关BGM(另一个命令第3部分)	r0=背景音乐编号=MUSIC	r1=神秘	r2=神秘	{J}
+080029E8	开关BGM(另一个命令第3部分)	r0=背景音乐编号=MUSIC	r1=神秘	r2=神秘	{U}
+0800290c	开关BGM(另一个命令第4部分)	r0=BGM番号:MUSIC	r1=謎	{J}
+080029BC	开关BGM(另一个命令第4部分)	r0=BGM番号:MUSIC	r1=謎	{U}
 
 080d6A4C	vsprintf	{J}
 080D2F7C	vsprintf	{U}
-08088830	切换到EiLiK版本（在Verni出现之后）	{J}
+08088830	切换到EiLiK版本(在Verni出现之后)	{J}
 0808884c	切换到Efram版本	{J}
 02024CC2	钥匙是否被按下。未按= 0x0C按下时是否从0x02开始计数？ 	{J}
-02024CC4	在按键的同时存储密钥代码（位）答=0x0100B=0x0200选择=0x0400开始=0x0800右=0x1000左=0x2000上面=0x4000低=0x8000L=0x0001R=0x0002	{J}
+02024CC4	在按键的同时存储密钥代码(位)答=0x0100B=0x0200选择=0x0400开始=0x0800右=0x1000左=0x2000上面=0x4000低=0x8000L=0x0001R=0x0002	{J}
 02024CC6	它与02024 CC4相同，但更新周期短	{J}
 02024CCA	在按键的同时保存密钥与02024 CC4相同	{J}
 02024CCC	永久存储上次按下的按键代码	{J}
@@ -86,15 +86,15 @@
 0202BD2E	CONFIG设置动漫设置难度系数	{J}
 0203A818	运输部队的内容	{J}
 0203E890	数丢失被打败的号码ID为0x1	{J}
-0203E89B	胜数ID 0 x 1（低8位）的胜数	{J}
-0203E89B	胜利次数+战斗次数ID 0 x 1（高2位）+战斗号码<<2	{J}
+0203E89B	胜数ID 0 x 1(低8位)的胜数	{J}
+0203E89B	胜利次数+战斗次数ID 0 x 1(高2位)+战斗号码<<2	{J}
 0203E8A0	赢或输ID 0x2高达0x45	{J}
 0203ECF0	前言章节ID和圈数匝数<<7+章节ID	{J}
-0203ECF2	介绍的结算时间包括清除时间（秒）	{J}
+0203ECF2	介绍的结算时间包括清除时间(秒)	{J}
 0300007C	数字如价格在句子中@0080@0005你可以进入的数字	{J}
 03005315	道路数据道路数据显示在屏幕上	{J}
 03005260	旗0x01至0x28	{J}
-03001C78	正在执行的事件地址？（除开始事件外）	{J}
+03001C78	正在执行的事件地址？(除开始事件外)	{J}
 0202B6A8	最后的字符串ID	{J}
 0202B6AC	最后的字符串ID	{U}
 03004df0	&Unit	指向操作角色的工作内存	{J}
@@ -206,12 +206,12 @@
 0801965c	映射调色板加载2	{J}
 08019984	映射调色板加载2	{U}
 080D18C4	goto r1	{U}
-0800290c	开关BGM（另一个命令第4部分）	void	r0=背景音乐编号=MUSIC	r1=神秘	{J}
-080029BC	开关BGM（另一个命令第4部分）	void	r0=背景音乐编号=MUSIC	r1=神秘	{U}
-08002af4	字符串处理（反霍夫曼目标1）	{J}
-08002BA4	字符串处理（反霍夫曼目标1）	{U}
-08009fa8	字符串处理（反霍夫曼目标2）	{J}
-0800A240	字符串处理（反霍夫曼目标2）	{U}
+0800290c	开关BGM(另一个命令第4部分)	void	r0=背景音乐编号=MUSIC	r1=神秘	{J}
+080029BC	开关BGM(另一个命令第4部分)	void	r0=背景音乐编号=MUSIC	r1=神秘	{U}
+08002af4	字符串处理(反霍夫曼目标1)	{J}
+08002BA4	字符串处理(反霍夫曼目标1)	{U}
+08009fa8	字符串处理(反霍夫曼目标2)	{J}
+0800A240	字符串处理(反霍夫曼目标2)	{U}
 08003054	与6CStruct的执行相关的进程	{J}
 08003104	与6CStruct的执行相关的进程	{U}
 080040fa	未知的字符的心脏字符	{J}
@@ -257,12 +257,12 @@
 08031800	决定在竞技场的武器更正？	{J}
 080318B4	决定在竞技场的武器更正？	{U}
 0203A8F9	对手在场馆的武器更正	{J}
-03007d7c	竞技场内对手的武器（确定数据）	{J}
-080D67D0	师往下（Div）	{J}
-080D1AD4	师往下（Div）	{U}
+03007d7c	竞技场内对手的武器(确定数据)	{J}
+080D67D0	师往下(Div)	{J}
+080D1AD4	师往下(Div)	{U}
 080D16AC	RegisterRamReset	{U}
-080D65F8	师往下（Div）	{J}
-080D18FC	2区往下（Div）	{U}
+080D65F8	师往下(Div)	{J}
+080D18FC	2区往下(Div)	{U}
 08031B0C	排列在领域的武器	{J}
 08031BC0	排列在领域的武器	{U}
 0807ee68	在战斗中获得角色MISS	{J}
@@ -270,8 +270,8 @@
 0807CB24	在战斗中获得角色MISS	{J}
 0807CB24	没有在战斗获得角色伤害	{J}
 
-08080D68	调色板读入	void	r0=调色板地址:PAL	r1=转发目的地	r2=大小（全部为0x20）	{J}
-08080DB8	调色板读入	void	r0=调色板地址:PAL	r1=转发目的地	r2=大小（全部为0x20）	{U}
+08080D68	调色板读入	void	r0=调色板地址:PAL	r1=转发目的地	r2=大小(全部为0x20)	{J}
+08080DB8	调色板读入	void	r0=调色板地址:PAL	r1=转发目的地	r2=大小(全部为0x20)	{U}
 0203A81C	运输部队的内容	{U}
 08031504	指向运输队的内容	{J}
 08031524	指向运输队的内容	{U}
@@ -422,7 +422,7 @@
 02003CB4	@StatusMenuText	Rng	{U}
 02003CCC	@StatusMenuText	Crit	{U}
 02003CD4	@StatusMenuText	Avoid	{U}
-03001C80	正在执行的事件地址？（除开始事件外）	{U}
+03001C80	正在执行的事件地址？(除开始事件外)	{U}
 804FA3C	NewMenu Constructs Menu	6C	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=geometry	r2=background BG index	r3=tile related thing? (stored to field 0x66)	{J}
 804ECB0	NewMenu Constructs Menu	6C	E_Menu 6C pointer	r0=pointer to Menu Definition	r1=geometry	r2=background BG index	r3=tile related thing? (stored to field 0x66)	{U}
 804F970	NewMenu_Default Constructs Menu	6C, BG1 is background, BG0 is foreground, no parent 6C, default geometry, default everything	E_Menu 6C pointer	r0=pointer to Menu Definition	{J}
@@ -1868,12 +1868,12 @@ r3=X tile position of menu of the right	{U}
 08858288	UnitsID:0	{J}
 0802FFAC	阅读地图瓦片动画	{J}
 0803005C	阅读地图瓦片动画	{U}
-0802FFF4	阅读地图瓷砖动画2（调色板动画）		{J}
-080300A4	阅读地图瓷砖动画2（调色板动画）		{U}
-0203E188	指向攻击者的单元数据的RAM指针（0203a568(左) or 0203a4e8(右)）	{J}
-0203E18C	指向攻击者的单元数据的RAM指针（0203A56C(左) or 0203A4EC(右)）	{U}
-0203E184	RAM指向单元数据的攻击方（0203a568(左) or 0203a4e8(右)）	{J}
-0203E188	RAM指向单元数据的攻击方（0203A56C(左) or 0203A4EC(右)）	{U}
+0802FFF4	阅读地图瓷砖动画2(调色板动画)		{J}
+080300A4	阅读地图瓷砖动画2(调色板动画)		{U}
+0203E188	指向攻击者的单元数据的RAM指针(0203a568(左) or 0203a4e8(右))	{J}
+0203E18C	指向攻击者的单元数据的RAM指针(0203A56C(左) or 0203A4EC(右))	{U}
+0203E184	RAM指向单元数据的攻击方(0203a568(左) or 0203a4e8(右))	{J}
+0203E188	RAM指向单元数据的攻击方(0203A56C(左) or 0203A4EC(右))	{U}
 @BattleUnit@00	@Unit	CopyUnit
 @BattleUnit@48	short	weapon
 @BattleUnit@4A	short	weaponBefore
@@ -1956,8 +1956,8 @@ r3=X tile position of menu of the right	{U}
 
 
 
-0806EFB8	战斗动画脚本C26（投掷盾牌）/ C27（投掷剑）指挥判断	{J}
-0806CC94	战斗动画脚本C26（投掷盾牌）/ C27（投掷剑）指挥判断	{U}
+0806EFB8	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{J}
+0806CC94	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{U}
 080564F0	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??	{J}
 08055554	瓷砖的特殊运动？从C26 / C27调用	r1=指针数组1	r2=指针数组1	r3=??	{U}
 081B16E0	:081B1878	日本的地形符号	{J}
@@ -1990,8 +1990,8 @@ r3=X tile position of menu of the right	{U}
 0804F8F4	LoadNewUIGraphics	{J}
 0800D1F8	SetEventSlotC	{U}
 0800D4BC	SetEventSlotC	{J}
-080d4f0C	音效回放（追踪音效回放时发现）	{J}
-080D0214	音效回放（追踪音效回放时发现）	{U}
+080d4f0C	音效回放(追踪音效回放时发现)	{J}
+080D0214	音效回放(追踪音效回放时发现)	{U}
 08031450	指向运输队的内容	{J}
 0803144c	运输车的基地址	{J}
 08031500	运输车的基地址	{U}
@@ -6746,9 +6746,9 @@ r3=X tile position of menu of the right	{U}
 0203A608	current round pointer	{U}
 08080138	入侵圣石的动画	{U}
 08082478	入侵圣石的动画	{J}
-0880D270	:0880D373	指向地形日文名称数据的指针（未使用的数据）	{U}
-088ADFB0	:088AEBAB	指向字符和类名的字母表示（用于调试？）	{U}
-0890253C	:08903137	指向字符和类名的字母表示（用于调试？）	{J}
+0880D270	:0880D373	指向地形日文名称数据的指针(未使用的数据)	{U}
+088ADFB0	:088AEBAB	指向字符和类名的字母表示(用于调试？)	{U}
+0890253C	:08903137	指向字符和类名的字母表示(用于调试？)	{J}
 085A0838	&HEADERTSA	面对图像相关的瓷砖	{U}
 085A08F0	&HEADERTSA	平铺FillTileRect的东西	01	{U}
 08A0AE84	&HEADERTSA	平铺FillTileRect的东西	02	{U}
@@ -7222,20 +7222,20 @@ r3=X tile position of menu of the right	{U}
 0806FA28	GetSomeBattleAISStruct	{U}
 08072034	SpecialBattleBackgoundChange	{J}
 0806FA84	SpecialBattleBackgoundChange	{U}
-08070B68	激活防御技能（大盾）	{J}
-0806E58C	激活防御技能（大盾）	{U}
-08070918	攻击技巧（必中）	{J}
-0806E310	攻击技巧（必中）	{U}
+08070B68	激活防御技能(大盾)	{J}
+0806E58C	激活防御技能(大盾)	{U}
+08070918	攻击技巧(必中)	{J}
+0806E310	攻击技巧(必中)	{U}
 
 0203AABE	:0203AABF	在转换补丁中使用它	{J}
 0203AB10	:0203AB20	预留太阳能补丁	它似乎被用于太阳能补丁	{J}
 0203AB20	:0203AB24	太阳旗	它似乎被用于太阳能补丁	{J}
 0203AB40	:0203AB44	技能动画显示	用作技能动画显示的工作记忆	{J}
-0203AB48	:0203AD3C	膨胀运输车	用作修补程序来扩展运输者250件（250 * 2 = 500字节）	{J}
+0203AB48	:0203AD3C	膨胀运输车	用作修补程序来扩展运输者250件(250 * 2 = 500字节)	{J}
 0203AFF0	:0203AFFF	UnitSelectSFX补丁	选择单位时用作音色重现声音	{J}
 0203AD0C	他们似乎在不断尝试技能	{J}
 0203AABE	:0203AABF	FE8-Battle Transform	{U}
-0203B200	:0203B38F	膨胀运输车	用作修补程序来扩展运输者200件（200 * 2 = 400字节）	{U}
+0203B200	:0203B38F	膨胀运输车	用作修补程序来扩展运输者200件(200 * 2 = 400字节)	{U}
 0203B1F0	:0203B1FF	UnitSelectSFX补丁	选择单位时用作音色重现声音	{U}
 0203AAC0	:0203ABB7	Battle Buffer expansion (Skill System)(0xF8 bytes)	{U}
 0203ED40	:0203EF00	(Where debuffs for the skill system begin)Debuff glitch fix(Skill system)	{U}
@@ -9535,9 +9535,9 @@ r3=X tile position of menu of the right	{U}
 08097F30	检索推进屏幕的章节号的图像	{J}
 08098DA0	在攻击推进屏幕上获取当前章节ID	{J}
 08098C3C	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	{J}
-08098C84	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（章ID）	{J}
-08098C98	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（塔）	{J}
-08098CAC	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（废墟）	{J}
+08098C84	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(章ID)	{J}
+08098C98	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(塔)	{J}
+08098CAC	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(废墟)	{J}
 08098CC0	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(Extra)	{J}
 080C572C	确定它是否是免费的ExtraMap地图	{U}
 08095A44	绘制攻击推进屏幕右上角的目的	{U}
@@ -9548,9 +9548,9 @@ r3=X tile position of menu of the right	{U}
 08095C50	检索推进屏幕的章节号的图像	{U}
 08096ABC	在攻击推进屏幕上获取当前章节ID	{U}
 08096958	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	{U}
-080969A0	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（章ID）	{U}
-080969B4	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（塔）	{U}
-080969C8	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	（废墟）	{U}
+080969A0	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(章ID)	{U}
+080969B4	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(塔)	{U}
+080969C8	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(废墟)	{U}
 080969DC	在进度准备屏幕上注册并显示当前章节ID的图像为Obj	(Extra)	{U}
 080C0960	确定它是否是免费的ExtraMap地图	{U}
 
@@ -11603,11 +11603,11 @@ r3=X tile position of menu of the right	{U}
 080034A0	FindFirstChild6C	枚举指定的Procs或更少	{U}
 080BEEE8	IsWordMap	{J}
 08074B88	确定战斗BG​​M	{J}
-08002570	切换BGM（另一个命令第5部分）	r0=BGM号码：MUSIC	{J}
+08002570	切换BGM(另一个命令第5部分)	r0=BGM号码：MUSIC	{J}
 08074DAC	获取BossBGM	{J}
 080BA054	IsWordMap	{U}
 080726AC	确定战斗BG​​M	{U}
-08002620	切换BGM（另一个命令第5部分）	r0=BGM号码：MUSIC	{U}
+08002620	切换BGM(另一个命令第5部分)	r0=BGM号码：MUSIC	{U}
 080728D0	获取BossBGM	{U}
 080976FC	CanCharacterBePrepSwap	{J}
 08089100	DrawsTextAndNumbersOnLeftSideOfStatusScreen	(unit name, class, level, experience)	{J}
@@ -11632,8 +11632,8 @@ r3=X tile position of menu of the right	{U}
 08023514	当我选择随餐菜单时	列出所有物品清单	{J}
 08073CE8	显示升级屏幕	{U}
 08076170	显示升级屏幕	{J}
-080BBF78	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{J}
-080B74CC	切换BGM（另一个命令No.6）	r0=BGM号码：MUSIC	{U}
+080BBF78	切换BGM(另一个命令No.6)	r0=BGM号码：MUSIC	{J}
+080B74CC	切换BGM(另一个命令No.6)	r0=BGM号码：MUSIC	{U}
 08021668	在事件效果结束时重绘地图	{U}
 08021360	在事件效果结束时重绘地图	{J}
 02017728	gBattleAnimeCounter
@@ -11763,12 +11763,12 @@ r3=X tile position of menu of the right	{U}
 08086900	标志0x82的状态获取	{J}
 08050ABC	设置“战斗4字节的未知标志”的值	{J}
 08050AC8	获得“战斗4字节的未知标志”	{J}
-08059938	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{J}
+08059938	是项目ID判断0x85还是0x92？	Sigelinde(0x85)和Sigmund(0x92)	{J}
 08084628	打开标志0x82	{U}
 08084634	标志0x82的状态获取	{U}
 0804FD48	设置“战斗4字节的未知标志”的值	{U}
 0804FD54	获得“战斗4字节的未知标志”	{U}
-08058B08	是项目ID判断0x85还是0x92？	Sigelinde（0x85）和Sigmund（0x92）	{U}
+08058B08	是项目ID判断0x85还是0x92？	Sigelinde(0x85)和Sigmund(0x92)	{U}
 080B38B4	SoundRoom	% Completion modifier 1 (Changed from 100% to 75%)	{J}
 080B38D4	SoundRoom	% Completion modifier 2 (Changed from 100% to 86% combined with the previous, 120% alone)	{J}
 080B3930	SoundRoom	Full song list (It also allowed to show more than 100 songs)	{J}
@@ -11824,11 +11824,11 @@ r3=X tile position of menu of the right	{U}
 080D36E4	guMess3ReWrite_80CE9E8	{J}
 080D3C0C	Guide_80CEF10	{J}
 080D4140	Guide_80CF448	{J}
-08083688	在地图上播放时播放音效（0x2d5）	{J}
-080836C4	在地图上跳舞时播放音效（0x2d6）	{J}
+08083688	在地图上播放时播放音效(0x2d5)	{J}
+080836C4	在地图上跳舞时播放音效(0x2d6)	{J}
 08083600	在地图上跳舞/玩耍时注册要播放的音效	{J}
-08081348	在地图上播放时播放音效（0x2d5）	{U}
-08081348	在地图上跳舞时播放音效（0x2d6）	{U}
+08081348	在地图上播放时播放音效(0x2d5)	{U}
+08081348	在地图上跳舞时播放音效(0x2d6)	{U}
 080812C0	在地图上跳舞/玩耍时注册要播放的音效	{U}
 08000AE8	显示构建版本和发布年份	{J}
 08000B10	显示构建版本和发布年份	{U}
@@ -11842,18 +11842,18 @@ r3=X tile position of menu of the right	{U}
 080B5220	收购商店的售价	{U}
 080A4DD0	用于浏览支持对话的屏幕	提高成就率	{J}
 080A7F88	用于浏览支持对话的屏幕	获得支持对话成就率	{J}
-080a7f44	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{J}
-080a7f10	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{J}
-080A5774	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{J}
+080a7f44	用于浏览支持对话的屏幕	获得支持对话成就数(分子)	{J}
+080a7f10	用于浏览支持对话的屏幕	获得支持对话的总数(分母)	{J}
+080A5774	用于浏览支持对话的屏幕	绘制单位名称(颜色根据支持状态而变化)	{J}
 080A5048	用于浏览支持对话的屏幕	要绘制的函数的顶部	{J}
 080A4CA8	用于浏览支持对话的屏幕	绘制一个单位图标	{J}
 0809af14	绘制菜单的框架	{J}
 080A5388	用于浏览支持对话的屏幕	主循环	{J}
 080A0FE8	用于浏览支持对话的屏幕	提高成就率	{U}
 080A3544	用于浏览支持对话的屏幕	获得支持对话成就率	{U}
-080A3500	用于浏览支持对话的屏幕	获得支持对话成就数（分子）	{U}
-080A34CC	用于浏览支持对话的屏幕	获得支持对话的总数（分母）	{U}
-080A199C	用于浏览支持对话的屏幕	绘制单位名称（颜色根据支持状态而变化）	{U}
+080A3500	用于浏览支持对话的屏幕	获得支持对话成就数(分子)	{U}
+080A34CC	用于浏览支持对话的屏幕	获得支持对话的总数(分母)	{U}
+080A199C	用于浏览支持对话的屏幕	绘制单位名称(颜色根据支持状态而变化)	{U}
 080A1270	用于浏览支持对话的屏幕	要绘制的函数的顶部	{U}
 080A0EC0	用于浏览支持对话的屏幕	绘制一个单位图标	{U}
 080950E8	绘制菜单的框架	{U}
@@ -11912,12 +11912,12 @@ r3=X tile position of menu of the right	{U}
 0805A78C	LoadBattleAnimePalette	{J}
 080599E8	LoadBattleAnimePalette	{U}
 0203F101	用于判断并行扩展	{J}
-080A5E48	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{J}
+080A5E48	支持屏幕	显示剩余的支持性对话的数量	(如果保留在游戏中/从额外菜单中，尚未达到对话的数量)	{J}
 080A5F9C	支持屏幕	显示目标单位的支持列表	{J}
 080A48BC	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{J}
 080A4A28	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{J}
 080A8030	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	1个单位	{J}
-080A207C	支持屏幕	显示剩余的支持性对话的数量	（如果保留在游戏中/从额外菜单中，尚未达到对话的数量）	{U}
+080A207C	支持屏幕	显示剩余的支持性对话的数量	(如果保留在游戏中/从额外菜单中，尚未达到对话的数量)	{U}
 080A21D0	支持屏幕	显示目标单位的支持列表	{U}
 080A0AD4	支持屏幕	从gStringBufferAlt获取单元实现的支持状态	{U}
 080A0C40	支持屏幕	构造一个缓存单元支持关系的gStringBufferAlt	主	{U}
@@ -12483,3 +12483,8 @@ r3=X tile position of menu of the right	{U}
 08032104	ExecTrapForDropUnit	{J}
 080377F0	ExecTrapForDropUnit_Sub	{U}
 080321B8	ExecTrapForDropUnit	{U}
+0203AA86	AIScript Result1	{J}
+0203AA87	AIScript Result2	{J}
+0203AA8A	AIScript Result1	{U}
+0203AA8B	AIScript Result2	{U}
+08A9A9E0	东西TSA。	27	{J}

@@ -4057,7 +4057,7 @@ namespace FEBuilderGBA
                 {
                     return U.NOT_FOUND;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                 }
@@ -4068,6 +4068,11 @@ namespace FEBuilderGBA
             }
             if (datacount <= 0)
             {
+                return U.NOT_FOUND;
+            }
+            if (datacount * datasize > 1024*1024)
+            {//1MB越えの可能性
+                Log.Error("パッチのデータが壊れています。データサイズ1MBを超えました", editpatchSt.PatchFileName, U.To0xHexString(datacount), U.To0xHexString(datasize));
                 return U.NOT_FOUND;
             }
 
@@ -6397,40 +6402,6 @@ namespace FEBuilderGBA
                 }
                 else if (type == "SWITCH")
                 {
-                    uint determinationAddress = atOffset(patch.Param, "DETERMINATION_ADDRESS");
-                    foreach (var pair in patch.Param)
-                    {
-                        if (pair.Key.IndexOf("ONN:") != 0)
-                        {
-                            if (pair.Key.IndexOf("OFF:") != 0)
-                            {
-                                continue;
-                            }
-                        }
-                        string[] op = pair.Key.Split(':');
-                        if (op.Length < 2)
-                        {
-                            Debug.Assert(false);
-                            continue;
-                        }
-
-                        uint a = convertBinAddressString(op[1], 8, 0 , basedir);
-                        if (!U.isSafetyOffset(a))
-                        {
-                            Debug.Assert(false);
-                            continue;
-                        }
-                        if (determinationAddress != 0)
-                        {//determinationAddressの利用確認
-                            if (determinationAddress == a)
-                            {
-                                determinationAddress = 0;
-                            }
-                        }
-                    }
-
-                    //もし、指定があったとしても利用されているなら0になるはずだ
-                    Debug.Assert(determinationAddress == 0);
                 }
                 else if (type == "STRUCT")
                 {
@@ -7370,8 +7341,7 @@ namespace FEBuilderGBA
             string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
             if (updateFromName == "")
             {
-                Debug.Assert(false);
-                return;
+                updateFromName = Path.GetFileNameWithoutExtension(editpatchSt.PatchFileName);
             }
             string targetFilename = Path.Combine(tempdir, updateFromName);
             if (! File.Exists(targetFilename))
@@ -7564,8 +7534,7 @@ namespace FEBuilderGBA
             string updateFromName = U.at(editpatchSt.Param, "UPDATE_FROM_NAME");
             if (updateFromName == "")
             {
-                Debug.Assert(false);
-                return;
+                updateFromName = Path.GetFileNameWithoutExtension(editpatchSt.PatchFileName);
             }
             string targetFilename = Path.Combine(tempdir, updateFromName);
             string type = U.at(editpatchSt.Param, "TYPE");

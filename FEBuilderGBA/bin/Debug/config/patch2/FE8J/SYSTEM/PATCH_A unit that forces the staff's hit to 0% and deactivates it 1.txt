@@ -1,0 +1,19 @@
+
+NAME=杖の命中を強制的に0%にして、無効化するユニット1
+NAME.en=These unit force the staff to hit 0% and deactivate it #1
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x002CC7C
+ADDRESS_TYPE=UNIT
+AUTHOR=7743
+
+INFO=これらのユニットは、スリープ、バサーク、サイレスの命中率の命中率を0%にします。\r\nディフォルトでは、0x40 リオンが設定されています。
+INFO.en=These unit have a hit rate of 0% for Sleep, Berserk, and Silence. By default, 0x40 Lyon.
+
+
+
+NAME.zh=一个单位，迫使手杖达到0％并停用它。
+INFO.zh=这些单位的睡眠，Bataque和Siles的命中率为0％。\r\n默认情况下，设置0x​​40 Rion。

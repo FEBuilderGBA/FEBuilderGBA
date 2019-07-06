@@ -1,0 +1,49 @@
+NAME=霧の中でも特定の座標に視界を確保します。 ver2
+INFO=FE5の離脱ポイントは霧の中でも視界が確保されていたように、霧の中でも特定の位置に視界を確保します。\r\n離脱地点を死滅灯りや、かがり火として利用してください。\r\nまた、フラグが有効な場合のみ視界を確保できるようにもできます。\r\n演出に利用してください。\r\nプレイヤーターンにしか、追加の視界が現れない制限がありますが、気にしないでください。
+
+IF:0x19CD6=0x00 0x00 0x00 0x4B
+
+//データへのポインタ
+POINTER=$FGREP4END kagaribi2.dmp
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP=マップ
+B1:MAPX=X
+B2:MAPY=Y
+B3:DECIMAL=視界の幅(1-15)
+W4:FLAG=判定フラグ(0=ANY)
+W6=00
+
+
+B0:MAP.en=Map
+B1:MAPX.en=X
+B2:MAPY.en=Y
+B3:DECIMAL.en=Width of sight(1-15)
+W4:FLAG.en=Judgment flag(0=ANY)
+W6.en=00
+
+B0:MAP.zh=地图
+B1:MAPX.zh=X
+B2:MAPY.zh=Y
+B3:DECIMAL.zh=视线(1-15)
+W4:FLAG.zh=判定标志(0=ANY)
+W6.zh=00
+NAME.en=Secure visibility to specific coordinates even in fog. ver2
+INFO.en=As for the departure point of FE 5, visibility is secured at a specific position even in the mist, as in the mist, visibility was secured.\r\nPlease use the departure point for extinction lights and as a bonfire.\r\nIn addition, it is possible to ensure visibility only when the flag is valid.\r\nPlease use it for production.\r\nThere are restrictions that additional visibility does not appear only in the player turn, but please do not mind.
+NAME.zh=即使在雾中，我们也能确保特定坐标的可见性。 ver2
+INFO.zh=至于FE 5的出发点，即使在雾中也能确保能够在特定位置看到能见度，如在雾中，确保了能见度。\r\n请使用灭火灯的出发点和篝火。\r\n此外，只有在标志有效时才能确保可见性。\r\n请用它来生产。\r\n有一些限制，只有在玩家回合中才会出现额外的可见性，但请不要介意。
+
+UPDATE_FROM_NAME=kagaribi

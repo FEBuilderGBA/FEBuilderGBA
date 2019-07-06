@@ -22,8 +22,8 @@
 400A0000XXXXXXXX	致电[XXXXXX:POINTER_EVENT:事件](CALL)	{SUBROUTINE}
 2902XXXX	标志打开[XXXX:FLAG:标志](ENUT)	{FLAG}
 2102XXXX	标志关闭[XXXX:FLAG:标志](ENUF)	{FLAG}
-28020900	自动将相机安装到主角色上(EVBIT_T)	{CAMERA}
-20020900	自动取消将相机与主角色匹配(EVBIT_F)	{CAMERA}
+28020900	自动将相机安装到主角色上(EVBIT_T)	{CAMERA}	{EVBIT}
+20020900	自动取消将相机与主角色匹配(EVBIT_F)	{CAMERA}	{EVBIT}
 242AXXXX	结语保存[XXXX::Value 1](MNC4)	{ENDING}
 202AXXXX	返回到标题屏幕[XXXX::Value 1](MNTS)	{ENDING}
 402FXXXXYYYYZZWW20300000	用[XXXX:FSEC:Speed]移动并设置[YY:UNIT:人物]为[ZZ:MAPX:X][WW:MAPY:Y](MOVE+ENUN)	{UNITMOVE}
@@ -79,6 +79,7 @@
 402C0000XXXXXXXX	人物读数[XXXXXXXX:POINTER_UNIT:人物信息](LOAD1)
 422C0000XXXXXXXX	人物只读一人[XXXXXXXX:POINTER_UNIT:人物信息](LOAD3)
 402C0100FFFFFFFF	Load reinforcement unit for internal processing(LOW)
+412C0100FFFFFFFF	Load unit for internal processing(LOAD2)(LOW)
 20430000	用剑中风杀死的动画	{J}
 2043XXXX	RESUMM[XXXX:UNIT:人物]
 40050B00XXXXYYYY2041ZZZZ	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y][ZZZZ:UNIT:人物](LOW)
@@ -249,7 +250,7 @@
 21010000	事件结束[TERM](ENDB)
 2802XXXX	EVBIT_T[XXXX:EVBIT:Bit]	{EVBIT}
 2002XXXX	EVBIT_F[XXXX:EVBIT:Bit]	{EVBIT}
-2010XXXX	EVBIT_MODIFY[XXXX::Operation_to_perform]	{EVBIT}
+2010XXXX	EVBIT_MODIFY[XXXX:EVBIT:Operation_to_perform]	{EVBIT}
 4005XXXXYYYYYYYY	SVAL[XXXX:MEMORYSLOT:MemorySlot][YYYY::要设置的值]	{VAL}
 2006C100	Copy memory slot C to memory slot 1(MOV VAL_1,VAL_C / SADD)	{VAL}
 2006C200	Copy memory slot C to memory slot 2(MOV VAL_2,VAL_C / SADD)	{VAL}
@@ -271,8 +272,8 @@
 220FXXYY	COUNTER_ADD[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
 230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
 230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	减少计数器并在它变为零时打开标志
-[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:条件ID]	在满足规定条件后，使用COUNTER进行处理，例如3圈加固。\r\n离开计Counter（bitshift），Base_operand为0，除非你特别改变它。\r\n对于完成标志，请写入与完成标志设置相同的值对于此事件。\r\n\r\n请将“条件ID”放入此事件的另一个条件ID和一个不适用的唯一值。\r\n如果没有其他分支，则保留0并且没有问题	{VAL}	{FLAG}
-210FXXYY2102WWWW	使用计数器启动活动[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	在满足规定的条件后，使用COUNTER开始处理，例如3转加固。\r\n如果没有原因请离开计数器（bitshift）0。\r\n在Base_operand中，设置要操作的转数。如果是3转为3. \r\n对于标志，请设置您要操作的事件的完成标志	{VAL}	{FLAG}
+[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:条件ID]	在满足规定条件后，使用COUNTER进行处理，例如3圈加固。\r\n离开计Counter(bitshift)，Base_operand为0，除非你特别改变它。\r\n对于完成标志，请写入与完成标志设置相同的值对于此事件。\r\n\r\n请将“条件ID”放入此事件的另一个条件ID和一个不适用的唯一值。\r\n如果没有其他分支，则保留0并且没有问题	{VAL}	{FLAG}
+210FXXYY2102WWWW	使用计数器启动活动[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	在满足规定的条件后，使用COUNTER开始处理，例如3转加固。\r\n如果没有原因请离开计数器(bitshift)0。\r\n在Base_operand中，设置要操作的转数。如果是3转为3. \r\n对于标志，请设置您要操作的事件的完成标志	{VAL}	{FLAG}
 
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	沙漠宝藏[XX:项目:可以拿起的物品][YYYY:LABEL:条件ID]	实施埋在沙漠中的物品。\r\n除了盗贼，还要看好运的参数来判断你是否可以接。\r\n\r\n对于“条件ID”，请包含此事件的另一个条件ID和不适用的唯一值。\r\n如果没有其他分支，请保留0并且没有问题	{ITEM}	{J}
 40A600000000ZZZZ212AXXXX	与世界地图到指定基准并转到下一个地图[ZZ:WMLOCATION:WM基地][XXXX:MAPCHAPTER:下一章ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
@@ -429,8 +430,8 @@
 40050100XXYY00002139ZZWW	将[ZZ:MAPX:MAPX][WW:MAPY:Y]的AI更改为[XX:AI1:AI 1][YY:AI2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050B00XXXXYYYY2025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]地图切换(LOMA)	{MAP}
 40050B00XXXXYYYY	SET_VAL_B在内存插槽B中输入坐标[XX:MAPX:X][YY:MAPY:Y]	内存插槽B通常用于传递坐标数据
-28020200	独立停止跳过(EVBIT_T 2)	{MAP}
-28020700	取消淡入(EVBIT_T 7)	{MAP}
+20020200	独立停止跳过(EVBIT_F 2)	{MAP}	{EVBIT}
+28020700	取消淡入(EVBIT_T 7)	{MAP}	{EVBIT}
 2802070020010000	活动结束(取消淡入)[TERM](EVBIT_T+ENDA)	{TERM}
 492FXXXXYYYYZZZZ	用[XXXX:FSEC:速度]将设置[YY:UNIT:人物]设置为[ZZ:UNIT:对手人物](MOVENEXTTO)	{UNITMOVE}
 492FXXXXYYYYZZZZ20300000	用[XXXX:FSEC:速度]移动并设置[YY:UNIT:人物]为[ZZ:UNIT:对手人物]后，立即移动(MOVENEXTTO + ENUN)	{UNITMOVE}
@@ -463,10 +464,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	向WMAP发出的人物移动[YY
 400D0000C9F50708	使地图变得更暗	{U}
 211A0000400D000045570A082022000020171000	显示支持关系屏幕以进行准备	{J}
 211A0000400D00006D190A082022000020171000	显示支持关系屏幕以进行准备	{U}
-400D0000E1860808	转换伊弗列姆	临时方转换（在第5章中使用）	{J}
-400D000015640808	转换伊弗列姆	临时方转换（在第5章中使用）	{U}
-400D000031870808	转换艾瑞珂	临时方转换（在第5章中使用）	{J}
-400D000065640808	转换艾瑞珂	临时方转换（在第5章中使用）	{U}
+400D0000E1860808	转换伊弗列姆	临时方转换(在第5章中使用)	{J}
+400D000015640808	转换伊弗列姆	临时方转换(在第5章中使用)	{U}
+400D000031870808	转换艾瑞珂	临时方转换(在第5章中使用)	{J}
+400D000065640808	转换艾瑞珂	临时方转换(在第5章中使用)	{U}
 400D00004D880808	转换伊弗列姆2	切换编辑并进行永久切换	{J}
 400D000081650808	转换伊弗列姆2	切换编辑并进行永久切换	{U}
 400D000031880808	转换艾瑞珂2	切换编辑并进行永久切换	{J}

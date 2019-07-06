@@ -1,0 +1,12 @@
+weapon_battle_flash_Table:
+BYTE 0x3E //エクスカリバー
+BYTE 0x4A //グレイプニル
+BYTE 0x85 //ジークリンデ
+BYTE 0x87 //イーヴァルディ
+BYTE 0x8E //ヴィドフニル
+BYTE 0x91 //アウドムラ
+BYTE 0x92 //ジークムント
+BYTE 0x93 //ガルム
+BYTE 0x94 //ニーズヘッグ
+
+BYTE 0x00 //Term

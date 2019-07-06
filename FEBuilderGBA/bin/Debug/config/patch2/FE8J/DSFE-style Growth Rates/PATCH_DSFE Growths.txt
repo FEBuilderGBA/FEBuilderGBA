@@ -12,8 +12,8 @@ TYPE=BIN
 TAG=#ENGINE
 BIN:0x02B970=DSFE Growths.dmp
 AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/8
-NAME.zh=DSFE风格增长（增长率=单位增长+阶级增长）
-INFO.zh=在这个补丁中，角色的统计增长率被视为个人增长和类别增长对特定统计数据的总和。\r\n在改变增长率时请记住这一点，因为这不会改变游戏的自动等级例程。\r\n增长率=单位增长+班级成长
+NAME.zh=DSFE风格增长（增长率=人物增长+阶级增长）
+INFO.zh=在这个补丁中，角色的统计增长率被视为个人增长和类别增长对特定统计数据的总和。\r\n在改变增长率时请记住这一点，因为这不会改变游戏的自动等级例程。\r\n增长率=人物增长+班级成长
 
 SHOW_WARNING=true
 REPLACE_POINTER:0x85E068=ITEM

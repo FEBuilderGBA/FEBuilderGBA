@@ -1,0 +1,23 @@
+
+NAME=フリーマップから入らないとフリーズする制約を消す (aera version)
+NAME.en=Skip World Map Fix (aera version)
+NAME.zh=消除冻结的限制，除非从免费地图进入 (aera version)
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+
+COMBO=default|OFF|fix|ONN
+COMBO.zh=默认|OFF|修复|ONN
+
+ONN:0xc1e74=0x00 0x20 0x70 0x47
+OFF:0xc1e74=0x70 0xB5 0x05 0x48
+
+ONN:0xc03e0=0x01 0x48 0x80 0x7B 0x70 0x47 0x00 0x00 0xEC 0xBC 0x02 0x02
+OFF:0xc03e0=0x00 0xB5 0x01 0x1C 0x05 0x48 0xC0 0x7E 0x02 0x28 0x01 0xD0
+
+INFO=FE8には、イベント命令の次のマップへ移動する命令を使っても、移動できないマップが存在します。\r\nいくつかのマップは、ワールドマップからしか移動できません。\r\nそれらのマップにワールドマップ以外から移動するとゲームがクラッシュします。\r\nこのパッチは、その制限を解除します。\r\nすべてのマップに移動できるようにします。\r\nFE8でも、ワールドマップを利用しないFE7のように利用することができます。\r\nこのパッチは、KILLフリマとしてaeraによって実装されたものです。
+INFO.zh=即使您使用该指令移至事件命令的下一个地图，也有一张地图无法移至FE 8。\r\n一些地图只能从世界地图上移动。\r\n如果你从世界地图以外的地图移动到这些地图，游戏将会崩溃。\r\n此修补程序释放其限制。\r\n移至所有地图。\r\n即使在FE 8中，也可以像FE 7那样使用，而不使用世界地图。\r\n该贴片由aera实施为KILLフリマ。
+INFO.en=Toggles whether certain chapters must be entered via the World Map (Default) or if they can skip the map (Patched).\r\nBy default, the game crashes when attempting to skip the world map for incompatable chapters.\r\nThis patch removes the limitation and allows direct jumping to all maps.\r\nThis allows FE8 to have a campaign without a world map like FE6/7.\r\nFix MNC2 Freezing glitch (breaks skirmishes!)\r\nThis patch is implemented by aera as a KILLフリマ.
+
+AUTHOR=aera

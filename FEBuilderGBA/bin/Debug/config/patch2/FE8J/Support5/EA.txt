@@ -9,6 +9,9 @@ ORG	0x282CC
 WORD	$46874800   //jumptoHack_r0
 POIN	Support5
 
+ORG 0x02821a
+BYTE 0x00 0x20
+
 ORG 0xF161C //残り人数
 #incbin "Text_0536.bin"  //HINT=BIN
 

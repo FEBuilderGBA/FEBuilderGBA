@@ -6,7 +6,7 @@ ALWAYS	(peculiar)When player unit is selected
 ALWAYS	(peculiar)When player unit is decided to move
 ALWAYS	(peculiar)When player unit is moved coordinate
 TUTORIAL	Tutorial
-TRAP	Trap(Arch, gargon egg, damage floor)
+TRAP	Trap(Ballista, GargonEgg, DamageFloor)
 TRAP	Trap2(Damaged floor of ruins 9F only?)
 PLAYER_UNIT	Player placement
 PLAYER_UNIT	Player placement when HARD LEVEL

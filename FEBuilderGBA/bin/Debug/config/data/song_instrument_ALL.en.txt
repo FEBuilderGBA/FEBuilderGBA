@@ -315,7 +315,7 @@
 //FE7JIF
 24	Guitar	6434ea28e9ea43816eefb730a5efa65e
 56	Trumpet	c7ac78905fda5740231d0e0581ad503d
-41	Strength（low）	fb7a62d6f2556fcfcd634b7c4081b2a2
+41	Strength(low)	fb7a62d6f2556fcfcd634b7c4081b2a2
 57	Trombone?	c684274d7c8c291211b71fa1e6ba7ca5
 47	Timpani	5f764a66b15710251fb10c095a169829
 4	Piano (heavy / bass)	d91a97fe0b1e3bbfb51c744a29b61296
@@ -327,7 +327,7 @@
 58	Tuba	39e40771ac170d620fcf8f4c8af04e07
 	?	ab24b662de7f369fcdd621edbaedf0ac
 73	Flute	2adbdf5bac14c228a9b325b701eae561
-	piano（low）	9cd4d1561ac2b11a081ff5ae449e22d4
+	piano(low)	9cd4d1561ac2b11a081ff5ae449e22d4
 	Cuaia?	0412e94eeffa054e656331fedf0daf64
 60	French Horn?	8330a4ce239bd802da2e78ed9b17a424
 71	Clarinet?	cb94df3e8ebde43bdf2735e6013facdd

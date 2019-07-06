@@ -9,6 +9,6 @@ TAG=#ENGINE
 ADDRESS=0x02AD7E
 HEX=false
 
-INFO=武器レベルSの時に、指定した項目にこの補正ボーナスが加わります
-INFO.en=At weapon level S, this correction bonus is added to the specified item.
-INFO.zh=在武器等级S，此修正加值被添加到指定项目。
+INFO=武器レベルSの時に、指定した項目にこの補正ボーナスが加わります\r\nこの値を変更した場合、項目2の値も必ず変更してください。
+INFO.en=At weapon level S, this correction bonus is added to the specified item.\r\nIf you change this value, be sure to change item 2's value as well.
+INFO.zh=在武器等级S，此修正加值被添加到指定项目。\r\n如果更改此值，请务必更改项目2的值。

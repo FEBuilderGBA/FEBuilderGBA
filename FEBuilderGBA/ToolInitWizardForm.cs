@@ -289,7 +289,7 @@ namespace FEBuilderGBA
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler");
                     //https://feuniverse.us/t/event-assembler/1749
-                    string url = "https://www.dropbox.com/s/o9fsm5wdqwp0n9g/Event%20Assembler%20V11.1.1.zip?dl=1";
+                    string url = "https://www.dropbox.com/s/4mql123thxb78kw/Event%20Assembler%20V11.1.3.zip?dl=1";
                     string r = DownloadProgram_Direct(url, dir, "Core.exe");
                     if (IsErrorResult(r))
                     {
@@ -300,7 +300,7 @@ namespace FEBuilderGBA
                 }
                 {
                     string dir = Path.Combine(Program.BaseDirectory, "app", "Event Assembler", "Tools");
-                    string url = "https://github.com/StanHash/lyn/releases/download/release0.2.5/lyn.exe";
+                    string url = "https://github.com/StanHash/lyn/releases/download/v2.5.2/lyn.exe";
                     string r = DownloadProgram_DirectOneFile(url, dir, "lyn.exe");
                     if (IsErrorResult(r))
                     {
@@ -414,8 +414,9 @@ namespace FEBuilderGBA
                 File.Delete(tempFilename);
                 return R.Error("ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfilename:{2}", url, path, filename);
             }
+
             string retPath = Path.Combine(path, filename);
-            File.Copy(tempFilename,  retPath);
+            File.Copy(tempFilename, retPath);
             return retPath;
         }
         string DownloadProgram_Direct(string url, string dir, string findEXE)
@@ -437,35 +438,42 @@ namespace FEBuilderGBA
                 return R.Error("ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE);
             }
 
-            string ext = Path.GetExtension(U.GetURLFilename(url));
-            if (ext == "")
+            try
             {
-                ext = ".zip";
-            }
-            else  if (ext == ".exe" || ext == ".EXE")
-            {
-                string filename = U.GetURLFilename(url);
-                string retPath = Path.Combine(dir,filename);
+                string ext = Path.GetExtension(U.GetURLFilename(url));
+                if (ext == "")
+                {
+                    ext = ".zip";
+                }
+                else if (ext == ".exe" || ext == ".EXE")
+                {
+                    string filename = U.GetURLFilename(url);
+                    string retPath = Path.Combine(dir, filename);
 
+                    U.mkdir(dir);
+                    File.Copy(tempFilename, retPath, true);
+                    File.Delete(tempFilename);
+                    return retPath;
+                }
+
+                File.Move(tempFilename, tempFilename + ext);
+                tempFilename = tempFilename + ext;
+
+                this.SettingPleaseWait.DoEvents("Extract...");
                 U.mkdir(dir);
-                File.Copy(tempFilename, retPath , true);
+                string r = ArchSevenZip.Extract(tempFilename, dir);
+                if (r != "")
+                {
+                    return R.Error("ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE);
+                }
+
                 File.Delete(tempFilename);
-                return retPath;
+                return GrepFile(dir, findEXE);
             }
-
-            File.Move(tempFilename , tempFilename + ext);
-            tempFilename = tempFilename + ext;
-
-            this.SettingPleaseWait.DoEvents("Extract...");
-            U.mkdir(dir);
-            string r = ArchSevenZip.Extract(tempFilename, dir);
-            if (r != "")
+            catch (Exception e)
             {
-                return R.Error("ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE);
+                return R.Error("ダウンロードしたファイルを開けませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE) + "\r\n" + e.ToString();
             }
-
-            File.Delete(tempFilename);
-            return GrepFile(dir, findEXE);
         }
         string GrepFile(string dir , string findEXE)
         {

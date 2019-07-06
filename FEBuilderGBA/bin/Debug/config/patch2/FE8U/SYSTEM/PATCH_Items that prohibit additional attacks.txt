@@ -13,5 +13,6 @@ AUTHOR=aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E
 AUTHOR.zh=从aera的材料\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-CONFLICT_IF:0x2B008=0x00 0x4B
-CONFLICT_MESSAGE=Define Multiple Item Attacks 1x Per Combat
+CONFLICT_IF:0x2B008=0x00 0x4B //Define Multiple Item Attacks 1x Per Combat
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1 //SkillSystems
+CONFLICT_MESSAGE=SkillSystems,Define Multiple Item Attacks 1x Per Combat

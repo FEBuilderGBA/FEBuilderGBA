@@ -208,6 +208,12 @@ Bonus: Lethal damage + attacker's expected damage
 :標的AI
 Target AI
 
+:タイル
+tile.
+
+:AIの対象タイル
+Target tile of AI.
+
 :ユニット
 Unit
 
@@ -1852,17 +1858,38 @@ Event Pointer
 :マップオブジェクト
 Map Object
 
+:05=制圧ポイントと民家
+05=Seize or Visit Home
+
+:06=訪問村
+06=Visit Village
+
+:07=宝箱
+07=Chest
+
+:08=扉
+08=Door
+
+:0A=店
+0A=Shop
+
 :発生タイプ
 Generation Type
 
 :制圧ポイントと民家
 Suppression points and private houses
 
+:制圧ポイントと民家を設定します。\r\n制圧: 「制圧」コマンドで章をクリアできる制圧拠点を作成します。制圧拠点は城門などに設置されることが多いですが、どこにでも設置できます。また、複数設置もできます。通常は、制圧コマンド時は、「達成フラグ」で0x03を有効にして、イベントを0x1のダミーを指定します。フラグ0x03が指定され主人公が制圧で待機するので自動的に「終了イベント」が呼び出され、章クリアとなります。\r\n村の中心: 盗賊が狙う村の中心を作成します。\r\n民家: 情報を聞ける民家イベントを作成します。村訪問は発生タイプが違います。
+Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
+
 :座標
 Coordinate
 
 :訪問村
 Visit Village
+
+:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
+In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 “Home” event; this is the event that makes the “Visit” command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 “Village Center” event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
 
 :宝箱
 Chest
@@ -1873,8 +1900,14 @@ Gold
 :宝箱の中身
 Chest Contents
 
+:宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
+Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
+
 :扉
 Door
+
+:扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であれば、0x01の何もしないダミーイベントを設定してください。
+Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door position is executed and it will be able to pass.\r\nEvents can also be set, but if you do not need special effects such as conversation, please set a dummy event that does not do 0x01.
 
 :店
 Shop/Armory Editor
@@ -1888,17 +1921,35 @@ Shop Types
 :店の売り物
 Items Sold
 
+:座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。
+Shops will be set at the coordinates.\r\nHere units can purchase the items specified in "Shops/Armories".\r\nThe "Completion Flag" can be set, but this limits the player to one visit. As such, generally set 0x0.
+
 :話す条件
 Conditions to talk
 
+:03=話す条件
+03=Talk Condition
+
+:04=話す条件ASM
+04=Talk Condition(ASM)
+
 :会話条件
 Talk condition
+
+:会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。
+Create a conversation event.\r\nAn event is generated when "conversation source" talks to "conversation destination".
 
 :会話先
 To
 
 :会話元
 From
+
+:00=追加条件なし
+00=No Additional Condition
+
+:03=判定フラグがONならば
+03=Require "Trigger Flag" Condition(s)
 
 :このフラグが有効な場合に、会話イベントが有効になります。
 When this flag is enabled, the conversation Event is enabled.
@@ -1918,152 +1969,20 @@ Trigger ASM Function
 :話す条件FE6
 Talk Condition FE 6
 
-:ターン条件
-Turn Condition
-
-:終了ターン
-Turn End
-
-:ターン前指定
-Army Phase
-
-:開始ターン
-Turn Start
-
-:ターン条件FE7
-Turn Condition FE 7
-
-:常時条件
-Conditional
-
-:範囲条件
-Range Condition
-
-:範囲開始
-Start Range
-
-:範囲終了
-End Range
-
-:このフラグが有効に場合に、イベントが動作します。
-If this flag is enabled, the event will work.
-
-:ASM条件
-ASM Condition
-
-:ASM条件FE6
-ASM condition FE 6
-
-:トラップ
-Trap
-
-:アーチ配置
-Ballista Arrangement
-
-:配置座標
-Coordinate
-
-:アーチの種類
-Ballista Type
-
-:トラップ床
-Trap Floor
-
-:リピートタイマー
-Repeat Timer
-
-:初期タイマー
-Initial Timer
-
-:毒ガス
-Poison Gas
-
-:ガスの方向
-Gas direction
-
-:神の矢
-Vertical Arrow
-
-:ゴーゴンの卵
-Gorgon's Egg
-
-:羽化開始
-Hatching Starts
-
-:炎
-Fire
-
-:地雷
-Mine
-
-:選択されている開始/終了イベントを、イベント編集画面で開く
-Open the selected start / end event in the Event edit screen
-
-:配置
-Placement
-
-:選択されている配置情報を、ユニット配置画面で開く
-Open the selected placement information in the Unit Placer screen
-
-:チュートリアル
-Tutorial
-
-:マップ名
-Map Name
-
-:05=制圧ポイントと民家
-05=Seize or Visit Home
-
-:06=訪問村
-06=Visit Village
-
-:07=宝箱
-07=Chest
-
-:08=扉
-08=Door
-
-:0A=店
-0A=Shop
-
-:制圧ポイントと民家を設定します。\r\n制圧: 「制圧」コマンドで章をクリアできる制圧拠点を作成します。制圧拠点は城門などに設置されることが多いですが、どこにでも設置できます。また、複数設置もできます。通常は、制圧コマンド時は、「達成フラグ」で0x03を有効にして、イベントを0x1のダミーを指定します。フラグ0x03が指定され主人公が制圧で待機するので自動的に「終了イベント」が呼び出され、章クリアとなります。\r\n村の中心: 盗賊が狙う村の中心を作成します。\r\n民家: 情報を聞ける民家イベントを作成します。村訪問は発生タイプが違います。
-Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
-
-:尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
-In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 “Home” event; this is the event that makes the “Visit” command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 “Village Center” event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
-
-:宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
-Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
-
-:扉を設定します。\r\n扉が空くと、扉の位置に設定されている「マップ変化」が実行され、通れるようになります。\r\nイベントも設定できますが、特に会話などの演出が不要であれば、0x01の何もしないダミーイベントを設定してください。
-Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door position is executed and it will be able to pass.\r\nEvents can also be set, but if you do not need special effects such as conversation, please set a dummy event that does not do 0x01.
-
-:座標にお店を設置します。\r\n「店の売り物」で指定したものを買うことができます。\r\n達成フラグも設定できますが、店の性質上、0x0が設定されることが多いです。
-Shops will be set at the coordinates.\r\nHere units can purchase the items specified in "Shops/Armories".\r\nThe "Completion Flag" can be set, but this limits the player to one visit. As such, generally set 0x0.
-
-:03=話す条件
-03=Talk Condition
-
-:04=話す条件ASM
-04=Talk Condition(ASM)
-
-:会話イベントを作成します。\r\n「会話元」が「会話先」へ「話す」したときにイベントを発生させます。
-Create a conversation event.\r\nAn event is generated when "conversation source" talks to "conversation destination".
-
-:00=追加条件なし
-00=No Additional Condition
-
-:03=判定フラグがONならば
-03=Require "Trigger Flag" Condition(s)
-
 :04=話す条件
 04=Conditions to Talk
 
 :0D=話す条件ASM
 0D=Talk Condition ASM
 
+:ターン条件
+Turn Condition
+
 :「開始ターン」から「終了ターン」の間にずっと実行するイベントを作成します。
 Turn events run upon "Turn Start" or "Turn End".
+
+:終了ターン
+Turn End
 
 :0=主人公ターンに実行
 0=Run on Player Turn
@@ -2074,8 +1993,17 @@ Turn events run upon "Turn Start" or "Turn End".
 :80=敵軍ターンに実行
 80=Run on Enemy Turn
 
+:ターン前指定
+Army Phase
+
+:開始ターン
+Turn Start
+
 :2=ターン条件
 2=Turn Condition
+
+:ターン条件FE7
+Turn Condition FE 7
 
 :0=常に有効
 0=Conditional
@@ -2095,6 +2023,9 @@ Turn events run upon "Turn Start" or "Turn End".
 :5=ヘクトル編ハードモードのみ
 5=Hector Hard Mode
 
+:常時条件
+Conditional
+
 :01=常時条件
 01=Conditional
 
@@ -2104,23 +2035,68 @@ Turn events run upon "Turn Start" or "Turn End".
 :0E=ASM条件
 0E=ASM Condition
 
+:範囲条件
+Range Condition
+
 :指定した範囲にユニットが入ると、イベントが発動します。\r\n判定は敵味方関係なく行われます。\r\n敵のみ、味方のみで、発生させたい場合、イベント命令内で判定を追加してください。
 When a unit enters the specified range, the event is activated.\r\nTrigger is set whether unit is an enemy or ally.\r\nAdd a trigger within the event script to restrict to only enemy or ally units.
+
+:範囲開始
+Start Range
+
+:範囲終了
+End Range
+
+:このフラグが有効に場合に、イベントが動作します。
+If this flag is enabled, the event will work.
 
 :「判定フラグ」が有効だった場合、指定したイベントを実行します。
 If "Trigger Flag" is set, executes the specified event.
 
+:ASM条件
+ASM Condition
+
 :ASM関数を実行し、戻り値r0がtrueの場合、指定したイベントを実行します。
 Executes the ASM function and executes the specified event if the return value r0 is true.
+
+:ASM条件FE6
+ASM condition FE 6
+
+:トラップ
+Trap
 
 :01=アーチ配置
 01=Ballista Order
 
+:アーチ配置
+Ballista Arrangement
+
 :弓兵が利用できる「アーチ」を設置します。
 Make a Ballista that archers can use.
 
+:配置座標
+Coordinate
+
+:アーチの種類
+Ballista Type
+
+:トラップ床
+Trap Floor
+
+:リピートタイマー
+Repeat Timer
+
+:初期タイマー
+Initial Timer
+
 :ダメージを与えるトラップを設置します
 It will set up a trap that deals damage
+
+:毒ガス
+Poison Gas
+
+:ガスの方向
+Gas direction
 
 :00=右から左
 00=Right to Left
@@ -2137,14 +2113,29 @@ It will set up a trap that deals damage
 :毒ガスが噴き出すトラップを設定します。
 Place a Poison Gas trap.
 
+:神の矢
+Vertical Arrow
+
 :Y軸方向に飛んでくる、「神の矢」トラップを作成します。\r\nトラップの性質上、設置できるのは、X軸だけで、Y軸の設定はありません。
 Place a Vertical Arrow trap that damages any unit it hits along Y axis.\r\nBecause the arrow travels vertically, only the X axis is necessary for placement.
+
+:ゴーゴンの卵
+Gorgon's Egg
+
+:羽化開始
+Hatching Starts
 
 :ゴーゴンの卵を作成します。\r\nターンが経過し、「羽化開始」時期になると卵から孵ります。
 Place a Gorgon Egg.\r\nWhen enough turns have elapsed, it will hatch from the egg ("emergence start" time).
 
+:炎
+Fire
+
 :炎のトラップを設定します。
 Make a Instant Fire trap.
+
+:地雷
+Mine
 
 :地雷のトラップを設定します。
 Make a Mine trap.
@@ -2152,8 +2143,23 @@ Make a Mine trap.
 :SkillSystemsで追加されたDragonVeinを設定します。\r\n\r\nこのトラップを動作させるには、DragonVeinEffectIDを設定する必要があります。\r\nDragonVeinEffectは、Patchから設定します。\r\nこのトラップが発動した時に動作するイベントを記述します。\r\n\r\nゲーム中で、このトラップを有効にするには、Dragon's Bloodスキルを持ったユニットが訪れる必要があります。\r\n
 Set DragonVein added by SkillSystems.\r\n\r\nTo operate this trap, you need to set DragonVeinEffectID.\r\nDragonVeinEffect is set from Patch.\r\nDescribe the event that works when this trap is invoked.\r\n\r\nTo enable this trap during the game you need to have a unit with Dragon's Blood skill.\r\n
 
+:選択されている開始/終了イベントを、イベント編集画面で開く
+Open the selected start / end event in the Event edit screen
+
+:配置
+Placement
+
+:選択されている配置情報を、ユニット配置画面で開く
+Open the selected placement information in the Unit Placer screen
+
+:チュートリアル
+Tutorial
+
 :FE8のチュートリアルイベントを設定します。\r\nチュートリアルは謎が多く、まだ解析されていません。\r\nここで指定する自動実行されるチュートリアルイベントと、ターンイベントなどで設定されるイベントの中にあるチュートリアル分岐は、密接に結びついており、片方を変えるともう片方に影響します。
 Create the tutorial event of FE8.\r\nThe tutorial has many mysteries and has not been analyzed yet.\r\nThe tutorial event to be automatically executed here and the tutorial branch in the event set by the turn event etc. are closely related, and changing one side will affect the other side.
+
+:マップ名
+Map Name
 
 :イベント条件
 Event Condition
@@ -2299,6 +2305,9 @@ Performs the specified wait processing.
 :この領域は利用できません
 Unable to use this area.
 
+:マップ{0}にMNC2で移動するには「Skip Worldmap」パッチが必要です。
+In order to move to map {0} with MNC2, the "Skip Worldmap" patch is required.
+
 :イベント「{0}」の先に多数の無効な命令が連続して現れました。\r\nイベントポインタが間違っている可能性があります。
 Many invalid commands appeared consecutively before the event "{0}".\r\nThe event pointer may be incorrect.
 
@@ -2430,6 +2439,12 @@ Persuade the unit and join the party
 
 :何もしないイベント1を設定します。
 Set event 1 to do nothing.
+
+:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトなし)
+Allocate a new event area and define an Empty Event.(No Fade)
+
+:新規にイベント領域を割り振り、空のイベントを定義します。(フェードアウトあり)
+Allocate a new event area and define an Empty Event.(With Fade)
 
 :ユニットの座標({0},{1})は、マップのサイズ({2},{3})より大きい座標です。
 The coordinates of the unit ({0}, {1}) are larger than the size of the map ({2}, {3}).
@@ -2777,16 +2792,16 @@ ROM capacity exceeds 32 MB.\r\nWith GBA, ROM that exceeds 32 MB can not be execu
 The logo area at the top of the ROM is destroyed.\r\nNormally, this area can not be rewritten.
 
 :@0080の後に、@命令が続いていません。@001Cで補正します。
-There is no @ command following @ 0080. Fix with @ 001C.
+There is no @ command following @0080. Fix with @001C.
 
 :@0010の次のコードが 0x100以下です。危険なので、+0x100補正します。 code2:{0}
-The code @ 0010 modifies data within the range 0x100. To prevent ROM bricking, adding + 0x100.code2: {0} to offset.
+The code @0010 modifies data within the range 0x100. To prevent ROM bricking, adding + 0x100.code2: {0} to offset.
 
 :@0010の後に、@命令が続いていません。@0010@0101@0001で補正します。
-There is no @ command following @ 0010.Correct with @ 0010 @ 0101 @ 0001.
+There is no @ command following @0010.Correct with @0010@0101@0001.
 
 :@0010命令が途中で終わってしまいました。
-@ 0010 Unable to complete command.
+@0010 Unable to complete command.
 
 :ROMに存在しいフォントをPCに存在するフォントから自動的に作成します。\r\nまとめて複数のフォントを一気に作りたい場合は、ROM翻訳ツールから作ることをお勧めします。
 It automatically creates fonts that exist in ROM from fonts existing on the PC.\r\nIf you want to create multiple fonts at once, we recommend you to make it from the ROM translation tool.
@@ -3328,8 +3343,8 @@ Item Icons
 :魔法リストの拡張がされていません。\r\nリストの拡張を選択して、魔法リストを増やしてください。
 Please select the extension of the list and increase the magic list.
 
-:魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|All files|*
-Magic Animation With Comment|*.txt|Magic Animation No comment|*.txt|Animtion GIF|*.gif|All files|*
+:魔法アニメ コメントあり|*.txt|魔法アニメ コメントなし|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
+Magic Animation With Comment|*.txt|Magic Animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.txt|All files|*
 
 :追加魔法
 Magic Animations
@@ -4114,8 +4129,26 @@ Grado-South
 :一番下
 The bottom
 
-:イベントスキップを止める
-Stop event skipping
+:呼び出された親イベントに戻らないで終了する
+Exit without returning to called parent event.
+
+:キューに入っているイベント呼び出しを待機させる
+queued event engine calls will wait
+
+:イベントスキップ中
+scene-skipping
+
+:テキストスキップ中
+Skipping text.
+
+:スタートボタンでのイベントスキップ防止
+Event skip prevention with the start button.
+
+:Bボタンでのテキストスキップ防止
+Text skip prevention with B button.
+
+:Aボタン等でのテキスト早送りを防止
+Prevent text fast forward with A button etc.
 
 :フェードインを解除
 Unfade fade in
@@ -4126,8 +4159,14 @@ Fading in
 :カメラを主人公に固定
 Fix the camera to the main character
 
-:不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。
-Unknown EVBIT.\r\nEVBIT is from 0x00 to 0x0E.
+:別の章に移動中(?)
+moving to another chapter (?)
+
+:ゲームモードを変更中(GAMECTRLフィールドの0x29を変化?)
+changing "game mode" (GAMECTRL field 0x29 was changed?)
+
+:グラフィックがイベントによってロック中(codes 0x23/0x24)
+set when the game graphics have been locked through events (codes 0x23/0x24)
 
 :霧無し
 No fog
@@ -4175,7 +4214,7 @@ Berserk
 Critical
 
 :回避
-Evade
+Avoid
 
 :ストーン
 Stone
@@ -5231,7 +5270,7 @@ Create Report Issue
 End
 
 :実行
-Open
+Run
 
 :エミュレータで実行([F5])
 Run on Emulator 1 [F5]
@@ -5252,16 +5291,16 @@ Insert ASM/C
 Last Used File
 
 :プログラム1で開く
-Open in Program 1
+Run in Program 1
 
 :プログラム2で開く
-Open in Program 2
+Run in Program 2
 
 :プログラム3で開く
-Open in Program 3
+Run in Program 3
 
 :任意のプログラムで開く
-Open in External Program
+Run in External Program
 
 :ツール
 Tools
@@ -6815,7 +6854,7 @@ Change map style
 Edit Map
 
 :勝利BGMに変わる敵数
-Victory BGM(# Foes Left =)
+VictoryBGM(# Foes Left)
 
 :ワールドマップポイントY
 World map point Y
@@ -7087,6 +7126,9 @@ Player Phase BGM (Eliwood)
 :章タイトル画像2
 Chapter Title 2
 
+:開始イベント前に暗転
+Dark Before Initial Event
+
 :章タイトル文字(ヘクトル)
 Chapter Title Ch.(Hector)
 
@@ -7182,9 +7224,6 @@ Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
 
 :15=草原?
 15=Plains?
-
-:開始イベント前に暗転
-Dark Before Initial Event
 
 :マップ名2(X)
 Map Name 2 (X)
@@ -7789,16 +7828,16 @@ Please select the location to move.
 :00=ファイル末尾
 00=End of file
 
-:01=0x09000000以降の拡張領域で、0x00が8192個+必要データ数連続している領域
+:01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
 01=At 0x1000000, Search for an area filled with 0x00s the size of the new data
 
-:02=0x09000000以降の拡張領域で、0xFFが8192個+必要データ数連続している領域
+:02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
 02=At 0x1000000, Search for an area filled with 0xFFs the size of the new data
 
-:03=0x08000000以降の通常領域で、0x00が8192個+必要データ数連続している領域
+:03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
 03=At 0x0000000, Search for an area filled with 0x00s the size of the new data
 
-:04=0x08000000以降の通常領域で、0xFFが8192個+必要データ数連続している領域
+:04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
 04=At 0x0000000, Search for an area filled with 0xFFs the size of the new data
 
 :空き領域の定義
@@ -8182,6 +8221,15 @@ Shortcut Key 2
 :19=リストから次を検索
 19=Search next from list
 
+:20=ユニット画面を開く
+20=Open the unit screen.
+
+:21=クラス画面を開く
+21=Open the class screen.
+
+:22=アイテム画面を開く
+22=Open the item screen.
+
 :ショートカットキー1
 Shortcut Key 1
 
@@ -8323,17 +8371,17 @@ Search starting position at ROM expansion
 :0=ファイル末尾
 0=End of File
 
-:1=0x09000000以降 0x00が8192連続
-1=0x09000000 or later 0x00 is 8192 Continuous
+:1=0x09000000以降 0x00が規定数連続
+1=0x09000000 or later 0x00 is many Continuous
 
-:2=0x09000000以降 0xFFが8192連続
-2=0x09000000 or later 0xFF is 8192 Continuous
+:2=0x09000000以降 0xFFが規定数連続
+2=0x09000000 or later 0xFF is many Continuous
 
-:3=0x08000000以降 0x00が8192連続
-3=0x08000000 or later 0x00 is 8192 Continuous
+:3=0x08000000以降 0x00が規定数連続
+3=0x08000000 or later 0x00 is many Continuous
 
-:4=0x08000000以降 0xFFが8192連続
-4=0x08000000 or later 0xFF is 8192 Continuous
+:4=0x08000000以降 0xFFが規定数連続
+4=0x08000000 or later 0xFF is many Continuous
 
 :機能2
 Function 2
@@ -8679,6 +8727,9 @@ IF parse error, this address ({2}) is dangerous.\r\n{0}={1}\r\n{0} = {1}
 
 :IFパースエラー、この値にはスペースがありません\r\n{0}={1}
 IF parse error, this value has no space.\r\n{0}={1}
+
+:パッチのデータが壊れています。データサイズ1MBを超えました
+The patch data is broken.Data size exceeded 1 MB.
 
 :以下の競合するパッチのいずれかがインストールされているため、利用できません。
 It can not be used because one of the following conflicting patches is installed.
@@ -9250,8 +9301,8 @@ There is not a specified number of pointers for skill extension FE 8 Nver 2.\r\n
 :(友軍時のみ)
 (Only for NPC(ally) army)
 
-:スキルアニメスクリプト|*.txt|アニメGIF|*.gif|All files|*
-Skill animation script|*.txt|animation GIF|*.gif|All files|*
+:スキルアニメスクリプト|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*
+Skill animation script|*.txt|animation GIF|*.gif|Dump All|*.txt|All files|*
 
 :スキルアニメスクリプト|*.txt|All files|*
 Skill animation script|*.txt|All files|*
@@ -9643,6 +9694,9 @@ The number of tracks exceeds 16 tracks. With GBA, you can only use songs of up t
 :.equは2つの引数が必要です.\r\n例: .equ name, value\r\n\r\nFile:{0} Line:{1}
 .equ requires two arguments ..\r\nExample: .equ name, value\r\n\r\nFile:{0} Line:{1}
 
+:説明:\r\n
+Description:.\r\n
+
 :global が2回定義されました。\r\n例: global aaa\r\n\r\nFile:{0} Line:{1}
 global has been defined twice.
 
@@ -9860,7 +9914,7 @@ Summoned Unit
 Summoner Unit
 
 :必殺回避
-Crit Evade
+Crit Avoid
 
 :防御
 Defense
@@ -10006,14 +10060,17 @@ This area is reserved as a string area for patches that extend the system.\r\nPl
 :以下のテキストにエラーがあります。\r\nエラーを修正して、「書き込み」ボタンを押してください。
 There is an error in the following text.\r\nCorrect the error and push "Write" button.
 
+:RAMエリアのため、書き込めません.
+Unable to write to RAM area.
+
+:テキストを書き込み中にエラーが発生しました。
+An error occurred while writing the text.
+
 :文字:{0}はシステムに登録されていません。
 The character: {0} is not registered in the system.
 
 :文字テーブル範囲外のため、書き込めません.
 Unable to write data because it is out of the character table range.
-
-:RAMエリアのため、書き込めません.
-Unable to write to RAM area.
 
 :ユニットの位置が0x08から0xFの範囲にありません。
 Unit position is not in the range 0x08 to 0xF.
@@ -10547,7 +10604,7 @@ Dump tables, such as units, classes, items.
 Export of main table
 
 :インポートは、メニューの「実行」->「Event Assemblerで追加」で追加から実行してください。
-To import events in EA format, return to the main menu and navigate to "Open" -> "Insert Events Via Event Assembler."
+To import events in EA format, return to the main menu and navigate to "Run" -> "Insert Events Via Event Assembler."
 
 :エクスポート時にaddEndGuardsを付与する
 Add End Guards
@@ -10617,6 +10674,9 @@ Could not download file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
 :ダウンロードしたファイルを解凍できませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
 The downloaded file could not be decompressed.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
+
+:ダウンロードしたファイルを開けませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}
+Could not open downloaded file.\r\nURL: {0}.\r\nPATH: {1}.\r\nfindEXE: {2}.
 
 :ダウンロードしたファイルに目的のファイルがありません。\r\nPATH:{0}\r\nfindEXE:{1}
 There is no target file in the downloaded file.\r\nPATH: {0}.\r\nfindEXE: {1}.
@@ -10900,14 +10960,20 @@ Which chapter does the error occur? \r\nIn order to reproduce the problem, we ne
 :この機能の説明
 Explanation of this function.
 
-:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
-This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
-
 :どの章？
 Which chapter? 
 
 :次へ
 next
+
+:完了ボタンでDiscordコミニティURLを開く
+Open Discord Community URL with Complete button
+
+:誰？
+Who?
+
+:このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。
+This tool is a tool to create a report on problems that are present in your ROM.\r\nIf there is a problem that can not be solved by all means, please create a report with this tool and ask a question of the community.\r\n\r\nBy using this tool, you can reproduce the problem and easily create data to solve the problem.
 
 :戦闘アニメや画像データなど、問題を再現させるためのファイルがあれば添付してください。\r\n特にない場合は、空欄のままにしてください。\r\n最大2MBまで添付できます
 Attach any files, such as battle animation and image data, to reproduce problems.\r\nPlease leave it blank if it is not particularly.\r\nUp to 2 MB can be attached
@@ -10920,9 +10986,6 @@ It is illegal to publish ROM in many countries.\r\nTherefore, Will make differen
 
 :私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。
 To reproduce and investigate the problem Need an ups patch.\r\nTo make ups patch, please designate the original unmodified ROM.
-
-:完了ボタンでDiscordコミニティURLを開く
-Open Discord Community URL with Complete button
 
 :レポートを作成しました。\r\nこの7zファイルに、問題を再現するのに必要なデータが格納されています。\r\nこのファイルをコミニティに投稿して質問してください。
 Created a report.\r\nThis 7z file contains the data necessary to reproduce the problem.\r\nPlease post this file to the community and ask a question.
@@ -11251,8 +11314,8 @@ Open UPS patch
 :作成するUPSファイル名を選択してください
 Please select the UPS file name to create
 
-:UPSを開く
-Open UPS
+:UPSで保存する
+Save by UPS
 
 :現在のデータをUPSパッチとして保存します。\r\n特別な理由がない限り、通常の保存をしたあとで利用してください。
 Save the current data as a UPS patch.\r\nUnless there is a special reason, please use it after normal saving.

@@ -1,5 +1,5 @@
 NAME=制圧をエイリークでできるようにする 5x章
-NAME.en=unlock seize in ch5x
+NAME.en=unlock seize in ch5x(seize on Eirika)
 
 //アドレスパッチとして実装します
 TYPE=ADDR
@@ -7,8 +7,12 @@ TAG=#ENGINE
 
 ADDRESS=0x37C2D
 
-COMBO=Lock|0xD1|解禁|0xE0
+COMBO=Lock|0xD1|Unlock|0xE0
 COMBO.en=Lock|0xD1|Unlock|0xE0
 COMBO.zh=Lock|0xD1|Unlock|0xE0
 
-NAME.zh=启用Eliq的抑制功能第5x章
+NAME.zh=启用艾瑞克的抑制功能第5x章
+
+INFO=これは、5章外伝で、エフラムではなく、エイリークが制圧できるようにするパッチです。\r\n5章外伝でエフラムを利用したい場合は、"lock"の状態にしておくべきです。\r\n逆に、5章外伝にエイリークを登場させたい場合は、"unlock"状態にします。
+INFO.en=This is a patch that allows Eirika to Seize on ch5x, not Ephraim.\r\nIf you want to use Ephraim with ch5x, please put it in "lock" status.\r\nConversely, if you want to make Eirika appear on ch5x, put it in "unlock" state.
+INFO.zh=这是一个补丁，允许艾瑞克在ch5x上抓住，而不是伊弗列姆。\r\n如果你想使用带有ch5x的伊弗列姆，请把它置于“lock”状态。\r\n相反，如果你想让艾瑞克出现在ch5x上，把它置于“unlock”状态。

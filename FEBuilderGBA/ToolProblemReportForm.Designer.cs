@@ -32,9 +32,6 @@
             this.MainTab = new System.Windows.Forms.TabControl();
             this.BeginPage = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.AboutReport7zText = new FEBuilderGBA.TextBoxEx();
-            this.label8 = new FEBuilderGBA.LabelEx();
-            this.label7 = new FEBuilderGBA.LabelEx();
             this.StartButton = new System.Windows.Forms.Button();
             this.Step1Page = new System.Windows.Forms.TabPage();
             this.X_MapID = new System.Windows.Forms.NumericUpDown();
@@ -42,25 +39,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.AttachDataSelectButton = new System.Windows.Forms.Button();
             this.Step1NextButton = new System.Windows.Forms.Button();
+            this.Step2Page = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.OrignalSelectButton = new System.Windows.Forms.Button();
+            this.Step2PrevButton = new System.Windows.Forms.Button();
+            this.Step2NextButton = new System.Windows.Forms.Button();
+            this.EndPage = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.OpenCommunities = new System.Windows.Forms.CheckBox();
+            this.EndButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.X_UnitID = new System.Windows.Forms.NumericUpDown();
+            this.AboutReport7zText = new FEBuilderGBA.TextBoxEx();
+            this.label8 = new FEBuilderGBA.LabelEx();
+            this.label7 = new FEBuilderGBA.LabelEx();
+            this.X_UnitIcon = new FEBuilderGBA.InterpolatedPictureBox();
+            this.X_UnitName = new FEBuilderGBA.TextBoxEx();
             this.X_MapName = new FEBuilderGBA.TextBoxEx();
             this.labelEx1 = new FEBuilderGBA.LabelEx();
             this.AttachDataFilename = new FEBuilderGBA.TextBoxEx();
             this.label6 = new FEBuilderGBA.LabelEx();
             this.Problem = new FEBuilderGBA.TextBoxEx();
             this.ProblemLabel = new FEBuilderGBA.LabelEx();
-            this.Step2Page = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.OrignalSelectButton = new System.Windows.Forms.Button();
-            this.Step2PrevButton = new System.Windows.Forms.Button();
-            this.Step2NextButton = new System.Windows.Forms.Button();
             this.OrignalFilename = new FEBuilderGBA.TextBoxEx();
             this.label11 = new FEBuilderGBA.LabelEx();
             this.label9 = new FEBuilderGBA.LabelEx();
             this.label5 = new FEBuilderGBA.LabelEx();
-            this.EndPage = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.OpenCommunities = new System.Windows.Forms.CheckBox();
-            this.EndButton = new System.Windows.Forms.Button();
             this.URLTextBoxEx = new FEBuilderGBA.TextBoxEx();
             this.label12 = new FEBuilderGBA.LabelEx();
             this.panel1.SuspendLayout();
@@ -70,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.X_MapID)).BeginInit();
             this.Step2Page.SuspendLayout();
             this.EndPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_UnitID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_UnitIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 611);
+            this.panel1.Size = new System.Drawing.Size(837, 645);
             this.panel1.TabIndex = 0;
             // 
             // MainTab
@@ -90,7 +96,7 @@
             this.MainTab.Location = new System.Drawing.Point(4, -1);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(805, 584);
+            this.MainTab.Size = new System.Drawing.Size(821, 634);
             this.MainTab.TabIndex = 0;
             // 
             // BeginPage
@@ -104,7 +110,7 @@
             this.BeginPage.Location = new System.Drawing.Point(4, 28);
             this.BeginPage.Name = "BeginPage";
             this.BeginPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeginPage.Size = new System.Drawing.Size(797, 552);
+            this.BeginPage.Size = new System.Drawing.Size(813, 602);
             this.BeginPage.TabIndex = 0;
             this.BeginPage.Text = "BeginPage";
             // 
@@ -116,6 +122,220 @@
             this.label3.Size = new System.Drawing.Size(122, 18);
             this.label3.TabIndex = 25;
             this.label3.Text = "この機能の説明";
+            // 
+            // StartButton
+            // 
+            this.StartButton.Location = new System.Drawing.Point(603, 538);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(172, 36);
+            this.StartButton.TabIndex = 8;
+            this.StartButton.Text = "始める";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            // 
+            // Step1Page
+            // 
+            this.Step1Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step1Page.Controls.Add(this.X_UnitIcon);
+            this.Step1Page.Controls.Add(this.X_UnitName);
+            this.Step1Page.Controls.Add(this.X_UnitID);
+            this.Step1Page.Controls.Add(this.label10);
+            this.Step1Page.Controls.Add(this.Step1NextButton);
+            this.Step1Page.Controls.Add(this.X_MapID);
+            this.Step1Page.Controls.Add(this.X_MapIDLabel);
+            this.Step1Page.Controls.Add(this.label2);
+            this.Step1Page.Controls.Add(this.AttachDataSelectButton);
+            this.Step1Page.Controls.Add(this.X_MapName);
+            this.Step1Page.Controls.Add(this.labelEx1);
+            this.Step1Page.Controls.Add(this.AttachDataFilename);
+            this.Step1Page.Controls.Add(this.label6);
+            this.Step1Page.Controls.Add(this.Problem);
+            this.Step1Page.Controls.Add(this.ProblemLabel);
+            this.Step1Page.Location = new System.Drawing.Point(4, 28);
+            this.Step1Page.Name = "Step1Page";
+            this.Step1Page.Padding = new System.Windows.Forms.Padding(3);
+            this.Step1Page.Size = new System.Drawing.Size(813, 602);
+            this.Step1Page.TabIndex = 1;
+            this.Step1Page.Text = "Step1Page";
+            // 
+            // X_MapID
+            // 
+            this.X_MapID.Hexadecimal = true;
+            this.X_MapID.Location = new System.Drawing.Point(183, 328);
+            this.X_MapID.Name = "X_MapID";
+            this.X_MapID.Size = new System.Drawing.Size(78, 25);
+            this.X_MapID.TabIndex = 1;
+            // 
+            // X_MapIDLabel
+            // 
+            this.X_MapIDLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X_MapIDLabel.Location = new System.Drawing.Point(6, 324);
+            this.X_MapIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.X_MapIDLabel.Name = "X_MapIDLabel";
+            this.X_MapIDLabel.Size = new System.Drawing.Size(165, 31);
+            this.X_MapIDLabel.TabIndex = 99;
+            this.X_MapIDLabel.Text = "どの章？";
+            this.X_MapIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(6, 393);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 31);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "添付データ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AttachDataSelectButton
+            // 
+            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 426);
+            this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachDataSelectButton.Name = "AttachDataSelectButton";
+            this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.AttachDataSelectButton.TabIndex = 3;
+            this.AttachDataSelectButton.Text = "ファイル選択";
+            this.AttachDataSelectButton.UseVisualStyleBackColor = true;
+            this.AttachDataSelectButton.Click += new System.EventHandler(this.AttachDataSelectButton_Click);
+            // 
+            // Step1NextButton
+            // 
+            this.Step1NextButton.Location = new System.Drawing.Point(603, 538);
+            this.Step1NextButton.Name = "Step1NextButton";
+            this.Step1NextButton.Size = new System.Drawing.Size(172, 36);
+            this.Step1NextButton.TabIndex = 5;
+            this.Step1NextButton.Text = "次へ";
+            this.Step1NextButton.UseVisualStyleBackColor = true;
+            this.Step1NextButton.Click += new System.EventHandler(this.Step1NextButton_Click);
+            // 
+            // Step2Page
+            // 
+            this.Step2Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step2Page.Controls.Add(this.label4);
+            this.Step2Page.Controls.Add(this.OrignalSelectButton);
+            this.Step2Page.Controls.Add(this.Step2PrevButton);
+            this.Step2Page.Controls.Add(this.Step2NextButton);
+            this.Step2Page.Controls.Add(this.OrignalFilename);
+            this.Step2Page.Controls.Add(this.label11);
+            this.Step2Page.Controls.Add(this.label9);
+            this.Step2Page.Controls.Add(this.label5);
+            this.Step2Page.Location = new System.Drawing.Point(4, 28);
+            this.Step2Page.Name = "Step2Page";
+            this.Step2Page.Size = new System.Drawing.Size(813, 602);
+            this.Step2Page.TabIndex = 3;
+            this.Step2Page.Text = "Step2Page";
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(4, 103);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(196, 31);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "無改造ROM";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OrignalSelectButton
+            // 
+            this.OrignalSelectButton.Location = new System.Drawing.Point(4, 138);
+            this.OrignalSelectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OrignalSelectButton.Name = "OrignalSelectButton";
+            this.OrignalSelectButton.Size = new System.Drawing.Size(130, 31);
+            this.OrignalSelectButton.TabIndex = 92;
+            this.OrignalSelectButton.Text = "ファイル選択";
+            this.OrignalSelectButton.UseVisualStyleBackColor = true;
+            this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
+            // 
+            // Step2PrevButton
+            // 
+            this.Step2PrevButton.Location = new System.Drawing.Point(403, 538);
+            this.Step2PrevButton.Name = "Step2PrevButton";
+            this.Step2PrevButton.Size = new System.Drawing.Size(172, 36);
+            this.Step2PrevButton.TabIndex = 21;
+            this.Step2PrevButton.Text = "戻る";
+            this.Step2PrevButton.UseVisualStyleBackColor = true;
+            this.Step2PrevButton.Click += new System.EventHandler(this.Step2PrevButton_Click);
+            // 
+            // Step2NextButton
+            // 
+            this.Step2NextButton.Location = new System.Drawing.Point(603, 538);
+            this.Step2NextButton.Name = "Step2NextButton";
+            this.Step2NextButton.Size = new System.Drawing.Size(172, 36);
+            this.Step2NextButton.TabIndex = 20;
+            this.Step2NextButton.Text = "作成";
+            this.Step2NextButton.UseVisualStyleBackColor = true;
+            this.Step2NextButton.Click += new System.EventHandler(this.Step2NextButton_Click);
+            // 
+            // EndPage
+            // 
+            this.EndPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EndPage.Controls.Add(this.label1);
+            this.EndPage.Controls.Add(this.OpenCommunities);
+            this.EndPage.Controls.Add(this.EndButton);
+            this.EndPage.Controls.Add(this.URLTextBoxEx);
+            this.EndPage.Controls.Add(this.label12);
+            this.EndPage.Location = new System.Drawing.Point(4, 28);
+            this.EndPage.Name = "EndPage";
+            this.EndPage.Size = new System.Drawing.Size(813, 602);
+            this.EndPage.TabIndex = 4;
+            this.EndPage.Text = "EndPage";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 18);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "DiscordコミニティURL";
+            // 
+            // OpenCommunities
+            // 
+            this.OpenCommunities.AutoSize = true;
+            this.OpenCommunities.Checked = true;
+            this.OpenCommunities.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OpenCommunities.Location = new System.Drawing.Point(7, 541);
+            this.OpenCommunities.Name = "OpenCommunities";
+            this.OpenCommunities.Size = new System.Drawing.Size(316, 22);
+            this.OpenCommunities.TabIndex = 23;
+            this.OpenCommunities.Text = "完了ボタンでDiscordコミニティURLを開く";
+            this.OpenCommunities.UseVisualStyleBackColor = true;
+            // 
+            // EndButton
+            // 
+            this.EndButton.Location = new System.Drawing.Point(603, 538);
+            this.EndButton.Name = "EndButton";
+            this.EndButton.Size = new System.Drawing.Size(172, 36);
+            this.EndButton.TabIndex = 21;
+            this.EndButton.Text = "完了";
+            this.EndButton.UseVisualStyleBackColor = true;
+            this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
+            // 
+            // label10
+            // 
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(6, 354);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(165, 31);
+            this.label10.TabIndex = 102;
+            this.label10.Text = "誰？";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // X_UnitID
+            // 
+            this.X_UnitID.Hexadecimal = true;
+            this.X_UnitID.Location = new System.Drawing.Point(183, 358);
+            this.X_UnitID.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.X_UnitID.Name = "X_UnitID";
+            this.X_UnitID.Size = new System.Drawing.Size(78, 25);
+            this.X_UnitID.TabIndex = 2;
             // 
             // AboutReport7zText
             // 
@@ -148,100 +368,40 @@
             this.label7.Text = "このツールは、あなたのROMに存在する問題のレポートを作成するツールです。\r\nどうしても解決できない問題がある場合は、このツールでレポートを作成して、コミニティに" +
     "質問してみてください。\r\n\r\nこのツールを利用することで、問題を再現させ、問題を解決させるためのデータを簡単に作ることができます。";
             // 
-            // StartButton
+            // X_UnitIcon
             // 
-            this.StartButton.Location = new System.Drawing.Point(598, 503);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(172, 36);
-            this.StartButton.TabIndex = 8;
-            this.StartButton.Text = "始める";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            this.X_UnitIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.X_UnitIcon.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_UnitIcon.Location = new System.Drawing.Point(712, 328);
+            this.X_UnitIcon.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.X_UnitIcon.Name = "X_UnitIcon";
+            this.X_UnitIcon.Size = new System.Drawing.Size(58, 58);
+            this.X_UnitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.X_UnitIcon.TabIndex = 175;
+            this.X_UnitIcon.TabStop = false;
             // 
-            // Step1Page
+            // X_UnitName
             // 
-            this.Step1Page.BackColor = System.Drawing.SystemColors.Control;
-            this.Step1Page.Controls.Add(this.X_MapID);
-            this.Step1Page.Controls.Add(this.X_MapIDLabel);
-            this.Step1Page.Controls.Add(this.label2);
-            this.Step1Page.Controls.Add(this.AttachDataSelectButton);
-            this.Step1Page.Controls.Add(this.Step1NextButton);
-            this.Step1Page.Controls.Add(this.X_MapName);
-            this.Step1Page.Controls.Add(this.labelEx1);
-            this.Step1Page.Controls.Add(this.AttachDataFilename);
-            this.Step1Page.Controls.Add(this.label6);
-            this.Step1Page.Controls.Add(this.Problem);
-            this.Step1Page.Controls.Add(this.ProblemLabel);
-            this.Step1Page.Location = new System.Drawing.Point(4, 28);
-            this.Step1Page.Name = "Step1Page";
-            this.Step1Page.Padding = new System.Windows.Forms.Padding(3);
-            this.Step1Page.Size = new System.Drawing.Size(797, 552);
-            this.Step1Page.TabIndex = 1;
-            this.Step1Page.Text = "Step1Page";
-            // 
-            // X_MapID
-            // 
-            this.X_MapID.Location = new System.Drawing.Point(219, 329);
-            this.X_MapID.Name = "X_MapID";
-            this.X_MapID.Size = new System.Drawing.Size(78, 25);
-            this.X_MapID.TabIndex = 2;
-            // 
-            // X_MapIDLabel
-            // 
-            this.X_MapIDLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X_MapIDLabel.Location = new System.Drawing.Point(6, 324);
-            this.X_MapIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.X_MapIDLabel.Name = "X_MapIDLabel";
-            this.X_MapIDLabel.Size = new System.Drawing.Size(196, 31);
-            this.X_MapIDLabel.TabIndex = 99;
-            this.X_MapIDLabel.Text = "どの章？";
-            this.X_MapIDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(6, 361);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 31);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "添付データ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AttachDataSelectButton
-            // 
-            this.AttachDataSelectButton.Location = new System.Drawing.Point(6, 396);
-            this.AttachDataSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AttachDataSelectButton.Name = "AttachDataSelectButton";
-            this.AttachDataSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.AttachDataSelectButton.TabIndex = 95;
-            this.AttachDataSelectButton.Text = "ファイル選択";
-            this.AttachDataSelectButton.UseVisualStyleBackColor = true;
-            this.AttachDataSelectButton.Click += new System.EventHandler(this.AttachDataSelectButton_Click);
-            // 
-            // Step1NextButton
-            // 
-            this.Step1NextButton.Location = new System.Drawing.Point(598, 503);
-            this.Step1NextButton.Name = "Step1NextButton";
-            this.Step1NextButton.Size = new System.Drawing.Size(172, 36);
-            this.Step1NextButton.TabIndex = 4;
-            this.Step1NextButton.Text = "次へ";
-            this.Step1NextButton.UseVisualStyleBackColor = true;
-            this.Step1NextButton.Click += new System.EventHandler(this.Step1NextButton_Click);
+            this.X_UnitName.ErrorMessage = "";
+            this.X_UnitName.Location = new System.Drawing.Point(267, 361);
+            this.X_UnitName.Name = "X_UnitName";
+            this.X_UnitName.Placeholder = "";
+            this.X_UnitName.Size = new System.Drawing.Size(416, 25);
+            this.X_UnitName.TabIndex = 104;
             // 
             // X_MapName
             // 
             this.X_MapName.ErrorMessage = "";
-            this.X_MapName.Location = new System.Drawing.Point(322, 328);
+            this.X_MapName.Location = new System.Drawing.Point(267, 328);
             this.X_MapName.Name = "X_MapName";
             this.X_MapName.Placeholder = "";
-            this.X_MapName.Size = new System.Drawing.Size(459, 25);
+            this.X_MapName.Size = new System.Drawing.Size(416, 25);
             this.X_MapName.TabIndex = 101;
             // 
             // labelEx1
             // 
             this.labelEx1.ErrorMessage = "";
-            this.labelEx1.Location = new System.Drawing.Point(6, 431);
+            this.labelEx1.Location = new System.Drawing.Point(6, 463);
             this.labelEx1.Name = "labelEx1";
             this.labelEx1.Size = new System.Drawing.Size(775, 58);
             this.labelEx1.TabIndex = 98;
@@ -250,12 +410,12 @@
             // AttachDataFilename
             // 
             this.AttachDataFilename.ErrorMessage = "";
-            this.AttachDataFilename.Location = new System.Drawing.Point(144, 402);
+            this.AttachDataFilename.Location = new System.Drawing.Point(144, 432);
             this.AttachDataFilename.Margin = new System.Windows.Forms.Padding(4);
             this.AttachDataFilename.Name = "AttachDataFilename";
             this.AttachDataFilename.Placeholder = "";
             this.AttachDataFilename.Size = new System.Drawing.Size(638, 25);
-            this.AttachDataFilename.TabIndex = 3;
+            this.AttachDataFilename.TabIndex = 4;
             this.AttachDataFilename.DoubleClick += new System.EventHandler(this.AttachDataSelectButton_Click);
             // 
             // label6
@@ -277,7 +437,7 @@
             this.Problem.Placeholder = "";
             this.Problem.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Problem.Size = new System.Drawing.Size(775, 250);
-            this.Problem.TabIndex = 1;
+            this.Problem.TabIndex = 0;
             // 
             // ProblemLabel
             // 
@@ -287,65 +447,6 @@
             this.ProblemLabel.Size = new System.Drawing.Size(669, 41);
             this.ProblemLabel.TabIndex = 8;
             this.ProblemLabel.Text = "どんな問題がありますか？\r\n問題を具体的に説明してください。";
-            // 
-            // Step2Page
-            // 
-            this.Step2Page.BackColor = System.Drawing.SystemColors.Control;
-            this.Step2Page.Controls.Add(this.label4);
-            this.Step2Page.Controls.Add(this.OrignalSelectButton);
-            this.Step2Page.Controls.Add(this.Step2PrevButton);
-            this.Step2Page.Controls.Add(this.Step2NextButton);
-            this.Step2Page.Controls.Add(this.OrignalFilename);
-            this.Step2Page.Controls.Add(this.label11);
-            this.Step2Page.Controls.Add(this.label9);
-            this.Step2Page.Controls.Add(this.label5);
-            this.Step2Page.Location = new System.Drawing.Point(4, 28);
-            this.Step2Page.Name = "Step2Page";
-            this.Step2Page.Size = new System.Drawing.Size(797, 552);
-            this.Step2Page.TabIndex = 3;
-            this.Step2Page.Text = "Step2Page";
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(4, 103);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 31);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "無改造ROM";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OrignalSelectButton
-            // 
-            this.OrignalSelectButton.Location = new System.Drawing.Point(4, 138);
-            this.OrignalSelectButton.Margin = new System.Windows.Forms.Padding(4);
-            this.OrignalSelectButton.Name = "OrignalSelectButton";
-            this.OrignalSelectButton.Size = new System.Drawing.Size(130, 31);
-            this.OrignalSelectButton.TabIndex = 92;
-            this.OrignalSelectButton.Text = "ファイル選択";
-            this.OrignalSelectButton.UseVisualStyleBackColor = true;
-            this.OrignalSelectButton.Click += new System.EventHandler(this.OrignalSelectButton_Click);
-            // 
-            // Step2PrevButton
-            // 
-            this.Step2PrevButton.Location = new System.Drawing.Point(398, 501);
-            this.Step2PrevButton.Name = "Step2PrevButton";
-            this.Step2PrevButton.Size = new System.Drawing.Size(172, 36);
-            this.Step2PrevButton.TabIndex = 21;
-            this.Step2PrevButton.Text = "戻る";
-            this.Step2PrevButton.UseVisualStyleBackColor = true;
-            this.Step2PrevButton.Click += new System.EventHandler(this.Step2PrevButton_Click);
-            // 
-            // Step2NextButton
-            // 
-            this.Step2NextButton.Location = new System.Drawing.Point(598, 503);
-            this.Step2NextButton.Name = "Step2NextButton";
-            this.Step2NextButton.Size = new System.Drawing.Size(172, 36);
-            this.Step2NextButton.TabIndex = 20;
-            this.Step2NextButton.Text = "作成";
-            this.Step2NextButton.UseVisualStyleBackColor = true;
-            this.Step2NextButton.Click += new System.EventHandler(this.Step2NextButton_Click);
             // 
             // OrignalFilename
             // 
@@ -387,51 +488,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "私たちが、問題を再現して調査するためには、upsパッチが必要です。\r\nupsパッチを作るために、元になる無改造ROMを指定してください。";
             // 
-            // EndPage
-            // 
-            this.EndPage.BackColor = System.Drawing.SystemColors.Control;
-            this.EndPage.Controls.Add(this.label1);
-            this.EndPage.Controls.Add(this.OpenCommunities);
-            this.EndPage.Controls.Add(this.EndButton);
-            this.EndPage.Controls.Add(this.URLTextBoxEx);
-            this.EndPage.Controls.Add(this.label12);
-            this.EndPage.Location = new System.Drawing.Point(4, 28);
-            this.EndPage.Name = "EndPage";
-            this.EndPage.Size = new System.Drawing.Size(797, 552);
-            this.EndPage.TabIndex = 4;
-            this.EndPage.Text = "EndPage";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 188);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 18);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "DiscordコミニティURL";
-            // 
-            // OpenCommunities
-            // 
-            this.OpenCommunities.AutoSize = true;
-            this.OpenCommunities.Checked = true;
-            this.OpenCommunities.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OpenCommunities.Location = new System.Drawing.Point(7, 511);
-            this.OpenCommunities.Name = "OpenCommunities";
-            this.OpenCommunities.Size = new System.Drawing.Size(316, 22);
-            this.OpenCommunities.TabIndex = 23;
-            this.OpenCommunities.Text = "完了ボタンでDiscordコミニティURLを開く";
-            this.OpenCommunities.UseVisualStyleBackColor = true;
-            // 
-            // EndButton
-            // 
-            this.EndButton.Location = new System.Drawing.Point(598, 503);
-            this.EndButton.Name = "EndButton";
-            this.EndButton.Size = new System.Drawing.Size(172, 36);
-            this.EndButton.TabIndex = 21;
-            this.EndButton.Text = "完了";
-            this.EndButton.UseVisualStyleBackColor = true;
-            this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
-            // 
             // URLTextBoxEx
             // 
             this.URLTextBoxEx.ErrorMessage = "";
@@ -456,7 +512,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(837, 611);
+            this.ClientSize = new System.Drawing.Size(837, 645);
             this.Controls.Add(this.panel1);
             this.Name = "ToolProblemReportForm";
             this.Text = "問題報告ツール";
@@ -473,6 +529,8 @@
             this.Step2Page.PerformLayout();
             this.EndPage.ResumeLayout(false);
             this.EndPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_UnitID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_UnitIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,5 +572,9 @@
         private System.Windows.Forms.NumericUpDown X_MapID;
         private System.Windows.Forms.Label label3;
         private TextBoxEx AboutReport7zText;
+        private System.Windows.Forms.Label label10;
+        private TextBoxEx X_UnitName;
+        private System.Windows.Forms.NumericUpDown X_UnitID;
+        private InterpolatedPictureBox X_UnitIcon;
     }
 }

@@ -48,4 +48,4 @@ POIN HPFrames+88
 
 ALIGN 4
 HPBarGraphic:
-#incext Png2Dmp "Fe7-Hp Bars graphics.png" --lz77
+#incbin "Fe7-Hp Bars graphics.png.dmp"	//HINT=BIN

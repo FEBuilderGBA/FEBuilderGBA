@@ -203,59 +203,72 @@ namespace FEBuilderGBA
         {
             uint[] addlist = new uint[] { Program.ROM.RomInfo.ai1_pointer(), Program.ROM.RomInfo.ai2_pointer()};
 
-            for (int n = 0; n < addlist.Length; n++)
+            for (int aiType = 0; aiType < addlist.Length; aiType++)
             {
-                uint addr = addlist[n];
-                if (addr == 0)
+                uint aiAddr = addlist[aiType];
+                if (aiAddr == 0)
+                {
+                    continue;
+                }
+                MakeAllDataLengthSub(list,isPointerOnly,aiAddr,aiType);
+            }
+        }
+        public static void MakeAllDataLengthSub(List<Address> list, bool isPointerOnly,uint aiAddr,int aiType)
+        {
+            InputFormRef InputFormRef = Init(null);
+            InputFormRef.ReInitPointer(aiAddr);
+            string name = "AI" + (aiType + 1);
+            FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 });
+
+            uint p = InputFormRef.BaseAddress;
+            for (uint i = 0; i < InputFormRef.DataCount; i++, p += InputFormRef.BlockSize)
+            {
+                if (!U.isSafetyOffset(p))
                 {
                     continue;
                 }
 
-                InputFormRef InputFormRef = Init(null);
-                InputFormRef.ReInitPointer(addlist[n]);
-                string name = "AI" + n;
-                FEBuilderGBA.Address.AddAddress(list, InputFormRef, name, new uint[] { 0 });
-
-                for (int i = 0; i < InputFormRef.DataCount; i++)
+                name = "AI" + (aiType + 1) + " ";
+                if (aiType == 0)
                 {
-                    uint p = InputFormRef.BaseAddress + (uint)i * InputFormRef.BlockSize;
-                    if (!U.isSafetyOffset(p))
-                    {
-                        continue;
-                    }
-                    uint aiscript = Program.ROM.p32(p);
-                    uint length = CalcLength(aiscript);
+                    name += EventUnitForm.GetAIName1(i);
+                }
+                else
+                {
+                    name += EventUnitForm.GetAIName2(i);
+                }
 
-                    FEBuilderGBA.Address.AddAddress(list, aiscript, length, p, name, FEBuilderGBA.Address.DataTypeEnum.AISCRIPT);
-                    for (uint k = 0; k < length; k += 16)
+                uint aiscript = Program.ROM.p32(p);
+                uint length = CalcLength(aiscript);
+
+                FEBuilderGBA.Address.AddAddress(list, aiscript, length, p, name, FEBuilderGBA.Address.DataTypeEnum.AISCRIPT);
+
+                uint end = aiscript + length;
+                for (uint k = aiscript; k < end; k += 16)
+                {
+                    uint pp;
+                    pp = Program.ROM.u32(k + 8);
+                    if (U.isPointer(pp))
                     {
-                        uint pp;
-                        pp = Program.ROM.p32(p + 8);
-                        if (U.isPointer(pp))
-                        {
-                            if ((pp % 2) == 1)
-                            {//thumbプログラムコード
-                                FEBuilderGBA.Address.AddAddress(list,pp
-                                    , 0 //たいていプログラムなので長さ不明.
-                                    , p + 8, name
-                                    , FEBuilderGBA.Address.DataTypeEnum.ASM);
-                            }
-                            else
-                            {//データ
-                                FEBuilderGBA.Address.AddAddress(list,pp
-                                    , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
-                                    , p + 8, name
-                                    , FEBuilderGBA.Address.DataTypeEnum.BIN);
-                            }
+                        if ((pp % 2) == 1)
+                        {//thumbプログラムコード
+                            FEBuilderGBA.Address.AddFunction(list, k + 8, name + " CallASM");
                         }
-                        pp = Program.ROM.p32(p + 12);
-                        if (U.isPointer(pp))
-                        {
-                            FEBuilderGBA.Address.AddAddress(list,pp
+                        else
+                        {//データ
+                            FEBuilderGBA.Address.AddAddress(list, pp
                                 , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
-                                , p + 12, name
+                                , k + 8, name
                                 , FEBuilderGBA.Address.DataTypeEnum.BIN);
                         }
+                    }
+                    pp = Program.ROM.u32(k + 12);
+                    if (U.isPointer(pp))
+                    {
+                        FEBuilderGBA.Address.AddAddress(list, pp
+                            , isPointerOnly ? 0 : AIUnitsForm.CalcLength(pp)
+                            , k + 12, name
+                            , FEBuilderGBA.Address.DataTypeEnum.BIN);
                     }
                 }
             }
@@ -322,57 +335,6 @@ namespace FEBuilderGBA
         }
 
 
-        static Bitmap DrawAIUnitsList(uint units_address, int iconSize)
-        {
-            units_address = U.toOffset(units_address);
-            if (!U.isSafetyOffset(units_address))
-            {
-                return ImageUtil.BlankDummy();
-            }
-
-            int count = 0;
-            uint addr = units_address;
-            while (Program.ROM.u16(addr) != 0x0)
-            {
-                addr += 2;
-                if (!U.isSafetyOffset(addr))
-                {
-                    break;
-                }
-                count++;
-            }
-            if (count <= 0)
-            {
-                return ImageUtil.BlankDummy();
-            }
-
-            Bitmap bitmap = new Bitmap(iconSize * count, iconSize);
-            Rectangle bounds = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-
-            using (Graphics g = Graphics.FromImage(bitmap))
-            {
-                addr = units_address;
-                for (int i = 0; i < count; i++)
-                {
-                    uint unit_id = Program.ROM.u8(addr + 0);
-                    Bitmap icon = UnitForm.DrawUnitMapFacePicture(unit_id);
-                    if (ImageUtil.IsBlankBitmap(icon))
-                    {
-                        uint class_id = UnitForm.GetClassID(unit_id);
-                        icon = ClassForm.DrawWaitIcon(class_id);
-                    }
-                    U.MakeTransparent(icon);
-
-                    Rectangle b = bounds;
-                    b.Width = iconSize;
-                    b.Height = iconSize;
-
-                    bounds.X += U.DrawPicture(icon, g, true, b);
-                    addr += 2;
-                }
-            }
-            return bitmap;
-        }
 
         EventScriptPopupUserControl Popup;
         private void Script_SelectedIndexChanged(object sender, EventArgs e)
@@ -529,12 +491,7 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT)
             {
-                //                if (isOrderOfHuman)
-                //                {
-                //                    Bitmap tempImage = EventUnitForm.DrawMapAndUnit(this.ScanMAPID(), U.toOffset(value));
-                //                    PopupDialog_Image((NumericUpDown)sender, tempImage);
-                //                }
-                backgroundImage = DrawAIUnitsList(value, ScriptEditSetTables[selectID].ParamValue.Height - 2);
+                backgroundImage = AIUnitsForm.DrawAIUnitsList(value, ScriptEditSetTables[selectID].ParamValue.Height - 2);
             }
             else if (arg.Type == EventScript.ArgType.MAPX || arg.Type == EventScript.ArgType.MAPY)
             {
@@ -564,6 +521,14 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_ASM)
             {
                 text = Program.AsmMapFileAsmCache.GetASMName(value, false, out errormessage);
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
+            {
+                text = AITilesForm.GetNames(value);
+            }
+            else if (arg.Type == EventScript.ArgType.TILE)
+            {
+                text = MapTerrainNameForm.GetNameExcept00(value);
             }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
@@ -643,6 +608,13 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT)
             {
                 AIUnitsForm f = (AIUnitsForm)InputFormRef.JumpFormLow<AIUnitsForm>();
+                f.JumpTo(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
+            {
+                AITilesForm f = (AITilesForm)InputFormRef.JumpFormLow<AITilesForm>();
                 f.JumpTo(value);
                 f.ShowDialog();
                 U.ForceUpdate(src_object, f.GetBaseAddress());

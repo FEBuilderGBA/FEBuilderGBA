@@ -1,5 +1,5 @@
 08=Attack (becomes critical automatically) with HP stealing
-29=Background brightness and opacity XX=Brightness level 0〜100%（0〜10） YY=Opacity 100%〜50%（0〜10）
+29=Background brightness and opacity XX=Brightness level 0〜100%(0〜10) YY=Opacity 100%〜50%(0〜10)
 2A=Background display during battle  YY=0 show   YY=Other than 0 hide
 40=Scrolls the screen from being centered on the attacker to being centered on the defender
 48=Plays sound or music  arg=XXYY sound ID

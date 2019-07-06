@@ -35,4 +35,4 @@ AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/RePreparatio
 AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/RePreparation.
 
 
-INFO.zh=允许您以章节为单位更改在攻击提升屏幕上播放的歌曲。
+INFO.zh=允许您以章节为人物更改在攻击提升屏幕上播放的歌曲。

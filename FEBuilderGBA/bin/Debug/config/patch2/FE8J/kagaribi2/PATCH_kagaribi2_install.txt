@@ -1,0 +1,18 @@
+NAME=霧の中でも特定の座標に視界を確保します。 ver2 (導入)
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x19CD6=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_kagaribi2.txt
+EA=Installer.event
+
+
+INFO=FE5の離脱ポイントは霧の中でも視界が確保されていたように、霧の中でも特定の位置に視界を確保します。
+
+AUTHOR=7743
+
+NAME.en=Secure visibility to specific coordinates even in fog. ver2(Installer)
+INFO.en=As for the departure point of FE 5, visibility is secured at a specific position even in the mist, as in the mist, visibility was secured.
+NAME.zh=即使在雾中，我们也能确保特定坐标的可见性 ver2（Installer）
+INFO.zh=至于FE 5的出发点，即使在雾中也能确保能够在特定位置看到能见度，如在雾中，确保了能见度。

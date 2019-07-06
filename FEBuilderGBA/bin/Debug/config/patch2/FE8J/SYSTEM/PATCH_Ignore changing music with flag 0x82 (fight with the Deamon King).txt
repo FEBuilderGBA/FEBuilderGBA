@@ -1,0 +1,17 @@
+NAME=フラグ0x82(魔王との戦闘)で音楽を変えるのを無視する
+NAME.en=Ignore changing music with flag 0x82 (fight with the Deamon King)
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x74c7c
+COMBO=ディフォルト|0x01|修正|0x02
+COMBO.en=Default|0x01|Fix|0x02
+COMBO.zh=默认|0x01|修正|0x02
+
+AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+
+INFO=魔王との戦闘時は、一度戦うとフラグ0x82がセットされます。その時、BGMも変化します。\r\n最初に戦うとSongID: 0x55が再生されます。\r\nこのパッチは、この機能を無効化します。
+INFO.en=When fighting with the Demon King, once it fights, the flag 0x82 is set.At that time, BGM also changes.\r\nFight first and SongID: 0x55 will be played.\r\nThis patch will disable this feature.
+NAME.zh=忽略用旗帜0x82改变音乐（与恶魔之王战斗）。
+INFO.zh=与恶魔之王战斗时，一旦打架，就会设置标志0x82。那时，BGM也发生了变化。\r\n首先战斗和SongID：将播放0x55。\r\n此修补程序将禁用此功能。

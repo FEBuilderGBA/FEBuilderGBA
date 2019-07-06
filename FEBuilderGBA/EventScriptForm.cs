@@ -160,6 +160,14 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT)
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.WMLOCATION)
             {
                 isLabelJump = true;
@@ -738,14 +746,44 @@ namespace FEBuilderGBA
             {//EVBIT
                 InputFormRef.GetEVBIT(v, out errormessage);
             }
-            else if (arg.Type == EventScript.ArgType.SCREENX || arg.Type == EventScript.ArgType.SCREENY)
+            else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
-                //NOP
+                if (code.Script.LowCode == "222AXXXX")
+                {//MNC2
+                    CheckMNC2(v, out errormessage);
+                }
             }
 
             return errormessage;
         }
 
+        public static void CheckMNC2(uint mapid,out string errormessage)
+        {
+            errormessage = "";
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return;
+            }
+            InputFormRef.mnc2_fix_enum mnc2fix = InputFormRef.SearchSkipWorldMapPatch();
+            if (mnc2fix != InputFormRef.mnc2_fix_enum.NO)
+            {//MNC2 Fixが導入されている
+                return;
+            }
+            switch(mapid)
+            {
+                case 0x02: case 0x03:case 0x04:
+                case 0x06: case 0x07:case 0x08:case 0x09:case 0x0A:case 0x0B:case 0x0D:case 0x0E:
+                case 0x10: case 0x11:case 0x12:case 0x13:case 0x14:
+                case 0x17: case 0x18:
+                case 0x1A: case 0x1B:case 0x1C:case 0x1D:case 0x1E:case 0x1F:case 0x20:case 0x21:
+                case 0x48: case 0x49:case 0x4A:case 0x4B:case 0x4C:case 0x4D:case 0x4E:
+
+                errormessage = R._("マップ{0}にMNC2で移動するには「Skip Worldmap」パッチが必要です。", U.To0xHexString(mapid));
+                return;
+            }
+
+            return;
+        }
 
         //有効なイベントかどうかテストする
         public static void CheckEnableEvenet(uint start_addr, bool isWorldMapEvent, List<FELint.ErrorSt> errors, List<uint> tracelist)
@@ -852,6 +890,20 @@ namespace FEBuilderGBA
             FELint.LabelCheck(errors, start_addr,labelCheck);
         }
 
+        static int DrawPictureAndDispose(Bitmap pic, int width, int height, ref Rectangle bounds, int maxHeight, Graphics g, bool isWithDraw)
+        {
+            U.MakeTransparent(pic);
+
+            Rectangle b = bounds;
+            b.Width = width;
+            b.Height = height;
+
+            bounds.X += U.DrawPicture(pic, g, isWithDraw, b);
+            pic.Dispose();
+            maxHeight = Math.Max(maxHeight, b.Height);
+            return maxHeight;
+        }
+
         public static Size DrawCode(ListBox lb, Graphics g, Rectangle listbounds, bool isWithDraw, EventScript.OneCode code)
         {
             SolidBrush brush = new SolidBrush(lb.ForeColor);
@@ -956,15 +1008,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
                         int affiliation = EventScript.GetAffiliation(code, n);
                         Bitmap image = ClassForm.DrawWaitIcon(v, affiliation);
-                        U.MakeTransparent(image);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(image, g, isWithDraw, b);
-                        image.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(image, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.ITEM)
                     {
@@ -972,14 +1017,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap image = ItemForm.DrawIcon(v);
-                        U.MakeTransparent(image);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-                        bounds.X += U.DrawPicture(image, g, isWithDraw, b);
-                        image.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(image, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.BG)
                     {
@@ -990,13 +1029,9 @@ namespace FEBuilderGBA
                         }
 
                         bounds.X += 2;
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 6;
-                        b.Height = lineHeight * 4;
-                        Bitmap bitmap = ImageBGForm.DrawBG(v);
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        Bitmap image = ImageBGForm.DrawBG(v);
+                        maxHeight = DrawPictureAndDispose(image, lineHeight * 6, lineHeight * 4
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.CG)
                     {
@@ -1007,13 +1042,9 @@ namespace FEBuilderGBA
                         }
 
                         bounds.X += 2;
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 6;
-                        b.Height = lineHeight * 4;
-                        Bitmap bitmap = ImageCGForm.DrawImageByID(v);
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        Bitmap image = ImageCGForm.DrawImageByID(v);
+                        maxHeight = DrawPictureAndDispose(image, lineHeight * 6, lineHeight * 4
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.PORTRAIT || arg.Type == EventScript.ArgType.REVPORTRAIT)
                     {
@@ -1022,28 +1053,16 @@ namespace FEBuilderGBA
                         {
                             bitmap.RotateFlip(RotateFlipType.Rotate180FlipY);
                         }
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 4;
-                        b.Height = lineHeight * 4;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 4, lineHeight * 4
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_UNIT)
                     {
                         Bitmap bitmap = DrawUnitsList(v, lineHeight * 2);
 
                         bounds.X += 10;
-
-                        Rectangle b = bounds;
-                        b.Width = bitmap.Width;
-                        b.Height = bitmap.Height;
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        maxHeight = Math.Max(maxHeight, b.Height);
-                        bitmap.Dispose();
+                        maxHeight = DrawPictureAndDispose(bitmap, bitmap.Width, bitmap.Height
+                            , ref bounds, maxHeight, g, isWithDraw);
                         bounds.X += 10;
                     }
                     else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
@@ -1053,13 +1072,9 @@ namespace FEBuilderGBA
                         {
                             bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
-                            Rectangle b = bounds;
-                            b.Width = lineHeight * 4;
-                            b.Height = lineHeight * 4;
                             Bitmap bitmap = MapSettingForm.DrawMap(v);
-                            bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                            bitmap.Dispose();
-                            maxHeight = Math.Max(maxHeight, b.Height);
+                            maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 4, lineHeight * 4
+                                , ref bounds, maxHeight, g, isWithDraw);
                         }
                     }
                     else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
@@ -1077,15 +1092,8 @@ namespace FEBuilderGBA
                         {//効果音
                             bitmap = ImageSystemIconForm.MusicIcon(7);
                         }
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.FLAG)
                     {//フラグ
@@ -1095,15 +1103,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = ImageSystemIconForm.FlagIcon();
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
                     {//PROC
@@ -1112,15 +1113,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = ImageSystemIconForm.MusicIcon(4);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_ASM)
                     {//ASM
@@ -1130,15 +1124,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = ImageSystemIconForm.MusicIcon(3);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.POINTER_EVENT)
                     {//EVENT
@@ -1148,15 +1135,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = ImageSystemIconForm.MusicIcon(3);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.WMLOCATION)
                     {//ワールドマップの名前
@@ -1165,15 +1145,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = WorldMapImageForm.DrawWorldMapIcon(0xB);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.WMPATH)
                     {//ワールドマップの道
@@ -1182,15 +1155,8 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = WorldMapImageForm.DrawWorldMapIcon(0xB);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else if (arg.Type == EventScript.ArgType.SKILL)
                     {//スキル
@@ -1199,15 +1165,15 @@ namespace FEBuilderGBA
                         bounds.X += U.DrawText(" " + text, g, boldFont, brush, isWithDraw, bounds);
 
                         Bitmap bitmap = InputFormRef.DrawSkillIcon(v);
-                        U.MakeTransparent(bitmap);
-
-                        Rectangle b = bounds;
-                        b.Width = lineHeight * 2;
-                        b.Height = lineHeight * 2;
-
-                        bounds.X += U.DrawPicture(bitmap, g, isWithDraw, b);
-                        bitmap.Dispose();
-                        maxHeight = Math.Max(maxHeight, b.Height);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT)
+                    {
+                        text = "";
+                        Bitmap bitmap = AIUnitsForm.DrawAIUnitsList(v, lineHeight * 2 - 2);
+                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                            , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else
                     {
@@ -1389,6 +1355,16 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + InputFormRef.GetFSEC(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
+                        {
+                            isENumText = true;
+                            text = AITilesForm.GetNames(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.TILE)
+                        {
+                            isENumText = true;
+                            text = MapTerrainNameForm.GetNameExcept00(v);
+                        }
 
                         if (isENumText)
                         {
@@ -1462,6 +1438,10 @@ namespace FEBuilderGBA
                 else if (code.Script.Category.IndexOf("{FLAG}") >= 0)
                 {//フラグ
                     bitmap = ImageSystemIconForm.FlagIcon();
+                }
+                else if (code.Script.Category.IndexOf("{EVBIT}") >= 0)
+                {//EVBIT
+                    bitmap = ImageSystemIconForm.Stairs();
                 }
 
                 if (bitmap != null)

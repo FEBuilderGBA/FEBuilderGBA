@@ -604,10 +604,10 @@
             this.CondFreeSpace.FormattingEnabled = true;
             this.CondFreeSpace.Items.AddRange(new object[] {
             "00=ファイル末尾",
-            "01=0x09000000以降の拡張領域で、0x00が8192個+必要データ数連続している領域",
-            "02=0x09000000以降の拡張領域で、0xFFが8192個+必要データ数連続している領域",
-            "03=0x08000000以降の通常領域で、0x00が8192個+必要データ数連続している領域",
-            "04=0x08000000以降の通常領域で、0xFFが8192個+必要データ数連続している領域"});
+            "01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域",
+            "02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域",
+            "03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域",
+            "04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域"});
             this.CondFreeSpace.Location = new System.Drawing.Point(13, 60);
             this.CondFreeSpace.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CondFreeSpace.Name = "CondFreeSpace";

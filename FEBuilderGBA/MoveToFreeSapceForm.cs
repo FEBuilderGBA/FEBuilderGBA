@@ -364,11 +364,10 @@ namespace FEBuilderGBA
 
             uint addr;
             //00=ファイル末尾
-            //01=0x09000000以降の拡張領域で、0x00が8192個+必要データ数連続している領域
-            //02=0x09000000以降の拡張領域で、0xFFが8192個+必要データ数連続している領域
-            //03=0x08000000以降の通常領域で、0x00が8192個+必要データ数連続している領域
-            //04=0x08000000以降の通常領域で、0xFFが8192個+必要データ数連続している領域
-            const int FREE_SPACE_SIZE = 8192;
+            //01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
+            //02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
+            //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
+            //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
             uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
 
             if (condFreeSpace == 1)
@@ -456,6 +455,9 @@ namespace FEBuilderGBA
             return addrList;
         }
 
+        //0x00 や 0xFF が連続して空き領域とみなす数
+        const int FREE_SPACE_SIZE = 2048;
+
         //空き領域の探索
         public static uint SearchFreeSpaceOne(uint newSize, int condFreeSpace)
         {
@@ -467,12 +469,11 @@ namespace FEBuilderGBA
 
             uint addr;
             //00=ファイル末尾
-            //01=0x09000000以降の拡張領域で、0x00が8192個+必要データ数連続している領域
-            //02=0x09000000以降の拡張領域で、0xFFが8192個+必要データ数連続している領域
-            //03=0x08000000以降の通常領域で、0x00が8192個+必要データ数連続している領域
-            //04=0x08000000以降の通常領域で、0xFFが8192個+必要データ数連続している領域
+            //01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
+            //02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
+            //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
+            //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
             const int LTRIM_SPACE_SIZE = 16;
-            const int FREE_SPACE_SIZE = 8192;
             uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
             if (condFreeSpace == 1)
             {

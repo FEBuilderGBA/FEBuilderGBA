@@ -188,7 +188,7 @@
             this.L_136_TEXT_MAPGOAL2 = new FEBuilderGBA.TextBoxEx();
             this.W136 = new System.Windows.Forms.NumericUpDown();
             this.J_136_TEXT = new System.Windows.Forms.Label();
-            this.W134 = new System.Windows.Forms.NumericUpDown();
+            this.B134 = new System.Windows.Forms.NumericUpDown();
             this.J_134 = new System.Windows.Forms.Label();
             this.B117 = new System.Windows.Forms.NumericUpDown();
             this.J_117_WORLDMAPEVENT = new System.Windows.Forms.Label();
@@ -280,6 +280,9 @@
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.B135 = new System.Windows.Forms.NumericUpDown();
+            this.J_135 = new System.Windows.Forms.Label();
+            this.L_135_COMBO = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.W36)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W20)).BeginInit();
@@ -348,7 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B140)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W138)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W136)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W134)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B134)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B117)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B116)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W114)).BeginInit();
@@ -381,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B135)).BeginInit();
             this.SuspendLayout();
             // 
             // L_36_SONGPLAY
@@ -432,6 +436,9 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.L_135_COMBO);
+            this.panel3.Controls.Add(this.B135);
+            this.panel3.Controls.Add(this.J_135);
             this.panel3.Controls.Add(this.label68);
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.label18);
@@ -587,7 +594,7 @@
             this.panel3.Controls.Add(this.L_136_TEXT_MAPGOAL2);
             this.panel3.Controls.Add(this.W136);
             this.panel3.Controls.Add(this.J_136_TEXT);
-            this.panel3.Controls.Add(this.W134);
+            this.panel3.Controls.Add(this.B134);
             this.panel3.Controls.Add(this.J_134);
             this.panel3.Controls.Add(this.B117);
             this.panel3.Controls.Add(this.J_117_WORLDMAPEVENT);
@@ -765,7 +772,7 @@
             // J_147
             // 
             this.J_147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_147.Location = new System.Drawing.Point(1103, 809);
+            this.J_147.Location = new System.Drawing.Point(1103, 843);
             this.J_147.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_147.Name = "J_147";
             this.J_147.Size = new System.Drawing.Size(210, 32);
@@ -776,7 +783,7 @@
             // J_146
             // 
             this.J_146.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_146.Location = new System.Drawing.Point(1103, 778);
+            this.J_146.Location = new System.Drawing.Point(1103, 812);
             this.J_146.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_146.Name = "J_146";
             this.J_146.Size = new System.Drawing.Size(210, 32);
@@ -787,7 +794,7 @@
             // J_145
             // 
             this.J_145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_145.Location = new System.Drawing.Point(1103, 750);
+            this.J_145.Location = new System.Drawing.Point(1103, 784);
             this.J_145.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_145.Name = "J_145";
             this.J_145.Size = new System.Drawing.Size(210, 32);
@@ -871,7 +878,7 @@
             "02=ターン防衛",
             "03=None(ボスを倒す)",
             "04=None(特殊)"});
-            this.L_140_COMBO.Location = new System.Drawing.Point(1421, 630);
+            this.L_140_COMBO.Location = new System.Drawing.Point(1421, 664);
             this.L_140_COMBO.Margin = new System.Windows.Forms.Padding(5);
             this.L_140_COMBO.Name = "L_140_COMBO";
             this.L_140_COMBO.Size = new System.Drawing.Size(207, 26);
@@ -888,7 +895,7 @@
             // B147
             // 
             this.B147.Hexadecimal = true;
-            this.B147.Location = new System.Drawing.Point(1324, 816);
+            this.B147.Location = new System.Drawing.Point(1324, 850);
             this.B147.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B147.Maximum = new decimal(new int[] {
             255,
@@ -902,7 +909,7 @@
             // B146
             // 
             this.B146.Hexadecimal = true;
-            this.B146.Location = new System.Drawing.Point(1324, 785);
+            this.B146.Location = new System.Drawing.Point(1324, 819);
             this.B146.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B146.Maximum = new decimal(new int[] {
             255,
@@ -916,7 +923,7 @@
             // B145
             // 
             this.B145.Hexadecimal = true;
-            this.B145.Location = new System.Drawing.Point(1324, 753);
+            this.B145.Location = new System.Drawing.Point(1324, 787);
             this.B145.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B145.Maximum = new decimal(new int[] {
             255,
@@ -930,7 +937,7 @@
             // B144
             // 
             this.B144.Hexadecimal = true;
-            this.B144.Location = new System.Drawing.Point(1324, 724);
+            this.B144.Location = new System.Drawing.Point(1324, 758);
             this.B144.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B144.Maximum = new decimal(new int[] {
             255,
@@ -944,7 +951,7 @@
             // J_144
             // 
             this.J_144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_144.Location = new System.Drawing.Point(1103, 719);
+            this.J_144.Location = new System.Drawing.Point(1103, 753);
             this.J_144.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_144.Name = "J_144";
             this.J_144.Size = new System.Drawing.Size(210, 32);
@@ -2132,7 +2139,7 @@
             // 
             // B143
             // 
-            this.B143.Location = new System.Drawing.Point(1435, 692);
+            this.B143.Location = new System.Drawing.Point(1435, 726);
             this.B143.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B143.Maximum = new decimal(new int[] {
             255,
@@ -2146,7 +2153,7 @@
             // label151
             // 
             this.label151.AutoSize = true;
-            this.label151.Location = new System.Drawing.Point(1410, 697);
+            this.label151.Location = new System.Drawing.Point(1410, 731);
             this.label151.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label151.Name = "label151";
             this.label151.Size = new System.Drawing.Size(23, 18);
@@ -2155,7 +2162,7 @@
             // 
             // B142
             // 
-            this.B142.Location = new System.Drawing.Point(1344, 691);
+            this.B142.Location = new System.Drawing.Point(1344, 725);
             this.B142.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B142.Name = "B142";
             this.B142.Size = new System.Drawing.Size(58, 25);
@@ -2164,7 +2171,7 @@
             // label121
             // 
             this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(1319, 695);
+            this.label121.Location = new System.Drawing.Point(1319, 729);
             this.label121.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(23, 18);
@@ -2175,7 +2182,7 @@
             // 
             this.L_142_MAPXY_143.AccessibleDescription = "@MAPSETTING_ESCAPE_POINT";
             this.L_142_MAPXY_143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_142_MAPXY_143.Location = new System.Drawing.Point(1103, 688);
+            this.L_142_MAPXY_143.Location = new System.Drawing.Point(1103, 722);
             this.L_142_MAPXY_143.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.L_142_MAPXY_143.Name = "L_142_MAPXY_143";
             this.L_142_MAPXY_143.Size = new System.Drawing.Size(210, 32);
@@ -2185,7 +2192,7 @@
             // 
             // B141
             // 
-            this.B141.Location = new System.Drawing.Point(1322, 658);
+            this.B141.Location = new System.Drawing.Point(1322, 692);
             this.B141.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B141.Maximum = new decimal(new int[] {
             255,
@@ -2200,7 +2207,7 @@
             // 
             this.J_141.AccessibleDescription = "@MAPSETTING_CLEAR_COND4_DISPLAY_ONLY";
             this.J_141.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_141.Location = new System.Drawing.Point(1103, 657);
+            this.J_141.Location = new System.Drawing.Point(1103, 691);
             this.J_141.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_141.Name = "J_141";
             this.J_141.Size = new System.Drawing.Size(210, 32);
@@ -2211,7 +2218,7 @@
             // B140
             // 
             this.B140.Hexadecimal = true;
-            this.B140.Location = new System.Drawing.Point(1322, 627);
+            this.B140.Location = new System.Drawing.Point(1322, 661);
             this.B140.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B140.Maximum = new decimal(new int[] {
             255,
@@ -2226,7 +2233,7 @@
             // 
             this.J_140.AccessibleDescription = "@MAPSETTING_CLEAR_COND3_DISPLAY_ONLY";
             this.J_140.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_140.Location = new System.Drawing.Point(1103, 630);
+            this.J_140.Location = new System.Drawing.Point(1103, 664);
             this.J_140.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_140.Name = "J_140";
             this.J_140.Size = new System.Drawing.Size(210, 32);
@@ -2237,7 +2244,7 @@
             // L_138_TEXT_MAPGOAL1
             // 
             this.L_138_TEXT_MAPGOAL1.ErrorMessage = "";
-            this.L_138_TEXT_MAPGOAL1.Location = new System.Drawing.Point(1421, 603);
+            this.L_138_TEXT_MAPGOAL1.Location = new System.Drawing.Point(1421, 637);
             this.L_138_TEXT_MAPGOAL1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_138_TEXT_MAPGOAL1.Name = "L_138_TEXT_MAPGOAL1";
             this.L_138_TEXT_MAPGOAL1.Placeholder = "";
@@ -2248,7 +2255,7 @@
             // W138
             // 
             this.W138.Hexadecimal = true;
-            this.W138.Location = new System.Drawing.Point(1322, 601);
+            this.W138.Location = new System.Drawing.Point(1322, 635);
             this.W138.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W138.Maximum = new decimal(new int[] {
             65535,
@@ -2263,7 +2270,7 @@
             // 
             this.J_138_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND1_DISPLAY_ONLY";
             this.J_138_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_138_TEXT.Location = new System.Drawing.Point(1103, 602);
+            this.J_138_TEXT.Location = new System.Drawing.Point(1103, 636);
             this.J_138_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_138_TEXT.Name = "J_138_TEXT";
             this.J_138_TEXT.Size = new System.Drawing.Size(210, 32);
@@ -2274,7 +2281,7 @@
             // L_136_TEXT_MAPGOAL2
             // 
             this.L_136_TEXT_MAPGOAL2.ErrorMessage = "";
-            this.L_136_TEXT_MAPGOAL2.Location = new System.Drawing.Point(1421, 572);
+            this.L_136_TEXT_MAPGOAL2.Location = new System.Drawing.Point(1421, 606);
             this.L_136_TEXT_MAPGOAL2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_136_TEXT_MAPGOAL2.Name = "L_136_TEXT_MAPGOAL2";
             this.L_136_TEXT_MAPGOAL2.Placeholder = "";
@@ -2285,7 +2292,7 @@
             // W136
             // 
             this.W136.Hexadecimal = true;
-            this.W136.Location = new System.Drawing.Point(1322, 573);
+            this.W136.Location = new System.Drawing.Point(1322, 607);
             this.W136.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W136.Maximum = new decimal(new int[] {
             65535,
@@ -2300,7 +2307,7 @@
             // 
             this.J_136_TEXT.AccessibleDescription = "@MAPSETTING_CLEAR_COND2_DISPLAY_ONLY";
             this.J_136_TEXT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_136_TEXT.Location = new System.Drawing.Point(1103, 572);
+            this.J_136_TEXT.Location = new System.Drawing.Point(1103, 606);
             this.J_136_TEXT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_136_TEXT.Name = "J_136_TEXT";
             this.J_136_TEXT.Size = new System.Drawing.Size(210, 32);
@@ -2308,29 +2315,30 @@
             this.J_136_TEXT.Text = "クリア条件(表示のみ)";
             this.J_136_TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // W134
+            // B134
             // 
-            this.W134.Hexadecimal = true;
-            this.W134.Location = new System.Drawing.Point(1322, 543);
-            this.W134.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.W134.Maximum = new decimal(new int[] {
+            this.B134.Hexadecimal = true;
+            this.B134.Location = new System.Drawing.Point(1322, 548);
+            this.B134.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B134.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.W134.Name = "W134";
-            this.W134.Size = new System.Drawing.Size(95, 25);
-            this.W134.TabIndex = 91;
+            this.B134.Name = "B134";
+            this.B134.Size = new System.Drawing.Size(81, 25);
+            this.B134.TabIndex = 91;
             // 
             // J_134
             // 
+            this.J_134.AccessibleDescription = "@MAPSETTING_LEFT_ENEMY";
             this.J_134.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_134.Location = new System.Drawing.Point(1103, 544);
             this.J_134.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.J_134.Name = "J_134";
             this.J_134.Size = new System.Drawing.Size(210, 32);
             this.J_134.TabIndex = 124;
-            this.J_134.Text = "StatusObjectText";
+            this.J_134.Text = "勝利BGMに変わる敵数";
             this.J_134.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B117
@@ -3430,6 +3438,45 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // B135
+            // 
+            this.B135.Hexadecimal = true;
+            this.B135.Location = new System.Drawing.Point(1322, 579);
+            this.B135.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B135.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.B135.Name = "B135";
+            this.B135.Size = new System.Drawing.Size(81, 25);
+            this.B135.TabIndex = 352;
+            // 
+            // J_135
+            // 
+            this.J_135.AccessibleDescription = "@MAPSETTING_IS_FADE_BLACK";
+            this.J_135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_135.Location = new System.Drawing.Point(1103, 575);
+            this.J_135.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_135.Name = "J_135";
+            this.J_135.Size = new System.Drawing.Size(210, 32);
+            this.J_135.TabIndex = 353;
+            this.J_135.Text = "開始イベント前に暗転";
+            this.J_135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_135_COMBO
+            // 
+            this.L_135_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_135_COMBO.FormattingEnabled = true;
+            this.L_135_COMBO.Items.AddRange(new object[] {
+            "00=Fade to map",
+            "01=Fade to black"});
+            this.L_135_COMBO.Location = new System.Drawing.Point(1420, 574);
+            this.L_135_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.L_135_COMBO.Name = "L_135_COMBO";
+            this.L_135_COMBO.Size = new System.Drawing.Size(207, 26);
+            this.L_135_COMBO.TabIndex = 354;
+            // 
             // MapSettingFE7Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -3511,7 +3558,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B140)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W138)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W136)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.W134)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.B134)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B117)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B116)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W114)).EndInit();
@@ -3545,6 +3592,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.B135)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3575,7 +3623,7 @@
         private FEBuilderGBA.TextBoxEx L_136_TEXT_MAPGOAL2;
         private System.Windows.Forms.NumericUpDown W136;
         private System.Windows.Forms.Label J_136_TEXT;
-        private System.Windows.Forms.NumericUpDown W134;
+        private System.Windows.Forms.NumericUpDown B134;
         private System.Windows.Forms.Label J_134;
         private System.Windows.Forms.NumericUpDown B117;
         private System.Windows.Forms.Label J_117_WORLDMAPEVENT;
@@ -3803,5 +3851,8 @@
         private TextBoxEx L_20_DIFFCULTY;
         private System.Windows.Forms.NumericUpDown W20;
         private System.Windows.Forms.Label J_20_DIFFCULTY;
+        private System.Windows.Forms.NumericUpDown B135;
+        private System.Windows.Forms.Label J_135;
+        private System.Windows.Forms.ComboBox L_135_COMBO;
     }
 }

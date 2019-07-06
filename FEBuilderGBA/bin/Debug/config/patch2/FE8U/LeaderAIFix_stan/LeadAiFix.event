@@ -1,0 +1,32 @@
+#ifndef LEAD_AI_FIX
+#define LEAD_AI_FIX
+
+// Fix lead Ai issues caused by multiple groups (and other things)
+// hack by Stan
+
+PUSH
+	ORG $03F51C
+		WORD $47184B00; POIN (LeaderAiFix|1)
+POP
+
+ALIGN 4
+LeaderAiFix:
+	#incbin "LeadAiFix.dmp"
+
+//	WORD $4647B5F0 $2500B480 $701D4B01 $47184B01 $203AA8B $803F525
+// SOURCE:
+//
+//	@ replaced
+//
+//	push {r4-r7, lr}
+//	mov r7, r8
+//	push {r7}
+//	mov r5, #0
+//
+//	ldr  r3, =0x0203AA04+0x87
+//	strb r5, [r3]
+//
+//	ldr r3, =0x0803F524+1
+//	bx r3
+
+#endif // LEAD_AI_FIX

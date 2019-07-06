@@ -2354,11 +2354,13 @@ namespace FEBuilderGBA
                     }
                     catch (SyntaxErrorException e)
                     {
-                        return R.Error("{2}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, e.ToString());
+                        string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                        return R.Error("{2}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, errorMessage);
                     }
                     catch (EvaluateException e)
                     {
-                        return R.Error("{2}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, e.ToString());
+                        string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                        return R.Error("{2}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, errorMessage);
                     }
                     continue;
                 }
@@ -2425,11 +2427,13 @@ namespace FEBuilderGBA
                         }
                         catch (SyntaxErrorException e)
                         {
-                            return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], e.ToString());
+                            string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                            return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
                         catch (EvaluateException e)
                         {
-                            return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], e.ToString());
+                            string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                            return R.Error(".byteパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
                     }
                     continue;
@@ -2460,11 +2464,13 @@ namespace FEBuilderGBA
                         }
                         catch (SyntaxErrorException e)
                         {
-                            return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], e.ToString());
+                            string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                            return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
                         catch (EvaluateException e)
                         {
-                            return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], e.ToString());
+                            string errorMessage = e.ToString() + "\r\n" + R._("説明:\r\n") + MainFormUtil.GetExplainOfSFileURL();
+                            return R.Error(".wordパース中にエラー {2} \r\n{3}\r\n\r\nFile:{0} Line:{1}", filename, i + 1, token[n], errorMessage);
                         }
 
                     }

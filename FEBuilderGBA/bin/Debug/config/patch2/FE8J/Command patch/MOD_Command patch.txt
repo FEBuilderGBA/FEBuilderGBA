@@ -10,4 +10,5 @@ J_37.zh=命令
 J_37:HINT=指揮パッチの設定をします。\r\nユニットの指揮能力を設定します。
 J_37:HINT.en=This is set the command patch.\r\nSet the command ability of the unit.
 
-J_37:HINT.zh=我们将设置命令补丁。\r\n设置本机的命令功能。
+J_37:HINT.=该补丁还设置命令补丁。\r\n设置本机的命令功能。
+J_37:HINT.zh=设置命令补丁。\r\n设定人物的指挥能力。

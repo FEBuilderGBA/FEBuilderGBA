@@ -1,0 +1,15 @@
+NAME=装備していない武器や杖も盗めるようにする
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x1706E=0xC0 0x46 0x00 0x48 0x87 0x46
+EA=EA.txt
+
+INFO=装備していない武器や杖も盗めるようにします。\r\n相手と速度が1つ違えば盗めます。\r\nただし、敵将や輸送隊フラグが設定されているユニットからは盗めません(メンテナンススキル持ちからは盗めない)。
+
+AUTHOR=aera
+NAME.en=Change to steal weapons and staff that are not equipped
+INFO.en=This patch also also be able to steal unarmed weapons and canes.\r\nYou can steal if your speed differs by one.\r\nHowever, it can not be stealed from the unit with the enemy general or transporter flag set (it can not be stealed from maintenance skills).
+NAME.zh=试着偷走手无寸铁的武器和手杖
+INFO.zh=我们也将能够窃取手无寸铁的武器和手杖。\r\n如果您的速度相差一个，您可以偷窃。\r\n但是，它不能从敌人的一般或运输者标志设置的人物偷走（它不能从维护技能窃取）。

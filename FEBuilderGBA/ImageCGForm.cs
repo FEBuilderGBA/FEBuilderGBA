@@ -217,19 +217,18 @@ namespace FEBuilderGBA
                 string name = "CG " + U.To0xHexString(i);
 
                 uint image = Program.ROM.p32(0 + addr);
-                if (isPointerOnly == false)
                 {
                     uint imageSPZ = image;
                     for (int n = 0; n < 10; n++, imageSPZ += 4)
                     {
                         FEBuilderGBA.Address.AddLZ77Pointer(list
                             , imageSPZ
-                            , name + " IMAGE"
+                            , name + " IMAGE@" + n
                             , isPointerOnly
                             , FEBuilderGBA.Address.DataTypeEnum.LZ77IMG);
                     }
                 }
-                FEBuilderGBA.Address.AddAddress(list,image
+                FEBuilderGBA.Address.AddAddress(list, image
                     , 4 * 10
                     , addr + 0
                     , name + " IMAGE_HEADER"

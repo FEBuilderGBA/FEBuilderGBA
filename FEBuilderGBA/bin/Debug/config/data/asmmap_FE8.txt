@@ -12525,3 +12525,9 @@
 08032104	ExecTrapForDropUnit	{J}
 080377F0	ExecTrapForDropUnit_Sub	{U}
 080321B8	ExecTrapForDropUnit	{U}
+0203AA86	AIScript Result1	{J}
+0203AA87	AIScript Result2	{J}
+0203AA8A	AIScript Result1	{U}
+0203AA8B	AIScript Result2	{U}
+08A9A9E0	何かのTSA	27	{J}
+089DD4E8	何かのTSA	27	{U}

@@ -13,7 +13,7 @@ COMBO.zh=默认|0x06 0x20|修正|0x00 0x20
 
 AUTHOR=7743
 
-INFO=存在しないキャラクターの、HPを変更したり、または、所属などの状態を変更したりすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。
-INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, modifying the state of a non-existent character with 0x34 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n
+INFO=存在しないキャラクターの、HPを変更したり、または、所属などの状態を変更したりすると、フリーズする問題を解決します。\r\n存在しないキャラクターへの命令を無視します。\r\n(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
+INFO.en=Toggles the bugfix.\r\nIn the vanilla FE8U Rom, modifying the state of a non-existent character with 0x34 freezes the ROM.\r\nThis patch ignores any commands given to non-existent characters.\r\n(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)
 NAME.zh=指令0x34_单元状态改变_不冻结甚至不存在的单元
-INFO.zh=如果您更改HP或更改不存在的字符的隶属等状态，它可以解决冻结问题。\r\n忽略对不存在的字符的命令。
+INFO.zh=如果您更改HP或更改不存在的字符的隶属等状态，它可以解决冻结问题。\r\n忽略对不存在的字符的命令。\r\n(REMU,REVEAL,CUSA,CUSN,CUSE,SET_HP,SET_ENDTURN,SET_STATE,SET_SOMETHING,DISA_IF,REMU,DISA)

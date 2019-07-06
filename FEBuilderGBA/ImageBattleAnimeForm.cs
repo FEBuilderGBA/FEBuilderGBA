@@ -599,12 +599,6 @@ namespace FEBuilderGBA
                }
                {
                    string name = U.ChangeExtFilename(filename, ".txt");
-                   bool enableComment = true;
-                   ImageUtilOAM.ExportBattleAnime(filehint, enableComment, name
-                        , sectionData, frameData, rightToLeftOAM, palettes, palette_count);
-               }
-               {
-                   string name = U.ChangeExtFilename(filename, ".txt","_without_comment");
                    bool enableComment = false;
                    ImageUtilOAM.ExportBattleAnime(filehint, enableComment, name
                         , sectionData, frameData, rightToLeftOAM, palettes, palette_count);

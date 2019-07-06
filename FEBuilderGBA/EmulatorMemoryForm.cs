@@ -2007,11 +2007,15 @@ namespace FEBuilderGBA
             string dummy;
             string stateString = InputFormRef.GetRAM_UNIT_STATE(state, out dummy);
 
+            uint aid = Program.RAM.u16(addr + 0x1B);
+            string aidString = GetRAMUnitAIDToName(aid);
+
             PARTY_Address.Value = addr;
             PARTY_SelectAddress.Text = "";
             PARTY_ROMUNITPOINTER.Text = unitname;
             PARTY_ROMCLASSPOINTER.Text = classname;
             PARTY_RAMUNITSTATE.Text = stateString;
+            PARTY_RAMUNITAID.Text = aidString;
             PARTY_PORTRAIT.Image = faceImage;
 
             this.PARTY_InputFormRef.ReInit(addr, 1);
@@ -2019,6 +2023,27 @@ namespace FEBuilderGBA
             PARTY_AI2_TEXT.Text = EventUnitForm.GetAIName2((uint)PARTY_B68.Value);
 
             Party_ControlPanel.Show();
+        }
+
+        string GetRAMUnitAIDToName(uint aid)
+        {
+            if (aid == 0)
+            {
+                return "";
+            }
+
+            const uint RAMUnitSizeOf = 72;
+            uint addr = Program.ROM.RomInfo.workmemory_player_units_address();
+            addr = addr + ((aid - 1) * RAMUnitSizeOf);
+            uint romUnitAddr = Program.RAM.u32(addr);
+            romUnitAddr = U.toOffset(romUnitAddr);
+            if (!U.isSafetyOffset(romUnitAddr))
+            {
+                return "";
+            }
+            uint textid = Program.ROM.u16(romUnitAddr); //Unit.Name
+            uint unitid = Program.ROM.u8(romUnitAddr + 4); //Unit.ID
+            return U.ToHexString(unitid) + " " + FETextDecode.Direct(textid);
         }
 
         uint GetShowRAMPartyUnitsAddr()
@@ -2324,7 +2349,7 @@ namespace FEBuilderGBA
             v = Program.RAM.u8(ramPointer2);
             if ((v & 0x20) == 0x20)
             {
-                ret = ret | 0x20;//初めて
+                ret = ret | 0x20;//初めてではない
             }
 
             return ret;
@@ -2337,7 +2362,7 @@ namespace FEBuilderGBA
                 ret += R._("難易度:難しい");
                 ret += " ";
             }
-            if ((v & 0x20) == 0x20)
+            if ((v & 0x20) != 0x20)
             {
                 ret += R._("難易度:初めて");
                 ret += " ";
@@ -2523,6 +2548,24 @@ namespace FEBuilderGBA
                 return;
             }
             InputFormRef.JumpForm<SongTableForm>(song_id);
+        }
+
+        private void PARTY_ROMUNITPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            uint unit_id = U.atoh(PARTY_ROMUNITPOINTER.Text);
+            InputFormRef.JumpTo(null, unit_id, "UNIT", new string[] { });
+        }
+
+        private void PARTY_ROMCLASSPOINTER_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            uint class_id = U.atoh(PARTY_ROMCLASSPOINTER.Text);
+            InputFormRef.JumpTo(null, class_id, "CLASS", new string[] { });
+        }
+
+        private void PARTY_RAMUNITAID_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            uint unit_id = U.atoh(PARTY_RAMUNITAID.Text);
+            InputFormRef.JumpTo(null, unit_id, "UNIT", new string[] { });
         }
     }
 }

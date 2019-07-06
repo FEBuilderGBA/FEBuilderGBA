@@ -711,10 +711,9 @@ namespace FEBuilderGBA
                 return r;
             }
 
-            public animedata MakeMagicAnime(string imagefilename, bool isMode2)
+            public animedata MakeMagicAnime(string imagefilename)
             {
                 Debug.Assert(this.IsMagicOAM == true);
-                Debug.Assert(isMode2 == true);
 
                 string errormessage;
                 //魔法の場合パレットを切り替えられるので、何も気にしない.
@@ -729,46 +728,40 @@ namespace FEBuilderGBA
                 }
 
                 animedata r;
-                if (isMode2)
+                Bitmap seatBitmapBackup = ImageUtil.CloneBitmap(SeatBitmap);
+                int oamBackupPostion = this.RightToLeftOAM.Count;
+                int oamBGBackupPostion = this.RightToLeftOAMBG.Count;
+
+                r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                if (r == null)
                 {
-                    Bitmap seatBitmapBackup = ImageUtil.CloneBitmap(SeatBitmap);
-                    int oamBackupPostion = this.RightToLeftOAM.Count;
-                    int oamBGBackupPostion = this.RightToLeftOAMBG.Count;
+                    return null;
+                }
+                animedata bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
+                if (bg == null)
+                {
+                    return null;
+                }
+                Log.Debug(Path.GetFileNameWithoutExtension(imagefilename) + " " + r.oam_pos + " " + bg.oam_pos);
+
+                if (r.image_pointer != bg.image_pointer)
+                {//同一シートにないといけない
+                    SeatBitmap = seatBitmapBackup;
+                    this.RightToLeftOAM.RemoveRange(oamBackupPostion, this.RightToLeftOAM.Count - oamBackupPostion);
+                    this.RightToLeftOAMBG.RemoveRange(oamBGBackupPostion, this.RightToLeftOAMBG.Count - oamBGBackupPostion);
+                    //次のシートへ
+                    NextSeat();
 
                     r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
-                    if (r == null)
+                    bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
+                    if (r.image_pointer != bg.image_pointer)
                     {
-                        return null;
+                        bitmap.Dispose();
+                        return r;
                     }
-                    animedata objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
-                    if (objbg == null)
-                    {
-                        return null;
-                    }
-                    Log.Debug(Path.GetFileNameWithoutExtension(imagefilename) + " " + r.oam_pos + " " + objbg.oam_pos);
-
-                    if (r.image_pointer != objbg.image_pointer)
-                    {//同一シートにないといけない
-                        SeatBitmap = seatBitmapBackup;
-                        this.RightToLeftOAM.RemoveRange(oamBackupPostion, this.RightToLeftOAM.Count - oamBackupPostion);
-                        this.RightToLeftOAMBG.RemoveRange(oamBGBackupPostion, this.RightToLeftOAMBG.Count - oamBGBackupPostion);
-                        //次のシートへ
-                        NextSeat();
-
-                        r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
-                        objbg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
-                        if (r.image_pointer != objbg.image_pointer)
-                        {
-                            return null;
-                        }
-                    }
-
-                    r.oam2_pos = objbg.oam_pos;
                 }
-                else
-                {
-                    r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
-                }
+
+                r.oam2_pos = bg.oam_pos;
 
                 bitmap.Dispose();
                 return r;
@@ -881,8 +874,6 @@ namespace FEBuilderGBA
             animedata MakeBattleAnime(Bitmap orignalBitmap,bool isMode2, List<byte> oam)
             {
                 animedata animedata = new animedata();
-                animedata.oam_pos = (uint)oam.Count;
-
                 animedata.oam_pos = (uint)oam.Count;
                 animedata.image_pointer = (uint)this.Images.Count;
                 if (this.IsMagicOAM)

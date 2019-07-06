@@ -7,7 +7,7 @@ TAG=#ENGINE
 
 INFO=ユニットに任意の経験値を与えます。
 INFO.en=Give arbitrary experience value to the unit.
-INFO.zh=们给单位提供任意经验值。
+INFO.zh=们给人物提供任意经验值。
 
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 give_exp.dmp=0x70 0xB5 0x05 0x1C

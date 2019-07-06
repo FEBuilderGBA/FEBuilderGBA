@@ -12,5 +12,5 @@ AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO=ステータス画面に表示されるリーダーの名前を主人公ではなく、名簿の一番上のユニットにする
 INFO.en=Make the name of the leader displayed on the status screen not the hero but the unit at the top of the roster
-NAME.zh=使领导者显示在名单顶部的单位上
-INFO.zh=使状态屏幕上显示的领导者的名字不是英雄，而是名单顶部的单位
+NAME.zh=使领导者显示在名单顶部的人物上
+INFO.zh=使状态屏幕上显示的领导者的名字不是英雄，而是名单顶部的人物

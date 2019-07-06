@@ -627,7 +627,7 @@ namespace FEBuilderGBA
         private void AnimationExportButton_Click(object sender, EventArgs e)
         {
             string title = R._("保存するファイル名を選択してください");
-            string filter = R._("スキルアニメスクリプト|*.txt|アニメGIF|*.gif|All files|*");
+            string filter = R._("スキルアニメスクリプト|*.txt|アニメGIF|*.gif|Dump All|*.txt|All files|*");
 
             SaveFileDialog save = new SaveFileDialog();
             save.Title = title;
@@ -647,13 +647,18 @@ namespace FEBuilderGBA
             string filename = save.FileNames[0];
             Program.LastSelectedFilename.Save(this, "", save);
 
-            string ext = U.GetFilenameExt(save.FileName);
-            if (ext == ".GIF")
-            {
+            if (save.FilterIndex == 2)
+            {//GIF
+                ImageUtilSkillSystemsAnimeCreator.ExportGif(filename, (uint)ANIMATION.Value);
+            }
+            else if (save.FilterIndex == 3)
+            {//All
+                ImageUtilSkillSystemsAnimeCreator.Export(filename, (uint)ANIMATION.Value);
+                filename = U.ChangeExtFilename(filename, ".gif");
                 ImageUtilSkillSystemsAnimeCreator.ExportGif(filename, (uint)ANIMATION.Value);
             }
             else
-            {
+            {//Script
                 ImageUtilSkillSystemsAnimeCreator.Export(filename, (uint)ANIMATION.Value);
             }
 

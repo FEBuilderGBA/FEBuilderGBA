@@ -1876,7 +1876,10 @@
             "16=ROMを上書き保存する",
             "17=ROMを別名で保存する",
             "18=エラーがなければ上書き保存",
-            "19=リストから次を検索"});
+            "19=リストから次を検索",
+            "20=ユニット画面を開く",
+            "21=クラス画面を開く",
+            "22=アイテム画面を開く"});
             this.ShortCutValue1.Location = new System.Drawing.Point(380, 14);
             this.ShortCutValue1.Margin = new System.Windows.Forms.Padding(2);
             this.ShortCutValue1.Name = "ShortCutValue1";
@@ -2442,10 +2445,10 @@
             this.func_rom_extends_option.FormattingEnabled = true;
             this.func_rom_extends_option.Items.AddRange(new object[] {
             "0=ファイル末尾",
-            "1=0x09000000以降 0x00が8192連続",
-            "2=0x09000000以降 0xFFが8192連続",
-            "3=0x08000000以降 0x00が8192連続",
-            "4=0x08000000以降 0xFFが8192連続"});
+            "1=0x09000000以降 0x00が規定数連続",
+            "2=0x09000000以降 0xFFが規定数連続",
+            "3=0x08000000以降 0x00が規定数連続",
+            "4=0x08000000以降 0xFFが規定数連続"});
             this.func_rom_extends_option.Location = new System.Drawing.Point(420, 404);
             this.func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends_option.Name = "func_rom_extends_option";

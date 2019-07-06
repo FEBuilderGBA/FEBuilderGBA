@@ -19,7 +19,7 @@ AUTHOR.zh=程式来源:https://github.com/ngmansion/FE8/tree/master/battle_chang
 AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/battle_changer.
 
 
-INFO.zh=允许您以章节为单位更改战斗中播放的音乐。
+INFO.zh=允许您以章节为人物更改战斗中播放的音乐。
 
 
 CONFLICT_IF:0x74ba6=0x00 0x00 0x00 0x4B 0x18 0x47

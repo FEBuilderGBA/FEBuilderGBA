@@ -1,0 +1,33 @@
+NAME=神器フラッシュの簡易設定2
+NAME.en=Simple setting of Sacred Weapons 2
+
+
+
+IF:0x58AD2=0x00 0x28 0x06 0xD0 0x06 0x49 0x0A 0x78
+
+AUTHOR=7743
+
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0x58AF0
+
+//データサイズ(10進数)
+DATASIZE=1
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP1 0x00
+
+//リストに表示されるのはアイテムIDです
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=ITEM
+
+INFO=双聖器フラッシュを簡易設定できるようにします。\r\n指定したアイテムIDでフラッシュを表示できるようにします。
+INFO.en=Simple setting of "A Sacred Twin tome"\r\nEnables you to display the flash with the specified item ID.
+NAME.zh=神圣闪光的简单设置2
+INFO.zh=该补丁还更容易设置biloba冲洗。\r\n使您可以显示具有指定项目ID的闪存。
+
+UPDATE_FROM_NAME=SacredWeapons

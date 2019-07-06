@@ -51,7 +51,7 @@
 
   ALIGN 4
   HPBarGraphic:
-    #incext Png2Dmp "bin/WarningHpSheet.png" --lz77
+    #incbin "bin/WarningHpSheet.png.dmp"	//HINT=BIN
 
   }
 

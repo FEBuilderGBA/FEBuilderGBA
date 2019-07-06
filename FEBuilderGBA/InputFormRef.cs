@@ -2601,7 +2601,8 @@ namespace FEBuilderGBA
             }
             if (linktype == "RAMUNITSTATE" 
                 || linktype == "ROMUNITPOINTER" 
-                || linktype == "ROMCLASSPOINTER" 
+                || linktype == "ROMCLASSPOINTER"
+                || linktype == "RAMUNITAID"
                 || linktype == "PatchImage"
                 || linktype == "AP"
                 )
@@ -2642,6 +2643,16 @@ namespace FEBuilderGBA
                     };
                     return;
                 }
+            }
+            if (linktype == "TILE")
+            {//ユニット名とリンク.
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    //タイル名の取得
+                    link_object.Text = MapTerrainNameForm.GetName((uint)src_object.Value);
+                };
+                return;
             }
             
 #if DEBUG            
@@ -2786,7 +2797,9 @@ namespace FEBuilderGBA
                     || arg1 == "EVENT2"
                     || arg1 == "EVENT3"
                     || arg1 == "EVENT4"
-                    || arg1 == "EVENT5")
+                    || arg1 == "EVENT5"
+                    || arg1 == "EVENT6"
+                    )
                 {//イベントテンプレートは複雑なので別処理
                     AllocEvent_EventTemplate(arg1, link_object, src_object, prefix, controls, writeButton);
                     return;
@@ -2811,6 +2824,7 @@ namespace FEBuilderGBA
                 || arg1 == "EVENT3"
                 || arg1 == "EVENT4"
                 || arg1 == "EVENT5"
+                || arg1 == "EVENT6"
                 || arg1 == "ALTEVENT"
                 )
             {
@@ -2977,6 +2991,15 @@ namespace FEBuilderGBA
             else if (arg1 == "EVENT5")
             {
                 EventTemplate5Form f = (EventTemplate5Form)InputFormRef.JumpFormLow<EventTemplate5Form>();
+                f.Init(controls);
+                f.ShowDialog();
+                alloc = f.GenCode;
+                callEventAddr = f.CallEventAddr;
+                needFlag03 = f.NeedFlag03;
+            }
+            else if (arg1 == "EVENT6")
+            {
+                EventTemplate6Form f = (EventTemplate6Form)InputFormRef.JumpFormLow<EventTemplate6Form>();
                 f.Init(controls);
                 f.ShowDialog();
                 alloc = f.GenCode;
@@ -6626,19 +6649,19 @@ namespace FEBuilderGBA
             switch (num)
             {
                 case 0x00:
-                    return "?";///No Translate
+                    return R._("呼び出された親イベントに戻らないで終了する");
                 case 0x01:
-                    return "?";///No Translate
+                    return R._("キューに入っているイベント呼び出しを待機させる");
                 case 0x02:
-                    return R._("イベントスキップを止める");
+                    return R._("イベントスキップ中");
                 case 0x03:
-                    return "?";///No Translate
+                    return R._("テキストスキップ中");
                 case 0x04:
-                    return "?";///No Translate
+                    return R._("スタートボタンでのイベントスキップ防止");
                 case 0x05:
-                    return "?";///No Translate
+                    return R._("Bボタンでのテキストスキップ防止");
                 case 0x06:
-                    return "?";///No Translate
+                    return R._("Aボタン等でのテキスト早送りを防止");
                 case 0x07:
                     return R._("フェードインを解除");
                 case 0x08:
@@ -6646,18 +6669,17 @@ namespace FEBuilderGBA
                 case 0x09:
                     return R._("カメラを主人公に固定");
                 case 0x0A:
-                    return "?";///No Translate
+                    return R._("別の章に移動中(?)");
                 case 0x0B:
-                    return "?";///No Translate
+                    return R._("ゲームモードを変更中(GAMECTRLフィールドの0x29を変化?)");
                 case 0x0C:
-                    return "?";///No Translate
+                    return R._("グラフィックがイベントによってロック中(codes 0x23/0x24)");
                 case 0x0D:
                     return "?";///No Translate
                 case 0x0E:
                     return "?";///No Translate
             }
 
-//            out_errorMessage = R._("不明なEVBITです。\r\nEVBITは、0x00から0x0Eまでです。");
             return "";
         }
 
@@ -8072,6 +8094,40 @@ namespace FEBuilderGBA
                         case 19: //19=リストから次を検索
                             InputFormRef.SearchNextByListBox(self);
                             break;
+                        case 20: //20=ユニット画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<UnitFE6Form>();
+                            }
+                            else if (Program.ROM.RomInfo.version() == 7)
+                            {
+                                InputFormRef.JumpForm<UnitFE7Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<UnitForm>();
+                            }
+                            break;
+                        case 21: //21=クラス画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<ClassFE6Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<ClassForm>();
+                            }
+                            break;
+                        case 22: //22=アイテム画面を開く
+                            if (Program.ROM.RomInfo.version() == 6)
+                            {
+                                InputFormRef.JumpForm<ItemFE6Form>();
+                            }
+                            else
+                            {
+                                InputFormRef.JumpForm<ItemForm>();
+                            }
+                            break;
                         case 0xFF: //未定義
                             R.ShowStopError("ショートカットキーの設定がされていません。\r\nメニューの、設定→オプションから、ショートカットキーを定義してください。");
                             break;
@@ -9203,7 +9259,34 @@ namespace FEBuilderGBA
             MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
             aal.addr = addr;
             aal.length = LZ77.getCompressedSize(Program.ROM.Data, addr);
+            UpdateLZ77Padding(ref aal);
+
             return aal;
+        }
+        public static void UpdateLZ77Padding(ref MoveToUnuseSpace.ADDR_AND_LENGTH aal)
+        {
+            if (U.isPadding4(aal.length))
+            {
+                return;
+            }
+            uint mod = aal.length % 4;
+
+            for (uint i = 0; i < mod; i++)
+            {
+                uint addr = aal.addr + aal.length + i;
+                if (!U.isSafetyOffset(addr))
+                {//ROM末尾を超えている
+                    return;
+                }
+
+                uint a = Program.ROM.u8(addr);
+                if (a != 0)
+                {//0ではないのでpaddingではない.
+                    return;
+                }
+            }
+            //最大値の算出しなおし.
+            aal.length = U.Padding4(aal.length);
         }
 
         //画像みたいなデータの書き込み.
@@ -9233,7 +9316,12 @@ namespace FEBuilderGBA
                 //ここには書き込めないため、新規領域を確保する.
                 newAddr = AppendBinaryData(image, undodata);
             }
-            else if (ImageFormRef.checkForceSeparationAddress(addr , forceSeparationAddress))
+            else if (!U.isSafetyOffset(U.toOffset(addr) + (uint)image.Length - 1))
+            {
+                //十分な余白がないので、新規拡張する必要がある.
+                newAddr = AppendBinaryData(image, undodata);
+            }
+            else if (ImageFormRef.checkForceSeparationAddress(addr, forceSeparationAddress))
             {//汎用TSAアドレスなので絶対に上書きしてはいけない
                 newAddr = AppendBinaryData(image, undodata);
             }
@@ -10308,6 +10396,7 @@ namespace FEBuilderGBA
         public enum mnc2_fix_enum
         {
              NO             //なし
+           , Aera_Version   //aeraさんの作ったバージョン
            , OldFix         //古いルーチン
            , Stan_20190505  //Stanが2019/5/5 に提案した方式
            , NoCache = (int)NO_CACHE
@@ -10326,6 +10415,7 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="OldFix",	ver = "FE8J", addr = 0xc1e7c,data = new byte[]{0xB8, 0xE0}},
                 new PatchTableSt{ name="Stan_20190505",	ver = "FE8J", addr = 0x0F664,data = new byte[]{0x94, 0xF6, 0x00, 0x08}}, //NOT条件
+                new PatchTableSt{ name="Aera_Version" ,	ver = "FE8J", addr = 0xc03e0,data = new byte[]{0x01, 0x48, 0x80, 0x7B, 0x70, 0x47, 0x00, 0x00, 0xEC, 0xBC, 0x02, 0x02}},
                 new PatchTableSt{ name="OldFix",	ver = "FE8U", addr = 0xBD070,data = new byte[]{0xB8, 0xE0}},
                 new PatchTableSt{ name="Stan_20190505",	ver = "FE8U", addr = 0x0F464,data = new byte[]{0x98, 0xF4, 0x00, 0x08}}, //NOT条件
             };
@@ -10351,6 +10441,10 @@ namespace FEBuilderGBA
                 if (t.name == "OldFix")
                 {
                     return mnc2_fix_enum.OldFix;
+                }
+                if (t.name == "Aera_Version")
+                {
+                    return mnc2_fix_enum.Aera_Version;
                 }
             }
             return mnc2_fix_enum.NO;
@@ -11652,15 +11746,15 @@ namespace FEBuilderGBA
                 menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Down));
                 contextMenu.MenuItems.Add(menuItem);
 
-                menuItem = new MenuItem("-");
-                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem("-");
+//                contextMenu.MenuItems.Add(menuItem);
 
-                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
-                contextMenu.MenuItems.Add(menuItem);
-                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
-                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
-                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem(R._("↑↑データをシフトする(Ctrl + Alt + Shift + Up)"));
+//                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Up));
+//                contextMenu.MenuItems.Add(menuItem);
+//                menuItem = new MenuItem(R._("↓↓データをシフトする(Ctrl + Alt + Shift + Down)"));
+//                menuItem.Click += new EventHandler(U.FireKeyDown(this.AddressList, keyDown, Keys.Control | Keys.Alt | Keys.Shift | Keys.Down));
+//                contextMenu.MenuItems.Add(menuItem);
             }
             if (useClear)
             {

@@ -25,4 +25,4 @@ INFO=敵が残り一体になったときに再生される勝利近しの曲を
 INFO.en=Patches the ROM to enable per-chapter near-victory BGM via Chapter Editor byte 0x28.\r\nTo edit, enter the Chapter Editor and modify the Victory BGM field.\r\nBy default this isn't set to a Victory BGM and must be changed throughout the ROM.\r\n
 AUTHOR=7743
 
-INFO.zh=使您能够将歌曲接近以敌人在章节单位中保持在一起时播放的胜利。
+INFO.zh=使您能够将歌曲接近以敌人在章节人物中保持在一起时播放的胜利。

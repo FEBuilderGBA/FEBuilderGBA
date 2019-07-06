@@ -1133,6 +1133,10 @@ namespace FEBuilderGBA
             {
                 R.ShowStopError(R.ExceptionToString(e));
             }
+            catch (System.IO.IOException e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
+            }
 
             //ない
             return "";
@@ -1401,6 +1405,25 @@ namespace FEBuilderGBA
             else
             {
                 url = "https://dw.ngmansion.xyz/doku.php?id=en:discord_chat";
+            }
+            return url;
+        }
+        public static string GetExplainOfSFileURL()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:s_file%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E4%B8%AD%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E8%A7%A3%E8%AA%AC";
+            }
+            else if (lang == "zh")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=zh:guide:s%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E6%9C%9F%E9%97%B4%E7%9A%84%E9%94%99%E8%AF%AF%E8%AF%B4%E6%98%8E_zh";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:guide:explanation_of_s_file_en";
             }
             return url;
         }

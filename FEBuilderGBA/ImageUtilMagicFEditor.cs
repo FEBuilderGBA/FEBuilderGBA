@@ -1193,7 +1193,7 @@ namespace FEBuilderGBA
                 return null;
             }
 
-            magic_animedata = oam.MakeMagicAnime(imagefilename, true);
+            magic_animedata = oam.MakeMagicAnime(imagefilename);
             if (magic_animedata == null)
             {
                 errormessage = oam.ErrorMessage;

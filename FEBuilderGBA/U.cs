@@ -4089,7 +4089,7 @@ namespace FEBuilderGBA
             using (Stream output = File.OpenWrite(savefilename))
             using (Stream input = rsp.GetResponseStream())
             {
-                byte[] buffer = new byte[8192];
+                byte[] buffer = new byte[1024*8];
                 int totalSize = (int)rsp.ContentLength;
                 int readTotalSize = 0;
                 int bytesRead;

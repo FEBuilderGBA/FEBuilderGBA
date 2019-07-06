@@ -4805,3 +4805,7 @@ and defeating an enemy.
 死者の亡霊\r\n地形とその効果全てを無視する	The ghost of the dead.\r\nIgnore the all terrain.
 神出鬼没で華やかな怪盗\r\n装備『剣・杖』　スキル『すり抜け』	Knaves who need no tools or keys to\r\nopen locks. Equip: Swords.\r\nSkill: Pass
 武器レベル	Weapon level
+ウェリネ	Verrine
+ロムファイア	Romfire
+ヴラスキャルヴ	Valaskjalf
+クライディレド	Creiddylad

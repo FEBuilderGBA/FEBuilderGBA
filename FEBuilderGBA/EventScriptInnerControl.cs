@@ -88,7 +88,8 @@ namespace FEBuilderGBA
             for (int i = 0; i < code.Script.Args.Length; i++)
             {
                 EventScript.Arg arg = code.Script.Args[i];
-                if (arg.Type == EventScript.ArgType.IF_CONDITIONAL)
+                if (arg.Type == EventScript.ArgType.IF_CONDITIONAL
+                    || arg.Type == EventScript.ArgType.GOTO_CONDITIONAL)
                 {
                     uint v = EventScript.GetArgValue(code, arg);
                     return v;
@@ -148,14 +149,20 @@ namespace FEBuilderGBA
                 {
                     code.JisageCount = jisageCount ++;
                     uint conditional_id = GetScriptConditionalID(code);
-                    needLabel.Add(conditional_id);
+                    if (conditional_id != U.NOT_FOUND)
+                    {
+                        needLabel.Add(conditional_id);
+                    }
                     isBeforeGoto = false;
                 }
                 else if (code.Script.Has == EventScript.ScriptHas.GOTO_CONDITIONAL)
                 {
                     code.JisageCount = jisageCount;
                     uint conditional_id = GetScriptConditionalID(code);
-                    needLabel.Add(conditional_id);
+                    if (conditional_id != U.NOT_FOUND)
+                    {
+                        needLabel.Add(conditional_id);
+                    }
                     isBeforeGoto = true;
                 }
                 else
@@ -486,6 +493,7 @@ namespace FEBuilderGBA
         {
             HideFloatingControlpanel();
         }
+
 
         private void ASMTextBox_Leave(object sender, EventArgs e)
         {
@@ -2144,6 +2152,7 @@ namespace FEBuilderGBA
             }
 
             EventScript.Script script = form.Script;
+            EventScript.SetDefaultFrameTo60(script);
 
             //選択した命令を代入
             byte[] selectedByteData = script.Data;
@@ -2152,7 +2161,6 @@ namespace FEBuilderGBA
 
             //イベントを逆アセンブルして確定する.
             OneLineDisassembler();
-
 
             //値1を自動選択
             if (ParamSrc1.Visible)
@@ -2701,8 +2709,14 @@ namespace FEBuilderGBA
                 }
             }
         }
+        public enum TermCode
+        {
+            NoTerm,
+            DefaultTermCode,
+            SimpleTermCode,
+        }
         public static byte[] ConverteventTextToBin(string filename
-            ,bool addTerm = true
+            , TermCode addTerm = TermCode.DefaultTermCode
             ,string XXXXXXXX = null,string YYYYYYYY = null)
         {
             List<byte> binarray = new List<byte>();
@@ -2734,7 +2748,11 @@ namespace FEBuilderGBA
                 binarray.AddRange(bin);
             }
 
-            if (addTerm)
+            if (addTerm == TermCode.DefaultTermCode)
+            {//終端の追加.
+                binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
+            }
+            else if (addTerm == TermCode.SimpleTermCode)
             {//終端の追加.
                 binarray.AddRange(Program.ROM.RomInfo.defualt_event_script_term_code());
             }

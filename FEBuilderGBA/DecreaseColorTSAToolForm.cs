@@ -234,6 +234,10 @@ namespace FEBuilderGBA
             {
                 R.ShowStopError(R.ExceptionToString(ee));
             }
+            catch (System.ArgumentOutOfRangeException ee)
+            {
+                R.ShowStopError(R.ExceptionToString(ee));
+            }
         }
 
         private void AFilename_DoubleClick(object sender, EventArgs e)

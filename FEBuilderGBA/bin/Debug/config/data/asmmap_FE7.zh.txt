@@ -282,10 +282,10 @@
 080191D4	加载地图调色板	{U}
 08019634	映射调色板加载2	{J}
 0801924C	映射调色板加载2	{U}
-080C09A4	师往下（Div）	{J}
-080BFE60	师往下（Div）	{U}
-080C07CC	师往下（Div）	{J}
-080BFC88	2区往下（Div）	{U}
+080C09A4	师往下(Div)	{J}
+080BFE60	师往下(Div)	{U}
+080C07CC	师往下(Div)	{J}
+080BFC88	2区往下(Div)	{U}
 0807A0A0	标志设置功能	void	r 0：标志标志：标志	{J}
 080798D0	标志设置功能	void	r 0：标志标志：标志	{U}
 0807A0B4	功能标志	void	r 0：减少标志：标志	{J}
@@ -1331,12 +1331,12 @@
 08016C26	IsItemCoveringRange	Item Table is read directly for range	{J}
 0802D74C	阅读地图瓦片动画	{J}
 0802D28C	阅读地图瓦片动画	{U}
-0802D794	阅读地图瓷砖动画2（调色板动画）		{J}
-0802D2D4	阅读地图瓷砖动画2（调色板动画）		{U}
-0203E070	指向攻击者的单位数据的RAM指针（至0203A3EC）	{J}
-0203E098	指向攻击者的单元数据的RAM指针（至0203A3F0）	{U}
-0203E06C	RAM指向单元数据的攻击方（至0203A46C）	{J}
-0203E094	RAM指向要攻击的单元数据（到0203A470）	{U}
+0802D794	阅读地图瓷砖动画2(调色板动画)		{J}
+0802D2D4	阅读地图瓷砖动画2(调色板动画)		{U}
+0203E070	指向攻击者的单位数据的RAM指针(至0203A3EC)	{J}
+0203E098	指向攻击者的单元数据的RAM指针(至0203A3F0)	{U}
+0203E06C	RAM指向单元数据的攻击方(至0203A46C)	{J}
+0203E094	RAM指向要攻击的单元数据(到0203A470)	{U}
 @BattleUnit@00	@Unit	CopyUnit
 @BattleUnit@48	short	weapon
 @BattleUnit@4A	short	weaponBefore
@@ -1399,8 +1399,8 @@
 0200310C	Stat Screens StatScreenStruct	{J}
 0200310C	Stat Screens StatScreenStruct	{U}
 
-08063014	战斗动画脚本C26（投掷盾牌）/ C27（投掷剑）指挥判断	{J}
-0806CC94	战斗动画脚本C26（投掷盾牌）/ C27（投掷剑）指挥判断	{U}
+08063014	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{J}
+0806CC94	战斗动画脚本C26(投掷盾牌)/ C27(投掷剑)指挥判断	{U}
 08050bf8	瓷砖的特殊运动？从C26 / C27调用	r0=不明	r1=指针数组1	r2=指针数组1	r3=??	{J}
 0805041C	瓷砖的特殊运动？从C26 / C27调用	r0=不明	r1=指针数组1	r2=指针数组1	r3=??	{U}
 083bdff4	:083be18c	日本的地形符号	{J}
@@ -1425,8 +1425,8 @@
 0804A210	LoadNewUIGraphics	{U}
 0804A828	ClearBG0BG1	{J}
 0804A9F8	LoadNewUIGraphics	{J}
-080BF0F0	音效回放（追踪音效回放时发现）	{J}
-080BE5AC	音效回放（追踪音效回放时发现）	{U}
+080BF0F0	音效回放(追踪音效回放时发现)	{J}
+080BE5AC	音效回放(追踪音效回放时发现)	{U}
 08016470	在商店中绘制销售项目列	{U}
 080168EC	在商店中绘制销售项目列	{J}
 0802c190	获取指定地图更改的地址	r0=Map Change Id	{J}
@@ -4483,10 +4483,10 @@
 081D72A4	&PALETTE	一些东西的调色板	135	{U}
 081D7B20	&PALETTE	一些东西的调色板	136	{U}
 //This data is made with the aim of being readable by machine fast.
-08075F68	在地图上播放时播放音效（0x2d5）	{J}
-08075FAC	在地图上跳舞时播放音效（0x2d6）	{J}
-08075798	在地图上播放时播放音效（0x2d5）	{U}
-080757DC	在地图上跳舞时播放音效（0x2d6）	{U}
+08075F68	在地图上播放时播放音效(0x2d5)	{J}
+08075FAC	在地图上跳舞时播放音效(0x2d6)	{J}
+08075798	在地图上播放时播放音效(0x2d5)	{U}
+080757DC	在地图上跳舞时播放音效(0x2d6)	{U}
 0202BC23	Tactician_Birth_Month	{U}
 0202BC1F	Tactician_Birth_Month	{J}
 0802ebb0	GetTacticianNameStringPtr	{J}
@@ -4731,3 +4731,7 @@
 //This data is made with the aim of being readable by machine fast.
 0802EFE4	竞技场	选择对手	{J}
 0802EB18	竞技场	选择对手	{U}
+08034d44	GetCurrentPromotedLevelBonus	{J}
+0803486c	GetCurrentPromotedLevelBonus	{U}
+0801782c	GetItemWeaponEffect	{J}
+08017424	GetItemWeaponEffect	{U}

@@ -1,0 +1,15 @@
+
+NAME=要追撃攻速差
+NAME.en=Changing the Universal Doubling Threshold(attack speend)
+NAME.zh=追击攻速差
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+
+ADDRESS=0x02AFBC 0x2AFCE
+
+AUTHOR=macplustrees https://feuniverse.us/t/fe8-changing-the-universal-doubling-threshold/2557
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
