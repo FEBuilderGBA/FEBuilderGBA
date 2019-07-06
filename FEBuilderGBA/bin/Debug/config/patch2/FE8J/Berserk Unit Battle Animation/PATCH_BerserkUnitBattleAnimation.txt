@@ -1,0 +1,15 @@
+NAME=バーサークユニット戦闘アニメ
+NAME.en=Berserk Unit Battle Animation
+NAME.zh=狂乱状态下战斗动画
+
+AUTHOR=laqieer
+
+INFO=バーサーク状態の戦闘アニメを有効にする。
+INFO.en=Enable battle animation of berserk unit.
+INFO.zh=开启狂乱状态下的战斗动画。
+
+TYPE=BIN
+
+PATCHED_IF:0x58A40=0x00 0x00
+BIN:0x58A40=nop2byte.bin
+BIN:0x58A8A=nop2byte.bin
