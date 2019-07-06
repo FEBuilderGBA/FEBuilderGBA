@@ -2863,9 +2863,9 @@
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="SpeechLib">
-      <Guid>{D3C4A7F2-7D27-4332-B41F-593D71E16DB1}</Guid>
-      <VersionMajor>11</VersionMajor>
-      <VersionMinor>0</VersionMinor>
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>4</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
