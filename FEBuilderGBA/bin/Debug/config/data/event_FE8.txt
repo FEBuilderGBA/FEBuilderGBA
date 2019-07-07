@@ -126,20 +126,20 @@
 430CXXXXYYYYZZZZ	BGT [YYYY:MEMORYSLOT:MemorySlot] > [ZZZZ:MEMORYSLOT:MemorySlot](>時に、[XXXX:IF_CONDITIONAL:条件ID]ラベルにジャンプ,  <=時には、以下を実行)	{JUMP}
 440CXXXXYYYYZZZZ	BLE [YYYY:MEMORYSLOT:MemorySlot] <= [ZZZZ:MEMORYSLOT:MemorySlot](<=時に、[XXXX:IF_CONDITIONAL:条件ID]ラベルにジャンプ,  >時には、以下を実行)	{JUMP}
 450CXXXXYYYYZZZZ	BLT [YYYY:MEMORYSLOT:MemorySlot] < [ZZZZ:MEMORYSLOT:MemorySlot](<時に、[XXXX:IF_CONDITIONAL:条件ID]ラベルにジャンプ,  >=時には、以下を実行)	{JUMP}
-20190000	編を取得します(CHECK_MODE)	1=Prologue-Ch8,2=Eirika,3=Ephraim	@STOREC	{COND}
-22190000	難易度ハードの判定(CHECK_HARD)	難易度ハードであれば1を、そうでなければ0を取得します	@STOREC	{COND}
-23190000	ターン数を取得(CHECK_TURNS)	@STOREC	{COND}
-24190000	敵軍の数を取得(CHECK_ENEMIES)	@STOREC	{COND}
-25190000	友軍の数を取得(CHECK_OTHERS)	@STOREC	{COND}
-26190000	撤退できるフリーマップかどうか判定(CHECK_SKIRMISH)	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command.
-27190000	難易度簡単の判定(CHECK_TUTORIAL)	難易度簡単であれば1を、そうでなければ0を取得します	@STOREC	{COND}
+20190000	編を取得(CHECK_MODE)	1=序章から8章まで,2=エイリーク編,3=エフラム編	@STOREC	{COND}
+22190000	難易度ハードの判定(CHECK_HARD)	難易度ハードであれば1を、そうでなければ0を返します	@STOREC	{COND}
+23190000	ターン数を取得(CHECK_TURNS)	現在のターン数を返します。	@STOREC	{COND}
+24190000	敵軍の数を取得(CHECK_ENEMIES)	敵兵の数を返します。	@STOREC	{COND}
+25190000	友軍の数を取得(CHECK_OTHERS)	友軍(緑/NPC)の数を返します。@STOREC	{COND}
+26190000	撤退できるフリーマップかどうか判定(CHECK_SKIRMISH)	フリーマップならば1、そうでなければ0を返します	@STOREC	{COND}
+27190000	難易度簡単の判定(CHECK_TUTORIAL)	難易度簡単であれば1を、そうでなければ0を返します	@STOREC	{COND}
 28190000	所持金の取得(CHECK_MONEY)	所持金を取得を取得します	@STOREC	{GOLD}	{COND}
-29190000	関連付けられている達成フラグの取得(CHECK_EVENTID)	現在のイベントに関連づけられている達成フラグを取得を取得します	@STOREC	{COND}	{FLAG}
-2A190000	CHECK_POSTGAME	Checks your Mode byte; likely checks to see if you are in the postgame
-21190000	章IDの取得(#CHECK_SOMETHING)	現在の章IDを取得を取得します	@STOREC	{COND}
+29190000	関連付けられている達成フラグの取得(CHECK_EVENTID)	現在のイベントに関連づけられている達成フラグを返します	@STOREC	{COND}	{FLAG}
+2A190000	ゲームクリア後の大陸の魔物退治かどうか判定(CHECK_POSTGAME)	大陸の魔物モードであれば1を、そうでなければ0を返します	@STOREC	{COND}
+21190000	章IDの取得(CHECK_CHAPTER_NUMBER)	現在の章IDを取得を取得します	@STOREC	{COND}
 
-2103XXXX	フラグが有効か確認する[XXXX:FLAG:Flag](CHECK_EVENTID)	有効であれば1を、そうでなければ0になります	@STOREC	CHECK_FLAG	{COND}	{FLAG}
-2003XXXX	EVBITが有効か確認する[XXXX:EVBIT:Bit](CHECK_EVBIT)	有効であれば1を、そうでなければ0になります	@STOREC	{COND}	{EVBIT}
+2103XXXX	フラグが有効か判定[XXXX:FLAG:Flag](CHECK_EVENTID)	有効であれば1を、そうでなければ0になります	@STOREC	CHECK_FLAG	{COND}	{FLAG}
+2003XXXX	EVBITが有効か判定[XXXX:EVBIT:Bit](CHECK_EVBIT)	有効であれば1を、そうでなければ0になります	@STOREC	{COND}	{EVBIT}
 
 2133FFFF	操作しているユニットの会話グループの取得する(CHECK_STATUS)	@STOREC	{UNITCOND}
 2733FFFF	操作しているユニットのクラスIDを取得する(CHECK_CLASS)	@STOREC	{UNITCOND}
@@ -161,15 +161,15 @@
 2017XXXX	画面をフェードアウト(真っ暗からの復帰)[XXXX:FSEC:速さ](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
 2317XXXX	画面をホワイトインさせて真っ白に[XXXX:FSEC:速さ](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
 2217XXXX	画面をホワイトアウト(真っ白からの復帰)[XXXX:FSEC:速さ](FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
-221B0000	会話終了(REMA)	会話イベントを終了させます。
-211A0000	マップ要素を削除する。(REMOVEPORTRAITS)	{BG}
+221B0000	会話終了(REMA)	会話イベントを終了させます
+211A0000	マップ要素を削除する(REMOVEPORTRAITS)	{BG}
 4021XXXX00000000	BACG[XXXX::Value1]Changes background to value in Slot_2
 403AXXXXYYYY0000	NOTIFY[XXXX:ONELINE_TEXT:テキスト][YY:MUSIC:効果音]	通知ポップアップを表示します	{TEXT}
 413AXXXXYYYYZZZZ	MAPにテキスト表示[XXXX:ONELINE_TEXT:テキスト][YYYY:SCREENX:X][ZZZZ:SCREENY:Y](BROWNBOXTEXT)	地名などの表示に利用されます	{TEXT}
 201A0000	会話開始(TEXTSTART)	{TEXT}
 231A0000	TUTORIALTEXTBOXSTART	{TEXT}
 241A0000	吹出表示の準備(SOLOTEXTBOXSTART)	{TEXT}
-201C0000	背景無会話表示の次に利用します。(TEXTCONT)	{TEXT}
+201C0000	背景無会話表示の次に利用します(TEXTCONT)	{TEXT}
 2037XXXX	GIVEITEMTO[XXXX:UNIT:ユニット]
 2137XXXX	GIVEITEMTOMAIN[XXXX::Village_or_cutscene]
 20220000	背景を消す(CLEAN)	{CLEAR}	{BG}
@@ -199,7 +199,7 @@
 2013FF7F	音楽BGMをフェードアウトして消す(MUSCFAST 0x7FFF)(MUSM)	{MUSIC}
 2213XXXX	[XXXX:MUSIC:曲]音楽BGMをフェードアウトして変更(MUSCFAST)	{MUSIC}
 2413XXXX	[XXXX:MUSIC:曲]音楽BGMをフェードアウトして変更2(MUSCMID)	{MUSIC}
-2613XXXX	[XXXX:MUSIC:曲]音楽BGMを変更。さらに長いフェードアウト。(MUSCSLOW)	{MUSIC}
+2613XXXX	[XXXX:MUSIC:曲]音楽BGMを変更。さらに長いフェードアウト(MUSCSLOW)	{MUSIC}
 20150000	音楽BGM音量を小さく(MUSI)	{MUSIC}
 21150000	音楽BGM音量を大きく(MUNO)	{MUSIC}
 2234XXXX	[XXXX:UNIT:ユニット]を自軍に変更(CUSA)	{UNITPERSOLNAL}

@@ -328,8 +328,9 @@
 450CXXXXYYYYZZZZ	BLT (如果 [YYYY:MEMORYSLOT:MemorySlot] <  [ZZZZ:MEMORYSLOT:MemorySlot],则跳转到[XXXX:IF_CONDITIONAL:条件ID]标签,否则执行以下)	{JUMP}
 
 
-26190000	CHECK_SKIRMISH	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command.
-2A190000	CHECK_POSTGAME	Checks your Mode byte; likely checks to see if you are in the postgame
+26190000	获取你是否在小冲突或地牢中(CHECK_SKIRMISH)	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command.	@STOREC	{COND}
+2A190000	赛后游戏检查大陆除魔战争(CHECK_POSTGAME)	returns 1 if Creature Campaign, 0 otherwise
+	Checks your Mode byte; likely checks to see if you are in the postgame	@STOREC	{COND}
 2103XXXX	确认标志是否有效[XXXX:FLAG:Flag](CHECK_EVENTID)	如果有效则为1，否则为0	@STOREC	CHECK_FLAG	{COND}	{FLAG}
 2003XXXX	确认EVBIT是否有效[XXXX:EVBIT:位](CHECK_EVBIT)	如果有效则为1，否则为0	@STOREC	{COND}	{EVBIT}
 2133FFFF	获取操作人物的会话组(CHECK_STATUS)	@STOREC	{UNITCOND}

@@ -342,7 +342,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 27190000	Checks if you're in easy mode(CHECK_TUTORIAL)	Returns 1 if the difficulty is set to easy mode, and 0 otherwise	@STOREC	{COND}
 28190000	Checks your gold balance(CHECK_MONEY)	Returns the current amount of gold held by the player	@STOREC	{GOLD}	{COND}
 29190000	Checks the current event's flag ID(CHECK_FLAGID(CHECK_EVENTID))	Returns the flag number of the current event	@STOREC	{COND}	{FLAG}
-2A190000	Checks your Mode byte(CHECK_POSTGAME)	Checks your Mode byte; likely checks to see if you are in the postgame
+2A190000	Checks for Creature Campaign by post-game(CHECK_POSTGAME)	returns 1 if Creature Campaign, 0 otherwise		Checks your Mode byte; likely checks to see if you are in the postgame	@STOREC	{COND}
 21190000	Checks chapter number(CHECK_CHAPTER_NUMBER)	Returns the current chapter's ID	OldName is CHECK_SOMETHING	@STOREC	{COND}
 2103XXXX	Checks whether the flag is set[XXXX:FLAG:Flag](CHECK_EVENTID)	returns 1 if it is valid, 0 otherwise	@STOREC	CHECK_FLAG	{COND}	{FLAG}
 2003XXXX	Checks whether the EVBIT is set[XXXX:EVBIT:Bit](CHECK_EVBIT)	returns 1 if it is valid, 0 otherwise	@STOREC	{COND}	{EVBIT}
