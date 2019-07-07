@@ -84,12 +84,12 @@
 432C010000000000	_432C
 212BXXXX	_0x2B21[XXXX::Value1]
 222BXXXX	_0x2B22[XXXX::Value1]
-4032XXXXYYZZ0000	Load one Player unit with it's default parameters(SPAWN_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
-4132XXXXYYZZ0000	Load one NPC (green) unit with it's default parameters(SPAWN_NPC)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
-4232XXXXYYZZ0000	Load one Enemy unit with it's default parameters(SPAWN_ENEMY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
-4F32XXXXYYZZ0000	Load one Player unit with it's default parameters, unit will dissapear at the end of the events(SPAWN_CUTSCENE_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
-4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C.	@STOREC	{COND}
-202EXXYY	Get unit ID of the unit at the given coordinates.(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y] Results are stored in memory slot C.	@STOREC	{COND}
+4032XXXXYYZZ0000	Load one Player unit with it's default parameters(SPAWN_ALLY)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4132XXXXYYZZ0000	Load one NPC (green) unit with it's default parameters(SPAWN_NPC)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4232XXXXYYZZ0000	Load one Enemy unit with it's default parameters(SPAWN_ENEMY)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4F32XXXXYYZZ0000	Load one Player unit with it's default parameters, unit will dissapear at the end of the events(SPAWN_CUTSCENE_ALLY)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
+4036XXXXYYZZWWTT	Check if a unit is within a specified area(CHECK_INAREA)[XXXX:UNIT:Character][YY:MAPX:X][ZZ:MAPY:Y][WW:MAPX:X2][TT:MAPY:Y2]	It will return 1 if the unit is within the area, and 0 otherwise. Results are stored in memory slot C.	@STOREC	{COND}
+202EXXYY	Get unit ID of the unit at the given coordinates(CHECK_AT)[XX:MAPX:X][YY:MAPY:Y]	returns unit ID if there is a unit at coordinates	@STOREC	{COND}
 2F41XXXX	_0x412F[XXXX::Value1]
 4084XXXXYYYY0000	Map detail specification near ID display[XXXX::Value 1][YY::Value 2]
 8088XXXXYYYYZZZZWWWWVVVV00000000	_0x8880[XXXX::Value1][YY::Value2][ZZ::Value3][WW::Value4][VV::Value5]
@@ -104,11 +104,11 @@
 221B0000	Conversation end(REMA)
 211A0000	Removes speech bubbles and portraits(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
-2012FF7F	Mute, Turn off the BGM.(MUSC 0x7FFF)	{MUSIC}
+2012FF7F	Mute, Turn off the BGM(MUSC 0x7FFF)	{MUSIC}
 2012XXXX	Change BGM to[XXXX:MUSIC:Song](MUSC)	{MUSIC}
 2014XXXX	Change BGM to[XXXX:MUSIC:Song] while saving the previous song(MUSS)
 2016XXXX	Play SFX[XXXX:SOUND:sound effect](SOUN)	{MUSIC}
-2013FF7F	Mute, Fade out and turn off the BGM.(MUSCFAST 0x7FFF)	{MUSIC}
+2013FF7F	Mute, Fade out and turn off the BGM(MUSCFAST 0x7FFF)	{MUSIC}
 2213XXXX	Change BGM to[XXXX:MUSIC:Song] with fast fade out(MUSCFAST)	{MUSIC}
 2413XXXX	Change BGM to[XXXX:MUSIC:Song] with fade out(MUSCMID)	{MUSIC}
 2613XXXX	Change BGM to[XXXX:MUSIC:Song] with slow fade out(MUSCSLOW)	{MUSIC}
@@ -120,7 +120,7 @@
 2039XXXX	CHAI[XXXX:UNIT:Character]
 2139XXYY	Changes the AI of the unit at the given coordinates[XX:MAPX:X],[YY:MAPY:Y](CHAI)
 2634XXXX	Ends specified unit's turn, greying them out[XXXX:UNIT:Character](SET_ENDTURN)
-2534XXXX	Sets [XXXX:UNIT:Character] HP to value stored in memory slot 0x1.(SET_HP)(LOW)
+2534XXXX	Sets [XXXX:UNIT:Character] HP to value stored in memory slot 0x1(SET_HP)(LOW)
 2834XXXX	SET_STATE[XXXX:UNIT:Character]
 2D34XXXX	[XXXX:UNIT:Character]Erase (kill) unit with death SFX(SET_SOMETHING)	@WARNING_DISA	{UNITREMOVE}
 2E34XXXX	[XXXX:UNIT:Character]Erase (kill) unit without death SFX(DISA_IF)	@WARNING_DISA	{UNITREMOVE}
@@ -143,9 +143,9 @@
 
 20430000	Plays sword slashing animation	{J}
 2043XXXX	RESUMM[XXXX:UNIT:Character]
-40050B00XXXXYYYY2041ZZZZ	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y][ZZZZ:UNIT:Unit](LOW)
-2041XXXX	WARP_OUT[XXXX:UNIT:Unit](LOW)
-2141XXXX	WARP_IN[XXXX:UNIT:Unit](LOW)
+40050B00XXXXYYYY2041ZZZZ	WARP_OUT[XXXX:MAPX:X][YYYY:MAPY:Y][ZZZZ:UNIT:Character](LOW)
+2041XXXX	WARP_OUT[XXXX:UNIT:Character](LOW)
+2141XXXX	WARP_IN[XXXX:UNIT:Character](LOW)
 40ADXXXXYYYY0000	_SATURATE_COLORS[XXXX::Value1][YY::Value2]
 40B2000000000000	WM_FADEOUT
 60B4XXXXYYYYZZZZWWWW0000	World map display[XXXX::Value 1][YY::XX][ZZ::YY][WW::Map](WM_SHOWDRAWNMAP)	{WMAPMOVE}
@@ -230,18 +230,18 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 221A00004221000000000200	Ending Ephraim and Lyon CG display
 221A0000201BXXXX201D0000	Display text at bottom by CG scene[XXXX:CONVERSATION_TEXT:Text](CGTEXTSTART+TEXTSHOW+TEXTEND)	{TEXT}
 
-40050200ZZ000000482FFFFFFDFFXXYY400A00003006A608482F0000ZZ00XXYY	[ZZ:UNIT:Unit]appears, warp to[XX:MAPX:X][YY:MAPY:Y](_WARP+MOVE)	{UNITMOVE}	{J}
-40050200ZZ000000482FFFFFFDFFXXYY400A0000F8E49E08482F0000ZZ00XXYY	[ZZ:UNIT:Unit]appears, warp to[XX:MAPX:X][YY:MAPY:Y](_WARP+MOVE)	{UNITMOVE}	{U}
-40050200ZZ000000482FFFFFFDFFXXYY400A00007406A608482F0000ZZ00XXYY	[ZZ:UNIT:Unit]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]2(_WARP+MOVE)	{UNITMOVE}	{J}
-40050200ZZ000000482FFFFFFDFFXXYY400A00003CE59E08482F0000ZZ00XXYY	[ZZ:UNIT:Unit]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]2(_WARP+MOVE)	{UNITMOVE}	{U}
-40050200ZZ000000482FFFFFFDFFXXYY400A00003006A608	[ZZ:UNIT:Unit]appears, warp to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{J}
-40050200ZZ000000482FFFFFFDFFXXYY400A0000F8E49E08	[ZZ:UNIT:Unit]appears, warp to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{U}
-40050200ZZ000000482FFFFFFDFFXXYY400A00007406A608	[ZZ:UNIT:Unit]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{J}
-40050200ZZ000000482FFFFFFDFFXXYY400A00003CE59E08	[ZZ:UNIT:Unit]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{U}
+40050200ZZ000000482FFFFFFDFFXXYY400A00003006A608482F0000ZZ00XXYY	[ZZ:UNIT:Character]appears, warp to[XX:MAPX:X][YY:MAPY:Y](_WARP+MOVE)	{UNITMOVE}	{J}
+40050200ZZ000000482FFFFFFDFFXXYY400A0000F8E49E08482F0000ZZ00XXYY	[ZZ:UNIT:Character]appears, warp to[XX:MAPX:X][YY:MAPY:Y](_WARP+MOVE)	{UNITMOVE}	{U}
+40050200ZZ000000482FFFFFFDFFXXYY400A00007406A608482F0000ZZ00XXYY	[ZZ:UNIT:Character]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]2(_WARP+MOVE)	{UNITMOVE}	{J}
+40050200ZZ000000482FFFFFFDFFXXYY400A00003CE59E08482F0000ZZ00XXYY	[ZZ:UNIT:Character]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]2(_WARP+MOVE)	{UNITMOVE}	{U}
+40050200ZZ000000482FFFFFFDFFXXYY400A00003006A608	[ZZ:UNIT:Character]appears, warp to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{J}
+40050200ZZ000000482FFFFFFDFFXXYY400A0000F8E49E08	[ZZ:UNIT:Character]appears, warp to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{U}
+40050200ZZ000000482FFFFFFDFFXXYY400A00007406A608	[ZZ:UNIT:Character]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{J}
+40050200ZZ000000482FFFFFFDFFXXYY400A00003CE59E08	[ZZ:UNIT:Character]appears, warp2 to[XX:MAPX:X][YY:MAPY:Y]	{UNITMOVE}	{U}
 40050200ZZ00000040050300XXXX0000400A00004804A608	Dialog (conversation) with background(LOW)[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:TEXT]	{TEXT}	{J}
 40050200ZZ00000040050300XXXX0000400A000010E39E08	Dialog (conversation) with background(LOW)[ZZ:BG:Background][XXXX:CONVERSATION_TEXT:TEXT]	{TEXT}	{U}
-40050200ZZ000000400A00005406A6082F34ZZ00	Warp[ZZ:UNIT:Unit]out of the map	@WARNING_DISA	{UNITREMOVE}	{J}
-40050200ZZ000000400A00001CE59E082F34ZZ00	Warp[ZZ:UNIT:Unit]out of the map	@WARNING_DISA	{UNITREMOVE}	{U}
+40050200ZZ000000400A00005406A6082F34ZZ00	Warp[ZZ:UNIT:Character]out of the map	@WARNING_DISA	{UNITREMOVE}	{J}
+40050200ZZ000000400A00001CE59E082F34ZZ00	Warp[ZZ:UNIT:Character]out of the map	@WARNING_DISA	{UNITREMOVE}	{U}
 40050300XXXX0000400A00004804A608	[XXXX:CONVERSATION_TEXT:Text]Dialog (conversation) with background(LOW)	{TEXT}	{J}
 40050300XXXX0000400A000010E39E08	[XXXX:CONVERSATION_TEXT:Text]Dialog (conversation) with background(LOW)	{TEXT}	{U}
 40050200XX000000400A00002004A608	Change BG to[XX:BG:Background](SetBackground)	{BG}	{J}
@@ -333,33 +333,33 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 450CXXXXYYYYZZZZ	BLT (If [YYYY:MEMORYSLOT:MemorySlot] <  [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
 
 
-20190000	CHECK_MODE	Returns 1 if it is Pre-Route split (chapters prologue-8), 2 if it is Eirika Route, or 3 if it Ephraim Route	@STOREC	{COND}
-22190000	CHECK_HARD	Returns 1 if the difficulty is set to hard mode and 0 otherwise	@STOREC	{COND}
-23190000	CHECK_TURNS	Returns the current turn number	@STOREC	{COND}
-24190000	CHECK_ENEMIES	Returns the number of active enemy units	@STOREC	{COND}
-25190000	CHECK_OTHERS	Returns the number of active NPC (green) units	@STOREC	{COND}
-26190000	CHECK_SKIRMISH	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command
-27190000	CHECK_TUTORIAL	Returns 1 if the difficulty is set to easy mode and 0 otherwise	@STOREC	{COND}
-28190000	CHECK_MONEY	Returns the current amount of gold held by the player	@STOREC	{GOLD}	{COND}
-29190000	CHECK_FLAGID(CHECK_EVENTID)	Returns the flag number of the current event	@STOREC	{COND}	{FLAG}
-2A190000	CHECK_POSTGAME	Checks your Mode byte; likely checks to see if you are in the postgame
-21190000	CHECK_CHAPTER_NUMBER(#CHECK_SOMETHING)	Returns the current chapter's ID	@STOREC	{COND}
-2103XXXX	Confirm whether the flag is set[XXXX:FLAG:Flag](CHECK_EVENTID)	returns 1 if it is valid, 0 otherwise	@STOREC	CHECK_FLAG	{COND}	{FLAG}
-2003XXXX	Confirm whether the EVBIT is set[XXXX:EVBIT:Bit](CHECK_EVBIT)	returns 1 if it is valid, 0 otherwise	@STOREC	{COND}	{EVBIT}
+20190000	Checks current game mode(CHECK_MODE)	Returns 1 if it is Pre-Route split (chapters prologue-8), 2 if it is Eirika Route, or 3 if it Ephraim Route	@STOREC	{COND}
+22190000	Checks for hard mode(CHECK_HARD)	Returns 1 if the difficulty is set to hard mode and 0 otherwise	@STOREC	{COND}
+23190000	Checks turn count(CHECK_TURNS)	Returns the current turn number	@STOREC	{COND}
+24190000	Checks number of enemies(CHECK_ENEMIES)	Returns the number of active enemy units	@STOREC	{COND}
+25190000	Checks number of NPCs(CHECK_OTHERS)	Returns the number of active NPC (green) units	@STOREC	{COND}
+26190000	Checks if you're in a skirmish or dungeon(CHECK_SKIRMISH)	Checks to see if you are in a skirmish or dungeon. Used for the Retreat command
+27190000	Checks if you're in easy mode(CHECK_TUTORIAL)	Returns 1 if the difficulty is set to easy mode, and 0 otherwise	@STOREC	{COND}
+28190000	Checks your gold balance(CHECK_MONEY)	Returns the current amount of gold held by the player	@STOREC	{GOLD}	{COND}
+29190000	Checks the current event's flag ID(CHECK_FLAGID(CHECK_EVENTID))	Returns the flag number of the current event	@STOREC	{COND}	{FLAG}
+2A190000	Checks your Mode byte(CHECK_POSTGAME)	Checks your Mode byte; likely checks to see if you are in the postgame
+21190000	Checks chapter number(CHECK_CHAPTER_NUMBER)	Returns the current chapter's ID	OldName is CHECK_SOMETHING	@STOREC	{COND}
+2103XXXX	Checks whether the flag is set[XXXX:FLAG:Flag](CHECK_EVENTID)	returns 1 if it is valid, 0 otherwise	@STOREC	CHECK_FLAG	{COND}	{FLAG}
+2003XXXX	Checks whether the EVBIT is set[XXXX:EVBIT:Bit](CHECK_EVBIT)	returns 1 if it is valid, 0 otherwise	@STOREC	{COND}	{EVBIT}
 2133FFFF	Get the conversation group of the active (visiting) unit(CHECK_STATUS)	@STOREC	{UNITCOND}
 2733FFFF	Get the class ID of the active (visiting) unit(CHECK_CLASS)	@STOREC	{UNITCOND}
 2633FFFF	Get the coordinates of the active (visiting) unit(CHECK_COORDS)	@STOREC	{UNITCOND}
 2833FFFF	Get the luck stat of the active (visiting) unit(CHECK_LUCK)	@STOREC	{UNITCOND}
 212E0000	Get the unit ID of the active (visiting) unit(CHECK_ACTIVE)	@STOREC	{UNITCOND}
-2133XXXX	Get the conversation group of the specified unit[XXXX:UNIT:Unit](CHECK_STATUS)	@STOREC
-2633XXXX	Get the coordinates of the specified unit[XXXX:UNIT:Unit](CHECK_COORDS)	@STOREC	{UNITCOND}
-2733XXXX	Get the class ID of the specified unit[XXXX:UNIT:Unit](CHECK_CLASS)	@STOREC	{UNITCOND}
-2833XXXX	Get the luck stat of the specified unit[XXXX:UNIT:Unit](CHECK_LUCK)	@STOREC	{UNITCOND}
-2033XXXX	CHECK_EXISTS[XXXX:UNIT:Unit]	Returns 1 if the unit is in your party and 0 otherwise	@STOREC	CHECK_EXISTS	{UNITCOND}
-2233XXXX	CHECK_ALIVE[XXXX:UNIT:Unit]	Returns 1 if the unit is alive and 0 otherwise	@STOREC	{UNITCOND}
-2333XXXX	CHECK_DEPLOYED[XXXX:UNIT:Unit]	Returns 1 if the unit is deployed in this chapter and 0 otherwise	@STOREC	{UNITCOND}
-2433XXXX	CHECK_ACTIVEID[XXXX:UNIT:Unit]	Returns 1 if the unit is active (visiting) and 0 otherwise	@STOREC	{UNITCOND}
-2533XXXX	CHECK_ALLEGIANCE[XXXX:UNIT:Unit]	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
+2133XXXX	Get the conversation group of the specified [XXXX:UNIT:Character](CHECK_STATUS)	@STOREC
+2633XXXX	Get the coordinates of the specified [XXXX:UNIT:Character](CHECK_COORDS)	@STOREC	{UNITCOND}
+2733XXXX	Get the class ID of the specified [XXXX:UNIT:Character](CHECK_CLASS)	@STOREC	{UNITCOND}
+2833XXXX	Get the luck stat of the specified [XXXX:UNIT:Character](CHECK_LUCK)	@STOREC	{UNITCOND}
+2033XXXX	Check if exists [XXXX:UNIT:Character](CHECK_EXISTS)	Returns 1 if the unit is in your party and 0 otherwise	@STOREC	CHECK_EXISTS	{UNITCOND}
+2233XXXX	Checks if alive the [XXXX:UNIT:Character](CHECK_ALIVE)	Returns 1 if the unit is alive and 0 otherwise	@STOREC	{UNITCOND}
+2333XXXX	Checks if deployment the [XXXX:UNIT:Character](CHECK_DEPLOYED)	Returns 1 if the unit is deployed in this chapter and 0 otherwise	@STOREC	{UNITCOND}
+2433XXXX	checks if active unit matches given [XXXX:UNIT:Character](CHECK_ACTIVEID)	Returns 1 if the unit(character) is active (visiting) and 0 otherwise	@STOREC	{UNITCOND}
+2533XXXX	Get the allegiance of the [XXXX:UNIT:Character](CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
 
 4021XXXX00000000	BACG[XXXX::Value1]Changes background to value in Slot_2
 403AXXXXYYYY0000	NOTIFY[XXXX:ONELINE_TEXT:text][YY:MUSIC:sound effect]	Displays a notification popup.	{TEXT}
@@ -368,7 +368,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 231A0000	TUTORIALTEXTBOXSTART	{TEXT}
 241A0000	Preparation of blowing display(SOLOTEXTBOXSTART)	{TEXT}
 201C0000	Resume dialog (conversation)(used for BG changes) (TEXTCONT)	{TEXT}
-2037XXXX	GIVEITEMTO[XXXX:UNIT:Unit]
+2037XXXX	GIVEITEMTO[XXXX:UNIT:Character]
 2137XXXX	GIVEITEMTOMAIN[XXXX::Village_or_cutscene]
 20220000	Erase the background(CLEAN)	{CLEAR}	{BG}
 203E0000	Sortie preparation(PREP)	{PREPARATION}
@@ -382,16 +382,16 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 611800000000000000000000	ENDFADE	{FADE}
 2042XXXX	Shake the screen (earthquake FX)[XXXX:EARTHQUAKE:value](EARTHQUAKE_START)	{MAPEFFECT}
 2F420000	Stop shaking the screen (earthquake FX)(EARTHQUAKE_END)	{MAPEFFECT}
-2045XXXX	GLOWING_CROSS[XXXX:UNIT:Unit]	Makes a glowing cross effect appear underneath the character
+2045XXXX	GLOWING_CROSS[XXXX:UNIT:Character]	Makes a glowing cross effect appear underneath the character
 2F450000	END_GLOWING_CROSS
 200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID(bitshift)]	Return the value of the specified counter	@STOREC	{VAL}	{COND}
-2734XXXX	_0x3427[XXXX:UNIT:Unit]
+2734XXXX	_0x3427[XXXX:UNIT:Character]
 410BYYYYFFFFFFFF	Event call in memory slot 2[YYYY::param]
 410BYYYYXXXXXXXX	Unconditional jump1 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
 400BYYYYXXXXXXXX	Unconditional jump0 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
 203DXXXX	_203D[XXXX::value]
 213DXXXX	_213D[XXXX::value]
-2031XXXX	Shows movement and attack range for [XXXX:UNIT:Unit](SHOW_ATTACK_RANGE)
+2031XXXX	Shows movement and attack range for [XXXX:UNIT:Character](SHOW_ATTACK_RANGE)
 21310000	Hides currently displayed movement and attack range(HIDE_ATTACK_RANGE)
 243BXXXX	_243B[XXXX::value]
 203C0000	_203C
@@ -401,10 +401,10 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050B00XXXXYYYY2D34FEFF2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX	@WARNING_DISA	{UNITREMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV	Move the unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]to coordinates[WW:MAPX:X][VV:MAPY:Y]with[ZZZZ:FSEC:Speed]	{UNITMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV20300000	Move a unit to coordinates[WW:MAPX:X][VV:MAPY:Y]with[ZZZZ:FSEC:Speed]. The unit to move is at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]	{UNITMOVE}
-40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A00002C08A608	Tutorial - urge the movement of the unit[XX:UNIT:Unit to act]to coordinates[YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:Next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:Explanatory text][PPPPPPPP:SCREENXY:Location of the reminder][WWWW:SYSTEM_TEXT:remind sentences]	{J}
+40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A00002C08A608	Tutorial - urge the movement of the unit[XX:UNIT:Character to act]to coordinates[YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:Next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:Explanatory text][PPPPPPPP:SCREENXY:Location of the reminder][WWWW:SYSTEM_TEXT:remind sentences]	{J}
 40050D000000000040050100XXXXXXXX2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A0000CC08A608	Tutorial - remind unit to move to coordinates[XXXX:MAPXY:XY][VVVVVVVV:POINTER_EVENT:next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:description position position][ZZZZ:SYSTEM_TEXT:explanation text]	{J}
 
-40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A0000F4E69E08	Tutorial - urge the movement of the unit[XX:UNIT:Unit to act]to coordinates[YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:Next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:Explanatory text][PPPPPPPP:SCREENXY:Location of the reminder][WWWW:SYSTEM_TEXT:remind sentences]	{U}
+40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A0000F4E69E08	Tutorial - urge the movement of the unit[XX:UNIT:Character to act]to coordinates[YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:Next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:Explanatory text][PPPPPPPP:SCREENXY:Location of the reminder][WWWW:SYSTEM_TEXT:remind sentences]	{U}
 40050D000000000040050100XXXXXXXX2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A000094E79E08	Tutorial - remind unit to move to coordinates[XXXX:MAPXY:XY][VVVVVVVV:POINTER_EVENT:next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:description position position][ZZZZ:SYSTEM_TEXT:explanation text]	{U}
 
 203DXXXX	_203D[XXXX::value]
@@ -412,9 +412,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 203C0000	_203C
 2114XXXX	[XXXX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}
 2011XXXX	STORETOSOMETHING[XXXX::immediate value]	Write a value to 03000010
-2126XXXX213BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:unit]and highlight them in a frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:unit](CAM1+CUMO)	{WAKU}	{CAMERA}
-482FZZZZWW00XXYY	Set[WW:UNIT:Unit]to warp to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP)	{UNITMOVE}
-482FZZZZWW00XXYY20300000	[WW:UNIT:Unit]warps to coordintates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	{UNITMOVE}
+2126XXXX213BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+CUMO)	{WAKU}	{CAMERA}
+482FZZZZWW00XXYY	Set[WW:UNIT:Character]to warp to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP)	{UNITMOVE}
+482FZZZZWW00XXYY20300000	[WW:UNIT:Character]warps to coordintates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	{UNITMOVE}
 40050D00000000004005010000WWVVVV2107000040050100FFFFFFFF21070000403FXXXXYYYYZZZZ	Set and execute event battle(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:method of attacker][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Event battle setting and execution(No counterattack)[WW:DECIMAL:Damage given by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 203BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds][]frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted. (CUSO)	{WAKU}
@@ -431,8 +431,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 62180000YYYYZZZZWWWWVVVV	Change the color of the entire screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](FADECOLORS)	{FADE}	{MAPEFFECT}
 6218060AYYYYZZZZWWWWVVVV	Change the background color[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
 62181D01YYYYZZZZWWWWVVVV	Change color of enemy units[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
-40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Unit]is in leave state	{UNITPERSOLNAL}
-40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Unit]is in an leave state, restore what was deleted	{UNITPERSOLNAL}
+40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Character]is in leave state	{UNITPERSOLNAL}
+40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Character]is in an leave state, restore what was deleted	{UNITPERSOLNAL}
 2117XXXX	Fade the screen to black with[XXXX:FSEC:Speed](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
 2017XXXX	Fade the screen back from black with[XXXX:FSEC:Speed](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
 2317XXXX	Fade the screen to white with[XXXX:FSEC:Speed](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
@@ -440,21 +440,21 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 4005XXXXYYYY04002025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map(LOMA)	{MAP}
 40050D00000000004005010000WWVVVV21070000413FXXXXYYYYZZZZ	Set and execute event battle (41) (No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
-40050100XXYY00002039ZZZZ	Change the AI ​​of[ZZ:UNIT:Unit]to[XX:AI1:AI 1][YY:AI2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
+40050100XXYY00002039ZZZZ	Change the AI ​​of[ZZ:UNIT:Character]to[XX:AI1:AI 1][YY:AI2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050100XXYY00002139ZZWW	Change the AI ​​of unit at coordinates[ZZ:MAPX:MAPX][WW:MAPY:Y]to[XX:AI1:AI 1][YY:AI 2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050B00XXXXYYYY2025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map (LOMA)	{MAP}
 40050B00XXXXYYYY	SET_VAL_B Enter coordinates in memory slot B[XX:MAPX:X][YY:MAPY:Y]	Memory slot B is often used for passing coordinate data.
 
-492FXXXXYYYYZZZZ	Set move[YY:UNIT:unit]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO)	{UNITMOVE}
-492FXXXXYYYYZZZZ20300000	Move[YY:UNIT:unit]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO+ENUN)	{UNITMOVE}
+492FXXXXYYYYZZZZ	Set move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO)	{UNITMOVE}
+492FXXXXYYYYZZZZ20300000	Move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO+ENUN)	{UNITMOVE}
 
 241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
-2034XXXX	Remove [XXXX:UNIT:unit] from the party. Sets departure flag to on.(REMU)	{UNITPERSOLNAL}
-2F34XXXX	Erase [XXXX:UNIT:Unit] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
-2134XXXX	Rejoin [XXXX:UNIT:Unit] to the party. Sets departure flag to off.(REVEAL)	{UNITPERSOLNAL}
+2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	{UNITPERSOLNAL}
+2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
+2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL)	{UNITPERSOLNAL}
 40050B00XXXXYYYY2F34FEFF	Erase unit at coordinates [XXXX:MAPX:X][YYYY:MAPY:Y]	@WARNING_DISA
 40050300XXXX000022370000	Take [XXXX:DECIMAL:GOLD] gold from the player(GIVETOSLOT3)	{GOLD}	{ITME}
 40050200XXXXXXXX40050300YYYY0000400A00004405A008	Ending scene 1 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{U}
