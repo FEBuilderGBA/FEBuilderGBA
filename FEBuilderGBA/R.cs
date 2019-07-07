@@ -54,21 +54,27 @@ namespace FEBuilderGBA
         public static void ShowStopError(string str, params object[] args)
         {
             string message = R.Error(MyTranslateResource.str(str, args));
-
             if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
             {
-                ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
-                f.SetErrorMessage(message);
-                f.ShowDialog();
+                try
+                {
+                    ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
+                    f.SetErrorMessage(message);
+                    f.ShowDialog();
+
+                    return;
+                }
+                catch (Exception e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                }
             }
-            else
-            {
-                string title = R._("エラー");
-                MessageBox.Show(message
-                    , title
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Error);
-            }
+
+            string title = R._("エラー");
+            MessageBox.Show(message
+                , title
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
         }
         public static void ShowStopError(string str)
         {
@@ -76,18 +82,25 @@ namespace FEBuilderGBA
 
             if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
             {
-                ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
-                f.SetErrorMessage(message);
-                f.ShowDialog();
+                try
+                {
+                    ErrorLongMessageDialogForm f = (ErrorLongMessageDialogForm)InputFormRef.JumpFormLow<ErrorLongMessageDialogForm>();
+                    f.SetErrorMessage(message);
+                    f.ShowDialog();
+
+                    return;
+                }
+                catch (Exception e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                }
             }
-            else
-            {
-                string title = R._("エラー");
-                MessageBox.Show(message
-                    , title
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Error);
-            }
+
+            string title = R._("エラー");
+            MessageBox.Show(message
+                , title
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Error);
         }
 
         static string ClipIfVeryLong(string str)

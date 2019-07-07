@@ -249,7 +249,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 24);
             this.label3.TabIndex = 58;
-            this.label3.Text = "イベント命令";
+            this.label3.Text = "説明";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ScriptChangeButton

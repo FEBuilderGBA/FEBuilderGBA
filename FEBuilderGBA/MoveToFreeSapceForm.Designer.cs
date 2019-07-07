@@ -277,11 +277,10 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(415, 303);
+            this.label11.Location = new System.Drawing.Point(415, 302);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(248, 126);
+            this.label11.Size = new System.Drawing.Size(305, 163);
             this.label11.TabIndex = 29;
             this.label11.Text = "データを移動させるため、\r\n現在の場所をさしているポインタを\r\nすべて書き換える必要があります。\r\n書き換えるポインタをリストから\r\n選択してください。\r\n\r\n通" +
     "常はすべて選択してください。";
