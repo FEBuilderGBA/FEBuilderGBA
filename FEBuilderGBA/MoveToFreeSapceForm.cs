@@ -456,7 +456,7 @@ namespace FEBuilderGBA
         }
 
         //0x00 や 0xFF が連続して空き領域とみなす数
-        const int FREE_SPACE_SIZE = 2048;
+        const int FREE_SPACE_SIZE = 1024 * 8;
 
         //空き領域の探索
         public static uint SearchFreeSpaceOne(uint newSize, int condFreeSpace)

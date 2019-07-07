@@ -1,0 +1,35 @@
+NAME=ユニットをステータス異常にするイベント命令
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 change_bad_status2.dmp=0x10 0xB5 0x84 0x6B
+
+EVENTSCRIPT:1=400DXXYY{$L1:change_bad_status2.dmp}	ユニットをステータス異常にします。[XX:UNIT:ユニット][YY:BADSTATUS:状態とターン]	{UNITPERSOLNAL}
+EVENTSCRIPT:2=410D00YY{$L1:change_bad_status2.dmp}	SVAL1のユニットをステータス異常にします。[YY:BADSTATUS:状態とターン](LOW)
+EVENTSCRIPT:3=4B0D00YY{$L1:change_bad_status2.dmp}	SVALBの座標のユニットをステータス異常にします。[YY:BADSTATUS:状態とターン](LOW)
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:change_bad_status2.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットをステータス異常にします。[YY:BADSTATUS:状態とターン]	{UNITPERSOLNAL}
+EVENTSCRIPT:5=212E00002006C100410D00YY{$L1:change_bad_status2.dmp}	現在操作しているユニットをステータス異常にします。[YY:BADSTATUS:状態とターン]	{UNITPERSOLNAL}
+
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=change_bad_status2.dmp
+
+INFO=ユニットをステータス異常(バッドステータス/bad status)にします。\r\nまたは、ステータス異常を回復させます。\r\n値は、[ターン] << 8 | [状態] と、設定します。\r\nターンを設定しなかった場合、3ターンを設定したことになります。
+
+AUTHOR=7743
+NAME.en=Add Event: Make the unit bad status
+INFO.en=Set the unit to status error (bad status / bad status).\r\nOr, recover bad statusity.\r\nSet the value as [Turn] << 8 | [Status].\r\nIf you do not set a turn, you have set 3 turns.
+EVENTSCRIPT:1.en=400DXXYY{$L1:change_bad_status2.dmp}	Make the unit bad status.[XX:UNIT:Unit][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
+EVENTSCRIPT:2.en=410D00YY{$L1:change_bad_status2.dmp}	Set the unit of SVAL 1 to BAD status.[YY:BADSTATUS:BadStatus and Turn](LOW)
+EVENTSCRIPT:3.en=4B0D00YY{$L1:change_bad_status2.dmp}	Set the SVALB coordinate unit to BAD status.[YY:BADSTATUS:BadStatus and Turn](LOW)
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:change_bad_status2.dmp}	Set the coordinate([ZZ:MAPX:X][WW:MAPY:Y]) unit to BAD status.[YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
+EVENTSCRIPT:5.en=212E00002006C100410D00YY{$L1:change_bad_status2.dmp}	Set the currently operating unit to bad status.[YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
+
+NAME.zh=事件命令使人物状态异常
+INFO.zh=将设备设置为状态错误（错误状态/错误状态）\r\n或者，恢复状态异常。\r\n将值设置为[转动] << 8 | [状态]。\r\n如果没有设置转弯，则设置3圈。
+EVENTSCRIPT:1.zh=400DXXYY{$L1:change_bad_status2.dmp}	使设备状态异常。[XX:UNIT:人物][YY:BADSTATUS:State and Turn]	{UNITPERSOLNAL}
+EVENTSCRIPT:2.zh=410D00YY{$L1:change_bad_status2.dmp}	将SVAL1人物的状态设置为异常状态。(low)[YY:BADSTATUS:STATE AND TURN]
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:change_bad_status2.dmp}	将SVALB坐标的状态人物设置为异常状态。(low)[YY:BADSTATUS:STATE AND TURN]
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:change_bad_status2.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]使人物处于状态异常的坐标。[YY:BADSTATUS:状态并转向]	{UNITPERSOLNAL}
+EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:change_bad_status2.dmp}	将当前操作人物设置为状态异常。[YY:BADSTATUS:状态并转向]	{UNITPERSOLNAL}

@@ -435,6 +435,8 @@ namespace FEBuilderGBA
 
             //EVENTとASMのキャッシュをクリア
             AsmMapFileAsmCache = new FEBuilderGBA.AsmMapFileAsmCache();
+            //asm mapキャッシュの更新.
+            AsmMapFileAsmCache.ClearCache();
 
             //RAM
             ReBuildRAM();

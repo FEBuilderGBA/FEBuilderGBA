@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SimpleDataCount = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.SimpleRunButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.SimpleDataCount = new System.Windows.Forms.TextBox();
             this.groupBox2 = new FEBuilderGBA.CustomColorGroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.DataPointerList = new FEBuilderGBA.ListBoxEx();
@@ -121,6 +121,25 @@
             this.tabPage1.Size = new System.Drawing.Size(1336, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "簡易";
+            // 
+            // SimpleDataCount
+            // 
+            this.SimpleDataCount.Location = new System.Drawing.Point(395, 25);
+            this.SimpleDataCount.Margin = new System.Windows.Forms.Padding(2);
+            this.SimpleDataCount.Name = "SimpleDataCount";
+            this.SimpleDataCount.ReadOnly = true;
+            this.SimpleDataCount.Size = new System.Drawing.Size(130, 25);
+            this.SimpleDataCount.TabIndex = 30;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(18, 28);
+            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(119, 18);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "既存のデータ数";
             // 
             // label19
             // 
@@ -236,25 +255,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "詳細";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(18, 28);
-            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(119, 18);
-            this.label20.TabIndex = 29;
-            this.label20.Text = "既存のデータ数";
-            // 
-            // SimpleDataCount
-            // 
-            this.SimpleDataCount.Location = new System.Drawing.Point(395, 25);
-            this.SimpleDataCount.Margin = new System.Windows.Forms.Padding(2);
-            this.SimpleDataCount.Name = "SimpleDataCount";
-            this.SimpleDataCount.ReadOnly = true;
-            this.SimpleDataCount.Size = new System.Drawing.Size(130, 25);
-            this.SimpleDataCount.TabIndex = 30;
-            // 
             // groupBox2
             // 
             this.groupBox2.BorderColor = System.Drawing.Color.Empty;
@@ -289,6 +289,7 @@
             // DataPointerList
             // 
             this.DataPointerList.FormattingEnabled = true;
+            this.DataPointerList.IntegralHeight = false;
             this.DataPointerList.ItemHeight = 18;
             this.DataPointerList.Location = new System.Drawing.Point(8, 300);
             this.DataPointerList.Margin = new System.Windows.Forms.Padding(2);
@@ -377,7 +378,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(660, 161);
+            this.label17.Location = new System.Drawing.Point(663, 161);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(51, 18);
             this.label17.TabIndex = 24;
@@ -386,7 +387,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(660, 82);
+            this.label16.Location = new System.Drawing.Point(663, 82);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(51, 18);
             this.label16.TabIndex = 23;
@@ -394,7 +395,7 @@
             // 
             // ShowNewSize
             // 
-            this.ShowNewSize.Location = new System.Drawing.Point(556, 158);
+            this.ShowNewSize.Location = new System.Drawing.Point(578, 158);
             this.ShowNewSize.Margin = new System.Windows.Forms.Padding(2);
             this.ShowNewSize.Name = "ShowNewSize";
             this.ShowNewSize.ReadOnly = true;
@@ -404,7 +405,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(441, 158);
+            this.label10.Location = new System.Drawing.Point(463, 158);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 18);
@@ -437,7 +438,7 @@
             // 
             // NewDataCount
             // 
-            this.NewDataCount.Location = new System.Drawing.Point(276, 151);
+            this.NewDataCount.Location = new System.Drawing.Point(301, 151);
             this.NewDataCount.Margin = new System.Windows.Forms.Padding(2);
             this.NewDataCount.Maximum = new decimal(new int[] {
             -559939585,
@@ -461,7 +462,7 @@
             // 
             // DataCount
             // 
-            this.DataCount.Location = new System.Drawing.Point(276, 74);
+            this.DataCount.Location = new System.Drawing.Point(301, 74);
             this.DataCount.Margin = new System.Windows.Forms.Padding(2);
             this.DataCount.Maximum = new decimal(new int[] {
             -559939585,
@@ -485,7 +486,7 @@
             // 
             // ShowMoveSize
             // 
-            this.ShowMoveSize.Location = new System.Drawing.Point(556, 78);
+            this.ShowMoveSize.Location = new System.Drawing.Point(578, 78);
             this.ShowMoveSize.Margin = new System.Windows.Forms.Padding(2);
             this.ShowMoveSize.Name = "ShowMoveSize";
             this.ShowMoveSize.ReadOnly = true;
@@ -495,7 +496,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(441, 80);
+            this.label8.Location = new System.Drawing.Point(463, 80);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 18);
@@ -504,7 +505,7 @@
             // 
             // MoveBlockSize
             // 
-            this.MoveBlockSize.Location = new System.Drawing.Point(276, 38);
+            this.MoveBlockSize.Location = new System.Drawing.Point(301, 38);
             this.MoveBlockSize.Margin = new System.Windows.Forms.Padding(2);
             this.MoveBlockSize.Maximum = new decimal(new int[] {
             -559939585,
@@ -539,7 +540,7 @@
             // MoveAddress
             // 
             this.MoveAddress.Hexadecimal = true;
-            this.MoveAddress.Location = new System.Drawing.Point(276, 2);
+            this.MoveAddress.Location = new System.Drawing.Point(301, 2);
             this.MoveAddress.Margin = new System.Windows.Forms.Padding(2);
             this.MoveAddress.Maximum = new decimal(new int[] {
             -559939585,
@@ -591,6 +592,7 @@
             // FreeSpaceList
             // 
             this.FreeSpaceList.FormattingEnabled = true;
+            this.FreeSpaceList.IntegralHeight = false;
             this.FreeSpaceList.ItemHeight = 18;
             this.FreeSpaceList.Location = new System.Drawing.Point(13, 161);
             this.FreeSpaceList.Margin = new System.Windows.Forms.Padding(2);
