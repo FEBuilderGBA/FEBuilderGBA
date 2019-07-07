@@ -99,8 +99,8 @@
 40AAXXXXYYYY0000	_0xAA40[XXXX::Value1][YY::Value2]
 40ABXXXXYYYY0000	_0xAB40[XXXX::Value1][YY::Value2]
 20C20000	_0xC220
-2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:ConditionID]	{JUMP}
-2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:ConditionID]	{JUMP}
+2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:ConditionID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
+2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:ConditionID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
 221B0000	Conversation end(REMA)
 211A0000	Removes speech bubbles and portraits(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
@@ -132,8 +132,8 @@
 413FXXXXYYYYZZZZ	Execute event battle (41)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's Weapon 00=currently equipped weapon](FIG2)	{BATTLE}	{MAPEFFECT}
 423FXXXXYYYYZZZZ	Execute event battle (42)[XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ::Unknown](FIG3)	{BATTLE}	{MAPEFFECT}
 22370000	GIVETOSLOT3(LOW)
-402C0100XXXXXXXX20300000	Load units and move. Used for new units[XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
-402C0100XXXXXXXX	Load units without moving. Used for new units[XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
+402C0100XXXXXXXX20300000	Load units and move. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
+402C0100XXXXXXXX	Load units without moving. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
 412C0100XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
 412C0100XXXXXXXX20300000	Load units from memory and move. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
 402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
