@@ -1,0 +1,2 @@
+Re-Move: Luck% chance to get[N]
+another action at end of turn.[X]

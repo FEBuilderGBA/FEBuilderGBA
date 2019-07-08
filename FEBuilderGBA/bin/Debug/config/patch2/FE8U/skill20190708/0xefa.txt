@@ -1,0 +1,2 @@
+Boon: Cure bad status effects[N]
+at the beginning of each turn.[X]

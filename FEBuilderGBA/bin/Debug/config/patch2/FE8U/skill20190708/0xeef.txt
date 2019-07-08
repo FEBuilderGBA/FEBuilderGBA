@@ -1,0 +1,2 @@
+Loyalty: When within 2 spaces of[N]
+a Lord, -3 damage taken, +15% hit.[X]

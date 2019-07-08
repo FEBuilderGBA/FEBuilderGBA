@@ -1,0 +1,2 @@
+Puissance: +3 Damage when the user's[N]
+Strength is higher than the enemy's.[X]

@@ -1,0 +1,2 @@
+Knight Aspirant: When above 75%[N]
+health, +2 damage, +15% avoid.[X]

@@ -15,6 +15,8 @@
 2126XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1)	{CAMERA}
 203BXXYY	[XX:MAPX:X][YY:MAPY:Y]with[]frame(CUMO)	{WAKU}
 213BXXXX	[XXXX:UNIT:Character]with[]frame(CUMO)	{WAKU}
+243BXXYY	[XX:MAPX:X][YY:MAPY:Y]with SHINY []frame	{WAKU}
+253BXXXX	[XXXX:UNIT:Character]with SHINY []frame	{WAKU}
 223B0000	[]Erase frame(CURE)	{WAKU}
 20010000	Return[TERM](ENDA)	{TERM}
 21010000	Event end[TERM](ENDB)
@@ -393,9 +395,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 213DXXXX	_213D[XXXX::value]
 2031XXXX	Shows movement and attack range for [XXXX:UNIT:Character](SHOW_ATTACK_RANGE)
 21310000	Hides currently displayed movement and attack range(HIDE_ATTACK_RANGE)
-243BXXXX	_243B[XXXX::value]
-203C0000	_203C
-253BXXXX	_253B[XXXX::value]
 40050B00XXXXYYYY2D34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX	@WARNING_DISA
 40050B00XXXXYYYY2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]without death SFX	@WARNING_DISA
 40050B00XXXXYYYY2D34FEFF2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX	@WARNING_DISA	{UNITREMOVE}
@@ -412,12 +411,17 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 203C0000	_203C
 2114XXXX	[XXXX:FSEC:Speed]Fade in music and return to map BGM(MURE)	{MUSIC}
 2011XXXX	STORETOSOMETHING[XXXX::immediate value]	Write a value to 03000010
-2126XXXX213BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+CUMO)	{WAKU}	{CAMERA}
+213BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds][]frames[XXXX:UNIT:Character]is highlighted(CUMO)	{WAKU}
+2126XXXX213BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a []frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+CUMO)	{WAKU}	{CAMERA}
+203BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds][]frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted.(CUSO)	{WAKU}
+253BXXXX200EYYYY223B0000	For[YYYY:FSEC:Frame seconds] SHINY []frames[XXXX:UNIT:Character]is highlighted	{WAKU}
+2126XXXX253BXXXX200EYYYY223B0000	Move the camera to[XXXX:UNIT:Character]and highlight them in a SHINY []frame for[YYYY:FSEC:Frame seconds]seconds[]in[XXXX:UNIT:Character](CAM1+)	{WAKU}	{CAMERA}
+243BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds] SHINY []frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted.	{WAKU}
 482FZZZZWW00XXYY	Set[WW:UNIT:Character]to warp to coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP)	{UNITMOVE}
 482FZZZZWW00XXYY20300000	[WW:UNIT:Character]warps to coordintates[XXXX:MAPX:X][YYYY:MAPY:Y]with[ZZZZ:FSEC:Speed](_WARP+ENUN)	{UNITMOVE}
 40050D00000000004005010000WWVVVV2107000040050100FFFFFFFF21070000403FXXXXYYYYZZZZ	Set and execute event battle(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:method of attacker][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Event battle setting and execution(No counterattack)[WW:DECIMAL:Damage given by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
-203BXXYY200EZZZZ223B0000	For[ZZZZ:FSEC:Frame seconds][]frames, unit at coordinates[XX:MAPX:X][YY:MAPY:Y]is highlighted. (CUSO)	{WAKU}
+
 400A0000249D5B08	Item pre-processing	{ITEM}	{J}
 400A0000401F5908	Item pre-processing	{ITEM}	{U}
 400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting) unit.	{ITEM}	{J}

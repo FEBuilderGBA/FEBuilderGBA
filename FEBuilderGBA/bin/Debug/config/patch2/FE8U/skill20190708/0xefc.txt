@@ -1,0 +1,2 @@
+Powerstaff: Get another action[N]
+after using a staff.[X]

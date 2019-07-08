@@ -1,0 +1,2 @@
+Outrider: Take -1 damage and[N]
+gain +3% crit per space moved.[X]

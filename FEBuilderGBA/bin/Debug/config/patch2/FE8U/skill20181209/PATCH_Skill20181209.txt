@@ -617,7 +617,7 @@ EXPORT:1=skillGetter.dmp	Skill_Getter
 EXPORT:2=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20190404\PATCH_Skill20190404.txt
+UPDATE_PATCH=..\skill20190708\PATCH_Skill20190708.txt
 UPDATE_METHOD=SKILLSYSTEM
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
