@@ -28,7 +28,8 @@ namespace FEBuilderGBA
                 , 8
                 , (int i, uint addr) =>
                 {//個数が固定できまっている
-                    return i < Program.ROM.RomInfo.attribute_maxcount();
+                    uint v = Program.ROM.u8(addr);
+                    return v != 0;
                 }
                 , (int i, uint addr) =>
                 {//リストボックスに乗せる項目

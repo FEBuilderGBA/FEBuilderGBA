@@ -63,6 +63,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -256,7 +257,7 @@
             this.panel2.Location = new System.Drawing.Point(291, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 256);
+            this.panel2.Size = new System.Drawing.Size(855, 344);
             this.panel2.TabIndex = 54;
             // 
             // L_0_ATTRIBUTEICON
@@ -403,9 +404,9 @@
             // 
             this.L_0_ATTRIBUTE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_0_ATTRIBUTE.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_0_ATTRIBUTE.Location = new System.Drawing.Point(3, 9);
+            this.L_0_ATTRIBUTE.Location = new System.Drawing.Point(0, 9);
             this.L_0_ATTRIBUTE.Name = "L_0_ATTRIBUTE";
-            this.L_0_ATTRIBUTE.Size = new System.Drawing.Size(170, 32);
+            this.L_0_ATTRIBUTE.Size = new System.Drawing.Size(174, 32);
             this.L_0_ATTRIBUTE.TabIndex = 19;
             this.L_0_ATTRIBUTE.Text = "属性:-";
             this.L_0_ATTRIBUTE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -424,10 +425,11 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.AddressList);
+            this.panel3.Controls.Add(this.AddressListExpandsButton);
             this.panel3.Controls.Add(this.LabelFilter);
             this.panel3.Location = new System.Drawing.Point(13, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(272, 291);
+            this.panel3.Size = new System.Drawing.Size(272, 379);
             this.panel3.TabIndex = 82;
             // 
             // AddressList
@@ -439,7 +441,7 @@
             this.AddressList.Location = new System.Drawing.Point(0, 33);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(270, 256);
+            this.AddressList.Size = new System.Drawing.Size(270, 314);
             this.AddressList.TabIndex = 108;
             // 
             // LabelFilter
@@ -454,12 +456,23 @@
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 347);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(270, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // SupportAttributeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1153, 332);
+            this.ClientSize = new System.Drawing.Size(1153, 431);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AddressPanel);
@@ -526,5 +539,6 @@
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
         private InterpolatedPictureBox L_0_ATTRIBUTEICON;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }

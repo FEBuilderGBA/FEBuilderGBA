@@ -61,7 +61,6 @@ namespace FEBuilderGBA
         public uint unit_palette_color_pointer() { return 0x57394; }  // ユニットのパレット(カラー)の開始位置
         public uint unit_palette_class_pointer() { return 0x575B4; }  // ユニットのパレット(クラス)の開始位置
         public uint support_attribute_pointer() { return 0x28534; }  //支援効果の開始位置
-        public uint attribute_maxcount() { return 7; } // 属性の最大数
         public uint terrain_recovery_pointer() { return 0x1A264; } //地形回復 全クラス共通
         public uint terrain_bad_status_recovery_pointer() { return 0x01A274; } //地形回復 全クラス共通
         public uint ccbranch_pointer() { return 0xCC7D0; } // CC分岐の開始位置
