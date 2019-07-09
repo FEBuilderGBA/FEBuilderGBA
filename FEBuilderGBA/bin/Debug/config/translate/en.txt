@@ -82,8 +82,8 @@ Import from file
 :コメント
 Comment
 
-:イベント命令
-Event Editor (Adv)
+:説明
+Description
 
 :命令変更
 Command
@@ -2314,6 +2314,9 @@ Many invalid commands appeared consecutively before the event "{0}".\r\nThe even
 :イベント「{0}」の引数「型:{1}」「名前:{2}」「値:{3}({4})」\r\n{5}
 Event "{0}" Argument "Type: {1}" "Name: {2}" "Value: {3} ({4})" \r\n{5}
 
+:イベント命令
+Event Editor (Adv)
+
 :LOW命令を表示する
 Display LOW instruction
 
@@ -2332,6 +2335,9 @@ Are you sure you want to add a script?\r\n\r\nIf "yes", add the script read from
 :EAで変更されたアドレスが現在開いているスクリプトの範囲外です。\r\n変更された部分をスクリプトとして取り込んでもよろしいですか？\r\n変更されたアドレス:{0}\r\n
 The address changed by EA is outside the scope of the currently open script.\r\nAre you sure to import the changed part as a script?\r\nChanged address: {0}\r\n
 
+:テンプレート
+Template
+
 :↑
 ↑
 
@@ -2349,9 +2355,6 @@ Parameter 7
 
 :変更したい行をダブルクリック or Enterキーを押してください。 右クリックでメニューが出ます。
 Double click on the line you want to change or press Enter key. Right-click to display the menu.
-
-:テンプレート
-Template
 
 :曲をSappyで再生する
 Play a song on Sappy
@@ -5001,9 +5004,6 @@ Item Type
 
 :12=踊る用指輪
 12=Dancer's Ring
-
-:説明
-Description
 
 :使用画面
 Use Screen
@@ -7732,6 +7732,9 @@ Incorrect affected Pointer
 :空き領域のポインタまたはサイズが正しくありません。0x0 - 0x100までの領域は危険なので移動できません
 Incorrect Free Space Pointer or size. 
 
+:既存のデータ数
+Number of existing data
+
 :既存から
 From existing
 
@@ -7746,9 +7749,6 @@ Reallocate data and repoint
 
 :新規確保する総データ数
 Total number of new data to secure
-
-:既存のデータ数
-Number of existing data
 
 :1.移動するデータ(Source)
 1. Data to be moved (Source)

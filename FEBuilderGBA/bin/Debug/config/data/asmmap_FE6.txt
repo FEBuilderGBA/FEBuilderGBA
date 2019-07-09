@@ -1343,3 +1343,7 @@
 080299BC	闘技場	相手の選出
 08024B40	BattleCheckDoubling
 080172f8	GetItemWeaponEffect
+08017748	GetItemCost
+0801753c	UnitHasItem
+08016d08	GetUnitItemSlot
+0809750C	売り値を求める関数 RET=売値 r0=個数 << 8 + アイテムID

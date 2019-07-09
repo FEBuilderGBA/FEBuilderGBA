@@ -1,0 +1,13 @@
+
+NAME=シルバーカードのアイテムID
+NAME.en=Silver Card
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0xB9DC6
+ADDRESS_TYPE=ITEM
+AUTHOR=Tequila
+
+NAME.zh=银卡

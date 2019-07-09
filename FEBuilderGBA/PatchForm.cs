@@ -4361,6 +4361,8 @@ namespace FEBuilderGBA
             TraceEditPatch(binMappings, patch);
             //メニューのデータを追加
             AppendMenuPatch(patch, binMappings);
+            //ターゲット選択構造体の追加
+            AppendNewTargetSelectionStruct(patch, binMappings);
             return binMappings;
         }
 
@@ -4550,28 +4552,6 @@ namespace FEBuilderGBA
                         //最後に発見したアドレスを追加
                         lastMatchAddr = addr + length;
                     }
-                    else if (data.DataType == EAUtil.DataEnum.NEW_TARGET_SELECTION_STRUCT)
-                    {
-                        lastMatchAddr += data.Append;
-                        lastMatchAddr = U.Padding4(lastMatchAddr);
-
-                        uint addr = lastMatchAddr;
-                        uint length = 8 * 4;
-
-                        BinMapping b = new BinMapping();
-                        b.key = data.DataType.ToString();
-                        b.filename = data.Name;
-                        b.addr = addr;
-                        b.length = length;
-                        b.bin = Program.ROM.getBinaryData(addr, length);
-                        b.mask = MakeFullMask(length);
-                        b.type = Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT;
-
-                        binMappings.Add(b);
-
-                        //最後に発見したアドレスを追加
-                        lastMatchAddr = addr + length;
-                    }
                     else if (data.DataType == EAUtil.DataEnum.PROCS)
                     {
                         lastMatchAddr += data.Append;
@@ -4639,7 +4619,58 @@ namespace FEBuilderGBA
             TraceEditPatch(binMappings, patch);
             //メニューのデータを追加
             AppendMenuPatch(patch, binMappings);
+            //ターゲット選択構造体の追加
+            AppendNewTargetSelectionStruct(patch, binMappings);
             return binMappings;
+        }
+        //ターゲット選択構造体の追加
+        static void AppendNewTargetSelectionStruct(PatchSt patch, List<BinMapping> binMappings)
+        {
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+
+            List<U.AddrResult> list;
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (pair.Key.IndexOf("NEW_TARGET_SELECTION_STRUCT") < 0)
+                {
+                    continue;
+                }
+
+                string addrstring = pair.Value;
+                uint lastAddr = 0x100;
+
+                while (true)
+                {
+                    uint foundAddr = convertBinAddressString(addrstring, 0, lastAddr, basedir);
+                    if (foundAddr == U.NOT_FOUND)
+                    {
+                        break;
+                    }
+                    lastAddr = foundAddr + 4;
+
+                    uint addr = Program.ROM.u32(foundAddr);
+                    if (! U.isSafetyPointer(addr))
+                    {
+                        continue;
+                    }
+
+                    uint length = 8 * 4;
+
+                    BinMapping b = new BinMapping();
+                    b.key = "NEW_TARGET_SELECTION_STRUCT";
+                    b.filename = "NEW_TARGET_SELECTION_STRUCT";
+                    b.addr = addr;
+                    b.length = length;
+                    b.bin = Program.ROM.getBinaryData(addr, length);
+                    b.mask = MakeFullMask(length);
+                    b.type = Address.DataTypeEnum.NEW_TARGET_SELECTION_STRUCT;
+
+                    binMappings.Add(b);
+                }
+            }
         }
         //メニューを追加している場合、追加したメニューの場所を追跡する
         static void AppendMenuPatch(PatchSt patch, List<BinMapping> binMappings)

@@ -1,0 +1,12 @@
+NAME=メンバーカードのアイテムID
+NAME.en=Member Card
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x78624 0x78E8A
+ADDRESS_TYPE=ITEM
+AUTHOR=7743
+
+NAME.zh=会员卡

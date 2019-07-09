@@ -18,7 +18,6 @@ namespace FEBuilderGBA
             ,BIN //incbinされたデータ BIN
             ,LYN //lynによってインポートされるelfファイル
             ,POINTER_ARRAY
-            ,NEW_TARGET_SELECTION_STRUCT
             ,PROCS
         }
         public class Data
@@ -106,12 +105,6 @@ namespace FEBuilderGBA
             {
                 uint append = ParseAdd(orignalIine);
                 Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.POINTER_ARRAY, append);
-                this.DataList.Add(data);
-            }
-            else if (orignalIine.IndexOf("HINT=NEW_TARGET_SELECTION_STRUCT", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                uint append = ParseAdd(orignalIine);
-                Data data = new Data(this.CurrentLabel, new byte[] { }, DataEnum.NEW_TARGET_SELECTION_STRUCT, append);
                 this.DataList.Add(data);
             }
             else if (orignalIine.IndexOf("HINT=PROCS", StringComparison.OrdinalIgnoreCase) >= 0)

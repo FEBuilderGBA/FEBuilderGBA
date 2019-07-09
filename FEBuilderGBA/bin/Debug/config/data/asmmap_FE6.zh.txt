@@ -1143,3 +1143,7 @@
 080299BC	竞技场	选择对手
 08024B40	BattleCheckDoubling
 080172f8	GetItemWeaponEffect
+08017748	GetItemCost
+0801753c	UnitHasItem
+08016d08	GetUnitItemSlot
+0809750C	找到售价的功能RET =售价r0 =数量<< 8 +物品ID。

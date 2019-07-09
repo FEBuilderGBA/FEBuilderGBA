@@ -16,3 +16,4 @@ INFO=StanのHeroesMovementをFE8Jに移植したものです。\r\nプレイヤ�
 INFO.en=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.
 INFO.zh=This is a port of Stan's Heroes Movement to FE8J.\r\nThe player unit will be able to use 'Shove', 'Smite', 'Pivot', 'Reposition', 'Swap'.\r\nIf FE8N Skill is installed, you can also set skill ID 0x3b to skill 0x3f separately from setting.
 
+NEW_TARGET_SELECTION_STRUCT=$FGREP4END+4 HeroesMovement/asm/TargetCommandEffect.bin

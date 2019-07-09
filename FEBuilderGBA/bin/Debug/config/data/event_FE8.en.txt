@@ -484,3 +484,4 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 201BXXXX	[XXXX:CONVERSATION_TEXT:Conversation text]Dialog (conversation) with no background (LOW)(TEXTSHOW)	{TEXT}
 211BXXXX	[XXXX:CONVERSATION_TEXT:Conversation Text]Dialog (conversation) with background (LOW)(TEXTSHOW2)
+253BXXYY200EZZZZ223B0000	[XX: MAPX: X] [YY: MAPY: Y] displays [ZZZZ: FSEC: Frames Seconds] glowing [] frame.	{WAKU}
