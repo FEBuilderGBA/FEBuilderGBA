@@ -921,7 +921,6 @@ namespace FEBuilderGBA
             text = code.Script.Info[0];
             bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
 
-
             int i;
             string longtext = "";
             for (i = 1; i < code.Script.Info.Length; i += 2)
@@ -1380,6 +1379,12 @@ namespace FEBuilderGBA
                     break;
                 }
                 text = code.Script.Info[i + 1];
+                bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
+            }
+
+            if (code.Script.Has == EventScript.ScriptHas.UNKNOWN)
+            {//不明なコードの場合、LOWデータを出力する
+                text = U.convertByteToStringDump(code.ByteData);
                 bounds.X += U.DrawText(text, g, normalFont, brush, isWithDraw, bounds);
             }
 

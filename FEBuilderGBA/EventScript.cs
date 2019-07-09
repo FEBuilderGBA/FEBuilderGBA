@@ -148,18 +148,13 @@ namespace FEBuilderGBA
         {
            Script unknownscript = new Script();
            unknownscript.Data = new byte[4];
-           unknownscript.Args = new Arg[1];
-           unknownscript.Info = SplitInfo("WORD [XXXXXXXX::BIN]");
+           unknownscript.Args = new Arg[0];
+           unknownscript.Info = SplitInfo("WORD");
            unknownscript.Has = ScriptHas.UNKNOWN;
            unknownscript.Size = unk_size;
            unknownscript.Category = "";
            unknownscript.PopupHint = "";
            unknownscript.LowCode = "";
-           Arg arg = new Arg();
-           arg.Size = unk_size;
-           arg.Name = "BIN";
-           arg.Symbol = 'X';
-           unknownscript.Args[0] = arg;
            this.Unknown = unknownscript;
         }
 
