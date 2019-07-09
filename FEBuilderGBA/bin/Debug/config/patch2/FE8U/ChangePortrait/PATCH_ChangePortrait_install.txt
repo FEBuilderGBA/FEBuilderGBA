@@ -14,3 +14,6 @@ NAME.en=Switch Portrait images by class, chapter, flag.(Installer)
 INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.
 NAME.zh=按类，章，旗切换面部图像引进
 INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

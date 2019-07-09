@@ -78,5 +78,14 @@ WORD $80000100//80000100
   POIN CSATable //needed for the routine
   POP
 
+//Fix dodge to front glitch
+PUSH
+ORG 0x4DA2
+BYTE 0x00 0x00 0x00 0x4D 0xAF 0x46
+POIN SpellFix
+POP
+SpellFix:
+#incbin "../Fix dodge to front glitch/SpellFix.dmp"
+
 //#include "Master Spell Animation Installer.event"
 

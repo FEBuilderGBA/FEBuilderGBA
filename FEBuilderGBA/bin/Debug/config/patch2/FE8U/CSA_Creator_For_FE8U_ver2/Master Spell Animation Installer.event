@@ -18,6 +18,16 @@
   POIN CSATable //needed for the routine
   POP
 
+//Fix dodge to front glitch
+PUSH
+ORG 0x4E9A
+BYTE 0x00 0x00 0x00 0x4D 0xAF 0x46
+POIN SpellFix
+POP
+SpellFix:
+#incbin "../Fix dodge to front glitch/SpellFix.dmp"
+
+
   #define CSAEngine_Dim $95d7ec
   #define CSAEngine_NoDim $95d898 //the last word in the dmp, this should be updated if you edit the engine.
 #endif
