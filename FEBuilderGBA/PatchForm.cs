@@ -4656,6 +4656,7 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
+                    addr = U.toOffset(addr);
 
                     uint length = 8 * 4;
 

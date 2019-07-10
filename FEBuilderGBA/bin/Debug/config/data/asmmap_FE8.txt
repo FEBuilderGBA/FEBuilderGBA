@@ -4705,7 +4705,7 @@
 0800DC94	Event2A_MoveToChapter	{J}
 0800F720	ShouldUNITBeLoaded	{J}
 0800F8D4	LoadUnit_800F704	{J}
-0800FD02	Event2C_LoadUnits	{J}
+0800FD04	Event2C_LoadUnits	{J}
 0800FE0C	TryPrepareEventUnitMovement	{J}
 0800FE54	GetSomeEventEngineMoveRelatedBitfield	{J}
 0800FE88	Event2D_	{J}
