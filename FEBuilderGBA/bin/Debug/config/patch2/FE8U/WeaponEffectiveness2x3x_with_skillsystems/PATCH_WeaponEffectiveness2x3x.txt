@@ -1,0 +1,34 @@
+NAME=武器の特効効果ダメージ係数を変更する(Skillsystems対応版)
+NAME.en=Change the Effectiveness damage coefficient of the weapon(with Skillsystems)
+
+IF:0x2ab18=0x00 0x4B 0x18 0x47
+
+
+AUTHOR=7743
+
+//画像パッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END WeaponEffectiveness2x3x.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0x00 0x00
+
+//リストに表示されるのはアイテムIDです
+LISTNAME=$B0:ITEM
+
+//データを定義します
+B0:ITEM=ITEM
+B1=SCALE
+
+INFO=双聖器の特効ダメージ係数を簡単に変更します。\r\n指定したアイテムIDごとに特攻ダメージ係数を変更できるようにします。\r\n神器以外にも設定できますし、2倍以外にも設定できます。
+INFO.en=Change the Effectiveness damage coefficient of Twin tome.\r\nAllows you to change the Effectiveness damage coefficient for each specified item ID.\r\nIt can be used in addition to Sacred Weapons, and the magnification can also be set.
+
+
+NAME.zh=改变武器的特殊效果改变伤害系数(with Skillsystems)
+INFO.zh=轻松改变双胞胎神圣人物的特殊伤害系数。\r\n允许您更改每个指定项目ID的特殊损坏系数。\r\n除了神圣的宝藏之外你可以设置它，你可以设置它而不是双倍。

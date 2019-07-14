@@ -12533,3 +12533,4 @@ r3=X tile position of menu of right	{U}
 0203AA8A	AIScript Result1	{U}
 0203AA8B	AIScript Result2	{U}
 08A9A9E0	Something TSA.	27	{J}
+080BBF18	Display a FIN image.	{J}

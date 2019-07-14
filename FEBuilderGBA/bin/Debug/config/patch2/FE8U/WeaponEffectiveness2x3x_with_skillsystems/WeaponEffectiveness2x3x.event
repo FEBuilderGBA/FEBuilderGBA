@@ -1,0 +1,14 @@
+#include "Extensions/Hack Installation.txt" 
+
+PUSH
+ORG 0x2ab18
+jumpToHack(WeaponEffectiveness2x3x)
+POP
+
+ALIGN 4
+WeaponEffectiveness2x3x:
+#incbin "WeaponEffectiveness2x3x.dmp"
+POIN WeaponEffectiveness2x3x_Table
+
+ALIGN 4
+#include "WeaponEffectiveness2x3x_Table.event"

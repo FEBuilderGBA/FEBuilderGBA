@@ -4761,5 +4761,5 @@
 //This data is made with the aim of being readable by machine fast.
 080B1D40	Acquisition of shop sales price.	{U}
 080B2B64	Acquisition of shop sales price.	{J}
-080B1D90	Function to find the selling price RET = selling price r0 = quantity << 8 + item ID.	{U}
-080B2BB4	Function to find the selling price RET = selling price r0 = quantity << 8 + item ID.	{J}
+080B1D90	Function to find the selling price RET= selling price r0=quantity << 8 + item ID.	{U}
+080B2BB4	Function to find the selling price RET= selling price r0=quantity << 8 + item ID.	{J}

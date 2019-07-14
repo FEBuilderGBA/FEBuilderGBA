@@ -1357,4 +1357,4 @@
 08017748	GetItemCost
 0801753c	UnitHasItem
 08016d08	GetUnitItemSlot
-0809750C	Function to find the selling price RET = selling price r0 = quantity << 8 + item ID.
+0809750C	Function to find the selling price	RET=selling price	r0=quantity << 8 + item ID.

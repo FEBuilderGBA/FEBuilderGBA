@@ -1146,4 +1146,4 @@
 08017748	GetItemCost
 0801753c	UnitHasItem
 08016d08	GetUnitItemSlot
-0809750C	找到售价的功能RET =售价r0 =数量<< 8 +物品ID。
+0809750C	找到售价的功能	RET=售价	r0=数量<< 8 +物品ID

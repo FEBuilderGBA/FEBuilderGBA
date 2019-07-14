@@ -12488,3 +12488,4 @@ r3=X tile position of menu of the right	{U}
 0203AA8A	AIScript Result1	{U}
 0203AA8B	AIScript Result2	{U}
 08A9A9E0	东西TSA。	27	{J}
+080BBF18	显示FIN图像。	{J}

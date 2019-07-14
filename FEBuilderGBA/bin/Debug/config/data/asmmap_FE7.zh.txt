@@ -4740,7 +4740,7 @@
 08016d0c	GetUnitItemSlot	{U}
 08017160	GetUnitItemSlot	{J}
 //This data is made with the aim of being readable by machine fast.
-080B1D40	收购店铺销售价格。	{U}
-080B2B64	收购店铺销售价格。	{J}
-080B1D90	找到售价的功能RET =售价r0 =数量<< 8 +物品ID。	{U}
-080B2BB4	找到售价的功能RET =售价r0 =数量<< 8 +物品ID。	{J}
+080B1D40	收购店铺销售价格	{U}
+080B2B64	收购店铺销售价格	{J}
+080B1D90	找到售价的功能	RET=售价	r0=数量<< 8 +物品ID	{U}
+080B2BB4	找到售价的功能	RET=售价	r0=数量<< 8 +物品ID	{J}
