@@ -1,0 +1,321 @@
+#define Skl_Arrow_X 0x78
+#define Skl_Arrow_Y 0x28
+#define Spd_Arrow_X 0x78
+#define Spd_Arrow_Y 0x38
+#define Trv_Icon_X 0xB8
+#define Trv_Icon_Y 0x2E
+#define Display_Growths_Toggle
+#include "MSS/Display Growths Options/Display Growths Options.txt"
+  PUSH
+  
+  ORG 0x205b24 //24 for stat screen
+  POIN MSS_page1|1 MSS_page2|1 MSS_page3|1 MSS_page4|1
+
+  ORG $88690
+  BYTE 3 //Number of pages
+
+  ORG $88650
+  POIN NewPageNameGraphic
+
+  ORG $87f38
+  POIN NewPageNameLayout
+
+  ORG $87f3c
+  POIN NewPageNameTiles
+
+  ORG $87f40
+  POIN NewPageNamePalette
+
+  ORG $889d0
+  SHORT $e010 //Temporary r-text fix to prevent freezing
+  ORG $889f2  
+  SHORT $BD30
+  BL(RText_Page4_ladder) //this has to be in bl range somewhere
+  
+  #define InBlRange 0x1c1ec0
+  ORG InBlRange
+  RText_Page4_ladder:
+  #incbin "MSS/rtext_page4.dmp"
+  POIN RText_Page4
+  
+  //Make all the arrows line up with the stats and stuff
+  ORG $883C0
+  BYTE Skl_Arrow_X 0x20 Skl_Arrow_Y
+  ORG $883CA
+  BYTE Spd_Arrow_X 0x20 Spd_Arrow_Y
+  ORG $883F6
+  BYTE Trv_Icon_X 0x21 Trv_Icon_Y
+  ORG $883B4
+  jumpToHack(Rescue_Arrows)
+
+  //Display growths hack
+  #ifdef Display_Growths_Toggle
+    ORG $8888C
+    BYTE 0x82
+  #endif
+  
+  ORG $88896
+  SHORT 0x46C0
+  jumpToHack(Button_Branch)
+  
+  //Remember whether we were looking at growths or stats
+  ORG $8895C //Loads byte to store 1 before stat screen struct
+  callHack_r1(Load_Page)
+	
+  ORG $888BC //Stores byte to store 1 before stat screen struct
+  callHack_r3(Store_Page)
+  
+  //Display an R-button text about pressing Select, since I can't seem to fit it nicely, and make that the default
+  ORG $889D8
+  POIN PersonalDataRText
+  
+  //HP name color
+  ORG $86ED4
+  callHack_r3(HP_Name_Color)
+
+  ORG $2BA28
+  jumpToHack(Write_Growths_To_Battle_Struct)
+
+  ORG $2B9C4
+  jumpToHack(Enemy_Autolevel)
+
+  ORG $17E98
+  callHack_r3(New_Unit_Exp)
+  SHORT 0xE005  
+  
+  POP
+  ALIGN 4
+  MSS_page1:
+  #incbin "MSS/mss_page1_skills.dmp"
+  ALIGN 4
+  MSS_page2:
+  #incbin "MSS/mss_page2_original.dmp"
+  ALIGN 4
+  MSS_page3:
+  #incbin "MSS/mss_page3_ranksonly.dmp"
+  ALIGN 4
+  MSS_page4:
+  #incbin "MSS/mss_page4.dmp"
+  ALIGN 4
+
+NewPageNameGraphic:
+#incbin "MSS/pagenamegraphic.png.dmp"	//HINT=BIN
+
+ALIGN 4
+NewPageNameLayout:
+POIN $a008bc $a008d0 $a008de $a008bc
+NewPageNameTiles:
+SHORT 0 $40 $e $80
+ALIGN 4
+NewPageNamePalette:
+#incbin "MSS/palettecycler.dmp"
+
+	ALIGN 4
+	Button_Branch:
+	#incbin "MSS/Button Branch.dmp"
+	
+	ALIGN 4
+	Growth_Getter_Table:
+	POIN Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Luk_Growth Get_Def_Growth Get_Res_Growth
+	
+	ALIGN 4
+	Get_Hp_Growth:
+	#incbin "MSS/Growth Getters/Get_Hp_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Str_Growth:
+	#incbin "MSS/Growth Getters/Get_Str_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Skl_Growth:
+	#incbin "MSS/Growth Getters/Get_Skl_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Spd_Growth:
+	#incbin "MSS/Growth Getters/Get_Spd_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Def_Growth:
+	#incbin "MSS/Growth Getters/Get_Def_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Res_Growth:
+	#incbin "MSS/Growth Getters/Get_Res_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	ALIGN 4
+	Get_Luk_Growth:
+	#incbin "MSS/Growth Getters/Get_Luk_Growth.dmp"
+	POIN Extra_Growth_Boosts|1
+	
+	ALIGN 4
+	Extra_Growth_Boosts:
+	#incbin "MSS/Growth Getters/Extra_Growth_Boosts.dmp"
+	WORD Growth_Options
+	POIN 0
+	
+	ALIGN 4
+	Load_Page:
+	#incbin "MSS/Load Page.dmp"
+	WORD Stat_Page_Ram_Loc
+	
+	ALIGN 4
+	Store_Page:
+	#incbin "MSS/Store Page.dmp"
+	WORD Stat_Page_Ram_Loc
+
+	
+	ALIGN 4
+	Rescue_Arrows:
+	#incbin "MSS/Check Rescue Arrows.dmp"
+	POIN 0
+	WORD 0
+	
+	ALIGN 4
+	Get_Palette_Index:
+	#incbin "MSS/Get_Palette_Index.dmp"
+	POIN Growth_Color_Table
+	
+	ALIGN 4
+	HP_Name_Color:
+	#incbin "MSS/HP Name Color.dmp"
+	POIN New_Palettes
+	WORD Growth_Options
+	POIN Get_Hp_Growth
+	POIN Get_Palette_Index
+	
+	ALIGN 4
+	Write_Growths_To_Battle_Struct:
+	#incbin "MSS/Write_Growths_To_Battle_Struct.dmp"
+	POIN Class_Level_Cap_Table Get_Hp_Growth Get_Str_Growth Get_Skl_Growth Get_Spd_Growth Get_Def_Growth Get_Res_Growth Get_Luk_Growth
+	WORD Growth_Options
+	
+	ALIGN 4
+	Class_Level_Cap_Table:
+	#incbin "MSS/Display Growths Options/Class_Level_Cap_Table.dmp"
+	
+	ALIGN 4
+	Enemy_Autolevel:
+	#incbin "MSS/Enemy_Autolevel.dmp"
+	WORD Growth_Options
+	
+	ALIGN 4
+	New_Unit_Exp:
+	#incbin "MSS/New_Unit_Exp.dmp"
+	POIN Class_Level_Cap_Table
+	
+	Growth_Color_Table:
+	#include "MSS/Display Growths Options/Growth Colors Table.txt"
+
+	ALIGN 4
+	New_Palettes:
+	#include "MSS/Display Growths Options/New Palette.txt"
+
+  TxtData0x0D4B:
+  String(Donate to Circles)
+  BYTE 0
+  ALIGN 4
+  setText(0x0D4B,TxtData0x0D4B)
+  
+  /*stat screen R menu is at 8a00b38
+find by breaking on key press while R menu open
+
+Each entry is 6 words
+  Pointer 1 (up)
+  POinter 2 (down)
+  POinter 3 (left)
+  Pointer 4 (right)
+  x,y,Txtid
+  Zero
+  (Optional Pointer for alternate text routine)
+
+ST_Name:
+WORD 0
+POIN ST_Class
+WORD 0
+POIN ST_Luck
+BYTE 0x18
+BYTE 0x50
+SHORT 0
+WORD 0
+*/
+
+//#include eastdlib.event
+
+#ifdef _FE8_
+
+#define RMenu(up,down,left,right,xcoord,ycoord,TID) "POIN up down left right;BYTE xcoord ycoord; SHORT TID; WORD 0 0;"
+#define RMenu(up,down,left,right,xcoord,ycoord,TID,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT TID; POIN 0 Getter|1"
+#define RMenu(up,down,left,right,xcoord,ycoord,SlotID,Looper,Getter) "POIN up down left right; BYTE xcoord ycoord; SHORT SlotID; POIN Looper|1 Getter|1"
+
+#define NameDescGetter 0x88bd5
+#define ClassDescGetter 0x88c01
+#define ConditionGetter 0x88a2d
+#define StrMagGetter 0x88b09
+
+PUSH // R menu
+ORG 0xa00b38
+ST_Name:
+  RMenu(0,ST_Class,0,ST_Luck,0x18,0x50,0x0,NameDescGetter)
+POP
+ST_Class:
+  RMenu(ST_Name,ST_Level,0,ST_Res,0x6,0x68,0x6E8,ClassDescGetter)
+ST_Level:
+  RMenu(ST_Class,ST_HP,0,ST_Exp,0x6,0x78,0x542)
+ST_Exp:
+  RMenu(ST_Class,ST_HP,ST_Level,ST_Def,0x26,0x78,0x543)
+ST_HP:
+  RMenu(ST_Level,0,0,ST_Res,0x6,0x88,0x544)
+
+ST_Str:
+  RMenu(PersonalDataRText,ST_Mag,ST_Name,ST_Mov,0x66,0x18,0x546)
+ST_Mag:
+  RMenu(ST_Str,ST_Skl,ST_Name,ST_Con,0x66,0x28,0x547)
+ST_Skl:
+  RMenu(ST_Mag,ST_Spd,ST_Name,ST_Aid,0x66,0x38,0x548)
+ST_Spd:
+  RMenu(ST_Skl,ST_Luck,ST_Name,ST_Trv,0x66,0x48,0x549)
+ST_Luck:
+  RMenu(ST_Spd,ST_Def,ST_Name,ST_Affin,0x66,0x58,0x54a)
+ST_Def:
+  RMenu(ST_Luck,ST_Res,ST_Class,ST_Cond,0x66,0x68,0x54b)
+ST_Res:
+  RMenu(ST_Def,0,ST_Exp,ST_Cond,0x66,0x78,0x54c)
+ST_Mov:
+  RMenu(PersonalDataRText,ST_Con,ST_Str,0,0xa6,0x18,0x54d)
+ST_Con:
+  RMenu(ST_Mov,ST_Aid,ST_Skl,0,0xa6,0x28,0x54e)
+//the rest of these are here because space
+ST_Aid:
+  RMenu(ST_Con,ST_Trv,ST_Skl,0,0xa6,0x38,0x54F)
+ST_Trv:
+  RMenu(ST_Aid,ST_Affin,ST_Spd,0,0xa6,0x48,0x550)
+ST_Affin:
+  RMenu(ST_Trv,ST_Cond,ST_Luck,0,0xa6,0x58,0x551)
+ST_Cond:
+  RMenu(ST_Affin,0,ST_Def,0,0xA6,0x68,0x552,ConditionGetter)
+
+#ifdef Display_Growths_Toggle
+  PersonalDataRText:
+  RMenu(0,ST_Str,0,0,0x76,0x4,0)
+#else
+  PersonalDataRText:
+  RMenu(0,ST_Str,0,0,0x76,0x4,0)
+#endif
+
+RText_Page4:
+ST_Name4:
+  RMenu(0,ST_Class4,0,ST_Donate,0x18,0x50,0x0,NameDescGetter)
+ST_Class4:
+  RMenu(ST_Name4,ST_Level4,0,ST_Donate,0x6,0x68,0x6E8,ClassDescGetter)
+ST_Level4:
+  RMenu(ST_Class4,ST_HP4,0,ST_Exp4,0x6,0x78,0x542)
+ST_Exp4:
+  RMenu(ST_Class4,ST_HP4,ST_Level4,ST_Donate,0x26,0x78,0x543)
+ST_HP4:
+  RMenu(ST_Level4,0,0,ST_Donate,0x6,0x88,0x544)
+ST_Donate:
+  RMenu(0,0,ST_Name4,0,0x86,0x48,0)
+
+// POP
+#endif
+
