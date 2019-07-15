@@ -2735,10 +2735,10 @@ Event "{0}" Jumping to nonexistent label "{1}".
 The pointer "{0}" is invalid.
 
 :序章でUnitID:0x01 or 0x02 or 0x03のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-You are not join to the lord unit of UnitID: 0x01,0x02 and 0x03 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
+The main Lord unit (Unit ID 0x01 or 0x02 or 0x03) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
 
 :序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。
-You are not join to the lord unit of UnitID: 0x01 in the Prologue.\r\nIn the Prologue, many events freeze unless you put this lord unit in a group.
+The main Lord unit (Unit ID 0x01) is not being deployed in the Prologue.\r\nSome events may freeze or cause a Game Over unless you load the Lord unit in a unit group for this chapter.
 
 :イベントポインタ「{0}」が無効です。
 Event pointer '{0}' is invalid.
@@ -9989,7 +9989,7 @@ When this check box is enabled,\r\nchanging the initial and progress value autom
 Assistance setting to unit ({1}) -> unit ({0}) is different from support to unit ({0}) -> unit ({1}) and vice versa.\r\nInitial value ({2}vs{3}), degree of progress ({4}vs{5})\r\nThe initial value and the progress degree must be the same value.
 
 :ユニット({0})->ユニット({1})への支援はありますが、逆に、ユニット({1})->ユニット({0})への支援がありません。
-There is support for unit ({0}) -> unit ({1}), but conversely there is no support for unit ({1}) -> unit ({0}).
+Supports must be defined in both units' support lists in order to function.\r\nThe support between unit ({0}) and unit ({1}) has been defined,\r\nbut not defined between unit ({1}) and unit ({0}).\r\nPlease ensure that the support data is the same in both units' support list.
 
 :ユニット({0})が、ユニット({1})への支援は、支援相手のユニットがUnitID:0x45を超えているので、敵ユニット同士の支援だと思われますが、「進行度」が({2})に設定されています。\r\n敵ユニットの支援ポイントが増えることはないので、0にするべきです。\r\n(UnitID:0x45を超えるデータに仲間になるユニットを配置してはいけません)
 Assistance to the unit ({0}), but support to the unit ({1}) seems to be support of enemy units because the unit of the support partner exceeds Unit ID: 0x45, but if "degree of progress" is \r\nSince the number of support points for enemy units never increases, they should be set to 0.\r\n(UnitID: Do not place units that will become companions for data exceeding 0x45)
