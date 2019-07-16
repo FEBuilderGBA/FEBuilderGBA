@@ -9,6 +9,6 @@ BIN:0x78B84:1=ChangeSupportTalkBGM.dmp
 AUTHOR=7743
 
 NAME.en=Enable to set BGM at support talk with SongID
-INFO.en=This patch will change BGM when making an assistance conversation.\r\nIn the existing FE, the BGM designation is restricted.(not used in FE8).\r\nChange the specification of this structure so that you can freely set music.
+INFO.en=This patch will change BGM when making an assistance conversation.\r\nIn the existing FE, the BGM designation is restricted.(not used in FE8).\r\nChange specification of this structure so that you can freely set music.
 NAME.zh=启用以使用SongID在支持对话中设置BGM
 INFO.zh=我在进行协助对话时会更改BGM。\r\n在现有的FE中，BGM名称受到限制（它不用于FE8）\r\n更改此结构的规格，以便您可以自由设置音乐。

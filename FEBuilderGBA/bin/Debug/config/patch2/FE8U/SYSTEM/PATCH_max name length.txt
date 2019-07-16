@@ -21,8 +21,8 @@ ON9:0x482bA=0x9
 
 AUTHOR=circleseverywhere https://feuniverse.us/t/fe8-tactician-naming/2924
 
-NAME.en=Change the maximum value of the name input screen.
-INFO.en=In the event "Call name input screen", change the name that can be input from 5 characters to 9 characters.
+NAME.en=Change maximum value of the name input screen.
+INFO.en=In the event "Call name input screen", Change name that can be input from 5 characters to 9 characters.
 
 COMBO.en=default|OFF|8 characters|ON8|9 characters|ON9
 NAME.zh=更改名称输入屏幕的最大值

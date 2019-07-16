@@ -1,5 +1,5 @@
 NAME=進撃準備の背景を章ごとに変更する
-NAME.en=Change the Preparations background for each chapter
+NAME.en=Change Preparations background for each chapter
 
 INFO=新規に画像をImportするときは、アドレス、PALETTEに0かFFFFFFFFを設定した後で、Importしてください。\r\nそうしないと、既存の画像を上書き変更します。
 

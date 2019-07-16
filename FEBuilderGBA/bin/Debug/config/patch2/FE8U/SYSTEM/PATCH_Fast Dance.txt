@@ -18,6 +18,6 @@ OFF:0x9A3568=0x0E 0x00 0x0F 0x00
 
 AUTHOR=7743
 NAME.en=Lost weight when dancing with map animation and make it faster.
-INFO.en=We change the odd weights that we have when dancing with map animation, all to one frame weight, and speed up processing.
+INFO.en=We Change odd weights that we have when dancing with map animation, all to one frame weight, and speed up processing.
 NAME.zh=与地图动画共舞时减轻体重并加快速度。
 INFO.zh=我们改变了与地图动画一起跳舞时的奇怪权重，全部为一帧重量，并加快处理速度。

@@ -13,8 +13,8 @@ PATCHED_IF:0x28846=0xC0 0x46 0x00 0x4B 0x18 0x47
 EA=EA.txt
 
 AUTHOR=aera
-INFO=スキルを覚えることができるアイテム「スキルの書」を作れるようになります。\r\nアイテムID:0x25以降のアイテムで、アイテム効果を「メティスの書」に設定することで、スキルの書になります。\r\n覚えるスキルIDは、アイテムの「攻撃力」の欄で設定します。\r\n\r\nこのパッチを利用するには、スキル拡張と、BreakSave拡張の2つが必要です。\r\n
+INFO=スキルを覚えることができるアイテム「スキルの書」を作れるようになります。\r\nアイテムID:0x25以降のアイテムで、アイテム効果を「0x2E=メティスの書」に設定することで、スキルの書になります。\r\n覚えるスキルIDは、アイテムの「攻撃力」の欄で設定します。\r\n\r\nこのパッチを利用するには、スキル拡張と、BreakSave拡張の2つが必要です。\r\n
 
-INFO.en=You will be able to create the item "skills book" that you can learn skills.\r\nItem ID: 0x25 or later items, by setting the item effect to "Metis's Book\\r\nThe skill ID to memorize is set in the "attack power" column of the item.\r\n\r\nTo use this patch, you need skill extension and BreakSave extension.\r\n
+INFO.en=You will be able to create the item "skills book" that you can learn skills.\r\nItem ID: 0x25 or later items, by setting the item effect to "0x2E=Metis's Book"\r\nThe skill ID to memorize is set in the "attack power" column of the item.\r\n\r\nTo use this patch, you need skill extension and BreakSave extension.\r\n
 NAME.zh=技能（介绍）
-INFO.zh=您将能够创建可以学习技能的项目“技能书”。\r\n物品ID：0x25或更高的物品，通过将物品效果设置为“Metis的书”，它变成了技能写作。\r\n要记忆的技能ID在项目的“攻击力”列中设置。\r\n\r\n要使用此修补程序，您需要技能扩展和BreakSave扩展。\r\n
+INFO.zh=您将能够创建可以学习技能的项目“技能书”。\r\n物品ID：0x25或更高的物品，通过将物品效果设置为“0x2E=知惠之书”，它变成了技能写作。\r\n要记忆的技能ID在项目的“攻击力”列中设置。\r\n\r\n要使用此修补程序，您需要技能扩展和"超过31个状态参数。运输车200(BreakSave)"扩展。\r\n

@@ -16,7 +16,7 @@ ONN:0x0029da8=0x00 0x00 0x00 0x00
 ONN:0x00694C2=0x18 0x7A
 
 INFO=CCしてもレベルを1にリセットしないように変更します。
-INFO.en=Change the level so that it does not reset to 1 even if it is promoted.
+INFO.en=Change level so that it does not reset to 1 even if it is promoted.
 
 
 NAME.zh=CC不会降低等级

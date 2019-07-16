@@ -6,10 +6,12 @@ TYPE=EA
 TAG=#ENGINE
 EA=EA.txt
 
-INFO=輸送隊にアイテムを預ける際、L押しながらアイテムを選択すると「統合」もどきが可能です。\r\n「統合」が可能なのは、スクショ画面の状態の時のみです。\r\n\r\nつまり主人公の輸送隊、進撃準備の輸送隊、通信闘技場の輸送隊で可能です。\r\n逆に、全預けや持ち物満タンで送られるときには不可能です。\r\nHINT:輸送体
+INFO=輸送隊にアイテムを預ける際、L押しながらアイテムを選択すると「統合」もどきが可能です。\r\n「統合」が可能なのは、スクショ画面の状態の時のみです。\r\n\r\nつまり主人公の輸送隊、進撃準備の輸送隊、通信闘技場の輸送隊で可能です。\r\n逆に、全預けや持ち物満タンで送られるときには不可能です。
+HINT=輸送体
 
 AUTHOR=aera
 NAME.en=Weapons integration patch (weapon repair patch)
-INFO.en=When you deposit items in a transportation corps, you can "lose" by selecting items while pressing L.\r\n"Integration" is possible only when the screen is in the state.\r\n\r\nIn other words, it is possible with the main character 's transport team, the ship prepared for attack and the transport corps of the communication fighting field.\r\nOn the contrary, it is impossible when it is sent with all deposits or belongings full.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO.en=When you deposit items in a transportation corps, you can "lose" by selecting items while pressing L.\r\n"Integration" is possible only when the screen is in the state.\r\n\r\nIn other words, it is possible with the main character 's transport team, the ship prepared for attack and the transport corps of the communication fighting field.\r\nOn the contrary, it is impossible when it is sent with all deposits or belongings full.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=武器整合补丁（武器修复补丁）
 INFO.zh=当您将物品存放在运输队中时，您可以通过在按下L时选择项目来“丢失”。\r\n只有在屏幕处于状态时才可以“集成”。\r\n\r\n换句话说，有可能与主角的运输队，准备攻击的船和通信战斗场的运输队。\r\n相反，在发送所有存款或财物时，它是不可能的。

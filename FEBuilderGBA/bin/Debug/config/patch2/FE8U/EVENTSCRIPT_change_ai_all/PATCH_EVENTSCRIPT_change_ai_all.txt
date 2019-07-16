@@ -20,10 +20,10 @@ INFO=特定の条件にマッチする、すべてのユニットまたはクラ
 
 AUTHOR=7743
 NAME.en=Add Event: Change AI of unit or class at once
-INFO.en=Change the AI ​​of all units or class units at a stroke that matches a specific condition.\r\nWhen persuading the common enemy generals commonly used for FE 4 and FE 5, it makes it easy for GBAFE to use such as to leave subordinate to withdrawal AI.
-EVENTSCRIPT:1.en=400DXXYY{$L1:change_ai_all.dmp}	Change the AI ​​of all enemy forces that match the condition to the contents of SVAL1 (LOW).[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
-EVENTSCRIPT:2.en=410DXXYY{$L1:change_ai_all.dmp}	Change the AI ​​of all ally who match the condition to the contents of SVAL1 (LOW).[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
-EVENTSCRIPT:3.en=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	Change the AI ​​of all enemy forces matching the condition to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
+INFO.en=Change AI ​​of all units or class units at a stroke that matches a specific condition.\r\nWhen persuading the common enemy generals commonly used for FE 4 and FE 5, it makes it easy for GBAFE to use such as to leave subordinate to withdrawal AI.
+EVENTSCRIPT:1.en=400DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all enemy forces that match the condition to the contents of SVAL1 (LOW).[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
+EVENTSCRIPT:2.en=410DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all ally who match the condition to the contents of SVAL1 (LOW).[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
+EVENTSCRIPT:3.en=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all enemy forces matching the condition to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:4.en=40050100ZZWW0000410DXXYY{$L1:change_ai_all.dmp}	Changed the AI ​​of all ally who match the conditions to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 
 NAME.zh=事件命令一次更改人物或班级的AI

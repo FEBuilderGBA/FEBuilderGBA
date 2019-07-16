@@ -114,13 +114,17 @@ namespace FEBuilderGBA
                 addr++;
                 for (; addr < length ; addr++)
                 {
-                    if (data[addr] != filldata
-                        ||  useMap.ContainsKey(addr)
-                        ||  knownDic.ContainsKey(addr))
+                    uint a = data[addr];
+                    bool foundUseMap = useMap.ContainsKey(addr);
+                    bool foundKnownDic = knownDic.ContainsKey(addr);
+                    if (a != filldata
+                        || foundUseMap
+                        || foundKnownDic)
                     {
                         uint matchsize = addr - start;
                         if (matchsize >= needSize)
                         {
+                            Log.Debug("MakeFreeDataList" , U.ToHexString(start) , matchsize.ToString());
                             AppendList(list, start, matchsize,data);
                         }
                         break;

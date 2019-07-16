@@ -11,8 +11,10 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0x80 0x6B 0x47 0x88 0xC0 0x46 0x1E 0x48 0x02 0x68 0x
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=item_collect.bin
 
-INFO=特定のアイテムを輸送隊を含めて全員からすべて没収します.\r\nHINT:輸送体
-INFO.en=Patches the ROM with a callable event that removes specified items from every player character inventory they're in.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO=特定のアイテムを輸送隊を含めて全員からすべて没収します.
+HINT=輸送体
+INFO.en=Patches the ROM with a callable event that removes specified items from every player character inventory they're in.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=我们没收每个人的某些物品，包括运输商。
 
 AUTHOR=怪盗パッチ 7743

@@ -30,6 +30,6 @@ B0:$COMBO RangeType.zh.txt:.zh=射程
 B1=00
 W2:TEXT=String
 
-INFO.en=Change the text for the item's range description.\r\nYou can display the description of the weapon such as range 3-4.\r\nHowever, freerange patch is required separately to draw tiles of range of attack range of weapon properly.\r\nThis patch is for changing the text of the range when you press the R button.
+INFO.en=Change text for the item's range description.\r\nYou can display the description of the weapon such as range 3-4.\r\nHowever, freerange patch is required separately to draw tiles of range of attack range of weapon properly.\r\nThis patch is for changing the text of the range when you press the R button.
 NAME.zh=更改武器的范围文本。
 INFO.zh=更改项目范围说明的文本。\r\n您可以显示武器的描述，例如范围3-4。\r\n但是，需要单独使用自由范围补丁来适当地绘制武器攻击范围的瓦片。\r\n此补丁用于在按下R按钮时更改范围的文本。

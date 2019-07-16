@@ -9,6 +9,6 @@ AUTHOR=7743
 ADDRESS=0xA31F6
 ADDRESS_TYPE=PORTRAIT
 NAME.en=Change who will convey the Bonding Comment
-INFO.en=Change the person who will convey the message of the strategy evaluation of Bonding Comment.
+INFO.en=Change person who will convey the message of the strategy evaluation of Bonding Comment.
 NAME.zh=改变谁将传达卡拉OK评论的评价
 INFO.zh=该补丁还改变将传达战略评估卡拉OK评论信息的人。

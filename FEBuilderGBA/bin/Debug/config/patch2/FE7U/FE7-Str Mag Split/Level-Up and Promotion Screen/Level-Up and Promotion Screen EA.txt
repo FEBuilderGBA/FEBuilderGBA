@@ -255,7 +255,7 @@ Lowen data at 202BDE0; attack 203A3F0
 741BC seems to load stats from char struct; function begins at 7416C r0=0, r1=r2=1, r3=number to show
 branched to by 74A75 when writing original numbers and 74E17 when levelling up
 741D4 only called when numbers change; bl's to 741F4
-pointer table at 743B0 that retrieves level/relevant stat number from char struct (not updated yet); repoint and expand this and change the 8 at 74394 to a 0xA.
+pointer table at 743B0 that retrieves level/relevant stat number from char struct (not updated yet); repoint and expand this and Change 8 at 74394 to a 0xA.
 741F4 takes position of stat in r1, which was passed in via r3 at the beginning of the function
 74E12 bl's to 7416C when doing the level up. Issue: need to insert mag so the left column works correctly. Function begins at 74D88.
 

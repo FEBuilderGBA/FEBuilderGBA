@@ -46,7 +46,7 @@
 	ORG $7FE4C
 	POIN New_Stat_Name_Ptr_Table
 	
-	//Change the background to the item background (actually, just use the new tsa)
+	//Change background to the item background (actually, just use the new tsa)
 	ORG $7FE40
 	//POIN 0x3FCAC0
 	POIN Stat_Screen_New_TSA
@@ -216,9 +216,9 @@ if no, return second char id
 
 chapter number at 202BBF8+0xE
 Load C9C9C8; not sure what this is (C9C9CC is the event reference table)
-load chapter data table at C92A00 and using the chapter number we passed in, return the offset of the chapter's data
+load chapter data table at C92A00 and using Chapter number we passed in, return the offset of the chapter's data
 Add 0x78, which is Event Data reference, and load that byte
-lsl byte by 2 and add to C9C9C8 and load the word there, which seems to be the chapter data offset (CA21C0)+
+lsl byte by 2 and add to C9C9C8 and load the word there, which seems to be Chapter data offset (CA21C0)+
 Basically, get chapter number, bl to 315BC
 add 4, get pointer (talk events). Entries are 0x10 long; event id at 0x2, initiator at 0x8, recepient at 0x9
 bl to 79798, r0=event id to check, I think

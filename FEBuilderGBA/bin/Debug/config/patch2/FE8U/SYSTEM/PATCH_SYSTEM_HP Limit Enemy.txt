@@ -8,5 +8,5 @@ TAG=#ENGINE
 ADDRESS=0x000181DC 0x000181F4 0x0002BF46 0x0002BF60
 HEX=FALSE
 
-INFO.en=Change the value in decimal.
+INFO.en=Change value in decimal.
 

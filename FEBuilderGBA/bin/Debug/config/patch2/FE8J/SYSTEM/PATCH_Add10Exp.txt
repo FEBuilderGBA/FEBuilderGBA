@@ -12,7 +12,7 @@ HEX=false
 AUTHOR=7743
 
 INFO=踊る、盗む、召喚等で得られる経験値+10を得る値を変更します。
-INFO.en=Change the value to get the experience value + 10 obtained by dancing, stealing, summoning etc.
+INFO.en=Change value to get the experience value + 10 obtained by dancing, stealing, summoning etc.
 NAME.zh=体验跳舞，偷盗，召唤等价值+10的价值
 INFO.zh=改变价值以获得跳舞，偷盗，召唤等获得的经验值+10。
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46

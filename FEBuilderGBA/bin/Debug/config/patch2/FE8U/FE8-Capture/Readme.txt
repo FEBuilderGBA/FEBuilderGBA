@@ -2,7 +2,7 @@ FE8-Capture README
 By Tequila
 
 How to use:
-Either assemble FE8-Capture Master EA File.txt directly with Event Assembler 10.1 or higher, or #include it in your buildfile. Update the necessary labels (Free_Space and Item_Table). You'll also have to change the text ids for both Capture and its R-button description yourself; currently, they're set to those for Secret.
+Either assemble FE8-Capture Master EA File.txt directly with Event Assembler 10.1 or higher, or #include it in your buildfile. Update the necessary labels (Free_Space and Item_Table). You'll also have to Change text ids for both Capture and its R-button description yourself; currently, they're set to those for Secret.
 ' Capture' (the space in front is important!)
 'Strike a fatal blow with reduced
 stats to capture an enemy.'

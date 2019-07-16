@@ -100,7 +100,9 @@ namespace FEBuilderGBA
                 }
                 if (sp[0] == "@_CRC32"
                     || sp[0] == "@_REBUILDADDRESS"
-                    || sp[0] == "@_ASSERT")
+                    || sp[0] == "@_ASSERT"
+                    || sp[0] == "@00"
+                    )
                 {
                     continue;
                 }
@@ -151,8 +153,12 @@ namespace FEBuilderGBA
             }
         }
 
+        void InitFreeAreaDef()
+        {
+            this.FreeArea = new ToolROMRebuildFreeArea();
+        }
 
-        void InitFreeAreaDef(int useFreeArea,uint rebuildAddress, string[] rebuildLines)
+        void ReInitFreeAreaDef(int useFreeArea,uint rebuildAddress, string[] rebuildLines)
         {
             Dictionary<uint, uint> useMap = new Dictionary<uint,uint>(this.AddressMap);
             AppendUseMap(useMap, rebuildAddress,rebuildLines);
@@ -200,7 +206,7 @@ namespace FEBuilderGBA
 
             //途中でデータを書き込むことがあるので、現在のフリーエリアを見つけてリストに追加.
             //後でROM末尾を超えたら再設定する.
-            InitFreeAreaDef(useFreeArea,this.RebuildAddress, lines);
+            InitFreeAreaDef();
             //通常のROM末尾を超えた時点で再度スキャンする.
             bool isMakeFreeAreaList = false;
 
@@ -252,7 +258,7 @@ namespace FEBuilderGBA
                 {//リビルドしない領域が終わったら、フリー領域リストを再構築する.
                     isMakeFreeAreaList = true;
                     //フリーエリアの再設定
-                    InitFreeAreaDef(useFreeArea, this.RebuildAddress, lines);
+                    ReInitFreeAreaDef(useFreeArea, this.RebuildAddress, lines);
                 }
 
                 if (i > nextDoEvents)

@@ -1,5 +1,5 @@
 NAME=進撃準備の背景を章ごとに変更する(導入)
-NAME.en=Change the Preparations background for each chapter Installer
+NAME.en=Change Preparations background for each chapter Installer
 
 INFO=進撃準備の背景を章ごとに変更します。\r\n章とフラグごとに設定ができます。\r\nFE8では進撃開始の背景は、部隊などの他の画面とも利用されているので、そちらも変更されます。
 
@@ -16,6 +16,6 @@ EDIT_PATCH=PATCH_ChangePrepBGEachChapter.txt
 EA=Installer.event
 
 AUTHOR=7743
-INFO.en=Change the Preparation background for each chapter.\r\nIt can be set for each chapter and flag.\r\nIn FE8, the Preparation background is also used for other screens such as troops, so that will be changed as well.
+INFO.en=Change Preparation background for each chapter.\r\nIt can be set for each chapter and flag.\r\nIn FE8, the Preparation background is also used for other screens such as troops, so that will be changed as well.
 NAME.zh=通过章节（介绍）改变攻击准备的背景
 INFO.zh=更改每章的攻击进度背景。\r\n它可以为每个章节和标志设置。

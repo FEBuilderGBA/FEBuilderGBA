@@ -14,6 +14,8 @@ COMBO.zh=禁令|0x01 0x28 0x03 0xDD|禁令|0x00 0x00 0x00 0x00
 
 CONFLICT_IF:0x023F66=0x00 0x00 0x00 0x4B 0x18 0x47
 
-INFO=\r\nHINT=輸送体
-INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO=
+HINT=輸送体
+INFO.en=
+HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=提示：运输车。

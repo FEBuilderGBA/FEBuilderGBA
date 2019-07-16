@@ -24,6 +24,6 @@ OFF:0x07CAD4=0x00 0x88 0x94 0xF7 0x53 0xFE
 
 AUTHOR=7743
 NAME.en=Lost weight when stealing and make it faster.
-INFO.en=We change the odd weights when stealing items to 1 frame weight to speed up processing.\r\nAlso, cancel the display of the dialog.Only sound effects will be played.
+INFO.en=We Change odd weights when stealing items to 1 frame weight to speed up processing.\r\nAlso, cancel the display of the dialog.Only sound effects will be played.
 NAME.zh=偷东西时减重并加快速度。
 INFO.zh=我们在将物品偷到1帧重时改变奇数，以加快处理速度。\r\n此外，取消对话框的显示。仅播放声音效果。

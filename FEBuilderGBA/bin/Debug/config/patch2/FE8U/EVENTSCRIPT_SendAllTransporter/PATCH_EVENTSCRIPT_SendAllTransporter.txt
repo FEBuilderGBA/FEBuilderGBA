@@ -28,9 +28,11 @@ EVENTSCRIPT:3.zh=4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于SVALB坐标
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于坐标[ZZ:MAPX:X][WW:MAPY:Y]的所有项目发送给运输商	{UNIT}
 EVENTSCRIPT:5.zh=4F0D0000{$L1:SendAllTransporter.dmp}	我会将当前运营人物的所有物品发送给运输商	{UNIT}
 
-INFO=指定したユニットのすべての持ち物を輸送隊に送ります。\r\nHINT:輸送体
+INFO=指定したユニットのすべての持ち物を輸送隊に送ります。
+HINT=輸送体
 
 
 AUTHOR=7743
-INFO.en=Send all belongings of the specified unit to the transporter.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO.en=Send all belongings of the specified unit to the transporter.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=将指定人物的所有物品发送给运输商。

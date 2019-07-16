@@ -7,7 +7,7 @@ L_40:VISIBLE=true
 J_40:NAME=J_40_SONG
 
 J_40:HINT=勝利BGMを変更します。
-J_40:HINT.en=Change the BGM that plays when near victory.
+J_40:HINT.en=Change BGM that plays when near victory.
 J_40.zh=胜利BGM
 J_40:HINT.zh=更改获胜BGM。
 

@@ -14,8 +14,9 @@ NAME.zh=运输体解禁05x章
 AUTHOR.zh=来源:7743的写作\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=From source: 7743's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 COMBO.zh=禁止|0x05 0x28 0x03 0xD1|允许|0x04 0xE0 0x00 0x00
-INFO=HINT:輸送体
-INFO.en=\r\nHINT:convoy,supply,transporter,merlinus,wagon
+HINT=輸送体
+INFO.en=
+HINT.en=convoy,supply,transporter,merlinus,wagon
 
 COMBO.en=Ban|0x05 0x28 0x03 0xD1|Authorization|0x04 0xE0 0x00 0x00
 

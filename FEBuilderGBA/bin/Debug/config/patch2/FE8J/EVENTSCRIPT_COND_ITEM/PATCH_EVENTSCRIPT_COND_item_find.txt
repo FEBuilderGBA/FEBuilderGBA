@@ -12,10 +12,12 @@ EVENTSCRIPT=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:アイテム]アイテム所�
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=item_find.bin
 
-INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.\r\nHINT:輸送体
+INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.
+HINT=輸送体
 AUTHOR=怪盗パッチ 7743
 NAME.en=Add Event Condition: Item Check(All units and transporters)
-INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 AUTHOR.en=Kaito patch7743
 
 NAME.zh=事件命令_ 物品拥有运输队

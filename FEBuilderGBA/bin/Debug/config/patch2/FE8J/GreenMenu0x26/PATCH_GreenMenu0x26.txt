@@ -9,10 +9,10 @@ PATCHED_IF:$FGREP4 GreenMenu0x26.dmp=0x70 0xB5 0x06 0x1C
 BIN:$FREEAREA=GreenMenu0x26.dmp
 
 INFO=フラグ0x26がOFFだったら、メニューの色を変える。\r\nメニューの関数ポインタの2番目「描画ルーチンポインタ」に、インストールした関数のアドレス+1を書いてください。
-INFO.en=If flag 0x26 is off, change the color of the specified menu.\r\nWrite the address of the installed function + 1 to the second "Drawing Routine pointer" of the function pointer of the menu.
+INFO.en=If flag 0x26 is off, Change color of the specified menu.\r\nWrite the address of the installed function + 1 to the second "Drawing Routine pointer" of the function pointer of the menu.
 AUTHOR=7743
 
 USEFLAG=0x26
-NAME.en=If flag 0x 26 is off, change the color of the menu.
+NAME.en=If flag 0x 26 is off, Change color of the menu.
 NAME.zh=如果标志0x 26关闭，请更改菜单的颜色。
 INFO.zh=如果标志0x 26关闭，请更改菜单的颜色。\r\n将已安装函数的地址+ 1写入菜单功能指针的第二个“绘图例程指针”。

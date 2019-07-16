@@ -10,7 +10,7 @@ EA=Installer.event
 AUTHOR=7743
 
 INFO=編成準備店を章ごとに切り替えます。\r\n最低限の「鉄の剣」を終盤まで売っているのではなく、章が進むごとに強い武器を販売することができます。\r\n
-INFO.en=Switch the preparation preparation shop for each chapter.\r\nRather than selling the minimum "Iron Sword" to the end, you can sell strong weapons each time the chapter goes forward.\r\n
+INFO.en=Switch the preparation preparation shop for each chapter.\r\nRather than selling the minimum "Iron Sword" to the end, you can sell strong weapons each time Chapter goes forward.\r\n
 NAME.zh=按章（转介）切换制剂准备车间
 INFO.zh=切换每章的准备准备车间。\r\n而不是将最低限度的“铁剑”卖到最后，你可以在每章开始时销售强力武器。\r\n
 

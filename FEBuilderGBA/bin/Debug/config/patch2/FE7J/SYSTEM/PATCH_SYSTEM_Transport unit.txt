@@ -10,8 +10,10 @@ ADDRESS=0x231D2 0x7A812
 ADDRESS_TYPE=UNIT
 
 AUTHOR=7743
-INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nただし、FE7では輸送隊ユニット自身は、輸送隊メニューを呼べません。\r\nHINT:輸送体
-INFO.en=Set up units that will bring out the transporter menu when adjacent.\r\nHowever, in FE 7, the transporter unit itself can not call the transporter menu.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nただし、FE7では輸送隊ユニット自身は、輸送隊メニューを呼べません。
+HINT=輸送体
+INFO.en=Set up units that will bring out transporter menu when adjacent.\r\nHowever, in FE 7, transporter unit itself can not call transporter menu.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=运输人物
 INFO.zh=设置相邻时将显示转运菜单的人物。\r\n但是，在FE 7中，运输单元本身不能调用运输单元菜单。\r\n
 

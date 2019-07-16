@@ -8,8 +8,10 @@ TAG=#ENGINE
 ADDRESS=0x23F88
 ADDRESS_TYPE=UNIT
 
-INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nHINT:輸送体
-INFO.en=Sets the unit that the "Supply" menu option is attached to during Chapters 1-8 and Eirika's campaign.\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO=隣接すると輸送隊メニューを出すユニットを設定します。
+HINT=輸送体
+INFO.en=Sets the unit that the "Supply" menu option is attached to during Chapters 1-8 and Eirika's campaign.
+HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=设置相邻时将显示运输菜单的人物。
 
 AUTHOR=7743

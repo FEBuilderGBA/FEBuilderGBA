@@ -17,7 +17,7 @@ INFO=特定の条件にマッチする、すべてのユニットまたはクラ
 
 AUTHOR=7743
 NAME.en=Add Event: Change unit / class affiliation at once
-INFO.en=Change the affiliation of all units or classes of units matching specific conditions at once.\r\nWhen persuading the common enemy general used in FE 4, FE 5, it makes it easy for GBAFE to use such as making a subordinate a ally ally.\r\nHowever, with GBAFE, only 20 ally troops can appear.\r\nPlease note that since it will be ignored.\r\n
+INFO.en=Change affiliation of all units or classes of units matching specific conditions at once.\r\nWhen persuading the common enemy general used in FE 4, FE 5, it makes it easy for GBAFE to use such as making a subordinate a ally ally.\r\nHowever, with GBAFE, only 20 ally troops can appear.\r\nPlease note that since it will be ignored.\r\n
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_allegiance_all.dmp}	Change all enemy forces that match the condition to ally.[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}.
 EVENTSCRIPT:2.en=410DXXYY{$L1:change_allegiance_all.dmp}	Change all ally forces matching the conditions to enemy forces.[XX:UNIT:Unit(00=ANY)] [YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}.
 

@@ -9,4 +9,4 @@ TAG=#ENGINE
 ADDRESS=0x000181E2 0x000181EE 0x0002BF4C 0x0002BF64 0x0009C0E4 0x0009C278
 HEX=FALSE
 
-INFO.en=Change the value in decimal.\r\nHP exceeding 60 won't display properly without a patch.
+INFO.en=Change value in decimal.\r\nHP exceeding 60 won't display properly without a patch.

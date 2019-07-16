@@ -13,7 +13,7 @@ This hack, as you might have guessed, splits strength into two stats, strength a
 
 - Prep screen usability table. I already had to expand this because item 0x98 isn't in the normal one. In Prep Screen and Mag Booster/Prep Screen Usability Table, take the item id of your new item, subtract 0x5A from it, multiply by 4, and then write 64 81 02 08 at that location in the table. To make sure the game actually sees this, go to line 164 in Prep Screen EA.txt and change BYTE 0x3E to BYTE (item id-0x5A).
 
-- Stat boosters. Normally, the mag boost is stored at byte 0x9 of the stat boost struct (pointed to by the pointer at 0xC of the item struct). Since vanilla FE makes their stat boost structs 0xC bytes long, you shouldn't have to repoint any to change the stat boost of an item that already has one (like a legendary weapon). 
+- Stat boosters. Normally, the mag boost is stored at byte 0x9 of the stat boost struct (pointed to by the pointer at 0xC of the item struct). Since vanilla FE makes their stat boost structs 0xC bytes long, you shouldn't have to repoint any to Change stat boost of an item that already has one (like a legendary weapon). 
 
 - Talk. Talk is a new option on the stat screen because people told me it didn't look nice to have a blank space there. It shows the first character in the CharacterTalkEvents section of your chapter events that this character can talk to. Once the event ID has been triggered, the next available character will be displayed (if there's none, it'll show --- like with Trv and Cond). It does NOT actually allow you to talk to anyone; it's just a feature from FE4.
 

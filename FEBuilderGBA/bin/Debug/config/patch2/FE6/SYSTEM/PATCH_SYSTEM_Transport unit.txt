@@ -10,8 +10,11 @@ ADDRESS=0x2020C
 ADDRESS_TYPE=UNIT
 
 AUTHOR=7743
-INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nキャラクター自分自身が輸送隊メニューを出すには、特性で輸送隊コマンドを設定してください。\r\nHINT:輸送体
-INFO.en=Set up units that will bring out the transporter menu when adjacent.\r\nFor the character himself to issue the transporter menu, please set the transporter command with characteristics.\r\nHINT:convoy,supply,transporter,merlinus,wagon\r\nHINT:convoy,supply,transporter,merlinus,wagon
+INFO=隣接すると輸送隊メニューを出すユニットを設定します。\r\nキャラクター自分自身が輸送隊メニューを出すには、特性で輸送隊コマンドを設定してください。
+HINT=輸送体
+INFO.en=Set up units that will bring out transporter menu when adjacent.\r\nFor the character himself to issue transporter menu, please set transporter command with characteristics.
+HINT.en=convoy,supply,transporter,merlinus,wagon
+HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=运输人物
 INFO.zh=设置相邻时将显示转运菜单的人物。\r\n对于自己发出转运菜单的角色，请设置具有特征的转运指令。\r\n
 
