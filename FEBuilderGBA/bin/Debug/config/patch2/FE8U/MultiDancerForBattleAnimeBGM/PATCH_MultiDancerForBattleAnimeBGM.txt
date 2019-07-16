@@ -1,5 +1,5 @@
 NAME=戦闘アニメでの踊り子のBGMを複数設定する
-NAME.en=Setting the battle BGM of a many dancer in battle animetion
+NAME.en=Setting battle BGM of a many dancer in battle animetion
 
 
 IF:0x727FC=0x00 0x4B

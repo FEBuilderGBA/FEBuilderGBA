@@ -1,5 +1,5 @@
 NAME=章タイトルコールを非表示にする(導入)
-NAME.en=Setting the Hide chapter title calls(Installer)
+NAME.en=Setting Hide chapter title calls(Installer)
 
 TYPE=EA
 TAG=#ENGINE

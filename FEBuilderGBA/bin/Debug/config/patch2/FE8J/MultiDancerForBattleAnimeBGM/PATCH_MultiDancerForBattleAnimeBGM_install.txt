@@ -1,5 +1,5 @@
 NAME=戦闘アニメでの踊り子のBGMを複数設定する(導入)
-NAME.en=Setting the battle BGM of a many dancer in battle animetion(Installer)
+NAME.en=Setting battle BGM of a many dancer in battle animetion(Installer)
 
 
 TYPE=EA

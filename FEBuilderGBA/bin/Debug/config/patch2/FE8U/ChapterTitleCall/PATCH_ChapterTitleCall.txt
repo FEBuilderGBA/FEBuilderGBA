@@ -1,5 +1,5 @@
 NAME=章タイトルコールを非表示にする
-NAME.en=Setting the Hide chapter title calls
+NAME.en=Setting Hide chapter title calls
 
 INFO=章を開始するときに、章タイトルを表示する方法を変更します。\r\nテーブルになければディフォルトのタイトルコールが呼び出されます。\r\nテーブルに設定を作り、Procs=0x0 に設定すると、タイトルコールを表示しなくします。
 

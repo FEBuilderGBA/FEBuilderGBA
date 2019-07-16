@@ -1,5 +1,4 @@
-NAME=ModularMinimugBox: 2018 Default Installer
-NAME.en=ModularMinimugBox: 2018 Default 導入
+NAME=ModularMinimugBox: 2018 Default(Installer)
 
 TYPE=EA
 TAG=#ENGINE
