@@ -128,11 +128,11 @@ namespace FEBuilderGBA
 
         public void JumpToClassType(uint value)
         {
-            B50.Value = value;
+            W50.Value = value;
         }
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            ApplyButton.Tag = (uint)B50.Value;
+            ApplyButton.Tag = (uint)W50.Value;
         }
 
         public Button GetApplyButton()

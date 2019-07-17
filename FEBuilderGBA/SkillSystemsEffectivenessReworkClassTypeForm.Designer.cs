@@ -36,7 +36,7 @@
             this.L_50_BIT_04 = new System.Windows.Forms.CheckBox();
             this.L_50_BIT_02 = new System.Windows.Forms.CheckBox();
             this.L_50_BIT_01 = new System.Windows.Forms.CheckBox();
-            this.B50 = new System.Windows.Forms.NumericUpDown();
+            this.W50 = new System.Windows.Forms.NumericUpDown();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.IMAGE_1 = new FEBuilderGBA.InterpolatedPictureBox();
             this.IMAGE_2 = new FEBuilderGBA.InterpolatedPictureBox();
@@ -44,7 +44,7 @@
             this.IMAGE_4 = new FEBuilderGBA.InterpolatedPictureBox();
             this.IMAGE_20 = new FEBuilderGBA.InterpolatedPictureBox();
             this.IMAGE_10 = new FEBuilderGBA.InterpolatedPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.B50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_8)).BeginInit();
@@ -141,19 +141,19 @@
             this.L_50_BIT_01.TabIndex = 112;
             this.L_50_BIT_01.UseVisualStyleBackColor = true;
             // 
-            // B50
+            // W50
             // 
-            this.B50.Hexadecimal = true;
-            this.B50.Location = new System.Drawing.Point(11, 23);
-            this.B50.Margin = new System.Windows.Forms.Padding(2);
-            this.B50.Maximum = new decimal(new int[] {
-            255,
+            this.W50.Hexadecimal = true;
+            this.W50.Location = new System.Drawing.Point(11, 23);
+            this.W50.Margin = new System.Windows.Forms.Padding(2);
+            this.W50.Maximum = new decimal(new int[] {
             0,
+            1,
             0,
             0});
-            this.B50.Name = "B50";
-            this.B50.Size = new System.Drawing.Size(60, 25);
-            this.B50.TabIndex = 111;
+            this.W50.Name = "W50";
+            this.W50.Size = new System.Drawing.Size(153, 25);
+            this.W50.TabIndex = 111;
             // 
             // ApplyButton
             // 
@@ -252,11 +252,11 @@
             this.Controls.Add(this.L_50_BIT_04);
             this.Controls.Add(this.L_50_BIT_02);
             this.Controls.Add(this.L_50_BIT_01);
-            this.Controls.Add(this.B50);
+            this.Controls.Add(this.W50);
             this.Name = "SkillSystemsEffectivenessReworkClassTypeForm";
             this.Text = "クラス分類";
             this.Load += new System.EventHandler(this.SkillSystemsEffectivenessReworkClassTypeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.B50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.W50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMAGE_8)).EndInit();
@@ -278,7 +278,7 @@
         private System.Windows.Forms.CheckBox L_50_BIT_04;
         private System.Windows.Forms.CheckBox L_50_BIT_02;
         private System.Windows.Forms.CheckBox L_50_BIT_01;
-        private System.Windows.Forms.NumericUpDown B50;
+        private System.Windows.Forms.NumericUpDown W50;
         private System.Windows.Forms.Button ApplyButton;
         private InterpolatedPictureBox IMAGE_1;
         private InterpolatedPictureBox IMAGE_2;
