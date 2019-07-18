@@ -12532,3 +12532,5 @@
 08A9A9E0	何かのTSA	27	{J}
 089DD4E8	何かのTSA	27	{U}
 080BBF18	FIN画像を表示する	{J}
+0802EC8C	Use_MBarrierStaff	{U}
+0802EBC4	Use_MBarrierStaff	{J}
