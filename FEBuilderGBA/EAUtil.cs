@@ -464,11 +464,14 @@ namespace FEBuilderGBA
             {
                 sb.AppendLine("#define SummonUnitTable "
                     + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer())));
+                if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+                {
+                    SkillConfigSkillSystemForm.Export(sb);
+                }
             }
             
 
             UnitActionPointerForm.SupportActionRework(sb);
-
             if (org_sp != U.NOT_FOUND)
             {
                 sb.AppendLine("#define FEBUILDER_EXTRA_ORG " + U.To0xHexString(org_sp));

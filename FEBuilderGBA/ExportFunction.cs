@@ -27,19 +27,22 @@ namespace FEBuilderGBA
             {
                 string name = pair.Key;
                 uint addr = U.toOffset(pair.Value);
-
-                if (!U.isSafetyOffset(addr))
-                {
-                    continue;
-                }
-                sb.AppendLine("PUSH");
-                sb.Append("ORG ");
-                sb.AppendLine(U.To0xHexString(addr));
-                sb.Append(name);
-                sb.AppendLine(":");
-                sb.AppendLine("POP");
-                sb.AppendLine("#define " + name + " " + U.To0xHexString(addr));
+                One(sb, name, addr);
             }
+        }
+        public static void One(StringBuilder sb,string name,uint addr)
+        {
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            sb.AppendLine("PUSH");
+            sb.Append("ORG ");
+            sb.AppendLine(U.To0xHexString(addr));
+            sb.Append(name);
+            sb.AppendLine(":");
+            sb.AppendLine("POP");
+            sb.AppendLine("#define " + name + " " + U.To0xHexString(addr));
         }
 
     }

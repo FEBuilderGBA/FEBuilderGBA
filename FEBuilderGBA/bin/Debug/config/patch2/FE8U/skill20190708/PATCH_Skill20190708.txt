@@ -671,4 +671,7 @@ EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 
 EXPORT:1=GetSkills.dmp	Skill_Getter
 EXPORT:2=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
+EXPORT:3=rtextloop.dmp	RTextLoop
+EXPORT:4=skillDescGetter.dmp	SkillDescGetter
+EXPORT:5=nihilTester.dmp	SkillTester
 
