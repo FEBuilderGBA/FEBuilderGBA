@@ -1,0 +1,5 @@
+08060784=Peg
+0806079C=Cavalie
+08060790=Wyvern
+080607C4=Armor
+080607D0=Walking

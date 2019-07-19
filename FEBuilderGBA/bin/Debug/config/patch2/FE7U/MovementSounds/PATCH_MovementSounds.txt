@@ -1,0 +1,26 @@
+NAME=移動音
+NAME.en=MovementSounds
+NAME.zh=MovementSounds
+TYPE=STRUCT
+TAG=#ENGINE #SOUND
+
+EDIT_PATCH=PATCH_MovementSounds.txt
+IF:0x6CB12=0x01 0x79 0x01 0x4B 0x89 0x00 0x58 0x58 0x87 0x46
+
+AUTHOR=7743
+
+POINTER=0x6CB1C
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 00 00 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+LISTNAME=CLASS
+P0:$COMBO MovementSounds_combo.txt:.jp=Sound
+P0:$COMBO MovementSounds_combo.en.txt:.en=Sound
+P0:$COMBO MovementSounds_combo.zh.txt:.zh=Sound
+
+INFO=クラスごとに足音(移動音)を設定します
+INFO.en=Set footsteps (moving sounds) for each class
+INFO.zh=为每个班级设置足迹（移动声音）

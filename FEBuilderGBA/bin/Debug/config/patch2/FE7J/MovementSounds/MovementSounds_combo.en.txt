@@ -1,0 +1,6 @@
+0806D320=Peg
+0806D338=Cavalie
+0806D32C=Wyvern
+0806D372=Armor
+0806D37C=Fire Dragon
+0806D388=Walking

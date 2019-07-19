@@ -1347,3 +1347,5 @@
 0801753c	UnitHasItem
 08016d08	GetUnitItemSlot
 0809750C	売り値を求める関数 RET=売値 r0=個数 << 8 + アイテムID
+0805FEC8	NewSoundStepPlay6C
+08060748	MOVEUNIT6C_PlaySoundStepByClass

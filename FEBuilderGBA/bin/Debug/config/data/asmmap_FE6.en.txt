@@ -1358,3 +1358,5 @@
 0801753c	UnitHasItem
 08016d08	GetUnitItemSlot
 0809750C	Function to find the selling price	RET=selling price	r0=quantity << 8 + item ID.
+0805FEC8	NewSoundStepPlay6C
+08060748	MOVEUNIT6C_PlaySoundStepByClass

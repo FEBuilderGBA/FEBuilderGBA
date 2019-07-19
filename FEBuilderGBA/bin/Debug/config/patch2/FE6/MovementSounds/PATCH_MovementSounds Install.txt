@@ -1,0 +1,15 @@
+NAME=移動音(Installer)
+NAME.en=MovementSounds(Installer)
+NAME.zh=MovementSounds(Installer)
+TYPE=EA
+TAG=#ENGINE
+
+EA=MovementSounds_Install.event
+EDIT_PATCH=PATCH_MovementSounds.txt
+PATCHED_IF:0x60762=0x01 0x79 0x01 0x4B 0x89 0x00 0x58 0x58 0x87 0x46
+
+AUTHOR=7743
+
+INFO=クラスごとに足音(移動音)を設定します
+INFO.en=Set footsteps (moving sounds) for each class
+INFO.zh=为每个班级设置足迹（移动声音）

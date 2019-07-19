@@ -4763,3 +4763,7 @@
 080B2B64	Acquisition of shop sales price.	{J}
 080B1D90	Function to find the selling price RET= selling price r0=quantity << 8 + item ID.	{U}
 080B2BB4	Function to find the selling price RET= selling price r0=quantity << 8 + item ID.	{J}
+0806CA48	NewSoundStepPlay6C	{J}
+0806D2E4	MOVEUNIT6C_PlaySoundStepByClass	{J}
+0806C25C	NewSoundStepPlay6C	{U}
+0806CAF8	MOVEUNIT6C_PlaySoundStepByClass	{U}

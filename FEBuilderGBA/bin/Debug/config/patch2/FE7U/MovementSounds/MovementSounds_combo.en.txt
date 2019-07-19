@@ -1,0 +1,6 @@
+0806CB34=Peg
+0806CB4C=Cavalie
+0806CB40=Wyvern
+0806CB86=Armor
+0806CB90=Fire Dragon
+0806CB9C=Walking

@@ -1,0 +1,8 @@
+PUSH
+ORG 0x060762 //FE6
+#incbin MovementSounds.dmp
+POIN MovementSoundsTable
+POP
+
+ALIGN 4
+#include MovementSoundsTable.event
