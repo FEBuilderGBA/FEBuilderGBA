@@ -673,6 +673,7 @@ TxtData0xe1c:
 setText_WithHuffman(0xe1B,TxtData0xe1b)
 setText_WithHuffman(0xe1C,TxtData0xe1c)
 
+ALIGN 4
 #include "HeroesMovement_Table.event"  //将来Skillと統合したい。とりあえずスタンドアローンで提供する
 
 ALIGN 4 // For good measure
