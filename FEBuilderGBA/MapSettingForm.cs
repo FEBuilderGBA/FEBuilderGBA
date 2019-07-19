@@ -658,19 +658,21 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    int mapwidth;
-                    int mapheight;
-                    ushort[] mar = ImageUtilMap.UnLZ77MapDataUShort(plists.mappointer_plist, out mapwidth, out mapheight);
-                    if (mar == null)
+
+                    Size mapsize = ImageUtilMap.GetMapSize(plists.obj_plist, plists.palette_plist, plists.config_plist, plists.mappointer_plist);
+                    if (mapsize.Width <= 0 || mapsize.Height <= 0)
                     {
-                        //LZ77に解凍に失敗していそうだからチェックする
+                        //LZ77に失敗してそうだからチェックする
                         FELint.CheckLZ77Errors(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
+                        errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
+                            , R._("マップが破損しています。")
+                            , mapid));
                     }
 
-                    uint limitWidth = ImageUtilMap.GetLimitMapWidth(mapheight);
-                    if (mapwidth < ImageUtilMap.MAP_MIN_WIDTH || mapheight < ImageUtilMap.MAP_MIN_HEIGHT)
+                    uint limitWidth = ImageUtilMap.GetLimitMapWidth(mapsize.Height);
+                    if (mapsize.Width < ImageUtilMap.MAP_MIN_WIDTH || mapsize.Height < ImageUtilMap.MAP_MIN_HEIGHT)
                     {
-                        if (Program.ROM.RomInfo.version() == 8 && mapid == 0x38)
+                        if (IsFreliaCasle(mapid))
                         {
                             //nop
                             //フレリア城
@@ -679,20 +681,20 @@ namespace FEBuilderGBA
                         {
                             errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
                                 , R._("マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})"
-                                , mapwidth, mapheight, ImageUtilMap.MAP_MIN_WIDTH, ImageUtilMap.MAP_MIN_HEIGHT)
+                                , mapsize.Width, mapsize.Height, ImageUtilMap.MAP_MIN_WIDTH, ImageUtilMap.MAP_MIN_HEIGHT)
                                 , mapid));
                         }
                     }
                     else if (limitWidth == 0)
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", mapwidth, mapheight, limitWidth)
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})", mapsize.Width, mapsize.Height, limitWidth)
                                 ));
                     }
-                    else if (mapwidth > limitWidth)
+                    else if (mapsize.Width > limitWidth)
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
-                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", mapwidth, mapheight, limitWidth)
+                                , R._("マップが広すぎます。\r\n現在のサイズ({0},{1})\r\nこの幅だと、利用可能な高さは、幅は{2}までです。", mapsize.Width, mapsize.Height, limitWidth)
                                 ));
                     }
                 }
@@ -733,6 +735,10 @@ namespace FEBuilderGBA
                         , R._("PLIST({0})が無効です", plists.anime2_plist)));
                 }
             }
+        }
+        public static bool IsFreliaCasle(uint mapid)
+        {
+            return Program.ROM.RomInfo.version() == 8 && mapid == 0x38;
         }
 
         private void W4_ValueChanged(object sender, EventArgs e)

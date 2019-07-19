@@ -195,7 +195,7 @@ namespace FEBuilderGBA
             }
             return mapObjCels;
         }
-            //マップを描画する.
+        //マップを描画する.
         public static Bitmap DrawMap(
               uint obj_plist        //image
             , uint palette_plist    //palette
@@ -290,6 +290,91 @@ namespace FEBuilderGBA
 
             return mapcanvas;
         }
+
+        //マップをチェックする.
+        public static Size GetMapSize(
+              uint obj_plist        //image
+            , uint palette_plist    //palette
+            , uint config_plist    //tsa
+            , uint mappointer_plist //mar
+            )
+        {
+            //チップセットの読込(マップチップの画像をどう解釈するか定義するデータ)
+            byte[] configUZ = UnLZ77ChipsetData(config_plist);
+            if (configUZ == null)
+            {
+                return new Size(0, 0);
+            }
+
+            //マップ配置データの読込
+            byte[] mappointerUZ = UnLZ77MapData(mappointer_plist);
+            if (mappointerUZ == null)
+            {
+                return new Size(0, 0);
+            }
+
+            if (mappointerUZ.Length < 2)
+            {
+                return new Size(0, 0);
+            }
+
+            //マップデータの先頭2バイトにマップの幅高さが入っている.
+            //チップの数なので、 16*width=ピクセル  16*height=ピクセル である.
+            int width = mappointerUZ[0];
+            int height = mappointerUZ[1];
+
+            if (width <= 0 || height <= 0)
+            {//サイズが不正
+                return new Size(0, 0);
+            }
+
+            UInt16[] tsa = new UInt16[(width * 2) * (height * 2)];
+
+            int x = 0;
+            int y = 0;
+            for (int i = 2; i + 1 < mappointerUZ.Length; i += 2)
+            {
+                //マップデータを読む
+                int m = (mappointerUZ[i] + ((UInt16)mappointerUZ[i + 1] << 8));
+                int tile_tsa_index = m << 1;
+                if (tile_tsa_index + 7 >= configUZ.Length)
+                {//不正なTSA
+                    return new Size(0, 0);
+                }
+
+                //チップセットのTSAデータを読み込む.
+                UInt16 lefttop = (UInt16)(configUZ[tile_tsa_index] + ((UInt16)configUZ[tile_tsa_index + 1] << 8));
+                UInt16 righttop = (UInt16)(configUZ[tile_tsa_index + 2] + ((UInt16)configUZ[tile_tsa_index + 3] << 8));
+                UInt16 leftbottom = (UInt16)(configUZ[tile_tsa_index + 4] + ((UInt16)configUZ[tile_tsa_index + 5] << 8));
+                UInt16 rightbottom = (UInt16)(configUZ[tile_tsa_index + 6] + ((UInt16)configUZ[tile_tsa_index + 7] << 8));
+
+                int tsaIndex;
+                tsaIndex = (x) + ((y) * (width * 2));
+                if (tsaIndex < tsa.Length) tsa[tsaIndex] = lefttop;
+
+                tsaIndex = (x + 1) + ((y) * (width * 2));
+                if (tsaIndex < tsa.Length) tsa[tsaIndex] = righttop;
+
+                tsaIndex = (x) + ((y + 1) * (width * 2));
+                if (tsaIndex < tsa.Length) tsa[tsaIndex] = leftbottom;
+
+                tsaIndex = (x + 1) + ((y + 1) * (width * 2));
+                if (tsaIndex < tsa.Length) tsa[tsaIndex] = rightbottom;
+
+                x += 2;
+                if (x >= width * 2)
+                {
+                    x = 0;
+                    y += 2;
+                    if (y >= height * 2)
+                    {
+                        break;
+                    }
+                }
+            }
+            return new Size(width , height );
+        }
+
 
         //マップの部分変更
         public static Bitmap DrawChangeMap(
