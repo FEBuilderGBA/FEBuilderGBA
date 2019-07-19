@@ -11780,8 +11780,7 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 世界地图据点
 
 :OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。
-
-更新OAM帧时发生错误。如果经常发生此错误，请发送带有动画数据的report7z。
+更新OAM帧时发生错误。\r\n如果经常发生此错误，请发送带有动画数据的report7z。
 
 :マップが破損しています。
 地图已损坏。
