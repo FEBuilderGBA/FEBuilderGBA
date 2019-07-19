@@ -1453,7 +1453,7 @@ namespace FEBuilderGBA
         }        
         
         //画像の書き込みアドレスが決定したら、画像ポインタをかかないといけないFrameDataを更新します。
-        static byte[] updateFrameDataAddress(byte[] frameData, List<image_data> images)
+        static string updateFrameDataAddress(byte[] frameData, List<image_data> images)
         {
             uint length = (uint)frameData.Length;
             for (uint n = 0; n < length; )
@@ -1467,13 +1467,13 @@ namespace FEBuilderGBA
                 int a = (int)U.u32(frameData, n + 4);
                 if (a < 0 || a >= images.Count)
                 {
-                    throw new Exception(R._("out of range a:{0} images.Count:{1} index:{2} dump:{3}", a, images.Count, n + 4,U.DumpByte(frameData)));
+                    return R._("out of range a:{0} images.Count:{1} index:{2} dump:{3}", a, images.Count, n + 4,U.DumpByte(frameData));
                 }
 
                 U.write_p32(frameData, n + 4, images[a].write_addr);
                 n += 4 + 4 + 4;
             }
-            return frameData;
+            return "";
         }
 
 
@@ -2608,7 +2608,12 @@ namespace FEBuilderGBA
             }
 
             //画像の書き込みアドレスが決定したら、画像ポインタをかかないといけないFrameDataを更新します。
-            z = updateFrameDataAddress(frameData.ToArray(), images);
+            z = frameData.ToArray();
+            string errorFrame = updateFrameDataAddress(z, images);
+            if (errorFrame != "")
+            {
+                return R.Error("OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。") + "\r\n" + errorFrame;
+            }
             z = LZ77.compress(z);
             ra.WriteAndWritePointer(battleanime_baseaddress + 16, z, undodata);
 
@@ -3343,7 +3348,12 @@ namespace FEBuilderGBA
             }
 
             //画像の書き込みアドレスが決定したら、画像ポインタをかかないといけないFrameDataを更新します。
-            z = updateFrameDataAddress(frame.ToArray(), Images);
+            z = frame.ToArray();
+            string errorFrame = updateFrameDataAddress(z, Images);
+            if (errorFrame != "")
+            {
+                return R.Error("OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。") + "\r\n" + errorFrame;
+            }
 
             z = LZ77.compress(z);
             addr = InputFormRef.AppendBinaryData(z, undodata);

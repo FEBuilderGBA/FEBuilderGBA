@@ -28,7 +28,7 @@ namespace FEBuilderGBA
         }
         public void JumpToMAPID(uint mapid)
         {
-            MAP_LISTBOX.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAP_LISTBOX, mapid);
         }
 
         List<UseFlagID> FlagList = new List<UseFlagID>();

@@ -2049,11 +2049,11 @@ namespace FEBuilderGBA
 
         public void JumpToMAPID(uint mapid)
         {
-            MAP_LISTBOX.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAP_LISTBOX,mapid);
         }
         public void JumpToMAPIDAndAddr(uint mapid, EventCondForm.CONDTYPE condtype, uint addr)
         {
-            MAP_LISTBOX.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAP_LISTBOX, mapid);
             uint mapcond_addr = MapSettingForm.GetEventAddrWhereMapID(mapid);
             if (!U.isSafetyOffset(mapcond_addr))
             {

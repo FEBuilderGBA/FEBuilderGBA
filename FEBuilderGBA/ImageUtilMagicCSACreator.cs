@@ -989,7 +989,12 @@ namespace FEBuilderGBA
             }
 
             //画像の書き込みアドレスが決定したら、画像ポインタをかかないといけないFrameDataを更新します。
-            byte[] frameDataUZ = updateFrameDataAddress(frameData.ToArray(), bgImagesData, objImages);
+            byte[] frameDataUZ = frameData.ToArray();
+            string errorFrame = updateFrameDataAddress(frameDataUZ, bgImagesData, objImages);
+            if (errorFrame != "")
+            {
+                return R.Error("OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。") + "\r\n" + errorFrame;
+            }
             ra.WriteAndWritePointer(magic_baseaddress + 0, frameDataUZ, undodata);
 
             //端数の再利用的ない古いデータは0x00クリア.
@@ -1160,7 +1165,7 @@ namespace FEBuilderGBA
         }
 
         //画像の書き込みアドレスが決定したら、画像ポインタをかかないといけないFrameDataを更新します。
-        static byte[] updateFrameDataAddress(byte[] frameData, List<ImageUtilOAM.image_data> bgImagesData, List<ImageUtilOAM.image_data>  objImageData)
+        static string updateFrameDataAddress(byte[] frameData, List<ImageUtilOAM.image_data> bgImagesData, List<ImageUtilOAM.image_data>  objImageData)
         {
             uint length = (uint)frameData.Length;
             for (uint n = 0; n < length; n += 4)
@@ -1195,7 +1200,7 @@ namespace FEBuilderGBA
 
                 n += 4 * 7;
             }
-            return frameData;
+            return "";
         }
     }
 }

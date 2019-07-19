@@ -123,7 +123,7 @@ namespace FEBuilderGBA
 
         public void JumpToMap(uint mapid)
         {
-            MAP_LISTBOX.SelectedIndex = (int)mapid;
+            U.SelectedIndexSafety(MAP_LISTBOX, mapid);
         }
         public void JumpTo(uint addr, int unitIndex = 0)
         {

@@ -11779,3 +11779,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。
+An error occurred while updating the OAM frame.\r\nIf this error occurs frequently, please send report7z along with the animation data.

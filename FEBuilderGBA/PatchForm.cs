@@ -4628,7 +4628,6 @@ namespace FEBuilderGBA
         {
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
 
-            List<U.AddrResult> list;
             foreach (var pair in patch.Param)
             {
                 string[] sp = pair.Key.Split(':');
