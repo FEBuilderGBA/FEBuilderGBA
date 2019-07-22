@@ -7510,7 +7510,7 @@ r3=X tile position of menu of right	{U}
 08A2D2CC	&PALETTE3	Something's palette	74	{U}
 08A2E1B8	&PALETTE2	Something's palette	75	{U}
 08A2E4A4	&PALETTE	Something's palette	76	{U}
-08A2E8F0	&PALETTE	Something's palette	77	{U}
+08A2E8F0	&PALETTE2	Something's palette	77	{U}
 08A360C8	&PALETTE	Something's palette	78	{U}
 08A372C0	&PALETTE	Something's palette	79	{U}
 08A37300	&PALETTE	Something's palette	80	{U}
@@ -7608,7 +7608,7 @@ r3=X tile position of menu of right	{U}
 08AAAA38	&PALETTE3	Something's palette	73	{J}
 08AAEAE4	&PALETTE2	Something's palette	75	{J}
 08A79B70	&PALETTE	Something's palette	76	{J}
-08AAF654	&PALETTE	Something's palette	77	{J}
+08AAF654	&PALETTE2	Something's palette	77	{J}
 08AB6EF4	&PALETTE	Something's palette	78	{J}
 08AB8044	&PALETTE	Something's palette	79	{J}
 08A97C0C	&PALETTE	Something's palette	80	{J}
@@ -8525,7 +8525,7 @@ r3=X tile position of menu of right	{U}
 086B97E8	&PALETTE	Something's palette	157	{J}
 086BB044	&PALETTE	Something's palette	158	{J}
 087554F8	&PALETTE	Something's palette	159	{J}
-08756BB4	&PALETTE	Something's palette	160	{J}
+08756BB4	&PALETTE16	Something's palette	160	{J}
 0875A9DC	&PALETTE	Something's palette	161	{J}
 0875D358	&PALETTE	Something's palette	162	{J}
 08762170	&PALETTE	Something's palette	163	{J}
@@ -9535,10 +9535,10 @@ r3=X tile position of menu of right	{U}
 080BD02C	Draw capture assessment	ending	{J}
 080BCC90	Setting background of screen for evaluating capture	ending	I have a bug.	{J}
 080BC044	Display Fin screen Procs launch	{J}
-08AC5558	&PALETTE	Palette of tactics evaluation screen	1	{J}
-08AC6C58	&PALETTE	Palette of tactics evaluation screen	2	{J}
+08AC5558	&PALETTE2	Palette of tactics evaluation screen	1	{J}
+08AC6C58	&PALETTE2	Palette of tactics evaluation screen	2	{J}
 08AC6BF8	&PALETTE	Palette of tactics evaluation screen	3	{J}
-08AC6C18	&PALETTE	Palette of tactics evaluation screen	4	{J}
+08AC6C18	&PALETTE2	Palette of tactics evaluation screen	4	{J}
 080BC1B8	Draw total number of turns	ending	{J}
 080BC0F4	Preparing to draw background of screen with total number of turns	ending		{J}
 080BCECC	Set background of screen with total number of turns	ending		{J}

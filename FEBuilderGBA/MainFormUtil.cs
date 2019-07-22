@@ -2310,7 +2310,7 @@ namespace FEBuilderGBA
             }
         }
 
-        public static string CheckOrignalROM(string filename,bool isUI = true)
+        public static string CheckOrignalROM(string filename)
         {
             if (!File.Exists(filename))
             {
@@ -2329,17 +2329,8 @@ namespace FEBuilderGBA
                 }
             }
 
-            string noMatch = R._("指定されたROMは無改造ROMではありません。CRC32が一致しません。");
-            if (isUI)
-            {
-                DialogResult dr =
-                    R.ShowNoYes(noMatch + "\r\n" + R._("それでも続行してもよろしいですか?"));
-                if (dr == DialogResult.Yes)
-                {//CRCマッチしないけど強行する
-                    return "";
-                }
-            }
-
+            uint orignalCRC32 = Program.ROM.RomInfo.orignal_crc32();
+            string noMatch = R._("指定されたROMは無改造ROMではありません。\r\nCRC32が一致しません。\r\n正規品の無改造ROMを指定してください。\r\n正規品のROMからupsを作らないと誰もそれを開けません。\r\n\r\n指定されたROMのCRC32:\r\n{0}\r\n正規品のCRC32:\r\n{1}", U.ToHexString8(targetCRC32), U.ToHexString8(orignalCRC32));
             return noMatch;
         }
 

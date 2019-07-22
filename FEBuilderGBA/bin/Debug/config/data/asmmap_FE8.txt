@@ -6942,7 +6942,7 @@
 08A2D2CC	&PALETTE3	何かのパレット	74	{U}
 08A2E1B8	&PALETTE2	何かのパレット	75	{U}
 08A2E4A4	&PALETTE	何かのパレット	76	{U}
-08A2E8F0	&PALETTE	何かのパレット	77	{U}
+08A2E8F0	&PALETTE2	何かのパレット	77	{U}
 08A360C8	&PALETTE	何かのパレット	78	{U}
 08A372C0	&PALETTE	何かのパレット	79	{U}
 08A37300	&PALETTE	何かのパレット	80	{U}
@@ -7042,7 +7042,7 @@
 08AAAA38	&PALETTE3	何かのパレット	73	{J}
 08AAEAE4	&PALETTE2	何かのパレット	75	{J}
 08A79B70	&PALETTE	何かのパレット	76	{J}
-08AAF654	&PALETTE	何かのパレット	77	{J}
+08AAF654	&PALETTE2	何かのパレット	77	{J}
 08AB6EF4	&PALETTE	何かのパレット	78	{J}
 08AB8044	&PALETTE	何かのパレット	79	{J}
 08A97C0C	&PALETTE	何かのパレット	80	{J}
@@ -8505,7 +8505,7 @@
 086B97E8	&PALETTE	何かのパレット	157	{J}
 086BB044	&PALETTE	何かのパレット	158	{J}
 087554F8	&PALETTE	何かのパレット	159	{J}
-08756BB4	&PALETTE	何かのパレット	160	{J}
+08756BB4	&PALETTE16	何かのパレット	160	{J}
 0875A9DC	&PALETTE	何かのパレット	161	{J}
 0875D358	&PALETTE	何かのパレット	162	{J}
 08762170	&PALETTE	何かのパレット	163	{J}
@@ -9543,10 +9543,10 @@
 080BD02C	攻略評価を描画	エンディング	{J}
 080BCC90	攻略評価の画面の背景を設定	エンディング	バグってる	{J}
 080BC044	Fin画面を表示するProcsの起動	{J}
-08AC5558	&PALETTE	攻略評価画面のパレット	1	{J}
-08AC6C58	&PALETTE	攻略評価画面のパレット	2	{J}
+08AC5558	&PALETTE2	攻略評価画面のパレット	1	{J}
+08AC6C58	&PALETTE2	攻略評価画面のパレット	2	{J}
 08AC6BF8	&PALETTE	攻略評価画面のパレット	3	{J}
-08AC6C18	&PALETTE	攻略評価画面のパレット	4	{J}
+08AC6C18	&PALETTE2	攻略評価画面のパレット	4	{J}
 080BC1B8	総ターン数を描画	エンディング	{J}
 080BC0F4	総ターン数の画面の背景を描画する準備	エンディング		{J}
 080BCECC	総ターン数の画面の背景を設定	エンディング		{J}

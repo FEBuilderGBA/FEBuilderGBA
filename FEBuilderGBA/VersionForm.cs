@@ -41,8 +41,14 @@ namespace FEBuilderGBA
                 FEVersion += " @ROMSize: " + Program.ROM.Data.Length;
 
                 U.CRC32 crc32 = new U.CRC32();
-                FEVersion += " @CRC32: " + U.ToHexString8(crc32.Calc(Program.ROM.Data));
+                uint targetCRC32 = crc32.Calc(Program.ROM.Data);
+                FEVersion += " @CRC32: " + U.ToHexString8(targetCRC32);
                 sb.AppendLine("FEVersion:" + FEVersion);
+
+                if (targetCRC32 == Program.ROM.RomInfo.orignal_crc32())
+                {
+                    sb.AppendLine(R._("[このROMは正規品の無改造ROMです。]"));
+                }
             }
 
             if (IsOldVersion())

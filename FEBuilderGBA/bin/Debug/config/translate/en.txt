@@ -3781,6 +3781,9 @@ It is necessary to specify IMAGE_POINTER or ZIMAGE_POINTER.There is no BG image.
 :時間指定がありません。 \r\nO filename\r\nB filename\r\ntime\r\n\r\nみたいに、セットで登録する必要があります。\r\nFile:{0} Line:{1}
 There is no time designation. \r\nO filename\r\nB filename\r\ntime\r\n\r\nLike set, you need to register as a set.\r\nFile:{0} Line:{1}
 
+:OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。
+An error occurred while updating the OAM frame.\r\nIf this error occurs frequently, please send report7z along with the animation data.
+
 :これはFEditorの小さいBG形式です。
 This is a small BG format of FEditor.
 
@@ -6034,11 +6037,8 @@ Display the UnitAction table.\r\nThe UnitAction table is a table that defines th
 :ファイルが見つかりません
 File not found
 
-:指定されたROMは無改造ROMではありません。CRC32が一致しません。
-The specified ROM is not an unmodified ROM.CRC32 does not match.
-
-:それでも続行してもよろしいですか?
-Do you still wish to continue?
+:指定されたROMは無改造ROMではありません。\r\nCRC32が一致しません。\r\n正規品の無改造ROMを指定してください。\r\n正規品のROMからupsを作らないと誰もそれを開けません。\r\n\r\n指定されたROMのCRC32:\r\n{0}\r\n正規品のCRC32:\r\n{1}
+The specified ROM is not an unmodified ROM.\r\nCRC32 does not match.\r\nPlease specify a genuine ROM without modification.\r\nNo one can open it without making an ups from a genuine ROM.\r\n\r\nYour ROM CRC32:\r\n{0}\r\nGenuine ROM CRC32:\r\n{1}
 
 :エラーに移動する
 Go to error
@@ -7155,6 +7155,9 @@ Object Type, Palette, and Tileset Config primarily determine map appearance (Til
 
 :PLIST({0})が無効です
 PLIST ({0}) is invalid
+
+:マップが破損しています。
+Map is damaged.
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
@@ -10519,9 +10522,6 @@ Please specify the location where the backup is located.
 :ファイル名:\r\n{0}\r\n\r\n更新日付:\r\n{1}
 file name:\r\n{0}\r\n\r\nUpdate date:\r\n{1}
 
-:無改造ROMを指定してください。
-Please specify unmodified ROM.
-
 :エミュレータにロードするROMを作れませんでした。\r\n{0}
 Unable to create a ROM to load into the emulator.\r\n{0}
 
@@ -10938,6 +10938,9 @@ Example: When the hero attempts to fight, it freezes.\r\nEven characters other t
 
 :問題点を記載してください。
 Please describe the problem.
+
+:無改造ROMを指定してください。
+Please specify unmodified ROM.
 
 :レポートを保存するファイル名を選択してください
 Please select a file name to save the report
@@ -11557,6 +11560,9 @@ The result of adapting the UPS is incorrect. CRC does not match.
 :{1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nこのソフトウェアはオープンソースのフリーソフトウェアです。\r\nGPLv3に従ってご自由にお使いください。
 {1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nThis software is open source.\r\nPlease use it freely according to GPLv3.
 
+:[このROMは正規品の無改造ROMです。]
+[This ROM is a genuine ROM without modification.]
+
 :現在利用しているバージョンから、1か月以上が経過しています。\r\n新しいバージョンが出ていないか確認してください。
 One month or more has passed since the version currently being used.\r\nPlease check whether there is a new version.
 
@@ -11779,8 +11785,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:OAMフレーム更新中にエラーが発生しました。\r\nこのエラーが頻繁に出る場合は、アニメデータと一緒にreport7zを送ってください。
-An error occurred while updating the OAM frame.\r\nIf this error occurs frequently, please send report7z along with the animation data.
-
-:マップが破損しています。
-Map is damaged.

@@ -4775,6 +4775,7 @@ namespace FEBuilderGBA
             g_Cache_itemicon_extends = itemicon_extends.NoCache;
             g_Cache_shinan_table = NO_CACHE;
             g_Cache_SkipWorldMap_enum = mnc2_fix_enum.NoCache;
+            g_Cache_ImprovedSoundMixer = ImprovedSoundMixer.NoCache;
             g_LevelMaxCaps = NO_CACHE;
         }
 
@@ -10631,6 +10632,53 @@ namespace FEBuilderGBA
             }
             return portrait_extends.NO;
         }
+
+
+        //音楽ルーチンの改良パッチの有無.
+        public enum ImprovedSoundMixer
+        {
+             NO             //なし
+           , ImprovedSoundMixer
+           , NoCache = (int)NO_CACHE
+        };
+        static ImprovedSoundMixer g_Cache_ImprovedSoundMixer = ImprovedSoundMixer.NoCache;
+        public static ImprovedSoundMixer SearchImprovedSoundMixer()
+        {
+            if (g_Cache_ImprovedSoundMixer == ImprovedSoundMixer.NoCache)
+            {
+                g_Cache_ImprovedSoundMixer = SearchImprovedSoundMixerLow();
+            }
+            return g_Cache_ImprovedSoundMixer;
+        }
+        public static ImprovedSoundMixer SearchImprovedSoundMixerLow()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="ImprovedSoundMixer",	ver = "FE8J", addr = 0xD4234,data = new byte[]{0xb1, 0x6c, 0x00, 0x03, 0x06, 0x00}},
+                new PatchTableSt{ name="ImprovedSoundMixer",	ver = "FE8U", addr = 0xd01d0,data = new byte[]{0xb0, 0x6c, 0x00, 0x03, 0x18, 0x02}},
+            };
+
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+
+                //チェック開始アドレス
+                byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
+                if (U.memcmp(t.data, data) != 0)
+                {
+                    continue;
+                }
+                if (t.name == "ImprovedSoundMixer")
+                {
+                    return ImprovedSoundMixer.ImprovedSoundMixer;
+                }
+            }
+            return ImprovedSoundMixer.NO;
+        }
+
 
         //顔画像拡張システム.
         public enum itemicon_extends
