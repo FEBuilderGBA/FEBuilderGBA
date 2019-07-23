@@ -3350,7 +3350,7 @@ Please select the extension of the list and increase the magic list.
 Magic Animation With Comment|*.txt|Magic Animation No comment|*.txt|Animtion GIF|*.gif|Dump All|*.txt|All files|*
 
 :追加魔法
-Magic Animations
+Magic Extends
 
 :魔法テーブルを拡張してもよろしいですか？
 Are you sure you want to extend the magic table?
@@ -11784,4 +11784,28 @@ Placement Flag
 
 :ワールドマップ拠点
 World Map Nodes
+
+:プロジェクト名の変更する
+Change Project Name
+
+:プロジェクトのファイル名の変更を安全に行います。\r\n過去のバックアップの名前も行います。
+Safely change the project file name. \r\nThe name of the past backup is also done.
+
+:新しい名前
+New Name
+
+:現在の名前
+Current Name
+
+:プロジェクト名の変更
+Change Project Name
+
+:変更したデータが保存されていません。\r\n名前を変更する前に、データを保存してください。
+The changed data has not been saved.\r\nSave the data before changing the name.
+
+:ファイル名として利用できない文字が含まれています
+Contains characters that can not be used as file names
+
+:仮想ROMの名前を変更することはできません。
+You can not change the name of virtual ROM.
 

@@ -2773,6 +2773,10 @@ namespace FEBuilderGBA
             str = str.Replace("\r", " ");
             return str;
         }
+        public static bool IsBadFilename(string str)
+        {
+            return (escape_filename(str) != str);
+        }
 
         public static string ConfigDataFilename(string type)
         {

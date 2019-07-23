@@ -2799,14 +2799,14 @@ namespace FEBuilderGBA
             InputFormRef.ImprovedSoundMixer withImprovedSoundMixer = InputFormRef.SearchImprovedSoundMixer();
             if (useFormatCheck)
             {
-                uint limit = 22 * 1024;
+                uint limit = 26758;
                 if (withImprovedSoundMixer == InputFormRef.ImprovedSoundMixer.ImprovedSoundMixer)
                 {//もっと高音質にできるらしい
-                    limit = 28 * 1024;
+                    limit = 65536;
                 }
 
-                if (fmt_samples_per_sec >= limit)
-                {//22khzを超える
+                if (fmt_samples_per_sec > limit)
+                {
                     R.ShowStopError("Waveファイルが高音質すぎます。{0}hz\r\n品質は、8bit 12khz monoぐらいにしてください。", fmt_samples_per_sec);
                     return null;
                 }
