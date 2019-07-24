@@ -1318,6 +1318,7 @@
 @CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
 @CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with the bottom 6 bits of 0xD, are battles
 @CharacterBattleStatistic@0E	byte	Character number of the most recent killer
+@CharacterBattleStatistic@0F	byte	Unk
 
 0203E790	@CharacterBattleStatistic@[46]	Unit	{U}
 0203E768	@CharacterBattleStatistic@[46]	Unit	{J}

@@ -1,0 +1,26 @@
+NAME=イベントから、ユニットの勝敗テーブル(BWL)をリセットする命令
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_ResetBWLRecord.dmp=0x00 0xB5 0x83 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_ResetBWLRecord.dmp
+
+INFO=指定したユニットの勝敗データ(BWLテーブル)をリセットします。
+
+AUTHOR=7743
+NAME.en=Add Event: Reset BWL Record
+
+EVENTSCRIPT=400DYY00{$L1:ASMC_ResetBWLRecord.dmp}	[YY:UNIT:ユニット]勝敗テーブル(BWL)をリセットする
+EVENTSCRIPT.en=400DYY00{$L1:ASMC_ResetBWLRecord.dmp}	[YY:UNIT:Unit]Reset BWL Record
+EVENTSCRIPT.zh=400DYY00{$L1:ASMC_ResetBWLRecord.dmp}	[YY:UNIT:人物]Reset BWL Record
+
+INFO.en=Resets the win / loss data (BWL table) of the specified unit.
+
+NAME.zh=从事件重置人物结果表（BWL）的指令
+INFO.zh=重置指定人物的赢/输数据(BWL表)。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems

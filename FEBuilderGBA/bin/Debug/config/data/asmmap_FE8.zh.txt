@@ -1360,7 +1360,9 @@ r3=X tile position of menu of the right	{U}
 @CharacterBattleStatistic@0B	byte	Along with bottom 2 bits of 0xC, wins
 @CharacterBattleStatistic@0C	short	Bottom 2 bits are wins, top 6 bits, along with the bottom 6 bits of 0xD, are battles
 @CharacterBattleStatistic@0E	byte	Character number of the most recent killer
-0203E884	@CharacterBattleStatistic@[46]	Unit	{U}
+@CharacterBattleStatistic@0F	byte	Unk
+
+0203E894	@CharacterBattleStatistic@[46]	Unit	{U}
 0203E890	@CharacterBattleStatistic@[46]	Unit	{J}
 
 @ClearTurn@00	short	章节编号和圈数	匝数<<7+章节ID

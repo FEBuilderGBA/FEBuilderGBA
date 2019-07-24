@@ -434,7 +434,6 @@ namespace FEBuilderGBA
 
             if (! File.Exists(tempFilename))
             {
-                File.Delete(tempFilename);
                 return R.Error("ファイルをダウンロードできませんでした。\r\nURL:{0}\r\nPATH:{1}\r\nfindEXE:{2}", url, dir, findEXE);
             }
 

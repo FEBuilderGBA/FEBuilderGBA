@@ -115,12 +115,21 @@ namespace FEBuilderGBA
                 pleaseWait.DoEvents("Extract...");
 
                 //解凍
-                string _update = Path.Combine(Program.BaseDirectory, "_update");
-                U.mkdir(_update);
-                string r = ArchSevenZip.Extract(update7z, _update);
-                if (r != "")
+                try
                 {
-                    BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);
+                    string _update = Path.Combine(Program.BaseDirectory, "_update");
+                    U.mkdir(_update);
+                    string r = ArchSevenZip.Extract(update7z, _update);
+                    if (r != "")
+                    {
+                        BrokenDownload(R._("ダウンロードしたファイルを解凍できませんでした。") + "\r\n" + r);
+                        this.Close();
+                        return;
+                    }
+                }
+                catch (Exception ee)
+                {
+                    BrokenDownload(ee);
                     this.Close();
                     return;
                 }

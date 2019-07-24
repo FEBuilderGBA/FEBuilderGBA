@@ -1,0 +1,17 @@
+NAME=アイテム入手での a と an を表記を取り除く
+NAME.en=Remove a and an from Got Item Popup
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|REMOVE|ONN
+
+DETERMINATION_ADDRESS=0x01619C
+
+OFF:0x01619C=0x00 0xD9
+ONN:0x01619C=0x04 0xE1
+
+AUTHOR=7743
+
+NAME.zh=从Got Item Popup中删除a和an
