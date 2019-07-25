@@ -2021,7 +2021,7 @@
 0801842C	ValidateUnitItem	{U}
 08018450	GetUnitAid	{U}
 08017836	GetUnitMagBy2Range	{U}
-080184DE	UnitHasMagicRank	{U}
+080184DC	UnitHasMagicRank	{U}
 080185AC	GetUnitUseFlags	{U}
 0801865C	CanUnitMove	{U}
 0801871C	IsPosMagicSealed	{U}
@@ -2866,7 +2866,7 @@
 0801881C	ValidateUnitItem	{J}
 08018840	GetUnitAid	{J}
 08017C26	GetUnitMagBy2Range	{J}
-080188CE	UnitHasMagicRank	{J}
+080188CC	UnitHasMagicRank	{J}
 0801899C	GetUnitUseFlags	{J}
 08018A4C	CanUnitMove	{J}
 08018B0C	IsPosMagicSealed	{J}
@@ -5066,3 +5066,7 @@
 0806D2E4	MOVEUNIT6C_PlaySoundStepByClass	{J}
 0806C25C	NewSoundStepPlay6C	{U}
 0806CAF8	MOVEUNIT6C_PlaySoundStepByClass	{U}
+08018914	GetUnitKeyItemSlotForTerrain	{J}
+08018968	GetUnitAidIconId	{J}
+08018524	GetUnitKeyItemSlotForTerrain	{U}
+08018578	GetUnitAidIconId	{U}

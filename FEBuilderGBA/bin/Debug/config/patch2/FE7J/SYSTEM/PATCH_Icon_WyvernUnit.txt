@@ -1,0 +1,18 @@
+
+NAME=アイコン 竜騎士ユニット
+NAME.en=Icon - Wyvern Unit
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS_TYPE=ITEMICONSRC
+ADDRESS=0x018996
+
+AUTHOR=7743
+
+INFO=ステータス画面に表示される竜騎士ユニットのドラゴンのアイコンを設定します。
+INFO.en=Set the dragon icon of the dragon knight unit displayed on the status screen.
+
+NAME.zh=图标 - 飞龙标志
+INFO.zh=设置状态屏幕上显示的龙骑士人物的龙图标。

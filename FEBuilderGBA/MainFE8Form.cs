@@ -1066,6 +1066,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<FE8SpellMenuExtendsForm>();
         }
 
+        private void ChangeProjectNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolChangeProjectnameForm>();
+        }
+
     }
 
 }

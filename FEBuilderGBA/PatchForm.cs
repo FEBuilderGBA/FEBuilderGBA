@@ -1769,6 +1769,32 @@ namespace FEBuilderGBA
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, link, 0, address_type, new string[0]);
                     InputFormRef.makeLinkEventHandler("", controls, AddrValue, play, 0, "SONGPLAY", new string[0]);
                 }
+                else if (address_type == "ITEMICONSRC")
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(x, y);
+                    pic.Size = new Size(CONTROL_HEIGHT * 2, CONTROL_HEIGHT * 2);
+                    x += CONTROL_HEIGHT * 2;
+
+                    pic.Name = "L_" + 0 + "_ITEMICONSRC";
+                    PatchPage.Controls.Add(pic);
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "ITEMICONSRC", new string[0]);
+                }
+                else if (address_type == "ITEMICONSRC_WEAPON")
+                {
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(x, y);
+                    pic.Size = new Size(CONTROL_HEIGHT * 2, CONTROL_HEIGHT * 2);
+                    x += CONTROL_HEIGHT * 2;
+
+                    pic.Name = "L_" + 0 + "_ITEMICONSRC";
+                    PatchPage.Controls.Add(pic);
+
+                    List<Control> controls = InputFormRef.GetAllControls(PatchPage);
+                    InputFormRef.makeLinkEventHandler("", controls, AddrValue, pic, 0, "ITEMICONSRC", new string[] { "WEAPON" });
+                }
                 else
                 {
                     List<Control> controls = InputFormRef.GetAllControls(PatchPage);

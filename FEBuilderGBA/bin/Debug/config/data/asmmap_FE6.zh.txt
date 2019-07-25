@@ -1151,3 +1151,4 @@
 0809750C	找到售价的功能	RET=售价	r0=数量<< 8 +物品ID
 0805FEC8	NewSoundStepPlay6C
 08060748	MOVEUNIT6C_PlaySoundStepByClass
+08018224	GetUnitAidIconId

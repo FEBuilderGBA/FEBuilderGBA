@@ -772,5 +772,10 @@ namespace FEBuilderGBA
             MainFormUtil.RunToolInitWizard();
         }
 
+        private void ChangeProjectNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolChangeProjectnameForm>();
+        }
+
     }
 }

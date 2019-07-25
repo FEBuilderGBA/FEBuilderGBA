@@ -1,0 +1,18 @@
+
+NAME=アイコン 騎兵ユニット
+NAME.en=Icon - Cavalry Unit
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS_TYPE=ITEMICONSRC
+ADDRESS=0x018AFE
+
+AUTHOR=7743
+
+INFO=ステータス画面に表示される騎兵ユニットの馬のアイコンを設定します。
+INFO.en=Sets the horse icon of the cavalry unit displayed on the status screen.
+
+NAME.zh=图标 - 骑兵部队
+INFO.zh=设置状态屏幕上显示的骑兵人物的马图标。
