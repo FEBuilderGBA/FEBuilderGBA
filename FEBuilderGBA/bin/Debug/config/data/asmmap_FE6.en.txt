@@ -1363,3 +1363,4 @@
 0805FEC8	NewSoundStepPlay6C
 08060748	MOVEUNIT6C_PlaySoundStepByClass
 08018224	GetUnitAidIconId
+080436A4	NewEkrGauge

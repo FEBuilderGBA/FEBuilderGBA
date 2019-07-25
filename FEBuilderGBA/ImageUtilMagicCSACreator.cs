@@ -275,7 +275,7 @@ namespace FEBuilderGBA
             //int width = 264; //FEditorAdv
             //int height = 64;
             int width = 256 - 8 - 8;
-            int height = ImageUtil.CalcHeight(width, bg_UZ.Length);
+            int height = ImageUtil.CalcHeightbyTSA(width, bgTSA_UZ.Length);
             if (height >= 160)
             {
                 height = 160;
