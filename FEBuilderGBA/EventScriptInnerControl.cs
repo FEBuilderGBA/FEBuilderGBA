@@ -26,7 +26,7 @@ namespace FEBuilderGBA
 
             this.AddressList.OwnerDraw(Draw, DrawMode.OwnerDrawVariable, false);
 
-            ScriptEditSetTables = new EventScriptForm.ScriptEditSetTable[8];
+            ScriptEditSetTables = new EventScriptForm.ScriptEditSetTable[10];
             ScriptEditSetTables[0].ParamLabel = ParamLabel1; ScriptEditSetTables[0].ParamSrc = ParamSrc1; ScriptEditSetTables[0].ParamValue = ParamValue1; ScriptEditSetTables[0].ParamPicture = ParamImage1;
             ScriptEditSetTables[1].ParamLabel = ParamLabel2; ScriptEditSetTables[1].ParamSrc = ParamSrc2; ScriptEditSetTables[1].ParamValue = ParamValue2; ScriptEditSetTables[1].ParamPicture = ParamImage2;
             ScriptEditSetTables[2].ParamLabel = ParamLabel3; ScriptEditSetTables[2].ParamSrc = ParamSrc3; ScriptEditSetTables[2].ParamValue = ParamValue3; ScriptEditSetTables[2].ParamPicture = ParamImage3;
@@ -35,8 +35,10 @@ namespace FEBuilderGBA
             ScriptEditSetTables[5].ParamLabel = ParamLabel6; ScriptEditSetTables[5].ParamSrc = ParamSrc6; ScriptEditSetTables[5].ParamValue = ParamValue6; ScriptEditSetTables[5].ParamPicture = ParamImage6;
             ScriptEditSetTables[6].ParamLabel = ParamLabel7; ScriptEditSetTables[6].ParamSrc = ParamSrc7; ScriptEditSetTables[6].ParamValue = ParamValue7; ScriptEditSetTables[6].ParamPicture = ParamImage7;
             ScriptEditSetTables[7].ParamLabel = ParamLabel8; ScriptEditSetTables[7].ParamSrc = ParamSrc8; ScriptEditSetTables[7].ParamValue = ParamValue8; ScriptEditSetTables[7].ParamPicture = ParamImage8;
+            ScriptEditSetTables[8].ParamLabel = ParamLabel9; ScriptEditSetTables[8].ParamSrc = ParamSrc9; ScriptEditSetTables[8].ParamValue = ParamValue9; ScriptEditSetTables[8].ParamPicture = ParamImage9;
+            ScriptEditSetTables[9].ParamLabel = ParamLabel10; ScriptEditSetTables[9].ParamSrc = ParamSrc10; ScriptEditSetTables[9].ParamValue = ParamValue10; ScriptEditSetTables[9].ParamPicture = ParamImage10;
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < ScriptEditSetTables.Length; i++)
             {
                 ScriptEditSetTables[i].ParamSrc.ValueChanged += ParamSrc_ValueChanged;
                 ScriptEditSetTables[i].ParamSrc.Enter += ParamSrc_Focused;
@@ -61,7 +63,7 @@ namespace FEBuilderGBA
         public void Init(ToolTipEx toolTip, KeyEventHandler parentFormKeydownfunc)
         {
             this.ToolTip = toolTip;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < ScriptEditSetTables.Length; i++)
             {
                 ScriptEditSetTables[i].ParamValue.SetToolTipEx(this.ToolTip);
             }
@@ -404,21 +406,26 @@ namespace FEBuilderGBA
         int ShowFloatingControlpanelInner(EventScript.OneCode code,int index)
         {
             //パラメータ数が少ない場合、ダイアログを上に引き揚げます.
-            int heighest = ParamSrc7.Location.Y + ParamSrc7.Size.Height;
+            int heighest = ParamSrc9.Location.Y + ParamSrc9.Size.Height;
             if (code.Script.Args.Length < 3)
             {
                 ControlPanelCommand.Location = new Point(0, ParamSrc3.Location.Y);
-                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc7.Size.Height - ParamSrc5.Size.Height - ParamSrc3.Size.Height;
+                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc9.Size.Height - ParamSrc7.Size.Height - ParamSrc5.Size.Height - ParamSrc3.Size.Height;
             }
             else if (code.Script.Args.Length < 5)
             {
                 ControlPanelCommand.Location = new Point(0, ParamSrc5.Location.Y);
-                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc7.Size.Height - ParamSrc5.Size.Height;
+                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc9.Size.Height - ParamSrc7.Size.Height - ParamSrc5.Size.Height;
             }
             else if (code.Script.Args.Length < 7)
             {
                 ControlPanelCommand.Location = new Point(0, ParamSrc7.Location.Y);
-                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc7.Size.Height;
+                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc9.Size.Height - ParamSrc7.Size.Height;
+            }
+            else if (code.Script.Args.Length < 9)
+            {
+                ControlPanelCommand.Location = new Point(0, ParamSrc7.Location.Y);
+                ControlPanel.Height = heighest + ControlPanelCommand.Size.Height - ParamSrc9.Size.Height;
             }
             else
             {
@@ -528,7 +535,7 @@ namespace FEBuilderGBA
 
             //引数
             int n = 0;
-            for (i = 0; i < 8; i++, n++)
+            for (i = 0; i < ScriptEditSetTables.Length; i++, n++)
             {
                 if (n >= code.Script.Args.Length)
                 {
@@ -546,7 +553,7 @@ namespace FEBuilderGBA
                 EventScriptForm.SetOneScriptEditSetTables(ScriptEditSetTables[i], arg, v);
             }
 
-            for (; i < 8; i++)
+            for (; i < ScriptEditSetTables.Length; i++)
             {
                 //使わないパラメータはあっかりーんする
                 EventScriptForm.HideOneScriptEditSetTables(ScriptEditSetTables[i]);

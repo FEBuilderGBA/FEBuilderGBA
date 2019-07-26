@@ -100,6 +100,12 @@ Insert
 :削除
 Delete
 
+:パラメータ9
+Parameter 9
+
+:パラメータ10
+Parameter 10
+
 :パラメータ4
 Parameter 4
 
@@ -7625,49 +7631,49 @@ Drop Item Table
 Drop Item Table
 
 :所持品1 候補5
-Equipped Item Table
+Equipped Table
 
 :所持品1 候補4
-Equipped Item Table
+Equipped Table
 
 :所持品1 候補3
-Equipped Item Table
+Equipped Table
 
 :所持品1 候補2
-Equipped Item Table
+Equipped Table
 
 :所持品1 候補1
-Equipped Item Table
+Equipped Table
 
 :魔物5出現確率
 Monster 5 Probability
 
 :出現魔物5
-Appearance Monster 5
+Monster 5
 
 :魔物4出現確率
 Monster 4 Probability
 
 :出現魔物4
-Appearance Monster 4
+Monster 4
 
 :魔物3出現確率
 Monster 3 Probability
 
 :出現魔物3
-Appearance Monster 3
+Monster 3
 
 :魔物2出現確率
 Monster 2 Probability
 
 :出現魔物2
-Appearance Monster 2
+Monster 2
 
 :魔物1出現確率
 Monster 1 Probability
 
 :出現魔物1
-Appearance Monster 1
+Monster 1
 
 :座標設定の2バイトの一番左が5の時のクラスが確率テーブル
 The class when coordinate settings of the leftmost 2 bytes is 5 = probability table

@@ -44,14 +44,19 @@ CCアイテム	Promotion Item
 近距離武器	Melee weapon
 遠距離武器	Ranged weapon
 闘技場	Arena
+　闘技場	 Arena
 武器屋	Armory
+　武器屋	 Armory
 道具屋	Vendor
+　道具屋	 Vendor
 秘密の店	Secret Shop
+　秘密店	 Secret
 玉座	throne
 古木	Snag
 地形	Terrain
 武器LV	WLVL
 制圧	Seize
+　制圧	 Seize
 城門の制圧	Seize gate
 ボスを倒す	Defeat boss
 倒す	Defeat
@@ -1619,10 +1624,13 @@ HPの薬	HP Tonic
 アイテム交換	Trading Items
 武器耐久度	Weapon Durability
 輸送隊	Supply Convoy
+　輸送隊	 Supply
 道具屋	Shop
+　道具屋	 Shop
 民家	Houses
 村	Villages
 宝箱	Chests
+　宝箱	 Chests
 古木	Snags
 壊せる壁	Damaged Walls
 シューター	Ballistae
@@ -1633,7 +1641,7 @@ HPの薬	HP Tonic
 全滅	Defeat All
 防衛	Defense
 中断	Suspend
-中断	 Suspend
+　中断	 Suspend
 記録	Save
 移動方法	How to Move
 アイテム整理	Item Management
@@ -1641,23 +1649,40 @@ HPの薬	HP Tonic
 進撃準備画面	Preparation Screen
 レベルアップ	Leveling Up
 退却	Retreat
+　退却	 Retreat
 装備	Equip
+　装備	 Equip
 交換	Trade
+　交換	 Trade
 捨てる	Discard
 乗る	Ride
+　乗る	 Ride
 降りる	Exit
+　降りる	 Exit
 話す	Talk
+　話す	 Talk
 訪問	Visit
+　訪問	 Visit
 秘密店	Secret
+　秘密店	 Secret
 引受け	Take
+　引受け	 Take
 引渡し	Give
+　引渡し	 Give
 持ち物	Item
+　持ち物	 Item
 待機	Wait
+　待機	 Wait
 部隊	Unit
+　部隊	 Unit
 状況	Status
+　状況	 Status
 辞書	Guide
+　辞書	 Guide
 戦績	Records
+　戦績	 Records
 設定	Options
+　設定	 Options
 甲板	Deck
 最終ターン	Last Turn
 ターン	Turn
@@ -4809,3 +4834,22 @@ and defeating an enemy.
 ロムファイア	Romfire
 ヴラスキャルヴ	Valaskjalf
 クライディレド	Creiddylad
+風花雪月	three houses theme
+　決定	Change
+　やめる	Cancel
+　攻撃	 Attack
+　奏でる	Play
+　踊る	 Dance
+　盗む	 Steal
+　杖	 Staff
+　捕獲	 Capture
+　呼魔	 Summons
+　支援	 Support
+　アイテム	 Item
+　救出	 Rescue
+　薬局	 Coffee
+　アイテム整理	 Manage Items
+　秘密店に入る	 Enter Secret
+　道具屋に入る	 Enter Shop
+　武器屋に入る	 Enter Armory
+隣接するユニットを救出し\r\n自分に同行させます	Rescue an ally from\r\nan adjacent space.

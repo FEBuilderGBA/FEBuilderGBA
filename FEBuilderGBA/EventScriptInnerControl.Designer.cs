@@ -41,6 +41,14 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.ParamImage10 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamImage9 = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ParamValue10 = new FEBuilderGBA.TextBoxEx();
+            this.ParamSrc10 = new System.Windows.Forms.NumericUpDown();
+            this.ParamLabel10 = new System.Windows.Forms.Label();
+            this.ParamValue9 = new FEBuilderGBA.TextBoxEx();
+            this.ParamSrc9 = new System.Windows.Forms.NumericUpDown();
+            this.ParamLabel9 = new System.Windows.Forms.Label();
             this.ControlPanelCommand = new System.Windows.Forms.Panel();
             this.TemplateButton = new System.Windows.Forms.Button();
             this.AddressLabel = new System.Windows.Forms.Label();
@@ -98,6 +106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.ControlPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamSrc10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamSrc9)).BeginInit();
             this.ControlPanelCommand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParamImage6)).BeginInit();
@@ -283,6 +295,14 @@
             // ControlPanel
             // 
             this.ControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ControlPanel.Controls.Add(this.ParamImage10);
+            this.ControlPanel.Controls.Add(this.ParamImage9);
+            this.ControlPanel.Controls.Add(this.ParamValue10);
+            this.ControlPanel.Controls.Add(this.ParamSrc10);
+            this.ControlPanel.Controls.Add(this.ParamLabel10);
+            this.ControlPanel.Controls.Add(this.ParamValue9);
+            this.ControlPanel.Controls.Add(this.ParamSrc9);
+            this.ControlPanel.Controls.Add(this.ParamLabel9);
             this.ControlPanel.Controls.Add(this.ControlPanelCommand);
             this.ControlPanel.Controls.Add(this.CloseButton);
             this.ControlPanel.Controls.Add(this.ParamImage8);
@@ -317,11 +337,103 @@
             this.ControlPanel.Controls.Add(this.ParamLabel3);
             this.ControlPanel.Controls.Add(this.ParamSrc1);
             this.ControlPanel.Controls.Add(this.ParamLabel1);
-            this.ControlPanel.Location = new System.Drawing.Point(8, 449);
+            this.ControlPanel.Location = new System.Drawing.Point(8, 414);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(1482, 281);
+            this.ControlPanel.Size = new System.Drawing.Size(1482, 316);
             this.ControlPanel.TabIndex = 1;
+            // 
+            // ParamImage10
+            // 
+            this.ParamImage10.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage10.Location = new System.Drawing.Point(1344, 142);
+            this.ParamImage10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage10.Name = "ParamImage10";
+            this.ParamImage10.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage10.TabIndex = 210;
+            this.ParamImage10.TabStop = false;
+            // 
+            // ParamImage9
+            // 
+            this.ParamImage9.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ParamImage9.Location = new System.Drawing.Point(665, 143);
+            this.ParamImage9.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.ParamImage9.Name = "ParamImage9";
+            this.ParamImage9.Size = new System.Drawing.Size(32, 32);
+            this.ParamImage9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ParamImage9.TabIndex = 209;
+            this.ParamImage9.TabStop = false;
+            // 
+            // ParamValue10
+            // 
+            this.ParamValue10.ErrorMessage = "";
+            this.ParamValue10.Location = new System.Drawing.Point(1051, 143);
+            this.ParamValue10.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue10.Name = "ParamValue10";
+            this.ParamValue10.Placeholder = "";
+            this.ParamValue10.ReadOnly = true;
+            this.ParamValue10.Size = new System.Drawing.Size(290, 25);
+            this.ParamValue10.TabIndex = 208;
+            // 
+            // ParamSrc10
+            // 
+            this.ParamSrc10.Hexadecimal = true;
+            this.ParamSrc10.Location = new System.Drawing.Point(917, 140);
+            this.ParamSrc10.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamSrc10.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ParamSrc10.Name = "ParamSrc10";
+            this.ParamSrc10.Size = new System.Drawing.Size(130, 25);
+            this.ParamSrc10.TabIndex = 204;
+            // 
+            // ParamLabel10
+            // 
+            this.ParamLabel10.Location = new System.Drawing.Point(721, 143);
+            this.ParamLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ParamLabel10.Name = "ParamLabel10";
+            this.ParamLabel10.Size = new System.Drawing.Size(190, 18);
+            this.ParamLabel10.TabIndex = 207;
+            this.ParamLabel10.Text = "パラメータ10";
+            this.ParamLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ParamValue9
+            // 
+            this.ParamValue9.ErrorMessage = "";
+            this.ParamValue9.Location = new System.Drawing.Point(339, 145);
+            this.ParamValue9.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamValue9.Name = "ParamValue9";
+            this.ParamValue9.Placeholder = "";
+            this.ParamValue9.ReadOnly = true;
+            this.ParamValue9.Size = new System.Drawing.Size(322, 25);
+            this.ParamValue9.TabIndex = 206;
+            // 
+            // ParamSrc9
+            // 
+            this.ParamSrc9.Hexadecimal = true;
+            this.ParamSrc9.Location = new System.Drawing.Point(205, 143);
+            this.ParamSrc9.Margin = new System.Windows.Forms.Padding(2);
+            this.ParamSrc9.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.ParamSrc9.Name = "ParamSrc9";
+            this.ParamSrc9.Size = new System.Drawing.Size(130, 25);
+            this.ParamSrc9.TabIndex = 203;
+            // 
+            // ParamLabel9
+            // 
+            this.ParamLabel9.Location = new System.Drawing.Point(4, 148);
+            this.ParamLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ParamLabel9.Name = "ParamLabel9";
+            this.ParamLabel9.Size = new System.Drawing.Size(190, 18);
+            this.ParamLabel9.TabIndex = 205;
+            this.ParamLabel9.Text = "パラメータ9";
+            this.ParamLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ControlPanelCommand
             // 
@@ -340,7 +452,7 @@
             this.ControlPanelCommand.Controls.Add(this.DownButton);
             this.ControlPanelCommand.Controls.Add(this.NewButton);
             this.ControlPanelCommand.Controls.Add(this.RemoveButton);
-            this.ControlPanelCommand.Location = new System.Drawing.Point(0, 138);
+            this.ControlPanelCommand.Location = new System.Drawing.Point(0, 176);
             this.ControlPanelCommand.Margin = new System.Windows.Forms.Padding(4);
             this.ControlPanelCommand.Name = "ControlPanelCommand";
             this.ControlPanelCommand.Size = new System.Drawing.Size(1481, 138);
@@ -947,6 +1059,10 @@
             this.MainPanel.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamImage9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamSrc10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ParamSrc9)).EndInit();
             this.ControlPanelCommand.ResumeLayout(false);
             this.ControlPanelCommand.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ParamImage8)).EndInit();
@@ -1038,5 +1154,13 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.Button TemplateButton;
+        private InterpolatedPictureBox ParamImage10;
+        private InterpolatedPictureBox ParamImage9;
+        private TextBoxEx ParamValue10;
+        private System.Windows.Forms.NumericUpDown ParamSrc10;
+        private System.Windows.Forms.Label ParamLabel10;
+        private TextBoxEx ParamValue9;
+        private System.Windows.Forms.NumericUpDown ParamSrc9;
+        private System.Windows.Forms.Label ParamLabel9;
     }
 }

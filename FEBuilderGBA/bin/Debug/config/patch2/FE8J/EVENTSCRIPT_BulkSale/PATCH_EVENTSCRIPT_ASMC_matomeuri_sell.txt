@@ -1,0 +1,26 @@
+NAME=まとめ売り アイテムをまとめ売り実行(イベント命令)
+NAME.en=Add Event: BulkSale Run Sell Items
+NAME.zh=Add Event: BulkSale Run Sell Items
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_matomeuri_sell.dmp=0xF0 0xB5 0x00 0x27
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_matomeuri_sell.dmp
+
+
+INFO=メモリスロットで指定したアイテムをまとめて売ります。\r\n怪盗パッチの特効薬を売るイベントを汎用化したものです。\r\nこの命令は、メモリスロットで指定したアイテムを輸送隊を含めて全員から検索し、売却します
+INFO.en=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the Supply from everyone and Sell it all.
+INFO.zh=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the Supply from everyone and Sell it all.
+
+AUTHOR=7743
+
+EVENTSCRIPT:1=400DYY00{$L1:ASMC_matomeuri_sell.dmp}	まとめ売り 売れるもの探索(LOW)	{ITEM}
+EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_matomeuri_sell.dmp}	BulkSale Run Sell Items(Low)	{ITEM}
+EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_matomeuri_sell.dmp}	BulkSale Run Sell Items(Low)	{ITEM}
+
+EVENTSCRIPT:2=40050100XXYYZZWW40050200VVUUTTSS40050300RRQQ0000400DYY00{$L1:ASMC_matomeuri_sell.dmp}	まとめ売り 売れるアイテム探索[XX:ITEM:1][YY:ITEM:2][ZZ:ITEM:3][WW:ITEM:4][VV:ITEM:5][UU:ITEM:6][TT:ITEM:7][SS:ITEM:8][RR:ITEM:9][QQ:ITEM:10]	{ITEM}
+EVENTSCRIPT:2.en=40050100XXYYZZWW40050200VVUUTTSS40050300RRQQ0000400DYY00{$L1:ASMC_matomeuri_sell.dmp}	BulkSale Run Sell Items[XX:ITEM:1][YY:ITEM:2][ZZ:ITEM:3][WW:ITEM:4][VV:ITEM:5][UU:ITEM:6][TT:ITEM:7][SS:ITEM:8][RR:ITEM:9][QQ:ITEM:10]	{ITEM}
+EVENTSCRIPT:2.zh=40050100XXYYZZWW40050200VVUUTTSS40050300RRQQ0000400DYY00{$L1:ASMC_matomeuri_sell.dmp}	BulkSale Run Sell Items[XX:ITEM:1][YY:ITEM:2][ZZ:ITEM:3][WW:ITEM:4][VV:ITEM:5][UU:ITEM:6][TT:ITEM:7][SS:ITEM:8][RR:ITEM:9][QQ:ITEM:10]	{ITEM}
