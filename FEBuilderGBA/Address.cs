@@ -257,6 +257,21 @@ namespace FEBuilderGBA
             }
             list.Add(new Address(addr, length, pointer, info, type, InputFormRef.BlockSize, pointerIndexes));
         }
+        static public void AddAddressButDoNotLengthPuls1(List<Address> list, InputFormRef InputFormRef, string info, uint[] pointerIndexes, DataTypeEnum type = DataTypeEnum.InputFormRef)
+        {
+            uint addr = InputFormRef.BaseAddress;
+            uint length = InputFormRef.BlockSize * (InputFormRef.DataCount);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+            uint pointer = InputFormRef.BasePointer;
+            if (!U.isSafetyOffset(pointer))
+            {
+                pointer = U.NOT_FOUND;
+            }
+            list.Add(new Address(addr, length, pointer, info, type, InputFormRef.BlockSize, pointerIndexes));
+        }
         static public void AddAddressButIgnorePointer(List<Address> list, InputFormRef InputFormRef, string info, uint[] pointerIndexes)
         {
             uint addr = InputFormRef.BaseAddress;

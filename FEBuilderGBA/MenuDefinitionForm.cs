@@ -150,7 +150,8 @@ namespace FEBuilderGBA
             {
                 InputFormRef.ReInitPointer(pointer);
             }
-            FEBuilderGBA.Address.AddAddress(list
+
+            FEBuilderGBA.Address.AddAddressButDoNotLengthPuls1(list
                 , InputFormRef
                 , "MenuDefinition"
                 , new uint[] { 8, 12, 16, 20, 24, 28, 32 }
