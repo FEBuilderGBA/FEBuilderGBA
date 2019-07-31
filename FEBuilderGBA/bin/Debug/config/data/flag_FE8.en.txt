@@ -41,7 +41,7 @@
 28=Temporary flag 28
 
 65=GameOver
-66=Global flag 66
+66=Disable objective window
 67=Extra unit appearance 67
 68=Extra unit appearance 68
 69=Extra unit appearance 69
