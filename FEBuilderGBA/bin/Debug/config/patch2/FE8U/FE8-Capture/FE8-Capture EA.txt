@@ -44,8 +44,8 @@
 	SHORT 0xE014
 	
 	//Prevent enemy character data pointer from being zero'd out after dying (set byte 0x4 instead) (NOTE: This may lead to issues with saving/endgame? I hope not)
-	ORG $1840A
-	SHORT 0x46C0
+	ORG $18400
+	jumpToHack(Should_Dead_Unit_Be_Cleared)
 	
 	//Set bit 0x1 of byte 0xC if dropping a dead enemy
 	ORG $183B0
@@ -152,11 +152,15 @@
 	ALIGN 4
 	Trade_Portrait_Fix1:
 	#incbin "Trade Portrait Fix1.dmp"
-	
+
 	ALIGN 4
 	Trade_Portrait_Fix2:
 	#incbin "Trade Portrait Fix2.dmp
-	
+
+	ALIGN 4
+	Should_Dead_Unit_Be_Cleared:
+	#incbin "Should_Dead_Unit_Be_Cleared.dmp"
+
 	ALIGN 4
 	Blank_Portrait:
 	#incext PortraitFormatter "blank_portrait.png"

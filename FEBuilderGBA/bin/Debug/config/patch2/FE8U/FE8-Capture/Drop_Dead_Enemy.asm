@@ -12,10 +12,11 @@ strb	r7,[r4,#0x11]
 ldrb	r0,[r4,#0x13]
 cmp		r0,#0x0
 bne		End
-ldr		r0,[r4,#0xC]
-mov		r1,#0x1
-orr		r0,r1
-str		r0,[r4,#0xC]
+str		r0,[r4]
+@ldr	r0,[r4,#0xC]
+@mov	r1,#0x1
+@orr	r0,r1
+@str	r0,[r4,#0xC]
 End:
 pop		{r4-r7}
 pop		{r0}
