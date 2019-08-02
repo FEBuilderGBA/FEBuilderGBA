@@ -1,0 +1,116 @@
+/*
+おまけ　騎馬系の救出値20固定
+
+0x18A12 > 14 20	//FE8U
+
+19固定(トラキア)なら > 13 20
+*/
+
+	#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+	#define NormalText 0x0
+	#define GrayText 0x1
+	#define BlueText 0x2
+	#define OrangeText 0x3
+	#define GreenText 0x4
+	#define BlackText 0x5
+
+	PUSH
+	ORG	FEBUILDER_EXTRA_ORG
+		POIN TxtData0xeda_sjis
+		SHORT 0xeda
+		SHORT 0xedb
+		BYTE  NormalText
+		BYTE  $4e
+		SHORT 0
+		POIN Capture_Usability|1
+		WORD 0
+		POIN Capture_Effect_Func|1
+		WORD 0
+		WORD 0
+		WORD 0
+	POP
+
+	TxtData0xeda:
+	#incbin "0xeda.bin"
+
+	TxtData0xeda_sjis:
+	#incbin "0xeda_sjis.bin"
+
+	TxtData0xedb:
+	#incbin "0xedb.bin"
+
+	setText_WithHuffman(0xeda,TxtData0xeda)
+	setText_WithHuffman(0xedb,TxtData0xedb)
+
+
+PUSH
+
+	ORG $22D08 //FE8U
+//	callHack_r3(New_Weapon_Select)	//アイテム選択後
+	
+	BYTE	$2B $F0 $BC $FD $20 $68 $C1 $8B $02 $F0 $50 $FA
+
+POP
+
+	ALIGN 4
+Is_Capture_Set:
+	#incbin "Is_Capture_Set.dmp"
+
+	ALIGN 4
+Capture_Usability:
+	#incbin "Capture_Usability_Func.bin"
+	POIN	StealMinusFunc|1
+StealMinusFunc:
+	#incbin "StealMinusFunc.bin"
+
+PUSH
+	ORG $16580	//FE8U
+	WORD	$46874800
+	POIN	Soubi_non
+	
+	ORG $22878 //FE8U
+	WORD	$469F4B00
+	POIN	Cancel_Capture
+	
+	//After battle, set the attacker and defender's rescue data
+	ORG $328F0 //FE8U
+	WORD	$469F4B00
+	POIN	After_Battle_Rescue
+	
+	ORG $846e4 //FE8U
+	WORD	$468F4900
+	POIN	STOP_DEAD_WORD
+	
+	ORG $256F4 //FE8U	//敵選択
+//	SHORT $480b $6800 $7ac0 $0600
+	WORD	$46874800
+	POIN	EnemyCaptureCheck
+	
+POP
+    ALIGN 4
+    Soubi_non:
+    #incbin "Soubi_non.bin"
+
+    ALIGN 4
+    Cancel_Capture:
+    #incbin "Cancel_Capture.bin"
+	
+    ALIGN 4
+    After_Battle_Rescue:
+    #incbin "After_Battle_Rescue.bin"
+    POIN Is_Capture_Set
+	
+    ALIGN 4
+    STOP_DEAD_WORD:
+    #incbin "stop.bin"
+
+    ALIGN 4
+EnemyCaptureCheck:
+    #incbin "EmemyCheck.bin"
+
+	ALIGN 4
+Capture_Effect_Func:
+    #incbin "Capture_Effect_Func.bin"
+	
+ALIGN 4

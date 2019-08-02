@@ -1,0 +1,19 @@
+NAME=トラキアのように、素早さ減で敵を攻撃し、捕獲できるようにする(aera version)
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x16580=0x00 0x48 0x87 0x46
+
+EA=EA.event
+EA_EXTENDS_UNITMENU:0x01=0x40
+
+INFO=トラキアのように素早さ減の状態で敵を攻撃し、敵を捕らえることができるようにします。\r\nこのパッチを入れた後に、敵捕獲パッチを入れないと、敵とのアイテム交換や解放ができません。\r\n\r\nこのパッチを使うには、以下のパッチのいずれかが必要です。\r\n"敵捕獲_aera [9 >= 敵HP] の時、敵を捕獲"\r\nOr "敵捕獲_怪盗 9<=HP or 寝ている敵は救出可能 騎兵関係なし 解放経験値40"\r\n\r\nTequila Versionとの違いは、こちらの方がFE5の動作に近い動作を行います。\r\n敵をCaptureした状態では、敵を殺していません。\r\n敵をDropした時に、死亡させたと判定されます。\r\nまた、敵をDropした時に、経験値を得られます。
+
+
+AUTHOR=aera , Original idea: Tequila
+NAME.en=Attack and capture enemies with reduced speed like FE5(aera version)
+INFO.en=This patch will attack enemies in a state of reduced speed like FE 5 so that you can capture enemies.\r\nTo use this patch, you need one of the following patches:\r\n"Capture enemy_aera When 9>=Enemy HP"\r\nOr "Enemy capture_Kaito 9<=HP or sleeping enemy is rescuable Cavalry relation none Liberation Exp40"\r\n\r\nThe difference with Tequila Version is that this works more like FE5's.\r\nWith the enemy captured, it does not kill the enemy.\r\nWhen you drop an enemy, it is judged dead.\r\nYou can also gain experience when you drop an enemy.
+
+NAME.zh=能够以像色雷斯一样的速度攻击和捕获敌人(aera version)
+INFO.zh=该补丁还像色雷斯一样以速度降低的状态攻击敌人，以便我们能够抓住敌人。\r\n进入此补丁后，您无法与敌人交换物品或释放它，除非您输入敌人捕获补丁。\r\n\r\nCapture enemy_aera When 9>=Enemy HP:\r\n"敌俘获 [9 >= 敌HP] 之时、敌捕获"\r\nOr "敌捕获 9<= HP或睡觉的敌人可能救出 骑兵关系无 解放经验值40"\r\n\r\nThe difference with Tequila Version is that this works more like FE5's.\r\nWith the enemy captured, it does not kill the enemy.\r\nWhen you drop an enemy, it is judged dead.\r\nYou can also gain experience when you drop an enemy.

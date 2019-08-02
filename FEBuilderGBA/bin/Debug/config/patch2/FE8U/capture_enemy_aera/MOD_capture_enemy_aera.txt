@@ -1,0 +1,12 @@
+IF:0x025344=0x70 0xB5 0x04 0x1C
+
+FORM=EventHaikuForm
+J_8_EVENT=イベント/解放セリフ
+J_8_EVENT.en=Liberation serif
+J_8_EVENT.zh=解放衬线
+J_8_EVENT:NAME=J_8_TEXTOREVENT
+L_8_EVENT:NAME=L_8_TEXTOREVENT
+ADDRESS_TYPE=TEXTOREVENT
+P8:NAME=D8
+
+AUTHOR=プログラム出典元:https://github.com/ngmansion/FE8/tree/master/hokaku
