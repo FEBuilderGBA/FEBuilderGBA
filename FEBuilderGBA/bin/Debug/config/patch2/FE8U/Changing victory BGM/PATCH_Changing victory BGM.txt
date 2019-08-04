@@ -17,6 +17,7 @@ BIN:0x20FAC=kill_chapter_prologue_bgm.bin
 BIN:0x20CF0=kill_chapter_prologue_bgm2.bin
 BIN:0x20D84=kill_chapter_prologue_bgm2.bin
 BIN:0x20D94=kill_chapter_prologue_bgm3.bin
+BIN:0x20D00=kill_chapter_prologue_bgm3.bin
 
 JUMP:0x080160C4:$r1=music10change.bin
 

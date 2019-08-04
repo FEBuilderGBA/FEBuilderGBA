@@ -11432,7 +11432,7 @@ Memory slot 2 UnitID
 Unit data is extremely small.It may be damaged.
 
 :ユニット別パレットへジャンプ
-Unit Palette
+Jump To Unit Palette
 
 :鎧△
 Triangle Attack 2
