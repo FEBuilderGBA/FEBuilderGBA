@@ -12585,4 +12585,8 @@
 0859D478	@NEW_TARGET_SELECTION_STRUCT	NewTargetSelectionStruct	19	Rescue	{U}
 
 08051B74	LoadHPBarImage	{J}
-
+080A0DD8	CallSupply1	{J}
+080A0DF8	CallSupply2	{J}
+08050E40	LoadHPBarImage	{U}
+0809EB38	CallSupply1	{U}
+0809EB58	CallSupply2	{U}

@@ -12540,3 +12540,9 @@ r3=X tile position of menu of the right	{U}
 0859D438	@NEW_TARGET_SELECTION_STRUCT	NewTargetSelectionStruct	17	{U}
 0859D458	@NEW_TARGET_SELECTION_STRUCT	NewTargetSelectionStruct	18	Drop	{U}
 0859D478	@NEW_TARGET_SELECTION_STRUCT	NewTargetSelectionStruct	19	Rescue	{U}
+08051B74	LoadHPBarImage	{J}
+080A0DD8	CallSupply1	{J}
+080A0DF8	CallSupply2	{J}
+08050E40	LoadHPBarImage	{U}
+0809EB38	CallSupply1	{U}
+0809EB58	CallSupply2	{U}

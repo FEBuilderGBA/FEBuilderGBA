@@ -2,9 +2,9 @@ TURN	Turn Conditions
 TALK	Talk Condition (Talk Command)
 OBJECT	Map Objects (Seize, Chest, Door, Visit Village or Home)
 ALWAYS	Always Condition (Range Condition, Victory Condition etc)
-ALWAYS	(peculiar)When player unit is selected
-ALWAYS	(peculiar)When player unit is decided to move
-ALWAYS	(peculiar)When player unit is moved coordinate
+ALWAYS	(DoNotUse)When player unit is selected
+ALWAYS	(DoNotUse)When player unit is decided to move
+ALWAYS	(DoNotUse)When player unit is moved coordinate
 TUTORIAL	Tutorial
 TRAP	Trap(Ballista, GargonEgg, DamageFloor)
 TRAP	Trap2(Damaged floor of ruins 9F only?)
