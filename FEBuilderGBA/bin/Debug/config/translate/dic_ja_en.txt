@@ -4722,7 +4722,7 @@ and defeating an enemy.
 アシュレイ	Ashley
 マローダ	Maroda
 ロアン	Roan
-黄天化	Yellowing
+黄天化	Kou-Tenka
 グッドマン	Goodman
 亡霊戦士	Phantom
 サモン	Summon
