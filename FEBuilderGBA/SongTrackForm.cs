@@ -191,6 +191,9 @@ namespace FEBuilderGBA
                             , f.GetInstrumentAddr()
                             , f.GetMID2AGB_V()
                             , f.GetMID2AGB_R()
+                            , f.GetIgnoreMOD()
+                            , f.GetIgnoreBEND()
+                            , f.GetIgnoreLFOS()
                             );
                     }
                 }

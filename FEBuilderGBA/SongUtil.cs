@@ -1284,6 +1284,9 @@ namespace FEBuilderGBA
             , uint instrument_addr
             , int option_v
             , int option_r
+            , bool ignoreMOD
+            , bool ignoreBEND
+            , bool ignoreLFOS
             )
         {
             string error;
@@ -1294,7 +1297,48 @@ namespace FEBuilderGBA
             }
             //正しい場合、sファイル名が格納される.
             string tempSFile = error;
+            if (ignoreMOD || ignoreBEND || ignoreLFOS)
+            {
+                LevelingSFile(tempSFile, ignoreMOD, ignoreBEND, ignoreLFOS);
+            }
             return ImportS(tempSFile, songtable_address, instrument_addr);
+        }
+        static bool LevelingSFile(string filename
+            ,bool ignoreMOD
+            ,bool ignoreBEND
+            ,bool ignoreLFOS
+            )
+        {
+            string[] lines = File.ReadAllLines(filename);
+            List<string> outLines = new List<string>(lines.Length);
+
+            foreach (string l in lines)
+            {
+                if (ignoreMOD)
+                {
+                    if (l.IndexOf(".byte		MOD") >= 0)
+                    {
+                        continue;
+                    }
+                }
+                if (ignoreBEND)
+                {
+                    if (l.IndexOf(".byte		BEND") >= 0)
+                    {
+                        continue;
+                    }
+                }
+                if (ignoreLFOS)
+                {
+                    if (l.IndexOf(".byte		LFOS") >= 0)
+                    {
+                        continue;
+                    }
+                }
+                outLines.Add(l);
+            }
+            File.WriteAllLines(filename, outLines);
+            return true;
         }
 
         public static string ImportMidiFile(string filename, uint songtable_address
