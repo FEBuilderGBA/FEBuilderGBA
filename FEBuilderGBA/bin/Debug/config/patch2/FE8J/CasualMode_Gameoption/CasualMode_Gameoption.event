@@ -1,0 +1,27 @@
+#ifndef CASUAL_MODE
+#define CASUAL_MODE
+
+#include "Extensions/Hack Installation.txt"
+
+#ifdef _FE8_
+
+  {
+
+  PUSH
+    ORG $8F3D8  //目的オプションを常に有効にする
+      BYTE 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+    ORG $1812C
+      jumpToHack(CasualMode)
+  POP
+
+  ALIGN 4
+  CasualMode:
+    #incbin "asm/CasualModeFE8.dmp"
+
+  }
+
+#else // _FE8_
+  ERROR Casual mode hack is for FE8
+#endif // _FE8_
+
+#endif // CASUAL_MODE

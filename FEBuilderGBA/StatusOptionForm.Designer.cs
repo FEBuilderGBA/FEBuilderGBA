@@ -89,13 +89,13 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_36_GAMEOPTIONICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D36)).BeginInit();
@@ -285,7 +285,6 @@
             // 
             // W32
             // 
-            this.W32.Hexadecimal = true;
             this.W32.Location = new System.Drawing.Point(414, 518);
             this.W32.Maximum = new decimal(new int[] {
             -559939585,
@@ -303,7 +302,7 @@
             this.J_32.Name = "J_32";
             this.J_32.Size = new System.Drawing.Size(409, 30);
             this.J_32.TabIndex = 160;
-            this.J_32.Text = "選択子4不明1";
+            this.J_32.Text = "選択子4表示位地";
             this.J_32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_30_TEXT
@@ -399,7 +398,6 @@
             // 
             // W24
             // 
-            this.W24.Hexadecimal = true;
             this.W24.Location = new System.Drawing.Point(414, 381);
             this.W24.Maximum = new decimal(new int[] {
             -559939585,
@@ -417,7 +415,7 @@
             this.J_24.Name = "J_24";
             this.J_24.Size = new System.Drawing.Size(409, 30);
             this.J_24.TabIndex = 149;
-            this.J_24.Text = "選択子3不明1";
+            this.J_24.Text = "選択子3表示位地";
             this.J_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_22_TEXT
@@ -513,7 +511,6 @@
             // 
             // W16
             // 
-            this.W16.Hexadecimal = true;
             this.W16.Location = new System.Drawing.Point(414, 243);
             this.W16.Maximum = new decimal(new int[] {
             -559939585,
@@ -531,7 +528,7 @@
             this.J_16.Name = "J_16";
             this.J_16.Size = new System.Drawing.Size(409, 30);
             this.J_16.TabIndex = 138;
-            this.J_16.Text = "選択子2不明1";
+            this.J_16.Text = "選択子2表示位地";
             this.J_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_14_TEXT
@@ -627,7 +624,6 @@
             // 
             // W8
             // 
-            this.W8.Hexadecimal = true;
             this.W8.Location = new System.Drawing.Point(414, 105);
             this.W8.Maximum = new decimal(new int[] {
             -559939585,
@@ -645,7 +641,7 @@
             this.J_8.Name = "J_8";
             this.J_8.Size = new System.Drawing.Size(409, 30);
             this.J_8.TabIndex = 127;
-            this.J_8.Text = "選択子1不明1";
+            this.J_8.Text = "選択子1表示位地";
             this.J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_6_TEXT
@@ -860,6 +856,16 @@
             this.panel6.Size = new System.Drawing.Size(277, 710);
             this.panel6.TabIndex = 150;
             // 
+            // AddressListExpandsButton
+            // 
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 677);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(271, 30);
+            this.AddressListExpandsButton.TabIndex = 115;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
             // label30
             // 
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -930,16 +936,6 @@
             this.ReadStartAddress.Name = "ReadStartAddress";
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
-            // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(1, 677);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(271, 30);
-            this.AddressListExpandsButton.TabIndex = 115;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // StatusOptionForm
             // 

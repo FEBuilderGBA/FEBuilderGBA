@@ -1,0 +1,16 @@
+NAME=カジュアルモード(ゲームオプションバージョン)
+NAME.en=CasualMode(Ver:GameOption)
+
+TYPE=EA
+TAG=#ENGINE
+
+EA=CasualMode_Gameoption.event
+
+INFO=プレイヤーユニットが死亡しても、次の章で自動的に復活するようになります。\r\nこのバージョンは、フラグ0xB0ではなく、ゲームオプションで実装したバージョンです。\r\n"クリア目的表示"を表示するオプションを乗っ取って、カジュアルモードに変化させます。\r\n少しわかりにくいですが、"クリア目的表示"の選択子ONはクラシックです。OFFがカジュアルです。\r\nテキストは自分で入れ替えてください。
+
+PATCHED_IF:0x8D0DC=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+AUTHOR=7743 Orignal: circleseverywhere
+INFO.en=If a player unit dies, it will automatically be revived in the next chapter.\r\nThis version is not a flag 0xB0, but a version implemented with game options.\r\nTake over the option to display the "Show Objective" and change it to casual mode.\r\nSlightly confusing, but the "Show Objective"'s selector ON is classic. OFF is casual.\r\nPlease replace the text yourself.
+NAME.zh=休闲模式(Ver:GameOption)
+INFO.zh=如果玩家单位死亡，它将在下一章自动恢复。\r\n这个版本不是标志0xB0，而是用游戏选项实现的版本。\r\n接管选项以显示“过关条件表示”并更改为临时模式。\r\n虽然有点难以理解，但“过关条件表示”选择器的“开启”是经典的。 OFF很随意。\r\n请自行更换文字。

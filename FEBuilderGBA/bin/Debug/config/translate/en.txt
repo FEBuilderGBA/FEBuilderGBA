@@ -9428,10 +9428,10 @@ Unable to register nested instrument data ({1}).\r\n{0} line
 0C=Noise (silent petit noise)
 
 :音データ 書出
-Export Sound Data
+Export Wav Data
 
 :音データ 読込
-Import Sound Data
+Import Wav Data
 
 :パンポット
 Pan Pot
@@ -9796,8 +9796,8 @@ ASM function
 :選択子4不明2
 Selector 4 Unknown 2
 
-:選択子4不明1
-Selector 4 Unknown 1
+:選択子4表示位地
+Selector 4 Display position
 
 :選択子4テキスト
 Selector 4 text
@@ -9808,8 +9808,8 @@ Selector 4 Help
 :選択子3不明2
 Selector 3 Unknown 2
 
-:選択子3不明1
-Selector 3 Unknown 1
+:選択子3表示位地
+Selector 3 Display position
 
 :選択子3テキスト
 Selector 3 text
@@ -9820,8 +9820,8 @@ Selector 3 Help
 :選択子2不明2
 Selector 2 Unknown 2
 
-:選択子2不明1
-Selector 2 Unknown 1
+:選択子2表示位地
+Selector 2 Display position
 
 :選択子2テキスト
 Selector 2 text
@@ -9832,8 +9832,8 @@ Selector 2 Help
 :選択子1不明2
 Selector 1 Unknown 2
 
-:選択子1不明1
-Selector 1 Unknown 1
+:選択子1表示位地
+Selector 1 Display position
 
 :選択子1テキスト
 Selector 1 text

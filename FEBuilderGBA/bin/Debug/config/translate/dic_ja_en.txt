@@ -1296,7 +1296,7 @@ HPの薬	HP Tonic
 暗闇の加護	Shadowgift
 スロースタート	Slow Burn
 方陣	Solidarity
-特別な踊り(Tokubetsuna Odori)	Special Dance
+特別な踊り	Special Dance
 剣殺し	Swordbreaker
 剣の達人	Swordfaire
 疾駆	Tantivy
@@ -4853,3 +4853,7 @@ and defeating an enemy.
 　道具屋に入る	 Enter Shop
 　武器屋に入る	 Enter Armory
 隣接するユニットを救出し\r\n自分に同行させます	Rescue an ally from\r\nan adjacent space.
+　持物等	 ItemEtc
+「持ち物」、「体当たり」、\r\n「同行」などの\r\nサブメニューを開きます。	Open submenus such as\r\nItem, Shove, Refuge.
+　全預け	Give all
+　全預け＋	 GiveAll+

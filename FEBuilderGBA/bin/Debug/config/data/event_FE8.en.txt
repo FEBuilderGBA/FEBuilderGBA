@@ -491,3 +491,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200YY00000040050300XX000000400A000020E99E08	Floor clear of towers and ruins.To [XX:MAPCHAPTER:next map].In case of Retreat, return to [YY:MAPCHAPTER:Map of entrance].	{U}
 40050200YYYY000040050300XX000000400A0000F0E89E08	Tower floor clear.If [YYYY:FLAG:Flag] is invalid, return to [YY:MAPCHAPTER:Map of entrance].	{U}
 40050200XXXX0000400A000084E19E08	If Creature Campaign mode, enable [XX:FLAG:Flag]	{U}
+400D000055D60008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{J}
+400D000091D30008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{U}

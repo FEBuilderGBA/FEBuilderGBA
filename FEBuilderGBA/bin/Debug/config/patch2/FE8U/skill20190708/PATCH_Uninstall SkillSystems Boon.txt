@@ -1,0 +1,10 @@
+NAME=Uninstall SkillSystems Boon
+
+IF:0x188F6=0x40 0xB4 0x01 0x4E 0xB8 0xF0 0xED 0xFF 0x01 0xE0
+INFO=SkillSystems Boonを無効にします。\r\nSkillSystems Boonで20190708のバージョンにバグがあり、Badステータスが自動的に回復されないためです。\r\nこのバージョンのBoonを無効にしたい場合利用してください。
+AUTHOR=7743
+
+BIN:0x188F6=Uninstall SkillSystems Boon_188F6.bin
+TYPE=BIN
+INFO.en=Disable SkillSystems Boon.\r\nThis is because SkillSystems Boon has a bug in the 20190708 version and Bad status is not automatically restored.\r\nUse this if you want to disable this version of Boon.
+INFO.zh=这是因为SkillSystems Boon在20190708版本中存在错误，而Bad状态不是自动生成的。\r\n请使用此版本禁用Boon。
