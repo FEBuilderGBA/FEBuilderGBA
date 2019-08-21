@@ -12,3 +12,4 @@ NAME.zh=沉默新游戏音乐
 INFO.zh=沉默新游戏音乐
 COMBO.en=Silence|0x00|Restlessness|0x03
 INFO.en=Edit field to toggle whether the music that plays after selecting a New Game mode plays or not.\r\nThis removes the music that would play during the first cutscene prior to the World Map Cutscene.\r\nThe ROM is default set to not skip.\r\n
+INFO=ニューゲームを選択した時に再生する音の設定。ディフォルトはSongID:0x03を再生します。0にすると、無音になります。

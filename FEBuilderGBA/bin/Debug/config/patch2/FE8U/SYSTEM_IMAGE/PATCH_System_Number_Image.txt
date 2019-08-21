@@ -1,0 +1,13 @@
+NAME=メニューなどのシステムで使われている数字フォント
+NAME.en=System_Number_Image
+NAME.zh=System_Number_Image
+
+TYPE=IMAGE
+
+WIDTH=80
+HEIGHT=8
+
+ZIMAGE_POINTER=0x08D0B4//0xA16D6C
+PALETTE_POINTER=0x43D8//0x59EF00
+
+KEEPPALETTE=true

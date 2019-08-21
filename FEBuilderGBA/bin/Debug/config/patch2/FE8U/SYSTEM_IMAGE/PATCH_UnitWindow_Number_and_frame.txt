@@ -1,0 +1,13 @@
+NAME=ユニットウィンドウなどのシステムで使われている数字フォントとフレーム
+NAME.en=UnitWindow_Number_and_frame
+NAME.zh=UnitWindow_Number_and_frame
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x08D0AC//0xA167C8
+PALETTE_ADDRESS=0x599714
+
+KEEPPALETTE=true
