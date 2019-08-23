@@ -1,2 +1,0 @@
-Elbow Room: +3 damage dealt
-when on open terrain.

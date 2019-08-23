@@ -1,2 +1,0 @@
-Vantage: Allows the user to 
-always attack first.

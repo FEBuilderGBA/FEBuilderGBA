@@ -1,2 +1,0 @@
-Camaraderie: Recover 10% HP each turn
-if there are allies within 2 tiles.

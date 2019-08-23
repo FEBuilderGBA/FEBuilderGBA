@@ -1,2 +1,0 @@
-Odd Rhythm: +10 Hit and Avoid
-on odd numbered turns.

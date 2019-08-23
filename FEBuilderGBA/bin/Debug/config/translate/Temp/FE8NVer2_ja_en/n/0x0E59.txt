@@ -1,3 +1,0 @@
-Crusade (Lv%)
-When HP is half or less, deal double damage
-and restore HP equal to damage dealt.

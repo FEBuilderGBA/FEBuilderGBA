@@ -1,2 +1,0 @@
-Resolve: When HP falls to less than 50%,
-certain stats are multiplied by 1.5.

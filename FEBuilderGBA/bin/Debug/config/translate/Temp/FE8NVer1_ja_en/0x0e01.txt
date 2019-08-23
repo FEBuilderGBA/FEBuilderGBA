@@ -1,2 +1,0 @@
-Sol Skill% chance to restore HP equal
-to the amount of damage done to enemy.

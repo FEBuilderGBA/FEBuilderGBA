@@ -1,2 +1,0 @@
-Pragmatic: When foe is not at full HP,
-attack +3 and def/res+1.

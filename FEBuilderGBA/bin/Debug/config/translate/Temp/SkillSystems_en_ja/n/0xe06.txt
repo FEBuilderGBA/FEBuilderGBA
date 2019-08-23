@@ -1,2 +1,0 @@
-Press Select to toggle
-between stats and growths.

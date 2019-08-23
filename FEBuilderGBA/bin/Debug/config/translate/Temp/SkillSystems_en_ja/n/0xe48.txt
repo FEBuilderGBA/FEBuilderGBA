@@ -1,2 +1,0 @@
-Axefaire: +4 damage
-when equipping an axe.

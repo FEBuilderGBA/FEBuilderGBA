@@ -1,2 +1,0 @@
-Rally Resistance: +4 Res
-to allies within 2 tiles.

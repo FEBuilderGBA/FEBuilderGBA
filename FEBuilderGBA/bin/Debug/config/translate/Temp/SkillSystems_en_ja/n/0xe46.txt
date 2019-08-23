@@ -1,2 +1,0 @@
-Swordfaire: +4 damage
-when equipping a sword.

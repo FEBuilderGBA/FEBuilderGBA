@@ -1,3 +1,0 @@
-Shift
-Can change weapons when attacked
-if unable to counterattack.

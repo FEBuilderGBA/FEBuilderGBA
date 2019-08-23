@@ -1,2 +1,0 @@
-Spur Magic: Adjacent allies
-deal +4 magical damage.

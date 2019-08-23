@@ -1,2 +1,0 @@
-Axebreaker: +50 Hit/Avo when
-enemy has an axe equipped.

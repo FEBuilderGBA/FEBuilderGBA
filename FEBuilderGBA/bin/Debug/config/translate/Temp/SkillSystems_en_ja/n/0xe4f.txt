@@ -1,2 +1,0 @@
-Lifetaker: Restore up to 50% HP after
-attacking and defeating an enemy.

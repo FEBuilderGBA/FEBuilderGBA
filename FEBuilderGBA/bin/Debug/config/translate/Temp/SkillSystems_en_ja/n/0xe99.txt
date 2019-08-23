@@ -1,2 +1,0 @@
-Moonbow: Enemy Def/Res is
-reduced by 25%. Charge: 2

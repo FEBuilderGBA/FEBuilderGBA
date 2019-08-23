@@ -1,2 +1,0 @@
-Light Weight: When holding three
-or less items, attack speed +3.

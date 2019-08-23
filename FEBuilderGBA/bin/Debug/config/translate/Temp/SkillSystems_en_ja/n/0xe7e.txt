@@ -1,2 +1,0 @@
-Anathema: -10 Avoid/Dodge to all
-enemies within 3 tiles.

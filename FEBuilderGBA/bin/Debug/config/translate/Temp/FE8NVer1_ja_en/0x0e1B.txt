@@ -1,2 +1,0 @@
-Pass: 
-Allows movement through enemies.

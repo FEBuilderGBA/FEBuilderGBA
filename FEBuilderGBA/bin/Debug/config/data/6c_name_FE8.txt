@@ -736,6 +736,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 00096FCC=PrepScreenMenu	{U}	//08A186EC
 0009CD10=PrepScreenItemUseScreen	{U}	//08A19064
 00A190D8=StatScreenItemStatBoosterEffect	{U}	//08A191A4
+000C542C=OP	Subtitle	{U}	//08AA21BC
 
 0000E98C=ConvoBackgroundFade	{J}	//08591E58
 000108FC=EventDisplayCursor	{J}	//085B9CEC
@@ -750,3 +751,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 0009EFA8=PrepScreenItemUseScreen	{J}	//08A94DA8
 000114A8=PopupIconUpdater	{J}	//085BA00C
 0003586C=BottomHelpText	{J}	//085C6698
+000CA1E4=OP Subtitle	{J}	//08B3B54C

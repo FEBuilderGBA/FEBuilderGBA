@@ -1,2 +1,0 @@
-Critical Force: Base critical is
-Skl * 1.5.

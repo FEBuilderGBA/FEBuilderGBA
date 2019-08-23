@@ -1,2 +1,0 @@
-Even Rhythm: +10 Hit and Avoid
-on even numbered turns.

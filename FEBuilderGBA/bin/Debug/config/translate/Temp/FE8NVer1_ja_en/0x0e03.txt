@@ -1,2 +1,0 @@
-Astra: Level% chance to perform 5 consecutive
-attacks while under 50% HP.
