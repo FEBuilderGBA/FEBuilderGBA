@@ -17,7 +17,7 @@ namespace FEBuilderGBA
             this.AddressList.OwnerDraw(ListBoxEx.DrawTextOnly, DrawMode.OwnerDrawFixed);
 
             this.InputFormRef = Init(this);
-            this.InputFormRef.IsMemoryNotContinuous = true; //かなり手前のアドレスなので確認不可能
+            this.InputFormRef.CheckProtectionAddrHigh = false; //かなり手前のアドレスなので確認不可能
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
