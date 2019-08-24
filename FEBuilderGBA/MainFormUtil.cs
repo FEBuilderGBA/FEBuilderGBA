@@ -2329,7 +2329,12 @@ namespace FEBuilderGBA
                 }
             }
 
-            uint orignalCRC32 = Program.ROM.RomInfo.orignal_crc32();
+            uint orignalCRC32 = 0;
+            if (Program.ROM != null)
+            {
+                orignalCRC32 = Program.ROM.RomInfo.orignal_crc32();
+            }
+
             string noMatch = R._("指定されたROMは無改造ROMではありません。\r\nCRC32が一致しません。\r\n正規品の無改造ROMを指定してください。\r\n正規品のROMからupsを作らないと誰もそれを開けません。\r\n\r\n指定されたROMのCRC32:\r\n{0}\r\n正規品のCRC32:\r\n{1}", U.ToHexString8(targetCRC32), U.ToHexString8(orignalCRC32));
             return noMatch;
         }

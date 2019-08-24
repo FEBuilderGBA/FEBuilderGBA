@@ -2571,7 +2571,7 @@ this.MapObjImage);
             MAPCOMBO_SelectedIndexChanged(null, null);
 
             //マップ変化リストの再選択
-            MapChange.SelectedIndex = MapChange.Items.Count - 1;
+            U.SelectedIndexSafety(MapChange, MapChange.Items.Count - 1);
             return;
         }
 
