@@ -735,11 +735,19 @@ namespace FEBuilderGBA
                 r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
                 if (r == null)
                 {
+                    this.ErrorMessage = "MakeBattleAnime OBJ1 Error" + R._("\r\n画像ファイル名:{0}"
+                        , Path.GetFileName(imagefilename)
+                    );
+                    bitmap.Dispose();
                     return null;
                 }
                 animedata bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
                 if (bg == null)
                 {
+                    this.ErrorMessage = "MakeBattleAnime BG1 Error" + R._("\r\n画像ファイル名:{0}"
+                        , Path.GetFileName(imagefilename)
+                    );
+                    bitmap.Dispose();
                     return null;
                 }
                 Log.Debug(Path.GetFileNameWithoutExtension(imagefilename) + " " + r.oam_pos + " " + bg.oam_pos);
@@ -753,7 +761,23 @@ namespace FEBuilderGBA
                     NextSeat();
 
                     r = MakeBattleAnime(bitmap, false, this.RightToLeftOAM);
+                    if (r == null)
+                    {
+                        this.ErrorMessage = "MakeBattleAnime OBJ2 Error" + R._("\r\n画像ファイル名:{0}"
+                            , Path.GetFileName(imagefilename)
+                        );
+                        bitmap.Dispose();
+                        return null;
+                    }
                     bg = MakeBattleAnime(bitmap, true, this.RightToLeftOAMBG);
+                    if (bg == null)
+                    {
+                        this.ErrorMessage = "MakeBattleAnime BG2 Error" + R._("\r\n画像ファイル名:{0}"
+                            , Path.GetFileName(imagefilename)
+                        );
+                        bitmap.Dispose();
+                        return null;
+                    }
                     if (r.image_pointer != bg.image_pointer)
                     {
                         bitmap.Dispose();

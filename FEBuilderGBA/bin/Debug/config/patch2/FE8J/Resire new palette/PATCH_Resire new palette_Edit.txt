@@ -1,0 +1,21 @@
+﻿NAME=リザイアのパレットを新しいものに変更する(編集)
+NAME.en=Resire's new palette(Edit)
+NAME.zh=Resire's new palette(Edit)
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+IFNOT:0x60624=0x18 0x32 0x66 0x08
+
+WIDTH=240
+HEIGHT=160
+
+ZIMAGE_POINTER=0x005FFDD8//0x0865A8E4
+ZTSA_POINTER=0x005FFEA4//0x08663238
+PALETTE_POINTER=0x60624
+
+PALETTE=1
+KEEPIMAGE=TRUE //only palette
+KEEPTSA=TRUE //only palette
+
+AUTHOR=Tequila

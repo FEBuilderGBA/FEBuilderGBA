@@ -1,0 +1,11 @@
+PUSH
+//Resire's new palette
+ORG $60624
+POIN Resire_Palette
+ORG $606C0
+POIN Resire_Palette
+POP
+ALIGN 4
+Resire_Palette:
+#incbin "Resire.png.dmp"
+//#incext Png2Dmp "Resire.png" --palette-only

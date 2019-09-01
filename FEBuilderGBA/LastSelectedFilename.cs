@@ -152,7 +152,14 @@ namespace FEBuilderGBA
 
             if (filename != "")
             {
-                d.FileName = filename;
+                try
+                {
+                    d.FileName = filename;
+                }
+                catch (Exception e)
+                {//Skip
+                    Log.Error(R.ExceptionToString(e));
+                }
             }
 
             if (!this.Dic.ContainsKey(key))
@@ -172,7 +179,15 @@ namespace FEBuilderGBA
                     index = ls.FilterIndex;
                 }
             }
-            d.FilterIndex = index;
+
+            try
+            {
+                d.FilterIndex = index;
+            }
+            catch (Exception e)
+            {//Skip
+                Log.Error(R.ExceptionToString(e));
+            }
         }
         public string GetLastFilename()
         {

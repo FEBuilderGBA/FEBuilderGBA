@@ -4857,3 +4857,4 @@ and defeating an enemy.
 「持ち物」、「体当たり」、\r\n「同行」などの\r\nサブメニューを開きます。	Open submenus such as\r\nItem, Shove, Refuge.
 　全預け	Give all
 　全預け＋	 GiveAll+
+　移動補助	 SubMenu

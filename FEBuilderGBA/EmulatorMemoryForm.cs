@@ -1542,7 +1542,10 @@ namespace FEBuilderGBA
 
             //CHEAT_UNIT_MEMORY_AND_NAME
         }
-
+        void KillUnit(uint unitRAMAddress)
+        {
+            Program.RAM.write_u32(unitRAMAddress, 0);
+        }
         void UpdateUnitHP1(uint unitRAMAddress, bool showNotify)
         {
             uint writeRAMPointer;
@@ -2242,6 +2245,7 @@ namespace FEBuilderGBA
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
+
         ProcsData Find6C(uint romPointer)
         {
             romPointer = U.toPointer(romPointer);
@@ -2567,5 +2571,6 @@ namespace FEBuilderGBA
             uint unit_id = U.atoh(PARTY_RAMUNITAID.Text);
             InputFormRef.JumpTo(null, unit_id, "UNIT", new string[] { });
         }
+
     }
 }

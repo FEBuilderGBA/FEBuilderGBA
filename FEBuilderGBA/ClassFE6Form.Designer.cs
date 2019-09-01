@@ -1715,6 +1715,7 @@
             // 
             // J_26
             // 
+            this.J_26.AccessibleDescription = "@CLASS_POWER";
             this.J_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_26.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.J_26.Location = new System.Drawing.Point(760, 0);

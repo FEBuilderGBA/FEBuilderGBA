@@ -1,5 +1,5 @@
 NAME=リザイアバグ修正
-NAME.en=Nosferatu Bug Fix
+NAME.en=Nosferatu Bug Fix(Resire)
 NAME.zh=HP溢出错误修复
 
 //アドレスパッチとして実装します

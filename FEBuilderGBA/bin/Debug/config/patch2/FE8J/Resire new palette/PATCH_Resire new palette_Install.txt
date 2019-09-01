@@ -1,0 +1,13 @@
+NAME=リザイアのパレットを新しいものに変更する(導入)
+NAME.en=Resire's new palette(Installer)
+NAME.zh=Resire's new palette(Installer)
+TYPE=EA
+TAG=#IMAGE
+
+EA=Resire new palette.event
+PATCHED_IFNOT:0x60624=0x18 0x32 0x66 0x08
+
+AUTHOR=Tequila
+
+INFO=リザイアのパレットを新しいものに変更します。\r\nディフォルトで金色の黄色い色に変更します。
+INFO.en=Change the Resire(Nosferatu) palette to a new one.\r\nThe default is a golden yellow color.

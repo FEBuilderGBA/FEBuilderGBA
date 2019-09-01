@@ -5443,7 +5443,7 @@
             // 
             // CHEAT_ALL_ENEMY_UNIT_HP_1
             // 
-            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(71, 600);
+            this.CHEAT_ALL_ENEMY_UNIT_HP_1.Location = new System.Drawing.Point(70, 602);
             this.CHEAT_ALL_ENEMY_UNIT_HP_1.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_ALL_ENEMY_UNIT_HP_1.Name = "CHEAT_ALL_ENEMY_UNIT_HP_1";
             this.CHEAT_ALL_ENEMY_UNIT_HP_1.Size = new System.Drawing.Size(742, 40);
@@ -5455,7 +5455,7 @@
             // 
             // CHEAT_ALL_UNIT_GROW
             // 
-            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(70, 551);
+            this.CHEAT_ALL_UNIT_GROW.Location = new System.Drawing.Point(70, 550);
             this.CHEAT_ALL_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_ALL_UNIT_GROW.Name = "CHEAT_ALL_UNIT_GROW";
             this.CHEAT_ALL_UNIT_GROW.Size = new System.Drawing.Size(742, 40);
@@ -5467,7 +5467,7 @@
             // 
             // CHEAT_ALL_PLAYER_UNIT_GROW
             // 
-            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(71, 498);
+            this.CHEAT_ALL_PLAYER_UNIT_GROW.Location = new System.Drawing.Point(70, 498);
             this.CHEAT_ALL_PLAYER_UNIT_GROW.Margin = new System.Windows.Forms.Padding(2);
             this.CHEAT_ALL_PLAYER_UNIT_GROW.Name = "CHEAT_ALL_PLAYER_UNIT_GROW";
             this.CHEAT_ALL_PLAYER_UNIT_GROW.Size = new System.Drawing.Size(742, 40);

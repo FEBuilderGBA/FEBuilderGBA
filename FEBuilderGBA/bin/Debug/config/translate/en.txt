@@ -11815,3 +11815,5 @@ Contains characters that can not be used as file names
 :仮想ROMの名前を変更することはできません。
 You can not change the name of virtual ROM.
 
+:クラスの獲得経験値計算に使われる値です。\r\n敵との差が大きければ、経験値をより獲得できます。\r\n\r\nただし、計算式はかなり複雑ですので、\r\n詳しく知りたい場合は、\r\n「経験値　計算式 烈火」で、検索してください。
+Used to calculate earned EXP of class.\r\nIf the difference with the enemy is large, you can earn more EXP.\r\n\r\nHowever, the calculation formula is quite complicated, \r\nso if you want to know more details, google with\r\n"Experience Calculations the-sacred-stones"
