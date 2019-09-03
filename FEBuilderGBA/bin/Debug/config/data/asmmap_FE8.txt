@@ -180,7 +180,7 @@
 @BattleMapState@01	byte	proc2LockCount
 @BattleMapState@02	byte	gfxLockCount
 @BattleMapState@03	byte	_unk03
-@BattleMapState@04	byte	statebits
+@BattleMapState@04	byte	statebits 0x10=Prep
 @BattleMapState@06	short	savedVCount
 @BattleMapState@08	word	_unk08
 @BattleMapState@08	@Vec2u	cameraRealPos

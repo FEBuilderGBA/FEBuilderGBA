@@ -1,0 +1,19 @@
+NAME=進撃準備画面のマップ確認でも章目的を表示する
+NAME.en=Change Show chapter purpose in map confirmation on preparation screen
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Show|FIX
+COMBO.en=default|OFF|Show|FIX
+COMBO.zh=default|OFF|Show|FIX
+
+DETERMINATION_ADDRESS=0x08F398
+
+OFF:0x08F398=0x1C 0xD0
+FIX:0x08F398=0x28 0xE0
+
+AUTHOR=7743
+
+NAME.zh=在预先准备画面上更改为在地图确认中显示章节目的

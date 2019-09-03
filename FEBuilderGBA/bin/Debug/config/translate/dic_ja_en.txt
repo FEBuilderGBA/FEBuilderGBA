@@ -4858,3 +4858,4 @@ and defeating an enemy.
 　全預け	Give all
 　全預け＋	 GiveAll+
 　移動補助	 SubMenu
+　補助	 SubMenu
