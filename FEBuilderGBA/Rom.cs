@@ -498,7 +498,7 @@ namespace FEBuilderGBA
 
         public void Save(string name,bool silent)
         {
-            File.WriteAllBytes(name, this.Data);
+            U.WriteAllBytes(name, this.Data);
 
             if (!silent)
             {

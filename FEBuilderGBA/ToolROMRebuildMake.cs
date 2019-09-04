@@ -287,7 +287,7 @@ namespace FEBuilderGBA
                 sb.Append(filename);
 
                 string fullfilename = Path.Combine(this.BaseDir, filename);
-                File.WriteAllBytes(fullfilename, bin);
+                U.WriteAllBytes(fullfilename, bin);
             }
 
             RefCmd refCmd = new RefCmd();
@@ -730,7 +730,7 @@ namespace FEBuilderGBA
             rebuildData.Append(RefSortSimple(wait, refCmdList));
 //            rebuildData.Append(AppendAssert(ldrmap));
 
-            File.WriteAllText(filename, rebuildData.ToString());
+            U.WriteAllText(filename, rebuildData.ToString());
         }
 
         string AppendAssert(List<DisassemblerTrumb.LDRPointer> ldrmap)
@@ -912,7 +912,7 @@ namespace FEBuilderGBA
             }
 
             string fullfilename = Path.Combine(this.BaseDir, filename);
-            File.WriteAllText(fullfilename, infsb.ToString());
+            U.WriteAllText(fullfilename, infsb.ToString());
 
             sb.Append("@IFR ");
             sb.Append(U.ToHexString8(address.Addr)); //addr
@@ -1991,7 +1991,7 @@ namespace FEBuilderGBA
             //MIXデータを書き込む.
             infsb.Remove(0, 1);
             string fullfilename = Path.Combine(this.BaseDir, filename);
-            File.WriteAllText(fullfilename, infsb.ToString());
+            U.WriteAllText(fullfilename, infsb.ToString());
 
             sb.Append(U.ToHexString8(address.Addr)); //addr
 
@@ -2064,7 +2064,7 @@ namespace FEBuilderGBA
 
             string fullfilename = Path.Combine(this.BaseDir, filename);
             byte[] bin = Program.ROM.getBinaryData(address.Addr, address.Length);
-            File.WriteAllBytes(fullfilename, bin);
+            U.WriteAllBytes(fullfilename, bin);
 
             refCmd.Cmd = sb.ToString();
             return refCmd;

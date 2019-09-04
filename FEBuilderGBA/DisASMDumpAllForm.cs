@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -115,6 +116,7 @@ namespace FEBuilderGBA
                 Program.CommentCache.MakeAddressList(structlist);
                 asmMapFile.AppendMAP(structlist);
 
+                uint lastNumber = 0;
                 string line;
                 Dictionary<uint, AsmMapFile.AsmMapSt> asmmap = asmMapFile.GetAsmMap();
                 foreach (var pair in asmmap)
@@ -138,15 +140,44 @@ namespace FEBuilderGBA
                     name = U.term(name, "\t");
                     name = name.Replace(" ", "_"); //スペースがあるとダメらしい.
 
+                    uint arrayNumner = ParseArrayIndex(name);
+                    if (arrayNumner >= 10)
+                    {//容量削減のため2桁の配列は1つのみ
+                        if (lastNumber == arrayNumner)
+                        {
+                            continue;
+                        }
+                        lastNumber = arrayNumner;
+                    }
+
                     line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);
 
                     writer.WriteLine(line);
                 }
-
-
-
             }
+        }
 
+        //配列の値があったら、添え字を返す.
+        static uint ParseArrayIndex(string str)
+        {
+            Match deep = RegexCache.Match(str, @"\[(\d+)\]");
+            if (deep.Groups.Count >= 2)
+            {
+                string m = deep.Groups[1].ToString();
+                return U.atoi(m);
+            }
+            return 0;
+        }
+        public static void TEST_ParseArrayIndex()
+        {
+            uint r = ParseArrayIndex("aaa");
+            Debug.Assert(r == 0);
+
+            r = ParseArrayIndex("aaa[10]");
+            Debug.Assert(r == 10);
+
+            r = ParseArrayIndex("Unit@Player[10].UnitPointer");
+            Debug.Assert(r == 10);
         }
 
         static Dictionary<uint, Address> MakeAllStructMapping(List<Address> structlist)

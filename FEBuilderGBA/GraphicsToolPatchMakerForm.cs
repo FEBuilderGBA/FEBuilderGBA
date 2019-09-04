@@ -59,7 +59,7 @@ namespace FEBuilderGBA
             //パッチ名が未定義の場合、パッチファイル名から自動的に取得する.
             string patchText = PatchText.Text.Replace("<<PATCH NAME>>", name);
 
-            File.WriteAllText(save.FileName, patchText);
+            U.WriteAllText(save.FileName, patchText);
 
             U.SelectFileByExplorer(save.FileName);
 

@@ -13,6 +13,7 @@ using System.Collections;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace FEBuilderGBA
 {
@@ -5868,6 +5869,393 @@ namespace FEBuilderGBA
         {
             // UNIXエポックからの経過秒数で得られるローカル日付
             return UNIX_EPOCH.AddSeconds(unixTime).ToLocalTime();
+        }
+        //書き込み系でExceptionを出したくないので、エラーメッセージを表示に置き換える.
+
+        //
+        // 概要:
+        //     新しいファイルを作成し、指定したバイト配列をそのファイルに書き込んだ後、ファイルを閉じます。既存のターゲット ファイルは上書きされます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   bytes:
+        //     ファイルに書き込むバイト。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.InvalidPathChars で定義されている無効な文字を
+        //     1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //     path が null か、バイト配列が空です。
+        //
+        //   System.IO.PathTooLongException:
+        //     指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは
+        //     248 文字未満、ファイル名の長さは 260 文字未満である必要があります。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     指定したパスが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path によって、読み取り専用のファイルが指定されました。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath によってディレクトリが指定されました。または呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllBytes(string path, byte[] bytes)
+        {
+            try
+            {
+                File.WriteAllBytes(path, bytes);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+
+        //
+        // 概要:
+        //     新しいファイルを作成し、文字列のコレクションをそのファイルに書き込んでから、そのファイルを閉じます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む行。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.GetInvalidPathChars()
+        //     メソッドで定義されている無効な文字を 1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //      path  または contents が null です。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     pathが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.IO.PathTooLongException:
+        //     path がシステムで定義されている最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは 248 文字未満、ファイル名の長さは
+        //     260 文字未満である必要があります。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path が、読み取り専用のファイルを指定します。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath がディレクトリです。または呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllLines(string path, IEnumerable<string> contents)
+        {
+            try
+            {
+                File.WriteAllLines(path, contents);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+
+        //
+        // 概要:
+        //     新しいファイルを作成し、指定した文字列配列をそのファイルに書き込んだ後、ファイルを閉じます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む文字列配列。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.InvalidPathChars で定義されている無効な文字を
+        //     1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //     path または contents のいずれかが null です。
+        //
+        //   System.IO.PathTooLongException:
+        //     指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは
+        //     248 文字未満、ファイル名の長さは 260 文字未満である必要があります。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     指定したパスが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path によって、読み取り専用のファイルが指定されました。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath によってディレクトリが指定されました。または呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllLines(string path, string[] contents)
+        {
+            try
+            {
+                File.WriteAllLines(path, contents);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+
+        //
+        // 概要:
+        //     指定されたエンコーディングを使用して新しいファイルを作成し、文字列のコレクションをそのファイルに書き込んでから、そのファイルを閉じます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む行。
+        //
+        //   encoding:
+        //     使用する文字エンコーディング。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.GetInvalidPathChars()
+        //     メソッドで定義されている無効な文字を 1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //      path、 contents、または encoding が null です。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     pathが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.IO.PathTooLongException:
+        //     path がシステムで定義されている最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは 248 文字未満、ファイル名の長さは
+        //     260 文字未満である必要があります。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path が、読み取り専用のファイルを指定します。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath がディレクトリです。または呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllLines(string path, IEnumerable<string> contents, Encoding encoding)
+        {
+            try
+            {
+                File.WriteAllLines(path, contents,encoding);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+
+        //
+        // 概要:
+        //     新しいファイルを作成し、指定されたエンコーディングで指定された文字列配列をそのファイルに書き込んでから、そのファイルを閉じます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む文字列配列。
+        //
+        //   encoding:
+        //     文字列配列に適用された文字エンコーディングを表す System.Text.Encoding オブジェクト。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.InvalidPathChars で定義されている無効な文字を
+        //     1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //     path または contents のいずれかが null です。
+        //
+        //   System.IO.PathTooLongException:
+        //     指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは
+        //     248 文字未満、ファイル名の長さは 260 文字未満である必要があります。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     指定したパスが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path によって、読み取り専用のファイルが指定されました。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath によってディレクトリが指定されました。または呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllLines(string path, string[] contents, Encoding encoding)
+        {
+            try
+            {
+                File.WriteAllLines(path, contents,encoding);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+
+        //
+        // 概要:
+        //     新しいファイルを作成し、指定した文字列をそのファイルに書き込んだ後、ファイルを閉じます。既存のターゲット ファイルは上書きされます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む文字列。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.InvalidPathChars で定義されている無効な文字を
+        //     1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //     path が null であるか、contents が空です。
+        //
+        //   System.IO.PathTooLongException:
+        //     指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは
+        //     248 文字未満、ファイル名の長さは 260 文字未満である必要があります。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     指定したパスが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path によって、読み取り専用のファイルが指定されました。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath によってディレクトリが指定されました。または呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllText(string path, string contents)
+        {
+            try
+            {
+                File.WriteAllText(path, contents);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
+        }
+        //
+        // 概要:
+        //     新しいファイルを作成し、指定したエンコーディングで指定の文字列をそのファイルに書き込んだ後、ファイルを閉じます。既存のターゲット ファイルは上書きされます。
+        //
+        // パラメーター:
+        //   path:
+        //     書き込み先のファイル。
+        //
+        //   contents:
+        //     ファイルに書き込む文字列。
+        //
+        //   encoding:
+        //     文字列に適用するエンコーディング。
+        //
+        // 例外:
+        //   System.ArgumentException:
+        //     path が、長さが 0 の文字列であるか、空白しか含んでいないか、または System.IO.Path.InvalidPathChars で定義されている無効な文字を
+        //     1 つ以上含んでいます。
+        //
+        //   System.ArgumentNullException:
+        //     path が null であるか、contents が空です。
+        //
+        //   System.IO.PathTooLongException:
+        //     指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。たとえば、Windows ベースのプラットフォームの場合、パスの長さは
+        //     248 文字未満、ファイル名の長さは 260 文字未満である必要があります。
+        //
+        //   System.IO.DirectoryNotFoundException:
+        //     指定したパスが無効です (割り当てられていないドライブであるなど)。
+        //
+        //   System.IO.IOException:
+        //     ファイルを開くときに、I/O エラーが発生しました。
+        //
+        //   System.UnauthorizedAccessException:
+        //     path によって、読み取り専用のファイルが指定されました。またはこの操作は、現在のプラットフォームではサポートされていません。またはpath によってディレクトリが指定されました。または呼び出し元に、必要なアクセス許可がありません。
+        //
+        //   System.IO.FileNotFoundException:
+        //     path で指定されたファイルが見つかりませんでした。
+        //
+        //   System.NotSupportedException:
+        //     path の形式が無効です。
+        //
+        //   System.Security.SecurityException:
+        //     呼び出し元に、必要なアクセス許可がありません。
+        [SecuritySafeCritical]
+        public static void WriteAllText(string path, string contents, Encoding encoding)
+        {
+            try
+            {
+                File.WriteAllText(path,contents,encoding);
+            }
+            catch (Exception e)
+            {
+                string error = R.ExceptionToString(e);
+                R.ShowStopError(error);
+            }
         }
     }
 }

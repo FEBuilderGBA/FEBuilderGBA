@@ -197,7 +197,7 @@ namespace FEBuilderGBA
             U.append_u32(ups, crc32.Calc(d));
             U.append_u32(ups, crc32.Calc(ups.ToArray()));
 
-            File.WriteAllBytes(upsFilename, ups.ToArray());
+            U.WriteAllBytes(upsFilename, ups.ToArray());
         }
 
     }

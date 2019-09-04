@@ -1132,7 +1132,7 @@ namespace FEBuilderGBA
                 return;
             }
 
-            File.WriteAllText(filename, lines);
+            U.WriteAllText(filename, lines);
         }
     }
 }

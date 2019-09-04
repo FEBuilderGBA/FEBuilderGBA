@@ -249,7 +249,7 @@ namespace FEBuilderGBA
             ((AITargetForm)InputFormRef.JumpFormLow<AITargetForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
             ((AIStealItemForm)InputFormRef.JumpFormLow<AIStealItemForm>()).InputFormRef.SaveDumpAutomatic(sb, saveDir);
 
-            File.WriteAllText(filename, sb.ToString());
+            U.WriteAllText(filename, sb.ToString());
         }
 
         private void ExportUndoDataButton_Click(object sender, EventArgs e)
@@ -315,7 +315,7 @@ namespace FEBuilderGBA
             {
                 sb.AppendLine(revLines[i]);
             }
-            File.WriteAllText(filename, sb.ToString());
+            U.WriteAllText(filename, sb.ToString());
         }
     }
 }

@@ -1481,7 +1481,7 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(this, "", save);
 
             string ext = U.GetFilenameExt(filename);
-            File.WriteAllText(filename, EventToTextAll());
+            U.WriteAllText(filename, EventToTextAll());
 
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(filename);

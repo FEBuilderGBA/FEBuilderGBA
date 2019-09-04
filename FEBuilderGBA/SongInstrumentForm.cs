@@ -549,7 +549,7 @@ namespace FEBuilderGBA
             }
 
             byte[] wave = SongUtil.byteToWav(Program.ROM.Data, addr);
-            File.WriteAllBytes(filename, wave);
+            U.WriteAllBytes(filename, wave);
 
             U.SelectFileByExplorer(filename);
         }
@@ -762,7 +762,7 @@ namespace FEBuilderGBA
 
                     string waveFilename = basename + U.To0xHexString(i) + ".DirectSound.bin";
                     byte[] bin = Program.ROM.getBinaryData(songdata_addr, 12 + 4 + sample_length);
-                    File.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
 
                      sb.Append(waveFilename); sb.Append("\t");
                 }
@@ -778,7 +778,7 @@ namespace FEBuilderGBA
 
                     byte[] bin = Program.ROM.getBinaryData(songdata_addr , 16);
                     string waveFilename = basename + U.To0xHexString(i) + ".Wave.bin";
-                    File.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
 
                     sb.Append(waveFilename); sb.Append("\t");
                 }
@@ -849,7 +849,7 @@ namespace FEBuilderGBA
 
                     byte[] bin = Program.ROM.getBinaryData(sample_location, 128);
                     string waveFilename = basename + U.To0xHexString(i) + ".Multi.keys.bin";
-                    File.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
+                    U.WriteAllBytes(Path.Combine(dir, waveFilename), bin);
 
                     sb.Append(waveFilename); sb.Append("\t");
                 }

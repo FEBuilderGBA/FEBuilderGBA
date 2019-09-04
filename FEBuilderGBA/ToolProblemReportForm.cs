@@ -193,7 +193,7 @@ namespace FEBuilderGBA
 
                 //ログとユーザの説明を書き込む
                 string log = Path.Combine(tempdir.Dir, "log.txt");
-                File.WriteAllText(log, MakeReportLog());
+                U.WriteAllText(log, MakeReportLog());
 
                 //etcの内容をコピー
                 //lintやコメントなどの設定がほしい

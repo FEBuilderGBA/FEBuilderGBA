@@ -1041,7 +1041,7 @@ namespace FEBuilderGBA
                 midi.AddRange(data);
             }
 
-            File.WriteAllBytes(filename, midi.ToArray());
+            U.WriteAllBytes(filename, midi.ToArray());
         }
 
         class MidiKey

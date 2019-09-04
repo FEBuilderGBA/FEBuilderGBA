@@ -84,7 +84,7 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            File.WriteAllBytes(emulator_filename, bin);
+            U.WriteAllBytes(emulator_filename, bin);
             return true;
         }
 
@@ -152,7 +152,7 @@ namespace FEBuilderGBA
                 //エミュレータが終了したら、保存していたセーブファイルを書き戻す.
                 if (saveFile != "" && saveFileBin != null)
                 {
-                    File.WriteAllBytes(saveFile,saveFileBin);
+                    U.WriteAllBytes(saveFile,saveFileBin);
                 }
             };
         }

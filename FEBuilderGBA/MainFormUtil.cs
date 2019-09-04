@@ -748,7 +748,7 @@ namespace FEBuilderGBA
 
             //Extract raw assembly binary (text section) from elf
             output_temp_filename = target + ".dmp";
-            File.WriteAllBytes(output_temp_filename, elf.ProgramBIN);
+            U.WriteAllBytes(output_temp_filename, elf.ProgramBIN);
 
             Log.Notify(target + ".dmp");
             Log.Notify("=== SYMBOL ===");
@@ -833,7 +833,7 @@ namespace FEBuilderGBA
             string freeareadef_targetfile_fullpath = Path.Combine(Path.GetDirectoryName(target_filename), freeareadef_targetfile);
             freeareadef_targetfile_fullpath = Path.GetFullPath(freeareadef_targetfile_fullpath);
 
-            File.WriteAllText(freeareadef_targetfile_fullpath, autoDef);
+            U.WriteAllText(freeareadef_targetfile_fullpath, autoDef);
 
             if (!File.Exists(freeareadef_targetfile_fullpath))
             {
@@ -1083,59 +1083,64 @@ namespace FEBuilderGBA
 
             U.CRC32 crc32 = new U.CRC32();
 
-            try
+            string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
+            for (int i = 0; i < files.Length; i++)
             {
-                string[] files = U.Directory_GetFiles_Safe(dir, "*.gba", searchOption);
-                for (int i = 0; i < files.Length; i++)
+                string filename = Path.GetFileName(files[i]);
+                if (filename.IndexOf(".backup.") > 0)
                 {
-                    string filename = Path.GetFileName(files[i]);
-                    if (filename.IndexOf(".backup.") > 0)
-                    {
-                        continue;
-                    }
-                    if (filename.IndexOf(".emulator.") > 0)
-                    {
-                        continue;
-                    }
-                    if (filename.IndexOf(".emulator2.") > 0)
-                    {
-                        continue;
-                    }
-                    if (filename.IndexOf(".sappy.") > 0)
-                    {
-                        continue;
-                    }
-                    if (filename.IndexOf(".binary_editor.") > 0)
-                    {
-                        continue;
-                    }
-
-                    if (U.GetFileSize(files[i]) != orignal_size)
-                    {
-                        continue;
-                    }
-
-                    byte[] file = File.ReadAllBytes(files[i]);
-                    if (U.getASCIIString(file, 0xAC, 6) != orignal_header)
-                    {
-                        continue;
-                    }
-                    uint crc = crc32.Calc(file);
-                    if (crc != orignal_crc32)
-                    {
-                        continue;
-                    }
-                    //発見!
-                    return files[i];
+                    continue;
                 }
-            }
-            catch (System.UnauthorizedAccessException e)
-            {
-                R.ShowStopError(R.ExceptionToString(e));
-            }
-            catch (System.IO.IOException e)
-            {
-                R.ShowStopError(R.ExceptionToString(e));
+                if (filename.IndexOf(".emulator.") > 0)
+                {
+                    continue;
+                }
+                if (filename.IndexOf(".emulator2.") > 0)
+                {
+                    continue;
+                }
+                if (filename.IndexOf(".sappy.") > 0)
+                {
+                    continue;
+                }
+                if (filename.IndexOf(".binary_editor.") > 0)
+                {
+                    continue;
+                }
+
+                if (U.GetFileSize(files[i]) != orignal_size)
+                {
+                    continue;
+                }
+
+                byte[] file;
+                try
+                {
+                    file = File.ReadAllBytes(files[i]);
+                }
+                catch (System.UnauthorizedAccessException e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                    continue;
+                }
+                catch (System.IO.IOException e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                    continue;
+                }
+                    
+                if (U.getASCIIString(file, 0xAC, 6) != orignal_header)
+                {
+                    continue;
+                }
+
+                uint crc = crc32.Calc(file);
+                if (crc != orignal_crc32)
+                {
+                    continue;
+                }
+                //発見!
+                return files[i];
             }
 
             //ない
@@ -1225,7 +1230,22 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                byte[] file = File.ReadAllBytes(files[i]);
+                byte[] file;
+                try
+                {
+                    file = File.ReadAllBytes(files[i]);
+                }
+                catch (System.UnauthorizedAccessException e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                    continue;
+                }
+                catch (System.IO.IOException e)
+                {
+                    Log.Error(R.ExceptionToString(e));
+                    continue;
+                }
+
                 uint crc = crc32.Calc(file);
                 if (crc != search_crc)
                 {

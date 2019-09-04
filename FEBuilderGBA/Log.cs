@@ -148,7 +148,7 @@ namespace FEBuilderGBA
 
         public static void ToFile(string filename)
         {
-            File.WriteAllText(filename, LogToString());
+            U.WriteAllText(filename, LogToString());
             U.SelectFileByExplorer(filename);
         }
         public static void OpenLogDir()

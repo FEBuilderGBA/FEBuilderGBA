@@ -7720,7 +7720,7 @@ namespace FEBuilderGBA
                 }
                 sb.AppendLine();
             }
-            File.WriteAllText(filename, sb.ToString());
+            U.WriteAllText(filename, sb.ToString());
         }
         void ReplacePointers(PatchSt patch,Undo.UndoData undodata)
         {

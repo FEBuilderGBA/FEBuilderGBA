@@ -752,3 +752,4 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 000114A8=PopupIconUpdater	{J}	//085BA00C
 0003586C=BottomHelpText	{J}	//085C6698
 000CA1E4=OP Subtitle	{J}	//08B3B54C
+000BD050=ED Turn Record	{J} //08AC1038

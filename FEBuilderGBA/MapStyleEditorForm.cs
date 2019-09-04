@@ -1140,7 +1140,7 @@ namespace FEBuilderGBA
             string ext = U.GetFilenameExt(filename);
             if (ext == ".MAPCHIP_CONFIG")
             {
-                File.WriteAllBytes(filename, this.configUZ);
+                U.WriteAllBytes(filename, this.configUZ);
             }
         }
 

@@ -357,7 +357,7 @@ namespace FEBuilderGBA
             sb.Append(this.ApplyLog);
 
 
-            File.WriteAllText(logfilename, sb.ToString());
+            U.WriteAllText(logfilename, sb.ToString());
             return isOK;
         }
 

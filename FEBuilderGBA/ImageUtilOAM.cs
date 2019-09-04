@@ -3068,7 +3068,7 @@ namespace FEBuilderGBA
             {
                 string frameDataBaseFilename = basename + " Frame Data.dmp";
                 string framefilename = Path.Combine(basedir, frameDataBaseFilename);
-                File.WriteAllBytes(framefilename, frameData_UZ);
+                U.WriteAllBytes(framefilename, frameData_UZ);
 
                 U.append_big16(binData , (uint)frameDataBaseFilename.Length);
                 U.append_range(binData, frameDataBaseFilename);
@@ -3140,7 +3140,7 @@ namespace FEBuilderGBA
             binData.AddRange(palettes_UZ);
 
             //まとめて書き込み
-            File.WriteAllBytes(filename, binData.ToArray());
+            U.WriteAllBytes(filename, binData.ToArray());
             return;
         }
         //FE Editorの java シリアライズされたバトルアニメの読み込み

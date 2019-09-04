@@ -74,7 +74,7 @@ namespace FEBuilderGBA
             }
 
             string temp_asm = Path.GetTempFileName();
-            File.WriteAllText(temp_asm ,this.Code.Text2);
+            U.WriteAllText(temp_asm ,this.Code.Text2);
 
             string output;
             string symbol;

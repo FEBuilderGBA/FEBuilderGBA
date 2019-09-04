@@ -66,7 +66,7 @@ namespace FEBuilderGBA
                     return true;
                 }
             }
-            File.WriteAllText(path, symbol);
+            U.WriteAllText(path, symbol);
             return true;
         }
 

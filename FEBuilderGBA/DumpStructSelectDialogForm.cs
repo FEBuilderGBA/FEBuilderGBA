@@ -407,7 +407,7 @@ namespace FEBuilderGBA
             string[] lines = File.ReadAllLines(filename);
             for (int i = 1; i < lines.Length; i++, addr += ifr.BlockSize)
             {
-                if (i >= ifr.DataCount)
+                if (i > ifr.DataCount)
                 {
                     break;
                 }
@@ -795,9 +795,9 @@ namespace FEBuilderGBA
                 }
             }
 
-            for (int i = 1; i <= lines.Length; i++, addr += ifr.BlockSize)
+            for (int i = 1; i < lines.Length; i++, addr += ifr.BlockSize)
             {
-                if (i >= ifr.DataCount)
+                if (i > ifr.DataCount)
                 {
                     break;
                 }
@@ -1204,7 +1204,7 @@ namespace FEBuilderGBA
             }
 
             string fullfilename = Path.Combine(saveDir, filename);
-            File.WriteAllText(fullfilename, text);
+            U.WriteAllText(fullfilename, text);
             return fullfilename;
         }
 

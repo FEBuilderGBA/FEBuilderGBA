@@ -544,7 +544,7 @@ namespace FEBuilderGBA
             byte[] buffer = new byte[mem_basic_info.RegionSize];
             ReadProcessMemory((int)processHandle, mem_basic_info.BaseAddress, buffer, mem_basic_info.RegionSize, ref bytesRead);
 
-            File.WriteAllBytes("_debug_dump_"+U.ToHexString(mem_basic_info.BaseAddress) + ".bin", buffer);
+            U.WriteAllBytes("_debug_dump_"+U.ToHexString(mem_basic_info.BaseAddress) + ".bin", buffer);
         }
 #endif
 
@@ -835,11 +835,11 @@ namespace FEBuilderGBA
 
         public void DumpMemory0x02000000(string filename)
         {
-            File.WriteAllBytes(filename, U.subrange(this.Memory02, this.AppnedOffset02, this.AppnedOffset02 + PAGE02_SIZE));
+            U.WriteAllBytes(filename, U.subrange(this.Memory02, this.AppnedOffset02, this.AppnedOffset02 + PAGE02_SIZE));
         }
         public void DumpMemory0x03000000(string filename)
         {
-            File.WriteAllBytes(filename, U.subrange(this.Memory03, this.AppnedOffset03, this.AppnedOffset03 + PAGE03_SIZE));
+            U.WriteAllBytes(filename, U.subrange(this.Memory03, this.AppnedOffset03, this.AppnedOffset03 + PAGE03_SIZE));
         }
 
         public RAM()

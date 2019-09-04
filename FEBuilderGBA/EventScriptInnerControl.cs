@@ -2668,7 +2668,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                File.WriteAllText(filename, EventToTextAll());
+                U.WriteAllText(filename, EventToTextAll());
             }
 
             //エクスプローラで選択しよう

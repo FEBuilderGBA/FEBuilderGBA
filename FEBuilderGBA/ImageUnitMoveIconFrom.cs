@@ -463,7 +463,7 @@ namespace FEBuilderGBA
                 return ;
             }
             byte[] current_ap = Program.ROM.getBinaryData(ap_address, ap_length);
-            File.WriteAllBytes(filename, current_ap);
+            U.WriteAllBytes(filename, current_ap);
 
             U.SelectFileByExplorer(filename);
         }

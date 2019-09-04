@@ -90,14 +90,14 @@ namespace FEBuilderGBA
             Program.LastSelectedFilename.Save(this, "", save);
 
             string text = PatchText.Text;
-            File.WriteAllText(save.FileName, text);
+            U.WriteAllText(save.FileName, text);
 
             //追加ファイルがあれば出力する.
             string dir = Path.GetDirectoryName(save.FileName);
             foreach (var pair in this.AddFiles)
             {
                 string addfileFullPath = Path.Combine(dir,pair.Key);
-                File.WriteAllText(addfileFullPath, pair.Value);
+                U.WriteAllText(addfileFullPath, pair.Value);
             }
 
             U.SelectFileByExplorer(save.FileName);

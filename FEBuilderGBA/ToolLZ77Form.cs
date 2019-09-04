@@ -157,7 +157,7 @@ namespace FEBuilderGBA
                 data = LZ77.decompress(src, address);
             }
 
-            File.WriteAllBytes(DeCompressDESTFilename.Text,data);
+            U.WriteAllBytes(DeCompressDESTFilename.Text,data);
 
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(DeCompressDESTFilename.Text);
@@ -173,7 +173,7 @@ namespace FEBuilderGBA
             byte[] src = File.ReadAllBytes(CompressSRCFilename.Text);
             byte[] data = LZ77.compress(src);
 
-            File.WriteAllBytes(CompressDESTFilename.Text, data);
+            U.WriteAllBytes(CompressDESTFilename.Text, data);
         
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(CompressDESTFilename.Text);

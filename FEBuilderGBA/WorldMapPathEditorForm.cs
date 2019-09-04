@@ -619,7 +619,7 @@ namespace FEBuilderGBA
 
             //書き込み.
             byte[] bin = Program.ROM.getBinaryData(addr , length);
-            File.WriteAllBytes(save.FileName, bin);
+            U.WriteAllBytes(save.FileName, bin);
 
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(save.FileName);

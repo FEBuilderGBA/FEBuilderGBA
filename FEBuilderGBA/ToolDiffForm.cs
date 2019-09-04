@@ -140,7 +140,7 @@ namespace FEBuilderGBA
                     Path.Combine(Path.GetDirectoryName(bin_patchfilename), split_filename);
 
                 byte[] diff = U.subrange(other, (uint)checkpoint, (uint)i);
-                File.WriteAllBytes(split_filename_fullpath, diff);
+                U.WriteAllBytes(split_filename_fullpath, diff);
 
                 if (PATCHED_IF_NotYet)
                 {
@@ -276,7 +276,7 @@ namespace FEBuilderGBA
                         Path.Combine(Path.GetDirectoryName(bin_patchfilename), split_filename);
 
                     byte[] diff = U.subrange(a, (uint)checkpoint, (uint)i);
-                    File.WriteAllBytes(split_filename_fullpath, diff);
+                    U.WriteAllBytes(split_filename_fullpath, diff);
 
                     if (PATCHED_IF_NotYet)
                     {
