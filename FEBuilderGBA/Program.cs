@@ -57,21 +57,6 @@ namespace FEBuilderGBA
             {
                 MainFormUtil.Open(null, ArgsDic["--rom"], false, forceversion);
             }
-            if (ArgsDic.ContainsKey("--lint"))
-            {//コマンドラインLint
-                Environment.Exit(ToolFELintForm.ComandLineLint());
-                return;
-            }
-            if (ArgsDic.ContainsKey("--rebuild"))
-            {//コマンドラインrebuild
-                Environment.Exit(ToolROMRebuildForm.ComandLineRebuild());
-                return;
-            }
-            if (ArgsDic.ContainsKey("--pointercalc"))
-            {//ポインタ変換
-                Environment.Exit(PointerToolForm.ComandLineSearch());
-                return;
-            }
             
             {
                 //自動アップデートがやりたいので、初期化だけはやろうか...
@@ -87,21 +72,12 @@ namespace FEBuilderGBA
                     }
                 }
             }
-#if DEBUG
-            //デバッグの場合はテストを実行
-            DebugTESTRunner();
 
-            if (ArgsDic.ContainsKey("--translate"))
-            {//翻訳を自動実行
-                DevTranslateForm.CommandLineTranslateOnly();
-            }
-            if (ArgsDic.ContainsKey("--testonly"))
-            {
-                //フルテストの場合、終了する.
-                Environment.Exit(0);
+            //コマンドラインの処理があれば。
+            if (ProcCommandLine())
+            {//コマンドラインを実行できたので、即終了
                 return;
             }
-#endif
 
             //メインフォームを開く.
             do
@@ -120,6 +96,57 @@ namespace FEBuilderGBA
             }
             //ログの書き込み
             Log.SyncLog();
+        }
+
+        static bool ProcCommandLine()
+        {
+            if (ArgsDic.ContainsKey("--lint"))
+            {//コマンドラインLint
+                Program.IsCommandLine = true;
+                Environment.Exit(ToolFELintForm.CommandLineLint());
+                return true;
+            }
+            if (ArgsDic.ContainsKey("--rebuild"))
+            {//コマンドラインrebuild
+                Program.IsCommandLine = true;
+                Environment.Exit(ToolROMRebuildForm.ComandLineRebuild());
+                return true;
+            }
+            if (ArgsDic.ContainsKey("--pointercalc"))
+            {//ポインタ変換
+                Program.IsCommandLine = true;
+                Environment.Exit(PointerToolForm.ComandLineSearch());
+                return true;
+            }
+            if (ArgsDic.ContainsKey("--translate"))
+            {//ROM翻訳の実行
+                Program.IsCommandLine = true;
+                Environment.Exit(ToolTranslateROMForm.CommandLineTranslate());
+                return true;
+            }
+            if (ArgsDic.ContainsKey("--makeups"))
+            {//UPSの作成
+                Program.IsCommandLine = true;
+                Environment.Exit(ToolUPSPatchSimpleForm.CommandLineMakeUPS());
+                return true;
+            }
+
+#if DEBUG
+            //デバッグの場合はテストを実行
+            DebugTESTRunner();
+
+            if (ArgsDic.ContainsKey("--translate_batch"))
+            {//翻訳を自動実行
+                DevTranslateForm.CommandLineTranslateOnly();
+            }
+            if (ArgsDic.ContainsKey("--testonly"))
+            {
+                //フルテストの場合、終了する.
+                Environment.Exit(0);
+                return true;
+            }
+#endif
+            return false;
         }
 
 #if DEBUG
@@ -602,6 +629,7 @@ namespace FEBuilderGBA
         public static ExportFunction ExportFunction{ get; private set; }
         public static AsmMapFileAsmCache AsmMapFileAsmCache { get; private set; }
         public static RAM RAM { get; private set; }
+        public static bool IsCommandLine { get; private set; }
         public static bool doReOpen = false;
 
     }

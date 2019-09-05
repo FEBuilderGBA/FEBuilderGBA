@@ -819,7 +819,7 @@ namespace FEBuilderGBA
         }
         public static int ComandLineSearch()
         {
-            string target = U.at(Program.ArgsDic,"--target");
+            string target = U.at(Program.ArgsDic, "--target");
             if (!File.Exists(target))
             {
                 U.echo(R.Error("--targetで、相手のROMを指定してください。"));

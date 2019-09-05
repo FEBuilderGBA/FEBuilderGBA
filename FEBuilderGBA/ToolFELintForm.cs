@@ -57,8 +57,7 @@ namespace FEBuilderGBA
             return new Size(bounds.X, bounds.Y);
         }
 
-
-        public static int ComandLineLint()
+        public static int CommandLineLint()
         {
             if (Program.ROM == null)
             {

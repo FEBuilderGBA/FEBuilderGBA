@@ -260,13 +260,7 @@ namespace FEBuilderGBA
             string torom = SimpleTranslateToROMFilename.Text;
 
             ToolTranslateROM trans = new ToolTranslateROM();
-            //パッチの適用.
-            {
-                trans.CheckTextImportPatch(true);
-                //メニューのサイズを調整する
-                trans.ChangeMainMenuWidth(to);
-                trans.ChangeStatusScreenSkill(to);
-            }
+            trans.ApplyTranslatePatch(to);
 
             //翻訳データがある場合は適用する.
             string translateDataFilename = SimpleTranslateToTranslateDataFilename.Text;
@@ -328,6 +322,49 @@ namespace FEBuilderGBA
             useAutoTranslateCheckBox.AccessibleDescription = R._("無改造ROMや、翻訳辞書、翻訳サイトを利用して、翻訳されたテキストを取得します。");
             X_MODIFIED_TEXT_ONLY.AccessibleDescription = R._("変更されているテキストのみファイル保存します。\r\n無改造ROMに存在する会話は、自動的に編訳できるため翻訳する必要がありません。\r\n翻訳データを少なくするために指定します。");
             FontAutoGenelateCheckBox.AccessibleDescription = R._("ROMに収録されていないフォントを自動的に生成します。");
+        }
+
+        public static int CommandLineTranslate()
+        {
+            U.echo("CommandLineTranslate");
+
+            ToolTranslateROMForm f = (ToolTranslateROMForm)InputFormRef.JumpFormLow<ToolTranslateROMForm>();
+            f.OnLoad(new EventArgs());
+
+            string fromrom = U.at(Program.ArgsDic, "--fromrom");
+            if (fromrom != "")
+            {
+                f.SimpleTranslateFromROMFilename.Text = fromrom;
+                f.TranslateFormROMFilename.Text = fromrom;
+            }
+            string torom = U.at(Program.ArgsDic, "--torom");
+            if (torom != "")
+            {
+                f.SimpleTranslateToROMFilename.Text = torom;
+                f.TranslateToROMFilename.Text = torom;
+                f.FontROMTextBox.Text = torom;
+            }
+
+            if (Program.ArgsDic.ContainsKey("--importfont"))
+            {
+                f.tabControl1.SelectedIndex = 1;
+                f.ImportFontButton_Click(f, new EventArgs());
+            }
+            else
+            {
+                string text = U.at(Program.ArgsDic, "--text");
+                if (text != "")
+                {
+                    f.SimpleTranslateToTranslateDataFilename.Text = text;
+                }
+                f.SimpleFireButton_Click(f, new EventArgs());
+            }
+            if (Program.ROM.Modified)
+            {
+                MainFormUtil.SaveForce(f);
+            }
+
+            return 0;
         }
     }
 }

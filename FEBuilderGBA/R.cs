@@ -54,6 +54,12 @@ namespace FEBuilderGBA
         public static void ShowStopError(string str, params object[] args)
         {
             string message = R.Error(MyTranslateResource.str(str, args));
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return;
+            }
+
             if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
             {
                 try
@@ -79,6 +85,11 @@ namespace FEBuilderGBA
         public static void ShowStopError(string str)
         {
             string message = R.Error(MyTranslateResource.str(str));
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return;
+            }
 
             if (U.CountLines(message) > 10 || message.IndexOf("https://") >= 0)
             {
@@ -140,6 +151,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowQ(string str, params object[] args)
         {
             string message = R.Notify(str, args);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.Yes;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNoCancel
@@ -148,6 +164,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowQ(string str)
         {
             string message = R.Notify(str);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.OK;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNoCancel
@@ -157,6 +178,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowYesNo(string str, params object[] args)
         {
             string message = R.Notify(str, args);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.Yes;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNo
@@ -165,6 +191,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowYesNo(string str)
         {
             string message = R.Notify(str);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.Yes;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNo
@@ -173,6 +204,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowNoYes(string str, params object[] args)
         {
             string message = R.Notify(str, args);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.Yes;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNo
@@ -182,6 +218,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowNoYes(string str)
         {
             string message = R.Notify(str);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.Yes;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNo
@@ -191,6 +232,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowOK(string str, params object[] args)
         {
             string message = R.Notify(str, args);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.OK;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.OK
@@ -199,6 +245,11 @@ namespace FEBuilderGBA
         public static DialogResult ShowOK(string str)
         {
             string message = R.Notify(str);
+            if (Program.IsCommandLine)
+            {
+                U.echo(message);
+                return DialogResult.OK;
+            }
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.OK

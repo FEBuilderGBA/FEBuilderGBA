@@ -199,6 +199,13 @@ namespace FEBuilderGBA
                 }
                 f.Close();
             };
+
+            if (Program.IsCommandLine)
+            {//コマンドラインモードだったら自動適応するしかないね。
+                U.FireOnClick(f.EnableButton);
+                return checkFunc();
+            }
+
             f.ShowDialog();
 
             return checkFunc();

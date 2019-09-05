@@ -5021,11 +5021,13 @@ namespace FEBuilderGBA
             //パッチの再スキャン
             ReScan();
 
+            bool r;
+
             //自動適応するパッチを検索
             int i = 0;
             for (; i < this.Patchs.Count; i++)
             {
-                bool r = checkPatchName(this.Patchs[i].PatchFileName, PatchName, PatchName2);
+                r = checkPatchName(this.Patchs[i].PatchFileName, PatchName, PatchName2);
                 if (r)
                 {
                     break;
@@ -5053,8 +5055,13 @@ namespace FEBuilderGBA
                 ApplyPatchSelectCombo(patchCombo);
             }
 
+
             //書き込みボタンを押す.
-            return ApplyPatchWriteButton(isSlient);
+            r = ApplyPatchWriteButton(isSlient);
+            //フォームを閉じる.
+            this.Close();
+            //
+            return r;
         }
 
         bool ApplyPatchSelectCombo(string patchCombo)

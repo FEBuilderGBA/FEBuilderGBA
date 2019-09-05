@@ -114,7 +114,6 @@ namespace FEBuilderGBA
                     reason += R._("日本語へ翻訳する場合は、DrawMultiByte を選択してください。\r\n");
                     reason += R._("日本語以外へ翻訳する場合は、DrawUTF8 を選択してください\r\n");
                 }
-
             }
 
             Debug.Assert(checkFunc != null);
@@ -167,9 +166,31 @@ namespace FEBuilderGBA
                     patchF.ApplyPatch(patchName3, patchName4); ///No Translate
                 };
             }
+
+            if (Program.IsCommandLine)
+            {//コマンドラインモードだったら自動適応するしかないね。
+                f.CommandLineClick(patchName1, patchName3);
+                return checkFunc();
+            }
+ 
             f.ShowDialog();
 
             return checkFunc();
+        }
+
+        void CommandLineClick(string patchName1, string patchName3)
+        {
+            if (patchName1 != "")
+            {
+                U.FireOnClick(this.EnableButton);
+                return;
+            }
+            if (patchName3 != "")
+            {
+                U.FireOnClick(this.EnableButton3);
+                return;
+            }
+            return;
         }
     }
 }

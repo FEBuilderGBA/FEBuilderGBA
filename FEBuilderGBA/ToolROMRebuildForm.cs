@@ -172,6 +172,7 @@ namespace FEBuilderGBA
                 U.echo(R.Error("無改造ROMを指定してください。"));
                 return -1;
             }
+            U.echo("ComandLineRebuild");
 
             string romRebuildFilename = Program.ROM.Filename;
             uint rebuildAddress = U.toOffset(Program.ROM.RomInfo.extends_address());

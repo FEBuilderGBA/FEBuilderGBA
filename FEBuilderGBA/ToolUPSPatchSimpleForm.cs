@@ -108,6 +108,46 @@ namespace FEBuilderGBA
                 this.OrignalFilename.Text = orignal_romfile;
             }
         }
+        public static int CommandLineMakeUPS()
+        {
+            U.echo("CommandLineMakeUPS");
 
+            ToolUPSPatchSimpleForm f = (ToolUPSPatchSimpleForm)InputFormRef.JumpFormLow<ToolUPSPatchSimpleForm>();
+            f.OnLoad(new EventArgs());
+            string fromrom = U.at(Program.ArgsDic, "--fromrom");
+            if (fromrom == "")
+            {
+                fromrom = U.at(Program.ArgsDic, "--target");
+            }
+            if (fromrom != "")
+            {
+                f.OrignalFilename.Text = fromrom;
+            }
+
+            string errorMessage = MainFormUtil.CheckOrignalROM(f.OrignalFilename.Text);
+            if (errorMessage != "")
+            {
+                string error = R._("無改造ROMを指定してください。") + "\r\n" + errorMessage;
+                f.OrignalFilename.ErrorMessage = error;
+                R.ShowStopError(error);
+                return -2;
+            }
+
+            string makeups = U.at(Program.ArgsDic, "--makeups");
+            if (makeups == "")
+            {
+                U.echo("保存するファイル名を選択してください");
+                return -2;
+            }
+
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(f))
+            {
+                UPSUtil.MakeUPS(f.OrignalFilename.Text, makeups);
+            }
+            //エクスプローラで選択しよう
+            U.SelectFileByExplorer(makeups);
+
+            return 0;
+        }
     }
 }

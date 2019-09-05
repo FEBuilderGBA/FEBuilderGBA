@@ -84,6 +84,15 @@ namespace FEBuilderGBA
             }
         }
 
+        //パッチの適用
+        public void ApplyTranslatePatch(string to)
+        {
+            this.CheckTextImportPatch(true);
+            //メニューのサイズを調整する
+            this.ChangeMainMenuWidth(to);
+            this.ChangeStatusScreenSkill(to);
+        }
+
         public void ImportAllText(Form self)
         {
             string title = R._("開くファイル名を選択してください");

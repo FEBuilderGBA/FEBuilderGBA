@@ -5243,6 +5243,12 @@ namespace FEBuilderGBA
         static StreamWriter _stdOutWriter;
         public static void echo(string line)
         {
+            if (! Program.IsCommandLine)
+            {
+                Log.Notify(line);
+                return;
+            }
+
             if (_stdOutWriter == null)
             {
                 // this needs to happen before attachconsole.
@@ -5257,6 +5263,11 @@ namespace FEBuilderGBA
 
             _stdOutWriter.WriteLine(line);
             Console.WriteLine(line);
+        }
+        public static void FireOnClick(Object obj)
+        {
+            MethodInfo m = typeof(NumericUpDown).GetMethod("OnClick", BindingFlags.NonPublic | BindingFlags.Instance);
+            m.Invoke(obj, new object[] { EventArgs.Empty });
         }
 
         //60fpsをgif FPSに変換
