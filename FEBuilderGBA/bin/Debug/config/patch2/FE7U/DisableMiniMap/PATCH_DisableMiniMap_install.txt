@@ -1,0 +1,17 @@
+NAME=ミニマップの表示を抑制する(導入)
+INFO=スタートボタンを押したときに表示されるMiniマップの表示を抑制します。\r\n章とフラグで禁止する設定を作ることができます。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0xA328A=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_DisableMiniMap.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Disable MiniMap(Installer)
+INFO.en=Suppresses the display of the Mini map that is displayed when the start button is pressed.\r\nYou can create a prohibited setting with chapters and flags.
+
+NAME.zh=抑制小地图显示（Installer）
+INFO.zh=禁止显示按下开始按钮时显示的迷你地图。\r\n您可以使用章节和标志创建禁止的设置。

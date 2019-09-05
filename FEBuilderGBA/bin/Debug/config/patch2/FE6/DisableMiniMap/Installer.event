@@ -1,0 +1,29 @@
+#ifdef _FE6_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $87BCA		//FE6
+BYTE 0x00 0x00
+jumpToHack(DisableMiniMap)
+POP
+
+ALIGN 4
+DisableMiniMap:
+#incbin "DisableMiniMap.dmp"
+POIN DisableMiniMap_Table
+
+//DisableMiniMap_Table:
+#include "DisableMiniMap_Table.event"
+//@struct DisableMiniMap_Table
+//@{
+//@	byte	map_id;		章			FF=ANY
+//@	byte	non			00
+//@	ushort	flag_id;	Flag		00=ANY
+//@}//sizeof(4bytes)
+//term 0xFFFFFFFF
+
+#else
+    ERROR This version of Selection Quotes is for FE6!
+#endif

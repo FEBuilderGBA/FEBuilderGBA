@@ -4773,3 +4773,5 @@
 08018968	GetUnitAidIconId	{J}
 08018524	GetUnitKeyItemSlotForTerrain	{U}
 08018578	GetUnitAidIconId	{U}
+080A3284	DisplayMiniMap	{U}
+080A3EF8	DisplayMiniMap	{J}

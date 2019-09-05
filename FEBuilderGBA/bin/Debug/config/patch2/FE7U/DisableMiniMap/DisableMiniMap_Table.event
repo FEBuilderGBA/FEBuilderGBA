@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001; SHORT arg002; "
+
+DisableMiniMap_Table:
+csvmacro000(0x00,0x00,0x00)  // ˜Í‚ÍMiniMap‹Ö~
+csvmacro000(0xFF,0xFF,0xFFFF)  // term

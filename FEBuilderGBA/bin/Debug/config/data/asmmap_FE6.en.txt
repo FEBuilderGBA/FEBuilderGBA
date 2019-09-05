@@ -1365,3 +1365,5 @@
 08018224	GetUnitAidIconId
 080436A4	NewEkrGauge
 080435EC	LoadHPBarImage
+08003f6c	Goto6CLabel
+08087BC4	DisplayMiniMap

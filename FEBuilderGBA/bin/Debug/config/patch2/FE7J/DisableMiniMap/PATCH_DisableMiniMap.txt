@@ -1,0 +1,31 @@
+NAME=ミニマップの表示を抑制する(編集)
+INFO=スタートボタンを押したときに表示されるMiniマップの表示を抑制します。\r\n章とフラグで禁止する設定を作ることができます。
+
+IF:0xA3EFE=0x00 0x00 0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END DisableMiniMap.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 FF が出てくるまで
+DATACOUNT=$GREP4 0xFF 0xFF 0xFF 0xFF
+
+//リストに表示されるのはマップIDです
+LISTNAME=$B0:MAP
+
+//データを定義します
+B0:MAP_ANYFF=MAPID(0xFF=ANY)
+B1=00
+W2:FLAG=Flag(0x00=ANY)
+
+NAME.en=Disable MiniMap(Edit)
+INFO.en=Suppresses the display of the Mini map that is displayed when the start button is pressed.\r\nYou can create a prohibited setting with chapters and flags.
+
+NAME.zh=抑制小地图显示（编辑）
+INFO.zh=禁止显示按下开始按钮时显示的迷你地图。\r\n您可以使用章节和标志创建禁止的设置。

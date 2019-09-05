@@ -1121,7 +1121,6 @@
 08028348	GameVBlank6C_Destructor
 08028354	GameVBlank6C_Loop
 
-//0800417c	Goto6CLabel
 08004248	DeleteEach6C
 08028394	BlockGameGraphicsLogic
 08001034	EnableBGPaletteSync void
@@ -1353,3 +1352,5 @@
 08018224	GetUnitAidIconId
 080436A4	NewEkrGauge
 080435EC	LoadHPBarImage
+08003f6c	Goto6CLabel
+08087BC4	DisplayMiniMap
