@@ -258,6 +258,10 @@ namespace FEBuilderGBA
             {//仮想ROMなのでバックアップの取りようがない
                 return;
             }
+            if (Program.IsCommandLine)
+            {//コマンドラインでの実行なのでバックアップは不要です
+                return;
+            }
 
             string backup = "backup." + DateTime.Now.ToString("yyyyMMddHHmmss");
             string backupFullPath = U.MakeFilename(backup);

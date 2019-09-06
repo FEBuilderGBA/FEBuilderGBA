@@ -347,6 +347,10 @@ namespace FEBuilderGBA
 
             if (Program.ArgsDic.ContainsKey("--importfont"))
             {
+                string to = U.InnerSplit(f.Translate_to.Text, "=", 0);
+                ToolTranslateROM trans = new ToolTranslateROM();
+                trans.ApplyTranslatePatch(to);
+
                 f.tabControl1.SelectedIndex = 1;
                 f.ImportFontButton_Click(f, new EventArgs());
             }
