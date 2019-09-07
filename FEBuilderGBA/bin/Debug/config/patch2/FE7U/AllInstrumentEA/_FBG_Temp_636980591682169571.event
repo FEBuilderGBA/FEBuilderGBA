@@ -1,9 +1,0 @@
-#define ItemImage 0x5BA470
-#define ItemPalette 0x5C1470
-#define ItemTable 0x85E068
-#define TextTable 0x14D08C
-#define PortraitTable 0x90111C
-#define SummonUnitTable 0x9CFD18
-ORG 0x01000000
-#include "C:\dropbox\FE8Edit7743\github\FEBuilderGBA\bin\Debug\config\patch2\FE8J\AllInstrumentEA\../../FE7U/AllInstrumentEA/AllInstrument.event"
-

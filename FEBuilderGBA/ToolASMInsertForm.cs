@@ -21,7 +21,7 @@ namespace FEBuilderGBA
             this.HookRegister.SelectedIndex = 3;
             this.ELFComboBox.SelectedIndex = 1;
             this.DebugSymbolComboBox.SelectedIndex = 3;
-            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024)); //とりあえず1MBの空きがあるところ.
+            U.ForceUpdate(FREEAREA, InputFormRef.AllocBinaryData(1024 * 1024 , isProgramArea: true)); //とりあえず1MBの空きがあるところ.
             this.ComplieBinFilename = "";
 
             SetExplain();

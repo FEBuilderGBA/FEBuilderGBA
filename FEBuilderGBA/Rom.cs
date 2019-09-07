@@ -750,37 +750,49 @@ namespace FEBuilderGBA
         }
 
         //空き領域の探索.
-        public uint FindFreeSpace(uint addr, byte filldata, uint needsize)
+        public uint FindFreeSpace(uint addr, uint needsize)
         {
             if (needsize > (uint)this.Data.Length)
             {
                 return U.NOT_FOUND;
             }
 
+            byte filldata = 0;
+
             uint length = (uint)this.Data.Length - needsize;
             addr = U.Padding4(addr);
             for (; addr < length; addr += 4)
             {
-                if (this.Data[addr] == filldata)
+                if (this.Data[addr] == 0)
                 {
-                    uint start = addr;
-                    int  matchsize = 1;
-                    addr++;
-                    for (; addr < length; addr++)
-                    {
-                        if (this.Data[addr] != filldata)
-                        {
-                            break;
-                        }
-
-                        matchsize++;
-                        if (matchsize >= needsize)
-                        {
-                            return start;
-                        }
-                    }
-                    addr = U.Padding4(addr);
+                    filldata = 0x00;
                 }
+                else if (this.Data[addr] == 0xff)
+                {
+                    filldata = 0xff;
+                }
+                else
+                {
+                    continue;
+                }
+
+                uint start = addr;
+                int  matchsize = 1;
+                addr++;
+                for (; addr < length; addr++)
+                {
+                    if (this.Data[addr] != filldata)
+                    {
+                        break;
+                    }
+
+                    matchsize++;
+                    if (matchsize >= needsize)
+                    {
+                        return start;
+                    }
+                }
+                addr = U.Padding4(addr);
             }
             return U.NOT_FOUND;
         }

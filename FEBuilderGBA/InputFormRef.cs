@@ -8752,7 +8752,7 @@ namespace FEBuilderGBA
             uint searchFreespaceSize = U.Padding4((uint)dataByte.Length) + 4;
 
             //拡張領域に移動.
-            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea: false);
             if (freespace == U.NOT_FOUND)
             {
                 //空き領域が本当何もない!
@@ -8902,7 +8902,7 @@ namespace FEBuilderGBA
             uint searchFreespaceSize = U.Padding4((uint)dataByte.Length) ;
 
             //拡張領域に移動.
-            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea: false);
             if (freespace == U.NOT_FOUND)
             {
                 //空き領域が本当何もない!
@@ -9034,7 +9034,7 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(self))
             {
                 //拡張領域に移動.
-                uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+                uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea: false);
                 if (freespace == U.NOT_FOUND)
                 {
                     //空き領域が本当何もない!
@@ -9142,7 +9142,7 @@ namespace FEBuilderGBA
             }
             
             //拡張領域に移動.
-            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea: false);
             if (freespace == U.NOT_FOUND)
             {
                 //空き領域が本当何もない!
@@ -9185,7 +9185,7 @@ namespace FEBuilderGBA
             {//範囲外だから、入れられるわけがない.
                 return false;
             }
-            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(0, OptionForm.rom_extends_option());
+            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(0, isProgramArea: false);
             if (freespace == U.NOT_FOUND)
             {//連続しない
                 return false;
@@ -9230,6 +9230,7 @@ namespace FEBuilderGBA
         }
         public static uint AllocBinaryData(
               uint size
+            , bool isProgramArea = false
         )
         {
             if (OptionForm.rom_extends() == OptionForm.rom_extends_enum.NO)
@@ -9242,7 +9243,7 @@ namespace FEBuilderGBA
             uint searchFreespaceSize = U.Padding4(size) ;
 
             //拡張領域に移動.
-            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+            uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea);
             if (freespace == U.NOT_FOUND)
             {
                 //空き領域が本当何もない!

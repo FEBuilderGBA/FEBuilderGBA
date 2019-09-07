@@ -238,6 +238,8 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
+            this.explain_func_alloc_program_area_option = new System.Windows.Forms.Label();
+            this.func_alloc_program_area_option = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -2071,6 +2073,8 @@
             // tabPageFunc
             // 
             this.tabPageFunc.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc.Controls.Add(this.explain_func_alloc_program_area_option);
+            this.tabPageFunc.Controls.Add(this.func_alloc_program_area_option);
             this.tabPageFunc.Controls.Add(this.func_alert_unk_event_code);
             this.tabPageFunc.Controls.Add(this.explain_func_alert_unk_event_code);
             this.tabPageFunc.Controls.Add(this.func_overraide_simple_error_check);
@@ -2146,7 +2150,7 @@
             this.func_overraide_simple_error_check.Items.AddRange(new object[] {
             "0=チェックしない",
             "1=簡易エラーチェックをする"});
-            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(420, 605);
+            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(420, 641);
             this.func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2);
             this.func_overraide_simple_error_check.Name = "func_overraide_simple_error_check";
             this.func_overraide_simple_error_check.Size = new System.Drawing.Size(408, 26);
@@ -2155,7 +2159,7 @@
             // explain_func_overraide_simple_error_check
             // 
             this.explain_func_overraide_simple_error_check.AccessibleDescription = "";
-            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(6, 609);
+            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(6, 645);
             this.explain_func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_overraide_simple_error_check.Name = "explain_func_overraide_simple_error_check";
             this.explain_func_overraide_simple_error_check.Size = new System.Drawing.Size(405, 18);
@@ -2190,7 +2194,7 @@
             // label40
             // 
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Location = new System.Drawing.Point(8, 452);
+            this.label40.Location = new System.Drawing.Point(8, 488);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(822, 30);
@@ -2258,7 +2262,7 @@
             // explain_func_auto_backup
             // 
             this.explain_func_auto_backup.AccessibleDescription = "";
-            this.explain_func_auto_backup.Location = new System.Drawing.Point(10, 495);
+            this.explain_func_auto_backup.Location = new System.Drawing.Point(10, 531);
             this.explain_func_auto_backup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_auto_backup.Name = "explain_func_auto_backup";
             this.explain_func_auto_backup.Size = new System.Drawing.Size(405, 18);
@@ -2274,7 +2278,7 @@
             "0=作成しない",
             "1=保存する前にバックアップを作成する",
             "2=保存する前にバックアップを作成する(7z圧縮)"});
-            this.func_auto_backup.Location = new System.Drawing.Point(420, 495);
+            this.func_auto_backup.Location = new System.Drawing.Point(420, 531);
             this.func_auto_backup.Margin = new System.Windows.Forms.Padding(2);
             this.func_auto_backup.Name = "func_auto_backup";
             this.func_auto_backup.Size = new System.Drawing.Size(408, 26);
@@ -2287,7 +2291,7 @@
             this.func_show_class_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_class_extends.Location = new System.Drawing.Point(420, 569);
+            this.func_show_class_extends.Location = new System.Drawing.Point(420, 605);
             this.func_show_class_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_class_extends.Name = "func_show_class_extends";
             this.func_show_class_extends.Size = new System.Drawing.Size(408, 26);
@@ -2296,7 +2300,7 @@
             // explain_func_show_class_extends
             // 
             this.explain_func_show_class_extends.AccessibleDescription = "";
-            this.explain_func_show_class_extends.Location = new System.Drawing.Point(10, 571);
+            this.explain_func_show_class_extends.Location = new System.Drawing.Point(10, 607);
             this.explain_func_show_class_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_class_extends.Name = "explain_func_show_class_extends";
             this.explain_func_show_class_extends.Size = new System.Drawing.Size(405, 18);
@@ -2406,7 +2410,7 @@
             // explain_func_write_out_of_range
             // 
             this.explain_func_write_out_of_range.AccessibleDescription = "";
-            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(10, 531);
+            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(10, 567);
             this.explain_func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_write_out_of_range.Name = "explain_func_write_out_of_range";
             this.explain_func_write_out_of_range.Size = new System.Drawing.Size(405, 18);
@@ -2422,7 +2426,7 @@
             "0=警告も何もしない(推奨しません)",
             "1=書き込みを警告する",
             "2=書き込みを禁止する"});
-            this.func_write_out_of_range.Location = new System.Drawing.Point(420, 531);
+            this.func_write_out_of_range.Location = new System.Drawing.Point(420, 567);
             this.func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2);
             this.func_write_out_of_range.Name = "func_write_out_of_range";
             this.func_write_out_of_range.Size = new System.Drawing.Size(408, 26);
@@ -2431,7 +2435,7 @@
             // explain_func_rom_extends_option
             // 
             this.explain_func_rom_extends_option.AccessibleDescription = "";
-            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 404);
+            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 405);
             this.explain_func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_rom_extends_option.Name = "explain_func_rom_extends_option";
             this.explain_func_rom_extends_option.Size = new System.Drawing.Size(405, 18);
@@ -2761,6 +2765,30 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // explain_func_alloc_program_area_option
+            // 
+            this.explain_func_alloc_program_area_option.AccessibleDescription = "";
+            this.explain_func_alloc_program_area_option.Location = new System.Drawing.Point(10, 441);
+            this.explain_func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_alloc_program_area_option.Name = "explain_func_alloc_program_area_option";
+            this.explain_func_alloc_program_area_option.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_alloc_program_area_option.TabIndex = 54;
+            this.explain_func_alloc_program_area_option.Text = "プログラム割り当ての開始位置";
+            this.explain_func_alloc_program_area_option.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // func_alloc_program_area_option
+            // 
+            this.func_alloc_program_area_option.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_alloc_program_area_option.FormattingEnabled = true;
+            this.func_alloc_program_area_option.Items.AddRange(new object[] {
+            "0=上位アドレスを利用",
+            "1=通常の拡張領域を利用"});
+            this.func_alloc_program_area_option.Location = new System.Drawing.Point(420, 440);
+            this.func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2);
+            this.func_alloc_program_area_option.Name = "func_alloc_program_area_option";
+            this.func_alloc_program_area_option.Size = new System.Drawing.Size(408, 26);
+            this.func_alloc_program_area_option.TabIndex = 55;
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.WriteButton;
@@ -3001,5 +3029,7 @@
         private System.Windows.Forms.Label label62;
         private TextBoxEx python3;
         private System.Windows.Forms.Label ERROR_IsOldEA;
+        private System.Windows.Forms.Label explain_func_alloc_program_area_option;
+        private System.Windows.Forms.ComboBox func_alloc_program_area_option;
     }
 }

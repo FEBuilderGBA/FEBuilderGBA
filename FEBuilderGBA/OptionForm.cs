@@ -124,7 +124,8 @@ namespace FEBuilderGBA
           
             U.SelectedIndexSafety(func_rom_extends,(int)rom_extends());
             U.SelectedIndexSafety(func_rom_extends_option, rom_extends_option());
-            U.SelectedIndexSafety(func_auto_backup,(int)auto_backup());
+            U.SelectedIndexSafety(func_alloc_program_area_option, alloc_program_area_option());
+            U.SelectedIndexSafety(func_auto_backup, (int)auto_backup());
             U.SelectedIndexSafety(func_first_form,(int)first_form());
             U.SelectedIndexSafety(func_lang,(int)FindComboboxText(Program.Config.at("func_lang", "auto"), func_lang));
             U.SelectedIndexSafety(func_textencoding,(int)textencoding());
@@ -268,6 +269,7 @@ namespace FEBuilderGBA
 
             Program.Config["func_rom_extends"] = func_rom_extends.SelectedIndex.ToString();
             Program.Config["func_rom_extends_option"] = func_rom_extends_option.SelectedIndex.ToString();
+            Program.Config["func_alloc_program_area_option"] = func_alloc_program_area_option.SelectedIndex.ToString();
             Program.Config["func_auto_backup"] = func_auto_backup.SelectedIndex.ToString();
             Program.Config["func_first_form"] = func_first_form.SelectedIndex.ToString();
             Program.Config["func_lang"] = U.SelectValueComboboxText(func_lang.Text);
@@ -729,6 +731,11 @@ namespace FEBuilderGBA
         public static int rom_extends_option()
         {
             return (int)U.atoi(Program.Config.at("func_rom_extends_option", "1"));
+        }
+
+        public static int alloc_program_area_option()
+        {
+            return (int)U.atoi(Program.Config.at("func_alloc_program_area_option", "0"));
         }
 
         public static int auto_update()
@@ -1282,6 +1289,7 @@ namespace FEBuilderGBA
         {
             explain_func_rom_extends.AccessibleDescription = R._("可変長データを更新した時に、元のデータより長くなってしまったときに、\r\n自動的にリポイントするかを決定します。");
             explain_func_rom_extends_option.AccessibleDescription = R._("ROMを拡張するときに、どのアドレスから拡張を開始するかを決定します。");
+            explain_func_alloc_program_area_option.AccessibleDescription = R._("プログラムを設置するアドレスを決定します。\r\n上位にしておくとリビルドに成功しやすいです。\r\n通常のアドレスにすると、画像とかを配置する拡張領域に割り当てます。");
             explain_func_auto_backup.AccessibleDescription = R._("ROMを上書きした時に自動的にバックアップを取るかを決定します。\r\n必ずバックアップを取ることをお勧めします。");
             explain_func_first_form.AccessibleDescription = R._("ROMを開いたとの最初の画面を決定します。\r\nディフォルトは、マップを表示する簡易メニューです。\r\n");
             explain_func_auto_update.AccessibleDescription = R._("このソフトウェアを自動的に更新する更新間隔を設定します。");

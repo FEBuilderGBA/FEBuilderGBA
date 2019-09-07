@@ -2554,7 +2554,7 @@ namespace FEBuilderGBA
                 uint searchFreespaceSize = U.Padding4(appnedSize) + 4;
 
                 //拡張領域に移動.
-                uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, OptionForm.rom_extends_option());
+                uint freespace = MoveToFreeSapceForm.SearchFreeSpaceOne(searchFreespaceSize, isProgramArea: true);
                 if (freespace == U.NOT_FOUND)
                 {
                     //空き領域が本当何もない!
@@ -2887,7 +2887,13 @@ namespace FEBuilderGBA
             }
             else
             {//フリーエリアを利用する.
-                freearea = InputFormRef.AllocBinaryData(1024 * 1024); //とりあえず1MBの空きがあるところ.
+
+                uint alloc_size_hint = U.atoi0x(U.at(patch.Param, "ALLOC_SIZE_HINT"));
+                if (alloc_size_hint <= 0)
+                {
+                    alloc_size_hint = 1024 * 5;
+                }
+                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea: true); //とりあえず5kbの空きがあるところ.
             }
             return freearea;
         }
@@ -5772,6 +5778,16 @@ namespace FEBuilderGBA
                     FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@ZIMAGE_POINTER", Address.DataTypeEnum.LZ77IMG);
                 }
             }
+            p = atOffset(patch.Param, "Z256IMAGE_POINTER", basedir: basedir);
+            if (p > 0 && U.isSafetyOffset(p))
+            {
+                uint a = Program.ROM.p32(p);
+                if (U.isSafetyOffset(a))
+                {
+                    uint len = LZ77.getCompressedSize(Program.ROM.Data, a);
+                    FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@Z256IMAGE_POINTER", Address.DataTypeEnum.LZ77IMG);
+                }
+            }
 
             p = atOffset(patch.Param, "TSA_POINTER", basedir: basedir);
             if (U.isSafetyOffset(p))
@@ -5815,7 +5831,7 @@ namespace FEBuilderGBA
                 if (U.isSafetyOffset(a))
                 {
                     uint len = atOffset(patch.Param, "PALETTE", "1") * 0x20;
-                    FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@PALETTE_POINTER", Address.DataTypeEnum.LZ77PAL);
+                    FEBuilderGBA.Address.AddAddress(list, a, len, p, patch.Name + "@PALETTE_POINTER", Address.DataTypeEnum.PAL);
                 }
             }
             else

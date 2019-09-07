@@ -12546,3 +12546,4 @@ r3=X tile position of menu of the right	{U}
 08050E40	LoadHPBarImage	{U}
 0809EB38	CallSupply1	{U}
 0809EB58	CallSupply2	{U}
+08A92410	&LZ77	一些TSA数据。	1	{J}

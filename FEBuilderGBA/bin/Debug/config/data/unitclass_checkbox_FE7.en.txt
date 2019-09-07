@@ -9,7 +9,7 @@
 08=Ballista Access	Grants the ability to use ballistae.\r\nDefault granted to Archers and Snipers.
 //特性2
 11=Promoted Unit	Grants access to weapon level S and adjusts experience calculation.\r\nBy default is set for promoted classes.\r\nExp Calc:\r\nUnpromoted vs Promoted: Bonus\r\nPromoted vs Promoted: No Bonus\r\nPromoted vs Unpromoted: Penalty
-12=Supply (Merlinus)	Disables the trade command.\r\nSets unit as the Transport.
+12=Supply (Merlinus)	Disables the trade command.\r\nSets unit as the Transport.\r\nPlayer units with this flag set will not be displayed on the Preparation screen.
 13=Cavalry Unit Icon	Displays a Cavalry icon in the Rescue field on the Status menu.\r\nDefault set to horse-riding units.
 14=Wyvern Unit Icon	Displays a Wyvern icon in the Rescue field on the Status menu.\r\nDefault set to wyvern-riding units.
 15=Pegasus Unit Icon	Displays a Pegasus icon in the Rescue field on the Status menu.\r\nDefault set to pegasus-riding units.

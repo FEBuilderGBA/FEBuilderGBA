@@ -178,7 +178,7 @@ namespace FEBuilderGBA
         }
 
         //魔法拡張は大量の0x00地帯が生れるので、フリー領域と誤認しないように確認する.
-        public static bool IsMagicArea(uint addr)
+        public static bool IsMagicArea(ref uint addr)
         {
             magic_system_enum magicType = SearchMagicSystem();
             if (magicType == magic_system_enum.NO)
@@ -206,12 +206,16 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            if (addr >= effect_table_addr && addr < effect_table_addr + (0x4 * 0xff))
+            uint end = effect_table_addr + (0x4 * 0xff);
+            if (addr >= effect_table_addr && addr < end)
             {
+                addr = end;
                 return true;
             }
-            if (addr >= csaSpellTable && addr < csaSpellTable + (0x4 * 0x5 * 0xff))
+            end = csaSpellTable + (0x4 * 0x5 * 0xff);
+            if (addr >= csaSpellTable && addr < end)
             {
+                addr = end;
                 return true;
             }
             return false;

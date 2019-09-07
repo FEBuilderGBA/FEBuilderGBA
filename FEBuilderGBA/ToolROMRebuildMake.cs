@@ -185,7 +185,6 @@ namespace FEBuilderGBA
                 RefCmd rc = refCmdList[i];
                 Address a = rc.UseAddress;
 
-//                uint addr = U.Padding2Before(a.Addr);
                 uint addr = a.Addr;
                 uint end = addr + a.Length;
                 end = Math.Min(end, (uint)processedAddress.Length);
@@ -1514,7 +1513,6 @@ namespace FEBuilderGBA
                     {
                         pointerIndexes.Add((uint)arg.Position);
                     }
-
                 }
 
                 MixRec(refCmd

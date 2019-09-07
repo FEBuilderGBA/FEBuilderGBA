@@ -370,13 +370,12 @@ namespace FEBuilderGBA
             //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
             uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
 
-            if (condFreeSpace == 1)
+            if (condFreeSpace == 1 || condFreeSpace == 2)
             {
                 for (addr = extendsArea; addr < Program.ROM.Data.Length; )
                 {
-                    addr = Program.ROM.FindFreeSpace(addr, 0x00, needSize);
-                    if (addr == U.NOT_FOUND
-                        || ImageUtilMagic.IsMagicArea(addr) == true)
+                    addr = SearchFreeSpaceOneLow(needSize,addr);
+                    if (addr == U.NOT_FOUND)
                     {
                         break;
                     }
@@ -389,51 +388,12 @@ namespace FEBuilderGBA
                     }
                 }
             }
-            else if (condFreeSpace == 2)
+            else if (condFreeSpace == 3 || condFreeSpace == 4)
             {
-                for (addr = extendsArea; addr < Program.ROM.Data.Length; )
+                for (addr = GetROMAheadArea(); addr < Program.ROM.Data.Length; )
                 {
-                    addr = Program.ROM.FindFreeSpace(addr, 0xff, needSize);
-                    if (addr == U.NOT_FOUND
-                        || ImageUtilMagic.IsMagicArea(addr) == true)
-                    {
-                        break;
-                    }
-                    addrList.Add(addr);
-                    addr = addr + needSize;
-
-                    if (addrList.Count >= 10)
-                    {
-                        break;
-                    }
-                }
-            }
-            else if (condFreeSpace == 3)
-            {
-                for (addr = 0x0; addr < Program.ROM.Data.Length; )
-                {
-                    addr = Program.ROM.FindFreeSpace(addr, 0x00, needSize);
-                    if (addr == U.NOT_FOUND
-                        || ImageUtilMagic.IsMagicArea(addr) == true)
-                    {
-                        break;
-                    }
-                    addrList.Add(addr);
-                    addr = addr + needSize;
-
-                    if (addrList.Count >= 10)
-                    {
-                        break;
-                    }
-                }
-            }
-            else if (condFreeSpace == 4)
-            {
-                for (addr = 0x0; addr < Program.ROM.Data.Length; )
-                {
-                    addr = Program.ROM.FindFreeSpace(addr, 0xff, needSize);
-                    if (addr == U.NOT_FOUND
-                        || ImageUtilMagic.IsMagicArea(addr) == true)
+                    addr = SearchFreeSpaceOneLow(needSize, addr);
+                    if (addr == U.NOT_FOUND)
                     {
                         break;
                     }
@@ -457,60 +417,33 @@ namespace FEBuilderGBA
 
         //0x00 や 0xFF が連続して空き領域とみなす数
         const int FREE_SPACE_SIZE = 1024 * 8;
-
         //空き領域の探索
-        public static uint SearchFreeSpaceOne(uint newSize, int condFreeSpace)
+        static uint SearchFreeSpaceOneLow(uint newSize, uint searchStart)
         {
-            uint extendsArea = 0x01000000;
-            if (Program.ROM.RomInfo.version() == 6)
-            {
-                extendsArea = 0x01000000 / 2;
-            }
-
             uint addr;
             //00=ファイル末尾
             //01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
             //02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
             //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
             //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
-            const int LTRIM_SPACE_SIZE = 16;
+            const int LTRIM_SPACE_SIZE = 8;
             uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
-            if (condFreeSpace == 1)
+            addr = Program.ROM.FindFreeSpace(searchStart, needSize);
+            if (addr != U.NOT_FOUND)
             {
-                addr = Program.ROM.FindFreeSpace(extendsArea, 0x00, needSize);
-                if (addr != U.NOT_FOUND
-                    && ImageUtilMagic.IsMagicArea(addr) == false)
-                {
-                    return addr + LTRIM_SPACE_SIZE;
+                if (ImageUtilMagic.IsMagicArea(ref addr) )
+                {//魔法領域として使われているなら振り直し
+                    return SearchFreeSpaceOneLow(newSize , addr);
                 }
-            }
-            else if (condFreeSpace == 2)
-            {
-                addr = Program.ROM.FindFreeSpace(extendsArea, 0xff, needSize);
-                if (addr != U.NOT_FOUND
-                    && ImageUtilMagic.IsMagicArea(addr) == false)
+                if (IsSkillReserve(ref addr))
                 {
-                    return addr + LTRIM_SPACE_SIZE;
+                    return SearchFreeSpaceOneLow(newSize, addr);
                 }
+
+                return addr + LTRIM_SPACE_SIZE;
             }
-            else if (condFreeSpace == 3)
-            {
-                addr = Program.ROM.FindFreeSpace(0x0, 0x00, needSize);
-                if (addr != U.NOT_FOUND
-                    && ImageUtilMagic.IsMagicArea(addr) == false)
-                {
-                    return addr + LTRIM_SPACE_SIZE;
-                }
-            }
-            else if (condFreeSpace == 4)
-            {
-                addr = Program.ROM.FindFreeSpace(0x0, 0xff, needSize);
-                if (addr != U.NOT_FOUND
-                    && ImageUtilMagic.IsMagicArea(addr) == false)
-                {
-                    return addr + LTRIM_SPACE_SIZE;
-                }
-            }
+
+
             //末尾
             addr = U.Padding4((uint)Program.ROM.Data.Length);
             if (addr + newSize < 0x02000000)
@@ -520,6 +453,72 @@ namespace FEBuilderGBA
             return U.NOT_FOUND;
         }
 
+
+        //空き領域の探索
+        public static uint SearchFreeSpaceOne(uint newSize, bool isProgramArea)
+        {
+            uint extendsArea = 0x01000000;
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                extendsArea = 0x01000000 / 2;
+            }
+
+            uint needSize = U.Padding4(FREE_SPACE_SIZE + newSize);
+
+            //00=ファイル末尾
+            //01=0x09000000以降の拡張領域で、0x00が規定数+必要データ数連続している領域
+            //02=0x09000000以降の拡張領域で、0xFFが規定数+必要データ数連続している領域
+            //03=0x08000000以降の通常領域で、0x00が規定数+必要データ数連続している領域
+            //04=0x08000000以降の通常領域で、0xFFが規定数+必要データ数連続している領域
+            int condFreeSpace = OptionForm.rom_extends_option();
+
+            if (isProgramArea)
+            {
+                if (OptionForm.alloc_program_area_option() == 0)
+                {//プログラムはROM先頭に割り当てる
+                    condFreeSpace = 0x03;
+                }
+            }
+
+            if (condFreeSpace == 1 || condFreeSpace == 2)
+            {
+                return SearchFreeSpaceOneLow(needSize, extendsArea);
+            }
+            else if (condFreeSpace == 3 || condFreeSpace == 4)
+            {
+                return SearchFreeSpaceOneLow(needSize, GetROMAheadArea());
+            }
+            return U.NOT_FOUND;
+        }
+        //ROMの先頭エリアの取得
+        static uint GetROMAheadArea()
+        {
+            return Program.ROM.RomInfo.compress_image_borderline_address();
+        }
+        //SkillSystems Reserve
+        static bool IsSkillReserve(ref uint addr)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (Program.ROM.RomInfo.is_multibyte())
+                {//F00000 - F67000
+                    if (addr >= 0xF00000 && addr < 0xF67000)
+                    {
+                        addr = 0xF67000;
+                        return true;
+                    }
+                }
+                else
+                {//1c1ec0 - F00000
+                    if (addr >= 0x1c1ec0 && addr < 0xF00000)
+                    {
+                        addr = 0xF00000;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         //移動処理
         private void RunButton_Click(object sender, EventArgs e)
