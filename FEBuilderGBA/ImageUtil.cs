@@ -1693,7 +1693,7 @@ namespace FEBuilderGBA
                             else if (palette != selectpalette)
                             {//フォーマット違反 8x8セルの中で異なるパレットを使用してはいけない.
                                 bitmap.UnlockBits(bmpData);
-                                out_error = R.Error("TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。", x, y, x8 + x, y8 + y, selectpalette, palette);
+                                out_error = R.Error("TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。\r\n\r\n手動で問題を修正するか、\r\n「減色ツール」を利用して変換してください。", x, y, x8 + x, y8 + y, selectpalette, palette);
                                 return null;
                             }
                         }
@@ -2205,7 +2205,7 @@ namespace FEBuilderGBA
                             else if (palette != selectpalette)
                             {//フォーマット違反 8x8セルの中で異なるパレットを使用してはいけない.
                                 bitmap.UnlockBits(bmpData);
-                                return R.Error("TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。", x, y, x8 + x, y8 + y, selectpalette, palette);
+                                return R.Error("TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。\r\n\r\n手動で問題を修正するか、\r\n「減色ツール」を利用して変換してください。", x, y, x8 + x, y8 + y, selectpalette, palette);
                             }
                         }
                     }

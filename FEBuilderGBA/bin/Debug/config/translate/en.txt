@@ -3697,8 +3697,8 @@ Anime pattern
 :移動アイコンへJump
 Jump to Moving Map Animation
 
-:TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。
-TSA format violation. X:{0} Y:{1} Different palette number {4} was used for X:{2} Y:{3} which ranges from 0 to 8x8. Others use palette number {5}.
+:TSAフォーマット違反。X:{0} Y:{1} から8x8の範囲である X:{2} Y:{3}で、異なるパレット番号{4}が使われました。他はパレット番号{5}を使っています。\r\n\r\n手動で問題を修正するか、\r\n「減色ツール」を利用して変換してください。
+TSA format violation. X:{0} Y:{1} Different palette number {4} was used for X:{2} Y:{3} which ranges from 0 to 8x8. Others use palette number {5}.\r\n\r\nFix the problem manually,\r\nor Convert using "Decrease Color Tool".
 
 :ファイルがありません。\r\nファイル名:{0}
 There is no file.\r\nFile name: {0}
