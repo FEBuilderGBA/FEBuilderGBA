@@ -37,5 +37,9 @@ namespace FEBuilderGBA
         {
             return Regex(pattern).Matches(str);
         }
+        public static string[] Split(string str, string pattern)
+        {
+            return Regex(pattern).Split(str);
+        }
     }
 }

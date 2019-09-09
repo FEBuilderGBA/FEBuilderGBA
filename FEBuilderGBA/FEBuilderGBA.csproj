@@ -79,6 +79,7 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemTextEncoderArabianTBLEncodeClass.cs" />
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

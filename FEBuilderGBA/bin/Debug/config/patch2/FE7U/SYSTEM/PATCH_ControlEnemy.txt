@@ -1,0 +1,17 @@
+NAME=敵を操作できるようにする(デバッグ用)
+NAME.en=Enable to control the enemy (for debugging)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Control Enemy|ONN
+OFF:0x0153EA=0x17 0xD0
+ONN:0x0153EA=0x0A 0xE0
+
+AUTHOR=circleseverywhere https://feuniverse.us/t/control-enemy-npc-units-fe8/1897
+
+INFO=適応すると、敵もプレイヤーが動かせるようになります。\r\nデバッグ用として利用してください。
