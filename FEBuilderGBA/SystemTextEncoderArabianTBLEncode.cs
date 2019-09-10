@@ -7,24 +7,25 @@ using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
-    public class SystemTextEncoderArabianTBLEncodeClass
+    public class SystemTextEncoderArabianTBLEncode : SystemTextEncoderTBLEncodeInterface
     {
         class DicC
         {
             public String Arabian;
             public String English;
+            public String ArabianIsolated;
         }
         List<DicC> Dic = new List<DicC>();
-        SystemTextEncoderTBLEncodeClass FE6Inner;
+        SystemTextEncoderTBLEncode FE6Inner;
         Encoding SJISEncoder;
 
-        public SystemTextEncoderArabianTBLEncodeClass(string fullfilename,SystemTextEncoderTBLEncodeClass inner)
+        public SystemTextEncoderArabianTBLEncode(string fullfilename,SystemTextEncoderTBLEncode inner)
         {
             this.SJISEncoder = System.Text.Encoding.GetEncoding("Shift_jis");
 
             TBLLoad(fullfilename,inner);
         }
-        public void TBLLoad(string fullfilename,SystemTextEncoderTBLEncodeClass inner)
+        public void TBLLoad(string fullfilename,SystemTextEncoderTBLEncode inner)
         {
             this.FE6Inner = inner;
             using (StreamReader reader = File.OpenText(fullfilename))
@@ -43,9 +44,28 @@ namespace FEBuilderGBA
                         DicC d = new DicC();
                         d.English = sp[i + 0];
                         d.Arabian = sp[i + 1];
+                        d.ArabianIsolated = sp[1];
+
+                        if (!CheckAlready(d))
+                        {
+                            Dic.Add(d);
+                        }
                     }
                 }
             }
+            Dic.Sort((a, b) => { return (int)(b.English.Length - a.English.Length); });
+        }
+        //既に辞書にあるかどうか
+        bool CheckAlready(DicC newD)
+        {
+            foreach (DicC d in this.Dic)
+            {
+                if (d.Arabian == newD.Arabian && d.English == newD.English)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public string Decode(byte[] str)
         {
@@ -71,41 +91,21 @@ namespace FEBuilderGBA
 
             foreach (DicC d in this.Dic)
             {
-                ret = ret.Replace(d.English, d.Arabian);
+                ret = ret.Replace(d.English, d.ArabianIsolated);
             }
+//            ret = U.Reverse(ret);
             return ret;
         }
 
-        //@1234 を解析.
-        byte[] SkipAtMark(string str,uint pos)
-        {
-            Debug.Assert(str.Substring((int)pos,1) == "@");
-            uint len = (uint)str.Length;
-            if (len - pos  > 4)
-            {
-                len = 5 + pos;
-            }
-
-            uint i;
-            for (i = pos + 1; i < len; i++)
-            {
-                char c = str[(int)i];
-                if ((c >= '0' && c <= '9') || c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F')
-                {
-                    continue;
-                }
-
-                break;
-            }
-            string key = str.Substring((int)pos, (int)(i - pos));
-            byte[] sjisstr = this.SJISEncoder.GetBytes(key);
-            return sjisstr;
-        }
 
         public byte[] Encode(string str)
         {
             foreach (DicC d in this.Dic)
             {
+                if (d.Arabian == "")
+                {
+                    continue;
+                }
                 str = str.Replace(d.Arabian, d.English);
             }
 
@@ -130,7 +130,7 @@ namespace FEBuilderGBA
                     byte[] sjisstr = AppendStr(str, i, lastI);
                     data.AddRange(sjisstr);
 
-                    sjisstr = SkipAtMark(str, i);
+                    sjisstr = U.SkipAtMark(str, i , this.SJISEncoder);
                     i += (uint)sjisstr.Length;
                     data.AddRange(sjisstr);
 

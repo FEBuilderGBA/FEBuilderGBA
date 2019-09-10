@@ -6268,6 +6268,38 @@ namespace FEBuilderGBA
                 R.ShowStopError(error);
             }
         }
+
+        //@1234 を解析.
+        public static byte[] SkipAtMark(string str, uint pos, Encoding SJISEncoder)
+        {
+            Debug.Assert(str.Substring((int)pos, 1) == "@");
+            uint len = (uint)str.Length;
+            if (len - pos > 4)
+            {
+                len = 5 + pos;
+            }
+
+            uint i;
+            for (i = pos + 1; i < len; i++)
+            {
+                char c = str[(int)i];
+                if ((c >= '0' && c <= '9') || c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F')
+                {
+                    continue;
+                }
+
+                break;
+            }
+            string key = str.Substring((int)pos, (int)(i - pos));
+            byte[] sjisstr = SJISEncoder.GetBytes(key);
+            return sjisstr;
+        }
+        public static string Reverse(string str)
+        {
+            char[] arr = str.ToCharArray();
+            Array.Reverse(arr);
+            return new string(arr);
+        }
     }
 }
 

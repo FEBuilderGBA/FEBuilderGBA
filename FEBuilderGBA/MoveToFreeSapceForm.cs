@@ -406,6 +406,7 @@ namespace FEBuilderGBA
                     }
                 }
             }
+            
             //末尾
             addr = U.Padding4((uint)Program.ROM.Data.Length);
             if (addr + newSize < 0x02000000)
@@ -443,16 +444,18 @@ namespace FEBuilderGBA
                 return addr + LTRIM_SPACE_SIZE;
             }
 
-
+            return AppendEndOfFile(newSize);
+        }
+        static uint AppendEndOfFile(uint newSize)
+        {
             //末尾
-            addr = U.Padding4((uint)Program.ROM.Data.Length);
+            uint addr = U.Padding4((uint)Program.ROM.Data.Length);
             if (addr + newSize < 0x02000000)
             {//32MBを超えられないためチェック.
                 return addr;
             }
             return U.NOT_FOUND;
         }
-
 
         //空き領域の探索
         public static uint SearchFreeSpaceOne(uint newSize, bool isProgramArea)
@@ -474,9 +477,12 @@ namespace FEBuilderGBA
 
             if (isProgramArea)
             {
-                if (OptionForm.alloc_program_area_option() == 0)
-                {//プログラムはROM先頭に割り当てる
-                    condFreeSpace = 0x03;
+                if (condFreeSpace != 0)
+                {//常にROM末尾以外の場合
+                    if (OptionForm.alloc_program_area_option() == 0)
+                    {//プログラムはROM先頭に割り当てる
+                        condFreeSpace = 0x03; //先頭割り当て
+                    }
                 }
             }
 
@@ -488,7 +494,7 @@ namespace FEBuilderGBA
             {
                 return SearchFreeSpaceOneLow(needSize, GetROMAheadArea());
             }
-            return U.NOT_FOUND;
+            return AppendEndOfFile(newSize);
         }
         //ROMの先頭エリアの取得
         static uint GetROMAheadArea()

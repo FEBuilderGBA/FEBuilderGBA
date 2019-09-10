@@ -1,0 +1,44 @@
+@thumb
+
+@org	$080732aa
+	nop
+
+@org	$080857b0
+	b	$080858b8
+	
+@org	$080857bc
+	ldr	r4, [$080859b8]	
+	
+@org	$080857f4
+	ldr	r0, [$080859bc]
+	
+@org	$08085800
+	ldr	r5, [adr2]
+	ldr	r6, [$080859c0+4]
+	
+@org	$0808581e
+	ldr	r6, [$080859c8+4]
+	
+@org	$08085834
+	ldr	r6, [$080859d0]
+	
+@org	$0808584c
+	ldr	r0, [adr2]
+	
+@org	$080858b8
+	ldr	r3, [adr]
+	ldrb	r3, [r3, #0]
+	lsl	r3, r3, #30
+	lsr	r3, r3, #31
+	beq	save
+	bx	lr
+save
+	push	{r4, r5, r6, r7, lr}
+	b	$080857b2
+adr
+	@dcd	$0202AA64
+adr2
+	@dcd	$0201f0e8
+	
+@org	$080987aa
+	bl	save

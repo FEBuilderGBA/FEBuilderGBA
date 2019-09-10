@@ -6,10 +6,16 @@ using System.Text;
 
 namespace FEBuilderGBA
 {
+    public interface SystemTextEncoderTBLEncodeInterface
+    {
+        string Decode(byte[] str);
+        string Decode(byte[] str, int start, int len);
+        byte[] Encode(string str);
+    }
     public class SystemTextEncoder
     {
         Encoding Encoder;
-        SystemTextEncoderTBLEncodeClass TBLEncode;
+        SystemTextEncoderTBLEncodeInterface TBLEncode;
         public SystemTextEncoder()
         {
             Build();
@@ -27,27 +33,10 @@ namespace FEBuilderGBA
 
         public void Build(OptionForm.textencoding_enum textencoding,ROM rom)
         {
-            if (textencoding == OptionForm.textencoding_enum.ZH_TBL && rom != null)
-            {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
-                if (File.Exists(resoucefilename))
-                {
-                    this.TBLEncode = new SystemTextEncoderTBLEncodeClass(resoucefilename);
-                    this.Encoder = null;
-                    return;
-                }
-                Log.Error("tbl not found. filename:{0}",resoucefilename);
-            }
-            else if (textencoding == OptionForm.textencoding_enum.EN_TBL && rom != null)
-            {
-                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
-                if (File.Exists(resoucefilename))
-                {
-                    this.TBLEncode = new SystemTextEncoderTBLEncodeClass(resoucefilename);
-                    this.Encoder = null;
-                    return;
-                }
-                Log.Error("tbl not found. filename:{0}", resoucefilename);
+            bool r = LoadTBL(textencoding, rom);
+            if (r)
+            {//TBLを利用.
+                return;
             }
 
             InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode(rom);
@@ -62,6 +51,61 @@ namespace FEBuilderGBA
             }
 
             this.TBLEncode = null;
+        }
+        bool LoadTBL(OptionForm.textencoding_enum textencoding, ROM rom)
+        {
+            if (rom == null)
+            {
+                return false;
+            }
+
+            if (textencoding == OptionForm.textencoding_enum.ZH_TBL)
+            {
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "zh_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                if (! File.Exists(resoucefilename))
+                {
+                    Log.Error("tbl not found. filename:{0}", resoucefilename);
+                    return false;
+                }
+                this.TBLEncode = new SystemTextEncoderTBLEncode(resoucefilename);
+                this.Encoder = null;
+                return true;
+            }
+            else if (textencoding == OptionForm.textencoding_enum.EN_TBL)
+            {
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                if (! File.Exists(resoucefilename))
+                {
+                    Log.Error("tbl not found. filename:{0}", resoucefilename);
+                    return false;
+                }
+                this.TBLEncode = new SystemTextEncoderTBLEncode(resoucefilename);
+                this.Encoder = null;
+                return true;
+            }
+            else if (textencoding == OptionForm.textencoding_enum.AR_TBL)
+            {
+                string resoucefilename = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "ar_tbl", rom.RomInfo.TitleToFilename() + ".arabic_tbl");
+                if (! File.Exists(resoucefilename))
+                {
+                    Log.Error("tbl not found. filename:{0}", resoucefilename);
+                    return false;
+                }
+                SystemTextEncoderTBLEncode inner = null;
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    string resoucefilename_inner = System.IO.Path.Combine(Program.BaseDirectory, "config", "translate", "en_tbl", rom.RomInfo.TitleToFilename() + ".tbl");
+                    if (! File.Exists(resoucefilename))
+                    {
+                        return false;
+                    }
+                    inner = new SystemTextEncoderTBLEncode(resoucefilename_inner);
+                }
+                this.TBLEncode = new SystemTextEncoderArabianTBLEncode(resoucefilename,inner);
+                this.Encoder = null;
+                return true;
+            }
+            return false;
         }
 
         public string Decode(byte[] str)

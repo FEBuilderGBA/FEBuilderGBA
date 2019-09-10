@@ -186,6 +186,8 @@
             this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
             this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
             this.tabPageFunc = new System.Windows.Forms.TabPage();
+            this.explain_func_alloc_program_area_option = new System.Windows.Forms.Label();
+            this.func_alloc_program_area_option = new System.Windows.Forms.ComboBox();
             this.func_alert_unk_event_code = new System.Windows.Forms.ComboBox();
             this.explain_func_alert_unk_event_code = new System.Windows.Forms.Label();
             this.func_overraide_simple_error_check = new System.Windows.Forms.ComboBox();
@@ -238,8 +240,6 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.explain_func_alloc_program_area_option = new System.Windows.Forms.Label();
-            this.func_alloc_program_area_option = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -2111,6 +2111,30 @@
             this.tabPageFunc.TabIndex = 3;
             this.tabPageFunc.Text = "機能";
             // 
+            // explain_func_alloc_program_area_option
+            // 
+            this.explain_func_alloc_program_area_option.AccessibleDescription = "";
+            this.explain_func_alloc_program_area_option.Location = new System.Drawing.Point(10, 441);
+            this.explain_func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_alloc_program_area_option.Name = "explain_func_alloc_program_area_option";
+            this.explain_func_alloc_program_area_option.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_alloc_program_area_option.TabIndex = 54;
+            this.explain_func_alloc_program_area_option.Text = "プログラム割り当ての開始位置";
+            this.explain_func_alloc_program_area_option.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // func_alloc_program_area_option
+            // 
+            this.func_alloc_program_area_option.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_alloc_program_area_option.FormattingEnabled = true;
+            this.func_alloc_program_area_option.Items.AddRange(new object[] {
+            "0=上位アドレスを利用",
+            "1=通常の拡張領域を利用"});
+            this.func_alloc_program_area_option.Location = new System.Drawing.Point(420, 440);
+            this.func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2);
+            this.func_alloc_program_area_option.Name = "func_alloc_program_area_option";
+            this.func_alloc_program_area_option.Size = new System.Drawing.Size(408, 26);
+            this.func_alloc_program_area_option.TabIndex = 55;
+            // 
             // func_alert_unk_event_code
             // 
             this.func_alert_unk_event_code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2617,9 +2641,9 @@
             this.func_textencoding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.func_textencoding.FormattingEnabled = true;
             this.func_textencoding.Items.AddRange(new object[] {
-            "Shift_JIS",
-            "zh_TBL(china)",
-            "en_TBL(english)"});
+            "0=Shift_JIS",
+            "1=zh_TBL(china)",
+            "2=en_TBL(english)"});
             this.func_textencoding.Location = new System.Drawing.Point(411, 524);
             this.func_textencoding.Margin = new System.Windows.Forms.Padding(2);
             this.func_textencoding.Name = "func_textencoding";
@@ -2764,30 +2788,6 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // explain_func_alloc_program_area_option
-            // 
-            this.explain_func_alloc_program_area_option.AccessibleDescription = "";
-            this.explain_func_alloc_program_area_option.Location = new System.Drawing.Point(10, 441);
-            this.explain_func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.explain_func_alloc_program_area_option.Name = "explain_func_alloc_program_area_option";
-            this.explain_func_alloc_program_area_option.Size = new System.Drawing.Size(405, 18);
-            this.explain_func_alloc_program_area_option.TabIndex = 54;
-            this.explain_func_alloc_program_area_option.Text = "プログラム割り当ての開始位置";
-            this.explain_func_alloc_program_area_option.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // func_alloc_program_area_option
-            // 
-            this.func_alloc_program_area_option.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.func_alloc_program_area_option.FormattingEnabled = true;
-            this.func_alloc_program_area_option.Items.AddRange(new object[] {
-            "0=上位アドレスを利用",
-            "1=通常の拡張領域を利用"});
-            this.func_alloc_program_area_option.Location = new System.Drawing.Point(420, 440);
-            this.func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2);
-            this.func_alloc_program_area_option.Name = "func_alloc_program_area_option";
-            this.func_alloc_program_area_option.Size = new System.Drawing.Size(408, 26);
-            this.func_alloc_program_area_option.TabIndex = 55;
             // 
             // OptionForm
             // 

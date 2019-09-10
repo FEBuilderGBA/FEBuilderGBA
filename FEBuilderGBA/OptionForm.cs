@@ -980,6 +980,7 @@ namespace FEBuilderGBA
             Shift_JIS = 0
           , ZH_TBL = 1
           , EN_TBL = 2
+          , AR_TBL = 3
           , NoChace = 99
         };
         static textencoding_enum g_Cache_textencoding;

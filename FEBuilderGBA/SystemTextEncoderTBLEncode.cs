@@ -6,13 +6,13 @@ using System.Text;
 
 namespace FEBuilderGBA
 {
-    public class SystemTextEncoderTBLEncodeClass
+    public class SystemTextEncoderTBLEncode : SystemTextEncoderTBLEncodeInterface
     {
         Dictionary<string, uint> EncodeDic = new Dictionary<string, uint>();
         Dictionary<uint, string> DecodeDic = new Dictionary<uint, string>();
         Encoding SJISEncoder;
 
-        public SystemTextEncoderTBLEncodeClass(string fullfilename)
+        public SystemTextEncoderTBLEncode(string fullfilename)
         {
             this.SJISEncoder = System.Text.Encoding.GetEncoding("Shift_jis");
 
@@ -115,32 +115,6 @@ namespace FEBuilderGBA
             return sb.ToString();
         }
 
-        //@1234 を解析.
-        byte[] SkipAtMark(string str,uint pos)
-        {
-            Debug.Assert(str.Substring((int)pos,1) == "@");
-            uint len = (uint)str.Length;
-            if (len - pos  > 4)
-            {
-                len = 5 + pos;
-            }
-
-            uint i;
-            for (i = pos + 1; i < len; i++)
-            {
-                char c = str[(int)i];
-                if ((c >= '0' && c <= '9') || c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F')
-                {
-                    continue;
-                }
-
-                break;
-            }
-            string key = str.Substring((int)pos, (int)(i - pos));
-            byte[] sjisstr = this.SJISEncoder.GetBytes(key);
-            return sjisstr;
-        }
-
         public byte[] Encode(string str)
         {
             List<byte> data = new List<byte>(str.Length*3);
@@ -156,7 +130,7 @@ namespace FEBuilderGBA
                 string key = str.Substring((int)i,1);
                 if (key == "@")
                 {
-                    byte[] sjisstr = SkipAtMark(str, i);
+                    byte[] sjisstr = U.SkipAtMark(str, i , this.SJISEncoder);
                     i += (uint)sjisstr.Length;
                     data.AddRange(sjisstr);
                     continue;

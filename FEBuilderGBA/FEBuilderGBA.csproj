@@ -79,7 +79,7 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemTextEncoderArabianTBLEncodeClass.cs" />
+    <Compile Include="SystemTextEncoderArabianTBLEncode.cs" />
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -968,7 +968,7 @@
     <Compile Include="ImageSystemIconForm.Designer.cs">
       <DependentUpon>ImageSystemIconForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemTextEncoderTBLEncodeClass.cs" />
+    <Compile Include="SystemTextEncoderTBLEncode.cs" />
     <Compile Include="TextBadCharPopupForm.cs">
       <SubType>Form</SubType>
     </Compile>

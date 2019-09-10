@@ -380,9 +380,9 @@ namespace FEBuilderGBA
         public uint map_terrain_type_count() { return 48;  } //地形の種類の数
         public uint menu_J12_always_address() { return 0x41E6C; } //メニューの表示判定関数 常に表示する
         public uint menu_J12_hide_address() { return 0x0; }   //メニューの表示判定関数 表示しない
-        public uint status_game_option_pointer() { return 0; } //ゲームオプション
-        public uint status_game_option_order_pointer() { return 0; } //ゲームオプションの並び順
-        public uint status_game_option_order_count_address() { return 0; } //ゲームオプションの個数
+        public uint status_game_option_pointer() { return 0x8C490; } //ゲームオプション
+        public uint status_game_option_order_pointer() { return 0x68AAE8; } //ゲームオプションの並び順
+        public uint status_game_option_order_count_address() { return 0x68AAE4; } //ゲームオプションの個数
         public uint status_units_menu_pointer() { return 0;  } //部隊メニュー
         public uint tactician_affinity_pointer() { return 0; } //軍師属性(FE7のみ)
         public uint event_final_serif_pointer() { return 0x0; } //終章セリフ(FE7のみ)

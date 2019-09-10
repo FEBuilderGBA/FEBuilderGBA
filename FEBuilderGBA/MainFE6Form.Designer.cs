@@ -68,6 +68,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.UPSSimpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeProjectNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolProblemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,7 +186,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ChangeProjectNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -554,7 +556,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1644, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -612,6 +614,13 @@
             this.UPSSimpleToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
             this.UPSSimpleToolStripMenuItem.Text = "UPS差分で保存";
             this.UPSSimpleToolStripMenuItem.Click += new System.EventHandler(this.UPSSimpleToolStripMenuItem_Click);
+            // 
+            // ChangeProjectNameToolStripMenuItem
+            // 
+            this.ChangeProjectNameToolStripMenuItem.Name = "ChangeProjectNameToolStripMenuItem";
+            this.ChangeProjectNameToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
+            this.ChangeProjectNameToolStripMenuItem.Text = "プロジェクト名の変更";
+            this.ChangeProjectNameToolStripMenuItem.Click += new System.EventHandler(this.ChangeProjectNameToolStripMenuItem_Click);
             // 
             // ToolProblemReportToolStripMenuItem
             // 
@@ -1093,6 +1102,8 @@
             // 
             // ControlPanel
             // 
+            this.ControlPanel.Controls.Add(this.GameOptionOrderButton);
+            this.ControlPanel.Controls.Add(this.GameOptionButton);
             this.ControlPanel.Controls.Add(this.UnitActionPointerButton);
             this.ControlPanel.Controls.Add(this.ToolUseFlagButton);
             this.ControlPanel.Controls.Add(this.OPClassAlphaNameButton);
@@ -1836,19 +1847,34 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // ChangeProjectNameToolStripMenuItem
+            // GameOptionOrderButton
             // 
-            this.ChangeProjectNameToolStripMenuItem.Name = "ChangeProjectNameToolStripMenuItem";
-            this.ChangeProjectNameToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
-            this.ChangeProjectNameToolStripMenuItem.Text = "プロジェクト名の変更";
-            this.ChangeProjectNameToolStripMenuItem.Click += new System.EventHandler(this.ChangeProjectNameToolStripMenuItem_Click);
+            this.GameOptionOrderButton.Location = new System.Drawing.Point(1436, 357);
+            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
+            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionOrderButton.TabIndex = 141;
+            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
+            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
+            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            // 
+            // GameOptionButton
+            // 
+            this.GameOptionButton.Location = new System.Drawing.Point(1436, 317);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 140;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // MainFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1370, 840);
+            this.ClientSize = new System.Drawing.Size(1644, 840);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.menuStrip1);
@@ -2029,5 +2055,7 @@
         private System.Windows.Forms.ToolStripMenuItem InitWizardToolStripMenuItem;
         private ToolStripSeparatorEx toolStripSeparatorEx5;
         private System.Windows.Forms.ToolStripMenuItem ChangeProjectNameToolStripMenuItem;
+        private System.Windows.Forms.Button GameOptionOrderButton;
+        private System.Windows.Forms.Button GameOptionButton;
     }
 }

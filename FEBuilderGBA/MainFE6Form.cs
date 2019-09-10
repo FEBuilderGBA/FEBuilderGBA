@@ -777,5 +777,15 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolChangeProjectnameForm>();
         }
 
+        private void GameOptionButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusOptionForm>();
+        }
+
+        private void GameOptionOrderButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<StatusOptionOrderForm>();
+        }
+
     }
 }

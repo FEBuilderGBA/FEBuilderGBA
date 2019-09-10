@@ -1,17 +1,23 @@
 NAME=オートセーブ機能
 NAME.en=Auto save function
-TYPE=EA
-TAG=#EVENT
-EA=EA.txt
+TYPE=BIN
 
-//既に適応されたかどうか
-PATCHED_IF:0x15560=0x54 0xA9 0x03 0x02
+BINF:0x0865BC=000865BC.bin
+BINF:0x0A1A88=000A1A88.bin
+BINF:0x0A1AA0=000A1AA0.bin
+BINF:0x0A1AD8=000A1AD8.bin
+PATCHED_IF:0x0A1AE4=0x1B 0xFE 0x37 0x4D 0x4 0xA8 0x82 0x46 0x7E 0x4E 0x33 0x24
+BINF:0x0A1AE4=000A1AE4.bin
+BINF:0x0A1B08=000A1B08.bin
+BINF:0x0A1B1C=000A1B1C.bin
+BINF:0x0A1B34=000A1B34.bin
+BINF:0x0A1BB0=000A1BB0.bin
+BINF:0x0B3DAC=000B3DAC.bin
 
 INFO=中断から再開した時に、直前の行動ではなく、ターン開始時に戻れる設定を追加します。\r\n1ターン巻き戻し\r\nゲームオプションの地形の項目が、AutoSaveの切り替えに変化します。\r\nこのパッチは、その地形オプションをオフにすることで機能します。\r\nリセットし再開すると、プレイヤーターンに戻ることができるようになります。
 
-AUTHOR=aera,FE8 Girls
+AUTHOR=Unknown, FE8 Girls
 INFO.en=When resuming from an interruption, add a setting that can be returned at the beginning of the turn, not the last action.\r\nRewind 1 turn\r\nThe terrain item in the game options changes to AutoSave toggle.\r\nThis patch works by turning "off" that "terrain" option.\r\nAfter resetting and resuming, you can return to the player turn.
 
 NAME.zh=自动保存功能
 INFO.zh=从中断恢复时，添加可在转弯开始时返回的设置，而不是最后一个操作。\r\n倒退一圈\r\n游戏选项中的terrain项目将更改为AutoSave切换。\r\n此补丁通过关闭该地形选项来工作。\r\n重置并恢复后，您可以返回播放器转弯。
-
