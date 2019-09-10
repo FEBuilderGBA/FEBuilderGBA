@@ -5275,6 +5275,9 @@ Save As
 :UPS差分で保存
 Save As UPS Patch
 
+:プロジェクト名の変更
+Change Project Name
+
 :問題報告ツール
 Create Report Issue
 
@@ -5467,8 +5470,11 @@ Simple Menu
 :地形設定
 Terrain Editor
 
-:プロジェクト名の変更
-Change Project Name
+:ゲームオプションの順番
+Order of Game Option
+
+:ゲームオプション
+Game Options
 
 :詳細メニュー
 Advanced Editors
@@ -5487,12 +5493,6 @@ Individual Animation
 
 :部隊メニュー
 UnitsMenu
-
-:ゲームオプションの順番
-Order of Game Option
-
-:ゲームオプション
-Game Options
 
 :軍師属性
 Military attribute.
@@ -8254,6 +8254,15 @@ Shortcut Key 1
 :機能
 Function
 
+:プログラム割り当ての開始位置
+Start position for program assignment.
+
+:0=上位アドレスを利用
+0=Use upper address
+
+:1=通常の拡張領域を利用
+1=Use normal area
+
 :0=チェックしない
 0=Do not check
 
@@ -8487,15 +8496,6 @@ File Export Settings
 
 :保存
 Save
-
-:プログラム割り当ての開始位置
-Start position for program assignment.
-
-:0=上位アドレスを利用
-0=Use upper address
-
-:1=通常の拡張領域を利用
-1=Use normal area
 
 :その他ROM直値テキスト
 Other ROM Direct Text

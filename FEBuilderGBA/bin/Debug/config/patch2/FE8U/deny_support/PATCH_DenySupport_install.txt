@@ -1,0 +1,16 @@
+NAME=特定条件下で支援会話を禁止する(導入)
+INFO=支援をいつでも開始できるのではなく、特定条件では支援会話を拒否できるようにします。\r\nユニット同士と、フラグ、支援レベルの指定ができます。\r\n条件にマッチすると、支援会話を禁止します。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x256CA=0x00 0x00 0x00 0x4B
+EDIT_PATCH=PATCH_DenySupport.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Prohibit support conversations under specific conditions (Install)
+INFO.en=Instead of starting support at any time, you can refuse support conversations under certain conditions.\r\nYou can specify units, flags, and support levels.\r\nIf the condition is met, support conversation is prohibited.
+NAME.zh=在特定条件下禁止支持对话（介绍）
+INFO.zh=您可以在某些条件下拒绝支持对话，而不是随时启动支持。\r\n您可以指定单位，标志和支持级别。\r\n如果满足条件，则禁止支持对话。

@@ -174,7 +174,13 @@ namespace FEBuilderGBA
 
         }
 
-        Dictionary<uint, bool> PointerMark;
+        enum PointerType
+        {
+            DATA,
+            ASM,
+            POINTER,
+        };
+        Dictionary<uint, PointerType> PointerMark;
 
     
         //パッチなどにないハックを検知します.
@@ -370,6 +376,7 @@ namespace FEBuilderGBA
             }
         }
 
+
         void AppendUnkLDRData(uint addr, uint pointer)
         {
             Debug.Assert(Program.ROM.p32(pointer) == addr);
@@ -387,7 +394,7 @@ namespace FEBuilderGBA
                         , addr - 1, 0, pointer
                         , "LDR DATA ASM" + Program.AsmMapFileAsmCache.GetName(addr)
                         , Address.DataTypeEnum.ASM);
-                    PointerMark[addrP - 1] = true;
+                    PointerMark[addrP - 1] = PointerType.ASM;
                 }
             }
             else
@@ -400,6 +407,7 @@ namespace FEBuilderGBA
                             , addr, 0, pointer
                             , "LDR DATA LZ77" + Program.AsmMapFileAsmCache.GetName(addr)
                             , Address.DataTypeEnum.LZ77IMG);
+                        PointerMark[addrP] = PointerType.DATA;
                     }
                     else if (DisassemblerTrumb.IsCode(addr))
                     {
@@ -407,6 +415,7 @@ namespace FEBuilderGBA
                             , addr, 0, pointer
                             , "LDR DATA ASM_" + Program.AsmMapFileAsmCache.GetName(addr)
                             , Address.DataTypeEnum.ASM);
+                        PointerMark[addrP] = PointerType.ASM;
                     }
                     else if (IsPointerData(addr))
                     {
@@ -414,6 +423,7 @@ namespace FEBuilderGBA
                             , addr, 4, pointer
                             , "LDR REF DATA " + Program.AsmMapFileAsmCache.GetName(addr)
                             , Address.DataTypeEnum.POINTER);
+                        PointerMark[addrP] = PointerType.DATA;
                     }
                     else
                     {
@@ -421,8 +431,8 @@ namespace FEBuilderGBA
                             , addr, 0, pointer
                             , "LDR DATA " + Program.AsmMapFileAsmCache.GetName(addr)
                             , Address.DataTypeEnum.UnkMIX);
+                        PointerMark[addrP] = PointerType.DATA;
                     }
-                    PointerMark[addrP] = true;
                 }
             }
         }
@@ -456,8 +466,6 @@ namespace FEBuilderGBA
         void AppendUnkLDRPointer(uint addr, uint pointer)
         {
             Debug.Assert(Program.ROM.p32(pointer) == addr);
-
-//            uint addrP = U.toPointer(addr);
             uint pointerP = U.toPointer(pointer);
 
             //LDRが指すデータの先
@@ -469,7 +477,7 @@ namespace FEBuilderGBA
                         , pointer, 0, U.NOT_FOUND
                         , "LDR REF ADDRESS"
                         , Address.DataTypeEnum.POINTER_ASM);
-                    PointerMark[pointerP] = true;
+                    PointerMark[pointerP] = PointerType.ASM;
                 }
             }
             else
@@ -480,7 +488,7 @@ namespace FEBuilderGBA
                         , pointer, 0, U.NOT_FOUND
                         , "LDR REF ADDRESS"
                         , Address.DataTypeEnum.POINTER);
-                    PointerMark[pointerP] = true;
+                    PointerMark[pointerP] = PointerType.DATA;
                 }
             }
         }
@@ -814,7 +822,7 @@ namespace FEBuilderGBA
 
         void MakePointerMark()
         {
-            this.PointerMark = new Dictionary<uint, bool>(65535);
+            this.PointerMark = new Dictionary<uint, PointerType>(65535);
             for (int i = 0; i < StructList.Count; i++)
             {
                 Address address = StructList[i];
@@ -823,10 +831,17 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    this.PointerMark[U.toPointer(address.Pointer)] = true;
+                    this.PointerMark[U.toPointer(address.Pointer)] = PointerType.POINTER;
                 }
 
-                this.PointerMark[U.toPointer(address.Addr)] = true;
+                if (Address.IsASMOnly(address.DataType))
+                {
+                    this.PointerMark[U.toPointer(address.Addr)] = PointerType.ASM;
+                }
+                else
+                {
+                    this.PointerMark[U.toPointer(address.Addr)] = PointerType.DATA;
+                }
             }
         }
         RefCmd IFR(Address address, ASMC_Delect asmdelect)
@@ -1029,7 +1044,9 @@ namespace FEBuilderGBA
                     sb.Append('+');
                     sb.Append(U.ToHexString(srcoffset - startaddr));
                 }
-                else if (asmcdelect == ASMC_Delect.ASM && U.IsValueOdd(srcp))
+                else if (asmcdelect == ASMC_Delect.ASM 
+                    && U.IsValueOdd(srcp)
+                    && PointerMark[srcp] == PointerType.ASM)
                 {//ASMポインタ
                     sb.Append('&');
                     sb.Append(U.ToHexString(srcp - 1));
@@ -1052,7 +1069,8 @@ namespace FEBuilderGBA
             }
             else if (   U.IsValueOdd(srcp)
                         && PointerMark.ContainsKey(srcp - 1)
-                        && IsEnableASMPointer(asmcdelect)                
+                        && PointerMark[srcp - 1] == PointerType.ASM
+                        && IsEnableASMPointer(asmcdelect)
                 )
             {//ASM参照
                 sb.Append('&');

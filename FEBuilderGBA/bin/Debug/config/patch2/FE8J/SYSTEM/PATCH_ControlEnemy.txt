@@ -15,3 +15,6 @@ ONN:0x01547E=0x0A 0xE0
 AUTHOR=circleseverywhere https://feuniverse.us/t/control-enemy-npc-units-fe8/1897
 
 INFO=適応すると、敵もプレイヤーが動かせるようになります。\r\nデバッグ用として利用してください。
+INFO.en=Once adapted, the enemy will also be able to move the player.\r\nPlease use for debugging.
+NAME.zh=允许控制敌人（用于调试）。
+INFO.zh=一旦适应，敌人也将能够移动玩家。\r\n请用于调试。

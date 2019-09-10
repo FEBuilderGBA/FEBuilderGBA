@@ -1,0 +1,23 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $2567A
+BYTE 0x00 0x00
+jumpToHack(DenySupport)
+POP
+
+
+ALIGN 4
+DenySupport:
+#incbin "DenySupport.dmp"
+POIN DenySupport_Table
+
+//DenySupport_Table:
+#include "DenySupport_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

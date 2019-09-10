@@ -1,0 +1,33 @@
+NAME=特定条件下で支援会話を禁止する(編集)
+INFO=支援をいつでも開始できるのではなく、特定条件では支援会話を拒否できるようにします。\r\nユニット同士と、フラグ、支援レベルの指定ができます。\r\n条件にマッチすると、支援会話を禁止します。
+
+IF:0x256CA=0x00 0x00 0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END DenySupport.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはUnitIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT_ANYFF=UNIT1(0xFF=ANY)
+B1:UNIT_ANYFF=UNIT2(0xFF=ANY)
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:$COMBO Change_DenySupport_Label_Combo.txt=Support Level(0x00=ANY)
+W4:FLAG=Flag(0x00=ANY)
+W6=00
+
+NAME.en=Prohibit support conversations under certain conditions (Editor)
+INFO.en=Instead of starting support at any time, you can refuse support conversations under certain conditions.\r\nYou can specify units, flags, and support levels.\r\nIf the condition is met, support conversation is prohibited.
+NAME.zh=在某些条件下禁止支持对话（编辑）
+INFO.zh=您可以在某些条件下拒绝支持对话，而不是随时启动支持。\r\n您可以指定单位，标志和支持级别。\r\n如果满足条件，则禁止支持对话。

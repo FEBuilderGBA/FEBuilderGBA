@@ -1,0 +1,10 @@
+DenySupport_Table=$A4
+Loop=$06
+CheckText=$08
+CheckUnit=$0E
+NotFound=$7E
+CheckUnit2=$2A
+CheckChapter=$42
+CheckSupportLevel=$50
+CheckFlag=$68
+Found=$78

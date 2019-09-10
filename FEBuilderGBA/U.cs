@@ -4429,8 +4429,7 @@ namespace FEBuilderGBA
              //どう考えてもこの方法はおかしいと思うのだけど、
              //どうやっても、イベント発火を手動でできない.
              //C#のイベントはおかしい.
-                MethodInfo m = typeof(NumericUpDown).GetMethod("OnValueChanged", BindingFlags.NonPublic | BindingFlags.Instance);
-                m.Invoke(obj, new object[] { EventArgs.Empty });
+                FireEvent(obj, "OnValueChanged");
                 return;
             }
 
@@ -4471,11 +4470,8 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                MethodInfo m = typeof(ComboBox).GetMethod("OnSelectedValueChanged", BindingFlags.NonPublic | BindingFlags.Instance);
-                m.Invoke(obj, new object[] { EventArgs.Empty });
-
-                m = typeof(ComboBox).GetMethod("OnSelectedIndexChanged", BindingFlags.NonPublic | BindingFlags.Instance);
-                m.Invoke(obj, new object[] { EventArgs.Empty });
+                FireEvent(obj, "OnSelectedValueChanged");
+                FireEvent(obj, "OnSelectedIndexChanged");
 
                 return;
             }
@@ -4502,11 +4498,8 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                MethodInfo m = typeof(ListBox).GetMethod("OnSelectedValueChanged", BindingFlags.NonPublic | BindingFlags.Instance);
-                m.Invoke(obj, new object[] { EventArgs.Empty });
-
-                m = typeof(ListBox).GetMethod("OnSelectedIndexChanged", BindingFlags.NonPublic | BindingFlags.Instance);
-                m.Invoke(obj, new object[] { EventArgs.Empty });
+                FireEvent(obj, "OnSelectedValueChanged");
+                FireEvent(obj, "OnSelectedIndexChanged");
                 return;
             }
 
@@ -5266,8 +5259,24 @@ namespace FEBuilderGBA
         }
         public static void FireOnClick(Object obj)
         {
-            MethodInfo m = typeof(NumericUpDown).GetMethod("OnClick", BindingFlags.NonPublic | BindingFlags.Instance);
-            m.Invoke(obj, new object[] { EventArgs.Empty });
+            FireEvent(obj, "OnClick");
+        }
+        static void FireEvent(Object obj, string name, object arg = null)
+        {
+            if (arg == null)
+            {
+                arg = EventArgs.Empty;
+            }
+            try
+            {
+                MethodInfo m = obj.GetType().GetMethod(name, BindingFlags.NonPublic | BindingFlags.Instance);
+                m.Invoke(obj, new object[] { arg });
+            }
+            catch (TargetInvocationException e)
+            {
+                Log.Error("FireEvent",name,R.ExceptionToString(e));
+            }
+
         }
 
         //60fpsをgif FPSに変換
