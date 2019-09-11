@@ -57,10 +57,9 @@
             // 
             // ReasonLabel
             // 
-            this.ReasonLabel.AutoSize = true;
             this.ReasonLabel.Location = new System.Drawing.Point(155, 24);
             this.ReasonLabel.Name = "ReasonLabel";
-            this.ReasonLabel.Size = new System.Drawing.Size(63, 18);
+            this.ReasonLabel.Size = new System.Drawing.Size(650, 113);
             this.ReasonLabel.TabIndex = 1;
             this.ReasonLabel.Text = "Reason";
             // 
@@ -99,7 +98,6 @@
             this.Name = "HowDoYouLikePatchForm";
             this.Load += new System.EventHandler(this.HowDoYouLikePatchForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormIcon)).EndInit();
             this.ResumeLayout(false);
 

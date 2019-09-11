@@ -1896,7 +1896,7 @@ namespace FEBuilderGBA
                 NewButton.PerformClick();
                 return;
             }
-            CheckSkipWorldmapPatch();
+            CheckPatches();
 
             OneLineDisassembler();
 
@@ -1928,7 +1928,7 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
             PushUndo();
 
-            CheckSkipWorldmapPatch();
+            CheckPatches();
 
             OneLineDisassembler();
 
@@ -1969,17 +1969,70 @@ namespace FEBuilderGBA
             HideFloatingControlpanel();
         }
 
+        //各種パッチ探索
+        void CheckPatches()
+        {
+            CheckSkipWorldmapPatch();
+            CheckCAMERA_Event_OutOfBand_Fix();
+            CheckCAMERA_Event_NotExistsUnit_Fix();
+            CheckUnitStateEvent_0x34_Fix();
+            CheckWakuEvent_0x3B_Fix();
+        }
+
         void CheckSkipWorldmapPatch()
         {
-            if (Program.ROM.RomInfo.version() != 8)
-            {
-                return;
-            }
-
             string command = ScriptCodeName.Text;
             if (command.IndexOf("(MNC2)") >= 0 || command.IndexOf("(MNC3)") >= 0)
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.SkipWorldmapFix);
+            }
+        }
+
+        void CheckCAMERA_Event_OutOfBand_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("(CAM1") >= 0 || command.IndexOf("(CAM2") >= 0)
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.CAMERA_Event_OutOfBand_Fix);
+            }
+        }
+
+        void CheckCAMERA_Event_NotExistsUnit_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("(CAM1") >= 0 || command.IndexOf("(CAM2") >= 0)
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.CAMERA_Event_NotExistsUnit_Fix);
+            }
+        }
+
+        void CheckUnitStateEvent_0x34_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("(REMU)") >= 0
+                || command.IndexOf("(REVEAL)") >= 0
+                || command.IndexOf("(CUSA)") >= 0
+                || command.IndexOf("(CUSN)") >= 0
+                || command.IndexOf("(CUSE)") >= 0
+                || command.IndexOf("(SET_HP)") >= 0
+                || command.IndexOf("(SET_ENDTURN)") >= 0
+                || command.IndexOf("(SET_STATE)") >= 0
+                || command.IndexOf("(SET_SOMETHING)") >= 0
+                || command.IndexOf("(DISA_IF)") >= 0
+                || command.IndexOf("(REMU)") >= 0
+                || command.IndexOf("(DISA)") >= 0
+                )
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.UnitStateEvent_0x34_Fix);
+            }
+        }
+
+        void CheckWakuEvent_0x3B_Fix()
+        {
+            string command = ScriptCodeName.Text;
+            if (command.IndexOf("CUMO)") >= 0)
+            {
+                HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.WakuEvent_0x3B_Fix);
             }
         }
 

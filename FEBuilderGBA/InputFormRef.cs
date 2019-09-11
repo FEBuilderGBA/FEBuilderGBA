@@ -10502,7 +10502,17 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7U", addr = 0x184DC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE6", addr = 0x18188,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
             };
+            return SearchPatchBool(table);
+        }
 
+        static bool SearchPatchBool(PatchTableSt[] table)
+        {
+            PatchTableSt p = SearchPatch(table);
+            return p.addr != 0;
+        }
+
+        static PatchTableSt SearchPatch(PatchTableSt[] table)
+        {
             string version = Program.ROM.RomInfo.VersionToFilename();
             foreach (PatchTableSt t in table)
             {
@@ -10516,10 +10526,50 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                return true;
+                return t;
             }
-            return false;
+            return new PatchTableSt();
         }
+
+
+        //カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチの検出
+        public static bool SearchCAMERA_Event_OutOfBand_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8J", addr = 0x15D5E,data = new byte[]{0x14}},
+                new PatchTableSt{ name="Fix CAM1/CAMERA2 going out of bounds",	ver = "FE8U", addr = 0x15D52,data = new byte[]{0x14}},
+            };
+            return SearchPatchBool(table);
+        }
+
+        //存在ユニットを選択したときフリーズしないように
+        public static bool SearchCAMERA_Event_NotExistsUnit_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Prevent Freeze For Camera Event 0x26",	ver = "FE8J", addr = 0xF468,data = new byte[]{0x00, 0x20}},
+                new PatchTableSt{ name="Prevent Freeze For Camera Event 0x26",	ver = "FE8U", addr = 0xF25C,data = new byte[]{0x00, 0x20}},
+            };
+            return SearchPatchBool(table);
+        }
+        //存在ユニットを選択したときフリーズしないように
+        public static bool SearchUnitStateEvent_0x34_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Prevent Freeze For Unit State Event 0x34",	ver = "FE8J", addr = 0x10430,data = new byte[]{0x00, 0x20}},
+                new PatchTableSt{ name="Prevent Freeze For Unit State Event 0x34",	ver = "FE8U", addr = 0x102D4,data = new byte[]{0x00, 0x20}},
+            };
+            return SearchPatchBool(table);
+        }
+        //存在ユニットを選択したときフリーズしないように
+        public static bool SearchWakuEvent_0x3B_FixPatch()
+        {
+            PatchTableSt[] table = new PatchTableSt[] { 
+                new PatchTableSt{ name="Prevent Freeze For Event 0x3B",	ver = "FE8J", addr = 0x10950,data = new byte[]{0x00, 0x20}},
+                new PatchTableSt{ name="Prevent Freeze For Event 0x3B",	ver = "FE8U", addr = 0x10804,data = new byte[]{0x00, 0x20}},
+            };
+            return SearchPatchBool(table);
+        }
+        
 
         //指南パッチの設定アドレスの場所
         static uint g_Cache_shinan_table = NO_CACHE;
@@ -10566,6 +10616,7 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
+       
         //タイトルをテキストから自動生成するパッチがあるか判別.
         public static bool SearchChaptorNamesAsTextFixPatch()
         {

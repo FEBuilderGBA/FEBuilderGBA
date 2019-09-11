@@ -45,6 +45,10 @@ namespace FEBuilderGBA
             , Skill
             , SkipWorldmapFix
             , ItemIconExpands
+            , CAMERA_Event_OutOfBand_Fix
+            , CAMERA_Event_NotExistsUnit_Fix
+            , UnitStateEvent_0x34_Fix
+            , WakuEvent_0x3B_Fix
         };
         public static bool CheckAndShowPopupDialog(TYPE type)
         {
@@ -162,13 +166,78 @@ namespace FEBuilderGBA
                     return InputFormRef.SearchSkipWorldMapPatch() != InputFormRef.mnc2_fix_enum.NO;
                 };
                 reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
-//                patchName1 = "MNC2Fix";///No Translate
-//                patchName2 = "MNC2Fix";///No Translate
-//                patchShowName = "Skip Worldmap";
                 patchName1 = "Eliminate the constraint of freezing unless it enters from the world map";///No Translate
                 patchName2 = "Eliminate the constraint of freezing unless it enters from the world map.";///No Translate
                 patchShowName = "Skip Worldmap";
                 patchCombo = "fix";
+            }
+            else if (type == TYPE.CAMERA_Event_OutOfBand_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return InputFormRef.SearchCAMERA_Event_OutOfBand_FixPatch() ;
+                };
+                reason = R._("カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチをインストールしますか？");
+                patchName1 = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
+                patchName2 = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
+                patchShowName = "Fix CAM1_CAMERA2 going out of bounds";
+                patchCombo = "Fix";
+            }
+            else if (type == TYPE.CAMERA_Event_NotExistsUnit_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return InputFormRef.SearchCAMERA_Event_NotExistsUnit_FixPatch();
+                };
+                reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
+                patchName1 = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
+                patchName2 = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
+                patchShowName = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";
+                patchCombo = "Fix";
+            }
+            else if (type == TYPE.UnitStateEvent_0x34_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return InputFormRef.SearchUnitStateEvent_0x34_FixPatch();
+                };
+                reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
+                patchName1 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
+                patchName2 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
+                patchShowName = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";
+                patchCombo = "Fix";
+            }
+            else if (type == TYPE.WakuEvent_0x3B_Fix)
+            {
+                if (Program.ROM.RomInfo.version() != 8)
+                {
+                    return false;
+                }
+
+                checkFunc = () =>
+                {
+                    return InputFormRef.SearchWakuEvent_0x3B_FixPatch();
+                };
+                reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
+                patchName1 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
+                patchName2 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate
+                patchShowName = "Event3B_frame_Fix not to freeze even nonexistent units";
+                patchCombo = "Fix";
             }
 
             Debug.Assert(checkFunc != null);

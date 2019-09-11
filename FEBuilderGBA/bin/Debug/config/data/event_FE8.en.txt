@@ -25,7 +25,7 @@
 4D0DYYYYXXXXXXXX	[XXXXXXXX:POINTER_ASM:Assembler function]is called[YYYY::argument] D(ASMC)(LOW)	{SUBROUTINE}
 4E0DYYYYXXXXXXXX	[XXXXXXXX:POINTER_ASM:Assembler function]is called[YYYY::argument] E(ASMC)(LOW)	{SUBROUTINE}
 4F0DYYYYXXXXXXXX	[XXXXXXXX:POINTER_ASM:Assembler function]is called[YYYY::argument] F(ASMC)(LOW)	{SUBROUTINE}
-2826XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y](moving to screen corner is dangerous)(CAM1)	{CAMERA}
+2826XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y](CAM1)	{CAMERA}
 2126XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1)	{CAMERA}
 203BXXYY	[XX:MAPX:X][YY:MAPY:Y]with[]frame(CUMO)	{WAKU}
 213BXXXX	[XXXX:UNIT:Character]with[]frame(CUMO)	{WAKU}
@@ -93,8 +93,8 @@
 251A0000	_0x1A25
 4121XXXXYYYYZZZZ	_0x2141[XXXX::Value1][YY::Value2][ZZ::Value3]
 2813XXXX	Return screen with[XXXX:FSEC:Speed]	{SCREENDADE}	{MAPEFFECT}
-2026XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y](moving to screen center is dangerous)(CAM2)	{CAMERA}
-2926XXXX	Move camera instantaneously to[XXXX:UNIT:Character](moving to screen corner is dangerous)	{CAMERA}
+2026XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y] but, it seems not the center(CAM2)	{CAMERA}
+2926XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1)	{CAMERA}
 202BXXXX	_0x2B20[XXXX::Value1]
 211EXXXX	_0x211E[XXXX::Value1]
 432C010000000000	_432C

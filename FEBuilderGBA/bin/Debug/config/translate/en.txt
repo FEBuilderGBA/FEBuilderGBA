@@ -3073,6 +3073,12 @@ Skill extension SkillSystems is required.\r\nWould you like to enable it?
 :FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？
 A patch is required to move the map of FE 8 without going through the world map.\r\nWould you like to enable it?
 
+:カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチをインストールしますか？
+Do you want to install a patch that fixes a bug that causes the camera to move off the screen when you move the camera? 
+
+:存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？
+Do you want to install a patch that fixes a bug that freezes when you specify a non-existing unit? 
+
 :{0}パッチを有効にしますか？
 Would you like to activate the {0} patch?
 

@@ -8,8 +8,6 @@ BIN:0x0B0D36=000B0D36.bin
 BIN:0x0B0D7C=000B0D7C.bin
 BIN:0x908669=00908669.bin
 BIN:0x908744=00908744.bin
-BIN:0xA612BD=00A612BD.bin
-BIN:0xA643CF=00A643CF.bin
 
 AUTHOR=Original author: http://feuniverse.us/t/nintenlords-utilities/52
 INFO=難易度選択画面で簡単モードを選択できなくします。
