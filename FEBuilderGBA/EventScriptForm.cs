@@ -1357,19 +1357,24 @@ namespace FEBuilderGBA
                         else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
                         {
                             isENumText = true;
-                            text = AITilesForm.GetNames(v);
+                            text = " " + AITilesForm.GetNames(v);
                         }
                         else if (arg.Type == EventScript.ArgType.TILE)
                         {
                             isENumText = true;
-                            text = MapTerrainNameForm.GetNameExcept00(v);
+                            text = " " + MapTerrainNameForm.GetNameExcept00(v);
                         }
                         else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                         {
                             isENumText = true;
-                            text = InputFormRef.GetSuportLevel(v);
+                            text = " " + InputFormRef.GetSuportLevel(v);
                         }
-                        
+                        else if (arg.Type == EventScript.ArgType.GAMEOPTION)
+                        {
+                            isENumText = true;
+                            text = " " + StatusOptionForm.GetNameIndex(v);
+                        }
+
                         if (isENumText)
                         {
                             bounds.X += U.DrawText(text, g, boldFont, brush, isWithDraw, bounds);

@@ -93,6 +93,7 @@ namespace FEBuilderGBA
             , FSEC              //フレーム秒
             , TILE              //マップのタイル名
             , SUPPORT_LEVEL     //支援レベル
+            , GAMEOPTION        //ゲームオプション
         };
 
         public class Arg
@@ -659,6 +660,9 @@ namespace FEBuilderGBA
                  break;
              case "SUPPORT_LEVEL":
                  type = ArgType.SUPPORT_LEVEL;
+                 break;
+             case "GAMEOPTION":
+                 type = ArgType.GAMEOPTION;
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;

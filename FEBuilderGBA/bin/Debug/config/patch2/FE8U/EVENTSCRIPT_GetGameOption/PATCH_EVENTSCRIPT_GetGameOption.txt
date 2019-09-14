@@ -1,0 +1,30 @@
+NAME=イベント命令からゲームオプションを変更する追加ルーチン
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_SetGameOption.dmp=0x00 0xB5 0x83 0x6B
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_GetGameOption.dmp
+BIN:$FREEAREA:2=ASMC_SetGameOption.dmp
+
+AUTHOR=7743
+
+INFO=イベント命令から、ゲームオプションの値の取得と、値の設定をできるようにします。\r\n設定する値は、ゲームの設定画面での選択肢の並び順です。\r\n左から0,1,2,3...と数えます。\r\n例えば戦闘アニメオフは、Anime1,Anime2,OFF と並んでいるため、2を設定すると、OFFになります。
+
+EVENTSCRIPT:1=400DXX00{$L1:ASMC_GetGameOption.dmp}	ゲームオプションの取得[XX:GAMEOPTION:Option]	{COND}
+EVENTSCRIPT:5=400DXXYY{$L1:ASMC_SetGameOption.dmp}	ゲームオプションの設定[XX:GAMEOPTION:Option][YY::NewValue]
+
+NAME.en=Add Event: GetGameOption,SetGameOption
+INFO.en=Change game options from event script.\r\nThe value to set is the order of choices on the game settings screen.\r\nCount as 0,1,2,3 ... from the left.\r\nFor example, battle animation off is aligned with Anime1, Anime2, OFF, so setting 2 turns it off.
+
+EVENTSCRIPT:1.en=400DXX00{$L1:ASMC_GetGameOption.dmp}	GetGameOption[XX:GAMEOPTION:Option]	{COND}
+EVENTSCRIPT:5.en=400DXXYY{$L1:ASMC_SetGameOption.dmp}	SetGameOption[XX:GAMEOPTION:Option][YY::NewValue]
+
+NAME.zh=Add Event: GetGameOption,SetGameOption
+INFO.zh=Change game options from event script.\r\nThe value to set is the order of choices on the game settings screen.\r\nCount as 0,1,2,3 ... from the left.\r\nFor example, battle animation off is aligned with Anime1, Anime2, OFF, so setting 2 turns it off.
+
+
+EVENTSCRIPT:1.zh=400DXX00{$L1:ASMC_GetGameOption.dmp}	GetGameOption[XX:GAMEOPTION:Option]	{COND}
+EVENTSCRIPT:5.zh=400DXXYY{$L1:ASMC_SetGameOption.dmp}	SetGameOption[XX:GAMEOPTION:Option][YY::NewValue]

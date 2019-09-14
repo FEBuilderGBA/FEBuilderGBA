@@ -993,6 +993,11 @@ namespace FEBuilderGBA
             {
                 text = " " + InputFormRef.GetSuportLevel(v);
             }
+            else if (arg.Type == EventScript.ArgType.GAMEOPTION)
+            {
+                image = StatusOptionForm.DrawIcon(v);
+                text = " " + StatusOptionForm.GetNameIndex(v);
+            }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
@@ -1297,13 +1302,21 @@ namespace FEBuilderGBA
                 f.JumpTo(value, MakeAddressListFlagExpandsCallback_Handler(src_object) , this.MapID);
             }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
-            {//RAM_UNIT_STATE
+            {
                 RAMUnitStateFlagForm f = (RAMUnitStateFlagForm)InputFormRef.JumpForm<RAMUnitStateFlagForm>(U.NOT_FOUND);
                 f.JumpTo(value);
                 MakeInjectionApplyButtonCallback(f
                     , (Button)InputFormRef.FindObjectByForm<Button>
                         (InputFormRef.GetAllControls(f), "ApplyButton")
                     , src_object);
+            }
+            else if (arg.Type == EventScript.ArgType.GAMEOPTION)
+            {
+                StatusOptionForm f = (StatusOptionForm)InputFormRef.JumpForm<StatusOptionForm>();
+                MakeInjectionCallback(f
+                    , (ListBox)InputFormRef.FindObjectByForm<ListBox>
+                        (InputFormRef.GetAllControls(f), "AddressList")
+                    , src_object, false);
             }
         }
 
@@ -2674,6 +2687,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetSuportLevel(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.GAMEOPTION)
+                    {
+                        sb.Append(" ");
+                        sb.Append(StatusOptionForm.GetNameIndex(v));
                     }
 
                     sb.Append("]");

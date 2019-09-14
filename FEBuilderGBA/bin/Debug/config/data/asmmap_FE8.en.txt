@@ -12592,3 +12592,7 @@ r3=X tile position of menu of right	{U}
 0809EB38	CallSupply1	{U}
 0809EB58	CallSupply2	{U}
 08A92410	&LZ77	Some TSA data.	1	{J}
+080B6B7C	SetGameOption	r0=OptionIndex	r1=OptionValue	{J}
+080B1F64	SetGameOption	r0=OptionIndex	r1=OptionValue	{U}
+080B6A00	GetGameOption	RET=OptionValue	r0=OptionIndex	{J}
+080B1DE8	GetGameOption	RET=OptionValue	r0=OptionIndex	{U}
