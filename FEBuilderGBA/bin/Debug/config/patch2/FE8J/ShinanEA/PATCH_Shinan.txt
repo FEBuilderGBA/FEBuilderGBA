@@ -29,7 +29,7 @@ INFO=指南イベントを定義します。\r\nその章をどのようにク�
 P0:EVENT.en=Event Pointer
 P0:EVENT.zh=事件指针
 
-INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nPlease make an event that tells the user how to clear the chapter.\r\nTo assign a new event, specify 0 as the event pointer.\r\nWhen you set the event pointer to 0, a new secured button appears\r\n
+INFO.en=Enables creation of guide/tutorial events for each chapter to give the player hints, demonstrate new concepts, etc.\r\nPlease make an event that tells the user how to clear the chapter.\r\nTo assign a new event, specify 0 as the event pointer.\r\nWhen you set the event pointer to 0, a new allocate button appears\r\n
 INFO.zh=定义一个指令事件。\r\n请发出一个事件告诉用户如何清除该章节。\r\n要分配新事件，请将0指定为事件指针。\r\n当您将事件指针设置为0时，会出现一个新的安全按钮\r\n
 NAME.zh=指南事件@EA
 

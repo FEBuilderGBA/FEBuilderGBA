@@ -29,6 +29,6 @@ AUTHOR.en=Kaitou patch7743
 
 
 
-EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	erase assistance from an operating character.
-EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_run_divorce.bin}	从操作字符中删除辅助。
+EVENTSCRIPT.en=400D0000{$L1:wakaresaseya_run_divorce.bin}	Clear support from the operating character
+EVENTSCRIPT.zh=400D0000{$L1:wakaresaseya_run_divorce.bin}	从操作字符中删除辅助
 

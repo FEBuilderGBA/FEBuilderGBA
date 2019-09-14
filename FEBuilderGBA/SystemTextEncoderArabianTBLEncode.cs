@@ -42,7 +42,7 @@ namespace FEBuilderGBA
                     for (int i = 0; i < count; i += 2)
                     {
                         DicC d = new DicC();
-                        d.English = sp[i + 0];
+                        d.English = U.Reverse(sp[i + 0]);
                         d.Arabian = sp[i + 1];
                         d.ArabianIsolated = sp[1];
 

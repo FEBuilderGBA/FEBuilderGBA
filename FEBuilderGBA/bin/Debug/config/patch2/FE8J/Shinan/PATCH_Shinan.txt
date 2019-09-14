@@ -29,7 +29,7 @@ INFO=指南イベントを定義します。\r\nその章をどのようにク�
 P0:EVENT.en=Event Pointer
 P0:EVENT.zh=事件指针
 
-INFO.en=Edits the table created by "Guide Event Creator Installer"\r\nThis table enables the creation of guide/tutorial events for each chapter.\r\nThese can be used to give the player hints, demonstrate new concepts, etc.\r\nTo assign a new event, overwrite the "Event Pointer" as 0 and press the enter key.\r\nWhen set to 0, a secured button will appear. Clicking this will create a new pointer in free space.\r\n
+INFO.en=Edits the table created by "Guide Event Creator Installer"\r\nThis table enables the creation of guide/tutorial events for each chapter.\r\nThese can be used to give the player hints, demonstrate new concepts, etc.\r\nTo assign a new event, overwrite the "Event Pointer" as 0 and press the enter key.\r\nWhen set to 0, a allocate button will appear. Clicking this will create a new pointer in free space.\r\n
 INFO.zh=定义一个指令事件。\r\n请发出一个事件告诉用户如何清除该章节。\r\n要分配新事件，请将0指定为事件指针。\r\n当您将事件指针设置为0时，会出现一个新的安全按钮\r\n
 NAME.zh=指南事件
 

@@ -33,6 +33,9 @@
             this.W36 = new System.Windows.Forms.NumericUpDown();
             this.J_36_SONG = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.L_135_COMBO = new System.Windows.Forms.ComboBox();
+            this.B135 = new System.Windows.Forms.NumericUpDown();
+            this.J_135 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -280,11 +283,10 @@
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.B135 = new System.Windows.Forms.NumericUpDown();
-            this.J_135 = new System.Windows.Forms.Label();
-            this.L_135_COMBO = new System.Windows.Forms.ComboBox();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.W36)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B135)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).BeginInit();
@@ -384,7 +386,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.B135)).BeginInit();
             this.SuspendLayout();
             // 
             // L_36_SONGPLAY
@@ -679,6 +680,45 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1628, 939);
             this.panel3.TabIndex = 189;
+            // 
+            // L_135_COMBO
+            // 
+            this.L_135_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.L_135_COMBO.FormattingEnabled = true;
+            this.L_135_COMBO.Items.AddRange(new object[] {
+            "00=Fade to map",
+            "01=Fade to black"});
+            this.L_135_COMBO.Location = new System.Drawing.Point(1420, 574);
+            this.L_135_COMBO.Margin = new System.Windows.Forms.Padding(5);
+            this.L_135_COMBO.Name = "L_135_COMBO";
+            this.L_135_COMBO.Size = new System.Drawing.Size(207, 26);
+            this.L_135_COMBO.TabIndex = 354;
+            // 
+            // B135
+            // 
+            this.B135.Hexadecimal = true;
+            this.B135.Location = new System.Drawing.Point(1322, 579);
+            this.B135.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.B135.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.B135.Name = "B135";
+            this.B135.Size = new System.Drawing.Size(81, 25);
+            this.B135.TabIndex = 352;
+            // 
+            // J_135
+            // 
+            this.J_135.AccessibleDescription = "@MAPSETTING_IS_FADE_BLACK";
+            this.J_135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J_135.Location = new System.Drawing.Point(1103, 575);
+            this.J_135.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.J_135.Name = "J_135";
+            this.J_135.Size = new System.Drawing.Size(210, 32);
+            this.J_135.TabIndex = 353;
+            this.J_135.Text = "開始イベント前に暗転";
+            this.J_135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label68
             // 
@@ -3419,10 +3459,11 @@
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel14.Controls.Add(this.AddressList);
+            this.panel14.Controls.Add(this.AddressListExpandsButton_255);
             this.panel14.Controls.Add(this.LabelFilter);
             this.panel14.Location = new System.Drawing.Point(8, 38);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(254, 918);
+            this.panel14.Size = new System.Drawing.Size(254, 936);
             this.panel14.TabIndex = 192;
             // 
             // AddressList
@@ -3434,48 +3475,19 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(255, 886);
+            this.AddressList.Size = new System.Drawing.Size(255, 884);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // B135
+            // AddressListExpandsButton_255
             // 
-            this.B135.Hexadecimal = true;
-            this.B135.Location = new System.Drawing.Point(1322, 579);
-            this.B135.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.B135.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.B135.Name = "B135";
-            this.B135.Size = new System.Drawing.Size(81, 25);
-            this.B135.TabIndex = 352;
-            // 
-            // J_135
-            // 
-            this.J_135.AccessibleDescription = "@MAPSETTING_IS_FADE_BLACK";
-            this.J_135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_135.Location = new System.Drawing.Point(1103, 575);
-            this.J_135.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.J_135.Name = "J_135";
-            this.J_135.Size = new System.Drawing.Size(210, 32);
-            this.J_135.TabIndex = 353;
-            this.J_135.Text = "開始イベント前に暗転";
-            this.J_135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // L_135_COMBO
-            // 
-            this.L_135_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.L_135_COMBO.FormattingEnabled = true;
-            this.L_135_COMBO.Items.AddRange(new object[] {
-            "00=Fade to map",
-            "01=Fade to black"});
-            this.L_135_COMBO.Location = new System.Drawing.Point(1420, 574);
-            this.L_135_COMBO.Margin = new System.Windows.Forms.Padding(5);
-            this.L_135_COMBO.Name = "L_135_COMBO";
-            this.L_135_COMBO.Size = new System.Drawing.Size(207, 26);
-            this.L_135_COMBO.TabIndex = 354;
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 905);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(254, 30);
+            this.AddressListExpandsButton_255.TabIndex = 152;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // MapSettingFE7Form
             // 
@@ -3492,6 +3504,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.W36)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.B135)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_126_PORTRAIT_AUTO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B127)).EndInit();
@@ -3592,7 +3605,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.B135)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3854,5 +3866,6 @@
         private System.Windows.Forms.NumericUpDown B135;
         private System.Windows.Forms.Label J_135;
         private System.Windows.Forms.ComboBox L_135_COMBO;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
     }
 }

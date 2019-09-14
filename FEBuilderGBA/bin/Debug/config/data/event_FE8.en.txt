@@ -377,8 +377,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2433XXXX	checks if active unit matches given [XXXX:UNIT:Character](CHECK_ACTIVEID)	Returns 1 if the unit(character) is active (visiting) and 0 otherwise	@STOREC	{UNITCOND}
 2533XXXX	Get the allegiance of the [XXXX:UNIT:Character](CHECK_ALLEGIANCE)	Returns 0 if the unit is a player unit, 1 if the unit is a NPC (green) unit, or 2 if the unit is an enemy unit.	@STOREC 	{UNITCOND}
 
-4021XXXX00000000	BACG[XXXX::Value1]Changes background to value in Slot_2
-403AXXXXYYYY0000	NOTIFY[XXXX:ONELINE_TEXT:text][YY:MUSIC:sound effect]	Displays a notification popup.	{TEXT}
+4021XXXX00000000	BACG[XXXX::Value1]Changes background to value in Slot_2(LOW)
+403AXXXXYYYY0000	Notification by popup[XXXX:ONELINE_TEXT:text][YY:MUSIC:sound effect](NOTIFY)	Displays a notification popup.	{TEXT}
 413AXXXXYYYYZZZZ	Display location text[XXXX:ONELINE_TEXT:Text]at screen coordinates[YYYY:SCREENX:X][ZZZZ:SCREENY:Y](BROWNBOXTEXT)	Displays a small textbox on the screen (used for location names)	{TEXT}
 201A0000	Start dialog (conversation)(TEXTSTART)	{TEXT}
 231A0000	TUTORIALTEXTBOXSTART	{TEXT}

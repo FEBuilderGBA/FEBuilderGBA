@@ -6549,6 +6549,27 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static string GetSuportLevel(uint num)
+        {
+            if (num == 0)
+            {
+                return R._("支援なし");
+            }
+            else if (num == 1)
+            {
+                return R._("支援C");
+            }
+            else if (num == 2)
+            {
+                return R._("支援B");
+            }
+            else if (num == 3)
+            {
+                return R._("支援A");
+            }
+            return "";
+        }
+
         //ワールドマップに表示するユニット
         public static string GetWMAP_SPRITE_ID(uint num, out string errorMessae)
         {

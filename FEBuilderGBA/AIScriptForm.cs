@@ -530,6 +530,10 @@ namespace FEBuilderGBA
             {
                 text = MapTerrainNameForm.GetNameExcept00(value);
             }
+            else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
+            {
+                text = InputFormRef.GetSuportLevel(value);
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;

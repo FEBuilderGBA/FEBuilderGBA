@@ -1364,7 +1364,12 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = MapTerrainNameForm.GetNameExcept00(v);
                         }
-
+                        else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
+                        {
+                            isENumText = true;
+                            text = InputFormRef.GetSuportLevel(v);
+                        }
+                        
                         if (isENumText)
                         {
                             bounds.X += U.DrawText(text, g, boldFont, brush, isWithDraw, bounds);

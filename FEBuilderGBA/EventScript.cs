@@ -92,6 +92,7 @@ namespace FEBuilderGBA
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
             , TILE              //マップのタイル名
+            , SUPPORT_LEVEL     //支援レベル
         };
 
         public class Arg
@@ -655,6 +656,9 @@ namespace FEBuilderGBA
                  break;
              case "TILE":
                  type = ArgType.TILE;
+                 break;
+             case "SUPPORT_LEVEL":
+                 type = ArgType.SUPPORT_LEVEL;
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;

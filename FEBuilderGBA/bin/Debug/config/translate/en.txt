@@ -1913,7 +1913,7 @@ Create a door.\r\nWhen the door is open, the "Tile Changes" set at the door posi
 Shop/Armory Editor
 
 :新規確保
-Newly secured
+New Allocate
 
 :店の種類
 Shop Types
@@ -2270,7 +2270,7 @@ Direction of movement
 Event movement
 
 :引数{0}({1})は、ポインタなのに、4バイトのサイズが確保されていません。{2}bytesです。\r\n{3}
-The argument {0} ({1}) is a pointer, but a size of 4 bytes is not secured.It is {2} bytes.\r\n{3}
+The argument {0} ({1}) is a pointer, but a size of 4 bytes is not allocated.It is {2} bytes.\r\n{3}
 
 :この命令は低レイヤーの命令です。通常は利用しないでください。
 This command is a low layer command.Please do not use usually.
@@ -2696,10 +2696,10 @@ Reserve
 Please be aware that if you close the unit placement window without using the alloced area, it will be garbage data.
 
 :増援等で、追加で登場させたいユニットのために、\r\n新規に領域を確保します。
-Securing New Space.
+Allocating New Space.
 
 :確保する人数
-Number of Units to Secure
+Number of Units to Allocate
 
 :ユニット配置　新割り当て
 New Assignment
@@ -2720,7 +2720,7 @@ Level
 Only Promoted.
 
 :領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。
-Area is not secured.\r\nPlease press the "Extended list" button to secure the area.
+Area is not allocated.\r\nPlease press the "Extended list" button to allocate the area.
 
 :選択クラスの分離独立
 Separate independence of selected classes
@@ -4790,7 +4790,7 @@ ROMTCS data used for animation processing.\r\nWhen changing a special class such
 When you activate magic, select whether to make the screen dim.\r\ndim_pc = Darken the screen when triggered.\r\ndim = Does not dim.\r\nNULL = This flag does not use this magic slot.\r\n
 
 :テキストIDに0を指定した時だけ、ここで指定したイベントを実行できます。\r\nイベント命令のため、分岐をさせることで特殊な会話を実装できるようです。\r\nしかし、非常に制限が多いので、特別な理由がない限り利用しない方がいいでしょう。\r\nイベントを設定する場合は、イベント領域を確保して指定してください。\r\n
-The event specified here can be executed only when 0 is specified as the text ID.\r\nBecause it is an event instruction, it seems that you can implement a special conversation by making a branch.\r\nHowever, there are quite a few restrictions, so you should not use it unless there are special reasons.\r\nTo set an event, secure the event area and specify it.\r\n
+The event specified here can be executed only when 0 is specified as the text ID.\r\nBecause it is an event instruction, it seems that you can implement a special conversation by making a branch.\r\nHowever, there are quite a few restrictions, so you should not use it unless there are special reasons.\r\nTo set an event, Allocate the event area and specify it.\r\n
 
 :自由に設定できるコメントです。\r\n開発時のメモに利用してください。\r\nこの内容はROMには保存されません。以下のファイルに記録されます。
 It is a comment you can set freely.\r\nPlease use it for memo during development.\r\nThis content is not saved in ROM.It is recorded in the following file.
@@ -6347,7 +6347,7 @@ The format of the map data is incorrect.\r\nPlease set the data format saved wit
 In this map "{0}" there is no PLIST to store map changes.\r\nFirst, press "Add Map Change" button to reserve PLIST.
 
 :マップ変化数がたりません。{0}個必要です。インポートする前にマップ変化から確保してください。\r\n\r\nマップファイル:{1}\r\n
-There is no Tile Changes count.{0} items are required.Please secure from Tile Changes before importing.\r\n\r\nMapFilename:{1}\r\n
+There is no Tile Changes count.{0} items are required.Please allocate from Tile Changes before importing.\r\n\r\nMapFilename:{1}\r\n
 
 :選択中のマップスタイル{0} は、有効な範囲{1}～{2}を超えています。
 The selected map tileset {0} exceeds the valid range {1} - {2}.
@@ -7541,10 +7541,10 @@ Height (0 is OK)
 Do you want to create new menu data?
 
 :メニューの領域が確保されていません。
-The menu area is not secured.
+The menu area is not allocated.
 
 :メニューの個々の選択子の領域が確保されていません。
-Individual selector area of ​​the menu is not secured.
+Individual selector area of ​​the menu is not allocated.
 
 :文字列5
 String 5
@@ -7763,13 +7763,13 @@ From existing
 New data size
 
 :新規に領域を確保します。\r\n確保したい個数を入力してください。\r\n\r\n以前の画面は、複雑だったため、「詳細」タブの方に移動しました。
-Secure a new area.\r\nPlease enter the number you want to secure.\r\n\r\nSince the previous screen was complicated, It moved to the "Details" tab.
+Allocating a new area.\r\nPlease enter the number you want to allocate.\r\n\r\nSince the previous screen was complicated, It moved to the "Details" tab.
 
 :移動処理を実行する
 Reallocate data and repoint
 
 :新規確保する総データ数
-Total number of new data to secure
+Total number of new data to allocate
 
 :1.移動するデータ(Source)
 1. Data to be moved (Source)
@@ -7817,16 +7817,16 @@ margin
 Treatment of old data
 
 :00=新規確保部分はデータの1番目で埋める
-00=The newly secured part is filled with the first data
+00=The newly allocate part is filled with the first data
 
 :01=新規確保領域は00で埋める
-01=The new reserved area is filled with 00
+01=The new allocate area is filled with 00
 
 :02=新規確保部分はデータの2番目で埋める
-02=The new secured portion can be filled with the second of the data
+02=The new allocate portion can be filled with the second of the data
 
 :新規確保領域の初期値
-Initial value of new secured area
+Initial value of new allocated area
 
 :コピーサイズ
 Copy size
@@ -9395,7 +9395,7 @@ The data structure of this song seems to be broken.\r\nDo you want to force impo
 I could not Rip because the data structure of this song is broken.
 
 :データサイズを({0})確保できません。\r\nROM容量がもうないか、音楽のパースに失敗しています。
-Unable to secure data size ({0}).\r\nThere was an error parsing the music because there is no ROM capacity anymore.
+Unable to allocate data size ({0}).\r\nThere was an error parsing the music because there is no ROM capacity anymore.
 
 :DirectSoundの中に、おかしなデータがありました。無視します。 sample_location:{0} > {1} ROM Size
 There was strange data in DirectSound.I will ignore it.sample_location: {0}> {1} ROM Size.

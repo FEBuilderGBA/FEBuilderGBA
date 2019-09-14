@@ -989,6 +989,10 @@ namespace FEBuilderGBA
                 image = InputFormRef.DrawSkillIcon(v);
                 text = " " + InputFormRef.GetSkillName(v);
             }
+            else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
+            {
+                text = " " + InputFormRef.GetSuportLevel(v);
+            }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
@@ -2665,6 +2669,11 @@ namespace FEBuilderGBA
                     {//SKILL
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetSkillName(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetSuportLevel(v));
                     }
 
                     sb.Append("]");
