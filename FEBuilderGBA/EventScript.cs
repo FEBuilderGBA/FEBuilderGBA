@@ -94,6 +94,7 @@ namespace FEBuilderGBA
             , TILE              //マップのタイル名
             , SUPPORT_LEVEL     //支援レベル
             , GAMEOPTION        //ゲームオプション
+            , GAMEOPTION_VALUE  //ゲームオプションの値
         };
 
         public class Arg
@@ -663,6 +664,9 @@ namespace FEBuilderGBA
                  break;
              case "GAMEOPTION":
                  type = ArgType.GAMEOPTION;
+                 break;
+             case "GAMEOPTION_VALUE":
+                 type = ArgType.GAMEOPTION_VALUE;
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;
@@ -1620,6 +1624,18 @@ namespace FEBuilderGBA
             {
                 EventScript.Arg arg = code.Script.Args[n];
                 if (arg.Type == EventScript.ArgType.RAM_UNIT_PARAM)
+                {
+                    return (uint)n;
+                }
+            }
+            return 0x0;
+        }
+        public static uint GetGameOptionParamIndex(EventScript.OneCode code)
+        {
+            for (int n = 0; n < code.Script.Args.Length; n++)
+            {
+                EventScript.Arg arg = code.Script.Args[n];
+                if (arg.Type == EventScript.ArgType.GAMEOPTION)
                 {
                     return (uint)n;
                 }

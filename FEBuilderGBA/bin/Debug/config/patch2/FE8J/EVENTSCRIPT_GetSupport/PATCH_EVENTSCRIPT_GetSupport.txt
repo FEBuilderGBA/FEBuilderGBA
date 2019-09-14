@@ -15,11 +15,11 @@ AUTHOR=7743
 INFO=イベント命令から、支援レベルを取得したり、支援レベルを設定したり、消したりできるようにします。\r\n支援レベルが上がったというポップアップが欲しければ、NOTFY命令を使って表示してください。\r\n403A0A085A000000	ポップアップで通知[text:0x80A 支援レベルがアップした][sound effect:0x5A SE:Show Dialog/Get Item]
 
 
-EVENTSCRIPT:1=400DXXYY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得[XX:UNIT:Unit1][YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:2=410D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 SVAL1 Unitと[YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:3=4B0D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 SVALBの座標のユニットと[YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 [ZZ:MAPX:X][WW:MAPY:Y]のユニットと[YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:5=4F0500YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 操作中のユニットと[YY:UNIT:Unit2]	{COND}
+EVENTSCRIPT:1=400DXXYY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得[XX:UNIT:Unit1][YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:2=410D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 SVAL1 Unitと[YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:3=4B0D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 SVALBの座標のユニットと[YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 [ZZ:MAPX:X][WW:MAPY:Y]のユニットと[YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:5=4F0500YY{$L1:ASMC_GetSupport.dmp}	支援レベルを取得 操作中のユニットと[YY:UNIT:Unit2]	@STOREC	{COND}
 
 EVENTSCRIPT:11=40050200VV000000400DXXYY{$L1:ASMC_SetSupport.dmp}	支援レベルを設定[XX:UNIT:Unit1][YY:UNIT:Unit2]=[VV:SUPPORT_LEVEL:支援レベル]
 EVENTSCRIPT:12=400DXXYY{$L1:ASMC_SetSupport.dmp}	支援レベルを設定 [XX:UNIT:Unit1][YY:UNIT:Unit2]=SVAL2(LOW)
@@ -40,11 +40,11 @@ EVENTSCRIPT:31=400DXXYY{$L1:ASMC_GetSupport.dmp}40050200010000002006C202400DXXYY
 NAME.en=Add Event: GetSupportLevel , SetSupportLevel , ClearSupportLevel
 INFO.en=This patch is an additional routine that allows you to get support level, set support level, and turn off from event instructions.\r\nIf you want a pop-up that the support level has increased, use the NOTFY command to display it.\r\n403A0A085A000000	Notification by popup[text:0x80A][sound effect:0x5A]
 
-EVENTSCRIPT:1.en=400DXXYY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:2.en=410D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVAL1 Unit and [YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:3.en=4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVALB coordinate unit and [YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel [ZZ:MAPX:X][WW:MAPY:Y]'s unit and [YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:5.en=4F0500YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel operation unit and [YY:UNIT:Unit2]	{COND}
+EVENTSCRIPT:1.en=400DXXYY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:2.en=410D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVAL1 Unit and [YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:3.en=4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVALB coordinate unit and [YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel [ZZ:MAPX:X][WW:MAPY:Y]'s unit and [YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:5.en=4F0500YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel operation unit and [YY:UNIT:Unit2]	@STOREC	{COND}
 
 EVENTSCRIPT:11.en=40050200VV000000400DXXYY{$L1:ASMC_SetSupport.dmp}	SetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]=[VV:SUPPORT_LEVEL:Support Level]
 EVENTSCRIPT:12.en=400DXXYY{$L1:ASMC_SetSupport.dmp}	SetSupportLevel [XX:UNIT:Unit1][YY:UNIT:Unit2]=SVAL2(LOW)
@@ -66,11 +66,11 @@ EVENTSCRIPT:31.en=400DXXYY{$L1:ASMC_GetSupport.dmp}40050200010000002006C202400DX
 NAME.zh=Add Event: GetSupportLevel , SetSupportLevel , ClearSupportLevel
 INFO.zh=This patch is an additional routine that allows you to get support level, set support level, and turn off from event instructions.\r\nIf you want a pop-up that the support level has increased, use the NOTFY command to display it.\r\n403A0A085A000000	Notification by popup[text:0x80A][sound effect:0x5A]
 
-EVENTSCRIPT:1.zh=400DXXYY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:2.zh=410D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVAL1 Unit and [YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:3.zh=4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVALB coordinate unit and [YY:UNIT:Unit2](LOW)	{COND}
-EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel [ZZ:MAPX:X][WW:MAPY:Y]'s unit and [YY:UNIT:Unit2]	{COND}
-EVENTSCRIPT:5.zh=4F0500YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel operation unit and [YY:UNIT:Unit2]	{COND}
+EVENTSCRIPT:1.zh=400DXXYY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:2.zh=410D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVAL1 Unit and [YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel SVALB coordinate unit and [YY:UNIT:Unit2](LOW)	@STOREC	{COND}
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel [ZZ:MAPX:X][WW:MAPY:Y]'s unit and [YY:UNIT:Unit2]	@STOREC	{COND}
+EVENTSCRIPT:5.zh=4F0500YY{$L1:ASMC_GetSupport.dmp}	GetSupportLevel operation unit and [YY:UNIT:Unit2]	@STOREC	{COND}
 
 EVENTSCRIPT:11.zh=40050200VV000000400DXXYY{$L1:ASMC_SetSupport.dmp}	SetSupportLevel[XX:UNIT:Unit1][YY:UNIT:Unit2]=[VV:SUPPORT_LEVEL:Support Level]
 EVENTSCRIPT:12.zh=400DXXYY{$L1:ASMC_SetSupport.dmp}	SetSupportLevel [XX:UNIT:Unit1][YY:UNIT:Unit2]=SVAL2(LOW)

@@ -1374,6 +1374,16 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + StatusOptionForm.GetNameIndex(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.GAMEOPTION_VALUE)
+                        {
+                            isENumText = true;
+
+                            uint prevIndex = EventScript.GetGameOptionParamIndex(code);
+                            uint prevValue = 0;
+                            EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                            text = " " + StatusOptionForm.GetValueNameIndex(prevValue, v);
+                        }
 
                         if (isENumText)
                         {

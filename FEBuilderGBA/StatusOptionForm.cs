@@ -58,6 +58,23 @@ namespace FEBuilderGBA
             }
             return GetNameFast(addr);
         }
+        public static string GetValueNameIndex(uint index,uint value_index)
+        {
+            InputFormRef InputFormRef = Init(null);
+            //現在のIDに対応するデータ
+            uint addr = InputFormRef.IDToAddr(index);
+            if (!U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            if (value_index >= 4)
+            {
+                return "";
+            }
+            
+            uint offset = (value_index * 8) + 6;
+            return GetNameFast(addr + offset);
+        }
 
         private void MenuForm_Load(object sender, EventArgs e)
         {

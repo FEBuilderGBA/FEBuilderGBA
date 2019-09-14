@@ -998,6 +998,14 @@ namespace FEBuilderGBA
                 image = StatusOptionForm.DrawIcon(v);
                 text = " " + StatusOptionForm.GetNameIndex(v);
             }
+            else if (arg.Type == EventScript.ArgType.GAMEOPTION_VALUE)
+            {
+                uint prevIndex = EventScript.GetGameOptionParamIndex(code);
+                uint prevValue = 0;
+                EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                text = " " + StatusOptionForm.GetValueNameIndex(prevValue, v);
+            }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
                 text = " " + InputFormRef.GetDigitHint(v);
@@ -2692,6 +2700,15 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(StatusOptionForm.GetNameIndex(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.GAMEOPTION_VALUE)
+                    {
+                        uint prevIndex = EventScript.GetGameOptionParamIndex(code);
+                        uint prevValue = 0;
+                        EventScript.GetArg(code, (int)prevIndex, out prevValue);
+
+                        sb.Append(" ");
+                        sb.Append(StatusOptionForm.GetValueNameIndex(prevValue, v));
                     }
 
                     sb.Append("]");
