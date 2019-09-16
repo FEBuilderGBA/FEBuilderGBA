@@ -1,0 +1,13 @@
+
+NAME=アーマートライアングル攻撃 クラス 下級職2
+NAME.en=Armor Triangle Attack Class UnPromoted2
+NAME.zh=Armor Triangle Attack Class UnPromoted2
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0077408 0x77474
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+

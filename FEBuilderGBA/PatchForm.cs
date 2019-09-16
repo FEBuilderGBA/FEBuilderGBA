@@ -2571,72 +2571,58 @@ namespace FEBuilderGBA
             }
 
             //データの検索
-            if (value.IndexOf("GREP16 ") == 0)
+            Match m;
+            m = RegexCache.Match(value, @"^FGREP([0-9]+) ");
+            if (m.Groups.Count >= 2)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 16);
+                uint align = U.atoi(m.Groups[1].Value);
+                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align);
             }
-            if (value.IndexOf("GREP12 ") == 0)
+            m = RegexCache.Match(value, @"^FGREP([0-9]+)END ");
+            if (m.Groups.Count >= 2)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 12);
+                uint align = U.atoi(m.Groups[1].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, 0, true);
             }
-            if (value.IndexOf("GREP8 ") == 0)
+
+            m = RegexCache.Match(value, @"^FGREP([0-9]+)END\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 8);
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, skip, true);
             }
-            if (value.IndexOf("GREP4 ") == 0)
+
+            m = RegexCache.Match(value, @"^GREP([0-9]+) ");
+            if (m.Groups.Count >= 2)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4);
+                uint skip = U.atoi(m.Groups[1].Value);
+                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, skip);
             }
-            if (value.IndexOf("GREP3 ") == 0)
+            m = RegexCache.Match(value, @"^GREP([0-9]+)END ");
+            if (m.Groups.Count >= 2)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 3);
+                uint align = U.atoi(m.Groups[1].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, 0, true);
             }
-            if (value.IndexOf("GREP2 ") == 0)
+
+            m = RegexCache.Match(value, @"^GREP([0-9]+)END\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 2);
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, skip, true);
             }
-            if (value.IndexOf("GREP1 ") == 0)
+            m = RegexCache.Match(value, @"^GREP([0-9]+)ENDA\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
             {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 1);
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, skip, false);
             }
-            if (value.IndexOf("GREP4END ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, true);
-            }
-            if (value.IndexOf("GREP1END ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 1, 0, true);
-            }
-            if (value.IndexOf("GREP4END+4 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4 ,4, true);
-            }
-            if (value.IndexOf("GREP4END+8 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 8, true);
-            }
-            if (value.IndexOf("GREP4END+12 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 12, true);
-            }
-            if (value.IndexOf("GREP4END+16 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 16, true);
-            }
-            if (value.IndexOf("GREP4END+20 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 20, true);
-            }
-            if (value.IndexOf("GREP4END+24 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 24, true);
-            }
-            if (value.IndexOf("GREP4END+28 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 28, true);
-            }
+
             if (value.IndexOf("GREP4END+A ") == 0)
-            {
+            {//下位互換のため
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, 4, 0, false);
             }
             if (value.IndexOf("GREP_ENABLE_POINTER ") == 0)
@@ -2644,62 +2630,6 @@ namespace FEBuilderGBA
                 return U.GrepEnablePointer(Program.ROM.Data, start_offset, 0);
             }
 
-            if (value.IndexOf("FGREP16 ") == 0)
-            {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 16);
-            }
-            if (value.IndexOf("FGREP12 ") == 0)
-            {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 12);
-            }
-            if (value.IndexOf("FGREP8 ") == 0)
-            {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 8);
-            }
-            if (value.IndexOf("FGREP4 ") == 0)
-            {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4);
-            }
-            if (value.IndexOf("FGREP1 ") == 0)
-            {
-                return U.Grep(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 1);
-            }
-            if (value.IndexOf("FGREP4END ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 0, true);
-            }
-            if (value.IndexOf("FGREP1END ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 1, 0, true);
-            }
-            if (value.IndexOf("FGREP4END+4 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 4, true);
-            }
-            if (value.IndexOf("FGREP4END+8 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 8, true);
-            }
-            if (value.IndexOf("FGREP4END+12 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 12, true);
-            }
-            if (value.IndexOf("FGREP4END+16 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 16, true);
-            }
-            if (value.IndexOf("FGREP4END+20 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 20 , true);
-            }
-            if (value.IndexOf("FGREP4END+24 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 24, true);
-            }
-            if (value.IndexOf("FGREP4END+28 ") == 0)
-            {
-                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, 4, 28, true);
-            }
             if (value.IndexOf("P32 ") == 0)
             {
                 return ReadPointer(value,0);

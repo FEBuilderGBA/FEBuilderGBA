@@ -1,0 +1,11 @@
+NAME=アーマートライアングル攻撃 クラス Range From
+NAME.en=Armor Triangle Attack Class Range From
+NAME.zh=Armor Triangle Attack Class Range From
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0773EC
+ADDRESS_TYPE=CLASS
+AUTHOR=7743

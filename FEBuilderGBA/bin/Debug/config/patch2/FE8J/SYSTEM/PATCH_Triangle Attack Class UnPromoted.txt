@@ -1,0 +1,13 @@
+
+NAME=トライアングル攻撃 クラス 下級職
+NAME.en=Triangle Attack Class UnPromoted
+NAME.zh=Triangle Attack Class UnPromoted
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x00774FC 0x77544 0x7758E
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+

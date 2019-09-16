@@ -12596,3 +12596,7 @@ r3=X tile position of menu of right	{U}
 080B1F64	SetGameOption	r0=OptionIndex	r1=OptionValue	{U}
 080B6A00	GetGameOption	RET=OptionValue	r0=OptionIndex	{J}
 080B1DE8	GetGameOption	RET=OptionValue	r0=OptionIndex	{U}
+08075424	StartEkrTriArmorKnight	{U}
+08075538	StartEkrTriArmorKnightOBJ	{U}
+0807785C	StartEkrTriArmorKnight	{J}
+08077970	StartEkrTriArmorKnightOBJ	{J}

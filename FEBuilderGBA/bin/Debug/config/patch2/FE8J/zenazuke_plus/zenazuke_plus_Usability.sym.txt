@@ -1,0 +1,16 @@
+Exit_False=$2C
+for_aid=$0C
+LoadUnitByAID=$84
+for_myself=$20
+HasItem=$36
+Exit_True=$30
+Exit=$32
+HasItem_Start=$44
+item_loop=$4E
+HasItem_exit_false=$7C
+is_target_item=$5A
+HasItem_exit_true=$78
+HasItem_exit=$7E
+LoadUnitByAID_Exit_false=$A8
+LoadUnitByAID_next_loop=$94
+LoadUnitByAID_Exit=$AA

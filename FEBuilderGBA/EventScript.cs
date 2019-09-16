@@ -1386,6 +1386,10 @@ namespace FEBuilderGBA
             {
                 return R._("指定したウェイト処理を行います");
             }
+            else if (hint == "@SAFETY")
+            {
+                return R._("Safetyは、プレイヤーから攻撃される危険なタイルに立ち寄らなくなる数字です。\r\n小さい数字ほど危険なタイルに立ち寄りません。");
+            }
             
             return hint.Replace("\\r\\n", "\r\n");
         }

@@ -1,0 +1,13 @@
+
+NAME=アーマートライアングル攻撃 クラス 上級職1
+NAME.en=Armor Triangle Attack Class Promoted1
+NAME.zh=Armor Triangle Attack Class Promoted1
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0074FD8 0x75044
+ADDRESS_TYPE=CLASS
+AUTHOR=7743
+

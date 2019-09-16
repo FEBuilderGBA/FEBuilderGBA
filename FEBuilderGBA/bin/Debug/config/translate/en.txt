@@ -2302,6 +2302,9 @@ If you use DISA for members who are at your party party, their existence will be
 :指定したウェイト処理を行います
 Performs the specified wait processing.
 
+:Safetyは、プレイヤーから攻撃される危険なタイルに立ち寄らなくなる数字です。\r\n小さい数字ほど危険なタイルに立ち寄りません。
+Safety is a number that prevents you from stopping on a dangerous tile attacked by the player.\r\nThe smaller the number, the less dangerous the tile.
+
 :この領域は利用できません
 Unable to use this area.
 
@@ -4110,6 +4113,18 @@ Egg
 
 :光の結界
 LightRune
+
+:支援なし
+No support.
+
+:支援C
+Support C.
+
+:支援B
+Support B.
+
+:支援A
+Support A.
 
 :警告: 上限を超えています
 Warning:It exceeds the upper limit
@@ -6985,6 +7000,9 @@ Object type (Plist)
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
 
+:開始イベント前に暗転
+Dark Before Initial Event
+
 :資産評価
 Asset evaluation
 
@@ -7144,9 +7162,6 @@ Player Phase BGM (Eliwood)
 :章タイトル画像2
 Chapter Title 2
 
-:開始イベント前に暗転
-Dark Before Initial Event
-
 :章タイトル文字(ヘクトル)
 Chapter Title Ch.(Hector)
 
@@ -7179,6 +7194,9 @@ Map is damaged.
 
 :マップが狭すぎます。現在のサイズ:({0},{1}) 利用できる最少サイズ:({2},{3})
 Map is too narrow.Current size: ({0}, {1}) Minimum available size: ({2}, {3}).
+
+:指南へJump
+Jump to the Shinan
 
 :00=通常
 00=normal
@@ -7266,9 +7284,6 @@ Chapter title image 2 (X).
 
 :戦闘準備の有無(X)
 Enable Battle Prep? (X)
-
-:指南へJump
-Jump to the Shinan
 
 :利用マップ:{0}
 Usage map: {0}
@@ -10300,11 +10315,11 @@ Reference place
 :参照情報の追加
 Add reference information.
 
-:このテキストを利用している箇所
-Where this text is used
-
 :この文字列はどこからも参照されていないようです。\r\nもし、参照されている場合は、情報を入力してください。
 This string doesn't seem to be referenced from anywhere.\r\nIf it is referenced, please enter the information.
+
+:このテキストを利用している箇所
+Where this text is used
 
 :この文字列は、以下の場所から参照されています。\r\nただし、プログラムやパッチからの参照は検出できない部分もあります。
 This string is referenced from the following location.\r\nHowever, there are parts that can not detect references from programs and patches.
