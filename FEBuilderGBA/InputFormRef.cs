@@ -5747,7 +5747,7 @@ namespace FEBuilderGBA
             }
 
             string text = sb.ToString();
-            Clipboard.SetText(text);
+            U.Clipboard_SetText(text);
         }
         public void ClipbordToPaste()
         {

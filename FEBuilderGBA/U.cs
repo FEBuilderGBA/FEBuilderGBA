@@ -6309,6 +6309,24 @@ namespace FEBuilderGBA
             Array.Reverse(arr);
             return new string(arr);
         }
+        public static void Clipboard_SetText(string text)
+        {
+            string lastError = "";
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    Clipboard.SetText(text);
+                    return;
+                }
+                catch (Exception e)
+                {
+                    lastError = R.ExceptionToString(e);
+                    Log.Error(lastError); 
+                }
+            }
+            R.ShowStopError(lastError);
+        }
     }
 }
 

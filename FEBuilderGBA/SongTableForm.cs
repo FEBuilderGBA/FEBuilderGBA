@@ -216,5 +216,18 @@ namespace FEBuilderGBA
             }
             return "";
         }
+
+        public static void ReloadList()
+        {
+            SongTableForm f = (SongTableForm)InputFormRef.GetForm<SongTableForm>();
+            if (f == null)
+            {//ウィンドウを開いていない
+                return;
+            }
+
+            int selectedIndex = f.AddressList.SelectedIndex;
+            f.ReloadListButton.PerformClick();
+            f.AddressList.SelectedIndex = selectedIndex;
+        }
     }
 }

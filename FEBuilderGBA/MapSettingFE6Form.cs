@@ -34,16 +34,53 @@ namespace FEBuilderGBA
                 , Program.ROM.RomInfo.map_setting_datasize()
                 , (int i, uint addr) =>
                 {
-                    //0 がポインタであればデータがあると考える.
-                    uint a = Program.ROM.u32(addr + 0);
-                    //                    return U.isPointer(a) || a == 0;
-                    return U.isPointer(a);
+                    return IsMapSettingEnd(addr);
                 }
                 , (int i, uint addr) =>
                 {
                     return U.ToHexString(i) + MapSettingForm.GetMapNameWhereAddr(addr);
                 }
                 );
+        }
+        static bool IsMapSettingEnd(uint addr)
+        {
+            uint a = Program.ROM.u32(addr + 0);
+            if (U.isPointer(a))
+            {
+                return true;
+            }
+
+            if (a == 0)
+            {//CPを0にしている人対策
+                uint weather = Program.ROM.u8(addr + 11);
+                if (weather >= 0xE)
+                {//天気で未知のデータがある
+                    return false;
+                }
+                uint plist_direct = Program.ROM.u32(addr + 4);
+                if (plist_direct == 0 || plist_direct == 0xFFFFFFFF)
+                {//PLSITとして読めない
+                    //念のためもう一つチェック
+                    plist_direct = Program.ROM.u32(addr + 8);
+                    if (plist_direct == 0 || plist_direct == 0xFFFFFFFF)
+                    {//PLSITとして読めない
+                        return false;
+                    }
+                }
+                uint textmax = TextForm.GetDataCount();
+                uint map1 = Program.ROM.u16(addr + 56);
+                if (map1 >= textmax)
+                {
+                    return false;
+                }
+                uint clearcond1 = Program.ROM.u16(addr + 48);
+                if (clearcond1 >= textmax)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)

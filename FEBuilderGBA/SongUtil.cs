@@ -241,12 +241,20 @@ namespace FEBuilderGBA
                     }
                     else if (b == 0xBD || b == 0xBB || b == 0xBC || b == 0xBE || b == 0xBF || b == 0xC0 || b == 0xC1)
                     {
+                        if (addr + 1 >= limitter)
+                        {//終端を超えました.
+                            break;
+                        }
                         uint next_byte = Program.ROM.u8(addr + 1);
                         track.codes.Add(new Code(addr, waitCount, b, next_byte));
                         addr += 2;
                     }
                     else if (b == 0xb9)
                     {//MEMACC 4バイト命令
+                        if (addr + 3 >= limitter)
+                        {//終端を超えました.
+                            break;
+                        }
                         uint b1 = Program.ROM.u8(addr + 1);
                         uint b2 = Program.ROM.u8(addr + 2);
                         uint b3 = Program.ROM.u8(addr + 3);
@@ -261,9 +269,19 @@ namespace FEBuilderGBA
                     }
                     else if (b >= TIE && b <= (uint)NOTE_END)
                     {
+                        if (addr + 1 >= limitter)
+                        {//終端を超えました.
+                            break;
+                        }
+
                         uint key = Program.ROM.u8(addr + 1);
                         if (key <= 127)
                         {
+                            if (addr + 2 >= limitter)
+                            {//終端を超えました.
+                                break;
+                            }
+
                             uint velocity = Program.ROM.u8(addr + 2);
                             if (velocity <= 127)
                             {//N96 Gn7 v10 みたいな3バイト命令
@@ -286,6 +304,11 @@ namespace FEBuilderGBA
                     }
                     else if (b <= 127)
                     {
+                        if (addr + 1 >= limitter)
+                        {//終端を超えました.
+                            break;
+                        }
+
                         uint key = b;
                         uint velocity = Program.ROM.u8(addr + 1);
                         if (velocity <= 127)

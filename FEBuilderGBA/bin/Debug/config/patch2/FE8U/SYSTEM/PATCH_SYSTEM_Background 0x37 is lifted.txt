@@ -1,5 +1,5 @@
 NAME=背景0x37番を解放する
-NAME.en=Expand Background Image List
+NAME.en=Background 0x37 is lifted
 NAME.zh=免费背景0x37
 
 //アドレスパッチとして実装します
@@ -9,12 +9,12 @@ TAG=#ENGINE #ESSENTIALFIXES
 ADDRESS=0xE836
 
 COMBO=修正しない|0x04 0xD1|修正する|0x04 0xE0
-COMBO.en=Default: 37 Maximum|0x04 0xD1|Patched: Unlimited|0x04 0xE0
+COMBO.en=Default:|0x04 0xD1|Fix:|0x04 0xE0
 COMBO.zh=不要修改|0x04 0xD1|纠正|0x04 0xE0
 
 INFO=GBAFEでは、背景テーブルの上限値を超えたところに番兵がセットされています。\r\nそのため、背景テーブルを拡張した時に、特定のIDの背景を表示しようとすると、必ずID:0x00の背景が表示されます。\r\nFE8Uでは0x37番、FE8Jでは0x51番の背景がそれに該当します。\r\nこのパッチはその制限を修正します。
-INFO.en=Toggles whether the background image list cap is limited to 0x37 (Default) or unlimited (Patched).\r\nThis patch removes the 0x37 limit.
-INFO.zh=在GBAFE中，标记被设置在超过背景表的上限的地方。\r\n因此，当您扩展背景表时，如果您尝试显示特定ID的背景，则始终显示ID为0x00的背景。\r\n它对应于FE 8U的0x37和FE 8J的0 x 51。\r\n此修补程序将修复该限制。
+INFO.en=In GBAFE, a sentinel is set where the upper limit of the background table is exceeded.\r\nTherefore, when you extend the background table, if you try to display the background of a specific ID, the background with ID: 0x00 will always be displayed.
+INFO.zh=在GBAFE中，标记被设置在超过背景表的上限的地方。\r\n因此，当您扩展背景表时，如果您尝试显示特定ID的背景，则始终显示ID为0x00的背景。\r\n它对应于FE8U的0x37和FE8J的0x51。\r\n此修补程序将修复该限制。
 
 AUTHOR=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

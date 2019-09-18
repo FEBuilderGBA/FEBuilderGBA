@@ -234,6 +234,8 @@ namespace FEBuilderGBA
             int selectedIndex = AddressList.SelectedIndex;
             ReloadListButton.PerformClick();
             AddressList.SelectedIndex = selectedIndex;
+
+            SongTableForm.ReloadList();
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
         private void SONGPLAY_Click(object sender, EventArgs e)

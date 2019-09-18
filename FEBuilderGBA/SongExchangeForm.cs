@@ -71,6 +71,7 @@ namespace FEBuilderGBA
             SongListToListBox(this.MySongList, this.SongTable, true);
             SongTable.SelectedIndex = nowselect;
 
+            SongTableForm.ReloadList();
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
