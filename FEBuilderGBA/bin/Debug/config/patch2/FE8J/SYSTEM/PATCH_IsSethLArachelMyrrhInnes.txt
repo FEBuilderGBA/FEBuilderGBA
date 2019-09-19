@@ -1,5 +1,10 @@
-NAME=ゼト ラーチェル ミスラ インギース Table
+NAME=ゼト ラーチェル ミスラ ヒーニアス Table
 NAME.en=IsSethLArachelMyrrhInnes Table
+
+INFO=IsSethLArachelMyrrhInnes関数でチェックされるユニット達。\r\nイベント用に、LOAD2でユニットを読込んだときに、これらのユニットが死亡していたとしても、ユニットを表示します。
+INFO.en=Units checked with the IsSethLArachelMyrrhInnes function.\r\nDisplays units even if these units are dead when loading units with LOAD2 for an event.
+NAME.zh=IsSethLArachelMyrrhInnes Table
+INFO.zh=Units checked with the IsSethLArachelMyrrhInnes function.\r\nDisplays units even if these units are dead when loading units with LOAD2 for an event.
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT
@@ -17,8 +22,3 @@ DATACOUNT=$GREP1 0x00
 //データを定義します
 B0:UNIT=Unit
 
-INFO=IsSethLArachelMyrrhInnes関数でチェックされるユニット達。
-INFO.en=Units checked with the IsSethLArachelMyrrhInnes function.
-
-NAME.zh=IsSethLArachelMyrrhInnes Table
-INFO.zh=Units checked with the IsSethLArachelMyrrhInnes function.
