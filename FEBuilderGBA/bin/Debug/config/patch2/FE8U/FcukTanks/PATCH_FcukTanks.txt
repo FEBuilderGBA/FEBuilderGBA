@@ -1,0 +1,10 @@
+NAME=ダメージを与えられない場合、攻撃しないように戦闘AIを修正する
+NAME.en=Change combat AI to NOT attack If can't damage.
+
+INFO=FE3,FE4の戦闘AIのように、攻撃してダメージが与えられない場合は、相手を攻撃しないように修正します。
+INFO.en=If the damage is not dealt by attacking like FE3, FE4 battle AI, it will be modified to not attack the opponent.
+AUTHOR=Stan https://feuniverse.us/t/fe8u-stans-asm-stuff/2376/27
+TYPE=EA
+EA=FcukTanks.event
+
+PATCHED_IF:0x03DF10=0x00 0x4B 0x18 0x47

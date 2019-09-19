@@ -1,0 +1,24 @@
+NAME=ゼト ラーチェル ミスラ インギース Table
+NAME.en=IsSethLArachelMyrrhInnes Table
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=0x84864 //0x089ED674へのポインタ
+
+//構造体のサイズ 1
+DATASIZE=1
+
+//データ個数
+DATACOUNT=$GREP1 0x00
+
+//データを定義します
+B0:UNIT=Unit
+
+INFO=IsSethLArachelMyrrhInnes関数でチェックされるユニット達。
+INFO.en=Units checked with the IsSethLArachelMyrrhInnes function.
+
+NAME.zh=IsSethLArachelMyrrhInnes Table
+INFO.zh=Units checked with the IsSethLArachelMyrrhInnes function.

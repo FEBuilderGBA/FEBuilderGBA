@@ -1,0 +1,19 @@
+#ifndef FCUKTANKS_INCLUDED
+#define FCUKTANKS_INCLUDED
+
+// Simple hack that makes AI-controlled units not attack if they can't deal damage
+// hack by Stan
+
+// Note that this doesn't account for any cool special mechanic that affects damage
+// It just check for (attack - defense) to be more than 0
+
+PUSH
+	ORG $03DEA0
+		WORD $47184B00; POIN FcukTanksHook|1
+POP
+
+ALIGN 4
+FcukTanksHook:
+	#incbin "FcukTanks.dmp"
+
+#endif // FCUKTANKS_INCLUDED

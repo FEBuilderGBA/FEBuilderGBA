@@ -12555,3 +12555,7 @@ r3=X tile position of menu of the right	{U}
 08075538	StartEkrTriArmorKnightOBJ	{U}
 0807785C	StartEkrTriArmorKnight	{J}
 08077970	StartEkrTriArmorKnightOBJ	{J}
+080A8AF0	SaveMenu_LoadNextChapterName	{U}
+080AD508	SaveMenu_LoadNextChapterName	{J}
+080c2030	Worldmap_GetNextChapterID	{J}
+080BD224	Worldmap_GetNextChapterID	{U}
