@@ -1,0 +1,8 @@
+MMBHPXCoordinate=$BC
+EALiterals=$BC
+MMBHPYCoordinate=$C0
+MMBHeight=$C4
+End=$98
+SkipBottom=$62
+SkipDashedCurrentHP=$70
+SkipDashedMaxHP=$8C

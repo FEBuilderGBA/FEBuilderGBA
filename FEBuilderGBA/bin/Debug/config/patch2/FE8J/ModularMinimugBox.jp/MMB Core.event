@@ -188,6 +188,16 @@
 			#endif // MMBNumberDrawing
 		#endif // MMBHPStatusNoCombination
 
+		#ifdef MMBHP
+			#inctevent lyn "Modules/MMBDrawHP.elf" "Internal/Definitions.elf"
+			WORD MMBHPX
+			WORD MMBHPY
+			WORD MMBHeight
+			#ifndef MMBNumberDrawing
+				#define MMBNumberDrawing
+			#endif // MMBNumberDrawing
+		#endif // MMBHP
+
 		#ifdef MMBDEFRES
 			#inctevent lyn "Modules/MMBDrawDEFRES.elf" "Internal/Definitions.elf"
 			WORD (2 * ((32 * MMBDEFRESY) + MMBDEFRESX))
@@ -288,7 +298,11 @@
 		#ifdef MMBASLabel
 			ALIGN 4
 			MMBASLabelGraphic:
-			#incbin "Modules/ASLabel.png.dmp"	//HINT=BIN
+			#ifdef MMB_VQLabel
+				#incbin "Modules/VQ_ASLabel.png.dmp"	//HINT=BIN
+			#else
+				#incbin "Modules/ASLabel.png.dmp"	//HINT=BIN
+			#endif
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -324,7 +338,11 @@
 		#ifdef MMBCRTLabel
 			ALIGN 4
 			MMBCRTLabelGraphic:
-			#incbin "Modules/CRTLabel.png.dmp"	//HINT=BIN
+			#ifdef MMB_VQLabel
+				#incbin "Modules/VQ_CRTLabel.png.dmp"	//HINT=BIN
+			#else
+				#incbin "Modules/CRTLabel.png.dmp"	//HINT=BIN
+			#endif
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -333,7 +351,11 @@
 		#ifdef MMBDEFLabel
 			ALIGN 4
 			MMBDEFLabelGraphic:
-			#incbin "Modules/DEFLabel.png.dmp"	//HINT=BIN
+			#ifdef MMB_VQLabel
+				#incbin "Modules/VQ_DEFLabel.png.dmp"	//HINT=BIN
+			#else
+				#incbin "Modules/DEFLabel.png.dmp"	//HINT=BIN
+			#endif
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -360,7 +382,11 @@
 		#ifdef MMBHITLabel
 			ALIGN 4
 			MMBHITLabelGraphic:
-			#incbin "Modules/HITLabel.png.dmp"	//HINT=BIN
+			#ifdef MMB_VQLabel
+				#incbin "Modules/VQ_HITLabel.png.dmp"	//HINT=BIN
+			#else
+				#incbin "Modules/HITLabel.png.dmp"	//HINT=BIN
+			#endif
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -378,7 +404,11 @@
 		#ifdef MMBRESLabel
 			ALIGN 4
 			MMBRESLabelGraphic:
-			#incbin "Modules/RESLabel.png.dmp"	//HINT=BIN
+			#ifdef MMB_VQLabel
+				#incbin "Modules/VQ_RESLabel.png.dmp"	//HINT=BIN
+			#else
+				#incbin "Modules/RESLabel.png.dmp"	//HINT=BIN
+			#endif
 			#ifndef MMBLabelDrawing
 				#define MMBLabelDrawing
 			#endif // MMBLabelDrawing
@@ -767,6 +797,10 @@
 	#ifdef MMBHPStatus
 		POIN MMBDrawHPStatus
 	#endif // MMBHPStatus
+
+	#ifdef MMBHP
+		POIN MMBDrawHP
+	#endif // MMBHP
 
 	#ifdef MMBHPStatusNoCombination
 		POIN MMBDrawHPStatusNoCombination
