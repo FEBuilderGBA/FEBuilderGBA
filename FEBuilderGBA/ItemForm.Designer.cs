@@ -1158,7 +1158,7 @@
             this.B25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B25.ForeColor = System.Drawing.SystemColors.WindowText;
             this.B25.Hexadecimal = true;
-            this.B25.Location = new System.Drawing.Point(461, 27);
+            this.B25.Location = new System.Drawing.Point(461, 28);
             this.B25.Margin = new System.Windows.Forms.Padding(2);
             this.B25.Maximum = new decimal(new int[] {
             255,
@@ -1326,7 +1326,7 @@
             // X_SIM_BODY
             // 
             this.X_SIM_BODY.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.X_SIM_BODY.Location = new System.Drawing.Point(823, 27);
+            this.X_SIM_BODY.Location = new System.Drawing.Point(823, 28);
             this.X_SIM_BODY.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_BODY.Maximum = new decimal(new int[] {
             65535,
@@ -1348,7 +1348,7 @@
             this.X_SIM_BODY_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_BODY_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_BODY_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_BODY_Label.Location = new System.Drawing.Point(823, 2);
+            this.X_SIM_BODY_Label.Location = new System.Drawing.Point(823, 0);
             this.X_SIM_BODY_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_BODY_Label.Name = "X_SIM_BODY_Label";
             this.X_SIM_BODY_Label.Size = new System.Drawing.Size(64, 25);
@@ -1381,7 +1381,7 @@
             this.X_SIM_MOV_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_MOV_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_MOV_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_MOV_Label.Location = new System.Drawing.Point(755, 3);
+            this.X_SIM_MOV_Label.Location = new System.Drawing.Point(755, 1);
             this.X_SIM_MOV_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_MOV_Label.Name = "X_SIM_MOV_Label";
             this.X_SIM_MOV_Label.Size = new System.Drawing.Size(64, 25);
@@ -1534,7 +1534,7 @@
             this.X_SIM_LUCK_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_LUCK_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_LUCK_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_LUCK_Label.Location = new System.Drawing.Point(685, 3);
+            this.X_SIM_LUCK_Label.Location = new System.Drawing.Point(685, 1);
             this.X_SIM_LUCK_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_LUCK_Label.Name = "X_SIM_LUCK_Label";
             this.X_SIM_LUCK_Label.Size = new System.Drawing.Size(64, 25);
@@ -1547,7 +1547,7 @@
             this.X_SIM_RES_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_RES_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_RES_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_RES_Label.Location = new System.Drawing.Point(618, 3);
+            this.X_SIM_RES_Label.Location = new System.Drawing.Point(618, 1);
             this.X_SIM_RES_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_RES_Label.Name = "X_SIM_RES_Label";
             this.X_SIM_RES_Label.Size = new System.Drawing.Size(64, 25);
@@ -1560,7 +1560,7 @@
             this.X_SIM_DEF_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_DEF_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_DEF_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_DEF_Label.Location = new System.Drawing.Point(549, 3);
+            this.X_SIM_DEF_Label.Location = new System.Drawing.Point(549, 1);
             this.X_SIM_DEF_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_DEF_Label.Name = "X_SIM_DEF_Label";
             this.X_SIM_DEF_Label.Size = new System.Drawing.Size(64, 25);
@@ -1573,7 +1573,7 @@
             this.X_SIM_SPD_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_SPD_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_SPD_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_SPD_Label.Location = new System.Drawing.Point(480, 3);
+            this.X_SIM_SPD_Label.Location = new System.Drawing.Point(480, 1);
             this.X_SIM_SPD_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_SPD_Label.Name = "X_SIM_SPD_Label";
             this.X_SIM_SPD_Label.Size = new System.Drawing.Size(64, 25);
@@ -1586,7 +1586,7 @@
             this.X_SIM_SKILL_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_SKILL_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_SKILL_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_SKILL_Label.Location = new System.Drawing.Point(410, 3);
+            this.X_SIM_SKILL_Label.Location = new System.Drawing.Point(410, 1);
             this.X_SIM_SKILL_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_SKILL_Label.Name = "X_SIM_SKILL_Label";
             this.X_SIM_SKILL_Label.Size = new System.Drawing.Size(64, 25);
@@ -1599,7 +1599,7 @@
             this.X_SIM_STR_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_STR_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_STR_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_STR_Label.Location = new System.Drawing.Point(339, 3);
+            this.X_SIM_STR_Label.Location = new System.Drawing.Point(339, 1);
             this.X_SIM_STR_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_STR_Label.Name = "X_SIM_STR_Label";
             this.X_SIM_STR_Label.Size = new System.Drawing.Size(64, 25);
@@ -1612,7 +1612,7 @@
             this.X_SIM_HP_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X_SIM_HP_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_HP_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_HP_Label.Location = new System.Drawing.Point(267, 3);
+            this.X_SIM_HP_Label.Location = new System.Drawing.Point(267, 1);
             this.X_SIM_HP_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_HP_Label.Name = "X_SIM_HP_Label";
             this.X_SIM_HP_Label.Size = new System.Drawing.Size(64, 25);

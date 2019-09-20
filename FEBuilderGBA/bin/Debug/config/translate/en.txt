@@ -2219,10 +2219,10 @@ Death
 Death Quotes
 
 :0=リン編チュートリアルでの死亡セリフ
-0=Death serif in the phosphorus edition tutorial.
+0=Death Quote in Lyn edition.
 
 :1=エリウッド編チュートリアルでの死亡セリフ
-1=Death line in Eliwood Hen Tutorial.
+1=Death Quote in Eliwood edition.
 
 :変化データポインタ
 Change data pointer

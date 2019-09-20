@@ -779,7 +779,7 @@
             // 
             // b12
             // 
-            this.b12.Location = new System.Drawing.Point(241, 24);
+            this.b12.Location = new System.Drawing.Point(241, 25);
             this.b12.Margin = new System.Windows.Forms.Padding(2);
             this.b12.Maximum = new decimal(new int[] {
             255,
@@ -889,7 +889,7 @@
             // 
             // B11
             // 
-            this.B11.Location = new System.Drawing.Point(171, 24);
+            this.B11.Location = new System.Drawing.Point(171, 25);
             this.B11.Margin = new System.Windows.Forms.Padding(2);
             this.B11.Maximum = new decimal(new int[] {
             255,
@@ -1754,7 +1754,7 @@
             // 
             // MagicExtUnitGrow
             // 
-            this.MagicExtUnitGrow.Location = new System.Drawing.Point(732, 24);
+            this.MagicExtUnitGrow.Location = new System.Drawing.Point(732, 26);
             this.MagicExtUnitGrow.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtUnitGrow.Maximum = new decimal(new int[] {
             255,
@@ -1807,7 +1807,7 @@
             // 
             // B33
             // 
-            this.B33.Location = new System.Drawing.Point(588, 25);
+            this.B33.Location = new System.Drawing.Point(588, 26);
             this.B33.Margin = new System.Windows.Forms.Padding(2);
             this.B33.Maximum = new decimal(new int[] {
             255,
@@ -1874,7 +1874,7 @@
             // 
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_34.Location = new System.Drawing.Point(659, 0);
+            this.J_34.Location = new System.Drawing.Point(659, -1);
             this.J_34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_34.Name = "J_34";
             this.J_34.Size = new System.Drawing.Size(64, 25);
@@ -1886,7 +1886,7 @@
             // 
             this.J_33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_33.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_33.Location = new System.Drawing.Point(588, 0);
+            this.J_33.Location = new System.Drawing.Point(588, -1);
             this.J_33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_33.Name = "J_33";
             this.J_33.Size = new System.Drawing.Size(64, 25);
@@ -1898,7 +1898,7 @@
             // 
             this.J_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_32.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_32.Location = new System.Drawing.Point(518, 0);
+            this.J_32.Location = new System.Drawing.Point(518, -1);
             this.J_32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_32.Name = "J_32";
             this.J_32.Size = new System.Drawing.Size(64, 25);
@@ -1910,7 +1910,7 @@
             // 
             this.J_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_31.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_31.Location = new System.Drawing.Point(450, 0);
+            this.J_31.Location = new System.Drawing.Point(450, -1);
             this.J_31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_31.Name = "J_31";
             this.J_31.Size = new System.Drawing.Size(64, 25);
@@ -1922,7 +1922,7 @@
             // 
             this.J_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_30.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_30.Location = new System.Drawing.Point(378, 0);
+            this.J_30.Location = new System.Drawing.Point(378, -1);
             this.J_30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_30.Name = "J_30";
             this.J_30.Size = new System.Drawing.Size(64, 25);
@@ -1934,7 +1934,7 @@
             // 
             this.J_29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_29.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_29.Location = new System.Drawing.Point(308, 0);
+            this.J_29.Location = new System.Drawing.Point(308, -1);
             this.J_29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_29.Name = "J_29";
             this.J_29.Size = new System.Drawing.Size(64, 25);
@@ -1946,7 +1946,7 @@
             // 
             this.J_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_28.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_28.Location = new System.Drawing.Point(240, 0);
+            this.J_28.Location = new System.Drawing.Point(240, -1);
             this.J_28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_28.Name = "J_28";
             this.J_28.Size = new System.Drawing.Size(64, 25);
@@ -2013,7 +2013,7 @@
             // 
             // X_SIM_SUM_RATE
             // 
-            this.X_SIM_SUM_RATE.Location = new System.Drawing.Point(729, 28);
+            this.X_SIM_SUM_RATE.Location = new System.Drawing.Point(729, 27);
             this.X_SIM_SUM_RATE.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SUM_RATE.Maximum = new decimal(new int[] {
             65535,
@@ -2029,7 +2029,7 @@
             // 
             this.X_SIM_MAGICEX_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_MAGICEX_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_MAGICEX_Label.Location = new System.Drawing.Point(842, 2);
+            this.X_SIM_MAGICEX_Label.Location = new System.Drawing.Point(842, 1);
             this.X_SIM_MAGICEX_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_MAGICEX_Label.Name = "X_SIM_MAGICEX_Label";
             this.X_SIM_MAGICEX_Label.Size = new System.Drawing.Size(64, 25);
@@ -2042,7 +2042,7 @@
             // 
             this.X_SIM_SUM_RATE_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_SUM_RATE_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_SUM_RATE_Label.Location = new System.Drawing.Point(729, 2);
+            this.X_SIM_SUM_RATE_Label.Location = new System.Drawing.Point(729, 1);
             this.X_SIM_SUM_RATE_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_SUM_RATE_Label.Name = "X_SIM_SUM_RATE_Label";
             this.X_SIM_SUM_RATE_Label.Size = new System.Drawing.Size(104, 25);
@@ -2052,7 +2052,7 @@
             // 
             // X_SIM_LUCK
             // 
-            this.X_SIM_LUCK.Location = new System.Drawing.Point(660, 26);
+            this.X_SIM_LUCK.Location = new System.Drawing.Point(660, 27);
             this.X_SIM_LUCK.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_LUCK.Maximum = new decimal(new int[] {
             65535,
@@ -2066,7 +2066,7 @@
             // 
             // X_SIM_SKILL
             // 
-            this.X_SIM_SKILL.Location = new System.Drawing.Point(379, 26);
+            this.X_SIM_SKILL.Location = new System.Drawing.Point(379, 27);
             this.X_SIM_SKILL.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SKILL.Maximum = new decimal(new int[] {
             65535,
@@ -2108,7 +2108,7 @@
             // 
             // X_SIM_DEF
             // 
-            this.X_SIM_DEF.Location = new System.Drawing.Point(519, 26);
+            this.X_SIM_DEF.Location = new System.Drawing.Point(519, 27);
             this.X_SIM_DEF.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_DEF.Maximum = new decimal(new int[] {
             65535,
@@ -2122,7 +2122,7 @@
             // 
             // X_SIM_HP
             // 
-            this.X_SIM_HP.Location = new System.Drawing.Point(241, 26);
+            this.X_SIM_HP.Location = new System.Drawing.Point(241, 27);
             this.X_SIM_HP.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_HP.Maximum = new decimal(new int[] {
             65535,
@@ -2136,7 +2136,7 @@
             // 
             // X_SIM_SPD
             // 
-            this.X_SIM_SPD.Location = new System.Drawing.Point(451, 26);
+            this.X_SIM_SPD.Location = new System.Drawing.Point(451, 27);
             this.X_SIM_SPD.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SPD.Maximum = new decimal(new int[] {
             65535,
@@ -2152,7 +2152,7 @@
             // 
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label58.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label58.Location = new System.Drawing.Point(660, 2);
+            this.label58.Location = new System.Drawing.Point(660, 1);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 25);
@@ -2164,7 +2164,7 @@
             // 
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label60.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label60.Location = new System.Drawing.Point(589, 2);
+            this.label60.Location = new System.Drawing.Point(589, 1);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(64, 25);
@@ -2176,7 +2176,7 @@
             // 
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label61.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label61.Location = new System.Drawing.Point(519, 2);
+            this.label61.Location = new System.Drawing.Point(519, 1);
             this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(64, 25);
@@ -2188,7 +2188,7 @@
             // 
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label62.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label62.Location = new System.Drawing.Point(451, 2);
+            this.label62.Location = new System.Drawing.Point(451, 1);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(64, 25);
@@ -2200,7 +2200,7 @@
             // 
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label63.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label63.Location = new System.Drawing.Point(379, 2);
+            this.label63.Location = new System.Drawing.Point(379, 1);
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(64, 25);
@@ -2212,7 +2212,7 @@
             // 
             this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label64.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label64.Location = new System.Drawing.Point(309, 2);
+            this.label64.Location = new System.Drawing.Point(309, 1);
             this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(64, 25);
@@ -2222,7 +2222,7 @@
             // 
             // X_SIM
             // 
-            this.X_SIM.Location = new System.Drawing.Point(172, 26);
+            this.X_SIM.Location = new System.Drawing.Point(172, 27);
             this.X_SIM.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM.Maximum = new decimal(new int[] {
             255,
@@ -2237,7 +2237,7 @@
             // 
             this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label65.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label65.Location = new System.Drawing.Point(241, 2);
+            this.label65.Location = new System.Drawing.Point(241, 1);
             this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(64, 25);
@@ -2249,7 +2249,7 @@
             // 
             this.label66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label66.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label66.Location = new System.Drawing.Point(172, 2);
+            this.label66.Location = new System.Drawing.Point(172, 1);
             this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(64, 25);
@@ -2384,7 +2384,7 @@
             // 
             // B24
             // 
-            this.B24.Location = new System.Drawing.Point(452, 21);
+            this.B24.Location = new System.Drawing.Point(452, 23);
             this.B24.Margin = new System.Windows.Forms.Padding(2);
             this.B24.Maximum = new decimal(new int[] {
             255,

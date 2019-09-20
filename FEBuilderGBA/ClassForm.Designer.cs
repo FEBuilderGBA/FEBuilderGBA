@@ -1784,7 +1784,7 @@
             // 
             // B47
             // 
-            this.B47.Location = new System.Drawing.Point(491, 32);
+            this.B47.Location = new System.Drawing.Point(491, 34);
             this.B47.Margin = new System.Windows.Forms.Padding(2);
             this.B47.Maximum = new decimal(new int[] {
             255,
@@ -1810,7 +1810,7 @@
             // 
             // B46
             // 
-            this.B46.Location = new System.Drawing.Point(416, 32);
+            this.B46.Location = new System.Drawing.Point(416, 34);
             this.B46.Margin = new System.Windows.Forms.Padding(2);
             this.B46.Maximum = new decimal(new int[] {
             255,
@@ -1823,7 +1823,7 @@
             // 
             // B50
             // 
-            this.B50.Location = new System.Drawing.Point(709, 33);
+            this.B50.Location = new System.Drawing.Point(709, 34);
             this.B50.Margin = new System.Windows.Forms.Padding(2);
             this.B50.Maximum = new decimal(new int[] {
             255,
@@ -1836,7 +1836,7 @@
             // 
             // B45
             // 
-            this.B45.Location = new System.Drawing.Point(341, 33);
+            this.B45.Location = new System.Drawing.Point(341, 34);
             this.B45.Margin = new System.Windows.Forms.Padding(2);
             this.B45.Maximum = new decimal(new int[] {
             255,
@@ -1849,7 +1849,7 @@
             // 
             // B49
             // 
-            this.B49.Location = new System.Drawing.Point(634, 33);
+            this.B49.Location = new System.Drawing.Point(634, 34);
             this.B49.Margin = new System.Windows.Forms.Padding(2);
             this.B49.Maximum = new decimal(new int[] {
             255,
@@ -1864,7 +1864,7 @@
             // 
             this.L_48_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_48_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_48_WEAPON.Location = new System.Drawing.Point(565, 0);
+            this.L_48_WEAPON.Location = new System.Drawing.Point(565, 1);
             this.L_48_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_48_WEAPON.Name = "L_48_WEAPON";
             this.L_48_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1876,7 +1876,7 @@
             // 
             this.L_51_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_51_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_51_WEAPON.Location = new System.Drawing.Point(784, 0);
+            this.L_51_WEAPON.Location = new System.Drawing.Point(784, 1);
             this.L_51_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_51_WEAPON.Name = "L_51_WEAPON";
             this.L_51_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1888,7 +1888,7 @@
             // 
             this.L_50_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_50_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_50_WEAPON.Location = new System.Drawing.Point(709, 0);
+            this.L_50_WEAPON.Location = new System.Drawing.Point(709, 1);
             this.L_50_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_50_WEAPON.Name = "L_50_WEAPON";
             this.L_50_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1900,7 +1900,7 @@
             // 
             this.L_49_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_49_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_49_WEAPON.Location = new System.Drawing.Point(634, 0);
+            this.L_49_WEAPON.Location = new System.Drawing.Point(634, 1);
             this.L_49_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_49_WEAPON.Name = "L_49_WEAPON";
             this.L_49_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1912,7 +1912,7 @@
             // 
             this.L_47_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_47_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_47_WEAPON.Location = new System.Drawing.Point(491, 0);
+            this.L_47_WEAPON.Location = new System.Drawing.Point(491, 1);
             this.L_47_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_47_WEAPON.Name = "L_47_WEAPON";
             this.L_47_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1924,7 +1924,7 @@
             // 
             this.L_46_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_46_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_46_WEAPON.Location = new System.Drawing.Point(416, 0);
+            this.L_46_WEAPON.Location = new System.Drawing.Point(416, 1);
             this.L_46_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_46_WEAPON.Name = "L_46_WEAPON";
             this.L_46_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1949,7 +1949,7 @@
             // 
             this.L_45_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_45_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_45_WEAPON.Location = new System.Drawing.Point(341, 0);
+            this.L_45_WEAPON.Location = new System.Drawing.Point(341, 1);
             this.L_45_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_45_WEAPON.Name = "L_45_WEAPON";
             this.L_45_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -1961,7 +1961,7 @@
             // 
             this.L_44_WEAPON.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_44_WEAPON.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.L_44_WEAPON.Location = new System.Drawing.Point(266, 0);
+            this.L_44_WEAPON.Location = new System.Drawing.Point(266, 1);
             this.L_44_WEAPON.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_44_WEAPON.Name = "L_44_WEAPON";
             this.L_44_WEAPON.Size = new System.Drawing.Size(69, 32);
@@ -2267,7 +2267,7 @@
             // 
             this.MagicExtClassPromotionGainLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MagicExtClassPromotionGainLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtClassPromotionGainLabel.Location = new System.Drawing.Point(788, 2);
+            this.MagicExtClassPromotionGainLabel.Location = new System.Drawing.Point(788, 1);
             this.MagicExtClassPromotionGainLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MagicExtClassPromotionGainLabel.Name = "MagicExtClassPromotionGainLabel";
             this.MagicExtClassPromotionGainLabel.Size = new System.Drawing.Size(70, 31);
@@ -2382,7 +2382,7 @@
             // 
             this.J_39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_39.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_39.Location = new System.Drawing.Point(639, 3);
+            this.J_39.Location = new System.Drawing.Point(639, 1);
             this.J_39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_39.Name = "J_39";
             this.J_39.Size = new System.Drawing.Size(70, 30);
@@ -2394,7 +2394,7 @@
             // 
             this.J_38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_38.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_38.Location = new System.Drawing.Point(565, 3);
+            this.J_38.Location = new System.Drawing.Point(565, 1);
             this.J_38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_38.Name = "J_38";
             this.J_38.Size = new System.Drawing.Size(70, 30);
@@ -2406,7 +2406,7 @@
             // 
             this.J_37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_37.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_37.Location = new System.Drawing.Point(490, 3);
+            this.J_37.Location = new System.Drawing.Point(490, 1);
             this.J_37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_37.Name = "J_37";
             this.J_37.Size = new System.Drawing.Size(74, 30);
@@ -2418,7 +2418,7 @@
             // 
             this.J_36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_36.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_36.Location = new System.Drawing.Point(415, 3);
+            this.J_36.Location = new System.Drawing.Point(415, 1);
             this.J_36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_36.Name = "J_36";
             this.J_36.Size = new System.Drawing.Size(74, 30);
@@ -2430,7 +2430,7 @@
             // 
             this.J_35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_35.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_35.Location = new System.Drawing.Point(340, 3);
+            this.J_35.Location = new System.Drawing.Point(340, 1);
             this.J_35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_35.Name = "J_35";
             this.J_35.Size = new System.Drawing.Size(74, 30);
@@ -2442,7 +2442,7 @@
             // 
             this.J_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_34.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_34.Location = new System.Drawing.Point(265, 3);
+            this.J_34.Location = new System.Drawing.Point(265, 1);
             this.J_34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_34.Name = "J_34";
             this.J_34.Size = new System.Drawing.Size(74, 30);
@@ -2780,7 +2780,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ReadCount);
             this.panel1.Controls.Add(this.ReadStartAddress);
-            this.panel1.Location = new System.Drawing.Point(8, 4);
+            this.panel1.Location = new System.Drawing.Point(8, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1403, 30);
