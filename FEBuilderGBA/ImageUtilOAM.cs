@@ -2904,7 +2904,7 @@ namespace FEBuilderGBA
         }
         public static void CheckAndPatchC01Code(string[] lines)
         {
-            if (InputFormRef.SearchC01HackPatch())
+            if (PatchUtil.SearchC01HackPatch())
             {
                 return ;
             }
@@ -2917,7 +2917,7 @@ namespace FEBuilderGBA
         }
         public static void CheckAndPatchC48Code(string[] lines)
         {
-            if (InputFormRef.SearchC48HackPatch())
+            if (PatchUtil.SearchC48HackPatch())
             {
                 return;
             }

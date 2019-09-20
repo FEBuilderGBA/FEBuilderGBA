@@ -60,14 +60,14 @@ namespace FEBuilderGBA
 
         //フォントを探す.
         public static uint FindFontData(uint topaddress
-            , uint moji, InputFormRef.PRIORITY_CODE priorityCode
+            , uint moji, PatchUtil.PRIORITY_CODE priorityCode
             )
         {
             uint prevaddr;
             return FindFontData(topaddress, moji, out prevaddr, Program.ROM, priorityCode);
         }
         public static uint FindFontData(uint topaddress
-            , uint moji, out uint prevaddr, InputFormRef.PRIORITY_CODE priorityCode
+            , uint moji, out uint prevaddr, PatchUtil.PRIORITY_CODE priorityCode
             )
         {
             return FindFontData(topaddress, moji, out prevaddr, Program.ROM, priorityCode);
@@ -249,7 +249,7 @@ namespace FEBuilderGBA
 
         public static uint FindFontData(uint topaddress
             , uint moji, out uint prevaddr
-            , ROM rom, InputFormRef.PRIORITY_CODE priorityCode
+            , ROM rom, PatchUtil.PRIORITY_CODE priorityCode
             )
         {
             if (!U.isSafetyOffset(topaddress))
@@ -258,7 +258,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return FindFontDataUTF8(topaddress, moji, out prevaddr, rom);
             }
@@ -268,7 +268,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (moji > 0xff && priorityCode == InputFormRef.PRIORITY_CODE.SJIS)
+                if (moji > 0xff && priorityCode == PatchUtil.PRIORITY_CODE.SJIS)
                 {
                     return FindFontDataSJIS(topaddress, moji, out prevaddr, rom);
                 }
@@ -319,9 +319,9 @@ namespace FEBuilderGBA
             return newFontData;
         }
         public static byte[] MakeNewFontData(uint moji, uint width, byte[] SelectFontBitmapByte,
-            ROM rom,InputFormRef.PRIORITY_CODE priorityCode)
+            ROM rom,PatchUtil.PRIORITY_CODE priorityCode)
         {
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return NewFontDataUTF8(moji, width, SelectFontBitmapByte);
             }
@@ -331,7 +331,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (moji > 0xff && priorityCode == InputFormRef.PRIORITY_CODE.SJIS)
+                if (moji > 0xff && priorityCode == PatchUtil.PRIORITY_CODE.SJIS)
                 {
                     return NewFontDataSJIS(moji, width, SelectFontBitmapByte);
                 }
@@ -367,7 +367,7 @@ namespace FEBuilderGBA
             Color bgcolor = GetFontColor(this.FontType.SelectedIndex == 0);
             fontSampleBitmap = ImageUtil.Blank(FontPictureBox.Width, FontPictureBox.Height);
 
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             int drawwidth = 0;
             for (int i = 0; i < this.FontSample.Text.Length; i++)
@@ -414,7 +414,7 @@ namespace FEBuilderGBA
         //検索して表示
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
@@ -458,7 +458,7 @@ namespace FEBuilderGBA
 
 
             string undo_name = "FONT " + this.SearchChar.Text;
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
@@ -504,23 +504,23 @@ namespace FEBuilderGBA
         {
             this.SearchButton.PerformClick();
         }
-        public static Bitmap DrawFont(string one, bool IsItemFont, out int out_width, InputFormRef.PRIORITY_CODE priorityCode)
+        public static Bitmap DrawFont(string one, bool IsItemFont, out int out_width, PatchUtil.PRIORITY_CODE priorityCode)
         {
             uint search_char = U.ConvertMojiCharToUnitFast(one, priorityCode);
             return DrawFont(one, IsItemFont, out out_width, priorityCode);
         }
-        public static Bitmap DrawFont(string one, bool IsItemFont, InputFormRef.PRIORITY_CODE priorityCode)
+        public static Bitmap DrawFont(string one, bool IsItemFont, PatchUtil.PRIORITY_CODE priorityCode)
         {
             int width;
             uint search_char = U.ConvertMojiCharToUnitFast(one, priorityCode);
             return DrawFont(search_char, IsItemFont, out width, priorityCode);
         }
-        public static Bitmap DrawFont(uint search_char, bool IsItemFont, InputFormRef.PRIORITY_CODE priorityCode)
+        public static Bitmap DrawFont(uint search_char, bool IsItemFont, PatchUtil.PRIORITY_CODE priorityCode)
         {
             int width;
             return DrawFont(search_char, IsItemFont, out width, priorityCode);
         }
-        public static Bitmap DrawFont(uint search_char, bool IsItemFont, out int out_width, InputFormRef.PRIORITY_CODE priorityCode)
+        public static Bitmap DrawFont(uint search_char, bool IsItemFont, out int out_width, PatchUtil.PRIORITY_CODE priorityCode)
         {
             uint fontlist_pointer = GetFontPointer(IsItemFont);
             Color bgcolor = GetFontColor(IsItemFont);
@@ -543,7 +543,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             if (this.FontType.SelectedIndex == 0)
             {
                 //アイテム
@@ -633,7 +633,7 @@ namespace FEBuilderGBA
                 return ImageUtil.BlankDummy();
             }
             uint fontlist_pointer = GetFontPointer(IsItemFont);
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             Bitmap bitmap = ImageUtil.Blank(size.Width,size.Height);
             string[] lines = str.Split(new string[] { "\r\n" },StringSplitOptions.None);
@@ -689,7 +689,7 @@ namespace FEBuilderGBA
         public static uint[] MeasureTextWidthOneLineInts(string str, bool IsItemFont)
         {
             uint fontlist_pointer = GetFontPointer(IsItemFont);
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             uint[] widths = new uint[str.Length];
             for (int i = 0; i < str.Length; i++)
@@ -1038,28 +1038,28 @@ namespace FEBuilderGBA
 
         public static void TransportFontStruct(byte[] newFontData 
             ,uint moji
-            ,InputFormRef.PRIORITY_CODE myselfPriorityCode 
-            ,InputFormRef.PRIORITY_CODE yourPriorityCode 
+            ,PatchUtil.PRIORITY_CODE myselfPriorityCode 
+            ,PatchUtil.PRIORITY_CODE yourPriorityCode 
             )
         {
             if (yourPriorityCode == myselfPriorityCode)
             {
                 return;
             }
-            if (myselfPriorityCode == InputFormRef.PRIORITY_CODE.SJIS)
+            if (myselfPriorityCode == PatchUtil.PRIORITY_CODE.SJIS)
             {//SJISの場合は、4バイト目に最初の1バイトを入れる必要がある.
                 uint moji2 = (moji & 0xff);
                 U.write_u8(newFontData, 4 , moji2);
                 U.write_u8(newFontData, 6 , 0);
                 U.write_u8(newFontData, 7 , 0);
             }
-            else if (myselfPriorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+            else if (myselfPriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
             {//LAT1の場合、SJISのヒントは利用しないので0にする
                 U.write_u8(newFontData, 4, 0);
                 U.write_u8(newFontData, 6, 0);
                 U.write_u8(newFontData, 7, 0);
             }
-            else if (myselfPriorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            else if (myselfPriorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {//UTF8の場合、2-4バイト目を格納する
                 uint moji2 = ((moji >> 8) & 0xff);
                 uint moji3 = ((moji >> 16) & 0xff);

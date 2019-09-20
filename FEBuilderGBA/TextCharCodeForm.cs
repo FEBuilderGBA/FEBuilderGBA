@@ -54,7 +54,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             uint addr = InputFormRef.SelectToAddr(this.AddressList);
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             //アイテム
             ItemFontPictureBox.Image = FontForm.DrawFont(Program.ROM.u16(addr), true, priorityCode);
@@ -66,7 +66,7 @@ namespace FEBuilderGBA
 
         private void SEARCH_CHAR_BUTTON_Click(object sender, EventArgs e)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint code = U.ConvertMojiCharToUnit(SEARCH_CHAR.Text, priorityCode);
 
             //リストから検索して選択する

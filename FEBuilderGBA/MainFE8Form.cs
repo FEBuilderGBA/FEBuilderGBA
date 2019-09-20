@@ -344,7 +344,7 @@ namespace FEBuilderGBA
 
         private void ItemCriticalButton_Click(object sender, EventArgs e)
         {
-            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            if (PatchUtil.SearchClassType() == PatchUtil.class_type_enum.SkillSystems_Rework)
             {//SkillSystemsによる 特効リワーク
                 InputFormRef.JumpForm<ItemEffectivenessSkillSystemsReworkForm>();
             }
@@ -623,20 +623,20 @@ namespace FEBuilderGBA
 
         private void SkillConfigButton_Click(object sender, EventArgs e)
         {
-            if (InputFormRef.skill_system_enum.NO == InputFormRef.SearchSkillSystem())
+            if (PatchUtil.skill_system_enum.NO == PatchUtil.SearchSkillSystem())
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Anti_Huffman_By_Translate);
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Skill);
             }
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillConfigSkillSystemForm>();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N
-                || skill == InputFormRef.skill_system_enum.yugudora
-                || skill == InputFormRef.skill_system_enum.FE8N_ver2
+            else if (skill == PatchUtil.skill_system_enum.FE8N
+                || skill == PatchUtil.skill_system_enum.yugudora
+                || skill == PatchUtil.skill_system_enum.FE8N_ver2
                 )
             {
                 InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();
@@ -649,20 +649,20 @@ namespace FEBuilderGBA
 
         private void SkillAssignmentUnitButton_Click(object sender, EventArgs e)
         {
-            if (InputFormRef.skill_system_enum.NO == InputFormRef.SearchSkillSystem())
+            if (PatchUtil.skill_system_enum.NO == PatchUtil.SearchSkillSystem())
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Anti_Huffman_By_Translate);
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Skill);
             }
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentUnitSkillSystemForm>();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N 
-                || skill == InputFormRef.skill_system_enum.FE8N_ver2
-                || skill == InputFormRef.skill_system_enum.yugudora
+            else if (skill == PatchUtil.skill_system_enum.FE8N 
+                || skill == PatchUtil.skill_system_enum.FE8N_ver2
+                || skill == PatchUtil.skill_system_enum.yugudora
                 )
             {
                 //NOP
@@ -675,23 +675,23 @@ namespace FEBuilderGBA
 
         private void SkillAssignmentClassButton_Click(object sender, EventArgs e)
         {
-            if (InputFormRef.skill_system_enum.NO == InputFormRef.SearchSkillSystem())
+            if (PatchUtil.skill_system_enum.NO == PatchUtil.SearchSkillSystem())
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Anti_Huffman_By_Translate);
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.Skill);
             }
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentClassSkillSystemForm>();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N
-                || skill == InputFormRef.skill_system_enum.yugudora)
+            else if (skill == PatchUtil.skill_system_enum.FE8N
+                || skill == PatchUtil.skill_system_enum.yugudora)
             {
                 //NOP
                 R.ShowStopError(R._("この機能は、FE8NVer2からのみ利用できます。"));

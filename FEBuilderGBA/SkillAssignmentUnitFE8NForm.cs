@@ -15,27 +15,27 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
             Dictionary<uint, string> SCROLL1;
             Dictionary<uint, string> SCROLL2;
             Dictionary<uint, string> MASTERY;
 
             uint[] pointers;
-            if (skill == InputFormRef.skill_system_enum.yugudora)
+            if (skill == PatchUtil.skill_system_enum.yugudora)
             {//ユグドラパッチ 初期FE8Nカスタム
                 pointers = SkillConfigFE8NSkillForm.FindSkillFE8NVer1IconPointers();
                 SCROLL1 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_yugudora_skill1_scroll_"));
                 SCROLL2 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_yugudora_skill2_scroll_"));
                 MASTERY = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill3_mastery_"));
             }
-            else if (skill == InputFormRef.skill_system_enum.midori)
+            else if (skill == PatchUtil.skill_system_enum.midori)
             {//緑パッチ
                 pointers = SkillConfigFE8NSkillForm.FindSkillFE8NVer1IconPointers();
                 SCROLL1 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_midori_skill1_scroll_"));
                 SCROLL2 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_midori_skill2_scroll_"));
                 MASTERY = U.LoadDicResource(U.ConfigDataFilename("skill_extends_midori_skill3_mastery_"));
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {//FE8N ver2
                 pointers = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
                 SCROLL1 = U.LoadDicResource(U.ConfigDataFilename("skill_extends_FE8N_skill1_scroll_"));
@@ -180,13 +180,13 @@ namespace FEBuilderGBA
             InputFormRef.MakeLinkEvent("", controls);
         }
 
-        static uint FindSkillIconAndText(InputFormRef.skill_system_enum skill, uint[] pointers, string searchSkillName, out string outText)
+        static uint FindSkillIconAndText(PatchUtil.skill_system_enum skill, uint[] pointers, string searchSkillName, out string outText)
         {
-            if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return SkillConfigFE8NVer2SkillForm.FindSkillIconAndText(pointers, searchSkillName,out outText);
             }
-            else if (skill == InputFormRef.skill_system_enum.midori)
+            else if (skill == PatchUtil.skill_system_enum.midori)
             {//緑パッチ 詳細不明
                 outText = "";
                 return U.NOT_FOUND;
@@ -196,9 +196,9 @@ namespace FEBuilderGBA
                 return SkillConfigFE8NSkillForm.FindSkillIconAndText(pointers, searchSkillName, out outText);
             }
         }
-        static Bitmap DrawSkillIcon(InputFormRef.skill_system_enum skill, uint icon)
+        static Bitmap DrawSkillIcon(PatchUtil.skill_system_enum skill, uint icon)
         {
-            if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return ImageItemIconForm.DrawIconWhereID_UsingWeaponPalette_SKILLFE8NVer2(icon);
             }

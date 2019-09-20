@@ -1816,16 +1816,16 @@ namespace FEBuilderGBA
             }
             if (name == "SkillConfigButton")
             {
-                InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-                if (skill == InputFormRef.skill_system_enum.SkillSystem)
+                PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                if (skill == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     return R._("スキル拡張を基本的な設定をします。\r\nスキルの名前やアイコン、スキルのアニメーションを設定します。");
                 }
-                else if (skill == InputFormRef.skill_system_enum.FE8N)
+                else if (skill == PatchUtil.skill_system_enum.FE8N)
                 {
                     return R._("スキルのアイコンと名前の設定を行います。");
                 }
-                else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+                else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
                 {
                     return R._("旧バージョンから引き継いだスキルのアイコン設定をします。\r\nメインの機能は「スキル_クラス別割当」へ移動されました。");
                 }

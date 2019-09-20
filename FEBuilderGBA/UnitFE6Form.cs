@@ -172,7 +172,7 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (InputFormRef.SearchMeleeAndMagicFixPatch())
+            if (PatchUtil.SearchMeleeAndMagicFixPatch())
             {
                 return;
             }

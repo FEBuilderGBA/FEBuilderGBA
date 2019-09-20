@@ -39,8 +39,8 @@ namespace FEBuilderGBA
                 return;
             }
 
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode(rom);
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode(rom);
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 this.Encoder = System.Text.Encoding.GetEncoding("UTF-8");
             }

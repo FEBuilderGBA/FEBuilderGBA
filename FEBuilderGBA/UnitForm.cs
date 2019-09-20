@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         }
 
         Button[] X_SkillButtons;
-        InputFormRef.skill_system_enum X_SkillType = InputFormRef.skill_system_enum.NO;
+        PatchUtil.skill_system_enum X_SkillType = PatchUtil.skill_system_enum.NO;
         ToolTipEx X_Tooltip;
         private void UnitForm_Load(object sender, EventArgs e)
         {
@@ -81,9 +81,9 @@ namespace FEBuilderGBA
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8の場合
                 //スキル
-                X_SkillType = InputFormRef.SearchSkillSystem();
-                if (X_SkillType == InputFormRef.skill_system_enum.SkillSystem
-                 || X_SkillType == InputFormRef.skill_system_enum.FE8N_ver2
+                X_SkillType = PatchUtil.SearchSkillSystem();
+                if (X_SkillType == PatchUtil.skill_system_enum.SkillSystem
+                 || X_SkillType == PatchUtil.skill_system_enum.FE8N_ver2
                     )
                 {
                     InputFormRef.markupJumpLabel(this.X_UNITSKILL);
@@ -696,7 +696,7 @@ namespace FEBuilderGBA
             }
 
             //武器魔法混在パッチを適応しているか
-            bool is_melee_range_fix = InputFormRef.SearchMeleeAndMagicFixPatch();
+            bool is_melee_range_fix = PatchUtil.SearchMeleeAndMagicFixPatch();
 
             uint unit_addr = InputFormRef.BaseAddress;
             for (uint i = 0; i < InputFormRef.DataCount; i++, unit_addr += InputFormRef.BlockSize)

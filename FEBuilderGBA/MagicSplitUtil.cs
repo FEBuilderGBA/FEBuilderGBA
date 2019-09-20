@@ -42,13 +42,13 @@ namespace FEBuilderGBA
 
         static magic_split_enum SearchMagicSplitLow()
         {
-            InputFormRef.PatchTableSt[] table = new InputFormRef.PatchTableSt[] { 
-                new InputFormRef.PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
-                new InputFormRef.PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}},
+            PatchUtil.PatchTableSt[] table = new PatchUtil.PatchTableSt[] { 
+                new PatchUtil.PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
+                new PatchUtil.PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}},
             };
 
             string version = Program.ROM.RomInfo.VersionToFilename();
-            foreach(InputFormRef.PatchTableSt t in table)
+            foreach(PatchUtil.PatchTableSt t in table)
             {
                 if (t.ver != version)
                 {

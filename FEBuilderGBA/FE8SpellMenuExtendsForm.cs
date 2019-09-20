@@ -234,15 +234,15 @@ namespace FEBuilderGBA
             Program.ROM.write_p32(write_addr, addr);
         }
 
-        static uint g_Cache_FE8SpellPatchPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FE8SpellPatchPointer = PatchUtil.NO_CACHE;
         public static void ClearCache()
         {
-            g_Cache_FE8SpellPatchPointer = InputFormRef.NO_CACHE;
+            g_Cache_FE8SpellPatchPointer = PatchUtil.NO_CACHE;
         }
 
         public static uint FindFE8SpellPatchPointer()
         {
-            if (g_Cache_FE8SpellPatchPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FE8SpellPatchPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FE8SpellPatchPointer = FindFE8SpellPatchPointerLow();
             }

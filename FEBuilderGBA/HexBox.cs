@@ -757,7 +757,7 @@ namespace FEBuilderGBA
 
         string ConvertASCII(byte[] byte16)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             SystemTextEncoder encoder = Program.SystemTextEncoder;
             
             StringBuilder sb = new StringBuilder();
@@ -768,14 +768,14 @@ namespace FEBuilderGBA
                     break;
                 }
 
-                if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8 )
+                if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8 )
                 {
                     sb.Append((char)byte16[i]);
                     continue;
                 }
                 else if (i < 15 && U.isSJIS1stCode(byte16[i]) && U.isSJIS2ndCode(byte16[i + 1]))
                 {
-                    if (priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                    if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                     {//SJISと 1バイトUnicodeは範囲が重複するので、どちらかを優先しないといけない.
                         if (byte16[i] >= 0x82 && byte16[i] < 0xFE)
                         {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
@@ -797,7 +797,7 @@ namespace FEBuilderGBA
 
                 if (byte16[i] >= 0x82 && byte16[i] < 0xFE)
                 {//FE独自フォントの可能性.
-                    if (priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                    if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                     {
                         sb.Append((char)byte16[i]);
                         continue;

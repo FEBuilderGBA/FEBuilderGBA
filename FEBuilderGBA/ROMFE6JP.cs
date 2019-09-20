@@ -45,7 +45,7 @@ namespace FEBuilderGBA
         public uint unit_move_icon_pointer() { return 0x60ED8; } // ユニット移動アイコンの開始位置
         public uint map_setting_pointer() { return 0x2bb20; }  // マップ設定の開始位置
         public uint map_setting_datasize() {
-            if (InputFormRef.SearchSpecialHack() == InputFormRef.SpecialHack_enum.MoDUPS)
+            if (PatchUtil.SearchSpecialHack() == PatchUtil.SpecialHack_enum.MoDUPS)
             {
                 return 72;
             }

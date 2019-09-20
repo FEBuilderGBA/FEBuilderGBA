@@ -186,7 +186,7 @@ namespace FEBuilderGBA
             , int showFrame
             )
         {
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
             int seat_width = 32 * 8;
             int seat_height = 5 * 8;
 
@@ -255,7 +255,7 @@ namespace FEBuilderGBA
                 , parts_width / 2, parts_height * 2
                 , allface, parts_width * 5 + parts_width / 2, 0);//左端
 
-            if (portraitExtends == InputFormRef.portrait_extends.MUG_EXCEED)
+            if (portraitExtends == PatchUtil.portrait_extends.MUG_EXCEED)
             {
                 if (b26 == 1)
                 {
@@ -285,7 +285,7 @@ namespace FEBuilderGBA
             }
             if (showFrame == 0)
             {
-                if (portraitExtends != InputFormRef.portrait_extends.HALFBODY)
+                if (portraitExtends != PatchUtil.portrait_extends.HALFBODY)
                 {
                     return face;
                 }
@@ -343,7 +343,7 @@ namespace FEBuilderGBA
                     break;
             }
 
-            if (portraitExtends == InputFormRef.portrait_extends.HALFBODY 
+            if (portraitExtends == PatchUtil.portrait_extends.HALFBODY 
                 && seat_height == 10 * 8)
             {
                 Bitmap halfbody = ImageUtil.Blank(face_width + (16 * 2), face_height + (16 * 3), allface);
@@ -603,7 +603,7 @@ namespace FEBuilderGBA
         static Bitmap DrawPortraitSeet(uint id)
         {
             InputFormRef InputFormRef = Init(null);
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
 
             //現在のIDに対応するデータ
             uint addr = InputFormRef.IDToAddr(id);
@@ -1213,11 +1213,11 @@ namespace FEBuilderGBA
             //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
 
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
             byte[] header4;
             byte[] palette;
             if (Program.ROM.RomInfo.version() != 8
-                || portraitExtends != FEBuilderGBA.InputFormRef.portrait_extends.HALFBODY)
+                || portraitExtends != FEBuilderGBA.PatchUtil.portrait_extends.HALFBODY)
             {//HALFBODYを利用できない環境の場合 拡張部分を削る
                 seet = ImageUtil.Copy(seet, 0, 0, 32 * 8, 4 * 8);
                 palette = ImageUtil.ImageToPalette(seet, 1);
@@ -1526,8 +1526,8 @@ namespace FEBuilderGBA
                 return;
             }
 
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
-            if (portraitExtends != FEBuilderGBA.InputFormRef.portrait_extends.MUG_EXCEED)
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
+            if (portraitExtends != FEBuilderGBA.PatchUtil.portrait_extends.MUG_EXCEED)
             {
                 return;
             }
@@ -1549,8 +1549,8 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
-            if (portraitExtends != FEBuilderGBA.InputFormRef.portrait_extends.MUG_EXCEED)
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
+            if (portraitExtends != FEBuilderGBA.PatchUtil.portrait_extends.MUG_EXCEED)
             {
                 return;
             }
@@ -1567,8 +1567,8 @@ namespace FEBuilderGBA
 
         private void B26_ValueChanged(object sender, EventArgs e)
         {
-            InputFormRef.portrait_extends portraitExtends = InputFormRef.SearchPortraitExtends();
-            if (portraitExtends != FEBuilderGBA.InputFormRef.portrait_extends.MUG_EXCEED)
+            PatchUtil.portrait_extends portraitExtends = PatchUtil.SearchPortraitExtends();
+            if (portraitExtends != FEBuilderGBA.PatchUtil.portrait_extends.MUG_EXCEED)
             {
                 return;
             }

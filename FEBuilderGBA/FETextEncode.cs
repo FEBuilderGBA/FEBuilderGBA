@@ -224,7 +224,7 @@ namespace FEBuilderGBA
 
         byte[] convert_unHuffman_code_to_binary(byte[] sjisstr)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             List<byte> ret = new List<byte>();
             for (int i = 0; i < sjisstr.Length; )
@@ -310,12 +310,12 @@ namespace FEBuilderGBA
                 {
                     byte code1 = sjisstr[i];
                     byte code2 = sjisstr[i + 1];
-                    if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8 
+                    if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8 
                         && code1 >= 0xC0 && code1 >= 0x80)
                     {
                         i += U.AppendUTF8(ret, sjisstr, i);
                     }
-                    else if (priorityCode == InputFormRef.PRIORITY_CODE.SJIS
+                    else if (priorityCode == PatchUtil.PRIORITY_CODE.SJIS
                         && U.isSJIS1stCode(code1) && U.isSJIS2ndCode(code2))
                     {
                         ret.Add(sjisstr[i]); i++;
@@ -444,9 +444,9 @@ namespace FEBuilderGBA
 
         public static string ConvertSPMoji(string str)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             str = str.Replace("\r\n", "@0001");
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return str;
             }

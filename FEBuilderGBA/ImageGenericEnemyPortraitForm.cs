@@ -81,7 +81,7 @@ namespace FEBuilderGBA
         public static Bitmap Draw(uint id)
         {
             uint extends_pointer = U.NOT_FOUND;
-            if (InputFormRef.SearchGenericEnemyPortraitExtendsPatch(out extends_pointer))
+            if (PatchUtil.SearchGenericEnemyPortraitExtendsPatch(out extends_pointer))
             {
                 uint offset = Program.ROM.p32(extends_pointer) + id * 8;
                 uint img = Program.ROM.u32(offset);
@@ -192,7 +192,7 @@ namespace FEBuilderGBA
         private void ImageGenericEnemyPortraitForm_Load(object sender, EventArgs e)
         {
             uint extends_pointer = U.NOT_FOUND;
-            if (InputFormRef.SearchGenericEnemyPortraitExtendsPatch(out extends_pointer))
+            if (PatchUtil.SearchGenericEnemyPortraitExtendsPatch(out extends_pointer))
             {
                 this.ExtendsBanner.Text = R._("拡張パッチがインストールされているため、この設定は利用できません。パッチの方から修正してください。");
             }

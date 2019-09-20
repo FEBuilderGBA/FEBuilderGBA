@@ -15,7 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
 
-//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
 //            {//SkillSystemsがインストールされている場合、同時にロードできるユニット数は16体
 //                AllocCountNumupdown.Maximum = 16;
 //            }

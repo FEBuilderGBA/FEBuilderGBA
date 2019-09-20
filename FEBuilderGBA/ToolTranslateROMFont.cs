@@ -13,8 +13,8 @@ namespace FEBuilderGBA
     class ToolTranslateROMFont
     {
         Font UseAutoGenFont;
-        InputFormRef.PRIORITY_CODE MyselfPriorityCode;
-        InputFormRef.PRIORITY_CODE YourPriorityCode;
+        PatchUtil.PRIORITY_CODE MyselfPriorityCode;
+        PatchUtil.PRIORITY_CODE YourPriorityCode;
         Dictionary<string, bool> ProcessedFont;
         ROM YourROM;
         Undo.UndoData UndoData;
@@ -24,12 +24,12 @@ namespace FEBuilderGBA
             this.YourROM = new ROM();
 
             this.ProcessedFont = new Dictionary<string, bool>();
-            this.MyselfPriorityCode = InputFormRef.SearchPriorityCode();
+            this.MyselfPriorityCode = PatchUtil.SearchPriorityCode();
 
             string version;
             if (this.YourROM.Load(filename, out version))
             {//フォントを取るようのROM
-                this.YourPriorityCode = InputFormRef.SearchPriorityCode(this.YourROM);
+                this.YourPriorityCode = PatchUtil.SearchPriorityCode(this.YourROM);
             }
             else
             {

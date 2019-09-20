@@ -464,7 +464,7 @@ namespace FEBuilderGBA
             {
                 sb.AppendLine("#define SummonUnitTable "
                     + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.summon_unit_pointer())));
-                if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+                if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     SkillConfigSkillSystemForm.Export(sb);
                 }

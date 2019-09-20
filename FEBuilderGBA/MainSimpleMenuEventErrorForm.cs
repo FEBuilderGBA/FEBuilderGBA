@@ -891,14 +891,14 @@ namespace FEBuilderGBA
             {
                 if (Program.ROM.RomInfo.version() == 8)
                 {
-                    InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-                    if (skill == InputFormRef.skill_system_enum.SkillSystem)
+                    PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                    if (skill == PatchUtil.skill_system_enum.SkillSystem)
                     {
                         InputFormRef.JumpForm<SkillConfigSkillSystemForm>();
                     }
-                    else if (skill == InputFormRef.skill_system_enum.FE8N
-                        || skill == InputFormRef.skill_system_enum.yugudora
-                        || skill == InputFormRef.skill_system_enum.FE8N_ver2
+                    else if (skill == PatchUtil.skill_system_enum.FE8N
+                        || skill == PatchUtil.skill_system_enum.yugudora
+                        || skill == PatchUtil.skill_system_enum.FE8N_ver2
                         )
                     {
                         InputFormRef.JumpForm<SkillConfigFE8NSkillForm>();

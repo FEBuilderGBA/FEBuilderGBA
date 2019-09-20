@@ -19,5 +19,8 @@ DATASIZE=1
 //データ個数
 DATACOUNT=$GREP1 0x00
 
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:UNIT
+
 //データを定義します
 B0:UNIT=Unit

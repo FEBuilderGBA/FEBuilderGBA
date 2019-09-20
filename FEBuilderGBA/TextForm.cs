@@ -418,12 +418,12 @@ namespace FEBuilderGBA
                 //エンコードのエラー確認.
                 if (error.Length > 0)
                 {//ハフマン符号化中にエラー発生.
-                    bool use_anti_Huffman = InputFormRef.SearchAntiHuffmanPatch();
+                    bool use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
                     if (use_anti_Huffman == false)
                     {//un Huffmanパッチが入っていないのでエラー表示.
                         NeedAntiHuffman(error);
                         //インストールされたか確認する.
-                        use_anti_Huffman = InputFormRef.SearchAntiHuffmanPatch();
+                        use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
                         if (use_anti_Huffman == false)
                         {
                             return U.NOT_FOUND;
@@ -2067,7 +2067,7 @@ namespace FEBuilderGBA
                 //エンコードのエラー確認.
                 if (error.Length > 0)
                 {//ハフマン符号化中にエラー発生.
-                    bool use_anti_Huffman = InputFormRef.SearchAntiHuffmanPatch();
+                    bool use_anti_Huffman = PatchUtil.SearchAntiHuffmanPatch();
                     if (use_anti_Huffman == false)
                     {//un Huffmanパッチが入っていないのでエラー表示.
                         return 0;
@@ -2530,6 +2530,8 @@ namespace FEBuilderGBA
                 ,"@001F","[.]"    ///No Translate
                 ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
                 ,"@0040","[@]"    ///No Translate  @を出す
+                ,"@0090","[ConversationText]"    ///No Translate    AutoNewline Patch
+                ,"@0091","[BattleText]"    ///No Translate          AutoNewline Patch
         };
 
         //@0003 -> [A] とFEditor表記に変換する
@@ -2876,8 +2878,14 @@ namespace FEBuilderGBA
                     }
                     if (size.Width > widthLimit)
                     {
-                        this.ErrorString = R._("警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}", size.Width, size.Height, blocks[n]);
-                        return CheckBlockResult.ErrorWidth;
+                        if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                        {//自動改行が入っている場合は、長さのチェックをしない
+                        }
+                        else
+                        {
+                            this.ErrorString = R._("警告:テキストが横に長すぎます。\r\n想定ドット数:({0} , {1})\r\n{2}", size.Width, size.Height, blocks[n]);
+                            return CheckBlockResult.ErrorWidth;
+                        }
                     }
                     if (size.Height > heightLimit)
                     {

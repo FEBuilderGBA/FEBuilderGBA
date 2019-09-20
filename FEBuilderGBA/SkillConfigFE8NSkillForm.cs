@@ -16,13 +16,13 @@ namespace FEBuilderGBA
             InitializeComponent();
             this.AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.FE8N 
-                || skill == InputFormRef.skill_system_enum.yugudora)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.FE8N 
+                || skill == PatchUtil.skill_system_enum.yugudora)
             {
                 this.Pointers = FindSkillFE8NVer1IconPointers();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 this.Pointers = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
             }
@@ -278,13 +278,13 @@ namespace FEBuilderGBA
         {
             uint[] pointer;
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.FE8N
-                || skill == InputFormRef.skill_system_enum.yugudora)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.FE8N
+                || skill == PatchUtil.skill_system_enum.yugudora)
             {
                 pointer = FindSkillFE8NVer1IconPointers();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 pointer = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
             }
@@ -317,13 +317,13 @@ namespace FEBuilderGBA
         {
             uint[] pointer;
 
-            InputFormRef.skill_system_enum skill = InputFormRef.SearchSkillSystem();
-            if (skill == InputFormRef.skill_system_enum.FE8N
-                || skill == InputFormRef.skill_system_enum.yugudora)
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.FE8N
+                || skill == PatchUtil.skill_system_enum.yugudora)
             {
                 pointer = FindSkillFE8NVer1IconPointers();
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 pointer = SkillConfigFE8NVer2SkillForm.FindSkillFE8NVer2IconPointers();
             }

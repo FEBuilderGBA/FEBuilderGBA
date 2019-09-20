@@ -46,7 +46,7 @@ namespace FEBuilderGBA
             this.InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent;
             this.N_InputFormRef.AddressListExpandsEvent += N_AddressListExpandsEvent;
 
-//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
 //            {//SkillSystemsがインストールされている場合、同時にロードできるユニット数は16体
 //                this.InputFormRef.AddressListExpandsMax = 16;
 //            }
@@ -1807,7 +1807,7 @@ namespace FEBuilderGBA
                 return R._("ユニットを読みこむポインタの指定が正しくありません。: {0}", U.To0xHexString(units_address));
             }
 
-            uint lvCap = InputFormRef.GetLevelMaxCaps();
+            uint lvCap = PatchUtil.GetLevelMaxCaps();
 
             int count = 0;
             uint addr = units_address;
@@ -1840,7 +1840,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-//            if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+//            if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
 //            {
 //                if (count > 16)
 //                {

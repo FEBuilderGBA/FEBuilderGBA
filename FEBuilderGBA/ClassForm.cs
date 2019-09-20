@@ -69,7 +69,7 @@ namespace FEBuilderGBA
         }
 
         Button[] X_SkillButtons;
-        InputFormRef.skill_system_enum X_SkillType = InputFormRef.skill_system_enum.NO;
+        PatchUtil.skill_system_enum X_SkillType = PatchUtil.skill_system_enum.NO;
         ToolTipEx X_Tooltip;
 
         private void ClassForm_Load(object sender, EventArgs e)
@@ -83,9 +83,9 @@ namespace FEBuilderGBA
                 InputFormRef.markupJumpLabel(this.J_5);
 
                 //スキル
-                this.X_SkillType = InputFormRef.SearchSkillSystem();
-                if ( this.X_SkillType == InputFormRef.skill_system_enum.SkillSystem
-                  || this.X_SkillType == InputFormRef.skill_system_enum.FE8N_ver2
+                this.X_SkillType = PatchUtil.SearchSkillSystem();
+                if ( this.X_SkillType == PatchUtil.skill_system_enum.SkillSystem
+                  || this.X_SkillType == PatchUtil.skill_system_enum.FE8N_ver2
                     )
                 {
                     InputFormRef.markupJumpLabel(this.X_CLASSSKILL);
@@ -373,7 +373,7 @@ namespace FEBuilderGBA
             SkillUtil.MakeClassSkillButtons(X_SkillType, (uint)this.AddressList.SelectedIndex, this.X_SkillButtons, this.X_Tooltip);
 
             //SkillSystemsによる 特効リワーク
-            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            if (PatchUtil.SearchClassType() == PatchUtil.class_type_enum.SkillSystems_Rework)
             {
                 X_CLASSTYPE.Text = ClassForm.GetClassType((uint)this.D80.Value);
             }
@@ -932,7 +932,7 @@ namespace FEBuilderGBA
             bool isFE6 = Program.ROM.RomInfo.version() == 6;
 
             //武器魔法混在パッチを適応しているか
-            bool is_melee_range_fix = InputFormRef.SearchMeleeAndMagicFixPatch();
+            bool is_melee_range_fix = PatchUtil.SearchMeleeAndMagicFixPatch();
 
             uint class_addr = InputFormRef.BaseAddress;
             for (uint i = 0; i < InputFormRef.DataCount; i++, class_addr += InputFormRef.BlockSize)
@@ -1101,7 +1101,7 @@ namespace FEBuilderGBA
         void InitFE8ClassType(List<Control> controls)
         {
             //SkillSystemsによる 特効リワーク
-            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            if (PatchUtil.SearchClassType() == PatchUtil.class_type_enum.SkillSystems_Rework)
             {
                 J_80.Text = R._("ClassType");
                 InputFormRef.makeJumpEventHandler(D80, J_80, "CLASSTYPE", new string[] { });

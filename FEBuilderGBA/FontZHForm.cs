@@ -128,7 +128,7 @@ namespace FEBuilderGBA
             bool IsItemFont = this.FontType.SelectedIndex == 0;
 
             uint fontlist_pointer = GetFontPointer(IsItemFont);
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             Color bgcolor = GetFontColor(IsItemFont);
             fontSampleBitmap = ImageUtil.Blank(FontPictureBox.Width, FontPictureBox.Height);
@@ -188,7 +188,7 @@ namespace FEBuilderGBA
         //検索して表示
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
@@ -244,7 +244,7 @@ namespace FEBuilderGBA
             }
 
             string undo_name = "FONT " + this.SearchChar.Text;
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint search_char = U.ConvertMojiCharToUnitFast(this.SearchChar.Text, priorityCode);
 
             uint fontlist_pointer = GetFontPointer(this.FontType.SelectedIndex == 0);
@@ -298,7 +298,7 @@ namespace FEBuilderGBA
         }
         public static Bitmap DrawFont(string one, bool IsItemFont, out int out_width)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             uint search_char = U.ConvertMojiCharToUnitFast(one, priorityCode);
             return DrawFont(search_char, IsItemFont, out out_width);
         }
@@ -448,7 +448,7 @@ namespace FEBuilderGBA
         public static int[] MeasureTextWidthOneLineInts(string str, bool IsItemFont)
         {
             uint fontlist_pointer = GetFontPointer(IsItemFont);
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             int[] widths = new int[str.Length];
             for (int i = 0; i < str.Length; i++)

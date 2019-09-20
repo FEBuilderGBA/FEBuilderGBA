@@ -100,7 +100,7 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.DrawFont_By_Translate)
             {
-                checkFunc = () => { return InputFormRef.draw_font_enum.NO != InputFormRef.SearchDrawFontPatch(); };
+                checkFunc = () => { return PatchUtil.draw_font_enum.NO != PatchUtil.SearchDrawFontPatch(); };
                 title = R._("他の言語を表示するにはDrawFontパッチが必要です。");
                 if (Program.ROM.RomInfo.is_multibyte())
                 {

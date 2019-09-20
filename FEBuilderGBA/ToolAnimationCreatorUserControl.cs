@@ -2385,8 +2385,8 @@ namespace FEBuilderGBA
                         return;
                     }
 
-                    InputFormRef.skill_system_enum skillsystem = InputFormRef.SearchSkillSystem();
-                    if (skillsystem == InputFormRef.skill_system_enum.FE8N_ver2)
+                    PatchUtil.skill_system_enum skillsystem = PatchUtil.SearchSkillSystem();
+                    if (skillsystem == PatchUtil.skill_system_enum.FE8N_ver2)
                     {
                         SkillConfigFE8NVer2SkillForm f = (SkillConfigFE8NVer2SkillForm)InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(U.NOT_FOUND);
                         string error = f.SkillAnimeImportDirect(this.ID, filename);
@@ -2396,7 +2396,7 @@ namespace FEBuilderGBA
                             return;
                         }
                     }
-                    else if (skillsystem == InputFormRef.skill_system_enum.SkillSystem)
+                    else if (skillsystem == PatchUtil.skill_system_enum.SkillSystem)
                     {
                         SkillConfigSkillSystemForm f = (SkillConfigSkillSystemForm)InputFormRef.JumpForm<SkillConfigSkillSystemForm>(U.NOT_FOUND);
                         string error = f.SkillAnimeImportDirect(this.ID, filename);

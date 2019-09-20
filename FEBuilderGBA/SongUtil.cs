@@ -2863,11 +2863,11 @@ namespace FEBuilderGBA
                 return null;
             }
 
-            InputFormRef.ImprovedSoundMixer withImprovedSoundMixer = InputFormRef.SearchImprovedSoundMixer();
+            PatchUtil.ImprovedSoundMixer withImprovedSoundMixer = PatchUtil.SearchImprovedSoundMixer();
             if (useFormatCheck)
             {
                 uint limit = 26758;
-                if (withImprovedSoundMixer == InputFormRef.ImprovedSoundMixer.ImprovedSoundMixer)
+                if (withImprovedSoundMixer == PatchUtil.ImprovedSoundMixer.ImprovedSoundMixer)
                 {//もっと高音質にできるらしい
                     limit = 65536;
                 }

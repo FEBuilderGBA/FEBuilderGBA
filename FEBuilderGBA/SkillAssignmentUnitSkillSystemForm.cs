@@ -108,7 +108,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -157,7 +157,7 @@ namespace FEBuilderGBA
         public static void ExportAllData(string filename)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -244,7 +244,7 @@ namespace FEBuilderGBA
         public static void ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -529,7 +529,7 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, this.Name + " Independence");
 
             uint dataSize = (N1_InputFormRef.DataCount + 1) * N1_InputFormRef.BlockSize;
-            InputFormRef.WriteIndependence(p, dataSize, setting, name, undodata);
+            PatchUtil.WriteIndependence(p, dataSize, setting, name, undodata);
             Program.Undo.Push(undodata);
 
             InputFormRef.ShowWriteNotifyAnimation(this, p);

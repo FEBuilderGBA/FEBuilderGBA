@@ -1153,7 +1153,7 @@ namespace FEBuilderGBA
         }
 
         //一文字変換
-        public static uint ConvertMojiCharToUnit(string one, InputFormRef.PRIORITY_CODE priorityCode)
+        public static uint ConvertMojiCharToUnit(string one, PatchUtil.PRIORITY_CODE priorityCode)
         {
             one = FETextEncode.ConvertSPMoji(one);
             byte[] moji = Program.SystemTextEncoder.Encode(one);
@@ -1164,7 +1164,7 @@ namespace FEBuilderGBA
                 uint code = FETextEncode.at_code_to_binary(moji, 0, out dummy);
                 return code;
             }
-            else if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            else if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return ConvertUTF8ToUTF32(moji);
             }
@@ -1194,11 +1194,11 @@ namespace FEBuilderGBA
             }
         }
         //一文字変換
-        public static uint ConvertMojiCharToUnitFast(string one, InputFormRef.PRIORITY_CODE priorityCode)
+        public static uint ConvertMojiCharToUnitFast(string one, PatchUtil.PRIORITY_CODE priorityCode)
         {
             //特殊文字はないことにして速度アップを図る.
             byte[] moji = Program.SystemTextEncoder.Encode(one);
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return ConvertUTF8ToUTF32(moji);
             }

@@ -120,7 +120,7 @@ namespace FEBuilderGBA
             uint writeAddr = InputFormRef.WriteBinaryDataPointer(this
                 ,write_pointer
                 , stringbyte
-                , InputFormRef.get_data_pos_callback
+                , PatchUtil.get_data_pos_callback
                 , undodata
             );
             if (writeAddr == U.NOT_FOUND)

@@ -18,7 +18,7 @@ namespace FEBuilderGBA
 
             this.AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
-            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            if (PatchUtil.SearchClassType() == PatchUtil.class_type_enum.SkillSystems_Rework)
             {//SkillSystemsによる 特効リワーク
                 this.CLASS_LISTBOX.OwnerDraw(ListBoxEx.DrawClassTypeAndText, DrawMode.OwnerDrawFixed);
             }
@@ -175,7 +175,7 @@ namespace FEBuilderGBA
         }
         private void P16_ValueChanged(object sender, EventArgs e)
         {
-            if (InputFormRef.SearchClassType() == InputFormRef.class_type_enum.SkillSystems_Rework)
+            if (PatchUtil.SearchClassType() == PatchUtil.class_type_enum.SkillSystems_Rework)
             {//SkillSystemsによる 特効リワーク
                 List<U.AddrResult> arlist = ItemEffectivenessSkillSystemsReworkForm.MakeCriticalClassList((uint)P16.Value);
                 U.ConvertListBox(arlist, ref CLASS_LISTBOX);
@@ -207,7 +207,7 @@ namespace FEBuilderGBA
                 FEBuilderGBA.Address.AddAddress(list, InputFormRef, "Item", new uint[] { 12 , 16 });
 
                 //SkillSystemsによる 特効リワーク
-                InputFormRef.class_type_enum effectivenesRework = InputFormRef.SearchClassType();
+                PatchUtil.class_type_enum effectivenesRework = PatchUtil.SearchClassType();
 
                 uint addr = InputFormRef.BaseAddress;
                 for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
@@ -237,7 +237,7 @@ namespace FEBuilderGBA
                     uint itemEffectiveness = Program.ROM.p32(addr + 16);
                     if (itemEffectiveness > 0)
                     {
-                        if (effectivenesRework == FEBuilderGBA.InputFormRef.class_type_enum.SkillSystems_Rework)
+                        if (effectivenesRework == FEBuilderGBA.PatchUtil.class_type_enum.SkillSystems_Rework)
                         {
                             List<U.AddrResult> arlist = ItemEffectivenessSkillSystemsReworkForm.MakeCriticalClassList((uint)itemEffectiveness);
                             FEBuilderGBA.Address.AddAddress(list, itemEffectiveness
@@ -477,7 +477,7 @@ namespace FEBuilderGBA
             {//スキルの書のパッチが当たっていない
                 return false;
             }
-            if (InputFormRef.SearchSkillSystem() != FEBuilderGBA.InputFormRef.skill_system_enum.FE8N_ver2)
+            if (PatchUtil.SearchSkillSystem() != FEBuilderGBA.PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return false;
             }

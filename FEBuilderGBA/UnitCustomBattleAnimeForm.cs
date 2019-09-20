@@ -204,7 +204,7 @@ namespace FEBuilderGBA
            Undo.UndoData undodata = Program.Undo.NewUndoData(this, this.Name + " Independence");
 
            uint dataSize = (InputFormRef.DataCount + 1) * InputFormRef.BlockSize;
-           InputFormRef.WriteIndependence(currentP, dataSize, pointer, name, undodata);
+           PatchUtil.WriteIndependence(currentP, dataSize, pointer, name, undodata);
            Program.Undo.Push(undodata);
 
            InputFormRef.ShowWriteNotifyAnimation(this, currentP);

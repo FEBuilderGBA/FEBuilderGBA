@@ -173,7 +173,7 @@ namespace FEBuilderGBA
             }
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"MoveCost Independence");
-            InputFormRef.WriteIndependence(p, 54, setting, name, undodata);
+            PatchUtil.WriteIndependence(p, 54, setting, name, undodata);
             Program.Undo.Push(undodata);
 
             InputFormRef.ShowWriteNotifyAnimation(this, p);

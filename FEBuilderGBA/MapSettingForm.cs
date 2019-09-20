@@ -22,7 +22,7 @@ namespace FEBuilderGBA
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            uint shinan = InputFormRef.SearchShinanTablePatch();
+            uint shinan = PatchUtil.SearchShinanTablePatch();
             if (shinan != U.NOT_FOUND)
             {
                 InputFormRef.markupJumpLabel(X_JUMP_SHINAN);
@@ -820,7 +820,7 @@ namespace FEBuilderGBA
 
         private void X_JUMP_SHINAN_Click(object sender, EventArgs e)
         {
-            uint shinan = InputFormRef.SearchShinanTablePatch();
+            uint shinan = PatchUtil.SearchShinanTablePatch();
             if (shinan == U.NOT_FOUND)
             {
                 return;

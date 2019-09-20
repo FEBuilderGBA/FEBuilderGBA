@@ -3037,7 +3037,7 @@ namespace FEBuilderGBA
             }
             if (isTextCommand)
             {
-                if (!InputFormRef.SearchAntiHuffmanPatch())
+                if (!PatchUtil.SearchAntiHuffmanPatch())
                 {
                     throw new PatchException(R.Error("このパッチは、テキストを変更するので、インストールする前に AntiHuffmanパッチが必要です。"));
                 }

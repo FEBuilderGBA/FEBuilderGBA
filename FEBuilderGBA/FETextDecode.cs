@@ -9,12 +9,12 @@ namespace FEBuilderGBA
     {
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
-        InputFormRef.PRIORITY_CODE PriorityCode;
+        PatchUtil.PRIORITY_CODE PriorityCode;
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
-            this.PriorityCode = InputFormRef.SearchPriorityCode();
+            this.PriorityCode = PatchUtil.SearchPriorityCode();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
@@ -22,11 +22,11 @@ namespace FEBuilderGBA
             this.SystemTextEncoder = encoder;
             if (rom == Program.ROM)
             {
-                this.PriorityCode = InputFormRef.SearchPriorityCode();
+                this.PriorityCode = PatchUtil.SearchPriorityCode();
             }
             else
             {
-                this.PriorityCode = InputFormRef.SearchPriorityCode(rom);
+                this.PriorityCode = PatchUtil.SearchPriorityCode(rom);
             }
         }
 
@@ -127,9 +127,9 @@ namespace FEBuilderGBA
             byte[] srcdata = this.ROM.getBinaryData(addr, length);
             return UnHffmanPatchDecodeLow(srcdata);
         }
-        int AppendSJIS(List<byte> str,byte code,byte code2,InputFormRef.PRIORITY_CODE priorityCode)
+        int AppendSJIS(List<byte> str,byte code,byte code2,PatchUtil.PRIORITY_CODE priorityCode)
         {
-            if (priorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
             {//SJISと 1バイトUnicodeは範囲が重複するので、どちらかを優先しないといけない.
                 if (code >= 0x82)
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
@@ -153,7 +153,7 @@ namespace FEBuilderGBA
                 if (length > i + 1)
                 {
                     byte code2 = srcdata[i + 1];
-                    if (this.PriorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
                     {
                         i += U.AppendUTF8(str , srcdata , i);
                         continue;
@@ -206,7 +206,7 @@ namespace FEBuilderGBA
                     i += 1;
                     continue;
                 }
-                if (code >= 0x82 && this.PriorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                if (code >= 0x82 && this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                     AppendAtmarkCode(str, code); //@000Fとかのコード
                     i += 1;
@@ -403,6 +403,27 @@ namespace FEBuilderGBA
             }
             while (true);
         }
+        static bool isEscapeCode(uint code,uint beforecode)
+        {
+		    if (beforecode == 0x0010
+                || beforecode == 0x0011
+			    || beforecode == 0x0080
+			    || code <= 0x001F 
+			    || (code >= 0x0080 && code <= 0x0F00 )
+			    )
+            {
+                return true;
+            }
+
+            if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+            {
+                if (code == 0x90 || code == 0x91)
+                {//AutoNewLine Code
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
         public void append_string(List<byte> str,uint code,uint beforecode)
@@ -411,12 +432,8 @@ namespace FEBuilderGBA
 		    {
                 return;
 		    }
-		    if (beforecode == 0x0010
-                || beforecode == 0x0011
-			    || beforecode == 0x0080
-			    || code <= 0x001F 
-			    || (code >= 0x0080 && code <= 0x0F00 )
-			    )
+
+            if (isEscapeCode(code , beforecode))
 		    {
                 byte[] data = System.Text.Encoding.ASCII.GetBytes(code.ToString("X04"));
 
@@ -453,7 +470,7 @@ namespace FEBuilderGBA
                 if (length > len + 1)
                 {
                     byte code2 = srcdata[len + 1];
-                    if (this.PriorityCode == InputFormRef.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
                     {
                         len += U.AppendUTF8(str, srcdata, len);
                         continue;
@@ -464,7 +481,7 @@ namespace FEBuilderGBA
                         continue;
                     }
                 }
-                if (this.PriorityCode == InputFormRef.PRIORITY_CODE.LAT1)
+                if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FE
                     if (code >= 0x82 || code == 0x1f)
                     {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
@@ -498,9 +515,9 @@ namespace FEBuilderGBA
 
         public static string ConvertSPMoji(ROM rom,string str)
         {
-            InputFormRef.PRIORITY_CODE priorityCode = InputFormRef.SearchPriorityCode();
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             str = str.Replace("@0001", "\r\n");
-            if (priorityCode == InputFormRef.PRIORITY_CODE.UTF8)
+            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
             {
                 return str;
             }

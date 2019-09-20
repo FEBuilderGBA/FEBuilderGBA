@@ -60,33 +60,33 @@ namespace FEBuilderGBA
             string patchCombo = "";
             if (type == TYPE.Anti_Huffman_By_Translate)
             {
-                checkFunc = InputFormRef.SearchAntiHuffmanPatch;
+                checkFunc = PatchUtil.SearchAntiHuffmanPatch;
                 reason = R._("翻訳された文章がハフマン符号化テーブルを超えている可能性があります。\r\nAntiHuffmanPatchを適応しておくことをお勧めします。");
                 patchName1 = "Anti-Huffman";///No Translate
             }
             if (type == TYPE.Anti_Huffman_By_English)
             {
-                checkFunc = InputFormRef.SearchAntiHuffmanPatch;
+                checkFunc = PatchUtil.SearchAntiHuffmanPatch;
                 reason = R._("英語版で、テキストを変更するためには、Anti-Huffman Patchが必要です。");
                 patchName1 = "Anti-Huffman";///No Translate
             }
             else if (type == TYPE.C01Hack_By_ImageBattleAnimation)
             {
-                checkFunc = InputFormRef.SearchC01HackPatch;
+                checkFunc = PatchUtil.SearchC01HackPatch;
                 reason = R._("このアニメーションには、C01 命令が使われています。\r\n現在、C01ハックパッチは、まだインストールされていません。\r\nアニメーションを再生するためには、\r\nC01ハックを有効にした方がいいと思われますが、どうしますか？\r\n");
                 patchName1 = "01command_hack";///No Translate
                 patchName2 = "01コマンドハック";///No Translate
             }
             else if (type == TYPE.C48Hack_By_ImageBattleAnimation)
             {
-                checkFunc = InputFormRef.SearchC48HackPatch;
+                checkFunc = PatchUtil.SearchC48HackPatch;
                 reason = R._("このアニメーションには、C48 命令(or Sxx命令)が使われています。\r\n現在、C48ハックパッチは、まだインストールされていません。\r\nアニメーションを再生するためには、\r\nC48ハックを有効にした方がいいと思われますが、どうしますか？\r\n");
                 patchName1 = "48command_hack";///No Translate
                 patchName2 = "48コマンドハック";///No Translate
             }
             else if (type == TYPE.NIMAP_By_SongTrack)
             {
-                checkFunc = InputFormRef.SearchNIMAP;
+                checkFunc = PatchUtil.SearchNIMAP;
                 reason = R._("Midi楽器はFE楽器と並び順が違うので、\r\nNIMAPを利用することをお勧めします。");
                 if (Program.ROM.RomInfo.version() == 8)
                 {//FE8用には更新されたバージョンを利用する.
@@ -101,19 +101,19 @@ namespace FEBuilderGBA
             }
             else if (type == TYPE.Track12_Over_By_SongTrack)
             {
-                checkFunc = InputFormRef.Search16tracks12soundsPatch;
+                checkFunc = PatchUtil.Search16tracks12soundsPatch;
                 reason = R._("この楽曲の楽譜は、12以上のトラックが存在しています。\r\nこの曲をゲームで再生するには、16_tracks_12_soundsが必要です。\r\nこのパッチを適応しますか？");
                 patchName1 = "16_tracks_12_sounds";///No Translate
             }
             else if (type == TYPE.MeleeAndMagicFix_By_Unit)
             {
-                checkFunc = InputFormRef.SearchMeleeAndMagicFixPatch;
+                checkFunc = PatchUtil.SearchMeleeAndMagicFixPatch;
                 reason = R._("武器と魔法を同時に利用するにはMeleeAndMagicPatchが必要です。\r\n有効にしますか？");
                 patchName1 = "MeleeAndMagicFix";///No Translate
             }
             else if (type == TYPE.ItemIconExpands)
             {
-                checkFunc = InputFormRef.SearchIconExpandsPatch;
+                checkFunc = PatchUtil.SearchIconExpandsPatch;
                 reason = R._("アイコンを拡張するには、テーブルを拡張する前にパッチを適応する必要があります。\r\n有効にしますか？");
                 patchName1 = "Extended to item icon 0xFE";///No Translate
                 patchName2 = "Extend Item Icon List Length";///No Translate
@@ -133,10 +133,10 @@ namespace FEBuilderGBA
                 {
                     checkFunc = () =>
                     {
-                        InputFormRef.skill_system_enum a = InputFormRef.SearchSkillSystem();
-                        return (a == InputFormRef.skill_system_enum.FE8N
-                            || a == InputFormRef.skill_system_enum.FE8N_ver2
-                            || a == InputFormRef.skill_system_enum.yugudora
+                        PatchUtil.skill_system_enum a = PatchUtil.SearchSkillSystem();
+                        return (a == PatchUtil.skill_system_enum.FE8N
+                            || a == PatchUtil.skill_system_enum.FE8N_ver2
+                            || a == PatchUtil.skill_system_enum.yugudora
                             );
                     };
                     reason = R._("スキル拡張 FE8N が必要です。\r\n有効にしますか？");
@@ -147,7 +147,7 @@ namespace FEBuilderGBA
                 {
                     checkFunc = () =>
                     {
-                        return InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem;
+                        return PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem;
                     };
                     reason = R._("スキル拡張 SkillSystems が必要です。\r\n有効にしますか？");
                     patchName1 = "Skill20190708";///No Translate
@@ -163,7 +163,7 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return InputFormRef.SearchSkipWorldMapPatch() != InputFormRef.mnc2_fix_enum.NO;
+                    return PatchUtil.SearchSkipWorldMapPatch() != PatchUtil.mnc2_fix_enum.NO;
                 };
                 reason = R._("FE8のマップをワールドマップを経由しないで移動させるには、パッチが必要です。\r\n有効にしますか？");
                 patchName1 = "Eliminate the constraint of freezing unless it enters from the world map";///No Translate
@@ -180,7 +180,7 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return InputFormRef.SearchCAMERA_Event_OutOfBand_FixPatch() ;
+                    return PatchUtil.SearchCAMERA_Event_OutOfBand_FixPatch() ;
                 };
                 reason = R._("カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチをインストールしますか？");
                 patchName1 = "Fix CAM1_CAMERA2 going out of bounds";///No Translate
@@ -197,7 +197,7 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return InputFormRef.SearchCAMERA_Event_NotExistsUnit_FixPatch();
+                    return PatchUtil.SearchCAMERA_Event_NotExistsUnit_FixPatch();
                 };
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event26_CameraControlMaybe_Fix not to freeze even nonexistent units";///No Translate
@@ -214,7 +214,7 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return InputFormRef.SearchUnitStateEvent_0x34_FixPatch();
+                    return PatchUtil.SearchUnitStateEvent_0x34_FixPatch();
                 };
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event34_MessWithUnitState_Fix not to freeze even nonexistent units";///No Translate
@@ -231,7 +231,7 @@ namespace FEBuilderGBA
 
                 checkFunc = () =>
                 {
-                    return InputFormRef.SearchWakuEvent_0x3B_FixPatch();
+                    return PatchUtil.SearchWakuEvent_0x3B_FixPatch();
                 };
                 reason = R._("存在しないユニットを指定した時にフリーズするバグを修正するパッチをインストールしますか？");
                 patchName1 = "Event3B_frame_Fix not to freeze even nonexistent units";///No Translate

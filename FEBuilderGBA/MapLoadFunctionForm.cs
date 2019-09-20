@@ -45,7 +45,7 @@ namespace FEBuilderGBA
         }
         private void MapLoadFunctionForm_Load(object sender, EventArgs e)
         {
-            bool enable = InputFormRef.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
+            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
             if (!enable)
             {
                 this.ERROR_NOT_FOUND.Show();
@@ -79,7 +79,7 @@ namespace FEBuilderGBA
             }
             uint addr = Program.ROM.p32(Program.ROM.RomInfo.map_load_function_pointer());
             uint count = Program.ROM.u8(Program.ROM.RomInfo.map_load_function_switch1_address() + 0);
-            bool enable = InputFormRef.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
+            bool enable = PatchUtil.IsSwitch1Enable(Program.ROM.RomInfo.map_load_function_switch1_address());
             if (enable == false)
             {
                 return U.NOT_FOUND;
@@ -110,7 +110,7 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"MapLoadFunction SwithExpands");
 
-            InputFormRef.Switch1Expands(Program.ROM.RomInfo.unit_increase_height_pointer()
+            PatchUtil.Switch1Expands(Program.ROM.RomInfo.unit_increase_height_pointer()
                 , Program.ROM.RomInfo.map_load_function_switch1_address()
                 , newCount
                 , defAddr

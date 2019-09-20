@@ -46,7 +46,7 @@ namespace FEBuilderGBA
 
         private void SoundFootStepsForm_Load(object sender, EventArgs e)
         {
-            bool enable = InputFormRef.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
             if (!enable)
             {
                 this.ERROR_NOT_FOUND.Show();
@@ -69,7 +69,7 @@ namespace FEBuilderGBA
             }
             uint addr = Program.ROM.p32(Program.ROM.RomInfo.sound_foot_steps_pointer());
             uint count = Program.ROM.u8(Program.ROM.RomInfo.sound_foot_steps_switch2_address() + 2);
-            bool enable = InputFormRef.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
+            bool enable = PatchUtil.IsSwitch2Enable(Program.ROM.RomInfo.sound_foot_steps_switch2_address());
             if (enable == false)
             {
                 return U.NOT_FOUND;
@@ -94,7 +94,7 @@ namespace FEBuilderGBA
 
             Undo.UndoData undodata = Program.Undo.NewUndoData(this,"SoundFootStep SwitchExpands");
 
-            InputFormRef.Switch2Expands(Program.ROM.RomInfo.sound_foot_steps_pointer()
+            PatchUtil.Switch2Expands(Program.ROM.RomInfo.sound_foot_steps_pointer()
                 , Program.ROM.RomInfo.sound_foot_steps_switch2_address()
                 , newCount
                 , defAddr

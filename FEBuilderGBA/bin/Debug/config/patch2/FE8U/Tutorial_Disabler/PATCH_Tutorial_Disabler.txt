@@ -11,9 +11,8 @@ OFF:0x0E120=0x22 0xd0
 ONN:0x0E120=0x00 0x00
 
 
-INFO=FE8 Tutorial Disabler
-INFO=難易度簡単を選択したとしても、チュートリアルイベントをすべて無効にします。
-INFO.en=Set whether to disable all tutorial events (including on Easy difficulty).
-INFO.zh=即使选择简单难度，也禁用所有教程事件。
+INFO=難易度簡単を選択したとしても、チュートリアルイベントをすべて無効にします。\r\nこの命令は、CHECK_TUTORIALを無効にします。\r\nもし、CHECK_TUTORIALを利用したい場合は、このパッチを使わないでください。\r\nその場合は、手動で、既存のイベント中にあるCHECK_TUTORIALや、チュートリアル分岐をすべて削除してください。
+INFO.en=Set whether to disable all tutorial events (including on Easy difficulty).\r\nThis patch disables CHECK_TUTORIAL.\r\nIf you want to use CHECK_TUTORIAL, do not use this patch.\r\nIn that case, manually delete all CHECK_TUTORIAL and tutorial branches in the existing event.
+INFO.zh=即使选择简单难度，也禁用所有教程事件。\r\n该指令禁用CHECK_TUTORIAL。\r\n如果要使用CHECK_TUTORIAL，请不要使用此修补程序。\r\n在这种情况下，手动删除现有事件中的所有CHECK_TUTORIAL和教程分支。
 
 AUTHOR=7743

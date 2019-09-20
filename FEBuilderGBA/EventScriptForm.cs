@@ -764,8 +764,8 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            InputFormRef.mnc2_fix_enum mnc2fix = InputFormRef.SearchSkipWorldMapPatch();
-            if (mnc2fix != InputFormRef.mnc2_fix_enum.NO)
+            PatchUtil.mnc2_fix_enum mnc2fix = PatchUtil.SearchSkipWorldMapPatch();
+            if (mnc2fix != PatchUtil.mnc2_fix_enum.NO)
             {//MNC2 Fixが導入されている
                 return;
             }

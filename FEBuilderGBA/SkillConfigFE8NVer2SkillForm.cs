@@ -868,7 +868,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list, bool isPointerOnly)
         {
             InputFormRef ifr;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.FE8N_ver2)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return;
             }
@@ -956,7 +956,7 @@ namespace FEBuilderGBA
         public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef ifr;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.FE8N_ver2)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 return;
             }

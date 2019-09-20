@@ -9,18 +9,18 @@ namespace FEBuilderGBA
 {
     static class SkillUtil
     {
-        public static void JumpClassSkill(InputFormRef.skill_system_enum skill,uint cid)
+        public static void JumpClassSkill(PatchUtil.skill_system_enum skill,uint cid)
         {
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentClassSkillSystemForm>(cid);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>();
             }
         }
-        public static void JumpClassSkill(InputFormRef.skill_system_enum skill, uint cid,object sender)
+        public static void JumpClassSkill(PatchUtil.skill_system_enum skill, uint cid,object sender)
         {
             if (!(sender is Control))
             {
@@ -33,16 +33,16 @@ namespace FEBuilderGBA
             }
             uint skillid = (uint)c.Tag;
 
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentClassSkillSystemForm>(cid);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(skillid);
             }
         }
-        public static void MakeClassSkillButtons(InputFormRef.skill_system_enum skill, uint cid, Button[] buttons, ToolTipEx tooltip)
+        public static void MakeClassSkillButtons(PatchUtil.skill_system_enum skill, uint cid, Button[] buttons, ToolTipEx tooltip)
         {
             if (buttons == null)
             {
@@ -50,11 +50,11 @@ namespace FEBuilderGBA
             }
 
             int skillCount = 0;
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 skillCount = SkillAssignmentClassSkillSystemForm.MakeClassSkillButtons(cid, buttons, tooltip);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 skillCount = SkillConfigFE8NVer2SkillForm.MakeClassSkillButtons(cid, buttons, tooltip);
             }
@@ -71,18 +71,18 @@ namespace FEBuilderGBA
                 buttons[i].Hide();
             }
         }
-        public static void JumpUnitSkill(InputFormRef.skill_system_enum skill, uint uid)
+        public static void JumpUnitSkill(PatchUtil.skill_system_enum skill, uint uid)
         {
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentUnitSkillSystemForm>(uid);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>();
             }
         }
-        public static void JumpUnitSkill(InputFormRef.skill_system_enum skill, uint uid, object sender)
+        public static void JumpUnitSkill(PatchUtil.skill_system_enum skill, uint uid, object sender)
         {
             if (!(sender is Control))
             {
@@ -95,16 +95,16 @@ namespace FEBuilderGBA
             }
             uint skillid = (uint)c.Tag;
 
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 InputFormRef.JumpForm<SkillAssignmentUnitSkillSystemForm>(uid);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 InputFormRef.JumpForm<SkillConfigFE8NVer2SkillForm>(skillid);
             }
         }
-        public static void MakeUnitSkillButtons(InputFormRef.skill_system_enum skill, uint uid, Button[] buttons, ToolTipEx tooltip)
+        public static void MakeUnitSkillButtons(PatchUtil.skill_system_enum skill, uint uid, Button[] buttons, ToolTipEx tooltip)
         {
             if (buttons == null)
             {
@@ -112,11 +112,11 @@ namespace FEBuilderGBA
             }
 
             int skillCount = 0;
-            if (skill == InputFormRef.skill_system_enum.SkillSystem)
+            if (skill == PatchUtil.skill_system_enum.SkillSystem)
             {
                 skillCount = SkillAssignmentUnitSkillSystemForm.MakeUnitSkillButtons(uid, buttons, tooltip);
             }
-            else if (skill == InputFormRef.skill_system_enum.FE8N_ver2)
+            else if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
             {
                 skillCount = SkillConfigFE8NVer2SkillForm.MakeUnitSkillButtons(uid, buttons, tooltip);
             }

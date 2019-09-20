@@ -140,7 +140,7 @@ namespace FEBuilderGBA
                 OBJECT_N05_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.House()); //10=民家
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("14=ランダム宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x14, ImageSystemIconForm.Chest()); //14=ランダム宝箱
-                if (InputFormRef.SearchStairsHackPatch())
+                if (PatchUtil.SearchStairsHackPatch())
                 {
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
                     OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
@@ -159,7 +159,7 @@ namespace FEBuilderGBA
                 OBJECT_N0A_L_10_COMBO.AddIcon(0x17, ImageSystemIconForm.Vendor()); //17=道具屋
                 OBJECT_N0A_L_10_COMBO.AddIcon(0x18, ImageSystemIconForm.SecretShop()); //18=秘密の店
 
-                if (InputFormRef.SearchSkillSystem() == InputFormRef.skill_system_enum.SkillSystem)
+                if (PatchUtil.SearchSkillSystem() == PatchUtil.skill_system_enum.SkillSystem)
                 {
                     TRAP_L_0_COMBO.Items.Insert(4, R._("06=DragonVein"));
                 }
@@ -182,7 +182,7 @@ namespace FEBuilderGBA
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("12=イベント付き宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Chest());
             }
-            if (InputFormRef.SearchStairsHackPatch())
+            if (PatchUtil.SearchStairsHackPatch())
             {
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x22, ImageSystemIconForm.Stairs()); //22=階段
@@ -1008,7 +1008,7 @@ namespace FEBuilderGBA
                         else if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfDoor))
                         {//FE6ではドアを指定してもいいらしい.
                         }
-                        else if ((object_type == 0x22) && InputFormRef.SearchStairsHackPatch())
+                        else if ((object_type == 0x22) && PatchUtil.SearchStairsHackPatch())
                         {//階段拡張
                         }
                         else if (!(object_type == objectTypeOfSeize || object_type == objectTypeOfTownCenter || object_type == objectTypeOfHouse))

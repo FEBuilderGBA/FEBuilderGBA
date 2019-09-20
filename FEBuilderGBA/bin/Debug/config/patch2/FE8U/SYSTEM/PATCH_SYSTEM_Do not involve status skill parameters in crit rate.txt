@@ -1,0 +1,16 @@
+NAME=必殺率の計算に技パラメータを含めないように変更します。
+NAME.en=Change not to include status skill in calculation of crit rate.
+NAME.zh=Change not to include status skill in calculation of crit rate.
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2AC24
+COMBO=Default:|0x15 0x21 0x61 0x56|Change:|0x00 0x21 0xC0 0x46
+
+AUTHOR=Sme, kirb, Teraspark
+
+INFO=必殺率を計算するときに、ユニットの技パラメータの値を含めないで計算するように変更します。
+INFO.en=This patch is modified to calculate the crit rate without including the unit "skill" parameter value.
+INFO.zh=This patch is modified to calculate the crit rate without including the unit "skill" parameter value.

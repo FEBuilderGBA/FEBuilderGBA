@@ -20,7 +20,7 @@ namespace FEBuilderGBA
             this.InputFormRef.ReInitPointer(SearchActionPointer());
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
-            if (InputFormRef.SearchUnitActionReworkPatch())
+            if (PatchUtil.SearchUnitActionReworkPatch())
             {
                 ApplyedUnitActionPatch.Show();
             }
@@ -30,7 +30,7 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
-            bool isRework = InputFormRef.SearchUnitActionReworkPatch();
+            bool isRework = PatchUtil.SearchUnitActionReworkPatch();
 
             InputFormRef ifr = null;
             ifr = new InputFormRef(self
@@ -102,7 +102,7 @@ namespace FEBuilderGBA
 
         public static uint SearchActionPointer()
         {
-            if (! InputFormRef.SearchUnitActionReworkPatch())
+            if (! PatchUtil.SearchUnitActionReworkPatch())
             {//rework されていない
                 return Program.ROM.RomInfo.unitaction_function_pointer();
             }
@@ -133,7 +133,7 @@ namespace FEBuilderGBA
 
         public static void SupportActionRework(StringBuilder sb)
         {
-            if (! InputFormRef.SearchUnitActionReworkPatch())
+            if (! PatchUtil.SearchUnitActionReworkPatch())
             {
                 return;
             }

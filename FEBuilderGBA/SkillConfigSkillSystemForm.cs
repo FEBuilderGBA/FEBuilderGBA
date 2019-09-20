@@ -99,79 +99,79 @@ namespace FEBuilderGBA
 
         public static void ClearCache()
         {
-            g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
-            g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
+            g_Cache_FindAssignPersonalSkillPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindAssignClassSkillPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindAssignClassLevelUpSkillPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindAssignUnitLevelUpSkillPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindIconPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindTextPointer = PatchUtil.NO_CACHE;
+            g_Cache_FindAnimePointer = PatchUtil.NO_CACHE;
         }
 
-        static uint g_Cache_FindAssignPersonalSkillPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindAssignPersonalSkillPointer = PatchUtil.NO_CACHE;
         public static uint FindAssignPersonalSkillPointer()
         {
-            if (g_Cache_FindAssignPersonalSkillPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindAssignPersonalSkillPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindAssignPersonalSkillPointer = FindSkillPointerToPointer("ASSIGN", 0);
             }
             return g_Cache_FindAssignPersonalSkillPointer;
         }
 
-        static uint g_Cache_FindAssignClassSkillPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindAssignClassSkillPointer = PatchUtil.NO_CACHE;
         public static uint FindAssignClassSkillPointer()
         {
-            if (g_Cache_FindAssignClassSkillPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindAssignClassSkillPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindAssignClassSkillPointer = FindSkillPointerToPointer("ASSIGN", 4);
             }
             return g_Cache_FindAssignClassSkillPointer;
         }
 
-        static uint g_Cache_FindAssignClassLevelUpSkillPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindAssignClassLevelUpSkillPointer = PatchUtil.NO_CACHE;
         public static uint FindAssignClassLevelUpSkillPointer()
         {
-            if (g_Cache_FindAssignClassLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindAssignClassLevelUpSkillPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindAssignClassLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 0);
             }
             return g_Cache_FindAssignClassLevelUpSkillPointer;
         }
 
-        static uint g_Cache_FindAssignUnitLevelUpSkillPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindAssignUnitLevelUpSkillPointer = PatchUtil.NO_CACHE;
         public static uint FindAssignUnitLevelUpSkillPointer()
         {
-            if (g_Cache_FindAssignUnitLevelUpSkillPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindAssignUnitLevelUpSkillPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindAssignUnitLevelUpSkillPointer = FindSkillPointerToPointer("LEVELUP", 4);
             }
             return g_Cache_FindAssignUnitLevelUpSkillPointer;
         }
 
-        static uint g_Cache_FindIconPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindIconPointer = PatchUtil.NO_CACHE;
         public static uint FindIconPointer()
         {
-            if (g_Cache_FindIconPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindIconPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindIconPointer = FindSkillPointerToPointer("ICON", 0);
             }
             return g_Cache_FindIconPointer;
         }
 
-        static uint g_Cache_FindTextPointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindTextPointer = PatchUtil.NO_CACHE;
         public static uint FindTextPointer()
         {
-            if (g_Cache_FindTextPointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindTextPointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindTextPointer = FindSkillPointerToPointer("TEXT", 0);
             }
             return g_Cache_FindTextPointer;
         }
 
-        static uint g_Cache_FindAnimePointer = InputFormRef.NO_CACHE;
+        static uint g_Cache_FindAnimePointer = PatchUtil.NO_CACHE;
         public static uint FindAnimePointer()
         {
-            if (g_Cache_FindAnimePointer == InputFormRef.NO_CACHE)
+            if (g_Cache_FindAnimePointer == PatchUtil.NO_CACHE)
             {
                 g_Cache_FindAnimePointer = FindSkillPointerToPointer("ANIME", 0);
             }
@@ -409,7 +409,7 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list,bool isPointerOnly)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -459,7 +459,7 @@ namespace FEBuilderGBA
         public static void ExportAllData(string filename)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -520,7 +520,7 @@ namespace FEBuilderGBA
         public static void ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
@@ -590,7 +590,7 @@ namespace FEBuilderGBA
         public static void MakeTextIDArray(List<UseTextID> list)
         {
             InputFormRef ifr;
-            if (InputFormRef.SearchSkillSystem() != InputFormRef.skill_system_enum.SkillSystem)
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
                 return;
             }
