@@ -23,7 +23,7 @@ namespace FEBuilderGBA
                 ASMMapLoadResource(asmmap, Program.ROM);
             }
             //ROM情報をmapとして利用する.
-            ROMInfoLoadResource();
+            ROMInfoLoadResource(this.AsmMap);
             //構造体スキャン
             ROMTypeLoadResource();
 
@@ -187,7 +187,7 @@ namespace FEBuilderGBA
         }
 
 
-        void ROMInfoLoadResource()
+        public static void ROMInfoLoadResource(Dictionary<uint, AsmMapSt> asmMap)
         {
             //せっかくなので、ROMで判明しているデータも追加する.
             MethodInfo[] methods = Program.ROM.RomInfo.GetType().GetMethods();
@@ -203,14 +203,14 @@ namespace FEBuilderGBA
 
                         AsmMapSt p = new AsmMapSt();
                         p.Name = info.Name;
-                        AsmMap[pointer] = p;
+                        asmMap[pointer] = p;
 
                         uint pointer2 = Program.ROM.u32(addr);
                         if (U.isPointer(pointer2))
                         {
                             p = new AsmMapSt();
                             p.Name = info.Name.Replace("_pointer", "_address");
-                            AsmMap[pointer2] = p;
+                            asmMap[pointer2] = p;
                         }
                     }
                 }
@@ -224,7 +224,7 @@ namespace FEBuilderGBA
                         uint pointer = U.toPointer(addr);
                         AsmMapSt p = new AsmMapSt();
                         p.Name = info.Name;
-                        AsmMap[pointer] = p;
+                        asmMap[pointer] = p;
                     }
                 }
             }

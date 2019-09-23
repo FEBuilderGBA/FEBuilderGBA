@@ -9,6 +9,6 @@ ADDRESS=0x96B18
 ADDRESS_TYPE=MAP
 
 INFO=進撃準備画面の右上にあるマップIDを表示する部分を変更します
-INFO.en=Change part to display the map ID in the upper right corner of the attack advancement screen
+INFO.en=Change part to display the map ID in the upper right corner of the Preparation Screen
 NAME.zh=攻击准备屏幕：在MapID之后显示10个地图作为塔
 INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID

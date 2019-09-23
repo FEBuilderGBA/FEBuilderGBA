@@ -125,6 +125,9 @@ namespace FEBuilderGBA
                 this.ProcsNameByAddr = MakeProcNameByAddr(this.ProcsName);
                 this.List = list;
 
+                Dictionary<uint, AsmMapFile.AsmMapSt> knownArea = new Dictionary<uint, AsmMapFile.AsmMapSt>();
+                AsmMapFile.ROMInfoLoadResource(knownArea);
+
                 for (int i = 0; i < ldrmap.Count; i++)
                 {
                     if (Program.AsmMapFileAsmCache.IsStopFlagOn()) return;
@@ -132,6 +135,10 @@ namespace FEBuilderGBA
                     uint addr = ldrmap[i].ldr_data;
                     if (!U.isSafetyPointer(addr))
                     {
+                        continue;
+                    }
+                    if (knownArea.ContainsKey(addr))
+                    {//既知のエリア 別のデータのテーブルを誤参照
                         continue;
                     }
                     addr = U.toOffset(addr);
@@ -151,7 +158,12 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    uint addr = Program.ROM.p32(pointer);
+                    uint addr = Program.ROM.u32(pointer);
+                    if (knownArea.ContainsKey(addr))
+                    {//既知のエリア 別のデータのテーブルを誤参照
+                        continue;
+                    }
+                    addr = U.toOffset(addr);
                     if (this.AlreadyMatch.ContainsKey(addr))
                     {//既に知っている.
                         continue;

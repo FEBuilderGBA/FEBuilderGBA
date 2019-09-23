@@ -354,6 +354,19 @@ namespace FEBuilderGBA
             return (a == check_value);
         }
 
+        //EscapeArriveHack
+        public static bool SearchEscapeArriveHackPatch()
+        {
+            uint check_value;
+            uint address = Program.ROM.RomInfo.patch_escape_arrive_hack(out check_value);
+            if (address == 0)
+            {
+                return false;
+            }
+            uint a = Program.ROM.u32(address);
+            return (a == check_value);
+        }
+
         //UnitActionRework
         public static bool SearchUnitActionReworkPatch()
         {

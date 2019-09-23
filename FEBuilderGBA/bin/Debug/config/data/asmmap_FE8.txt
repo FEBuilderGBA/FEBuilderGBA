@@ -12602,3 +12602,21 @@
 080AD508	SaveMenu_LoadNextChapterName	{J}
 080c2030	Worldmap_GetNextChapterID	{J}
 080BD224	Worldmap_GetNextChapterID	{U}
+080C572C	IsExtraMap_WorldmapSkirmishes	{J}
+080989d4	PrepScreen_RightUP_LoadChapterOBJ	{J}
+08098a94	PrepScreen_RightUP_LoadTowerOBJ	{J}
+08098b54	PrepScreen_RightUP_LoadRuinsOBJ	{J}
+08098c14	PrepScreen_RightUP_LoadExtraOBJ	{J}
+080C0960	IsExtraMap_WorldmapSkirmishes	{U}
+080966F0	PrepScreen_RightUP_LoadChapterOBJ	{U}
+080967B0	PrepScreen_RightUP_LoadTowerOBJ	{U}
+08096870	PrepScreen_RightUP_LoadRuinsOBJ	{U}
+08096930	PrepScreen_RightUP_LoadExtraOBJ	{U}
+08A942C6	:08A942D3	PrepScreen_RightUP_ChapterOBJ_Data	{J}
+08A942D4	:08A942E1	PrepScreen_RightUP_TowerOBJ_Data	{J}
+08A942E2	:08A942EF	PrepScreen_RightUP_RuinsOBJ_Data	{J}
+08A942F0	:08A942FD	PrepScreen_RightUP_ExtraOBJ_Data	{J}
+08A18582	:08A1858F	PrepScreen_RightUP_ChapterOBJ_Data	{U}
+08A18590	:08A1859D	PrepScreen_RightUP_TowerOBJ_Data	{U}
+08A1859E	:08A185AB	PrepScreen_RightUP_RuinsOBJ_Data	{U}
+08A185AC	:08A185B9	PrepScreen_RightUP_ExtraOBJ_Data	{U}

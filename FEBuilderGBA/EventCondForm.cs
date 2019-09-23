@@ -140,6 +140,13 @@ namespace FEBuilderGBA
                 OBJECT_N05_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.House()); //10=民家
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("14=ランダム宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x14, ImageSystemIconForm.Chest()); //14=ランダム宝箱
+                if (PatchUtil.SearchEscapeArriveHackPatch())
+                {
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("12=到達"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Throne()); //12=到達
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("13=離脱"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Throne()); //13=離脱
+                }
                 if (PatchUtil.SearchStairsHackPatch())
                 {
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
@@ -1007,6 +1014,9 @@ namespace FEBuilderGBA
                         }
                         else if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfDoor))
                         {//FE6ではドアを指定してもいいらしい.
+                        }
+                        else if ((object_type == 0x12 || object_type == 0x13) && PatchUtil.SearchEscapeArriveHackPatch())
+                        {//到達/離脱拡張
                         }
                         else if ((object_type == 0x22) && PatchUtil.SearchStairsHackPatch())
                         {//階段拡張

@@ -140,14 +140,20 @@ namespace FEBuilderGBA
                     name = U.term(name, "\t");
                     name = name.Replace(" ", "_"); //スペースがあるとダメらしい.
 
-                    uint arrayNumner = ParseArrayIndex(name);
-                    if (arrayNumner >= 10)
-                    {//容量削減のため2桁の配列は1つのみ
-                        if (lastNumber == arrayNumner)
-                        {
-                            continue;
+                    if (name.IndexOf("6CStructHeader") >= 0)
+                    {//6Cは全部表示する
+                    }
+                    else
+                    {
+                        uint arrayNumner = ParseArrayIndex(name);
+                        if (arrayNumner >= 10)
+                        {//容量削減のため2桁の配列は1つのみ
+                            if (lastNumber == arrayNumner)
+                            {
+                                continue;
+                            }
+                            lastNumber = arrayNumner;
                         }
-                        lastNumber = arrayNumner;
                     }
 
                     line = string.Format("{0} {1}", U.ToHexString(pair.Key), name);

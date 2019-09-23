@@ -3709,7 +3709,15 @@ namespace FEBuilderGBA
                 }
             }
 
-            ForceUpdate(nud,value);
+            try
+            {
+                ForceUpdate(nud, value);
+            }
+            catch (ArgumentException e)
+            {
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
+            }
         }
 
         //NumUpDownControlの範囲を安全に再設定します uintバージョン
@@ -3774,7 +3782,15 @@ namespace FEBuilderGBA
                 }
             }
 
-            ForceUpdate(nud, value);
+            try
+            {
+                ForceUpdate(nud, value);
+            }
+            catch (ArgumentException e)
+            {
+                Log.Error(R.ExceptionToString(e));
+                Debug.Assert(false);
+            }
         }
         
         public static void append_vlength_code(List<byte> data, int time)
@@ -6326,6 +6342,26 @@ namespace FEBuilderGBA
                 }
             }
             R.ShowStopError(lastError);
+        }
+        public static void SetActiveControlSafety(Form f,Control c)
+        {
+            if (f.IsDisposed)
+            {
+                return;
+            }
+            if (!f.Visible)
+            {
+                return;
+            }
+
+            try
+            {
+                f.ActiveControl = c;
+            }
+            catch(Exception e)
+            {
+                Log.Error(R.ExceptionToString(e));
+            }
         }
     }
 }

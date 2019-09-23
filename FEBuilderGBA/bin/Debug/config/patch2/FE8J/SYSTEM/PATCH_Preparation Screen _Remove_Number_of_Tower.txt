@@ -1,0 +1,26 @@
+NAME=進撃準備画面: 塔の階数を表示しない
+NAME.en=Preparation Screen: Do not display tower floors.
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|ExtraMapの表示にしない|ONN
+COMBO.en=Default|OFF|Hide|ONN
+COMBO.zh=Default|OFF|Hide|ONN
+
+OFF:0x98AEE=0x6C 0xF7 0x1F 0xFC
+ONN:0x98AEE=0x00 0x00 0x00 0x00
+
+OFF:0x98B1A=0x6C 0xF7 0x09 0xFC
+ONN:0x98B1A=0x00 0x00 0x00 0x00
+
+OFF:0x98B3C=0x6C 0xF7 0xF8 0xFB
+ONN:0x98B3C=0x00 0x00 0x00 0x00
+
+INFO=進撃準備画面の右上にあるマップIDを表示する部分を変更します\r\nTower 01 と、階数が表示されますが、このパッチは、01 の数字の部分を消去します。
+INFO.en=Change part to display the map ID in the upper right corner of the Preparation Screen\r\nTower 01 and the number of floors are displayed, but this patch erases the number part of 01.
+NAME.zh=攻击准备屏幕：隐藏塔楼
+INFO.zh=更改部件以在攻击推进屏幕的右上角显示地图ID\r\n显示塔01和楼层数，但此补丁会删除01的数字部分。
+
+AUTHOR=7743

@@ -4853,7 +4853,7 @@ namespace FEBuilderGBA
                 ELSE_TextBox.Text = exception.Message + "\r\n"
                     + "\r\n" + infomesg;
                 TAB.SelectedTab = ElsePage;
-                this.ActiveControl = PatchList;
+                U.SetActiveControlSafety(this, PatchList);
                 return;
             }
             catch (SyntaxException exception)
@@ -4866,11 +4866,12 @@ namespace FEBuilderGBA
                     + exception.StackTrace
                     + "\r\n\r\n" + infomesg;
                 TAB.SelectedTab = ErrorPage;
-                this.ActiveControl = PatchList;
+                U.SetActiveControlSafety(this, PatchList);
                 return;
             }
             InputFormRef.ReColor(this);
-            this.ActiveControl = PatchList;
+
+            U.SetActiveControlSafety(this, PatchList);
         }
 
 

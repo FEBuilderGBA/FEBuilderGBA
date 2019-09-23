@@ -13,23 +13,23 @@
 //
 080B9DEC	Function for obtaining selling price	RET=Selling price	r0=Number << 8 + ITEM ID	{J}
 080B5268	Function for obtaining selling price	RET=Selling price	r0=Number << 8 + ITEM ID	{U}
-0800D340	Function to operate event instruction	void	r0=Event instruction pointer:POINTER_EVENT	r1=?1-3	{J}
-0800D07C	Function to operate event instruction	void	r0=Event instruction pointer:POINTER_EVENT	r1=?1-3	{U}
-080860A8	Set flag	void	r0=Flags:FLAG	{J}
-08083D80	Set flag	void	r0=Flags:FLAG	{U}
-080860D0	Check Flag	RET=BOOL	r0=Flag to check:FLAG	{J}
-08083DA8	Check Flag	RET=BOOL	r0=Flag to check:FLAG	{U}
-0800D548	A function that displays a conversation with a string number	void	r0=String number:TEXT	{J}
-0800D284	A function that displays a conversation with a string number	void	r0=String number:TEXT	{U}
+0800D340	CallMapEventEngine	void	r0=Event instruction pointer:POINTER_EVENT	r1=?1-3	{J}
+0800D07C	CallMapEventEngine	void	r0=Event instruction pointer:POINTER_EVENT	r1=?1-3	{U}
+080860A8	SetFlag	void	r0=Flags:FLAG	{J}
+08083D80	SetFlag	void	r0=Flags:FLAG	{U}
+080860D0	CheckFlag	RET=BOOL	r0=Flag to check:FLAG	{J}
+08083DA8	CheckFlag	RET=BOOL	r0=Flag to check:FLAG	{U}
+0800D548	CallBattleQuoteTextEvents	void	r0=String number:TEXT	{J}
+0800D284	CallBattleQuoteTextEvents	void	r0=String number:TEXT	{U}
 080D01FC	m4aSongNumStart	r0=music id:SOUND	{U}
-0802cb70	Function to make experience+10	void	r0=A unit that gives experience values:UNIT	{J}
-0802CC38	Function to make experience+10	void	r0=A unit that gives experience values:UNIT	{U}
-08034520	A function that returns address of map setting from map number	r0=Address of map setting	r0=map ID you want to examine:MAPCHAPTER	{J}
-08034618	A function that returns address of map setting from map number	r0=Address of map setting	r0=map ID you want to examine:MAPCHAPTER	{U}
-080a8d94	Function to write clear turn	void	r0=202bcec Fixed?	{J}
-080A4350	Function to write clear turn	void	r0=202bcec Fixed?	{U}
-08002c30	6C Struct Script loading	void	r0=6C Struct	r1=Unknown	{J}
-08002CE0	6C Struct Script loading	void	r0=6C Struct	r1=Unknown	{U}
+0802cb70	FinishUp10ExpBattle	void	r0=A unit that gives experience values:UNIT	{J}
+0802CC38	FinishUp10ExpBattle	void	r0=A unit that gives experience values:UNIT	{U}
+08034520	GetChapterDefinition	r0=Address of map setting	r0=map ID you want to examine:MAPCHAPTER	{J}
+08034618	GetChapterDefinition	r0=Address of map setting	r0=map ID you want to examine:MAPCHAPTER	{U}
+080a8d94	RegisterChapterTimeAndTurnCount	void	r0=202bcec Fixed?	{J}
+080A4350	RegisterChapterTimeAndTurnCount	void	r0=202bcec Fixed?	{U}
+08002c30	ProcStartBlocking	void	r0=6C Struct	r1=Unknown	{J}
+08002CE0	ProcStartBlocking	void	r0=6C Struct	r1=Unknown	{U}
 08000d68	CopyToPaletteBuffer Copies palette to buffer and sets updated palette flag	void	r0=Palette Address:PAL	r1=destination offset	r2=size(0x20 full)	{J}
 08000DB8	CopyToPaletteBuffer Copies palette to buffer and sets updated palette flag	void	r0=Palette Address:PAL	r1=destination offset	r2=size(0x20 full)	{U}
 08013008	LZ77 Decompression of compressed data	void	r0=Compressed data	r1=Extracted location	{J}
@@ -12604,3 +12604,21 @@ r3=X tile position of menu of right	{U}
 080AD508	SaveMenu_LoadNextChapterName	{J}
 080c2030	Worldmap_GetNextChapterID	{J}
 080BD224	Worldmap_GetNextChapterID	{U}
+080C572C	IsExtraMap_WorldmapSkirmishes	{J}
+080989d4	PrepScreen_RightUP_LoadChapterOBJ	{J}
+08098a94	PrepScreen_RightUP_LoadTowerOBJ	{J}
+08098b54	PrepScreen_RightUP_LoadRuinsOBJ	{J}
+08098c14	PrepScreen_RightUP_LoadExtraOBJ	{J}
+080C0960	IsExtraMap_WorldmapSkirmishes	{U}
+080966F0	PrepScreen_RightUP_LoadChapterOBJ	{U}
+080967B0	PrepScreen_RightUP_LoadTowerOBJ	{U}
+08096870	PrepScreen_RightUP_LoadRuinsOBJ	{U}
+08096930	PrepScreen_RightUP_LoadExtraOBJ	{U}
+08A942C6	:08A942D3	PrepScreen_RightUP_ChapterOBJ_Data	{J}
+08A942D4	:08A942E1	PrepScreen_RightUP_TowerOBJ_Data	{J}
+08A942E2	:08A942EF	PrepScreen_RightUP_RuinsOBJ_Data	{J}
+08A942F0	:08A942FD	PrepScreen_RightUP_ExtraOBJ_Data	{J}
+08A18582	:08A1858F	PrepScreen_RightUP_ChapterOBJ_Data	{U}
+08A18590	:08A1859D	PrepScreen_RightUP_TowerOBJ_Data	{U}
+08A1859E	:08A185AB	PrepScreen_RightUP_RuinsOBJ_Data	{U}
+08A185AC	:08A185B9	PrepScreen_RightUP_ExtraOBJ_Data	{U}
