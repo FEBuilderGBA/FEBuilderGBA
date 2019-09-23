@@ -10,6 +10,6 @@ AUTHOR=aera
 
 EA=EA.txt
 NAME.en=Change support conversation to 5 people instead of 5 times
-INFO.en=Change support conversation to 5 people instead of 5 times.\r\nYou will be able to talk a total of 5 * 2 times = 10 + 1 time.\r\nHowever, only one person can do it.
+INFO.en=Change support conversation to 5 people instead of 5 times.\r\nYou will be able to talk a total of 5 * 2 times = 10 + 1 time.\r\nHowever, only one person can do Support Level A.
 NAME.zh=将支持对话更改为5人而不是5次
-INFO.zh=我会将支持对话更改为5人而不是5次。\r\n你总共可以说5 * 2次= 10 + 1次。\r\n但是，只有一个人可以做到这一点。
+INFO.zh=我会将支持对话更改为5人而不是5次。\r\n你总共可以说5 * 2次= 10 + 1次。\r\n但是，只有一个人可以执行支持级别A。
