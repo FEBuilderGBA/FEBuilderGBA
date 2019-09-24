@@ -4634,7 +4634,7 @@ namespace FEBuilderGBA
 
         private void OBJECT_N05_B10_ValueChanged(object sender, EventArgs e)
         {
-            if (OBJECT_N05_B10.Value == 0x22)
+            if (OBJECT_N05_W10.Value == 0x22)
             {
                 OBJECT_N05_J_2_FLAG.Text = R._("階段ID");
                 OBJECT_N05_L_2_FLAG.Hide();

@@ -10,9 +10,9 @@ POINTER=$FGREP4END+8 Set_Debuffs.dmp
 //データサイズ(10進数)
 DATASIZE=3
 
-//データ個数 00 が出てくるまで
-//DATACOUNT=$GREP3 0x00 0x00 0x00
-DATACOUNT=2
+//データ個数検索
+DATACOUNT=$GREP3 0x02 0x30 0x03
+//DATACOUNT=2
 
 //データを定義します
 B0=(skl<<4)|str
