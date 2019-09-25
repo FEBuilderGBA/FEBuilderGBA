@@ -952,7 +952,7 @@ namespace FEBuilderGBA
 
             List<uint> tracelist = new List<uint>();
 
-            uint objectTypeOfSeize = 0x11;
+//            uint objectTypeOfSeize = 0x11;
             uint objectTypeOfDoor = 0x12;
             uint objectTypeOfTownCenter = 0x20;
             uint objectTypeOfHouse = 0x10;
@@ -962,7 +962,7 @@ namespace FEBuilderGBA
             uint objectTypeOfSecret = 0x18;
             if (Program.ROM.RomInfo.version() <= 7)
             {
-                objectTypeOfSeize = 0xF;
+//                objectTypeOfSeize = 0xF;
                 objectTypeOfDoor = 0x10;
                 objectTypeOfTownCenter = 0x1D;
                 objectTypeOfHouse = 0xE;
@@ -997,36 +997,6 @@ namespace FEBuilderGBA
 
                 if (type == 0x5)
                 {//05=制圧ポイントと民家
-                    if (Program.ROM.RomInfo.version() == 8 && (object_type == objectTypeOfChest))
-                    {//FE8にはあるランダム宝箱
-
-                    }
-                    else if ((object_type == objectTypeOfArmory || object_type == objectTypeOfVendor || object_type == objectTypeOfSecret))
-                    {//店の種類を指定しても動くらしい。
-                    }
-                    else
-                    {
-                        FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.OBJECT, addr, false, tracelist);
-
-                        if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfChest))
-                        {//FE6にはあるイベント付き宝箱
-
-                        }
-                        else if (Program.ROM.RomInfo.version() == 6 && (object_type == objectTypeOfDoor))
-                        {//FE6ではドアを指定してもいいらしい.
-                        }
-                        else if ((object_type == 0x12 || object_type == 0x13) && PatchUtil.SearchEscapeArriveHackPatch())
-                        {//到達/離脱拡張
-                        }
-                        else if ((object_type == 0x22) && PatchUtil.SearchStairsHackPatch())
-                        {//階段拡張
-                        }
-                        else if (!(object_type == objectTypeOfSeize || object_type == objectTypeOfTownCenter || object_type == objectTypeOfHouse))
-                        {
-                            errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
-                                , R._("「制圧ポイントと民家」なのに、種類で「{0}」が設定されています。", U.To0xHexString(object_type))));
-                        }
-                    }
                 }
                 else if (type == 0x6)
                 {//06=訪問村

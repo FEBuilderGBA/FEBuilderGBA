@@ -11,8 +11,7 @@ POINTER=$FGREP4END+8 Set_Debuffs.dmp
 DATASIZE=3
 
 //データ個数検索
-DATACOUNT=$GREP3 0x02 0x30 0x03
-//DATACOUNT=2
+DATACOUNT=$EndWeaponDebuffTable 0x00	//専用ルーチン
 
 //データを定義します
 B0=(skl<<4)|str
