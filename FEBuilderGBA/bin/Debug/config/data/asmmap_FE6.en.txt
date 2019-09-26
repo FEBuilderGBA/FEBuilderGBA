@@ -1367,3 +1367,7 @@
 080435EC	LoadHPBarImage
 08003f6c	Goto6CLabel
 08087BC4	DisplayMiniMap
+08070B8C	Called when you have an R-text bubble open and you move the cursor UP
+08070BBC	Called when R-text is open and moving DOWN
+08070BEC	Called when R-text is open and moving LEFT
+08070C1C	Called when R-text is open and moving RIGHT

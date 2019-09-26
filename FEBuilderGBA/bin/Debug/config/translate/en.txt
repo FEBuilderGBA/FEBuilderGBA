@@ -1642,6 +1642,12 @@ Map
 :14=ランダム宝箱
 14=Random Chest
 
+:12=到達
+12=Arrive
+
+:13=離脱
+13=Escape
+
 :22=階段拡張
 22=Stairs Hack
 
@@ -7499,7 +7505,7 @@ Action Pointer When Selected
 Action Pointer When Canceled
 
 :この項目をメニューに表示するかどうかを決定する関数を指定します。\r\nこの関数の戻り値(r0)が1だった場合、この項目がメニューが表示されます。\r\n戻り値(r0)が3だった場合は、メニューが表示されません。\r\nこの項目は必須項目です。
-Specify a function to decide whether to display this item on the menu.\r\nIf the return value (r 0) of this function is 1, a menu will be displayed for this item.\r\nIf the return value (r 0) is 3, the menu will not be displayed.\r\nThis item is a mandatory item.
+Specify a function to decide whether to display this item on the menu.\r\nIf the return value (r0) of this function is 1, a menu will be displayed for this item.\r\nIf the return value (r0) is 3, the menu will NOT be displayed.\r\nThis item is a mandatory item.
 
 :この項目を描画するときに利用する関数を指定します。\r\n0の場合は、デフォルト描画が呼び出されます。単純にテキストを描画します。
 Specify the function to use when drawing this item.\r\nIf 0, the default drawing is called.Simply draw the text.

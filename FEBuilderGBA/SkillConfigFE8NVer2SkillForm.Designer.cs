@@ -53,7 +53,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.N1_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N1_L_0_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.N1_J_0_CLASS = new System.Windows.Forms.Label();
+            this.N1_J_0_UNIT = new System.Windows.Forms.Label();
             this.N1_B0 = new System.Windows.Forms.NumericUpDown();
             this.N1_L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -125,7 +125,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.N3_ZeroPointerPanel = new System.Windows.Forms.Label();
             this.N3_L_0_ITEM = new FEBuilderGBA.TextBoxEx();
-            this.N3_J_0_CLASS = new System.Windows.Forms.Label();
+            this.N3_J_0_ITEM = new System.Windows.Forms.Label();
             this.N3_B0 = new System.Windows.Forms.NumericUpDown();
             this.N3_L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -543,7 +543,7 @@
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.N1_ZeroPointerPanel);
             this.panel12.Controls.Add(this.N1_L_0_UNIT);
-            this.panel12.Controls.Add(this.N1_J_0_CLASS);
+            this.panel12.Controls.Add(this.N1_J_0_UNIT);
             this.panel12.Controls.Add(this.N1_B0);
             this.panel12.Controls.Add(this.N1_L_0_UNITICON);
             this.panel12.Location = new System.Drawing.Point(256, 113);
@@ -570,16 +570,16 @@
             this.N1_L_0_UNIT.Size = new System.Drawing.Size(178, 25);
             this.N1_L_0_UNIT.TabIndex = 120;
             // 
-            // N1_J_0_CLASS
+            // N1_J_0_UNIT
             // 
-            this.N1_J_0_CLASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N1_J_0_CLASS.Location = new System.Drawing.Point(2, 6);
-            this.N1_J_0_CLASS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N1_J_0_CLASS.Name = "N1_J_0_CLASS";
-            this.N1_J_0_CLASS.Size = new System.Drawing.Size(191, 30);
-            this.N1_J_0_CLASS.TabIndex = 115;
-            this.N1_J_0_CLASS.Text = "ユニット";
-            this.N1_J_0_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N1_J_0_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N1_J_0_UNIT.Location = new System.Drawing.Point(2, 6);
+            this.N1_J_0_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N1_J_0_UNIT.Name = "N1_J_0_UNIT";
+            this.N1_J_0_UNIT.Size = new System.Drawing.Size(191, 30);
+            this.N1_J_0_UNIT.TabIndex = 115;
+            this.N1_J_0_UNIT.Text = "ユニット";
+            this.N1_J_0_UNIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N1_B0
             // 
@@ -1388,7 +1388,7 @@
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel15.Controls.Add(this.N3_ZeroPointerPanel);
             this.panel15.Controls.Add(this.N3_L_0_ITEM);
-            this.panel15.Controls.Add(this.N3_J_0_CLASS);
+            this.panel15.Controls.Add(this.N3_J_0_ITEM);
             this.panel15.Controls.Add(this.N3_B0);
             this.panel15.Controls.Add(this.N3_L_0_ITEMICON);
             this.panel15.Location = new System.Drawing.Point(250, 115);
@@ -1415,16 +1415,16 @@
             this.N3_L_0_ITEM.Size = new System.Drawing.Size(178, 25);
             this.N3_L_0_ITEM.TabIndex = 120;
             // 
-            // N3_J_0_CLASS
+            // N3_J_0_ITEM
             // 
-            this.N3_J_0_CLASS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N3_J_0_CLASS.Location = new System.Drawing.Point(2, 6);
-            this.N3_J_0_CLASS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N3_J_0_CLASS.Name = "N3_J_0_CLASS";
-            this.N3_J_0_CLASS.Size = new System.Drawing.Size(191, 30);
-            this.N3_J_0_CLASS.TabIndex = 115;
-            this.N3_J_0_CLASS.Text = "アイテム";
-            this.N3_J_0_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N3_J_0_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N3_J_0_ITEM.Location = new System.Drawing.Point(2, 6);
+            this.N3_J_0_ITEM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N3_J_0_ITEM.Name = "N3_J_0_ITEM";
+            this.N3_J_0_ITEM.Size = new System.Drawing.Size(191, 30);
+            this.N3_J_0_ITEM.TabIndex = 115;
+            this.N3_J_0_ITEM.Text = "アイテム";
+            this.N3_J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N3_B0
             // 
@@ -2511,7 +2511,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Panel panel12;
         private FEBuilderGBA.TextBoxEx N1_L_0_UNIT;
-        private System.Windows.Forms.Label N1_J_0_CLASS;
+        private System.Windows.Forms.Label N1_J_0_UNIT;
         private System.Windows.Forms.NumericUpDown N1_B0;
         private InterpolatedPictureBox N1_L_0_UNITICON;
         private System.Windows.Forms.Panel panel8;
@@ -2521,7 +2521,7 @@
         private InterpolatedPictureBox N2_L_0_CLASSICON;
         private System.Windows.Forms.Panel panel15;
         private FEBuilderGBA.TextBoxEx N3_L_0_ITEM;
-        private System.Windows.Forms.Label N3_J_0_CLASS;
+        private System.Windows.Forms.Label N3_J_0_ITEM;
         private System.Windows.Forms.NumericUpDown N3_B0;
         private InterpolatedPictureBox N3_L_0_ITEMICON;
         private System.Windows.Forms.Label label5;

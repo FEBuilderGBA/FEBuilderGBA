@@ -4775,3 +4775,11 @@
 08018578	GetUnitAidIconId	{U}
 080A3284	DisplayMiniMap	{U}
 080A3EF8	DisplayMiniMap	{J}
+08081E84	Called when you have an R-text bubble open and you move the cursor UP	{U}
+08081EB4	Called when R-text is open and moving DOWN	{U}
+08081EE4	Called when R-text is open and moving LEFT	{U}
+08081f14	Called when R-text is open and moving RIGHT	{U}
+08082BE4	Called when you have an R-text bubble open and you move the cursor UP	{J}
+08082C14	Called when R-text is open and moving DOWN	{J}
+08082C44	Called when R-text is open and moving LEFT	{J}
+08082C74	Called when R-text is open and moving RIGHT	{J}

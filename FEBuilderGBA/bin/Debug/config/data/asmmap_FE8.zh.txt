@@ -12577,3 +12577,11 @@ r3=X tile position of menu of the right	{U}
 08A18590	:08A1859D	PrepScreen_RightUP_TowerOBJ_Data	{U}
 08A1859E	:08A185AB	PrepScreen_RightUP_RuinsOBJ_Data	{U}
 08A185AC	:08A185B9	PrepScreen_RightUP_ExtraOBJ_Data	{U}
+08089354	Called when you have an R-text bubble open and you move the cursor UP	{U}
+08089384	Called when R-text is open and moving DOWN	{U}
+080893B4	Called when R-text is open and moving LEFT	{U}
+080893E4	Called when R-text is open and moving RIGHT	{U}
+0808B5E0	Called when you have an R-text bubble open and you move the cursor UP	{J}
+0808B610	Called when R-text is open and moving DOWN	{J}
+0808B640	Called when R-text is open and moving LEFT	{J}
+0808B670	Called when R-text is open and moving RIGHT	{J}
