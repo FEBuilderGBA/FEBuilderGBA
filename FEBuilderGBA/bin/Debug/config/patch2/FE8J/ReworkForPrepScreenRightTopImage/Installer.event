@@ -1,0 +1,20 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $98DF4		//FE8J
+jumpToHack(ReworkForPrepScreenRightTopImage)
+POP
+
+ALIGN 4
+ReworkForPrepScreenRightTopImage:
+#incbin "ReworkForPrepScreenRightTopImage.dmp"
+POIN ReworkForPrepScreenRightTopImage_Table
+
+#include "ReworkForPrepScreenRightTopImage_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

@@ -13,3 +13,4 @@ REPLACE_POINTER:0x809B10=ITEM
 
 INFO=アイテムを所持しているだけで補正値を受けられます。\r\nこのバージョンは、no-stackバージョンです。\r\n同一パラメータを増幅させるアイテムを複数所持していた時に、効果が重複させません。
 INFO.en=This version is a no-stack version.\r\nThe effect will not overlap when you have multiple items that amplify the same parameter.
+INFO.zh=只需按住一个项目即可接收校正值。\r\n此版本是无堆栈版本。\r\n当您有多个项目可以放大同一参数时，效果不会重叠。

@@ -1,0 +1,7 @@
+Table=$44
+Loop=$04
+LoadDefault=$28
+CheckMapID=$0C
+CheckFlag=$14
+Found=$24
+Exit=$2A

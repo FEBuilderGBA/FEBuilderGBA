@@ -8,3 +8,5 @@ TYPE=EA
 EA=FcukTanks.event
 
 PATCHED_IF:0x03DF10=0x00 0x4B 0x18 0x47
+NAME.zh=如果无法造成伤害，请修改战斗AI以使其不发动攻击。
+INFO.zh=如果不是像FE3，FE4战斗AI这样的攻击造成伤害，则将其修改为不攻击对手。

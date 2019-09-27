@@ -1,0 +1,5 @@
+0=Hide
+1=ChapterNN
+2=TowerNN
+3=RuinsNN
+4=ExtraMap

@@ -1,0 +1,17 @@
+NAME=進撃準備の右上の画像を変更する(導入)
+NAME.en=Change image in upper right of the preparations(Install)
+
+INFO=進撃準備の右上に表示されている、"Chapter NN","Tower NN","Ruins NN","Extra Map"の定義を自由に変更でるようにします。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x98DF4=0x00 0x4B
+EDIT_PATCH=PATCH_ReworkForPrepScreenRightTopImage.txt
+EA=Installer.event
+
+AUTHOR=7743
+INFO.en=The definition of "Chapter NN\
+NAME.zh=更改预先准备（简介）右上方的图像。
+INFO.zh=可以在预先准备的右上方显示“第NN章”，“ Tower NN”，“ Ruins NN”，“ Extra Map”的定义。
