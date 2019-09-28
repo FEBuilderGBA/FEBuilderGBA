@@ -263,7 +263,7 @@ namespace FEBuilderGBA
         uint function_event_engine_loop_address(); //イベントエンジン
         uint workmemory_reference_procs_event_address_offset(); //Procsのイベントエンジンでのイベントのアドレスを格納するuser変数の場所
         uint workmemory_procs_game_main_address(); //ワークメモリ Procsの中でのGAMEMAIN
-        uint Procs_game_main_address(); //PROCSのGAME MAIN 
+        uint procs_game_main_address(); //PROCSのGAME MAIN 
         uint workmemory_palette_address(); //RAMに記録されているダブルバッファのパレット領域
         uint workmemory_sound_player_00_address(); //RAMに設定されているサウンドプレイヤーバッファ
         uint workmemory_sound_player_01_address(); //RAMに設定されているサウンドプレイヤーバッファ

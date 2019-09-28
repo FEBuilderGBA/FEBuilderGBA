@@ -23,7 +23,7 @@ namespace FEBuilderGBA
                 ASMMapLoadResource(asmmap, Program.ROM);
             }
             //ROM情報をmapとして利用する.
-            ROMInfoLoadResource(this.AsmMap);
+            ROMInfoLoadResource(this.AsmMap , isWithOutProcs: false);
             //構造体スキャン
             ROMTypeLoadResource();
 
@@ -187,12 +187,20 @@ namespace FEBuilderGBA
         }
 
 
-        public static void ROMInfoLoadResource(Dictionary<uint, AsmMapSt> asmMap)
+        public static void ROMInfoLoadResource(Dictionary<uint, AsmMapSt> asmMap, bool isWithOutProcs)
         {
             //せっかくなので、ROMで判明しているデータも追加する.
             MethodInfo[] methods = Program.ROM.RomInfo.GetType().GetMethods();
             foreach (MethodInfo info in methods)
             {
+                if (isWithOutProcs)
+                {
+                    if (info.Name.IndexOf("procs") >= 0)
+                    {
+                        continue;
+                    }
+                }
+
                 if (info.Name.IndexOf("_pointer") >= 0)
                 {
                     uint addr = (uint)info.Invoke(Program.ROM.RomInfo, null);

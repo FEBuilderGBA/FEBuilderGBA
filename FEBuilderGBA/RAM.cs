@@ -572,7 +572,7 @@ namespace FEBuilderGBA
             }
 
             uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address() - 0x02000000;
-            uint rom_procs_game_main = Program.ROM.RomInfo.Procs_game_main_address();
+            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address();
 
             uint procs_forest_address = Program.ROM.RomInfo.workmemory_procs_forest_address() - 0x02000000;
             
@@ -711,7 +711,7 @@ namespace FEBuilderGBA
 
             //必須の値があるかどうかチェックする.
             uint procs_game_main = Program.ROM.RomInfo.workmemory_procs_game_main_address() - 0x02000000;
-            uint rom_procs_game_main = Program.ROM.RomInfo.Procs_game_main_address();
+            uint rom_procs_game_main = Program.ROM.RomInfo.procs_game_main_address();
             uint addr = this.AppnedOffset02 + procs_game_main;
             uint data = U.u32(buffer, addr);
             if (data != rom_procs_game_main)

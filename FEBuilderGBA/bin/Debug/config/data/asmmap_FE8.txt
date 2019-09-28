@@ -12628,3 +12628,9 @@
 0808B610	Called when R-text is open and moving DOWN	{J}
 0808B640	Called when R-text is open and moving LEFT	{J}
 0808B670	Called when R-text is open and moving RIGHT	{J}
+080A8890	LoadSoundRoomEnableList	{J}
+080A88E8	SaveSoundRoomEnableList_Inner	{J}
+080A894C	SaveSoundRoomEnableList	r1=SongID	{J}
+080A3E4C	LoadSoundRoomEnableList	{U}
+080A3EA4	SaveSoundRoomEnableList_Inner	{U}
+080A3F08	SaveSoundRoomEnableList	r1=SongID	{U}
