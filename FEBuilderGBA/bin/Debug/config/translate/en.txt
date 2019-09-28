@@ -9400,8 +9400,32 @@ SwordType
 :クラス分類
 Classification.
 
+:曲を取り出すROMを「--fromrom」で指定してください。
+Specify the ROM from which the song is to be extracted with “--fromrom”.
+
+:曲をインポートする場所を「--tosong」で指定してください。
+Please specify the location to import the song with "--tosong".
+
+:曲をエクスポートする場所を「--fromsong」で指定してください。
+Please specify the location to export the song with "--fromsong".
+
+:曲のインポートに失敗しました。
+Failed to import song.
+
+:相手のROMが読み込まれていません
+The other party's ROM is not loaded.
+
+:エクスポートする曲がリストから選択されていません
+The song to export is not selected from the list.
+
+:インポートする曲がリストから選択されていません.
+The song to import is not selected from the list.
+
 :この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？
 Are you sure you want to port this music ({0}) to (1) in ROM?
+
+:曲のインポートが完了しました。
+The song has been imported.
 
 :この曲のデータ構造は壊れているようです。\r\nインポートを強行しますか？\r\n強行する場合は、正しく認識できたトラックのみをインポートします。
 The data structure of this song seems to be broken.\r\nDo you want to force import? \r\nIf you want to force, only the tracks that were recognized correctly will be imported.

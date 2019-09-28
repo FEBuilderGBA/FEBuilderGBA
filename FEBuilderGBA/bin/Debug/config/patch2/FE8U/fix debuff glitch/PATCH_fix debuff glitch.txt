@@ -17,3 +17,4 @@ INFO.en=Patches the ROM to remove the debuff glitch introduced with the Skill Sy
 INFO.zh=技能系统的衰退修复小故障
 
 AUTHOR=Kirb http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/239
+DEPRECATED=1

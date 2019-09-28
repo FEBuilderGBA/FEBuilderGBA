@@ -130,6 +130,12 @@ namespace FEBuilderGBA
                 Environment.Exit(ToolUPSPatchSimpleForm.CommandLineMakeUPS());
                 return true;
             }
+            if (ArgsDic.ContainsKey("--songexchange"))
+            {//曲交換
+                Program.IsCommandLine = true;
+                Environment.Exit(SongExchangeForm.CommandLineImport());
+                return true;
+            }
 
 #if DEBUG
             //デバッグの場合はテストを実行

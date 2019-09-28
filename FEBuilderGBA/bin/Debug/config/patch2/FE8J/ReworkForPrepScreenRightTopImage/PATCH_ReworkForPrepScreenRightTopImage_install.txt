@@ -12,6 +12,6 @@ EDIT_PATCH=PATCH_ReworkForPrepScreenRightTopImage.txt
 EA=Installer.event
 
 AUTHOR=7743
-INFO.en=The definition of "Chapter NN\
-NAME.zh=更改预先准备（简介）右上方的图像。
+INFO.en=The definition of "Chapter NN", "Tower NN", "Ruins NN", "Extra Map" displayed at the upper right of the advance preparation can be changed freely.
+NAME.zh=在预先准备的右上方更改图像。(Install)
 INFO.zh=可以在预先准备的右上方显示“第NN章”，“ Tower NN”，“ Ruins NN”，“ Extra Map”的定义。

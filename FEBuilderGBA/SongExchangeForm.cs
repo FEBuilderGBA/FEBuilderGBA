@@ -37,7 +37,56 @@ namespace FEBuilderGBA
         string OtherROMFilename;
         string ErrorMessage;
 
-        private void button1_Click(object sender, EventArgs e)
+        public static int CommandLineImport()
+        {
+            U.echo("CommandLineImport");
+            string fromrom = U.at(Program.ArgsDic, "--fromrom");
+            if (fromrom == "")
+            {
+                fromrom = U.at(Program.ArgsDic, "--target");
+            }
+            if (!File.Exists(fromrom))
+            {
+                U.echo("曲を取り出すROMを「--fromrom」で指定してください。");
+                return -2;
+            }
+
+            SongExchangeForm f = (SongExchangeForm)InputFormRef.JumpFormLow<SongExchangeForm>();
+            f.LoadSongListAtOtherROM(fromrom);
+
+            uint tosong = U.atoi0x(U.at(Program.ArgsDic, "--tosong"));
+            if (tosong <= 0)
+            {
+                U.echo("曲をインポートする場所を「--tosong」で指定してください。");
+                return -2;
+            }
+            U.SelectedIndexSafety(f.SongTable, tosong - 1);
+
+            uint fromsong = U.atoi0x(U.at(Program.ArgsDic, "--fromsong"));
+            if (fromsong <= 0)
+            {
+                U.echo("曲をエクスポートする場所を「--fromsong」で指定してください。");
+                return -2;
+            }
+            U.SelectedIndexSafety(f.OtherROMSongTable, fromsong - 1);
+
+            f.ConvertButton_Click(null, null);
+
+            //インポートに成功したら保存する.
+            if (Program.ROM.Modified)
+            {
+                MainFormUtil.SaveForce(f);
+            }
+            else
+            {
+                U.echo("曲のインポートに失敗しました。");
+                return -1;
+            }
+
+            return 0;
+        }
+
+        private void ConvertButton_Click(object sender, EventArgs e)
         {
             if (InputFormRef.IsPleaseWaitDialog(this))
             {
@@ -47,14 +96,17 @@ namespace FEBuilderGBA
 
             if (OtherSongList == null)
             {
+                R.Error("相手のROMが読み込まれていません");
                 return;
             }
             if (OtherROMSongTable.SelectedIndex < 0 || OtherROMSongTable.SelectedIndex > OtherSongList.Count)
             {
+                R.Error("エクスポートする曲がリストから選択されていません");
                 return;
             }
             if (SongTable.SelectedIndex < 0 || SongTable.SelectedIndex > MySongList.Count)
             {
+                R.Error("インポートする曲がリストから選択されていません.");
                 return;
             }
             DialogResult dr = R.ShowYesNo("この音楽({0})を、現在のROMの({1})に、移植してもよろしいですか？", OtherROMSongTable.Text, SongTable.Text);
@@ -64,6 +116,7 @@ namespace FEBuilderGBA
             }
 
             ConvertSong(OtherROMData, OtherSongList[OtherROMSongTable.SelectedIndex], Program.ROM.Data, MySongList[SongTable.SelectedIndex]);
+            R.Notify("曲のインポートが完了しました。");
 
             //変更があったので、データを取り直して描画しなおす.
             int nowselect = SongTable.SelectedIndex;
@@ -90,9 +143,12 @@ namespace FEBuilderGBA
                 return ;
             }
             Program.LastSelectedFilename.Save(this, "", open);
-
-            this.OtherROMFilename = open.FileNames[0];
-            this.OtherROMData = File.ReadAllBytes(open.FileNames[0]);
+            LoadSongListAtOtherROM(open.FileNames[0]);
+        }
+        void LoadSongListAtOtherROM(string filename)
+        {
+            this.OtherROMFilename = filename;
+            this.OtherROMData = File.ReadAllBytes(filename);
 
             this.OtherSongList = SongTableToSongList(this.OtherROMData);
             SongListToListBox(this.OtherSongList, this.OtherROMSongTable, false);
@@ -204,7 +260,6 @@ namespace FEBuilderGBA
             //取り出した曲を書き込む.
             Burn(destsong, instrument_map, trackdata);
         }
-
 
         void Burn( SongSt song, InstrumentMap instrument_map, List<List<byte>> trackdata)
         {
@@ -347,7 +402,22 @@ namespace FEBuilderGBA
             Program.ROM.write_u32(song.table, U.toPointer(write_pointer));
             InputFormRef.WriteBinaryDataDirect(write_pointer, data, undodata);
 
+            uint priority = GetSongPriority(trackdata.Count);
+            Program.ROM.write_u32(song.table + 4, priority, undodata);
+
             Program.Undo.Push(undodata);
+        }
+
+        uint GetSongPriority(int trackdata)
+        {
+            if (trackdata <= 1)
+            {//SFX?
+                return 0x60006;
+            }
+            else
+            {//MAP
+                return 0x10001;
+            }
         }
 
         void burn_track(byte[] data,uint offset,uint write_pointer ,byte[] trackdata)

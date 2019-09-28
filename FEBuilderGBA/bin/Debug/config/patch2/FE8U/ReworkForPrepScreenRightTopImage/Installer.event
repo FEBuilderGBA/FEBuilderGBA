@@ -4,7 +4,7 @@
 #include "Extensions/Hack Installation.txt"
 
 PUSH
-ORG $96B10		//FE8J
+ORG $96B10		//FE8U
 jumpToHack(ReworkForPrepScreenRightTopImage)
 POP
 
