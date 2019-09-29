@@ -508,3 +508,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050200XXXX0000400A000084E19E08	If Creature Campaign mode, enable [XX:FLAG:Flag]	{U}
 400D000055D60008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{J}
 400D000091D30008	Show Game Over Screen	GAMEOVER appears on the screen and returns to OP title.	{U}
+400A00006C9D5B08	Show SVAL2'sTextID(LOW)	{J}
+400A0000881F5908	Show SVAL2'sTextID(LOW)	{U}
+400A0000FC03A608	Fade-in relationship processing(LOW)	{J}
+400A0000C4E29E08	Fade-in relationship processing(LOW)	{U}

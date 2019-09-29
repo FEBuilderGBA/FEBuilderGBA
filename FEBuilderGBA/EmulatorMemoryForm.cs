@@ -45,6 +45,8 @@ namespace FEBuilderGBA
             SetSpeechIcon();
             SetSubtileIcon();
 
+            InitIgnoreEvent();
+
             InputFormRef.makeLinkEventHandler("", controls, this.BGM, this.BGMName, 0, "SONG", args);
             InputFormRef.makeJumpEventHandler(this.BGM, this.J_BGM, "SONG", args);
 
@@ -186,7 +188,7 @@ namespace FEBuilderGBA
             this.UserStack = Program.RAM.getBinaryData(0x03007000, 0x03007F00 - 0x03007000);
         }
 
-        bool FindCurrentEvent(out uint out_event,out uint out_running_line)
+        bool FindCurrentEvent(ref uint out_event, ref uint out_running_line)
         {
             //イベントを実行しているProcを特定する.
             uint EventEngineLoopFunction = Program.ROM.RomInfo.function_event_engine_loop_address();
@@ -198,16 +200,23 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-                out_event = Program.RAM.u32(pd.RAMAddr + ref_offset);
-                if (!U.isSafetyPointer(out_event))
+                uint current_event = Program.RAM.u32(pd.RAMAddr + ref_offset);
+                if (!U.isSafetyPointer(current_event))
                 {
                     continue;
                 }
-                out_running_line = Program.RAM.u32(pd.RAMAddr + ref_offset + 4);
-                if (!U.isSafetyPointer(out_running_line))
+                uint current_running_line = Program.RAM.u32(pd.RAMAddr + ref_offset + 4);
+                if (!U.isSafetyPointer(current_running_line))
                 {
                     continue;
                 }
+
+                if (this.IgnoreEvent.ContainsKey(current_event))
+                {
+                    return true;
+                }
+                out_event = current_event;
+                out_running_line = current_running_line;
                 return true;
             }
             out_event = 0;
@@ -215,13 +224,27 @@ namespace FEBuilderGBA
             return false;
         }
 
+        //関数として利用されているイベントを表示しないようにします.
+        Dictionary<uint, bool> IgnoreEvent = new Dictionary<uint,bool>();
+        void InitIgnoreEvent()
+        {
+            List<Address> list = new List<Address>();
+            EventScript.MakeEventASMMAPList(list, true, "", true);
+
+            foreach (Address a in list)
+            {
+                this.IgnoreEvent[U.toPointer(a.Addr)] = true;
+            }
+        }
+
+
         //実行しているイベントの開始アドレス
         uint CurrentEventBegineAddr;
         //実行しているイベントの行のアドレス
         uint CurrentEventRunningLineAddr;
         void UpdateEvent()
         {
-            FindCurrentEvent(out CurrentEventBegineAddr, out CurrentEventRunningLineAddr);
+            FindCurrentEvent(ref CurrentEventBegineAddr, ref CurrentEventRunningLineAddr);
             uint lastStringAddr = Program.ROM.RomInfo.workmemory_last_string_address();
 
             uint currntBGMStructAddr = Program.ROM.RomInfo.workmemory_bgm_address();
