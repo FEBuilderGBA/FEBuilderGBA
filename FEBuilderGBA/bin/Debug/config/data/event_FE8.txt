@@ -104,10 +104,11 @@
 2813XXXX	[XXXX:FSEC:速さ]で画面を戻す	{MAPEFFECT}
 2026XXYY	[XX:MAPX:X][YY:MAPY:Y]へ指定座標カメラ位置変更(ただし中心ではない)(CAM2)	{CAMERA}
 2926XXXX	[XXXX:UNIT:ユニット]に画面瞬間移動(CAM1)	{CAMERA}
-202BXXXX	_0x2B20[XXXX::Value1]
-211EXXXX	_0x211E[XXXX::Value1]
-432C010000000000	_432C
-212BXXXX	_0x2B21[XXXX::Value1]
+211EXXXX	_0x211E[XXXX::Value1](LOW)
+432CXX0000000000	loads current skirmish enemy group respecting restriction.[XX::Value1](LOW)(LOAD4)
+202BXXXX	In ruins. Called before loading units[XXXX::Value1](LOW)(_0x2B20)
+212BXXXX	In ruins after a randomization routine[XXXX::Value1](LOW)(_0x2B21)
+222BXXXX	Called before loading units sometimes[XXXX::Value1](LOW)(_0x2B22)
 202DXX00	これから読込む自軍ユニットの色を[XX:UNIT_COLOR:色]に変更
 202DXX02	これから読込む自軍ユニットの色を[XX:UNIT_COLOR:色]に変更2
 202D0000	これから読込む自軍ユニットの色を元の色で描画する

@@ -12,11 +12,38 @@
       BYTE 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
     ORG $1812C
       jumpToHack(CasualMode)
+    
+    //アイコンをスターにする
+    ORG 0xAAF98C
+    byte 0x20
+    ORG 0xAAF96E
+    short 0x37
+    ORG 0xAAF974
+    short 0xEF5
+    ORG 0xAAF976
+    short 0xEF6
   POP
 
   ALIGN 4
   CasualMode:
     #incbin "asm/CasualModeFE8.dmp"
+
+  ALIGN 4
+  //目的ウィンドウの設定をカジュアルモードに変更する
+  TxtData0x017:
+  #incbin "CasualModeName_Text_17.bin"
+  TxtData0x033:
+  #incbin "CasualModeName_Text_33.bin"
+  TxtData0xEF5:
+  #incbin "CasualModeName_Text_EF5.bin"
+  TxtData0xEF6:
+  #incbin "CasualModeName_Text_EF6.bin"
+
+  #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+  setText_WithHuffman(0x0017,TxtData0x017)
+  setText_WithHuffman(0x0033,TxtData0x033)
+  setText_WithHuffman(0x0EF5,TxtData0xEF5)
+  setText_WithHuffman(0x0EF6,TxtData0xEF6)
 
   }
 

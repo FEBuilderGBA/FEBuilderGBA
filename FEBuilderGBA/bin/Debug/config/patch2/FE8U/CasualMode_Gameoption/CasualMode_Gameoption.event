@@ -16,11 +16,38 @@
 
     ORG $18418
       jumpToHack(CasualMode)
+
+	//アイコン 星のアイコン
+	ORG 0xA2EC28
+	byte $20;
+	ORG 0xA2EC0A
+	short $BE
+	ORG 0xA2EC10
+	short $F04
+	ORG 0xA2EC12
+	short $F05
   POP
 
   ALIGN 4
   CasualMode:
     #incbin "asm/CasualModeFE8.dmp"
+
+  ALIGN 4
+  //地形ウィンドウの設定をオートセーブに変更する
+  TxtData0x09E:
+  #incbin "CasualModeName_Text_9E.bin"
+  TxtData0x0BA:
+  #incbin "CasualModeName_Text_BA.bin"
+  TxtData0xF04:
+  #incbin "CasualModeName_Text_F04.bin"
+  TxtData0xF05:
+  #incbin "CasualModeName_Text_F05.bin"
+
+  #define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset | 0x80000000); POP" //Anti-huffman
+  setText(0x009E,TxtData0x09E)
+  setText(0x00BA,TxtData0x0BA)
+  setText(0x0F04,TxtData0xF04)
+  setText(0x0F05,TxtData0xF05)
 
   }
 

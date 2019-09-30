@@ -14,7 +14,7 @@ INFO.zh=Send anything other than weapons and staffs to Supply.\r\nIf captured en
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 zenazuke_plus_Usability.dmp=0x00 0xB5 0x2B 0x4B
 EA_EXTENDS_UNITMENU:0x01=0x40
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 
 EA=EA.event
 AUTHOR=7743

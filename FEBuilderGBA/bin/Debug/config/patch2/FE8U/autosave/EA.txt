@@ -1,5 +1,4 @@
 PUSH
-
 //ORG	0x015534  //J
 ORG 0x015510      //U
 SHORT	$481C	//ldr	r0, [$080155a8]
@@ -63,19 +62,29 @@ ORG 0x0A5BC0
 ORG 0x0B5ED4
 #incbin "000BA8EC.bin"
 
-//地形ウィンドウの設定をオートセーブに変更する
-//ORG 0x0ED855
-ORG 0xE883C
-#incbin "AutoSaveName_Text_91.bin"
-
-//ORG 0x0EDA04
-ORG 0x0E896A
-#incbin "AutoSaveName_Text_AB.bin"
-
 //アイコン GBAのアイコン
-//ORG 0xAAF750
 ORG 0xA2E9EC
 byte $12;
-
-
+ORG 0xA2E9CE
+short $BE
+ORG 0xA2E9D4
+short $F02
+ORG 0xA2E9D6
+short $F03
 POP
+
+//地形ウィンドウの設定をオートセーブに変更する
+TxtData0x091:
+#incbin "AutoSaveName_Text_91.bin"
+TxtData0x0AB:
+#incbin "AutoSaveName_Text_AB.bin"
+TxtData0xF02:
+#incbin "AutoSaveName_Text_F02.bin"
+TxtData0xF03:
+#incbin "AutoSaveName_Text_F03.bin"
+
+#define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset | 0x80000000); POP" //Anti-huffman
+setText(0x0091,TxtData0x091)
+setText(0x00AB,TxtData0x0AB)
+setText(0x0F02,TxtData0xF02)
+setText(0x0F03,TxtData0xF03)

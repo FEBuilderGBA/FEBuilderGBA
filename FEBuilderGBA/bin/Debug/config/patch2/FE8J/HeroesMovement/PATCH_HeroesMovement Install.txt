@@ -3,7 +3,7 @@ NAME.en=HeroesMovement Standalone(Installer)
 TYPE=EA
 TAG=#ENGINE
 
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 EA_EXTENDS_UNITMENU:0x05=0x40
 
 EA=HeroesMovement/HeroesMovement.event

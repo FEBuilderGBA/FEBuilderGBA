@@ -15,5 +15,7 @@ INFO.en=When resuming from an interruption, add a setting that can be returned a
 NAME.zh=自动保存功能
 INFO.zh=从中断恢复时，添加可在转弯开始时返回的设置，而不是最后一个操作。\r\n倒退一圈\r\n游戏选项中的terrain项目将更改为AutoSave切换。\r\n此补丁通过关闭该地形选项来工作。\r\n重置并恢复后，您可以返回播放器转弯。
 
+EXTENDS:0x1100=TEXT
+
 CONFLICT_IF:0x0A6408=0x2A 0x20 0x70 0x47 0x06 0x49 0x07 0x4C
 CONFLICT_MESSAGE=ExModularSave

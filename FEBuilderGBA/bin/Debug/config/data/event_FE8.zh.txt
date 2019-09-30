@@ -309,10 +309,11 @@
 2813XXXX	用[XXXX:FSEC:速度]返回屏幕	{MAPEFFECT}
 2026XXYY	指定为[XX:MAPX:X][YY:MAPY:Y]指定的坐标相机位置改变(即使指定了屏幕角落也没有中心)(CAM2)	{CAMERA}
 2926XXXX	瞬间移动屏幕到[XXXX:UNIT:人物](CAM1)	{CAMERA}
-202BXXXX	_0x2B20[XXXX::Value1]
-211EXXXX	_0x211E[XXXX::Value1]
-432C010000000000	_432C
-212BXXXX	_0x2B21[XXXX::Value1]
+211EXXXX	_0x211E[XXXX::Value1](LOW)
+432CXX0000000000	loads current skirmish enemy group respecting restriction.[XX::Value1](LOW)(LOAD4)
+202BXXXX	In ruins. Called before loading units[XXXX::Value1](LOW)(_0x2B20)
+212BXXXX	In ruins after a randomization routine[XXXX::Value1](LOW)(_0x2B21)
+222BXXXX	Called before loading units sometimes[XXXX::Value1](LOW)(_0x2B22)
 4032XXXXYYZZ0000	Load one Player unit with it's default parameters(SPAWN_ALLY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
 4132XXXXYYZZ0000	Load one NPC (green) unit with it's default parameters(SPAWN_NPC)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}
 4232XXXXYYZZ0000	Load one Enemy unit with it's default parameters(SPAWN_ENEMY)[XXXX:UNIT:Unit][YY:MAPX:X][ZZ:MAPY:Y]	{LOADUNIT}

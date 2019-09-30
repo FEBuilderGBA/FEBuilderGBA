@@ -9,7 +9,7 @@ EA=FE8-Capture EA.txt
 AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/29
 
 EA_EXTENDS_UNITMENU:0x01=0x40
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 
 INFO=このパッチは、FE5のように素早さ減の状態で敵を攻撃し、敵を捕らえることができるようにします。
 

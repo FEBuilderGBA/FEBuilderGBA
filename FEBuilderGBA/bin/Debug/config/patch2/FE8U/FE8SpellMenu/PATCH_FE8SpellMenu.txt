@@ -5,7 +5,7 @@ NAME.en=FE8SpellMenu: GaidenMagic
 
 EA=GaidenMagic/SpellSystemInstaller.event
 EA_EXTENDS_UNITMENU:0x01=0x40
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 
 //既に適応されたかどうか
 PATCHED_IF:$FGREP4 GaidenMagic/NewSetupBattleWeaponData.dmp=0x05 0x1C 0x0B 0x1C

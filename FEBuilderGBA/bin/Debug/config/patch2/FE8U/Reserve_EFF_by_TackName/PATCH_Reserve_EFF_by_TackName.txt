@@ -4,7 +4,7 @@ NAME.en=Reserved TextID:0xEFF as the display of the tack name
 INFO=テキストID 0xEFFを軍師名表示として予約します。\r\nFE8では、武器とユニット名に入力された軍師名を表示するためには、RAMを直接参照する必要があります。\r\nこのパッチは、文字列0xEFFを入力された名前を表示するエリアとして固定します。\r\n具体的には、イベントで"名前入力画面の呼び出し"を呼び出すと、その名前がRAMに代入されます。\r\nセリフの途中での名前は[Tack]で参照できますが、ユニット名と武器名では利用できません。\r\nそれを解決するために、AntiHuffmanパッチを使い、RAMを直接参照します。\r\nユニット名やアイテム名では、TextID: 0xEFFを参照するように設定することで、表示できるようにします。
 
 TYPE=EA
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 EA=Reserve_EFF_by_TackName.event
 
 AUTHOR=7743

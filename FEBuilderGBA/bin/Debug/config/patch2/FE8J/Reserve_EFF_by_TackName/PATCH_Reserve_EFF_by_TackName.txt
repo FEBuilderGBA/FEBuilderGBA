@@ -5,7 +5,7 @@ INFO=テキストID 0xEFFを軍師名表示として予約します。\r\nFE8で
 
 
 TYPE=EA
-EXTENDS:0x1000=TEXT
+EXTENDS:0x1100=TEXT
 EA=Reserve_EFF_by_TackName.event
 
 AUTHOR=7743

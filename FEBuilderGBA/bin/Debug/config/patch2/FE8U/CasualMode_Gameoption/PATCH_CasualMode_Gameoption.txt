@@ -9,6 +9,8 @@ EA=CasualMode_Gameoption.event
 INFO=プレイヤーユニットが死亡しても、次の章で自動的に復活するようになります。\r\nこのバージョンは、フラグ0xB0ではなく、ゲームオプションで実装したバージョンです。\r\n"クリア目的表示"を表示するオプションを乗っ取って、カジュアルモードに変化させます。\r\n少しわかりにくいですが、"クリア目的表示"の選択子ONはクラシックです。OFFがカジュアルです。\r\nテキストは自分で入れ替えてください。
 
 PATCHED_IF:0x8D0DC=0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+EXTENDS:0x1100=TEXT
+
 
 AUTHOR=7743 Orignal: circleseverywhere
 INFO.en=If a player unit dies, it will automatically be revived in the next chapter.\r\nThis version is not a flag 0xB0, but a version implemented with game options.\r\nTake over the option to display the "Show Objective" and change it to casual mode.\r\nSlightly confusing, but the "Show Objective"'s selector ON is classic. OFF is casual.\r\nPlease replace the text yourself.

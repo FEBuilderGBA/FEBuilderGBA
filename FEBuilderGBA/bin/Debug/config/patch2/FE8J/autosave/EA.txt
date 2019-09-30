@@ -46,16 +46,31 @@ ORG 0x0AA5D8
 ORG 0x0BA8EC
 #incbin "000BA8EC.bin"
 
-//地形ウィンドウの設定をオートセーブに変更する
-ORG 0x0ED855
-#incbin "AutoSaveName_Text_0A.bin"
-
-ORG 0x0EDA04
-#incbin "AutoSaveName_Text_24.bin"
-
 //アイコン GBAのアイコン
 ORG 0xAAF750
 byte $12;
-
+ORG 0xAAF732
+short $37
+ORG 0xAAF738
+short $EF3
+ORG 0xAAF73A
+short $EF4
 
 POP
+
+  ALIGN 4
+//地形ウィンドウの設定をオートセーブに変更する
+TxtData0x00A:
+#incbin "AutoSaveName_Text_0A.bin"
+TxtData0x024:
+#incbin "AutoSaveName_Text_24.bin"
+TxtData0xEF3:
+#incbin "AutoSaveName_Text_EF3.bin"
+TxtData0xEF4:
+#incbin "AutoSaveName_Text_EF4.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+setText_WithHuffman(0x000A,TxtData0x00A)
+setText_WithHuffman(0x0024,TxtData0x024)
+setText_WithHuffman(0x0EF3,TxtData0xEF3)
+setText_WithHuffman(0x0EF4,TxtData0xEF4)
