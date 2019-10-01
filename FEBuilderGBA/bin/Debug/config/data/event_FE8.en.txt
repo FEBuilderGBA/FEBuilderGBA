@@ -437,8 +437,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050D00000000004005010000WWVVVV2107000040050100FFFFFFFF21070000403FXXXXYYYYZZZZ	Set and execute event battle(No counterattack)[WW:DECIMAL:Damage by attacker][VVVV:ATTACK_TYPE:method of attacker][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 40050D00000000004005010000WWVVVV21070000403FXXXXYYYYZZZZ	Event battle setting and execution(No counterattack)[WW:DECIMAL:Damage given by attacker][VVVV:ATTACK_TYPE:Attack method][XXXX:UNIT:Attacker][YY:UNIT:Defender][ZZ:ITEM:Attacker's weapon 00=Currently equipped weapon]	{BATTLE}	{MAPEFFECT}
 
-400A0000249D5B08	Item pre-processing	{ITEM}	{J}
-400A0000401F5908	Item pre-processing	{ITEM}	{U}
+400A0000249D5B08	Fade Screen In From Black	{J}
+400A0000401F5908	Fade Screen In From Black	{U}
 400A0000249D5B0840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting) unit.	{ITEM}	{J}
 400A0000401F590840050300XX0000002037FFFF	Give item[XX:ITEM:item]to active (visiting) unit.	{ITEM}	{U}
 400A0000249D5B0840050300XX0000002037YYYY	Give item[XX:ITEM:item]to[YYYY:UNIT:Character]	{ITEM}	{J}
