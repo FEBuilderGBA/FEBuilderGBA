@@ -913,6 +913,9 @@ namespace FEBuilderGBA
             SelectedChipset_Update();
             MapStyle_SelectedIndexChanged(sender, e);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
+
+            //マップエディタが開いていれば更新する
+            MapEditorForm.UpdateMapStyleIfOpen();
         }
 
         private void PaletteExportButton_Click(object sender, EventArgs e)
@@ -955,6 +958,9 @@ namespace FEBuilderGBA
             SelectedChipset_Update();
             MapStyle_SelectedIndexChanged(sender, e);
             InputFormRef.WriteButtonToYellow(this.PaletteWriteButton, false);
+
+            //マップエディタが開いていれば更新する
+            MapEditorForm.UpdateMapStyleIfOpen();
         }
 
         public static bool MapPaletteImport(Form self,Bitmap bitmap, uint palette_plist)
@@ -1076,6 +1082,9 @@ namespace FEBuilderGBA
             }
 
             Program.Undo.Push(undodata);
+
+            //マップエディタが開いていれば更新する
+            MapEditorForm.UpdateMapStyleIfOpen();
         }
 
         private void WriteButton_Click(object sender, EventArgs e)
@@ -1110,6 +1119,9 @@ namespace FEBuilderGBA
 
             Program.Undo.Push(undodata);
             InputFormRef.WriteButtonToYellow(this.ConfigWriteButton, false);
+
+            //マップエディタが開いていれば更新する
+            MapEditorForm.UpdateMapStyleIfOpen();
         }
 
         private void MapChipExportButton_Click(object sender, EventArgs e)
@@ -1186,6 +1198,9 @@ namespace FEBuilderGBA
 
             //書き込み
             ConfigWriteButton.PerformClick();
+
+            //マップエディタが開いていれば更新する
+            MapEditorForm.UpdateMapStyleIfOpen();
         }
 
         private void PALETTE_TO_CLIPBOARD_BUTTON_Click(object sender, EventArgs e)

@@ -209,6 +209,10 @@ namespace FEBuilderGBA
             {
                 return;
             }
+            UpdateMapStyle();
+        }
+        public void UpdateMapStyle()
+        {
             int id = this.MapStyle.SelectedIndex;
 
             this.BasePictureCache = null;
@@ -2700,6 +2704,15 @@ this.MapObjImage);
                 return;
             }
             ReloadMapChange(mapid,plists, MapChange.SelectedIndex);
+        }
+        public static void UpdateMapStyleIfOpen()
+        {
+            MapEditorForm f = (MapEditorForm)InputFormRef.GetForm<MapEditorForm>();
+            if (f == null)
+            {//ウィンドウを開いていない
+                return;
+            }
+            f.UpdateMapStyle();
         }
     }
 }

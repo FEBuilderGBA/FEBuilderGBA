@@ -644,6 +644,13 @@ namespace FEBuilderGBA
 
         object FELintLock = new object();
 
+        public void UpdateFELintCache_NoError()
+        {
+            Dictionary<uint, List<FELint.ErrorSt>> newFELintCache = new Dictionary<uint, List<FELint.ErrorSt>>();
+            UpdateFELintCache(newFELintCache);
+        }
+
+
         //すべての章に何かエラーがあるか?
         public HasError_Enum HasError()
         {

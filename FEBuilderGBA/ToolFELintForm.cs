@@ -183,6 +183,11 @@ namespace FEBuilderGBA
             {//エラーがないよ
                 MainTab.SelectedTab = tabPageNoError;
 
+                if (Program.AsmMapFileAsmCache != null)
+                {//まれにすべてのエラーを解決しても、メインフォームが更新されない時があるので、喝入れを行う.
+                    Program.AsmMapFileAsmCache.UpdateFELintCache_NoError();
+                }
+
                 if (OnNoErrorEventHandler != null)
                 {
                     OnNoErrorEventHandler(this, new EventArgs());

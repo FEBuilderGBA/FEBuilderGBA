@@ -121,6 +121,11 @@ namespace FEBuilderGBA
                 else
                 {
                     this.Explain.Text = R._("すべてのエラーが解決されました。");
+
+                    if (Program.AsmMapFileAsmCache != null)
+                    {//まれにすべてのエラーを解決しても、メインフォームが更新されない時があるので、喝入れを行う.
+                        Program.AsmMapFileAsmCache.UpdateFELintCache_NoError();
+                    }
                 }
             }
         }
