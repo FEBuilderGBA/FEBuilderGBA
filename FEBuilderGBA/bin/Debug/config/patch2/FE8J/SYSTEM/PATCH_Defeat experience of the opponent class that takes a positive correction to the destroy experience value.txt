@@ -1,0 +1,13 @@
+NAME=撃破経験値にプラス補正がかかる相手クラスの撃破経験加算点
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2C34A
+HEX=false
+
+AUTHOR=7743
+
+NAME.zh=在击破经验值上加上敌方职业 击败经验加成点
+NAME.en=Enemy Class Grants Bonus EXP Value
+

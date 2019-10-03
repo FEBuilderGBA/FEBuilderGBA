@@ -1,0 +1,5 @@
+086647A4=Walking
+086647C8=ArmorKnight
+0866480C=Cavalry
+08664866=Pegasus
+0866483A=Dragon

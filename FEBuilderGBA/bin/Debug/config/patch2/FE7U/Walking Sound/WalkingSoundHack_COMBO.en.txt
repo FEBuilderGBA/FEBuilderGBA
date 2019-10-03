@@ -1,0 +1,6 @@
+08C9CED0=Walking
+08C9CF38=Cavalry
+08C9CF92=Pegasus
+08C9CF66=Dragon
+08C9CFBE=FireDragon
+08C9CEF4=ArmorKnight

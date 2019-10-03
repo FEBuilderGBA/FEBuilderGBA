@@ -1,0 +1,6 @@
+08D64E10=Walking
+08D64E78=Cavalry
+08D64ED2=Pegasus
+08D64EA6=Dragon
+08D64EFE=FireDragon
+08D64E34=ArmorKnight

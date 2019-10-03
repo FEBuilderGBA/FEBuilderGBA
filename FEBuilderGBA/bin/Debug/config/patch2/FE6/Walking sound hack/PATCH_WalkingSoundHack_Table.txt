@@ -1,0 +1,29 @@
+NAME=WalkingSoundHack
+INFO=ユニットの移動音を設定できるようにします。
+INFO.en=Change you to set the moving sound of the unit.
+
+IF:0x60748=0x90 0xB5 0x85 0xB0 0x6F 0x46 0x38 0x60 0x39 0x68 0x08 0x1C 0x3B 0x31 0x0A 0x78 0x19 0x49 0x92 0x00 0x88 0x58 0xB8 0x60 0x38 0x68 0x01 0x1C 0x3D 0x30 0x01 0x78 0x4A
+
+AUTHOR=Nintenlord
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END WalkingSoundHack.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=255
+
+//リストに表示されるのはユニット名です
+LISTNAME=CLASS
+
+//データを定義します
+P0:$COMBO WalkingSoundHack_COMBO.jp.txt:ASM.ja=Sound ASM
+P0:$COMBO WalkingSoundHack_COMBO.en.txt:ASM.en=Sound ASM
+P0:$COMBO WalkingSoundHack_COMBO.zh.txt:ASM.zh=Sound ASM
+INFO.zh=允许您设置本机的移动声音。

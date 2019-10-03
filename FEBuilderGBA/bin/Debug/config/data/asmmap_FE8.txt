@@ -12634,3 +12634,5 @@
 080A3E4C	LoadSoundRoomEnableList	{U}
 080A3EA4	SaveSoundRoomEnableList_Inner	{U}
 080A3F08	SaveSoundRoomEnableList	r1=SongID	{U}
+08074A4C	IsHealStaff	{J}
+08072570	IsHealStaff	{U}

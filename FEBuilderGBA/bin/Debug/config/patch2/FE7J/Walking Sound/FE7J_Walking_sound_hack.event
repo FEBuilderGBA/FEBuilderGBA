@@ -1,0 +1,9 @@
+
+PUSH
+ORG 0x6D2F4
+#incbin "WalkingSoundHack.dmp"
+POIN WalkingSoundHack_Table
+POP
+
+WalkingSoundHack_Table:
+#incbin "pointerTable.bin"
