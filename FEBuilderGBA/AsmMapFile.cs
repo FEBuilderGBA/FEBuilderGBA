@@ -28,6 +28,8 @@ namespace FEBuilderGBA
             ROMTypeLoadResource();
 
             Load(Program.ROM);
+
+            //MargeS("FE8_clean.sym");
         }
         public AsmMapFile(ROM rom)
         {

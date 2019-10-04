@@ -12591,3 +12591,29 @@ r3=X tile position of menu of the right	{U}
 080A3E4C	LoadSoundRoomEnableList	{U}
 080A3EA4	SaveSoundRoomEnableList_Inner	{U}
 080A3F08	SaveSoundRoomEnableList	r1=SongID	{U}
+08A13020	:08A13043	Move Sound: Walk	{J}
+08A13044	:08A13087	Move Sound: Armor	{J}
+08A13088	:08A130B5	Move Sound: Tarvos horse	{J}
+08A130B6	:08A130E1	Move Sound: Gargoyle	{J}
+08A130E2	:08A13139	Move Sound: Pegasus	{J}
+08A1313A	:08A1315B	Move Sound: Zombie	{J}
+08A1315C	:08A1317D	Move Sound: Skeleton	{J}
+08A1317E	:08A131A9	Move Sound: Bigl	{J}
+08A131AA	:08A131C1	Move Sound: Bael	{J}
+08A131C2	:08A131EF	Move Sound: Mauthedoog	{J}
+08A131F0	:08A13255   Move Sound: Gorgon	{J}
+08A13256	:08A13289	Move Sound: fleet	{J}
+08A1328A	:08A132AF	Move Sound: Myrrh	{J}
+089A2998	:089A29BB	Move Sound: Walk	{U}
+089A29BC	:089A29FF	Move Sound: Armor	{U}
+089A2A00	:089A2A2D	Move Sound: Tarvos horse	{U}
+089A2A2E	:089A2A59	Move Sound: Gargoyle	{U}
+089A2A5A	:089A2AB1	Move Sound: Pegasus	{U}
+089A2AB2	:089A2AD3	Move Sound: Zombie	{U}
+089A2AD4	:089A2AF5	Move Sound: Skeleton	{U}
+089A2AF6	:089A2B21	Move Sound: Bigl	{U}
+089A2B22	:089A2B39	Move Sound: Bael	{U}
+089A2B3A	:089A2B67	Move Sound: Mauthedoog	{U}
+089A2B68	:089A2BCD   Move Sound: Gorgon	{U}
+089A2BCE	:089A2C01	Move Sound: fleet	{U}
+089A2C02	:089A2C27	Move Sound: Myrrh	{U}

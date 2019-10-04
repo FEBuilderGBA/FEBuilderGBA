@@ -5086,3 +5086,17 @@
 0809F68C	LoadSoundRoomEnableList	{U}
 0809F6E4	SaveSoundRoomEnableList_Inner	{U}
 0809F748	SaveSoundRoomEnableList	r1=SongID	{U}
+0806CAF8	MOVEUNIT6C_PlaySoundStepByClass	{U}
+08C9CED0	:08C9CEF3	Move Sound: Walk	{U}
+08C9CEF4	:08C9CF37	Move Sound: Armor	{U}
+08C9CF38	:08C9CF65	Move Sound: Cavale	{U}
+08C9CF66	:08C9CF91	Move Sound: Wyverm	{U}
+08C9CF92	:08C9CFBD	Move Sound: Peg	{U}
+08C9CFBE	:08C9CFEB	Move Sound: Fire Dragon	{U}
+0806D2E4	MOVEUNIT6C_PlaySoundStepByClass	{J}
+08D64E10	:08D64E33	Move Sound: Walk	{J}
+08D64E34	:08D64E77	Move Sound: Armor	{J}
+08D64E78	:08D64EA5	Move Sound: Cavale	{J}
+08D64EA6	:08D64ED1	Move Sound: Wyverm	{J}
+08D64ED2	:08D64EFD	Move Sound: Peg	{J}
+08D64EFE	:08D64F2B	Move Sound: Fire Dragon	{J}

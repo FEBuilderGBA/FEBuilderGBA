@@ -27,6 +27,7 @@ namespace FEBuilderGBA
             this.BackBrush = new SolidBrush(this.BackColor);
         }
 
+        List<int> HeightList = new List<int>();
         List<int> IsNotUseList = new List<int>();
         bool IsNotUse(int v)
         {
@@ -85,7 +86,8 @@ namespace FEBuilderGBA
             this.image5_ZIMAGE.Value = Program.ROM.u32(Program.ROM.RomInfo.battle_screen_image5_pointer());
 
             this.IsNotUseList = new List<int>();
-            this.ChipCache = GetChipImage(this.IsNotUseList);
+            this.HeightList = new List<int>();
+            this.ChipCache = GetChipImage(this.IsNotUseList, this.HeightList);
             this.DrawBitmap = ImageUtil.Blank(MAP_X * 8, MAP_Y * 8, this.ChipCache);
 
             MakeCHIPLIST();
@@ -107,7 +109,7 @@ namespace FEBuilderGBA
             }
         }
 
-        static Bitmap GetChipImage(List<int> notUseList)
+        static Bitmap GetChipImage(List<int> notUseList, List<int>  heightList)
         {
             uint[] image_pos = new uint[] {
                  Program.ROM.RomInfo.battle_screen_image1_pointer()
@@ -126,6 +128,8 @@ namespace FEBuilderGBA
                 int height = ImageUtil.CalcHeight(width, imageUZ.Length);
                 unlz77_images.Add(imageUZ);
                 total_height += height;
+
+                heightList.Add(total_height);
             }
 
             uint palette = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_palette_pointer());
@@ -451,6 +455,7 @@ namespace FEBuilderGBA
             MAPCHIPLISTMouseCursor.X = x;
             MAPCHIPLISTMouseCursor.Y = y;
 
+            this.TSAInfo.Text = GetTSAInfoText();
             CHIPLIST.Invalidate();
         }
 
@@ -472,10 +477,81 @@ namespace FEBuilderGBA
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 PutPathChip(x / chipsize, y / chipsize);
+                this.TSAInfo.Text = GetTSAInfoText();
                 return;
             }
 
+            this.TSAInfo.Text = GetTSAInfoText();
             Battle.Invalidate();
+        }
+
+        string GetTSAInfoText()
+        {
+
+            string ret;
+            ret = "Selected:";
+            {
+                int chipsize = 8;
+
+                //int x = MAPCHIPLISTMouseCursor.X / chipsize;
+                int y = MAPCHIPLISTMouseCursor.Y / chipsize;
+                ret += U.ToHexString2(y) + " " + GetInfoChipText(y);
+            }
+
+            ret += "   ";
+            ret += "Canvas:";
+            {
+                int zoom = GetZoom();
+                int chipsize = 8 * zoom;
+
+                int x = BattleScreenCursor.X / chipsize;
+                int y = BattleScreenCursor.Y / chipsize;
+                ret += GetMapInfoText(x, y);
+            }
+            return ret;
+        }
+
+
+        string GetMapInfoText(int x,int y)
+        {
+            int write_index = (y) * MAP_X + (x);
+            if (write_index < 0 || write_index >= this.Map.Length)
+            {
+                return "";
+            }
+
+            uint m = this.Map[write_index];
+            int tile = (int)(m & 0xff);
+
+            return U.ToHexString2(tile) + " " + GetInfoChipText(tile);
+        }
+
+        string GetInfoChipText(int tile)
+        {
+            int tile8 = (tile * 8);
+            for (int i = this.HeightList.Count - 1; i >= 0 ; i -- )
+            {
+                if (tile8 > this.HeightList[i])
+                {
+                    if (i == 0)
+                    {
+                        return R._("左側") + "_" + R._("名前");
+                    }
+                    else if (i == 1)
+                    {
+                        return R._("左側") + "_" + R._("アイテム");
+                    }
+                    else if (i == 2)
+                    {
+                        return R._("右側") + "_" + R._("名前");
+                    }
+                    else if (i == 3)
+                    {
+                        return R._("右側") + "_" + R._("アイテム");
+                    }
+                }
+            }
+            return R._("メイン画像");
         }
 
         void PutPathChip(int x,int y)
@@ -783,7 +859,8 @@ namespace FEBuilderGBA
             }
             //元画像
             this.IsNotUseList = new List<int>();
-            Bitmap orignalBitmap = GetChipImage(this.IsNotUseList);
+            this.HeightList = new List<int>();
+            Bitmap orignalBitmap = GetChipImage(this.IsNotUseList, this.HeightList);
             byte[] orignalImage = ImageUtil.ImageToByte16Tile(orignalBitmap, orignalBitmap.Width, orignalBitmap.Height);
             orignalBitmap.Dispose();
 
@@ -860,7 +937,8 @@ namespace FEBuilderGBA
         public static Bitmap DrawBattleSreenBitmap()
         {
             List<int> dummyList = new List<int>();
-            Bitmap chips = GetChipImage(dummyList);
+            List<int> dummyList2 = new List<int>();
+            Bitmap chips = GetChipImage(dummyList, dummyList2);
             byte[] orignalImage = ImageUtil.ImageToByte16Tile(chips, chips.Width, chips.Height);
 
             const int palette_count = 4;

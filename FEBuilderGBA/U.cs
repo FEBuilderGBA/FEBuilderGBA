@@ -641,6 +641,10 @@ namespace FEBuilderGBA
         {
             return a.ToString("X08");
         }
+        public static string ToHexString2(int a)
+        {
+            return a.ToString("X02");
+        }
         public static string ToHexString2(uint a)
         {
             return a.ToString("X02");

@@ -1160,3 +1160,8 @@
 08070BBC	Called when R-text is open and moving DOWN
 08070BEC	Called when R-text is open and moving LEFT
 08070C1C	Called when R-text is open and moving RIGHT
+086647A4	:086647C7	Move Sound: Walk
+086647C8	:0866480B	Move Sound: Armor
+0866480C	:08664839	Move Sound: Cavale
+0866483A	:08664865	Move Sound: Wybern
+08664866	:08664893	Move Sound: Peg

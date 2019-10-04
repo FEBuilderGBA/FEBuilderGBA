@@ -335,6 +335,7 @@ namespace FEBuilderGBA
             MAPCHIPLISTMouseCursor.X = x;
             MAPCHIPLISTMouseCursor.Y = y;
 
+            this.TSAInfo.Text = GetTSAInfoText();
             CHIPLIST.Invalidate();
         }
 
@@ -356,10 +357,53 @@ namespace FEBuilderGBA
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 PutPathChip(x / chipsize, y / chipsize);
+                this.TSAInfo.Text = GetTSAInfoText();
                 return;
             }
 
+            this.TSAInfo.Text = GetTSAInfoText();
             Battle.Invalidate();
+        }
+
+        string GetTSAInfoText()
+        {
+
+            string ret;
+            ret = "Selected:";
+            {
+                int chipsize = 8;
+
+                //int x = MAPCHIPLISTMouseCursor.X / chipsize;
+                int y = MAPCHIPLISTMouseCursor.Y / chipsize;
+                ret += U.ToHexString2(y) ;
+            }
+
+            ret += "   ";
+            ret += "Canvas:";
+            {
+                int zoom = GetZoom();
+                int chipsize = 8 * zoom;
+
+                int x = BattleScreenCursor.X / chipsize;
+                int y = BattleScreenCursor.Y / chipsize;
+                ret += GetMapInfoText(x, y);
+            }
+            return ret;
+        }
+
+
+        string GetMapInfoText(int x, int y)
+        {
+            int write_index = (y) * (int)this.Width8 + (x);
+            if (write_index < 0 || write_index >= this.Map.Length)
+            {
+                return "";
+            }
+
+            uint m = this.Map[write_index];
+            int tile = (int)(m & 0xff);
+
+            return U.ToHexString2(tile);
         }
 
         void PutPathChip(int x,int y)

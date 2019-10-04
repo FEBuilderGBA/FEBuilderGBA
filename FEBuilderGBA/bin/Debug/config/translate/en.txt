@@ -3223,6 +3223,15 @@ Export
 :戦闘背景
 Battle Backgrounds
 
+:左側
+left
+
+:右側
+Right
+
+:メイン画像
+Main
+
 :このタイルは、\r\n利用\r\nできません
 This tile,\r\nCan't\r\nUse
 
@@ -3237,15 +3246,6 @@ Write failed.i: {0} readPos: {1} bigbitmap: {2}.
 
 :ROM書き込み
 Write to ROM
-
-:メイン画像
-Main
-
-:左側
-left
-
-:右側
-Right
 
 :戦闘画面を一括でインポートします。\r\nTSAがあるので、共通タイルは1つにまとめられるという制約があります。
 Import battle screens in bulk.\r\nBecause there is a TSA, there are constraints that common tiles can be grouped together.

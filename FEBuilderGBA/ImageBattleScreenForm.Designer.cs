@@ -30,7 +30,6 @@
         {
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -124,13 +123,11 @@
             this.PALETTE_P_9 = new System.Windows.Forms.Label();
             this.PALETTE_R_10 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image1_Import = new System.Windows.Forms.Button();
             this.image1_Export = new System.Windows.Forms.Button();
             this.image1_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.image3_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image3_Import = new System.Windows.Forms.Button();
             this.image3_Export = new System.Windows.Forms.Button();
             this.image3_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -139,9 +136,7 @@
             this.image2_Export = new System.Windows.Forms.Button();
             this.image2_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.image2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.image5_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image5_Import = new System.Windows.Forms.Button();
             this.image5_Export = new System.Windows.Forms.Button();
             this.image5_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -150,7 +145,6 @@
             this.image4_Export = new System.Windows.Forms.Button();
             this.image4_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.image4_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
@@ -160,8 +154,14 @@
             this.Zoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image3_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image5_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.image4_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
+            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -215,21 +215,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image3_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image2_ZIMAGE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image5_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image4_ZIMAGE)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -251,21 +252,9 @@
             this.panel1.Size = new System.Drawing.Size(144, 871);
             this.panel1.TabIndex = 3;
             // 
-            // CHIPLIST
-            // 
-            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
-            this.CHIPLIST.Name = "CHIPLIST";
-            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CHIPLIST.TabIndex = 1;
-            this.CHIPLIST.TabStop = false;
-            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
-            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
-            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.TSAInfo);
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Location = new System.Drawing.Point(158, 31);
             this.panel2.Name = "panel2";
@@ -422,7 +411,6 @@
             // 
             // PALETTE_R_1
             // 
-
             this.PALETTE_R_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -441,7 +429,6 @@
             // 
             // PALETTE_G_1
             // 
-
             this.PALETTE_G_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -476,7 +463,6 @@
             // 
             // PALETTE_B_1
             // 
-
             this.PALETTE_B_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -538,7 +524,6 @@
             // 
             // PALETTE_R_2
             // 
-
             this.PALETTE_R_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -557,7 +542,6 @@
             // 
             // PALETTE_G_2
             // 
-
             this.PALETTE_G_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -576,7 +560,6 @@
             // 
             // PALETTE_B_2
             // 
-
             this.PALETTE_B_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -646,7 +629,6 @@
             // 
             // PALETTE_R_3
             // 
-
             this.PALETTE_R_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -676,7 +658,6 @@
             // 
             // PALETTE_G_3
             // 
-
             this.PALETTE_G_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -705,7 +686,6 @@
             // 
             // PALETTE_B_3
             // 
-
             this.PALETTE_B_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -724,7 +704,6 @@
             // 
             // PALETTE_B_16
             // 
-
             this.PALETTE_B_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -753,7 +732,6 @@
             // 
             // PALETTE_G_16
             // 
-
             this.PALETTE_G_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -783,7 +761,6 @@
             // 
             // PALETTE_R_16
             // 
-
             this.PALETTE_R_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -802,7 +779,6 @@
             // 
             // PALETTE_R_4
             // 
-
             this.PALETTE_R_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -832,7 +808,6 @@
             // 
             // PALETTE_G_4
             // 
-
             this.PALETTE_G_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -861,7 +836,6 @@
             // 
             // PALETTE_B_4
             // 
-
             this.PALETTE_B_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -880,7 +854,6 @@
             // 
             // PALETTE_B_15
             // 
-
             this.PALETTE_B_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -909,7 +882,6 @@
             // 
             // PALETTE_G_15
             // 
-
             this.PALETTE_G_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -939,7 +911,6 @@
             // 
             // PALETTE_R_15
             // 
-
             this.PALETTE_R_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -958,7 +929,6 @@
             // 
             // PALETTE_R_5
             // 
-
             this.PALETTE_R_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -988,7 +958,6 @@
             // 
             // PALETTE_G_5
             // 
-
             this.PALETTE_G_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -1017,7 +986,6 @@
             // 
             // PALETTE_B_5
             // 
-
             this.PALETTE_B_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -1036,7 +1004,6 @@
             // 
             // PALETTE_B_14
             // 
-
             this.PALETTE_B_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1065,7 +1032,6 @@
             // 
             // PALETTE_G_14
             // 
-
             this.PALETTE_G_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1095,7 +1061,6 @@
             // 
             // PALETTE_R_14
             // 
-
             this.PALETTE_R_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1114,7 +1079,6 @@
             // 
             // PALETTE_R_6
             // 
-
             this.PALETTE_R_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1144,7 +1108,6 @@
             // 
             // PALETTE_G_6
             // 
-
             this.PALETTE_G_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1173,7 +1136,6 @@
             // 
             // PALETTE_B_6
             // 
-
             this.PALETTE_B_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -1192,7 +1154,6 @@
             // 
             // PALETTE_B_13
             // 
-
             this.PALETTE_B_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1221,7 +1182,6 @@
             // 
             // PALETTE_G_13
             // 
-
             this.PALETTE_G_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1251,7 +1211,6 @@
             // 
             // PALETTE_R_13
             // 
-
             this.PALETTE_R_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1270,7 +1229,6 @@
             // 
             // PALETTE_R_7
             // 
-
             this.PALETTE_R_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1300,7 +1258,6 @@
             // 
             // PALETTE_G_7
             // 
-
             this.PALETTE_G_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1329,7 +1286,6 @@
             // 
             // PALETTE_B_7
             // 
-
             this.PALETTE_B_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -1348,7 +1304,6 @@
             // 
             // PALETTE_B_12
             // 
-
             this.PALETTE_B_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1377,7 +1332,6 @@
             // 
             // PALETTE_G_12
             // 
-
             this.PALETTE_G_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1407,7 +1361,6 @@
             // 
             // PALETTE_R_12
             // 
-
             this.PALETTE_R_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1426,7 +1379,6 @@
             // 
             // PALETTE_R_8
             // 
-
             this.PALETTE_R_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1456,7 +1408,6 @@
             // 
             // PALETTE_G_8
             // 
-
             this.PALETTE_G_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1485,7 +1436,6 @@
             // 
             // PALETTE_B_8
             // 
-
             this.PALETTE_B_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1504,7 +1454,6 @@
             // 
             // PALETTE_B_11
             // 
-
             this.PALETTE_B_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1533,7 +1482,6 @@
             // 
             // PALETTE_G_11
             // 
-
             this.PALETTE_G_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1563,7 +1511,6 @@
             // 
             // PALETTE_R_11
             // 
-
             this.PALETTE_R_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1582,7 +1529,6 @@
             // 
             // PALETTE_R_9
             // 
-
             this.PALETTE_R_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1612,7 +1558,6 @@
             // 
             // PALETTE_G_9
             // 
-
             this.PALETTE_G_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1641,7 +1586,6 @@
             // 
             // PALETTE_B_9
             // 
-
             this.PALETTE_B_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1660,7 +1604,6 @@
             // 
             // PALETTE_B_10
             // 
-
             this.PALETTE_B_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1689,7 +1632,6 @@
             // 
             // PALETTE_G_10
             // 
-
             this.PALETTE_G_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1719,7 +1661,6 @@
             // 
             // PALETTE_R_10
             // 
-
             this.PALETTE_R_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1750,16 +1691,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1213, 184);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "メイン画像";
-            // 
-            // image1_Picture
-            // 
-            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image1_Picture.Location = new System.Drawing.Point(328, 14);
-            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image1_Picture.Name = "image1_Picture";
-            this.image1_Picture.Size = new System.Drawing.Size(320, 131);
-            this.image1_Picture.TabIndex = 110;
-            this.image1_Picture.TabStop = false;
             // 
             // image1_Import
             // 
@@ -1824,17 +1755,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1213, 184);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "左側";
-            // 
-            // image3_Picture
-            // 
-            this.image3_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image3_Picture.Location = new System.Drawing.Point(811, 41);
-            this.image3_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image3_Picture.Name = "image3_Picture";
-            this.image3_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image3_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image3_Picture.TabIndex = 120;
-            this.image3_Picture.TabStop = false;
             // 
             // image3_Import
             // 
@@ -1926,17 +1846,6 @@
             this.label2.Text = "名前";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image2_Picture
-            // 
-            this.image2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image2_Picture.Location = new System.Drawing.Point(217, 43);
-            this.image2_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image2_Picture.Name = "image2_Picture";
-            this.image2_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image2_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image2_Picture.TabIndex = 115;
-            this.image2_Picture.TabStop = false;
-            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
@@ -1955,17 +1864,6 @@
             this.tabPage4.Size = new System.Drawing.Size(1213, 184);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "右側";
-            // 
-            // image5_Picture
-            // 
-            this.image5_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image5_Picture.Location = new System.Drawing.Point(774, 40);
-            this.image5_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image5_Picture.Name = "image5_Picture";
-            this.image5_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image5_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image5_Picture.TabIndex = 130;
-            this.image5_Picture.TabStop = false;
             // 
             // image5_Import
             // 
@@ -2057,17 +1955,6 @@
             this.label6.Text = "名前";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image4_Picture
-            // 
-            this.image4_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image4_Picture.Location = new System.Drawing.Point(194, 44);
-            this.image4_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image4_Picture.Name = "image4_Picture";
-            this.image4_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image4_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image4_Picture.TabIndex = 125;
-            this.image4_Picture.TabStop = false;
-            // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
@@ -2155,7 +2042,7 @@
             this.panel3.Controls.Add(this.Battle);
             this.panel3.Location = new System.Drawing.Point(158, 31);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1228, 623);
+            this.panel3.Size = new System.Drawing.Size(1228, 592);
             this.panel3.TabIndex = 360;
             // 
             // Battle
@@ -2170,6 +2057,83 @@
             this.Battle.Paint += new System.Windows.Forms.PaintEventHandler(this.WorldMap_Paint);
             this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorldMap_MouseDown);
             this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
+            // 
+            // image1_Picture
+            // 
+            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image1_Picture.Location = new System.Drawing.Point(328, 14);
+            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image1_Picture.Name = "image1_Picture";
+            this.image1_Picture.Size = new System.Drawing.Size(320, 131);
+            this.image1_Picture.TabIndex = 110;
+            this.image1_Picture.TabStop = false;
+            // 
+            // image3_Picture
+            // 
+            this.image3_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image3_Picture.Location = new System.Drawing.Point(811, 41);
+            this.image3_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image3_Picture.Name = "image3_Picture";
+            this.image3_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image3_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image3_Picture.TabIndex = 120;
+            this.image3_Picture.TabStop = false;
+            // 
+            // image2_Picture
+            // 
+            this.image2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image2_Picture.Location = new System.Drawing.Point(217, 43);
+            this.image2_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image2_Picture.Name = "image2_Picture";
+            this.image2_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image2_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image2_Picture.TabIndex = 115;
+            this.image2_Picture.TabStop = false;
+            // 
+            // image5_Picture
+            // 
+            this.image5_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image5_Picture.Location = new System.Drawing.Point(774, 40);
+            this.image5_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image5_Picture.Name = "image5_Picture";
+            this.image5_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image5_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image5_Picture.TabIndex = 130;
+            this.image5_Picture.TabStop = false;
+            // 
+            // image4_Picture
+            // 
+            this.image4_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image4_Picture.Location = new System.Drawing.Point(194, 44);
+            this.image4_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image4_Picture.Name = "image4_Picture";
+            this.image4_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image4_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image4_Picture.TabIndex = 125;
+            this.image4_Picture.TabStop = false;
+            // 
+            // CHIPLIST
+            // 
+            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
+            this.CHIPLIST.Name = "CHIPLIST";
+            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CHIPLIST.TabIndex = 1;
+            this.CHIPLIST.TabStop = false;
+            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
+            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
+            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
+            // 
+            // TSAInfo
+            // 
+            this.TSAInfo.ErrorMessage = "";
+            this.TSAInfo.Location = new System.Drawing.Point(3, 598);
+            this.TSAInfo.Name = "TSAInfo";
+            this.TSAInfo.Placeholder = "";
+            this.TSAInfo.ReadOnly = true;
+            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
+            this.TSAInfo.TabIndex = 360;
             // 
             // ImageBattleScreenForm
             // 
@@ -2191,8 +2155,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BattleScreenForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -2246,24 +2210,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image3_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image2_ZIMAGE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image5_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image4_ZIMAGE)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2402,5 +2367,6 @@
         private System.Windows.Forms.Button PALETTE_TO_CLIPBOARD_BUTTON;
         private System.Windows.Forms.ComboBox Zoom;
         private System.Windows.Forms.Panel panel3;
+        private TextBoxEx TSAInfo;
     }
 }
