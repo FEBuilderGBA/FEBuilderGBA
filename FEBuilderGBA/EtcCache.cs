@@ -164,6 +164,23 @@ namespace FEBuilderGBA
 
             this.Cache = newDic;
         }
+        public void ShrinkEtcData(uint blank_start_addr, uint blank_size)
+        {
+            string fullfilename = U.ConfigEtcFilename(this.Type);
+            Dictionary<uint, string> newDic = new Dictionary<uint, string>();
+            foreach (var pair in this.Cache)
+            {
+                if (pair.Key >= blank_start_addr && pair.Key < blank_start_addr + blank_size)
+                {//erase data
+                }
+                else
+                {
+                    newDic[pair.Key] = pair.Value;
+                }
+            }
+
+            this.Cache = newDic;
+        }
 
         public void Save(string romBaseFilename)
         {

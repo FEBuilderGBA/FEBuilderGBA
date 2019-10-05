@@ -828,7 +828,7 @@ namespace FEBuilderGBA
             if (!Program.ROM.RomInfo.is_multibyte())
             {//クラスの英語表記で別設定があるのは日本語版だけ
                 OPClassAlphaNameButton.Hide();
-                FE8SpellMenuExtendsButton.Show();
+//                FE8SpellMenuExtendsButton.Show();
             }
             else
             {//日本語版

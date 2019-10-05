@@ -133,9 +133,8 @@ namespace FEBuilderGBA
             Undo.UndoData undodata = Program.Undo.NewUndoData(this.Text + " " + PathType.Text + " Expapnds");
             
             //null の状態から拡張したデータには、 0xFF 0xFF 0xFF 0xFF の終端データがないので追加します.
-            Program.ROM.write_u32((uint)(addr + ((count - 1) * 4)), 0xFFFFFFFF, undodata);
-            //終端データを選択できなくします.
-            lb.Items.RemoveAt(count - 1);
+            uint term_addr = (uint)(addr + ((count) * InputFormRef.BlockSize));
+            Program.ROM.write_u32(term_addr, 0xFFFFFFFF, undodata);
 
             //拡張したアドレスを道情報に書き込みます.
             //なぜなら、道情報は null がありうるので、関連したポインタの自動更新から外れる時があるためです.

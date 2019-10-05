@@ -325,11 +325,6 @@
             this.ReadCount.Name = "ReadCount";
             this.ReadCount.Size = new System.Drawing.Size(78, 25);
             this.ReadCount.TabIndex = 28;
-            this.ReadCount.Value = new decimal(new int[] {
-            29,
-            0,
-            0,
-            0});
             // 
             // ReadStartAddress
             // 

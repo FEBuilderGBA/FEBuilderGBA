@@ -541,6 +541,14 @@ namespace FEBuilderGBA
                 AllocOnly();
                 return;
             }
+
+            //既存のデータより小さくなる、または同数の場合
+            if (NewDataCount.Value <= DataCount.Value)
+            {
+                ShrinkAlloc();
+                return ;
+            }
+
             if (FreeSpaceList.SelectedIndex < 0)
             {
                 //エラー 空き領域を選択してください。
@@ -720,6 +728,81 @@ namespace FEBuilderGBA
 
         }
 
+        //縮小処理
+        private void ShrinkAlloc()
+        {
+            //もともとのアドレスが0の場合は確保だけやる専用ルーチンなのでここには来ない.
+            Debug.Assert(IsBadBaseAddress((uint)this.MoveAddress.Value) == false);
+
+            uint moveAddress = (uint)MoveAddress.Value;
+            uint movesize = (uint)(MoveBlockSize.Value * (DataCount.Value));
+            if (!U.isSafetyOffset(moveAddress))
+            {//データ元のアドレスの指定がおかしい.
+                Debug.Assert(false);
+                return;
+            }
+
+            //各種サイズ
+            uint dataCount = (uint)(DataCount.Value);
+            uint blockSize = (uint)(MoveBlockSize.Value);
+            uint newDataCount = (uint)(NewDataCount.Value);
+
+            if (newDataCount > dataCount)
+            {
+                //元のデータより小さくならないといけない.
+                Debug.Assert(false);
+            }
+            else if (newDataCount == dataCount)
+            {
+                //同じサイズなので何もしなくてよい
+            }
+            else
+            {
+                //縮小処理
+                Undo.UndoData undodata = Program.Undo.NewUndoData(this.Text);
+
+                //終端データ
+                byte[] term_onedata = Program.ROM.getBinaryData(moveAddress + movesize, blockSize);
+
+                //もともとの終端データを末尾に移動.
+                Program.ROM.write_range(moveAddress + ((newDataCount) * blockSize), term_onedata);
+
+                //元データの処遇
+                uint blank_size = (dataCount - (newDataCount + 1)) * blockSize;
+                uint blank_start_addr = moveAddress + ((newDataCount + 1) * blockSize);
+                if (blank_size == 0)
+                {
+                    //元データを消す必要がない
+                }
+                else if (TreatmentOldData.SelectedIndex == 0)
+                {//00=移動前のデータは0x00でクリア
+                    byte[] fill = U.FillArray(blank_size, 0x00);
+                    Program.ROM.write_range(blank_start_addr, fill, undodata);
+
+                    //etcデータの変更
+                    ShrinkEtcData(blank_start_addr, blank_size);
+                }
+                else if (TreatmentOldData.SelectedIndex == 0)
+                {//01=移動前のデータは0xFFでクリア
+                    byte[] fill = U.FillArray(blank_size, 0xff);
+                    Program.ROM.write_range(blank_start_addr, fill, undodata);
+
+                    //etcデータの変更
+                    ShrinkEtcData(blank_start_addr, blank_size);
+                }
+
+
+                Program.Undo.Push(undodata);
+            }
+
+            this.Close();
+
+            if (this.CallbackAfterRun != null)
+            {
+                this.CallbackAfterRun(moveAddress, (uint)NewDataCount.Value);
+            }
+
+        }
         //確保だけやる.
         private void AllocOnly()
         {
@@ -799,6 +882,11 @@ namespace FEBuilderGBA
         {
             Program.LintCache.RepointEtcData(oldAddr, oldSize, newAddr);
             Program.CommentCache.RepointEtcData(oldAddr, oldSize, newAddr);
+        }
+        public static void ShrinkEtcData(uint blank_start_addr,uint blank_size)
+        {
+            Program.LintCache.ShrinkEtcData(blank_start_addr, blank_size);
+            Program.CommentCache.ShrinkEtcData(blank_start_addr, blank_size);
         }
 
         private void SimpleNewDataCount_ValueChanged(object sender, EventArgs e)
