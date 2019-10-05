@@ -1,4 +1,4 @@
-@Call 0x75C8  @FE7U
+@Call 0x7458  @FE7J
 .macro blh to, reg=r3
   ldr \reg, =\to
   mov lr, \reg
@@ -14,7 +14,7 @@ ADD r0 ,r0, R2
 LDR r0, [r0, #0x4]  @MiniMags_Table->palette
 LSL r1 ,r1 ,#0x5
 MOV r2, #0x20
-BLH 0x08001084   @FE7U Write_Palette r0=pointer to palette
+BLH 0x0800105c   @FE7U Write_Palette r0=pointer to palette
 POP {r0}
 BX r0
 

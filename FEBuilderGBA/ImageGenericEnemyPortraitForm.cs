@@ -84,6 +84,10 @@ namespace FEBuilderGBA
             if (PatchUtil.SearchGenericEnemyPortraitExtendsPatch(out extends_pointer))
             {
                 uint offset = Program.ROM.p32(extends_pointer) + id * 8;
+                if (! U.isSafetyOffset(offset + 4 + 3))
+                {
+                    return ImageUtil.BlankDummy();
+                }
                 uint img = Program.ROM.u32(offset);
                 uint pal = Program.ROM.u32(offset + 4);
                 return Draw(img, pal);

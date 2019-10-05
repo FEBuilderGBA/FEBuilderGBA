@@ -1,0 +1,1 @@
+MiniMags_Table=$20
