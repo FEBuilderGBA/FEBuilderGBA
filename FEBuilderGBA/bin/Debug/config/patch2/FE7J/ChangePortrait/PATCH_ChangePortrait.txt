@@ -8,7 +8,7 @@ TYPE=STRUCT
 TAG=#ENGINE
 
 //データへのポインタ
-POINTER=$FGREP4END ChangePortraitMiniMug.dmp
+POINTER=$FGREP4END ChangePortraitStatus.dmp
 
 //データサイズ(10進数)
 DATASIZE=8

@@ -15,7 +15,7 @@
 .thumb
 .org 0x00
 
-push {r4,r5}
+push {r4,r5,lr}
 mov  r4,r2          @     RAM UNIT
 ldr  r5,Table
 sub  r5,#0x8        @     ループ処理が面倒なので、最初に0x8バイト差し引きます.
@@ -90,6 +90,8 @@ ldrh r0,[r1,#0x6]   @     ROMUNIT->ID
 
 Exit:
 pop {r5,r4}         @     この関数内で利用したスタックの解放
+pop {r3}            @     FE7ではLRが保存されていないので元に戻す
+mov lr,r3
 
 @r2 = ram unit
 @r1 = rom unit

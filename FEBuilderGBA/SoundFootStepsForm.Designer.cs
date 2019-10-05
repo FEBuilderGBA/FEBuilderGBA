@@ -35,7 +35,6 @@
             this.J_0 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SwitchListExpandsButton = new System.Windows.Forms.Button();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -44,13 +43,14 @@
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label14 = new System.Windows.Forms.Label();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.WriteButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,7 +71,7 @@
             this.panel4.Location = new System.Drawing.Point(334, 77);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(882, 317);
+            this.panel4.Size = new System.Drawing.Size(882, 508);
             this.panel4.TabIndex = 76;
             // 
             // ERROR_NOT_FOUND
@@ -88,10 +88,10 @@
             // 
             this.L_0_COMBO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.L_0_COMBO.FormattingEnabled = true;
-            this.L_0_COMBO.Location = new System.Drawing.Point(268, 0);
+            this.L_0_COMBO.Location = new System.Drawing.Point(130, 33);
             this.L_0_COMBO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_0_COMBO.Name = "L_0_COMBO";
-            this.L_0_COMBO.Size = new System.Drawing.Size(440, 26);
+            this.L_0_COMBO.Size = new System.Drawing.Size(745, 26);
             this.L_0_COMBO.TabIndex = 77;
             // 
             // P0
@@ -111,7 +111,7 @@
             // J_0
             // 
             this.J_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0.Location = new System.Drawing.Point(0, 0);
+            this.J_0.Location = new System.Drawing.Point(-1, -1);
             this.J_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_0.Name = "J_0";
             this.J_0.Size = new System.Drawing.Size(115, 30);
@@ -128,30 +128,18 @@
             this.panel1.Location = new System.Drawing.Point(14, 42);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 352);
+            this.panel1.Size = new System.Drawing.Size(317, 543);
             this.panel1.TabIndex = 77;
             // 
             // SwitchListExpandsButton
             // 
-            this.SwitchListExpandsButton.Location = new System.Drawing.Point(0, 321);
+            this.SwitchListExpandsButton.Location = new System.Drawing.Point(5, 508);
             this.SwitchListExpandsButton.Name = "SwitchListExpandsButton";
             this.SwitchListExpandsButton.Size = new System.Drawing.Size(311, 30);
             this.SwitchListExpandsButton.TabIndex = 117;
             this.SwitchListExpandsButton.Text = "リストの拡張";
             this.SwitchListExpandsButton.UseVisualStyleBackColor = true;
             this.SwitchListExpandsButton.Click += new System.EventHandler(this.SwitchListExpandsButton_Click);
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(0, 25);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(316, 292);
-            this.AddressList.TabIndex = 108;
             // 
             // LabelFilter
             // 
@@ -254,38 +242,16 @@
             this.panel5.Size = new System.Drawing.Size(882, 30);
             this.panel5.TabIndex = 84;
             // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(325, 2);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 52;
-            // 
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(240, 0);
+            this.label14.Location = new System.Drawing.Point(240, -1);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 30);
             this.label14.TabIndex = 52;
             this.label14.Text = "Size:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(543, 3);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(165, 25);
-            this.SelectAddress.TabIndex = 40;
             // 
             // WriteButton
             // 
@@ -325,7 +291,7 @@
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(0, -1);
+            this.label16.Location = new System.Drawing.Point(-1, -1);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(87, 30);
@@ -333,12 +299,46 @@
             this.label16.Text = "アドレス";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(325, 2);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 52;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(543, 3);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(165, 25);
+            this.SelectAddress.TabIndex = 40;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(0, 25);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(316, 476);
+            this.AddressList.TabIndex = 108;
+            // 
             // SoundFootStepsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1229, 397);
+            this.ClientSize = new System.Drawing.Size(1229, 598);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);

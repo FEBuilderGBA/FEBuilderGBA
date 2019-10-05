@@ -1,4 +1,4 @@
-Table=$88
+Table=$8C
 Loop=$08
 load_defualt=$62
 CheckClass=$1E
@@ -7,4 +7,4 @@ CheckEdition=$3E
 CheckFlag=$4C
 Found=$5C
 Exit=$66
-Exit_UsePortrait=$72
+Exit_UsePortrait=$76
