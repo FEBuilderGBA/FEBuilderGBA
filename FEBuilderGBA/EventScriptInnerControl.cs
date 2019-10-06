@@ -2016,7 +2016,7 @@ namespace FEBuilderGBA
         void CheckCAMERA_Event_OutOfBand_Fix()
         {
             string command = ScriptCodeName.Text;
-            if (command.IndexOf("(CAM1") >= 0 || command.IndexOf("(CAM2") >= 0)
+            if (command.IndexOf("(CAM1") >= 0)
             {
                 HowDoYouLikePatchForm.CheckAndShowPopupDialog(HowDoYouLikePatchForm.TYPE.CAMERA_Event_OutOfBand_Fix);
             }
