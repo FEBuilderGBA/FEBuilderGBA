@@ -20,7 +20,7 @@ INFO.en=Enables a scripting condition to check if the character is the last one 
 AUTHOR.en=Source: Source: https://github.com/ngmansion/FE8/tree/master/escapemap.
 
 EVENTSCRIPT.en=400D0000{$L1:alone.bin}	Last Unit Retreating	{COND}
-AUTHOR.zh=来源:来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
+AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
 
 EVENTSCRIPT.zh=400D0000{$L1:alone.bin}	来检查它是否是撤出映射中的最后一个。	{COND}
 

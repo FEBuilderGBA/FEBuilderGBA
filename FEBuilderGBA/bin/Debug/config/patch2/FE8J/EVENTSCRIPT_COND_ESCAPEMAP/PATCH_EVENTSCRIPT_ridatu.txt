@@ -10,19 +10,19 @@ EVENTSCRIPT=400D0000{$L1:ridatu.bin}	離脱マップで操作キャラを離脱�
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=ridatu.bin
 
-INFO=離脱マップで操作キャラを離脱させます.
+INFO=離脱マップで操作キャラを離脱させます.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 AUTHOR=aera 出典元:https://github.com/ngmansion/FE8/tree/master/escapemap
 NAME.en=Withdrawal the operation character
-INFO.en=Withdraw the currently operated character from the map.\r\nThis is a script to create a withdraw map.
+INFO.en=Withdraw the currently operated character from the map.\r\nThis is a script to create a withdraw map.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 AUTHOR.en=Source: Source: https://github.com/ngmansion/FE8/tree/master/escapemap.
 
 EVENTSCRIPT.en=400D0000{$L1:ridatu.bin}	Withdrawal the operation character
-AUTHOR.zh=来源:来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
+AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
 
 EVENTSCRIPT.zh=400D0000{$L1:ridatu.bin}	退出映射中的独立操作字符扩展指令。
 
 
 
 NAME.zh=事件命令_在撤销地图上保留操作角色
-INFO.zh=在撤销地图上保留操作角色。
+INFO.zh=在撤销地图上保留操作角色。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 

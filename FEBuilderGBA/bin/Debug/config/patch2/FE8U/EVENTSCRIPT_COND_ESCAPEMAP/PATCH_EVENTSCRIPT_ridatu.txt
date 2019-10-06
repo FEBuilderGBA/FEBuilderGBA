@@ -11,13 +11,16 @@ PATCHED_IF:$GREP4 0x00 0xB5 0xC0 0x46 0x10 0x48 0x00 0x68 0xC1 0x7A 0x89 0x09 0x
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=ridatu.bin
 
-INFO=操作キャラを離脱させます。\r\nこれは離脱マップを作るためのスクリプトです。
-INFO.en=Patches the game with a callable event that allows units to retreat from maps.\r\nThis is key to creating a retreat map.\r\n
-INFO.zh=删除操作字符。\r\n这是创建中断地图的脚本。
+INFO=操作キャラを離脱させます。\r\nこれは離脱マップを作るためのスクリプトです。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
+
+INFO.en=Patches the game with a callable event that allows units to retreat from maps.\r\nThis is key to creating a retreat map.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
+
+INFO.zh=删除操作字符。\r\n这是创建中断地图的脚本。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
+
 
 AUTHOR=aera 出典元:https://github.com/ngmansion/FE8/tree/master/escapemap
 AUTHOR.en=aera https://github.com/ngmansion/FE8/tree/master/escapemap.
-AUTHOR.zh=来源:来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
+AUTHOR.zh=来源:https://github.com/ngmansion/FE8/tree/master/escapemap。
 
 EVENTSCRIPT=400D0000{$L1:ridatu.bin}	離脱マップで操作キャラを離脱させます 
 EVENTSCRIPT.en=400D0000{$L1:ridatu.bin}	Current Character Retreat
