@@ -1105,12 +1105,6 @@ Read texts with synthesized speech using Windows text-to-speech function.\r\nIn 
 :翻訳リソースを利用して、翻訳した字幕を表示します。
 Display translated subtitles using translation resources.
 
-:序盤
-Tutorial Mode
-
-:リン編
-Lyn's Tale
-
 :難易度:難しい
 Difficulty: Hard
 
@@ -4119,6 +4113,12 @@ Egg
 
 :光の結界
 LightRune
+
+:序盤
+Tutorial Mode
+
+:リン編
+Lyn's Tale
 
 :支援なし
 No support.
@@ -8026,6 +8026,15 @@ When sappy is set, you can play BGM when you click the note button.\r\nWhen inst
 :FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。
 In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlease install EA Ver 11 or higher.
 
+:章テーブルを拡張するボタンを表示します。\r\n章を拡張するときは、PLISTの構造について理解している必要があります。
+Displays a button to expand the chapter table.\r\nWhen expanding chapters, you should understand the structure of PLIST.
+
+:FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
+An extended button is also displayed at the world map base of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 bases.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
+
+:FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
+An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
+
 :パス
 Path
 
@@ -8341,7 +8350,7 @@ Auto Backup
 :1=表示する
 1=Displayed
 
-:クラス拡張のボタン表示する
+:クラス拡張のボタンを表示する
 Toggle Class Expansion Button
 
 :サイズ不足の時のROMサイズの拡張
@@ -8419,8 +8428,8 @@ Search starting position at ROM expansion
 :4=0x08000000以降 0xFFが規定数連続
 4=0x08000000 or later 0xFF is many Continuous
 
-:機能2
-Function 2
+:機能3
+Function 3
 
 :画面上のヒントメッセージの表示時間
 Screen hint message display time
@@ -8505,6 +8514,21 @@ File Export Settings
 
 :保存
 Save
+
+:章拡張ボタンを表示する
+Toggle Chapter Expansion Button
+
+:機能2
+Function 2
+
+:拡張ボタン
+Expansion button
+
+:FE8ワールドマップ拠点の拡張ボタンを表示する
+Toggle FE8 WorldMap Node Expansion Button
+
+:FE8ワールドマップ道の拡張ボタンを表示する
+Toggle FE8 WorldMap Path Expansion Button
 
 :その他ROM直値テキスト
 Other ROM Direct Text

@@ -137,7 +137,10 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_lookup_feditor,(int)lookup_feditor());
             U.SelectedIndexSafety(func_lint_text_skip_bug,(int)lint_text_skip_bug());
             U.SelectedIndexSafety(func_show_class_extends,(int)show_class_extends());
-            U.SelectedIndexSafety(func_texteditor_auto_convert_space,(int)texteditor_auto_convert_space());
+            U.SelectedIndexSafety(func_show_chapter_extends, (int)show_chapter_extends());
+            U.SelectedIndexSafety(func_show_worldmap_node_extends, (int)show_worldmap_node_extends());
+            U.SelectedIndexSafety(func_show_worldmap_path_extends, (int)show_worldmap_path_extends());
+            U.SelectedIndexSafety(func_texteditor_auto_convert_space, (int)texteditor_auto_convert_space());
             U.SelectedIndexSafety(func_auto_connect_emulator, (int)auto_connect_emulator());
             U.SelectedIndexSafety(func_proxy_server_when_connecting, (int)proxy_server_when_connecting());
             U.SelectedIndexSafety(func_notify_upper_time, (int)notify_upper_time());
@@ -283,6 +286,9 @@ namespace FEBuilderGBA
             Program.Config["func_lint_text_skip_bug"] = U.SelectValueComboboxText(func_lint_text_skip_bug.Text);
             Program.Config["func_midi_importer"] = mid2agb_default.Checked ? "1" : "0";
             Program.Config["func_show_class_extends"] = U.SelectValueComboboxText(func_show_class_extends.Text);
+            Program.Config["func_show_chapter_extends"] = U.SelectValueComboboxText(func_show_chapter_extends.Text);
+            Program.Config["func_show_worldmap_node_extends"] = U.SelectValueComboboxText(func_show_worldmap_node_extends.Text);
+            Program.Config["func_show_worldmap_path_extends"] = U.SelectValueComboboxText(func_show_worldmap_path_extends.Text);
             Program.Config["func_texteditor_auto_convert_space"] = U.SelectValueComboboxText(func_texteditor_auto_convert_space.Text);
             Program.Config["func_auto_connect_emulator"] = U.SelectValueComboboxText(func_auto_connect_emulator.Text);
             Program.Config["func_proxy_server_when_connecting"] = U.SelectValueComboboxText(func_proxy_server_when_connecting.Text);
@@ -852,15 +858,29 @@ namespace FEBuilderGBA
             return g_Cache_lint_text_skip_bug_enum;
         }
 
-        public enum show_class_extends_enum
+        public enum show_extends_enum
         {
             None = 0
           , Show = 1
         };
-        public static show_class_extends_enum show_class_extends()
+        public static show_extends_enum show_class_extends()
         {
-            return (show_class_extends_enum)U.atoi(Program.Config.at("func_show_class_extends", "0")); 
+            return (show_extends_enum)U.atoi(Program.Config.at("func_show_class_extends", "0")); 
         }
+
+        public static show_extends_enum show_chapter_extends()
+        {
+            return (show_extends_enum)U.atoi(Program.Config.at("func_show_chapter_extends", "0")); 
+        }
+        public static show_extends_enum show_worldmap_node_extends()
+        {
+            return (show_extends_enum)U.atoi(Program.Config.at("func_show_worldmap_node_extends", "0"));
+        }
+        public static show_extends_enum show_worldmap_path_extends()
+        {
+            return (show_extends_enum)U.atoi(Program.Config.at("func_show_worldmap_path_extends", "0"));
+        }
+
 
         public enum texteditor_auto_convert_space_enum
         {
@@ -1314,6 +1334,9 @@ namespace FEBuilderGBA
             X_EXPLAIN_NODOLL_GBA_DEBUGGER.AccessibleDescription = R._("Ctrl+F5を押したときに起動するデバッガーを設定します。\r\nFEBuilderGBAは、no$gba debuggerへ、セーブデータの転送と、シンボルの自動生成を行うことができます。");
             X_EXPLAIN_SAPPY.AccessibleDescription = R._("sappyを設定すると、音符ボタンをクリックした時に、BGMを再生できます。\r\nsappyをインストールするときは、マニュアルに書いてあるインストーラーを利用すると便利です。");
             X_EXPLAIN_EA.AccessibleDescription = R._("FEBuilderGBAでは、EA形式で書かれていパッチをインストール時に利用します。\r\nEA Ver11以上をインストールしてください。");
+            explain_func_show_chapter_extends.AccessibleDescription = R._("章テーブルを拡張するボタンを表示します。\r\n章を拡張するときは、PLISTの構造について理解している必要があります。");
+            explain_func_show_worldmap_node_extends.AccessibleDescription = R._("FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");
+            explain_func_show_worldmap_path_extends.AccessibleDescription = R._("FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)

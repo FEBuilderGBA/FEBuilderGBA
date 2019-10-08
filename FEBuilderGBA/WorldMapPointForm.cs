@@ -58,6 +58,22 @@ namespace FEBuilderGBA
                 }
                 MapPictureBox.Invalidate();
             }
+
+            //拡張ボタンを表示するかどうか
+            if (WorldMapPointForm.IsShowWorldmapPointExetdns(AddressList.Items.Count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
+        }
+        public static uint GetDataCount()
+        {
+            InputFormRef InputFormRef = Init(null);
+            return InputFormRef.DataCount;
         }
 
         public static List<U.AddrResult> MakeWorldMapPointList()
@@ -244,6 +260,15 @@ namespace FEBuilderGBA
                 }
             }
             icon.Dispose();
+        }
+
+        public static bool IsShowWorldmapPointExetdns(int count)
+        {
+            if (count > 0x1D)
+            {//拡張している場合、表示する
+                return true;
+            }
+            return (OptionForm.show_worldmap_node_extends() == OptionForm.show_extends_enum.Show);
         }
 
     }

@@ -401,7 +401,21 @@ namespace FEBuilderGBA
 
         private void WorldMapEventPointerForm_Load(object sender, EventArgs e)
         {
+            //拡張ボタンを表示するかどうか
+            uint node_count = WorldMapPointForm.GetDataCount();
+            if (WorldMapPointForm.IsShowWorldmapPointExetdns((int)node_count))
+            {
+                AddressListExpandsButton_255.Show();
+                N_AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
 
+                this.N_AddressList.Height += N_AddressListExpandsButton_255.Height;
+                N_AddressListExpandsButton_255.Hide();
+            }
         }
     }
 }

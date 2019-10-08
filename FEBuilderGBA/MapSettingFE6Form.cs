@@ -23,6 +23,16 @@ namespace FEBuilderGBA
         }
         private void MapSettingFE6Form_Load(object sender, EventArgs e)
         {
+            //章拡張を表示するかどうか
+            if (MapSettingForm.IsShowChapterExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -137,8 +147,5 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 48,50,52,60 });
         }
-
-
-
     }
 }

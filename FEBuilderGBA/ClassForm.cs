@@ -130,7 +130,7 @@ namespace FEBuilderGBA
             {//拡張している場合、表示する
                 return true;
             }
-            return (OptionForm.show_class_extends() == OptionForm.show_class_extends_enum.Show) ;
+            return (OptionForm.show_class_extends() == OptionForm.show_extends_enum.Show) ;
         }
 
         //クラス名の取得

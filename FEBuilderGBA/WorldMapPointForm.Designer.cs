@@ -98,6 +98,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.W26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W24)).BeginInit();
@@ -183,10 +184,10 @@
             this.panel11.Controls.Add(this.J_1);
             this.panel11.Controls.Add(this.B0);
             this.panel11.Controls.Add(this.J_0);
-            this.panel11.Location = new System.Drawing.Point(266, 72);
+            this.panel11.Location = new System.Drawing.Point(266, 69);
             this.panel11.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1465, 639);
+            this.panel11.Size = new System.Drawing.Size(1465, 661);
             this.panel11.TabIndex = 179;
             // 
             // L_30_COMBO
@@ -910,7 +911,7 @@
             this.AddressPanel.Controls.Add(this.WriteButton);
             this.AddressPanel.Controls.Add(this.Address);
             this.AddressPanel.Controls.Add(this.label23);
-            this.AddressPanel.Location = new System.Drawing.Point(264, 40);
+            this.AddressPanel.Location = new System.Drawing.Point(264, 37);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(2);
             this.AddressPanel.Name = "AddressPanel";
             this.AddressPanel.Size = new System.Drawing.Size(1468, 30);
@@ -999,11 +1000,12 @@
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.AddressList);
+            this.panel6.Controls.Add(this.AddressListExpandsButton_255);
             this.panel6.Controls.Add(this.LabelFilter);
-            this.panel6.Location = new System.Drawing.Point(14, 40);
+            this.panel6.Location = new System.Drawing.Point(14, 37);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(251, 670);
+            this.panel6.Size = new System.Drawing.Size(251, 692);
             this.panel6.TabIndex = 190;
             // 
             // AddressList
@@ -1015,7 +1017,7 @@
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(249, 645);
+            this.AddressList.Size = new System.Drawing.Size(249, 638);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -1026,10 +1028,20 @@
             this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(248, 26);
+            this.LabelFilter.Size = new System.Drawing.Size(251, 26);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressListExpandsButton_255
+            // 
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-2, 661);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(249, 30);
+            this.AddressListExpandsButton_255.TabIndex = 154;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // WorldMapPointForm
             // 
@@ -1151,5 +1163,6 @@
         private System.Windows.Forms.ComboBox L_1_COMBO;
         private System.Windows.Forms.ComboBox L_30_COMBO;
         private FEBuilderGBA.LabelEx L_24_MAPXY_26;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
     }
 }

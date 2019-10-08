@@ -51,6 +51,18 @@ namespace FEBuilderGBA
                 this.ERROR_NOT_FOUND.Show();
                 this.WriteButton.Hide();
             }
+
+            //章拡張を表示するかどうか
+            uint map_count = MapSettingForm.GetDataCount();
+            if (MapSettingForm.IsShowChapterExetdns((int)map_count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         public InputFormRef InputFormRef;

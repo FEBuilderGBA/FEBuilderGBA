@@ -92,6 +92,7 @@ namespace FEBuilderGBA
             , TRAP              //RAM罠
             , FSEC              //フレーム秒
             , TILE              //マップのタイル名
+            , EDITION           //編
             , SUPPORT_LEVEL     //支援レベル
             , GAMEOPTION        //ゲームオプション
             , GAMEOPTION_VALUE  //ゲームオプションの値
@@ -658,6 +659,9 @@ namespace FEBuilderGBA
                  break;
              case "TILE":
                  type = ArgType.TILE;
+                 break;
+             case "EDITION":
+                 type = ArgType.EDITION;
                  break;
              case "SUPPORT_LEVEL":
                  type = ArgType.SUPPORT_LEVEL;

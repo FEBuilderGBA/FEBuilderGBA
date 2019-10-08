@@ -2325,39 +2325,13 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            string ret = U.ToHexString(v) + "=";
-            if (Program.ROM.RomInfo.version() == 8)
+            string ret = U.ToHexString(v);
+            string edition = InputFormRef.GetEditon(v);
+            if (edition == "")
             {
-                if (v == 1)
-                {
-                    return ret + R._("序盤");
-                }
-                if (v == 2)
-                {
-                    return ret + R._("エイリーク編");
-                }
-                if (v == 3)
-                {
-                    return ret + R._("エフラム編");
-                }
-                return ret + "???";
+                edition = "???";
             }
-            if (Program.ROM.RomInfo.version() == 7)
-            {
-                if (v == 1)
-                {
-                    return ret + R._("リン編");
-                }
-                if (v == 2)
-                {
-                    return ret + R._("エリウッド編");
-                }
-                if (v == 3)
-                {
-                    return ret + R._("ヘクトル編");
-                }
-            }
-            return ret + "???";
+            return ret +"=" + edition;
         }
         //難易度を求める.
         uint GetDiffecly()

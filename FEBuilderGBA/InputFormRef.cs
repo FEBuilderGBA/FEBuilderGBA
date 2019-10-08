@@ -6541,6 +6541,41 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static string GetEditon(uint v)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {
+                if (v == 1)
+                {
+                    return R._("序盤");
+                }
+                if (v == 2)
+                {
+                    return R._("エイリーク編");
+                }
+                if (v == 3)
+                {
+                    return R._("エフラム編");
+                }
+            }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (v == 1)
+                {
+                    return R._("リン編");
+                }
+                if (v == 2)
+                {
+                    return R._("エリウッド編");
+                }
+                if (v == 3)
+                {
+                    return R._("ヘクトル編");
+                }
+            }
+            return "";
+        }
+
         public static string GetSuportLevel(uint num)
         {
             if (num == 0)

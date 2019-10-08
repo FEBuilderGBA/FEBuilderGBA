@@ -31,6 +31,16 @@ namespace FEBuilderGBA
         }
         private void MapSettingForm_Load(object sender, EventArgs e)
         {
+            //章拡張を表示するかどうか
+            if (MapSettingForm.IsShowChapterExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -845,5 +855,13 @@ namespace FEBuilderGBA
             f.JumpTo(eventAddr);
         }
 
+        public static bool IsShowChapterExetdns(int count)
+        {
+            if (count > Program.ROM.RomInfo.map_default_count())
+            {//拡張している場合、表示する
+                return true;
+            }
+            return (OptionForm.show_chapter_extends() == OptionForm.show_extends_enum.Show);
+        }
     }
 }

@@ -392,6 +392,7 @@ namespace FEBuilderGBA
         byte[] defualt_event_script_mapterm_code(); //イベント命令を終了させるディフォルトコード(WMAP)
         string get_shop_name(uint shop_object); //店の名前
         uint main_menu_width_address(); //メインメニューの幅
+        uint map_default_count();    // ディフォルトのマップ数
         uint extends_address(); //拡張領域
         uint orignal_crc32(); //無改造ROMのCRC32
         bool is_multibyte();    // マルチバイトを利用するか？

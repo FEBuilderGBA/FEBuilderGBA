@@ -128,7 +128,7 @@
             "新しい日付でソート",
             "古い日付でソート",
             "名前でソート"});
-            this.SortFilterComboBox.Location = new System.Drawing.Point(12, 450);
+            this.SortFilterComboBox.Location = new System.Drawing.Point(12, 444);
             this.SortFilterComboBox.Name = "SortFilterComboBox";
             this.SortFilterComboBox.Size = new System.Drawing.Size(435, 32);
             this.SortFilterComboBox.TabIndex = 8;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(469, 510);
+            this.ClientSize = new System.Drawing.Size(469, 494);
             this.Controls.Add(this.SortFilterComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ESSENTIALFIXESButton);

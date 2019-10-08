@@ -989,6 +989,10 @@ namespace FEBuilderGBA
                 image = InputFormRef.DrawSkillIcon(v);
                 text = " " + InputFormRef.GetSkillName(v);
             }
+            else if (arg.Type == EventScript.ArgType.EDITION)
+            {
+                text = " " + InputFormRef.GetEditon(v);
+            }
             else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
             {
                 text = " " + InputFormRef.GetSuportLevel(v);
@@ -2690,6 +2694,11 @@ namespace FEBuilderGBA
                     {//SKILL
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetSkillName(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.EDITION)
+                    {
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetEditon(v));
                     }
                     else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                     {

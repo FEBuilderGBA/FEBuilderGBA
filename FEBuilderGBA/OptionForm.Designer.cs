@@ -155,7 +155,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.ShortCutValue1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.tabPageFunc = new System.Windows.Forms.TabPage();
+            this.tabPageFunc1 = new System.Windows.Forms.TabPage();
             this.explain_func_alloc_program_area_option = new System.Windows.Forms.Label();
             this.func_alloc_program_area_option = new System.Windows.Forms.ComboBox();
             this.func_alert_unk_event_code = new System.Windows.Forms.ComboBox();
@@ -186,7 +186,7 @@
             this.func_write_out_of_range = new System.Windows.Forms.ComboBox();
             this.explain_func_rom_extends_option = new System.Windows.Forms.Label();
             this.func_rom_extends_option = new System.Windows.Forms.ComboBox();
-            this.tabPageFunc2 = new System.Windows.Forms.TabPage();
+            this.tabPageFunc3 = new System.Windows.Forms.TabPage();
             this.explain_func_notify_upper_time = new System.Windows.Forms.Label();
             this.func_notify_upper_time = new System.Windows.Forms.ComboBox();
             this.func_proxy_server_when_connecting = new System.Windows.Forms.ComboBox();
@@ -210,6 +210,8 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
+            this.func_show_chapter_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_chapter_extends = new System.Windows.Forms.Label();
             this.mid2agb = new FEBuilderGBA.TextBoxEx();
             this.event_assembler = new FEBuilderGBA.TextBoxEx();
             this.sappy = new FEBuilderGBA.TextBoxEx();
@@ -240,12 +242,19 @@
             this.ShortCutKey3 = new FEBuilderGBA.TextBoxEx();
             this.ShortCutKey2 = new FEBuilderGBA.TextBoxEx();
             this.ShortCutKey1 = new FEBuilderGBA.TextBoxEx();
+            this.tabPageFunc2 = new System.Windows.Forms.TabPage();
+            this.label61 = new System.Windows.Forms.Label();
+            this.func_show_worldmap_node_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_worldmap_node_extends = new System.Windows.Forms.Label();
+            this.func_show_worldmap_path_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_worldmap_path_extends = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
             this.tabPageColor.SuspendLayout();
             this.tabPageShortCut.SuspendLayout();
-            this.tabPageFunc.SuspendLayout();
+            this.tabPageFunc1.SuspendLayout();
+            this.tabPageFunc3.SuspendLayout();
             this.tabPageFunc2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,8 +264,9 @@
             this.tabControl1.Controls.Add(this.tabPagePath2);
             this.tabControl1.Controls.Add(this.tabPageColor);
             this.tabControl1.Controls.Add(this.tabPageShortCut);
-            this.tabControl1.Controls.Add(this.tabPageFunc);
+            this.tabControl1.Controls.Add(this.tabPageFunc1);
             this.tabControl1.Controls.Add(this.tabPageFunc2);
+            this.tabControl1.Controls.Add(this.tabPageFunc3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
@@ -1744,51 +1754,42 @@
             this.label17.TabIndex = 1;
             this.label17.Text = "ショートカットキー1";
             // 
-            // tabPageFunc
+            // tabPageFunc1
             // 
-            this.tabPageFunc.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageFunc.Controls.Add(this.explain_func_alloc_program_area_option);
-            this.tabPageFunc.Controls.Add(this.func_alloc_program_area_option);
-            this.tabPageFunc.Controls.Add(this.func_alert_unk_event_code);
-            this.tabPageFunc.Controls.Add(this.explain_func_alert_unk_event_code);
-            this.tabPageFunc.Controls.Add(this.func_overraide_simple_error_check);
-            this.tabPageFunc.Controls.Add(this.explain_func_overraide_simple_error_check);
-            this.tabPageFunc.Controls.Add(this.func_create_nodoll_gba_sym);
-            this.tabPageFunc.Controls.Add(this.explain_func_create_nodoll_gba_sym);
-            this.tabPageFunc.Controls.Add(this.label40);
-            this.tabPageFunc.Controls.Add(this.label37);
-            this.tabPageFunc.Controls.Add(this.label34);
-            this.tabPageFunc.Controls.Add(this.explain_func_text_escape);
-            this.tabPageFunc.Controls.Add(this.func_text_escape);
-            this.tabPageFunc.Controls.Add(this.label33);
-            this.tabPageFunc.Controls.Add(this.explain_func_auto_backup);
-            this.tabPageFunc.Controls.Add(this.func_auto_backup);
-            this.tabPageFunc.Controls.Add(this.func_show_class_extends);
-            this.tabPageFunc.Controls.Add(this.explain_func_show_class_extends);
-            this.tabPageFunc.Controls.Add(this.explain_func_rom_extends);
-            this.tabPageFunc.Controls.Add(this.explain_func_lint_text_skip_bug);
-            this.tabPageFunc.Controls.Add(this.func_lint_text_skip_bug);
-            this.tabPageFunc.Controls.Add(this.func_rom_extends);
-            this.tabPageFunc.Controls.Add(this.func_texteditor_auto_convert_space);
-            this.tabPageFunc.Controls.Add(this.explain_func_texteditor_auto_convert_space);
-            this.tabPageFunc.Controls.Add(this.func_auto_connect_emulator);
-            this.tabPageFunc.Controls.Add(this.explain_func_auto_connect_emulator);
-            this.tabPageFunc.Controls.Add(this.explain_func_write_out_of_range);
-            this.tabPageFunc.Controls.Add(this.func_write_out_of_range);
-            this.tabPageFunc.Controls.Add(this.explain_func_rom_extends_option);
-            this.tabPageFunc.Controls.Add(this.func_rom_extends_option);
-            this.tabPageFunc.Location = new System.Drawing.Point(4, 28);
-            this.tabPageFunc.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc.Name = "tabPageFunc";
-            this.tabPageFunc.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc.Size = new System.Drawing.Size(842, 703);
-            this.tabPageFunc.TabIndex = 3;
-            this.tabPageFunc.Text = "機能";
+            this.tabPageFunc1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc1.Controls.Add(this.explain_func_alloc_program_area_option);
+            this.tabPageFunc1.Controls.Add(this.func_alloc_program_area_option);
+            this.tabPageFunc1.Controls.Add(this.func_alert_unk_event_code);
+            this.tabPageFunc1.Controls.Add(this.explain_func_alert_unk_event_code);
+            this.tabPageFunc1.Controls.Add(this.func_create_nodoll_gba_sym);
+            this.tabPageFunc1.Controls.Add(this.explain_func_create_nodoll_gba_sym);
+            this.tabPageFunc1.Controls.Add(this.label37);
+            this.tabPageFunc1.Controls.Add(this.label34);
+            this.tabPageFunc1.Controls.Add(this.explain_func_text_escape);
+            this.tabPageFunc1.Controls.Add(this.func_text_escape);
+            this.tabPageFunc1.Controls.Add(this.label33);
+            this.tabPageFunc1.Controls.Add(this.explain_func_rom_extends);
+            this.tabPageFunc1.Controls.Add(this.explain_func_lint_text_skip_bug);
+            this.tabPageFunc1.Controls.Add(this.func_lint_text_skip_bug);
+            this.tabPageFunc1.Controls.Add(this.func_rom_extends);
+            this.tabPageFunc1.Controls.Add(this.func_texteditor_auto_convert_space);
+            this.tabPageFunc1.Controls.Add(this.explain_func_texteditor_auto_convert_space);
+            this.tabPageFunc1.Controls.Add(this.func_auto_connect_emulator);
+            this.tabPageFunc1.Controls.Add(this.explain_func_auto_connect_emulator);
+            this.tabPageFunc1.Controls.Add(this.explain_func_rom_extends_option);
+            this.tabPageFunc1.Controls.Add(this.func_rom_extends_option);
+            this.tabPageFunc1.Location = new System.Drawing.Point(4, 28);
+            this.tabPageFunc1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageFunc1.Name = "tabPageFunc1";
+            this.tabPageFunc1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageFunc1.Size = new System.Drawing.Size(842, 703);
+            this.tabPageFunc1.TabIndex = 3;
+            this.tabPageFunc1.Text = "機能";
             // 
             // explain_func_alloc_program_area_option
             // 
             this.explain_func_alloc_program_area_option.AccessibleDescription = "";
-            this.explain_func_alloc_program_area_option.Location = new System.Drawing.Point(10, 441);
+            this.explain_func_alloc_program_area_option.Location = new System.Drawing.Point(10, 462);
             this.explain_func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_alloc_program_area_option.Name = "explain_func_alloc_program_area_option";
             this.explain_func_alloc_program_area_option.Size = new System.Drawing.Size(405, 18);
@@ -1803,7 +1804,7 @@
             this.func_alloc_program_area_option.Items.AddRange(new object[] {
             "0=上位アドレスを利用",
             "1=通常の拡張領域を利用"});
-            this.func_alloc_program_area_option.Location = new System.Drawing.Point(420, 440);
+            this.func_alloc_program_area_option.Location = new System.Drawing.Point(420, 461);
             this.func_alloc_program_area_option.Margin = new System.Windows.Forms.Padding(2);
             this.func_alloc_program_area_option.Name = "func_alloc_program_area_option";
             this.func_alloc_program_area_option.Size = new System.Drawing.Size(408, 26);
@@ -1848,7 +1849,7 @@
             this.func_overraide_simple_error_check.Items.AddRange(new object[] {
             "0=チェックしない",
             "1=簡易エラーチェックをする"});
-            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(420, 641);
+            this.func_overraide_simple_error_check.Location = new System.Drawing.Point(419, 125);
             this.func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2);
             this.func_overraide_simple_error_check.Name = "func_overraide_simple_error_check";
             this.func_overraide_simple_error_check.Size = new System.Drawing.Size(408, 26);
@@ -1857,7 +1858,7 @@
             // explain_func_overraide_simple_error_check
             // 
             this.explain_func_overraide_simple_error_check.AccessibleDescription = "";
-            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(6, 645);
+            this.explain_func_overraide_simple_error_check.Location = new System.Drawing.Point(5, 129);
             this.explain_func_overraide_simple_error_check.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_overraide_simple_error_check.Name = "explain_func_overraide_simple_error_check";
             this.explain_func_overraide_simple_error_check.Size = new System.Drawing.Size(405, 18);
@@ -1872,7 +1873,7 @@
             this.func_create_nodoll_gba_sym.Items.AddRange(new object[] {
             "0=SYMファイルを作成しない",
             "1=自動的にSYMファイル作成する"});
-            this.func_create_nodoll_gba_sym.Location = new System.Drawing.Point(420, 295);
+            this.func_create_nodoll_gba_sym.Location = new System.Drawing.Point(420, 292);
             this.func_create_nodoll_gba_sym.Margin = new System.Windows.Forms.Padding(2);
             this.func_create_nodoll_gba_sym.Name = "func_create_nodoll_gba_sym";
             this.func_create_nodoll_gba_sym.Size = new System.Drawing.Size(408, 26);
@@ -1881,7 +1882,7 @@
             // explain_func_create_nodoll_gba_sym
             // 
             this.explain_func_create_nodoll_gba_sym.AccessibleDescription = "";
-            this.explain_func_create_nodoll_gba_sym.Location = new System.Drawing.Point(10, 296);
+            this.explain_func_create_nodoll_gba_sym.Location = new System.Drawing.Point(10, 293);
             this.explain_func_create_nodoll_gba_sym.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_create_nodoll_gba_sym.Name = "explain_func_create_nodoll_gba_sym";
             this.explain_func_create_nodoll_gba_sym.Size = new System.Drawing.Size(405, 18);
@@ -1892,7 +1893,7 @@
             // label40
             // 
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Location = new System.Drawing.Point(8, 488);
+            this.label40.Location = new System.Drawing.Point(8, 9);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(822, 30);
@@ -1903,7 +1904,7 @@
             // label37
             // 
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(8, 329);
+            this.label37.Location = new System.Drawing.Point(8, 350);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(822, 30);
@@ -1914,7 +1915,7 @@
             // label34
             // 
             this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Location = new System.Drawing.Point(8, 219);
+            this.label34.Location = new System.Drawing.Point(8, 216);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(822, 30);
@@ -1960,7 +1961,7 @@
             // explain_func_auto_backup
             // 
             this.explain_func_auto_backup.AccessibleDescription = "";
-            this.explain_func_auto_backup.Location = new System.Drawing.Point(10, 531);
+            this.explain_func_auto_backup.Location = new System.Drawing.Point(9, 54);
             this.explain_func_auto_backup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_auto_backup.Name = "explain_func_auto_backup";
             this.explain_func_auto_backup.Size = new System.Drawing.Size(405, 18);
@@ -1976,7 +1977,7 @@
             "0=作成しない",
             "1=保存する前にバックアップを作成する",
             "2=保存する前にバックアップを作成する(7z圧縮)"});
-            this.func_auto_backup.Location = new System.Drawing.Point(420, 531);
+            this.func_auto_backup.Location = new System.Drawing.Point(419, 54);
             this.func_auto_backup.Margin = new System.Windows.Forms.Padding(2);
             this.func_auto_backup.Name = "func_auto_backup";
             this.func_auto_backup.Size = new System.Drawing.Size(408, 26);
@@ -1989,7 +1990,7 @@
             this.func_show_class_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_class_extends.Location = new System.Drawing.Point(420, 605);
+            this.func_show_class_extends.Location = new System.Drawing.Point(419, 237);
             this.func_show_class_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_class_extends.Name = "func_show_class_extends";
             this.func_show_class_extends.Size = new System.Drawing.Size(408, 26);
@@ -1998,18 +1999,18 @@
             // explain_func_show_class_extends
             // 
             this.explain_func_show_class_extends.AccessibleDescription = "";
-            this.explain_func_show_class_extends.Location = new System.Drawing.Point(10, 607);
+            this.explain_func_show_class_extends.Location = new System.Drawing.Point(9, 240);
             this.explain_func_show_class_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_class_extends.Name = "explain_func_show_class_extends";
             this.explain_func_show_class_extends.Size = new System.Drawing.Size(405, 18);
             this.explain_func_show_class_extends.TabIndex = 31;
-            this.explain_func_show_class_extends.Text = "クラス拡張のボタン表示する";
+            this.explain_func_show_class_extends.Text = "クラス拡張のボタンを表示する";
             this.explain_func_show_class_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // explain_func_rom_extends
             // 
             this.explain_func_rom_extends.AccessibleDescription = "";
-            this.explain_func_rom_extends.Location = new System.Drawing.Point(10, 369);
+            this.explain_func_rom_extends.Location = new System.Drawing.Point(10, 390);
             this.explain_func_rom_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_rom_extends.Name = "explain_func_rom_extends";
             this.explain_func_rom_extends.Size = new System.Drawing.Size(405, 18);
@@ -2050,7 +2051,7 @@
             this.func_rom_extends.Items.AddRange(new object[] {
             "0=拡張を認めない",
             "1=ROMサイズを32MBまで拡張を認める"});
-            this.func_rom_extends.Location = new System.Drawing.Point(420, 369);
+            this.func_rom_extends.Location = new System.Drawing.Point(420, 390);
             this.func_rom_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends.Name = "func_rom_extends";
             this.func_rom_extends.Size = new System.Drawing.Size(408, 26);
@@ -2088,7 +2089,7 @@
             "0=エミュレータへ接続しない",
             "1=自動接続",
             "2=自動接続し、自動終了"});
-            this.func_auto_connect_emulator.Location = new System.Drawing.Point(420, 260);
+            this.func_auto_connect_emulator.Location = new System.Drawing.Point(420, 257);
             this.func_auto_connect_emulator.Margin = new System.Windows.Forms.Padding(2);
             this.func_auto_connect_emulator.Name = "func_auto_connect_emulator";
             this.func_auto_connect_emulator.Size = new System.Drawing.Size(408, 26);
@@ -2097,7 +2098,7 @@
             // explain_func_auto_connect_emulator
             // 
             this.explain_func_auto_connect_emulator.AccessibleDescription = "";
-            this.explain_func_auto_connect_emulator.Location = new System.Drawing.Point(10, 262);
+            this.explain_func_auto_connect_emulator.Location = new System.Drawing.Point(10, 259);
             this.explain_func_auto_connect_emulator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_auto_connect_emulator.Name = "explain_func_auto_connect_emulator";
             this.explain_func_auto_connect_emulator.Size = new System.Drawing.Size(405, 18);
@@ -2108,7 +2109,7 @@
             // explain_func_write_out_of_range
             // 
             this.explain_func_write_out_of_range.AccessibleDescription = "";
-            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(10, 567);
+            this.explain_func_write_out_of_range.Location = new System.Drawing.Point(9, 90);
             this.explain_func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_write_out_of_range.Name = "explain_func_write_out_of_range";
             this.explain_func_write_out_of_range.Size = new System.Drawing.Size(405, 18);
@@ -2124,7 +2125,7 @@
             "0=警告も何もしない(推奨しません)",
             "1=書き込みを警告する",
             "2=書き込みを禁止する"});
-            this.func_write_out_of_range.Location = new System.Drawing.Point(420, 567);
+            this.func_write_out_of_range.Location = new System.Drawing.Point(419, 90);
             this.func_write_out_of_range.Margin = new System.Windows.Forms.Padding(2);
             this.func_write_out_of_range.Name = "func_write_out_of_range";
             this.func_write_out_of_range.Size = new System.Drawing.Size(408, 26);
@@ -2133,7 +2134,7 @@
             // explain_func_rom_extends_option
             // 
             this.explain_func_rom_extends_option.AccessibleDescription = "";
-            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 405);
+            this.explain_func_rom_extends_option.Location = new System.Drawing.Point(10, 426);
             this.explain_func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_rom_extends_option.Name = "explain_func_rom_extends_option";
             this.explain_func_rom_extends_option.Size = new System.Drawing.Size(405, 18);
@@ -2151,44 +2152,44 @@
             "2=0x09000000以降 0xFFが規定数連続",
             "3=0x08000000以降 0x00が規定数連続",
             "4=0x08000000以降 0xFFが規定数連続"});
-            this.func_rom_extends_option.Location = new System.Drawing.Point(420, 404);
+            this.func_rom_extends_option.Location = new System.Drawing.Point(420, 425);
             this.func_rom_extends_option.Margin = new System.Windows.Forms.Padding(2);
             this.func_rom_extends_option.Name = "func_rom_extends_option";
             this.func_rom_extends_option.Size = new System.Drawing.Size(408, 26);
             this.func_rom_extends_option.TabIndex = 14;
             // 
-            // tabPageFunc2
+            // tabPageFunc3
             // 
-            this.tabPageFunc2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageFunc2.Controls.Add(this.explain_func_notify_upper_time);
-            this.tabPageFunc2.Controls.Add(this.func_notify_upper_time);
-            this.tabPageFunc2.Controls.Add(this.func_proxy_server_when_connecting);
-            this.tabPageFunc2.Controls.Add(this.label47);
-            this.tabPageFunc2.Controls.Add(this.label46);
-            this.tabPageFunc2.Controls.Add(this.explain_func_proxy_server_when_connecting);
-            this.tabPageFunc2.Controls.Add(this.label45);
-            this.tabPageFunc2.Controls.Add(this.label42);
-            this.tabPageFunc2.Controls.Add(this.explain_func_auto_update);
-            this.tabPageFunc2.Controls.Add(this.func_auto_update);
-            this.tabPageFunc2.Controls.Add(this.func_textencoding);
-            this.tabPageFunc2.Controls.Add(this.explain_func_textencoding);
-            this.tabPageFunc2.Controls.Add(this.func_lookup_feditor);
-            this.tabPageFunc2.Controls.Add(this.func_lang);
-            this.tabPageFunc2.Controls.Add(this.explain_func_lookup_feditor);
-            this.tabPageFunc2.Controls.Add(this.explain_func_lang);
-            this.tabPageFunc2.Controls.Add(this.explain_func_first_form);
-            this.tabPageFunc2.Controls.Add(this.explain_func_write_notify_time);
-            this.tabPageFunc2.Controls.Add(this.func_first_form);
-            this.tabPageFunc2.Controls.Add(this.explain_func_select_in_explorer_when_export);
-            this.tabPageFunc2.Controls.Add(this.func_select_in_explorer_when_export);
-            this.tabPageFunc2.Controls.Add(this.func_write_notify_time);
-            this.tabPageFunc2.Location = new System.Drawing.Point(4, 28);
-            this.tabPageFunc2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc2.Name = "tabPageFunc2";
-            this.tabPageFunc2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageFunc2.Size = new System.Drawing.Size(842, 703);
-            this.tabPageFunc2.TabIndex = 4;
-            this.tabPageFunc2.Text = "機能2";
+            this.tabPageFunc3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc3.Controls.Add(this.explain_func_notify_upper_time);
+            this.tabPageFunc3.Controls.Add(this.func_notify_upper_time);
+            this.tabPageFunc3.Controls.Add(this.func_proxy_server_when_connecting);
+            this.tabPageFunc3.Controls.Add(this.label47);
+            this.tabPageFunc3.Controls.Add(this.label46);
+            this.tabPageFunc3.Controls.Add(this.explain_func_proxy_server_when_connecting);
+            this.tabPageFunc3.Controls.Add(this.label45);
+            this.tabPageFunc3.Controls.Add(this.label42);
+            this.tabPageFunc3.Controls.Add(this.explain_func_auto_update);
+            this.tabPageFunc3.Controls.Add(this.func_auto_update);
+            this.tabPageFunc3.Controls.Add(this.func_textencoding);
+            this.tabPageFunc3.Controls.Add(this.explain_func_textencoding);
+            this.tabPageFunc3.Controls.Add(this.func_lookup_feditor);
+            this.tabPageFunc3.Controls.Add(this.func_lang);
+            this.tabPageFunc3.Controls.Add(this.explain_func_lookup_feditor);
+            this.tabPageFunc3.Controls.Add(this.explain_func_lang);
+            this.tabPageFunc3.Controls.Add(this.explain_func_first_form);
+            this.tabPageFunc3.Controls.Add(this.explain_func_write_notify_time);
+            this.tabPageFunc3.Controls.Add(this.func_first_form);
+            this.tabPageFunc3.Controls.Add(this.explain_func_select_in_explorer_when_export);
+            this.tabPageFunc3.Controls.Add(this.func_select_in_explorer_when_export);
+            this.tabPageFunc3.Controls.Add(this.func_write_notify_time);
+            this.tabPageFunc3.Location = new System.Drawing.Point(4, 28);
+            this.tabPageFunc3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageFunc3.Name = "tabPageFunc3";
+            this.tabPageFunc3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageFunc3.Size = new System.Drawing.Size(842, 703);
+            this.tabPageFunc3.TabIndex = 4;
+            this.tabPageFunc3.Text = "機能3";
             // 
             // explain_func_notify_upper_time
             // 
@@ -2463,6 +2464,30 @@
             this.WriteButton.Text = "保存";
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // func_show_chapter_extends
+            // 
+            this.func_show_chapter_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_chapter_extends.FormattingEnabled = true;
+            this.func_show_chapter_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_chapter_extends.Location = new System.Drawing.Point(419, 274);
+            this.func_show_chapter_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_chapter_extends.Name = "func_show_chapter_extends";
+            this.func_show_chapter_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_chapter_extends.TabIndex = 57;
+            // 
+            // explain_func_show_chapter_extends
+            // 
+            this.explain_func_show_chapter_extends.AccessibleDescription = "";
+            this.explain_func_show_chapter_extends.Location = new System.Drawing.Point(9, 279);
+            this.explain_func_show_chapter_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_chapter_extends.Name = "explain_func_show_chapter_extends";
+            this.explain_func_show_chapter_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_chapter_extends.TabIndex = 56;
+            this.explain_func_show_chapter_extends.Text = "章拡張ボタンを表示する";
+            this.explain_func_show_chapter_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // mid2agb
             // 
@@ -2790,13 +2815,98 @@
             this.ShortCutKey1.TabIndex = 3;
             this.ShortCutKey1.Leave += new System.EventHandler(this.ShortCutKey1_Leave);
             // 
+            // tabPageFunc2
+            // 
+            this.tabPageFunc2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc2.Controls.Add(this.func_show_worldmap_path_extends);
+            this.tabPageFunc2.Controls.Add(this.explain_func_show_worldmap_path_extends);
+            this.tabPageFunc2.Controls.Add(this.func_show_worldmap_node_extends);
+            this.tabPageFunc2.Controls.Add(this.explain_func_show_worldmap_node_extends);
+            this.tabPageFunc2.Controls.Add(this.label61);
+            this.tabPageFunc2.Controls.Add(this.func_show_chapter_extends);
+            this.tabPageFunc2.Controls.Add(this.label40);
+            this.tabPageFunc2.Controls.Add(this.explain_func_auto_backup);
+            this.tabPageFunc2.Controls.Add(this.explain_func_show_chapter_extends);
+            this.tabPageFunc2.Controls.Add(this.func_auto_backup);
+            this.tabPageFunc2.Controls.Add(this.explain_func_overraide_simple_error_check);
+            this.tabPageFunc2.Controls.Add(this.func_show_class_extends);
+            this.tabPageFunc2.Controls.Add(this.func_write_out_of_range);
+            this.tabPageFunc2.Controls.Add(this.func_overraide_simple_error_check);
+            this.tabPageFunc2.Controls.Add(this.explain_func_write_out_of_range);
+            this.tabPageFunc2.Controls.Add(this.explain_func_show_class_extends);
+            this.tabPageFunc2.Location = new System.Drawing.Point(4, 28);
+            this.tabPageFunc2.Name = "tabPageFunc2";
+            this.tabPageFunc2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageFunc2.Size = new System.Drawing.Size(842, 703);
+            this.tabPageFunc2.TabIndex = 6;
+            this.tabPageFunc2.Text = "機能2";
+            // 
+            // label61
+            // 
+            this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label61.Location = new System.Drawing.Point(8, 187);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(822, 30);
+            this.label61.TabIndex = 58;
+            this.label61.Text = "拡張ボタン";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // func_show_worldmap_node_extends
+            // 
+            this.func_show_worldmap_node_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_worldmap_node_extends.FormattingEnabled = true;
+            this.func_show_worldmap_node_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_worldmap_node_extends.Location = new System.Drawing.Point(419, 314);
+            this.func_show_worldmap_node_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_worldmap_node_extends.Name = "func_show_worldmap_node_extends";
+            this.func_show_worldmap_node_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_worldmap_node_extends.TabIndex = 60;
+            // 
+            // explain_func_show_worldmap_node_extends
+            // 
+            this.explain_func_show_worldmap_node_extends.AccessibleDescription = "";
+            this.explain_func_show_worldmap_node_extends.Location = new System.Drawing.Point(9, 319);
+            this.explain_func_show_worldmap_node_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_worldmap_node_extends.Name = "explain_func_show_worldmap_node_extends";
+            this.explain_func_show_worldmap_node_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_worldmap_node_extends.TabIndex = 59;
+            this.explain_func_show_worldmap_node_extends.Text = "FE8ワールドマップ拠点の拡張ボタンを表示する";
+            this.explain_func_show_worldmap_node_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // func_show_worldmap_path_extends
+            // 
+            this.func_show_worldmap_path_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_worldmap_path_extends.FormattingEnabled = true;
+            this.func_show_worldmap_path_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_worldmap_path_extends.Location = new System.Drawing.Point(419, 353);
+            this.func_show_worldmap_path_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_worldmap_path_extends.Name = "func_show_worldmap_path_extends";
+            this.func_show_worldmap_path_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_worldmap_path_extends.TabIndex = 62;
+            // 
+            // explain_func_show_worldmap_path_extends
+            // 
+            this.explain_func_show_worldmap_path_extends.AccessibleDescription = "";
+            this.explain_func_show_worldmap_path_extends.Location = new System.Drawing.Point(9, 358);
+            this.explain_func_show_worldmap_path_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_worldmap_path_extends.Name = "explain_func_show_worldmap_path_extends";
+            this.explain_func_show_worldmap_path_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_worldmap_path_extends.TabIndex = 61;
+            this.explain_func_show_worldmap_path_extends.Text = "FE8ワールドマップ道の拡張ボタンを表示する";
+            this.explain_func_show_worldmap_path_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // OptionForm
             // 
             this.AcceptButton = this.WriteButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(878, 748);
+            this.ClientSize = new System.Drawing.Size(869, 783);
             this.Controls.Add(this.WriteButton);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -2812,7 +2922,8 @@
             this.tabPageColor.PerformLayout();
             this.tabPageShortCut.ResumeLayout(false);
             this.tabPageShortCut.PerformLayout();
-            this.tabPageFunc.ResumeLayout(false);
+            this.tabPageFunc1.ResumeLayout(false);
+            this.tabPageFunc3.ResumeLayout(false);
             this.tabPageFunc2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -2912,7 +3023,7 @@
         private System.Windows.Forms.Button goldroad_asm_button;
         private FEBuilderGBA.TextBoxEx goldroad_asm;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TabPage tabPageFunc;
+        private System.Windows.Forms.TabPage tabPageFunc1;
         private System.Windows.Forms.Label explain_func_rom_extends;
         private System.Windows.Forms.ComboBox func_first_form;
         private System.Windows.Forms.Label explain_func_first_form;
@@ -2931,7 +3042,7 @@
         private System.Windows.Forms.ComboBox ColorSetComboBox;
         private System.Windows.Forms.Label label39;
         private FEBuilderGBA.TextBoxEx KeyFinder;
-        private System.Windows.Forms.TabPage tabPageFunc2;
+        private System.Windows.Forms.TabPage tabPageFunc3;
         private System.Windows.Forms.ComboBox func_textencoding;
         private System.Windows.Forms.Label explain_func_textencoding;
         private System.Windows.Forms.ComboBox func_lang;
@@ -3032,5 +3143,13 @@
         private System.Windows.Forms.Label ERROR_IsOldEA;
         private System.Windows.Forms.Label explain_func_alloc_program_area_option;
         private System.Windows.Forms.ComboBox func_alloc_program_area_option;
+        private System.Windows.Forms.ComboBox func_show_chapter_extends;
+        private System.Windows.Forms.Label explain_func_show_chapter_extends;
+        private System.Windows.Forms.TabPage tabPageFunc2;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.ComboBox func_show_worldmap_path_extends;
+        private System.Windows.Forms.Label explain_func_show_worldmap_path_extends;
+        private System.Windows.Forms.ComboBox func_show_worldmap_node_extends;
+        private System.Windows.Forms.Label explain_func_show_worldmap_node_extends;
     }
 }

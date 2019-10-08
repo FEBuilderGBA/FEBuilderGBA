@@ -534,6 +534,10 @@ namespace FEBuilderGBA
             {
                 text = InputFormRef.GetSuportLevel(value);
             }
+            else if (arg.Type == EventScript.ArgType.EDITION)
+            {
+                text = InputFormRef.GetEditon(value);
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;

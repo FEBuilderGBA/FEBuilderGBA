@@ -53,7 +53,16 @@ namespace FEBuilderGBA
 
         private void WorldMapEventPointerFE7Form_Load(object sender, EventArgs e)
         {
-
+            //章拡張を表示するかどうか
+            if (MapSettingForm.IsShowChapterExetdns(this.N_AddressList.Items.Count))
+            {
+                N_AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.N_AddressList.Height += N_AddressListExpandsButton_255.Height;
+                N_AddressListExpandsButton_255.Hide();
+            }
         }
 
         public static List<U.AddrResult> MakeList()

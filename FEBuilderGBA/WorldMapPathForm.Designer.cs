@@ -62,6 +62,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
@@ -94,7 +95,7 @@
             this.panel2.Controls.Add(this.B4);
             this.panel2.Controls.Add(this.J_ID_PATHEDITOR);
             this.panel2.Controls.Add(this.J_4);
-            this.panel2.Location = new System.Drawing.Point(373, 80);
+            this.panel2.Location = new System.Drawing.Point(373, 74);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(882, 140);
@@ -288,7 +289,7 @@
             // 
             // ReloadListButton
             // 
-            this.ReloadListButton.Location = new System.Drawing.Point(460, -1);
+            this.ReloadListButton.Location = new System.Drawing.Point(555, -2);
             this.ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReloadListButton.Name = "ReloadListButton";
             this.ReloadListButton.Size = new System.Drawing.Size(112, 30);
@@ -299,10 +300,10 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(-1, -2);
+            this.label1.Location = new System.Drawing.Point(-1, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 30);
+            this.label1.Size = new System.Drawing.Size(169, 30);
             this.label1.TabIndex = 23;
             this.label1.Text = "先頭アドレス";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,7 +311,7 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(266, 0);
+            this.label2.Location = new System.Drawing.Point(361, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 30);
@@ -320,7 +321,7 @@
             // 
             // ReadCount
             // 
-            this.ReadCount.Location = new System.Drawing.Point(352, 2);
+            this.ReadCount.Location = new System.Drawing.Point(447, 1);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
             this.ReadCount.Size = new System.Drawing.Size(78, 25);
@@ -329,7 +330,7 @@
             // ReadStartAddress
             // 
             this.ReadStartAddress.Hexadecimal = true;
-            this.ReadStartAddress.Location = new System.Drawing.Point(120, 2);
+            this.ReadStartAddress.Location = new System.Drawing.Point(171, 2);
             this.ReadStartAddress.Margin = new System.Windows.Forms.Padding(2);
             this.ReadStartAddress.Maximum = new decimal(new int[] {
             -559939585,
@@ -350,7 +351,7 @@
             this.AddressPanel.Controls.Add(this.label22);
             this.AddressPanel.Controls.Add(this.Address);
             this.AddressPanel.Controls.Add(this.label23);
-            this.AddressPanel.Location = new System.Drawing.Point(374, 47);
+            this.AddressPanel.Location = new System.Drawing.Point(374, 45);
             this.AddressPanel.Margin = new System.Windows.Forms.Padding(2);
             this.AddressPanel.Name = "AddressPanel";
             this.AddressPanel.Size = new System.Drawing.Size(885, 30);
@@ -439,10 +440,10 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.MapPictureBox);
-            this.panel3.Location = new System.Drawing.Point(378, 223);
+            this.panel3.Location = new System.Drawing.Point(378, 217);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(882, 511);
+            this.panel3.Size = new System.Drawing.Size(882, 521);
             this.panel3.TabIndex = 189;
             // 
             // MapPictureBox
@@ -458,11 +459,12 @@
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.AddressList);
+            this.panel7.Controls.Add(this.AddressListExpandsButton_255);
             this.panel7.Controls.Add(this.LabelFilter);
-            this.panel7.Location = new System.Drawing.Point(12, 50);
+            this.panel7.Location = new System.Drawing.Point(12, 45);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(358, 684);
+            this.panel7.Size = new System.Drawing.Size(358, 693);
             this.panel7.TabIndex = 191;
             // 
             // AddressList
@@ -471,10 +473,10 @@
             this.AddressList.FormattingEnabled = true;
             this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(2, 23);
+            this.AddressList.Location = new System.Drawing.Point(-1, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(350, 652);
+            this.AddressList.Size = new System.Drawing.Size(358, 630);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
@@ -482,13 +484,23 @@
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(2, -6);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, -2);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(355, 29);
+            this.LabelFilter.Size = new System.Drawing.Size(358, 29);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressListExpandsButton_255
+            // 
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(0, 662);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(354, 30);
+            this.AddressListExpandsButton_255.TabIndex = 154;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // WorldMapPathForm
             // 
@@ -561,5 +573,6 @@
         private ListBoxEx AddressList;
         private System.Windows.Forms.Label LabelFilter;
         private MapPictureBox MapPictureBox;
+        private System.Windows.Forms.Button AddressListExpandsButton_255;
     }
 }

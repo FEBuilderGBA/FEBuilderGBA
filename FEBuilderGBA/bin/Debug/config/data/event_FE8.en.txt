@@ -151,6 +151,7 @@
 402C0100XXXXXXXX20300000	Load units and move. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1+ENUN)	{LOADUNIT}
 402C0100XXXXXXXX	Load units without moving. Used for new [XXXXXXXX:POINTER_UNIT:Units](LOAD1)	{LOADUNIT}
 412C0100XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)	{LOADUNIT}
+412C0000XXXXXXXX	Load units from memory without moving. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2)(LOW)	{LOADUNIT}
 412C0100XXXXXXXX20300000	Load units from memory and move. Used for returning party members[XXXXXXXX:POINTER_UNIT:Units](LOAD2+ENUN)	{LOADUNIT}
 402C0000XXXXXXXX	Load units without moving (ver3)[XXXXXXXX:POINTER_UNIT:Units](LOAD1)
 422C0000XXXXXXXX	Load one unit[XXXXXXXX:POINTER_UNIT:Units](LOAD3)

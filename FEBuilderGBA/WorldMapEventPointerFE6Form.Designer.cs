@@ -65,10 +65,10 @@
             this.panel3.Controls.Add(this.N_L_0_EVENT);
             this.panel3.Controls.Add(this.N_P0);
             this.panel3.Controls.Add(this.N_J_0_EVENT);
-            this.panel3.Location = new System.Drawing.Point(352, 74);
+            this.panel3.Location = new System.Drawing.Point(352, 72);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(908, 395);
+            this.panel3.Size = new System.Drawing.Size(908, 679);
             this.panel3.TabIndex = 188;
             // 
             // N_L_0_EVENT
@@ -276,10 +276,10 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.N_AddressList);
             this.panel7.Controls.Add(this.N_LabelFilter);
-            this.panel7.Location = new System.Drawing.Point(13, 43);
+            this.panel7.Location = new System.Drawing.Point(14, 42);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(337, 426);
+            this.panel7.Size = new System.Drawing.Size(337, 710);
             this.panel7.TabIndex = 190;
             // 
             // N_AddressList
@@ -288,17 +288,17 @@
             this.N_AddressList.FormattingEnabled = true;
             this.N_AddressList.IntegralHeight = false;
             this.N_AddressList.ItemHeight = 18;
-            this.N_AddressList.Location = new System.Drawing.Point(0, 26);
+            this.N_AddressList.Location = new System.Drawing.Point(0, 25);
             this.N_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.N_AddressList.Name = "N_AddressList";
-            this.N_AddressList.Size = new System.Drawing.Size(336, 394);
+            this.N_AddressList.Size = new System.Drawing.Size(336, 677);
             this.N_AddressList.TabIndex = 108;
             // 
             // N_LabelFilter
             // 
             this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_LabelFilter.Location = new System.Drawing.Point(-1, -1);
+            this.N_LabelFilter.Location = new System.Drawing.Point(-1, 0);
             this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N_LabelFilter.Name = "N_LabelFilter";
             this.N_LabelFilter.Size = new System.Drawing.Size(337, 26);
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1265, 480);
+            this.ClientSize = new System.Drawing.Size(1265, 758);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);

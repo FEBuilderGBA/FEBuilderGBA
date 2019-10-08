@@ -31,6 +31,16 @@ namespace FEBuilderGBA
         }
         private void MapSettingForm_Load(object sender, EventArgs e)
         {
+            //章拡張を表示するかどうか
+            if (MapSettingForm.IsShowChapterExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         public InputFormRef InputFormRef;
@@ -103,7 +113,16 @@ namespace FEBuilderGBA
         }
         private void MapSettingFE7UForm_Load(object sender, EventArgs e)
         {
-
+            //章拡張を表示するかどうか
+            if (MapSettingForm.IsShowChapterExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -183,6 +202,5 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.MAPSETTING, InputFormRef, new uint[] { 112, 114, 116, 118, 122, 124, 126, 128, 140, 142 });
         }
-
     }
 }

@@ -1364,6 +1364,11 @@ namespace FEBuilderGBA
                             isENumText = true;
                             text = " " + MapTerrainNameForm.GetNameExcept00(v);
                         }
+                        else if (arg.Type == EventScript.ArgType.EDITION)
+                        {
+                            isENumText = true;
+                            text = " " + InputFormRef.GetEditon(v);
+                        }
                         else if (arg.Type == EventScript.ArgType.SUPPORT_LEVEL)
                         {
                             isENumText = true;

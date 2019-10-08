@@ -1376,3 +1376,4 @@
 0866480C	:08664839	Move Sound: Cavale
 0866483A	:08664865	Move Sound: Wybern
 08664866	:08664893	Move Sound: Peg
+08017358	GetROMItemStructPtr

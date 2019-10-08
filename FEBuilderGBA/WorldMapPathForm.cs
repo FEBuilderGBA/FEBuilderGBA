@@ -49,6 +49,17 @@ namespace FEBuilderGBA
             Bitmap icon = ImageSystemIconForm.YubiTate();
             U.MakeTransparent(icon);
             MapPictureBox.SetDefualtIcon(icon, -8, -14);
+
+            //拡張ボタンを表示するかどうか
+            if (WorldMapPathForm.IsShowWorldmapPathExetdns(this.AddressList))
+            {
+                AddressListExpandsButton_255.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_255.Height;
+                AddressListExpandsButton_255.Hide();
+            }
         }
 
         public static string GetPathName(uint id)
@@ -289,5 +300,13 @@ namespace FEBuilderGBA
             }
         }
 
+        public static bool IsShowWorldmapPathExetdns(ListBox list)
+        {
+            if (list.Items.Count > 0x20)
+            {//拡張している場合、表示する
+                return true;
+            }
+            return (OptionForm.show_worldmap_path_extends() == OptionForm.show_extends_enum.Show);
+        }
     }
 }
