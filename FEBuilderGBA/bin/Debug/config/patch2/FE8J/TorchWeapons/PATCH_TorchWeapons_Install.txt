@@ -1,4 +1,4 @@
-NAME=TorchWeapons 持っている範囲を照らす武器(導入)
+NAME=TorchWeapons 持っている範囲を照らす武器(Install)
 NAME.en=TorchWeapons(Install)
 
 TYPE=EA
@@ -13,5 +13,5 @@ INFO.en=Hold this item, you can secure visibility even in the fog.\r\nThe range 
 
 AUTHOR=7743, boy
 
-NAME.zh=TorchWeapons照亮我们所拥有范围的武器（介绍）
+NAME.zh=TorchWeapons照亮我们所拥有范围的武器(Install)
 INFO.zh=握住此物品，即使在雾中也能保证可见度。\r\n可以保护的可见性范围由AddRange确定。\r\n即使您持有多个，结果也不会重叠。\r\n由于它从列表顶部匹配，请放置可以确保列表中最具可见性的项目。

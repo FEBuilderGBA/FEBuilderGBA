@@ -26,6 +26,7 @@ namespace FEBuilderGBA
             g_Cache_ImprovedSoundMixer = ImprovedSoundMixer.NoCache;
             g_LevelMaxCaps = NO_CACHE;
             g_Cache_AutoNewLine_enum = AutoNewLine_enum.NoCache;
+            g_Cache_Escape_enum = Escape_enum.NoCache;
         }
 
         public const uint NO_CACHE = 0xff;
@@ -354,18 +355,6 @@ namespace FEBuilderGBA
             return (a == check_value);
         }
 
-        //EscapeArriveHack
-        public static bool SearchEscapeArriveHackPatch()
-        {
-            uint check_value;
-            uint address = Program.ROM.RomInfo.patch_escape_arrive_hack(out check_value);
-            if (address == 0)
-            {
-                return false;
-            }
-            uint a = Program.ROM.u32(address);
-            return (a == check_value);
-        }
 
         //UnitActionRework
         public static bool SearchUnitActionReworkPatch()
@@ -517,6 +506,36 @@ namespace FEBuilderGBA
             return new PatchTableSt();
         }
 
+        public struct GrepPatchTableSt
+        {
+            public string name;
+            public string patch_dmp;
+        };
+        static GrepPatchTableSt GrepPatch(GrepPatchTableSt[] table)
+        {
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (GrepPatchTableSt t in table)
+            {
+                string fullfilename = Path.Combine(Program.BaseDirectory, "config", "patch2", version, t.patch_dmp);
+                if (! File.Exists(fullfilename))
+                {
+                    continue;
+                }
+                byte[] data = File.ReadAllBytes(fullfilename);
+                uint addr = U.Grep(Program.ROM.Data, data, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                if (addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+
+                return t;
+            }
+            return new GrepPatchTableSt();
+        }
 
         //カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチの検出
         public static bool SearchCAMERA_Event_OutOfBand_FixPatch()
@@ -554,6 +573,48 @@ namespace FEBuilderGBA
                 new PatchTableSt{ name="Prevent Freeze For Event 0x3B",	ver = "FE8U", addr = 0x10804,data = new byte[]{0x00, 0x20}},
             };
             return SearchPatchBool(table);
+        }
+
+
+        public enum Escape_enum
+        {
+            NO,             //なし
+            EscapeArrivePath,
+            EscapeMenuPath,
+            NoCache = (int)NO_CACHE
+        };
+        static Escape_enum g_Cache_Escape_enum = Escape_enum.NoCache;
+        public static Escape_enum SearchEscapePatch()
+        {
+            if (g_Cache_Escape_enum == Escape_enum.NoCache)
+            {
+                g_Cache_Escape_enum = SearchEscapePatchLow();
+            }
+            return g_Cache_Escape_enum;
+        }
+        static Escape_enum SearchEscapePatchLow()
+        {
+            {
+                PatchTableSt[] table = new PatchTableSt[] { 
+                    new PatchTableSt{ name="escape_arrive",	ver = "FE8U", addr = 0x187A8,data = new byte[]{0x00, 0x4b, 0x18, 0x47 }},
+                };
+                PatchTableSt p = SearchPatch(table);
+                if (p.name == "escape_arrive")
+                {
+                    return Escape_enum.EscapeArrivePath;
+                }
+            }
+            {
+                GrepPatchTableSt[] table = new GrepPatchTableSt[] { 
+                    new GrepPatchTableSt{ name="escape_menu",patch_dmp="EscapeMenu/IsLoca0x13.dmp"},
+                };
+                GrepPatchTableSt p = GrepPatch(table);
+                if (p.name == "escape_menu")
+                {
+                    return Escape_enum.EscapeMenuPath;
+                }
+            }
+            return Escape_enum.NO;
         }
 
         //SearchAutoNewLine

@@ -1,6 +1,6 @@
-NAME=ユニットごとに戦闘音楽変更(導入)
+NAME=ユニットごとに戦闘音楽変更(Install)
 NAME.en=Unique Battle Music Per Unit Installer
-NAME.zh=每人物战斗音乐变更（介绍）引进
+NAME.zh=每人物战斗音乐变更(Install)
 
 TYPE=EA
 TAG=#ENGINE #SOUND

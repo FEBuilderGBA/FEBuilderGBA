@@ -16,4 +16,4 @@ FIX:0x0576CA=0x54 0xE2
 
 AUTHOR=aera
 
-NAME.zh=关闭舞蹈动画（当反击开启时为ON）。
+NAME.zh=关闭舞蹈动画（当反击开启时为ON）

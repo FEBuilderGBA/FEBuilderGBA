@@ -31,5 +31,5 @@ EVENTSCRIPT:2.zh=410D00YY{$L1:get_status_param.dmp}	获取SVAL1的人物[YY:RAM_
 EVENTSCRIPT:3.zh=4B0D00YY{$L1:get_status_param.dmp}	获取人物的SVALB[YY:RAM_UNIT_PARAM:Status](LOW)	{COND}
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]获取人物[YY:RAM_UNIT_PARAM:Status]	{COND}
 EVENTSCRIPT:5.zh=4F0500YY{$L1:get_status_param.dmp}	获取当前正在运行的人物的[YY:RAM_UNIT_PARAM:Status]	{COND}
-NAME.zh=获取单元的各种参数
+NAME.zh=获取人物的各种参数
 INFO.zh=获取人物的各种参数。\r\n结果在内存插槽C中返回。

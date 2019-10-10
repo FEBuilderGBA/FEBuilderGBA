@@ -15,7 +15,7 @@ INFO=ユニットをステータス異常(バッドステータス/bad status)�
 
 AUTHOR=7743
 NAME.en=Add Event: Make the All unit bad status
-INFO.en=Set the unit to status error (bad status / bad status).\r\nOr, recover bad statusity.\r\nSet the value as [Turn] << 8 | [Status].\r\nIf you do not set a turn, you have set 3 turns.
+INFO.en=Set the unit to status error (bad status / bad status)\r\nOr, recover bad statusity.\r\nSet the value as [Turn] << 8 | [Status].\r\nIf you do not set a turn, you have set 3 turns.
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_bad_status_all.dmp}	Make the All unit bad status.[XX:UNIT:Unit][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.en=410DXXYY{$L1:change_bad_status_all.dmp}	Make the All class bad status.[XX:CLASS:Class][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 

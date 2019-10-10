@@ -27,4 +27,4 @@ AUTHOR=Original work: Stan / Stand-alone Ver: 7743
 
 INFO=FEHの移動スキルを使えるユニットを設定します。\r\nユニット、クラス、アイテムなどのさまざまな要件でスキルを利用可能かどうか設定できます。\r\nもし、このパッチをインストール時にFE8Nがあれば、この設定の前にスキルの所持も判断されます。
 INFO.en=Set up a unit that can use FEH's movement skill.\r\nYou can set whether you can use skills with various requirements such as units, classes and items.\r\nIf you have FE 8N at the time of installation of this patch, possession of the skill is also judged before this setting.
-INFO.zh=设置一个可以使用FEH移动技能的人物。\r\n您可以设置是否可以使用具有各种要求的技能，例如单元，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。
+INFO.zh=设置一个可以使用FEH移动技能的人物。\r\n您可以设置是否可以使用具有各种要求的技能，例如人物，类和项目。\r\n如果您在安装此补丁时有FE 8N，则在此设置之前也会判断是否拥有该技能。

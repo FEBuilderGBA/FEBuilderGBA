@@ -30,4 +30,4 @@ INFO=乗り降りできるユニットを設定します。
 AUTHOR=7743
 INFO.en=Set up a unit that can get on and off.
 NAME.zh=DismountEx打开和关闭
-INFO.zh=设置一个可以开启和关闭的单元。
+INFO.zh=设置一个可以开启和关闭的人物。

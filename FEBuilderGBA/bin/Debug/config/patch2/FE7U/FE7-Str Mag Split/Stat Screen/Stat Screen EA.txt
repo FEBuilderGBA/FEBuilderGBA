@@ -220,7 +220,7 @@ load chapter data table at C92A00 and using Chapter number we passed in, return 
 Add 0x78, which is Event Data reference, and load that byte
 lsl byte by 2 and add to C9C9C8 and load the word there, which seems to be Chapter data offset (CA21C0)+
 Basically, get chapter number, bl to 315BC
-add 4, get pointer (talk events). Entries are 0x10 long; event id at 0x2, initiator at 0x8, recepient at 0x9
+add 4, get pointer (talk events) Entries are 0x10 long; event id at 0x2, initiator at 0x8, recepient at 0x9
 bl to 79798, r0=event id to check, I think
 
 

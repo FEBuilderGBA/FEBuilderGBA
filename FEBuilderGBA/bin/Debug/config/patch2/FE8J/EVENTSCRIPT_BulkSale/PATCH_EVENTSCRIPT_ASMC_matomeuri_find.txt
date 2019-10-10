@@ -14,8 +14,8 @@ BIN:$FREEAREA:1=ASMC_matomeuri_find.dmp
 
 
 INFO=メモリスロットで指定したアイテムをまとめて売ります。\r\n怪盗パッチの特効薬を売るイベントを汎用化したものです。\r\nこの命令は、メモリスロットで指定したアイテムを輸送隊を含めて全員から検索し、売れるならばメモリスロットCに1(true)を返します。\r\n金額は、テキストの@0080@0005([G])で取得できます。
-INFO.en=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the transport corps from all the members and return 1 (true) to the memory slot C if it sells.\r\nThe amount can be obtained from the text @0080@0005([G]).
-INFO.zh=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the transport corps from all the members and return 1 (true) to the memory slot C if it sells.\r\nThe amount can be obtained from the text @0080@0005([G]).
+INFO.en=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the transport corps from all the members and return 1 (true) to the memory slot C if it sells.\r\nThe amount can be obtained from the text @0080@0005([G])
+INFO.zh=The items specified in the memory slot are sold together.\r\nThis is a generalization of an event that sells a kaitou patch.\r\nThis command will search for the item specified in the memory slot including the transport corps from all the members and return 1 (true) to the memory slot C if it sells.\r\nThe amount can be obtained from the text @0080@0005([G])
 
 AUTHOR=7743
 

@@ -1,5 +1,5 @@
 NAME=ModularMinimugBox: GFE1R Style Installer
-NAME.en=ModularMinimugBox: GFE1R Style 導入
+NAME.en=ModularMinimugBox: GFE1R Style (Install)
 
 TYPE=EA
 TAG=#ENGINE

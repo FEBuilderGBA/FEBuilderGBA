@@ -1,0 +1,5 @@
+FlaseReturn=$30
+CheckHero=$10
+CheckCond=$1C
+TrueReturn=$2C
+Exit=$32

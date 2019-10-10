@@ -1,4 +1,4 @@
-NAME=ステータス背景を章ごとに変更する 導入
+NAME=ステータス背景を章ごとに変更する(Install)
 NAME.en=Change status background for each chapter Installer
 
 INFO=ステータス画面の背景を章ごとに変更します。\r\nこのプログラムはKirbのPer_chapter_status_bgを元に作りました。\r\n章、ユニット、クラス、所属ごとに設定ができます。
@@ -13,5 +13,5 @@ EA=Installer.event
 
 AUTHOR=7743
 INFO.en=Change background of the status screen for each chapter.\r\nThis program is based on Kirb's Per_chapter_status_bg.\r\nYou can set for each chapter, unit, class, and affiliation.
-NAME.zh=按章更改状态背景引进
+NAME.zh=按章更改状态背景(Install)
 INFO.zh=更改每章的状态屏幕背景。\r\n该程序基于Kirb的Per_chapter_status_bg。\r\n您可以为每个章节，人物，班级和从属关系进行设置。

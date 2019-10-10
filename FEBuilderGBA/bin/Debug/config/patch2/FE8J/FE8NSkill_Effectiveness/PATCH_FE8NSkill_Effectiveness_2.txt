@@ -22,7 +22,7 @@ LISTNAME=$B0:CLASS
 B0:CLASS=CLASS
 
 INFO=FE8NSkill 魔物特効の対象クラスの指定の対象となるクラスを指定します。
-NAME.en=Specification of target class of FE8NSkill monster special effect (SkillID: 0x1C demon special effect).
+NAME.en=Specification of target class of FE8NSkill monster special effect (SkillID: 0x1C demon special effect)
 INFO.en=FE8NSkill Specify the class to be specified for the target class of monster special effect.
 NAME.zh=FE8NSkill怪物特效的目标类别规格（SkillID:0x1C恶魔特效）
 INFO.zh=FE8NSkill指定要为怪物特效的目标类指定的类。

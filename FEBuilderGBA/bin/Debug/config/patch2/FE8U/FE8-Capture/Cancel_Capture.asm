@@ -1,7 +1,7 @@
 .thumb
 .org 0x0
 
-@this function clears the Capturing bit in the current unit's turn word, regardless of whether it's set or not. Called when being forced to redraw the menu (I think).
+@this function clears the Capturing bit in the current unit's turn word, regardless of whether it's set or not. Called when being forced to redraw the menu (I think)
 @r0, r2 are busy
 ldr		r3,CurrentCharPtr
 ldr		r3,[r3]

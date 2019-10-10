@@ -13,7 +13,7 @@ BIN:0xD842=D842.bin
 BIN:0x2DF06=2DF06.bin
 INFO=FE7 Tutorial Disabler
 NAME.zh=禁用教程（教程功能停止）
-INFO.en=Set whether to disable all tutorial events (including on Easy difficulty).
+INFO.en=Set whether to disable all tutorial events (including on Easy difficulty)
 INFO.zh=即使选择简单难度，也禁用所有教程事件。
 
 INFO=チュートリアルイベントをすべて無効にします。

@@ -1,6 +1,6 @@
-NAME=ユニットを選択した時に音声を再生する(導入)
+NAME=ユニットを選択した時に音声を再生する(Install)
 NAME.en=Unit Select SFX Installer
-NAME.zh=选择人物时播放音频（介绍）引进
+NAME.zh=选择人物时播放音频(Install)
 
 TYPE=EA
 TAG=#ENGINE #SOUND

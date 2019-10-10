@@ -20,4 +20,4 @@ COMBO.en=Up to C0|0xC0 0x01 0x00 0x01 0x10 0x6E 0x02 0x02|Extended to FE|0xFE 0x
 
 
 
-INFO.en=Toggles whether to use the max item icon list length of 0xC0 (Default) or 0xFE (Patched).\r\nIf unpatched, icons beyond 0xC0 will have errors.\r\n
+INFO.en=Toggles whether to use the max item icon list length of 0xC0 (Default) or 0xFE (Patched)\r\nIf unpatched, icons beyond 0xC0 will have errors.\r\n

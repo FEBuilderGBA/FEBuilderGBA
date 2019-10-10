@@ -1,4 +1,4 @@
-NAME=魔法武器(導入)
+NAME=魔法武器(Install)
 NAME.en=MagicWeapon(Installer)
 TYPE=EA
 TAG=#ENGINE
@@ -12,5 +12,5 @@ INFO=魔法剣で攻撃した時に、理魔法以外で攻撃したことにで
 
 AUTHOR=midori
 INFO.en=When attacking with a magic sword, it can be attacked by anything other than magic.\r\nFor example, in the case of a light sword, it is possible to attack with the light attribute.\r\nThe activation requirement is only a magic sword.Physical weapons have no effect.
-NAME.zh=魔法武器（介绍）。
+NAME.zh=魔法武器(Install)
 INFO.zh=当用魔法剑攻击时，它可以被除魔法以外的任何东西攻击。\r\n例如，在轻剑的情况下，可以使用light属性进行攻击。\r\n激活要求只是一把魔剑。物理武器没有效果。

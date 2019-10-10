@@ -1,4 +1,4 @@
-NAME=闘技場の掛け率を難易度ごとに変更する(導入)
+NAME=闘技場の掛け率を難易度ごとに変更する(Install)
 NAME.en=Change multiplication rate of the Arena for each difficulty(install)
 
 INFO=闘技場の掛け率を一律2倍ではなく、難易度ごとに変更します。

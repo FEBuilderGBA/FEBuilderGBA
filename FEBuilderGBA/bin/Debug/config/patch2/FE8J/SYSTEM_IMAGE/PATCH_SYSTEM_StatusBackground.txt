@@ -21,6 +21,6 @@ ZHEADERTSA_POINTER=0x8a8d0
 PALETTE_POINTER=0x8A8CC
 
 INFO=ステータス画面の背景画像を変更します。
-INFO.en=Change background image of the status screen(stat screen).
+INFO.en=Change background image of the status screen(stat screen)
 INFO.zh=更改状态屏幕的背景图像。
 

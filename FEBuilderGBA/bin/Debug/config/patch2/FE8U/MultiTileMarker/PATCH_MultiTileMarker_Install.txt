@@ -1,4 +1,4 @@
-NAME=MultiTileMarker マップに複数の離脱マーカーを表示する(導入)
+NAME=MultiTileMarker マップに複数の離脱マーカーを表示する(Install)
 NAME.en=MultiTileMarker Display multiple exit markers on the map.(Installer)
 NAME.zh=MultiTileMarker 在地图上显示多个转义标记(Installer)
 TYPE=EA

@@ -1,0 +1,32 @@
+NAME=制圧できるユニットを複数持てるように変更する
+INFO=制圧できるユニットを複数設定できるように変更します。
+
+IF:0x37BFC=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiSeizeUnits.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=UNIT(0xFF=ANY)
+B1:CLASS=CLASS(0xFF=ANY)
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:CHAPTORMODE_ANYFF=Edtion(0xFF=ANY)
+W4:FLAG=Flag(0x00=ANY)
+W6=00
+NAME.en=Change to have multiple units that can be seize
+INFO.en=Change so that multiple units can be seize
+NAME.zh=更改为具有多个可以抑制的人物
+INFO.zh=进行更改，以便可以控制多个人物

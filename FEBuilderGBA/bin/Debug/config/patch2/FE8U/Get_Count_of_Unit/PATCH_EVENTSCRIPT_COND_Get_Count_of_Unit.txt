@@ -24,5 +24,5 @@ BIN:$FREEAREA:1=Get_Count_of_Unit.dmp
 AUTHOR=7743
 
 NAME.zh=用于获取与特定条件匹配的人物数的事件指令
-INFO.zh=此事件指令计算与当前位于地图上的单元的特定条件匹配的人物数，并将其返回到内存MemorySlotC.
+INFO.zh=此事件指令计算与当前位于地图上的人物的特定条件匹配的人物数，并将其返回到内存MemorySlotC.
 

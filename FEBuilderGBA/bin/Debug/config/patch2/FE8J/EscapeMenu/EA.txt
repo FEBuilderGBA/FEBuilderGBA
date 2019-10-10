@@ -1,0 +1,82 @@
+ALIGN 4
+IsLoca0x13:
+#incbin "IsLoca0x13.dmp"
+
+ALIGN 4
+RunEvent13:
+#incbin "RunEvent13.dmp"
+
+ALIGN 4
+IsLoca0x12:
+#incbin "IsLoca0x12.dmp"
+
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+#define NormalText 0x0
+#define GrayText 0x1
+#define BlueText 0x2
+#define OrangeText 0x3
+#define GreenText 0x4
+#define BlackText 0x5
+
+PUSH
+ORG	FEBUILDER_EXTRA_ORG
+	POIN TxtData0xef7_sjis
+	SHORT 0xef7
+	SHORT 0xef8
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN IsLoca0x13|1
+	WORD 0
+	POIN RunEvent13|1
+	WORD 0
+	WORD 0
+	WORD 0
+
+	POIN TxtData0xef9_sjis
+	SHORT 0xef9
+	SHORT 0xefa
+	BYTE  NormalText
+	BYTE  $4e
+	SHORT 0
+	POIN IsLoca0x12|1
+	WORD 0
+	WORD 0x08022FE9
+	WORD 0
+	WORD 0
+	WORD 0
+POP
+
+ALIGN 4
+TxtData0xef7:
+#incbin "0xef7.bin"
+
+ALIGN 4
+TxtData0xef7_sjis:
+#incbin "0xef7_sjis.bin"
+
+ALIGN 4
+TxtData0xef8:
+#incbin "0xef8.bin"
+
+setText_WithHuffman(0xef7,TxtData0xef7)
+setText_WithHuffman(0xef8,TxtData0xef8)
+
+ALIGN 4
+TxtData0xef9:
+#incbin "0xef9.bin"
+
+ALIGN 4
+TxtData0xef9_sjis:
+#incbin "0xef9_sjis.bin"
+
+ALIGN 4
+TxtData0xefa:
+#incbin "0xefa.bin"
+
+
+
+setText_WithHuffman(0xef9,TxtData0xef9)
+setText_WithHuffman(0xefa,TxtData0xefa)

@@ -1,4 +1,4 @@
-NAME=編成準備店を章ごとに切り替える(導入)
+NAME=編成準備店を章ごとに切り替える(Install)
 NAME.en=Switch the preparation shop for each chapter.(Installer)
 TYPE=EA
 TAG=#ENGINE

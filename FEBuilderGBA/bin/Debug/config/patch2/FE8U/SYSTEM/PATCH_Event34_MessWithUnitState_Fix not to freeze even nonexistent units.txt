@@ -1,6 +1,6 @@
 NAME=命令0x34_ユニットの状態変更_存在しないユニットでもフリーズさせない
 NAME.en=Prevent Freeze For Unit State Event 0x34.
-NAME.zh=指令0x34_单元状态改变_不冻结甚至不存在的单元
+NAME.zh=指令0x34_人物状态改变_不冻结甚至不存在的人物
 
 //アドレスパッチとして実装します
 TYPE=ADDR

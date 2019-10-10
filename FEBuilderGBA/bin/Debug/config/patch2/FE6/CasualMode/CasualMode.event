@@ -3,7 +3,7 @@
 
 #include "Extensions/Hack Installation.txt"
 
-// eid $A0 enables Casual Mode (fallen units come back next chapter).
+// eid $A0 enables Casual Mode (fallen units come back next chapter)
 // hack by circleseverywhere
 
 #ifdef _FE6_

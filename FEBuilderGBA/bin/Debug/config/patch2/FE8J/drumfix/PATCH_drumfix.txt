@@ -38,4 +38,4 @@ BINF:0x2131DC=0022352C.bin
 BINF:0x213248=00223598.bin
 
 AUTHOR=circleseverywhere https://feuniverse.us/t/native-instrument-map/69/2
-INFO=fills in the missing notes from MIDI 35-81 (except 71-72 Short and Long Whistle). This fixes the boops as long as you use the General MIDI drum notes.
+INFO=fills in the missing notes from MIDI 35-81 (except 71-72 Short and Long Whistle) This fixes the boops as long as you use the General MIDI drum notes.

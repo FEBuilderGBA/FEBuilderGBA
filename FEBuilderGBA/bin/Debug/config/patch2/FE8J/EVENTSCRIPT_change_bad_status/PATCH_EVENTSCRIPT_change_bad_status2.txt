@@ -19,7 +19,7 @@ INFO=ユニットをステータス異常(バッドステータス/bad status)�
 
 AUTHOR=7743
 NAME.en=Add Event: Make the unit bad status
-INFO.en=Set the unit to status error (bad status / bad status).\r\nOr, recover bad statusity.\r\nSet the value as [Turn] << 8 | [Status].\r\nIf you do not set a turn, you have set 3 turns.
+INFO.en=Set the unit to status error (bad status / bad status)\r\nOr, recover bad statusity.\r\nSet the value as [Turn] << 8 | [Status].\r\nIf you do not set a turn, you have set 3 turns.
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_bad_status2.dmp}	Make the unit bad status.[XX:UNIT:Unit][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.en=410D00YY{$L1:change_bad_status2.dmp}	Set the unit of SVAL 1 to BAD status.[YY:BADSTATUS:BadStatus and Turn](LOW)
 EVENTSCRIPT:3.en=4B0D00YY{$L1:change_bad_status2.dmp}	Set the SVALB coordinate unit to BAD status.[YY:BADSTATUS:BadStatus and Turn](LOW)

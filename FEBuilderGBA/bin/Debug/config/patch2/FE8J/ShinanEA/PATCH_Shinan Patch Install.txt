@@ -1,6 +1,6 @@
-NAME=指南パッチ導入@EA
+NAME=指南パッチ@EA(Install)
 NAME.en=Guide Event(Shinan)@EA Patch (Installer)
-NAME.zh=指南补丁引进@EA
+NAME.zh=指南补丁@EA(Install)
 TYPE=EA
 TAG=#ENGINE
 

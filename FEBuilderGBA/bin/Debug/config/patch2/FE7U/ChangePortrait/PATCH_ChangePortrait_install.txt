@@ -1,4 +1,4 @@
-NAME=顔画像をクラス、章、フラグごとに切り替える 導入
+NAME=顔画像をクラス、章、フラグごとに切り替える(Install)
 INFO=ステータス画面と、MiniMugをクラス、章、フラグことに切り替えます。
 
 TYPE=EA
@@ -12,5 +12,5 @@ EA=Installer.event
 AUTHOR=7743
 NAME.en=Switch Portrait images by class, chapter, flag.(Installer)
 INFO.en=Switch Portrait to the status screen and MiniMug class, chapter, flags.
-NAME.zh=按类，章，旗切换面部图像引进
+NAME.zh=按类，章，旗切换面部图像(Install)
 INFO.zh=切换到状态屏幕和MiniMug类，章节，标志。

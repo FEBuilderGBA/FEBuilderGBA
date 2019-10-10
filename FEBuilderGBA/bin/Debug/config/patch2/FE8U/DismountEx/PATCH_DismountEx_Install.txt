@@ -1,4 +1,4 @@
-NAME=DismountEx 乗り降りを可能にする(導入)
+NAME=DismountEx 乗り降りを可能にする(Install)
 NAME.en=DismountEx Enable to Rade and Exit (Installer)
 TYPE=EA
 TAG=#EVENT
@@ -39,13 +39,13 @@ EVENTSCRIPT:14.en=40050B00ZZZZWWWW4B0D0000{$L1:ASMC_Exit_Dismount.dmp}	Exit unit
 EVENTSCRIPT:15.en=212E00002006C100410D0000{$L1:ASMC_Exit_Dismount.dmp}	Exit currently operating unit from the horse.	{UNITPERSOLNAL}
 EVENTSCRIPT:16.en=4C0DXX00{$L1:ASMC_Exit_Dismount.dmp}	Batch mode,Exit unit from the horse. Skip sound and redraw.	[XX:UNIT:Unit]	{UNITPERSOLNAL}
 
-NAME.zh=DismountEx可以上下车（介绍）
+NAME.zh=DismountEx可以上下车(Install)
 INFO.zh=重现SFC FE乘坐/下车。\r\n该补丁添加了各种功能，参考Dismount补丁。\r\n
 EVENTSCRIPT:1.zh=400DXX00{$L1:ASMC_Rade_Mount.dmp}	将装置放在马上。[XX:UNIT:Unit]	{UNITPERSOLNAL}
-EVENTSCRIPT:2.zh=410D0000{$L1:ASMC_Rade_Mount.dmp}	将SVAL1单元放在马上。(LOW)
+EVENTSCRIPT:2.zh=410D0000{$L1:ASMC_Rade_Mount.dmp}	将SVAL1人物放在马上。(LOW)
 EVENTSCRIPT:3.zh=4B0D0000{$L1:ASMC_Rade_Mount.dmp}	将具有SVALB坐标的人物放在马上。(LOW)
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:ASMC_Rade_Mount.dmp}	将坐标人物[ZZ:MAPX:X][WW:MAPY:Y]放在马上。	{UNITPERSOLNAL}
-EVENTSCRIPT:5.zh=212E00002006C100410D0000{$L1:ASMC_Rade_Mount.dmp}	将当前操作单元放在马上。	{UNITPERSOLNAL}
+EVENTSCRIPT:5.zh=212E00002006C100410D0000{$L1:ASMC_Rade_Mount.dmp}	将当前操作人物放在马上。	{UNITPERSOLNAL}
 EVENTSCRIPT:6.zh=4C0DXX00{$L1:ASMC_Rade_Mount.dmp}	以批处理模式将[XX:UNIT:人物]放在马上。跳过声音效果并重绘。	{UNITPERSOLNAL}
 EVENTSCRIPT:11.zh=400DXX00{$L1:ASMC_Exit_Dismount.dmp}	从马退出[XX:UNIT:人物]。	{UNITPERSOLNAL}
 EVENTSCRIPT:12.zh=410D0000{$L1:ASMC_Exit_Dismount.dmp}	从马退出出SVAL1人物。(LOW)

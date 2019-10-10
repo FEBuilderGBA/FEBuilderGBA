@@ -683,7 +683,7 @@ UnpackOtherSuspendSaveUnit:
 
 		mov r5, #(\Allegiance + 1) @ r5 = unit id
 
-	\Name\().lop :
+	\Name\()lop :
 		ldr r3, =GetUnit
 
 		mov r0, r5 @ GetUnit arg r0 = id
@@ -691,7 +691,7 @@ UnpackOtherSuspendSaveUnit:
 		bl  BXR3
 
 		cmp r0, #0
-		beq \Name\().end
+		beq \Name\()end
 
 		mov r1, r0
 		mov r0, sp
@@ -710,9 +710,9 @@ UnpackOtherSuspendSaveUnit:
 		add r5, #1             @ id++
 
 		sub r6, #1
-		bgt \Name\().lop
+		bgt \Name\()lop
 
-	\Name\().end :
+	\Name\()end :
 		add sp, #(\StructSize)
 
 		pop {r4-r6}
@@ -751,7 +751,7 @@ UnpackOtherSuspendSaveUnit:
 
 		mov r5, #(\Allegiance + 1) @ r5 = unit id
 
-	\Name\().lop :
+	\Name\()lop :
 		ldr r3, =ReadSramFastAddr
 		ldr r3, [r3]
 
@@ -768,7 +768,7 @@ UnpackOtherSuspendSaveUnit:
 		bl  BXR3
 
 		cmp r0, #0
-		beq \Name\().end
+		beq \Name\()end
 
 		@ implied  @ Unpack arg r0 = target Unit
 		mov r1, sp @ Unpack arg r1 = source GameSaveUnit
@@ -779,9 +779,9 @@ UnpackOtherSuspendSaveUnit:
 		add r5, #1             @ id++
 
 		sub r6, #1
-		bgt \Name\().lop
+		bgt \Name\()lop
 
-	\Name\().end :
+	\Name\()end :
 		add sp, #(\StructSize)
 
 		pop {r4-r6}

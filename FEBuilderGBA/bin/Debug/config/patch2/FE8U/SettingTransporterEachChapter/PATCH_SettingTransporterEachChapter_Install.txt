@@ -1,4 +1,4 @@
-NAME=マップごとに輸送隊が利用できるか設定する(導入)
+NAME=マップごとに輸送隊が利用できるか設定する(Install)
 NAME.en=Set whether transporter can be used for each map(Installer)
 TYPE=EA
 TAG=#EVENT
@@ -10,8 +10,12 @@ EA=SettingTransporterEachChapter_Install.event
 EDIT_PATCH=PATCH_SettingTransporterEachChapter.txt
 
 AUTHOR=7743
-NAME.zh=设置是否可以为每个地图使用运输车（简介）
+NAME.zh=设置是否可以为每个地图使用运输车(Install)
 
 HINT=輸送体
 HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=提示：运输车。
+
+
+CONFLICT_IF:0x23F70=0x00 0x4B
+CONFLICT_MESSAGE=Change to have multiple units that can call supply

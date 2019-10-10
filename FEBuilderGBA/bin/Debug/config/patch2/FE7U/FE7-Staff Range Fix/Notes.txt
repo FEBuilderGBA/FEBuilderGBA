@@ -1,13 +1,13 @@
 FE7-Staff/Range Fix
 By Tequila
 
-To create a new staff (or item), there're 4 tables you need to modify. 3 from vanilla, 1 from here: Usability, Target, and Effect. They affect items 0x4A (Heal) to 0x9A (60-Use Vulnerary, and end of the item list). Before the table, 0x4A is subtracted from the item id, and the compared to 0x50; if less than or equal, proceed, otherwise, use the default option. Any new item requires you to a) repoint and expand these, and b) increase the 0x50 number.
+To create a new staff (or item), there're 4 tables you need to modify. 3 from vanilla, 1 from here: Usability, Target, and Effect. They affect items 0x4A (Heal) to 0x9A (60-Use Vulnerary, and end of the item list) Before the table, 0x4A is subtracted from the item id, and the compared to 0x50; if less than or equal, proceed, otherwise, use the default option. Any new item requires you to a) repoint and expand these, and b) increase the 0x50 number.
 
 26D10	Usability	Determines whether you can use the item (default: no)
 27128	Target		Determines who the item affects (default: self?)
 2D04C	Effect		Determines what the item actually does (default: unknown, presumably nothing)
 
-The staff range values are found after the usability table, and the target table actually branches into the same routine after a certain point. They all looked quite similar, although sometimes certain functions were called in a different order (for no good reason, I might add).
+The staff range values are found after the usability table, and the target table actually branches into the same routine after a certain point. They all looked quite similar, although sometimes certain functions were called in a different order (for no good reason, I might add)
 
 Heal/Mend/Recover:
 Beginning at the jump table
@@ -47,7 +47,7 @@ bl 272D0
 				fill in 3000C00 again with squares that can be accessed with this particular staff
 			r0=x coord, r1=y coord, r2=min, r3=-1
 			bl 1A2D4
-				Remove squares that can't be reached (basically, it adds 1 to all squares that are within radius (max). Then it subtracts 1 from all that squares are inside (out of range of) radius (min). Repeat as needed. Normally, the repeat wouldn't be necessary, since vanilla staves all have 1 as the minimum range.
+				Remove squares that can't be reached (basically, it adds 1 to all squares that are within radius (max) Then it subtracts 1 from all that squares are inside (out of range of) radius (min) Repeat as needed. Normally, the repeat wouldn't be necessary, since vanilla staves all have 1 as the minimum range.
 			mov r0,r6 (has 24539, which will be bx'd to at some point)
 			bl 239B0
 				12900 cycles here, long function

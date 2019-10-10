@@ -1,6 +1,6 @@
-NAME=複数の「かぎ開け」スキルパッチ 導入
+NAME=複数の「かぎ開け」スキルパッチ(Install)
 NAME.en=Multi-Class Pick Skill Installer
-NAME.zh=技能开锁职业自由设置补丁引进
+NAME.zh=技能开锁职业自由设置补丁(Install)
 
 TYPE=EA
 TAG=ENGINE

@@ -1,4 +1,4 @@
-NAME=章タイトルを表示する時の背景を章ごとに変更する(導入)
+NAME=章タイトルを表示する時の背景を章ごとに変更する(Install)
 NAME.en=Change Chapter Title  background for each chapter Installer
 
 INFO=章タイトルを表示する時の背景を章ごとに変更します。\r\n章とフラグごとに設定ができます。
@@ -13,5 +13,5 @@ EA=Installer.event
 
 AUTHOR=7743
 INFO.en=Change background when chapter title is displayed for each chapter.\r\nIt can be set for each chapter and flag.
-NAME.zh=为每章章节标题显示时更改背景（介绍）
+NAME.zh=为每章章节标题显示时更改背景(Install)
 INFO.zh=为每章显示章节标题时更改背景。\r\n它可以为每个章节和标志设置。

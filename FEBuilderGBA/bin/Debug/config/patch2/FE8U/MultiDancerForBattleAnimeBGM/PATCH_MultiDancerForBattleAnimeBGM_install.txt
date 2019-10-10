@@ -1,4 +1,4 @@
-NAME=戦闘アニメでの踊り子のBGMを複数設定する(導入)
+NAME=戦闘アニメでの踊り子のBGMを複数設定する(Install)
 NAME.en=Setting battle BGM of a many dancer in battle animetion(Installer)
 
 
@@ -11,4 +11,4 @@ EDIT_PATCH=PATCH_MultiDancerForBattleAnimeBGM.txt
 EA=Installer.event
 
 AUTHOR=7743
-NAME.zh=在战斗动画中设置多个舞者BGM（介绍）。
+NAME.zh=在战斗动画中设置多个舞者BGM(Install)

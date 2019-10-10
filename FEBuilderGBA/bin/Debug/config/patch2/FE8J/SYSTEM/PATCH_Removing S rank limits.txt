@@ -16,4 +16,4 @@ AUTHOR=Tequila
 COMBO.en=default|OFF|Removing S rank limit|ONN
 NAME.zh=取消对S等级的限制，并为S等级制造多种武器
 COMBO.zh=默认|OFF|发布S等级限制|ONN
-INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched).\r\n
+INFO.en=Toggles whether units are allowed to S-Rank only 1 weapon type (Default) or as many weapons as they have a rank in (Patched)\r\n

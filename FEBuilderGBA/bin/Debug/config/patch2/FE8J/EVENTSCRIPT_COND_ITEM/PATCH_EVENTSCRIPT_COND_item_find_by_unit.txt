@@ -34,5 +34,5 @@ EVENTSCRIPT:1.zh=400DXXYY{$L1:item_find_by_unit.dmp}	[XX:UNIT:Unit][YY:ITEM:Item
 EVENTSCRIPT:2.zh=410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查SVAL1的人物所拥有的项目(LOW)	{COND}
 EVENTSCRIPT:3.zh=4B0D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查SVALB的人物坐标是否有项目(LOW)	{COND}
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:item_find_by_unit.dmp}	[ZZ:MAPX:X][WW:MAPY:Y]检查人物拥有的项目[YY:ITEM:Item]	{COND}
-EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查当前操作的单元的项目	{COND}
+EVENTSCRIPT:5.zh=212E00002006C100410D00YY{$L1:item_find_by_unit.dmp}	[YY:ITEM:Item]检查当前操作的人物的项目	{COND}
 

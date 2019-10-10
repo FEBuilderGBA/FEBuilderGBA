@@ -1,6 +1,6 @@
-NAME=指南パッチ導入
+NAME=指南パッチ(Install)
 NAME.en=Guide Event Creator Installer
-NAME.zh=指南补丁引进
+NAME.zh=指南补丁(Install)
 
 TYPE=BIN
 TAG=#ENGINE

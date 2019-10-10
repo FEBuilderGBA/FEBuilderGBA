@@ -1,6 +1,6 @@
-NAME=魔力分離パッチ 20190421(導入)
+NAME=魔力分離パッチ 20190421(Install)
 NAME.en=Magic separation patch 20190421(Install)
-//NAME.zh=每人物战斗音乐变更 20190421（介绍）
+//NAME.zh=每人物战斗音乐变更 20190421(Install)
 
 TYPE=EA
 TAG=#ENGINE
@@ -11,7 +11,7 @@ EA=_MasterHackInstaller.txt
 AUTHOR=aera
 INFO=魔力の項目を新設して、魔法を分離します。\r\n力や魔法防御の項目を使って魔力を表現するのではなく、空き領域を利用して、魔力の項目を新しく作ります。
 INFO.en=This patch also set up magical items and separate magic.\r\nInstead of expressing magical powers by using force and magic defense items, we will create a new item of magical powers by using the free space.
-NAME.zh=魔法分离补丁20190421（介绍）
+NAME.zh=魔法分离补丁20190421(Install)
 INFO.zh=该补丁还设置魔法物品并分开魔法。\r\n通过使用武力和魔法防御物品来代替魔法力量，我们将通过使用自由空间来创造一个新的魔力项目。
 
 //CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46

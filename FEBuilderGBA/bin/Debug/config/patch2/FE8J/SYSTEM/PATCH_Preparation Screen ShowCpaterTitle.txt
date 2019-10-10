@@ -12,4 +12,4 @@ AUTHOR=aera
 INFO=進撃準備の章の目的が表示されている部分に、章名(タイトル)を表示するようにします。
 INFO.en=Make sure to display Chapter title (title) in the part where the purpose of the challenge preparation chapter is displayed.
 NAME.zh=攻击准备屏幕：显示章节名称而不是目的
-INFO.zh=确保在显示挑战准备章节目的的部分中显示章节标题（标题）。
+INFO.zh=确保在显示挑战准备章节目的的部分中显示章节标题（标题）

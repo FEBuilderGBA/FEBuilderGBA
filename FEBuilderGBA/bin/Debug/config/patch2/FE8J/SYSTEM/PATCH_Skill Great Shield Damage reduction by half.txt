@@ -24,4 +24,4 @@ COMBO.zh=伤害是无效的|0x51 0x46 0x08 0x40 0x00 0x28 0x01 0xD0 0x00 0x20|�
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46
 CONFLICT_MESSAGE=FE8N Skill Extends
 
-INFO.en=Toggles whether Great Shield protects against all damage (default) or only reduces damage by 1/2 (patched).\r\n
+INFO.en=Toggles whether Great Shield protects against all damage (default) or only reduces damage by 1/2 (patched)\r\n

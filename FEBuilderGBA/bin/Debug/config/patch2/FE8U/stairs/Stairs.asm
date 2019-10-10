@@ -61,7 +61,7 @@ bne BeginCheck4 @ This doesn't have a 0x22 command. Try again.
 ldrb r3, [ r2, #2 ] @ This stair ID in r3
 cmp r3, r4
 bne BeginCheck4
-@ Great. If I got this far, I have the pointer to the LOCA I'm looking for (except I still need to check that this isn't the LOCA that I'm currently at). I can get the coordinates to move to from here.
+@ Great. If I got this far, I have the pointer to the LOCA I'm looking for (except I still need to check that this isn't the LOCA that I'm currently at) I can get the coordinates to move to from here.
 ldrb r0, [ r2, #8 ] @ X coordinate in r0
 ldrb r1, [ r2, #9 ] @ Y coordinate in r1
 cmp r0, r5
@@ -166,7 +166,7 @@ bne BeginCheck3 @ This doesn't have a 0x22 command. Try again.
 ldrb r3, [ r2, #2 ] @ This stair ID in r3
 cmp r3, r4
 bne BeginCheck3
-@ Great. If I got this far, I have the pointer to the LOCA I'm looking for (except I still need to check that this isn't the LOCA that I'm currently at). I can get the coordinates to move to from here.
+@ Great. If I got this far, I have the pointer to the LOCA I'm looking for (except I still need to check that this isn't the LOCA that I'm currently at) I can get the coordinates to move to from here.
 ldrb r0, [ r2, #8 ] @ X coordinate in r0
 cmp r0, r5
 beq SameX

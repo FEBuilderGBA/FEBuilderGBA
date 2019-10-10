@@ -140,12 +140,12 @@ namespace FEBuilderGBA
                 OBJECT_N05_L_10_COMBO.AddIcon(0x10, ImageSystemIconForm.House()); //10=民家
                 OBJECT_N05_L_10_COMBO.Items.Add(R._("14=ランダム宝箱"));
                 OBJECT_N05_L_10_COMBO.AddIcon(0x14, ImageSystemIconForm.Chest()); //14=ランダム宝箱
-                if (PatchUtil.SearchEscapeArriveHackPatch())
+                if (PatchUtil.SearchEscapePatch() != PatchUtil.Escape_enum.NO)
                 {
-                    OBJECT_N05_L_10_COMBO.Items.Add(R._("12=到達"));
-                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Throne()); //12=到達
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("12=到着"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Castle()); //12=到着
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("13=離脱"));
-                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ImageSystemIconForm.Throne()); //13=離脱
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x13, ImageSystemIconForm.ExitPoint()); //13=離脱
                 }
                 if (PatchUtil.SearchStairsHackPatch())
                 {
@@ -3678,10 +3678,23 @@ namespace FEBuilderGBA
                 }
             }
 
-            if (objecttype == 0x22 && type == 0x5)
+            if (type == 0x5)
             {
-                out_bitmap = ImageSystemIconForm.Stairs();
-                return U.ToHexString(type) + ":" + R._("22=階段拡張");
+                if (objecttype == 0x22)
+                {
+                    out_bitmap = ImageSystemIconForm.Stairs();
+                    return U.ToHexString(type) + ":" + R._("22=階段拡張");
+                }
+                if (objecttype == 0x12)
+                {
+                    out_bitmap = ImageSystemIconForm.Castle();
+                    return U.ToHexString(type) + ":" + R._("12=到着");
+                }
+                if (objecttype == 0x13)
+                {
+                    out_bitmap = ImageSystemIconForm.ExitPoint();
+                    return U.ToHexString(type) + ":" + R._("13=離脱");
+                }
             }
 
             out_bitmap = ImageSystemIconForm.Cursol();

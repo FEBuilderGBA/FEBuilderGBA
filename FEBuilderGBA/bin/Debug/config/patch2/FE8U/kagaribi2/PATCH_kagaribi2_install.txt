@@ -1,4 +1,4 @@
-NAME=霧の中でも特定の座標に視界を確保します。 ver2 (導入)
+NAME=霧の中でも特定の座標に視界を確保します。 ver2 (Install)
 TYPE=EA
 TAG=#ENGINE
 

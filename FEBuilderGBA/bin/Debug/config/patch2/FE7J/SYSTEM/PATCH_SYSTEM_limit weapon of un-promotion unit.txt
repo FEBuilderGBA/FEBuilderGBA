@@ -12,4 +12,4 @@ TAG=#ENGINE
 ADDRESS=0x2a088 0x2a08c
 NAME.zh=低级武器等级限制
 
-INFO.en=Sets the maximum amount of weapon experience unpromoted classes can have in hex. Default is B5 (A Rank).\r\nConvert to decimal for specific value.
+INFO.en=Sets the maximum amount of weapon experience unpromoted classes can have in hex. Default is B5 (A Rank)\r\nConvert to decimal for specific value.

@@ -22,7 +22,7 @@ pop {r4,r5}
 
 @Rerun the original routine that will break.
 mov r2, r9
-ldr r0, [r2, #0x0] @ pointer:03004E50 (Pointer to the work memory of the operation character).
+ldr r0, [r2, #0x0] @ pointer:03004E50 (Pointer to the work memory of the operation character)
 
 
 

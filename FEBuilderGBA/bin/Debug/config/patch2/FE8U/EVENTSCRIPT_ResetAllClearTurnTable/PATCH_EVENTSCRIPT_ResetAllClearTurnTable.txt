@@ -18,7 +18,7 @@ EVENTSCRIPT=400D0000{$L1:ASMC_ResetAllClearTurnTable.dmp}	クリアターンの�
 EVENTSCRIPT.en=400D0000{$L1:ASMC_ResetAllClearTurnTable.dmp}	ResetAllClearTurnTable	{ENDING}
 EVENTSCRIPT.zh=400D0000{$L1:ASMC_ResetAllClearTurnTable.dmp}	ResetAllClearTurnTable	{ENDING}
 
-INFO.en=Erases all clear turn records.\r\nUse this to create a strong new game(NewGame+).
+INFO.en=Erases all clear turn records.\r\nUse this to create a strong new game(NewGame+)
 
 NAME.zh=重置所有清除转弯记录
 INFO.zh=删除所有清晰的转弯记录。\r\n使用它来创建一个强大的新游戏(NewGame+)

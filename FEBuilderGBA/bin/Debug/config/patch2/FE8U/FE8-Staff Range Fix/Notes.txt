@@ -1,7 +1,7 @@
 FE8-Staff/Range Fix
 By Tequila/Lord Reyson
 
-To create a new staff (or item), there're 4 tables you need to modify. 3 from vanilla, 1 from here: Usability, Target, and Effect. They affect items 0x4B (Heal) to 0xC1 (empty). Before the table, 0x4B is subtracted from the item id, and the compared to 0x76; if less than or equal, proceed, otherwise, use the default option. Any new item requires you to a) repoint and expand these, and b) increase the 0x76 number. (Target table subtracts compares to 0x41 (Latona).
+To create a new staff (or item), there're 4 tables you need to modify. 3 from vanilla, 1 from here: Usability, Target, and Effect. They affect items 0x4B (Heal) to 0xC1 (empty) Before the table, 0x4B is subtracted from the item id, and the compared to 0x76; if less than or equal, proceed, otherwise, use the default option. Any new item requires you to a) repoint and expand these, and b) increase the 0x76 number. (Target table subtracts compares to 0x41 (Latona)
 
 288B0	Usability	Determines whether you can use the item (default: no)
 28E8C	Target		Determines who the item affects (default: self?)
@@ -44,7 +44,7 @@ bl 29068
 				fill in 3000C00 again with squares that can be accessed with this particular staff
 			r0=x coord, r1=y coord, r2=min, r3=-1
 			bl 1AABC
-				Remove squares that can't be reached (basically, it adds 1 to all squares that are within radius (max). Then it subtracts 1 from all that squares are inside (out of range of) radius (min). Repeat as needed. Normally, the repeat wouldn't be necessary, since vanilla staves all have 1 as the minimum range.
+				Remove squares that can't be reached (basically, it adds 1 to all squares that are within radius (max) Then it subtracts 1 from all that squares are inside (out of range of) radius (min) Repeat as needed. Normally, the repeat wouldn't be necessary, since vanilla staves all have 1 as the minimum range.
 			mov r0,r6 (has 24539, which will be bx'd to at some point)
 			bl 24EAC
 				12900 cycles here, long function

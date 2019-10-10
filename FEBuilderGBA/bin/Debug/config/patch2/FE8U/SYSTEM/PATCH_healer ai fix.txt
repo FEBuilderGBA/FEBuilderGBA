@@ -15,6 +15,6 @@ OFF:0x3FC9D=0xD8
 ONN:0x3FE77=0xD2
 OFF:0x3FE77=0xD8
 
-INFO.en=Toggles whether to prevent healers from targeting full health units (patched) or not (default).\r\n
+INFO.en=Toggles whether to prevent healers from targeting full health units (patched) or not (default)\r\n
 
 AUTHOR=Magrika is Now Canon

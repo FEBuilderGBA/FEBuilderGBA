@@ -1,4 +1,4 @@
-NAME=章タイトルコールを非表示にする(導入)
+NAME=章タイトルコールを非表示にする(Install)
 NAME.en=Setting Hide chapter title calls(Installer)
 
 TYPE=EA
@@ -10,4 +10,4 @@ EDIT_PATCH=PATCH_ChapterTitleCall.txt
 EA=Installer.event
 
 AUTHOR=7743
-NAME.zh=隐藏章节标题调用（简介）。
+NAME.zh=隐藏章节标题调用(Install)

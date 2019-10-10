@@ -22,4 +22,4 @@ COMBO.zh=惠普的一半|OFF|最大HP的一半|ONN
 
 
 
-INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or deals damage equal to 1/2 of max HP (Patched).\r\n
+INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or deals damage equal to 1/2 of max HP (Patched)\r\n

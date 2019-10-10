@@ -1,4 +1,4 @@
-NAME=マップに漫符を表示(導入)
+NAME=マップに漫符を表示(Install)
 NAME.en=Add Event:Show emotion bubble on map(Install)
 TYPE=EA
 TAG=#EVENT
@@ -15,6 +15,6 @@ EDIT_PATCH=PATCH_EVENTSCRIPT_Show_map_emotion.txt
 AUTHOR=7743, Kenpuku
 EVENTSCRIPT:1.en=400DXXYY{$L1:Show_map_emotion.dmp}	Show emotion bubble on map[XX:UNIT:Unit][YY:MAPEMOTION:Mark]
 EVENTSCRIPT:3.en=40050B00XX00ZZ004B0D00YY{$L1:Show_map_emotion.dmp}	Show emotion bubble on map[XX:MAPX:X][ZZ:MAPY:Y][YY:MAPEMOTION:Mark]
-NAME.zh=在地图中显示气球（介绍）
+NAME.zh=在地图中显示气球(Install)
 EVENTSCRIPT:1.zh=400DXXYY{$L1:Show_map_emotion.dmp}	在地图上显示气球[XX:UNIT:Unit][YY:MAPEMOTION:标记类型]
 EVENTSCRIPT:3.zh=40050B00XX00ZZ004B0D00YY{$L1:Show_map_emotion.dmp}	在地图中显示气球[XX:MAPX:X][ZZ:MAPY:Y][YY:MAPEMOTION:标记类型]

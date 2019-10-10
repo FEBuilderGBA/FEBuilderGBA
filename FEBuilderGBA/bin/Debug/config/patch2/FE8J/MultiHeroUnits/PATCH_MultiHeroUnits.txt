@@ -1,0 +1,32 @@
+NAME=オートカーソルで選択される主人公を複数持てるように変更する
+INFO=オートカーソルで選択される主人公を複数設定できるように変更します。
+
+IF:0x3316C=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiHeroUnits.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+W0:UNIT=UNIT
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:CHAPTORMODE_ANYFF=Edtion(0xFF=ANY)
+W4:FLAG=Flag(0x00=ANY)
+W6=00
+
+NAME.en=Change to have multiple hero selected with auto cursor.
+INFO.en=Change so that you can set multiple heroes selected by auto cursor.
+NAME.zh=更改为使用自动光标选择多个英雄。
+INFO.zh=进行更改，以便您可以设置由自动光标选择的多个英雄。

@@ -11,7 +11,7 @@ HEX=false
 
 INFO=ファーラの力、ニニスの守護、トォルの怒り、セチの祈りの指輪で補正される値を指定します。\r\nディフォルトでは、0x0A(10)が指定されます。\r\nつまり、力や守備、必殺、回避、それぞれごとに+10することになります。\r\nなお、カイヒなどの状態は、ゲーム内部的には、毒と同じくバッドステータスの一種として処理されています。
 INFO.en=Set to 0x0A for all ring effects at once.\r\nSpecify the values to be corrected by Filla's Might, Ninis's Grace, Thor's Ire, and Set's Litany.\r\nBy default, 0x0A (10) is specified.\r\nIn other words, you get +10 for each of your strength, defense, death, and avoidance.\r\nIn addition, the state such as "avoid" is treated as a kind of bad status in the game as well as poison.
-INFO.zh=指定、法拉之力、妮妮斯的守护、托尔之怒、塞奇之祈祷、环要更正的值。 默认情况下，指定0x0A（10）。\r\n换句话说，你的每一个力量，防御，回避都会获得+10。\r\n此外，像凯希这样的国家被视为游戏中的一种不良状态以及毒药。
+INFO.zh=指定、法拉之力、妮妮斯的守护、托尔之怒、塞奇之祈祷、环要更正的值。 默认情况下，指定0x0A（10）\r\n换句话说，你的每一个力量，防御，回避都会获得+10。\r\n此外，像凯希这样的国家被视为游戏中的一种不良状态以及毒药。
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

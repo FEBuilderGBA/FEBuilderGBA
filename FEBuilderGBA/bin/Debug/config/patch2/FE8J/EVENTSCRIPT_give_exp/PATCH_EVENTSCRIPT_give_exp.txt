@@ -27,7 +27,7 @@ EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	coordinate[ZZ:MAPX:X
 EVENTSCRIPT:5.en=4F0D00YY{$L1:give_exp.dmp}	Give experience value to the Unit currently being operated.[YY:DECIMAL:add exp]	{UNIT}
 
 EVENTSCRIPT:1.zh=400DXXYY{$L1:give_exp.dmp}	给出人物经验值[XX:UNIT:人物][YY:DECIMAL:经验值]	{UNIT}
-EVENTSCRIPT:2.zh=410D00YY{$L1:give_exp.dmp}	给出SVAL1单元的经验值。[YY:DECIMAL:经验值](LOW)
+EVENTSCRIPT:2.zh=410D00YY{$L1:give_exp.dmp}	给出SVAL1人物的经验值。[YY:DECIMAL:经验值](LOW)
 EVENTSCRIPT:3.zh=4B0D00YY{$L1:give_exp.dmp}	为SVALB坐标人物提供经验值。[YY:DECIMAL:经验值](LOW)
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]给坐标人物一个经验值。[YY:DECIMAL:经验值]	{UNIT}
 EVENTSCRIPT:5.zh=4F0D00YY{$L1:give_exp.dmp}	为目前正在运营的人物提供经验值。[YY:DECIMAL:经验值]	{UNIT}

@@ -1,4 +1,4 @@
-NAME=常に必殺を禁止する武器を複数設定できるようにする. (導入)
+NAME=常に必殺を禁止する武器を複数設定できるようにする. (Install)
 NAME.en=Define Multiple Prohibits the Crit By Item. (Installer)
 
 INFO=追撃を出さない武器を複数設定できるようにします。

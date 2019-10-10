@@ -157,7 +157,7 @@ suspected TSA at 1DB568 (nope, seems to be palette)
 img 202 is the outside part of the title box (where class name is written): loaded at 69314, but offset is -0x20; there's a palette in front, called with cpufastset, then the image is processed at 105C (nop'ing this out doesn't seem to do anything though)
 Suspect img 203 is the filler inside the box (not true, it seems) (update: it's the box that comes afterwards showing which weapons you can now use)
 
-69D2E: mov r2,20 (how long each row is) and mov r2,14 (how many rows to display) (maybe not?). Will need to change these.
+69D2E: mov r2,20 (how long each row is) and mov r2,14 (how many rows to display) (maybe not?) Will need to change these.
 
 69354: Change pointer to 2023560 (determines where the pic starts)
 
@@ -254,7 +254,7 @@ Stats are loaded from ram, added to the bonus from the stat booster (what happen
 This is part of the usability check, looks like.
 Displaying function seems to begin at 94D74. 61E4 seems to be the function that displays the numbers; r0=ram offset (probably where to draw), r1=palette id, r2=stat number.
 r0 gets 80 added to it for each stat
-94BD4 begins another function. r0=stat*24, r1=stat cap, bl to BFC88 (draws bars?). returns a number which gets put on stack.
+94BD4 begins another function. r0=stat*24, r1=stat cap, bl to BFC88 (draws bars?) returns a number which gets put on stack.
 R-button text (in this case, "Increases skill") called at 94F5C. Function begins at 94EF4; params are r0=char data in ram, r1=slot id
 Write stats text function begins at 94A20
 Possibility: Change 7 at 94A2E to 9.

@@ -1,4 +1,4 @@
-NAME=売値拡張(導入)
+NAME=売値拡張(Install)
 NAME.en=Sell Price expansion(install)
 INFO=売値を一律半額ではなく変動させます。
 
@@ -11,5 +11,5 @@ EA=Sell_Price_expansion.event
 
 AUTHOR=7743
 INFO.en=Change selling price not uniformly half price.
-NAME.zh=报价扩大（介绍）
+NAME.zh=报价扩大(Install)
 INFO.zh=该补丁还改变销售价格不一致半价。

@@ -1,6 +1,6 @@
-NAME=出撃禁止パッチ 導入
+NAME=出撃禁止パッチ(Install)
 NAME.en=Deny Deployment From Preparations Installer
-NAME.zh=禁止出击补丁引进
+NAME.zh=禁止出击补丁(Install)
 
 TYPE=BIN
 TAG=#ENGINE

@@ -1,4 +1,4 @@
-NAME=進撃準備の右上の画像を変更する(導入)
+NAME=進撃準備の右上の画像を変更する(Install)
 NAME.en=Change image in upper right of the preparations(Install)
 
 INFO=進撃準備の右上に表示されている、"Chapter NN","Tower NN","Ruins NN","Extra Map"の定義を自由に変更でるようにします。

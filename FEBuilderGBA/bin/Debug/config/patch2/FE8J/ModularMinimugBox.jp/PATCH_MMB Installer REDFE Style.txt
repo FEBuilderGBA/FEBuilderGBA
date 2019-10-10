@@ -1,5 +1,5 @@
 NAME=ModularMinimugBox: REDFE Style Installer
-NAME.en=ModularMinimugBox: REDFE Style 導入
+NAME.en=ModularMinimugBox: REDFE Style (Install)
 
 TYPE=EA
 TAG=#ENGINE

@@ -15,5 +15,5 @@ HINT=輸送体
 INFO.en=Set up units that will bring out transporter menu when adjacent.\r\nHowever, in FE 7, transporter unit itself can not call transporter menu.
 HINT.en=convoy,supply,transporter,merlinus,wagon
 NAME.zh=运输人物
-INFO.zh=设置相邻时将显示转运菜单的人物。\r\n但是，在FE 7中，运输单元本身不能调用运输单元菜单。\r\n
+INFO.zh=设置相邻时将显示转运菜单的人物。\r\n但是，在FE 7中，运输人物本身不能调用运输人物菜单。\r\n
 

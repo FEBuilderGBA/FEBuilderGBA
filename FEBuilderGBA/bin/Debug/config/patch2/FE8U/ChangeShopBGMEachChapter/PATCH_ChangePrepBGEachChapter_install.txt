@@ -1,4 +1,4 @@
-NAME=お店のBGMを章ごとに変更する(導入)
+NAME=お店のBGMを章ごとに変更する(Install)
 NAME.en=Change Shop BGM for each chapter Installer
 
 INFO=章ごとにお店のBGMを変更します。\r\n武器屋、道具屋、秘密の店のBGMを変更することができます。\r\nもし、リストにマッチしない場合は、ディフォルトのBGMが再生されます。
@@ -13,5 +13,5 @@ EA=ChangeShopBGMEachChapter.event
 
 AUTHOR=7743
 INFO.en=Change shop's BGM for each chapter.\r\nYou can change BGM of weapons shop, tool store, secret shop.\r\nIf it does not match the list, the default BGM will be played.
-NAME.zh=更改每章的商店BGM（简介）
+NAME.zh=更改每章的商店BGM(Install)
 INFO.zh=更改每章的商店BGM。\r\n你可以改变武器商店，工具店，秘密商店的BGM。\r\n如果与列表不匹配，将播放默认BGM。

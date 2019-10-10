@@ -22,7 +22,7 @@ JUMP:0x08005C0E:$r3=drawmultibyte_item_width.bin
 
 
 INFO=マルチバイトフォントを出力できるように修正します.
-INFO.en=Patches the ROM to be able to output a multibyte font (such as Japanese).\r\nPrimarily used for translation purposes.
+INFO.en=Patches the ROM to be able to output a multibyte font (such as Japanese)\r\nPrimarily used for translation purposes.
 
 INFO.zh=修复能够输出多字节字体。
 NAME.zh=DrawMultiByte

@@ -20,4 +20,4 @@ EVENTSCRIPT.zh=400DYY00{$L1:ASMC_ResetBWLRecord.dmp}	[YY:UNIT:人物]Reset BWL R
 INFO.en=Resets the win / loss data (BWL table) of the specified unit.
 
 NAME.zh=从事件重置人物结果表（BWL）的指令
-INFO.zh=重置指定人物的赢/输数据(BWL表)。
+INFO.zh=重置指定人物的赢/输数据(BWL表)

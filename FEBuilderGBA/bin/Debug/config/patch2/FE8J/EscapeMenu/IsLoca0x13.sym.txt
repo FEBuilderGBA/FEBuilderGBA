@@ -1,0 +1,4 @@
+FlaseReturn=$24
+CheckCond=$10
+TrueReturn=$20
+Exit=$26

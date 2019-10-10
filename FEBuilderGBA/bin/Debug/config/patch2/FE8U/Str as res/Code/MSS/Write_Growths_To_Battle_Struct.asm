@@ -23,7 +23,7 @@ cmp		r0,#0x0			@ compare r0 to 0 (ie, did it return false)
 bne		Label1			@ (branch if not equal) using this here because the function is be too long to beq to directly (branch with comparison operator has a shorter range than direct branch)
 b		GoBack			@ if false, we're done here
 Label1:
-ldrb	r0,[r7,#0x9]	@ LoaD Register (r0) with Byte. Which byte? The one written at the location pointed to by (r7+0x9). In the battle struct, this is the unit's exp.
+ldrb	r0,[r7,#0x9]	@ LoaD Register (r0) with Byte. Which byte? The one written at the location pointed to by (r7+0x9) In the battle struct, this is the unit's exp.
 cmp		r0,#99			@ yes, you can use decimal numbers and the assembler converts to hex! Here, we check how the character's experience compares to 99
 bhi		Label2			@ if it's higher than 99, keep going
 b		GoBack			@ otherwise, the character's not levelling up and we are done here
@@ -33,7 +33,7 @@ ldrb	r1,[r7,#0x8]	@ again, load register r1 with byte; here it's r7+0x8, which i
 add		r1,#1			@ add 1 to the unit's level
 strb	r1,[r7,#0x8]	@ and SToRe that Byte back to r7+0x8
 ldr		r2,[r7,#0x4]	@ load register r2 (with word) (it's not written, but it's implied) at r7+4. This is the character's (ROM) class data pointer
-ldrb	r2,[r2,#0x4]	@ load register r2 with the byte at address (r2 + 4). If you look at the Class Editor.nmm, the 4th byte is the class number
+ldrb	r2,[r2,#0x4]	@ load register r2 with the byte at address (r2 + 4) If you look at the Class Editor.nmm, the 4th byte is the class number
 ldr		r3,Class_Level_Cap_Table	@ our table containing the level cap for each class
 ldrb	r2,[r3,r2]		@ load reg r2 with the byte contained at the address (r3 + r2), which would be the class's level cap
 cmp		r1,r2			@ compare new level with cap

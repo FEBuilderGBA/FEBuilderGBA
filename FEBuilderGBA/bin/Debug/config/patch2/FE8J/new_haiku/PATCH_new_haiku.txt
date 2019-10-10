@@ -11,4 +11,4 @@ INFO=死亡セリフで、とどめを刺したユニットを条件に追加し
 NAME.en=Switch the death Quote for each unit who is killer
 INFO.en=In the death Quote, add a unit with a killer to the condition.\r\nSince the table is scanned from the top, please make data in the upper part of the table when making additional condition of the killer unit.\r\nAlso, please set the data that specified the killer unit with the end to 0x00 at the end of the table.\r\nOtherwise, the boss destroy event will not occur, so please do not forget it.\r\n
 NAME.zh=添加死衬里，人物有一个停止条件
-INFO.zh=在死亡的衬线中，添加一个人物以阻止该情况。\r\n由于表格是从顶部扫描的，因此在制作单元的附加条件时，请在表格的上半部分进行数据处理。\r\n另外，请将指定人物的数据设置为表末尾的0x00。\r\n否则，老板破坏事件不会发生，所以请不要忘记它。\r\n
+INFO.zh=在死亡的衬线中，添加一个人物以阻止该情况。\r\n由于表格是从顶部扫描的，因此在制作人物的附加条件时，请在表格的上半部分进行数据处理。\r\n另外，请将指定人物的数据设置为表末尾的0x00。\r\n否则，老板破坏事件不会发生，所以请不要忘记它。\r\n

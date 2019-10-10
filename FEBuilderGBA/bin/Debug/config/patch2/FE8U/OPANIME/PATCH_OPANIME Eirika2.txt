@@ -17,4 +17,4 @@ Z2IMAGE_POINTER=0x000C7E38//0x08AC7374
 ZTSA_POINTER=0x000C7E10//0x08AC8DDC
 PALETTE_POINTER=0x000C7E80//0x08AC933C
 
-INFO=Edit and import OP Anime Graphic for Eirika (Zoomed in).
+INFO=Edit and import OP Anime Graphic for Eirika (Zoomed in)

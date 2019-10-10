@@ -15,7 +15,7 @@ BIN:$FREEAREA:1=yase.bin
 JUMP:0x29468:$r0=yase.bin
 
 INFO=体格を減らすアイテムを作れます.
-INFO.en=Patches the ROM to allow for items that reduce CON.\r\nTo do this, set the CON value of the reducing item to 255 (ie -1).\r\n
+INFO.en=Patches the ROM to allow for items that reduce CON.\r\nTo do this, set the CON value of the reducing item to 255 (ie -1)\r\n
 INFO.zh=你可以制作减少体质的物品。
 
 AUTHOR=怪盗パッチ 7743

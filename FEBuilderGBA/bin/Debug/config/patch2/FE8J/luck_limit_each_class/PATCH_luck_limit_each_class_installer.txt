@@ -1,4 +1,4 @@
-NAME=幸運上限をクラスごとに設定する(導入)
+NAME=幸運上限をクラスごとに設定する(Install)
 NAME.en=Set the luck limit for each class.(Installer)
 
 TYPE=EA
@@ -11,5 +11,5 @@ PATCHED_IF:0x017f60=0x00 0x4B 0x18 0x47
 
 AUTHOR=FE8Girls,7743
 INFO.en=Let's make it possible to set the luck limit not for uniform, but for each class.
-NAME.zh=设置每个班级的幸运限额（介绍）。
+NAME.zh=设置每个班级的幸运限额(Install)
 INFO.zh=让我们可以设置运气限制不是为了统一，而是为每个班级。
