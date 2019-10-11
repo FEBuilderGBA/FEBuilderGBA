@@ -12,7 +12,8 @@ EA_EXTENDS_UNITMENU:0x01=0x40
 EXTENDS:0x1100=TEXT
 
 PATCHED_IF:$FGREP4 IsLoca0x13.dmp=0x10 0xB5 0x0B 0x4C
-NAME.en=Display of withdrawal menu.
-INFO.en=Display the exit menu.\r\nDisplays the exit menu and executes the specified event.\r\nTo create a withdrawal menu, select "Suppression points and villages" in the event condition map object, and select 0x13 as the type.\r\nAn event for suppression is executed.\r\nUntil now, you will be able to use the menu to suppress pressure that has been created with range conditions.\r\n\r\nThis patch also has the ability to display the arrival menu.\r\nThis is the same function as suppression.\r\nCreate a map object and set the type to 0x12 in the same way as when creating suppression.
-NAME.zh=显示取款菜单。
-INFO.zh=显示退出菜单。\r\n显示退出菜单并执行指定的事件。\r\n要创建撤回菜单，请在事件条件地图对象中选择“抑制点和村庄”，然后选择0x13作为类型。\r\n执行抑制事件。\r\n到现在为止，您将能够使用菜单来抑制在范围条件下创建的压力。\r\n\r\n该补丁还可以显示到达菜单。\r\n这与抑制功能相同。\r\n创建地图对象，并将其类型设置为0x12，方法与创建抑制相同。
+NAME.en=Display of Escape menu
+INFO.en=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x12.
+
+NAME.zh=Display of Escape menu
+INFO.zh=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x12.
