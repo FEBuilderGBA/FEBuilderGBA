@@ -1,0 +1,35 @@
+//#include "Extensions/Hack Installation.txt"
+
+#define jumpToHack_r4(offset) "BYTE 0x00 0x4C 0x20 0x47; POIN (offset|0x1)"
+
+PUSH
+ORG $2BA60  //FE8U
+//ORG $2B9A8  //FE8J
+jumpToHack_r4(HackLocation)
+POP
+
+HackLocation:
+#incbin "MultiLevelMaxFE8.dmp"
+
+POIN DataListTable
+
+DataListTable:
+BYTE 0x01 //Unit:  eirika
+BYTE 0x02 //Class: Lord
+BYTE 30   //MaxLevel 30
+BYTE 0    //padding
+
+BYTE 0x04 //Unit:  Franz
+BYTE 0xFF //Class: ANY
+BYTE 22   //MaxLevel 22
+BYTE 0    //padding
+
+BYTE 0xFF //Unit:  ANY
+BYTE 0x07 //Class: Paladin
+BYTE 25   //MaxLevel 25
+BYTE 0    //padding
+
+BYTE 0x00   //term data
+BYTE 0x00
+BYTE 0x00
+BYTE 0x00

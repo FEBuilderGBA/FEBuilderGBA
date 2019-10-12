@@ -1,0 +1,13 @@
+exit_minarai=$46
+DataList=$60
+data_find_loop=$18
+exit_normal=$4A
+class_check=$28
+next_data=$3A
+level_check=$32
+exit_level_max=$3E
+exit_not_level_up=$42
+LevelMaxBranch=$50
+NotLevelUpBranch=$54
+MinaraiBranch=$58
+NotFoundBranch=$5C

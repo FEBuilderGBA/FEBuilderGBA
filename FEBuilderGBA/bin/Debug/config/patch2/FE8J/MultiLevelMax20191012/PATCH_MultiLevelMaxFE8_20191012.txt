@@ -1,0 +1,38 @@
+NAME=レベル上限値をクラスとユニット別に変更する 20191012
+NAME.en=Level Cap Editor 20191012
+
+INFO=レベルの上限値をクラスとユニット別に設定します。\r\nルール\r\n見習いフラグがある場合、このチェックは無視されます。\r\nユニットとクラスで、最大レベルを設定します。\r\nクラス単位にレベルを設定したい場合、ユニットに0xFF(ANY)を設定します。\r\nユニット単位にレベルを設定したい場合、クラスに0xFF(ANY)を設定します。\r\nこの表にマッチしなかったものは、ディフォルトのレベル上限が利用されます。(通常20です。パッチで変更可能です。)
+
+IF:0x2B9A8=0x00 0x4C
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiLevelMaxFE8.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP4 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニット名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(0xFF=ANY)
+B1:CLASS=Class(0xFF=ANY)
+B2:DECIMAL=MaxLevel
+B3=00
+
+B0:UNIT.zh=人物(0xFF=ANY)
+B1:CLASS.zh=职业(0xFF=ANY)
+B2:DECIMAL.zh=最高等级
+B3.zh=00
+
+INFO.en=Edits the table created by "Level Cap Editor Installer" which allows for variable level caps per unit and/or class.\r\nIf the unit is a trainee, their level cap won't be adjusted.\r\nTo set a level cap per class, set Unit byte to 0xFF.\r\nTo set a level cap per unit, set Class byte to 0xFF.\r\nLevel cap can also be set by specifying both unit and class for by-character-class level cap restrictions.\r\nAny unit/class that isn't added to this table will use the default level cap (20 if unpatched)
+NAME.zh=将等级上限变更为职业和人物 20191012
+INFO.zh=将等级上限变更为职业和人物。\r\n规则\r\n如果有见习标志，则该检查将被忽略。\r\n在人物和职业上设置最大级别。\r\n如果要为每个职业设置级别，请将0xFF（ANY）设置为该人物。\r\n如果你想为每个人物设置电平，请为该类设置0xFF（ANY）\r\n对于那些与此表不匹配的，将使用默认级别限制（通常是20。它可以通过修补程序进行更改）
+
