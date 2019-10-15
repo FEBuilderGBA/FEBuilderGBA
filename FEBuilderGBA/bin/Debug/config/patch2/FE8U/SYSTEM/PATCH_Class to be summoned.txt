@@ -6,10 +6,6 @@ NAME.zh=被召唤的职业
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x07ADD0
+ADDRESS=0x07ADD0 0x22BEC 0x18EDE 0x2304C 0x23F78 0x23FE2 0x2403E 0x2409A 0x2523E 0x25246 0x3122E 0x232CC 0x25366 0x2536E
 ADDRESS_TYPE=CLASS
-
-AUTHOR=出典:FE8 Summon editor by Nintenlord
-AUTHOR.zh=来源:FE8召唤编者由Nintenlord
-AUTHOR.en=Nintenlord http://feuniverse.us/t/nintenlords-utilities/52
-
+AUTHOR=Source: FE8 Summoneditor by Nintenlord ,ZaneAvernathy

@@ -722,6 +722,7 @@
             // 
             // label68
             // 
+            this.label68.AccessibleDescription = "@MAPSETTING_RANK_TACT";
             this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label68.Location = new System.Drawing.Point(1103, 1);
             this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -733,17 +734,19 @@
             // 
             // label20
             // 
+            this.label20.AccessibleDescription = "@MAPSETTING_RANK_EXP";
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.Location = new System.Drawing.Point(856, 372);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(238, 32);
+            this.label20.Size = new System.Drawing.Size(239, 32);
             this.label20.TabIndex = 167;
             this.label20.Text = "経験評価";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
+            this.label18.AccessibleDescription = "@MAPSETTING_RANK_TACT";
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Location = new System.Drawing.Point(638, 372);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -926,7 +929,7 @@
             // 
             // B127
             // 
-            this.B127.Location = new System.Drawing.Point(1323, 391);
+            this.B127.Location = new System.Drawing.Point(1322, 391);
             this.B127.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B127.Name = "B127";
             this.B127.Size = new System.Drawing.Size(64, 25);
@@ -935,7 +938,7 @@
             // B147
             // 
             this.B147.Hexadecimal = true;
-            this.B147.Location = new System.Drawing.Point(1324, 850);
+            this.B147.Location = new System.Drawing.Point(1322, 850);
             this.B147.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B147.Maximum = new decimal(new int[] {
             255,
@@ -949,7 +952,7 @@
             // B146
             // 
             this.B146.Hexadecimal = true;
-            this.B146.Location = new System.Drawing.Point(1324, 819);
+            this.B146.Location = new System.Drawing.Point(1322, 819);
             this.B146.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B146.Maximum = new decimal(new int[] {
             255,
@@ -963,7 +966,7 @@
             // B145
             // 
             this.B145.Hexadecimal = true;
-            this.B145.Location = new System.Drawing.Point(1324, 787);
+            this.B145.Location = new System.Drawing.Point(1322, 787);
             this.B145.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B145.Maximum = new decimal(new int[] {
             255,
@@ -977,7 +980,7 @@
             // B144
             // 
             this.B144.Hexadecimal = true;
-            this.B144.Location = new System.Drawing.Point(1324, 758);
+            this.B144.Location = new System.Drawing.Point(1322, 758);
             this.B144.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B144.Maximum = new decimal(new int[] {
             255,
@@ -1002,7 +1005,7 @@
             // B126
             // 
             this.B126.Hexadecimal = true;
-            this.B126.Location = new System.Drawing.Point(1323, 361);
+            this.B126.Location = new System.Drawing.Point(1322, 361);
             this.B126.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B126.Maximum = new decimal(new int[] {
             255,
@@ -1038,7 +1041,7 @@
             // W122
             // 
             this.W122.Hexadecimal = true;
-            this.W122.Location = new System.Drawing.Point(1323, 299);
+            this.W122.Location = new System.Drawing.Point(1322, 299);
             this.W122.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W122.Maximum = new decimal(new int[] {
             255,
@@ -1052,7 +1055,7 @@
             // W124
             // 
             this.W124.Hexadecimal = true;
-            this.W124.Location = new System.Drawing.Point(1323, 328);
+            this.W124.Location = new System.Drawing.Point(1322, 328);
             this.W124.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W124.Maximum = new decimal(new int[] {
             255,
@@ -1088,7 +1091,7 @@
             // W118
             // 
             this.W118.Hexadecimal = true;
-            this.W118.Location = new System.Drawing.Point(1323, 237);
+            this.W118.Location = new System.Drawing.Point(1322, 237);
             this.W118.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W118.Maximum = new decimal(new int[] {
             255,
@@ -1102,7 +1105,7 @@
             // W120
             // 
             this.W120.Hexadecimal = true;
-            this.W120.Location = new System.Drawing.Point(1323, 266);
+            this.W120.Location = new System.Drawing.Point(1322, 266);
             this.W120.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W120.Maximum = new decimal(new int[] {
             255,
@@ -1138,7 +1141,7 @@
             // B128
             // 
             this.B128.Hexadecimal = true;
-            this.B128.Location = new System.Drawing.Point(1323, 423);
+            this.B128.Location = new System.Drawing.Point(1322, 423);
             this.B128.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B128.Maximum = new decimal(new int[] {
             255,
@@ -1153,7 +1156,7 @@
             // 
             this.B129.AccessibleDescription = "@MAPSETTING_CHAPTOR_ID";
             this.B129.Hexadecimal = true;
-            this.B129.Location = new System.Drawing.Point(1323, 452);
+            this.B129.Location = new System.Drawing.Point(1322, 452);
             this.B129.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B129.Maximum = new decimal(new int[] {
             255,
@@ -1221,7 +1224,7 @@
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(1320, 489);
+            this.label78.Location = new System.Drawing.Point(1322, 489);
             this.label78.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(23, 18);
@@ -1262,7 +1265,7 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(1320, 519);
+            this.label76.Location = new System.Drawing.Point(1322, 519);
             this.label76.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(23, 18);
@@ -1423,7 +1426,7 @@
             // 
             // W88
             // 
-            this.W88.Location = new System.Drawing.Point(1019, 811);
+            this.W88.Location = new System.Drawing.Point(1020, 811);
             this.W88.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W88.Name = "W88";
             this.W88.Size = new System.Drawing.Size(75, 25);
@@ -1431,7 +1434,7 @@
             // 
             // W86
             // 
-            this.W86.Location = new System.Drawing.Point(1019, 780);
+            this.W86.Location = new System.Drawing.Point(1020, 780);
             this.W86.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W86.Name = "W86";
             this.W86.Size = new System.Drawing.Size(75, 25);
@@ -1439,7 +1442,7 @@
             // 
             // W84
             // 
-            this.W84.Location = new System.Drawing.Point(1019, 750);
+            this.W84.Location = new System.Drawing.Point(1020, 750);
             this.W84.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W84.Name = "W84";
             this.W84.Size = new System.Drawing.Size(75, 25);
@@ -1447,7 +1450,7 @@
             // 
             // W82
             // 
-            this.W82.Location = new System.Drawing.Point(1019, 719);
+            this.W82.Location = new System.Drawing.Point(1020, 719);
             this.W82.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W82.Name = "W82";
             this.W82.Size = new System.Drawing.Size(75, 25);
@@ -1455,7 +1458,7 @@
             // 
             // W80
             // 
-            this.W80.Location = new System.Drawing.Point(1018, 687);
+            this.W80.Location = new System.Drawing.Point(1020, 687);
             this.W80.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W80.Name = "W80";
             this.W80.Size = new System.Drawing.Size(75, 25);
@@ -1463,7 +1466,7 @@
             // 
             // W78
             // 
-            this.W78.Location = new System.Drawing.Point(1018, 656);
+            this.W78.Location = new System.Drawing.Point(1020, 656);
             this.W78.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W78.Name = "W78";
             this.W78.Size = new System.Drawing.Size(75, 25);
@@ -1787,7 +1790,7 @@
             // 
             // W72
             // 
-            this.W72.Location = new System.Drawing.Point(1019, 563);
+            this.W72.Location = new System.Drawing.Point(1020, 563);
             this.W72.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W72.Name = "W72";
             this.W72.Size = new System.Drawing.Size(75, 25);
@@ -1806,7 +1809,7 @@
             // 
             // W70
             // 
-            this.W70.Location = new System.Drawing.Point(1019, 532);
+            this.W70.Location = new System.Drawing.Point(1020, 532);
             this.W70.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W70.Name = "W70";
             this.W70.Size = new System.Drawing.Size(75, 25);
@@ -1863,7 +1866,7 @@
             // 
             // W68
             // 
-            this.W68.Location = new System.Drawing.Point(1019, 502);
+            this.W68.Location = new System.Drawing.Point(1020, 502);
             this.W68.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W68.Name = "W68";
             this.W68.Size = new System.Drawing.Size(75, 25);
@@ -1882,7 +1885,7 @@
             // 
             // W66
             // 
-            this.W66.Location = new System.Drawing.Point(1019, 471);
+            this.W66.Location = new System.Drawing.Point(1020, 471);
             this.W66.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W66.Name = "W66";
             this.W66.Size = new System.Drawing.Size(75, 25);
@@ -1939,7 +1942,7 @@
             // 
             // W64
             // 
-            this.W64.Location = new System.Drawing.Point(1018, 439);
+            this.W64.Location = new System.Drawing.Point(1020, 439);
             this.W64.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W64.Name = "W64";
             this.W64.Size = new System.Drawing.Size(75, 25);
@@ -1958,7 +1961,7 @@
             // 
             // W62
             // 
-            this.W62.Location = new System.Drawing.Point(1018, 408);
+            this.W62.Location = new System.Drawing.Point(1020, 408);
             this.W62.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W62.Name = "W62";
             this.W62.Size = new System.Drawing.Size(75, 25);
@@ -2211,7 +2214,7 @@
             // label121
             // 
             this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(1319, 729);
+            this.label121.Location = new System.Drawing.Point(1322, 729);
             this.label121.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(23, 18);

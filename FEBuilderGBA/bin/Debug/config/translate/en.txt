@@ -4846,6 +4846,15 @@ Drawn with the specified battle animation of ID + 1.
 :クラスの獲得経験値計算に使われる値です。\r\n敵との差が大きければ、経験値をより獲得できます。\r\n\r\nただし、計算式はかなり複雑ですので、\r\n詳しく知りたい場合は、\r\n「経験値　計算式 烈火」で、検索してください。
 Used to calculate earned EXP of class.\r\nIf the difference with the enemy is large, you can earn more EXP.\r\n\r\nHowever, the calculation formula is quite complicated, \r\nso if you want to know more details, google with\r\n"Experience Calculations the-sacred-stones"
 
+:指定したターン以内にクリアすれば評価を得られます。
+You can get an evaluation if you clear it within the specified turn.
+
+:指定した経験値を得ていれば評価を得られます。
+You can get an evaluation if you have the specified experience points.
+
+:指定したゴールド相当の資産を得られていればA評価を貰えます。\r\n達成していなければ、達成できた割合で評価が決まります。
+If you get the assets equivalent to the specified gold, you will receive an A rating.\r\nIf not achieved, the evaluation will be determined by the percentage achieved.
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6985,6 +6994,12 @@ Palette (Plist)
 :オブジェクトタイプ(Plist)
 Object type (Plist)
 
+:攻略評価
+Tactics evaluation
+
+:経験評価
+Experience evaluation
+
 :敵フェーズBGMフラグ4
 Enemy Phase BGM Flag 4
 
@@ -6993,12 +7008,6 @@ Dark Before Initial Event
 
 :資産評価
 Asset evaluation
-
-:経験評価
-Experience evaluation
-
-:攻略評価
-Tactics evaluation
 
 :00=None(制圧)
 00=Seize
@@ -8835,6 +8844,9 @@ User canceled processing.
 
 :新しいパッチをインストールできませんでした。
 Could not install new patch.
+
+:このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
+This patch is an old patch.\r\nIt is left for compatibility.\r\nDo not use normally.\r\n\r\nAre you sure you want to install it? 
 
 :パッチファイルを開く
 Open patch file

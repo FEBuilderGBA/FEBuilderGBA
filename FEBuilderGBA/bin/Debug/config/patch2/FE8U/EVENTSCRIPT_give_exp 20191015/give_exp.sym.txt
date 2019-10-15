@@ -1,0 +1,12 @@
+GetUnitInfoBySVAL1=$24
+GetUnitInfoByCoord=$28
+GetUnitInfoByCurrent=$1E
+GetUnitInfo=$2A
+CheckUnitInfo=$30
+Term=$50
+Change=$34
+nin_i_exp=$6C
+effect=$C2
+clear_double_battleanime=$58
+noexp=$B2
+event_procs=$015C

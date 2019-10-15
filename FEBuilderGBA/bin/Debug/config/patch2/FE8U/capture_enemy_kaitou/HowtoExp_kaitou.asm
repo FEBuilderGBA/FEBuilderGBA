@@ -15,15 +15,36 @@
 			;@dcw	$F800
 			bl		nin_i_exp
 			
-;			ldr	r2, =$080790a4 ;FE8U	;;待機状態に変える？？？
-;			mov	r14, r2
-;			@dcw	$F800
+			ldr	r2, =$080790a4	;ClearMOVEUNITs
+			mov	r14, r2
+			@dcw	$F800
+
 	bl	effect
+	
+	bl	clear_double_battleanime
 non
 	mov	r0, #0
 	pop	{r4, r5, r6}
 	pop	{r1}
 	bx	r1
+
+;二重に描画されるマップアニメを消す
+;このルーチンはかなりイケていない。 
+;ただ、最初に見つかったアニメは二重に描画されるアニメである可能性が高いので、それをとりあえず消す.
+clear_double_battleanime
+	push	{lr}
+
+	ldr r0, =$089A2C48	;(Procs MoveUnit )
+	ldr r3, =$08002e9c	;Find6C
+	mov	r14, r3
+	@dcw	$F800
+
+	ldr r3, =$08002d6c	;Delete6C
+	mov	r14, r3
+	@dcw	$F800
+
+	pop	{r0}
+	bx	r0
 
 ;任意の経験値
 nin_i_exp
@@ -132,3 +153,5 @@ effect
 @dcd $00000000
 @dcd $0000000D
 @dcd $089A35B0
+@dcd $00000000
+@dcd $00000000

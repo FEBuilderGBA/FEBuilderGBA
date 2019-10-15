@@ -1,6 +1,6 @@
-﻿NAME=ユニットに経験値を与えるイベント命令
-NAME.en=Add Event: Give the unit experience points
-NAME.zh=事件指令为人物提供经验值
+﻿NAME=(OLD)ユニットに経験値を与えるイベント命令 20181028
+NAME.en=Add Event: (OLD)Give the unit experience points 20181028
+NAME.zh=(OLD)事件指令为人物提供经验值 20181028
 
 TYPE=EA
 TAG=#ENGINE
@@ -14,23 +14,24 @@ PATCHED_IF:$FGREP4 give_exp.dmp=0x70 0xB5 0x05 0x1C
 
 EA=give_exp_Install.event
 
-EVENTSCRIPT:1=400DXXYY{$L1:give_exp.dmp}	ユニットに経験値を与えます。[XX:UNIT:ユニット][YY:DECIMAL:経験値]	{UNIT}
-EVENTSCRIPT:2=410D00YY{$L1:give_exp.dmp}	SVAL1のユニットに経験値を与えます。[YY:DECIMAL:経験値](LOW)
-EVENTSCRIPT:3=4B0D00YY{$L1:give_exp.dmp}	SVALBの座標のユニットに経験値を与えます。[YY:DECIMAL:経験値](LOW)
-EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
-EVENTSCRIPT:5=4F0D00YY{$L1:give_exp.dmp}	現在操作しているユニットに経験値を与えます。[YY:DECIMAL:経験値]	{UNIT}
+EVENTSCRIPT:1=400DXXYY{$L1:give_exp.dmp}	ユニットに経験値を与えます。[XX:UNIT:ユニット][YY:DECIMAL:経験値](OLD)	{UNIT}
+EVENTSCRIPT:2=410D00YY{$L1:give_exp.dmp}	SVAL1のユニットに経験値を与えます。[YY:DECIMAL:経験値](LOW)(OLD)
+EVENTSCRIPT:3=4B0D00YY{$L1:give_exp.dmp}	SVALBの座標のユニットに経験値を与えます。[YY:DECIMAL:経験値](LOW)(OLD)
+EVENTSCRIPT:4=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	座標[ZZ:MAPX:X][WW:MAPY:Y]の座標のユニットに経験値を与えます。[YY:DECIMAL:経験値](OLD)	{UNIT}
+EVENTSCRIPT:5=4F0D00YY{$L1:give_exp.dmp}	現在操作しているユニットに経験値を与えます。[YY:DECIMAL:経験値](OLD)	{UNIT}
 
-EVENTSCRIPT:1.en=400DXXYY{$L1:give_exp.dmp}	Give the unit experience points[XX:UNIT:Unit][YY:DECIMAL:add exp]	{UNIT}
-EVENTSCRIPT:2.en=410D00YY{$L1:give_exp.dmp}	Give experience value of SVAL1 Unit.[YY:DECIMAL:add exp](LOW)
-EVENTSCRIPT:3.en=4B0D00YY{$L1:give_exp.dmp}	Give experience value to Unit of SVALB coordinates.[YY:DECIMAL:add exp](LOW)
-EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Give the Unit of coordinates an experience value.[YY:DECIMAL:add exp]	{UNIT}
-EVENTSCRIPT:5.en=4F0D00YY{$L1:give_exp.dmp}	Give experience value to the Unit currently being operated.[YY:DECIMAL:add exp]	{UNIT}
+EVENTSCRIPT:1.en=400DXXYY{$L1:give_exp.dmp}	Give the unit experience points[XX:UNIT:Unit][YY:DECIMAL:add exp](OLD)	{UNIT}
+EVENTSCRIPT:2.en=410D00YY{$L1:give_exp.dmp}	Give experience value of SVAL1 Unit.[YY:DECIMAL:add exp](LOW)(OLD)
+EVENTSCRIPT:3.en=4B0D00YY{$L1:give_exp.dmp}	Give experience value to Unit of SVALB coordinates.[YY:DECIMAL:add exp](LOW)(OLD)
+EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Give the Unit of coordinates an experience value.[YY:DECIMAL:add exp](OLD)	{UNIT}
+EVENTSCRIPT:5.en=4F0D00YY{$L1:give_exp.dmp}	Give experience value to the Unit currently being operated.[YY:DECIMAL:add exp](OLD)	{UNIT}
 
-EVENTSCRIPT:1.zh=400DXXYY{$L1:give_exp.dmp}	给出人物经验值[XX:UNIT:人物][YY:DECIMAL:经验值]	{UNIT}
-EVENTSCRIPT:2.zh=410D00YY{$L1:give_exp.dmp}	给出SVAL1人物的经验值。[YY:DECIMAL:经验值](LOW)
-EVENTSCRIPT:3.zh=4B0D00YY{$L1:give_exp.dmp}	为SVALB坐标人物提供经验值。[YY:DECIMAL:经验值](LOW)
-EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]给坐标人物一个经验值。[YY:DECIMAL:经验值]	{UNIT}
-EVENTSCRIPT:5.zh=4F0D00YY{$L1:give_exp.dmp}	为目前正在运营的人物提供经验值。[YY:DECIMAL:经验值]	{UNIT}
+EVENTSCRIPT:1.zh=400DXXYY{$L1:give_exp.dmp}	给出人物经验值[XX:UNIT:人物][YY:DECIMAL:经验值](OLD)	{UNIT}
+EVENTSCRIPT:2.zh=410D00YY{$L1:give_exp.dmp}	给出SVAL1人物的经验值。[YY:DECIMAL:经验值](LOW)(OLD)
+EVENTSCRIPT:3.zh=4B0D00YY{$L1:give_exp.dmp}	为SVALB坐标人物提供经验值。[YY:DECIMAL:经验值](LOW)(OLD)
+EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D00YY{$L1:give_exp.dmp}	坐标[ZZ:MAPX:X][WW:MAPY:Y]给坐标人物一个经验值。[YY:DECIMAL:经验值](OLD)	{UNIT}
+EVENTSCRIPT:5.zh=4F0D00YY{$L1:give_exp.dmp}	为目前正在运营的人物提供经验值。[YY:DECIMAL:经验值](OLD)	{UNIT}
 
 
 AUTHOR=7743 Effect Logic: aera
+DEPRECATED=1

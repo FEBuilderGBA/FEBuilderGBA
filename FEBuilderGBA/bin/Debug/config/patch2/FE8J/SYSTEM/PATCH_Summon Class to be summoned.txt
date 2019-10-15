@@ -5,14 +5,11 @@ NAME.en=Summon Skill: Edit Summoned Class
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x07D118
+ADDRESS=0x07D118 0x22BB4 0x18BF2 0x23014 0x23F34 0x23F9E 0x23FFA 0x24056 0x251EE 0x251F6 0x3117A 0x23294 0x25316 0x2531E
 ADDRESS_TYPE=CLASS
-
-AUTHOR=出典:FE8 Summon editor by Nintenlord
-
 NAME.zh=被召唤的职业
+AUTHOR=Source: FE8 Summoneditor by Nintenlord ,ZaneAvernathy
 
-AUTHOR.zh=来源:FE8召唤编者由Nintenlord
 
-AUTHOR.en=Source: FE8SummoneditorbyNintenlord
-
+CONFLICT_IF:0x0251EF=0x79 0x51
+CONFLICT_MESSAGE=Capture Patch

@@ -171,6 +171,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.B24)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.L_54_GENERICENEMYPORTRAIT)).BeginInit();
@@ -278,6 +280,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label120);
             this.panel3.Controls.Add(this.L_54_GENERICENEMYPORTRAIT);
@@ -948,7 +952,7 @@
             // 
             // W38
             // 
-            this.W38.Location = new System.Drawing.Point(802, 783);
+            this.W38.Location = new System.Drawing.Point(801, 844);
             this.W38.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W38.Name = "W38";
             this.W38.Size = new System.Drawing.Size(95, 25);
@@ -957,7 +961,7 @@
             // label20
             // 
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(587, 777);
+            this.label20.Location = new System.Drawing.Point(586, 838);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(211, 32);
@@ -967,7 +971,7 @@
             // 
             // W36
             // 
-            this.W36.Location = new System.Drawing.Point(802, 752);
+            this.W36.Location = new System.Drawing.Point(801, 813);
             this.W36.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W36.Name = "W36";
             this.W36.Size = new System.Drawing.Size(95, 25);
@@ -976,7 +980,7 @@
             // label21
             // 
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(587, 746);
+            this.label21.Location = new System.Drawing.Point(586, 807);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(211, 32);
@@ -986,7 +990,7 @@
             // 
             // W34
             // 
-            this.W34.Location = new System.Drawing.Point(802, 724);
+            this.W34.Location = new System.Drawing.Point(801, 785);
             this.W34.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W34.Name = "W34";
             this.W34.Size = new System.Drawing.Size(95, 25);
@@ -995,7 +999,7 @@
             // label24
             // 
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(587, 719);
+            this.label24.Location = new System.Drawing.Point(586, 780);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(211, 32);
@@ -1005,7 +1009,7 @@
             // 
             // W32
             // 
-            this.W32.Location = new System.Drawing.Point(802, 694);
+            this.W32.Location = new System.Drawing.Point(801, 755);
             this.W32.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W32.Name = "W32";
             this.W32.Size = new System.Drawing.Size(95, 25);
@@ -1014,7 +1018,7 @@
             // label25
             // 
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(587, 688);
+            this.label25.Location = new System.Drawing.Point(586, 749);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(211, 32);
@@ -1024,7 +1028,7 @@
             // 
             // B31
             // 
-            this.B31.Location = new System.Drawing.Point(802, 657);
+            this.B31.Location = new System.Drawing.Point(801, 684);
             this.B31.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B31.Name = "B31";
             this.B31.Size = new System.Drawing.Size(70, 25);
@@ -1033,7 +1037,7 @@
             // label74
             // 
             this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label74.Location = new System.Drawing.Point(587, 651);
+            this.label74.Location = new System.Drawing.Point(586, 678);
             this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(211, 32);
@@ -1043,7 +1047,7 @@
             // 
             // B30
             // 
-            this.B30.Location = new System.Drawing.Point(802, 625);
+            this.B30.Location = new System.Drawing.Point(801, 652);
             this.B30.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B30.Name = "B30";
             this.B30.Size = new System.Drawing.Size(70, 25);
@@ -1052,7 +1056,7 @@
             // label19
             // 
             this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(587, 620);
+            this.label19.Location = new System.Drawing.Point(586, 647);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(211, 32);
@@ -1062,7 +1066,7 @@
             // 
             // B29
             // 
-            this.B29.Location = new System.Drawing.Point(802, 593);
+            this.B29.Location = new System.Drawing.Point(801, 620);
             this.B29.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B29.Name = "B29";
             this.B29.Size = new System.Drawing.Size(70, 25);
@@ -1071,7 +1075,7 @@
             // label73
             // 
             this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label73.Location = new System.Drawing.Point(587, 589);
+            this.label73.Location = new System.Drawing.Point(586, 616);
             this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(211, 32);
@@ -1081,7 +1085,7 @@
             // 
             // B28
             // 
-            this.B28.Location = new System.Drawing.Point(802, 566);
+            this.B28.Location = new System.Drawing.Point(801, 593);
             this.B28.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B28.Name = "B28";
             this.B28.Size = new System.Drawing.Size(70, 25);
@@ -1090,7 +1094,7 @@
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(587, 561);
+            this.label17.Location = new System.Drawing.Point(586, 588);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(211, 32);
@@ -1100,7 +1104,7 @@
             // 
             // B27
             // 
-            this.B27.Location = new System.Drawing.Point(802, 534);
+            this.B27.Location = new System.Drawing.Point(801, 561);
             this.B27.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B27.Name = "B27";
             this.B27.Size = new System.Drawing.Size(70, 25);
@@ -1109,7 +1113,7 @@
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(587, 530);
+            this.label16.Location = new System.Drawing.Point(586, 557);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(211, 32);
@@ -2116,6 +2120,30 @@
             this.AddressListExpandsButton_255.Text = "リストの拡張";
             this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AccessibleDescription = "@MAPSETTING_RANK_TACT";
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(586, 526);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(310, 32);
+            this.label5.TabIndex = 352;
+            this.label5.Text = "攻略評価";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleDescription = "@MAPSETTING_RANK_EXP";
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(586, 718);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(310, 32);
+            this.label6.TabIndex = 353;
+            this.label6.Text = "経験評価";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MapSettingFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2337,5 +2365,7 @@
         private System.Windows.Forms.Label label120;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button AddressListExpandsButton_255;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

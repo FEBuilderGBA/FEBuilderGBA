@@ -2921,6 +2921,11 @@ namespace FEBuilderGBA
             {
                 Undo.UndoData undodata = Program.Undo.NewUndoData(this, patch.Name);
 
+                if (!CheckDeprecatedUI(patch))
+                {
+                    return;
+                }
+
                 try
                 {
                     uint org_sp = U.NOT_FOUND;
@@ -3075,6 +3080,12 @@ namespace FEBuilderGBA
                 {//2重割り込み禁止
                     return;
                 }
+
+                if (! CheckDeprecatedUI(patch))
+                {
+                    return;
+                }
+
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
@@ -7744,6 +7755,20 @@ namespace FEBuilderGBA
             }
         }
 
+        bool CheckDeprecatedUI(PatchSt patch)
+        {
+            string deprecated = U.at(patch.Param, "DEPRECATED", "false");
+            if (U.stringbool(deprecated))
+            {
+                DialogResult dr = R.ShowNoYes("このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？");
+                if (dr != DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
 
 
     }

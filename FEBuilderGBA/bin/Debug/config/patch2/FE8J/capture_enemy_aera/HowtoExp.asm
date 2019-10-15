@@ -1,27 +1,29 @@
 @thumb
+;@org	$08E4F940
 
 	ldr	r0, [r5]
 	cmp	r0, #0
 	bne	non
-	ldr	r0, =$0203A4EC ;FE8U
-	ldr	r1, =$03004E50 ;FE8U
+	ldr	r0, =$0203a4e8
+	ldr	r1, =$03004df0
 	ldr	r1, [r1]
-			ldr	r2, =$0802a584 ;FE8U
+			ldr	r2, =$0802a4f0
 			mov	r14, r2
 			@dcw	$F800
 	mov	r0, r6
-			ldr	r2, =$0802CC38 ;FE8U ;;+10 経験値取得関数へ
+			ldr	r2, =$0802cb70 ;;+10 経験値取得関数へ
 			mov	r14, r2
 			@dcw	$F800
 
 	bl	effect
-	
 	bl	clear_double_battleanime
+
 non
 	mov	r0, #0
 	pop	{r4, r5, r6}
 	pop	{r1}
 	bx	r1
+
 
 ;二重に描画されるマップアニメを消す
 ;このルーチンはかなりイケていない。 
@@ -29,15 +31,14 @@ non
 clear_double_battleanime
 	push	{lr}
 
-	ldr r0, =$089A2C48	;(Procs MoveUnit )
-	ldr r3, =$08002e9c	;Find6C
+	ldr r0, =$08A132D0	;(Procs MoveUnit )
+	ldr r3, =$08002dec	;Find6C
 	mov	r14, r3
 	@dcw	$F800
 
-	ldr r3, =$08002d6c	;Delete6C
+	ldr r3, =$08002cbc	;Delete6C
 	mov	r14, r3
 	@dcw	$F800
-
 	pop	{r0}
 	bx	r0
 
@@ -46,13 +47,13 @@ clear_double_battleanime
 
 effect
 	push	{lr}
-	ldr	r0, =$0203A4EC ;FE8U
+	ldr	r0, =$0203a4e8
 	mov	r2, r0
 	add	r2, #74
 	mov	r3, #0
 	mov	r1, #79
 	strh	r1, [r2, #0]
-	ldr	r1, =$0203e1f0 ;FE8U
+	ldr	r1, =$0203e1ec
 	mov	r12, r1
 	add	r1, #95
 	strb	r3, [r1, #0]
@@ -68,27 +69,27 @@ effect
 	strb	r3, [r1, #0]
 	add	r1, #1
 	strb	r2, [r1, #0]
-	ldr	r1, =$0203A56C ;FE8U
-	ldr	r2, =$0203a5ec ;FE8U
+	ldr	r1, =$0203a568
+	ldr	r2, =$0203a5e8
 		
-			ldr	r3, =$0807b900 ;FE8U
+			ldr	r3, =$0807dc48
 			mov	r14, r3
 			@dcw	$F800
 		
 	mov	r0, pc
 	add	r0, #10
 	mov	r1, #3
-			ldr	r3, =$08002c7c ;FE8U
+			ldr	r3, =$08002bcc
 			mov	r14, r3
 			@dcw	$F800
 	pop	{pc}
 	
 ;@incbin	event.bin
-@dcd $00000002
-@dcd $08015361
-@dcd $0005000E
-@dcd $00000000
-@dcd $0000000D
-@dcd $089A35B0
-@dcd $00000000
-@dcd $00000000
+@dcd $00000002	;Run
+@dcd $08015385	;	AddSkipThread2
+@dcd $0005000E	;Wait
+@dcd $00000000	;
+@dcd $0000000D	;Run
+@dcd $08A13C38	;	Procs MapAnimEnd
+@dcd $00000000	;End
+@dcd $00000000	;

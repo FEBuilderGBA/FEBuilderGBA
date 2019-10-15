@@ -276,8 +276,8 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel1234.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D108)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D104)).BeginInit();
@@ -639,7 +639,7 @@
             // 
             // label68
             // 
-            this.label68.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label68.AccessibleDescription = "@MAPSETTING_RANK_ASSET";
             this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label68.Location = new System.Drawing.Point(578, 457);
             this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -651,7 +651,7 @@
             // 
             // label20
             // 
-            this.label20.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label20.AccessibleDescription = "@MAPSETTING_RANK_EXP";
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.Location = new System.Drawing.Point(1234, 402);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -663,7 +663,7 @@
             // 
             // label18
             // 
-            this.label18.AccessibleDescription = "@MAPSETTING_DEBRIS_FE7";
+            this.label18.AccessibleDescription = "@MAPSETTING_RANK_TACT";
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.Location = new System.Drawing.Point(1011, 402);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -675,7 +675,7 @@
             // 
             // D108
             // 
-            this.D108.Location = new System.Drawing.Point(741, 585);
+            this.D108.Location = new System.Drawing.Point(739, 585);
             this.D108.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D108.Name = "D108";
             this.D108.Size = new System.Drawing.Size(167, 25);
@@ -683,7 +683,7 @@
             // 
             // D104
             // 
-            this.D104.Location = new System.Drawing.Point(741, 554);
+            this.D104.Location = new System.Drawing.Point(739, 554);
             this.D104.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D104.Name = "D104";
             this.D104.Size = new System.Drawing.Size(167, 25);
@@ -691,7 +691,7 @@
             // 
             // D100
             // 
-            this.D100.Location = new System.Drawing.Point(741, 527);
+            this.D100.Location = new System.Drawing.Point(739, 527);
             this.D100.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D100.Name = "D100";
             this.D100.Size = new System.Drawing.Size(167, 25);
@@ -699,7 +699,7 @@
             // 
             // D96
             // 
-            this.D96.Location = new System.Drawing.Point(741, 496);
+            this.D96.Location = new System.Drawing.Point(739, 496);
             this.D96.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.D96.Name = "D96";
             this.D96.Size = new System.Drawing.Size(167, 25);
@@ -751,7 +751,7 @@
             // 
             // W94
             // 
-            this.W94.Location = new System.Drawing.Point(1401, 933);
+            this.W94.Location = new System.Drawing.Point(1399, 933);
             this.W94.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W94.Name = "W94";
             this.W94.Size = new System.Drawing.Size(75, 25);
@@ -789,7 +789,7 @@
             // 
             // W92
             // 
-            this.W92.Location = new System.Drawing.Point(1401, 900);
+            this.W92.Location = new System.Drawing.Point(1399, 900);
             this.W92.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W92.Name = "W92";
             this.W92.Size = new System.Drawing.Size(75, 25);
@@ -797,7 +797,7 @@
             // 
             // W90
             // 
-            this.W90.Location = new System.Drawing.Point(1401, 871);
+            this.W90.Location = new System.Drawing.Point(1399, 871);
             this.W90.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W90.Name = "W90";
             this.W90.Size = new System.Drawing.Size(75, 25);
@@ -805,7 +805,7 @@
             // 
             // W88
             // 
-            this.W88.Location = new System.Drawing.Point(1400, 839);
+            this.W88.Location = new System.Drawing.Point(1399, 839);
             this.W88.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W88.Name = "W88";
             this.W88.Size = new System.Drawing.Size(75, 25);
@@ -813,7 +813,7 @@
             // 
             // W86
             // 
-            this.W86.Location = new System.Drawing.Point(1400, 808);
+            this.W86.Location = new System.Drawing.Point(1399, 808);
             this.W86.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W86.Name = "W86";
             this.W86.Size = new System.Drawing.Size(75, 25);
@@ -821,7 +821,7 @@
             // 
             // W84
             // 
-            this.W84.Location = new System.Drawing.Point(1400, 778);
+            this.W84.Location = new System.Drawing.Point(1399, 778);
             this.W84.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W84.Name = "W84";
             this.W84.Size = new System.Drawing.Size(75, 25);
@@ -829,7 +829,7 @@
             // 
             // W82
             // 
-            this.W82.Location = new System.Drawing.Point(1400, 747);
+            this.W82.Location = new System.Drawing.Point(1399, 747);
             this.W82.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W82.Name = "W82";
             this.W82.Size = new System.Drawing.Size(75, 25);
@@ -1093,7 +1093,7 @@
             // 
             // W76
             // 
-            this.W76.Location = new System.Drawing.Point(1401, 654);
+            this.W76.Location = new System.Drawing.Point(1399, 654);
             this.W76.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W76.Name = "W76";
             this.W76.Size = new System.Drawing.Size(75, 25);
@@ -1112,7 +1112,7 @@
             // 
             // W74
             // 
-            this.W74.Location = new System.Drawing.Point(1401, 623);
+            this.W74.Location = new System.Drawing.Point(1399, 623);
             this.W74.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W74.Name = "W74";
             this.W74.Size = new System.Drawing.Size(75, 25);
@@ -1169,7 +1169,7 @@
             // 
             // W72
             // 
-            this.W72.Location = new System.Drawing.Point(1400, 591);
+            this.W72.Location = new System.Drawing.Point(1399, 591);
             this.W72.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W72.Name = "W72";
             this.W72.Size = new System.Drawing.Size(75, 25);
@@ -1188,7 +1188,7 @@
             // 
             // W70
             // 
-            this.W70.Location = new System.Drawing.Point(1400, 560);
+            this.W70.Location = new System.Drawing.Point(1399, 560);
             this.W70.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W70.Name = "W70";
             this.W70.Size = new System.Drawing.Size(75, 25);
@@ -1245,7 +1245,7 @@
             // 
             // W68
             // 
-            this.W68.Location = new System.Drawing.Point(1400, 530);
+            this.W68.Location = new System.Drawing.Point(1399, 530);
             this.W68.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W68.Name = "W68";
             this.W68.Size = new System.Drawing.Size(75, 25);
@@ -1264,7 +1264,7 @@
             // 
             // W66
             // 
-            this.W66.Location = new System.Drawing.Point(1400, 499);
+            this.W66.Location = new System.Drawing.Point(1399, 499);
             this.W66.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.W66.Name = "W66";
             this.W66.Size = new System.Drawing.Size(75, 25);
@@ -1682,7 +1682,7 @@
             // B123
             // 
             this.B123.Hexadecimal = true;
-            this.B123.Location = new System.Drawing.Point(807, 671);
+            this.B123.Location = new System.Drawing.Point(807, 673);
             this.B123.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B123.Maximum = new decimal(new int[] {
             255,
@@ -1710,7 +1710,7 @@
             // B122
             // 
             this.B122.Hexadecimal = true;
-            this.B122.Location = new System.Drawing.Point(739, 672);
+            this.B122.Location = new System.Drawing.Point(739, 673);
             this.B122.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B122.Maximum = new decimal(new int[] {
             255,
@@ -1724,7 +1724,7 @@
             // B129
             // 
             this.B129.Hexadecimal = true;
-            this.B129.Location = new System.Drawing.Point(807, 731);
+            this.B129.Location = new System.Drawing.Point(807, 733);
             this.B129.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B129.Maximum = new decimal(new int[] {
             255,
@@ -1738,7 +1738,7 @@
             // B121
             // 
             this.B121.Hexadecimal = true;
-            this.B121.Location = new System.Drawing.Point(942, 644);
+            this.B121.Location = new System.Drawing.Point(942, 641);
             this.B121.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B121.Maximum = new decimal(new int[] {
             255,
@@ -1752,7 +1752,7 @@
             // B120
             // 
             this.B120.Hexadecimal = true;
-            this.B120.Location = new System.Drawing.Point(874, 643);
+            this.B120.Location = new System.Drawing.Point(874, 641);
             this.B120.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.B120.Maximum = new decimal(new int[] {
             255,
@@ -3559,6 +3559,16 @@
             this.panel14.Size = new System.Drawing.Size(254, 967);
             this.panel14.TabIndex = 188;
             // 
+            // AddressListExpandsButton_255
+            // 
+            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 937);
+            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
+            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(254, 30);
+            this.AddressListExpandsButton_255.TabIndex = 152;
+            this.AddressListExpandsButton_255.Text = "リストの拡張";
+            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
+            // 
             // AddressList
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -3571,16 +3581,6 @@
             this.AddressList.Size = new System.Drawing.Size(256, 913);
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
-            // AddressListExpandsButton_255
-            // 
-            this.AddressListExpandsButton_255.Location = new System.Drawing.Point(-1, 937);
-            this.AddressListExpandsButton_255.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton_255.Name = "AddressListExpandsButton_255";
-            this.AddressListExpandsButton_255.Size = new System.Drawing.Size(254, 30);
-            this.AddressListExpandsButton_255.TabIndex = 152;
-            this.AddressListExpandsButton_255.Text = "リストの拡張";
-            this.AddressListExpandsButton_255.UseVisualStyleBackColor = true;
             // 
             // MapSettingForm
             // 
