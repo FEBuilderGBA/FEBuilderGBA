@@ -1,0 +1,15 @@
+NAME=Hard Mode Bonuses For Playable Units that appear as enemies
+NAME.en=Hard Mode Bonuses For Playable Units that appear as enemies
+NAME.zh=Hard Mode Bonuses For Playable Units that appear as enemies
+
+INFO=敵として登場するプレイヤーユニット(Unit ID <= 0x3b)にも、ハードブーストの恩恵を受けられるように変更します。\r\nつまり、ヨシュアのようなユニットが恩恵を受けられます。
+INFO.en=Changed so that player units that appear as enemies (Unit ID <= 0x3b) will also benefit from the hard boost.\r\nThis means that units like Joshua can benefit.
+INFO.zh=Changed so that player units that appear as enemies (Unit ID <= 0x3b) will also benefit from the hard boost.\r\nThis means that units like Joshua can benefit.
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x0F818
+COMBO=Default: Disabled|0x3B|Patched: Enabled|0x01
+
+AUTHOR=Celerity910 (data found by Gryz)

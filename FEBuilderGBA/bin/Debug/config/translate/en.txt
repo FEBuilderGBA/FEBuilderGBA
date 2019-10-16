@@ -9548,7 +9548,7 @@ Sound Data
 PAN Forced
 
 :基準ノート値
-Reference Note Value
+Ref Note Value
 
 :波形データ
 Waveform Data

@@ -6957,28 +6957,23 @@ namespace FEBuilderGBA
         //二重にインストールしていないか確認します.
         static void CheckDoubleInstall(PatchSt patch, uint loopI , List<FELint.ErrorSt> errors)
         {
-            string pointer = U.at(patch.Param, "POINTER");
-            if (pointer == "")
+            string pointer_str = U.at(patch.Param, "POINTER");
+            if (pointer_str == "")
             {//不明
                 return;
             }
 
-            byte[] need;
-            if (pointer.IndexOf("$GREP4END")==0)
+            uint search_start = Program.ROM.RomInfo.compress_image_borderline_address();
+
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            uint struct_pointer = convertBinAddressString(pointer_str, 8, search_start, basedir);
+            if (!U.isSafetyOffset(struct_pointer))
             {
-                need = MakeGrepData(pointer);
-            }
-            else if (pointer.IndexOf("$FGREP4END")==0)
-            {
-                need = MakeGrepData(pointer, Path.GetDirectoryName(patch.PatchFileName));
-            }
-            else
-            {//不明
                 return;
             }
 
-            uint p = U.Grep(Program.ROM.Data, need, 0x100, 0, 4);
-            if (p == U.NOT_FOUND)
+            uint struct_address = Program.ROM.p32(struct_pointer);
+            if (!U.isSafetyOffset(struct_address))
             {
                 string name = U.at(patch.Param, "NAME");
                 errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, U.NOT_FOUND
@@ -6986,13 +6981,14 @@ namespace FEBuilderGBA
                 return;
             }
 
-            uint p2 = U.Grep(Program.ROM.Data, need, p + 4 , 0, 4);
-            if (p2 != U.NOT_FOUND)
+            uint second_pointer = convertBinAddressString(pointer_str, 8, struct_pointer + 4, basedir);
+            if (second_pointer != U.NOT_FOUND
+                && struct_pointer != second_pointer)
             {
                 string name = U.at(patch.Param, "NAME");
-                errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, p
+                errors.Add(new FELint.ErrorSt(FELint.Type.PATCH, search_start
                     , R._("「{0}」パッチを2重にインストールしています。\r\n1st({1}),2nd({2})"
-                    , name, U.To0xHexString(p), U.To0xHexString(p2)), loopI));
+                    , name, U.To0xHexString(struct_pointer), U.To0xHexString(second_pointer)), loopI));
                 return;
             }
 
