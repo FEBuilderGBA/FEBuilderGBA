@@ -140,6 +140,7 @@ namespace FEBuilderGBA
             U.SelectedIndexSafety(func_show_chapter_extends, (int)show_chapter_extends());
             U.SelectedIndexSafety(func_show_worldmap_node_extends, (int)show_worldmap_node_extends());
             U.SelectedIndexSafety(func_show_worldmap_path_extends, (int)show_worldmap_path_extends());
+            U.SelectedIndexSafety(func_show_fe76_item_icon_extends, (int)show_fe76_item_icon_extends());
             U.SelectedIndexSafety(func_texteditor_auto_convert_space, (int)texteditor_auto_convert_space());
             U.SelectedIndexSafety(func_auto_connect_emulator, (int)auto_connect_emulator());
             U.SelectedIndexSafety(func_proxy_server_when_connecting, (int)proxy_server_when_connecting());
@@ -289,6 +290,7 @@ namespace FEBuilderGBA
             Program.Config["func_show_chapter_extends"] = U.SelectValueComboboxText(func_show_chapter_extends.Text);
             Program.Config["func_show_worldmap_node_extends"] = U.SelectValueComboboxText(func_show_worldmap_node_extends.Text);
             Program.Config["func_show_worldmap_path_extends"] = U.SelectValueComboboxText(func_show_worldmap_path_extends.Text);
+            Program.Config["func_show_fe76_item_icon_extends"] = U.SelectValueComboboxText(func_show_fe76_item_icon_extends.Text);
             Program.Config["func_texteditor_auto_convert_space"] = U.SelectValueComboboxText(func_texteditor_auto_convert_space.Text);
             Program.Config["func_auto_connect_emulator"] = U.SelectValueComboboxText(func_auto_connect_emulator.Text);
             Program.Config["func_proxy_server_when_connecting"] = U.SelectValueComboboxText(func_proxy_server_when_connecting.Text);
@@ -880,7 +882,11 @@ namespace FEBuilderGBA
         {
             return (show_extends_enum)U.atoi(Program.Config.at("func_show_worldmap_path_extends", "0"));
         }
-
+        public static show_extends_enum show_fe76_item_icon_extends()
+        {
+            return (show_extends_enum)U.atoi(Program.Config.at("func_show_fe76_item_icon_extends", "0"));
+        }
+        
 
         public enum texteditor_auto_convert_space_enum
         {
@@ -1337,6 +1343,7 @@ namespace FEBuilderGBA
             explain_func_show_chapter_extends.AccessibleDescription = R._("章テーブルを拡張するボタンを表示します。\r\n章を拡張するときは、PLISTの構造について理解している必要があります。");
             explain_func_show_worldmap_node_extends.AccessibleDescription = R._("FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");
             explain_func_show_worldmap_path_extends.AccessibleDescription = R._("FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。");
+            explain_func_show_fe76_item_icon_extends.AccessibleDescription = R._("FE7とFE6のアイテムアイコンにも拡張ボタンを表示します。\r\nアイテムアイコンを拡張するには、パッチが必要です。\r\nFE8のパッチは存在しますが、FE7とFE6用には不安定なものしか存在しません。");
         }
 
         private void Color_ControlComment_ForeColor_button_Click(object sender, EventArgs e)

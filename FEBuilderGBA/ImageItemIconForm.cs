@@ -86,6 +86,16 @@ namespace FEBuilderGBA
 
         private void ImageIconForm_Load(object sender, EventArgs e)
         {
+            //アイテムアイコン拡張を表示するかどうか
+            if (IsShowItemIconExetdns(this.AddressList.Items.Count))
+            {
+                ItemIconListExpandsButton.Show();
+            }
+            else
+            {
+                this.AddressList.Height += ItemIconListExpandsButton.Height;
+                ItemIconListExpandsButton.Hide();
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,6 +294,25 @@ namespace FEBuilderGBA
             f.JumpToPage(1);
         }
 
+        bool IsShowItemIconExetdns(int count)
+        {
+            if (Program.ROM.RomInfo.version() == 8)
+            {//FE8では常に表示する
+                return true;
+            }
+
+            if (OptionForm.show_fe76_item_icon_extends() == OptionForm.show_extends_enum.Show)
+            {//表示する設定の場合は表示する.
+                return true;
+            }
+
+            if (Program.ROM.p32(Program.ROM.RomInfo.icon_pointer()) == Program.ROM.RomInfo.icon_orignal_address())
+            {//拡張されていないので表示しない
+                return false;
+            }
+            //拡張されているので表示する
+            return true;
+        }
 
 
     }

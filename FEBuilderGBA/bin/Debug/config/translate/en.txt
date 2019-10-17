@@ -8044,6 +8044,9 @@ An extended button is also displayed at the world map base of FE8.\r\nIt is said
 :FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
 An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
 
+:FE7とFE6のアイテムアイコンにも拡張ボタンを表示します。\r\nアイテムアイコンを拡張するには、パッチが必要です。\r\nFE8のパッチは存在しますが、FE7とFE6用には不安定なものしか存在しません。
+An extension button is also displayed on the item icons of FE7 and FE6.\r\nPatches are required to expand item icons.\r\nThere are FE8 patches, but there are only unstable ones for FE7 and FE6.
+
 :パス
 Path
 
@@ -8305,12 +8308,6 @@ Start position for program assignment.
 :Lintで警告する不明な命令の連続数
 Continuous number of unknown instructions warning by Lint.
 
-:1=簡易エラーチェックをする
-1=Perform a simple error check
-
-:上書き時の簡易チェック
-Simple check at overwrite
-
 :0=SYMファイルを作成しない
 0=Do not create SYM file
 
@@ -8319,9 +8316,6 @@ Simple check at overwrite
 
 :no$gba用のsymファイルの作成
 Create sym file for no $ gba
-
-:データ保護
-Data Protection
 
 :リポイント
 Re-point
@@ -8340,27 +8334,6 @@ Game Script Notation
 
 :開発補助
 Development aid
-
-:自動バックアップ
-Auto Backup
-
-:0=作成しない
-0=Don't Autobackup
-
-:1=保存する前にバックアップを作成する
-1=Autobackup Before Saving
-
-:2=保存する前にバックアップを作成する(7z圧縮)
-2=Autobackup Before Saving (7Zip Compressed)
-
-:0=表示しない
-0=Not Displayed
-
-:1=表示する
-1=Displayed
-
-:クラス拡張のボタンを表示する
-Toggle Class Expansion Button
 
 :サイズ不足の時のROMサイズの拡張
 ROM Expansion Settings
@@ -8407,18 +8380,6 @@ Automatic conversion of single/double-byte space
 :エミュレータへ自動接続
 Emulator Debugger Settings
 
-:範囲外書き込みについて
-Out of Range Options
-
-:0=警告も何もしない(推奨しません)
-0=Disable Out of Range User Warnings (Not Recommended)
-
-:1=書き込みを警告する
-1=Warn User Upon Attempt to Write Out of Range
-
-:2=書き込みを禁止する
-2=Don't Allow Writing Out of Range
-
 :ROM拡張時の探索開始位置
 Search starting position at ROM expansion
 
@@ -8436,6 +8397,63 @@ Search starting position at ROM expansion
 
 :4=0x08000000以降 0xFFが規定数連続
 4=0x08000000 or later 0xFF is many Continuous
+
+:機能2
+Function 2
+
+:0=表示しない
+0=Not Displayed
+
+:1=表示する
+1=Displayed
+
+:FE8ワールドマップ道の拡張ボタンを表示する
+Toggle FE8 WorldMap Path Expansion Button
+
+:FE8ワールドマップ拠点の拡張ボタンを表示する
+Toggle FE8 WorldMap Node Expansion Button
+
+:拡張ボタン
+Expansion button
+
+:データ保護
+Data Protection
+
+:自動バックアップ
+Auto Backup
+
+:章拡張ボタンを表示する
+Toggle Chapter Expansion Button
+
+:0=作成しない
+0=Don't Autobackup
+
+:1=保存する前にバックアップを作成する
+1=Autobackup Before Saving
+
+:2=保存する前にバックアップを作成する(7z圧縮)
+2=Autobackup Before Saving (7Zip Compressed)
+
+:上書き時の簡易チェック
+Simple check at overwrite
+
+:0=警告も何もしない(推奨しません)
+0=Disable Out of Range User Warnings (Not Recommended)
+
+:1=書き込みを警告する
+1=Warn User Upon Attempt to Write Out of Range
+
+:2=書き込みを禁止する
+2=Don't Allow Writing Out of Range
+
+:1=簡易エラーチェックをする
+1=Perform a simple error check
+
+:範囲外書き込みについて
+Out of Range Options
+
+:クラス拡張のボタンを表示する
+Toggle Class Expansion Button
 
 :機能3
 Function 3
@@ -8524,20 +8542,8 @@ File Export Settings
 :保存
 Save
 
-:章拡張ボタンを表示する
-Toggle Chapter Expansion Button
-
-:機能2
-Function 2
-
-:拡張ボタン
-Expansion button
-
-:FE8ワールドマップ拠点の拡張ボタンを表示する
-Toggle FE8 WorldMap Node Expansion Button
-
-:FE8ワールドマップ道の拡張ボタンを表示する
-Toggle FE8 WorldMap Path Expansion Button
+:FE6 FE7 アイテムアイコン拡張ボタンの表示
+FE6 FE7 Item icon expansion button display.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
