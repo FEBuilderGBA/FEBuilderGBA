@@ -11755,14 +11755,20 @@ Ephraim Ending
 :前の拠点クリア後に発生するイベント
 Events Post-World Map Node
 
-:拠点選択後に発生するイベント
-Events Post-World-Map-Choice
-
 :ワールドマップ道へJump
 Jump to World Map Roads
 
 :ワールドマップ拠点へJump
 Jump to World Map Nodes
+
+:拠点選択後に発生するイベント
+Events Post-World-Map-Choice
+
+:ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステージの紹介は、拠点を選択した瞬間に行う必要があります。
+Set the event that is executed when the base of the world map is selected from the map.\r\nIn FE8, the player can move the world map freely.\r\nTherefore, the introduction of the next stage must be done at the moment of selecting the base.
+
+:マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。
+Specify the event to be executed when the map is cleared.\r\nThe next base appears on the world map, and the road is drawn.
 
 :256色画像
 256 Color Image
