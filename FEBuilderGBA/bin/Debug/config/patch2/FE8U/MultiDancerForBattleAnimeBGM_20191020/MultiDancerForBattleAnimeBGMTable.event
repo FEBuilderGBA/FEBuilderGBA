@@ -1,0 +1,5 @@
+#define csvmacro000(arg000,arg001,arg002) "BYTE arg000 arg001; SHORT arg002; "
+
+MultiDancerForBattleAnimeBGMTable:
+csvmacro000(0x00,0x4d,0x20)
+csvmacro000(0x0,0x0,0x0)

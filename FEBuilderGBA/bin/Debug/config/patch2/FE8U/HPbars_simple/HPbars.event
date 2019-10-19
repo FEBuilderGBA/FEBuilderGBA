@@ -33,4 +33,4 @@ HPBars:
 #incbin Talk_Warning_Bars.dmp
 POIN HPFramePointers
 HPBarGraphic:
-#incbin "Warning_and_HPGraphic.bin"
+#incbin "WarningHpSheet.png.dmp"
