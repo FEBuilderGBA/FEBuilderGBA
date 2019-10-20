@@ -1,0 +1,42 @@
+//for FE8U
+
+//Install AddFlagByED2
+//BIN:$FREEAREA:1=AddFlagByED2.dmp
+//JUMP:0xB672C:$r3=AddFlagByED2.dmp
+PUSH
+ORG 0xB672C
+BYTE 0x00 0x4B 0x9F 0x46
+POIN AddFlagByED2
+POP
+
+ALIGN 4
+AddFlagByED2:
+#incbin "AddFlagByED2.dmp"
+
+
+//Install AddFlagByED3
+//BIN:$FREEAREA:1=AddFlagByED3.dmp
+//JUMP:0xB6AFC:$r0=AddFlagByED3.dmp
+PUSH
+ORG 0xB6AFC
+BYTE 0x00 0x48 0x87 0x46
+POIN AddFlagByED3
+POP
+
+
+//Install AddFlagByED3_2
+//BIN:$FREEAREA:2=AddFlagByED3_2.dmp
+//JUMP:0xB6AB8:$r3=AddFlagByED3_2.dmp
+PUSH
+ORG 0xB6AB8
+BYTE 0x00 0x4B 0x9F 0x46
+POIN AddFlagByED3_2
+POP
+
+ALIGN 4
+AddFlagByED3:
+#incbin "AddFlagByED3.dmp"
+
+ALIGN 4
+AddFlagByED3_2:
+#incbin "AddFlagByED3_2.dmp"
