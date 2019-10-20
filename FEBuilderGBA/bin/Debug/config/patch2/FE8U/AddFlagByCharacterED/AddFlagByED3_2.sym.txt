@@ -1,0 +1,3 @@
+Found=$10
+SkipData=$20
+FlaseBrunch=$1C

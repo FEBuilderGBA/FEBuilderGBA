@@ -1,0 +1,10 @@
+IF:0xB6AFC=0x00 0x48 0x87 0x46
+
+FORM=EDForm
+N2_J_3=Flag
+N2_L_3_FLAG:VISIBLE=true
+
+
+N2_J_3:HINT=フラグが設定された場合、そのフラグが有効でなければ、\r\nこの項目は設定されていないものとしてスキップします。
+N2_J_3:HINT.en=If flag is set and this flag is not enabled,\r\nthis item is skipped as not set.
+N2_J_3:HINT.zh=If flag is set and this flag is not enabled,\r\nthis item is skipped as not set.

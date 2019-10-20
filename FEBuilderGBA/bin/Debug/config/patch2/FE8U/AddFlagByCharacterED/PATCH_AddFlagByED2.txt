@@ -1,0 +1,20 @@
+NAME=EDの戦績紹介の二つ名の称号の名前をフラグで切り替えるようにする
+NAME.en=Switch character ending's title name in ending with flag.
+
+TYPE=BIN
+TAG=#ENGINE
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=AddFlagByED2.dmp
+JUMP:0xB672C:$r3=AddFlagByED2.dmp
+
+//既に適応されたかどうか
+PATCHED_IF:0xB672C=0x00 0x4B 0x9F 0x46
+
+
+AUTHOR=7743
+
+INFO=エンディングのキャラクターの戦績紹介の画面の名前の称号をフラグで切り替えられるようにします。\r\n詳細メニューの"ED関係"の項目に、フラグの項目を追加します。\r\nエンディングを呼び出す前に、イベントで分岐を作ってフラグを設定してください。\r\nこれにより、特定のユニットが死亡していた場合や、アイテムを取得していた場合などで、キャラクターのその後のエピソードを切り替えることができます。
+INFO.en=Enable to switch the title of the name of the ending character's battle record introduction screen with a flag.\r\nAdd a flag item to the "Character ED" item in the detail menu.\r\nBefore calling the ending, make a branch at the event and set the flag.\r\nThis allows you to switch between subsequent episodes of a character, such as when a particular unit has died or has acquired an item.
+NAME.zh=用标记切换ED结果介绍中两个标题的名称。
+INFO.zh=启用以带有标志的方式切换结局角色的战绩介绍屏幕名称的标题。\r\n在详细菜单的“ ED关系”项中添加一个标志项。\r\n在调用结尾之前，在事件处进行分支并设置标志。\r\n这样，您就可以在角色的后续情节之间进行切换，例如特定单位死亡或获得物品时。

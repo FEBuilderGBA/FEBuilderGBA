@@ -12622,3 +12622,9 @@ r3=X tile position of menu of the right	{U}
 //02026A90	:02026AAF	IconRework (or CIconDisplay)	{U}
 //02026E30	AutoNewline	Amount of space used is variable, since it copies textIDs there for processing. Location can be changed in installer.event	{U}
 //203AAC0	ArenaLimits	Amount of space used is also variable, since it copies user defined text strings there (but only a couple sentences, so far less than AutoNewline). Location can also be changed in installer.event	{U}
+080BB4AC	LoadEDCharactersDataTo0x30_0x34	{J}
+080B696C	LoadEDCharactersDataTo0x30_0x34	{U}
+080BB58C	GetCharacterSupportA	r0=unit:UNIT	{J}
+080B6A4C	GetCharacterSupportA	r0=unit:UNIT	{U}
+080BB5C0	IsAlreadyIntroducedAtPairedEnd	{J}
+080B6A80	IsAlreadyIntroducedAtPairedEnd	{U}

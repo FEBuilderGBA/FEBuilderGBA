@@ -58,11 +58,11 @@ namespace FEBuilderGBA
                 , 8
                 , (int i, uint addr) =>
                 {
-                    return Program.ROM.u32(addr) != 0x00;
+                    return Program.ROM.u8(addr) != 0x00;
                 }
                 , (int i, uint addr) =>
                 {
-                    uint uid = Program.ROM.u32(addr + 0);
+                    uint uid = Program.ROM.u8(addr + 0);
                     uint tourina = Program.ROM.u32(addr + 4);
                     return U.ToHexString(uid) + " " + UnitForm.GetUnitName(uid) + " " + TextForm.Direct(tourina);
                 }
