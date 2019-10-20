@@ -3907,6 +3907,9 @@ Battle animation leftToRightOAM is damaged.
 :戦闘アニメのパレットの長さが正しくありません。
 The battle animation's palette length is incorrect.
 
+:戦闘アニメのパレットのが破損しています。
+The battle anime palette is damaged.
+
 :戦闘アニメのMode:{0}が壊れています。フレームデータが不足しています。
 Battle animation Mode: {0} is broken.Frame data is insufficient.
 
@@ -5879,7 +5882,7 @@ Edit events occurring in the world map before the chapter starts.
 With FE 8, you can move the world map freely, so you can set two types of events, one when you select a World Map Node and the other when it clears.
 
 :ワールドマップに描画される道の設定を行います。\r\nどの拠点間を結ぶかを指定します。
-Edit the way to be drawn on the world map.\r\nSpecify which base to connect.
+Edit the way to be drawn on the world map.\r\nSpecify which Node to connect.
 
 :ワールドマップの城や砦などの拠点を設定します。
 Edit the World Map Node Location such as castle and fortress.
@@ -6488,7 +6491,7 @@ Since data has been written with another patch, it can't be modified.
 {0}=Map Loads From Anywhere
 
 :{0}=必ずワールドマップから移動する必要がある
-{0}=Map Loads Based on World Map
+{0}=Map Loads Node on World Map
 
 :マップを読み込んだ時の追加処理
 Additional Code When Loading Map
@@ -8039,7 +8042,7 @@ In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlea
 Displays a button to expand the chapter table.\r\nWhen expanding chapters, you should understand the structure of PLIST.
 
 :FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
-An extended button is also displayed at the world map base of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 bases.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
+An extended button is also displayed at World Map Node of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 Nodes.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
 
 :FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
 An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
@@ -11765,7 +11768,7 @@ Jump to World Map Nodes
 Events Post-World-Map-Choice
 
 :ワールドマップの拠点を地図から選択した時に実行されるイベントを設定します。\r\nFE8では、ワールドマップをプレイヤーが自由に移動できます。\r\nそのため、次のステージの紹介は、拠点を選択した瞬間に行う必要があります。
-Set the event that is executed when the base of the world map is selected from the map.\r\nIn FE8, the player can move the world map freely.\r\nTherefore, the introduction of the next stage must be done at the moment of selecting the base.
+Set the event that is executed when World Map Node is selected from the map.\r\nIn FE8, the player can move the world map freely.\r\nTherefore, the introduction of the next stage must be done at the moment of selecting the Node.
 
 :マップをクリアした時に実行するイベントを指定します。\r\n次の拠点をワールドマップに出現させて、道を描画する処理を行います。
 Specify the event to be executed when the map is cleared.\r\nThe next base appears on the world map, and the road is drawn.

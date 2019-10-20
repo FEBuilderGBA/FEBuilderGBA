@@ -68,7 +68,7 @@
             this.EnableButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.EnableButton.Location = new System.Drawing.Point(15, 168);
             this.EnableButton.Name = "EnableButton";
-            this.EnableButton.Size = new System.Drawing.Size(518, 35);
+            this.EnableButton.Size = new System.Drawing.Size(518, 73);
             this.EnableButton.TabIndex = 1;
             this.EnableButton.Text = "Enable";
             this.EnableButton.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.CancelCloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelCloseButton.Location = new System.Drawing.Point(556, 168);
             this.CancelCloseButton.Name = "CancelCloseButton";
-            this.CancelCloseButton.Size = new System.Drawing.Size(265, 35);
+            this.CancelCloseButton.Size = new System.Drawing.Size(265, 73);
             this.CancelCloseButton.TabIndex = 2;
             this.CancelCloseButton.Text = "無視して続行する";
             this.CancelCloseButton.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.CancelButton = this.CancelCloseButton;
-            this.ClientSize = new System.Drawing.Size(833, 220);
+            this.ClientSize = new System.Drawing.Size(833, 253);
             this.Controls.Add(this.CancelCloseButton);
             this.Controls.Add(this.EnableButton);
             this.Controls.Add(this.panel1);

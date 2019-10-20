@@ -3542,6 +3542,14 @@ namespace FEBuilderGBA
                     );
                 return;
             }
+            if (!U.isPadding4(rightToLeftOAM_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                    , R._("戦闘アニメのrightToLeftOAMが破損しています。")
+                    + "\r\n"
+                    + R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(rightToLeftOAM_offset)), id)
+                    );
+            }
 
             if (leftToRightOAM_UZ.Length < 12)
             {
@@ -3550,6 +3558,15 @@ namespace FEBuilderGBA
                     );
                 return;
             }
+            if (!U.isPadding4(leftToRightOAM_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                    , R._("戦闘アニメのrightToLeftOAMが破損しています。")
+                    + "\r\n"
+                    + R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(leftToRightOAM_offset)), id)
+                    );
+            }
+
             if (palettes_UZ.Length < 0x20 * 4)
             {
                 if (palettes_UZ.Length < 0x20)
@@ -3559,6 +3576,14 @@ namespace FEBuilderGBA
                         );
                     return;
                 }
+            }
+            if (!U.isPadding4(palettes_offset))
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.BATTLE_ANIME, battleanime_baseaddress
+                    , R._("戦闘アニメのパレットのが破損しています。")
+                    + "\r\n"
+                    + R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(palettes_offset)), id)
+                    );
             }
 
             int frameLimit = Math.Min(frameData_UZ.Length, U.Padding4(frameData_UZ.Length));

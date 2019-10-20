@@ -198,6 +198,11 @@ namespace FEBuilderGBA
 
         static void MakeAllDataLengthSub(List<Address> list, uint p,uint pointer,Dictionary<uint, bool> foundDic, uint[] pointerIndexes)
         {
+            if (!U.isSafetyOffset(p + 18))
+            {
+                return;
+            }
+
             string name = "RMENU " + U.To0xHexString( Program.ROM.u16(p + 18) );
             if (!foundDic.ContainsKey(p))
             {

@@ -26,7 +26,7 @@
 4E0DYYYYXXXXXXXX	[XXXXXXXX:POINTER_ASM:Assembler function]is called[YYYY::argument] E(ASMC)(LOW)	{SUBROUTINE}
 4F0DYYYYXXXXXXXX	[XXXXXXXX:POINTER_ASM:Assembler function]is called[YYYY::argument] F(ASMC)(LOW)	{SUBROUTINE}
 2826XXYY	Move camera to[XX:MAPX:X][YY:MAPY:Y](CAM1)	{CAMERA}
-2126XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1)	{CAMERA}
+2126XXXX	Move camera instantaneously to[XXXX:UNIT:Character](CAM1+)	{CAMERA}
 203BXXYY	[XX:MAPX:X][YY:MAPY:Y]with[]frame(CUMO)	{WAKU}
 213BXXXX	[XXXX:UNIT:Character]with[]frame(CUMO)	{WAKU}
 243BXXYY	[XX:MAPX:X][YY:MAPY:Y]with SHINY []frame	{WAKU}
