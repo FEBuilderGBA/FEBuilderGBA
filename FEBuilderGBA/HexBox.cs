@@ -441,6 +441,7 @@ namespace FEBuilderGBA
                 if ((addr & 0x0F) == 0x08 || (addr & 0x0F) == 0x09)
                 {//エンディアン解決する.
                     addr = U.ChangeEndian32(addr);
+                    addr = U.toOffset(addr);
                 }
             }
             this.CursolPosStart = addr;

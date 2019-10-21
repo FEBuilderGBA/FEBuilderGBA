@@ -1,6 +1,6 @@
-NAME=メモリスロットの値を文字列で取得(イベント命令)
-NAME.en=Add Event: Get value of memory slot as string
-NAME.zh=Add Event: Get value of memory slot as string
+NAME=メモリスロットの値を文字列に変換(イベント命令)
+NAME.en=Add Event: Convert memory slot value to string
+NAME.zh=Add Event: Convert memory slot value to string
 TYPE=BIN
 TAG=#EVENT
 
@@ -17,6 +17,6 @@ INFO.zh=Get the value of memory slot as a string.\r\n@0080@0005 or [G]
 
 AUTHOR=7743
 
-EVENTSCRIPT:1=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	[YY:MEMORYSLOT:メモリスロット]の値を文字列で取得
-EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	Get value of [YY:MEMORYSLOT:MemorySlot] as string
-EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	Get value of [YY:MEMORYSLOT:MemorySlot] as string
+EVENTSCRIPT:1=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	[YY:MEMORYSLOT:メモリスロット]の値を文字列に変換
+EVENTSCRIPT:1.en=400DYY00{$L1:ASMC_MemorySlotToString.dmp}	Convert [YY:MEMORYSLOT:MemorySlot] value to string
+EVENTSCRIPT:1.zh=400DYY00{$L1:ASMC_MemorySlotToString	.dmp}	Convert [YY:MEMORYSLOT:MemorySlot] value to string

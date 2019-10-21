@@ -4803,7 +4803,8 @@ namespace FEBuilderGBA
                 }
                 string w = m.Groups[1].Value;
                 uint plus = U.atoh(w);
-                uint littleEndianPlus = U.ChangeEndian32(U.toPointer(addr + plus));
+                uint pointer = U.toPointer(addr + plus);
+                uint littleEndianPlus = U.ChangeEndian32(pointer);
 
                 patched_message = patched_message.Substring(0, m.Index) + U.ToHexString(littleEndianPlus) + patched_message.Substring(m.Index + m.Length);
             }

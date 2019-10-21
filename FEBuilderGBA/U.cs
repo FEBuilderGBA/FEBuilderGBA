@@ -1348,7 +1348,7 @@ namespace FEBuilderGBA
                 + ((a & 0xFF00) << 8)
                 + ((a & 0xFF0000) >> 8)
                 + ((a & 0xFF000000) >> 24));
-            return U.toOffset(r);
+            return r;
         }
 #if DEBUG
         public static void TEST_ChangeEndian16()
@@ -1360,10 +1360,18 @@ namespace FEBuilderGBA
         }
         public static void TEST_ChangeEndian32()
         {
-            uint a = 0x12345678;
-            uint r = U.ChangeEndian32(a);
+            {
+                uint a = 0x12345678;
+                uint r = U.ChangeEndian32(a);
 
-            Debug.Assert(r == 0x78563412  );
+                Debug.Assert(r == 0x78563412);
+            }
+            {
+                uint a = 0x08010203;
+                uint r = U.ChangeEndian32(a);
+
+                Debug.Assert(r == 0x03020108);
+            }
         }
 #endif
 
