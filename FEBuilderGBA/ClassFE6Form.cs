@@ -57,6 +57,10 @@ namespace FEBuilderGBA
                     {
                         return true;
                     }
+                    if (i > 0xff)
+                    {
+                        return false;
+                    }
                     uint no = Program.ROM.u8(addr + 4);
                     return (no != 0);
                 }

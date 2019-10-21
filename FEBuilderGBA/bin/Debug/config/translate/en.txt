@@ -6511,6 +6511,9 @@ Additional Code When Loading Map
 :ワールドマップ
 World Map
 
+:マップ変化:
+Map change:
+
 :変化
 Change
 

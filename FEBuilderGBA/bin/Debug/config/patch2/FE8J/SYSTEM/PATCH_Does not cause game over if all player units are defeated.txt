@@ -1,0 +1,18 @@
+NAME=すべてのプレイヤーユニットが倒されてもゲームオーバーを発生させない
+NAME.en=Does NOT cause game over if all player units are defeated
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Patched: Invalid game over|ONN
+DETERMINATION_ADDRESS=0x018D38
+
+OFF:0x018D38=0x18 0x1C
+FIX:0x018D38=0x01 0x20
+
+AUTHOR=7743
+INFO=FE8ではフリーマップがあるため、全てのプレイヤーユニットが倒されてパーティが0人になると、自動的にゲームオーバーが呼び出されます。\r\nこのパッチはこの挙動を修正し、自動的にゲームオーバーを発生させなくします。\r\nもし、フリーマップを使う予定ならば、このパッチを利用しないでください。
+INFO.en=Since there is a Skirmish in FE8, game over is automatically called when all player units are killed and there are 0 parties.\r\nThis patch corrects this behavior and automatically prevents game over.\r\nIf you plan to use Skirmish, do NOT use this patch.
+NAME.zh=即使所有玩家单位都被击败也不会导致游戏结束。
+INFO.zh=由于FE8中有免费的地图，当所有玩家单位被杀死并且有0个政党时，游戏结束会自动被调用。\r\n此补丁可纠正此问题，并自动防止游戏结束。\r\n如果您打算使用免费地图，请不要使用此补丁。
