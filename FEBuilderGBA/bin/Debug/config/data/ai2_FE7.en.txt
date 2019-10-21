@@ -26,13 +26,13 @@
 11=Move towards [0xC07764] (Target)	{J}
 11=Move towards [0xB98490] (Target)	{U}
 12=Wait for 1 turn and set AI 1 to 0x10Set AI2 to 0x05(Bishi AI)
-13=Move toward the coordinates of [0xC079EC,0xC079ED] (escort)	{J}
+13=Move toward the coordinates of [0xC079E8,0xC079E9] (escort)	{J}
 13=Move toward the coordinates of [0xB98718,0xB98719] (escort)	{U}
-14=Move toward the coordinates of [0xC07A64,0xC07A65] (escort)	{J}
+14=Move toward the coordinates of [0xC07A60,0xC07A61] (escort)	{J}
 14=Move toward the coordinates of [0xB98794,0xB98795] (escort)	{U}
-15=Move toward the coordinates of [0xC07ADC,0xC07ADD] (escort)	{J}
+15=Move toward the coordinates of [0xC07AD8,0xC07AD9] (escort)	{J}
 15=Move toward the coordinates of [0xB98810,0xB98811] (escort)	{U}
-16=Move toward the coordinates of [0xC07B54,0xC07B55] (escort)	{J}
+16=Move toward the coordinates of [0xC07B50,0xC07B51] (escort)	{J}
 16=Move toward the coordinates of [0xB9888C,0xB9888D] (escort)	{U}
 17=Coordinate movement [0xC0684D,0xC0684F](Playing type)	{J}
 17=Coordinate movement [0xB97579,0xB9757B](Playing type)	{U}

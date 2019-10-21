@@ -1464,5 +1464,15 @@ namespace FEBuilderGBA
         {
             InputFormRef.JumpForm<ToolChangeProjectnameForm>();
         }
+        static public uint GetCurrentMapID()
+        {
+            Form f = Program.MainForm();
+            if (f is MainSimpleMenuForm && f.IsDisposed == false)
+            {//メインフォームがある
+                uint mapid = (uint)((MainSimpleMenuForm)f).MAP_LISTBOX.SelectedIndex;
+                return mapid;
+            }
+            return 0;
+        }
     }
 }

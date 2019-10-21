@@ -1,3 +1,21 @@
+:新規に座標データを作成しますか？
+Do you want to create new coordinate data? 
+
+:座標の領域が確保されていません。
+Coordinate area is not secured.
+
+:書き込み
+Write to ROM
+
+:先頭アドレス
+Hex Address
+
+:AIの座標指定
+Specify AI coordinates.
+
+:AIのユニット指定
+AI unit designation.
+
 :章ごとにAIが実行できる行動を定義します。\r\n例えば、扉の鍵をドロップするAIがいるのに、敵AIが扉の鍵を利用可能にすると、敵は勝手に扉を開けてしまいます。
 Define the actions that AI can execute for each chapter.\r\nFor example, if you have an AI that drops a door key, enemy AI makes the door key available, the enemy opens the door without permission.
 
@@ -19,17 +37,11 @@ Name
 :再取得
 Reload
 
-:先頭アドレス
-Hex Address
-
 :読込数
 Count
 
 :選択アドレス:
 Selection:
-
-:書き込み
-Write to ROM
 
 :アドレス
 Address
@@ -60,6 +72,9 @@ Search
 
 :イベント命令-命令選択
 Event Editor (Adv) - Instruction Selection
+
+:ラベルをクリックして領域を確保してください
+Please click on the label to reserve space
 
 :AI0を書き換えるのは危険です。\r\nAI0を書き換えると敵フェーズでフリーズすることがあります。\r\nそれでも、続行してもよろしいですか？
 Rewriting AI 0 is dangerous.\r\nRewriting AI 0 may freeze in the enemy phase.\r\nStill, are you sure to proceed?
@@ -2325,9 +2340,6 @@ Display LOW instruction
 
 :読み込むユニットを設定してください
 Please set the unit to be read
-
-:ラベルをクリックして領域を確保してください
-Please click on the label to reserve space
 
 :EAでエクスポートできませんでした。\r\n{0}
 Unable to export with EA.\r\n{0}
@@ -6301,8 +6313,8 @@ Changes not saved. Discard and load new map?
 :メインマップ
 Main map
 
-:マップ変化:
-Tile Changes:
+:マップ変化ID:
+Tile Change ID:
 
 :マップが読み込めません。エラーマップを表示します。
 Unable to load the map. Display map error.

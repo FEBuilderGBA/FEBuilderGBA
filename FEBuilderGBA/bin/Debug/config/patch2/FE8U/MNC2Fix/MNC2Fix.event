@@ -4,6 +4,10 @@
 PUSH
 	ORG $00F464
 		POIN MoveToChapter2Hook
+
+	//Fixes the game considering some chapters postgame.
+	ORG 0x897C4
+	SHORT 0x200E 0x5620 //mov r0, #0x0E; ldsb r0, [r4, r0]
 POP
 
 ALIGN 4

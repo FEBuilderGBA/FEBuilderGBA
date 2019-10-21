@@ -766,6 +766,28 @@ namespace FEBuilderGBA
                     text = MenuDefinitionForm.MakeMenuPreview(U.toOffset(v));
                 }
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                if (U.toOffset(v) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMCoordinateForm.GetCoordPreview(U.toOffset(v));
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                if (U.toOffset(v) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMUnit4Form.GetUnit4Preview(U.toOffset(v));
+                }
+            }
             else if ((arg.Type == EventScript.ArgType.PORTRAIT || arg.Type == EventScript.ArgType.REVPORTRAIT) && this.ActiveControl == sender)
             {
                 image = ImagePortraitForm.DrawPortraitAuto(v);
@@ -1009,6 +1031,14 @@ namespace FEBuilderGBA
                 EventScript.GetArg(code, (int)prevIndex, out prevValue);
 
                 text = " " + StatusOptionForm.GetValueNameIndex(prevValue, v);
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                text = " " + AIASMCoordinateForm.GetCoordPreview(v);
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                text = " " + AIASMUnit4Form.GetUnit4Preview(v);
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
@@ -1302,6 +1332,22 @@ namespace FEBuilderGBA
                 MenuExtendSplitMenuForm f = (MenuExtendSplitMenuForm)InputFormRef.JumpForm<MenuExtendSplitMenuForm>(U.NOT_FOUND);
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                AIASMCoordinateForm f = (AIASMCoordinateForm)InputFormRef.JumpFormLow<AIASMCoordinateForm>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                AIASMUnit4Form f = (AIASMUnit4Form)InputFormRef.JumpFormLow<AIASMUnit4Form>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
             }
             else if (arg.Type == EventScript.ArgType.POINTER_TEXT)
             {
@@ -2662,7 +2708,6 @@ namespace FEBuilderGBA
                         string dummy;
                         sb.Append(InputFormRef.GetRAM_UNIT_VALUE(prevValue, v, out dummy));
                     }
-
                     else if (arg.Type == EventScript.ArgType.BOOL)
                     {//BOOL
                         sb.Append(" ");
@@ -2718,6 +2763,16 @@ namespace FEBuilderGBA
 
                         sb.Append(" ");
                         sb.Append(StatusOptionForm.GetValueNameIndex(prevValue, v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMCoordinateForm.GetCoordPreview(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMUnit4Form.GetUnit4Preview(v));
                     }
 
                     sb.Append("]");

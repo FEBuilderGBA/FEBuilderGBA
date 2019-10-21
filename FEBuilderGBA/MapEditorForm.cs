@@ -195,7 +195,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    name = R._("マップ変化:") + this.ChangeList[i].no;
+                    name = R._("マップ変化ID:") + this.ChangeList[i].no;
                 }
                 MapChange.Items.Add(name);
             }
@@ -281,7 +281,7 @@ namespace FEBuilderGBA
 
 
             MapChangeForm.ChangeSt change = ChangeList[MapChange.SelectedIndex];
-            this.MapAddress.Value = change.addr;
+            U.ForceUpdate(this.MapAddress, change.addr);
         }
         private void MapAddress_ValueChanged(object sender, EventArgs e)
         {

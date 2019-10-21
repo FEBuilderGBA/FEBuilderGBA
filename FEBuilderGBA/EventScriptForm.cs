@@ -152,6 +152,14 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {
                 isLabelJump = true;
@@ -471,6 +479,28 @@ namespace FEBuilderGBA
                                     {
                                         TraceList.Add(v);
                                         MenuExtendSplitMenuForm.RecycleOldData(ref RefList, v);
+                                    }
+                                }
+                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AICOORDINATE)
+                                {//AI座標
+                                    uint v = EventScript.GetArgPointer(code, i, addr);
+                                    if (U.isSafetyOffset(v)         //安全で
+                                        && TraceList.IndexOf(v) < 0 //まだ読んだことがなければ
+                                        )
+                                    {
+                                        TraceList.Add(v);
+                                        AIASMCoordinateForm.RecycleOldData(ref RefList, v);
+                                    }
+                                }
+                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AIUNIT4)
+                                {//AIユニット4人
+                                    uint v = EventScript.GetArgPointer(code, i, addr);
+                                    if (U.isSafetyOffset(v)         //安全で
+                                        && TraceList.IndexOf(v) < 0 //まだ読んだことがなければ
+                                        )
+                                    {
+                                        TraceList.Add(v);
+                                        AIASMUnit4Form.RecycleOldData(ref RefList, v);
                                     }
                                 }
                                 else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_ASM)
@@ -1388,6 +1418,16 @@ namespace FEBuilderGBA
                             EventScript.GetArg(code, (int)prevIndex, out prevValue);
 
                             text = " " + StatusOptionForm.GetValueNameIndex(prevValue, v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+                        {
+                            isENumText = true;
+                            text = " " + AIASMCoordinateForm.GetCoordPreview(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+                        {
+                            isENumText = true;
+                            text = " " + AIASMUnit4Form.GetUnit4Preview(v);
                         }
 
                         if (isENumText)

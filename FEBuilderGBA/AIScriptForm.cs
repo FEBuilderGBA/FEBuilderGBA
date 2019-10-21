@@ -538,6 +538,28 @@ namespace FEBuilderGBA
             {
                 text = InputFormRef.GetEditon(value);
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                if (U.toOffset(value) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMCoordinateForm.GetCoordPreview(U.toOffset(value));
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                if (U.toOffset(value) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMUnit4Form.GetUnit4Preview(U.toOffset(value));
+                }
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;
@@ -624,6 +646,22 @@ namespace FEBuilderGBA
             {
                 AITilesForm f = (AITilesForm)InputFormRef.JumpFormLow<AITilesForm>();
                 f.JumpTo(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+            {
+                AIASMCoordinateForm f = (AIASMCoordinateForm)InputFormRef.JumpFormLow<AIASMCoordinateForm>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+            {
+                AIASMUnit4Form f = (AIASMUnit4Form)InputFormRef.JumpFormLow<AIASMUnit4Form>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
                 f.ShowDialog();
                 U.ForceUpdate(src_object, f.GetBaseAddress());
             }
@@ -980,6 +1018,16 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(Program.AsmMapFileAsmCache.GetASMName(v, false, out dummy));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMCoordinateForm.GetCoordPreview(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMUnit4Form.GetUnit4Preview(v));
                     }
                     sb.Append("]");
                     break;
