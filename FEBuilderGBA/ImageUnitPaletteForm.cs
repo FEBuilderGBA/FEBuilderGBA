@@ -446,7 +446,7 @@ namespace FEBuilderGBA
                 uint id = (uint)i;
                 uint p = Program.ROM.p32(table_addr + 0xC);
 
-                FELint.CheckLZ77Errors(p, errors, FELint.Type.IMAGE_UNIT_PALETTE, table_addr, id);
+                FELint.CheckLZ77(p, errors, FELint.Type.IMAGE_UNIT_PALETTE, table_addr, id);
             }
         }
 

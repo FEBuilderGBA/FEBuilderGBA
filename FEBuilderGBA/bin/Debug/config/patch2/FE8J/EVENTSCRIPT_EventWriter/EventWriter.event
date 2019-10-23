@@ -1,0 +1,25 @@
+#ifndef EVENT_WRITER
+#define EVENT_WRITER
+
+// ASMC for writing to arbitrary memory.
+// hack by circleseverywhere
+
+#ifdef _FE8_
+
+  #define Write_Word(value,offset) "SETVAL 0x2 value; SETVAL 0x3 offset; SETVAL 0x4 0x0; ASMC EventWriter+1"
+  #define Write_Short(value,offset) "SETVAL 0x2 value; SETVAL 0x3 offset; SETVAL 0x4 0x1; ASMC EventWriter+1"
+  #define Write_Byte(value,offset) "SETVAL 0x2 value; SETVAL 0x3 offset; SETVAL 0x4 0x2; ASMC EventWriter+1"
+
+  ALIGN 4
+  EventReader:
+    #incbin "eventreader.dmp"
+
+  ALIGN 4
+  EventWriter:
+    #incbin "eventwriter.dmp"
+
+#else // _FE8_
+  ERROR Event Writer hack is for FE8
+#endif // _FE8_
+
+#endif // EVENT_WRITER

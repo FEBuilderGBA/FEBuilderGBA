@@ -1,6 +1,6 @@
-NAME=アイテムチェック(全ユニットと輸送隊)
+NAME=アイテムチェック(全ユニットと輸送隊)(イベント命令)
 NAME.en=Add Event Condition: Item Check(All units and transporters)
-NAME.zh=事件命令_ 物品拥有运输队
+NAME.zh=事件命令_物品拥有运输队(Add Event)
 
 TYPE=BIN
 TAG=#EVENT
@@ -11,9 +11,11 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0x80 0x6B 0x47 0x88 0xC0 0x46 0x15 0x48 0x02 0x68 0x
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=item_find.bin
 
-INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.
+INFO=特定のアイテムを輸送隊を含めて誰かもっているかという条件式を作成します.
+
 HINT=輸送体
-INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.
+INFO.en=Patches the ROM with an event conditional statement that searches all player character inventories for a specific item.
+
 HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=我们创建一个有条件的表达式，有人有一个包含一个运输队的某个物品。
 

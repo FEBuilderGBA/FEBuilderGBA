@@ -33,6 +33,7 @@ namespace FEBuilderGBA
             , POINTER_MENUEXTENDS //分岐拡張
             , POINTER_AICOORDINATE //AIの座標
             , POINTER_AIUNIT4      //AIのユニット4人
+            , POINTER_UNITSSHORTTEXT    //UNITと一致するshort型のテキスト
             , POINTER //その他ポインタ
             , MENUCOMMAND //チュートリアルで無効にするメニュー
             , MAPCHAPTER //マップ名
@@ -512,6 +513,9 @@ namespace FEBuilderGBA
              case "POINTER_AIUNIT4":
                  type = ArgType.POINTER_AIUNIT4;
                  break;
+             case "POINTER_UNITSSHORTTEXT":
+                 type = ArgType.POINTER_UNITSSHORTTEXT;
+                 break;
              case "POINTER":
                  type = ArgType.POINTER;
                  break;
@@ -757,6 +761,7 @@ namespace FEBuilderGBA
                     || arg.Type == ArgType.POINTER_MENUEXTENDS
                     || arg.Type == ArgType.POINTER_AICOORDINATE
                     || arg.Type == ArgType.POINTER_AIUNIT4
+                    || arg.Type == ArgType.POINTER_UNITSSHORTTEXT
                     || arg.Type == ArgType.POINTER
                     )
                 {
@@ -1421,6 +1426,7 @@ namespace FEBuilderGBA
                 || argtype == EventScript.ArgType.POINTER_MENUEXTENDS
                 || argtype == EventScript.ArgType.POINTER_AICOORDINATE
                 || argtype == EventScript.ArgType.POINTER_AIUNIT4
+                || argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
                 ;
         }
 

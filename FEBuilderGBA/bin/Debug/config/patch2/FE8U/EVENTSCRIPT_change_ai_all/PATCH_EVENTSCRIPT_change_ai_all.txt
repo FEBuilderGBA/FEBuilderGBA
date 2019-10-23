@@ -1,4 +1,4 @@
-NAME=ユニットまたはクラスのAIをまとめて変更するイベント命令
+NAME=ユニットまたはクラスのAIをまとめて変更する(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -26,7 +26,7 @@ EVENTSCRIPT:2.en=410DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all ally who
 EVENTSCRIPT:3.en=40050100ZZWW0000400DXXYY{$L1:change_ai_all.dmp}	Change AI ​​of all enemy forces matching the condition to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 EVENTSCRIPT:4.en=40050100ZZWW0000410DXXYY{$L1:change_ai_all.dmp}	Changed the AI ​​of all ally who match the conditions to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
 
-NAME.zh=事件命令一次更改人物或班级的AI
+NAME.zh=事件命令一次更改人物或班级的AI(Add Event)
 INFO.zh=以符合特定条件的笔划更改所有人物或类人物的AI。\r\n在说服常用于FE 4和FE 5的敌人将军时，GBAFE很容易使用，例如让下属撤回AI。
 EVENTSCRIPT:1.zh=400DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有敌军的AI更改为SVAL1(LOW)的内容。[XX:UNIT:人物(00=ANY)][YY:CLASS:class(00=ANY)]
 EVENTSCRIPT:2.zh=410DXXYY{$L1:change_ai_all.dmp}	将符合条件的所有朋友的AI更改为SVAL1(LOW)的内容。[XX:UNIT:人物(00=ANY)][YY:CLASS:class(00=ANY)]

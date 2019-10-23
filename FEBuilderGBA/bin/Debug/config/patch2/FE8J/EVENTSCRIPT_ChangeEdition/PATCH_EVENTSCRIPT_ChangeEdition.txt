@@ -1,4 +1,4 @@
-﻿NAME=編を切り替える追加命令
+﻿NAME=編を切り替える追加命令(イベント命令)
 NAME.en=Add Event: Change Edition
 NAME.zh=Add Event: Change Edition
 

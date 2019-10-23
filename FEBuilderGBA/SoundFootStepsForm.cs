@@ -58,7 +58,7 @@ namespace FEBuilderGBA
         {
             InputFormRef InputFormRef = Init(null);
             ReInit(InputFormRef);
-            FELint.CheckInputFormRefASMErrors(InputFormRef, errors, true, FELint.Type.SOUND_FOOT_STEPS);
+            FELint.CheckInputFormRefASM(InputFormRef, errors, true, FELint.Type.SOUND_FOOT_STEPS);
         }
 
         static uint ReInit(InputFormRef ifr)

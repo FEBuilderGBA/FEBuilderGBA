@@ -1,4 +1,4 @@
-﻿NAME=トラップを削除するイベント命令
+﻿NAME=トラップを削除する(イベント命令)
 NAME.en=Add Event: Remove Trap
 NAME.zh=Add Event: Remove Trap
 

@@ -390,7 +390,7 @@ namespace FEBuilderGBA
             uint addr = InputFormRef.BaseAddress;
             for (int i = 0; i < InputFormRef.DataCount; i++, addr += InputFormRef.BlockSize)
             {
-                FELint.CheckLZ77ImageErrorsPointerOrNull(addr + 4
+                FELint.CheckLZ77ImagePointerOrNull(addr + 4
                     , errors, FELint.Type.IMAGE_UNIT_WAIT_ICON, addr, 32, 0, (uint)i);
             }
         }

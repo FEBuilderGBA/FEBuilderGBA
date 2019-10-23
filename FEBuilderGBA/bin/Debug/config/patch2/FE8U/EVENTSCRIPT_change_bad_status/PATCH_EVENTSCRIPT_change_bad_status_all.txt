@@ -1,4 +1,4 @@
-NAME=ユニット全員をステータス異常にするイベント命令
+NAME=ユニット全員をステータス異常にする(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -19,7 +19,7 @@ INFO.en=Set the unit to status error (bad status / bad status)\r\nOr, recover ba
 EVENTSCRIPT:1.en=400DXXYY{$L1:change_bad_status_all.dmp}	Make the All unit bad status.[XX:UNIT:Unit][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.en=410DXXYY{$L1:change_bad_status_all.dmp}	Make the All class bad status.[XX:CLASS:Class][YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 
-NAME.zh=事件命令使全人物状态异常
+NAME.zh=事件命令使全人物状态异常(Add Event)
 INFO.zh=将设备设置为状态错误（错误状态/错误状态）\r\n或者，恢复状态异常。\r\n将值设置为[转动] << 8 | [状态]。\r\n如果没有设置转弯，则设置3圈。
 EVENTSCRIPT:1.zh=400DXXYY{$L1:change_bad_status_all.dmp}	使所有全人物状态不佳[XX:UNIT:人物][YY:BADSTATUS:State and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.zh=410DXXYY{$L1:change_bad_status_all.dmp}	使所有全class状态不佳[XX:CLASS:Class][YY:BADSTATUS:State and Turn]	{UNITPERSOLNAL}

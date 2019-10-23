@@ -1,4 +1,4 @@
-NAME=ユニットの様々なパラメータを設定する
+NAME=ユニットの様々なパラメータを設定する(イベント命令)
 NAME.en=AddEvent: Set Unit Status
 TYPE=BIN
 TAG=#EVENT
@@ -55,7 +55,5 @@ EVENTSCRIPT:A.zh=40050B00ZZZZWWWW4B0D00YY{$L1:get_status_param.dmp}40050200VVVVV
 EVENTSCRIPT:B.zh=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2006C2024F0D00YY{$L1:set_status_param.dmp}	当前人物的[YY:RAM_UNIT_PARAM:Status]加[VV::增加价值]	{UNITPERSOLNAL}
 EVENTSCRIPT:C.zh=4F0D00YY{$L1:get_status_param.dmp}40050200VVVVVVVV2106C2024F0D00YY{$L1:set_status_param.dmp}	当前人物的[YY:RAM_UNIT_PARAM:Status]降低[VV::降低价值]	{UNITPERSOLNAL}
 
-
-
-NAME.zh=设置本机的各种参数
+NAME.zh=设置本机的各种参数(Add Event)
 INFO.zh=设置本机的各种参数

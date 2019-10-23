@@ -1,6 +1,6 @@
-﻿NAME=アイテムチェック(ユニット単位)
+﻿NAME=アイテムチェック(ユニット単位)(イベント命令)
 NAME.en=Add Event Condition: Item Check(Unit)
-NAME.zh=物品检查(人物)
+NAME.zh=物品检查(人物)(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

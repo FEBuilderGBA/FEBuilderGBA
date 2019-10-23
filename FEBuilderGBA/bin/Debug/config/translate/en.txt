@@ -2785,20 +2785,20 @@ You are attempting to use the flag "{0}" which can't be used.{1}.
 :リストの並び順とIDが一致していません。\r\nこのデータのIDは、{0}になるべきです。\r\n\r\nIDはデータの逆引きに利用されます。\r\nリストの並び順と一致していないと、バグの原因になります。
 The order of the list does not match the ID.\r\nThe ID of this data should be {0}.\r\n\r\nThe ID is used to reverse the data.\r\nFailure to match the order of the list will cause bugs.
 
-:アドレス「{0}」は無効なアドレスです。
-The address "{0}" is an invalid address.
-
-:アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。
-The address "{0}" is a number that can not be divided by 4.\r\nIt may crash at run time.
-
 :アドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。
 The address ({0}) is not compressed with lz77.\r\nThe data is broken.
+
+:アドレス「{0}」は無効なアドレスです。
+The address "{0}" is an invalid address.
 
 :アドレス「{0}」は偶数でなければいけません。
 The address "{0}" must be an even number.
 
 :アドレス「{0}」は奇数でなければいけません。
 The address "{0}" must be odd.
+
+:アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。
+The address "{0}" is a number that can not be divided by 4.\r\nIt may crash at run time.
 
 :このアドレス({0})はlz77で圧縮されていません。\r\nデータが壊れています。
 This address ({0}) is not compressed with lz77.\r\nThe data is broken.
@@ -10193,16 +10193,19 @@ This area is reserved as a string area for patches that extend the system.\r\nPl
 There is an error in the following text.\r\nCorrect the error and push "Write" button.
 
 :RAMエリアのため、書き込めません.
-Unable to write to RAM area.
+Cannot write because of RAM area.
 
-:テキストを書き込み中にエラーが発生しました。
-An error occurred while writing the text.
+:テキストを書き込み中にエラーが発生しました。\r\nTextID:{0}
+Error occurred while writing the text.\r\nTextID:{0}
 
 :文字:{0}はシステムに登録されていません。
 The character: {0} is not registered in the system.
 
-:文字テーブル範囲外のため、書き込めません.
-Unable to write data because it is out of the character table range.
+:文字テーブル範囲外のため、書き込めません.\r\nTextID:{0}
+Unable to write data because it is out of the character table range.\r\nTextID:{0}
+
+:RAMエリアのため、書き込めません.\r\nTextID:{0}
+Unable to write to RAM area.\r\nTextID:{0}
 
 :ユニットの位置が0x08から0xFの範囲にありません。
 Unit position is not in the range 0x08 to 0xF.
@@ -11500,6 +11503,9 @@ The SSL certificate ({0}) ({1}) is not trusted
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
 
+:ファイルに書き込めません。\r\n{0}\r\n\r\n{1}
+Unable to write to file.\r\nFile: {0}\r\n\r\n{1}
+
 :ファイルがありません。\r\nファイル名:{0}\r\n再試行しますか？
 There is no file.\r\nFile name: {0}\r\nDo you want to try again?
 
@@ -11508,6 +11514,9 @@ The file can not be read.\r\nDo you want to try again?\r\nFile: {0}\r\n\r\n{1}
 
 :必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}
 Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}
+
+:必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}
+Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}\r\n{1}
 
 :を
 To

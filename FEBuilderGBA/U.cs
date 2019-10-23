@@ -2990,23 +2990,30 @@ namespace FEBuilderGBA
                 return dic;
             }
 
-            using (StreamReader reader = File.OpenText(fullfilename))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = File.OpenText(fullfilename))
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        continue;
+                        if (U.IsComment(line) || U.OtherLangLine(line))
+                        {
+                            continue;
+                        }
+                        line = U.ClipComment(line);
+                        if (line == "")
+                        {
+                            continue;
+                        }
+                        string[] sp = line.Split('=');
+                        dic[U.atoh(sp[0])] = U.at(sp, 1);
                     }
-                    line = U.ClipComment(line);
-                    if (line == "")
-                    {
-                        continue;
-                    }
-                    string[] sp = line.Split('=');
-                    dic[U.atoh(sp[0])] = U.at(sp, 1);
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
             return dic;
         }
@@ -3022,19 +3029,27 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            using (StreamWriter w = new StreamWriter(fullfilename))
+            try
             {
-                foreach (var pair in data)
+                using (StreamWriter w = new StreamWriter(fullfilename))
                 {
-                    string line = U.ToHexString(pair.Key);
-                    for(int i = 0 ; i < pair.Value.Length ; i++)
+                    foreach (var pair in data)
                     {
-                        line += "\t" + pair.Value[i];
-                    }
+                        string line = U.ToHexString(pair.Key);
+                        for(int i = 0 ; i < pair.Value.Length ; i++)
+                        {
+                            line += "\t" + pair.Value[i];
+                        }
                    
-                    w.WriteLine(line);
+                        w.WriteLine(line);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                R.ShowStopError("ファイルに書き込めません。\r\n{0}\r\n{1}", fullfilename, e.ToString());
+            }
+            
         }
 
         public static Dictionary<uint, string[]> LoadTSVResource(string fullfilename, bool isRequired = true)
@@ -3055,27 +3070,34 @@ namespace FEBuilderGBA
                 }
             }
 
-            using (StreamReader reader = File.OpenText(fullfilename))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = File.OpenText(fullfilename))
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        continue;
+                        if (U.IsComment(line) || U.OtherLangLine(line))
+                        {
+                            continue;
+                        }
+                        line = U.ClipComment(line);
+                        if (line == "")
+                        {
+                            continue;
+                        }
+                        string[] sp = line.Split('\t');
+                        if (sp.Length < 1)
+                        {
+                            continue;
+                        }
+                        dic[U.atoh(sp[0])] = U.subrange(sp, 1, (uint)sp.Length);
                     }
-                    line = U.ClipComment(line);
-                    if (line == "")
-                    {
-                        continue;
-                    }
-                    string[] sp = line.Split('\t');
-                    if (sp.Length < 1)
-                    {
-                        continue;
-                    }
-                    dic[U.atoh(sp[0])] = U.subrange(sp, 1, (uint)sp.Length);
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
             return dic;
         }
@@ -3091,13 +3113,20 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            using (StreamWriter w = new StreamWriter(fullfilename))
+            try
             {
-                foreach (var pair in data)
+                using (StreamWriter w = new StreamWriter(fullfilename))
                 {
-                    string line = U.ToHexString(pair.Key)   + "\t" + pair.Value;
-                    w.WriteLine(line);
+                    foreach (var pair in data)
+                    {
+                        string line = U.ToHexString(pair.Key) + "\t" + pair.Value;
+                        w.WriteLine(line);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("ファイルに書き込めません。\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
         }
 
@@ -3119,27 +3148,34 @@ namespace FEBuilderGBA
                 }
             }
 
-            using (StreamReader reader = File.OpenText(fullfilename))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = File.OpenText(fullfilename))
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        continue;
+                        if (U.IsComment(line) || U.OtherLangLine(line))
+                        {
+                            continue;
+                        }
+                        line = U.ClipComment(line);
+                        if (line == "")
+                        {
+                            continue;
+                        }
+                        string[] sp = line.Split('\t');
+                        if (sp.Length < 2)
+                        {
+                            continue;
+                        }
+                        dic[U.atoh(sp[0])] = sp[1];
                     }
-                    line = U.ClipComment(line);
-                    if (line == "")
-                    {
-                        continue;
-                    }
-                    string[] sp = line.Split('\t');
-                    if (sp.Length < 2)
-                    {
-                        continue;
-                    }
-                    dic[U.atoh(sp[0])] = sp[1];
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
             return dic;
         }
@@ -5177,27 +5213,34 @@ namespace FEBuilderGBA
                 return dic;
             }
 
-            using (StreamReader reader = File.OpenText(fullfilename))
+            try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = File.OpenText(fullfilename))
                 {
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        continue;
+                        if (U.IsComment(line) || U.OtherLangLine(line))
+                        {
+                            continue;
+                        }
+                        line = U.ClipComment(line);
+                        if (line == "")
+                        {
+                            continue;
+                        }
+                        string[] sp = line.Split('\t');
+                        if (sp.Length < 2)
+                        {
+                            continue;
+                        }
+                        dic[sp[1]] = sp[0];
                     }
-                    line = U.ClipComment(line);
-                    if (line == "")
-                    {
-                        continue;
-                    }
-                    string[] sp = line.Split('\t');
-                    if (sp.Length < 2)
-                    {
-                        continue;
-                    }
-                    dic[sp[1]] = sp[0];
                 }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError("必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}", fullfilename, e.ToString());
             }
             return dic;
         }

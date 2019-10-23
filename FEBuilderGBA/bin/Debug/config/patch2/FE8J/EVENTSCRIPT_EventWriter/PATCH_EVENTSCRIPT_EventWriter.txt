@@ -1,0 +1,26 @@
+NAME=任意のメモリの読み書き EventWriter(イベント命令)
+NAME.en=AddEvent:EventWriter
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 eventwriter.dmp=0x08 0x48 0x81 0x68
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=eventwriter.dmp
+BIN:$FREEAREA:2=eventreader.dmp
+
+INFO=任意のメモリのデータを読み書きできる命令を追加します。
+INFO.en=Writing to arbitrary memory.
+INFO.zh=Writing to arbitrary memory.
+
+
+AUTHOR=circleseverywhere
+
+EVENTSCRIPT:1=40050200XXXXXXXX40050300YYYYYYYY4005040000000000400D0000{$L1:eventwriter.dmp}	Write_Word [XX::Value] to [YY::WriteOffset]
+EVENTSCRIPT:2=40050200XXXXXXXX40050300YYYYYYYY4005040001000000400D0000{$L1:eventwriter.dmp}	Write_Short [XX::Value] to [YY::WriteOffset]
+EVENTSCRIPT:3=40050200XXXXXXXX40050300YYYYYYYY4005040002000000400D0000{$L1:eventwriter.dmp}	Write_Byte [XX::Value] to [YY::WriteOffset]
+EVENTSCRIPT:11=40050300YYYYYYYY4005040000000000400D0000{$L1:eventreader.dmp}	Read_Word [YY::ReadOffset]	@STOREC	{COND}
+EVENTSCRIPT:12=40050300YYYYYYYY4005040001000000400D0000{$L1:eventreader.dmp}	Read_Short [YY::ReadOffset]	@STOREC	{COND}
+EVENTSCRIPT:13=40050300YYYYYYYY4005040002000000400D0000{$L1:eventreader.dmp}	Read_Byte [YY::ReadOffset]	@STOREC	{COND}
+NAME.zh=读/写任意内存的EventWriter（事件命令）。

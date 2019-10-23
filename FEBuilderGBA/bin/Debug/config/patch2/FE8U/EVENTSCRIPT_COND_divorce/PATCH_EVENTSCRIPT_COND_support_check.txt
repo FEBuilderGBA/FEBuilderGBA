@@ -1,6 +1,6 @@
-NAME=誰かとの支援をもっているか判定する条件式を作成するイベント命令
+NAME=誰かとの支援をもっているか判定する条件式を作成する(イベント命令)
 NAME.en=Add Event Condition: Support Check
-NAME.zh=事件命令_协助检查
+NAME.zh=事件命令_协助检查(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

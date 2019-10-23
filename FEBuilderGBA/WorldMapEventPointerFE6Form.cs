@@ -137,7 +137,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                FELint.CheckEventErrors(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
+                FELint.CheckEvent(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
             }
         }
 

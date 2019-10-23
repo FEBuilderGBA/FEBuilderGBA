@@ -1,4 +1,4 @@
-NAME=(旧)ユニットをステータス異常にするイベント命令
+NAME=(旧)ユニットをステータス異常にする(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -26,7 +26,7 @@ EVENTSCRIPT:3.en=4B0D00YY{$L1:change_bad_status.dmp}	Set the SVALB coordinate un
 EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D00YY{$L1:change_bad_status.dmp}	Set the coordinate([ZZ:MAPX:X][WW:MAPY:Y]) unit to BAD status.[YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:5.en=212E00002006C100410D00YY{$L1:change_bad_status.dmp}	Set the currently operating unit to bad status.[YY:BADSTATUS:BadStatus and Turn]	{UNITPERSOLNAL}
 
-NAME.zh=(OLD)事件命令使人物状态异常
+NAME.zh=(OLD)事件命令使人物状态异常(Add Event)
 INFO.zh=将设备设置为状态错误（错误状态/错误状态）\r\n或者，恢复状态异常。\r\n将值设置为[转动] << 8 | [状态]。\r\n如果没有设置转弯，则设置3圈。
 EVENTSCRIPT:1.zh=400DXXYY{$L1:change_bad_status.dmp}	使设备状态异常。[XX:UNIT:人物][YY:BADSTATUS:State and Turn]	{UNITPERSOLNAL}
 EVENTSCRIPT:2.zh=410D00YY{$L1:change_bad_status.dmp}	将SVAL1人物的状态设置为异常状态。(low)[YY:BADSTATUS:STATE AND TURN]

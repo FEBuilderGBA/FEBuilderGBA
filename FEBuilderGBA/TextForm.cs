@@ -325,7 +325,7 @@ namespace FEBuilderGBA
             uint textid = (uint)this.AddressList.SelectedIndex;
             if (Is_RAMPointerArea(InputFormRef.BaseAddress, textid))
             {
-                R.ShowStopError("RAMエリアのため、書き込めません." + U.To0xHexString(textid));
+                R.ShowStopError("RAMエリアのため、書き込めません." , U.To0xHexString(textid));
                 return;
             }
 
@@ -336,7 +336,7 @@ namespace FEBuilderGBA
                 );
             if(write_addr == U.NOT_FOUND)
             {
-                R.ShowStopError("テキストを書き込み中にエラーが発生しました。" + U.To0xHexString(textid));
+                R.ShowStopError("テキストを書き込み中にエラーが発生しました。\r\nTextID:{0}" , U.To0xHexString(textid));
                 return;
             }
             InputFormRef.ReloadAddressList();
@@ -397,13 +397,13 @@ namespace FEBuilderGBA
 
             if (id >= GetDataCount())
             {
-                R.Error("文字テーブル範囲外のため、書き込めません." + U.To0xHexString(id));
+                R.Error("文字テーブル範囲外のため、書き込めません.\r\nTextID:{0}" , U.To0xHexString(id));
                 return U.NOT_FOUND;
             }
 
             if (Is_RAMPointerArea(baseaddress, id))
             {
-                R.Error("RAMエリアのため、書き込めません." + U.To0xHexString(id) );
+                R.Error("RAMエリアのため、書き込めません.\r\nTextID:{0}" , U.To0xHexString(id));
                 return U.NOT_FOUND;
             }
 

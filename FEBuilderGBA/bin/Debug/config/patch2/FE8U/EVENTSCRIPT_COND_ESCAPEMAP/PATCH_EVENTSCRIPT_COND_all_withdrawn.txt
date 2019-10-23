@@ -1,4 +1,4 @@
-NAME=離脱マップで全員離脱したかどうか確認するall_withdrawn
+NAME=離脱マップで全員離脱したかどうか確認するall_withdrawn(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -16,7 +16,7 @@ INFO=離脱マップで全員離脱したかどうかを判定します。\r\n�
 
 AUTHOR=aera 出典元:https://github.com/ngmansion/FE8/tree/master/escapemap
 NAME.en=COND Check whether all members have withdrawn
-INFO.en=Check whether all members have withdrawn from the withdrawal map.\r\nIf all members have withdrawn, 1 is returned.\r\nIt returns 0 if it is still there.\r\nThe result is returned in memory slot C.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
+INFO.en=Check whether all members have withdrawn from the withdrawal(Escape) map.\r\nIf all members have withdrawn, 1 is returned.\r\nIt returns 0 if it is still there.\r\nThe result is returned in memory slot C.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 
 
 AUTHOR.en=Source: Source: https://github.com/ngmansion/FE8/tree/master/escapemap.
@@ -28,5 +28,5 @@ EVENTSCRIPT.zh=400D0000{$L1:all_withdrawn.bin}	用于检查所有成员是否已
 
 
 
-NAME.zh=确认是否所有人都已离开出发地图all_withdrawn
+NAME.zh=确认是否所有人都已离开出发地图all_withdrawn(Add Event)
 INFO.zh=确定是否所有成员都退出提款地图。\r\n如果删除所有这些，则返回1。如果它仍然存在则返回0。\r\n结果在内存插槽C中返回。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z

@@ -1,6 +1,6 @@
-NAME=アイテム没収(ユニット単位/一つだけ減らす)
+NAME=アイテム没収(ユニット単位/一つだけ減らす)(イベント命令)
 NAME.en=Add Event: Lose Item(unit/Decrement by one)
-NAME.zh=项目确认(人物/减少一个)
+NAME.zh=项目确认(人物/减少一个)(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

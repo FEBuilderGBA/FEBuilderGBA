@@ -1,4 +1,4 @@
-NAME=特定の座標にいるユニットを別の座標に瞬間移動させるイベント命令
+NAME=特定の座標にいるユニットを別の座標に瞬間移動させる(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -25,7 +25,7 @@ EVENTSCRIPT:3.en=400DXXYY{$L1:repos_current_unit.dmp}	Move instantly, the unit u
 EVENTSCRIPT:4.en=410DXXYY{$L1:repos_current_unit.dmp}	Move instantly, the unit under operation to [XX:MAPX:Dest X][YY:MAPY:Dest Y].However, if the destination is blocked, it will not move.	{UNIT}
 
 
-NAME.zh=事件命令即时将特定坐标处的人物移动到另一个坐标
+NAME.zh=事件命令即时将特定坐标处的人物移动到另一个坐标(Add Event)
 INFO.zh=将设备瞬间移动到特定位置到特定位置。\r\n与现有说明不同，即使人物不存在也没有问题。\r\n此外，当传送目的地被阻止时，可以进行诸如不传送的灵活设置。\r\n还有一条特殊指令可以跳过正在运行的人物。这是因为如果在范围条件下执行，则尚未确定正在运行的人物的坐标。\r\n因此，我准备了专门的指导。
 EVENTSCRIPT:1.zh=40050B00ZZZZWWWW400DXXYY{$L1:repos.dmp}	立即移动，坐标人物[ZZ:MAPX:Src X][WW:MAPY:Src Y]坐标[XX:MAPX:Dest X][YY:MAPY:Dest Y]	{UNIT}
 EVENTSCRIPT:2.zh=40050B00ZZZZWWWW410DXXYY{$L1:repos.dmp}	立即移动，坐标人物[ZZ:MAPX:Src X][WW:MAPY:Src Y]坐标[XX:MAPX:Dest X][YY:MAPY:Dest Y]。但是，如果目的地被阻止，它将不会移动。	{UNIT}

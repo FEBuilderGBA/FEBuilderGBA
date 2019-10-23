@@ -306,7 +306,7 @@ namespace FEBuilderGBA
                         uint arg = Program.ROM.u32(addr + 4);
                         if (arg != 0)
                         {
-                            FELint.CheckASMPointerErrors(arg, errors, FELint.Type.PROCS, a.Addr, addr);
+                            FELint.CheckASMPointer(arg, errors, FELint.Type.PROCS, a.Addr, addr);
                         }
                     }
                     else if (ProcsScriptForm.hasChildProcs(code))
@@ -314,7 +314,7 @@ namespace FEBuilderGBA
                         uint arg = Program.ROM.u32(addr + 4);
                         if (arg != 0)
                         {
-                            FELint.CheckProcsPointerErrors(arg, errors, FELint.Type.PROCS, a.Addr, addr);
+                            FELint.CheckProcsPointer(arg, errors, FELint.Type.PROCS, a.Addr, addr);
                         }
                     }
                     else if (code == 0x01)

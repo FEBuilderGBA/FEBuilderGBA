@@ -1497,7 +1497,7 @@ namespace FEBuilderGBA
                     //無圧縮 FE7 FE8 FE8U
                     if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
                     {//FE7Uは圧縮されている  (FE6も圧縮ただし結構違うので別ルーチン)
-                        FELint.CheckLZ77Errors(seet_image, errors, FELint.Type.PORTRAIT, portrait_addr, id);
+                        FELint.CheckLZ77(seet_image, errors, FELint.Type.PORTRAIT, portrait_addr, id);
                     }
                     else
                     {//無圧縮
@@ -1507,7 +1507,7 @@ namespace FEBuilderGBA
                 {
                     if (U.isSafetyOffset(class_face))
                     {
-                        FELint.CheckLZ77Errors(class_face, errors, FELint.Type.PORTRAIT, portrait_addr, id);
+                        FELint.CheckLZ77(class_face, errors, FELint.Type.PORTRAIT, portrait_addr, id);
                     }
                 }
             }

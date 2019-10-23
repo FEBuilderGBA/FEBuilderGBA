@@ -1,4 +1,4 @@
-NAME=ユニットを引き継ぎ
+NAME=ユニットを引き継ぎ(イベント命令)
 NAME.en=AddEvent:Unit_Take_Over
 TYPE=BIN
 TAG=#EVENT
@@ -18,7 +18,7 @@ EVENTSCRIPT:5=4F0D00YY{$L1:ASMC_Unit_Take_Over.dmp}	現在操作しているユ�
 INFO.en=This patch also inherit unit weapons and item data to another unit.\r\nPlease use it for the unit you want to take over setting like Nils and Ninian in FE 7.
 EVENTSCRIPT:1.en=400DXXYY{$L1:ASMC_Unit_Take_Over.dmp}	Copy the data of [YY:UNIT:source unit] to [XX:UNIT:destination unit] and take over the role	{UNITPERSOLNAL}.
 EVENTSCRIPT:5.en=4F0D00YY{$L1:ASMC_Unit_Take_Over.dmp}	Copy the data of [YY:UNIT:source unit] to the unit currently being operated and take over the role	{UNITPERSOLNAL}.
-NAME.zh=接管该人物
+NAME.zh=接管该人物(Add Event)
 INFO.zh=该补丁还人物武器和物品数据继承到另一个人物。\r\n请在FE7中将它用于您想要接管的人物，如Nils和Ninian。
 EVENTSCRIPT:1.zh=400DXXYY{$L1:ASMC_Unit_Take_Over.dmp}	将[YY:UNIT:复制源人物]的数据复制到[XX:UNIT:复制目标人物]并接管角色	{UNITPERSOLNAL}
 EVENTSCRIPT:5.zh=4F0D00YY{$L1:ASMC_Unit_Take_Over.dmp}	将[YY:UNIT:复制源人物]的数据复制到当前正在操作的人物单位，并接管角色	{UNITPERSOLNAL}

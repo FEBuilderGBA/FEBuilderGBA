@@ -1,0 +1,5 @@
+Slot_Pointers=$24
+Write=$16
+Write_S=$1A
+Write_B=$1E
+End=$20

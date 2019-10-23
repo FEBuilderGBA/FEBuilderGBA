@@ -125,7 +125,7 @@ namespace FEBuilderGBA
             for (uint i = 0; i < InputFormRef.DataCount; i++, haiku_addr += InputFormRef.BlockSize)
             {
                 uint flag = Program.ROM.u16(haiku_addr + 4);
-                FELint.CheckFlagErrors(flag, errors, FELint.Type.HAIKU, haiku_addr , i);
+                FELint.CheckFlag(flag, errors, FELint.Type.HAIKU, haiku_addr , i);
 
                 uint textid = Program.ROM.u16(haiku_addr + 6);
                 FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.HAIKU, haiku_addr, i);
@@ -133,7 +133,7 @@ namespace FEBuilderGBA
                 if (textid <= 0)
                 {
                     uint event_addr = Program.ROM.u32(haiku_addr + 8);
-                    FELint.CheckEventPointerErrors(event_addr, errors,FELint.Type.HAIKU , haiku_addr,false , tracelist);
+                    FELint.CheckEventPointer(event_addr, errors,FELint.Type.HAIKU , haiku_addr,false , tracelist);
                 }
             }
         }

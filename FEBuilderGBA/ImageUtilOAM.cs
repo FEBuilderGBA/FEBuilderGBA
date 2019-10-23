@@ -3629,7 +3629,7 @@ namespace FEBuilderGBA
                         imageOffset = U.toOffset(imageOffset);
                         if (seatNumberList.IndexOf(imageOffset) < 0)
                         {
-                            FELint.CheckLZ77Errors(imageOffset, errors, FELint.Type.BATTLE_ANIME, battleanime_baseaddress, id);
+                            FELint.CheckLZ77(imageOffset, errors, FELint.Type.BATTLE_ANIME, battleanime_baseaddress, id);
                             seatNumberList.Add(imageOffset);
                         }
                     }

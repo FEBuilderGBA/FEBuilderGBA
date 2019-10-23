@@ -38,6 +38,7 @@ namespace FEBuilderGBA
 
             InputFormRef.markupJumpLabel(JumpToITEMEFFECT);
         }
+
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self)
         {
@@ -70,6 +71,8 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<ItemForm>();
             InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("item_checkbox_"), controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
+
+            FE8UItemSkill();
         }
 
         public static String GetItemName(uint item_id)
@@ -495,6 +498,9 @@ namespace FEBuilderGBA
             {//FE8NVer2のスキルの書
                 J_21.Text = R._("スキル");
                 InputFormRef.markupJumpLabel(J_21);
+
+                SKILLICON.Visible = true;
+                SKILLNAME.Visible = true;
             }
             else
             {
@@ -508,6 +514,64 @@ namespace FEBuilderGBA
             if (IsFE8NVer2SkillNoSyo())
             {
                 InputFormRef.JumpTo(B21, J_21, "SKILLASSIGNMENT", new string[] {} );
+            }
+        }
+        private void B21_ValueChanged(object sender, EventArgs e)
+        {
+            if (IsFE8NVer2SkillNoSyo())
+            {//FE8NVer2のスキルの書
+                uint skillid = (uint)B21.Value;
+                SKILLICON.Image = SkillConfigFE8NVer2SkillForm.DrawSkillIcon(skillid);
+                SKILLNAME.Text = SkillConfigFE8NVer2SkillForm.GetSkillText(skillid);
+                SKILLICON.Visible = true;
+                SKILLNAME.Visible = true;
+            }
+        }
+
+        //FE8U Item Skill
+        bool IsFE8UItemSkill()
+        {
+            if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
+            {
+                return false;
+            }
+            if (PatchUtil.SearchFE8UItemSkill() == PatchUtil.FE8UItemSkill_enum.NO)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        void FE8UItemSkill()
+        {
+            if (! IsFE8UItemSkill())
+            {
+                return;
+            }
+            J_35.Text = R._("スキル");
+            InputFormRef.markupJumpLabel(J_35);
+
+            SKILLICON.Visible = true;
+            SKILLNAME.Visible = true;
+        }
+
+        private void J_35_Click(object sender, EventArgs e)
+        {
+            if (IsFE8UItemSkill())
+            {
+                InputFormRef.JumpTo(B35, J_35, "SKILLASSIGNMENT", new string[] { });
+            }
+        }
+
+        private void B35_ValueChanged(object sender, EventArgs e)
+        {
+            if (IsFE8UItemSkill())
+            {
+                uint skillid = (uint)B35.Value;
+                SKILLICON.Image = SkillConfigSkillSystemForm.DrawSkillIcon(skillid);
+                SKILLNAME.Text = SkillConfigSkillSystemForm.GetSkillName(skillid);
+                SKILLICON.Visible = true;
+                SKILLNAME.Visible = true;
             }
         }
 

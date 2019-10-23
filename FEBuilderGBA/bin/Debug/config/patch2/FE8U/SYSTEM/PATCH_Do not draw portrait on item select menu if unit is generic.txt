@@ -1,0 +1,17 @@
+NAME=一般兵の場合にはアイテム選択画面に顔画像を描画しない
+NAME.en=Don't draw portrait on item select menu if unit is generic
+NAME.zh=Don't draw portrait on item select menu if unit is generic
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=default|OFF|Fix|ONN
+
+DETERMINATION_ADDRESS=0x022BE8
+
+OFF:0x022BE8=0x48 0x68 0x00 0x79 0x51 0x28
+ONN:0x022BE8=0x08 0x68 0xC0 0x88 0x00 0x28
+
+AUTHOR=hypergammaspaces
+

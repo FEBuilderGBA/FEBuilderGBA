@@ -1,4 +1,4 @@
-NAME=所持金を減らすイベント命令
+NAME=所持金を減らす(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -13,7 +13,7 @@ EVENTSCRIPT=400DYYYY{$L1:gold_collect.bin}	[YYYY:DECIMAL:ゴールド]お金を�
 BIN:$FREEAREA:1=gold_collect.bin
 
 INFO=所持金から指定金額を没収します.
-NAME.zh=事件命令_所持金没收
+NAME.zh=事件命令_所持金没收(Add Event)
 INFO.zh=从所持有的钱上，被指定金额.
 NAME.en=Add Event: Lose Gold
 INFO.en=Patches the ROM with a callable event that removes a specified amount of gold from the player.\r\n

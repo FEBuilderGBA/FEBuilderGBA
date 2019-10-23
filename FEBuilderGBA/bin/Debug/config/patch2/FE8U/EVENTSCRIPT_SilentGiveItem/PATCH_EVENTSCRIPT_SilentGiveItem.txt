@@ -1,6 +1,6 @@
-NAME=ユニットにアイテムを密かにアイテムを渡す
+NAME=ユニットにアイテムを密かにアイテムを渡す(イベント命令)
 NAME.en=Add Event: SilentGiveItem
-NAME.zh=秘密地给予该人物的道具
+NAME.zh=秘密地给予该人物的道具(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

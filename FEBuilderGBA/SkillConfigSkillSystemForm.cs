@@ -106,6 +106,7 @@ namespace FEBuilderGBA
             g_Cache_FindIconPointer = PatchUtil.NO_CACHE;
             g_Cache_FindTextPointer = PatchUtil.NO_CACHE;
             g_Cache_FindAnimePointer = PatchUtil.NO_CACHE;
+            g_Cache_SkillName = new Dictionary<uint,string>();
         }
 
         static uint g_Cache_FindAssignPersonalSkillPointer = PatchUtil.NO_CACHE;
@@ -194,6 +195,16 @@ namespace FEBuilderGBA
             return a + skip;
         }
 
+        static Dictionary<uint, string> g_Cache_SkillName = new Dictionary<uint,string>();
+        public static Dictionary<uint, string> LoadSkillNames()
+        {
+            if (g_Cache_SkillName.Count <= 0)
+            {
+                g_Cache_SkillName = U.LoadDicResource(U.ConfigDataFilename("skill_extends_skillsystem_name_"));
+            }
+            return g_Cache_SkillName;
+        }
+
         public struct SkillSystemsTableSt
         {
             public string name;
@@ -249,6 +260,11 @@ namespace FEBuilderGBA
             uint id = Program.ROM.u16(textOffset);
 
             return TextForm.Direct(id);
+        }
+        public static string GetSkillName(uint index)
+        {
+            Dictionary<uint,string> skills = LoadSkillNames();
+            return U.at(skills,index);
         }
         public static string GetSkillText(uint index)
         {

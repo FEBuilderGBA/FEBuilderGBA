@@ -105,7 +105,7 @@ namespace FEBuilderGBA
 
             for (int i = 0; i < image_pos.Length; i++)
             {
-                FELint.CheckLZ77ImageErrorsPointer(image_pos[i], errors, FELint.Type.IMAGE_BATTLE_SCREEN, U.NOT_FOUND, 32, 8 , (uint)i); 
+                FELint.CheckLZ77ImagePointer(image_pos[i], errors, FELint.Type.IMAGE_BATTLE_SCREEN, U.NOT_FOUND, 32, 8 , (uint)i); 
             }
         }
 

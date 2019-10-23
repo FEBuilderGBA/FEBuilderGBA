@@ -1,6 +1,6 @@
-NAME=ユニットの持ち物をすべて輸送隊に送ります
+NAME=ユニットの持ち物をすべて輸送隊に送る(イベント命令)
 NAME.en=Add Event: Send unit's all items to transporter
-NAME.zh=我会把人物的所有物品送到运输车
+NAME.zh=我会把人物的所有物品送到运输车(Add Event)
 
 TYPE=BIN
 TAG=#EVENT
@@ -28,11 +28,13 @@ EVENTSCRIPT:3.zh=4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于SVALB坐标
 EVENTSCRIPT:4.zh=40050B00ZZZZWWWW4B0D0000{$L1:SendAllTransporter.dmp}	我们将属于坐标[ZZ:MAPX:X][WW:MAPY:Y]的所有项目发送给运输商	{UNIT}
 EVENTSCRIPT:5.zh=4F0D0000{$L1:SendAllTransporter.dmp}	我会将当前运营人物的所有物品发送给运输商	{UNIT}
 
-INFO=指定したユニットのすべての持ち物を輸送隊に送ります。
+INFO=指定したユニットのすべての持ち物を輸送隊に送ります。
+
 HINT=輸送体
 
 
 AUTHOR=7743
-INFO.en=Send all belongings of the specified unit to the transporter.
+INFO.en=Send all belongings of the specified unit to the transporter.
+
 HINT.en=convoy,supply,transporter,merlinus,wagon
 INFO.zh=将指定人物的所有物品发送给运输商。

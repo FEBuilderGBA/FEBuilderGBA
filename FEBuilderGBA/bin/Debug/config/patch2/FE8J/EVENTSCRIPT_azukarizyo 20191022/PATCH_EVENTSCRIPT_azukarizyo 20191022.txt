@@ -1,0 +1,23 @@
+NAME=イベント命令から輸送隊を呼び出す(イベント命令) 20191022
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_azukarizyo.dmp=0x10 0xB5 0x03 0x1C
+
+EVENTSCRIPT:1=400D0000{$L1:ASMC_azukarizyo.dmp}	輸送隊を呼び出す
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_azukarizyo.dmp
+
+INFO=イベント命令から、輸送隊を呼び出します。\r\nFE5(トラキア)の預り所みたいなものを作りたいときに利用してください。
+
+AUTHOR=7743
+NAME.en=Add Event: Call Supply 20191022
+INFO.en=Call the convoy(supply) from the event script.\r\nPlease use it when you want to make something like the FE5(Thrace) depository.
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_azukarizyo.dmp}	Call Supply
+
+NAME.zh=事件命令 从事件订单调用护航的附加命令(Add Event) 20191022
+INFO.zh=从活动订单中呼叫车队。\r\n当你想制作像FE5 存放处这样的东西时，请使用它。
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_azukarizyo.dmp}	呼叫运输队

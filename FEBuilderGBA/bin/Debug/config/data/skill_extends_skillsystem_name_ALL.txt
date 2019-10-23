@@ -207,3 +207,11 @@
 0CF=Boon
 0D0=Re-Move
 0D1=Powerstaff
+0D2=Seal Magic
+0D3=Drive Strength
+0D4=Drive Magic
+0D5=Drive Speed
+0D6=Drive Defense
+0D7=Drive Resistance
+0D8=Blossom
+0D9=Aptitude

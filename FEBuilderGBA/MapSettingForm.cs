@@ -703,7 +703,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    FELint.CheckLZ77Errors(config_offset, errors, FELint.Type.MAPSETTING_PLIST_CONFIG, mapaddr);
+                    FELint.CheckLZ77(config_offset, errors, FELint.Type.MAPSETTING_PLIST_CONFIG, mapaddr);
                 }
             }
             {
@@ -720,7 +720,7 @@ namespace FEBuilderGBA
                     if (mapsize.Width <= 0 || mapsize.Height <= 0)
                     {
                         //LZ77に失敗してそうだからチェックする
-                        FELint.CheckLZ77Errors(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
+                        FELint.CheckLZ77(map_offset, errors, FELint.Type.MAPSETTING_PLIST_MAP, mapaddr);
                         errors.Add(new FELint.ErrorSt(FELint.Type.MAPSETTING_PLIST_MAP, mapaddr
                             , R._("マップが破損しています。")
                             , mapid));

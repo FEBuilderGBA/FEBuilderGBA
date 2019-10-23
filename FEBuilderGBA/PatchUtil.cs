@@ -27,6 +27,8 @@ namespace FEBuilderGBA
             g_LevelMaxCaps = NO_CACHE;
             g_Cache_AutoNewLine_enum = AutoNewLine_enum.NoCache;
             g_Cache_Escape_enum = Escape_enum.NoCache;
+            g_Cache_FE8UItemSkill_enum = FE8UItemSkill_enum.NoCache;
+            g_Cache_Raid_enum = Raid_enum.NoCache;
         }
 
         public const uint NO_CACHE = 0xff;
@@ -495,7 +497,6 @@ namespace FEBuilderGBA
                 {
                     continue;
                 }
-
                 byte[] data = Program.ROM.getBinaryData(t.addr, t.data.Length);
                 if (U.memcmp(t.data, data) != 0)
                 {
@@ -535,6 +536,36 @@ namespace FEBuilderGBA
                 return t;
             }
             return new GrepPatchTableSt();
+        }
+
+        public struct Grep2PatchTableSt
+        {
+            public string name;
+            public string ver;
+            public byte[] data;
+        };
+        static Grep2PatchTableSt GrepPatch(Grep2PatchTableSt[] table)
+        {
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            foreach (Grep2PatchTableSt t in table)
+            {
+                if (t.ver != version)
+                {
+                    continue;
+                }
+                uint addr = U.Grep(Program.ROM.Data, t.data, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                if (addr == U.NOT_FOUND)
+                {
+                    continue;
+                }
+                if (!U.isSafetyOffset(addr))
+                {
+                    continue;
+                }
+
+                return t;
+            }
+            return new Grep2PatchTableSt();
         }
 
         //カメラを移動する命令で、画面外に飛び出してしまうバグを修正するパッチの検出
@@ -605,6 +636,16 @@ namespace FEBuilderGBA
                 }
             }
             {
+                Grep2PatchTableSt[] table = new Grep2PatchTableSt[] { 
+                    new Grep2PatchTableSt{ name="ver20191022", ver="FE8U", data = new byte[]{0x00,0xB5,0x07,0x48,0x06,0x4A,0x00,0x78,0x02,0x21,0x48,0x43,0x05,0x49,0x40,0x18,0x00,0x88,0x10,0x80,0x02,0xBC,0x08,0x47,0xC0,0x46,0xC0,0x46,0xC0,0x46,0xC0,0x46,0xC0,0x04,0x00,0x03 }},
+                };
+                Grep2PatchTableSt t = GrepPatch(table);
+                if (t.name == "ver20191022")
+                {
+                    return Escape_enum.EscapeArrivePath;
+                }
+            }
+            {
                 GrepPatchTableSt[] table = new GrepPatchTableSt[] { 
                     new GrepPatchTableSt{ name="escape_menu",patch_dmp="EscapeMenu/IsLoca0x13.dmp"},
                 };
@@ -615,6 +656,66 @@ namespace FEBuilderGBA
                 }
             }
             return Escape_enum.NO;
+        }
+
+        public enum Raid_enum
+        {
+            NO,             //なし
+            RaidPath,
+            NoCache = (int)NO_CACHE
+        };
+        static Raid_enum g_Cache_Raid_enum = Raid_enum.NoCache;
+        public static Raid_enum SearchRaidPatch()
+        {
+            if (g_Cache_Raid_enum == Raid_enum.NoCache)
+            {
+                g_Cache_Raid_enum = SearchRaidPatchLow();
+            }
+            return g_Cache_Raid_enum;
+        }
+        static Raid_enum SearchRaidPatchLow()
+        {
+            {
+                Grep2PatchTableSt[] table = new Grep2PatchTableSt[] { 
+                    new Grep2PatchTableSt{ name="ver20191022", ver="FE8U", data = new byte[]{0xF0 ,0xB5 ,0x29 ,0x48 ,0x02 ,0x68 ,0x51 ,0x68 ,0x09 ,0x79 ,0x04 ,0x1C ,0x51 ,0x29 ,0x46 ,0xD0 ,0xD0 ,0x68 ,0x40 ,0x21 ,0x08 ,0x40 ,0x00 ,0x28 ,0x41 ,0xD1 ,0x11 ,0x20 ,0x10 ,0x56 ,0x23 ,0x49 ,0x09 ,0x68 ,0x80 ,0x00 ,0x40 ,0x18 ,0x10 ,0x21 }},
+                };
+                Grep2PatchTableSt t = GrepPatch(table);
+                if (t.name == "ver20191022")
+                {
+                    return Raid_enum.RaidPath;
+                }
+            }
+            return Raid_enum.NO;
+        }
+
+        public enum FE8UItemSkill_enum
+        {
+            NO,             //なし
+            Ver20191022,
+            NoCache = (int)NO_CACHE
+        };
+        static FE8UItemSkill_enum g_Cache_FE8UItemSkill_enum = FE8UItemSkill_enum.NoCache;
+        public static FE8UItemSkill_enum SearchFE8UItemSkill()
+        {
+            if (g_Cache_FE8UItemSkill_enum == FE8UItemSkill_enum.NoCache)
+            {
+                g_Cache_FE8UItemSkill_enum = SearchFE8UItemSkillLow();
+            }
+            return g_Cache_FE8UItemSkill_enum;
+        }
+        static FE8UItemSkill_enum SearchFE8UItemSkillLow()
+        {
+            {
+                Grep2PatchTableSt[] table = new Grep2PatchTableSt[] { 
+                    new Grep2PatchTableSt{ name="ver20191022", ver="FE8U", data = new byte[]{0xFF ,0x21 ,0x08 ,0x40 ,0x00 ,0x28 ,0x07 ,0xD0 ,0x24 ,0x21 ,0x48 ,0x43 ,0x05 ,0x49 ,0x40 ,0x18 ,0x23 ,0x21 ,0x40 ,0x5C ,0xA0 ,0x42 ,0x01 ,0xD0 ,0x00 ,0x20 ,0x30 ,0xBD ,0x01 ,0x20 ,0x30 ,0xBD }},
+                };
+                Grep2PatchTableSt t = GrepPatch(table);
+                if (t.name == "ver20191022")
+                {
+                    return FE8UItemSkill_enum.Ver20191022;
+                }
+            }
+            return FE8UItemSkill_enum.NO;
         }
 
         //SearchAutoNewLine

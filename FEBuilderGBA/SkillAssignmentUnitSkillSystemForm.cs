@@ -35,7 +35,7 @@ namespace FEBuilderGBA
                 R.ShowStopError("スキル拡張 SkillSystem の、個人スキルを取得できません。");
                 return;
             }
-            this.SkillNames = U.LoadDicResource(U.ConfigDataFilename("skill_extends_skillsystem_name_"));
+            this.SkillNames = SkillConfigSkillSystemForm.LoadSkillNames();
 
             this.TextBaseAddress = Program.ROM.p32(text);
             this.IconBaseAddress = Program.ROM.p32(icon);

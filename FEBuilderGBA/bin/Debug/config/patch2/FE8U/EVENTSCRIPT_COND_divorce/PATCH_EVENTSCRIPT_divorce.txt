@@ -1,6 +1,6 @@
-NAME=操作しているキャラの保持している支援をすべて消します
+NAME=操作しているキャラの保持している支援をすべて消す(イベント命令)
 NAME.en=Add Event: Remove Support/Divorce
-NAME.zh=事件命令_消除支援
+NAME.zh=事件命令_消除支援(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

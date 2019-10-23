@@ -1,4 +1,4 @@
-NAME=ユニットのレベルを取得するイベント命令
+NAME=ユニットのレベルを取得する(イベント命令)
 NAME.en=AddEvent:Get Level
 TYPE=BIN
 TAG=#EVENT
@@ -25,7 +25,7 @@ EVENTSCRIPT:2.en=410D0000{$L1:get_status_lv.dmp}	Get the level of the unit of SV
 EVENTSCRIPT:3.en=4B0D0000{$L1:get_status_lv.dmp}	Get the unit's Level of coordinates of SVALB (LOW)	{COND}
 EVENTSCRIPT:4.en=40050B00ZZZZWWWW4B0D0000{$L1:get_status_lv.dmp}	coordinate[ZZ:MAPX:X][WW:MAPY:Y]Get the unit level	{COND}
 EVENTSCRIPT:5.en=212E00002006C100410D0000{$L1:get_status_lv.dmp}	Get the level of the unit currently being operated	{COND}
-NAME.zh=获取人物级别的事件指令
+NAME.zh=获取人物级别的事件指令(Add Event)
 INFO.zh=获得人物级别。\r\n结果在内存插槽C中返回。
 EVENTSCRIPT:1.zh=400DXX00{$L1:get_status_lv.dmp}	[XX:UNIT:Unit]获得人物等级	{COND}
 EVENTSCRIPT:2.zh=410D0000{$L1:get_status_lv.dmp}	获取SVAL1的人物级别(LOW)	{COND}

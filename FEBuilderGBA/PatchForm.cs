@@ -2947,6 +2947,7 @@ namespace FEBuilderGBA
                     throw; //再送
                 }
                 ReplacePointers(patch, undodata);
+                ProcessSYMBOL(patch);
 
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
@@ -3116,6 +3117,7 @@ namespace FEBuilderGBA
                     }
 
                     ReplacePointers(patch,undodata);
+                    ProcessSYMBOL(patch);
 
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
@@ -7765,6 +7767,21 @@ namespace FEBuilderGBA
             }
             return true;
 
+        }
+        void ProcessSYMBOL(PatchSt patch)
+        {
+            string symbol = U.at(patch.Param, "SYMBOL", "");
+            if (symbol == "")
+            {
+                return;
+            }
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
+            symbol = Path.Combine(basedir , symbol);
+            if (! File.Exists(symbol))
+            {
+                return ;
+            }
+            SymbolUtil.ProcessSymbol(patch.Name, symbol, SymbolUtil.DebugSymbol.SaveComment, 0);
         }
 
 

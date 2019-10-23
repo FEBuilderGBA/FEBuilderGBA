@@ -19,6 +19,8 @@ namespace FEBuilderGBA
         {
             //オプション引数 --mode=foo とかを、dic["--mode"]="foo" みたいに変換します. 
             ArgsDic = U.OptionMap(args, "--rom");
+            //メインスレッド判定に利用するためにスレッドIDを保存
+            MainThreadID = System.Threading.Thread.CurrentThread.ManagedThreadId;
 #if !DEBUG
             SetExceptionHandler();
 #endif
@@ -82,12 +84,12 @@ namespace FEBuilderGBA
             //メインフォームを開く.
             do
             {
-                Program.doReOpen = false;
+                Program.DoReOpen = false;
                 Form f = MainForm();
                 MainFormUtil.SetMainFormIcon(f);
                 Application.Run(f);
             }
-            while (Program.doReOpen); //メインフォームを作り直すためループにする.
+            while (Program.DoReOpen); //メインフォームを作り直すためループにする.
 
             //キャッシュスレッドが動いていたら止める
             if (AsmMapFileAsmCache != null)
@@ -615,6 +617,11 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        //メインスレッド判定
+        public static bool IsMainThread()
+        {
+            return System.Threading.Thread.CurrentThread.ManagedThreadId == MainThreadID;
+        }
 
         public static ROM ROM { get; private set; }
         public static string BaseDirectory { get; private set; }
@@ -636,7 +643,7 @@ namespace FEBuilderGBA
         public static AsmMapFileAsmCache AsmMapFileAsmCache { get; private set; }
         public static RAM RAM { get; private set; }
         public static bool IsCommandLine { get; private set; }
-        public static bool doReOpen = false;
-
+        public static bool DoReOpen = false;
+        static int MainThreadID;
     }
 }

@@ -108,7 +108,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                FELint.CheckASMPointerErrors(asm, errors, FELint.Type.ITEM_EEFECT_POINTER, table_addr , id);
+                FELint.CheckASMPointer(asm, errors, FELint.Type.ITEM_EEFECT_POINTER, table_addr , id);
             }
         }
 

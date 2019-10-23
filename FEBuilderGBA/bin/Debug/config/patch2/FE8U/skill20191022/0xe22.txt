@@ -1,0 +1,2 @@
+Acrobat: All traversable
+terrain costs 1 movement.

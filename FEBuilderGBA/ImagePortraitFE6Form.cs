@@ -694,7 +694,7 @@ namespace FEBuilderGBA
                 //顔画像は圧縮されている.
                 if (U.isSafetyOffset(a0))
                 {
-                    FELint.CheckLZ77Errors(a0, errors, FELint.Type.PORTRAIT, portrait_addr, id);
+                    FELint.CheckLZ77(a0, errors, FELint.Type.PORTRAIT, portrait_addr, id);
                 }
             }
         }

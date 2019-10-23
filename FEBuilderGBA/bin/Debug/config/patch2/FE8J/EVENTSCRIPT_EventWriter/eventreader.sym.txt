@@ -1,0 +1,5 @@
+Slot_Pointers=$28
+Read=$14
+Read_S=$1A
+Read_B=$20
+End=$24

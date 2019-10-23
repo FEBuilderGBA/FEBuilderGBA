@@ -444,6 +444,10 @@ namespace FEBuilderGBA
             {
                 text = R._("分岐拡張");
             }
+            else if (dataType == FELint.Type.POINTER_UNITSSHORTTEXT)
+            {
+                text = R._("ユニットのセリフ");
+            }
             else
             {
                 text = R._("不明");
@@ -992,6 +996,12 @@ namespace FEBuilderGBA
             {
                 MenuExtendSplitMenuForm f = (MenuExtendSplitMenuForm) InputFormRef.JumpForm<MenuExtendSplitMenuForm>();
                 f.JumpToAddr(addr);
+                return;
+            }
+            else if (dataType == FELint.Type.POINTER_UNITSSHORTTEXT)
+            {
+                UnitsShortTextForm f = (UnitsShortTextForm)InputFormRef.JumpForm<UnitsShortTextForm>();
+                f.JumpTo(addr);
                 return;
             }
             else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)

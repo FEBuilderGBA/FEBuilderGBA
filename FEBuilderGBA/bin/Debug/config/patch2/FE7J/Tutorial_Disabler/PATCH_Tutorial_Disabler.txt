@@ -14,7 +14,12 @@ BIN:0xd6d6=d6d6.bin
 BIN:0x2e3c6=2e3c6.bin
 //判定if3 チュートリアル イベント分岐
 BIN:0xD752=D752.bin
-
+//ASMイベント
+BIN:0x79798=mov_r0_bx_lr.bin
+BIN:0x797D4=mov_r0_bx_lr.bin
+BIN:0x7982C=mov_r0_bx_lr.bin
+BIN:0x79894=mov_r0_bx_lr.bin
+BIN:0x798D4=mov_r0_bx_lr.bin
 INFO=FE7 Tutorial Disabler
 NAME.zh=禁用教程（教程功能停止）
 INFO.en=Set whether to disable all tutorial events (including on Easy difficulty)

@@ -1,4 +1,4 @@
-﻿NAME=トラップを追加するイベント命令
+﻿NAME=トラップを追加する(イベント命令)
 NAME.en=Add Event: Add Trap
 NAME.zh=Add Event: Add Trap
 

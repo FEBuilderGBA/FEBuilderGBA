@@ -1,6 +1,6 @@
-﻿NAME=(OLD)ユニットに経験値を与えるイベント命令 20181028
+﻿NAME=(OLD)ユニットに経験値を与える 20181028 (イベント命令)
 NAME.en=Add Event: (OLD)Give the unit experience points 20181028
-NAME.zh=(OLD)事件指令为人物提供经验值 20181028
+NAME.zh=(OLD)事件指令为人物提供经验值 20181028 (AddEvent)
 
 TYPE=EA
 TAG=#ENGINE

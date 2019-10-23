@@ -1,6 +1,6 @@
-﻿NAME=クリアターン数書き込みをイベントで行うようにする
+﻿NAME=クリアターン数書き込みをイベントで行うようにする(イベント命令)
 NAME.en=AddEvent: Write clear turn number in event
-NAME.zh=在事件中写清楚的转弯号码
+NAME.zh=在事件中写清楚的转弯号码(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

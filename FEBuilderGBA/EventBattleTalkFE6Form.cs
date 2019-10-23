@@ -135,7 +135,7 @@ namespace FEBuilderGBA
                 for (uint i = 0; i < InputFormRef.DataCount; i++, battletalk_addr += InputFormRef.BlockSize)
                 {
                     uint flag = Program.ROM.u16(battletalk_addr + 8);
-                    FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.CheckFlag(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
                     FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
@@ -153,7 +153,7 @@ namespace FEBuilderGBA
                 for (uint i = 0; i < InputFormRef.DataCount; i++, battletalk_addr += InputFormRef.BlockSize)
                 {
                     uint flag = Program.ROM.u16(battletalk_addr + 8);
-                    FELint.CheckFlagErrors(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
+                    FELint.CheckFlag(flag, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);
 
                     uint textid = Program.ROM.u16(battletalk_addr + 4);
                     FELint.DeathQuoteTextMessage(textid, errors, FELint.Type.BATTTLE_TALK, battletalk_addr, i);

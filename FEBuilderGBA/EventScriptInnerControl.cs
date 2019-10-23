@@ -766,6 +766,17 @@ namespace FEBuilderGBA
                     text = MenuDefinitionForm.MakeMenuPreview(U.toOffset(v));
                 }
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
+            {//unitに関連付けられたshort型データ
+                if (U.toOffset(v) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = U.ToHexString(v);
+                }
+            }
             else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
             {
                 if (U.toOffset(v) == 0)
@@ -1346,6 +1357,14 @@ namespace FEBuilderGBA
                 AIASMUnit4Form f = (AIASMUnit4Form)InputFormRef.JumpFormLow<AIASMUnit4Form>();
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, f.GetBaseAddress());
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
+            {
+                UnitsShortTextForm f = (UnitsShortTextForm)InputFormRef.JumpFormLow<UnitsShortTextForm>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpTo(value);
                 f.ShowDialog();
                 U.ForceUpdate(src_object, f.GetBaseAddress());
             }

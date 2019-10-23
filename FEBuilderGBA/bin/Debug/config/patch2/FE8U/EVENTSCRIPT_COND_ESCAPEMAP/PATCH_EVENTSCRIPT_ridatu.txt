@@ -1,6 +1,6 @@
-NAME=離脱マップで操作キャラの離脱させる
+NAME=離脱マップで操作キャラの離脱させる(イベント命令)
 NAME.en=Add Event: Character Retreat
-NAME.zh=移除离开地图上的操作角色
+NAME.zh=移除离开地图上的操作角色(Add Event)
 
 TYPE=BIN
 TAG=#EVENT
@@ -13,7 +13,7 @@ BIN:$FREEAREA:1=ridatu.bin
 
 INFO=操作キャラを離脱させます。\r\nこれは離脱マップを作るためのスクリプトです。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 
-INFO.en=Patches the game with a callable event that allows units to retreat from maps.\r\nThis is key to creating a retreat map.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
+INFO.en=Patches the game with a callable event that allows units to retreat(Escape) from maps.\r\nThis is key to creating a retreat map.\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 
 INFO.zh=删除操作字符。\r\n这是创建中断地图的脚本。\r\nSample: https://cdn.discordapp.com/attachments/145137778710151168/630348123197407233/fe8U.WithdrawMap.Sample.7z
 

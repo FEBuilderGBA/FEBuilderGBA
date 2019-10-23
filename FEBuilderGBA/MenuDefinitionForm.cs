@@ -245,26 +245,26 @@ namespace FEBuilderGBA
                     {
                         continue;
                     }
-                    FELint.CheckPointerErrors( U.toPointer(paddr), errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckPointer( U.toPointer(paddr), errors, FELint.Type.MENU_DEFINE, p, i);
                     MenuCommandForm.MakeCheckError(errors, 8 + p);
 
                     paddr = Program.ROM.u32(12 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
 
                     paddr = Program.ROM.u32(16 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
 
                     paddr = Program.ROM.u32(20 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
 
                     paddr = Program.ROM.u32(24 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
 
                     paddr = Program.ROM.u32(28 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
 
                     paddr = Program.ROM.u32(32 + p);
-                    FELint.CheckASMPointerOrNullErrors(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
+                    FELint.CheckASMPointerOrNull(paddr, errors, FELint.Type.MENU_DEFINE, p, i);
                 }
             }
         }

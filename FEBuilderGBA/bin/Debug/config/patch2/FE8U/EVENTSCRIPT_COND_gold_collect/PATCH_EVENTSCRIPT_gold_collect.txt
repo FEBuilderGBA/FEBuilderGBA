@@ -1,6 +1,6 @@
-NAME=所持金を減らすイベント命令
+NAME=所持金を減らす(イベント命令)
 NAME.en=Add Event: Lose Gold
-NAME.zh=事件命令_所持金没收
+NAME.zh=事件命令_所持金没收(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

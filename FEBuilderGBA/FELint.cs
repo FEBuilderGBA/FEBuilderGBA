@@ -80,6 +80,7 @@ namespace FEBuilderGBA
             ,ASMDATA
             ,POINTER_TALKGROUP
             ,POINTER_MENUEXTENDS
+            ,POINTER_UNITSSHORTTEXT
             ,EVENT_FINAL_SERIF
             ,TEXTID_FOR_SYSTEM  //テキストID システム予約
             ,TEXTID_FOR_USER    //テキストID ユーザ定義
@@ -224,33 +225,48 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
         {
-            CheckPointerErrors(event_addr, errors, EventCondToType(cond), addr, tag);
+            CheckPointer(event_addr, errors, EventCondToType(cond), addr, tag);
         }
-        public static void CheckPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(event_addr))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)),tag));
+                    , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)), tag));
+                return;
             }
         }
-        public static void CheckPointerOrNullErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckPointerAlien4(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            CheckPointerAlien4(event_addr, errors, EventCondToType(cond), addr, tag);
+        }
+        public static void CheckPointerAlien4(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            if (!U.isSafetyPointer(event_addr))
+            {//無効なポインタ
+                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
+                    , R._("ポインタ「{0}」が無効です。", U.To0xHexString(event_addr)), tag));
+                return;
+            }
+            CheckAlien4(event_addr, errors, cond, addr);
+        }
+        public static void CheckPointerOrNull(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (event_addr == 0)
             {
                 return;
             }
-            CheckPointerErrors(event_addr, errors, cond, addr , tag);
+            CheckPointer(event_addr, errors, cond, addr , tag);
         }
 
-        public static void CheckEventPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
+        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, bool isFixedEvent, List<uint> tracelist)
         {
-            CheckEventPointerErrors(event_addr, errors, EventCondToType(cond), addr, isFixedEvent, tracelist);
+            CheckEventPointer(event_addr, errors, EventCondToType(cond), addr, isFixedEvent, tracelist);
         }
 
-        public static void CheckPrologeEventPointerErrors(uint mapid, List<ErrorSt> errors)
+        public static void CheckPrologeEventPointer(uint mapid, List<ErrorSt> errors)
         {
             List < U.AddrResult > units = EventCondForm.MakeUnitPointer(mapid);
             for (int i = 0; i < units.Count; i++)
@@ -305,7 +321,7 @@ namespace FEBuilderGBA
             }
         }
 
-        public static void CheckEventPointerErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
+        public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
         {
             if (isFixedEvent == false)
             {
@@ -327,12 +343,14 @@ namespace FEBuilderGBA
                 return;
             }
 
+            CheckAlien4(event_addr, errors, cond, addr);
+
             bool isWorldMapEvent = (cond == Type.WORLDMAP_EVENT);
 
             //有効なイベントなのでチェックする.
             EventScriptForm.CheckEnableEvenet(event_addr, isWorldMapEvent, errors, tracelist);
         }
-        public static void CheckEventErrors(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
+        public static void CheckEvent(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)
         {
             if (isFixedEvent == false)
             {
@@ -353,17 +371,19 @@ namespace FEBuilderGBA
                 return;
             }
 
+            CheckAlien4(event_addr, errors, cond, addr);
+
             bool isWorldMapEvent = (cond == Type.WORLDMAP_EVENT);
 
             //有効なイベントなのでチェックする.
             EventScriptForm.CheckEnableEvenet(event_addr, isWorldMapEvent, errors, tracelist);
         }
 
-        public static void CheckASMPointerErrors(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
+        public static void CheckASMPointer(uint event_addr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
         {
-            CheckASMPointerErrors(event_addr, errors, EventCondToType(cond), addr);
+            CheckASMPointer(event_addr, errors, EventCondToType(cond), addr);
         }
-        public static void CheckASMPointerErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
+        public static void CheckASMPointer(uint asm, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(asm))
             {//無効なポインタ
@@ -376,15 +396,15 @@ namespace FEBuilderGBA
                     , R._("ASM関数ポインタ「{0}」が偶数です。\r\nThumb命令を呼び出すためPointer+1にする必要があります。", U.To0xHexString(asm)), tag));
             }
         }
-        public static void CheckASMPointerOrNullErrors(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckASMPointerOrNull(uint asm, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (asm == 0)
             {
                 return;
             }
-            CheckASMPointerErrors( asm, errors, cond, addr,tag );
+            CheckASMPointer( asm, errors, cond, addr,tag );
         }
-        public static void CheckProcsPointerErrors(uint procs, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckProcsPointer(uint procs, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyPointer(procs))
             {//無効なポインタ
@@ -398,11 +418,11 @@ namespace FEBuilderGBA
             }
 
         }
-        public static void CheckFlagErrors(uint flag, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
+        public static void CheckFlag(uint flag, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr)
         {
-            CheckFlagErrors(flag, errors, EventCondToType(cond), addr);
+            CheckFlag(flag, errors, EventCondToType(cond), addr);
         }
-        public static void CheckFlagErrors(uint flag, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckFlag(uint flag, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             string errorMessage;
             InputFormRef.GetFlagName(flag, out errorMessage);
@@ -461,21 +481,12 @@ namespace FEBuilderGBA
         public static void CheckLZ77Pointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr,string name, uint tag = U.NOT_FOUND)
         {
             uint p = Program.ROM.p32(lz77pointer);
-            CheckLZ77Errors(p, errors, cond, addr,  tag);
+            CheckLZ77(p, errors, cond, addr,  tag);
         }
 
-        public static void CheckLZ77Errors(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckLZ77(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
-            if (!U.isSafetyOffset(lz77addr))
-            {//無効なポインタ
-                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(lz77addr)), tag));
-            }
-            if (!U.isPadding4(lz77addr))
-            {
-                errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(lz77addr)), tag));
-            }
+            CheckAlien4(lz77addr, errors, cond, addr, tag);
             if (!LZ77.iscompress(Program.ROM.Data, lz77addr))
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
@@ -492,10 +503,10 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
-                FELint.CheckLZ77Errors(imageOffset, errors, FELint.Type.MAGIC_ANIME_EXTENDS, magic_baseaddress, magicindex);
+                FELint.CheckLZ77(imageOffset, errors, FELint.Type.MAGIC_ANIME_EXTENDS, magic_baseaddress, magicindex);
             }
         }
-        public static void CheckInputFormRefASMErrors(InputFormRef ifr, List<ErrorSt> errors, bool isSwitch, Type cond)
+        public static void CheckInputFormRefASM(InputFormRef ifr, List<ErrorSt> errors, bool isSwitch, Type cond)
         {
             Debug.Assert(ifr.BlockSize == 4);
 
@@ -546,12 +557,12 @@ namespace FEBuilderGBA
             ImageUtilAP.CheckAPErrors(p, errors, cond, addr, tag);
         }
 
-        public static void CheckAPErrorsPointer(uint apAddress, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
+        public static void CheckAPPointer(uint apAddress, List<ErrorSt> errors, Type cond, uint addr,uint tag = U.NOT_FOUND)
         {
             uint p = Program.ROM.p32(apAddress);
             ImageUtilAP.CheckAPErrors(p, errors, cond, addr, tag);
         }
-        public static void CheckAPErrors(uint apAddress, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        public static void CheckAP(uint apAddress, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
         {
             if (!U.isSafetyOffset(apAddress))
             {//無効なポインタ
@@ -561,7 +572,7 @@ namespace FEBuilderGBA
             ImageUtilAP.CheckAPErrors(apAddress, errors, cond, addr, tag);
         }
 
-        public static void CheckLZ77ImageErrorsPointerOrNull(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        public static void CheckLZ77ImagePointerOrNull(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
         {
             uint p = Program.ROM.p32(lz77pointer);
             if (p == 0)
@@ -572,24 +583,36 @@ namespace FEBuilderGBA
             CheckLZ77ImageErrors(p, errors, cond, addr, width, min_height, tag);
         }
 
-        public static void CheckLZ77ImageErrorsPointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        public static void CheckLZ77ImagePointer(uint lz77pointer, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
         {
             uint p = Program.ROM.p32(lz77pointer);
             CheckLZ77ImageErrors(p,errors,cond ,addr, width, min_height, tag);
         }
 
-        public static void CheckLZ77ImageErrors(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        public static void CheckAlien4(uint targetaddr, List<ErrorSt> errors, EventCondForm.CONDTYPE cond, uint addr, uint tag = U.NOT_FOUND)
         {
-            if (!U.isSafetyOffset(lz77addr))
+            CheckAlien4(targetaddr, errors, EventCondToType(cond), addr, tag);
+        }
+        public static void CheckAlien4(uint targetaddr, List<ErrorSt> errors, Type cond, uint addr, uint tag = U.NOT_FOUND)
+        {
+            targetaddr = U.toOffset(targetaddr);
+            if (!U.isSafetyOffset(targetaddr))
             {//無効なポインタ
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(lz77addr)), tag));
+                    , R._("アドレス「{0}」は無効なアドレスです。", U.To0xHexString(targetaddr)), tag));
+                return;
             }
-            if (!U.isPadding4(lz77addr))
+            if (!U.isPadding4(targetaddr))
             {
                 errors.Add(new FELint.ErrorSt(cond, U.toOffset(addr)
-                    , R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(lz77addr)), tag));
+                    , R._("アドレス「{0}」は4で割り切れない数字です。\r\n実行時にクラッシュする可能性があります。", U.To0xHexString(targetaddr)), tag));
+                return;
             }
+        }
+
+        public static void CheckLZ77ImageErrors(uint lz77addr, List<ErrorSt> errors, Type cond, uint addr, int width, int min_height, uint tag = U.NOT_FOUND)
+        {
+            CheckAlien4(lz77addr, errors, cond, addr, tag);
 
             byte[] data = LZ77.decompress(Program.ROM.Data, lz77addr);
             if (data.Length <= 0)
@@ -691,7 +714,7 @@ namespace FEBuilderGBA
                 if (mapid == 0)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointerErrors(0, errors);
+                    FELint.CheckPrologeEventPointer(0, errors);
                 }
             }
             else if (Program.ROM.RomInfo.version() == 7)
@@ -702,7 +725,7 @@ namespace FEBuilderGBA
                 if (mapid == 0)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointerErrors(0, errors);
+                    FELint.CheckPrologeEventPointer(0, errors);
                 }
             }
             else
@@ -713,7 +736,7 @@ namespace FEBuilderGBA
                 if (mapid == 1)
                 {
                     if (InputFormRef.DoEvents(null, null)) return errors;
-                    FELint.CheckPrologeEventPointerErrors(1, errors);
+                    FELint.CheckPrologeEventPointer(1, errors);
                 }
             }
 

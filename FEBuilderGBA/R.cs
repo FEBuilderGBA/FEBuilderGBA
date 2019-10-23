@@ -76,11 +76,18 @@ namespace FEBuilderGBA
                 }
             }
 
-            string title = R._("エラー");
-            MessageBox.Show(message
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Error);
+            try
+            {
+                string title = R._("エラー");
+                MessageBox.Show(message
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
+            catch (Exception e)
+            {
+                Log.Error(R.ExceptionToString(e));
+            }
         }
         public static void ShowStopError(string str)
         {
@@ -107,11 +114,18 @@ namespace FEBuilderGBA
                 }
             }
 
-            string title = R._("エラー");
-            MessageBox.Show(message
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Error);
+            try
+            {
+                string title = R._("エラー");
+                MessageBox.Show(message
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Error);
+            }
+            catch (Exception e)
+            {
+                Log.Error(R.ExceptionToString(e));
+            }
         }
 
         static string ClipIfVeryLong(string str)
@@ -130,21 +144,35 @@ namespace FEBuilderGBA
         //警告メッセージ OKだけ
         public static void ShowWarning(string str, params object[] args)
         {
-            string message = R.Notify(str, args);
-            string title = R._("警告");
-            MessageBox.Show(ClipIfVeryLong(message)
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Warning);
+            try
+            {
+                string message = R.Notify(str, args);
+                string title = R._("警告");
+                MessageBox.Show(ClipIfVeryLong(message)
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Warning);
+            }
+            catch (Exception e)
+            {
+                Log.Error(R.ExceptionToString(e));
+            }
         }
         public static void ShowWarning(string str)
         {
-            string message = R.Notify(str);
-            string title = R._("警告");
-            MessageBox.Show(ClipIfVeryLong(message)
-                , title
-                , MessageBoxButtons.OK
-                , MessageBoxIcon.Warning);
+            try
+            {
+                string message = R.Notify(str);
+                string title = R._("警告");
+                MessageBox.Show(ClipIfVeryLong(message)
+                    , title
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Warning);
+            }
+            catch (Exception e)
+            {
+                Log.Error(R.ExceptionToString(e));
+            }
         }
 
         //YES NO CALCEL

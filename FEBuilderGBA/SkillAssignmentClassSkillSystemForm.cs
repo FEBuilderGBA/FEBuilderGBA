@@ -40,7 +40,7 @@ namespace FEBuilderGBA
                 R.ShowStopError("スキル拡張 SkillSystem の、レベルアップスキルを取得できません。");
                 return;
             }
-            this.SkillNames = U.LoadDicResource(U.ConfigDataFilename("skill_extends_skillsystem_name_"));
+            this.SkillNames = SkillConfigSkillSystemForm.LoadSkillNames();
 
             this.TextBaseAddress = Program.ROM.p32(textP);
             this.IconBaseAddress = Program.ROM.p32(iconP);

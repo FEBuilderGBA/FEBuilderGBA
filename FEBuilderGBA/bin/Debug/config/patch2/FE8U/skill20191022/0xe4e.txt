@@ -1,0 +1,2 @@
+Dance: Refresh an ally unit
+to let them act again.

@@ -1,4 +1,4 @@
-NAME=所持金をもっているかという条件式を作成するイベント命令
+NAME=所持金をもっているかという条件式を作成する(イベント命令)
 NAME.en=Add Event Condition: Accumulated Gold
 
 TYPE=BIN
@@ -10,7 +10,6 @@ PATCHED_IF:$GREP4 0x00 0xB5 0x80 0x6B 0x42 0x88 0xC0 0x46 0x04 0x4B 0x19 0x68 0x
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=gold_find.bin
 
-INFO=所持金をもっているかという条件式を作成します.
 INFO.en=Patches the ROM with an event conditional statement that checks if the player has amassed a specific amount of gold.\r\n
 INFO.zh=所持金的拥有的条件式作成
 
@@ -27,4 +26,4 @@ EVENTSCRIPT.en=400DYYYY{$L1:gold_find.bin}	[YYYY:DECIMAL:Gold] Determine whether
 EVENTSCRIPT.zh=400DYYYY{$L1:gold_find.bin}	[YYYY:DECIMAL:Gold]确定是否有资金扩展订单。	{COND}	{GOLD}
 
 
-NAME.zh=事件命令_所持金检查
+NAME.zh=事件命令_所持金检查(Add Event)

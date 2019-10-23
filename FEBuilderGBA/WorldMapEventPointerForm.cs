@@ -380,7 +380,7 @@ namespace FEBuilderGBA
                 else
                 {
                     uint event_addr = Program.ROM.u32(p);
-                    FELint.CheckEventPointerErrors(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
+                    FELint.CheckEventPointer(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
                 }
             }
             {
@@ -394,7 +394,7 @@ namespace FEBuilderGBA
                 else
                 {
                     uint event_addr = Program.ROM.u32(p);
-                    FELint.CheckEventPointerErrors(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
+                    FELint.CheckEventPointer(event_addr, errors, FELint.Type.WORLDMAP_EVENT, p, true, tracelist);
                 }
             }
         }

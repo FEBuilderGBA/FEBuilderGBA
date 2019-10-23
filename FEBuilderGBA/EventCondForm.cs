@@ -147,6 +147,11 @@ namespace FEBuilderGBA
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("13=離脱"));
                     OBJECT_N05_L_10_COMBO.AddIcon(0x13, ImageSystemIconForm.ExitPoint()); //13=離脱
                 }
+                if (PatchUtil.SearchRaidPatch() != PatchUtil.Raid_enum.NO)
+                {
+                    OBJECT_N05_L_10_COMBO.Items.Add(R._("21=Raid"));
+                    OBJECT_N05_L_10_COMBO.AddIcon(0x12, ClassForm.DrawWaitIcon(0x41)); //21=Raid
+                }
                 if (PatchUtil.SearchStairsHackPatch())
                 {
                     OBJECT_N05_L_10_COMBO.Items.Add(R._("22=階段拡張"));
@@ -981,6 +986,7 @@ namespace FEBuilderGBA
                 {
                     break;
                 }
+
                 uint type = Program.ROM.u16(addr + 0);
                 uint flag = Program.ROM.u16(addr + 2);
                 uint event_addr = Program.ROM.u32(addr + 4);
@@ -988,7 +994,7 @@ namespace FEBuilderGBA
                 uint y = Program.ROM.u8(addr + 9);
                 uint object_type = Program.ROM.u8(addr + 10);
 
-                FELint.CheckFlagErrors(flag, errors, CONDTYPE.OBJECT, addr);
+                FELint.CheckFlag(flag, errors, CONDTYPE.OBJECT, addr);
 
                 if (event_addr == 0)
                 {//イベントが0
@@ -1000,7 +1006,7 @@ namespace FEBuilderGBA
                 }
                 else if (type == 0x6)
                 {//06=訪問村
-                    FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.OBJECT, addr, false, tracelist);
+                    FELint.CheckEventPointer(event_addr, errors, CONDTYPE.OBJECT, addr, false, tracelist);
                     if (!(object_type == objectTypeOfHouse || object_type == objectTypeOfTownCenter))
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
@@ -1027,7 +1033,7 @@ namespace FEBuilderGBA
                 }
                 else if (type == 0x8)
                 {//08=扉
-                    FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.OBJECT, addr, false, tracelist);
+                    FELint.CheckEventPointer(event_addr, errors, CONDTYPE.OBJECT, addr, false, tracelist);
                     if (object_type != objectTypeOfDoor)
                     {
                         errors.Add(new FELint.ErrorSt(CONDTYPE.OBJECT, addr
@@ -1061,6 +1067,7 @@ namespace FEBuilderGBA
             }
 
             list = MakePointerListBox(mapid, CONDTYPE.TALK);
+            CheckAlien4(list, errors, CONDTYPE.TALK);
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
@@ -1068,12 +1075,13 @@ namespace FEBuilderGBA
                 {
                     break;
                 }
+
                 uint type = Program.ROM.u16(addr + 0);
                 uint flag = Program.ROM.u16(addr + 2);
                 uint event_addr = Program.ROM.u32(addr + 4);
 
-                FELint.CheckFlagErrors(flag, errors, CONDTYPE.TALK, addr);
-                FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.TALK, addr, false, tracelist);
+                FELint.CheckFlag(flag, errors, CONDTYPE.TALK, addr);
+                FELint.CheckEventPointer(event_addr, errors, CONDTYPE.TALK, addr, false, tracelist);
 
                 if (type == 0x00 && flag > 0)
                 {
@@ -1090,7 +1098,7 @@ namespace FEBuilderGBA
                     else if (type == 0xD)
                     {//0D=ASM会話
                         uint asm = Program.ROM.u32(addr + 8);
-                        FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.TALK, addr);
+                        FELint.CheckASMPointer(asm, errors, CONDTYPE.TALK, addr);
                     }
                     else
                     {
@@ -1103,12 +1111,12 @@ namespace FEBuilderGBA
                     if (type == 0x3)
                     {//03=会話
                         uint jflag = Program.ROM.u16(addr + 14);
-                        FELint.CheckFlagErrors(jflag, errors, CONDTYPE.TALK, addr);
+                        FELint.CheckFlag(jflag, errors, CONDTYPE.TALK, addr);
                     }
                     else if (type == 0x4)
                     {//04=ASM会話
                         uint asm = Program.ROM.u32(addr + 12);
-                        FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.TALK, addr);
+                        FELint.CheckASMPointer(asm, errors, CONDTYPE.TALK, addr);
                     }
                     else
                     {
@@ -1121,6 +1129,7 @@ namespace FEBuilderGBA
 
 
             list = MakePointerListBox(mapid, CONDTYPE.TURN);
+            CheckAlien4(list, errors, CONDTYPE.TURN);
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
@@ -1132,15 +1141,15 @@ namespace FEBuilderGBA
                 uint flag = Program.ROM.u16(addr + 2);
                 uint event_addr = Program.ROM.u32(addr + 4);
 
-                FELint.CheckFlagErrors(flag, errors, CONDTYPE.TURN, addr);
-                FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.TURN, addr, false, tracelist);
+                FELint.CheckFlag(flag, errors, CONDTYPE.TURN, addr);
+                FELint.CheckEventPointer(event_addr, errors, CONDTYPE.TURN, addr, false, tracelist);
 
                 if (Program.ROM.RomInfo.version() == 6 && (type == 0x1 || type == 0x2 || type == 0x3 || type == 0xD))
                 {//FE6 には、ターン1-3まである
                     if (type == 0xD)
                     {//FE6にはasmによるターンイベントがあるらしい(恐ろしい)
                         uint asm = Program.ROM.u32(addr + 8);
-                        FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.TURN, addr);
+                        FELint.CheckASMPointer(asm, errors, CONDTYPE.TURN, addr);
                     }
                 }
                 else if (Program.ROM.RomInfo.version() == 7 && (type == 0x1 || type == 0x2))
@@ -1164,6 +1173,7 @@ namespace FEBuilderGBA
             }
 
             list = MakePointerListBox(mapid, CONDTYPE.ALWAYS);
+            CheckAlien4(list, errors, CONDTYPE.ALWAYS);
             for (int i = 0; i < list.Count; i++)
             {
                 uint addr = list[i].addr;
@@ -1175,8 +1185,8 @@ namespace FEBuilderGBA
                 uint flag = Program.ROM.u16(addr + 2);
                 uint event_addr = Program.ROM.u32(addr + 4);
 
-                FELint.CheckFlagErrors(flag, errors, CONDTYPE.ALWAYS, addr);
-                FELint.CheckEventPointerErrors(event_addr, errors, CONDTYPE.ALWAYS, addr, false, tracelist);
+                FELint.CheckFlag(flag, errors, CONDTYPE.ALWAYS, addr);
+                FELint.CheckEventPointer(event_addr, errors, CONDTYPE.ALWAYS, addr, false, tracelist);
 
                 if (type == 0xB)
                 {//0B=範囲条件
@@ -1184,17 +1194,17 @@ namespace FEBuilderGBA
                 else if (type == 0x1)
                 {//01=常時条件
                     uint jflag = Program.ROM.u16(addr + 8);
-                    FELint.CheckFlagErrors(jflag, errors, CONDTYPE.ALWAYS, addr);
+                    FELint.CheckFlag(jflag, errors, CONDTYPE.ALWAYS, addr);
                 }
                 else if (type == 0xE && Program.ROM.RomInfo.version() >= 7)
                 {//0E=ASM条件
                     uint asm = Program.ROM.u32(addr + 8);
-                    FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.ALWAYS, addr);
+                    FELint.CheckASMPointer(asm, errors, CONDTYPE.ALWAYS, addr);
                 }
                 else if (type == 0xD && Program.ROM.RomInfo.version() <= 6)
                 {//0D=ASM条件 FE6のみ
                     uint asm = Program.ROM.u32(addr + 8);
-                    FELint.CheckASMPointerErrors(asm, errors, CONDTYPE.ALWAYS, addr);
+                    FELint.CheckASMPointer(asm, errors, CONDTYPE.ALWAYS, addr);
                 }
                 else if (type == 0x00 && flag > 0)
                 {
@@ -1215,10 +1225,10 @@ namespace FEBuilderGBA
                 uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 18)));
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 19)));
 
-                FELint.CheckPointerErrors(player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 10)));
-                FELint.CheckPointerErrors(player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 11)));
-                FELint.CheckEventPointerErrors(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 18)), true, tracelist);
-                FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 19)), true, tracelist);
+                FELint.CheckPointerAlien4(player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 10)));
+                FELint.CheckPointerAlien4(player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 11)));
+                FELint.CheckEventPointer(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 18)), true, tracelist);
+                FELint.CheckEventPointer(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 19)), true, tracelist);
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
@@ -1233,16 +1243,16 @@ namespace FEBuilderGBA
                 uint start_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 14)));
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 15)));
 
-                FELint.CheckPointerErrors(eliwood_enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 6)));
-                FELint.CheckPointerErrors(eliwood_enemy_hard_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 7)));
-                FELint.CheckPointerErrors(hextor_enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 8)));
-                FELint.CheckPointerErrors(hextor_enemy_hard_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 9)));
-                FELint.CheckPointerErrors(eliwood_player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 10)));
-                FELint.CheckPointerErrors(eliwood_player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 11)));
-                FELint.CheckPointerErrors(hextor_player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 12)));
-                FELint.CheckPointerErrors(hextor_player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 13)));
-                FELint.CheckEventPointerErrors(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 14)), true, tracelist);
-                FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 15)), true, tracelist);
+                FELint.CheckPointerAlien4(eliwood_enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 6)));
+                FELint.CheckPointerAlien4(eliwood_enemy_hard_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 7)));
+                FELint.CheckPointerAlien4(hextor_enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 8)));
+                FELint.CheckPointerAlien4(hextor_enemy_hard_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 9)));
+                FELint.CheckPointerAlien4(eliwood_player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 10)));
+                FELint.CheckPointerAlien4(eliwood_player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 11)));
+                FELint.CheckPointerAlien4(hextor_player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 12)));
+                FELint.CheckPointerAlien4(hextor_player_hard_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 13)));
+                FELint.CheckEventPointer(start_addr, errors, CONDTYPE.START_EVENT, (uint)(mapcond_addr + (4 * 14)), true, tracelist);
+                FELint.CheckEventPointer(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 15)), true, tracelist);
             }
             else if (Program.ROM.RomInfo.version() == 6)
             {
@@ -1250,9 +1260,9 @@ namespace FEBuilderGBA
                 uint enemy_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
                 uint end_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 6)));
 
-                FELint.CheckPointerErrors(player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 4)));
-                FELint.CheckPointerErrors(enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 5)));
-                FELint.CheckEventPointerErrors(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 6)), true, tracelist);
+                FELint.CheckPointerAlien4(player_addr, errors, CONDTYPE.PLAYER_UNIT, (uint)(mapcond_addr + (4 * 4)));
+                FELint.CheckPointerAlien4(enemy_addr, errors, CONDTYPE.ENEMY_UNIT, (uint)(mapcond_addr + (4 * 5)));
+                FELint.CheckEventPointer(end_addr, errors, CONDTYPE.END_EVENT, (uint)(mapcond_addr + (4 * 6)), true, tracelist);
             }
 
             {
@@ -1260,10 +1270,10 @@ namespace FEBuilderGBA
                 uint talk_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 1)));
                 uint object_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 2)));
                 uint always_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 3)));
-                FELint.CheckPointerErrors(turn_cond_addr, errors, CONDTYPE.TURN, (uint)(mapcond_addr + (4 * 0)));
-                FELint.CheckPointerErrors(talk_cond_addr, errors, CONDTYPE.TALK, (uint)(mapcond_addr + (4 * 1)));
-                FELint.CheckPointerErrors(object_cond_addr, errors, CONDTYPE.OBJECT, (uint)(mapcond_addr + (4 * 2)));
-                FELint.CheckPointerErrors(always_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 3)));
+                FELint.CheckPointerAlien4(turn_cond_addr, errors, CONDTYPE.TURN, (uint)(mapcond_addr + (4 * 0)));
+                FELint.CheckPointerAlien4(talk_cond_addr, errors, CONDTYPE.TALK, (uint)(mapcond_addr + (4 * 1)));
+                FELint.CheckPointerAlien4(object_cond_addr, errors, CONDTYPE.OBJECT, (uint)(mapcond_addr + (4 * 2)));
+                FELint.CheckPointerAlien4(always_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 3)));
             }
 
             if (Program.ROM.RomInfo.version() == 8)
@@ -1274,20 +1284,30 @@ namespace FEBuilderGBA
                 uint tutorial_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 7)));
                 uint trap1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 8)));
                 uint trap2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 9)));
-                FELint.CheckPointerErrors(always1_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 4)));
-                FELint.CheckPointerErrors(always2_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 5)));
-                FELint.CheckPointerErrors(always3_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 6)));
-                FELint.CheckPointerErrors(tutorial_cond_addr, errors, CONDTYPE.TUTORIAL, (uint)(mapcond_addr + (4 * 7)));
-                FELint.CheckPointerErrors(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 8)));
-                FELint.CheckPointerErrors(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 9)));
+                FELint.CheckPointerAlien4(always1_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 4)));
+                FELint.CheckPointerAlien4(always2_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 5)));
+                FELint.CheckPointerAlien4(always3_cond_addr, errors, CONDTYPE.ALWAYS, (uint)(mapcond_addr + (4 * 6)));
+                FELint.CheckPointerAlien4(tutorial_cond_addr, errors, CONDTYPE.TUTORIAL, (uint)(mapcond_addr + (4 * 7)));
+                FELint.CheckPointer(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 8)));
+                FELint.CheckPointer(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 9)));
             }
             else if (Program.ROM.RomInfo.version() == 7)
             {
                 uint trap1_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 4)));
                 uint trap2_cond_addr = Program.ROM.u32((uint)(mapcond_addr + (4 * 5)));
-                FELint.CheckPointerErrors(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 4)));
-                FELint.CheckPointerErrors(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 5)));
+                FELint.CheckPointer(trap1_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 4)));
+                FELint.CheckPointer(trap2_cond_addr, errors, CONDTYPE.TRAP, (uint)(mapcond_addr + (4 * 5)));
             }
+        }
+
+        static void CheckAlien4(List<U.AddrResult> list, List<FELint.ErrorSt> errors, EventCondForm.CONDTYPE cond)
+        {
+            if (list.Count <= 0)
+            {
+                return;
+            }
+            uint addr = list[0].addr;
+            FELint.CheckAlien4(addr, errors, cond, addr);
         }
 
         public static bool IsChestObjectType(uint object_type)
@@ -2612,6 +2632,11 @@ namespace FEBuilderGBA
                             uint v = EventScript.GetArgValue(code, arg);
                             MenuExtendSplitMenuForm.MakeTextIDArray(list, v);
                         }
+                        else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
+                        {//unitに関連付けられたshort型データ
+                            uint v = EventScript.GetArgValue(code, arg);
+                            UnitsShortTextForm.MakeTextIDArray(list, v);
+                        }
                         else if (arg.Type == EventScript.ArgType.POINTER_TALKGROUP)
                         {//会話グループ拡張
                             uint v = EventScript.GetArgValue(code, arg);
@@ -3684,6 +3709,11 @@ namespace FEBuilderGBA
                 {
                     out_bitmap = ImageSystemIconForm.Stairs();
                     return U.ToHexString(type) + ":" + R._("22=階段拡張");
+                }
+                if (objecttype == 0x21)
+                {
+                    out_bitmap = ClassForm.DrawWaitIcon(0x41);
+                    return U.ToHexString(type) + ":" + R._("22=Raid");
                 }
                 if (objecttype == 0x12)
                 {

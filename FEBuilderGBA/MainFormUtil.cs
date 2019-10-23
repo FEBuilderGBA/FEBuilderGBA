@@ -71,14 +71,14 @@ namespace FEBuilderGBA
 
         public static void ReOpenMainForm()
         {
-            Program.doReOpen = true;
+            Program.DoReOpen = true;
             Form f = Program.MainForm();
             f.Close();
         }
 
         public static void NeedSystemErrorCheck()
         {
-            Program.doReOpen = true;
+            Program.DoReOpen = true;
             Form f = Program.MainForm();
             f.Close();
         }

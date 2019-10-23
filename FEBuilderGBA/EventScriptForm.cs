@@ -160,6 +160,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.POINTER_PROCS)
             {
                 isLabelJump = true;
@@ -479,6 +483,17 @@ namespace FEBuilderGBA
                                     {
                                         TraceList.Add(v);
                                         MenuExtendSplitMenuForm.RecycleOldData(ref RefList, v);
+                                    }
+                                }
+                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
+                                {//unitに関連付けられたshort型データ
+                                    uint v = EventScript.GetArgPointer(code, i, addr);
+                                    if (U.isSafetyOffset(v)         //安全で
+                                        && TraceList.IndexOf(v) < 0 //まだ読んだことがなければ
+                                        )
+                                    {
+                                        TraceList.Add(v);
+                                        UnitsShortTextForm.RecycleOldData(ref RefList, v);
                                     }
                                 }
                                 else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AICOORDINATE)

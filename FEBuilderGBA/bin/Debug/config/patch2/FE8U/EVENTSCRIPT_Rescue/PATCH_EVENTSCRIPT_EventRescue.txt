@@ -1,6 +1,6 @@
-﻿NAME=強制的にユニットを救出します
+﻿NAME=強制的にユニットを救出します(イベント命令)
 NAME.en=Add Event: Force rescue to Event
-NAME.zh=强行救出该人物
+NAME.zh=强行救出该人物(Add Event)
 
 TYPE=BIN
 TAG=#EVENT

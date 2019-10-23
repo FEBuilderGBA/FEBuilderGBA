@@ -162,7 +162,7 @@ namespace FEBuilderGBA
                 uint asm = Program.ROM.u32(soundroom_addr + 8);
                 if (asm != 0)
                 {
-                    FELint.CheckASMPointerErrors(asm, errors, FELint.Type.SOUNDROOM, soundroom_addr);
+                    FELint.CheckASMPointer(asm, errors, FELint.Type.SOUNDROOM, soundroom_addr);
                 }
             }
         }

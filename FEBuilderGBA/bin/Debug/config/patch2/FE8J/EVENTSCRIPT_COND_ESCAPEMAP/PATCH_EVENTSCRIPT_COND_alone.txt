@@ -1,4 +1,4 @@
-﻿NAME=離脱マップで最後の一人かどうか確認するalone
+﻿NAME=離脱マップで最後の一人かどうか確認するalone(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
@@ -26,6 +26,6 @@ EVENTSCRIPT.zh=400D0000{$L1:alone.bin}	来检查它是否是撤出映射中的�
 
 
 
-NAME.zh=事件命令_确认您是否是退出地图上的最后一个
+NAME.zh=事件命令_确认您是否是退出地图上的最后一个(Add Event)
 INFO.zh=确认它是否是撤出地图上的最后一个
 

@@ -199,7 +199,7 @@ namespace FEBuilderGBA
                 uint image = Program.ROM.p32(0 + addr);
                 if (U.isSafetyOffset(image))
                 {
-                    FELint.CheckLZ77Errors(image, errors, FELint.Type.BG, addr, (uint)i);
+                    FELint.CheckLZ77(image, errors, FELint.Type.BG, addr, (uint)i);
                 }
             }
         }
