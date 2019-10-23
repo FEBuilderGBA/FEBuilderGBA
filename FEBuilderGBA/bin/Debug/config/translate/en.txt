@@ -6181,6 +6181,9 @@ Conversation group
 :分岐拡張
 Branch extension.
 
+:ユニットのセリフ
+Unit dialogue.
+
 :このエラーは非表示になっています。理由:「{0}」
 This error is hidden.Reason: "{0}".
 
@@ -11497,14 +11500,17 @@ Reject the write because the address you are trying to write is not a multiple o
 :クリップボードにデータを保存できませんでした。
 Could not save data to clipboard.
 
+:必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}
+Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}\r\n{1}
+
+:ファイルに書き込めません。\r\n{0}\r\n{1}
+Unable to write to file.\r\n{0}.\r\n{1}.
+
 :SSL証明書({0})({1})は信用されていません
 The SSL certificate ({0}) ({1}) is not trusted
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
-
-:ファイルに書き込めません。\r\n{0}\r\n\r\n{1}
-Unable to write to file.\r\nFile: {0}\r\n\r\n{1}
 
 :ファイルがありません。\r\nファイル名:{0}\r\n再試行しますか？
 There is no file.\r\nFile name: {0}\r\nDo you want to try again?
@@ -11514,9 +11520,6 @@ The file can not be read.\r\nDo you want to try again?\r\nFile: {0}\r\n\r\n{1}
 
 :必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}
 Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}
-
-:必須となる設定ファイルを読みこめません。\r\n設定ファイルが壊れている可能性があります。\r\n再ダウンロードしなおしてください。\r\n{0}\r\n{1}
-Unable to read the required configuration file.\r\nThe setting file may be corrupt.\r\nPlease download again.\r\n{0}\r\n{1}
 
 :を
 To
@@ -11691,6 +11694,9 @@ Base Class 1
 
 :FE8では、CC分岐があるため、複雑な指定になります。\r\nもし、ユニットが指定されていたクラスだった場合、上で割り当てたパレットが適応されます。\r\n指定したクラスではない場合、パレット指定が0だった場合には、ディフォルトの汎用パレットが利用されます。
 Due to the promotion branch in FE8, each character has a class-palette list.\r\nIf the unit has a palette for a given class, the palette will be used.\r\nIf a non-specified class is used or the palette is set to 0, the default class palette will be used.
+
+:新規にデータを作成しますか？
+Do you want to create new data? 
 
 :Webサイトにアクセスできません。 URL:{0} Message:{1}
 Can not access the website.URL: {0} Message: {1}.

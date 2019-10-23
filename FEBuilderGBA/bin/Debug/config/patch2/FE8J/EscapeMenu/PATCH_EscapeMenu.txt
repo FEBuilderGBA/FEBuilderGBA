@@ -12,8 +12,8 @@ EA_EXTENDS_UNITMENU:0x01=0x40
 EXTENDS:0x1100=TEXT
 
 PATCHED_IF:$FGREP4 IsLoca0x13.dmp=0x10 0xB5 0x0B 0x4C
-NAME.en=Display of Escape menu
+NAME.en=Display Escape menu
 INFO.en=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x12.
 
-NAME.zh=Display of Escape menu
+NAME.zh=Display Escape menu
 INFO.zh=Display the Escape menu.\r\nDisplay the Escape menu and execute the specified event.\r\nTo create an Escape menu, select "Seize Point and Village" in the event condition map object, and select 0x13 as the type. The event for\r\nSeize is executed.\r\nEscape that has been made with Range Cond until now can be done with the menu.\r\n\r\nThis patch also has a function to display the arrival menu.\r\nThis is the same function as Seize.\r\nCreate a map object in the same way as when creating Seize, and set the type to 0x12.
