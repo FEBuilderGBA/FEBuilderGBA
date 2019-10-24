@@ -175,7 +175,10 @@ namespace FEBuilderGBA
             public List<Code> codes = new List<Code>();
             public uint basepointer;
         }
-
+        static bool CheckGTPRange(uint gtp)
+        {
+            return gtp >= 1 && gtp <= 3;
+        }
 
         public static List<Track> ParseTrack(uint song_addr, uint trackcount)
         {
@@ -285,8 +288,17 @@ namespace FEBuilderGBA
                             uint velocity = Program.ROM.u8(addr + 2);
                             if (velocity <= 127)
                             {//N96 Gn7 v10 みたいな3バイト命令
-                                track.codes.Add(new Code(addr, waitCount, b, key, velocity));
-                                addr += 3;
+                                uint gtp = Program.ROM.u8(addr + 3);
+                                if (CheckGTPRange(gtp))
+                                {//N96 Gn7 v10 gtp1 みたいな4バイト命令
+                                    track.codes.Add(new Code(addr, waitCount, b, key, velocity, gtp));
+                                    addr += 4;
+                                }
+                                else
+                                {//N96 Gn7 v10 みたいな3バイト命令
+                                    track.codes.Add(new Code(addr, waitCount, b, key, velocity));
+                                    addr += 3;
+                                }
                             }
                             else
                             {//velocity >=128なのでこれは違う命令
@@ -464,6 +476,10 @@ namespace FEBuilderGBA
                     if (code.value2 != U.NOT_FOUND)
                     {
                         name += " ," + "v" + code.value2.ToString("000");
+                        if (code.value3 != U.NOT_FOUND && CheckGTPRange(code.value3))
+                        {
+                            name += " ," + "gtp" + code.value3.ToString();
+                        }
                     }
                 }
                 return name;
@@ -501,7 +517,7 @@ namespace FEBuilderGBA
                 case 0xbb:
                     return "TEMPO, " + (code.value);
                 case 0xbc:
-                    return "KEYSH, " + (code.value);
+                    return "KEYSH, " + U.ToPlus((int)((sbyte)code.value));
                 case 0xbd:
                     return "VOICE, " + (code.value);
                 case 0xbe:
@@ -611,7 +627,7 @@ namespace FEBuilderGBA
                         }
                         else if (code.type == 0xBC)
                         {//KEYSH
-                            w.WriteLine(" .byte   KEYSH , " + songname + "_key" + "+" + (code.value));
+                            w.WriteLine(" .byte   KEYSH , " + songname + "_key" + U.ToPlus((int)((sbyte)code.value)));
                         }
                         else if (code.type == 0xBD)
                         {//VOICE
@@ -1229,7 +1245,6 @@ namespace FEBuilderGBA
                 else if (statusbyte == 0xFF)
                 {//特殊コマンド系.
                     uint arg = midi[i++];
-//                    uint length = midi[i++];
                     uint length = U.read_vlength_code(midi, i, out i);
                     uint dataI = i;
                     //メタイベント (0xFF だと思われる)
@@ -2595,6 +2610,10 @@ namespace FEBuilderGBA
                     uint rewrite_addr = global[i].ROMAllocAddr + rewrite_offset;
 
                     uint rewrite_info = Program.ROM.u32(rewrite_addr);
+                    if (rewrite_info == U.NOT_FOUND)
+                    {
+                        rewrite_info = 0;
+                    }
                     int globalID = (int)((rewrite_info >> 24) & 0xFF);
                     uint offset = (rewrite_info & 0xFFFFFF);
 
@@ -2649,7 +2668,14 @@ namespace FEBuilderGBA
             //see https://dobon.net/vb/dotnet/programing/eval.html
             System.Data.DataTable dt = new System.Data.DataTable();
             object result = dt.Compute(expr, "");
-            return (int)U.atoi(result.ToString());
+            string str = result.ToString();
+
+            int ret = 0;
+            if (!int.TryParse(str, out ret))
+            {
+                ret = (int)U.atoi(str);
+            }
+            return ret;
         }
         static bool isExprString(string str)
         {

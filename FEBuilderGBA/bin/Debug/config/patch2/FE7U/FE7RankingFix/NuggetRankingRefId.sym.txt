@@ -1,0 +1,1 @@
+not_lyn_mode=$0C

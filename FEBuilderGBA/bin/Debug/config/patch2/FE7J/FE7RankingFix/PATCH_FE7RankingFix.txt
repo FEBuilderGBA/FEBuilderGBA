@@ -1,0 +1,9 @@
+NAME=Fixes ranking to work properly on hector mode
+TYPE=EA
+TAG=#ENGINE
+
+EA=FE7RankingFix.event
+
+AUTHOR=stan https://feuniverse.us/t/need-help-with-fe-gba-hacking-fe8-fe7-seems-to-be-solved/6370/8
+
+PATCHED_IF:0x031B54=0x00 0x4B 0x18 0x47 0x01 0x00

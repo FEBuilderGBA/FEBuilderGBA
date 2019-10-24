@@ -1,0 +1,19 @@
+#ifndef FE7_RANKING_FIX
+#define FE7_RANKING_FIX
+
+// Fixes ranking to work properly on hector mode
+
+#include "Extensions/Hack Installation.txt"
+
+ALIGN 4
+NuggetRankingRefId:
+	#incbin "NuggetRankingRefId.dmp"
+
+PUSH
+
+	ORG $031B54 // Replace GetRankingRefId
+		jumpToHack(NuggetRankingRefId)
+
+POP
+
+#endif // FE7_RANKING_FIX
