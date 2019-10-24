@@ -101,6 +101,10 @@ namespace FEBuilderGBA
                 {
                     InitFE8NMagicExtends(controls);
                 }
+                else if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                {
+                    InitFE8UMagicExtends(controls);
+                }
             }
         }
 
@@ -746,6 +750,76 @@ namespace FEBuilderGBA
             U.SwapControlPosition(b19, MagicExtUnitBase);
             U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
             U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+        }
+        void InitFE8UMagicExtends(List<Control> controls)
+        {
+            MagicExtUnitBase.ValueChanged += X_SIM_ValueChanged;
+            MagicExtUnitGrow.ValueChanged += X_SIM_ValueChanged;
+            AddressList.SelectedIndexChanged += SelectedIndexChangedFE8UMagicExtends;
+            this.InputFormRef.PreWriteHandler += WriteButtonFE8UMagicExtends;
+
+            MagicExtUnitBase.Show();
+            MagicExtUnitBaseLabel.Show();
+            MagicExtUnitGrow.Show();
+            MagicExtUnitGrowLabel.Show();
+            X_SIM_MAGICEX_Label.Show();
+            X_SIM_MAGICEX_Value.Show();
+
+            U.SwapControlPosition(J_19, MagicExtUnitBaseLabel);
+            U.SwapControlPosition(b19, MagicExtUnitBase);
+            U.SwapControlPosition(X_SIM_SUM_RATE_Label, X_SIM_MAGICEX_Label);
+            U.SwapControlPosition(X_SIM_SUM_RATE, X_SIM_MAGICEX_Value);
+        }
+        void SelectedIndexChangedFE8UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+            {
+                return;
+            }
+
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            uid++;
+            this.MagicExtUnitBase.Value = MagicSplitUtil.GetUnitBaseMagicExtends(uid, addr);
+            this.MagicExtUnitGrow.Value = MagicSplitUtil.GetUnitGrowMagicExtends(uid, addr);
+        }
+
+        void WriteButtonFE8UMagicExtends(object sender, EventArgs e)
+        {
+            if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+            {
+                return;
+            }
+
+            if (this.AddressList.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            uint uid = (uint)this.AddressList.SelectedIndex;
+            InputFormRef InputFormRef = Init(null);
+            uint addr = InputFormRef.IDToAddr(uid);
+            if (!U.isSafetyOffset(addr))
+            {
+                return;
+            }
+
+            uid++;
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this, "MagicExtends");
+            MagicSplitUtil.WriteUnitBaseMagicExtends(uid, addr, (uint)this.MagicExtUnitBase.Value, undodata);
+            MagicSplitUtil.WriteUnitGrowMagicExtends(uid, addr, (uint)this.MagicExtUnitGrow.Value, undodata);
+            Program.Undo.Push(undodata);
         }
         public static bool isMainUnit(uint cid)
         {

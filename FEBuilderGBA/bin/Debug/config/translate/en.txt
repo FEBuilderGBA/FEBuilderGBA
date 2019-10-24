@@ -4105,6 +4105,9 @@ Ballista
 :壊れる壁/古木
 Broken walls / Srag
 
+:(壊れる壁)
+(Broken walls)
+
 :マップ変化1
 Map change 1
 

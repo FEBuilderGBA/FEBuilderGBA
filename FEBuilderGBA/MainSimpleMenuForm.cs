@@ -513,8 +513,6 @@ namespace FEBuilderGBA
             U.ConvertListBox(this.EventAddrList, ref EventList);
         }
 
-
-
         //ユニット配置を検索して取得.
         List<UnitsAddr> DrawUnits(List<U.AddrResult> units, uint mapid)
         {

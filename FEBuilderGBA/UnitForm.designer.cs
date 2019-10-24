@@ -847,7 +847,7 @@
             // 
             // MagicExtUnitBase
             // 
-            this.MagicExtUnitBase.Location = new System.Drawing.Point(794, 26);
+            this.MagicExtUnitBase.Location = new System.Drawing.Point(796, 26);
             this.MagicExtUnitBase.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtUnitBase.Maximum = new decimal(new int[] {
             255,
@@ -863,7 +863,7 @@
             // 
             this.MagicExtUnitBaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MagicExtUnitBaseLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(794, -1);
+            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(796, -1);
             this.MagicExtUnitBaseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MagicExtUnitBaseLabel.Name = "MagicExtUnitBaseLabel";
             this.MagicExtUnitBaseLabel.Size = new System.Drawing.Size(64, 25);
@@ -874,7 +874,7 @@
             // 
             // b19
             // 
-            this.b19.Location = new System.Drawing.Point(724, 26);
+            this.b19.Location = new System.Drawing.Point(726, 26);
             this.b19.Margin = new System.Windows.Forms.Padding(2);
             this.b19.Maximum = new decimal(new int[] {
             255,
@@ -980,7 +980,7 @@
             // 
             this.J_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_19.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.J_19.Location = new System.Drawing.Point(724, -1);
+            this.J_19.Location = new System.Drawing.Point(726, -1);
             this.J_19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_19.Name = "J_19";
             this.J_19.Size = new System.Drawing.Size(64, 25);
@@ -1922,7 +1922,7 @@
             // 
             // MagicExtUnitGrow
             // 
-            this.MagicExtUnitGrow.Location = new System.Drawing.Point(727, 29);
+            this.MagicExtUnitGrow.Location = new System.Drawing.Point(726, 29);
             this.MagicExtUnitGrow.Margin = new System.Windows.Forms.Padding(2);
             this.MagicExtUnitGrow.Maximum = new decimal(new int[] {
             255,
@@ -1938,7 +1938,7 @@
             // 
             this.MagicExtUnitGrowLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MagicExtUnitGrowLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtUnitGrowLabel.Location = new System.Drawing.Point(727, 1);
+            this.MagicExtUnitGrowLabel.Location = new System.Drawing.Point(726, 1);
             this.MagicExtUnitGrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MagicExtUnitGrowLabel.Name = "MagicExtUnitGrowLabel";
             this.MagicExtUnitGrowLabel.Size = new System.Drawing.Size(64, 25);
@@ -2166,7 +2166,7 @@
             // 
             // X_SIM_MAGICEX_Value
             // 
-            this.X_SIM_MAGICEX_Value.Location = new System.Drawing.Point(836, 25);
+            this.X_SIM_MAGICEX_Value.Location = new System.Drawing.Point(835, 25);
             this.X_SIM_MAGICEX_Value.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_MAGICEX_Value.Maximum = new decimal(new int[] {
             255,
@@ -2183,7 +2183,7 @@
             // 
             this.X_SIM_MAGICEX_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_MAGICEX_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_MAGICEX_Label.Location = new System.Drawing.Point(836, -1);
+            this.X_SIM_MAGICEX_Label.Location = new System.Drawing.Point(835, -1);
             this.X_SIM_MAGICEX_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_MAGICEX_Label.Name = "X_SIM_MAGICEX_Label";
             this.X_SIM_MAGICEX_Label.Size = new System.Drawing.Size(64, 25);
@@ -2194,7 +2194,7 @@
             // 
             // X_SIM_SUM_RATE
             // 
-            this.X_SIM_SUM_RATE.Location = new System.Drawing.Point(724, 25);
+            this.X_SIM_SUM_RATE.Location = new System.Drawing.Point(723, 25);
             this.X_SIM_SUM_RATE.Margin = new System.Windows.Forms.Padding(2);
             this.X_SIM_SUM_RATE.Maximum = new decimal(new int[] {
             65535,
@@ -2210,7 +2210,7 @@
             // 
             this.X_SIM_SUM_RATE_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.X_SIM_SUM_RATE_Label.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.X_SIM_SUM_RATE_Label.Location = new System.Drawing.Point(724, -1);
+            this.X_SIM_SUM_RATE_Label.Location = new System.Drawing.Point(723, -1);
             this.X_SIM_SUM_RATE_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.X_SIM_SUM_RATE_Label.Name = "X_SIM_SUM_RATE_Label";
             this.X_SIM_SUM_RATE_Label.Size = new System.Drawing.Size(104, 25);

@@ -268,6 +268,10 @@ namespace FEBuilderGBA
 
         public static void CheckPrologeEventPointer(uint mapid, List<ErrorSt> errors)
         {
+/*
+            現代では無意味なチェックなので、やらなくてもいいと思う。
+            ClassExpansion利用時の問題だと思います。
+
             List < U.AddrResult > units = EventCondForm.MakeUnitPointer(mapid);
             for (int i = 0; i < units.Count; i++)
             {
@@ -319,6 +323,7 @@ namespace FEBuilderGBA
                 errors.Add(new FELint.ErrorSt(EventCondForm.CONDTYPE.PLAYER_UNIT, U.NOT_FOUND
                     , R._("序章でUnitID:0x01のロードユニットを仲間にしていません。\r\n序章で、このロードユニットを仲間に入れないと多くのイベントがフリーズします。")));
             }
+*/
         }
 
         public static void CheckEventPointer(uint event_addr, List<ErrorSt> errors, Type cond, uint addr, bool isFixedEvent, List<uint> tracelist)

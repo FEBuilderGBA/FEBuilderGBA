@@ -1784,6 +1784,29 @@ namespace FEBuilderGBA
                 {
                     Program.RAM.write_u8(ramUnitAddress + 0x1D, addMove);
                 }
+
+                //魔法分離パッチ
+                MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+                if (magic_split != MagicSplitUtil.magic_split_enum.NO)
+                {
+                    uint cid = Program.ROM.u8(romClassAddr + 4);
+                    uint maxMagic = 20;
+                    if (promoted)
+                    {
+                        maxMagic = MagicSplitUtil.GetClassLimitMagicExtends(cid, romClassAddr);
+                    }
+
+                    if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
+                    {
+                        Program.RAM.write_u8(ramUnitAddress + 0x1A, maxMagic);
+                    }
+                    else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC
+                        || magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                    {
+                        Program.RAM.write_u8(ramUnitAddress + 0x3A, maxMagic);
+                    }
+                }
+
             }
 
             if (showNotify)

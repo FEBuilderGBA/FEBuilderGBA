@@ -540,15 +540,19 @@ this.MapObjImage);
             pt.Y = chipindex / (32) * 16 * tilesetZoom;
             return pt;
         }
+        void DrawMapChipInfo(int chipset_id, int x, int y, PaintEventArgs e)
+        {
+            DrawMapChipInfoLow(chipset_id, x, y, e, this.configUZ, this.Font, this.ForeBrush, this.BackBrush);
+        }
 
-        void DrawMapChipInfo(int chipset_id,int x, int y, PaintEventArgs e)
+        static public void DrawMapChipInfoLow(int chipset_id, int x, int y, PaintEventArgs e, byte[] configUZ, Font font, SolidBrush foreBrush, SolidBrush backBrush)
         {
             PointF pt = new PointF();
             pt.X = x;
             pt.Y = y;
 
             //このチップセットの名前を問い合わせる.
-            uint terrain_data = ImageUtilMap.GetChipsetID(chipset_id,this.configUZ);
+            uint terrain_data = ImageUtilMap.GetChipsetID(chipset_id,configUZ);
             if (terrain_data == U.NOT_FOUND)
             {
                 return;
@@ -580,16 +584,16 @@ this.MapObjImage);
             windowrc.X = (int)pt.X +48+ 1;
             windowrc.Y = (int)pt.Y;
             windowrc.Width = (int)0;
-            windowrc.Height = (int)this.Font.Height*4;
+            windowrc.Height = (int)font.Height*4;
 
             //枠を描画する幅を特定します.
-            SizeF textSize = e.Graphics.MeasureString(terrain_name, this.Font, 1000);
+            SizeF textSize = e.Graphics.MeasureString(terrain_name, font, 1000);
             if (windowrc.Width < textSize.Width) windowrc.Width = (int)textSize.Width;
-            textSize = e.Graphics.MeasureString(terrain_kaihi, this.Font, 1000);
+            textSize = e.Graphics.MeasureString(terrain_kaihi, font, 1000);
             if (windowrc.Width < textSize.Width) windowrc.Width = (int)textSize.Width;
-            textSize = e.Graphics.MeasureString(terrain_kaifuku, this.Font, 1000);
+            textSize = e.Graphics.MeasureString(terrain_kaifuku, font, 1000);
             if (windowrc.Width < textSize.Width) windowrc.Width = (int)textSize.Width;
-            textSize = e.Graphics.MeasureString(terrain_tuukou, this.Font,1000);
+            textSize = e.Graphics.MeasureString(terrain_tuukou, font,1000);
             if (windowrc.Width < textSize.Width) windowrc.Width = (int)textSize.Width;
 
             if (windowrc.X + windowrc.Width > e.ClipRectangle.Right)
@@ -618,18 +622,18 @@ this.MapObjImage);
             pt.X = windowrc.X;
             pt.Y = windowrc.Y;
 
-            e.Graphics.FillRectangle(this.BackBrush, windowrc);
+            e.Graphics.FillRectangle(backBrush, windowrc);
 
-            e.Graphics.DrawString(terrain_name, this.Font, this.ForeBrush, pt);
+            e.Graphics.DrawString(terrain_name, font, foreBrush, pt);
 
-            pt.Y = pt.Y + this.Font.Height;
-            e.Graphics.DrawString(terrain_kaihi, this.Font, this.ForeBrush, pt);
+            pt.Y = pt.Y + font.Height;
+            e.Graphics.DrawString(terrain_kaihi, font, foreBrush, pt);
 
-            pt.Y = pt.Y + this.Font.Height;
-            e.Graphics.DrawString(terrain_kaifuku, this.Font, this.ForeBrush, pt);
+            pt.Y = pt.Y + font.Height;
+            e.Graphics.DrawString(terrain_kaifuku, font, foreBrush, pt);
 
-            pt.Y = pt.Y + this.Font.Height;
-            e.Graphics.DrawString(terrain_tuukou, this.Font, this.ForeBrush, pt);
+            pt.Y = pt.Y + font.Height;
+            e.Graphics.DrawString(terrain_tuukou, font, foreBrush, pt);
         }
         string MakeMapChipInfoToString(int chipset_id, int x, int y)
         {

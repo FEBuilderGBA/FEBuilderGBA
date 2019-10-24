@@ -29,6 +29,7 @@ namespace FEBuilderGBA
             g_Cache_Escape_enum = Escape_enum.NoCache;
             g_Cache_FE8UItemSkill_enum = FE8UItemSkill_enum.NoCache;
             g_Cache_Raid_enum = Raid_enum.NoCache;
+            g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
         }
 
         public const uint NO_CACHE = 0xff;
@@ -466,8 +467,31 @@ namespace FEBuilderGBA
             return false;
         }
 
+        public enum MeleeAndMagicFix_enum
+        {
+            NO,             //なし
+            Enable,
+            NoCache = (int)NO_CACHE
+        };
+        static MeleeAndMagicFix_enum g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
+
         //武器魔法を同時に利用できるパッチの判別.
         public static bool SearchMeleeAndMagicFixPatch()
+        {
+            if (g_Cache_MeleeAndMagicFix_enum == MeleeAndMagicFix_enum.NoCache)
+            {
+                if (SearchMeleeAndMagicFixPatchLow())
+                {
+                    g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.Enable;
+                }
+                else
+                {
+                    g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NO;
+                }
+            }
+            return g_Cache_MeleeAndMagicFix_enum == MeleeAndMagicFix_enum.Enable;
+        }
+        static bool SearchMeleeAndMagicFixPatchLow()
         {
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="GIRLS",	ver = "FE8J", addr = 0x18752,data = new byte[]{0x18}},

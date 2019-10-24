@@ -2349,6 +2349,10 @@ namespace FEBuilderGBA
             equ["MOD"] = 0xc4;
             equ["MODT"] = 0xc5;
             equ["TUNE"] = 0xc8;
+            equ["gtp1"] = 0x01;
+            equ["gtp2"] = 0x02;
+            equ["gtp3"] = 0x03;
+
             for (uint i = WAIT_START; i <= WAIT_END; i++)
             {
                 equ["W" + byteToWait(i).ToString("00")] = (int)i;

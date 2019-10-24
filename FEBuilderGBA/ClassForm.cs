@@ -107,7 +107,8 @@ namespace FEBuilderGBA
             {
                 InitFE8NMagicExtends(controls);
             }
-            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC
+                || magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
             {
                 InitFE7UMagicExtends(controls);
             }
@@ -1048,7 +1049,10 @@ namespace FEBuilderGBA
         {
             if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
             {
-                return;
+                if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                {
+                    return;
+                }
             }
 
             if (this.AddressList.SelectedIndex < 0)
@@ -1073,7 +1077,10 @@ namespace FEBuilderGBA
         {
             if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE7UMAGIC)
             {
-                return;
+                if (MagicSplitUtil.SearchMagicSplit() != MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+                {
+                    return;
+                }
             }
 
             if (this.AddressList.SelectedIndex < 0)
