@@ -345,6 +345,7 @@
             // 
             // N_J_3
             // 
+            this.N_J_3.AccessibleDescription = "@MAPCHANGE_SIZE";
             this.N_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.N_J_3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.N_J_3.Location = new System.Drawing.Point(2, 88);

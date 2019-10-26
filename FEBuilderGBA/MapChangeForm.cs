@@ -435,7 +435,13 @@ namespace FEBuilderGBA
                 if (useNumber.IndexOf(number) >= 0)
                 {
                     errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
-                        , R._("マップ変化({0})の番号が重複しています", number)));
+                        , R._("マップ変化({0})のIDが重複しています", number)));
+                    continue;
+                }
+                if (number > 0x7f )
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.MAPCHANGE, addr
+                        , R._("マップ変化({0})のIDが、0x7Fを超えています。\r\nマップ変化IDは、0x7F以下でなければなりません。", number)));
                     continue;
                 }
                 uint x = Program.ROM.u8(1 + addr);

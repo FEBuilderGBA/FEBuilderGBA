@@ -31,11 +31,7 @@ namespace FEBuilderGBA
             this.IsDetail = isDetail;
         }
 
-        bool IsDetail;
-        List<TextEscape> EscapeList;
-        Dictionary<string, string> CategoryDic;
-        ToolTipEx ToolTip;
-        private void EventScriptFormCategorySelectForm_Load(object sender, EventArgs e)
+        void LoadTextEscapeList()
         {
             this.EscapeList = new List<TextEscape>();
             string[] lines = File.ReadAllLines(U.ConfigDataFilename("text_escape_"));
@@ -61,7 +57,7 @@ namespace FEBuilderGBA
                 te.Info = sp[1];
                 te.Category = sp[2];
 
-                if (! IsDetail)
+                if (!IsDetail)
                 {//詳細テキストじゃないと、移動とロードを出さない.
                     if (IsDetailOnly(te.Category))
                     {
@@ -72,6 +68,33 @@ namespace FEBuilderGBA
                 this.EscapeList.Add(te);
             }
 
+            //自動改行
+            if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+            {
+                {
+                    TextEscape te = new TextEscape();
+                    te.Code = "@0090";
+                    te.Info = R._("AutoNewLine Conversation Text[ConversationText]");
+                    te.Category = "";
+                    this.EscapeList.Add(te);
+                }
+                {
+                    TextEscape te = new TextEscape();
+                    te.Code = "@0091";
+                    te.Info = R._("AutoNewLine Battle Text[BattleText]");
+                    te.Category = "";
+                    this.EscapeList.Add(te);
+                }
+            }
+        }
+
+        bool IsDetail;
+        List<TextEscape> EscapeList;
+        Dictionary<string, string> CategoryDic;
+        ToolTipEx ToolTip;
+        private void EventScriptFormCategorySelectForm_Load(object sender, EventArgs e)
+        {
+            LoadTextEscapeList();
 
             this.CategoryDic = U.LoadTSVResourcePair((U.ConfigDataFilename("text_category_")));
             this.CategoryListBox.BeginUpdate();

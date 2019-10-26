@@ -754,7 +754,7 @@ namespace FEBuilderGBA
         {
             if (g_Cache_AutoNewLine_enum == AutoNewLine_enum.NoCache)
             {
-                g_Cache_SkipWorldMap_enum = SearchSkipWorldMapPatchLow();
+                g_Cache_AutoNewLine_enum = SearchAutoNewLinePatchLow();
             }
             return g_Cache_AutoNewLine_enum;
         }

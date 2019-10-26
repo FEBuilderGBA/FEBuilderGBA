@@ -92,12 +92,12 @@
 1F00XXYY	Moves_camera_on_chapter_map[XX:MAPX:PositionX][YY:MAPY:PositionY](CAM2)	{CAMERA}	{U}
 3B000000	Chapter event start command(CMOF)	{J}
 3D000000	Chapter event start command(CMOF)	{U}
-53000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
-55000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional_ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
-4D000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{J}
-4F000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{COND}	{U}
-4E000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNEM)	{COND} 	{J}
-50000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNEM)	{COND} 	{U}
+53000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{J}
+55000000XXXX0000YYYY0000	If character is dead, execute it below (jump to condition label if it is alive)[XX:IF_CONDITIONAL:Conditional ID][YY:UNIT:Character_to_check](GOTO_IFCL)	{COND}	{U}
+4D000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{J}
+4F000000XXXX0000	If it is in Eliwood mode(If it is a Hector it jumps to condition label)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{COND}	{U}
+4E000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNEM)	{COND} 	{J}
+50000000XXXX0000	If it is in Hector mode(Jump to condition label in Eliwood)[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNEM)	{COND} 	{U}
 21000000XXXXYYYYZZZZWWWW	MOVE[XXXX:MAPX:Old_positionX],[YYYY:MAPY:Old_positionY][ZZZZ:MAPX:New_positionX][WWWW:MAPY:New_positionY]	{J}
 23000000XXXXYYYYZZZZWWWW	MOVE[XXXX:MAPX:Old_positionX],[YYYY:MAPY:Old_positionY][ZZZZ:MAPX:New_positionX][WWWW:MAPY:New_positionY]	{U}
 24000000XXXX0000YYYYZZZZ	MOVE[XX:UNIT:Character][YYYY:MAPX:New_positionX],[ZZZZ:MAPY:New_positionY]	{UNIT}	{J}
@@ -120,18 +120,18 @@
 97000000XX000000YY000000ZZZZZZZZ00000100	Event Battle 2[XX:UNIT:Attacker][YY:UNIT:counterattack side][ZZZZZZZZ:POINTER_EVENTBATTLEDATA:Combat content](FIGH)	{BATTLE}	{U}
 3D000000XXXXXXXX	_ASM0x3F[XXXX:POINTER_ASM:ASM_pointer]	{SUBROUTINE}	{J}
 3F000000XXXXXXXX	_ASM0x3F[XXXX:POINTER_ASM:ASM_pointer]	{SUBROUTINE}	{U}
-46000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
-48000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
-47000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
-49000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional_ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
-43000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional_ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{J}
-45000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional_ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{U}
-42000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{J}
-44000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{U}
-4A000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{J}
-4C000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{U}
-4B000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{J}
-4D000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional_ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{U}
+46000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
+48000000XXXX0000YYYYYYYY	GOTO_IFAT[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
+47000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{J}
+49000000XXXX0000YYYYYYYY	GOTO_IFAF[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer]	{JUMP}	{U}
+43000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{J}
+45000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}	{U}
+42000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{J}
+44000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}	{U}
+4A000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{J}
+4C000000XXXX0000YYYY0000	GOTO_IFET[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (when ON)	{COND}	{FLAG}	{U}
+4B000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{J}
+4D000000XXXX0000YYYY0000	GOTO_IFEF[XX:IF_CONDITIONAL:Conditional ID]Conditional branch by[YY:FLAG:Flag]flag (in case of OFF)	{COND}	{FLAG}	{U}
 40000000210F0208	Call Preparation screen	{PREPARATION}	{MAP}	{J}
 42000000B90A0208	Call Preparation screen	{PREPARATION}	{MAP}	{U}
 3C000000B9A80708	Clear Units to the map	{UNITREMOVE}	{J}
@@ -150,7 +150,7 @@
 42000000XXXXXXXX	[XXXX:POINTER_ASM:ASM function]Assembler function call	{SUBROUTINE}	{U}
 3A000000	Fit camera to unit that started moving(CMON)	{CAMERA}	{J}
 3C000000	Fit camera to unit that started moving(CMON)	{CAMERA}	{U}
-47000000XX0000002DAE0708	LABEL[XX:LABEL_CONDITIONAL:Conditional_ID]Determining whether there is a martial player(GOTO_IFAF)	{COND}	{J}
+47000000XX0000002DAE0708	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]Determining whether there is a martial player(GOTO_IFAF)	{COND}	{J}
 3C00000065DA0708	Map display command(slow)	{MAP}	{J}
 3E000000E5CF0708	Map display command(slow)	{MAP}	{U}
 3C000000D1B30708	Map display command(immediate)	{MAPEFFECT}	{J}
@@ -170,12 +170,12 @@ A90000000808CA08	Specifying coordinates to be moved in tutorial	{U}
 3E00000051CD0108	Move unit to action	{U}
 3C000000798C0108	Dead units will not let you appear	{J}
 3E00000089880108	Dead units will not let you appear	{U}
-4D000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{J}
-4F000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNHM)	{U}
-50000000XXXX0000	Jump to where you chose NO with a selector[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNO)	{JUMP}	{J}
-52000000XXXX0000	Jump to where you chose NO with a selector[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNO)	{JUMP}	{U}
-52000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNTUTORIAL)	{COND}	{J}
-54000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional_ID](GOTO_IFNTUTORIAL)	{COND}	{U}
+4D000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{J}
+4F000100XXXX0000	GOTO INFO2[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNHM)	{U}
+50000000XXXX0000	Jump to where you chose NO with a selector[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNO)	{JUMP}	{J}
+52000000XXXX0000	Jump to where you chose NO with a selector[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNO)	{JUMP}	{U}
+52000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNTUTORIAL)	{COND}	{J}
+54000000XXXX0000	If it is a tutorial execute below[XX:IF_CONDITIONAL:Conditional ID](GOTO_IFNTUTORIAL)	{COND}	{U}
 97000000XXXXXXXX	ASMWORLDMAP[XXXXXXXX:POINTER_ASM:ASM]	{WMAP}	{J}
 99000000XXXXXXXX	ASMWORLDMAP[XXXXXXXX:POINTER_ASM:ASM]	{WMAP}	{U}
 A500XXXXYYYYWWWWZZZZ0000	Shows_text_with_specific_bubble_type_and_position[XX::Bubble_type_to_use][YYYY:SCREENX:X][WWWW:SCREENY:Y][ZZ:SYSTEM_TEXT:TEXT](TEX6)	{J}

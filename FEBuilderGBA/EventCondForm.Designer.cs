@@ -6270,7 +6270,7 @@
             this.OBJECT_AddressList.FormattingEnabled = true;
             this.OBJECT_AddressList.IntegralHeight = false;
             this.OBJECT_AddressList.ItemHeight = 30;
-            this.OBJECT_AddressList.Location = new System.Drawing.Point(-1, 30);
+            this.OBJECT_AddressList.Location = new System.Drawing.Point(-1, 29);
             this.OBJECT_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.OBJECT_AddressList.Name = "OBJECT_AddressList";
             this.OBJECT_AddressList.Size = new System.Drawing.Size(238, 754);
@@ -7175,7 +7175,7 @@
             this.NFE702_AddressList.FormattingEnabled = true;
             this.NFE702_AddressList.IntegralHeight = false;
             this.NFE702_AddressList.ItemHeight = 30;
-            this.NFE702_AddressList.Location = new System.Drawing.Point(-1, 32);
+            this.NFE702_AddressList.Location = new System.Drawing.Point(-1, 31);
             this.NFE702_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.NFE702_AddressList.Name = "NFE702_AddressList";
             this.NFE702_AddressList.Size = new System.Drawing.Size(239, 784);
@@ -7248,7 +7248,7 @@
             this.ALWAYS_AddressList.FormattingEnabled = true;
             this.ALWAYS_AddressList.IntegralHeight = false;
             this.ALWAYS_AddressList.ItemHeight = 30;
-            this.ALWAYS_AddressList.Location = new System.Drawing.Point(-3, 30);
+            this.ALWAYS_AddressList.Location = new System.Drawing.Point(-3, 28);
             this.ALWAYS_AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.ALWAYS_AddressList.Name = "ALWAYS_AddressList";
             this.ALWAYS_AddressList.Size = new System.Drawing.Size(241, 784);

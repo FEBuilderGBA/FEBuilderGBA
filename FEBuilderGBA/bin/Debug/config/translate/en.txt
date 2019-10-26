@@ -1106,7 +1106,7 @@ Would you like to set the flag "{0}"?
 Unit is not selected
 
 :このユニットは、すでにアイテムを5つ持っているので、これ以上持たせられません。
-This unit already has five items, so I can not have it any more.
+This unit already has five items, so can not have it any more.
 
 :エミュレータでユニットを選択していません。Aボタンを押してユニットの移動範囲が表示されている状態にしてください。
 Have not selected the unit with the emulator.Please press the A button to make the unit movement range display.
@@ -1748,10 +1748,10 @@ There is incorrect termination data in the turn event.\r\nThe occurrence type is
 An unknown type "{0}" was used for the turn event.
 
 :常時条件イベントに、間違った終端データがあります。\r\n発生タイプが0なのに、フラグ「{0}」が設定されています。\r\n終端データの場合は、フラグも0にしないと危険です。
-There is incorrect termination data in the constant condition event at all times.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
+There is incorrect termination data in the constant Flag Conditional event at all times.\r\nThe occurrence type is 0, but the flag "{0}" is set.\r\nIn the case of the termination data, it is dangerous to set the flag to 0 as well.
 
 :常時条件イベントに不明なタイプ「{0}」が利用されました。
-An unknown type "{0}" was used for the always-on condition event.
+An unknown type "{0}" was used for the Flag Conditional event.
 
 :新規にイベント命令の領域を割り当てますか？
 Allocate the area of ​​the event instruction to new space?
@@ -1799,7 +1799,7 @@ Turn:
 {0} Gold
 
 :常時条件:
-Conditional:
+Flag Cond:
 
 :範囲条件:
 Range:
@@ -1955,7 +1955,7 @@ Turn Start
 Turn Condition FE 7
 
 :常時条件
-Conditional
+Flag Conditional
 
 :範囲条件
 Range Condition
@@ -2099,7 +2099,7 @@ Turn events run upon "Turn Start" or "Turn End".
 2=Turn Condition
 
 :0=常に有効
-0=Conditional
+0=All
 
 :1=エリウッド編のみ
 1=Eliwood Mode
@@ -2117,7 +2117,7 @@ Turn events run upon "Turn Start" or "Turn End".
 5=Hector Hard Mode
 
 :01=常時条件
-01=Conditional
+01=Flag Conditional
 
 :0B=範囲条件
 0B=Range Condition
@@ -2222,7 +2222,7 @@ Event Instruction Pointer Table
 Death serifs are extremely few.It may be damaged.
 
 :ユニットが、指定した章で死亡した時に、設定をします。\r\nユニットが死亡すると、「テキスト」を表示し、「達成フラグ」が有効になります。\r\n「達成フラグ」を、「常時条件」で拾うことで、ボス撃破のイベントや、ユニット生存に失敗イベントなどを実装できます。\r\nボス撃破には、通常はフラグ0x02を利用します。
-When the unit dies in the specified chapter, their death quote will trigger.\r\nWhen the unit dies, "Completion Flag" is set and "Text" will display.\r\nEvents like boss defeat or unit survival by using both "Completion Flag" and "Conditional" Events.\r\nFor boss defeat, flag 0x02 is normally used.
+When the unit dies in the specified chapter, their death quote will trigger.\r\nWhen the unit dies, "Completion Flag" is set and "Text" will display.\r\nEvents like boss defeat or unit survival by using both "Completion Flag" and "Flag Condition" Events.\r\nFor boss defeat, flag 0x02 is normally used.
 
 :終章
 Final Chapter
@@ -4105,9 +4105,6 @@ Ballista
 :壊れる壁/古木
 Broken walls / Srag
 
-:(壊れる壁)
-(Broken walls)
-
 :マップ変化1
 Map change 1
 
@@ -4872,6 +4869,9 @@ You can get an evaluation if you have the specified experience points.
 
 :指定したゴールド相当の資産を得られていればA評価を貰えます。\r\n達成していなければ、達成できた割合で評価が決まります。
 If you get the assets equivalent to the specified gold, you will receive an A rating.\r\nIf not achieved, the evaluation will be determined by the percentage achieved.
+
+:タイルデータのサイズを指定します。\r\n\r\n注意:\r\n手動で、より大きい値に変更すると危険です。\r\nデータサイズを増やしたいときは、マップエディタから変更してください。
+Specify the size of tile data.\r\n\r\nNote:.\r\nIt is dangerous to manually change to a larger value.\r\nIf you want to increase the data size, change it from the map editor.
 
 :元に戻す(&Z)
 Undo(&Z)
@@ -6268,23 +6268,26 @@ There is now a C01 hack, so you do not need to set it up.\r\n\r\nThe cloak is se
 :マント設定
 Cloak setting
 
-:マップ変化({0})の番号が重複しています
-Number of map change ({0}) is duplicated
+:マップ変化({0})のIDが重複しています
+ID of tile change ({0}) is duplicated
+
+:マップ変化({0})のIDが、0x7Fを超えています。\r\nマップ変化IDは、0x7F以下でなければなりません。
+Map tile ({0}) ID is over 0x7F.\r\nTile change ID must be less than or equal to 0x7F.
 
 :マップ変化({0})の幅(X:{1} Width:{2})は、マップの幅({3})より大きいです
-Width of map change ({0}) (X: {1}Width: {2}) is greater than the width of the map ({3})
+Width of tile change ({0}) (X: {1}Width: {2}) is greater than the width of the map ({3})
 
 :マップ変化({0})の高さ(Y:{1} Height:{2})は、マップの高さ({3})より大きいです
-The height of the map change ({0}) (Y: {1}Height: {2}) is greater than the height of the map ({3})
+The height of the tile change ({0}) (Y: {1}Height: {2}) is greater than the height of the map ({3})
 
 :マップ変化({0})のポインタ({1})が危険です。
-Pointer ({1}) of map change ({0}) is dangerous.
+Pointer ({1}) of tile change ({0}) is dangerous.
 
 :マップ変化({0})のポインタ({1})か、マップ変化のサイズの指定が正しくありません。
-The map change ({0}) pointer ({1}) or the map change size specification is incorrect.
+The tile change ({0}) pointer ({1}) or the map change size specification is incorrect.
 
 :マップ変化({0})のポインタ({1})先のデータで、不正なタイルデータ({2})。
-Illegal tile data ({2}) in the destination data pointer ({1}) of map change ({0}).
+Illegal tile data ({2}) in the destination data pointer ({1}) of tile change ({0}).
 
 :リストを縮める場合は、\r\n番号に、終端コード:255(0xFF)を設定してください。
 If you want to shrink the list,\r\nPlease set the termination code: 255(0xFF)\r\nto the number.
@@ -10919,7 +10922,7 @@ Please specify Sappy.\r\nIf you set Sappy, you can watch music with the ♪ butt
 Please set the development environment.\r\nInstalling a development environment allows you to develop and debug ASM code.
 
 :必要なプログラムのダウンロードと、設定をしています。
-I have downloaded and set the necessary programs.
+Downloading and set the necessary programs.
 
 :解凍する
 Decompress

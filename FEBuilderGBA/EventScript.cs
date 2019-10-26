@@ -341,9 +341,9 @@ namespace FEBuilderGBA
             script.LowCode = sp[0];
             ParsePopupHintAndCategory(sp, out script.PopupHint, out script.Category , out script.IsLowCommand);
 
-
             return script;
         }
+
         static bool ErrorCheckArg(Arg arg,string line)
         {
             if (IsPointerArgs(arg.Type))

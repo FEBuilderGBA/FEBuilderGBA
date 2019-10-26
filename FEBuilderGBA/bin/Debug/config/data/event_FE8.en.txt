@@ -70,7 +70,7 @@
 210FXXYY	COUNTER_SET[X:COUNTER:CounterID(bitshift)][Y::Counter_value]	{VAL}
 220FXXYY	COUNTER_ADD[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
 230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:ConditionID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter (bitshift) and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter (bitshift) and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
 210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter (bitshift) 0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
 
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
@@ -115,8 +115,8 @@
 40AAXXXXYYYY0000	_0xAA40[XXXX::Value1][YY::Value2]
 40ABXXXXYYYY0000	_0xAB40[XXXX::Value1][YY::Value2]
 20C20000	_0xC220
-2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:ConditionID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
-2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:ConditionID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
+2009XXXX	GOTO[XXXX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
+2008XXXX	LABEL[XXXX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
 221B0000	Conversation end(REMA)
 211A0000	Removes speech bubbles and portraits(REMOVEPORTRAITS)	{BG}
 2044XXXX	BREAKING_SACRED_STONE[XXXX:UNIT:Character]
@@ -336,19 +336,19 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 222AXXXX	Goto next chapter without world map.[XXXX:MAPCHAPTER:Chapter_ID](MNC2)	Proceed to the next chapter.	@MNC2BUG	{MAP}
 232AXXXX	Goto next chapter without world map or save screen.[XXXX:MAPCHAPTER:Chapter_ID](MNC3)	Proceed to the next chapter without saving.	@MNC2BUG	{MAP}
 
-40050700YYYYYYYY400CXXXX0C000700	Imm BEQ (If Result == [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY410CXXXX0C000700	Imm BNE (If Result != [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY420CXXXX0C000700	Imm BGE (If Result >= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY430CXXXX0C000700	Imm BGT (If Result >  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY440CXXXX0C000700	Imm BLE (If Result <= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
-40050700YYYYYYYY450CXXXX0C000700	Imm BLT (If Result <  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY400CXXXX0C000700	Imm BEQ (If Result == [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY410CXXXX0C000700	Imm BNE (If Result != [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY420CXXXX0C000700	Imm BGE (If Result >= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY430CXXXX0C000700	Imm BGT (If Result >  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY440CXXXX0C000700	Imm BLE (If Result <= [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
+40050700YYYYYYYY450CXXXX0C000700	Imm BLT (If Result <  [YYYY::Value], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	@CMP_C_IMM	{JUMP}
 
-400CXXXXYYYYZZZZ	BEQ (If [YYYY:MEMORYSLOT:MemorySlot] == [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
-410CXXXXYYYYZZZZ	BNE (If [YYYY:MEMORYSLOT:MemorySlot] != [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
-420CXXXXYYYYZZZZ	BGE (If [YYYY:MEMORYSLOT:MemorySlot] >= [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
-430CXXXXYYYYZZZZ	BGT (If [YYYY:MEMORYSLOT:MemorySlot] >  [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
-440CXXXXYYYYZZZZ	BLE (If [YYYY:MEMORYSLOT:MemorySlot] <= [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
-450CXXXXYYYYZZZZ	BLT (If [YYYY:MEMORYSLOT:MemorySlot] <  [ZZZZ:MEMORYSLOT:MemorySlot], Then Jump to [XXXX:IF_CONDITIONAL:ConditionID], Else execute following)	{JUMP}
+400CXXXXYYYYZZZZ	BEQ (If [YYYY:MEMORYSLOT:MemorySlotX] == [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
+410CXXXXYYYYZZZZ	BNE (If [YYYY:MEMORYSLOT:MemorySlotX] != [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
+420CXXXXYYYYZZZZ	BGE (If [YYYY:MEMORYSLOT:MemorySlotX] >= [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
+430CXXXXYYYYZZZZ	BGT (If [YYYY:MEMORYSLOT:MemorySlotX] >  [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
+440CXXXXYYYYZZZZ	BLE (If [YYYY:MEMORYSLOT:MemorySlotX] <= [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
+450CXXXXYYYYZZZZ	BLT (If [YYYY:MEMORYSLOT:MemorySlotX] <  [ZZZZ:MEMORYSLOT:MemorySlotY], Then Jump to [XXXX:IF_CONDITIONAL:Conditional ID], Else execute following)	{JUMP}
 
 
 20190000	Checks current game mode(CHECK_MODE)	Returns 1 if it is Pre-Route split (chapters prologue-8), 2 if it is Eirika Route, or 3 if it Ephraim Route	@STOREC	{COND}
@@ -470,8 +470,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 241A000040050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SOLOTEXTBOXSTART+SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
-2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
-2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:ConditionID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "ConditionID" in the other ConditionID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
+2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
+2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
 2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
 2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL)	{UNITPERSOLNAL}

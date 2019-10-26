@@ -188,6 +188,7 @@ namespace FEBuilderGBA
         }
         void UpdateTextArea(string text)
         {
+            this.Cache_MainArea = text;
             SetEditorText(this.TextArea, text);
 
             uint write_pointer = this.InputFormRef.BaseAddress + (this.InputFormRef.BlockSize * (uint)this.AddressList.SelectedIndex);
@@ -448,10 +449,10 @@ namespace FEBuilderGBA
             );
             return write_addr;
         }
-        static void UpdatePosstion(ref List<TextBlock> simpleList)
+        static void UpdatePosstion(string srctext, ref List<TextBlock> simpleList)
         {
             uint[] units = new uint[9];
-            CheckText ct = new CheckText();
+            CheckText ct = new CheckText(srctext);
 
             int len = simpleList.Count;
             for (int i = 0; i < len; i++)
@@ -515,7 +516,7 @@ namespace FEBuilderGBA
         {
             ParseTextList(srctext, out simpleList);
             //位置を更新
-            UpdatePosstion(ref simpleList);
+            UpdatePosstion(srctext, ref simpleList);
 
             //リストの更新.
             this.TextList.DummyAlloc(this.SimpleList.Count, selected);
@@ -864,7 +865,7 @@ namespace FEBuilderGBA
             ParseTextList(text, out simpleList);
 
             //位置を更新
-            UpdatePosstion(ref simpleList);
+            UpdatePosstion(text,ref simpleList);
 
             Debug.Assert(simpleList[5].Code1 == 0x9);   //自動補完  ///No Translate
             Debug.Assert(simpleList[5].Code2 == 0x80);     ///No Translate
@@ -903,7 +904,7 @@ namespace FEBuilderGBA
             ParseTextList(text, out simpleList);
 
             //位置を更新
-            UpdatePosstion(ref simpleList);
+            UpdatePosstion(text, ref simpleList);
 
             Debug.Assert(simpleList[0].Code1 == 0xc);
             Debug.Assert(simpleList[0].Code2 == 0x10); 
@@ -1046,7 +1047,6 @@ namespace FEBuilderGBA
             {//テキスト
                 text = ConvertEscapeText(code.SrcText);
                 Rectangle b = bounds;
-                text = code.SrcText;
                 Size bb = U.DrawTextMulti(text, g, normalFont, brush, isWithDraw, b);
                 maxHeight = Math.Max(maxHeight, b.Y + bb.Height);
             }
@@ -1543,7 +1543,7 @@ namespace FEBuilderGBA
             List<TextBlock> simpleList;
             ParseTextList(srctext, out simpleList);
             //位置を更新
-            UpdatePosstion(ref simpleList);
+            UpdatePosstion(srctext, ref simpleList);
 
             Rectangle bounds = listbounds;
             int totalHeight = 0;
@@ -1838,7 +1838,7 @@ namespace FEBuilderGBA
         private void TextListSpSerifuTextBox_TextChanged(object sender, EventArgs e)
         {
             string text = GetEditorText(this.TextListSpSerifuTextBox);
-            CheckText ct = new CheckText();
+            CheckText ct = new CheckText(this.Cache_MainArea);
 
             int widthLimit ;
             if (IsDeathQuoteSerif())
@@ -2087,6 +2087,8 @@ namespace FEBuilderGBA
 
         private void TextArea_TextChanged(object sender, EventArgs e)
         {
+            Cache_MainArea = GetEditorText(this.TextArea);
+
             bool isOrderOfHuman = (this.ActiveControl == sender); //人間の操作によるものか
             if (isOrderOfHuman)
             {//手動で変更されたときの変更イベントをハンドルします.
@@ -2094,13 +2096,17 @@ namespace FEBuilderGBA
                 TextAreaUpdate();
             }
         }
+        //テキスト全文のキャッシュ
+        //よく参照するので、キャッシュを作って保存しておく.
+        //CacheMainArea = GetEditorText(this.TextArea);
+        string Cache_MainArea;
 
         void TextAreaUpdate()
         {
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, true);
 
             //テキストのサイズを求めます.
-            string text = GetEditorText(this.TextArea);
+            string text = this.Cache_MainArea;
             this.BlockSize.Text = CalcTextSize(text).ToString();
 
             //キーワードハイライト
@@ -2247,7 +2253,7 @@ namespace FEBuilderGBA
             if (TextTabControl.SelectedIndex == 1)
             {//キーワードハイライトは時間がかかるので、選択されたときに実行します.
                 //テキストのサイズを求めます.
-                string text = GetEditorText(this.TextArea);
+                string text = this.Cache_MainArea;
                 this.BlockSize.Text = CalcTextSize(text).ToString();
 
                 //キーワードハイライト
@@ -2790,7 +2796,7 @@ namespace FEBuilderGBA
             //実際にパースしてみよう.
             List<TextBlock> simpleList;
             ParseTextList(text, out simpleList);
-            CheckText ct = new CheckText();
+            CheckText ct = new CheckText(text);
             for (int i = 0; i < simpleList.Count; i++)
             {
                 TextBlock code = simpleList[i];
@@ -2837,14 +2843,30 @@ namespace FEBuilderGBA
 
             bool FoundUnkownFont;
             bool IsMultiByte;
+            bool HasAutoNewLine;
             OptionForm.textencoding_enum TextEncoding;
             OptionForm.lint_text_skip_bug_enum LintTextSkipBug;
 
-            public CheckText()
+            public CheckText(string mainText)
             {
                 this.TextEncoding = OptionForm.textencoding();
                 this.LintTextSkipBug = OptionForm.lint_text_skip_bug();
                 this.IsMultiByte = Program.ROM.RomInfo.is_multibyte();
+                this.HasAutoNewLine = CheckHasAutoNewLine(mainText);
+            }
+
+            bool CheckHasAutoNewLine(string text)
+            {
+                if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                {//自動改行が入っている場合は、長さのチェックをしない
+                    if (text.IndexOf("@0090") >= 0
+                        || text.IndexOf("@0091") >= 0
+                        )
+                    {
+                        return true;
+                    }
+                }
+                return false;
             }
 
             public CheckBlockResult CheckBlockBox(string text, int widthLimit, int heightLimit,bool isItemFont)
@@ -2878,7 +2900,7 @@ namespace FEBuilderGBA
                     }
                     if (size.Width > widthLimit)
                     {
-                        if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                        if (this.HasAutoNewLine)
                         {//自動改行が入っている場合は、長さのチェックをしない
                         }
                         else

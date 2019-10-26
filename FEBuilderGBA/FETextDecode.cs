@@ -10,11 +10,14 @@ namespace FEBuilderGBA
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
         PatchUtil.PRIORITY_CODE PriorityCode;
+        PatchUtil.AutoNewLine_enum HasAutoNewLine;
+
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
             this.PriorityCode = PatchUtil.SearchPriorityCode();
+            this.HasAutoNewLine = PatchUtil.SearchAutoNewLinePatch();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
@@ -29,7 +32,6 @@ namespace FEBuilderGBA
                 this.PriorityCode = PatchUtil.SearchPriorityCode(rom);
             }
         }
-
 
         //ワンライナー
         public static String Direct(uint id)
@@ -206,6 +208,17 @@ namespace FEBuilderGBA
                     i += 1;
                     continue;
                 }
+                //自動改行パッチ
+                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                {
+                    if (code == 0x90 || code == 0x91)
+                    {
+                        AppendAtmarkCode(str, code);
+                        i += 1;
+                        continue;
+                    }
+                }
+                //特殊Unicode
                 if (code >= 0x82 && this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                     AppendAtmarkCode(str, code); //@000Fとかのコード
@@ -403,7 +416,7 @@ namespace FEBuilderGBA
             }
             while (true);
         }
-        static bool isEscapeCode(uint code,uint beforecode)
+        bool isEscapeCode(uint code,uint beforecode)
         {
 		    if (beforecode == 0x0010
                 || beforecode == 0x0011
@@ -415,7 +428,7 @@ namespace FEBuilderGBA
                 return true;
             }
 
-            if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
+            if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
             {
                 if (code == 0x90 || code == 0x91)
                 {//AutoNewLine Code
@@ -481,6 +494,17 @@ namespace FEBuilderGBA
                         continue;
                     }
                 }
+                //自動改行パッチ
+                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
+                {
+                    if (code == 0x90 || code == 0x91)
+                    {
+                        AppendAtmarkCode(str, code);
+                        len += 1;
+                        continue;
+                    }
+                }
+
                 if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FE
                     if (code >= 0x82 || code == 0x1f)
@@ -549,10 +573,7 @@ namespace FEBuilderGBA
             }
             //英語版FEにはUnicodeの1バイトだけ表記があるらしい.
             {
-                for (int c = 0x82; c <= 0xff; c++)
-                {
-                    str = str.Replace("@00" + c.ToString("X02"), ((char)c).ToString());
-                }
+                str = U.table_replace(str, rom.EnglishUTF8ReplaceTable);
             }
             return str;
         }

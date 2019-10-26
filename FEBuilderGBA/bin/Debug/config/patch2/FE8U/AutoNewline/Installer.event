@@ -1,0 +1,140 @@
+#ifndef AUTONEWLINE
+#define AUTONEWLINE
+
+#ifdef _FE8_
+
+// AutoNewline. Hack by Zeta/Gilgamesh. Original concept by laqieer ( https://github.com/laqieer/FE7CNLOL/blob/master/src/FE7CNText.c )
+// REQUIRES: Anti-huffman (which is contained in essential fixes, you likely have it already unless you're patching a 100% vanilla rom)
+// Free to use/modify
+
+
+// Maximum width of [ConversationText]. Setting this too high will glitch your text boxes out.
+MaxConversationWidth:
+BYTE 200
+
+
+// Maximum width of [BattleText]. Setting this too high will glitch your text boxes out.
+MaxBattleWidth:
+BYTE 140
+
+
+// Breaks lines on sentence ending punctuation (eg. !?.)
+// This often makes things read more naturally.
+// This is required for the next two settings to function.
+PunctuationLinebreak:
+BYTE 1
+
+
+// Try to keep sentences together by inserting extra A presses
+// Extra A presses are inserted if the first line breaks due to PunctuationLinebreak AND the next sentence is long enough to require two lines.
+TryKeepSentencesTogether:
+BYTE 1
+
+
+// Minimum width before something is considered a sentence.
+// This helps keep things like "I... don't know what to do." together, rather than linebreaking after the "I..."
+MinimumSentenceWidth:
+BYTE 40
+
+
+// text code to insert when "..." is detected. This is typically 0x04, aka [.4] or [....]
+BeatPause:
+BYTE 0x04
+
+
+// text code to insert when punctuation is detected. typically 0x1F aka [.] (yes, it's not very noticeable)
+PunctuationPause:
+BYTE 0x1F
+
+
+// no reason to change these unless another hack conflicts
+// and make sure you update ParseDefinitions.txt to match
+Text_Conversation:
+BYTE 0x90
+
+Text_Battle:
+BYTE 0x91
+
+
+// the location to store the string in RAM for processing
+// might need to be changed if another hack uses this RAM at the same time
+// otherwise just leave it
+ALIGN 4
+RAMLocation:
+WORD 0x2026E30
+
+// hooks into anti huffman
+PUSH
+ORG $464476
+SHORT 0x0 // alignment
+#incbin AutoNewlineHook.dmp
+POIN AutoNewline
+POP
+
+
+// Unfinished functionality that totally isn't worth delaying the release of the hack for, but I didn't want to remove from the code.
+// Just, uh ignore it.
+MaxMiscWidth: 
+BYTE 150
+Text_Misc:
+BYTE 0x92
+
+// lyn output of AutoNewline.c
+ALIGN 4
+PUSH
+ORG CURRENTOFFSET+$1;IsValidASCII:
+ORG CURRENTOFFSET+$12;IsOpenLocation:
+ORG CURRENTOFFSET+$12;IsTextStartCode:
+ORG CURRENTOFFSET+$30;IsPrintable:
+ORG CURRENTOFFSET+$18;StringCopy:
+ORG CURRENTOFFSET+$12;IsLinebreakPunctuation:
+ORG CURRENTOFFSET+$1e;NextPrintable:
+ORG CURRENTOFFSET+$28;LastPrintable:
+ORG CURRENTOFFSET+$2e;GetNextSentenceWidth:
+ORG CURRENTOFFSET+$66;GetLastSentenceWidth:
+ORG CURRENTOFFSET+$54;DidWeAlreadyLinebreak:
+ORG CURRENTOFFSET+$32;WillWeLinebreakSoon:
+ORG CURRENTOFFSET+$2a;IsTextEnd:
+ORG CURRENTOFFSET+$22;HackyTemporarySolution:
+ORG CURRENTOFFSET+$12;GetTacticianNameWidth:
+ORG CURRENTOFFSET+$38;PreprocessString:
+ORG CURRENTOFFSET+$234;HandleAutoNewline:
+ORG CURRENTOFFSET+$320;AutoNewline:
+POP
+SHORT $3 $225F $2000 $3B20 $61B $E1B $429A $4140 $4770 $3 $2207 $2000 $3B08 $61B $E1B $429A $4140 $4770 $4B08 $781A $2301 $4282 $D009 $4B07 $781A $2301 $4282 $D004 $4B05 $781B $1A1B $4258 $4143 $18 $4770 $46C0
+POIN Text_Conversation
+POIN Text_Battle
+POIN Text_Misc
+SHORT $7802 $3A20 $2300 $2A5F $D804 $3801 $7803 $3B10 $1E58 $4183 $18 $4770 $7803 $3001 $700B $2B00 $D101 $8 $4770 $3101 $E7F6 $3 $3B21 $61B $E1B $2000 $2B1E $D803 $4802 $40D8 $2301 $4018 $4770 $46C0
+BYTE $1 $20 $0 $40
+SHORT $B570 $2500 $1C44 $7826 $2E00 $D001 $2D00 $D003 $28 $BC70 $BC02 $4708 $20 $F7FF $FFCD $2800 $D000 $35 $3401 $E7EE $B570 $2500 $1E44 $7826 $30 $F7FF $FFA9 $2800 $D101 $2D00 $D003 $28 $BC70 $BC02 $4708 $20 $F7FF $FFB6 $2800 $D000 $35 $3C01 $E7EB $B5F7 $2400 $26 $9401 $1C45 $782F $2F03 $D001 $2F00 $D103 $30 $BCFE $BC02 $4708 $28 $F7FF $FFA0 $2800 $D018 $28 $F7FF $FFD3 $F7FF $FFAE $2800 $D009 $38 $F7FF $FFA9 $2800 $D104 $4B07 $781B $42A3 $DBE6 $4 $4B06 $A901 $28 $F000 $FB55 $9B01 $18F6 $18E4 $3501 $E7D6 $46C0
+POIN MinimumSentenceWidth
+BYTE $39 $45 $0 $8
+SHORT $B573 $2500 $9501 $1E44 $7826 $2E03 $D001 $2E00 $D103 $28 $BC76 $BC02 $4708 $20 $F7FF $FF6E $2800 $D012 $20 $F7FF $FFA1 $F7FF $FF7C $2800 $D004 $30 $F7FF $FF77 $2800 $D0EA $4B04 $A901 $20 $F000 $FB28 $9B01 $18ED $3C01 $E7DC $46C0
+BYTE $39 $45 $0 $8
+SHORT $B5F8 $2602 $1E44 $7825 $28 $F7FF $FF35 $1E07 $D004 $2700 $38 $BCF8 $BC02 $4708 $20 $F7FF $FF43 $2800 $D1F6 $3C01 $43B5 $2D01 $D1EB $2F $E7F0 $B570 $2602 $1C45 $782C $2C00 $D008 $28 $F7FF $FF32 $2800 $D105 $3501 $43B4 $2C01 $D1F3 $20 $E000 $2000 $BC70 $BC02 $4708 $B510 $4 $7823 $2B00 $D103 $2001 $BC10 $BC02 $4708 $20 $F7FF $FF1A $3401 $2800 $D0F2 $2000 $E7F4 $1E03 $D101 $4770 $3B03 $2B00 $DCFC $4258 $4158 $E7F8 $B537 $2400 $2520 $9401 $4809 $1828 $7803 $3B20 $2B5F $D805 $4B07 $A901 $F000 $FACB $9B01 $18E4 $3501 $2D29 $D1F0 $20 $BC3E $BC02 $4708 $46C0
+BYTE $F0 $BC $2 $2 $39 $45 $0 $8
+SHORT $B5F0 $4B88 $B087 $9001 $681F $2900 $D100 $E105 $39 $F7FF $FEF1 $38 $B007 $BCF0 $BC02 $4708 $30 $F7FF $FEF2 $2800 $D15F $2E2C $D000 $E095 $9002 $E002 $9B02 $3301 $9302 $9B03 $9A02 $5C9B $2B2E $D0F7 $2A04 $D108 $9A04 $7016 $2220 $1C63 $54FA $2303 $9302 $3501 $3402 $2300 $9802 $9303 $F7FF $FFA9 $9A01 $9004 $26 $193B $1951 $2800 $D13D $9B01 $5D5B $18 $34 $9302 $F7FF $FEC5 $2800 $D166 $9B02 $2B2C $D063 $4B67 $781B $2B00 $D004 $9A03 $2A00 $D101 $55BB $3401 $9B05 $9302 $9B01 $195B $18 $9303 $F7FF $FE9A $9B03 $781E $193B $9005 $9304 $2800 $D1B2 $9B01 $195E $30 $F7FF $FE8E $7833 $193A $2800 $D101 $2B00 $D15C $9B01 $5D5B $2B00 $D1E3 $9B02 $2B00 $D002 $2303 $553B $3401 $2300 $553B $E795 $2300 $E7A4 $2216 $701A $780A $705A $7849 $7099 $9901 $1CAA $5C8A $70DA $3503 $3404 $9B01 $5D5B $18 $9303 $F7FF $FE7C $26 $1939 $1C63 $2800 $D002 $9A03 $2A2E $D112 $4A42 $7812 $2A00 $D001 $1E $700A $2316 $55BB $9B02 $3B03 $1C74 $9302 $2B00 $DD02 $2320 $553B $1CB4 $9B04 $E789 $9A03 $3501 $553A $1C $E7D9 $9B02 $3501 $55BB $3601 $E78A $3401 $2E2D $D10F $2216 $9B04 $701A $1E79 $9B01 $5D5B $193A $3401 $2B2D $D002 $2316 $7013 $E78F $3501 $550B $E7F3 $9B04 $3501 $701E $E788 $1C69 $9103 $9901 $1C68 $1809 $9104 $1C61 $1878 $4684 $2B10 $D10B $7013 $9B04 $781B $7003 $1CEB $9303 $78B3 $7093 $1CE1 $C $9D03 $E780 $9802 $2800 $D010 $2B15 $D80E $4D1B $2001 $40DD $43A8 $D125 $2303 $2101 $7013 $4663 $7019 $7833 $1CE1 $7093 $9002 $E7E8 $2B80 $D119 $9B01 $195B $785B $2B04 $D10A $9B02 $2B00 $D007 $2303 $7013 $4663 $2201 $701A $2300 $9302 $3402 $7833 $553B $1CAB $9303 $9B04 $781B $1CA1 $193C $7063 $E7CC $7013 $E7CA $9102 $C $D $E755
+POIN RAMLocation
+POIN PunctuationPause
+POIN BeatPause
+BYTE $0 $FF $32 $0
+SHORT $B5F0 $7803 $B095 $9309 $9104 $1C44 $F7FF $FEC2 $4BB9 $9A09 $781B $900F $4293 $D128 $4BB7 $781B $9307 $4BB7 $9A09 $781B $1A99 $930A $20 $424B $4159 $F7FF $FECB $2400 $AB10 $9006 $1DD8 $2320 $25 $26 $27 $7003 $A913 $4BAE $9412 $9413 $F000 $F979 $9400 $9408 $940E $940C $9402 $9401 $9B06 $5DDB $2B00 $D126 $9A04 $5513 $E0A5 $4BA6 $9A09 $781B $4293 $D101 $4BA4 $E7D0 $4BA4 $E7CE $9B03 $781B $1E5A $2A02 $D87D $9A03 $3A02 $7812 $2A10 $D078 $9A03 $3A01 $7812 $2A10 $D073 $2E00 $D001 $2B03 $D006 $2D00 $D102 $9A0E $2A00 $D03B $2B01 $D139 $3701 $9B06 $19DB $18 $9303 $F7FF $FD75 $900B $900D $2800 $D0DA $4B8E $A912 $9803 $F000 $F939 $9B06 $1C78 $1818 $F7FF $FE41 $2800 $D114 $4335 $62B $E1B $9305 $D100 $E06F $2301 $405E $633 $E1B $9302 $9B06 $5DDB $1C7A $2B20 $D063 $2500 $2E $9500 $9508 $9501 $9A12 $4694 $9B01 $4463 $9301 $9B06 $9A04 $5DDB $5513 $2300 $3401 $3701 $930D $E08B $9A01 $3701 $2A00 $D0C2 $2B03 $D026 $9A04 $1911 $1C62 $2B01 $D113 $9B02 $2501 $2B00 $D009 $1E35 $D107 $1D $9809 $9B0A $4283 $D002 $2303 $14 $700B $9B03 $9A04 $781B $5513 $3401 $E7A7 $2303 $700B $2102 $9804 $1CA3 $5481 $3901 $54C1 $2301 $3403 $930E $1D $1E $E7EB $2601 $E7E9 $9A04 $1912 $2B80 $D112 $9906 $19C9 $7848 $9103 $2820 $D113 $9801 $1 $980F $4684 $7013 $9B03 $785B $4461 $9101 $7053 $3402 $3702 $E780 $2B00 $D104 $7013 $B015 $BCF0 $BC01 $4700 $3701 $3401 $7013 $E775 $17 $E794 $9A12 $9B01 $189B $9A07 $4293 $D81F $9B04 $191E $30 $F7FF $FD1C $F7FF $FCF7 $9B03 $781D $2800 $D05D $28 $F7FF $FCF0 $2800 $D158 $9803 $F7FF $FD9B $2800 $D153 $4B43 $781B $2B00 $D11C $9B03 $781B $2B20 $D13F $9B0C $2B00 $D06B $9B08 $2B00 $D005 $9B00 $2B00 $D002 $9B08 $9C00 $1C5F $9B0A $9A09 $4293 $D123 $2201 $9B04 $9D0B $9E05 $551A $3401 $9B0D $930C $E70C $9B0A $9A09 $4293 $D0DE $9803 $F7FF $FCFB $9B13 $9A12 $5B $189B $9A01 $189B $9A07 $181B $429A $D8D1 $30 $F7FF $FD21 $4B2A $781B $4298 $DDCA $2300 $9300 $9308 $9B04 $191E $9B02 $1C65 $2B00 $D016 $2303 $7033 $9B02 $9305 $2C $E7CF $1E7B $9308 $9A13 $2320 $4694 $7033 $9B01 $4463 $9400 $9301 $3401 $E7B3 $2D20 $D1B1 $9400 $9708 $E7AE $9A12 $9B01 $189B $9A02 $9205 $9A07 $429A $D9B6 $4B15 $781B $2B00 $D0B2 $9B06 $19D8 $F7FF $FCBA $9B13 $9A12 $5B $189B $9A02 $9205 $9A07 $181B $429A $D2A4 $2303 $7033 $9B0B $E7CD $9D0C $2E $E709
+POIN Text_Conversation
+POIN MaxConversationWidth
+POIN Text_Misc
+BYTE $39 $45 $0 $8
+POIN Text_Battle
+POIN MaxBattleWidth
+POIN MaxMiscWidth
+POIN PunctuationLinebreak
+POIN MinimumSentenceWidth
+POIN TryKeepSentencesTogether
+SHORT $B570 $4 $7800 $D $F7FF $FC28 $29 $2800 $D005 $20 $F7FF $FE64 $BC70 $BC01 $4700 $20 $F7FF $FC40 $E7F8 $4718
+
+
+#else // _FE8_
+  ERROR Auto Newline is for FE8
+#endif // _FE8_
+
+#endif // AUTONEWLINE

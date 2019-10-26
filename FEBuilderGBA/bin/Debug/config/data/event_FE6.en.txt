@@ -13,11 +13,11 @@
 27000000XX000000YY000000	[XX:UNIT:Character][YY:ITEM:Item]Get Item(ITGC)	{ITEM}
 2B000000XX000000YY000000	[XX:UNIT:Character][YY:AFFILIATION:belonging]Change affiliation of unit(CUSI)	{UNITPERSOLNAL}
 32000000XX000000YYZZ0000	[XX:UNIT:Character][YY::AI][ZZ::AI]Modify AI(CHAI)	{UNITPERSOLNAL}
-1F000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:ConditionID]Conditional branching by special condition (when content of specified destination is satisfied)(GOTO_IFAT)	{JUMP}
-20000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:ConditionID]Conditional branching by special condition (when content of specified destination is not satisfied)(GOTO_IFAF)	{JUMP}
-22000000YY000000XX000000	[XX:FLAG:FLAG]Conditional branch with[YY:GOTO_CONDITIONAL:ConditionID]flag (when on)(GOTO_IFET)	{COND}	{FLAG}
-23000000YY000000XX000000	[XX:FLAG:FLAG]Conditional branch with[YY:GOTO_CONDITIONAL:ConditionID]flag (when it is off)(GOTO_IFEF)	{COND}	{FLAG}
-24000000YY000000XX000000	[XX:UNIT:Character][YY:GOTO_CONDITIONAL:ConditionID]conditional branch by visitor(GOTO_IFCA)	{COND}
+1F000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:Conditional ID]Conditional branching by special condition (when content of specified destination is satisfied)(GOTO_IFAT)	{JUMP}
+20000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:Conditional ID]Conditional branching by special condition (when content of specified destination is not satisfied)(GOTO_IFAF)	{JUMP}
+22000000YY000000XX000000	[XX:FLAG:FLAG]Conditional branch with[YY:GOTO_CONDITIONAL:Conditional ID]flag (when on)(GOTO_IFET)	{COND}	{FLAG}
+23000000YY000000XX000000	[XX:FLAG:FLAG]Conditional branch with[YY:GOTO_CONDITIONAL:Conditional ID]flag (when it is off)(GOTO_IFEF)	{COND}	{FLAG}
+24000000YY000000XX000000	[XX:UNIT:Character][YY:GOTO_CONDITIONAL:Conditional ID]conditional branch by visitor(GOTO_IFCA)	{COND}
 03000000XX000000	[XX:BG:background]background image designation(BACG)(LOW)	{BG}
 43000000100000004700000003000000XX000000440000001000000048000000	Background image reading[XX:BG:Background](FADI)	{BG}
 43000000100000004700000003000000XX00000044000000100000004800000007000000YYYY000005000000	Conversation event[XX:BG:Background][YYYY:CONVERSATION_TEXT:Conversation](FADI)	{TEXT}
@@ -67,15 +67,15 @@
 04000000XXXXXXXX	_04[XXXX::Value]
 0A000000	_0A
 19000000XXXXXXXX	_19[XXXX:POINTER_ASM:Pointer]
-21000000XXXXXXXX	_21[XXXX:IF_CONDITIONAL:ConditionID]	{COND}
+21000000XXXXXXXX	_21[XXXX:IF_CONDITIONAL:Conditional ID]	{COND}
 42000000	World_maps:_42
 4D000000XXXXXXXX	World_maps:_Tutorial[XXXX::Dunno]
 4E000000	World_maps:_4E
 59000000	World_maps:_59
-1F000000XXXXXXXXYYYYYYYY	Branch_is_ASM_routine_returns_nonzero[XXXX:IF_CONDITIONAL:ConditionID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAT)	{COND}
-20000000XXXX0000YYYYYYYY	Branch_if_ASM_routine_returns_ 0[XX:IF_CONDITIONAL:ConditionID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAF)	{COND}
-1C000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:ConditionID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
-1B000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:ConditionID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
+1F000000XXXXXXXXYYYYYYYY	Branch_is_ASM_routine_returns_nonzero[XXXX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAT)	{COND}
+20000000XXXX0000YYYYYYYY	Branch_if_ASM_routine_returns_ 0[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAF)	{COND}
+1C000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
+1B000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
 03000000XXXX0000	Shows_background[XX:BG:Background_to_show]	{BG}
 07000000XXXX0000	Shows_text_normally[XX:TEXT:Text_to_show](TEXT)	{TEXT}
 08000000XXXXXXXX	MORETEXT[XXXX:TEXT:Text_to_show]	{TEXT}
