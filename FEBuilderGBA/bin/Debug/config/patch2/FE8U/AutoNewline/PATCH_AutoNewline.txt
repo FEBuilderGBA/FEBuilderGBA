@@ -2,7 +2,7 @@ NAME=AutoNewline
 NAME.en=AutoNewline
 NAME.zh=AutoNewline
 
-IF:0x02BA4=0x00 0xB5 0xC2 0x0F //nedd Anti-Huffman
+IF:0x02BA4=0x00 0xB5 0xC2 0x0F //need Anti-Huffman
 PATCHED_IF:0x464476=0x00 0x00 0x10 0xB4 0x00 0xB5 0x03 0x4C 0x00 0xF0 0x04 0xF8 0x10 0xBC 0xA6 0x46 0x10 0xBC 0x70 0x47 0x20 0x47
 
 //STRUCTパッチとして実装します
@@ -16,4 +16,4 @@ INFO.en=This patch will automatically break the text.\r\n
 When this patch is installed, [ConversationText](@0090), [BattleText](@0091) will be added to Text's Game Script Notation.\r\nCalling this command at the beginning of the text will cause automatic breaks.
 INFO.zh=This patch will automatically break the text.\r\n
 When this patch is installed, [ConversationText](@0090), [BattleText](@0091) will be added to Text's Game Script Notation.\r\nCalling this command at the beginning of the text will cause automatic breaks.
-AUTHOR=Zeta
+AUTHOR=Zeta https://feuniverse.us/t/zetas-asm-c-spellbook/4824

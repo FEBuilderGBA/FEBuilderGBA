@@ -1856,10 +1856,13 @@ Are you sure you want to disable this event?
 Could not determine the size of the object
 
 :階段ID
-Stair ID.
+Stair ID
 
 :1を設定
-Set 1.
+Set 1
+
+:宝箱の中身
+Chest Contents
 
 :イベント種類
 Event type
@@ -1890,9 +1893,6 @@ Chest
 
 :ゴールド
 Gold
-
-:宝箱の中身
-Chest Contents
 
 :扉
 Door
@@ -7756,8 +7756,14 @@ Terrain recovery bad status.
 :使用中のクラス
 Class in use
 
+:クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\nこのタイルは必ず255に設定する必要があります。
+Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nThis tile must be set to 255.
+
 :クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。
 Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nTiles that can not be moved must be set to 255, and moveable tiles must be set to 0 - 15.
+
+:タイルの移動コストが正しくありません。\r\nこのタイルは必ず255に設定する必要があります。
+Tile movement cost incorrect.\r\nThis tile must be set to 255.
 
 :移動コスト: 天気雨
 Movement Cost: Rain

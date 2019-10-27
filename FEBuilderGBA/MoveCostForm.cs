@@ -245,18 +245,32 @@ namespace FEBuilderGBA
                 max = 50 + 1;
             }
 
-            for (uint i = 0; i < max; i++)
+            for (uint id = 0; id < max; id++)
             {
-                uint v = Program.ROM.u8(addr + i);
-                if (v >= 31 || v <= 15)
+                uint v = Program.ROM.u8(addr + id);
+                if (id == 0)
                 {
-                    continue;
+                    if (v != 255)
+                    {
+                        string tilename = MapTerrainNameForm.GetName(id);
+                        errors.Add(new FELint.ErrorSt(type, addr
+                            , R._("クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\nこのタイルは必ず255に設定する必要があります。"
+                            , classList[(int)cid].name, seetname, tilename, v), cid));
+                    }
                 }
-
-                string tilename = MapTerrainNameForm.GetName(i);
-                errors.Add(new FELint.ErrorSt(type, addr
-                    , R._("クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。"
-                    , classList[(int)cid].name, seetname, tilename, v ) , cid));
+                else
+                {
+                    if (v >= 31 || v <= 15)
+                    {
+                    }
+                    else
+                    {
+                        string tilename = MapTerrainNameForm.GetName(id);
+                        errors.Add(new FELint.ErrorSt(type, addr
+                            , R._("クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。"
+                            , classList[(int)cid].name, seetname, tilename, v), cid));
+                    }
+                }
             }
         }
 
@@ -315,22 +329,29 @@ namespace FEBuilderGBA
             }
             LabelEx label = (LabelEx)c;
 
+            string error = "";
             if (FilterComboBox.SelectedIndex <= 2)
             {
                 uint value = (uint)nud.Value;
-                if (value <= 255 || value <= 15)
-                {
-                    label.ErrorMessage = "";
+                if (id == 0)
+                {//最初のタイルは255である必要がある。
+                    if (value != 255)
+                    {
+                        error = R._("タイルの移動コストが正しくありません。\r\nこのタイルは必ず255に設定する必要があります。");
+                    }
                 }
                 else
                 {
-                    label.ErrorMessage = R._("タイルの移動コストが正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。");
+                    if (value >= 128 || value <= 15)
+                    {//nop
+                    }
+                    else
+                    {
+                        error = R._("タイルの移動コストが正しくありません。\r\n移動できないタイルは255に、移動できるタイルは0-15の範囲に設定しないといけません。");
+                    }
                 }
             }
-            else
-            {
-                label.ErrorMessage = "";
-            }
+            label.ErrorMessage = error;
         }
         void LoadNames()
         {

@@ -4145,7 +4145,7 @@ namespace FEBuilderGBA
             }
             List<Control> controls = InputFormRef.GetAllControls(f);
 
-            string object_type_name = prefix + "B10";
+            string object_type_name = prefix + "W10";
             Control c = FindObjectByForm<NumericUpDown>(controls, object_type_name);
             if (!(c is NumericUpDown))
             {//判別不能
