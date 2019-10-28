@@ -101,44 +101,32 @@ namespace FEBuilderGBA
 
             System.Threading.Thread s1 = new System.Threading.Thread(t =>
             {
-                string download_url;
-                string net_version;
-                string error;
                 try
                 {
-                    error = CheckUpdateURLByGitHub(out download_url, out net_version);
+                    string download_url;
+                    string net_version;
+                    string error = CheckUpdateURLByGitHub(out download_url, out net_version);
+
+                    UpdateEventArgs args = new UpdateEventArgs();
+                    args.error = error;
+                    args.download_url = download_url;
+                    args.net_version = net_version;
+
+                    if (Application.OpenForms.Count <= 0)
+                    {//通知するべきフォームがない.
+                        return;
+                    }
+                    Form f = Application.OpenForms[0];
+                    if (f == null || f.IsDisposed )
+                    {
+                        return;
+                    }
+                    f.Invoke(EventHandler, new object[] { this, args });
                 }
-                catch (System.Net.WebException e)
+                catch (Exception e)
                 {
                     Log.Error(e.ToString());
                     return;
-                }
-
-                UpdateEventArgs args = new UpdateEventArgs();
-                args.error = error;
-                args.download_url = download_url;
-                args.net_version = net_version;
-
-                if (Application.OpenForms.Count <= 0)
-                {//通知するべきフォームがない.
-                    return;
-                }
-                Form f = Application.OpenForms[0];
-                if (f == null || f.IsDisposed )
-                {
-                    return;
-                }
-                try
-                {
-                    f.Invoke(EventHandler, new object[] { this, args });
-                }
-                catch (ObjectDisposedException)
-                {
-                    //IsDisposedして、Invokeするわずかな時間にダメになることがまれにあるらしい.
-                }
-                catch (InvalidOperationException)
-                {
-                    //何かのタイミングで発生することがあるらしい?
                 }
             });
             s1.Start();

@@ -4541,15 +4541,20 @@ namespace FEBuilderGBA
                 return;
             }
 
+
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            if (blockSize > 4)
-            {//先頭バイトには、種類が入っているので、回避する.
-                Program.ROM.write_fill(destAddr+1, blockSize-1, 0, undodata);
+            if (blockSize >= 4 + 4)
+            {
+                uint type = Program.ROM.u16(destAddr);
+                Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
+                Program.ROM.write_u16(destAddr, type, undodata);  //種類
+                Program.ROM.write_u32(destAddr + 4, 1, undodata); //イベントを1にする
             }
             else
             {
                 Program.ROM.write_fill(destAddr, blockSize, 0, undodata);
             }
+
             Program.Undo.Push(undodata);
             EventRelationIconsCache.Clear();
 
