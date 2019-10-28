@@ -1,0 +1,12 @@
+NAME=MUSIC_エクストラ_支援_選択時
+NAME.zh=音乐_ExtraMenu_支援_When selected
+NAME.en=ExtraMenu Support Room BGM When selected
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080A6978
+ADDRESS_TYPE=SONG
+INFO=エクストラメニューの支援会話の画面で支援を選択した時に再生されるBGM
+INFO.en=BGM that is played when support is selected on the support conversation screen of the extra menu.
+INFO.zh=在附加菜单的支持对话屏幕上选择支持时播放的BGM

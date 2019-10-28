@@ -1,0 +1,12 @@
+NAME=MUSIC_エクストラ_支援
+NAME.zh=音乐_ExtraMenu_支援
+NAME.en=ExtraMenu Support Room BGM
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x080A9C92 0x080A2BE2
+ADDRESS_TYPE=SONG
+INFO=エクストラメニューの支援会話の画面で再生されるBGM
+INFO.en=BGM played on the support menu screen of the extra menu.
+INFO.zh=BGM在附加菜单的支持菜单屏幕上播放。

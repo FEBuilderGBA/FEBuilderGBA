@@ -1,11 +1,14 @@
 NAME=MUSIC_エイリークのテーマ
 NAME.en=Eirika's BGM
+NAME.zh=音乐_艾瑞珂的BGM
+//アドレスパッチとして実装します
 
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#SOUND
 
-ADDRESS=0x080cb356 0x080cb380 0x08009998 0x08009a0e
+
+ADDRESS=0x080A69C2
 ADDRESS_TYPE=SONG
 
-NAME.zh=音乐_艾瑞珂的BGM
+INFO=Select the song to be played during the player phase of the first 8 chapters (not 5x)

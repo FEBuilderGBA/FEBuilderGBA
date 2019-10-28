@@ -6,7 +6,7 @@ NAME.zh=音乐_Main theme(OP title screen) 0x43
 TYPE=ADDR
 TAG=#SOUND
 
-ADDRESS=0x080a3ba6 0x080a571e
+ADDRESS=0x080a3ba6 0x080a571e 0x080cb356 0x080cb380 0x08009998 0x08009a0e
 ADDRESS_TYPE=SONG
 
 INFO=曲を変更します。この曲はサウンドルームに登録されないため、曲名は不明です。
