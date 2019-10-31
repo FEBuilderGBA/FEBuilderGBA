@@ -8,5 +8,5 @@ TAG=#ENGINE
 ADDRESS=0x34D9E 0x34D68
 ADDRESS_TYPE=UNIT
 
-AUTHOR=Source: http://feuniverse.us/t/fe7-replace-hector-mode/3169/8
+AUTHOR=Source: https://feuniverse.us/t/fe7-replace-hector-mode/3169/8
 NAME.zh=MODESELECT可以保护的英雄Eliwood版

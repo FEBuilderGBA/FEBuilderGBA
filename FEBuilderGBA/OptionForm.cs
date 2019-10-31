@@ -52,6 +52,7 @@ namespace FEBuilderGBA
             event_assembler.Text = Program.Config.at("event_assembler");
             mid2agb.Text = Program.Config.at("mid2agb");
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
+            gba_mus_riper.Text = Program.Config.at("gba_mus_riper");
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
             python3.Text = GetPython3();
@@ -224,6 +225,7 @@ namespace FEBuilderGBA
             Program.Config["CFLAGS"] = CFLAGS.Text;
             Program.Config["retdec"] = retdec.Text;
             Program.Config["python3"] = python3.Text;
+            Program.Config["gba_mus_riper"] = gba_mus_riper.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1311,6 +1313,10 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("python3", "");
         }
+        public static string GetGBAMusRiper()
+        {
+            return Program.Config.at("gba_mus_riper", "");
+        }
 
         void MakeExplainFunctions()
         {
@@ -1402,6 +1408,20 @@ namespace FEBuilderGBA
             }
             //新しいバージョン
             return false;
+        }
+
+        private void gba_mus_riper_button_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("song_riper|song_riper.exe|");
+            if (r != "")
+            {
+                gba_mus_riper.Text = r;
+            }
+        }
+
+        private void gba_mus_riper_DoubleClick(object sender, EventArgs e)
+        {
+            gba_mus_riper_button.PerformClick();
         }
     }
 }

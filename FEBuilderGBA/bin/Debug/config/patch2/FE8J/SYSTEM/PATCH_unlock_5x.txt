@@ -21,7 +21,7 @@ OFF:0x03318B=0xE0
 ONN:0x037C2D=0xD1
 OFF:0x037C2D=0xE0
 
-AUTHOR=Tequila http://feuniverse.us/t/fe-builder-gba/2845/1547
+AUTHOR=Tequila https://feuniverse.us/t/fe-builder-gba/2845/1547
 INFO=5x章のさまざまな制約を一括で解除します。ゴールドを表示して、輸送隊を呼べるようにして、進撃準備画面も呼べるようにします。
 HINT=輸送体
 INFO.en=Unlock various constraints of Chapter 5x at once.Display the gold and call transporter so that you can call up the Preparation Screen as well.

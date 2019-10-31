@@ -10,4 +10,4 @@ TEXTADV:0x002=0x002.txt
 
 INFO.en=Fix bug with text ID 0x02 which occurred in previous skill update or uninstall.\r\nSkillSystemsでは、TextID0x02 In SkillSystems, only TextID 0x02 "Weapon rank increased to" was defined elsewhere and We overlooked the correction of this part.\r\nThis is a patch to solve this problem.
 
-INFO.zh=修复以前技能更新中卸载的文本ID 0x02的错误。\r\n在SkillSystems中，只有TextID 0x02“武器等级增加到”在其他地方被定义并且忽略了这部分的修正。\r\n这是解决此问题的补丁。
+INFO.zh=修复以前技能更新中卸载的文本ID 0x02的错误。\r\n在SkillSystems中，只有TextID 0x02“武器等级增加到"在其他地方被定义并且忽略了这部分的修正。\r\n这是解决此问题的补丁。

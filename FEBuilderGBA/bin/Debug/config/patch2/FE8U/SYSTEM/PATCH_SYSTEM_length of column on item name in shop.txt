@@ -10,4 +10,4 @@ ADDRESS=0x16896
 
 INFO.en=Increase the hex value to expand the spacing for item name.\r\nAfter the value exceeds 19, 4-digit sale prices won't fit.\r\n
 
-AUTHOR=Tequila http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267
+AUTHOR=Tequila https://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267

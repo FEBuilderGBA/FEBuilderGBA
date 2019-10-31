@@ -10,8 +10,8 @@ COMBO=Fix|0x21 0xe0|Default|0x04 0x48
 
 INFO.en=Toggles whether the ROM's autocursor seeks the first deployed unit or the first roster unit.\r\nBy default it seeks the first roster unit (Eirika/Ephraim)\r\n
 
-AUTHOR=credit Vennobennu http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
-AUTHOR.en=Vennobennu http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
-AUTHOR.zh=credit Vennobennu http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR=credit Vennobennu https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR.en=Vennobennu https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR.zh=credit Vennobennu https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO.zh=自动光标修复

@@ -35,7 +35,7 @@ OFF:0x269F6=0xD0 0x09
 ONN:0x269F6=0x00 0x20
 
 
-AUTHOR=Icecube http://feuniverse.us/t/max-number-of-standing-map-sprites/773/10 Transport:7743
+AUTHOR=Icecube https://feuniverse.us/t/max-number-of-standing-map-sprites/773/10 Transport:7743
 NAME.zh=将移动图标扩展到FF
 
 INFO.en=Toggles whether to limit class moving animations to 127 (Default) or 255 (Extended)\r\nIf moving map animations exceed 127 without being patched, there will be errors.\r\n

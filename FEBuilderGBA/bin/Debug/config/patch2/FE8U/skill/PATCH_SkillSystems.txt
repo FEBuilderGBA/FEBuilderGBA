@@ -460,7 +460,7 @@ TEXTADV:0xea8=0xea8.txt
 TEXTADV:0xea9=0xea9.txt
 
 
-AUTHOR=SkillSystem_FE8-1.0.0 http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\nCredits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
+AUTHOR=SkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\nCredits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
 
 NAME.zh=技能延期技能系统20171130（技能扩展）
 

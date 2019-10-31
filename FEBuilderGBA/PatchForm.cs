@@ -4452,7 +4452,6 @@ namespace FEBuilderGBA
                         || data.DataType == EAUtil.DataEnum.MIX)
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
-                        string basedir = Path.GetDirectoryName(patch.PatchFileName);
                         string[] sp = new string[] { };
                         bool[] isSkip;
                         byte[] mod = ReadMod(sp, data.BINData, out isSkip);
@@ -4490,7 +4489,6 @@ namespace FEBuilderGBA
                     else if (data.DataType == EAUtil.DataEnum.LYN)
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
-                        string basedir = Path.GetDirectoryName(patch.PatchFileName);
                         string[] sp = new string[] { };
                         bool[] isSkip = MakeLynMaskPattern(data.BINData);
 
@@ -4591,8 +4589,6 @@ namespace FEBuilderGBA
                     else
                     {
                         //展開されるものを生成して、GREP検索する必要があります.
-                        string basedir = Path.GetDirectoryName(patch.PatchFileName);
-
                         uint addr = U.Grep(Program.ROM.Data, data.BINData, lastMatchAddr);
                         if (addr == U.NOT_FOUND)
                         {

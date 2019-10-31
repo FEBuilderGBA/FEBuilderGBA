@@ -15,6 +15,6 @@ INFO=ゲームクリア後に表示されるエクストラメニューのフリ
 
 COMBO.zh=显示|0xF7 0xF7 0x18 0xFD|删除|0x00 0x00 0x00 0x20
 INFO.en=Sets whether the "Creature Campaign" option from the "Extras" menu is displayed or hidden during the post-game.\r\nThis is useful to prevent player access if Creature Campaign maps like Lagdou, Valni, etc., have been repurposed.
-INFO.zh=删除游戏结束后显示的练习菜单的世界地图“消灭大陆的妖魔”。\r\n如果将塔和遗迹作为另一个地图而崩溃，或者不让怪物发生等进行改造的话，世界地图会造成妨碍，所以可以在这个补丁中消除。
+INFO.zh=删除游戏结束后显示的练习菜单的世界地图“消灭大陆的妖魔"。\r\n如果将塔和遗迹作为另一个地图而崩溃，或者不让怪物发生等进行改造的话，世界地图会造成妨碍，所以可以在这个补丁中消除。
 
 AUTHOR=Aera

@@ -7,7 +7,7 @@ TAG=#ENGINE
 PATCHED_IF:0x68DE0=0x38 0x18 0x01 0x78
 EA=FE7-Str Mag Master EA File.txt
 
-AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/20
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/20
 INFO=魔力の項目を新設して、魔法を分離します。\r\n力や魔法防御の項目を使って魔力を表現するのではなく、魔力の項目を新しく作ります。\r\nFE7-Str Mag
 NAME.zh=魔法分离补丁(Install)
 

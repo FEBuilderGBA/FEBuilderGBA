@@ -72,8 +72,6 @@ namespace FEBuilderGBA
         public InputFormRef InputFormRef;
         static InputFormRef Init(Form self, uint textPointer)
         {
-            Dictionary<uint, string> names = U.LoadDicResource(U.ConfigDataFilename("skill_extends_skillsystem_name_"));
-
             InputFormRef ifr = new InputFormRef(self
                 , ""
                 , textPointer
@@ -84,7 +82,7 @@ namespace FEBuilderGBA
                 }
                 , (int i, uint addr) =>
                 {
-                    return U.ToHexString(i) + " " + U.at(names,(uint)i);
+                    return U.ToHexString(i) + " " + GetSkillName((uint)i);
                 }
             );
             return ifr;
@@ -263,6 +261,16 @@ namespace FEBuilderGBA
         }
         public static string GetSkillName(uint index)
         {
+            string text = GetSkillText(index);
+            if (text != "")
+            {
+                string name = SkillTextToName(text);
+                if (name != "")
+                {
+                    return name;
+                }
+            }
+
             Dictionary<uint,string> skills = LoadSkillNames();
             return U.at(skills,index);
         }
@@ -279,6 +287,15 @@ namespace FEBuilderGBA
                 return "";
             }
             return GetSkillText(index, p);
+        }
+        static string SkillTextToName(string name)
+        {
+            int i = name.IndexOf(':');
+            if (i < 0)
+            {
+                return "";
+            }
+            return name.Substring(0,i).Trim();
         }
         public static Bitmap DrawSkillIcon(uint index)
         {

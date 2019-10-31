@@ -46,6 +46,7 @@ namespace FEBuilderGBA
         public List<string> IfNDefList { get; private set; }
         public string Filename { get; private set; }
         public string Dir { get; private set; }
+        EAUtilLynDumpMode LynDump;
 
         public EAUtil(string filename)
         {
@@ -77,10 +78,15 @@ namespace FEBuilderGBA
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = U.ClipComment(lines[i], isWithoutSharpComment: true);
+                if (ParseLynDump(line, lines[i]))
+                {
+                    continue;
+                }
                 if (line == "")
                 {
                     continue;
                 }
+
                 ParseORG(line);
                 ParseIncBIN(line, lines[i]);
                 ParseLynELF(line, lines[i]);
@@ -89,6 +95,44 @@ namespace FEBuilderGBA
                 ParseString(line, lines[i]);
                 ParseLabel(line, lines[i]);
             }
+            ParseLynDump("", "");
+        }
+        bool ParseLynDump(string line, string orignalIine)
+        {
+            if (this.LynDump == null)
+            {
+                if (line == "")
+                {
+                    return false;
+                }
+                if (orignalIine.IndexOf("// lyn output of ", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    this.LynDump = new EAUtilLynDumpMode();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            if (this.LynDump == null)
+            {
+                return false;
+            }
+
+            bool r = this.LynDump.ParseLine(line);
+            if (r)
+            {//LYNDUMPの処理を行うので、続きのパースは不要.
+                return true;
+            }
+
+            //LYNDUMPの終了
+            Data data = new Data("LYNDUMP", this.LynDump.GetData(), DataEnum.LYN, 0);
+            this.DataList.Add(data);
+
+            this.LynDump = null;
+            return false;
         }
         void ParseLabel(string line, string orignalIine)
         {

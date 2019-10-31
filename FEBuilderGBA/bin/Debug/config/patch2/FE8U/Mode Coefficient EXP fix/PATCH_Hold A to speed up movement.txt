@@ -10,7 +10,7 @@ COMBO=ON|0x00 0x00|Default|0x0B 0xD1
 
 INFO.en=Toggles whether game completion is required or not to allow for speeding up movement by holding A.\r\n
 
-AUTHOR=credit Gryz http://feuniverse.us/t/unit-movement-speed/920
-AUTHOR.en=Gryz http://feuniverse.us/t/unit-movement-speed/920
-AUTHOR.zh=credit Gryz http://feuniverse.us/t/unit-movement-speed/920
+AUTHOR=credit Gryz https://feuniverse.us/t/unit-movement-speed/920
+AUTHOR.en=Gryz https://feuniverse.us/t/unit-movement-speed/920
+AUTHOR.zh=credit Gryz https://feuniverse.us/t/unit-movement-speed/920
 INFO.zh=按住A加速移动

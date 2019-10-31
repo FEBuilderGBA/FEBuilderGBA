@@ -8,5 +8,5 @@ BIN:0x377A0=377A0.bin
 
 INFO=Patches the game to remove the enemy control glitch that occurs from mines, torches, etc.\r\n
 
-AUTHOR=Brendor Compatability:7743 http://feuniverse.us/t/enemy-control-glitch-fixes/1621
+AUTHOR=Brendor Compatability:7743 https://feuniverse.us/t/enemy-control-glitch-fixes/1621
 TAG=#ENGINE #ESSENTIALFIXES

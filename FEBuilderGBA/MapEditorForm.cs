@@ -1101,7 +1101,7 @@ this.MapObjImage);
             }
 
             string title = R._("開くマップを選択してください");
-            string filter = R._("MapFormat|*.tmx;*.mar;*.map|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|Import Palette|*.png|All files|*");
+            string filter = R._("MapFormat|*.tmx;*.mar;*.map;*.fmp|Tiled|*.tmx|MAR|*.mar|FEMAPCREATOR|*.map|MAPPLY FMP|*.fmp|Import Palette|*.png|All files|*");
 
             string mapfilename;
             if (ImageFormRef.GetDragFilePath(out mapfilename))
@@ -1131,6 +1131,10 @@ this.MapObjImage);
             else if (ext == ".MAP")
             {
                 errormessage = LoadAsMAP(mapfilename);
+            }
+            else if (ext == ".FMP")
+            {
+                errormessage = LoadAsFMP(mapfilename);
             }
             else if (ext == ".PNG")
             {
@@ -1318,6 +1322,89 @@ this.MapObjImage);
             SetModified();
             return "";
         }
+
+        //fmp形式の読み込み
+        string LoadAsFMP(string mapfilename)
+        {
+            byte[] data = File.ReadAllBytes(mapfilename);
+            if (data.Length <= 0x20)
+            {
+                return R._("ファイルが壊れています。\r\n必須項目がありません。\r\nFile:{0}",mapfilename);
+            }
+            if (data[0] != 'F'
+                || data[1] != 'O'
+                || data[2] != 'R'
+                || data[3] != 'M'
+                || data[8] != 'F'
+                || data[9] != 'M'
+                || data[10] != 'A'
+                || data[11] != 'P'
+                || data[12] != 'M'
+                || data[13] != 'P'
+                || data[14] != 'H'
+                || data[15] != 'D'
+                )
+            {
+                return R._("ファイルが壊れています。\r\nヘッダーがありません。\r\nFile:{0}", mapfilename);
+            }
+            uint chunkSize = U.big32(data,0x10);
+            int width = (int)U.big8(data, 0x18);
+            int height = (int)U.big8(data, 0x1a);
+            if (height <= 0 || width <= 0 || width >= 0xff || height >= 0xff)
+            {
+                return R._("マップファイルの幅または高さが正しくありません。\r\n\r\nマップファイル:{0}\r\n幅:{1} 高さ:{2}\r\n", mapfilename, width, height);
+            }
+
+            bool foundBody = false;
+            UInt16[] newMAR = new UInt16[width * height];
+            uint addr = 0x14 + chunkSize;
+            while(addr + 8 < data.Length)
+            {
+                chunkSize = U.big32(data, addr + 0x4);
+                if (data[addr + 0] == 'B'
+                    && data[addr + 1] == 'O'
+                    && data[addr + 2] == 'D'
+                    && data[addr + 3] == 'Y'
+                )
+                {
+                    int index = 0;
+                    uint end = Math.Min(addr + 8 + chunkSize, (uint)data.Length);
+                    for (uint i = addr + 8; i < end; i += 2, index ++)
+                    {
+                        if (index >= newMAR.Length)
+                        {
+                            break;
+                        }
+                        uint m = U.u16(data, (uint)i);
+                        m = m >> 3;
+                        newMAR[index] = (UInt16)m;
+                    }
+                    foundBody = true;
+                    break;
+                }
+
+                addr += 8 + chunkSize;
+            }
+
+            if (foundBody == false)
+            {
+                return R._("ファイルが壊れています。\r\nBODYがありません。\r\nFile:{0}", mapfilename);
+            }
+
+            PushUndo();
+
+            this.MapWidth = width;
+            this.MapHeight = height;
+            this.MAR = newMAR;
+
+            UpdateSizeText(this.ChangeList[this.MapChange.SelectedIndex]);
+            UpdateMapChip();
+
+            //変更したというマークを出す.
+            SetModified();
+            return "";
+        }
+ 
         static uint StripStyle(string line)
         {
             System.Text.RegularExpressions.Match match =

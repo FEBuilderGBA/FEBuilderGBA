@@ -14,6 +14,6 @@ INFO=FE8のデバッグメニューを表示する
 INFO.en=Enables or disables the debug menu of FE8. Replaces "Guide" with the Debug Menu.\r\nSeveral bugs that may crash the ROM, particularly on the map menu.\r\n
 INFO.zh=显示FE8的调试菜单
 
-AUTHOR=出典 http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
-AUTHOR.en=StanH http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
-AUTHOR.zh=来源 http://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+AUTHOR=出典 https://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+AUTHOR.en=StanH https://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874
+AUTHOR.zh=来源 https://feuniverse.us/t/fe8u-doc-leftover-stuff-from-the-prototype-debug-builds/2874

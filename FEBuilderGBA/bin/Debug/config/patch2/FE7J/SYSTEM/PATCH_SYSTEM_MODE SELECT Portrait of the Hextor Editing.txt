@@ -9,5 +9,5 @@ ADDRESS=0x4393E0
 ADDRESS_TYPE=PORTRAIT
 DATASIZE=4
 
-AUTHOR=Source: Tequila http://feuniverse.us/t/fe7-replace-hector-mode/3169/6
+AUTHOR=Source: Tequila https://feuniverse.us/t/fe7-replace-hector-mode/3169/6
 NAME.zh=MODESELECT面部图像赫克托编。

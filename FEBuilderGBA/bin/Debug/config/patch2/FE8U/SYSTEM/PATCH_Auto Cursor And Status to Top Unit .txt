@@ -16,6 +16,6 @@ INFO=ターン開始にカーソルを合わせるユニットを、主人公で
 INFO.en=Toggles whether the ROM's autocursor seeks the first deployed unit or the first roster unit.\r\nBy default it seeks the first roster unit (Eirika/Ephraim)\r\n
 INFO.zh=将光标放置在回合的开始位置，作为名单的首要人物，而不是英雄。\r\n此外，让状态屏幕上的领导者显示在名单的顶部人物而不是主角。
 
-AUTHOR=credit Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
-AUTHOR.en=credit Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
-AUTHOR.zh=credit Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR=credit Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR.en=credit Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR.zh=credit Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66

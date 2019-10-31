@@ -8,7 +8,7 @@ TAG=#ENGINE
 ADDRESS=0x02B5F8
 HEX=false
 
-AUTHOR=beikehanmu http://feuniverse.us/t/fe-builder-gba/2845/1738
+AUTHOR=beikehanmu https://feuniverse.us/t/fe-builder-gba/2845/1738
 INFO=デビルアクスで自分がダメージを受ける確率を計算する基礎値です。\r\nこの値 - 幸運=確率\r\n0%だと必ず敵に命中します。\r\n100%だと、必ず自滅します。\r\nただし、負の数になるとアンダーフローして、必ず自滅します。
 INFO.en=It is a basic value to calculate the probability that you will be damaged by Devil Ax.\r\nThis value-Fortune = probability\r\nWhen 0%, it always hits the enemy.\r\nWhen 100%, it will surely be destroyed.\r\nHowever, when it becomes a negative number, it underflows and surely self-destructs.
 NAME.zh=恶魔之斧: 中自毁的可能性

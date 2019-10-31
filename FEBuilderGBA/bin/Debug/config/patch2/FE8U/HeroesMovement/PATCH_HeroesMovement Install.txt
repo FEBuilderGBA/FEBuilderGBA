@@ -21,6 +21,6 @@ INFO.en=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer un
 
 INFO.en=This is separates Stan's Heroes Movement from SkillSystems.\r\nPlayer units will be able to use "Shove", "Smite", "Pivot", "Reposition", "Swap".\r\nThis is a stand alone version.
 
-INFO.zh=它将斯坦的英雄运动与SkillSystems分开。\r\n播放器人物可以使用“Shove”，“Extend”（Smite），“Wrap-around”（Pivot），“Reposition”，“Swap”（Swap）\r\n技能和独立版本分开。\r\n\r\n由于此补丁没有ActionRework以便独立运行，我们使用的UnitActionID为0x16,0x18,0x1b，0x1c。
+INFO.zh=它将斯坦的英雄运动与SkillSystems分开。\r\n播放器人物可以使用“Shove"，“Extend"（Smite），“Wrap-around"（Pivot），“Reposition"，“Swap"（Swap）\r\n技能和独立版本分开。\r\n\r\n由于此补丁没有ActionRework以便独立运行，我们使用的UnitActionID为0x16,0x18,0x1b，0x1c。
 
 NEW_TARGET_SELECTION_STRUCT=$FGREP4END+4 HeroesMovement/asm/TargetCommandEffect.bin

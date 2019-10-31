@@ -20,4 +20,4 @@ COMBO.zh=显示|0xD1|消除|0xE0
 
 INFO="戦績"メニューを消去します。\r\n塔や遺跡の領域にマップを作りたい場合は、戦績コマンドが表示されてしまい邪魔になります。\r\nこのパッチは、"戦績"メニューを消去します。
 INFO.en=Delete the "Record" menu.\r\nIf you want to create a map in the area of ​​a tower or an archaeological site, the result of the battle command will be displayed and it will get in the way.\r\nThis patch will erase the "Record" menu.
-INFO.zh=删除“战绩”菜单。\r\n想在塔和遗迹的区域做地图的话，会显示出战绩命令的妨碍。\r\n此修补程序将清除“战绩”菜单。
+INFO.zh=删除“战绩"菜单。\r\n想在塔和遗迹的区域做地图的话，会显示出战绩命令的妨碍。\r\n此修补程序将清除“战绩"菜单。

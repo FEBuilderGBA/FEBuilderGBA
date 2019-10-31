@@ -56,6 +56,8 @@ namespace FEBuilderGBA
             this.PROCS_InputFormRef = new InputFormRef(this, "PROCS_", 0, 0);
             this.PARTY_InputFormRef = new InputFormRef(this, "PARTY_", 0, 0);
 
+            //LocalizeRAMUnit();
+
             //頻繁にリストを更新するのでBrushをキャッシュする.
             this.ListBoxForeBrush = new SolidBrush(OptionForm.Color_Control_ForeColor());
             this.ListBoxForeKeywordBrush = new SolidBrush(OptionForm.Color_Keyword_ForeColor());
@@ -78,6 +80,25 @@ namespace FEBuilderGBA
             UpdateALL();
             //updateタイマーのセット
             timer1.Start();
+        }
+        void LocalizeRAMUnit()
+        {
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
+            {
+                PARTY_J_26.Text = R._("魔力");
+            }
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC
+                || magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+            {
+                PARTY_J_58.Text = R._("魔力");
+            }
+
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
+                PARTY_J_58.Text = R._("追加スキル");
+            }
         }
 
         //頻繁に更新するのでキャッシュしておこう.
@@ -954,9 +975,16 @@ namespace FEBuilderGBA
         }
         public void HideFloatingControlpanel()
         {
-            this.Proc_ControlPanel.Hide();
-
-            this.ProcsListBox.Focus();
+            if (MainTabControl.SelectedTab == EtcPage)
+            {
+                this.Party_ControlPanel.Hide();
+                this.PartyListBox.Focus();
+            }
+            else
+            {
+                this.Proc_ControlPanel.Hide();
+                this.ProcsListBox.Focus();
+            }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

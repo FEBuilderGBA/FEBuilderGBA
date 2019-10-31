@@ -10,5 +10,5 @@ TAG=#ENGINE
 PATCHED_IF:0x1D14E=0xC0 0x46
 
 EA=Less Annoying Fog Installer.event
-AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4 Transport:7743
+AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4 Transport:7743
 INFO.zh=当你在雾中移动并遇到敌人时，你可以修改它们，以便你可以使用攻击和物品而不是等待。

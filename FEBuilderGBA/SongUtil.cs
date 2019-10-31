@@ -2999,7 +2999,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                //全給付
+                //全休符
                 uint zenkyufu = playsec/2;
                 for (uint i = 0; i < zenkyufu; i++)
                 {
@@ -3346,6 +3346,32 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static bool UseGBAMusRiper()
+        {
+            string filename = OptionForm.GetGBAMusRiper();
+            return File.Exists(filename);
+        }
+
+        public static void ExportMidiFileByGBAMusRiper(string filename, uint songtrack_addr)
+        {
+            string error;
+            bool r = MainFormUtil.ExportMidiByGBAMusRiper(filename, songtrack_addr, out error);
+            if (r == false)
+            {
+                R.ShowStopError("プログラムがエラーを返しました。\r\n{0}", error);
+                return;
+            }
+        }
+        public static void ExportSoundFontByGBAMusRiper(string filename, uint songtrack_addr)
+        {
+            string error;
+            bool r = MainFormUtil.ExportSoundFontByGBAMusRiper(filename, songtrack_addr, out error);
+            if (r == false)
+            {
+                R.ShowStopError("プログラムがエラーを返しました。\r\n{0}", error);
+                return;
+            }
+        }
         
     }
 }

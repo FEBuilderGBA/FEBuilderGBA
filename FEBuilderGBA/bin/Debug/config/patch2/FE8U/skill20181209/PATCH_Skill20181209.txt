@@ -582,7 +582,7 @@ TEXTADV:0xeda=0xeda.txt
 TEXTADV:0xedb=0xedb.txt
 //edcは欠番
 
-INFO=This is the most recent revision of the Custom Skill System and is recommended to use.\r\nPatches the ROM to allow characters/classes to equip/learn skill like modern FE games.\r\nAfter installation, edit with "Skill Config," "Assign Skill by Unit," and "Assign Skill by Class" in Advanced Editors.\r\nSkillSystem_FE8-1.0.0 http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
+INFO=This is the most recent revision of the Custom Skill System and is recommended to use.\r\nPatches the ROM to allow characters/classes to equip/learn skill like modern FE games.\r\nAfter installation, edit with "Skill Config," "Assign Skill by Unit," and "Assign Skill by Class" in Advanced Editors.\r\nSkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
 
 AUTHOR=Credits:\r\nCircleseverywhere\r\nMonkeybard & Black Mage for most of the skill icons; Blaze for Stances skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark, sd9k, Kao, blademaster, Snakey1 for skills\r\nPrimefusion for the test map
 

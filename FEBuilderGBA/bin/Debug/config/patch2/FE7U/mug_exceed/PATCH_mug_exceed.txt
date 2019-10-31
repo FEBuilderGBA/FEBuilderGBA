@@ -9,7 +9,7 @@ EA=EA.txt
 PATCHED_IF:0x6BCA=0xC0 0x46 0x01 0xB0 0x03 0x4B
 
 
-AUTHOR=tiki http://feuniverse.us/t/fe7-exceed-the-portrait-hackbox/2044 Transport:aera
+AUTHOR=tiki https://feuniverse.us/t/fe7-exceed-the-portrait-hackbox/2044 Transport:aera
 
 
 INFO=顔画像で利用できるタイルを増やします。

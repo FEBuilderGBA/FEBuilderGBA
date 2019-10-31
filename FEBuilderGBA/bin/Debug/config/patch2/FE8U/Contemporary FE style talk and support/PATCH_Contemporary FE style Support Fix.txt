@@ -9,7 +9,7 @@ PATCHED_IF:0x032438=0x00 0x4B
 BIN:$FREEAREA=Supportfix.dmp
 JUMP:0x032438:$r3=Supportfix.dmp
 
-AUTHOR=circleseverywhere Compatability:7743 http://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13
+AUTHOR=circleseverywhere Compatability:7743 https://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13
 
 INFO=ユニットが支援会話をしても行動済みの状態にしません。\r\n支援会話後にもメニューを開いてアイテムを交換したりできるようになります。
 INFO.en=Patches the ROM so that using "Support" doesn't consume a unit's action.\r\nThe unit can attack, use the menu, and trade afterward.\r\n"Talk" supercedes "Support" if both options are available.\r\n 

@@ -1,6 +1,6 @@
 ;
 ;orignal FEditorAdv and EA
-;http://feuniverse.us/t/hybrid-classes-and-animations/845/19
+;https://feuniverse.us/t/hybrid-classes-and-animations/845/19
 ;
 @thumb
 @org $0801876C

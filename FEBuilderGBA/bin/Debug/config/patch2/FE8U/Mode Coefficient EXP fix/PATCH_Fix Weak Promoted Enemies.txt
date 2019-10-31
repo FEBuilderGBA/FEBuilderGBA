@@ -10,8 +10,8 @@ COMBO=Fix|0x00 0x2a 0x00 0xdc 0x01 0x22|Default|0x18 0x56 0x82 0x42 0x04 0xDD
 
 INFO.en=Patches the ROM to remove the 10 level deficit that promoted enemies receive.\r\nAllows for enemies with higher stats.\r\n
 
-AUTHOR=credit Gryz http://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
-AUTHOR.en=Gryz http://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
-AUTHOR.zh=credit Gryz http://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
+AUTHOR=credit Gryz https://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
+AUTHOR.en=Gryz https://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
+AUTHOR.zh=credit Gryz https://feuniverse.us/t/fe7-fe8-difficulty-stat-changes/1295/3
 
 

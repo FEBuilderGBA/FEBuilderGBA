@@ -12,6 +12,6 @@ INFO=回復量を杖で一律にするのではなく、魔力などを利用し
 INFO.en=By default, staffs heal for hardcoded amounts and use the formula Heal = Magic + Value.\r\nThis patches healing staffs to use staff might instead of the hardcoded value.\r\nPatched Formula for healing = Magic / 2 + Staff's Might\r\nThis patch modifies the item table and must be installed prior to item table expansion.\r\n
 INFO.zh=而不是一律恢复恢复的数量，而是使用魔法等来决定。\r\n恢复量=（魔力/ 2）+手杖的力量\r\n由于此补丁取决于项目表的地址，因此请在扩展项目表和重做之前安装它。
 
-AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
+AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/60
 REPLACE_POINTER:0x809B10=ITEM
 

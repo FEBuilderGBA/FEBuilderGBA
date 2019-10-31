@@ -1709,6 +1709,93 @@ namespace FEBuilderGBA
             return true;
         }
 
+        //GBAMusRiperでmidiをexport
+        public static bool ExportMidiByGBAMusRiper(string save_filename, uint songtrack_addr, out string output)
+        {
+            output = "";
+
+            string compiler_exe = OptionForm.GetGBAMusRiper();
+            if (compiler_exe == "" || !File.Exists(compiler_exe))
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "gba_mus_riper");
+                return false;
+            }
+
+            string tooldir = Path.GetDirectoryName(save_filename);
+
+            string args = ""
+                + U.escape_shell_args(Program.ROM.Filename)
+                + " "
+                + U.escape_shell_args(Path.GetFileName(save_filename))
+                + " "
+                + U.To0xHexString(songtrack_addr);
+
+            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+
+            if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            string output_target = save_filename;
+            if (!File.Exists(output_target) || U.GetFileSize(output_target) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = output_target;
+            return true;
+        }
+        //GBAMusRiperでsf2をexport
+        public static bool ExportSoundFontByGBAMusRiper(string save_filename, uint songtrack_addr, out string output)
+        {
+            output = "";
+
+            string compiler_exe = OptionForm.GetGBAMusRiper();
+            if (compiler_exe == "" || !File.Exists(compiler_exe))
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "gba_mus_riper");
+                return false;
+            }
+            compiler_exe = Path.GetDirectoryName(compiler_exe);
+            compiler_exe = Path.Combine(compiler_exe , "sound_font_riper.exe");
+            if (!File.Exists(compiler_exe))
+            {
+                output = R.Error(("ファイルがありません。\r\nファイル名:{0}"), compiler_exe);
+                return false;
+            }
+
+            string tooldir = Path.GetDirectoryName(save_filename);
+
+            string args = ""
+                + U.escape_shell_args(Program.ROM.Filename)
+                + " "
+                + U.escape_shell_args(Path.GetFileName(save_filename))
+                + " "
+                + U.To0xHexString(songtrack_addr);
+
+            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
+
+            if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            string output_target = save_filename;
+            if (!File.Exists(output_target) || U.GetFileSize(output_target) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = output_target;
+            return true;
+        }
+
+
         public static byte[] OpenROMToByte(string path, string orignalFile = "")
         {
             if (path == "")

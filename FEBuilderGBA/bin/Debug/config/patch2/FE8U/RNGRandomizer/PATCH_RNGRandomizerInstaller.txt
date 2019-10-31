@@ -10,6 +10,6 @@ EA=RNGRandomizerInstaller.event
 PATCHED_IF:0x1336=0x08 0xB4
 INFO=リセットして再操作しても同じ結果を得られないようにします。
 
-AUTHOR=TR143 http://feuniverse.us/t/gba-rng-randomizer/3175
+AUTHOR=TR143 https://feuniverse.us/t/gba-rng-randomizer/3175
 INFO.en=Even if resetting and re-operation do not get the same result.
 INFO.zh=即使重置和重新操作也不会得到相同的结果。

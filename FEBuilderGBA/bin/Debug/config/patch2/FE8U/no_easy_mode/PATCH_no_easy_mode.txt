@@ -15,4 +15,4 @@ INFO.en=Removes Easy Mode from the Campaign Select Menu.\r\nThis patch can not s
 INFO.zh=此补丁使得无法在难度选择屏幕上选择简易模式。
 
 
-AUTHOR=Nintenlord http://feuniverse.us/t/nintenlords-utilities/52
+AUTHOR=Nintenlord https://feuniverse.us/t/nintenlords-utilities/52

@@ -21,4 +21,4 @@ INFO.en=Patches the allow forced units to swap with other deployed player units,
 INFO.zh=强制出击人物的位置，与拍摄框架的人物交换位置。
 
 
-AUTHOR=AuraWolf http://feuniverse.us/t/fe8-allow-forced-units-to-change-their-starting-position/4664
+AUTHOR=AuraWolf https://feuniverse.us/t/fe8-allow-forced-units-to-change-their-starting-position/4664

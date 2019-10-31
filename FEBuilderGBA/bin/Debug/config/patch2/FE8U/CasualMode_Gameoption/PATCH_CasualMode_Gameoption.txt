@@ -15,4 +15,4 @@ EXTENDS:0x1100=TEXT
 AUTHOR=7743 Orignal: circleseverywhere
 INFO.en=If a player unit dies, it will automatically be revived in the next chapter.\r\nThis version is not a flag 0xB0, but a version implemented with game options.\r\nTake over the option to display the "Show Objective" and change it to casual mode.\r\nSlightly confusing, but the "Show Objective"'s selector ON is classic. OFF is casual.\r\nPlease replace the text yourself.
 NAME.zh=休闲模式(Ver:GameOption)
-INFO.zh=如果玩家单位死亡，它将在下一章自动恢复。\r\n这个版本不是标志0xB0，而是用游戏选项实现的版本。\r\n接管选项以显示“过关条件表示”并更改为临时模式。\r\n虽然有点难以理解，但“过关条件表示”选择器的“开启”是经典的。 OFF很随意。\r\n请自行更换文字。
+INFO.zh=如果玩家单位死亡，它将在下一章自动恢复。\r\n这个版本不是标志0xB0，而是用游戏选项实现的版本。\r\n接管选项以显示“过关条件表示"并更改为临时模式。\r\n虽然有点难以理解，但“过关条件表示"选择器的“开启"是经典的。 OFF很随意。\r\n请自行更换文字。

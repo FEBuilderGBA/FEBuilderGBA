@@ -15,4 +15,4 @@ AUTHOR=7743
 USEFLAG=0x26
 NAME.en=If flag 0x 26 is off, Change color of the menu.
 NAME.zh=如果标志0x 26关闭，请更改菜单的颜色。
-INFO.zh=如果标志0x 26关闭，请更改菜单的颜色。\r\n将已安装函数的地址+ 1写入菜单功能指针的第二个“绘图例程指针”。
+INFO.zh=如果标志0x 26关闭，请更改菜单的颜色。\r\n将已安装函数的地址+ 1写入菜单功能指针的第二个“绘图例程指针"。

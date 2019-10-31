@@ -6,7 +6,7 @@ BIN:0x3FF6=3FF6.bin
 PATCHED_IF:0x69D670=0x0C 0x00 0x00 0x00
 BIN:0x69D668=0069D668.bin
 
-AUTHOR=16 Tracks/12 Sounds Fix (credit Agro/Brendor) http://feuniverse.us/t/fe7-fe8-16-tracks-12-sounds-patch/895
+AUTHOR=16 Tracks/12 Sounds Fix (credit Agro/Brendor) https://feuniverse.us/t/fe7-fe8-16-tracks-12-sounds-patch/895
 
 INFO=16トラック、12音まで同時再生できるようにプログラムを修正します。\r\n8トラック以上のトラックを持つmidiを利用するときには必須となるパッチです。\r\n
 INFO.en=Correct the program so that 16 tracks and 12 notes can be played simultaneously.\r\nIt is an essential patch when using midi with tracks of 8 tracks or more.\r\n

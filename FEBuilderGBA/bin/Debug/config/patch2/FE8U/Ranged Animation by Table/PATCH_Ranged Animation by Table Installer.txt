@@ -12,4 +12,4 @@ EDIT_PATCH=PATCH_Ranged Animation by Table.txt
 
 INFO.en=Patches a new table into the ROM that allows for creation of weapons that always display the ranged animation.\r\nThese weapons will use the ranged attack even at melee range.\r\nWithout patching, this list is limited to Hand Axe, Hatchet, Tomahawk, and Runesword.\r\nMust be installed in order to use "Range-Animated Weapons List Editor."\r\n
 
-AUTHOR=circleseverywhere http://feuniverse.us/t/fe8-always-display-ranged-animation-for-some-weapons/3271
+AUTHOR=circleseverywhere https://feuniverse.us/t/fe8-always-display-ranged-animation-for-some-weapons/3271

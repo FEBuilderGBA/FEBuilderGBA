@@ -14,5 +14,5 @@ INFO.en=Stat growth is based a formula that uses your level and growth rates to 
 INFO.zh=统计增长基于一个公式，该公式使用您的水平和增长率来确定要提供的统计数据。\r\n效果是你的增长率增加，你每次通过100的倍数就得到一个统计数据。\r\n你从一个完全随意的50点开始，使大多数字符的第一个级别并不总是空的（并且它在技术上也有一个舍入如果从1级开始，会影响您的平均统计数据。\r\n因为数据增益在数学上与水平相关（没有总生长点的实际记忆），如果你在不同的基础水平开始它们，你的角色会获得不同的第一级。
 
 
-AUTHOR=TR143 http://feuniverse.us/t/fe7-fe8-fixed-growths-mode/4482
+AUTHOR=TR143 https://feuniverse.us/t/fe7-fe8-fixed-growths-mode/4482
 NAME.zh=固定增长模式

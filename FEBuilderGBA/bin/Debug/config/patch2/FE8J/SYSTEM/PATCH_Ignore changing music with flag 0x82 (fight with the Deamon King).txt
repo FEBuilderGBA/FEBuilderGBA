@@ -9,7 +9,7 @@ COMBO=ディフォルト|0x01|修正|0x02
 COMBO.en=Default|0x01|Fix|0x02
 COMBO.zh=默认|0x01|修正|0x02
 
-AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO=魔王との戦闘時は、一度戦うとフラグ0x82がセットされます。その時、BGMも変化します。\r\n最初に戦うとSongID: 0x55が再生されます。\r\nこのパッチは、この機能を無効化します。
 INFO.en=When fighting with the Demon King, once it fights, the flag 0x82 is set.At that time, BGM also changes.\r\nFight first and SongID: 0x55 will be played.\r\nThis patch will disable this feature.

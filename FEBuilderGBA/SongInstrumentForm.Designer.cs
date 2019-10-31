@@ -56,24 +56,24 @@
             this.N00_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
             this.N00_L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.N00_B11 = new System.Windows.Forms.NumericUpDown();
-            this.label108 = new System.Windows.Forms.Label();
+            this.N00_J_11 = new System.Windows.Forms.Label();
             this.N00_B10 = new System.Windows.Forms.NumericUpDown();
-            this.label109 = new System.Windows.Forms.Label();
+            this.N00_J_10 = new System.Windows.Forms.Label();
             this.N00_B9 = new System.Windows.Forms.NumericUpDown();
-            this.label110 = new System.Windows.Forms.Label();
+            this.N00_J_9 = new System.Windows.Forms.Label();
             this.N00_B8 = new System.Windows.Forms.NumericUpDown();
-            this.label111 = new System.Windows.Forms.Label();
+            this.N00_J_8 = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.N00_L_3_PAN_PAN = new System.Windows.Forms.ComboBox();
             this.N00_P4 = new System.Windows.Forms.NumericUpDown();
-            this.label114 = new System.Windows.Forms.Label();
+            this.N00_J_4_DIRECTSOUND = new System.Windows.Forms.Label();
             this.N00_B3 = new System.Windows.Forms.NumericUpDown();
-            this.label115 = new System.Windows.Forms.Label();
+            this.N00_J_3 = new System.Windows.Forms.Label();
             this.N00_B2 = new System.Windows.Forms.NumericUpDown();
-            this.label116 = new System.Windows.Forms.Label();
+            this.N00_J_2 = new System.Windows.Forms.Label();
             this.N00_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label117 = new System.Windows.Forms.Label();
+            this.N00_J_1 = new System.Windows.Forms.Label();
             this.UNIONTAB_N01 = new System.Windows.Forms.TabPage();
             this.N01_L_3_SWEEP_TIME = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -167,24 +167,24 @@
             this.N08_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
             this.N08_L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.N08_B11 = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
+            this.N08_J_11 = new System.Windows.Forms.Label();
             this.N08_B10 = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
+            this.N08_J_10 = new System.Windows.Forms.Label();
             this.N08_B9 = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
+            this.N08_J_9 = new System.Windows.Forms.Label();
             this.N08_B8 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
+            this.N08_J_8 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.N08_L_3_PAN_PAN = new System.Windows.Forms.ComboBox();
             this.N08_P4 = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
+            this.N08_J_4_DIRECTSOUND = new System.Windows.Forms.Label();
             this.N08_B3 = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
+            this.N08_J_3 = new System.Windows.Forms.Label();
             this.N08_B2 = new System.Windows.Forms.NumericUpDown();
-            this.label27 = new System.Windows.Forms.Label();
+            this.N08_J_2 = new System.Windows.Forms.Label();
             this.N08_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
+            this.N08_J_1 = new System.Windows.Forms.Label();
             this.UNIONTAB_N09 = new System.Windows.Forms.TabPage();
             this.N09_L_3_SWEEP_TIME = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -278,48 +278,48 @@
             this.N10_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
             this.N10_L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.N10_B11 = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
+            this.N10_J_11 = new System.Windows.Forms.Label();
             this.N10_B10 = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
+            this.N10_J_10 = new System.Windows.Forms.Label();
             this.N10_B9 = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
+            this.N10_J_9 = new System.Windows.Forms.Label();
             this.N10_B8 = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
+            this.N10_J_8 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.N10_L_3_PAN_PAN = new System.Windows.Forms.ComboBox();
             this.N10_P4 = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
+            this.N10_J_4_DIRECTSOUND = new System.Windows.Forms.Label();
             this.N10_B3 = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
+            this.N10_J_3 = new System.Windows.Forms.Label();
             this.N10_B2 = new System.Windows.Forms.NumericUpDown();
-            this.label38 = new System.Windows.Forms.Label();
+            this.N10_J_2 = new System.Windows.Forms.Label();
             this.N10_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
+            this.N10_J_1 = new System.Windows.Forms.Label();
             this.UNIONTAB_N18 = new System.Windows.Forms.TabPage();
             this.N18_ExportButton = new System.Windows.Forms.Button();
             this.N18_ImportButton = new System.Windows.Forms.Button();
             this.N18_L_3_PAN_PANPOT = new System.Windows.Forms.NumericUpDown();
             this.N18_L_1_COMBO = new System.Windows.Forms.ComboBox();
             this.N18_B11 = new System.Windows.Forms.NumericUpDown();
-            this.label135 = new System.Windows.Forms.Label();
+            this.N18_J_11 = new System.Windows.Forms.Label();
             this.N18_B10 = new System.Windows.Forms.NumericUpDown();
-            this.label136 = new System.Windows.Forms.Label();
+            this.N18_J_10 = new System.Windows.Forms.Label();
             this.N18_B9 = new System.Windows.Forms.NumericUpDown();
-            this.label137 = new System.Windows.Forms.Label();
+            this.N18_J_9 = new System.Windows.Forms.Label();
             this.N18_B8 = new System.Windows.Forms.NumericUpDown();
-            this.label138 = new System.Windows.Forms.Label();
+            this.N18_J_8 = new System.Windows.Forms.Label();
             this.label139 = new System.Windows.Forms.Label();
             this.label140 = new System.Windows.Forms.Label();
             this.N18_L_3_PAN_PAN = new System.Windows.Forms.ComboBox();
             this.N18_P4 = new System.Windows.Forms.NumericUpDown();
-            this.label141 = new System.Windows.Forms.Label();
+            this.N18_J_4_DIRECTSOUND = new System.Windows.Forms.Label();
             this.N18_B3 = new System.Windows.Forms.NumericUpDown();
-            this.label142 = new System.Windows.Forms.Label();
+            this.N18_J_3 = new System.Windows.Forms.Label();
             this.N18_B2 = new System.Windows.Forms.NumericUpDown();
-            this.label143 = new System.Windows.Forms.Label();
+            this.N18_J_2 = new System.Windows.Forms.Label();
             this.N18_B1 = new System.Windows.Forms.NumericUpDown();
-            this.label144 = new System.Windows.Forms.Label();
+            this.N18_J_1 = new System.Windows.Forms.Label();
             this.UNIONTAB_N40 = new System.Windows.Forms.TabPage();
             this.N40_P8 = new System.Windows.Forms.NumericUpDown();
             this.label129 = new System.Windows.Forms.Label();
@@ -543,6 +543,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 24);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -795,24 +796,24 @@
             this.UNIONTAB_N00.Controls.Add(this.N00_L_3_PAN_PANPOT);
             this.UNIONTAB_N00.Controls.Add(this.N00_L_1_COMBO);
             this.UNIONTAB_N00.Controls.Add(this.N00_B11);
-            this.UNIONTAB_N00.Controls.Add(this.label108);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_11);
             this.UNIONTAB_N00.Controls.Add(this.N00_B10);
-            this.UNIONTAB_N00.Controls.Add(this.label109);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_10);
             this.UNIONTAB_N00.Controls.Add(this.N00_B9);
-            this.UNIONTAB_N00.Controls.Add(this.label110);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_9);
             this.UNIONTAB_N00.Controls.Add(this.N00_B8);
-            this.UNIONTAB_N00.Controls.Add(this.label111);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_8);
             this.UNIONTAB_N00.Controls.Add(this.label112);
             this.UNIONTAB_N00.Controls.Add(this.label113);
             this.UNIONTAB_N00.Controls.Add(this.N00_L_3_PAN_PAN);
             this.UNIONTAB_N00.Controls.Add(this.N00_P4);
-            this.UNIONTAB_N00.Controls.Add(this.label114);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_4_DIRECTSOUND);
             this.UNIONTAB_N00.Controls.Add(this.N00_B3);
-            this.UNIONTAB_N00.Controls.Add(this.label115);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_3);
             this.UNIONTAB_N00.Controls.Add(this.N00_B2);
-            this.UNIONTAB_N00.Controls.Add(this.label116);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_2);
             this.UNIONTAB_N00.Controls.Add(this.N00_B1);
-            this.UNIONTAB_N00.Controls.Add(this.label117);
+            this.UNIONTAB_N00.Controls.Add(this.N00_J_1);
             this.UNIONTAB_N00.Location = new System.Drawing.Point(4, 28);
             this.UNIONTAB_N00.Margin = new System.Windows.Forms.Padding(4);
             this.UNIONTAB_N00.Name = "UNIONTAB_N00";
@@ -870,7 +871,7 @@
             // N00_B11
             // 
             this.N00_B11.Hexadecimal = true;
-            this.N00_B11.Location = new System.Drawing.Point(178, 228);
+            this.N00_B11.Location = new System.Drawing.Point(178, 227);
             this.N00_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N00_B11.Maximum = new decimal(new int[] {
             255,
@@ -881,21 +882,22 @@
             this.N00_B11.Size = new System.Drawing.Size(101, 25);
             this.N00_B11.TabIndex = 90;
             // 
-            // label108
+            // N00_J_11
             // 
-            this.label108.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label108.Location = new System.Drawing.Point(6, 223);
-            this.label108.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(166, 32);
-            this.label108.TabIndex = 89;
-            this.label108.Text = "rel";
-            this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_11.AccessibleDescription = "@ADSR";
+            this.N00_J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_11.Location = new System.Drawing.Point(6, 222);
+            this.N00_J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_11.Name = "N00_J_11";
+            this.N00_J_11.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_11.TabIndex = 89;
+            this.N00_J_11.Text = "rel";
+            this.N00_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B10
             // 
             this.N00_B10.Hexadecimal = true;
-            this.N00_B10.Location = new System.Drawing.Point(178, 197);
+            this.N00_B10.Location = new System.Drawing.Point(178, 196);
             this.N00_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N00_B10.Maximum = new decimal(new int[] {
             255,
@@ -906,21 +908,22 @@
             this.N00_B10.Size = new System.Drawing.Size(101, 25);
             this.N00_B10.TabIndex = 88;
             // 
-            // label109
+            // N00_J_10
             // 
-            this.label109.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label109.Location = new System.Drawing.Point(6, 192);
-            this.label109.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(166, 32);
-            this.label109.TabIndex = 87;
-            this.label109.Text = "sus";
-            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_10.AccessibleDescription = "@ADSR";
+            this.N00_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_10.Location = new System.Drawing.Point(6, 191);
+            this.N00_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_10.Name = "N00_J_10";
+            this.N00_J_10.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_10.TabIndex = 87;
+            this.N00_J_10.Text = "sus";
+            this.N00_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B9
             // 
             this.N00_B9.Hexadecimal = true;
-            this.N00_B9.Location = new System.Drawing.Point(178, 166);
+            this.N00_B9.Location = new System.Drawing.Point(178, 165);
             this.N00_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N00_B9.Maximum = new decimal(new int[] {
             255,
@@ -931,21 +934,22 @@
             this.N00_B9.Size = new System.Drawing.Size(101, 25);
             this.N00_B9.TabIndex = 86;
             // 
-            // label110
+            // N00_J_9
             // 
-            this.label110.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label110.Location = new System.Drawing.Point(6, 161);
-            this.label110.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(166, 32);
-            this.label110.TabIndex = 85;
-            this.label110.Text = "dec";
-            this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_9.AccessibleDescription = "@ADSR";
+            this.N00_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_9.Location = new System.Drawing.Point(6, 160);
+            this.N00_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_9.Name = "N00_J_9";
+            this.N00_J_9.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_9.TabIndex = 85;
+            this.N00_J_9.Text = "dec";
+            this.N00_J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B8
             // 
             this.N00_B8.Hexadecimal = true;
-            this.N00_B8.Location = new System.Drawing.Point(178, 134);
+            this.N00_B8.Location = new System.Drawing.Point(178, 133);
             this.N00_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N00_B8.Maximum = new decimal(new int[] {
             255,
@@ -956,16 +960,17 @@
             this.N00_B8.Size = new System.Drawing.Size(101, 25);
             this.N00_B8.TabIndex = 84;
             // 
-            // label111
+            // N00_J_8
             // 
-            this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label111.Location = new System.Drawing.Point(6, 130);
-            this.label111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(166, 32);
-            this.label111.TabIndex = 83;
-            this.label111.Text = "atk";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_8.AccessibleDescription = "@ADSR";
+            this.N00_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_8.Location = new System.Drawing.Point(6, 129);
+            this.N00_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_8.Name = "N00_J_8";
+            this.N00_J_8.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_8.TabIndex = 83;
+            this.N00_J_8.Text = "atk";
+            this.N00_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label112
             // 
@@ -1014,16 +1019,16 @@
             this.N00_P4.Size = new System.Drawing.Size(179, 25);
             this.N00_P4.TabIndex = 78;
             // 
-            // label114
+            // N00_J_4_DIRECTSOUND
             // 
-            this.label114.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label114.Location = new System.Drawing.Point(6, 98);
-            this.label114.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(166, 32);
-            this.label114.TabIndex = 77;
-            this.label114.Text = "音データ";
-            this.label114.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_4_DIRECTSOUND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_4_DIRECTSOUND.Location = new System.Drawing.Point(6, 98);
+            this.N00_J_4_DIRECTSOUND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_4_DIRECTSOUND.Name = "N00_J_4_DIRECTSOUND";
+            this.N00_J_4_DIRECTSOUND.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_4_DIRECTSOUND.TabIndex = 77;
+            this.N00_J_4_DIRECTSOUND.Text = "音データ";
+            this.N00_J_4_DIRECTSOUND.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B3
             // 
@@ -1039,16 +1044,16 @@
             this.N00_B3.Size = new System.Drawing.Size(101, 25);
             this.N00_B3.TabIndex = 76;
             // 
-            // label115
+            // N00_J_3
             // 
-            this.label115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label115.Location = new System.Drawing.Point(6, 67);
-            this.label115.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(166, 32);
-            this.label115.TabIndex = 75;
-            this.label115.Text = "PAN強制";
-            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_3.Location = new System.Drawing.Point(6, 67);
+            this.N00_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_3.Name = "N00_J_3";
+            this.N00_J_3.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_3.TabIndex = 75;
+            this.N00_J_3.Text = "PAN強制";
+            this.N00_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B2
             // 
@@ -1064,16 +1069,16 @@
             this.N00_B2.Size = new System.Drawing.Size(101, 25);
             this.N00_B2.TabIndex = 74;
             // 
-            // label116
+            // N00_J_2
             // 
-            this.label116.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label116.Location = new System.Drawing.Point(6, 36);
-            this.label116.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(166, 32);
-            this.label116.TabIndex = 73;
-            this.label116.Text = "00";
-            this.label116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_2.Location = new System.Drawing.Point(6, 36);
+            this.N00_J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_2.Name = "N00_J_2";
+            this.N00_J_2.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_2.TabIndex = 73;
+            this.N00_J_2.Text = "00";
+            this.N00_J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N00_B1
             // 
@@ -1089,16 +1094,16 @@
             this.N00_B1.Size = new System.Drawing.Size(101, 25);
             this.N00_B1.TabIndex = 72;
             // 
-            // label117
+            // N00_J_1
             // 
-            this.label117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label117.Location = new System.Drawing.Point(6, 5);
-            this.label117.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(166, 32);
-            this.label117.TabIndex = 71;
-            this.label117.Text = "基準ノート値";
-            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N00_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N00_J_1.Location = new System.Drawing.Point(6, 5);
+            this.N00_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N00_J_1.Name = "N00_J_1";
+            this.N00_J_1.Size = new System.Drawing.Size(166, 32);
+            this.N00_J_1.TabIndex = 71;
+            this.N00_J_1.Text = "基準ノート値";
+            this.N00_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UNIONTAB_N01
             // 
@@ -1207,7 +1212,7 @@
             // N01_B7
             // 
             this.N01_B7.Hexadecimal = true;
-            this.N01_B7.Location = new System.Drawing.Point(174, 196);
+            this.N01_B7.Location = new System.Drawing.Point(174, 195);
             this.N01_B7.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B7.Maximum = new decimal(new int[] {
             255,
@@ -1221,7 +1226,7 @@
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(2, 191);
+            this.label11.Location = new System.Drawing.Point(2, 190);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(166, 32);
@@ -1232,7 +1237,7 @@
             // N01_B6
             // 
             this.N01_B6.Hexadecimal = true;
-            this.N01_B6.Location = new System.Drawing.Point(174, 163);
+            this.N01_B6.Location = new System.Drawing.Point(174, 162);
             this.N01_B6.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B6.Maximum = new decimal(new int[] {
             255,
@@ -1246,7 +1251,7 @@
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(2, 160);
+            this.label10.Location = new System.Drawing.Point(2, 159);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(166, 32);
@@ -1282,7 +1287,7 @@
             // N01_B11
             // 
             this.N01_B11.Hexadecimal = true;
-            this.N01_B11.Location = new System.Drawing.Point(174, 320);
+            this.N01_B11.Location = new System.Drawing.Point(174, 318);
             this.N01_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B11.Maximum = new decimal(new int[] {
             255,
@@ -1295,8 +1300,9 @@
             // 
             // label15
             // 
+            this.label15.AccessibleDescription = "@ADSR";
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(2, 316);
+            this.label15.Location = new System.Drawing.Point(2, 314);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(166, 32);
@@ -1307,7 +1313,7 @@
             // N01_B10
             // 
             this.N01_B10.Hexadecimal = true;
-            this.N01_B10.Location = new System.Drawing.Point(174, 289);
+            this.N01_B10.Location = new System.Drawing.Point(174, 288);
             this.N01_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B10.Maximum = new decimal(new int[] {
             255,
@@ -1320,8 +1326,9 @@
             // 
             // label16
             // 
+            this.label16.AccessibleDescription = "@ADSR";
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(2, 284);
+            this.label16.Location = new System.Drawing.Point(2, 283);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(166, 32);
@@ -1332,7 +1339,7 @@
             // N01_B9
             // 
             this.N01_B9.Hexadecimal = true;
-            this.N01_B9.Location = new System.Drawing.Point(174, 258);
+            this.N01_B9.Location = new System.Drawing.Point(174, 257);
             this.N01_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B9.Maximum = new decimal(new int[] {
             255,
@@ -1345,8 +1352,9 @@
             // 
             // label14
             // 
+            this.label14.AccessibleDescription = "@ADSR";
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(2, 253);
+            this.label14.Location = new System.Drawing.Point(2, 252);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(166, 32);
@@ -1357,7 +1365,7 @@
             // N01_B8
             // 
             this.N01_B8.Hexadecimal = true;
-            this.N01_B8.Location = new System.Drawing.Point(174, 227);
+            this.N01_B8.Location = new System.Drawing.Point(174, 226);
             this.N01_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N01_B8.Maximum = new decimal(new int[] {
             255,
@@ -1370,8 +1378,9 @@
             // 
             // label13
             // 
+            this.label13.AccessibleDescription = "@ADSR";
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(2, 222);
+            this.label13.Location = new System.Drawing.Point(2, 221);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(166, 32);
@@ -1530,7 +1539,7 @@
             // N02_B7
             // 
             this.N02_B7.Hexadecimal = true;
-            this.N02_B7.Location = new System.Drawing.Point(176, 197);
+            this.N02_B7.Location = new System.Drawing.Point(176, 196);
             this.N02_B7.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B7.Maximum = new decimal(new int[] {
             255,
@@ -1544,7 +1553,7 @@
             // label56
             // 
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Location = new System.Drawing.Point(5, 192);
+            this.label56.Location = new System.Drawing.Point(5, 191);
             this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(166, 32);
@@ -1555,7 +1564,7 @@
             // N02_B6
             // 
             this.N02_B6.Hexadecimal = true;
-            this.N02_B6.Location = new System.Drawing.Point(176, 165);
+            this.N02_B6.Location = new System.Drawing.Point(176, 164);
             this.N02_B6.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B6.Maximum = new decimal(new int[] {
             255,
@@ -1569,7 +1578,7 @@
             // label57
             // 
             this.label57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label57.Location = new System.Drawing.Point(5, 161);
+            this.label57.Location = new System.Drawing.Point(5, 160);
             this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(166, 32);
@@ -1580,7 +1589,7 @@
             // N02_B5
             // 
             this.N02_B5.Hexadecimal = true;
-            this.N02_B5.Location = new System.Drawing.Point(176, 133);
+            this.N02_B5.Location = new System.Drawing.Point(176, 132);
             this.N02_B5.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B5.Maximum = new decimal(new int[] {
             255,
@@ -1594,7 +1603,7 @@
             // label58
             // 
             this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label58.Location = new System.Drawing.Point(5, 130);
+            this.label58.Location = new System.Drawing.Point(5, 129);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(166, 32);
@@ -1605,7 +1614,7 @@
             // N02_B11
             // 
             this.N02_B11.Hexadecimal = true;
-            this.N02_B11.Location = new System.Drawing.Point(176, 322);
+            this.N02_B11.Location = new System.Drawing.Point(176, 320);
             this.N02_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B11.Maximum = new decimal(new int[] {
             255,
@@ -1618,8 +1627,9 @@
             // 
             // label59
             // 
+            this.label59.AccessibleDescription = "@ADSR";
             this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label59.Location = new System.Drawing.Point(5, 317);
+            this.label59.Location = new System.Drawing.Point(5, 315);
             this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(166, 32);
@@ -1630,7 +1640,7 @@
             // N02_B10
             // 
             this.N02_B10.Hexadecimal = true;
-            this.N02_B10.Location = new System.Drawing.Point(176, 291);
+            this.N02_B10.Location = new System.Drawing.Point(176, 289);
             this.N02_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B10.Maximum = new decimal(new int[] {
             255,
@@ -1643,8 +1653,9 @@
             // 
             // label60
             // 
+            this.label60.AccessibleDescription = "@ADSR";
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label60.Location = new System.Drawing.Point(5, 286);
+            this.label60.Location = new System.Drawing.Point(5, 284);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(166, 32);
@@ -1655,7 +1666,7 @@
             // N02_B9
             // 
             this.N02_B9.Hexadecimal = true;
-            this.N02_B9.Location = new System.Drawing.Point(176, 259);
+            this.N02_B9.Location = new System.Drawing.Point(176, 257);
             this.N02_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B9.Maximum = new decimal(new int[] {
             255,
@@ -1668,8 +1679,9 @@
             // 
             // label61
             // 
+            this.label61.AccessibleDescription = "@ADSR";
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label61.Location = new System.Drawing.Point(5, 255);
+            this.label61.Location = new System.Drawing.Point(5, 253);
             this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(166, 32);
@@ -1680,7 +1692,7 @@
             // N02_B8
             // 
             this.N02_B8.Hexadecimal = true;
-            this.N02_B8.Location = new System.Drawing.Point(176, 228);
+            this.N02_B8.Location = new System.Drawing.Point(176, 227);
             this.N02_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B8.Maximum = new decimal(new int[] {
             255,
@@ -1693,8 +1705,9 @@
             // 
             // label62
             // 
+            this.label62.AccessibleDescription = "@ADSR";
             this.label62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label62.Location = new System.Drawing.Point(5, 223);
+            this.label62.Location = new System.Drawing.Point(5, 222);
             this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(166, 32);
@@ -1711,7 +1724,7 @@
             "01=25.0%",
             "02=50.0%",
             "03=75.0%"});
-            this.N02_L_4.Location = new System.Drawing.Point(283, 101);
+            this.N02_L_4.Location = new System.Drawing.Point(283, 100);
             this.N02_L_4.Margin = new System.Windows.Forms.Padding(4);
             this.N02_L_4.Name = "N02_L_4";
             this.N02_L_4.Size = new System.Drawing.Size(237, 26);
@@ -1720,7 +1733,7 @@
             // N02_B4
             // 
             this.N02_B4.Hexadecimal = true;
-            this.N02_B4.Location = new System.Drawing.Point(176, 102);
+            this.N02_B4.Location = new System.Drawing.Point(176, 101);
             this.N02_B4.Margin = new System.Windows.Forms.Padding(2);
             this.N02_B4.Maximum = new decimal(new int[] {
             255,
@@ -1734,7 +1747,7 @@
             // label63
             // 
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label63.Location = new System.Drawing.Point(5, 99);
+            this.label63.Location = new System.Drawing.Point(5, 98);
             this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(166, 32);
@@ -1846,7 +1859,7 @@
             // N03_B11
             // 
             this.N03_B11.Hexadecimal = true;
-            this.N03_B11.Location = new System.Drawing.Point(178, 227);
+            this.N03_B11.Location = new System.Drawing.Point(178, 225);
             this.N03_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B11.Maximum = new decimal(new int[] {
             255,
@@ -1859,8 +1872,9 @@
             // 
             // label79
             // 
+            this.label79.AccessibleDescription = "@ADSR";
             this.label79.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label79.Location = new System.Drawing.Point(6, 222);
+            this.label79.Location = new System.Drawing.Point(6, 220);
             this.label79.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(166, 32);
@@ -1871,7 +1885,7 @@
             // N03_B10
             // 
             this.N03_B10.Hexadecimal = true;
-            this.N03_B10.Location = new System.Drawing.Point(178, 195);
+            this.N03_B10.Location = new System.Drawing.Point(178, 193);
             this.N03_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B10.Maximum = new decimal(new int[] {
             255,
@@ -1884,8 +1898,9 @@
             // 
             // label80
             // 
+            this.label80.AccessibleDescription = "@ADSR";
             this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label80.Location = new System.Drawing.Point(6, 191);
+            this.label80.Location = new System.Drawing.Point(6, 189);
             this.label80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(166, 32);
@@ -1896,7 +1911,7 @@
             // N03_B9
             // 
             this.N03_B9.Hexadecimal = true;
-            this.N03_B9.Location = new System.Drawing.Point(178, 164);
+            this.N03_B9.Location = new System.Drawing.Point(178, 163);
             this.N03_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B9.Maximum = new decimal(new int[] {
             255,
@@ -1909,8 +1924,9 @@
             // 
             // label81
             // 
+            this.label81.AccessibleDescription = "@ADSR";
             this.label81.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label81.Location = new System.Drawing.Point(6, 159);
+            this.label81.Location = new System.Drawing.Point(6, 158);
             this.label81.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(166, 32);
@@ -1921,7 +1937,7 @@
             // N03_B8
             // 
             this.N03_B8.Hexadecimal = true;
-            this.N03_B8.Location = new System.Drawing.Point(178, 133);
+            this.N03_B8.Location = new System.Drawing.Point(178, 132);
             this.N03_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B8.Maximum = new decimal(new int[] {
             255,
@@ -1934,8 +1950,9 @@
             // 
             // label82
             // 
+            this.label82.AccessibleDescription = "@ADSR";
             this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label82.Location = new System.Drawing.Point(6, 128);
+            this.label82.Location = new System.Drawing.Point(6, 127);
             this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(166, 32);
@@ -1946,7 +1963,7 @@
             // N03_P4
             // 
             this.N03_P4.Hexadecimal = true;
-            this.N03_P4.Location = new System.Drawing.Point(178, 101);
+            this.N03_P4.Location = new System.Drawing.Point(178, 100);
             this.N03_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N03_P4.Maximum = new decimal(new int[] {
             255,
@@ -1960,7 +1977,7 @@
             // label83
             // 
             this.label83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label83.Location = new System.Drawing.Point(6, 97);
+            this.label83.Location = new System.Drawing.Point(6, 96);
             this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(166, 32);
@@ -1971,7 +1988,7 @@
             // N03_B3
             // 
             this.N03_B3.Hexadecimal = true;
-            this.N03_B3.Location = new System.Drawing.Point(178, 69);
+            this.N03_B3.Location = new System.Drawing.Point(178, 68);
             this.N03_B3.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B3.Maximum = new decimal(new int[] {
             255,
@@ -1985,7 +2002,7 @@
             // label84
             // 
             this.label84.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label84.Location = new System.Drawing.Point(6, 66);
+            this.label84.Location = new System.Drawing.Point(6, 65);
             this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(166, 32);
@@ -1996,7 +2013,7 @@
             // N03_B2
             // 
             this.N03_B2.Hexadecimal = true;
-            this.N03_B2.Location = new System.Drawing.Point(178, 38);
+            this.N03_B2.Location = new System.Drawing.Point(178, 37);
             this.N03_B2.Margin = new System.Windows.Forms.Padding(2);
             this.N03_B2.Maximum = new decimal(new int[] {
             255,
@@ -2010,7 +2027,7 @@
             // label85
             // 
             this.label85.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label85.Location = new System.Drawing.Point(6, 35);
+            this.label85.Location = new System.Drawing.Point(6, 34);
             this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(166, 32);
@@ -2077,7 +2094,7 @@
             this.N04_L_4_COMBO.Items.AddRange(new object[] {
             "0=32768 Samples",
             "1=256samples"});
-            this.N04_L_4_COMBO.Location = new System.Drawing.Point(370, 100);
+            this.N04_L_4_COMBO.Location = new System.Drawing.Point(370, 99);
             this.N04_L_4_COMBO.Margin = new System.Windows.Forms.Padding(4);
             this.N04_L_4_COMBO.Name = "N04_L_4_COMBO";
             this.N04_L_4_COMBO.Size = new System.Drawing.Size(144, 26);
@@ -2086,7 +2103,7 @@
             // N04_B11
             // 
             this.N04_B11.Hexadecimal = true;
-            this.N04_B11.Location = new System.Drawing.Point(176, 226);
+            this.N04_B11.Location = new System.Drawing.Point(176, 225);
             this.N04_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N04_B11.Maximum = new decimal(new int[] {
             255,
@@ -2099,8 +2116,9 @@
             // 
             // label76
             // 
+            this.label76.AccessibleDescription = "@ADSR";
             this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label76.Location = new System.Drawing.Point(5, 221);
+            this.label76.Location = new System.Drawing.Point(5, 220);
             this.label76.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(166, 32);
@@ -2111,7 +2129,7 @@
             // N04_B10
             // 
             this.N04_B10.Hexadecimal = true;
-            this.N04_B10.Location = new System.Drawing.Point(176, 195);
+            this.N04_B10.Location = new System.Drawing.Point(176, 194);
             this.N04_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N04_B10.Maximum = new decimal(new int[] {
             255,
@@ -2124,8 +2142,9 @@
             // 
             // label77
             // 
+            this.label77.AccessibleDescription = "@ADSR";
             this.label77.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label77.Location = new System.Drawing.Point(5, 190);
+            this.label77.Location = new System.Drawing.Point(5, 189);
             this.label77.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(166, 32);
@@ -2136,7 +2155,7 @@
             // N04_B9
             // 
             this.N04_B9.Hexadecimal = true;
-            this.N04_B9.Location = new System.Drawing.Point(176, 164);
+            this.N04_B9.Location = new System.Drawing.Point(176, 163);
             this.N04_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N04_B9.Maximum = new decimal(new int[] {
             255,
@@ -2149,8 +2168,9 @@
             // 
             // label78
             // 
+            this.label78.AccessibleDescription = "@ADSR";
             this.label78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label78.Location = new System.Drawing.Point(5, 159);
+            this.label78.Location = new System.Drawing.Point(5, 158);
             this.label78.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(166, 32);
@@ -2161,7 +2181,7 @@
             // N04_B8
             // 
             this.N04_B8.Hexadecimal = true;
-            this.N04_B8.Location = new System.Drawing.Point(176, 133);
+            this.N04_B8.Location = new System.Drawing.Point(176, 132);
             this.N04_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N04_B8.Maximum = new decimal(new int[] {
             255,
@@ -2174,8 +2194,9 @@
             // 
             // label87
             // 
+            this.label87.AccessibleDescription = "@ADSR";
             this.label87.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label87.Location = new System.Drawing.Point(5, 128);
+            this.label87.Location = new System.Drawing.Point(5, 127);
             this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(166, 32);
@@ -2186,7 +2207,7 @@
             // N04_P4
             // 
             this.N04_P4.Hexadecimal = true;
-            this.N04_P4.Location = new System.Drawing.Point(176, 100);
+            this.N04_P4.Location = new System.Drawing.Point(176, 99);
             this.N04_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N04_P4.Maximum = new decimal(new int[] {
             255,
@@ -2200,7 +2221,7 @@
             // label88
             // 
             this.label88.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label88.Location = new System.Drawing.Point(5, 97);
+            this.label88.Location = new System.Drawing.Point(5, 96);
             this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(166, 32);
@@ -2291,24 +2312,24 @@
             this.UNIONTAB_N08.Controls.Add(this.N08_L_3_PAN_PANPOT);
             this.UNIONTAB_N08.Controls.Add(this.N08_L_1_COMBO);
             this.UNIONTAB_N08.Controls.Add(this.N08_B11);
-            this.UNIONTAB_N08.Controls.Add(this.label17);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_11);
             this.UNIONTAB_N08.Controls.Add(this.N08_B10);
-            this.UNIONTAB_N08.Controls.Add(this.label18);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_10);
             this.UNIONTAB_N08.Controls.Add(this.N08_B9);
-            this.UNIONTAB_N08.Controls.Add(this.label19);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_9);
             this.UNIONTAB_N08.Controls.Add(this.N08_B8);
-            this.UNIONTAB_N08.Controls.Add(this.label20);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_8);
             this.UNIONTAB_N08.Controls.Add(this.label21);
             this.UNIONTAB_N08.Controls.Add(this.label24);
             this.UNIONTAB_N08.Controls.Add(this.N08_L_3_PAN_PAN);
             this.UNIONTAB_N08.Controls.Add(this.N08_P4);
-            this.UNIONTAB_N08.Controls.Add(this.label25);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_4_DIRECTSOUND);
             this.UNIONTAB_N08.Controls.Add(this.N08_B3);
-            this.UNIONTAB_N08.Controls.Add(this.label26);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_3);
             this.UNIONTAB_N08.Controls.Add(this.N08_B2);
-            this.UNIONTAB_N08.Controls.Add(this.label27);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_2);
             this.UNIONTAB_N08.Controls.Add(this.N08_B1);
-            this.UNIONTAB_N08.Controls.Add(this.label28);
+            this.UNIONTAB_N08.Controls.Add(this.N08_J_1);
             this.UNIONTAB_N08.Location = new System.Drawing.Point(4, 28);
             this.UNIONTAB_N08.Margin = new System.Windows.Forms.Padding(4);
             this.UNIONTAB_N08.Name = "UNIONTAB_N08";
@@ -2365,7 +2386,7 @@
             // N08_B11
             // 
             this.N08_B11.Hexadecimal = true;
-            this.N08_B11.Location = new System.Drawing.Point(173, 228);
+            this.N08_B11.Location = new System.Drawing.Point(173, 227);
             this.N08_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N08_B11.Maximum = new decimal(new int[] {
             255,
@@ -2376,21 +2397,22 @@
             this.N08_B11.Size = new System.Drawing.Size(101, 25);
             this.N08_B11.TabIndex = 69;
             // 
-            // label17
+            // N08_J_11
             // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(1, 223);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 32);
-            this.label17.TabIndex = 68;
-            this.label17.Text = "rel";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_11.AccessibleDescription = "@ADSR";
+            this.N08_J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_11.Location = new System.Drawing.Point(1, 222);
+            this.N08_J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_11.Name = "N08_J_11";
+            this.N08_J_11.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_11.TabIndex = 68;
+            this.N08_J_11.Text = "rel";
+            this.N08_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B10
             // 
             this.N08_B10.Hexadecimal = true;
-            this.N08_B10.Location = new System.Drawing.Point(173, 197);
+            this.N08_B10.Location = new System.Drawing.Point(173, 196);
             this.N08_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N08_B10.Maximum = new decimal(new int[] {
             255,
@@ -2401,21 +2423,22 @@
             this.N08_B10.Size = new System.Drawing.Size(101, 25);
             this.N08_B10.TabIndex = 67;
             // 
-            // label18
+            // N08_J_10
             // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(1, 192);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(166, 32);
-            this.label18.TabIndex = 66;
-            this.label18.Text = "sus";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_10.AccessibleDescription = "@ADSR";
+            this.N08_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_10.Location = new System.Drawing.Point(1, 191);
+            this.N08_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_10.Name = "N08_J_10";
+            this.N08_J_10.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_10.TabIndex = 66;
+            this.N08_J_10.Text = "sus";
+            this.N08_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B9
             // 
             this.N08_B9.Hexadecimal = true;
-            this.N08_B9.Location = new System.Drawing.Point(173, 166);
+            this.N08_B9.Location = new System.Drawing.Point(173, 165);
             this.N08_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N08_B9.Maximum = new decimal(new int[] {
             255,
@@ -2426,21 +2449,22 @@
             this.N08_B9.Size = new System.Drawing.Size(101, 25);
             this.N08_B9.TabIndex = 65;
             // 
-            // label19
+            // N08_J_9
             // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(1, 161);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(166, 32);
-            this.label19.TabIndex = 64;
-            this.label19.Text = "dec";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_9.AccessibleDescription = "@ADSR";
+            this.N08_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_9.Location = new System.Drawing.Point(1, 160);
+            this.N08_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_9.Name = "N08_J_9";
+            this.N08_J_9.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_9.TabIndex = 64;
+            this.N08_J_9.Text = "dec";
+            this.N08_J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B8
             // 
             this.N08_B8.Hexadecimal = true;
-            this.N08_B8.Location = new System.Drawing.Point(173, 134);
+            this.N08_B8.Location = new System.Drawing.Point(173, 133);
             this.N08_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N08_B8.Maximum = new decimal(new int[] {
             255,
@@ -2451,16 +2475,17 @@
             this.N08_B8.Size = new System.Drawing.Size(101, 25);
             this.N08_B8.TabIndex = 63;
             // 
-            // label20
+            // N08_J_8
             // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(1, 130);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(166, 32);
-            this.label20.TabIndex = 62;
-            this.label20.Text = "atk";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_8.AccessibleDescription = "@ADSR";
+            this.N08_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_8.Location = new System.Drawing.Point(1, 129);
+            this.N08_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_8.Name = "N08_J_8";
+            this.N08_J_8.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_8.TabIndex = 62;
+            this.N08_J_8.Text = "atk";
+            this.N08_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label21
             // 
@@ -2509,16 +2534,16 @@
             this.N08_P4.Size = new System.Drawing.Size(179, 25);
             this.N08_P4.TabIndex = 57;
             // 
-            // label25
+            // N08_J_4_DIRECTSOUND
             // 
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(1, 98);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(166, 32);
-            this.label25.TabIndex = 56;
-            this.label25.Text = "音データ";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_4_DIRECTSOUND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_4_DIRECTSOUND.Location = new System.Drawing.Point(1, 98);
+            this.N08_J_4_DIRECTSOUND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_4_DIRECTSOUND.Name = "N08_J_4_DIRECTSOUND";
+            this.N08_J_4_DIRECTSOUND.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_4_DIRECTSOUND.TabIndex = 56;
+            this.N08_J_4_DIRECTSOUND.Text = "音データ";
+            this.N08_J_4_DIRECTSOUND.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B3
             // 
@@ -2534,16 +2559,16 @@
             this.N08_B3.Size = new System.Drawing.Size(101, 25);
             this.N08_B3.TabIndex = 55;
             // 
-            // label26
+            // N08_J_3
             // 
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Location = new System.Drawing.Point(1, 67);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(166, 32);
-            this.label26.TabIndex = 54;
-            this.label26.Text = "PAN強制";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_3.Location = new System.Drawing.Point(1, 67);
+            this.N08_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_3.Name = "N08_J_3";
+            this.N08_J_3.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_3.TabIndex = 54;
+            this.N08_J_3.Text = "PAN強制";
+            this.N08_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B2
             // 
@@ -2559,16 +2584,16 @@
             this.N08_B2.Size = new System.Drawing.Size(101, 25);
             this.N08_B2.TabIndex = 53;
             // 
-            // label27
+            // N08_J_2
             // 
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Location = new System.Drawing.Point(1, 36);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(166, 32);
-            this.label27.TabIndex = 52;
-            this.label27.Text = "00";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_2.Location = new System.Drawing.Point(1, 36);
+            this.N08_J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_2.Name = "N08_J_2";
+            this.N08_J_2.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_2.TabIndex = 52;
+            this.N08_J_2.Text = "00";
+            this.N08_J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N08_B1
             // 
@@ -2584,16 +2609,16 @@
             this.N08_B1.Size = new System.Drawing.Size(101, 25);
             this.N08_B1.TabIndex = 51;
             // 
-            // label28
+            // N08_J_1
             // 
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Location = new System.Drawing.Point(1, 5);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(166, 32);
-            this.label28.TabIndex = 50;
-            this.label28.Text = "基準ノート値";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N08_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N08_J_1.Location = new System.Drawing.Point(1, 5);
+            this.N08_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N08_J_1.Name = "N08_J_1";
+            this.N08_J_1.Size = new System.Drawing.Size(166, 32);
+            this.N08_J_1.TabIndex = 50;
+            this.N08_J_1.Text = "基準ノート値";
+            this.N08_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UNIONTAB_N09
             // 
@@ -2701,7 +2726,7 @@
             // N09_B7
             // 
             this.N09_B7.Hexadecimal = true;
-            this.N09_B7.Location = new System.Drawing.Point(176, 192);
+            this.N09_B7.Location = new System.Drawing.Point(176, 191);
             this.N09_B7.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B7.Maximum = new decimal(new int[] {
             255,
@@ -2715,7 +2740,7 @@
             // label43
             // 
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Location = new System.Drawing.Point(5, 187);
+            this.label43.Location = new System.Drawing.Point(5, 186);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(166, 32);
@@ -2726,7 +2751,7 @@
             // N09_B6
             // 
             this.N09_B6.Hexadecimal = true;
-            this.N09_B6.Location = new System.Drawing.Point(176, 160);
+            this.N09_B6.Location = new System.Drawing.Point(176, 159);
             this.N09_B6.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B6.Maximum = new decimal(new int[] {
             255,
@@ -2740,7 +2765,7 @@
             // label44
             // 
             this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label44.Location = new System.Drawing.Point(5, 156);
+            this.label44.Location = new System.Drawing.Point(5, 155);
             this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(166, 32);
@@ -2751,7 +2776,7 @@
             // N09_B5
             // 
             this.N09_B5.Hexadecimal = true;
-            this.N09_B5.Location = new System.Drawing.Point(176, 128);
+            this.N09_B5.Location = new System.Drawing.Point(176, 127);
             this.N09_B5.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B5.Maximum = new decimal(new int[] {
             255,
@@ -2765,7 +2790,7 @@
             // label45
             // 
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label45.Location = new System.Drawing.Point(5, 125);
+            this.label45.Location = new System.Drawing.Point(5, 124);
             this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(166, 32);
@@ -2776,7 +2801,7 @@
             // N09_B11
             // 
             this.N09_B11.Hexadecimal = true;
-            this.N09_B11.Location = new System.Drawing.Point(176, 317);
+            this.N09_B11.Location = new System.Drawing.Point(176, 315);
             this.N09_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B11.Maximum = new decimal(new int[] {
             255,
@@ -2789,8 +2814,9 @@
             // 
             // label46
             // 
+            this.label46.AccessibleDescription = "@ADSR";
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label46.Location = new System.Drawing.Point(5, 312);
+            this.label46.Location = new System.Drawing.Point(5, 310);
             this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(166, 32);
@@ -2801,7 +2827,7 @@
             // N09_B10
             // 
             this.N09_B10.Hexadecimal = true;
-            this.N09_B10.Location = new System.Drawing.Point(176, 286);
+            this.N09_B10.Location = new System.Drawing.Point(176, 284);
             this.N09_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B10.Maximum = new decimal(new int[] {
             255,
@@ -2814,8 +2840,9 @@
             // 
             // label47
             // 
+            this.label47.AccessibleDescription = "@ADSR";
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label47.Location = new System.Drawing.Point(5, 281);
+            this.label47.Location = new System.Drawing.Point(5, 279);
             this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(166, 32);
@@ -2826,7 +2853,7 @@
             // N09_B9
             // 
             this.N09_B9.Hexadecimal = true;
-            this.N09_B9.Location = new System.Drawing.Point(176, 254);
+            this.N09_B9.Location = new System.Drawing.Point(176, 252);
             this.N09_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B9.Maximum = new decimal(new int[] {
             255,
@@ -2839,8 +2866,9 @@
             // 
             // label48
             // 
+            this.label48.AccessibleDescription = "@ADSR";
             this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Location = new System.Drawing.Point(5, 250);
+            this.label48.Location = new System.Drawing.Point(5, 248);
             this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(166, 32);
@@ -2851,7 +2879,7 @@
             // N09_B8
             // 
             this.N09_B8.Hexadecimal = true;
-            this.N09_B8.Location = new System.Drawing.Point(176, 223);
+            this.N09_B8.Location = new System.Drawing.Point(176, 222);
             this.N09_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B8.Maximum = new decimal(new int[] {
             255,
@@ -2864,8 +2892,9 @@
             // 
             // label49
             // 
+            this.label49.AccessibleDescription = "@ADSR";
             this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label49.Location = new System.Drawing.Point(5, 218);
+            this.label49.Location = new System.Drawing.Point(5, 217);
             this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(166, 32);
@@ -2882,7 +2911,7 @@
             "01=25.0%",
             "02=50.0%",
             "03=75.0%"});
-            this.N09_L_4_COMBO.Location = new System.Drawing.Point(283, 96);
+            this.N09_L_4_COMBO.Location = new System.Drawing.Point(283, 95);
             this.N09_L_4_COMBO.Margin = new System.Windows.Forms.Padding(4);
             this.N09_L_4_COMBO.Name = "N09_L_4_COMBO";
             this.N09_L_4_COMBO.Size = new System.Drawing.Size(237, 26);
@@ -2891,7 +2920,7 @@
             // N09_B4
             // 
             this.N09_B4.Hexadecimal = true;
-            this.N09_B4.Location = new System.Drawing.Point(176, 97);
+            this.N09_B4.Location = new System.Drawing.Point(176, 96);
             this.N09_B4.Margin = new System.Windows.Forms.Padding(2);
             this.N09_B4.Maximum = new decimal(new int[] {
             255,
@@ -2905,7 +2934,7 @@
             // label50
             // 
             this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label50.Location = new System.Drawing.Point(5, 94);
+            this.label50.Location = new System.Drawing.Point(5, 93);
             this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(166, 32);
@@ -3024,7 +3053,7 @@
             // N0A_B7
             // 
             this.N0A_B7.Hexadecimal = true;
-            this.N0A_B7.Location = new System.Drawing.Point(176, 193);
+            this.N0A_B7.Location = new System.Drawing.Point(176, 192);
             this.N0A_B7.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B7.Maximum = new decimal(new int[] {
             255,
@@ -3038,7 +3067,7 @@
             // label54
             // 
             this.label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label54.Location = new System.Drawing.Point(5, 188);
+            this.label54.Location = new System.Drawing.Point(5, 187);
             this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(166, 32);
@@ -3049,7 +3078,7 @@
             // N0A_B6
             // 
             this.N0A_B6.Hexadecimal = true;
-            this.N0A_B6.Location = new System.Drawing.Point(176, 161);
+            this.N0A_B6.Location = new System.Drawing.Point(176, 160);
             this.N0A_B6.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B6.Maximum = new decimal(new int[] {
             255,
@@ -3063,7 +3092,7 @@
             // label55
             // 
             this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label55.Location = new System.Drawing.Point(5, 157);
+            this.label55.Location = new System.Drawing.Point(5, 156);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(166, 32);
@@ -3074,7 +3103,7 @@
             // N0A_B5
             // 
             this.N0A_B5.Hexadecimal = true;
-            this.N0A_B5.Location = new System.Drawing.Point(176, 130);
+            this.N0A_B5.Location = new System.Drawing.Point(176, 129);
             this.N0A_B5.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B5.Maximum = new decimal(new int[] {
             255,
@@ -3088,7 +3117,7 @@
             // label67
             // 
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label67.Location = new System.Drawing.Point(5, 126);
+            this.label67.Location = new System.Drawing.Point(5, 125);
             this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(166, 32);
@@ -3099,7 +3128,7 @@
             // N0A_B11
             // 
             this.N0A_B11.Hexadecimal = true;
-            this.N0A_B11.Location = new System.Drawing.Point(176, 318);
+            this.N0A_B11.Location = new System.Drawing.Point(176, 316);
             this.N0A_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B11.Maximum = new decimal(new int[] {
             255,
@@ -3112,8 +3141,9 @@
             // 
             // label68
             // 
+            this.label68.AccessibleDescription = "@ADSR";
             this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label68.Location = new System.Drawing.Point(5, 313);
+            this.label68.Location = new System.Drawing.Point(5, 311);
             this.label68.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(166, 32);
@@ -3124,7 +3154,7 @@
             // N0A_B10
             // 
             this.N0A_B10.Hexadecimal = true;
-            this.N0A_B10.Location = new System.Drawing.Point(176, 287);
+            this.N0A_B10.Location = new System.Drawing.Point(176, 285);
             this.N0A_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B10.Maximum = new decimal(new int[] {
             255,
@@ -3137,8 +3167,9 @@
             // 
             // label69
             // 
+            this.label69.AccessibleDescription = "@ADSR";
             this.label69.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label69.Location = new System.Drawing.Point(5, 282);
+            this.label69.Location = new System.Drawing.Point(5, 280);
             this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(166, 32);
@@ -3149,7 +3180,7 @@
             // N0A_B9
             // 
             this.N0A_B9.Hexadecimal = true;
-            this.N0A_B9.Location = new System.Drawing.Point(176, 256);
+            this.N0A_B9.Location = new System.Drawing.Point(176, 254);
             this.N0A_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B9.Maximum = new decimal(new int[] {
             255,
@@ -3162,8 +3193,9 @@
             // 
             // label70
             // 
+            this.label70.AccessibleDescription = "@ADSR";
             this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label70.Location = new System.Drawing.Point(5, 251);
+            this.label70.Location = new System.Drawing.Point(5, 249);
             this.label70.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(166, 32);
@@ -3174,7 +3206,7 @@
             // N0A_B8
             // 
             this.N0A_B8.Hexadecimal = true;
-            this.N0A_B8.Location = new System.Drawing.Point(176, 224);
+            this.N0A_B8.Location = new System.Drawing.Point(176, 222);
             this.N0A_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B8.Maximum = new decimal(new int[] {
             255,
@@ -3187,8 +3219,9 @@
             // 
             // label71
             // 
+            this.label71.AccessibleDescription = "@ADSR";
             this.label71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label71.Location = new System.Drawing.Point(5, 220);
+            this.label71.Location = new System.Drawing.Point(5, 218);
             this.label71.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(166, 32);
@@ -3205,7 +3238,7 @@
             "01=25.0%",
             "02=50.0%",
             "03=75.0%"});
-            this.N0A_L_4_COMBO.Location = new System.Drawing.Point(283, 97);
+            this.N0A_L_4_COMBO.Location = new System.Drawing.Point(283, 96);
             this.N0A_L_4_COMBO.Margin = new System.Windows.Forms.Padding(4);
             this.N0A_L_4_COMBO.Name = "N0A_L_4_COMBO";
             this.N0A_L_4_COMBO.Size = new System.Drawing.Size(237, 26);
@@ -3214,7 +3247,7 @@
             // N0A_B4
             // 
             this.N0A_B4.Hexadecimal = true;
-            this.N0A_B4.Location = new System.Drawing.Point(176, 98);
+            this.N0A_B4.Location = new System.Drawing.Point(176, 97);
             this.N0A_B4.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B4.Maximum = new decimal(new int[] {
             255,
@@ -3228,7 +3261,7 @@
             // label72
             // 
             this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label72.Location = new System.Drawing.Point(5, 95);
+            this.label72.Location = new System.Drawing.Point(5, 94);
             this.label72.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(166, 32);
@@ -3239,7 +3272,7 @@
             // N0A_B3
             // 
             this.N0A_B3.Hexadecimal = true;
-            this.N0A_B3.Location = new System.Drawing.Point(176, 67);
+            this.N0A_B3.Location = new System.Drawing.Point(176, 66);
             this.N0A_B3.Margin = new System.Windows.Forms.Padding(2);
             this.N0A_B3.Maximum = new decimal(new int[] {
             255,
@@ -3253,7 +3286,7 @@
             // label73
             // 
             this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label73.Location = new System.Drawing.Point(5, 64);
+            this.label73.Location = new System.Drawing.Point(5, 63);
             this.label73.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(166, 32);
@@ -3340,7 +3373,7 @@
             // N0B_B11
             // 
             this.N0B_B11.Hexadecimal = true;
-            this.N0B_B11.Location = new System.Drawing.Point(184, 235);
+            this.N0B_B11.Location = new System.Drawing.Point(184, 234);
             this.N0B_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N0B_B11.Maximum = new decimal(new int[] {
             255,
@@ -3353,8 +3386,9 @@
             // 
             // label92
             // 
+            this.label92.AccessibleDescription = "@ADSR";
             this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label92.Location = new System.Drawing.Point(12, 230);
+            this.label92.Location = new System.Drawing.Point(12, 229);
             this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(166, 32);
@@ -3365,7 +3399,7 @@
             // N0B_B10
             // 
             this.N0B_B10.Hexadecimal = true;
-            this.N0B_B10.Location = new System.Drawing.Point(184, 204);
+            this.N0B_B10.Location = new System.Drawing.Point(184, 203);
             this.N0B_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N0B_B10.Maximum = new decimal(new int[] {
             255,
@@ -3378,8 +3412,9 @@
             // 
             // label93
             // 
+            this.label93.AccessibleDescription = "@ADSR";
             this.label93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label93.Location = new System.Drawing.Point(12, 199);
+            this.label93.Location = new System.Drawing.Point(12, 198);
             this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(166, 32);
@@ -3390,7 +3425,7 @@
             // N0B_B9
             // 
             this.N0B_B9.Hexadecimal = true;
-            this.N0B_B9.Location = new System.Drawing.Point(184, 173);
+            this.N0B_B9.Location = new System.Drawing.Point(184, 172);
             this.N0B_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N0B_B9.Maximum = new decimal(new int[] {
             255,
@@ -3403,8 +3438,9 @@
             // 
             // label94
             // 
+            this.label94.AccessibleDescription = "@ADSR";
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label94.Location = new System.Drawing.Point(12, 168);
+            this.label94.Location = new System.Drawing.Point(12, 167);
             this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(166, 32);
@@ -3415,7 +3451,7 @@
             // N0B_B8
             // 
             this.N0B_B8.Hexadecimal = true;
-            this.N0B_B8.Location = new System.Drawing.Point(184, 142);
+            this.N0B_B8.Location = new System.Drawing.Point(184, 141);
             this.N0B_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N0B_B8.Maximum = new decimal(new int[] {
             255,
@@ -3428,8 +3464,9 @@
             // 
             // label95
             // 
+            this.label95.AccessibleDescription = "@ADSR";
             this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label95.Location = new System.Drawing.Point(12, 137);
+            this.label95.Location = new System.Drawing.Point(12, 136);
             this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(166, 32);
@@ -3440,7 +3477,7 @@
             // N0B_P4
             // 
             this.N0B_P4.Hexadecimal = true;
-            this.N0B_P4.Location = new System.Drawing.Point(184, 109);
+            this.N0B_P4.Location = new System.Drawing.Point(184, 108);
             this.N0B_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N0B_P4.Maximum = new decimal(new int[] {
             255,
@@ -3454,7 +3491,7 @@
             // label96
             // 
             this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label96.Location = new System.Drawing.Point(12, 106);
+            this.label96.Location = new System.Drawing.Point(12, 105);
             this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(166, 32);
@@ -3571,7 +3608,7 @@
             this.N0C_L_4_COMBO.Items.AddRange(new object[] {
             "0=32768 Samples",
             "1=256samples"});
-            this.N0C_L_4_COMBO.Location = new System.Drawing.Point(370, 109);
+            this.N0C_L_4_COMBO.Location = new System.Drawing.Point(370, 108);
             this.N0C_L_4_COMBO.Margin = new System.Windows.Forms.Padding(4);
             this.N0C_L_4_COMBO.Name = "N0C_L_4_COMBO";
             this.N0C_L_4_COMBO.Size = new System.Drawing.Size(144, 26);
@@ -3580,7 +3617,7 @@
             // N0C_B11
             // 
             this.N0C_B11.Hexadecimal = true;
-            this.N0C_B11.Location = new System.Drawing.Point(176, 235);
+            this.N0C_B11.Location = new System.Drawing.Point(176, 234);
             this.N0C_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N0C_B11.Maximum = new decimal(new int[] {
             255,
@@ -3593,8 +3630,9 @@
             // 
             // label100
             // 
+            this.label100.AccessibleDescription = "@ADSR";
             this.label100.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label100.Location = new System.Drawing.Point(5, 230);
+            this.label100.Location = new System.Drawing.Point(5, 229);
             this.label100.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(166, 32);
@@ -3605,7 +3643,7 @@
             // N0C_B10
             // 
             this.N0C_B10.Hexadecimal = true;
-            this.N0C_B10.Location = new System.Drawing.Point(176, 204);
+            this.N0C_B10.Location = new System.Drawing.Point(176, 203);
             this.N0C_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N0C_B10.Maximum = new decimal(new int[] {
             255,
@@ -3618,8 +3656,9 @@
             // 
             // label101
             // 
+            this.label101.AccessibleDescription = "@ADSR";
             this.label101.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label101.Location = new System.Drawing.Point(5, 199);
+            this.label101.Location = new System.Drawing.Point(5, 198);
             this.label101.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(166, 32);
@@ -3630,7 +3669,7 @@
             // N0C_B9
             // 
             this.N0C_B9.Hexadecimal = true;
-            this.N0C_B9.Location = new System.Drawing.Point(176, 173);
+            this.N0C_B9.Location = new System.Drawing.Point(176, 172);
             this.N0C_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N0C_B9.Maximum = new decimal(new int[] {
             255,
@@ -3643,8 +3682,9 @@
             // 
             // label102
             // 
+            this.label102.AccessibleDescription = "@ADSR";
             this.label102.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label102.Location = new System.Drawing.Point(5, 168);
+            this.label102.Location = new System.Drawing.Point(5, 167);
             this.label102.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(166, 32);
@@ -3655,7 +3695,7 @@
             // N0C_B8
             // 
             this.N0C_B8.Hexadecimal = true;
-            this.N0C_B8.Location = new System.Drawing.Point(176, 142);
+            this.N0C_B8.Location = new System.Drawing.Point(176, 141);
             this.N0C_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N0C_B8.Maximum = new decimal(new int[] {
             255,
@@ -3668,8 +3708,9 @@
             // 
             // label103
             // 
+            this.label103.AccessibleDescription = "@ADSR";
             this.label103.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label103.Location = new System.Drawing.Point(5, 137);
+            this.label103.Location = new System.Drawing.Point(5, 136);
             this.label103.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(166, 32);
@@ -3680,7 +3721,7 @@
             // N0C_P4
             // 
             this.N0C_P4.Hexadecimal = true;
-            this.N0C_P4.Location = new System.Drawing.Point(176, 109);
+            this.N0C_P4.Location = new System.Drawing.Point(176, 108);
             this.N0C_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N0C_P4.Maximum = new decimal(new int[] {
             255,
@@ -3694,7 +3735,7 @@
             // label104
             // 
             this.label104.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label104.Location = new System.Drawing.Point(5, 106);
+            this.label104.Location = new System.Drawing.Point(5, 105);
             this.label104.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(166, 32);
@@ -3785,24 +3826,24 @@
             this.UNIONTAB_N10.Controls.Add(this.N10_L_3_PAN_PANPOT);
             this.UNIONTAB_N10.Controls.Add(this.N10_L_1_COMBO);
             this.UNIONTAB_N10.Controls.Add(this.N10_B11);
-            this.UNIONTAB_N10.Controls.Add(this.label29);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_11);
             this.UNIONTAB_N10.Controls.Add(this.N10_B10);
-            this.UNIONTAB_N10.Controls.Add(this.label31);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_10);
             this.UNIONTAB_N10.Controls.Add(this.N10_B9);
-            this.UNIONTAB_N10.Controls.Add(this.label32);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_9);
             this.UNIONTAB_N10.Controls.Add(this.N10_B8);
-            this.UNIONTAB_N10.Controls.Add(this.label33);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_8);
             this.UNIONTAB_N10.Controls.Add(this.label34);
             this.UNIONTAB_N10.Controls.Add(this.label35);
             this.UNIONTAB_N10.Controls.Add(this.N10_L_3_PAN_PAN);
             this.UNIONTAB_N10.Controls.Add(this.N10_P4);
-            this.UNIONTAB_N10.Controls.Add(this.label36);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_4_DIRECTSOUND);
             this.UNIONTAB_N10.Controls.Add(this.N10_B3);
-            this.UNIONTAB_N10.Controls.Add(this.label37);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_3);
             this.UNIONTAB_N10.Controls.Add(this.N10_B2);
-            this.UNIONTAB_N10.Controls.Add(this.label38);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_2);
             this.UNIONTAB_N10.Controls.Add(this.N10_B1);
-            this.UNIONTAB_N10.Controls.Add(this.label39);
+            this.UNIONTAB_N10.Controls.Add(this.N10_J_1);
             this.UNIONTAB_N10.Location = new System.Drawing.Point(4, 28);
             this.UNIONTAB_N10.Margin = new System.Windows.Forms.Padding(4);
             this.UNIONTAB_N10.Name = "UNIONTAB_N10";
@@ -3859,7 +3900,7 @@
             // N10_B11
             // 
             this.N10_B11.Hexadecimal = true;
-            this.N10_B11.Location = new System.Drawing.Point(174, 228);
+            this.N10_B11.Location = new System.Drawing.Point(174, 227);
             this.N10_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N10_B11.Maximum = new decimal(new int[] {
             255,
@@ -3870,21 +3911,21 @@
             this.N10_B11.Size = new System.Drawing.Size(101, 25);
             this.N10_B11.TabIndex = 69;
             // 
-            // label29
+            // N10_J_11
             // 
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Location = new System.Drawing.Point(2, 223);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(166, 32);
-            this.label29.TabIndex = 68;
-            this.label29.Text = "rel";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_11.Location = new System.Drawing.Point(1, 222);
+            this.N10_J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_11.Name = "N10_J_11";
+            this.N10_J_11.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_11.TabIndex = 68;
+            this.N10_J_11.Text = "rel";
+            this.N10_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B10
             // 
             this.N10_B10.Hexadecimal = true;
-            this.N10_B10.Location = new System.Drawing.Point(174, 197);
+            this.N10_B10.Location = new System.Drawing.Point(174, 196);
             this.N10_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N10_B10.Maximum = new decimal(new int[] {
             255,
@@ -3895,21 +3936,21 @@
             this.N10_B10.Size = new System.Drawing.Size(101, 25);
             this.N10_B10.TabIndex = 67;
             // 
-            // label31
+            // N10_J_10
             // 
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Location = new System.Drawing.Point(2, 192);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(166, 32);
-            this.label31.TabIndex = 66;
-            this.label31.Text = "sus";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_10.Location = new System.Drawing.Point(1, 191);
+            this.N10_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_10.Name = "N10_J_10";
+            this.N10_J_10.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_10.TabIndex = 66;
+            this.N10_J_10.Text = "sus";
+            this.N10_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B9
             // 
             this.N10_B9.Hexadecimal = true;
-            this.N10_B9.Location = new System.Drawing.Point(174, 166);
+            this.N10_B9.Location = new System.Drawing.Point(174, 165);
             this.N10_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N10_B9.Maximum = new decimal(new int[] {
             255,
@@ -3920,21 +3961,21 @@
             this.N10_B9.Size = new System.Drawing.Size(101, 25);
             this.N10_B9.TabIndex = 65;
             // 
-            // label32
+            // N10_J_9
             // 
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Location = new System.Drawing.Point(2, 161);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(166, 32);
-            this.label32.TabIndex = 64;
-            this.label32.Text = "dec";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_9.Location = new System.Drawing.Point(1, 160);
+            this.N10_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_9.Name = "N10_J_9";
+            this.N10_J_9.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_9.TabIndex = 64;
+            this.N10_J_9.Text = "dec";
+            this.N10_J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B8
             // 
             this.N10_B8.Hexadecimal = true;
-            this.N10_B8.Location = new System.Drawing.Point(174, 134);
+            this.N10_B8.Location = new System.Drawing.Point(174, 133);
             this.N10_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N10_B8.Maximum = new decimal(new int[] {
             255,
@@ -3945,16 +3986,16 @@
             this.N10_B8.Size = new System.Drawing.Size(101, 25);
             this.N10_B8.TabIndex = 63;
             // 
-            // label33
+            // N10_J_8
             // 
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Location = new System.Drawing.Point(2, 130);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(166, 32);
-            this.label33.TabIndex = 62;
-            this.label33.Text = "atk";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_8.Location = new System.Drawing.Point(1, 129);
+            this.N10_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_8.Name = "N10_J_8";
+            this.N10_J_8.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_8.TabIndex = 62;
+            this.N10_J_8.Text = "atk";
+            this.N10_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
@@ -4003,16 +4044,16 @@
             this.N10_P4.Size = new System.Drawing.Size(179, 25);
             this.N10_P4.TabIndex = 57;
             // 
-            // label36
+            // N10_J_4_DIRECTSOUND
             // 
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Location = new System.Drawing.Point(2, 98);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(166, 32);
-            this.label36.TabIndex = 56;
-            this.label36.Text = "音データ";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_4_DIRECTSOUND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_4_DIRECTSOUND.Location = new System.Drawing.Point(1, 98);
+            this.N10_J_4_DIRECTSOUND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_4_DIRECTSOUND.Name = "N10_J_4_DIRECTSOUND";
+            this.N10_J_4_DIRECTSOUND.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_4_DIRECTSOUND.TabIndex = 56;
+            this.N10_J_4_DIRECTSOUND.Text = "音データ";
+            this.N10_J_4_DIRECTSOUND.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B3
             // 
@@ -4028,16 +4069,16 @@
             this.N10_B3.Size = new System.Drawing.Size(101, 25);
             this.N10_B3.TabIndex = 55;
             // 
-            // label37
+            // N10_J_3
             // 
-            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label37.Location = new System.Drawing.Point(2, 67);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(166, 32);
-            this.label37.TabIndex = 54;
-            this.label37.Text = "PAN強制";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_3.Location = new System.Drawing.Point(1, 67);
+            this.N10_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_3.Name = "N10_J_3";
+            this.N10_J_3.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_3.TabIndex = 54;
+            this.N10_J_3.Text = "PAN強制";
+            this.N10_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B2
             // 
@@ -4053,16 +4094,16 @@
             this.N10_B2.Size = new System.Drawing.Size(101, 25);
             this.N10_B2.TabIndex = 53;
             // 
-            // label38
+            // N10_J_2
             // 
-            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label38.Location = new System.Drawing.Point(2, 36);
-            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(166, 32);
-            this.label38.TabIndex = 52;
-            this.label38.Text = "00";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_2.Location = new System.Drawing.Point(1, 36);
+            this.N10_J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_2.Name = "N10_J_2";
+            this.N10_J_2.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_2.TabIndex = 52;
+            this.N10_J_2.Text = "00";
+            this.N10_J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N10_B1
             // 
@@ -4078,16 +4119,16 @@
             this.N10_B1.Size = new System.Drawing.Size(101, 25);
             this.N10_B1.TabIndex = 51;
             // 
-            // label39
+            // N10_J_1
             // 
-            this.label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label39.Location = new System.Drawing.Point(2, 5);
-            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(166, 32);
-            this.label39.TabIndex = 50;
-            this.label39.Text = "基準ノート値";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N10_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N10_J_1.Location = new System.Drawing.Point(1, 5);
+            this.N10_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N10_J_1.Name = "N10_J_1";
+            this.N10_J_1.Size = new System.Drawing.Size(166, 32);
+            this.N10_J_1.TabIndex = 50;
+            this.N10_J_1.Text = "基準ノート値";
+            this.N10_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UNIONTAB_N18
             // 
@@ -4097,24 +4138,24 @@
             this.UNIONTAB_N18.Controls.Add(this.N18_L_3_PAN_PANPOT);
             this.UNIONTAB_N18.Controls.Add(this.N18_L_1_COMBO);
             this.UNIONTAB_N18.Controls.Add(this.N18_B11);
-            this.UNIONTAB_N18.Controls.Add(this.label135);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_11);
             this.UNIONTAB_N18.Controls.Add(this.N18_B10);
-            this.UNIONTAB_N18.Controls.Add(this.label136);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_10);
             this.UNIONTAB_N18.Controls.Add(this.N18_B9);
-            this.UNIONTAB_N18.Controls.Add(this.label137);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_9);
             this.UNIONTAB_N18.Controls.Add(this.N18_B8);
-            this.UNIONTAB_N18.Controls.Add(this.label138);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_8);
             this.UNIONTAB_N18.Controls.Add(this.label139);
             this.UNIONTAB_N18.Controls.Add(this.label140);
             this.UNIONTAB_N18.Controls.Add(this.N18_L_3_PAN_PAN);
             this.UNIONTAB_N18.Controls.Add(this.N18_P4);
-            this.UNIONTAB_N18.Controls.Add(this.label141);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_4_DIRECTSOUND);
             this.UNIONTAB_N18.Controls.Add(this.N18_B3);
-            this.UNIONTAB_N18.Controls.Add(this.label142);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_3);
             this.UNIONTAB_N18.Controls.Add(this.N18_B2);
-            this.UNIONTAB_N18.Controls.Add(this.label143);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_2);
             this.UNIONTAB_N18.Controls.Add(this.N18_B1);
-            this.UNIONTAB_N18.Controls.Add(this.label144);
+            this.UNIONTAB_N18.Controls.Add(this.N18_J_1);
             this.UNIONTAB_N18.Location = new System.Drawing.Point(4, 28);
             this.UNIONTAB_N18.Margin = new System.Windows.Forms.Padding(4);
             this.UNIONTAB_N18.Name = "UNIONTAB_N18";
@@ -4148,7 +4189,7 @@
             // N18_L_3_PAN_PANPOT
             // 
             this.N18_L_3_PAN_PANPOT.Hexadecimal = true;
-            this.N18_L_3_PAN_PANPOT.Location = new System.Drawing.Point(622, 71);
+            this.N18_L_3_PAN_PANPOT.Location = new System.Drawing.Point(622, 70);
             this.N18_L_3_PAN_PANPOT.Margin = new System.Windows.Forms.Padding(2);
             this.N18_L_3_PAN_PANPOT.Maximum = new decimal(new int[] {
             255,
@@ -4172,7 +4213,7 @@
             // N18_B11
             // 
             this.N18_B11.Hexadecimal = true;
-            this.N18_B11.Location = new System.Drawing.Point(175, 226);
+            this.N18_B11.Location = new System.Drawing.Point(175, 224);
             this.N18_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B11.Maximum = new decimal(new int[] {
             255,
@@ -4183,21 +4224,21 @@
             this.N18_B11.Size = new System.Drawing.Size(101, 25);
             this.N18_B11.TabIndex = 114;
             // 
-            // label135
+            // N18_J_11
             // 
-            this.label135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label135.Location = new System.Drawing.Point(4, 221);
-            this.label135.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(166, 32);
-            this.label135.TabIndex = 113;
-            this.label135.Text = "rel";
-            this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_11.Location = new System.Drawing.Point(4, 219);
+            this.N18_J_11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_11.Name = "N18_J_11";
+            this.N18_J_11.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_11.TabIndex = 113;
+            this.N18_J_11.Text = "rel";
+            this.N18_J_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B10
             // 
             this.N18_B10.Hexadecimal = true;
-            this.N18_B10.Location = new System.Drawing.Point(175, 194);
+            this.N18_B10.Location = new System.Drawing.Point(175, 192);
             this.N18_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B10.Maximum = new decimal(new int[] {
             255,
@@ -4208,21 +4249,21 @@
             this.N18_B10.Size = new System.Drawing.Size(101, 25);
             this.N18_B10.TabIndex = 112;
             // 
-            // label136
+            // N18_J_10
             // 
-            this.label136.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label136.Location = new System.Drawing.Point(4, 190);
-            this.label136.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(166, 32);
-            this.label136.TabIndex = 111;
-            this.label136.Text = "sus";
-            this.label136.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_10.Location = new System.Drawing.Point(4, 188);
+            this.N18_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_10.Name = "N18_J_10";
+            this.N18_J_10.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_10.TabIndex = 111;
+            this.N18_J_10.Text = "sus";
+            this.N18_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B9
             // 
             this.N18_B9.Hexadecimal = true;
-            this.N18_B9.Location = new System.Drawing.Point(175, 163);
+            this.N18_B9.Location = new System.Drawing.Point(175, 162);
             this.N18_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B9.Maximum = new decimal(new int[] {
             255,
@@ -4233,21 +4274,21 @@
             this.N18_B9.Size = new System.Drawing.Size(101, 25);
             this.N18_B9.TabIndex = 110;
             // 
-            // label137
+            // N18_J_9
             // 
-            this.label137.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label137.Location = new System.Drawing.Point(4, 158);
-            this.label137.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(166, 32);
-            this.label137.TabIndex = 109;
-            this.label137.Text = "dec";
-            this.label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_9.Location = new System.Drawing.Point(4, 157);
+            this.N18_J_9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_9.Name = "N18_J_9";
+            this.N18_J_9.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_9.TabIndex = 109;
+            this.N18_J_9.Text = "dec";
+            this.N18_J_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B8
             // 
             this.N18_B8.Hexadecimal = true;
-            this.N18_B8.Location = new System.Drawing.Point(175, 132);
+            this.N18_B8.Location = new System.Drawing.Point(175, 131);
             this.N18_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B8.Maximum = new decimal(new int[] {
             255,
@@ -4258,21 +4299,21 @@
             this.N18_B8.Size = new System.Drawing.Size(101, 25);
             this.N18_B8.TabIndex = 108;
             // 
-            // label138
+            // N18_J_8
             // 
-            this.label138.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label138.Location = new System.Drawing.Point(4, 127);
-            this.label138.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(166, 32);
-            this.label138.TabIndex = 107;
-            this.label138.Text = "atk";
-            this.label138.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_8.Location = new System.Drawing.Point(4, 126);
+            this.N18_J_8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_8.Name = "N18_J_8";
+            this.N18_J_8.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_8.TabIndex = 107;
+            this.N18_J_8.Text = "atk";
+            this.N18_J_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label139
             // 
             this.label139.AutoSize = true;
-            this.label139.Location = new System.Drawing.Point(728, 73);
+            this.label139.Location = new System.Drawing.Point(728, 72);
             this.label139.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label139.Name = "label139";
             this.label139.Size = new System.Drawing.Size(82, 18);
@@ -4282,7 +4323,7 @@
             // label140
             // 
             this.label140.AutoSize = true;
-            this.label140.Location = new System.Drawing.Point(552, 74);
+            this.label140.Location = new System.Drawing.Point(552, 73);
             this.label140.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label140.Name = "label140";
             this.label140.Size = new System.Drawing.Size(74, 18);
@@ -4296,7 +4337,7 @@
             this.N18_L_3_PAN_PAN.Items.AddRange(new object[] {
             "8=PAN強制",
             "0=PAN強制しない"});
-            this.N18_L_3_PAN_PAN.Location = new System.Drawing.Point(282, 68);
+            this.N18_L_3_PAN_PAN.Location = new System.Drawing.Point(282, 67);
             this.N18_L_3_PAN_PAN.Margin = new System.Windows.Forms.Padding(4);
             this.N18_L_3_PAN_PAN.Name = "N18_L_3_PAN_PAN";
             this.N18_L_3_PAN_PAN.Size = new System.Drawing.Size(263, 26);
@@ -4305,7 +4346,7 @@
             // N18_P4
             // 
             this.N18_P4.Hexadecimal = true;
-            this.N18_P4.Location = new System.Drawing.Point(175, 100);
+            this.N18_P4.Location = new System.Drawing.Point(175, 99);
             this.N18_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N18_P4.Maximum = new decimal(new int[] {
             255,
@@ -4316,21 +4357,21 @@
             this.N18_P4.Size = new System.Drawing.Size(179, 25);
             this.N18_P4.TabIndex = 102;
             // 
-            // label141
+            // N18_J_4_DIRECTSOUND
             // 
-            this.label141.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label141.Location = new System.Drawing.Point(4, 96);
-            this.label141.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(166, 32);
-            this.label141.TabIndex = 101;
-            this.label141.Text = "音データ";
-            this.label141.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_4_DIRECTSOUND.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_4_DIRECTSOUND.Location = new System.Drawing.Point(4, 95);
+            this.N18_J_4_DIRECTSOUND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_4_DIRECTSOUND.Name = "N18_J_4_DIRECTSOUND";
+            this.N18_J_4_DIRECTSOUND.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_4_DIRECTSOUND.TabIndex = 101;
+            this.N18_J_4_DIRECTSOUND.Text = "音データ";
+            this.N18_J_4_DIRECTSOUND.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B3
             // 
             this.N18_B3.Hexadecimal = true;
-            this.N18_B3.Location = new System.Drawing.Point(175, 68);
+            this.N18_B3.Location = new System.Drawing.Point(175, 67);
             this.N18_B3.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B3.Maximum = new decimal(new int[] {
             255,
@@ -4341,21 +4382,21 @@
             this.N18_B3.Size = new System.Drawing.Size(101, 25);
             this.N18_B3.TabIndex = 100;
             // 
-            // label142
+            // N18_J_3
             // 
-            this.label142.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label142.Location = new System.Drawing.Point(4, 65);
-            this.label142.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(166, 32);
-            this.label142.TabIndex = 99;
-            this.label142.Text = "PAN強制";
-            this.label142.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_3.Location = new System.Drawing.Point(4, 64);
+            this.N18_J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_3.Name = "N18_J_3";
+            this.N18_J_3.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_3.TabIndex = 99;
+            this.N18_J_3.Text = "PAN強制";
+            this.N18_J_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B2
             // 
             this.N18_B2.Hexadecimal = true;
-            this.N18_B2.Location = new System.Drawing.Point(175, 37);
+            this.N18_B2.Location = new System.Drawing.Point(175, 36);
             this.N18_B2.Margin = new System.Windows.Forms.Padding(2);
             this.N18_B2.Maximum = new decimal(new int[] {
             255,
@@ -4366,16 +4407,16 @@
             this.N18_B2.Size = new System.Drawing.Size(101, 25);
             this.N18_B2.TabIndex = 98;
             // 
-            // label143
+            // N18_J_2
             // 
-            this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label143.Location = new System.Drawing.Point(4, 34);
-            this.label143.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(166, 32);
-            this.label143.TabIndex = 97;
-            this.label143.Text = "00";
-            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_2.Location = new System.Drawing.Point(4, 33);
+            this.N18_J_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_2.Name = "N18_J_2";
+            this.N18_J_2.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_2.TabIndex = 97;
+            this.N18_J_2.Text = "00";
+            this.N18_J_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // N18_B1
             // 
@@ -4391,16 +4432,16 @@
             this.N18_B1.Size = new System.Drawing.Size(101, 25);
             this.N18_B1.TabIndex = 96;
             // 
-            // label144
+            // N18_J_1
             // 
-            this.label144.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label144.Location = new System.Drawing.Point(4, 2);
-            this.label144.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(166, 32);
-            this.label144.TabIndex = 95;
-            this.label144.Text = "基準ノート値";
-            this.label144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.N18_J_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N18_J_1.Location = new System.Drawing.Point(4, 2);
+            this.N18_J_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N18_J_1.Name = "N18_J_1";
+            this.N18_J_1.Size = new System.Drawing.Size(166, 32);
+            this.N18_J_1.TabIndex = 95;
+            this.N18_J_1.Text = "基準ノート値";
+            this.N18_J_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UNIONTAB_N40
             // 
@@ -4576,7 +4617,7 @@
             // N80_B11
             // 
             this.N80_B11.Hexadecimal = true;
-            this.N80_B11.Location = new System.Drawing.Point(184, 236);
+            this.N80_B11.Location = new System.Drawing.Point(184, 234);
             this.N80_B11.Margin = new System.Windows.Forms.Padding(2);
             this.N80_B11.Maximum = new decimal(new int[] {
             255,
@@ -4590,7 +4631,7 @@
             // label118
             // 
             this.label118.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label118.Location = new System.Drawing.Point(12, 232);
+            this.label118.Location = new System.Drawing.Point(12, 230);
             this.label118.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(166, 32);
@@ -4601,7 +4642,7 @@
             // N80_B10
             // 
             this.N80_B10.Hexadecimal = true;
-            this.N80_B10.Location = new System.Drawing.Point(184, 205);
+            this.N80_B10.Location = new System.Drawing.Point(184, 204);
             this.N80_B10.Margin = new System.Windows.Forms.Padding(2);
             this.N80_B10.Maximum = new decimal(new int[] {
             255,
@@ -4615,7 +4656,7 @@
             // label119
             // 
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label119.Location = new System.Drawing.Point(12, 200);
+            this.label119.Location = new System.Drawing.Point(12, 199);
             this.label119.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(166, 32);
@@ -4626,7 +4667,7 @@
             // N80_B9
             // 
             this.N80_B9.Hexadecimal = true;
-            this.N80_B9.Location = new System.Drawing.Point(184, 174);
+            this.N80_B9.Location = new System.Drawing.Point(184, 173);
             this.N80_B9.Margin = new System.Windows.Forms.Padding(2);
             this.N80_B9.Maximum = new decimal(new int[] {
             255,
@@ -4640,7 +4681,7 @@
             // label120
             // 
             this.label120.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label120.Location = new System.Drawing.Point(12, 169);
+            this.label120.Location = new System.Drawing.Point(12, 168);
             this.label120.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(166, 32);
@@ -4651,7 +4692,7 @@
             // N80_B8
             // 
             this.N80_B8.Hexadecimal = true;
-            this.N80_B8.Location = new System.Drawing.Point(184, 143);
+            this.N80_B8.Location = new System.Drawing.Point(184, 142);
             this.N80_B8.Margin = new System.Windows.Forms.Padding(2);
             this.N80_B8.Maximum = new decimal(new int[] {
             255,
@@ -4665,7 +4706,7 @@
             // label121
             // 
             this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label121.Location = new System.Drawing.Point(12, 138);
+            this.label121.Location = new System.Drawing.Point(12, 137);
             this.label121.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(166, 32);
@@ -4676,7 +4717,7 @@
             // N80_P4
             // 
             this.N80_P4.Hexadecimal = true;
-            this.N80_P4.Location = new System.Drawing.Point(184, 110);
+            this.N80_P4.Location = new System.Drawing.Point(184, 109);
             this.N80_P4.Margin = new System.Windows.Forms.Padding(2);
             this.N80_P4.Maximum = new decimal(new int[] {
             255,
@@ -4690,7 +4731,7 @@
             // N80_J_4_INSTRUMENT_ADDR
             // 
             this.N80_J_4_INSTRUMENT_ADDR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N80_J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(12, 107);
+            this.N80_J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(12, 106);
             this.N80_J_4_INSTRUMENT_ADDR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.N80_J_4_INSTRUMENT_ADDR.Name = "N80_J_4_INSTRUMENT_ADDR";
             this.N80_J_4_INSTRUMENT_ADDR.Size = new System.Drawing.Size(166, 32);
@@ -4701,7 +4742,7 @@
             // N80_B3
             // 
             this.N80_B3.Hexadecimal = true;
-            this.N80_B3.Location = new System.Drawing.Point(184, 79);
+            this.N80_B3.Location = new System.Drawing.Point(184, 78);
             this.N80_B3.Margin = new System.Windows.Forms.Padding(2);
             this.N80_B3.Maximum = new decimal(new int[] {
             255,
@@ -4715,7 +4756,7 @@
             // label125
             // 
             this.label125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label125.Location = new System.Drawing.Point(12, 76);
+            this.label125.Location = new System.Drawing.Point(12, 75);
             this.label125.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label125.Name = "label125";
             this.label125.Size = new System.Drawing.Size(166, 32);
@@ -5047,45 +5088,45 @@
         private System.Windows.Forms.NumericUpDown N08_L_3_PAN_PANPOT;
         private System.Windows.Forms.ComboBox N08_L_1_COMBO;
         private System.Windows.Forms.NumericUpDown N08_B11;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label N08_J_11;
         private System.Windows.Forms.NumericUpDown N08_B10;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label N08_J_10;
         private System.Windows.Forms.NumericUpDown N08_B9;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label N08_J_9;
         private System.Windows.Forms.NumericUpDown N08_B8;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label N08_J_8;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox N08_L_3_PAN_PAN;
         private System.Windows.Forms.NumericUpDown N08_P4;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label N08_J_4_DIRECTSOUND;
         private System.Windows.Forms.NumericUpDown N08_B3;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label N08_J_3;
         private System.Windows.Forms.NumericUpDown N08_B2;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label N08_J_2;
         private System.Windows.Forms.NumericUpDown N08_B1;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label N08_J_1;
         private System.Windows.Forms.NumericUpDown N10_L_3_PAN_PANPOT;
         private System.Windows.Forms.ComboBox N10_L_1_COMBO;
         private System.Windows.Forms.NumericUpDown N10_B11;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label N10_J_11;
         private System.Windows.Forms.NumericUpDown N10_B10;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label N10_J_10;
         private System.Windows.Forms.NumericUpDown N10_B9;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label N10_J_9;
         private System.Windows.Forms.NumericUpDown N10_B8;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label N10_J_8;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.ComboBox N10_L_3_PAN_PAN;
         private System.Windows.Forms.NumericUpDown N10_P4;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label N10_J_4_DIRECTSOUND;
         private System.Windows.Forms.NumericUpDown N10_B3;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label N10_J_3;
         private System.Windows.Forms.NumericUpDown N10_B2;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label N10_J_2;
         private System.Windows.Forms.NumericUpDown N10_B1;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label N10_J_1;
         private System.Windows.Forms.ComboBox N01_L_3_SWEEP_TIME;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ComboBox N01_L_3_SWEEP_SHIFT;
@@ -5255,24 +5296,24 @@
         private System.Windows.Forms.NumericUpDown N00_L_3_PAN_PANPOT;
         private System.Windows.Forms.ComboBox N00_L_1_COMBO;
         private System.Windows.Forms.NumericUpDown N00_B11;
-        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label N00_J_11;
         private System.Windows.Forms.NumericUpDown N00_B10;
-        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label N00_J_10;
         private System.Windows.Forms.NumericUpDown N00_B9;
-        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label N00_J_9;
         private System.Windows.Forms.NumericUpDown N00_B8;
-        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label N00_J_8;
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.ComboBox N00_L_3_PAN_PAN;
         private System.Windows.Forms.NumericUpDown N00_P4;
-        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label N00_J_4_DIRECTSOUND;
         private System.Windows.Forms.NumericUpDown N00_B3;
-        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label N00_J_3;
         private System.Windows.Forms.NumericUpDown N00_B2;
-        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label N00_J_2;
         private System.Windows.Forms.NumericUpDown N00_B1;
-        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label N00_J_1;
         private System.Windows.Forms.NumericUpDown N80_B11;
         private System.Windows.Forms.Label label118;
         private System.Windows.Forms.NumericUpDown N80_B10;
@@ -5306,24 +5347,24 @@
         private System.Windows.Forms.NumericUpDown N18_L_3_PAN_PANPOT;
         private System.Windows.Forms.ComboBox N18_L_1_COMBO;
         private System.Windows.Forms.NumericUpDown N18_B11;
-        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label N18_J_11;
         private System.Windows.Forms.NumericUpDown N18_B10;
-        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.Label N18_J_10;
         private System.Windows.Forms.NumericUpDown N18_B9;
-        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.Label N18_J_9;
         private System.Windows.Forms.NumericUpDown N18_B8;
-        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Label N18_J_8;
         private System.Windows.Forms.Label label139;
         private System.Windows.Forms.Label label140;
         private System.Windows.Forms.ComboBox N18_L_3_PAN_PAN;
         private System.Windows.Forms.NumericUpDown N18_P4;
-        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.Label N18_J_4_DIRECTSOUND;
         private System.Windows.Forms.NumericUpDown N18_B3;
-        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.Label N18_J_3;
         private System.Windows.Forms.NumericUpDown N18_B2;
-        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.Label N18_J_2;
         private System.Windows.Forms.NumericUpDown N18_B1;
-        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.Label N18_J_1;
         private System.Windows.Forms.Button N00_ExportButton;
         private System.Windows.Forms.Button N00_ImportButton;
         private System.Windows.Forms.Button N08_ExportButton;

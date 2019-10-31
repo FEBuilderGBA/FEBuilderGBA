@@ -15,5 +15,5 @@ INFO=攻略評価のバグ背景を修正します。\r\n「背景を消さな�
 INFO.en=Correct the bug background of the strategy evaluation.\r\nUse the background displayed just before "Do not erase background" as it is.\r\n
 COMBO.en=Do not fix|OFF|Do not erase the background|NO_WIPE
 NAME.zh=在捕获评估屏幕中更正错误背景
-INFO.zh=纠正策略评估的错误背景。\r\n使用“不要擦除背景”之前显示的背景。\r\n
+INFO.zh=纠正策略评估的错误背景。\r\n使用“不要擦除背景"之前显示的背景。\r\n
 COMBO.zh=不要修改|OFF|不要删除背景|NO_WIPE

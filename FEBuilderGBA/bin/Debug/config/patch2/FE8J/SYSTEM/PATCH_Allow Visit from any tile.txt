@@ -12,6 +12,6 @@ DETERMINATION_ADDRESS=0x2303A
 OFF:0x02303A=0x0D 0xD0
 ONN:0x02303A=0x0d 0xe0
 
-NAME.zh=允许所有图块的“访问”命令
+NAME.zh=允许所有图块的“访问"命令
 
 AUTHOR=circleseverywhere

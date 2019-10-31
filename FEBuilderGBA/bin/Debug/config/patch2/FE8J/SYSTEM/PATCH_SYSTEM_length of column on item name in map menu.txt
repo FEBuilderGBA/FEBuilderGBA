@@ -8,7 +8,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x5C5666
-AUTHOR=kirb http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267  transport:7743
+AUTHOR=kirb https://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267  transport:7743
 NAME.zh=在地图菜单上显示道具名称栏的长度
 
 INFO.en=Increase the hex value to expand the spacing for item name.\r\n

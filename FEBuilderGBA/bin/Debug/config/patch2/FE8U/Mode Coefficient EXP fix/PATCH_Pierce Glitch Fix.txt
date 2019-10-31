@@ -10,9 +10,9 @@ COMBO=Fix|0xa0|Default|0x80
 
 INFO.en=Patches the ROM to remove the glitch with the Wyvern Knight Pierce skill.\r\nForces the character to wait for the animation to finish before striking like with Sureshot and the Japanese ROM.\r\nIn the Vanilla FE8U ROM, Pierce can freeze the game, especially when activated during a ranged attack.\r\n
 
-AUTHOR=credit Brendor http://feuniverse.us/t/pierce-fix/699
-AUTHOR.en=Brendor http://feuniverse.us/t/pierce-fix/699
-AUTHOR.zh=credit Brendor http://feuniverse.us/t/pierce-fix/699
+AUTHOR=credit Brendor https://feuniverse.us/t/pierce-fix/699
+AUTHOR.en=Brendor https://feuniverse.us/t/pierce-fix/699
+AUTHOR.zh=credit Brendor https://feuniverse.us/t/pierce-fix/699
 
 
 

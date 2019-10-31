@@ -26,5 +26,5 @@ INFO.en=In the event "Call name input screen", Change name that can be input fro
 
 COMBO.en=default|OFF|8 characters|ON8|9 characters|ON9
 NAME.zh=更改名称输入屏幕的最大值
-INFO.zh=在“呼叫姓名输入屏幕”中，将可输入的名称从5个字符更改为9个字符。
+INFO.zh=在“呼叫姓名输入屏幕"中，将可输入的名称从5个字符更改为9个字符。
 COMBO.zh=default|OFF|8个字符|ON8|9个字符|ON9

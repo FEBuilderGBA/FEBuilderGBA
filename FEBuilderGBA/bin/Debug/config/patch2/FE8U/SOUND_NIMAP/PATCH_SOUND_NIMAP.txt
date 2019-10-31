@@ -15,4 +15,4 @@ INFO=MIDIフォーマットで音楽を再生するために必須となるパ�
 INFO.en=Older version.Patches the ROM to be compatible with standard MIDI formatted sounds.\r\nBy default, the instruments for the game's music are not in the order expected for MIDI songs.\r\nTherefore, this patch is essential for MIDI formatted music.\r\n
 INFO.zh=此修补程序对于以MIDI格式播放音乐至关重要。\r\n默认情况下，游戏的乐器不是MIDI乐器的顺序。\r\n该补丁提供了一套乐器，其中现有乐器按MIDI乐器的顺序重新排列。\r\n
 
-AUTHOR.en=circleseverywhere http://feuniverse.us/t/native-instrument-map/69/3
+AUTHOR.en=circleseverywhere https://feuniverse.us/t/native-instrument-map/69/3

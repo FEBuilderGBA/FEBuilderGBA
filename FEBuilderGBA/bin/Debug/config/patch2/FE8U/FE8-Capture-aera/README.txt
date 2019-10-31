@@ -1,4 +1,4 @@
-Captureパッチ――このパッチはTequila氏のFE8-Captureパッチを大いに参考にしていますが、かなり改変しているので動作仕様は異なります(http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/29)
+Captureパッチ――このパッチはTequila氏のFE8-Captureパッチを大いに参考にしていますが、かなり改変しているので動作仕様は異なります(https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/29)
 
 
 捕獲可能な敵に隣接した時、救出中のステータス減少状態で攻撃するコマンドが使えるようになります。敵が歩兵・敵に輸送隊フラグ無い・敵の体格値が自分の救出値以下、の条件を満たした時に捕獲出来ます。

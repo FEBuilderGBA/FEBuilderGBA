@@ -13,5 +13,5 @@ INFO=CC時に武器を利用できないランクがないクラスへCCした�
 INFO.en=Patches the ROM so that upon promotion, if a unit has a weapon level that the promoted class doesn't have, they'll lose that weapon rank.\r\nFor example, if a mage capable of using anima magic promotes to a summoner that can not use anima, then anima ranks are lost.
 INFO.zh=你不能在CC上使用武器当你在CC上没有等级的职业时，我们会忘记武器LV，这样我们就不能使用武器LV。\r\n例如，如果一个法师可以使用CC的原因到一个不能使用理由的夏天，那就忘记原因。
 
-AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/4
+AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/4
 

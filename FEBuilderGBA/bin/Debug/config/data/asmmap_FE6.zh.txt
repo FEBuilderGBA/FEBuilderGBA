@@ -904,8 +904,8 @@
 080425D8	IsBattleDeamonActive
 0203CCE8	gpEkrBattleDeamon
 0203CCE0	gTargetArraySize
-0804256C	将值设置为“战斗4字节的未知标志”。
-08042578	获得“战斗4字节的未知标志”。
+0804256C	将值设置为“战斗4字节的未知标志"。
+08042578	获得“战斗4字节的未知标志"。
 0203CCE4	战斗4字节的未知标志。
 0801C700	FillWarpRangeMap
 08018670	CanUnitCrossTerrain
@@ -1166,3 +1166,4 @@
 0866483A	:08664865	Move Sound: Wybern
 08664866	:08664893	Move Sound: Peg
 08017358	GetROMItemStructPtr
+08000BC0	NextRN

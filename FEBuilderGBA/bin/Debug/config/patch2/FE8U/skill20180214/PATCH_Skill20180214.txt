@@ -502,12 +502,12 @@ TEXTADV:0xeb3=0xeb3.txt
 TEXTADV:0xeb4=0xeb4.txt
 TEXTADV:0xeb5=0xeb5.txt
 
-INFO=SkillSystem_FE8-1.0.0 http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
+INFO=SkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
 INFO.en=This is an old version that is kept for compatability.\r\nIt is recommended to use the most recent revision rather than this patch.\r\nPatches the ROM to allow characters/classes to equip/learn skill like modern FE games.\r\nAfter installation, edit with "Skill Config," "Assign Skill by Unit," and "Assign Skill by Class" in Advanced Editors.\r\n
-INFO.zh=SkillSystem_FE8-1.0.0 http://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
+INFO.zh=SkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
 
 AUTHOR=Credits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
-AUTHOR=circleseverywhere Skill System v1.0.0 Donate to Circles http://donorbox.org/donate-to-circles\r\nSkills: Tequila, Rossendale, StanH, Leonarth, Teraspark\r\nIcons: Monkeybard & Black Mage\r\nTestMap: Primefusion Port:7743\r\nhttp://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/
+AUTHOR=circleseverywhere Skill System v1.0.0 Donate to Circles http://donorbox.org/donate-to-circles\r\nSkills: Tequila, Rossendale, StanH, Leonarth, Teraspark\r\nIcons: Monkeybard & Black Mage\r\nTestMap: Primefusion Port:7743\r\nhttps://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/
 AUTHOR.zh=Credits:\r\nMonkeybard & Black Mage for most of the skill icons\r\nTequila, Rossendale, StanH, Leonarth, Teraspark for skills\r\nPrimefusion for the test map\r\nTransport:7743 (remap string)
 
 NAME.zh=技能SkillSystems20180214（技能扩展）

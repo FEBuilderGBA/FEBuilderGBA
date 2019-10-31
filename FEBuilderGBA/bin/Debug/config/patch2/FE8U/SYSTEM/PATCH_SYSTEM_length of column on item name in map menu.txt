@@ -10,4 +10,4 @@ ADDRESS=0x59D186
 
 INFO.en=Increase the hex value to expand the spacing for item name.\r\n
 
-AUTHOR=kirb http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267 port:7743
+AUTHOR=kirb https://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267 port:7743

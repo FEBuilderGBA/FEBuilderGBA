@@ -9,7 +9,7 @@ COMBO=ディフォルト|0x04 0x48|修正|0x21 0xE0
 COMBO.en=Default|0x04 0x48|Fix|0x21 0xE0
 COMBO.zh=默认|0x04 0x48|修正|0x21 0xE0
 
-AUTHOR=Venno http://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
+AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 
 INFO=ターン開始にカーソルを合わせるユニットを、主人公ではなく、名簿の一番上のユニットにします。\r\nまた、ステータス画面に表示されるリーダーを、同じく、主人公ではなく、名簿の一番上のユニットにします。
 INFO.en=Toggles whether the ROM's autocursor seeks the first deployed unit or the first roster unit.\r\nBy default it seeks the first roster unit (Eirika/Ephraim)\r\n

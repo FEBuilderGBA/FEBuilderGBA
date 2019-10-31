@@ -246,7 +246,7 @@ namespace FEBuilderGBA
         private void ExportButton_Click(object sender, EventArgs e)
         {
             string title = R._("保存するファイル名を選択してください");
-            string filter = R._("sound|*.s;*.mid|s|*.s|midi|*.mid|MusicalInstrument|*.instrument|All files|*");
+            string filter = R._("sound|*.s;*.mid|s|*.s|midi|*.mid|MusicalInstrument|*.instrument|SondFont|*.sf2|All files|*");
 
             string songname = "song" + U.ToHexString(AddressList.SelectedIndex);
 
@@ -277,8 +277,19 @@ namespace FEBuilderGBA
 
             if (ext == ".MID" || ext == ".MIDI")
             {
-                SongUtil.ExportMidiFile(filename, songname
-                    , Tracks, NumBlks, Priority, Reverb, instrument_addr);
+                if (SongUtil.UseGBAMusRiper())
+                {
+                    SongUtil.ExportMidiFileByGBAMusRiper(filename, (uint)this.Address.Value);
+                }
+                else
+                {
+                    SongUtil.ExportMidiFile(filename, songname
+                        , Tracks, NumBlks, Priority, Reverb, instrument_addr);
+                }
+            }
+            else if (ext == ".SF2")
+            {
+                SongUtil.ExportSoundFontByGBAMusRiper(filename, (uint)this.Address.Value);
             }
             else if (ext == ".INSTRUMENT")
             {

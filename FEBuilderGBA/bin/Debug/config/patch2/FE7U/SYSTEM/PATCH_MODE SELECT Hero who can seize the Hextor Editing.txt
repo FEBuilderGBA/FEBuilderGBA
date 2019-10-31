@@ -8,5 +8,5 @@ TAG=#ENGINE
 
 ADDRESS=0x348CA 0x034888 0x03488C
 ADDRESS_TYPE=UNIT
-AUTHOR=Source: shin19 http://feuniverse.us/t/fe7-replace-hector-mode/3169/8
+AUTHOR=Source: shin19 https://feuniverse.us/t/fe7-replace-hector-mode/3169/8
 NAME.zh=MODESELECT可以保护的英雄赫克托编。

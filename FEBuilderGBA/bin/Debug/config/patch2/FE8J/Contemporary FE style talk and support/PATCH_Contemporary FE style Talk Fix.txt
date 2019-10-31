@@ -10,7 +10,7 @@ PATCHED_IF:0x03230E=0x00 0x00
 BIN:$FREEAREA=TalkFix.dmp
 JUMP:0x03230E:$r3=TalkFix.dmp
 
-AUTHOR=circleseverywhere Transport:7743,aera http://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13
+AUTHOR=circleseverywhere Transport:7743,aera https://feuniverse.us/t/contemporary-fe-style-talk-and-support-commands/912/13
 INFO=ユニットが会話をしても行動済みの状態にしません。\r\n会話後にもメニューを開いてアイテムを交換したりできるようになります。
 INFO.en=Patches the ROM so that using "Talk" doesn't consume a unit's action.\r\nThe unit can attack, use the menu, support, and trade afterward.\r\n"Talk" supercedes "Support" if both options are available.\r\n
 NAME.zh=即使你对话，也可以在对话后打开菜单

@@ -58,7 +58,7 @@ W12:SONG.en=Detransform Sound
 
 
 INFO=戦闘時に、変身できるクラスとアイテムを増やします。\r\nこれは古いパッチです。
-AUTHOR=UNKNOWN ,Aera http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
+AUTHOR=UNKNOWN ,Aera https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
 INFO.en=During battle, increase classes and items that can transform.\r\nThis is an old patch.
 NAME.zh=（旧）战斗转型补丁
 INFO.zh=在战斗中，增加可以变换的类和项目。\r\n这是一个旧补丁。

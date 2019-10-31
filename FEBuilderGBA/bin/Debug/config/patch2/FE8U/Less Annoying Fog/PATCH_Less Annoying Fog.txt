@@ -11,4 +11,4 @@ INFO=霧の中を移動して敵に遭遇した時に、待機させるのでは
 INFO.en=Patches the ROM to edit what occurs when encountering enemies in the fog.\r\nInstead of forcing the unit to end their turn, the unit can respond with actions like attack, item, support, and talk.\r\n
 INFO.zh=当你在雾中移动并遇到敌人时，你可以修改它们，以便你可以使用攻击和物品而不是等待。
 
-AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4
+AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/4

@@ -10,7 +10,7 @@ EDIT_PATCH=PATCH_Battle_Transform.txt
 EA=FE8-Battle Transform EA.txt
 
 INFO=戦闘時に、変身できるクラスとアイテムを増やします。
-AUTHOR=Tequila ,UNKNOWN ,Aera, circleseverywhere. Transport by 7743 http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
+AUTHOR=Tequila ,UNKNOWN ,Aera, circleseverywhere. Transport by 7743 https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/77
 
 INFO.en=Allows adding additional classes and items that can transform.
 NAME.zh=战斗変身补丁(Install)

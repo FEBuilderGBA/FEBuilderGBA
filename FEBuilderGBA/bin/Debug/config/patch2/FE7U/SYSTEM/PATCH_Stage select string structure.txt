@@ -22,7 +22,7 @@ D4:TEXT=詳細
 D8:TEXT=武器タイプ名
 
 INFO=ステージセレクトのテキストを変更します
-AUTHOR=Source: Tequila http://feuniverse.us/t/fe7-replace-hector-mode/3169/6
+AUTHOR=Source: Tequila https://feuniverse.us/t/fe7-replace-hector-mode/3169/6
 
 NAME.zh=MODESELECT字符串结构
 INFO.zh=更改舞台选择文字

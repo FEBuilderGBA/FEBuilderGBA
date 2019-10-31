@@ -13,4 +13,4 @@ INFO=支援会話を行える数-1 を設定する。最大9(10回の支援会�
 INFO.en=The number of possible support conversations is the value set +1.\r\nThe maximum possible number in the field is 9 for a total of 10 Support Conversations.\r\n
 INFO.zh=将支持对话的数量设置为-1。最多9个（支持10个支持对话）
 
-AUTHOR=Brendor http://feuniverse.us/t/changing-fe7-support-limits/519  transport:7743
+AUTHOR=Brendor https://feuniverse.us/t/changing-fe7-support-limits/519  transport:7743

@@ -8,7 +8,7 @@ EA=Installer.event
 //既に適応されたかどうか
 PATCHED_IF:0x53320=0x00 0x4a 0x10 0x47
 
-AUTHOR=kao http://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/ transport 7743
+AUTHOR=kao https://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/ transport 7743
 NAME.zh=拼加载程序（以近距离和远距离切换道具间接效果）
 
 

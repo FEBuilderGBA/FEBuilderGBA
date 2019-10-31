@@ -9,7 +9,7 @@ EA=Installer.event
 //既に適応されたかどうか
 PATCHED_IF:0x58028=0x00 0x4a 0x10 0x47
 
-AUTHOR=kao http://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/
+AUTHOR=kao https://feuniverse.us/t/fe8u-fe7u-spell-loader/3284/
 
 INFO=アイテム間接効果テーブルを拡張し、魔法や投げ槍で使うアニメーションを、近接攻撃と遠距離攻撃とで、それぞれ切り替えるパッチです。
 INFO.en=Patches the ROM to allow classes to have two different animations for magic.\r\nOne for melee range, and the other for ranged attack.\r\n

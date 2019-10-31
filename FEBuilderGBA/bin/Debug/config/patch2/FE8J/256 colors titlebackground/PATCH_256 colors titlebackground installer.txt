@@ -9,6 +9,6 @@ EDIT_PATCH=PATCH_256 colors titlebackground.txt
 EA=titlebackgroundinstaller.event
 
 
-AUTHOR=Leonarth http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10
+AUTHOR=Leonarth https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693/10
 NAME.zh=使用具有256种颜色的图像作为OP标题(Install)
 INFO.en=Patches the Title Background for compatability with 256 color images.\r\nMust be patched in order to use "Image: 256 Color Title Background Editor."\r\n

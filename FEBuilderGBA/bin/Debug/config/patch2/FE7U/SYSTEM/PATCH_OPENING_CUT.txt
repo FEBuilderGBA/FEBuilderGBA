@@ -12,7 +12,7 @@ ONN:0x0BC58E=0x0D 0xD0
 ONN:0x0BC580=0x14 0xD0
 
 OFF:0x0BC58E=0x00 0x00 //Skip the intro cutscene
-OFF:0x0BC580=0x00 0x00 //Allow the first “2003 Nintendo Presents” message to be skipped
+OFF:0x0BC580=0x00 0x00 //Allow the first “2003 Nintendo Presents" message to be skipped
 
 
 AUTHOR=gray https://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225

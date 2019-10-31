@@ -9,7 +9,7 @@ ADDRESS=0x18286 0x18290 0x87310
 HEX=false
 
 
-AUTHOR=beikehanmu http://feuniverse.us/t/fe-builder-gba/2845/1738
+AUTHOR=beikehanmu https://feuniverse.us/t/fe-builder-gba/2845/1738
 INFO=移動力は、15より以上にしてはいけません。\r\nよって、この値を下げることは可能ですが、上げることはしてはいけません。\r\n15を超えるとゲームシステムが壊れます。
 INFO.en=Movement force should not be more than 15.\r\nTherefore, it is possible to lower this value, but do not raise it.\r\nIf it exceeds 15, the game system will be broken.
 NAME.zh=移动力的上限

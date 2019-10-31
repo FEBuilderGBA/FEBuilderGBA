@@ -9,7 +9,7 @@ EA=install unit select sfx.event
 PATCHED_IF:0x17E4C=0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_unit select sfx.txt
 
-AUTHOR=Orignal:Leonarth Remodeling:7743 http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693
+AUTHOR=Orignal:Leonarth Remodeling:7743 https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693
 
 INFO=ユニットを選択した時に、音声を再生します。\r\nLeonarthのasmをベースに、条件を細かく設定できるようにしました。
 INFO.en=Sets the sound played upon unit select.\r\nMust be installed to use "Unit Select SFX Editor" and "Unit Select SFX Frequency."\r\nBased on Leonarth's asm, with added conditional options.\r\n

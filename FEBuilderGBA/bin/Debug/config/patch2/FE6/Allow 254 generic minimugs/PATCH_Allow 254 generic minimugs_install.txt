@@ -8,7 +8,7 @@ PATCHED_IF:0x008DB8=0x00 0xB5 0xFF 0x21 0x08 0x40 0xC0 0x00
 EA=Allow 254 generic minimugs.event
 EDIT_PATCH=PATCH_Allow 254 generic minimugs.txt
 
-AUTHOR=Gryz,7743 http://feuniverse.us/t/allowing-for-more-than-0x06-generic-minimugs/1085/9
+AUTHOR=Gryz,7743 https://feuniverse.us/t/allowing-for-more-than-0x06-generic-minimugs/1085/9
 INFO=一般兵の顔の上限を増やします。\r\nこのパッチは、Gryzのルーチンを元に、データの持ち方を独自に拡張しました。
 INFO.en=Increase the upper limit of the face of general soldiers.\r\nBased on Gryz's routine, this patch expanded its own way of holding data.
 NAME.zh=扩大一般士兵的面部图像，最高可达254(Install)

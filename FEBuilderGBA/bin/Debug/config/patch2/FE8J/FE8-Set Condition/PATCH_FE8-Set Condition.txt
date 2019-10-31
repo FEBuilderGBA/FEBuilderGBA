@@ -11,7 +11,7 @@ PATCHED_IF:$GREP4 0xE8 0x68 0x03 0x49 0x49 0x68 0x08 0x43 0xE8 0x60 0x02 0x48 0x
 
 INFO=FE7のUNCM/UNCR命令をFE8に実装します。\r\nSET_CONDITIONとUNSET_CONDITIONという名前で実装されます。\r\n設定値はメモリスロット1を参照します。\r\nSETVAL 0x1 0x2\r\nSET_CONDITION Eirika\r\nまたは、\r\nUNCM Eirika 0x02
 
-AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/80
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/80
 INFO.en=Patches the ROM to implement FE7's UNCM / UNCR instruction-set into FE 8.\r\nImplemented with the names SET_CONDITION and UNSET_CONDITION.\r\nRefer to memory slot 1 for the setting value.\r\nSETVAL 0x1 0x2\r\nSET_CONDITION Eirika\r\nOr\r\nUNCM Eirika 0x02
 INFO.zh=在FE 8中实施FE 7的UNCM / UNCR指令。\r\n它使用名称SET_CONDITION和UNSET_CONDITION实现。\r\n请参阅内存插槽1了解设置值。\r\nSETVAL 0x1 0x02\r\nSET_CONDITION Eirika\r\n或者，\r\nUNCM Eirika 0x02
 

@@ -7,7 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x1693A
-AUTHOR=Tequila http://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267  transport:7743
+AUTHOR=Tequila https://feuniverse.us/t/how-to-enlarge-columns-in-the-different-menus-and-windows-in-fe8/3267  transport:7743
 NAME.zh=在商店中显示商品名称的栏的长度
 
 INFO.en=Increase the hex value to expand the spacing for item name.\r\nAfter the value exceeds 19, 4-digit sale prices won't fit.\r\n

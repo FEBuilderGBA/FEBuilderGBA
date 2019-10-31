@@ -25,5 +25,5 @@ LISTNAME=$B0:CLASS
 B0:CLASS=Class
 B0:CLASS.zh=职业
 NAME.zh=技能开锁职业自由设置补丁
-INFO.zh=允许将“开锁”技能分配给多个职业
+INFO.zh=允许将“开锁"技能分配给多个职业
 

@@ -31,7 +31,7 @@ ON1:0x076668=0x02
 ON0:0x076668=0x01
 OFF:0x076668=0x14
 
-AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/75
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/75
 NAME.zh=加速升级成长状态显示
 
 INFO.en=Patches the ROM to speed up the level up menu.\r\n

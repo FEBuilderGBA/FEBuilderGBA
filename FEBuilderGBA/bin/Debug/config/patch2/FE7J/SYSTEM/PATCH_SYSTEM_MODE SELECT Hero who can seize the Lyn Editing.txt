@@ -8,5 +8,5 @@ TAG=#ENGINE
 
 ADDRESS=0x34DA6 0x34D6E
 ADDRESS_TYPE=UNIT
-AUTHOR=Source: shin19 http://feuniverse.us/t/fe7-replace-hector-mode/3169/8
+AUTHOR=Source: shin19 https://feuniverse.us/t/fe7-replace-hector-mode/3169/8
 NAME.zh=MODESELECT可以保护的英雄凛编

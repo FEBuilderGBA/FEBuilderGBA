@@ -2654,6 +2654,17 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "HZ1024")
+            {//HZ1024.
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    double hz1024 = (double)src_object.Value;
+                    link_object.Text = R._("{0}hz",hz1024 / 1024);
+                };
+                return;
+            }
+            
             
 #if DEBUG            
             throw new Exception("linkerror linktype(" + linktype + ") error  link_info:" + link_info.Name);
@@ -3944,6 +3955,11 @@ namespace FEBuilderGBA
             else if (linktype == "GAMEOPTION")
             {
                 InputFormRef.JumpForm<StatusOptionForm>(value, "AddressList", src_object);
+            }
+            else if (linktype == "DIRECTSOUND")
+            {
+                SongInstrumentDirectSoundForm f = (SongInstrumentDirectSoundForm)InputFormRef.JumpForm<SongInstrumentDirectSoundForm>(U.NOT_FOUND);
+                f.JumpToAddr(value);
             }
         }
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)
@@ -6427,10 +6443,33 @@ namespace FEBuilderGBA
 
             if (Cache_ramunit_param_dic == null)
             {
-                string filename = U.ConfigDataFilename("ramunit_param_");
-                Cache_ramunit_param_dic = U.LoadDicResource(filename);
+                Cache_ramunit_param_dic = GetRAM_UNIT_PARAM_Low();
             }
             return U.at(Cache_ramunit_param_dic, num);
+        }
+        static Dictionary<uint, string> GetRAM_UNIT_PARAM_Low()
+        {
+            Dictionary<uint, string> ramunit_param_dic = new Dictionary<uint,string>();
+            string filename = U.ConfigDataFilename("ramunit_param_");
+            ramunit_param_dic = U.LoadDicResource(filename);
+
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
+            {
+                ramunit_param_dic[0x1A] = R._("魔力");
+            }
+            else if (magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC
+                || magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC)
+            {
+                ramunit_param_dic[0x3A] = R._("魔力");
+            }
+
+            PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+            if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+            {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
+                ramunit_param_dic[0x3A] = R._("追加スキル");
+            }
+            return ramunit_param_dic;
         }
         public static string GetRAM_UNIT_VALUE(uint prevValue, uint num, out string errorMessae)
         {
@@ -6461,6 +6500,14 @@ namespace FEBuilderGBA
             else if (prevValue == 0x44)
             {//AI2
                 return GetAI2(num);
+            }
+            else if (prevValue == 0x3A)
+            {
+                PatchUtil.skill_system_enum skill = PatchUtil.SearchSkillSystem();
+                if (skill == PatchUtil.skill_system_enum.FE8N_ver2)
+                {//FE8J FE8NSkillは、0x3Aに追加スキルを記録してる
+                    return SkillConfigFE8NVer2SkillForm.GetSkillText(num);
+                }
             }
             return InputFormRef.GetDigitHint(num);
         }
@@ -10685,6 +10732,10 @@ namespace FEBuilderGBA
             else if (str == "@MAPCHANGE_SIZE")
             {
                 str = R._("タイルデータのサイズを指定します。\r\n\r\n注意:\r\n手動で、より大きい値に変更すると危険です。\r\nデータサイズを増やしたいときは、マップエディタから変更してください。");
+            }
+            else if (str == "@ADSR")
+            {
+                str = R._("シンセサイザーで利用される4つのパラメータを設定します。\r\nAttack(音の立ち上がり時間)Decay(持続音への減衰時間)\r\nSustain(減衰後の保持,持続音量)\r\nRelease(余韻)\r\n詳しく知りたい場合は、「ADSR dtm」で検索してください。");
             }
             else
             {

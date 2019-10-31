@@ -2051,7 +2051,7 @@ Map Name
 Create a Seize point.\r\nThis point can be used to clear a chapter. While often set at castle gates, they can be placed anywhere.\r\nThere can also be more than one Sieze point.\r\nNormally, when using the Seize command, enable 0x03 with "Completion Flag" and specify a dummy of 0x1 for the event.\r\nFlag 0x03 is specified and the main character waits at Seize, so "End event" is automatically called, chapter clear.\r\nVillage Center: Create a village center aimed by Thief.\r\nHome: Create house events. The village visit event has a different occurrence type.
 
 :尋ねるコマンドで訪問できる訪問村イベントを作成します。\r\n村の中心: 盗賊が狙う村の中心を作成します。これを設定しないと、村が襲われた時に、廃村の「マップ変化」が発生しません。また、必ず村の真ん中の座標を指定する必要があります。\r\n民家: 「尋ねる」コマンドで村を訪問できるようにします。村の入れ口に設定します。一度訪ねると、村の入れ口の位置の座標された「マップ変更」が自動的に実行されます。通常は閉じ村になります。
-In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 “Home” event; this is the event that makes the “Visit” command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 “Village Center” event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
+In order to correctly set up a village you have to set up 2 events:\r\n1 event will be a type 10 "Home" event; this is the event that makes the "Visit" command pop up and allows units to visit the village; place this event on the village entrance; once visited Tile Changes placed at the village entrance tile will be executed (you usually want to use the "closed village" tile for this);\r\n1 event will be a type 20 "Village Center" event; this is the event that causes thiefs and brigands to move towards the village and that destroys the village when it is reached by thiefs and brigands; place this event in the middle of the village; once reached by a thief or brigand Tile Changes placed on the village tiles will be executed (you usually want to use the "Ruins" tile for this)
 
 :宝箱を設定します。\r\n宝箱を開けると、指定したアイテムが手に入ります。\r\nまた、宝箱の座標に設定されている「マップ変化」が実行されます。通常は空箱が設定されており、この「マップ変化」で空箱になります。
 Create a Chest.\r\nPlayer open the Chest, he will get the item you specified.\r\n"Tile Changes" set in the coordinates of the Chest is also executed.Normally, an empty box is set, and it becomes an empty box with this "Tile Changes".
@@ -4873,6 +4873,9 @@ If you get the assets equivalent to the specified gold, you will receive an A ra
 :タイルデータのサイズを指定します。\r\n\r\n注意:\r\n手動で、より大きい値に変更すると危険です。\r\nデータサイズを増やしたいときは、マップエディタから変更してください。
 Specify the size of tile data.\r\n\r\nNote:.\r\nIt is dangerous to manually change to a larger value.\r\nIf you want to increase the data size, change it from the map editor.
 
+:シンセサイザーで利用される4つのパラメータを設定します。\r\nAttack(音の立ち上がり時間)Decay(持続音への減衰時間)\r\nSustain(減衰後の保持,持続音量)\r\nRelease(余韻)\r\n詳しく知りたい場合は、「ADSR dtm」で検索してください。
+Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken for initial run-up of level from nil to peak,\r\n beginning when the key is pressed.\r\nDecay is\r\n the time taken for the subsequent run down from\r\n the attack level to the designated sustain level.\r\nSustain is\r\n the level during the main sequence of the sound's duration,\r\n until the key is released.\r\nRelease is\r\n the time taken for the level to decay from\r\n the sustain level to zero after the key is released.\r\n\r\nTo find out more, google for "ADSR dtm".
+
 :元に戻す(&Z)
 Undo(&Z)
 
@@ -6376,6 +6379,15 @@ The width or height of the map file is incorrect.\r\n\r\nMapFilename:{0}\r\nFirs
 :マップファイルの幅または高さが正しくありません。\r\n\r\nマップファイル:{0}\r\n幅:{1} 高さ:{2}\r\n
 The width or height of the map file is incorrect.\r\n\r\nMapFilename:{0}\r\nWidth:{1} Height:{2}\r\n
 
+:ファイルが壊れています。\r\n必須項目がありません。\r\nFile:{0}
+The file is corrupted.\r\nThere are no required items.\r\nFile: {0}.
+
+:ファイルが壊れています。\r\nヘッダーがありません。\r\nFile:{0}
+The file is corrupted.\r\nThere is no header.\r\nFile: {0}.
+
+:ファイルが壊れています。\r\nBODYがありません。\r\nFile:{0}
+The file is corrupted.\r\nThere is no BODY.\r\nFile: {0}.
+
 :マップデータの形式が正しくありません。\r\nTiledで保存するデータ形式をcsvか、tmxディフォルトのxml形式にしてください。
 The format of the map data is incorrect.\r\nPlease set the data format saved with Tiled to csv or tmx default xml format.
 
@@ -6437,7 +6449,7 @@ Expand Tile Changes
 Edit Palette
 
 :適応
-Adaptation
+Apply
 
 :データサイズが不一致。\r\n(データ数/2) % 幅 == 0 ではありません
 Data size doesn't match.\r\n(Data size / 2)%width==0
@@ -8440,6 +8452,9 @@ Function 2
 :1=表示する
 1=Displayed
 
+:FE6 FE7 アイテムアイコン拡張ボタンの表示
+FE6 FE7 Item icon expansion button display.
+
 :FE8ワールドマップ道の拡張ボタンを表示する
 Toggle FE8 WorldMap Path Expansion Button
 
@@ -8575,8 +8590,8 @@ File Export Settings
 :保存
 Save
 
-:FE6 FE7 アイテムアイコン拡張ボタンの表示
-FE6 FE7 Item icon expansion button display.
+:soundfont/midiへの変換を行う外部プログラムを指定してください。
+Specify an external program that converts to soundfont / midi.
 
 :その他ROM直値テキスト
 Other ROM Direct Text
@@ -8690,7 +8705,7 @@ Sort by Old date
 Sort by Name
 
 :フィルタの適応
-Filter adaptation
+Apply filter
 
 :FEBuilderGBAを設置しているディレクトリが深すぎます。\r\nファイルのパスの最大数260文字を越えました。\r\nパッチの探索を実行できません。\r\n{0}
 The directory where FEBuilderGBA is installed is too deep.\r\nThe maximum number of file paths exceeded 260 characters.\r\nPatch search can not be executed.\r\n{0}.
@@ -9476,7 +9491,7 @@ SwordType
 Classification.
 
 :曲を取り出すROMを「--fromrom」で指定してください。
-Specify the ROM from which the song is to be extracted with “--fromrom”.
+Specify the ROM from which the song is to be extracted with "--fromrom".
 
 :曲をインポートする場所を「--tosong」で指定してください。
 Please specify the location to import the song with "--tosong".
@@ -9531,6 +9546,12 @@ Open another ROM
 
 :サウンドテーブル
 Sound table
+
+:領域が確保されていません。
+The area is not secured.
+
+:これより下のアドレスには、waveデータが、LengthByteだけ格納されています。
+Wave data is stored in LengthByte below this address.
 
 :SquareWave(消音プチノイズ)
 Square Wave (silent petit noise)
@@ -9906,6 +9927,9 @@ Canceled the import of the wave file
 
 :楽器データをインポートできませんでした。
 Could not import instrument data.
+
+:プログラムがエラーを返しました。\r\n{0}
+The program returned an error.\r\n{0}.
 
 :曲番号
 Song Number
@@ -11968,3 +11992,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:追加スキル
+Add skill

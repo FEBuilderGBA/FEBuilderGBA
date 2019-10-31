@@ -79,7 +79,14 @@
     <Compile Include="ArenaClassForm.Designer.cs">
       <DependentUpon>ArenaClassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EAUtilLynDumpMode.cs" />
     <Compile Include="PatchUtil.cs" />
+    <Compile Include="SongInstrumentDirectSoundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SongInstrumentDirectSoundForm.Designer.cs">
+      <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemTextEncoderArabianTBLEncode.cs" />
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
@@ -2001,6 +2008,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FE8SpellMenuExtendsForm.resx">
       <DependentUpon>FE8SpellMenuExtendsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SongInstrumentDirectSoundForm.resx">
+      <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolASMEditForm.resx">
       <DependentUpon>ToolASMEditForm.cs</DependentUpon>

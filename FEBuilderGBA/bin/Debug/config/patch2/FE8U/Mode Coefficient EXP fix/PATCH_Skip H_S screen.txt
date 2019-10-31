@@ -10,6 +10,6 @@ COMBO=Skip|0x00 0x00|Default|0x06 0xD1
 
 INFO.en=Edit field to toggle whether to skip the "Health & Safety" warning that plays upon bootup.\r\nThe ROM is default set to not skip.\r\n
 
-AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/17
+AUTHOR=circleseverywhere https://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/17
 
 

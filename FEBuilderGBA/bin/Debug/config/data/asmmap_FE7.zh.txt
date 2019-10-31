@@ -4540,10 +4540,10 @@
 08035964	CpPerform_DanceWait	{J}
 08035968	CpPerform_TalkWait	{J}
 080359AC	CpPerform_ExitBallistaWait	{J}
-08050ABC	将值设置为“战斗4字节的未知标志”	{J}
-08050AC8	获得“战斗4字节的未知标志”	{J}
+08050ABC	将值设置为“战斗4字节的未知标志"	{J}
+08050AC8	获得“战斗4字节的未知标志"	{J}
 0203E0EC	战斗4字节的未知标志	{J}
-0804B194	将值设置为“战斗4字节的未知标志”	{U}
+0804B194	将值设置为“战斗4字节的未知标志"	{U}
 0203DFFC	战斗4字节的未知标志	{U}
 0804B9B4	EndEkrBattleDeamon	{J}
 0804B9C4	IsBattleDeamonActive	{J}
@@ -4585,7 +4585,7 @@
 0806BA88	Make6CMOVEUNITForUnit	{U}
 0806BCB4	NewMOVEUNIT	{U}
 080256F4	GetUnitMapSpritePaletteIndex	{U}
-0804B1A0	获得“战斗4字节的未知标志”	{U}
+0804B1A0	获得“战斗4字节的未知标志"	{U}
 //This data is made with the aim of being readable by machine fast.
 {J}
 0802D00C	ActionStaffDoorChestUseItem	{U}

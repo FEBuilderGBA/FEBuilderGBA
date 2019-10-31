@@ -10,4 +10,4 @@ BIN:0x8154C=8154C.bin
 //MeleeAndMagicFix
 BIN:0x184DC=184DC.bin
 
-AUTHOR=jjl2357\r\nhttp://feuniverse.us/t/fe7-fe8-display-all-weapon-ranks-your-character-has/744\r\nMeleeAndMagicFix:melee and magic fix  Hextator,Tequila
+AUTHOR=jjl2357\r\nhttps://feuniverse.us/t/fe7-fe8-display-all-weapon-ranks-your-character-has/744\r\nMeleeAndMagicFix:melee and magic fix  Hextator,Tequila

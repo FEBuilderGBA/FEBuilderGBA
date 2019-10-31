@@ -31,4 +31,4 @@ OFF:0x0741E0=0x14
 
 INFO.en=Patches the ROM to speed up the level up menu.\r\n
 
-AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/75
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/75

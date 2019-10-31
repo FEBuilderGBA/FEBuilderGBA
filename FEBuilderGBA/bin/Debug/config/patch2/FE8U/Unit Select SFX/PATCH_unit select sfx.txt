@@ -40,4 +40,4 @@ INFO=ユニットを選択した時に、音声を再生します。\r\nLeonarth
 INFO.en=Sets the sound played upon unit select.\r\n"Unit Select SFX Installer" must be installed to use.\r\nBased on Leonarth's asm, with added conditional options.
 INFO.zh=当你选择一个人物时，播放声音。\r\n基于Leonarth的模式，我可以精确地设定条件。
 
-AUTHOR=Leonarth,7743 http://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693
+AUTHOR=Leonarth,7743 https://feuniverse.us/t/fe8-and-maybe-fe7-leonarths-asm-thingies/2693

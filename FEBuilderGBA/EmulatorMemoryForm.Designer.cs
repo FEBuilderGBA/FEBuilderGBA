@@ -260,7 +260,7 @@
             this.PARTY_B59 = new System.Windows.Forms.NumericUpDown();
             this.label81 = new System.Windows.Forms.Label();
             this.PARTY_B58 = new System.Windows.Forms.NumericUpDown();
-            this.label82 = new System.Windows.Forms.Label();
+            this.PARTY_J_58 = new System.Windows.Forms.Label();
             this.PARTY_B57 = new System.Windows.Forms.NumericUpDown();
             this.label70 = new System.Windows.Forms.Label();
             this.PARTY_B56 = new System.Windows.Forms.NumericUpDown();
@@ -330,7 +330,7 @@
             this.PARTY_B27 = new System.Windows.Forms.NumericUpDown();
             this.label64 = new System.Windows.Forms.Label();
             this.PARTY_B26 = new System.Windows.Forms.NumericUpDown();
-            this.label62 = new System.Windows.Forms.Label();
+            this.PARTY_J_26 = new System.Windows.Forms.Label();
             this.PARTY_B25 = new System.Windows.Forms.NumericUpDown();
             this.label63 = new System.Windows.Forms.Label();
             this.PARTY_B24 = new System.Windows.Forms.NumericUpDown();
@@ -3341,7 +3341,7 @@
             this.panel3.Controls.Add(this.PARTY_B59);
             this.panel3.Controls.Add(this.label81);
             this.panel3.Controls.Add(this.PARTY_B58);
-            this.panel3.Controls.Add(this.label82);
+            this.panel3.Controls.Add(this.PARTY_J_58);
             this.panel3.Controls.Add(this.PARTY_B57);
             this.panel3.Controls.Add(this.label70);
             this.panel3.Controls.Add(this.PARTY_B56);
@@ -3411,7 +3411,7 @@
             this.panel3.Controls.Add(this.PARTY_B27);
             this.panel3.Controls.Add(this.label64);
             this.panel3.Controls.Add(this.PARTY_B26);
-            this.panel3.Controls.Add(this.label62);
+            this.panel3.Controls.Add(this.PARTY_J_26);
             this.panel3.Controls.Add(this.PARTY_B25);
             this.panel3.Controls.Add(this.label63);
             this.panel3.Controls.Add(this.PARTY_B24);
@@ -3894,15 +3894,15 @@
             this.PARTY_B58.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B58.TabIndex = 401;
             // 
-            // label82
+            // PARTY_J_58
             // 
-            this.label82.Location = new System.Drawing.Point(629, 262);
-            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(57, 18);
-            this.label82.TabIndex = 400;
-            this.label82.Text = "nazo2";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PARTY_J_58.Location = new System.Drawing.Point(629, 262);
+            this.PARTY_J_58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PARTY_J_58.Name = "PARTY_J_58";
+            this.PARTY_J_58.Size = new System.Drawing.Size(57, 18);
+            this.PARTY_J_58.TabIndex = 400;
+            this.PARTY_J_58.Text = "nazo2";
+            this.PARTY_J_58.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B57
             // 
@@ -4738,15 +4738,15 @@
             this.PARTY_B26.Size = new System.Drawing.Size(73, 25);
             this.PARTY_B26.TabIndex = 315;
             // 
-            // label62
+            // PARTY_J_26
             // 
-            this.label62.Location = new System.Drawing.Point(559, 97);
-            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(126, 18);
-            this.label62.TabIndex = 316;
-            this.label62.Text = "体格＋";
-            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PARTY_J_26.Location = new System.Drawing.Point(559, 97);
+            this.PARTY_J_26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PARTY_J_26.Name = "PARTY_J_26";
+            this.PARTY_J_26.Size = new System.Drawing.Size(126, 18);
+            this.PARTY_J_26.TabIndex = 316;
+            this.PARTY_J_26.Text = "体格＋";
+            this.PARTY_J_26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PARTY_B25
             // 
@@ -6706,7 +6706,7 @@
         private System.Windows.Forms.NumericUpDown PARTY_B23;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.NumericUpDown PARTY_B26;
-        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label PARTY_J_26;
         private System.Windows.Forms.NumericUpDown PARTY_B25;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.NumericUpDown PARTY_B27;
@@ -6788,7 +6788,7 @@
         private System.Windows.Forms.NumericUpDown PARTY_B59;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.NumericUpDown PARTY_B58;
-        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label PARTY_J_58;
         private System.Windows.Forms.NumericUpDown PARTY_B69;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.NumericUpDown PARTY_B68;

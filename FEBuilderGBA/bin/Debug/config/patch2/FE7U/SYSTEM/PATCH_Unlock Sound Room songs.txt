@@ -15,4 +15,4 @@ ONN:0xAAEA2=0x00 0x00
 OFF:0xAAEA2=0x18 0xD1
 
 COMBO=defualt|OFF|unlock|ONN
-AUTHOR=http://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37?source_topic_id=3290\r\nhttp://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37/8
+AUTHOR=https://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37?source_topic_id=3290\r\nhttps://feuniverse.us/t/fe7-unlocking-the-sound-room-by-default/37/8

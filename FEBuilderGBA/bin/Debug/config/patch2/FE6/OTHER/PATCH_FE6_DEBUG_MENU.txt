@@ -11,7 +11,7 @@ ONN:0x5C7368=0x75 0xA6
 OFF:0x5C7368=0x6D 0xEA
 
 INFO=FE6のデバッグメニューを表示する
-AUTHOR=出典 http://feuniverse.us/t/fe6u-leftover-debug-stuff/3199
+AUTHOR=出典 https://feuniverse.us/t/fe6u-leftover-debug-stuff/3199
 INFO.en=Display FE6 debug menu
 AUTHOR.en=Source http: // feuniverse.us/t/FE6u - leftover - debug - stuff/3199.
 INFO.zh=显示FE6调试菜单

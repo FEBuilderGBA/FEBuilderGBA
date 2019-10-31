@@ -8,4 +8,4 @@ NAME.zh=索敌_L
 
 PATCHED_IF:0x2A430=0x00 0x4B 0x18 0x47
 
-AUTHOR=Tequila http://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/80
+AUTHOR=Tequila https://feuniverse.us/t/teqs-minor-assembly-shenanigans/1655/80

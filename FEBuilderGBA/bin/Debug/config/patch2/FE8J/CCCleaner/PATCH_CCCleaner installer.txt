@@ -17,4 +17,4 @@ INFO=スキルを覚えることができるアイテム「スキルの書」を
 
 INFO.en=You will be able to create the item "skills book" that you can learn skills.\r\nItem ID: 0x25 or later items, by setting the item effect to "0x2E=Metis's Book"\r\nThe skill ID to memorize is set in the "attack power" column of the item.\r\n\r\nTo use this patch, you need skill extension and BreakSave extension.\r\n
 NAME.zh=技能(Install)
-INFO.zh=您将能够创建可以学习技能的项目“技能书”。\r\n物品ID：0x25或更高的物品，通过将物品效果设置为“0x2E=知惠之书”，它变成了技能写作。\r\n要记忆的技能ID在项目的“攻击力”列中设置。\r\n\r\n要使用此修补程序，您需要技能扩展和"超过31个状态参数。运输车200(BreakSave)"扩展。\r\n
+INFO.zh=您将能够创建可以学习技能的项目“技能书"。\r\n物品ID：0x25或更高的物品，通过将物品效果设置为“0x2E=知惠之书"，它变成了技能写作。\r\n要记忆的技能ID在项目的“攻击力"列中设置。\r\n\r\n要使用此修补程序，您需要技能扩展和"超过31个状态参数。运输车200(BreakSave)"扩展。\r\n

@@ -7,7 +7,7 @@ ADDRESS=0xC96E0
 COMBO=SKIP|0x00 0x00|Default|0x06 0xD0
 COMBO.zh=跳过|0x00 0x00|默认|0x06 0xD0
 
-AUTHOR=circleseverywhere http://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
+AUTHOR=circleseverywhere https://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
 INFO=オープニングの字幕をスキップします。\r\n英雄グラドが・・・という字幕を表示しなくします。
 INFO.en=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\nSkipping the opening subtitles.\r\nSkip the display subtitles of Hero's Grado...
 

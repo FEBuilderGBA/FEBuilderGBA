@@ -6,7 +6,7 @@ TAG=#ENGINE
 PATCHED_IF:0x03FA4A=0xC0 0x46
 EA=DanceAi.event
 
-AUTHOR=Stan http://feuniverse.us/t/fe8u-stans-asm-stuff/2376/18
+AUTHOR=Stan https://feuniverse.us/t/fe8u-stans-asm-stuff/2376/18
 
 INFO=敵の踊り子のAIが適切に動作するように修正します。\r\n移動済みの敵ユニットに踊るを利用して移動を支援するようになります。
 INFO.en=Fix enemy dancer's AI to work properly.\r\nUsing dance to the enemy units that have already moved to assist moving.

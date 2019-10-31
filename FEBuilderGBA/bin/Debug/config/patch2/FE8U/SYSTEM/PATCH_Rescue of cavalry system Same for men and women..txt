@@ -14,7 +14,7 @@ COMBO.zh=性别不平等|0x09 0xD1|两性平等|0xC0 0x46
 
 INFO=騎兵が救出を行うときに、男女で基礎値を変えているのを抑制します。\r\n男性キャラクター "25-体格=救出できる体格"\r\n女性キャラクター "20-体格=救出できる体格"\r\n女性の方が体格が小さいユニットが多いため、ゲームバランスを取るための処置だと思います。\r\nこのパッチは、これを抑制し、女性でも男性と同じ25の値を利用するようにします。\r\n女性の騎兵、ペガサスナイトなどがより便利になります。
 INFO.en=Toggles whether mounted females use the female Aid calculation (Default) or the male aid calculation (Patched)\r\nDefault mounted Aid calculation is: 25 (male) or 20 (female) - unit's CON\r\nThis patch removes the female aid penalty and treats all mounted aid calcs as 25 - CON.\r\nBecause of their default lower CON, this will likely make female mounted units better at rescuing.\r\n
-INFO.zh=当骑兵获救时，它会抑制男人和女人基础价值的变化。\r\n男性角色“25  - 体质=可以获救的体质”\r\n女性角色“20  - 体质=可以获救的体质”\r\n因为女性是规模较小的较小人物，我认为这是衡量游戏平衡的一个方法。\r\n这个补丁压制了这一点，所以女性使用与男性相同的价值观。\r\n女骑兵，飞马座之夜等将更加方便。
+INFO.zh=当骑兵获救时，它会抑制男人和女人基础价值的变化。\r\n男性角色“25  - 体质=可以获救的体质"\r\n女性角色“20  - 体质=可以获救的体质"\r\n因为女性是规模较小的较小人物，我认为这是衡量游戏平衡的一个方法。\r\n这个补丁压制了这一点，所以女性使用与男性相同的价值观。\r\n女骑兵，飞马座之夜等将更加方便。
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81

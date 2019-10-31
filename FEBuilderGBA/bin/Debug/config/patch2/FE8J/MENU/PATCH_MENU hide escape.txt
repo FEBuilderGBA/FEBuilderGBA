@@ -21,4 +21,4 @@ COMBO.zh=显示|0xD0|消除|0xE0
 
 INFO="退却"メニューを消去します。\r\n塔や遺跡の領域にマップを作りたい場合は、退却コマンドが表示されてしまい邪魔になります。\r\nこのパッチは、"退却"メニューを消去します。
 INFO.en=Patches the game to prevent using the "Retreat" option on the menu of Lagdou, Valni, and monster battles.\r\n
-INFO.zh=删除“撤退”菜单。\r\n想在塔和遗迹的区域做地图的话，会显示出退却命令的妨碍。\r\n该补丁将清除“撤退”菜单。
+INFO.zh=删除“撤退"菜单。\r\n想在塔和遗迹的区域做地图的话，会显示出退却命令的妨碍。\r\n该补丁将清除“撤退"菜单。
