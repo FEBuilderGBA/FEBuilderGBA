@@ -70,27 +70,31 @@ namespace FEBuilderGBA
             {
                 NewDataCount.Value = 20;
             }
-            else if (inputFormRef.DataCount <= 0xff)
+            else if (inputFormRef.DataCount < 0x7f)
+            {
+                NewDataCount.Value = 0x80;
+            }
+            else if (inputFormRef.DataCount < 0xff)
             {
                 NewDataCount.Value = 0xff;
             }
-            else if (inputFormRef.DataCount <= 0x1000)
+            else if (inputFormRef.DataCount < 0x1000)
             {
                 NewDataCount.Value = 0x1000;
             }
-            else if (inputFormRef.DataCount <= 0x2000)
+            else if (inputFormRef.DataCount < 0x2000)
             {
                 NewDataCount.Value = 0x2000;
             }
-            else if (inputFormRef.DataCount <= 0x4000)
+            else if (inputFormRef.DataCount < 0x4000)
             {
                 NewDataCount.Value = 0x4000;
             }
-            else if (inputFormRef.DataCount <= 0x7fff)
+            else if (inputFormRef.DataCount < 0x7fff)
             {
                 NewDataCount.Value = 0x7fff;
             }
-            else if (inputFormRef.DataCount <= 0xffff)
+            else if (inputFormRef.DataCount < 0xffff)
             {
                 NewDataCount.Value = 0xffff;
             }
@@ -102,7 +106,7 @@ namespace FEBuilderGBA
             uint expandsmax = inputFormRef.AddressListExpandsMax;
             if (expandsmax != U.NOT_FOUND)
             {//拡張上限が設定されている場合はそこで止める.
-                if (NewDataCount.Value > expandsmax)
+                if (NewDataCount.Value >= expandsmax)
                 {
                     NewDataCount.Value = expandsmax;
                 }
@@ -121,7 +125,6 @@ namespace FEBuilderGBA
 
         static bool IsBadBaseAddress(uint addr)
         {
-//            if (addr == 0 || addr == U.NOT_FOUND)
             if (addr == 0)
             {
                 return true;
