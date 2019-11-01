@@ -7,8 +7,12 @@ RunEvent13:
 #incbin "RunEvent13.dmp"
 
 ALIGN 4
-IsLoca0x12:
-#incbin "IsLoca0x12.dmp"
+IsLoca0x19:
+#incbin "IsLoca0x19.dmp"
+
+ALIGN 4
+RunEvent19:
+#incbin "RunEvent19.dmp"
 
 
 #define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
@@ -41,9 +45,9 @@ ORG	FEBUILDER_EXTRA_ORG
 	BYTE  NormalText
 	BYTE  $4e
 	SHORT 0
-	POIN IsLoca0x12|1
+	POIN IsLoca0x19|1
 	WORD 0
-	WORD 0x08022FE9
+	POIN RunEvent19|1
 	WORD 0
 	WORD 0
 	WORD 0

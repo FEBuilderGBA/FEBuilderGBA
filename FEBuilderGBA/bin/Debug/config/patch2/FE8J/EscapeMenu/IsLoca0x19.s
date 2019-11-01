@@ -26,7 +26,7 @@ CheckCond:
 ldrb r0, [r4, #0x10]
 ldrb r1, [r4, #0x11]
 blh 0x08086350   @GetAvailableLocaCommandAt	{J}
-ldr r1,=0x12     @MapObject 0x12
+ldr r1,=0x19     @MapObject 0x19
 cmp r0, r1
 bne FlaseReturn
 

@@ -1090,6 +1090,9 @@ Endgame Credits
 :準備しています
 preparing...
 
+:追加スキル
+Add skill
+
 :MakeProcNodeで無限再帰 ramaddr:{0} topTreeIndex:{1}
 Infinite recursion with MakeProcNode ramaddr: {0} topTreeIndex: {1}.
 
@@ -1651,11 +1654,11 @@ Map
 :14=ランダム宝箱
 14=Random Chest
 
-:12=到着
-12=Arrive
-
 :13=離脱
 13=Escape
+
+:19=到着
+19=arrival.
 
 :22=階段拡張
 22=Stairs Hack
@@ -11992,5 +11995,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:追加スキル
-Add skill
