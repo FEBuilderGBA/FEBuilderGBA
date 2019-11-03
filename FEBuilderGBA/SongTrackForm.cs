@@ -152,13 +152,13 @@ namespace FEBuilderGBA
             if (ext == ".WAV" || ext == ".WAVE")
             {
                 SongTrackImportWaveForm f = (SongTrackImportWaveForm)InputFormRef.JumpFormLow<SongTrackImportWaveForm>();
-                f.Init();
+                f.Init(filename);
                 DialogResult dr = f.ShowDialog();
                 if (dr != System.Windows.Forms.DialogResult.OK)
                 {
                     return;
                 }
-                error = SongUtil.ImportWave(filename, songtable_address, f.UseLoop());
+                error = SongUtil.ImportWave(f.GetFilename(), songtable_address, f.UseLoop());
             }
             else if (ext == ".MID" || ext == ".MIDI")
             {

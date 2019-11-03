@@ -26,6 +26,8 @@ namespace FEBuilderGBA
             ASMTextBox.Text = Program.Config.at("devkitpro_eabi");
             SappyTextBox.Text = Program.Config.at("sappy");
             EATextBox.Text = Program.Config.at("event_assembler");
+            gba_mus_riper_TextBox.Text = Program.Config.at("gba_mus_riper");
+            sox_TextBox.Text = Program.Config.at("sox");
 
             this.LANG_EN_Button.Text = "English"; ///No Translate
             this.LANG_JP_Button.Text = "日本語"; ///No Translate
@@ -70,6 +72,14 @@ namespace FEBuilderGBA
             ,DO_NOT_SELECT
         }
         Step4_Enum Step4;
+
+        enum Step5_Enum
+        {
+            Path
+            ,DOWNLOAD_BOTH
+            ,DO_NOT_SELECT
+        }
+        Step5_Enum Step5;
 
         private void Step1NextButton_Click(object sender, EventArgs e)
         {
@@ -147,19 +157,19 @@ namespace FEBuilderGBA
                 return;
             }
             this.Step4 = Step4_Enum.Path;
-            Setting();
+            this.MainTab.SelectedTab = this.Step5Page;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             this.Step4 = Step4_Enum.DOWNLOAD_BOTH;
-            Setting();
+            this.MainTab.SelectedTab = this.Step5Page;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             this.Step4 = Step4_Enum.DO_NOT_SELECT;
-            Setting();
+            this.MainTab.SelectedTab = this.Step5Page;
         }
 
         private void RefEmulatorButton_Click(object sender, EventArgs e)
@@ -222,6 +232,7 @@ namespace FEBuilderGBA
                 SettingStep2();
                 SettingStep3();
                 SettingStep4();
+                SettingStep5();
 
                 OptionForm f = new OptionForm();
                 f.AutoClose();
@@ -395,6 +406,49 @@ namespace FEBuilderGBA
 
             Program.Config["devkitpro_eabi"] = asm;
             Program.Config["emulator2"] = debugger;
+        }
+
+        void SettingStep5()
+        {
+            string gba_mus_riper = "";
+            string sox = "";
+            if (this.Step5 == Step5_Enum.Path)
+            {
+                gba_mus_riper = this.gba_mus_riper_TextBox.Text;
+                sox = this.sox_TextBox.Text;
+            }
+            else if (this.Step5 == Step5_Enum.DOWNLOAD_BOTH)
+            {
+                {
+                    string dir = Path.Combine(Program.BaseDirectory, "app", "gba_mus_riper");
+                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/640291680813318145/gba_mus_riper_v24.7z";
+                    string r = DownloadProgram_Direct(url, dir, "song_riper.exe");
+                    if (IsErrorResult(r))
+                    {
+                        R.ShowStopError(r);
+                        return;
+                    }
+                    gba_mus_riper = r;
+                }
+                {
+                    string dir = Path.Combine(Program.BaseDirectory, "app", "sox");
+                    string url = "https://cdn.discordapp.com/attachments/145137778710151168/640298468430053417/sox-14.4.2.7z";
+                    string r = DownloadProgram_Direct(url, dir, "sox.exe");
+                    if (IsErrorResult(r))
+                    {
+                        R.ShowStopError(r);
+                        return;
+                    }
+                    sox = r;
+                }
+            }
+            else if (this.Step5 == Step5_Enum.DO_NOT_SELECT)
+            {
+                return;
+            }
+
+            Program.Config["sox"] = sox;
+            Program.Config["gba_mus_riper"] = gba_mus_riper;
         }
 
         string DownloadProgram_DirectOneFile(string url, string path, string filename)
@@ -600,6 +654,47 @@ namespace FEBuilderGBA
         private void Step4PrevButton_Click(object sender, EventArgs e)
         {
             this.MainTab.SelectedTab = this.Step3Page;
+        }
+
+        private void Step5PrevButton_Click(object sender, EventArgs e)
+        {
+            this.MainTab.SelectedTab = this.Step4Page;
+        }
+
+        private void Step5NextButton_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(gba_mus_riper_TextBox.Text))
+            {
+                return;
+            }
+            if (!File.Exists(sox_TextBox.Text))
+            {
+                return;
+            }
+            this.Step5 = Step5_Enum.Path;
+            Setting();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Step5 = Step5_Enum.DOWNLOAD_BOTH;
+            Setting();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Step5 = Step5_Enum.DO_NOT_SELECT;
+            Setting();
+        }
+
+        private void Refgba_mus_riperButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RefSOXButton_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

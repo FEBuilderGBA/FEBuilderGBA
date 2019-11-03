@@ -5283,6 +5283,10 @@ namespace FEBuilderGBA
             U.mkdir(tempdir);
             return tempdir;
         }
+        public static string mktemp(string ext)
+        {
+            return  System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ext;
+        }
         public class MakeTempDirectory : IDisposable
         {
             public string Dir { get; private set; }

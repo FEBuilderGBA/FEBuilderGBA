@@ -40,6 +40,7 @@
             this.LANG_ZH_Button = new System.Windows.Forms.Button();
             this.LANG_JP_Button = new System.Windows.Forms.Button();
             this.LANG_EN_Button = new System.Windows.Forms.Button();
+            this.label8 = new FEBuilderGBA.LabelEx();
             this.StartButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Step1Page = new System.Windows.Forms.TabPage();
@@ -51,6 +52,9 @@
             this.RefEmulatorButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Step1NextButton = new System.Windows.Forms.Button();
+            this.EmulatorTextBox = new FEBuilderGBA.TextBoxEx();
+            this.label6 = new FEBuilderGBA.LabelEx();
+            this.ProblemLabel = new FEBuilderGBA.LabelEx();
             this.Step2Page = new System.Windows.Forms.TabPage();
             this.Step2PrevButton = new System.Windows.Forms.Button();
             this.RefEAButton = new System.Windows.Forms.Button();
@@ -60,6 +64,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Step2NextButton = new System.Windows.Forms.Button();
+            this.EATextBox = new FEBuilderGBA.TextBoxEx();
+            this.label11 = new FEBuilderGBA.LabelEx();
+            this.label5 = new FEBuilderGBA.LabelEx();
             this.Step3Page = new System.Windows.Forms.TabPage();
             this.Step3PrevButton = new System.Windows.Forms.Button();
             this.RefSappyButton = new System.Windows.Forms.Button();
@@ -69,6 +76,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.Step3NextButton = new System.Windows.Forms.Button();
+            this.SappyTextBox = new FEBuilderGBA.TextBoxEx();
+            this.labelEx1 = new FEBuilderGBA.LabelEx();
+            this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.Step4Page = new System.Windows.Forms.TabPage();
             this.Step4PrevButton = new System.Windows.Forms.Button();
             this.RefASMButton = new System.Windows.Forms.Button();
@@ -80,27 +90,32 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.Step4NextButton = new System.Windows.Forms.Button();
-            this.SettingNowPage = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EndPage = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.EndButton = new System.Windows.Forms.Button();
-            this.label8 = new FEBuilderGBA.LabelEx();
-            this.EmulatorTextBox = new FEBuilderGBA.TextBoxEx();
-            this.label6 = new FEBuilderGBA.LabelEx();
-            this.ProblemLabel = new FEBuilderGBA.LabelEx();
-            this.EATextBox = new FEBuilderGBA.TextBoxEx();
-            this.label11 = new FEBuilderGBA.LabelEx();
-            this.label5 = new FEBuilderGBA.LabelEx();
-            this.SappyTextBox = new FEBuilderGBA.TextBoxEx();
-            this.labelEx1 = new FEBuilderGBA.LabelEx();
-            this.labelEx2 = new FEBuilderGBA.LabelEx();
             this.ASMTextBox = new FEBuilderGBA.TextBoxEx();
             this.DebuggerTextBox = new FEBuilderGBA.TextBoxEx();
             this.labelEx3 = new FEBuilderGBA.LabelEx();
             this.labelEx4 = new FEBuilderGBA.LabelEx();
+            this.Step5Page = new System.Windows.Forms.TabPage();
+            this.Step5PrevButton = new System.Windows.Forms.Button();
+            this.RefSOXButton = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Refgba_mus_riperButton = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.Step5NextButton = new System.Windows.Forms.Button();
+            this.sox_TextBox = new FEBuilderGBA.TextBoxEx();
+            this.gba_mus_riper_TextBox = new FEBuilderGBA.TextBoxEx();
+            this.labelEx6 = new FEBuilderGBA.LabelEx();
+            this.labelEx7 = new FEBuilderGBA.LabelEx();
+            this.SettingNowPage = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelEx5 = new FEBuilderGBA.LabelEx();
+            this.EndPage = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EndButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.BeginPage.SuspendLayout();
@@ -109,6 +124,7 @@
             this.Step2Page.SuspendLayout();
             this.Step3Page.SuspendLayout();
             this.Step4Page.SuspendLayout();
+            this.Step5Page.SuspendLayout();
             this.SettingNowPage.SuspendLayout();
             this.EndPage.SuspendLayout();
             this.SuspendLayout();
@@ -129,6 +145,7 @@
             this.MainTab.Controls.Add(this.Step2Page);
             this.MainTab.Controls.Add(this.Step3Page);
             this.MainTab.Controls.Add(this.Step4Page);
+            this.MainTab.Controls.Add(this.Step5Page);
             this.MainTab.Controls.Add(this.SettingNowPage);
             this.MainTab.Controls.Add(this.EndPage);
             this.MainTab.Location = new System.Drawing.Point(4, -1);
@@ -233,6 +250,17 @@
             this.LANG_EN_Button.Text = "EN";
             this.LANG_EN_Button.UseVisualStyleBackColor = true;
             this.LANG_EN_Button.Click += new System.EventHandler(this.LANG_EN_Button_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ErrorMessage = "";
+            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Location = new System.Drawing.Point(12, 179);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(195, 24);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "初期設定ウィザード";
             // 
             // StartButton
             // 
@@ -352,6 +380,35 @@
             this.Step1NextButton.UseVisualStyleBackColor = true;
             this.Step1NextButton.Click += new System.EventHandler(this.Step1NextButton_Click);
             // 
+            // EmulatorTextBox
+            // 
+            this.EmulatorTextBox.ErrorMessage = "";
+            this.EmulatorTextBox.Location = new System.Drawing.Point(139, 209);
+            this.EmulatorTextBox.Name = "EmulatorTextBox";
+            this.EmulatorTextBox.Placeholder = "";
+            this.EmulatorTextBox.Size = new System.Drawing.Size(559, 25);
+            this.EmulatorTextBox.TabIndex = 103;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ErrorMessage = "";
+            this.label6.Location = new System.Drawing.Point(779, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 18);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Step 1/5";
+            // 
+            // ProblemLabel
+            // 
+            this.ProblemLabel.ErrorMessage = "";
+            this.ProblemLabel.Location = new System.Drawing.Point(3, 49);
+            this.ProblemLabel.Name = "ProblemLabel";
+            this.ProblemLabel.Size = new System.Drawing.Size(669, 113);
+            this.ProblemLabel.TabIndex = 8;
+            this.ProblemLabel.Text = "テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミ" +
+    "ュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。";
+            // 
             // Step2Page
             // 
             this.Step2Page.BackColor = System.Drawing.SystemColors.Control;
@@ -449,6 +506,34 @@
             this.Step2NextButton.UseVisualStyleBackColor = true;
             this.Step2NextButton.Click += new System.EventHandler(this.Step2NextButton_Click);
             // 
+            // EATextBox
+            // 
+            this.EATextBox.ErrorMessage = "";
+            this.EATextBox.Location = new System.Drawing.Point(146, 199);
+            this.EATextBox.Name = "EATextBox";
+            this.EATextBox.Placeholder = "";
+            this.EATextBox.Size = new System.Drawing.Size(559, 25);
+            this.EATextBox.TabIndex = 111;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ErrorMessage = "";
+            this.label11.Location = new System.Drawing.Point(781, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 18);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Step 2/5";
+            // 
+            // label5
+            // 
+            this.label5.ErrorMessage = "";
+            this.label5.Location = new System.Drawing.Point(3, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(686, 61);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。";
+            // 
             // Step3Page
             // 
             this.Step3Page.BackColor = System.Drawing.SystemColors.Control;
@@ -545,6 +630,34 @@
             this.Step3NextButton.Text = "設定して次へ";
             this.Step3NextButton.UseVisualStyleBackColor = true;
             this.Step3NextButton.Click += new System.EventHandler(this.Step3NextButton_Click);
+            // 
+            // SappyTextBox
+            // 
+            this.SappyTextBox.ErrorMessage = "";
+            this.SappyTextBox.Location = new System.Drawing.Point(146, 198);
+            this.SappyTextBox.Name = "SappyTextBox";
+            this.SappyTextBox.Placeholder = "";
+            this.SappyTextBox.Size = new System.Drawing.Size(559, 25);
+            this.SappyTextBox.TabIndex = 111;
+            // 
+            // labelEx1
+            // 
+            this.labelEx1.AutoSize = true;
+            this.labelEx1.ErrorMessage = "";
+            this.labelEx1.Location = new System.Drawing.Point(781, 26);
+            this.labelEx1.Name = "labelEx1";
+            this.labelEx1.Size = new System.Drawing.Size(75, 18);
+            this.labelEx1.TabIndex = 19;
+            this.labelEx1.Text = "Step 3/5";
+            // 
+            // labelEx2
+            // 
+            this.labelEx2.ErrorMessage = "";
+            this.labelEx2.Location = new System.Drawing.Point(3, 43);
+            this.labelEx2.Name = "labelEx2";
+            this.labelEx2.Size = new System.Drawing.Size(686, 61);
+            this.labelEx2.TabIndex = 12;
+            this.labelEx2.Text = "Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。";
             // 
             // Step4Page
             // 
@@ -665,6 +778,199 @@
             this.Step4NextButton.UseVisualStyleBackColor = true;
             this.Step4NextButton.Click += new System.EventHandler(this.Step4NextButton_Click);
             // 
+            // ASMTextBox
+            // 
+            this.ASMTextBox.ErrorMessage = "";
+            this.ASMTextBox.Location = new System.Drawing.Point(146, 243);
+            this.ASMTextBox.Name = "ASMTextBox";
+            this.ASMTextBox.Placeholder = "";
+            this.ASMTextBox.Size = new System.Drawing.Size(559, 25);
+            this.ASMTextBox.TabIndex = 118;
+            // 
+            // DebuggerTextBox
+            // 
+            this.DebuggerTextBox.ErrorMessage = "";
+            this.DebuggerTextBox.Location = new System.Drawing.Point(146, 197);
+            this.DebuggerTextBox.Name = "DebuggerTextBox";
+            this.DebuggerTextBox.Placeholder = "";
+            this.DebuggerTextBox.Size = new System.Drawing.Size(559, 25);
+            this.DebuggerTextBox.TabIndex = 111;
+            // 
+            // labelEx3
+            // 
+            this.labelEx3.AutoSize = true;
+            this.labelEx3.ErrorMessage = "";
+            this.labelEx3.Location = new System.Drawing.Point(781, 26);
+            this.labelEx3.Name = "labelEx3";
+            this.labelEx3.Size = new System.Drawing.Size(75, 18);
+            this.labelEx3.TabIndex = 19;
+            this.labelEx3.Text = "Step 4/5";
+            // 
+            // labelEx4
+            // 
+            this.labelEx4.ErrorMessage = "";
+            this.labelEx4.Location = new System.Drawing.Point(3, 42);
+            this.labelEx4.Name = "labelEx4";
+            this.labelEx4.Size = new System.Drawing.Size(686, 61);
+            this.labelEx4.TabIndex = 12;
+            this.labelEx4.Text = "開発環境を設定してください。\r\n開発環境をインストールすると、ASMコードの開発とデバッグができます。";
+            // 
+            // Step5Page
+            // 
+            this.Step5Page.BackColor = System.Drawing.SystemColors.Control;
+            this.Step5Page.Controls.Add(this.Step5PrevButton);
+            this.Step5Page.Controls.Add(this.RefSOXButton);
+            this.Step5Page.Controls.Add(this.label22);
+            this.Step5Page.Controls.Add(this.Refgba_mus_riperButton);
+            this.Step5Page.Controls.Add(this.button6);
+            this.Step5Page.Controls.Add(this.label23);
+            this.Step5Page.Controls.Add(this.button7);
+            this.Step5Page.Controls.Add(this.label24);
+            this.Step5Page.Controls.Add(this.label25);
+            this.Step5Page.Controls.Add(this.Step5NextButton);
+            this.Step5Page.Controls.Add(this.sox_TextBox);
+            this.Step5Page.Controls.Add(this.gba_mus_riper_TextBox);
+            this.Step5Page.Controls.Add(this.labelEx6);
+            this.Step5Page.Controls.Add(this.labelEx7);
+            this.Step5Page.Location = new System.Drawing.Point(4, 28);
+            this.Step5Page.Name = "Step5Page";
+            this.Step5Page.Size = new System.Drawing.Size(860, 591);
+            this.Step5Page.TabIndex = 8;
+            this.Step5Page.Text = "Step5Page";
+            // 
+            // Step5PrevButton
+            // 
+            this.Step5PrevButton.Location = new System.Drawing.Point(776, 54);
+            this.Step5PrevButton.Name = "Step5PrevButton";
+            this.Step5PrevButton.Size = new System.Drawing.Size(80, 36);
+            this.Step5PrevButton.TabIndex = 120;
+            this.Step5PrevButton.Text = "戻る";
+            this.Step5PrevButton.UseVisualStyleBackColor = true;
+            this.Step5PrevButton.Click += new System.EventHandler(this.Step5PrevButton_Click);
+            // 
+            // RefSOXButton
+            // 
+            this.RefSOXButton.Location = new System.Drawing.Point(725, 240);
+            this.RefSOXButton.Name = "RefSOXButton";
+            this.RefSOXButton.Size = new System.Drawing.Size(88, 31);
+            this.RefSOXButton.TabIndex = 119;
+            this.RefSOXButton.Text = "参照";
+            this.RefSOXButton.UseVisualStyleBackColor = true;
+            this.RefSOXButton.Click += new System.EventHandler(this.RefSOXButton_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(13, 243);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(33, 18);
+            this.label22.TabIndex = 117;
+            this.label22.Text = "sox";
+            // 
+            // Refgba_mus_riperButton
+            // 
+            this.Refgba_mus_riperButton.Location = new System.Drawing.Point(725, 194);
+            this.Refgba_mus_riperButton.Name = "Refgba_mus_riperButton";
+            this.Refgba_mus_riperButton.Size = new System.Drawing.Size(88, 31);
+            this.Refgba_mus_riperButton.TabIndex = 116;
+            this.Refgba_mus_riperButton.Text = "参照";
+            this.Refgba_mus_riperButton.UseVisualStyleBackColor = true;
+            this.Refgba_mus_riperButton.Click += new System.EventHandler(this.Refgba_mus_riperButton_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(18, 484);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(795, 36);
+            this.button6.TabIndex = 115;
+            this.button6.Text = "設定しない";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(24, 450);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 18);
+            this.label23.TabIndex = 114;
+            this.label23.Text = "または、";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(18, 369);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(795, 36);
+            this.button7.TabIndex = 113;
+            this.button7.Text = "最新版を自動的にダウンロードします。";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(24, 335);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(63, 18);
+            this.label24.TabIndex = 112;
+            this.label24.Text = "または、";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(13, 197);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(108, 18);
+            this.label25.TabIndex = 110;
+            this.label25.Text = "gba mus riper";
+            // 
+            // Step5NextButton
+            // 
+            this.Step5NextButton.Location = new System.Drawing.Point(575, 292);
+            this.Step5NextButton.Name = "Step5NextButton";
+            this.Step5NextButton.Size = new System.Drawing.Size(238, 36);
+            this.Step5NextButton.TabIndex = 109;
+            this.Step5NextButton.Text = "設定して次へ";
+            this.Step5NextButton.UseVisualStyleBackColor = true;
+            this.Step5NextButton.Click += new System.EventHandler(this.Step5NextButton_Click);
+            // 
+            // sox_TextBox
+            // 
+            this.sox_TextBox.ErrorMessage = "";
+            this.sox_TextBox.Location = new System.Drawing.Point(146, 243);
+            this.sox_TextBox.Name = "sox_TextBox";
+            this.sox_TextBox.Placeholder = "";
+            this.sox_TextBox.Size = new System.Drawing.Size(559, 25);
+            this.sox_TextBox.TabIndex = 118;
+            // 
+            // gba_mus_riper_TextBox
+            // 
+            this.gba_mus_riper_TextBox.ErrorMessage = "";
+            this.gba_mus_riper_TextBox.Location = new System.Drawing.Point(146, 197);
+            this.gba_mus_riper_TextBox.Name = "gba_mus_riper_TextBox";
+            this.gba_mus_riper_TextBox.Placeholder = "";
+            this.gba_mus_riper_TextBox.Size = new System.Drawing.Size(559, 25);
+            this.gba_mus_riper_TextBox.TabIndex = 111;
+            // 
+            // labelEx6
+            // 
+            this.labelEx6.AutoSize = true;
+            this.labelEx6.ErrorMessage = "";
+            this.labelEx6.Location = new System.Drawing.Point(781, 26);
+            this.labelEx6.Name = "labelEx6";
+            this.labelEx6.Size = new System.Drawing.Size(75, 18);
+            this.labelEx6.TabIndex = 19;
+            this.labelEx6.Text = "Step 4/5";
+            // 
+            // labelEx7
+            // 
+            this.labelEx7.ErrorMessage = "";
+            this.labelEx7.Location = new System.Drawing.Point(3, 42);
+            this.labelEx7.Name = "labelEx7";
+            this.labelEx7.Size = new System.Drawing.Size(686, 61);
+            this.labelEx7.TabIndex = 12;
+            this.labelEx7.Text = "音楽を変換するユーティリティを設定してください。";
+            // 
             // SettingNowPage
             // 
             this.SettingNowPage.BackColor = System.Drawing.SystemColors.Control;
@@ -685,6 +991,15 @@
             this.label3.Size = new System.Drawing.Size(263, 28);
             this.label3.TabIndex = 23;
             this.label3.Text = "しばらくお待ちください....";
+            // 
+            // labelEx5
+            // 
+            this.labelEx5.ErrorMessage = "";
+            this.labelEx5.Location = new System.Drawing.Point(16, 155);
+            this.labelEx5.Name = "labelEx5";
+            this.labelEx5.Size = new System.Drawing.Size(771, 164);
+            this.labelEx5.TabIndex = 24;
+            this.labelEx5.Text = "必要なプログラムのダウンロードと、設定をしています。";
             // 
             // EndPage
             // 
@@ -727,148 +1042,6 @@
             this.EndButton.UseVisualStyleBackColor = true;
             this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ErrorMessage = "";
-            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(12, 179);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(195, 24);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "初期設定ウィザード";
-            // 
-            // EmulatorTextBox
-            // 
-            this.EmulatorTextBox.ErrorMessage = "";
-            this.EmulatorTextBox.Location = new System.Drawing.Point(139, 209);
-            this.EmulatorTextBox.Name = "EmulatorTextBox";
-            this.EmulatorTextBox.Placeholder = "";
-            this.EmulatorTextBox.Size = new System.Drawing.Size(559, 25);
-            this.EmulatorTextBox.TabIndex = 103;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ErrorMessage = "";
-            this.label6.Location = new System.Drawing.Point(779, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 18);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Step 1/4";
-            // 
-            // ProblemLabel
-            // 
-            this.ProblemLabel.ErrorMessage = "";
-            this.ProblemLabel.Location = new System.Drawing.Point(3, 49);
-            this.ProblemLabel.Name = "ProblemLabel";
-            this.ProblemLabel.Size = new System.Drawing.Size(669, 113);
-            this.ProblemLabel.TabIndex = 8;
-            this.ProblemLabel.Text = "テスト用に使用するエミュレータを指定してください。\r\n\r\nFEBuilderGBAでは、F5キーを押すと、エミュレータを起動してテストすることができます。\r\nエミ" +
-    "ュレータでテストして問題なければ、ROMに書き込むというが開発手法になります。";
-            // 
-            // EATextBox
-            // 
-            this.EATextBox.ErrorMessage = "";
-            this.EATextBox.Location = new System.Drawing.Point(146, 199);
-            this.EATextBox.Name = "EATextBox";
-            this.EATextBox.Placeholder = "";
-            this.EATextBox.Size = new System.Drawing.Size(559, 25);
-            this.EATextBox.TabIndex = 111;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ErrorMessage = "";
-            this.label11.Location = new System.Drawing.Point(781, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 18);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Step 2/4";
-            // 
-            // label5
-            // 
-            this.label5.ErrorMessage = "";
-            this.label5.Location = new System.Drawing.Point(3, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(686, 61);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "EAを設定してください。\r\nいくつかのパッチは、EAで書かれているため、それらを利用するには、EAが必要です。";
-            // 
-            // SappyTextBox
-            // 
-            this.SappyTextBox.ErrorMessage = "";
-            this.SappyTextBox.Location = new System.Drawing.Point(146, 198);
-            this.SappyTextBox.Name = "SappyTextBox";
-            this.SappyTextBox.Placeholder = "";
-            this.SappyTextBox.Size = new System.Drawing.Size(559, 25);
-            this.SappyTextBox.TabIndex = 111;
-            // 
-            // labelEx1
-            // 
-            this.labelEx1.AutoSize = true;
-            this.labelEx1.ErrorMessage = "";
-            this.labelEx1.Location = new System.Drawing.Point(781, 26);
-            this.labelEx1.Name = "labelEx1";
-            this.labelEx1.Size = new System.Drawing.Size(75, 18);
-            this.labelEx1.TabIndex = 19;
-            this.labelEx1.Text = "Step 3/4";
-            // 
-            // labelEx2
-            // 
-            this.labelEx2.ErrorMessage = "";
-            this.labelEx2.Location = new System.Drawing.Point(3, 43);
-            this.labelEx2.Name = "labelEx2";
-            this.labelEx2.Size = new System.Drawing.Size(686, 61);
-            this.labelEx2.TabIndex = 12;
-            this.labelEx2.Text = "Sappyを指定してください。\r\nSappyを設定すると、♪ボタンで、音楽を視聴できます。";
-            // 
-            // ASMTextBox
-            // 
-            this.ASMTextBox.ErrorMessage = "";
-            this.ASMTextBox.Location = new System.Drawing.Point(146, 243);
-            this.ASMTextBox.Name = "ASMTextBox";
-            this.ASMTextBox.Placeholder = "";
-            this.ASMTextBox.Size = new System.Drawing.Size(559, 25);
-            this.ASMTextBox.TabIndex = 118;
-            // 
-            // DebuggerTextBox
-            // 
-            this.DebuggerTextBox.ErrorMessage = "";
-            this.DebuggerTextBox.Location = new System.Drawing.Point(146, 197);
-            this.DebuggerTextBox.Name = "DebuggerTextBox";
-            this.DebuggerTextBox.Placeholder = "";
-            this.DebuggerTextBox.Size = new System.Drawing.Size(559, 25);
-            this.DebuggerTextBox.TabIndex = 111;
-            // 
-            // labelEx3
-            // 
-            this.labelEx3.AutoSize = true;
-            this.labelEx3.ErrorMessage = "";
-            this.labelEx3.Location = new System.Drawing.Point(781, 26);
-            this.labelEx3.Name = "labelEx3";
-            this.labelEx3.Size = new System.Drawing.Size(75, 18);
-            this.labelEx3.TabIndex = 19;
-            this.labelEx3.Text = "Step 4/4";
-            // 
-            // labelEx4
-            // 
-            this.labelEx4.ErrorMessage = "";
-            this.labelEx4.Location = new System.Drawing.Point(3, 42);
-            this.labelEx4.Name = "labelEx4";
-            this.labelEx4.Size = new System.Drawing.Size(686, 61);
-            this.labelEx4.TabIndex = 12;
-            this.labelEx4.Text = "開発環境を設定してください。\r\n開発環境をインストールすると、ASMコードの開発とデバッグができます。";
-            // 
-            // labelEx5
-            // 
-            this.labelEx5.ErrorMessage = "";
-            this.labelEx5.Location = new System.Drawing.Point(16, 155);
-            this.labelEx5.Name = "labelEx5";
-            this.labelEx5.Size = new System.Drawing.Size(771, 164);
-            this.labelEx5.TabIndex = 24;
-            this.labelEx5.Text = "必要なプログラムのダウンロードと、設定をしています。";
-            // 
             // ToolInitWizardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -892,6 +1065,8 @@
             this.Step3Page.PerformLayout();
             this.Step4Page.ResumeLayout(false);
             this.Step4Page.PerformLayout();
+            this.Step5Page.ResumeLayout(false);
+            this.Step5Page.PerformLayout();
             this.SettingNowPage.ResumeLayout(false);
             this.SettingNowPage.PerformLayout();
             this.EndPage.ResumeLayout(false);
@@ -974,5 +1149,20 @@
         private System.Windows.Forms.Button Step2PrevButton;
         private System.Windows.Forms.Button Step3PrevButton;
         private System.Windows.Forms.Button Step4PrevButton;
+        private System.Windows.Forms.TabPage Step5Page;
+        private System.Windows.Forms.Button Step5PrevButton;
+        private System.Windows.Forms.Button RefSOXButton;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button Refgba_mus_riperButton;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button Step5NextButton;
+        private TextBoxEx sox_TextBox;
+        private TextBoxEx gba_mus_riper_TextBox;
+        private LabelEx labelEx6;
+        private LabelEx labelEx7;
     }
 }

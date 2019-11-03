@@ -53,6 +53,7 @@ namespace FEBuilderGBA
             mid2agb.Text = Program.Config.at("mid2agb");
             mid2agb_default.Checked = midi_importer() == midi_importer_enum.FEBuilderGBA ? false : true;
             gba_mus_riper.Text = Program.Config.at("gba_mus_riper");
+            sox.Text = Program.Config.at("sox");
             CFLAGS.Text = GetCFLAGS();
             retdec.Text = GetRetDec();
             python3.Text = GetPython3();
@@ -226,6 +227,7 @@ namespace FEBuilderGBA
             Program.Config["retdec"] = retdec.Text;
             Program.Config["python3"] = python3.Text;
             Program.Config["gba_mus_riper"] = gba_mus_riper.Text;
+            Program.Config["sox"] = sox.Text;
 
             Program.Config["Color_Control_BackColor"] = Color_Control_BackColor_button.BackColor.Name;
             Program.Config["Color_Control_ForeColor"] = Color_Control_ForeColor_button.BackColor.Name;
@@ -1317,6 +1319,10 @@ namespace FEBuilderGBA
         {
             return Program.Config.at("gba_mus_riper", "");
         }
+        public static string GetSox()
+        {
+            return Program.Config.at("sox", "");
+        }
 
         void MakeExplainFunctions()
         {
@@ -1422,6 +1428,20 @@ namespace FEBuilderGBA
         private void gba_mus_riper_DoubleClick(object sender, EventArgs e)
         {
             gba_mus_riper_button.PerformClick();
+        }
+
+        private void sox_button_Click(object sender, EventArgs e)
+        {
+            string r = EXESearch("sox|sox.exe|");
+            if (r != "")
+            {
+                sox.Text = r;
+            }
+        }
+
+        private void sox_DoubleClick(object sender, EventArgs e)
+        {
+            sox_button.PerformClick();
         }
     }
 }

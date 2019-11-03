@@ -1726,7 +1726,7 @@ namespace FEBuilderGBA
             string args = ""
                 + U.escape_shell_args(Program.ROM.Filename)
                 + " "
-                + U.escape_shell_args(Path.GetFileName(save_filename))
+                + U.escape_shell_args(save_filename)
                 + " "
                 + U.To0xHexString(songtrack_addr);
 
@@ -1772,12 +1772,61 @@ namespace FEBuilderGBA
             string args = ""
                 + U.escape_shell_args(Program.ROM.Filename)
                 + " "
-                + U.escape_shell_args(Path.GetFileName(save_filename))
+                + U.escape_shell_args(save_filename)
                 + " "
                 + U.To0xHexString(songtrack_addr);
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
 
+            if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            string output_target = save_filename;
+            if (!File.Exists(output_target) || U.GetFileSize(output_target) <= 0)
+            {//エラーなのでコマンド名もついでに付与
+                output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
+                return false;
+            }
+
+            output = output_target;
+            return true;
+        }
+        //soxでwavファイルを変換
+        public static bool ConvertWaveBySOX(string save_filename, string from_file, uint chunnel, uint hz, uint strip, out string output)
+        {
+            output = "";
+
+            string compiler_exe = OptionForm.GetSox();
+            if (compiler_exe == "" || !File.Exists(compiler_exe))
+            {
+                output = R._("{0}の設定がありません。 設定->オプションから、{0}を設定してください。", "sox");
+                return false;
+            }
+
+            string tooldir = Path.GetDirectoryName(save_filename);
+
+            string args = ""
+                + U.escape_shell_args(from_file)
+                ;
+            if (hz != 0)
+            {
+                args += String.Format(" -r {0}" , hz);
+            }
+            if (chunnel != 0)
+            {
+                args += String.Format(" -c {0}", chunnel);
+//                args += String.Format(" -b"); //8bit
+            }
+            args += " " + U.escape_shell_args(save_filename);
+            if (strip != 0)
+            {
+                args += String.Format(" silence 1 0.2 {0}% reverse silence 1 0.2 {0}% reverse", strip - 1);
+            }
+
+            output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
             if (output.IndexOf("ERROR", StringComparison.OrdinalIgnoreCase) == 0)
             {//エラーなのでコマンド名もついでに付与
                 output = compiler_exe + " " + args + " \r\noutput:\r\n" + output;
