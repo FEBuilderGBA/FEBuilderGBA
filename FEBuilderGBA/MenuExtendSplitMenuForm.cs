@@ -79,6 +79,44 @@ namespace FEBuilderGBA
                 return;
             }
             this.STR5.Value = Program.ROM.u16(a);
+
+            if (GetDataLength(menuaddr) == 5)
+            {
+                LSTR6.Hide();
+                STR6.Hide();
+                STR6_TEXT.Hide();
+
+                LSTR7.Hide();
+                STR7.Hide();
+                STR7_TEXT.Hide();
+
+                LSTR8.Hide();
+                STR8.Hide();
+                STR8_TEXT.Hide();
+            }
+            else
+            {
+                a = menuaddr + (36 * 5) + 4;
+                if (!U.isSafetyOffset(a + 2))
+                {
+                    return;
+                }
+                this.STR6.Value = Program.ROM.u16(a);
+
+                a = menuaddr + (36 * 6) + 4;
+                if (!U.isSafetyOffset(a + 2))
+                {
+                    return;
+                }
+                this.STR7.Value = Program.ROM.u16(a);
+
+                a = menuaddr + (36 * 7) + 4;
+                if (!U.isSafetyOffset(a + 2))
+                {
+                    return;
+                }
+                this.STR8.Value = Program.ROM.u16(a);
+            }
         }
 
         private void MenuExtendSplitMenuForm_Load(object sender, EventArgs e)
@@ -89,6 +127,9 @@ namespace FEBuilderGBA
             InputFormRef.makeLinkEventHandler("", controls, this.STR3, this.STR3_TEXT, 0, "TEXT", new string[] { });
             InputFormRef.makeLinkEventHandler("", controls, this.STR4, this.STR4_TEXT, 0, "TEXT", new string[] { });
             InputFormRef.makeLinkEventHandler("", controls, this.STR5, this.STR5_TEXT, 0, "TEXT", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, this.STR6, this.STR6_TEXT, 0, "TEXT", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, this.STR7, this.STR7_TEXT, 0, "TEXT", new string[] { });
+            InputFormRef.makeLinkEventHandler("", controls, this.STR8, this.STR8_TEXT, 0, "TEXT", new string[] { });
 
             InputFormRef.RegistNotifyNumlicUpdate(this.AllWriteButton, controls);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
@@ -96,7 +137,7 @@ namespace FEBuilderGBA
 
         uint NewAlloc()
         {
-            byte[] alloc = new byte[36 + (36 * 6)];
+            byte[] alloc = new byte[36 + (36 * 9)];
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc");
             uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
@@ -124,15 +165,15 @@ namespace FEBuilderGBA
             uint[] texts;
             if (Program.ROM.RomInfo.is_multibyte())
             {
-                texts = new uint[] { 0xBD5, 0xBD6, 0, 0, 0 };
+                texts = new uint[] { 0xBD5, 0xBD6, 0, 0, 0, 0, 0, 0 };
             }
             else
             {
-                texts = new uint[] { 0xC15, 0xC16, 0, 0, 0 };
+                texts = new uint[] { 0xC15, 0xC16, 0, 0, 0, 0, 0, 0 };
             }
 
             uint a = addr + 36;
-            for (uint i = 0; i < 5; i++ , a += 36)
+            for (uint i = 0; i < 9; i++, a += 36)
             {
                 Program.ROM.write_u16(a + 4, texts[i], undodata); //text
                 if (texts[i] == 0)
@@ -148,6 +189,14 @@ namespace FEBuilderGBA
                 Program.ROM.write_p32(a + 12, prEventMenuDisplayCommand, undodata); //表示時
                 Program.ROM.write_p32(a + 16, prEventMenuDrawFunction, undodata); //描画時
                 Program.ROM.write_p32(a + 20, prEventMenuCommandEffect, undodata); //選択時
+            }
+
+            {
+                a = addr + 36 + (36 * 8);
+                for (uint i = 0; i < 32; i += 4)
+                {
+                    Program.ROM.write_u32(a + i, 0xffffffff, undodata);
+                }
             }
 
             //新規に追加した分のデータを書き込み.
@@ -231,11 +280,21 @@ namespace FEBuilderGBA
             Program.ROM.write_u8 (addr + 2 , (uint)this.B2.Value , undodata); //width
             Program.ROM.write_u32(addr + 4 , (uint)this.D4.Value , undodata); //style
 
-            uint[] texts = new uint[]{(uint)this.STR1.Value ,(uint)this.STR2.Value
-            ,(uint)this.STR3.Value ,(uint)this.STR4.Value   ,(uint)this.STR5.Value};
+            uint[] texts;
+            if (GetDataLength(menuaddr) == 8)
+            {
+                texts = new uint[]{(uint)this.STR1.Value ,(uint)this.STR2.Value
+                ,(uint)this.STR3.Value ,(uint)this.STR4.Value   ,(uint)this.STR5.Value
+                ,(uint)this.STR6.Value,(uint)this.STR7.Value,(uint)this.STR8.Value};
+            }
+            else
+            {
+                texts = new uint[]{(uint)this.STR1.Value ,(uint)this.STR2.Value
+                ,(uint)this.STR3.Value ,(uint)this.STR4.Value   ,(uint)this.STR5.Value};
+            }
 
             uint i = 0;
-            for (i = 0; i < 5; i++)
+            for (i = 0; i < texts.Length; i++)
             {
                 uint a = menuaddr + (36 * i);
                 if (Program.ROM.RomInfo.is_multibyte())
@@ -264,6 +323,78 @@ namespace FEBuilderGBA
             Program.Undo.Push(undodata);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
             InputFormRef.ShowWriteNotifyAnimation(this, 0);
+        }
+
+        uint GetDataLength(uint menuaddr)
+        {
+            uint termData = menuaddr + (36 * 9);
+            if (!U.isSafetyOffset(termData - 1))
+            {
+                return 5;
+            }
+
+            for (uint i = 6; i < 8; i++)
+            {
+                uint addr = menuaddr + (36 * i);
+                if (!U.isSafetyOffset(addr))
+                {
+                    return 5;
+                }
+                if (!U.isSafetyOffset(addr + 36 - 1))
+                {
+                    return 5;
+                }
+
+                uint no = Program.ROM.u8(addr + 9);
+                if (no == 0)
+                {
+                    uint textid = Program.ROM.u16(addr + 4);
+                    if (textid != 0)
+                    {
+                        return 5;
+                    }
+
+                    uint a = Program.ROM.u32(addr + 12);
+                    if (a != 0)
+                    {
+                        return 5;
+                    }
+                    a = Program.ROM.u32(addr + 16);
+                    if (a != 0)
+                    {
+                        return 5;
+                    }
+                    a = Program.ROM.u32(addr + 20);
+                    if (a != 0)
+                    {
+                        return 5;
+                    }
+                }
+                else
+                {
+                    if (no != i)
+                    {//不明なデータなので5ということにしておく.
+                        return 5;
+                    }
+
+                    uint a = Program.ROM.u32(addr + 12);
+                    if (!U.isPointerASM(a))
+                    {
+                        return 5;
+                    }
+                    a = Program.ROM.u32(addr + 16);
+                    if (!U.isPointerASM(a))
+                    {
+                        return 5;
+                    }
+                    a = Program.ROM.u32(addr + 20);
+                    if (!U.isPointerASM(a))
+                    {
+                        return 5;
+                    }
+                }
+            }
+            return 8;
         }
 
         //全データの取得
