@@ -137,7 +137,7 @@ namespace FEBuilderGBA
 
         uint NewAlloc()
         {
-            byte[] alloc = new byte[36 + (36 * 9)];
+            byte[] alloc = new byte[36 + (36 * 9) + 4];
 
             Undo.UndoData undodata = Program.Undo.NewUndoData("NewAlloc");
             uint addr = InputFormRef.AppendBinaryData(alloc, undodata);
@@ -191,12 +191,9 @@ namespace FEBuilderGBA
                 Program.ROM.write_p32(a + 20, prEventMenuCommandEffect, undodata); //選択時
             }
 
-            {
-                a = addr + 36 + (36 * 8);
-                for (uint i = 0; i < 32; i += 4)
-                {
-                    Program.ROM.write_u32(a + i, 0xffffffff, undodata);
-                }
+            {//nullが大量にできるので、終端マークを入れます.
+                a = addr + 36 + (36 * 9);
+                Program.ROM.write_u32(a , 0xffffffff, undodata);
             }
 
             //新規に追加した分のデータを書き込み.
@@ -378,17 +375,17 @@ namespace FEBuilderGBA
                     }
 
                     uint a = Program.ROM.u32(addr + 12);
-                    if (!U.isPointerASM(a))
+                    if (!U.isPointerASMOrNull(a))
                     {
                         return 5;
                     }
                     a = Program.ROM.u32(addr + 16);
-                    if (!U.isPointerASM(a))
+                    if (!U.isPointerASMOrNull(a))
                     {
                         return 5;
                     }
                     a = Program.ROM.u32(addr + 20);
-                    if (!U.isPointerASM(a))
+                    if (!U.isPointerASMOrNull(a))
                     {
                         return 5;
                     }

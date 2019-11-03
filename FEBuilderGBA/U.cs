@@ -1922,6 +1922,13 @@ namespace FEBuilderGBA
         }
 
         [MethodImpl(256)]
+        public static bool isPointerASMOrNull(uint a)
+        {
+            if (a == 0) return true;
+            return (a >= 0x08000000 && a < 0x0A000000) && U.IsValueOdd(a);
+        }
+
+        [MethodImpl(256)]
         public static bool isPointer(uint a)
         {
             return (a >= 0x08000000 && a < 0x0A000000);
