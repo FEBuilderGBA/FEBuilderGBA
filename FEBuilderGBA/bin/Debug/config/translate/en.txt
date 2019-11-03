@@ -9827,40 +9827,40 @@ Please select an instrument
 To see the result, press the Preview button.
 
 :ファイルサイズ {0} -> {1} ({2}%)
-File size {0}-> {1} ({2}%).
+File size {0}-> {1} ({2}%)
 
 :0=変更しない
-0=It does not change.
+0=Not change
 
 :Waveの音質を下げると、容量を小さくできます。
-Decreasing the sound quality of Wave can reduce the capacity.
+Decreasing the sound quality of Wave can reduce the capacity
 
 :チャンネル
-Channel.
+Channel
 
 :歌などを入れる場合は、ループが必要です。\r\n楽器データの場合は不要です。\r\nインポート後に、楽譜データから変更することもできます。
 If you want to put a song, you need a loop.\r\nNot required for instrument data.\r\nYou can also change the score data after importing.
 
 :楽譜のループ
-Score loop.
+Score loop
 
 :0=除去しない
-0=Do not remove.
+0=Do not remove
 
 :1=無音を除去する
-1=Remove silence.
+1=Remove silence
 
 :2=もっと強力に無音を除去する
-2=Remove silence more powerfully.
+2=Remove silence more powerfully
 
 :前後の無音除去
-Silence removal before and after.
+Remove Silence
 
 :音質を下げる
-Reduce sound quality.
+Reduce sound quality
 
 :最適化
-optimisation.
+Optimisation
 
 :Waveファイルは効果音に使うことを想定しています。\r\nそれを、音楽に利用すると、大量に容量を消費しますが、インポートしてもよろしいですか？
 Wave files are ideak for sound effects.\r\nIf used for music, a large amount of data will be used. Continue with the import?

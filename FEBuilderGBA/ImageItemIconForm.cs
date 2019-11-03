@@ -30,6 +30,11 @@ namespace FEBuilderGBA
             
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                this.InputFormRef.CheckProtectionAddrHigh = false;  //かなり手前のアドレスなので確認不可能
+            }
+            
 
             U.SetIcon(ExportButton, Properties.Resources.icon_arrow);
             U.SetIcon(ImportButton, Properties.Resources.icon_upload);

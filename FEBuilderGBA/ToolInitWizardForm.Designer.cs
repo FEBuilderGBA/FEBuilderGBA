@@ -960,7 +960,7 @@
             this.labelEx6.Name = "labelEx6";
             this.labelEx6.Size = new System.Drawing.Size(75, 18);
             this.labelEx6.TabIndex = 19;
-            this.labelEx6.Text = "Step 4/5";
+            this.labelEx6.Text = "Step 5/5";
             // 
             // labelEx7
             // 
