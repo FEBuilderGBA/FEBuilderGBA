@@ -20,13 +20,21 @@ namespace FEBuilderGBA
             this.HZ.SelectedIndex = 1;
             this.Strip.SelectedIndex = 1;
             this.Chunnel.SelectedIndex = 1;
+            this.Volume.SelectedIndex = 9;
+            this.LoopComboBox.SelectedIndex = 1;
             PreviewResult.Text = R._("結果を見るには、Previewボタンを押してください。");
         }
-        public new void Dispose()
+        public void Dettach()
         {
+            if (WavePlayer != null)
+            {
+                WavePlayer.Stop();
+                WavePlayer.Dispose();
+                WavePlayer = null;
+            }
             DeleteTemp();
-            base.Dispose();
         }
+        System.Media.SoundPlayer WavePlayer = null;
         string FromFilename = "";
         string TempFilename = "";
         public void Init(string fromFilename)
@@ -79,8 +87,8 @@ namespace FEBuilderGBA
                 Math.Round(tempFileSize * 100 / (double)fromFileSize,2));
             PreviewResult.Text = str;
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(this.TempFilename);
-            player.Play();
+            this.WavePlayer = new System.Media.SoundPlayer(this.TempFilename);
+            this.WavePlayer.Play();
         }
         bool RunSox()
 
@@ -88,6 +96,7 @@ namespace FEBuilderGBA
             if (Chunnel.SelectedIndex == 0
                 && HZ.SelectedIndex == 0
                 && Strip.SelectedIndex == 0
+                && Volume.SelectedIndex == 0
                 )
             {
                 return false;
@@ -104,6 +113,7 @@ namespace FEBuilderGBA
                 U.atoi(Chunnel.Text),
                 U.atoi(HZ.Text),
                 U.atoi(Strip.Text),
+                U.atoi(Volume.Text),
                 out output)
                 ;
             if (r == false)
@@ -136,7 +146,5 @@ namespace FEBuilderGBA
         {
 
         }
-
-
     }
 }

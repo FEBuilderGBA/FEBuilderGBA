@@ -2984,7 +2984,7 @@ namespace FEBuilderGBA
             //楽譜データ
             List<byte> track = new List<byte>();
             U.append_u8(track,0xBE); //VOL //index:0
-            U.append_u8(track, 128); //    //index:1
+            U.append_u8(track, 127); //    //index:1
             U.append_u8(track, 0xBC); //KEYSH //index:2
             U.append_u8(track, 0); //         //index:3
             U.append_u8(track, 0xBD); //楽器変更 //index:4
@@ -3006,6 +3006,12 @@ namespace FEBuilderGBA
                     U.append_u8(track, 48 + 0x80); //W96
                 }
                 if (playsec % 2 == 1)
+                {
+                    U.append_u8(track, 48 + 0x80); //W96
+                }
+                //微妙にずれるらしいので補正
+                uint yohaku = (uint)(playsec * 0.11f);
+                for (uint i = 0; i < yohaku; i++)
                 {
                     U.append_u8(track, 48 + 0x80); //W96
                 }

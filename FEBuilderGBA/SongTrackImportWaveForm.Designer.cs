@@ -45,11 +45,15 @@
             this.LoopComboBox = new System.Windows.Forms.ComboBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.J_4_INSTRUMENT_ADDR = new System.Windows.Forms.Label();
+            this.Volume = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Volume);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.Chunnel);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.textBox2);
@@ -69,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 511);
+            this.panel1.Size = new System.Drawing.Size(672, 611);
             this.panel1.TabIndex = 0;
             // 
             // Chunnel
@@ -96,7 +100,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(19, 368);
+            this.textBox2.Location = new System.Drawing.Point(19, 414);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -108,7 +112,7 @@
             // 
             this.label5.AccessibleDescription = "Waveの音質を下げると、容量を小さくできます。";
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 338);
+            this.label5.Location = new System.Drawing.Point(16, 384);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 190;
@@ -116,7 +120,7 @@
             // 
             // PreviewResult
             // 
-            this.PreviewResult.Location = new System.Drawing.Point(19, 237);
+            this.PreviewResult.Location = new System.Drawing.Point(19, 275);
             this.PreviewResult.Name = "PreviewResult";
             this.PreviewResult.ReadOnly = true;
             this.PreviewResult.Size = new System.Drawing.Size(497, 25);
@@ -125,10 +129,10 @@
             // 
             // Preview_button
             // 
-            this.Preview_button.Location = new System.Drawing.Point(532, 233);
+            this.Preview_button.Location = new System.Drawing.Point(532, 271);
             this.Preview_button.Name = "Preview_button";
             this.Preview_button.Size = new System.Drawing.Size(128, 32);
-            this.Preview_button.TabIndex = 3;
+            this.Preview_button.TabIndex = 4;
             this.Preview_button.Text = "Preview";
             this.Preview_button.UseVisualStyleBackColor = true;
             this.Preview_button.Click += new System.EventHandler(this.Preview_button_Click);
@@ -205,11 +209,11 @@
             // MyCancelButton
             // 
             this.MyCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.MyCancelButton.Location = new System.Drawing.Point(19, 474);
+            this.MyCancelButton.Location = new System.Drawing.Point(19, 520);
             this.MyCancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.MyCancelButton.Name = "MyCancelButton";
             this.MyCancelButton.Size = new System.Drawing.Size(242, 28);
-            this.MyCancelButton.TabIndex = 5;
+            this.MyCancelButton.TabIndex = 6;
             this.MyCancelButton.Text = "キャンセル";
             this.MyCancelButton.UseVisualStyleBackColor = true;
             // 
@@ -220,18 +224,18 @@
             this.LoopComboBox.Items.AddRange(new object[] {
             "ループしない",
             "ループする"});
-            this.LoopComboBox.Location = new System.Drawing.Point(211, 330);
+            this.LoopComboBox.Location = new System.Drawing.Point(211, 376);
             this.LoopComboBox.Name = "LoopComboBox";
             this.LoopComboBox.Size = new System.Drawing.Size(449, 26);
-            this.LoopComboBox.TabIndex = 4;
+            this.LoopComboBox.TabIndex = 5;
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(379, 474);
+            this.OKButton.Location = new System.Drawing.Point(379, 520);
             this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(283, 28);
-            this.OKButton.TabIndex = 6;
+            this.OKButton.TabIndex = 7;
             this.OKButton.Text = "インポート";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
@@ -239,13 +243,53 @@
             // J_4_INSTRUMENT_ADDR
             // 
             this.J_4_INSTRUMENT_ADDR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(17, 294);
+            this.J_4_INSTRUMENT_ADDR.Location = new System.Drawing.Point(17, 340);
             this.J_4_INSTRUMENT_ADDR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_4_INSTRUMENT_ADDR.Name = "J_4_INSTRUMENT_ADDR";
             this.J_4_INSTRUMENT_ADDR.Size = new System.Drawing.Size(374, 26);
             this.J_4_INSTRUMENT_ADDR.TabIndex = 178;
             this.J_4_INSTRUMENT_ADDR.Text = "楽譜";
             this.J_4_INSTRUMENT_ADDR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Volume
+            // 
+            this.Volume.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Volume.FormattingEnabled = true;
+            this.Volume.Items.AddRange(new object[] {
+            "0=変更しない",
+            "120=120%",
+            "130=130%",
+            "150=150%",
+            "170=170%",
+            "200=200%",
+            "230=230%",
+            "250=250%",
+            "270=270%",
+            "300=300%",
+            "320=320%",
+            "340=340%",
+            "360=360%",
+            "380=380%",
+            "400=400%",
+            "420=420%",
+            "440=440%",
+            "460=460%",
+            "480=480%",
+            "500=500%"});
+            this.Volume.Location = new System.Drawing.Point(211, 222);
+            this.Volume.Name = "Volume";
+            this.Volume.Size = new System.Drawing.Size(449, 26);
+            this.Volume.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AccessibleDescription = "Waveの音質を下げると、容量を小さくできます。";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 18);
+            this.label7.TabIndex = 199;
+            this.label7.Text = "音量";
             // 
             // SongTrackImportWaveForm
             // 
@@ -254,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.CancelButton = this.MyCancelButton;
-            this.ClientSize = new System.Drawing.Size(696, 531);
+            this.ClientSize = new System.Drawing.Size(696, 628);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SongTrackImportWaveForm";
@@ -285,5 +329,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox Chunnel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox Volume;
+        private System.Windows.Forms.Label label7;
     }
 }

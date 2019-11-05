@@ -156,9 +156,11 @@ namespace FEBuilderGBA
                 DialogResult dr = f.ShowDialog();
                 if (dr != System.Windows.Forms.DialogResult.OK)
                 {
+                    f.Dettach();
                     return;
                 }
                 error = SongUtil.ImportWave(f.GetFilename(), songtable_address, f.UseLoop());
+                f.Dettach();
             }
             else if (ext == ".MID" || ext == ".MIDI")
             {

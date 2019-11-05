@@ -7600,15 +7600,6 @@ The menu area is not allocated.
 :メニューの個々の選択子の領域が確保されていません。
 Individual selector area of ​​the menu is not allocated.
 
-:文字列6
-String 6
-
-:文字列7
-String 7
-
-:文字列8
-String 8
-
 :文字列5
 String 5
 
@@ -7623,6 +7614,15 @@ String 2
 
 :文字列1
 String 1
+
+:文字列8
+String 8
+
+:文字列7
+String 7
+
+:文字列6
+String 6
 
 :分岐メニュー定義
 Branch menu definition
@@ -9879,6 +9879,9 @@ Don't Loop
 
 :ループする
 Loop
+
+:音量
+Volume.
 
 :Waveのインポート
 Wave import.

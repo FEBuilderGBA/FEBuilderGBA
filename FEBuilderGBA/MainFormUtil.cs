@@ -1795,7 +1795,7 @@ namespace FEBuilderGBA
             return true;
         }
         //soxでwavファイルを変換
-        public static bool ConvertWaveBySOX(string save_filename, string from_file, uint chunnel, uint hz, uint strip, out string output)
+        public static bool ConvertWaveBySOX(string save_filename, string from_file, uint chunnel, uint hz, uint strip, uint volume100, out string output)
         {
             output = "";
 
@@ -1808,22 +1808,29 @@ namespace FEBuilderGBA
 
             string tooldir = Path.GetDirectoryName(save_filename);
 
-            string args = ""
-                + U.escape_shell_args(from_file)
-                ;
+            string args = "";
+            if (volume100 != 0)
+            {
+                args += String.Format(" -v {0} ",volume100 / 100.0f);
+            }
+            args += " " + U.escape_shell_args(from_file);
             if (hz != 0)
             {
                 args += String.Format(" -r {0}" , hz);
             }
             if (chunnel != 0)
             {
+                args += String.Format(" -b 8 "); //8bit
                 args += String.Format(" -c {0}", chunnel);
-//                args += String.Format(" -b"); //8bit
             }
             args += " " + U.escape_shell_args(save_filename);
             if (strip != 0)
             {
                 args += String.Format(" silence 1 0.2 {0}% reverse silence 1 0.2 {0}% reverse", strip - 1);
+            }
+            if (volume100 != 0)
+            {
+                args += String.Format(" gain -h ");
             }
 
             output = ProgramRunAsAndEndWait(compiler_exe, args, tooldir);
