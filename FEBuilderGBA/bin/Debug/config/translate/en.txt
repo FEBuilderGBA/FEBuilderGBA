@@ -4685,10 +4685,10 @@ Initial coordinates at the start of the map.\r\nIf it does not turn dark at the 
 When game is set to hard difficulty level, this value determines reinforcement bonus given to the enemy army.\r\n
 
 :難易度で普通を選んだ場合に、敵を弱くするペナルティ値を指定します。\r\n
-When choosing normal with difficulty level, we specify a penalty value to weaken the enemy.\r\n
+When choosing normal with difficulty level, specify a penalty value to weaken the enemy.\r\n
 
 :難易度で簡単を選んだ場合に、敵をとても弱くするペナルティ値を指定します。\r\n
-If you choose easy with difficulty, you specify a penalty value that makes the enemy very weak.\r\n
+If you choose easy with difficulty, specify a penalty value that makes the enemy very weak.\r\n
 
 :新規にユニット群を追加します。\r\n追加したユニット群は、イベントに関連付ける必要があります。\r\n
 A new unit group will be added.\r\nThis group must be associated with an event.\r\n

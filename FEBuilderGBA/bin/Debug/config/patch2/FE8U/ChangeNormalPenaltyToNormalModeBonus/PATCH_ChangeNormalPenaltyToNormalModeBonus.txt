@@ -1,0 +1,20 @@
+NAME=ノーマルモードペナルティをノーマルモードボーナスに変更する
+NAME.en=Change NormalPenalty to NormalModeBonus
+
+INFO=ノーマルモードで敵を弱体化させるノーマルモードペナルティを廃止して、ノーマルモード専用のハードブート機能に変更します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|FIX|ONN
+
+DETERMINATION_ADDRESS=0x180FA
+
+OFF:0x0180FA=0xFF 0xF7 0xB3 0xFF
+ONN:0x0180FA=0xFF 0xF7 0x63 0xFF
+
+AUTHOR=Shuusuke
+INFO.en=The normal mode penalty that weakens the enemy in normal mode is abolished, and it is changed to the hard boot function only for normal mode.
+NAME.zh=将普通模式惩罚改为普通模式奖励。
+INFO.zh=在普通模式下削弱敌人的普通模式惩罚将被取消，硬启动功能将变为普通模式。

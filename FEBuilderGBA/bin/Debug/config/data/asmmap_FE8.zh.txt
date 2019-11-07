@@ -12628,3 +12628,4 @@ r3=X tile position of menu of the right	{U}
 080B6A4C	GetCharacterSupportA	r0=unit:UNIT	{U}
 080BB5C0	IsAlreadyIntroducedAtPairedEnd	{J}
 080B6A80	IsAlreadyIntroducedAtPairedEnd	{U}
+08017d84	StoreUnitStats	{J}
