@@ -1969,6 +1969,12 @@
     <Compile Include="UnitsShortTextForm.Designer.cs">
       <DependentUpon>UnitsShortTextForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VennouWeaponLockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VennouWeaponLockForm.Designer.cs">
+      <DependentUpon>VennouWeaponLockForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2913,6 +2919,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UnitsShortTextForm.resx">
       <DependentUpon>UnitsShortTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VennouWeaponLockForm.resx">
+      <DependentUpon>VennouWeaponLockForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

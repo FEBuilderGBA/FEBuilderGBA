@@ -889,7 +889,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                if (type == "BATTLEANIMEPOINTER" || type == "EVENT" || type == "ITEMSHOP")
+                if (type == "BATTLEANIMEPOINTER" || type == "EVENT" || type == "ITEMSHOP" || type == "VENNOUWEAPONLOCK")
                 {//データの確保が必要になる場合
                     Button alloc = new Button();
                     alloc.Location = new Point(500, y);
@@ -5706,6 +5706,11 @@ namespace FEBuilderGBA
                                 , patchname + " ASM " + n
                                 );
                         }
+                    }
+                    else if (type == "VENNOUWEAPONLOCK")
+                    {//専用武器
+                        VennouWeaponLockForm.MakeDataLength(list, p
+                            , patchname + " DATA " + n);
                     }
                     else
                     {//不明なポインタ

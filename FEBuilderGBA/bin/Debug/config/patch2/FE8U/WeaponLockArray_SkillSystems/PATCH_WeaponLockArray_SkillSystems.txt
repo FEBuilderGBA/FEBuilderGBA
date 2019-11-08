@@ -1,0 +1,24 @@
+NAME=WeaponLockArray SkillSystems
+
+IF:0x16DD8=0x00 0x3C 0x3D 0xFF
+
+AUTHOR=vennou
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END+4 AdvWeaponLocks.dmp
+
+//データサイズ(10進数)
+DATASIZE=4
+
+//データ個数
+DATACOUNT=255
+
+//リストに表示されるのはユニット名です
+LISTNAME=ITEM
+
+//データを定義します
+P0:VENNOUWEAPONLOCK=WeaponLock

@@ -3979,6 +3979,12 @@ Will you allocate new combat animation data for each weapon?
 :領域を割り振りました。武器単位の戦闘アニメーションを割り振ってください。
 Space has been allocated. Please set combat animation for each weapon.
 
+:新規に、専用武器のデータを割り振りますか？
+Do you want to allocate new weapon data? 
+
+:領域を割り振りました。専用武器を割り振ってください。
+Allocated area.Allocate a special weapon.
+
 :PLISTが0です。\r\n新規に割り当てますか？\r\n
 PLIST is 0.\r\nDo you want to assign it newly?\r\n
 
@@ -11814,6 +11820,12 @@ Patch can't be applied to the open ROM. CRC do not match.
 
 :UPSを適応した結果が正しくありません。CRCが不一致です。
 The result of adapting the UPS is incorrect. CRC does not match.
+
+:通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
+It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks, \r\nwhich let the matching character use the weapon at Level E, no matter what its normal rank is.
+
+:専用武器 Vennou
+Special weapon Vennou.
 
 :{1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nこのソフトウェアはオープンソースのフリーソフトウェアです。\r\nGPLv3に従ってご自由にお使いください。
 {1} Version:{0}\r\nCopyright: 2017-\r\nLicense: GPLv3\r\n\r\nThis software is open source.\r\nPlease use it freely according to GPLv3.

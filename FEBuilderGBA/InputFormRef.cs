@@ -1739,6 +1739,23 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "VENNOUWEAPONLOCK")
+            {//専用武器 vennou
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = VennouWeaponLockForm.GetNames(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "VENNOUWEAPONLOCK", new string[] { });
+                };
+                return;
+            }
             if (linktype == "WMICON")
             {//ワールドマップアイコン
                 PictureBox link_object = ((PictureBox)link_info);
@@ -2920,6 +2937,12 @@ namespace FEBuilderGBA
                 alllocedMessage = R._("領域を割り振りました。武器単位の戦闘アニメーションを割り振ってください。");
                 alloc = new byte[] { 0x00, 0x01, 0x03, 0x00, 0x09, 0x01, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00 };
             }
+            else if (arg1 == "VENNOUWEAPONLOCK")
+            {
+                alllocQMessage = R._("新規に、専用武器のデータを割り振りますか？");
+                alllocedMessage = R._("領域を割り振りました。専用武器を割り振ってください。");
+                alloc = new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x00 };
+            }
             else
             {//リンクミス.
                 Debug.Assert(false);
@@ -3625,6 +3648,17 @@ namespace FEBuilderGBA
 
                 ImageBattleAnimeForm f = (ImageBattleAnimeForm)InputFormRef.JumpForm<ImageBattleAnimeForm>(U.NOT_FOUND);
                 f.JumpToAnimeSettingPointer(value);
+            }
+            else if (linktype == "VENNOUWEAPONLOCK")
+            {//専用武器vennou
+                value = CheckAndAlloc(src_object, value, linktype);
+                if (value == U.NOT_FOUND)
+                {
+                    return;
+                }
+
+                VennouWeaponLockForm f = (VennouWeaponLockForm)InputFormRef.JumpForm<VennouWeaponLockForm>(U.NOT_FOUND);
+                f.JumpTo(value);
             }
             else if (linktype == "MOVECOST1")
             {//移動コスト
