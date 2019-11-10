@@ -9118,8 +9118,8 @@ IF解析错误，这个值没有空格\r\n{0} = {1}
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
 它不兼容ROM。\r\n游戏版本= {0}\r\n大小= {1}
 
-:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}
-发生了GDI +异常。\r\n请再试一次。\r\n如果您有多次重复，请发送report7z。\r\nErrorCode：{0} {1}。\r\n消息：\r\n{2}。\r\n3}。
+:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n{3}
+发生了GDI +异常。\r\n请再试一次。\r\n如果您有多次重复，请发送report7z。\r\nErrorCode：{0} {1}。\r\n消息：\r\n{2}。\r\n{3}。
 
 :System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 发生了System.UnauthorizedAccessException。\r\n如果您有多次重复，请发送report7z。\r\n消息：\r\n{0}。\r\n{1}。

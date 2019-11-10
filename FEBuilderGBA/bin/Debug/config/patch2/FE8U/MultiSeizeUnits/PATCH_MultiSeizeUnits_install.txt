@@ -10,7 +10,7 @@ EDIT_PATCH=PATCH_MultiSeizeUnits.txt
 EA=Installer.event
 
 AUTHOR=7743
-NAME.en=Change to have multiple hero selected with auto cursor.(Install)
-INFO.en=Change so that multiple units can be controlled.
-NAME.zh=更改为具有多个可以抑制的人物(Install)
+NAME.en=Change to have multiple units that can be seize.(Install)
+INFO.en=Change so that multiple units can be seize.
+NAME.zh=更改为具有多个可以抑制的人物。(Install)
 INFO.zh=进行更改，以便可以控制多个人物。

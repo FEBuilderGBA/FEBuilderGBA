@@ -28,9 +28,9 @@
 //特性4
 31=Map sprite shake	Makes the standing map sprite shake very quickly.\r\nDoesn't seem to be useful otherwise
 32=Sortie not allow	Unit is unable to take part in chapter\r\n(can't select from prep screen)
-33=Unk33
+33=Tequila's Capture
 34=Use link arena palette
 35=Unk35
 36=Unk36
 37=Unk37
-38=Unk38
+38=7743's Summon

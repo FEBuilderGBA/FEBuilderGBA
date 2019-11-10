@@ -1,0 +1,144 @@
+//For FE8J
+//
+//複数クラスの召喚
+//このコードは、ステータスフラグの0x80 00 00 00 を利用します。
+//
+#include "Extensions/Hack Installation.txt" 
+#define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
+
+PUSH
+//ClearTemporaryUnits
+ORG 0x18BEE
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//ChapterEndUnitCleanup
+ORG 0x31176
+#incbin "check_summonflag_ChapterEndUnitCleanup.dmp"	//HINT=ASM
+//ldrb r0, [r1, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+
+//TryAddUnitToTradeTargetList
+ORG 0x251EA
+#incbin "check_summonflag_TryAddUnitToTradeTargetList.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//bne #0x8025274
+//ldr r3, [r4, #0x4]
+//ldrb r0, [r4, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//bne #0x8025274
+//nop
+
+//TryAddUnitToRescueTargetList
+ORG 0x25312
+#incbin "check_summonflag_TryAddUnitToRescueTargetList.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//bne #0x802535a
+//ldrb r0, [r4, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//bne #0x802535a
+//nop
+//nop
+
+
+//VisitCommandUsability
+ORG 0x2300E
+#incbin "check_summonflag_VisitCommandUsability.dmp"	//HINT=ASM
+//mov r4 ,r0
+//ldrb r1, [r2, #0xF] @ramunit->status4
+//lsr  r1,#0x7
+//cmp r1,#0x01
+
+//ItemCommandUsability
+ORG 0x23290
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//SupplyUsability
+ORG 0x23F30
+#incbin "check_summonflag_SupplyUsability.dmp"	//HINT=ASM
+//ldrb r0, [r0, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//ArmoryCommandUsability
+ORG 0x23F9A
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//VendorCommandUsability
+ORG 0x23FF6
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//SecretCommandUsability
+ORG 0x24052
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+//重複している以下のパッチを再適用
+//NAME=一般兵の場合にはアイテム選択画面に顔画像を描画しない
+//NAME.en=Don't draw portrait on item select menu if unit is generic
+ORG 0x022BB0
+BYTE 0x08 0x68 0xC0 0x88 0x00 0x28
+
+ORG 0x7D118
+jumpToHack_r1(set_summonclass);
+
+ORG 0x7D284
+jumpToHack(set_summonflag);
+POP
+
+
+ALIGN 4
+set_summonclass:
+#incbin "set_summonclass.dmp"	//HINT=ASM
+//@r0 = summoned unit id
+//@Unit Id to Class ID
+//mov r1,#0x34
+//mul r0,r1
+//ldr r1,=0x8858288	@Unit0	{J}
+//add r1,r0
+//ldrb r0,[r1,#0x5]
+//
+//@壊すコードを再送
+//strb r0, [r2, #0x1]
+//strb r4, [r2, #0x2]
+//ldrb r1, [r2, #0x3]
+//
+//ldr r0,=0x0807D120+1
+//bx r0
+
+ALIGN 4
+set_summonflag:
+#incbin "set_summonflag.dmp"	//HINT=ASM
+//@ステータスビット4に 0x80 ビットをセット
+//ldrb r1, [r0, #0xF] @ramunit->status4
+//mov  r2,#0x80
+//orr  r1,r2
+//strb r1, [r0, #0xF] @ramunit->status4 |= 0x8
+//
+//@壊すコードを再送
+//mov r4 ,r0
+//mov r1, #0x0
+//mov r3, #0x3
+//add r0, #0x2b
+//
+//ldr r2,=0x0807D28C+1
+//bx r2
+
+ALIGN 4

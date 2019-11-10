@@ -12,4 +12,5 @@ AUTHOR=Source: FE8 Summoneditor by Nintenlord ,ZaneAvernathy
 
 
 CONFLICT_IF:0x0251EF=0x79 0x51
-CONFLICT_MESSAGE=Capture Patch
+CONFLICT_IF:0x18BEE=0xD0 0x7B 0xC0 0x09 0x01 0x28
+CONFLICT_MESSAGE=Capture Patch or multi summon class

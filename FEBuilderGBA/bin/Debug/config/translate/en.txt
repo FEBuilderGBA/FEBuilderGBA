@@ -9118,8 +9118,8 @@ Searching
 :未対応のROMです。\r\ngame version={0}\r\nSize={1}
 Incompatible ROM.\r\ngameversion = {0}\r\nSize = {1}
 
-:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}
-GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, please send report7z.\r\nErrorCode: {0} {1}.\r\nMessage :.\r\n{2}.\r\n3}.
+:GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n{3}
+GDI + Exception occurred.\r\nPlease try again.\r\nIf you have many recurrences, please send report7z.\r\nErrorCode: {0} {1}.\r\nMessage :.\r\n{2}.\r\n{3}.
 
 :System.UnauthorizedAccessExceptionが発生しました。\r\n何度も再発する場合は、report7zを送ってください。\r\nMessage:\r\n{0}\r\n{1}
 A System.UnauthorizedAccessException has occurred.\r\nIf you have many recurrences, please send report7z.\r\nMessage :.\r\n{0}.\r\n{1}.

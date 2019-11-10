@@ -35,7 +35,7 @@ namespace FEBuilderGBA
         }
         public static string ExceptionToString(System.Runtime.InteropServices.ExternalException e)
         {
-            return R._("GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n3}", e.ErrorCode, U.HRESULTtoString(e.ErrorCode), e.ToString(), e.StackTrace);
+            return R._("GDI+ Exceptionが発生しました。\r\nもう一度試してください。\r\n何度も再発する場合は、report7zを送ってください。\r\nErrorCode:{0} {1}\r\nMessage:\r\n{2}\r\n{3}", e.ErrorCode, U.HRESULTtoString(e.ErrorCode), e.ToString(), e.StackTrace);
         }
         public static string ExceptionToString(System.UnauthorizedAccessException e)
         {

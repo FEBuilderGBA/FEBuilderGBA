@@ -1,0 +1,18 @@
+NAME=複数のクラスを召喚できるようにする
+NAME.en=Allow to summon multiple classes
+NAME.zh=Allow to summon multiple classes
+
+TYPE=EA
+TAG=#ENGINE
+
+
+PATCHED_IF:0x18BEE=0xD0 0x7B 0xC0 0x09 0x01 0x28
+EA=multi_class_summon.event
+
+AUTHOR=7743
+INFO=複数のクラスを召喚できるようにします。\r\n召喚されるクラスの「支援クラス」で召喚できるようにします。
+INFO.en=Allows you to summon multiple classes.\r\nThis patch allows you to summon in the "support class" of the class being summoned.
+INFO.zh=Allows you to summon multiple classes.\r\nThis patch allows you to summon in the "support class" of the class being summoned.
+
+CONFLICT_IF:0x251D2=0x2A 0x68
+CONFLICT_MESSAGE=敵救出(enemy rescue)
