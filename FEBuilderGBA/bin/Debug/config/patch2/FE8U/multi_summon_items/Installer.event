@@ -1,0 +1,35 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $7AE94  //FE8U
+//ORG $7D1D0  //FE8J
+jumpToHack(multi_summon_items)
+
+//Install
+//¢Š«‚³‚ê‚½–S—ìím‚Ì•ŠíƒŒƒxƒ‹‚ğ•Û—L•Ší‚ÌƒŒƒxƒ‹‚É‚µ‚Ü‚·
+//Fix the weapon level of the Summoned Phantom's weapon level of the possessed weapon.
+ORG 0x7AF6C //FE8U
+BYTE 0x00 0x49 0x8F 0x46 //FE8U
+POIN fix_summoned_Phantom_weapon_level+1
+//ORG 0x7D296 //FE8J
+//BYTE 0x00 0x00 0x00 0x49 0x8F 0x46 //FE8J
+//POIN fix_summoned_Phantom_weapon_level+1
+
+
+
+POP
+
+ALIGN 4
+fix_summoned_Phantom_weapon_level:
+#incbin "../fix_summoned_Phantom_weapon_level/fix_summoned_Phantom_weapon_level.dmp"
+
+ALIGN 4
+multi_summon_items:
+#incbin "multi_summon_items.dmp"
+POIN multi_summon_items_Table
+
+ALIGN 4
+//multi_summon_items_Table:
+#include "multi_summon_items_Table.event"
+
+ALIGN 4

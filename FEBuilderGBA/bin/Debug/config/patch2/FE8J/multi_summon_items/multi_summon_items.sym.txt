@@ -1,0 +1,11 @@
+Table=$7C
+Loop=$04
+NotFound=$70
+CheckUnit=$0C
+CheckClass=$18
+CheckRare=$24
+CheckLevel1=$32
+Exit=$72
+CheckLevel2=$46
+CheckLevel3=$54
+CheckLevel4=$62

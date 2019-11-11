@@ -1,0 +1,40 @@
+NAME=召喚されたユニットが所持する武器を詳細に設定できるようにする
+NAME.en=Allows detailed setting of weapons held by summoned units.
+
+INFO=召喚されたユニットが所持する武器を詳細に設定できるようにします。\r\n召喚者のレベルごとに設定したり、レア武器を設定できます。\r\nもし指定レベル以下だったら、武器を所持させます。\r\nまた、レア武器の設定ができます。
+
+IF:0x7AE94=0x00 0x4B 0x18 0x47
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END multi_summon_items.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP12 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはクラス名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=Unit(0x00=ANY)
+B1:CLASS=Class(0x00=ANY)
+B2:DECIMAL=Level1<=
+B3:ITEM=Item1
+B4:DECIMAL=Level2<=
+B5:ITEM=Item2
+B6:DECIMAL=Level3<=
+B7:ITEM=Item3
+B8:DECIMAL=Level4<=
+B9:ITEM=Item4
+B10:DECIMAL=Rare(%)<=
+B11:ITEM=RareItem
+
+INFO.en=Allows detailed setting of weapons held by summoned units.\r\nYou can set it for each summoner level, or you can set rare weapons.\r\nIf you are below the specified level, you will have weapons.\r\nYou can also set rare weapons.
+NAME.zh=允许您详细设置被召唤单位持有的武器。
+INFO.zh=允许详细设置召唤单位持有的武器。\r\n您可以为每个召唤师等级设置它，也可以设置稀有武器。\r\n如果您低于指定级别，您将拥有武器。\r\n您还可以设置稀有武器。
