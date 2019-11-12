@@ -3592,6 +3592,9 @@ Fourth
 :システムメニュー
 System Menu
 
+:ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。
+The background of the status screen is in the patch.\r\nPlease click here.
+
 :戦闘前プレビュー
 Battle Preview
 
@@ -3607,17 +3610,17 @@ Behavior range Tile color
 :BADステータス
 BAD status
 
-:ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。
-The background of the status screen is in the patch.\r\nPlease click here.
-
 :他の画像
 Other images.
 
-:ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
-Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
+:インターネットからリソースを探す\r\n\r\nインターネットでファンが作成したデータを探します。\r\nいろいろなデータが公開されています。\r\n他人の作品を利用するとき、readmeに作者の名前と利用した作品名を書いてください。
+Search for resources from Internet.\r\n\r\nLook for data created by fans on Internet.\r\nVarious data are released.\r\nWhen using another person's work, write author's name and work name used in readme.
 
 :パッチにもない場合は、未発見の画像である可能性があります。\r\nその場合は、グラフィックツールから探してください。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> グラフィックツール、を選択してください。
 If there is no patch, it may be an undiscovered image.\r\nIn that case, please search from the graphic tool.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Graphic Tools.
+
+:ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
+Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
 
 :システムアイコン
 System Icon

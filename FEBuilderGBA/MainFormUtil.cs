@@ -1409,6 +1409,26 @@ namespace FEBuilderGBA
             return true;
         }
 
+        public static void GotoMoreData()
+        {
+            U.OpenURLOrFile(GotoMoreDataURL());
+        }
+        public static string GotoMoreDataURL()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:more_data";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:more_data";
+            }
+            return url;
+        }
+
         public static void GotoManual()
         {
             U.OpenURLOrFile(GetManualURL());

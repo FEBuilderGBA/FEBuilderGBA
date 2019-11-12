@@ -9,7 +9,7 @@ COMBO=Default|OFF|Patched: Invalid game over|ONN
 DETERMINATION_ADDRESS=0x018D38
 
 OFF:0x018D38=0x18 0x1C
-FIX:0x018D38=0x01 0x20
+ONN:0x018D38=0x01 0x20
 
 AUTHOR=7743
 INFO=FE8ではフリーマップがあるため、全てのプレイヤーユニットが倒されてパーティが0人になると、自動的にゲームオーバーが呼び出されます。\r\nこのパッチはこの挙動を修正し、自動的にゲームオーバーを発生させなくします。\r\nもし、フリーマップを使う予定ならば、このパッチを利用しないでください。

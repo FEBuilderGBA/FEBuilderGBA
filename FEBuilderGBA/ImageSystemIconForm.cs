@@ -101,8 +101,10 @@ namespace FEBuilderGBA
 
             InputFormRef.markupJumpLabel(X_Jump_Patch);
             InputFormRef.markupJumpLabel(X_GraphicsTool);
+            InputFormRef.markupJumpLabel(X_Internet);
             systemIconPictureBox1.Image = ImageSystemIconForm.Allows(8);
             systemIconPictureBox2.Image = ImageSystemIconForm.Fort();
+            systemIconPictureBox3.Image = ImageSystemIconForm.Vendor();
             IconRedraw();
         }
 
@@ -941,6 +943,12 @@ namespace FEBuilderGBA
             PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
             f.JumpTo("#IMAGE", 0, PatchForm.SortEnum.SortName);
         }
+
+        private void X_Internet_Click(object sender, EventArgs e)
+        {
+            MainFormUtil.GotoMoreData();
+        }
+
 
 
     }

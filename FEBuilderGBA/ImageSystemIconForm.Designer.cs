@@ -35,6 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.system_music_icon_icon_Import = new System.Windows.Forms.Button();
             this.system_music_icon_icon_Export = new System.Windows.Forms.Button();
+            this.system_music_icon_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.system_music_icon_icon_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.system_weapon_icon_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -49,6 +50,9 @@
             this.system_move_allowicon_Export = new System.Windows.Forms.Button();
             this.system_icon_Import = new System.Windows.Forms.Button();
             this.system_icon_Export = new System.Windows.Forms.Button();
+            this.system_weapon_icon_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.system_move_allowicon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.system_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.system_weapon_icon_icon_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.system_move_allowicon_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -59,39 +63,47 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.unit_icon_gray_Export = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
+            this.unit_icon_gray_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_gray_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_gray_Import = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.unit_icon_four_Export = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
+            this.unit_icon_four_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_four_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_four_Import = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.icon_palette_Export = new System.Windows.Forms.Button();
+            this.item_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.icon_palette_Import = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.item_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
             this.unit_icon_npc_Export = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.unit_icon_npc_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_npc_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.unit_icon_npc_Import = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.unit_icon_enemy_Export = new System.Windows.Forms.Button();
+            this.unit_icon_enemy_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_enemy_Import = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.unit_icon_enemy_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.unit_icon_Export = new System.Windows.Forms.Button();
+            this.unit_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.unit_icon_Import = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.unit_icon_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.X_StatusBackgroundLink = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.systemmenu_name_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_name_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_name_HEADERTSA = new System.Windows.Forms.NumericUpDown();
+            this.systemmenu_name_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.systemmenu_name_Export = new System.Windows.Forms.Button();
             this.systemmenu_name_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -102,6 +114,7 @@
             this.systemmenu_terrain_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_terrain_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_terrain_HEADERTSA = new System.Windows.Forms.NumericUpDown();
+            this.systemmenu_terrain_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.systemmenu_terrain_Export = new System.Windows.Forms.Button();
             this.systemmenu_terrain_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -112,6 +125,7 @@
             this.systemmenu_goal_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_goal_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_goal_HEADERTSA = new System.Windows.Forms.NumericUpDown();
+            this.systemmenu_goal_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.systemmenu_goal_Export = new System.Windows.Forms.Button();
             this.systemmenu_goal_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -136,9 +150,11 @@
             this.systemmenu_battlepreview_Export = new System.Windows.Forms.Button();
             this.systemmenu_battlepreview_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
+            this.systemmenu_battlepreview_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.systemmenu_old_badstatus_panel = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
+            this.systemmenu_old_badstatus_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.systemmenu_old_badstatus_PALETTE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_old_badstatus_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label30 = new System.Windows.Forms.Label();
@@ -146,68 +162,67 @@
             this.systemmenu_old_badstatus_Import = new System.Windows.Forms.Button();
             this.systemmenu_badstatus_panel = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
+            this.systemmenu_badstatus_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.systemmenu_badstatus_IMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_badstatus_Export = new System.Windows.Forms.Button();
             this.systemmenu_badstatus_Import = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.systemmenu_badstatus_PALETTE = new System.Windows.Forms.NumericUpDown();
-            this.X_StatusBackgroundLink = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.X_Jump_Patch = new System.Windows.Forms.Label();
-            this.X_GraphicsTool = new System.Windows.Forms.Label();
-            this.system_music_icon_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.system_weapon_icon_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.system_move_allowicon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.system_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.unit_icon_gray_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.unit_icon_four_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.item_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.unit_icon_npc_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.unit_icon_enemy_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.unit_icon_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_name_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_terrain_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_goal_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_battlepreview_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_old_badstatus_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.systemmenu_badstatus_Picture = new FEBuilderGBA.InterpolatedPictureBox();
+            this.systemIconPictureBox3 = new FEBuilderGBA.SystemIconPictureBox();
+            this.X_Internet = new System.Windows.Forms.Label();
             this.systemIconPictureBox2 = new FEBuilderGBA.SystemIconPictureBox();
             this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
+            this.X_GraphicsTool = new System.Windows.Forms.Label();
+            this.X_Jump_Patch = new System.Windows.Forms.Label();
             this.WMTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_PALETTE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_icon_PALETTE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_icon_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_icon_ZIMAGE)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_PALETTE)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_PALETTE)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.item_icon_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.item_icon_PALETTE)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_PALETTE)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_PALETTE)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_PALETTE)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_HEADERTSA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_PALETTE)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_HEADERTSA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_PALETTE)).BeginInit();
             this.systemmenu_goal_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_HEADERTSA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_PALETTE)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.systemarea_staff_gradation_palette)).BeginInit();
@@ -216,30 +231,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_HEADERTSA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_Picture)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.systemmenu_old_badstatus_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_PALETTE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_ZIMAGE)).BeginInit();
             this.systemmenu_badstatus_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_IMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_PALETTE)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_icon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.item_icon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_Picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -354,6 +357,16 @@
             this.system_music_icon_icon_Export.TabIndex = 127;
             this.system_music_icon_icon_Export.Text = "画像取出";
             this.system_music_icon_icon_Export.UseVisualStyleBackColor = true;
+            // 
+            // system_music_icon_icon_Picture
+            // 
+            this.system_music_icon_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.system_music_icon_icon_Picture.Location = new System.Drawing.Point(320, 365);
+            this.system_music_icon_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.system_music_icon_icon_Picture.Name = "system_music_icon_icon_Picture";
+            this.system_music_icon_icon_Picture.Size = new System.Drawing.Size(428, 119);
+            this.system_music_icon_icon_Picture.TabIndex = 126;
+            this.system_music_icon_icon_Picture.TabStop = false;
             // 
             // system_music_icon_icon_ZIMAGE
             // 
@@ -515,6 +528,36 @@
             this.system_icon_Export.Text = "画像取出";
             this.system_icon_Export.UseVisualStyleBackColor = true;
             // 
+            // system_weapon_icon_icon_Picture
+            // 
+            this.system_weapon_icon_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.system_weapon_icon_icon_Picture.Location = new System.Drawing.Point(320, 242);
+            this.system_weapon_icon_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.system_weapon_icon_icon_Picture.Name = "system_weapon_icon_icon_Picture";
+            this.system_weapon_icon_icon_Picture.Size = new System.Drawing.Size(428, 119);
+            this.system_weapon_icon_icon_Picture.TabIndex = 111;
+            this.system_weapon_icon_icon_Picture.TabStop = false;
+            // 
+            // system_move_allowicon_Picture
+            // 
+            this.system_move_allowicon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.system_move_allowicon_Picture.Location = new System.Drawing.Point(320, 126);
+            this.system_move_allowicon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.system_move_allowicon_Picture.Name = "system_move_allowicon_Picture";
+            this.system_move_allowicon_Picture.Size = new System.Drawing.Size(428, 107);
+            this.system_move_allowicon_Picture.TabIndex = 110;
+            this.system_move_allowicon_Picture.TabStop = false;
+            // 
+            // system_icon_Picture
+            // 
+            this.system_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.system_icon_Picture.Location = new System.Drawing.Point(320, 17);
+            this.system_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.system_icon_Picture.Name = "system_icon_Picture";
+            this.system_icon_Picture.Size = new System.Drawing.Size(428, 103);
+            this.system_icon_Picture.TabIndex = 109;
+            this.system_icon_Picture.TabStop = false;
+            // 
             // system_weapon_icon_icon_ZIMAGE
             // 
             this.system_weapon_icon_icon_ZIMAGE.Hexadecimal = true;
@@ -643,6 +686,17 @@
             this.label33.Text = "グレー";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // unit_icon_gray_Picture
+            // 
+            this.unit_icon_gray_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_gray_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_gray_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_gray_Picture.Name = "unit_icon_gray_Picture";
+            this.unit_icon_gray_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_gray_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_gray_Picture.TabIndex = 122;
+            this.unit_icon_gray_Picture.TabStop = false;
+            // 
             // unit_icon_gray_PALETTE
             // 
             this.unit_icon_gray_PALETTE.Enabled = false;
@@ -705,6 +759,17 @@
             this.label32.Text = "4軍";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // unit_icon_four_Picture
+            // 
+            this.unit_icon_four_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_four_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_four_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_four_Picture.Name = "unit_icon_four_Picture";
+            this.unit_icon_four_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_four_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_four_Picture.TabIndex = 122;
+            this.unit_icon_four_Picture.TabStop = false;
+            // 
             // unit_icon_four_PALETTE
             // 
             this.unit_icon_four_PALETTE.Enabled = false;
@@ -755,6 +820,17 @@
             this.icon_palette_Export.Text = "画像取出";
             this.icon_palette_Export.UseVisualStyleBackColor = true;
             this.icon_palette_Export.Click += new System.EventHandler(this.icon_palette_Export_Click);
+            // 
+            // item_icon_Picture
+            // 
+            this.item_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.item_icon_Picture.Location = new System.Drawing.Point(377, -4);
+            this.item_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.item_icon_Picture.Name = "item_icon_Picture";
+            this.item_icon_Picture.Size = new System.Drawing.Size(533, 77);
+            this.item_icon_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.item_icon_Picture.TabIndex = 122;
+            this.item_icon_Picture.TabStop = false;
             // 
             // icon_palette_Import
             // 
@@ -829,6 +905,17 @@
             this.label7.Text = "友軍";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // unit_icon_npc_Picture
+            // 
+            this.unit_icon_npc_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_npc_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_npc_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_npc_Picture.Name = "unit_icon_npc_Picture";
+            this.unit_icon_npc_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_npc_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_npc_Picture.TabIndex = 122;
+            this.unit_icon_npc_Picture.TabStop = false;
+            // 
             // unit_icon_npc_PALETTE
             // 
             this.unit_icon_npc_PALETTE.Enabled = false;
@@ -879,6 +966,17 @@
             this.unit_icon_enemy_Export.Text = "画像取出";
             this.unit_icon_enemy_Export.UseVisualStyleBackColor = true;
             this.unit_icon_enemy_Export.Click += new System.EventHandler(this.unit_icon_enemy_Export_Click);
+            // 
+            // unit_icon_enemy_Picture
+            // 
+            this.unit_icon_enemy_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_enemy_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_enemy_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_enemy_Picture.Name = "unit_icon_enemy_Picture";
+            this.unit_icon_enemy_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_enemy_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_enemy_Picture.TabIndex = 122;
+            this.unit_icon_enemy_Picture.TabStop = false;
             // 
             // unit_icon_enemy_Import
             // 
@@ -942,6 +1040,17 @@
             this.unit_icon_Export.UseVisualStyleBackColor = true;
             this.unit_icon_Export.Click += new System.EventHandler(this.unit_icon_Export_Click);
             // 
+            // unit_icon_Picture
+            // 
+            this.unit_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.unit_icon_Picture.Location = new System.Drawing.Point(377, -4);
+            this.unit_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.unit_icon_Picture.Name = "unit_icon_Picture";
+            this.unit_icon_Picture.Size = new System.Drawing.Size(533, 77);
+            this.unit_icon_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unit_icon_Picture.TabIndex = 122;
+            this.unit_icon_Picture.TabStop = false;
+            // 
             // unit_icon_Import
             // 
             this.unit_icon_Import.Location = new System.Drawing.Point(4, 41);
@@ -992,6 +1101,16 @@
             this.tabPage3.Size = new System.Drawing.Size(930, 572);
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "システムメニュー";
+            // 
+            // X_StatusBackgroundLink
+            // 
+            this.X_StatusBackgroundLink.AutoSize = true;
+            this.X_StatusBackgroundLink.Location = new System.Drawing.Point(9, 511);
+            this.X_StatusBackgroundLink.Name = "X_StatusBackgroundLink";
+            this.X_StatusBackgroundLink.Size = new System.Drawing.Size(344, 36);
+            this.X_StatusBackgroundLink.TabIndex = 153;
+            this.X_StatusBackgroundLink.Text = "ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。";
+            this.X_StatusBackgroundLink.Click += new System.EventHandler(this.X_StatusBackgroundLink_Click);
             // 
             // panel8
             // 
@@ -1058,6 +1177,16 @@
             this.systemmenu_name_HEADERTSA.Name = "systemmenu_name_HEADERTSA";
             this.systemmenu_name_HEADERTSA.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_name_HEADERTSA.TabIndex = 148;
+            // 
+            // systemmenu_name_Picture
+            // 
+            this.systemmenu_name_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_name_Picture.Location = new System.Drawing.Point(310, 10);
+            this.systemmenu_name_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_name_Picture.Name = "systemmenu_name_Picture";
+            this.systemmenu_name_Picture.Size = new System.Drawing.Size(428, 115);
+            this.systemmenu_name_Picture.TabIndex = 142;
+            this.systemmenu_name_Picture.TabStop = false;
             // 
             // label17
             // 
@@ -1181,6 +1310,16 @@
             this.systemmenu_terrain_HEADERTSA.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_terrain_HEADERTSA.TabIndex = 148;
             // 
+            // systemmenu_terrain_Picture
+            // 
+            this.systemmenu_terrain_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_terrain_Picture.Location = new System.Drawing.Point(310, 10);
+            this.systemmenu_terrain_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_terrain_Picture.Name = "systemmenu_terrain_Picture";
+            this.systemmenu_terrain_Picture.Size = new System.Drawing.Size(428, 115);
+            this.systemmenu_terrain_Picture.TabIndex = 142;
+            this.systemmenu_terrain_Picture.TabStop = false;
+            // 
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1302,6 +1441,16 @@
             this.systemmenu_goal_HEADERTSA.Name = "systemmenu_goal_HEADERTSA";
             this.systemmenu_goal_HEADERTSA.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_goal_HEADERTSA.TabIndex = 148;
+            // 
+            // systemmenu_goal_Picture
+            // 
+            this.systemmenu_goal_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_goal_Picture.Location = new System.Drawing.Point(310, 10);
+            this.systemmenu_goal_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_goal_Picture.Name = "systemmenu_goal_Picture";
+            this.systemmenu_goal_Picture.Size = new System.Drawing.Size(428, 115);
+            this.systemmenu_goal_Picture.TabIndex = 142;
+            this.systemmenu_goal_Picture.TabStop = false;
             // 
             // label19
             // 
@@ -1601,6 +1750,16 @@
             this.label24.Text = "画像";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // systemmenu_battlepreview_Picture
+            // 
+            this.systemmenu_battlepreview_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_battlepreview_Picture.Location = new System.Drawing.Point(308, 10);
+            this.systemmenu_battlepreview_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_battlepreview_Picture.Name = "systemmenu_battlepreview_Picture";
+            this.systemmenu_battlepreview_Picture.Size = new System.Drawing.Size(428, 355);
+            this.systemmenu_battlepreview_Picture.TabIndex = 132;
+            this.systemmenu_battlepreview_Picture.TabStop = false;
+            // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
@@ -1636,6 +1795,17 @@
             this.label31.TabIndex = 127;
             this.label31.Text = "画像";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // systemmenu_old_badstatus_Picture
+            // 
+            this.systemmenu_old_badstatus_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_old_badstatus_Picture.Location = new System.Drawing.Point(4, 63);
+            this.systemmenu_old_badstatus_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_old_badstatus_Picture.Name = "systemmenu_old_badstatus_Picture";
+            this.systemmenu_old_badstatus_Picture.Size = new System.Drawing.Size(921, 220);
+            this.systemmenu_old_badstatus_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemmenu_old_badstatus_Picture.TabIndex = 129;
+            this.systemmenu_old_badstatus_Picture.TabStop = false;
             // 
             // systemmenu_old_badstatus_PALETTE
             // 
@@ -1721,6 +1891,17 @@
             this.label29.Text = "画像";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // systemmenu_badstatus_Picture
+            // 
+            this.systemmenu_badstatus_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.systemmenu_badstatus_Picture.Location = new System.Drawing.Point(2, 65);
+            this.systemmenu_badstatus_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.systemmenu_badstatus_Picture.Name = "systemmenu_badstatus_Picture";
+            this.systemmenu_badstatus_Picture.Size = new System.Drawing.Size(150, 202);
+            this.systemmenu_badstatus_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemmenu_badstatus_Picture.TabIndex = 122;
+            this.systemmenu_badstatus_Picture.TabStop = false;
+            // 
             // systemmenu_badstatus_IMAGE
             // 
             this.systemmenu_badstatus_IMAGE.Hexadecimal = true;
@@ -1780,19 +1961,11 @@
             this.systemmenu_badstatus_PALETTE.Size = new System.Drawing.Size(120, 25);
             this.systemmenu_badstatus_PALETTE.TabIndex = 126;
             // 
-            // X_StatusBackgroundLink
-            // 
-            this.X_StatusBackgroundLink.AutoSize = true;
-            this.X_StatusBackgroundLink.Location = new System.Drawing.Point(9, 511);
-            this.X_StatusBackgroundLink.Name = "X_StatusBackgroundLink";
-            this.X_StatusBackgroundLink.Size = new System.Drawing.Size(344, 36);
-            this.X_StatusBackgroundLink.TabIndex = 153;
-            this.X_StatusBackgroundLink.Text = "ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。";
-            this.X_StatusBackgroundLink.Click += new System.EventHandler(this.X_StatusBackgroundLink_Click);
-            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage6.Controls.Add(this.systemIconPictureBox3);
+            this.tabPage6.Controls.Add(this.X_Internet);
             this.tabPage6.Controls.Add(this.systemIconPictureBox2);
             this.tabPage6.Controls.Add(this.systemIconPictureBox1);
             this.tabPage6.Controls.Add(this.X_GraphicsTool);
@@ -1804,195 +1977,26 @@
             this.tabPage6.TabIndex = 8;
             this.tabPage6.Text = "他の画像";
             // 
-            // X_Jump_Patch
+            // systemIconPictureBox3
             // 
-            this.X_Jump_Patch.AutoSize = true;
-            this.X_Jump_Patch.Location = new System.Drawing.Point(90, 29);
-            this.X_Jump_Patch.Name = "X_Jump_Patch";
-            this.X_Jump_Patch.Size = new System.Drawing.Size(518, 72);
-            this.X_Jump_Patch.TabIndex = 155;
-            this.X_Jump_Patch.Text = "ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択して" +
-    "ください。";
-            this.X_Jump_Patch.Click += new System.EventHandler(this.X_Jump_Patch_Click);
+            this.systemIconPictureBox3.Location = new System.Drawing.Point(19, 285);
+            this.systemIconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.systemIconPictureBox3.Name = "systemIconPictureBox3";
+            this.systemIconPictureBox3.Size = new System.Drawing.Size(56, 56);
+            this.systemIconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.systemIconPictureBox3.TabIndex = 228;
+            this.systemIconPictureBox3.TabStop = false;
             // 
-            // X_GraphicsTool
+            // X_Internet
             // 
-            this.X_GraphicsTool.AutoSize = true;
-            this.X_GraphicsTool.Location = new System.Drawing.Point(90, 154);
-            this.X_GraphicsTool.Name = "X_GraphicsTool";
-            this.X_GraphicsTool.Size = new System.Drawing.Size(592, 90);
-            this.X_GraphicsTool.TabIndex = 156;
-            this.X_GraphicsTool.Text = "パッチにもない場合は、未発見の画像である可能性があります。\r\nその場合は、グラフィックツールから探してください。\r\nここをクリックしてください。\r\n\r\nメニューか" +
-    "ら開く場合は、メニュー -> ツール -> グラフィックツール、を選択してください。";
-            this.X_GraphicsTool.Click += new System.EventHandler(this.X_GraphicsTool_Click);
-            // 
-            // system_music_icon_icon_Picture
-            // 
-            this.system_music_icon_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.system_music_icon_icon_Picture.Location = new System.Drawing.Point(320, 365);
-            this.system_music_icon_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.system_music_icon_icon_Picture.Name = "system_music_icon_icon_Picture";
-            this.system_music_icon_icon_Picture.Size = new System.Drawing.Size(428, 119);
-            this.system_music_icon_icon_Picture.TabIndex = 126;
-            this.system_music_icon_icon_Picture.TabStop = false;
-            // 
-            // system_weapon_icon_icon_Picture
-            // 
-            this.system_weapon_icon_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.system_weapon_icon_icon_Picture.Location = new System.Drawing.Point(320, 242);
-            this.system_weapon_icon_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.system_weapon_icon_icon_Picture.Name = "system_weapon_icon_icon_Picture";
-            this.system_weapon_icon_icon_Picture.Size = new System.Drawing.Size(428, 119);
-            this.system_weapon_icon_icon_Picture.TabIndex = 111;
-            this.system_weapon_icon_icon_Picture.TabStop = false;
-            // 
-            // system_move_allowicon_Picture
-            // 
-            this.system_move_allowicon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.system_move_allowicon_Picture.Location = new System.Drawing.Point(320, 126);
-            this.system_move_allowicon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.system_move_allowicon_Picture.Name = "system_move_allowicon_Picture";
-            this.system_move_allowicon_Picture.Size = new System.Drawing.Size(428, 107);
-            this.system_move_allowicon_Picture.TabIndex = 110;
-            this.system_move_allowicon_Picture.TabStop = false;
-            // 
-            // system_icon_Picture
-            // 
-            this.system_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.system_icon_Picture.Location = new System.Drawing.Point(320, 17);
-            this.system_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.system_icon_Picture.Name = "system_icon_Picture";
-            this.system_icon_Picture.Size = new System.Drawing.Size(428, 103);
-            this.system_icon_Picture.TabIndex = 109;
-            this.system_icon_Picture.TabStop = false;
-            // 
-            // unit_icon_gray_Picture
-            // 
-            this.unit_icon_gray_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.unit_icon_gray_Picture.Location = new System.Drawing.Point(377, -4);
-            this.unit_icon_gray_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.unit_icon_gray_Picture.Name = "unit_icon_gray_Picture";
-            this.unit_icon_gray_Picture.Size = new System.Drawing.Size(533, 77);
-            this.unit_icon_gray_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unit_icon_gray_Picture.TabIndex = 122;
-            this.unit_icon_gray_Picture.TabStop = false;
-            // 
-            // unit_icon_four_Picture
-            // 
-            this.unit_icon_four_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.unit_icon_four_Picture.Location = new System.Drawing.Point(377, -4);
-            this.unit_icon_four_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.unit_icon_four_Picture.Name = "unit_icon_four_Picture";
-            this.unit_icon_four_Picture.Size = new System.Drawing.Size(533, 77);
-            this.unit_icon_four_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unit_icon_four_Picture.TabIndex = 122;
-            this.unit_icon_four_Picture.TabStop = false;
-            // 
-            // item_icon_Picture
-            // 
-            this.item_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.item_icon_Picture.Location = new System.Drawing.Point(377, -4);
-            this.item_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.item_icon_Picture.Name = "item_icon_Picture";
-            this.item_icon_Picture.Size = new System.Drawing.Size(533, 77);
-            this.item_icon_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.item_icon_Picture.TabIndex = 122;
-            this.item_icon_Picture.TabStop = false;
-            // 
-            // unit_icon_npc_Picture
-            // 
-            this.unit_icon_npc_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.unit_icon_npc_Picture.Location = new System.Drawing.Point(377, -4);
-            this.unit_icon_npc_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.unit_icon_npc_Picture.Name = "unit_icon_npc_Picture";
-            this.unit_icon_npc_Picture.Size = new System.Drawing.Size(533, 77);
-            this.unit_icon_npc_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unit_icon_npc_Picture.TabIndex = 122;
-            this.unit_icon_npc_Picture.TabStop = false;
-            // 
-            // unit_icon_enemy_Picture
-            // 
-            this.unit_icon_enemy_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.unit_icon_enemy_Picture.Location = new System.Drawing.Point(377, -4);
-            this.unit_icon_enemy_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.unit_icon_enemy_Picture.Name = "unit_icon_enemy_Picture";
-            this.unit_icon_enemy_Picture.Size = new System.Drawing.Size(533, 77);
-            this.unit_icon_enemy_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unit_icon_enemy_Picture.TabIndex = 122;
-            this.unit_icon_enemy_Picture.TabStop = false;
-            // 
-            // unit_icon_Picture
-            // 
-            this.unit_icon_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.unit_icon_Picture.Location = new System.Drawing.Point(377, -4);
-            this.unit_icon_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.unit_icon_Picture.Name = "unit_icon_Picture";
-            this.unit_icon_Picture.Size = new System.Drawing.Size(533, 77);
-            this.unit_icon_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unit_icon_Picture.TabIndex = 122;
-            this.unit_icon_Picture.TabStop = false;
-            // 
-            // systemmenu_name_Picture
-            // 
-            this.systemmenu_name_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_name_Picture.Location = new System.Drawing.Point(310, 10);
-            this.systemmenu_name_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_name_Picture.Name = "systemmenu_name_Picture";
-            this.systemmenu_name_Picture.Size = new System.Drawing.Size(428, 115);
-            this.systemmenu_name_Picture.TabIndex = 142;
-            this.systemmenu_name_Picture.TabStop = false;
-            // 
-            // systemmenu_terrain_Picture
-            // 
-            this.systemmenu_terrain_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_terrain_Picture.Location = new System.Drawing.Point(310, 10);
-            this.systemmenu_terrain_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_terrain_Picture.Name = "systemmenu_terrain_Picture";
-            this.systemmenu_terrain_Picture.Size = new System.Drawing.Size(428, 115);
-            this.systemmenu_terrain_Picture.TabIndex = 142;
-            this.systemmenu_terrain_Picture.TabStop = false;
-            // 
-            // systemmenu_goal_Picture
-            // 
-            this.systemmenu_goal_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_goal_Picture.Location = new System.Drawing.Point(310, 10);
-            this.systemmenu_goal_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_goal_Picture.Name = "systemmenu_goal_Picture";
-            this.systemmenu_goal_Picture.Size = new System.Drawing.Size(428, 115);
-            this.systemmenu_goal_Picture.TabIndex = 142;
-            this.systemmenu_goal_Picture.TabStop = false;
-            // 
-            // systemmenu_battlepreview_Picture
-            // 
-            this.systemmenu_battlepreview_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_battlepreview_Picture.Location = new System.Drawing.Point(308, 10);
-            this.systemmenu_battlepreview_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_battlepreview_Picture.Name = "systemmenu_battlepreview_Picture";
-            this.systemmenu_battlepreview_Picture.Size = new System.Drawing.Size(428, 355);
-            this.systemmenu_battlepreview_Picture.TabIndex = 132;
-            this.systemmenu_battlepreview_Picture.TabStop = false;
-            // 
-            // systemmenu_old_badstatus_Picture
-            // 
-            this.systemmenu_old_badstatus_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_old_badstatus_Picture.Location = new System.Drawing.Point(4, 63);
-            this.systemmenu_old_badstatus_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_old_badstatus_Picture.Name = "systemmenu_old_badstatus_Picture";
-            this.systemmenu_old_badstatus_Picture.Size = new System.Drawing.Size(921, 220);
-            this.systemmenu_old_badstatus_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemmenu_old_badstatus_Picture.TabIndex = 129;
-            this.systemmenu_old_badstatus_Picture.TabStop = false;
-            // 
-            // systemmenu_badstatus_Picture
-            // 
-            this.systemmenu_badstatus_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.systemmenu_badstatus_Picture.Location = new System.Drawing.Point(2, 65);
-            this.systemmenu_badstatus_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.systemmenu_badstatus_Picture.Name = "systemmenu_badstatus_Picture";
-            this.systemmenu_badstatus_Picture.Size = new System.Drawing.Size(150, 202);
-            this.systemmenu_badstatus_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.systemmenu_badstatus_Picture.TabIndex = 122;
-            this.systemmenu_badstatus_Picture.TabStop = false;
+            this.X_Internet.AutoSize = true;
+            this.X_Internet.Location = new System.Drawing.Point(90, 285);
+            this.X_Internet.Name = "X_Internet";
+            this.X_Internet.Size = new System.Drawing.Size(618, 90);
+            this.X_Internet.TabIndex = 227;
+            this.X_Internet.Text = "インターネットからリソースを探す\r\n\r\nインターネットでファンが作成したデータを探します。\r\nいろいろなデータが公開されています。\r\n他人の作品を利用するとき、r" +
+    "eadmeに作者の名前と利用した作品名を書いてください。";
+            this.X_Internet.Click += new System.EventHandler(this.X_Internet_Click);
             // 
             // systemIconPictureBox2
             // 
@@ -2014,6 +2018,28 @@
             this.systemIconPictureBox1.TabIndex = 225;
             this.systemIconPictureBox1.TabStop = false;
             // 
+            // X_GraphicsTool
+            // 
+            this.X_GraphicsTool.AutoSize = true;
+            this.X_GraphicsTool.Location = new System.Drawing.Point(90, 154);
+            this.X_GraphicsTool.Name = "X_GraphicsTool";
+            this.X_GraphicsTool.Size = new System.Drawing.Size(592, 90);
+            this.X_GraphicsTool.TabIndex = 156;
+            this.X_GraphicsTool.Text = "パッチにもない場合は、未発見の画像である可能性があります。\r\nその場合は、グラフィックツールから探してください。\r\nここをクリックしてください。\r\n\r\nメニューか" +
+    "ら開く場合は、メニュー -> ツール -> グラフィックツール、を選択してください。";
+            this.X_GraphicsTool.Click += new System.EventHandler(this.X_GraphicsTool_Click);
+            // 
+            // X_Jump_Patch
+            // 
+            this.X_Jump_Patch.AutoSize = true;
+            this.X_Jump_Patch.Location = new System.Drawing.Point(90, 29);
+            this.X_Jump_Patch.Name = "X_Jump_Patch";
+            this.X_Jump_Patch.Size = new System.Drawing.Size(518, 72);
+            this.X_Jump_Patch.TabIndex = 155;
+            this.X_Jump_Patch.Text = "ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択して" +
+    "ください。";
+            this.X_Jump_Patch.Click += new System.EventHandler(this.X_Jump_Patch_Click);
+            // 
             // ImageSystemIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2028,39 +2054,52 @@
             this.WMTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_PALETTE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_icon_PALETTE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.system_icon_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.system_icon_ZIMAGE)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_PALETTE)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_PALETTE)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.item_icon_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item_icon_PALETTE)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_PALETTE)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_PALETTE)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unit_icon_PALETTE)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_HEADERTSA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_PALETTE)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_HEADERTSA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_PALETTE)).EndInit();
             this.systemmenu_goal_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_HEADERTSA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_PALETTE)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.systemarea_staff_gradation_palette)).EndInit();
@@ -2069,31 +2108,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_HEADERTSA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_Picture)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.systemmenu_old_badstatus_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_PALETTE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_ZIMAGE)).EndInit();
             this.systemmenu_badstatus_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_IMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_PALETTE)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_weapon_icon_icon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_move_allowicon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.system_icon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_gray_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_four_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.item_icon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_npc_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_enemy_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_icon_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_name_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_terrain_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_goal_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_battlepreview_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_old_badstatus_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.systemmenu_badstatus_Picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemIconPictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -2247,5 +2274,7 @@
         private System.Windows.Forms.Label X_Jump_Patch;
         private SystemIconPictureBox systemIconPictureBox2;
         private SystemIconPictureBox systemIconPictureBox1;
+        private SystemIconPictureBox systemIconPictureBox3;
+        private System.Windows.Forms.Label X_Internet;
     }
 }
