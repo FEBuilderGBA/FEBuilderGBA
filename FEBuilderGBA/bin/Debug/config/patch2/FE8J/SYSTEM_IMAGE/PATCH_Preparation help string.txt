@@ -1,0 +1,11 @@
+NAME=進撃準備のヘルプ文字列
+NAME.en=Preparation help string
+NAME.zh=Preparation help string
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x098108//0xA99FE8
+PALETTE_POINTER=0x03352C//0xA97BEC

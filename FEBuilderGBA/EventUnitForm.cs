@@ -1037,7 +1037,7 @@ namespace FEBuilderGBA
             public uint unk1;
             public uint unk2;
         }
-        List<Pos> FE8CoordList;
+        List<Pos> FE8CoordList = new List<Pos>();
 
         void MakeUnitCoordList()
         {

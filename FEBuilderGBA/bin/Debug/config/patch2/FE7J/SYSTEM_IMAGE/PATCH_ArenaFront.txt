@@ -1,0 +1,20 @@
+
+NAME=闘技場受付
+NAME.en=Arena Building Front Image
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=160
+
+ZIMAGE_POINTER=0x000B3864//0x083F64B8
+HEADERTSA_POINTER=0x000B386C//0x083F9094
+PALETTE_POINTER=0x000B3870//0x083F9548
+
+PALETTE=1
+
+INFO=闘技場の受付の背景を指定します。
+INFO.en=Specifies the background image showing the front of the arena building.
+NAME.zh=系统_斗技场接待处
+INFO.zh=指定体育场接待的背景。
+

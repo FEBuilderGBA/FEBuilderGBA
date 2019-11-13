@@ -1,0 +1,11 @@
+NAME=通信闘技場と名前入力画面
+NAME.en=Network arena and Name Input Screen
+NAME.zh=Network arena and Name Input Screen
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0x00043AD4//0x085ABD68
+PALETTE_POINTER=0x00043AF0//0x08A1BD00

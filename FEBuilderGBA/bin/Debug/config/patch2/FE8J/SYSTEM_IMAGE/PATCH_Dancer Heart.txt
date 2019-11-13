@@ -1,0 +1,15 @@
+NAME=Dancer's Heart
+NAME.en=Dancer's Heart
+NAME.zh=Dancer's Heart
+
+INFO=おそらくボツ画像
+INFO.en=Probably a unuse image
+INFO.zh=Probably a unuse image
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x06FAF0//0x607238
+PALETTE_POINTER=0x06FAEC//0x6073AC

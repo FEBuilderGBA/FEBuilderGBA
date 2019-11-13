@@ -1401,6 +1401,14 @@ namespace FEBuilderGBA
             {
                 return R._("自軍のパーティにいるメンバーに対してDISAを使うと存在が抹消されます。\r\nユニットを一時的に離脱させて消したい場合は、REMUを利用してください。そして、後でREVEALで再加入させてください。\r\n演出でユニットを消す場合は、CLEAを推奨します。CLEAは、すべてのユニットを消去しますが、抹消も、離脱状態にもなりません。");
             }
+            else if (hint == "@EXPLAIN_REMU")
+            {
+                return R._("ユニットを一時的にパーティから外します。\r\nユニットのデータは保存され非表示扱いになります。\r\nユニットと再開し復帰させるには、REVEALを利用してください。\r\nEAでは、INVISと書かれることもありますが、REMUはINVISの別名です。");
+            }
+            else if (hint == "@EXPLAIN_REVEAL")
+            {
+                return R._("REMU(INVIS)で一時的にパーティから外したユニットをパーティに再び復帰させます。");
+            }
             else if (hint == "@WAIT")
             {
                 return R._("指定したウェイト処理を行います");

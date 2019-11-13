@@ -235,12 +235,11 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050300XXXX000021370000	Give gold[XXXX:DECIMAL:GOLD](LOW)	{GOLD}	{ITME}
 400A0000249D5B0840050300XXXX000021370000	Give gold[XXXX:DECIMAL:GOLD]	{GOLD}	{ITEM}	{J}
 400A0000401F590840050300XXXX000021370000	Give gold[XXXX:DECIMAL:GOLD]	{GOLD}	{ITEM}	{U}
-40050100XX0000002534YYYY	Set HP to[XX:DECIMAL:Current HP]for Player[YY:UNIT:Character](SET_HP)	{UNIT}
-40050100XX0000002434YYYY	Set HP to[XX:DECIMAL:Current HP]for Enemy[YY:UNIT:Character]	{UNIT}
-40050100XX0000002334YYYY	Set HP to[XX:DECIMAL:Current HP]for Ally[YY:UNIT:Character]	{UNIT}
+40050100XX0000002534YYYY	Set HP to[XX:DECIMAL:Current HP]for Unit[YY:UNIT:Character](SET_HP)	{UNIT}
 231A000040050B00FFFFFFFF	Display textbox (TUTORIALTEXTBOXSTART)(LOW)
 40050100YYZZWWUU2039XX00	Change AI of [XX:UNIT:Character]to[YY:AI1:AI1][ZZ:AI2:AI2][WW:AI3:AI3][UU:AI4:AI4]	{UNIT}
 4040XXXXYYYYZZZZ	Force promote[XXXX:UNIT:Character]to[YY:CLASS:Class]with[ZZ:ITEM:Item ID (Display Only)](LOW)(PROM)	{CC}
+
 201000004040XX00ZZ00YY0020100400	Force promote[XX:UNIT:Character]to[ZZ:CLASS:CCC Class]with[YY:ITEM:Item ID (Display Only)](LOW)	{CC}
 201BXXXX201D0000	[XXXX:CONVERSATION_TEXT:Conversation text]Dialog (conversation) with no background (LOW)(TEXTSHOW+TEXTEND)	{TEXT}
 211BXXXX201D0000	[XXXX:CONVERSATION_TEXT:Conversation Text]Dialog (conversation) with background(LOW)(TEXTSHOW2+TEXTEND)
@@ -411,9 +410,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 213DXXXX	_213D[XXXX::value]
 2031XXXX	Shows movement and attack range for [XXXX:UNIT:Character](SHOW_ATTACK_RANGE)
 21310000	Hides currently displayed movement and attack range(HIDE_ATTACK_RANGE)
-40050B00XXXXYYYY2D34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX	@WARNING_DISA
-40050B00XXXXYYYY2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]without death SFX	@WARNING_DISA
-40050B00XXXXYYYY2D34FEFF2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX	@WARNING_DISA	{UNITREMOVE}
+40050B00XXXXYYYY2D34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX(SET_SOMETHING)	@WARNING_DISA
+40050B00XXXXYYYY2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]without death SFX(DISA_IF)	@WARNING_DISA
+40050B00XXXXYYYY2D34FEFF2E34FEFF	Erase (kill) unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]with death SFX(DISA_IF)	@WARNING_DISA	{UNITREMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV	Move the unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]to coordinates[WW:MAPX:X][VV:MAPY:Y]with[ZZZZ:FSEC:Speed]	{UNITMOVE}
 40050B00XXXXYYYY402FZZZZFEFFWWVV20300000	Move a unit to coordinates[WW:MAPX:X][VV:MAPY:Y]with[ZZZZ:FSEC:Speed]. The unit to move is at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y]	{UNITMOVE}
 40050D000000000040050100XX0000002107000040050100YYYYYYYY2107000040050100ZZZZ00002107000040050100UUUUUUUU2107000040050100WWWW00002107000040050100PPPPPPPP2107000040050100VVVVVVVV2107000040050100TTTTTTTT21070000400A00002C08A608	Tutorial - urge the movement of the unit[XX:UNIT:Character to act]to coordinates[YY:MAPXY:XY][VVVVVVVV:POINTER_EVENT:Next event][TTTTTTTT:POINTER_EVENT:THIS][UUUUUUUU:SCREENXY:Description position][ZZZZ:SYSTEM_TEXT:Explanatory text][PPPPPPPP:SCREENXY:Location of the reminder][WWWW:SYSTEM_TEXT:remind sentences]	{J}
@@ -451,8 +450,8 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 62180000YYYYZZZZWWWWVVVV	Change the color of the entire screen[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue](FADECOLORS)	{FADE}	{MAPEFFECT}
 6218060AYYYYZZZZWWWWVVVV	Change the background color[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
 62181D01YYYYZZZZWWWWVVVV	Change color of enemy units[YY:FSEC:Speed][ZZ:DECIMAL:Red][WW:DECIMAL:Green][VV:DECIMAL:Blue]	{FADE}	{MAPEFFECT}
-40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Character]is in leave state	{UNITPERSOLNAL}
-40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Character]is in an leave state, restore what was deleted	{UNITPERSOLNAL}
+40050100000000002834XX00	When event presentation, Delete if[XX:UNIT:Character]is in leave state(LOW)	{UNITPERSOLNAL}
+40050100FFFFFFFF2834XX00	When event presentation, When[XX:UNIT:Character]is in an leave state, restore what was deleted(LOW)	{UNITPERSOLNAL}
 2117XXXX	Fade the screen to black with[XXXX:FSEC:Speed](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
 2017XXXX	Fade the screen back from black with[XXXX:FSEC:Speed](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
 2317XXXX	Fade the screen to white with[XXXX:FSEC:Speed](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
@@ -472,9 +471,9 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050B00XXXXYYYY201BZZZZ201D0000221B0000	Show Walla Text(After the second one)[XXXX:SCREENX:X][YYYY:SCREENY:Y][ZZZZ:CONVERSATION_TEXT:Walla Text](SET_VAL_B+TEXTSHOW+TEXTEND+REMA)	{TEXT}
 2833FFFF2006C20040050300XX000000400A00005407A608410CYYYY0C000000400A00000C03A6082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{J}
 2833FFFF2006C20040050300XX000000400A00001CE69E08410CYYYY0C000000400A0000D4E19E082008YYYY	Desert treasure [XX:ITEM:Item][YYYY:LABEL:Conditional ID]	Implement items buried in the desert.\r\nApart from thieves, it depends on the unit's luck stat to judge whether you can pick up the item.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event, and a unique value.\r\nIf there is no other branch, you can set it to 0 without any problems.	{ITEM}	{U}
-2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	{UNITPERSOLNAL}
+2034XXXX	Remove [XXXX:UNIT:Character] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
 2F34XXXX	Erase [XXXX:UNIT:Character] (DISA)	@WARNING_DISA	{UNITPERSOLNAL}
-2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL)	{UNITPERSOLNAL}
+2134XXXX	Rejoin [XXXX:UNIT:Character] to the party. Sets departure flag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
 40050B00XXXXYYYY2F34FEFF	Erase unit at coordinates [XXXX:MAPX:X][YYYY:MAPY:Y]	@WARNING_DISA
 40050300XXXX000022370000	Take [XXXX:DECIMAL:GOLD] gold from the player(GIVETOSLOT3)	{GOLD}	{ITME}
 40050200XXXXXXXX40050300YYYY0000400A00004405A008	Ending scene 1 [XX:POINTER_UNIT:Units][YY:TEXT:conversation]	{U}
@@ -518,3 +517,12 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 4035XXXXYYYY0000	Change [XXXX:UNIT:Unit]'s class to [YYYY:CLASS:Class](RECLASS)	weapon ranks, stats, etc stay the same.
 4035XXXX0000YYYY	Change [XXXX:UNIT:Unit]'s class to [YYYY:UNIT:Ref Unit]'s default class(RECLASS_FROMCHAR)
 4135XXXXYYYY0000	Switch [XXXX:UNIT:Unit1]'s class to [YYYY:UNIT:Unit2]'s class(SWITCH_CLASSES)	(the first unit will gain the *default* class of the second unit, while the second unit *will* get the class the first unit was in beforehand)
+
+40050B00XXXXYYYY2034FEFF	Remove unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] from the party. Sets departure flag to on(REMU)	@EXPLAIN_REMU	{UNITPERSOLNAL}
+40050B00XXXXYYYY2134FEFF	Rejoin unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to the party. Sets departure flag to off(REVEAL)	@EXPLAIN_REVEAL	{UNITPERSOLNAL}
+40050B00XXXXYYYY2234FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Player(CUSA)	{UNITPERSOLNAL}
+40050B00XXXXYYYY2434FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to Enemy(CUSE)	{UNITPERSOLNAL}
+40050B00XXXXYYYY2334FEFF	Change faction of unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] to NPC(CUSN)	{UNITPERSOLNAL}
+40050B00XXXXYYYY2634FEFF	Ends specified unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] turn, greying them out(SET_ENDTURN)	{UNITPERSOLNAL}
+40050B00XXXXYYYY2534FEFF	Sets unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y] HP to value stored in memory slot 0x1(SET_HP)(LOW)	@READ1	{UNITPERSOLNAL}
+40050100ZZ00000040050B00XXXXYYYY2534FEFF	Set HP to[ZZ:DECIMAL:Current HP]for Unit at coordinates[XXXX:MAPX:X][YYYY:MAPY:Y](SET_HP)	{UNIT}

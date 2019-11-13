@@ -1,0 +1,11 @@
+NAME=支援関係
+NAME.en=Support relationship
+NAME.zh=Support relationship
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x0A52BC//0xA972B0
+PALETTE_POINTER=0x097F60//0xA97C0C

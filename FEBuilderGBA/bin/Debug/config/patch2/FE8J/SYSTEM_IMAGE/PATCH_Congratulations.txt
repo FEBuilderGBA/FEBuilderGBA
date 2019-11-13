@@ -1,0 +1,14 @@
+NAME=Congratulations!
+INFO=塔や遺跡をクリアした時の画像
+INFO.en=Image when clearing towers and ruins.
+INFO.zh=Image when clearing towers and ruins.
+
+
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=32
+
+ZIMAGE_POINTER=0x088050//0xA12068
+PALETTE_POINTER=0x088058//0xA12A80

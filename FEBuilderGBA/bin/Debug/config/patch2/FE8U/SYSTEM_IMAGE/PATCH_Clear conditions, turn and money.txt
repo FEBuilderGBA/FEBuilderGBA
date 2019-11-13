@@ -1,0 +1,11 @@
+NAME=クリア条件、ターンや所持金
+NAME.en=Clear conditions, turn and money
+NAME.zh=Clear conditions, turn and money
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x8E80C//0xA2E214
+PALETTE_POINTER=0x8E804//0xA2E4A4
