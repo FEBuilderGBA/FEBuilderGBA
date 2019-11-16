@@ -2577,6 +2577,9 @@ namespace FEBuilderGBA
                 sb.Append(' ');
             }
             SelectPalette.Text = sb.ToString();
+
+            uint addr = Program.ROM.RomInfo.workmemory_palette_address() + (0x20 * (uint)index);
+            PaletteAddress.Text = U.ToHexString(addr);
         }
 
         private void PaletteList_MouseDoubleClick(object sender, MouseEventArgs e)

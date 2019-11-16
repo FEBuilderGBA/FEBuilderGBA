@@ -7233,7 +7233,8 @@ r3=X tile position of menu of the right	{U}
 0203AB10	:0203AB20	预留太阳能补丁	它似乎被用于太阳能补丁	{J}
 0203AB20	:0203AB24	太阳旗	它似乎被用于太阳能补丁	{J}
 0203AB40	:0203AB44	技能动画显示	用作技能动画显示的工作记忆	{J}
-0203AB48	:0203AD3C	膨胀运输车	用作修补程序来扩展运输者250件(250 * 2 = 500字节)	{J}
+0203AB48	:0203AD3C	Expansion transporter	Used as a patch to extend transporter250 pieces (250 * 2 = 500 bytes)	{J}
+0203ab18	:0203ACA8	Expansion transporter	breaksave 	Used as a patch to extend transporter250 pieces (200 * 2 = 400 bytes)	{J}
 0203AFF0	:0203AFFF	UnitSelectSFX补丁	选择单位时用作音色重现声音	{J}
 0203AD0C	他们似乎在不断尝试技能	{J}
 0203AABE	:0203AABF	FE8-Battle Transform	{U}
@@ -12631,3 +12632,7 @@ r3=X tile position of menu of the right	{U}
 08017d84	StoreUnitStats	{J}
 0807D074	GenerateSummonedCharacter	{J}
 0807AD1C	GenerateSummonedCharacter	{U}
+0203AB40    :0203AB44	技能动画显示用作技能动画显示{J}的工作存储器。
+0203AB48    :0203AD3C	扩展车队在补丁中使用以扩展车队250（250 * 2 \u003d 500字节）{J}。
+08074A4C	IsHealStaff	{J}
+08072570	IsHealStaff	{U}

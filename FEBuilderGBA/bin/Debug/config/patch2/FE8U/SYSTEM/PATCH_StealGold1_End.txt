@@ -1,0 +1,16 @@
+NAME=盗んだ時にお金に変化するアイテムID1。ここまで
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x324D2
+ADDRESS_TYPE=ITEM
+
+AUTHOR=v
+
+INFO=盗んだときに、お金に変化するアイテム群を設定します。\r\nこれらのアイテムを盗むと、単価*回数のゴールドを入手できます。
+NAME.en=Item ID1, which changes to money when stolen.End.
+INFO.en=Set a group of items that change to money when stolen.\r\nIf you steal these items, you can get ** gold.
+NAME.zh=物品ID1，被盗后会变成金钱。直到这里
+INFO.zh=设置一组被盗时会变成金钱的物品。\r\n如果您偷了这些物品，您可以获得**金币。

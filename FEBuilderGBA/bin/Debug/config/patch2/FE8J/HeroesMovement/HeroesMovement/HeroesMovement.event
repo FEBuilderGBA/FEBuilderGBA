@@ -22,11 +22,11 @@
 HasSkill:
 	#incbin "asm/CheckHasSkillStandalone.bin"
 	POIN HeroesMovement_Table
-#ifdef judgeSkill	//もしスキル判定があればそれを利用
-	POIN judgeSkill
-#else				//スキル判定がないならnullを返す.
+//#ifdef judgeSkill	//もしスキル判定があればそれを利用
+//	POIN judgeSkill
+//#else				//スキル判定がないならnullを返す.
 	WORD 0x0
-#endif
+//#endif
 
 prPivotCommand_Availability:
 	#incbin "asm/CheckHasSkillAndNotCantoing.bin"

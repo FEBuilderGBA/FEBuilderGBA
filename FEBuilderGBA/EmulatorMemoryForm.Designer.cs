@@ -213,6 +213,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ProcsListBox = new FEBuilderGBA.ListBoxEx();
             this.EtcPage = new System.Windows.Forms.TabPage();
+            this.PaletteAddress = new FEBuilderGBA.TextBoxEx();
             this.PartyCombo = new FEBuilderGBA.ComboBoxEx();
             this.PaletteSearchButton = new System.Windows.Forms.Button();
             this.label91 = new System.Windows.Forms.Label();
@@ -3152,6 +3153,7 @@
             // EtcPage
             // 
             this.EtcPage.BackColor = System.Drawing.SystemColors.Control;
+            this.EtcPage.Controls.Add(this.PaletteAddress);
             this.EtcPage.Controls.Add(this.PartyCombo);
             this.EtcPage.Controls.Add(this.PaletteSearchButton);
             this.EtcPage.Controls.Add(this.label91);
@@ -3172,6 +3174,17 @@
             this.EtcPage.TabIndex = 4;
             this.EtcPage.Text = "Etc";
             // 
+            // PaletteAddress
+            // 
+            this.PaletteAddress.ErrorMessage = "";
+            this.PaletteAddress.Location = new System.Drawing.Point(1525, 455);
+            this.PaletteAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.PaletteAddress.Name = "PaletteAddress";
+            this.PaletteAddress.Placeholder = "";
+            this.PaletteAddress.ReadOnly = true;
+            this.PaletteAddress.Size = new System.Drawing.Size(116, 25);
+            this.PaletteAddress.TabIndex = 327;
+            // 
             // PartyCombo
             // 
             this.PartyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -3187,7 +3200,7 @@
             // 
             // PaletteSearchButton
             // 
-            this.PaletteSearchButton.Location = new System.Drawing.Point(1562, 453);
+            this.PaletteSearchButton.Location = new System.Drawing.Point(1446, 452);
             this.PaletteSearchButton.Name = "PaletteSearchButton";
             this.PaletteSearchButton.Size = new System.Drawing.Size(75, 29);
             this.PaletteSearchButton.TabIndex = 324;
@@ -5331,7 +5344,7 @@
             this.SelectPalette.Location = new System.Drawing.Point(884, 453);
             this.SelectPalette.Name = "SelectPalette";
             this.SelectPalette.Placeholder = "";
-            this.SelectPalette.Size = new System.Drawing.Size(672, 25);
+            this.SelectPalette.Size = new System.Drawing.Size(556, 25);
             this.SelectPalette.TabIndex = 322;
             // 
             // PaletteList
@@ -6834,5 +6847,6 @@
         private TextBoxEx SelectPalette;
         private System.Windows.Forms.Label label91;
         private ListBoxEx SoundList;
+        private TextBoxEx PaletteAddress;
     }
 }
