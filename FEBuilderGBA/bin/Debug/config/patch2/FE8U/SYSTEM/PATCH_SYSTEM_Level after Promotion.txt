@@ -1,0 +1,16 @@
+NAME=CC後のレベル
+NAME.en=Level after Promotion
+NAME.zh=转职没有级别
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x2BE6E
+DEFAULT=0x01
+
+AUTHOR=Leonarth
+INFO=通常、CCすると、レベルは1になります。\r\nこのパッチはこれを変更して特定のレベルにします。
+
+INFO.en=Normally, CC will be level 1.\r\nThis patch changes this to a specific level.
+INFO.zh=通常，CC将为1级。\r\n此补丁将其更改为特定级别。
