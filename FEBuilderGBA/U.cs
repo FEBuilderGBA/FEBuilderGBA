@@ -4554,7 +4554,16 @@ namespace FEBuilderGBA
             if (value >= obj.Items.Count)
             {
                 Form f = ControlToParentForm(obj);
+#if DEBUG
                 throw new Exception(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name ,obj.Items.Count));
+#else
+                Log.Error(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
+                value = obj.Items.Count - 1;
+                if (value < 0)
+                {
+                    value = 0;
+                }
+#endif
             }
 
             obj.SelectedIndex = value;
@@ -4581,7 +4590,16 @@ namespace FEBuilderGBA
             if (value >= obj.Items.Count)
             {
                 Form f = ControlToParentForm(obj);
+#if DEBUG
                 throw new Exception(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
+#else
+                Log.Error(String.Format("The value is greater than Items.Count! value:({0}) ComboBox:({1}) current:{2} ParentForm:({3}) Count:{4}", value, obj.Name, obj.SelectedIndex, f == null ? "null" : f.Name, obj.Items.Count));
+                value = obj.Items.Count - 1;
+                if (value < 0)
+                {
+                    value = 0;
+                }
+#endif
             }
             obj.SelectedIndex = value;
         }

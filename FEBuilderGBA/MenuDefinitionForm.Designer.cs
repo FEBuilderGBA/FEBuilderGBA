@@ -314,7 +314,6 @@
             // 
             // B3
             // 
-
             this.B3.Location = new System.Drawing.Point(414, 90);
             this.B3.Maximum = new decimal(new int[] {
             -559939585,
@@ -327,7 +326,6 @@
             // 
             // B2
             // 
-
             this.B2.Location = new System.Drawing.Point(414, 62);
             this.B2.Maximum = new decimal(new int[] {
             -559939585,
@@ -340,7 +338,6 @@
             // 
             // B1
             // 
-
             this.B1.Location = new System.Drawing.Point(414, 33);
             this.B1.Maximum = new decimal(new int[] {
             -559939585,
@@ -358,7 +355,7 @@
             this.J_32_ASM.Name = "J_32_ASM";
             this.J_32_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_32_ASM.TabIndex = 93;
-            this.J_32_ASM.Text = "??";
+            this.J_32_ASM.Text = "On HelpBox";
             this.J_32_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_28_ASM
@@ -368,7 +365,7 @@
             this.J_28_ASM.Name = "J_28_ASM";
             this.J_28_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_28_ASM.TabIndex = 92;
-            this.J_28_ASM.Text = "??";
+            this.J_28_ASM.Text = "On R Press";
             this.J_28_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_24_ASM
@@ -378,7 +375,7 @@
             this.J_24_ASM.Name = "J_24_ASM";
             this.J_24_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_24_ASM.TabIndex = 91;
-            this.J_24_ASM.Text = "destruction";
+            this.J_24_ASM.Text = "On B Press";
             this.J_24_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_20_ASM
@@ -388,7 +385,7 @@
             this.J_20_ASM.Name = "J_20_ASM";
             this.J_20_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_20_ASM.TabIndex = 90;
-            this.J_20_ASM.Text = "construction";
+            this.J_20_ASM.Text = "??";
             this.J_20_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_16_ASM
@@ -398,7 +395,7 @@
             this.J_16_ASM.Name = "J_16_ASM";
             this.J_16_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_16_ASM.TabIndex = 89;
-            this.J_16_ASM.Text = "handle R press";
+            this.J_16_ASM.Text = "OnEnd";
             this.J_16_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_12_ASM
@@ -408,7 +405,7 @@
             this.J_12_ASM.Name = "J_12_ASM";
             this.J_12_ASM.Size = new System.Drawing.Size(409, 30);
             this.J_12_ASM.TabIndex = 88;
-            this.J_12_ASM.Text = "handle B press";
+            this.J_12_ASM.Text = "OnInit";
             this.J_12_ASM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // J_8_MENU
@@ -473,7 +470,6 @@
             // 
             // B0
             // 
-
             this.B0.Location = new System.Drawing.Point(414, 4);
             this.B0.Maximum = new decimal(new int[] {
             -559939585,
@@ -599,6 +595,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(-1, 25);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -651,7 +648,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(452, 4);
             this.ReadCount.Maximum = new decimal(new int[] {
             256,
