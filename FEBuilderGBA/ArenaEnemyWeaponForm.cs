@@ -22,6 +22,9 @@ namespace FEBuilderGBA
 
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N_InputFormRef.MakeGeneralAddressListContextMenu(true);
+
+            this.InputFormRef.CheckProtectionAddrHigh = false;
+            this.N_InputFormRef.CheckProtectionAddrHigh = false;
         }
 
         public InputFormRef InputFormRef;

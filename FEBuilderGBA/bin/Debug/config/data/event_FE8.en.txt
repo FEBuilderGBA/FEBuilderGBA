@@ -460,7 +460,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 40050100XXYY00002039ZZZZ	Change the AI ​​of[ZZ:UNIT:Character]to[XX:AI1:AI 1][YY:AI2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050100XXYY00002139ZZWW	Change the AI ​​of unit at coordinates[ZZ:MAPX:MAPX][WW:MAPY:Y]to[XX:AI1:AI 1][YY:AI 2:AI 2](CHAI)	{UNIT}	{UNITPERSOLNAL}
 40050B00XXXXYYYY2025WW00	[WW:MAPCHAPTER:Chapter_ID][XX:MAPX:X][YY:MAPY:Y]Change map (LOMA)	{MAP}
-40050B00XXXXYYYY	SET_VAL_B Enter coordinates in memory slot B[XX:MAPX:X][YY:MAPY:Y]	Memory slot B is often used for passing coordinate data.
+40050B00XXXXYYYY	SET_VAL_B Enter coordinates in memory slot B [XX:MAPX:X][YY:MAPY:Y](Coords)	Memory slot B is often used for passing coordinate data.
 
 492FXXXXYYYYZZZZ	Set move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO)	{UNITMOVE}
 492FXXXXYYYYZZZZ20300000	Move[YY:UNIT:Character]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO+ENUN)	{UNITMOVE}
