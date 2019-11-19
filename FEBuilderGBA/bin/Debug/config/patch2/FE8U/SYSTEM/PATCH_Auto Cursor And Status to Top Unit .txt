@@ -5,7 +5,7 @@ NAME.en=Autocursor Fix
 NAME.zh=使自动光标和状态屏幕成为列表顶部的人物
 
 TYPE=ADDR
-TAG=#ENGINE
+TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0x3325A
 COMBO=ディフォルト|0x04 0x48|修正|0x21 0xE0

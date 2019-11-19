@@ -23,8 +23,8 @@
 24=Super Arena Mode	If this and either Super Arena1 0r Super Arena2 is set,\r\nactivates a "super arena" with harder enemies and glitchy alternate text if you enter the arena
 25=Not Deployed Last Chapter
 26=Waiting for FE7 OOBB
-27=Second portrait	Increase portrait index by 1
-28=Unk28
+27=Unk27
+28=Second portrait	Increase portrait index by 1
 //特性4
 31=Map sprite shake	Makes the standing map sprite shake very quickly.\r\nDoesn't seem to be useful otherwise
 32=Sortie not allow	Unit is unable to take part in chapter\r\n(can't select from prep screen)

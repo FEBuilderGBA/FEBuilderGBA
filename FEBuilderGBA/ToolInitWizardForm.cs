@@ -337,7 +337,7 @@ namespace FEBuilderGBA
             else if (this.Step3 == Step3_Enum.DOWNLOAD_SAPPY)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "sappy");
-                string url = "https://www.dropbox.com/sh/723s9jdkfkx7pwa/AABrXCMghyx2f74fme6iDoTEa?dl=1";
+                string url = "https://cdn.discordapp.com/attachments/470029781795078175/646360802785361921/SappyInstaller.7z";
                 string r = DownloadProgram_Direct(url, dir, "sappy.exe");
                 if (IsErrorResult(r))
                 {
