@@ -158,13 +158,60 @@ namespace FEBuilderGBA
         {
         }
 
+        //書き込んでいない途中のテキストがありますか？
+        bool hasTextOnTheWay()
+        {
+            if (! InputFormRef.IsWriteButtonToYellow(this.AllWriteButton))
+            {//書き込みボタンがハイライトされていない
+                if (UpdateButton.Visible)
+                {//セリフなどの変更が表示されている
+                    if (!InputFormRef.IsWriteButtonToYellow(this.UpdateButton))
+                    {//セリフの変更ボタンがハイライトされていない
+                        return false;
+                    }
+                }
+                else
+                {//書き込みボタンがハイライトされていない
+                    return false;
+                }
+            }
+
+            if (this.PrevSelectTextID == U.NOT_FOUND)
+            {
+                return true;
+            }
+            DialogResult dr = R.ShowNoYes("書き込んでいないテキストがありますが、テキストを切り替えてもよろしいですか？");
+            if (dr != System.Windows.Forms.DialogResult.No)
+            {
+                return false;
+            }
+
+            //変更キャンセル処理
+            uint id = this.PrevSelectTextID;
+            //キャンセル処理で再度 hasTextOnTheWay が呼ばれないように補正する
+            this.PrevSelectTextID = U.NOT_FOUND; 
+
+            this.AddressList.SelectedIndex = (int)id;
+
+            this.PrevSelectTextID = id;
+            return true;
+        }
+        //前回選択していた場所
+        uint PrevSelectTextID = 0;
+
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (hasTextOnTheWay())
+            {
+                return;
+            }
+
             Control prevFocusedControl = this.ActiveControl;
             ClearUndoBuffer();
             HideFloatingControlpanel();
 
             uint id = (uint)(this.AddressList.SelectedIndex);
+            this.PrevSelectTextID = id;
             UpdateTextArea(FETextDecode.Direct(id));
 
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
@@ -340,10 +387,10 @@ namespace FEBuilderGBA
                 R.ShowStopError("テキストを書き込み中にエラーが発生しました。\r\nTextID:{0}" , U.To0xHexString(textid));
                 return;
             }
-            InputFormRef.ReloadAddressList();
             InputFormRef.ShowWriteNotifyAnimation(this, write_addr);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
             InputFormRef.UpdateAllTextID(textid);
+            InputFormRef.ReloadAddressList();
         }
 
         public static uint WriteText(

@@ -12680,3 +12680,5 @@
 08017d84	StoreUnitStats	{J}
 0807D074	GenerateSummonedCharacter	{J}
 0807AD1C	GenerateSummonedCharacter	{U}
+08014BF8	クリアターン一覧の開始時に音楽をフェードアウトする	{J}
+08014BD0	クリアターン一覧の開始時に音楽をフェードアウトする	{U}

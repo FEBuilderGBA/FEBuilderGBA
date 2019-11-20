@@ -10291,6 +10291,9 @@ Text to Speech
 :エスケープコード(&N)
 Script Notation(&N)
 
+:書き込んでいないテキストがありますが、テキストを切り替えてもよろしいですか？
+There are some texts that are not written.\r\nAre you sure you want to switch the texts?
+
 :この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。
 This area is reserved as a string area for patches that extend the system.\r\nPlease do not use.
 

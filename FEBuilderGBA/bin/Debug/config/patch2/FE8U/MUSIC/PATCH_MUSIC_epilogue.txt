@@ -7,4 +7,6 @@ TAG=#SOUND
 ADDRESS=0x080B8122
 ADDRESS_TYPE=SONG
 
-INFO=Select the song to be played during the Epilogue.
+INFO=エンディングのクリアターン数一覧を表示する画面のBGM
+INFO.en=BGM on the screen that displays a list of clear ending turns.
+INFO.zh=屏幕上的背景音乐显示清晰的结束回合列表。
