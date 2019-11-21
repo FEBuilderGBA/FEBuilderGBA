@@ -7733,6 +7733,30 @@ namespace FEBuilderGBA
             {
                 newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_pointer());
             }
+            else if (typeName == "ITEMICON")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.icon_pointer());
+            }
+            else if (typeName == "ITEMEFFECT")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_effect_array_pointer());
+            }
+            else if (typeName == "SONG")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.sound_table_pointer());
+            }
+            else if (typeName == "ITEMUSABILITY")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_usability_array_pointer());
+            }
+            else if (typeName == "ITEMSTATBOOSTER2")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.item_statbooster2_array_pointer());
+            }
+            else if (typeName == "CLASS")
+            {
+                newPointer = Program.ROM.u32(Program.ROM.RomInfo.class_pointer());
+            }
             else
             {
                 Debug.Assert(false);

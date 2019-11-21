@@ -16,6 +16,7 @@
 0054=BGM
 0055=BGM
 0056=BGM
+0057=SkillSystems DragonVeinSFX
 005A=SE:Show Dialog/Get Item
 005B=SE:LevelUP
 005C=SE:Weapon broke

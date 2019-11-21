@@ -12682,3 +12682,5 @@
 0807AD1C	GenerateSummonedCharacter	{U}
 08014BF8	クリアターン一覧の開始時に音楽をフェードアウトする	{J}
 08014BD0	クリアターン一覧の開始時に音楽をフェードアウトする	{U}
+08014328	SomeDrawNumber	{J}
+08014270	SomeDrawNumber	{U}

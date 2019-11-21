@@ -5420,7 +5420,7 @@ Settings
 Options
 
 :初期設定ウィザード
-Initial setup wizard.
+Initial setup wizard
 
 :バージョン
 Version

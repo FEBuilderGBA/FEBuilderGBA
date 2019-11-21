@@ -12640,3 +12640,5 @@ r3=X tile position of menu of the right	{U}
 08014BF8	Fade out music at the beginning of the clear turn list	{J}
 08014BD0	Fade out music at the beginning of the clear turn list	{U}
 0203AB40    :0203AB43	（旧）技能动画显示用作技能动画显示{J}的工作存储器。
+08014328	SomeDrawNumber	{J}
+08014270	SomeDrawNumber	{U}
