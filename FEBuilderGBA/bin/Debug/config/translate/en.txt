@@ -8758,6 +8758,9 @@ This patch has been updated to {0}. This is still a new patch, so please be care
 :パッチを適応する時は、ひとつ適応する度に動作を確認してください。\r\n問題があるパッチがあったら、7743にバグを報告してください。\r\n
 When patches are adapted, please confirm the operation every time Adaptation is done.\r\nIf a problem with a patch is found, please report it!\r\n
 
+:パッチの名前をクリップボードにコピーしてもよろしいですか？
+Are you sure you want to copy the patch name to the clipboard? 
+
 :このポインタ({0})は危険です.\r\n
 This pointer ({0}) is dangerous.
 

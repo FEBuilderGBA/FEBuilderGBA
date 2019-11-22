@@ -11,3 +11,4 @@ INFO.zh=此修补程序指定可以接收支持效果的方块。 \r\n如果某�
 TYPE=ADDR
 TAG=#ENGINE
 ADDRESS=0x22eac
+HEX=false

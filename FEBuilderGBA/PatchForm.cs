@@ -502,6 +502,19 @@ namespace FEBuilderGBA
             }
             return true;
         }
+        static void OnNameLabelDoubleClick(Object sender, EventArgs e)
+        {
+            if (!(sender is Label))
+            {
+                return;
+            }
+            DialogResult dr = R.ShowYesNo("パッチの名前をクリップボードにコピーしてもよろしいですか？");
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            U.SetClipboardText(((Label)sender).Text);
+        }
 
         void LoadPatchStruct(PatchSt patch)
         {
@@ -579,6 +592,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -1402,6 +1416,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -1619,6 +1634,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -2004,6 +2020,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -2133,6 +2150,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             parent.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -2866,6 +2884,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();
@@ -2970,6 +2989,7 @@ namespace FEBuilderGBA
             label.Location = new Point(0, y);
             label.Size = new Size(500, CONTROL_HEIGHT);
             label.TextAlign = ContentAlignment.MiddleCenter;
+            label.DoubleClick += OnNameLabelDoubleClick;
             PatchPage.Controls.Add(label);
 
             Button writebutton = new Button();

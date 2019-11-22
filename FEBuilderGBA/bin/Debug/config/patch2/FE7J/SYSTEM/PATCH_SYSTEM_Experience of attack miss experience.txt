@@ -1,4 +1,3 @@
-
 NAME=攻撃ミス経験値
 NAME.en=Attack Miss EXP
 
@@ -11,3 +10,4 @@ ADDRESS=0x2a3fe
 NAME.zh=攻击Miss的经验值
 
 INFO.en=Sets the experience gained for battles where the unit doesn't strike the foe.
+HEX=false

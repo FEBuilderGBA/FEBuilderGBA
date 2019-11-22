@@ -1,5 +1,5 @@
 NAME=武器レベルSになれる武器経験値
-NAME.en=Weapon S Rank WEXP
+NAME.en=Weapon S Rank WEXP (Weapon Exp Required for S Rank)
 NAME.zh=武器经验值可以是武器级别S
 
 //アドレスパッチとして実装します
@@ -8,4 +8,5 @@ TAG=#ENGINE
 
 ADDRESS=0x02AD74
 HEX=false
+INFO.en=Sets the weapon experience required to S Rank a weapon type in hex.\r\nConvert to decimal for the value.
 

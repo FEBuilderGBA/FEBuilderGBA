@@ -9,3 +9,8 @@ ADDRESS=0x296B4
 
 
 NAME.zh=阿华下滑增长回落
+HEX=false
+
+INFO=メティスの書やアフアのしずく等の成長率するアイテムでの成長率補正値
+INFO.en=Boosts stat growth in all stats by specified value.
+INFO.zh=Boosts stat growth in all stats by specified value.

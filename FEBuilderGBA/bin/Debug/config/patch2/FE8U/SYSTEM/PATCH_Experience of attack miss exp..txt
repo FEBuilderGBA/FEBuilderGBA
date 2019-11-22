@@ -9,3 +9,4 @@ TAG=#ENGINE
 ADDRESS=0x2C574
 
 INFO.en=Sets the experience gained for battles where the unit doesn't strike the foe.
+HEX=false

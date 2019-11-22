@@ -11,10 +11,7 @@ ADDRESS=0x2c0ea 0x2c0ee
 HEX=false
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-
 
 INFO.en=Sets the maximum amount of weapon experience unpromoted classes can have in hex. Default is B5 (A Rank)\r\nConvert to decimal for specific value.

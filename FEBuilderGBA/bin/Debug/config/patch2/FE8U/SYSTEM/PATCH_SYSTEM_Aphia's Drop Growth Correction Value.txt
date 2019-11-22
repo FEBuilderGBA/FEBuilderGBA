@@ -6,5 +6,8 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x2ba9a
+HEX=false
 
+INFO=メティスの書やアフアのしずく等の成長率するアイテムでの成長率補正値
 INFO.en=Boosts stat growth in all stats by specified value.
+INFO.zh=Boosts stat growth in all stats by specified value.

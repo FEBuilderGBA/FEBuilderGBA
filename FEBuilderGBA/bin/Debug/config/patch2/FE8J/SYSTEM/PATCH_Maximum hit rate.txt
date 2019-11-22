@@ -12,6 +12,5 @@ AUTHOR=出典:Chap@FE8_GIRLS 09.10.01 の資料より
 NAME.zh=最大命中率
 
 AUTHOR.zh=来源:Chap@FE8_GIRLS 09.10.01的材料。
-
 AUTHOR.en=Source: Chap@FE8_GIRLS 09.10.01 by the material.
-
+HEX=false
