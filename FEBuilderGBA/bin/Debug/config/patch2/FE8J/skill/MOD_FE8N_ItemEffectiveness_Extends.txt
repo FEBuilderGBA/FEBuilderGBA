@@ -1,0 +1,11 @@
+IF:0x168bc=0x01 0x49 0x8F 0x46
+
+FORM=ItemForm
+J_34=特効係数
+J_34:HINT=特効のダメージ係数を指定します。\r\n0=3倍\r\n1=1倍\r\n2=2倍\r\n3=3倍\r\n4=4倍\r\n5=5倍
+
+AUTHOR=https://github.com/ngmansion/FE8N/wiki/QA
+J_34.en=Scale Effectiveness
+J_34:HINT.en=Specifies the Effectiveness factor.\r\n0=3 times.\r\n1=1 times\r\n2=2 times.\r\n3=3 times\r\n4=4 times\r\n5=5 times
+J_34.zh=Scale Effectiveness
+J_34:HINT.zh=Specifies the Effectiveness factor.\r\n0=3 times.\r\n1=1 times\r\n2=2 times.\r\n3=3 times\r\n4=4 times\r\n5=5 times

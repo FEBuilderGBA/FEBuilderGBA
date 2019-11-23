@@ -1,0 +1,11 @@
+IF:0x168bc=0x01 0x49 0x8F 0x46
+
+FORM=ItemForm
+J_35=アイテム破損
+J_35:HINT=アイテムの耐久が0になった時の処理を指定します。\r\n0=風花雪月ルール\r\n1=使い切ると消滅する(バニラルール)\r\n2=使い切っても消滅しない\r\n3=使い切っても消滅せず、章終了時に使用回数が全快する
+
+AUTHOR=https://github.com/ngmansion/FE8N/wiki/QA
+J_35.en=Item Broke
+J_35:HINT.en=Specify what happens when the durability of an item reaches 0.\r\n0=Three Houses Rule.\r\n1 \u0=Disappears when broken(vanilla rule)\r\n2=Does not disappear even if broken.\r\n3=Even if it is broken, it will not disappear, and the number of uses will be fully resolved at the end of the chapter.
+J_35.zh=Item Broke
+J_35:HINT.zh=Specify what happens when the durability of an item reaches 0.\r\n0=Three Houses Rule.\r\n1 \u0=Disappears when broken(vanilla rule)\r\n2=Does not disappear even if broken.\r\n3=Even if it is broken, it will not disappear, and the number of uses will be fully resolved at the end of the chapter.

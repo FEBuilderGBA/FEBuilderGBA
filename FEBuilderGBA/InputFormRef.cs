@@ -4072,7 +4072,11 @@ namespace FEBuilderGBA
         {
             if (plist != 0)
             {
-                return plist;
+                uint plist_addr = MapPointerForm.PlistToOffsetAddr(type, plist);
+                if (plist_addr != 0)
+                {
+                    return plist;
+                }
             }
 
             DialogResult dr = R.ShowNoYes("PLISTが0です。\r\n新規に割り当てますか？\r\n");
