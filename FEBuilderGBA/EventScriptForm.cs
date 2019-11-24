@@ -1216,7 +1216,7 @@ namespace FEBuilderGBA
                     {
                         text = "";
                         Bitmap bitmap = AIUnitsForm.DrawAIUnitsList(v, lineHeight * 2 - 2);
-                        maxHeight = DrawPictureAndDispose(bitmap, lineHeight * 2, lineHeight * 2
+                        maxHeight = DrawPictureAndDispose(bitmap, bitmap.Width, bitmap.Height
                             , ref bounds, maxHeight, g, isWithDraw);
                     }
                     else

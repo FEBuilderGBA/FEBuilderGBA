@@ -753,17 +753,7 @@ namespace FEBuilderGBA
                 {
                     return ScriptHas.POINTER_UNIT_OR_EVENT; //配置増援ポインタまたはイベント
                 }
-                if (arg.Type == ArgType.POINTER_PROCS
-                    || arg.Type == ArgType.POINTER_ASM 
-                    || arg.Type == ArgType.POINTER_EVENTBATTLEDATA
-                    || arg.Type == ArgType.POINTER_EVENTMOVEDATA
-                    || arg.Type == ArgType.POINTER_TALKGROUP
-                    || arg.Type == ArgType.POINTER_MENUEXTENDS
-                    || arg.Type == ArgType.POINTER_AICOORDINATE
-                    || arg.Type == ArgType.POINTER_AIUNIT4
-                    || arg.Type == ArgType.POINTER_UNITSSHORTTEXT
-                    || arg.Type == ArgType.POINTER
-                    )
+                if (EventScript.IsPointerArgs(arg.Type) )
                 {
                     return ScriptHas.POINTER_OTHER; //その他ポインタ
                 }
@@ -775,7 +765,6 @@ namespace FEBuilderGBA
                     || arg.Type == EventScript.ArgType.CONVERSATION_TEXT
                     || arg.Type == EventScript.ArgType.SYSTEM_TEXT
                     || arg.Type == EventScript.ArgType.ONELINE_TEXT
-//                    || arg.Type == EventScript.ArgType.POINTER_TEXT
                     )
                 {
                     return ScriptHas.TEXT; //テキストID
@@ -1433,6 +1422,8 @@ namespace FEBuilderGBA
                 || argtype == EventScript.ArgType.POINTER_TALKGROUP
                 || argtype == EventScript.ArgType.POINTER_MENUEXTENDS
                 || argtype == EventScript.ArgType.POINTER_AICOORDINATE
+                || argtype == EventScript.ArgType.POINTER_AIUNIT
+                || argtype == EventScript.ArgType.POINTER_AITILE
                 || argtype == EventScript.ArgType.POINTER_AIUNIT4
                 || argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
                 ;

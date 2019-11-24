@@ -1517,17 +1517,7 @@ namespace FEBuilderGBA
                 {
                     EventScript.Arg arg = code.Script.Args[i];
                     EventScript.ArgType type = arg.Type;
-                    if (type == FEBuilderGBA.EventScript.ArgType.POINTER
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_AIUNIT
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_ASM
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_EVENT
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_EVENTBATTLEDATA
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_EVENTMOVEDATA
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_PROCS
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_TALKGROUP
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_TEXT
-                        || type == FEBuilderGBA.EventScript.ArgType.POINTER_UNIT
-                        )
+                    if (FEBuilderGBA.EventScript.IsPointerArgs(type))
                     {
                         pointerIndexes.Add((uint)arg.Position);
                     }
