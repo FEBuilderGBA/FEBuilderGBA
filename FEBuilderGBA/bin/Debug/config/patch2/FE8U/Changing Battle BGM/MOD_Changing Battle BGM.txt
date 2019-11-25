@@ -9,9 +9,9 @@ J_28:HINT=戦闘BGMを切り替えます。
 J_30:HINT=戦闘BGMを切り替えます。
 J_32:HINT=戦闘BGMを切り替えます。
 
-J_28.en=Player-Phase Attack BGM
-J_30.en=Enemy-Phase Attack BGM
-J_32.en=Ally-Phase Attack BGM
+J_28.en=Player Battle BGM
+J_30.en=Enemy Battle BGM
+J_32.en=Ally Battle BGM
 
 J_28:HINT.en=Set Battle BGM during the player phase.
 J_30:HINT.en=Set Battle BGM during the enemy phase.

@@ -11,6 +11,7 @@ PATCHED_IF:0x74ba6=0x0D 0x4E 0xB0 0x7B 0xBF 0xF7 0xB9 0xFC 0xF1 0x7B 0x1C 0x30 0
 BIN:0x74ba6=battle_changer.bin
 BIN:0x74bdc=74bdc.bin
 
+HINT=BGM
 INFO=戦闘時に再生される音楽を章単位で変更できるようにします。
 INFO.en=Patches the ROM to re-enable Chapter Editor bytes 1C, 1E, and 20 - the attack BGM for player, enemy, and ally.\r\nTo edit, enter Chapter Editor and modify the three "Attack by xxx BGM" fields.\r\nBy default these aren't set to combat BGM and must be changed throughout the ROM.\r\n
 

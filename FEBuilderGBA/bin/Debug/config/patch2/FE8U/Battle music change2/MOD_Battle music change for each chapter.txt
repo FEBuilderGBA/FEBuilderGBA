@@ -5,9 +5,9 @@ J_28=味方から攻撃時BGM
 J_30=敵から攻撃時BGM
 J_32=友軍から攻撃時BGM
 
-J_28.en=Player-Phase Attack BGM
-J_30.en=Enemy-Phase Attack BGM
-J_32.en=Ally-Phase Attack BGM
+J_28.en=Player Battle BGM
+J_30.en=Enemy Battle BGM
+J_32.en=Ally Battle BGM
 
 J_28.zh=从自軍BGM进攻时
 J_30.zh=从敌方BGM进攻时

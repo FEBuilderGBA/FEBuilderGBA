@@ -9,6 +9,7 @@ INFO.en=In order to use "Sound: Unique Battle Music Per Unit Installer" must be 
 INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。
 
 AUTHOR=7743
+HINT=BGM
 
 //STRUCTパッチとして実装します
 TYPE=STRUCT

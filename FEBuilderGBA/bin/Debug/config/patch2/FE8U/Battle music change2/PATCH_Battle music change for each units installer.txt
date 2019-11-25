@@ -9,6 +9,8 @@ PATCHED_IF:0x726CA=0x00 0x00 0x00 0x4B 0x18 0x47
 EDIT_PATCH=PATCH_Battle music change for each units.txt
 EA=install battle_music_changer2.event
 
+HINT=BGM
+
 INFO=戦闘時に再生される音楽をユニット単位で変更できるようにします。
 INFO.en=Patches in a unit music list that allows for custom battle music based on unit, chapter, battle anime, and event flags.\r\nMust be installed to use "Sound: Unique Battle Music Per Unit Editor".\r\n
 INFO.zh=允许您以人物节为人物更改战斗中播放的音乐。
