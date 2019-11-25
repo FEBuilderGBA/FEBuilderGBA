@@ -40,6 +40,16 @@ namespace FEBuilderGBA
 
         private void SongTableForm_Load(object sender, EventArgs e)
         {
+            //アイテムアイコン拡張を表示するかどうか
+            if (IsShowSongTableExetdns(this.AddressList.Items.Count))
+            {
+                AddressListExpandsButton_32766.Show();
+            }
+            else
+            {
+                this.AddressList.Height += AddressListExpandsButton_32766.Height;
+                AddressListExpandsButton_32766.Hide();
+            }
         }
 
         public static string GetSongName(uint song_id)
@@ -228,6 +238,22 @@ namespace FEBuilderGBA
             int selectedIndex = f.AddressList.SelectedIndex;
             f.ReloadListButton.PerformClick();
             f.AddressList.SelectedIndex = selectedIndex;
+        }
+
+        bool IsShowSongTableExetdns(int count)
+        {
+            if (OptionForm.show_song_table_extends() == OptionForm.show_extends_enum.Show)
+            {//表示する設定の場合は表示する.
+                return true;
+            }
+
+            uint addr = Program.ROM.u32(Program.ROM.RomInfo.sound_table_pointer());
+            if (addr < Program.ROM.RomInfo.extends_address())
+            {//拡張されていないので表示しない
+                return false;
+            }
+            //拡張されているので表示する
+            return true;
         }
     }
 }

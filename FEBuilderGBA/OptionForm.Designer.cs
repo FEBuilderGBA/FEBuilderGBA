@@ -56,6 +56,9 @@
             this.emulator = new FEBuilderGBA.TextBoxEx();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPagePath2 = new System.Windows.Forms.TabPage();
+            this.sox_button = new System.Windows.Forms.Button();
+            this.sox = new FEBuilderGBA.TextBoxEx();
+            this.label65 = new System.Windows.Forms.Label();
             this.gba_mus_riper_button = new System.Windows.Forms.Button();
             this.python3_button = new System.Windows.Forms.Button();
             this.label62 = new System.Windows.Forms.Label();
@@ -254,9 +257,8 @@
             this.func_select_in_explorer_when_export = new System.Windows.Forms.ComboBox();
             this.func_write_notify_time = new System.Windows.Forms.ComboBox();
             this.WriteButton = new System.Windows.Forms.Button();
-            this.sox_button = new System.Windows.Forms.Button();
-            this.sox = new FEBuilderGBA.TextBoxEx();
-            this.label65 = new System.Windows.Forms.Label();
+            this.func_show_song_table_extends = new System.Windows.Forms.ComboBox();
+            this.explain_func_show_song_table_extends = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPagePath.SuspendLayout();
             this.tabPagePath2.SuspendLayout();
@@ -630,6 +632,38 @@
             this.tabPagePath2.Size = new System.Drawing.Size(842, 703);
             this.tabPagePath2.TabIndex = 5;
             this.tabPagePath2.Text = "パス2";
+            // 
+            // sox_button
+            // 
+            this.sox_button.Location = new System.Drawing.Point(737, 541);
+            this.sox_button.Margin = new System.Windows.Forms.Padding(2);
+            this.sox_button.Name = "sox_button";
+            this.sox_button.Size = new System.Drawing.Size(82, 28);
+            this.sox_button.TabIndex = 64;
+            this.sox_button.Text = "参照";
+            this.sox_button.UseVisualStyleBackColor = true;
+            this.sox_button.Click += new System.EventHandler(this.sox_button_Click);
+            // 
+            // sox
+            // 
+            this.sox.ErrorMessage = "";
+            this.sox.Location = new System.Drawing.Point(230, 541);
+            this.sox.Margin = new System.Windows.Forms.Padding(2);
+            this.sox.Name = "sox";
+            this.sox.Placeholder = "";
+            this.sox.Size = new System.Drawing.Size(490, 25);
+            this.sox.TabIndex = 63;
+            this.sox.DoubleClick += new System.EventHandler(this.sox_DoubleClick);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(11, 545);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(33, 18);
+            this.label65.TabIndex = 62;
+            this.label65.Text = "sox";
             // 
             // gba_mus_riper_button
             // 
@@ -2437,6 +2471,8 @@
             // tabPageFunc2
             // 
             this.tabPageFunc2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageFunc2.Controls.Add(this.func_show_song_table_extends);
+            this.tabPageFunc2.Controls.Add(this.explain_func_show_song_table_extends);
             this.tabPageFunc2.Controls.Add(this.func_show_fe76_item_icon_extends);
             this.tabPageFunc2.Controls.Add(this.explain_func_show_fe76_item_icon_extends);
             this.tabPageFunc2.Controls.Add(this.func_show_worldmap_path_extends);
@@ -2469,7 +2505,7 @@
             this.func_show_fe76_item_icon_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_fe76_item_icon_extends.Location = new System.Drawing.Point(419, 392);
+            this.func_show_fe76_item_icon_extends.Location = new System.Drawing.Point(419, 385);
             this.func_show_fe76_item_icon_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_fe76_item_icon_extends.Name = "func_show_fe76_item_icon_extends";
             this.func_show_fe76_item_icon_extends.Size = new System.Drawing.Size(408, 26);
@@ -2478,7 +2514,7 @@
             // explain_func_show_fe76_item_icon_extends
             // 
             this.explain_func_show_fe76_item_icon_extends.AccessibleDescription = "";
-            this.explain_func_show_fe76_item_icon_extends.Location = new System.Drawing.Point(9, 397);
+            this.explain_func_show_fe76_item_icon_extends.Location = new System.Drawing.Point(9, 390);
             this.explain_func_show_fe76_item_icon_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_fe76_item_icon_extends.Name = "explain_func_show_fe76_item_icon_extends";
             this.explain_func_show_fe76_item_icon_extends.Size = new System.Drawing.Size(405, 18);
@@ -2493,7 +2529,7 @@
             this.func_show_worldmap_path_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_worldmap_path_extends.Location = new System.Drawing.Point(419, 353);
+            this.func_show_worldmap_path_extends.Location = new System.Drawing.Point(419, 347);
             this.func_show_worldmap_path_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_worldmap_path_extends.Name = "func_show_worldmap_path_extends";
             this.func_show_worldmap_path_extends.Size = new System.Drawing.Size(408, 26);
@@ -2502,7 +2538,7 @@
             // explain_func_show_worldmap_path_extends
             // 
             this.explain_func_show_worldmap_path_extends.AccessibleDescription = "";
-            this.explain_func_show_worldmap_path_extends.Location = new System.Drawing.Point(9, 358);
+            this.explain_func_show_worldmap_path_extends.Location = new System.Drawing.Point(9, 352);
             this.explain_func_show_worldmap_path_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_worldmap_path_extends.Name = "explain_func_show_worldmap_path_extends";
             this.explain_func_show_worldmap_path_extends.Size = new System.Drawing.Size(405, 18);
@@ -2517,7 +2553,7 @@
             this.func_show_worldmap_node_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_worldmap_node_extends.Location = new System.Drawing.Point(419, 314);
+            this.func_show_worldmap_node_extends.Location = new System.Drawing.Point(419, 308);
             this.func_show_worldmap_node_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_worldmap_node_extends.Name = "func_show_worldmap_node_extends";
             this.func_show_worldmap_node_extends.Size = new System.Drawing.Size(408, 26);
@@ -2526,7 +2562,7 @@
             // explain_func_show_worldmap_node_extends
             // 
             this.explain_func_show_worldmap_node_extends.AccessibleDescription = "";
-            this.explain_func_show_worldmap_node_extends.Location = new System.Drawing.Point(9, 319);
+            this.explain_func_show_worldmap_node_extends.Location = new System.Drawing.Point(9, 313);
             this.explain_func_show_worldmap_node_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_worldmap_node_extends.Name = "explain_func_show_worldmap_node_extends";
             this.explain_func_show_worldmap_node_extends.Size = new System.Drawing.Size(405, 18);
@@ -2552,7 +2588,7 @@
             this.func_show_chapter_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_chapter_extends.Location = new System.Drawing.Point(419, 274);
+            this.func_show_chapter_extends.Location = new System.Drawing.Point(419, 268);
             this.func_show_chapter_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_chapter_extends.Name = "func_show_chapter_extends";
             this.func_show_chapter_extends.Size = new System.Drawing.Size(408, 26);
@@ -2583,7 +2619,7 @@
             // explain_func_show_chapter_extends
             // 
             this.explain_func_show_chapter_extends.AccessibleDescription = "";
-            this.explain_func_show_chapter_extends.Location = new System.Drawing.Point(9, 279);
+            this.explain_func_show_chapter_extends.Location = new System.Drawing.Point(9, 273);
             this.explain_func_show_chapter_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_chapter_extends.Name = "explain_func_show_chapter_extends";
             this.explain_func_show_chapter_extends.Size = new System.Drawing.Size(405, 18);
@@ -2623,7 +2659,7 @@
             this.func_show_class_extends.Items.AddRange(new object[] {
             "0=表示しない",
             "1=表示する"});
-            this.func_show_class_extends.Location = new System.Drawing.Point(419, 237);
+            this.func_show_class_extends.Location = new System.Drawing.Point(419, 231);
             this.func_show_class_extends.Margin = new System.Windows.Forms.Padding(2);
             this.func_show_class_extends.Name = "func_show_class_extends";
             this.func_show_class_extends.Size = new System.Drawing.Size(408, 26);
@@ -2670,7 +2706,7 @@
             // explain_func_show_class_extends
             // 
             this.explain_func_show_class_extends.AccessibleDescription = "";
-            this.explain_func_show_class_extends.Location = new System.Drawing.Point(9, 240);
+            this.explain_func_show_class_extends.Location = new System.Drawing.Point(9, 234);
             this.explain_func_show_class_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.explain_func_show_class_extends.Name = "explain_func_show_class_extends";
             this.explain_func_show_class_extends.Size = new System.Drawing.Size(405, 18);
@@ -2985,37 +3021,29 @@
             this.WriteButton.UseVisualStyleBackColor = true;
             this.WriteButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // sox_button
+            // func_show_song_table_extends
             // 
-            this.sox_button.Location = new System.Drawing.Point(737, 541);
-            this.sox_button.Margin = new System.Windows.Forms.Padding(2);
-            this.sox_button.Name = "sox_button";
-            this.sox_button.Size = new System.Drawing.Size(82, 28);
-            this.sox_button.TabIndex = 64;
-            this.sox_button.Text = "参照";
-            this.sox_button.UseVisualStyleBackColor = true;
-            this.sox_button.Click += new System.EventHandler(this.sox_button_Click);
+            this.func_show_song_table_extends.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.func_show_song_table_extends.FormattingEnabled = true;
+            this.func_show_song_table_extends.Items.AddRange(new object[] {
+            "0=表示しない",
+            "1=表示する"});
+            this.func_show_song_table_extends.Location = new System.Drawing.Point(419, 424);
+            this.func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2);
+            this.func_show_song_table_extends.Name = "func_show_song_table_extends";
+            this.func_show_song_table_extends.Size = new System.Drawing.Size(408, 26);
+            this.func_show_song_table_extends.TabIndex = 66;
             // 
-            // sox
+            // explain_func_show_song_table_extends
             // 
-            this.sox.ErrorMessage = "";
-            this.sox.Location = new System.Drawing.Point(230, 541);
-            this.sox.Margin = new System.Windows.Forms.Padding(2);
-            this.sox.Name = "sox";
-            this.sox.Placeholder = "";
-            this.sox.Size = new System.Drawing.Size(490, 25);
-            this.sox.TabIndex = 63;
-            this.sox.DoubleClick += new System.EventHandler(this.sox_DoubleClick);
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(11, 545);
-            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(33, 18);
-            this.label65.TabIndex = 62;
-            this.label65.Text = "sox";
+            this.explain_func_show_song_table_extends.AccessibleDescription = "";
+            this.explain_func_show_song_table_extends.Location = new System.Drawing.Point(9, 429);
+            this.explain_func_show_song_table_extends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.explain_func_show_song_table_extends.Name = "explain_func_show_song_table_extends";
+            this.explain_func_show_song_table_extends.Size = new System.Drawing.Size(405, 18);
+            this.explain_func_show_song_table_extends.TabIndex = 65;
+            this.explain_func_show_song_table_extends.Text = "SongTable拡張ボタンの表示";
+            this.explain_func_show_song_table_extends.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OptionForm
             // 
@@ -3277,5 +3305,7 @@
         private System.Windows.Forms.Button sox_button;
         private TextBoxEx sox;
         private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.ComboBox func_show_song_table_extends;
+        private System.Windows.Forms.Label explain_func_show_song_table_extends;
     }
 }
