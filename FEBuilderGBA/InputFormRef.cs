@@ -4811,7 +4811,6 @@ namespace FEBuilderGBA
             ImageUtilMagic.ClearCache();
             ItemShopForm.ClearCache();
             MapPointerForm.ClearPlistCache();
-            U.ClearMigemoCache();
             MagicSplitUtil.ClearCache();
             SkillConfigFE8NSkillForm.ClearCache();
             SkillConfigFE8NVer2SkillForm.ClearCache();
@@ -8113,7 +8112,7 @@ namespace FEBuilderGBA
             notifyControl.ShowAnimation(self, write_notify_time);
 
             //デバッグメッセージ
-            Log.Notify(self.Name , self.Text , notifyControl.GetBigText());
+            //Log.Notify(self.Name , self.Text , notifyControl.GetBigText());
         }
 
         //上に表示する通知メッセージアニメーション

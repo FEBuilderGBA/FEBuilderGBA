@@ -298,6 +298,13 @@ namespace FEBuilderGBA
                     }
                 }
             }
+            else if (Program.ROM.RomInfo.version() == 7)
+            {
+                if (textid >= 0x1E00 && textid <= 0x1EFF)
+                {
+                    return true;
+                }
+            }
 
             return false;
         }

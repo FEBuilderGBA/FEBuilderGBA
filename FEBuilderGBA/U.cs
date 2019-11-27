@@ -4430,28 +4430,31 @@ namespace FEBuilderGBA
             return "+" + a;
         }
 
-        //日本語探索のキャッシュ
-        static Dictionary<string,string> MigemoCache = new Dictionary<string,string>();
-        public static void ClearMigemoCache()
-        {
-            MigemoCache.Clear();
-        }
+        //日本語探索
         static string ToMigemo(string str)
         {
-            if (MigemoCache.ContainsKey(str))
-            {
-                return MigemoCache[str];
-            }
             if (!U.isAsciiString(str))
             {
-                string s = MultiByteJPUtil.mb_convert_kana(str, "HcasRX");
-                MigemoCache[str] = s;
-                return s;
+                return MultiByteJPUtil.mb_convert_kana(str, "HcasRX");
             }
             return str;
         }
 
+
+        static Dictionary<string, string> CleanupFindStringCache = new Dictionary<string, string>();
         public static string CleanupFindString(string str, bool isJP)
+        {
+            if (CleanupFindStringCache.ContainsKey(str))
+            {
+                return CleanupFindStringCache[str];
+            }
+
+            string s = CleanupFindStringLow(str , isJP);
+            CleanupFindStringCache[str] = s;
+            return s;
+        }
+
+        static string CleanupFindStringLow(string str, bool isJP)
         {
             string a = str.ToLower();
             if (isJP)
@@ -4477,13 +4480,12 @@ namespace FEBuilderGBA
             }
 
             string t = U.CleanupFindString(str, isJP);
-            string search = need;
-            if (t.IndexOf(search) >= 0)
+            if (t.IndexOf(need) >= 0)
             {
                 return true;
             }
 
-            string[] sp = search.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] sp = need.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < sp.Length; i++)
             {
                 if (t.IndexOf(sp[i]) < 0)

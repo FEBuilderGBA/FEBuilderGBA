@@ -378,9 +378,17 @@ namespace FEBuilderGBA
             //最後に利用したファイルを記録する機能を初期化. 何度もリテイクするだろうからしやすいようにする.
             LastSelectedFilename = new LastSelectedFilename(fullfilename);
 
-            bool r = LoadROMLow(fullfilename, forceversion);
-            if (!r)
+            try
             {
+                bool r = LoadROMLow(fullfilename, forceversion);
+                if (!r)
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                R.ShowStopError(R.ExceptionToString(e));
                 return false;
             }
 
@@ -408,7 +416,7 @@ namespace FEBuilderGBA
         //ROM読みこみに伴うシステムの初期化.
         static void InitSystem(string fullfilename)
         {
-            Log.Notify("InitSystem:", Path.GetFileName(ROM.Filename), "ver:", ROM.RomInfo.VersionToFilename(), "length:", ROM.Data.Length.ToString("X"));
+            Log.Notify("InitSystem:", Path.GetFileName(ROM.Filename), "ver:", ROM.RomInfo.VersionToFilename(), "length:", ROM.Data.Length.ToString("X"), "FEBuilderGBA:", U.getVersion());
 
             //Undoバッファの準備
             Undo = new Undo();
@@ -482,7 +490,7 @@ namespace FEBuilderGBA
                 Program.Config["Last_Rom_Filename"] = fullfilename;
                 Program.Config.Save();
             }
-            Log.Notify("InitSystem:Complate");
+            //Log.Notify("InitSystem:Complate");
         }
 
         public static string GetLastROMFilename()

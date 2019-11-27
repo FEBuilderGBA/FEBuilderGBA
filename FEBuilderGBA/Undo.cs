@@ -81,19 +81,18 @@ namespace FEBuilderGBA
         void DumpLog(UndoData ud)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("UndoData Push:");
-            sb.Append(ud.name);
-            sb.Append('@');
-            sb.Append(ud.time);
-            sb.Append(' ');
 
-//            for (int i = 0; i < ud.list.Count; i++)
-//            {
-//                sb.Append(U.ToHexString(ud.list[i].addr));
-//                sb.Append(" l=");
-//                sb.Append(U.ToHexString(ud.list[i].data.Length));
-//                sb.Append(',');
-//            }
+            foreach (UndoPostion p in ud.list)
+            {
+                sb.Append(U.To0xHexString(p.addr));
+                sb.Append('@');
+                sb.Append(p.data.Length);
+                sb.Append(' ');
+            }
+            sb.Append("Write:");
+            sb.Append(ud.name);
+            sb.Append(' ');
+            sb.Append(ud.time.ToString("yyyyMMddHHmmss"));
             Log.Notify(sb.ToString());
         }
         public void Push(UndoData ud)

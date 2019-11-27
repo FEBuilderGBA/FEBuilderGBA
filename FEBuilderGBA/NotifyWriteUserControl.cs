@@ -41,8 +41,6 @@ namespace FEBuilderGBA
         }
         public void ShowAnimation(Form self, int write_notify_time)
         {
-            Debug.Assert(write_notify_time > 0);
-
             int initHeight = self.Height - 50;
             int nowHeight = initHeight;
 

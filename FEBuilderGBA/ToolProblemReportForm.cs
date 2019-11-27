@@ -189,7 +189,7 @@ namespace FEBuilderGBA
                 CollectUPSsCurrentROM(tempdir.Dir, s);
 
                 //動作しないUPSと動作するUPSデータの回収
-                CollectUPSs(tempdir.Dir,s);
+                CollectOldUPSs(tempdir.Dir,s);
 
                 //ログとユーザの説明を書き込む
                 string log = Path.Combine(tempdir.Dir, "log.txt");
@@ -257,7 +257,7 @@ namespace FEBuilderGBA
         }
 
         //動作しないUPSと動作するUPSデータの回収
-        void CollectUPSs(string tempdir, byte[] s)
+        void CollectOldUPSs(string tempdir, byte[] s)
         {
             bool r = CollectUPSsInner(tempdir, s);
             if (r)
@@ -286,8 +286,7 @@ namespace FEBuilderGBA
             for (int i = 0; i < olderPickup.Length; i++)
             {
                 string moreOlderFilename = FindSrcByFilename(olderPickup[i]);
-                if (moreOlderFilename != ""
-                    && File.Exists(moreOlderFilename))
+                if (IsEnableROMData(moreOlderFilename))
                 {
                     bool r = MakeUPS(tempdir, s, moreOlderFilename);
                     if (r)
@@ -297,10 +296,27 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    break;
+                    continue;
                 }
             }
             return found;
+        }
+
+        bool IsEnableROMData(string moreOlderFilename)
+        {
+            if (moreOlderFilename == "")
+            {
+                return false;
+            }
+            if (! File.Exists(moreOlderFilename))
+            {
+                return false;
+            }
+            if ( U.GetFileSize(moreOlderFilename) < Program.ROM.RomInfo.compress_image_borderline_address() )
+            {//ファイルが小さすぎる
+                return false;
+            }
+            return true;
         }
 
         //現在のROMのUPSデータの回収

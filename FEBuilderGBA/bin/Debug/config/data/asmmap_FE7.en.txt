@@ -4804,3 +4804,6 @@
 08D64ED2	:08D64EFD	Move Sound: Peg	{J}
 08D64EFE	:08D64F2B	Move Sound: Fire Dragon	{J}
 08031B54	GetSomethingRelatedToCurrentDifficulty	{J}
+//This data is made with the aim of being readable by machine fast.
+08043330	Name input event.	{J}
+08042C58	Name input event.	{U}

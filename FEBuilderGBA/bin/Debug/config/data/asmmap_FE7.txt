@@ -5101,3 +5101,5 @@
 08D64ED2	:08D64EFD	Move Sound: Peg	{J}
 08D64EFE	:08D64F2B	Move Sound: Fire Dragon	{J}
 08031B54	GetSomethingRelatedToCurrentDifficulty	{J}
+08043330	名前入力イベント	{J}
+08042C58	名前入力イベント	{U}

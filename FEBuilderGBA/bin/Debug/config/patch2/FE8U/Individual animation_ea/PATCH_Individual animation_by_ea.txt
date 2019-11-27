@@ -47,3 +47,4 @@ INFO.zh=如果您定义了新动画，请将动画设置指定为0。\r\n当为�
 
 
 AUTHOR=7743
+HINT=units unique battle animations

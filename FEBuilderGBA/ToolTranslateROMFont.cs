@@ -211,7 +211,7 @@ namespace FEBuilderGBA
             byte[] newFontData = null;
             if (this.YourROM != null)
             {//相手のROMにあるかどうか.
-                Log.Debug("other rom", one);
+                //Log.Debug("other rom", one);
                 uint your_moji = U.ConvertMojiCharToUnit(one, this.YourPriorityCode);
                 if (your_moji < 0x20)
                 {//制御文字なので無視
@@ -246,7 +246,7 @@ namespace FEBuilderGBA
                 && this.UseAutoGenFont != null //自動生成する場合
                 )
             {
-                Log.Debug("Auto gen", one);
+                //Log.Debug("Auto gen", one);
                 //自動生成.
                 int font_width;
                 Bitmap autogen = ImageUtil.AutoGenerateFont(one

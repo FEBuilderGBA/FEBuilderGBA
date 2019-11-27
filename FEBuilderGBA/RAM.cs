@@ -390,7 +390,6 @@ namespace FEBuilderGBA
             catch (Exception e)
             {
                 this.ErrorMessage = e.ToString();
-                Log.Error(this.ErrorMessage);
                 return false;
             }
         }
@@ -417,7 +416,6 @@ namespace FEBuilderGBA
             if (this.ProcessHandle == IntPtr.Zero)
             {
                 this.ErrorMessage = R._("OpenProcess APIが失敗ました。");
-                Log.Error(this.ErrorMessage);
                 return false;
             }
 
@@ -473,7 +471,6 @@ namespace FEBuilderGBA
                 {
                     this.ErrorMessage = R._("読込むメモリを特定できませんでした。(Page03)");
                 }
-                Log.Error(this.ErrorMessage);
 
 #if DEBUG
 //                DebugDumpMemory();
@@ -704,7 +701,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02を読めませんでした。bytesRead:{0},MemBasicInfo02.RegionSize:{1},"
                     , bytesRead, MemBasicInfo02.RegionSize);
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return this.Connect();
             }
@@ -718,7 +714,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02に必須の値がありません。procs_game_main:{0},data:{1},rom_procs_game_main:{2},"
                     , U.To0xHexString(procs_game_main), U.To0xHexString(data), U.To0xHexString(rom_procs_game_main));
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return this.Connect();
             }
@@ -738,7 +733,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03を読めませんでした。bytesRead:{0},MemBasicInfo03.RegionSize:{1},"
                     , bytesRead, MemBasicInfo03.RegionSize);
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return this.Connect();
             }
@@ -752,7 +746,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03に必須の値がありません。user_stack_base:{0},data:{1},function_fe_main_return_address:{2},"
                     , U.To0xHexString(user_stack_base), U.To0xHexString(data), U.To0xHexString(function_fe_main_return_address));
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return this.Connect();
             }
@@ -787,7 +780,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page02に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return ;
             }
@@ -820,7 +812,6 @@ namespace FEBuilderGBA
             {
                 this.ErrorMessage = R._("Page03に書き込めません。bytesWrite:{0},size:{1}"
                     , bytesWrite, size);
-                Log.Error(this.ErrorMessage);
                 this.DisConnect();
                 return;
             }
