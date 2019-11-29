@@ -1200,5 +1200,48 @@ namespace FEBuilderGBA
 
             return newaddr;
         }
+
+        public static uint GetEndWeaponDebuffTable3(uint start_offset, string value)
+        {
+            uint end = start_offset + (3 * 256);
+            end = Math.Min(end, (uint)Program.ROM.Data.Length);
+            start_offset += 3; //先頭は0x00 0x00 0x00 なので読み飛ばす.
+
+            uint found = end;
+            byte[] need = new byte[] { 0x00, 0x00, 0x00 };
+            uint new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            need = new byte[] { 0xFF, 0xFF, 0x00 };
+            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            need = new byte[] { 0xFF, 0xFF, 0xFF };
+            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            return found;
+        }
+        public static uint GetEndWeaponDebuffTable4(uint start_offset, string value)
+        {
+            uint end = start_offset + (4 * 256);
+            end = Math.Min(end, (uint)Program.ROM.Data.Length);
+            start_offset += 4; //先頭は0x00 0x00 0x00 0x00 なので読み飛ばす.
+
+            uint found = end;
+            byte[] need = new byte[] { 0x00, 0x00, 0x00 };
+            uint new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            need = new byte[] { 0xFF, 0xFF, 0x00 };
+            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            need = new byte[] { 0xFF, 0xFF, 0xFF };
+            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
+            found = Math.Min(found, new_found);
+
+            return found;
+        }
     }
 }

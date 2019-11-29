@@ -9496,6 +9496,9 @@ Export Animation
 :アニメーション読込
 Import Animation
 
+:アイテムスキル2
+Item Skill 2
+
 : スキル割り当て
 Skill assignment
 

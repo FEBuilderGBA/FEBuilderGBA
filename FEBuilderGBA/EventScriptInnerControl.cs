@@ -1156,8 +1156,8 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.CG)
             {
-                if (!Program.ROM.RomInfo.is_multibyte())
-                {
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {//FE7U
                     ImageCGFE7UForm f = (ImageCGFE7UForm)InputFormRef.JumpForm<ImageCGFE7UForm>(value);
                     MakeInjectionCallback(f
                         , (ListBox)InputFormRef.FindObjectByForm<ListBox>

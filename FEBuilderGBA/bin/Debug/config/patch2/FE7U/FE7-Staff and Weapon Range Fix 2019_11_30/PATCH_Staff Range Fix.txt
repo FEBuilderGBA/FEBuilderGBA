@@ -1,9 +1,9 @@
-NAME=(OLD)Staff Range Fix 2016_07_27
+NAME=Staff Range Fix 2019_11_30
 TYPE=EA
 TAG=#ENGINE
 
 //既に適応されたかどうか
-PATCHED_IF:0x0314B0=0x01 0x4B 0x8E 0xF0 0xD1 0xFB 0x1A 0xE0
+PATCHED_IF:0x0314B0=0x03 0x4A 0x02 0x4B 0x8E 0xF0 0xD0 0xFB 0x19 0xE0 0x00 0x00
 EA=FE7-Staff Range EA.txt
 
 
@@ -17,4 +17,3 @@ CONFLICT_MESSAGE=freerange
 INFO.en=Improve weapon and wand range settings.\r\nAllows drawing special ranges, such as range 2-4.\r\nCompared with freerange, the range displayed in the R menu can also be changed with this patch.
 INFO.zh=改进武器和魔杖范围设置。\r\n允许绘制特殊范围，例如范围2-4。\r\n与自由范围相比，R菜单中显示的范围也可以通过此补丁更改。
 REPLACE_POINTER:0xC51538=ITEM
-DEPRECATED=1

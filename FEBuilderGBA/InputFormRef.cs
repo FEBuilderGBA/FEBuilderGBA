@@ -67,7 +67,7 @@ namespace FEBuilderGBA
             string linktype = sp[2];
             string[] args = U.subrange(sp,3,(uint)sp.Length);
 
-            NumericUpDown src_object = FindSRCObject(prefix, controls, id);
+            NumericUpDown src_object = FindSRCObject(prefix, controls, id, linktype);
             if (src_object == null)
             {
                 throw new Exception("broken link:" + link_info.Name);
@@ -75,7 +75,7 @@ namespace FEBuilderGBA
             makeLinkEventHandler(prefix, controls,src_object, link_info, id, linktype, args);
         }
 
-        public static NumericUpDown FindSRCObject(string prefix, List<Control> controls, uint searchlink)
+        public static NumericUpDown FindSRCObject(string prefix, List<Control> controls, uint searchlink, string linktype = "")
         {
             foreach (Control search_info in controls)
             {
@@ -89,13 +89,21 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (!IsTypeWord(search_name[0]))
+                char typeword = search_name[0];
+                if (!IsTypeWord(typeword))
                 {
                     continue;
                 }
                 if (!U.isnum(search_name[1]))
                 {
                     continue;
+                }
+                if (IsHalfTypeWord(typeword))
+                {
+                    if (!CheckHalfByteLHSupport(typeword, linktype))
+                    {
+                        continue;
+                    }
                 }
 
                 uint search_id = U.atoi(search_name.Substring(1));
@@ -105,6 +113,28 @@ namespace FEBuilderGBA
                 }
             }
             return null;
+        }
+        public static bool IsHalfTypeWord(char c)
+        {
+            return c == 'l' || c == 'h';
+        }
+        static bool CheckHalfByteLHSupport(char c , string linktype)
+        {
+            if (c == 'l')
+            {
+                if (linktype == "COMBOl")
+                {
+                    return true;
+                }
+            }
+            if (c == 'h')
+            {
+                if (linktype == "COMBOh")
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         static MapPictureBox FindMapObject(string prefix, List<Control> controls)
@@ -388,7 +418,7 @@ namespace FEBuilderGBA
                 };
                 return;
             }
-            if (linktype == "COMBO")
+            if (linktype == "COMBO" || linktype == "COMBOl" || linktype == "COMBOh")
             {//コンボボックスで状態表記
                 ComboBox link_object = ((ComboBox)link_info);
 
@@ -3193,6 +3223,10 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
+                if (linktype.IndexOf("$COMBO") >= 0)
+                {
+                    return;
+                }
 
                 args = ReplaceJumpArgsMacro(prefix, controls, args);
                 makeJumpEventHandler(src_object, jump_object, linktype, args);
@@ -4344,7 +4378,10 @@ namespace FEBuilderGBA
                 || c == 'b'
                 || c == 'W'
                 || c == 'D'
-                || c == 'P';
+                || c == 'P'
+                || c == 'l'
+                || c == 'h'
+                ;
         }
         public static uint GetStructID(string prefix,string name)
         {
@@ -4516,6 +4553,48 @@ namespace FEBuilderGBA
                         U.ForceUpdate(info_object, Program.ROM.u32(addr + id));
                     }
                 }
+                else if (name[0] == 'l' && name[1] >= '0' && name[1] <= '9')
+                {
+                    uint id = U.atoi(name.Substring(1));
+                    if (addr + id >= Program.ROM.Data.Length)
+                    {
+                        if (U.is_RAMPointer(addr + id))
+                        {
+                            U.ForceUpdate(info_object, (sbyte)Program.RAM.u4(addr + id , false));
+                        }
+                        else
+                        {
+                            R.Error("警告:範囲外へのアクセスです name:{0} id:{1} addr{2} form:{3}", name, id, U.ToHexString(addr + id), this.SelfForm.Text);
+                            Debug.Assert(false);
+                            U.ForceUpdate(info_object, 0);
+                        }
+                    }
+                    else
+                    {
+                        U.ForceUpdate(info_object, Program.ROM.u4(addr + id, false));
+                    }
+                }
+                else if (name[0] == 'h' && name[1] >= '0' && name[1] <= '9')
+                {
+                    uint id = U.atoi(name.Substring(1));
+                    if (addr + id >= Program.ROM.Data.Length)
+                    {
+                        if (U.is_RAMPointer(addr + id))
+                        {
+                            U.ForceUpdate(info_object, (sbyte)Program.RAM.u4(addr + id, true));
+                        }
+                        else
+                        {
+                            R.Error("警告:範囲外へのアクセスです name:{0} id:{1} addr{2} form:{3}", name, id, U.ToHexString(addr + id), this.SelfForm.Text);
+                            Debug.Assert(false);
+                            U.ForceUpdate(info_object, 0);
+                        }
+                    }
+                    else
+                    {
+                        U.ForceUpdate(info_object, Program.ROM.u4(addr + id, true));
+                    }
+                }
             }
         }
 
@@ -4584,6 +4663,18 @@ namespace FEBuilderGBA
                     uint id = U.atoi(name.Substring(1));
                     uint value = U.toPointer((uint)info_object.Value); //ポインタへ変換
                     Program.ROM.write_u32(addr + id, value);
+                }
+                else if (name[0] == 'l' && name[1] >= '0' && name[1] <= '9')
+                {
+                    uint id = U.atoi(name.Substring(1));
+                    uint value = (uint)((int)info_object.Value);
+                    Program.ROM.write_u4(addr + id, value , false);
+                }
+                else if (name[0] == 'h' && name[1] >= '0' && name[1] <= '9')
+                {
+                    uint id = U.atoi(name.Substring(1));
+                    uint value = (uint)((int)info_object.Value);
+                    Program.ROM.write_u4(addr + id, value, true);
                 }
             }
         }
@@ -5142,6 +5233,18 @@ namespace FEBuilderGBA
                         id = U.atoi(name.Substring(1));
                         found_object.Minimum = 0;
                         found_object.Maximum = 0xFFFFFFFF;
+                    }
+                    else if (name[0] == 'l' && name[1] >= '0' && name[1] <= '9')
+                    {
+                        id = U.atoi(name.Substring(1));
+                        found_object.Minimum = 0;
+                        found_object.Maximum = 16;
+                    }
+                    else if (name[0] == 'h' && name[1] >= '0' && name[1] <= '9')
+                    {
+                        id = U.atoi(name.Substring(1));
+                        found_object.Minimum = 0;
+                        found_object.Maximum = 16;
                     }
 
                     if (id != U.NOT_FOUND)

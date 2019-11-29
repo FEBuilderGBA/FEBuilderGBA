@@ -6,14 +6,12 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace FEBuilderGBA
 {
     public partial class SkillConfigFE8NVer2SkillForm : Form
     {
-        uint[] BasePointer;
-
-
         public SkillConfigFE8NVer2SkillForm()
         {
             InitializeComponent();
@@ -29,13 +27,10 @@ namespace FEBuilderGBA
                 R.ShowStopError("スキル拡張 FE8Nver2 のポインタが所定の数だけありません。\r\n{0}個必要ですが、{1}個しかありません。",5,pointer.Length);
                 return;
             }
-            this.BasePointer = pointer;
-            if (pointer.Length > 5)
-            {
-                this.AnimeBaseAddress = Program.ROM.p32(pointer[5]);
-            }
+            Debug.Assert(g_SkillBaseAddress != 0);
 
             InitAnime();
+            InitItem2();
 
             N1_InputFormRef = N1_Init(this);
             N1_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N1;
@@ -52,7 +47,7 @@ namespace FEBuilderGBA
             N3_InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.N3_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
 
-            this.InputFormRef = Init(this, pointer[4]);
+            this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
             this.AddressList.OwnerDraw(DrawSkillAndText, DrawMode.OwnerDrawFixed);
 
@@ -76,7 +71,7 @@ namespace FEBuilderGBA
         //アニメを利用できない場合は消す. かならず Initの前に呼ぶ
         void InitAnime()
         {
-            if (! U.isSafetyOffset(AnimeBaseAddress) )
+            if (! U.isSafetyOffset(g_AnimeBaseAddress) )
             {
                 //アニメを設定できないので消す.
                 MainTab.TabPages.Remove(tabAnimePage);
@@ -92,15 +87,31 @@ namespace FEBuilderGBA
             });
         }
 
-        uint AnimeBaseAddress;
+        //アイテム2を使用できない場合は消す. かならず Initの前に呼ぶ
+        void InitItem2()
+        {
+            if (g_ICON_LIST_SIZE <= 16 )
+            {
+                //アイテム2を設定できないので消す.
+                MainTab.TabPages.Remove(tabPage4);
+                return;
+            }
+            N4_InputFormRef = N4_Init(this);
+            N4_InputFormRef.AddressListExpandsEvent += AddressListExpandsEvent_N4;
+            N4_InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.N4_AddressList.OwnerDraw(ListBoxEx.DrawItemAndText, DrawMode.OwnerDrawFixed);
+        }
+
+        static uint g_SkillBaseAddress = 0;
+        static uint g_AnimeBaseAddress = 0;
 
         public InputFormRef InputFormRef;
-        static InputFormRef Init(Form self, uint skl_tablePointer )
+        static InputFormRef Init(Form self )
         {
             InputFormRef ifr = new InputFormRef(self
                 , ""
-                , skl_tablePointer
-                , 16
+                , g_SkillBaseAddress
+                , g_ICON_LIST_SIZE
                 , (int i, uint addr) =>
                 {//読込最大値検索
                     if (Program.ROM.u8(addr) == 0xFF)
@@ -190,19 +201,44 @@ namespace FEBuilderGBA
             );
         }
 
+        InputFormRef N4_InputFormRef;
+        static InputFormRef N4_Init(Form self)
+        {
+            return new InputFormRef(self
+                , "N4_"
+                , 0
+                , 1
+                , (int i, uint addr) =>
+                {//読込最大値検索
+                    uint a = Program.ROM.u8(addr);
+                    if (a == 0)
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+                , (int i, uint addr) =>
+                {
+                    uint itemid = Program.ROM.u8(addr);
+                    return U.ToHexString(itemid) + " " + ItemForm.GetItemName(itemid);
+                }
+            );
+        }
+
         public static void ClearCache()
         {
-            g_Cache_Pointers = null;
+            g_Cache_IconPointers = null;
         }
-        static uint[] g_Cache_Pointers = null;
+        static uint[] g_Cache_IconPointers = null;
         public static uint[] FindSkillFE8NVer2IconPointers()
         {
-            if (g_Cache_Pointers == null)
+            if (g_Cache_IconPointers == null)
             {
-                g_Cache_Pointers = FindSkillFE8NVer2IconPointersLow();
+                g_Cache_IconPointers = FindSkillFE8NVer2IconPointersLow();
             }
-            return g_Cache_Pointers;
+            return g_Cache_IconPointers;
         }
+        static uint g_ICON_LIST_SIZE = 16;
         static uint[] FindSkillFE8NVer2IconPointersLow()
         {
             uint iconExPointer = Program.ROM.u32(0x89268 + 4);
@@ -234,19 +270,41 @@ namespace FEBuilderGBA
                 }
                 pointer.Add(p);
             }
-            if (pointer.Count <= 0)
+            if (pointer.Count <= 4)
             {
                 return null;
             }
+            g_SkillBaseAddress = pointer[4];
 
             if (Program.ROM.u16(0x70B96) == 0x00)
             {
-                //anime pointer
-                uint p = iconPointers + (4 * 3);
-                uint anime_pointer = Program.ROM.u32(p);
-                if (U.isSafetyPointer(anime_pointer))
-                {
-                    pointer.Add(p);
+                //ICON_LIST_SIZE
+                uint p = iconPointers + (4 * 11);
+                uint iconListSize = Program.ROM.u32(p);
+                if (iconListSize >= 16 && iconListSize <= 40 && (iconListSize % 4 == 0))
+                {//2019 11月後半 開発版
+                    g_ICON_LIST_SIZE = iconListSize; //構造体が可変長になった
+
+                    //この場合、8番目のポインタがアニメポインタになります。
+                    p = iconPointers + (4 * 8);
+                    uint anime_pointer = Program.ROM.u32(p);
+                    if (U.isSafetyPointer(anime_pointer))
+                    {
+                        g_AnimeBaseAddress = Program.ROM.p32(U.toOffset(p));
+                    }
+                }
+                else
+                {//2018年版を元にしたFEBuilderGBAオリジナル拡張版 anime pointer
+                    p = iconPointers + (4 * 3);
+                    uint nazo_pointer = Program.ROM.u32(p);
+                    if (U.isSafetyPointer(nazo_pointer))
+                    {//バージョンによって、ポインタ数が違うので、参考値程度に・・・
+                        pointer.Add(U.toOffset(nazo_pointer));
+                    }
+                    if (pointer.Count > 5)
+                    {//この場合、5番目のポインタがアニメになります。
+                        g_AnimeBaseAddress = Program.ROM.p32(pointer[5]);
+                    }
                 }
             }
             return pointer.ToArray();
@@ -256,6 +314,12 @@ namespace FEBuilderGBA
         private void SkillAssignmentClassFE8Nver2Form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void P16_ValueChanged(object sender, EventArgs e)
+        {
+            N4_InputFormRef.ReInit((uint)P16.Value);
+            N4_ZeroPointerPanel.Visible = InputFormRef.ShowZeroPointerPanel(this.AddressList, this.P12);
         }
 
         private void P12_ValueChanged(object sender, EventArgs e)
@@ -287,7 +351,7 @@ namespace FEBuilderGBA
             {
                 return "";
             }
-            InputFormRef InputFormRef = Init(null, pointer[4]);
+            InputFormRef InputFormRef = Init(null);
             uint addr = InputFormRef.IDToAddr(id);
             if (!U.isSafetyOffset(addr))
             {
@@ -305,17 +369,17 @@ namespace FEBuilderGBA
             {
                 return ImageUtil.BlankDummy();
             }
-            if (pointer.Length < 5)
+            if (g_SkillBaseAddress == 0)
             {
                 return ImageUtil.BlankDummy();
             }
 
-            return DrawSkillIconLow(id, pointer[4]);
+            return DrawSkillIconLow(id);
         }
 
-        public static Bitmap DrawSkillIconLow(uint id, uint skl_tableP)
+        static Bitmap DrawSkillIconLow(uint id)
         {
-            InputFormRef ifr = Init(null, skl_tableP);
+            InputFormRef ifr = Init(null);
             uint addr = ifr.IDToAddr(id);
             if (addr == U.NOT_FOUND)
             {
@@ -333,20 +397,20 @@ namespace FEBuilderGBA
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.BasePointer == null)
+            if (g_SkillBaseAddress == 0)
             {
                 return;
             }
 
-            SKILLICON.Image = DrawSkillIconLow((uint)AddressList.SelectedIndex, this.BasePointer[4]);
+            SKILLICON.Image = DrawSkillIconLow((uint)AddressList.SelectedIndex);
             DrawAnime();
         }
 
         void DrawAnime()
         {
-            if (U.isSafetyOffset(AnimeBaseAddress))
+            if (U.isSafetyOffset(g_AnimeBaseAddress))
             {
-                uint animePointer = AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
+                uint animePointer = g_AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
 
                 uint animeAddr = Program.ROM.p32(animePointer);
 
@@ -394,7 +458,7 @@ namespace FEBuilderGBA
             if (addr != U.NOT_FOUND)
             {
                 uint palette = Program.ROM.u16(addr + 2);
-                bitmap = DrawSkillIconLow((uint)index, this.BasePointer[4]);
+                bitmap = DrawSkillIconLow((uint)index);
             }
             else
             {
@@ -421,7 +485,7 @@ namespace FEBuilderGBA
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = bitmap = DrawSkillIconLow((uint)AddressList.SelectedIndex, this.BasePointer[4]);
+            Bitmap bitmap = bitmap = DrawSkillIconLow((uint)AddressList.SelectedIndex);
             ImageFormRef.ExportImage(this,bitmap, InputFormRef.MakeSaveImageFilename());
         }
 
@@ -457,6 +521,17 @@ namespace FEBuilderGBA
 
             N3_ReadCount.Value = eearg.NewDataCount;
             N3_InputFormRef.ReInit(addr, eearg.NewDataCount);
+        }
+        private void AddressListExpandsEvent_N4(object sender, EventArgs arg)
+        {
+            InputFormRef.ExpandsEventArgs eearg = (InputFormRef.ExpandsEventArgs)arg;
+            uint addr = eearg.NewBaseAddress;
+
+            P16.Value = addr;
+            WriteButton.PerformClick();
+
+            N4_ReadCount.Value = eearg.NewDataCount;
+            N4_InputFormRef.ReInit(addr, eearg.NewDataCount);
         }
 
         private void ImportButton_Click(object sender, EventArgs e)
@@ -540,7 +615,7 @@ namespace FEBuilderGBA
                 return U.NOT_FOUND;
             }
 
-            InputFormRef InputFormRef = Init(null, pointers[4]);
+            InputFormRef InputFormRef = Init(null);
 
             List<U.AddrResult> list = InputFormRef.MakeList();
             for (int n = 0; n < list.Count; n++)
@@ -575,7 +650,7 @@ namespace FEBuilderGBA
                 return 0;
             }
 
-            InputFormRef InputFormRef = Init(null, pointer[4]);
+            InputFormRef InputFormRef = Init(null);
             InputFormRef N2_InputFormRef = N2_Init(null);
 
             int skillCount = 0;
@@ -608,7 +683,7 @@ namespace FEBuilderGBA
 
                 uint textid = Program.ROM.u16(list[i].addr + 0);
 
-                buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i, pointer[4]);
+                buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i);
                 buttons[skillCount].Tag = (uint)i;
                 tooltip.SetToolTipOverraide(buttons[skillCount], TextForm.Direct(textid));
                 skillCount++;
@@ -641,12 +716,12 @@ namespace FEBuilderGBA
             {
                 return 0;
             }
-            if (pointer.Length < 5)
+            if (g_SkillBaseAddress == 0)
             {
                 return 0;
             }
 
-            InputFormRef InputFormRef = Init(null, pointer[4]);
+            InputFormRef InputFormRef = Init(null);
             InputFormRef N1_InputFormRef = N1_Init(null);
 
             int skillCount = 0;
@@ -671,7 +746,7 @@ namespace FEBuilderGBA
                         name += "\r\n" + R._("(友軍時のみ)");
                     }
 
-                    buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i, pointer[4]);
+                    buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i);
                     buttons[skillCount].Tag = (uint)i;
                     tooltip.SetToolTipOverraide(buttons[skillCount], name);
                     skillCount++;
@@ -799,7 +874,7 @@ namespace FEBuilderGBA
             {
                 return R._("指定されたID({0})は存在しません。", U.To0xHexString(id));
             }
-            uint animeP = AnimeBaseAddress + (4 * id);
+            uint animeP = g_AnimeBaseAddress + (4 * id);
 
             string error = "";
 
@@ -854,11 +929,11 @@ namespace FEBuilderGBA
 
         private void WriteButton_Click(object sender, EventArgs e)
         {
-            if (!U.isSafetyOffset(AnimeBaseAddress))
+            if (!U.isSafetyOffset(g_AnimeBaseAddress))
             {
                 return ;
             }
-            uint addr = AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
+            uint addr = g_AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
             Undo.UndoData undodata = Program.Undo.NewUndoData(this, "");
             Program.ROM.write_p32(addr, (uint)AnimePointer.Value, undodata);
             Program.Undo.Push(undodata);
@@ -878,21 +953,29 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (pointer.Length < 5)
+            if (g_SkillBaseAddress == 0)
             {
                 return;
             }
-            if (!U.isSafetyOffset(pointer[4]))
+            if (!U.isSafetyOffset(g_SkillBaseAddress))
             {
                 return;
             }
 
-            ifr = Init(null, pointer[4]);
-            FEBuilderGBA.Address.AddAddress(list, ifr, "SkillConfigFE8NVer2", new uint[] { 4, 8, 12 });
+            ifr = Init(null);
+            Debug.Assert(ifr.BlockSize == g_ICON_LIST_SIZE);
+            if (ifr.BlockSize == 20)
+            {//sizeof(20)
+                FEBuilderGBA.Address.AddAddress(list, ifr, "SkillConfigFE8NVer2", new uint[] { 4, 8, 12 , 16});
+            }
+            else
+            {//sizeof(16)
+                FEBuilderGBA.Address.AddAddress(list, ifr, "SkillConfigFE8NVer2", new uint[] { 4, 8, 12 });
+            }
 
-            if (pointer.Length > 5)
+            if (g_AnimeBaseAddress != 0)
             {
-                uint anime = Program.ROM.p32(pointer[5]);
+                uint anime = Program.ROM.p32(g_AnimeBaseAddress);
                 for (uint i = 0; i < ifr.DataCount; i++, anime += 4)
                 {
                     if (!U.isSafetyOffset(anime))
@@ -918,9 +1001,14 @@ namespace FEBuilderGBA
                 InputFormRef ifr_n1 = N1_Init(null);
                 InputFormRef ifr_n2 = N2_Init(null);
                 InputFormRef ifr_n3 = N3_Init(null);
+                InputFormRef ifr_n4 = null;
+                if (g_ICON_LIST_SIZE >= 20)
+                {
+                    ifr_n4 = N4_Init(null);
+                }
                 uint icondatacount = (2 * 8 * 2 * 8) / 2; // /2しているのは16色のため
 
-                uint icon = Program.ROM.p32(pointer[4]);
+                uint icon = Program.ROM.p32(g_SkillBaseAddress);
                 uint addr = ifr.BaseAddress;
                 for (uint i = 0; i < ifr.DataCount;
                     i++, addr += ifr.BlockSize , icon += icondatacount)
@@ -940,7 +1028,7 @@ namespace FEBuilderGBA
                         , "SkillClass:" + U.To0xHexString(i)
                         , new uint[] { });
                     FEBuilderGBA.Address.AddAddress(list, ifr_n3
-                        , "SkillUnit:" + U.To0xHexString(i)
+                        , "SkillItem:" + U.To0xHexString(i)
                         , new uint[] { });
 
                     FEBuilderGBA.Address.AddAddress(list, icon
@@ -948,6 +1036,15 @@ namespace FEBuilderGBA
                         , U.NOT_FOUND
                         , "SkillIcon:" + U.To0xHexString(i)
                         , FEBuilderGBA.Address.DataTypeEnum.IMG );
+
+                    if (ifr_n4 != null)
+                    {
+                        ifr_n4.ReInitPointer(addr + 16);
+                        FEBuilderGBA.Address.AddAddress(list, ifr_n4
+                            , "SkillItem2:" + U.To0xHexString(i)
+                            , new uint[] { });
+
+                    }
                 }
             }
         }
@@ -966,15 +1063,14 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            if (pointer.Length < 5)
+            if (g_SkillBaseAddress == 0)
             {
                 return;
             }
 
-            ifr = Init(null, pointer[4]);
+            ifr = Init(null);
             UseTextID.AppendTextID(list, FELint.Type.SKILL_CONFIG, ifr, new uint[] { 0 });
         }
-
 
     }
 }

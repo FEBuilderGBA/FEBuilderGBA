@@ -198,6 +198,47 @@
             this.AddressListExpandsButton_255 = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.N4_ZeroPointerPanel = new System.Windows.Forms.Label();
+            this.N4_L_0_ITEM = new FEBuilderGBA.TextBoxEx();
+            this.N4_J_0_ITEM = new System.Windows.Forms.Label();
+            this.N4_B0 = new System.Windows.Forms.NumericUpDown();
+            this.N4_L_0_ITEMICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.N4_ReloadListButton = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.N4_ReadCount = new System.Windows.Forms.NumericUpDown();
+            this.P16 = new System.Windows.Forms.NumericUpDown();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.N4_AddressListExpandsButton = new System.Windows.Forms.Button();
+            this.N4_AddressList = new FEBuilderGBA.ListBoxEx();
+            this.label54 = new System.Windows.Forms.Label();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.N4_BlockSize = new FEBuilderGBA.TextBoxEx();
+            this.label55 = new System.Windows.Forms.Label();
+            this.N4_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.label56 = new System.Windows.Forms.Label();
+            this.N4_WriteButton = new System.Windows.Forms.Button();
+            this.N4_Address = new System.Windows.Forms.NumericUpDown();
+            this.label57 = new System.Windows.Forms.Label();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.textBoxEx4 = new FEBuilderGBA.TextBoxEx();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBoxEx5 = new FEBuilderGBA.TextBoxEx();
+            this.label59 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.label60 = new System.Windows.Forms.Label();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.listBoxEx2 = new FEBuilderGBA.ListBoxEx();
+            this.label61 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -262,6 +303,21 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_B0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_L_0_ITEMICON)).BeginInit();
+            this.panel29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_ReadCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P16)).BeginInit();
+            this.panel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            this.panel31.SuspendLayout();
+            this.panel32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_Address)).BeginInit();
+            this.panel33.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            this.panel34.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -394,6 +450,7 @@
             this.MainTab.Controls.Add(this.tabPage1);
             this.MainTab.Controls.Add(this.tabPage2);
             this.MainTab.Controls.Add(this.tabPage3);
+            this.MainTab.Controls.Add(this.tabPage4);
             this.MainTab.Controls.Add(this.tabAnimePage);
             this.MainTab.Location = new System.Drawing.Point(4, 150);
             this.MainTab.Name = "MainTab";
@@ -1677,7 +1734,7 @@
             // 
             // N3_WriteButton
             // 
-            this.N3_WriteButton.Location = new System.Drawing.Point(0, 0);
+            this.N3_WriteButton.Location = new System.Drawing.Point(263, 35);
             this.N3_WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.N3_WriteButton.Name = "N3_WriteButton";
             this.N3_WriteButton.Size = new System.Drawing.Size(172, 30);
@@ -2284,6 +2341,489 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.panel28);
+            this.tabPage4.Controls.Add(this.panel29);
+            this.tabPage4.Controls.Add(this.panel30);
+            this.tabPage4.Controls.Add(this.panel31);
+            this.tabPage4.Controls.Add(this.panel32);
+            this.tabPage4.Controls.Add(this.panel33);
+            this.tabPage4.Controls.Add(this.panel34);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(892, 573);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "アイテムスキル2";
+            // 
+            // panel28
+            // 
+            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel28.Controls.Add(this.N4_ZeroPointerPanel);
+            this.panel28.Controls.Add(this.N4_L_0_ITEM);
+            this.panel28.Controls.Add(this.N4_J_0_ITEM);
+            this.panel28.Controls.Add(this.N4_B0);
+            this.panel28.Controls.Add(this.N4_L_0_ITEMICON);
+            this.panel28.Location = new System.Drawing.Point(250, 115);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(657, 449);
+            this.panel28.TabIndex = 119;
+            // 
+            // N4_ZeroPointerPanel
+            // 
+            this.N4_ZeroPointerPanel.Location = new System.Drawing.Point(5, 386);
+            this.N4_ZeroPointerPanel.Name = "N4_ZeroPointerPanel";
+            this.N4_ZeroPointerPanel.Size = new System.Drawing.Size(498, 60);
+            this.N4_ZeroPointerPanel.TabIndex = 125;
+            this.N4_ZeroPointerPanel.Text = "領域が確保されていません。\r\n「リストの拡張ボタン」を押して領域を確保してください。";
+            this.N4_ZeroPointerPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // N4_L_0_ITEM
+            // 
+            this.N4_L_0_ITEM.ErrorMessage = "";
+            this.N4_L_0_ITEM.Location = new System.Drawing.Point(96, 45);
+            this.N4_L_0_ITEM.Name = "N4_L_0_ITEM";
+            this.N4_L_0_ITEM.Placeholder = "";
+            this.N4_L_0_ITEM.ReadOnly = true;
+            this.N4_L_0_ITEM.Size = new System.Drawing.Size(178, 25);
+            this.N4_L_0_ITEM.TabIndex = 120;
+            // 
+            // N4_J_0_ITEM
+            // 
+            this.N4_J_0_ITEM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N4_J_0_ITEM.Location = new System.Drawing.Point(2, 6);
+            this.N4_J_0_ITEM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N4_J_0_ITEM.Name = "N4_J_0_ITEM";
+            this.N4_J_0_ITEM.Size = new System.Drawing.Size(191, 30);
+            this.N4_J_0_ITEM.TabIndex = 115;
+            this.N4_J_0_ITEM.Text = "アイテム";
+            this.N4_J_0_ITEM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N4_B0
+            // 
+            this.N4_B0.Hexadecimal = true;
+            this.N4_B0.Location = new System.Drawing.Point(196, 11);
+            this.N4_B0.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_B0.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.N4_B0.Name = "N4_B0";
+            this.N4_B0.Size = new System.Drawing.Size(79, 25);
+            this.N4_B0.TabIndex = 114;
+            // 
+            // N4_L_0_ITEMICON
+            // 
+            this.N4_L_0_ITEMICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.N4_L_0_ITEMICON.Location = new System.Drawing.Point(279, 6);
+            this.N4_L_0_ITEMICON.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_L_0_ITEMICON.Name = "N4_L_0_ITEMICON";
+            this.N4_L_0_ITEMICON.Size = new System.Drawing.Size(64, 64);
+            this.N4_L_0_ITEMICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.N4_L_0_ITEMICON.TabIndex = 116;
+            this.N4_L_0_ITEMICON.TabStop = false;
+            // 
+            // panel29
+            // 
+            this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel29.Controls.Add(this.N4_ReloadListButton);
+            this.panel29.Controls.Add(this.label50);
+            this.panel29.Controls.Add(this.label51);
+            this.panel29.Controls.Add(this.N4_ReadCount);
+            this.panel29.Controls.Add(this.P16);
+            this.panel29.Location = new System.Drawing.Point(2, 6);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(905, 34);
+            this.panel29.TabIndex = 120;
+            // 
+            // N4_ReloadListButton
+            // 
+            this.N4_ReloadListButton.Location = new System.Drawing.Point(715, 0);
+            this.N4_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_ReloadListButton.Name = "N4_ReloadListButton";
+            this.N4_ReloadListButton.Size = new System.Drawing.Size(112, 30);
+            this.N4_ReloadListButton.TabIndex = 27;
+            this.N4_ReloadListButton.Text = "再取得";
+            this.N4_ReloadListButton.UseVisualStyleBackColor = true;
+            // 
+            // label50
+            // 
+            this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label50.Location = new System.Drawing.Point(-1, -1);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(372, 36);
+            this.label50.TabIndex = 28;
+            this.label50.Text = "アイテムスキル2";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label51.Location = new System.Drawing.Point(512, 0);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(85, 34);
+            this.label51.TabIndex = 29;
+            this.label51.Text = "読込数";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N4_ReadCount
+            // 
+            this.N4_ReadCount.Location = new System.Drawing.Point(603, 2);
+            this.N4_ReadCount.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_ReadCount.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.N4_ReadCount.Name = "N4_ReadCount";
+            this.N4_ReadCount.Size = new System.Drawing.Size(78, 25);
+            this.N4_ReadCount.TabIndex = 26;
+            // 
+            // P16
+            // 
+            this.P16.Hexadecimal = true;
+            this.P16.Location = new System.Drawing.Point(375, 5);
+            this.P16.Margin = new System.Windows.Forms.Padding(2);
+            this.P16.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.P16.Name = "P16";
+            this.P16.Size = new System.Drawing.Size(130, 25);
+            this.P16.TabIndex = 25;
+            this.P16.ValueChanged += new System.EventHandler(this.P16_ValueChanged);
+            // 
+            // panel30
+            // 
+            this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel30.Controls.Add(this.label52);
+            this.panel30.Controls.Add(this.label53);
+            this.panel30.Controls.Add(this.numericUpDown8);
+            this.panel30.Location = new System.Drawing.Point(2, 6);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(905, 34);
+            this.panel30.TabIndex = 119;
+            // 
+            // label52
+            // 
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label52.Location = new System.Drawing.Point(-1, -1);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(371, 36);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "レベルアップで取得するスキルの先頭アドレス";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label53
+            // 
+            this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label53.Location = new System.Drawing.Point(512, 0);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(85, 34);
+            this.label53.TabIndex = 29;
+            this.label53.Text = "読込数";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Hexadecimal = true;
+            this.numericUpDown8.Location = new System.Drawing.Point(372, 5);
+            this.numericUpDown8.Margin = new System.Windows.Forms.Padding(2);
+            this.numericUpDown8.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(130, 25);
+            this.numericUpDown8.TabIndex = 25;
+            // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.N4_AddressListExpandsButton);
+            this.panel31.Controls.Add(this.N4_AddressList);
+            this.panel31.Controls.Add(this.label54);
+            this.panel31.Location = new System.Drawing.Point(3, 40);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(246, 522);
+            this.panel31.TabIndex = 122;
+            // 
+            // N4_AddressListExpandsButton
+            // 
+            this.N4_AddressListExpandsButton.Location = new System.Drawing.Point(0, 489);
+            this.N4_AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_AddressListExpandsButton.Name = "N4_AddressListExpandsButton";
+            this.N4_AddressListExpandsButton.Size = new System.Drawing.Size(239, 30);
+            this.N4_AddressListExpandsButton.TabIndex = 115;
+            this.N4_AddressListExpandsButton.Text = "リストの拡張";
+            this.N4_AddressListExpandsButton.UseVisualStyleBackColor = true;
+            // 
+            // N4_AddressList
+            // 
+            this.N4_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N4_AddressList.FormattingEnabled = true;
+            this.N4_AddressList.IntegralHeight = false;
+            this.N4_AddressList.ItemHeight = 18;
+            this.N4_AddressList.Location = new System.Drawing.Point(0, 29);
+            this.N4_AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.N4_AddressList.Name = "N4_AddressList";
+            this.N4_AddressList.Size = new System.Drawing.Size(246, 454);
+            this.N4_AddressList.TabIndex = 57;
+            // 
+            // label54
+            // 
+            this.label54.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label54.Location = new System.Drawing.Point(2, 2);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(244, 26);
+            this.label54.TabIndex = 56;
+            this.label54.Text = "名前";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel32
+            // 
+            this.panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel32.Controls.Add(this.N4_BlockSize);
+            this.panel32.Controls.Add(this.label55);
+            this.panel32.Controls.Add(this.N4_SelectAddress);
+            this.panel32.Controls.Add(this.label56);
+            this.panel32.Controls.Add(this.N4_WriteButton);
+            this.panel32.Controls.Add(this.N4_Address);
+            this.panel32.Controls.Add(this.label57);
+            this.panel32.Location = new System.Drawing.Point(252, 39);
+            this.panel32.Margin = new System.Windows.Forms.Padding(2);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(655, 75);
+            this.panel32.TabIndex = 124;
+            // 
+            // N4_BlockSize
+            // 
+            this.N4_BlockSize.ErrorMessage = "";
+            this.N4_BlockSize.Location = new System.Drawing.Point(353, 5);
+            this.N4_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N4_BlockSize.Name = "N4_BlockSize";
+            this.N4_BlockSize.Placeholder = "";
+            this.N4_BlockSize.ReadOnly = true;
+            this.N4_BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.N4_BlockSize.TabIndex = 58;
+            // 
+            // label55
+            // 
+            this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label55.Location = new System.Drawing.Point(263, 1);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(85, 30);
+            this.label55.TabIndex = 59;
+            this.label55.Text = "Size:";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N4_SelectAddress
+            // 
+            this.N4_SelectAddress.ErrorMessage = "";
+            this.N4_SelectAddress.Location = new System.Drawing.Point(124, 36);
+            this.N4_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N4_SelectAddress.Name = "N4_SelectAddress";
+            this.N4_SelectAddress.Placeholder = "";
+            this.N4_SelectAddress.ReadOnly = true;
+            this.N4_SelectAddress.Size = new System.Drawing.Size(136, 25);
+            this.N4_SelectAddress.TabIndex = 57;
+            // 
+            // label56
+            // 
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Location = new System.Drawing.Point(-1, 35);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(122, 30);
+            this.label56.TabIndex = 56;
+            this.label56.Text = "選択アドレス:";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N4_WriteButton
+            // 
+            this.N4_WriteButton.Location = new System.Drawing.Point(263, 35);
+            this.N4_WriteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_WriteButton.Name = "N4_WriteButton";
+            this.N4_WriteButton.Size = new System.Drawing.Size(172, 30);
+            this.N4_WriteButton.TabIndex = 55;
+            this.N4_WriteButton.Text = "書き込み";
+            this.N4_WriteButton.UseVisualStyleBackColor = true;
+            // 
+            // N4_Address
+            // 
+            this.N4_Address.Hexadecimal = true;
+            this.N4_Address.Location = new System.Drawing.Point(126, 5);
+            this.N4_Address.Margin = new System.Windows.Forms.Padding(2);
+            this.N4_Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.N4_Address.Name = "N4_Address";
+            this.N4_Address.Size = new System.Drawing.Size(130, 25);
+            this.N4_Address.TabIndex = 0;
+            // 
+            // label57
+            // 
+            this.label57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label57.Location = new System.Drawing.Point(-1, -1);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(122, 30);
+            this.label57.TabIndex = 53;
+            this.label57.Text = "アドレス";
+            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel33
+            // 
+            this.panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel33.Controls.Add(this.textBoxEx4);
+            this.panel33.Controls.Add(this.label58);
+            this.panel33.Controls.Add(this.textBoxEx5);
+            this.panel33.Controls.Add(this.label59);
+            this.panel33.Controls.Add(this.button8);
+            this.panel33.Controls.Add(this.numericUpDown10);
+            this.panel33.Controls.Add(this.label60);
+            this.panel33.Location = new System.Drawing.Point(252, 39);
+            this.panel33.Margin = new System.Windows.Forms.Padding(2);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(655, 75);
+            this.panel33.TabIndex = 123;
+            // 
+            // textBoxEx4
+            // 
+            this.textBoxEx4.ErrorMessage = "";
+            this.textBoxEx4.Location = new System.Drawing.Point(353, 5);
+            this.textBoxEx4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxEx4.Name = "textBoxEx4";
+            this.textBoxEx4.Placeholder = "";
+            this.textBoxEx4.ReadOnly = true;
+            this.textBoxEx4.Size = new System.Drawing.Size(82, 25);
+            this.textBoxEx4.TabIndex = 58;
+            // 
+            // label58
+            // 
+            this.label58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label58.Location = new System.Drawing.Point(263, 1);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(85, 30);
+            this.label58.TabIndex = 59;
+            this.label58.Text = "Size:";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxEx5
+            // 
+            this.textBoxEx5.ErrorMessage = "";
+            this.textBoxEx5.Location = new System.Drawing.Point(124, 36);
+            this.textBoxEx5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxEx5.Name = "textBoxEx5";
+            this.textBoxEx5.Placeholder = "";
+            this.textBoxEx5.ReadOnly = true;
+            this.textBoxEx5.Size = new System.Drawing.Size(136, 25);
+            this.textBoxEx5.TabIndex = 57;
+            // 
+            // label59
+            // 
+            this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label59.Location = new System.Drawing.Point(-1, 35);
+            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(122, 30);
+            this.label59.TabIndex = 56;
+            this.label59.Text = "選択アドレス:";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button8.Location = new System.Drawing.Point(0, 0);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(168, 30);
+            this.button8.TabIndex = 55;
+            this.button8.Text = "書き込み";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.Hexadecimal = true;
+            this.numericUpDown10.Location = new System.Drawing.Point(123, 5);
+            this.numericUpDown10.Margin = new System.Windows.Forms.Padding(2);
+            this.numericUpDown10.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(130, 25);
+            this.numericUpDown10.TabIndex = 0;
+            // 
+            // label60
+            // 
+            this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label60.Location = new System.Drawing.Point(1, 0);
+            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(120, 30);
+            this.label60.TabIndex = 53;
+            this.label60.Text = "アドレス";
+            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.button9);
+            this.panel34.Controls.Add(this.listBoxEx2);
+            this.panel34.Controls.Add(this.label61);
+            this.panel34.Location = new System.Drawing.Point(3, 40);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(246, 522);
+            this.panel34.TabIndex = 121;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(0, 489);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(239, 30);
+            this.button9.TabIndex = 115;
+            this.button9.Text = "リストの拡張";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // listBoxEx2
+            // 
+            this.listBoxEx2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listBoxEx2.FormattingEnabled = true;
+            this.listBoxEx2.IntegralHeight = false;
+            this.listBoxEx2.ItemHeight = 18;
+            this.listBoxEx2.Location = new System.Drawing.Point(0, 29);
+            this.listBoxEx2.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxEx2.Name = "listBoxEx2";
+            this.listBoxEx2.Size = new System.Drawing.Size(246, 454);
+            this.listBoxEx2.TabIndex = 57;
+            // 
+            // label61
+            // 
+            this.label61.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label61.Location = new System.Drawing.Point(2, 2);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(244, 26);
+            this.label61.TabIndex = 56;
+            this.label61.Text = "名前";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // SkillConfigFE8NVer2SkillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2372,6 +2912,24 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_B0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_L_0_ITEMICON)).EndInit();
+            this.panel29.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.N4_ReadCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.P16)).EndInit();
+            this.panel30.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            this.panel31.ResumeLayout(false);
+            this.panel32.ResumeLayout(false);
+            this.panel32.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.N4_Address)).EndInit();
+            this.panel33.ResumeLayout(false);
+            this.panel33.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            this.panel34.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2548,5 +3106,46 @@
         private System.Windows.Forms.Label N1_ZeroPointerPanel;
         private System.Windows.Forms.Label N2_ZeroPointerPanel;
         private System.Windows.Forms.Label N3_ZeroPointerPanel;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Label N4_ZeroPointerPanel;
+        private TextBoxEx N4_L_0_ITEM;
+        private System.Windows.Forms.Label N4_J_0_ITEM;
+        private System.Windows.Forms.NumericUpDown N4_B0;
+        private InterpolatedPictureBox N4_L_0_ITEMICON;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.Button N4_ReloadListButton;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.NumericUpDown N4_ReadCount;
+        private System.Windows.Forms.NumericUpDown P16;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Button N4_AddressListExpandsButton;
+        private ListBoxEx N4_AddressList;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Panel panel32;
+        private TextBoxEx N4_BlockSize;
+        private System.Windows.Forms.Label label55;
+        private TextBoxEx N4_SelectAddress;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button N4_WriteButton;
+        private System.Windows.Forms.NumericUpDown N4_Address;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Panel panel33;
+        private TextBoxEx textBoxEx4;
+        private System.Windows.Forms.Label label58;
+        private TextBoxEx textBoxEx5;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Button button9;
+        private ListBoxEx listBoxEx2;
+        private System.Windows.Forms.Label label61;
     }
 }

@@ -1802,6 +1802,19 @@ namespace FEBuilderGBA
             check_safety(data, addr + 1);
             return data[addr];
         }
+        [MethodImpl(256)]
+        public static uint u4(byte[] data, uint addr, bool isHigh)
+        {
+            check_safety(data, addr + 1);
+            if (isHigh)
+            {
+                return (uint)((data[addr] >> 4) & 0xf);
+            }
+            else
+            {
+                return (uint)(data[addr] & 0xf);
+            }
+        }
 
         [MethodImpl(256)]
         public static uint p32(byte[] data, uint addr)
@@ -1845,11 +1858,11 @@ namespace FEBuilderGBA
             check_safety(data, addr + 1);
             if (isHigh)
             {
-                data[addr] |= (byte)((a & 0xf) << 4);
+                data[addr] = (byte)((byte)(data[addr] & 0xf) | (byte)((a & 0xf) << 4));
             }
             else
             {
-                data[addr] |= (byte)(a & 0xf);
+                data[addr] = (byte)((byte)(data[addr] & 0xf0) | (byte)(a & 0xf));
             }
         }
         public static void write_big32(byte[] data, uint addr, uint a)

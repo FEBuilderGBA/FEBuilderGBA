@@ -1,0 +1,16 @@
+NAME=魔法剣リワーク(Installer)
+NAME.en=Magic Sword Rework(Installer)
+NAME.zh=Magic Sword Rework(Installer)
+
+TYPE=EA
+TAG=#ENGINE
+//データへのポインタ
+EA=MagicSwordRework.event
+
+PATCHED_IF:0x2A882=0x02 0x4B 0x9E 0x46 0x70 0x47 0xC0 0x46 0xC0 0x46
+
+AUTHOR=Sme https://feuniverse.us/t/smes-asm-and-miscellany/4445
+INFO=複数の魔法剣を実現します。\r\nバニラでは、ルーンソード、光の剣、風の剣の3つ武器アイテムがありませんが、これらを自由に増やせるようにします。
+INFO.en=Define multiple magic swords.\r\nIn vanilla, there are only have three weapon items: Runesword, LightBrand, and WindSword, but you can increase them freely.
+INFO.zh=Define multiple magic swords.\r\nIn vanilla, there are only have three weapon items: Runesword, LightBrand, and WindSword, but you can increase them freely.
+

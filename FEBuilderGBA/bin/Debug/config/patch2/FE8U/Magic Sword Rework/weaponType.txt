@@ -1,0 +1,3 @@
+5=Anima
+6=Light
+7=Dark

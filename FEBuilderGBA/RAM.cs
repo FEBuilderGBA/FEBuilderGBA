@@ -155,6 +155,30 @@ namespace FEBuilderGBA
             Debug.Assert(false);
             return 0;
         }
+        public uint u4(uint pointer, bool isHigh)
+        {
+            uint addr = pointer;
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 1 > this.Memory02.Length)
+                {
+                    return 0;
+                }
+                return U.u4(this.Memory02, addr, isHigh);
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 1 > this.Memory03.Length)
+                {
+                    return 0;
+                }
+                return U.u4(this.Memory03, addr, isHigh);
+            }
+            Debug.Assert(false);
+            return 0;
+        }
         public byte[] getBinaryData(uint pointer, int count)
         {
             if (count < 0)
@@ -328,6 +352,34 @@ namespace FEBuilderGBA
                     return ;
                 }
                 U.write_u8(this.Memory03, addr, data);
+                WriteMemory03(addr, data, 1);
+                return;
+            }
+            Debug.Assert(false);
+            return;
+        }
+        public void write_u4(uint pointer, uint data, bool isHigh)
+        {
+            uint addr = pointer;
+            if (U.is_02RAMPointer(addr))
+            {
+                addr = addr - 0x02000000 + this.AppnedOffset02;
+                if (addr + 1 > this.Memory02.Length)
+                {
+                    return;
+                }
+                U.write_u4(this.Memory02, addr, data, isHigh);
+                WriteMemory02(addr, data, 1);
+                return;
+            }
+            if (U.is_03RAMPointer(addr))
+            {
+                addr = addr - 0x03000000 + this.AppnedOffset03;
+                if (addr + 1 > this.Memory03.Length)
+                {
+                    return;
+                }
+                U.write_u4(this.Memory03, addr, data, isHigh);
                 WriteMemory03(addr, data, 1);
                 return;
             }

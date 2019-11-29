@@ -773,6 +773,14 @@ namespace FEBuilderGBA
                 {
                     data.Maximum = 0xFF;
                 }
+                else if (key[0] == 'l')
+                {
+                    data.Maximum = 0xF;
+                }
+                else if (key[0] == 'h')
+                {
+                    data.Maximum = 0xF;
+                }
                 else if (key[0] == 'b')
                 {
                     data.Maximum = 127;
@@ -797,6 +805,10 @@ namespace FEBuilderGBA
                     link.Size = new Size(150, CONTROL_HEIGHT);
                     link.Name = "L_" + datanum + "_" + "COMBO";
                     link.DropDownStyle = ComboBoxStyle.DropDownList;
+                    if (InputFormRef.IsHalfTypeWord(key[0]) )
+                    {//COMBOl , COMBOh
+                        link.Name = link.Name + key[0];
+                    }
                     U.ConvertComboBox(dic, ref link, true);
                     PatchPage.Controls.Add(link);
                 }
@@ -1376,6 +1388,14 @@ namespace FEBuilderGBA
                 {
                     i = (int)Program.ROM.u8(address + offset);
                 }
+                else if (listname[1] == 'h')
+                {
+                    i = (int)Program.ROM.u4(address + offset , true);
+                }
+                else if (listname[1] == 'l')
+                {
+                    i = (int)Program.ROM.u4(address + offset , false);
+                }
                 else
                 {
                     i = 0;
@@ -1680,11 +1700,14 @@ namespace FEBuilderGBA
             //タイプが指定されている場合、ヒントリンクと画像を追加する.
             if (address_type != "")
             {
-                InputFormRef.markupJumpLabel(label);
-                label.Click += (sender, e) =>
+                if (address_type != "COMBO")
                 {
-                    InputFormRef.JumpTo(AddrValue, label, address_type, new string[0]);
-                };
+                    InputFormRef.markupJumpLabel(label);
+                    label.Click += (sender, e) =>
+                    {
+                        InputFormRef.JumpTo(AddrValue, label, address_type, new string[0]);
+                    };
+                }
 
                 TextBoxEx link = new TextBoxEx();
                 link.Location = new Point(x, y);
@@ -2664,33 +2687,16 @@ namespace FEBuilderGBA
             {
                 return GetTextPointer(value);
             }
-            if (value.IndexOf("EndWeaponDebuffTable ") == 0)
+            if (value.IndexOf("EndWeaponDebuffTable3 ") == 0)
             {
-                return GetEndWeaponDebuffTable(start_offset,value);
+                return PatchUtil.GetEndWeaponDebuffTable3(start_offset,value);
+            }
+            if (value.IndexOf("EndWeaponDebuffTable4 ") == 0)
+            {
+                return PatchUtil.GetEndWeaponDebuffTable4(start_offset, value);
             }
 
             throw new PatchException(R.Error(("アドレス指定が正しくありません。 値:0x{0}"), addrstring));
-        }
-        static uint GetEndWeaponDebuffTable(uint start_offset , string value)
-        {
-            uint end = start_offset + (3 * 256);
-            end = Math.Min(end, (uint)Program.ROM.Data.Length);
-            start_offset += 3; //先頭は0x00 0x00 0x00 なので読み飛ばす.
-
-            uint found = end;
-            byte[] need = new byte[]{0x00,0x00,0x00};
-            uint new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
-            found = Math.Min(found, new_found);
-
-            need = new byte[] { 0xFF, 0xFF, 0x00 };
-            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
-            found = Math.Min(found, new_found);
-
-            need = new byte[] { 0xFF, 0xFF, 0xFF };
-            new_found = U.Grep(Program.ROM.Data, need, start_offset, end);
-            found = Math.Min(found, new_found);
-
-            return found;
         }
 
         static uint GetTextAddress(string value)
@@ -7559,6 +7565,14 @@ namespace FEBuilderGBA
                     else if (key[0] == 'b')
                     {
                         Program.ROM.write_u8(addr + datanum, a, undodata);
+                    }
+                    else if (key[0] == 'l')
+                    {
+                        Program.ROM.write_u4(addr + datanum, a, false, undodata);
+                    }
+                    else if (key[0] == 'h')
+                    {
+                        Program.ROM.write_u4(addr + datanum, a, true, undodata);
                     }
                 }
             }

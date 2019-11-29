@@ -558,6 +558,11 @@ namespace FEBuilderGBA
             return U.u8(Data, addr);
         }
         [MethodImpl(256)]
+        public uint u4(uint addr, bool isHigh)
+        {
+            return U.u4(Data, addr, isHigh);
+        }
+        [MethodImpl(256)]
         public uint p32(uint addr)
         {
             if (addr >= this.Data.Length)
@@ -593,6 +598,11 @@ namespace FEBuilderGBA
         public void write_u8(uint addr,uint a)
         {
             U.write_u8(Data, addr, a);
+            Modified = true;
+        }
+        public void write_u4(uint addr, uint a, bool isHigh)
+        {
+            U.write_u4(Data, addr, a, isHigh);
             Modified = true;
         }
 
@@ -654,6 +664,11 @@ namespace FEBuilderGBA
         {
             undodata.list.Add(new Undo.UndoPostion(addr, 1));
             write_u8(addr, a);
+        }
+        public void write_u4(uint addr, uint a, bool isHigh, Undo.UndoData undodata)
+        {
+            undodata.list.Add(new Undo.UndoPostion(addr, 1));
+            write_u4(addr, a, isHigh);
         }
 
         public void write_range(uint addr, byte[] write_data, Undo.UndoData undodata)

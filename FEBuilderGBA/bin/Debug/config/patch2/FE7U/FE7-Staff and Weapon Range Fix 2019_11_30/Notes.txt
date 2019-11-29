@@ -1,0 +1,132 @@
+FE7-Staff/Range Fix
+By Tequila
+
+To create a new staff (or item), there're 4 tables you need to modify. 3 from vanilla, 1 from here: Usability, Target, and Effect. They affect items 0x4A (Heal) to 0x9A (60-Use Vulnerary, and end of the item list). Before the table, 0x4A is subtracted from the item id, and the compared to 0x50; if less than or equal, proceed, otherwise, use the default option. Any new item requires you to a) repoint and expand these, and b) increase the 0x50 number.
+
+26D10	Usability	Determines whether you can use the item (default: no)
+27128	Target		Determines who the item affects (default: self?)
+2D04C	Effect		Determines what the item actually does (default: unknown, presumably nothing)
+
+The staff range values are found after the usability table, and the target table actually branches into the same routine after a certain point. They all looked quite similar, although sometimes certain functions were called in a different order (for no good reason, I might add).
+
+Heal/Mend/Recover:
+Beginning at the jump table
+ldr r1,2458D
+b 26F22
+mov char data to r0
+bl 272D0
+	bl (bx r1)
+		2458C:
+		store char data pointer at 2033E40 
+		ldr r0,[202E3E8] (=3000C00, according to hextator's doc this is "Row pointers for move remaining map", but I think it's squares to highlight/can affect targets within)
+		mov r1,0
+		bl 190AC
+			ldr r0,202E3D8 (has map size) (NOTE: These are 1-aligned, not 0-aligned)
+			load height in r1 and add 4
+			load length in r0 and add 2
+			multiply them
+			check if result is odd; if true, subtract 1
+			and the param passed in r1 (currently 0) with 0xFF, lsl 8, add that to the original number, store on stack for safekeeping
+			subtract 8 from 3000C00 and load what's there into r1 (3000C38) (end of row pointers, I think)
+			divide area by 2 (I think; it does lsl 1F, add original to that number, lsl 0A, lsr 0B)
+			orr that with 1000000
+			bl BFA10
+				This is CPUSet
+				In this case, it zero'd out 0x98 words of the map...don't exactly know why. EDIT: It zeroes out halfwords, which is why it divides by 2 instead of 4.
+			mov 3000C00 back to r0
+			bl 1B190
+				store r0 at 30041E0
+		mov x coord to r0, y coord to r1, ldr r2,24539
+		bl 23A74
+			save that stuff to r4-r6
+			bl 4ACE4
+				store x coord as halfword at 203DCF4 and y coord afterwards
+				store 0 (as a word) at 203DFF8
+			r0=x coord, r1=y coord, r2=max, r3=1
+			bl 1A2D4
+				fill in 3000C00 again with squares that can be accessed with this particular staff
+			r0=x coord, r1=y coord, r2=min, r3=-1
+			bl 1A2D4
+				Remove squares that can't be reached (basically, it adds 1 to all squares that are within radius (max). Then it subtracts 1 from all that squares are inside (out of range of) radius (min). Repeat as needed. Normally, the repeat wouldn't be necessary, since vanilla staves all have 1 as the minimum range.
+			mov r0,r6 (has 24539, which will be bx'd to at some point)
+			bl 239B0
+				12900 cycles here, long function
+				mov r0,7
+				I think this checks all the squares that can be accessed, then checks if there's someone there by looking at a map pointed to by 202E3DC
+				Puts allegiance byte in r0
+				bl 18D0C
+					Given allegiance byte, goes to table at B92EB0 and returns char data pointer there
+				bl(bx r7) (This seems to do different checks depending on staff, like check if target is afflicted with a status, isn't at full health, etc)
+					HEAL:
+					checks the if the person being checked and the staff's user are of the same allegiance, returns true or false
+					if true, checks if the user is being rescued
+					if false, moves char data to r0
+					bl 18A70
+						returns current hp
+					bl 18AB0
+						returns max hp
+					r0=target x coord, r1=target y coord, r2=target allegiance byte, r3=0
+					bl 4ACFC
+						ldr r8=203DCF8
+						ldr r6=203DFF8
+						ldr r5,[r6] (nothing, because we zero'd it out earlier at 4ACE4)
+						multiply this number by 0xC and add r8 to this
+						store target x coord at this location, y coord 1 byte afterwards, allegiance byte after that, and whatever r3 is after that
+						add 1 to value at r6 and store it back there (maybe a queue?)
+					NOTE:
+					Heal checks if current hp < max hp
+					Restore checks if status nibble is nonzero
+					Barrier checks if torch nibble is greater than 6
+					Warp has no extra checks
+					Hammerne checks if there's a weapon with less than max uses
+					return
+				return
+			return
+		return
+	bl 4B174
+		load word at 203DFF8
+	if non-zero, mov 1 to r0
+lsl and asr r0 by 18, as usual
+return
+
+Staff list:
+0x Name		Range	Use pointer	Ldr r1	Ldr r2 later 	Target table entry
+4A Heal		1		08026E54	2458D	24539			27200
+4B Mend		1		08026E54	2458D	24539			27200
+4C Recover	1		08026E54	2458D	24539			27200
+4D Physic	mag/2	08026E5C	245C1	24539			27208
+4E Fortify	mag/2	08026E64	245C1	24539			2727C
+4F Restore	1		08026E6C	2465D	2460D			27228
+50 Silence	mag/2	08026E84	24859	24775			27238
+51 Sleep	mag/2	08026E8C	24881	247C1			27240
+52 Berserk	mag/2	08026E94	248A9	2480D			27248
+53 Warp		1		08026E9C	24909	248D1			2726C
+54 Rescue	mag/2	08026E74	2474D	24715			27218
+55 Torch	mag/2	08026F10	different case; handle separately
+56 Hammerne	1		08026EA4	249C9	24971			27274
+57 Unlock	1-2		08026EAC	2493D	24219			27260
+58 Barrier	1		08026E7C	246E1	24691			27258
+
+Highlighting squares:
+When selecting a character:
+Check if each weapon can be equipped
+	if yes, get range byte and turn that into a halfword-length bitfield (2-3 range would be 0000 0000 0000 0110)
+orr the bitfields
+iterate through each square on the map, beginning at the bottom right corner
+check if square can be moved to (compare to movement map)
+	if yes, check if square has someone occupying it (compare to allegiance map)
+		if no, compare to an unknown map
+			if value at that tile = 0, write range
+check if ballista ability is set
+	if yes, iterate through each square again, same deal, except look for a ballista 
+		if yes, write ballista's range
+
+write range:
+the function at 1A2D4 takes 4 parameters: r0=x coord, r1=y coord, r2=radius, r3=+/-1
+for each square on the range map that is within (r2) distance of (r0,r1), add r3 to the value there (-1 is for squares less than the min, since it fills all squares from (max) inwards)
+if the value is != 0, then that square can be targeted.
+
+When selecting the attack option, the function to display squares is similar to above, minus the ballista check (and iterating through each square, since we already moved)
+
+When selecting the weapon to use, only that weapon's range is displayed.
+

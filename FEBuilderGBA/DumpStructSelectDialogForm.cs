@@ -264,6 +264,13 @@ namespace FEBuilderGBA
                 {
                     sb.AppendLine("sbyte    _" + nm.Id + comment);
                 }
+                else if (nm.TypeName[0] == 'l')
+                {
+                    sb.AppendLine("byte    _" + nm.Id + comment);
+                }
+                else if (nm.TypeName[0] == 'h')
+                {
+                }
                 else if (nm.TypeName[0] == 'B')
                 {
                     sb.AppendLine("byte    _" + nm.Id + comment);
@@ -311,6 +318,13 @@ namespace FEBuilderGBA
                 if (nm.TypeName[0] == 'b')
                 {
                     sb.Append(comment);
+                }
+                else if (nm.TypeName[0] == 'l')
+                {
+                    sb.AppendLine(comment);
+                }
+                else if (nm.TypeName[0] == 'h')
+                {
                 }
                 else if (nm.TypeName[0] == 'B')
                 {
@@ -370,6 +384,14 @@ namespace FEBuilderGBA
                     {
                         uint v = Program.ROM.u8(addr + nm.Id);
                         sb.Append(U.To0xHexString(v));
+                    }
+                    else if (nm.TypeName[0] == 'l')
+                    {
+                        uint v = Program.ROM.u8(addr + nm.Id);
+                        sb.Append(U.To0xHexString(v));
+                    }
+                    else if (nm.TypeName[0] == 'h')
+                    {
                     }
                     else if (nm.TypeName[0] == 'B')
                     {
@@ -437,6 +459,14 @@ namespace FEBuilderGBA
                     {
                         Program.ROM.write_u8(addr + nm.Id , v , undodata);
                     }
+                    else if (nm.TypeName[0] == 'l')
+                    {
+                        Program.ROM.write_u8(addr + nm.Id, v, undodata);
+                    }
+                    else if (nm.TypeName[0] == 'h')
+                    {
+                        continue;
+                    }
                     else if (nm.TypeName[0] == 'B')
                     {
                         Program.ROM.write_u8(addr + nm.Id, v, undodata);
@@ -475,6 +505,13 @@ namespace FEBuilderGBA
                 if (nm.TypeName[0] == 'b')
                 {
                     sb.Append(comment);
+                }
+                else if (nm.TypeName[0] == 'l')
+                {
+                    sb.Append(comment);
+                }
+                else if (nm.TypeName[0] == 'h')
+                {
                 }
                 else if (nm.TypeName[0] == 'B')
                 {
@@ -540,6 +577,27 @@ namespace FEBuilderGBA
                         {
                             line += (sbyte)v;
                         }
+                    }
+                    else if (nm.TypeName[0] == 'l')
+                    {
+                        if (lastData != "BYTE")
+                        {
+                            lastData = "BYTE";
+                            line += ";" + lastData;
+                        }
+                        line += " ";
+                        uint v = Program.ROM.u8(addr + nm.Id);
+                        if (nm.Value.Hexadecimal)
+                        {
+                            line += U.To0xHexString(v);
+                        }
+                        else
+                        {
+                            line += (sbyte)v;
+                        }
+                    }
+                    else if (nm.TypeName[0] == 'h')
+                    {
                     }
                     else if (nm.TypeName[0] == 'B')
                     {
@@ -671,6 +729,15 @@ namespace FEBuilderGBA
                 {
                     sb.AppendLine("1"); //size
                     is_unsigned = false;
+                }
+                else if (nm.TypeName[0] == 'l')
+                {
+                    sb.AppendLine("1"); //size
+                    is_unsigned = false;
+                }
+                else if (nm.TypeName[0] == 'h')
+                {
+                    continue;
                 }
                 else if (nm.TypeName[0] == 'B')
                 {

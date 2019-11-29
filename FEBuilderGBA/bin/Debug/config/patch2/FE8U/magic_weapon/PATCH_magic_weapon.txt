@@ -1,4 +1,4 @@
-NAME=魔法武器
+NAME=魔法武器(編集)
 INFO=魔法剣で攻撃した時に、理魔法以外で攻撃したことにできます。\r\nたとえば、光の剣の場合は、光属性で攻撃したことにできます。\r\n発動時要件は、魔法剣のみです。物理武器では効果がありません。
 
 IF:0x2A864=0x30 0x70 0x0F 0x4F 0x39 0x88 0x04 0x20 0x08 0x40 0x00 0x28 0x4B 0xD1 0xE8 0x6C
@@ -34,7 +34,10 @@ B1:$COMBO WeaponType.zh.txt:.zh=Weapon attributes
 B2:$COMBO WeaponRange.zh.txt:.zh=Melle range type
 
 AUTHOR=midori
-NAME.en=Magic weapon.
+NAME.en=Magic Weapon(Editor)
 INFO.en=When attacking with a magic sword, it can be attacked by anything other than magic.\r\nFor example, in the case of a light sword, it is possible to attack with the light attribute.\r\nThe activation requirement is only a magic sword.Physical weapons have no effect.
-NAME.zh=魔法武器。
+NAME.zh=魔法武器(Editor)
 INFO.zh=当用魔法剑攻击时，它可以被除魔法以外的任何东西攻击。\r\n例如，在轻剑的情况下，可以使用light属性进行攻击。\r\n激活要求只是一把魔剑。物理武器没有效果。
+
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
