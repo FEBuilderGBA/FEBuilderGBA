@@ -1438,7 +1438,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(892, 573);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "アイテムスキル";
+            this.tabPage3.Text = "武器アイテムスキル";
             // 
             // panel15
             // 
@@ -1539,7 +1539,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(372, 36);
             this.label33.TabIndex = 28;
-            this.label33.Text = "アイテムスキル";
+            this.label33.Text = "武器アイテムスキル";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
@@ -2355,7 +2355,7 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(892, 573);
             this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "アイテムスキル2";
+            this.tabPage4.Text = "所持アイテムスキル";
             // 
             // panel28
             // 
@@ -2456,7 +2456,7 @@
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(372, 36);
             this.label50.TabIndex = 28;
-            this.label50.Text = "アイテムスキル2";
+            this.label50.Text = "所持アイテムスキル";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label51

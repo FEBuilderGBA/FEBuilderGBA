@@ -9484,8 +9484,8 @@ Skill animation script|*.txt|All files|*
 :ユニットスキル建設予定地
 Unit skill Construction site
 
-:アイテムスキル
-Item Skill
+:武器アイテムスキル
+Weapon Item Skill
 
 :アニメ
 Anime
@@ -9496,8 +9496,8 @@ Export Animation
 :アニメーション読込
 Import Animation
 
-:アイテムスキル2
-Item Skill 2
+:所持アイテムスキル
+Owned item skills
 
 : スキル割り当て
 Skill assignment

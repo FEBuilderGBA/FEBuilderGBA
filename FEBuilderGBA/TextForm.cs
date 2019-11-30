@@ -2590,8 +2590,8 @@ namespace FEBuilderGBA
                 ,"@001F","[.]"    ///No Translate
                 ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
                 ,"@0040","[@]"    ///No Translate  @を出す
-                ,"@0090","[ConversationText]"    ///No Translate    AutoNewline Patch
-                ,"@0091","[BattleText]"    ///No Translate          AutoNewline Patch
+                ,"@0080@0090","[ConversationText]"    ///No Translate    AutoNewline Patch
+                ,"@0080@0091","[BattleText]"    ///No Translate          AutoNewline Patch
         };
 
         //@0003 -> [A] とFEditor表記に変換する
@@ -2913,8 +2913,8 @@ namespace FEBuilderGBA
             {
                 if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
                 {//自動改行が入っている場合は、長さのチェックをしない
-                    if (text.IndexOf("@0090") >= 0
-                        || text.IndexOf("@0091") >= 0
+                    if (text.IndexOf("@0080@0090") >= 0
+                        || text.IndexOf("@0080@0091") >= 0
                         )
                     {
                         return true;

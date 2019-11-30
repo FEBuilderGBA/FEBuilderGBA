@@ -208,16 +208,16 @@ namespace FEBuilderGBA
                     i += 1;
                     continue;
                 }
-                //自動改行パッチ
-                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
-                {
-                    if (code == 0x90 || code == 0x91)
-                    {
-                        AppendAtmarkCode(str, code);
-                        i += 1;
-                        continue;
-                    }
-                }
+//                //自動改行パッチ
+//                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
+//                {
+//                    if (code == 0x90 || code == 0x91)
+//                    {
+//                        AppendAtmarkCode(str, code);
+//                        i += 1;
+//                        continue;
+//                    }
+//                }
                 //特殊Unicode
                 if (code >= 0x82 && this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
@@ -428,13 +428,13 @@ namespace FEBuilderGBA
                 return true;
             }
 
-            if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
-            {
-                if (code == 0x90 || code == 0x91)
-                {//AutoNewLine Code
-                    return true;
-                }
-            }
+//            if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
+//            {
+//                if (code == 0x90 || code == 0x91)
+//                {//AutoNewLine Code
+//                    return true;
+//                }
+//            }
             return false;
         }
 
@@ -494,16 +494,16 @@ namespace FEBuilderGBA
                         continue;
                     }
                 }
-                //自動改行パッチ
-                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
-                {
-                    if (code == 0x90 || code == 0x91)
-                    {
-                        AppendAtmarkCode(str, code);
-                        len += 1;
-                        continue;
-                    }
-                }
+//                //自動改行パッチ
+//                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
+//                {
+//                    if (code == 0x90 || code == 0x91)
+//                    {
+//                        AppendAtmarkCode(str, code);
+//                        len += 1;
+//                        continue;
+//                    }
+//                }
 
                 if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FE

@@ -1,7 +1,7 @@
 First things first, put these in your ParseDefinitions.txt. You don't technically need to, but it's a lot easier to remember than [0x90], right?
 
-[ConversationText] = [0x90]
-[BattleText] = [0x91]
+[ConversationText] = [0x80][0x90]
+[BattleText] = [0x80][0x91]
 
 Then, check out these text entries that explain how the hack works. Feel free to insert them into your game if you want to see how the hack functions.
 Though things generally look nicer if you keep sentences short enough that they can fit inside a single text box (which these examples don't).

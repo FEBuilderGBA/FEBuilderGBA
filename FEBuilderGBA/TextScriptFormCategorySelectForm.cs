@@ -73,14 +73,14 @@ namespace FEBuilderGBA
             {
                 {
                     TextEscape te = new TextEscape();
-                    te.Code = "@0090";
+                    te.Code = "@0080@0090";
                     te.Info = R._("AutoNewLine Conversation Text[ConversationText]");
                     te.Category = "";
                     this.EscapeList.Add(te);
                 }
                 {
                     TextEscape te = new TextEscape();
-                    te.Code = "@0091";
+                    te.Code = "@0080@0091";
                     te.Info = R._("AutoNewLine Battle Text[BattleText]");
                     te.Category = "";
                     this.EscapeList.Add(te);

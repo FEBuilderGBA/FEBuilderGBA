@@ -25,20 +25,27 @@
 
 extern u8 Text_Conversation;
 extern u8 Text_Battle;
-extern u8 Text_Misc;
 
 extern u8 MaxConversationWidth;
 extern u8 MaxBattleWidth;
-extern u8 MaxMiscWidth;
-extern u8 PunctuationLinebreak;
-extern u8 BreakEarlyOnLineTwo;
+
+
+extern u8 DynamicTextboxSize;
 extern u8 MinimumSentenceWidth;
-extern u8 TryKeepSentencesTogether;
+extern u8 BreakEarlyToPreserveSentence;
+extern u8 SingleLineBreakWidth;
+extern u8 DontPauseBeforeA;
+
 extern u8 BeatPause;
 extern u8 PunctuationPause;
+
+extern u8 DebugOutput;
 extern char* RAMLocation;
 
-#ifdef DEBUG
+extern u8 IsValidASCIITable[];
+
+void PostprocessString(const char* source, char* destination);
+
 // yeah I'm sure this could be done more intelligently
 // but I just needed a quick debug function so whatever
 u8 IntToString(int Source, char* Destination)
@@ -75,11 +82,11 @@ u8 IntToString(int Source, char* Destination)
 		return 2;
 	}
 }
-#endif
 
 bool IsValidASCII(const char source)
 {
-	return (source >= 0x20 && source <= 0x7F);
+	return IsValidASCIITable[(u8)source];
+	//return (source >= 0x20 && source <= 0x7F);
 }
 
 bool IsOpenLocation(const char source)
@@ -89,12 +96,38 @@ bool IsOpenLocation(const char source)
 
 bool IsTextStartCode(const char source)
 {
-	return (source == Text_Conversation || source == Text_Battle || source == Text_Misc);
+	return (source == Text_Conversation || source == Text_Battle);
 }
 
 bool IsPrintable(const char* source)
 {
 	return (IsValidASCII(source[0]) && source[-1] != TEXT_LOADFACE);
+}
+
+bool IsLoadFaceParam(const char* source)
+{
+	if (source[-2] == TEXT_LOADFACE || source[-1] == TEXT_LOADFACE)
+		return true;
+	else
+		return false;
+}
+
+bool IsTextCodeParam(const char* source)
+{
+	if (IsLoadFaceParam(source) || source[-1] == 0x80)
+		return true;
+	else
+		return false;
+}
+
+bool IsTextboxEndCode(const char* source)
+{
+	if (IsTextCodeParam(source))
+		return false;
+	else if (IsOpenLocation(*source) || *source == TEXT_CLEARFACE || *source == TEXT_CLOSESPEECHFAST || *source == TEXT_CLOSESPEECHSLOW || *source == TEXT_X)
+		return true;
+	else
+		return false;
 }
 
 char* StringCopy(const char* Source, char* Destination)
@@ -144,110 +177,9 @@ char LastPrintable(const char* source)
 	return output;
 }
 
-int GetNextSentenceWidth(const char* source)
-{
-	int width = 0;
-	int sentenceWidth = 0;
-	unsigned temp = 0;
-	
-	for (int x = 1; source[x] != TEXT_A && source[x] != TEXT_X; x++)
-	{
-		if (IsPrintable(&source[x]))
-		{
-			if (IsLinebreakPunctuation(LastPrintable(&source[x])) && !IsLinebreakPunctuation(source[x]))
-			{
-				if (sentenceWidth > MinimumSentenceWidth)
-				{
-					break;
-				}
-				else
-				{
-					sentenceWidth = 0;
-				}
-			}
-			
-			GetCharTextWidthAscii(&source[x], &temp);
-			width += temp;
-			sentenceWidth += temp;
-		}
-	}
-	
-	return width;
-}
-
-int GetLastSentenceWidth(const char* source)
-{
-	int width = 0;
-	unsigned temp = 0;
-	
-	for (int x = -1; source[x] != TEXT_A && source[x] != TEXT_X; x--)
-	{
-		if (IsPrintable(&source[x]))
-		{
-			if (IsLinebreakPunctuation(LastPrintable(&source[x])) && !IsLinebreakPunctuation(source[x]))
-			{
-				break;
-			}
-			
-			GetCharTextWidthAscii(&source[x], &temp);
-			width += temp;
-		}
-	}
-	
-	return width;
-}
-
-/*
-int GetNextSentenceWidth(const char* source)
-{
-	int width = 0;
-	unsigned temp = 0;
-	
-	for (int x = 0; !IsLinebreakPunctuation(source[x]); x++)
-	{
-		if (IsValidASCII(source[x]))
-		{
-			GetCharTextWidthAscii(&source[x], &temp);
-			width += temp;
-		}
-	}
-	
-	return width;
-}
-*/
-
-
-bool DidWeAlreadyLinebreak(const char* source)
-{
-	for (int x = -1; !IsTextStartCode(source[x]); x--)
-	{
-		// if we find a printable character code before we find [A] or [N] we're good.
-		if (IsPrintable(&source[x]))
-			return false;
-		if (source[x] == TEXT_A || source[x] == TEXT_N)
-			return true;
-	}
-	
-	return false;
-}
-
-bool WillWeLinebreakSoon(const char* source)
+bool IsTextEndSoon(const char* source)
 {
 	for (int x = 1; source[x] != TEXT_X; x++)
-	{
-		// if we find a printable character code before we find [A] or [N] we're good.
-		if (IsPrintable(&source[x]))
-			return false;
-		if (source[x] == TEXT_A || source[x] == TEXT_N)
-			return true;
-	}
-	
-	return false;
-}
-
-bool IsTextEnd(const char* source)
-{
-	for (int x = 0; source[x] != TEXT_X; x++)
 	{
 		if (IsPrintable(&source[x]))
 			return false;
@@ -256,37 +188,109 @@ bool IsTextEnd(const char* source)
 	return true;
 }
 
-// XXX: the modulus operator doesn't seem to actually work
-// and Mod() == undefined opcode
-bool HackyTemporarySolution(int periodCount)
+bool IsTextboxEndSoon(const char* source)
 {
-	if (periodCount == 0)
-		return false;
-	
-	while (periodCount > 0)
-		periodCount -= 3;
-	
-	if (periodCount == 0)
+	for (int x = 1; source[x] != TEXT_X; x++)
+	{
+		if (IsPrintable(&source[x]))
+			return false;
+		else if (IsTextboxEndCode(&source[x]))
+			return true;
+	}
+
+	return true;
+}
+
+bool IsSentenceEnd(const char* source)
+{
+	if (IsLinebreakPunctuation(LastPrintable(source)) && !IsLinebreakPunctuation(source[0]))
 		return true;
 	else
 		return false;
 }
 
+int GetNextTextboxWidth(const char* source, int maxWidth)
+{
+	int totalWidth = 0;
+	int newMaxWidth = 0;
 
+	int sentenceWidth = 0;
+	int totalWidthAtLastSentence = 0;
+	unsigned temp = 0;
+
+	const char aSpace = ' ';
+	unsigned spaceWidth = 0;
+	GetCharTextWidthAscii(&aSpace, &spaceWidth);
+
+	for (int x = 0; !IsTextboxEndCode(&source[x]); x++)
+	{
+		if (IsPrintable(&source[x]))
+		{
+			if (totalWidth > (maxWidth * 2) - 25)
+			{
+				totalWidth = totalWidthAtLastSentence;
+				break; // too big, use the total width at last sentence
+			}
+			else
+			{
+				if (IsSentenceEnd(&source[x]) && sentenceWidth > MinimumSentenceWidth)
+				{
+					sentenceWidth = 0;
+					totalWidthAtLastSentence = totalWidth;
+				}
+
+				GetCharTextWidthAscii(&source[x], &temp);
+				sentenceWidth += temp;
+				totalWidth += temp;
+			}
+		}
+	}
+
+	if (totalWidth > maxWidth || totalWidth > SingleLineBreakWidth)
+	{
+		int currentWidth = 0;
+		newMaxWidth = (totalWidth / 2);
+
+		if (totalWidth % 2 != 0)
+			newMaxWidth += 1;
+		//newMaxWidth = (totalWidth / 2) + 25; // this "+20" stuff needs to be replaced by something more sophisticated. like allowing the last word on line 1 to exceed maxWidth.
+
+		// now we have to increase the width so that the first line ends up longer, and so that everything fits
+		// otherwise we could end up without enough space, thanks to having to go back and break on a space ending line 1 early.
+		for (int x = 0; !IsTextboxEndCode(&source[x]); x++)
+		{
+			if (IsPrintable(&source[x]))
+			{
+				GetCharTextWidthAscii(&source[x], &temp);
+				currentWidth += temp;
+
+				if (currentWidth > newMaxWidth)
+				{
+					if (source[x] == ' ')
+						break;
+					else
+						newMaxWidth += temp;
+				}
+			}
+		}
+
+		//newMaxWidth += 3;
+
+		if (newMaxWidth > maxWidth)
+			newMaxWidth = maxWidth;
+	}
+	else
+		newMaxWidth = maxWidth;
+
+	return newMaxWidth;
+}
 
 // this function handles adding [A][N] and spaces where necessary in response to control codes.
-const char* PreprocessString(const char* source, bool miscText)
+const char* PreprocessString(const char* source, char *destination)
 {
-	char *destination = RAMLocation;
 	int x = 0;
 	int y = 0;	
 	bool midLine = false;
-	
-	if (miscText)
-	{
-		StringCopy(source, destination);
-		return destination;
-	}
 	
 	while (source[x] != TEXT_X)
 	{
@@ -303,7 +307,7 @@ const char* PreprocessString(const char* source, bool miscText)
 				for (int x2 = x; source[x2] == '.'; x2++)
 					periodCount++;
 				
-				// so we need to handle "Some Text.... Some more text." by inserting a space after the first ... (because it's almost certainly was "Some Text.\n... Some more text" pre textprocess)
+				// so we need to handle "Some Text.... Some more text." by inserting a space after the first ... (because it almost certainly was "Some Text.\n... Some more text" pre textprocess)
 				// at the same time we need to handle "Some Text...?" by not inserting a space until it's over.
 				// so we explicitly check for four periods in a row
 				if (periodCount == 4)
@@ -314,7 +318,7 @@ const char* PreprocessString(const char* source, bool miscText)
 					periodCount--; // because we'll always want to trigger the beat handling.
 				}
 				
-				while (HackyTemporarySolution(periodCount)) // supposed to be periodCount % 3 == 0, but the modulus operator doesn't seem to work.
+				while (periodCount > 0 && periodCount % 3 == 0)
 				{
 					destination[y++] = TEXT_TOGGLEMOUTHMOVE;
 					destination[y++] = source[x++];
@@ -342,17 +346,26 @@ const char* PreprocessString(const char* source, bool miscText)
 					
 				if (PunctuationPause && !alreadyPaused)
 				{
+					destination[y++] = TEXT_TOGGLEMOUTHMOVE;
 					destination[y++] = PunctuationPause;
+					destination[y++] = TEXT_TOGGLEMOUTHMOVE;
 				}
 			}
-			else if (source[x] == '-')
+			else if (source[x] == '-') // handle '--' (typically has [ToggleMouthMove] wrapped around it)
 			{
 				destination[y++] = TEXT_TOGGLEMOUTHMOVE;
 				while (source[x] == '-')
 					destination[y++] = source[x++];
 				destination[y++] = TEXT_TOGGLEMOUTHMOVE;
 			}
-			else // no printable other than !?.,- currently needs special handling, so just chuck them onwards.
+			// putting "Yo what's up.\nNot much." into textprocess will give you "Yo what's up.Not much." in game.
+			// therefore it is necessary to automatically insert spaces after punctuation, if we are not linebreaking.
+			else if (IsSentenceEnd(&source[x]) && source[x] != ' ' && !IsTextboxEndCode(&source[x]))
+			{
+				destination[y++] = ' ';
+				destination[y++] = source[x++];
+			}
+			else // something that doesn't need special handling
 			{
 				destination[y++] = source[x++];
 			}
@@ -368,20 +381,34 @@ const char* PreprocessString(const char* source, bool miscText)
 				destination[y++] = source[x++];
 				destination[y++] = source[x++];
 			}
-			else if (midLine && (IsOpenLocation(source[x]) || source[x] == TEXT_CLEARFACE || source[x] == TEXT_CLOSESPEECHFAST || source[x] == TEXT_CLOSESPEECHSLOW)) // handle various codes that require line breaks before them.
+			else if (midLine && IsTextboxEndCode(&source[x])) // handle codes that (at least typically) end the textbox
 			{
-				destination[y++] = TEXT_A;		
-				destination[y++] = TEXT_N;
+				destination[y++] = TEXT_A;
+				if (DynamicTextboxSize)
+					destination[y++] = TEXT_CLOSESPEECHSLOW;
+				else
+					destination[y++] = TEXT_N; // needed in some edge/unusual cases
 				destination[y++] = source[x++];
 				
 				midLine = false;
+			}
+			else if (source[x] == 0x80 && source[x + 1] == 0x20) // handle [Tact]
+			{
+				for (int z = 0; z < 9 && IsValidASCII(gChapterData.playerName[z]); z++)
+				{
+					destination[y++] = gChapterData.playerName[z];
+				}
+				source += 2;
 			}
 			else if (source[x] == 0x80) // handle the two byte codes
 			{
 				if (source[x + 1] == 0x04 && midLine) // handle [LoadOverworldFaces]
 				{
 					destination[y++] = TEXT_A;		
-					destination[y++] = TEXT_N;
+					if (DynamicTextboxSize)
+						destination[y++] = TEXT_CLOSESPEECHSLOW;
+					else
+						destination[y++] = TEXT_N;
 						
 					midLine = false;
 				}
@@ -402,50 +429,56 @@ const char* PreprocessString(const char* source, bool miscText)
 	return destination;
 }
 
-void HandleAutoNewline(const char* input, char* destination)
+void HandleAutoNewline(const char* input, char* fDestination)
 {
-	const u8 textType = input[0];
-	input++; // skip past the textType byte
-	int maxWidth = 0;
+	const u8 textType = input[1];
+	input += 2; // skip past the textType short
+	int hardMaxWidth = 0;
 	
 	if (textType == Text_Conversation)
-		maxWidth = MaxConversationWidth;
-	else if (textType == Text_Battle)
-		maxWidth = MaxBattleWidth;
-	else
-		maxWidth = MaxMiscWidth;
+		hardMaxWidth = MaxConversationWidth;
+	else //if (textType == Text_Battle)
+		hardMaxWidth = MaxBattleWidth;
 	
-	bool miscText = textType == Text_Misc ? 1 : 0;
-	
-	const char* source = PreprocessString(input, miscText);
+	const char* source = PreprocessString(input, fDestination);
+	char* destination = RAMLocation;
 	
 	int x = 0;
 	int y = 0;
 	unsigned currentWidth = 0;
+	unsigned currentSentenceWidth = 0;
 	unsigned temp = 0;
 	bool lineTwo = false;
 	bool insertLineBreak = false;
+	bool insertAPress = false;
 	bool wePressedA = false;
 	bool weLinebroke = false;
-	bool weCleared = false;
+
+	int xLastSentence = 0;
+	int yLastSentence = 0;
+	unsigned lastSentenceWidth = 0;
 	
 	int lastSpaceSource = 0;
 	int lastSpaceDestination = 0;
+
+	int maxWidth = hardMaxWidth;
+	bool midTextbox = false;
 	
-	// XXX: this should probably be a constant instead
 	const char aSpace = ' ';
 	unsigned spaceWidth = 0;
 	GetCharTextWidthAscii(&aSpace, &spaceWidth);
 	
-	
+	// handle non printable strings.
+	// this double checks that we're not text skipping
+	// and makes sure the rest of the code knows the current state of the text
 	while (source[x] != TEXT_X)
 	{
 		while (!IsPrintable(&source[x]))
 		{
-			if ((source[x] == TEXT_A || source[x] == TEXT_N || source[x] == TEXT_CLEAR) && source[x - 2] != TEXT_LOADFACE && source[x - 1] != TEXT_LOADFACE) // loadface is [0x10][0xwhatever][0x01], so...
+			if ((source[x] == TEXT_A || source[x] == TEXT_N || source[x] == TEXT_CLEAR) && !IsTextCodeParam(&source[x]))
 			{
-				// sanity checks
-				if ((wePressedA && source[x] == TEXT_A) || ((weLinebroke || weCleared) && source[x] == TEXT_N)) // multiple [A] or [N] in the same non printable string. skip it.
+				// multiple [A] or [N] in the same non printable string. skip it.
+				if ((wePressedA && source[x] == TEXT_A) || (weLinebroke && source[x] == TEXT_N)) 
 				{
 					x++;
 				}
@@ -459,11 +492,11 @@ void HandleAutoNewline(const char* input, char* destination)
 					{
 						wePressedA = true;
 					}
-					else if(source[x] == TEXT_N)
+					else if(source[x] == TEXT_N || source[x] == TEXT_CLOSESPEECHSLOW)
 					{
 						weLinebroke = true;
 						
-						if (lineTwo && !wePressedA && !miscText) // two [N]s without an [A] is a text skip and text skips are bad. so put the [A] in.
+						if (lineTwo && !wePressedA) // two [N]s without an [A] is a text skip and text skips are bad. so put the [A] in.
 						{
 							destination[y++] = TEXT_A;
 						}
@@ -473,7 +506,6 @@ void HandleAutoNewline(const char* input, char* destination)
 						destination[y++] = TEXT_A;
 						destination[y++] = TEXT_CLEAR;
 						destination[y++] = TEXT_N;
-						weCleared = true;
 						weLinebroke = true;
 						wePressedA = true;
 					}
@@ -484,6 +516,7 @@ void HandleAutoNewline(const char* input, char* destination)
 			else if (source[x] == TEXT_X) // if we hit the 'end of text' code, we're just outta here
 			{
 				destination[y++] = TEXT_X;
+				PostprocessString(destination, fDestination);
 				return;
 			}
 			else
@@ -491,71 +524,113 @@ void HandleAutoNewline(const char* input, char* destination)
 				destination[y++] = source[x++];
 			}
 		}
-		
-		
+
+		// now we've arrived at a printable character
 		GetCharTextWidthAscii(&source[x], &temp);
-		char lastPrintable = LastPrintable(&destination[y]);
-		bool willWeLinebreakSoon = WillWeLinebreakSoon(&source[x]);
-		if (IsTextEnd(&source[x + 1]))
+
+		// if-else chain 1
+		// - if we broke and need to cleanup, do cleanup
+		// - else we decide if we need to break
+		if (IsTextEndSoon(&source[x]))
 		{
 			insertLineBreak = false; // don't bother doing any more special handling. we're done here.
 		}
 		else if (weLinebroke || wePressedA)
 		{
 			if (wePressedA)
+			{
 				lineTwo = false;
+				midTextbox = false;
+				currentSentenceWidth = 0;
+				xLastSentence = 0;
+				yLastSentence = 0;
+			}
 			else
+			{
 				lineTwo = true;
+			}
 			
 			// skip spaces at the start of new lines
 			while (source[x] == ' ')
 				x++;
 			
 			currentWidth = 0;
+			lastSentenceWidth = 0;
 			insertLineBreak = false;
+			insertAPress = false;
 			lastSpaceSource = 0;
 			lastSpaceDestination = 0;
 			
 			weLinebroke = false;
 			wePressedA = false;
 		}
-		else if (currentWidth + temp > maxWidth)
-		{
-			insertLineBreak = true;				
-		}
-		else if (IsLinebreakPunctuation(lastPrintable) && !IsLinebreakPunctuation(source[x]) && !willWeLinebreakSoon)
-		{
-			#ifdef DEBUG
-			y += IntToString(GetNextSentenceWidth(&source[x]) + temp + (spaceWidth * 2) + currentWidth, &destination[y]);
-			destination[y++] = ' ';
-			//y += IntToString(GetLastSentenceWidth(&destination[y]), &destination[y]);
-			//destination[y++] = ' ';
-			#endif
-			
-			// multipliying spaceWidth because otherwise we risk underestimating the length of the next line (it may have a space automatically inserted as well)
-			if (PunctuationLinebreak && !miscText && GetNextSentenceWidth(&source[x]) + temp + (spaceWidth * 2) + currentWidth >= maxWidth && GetLastSentenceWidth(&destination[y]) > MinimumSentenceWidth)
-			{
-				insertLineBreak = true;
-				// we don't want to jump back to last space, just linebreak here
-				lastSpaceSource = 0;
-				lastSpaceDestination = 0;
-			}
-			else if (source[x] != ' ')
-			{
-				lastSpaceSource = x - 1;
-				lastSpaceDestination = y;
-				destination[y++] = ' ';
-				currentWidth += spaceWidth;
-			}			
-		}
-		else if (source[x] == ' ')
+		
+		if (source[x] == ' ')
 		{
 			lastSpaceSource = x;
 			lastSpaceDestination = y;
 		}
 
+		if (IsSentenceEnd(&source[x]))
+		{
+			// so this is a potential line break spot (sentence end)
+			if (currentSentenceWidth > MinimumSentenceWidth)
+			{
+				xLastSentence = x;
+				yLastSentence = y;
+				lastSentenceWidth = currentSentenceWidth;
+				currentSentenceWidth = 0;
+			}
+		}
+		
+		if (currentWidth > maxWidth)
+		{
+			// this ensures we don't try to cram part of the next sentence into our textbox (even if there's room)
+			if (lineTwo && DynamicTextboxSize && xLastSentence)
+			{
+				x = xLastSentence;
+				y = yLastSentence;
+				lastSpaceSource = 0;
+				lastSpaceDestination = 0;
+				insertAPress = true;
+			}
+			// this code is supposed to break early line one to encourage sentences to be on their own lines
+			// But it really needs to be replaced by something more sophisticated.
+			else if (!lineTwo && DynamicTextboxSize && lastSentenceWidth > maxWidth - BreakEarlyToPreserveSentence)
+			{
+				if (maxWidth + BreakEarlyToPreserveSentence < hardMaxWidth)
+					maxWidth += BreakEarlyToPreserveSentence;
+
+				x = xLastSentence;
+				y = yLastSentence;
+				lastSpaceSource = 0;
+				lastSpaceDestination = 0;
+			}
+
+			insertLineBreak = true;
+		}
+		
+		if (DynamicTextboxSize && textType == Text_Conversation && !midTextbox) // new textbox
+		{
+			midTextbox = true;
+
+			maxWidth = GetNextTextboxWidth(&source[x], hardMaxWidth);
+
+			if (DebugOutput)
+			{
+				y += IntToString(maxWidth, &destination[y]);
+				destination[y++] = ' ';
+			}
+
+			if (maxWidth > hardMaxWidth)
+				maxWidth = hardMaxWidth;
+		}
+		
 		if (insertLineBreak) 
 		{
+			if (lineTwo)
+				insertAPress = true;
+
 			if (lastSpaceSource && lastSpaceDestination) 
 			{
 				x = lastSpaceSource;
@@ -563,44 +638,54 @@ void HandleAutoNewline(const char* input, char* destination)
 				x++; // don't copy the space
 			}
 
-			if (!miscText)
+			if (insertAPress)
 			{
-				if (lineTwo)
-				{
-					destination[y++] = TEXT_A;
-					wePressedA = true;
-				}
-				else if (currentWidth + temp < maxWidth && TryKeepSentencesTogether) // if we line broke due to excessive width, then don't bother
-				{
-					#ifdef DEBUG
-					y += IntToString(GetNextSentenceWidth(&source[x]) + temp + (spaceWidth * 2), &destination[y]);
-					#endif
-					// we are probably overestimating slightly here. but that's a lot better than underestimating and breaking a sentence in half.
-					if (GetNextSentenceWidth(&source[x]) + temp + (spaceWidth * 2) > maxWidth)
-					{
-						destination[y++] = TEXT_A;
-						wePressedA = true;
-					}
-				}
+				destination[y++] = TEXT_A;
+				wePressedA = true;
 			}
-			
-			destination[y++] = TEXT_N;
+
+			if (DynamicTextboxSize && textType == Text_Conversation && insertAPress)
+				destination[y++] = TEXT_CLOSESPEECHSLOW;
+			else
+				destination[y++] = TEXT_N;
 			
 			weLinebroke = true;
 		}
 		else
 		{
 			currentWidth += temp;
+			currentSentenceWidth += temp;
 			destination[y++] = source[x++];			
 		}
 	}
 	
 	destination[y] = TEXT_X;
+	PostprocessString(destination, fDestination);
+}
+
+void PostprocessString(const char* source, char* destination)
+{
+	int x = 0;
+	int y = 0;
+
+	while (source[x] != TEXT_X)
+	{
+		if (IsTextboxEndSoon(&source[x]) && !IsTextCodeParam(&source[x]) && (source[x] == PunctuationPause || source[x] == BeatPause))
+		{
+			x++;
+		}
+		else
+		{
+			destination[y++] = source[x++];
+		}
+	}
+
+	destination[y] = TEXT_X;
 }
 
 void AutoNewline(char* source, char* destination)
 {
-	if (IsTextStartCode(source[0]))
+	if (source[0] == 0x80 && IsTextStartCode(source[1]))
 	{
 		HandleAutoNewline(source, destination);
 	}
