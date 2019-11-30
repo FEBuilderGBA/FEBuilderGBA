@@ -482,6 +482,7 @@ namespace FEBuilderGBA
 
                 //Eventをデコードして、引数等を求めなおす.
                 OneLineDisassembler();
+                Debug.Assert( this.ASMTextBox.Text == U.convertByteToStringDump(code.ByteData));
             }
             //変更ボタンが光っていたら、それをやめさせる.
             InputFormRef.WriteButtonToYellow(this.UpdateButton, false);
@@ -595,7 +596,11 @@ namespace FEBuilderGBA
                     selectID = (int)U.atoi(senderobject.Name.Substring("ParamImage".Length));
                     if (selectID <= 0)
                     {
-                        return false;
+                        selectID = (int)U.atoi(senderobject.Name.Substring("ParamValue".Length));
+                        if (selectID <= 0)
+                        {
+                            return false;
+                        }
                     }
                 }
             }
@@ -1061,10 +1066,10 @@ namespace FEBuilderGBA
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamPicture.Image = image;
+            this.ASMTextBox.Text = U.convertByteToStringDump(code.ByteData);
 
             if (isOrderOfHuman)
             {//現在このコントロールから値を入力している場合は、他のコントロールも連動して変更する
-                this.ASMTextBox.Text = U.convertByteToStringDump(code.ByteData);
 
                 //変更があったので、変更ボタンを光らせる.
                 InputFormRef.WriteButtonToYellow(this.UpdateButton, true);
@@ -1350,7 +1355,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
             {
@@ -1358,7 +1363,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
             {
@@ -1366,7 +1371,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpTo(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_TEXT)
             {

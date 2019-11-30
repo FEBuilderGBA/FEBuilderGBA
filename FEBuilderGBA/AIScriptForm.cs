@@ -640,14 +640,14 @@ namespace FEBuilderGBA
                 AIUnitsForm f = (AIUnitsForm)InputFormRef.JumpFormLow<AIUnitsForm>();
                 f.JumpTo(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()) );
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AITILE)
             {
                 AITilesForm f = (AITilesForm)InputFormRef.JumpFormLow<AITilesForm>();
                 f.JumpTo(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AICOORDINATE)
             {
@@ -655,7 +655,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
             {
@@ -663,7 +663,7 @@ namespace FEBuilderGBA
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
-                U.ForceUpdate(src_object, f.GetBaseAddress());
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
         }
         //adresslist doubleclickで、呼び出し元の injecttionCallbackへ値を代入. フォームを閉じる

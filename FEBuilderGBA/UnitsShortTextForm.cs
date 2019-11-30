@@ -60,7 +60,7 @@ namespace FEBuilderGBA
                 DialogResult dr = R.ShowYesNo(alllocQMessage);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    src.Value = NewAlloc();
+                    src.Value = U.toPointer(NewAlloc());
                 }
             }
             return (uint)src.Value;
