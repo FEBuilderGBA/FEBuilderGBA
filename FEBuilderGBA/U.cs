@@ -4088,65 +4088,8 @@ namespace FEBuilderGBA
           X509Chain chain,
           SslPolicyErrors sslPolicyErrors)
         {
-            // 無視する X509 チェーンステータスを定義
-            const X509ChainStatusFlags IgnoreChainStatus =
-                    X509ChainStatusFlags.RevocationStatusUnknown |  // 証明書が失効しているかどうか判断できない
-                    X509ChainStatusFlags.OfflineRevocation |  // 証明書失効リストが使えなかった
-                    X509ChainStatusFlags.PartialChain |  // X509チェーンをルート証明書に構築できなかった
-                    X509ChainStatusFlags.UntrustedRoot;  // ルート証明書が信頼されていない
-            // 信頼する証明書のハッシュリスト
-            string[] trustedThumbprints = new string[]
-            {
-                "‎AD7E1C28B064EF8F6003402014C3D0E3370EB58A", // Starfield Class 2 Certification Authority ///No Translate
-                "‎DAC9024F54D8F6DF94935FB1732638CA6AD77C13", // DST ROOT CA X3 ///No Translate
-                "‎DE28F4A4FFE5B92FA3C503D1A349A7F9962A8212", // GeoTrust Global CA ///No Translate
-                "‎02FAF3E291435468607857694DF5E45B68851868", //The USERTrust Network ///No Translate
-                "‎A8985D3A65E5E5C4B2D7D66D40C6DD2FB19C5436", //DigiCart Global Root ///No Translate
-                "02FAF3E291435468607857694DF5E45B68851868", //AddTrust External CA Root ///No Translate
-            };
-
-            // エラーがなければ OK
-            if (sslPolicyErrors == SslPolicyErrors.None)
-            {
-                return true;
-            }
-
-            // 信頼するハッシュリストと比較し、一致するなら OK
-            X509Certificate2 cert = ((X509Certificate2)certificate);
-            string hash = cert.Thumbprint;
-            if (Array.IndexOf(trustedThumbprints, hash) >= 0)
-            {
-                return true;
-            }
-
-            // SslPolicyError.RemoteCertificateChainErrors 以外のエラーがあるなら NG
-            if ((sslPolicyErrors & ~SslPolicyErrors.RemoteCertificateChainErrors) != 0)
-            {
-                return false;
-            }
-
-            // IgnoreChainStatus 以外のチェーンエラーがあるなら NG
-            for (int i = 0; i < chain.ChainStatus.Length; ++i)
-            {
-                if ((chain.ChainStatus[i].Status & ~IgnoreChainStatus) != 0)
-                {
-                    return false;
-                }
-            }
-
-            // 証明書チェーン内に信頼する証明書と一致するものがあれば OK とする
-            for (int i = 0; i < chain.ChainElements.Count; ++i)
-            {
-                var element = chain.ChainElements[i];
-                hash = element.Certificate.Thumbprint;
-                if (Array.IndexOf(trustedThumbprints, hash) >= 0)
-                {
-                    return true;
-                }
-            }
-            Log.Error("SSL証明書({0})({1})は信用されていません",  cert.FriendlyName , cert.Thumbprint);
-
-            return false;
+            //危険だけど継続する
+            return true;
         }
 
         //httpでそこそこ怪しまれずに通信する

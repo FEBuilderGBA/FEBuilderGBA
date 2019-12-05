@@ -856,5 +856,28 @@ namespace FEBuilderGBA
             uint flag2 = Program.ROM.u8(addr + 41);
             return ((flag2 & 0x20) == 0x20);
         }
+
+        //支援の付け替え
+        public static void ChangeSupportPointer(uint uid, uint support_addr)
+        {
+            InputFormRef InputFormRef = Init(null);
+
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ChangeSupportPointer", U.ToHexString(uid), U.ToHexString(support_addr));
+            uint addr = InputFormRef.BaseAddress;
+            for (uint i = 1; i < InputFormRef.DataCount; i++)
+            {
+                if (uid == i)
+                {
+                    Program.ROM.write_p32(addr + 44, support_addr, undodata);
+                }
+                else if (support_addr == Program.ROM.p32(addr + 44))
+                {
+                    Program.ROM.write_u32(addr + 44, 0, undodata);
+                }
+                addr += InputFormRef.BlockSize;
+            }
+            Program.Undo.Push(undodata);
+        }
+
     }
 }

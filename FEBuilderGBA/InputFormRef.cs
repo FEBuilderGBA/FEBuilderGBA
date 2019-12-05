@@ -5619,7 +5619,7 @@ namespace FEBuilderGBA
             }
             if (option == OptionForm.write_out_of_range_enum.Warning)
             {
-                DialogResult dr = R.ShowNoYes("アドレス{0}は範囲外ですが、書き込んでもよろしいですか？\r\n範囲外へ書き込むとROMを破壊する危険性があります。", U.ToHexString8(addr));
+                DialogResult dr = R.ShowNoYes("アドレス{0}は範囲外ですが、書き込んでもよろしいですか？\r\n範囲外へ書き込むとROMを破壊する危険性があります。\r\n\r\nHINT:データ数を安全に増やすには、リストの下部にある「リストの拡張」ボタンを利用してください。", U.ToHexString8(addr));
                 if (dr == DialogResult.Yes)
                 {//ユーザが書き込むらしいという選択をした.
                     return true;
@@ -5627,7 +5627,7 @@ namespace FEBuilderGBA
                 //書き込みしない.
                 return false;
             }
-            R.ShowStopError("アドレス{0}は範囲外なので、書き込むことができません。\r\n範囲外へ書き込むとROMを破壊する危険性があるため、設定オプションで拒否する設定になっています。\r\nデータ数を安全に増やすには、「リストの拡張」ボタンを利用してください。", U.ToHexString8(addr));
+            R.ShowStopError("アドレス{0}は範囲外なので、書き込むことができません。\r\n範囲外へ書き込むとROMを破壊する危険性があるため、設定オプションで拒否する設定になっています。\r\n\r\nHINT:データ数を安全に増やすには、リストの下部にある「リストの拡張」ボタンを利用してください。", U.ToHexString8(addr));
             return false;
         }
 

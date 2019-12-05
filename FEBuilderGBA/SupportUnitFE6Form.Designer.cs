@@ -37,6 +37,7 @@
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.X_WARNING_OWN_EXPANDS = new FEBuilderGBA.LabelEx();
             this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.L_9_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
@@ -114,7 +115,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.X_WARNING_OWN_EXPANDS = new FEBuilderGBA.LabelEx();
             this.AddressPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel2.SuspendLayout();
@@ -337,6 +337,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(903, 602);
             this.panel2.TabIndex = 30;
+            // 
+            // X_WARNING_OWN_EXPANDS
+            // 
+            this.X_WARNING_OWN_EXPANDS.AutoSize = true;
+            this.X_WARNING_OWN_EXPANDS.ErrorMessage = "";
+            this.X_WARNING_OWN_EXPANDS.Location = new System.Drawing.Point(18, 417);
+            this.X_WARNING_OWN_EXPANDS.Name = "X_WARNING_OWN_EXPANDS";
+            this.X_WARNING_OWN_EXPANDS.Size = new System.Drawing.Size(300, 18);
+            this.X_WARNING_OWN_EXPANDS.TabIndex = 244;
+            this.X_WARNING_OWN_EXPANDS.Text = "このデータは支援テーブルの外にあります。";
+            this.X_WARNING_OWN_EXPANDS.Visible = false;
             // 
             // EXPLAIN
             // 
@@ -1219,6 +1230,7 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
             this.AddressList.Location = new System.Drawing.Point(0, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
@@ -1305,17 +1317,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1188, 30);
             this.panel1.TabIndex = 31;
-            // 
-            // X_WARNING_OWN_EXPANDS
-            // 
-            this.X_WARNING_OWN_EXPANDS.AutoSize = true;
-            this.X_WARNING_OWN_EXPANDS.ErrorMessage = "";
-            this.X_WARNING_OWN_EXPANDS.Location = new System.Drawing.Point(18, 417);
-            this.X_WARNING_OWN_EXPANDS.Name = "X_WARNING_OWN_EXPANDS";
-            this.X_WARNING_OWN_EXPANDS.Size = new System.Drawing.Size(300, 18);
-            this.X_WARNING_OWN_EXPANDS.TabIndex = 244;
-            this.X_WARNING_OWN_EXPANDS.Text = "このデータは支援テーブルの外にあります。";
-            this.X_WARNING_OWN_EXPANDS.Visible = false;
             // 
             // SupportUnitFE6Form
             // 

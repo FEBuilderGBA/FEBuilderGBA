@@ -29,6 +29,12 @@ namespace FEBuilderGBA
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
 
             this.AutoCollectCheckbox.AccessibleDescription = R._("このチェックボックスを有効にしている場合、\r\n初期値、進行値を変更すると、\r\nその相手の初期値、進行値も自動的に調整します。\r\n(ただし、相手の支援データが存在している必要があります。)");
+
+            string[] args = new string[]{};
+            List<Control> controls = InputFormRef.GetAllControls(this);
+            InputFormRef.makeLinkEventHandler("", controls, this.X_SRC_UNIT_VALUE, this.X_SRC_UNIT_NAME, 0, "UNIT", args);
+            InputFormRef.makeLinkEventHandler("", controls, this.X_SRC_UNIT_VALUE, this.X_SRC_UNIT_ICON, 0, "UNITICON", args);
+            InputFormRef.makeJumpEventHandler(this.X_SRC_UNIT_VALUE, this.X_SRC_UNIT_LABEL, "UNIT", args);
         }
         public void JumpToAddr(uint search_addr)
         {
@@ -40,7 +46,7 @@ namespace FEBuilderGBA
                 if (addr == search_addr)
                 {
                     U.SelectedIndexSafety(this.AddressList, i);
-                    X_WARNING_OWN_EXPANDS.Hide();
+                    X_ERROR_OWN_EXPANDS.Hide();
                     AddressListExpandsButton.Enabled = true;
                     return;
                 }
@@ -50,7 +56,7 @@ namespace FEBuilderGBA
             InputFormRef.ReInit(search_addr, 1);
             U.SelectedIndexSafety(this.AddressList, 0);
 
-            X_WARNING_OWN_EXPANDS.Show();
+            X_ERROR_OWN_EXPANDS.Show();
             AddressListExpandsButton.Enabled = false;
         }
 
@@ -100,6 +106,25 @@ namespace FEBuilderGBA
 
         void OnPreWrite(object sender, EventArgs e)
         {
+            AutoUpdatePointer();
+            AutoCollect();
+        }
+        void AutoUpdatePointer()
+        {
+            uint currentAddr = U.toOffset((uint)this.Address.Value);
+            string text = this.AddressList.Text;
+            uint uid = U.atoh(text);
+
+            uint newUID = (uint)X_SRC_UNIT_VALUE.Value;
+            if (uid == newUID)
+            {//以前とuidが変わらないのでボツ
+                return;
+            }
+            UnitForm.ChangeSupportPointer(newUID, currentAddr);
+        }
+
+        void AutoCollect()
+        {
             if (! AutoCollectCheckbox.Checked)
             {
                 return;
@@ -130,6 +155,7 @@ namespace FEBuilderGBA
             AutoCollectByTargetSupport(uid, (uint)this.B4.Value, (uint)this.B11.Value, (uint)this.B18.Value, undodata);
             AutoCollectByTargetSupport(uid, (uint)this.B5.Value, (uint)this.B12.Value, (uint)this.B19.Value, undodata);
             AutoCollectByTargetSupport(uid, (uint)this.B6.Value, (uint)this.B13.Value, (uint)this.B20.Value, undodata);
+            Program.Undo.Push(undodata);
         }
 
         void AutoCollectByTargetSupport(uint uid,uint target_uid, uint init_value, uint add_value, Undo.UndoData undodata)
@@ -386,6 +412,40 @@ namespace FEBuilderGBA
                 //支援人数が正しいかチェック
                 MakeCheckError_Check(errors, support_addr, id);
             }
+        }
+
+        private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //あまり綺麗な方法ではないが、リストの名前の最初にunit idが含まれる.
+            string text = this.AddressList.Text;
+            uint uid = U.atoh(text);
+            X_SRC_UNIT_VALUE.Value = uid;
+        }
+
+        private void X_SRC_UNIT_VALUE_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender != this.X_SRC_UNIT_VALUE)
+            {
+                X_ERROR_DUPLICATE.Hide();
+                return;
+            }
+
+            int currentSelect = this.AddressList.SelectedIndex;
+            uint currentUID = (uint)this.X_SRC_UNIT_VALUE.Value;
+            for (int i = 0; i < this.AddressList.Items.Count; i++)
+            {
+                if (currentSelect == i)
+                {
+                    continue;
+                }
+                uint uid = U.atoh(this.AddressList.Items[i].ToString());
+                if (currentUID == uid)
+                {
+                    X_ERROR_DUPLICATE.Show();
+                    return;
+                }
+            }
+            X_ERROR_DUPLICATE.Hide();
         } 
     }
 }

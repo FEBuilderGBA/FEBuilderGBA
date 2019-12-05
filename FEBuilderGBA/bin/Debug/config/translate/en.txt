@@ -4009,11 +4009,11 @@ You are about to change {0}.\r\nID: 0x00 is data reserved for unset data.\r\nIt 
 :アドレス{0}は範囲外ですが、設定により、警告はしません
 The address {0} is out of range, but it does not warn you depending on the setting
 
-:アドレス{0}は範囲外ですが、書き込んでもよろしいですか？\r\n範囲外へ書き込むとROMを破壊する危険性があります。
-Address {0} is out of range, unable to write.\r\nThe ROM may be bricked if writing outside the range.
+:アドレス{0}は範囲外ですが、書き込んでもよろしいですか？\r\n範囲外へ書き込むとROMを破壊する危険性があります。\r\n\r\nHINT:データ数を安全に増やすには、リストの下部にある「リストの拡張」ボタンを利用してください。
+Address {0} is out of range, unable to write.\r\nThe ROM may be bricked if writing outside the range.\r\n\r\nHINT:To increase the number of data safely, use the "Expand List" button at the bottom of the list.
 
-:アドレス{0}は範囲外なので、書き込むことができません。\r\n範囲外へ書き込むとROMを破壊する危険性があるため、設定オプションで拒否する設定になっています。\r\nデータ数を安全に増やすには、「リストの拡張」ボタンを利用してください。
-Address {0} is out of range and can't be written to.\r\nThe ROM may be bricked if writing outside the range, so it is set to reject with the setting option.\r\nTo securely expand the data, please use the "Extend List" button.
+:アドレス{0}は範囲外なので、書き込むことができません。\r\n範囲外へ書き込むとROMを破壊する危険性があるため、設定オプションで拒否する設定になっています。\r\n\r\nHINT:データ数を安全に増やすには、リストの下部にある「リストの拡張」ボタンを利用してください。
+Address {0} is out of range and can't be written to.\r\nThe ROM may be bricked if writing outside the range, so it is set to reject with the setting option.\r\n\r\nHINT:To increase the number of data safely, use the "Expand List" button at the bottom of the list.
 
 :このデータを消去してもよろしいですか？\r\nこのデータが終端になり、このデータまでが有効なデータとなります。
 Are you sure you want to delete this data? \r\nThis data is terminated, and up to this data is valid data.
@@ -10189,6 +10189,9 @@ B Conversation
 :C会話
 C Conversation
 
+:このデータは支援テーブルの外にあります。
+This data is outside the support table.
+
 :C    51からB0まで\r\nB    B1からF0まで\r\nA    F1以降\r\n\r\n支援の値は、初期値から始まり、キャラが隣接していると進行度に応じて増加していきます。\r\n一定数の支援値がたまると、支援コマンドが表示され、支援会話をすることで次のレベルに進みます。
 Unranked    0 to 50\r\nC    51 to B0\r\nB    B1 to F0\r\nA    F1 and up\r\n\r\nEach support partner begins at the "initial value".\r\nSupport level increases from there when partners are near based on "Growth".\r\nWhen support points exceed rank thresholds, a command and conversation will occur.
 
@@ -10228,9 +10231,6 @@ Support Partner 4
 :支援相手3
 Support Partner 3
 
-:このデータは支援テーブルの外にあります。
-This data is outside the support table.
-
 :このチェックボックスを有効にしている場合、\r\n初期値、進行値を変更すると、\r\nその相手の初期値、進行値も自動的に調整します。\r\n(ただし、相手の支援データが存在している必要があります。)
 When this check box is enabled,\r\nchanging the initial and progress value automatically adjusts\r\ninitial and progress value of the other party.\r\n(However, the other party's support data must be present.).
 
@@ -10245,6 +10245,12 @@ Assistance to the unit ({0}), but support to the unit ({1}) seems to be support 
 
 :ユニット({0})の支援人数が正しくありません。支援人数が{1}人なのに、実際のデータには、{2}人の支援があります。
 The support amount of the unit ({0}) is incorrect.There are {2} people 's support in actual data, although the number of people to support is {1}.
+
+:既に別のアドレスで定義されています
+Already defined with a different address.
+
+:支援元
+Src Support
 
 :相手の初期値も自動調整する
 Automatically adjust the other party's initial value
@@ -11628,9 +11634,6 @@ Unable to read the required configuration file.\r\nThe setting file may be corru
 
 :ファイルに書き込めません。\r\n{0}\r\n{1}
 Unable to write to file.\r\n{0}.\r\n{1}.
-
-:SSL証明書({0})({1})は信用されていません
-The SSL certificate ({0}) ({1}) is not trusted
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
