@@ -10253,7 +10253,7 @@ Already defined with a different address.
 Src Support
 
 :相手の初期値も自動調整する
-Automatically adjust the other party's initial value
+Automatically adjust other patner's value
 
 :誕生月
 Birth month.
