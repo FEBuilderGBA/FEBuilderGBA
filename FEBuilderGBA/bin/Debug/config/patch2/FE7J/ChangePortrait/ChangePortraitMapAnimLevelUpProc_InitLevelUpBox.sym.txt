@@ -1,0 +1,9 @@
+Table=$7C
+Loop=$0A
+load_defualt=$64
+CheckClass=$20
+CheckMAP=$32
+CheckEdition=$40
+CheckFlag=$4E
+Found=$5E
+Exit=$68

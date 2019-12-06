@@ -39,3 +39,5 @@ A3294=MiniMapProc	{U}	//08CE3B6C
 A3F08=MiniMapProc	{J}	//08DAD29C
 81CB0=HelpTextBubble	{U}	//CC204C
 82A10=HelpTextBubble	{J}	//D8A610
+750C8=MapAnimLevelUp	{J}	//D65D94
+748CC=MapAnimLevelUp	{U}	//C9DE54

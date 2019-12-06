@@ -18,6 +18,11 @@ ORG $69378		//FE7U
 jumpToHack(ChangePortraitPormotion)
 POP
 
+PUSH
+ORG $74B94		//FE7U
+jumpToHack(ChangePortraitMapAnimLevelUpProc_InitLevelUpBox)
+POP
+
 
 ALIGN 4
 ChangePortraitStatus:
@@ -27,6 +32,11 @@ POIN ChangePortrait_Table
 ALIGN 4
 ChangePortraitMiniMug:
 #incbin "ChangePortraitMiniMug.dmp"
+POIN ChangePortrait_Table
+
+ALIGN 4
+ChangePortraitMapAnimLevelUpProc_InitLevelUpBox:
+#incbin "ChangePortraitMapAnimLevelUpProc_InitLevelUpBox.dmp"
 POIN ChangePortrait_Table
 
 ALIGN 4
