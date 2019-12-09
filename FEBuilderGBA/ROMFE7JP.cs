@@ -242,7 +242,7 @@ namespace FEBuilderGBA
         public uint eventcond_talk_size() { return 16; } //イベント条件 話す会話条件のサイズ FE6->12 FE7->16 FE8->16
         public uint oping_event_pointer() { return 0xd68514; }
         public uint ending1_event_pointer() { return 0x1314C; }
-        public uint ending2_event_pointer() { return 0x1315C; }
+        public uint ending2_event_pointer() { return 0x13194; }
         public uint workmemory_player_units_address() { return 0x0202BD4C; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_enemy_units_address() { return 0x0202CEBC; }    //ワークメモリ PLAYER UNIT
         public uint workmemory_npc_units_address() { return 0x0202DCCC; }    //ワークメモリ PLAYER UNIT

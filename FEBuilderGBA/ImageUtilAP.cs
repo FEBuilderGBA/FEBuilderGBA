@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
 using System.Text;
+using System.Drawing;
 
 namespace FEBuilderGBA
 {
@@ -19,12 +20,6 @@ namespace FEBuilderGBA
             public uint OAM0;
             public uint OAM1;
             public uint OAM2;
-
-            public uint alpha;
-            public uint xMag;
-            public uint yMag;
-
-            public uint TileGfx;
         }
 
         class AnimeArr
@@ -36,9 +31,101 @@ namespace FEBuilderGBA
         class FrameArr
         {
             public bool UseRorate;
+            public uint CountRorate;
             public List<Frame> Frames;
         }
         List<FrameArr> FrameArray = new List<FrameArr>();
+
+        public class OAMParse
+        {
+            public bool v_flipped;  // 垂直に反転する
+            public bool h_flipped;  // 水平に反転する
+            public int width;       // コピーするシートにあるオブジェクト パーツの幅
+            public int height;      // コピーするシートにあるオブジェクト パーツの高さ
+            public int image_x;     // 画面X
+            public int image_y;     // 画面Y
+            public uint tile;       // シート番号
+            public int paletteShift; //利用するパレット0-3
+            public OAMFlag oamFlag;
+        };
+        public enum OAMFlag
+        {
+            OAMFlag_None = 0,
+            OAMFlag_Semi_Transparent = 1,
+            OAMFlag_Obj_Window = 2,
+            OAMFlag_Unk3 = 3,
+        }
+
+        static Size[][] SharpTable = new Size[][]{
+             new Size[]{ new Size(1,1),new Size(2,2),new Size(4,4),new Size(8,8) } //square
+            ,new Size[]{ new Size(2,1),new Size(4,1),new Size(4,2),new Size(8,4) } //horizontal
+            ,new Size[]{ new Size(1,2),new Size(1,4),new Size(2,4),new Size(4,8) } //vertical
+            ,new Size[]{ new Size(0,0),new Size(0,0),new Size(0,0),new Size(0,0) } //invalid
+        };
+
+        static OAMParse FrameToDump(Frame f)
+        {//このルーチンは、stan の apdump.pyの成果を参考にしました。
+
+            OAMParse p = new OAMParse();
+
+            int sharp1 = (int)((f.OAM0 >> 14) & 0x3);
+            int sharp2 = (int)((f.OAM1 >> 14) & 0x3);
+            Size s = SharpTable[sharp1][sharp2];
+            p.width = s.Width;
+            p.height = s.Height;
+
+            p.image_x = (int)(f.OAM1 & 0x1FF);
+            p.image_y = (int)(f.OAM0 & 0x0FF);
+
+            if ((p.image_x & 0x100) == 0x100)
+            {
+                p.image_x = (p.image_x & 0xFF) - 256;
+            }
+            if ((p.image_y & 0x80) == 0x80)
+            {
+                p.image_y = (p.image_y & 0x7F) - 128;
+            }
+            p.tile = (f.OAM2 & 0x3FF);
+            p.paletteShift = (int)((f.OAM2 & 0xF000) >> 12);
+            p.oamFlag = (OAMFlag)((f.OAM0 & 0x0C00) >> 10);
+            p.v_flipped = (f.OAM1 & 0x2000) == 0x2000;	// 垂直に反転する
+            p.h_flipped = (f.OAM1 & 0x1000) == 0x1000;	// 水平に反転する
+
+            return p;
+        }
+        public Bitmap DrawFrame(Bitmap ret , int index, int originX, int originY, Bitmap parts)
+        {
+            if (index >= FrameArray.Count)
+            {
+                return ret;
+            }
+
+            int graphicsWidth = parts.Width / 8;
+
+            FrameArr fa = FrameArray[index];
+            for (int i = 0; i < fa.Frames.Count; i++)
+            {
+                Frame f = fa.Frames[i];
+                OAMParse t = FrameToDump(f);
+
+                int src = (int)(t.tile);
+                int src_x = (src % graphicsWidth) * 8;
+                int src_y = (src / graphicsWidth) * 8;
+
+                ImageUtil.BitBlt(ret
+                    , originX + t.image_x, originY + t.image_y
+                    , t.width * 8
+                    , t.height * 8
+                    , parts
+                    , src_x, src_y
+                    , t.paletteShift
+                    , 0
+                    , t.v_flipped
+                    , t.h_flipped
+                );
+            }
+            return ret;
+        }
 
         uint BaseAddr;
         uint Length;
@@ -135,6 +222,17 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void TEST_FE8J_APParseTest_WordmapBorder()
+        {
+            if (Program.ROM.RomInfo.VersionToFilename() != "FE8J")
+            {
+                return;
+            }
+
+            uint ap = 0xB2449C;
+            ImageUtilAP p = new ImageUtilAP();
+            p.Parse(ap);
+        }
         
         AnimeArr ParseAnime(uint addr)
         {
@@ -152,11 +250,11 @@ namespace FEBuilderGBA
                 Anime a = new Anime();
                 a.Wait = Program.ROM.u16(addr + 0);
                 a.Frame = Program.ROM.u16(addr + 2);
+                arr.Animes.Add(a);
                 if (a.Wait == 0)
                 {//アニメ終端
                     break;
                 }
-                arr.Animes.Add(a);
             }
             addr += 4;
             UpdateLength(addr);
@@ -178,24 +276,10 @@ namespace FEBuilderGBA
                     this.ErrorMessage = R.Error("APのデータ({0})が壊れています。OAM回転データの個数がありえない数です({1})。", U.To0xHexString(this.BaseAddr) , rotateCount );
                     return null;
                 }
+                count = rotateCount;
 
                 arr.UseRorate = true;
-                for (int i = 0; i < rotateCount; addr += 6, i++)
-                {
-                    if (! U.isSafetyOffset(addr+ 6 - 1))
-                    {//おかしなデータ
-                        this.ErrorMessage = R.Error("APのデータ({0})が壊れています。OAM回転をスキャン中に、ROM終端を超えました。({1}@{2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr) , i);
-                        return null;
-                    }
-
-                    Frame f = new Frame();
-                    f.alpha = Program.ROM.u16(addr + 0);
-                    f.xMag = Program.ROM.u16(addr + 2);
-                    f.yMag = Program.ROM.u16(addr + 4);
-                    arr.Frames.Add(f);
-                }
-                count = Program.ROM.u16(addr);
-                addr += 2;
+                arr.CountRorate = rotateCount;
             }
 
             if (count > 0x100)
@@ -212,34 +296,11 @@ namespace FEBuilderGBA
                     return null;
                 }
 
-                if (i < rotateCount)
-                {//既に回転データを入れている場合
-                    Frame f = arr.Frames[i];
-                    f.OAM0 = Program.ROM.u16(addr + 0);
-                    f.OAM1 = Program.ROM.u16(addr + 2);
-                    f.OAM2 = Program.ROM.u16(addr + 4);
-                }
-                else
-                {//回転データがない場合、通常のデータを追加.
-                    Frame f = new Frame();
-                    f.OAM0 = Program.ROM.u16(addr + 0);
-                    f.OAM1 = Program.ROM.u16(addr + 2);
-                    f.OAM2 = Program.ROM.u16(addr + 4);
-                    arr.Frames.Add(f);
-                }
-            }
-
-            //Tile
-            for (int i = 0; i < count; addr += 2, i++)
-            {
-                if (!U.isSafetyOffset(addr + 2 - 1))
-                {//おかしなデータ
-                    this.ErrorMessage = R.Error("APのデータ({0})が壊れています。Tileをスキャン中に、ROM終端を超えました。({1} @ {2})", U.To0xHexString(this.BaseAddr), U.To0xHexString(addr), i);
-                    return null;
-                }
-
-                Frame f = arr.Frames[i];
-                f.TileGfx = Program.ROM.u16(addr + 0);
+                Frame f = new Frame();
+                f.OAM0 = Program.ROM.u16(addr + 0);
+                f.OAM1 = Program.ROM.u16(addr + 2);
+                f.OAM2 = Program.ROM.u16(addr + 4);
+                arr.Frames.Add(f);
             }
 
             UpdateLength(addr);
@@ -258,6 +319,7 @@ namespace FEBuilderGBA
                     , tag));
             }
         }
+
 
         //APのサイズを自動的に計算します.
         public static uint CalcAPLength(uint addr)

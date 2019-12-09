@@ -2609,6 +2609,11 @@ namespace FEBuilderGBA
                 return null;
             }
 
+            return LoadAndConvertDecolorUILow(imagefilename, paletteHint, width, height, useTSA, maxPalette, isReserve1StPalette);
+        }
+
+        public static Bitmap LoadAndConvertDecolorUILow(string imagefilename, Bitmap paletteHint, int width, int height, bool useTSA, int maxPalette, bool isReserve1StPalette = true)
+        {
             //パレットで開いてみる
             string errormessage;
             Bitmap bitmap = ImageUtil.OpenBitmap(imagefilename, paletteHint, out errormessage);
@@ -2633,8 +2638,7 @@ namespace FEBuilderGBA
             }
             return bitmap;
         }
-
-        public static Bitmap ConvertDecolorUI(Bitmap bitmap,int width,int height, bool useTSA,int maxPalette, bool isReserve1StPalette = true)
+        public static Bitmap ConvertDecolorUI(Bitmap bitmap, int width, int height, bool useTSA, int maxPalette, bool isReserve1StPalette = true)
         {
             bool isFullColor = (ImageUtil.IsFullColorBitmap(bitmap)) ;
             int yohaku = 0;

@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         public const int SEAT_TILE_HEIGHT = 64 / 8;
 
         public const int SEAT_MAGIC_TILE_HEIGHT = 32 / 8; //魔法だと使えるタイル数が半分になる.
+        public const int SEAT_BORDERAP_TILE_HEIGHT = 40 / 8; //国境AP.
 
         public const int SCREEN_TILE_WIDTH = 248 / 8;
         public const int SCREEN_TILE_HEIGHT = 160 / 8;
@@ -574,6 +575,12 @@ namespace FEBuilderGBA
                 this.IsMagicOAM = isMagicOAM;
             }
 
+            bool IsBorderAPOAM; //国境AP用のOAMデータ
+            public void SetIsBorderAPOAM(bool isBorderAPOAM)
+            {
+                this.IsBorderAPOAM = isBorderAPOAM;
+            }
+
             bool IsMultiPaletteOAM; //複数のパレットを許可するOAMかどうか
             public void SetIsMultiPaletteOAM(bool isMultiPaletteOAM)
             {
@@ -790,6 +797,10 @@ namespace FEBuilderGBA
                 bitmap.Dispose();
                 return r;
             }
+            public animedata MakeBorderAP(string imagefilename)
+            {
+                return MakeBattleAnime(imagefilename,isMode2: false);
+            }
             void InitSeat(Bitmap bitmap)
             {
                 //初手の場合、シートと、処理済み部分を初期化する.
@@ -797,6 +808,11 @@ namespace FEBuilderGBA
                 {
                     this.SeatBitmap = ImageUtil.Blank(SEAT_TILE_WIDTH * 8, SEAT_MAGIC_TILE_HEIGHT * 8, bitmap);
                     this.SeatUsingFlags = new bool[SEAT_TILE_WIDTH * SEAT_MAGIC_TILE_HEIGHT];
+                }
+                else if (this.IsBorderAPOAM)
+                {
+                    this.SeatBitmap = ImageUtil.Blank(SEAT_TILE_WIDTH * 8, SEAT_BORDERAP_TILE_HEIGHT * 8, bitmap);
+                    this.SeatUsingFlags = new bool[SEAT_TILE_WIDTH * SEAT_BORDERAP_TILE_HEIGHT];
                 }
                 else
                 {
@@ -1341,6 +1357,11 @@ namespace FEBuilderGBA
             {
                 Debug.Assert(this.IsMagicOAM == true);
                 return GetLeftToRightOAM(this.RightToLeftOAMBG);
+            }
+
+            public uint GetOAMByteCount()
+            {
+                return (uint)this.RightToLeftOAM.Count;
             }
 
             

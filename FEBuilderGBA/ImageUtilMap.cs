@@ -936,5 +936,45 @@ namespace FEBuilderGBA
 15,		//89
 15,		//90
 };
+        public static Bitmap DrawWorldMapEvent()
+        {
+            return DrawWorldMapEvent(
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_image_pointer()) , 
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_palette_pointer()) , 
+                Program.ROM.p32(Program.ROM.RomInfo.worldmap_event_tsa_pointer())
+                ) ; 
+        }
+
+        //イベント用のワールドマップを描画する
+        public static Bitmap DrawWorldMapEvent(
+              uint image
+            , uint palette     //通常パレット
+            , uint tsa  //TSA
+            )
+        {
+            image = U.toOffset(image);
+            palette = U.toOffset(palette);
+            tsa = U.toOffset(tsa);
+            if (!U.isSafetyOffset(image))
+            {
+                return ImageUtil.BlankDummy();
+            }
+            if (!U.isSafetyOffset(palette))
+            {
+                return ImageUtil.BlankDummy();
+            }
+            if (!U.isSafetyOffset(tsa))
+            {
+                return ImageUtil.BlankDummy();
+            }
+            byte[] imageUZ = LZ77.decompress(Program.ROM.Data, image);
+            byte[] tsaUZ = LZ77.decompress(Program.ROM.Data, tsa);
+
+            return ImageUtil.ByteToImage16TileHeaderTSA(256, 160
+                , imageUZ, 0
+                , Program.ROM.Data, (int)palette
+                , tsaUZ, 0
+                );
+        }
     }
 }

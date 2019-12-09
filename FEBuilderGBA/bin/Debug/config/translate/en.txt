@@ -3775,17 +3775,14 @@ AP data ({0}) is corrupted.Exceeded ROM end while scanning Anime.({1} @ {2}).
 :APのデータ({0})が壊れています。OAM回転データの個数がありえない数です({1})。
 AP data ({0}) is corrupted.The number of OAM rotation data is unlikely ({1}).
 
-:APのデータ({0})が壊れています。OAM回転をスキャン中に、ROM終端を超えました。({1}@{2})
-AP data ({0}) is corrupted.Exceeded ROM end while scanning OAM rotation.({1} @ {2}).
-
 :APのデータ({0})が壊れています。データの個数がありえない数です({1})。
 AP data ({0}) is corrupted.The number of data is unlikely number ({1}).
 
 :APのデータ({0})が壊れています。APをスキャン中に、ROM終端を超えました。({1} @ {2})
 AP data ({0}) is corrupted.Ended ROM end while scanning AP.({1} @ {2}).
 
-:APのデータ({0})が壊れています。Tileをスキャン中に、ROM終端を超えました。({1} @ {2})
-AP data ({0}) is corrupted.Ended ROM end while scanning Tile.({1} @ {2}).
+:画像が大きすぎて、256x160のシートに入りきりませんでした
+The image was too big to fit in the 256x160 sheet.
 
 :CSA_Creatorにインポートする時には各行の#以降を削除してください。
 When importing to CSA_Creator delete # and after each line.
@@ -11956,6 +11953,9 @@ For Events
 :12分割画像
 12 Divided Images
 
+:現在調整中です
+Currently adjusting.
+
 :拠点アイコン
 World Map Node Icon
 
@@ -11991,6 +11991,9 @@ Dark Palette
 
 :国境
 Border
+
+:描画例
+Drawing example.
 
 :右端のパネルは消しゴムです。\r\n道を消す場合は消しゴムを選択して、上書きしてください。
 The rightmost column is an eraser.\r\nSelect and erase over a road to remove it.

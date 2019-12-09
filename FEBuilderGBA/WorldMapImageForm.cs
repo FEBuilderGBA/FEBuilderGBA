@@ -429,32 +429,38 @@ namespace FEBuilderGBA
 
         }
 
+        void DrawBorderImages()
+        {
+            Bitmap parts = ImageUtilBorderAP.DrawBorderBitmap((uint)BORDER_P0.Value);
+            BORDER_X_BG_PIC.Image = parts;
+            if (parts == null)
+            {
+                X_BORDER_DRAW_SAMPLE.Image = null;
+                return;
+            }
+
+            Bitmap retScreen = ImageUtilBorderAP.DrawBorderImages(parts, (uint)BORDER_P4.Value, (int)BORDER_W8.Value, (int)BORDER_W10.Value);
+            X_BORDER_DRAW_SAMPLE.Image = retScreen;
+        }
+
+
         private void BORDER_AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BORDER_X_BG_PIC.Image = DrawBorderBitmap((uint)BORDER_P0.Value);
-        }
-        Bitmap DrawBorderBitmap(uint img)
-        {
-            byte[] bin = LZ77.decompress(Program.ROM.Data, U.toOffset(img));
-            uint pal = Program.ROM.p32(Program.ROM.RomInfo.worldmap_county_border_palette_pointer());
-
-            int height = ImageUtil.CalcHeight(32 * 8, bin.Length);
-            if (height <= 0)
-            {
-                return ImageUtil.Blank(32*8,4 * 8);
-            }
-            return ImageUtil.ByteToImage16Tile(32 * 8, height
-                , bin, 0
-                , Program.ROM.Data, (int)pal);
+            DrawBorderImages();
         }
         private void BORDER_ExportButton_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = DrawBorderBitmap((uint)BORDER_P0.Value);
-            ImageFormRef.ExportImage(this, bitmap, Border_InputFormRef.MakeSaveImageFilename());
+            string filename = Border_InputFormRef.MakeSaveImageFilename();
+            ImageUtilBorderAP.SaveAPImages(filename, (uint)BORDER_P0.Value, (uint)BORDER_P4.Value, (int)BORDER_W8.Value, (int)BORDER_W10.Value);
         }
+
+
 
         private void BORDER_ImportButton_Click(object sender, EventArgs e)
         {
+            R.ShowStopError("現在調整中です");
+            return;
+/*
             int width = 8 * 32; //256
             int height = 8 * 4; //32
             int palette_count = 1;
@@ -504,6 +510,25 @@ namespace FEBuilderGBA
 
             //ポインタの書き込み
             this.BORDER_WriteButton.PerformClick();
+*/
+        }
+
+        private void BORDER_W8_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender != BORDER_W8)
+            {
+                return;
+            }
+            DrawBorderImages();
+        }
+
+        private void BORDER_W10_ValueChanged(object sender, EventArgs e)
+        {
+            if (sender != BORDER_W10)
+            {
+                return;
+            }
+            DrawBorderImages();
         }
 
     }

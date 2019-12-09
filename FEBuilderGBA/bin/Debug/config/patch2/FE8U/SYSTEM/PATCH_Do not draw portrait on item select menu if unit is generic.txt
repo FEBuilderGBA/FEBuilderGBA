@@ -2,6 +2,8 @@ NAME=一般兵の場合にはアイテム選択画面に顔画像を描画しな
 NAME.en=Don't draw portrait on item select menu if unit is generic
 NAME.zh=Don't draw portrait on item select menu if unit is generic
 
+INFO=This patch changes the Item Select Menu.\r\nOld code: Check if unit's class matches 0x51 Phantom. If true, do not draw portrait\r\nNew code: Check if unit's portrait (unit ROM data +0x06) equals 0. If true, do not draw portrait.
+
 //アドレスパッチとして実装します
 TYPE=SWITCH
 TAG=#ENGINE
