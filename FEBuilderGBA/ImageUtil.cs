@@ -2353,6 +2353,8 @@ namespace FEBuilderGBA
             int height = rect.Height - needrect.Height;
             if (width < 0 || height < 0)
             {
+                bitmap.UnlockBits(bmpData);
+                need.UnlockBits(needbmpData);
                 out_point = new Point();
                 return false;
             }

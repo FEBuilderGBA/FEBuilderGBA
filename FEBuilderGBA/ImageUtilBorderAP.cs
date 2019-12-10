@@ -106,9 +106,11 @@ namespace FEBuilderGBA
                 R.ShowStopError("ファイルがありません。\r\nファイル名:{0}", name_filename);
                 return;
             }
+            string basedir = Path.GetDirectoryName(imagefilename);
 
             ImageUtilOAM.ImportOAM oam = new ImageUtilOAM.ImportOAM();
             oam.SetIsBorderAPOAM(true);
+            oam.SetBaseDir(basedir);
             oam.MakeBorderAP(imagefilename);
             uint oam1st = oam.GetOAMByteCount();
             oam.MakeBorderAP(name_filename);
@@ -165,6 +167,10 @@ namespace FEBuilderGBA
                 oam0 |= (uint)(image_y & 0x0FF);
 
                 oam2 |= (tile & 0x3FF);
+
+                U.write_u32(ret, (uint)i, oam0);
+                U.write_u32(ret, (uint)i + 4, oam1);
+                U.write_u32(ret, (uint)i + 8, oam2);
             }
             return ret;
         }

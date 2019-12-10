@@ -458,8 +458,9 @@ namespace FEBuilderGBA
 
         private void BORDER_ImportButton_Click(object sender, EventArgs e)
         {
-            R.ShowStopError("現在調整中です");
-            return;
+            R.ShowStopError("現在作成中です");
+//            ImageUtilBorderAP.ImportBorder(this);
+//            return;
 /*
             int width = 8 * 32; //256
             int height = 8 * 4; //32

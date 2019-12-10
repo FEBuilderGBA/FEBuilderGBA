@@ -1,0 +1,2 @@
+40050D000000000040050100010100002107000040050100000200002107000040050100FFFFFFFF21070000	//Set event battle From Enemy Attack->Counter[Damage by attacker:1][method of attacker:0x0 Hit][Damage by defender:2][method of defender:0x0 Hit]
+403F690043000000	//Execute event battle[Attacker:0x69 グレン][Defender:0x43 ヴァルター][Attacker's Weapon 00=currently equipped weapon:0x0 ]

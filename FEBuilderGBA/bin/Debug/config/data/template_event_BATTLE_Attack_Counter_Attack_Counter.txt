@@ -1,0 +1,2 @@
+40050D000000000040050100000100002107000040050100010200002107000040050100020300002107000040050100010400002107000040050100FFFFFFFF21070000	//Set event battle Attack->Counter->Attack->Counter[Damage by attacker:1][method of attacker:0x0 Hit][Damage by defender:2][method of defender:0x0 Hit][Damage by attacker 2:3][method of attacker 2:0x0 Hit][Damage by defender 2:4][method of defender2:0x0 Hit]
+403F020045000000	//Execute event battle[Attacker:0x2 ゼト][Defender:0x45 ヴァルター][Attacker's Weapon 00=currently equipped weapon:0x0 ]

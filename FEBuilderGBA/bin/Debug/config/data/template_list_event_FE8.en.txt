@@ -20,7 +20,12 @@ template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show the frame on the unit to display 
 template_event_MOVEPOS_AND_FRAME_FE8.txt	Move the camera to the coordinates, Show the frame in the coordinates to display the conversation
 template_event_TalkEventItem_FE8.txt	Talk and make items
 template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
-template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	Two critical attacks at the battle event and destroy enemy
+template_event_BATTLE_Attack_Counter.txt	BattleEvent Attack->Counter
+template_event_BATTLE_Attack_Counter_Attack.txt	BattleEvent Attack->Counter->Attack
+template_event_BATTLE_Attack_Counter_Attack_Counter.txt	BattleEvent Attack->Counter->Attack->Counter
+template_event_BATTLE_FromEnemy_Attack_Counter.txt	BattleEvent From Enemy Attack->Counter
+template_event_BATTLE_FromEnemy_Attack_Counter_Attack.txt	BattleEvent From Enemy Attack->Counter->Attack
+template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Two critical attacks at destroy enemy
 template_event_WarpIN_FE8.txt	Make a unit appear in warp
 template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
 template_event_GAMEOVER_FE8.txt	Call the game over
