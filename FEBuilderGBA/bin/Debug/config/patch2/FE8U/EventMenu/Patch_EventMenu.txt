@@ -13,9 +13,9 @@ BIN:$FREEAREA:2=CallEventMenu.dmp
 
 AUTHOR=Stan,circleseverywhere https://feuniverse.us/t/fe8u-doc-guide-analysing-extending-mimicking-the-lord-split-menu/2878
 
-EVENTSCRIPT:1=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分岐メニュー [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC
-EVENTSCRIPT:1.en=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	CallEventMenu [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC
+EVENTSCRIPT:1=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分岐メニュー [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	分岐メニューを表示(Split Menu)
+EVENTSCRIPT:1.en=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	CallEventMenu [XXXXXXXX:POINTER_MENUEXTENDS:Menu]	@STOREC	Display Split Menu
 INFO.en=Displays a branching menu that will be displayed when branching to caricino and glado.
 NAME.zh=分支菜单(Install)
 INFO.zh=显示分支到caricino和glado时将显示的分支菜单。
-EVENTSCRIPT:1.zh=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分支菜单[XXXXXXXX:POINTER_MENUEXTENDS:菜单]	@STOREC
+EVENTSCRIPT:1.zh=40050200XXXXXXXX400D0000{$L1:CallEventMenu.dmp}	分支菜单[XXXXXXXX:POINTER_MENUEXTENDS:菜单]	@STOREC	Display Split Menu

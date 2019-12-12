@@ -130,6 +130,7 @@ namespace FEBuilderGBA
                 return;
             }
             byte[] apOAM = BattleOAMToAPOAM(battleAOM);
+
         }
         //戦闘アニメの12バイトOAMデータを、APの12バイトOAMに変換します
         static byte[] BattleOAMToAPOAM(byte[] battle)

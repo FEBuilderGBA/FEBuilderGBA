@@ -2120,7 +2120,7 @@ Turn events run upon "Turn Start" or "Turn End".
 5=Hector Hard Mode
 
 :01=常時条件
-01=Flag Conditional
+01=Flag Conditional(AFEV)
 
 :0B=範囲条件
 0B=Range Condition
