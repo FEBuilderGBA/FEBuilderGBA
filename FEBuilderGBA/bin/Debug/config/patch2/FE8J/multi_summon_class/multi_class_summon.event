@@ -7,6 +7,14 @@
 #define jumpToHack_r1(offset) "BYTE 0x00 0x49 0x08 0x47; POIN (offset|0x1)"
 
 PUSH
+//Phantom Check ユニット死亡時
+ORG 0x18120
+#incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
+//ldrb r0, [r2, #0xF] @ramunit->status4
+//lsr  r0,#0x7
+//cmp r0,#0x01
+
+
 //ClearTemporaryUnits
 ORG 0x18BEE
 #incbin "check_summonflag_r2_r0.dmp"	//HINT=ASM
