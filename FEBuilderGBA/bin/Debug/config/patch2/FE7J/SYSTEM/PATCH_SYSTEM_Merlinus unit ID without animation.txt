@@ -1,0 +1,20 @@
+NAME=戦闘アニメを表示しない輸送隊ユニット
+NAME.en=Merlinus unit ID without battle animation
+
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x52F52 0x52F5C
+ADDRESS_TYPE=UNIT
+
+AUTHOR=Gryz https://feuniverse.us/t/merlinus-animations/1037/3
+INFO=戦闘アニメを表示しない輸送隊ユニットIDを指定します。\r\nもし、戦闘アニメを表示したい場合は、0xFFなどに設定してください。
+INFO.en=Specify the Supply unit ID that does not display battle animation.\r\nIf you want to display battle animation, set it to 0xFF.
+
+HINT=輸送体
+HINT.en=convoy,supply,transporter,merlinus,wagon
+
+HINT.en=convoy,supply,transporter,merlinus,wagon
+NAME.zh=不显示战斗动画的护卫部队。
+INFO.zh=指定不显示战斗动画的车队单位ID。\r\n如果要显示战斗动画，请将其设置为0xFF。

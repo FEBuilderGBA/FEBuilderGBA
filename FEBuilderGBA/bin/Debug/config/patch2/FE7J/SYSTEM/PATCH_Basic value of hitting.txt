@@ -6,9 +6,10 @@ NAME.zh=杖命中的基础值
 TYPE=ADDR
 TAG=#ENGINE
 
-ADDRESS=0x002cd30
+ADDRESS=0x002AB64
 HEX=false
 
 INFO=杖の命中率の基礎値となる値を定義します。
 INFO.en=Define the value that will be the base value of the staff's hit rate.
 INFO.zh=定义将成为魔杖命中率基值的值。\r\n它用于狂暴，睡眠，沉默等。
+AUTHOR=Leonarth https://feuniverse.us/t/fe7-modifying-status-staff-accuracy/6757

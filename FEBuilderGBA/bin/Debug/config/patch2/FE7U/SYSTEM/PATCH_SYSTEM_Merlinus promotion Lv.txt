@@ -1,0 +1,20 @@
+NAME=輸送隊のマリナスがCCするLV
+NAME.en=Merlinus promotion Lv
+
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x8F082
+HEX=FALSE
+
+AUTHOR=Gryz https://feuniverse.us/t/merlinus-animations/1037/5
+INFO=輸送隊のマリナスがCCするレベルを設定します。\r\nこのレベルを超えると自動的にCCします。
+INFO.en=Set the level at which Merlinus of Supply is Promotion.\r\nHe will automatically promotion when this level is exceeded.
+
+HINT=輸送体
+HINT.en=convoy,supply,transporter,merlinus,wagon
+
+HINT.en=convoy,supply,transporter,merlinus,wagon
+NAME.zh=护航码头CC是CC的LV。
+INFO.zh=设置车队码头的CC水平。\r\n超过此级别时，将自动执行CC。
