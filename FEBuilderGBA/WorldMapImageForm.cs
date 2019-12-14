@@ -458,9 +458,28 @@ namespace FEBuilderGBA
 
         private void BORDER_ImportButton_Click(object sender, EventArgs e)
         {
-//            R.ShowStopError("現在作成中です");
-            ImageUtilBorderAP.ImportBorder(this);
+#if !DEBUG
+            R.ShowStopError("現在作成中です");
+            return ;
+#else
+            byte[] image ;
+            byte[] oam ;
+            bool r = ImageUtilBorderAP.ImportBorder(this, out image , out oam);
+            if (!r)
+            {
+                return;
+            }
+
+            //画像等データの書き込み
+            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+            this.Border_InputFormRef.WriteImageData(this.BORDER_P0, image, true, undodata);
+            this.Border_InputFormRef.WriteImageData(this.BORDER_P4, oam, false, undodata);
+            Program.Undo.Push(undodata);
+
+            //ポインタの書き込み
+            this.BORDER_WriteButton.PerformClick();
             return;
+#endif
 /*
             int width = 8 * 32; //256
             int height = 8 * 4; //32

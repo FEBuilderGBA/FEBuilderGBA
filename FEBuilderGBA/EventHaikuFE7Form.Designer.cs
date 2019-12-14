@@ -285,7 +285,7 @@
             // 
             this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(513, -30);
+            this.L_0_UNITICON.Location = new System.Drawing.Point(513, 4);
             this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_UNITICON.Name = "L_0_UNITICON";
             this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);

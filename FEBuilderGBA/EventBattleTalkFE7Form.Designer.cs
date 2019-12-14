@@ -408,7 +408,7 @@
             // J_3
             // 
             this.J_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_3.Location = new System.Drawing.Point(4, 114);
+            this.J_3.Location = new System.Drawing.Point(2, 114);
             this.J_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_3.Name = "J_3";
             this.J_3.Size = new System.Drawing.Size(150, 32);
@@ -443,7 +443,7 @@
             // 
             this.L_1_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_1_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_1_UNITICON.Location = new System.Drawing.Point(426, -70);
+            this.L_1_UNITICON.Location = new System.Drawing.Point(426, 43);
             this.L_1_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_1_UNITICON.Name = "L_1_UNITICON";
             this.L_1_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -455,7 +455,7 @@
             // 
             this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(426, -105);
+            this.L_0_UNITICON.Location = new System.Drawing.Point(426, 8);
             this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.L_0_UNITICON.Name = "L_0_UNITICON";
             this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
@@ -699,7 +699,7 @@
             // J_2_MAP
             // 
             this.J_2_MAP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_2_MAP.Location = new System.Drawing.Point(4, 80);
+            this.J_2_MAP.Location = new System.Drawing.Point(2, 80);
             this.J_2_MAP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_2_MAP.Name = "J_2_MAP";
             this.J_2_MAP.Size = new System.Drawing.Size(150, 32);
@@ -710,7 +710,7 @@
             // J_1_UNIT
             // 
             this.J_1_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_1_UNIT.Location = new System.Drawing.Point(4, 44);
+            this.J_1_UNIT.Location = new System.Drawing.Point(2, 44);
             this.J_1_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_1_UNIT.Name = "J_1_UNIT";
             this.J_1_UNIT.Size = new System.Drawing.Size(150, 32);
@@ -721,7 +721,7 @@
             // J_0_UNIT
             // 
             this.J_0_UNIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J_0_UNIT.Location = new System.Drawing.Point(4, 10);
+            this.J_0_UNIT.Location = new System.Drawing.Point(2, 10);
             this.J_0_UNIT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.J_0_UNIT.Name = "J_0_UNIT";
             this.J_0_UNIT.Size = new System.Drawing.Size(150, 32);
@@ -754,7 +754,7 @@
             // LabelFilter
             // 
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, 1);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, 0);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
             this.LabelFilter.Size = new System.Drawing.Size(435, 26);

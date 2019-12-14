@@ -1,0 +1,13 @@
+NAME=戦闘地形を描画しない
+NAME.en=Don't draw battle terrain
+
+INFO=戦闘地形を描画しないようにします。戦闘背景を作り込みたい人向けです。
+INFO.en=Hide drawing battle terrain.(do not draw battle platform).\r\nFor people who want to create a battle background.
+TYPE=EA
+EA=HideBattleTerrain.event
+
+AUTHOR=7743
+
+PATCHED_IF:0x5B846=0x00 0x00 0x00 0x00
+NAME.zh=不要绘制战斗地形。
+INFO.zh=避免绘制战斗地形。对于想要创建战斗背景的人。

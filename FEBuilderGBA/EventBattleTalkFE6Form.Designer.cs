@@ -197,7 +197,7 @@
             this.label2.Location = new System.Drawing.Point(392, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 30);
+            this.label2.Size = new System.Drawing.Size(85, 30);
             this.label2.TabIndex = 24;
             this.label2.Text = "読込数";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1118,7 +1118,7 @@
             // 
             // N_ReloadListButton
             // 
-            this.N_ReloadListButton.Location = new System.Drawing.Point(639, -1);
+            this.N_ReloadListButton.Location = new System.Drawing.Point(637, -1);
             this.N_ReloadListButton.Margin = new System.Windows.Forms.Padding(2);
             this.N_ReloadListButton.Name = "N_ReloadListButton";
             this.N_ReloadListButton.Size = new System.Drawing.Size(112, 30);
@@ -1140,7 +1140,7 @@
             // label17
             // 
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(394, 1);
+            this.label17.Location = new System.Drawing.Point(395, -1);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(87, 30);
@@ -1180,7 +1180,7 @@
             this.panel7.Controls.Add(this.N_WriteButton);
             this.panel7.Controls.Add(this.N_Address);
             this.panel7.Controls.Add(this.label20);
-            this.panel7.Location = new System.Drawing.Point(409, 42);
+            this.panel7.Location = new System.Drawing.Point(408, 42);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(849, 30);
@@ -1243,7 +1243,7 @@
             // N_Address
             // 
             this.N_Address.Hexadecimal = true;
-            this.N_Address.Location = new System.Drawing.Point(90, 2);
+            this.N_Address.Location = new System.Drawing.Point(92, 2);
             this.N_Address.Margin = new System.Windows.Forms.Padding(2);
             this.N_Address.Maximum = new decimal(new int[] {
             -559939585,
@@ -1260,7 +1260,7 @@
             this.label20.Location = new System.Drawing.Point(-1, 0);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 30);
+            this.label20.Size = new System.Drawing.Size(87, 30);
             this.label20.TabIndex = 1;
             this.label20.Text = "アドレス";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

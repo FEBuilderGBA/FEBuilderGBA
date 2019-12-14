@@ -2929,8 +2929,11 @@
     <Content Include="icon_arrow.ico" />
     <Content Include="icon_film.ico" />
     <Content Include="icon_music.ico" />
+    <Content Include="icon_rain.ico" />
     <Content Include="icon_settings.ico" />
+    <Content Include="icon_snow.ico" />
     <Content Include="icon_speaker.ico" />
+    <Content Include="icon_sunny.ico" />
     <Content Include="icon_translate_subtile.ico" />
     <Content Include="icon_upload.ico" />
   </ItemGroup>

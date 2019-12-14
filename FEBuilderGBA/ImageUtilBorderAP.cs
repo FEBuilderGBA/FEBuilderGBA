@@ -92,19 +92,21 @@ namespace FEBuilderGBA
 
             return Path.Combine(basedir , filename + "_NAME" + ext);
         }
-        public static void ImportBorder(Form self)
+        public static bool ImportBorder(Form self, out byte[] out_image,out byte[] out_oam)
         {
+            out_image = null;
+            out_oam = null;
             string imagefilename = ImageFormRef.OpenFilenameDialogFullColor(self);
             if (imagefilename == "")
             {
                 R.ShowStopError("ファイルがありません。\r\nファイル名:{0}", imagefilename);
-                return;
+                return false;
             }
             string name_filename = MakeBorderNameImageFileName(imagefilename);
             if (! File.Exists(name_filename))
             {
                 R.ShowStopError("ファイルがありません。\r\nファイル名:{0}", name_filename);
-                return;
+                return false;
             }
             string basedir = Path.GetDirectoryName(imagefilename);
 
@@ -121,16 +123,19 @@ namespace FEBuilderGBA
             if (images.Count >= 2)
             {
                 R.ShowStopError("画像が大きすぎて、256x160のシートに入りきりませんでした");
-                return ;
+                return false;
             }
 
             byte[] battleAOM = oam.GetRightToLeftOAM();
             if (battleAOM.Length <= 1)
             {
-                return;
+                return false;
             }
             byte[] apOAM = BattleOAMToAPOAM(battleAOM);
 
+            out_image = images[0].data;
+            out_oam = apOAM;
+            return true;
         }
         //戦闘アニメの12バイトOAMデータを、APの12バイトOAMに変換します
         static byte[] BattleOAMToAPOAM(byte[] battle)
