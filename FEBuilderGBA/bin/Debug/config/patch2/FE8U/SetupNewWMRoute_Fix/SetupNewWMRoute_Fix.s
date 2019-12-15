@@ -10,6 +10,8 @@
 push {r6,r5,r4,lr}
 mov  r6,#0x20   @const扱い
 ldrb r5,[r1,r6] @道の個数を取得 r6=0x20
+cmp  r5,#0x0    @ゲームオーバーになった時配列が0クリアされた状態で呼び出されることがある
+beq  NotFound
 
 mov  r3,#0x00
 
@@ -42,5 +44,4 @@ mov  r0, #0x0   @正常終了は0を返す.
 
 Exit:
 pop {r6,r5,r4}
-pop {r1}
-bx  r1
+pop {pc}
