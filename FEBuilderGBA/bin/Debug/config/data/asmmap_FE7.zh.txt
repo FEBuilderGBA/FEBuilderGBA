@@ -4792,3 +4792,6 @@
 08075224	MapAnimLevelUpProc_InitLevelUpBox	{J}
 08006C34	NewFace	{U}
 08074A28	MapAnimLevelUpProc_InitLevelUpBox	{U}
+//This data is made with the aim of being readable by machine fast.
+0802AA9C	FinishUpItemBattle	使用项目时记录运动。	r1=ITEM ID	{J}
+0802A5EC	FinishUpItemBattle	使用项目时记录运动。	r1=ITEM ID	{U}

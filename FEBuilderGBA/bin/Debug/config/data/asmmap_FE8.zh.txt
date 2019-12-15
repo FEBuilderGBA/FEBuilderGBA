@@ -8723,8 +8723,8 @@ r3=X tile position of menu of the right	{U}
 0804B6CC	Communication stadium	Battle end	{U}
 0809B600	Drawing the item arrangement menu on the attack advancement screen	{J}
 08099328	Drawing the item arrangement menu on the attack advancement screen	{U}
-0802CC54	Register motion when using items	r1=ITEM ID	{U}
-0802CB8C	Register motion when using items	r1=ITEM ID	{J}
+0802CC54	FinishUpItemBattle	Register motion when using items	r1=ITEM ID	{U}
+0802CB8C	FinishUpItemBattle	Register motion when using items	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
 08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	{J}
@@ -12647,3 +12647,7 @@ r3=X tile position of menu of the right	{U}
 0203AB40    :0203AB43	（旧）技能动画显示用作技能动画显示{J}的工作存储器。
 08014328	SomeDrawNumber	{J}
 08014270	SomeDrawNumber	{U}
+0802F370	Use_PureWater	{J}
+0802F450	Use_PureWater	{U}
+0802F3AC	Use_TorchItem	{J}
+0802F48C	Use_TorchItem	{U}

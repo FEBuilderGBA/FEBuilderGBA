@@ -1,0 +1,16 @@
+
+NAME=たいまつの補正値
+NAME.en=Change Torch Item
+NAME.zh=火把校正值
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02F4AE
+AUTHOR=7743
+
+INFO=せいすいで上昇する魔防の値を設定します。\r\nこの値は聖水と共通になるため、下位4ビットが利用されます。\r\nつまり、0x70は、7となります。
+INFO.en=Set the value of RES with the Pure Water.\r\nThis value is common to holy water, so the lower 4 bits are used. That is, 0x04 becomes 4.\r\nThis is an item torch, not staff.
+INFO.zh=用RES杖设定火把的值。\r\n此值对于火把是常见的，因此使用低4位。也就是说，0x04变为4。
+

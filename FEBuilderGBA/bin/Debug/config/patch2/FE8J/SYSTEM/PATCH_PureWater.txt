@@ -1,0 +1,17 @@
+
+NAME=聖水の補正値
+NAME.en=Change M-Barrier Staff Value
+NAME.zh=圣水校正值
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x02F390
+
+AUTHOR=7743
+
+INFO=せいすいで上昇する魔防の値を設定します。\r\nこの値は聖水と共通になるため、上位4ビットが利用されます。\r\nつまり、0x70は、7となります。
+INFO.en=Set the value of RES with the Pure Water.\r\nThis value is common to holy water, so the upper 4 bits are used. That is, 0x70 becomes 7.
+INFO.zh=用RES杖设定圣水的值。\r\n此值对于圣水是常见的，因此使用高4位。也就是说，0x70变为7。
+

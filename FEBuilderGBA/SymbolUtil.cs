@@ -63,8 +63,8 @@ namespace FEBuilderGBA
                 if (File.Exists(path))
                 {
                     File.Delete(path);
-                    return true;
                 }
+                return true;
             }
             U.WriteAllText(path, symbol);
             return true;

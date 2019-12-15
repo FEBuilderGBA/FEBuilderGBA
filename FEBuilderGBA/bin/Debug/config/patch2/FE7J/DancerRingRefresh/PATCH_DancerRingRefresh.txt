@@ -1,0 +1,19 @@
+NAME=DancerRingRefresh
+
+//BINパッチとして実装します
+TYPE=EA
+TAG=#ENGINE
+
+//パッチ適応済みかどうか
+PATCHED_IF:0x02D49C=0x00 0x4B 0x18 0x47
+
+EA=DancerRingRefresh.event
+
+
+INFO=踊り子のリングに対象ユニットの再行動にする効果を付与します。
+INFO.en=Fairly self-explanatory, lets dancer rings refresh like Dance in addition to applying their effect.
+.\r\n
+INFO.zh=Fairly self-explanatory, lets dancer rings refresh like Dance in addition to applying their effect.
+.\r\n
+
+AUTHOR=sme https://feuniverse.us/t/smes-asm-and-miscellany/4445/37

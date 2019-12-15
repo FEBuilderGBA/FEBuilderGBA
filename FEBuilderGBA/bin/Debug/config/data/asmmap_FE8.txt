@@ -8751,8 +8751,8 @@
 0804B6CC	通信闘技場	戦闘終了	{U}
 0809B600	進撃準備画面のアイテム整理メニューの描画	{J}
 08099328	進撃準備画面のアイテム整理メニューの描画	{U}
-0802CC54	アイテムを利用した時のモーションを登録	r1=ITEM ID	{U}
-0802CB8C	アイテムを利用した時のモーションを登録	r1=ITEM ID	{J}
+0802CC54	FinishUpItemBattle	アイテムを利用した時のモーションを登録	r1=ITEM ID	{U}
+0802CB8C	FinishUpItemBattle	アイテムを利用した時のモーションを登録	r1=ITEM ID	{J}
 08013220	Number_Tile_Copy_Func	{J}
 08013168	Number_Tile_Copy_Func	{U}
 08A9534C	&OAMREGS_ARRAY	Unk OAMREGS	17	{J}
@@ -12688,3 +12688,7 @@
 08014BD0	クリアターン一覧の開始時に音楽をフェードアウトする	{U}
 08014328	SomeDrawNumber	{J}
 08014270	SomeDrawNumber	{U}
+0802F370	Use_PureWater	{J}
+0802F450	Use_PureWater	{U}
+0802F3AC	Use_TorchItem	{J}
+0802F48C	Use_TorchItem	{U}
