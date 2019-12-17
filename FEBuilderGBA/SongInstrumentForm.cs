@@ -1016,7 +1016,7 @@ namespace FEBuilderGBA
                             data.Add(new DataWriteHelper(relativeAddress, bin.Count));
                             U.append_u32(bin, 0); //後でこの位置にアドレスを書く.
                         }
-                        else if (file == "@BROKENDATA")
+                        else if (file.IndexOf("@BROKENDATA") >= 0)
                         {//ドラム内でドラムがあるような変なデータ
                             uint relativeAddress = 0;
                             data.Add(new DataWriteHelper(relativeAddress, bin.Count));

@@ -154,6 +154,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new FEBuilderGBA.LabelEx();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.B30)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -378,6 +379,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.EXPLAIN);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.B14);
             this.panel2.Controls.Add(this.J_14);
@@ -1482,6 +1484,17 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // EXPLAIN
+            // 
+            this.EXPLAIN.ErrorMessage = "";
+            this.EXPLAIN.Location = new System.Drawing.Point(642, 198);
+            this.EXPLAIN.Multiline = true;
+            this.EXPLAIN.Name = "EXPLAIN";
+            this.EXPLAIN.Placeholder = "";
+            this.EXPLAIN.ReadOnly = true;
+            this.EXPLAIN.Size = new System.Drawing.Size(257, 300);
+            this.EXPLAIN.TabIndex = 243;
+            // 
             // MoveCostFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1505,6 +1518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.B14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B44)).EndInit();
@@ -1688,5 +1702,6 @@
         private System.Windows.Forms.NumericUpDown B50;
         private LabelEx J_50;
         private System.Windows.Forms.Button IndependenceButton;
+        private TextBoxEx EXPLAIN;
     }
 }

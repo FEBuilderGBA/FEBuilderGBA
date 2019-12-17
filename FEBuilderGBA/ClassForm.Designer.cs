@@ -411,7 +411,7 @@
             this.panel5.Location = new System.Drawing.Point(282, 346);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(969, 60);
+            this.panel5.Size = new System.Drawing.Size(970, 60);
             this.panel5.TabIndex = 0;
             // 
             // MagicExtClassGrow
@@ -848,7 +848,7 @@
             this.panel10.Location = new System.Drawing.Point(282, 408);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(969, 68);
+            this.panel10.Size = new System.Drawing.Size(970, 68);
             this.panel10.TabIndex = 34;
             // 
             // X_SIM_MAGICEX_Value
@@ -2465,7 +2465,7 @@
             // P52
             // 
             this.P52.Hexadecimal = true;
-            this.P52.Location = new System.Drawing.Point(6, 35);
+            this.P52.Location = new System.Drawing.Point(3, 35);
             this.P52.Margin = new System.Windows.Forms.Padding(2);
             this.P52.Maximum = new decimal(new int[] {
             -559939585,
@@ -2478,6 +2478,7 @@
             // 
             // J_ID_BATTLEANIME_CLASSID
             // 
+            this.J_ID_BATTLEANIME_CLASSID.AccessibleDescription = "@EXPLAIN_ANIMATION_POINTER";
             this.J_ID_BATTLEANIME_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_BATTLEANIME_CLASSID.Location = new System.Drawing.Point(-1, -1);
             this.J_ID_BATTLEANIME_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2489,6 +2490,7 @@
             // 
             // J_ID_MOVECOST1_CLASSID
             // 
+            this.J_ID_MOVECOST1_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_POINTER";
             this.J_ID_MOVECOST1_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST1_CLASSID.Location = new System.Drawing.Point(-1, 66);
             this.J_ID_MOVECOST1_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2526,7 +2528,7 @@
             // D80
             // 
             this.D80.Hexadecimal = true;
-            this.D80.Location = new System.Drawing.Point(1, 480);
+            this.D80.Location = new System.Drawing.Point(3, 480);
             this.D80.Margin = new System.Windows.Forms.Padding(2);
             this.D80.Maximum = new decimal(new int[] {
             -559939585,
@@ -2534,13 +2536,13 @@
             54,
             0});
             this.D80.Name = "D80";
-            this.D80.Size = new System.Drawing.Size(150, 25);
+            this.D80.Size = new System.Drawing.Size(142, 25);
             this.D80.TabIndex = 7;
             // 
             // P72
             // 
             this.P72.Hexadecimal = true;
-            this.P72.Location = new System.Drawing.Point(1, 350);
+            this.P72.Location = new System.Drawing.Point(3, 350);
             this.P72.Margin = new System.Windows.Forms.Padding(2);
             this.P72.Maximum = new decimal(new int[] {
             -559939585,
@@ -2553,6 +2555,7 @@
             // 
             // J_ID_MOVECOST6_CLASSID
             // 
+            this.J_ID_MOVECOST6_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_RES";
             this.J_ID_MOVECOST6_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST6_CLASSID.Location = new System.Drawing.Point(-1, 384);
             this.J_ID_MOVECOST6_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2564,6 +2567,7 @@
             // 
             // J_ID_MOVECOST4_CLASSID
             // 
+            this.J_ID_MOVECOST4_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_AVO";
             this.J_ID_MOVECOST4_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST4_CLASSID.Location = new System.Drawing.Point(-1, 254);
             this.J_ID_MOVECOST4_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2576,7 +2580,7 @@
             // P76
             // 
             this.P76.Hexadecimal = true;
-            this.P76.Location = new System.Drawing.Point(1, 417);
+            this.P76.Location = new System.Drawing.Point(3, 417);
             this.P76.Margin = new System.Windows.Forms.Padding(2);
             this.P76.Maximum = new decimal(new int[] {
             -559939585,
@@ -2601,7 +2605,7 @@
             // P68
             // 
             this.P68.Hexadecimal = true;
-            this.P68.Location = new System.Drawing.Point(1, 288);
+            this.P68.Location = new System.Drawing.Point(3, 288);
             this.P68.Margin = new System.Windows.Forms.Padding(2);
             this.P68.Maximum = new decimal(new int[] {
             -559939585,
@@ -2614,6 +2618,7 @@
             // 
             // J_ID_MOVECOST5_CLASSID
             // 
+            this.J_ID_MOVECOST5_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_DEF";
             this.J_ID_MOVECOST5_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST5_CLASSID.Location = new System.Drawing.Point(-1, 316);
             this.J_ID_MOVECOST5_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2626,7 +2631,7 @@
             // P64
             // 
             this.P64.Hexadecimal = true;
-            this.P64.Location = new System.Drawing.Point(1, 223);
+            this.P64.Location = new System.Drawing.Point(3, 223);
             this.P64.Margin = new System.Windows.Forms.Padding(2);
             this.P64.Maximum = new decimal(new int[] {
             -559939585,
@@ -2640,7 +2645,7 @@
             // P56
             // 
             this.P56.Hexadecimal = true;
-            this.P56.Location = new System.Drawing.Point(1, 100);
+            this.P56.Location = new System.Drawing.Point(3, 100);
             this.P56.Margin = new System.Windows.Forms.Padding(2);
             this.P56.Maximum = new decimal(new int[] {
             -559939585,
@@ -2653,6 +2658,7 @@
             // 
             // J_ID_MOVECOST2_CLASSID
             // 
+            this.J_ID_MOVECOST2_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_RAIN_POINTER";
             this.J_ID_MOVECOST2_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST2_CLASSID.Location = new System.Drawing.Point(-1, 128);
             this.J_ID_MOVECOST2_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2665,7 +2671,7 @@
             // P60
             // 
             this.P60.Hexadecimal = true;
-            this.P60.Location = new System.Drawing.Point(1, 161);
+            this.P60.Location = new System.Drawing.Point(3, 161);
             this.P60.Margin = new System.Windows.Forms.Padding(2);
             this.P60.Maximum = new decimal(new int[] {
             -559939585,
@@ -2678,6 +2684,7 @@
             // 
             // J_ID_MOVECOST3_CLASSID
             // 
+            this.J_ID_MOVECOST3_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_SNOW_POINTER";
             this.J_ID_MOVECOST3_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST3_CLASSID.Location = new System.Drawing.Point(-1, 188);
             this.J_ID_MOVECOST3_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

@@ -1983,6 +1983,7 @@
             // 
             // J_ID_BATTLEANIME_CLASSID
             // 
+            this.J_ID_BATTLEANIME_CLASSID.AccessibleDescription = "@EXPLAIN_ANIMATION_POINTER";
             this.J_ID_BATTLEANIME_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_BATTLEANIME_CLASSID.Location = new System.Drawing.Point(-1, -1);
             this.J_ID_BATTLEANIME_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -1994,6 +1995,7 @@
             // 
             // J_ID_MOVECOST1_CLASSID
             // 
+            this.J_ID_MOVECOST1_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_POINTER";
             this.J_ID_MOVECOST1_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST1_CLASSID.Location = new System.Drawing.Point(-1, 63);
             this.J_ID_MOVECOST1_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2054,6 +2056,7 @@
             // 
             // J_ID_MOVECOST6_CLASSID
             // 
+            this.J_ID_MOVECOST6_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_RES";
             this.J_ID_MOVECOST6_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST6_CLASSID.Location = new System.Drawing.Point(-1, 256);
             this.J_ID_MOVECOST6_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2065,6 +2068,7 @@
             // 
             // J_ID_MOVECOST4_CLASSID
             // 
+            this.J_ID_MOVECOST4_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_AVO";
             this.J_ID_MOVECOST4_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST4_CLASSID.Location = new System.Drawing.Point(-1, 126);
             this.J_ID_MOVECOST4_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -2115,6 +2119,7 @@
             // 
             // J_ID_MOVECOST5_CLASSID
             // 
+            this.J_ID_MOVECOST5_CLASSID.AccessibleDescription = "@EXPLAIN_MOVEMENTCOST_DEF";
             this.J_ID_MOVECOST5_CLASSID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.J_ID_MOVECOST5_CLASSID.Location = new System.Drawing.Point(-1, 188);
             this.J_ID_MOVECOST5_CLASSID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

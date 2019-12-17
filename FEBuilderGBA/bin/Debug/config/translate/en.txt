@@ -4891,6 +4891,42 @@ Specify the size of tile data.\r\n\r\nNote:.\r\nIt is dangerous to manually chan
 :シンセサイザーで利用される4つのパラメータを設定します。\r\nAttack(音の立ち上がり時間)Decay(持続音への減衰時間)\r\nSustain(減衰後の保持,持続音量)\r\nRelease(余韻)\r\n詳しく知りたい場合は、「ADSR dtm」で検索してください。
 Set the four parameters used by the synthesizer.\r\nAttack is\r\n the time taken for initial run-up of level from nil to peak,\r\n beginning when the key is pressed.\r\nDecay is\r\n the time taken for the subsequent run down from\r\n the attack level to the designated sustain level.\r\nSustain is\r\n the level during the main sequence of the sound's duration,\r\n until the key is released.\r\nRelease is\r\n the time taken for the level to decay from\r\n the sustain level to zero after the key is released.\r\n\r\nTo find out more, google for "ADSR dtm".
 
+:ユニットの戦闘アニメで利用するデータへのポインタを指定します。\r\n武器や魔道書ごとにどんな戦闘アニメを再生するかを決定します。\r\n
+Specify the pointer to the data used in the unit battle animation.\r\nDecide what battle animation to play for each weapon or magic.\r\n
+
+:ユニットが移動できるタイルへのポインタを指定します。\r\n
+Specifies pointer to the tile to which the unit can move.\r\n
+
+:晴れた日のマップでの移動コストを定義します。\r\n各タイルごとの移動コストがどれだけかかるかを定義します。\r\n山を飛び越える飛行ユニットや、高い山に登れる山賊などの特性を設定します。\r\n
+Define movement costs on sunny day map.\r\nDefine how much it costs to move for each tile.\r\nSet characteristics such as flying units that fly over mountains and bandits that can climb high mountains.\r\n
+
+:雨が降っているマップでの移動コストを指定します。\r\n一般的に、雨が降ると移動力コストが上昇し、ユニットは移動しにくくなります。\r\n
+Specify the movement cost on raining map.\r\nIn general, if it rains, the cost of mobility increases and the unit becomes difficult to move.\r\n
+
+:雪が降っているマップでの移動コストを指定します。\r\n
+Specify the movement cost on snowy map.\r\n
+
+:晴れた日のマップでの移動コストを定義します。\r\n各タイルごとに移動コストがどれだけかかるかを定義します。\r\n山を飛び越える飛行ユニットや、高い山に登れる山賊などの特性を設定します。\r\n
+Define travel costs on a sunny day map.\r\nDefine how much it costs to move for each tile.\r\nSet characteristics such as flying units that jump over mountains and bandits that can climb high mountains.\r\n
+
+:地形タイルごとに移動コストを設定します。\r\n平地は1、森は2などと指定します。\r\n255は移動できないタイルです。\r\n左上の--のタイルは必ず255である必要があります。\r\n
+Set the movement cost for each terrain tile.\r\nSpecify 1 for flat ground, 2 for forest, and so on.\r\n255 is a tile that cannot be moved.\r\nThe tile in the upper-left corner must be 255.\r\n
+
+:地形ごとの回避ボーナスを指定します。\r\n森や砦などに設定されます。\r\n飛行ユニットは地形ボーナスを受けられない等を表現します。\r\n
+Specify the avoidance bonus for each terrain.\r\nIt is set for forests and forts.\r\nExpresses that flying unit cannot receive terrain bonus.\r\n
+
+:地形ごとの防御ボーナスを指定します。\r\n砦や城門などに設定されます。\r\n
+Specify the defense bonus for each terrain.\r\nSet to forts and castle gates.\r\n
+
+:地形ごとの魔防ボーナスを指定します。\r\n城門や魔法陣などに設定されます。\r\n
+Specify the magic bonus for each terrain.\r\nSet to castle gates and magic circles.\r\n
+
+:地形ごとの回復ボーナスを指定します。\r\n砦や城門にいると回復するという設定に利用されます。\r\nこの設定はすべてのクラスで共通しています。\r\n個別に指定することはできません。\r\n回復するHPの値を指定します。\r\n
+Specify the recovery bonus for each terrain.\r\nIt is used for setting to recover when you are in fort or gate.\r\nThis setting is common to all classes.\r\nIt cannot be specified individually.\r\nSpecify the HP value to be recovered.\r\n
+
+:地形ごとの毒や睡眠などのバットステータスを自動回復するボーナスを指定します。\r\n城門にいると回復するという設定に利用されます。\r\nこの設定はすべてのクラスで共通しています。\r\n個別に指定することはできません。\r\n1を設定すると有効になります。\r\nその地形にいるユニットのバッドステータスが自動的に回復します。\r\n
+Specify bonuses to automatically recover bat status such as poison and sleep for each terrain.\r\nIt is used for setting to recover when you are at the gate.\r\nThis setting is common to all classes.\r\nIt cannot be specified individually.\r\nSet to 1 to enable.\r\nThe bad status of units on that terrain is automatically restored.\r\n
+
 :元に戻す(&Z)
 Undo(&Z)
 

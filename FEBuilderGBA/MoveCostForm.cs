@@ -78,6 +78,7 @@ namespace FEBuilderGBA
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ReloadListButton.PerformClick();
+            ShowExplain();
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
@@ -421,6 +422,46 @@ namespace FEBuilderGBA
             J_63.Text = MapTerrainNameForm.GetName(63);
             J_64.Text = MapTerrainNameForm.GetName(64);
         }
+        void ShowExplain()
+        {
+            this.EXPLAIN.Text = MoveCostForm.GetExplain(this.FilterComboBox.SelectedIndex);
+        }
 
+        public static string GetExplain(int index)
+        {
+            if (index == 0)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST");
+            }
+            else if (index == 1)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_RAIN");
+            }
+            else if (index == 2)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_SNOW");
+            }
+            else if (index == 3)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_AVO");
+            }
+            else if (index == 4)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_DEF");
+            }
+            else if (index == 5)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_RES");
+            }
+            else if (index == 6)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_HEALING");
+            }
+            else if (index == 7)
+            {
+                return InputFormRef.GetExplain("@EXPLAIN_MOVEMENTCOST_RECOVERY");
+            }
+            return "";
+        }
     }
 }

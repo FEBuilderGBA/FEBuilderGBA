@@ -80,6 +80,12 @@ namespace FEBuilderGBA
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ReloadListButton.PerformClick();
+
+            ShowExplain();
+        }
+        void ShowExplain()
+        {
+            this.EXPLAIN.Text = MoveCostForm.GetExplain(FilerFE6ToFE8(this.FilterComboBox.SelectedIndex));
         }
 
         static int FilerFE6ToFE8(int fe6Filter)
