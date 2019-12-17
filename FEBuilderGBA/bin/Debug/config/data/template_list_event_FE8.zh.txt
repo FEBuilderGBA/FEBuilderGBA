@@ -27,7 +27,9 @@ template_event_BATTLE_Attack_Counter_Attack.txt	BattleEvent Attack->Defender->At
 template_event_BATTLE_Attack_Counter_Attack_Counter.txt	BattleEvent Attack->Defender->Attack->Defender
 template_event_BATTLE_FromEnemy_Attack_Counter.txt	BattleEvent From Enemy Attack->Defender
 template_event_BATTLE_FromEnemy_Attack_Counter_Attack.txt	BattleEvent From Enemy Attack->Defender->Attack
-template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Two critical attacks at destroy enemy
+template_event_BATTLE_Attack.txt	BattleEvent Attack->No Counterattack
+template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Attack->Attack-> No Counterattack (2x attacks)
+template_event_BATTLE_FromEnemy_Attack.txt	BattleEvent From Enemy Attack->No Counterattack
 template_event_WarpIN_FE8.txt	使单位出现扭曲
 template_event_CALL_END_EVENT_FE8.txt	清除这一章
 template_event_GAMEOVER_FE8.txt	打电话给游戏

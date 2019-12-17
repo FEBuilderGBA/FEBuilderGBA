@@ -4907,7 +4907,7 @@ Specify the movement cost on raining map.\r\nIn general, if it rains, the cost o
 Specify the movement cost on snowy map.\r\n
 
 :晴れた日のマップでの移動コストを定義します。\r\n各タイルごとに移動コストがどれだけかかるかを定義します。\r\n山を飛び越える飛行ユニットや、高い山に登れる山賊などの特性を設定します。\r\n
-Define travel costs on a sunny day map.\r\nDefine how much it costs to move for each tile.\r\nSet characteristics such as flying units that jump over mountains and bandits that can climb high mountains.\r\n
+Define movement costs on a sunny day map.\r\nDefine how much it costs to move for each tile.\r\nSet characteristics such as flying units that fly over mountains and bandits that can climb high mountains.\r\n
 
 :地形タイルごとに移動コストを設定します。\r\n平地は1、森は2などと指定します。\r\n255は移動できないタイルです。\r\n左上の--のタイルは必ず255である必要があります。\r\n
 Set the movement cost for each terrain tile.\r\nSpecify 1 for flat ground, 2 for forest, and so on.\r\n255 is a tile that cannot be moved.\r\nThe tile in the upper-left corner must be 255.\r\n
