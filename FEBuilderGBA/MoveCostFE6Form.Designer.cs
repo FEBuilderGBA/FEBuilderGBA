@@ -30,7 +30,7 @@
         {
             this.B30 = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FilterComboBox = new System.Windows.Forms.ComboBox();
+            this.FilterComboBox = new FEBuilderGBA.ComboBoxEx();
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.label1 = new FEBuilderGBA.LabelEx();
             this.label2 = new FEBuilderGBA.LabelEx();
@@ -45,6 +45,7 @@
             this.J_15 = new FEBuilderGBA.LabelEx();
             this.J_1 = new FEBuilderGBA.LabelEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
             this.IndependenceButton = new System.Windows.Forms.Button();
             this.label72 = new FEBuilderGBA.LabelEx();
@@ -154,7 +155,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.LabelFilter = new FEBuilderGBA.LabelEx();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.EXPLAIN = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.B30)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
@@ -249,7 +249,7 @@
             "地形魔防",
             "地形回復",
             "地形ステータス異常回復"});
-            this.FilterComboBox.Location = new System.Drawing.Point(501, 1);
+            this.FilterComboBox.Location = new System.Drawing.Point(501, -1);
             this.FilterComboBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.FilterComboBox.Name = "FilterComboBox";
             this.FilterComboBox.Size = new System.Drawing.Size(384, 26);
@@ -489,6 +489,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1226, 505);
             this.panel2.TabIndex = 58;
+            // 
+            // EXPLAIN
+            // 
+            this.EXPLAIN.ErrorMessage = "";
+            this.EXPLAIN.Location = new System.Drawing.Point(642, 198);
+            this.EXPLAIN.Multiline = true;
+            this.EXPLAIN.Name = "EXPLAIN";
+            this.EXPLAIN.Placeholder = "";
+            this.EXPLAIN.ReadOnly = true;
+            this.EXPLAIN.Size = new System.Drawing.Size(257, 300);
+            this.EXPLAIN.TabIndex = 243;
             // 
             // panel3
             // 
@@ -1484,17 +1495,6 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
-            // EXPLAIN
-            // 
-            this.EXPLAIN.ErrorMessage = "";
-            this.EXPLAIN.Location = new System.Drawing.Point(642, 198);
-            this.EXPLAIN.Multiline = true;
-            this.EXPLAIN.Name = "EXPLAIN";
-            this.EXPLAIN.Placeholder = "";
-            this.EXPLAIN.ReadOnly = true;
-            this.EXPLAIN.Size = new System.Drawing.Size(257, 300);
-            this.EXPLAIN.TabIndex = 243;
-            // 
             // MoveCostFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1652,7 +1652,7 @@
         private LabelEx J_17;
         private LabelEx J_3;
         private LabelEx J_2;
-        private System.Windows.Forms.ComboBox FilterComboBox;
+        private FEBuilderGBA.ComboBoxEx FilterComboBox;
         private System.Windows.Forms.NumericUpDown B14;
         private LabelEx J_14;
         private System.Windows.Forms.Panel panel6;

@@ -38,6 +38,21 @@ namespace FEBuilderGBA
                     nud.ValueChanged += NUD_ValueChanged;
                 }
             }
+            SetupIconOnFilterCombo(this.FilterComboBox);
+        }
+
+        public static void SetupIconOnFilterCombo(ComboBoxEx combo)
+        {
+            combo.OwnerDraw(ComboBoxEx.DrawIconAndText, DrawMode.OwnerDrawFixed);
+
+            combo.AddIcon(R._("移動コスト: 天気普通"), Properties.Resources.icon_sunny);
+            combo.AddIcon(R._("移動コスト: 天気雨"), Properties.Resources.icon_rain);
+            combo.AddIcon(R._("移動コスト: 天気雪"), Properties.Resources.icon_snow);
+            combo.AddIcon(R._("地形回避"), ImageSystemIconForm.Forest());
+            combo.AddIcon(R._("地形防御"), ImageSystemIconForm.Castle());
+            //combo.AddIcon(R._("地形魔防"), );
+            //combo.AddIcon(R._("地形回復"), ImageSystemIconForm.Throne());
+            //combo.AddIcon(R._("地形ステータス異常回復"), ImageSystemIconForm.Throne());
         }
 
 
@@ -425,6 +440,7 @@ namespace FEBuilderGBA
         void ShowExplain()
         {
             this.EXPLAIN.Text = MoveCostForm.GetExplain(this.FilterComboBox.SelectedIndex);
+            this.ExplainIcon.Image = this.FilterComboBox.GetCurrentIcon();
         }
 
         public static string GetExplain(int index)

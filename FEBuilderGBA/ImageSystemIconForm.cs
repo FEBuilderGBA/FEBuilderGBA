@@ -528,7 +528,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                return FiledMapTile(4, 28);
+                return FiledMapTile(4, 29);
             }
         }
         public static Bitmap Arena()
@@ -537,7 +537,11 @@ namespace FEBuilderGBA
         }
         public static Bitmap Mountain()
         {
-            return FiledMapTile(12, 18);
+            return FiledMapTile(16, 21);
+        }
+        public static Bitmap Forest()
+        {
+            return FiledMapTile(16, 22);
         }
         public static Bitmap Village()
         {

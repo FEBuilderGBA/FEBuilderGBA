@@ -133,11 +133,20 @@
   <data name="icon_music" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon_music.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_rain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon_rain.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon_settings.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_snow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon_snow.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_speaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon_speaker.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_sunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon_sunny.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_translate_subtile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icon_translate_subtile.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

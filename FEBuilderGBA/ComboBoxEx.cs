@@ -626,6 +626,10 @@ namespace FEBuilderGBA
             aist.tooltip = tooltip;
             IconList[name] = aist;
         }
+        public void AddIcon(string name, Icon icon, string tooltip = "")
+        {
+            AddIcon(name, icon.ToBitmap(), tooltip);
+        }
         AppendInfoSt GetAISTByIconList(string str, int index)
         {
             if (IconList.ContainsKey(str))
@@ -659,6 +663,11 @@ namespace FEBuilderGBA
             }
 
             return new AppendInfoSt();
+        }
+        public Bitmap GetCurrentIcon()
+        {
+            AppendInfoSt aist = this.GetAISTByIconList(this.Text, this.SelectedIndex);
+            return aist.icon;
         }
     }
 }

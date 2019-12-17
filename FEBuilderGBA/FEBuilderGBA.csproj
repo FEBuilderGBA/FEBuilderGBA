@@ -2936,10 +2936,10 @@
     <Content Include="icon_sunny.ico" />
     <Content Include="icon_translate_subtile.ico" />
     <Content Include="icon_upload.ico" />
+    <None Include="Resources\icon_rain.ico" />
+    <None Include="icon_upload1.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="SpeechLib">
       <Guid>{D3C4A7F2-7D27-4332-B41F-593D71E16DB1}</Guid>

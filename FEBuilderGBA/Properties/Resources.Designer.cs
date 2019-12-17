@@ -103,6 +103,16 @@ namespace FEBuilderGBA.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Icon icon_rain {
+            get {
+                object obj = ResourceManager.GetObject("icon_rain", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Icon icon_settings {
             get {
                 object obj = ResourceManager.GetObject("icon_settings", resourceCulture);
@@ -113,9 +123,29 @@ namespace FEBuilderGBA.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Icon icon_snow {
+            get {
+                object obj = ResourceManager.GetObject("icon_snow", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Icon icon_speaker {
             get {
                 object obj = ResourceManager.GetObject("icon_speaker", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon icon_sunny {
+            get {
+                object obj = ResourceManager.GetObject("icon_sunny", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

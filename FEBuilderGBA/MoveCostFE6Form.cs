@@ -36,6 +36,8 @@ namespace FEBuilderGBA
                     nud.ValueChanged += NUD_ValueChanged;
                 }
             }
+
+            MoveCostForm.SetupIconOnFilterCombo(this.FilterComboBox);
         }
 
         public InputFormRef InputFormRef;

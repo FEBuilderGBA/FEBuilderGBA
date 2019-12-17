@@ -7823,7 +7823,7 @@ Tile movement cost incorrect.\r\nTiles that can not be moved must be set to 255,
 Movement Cost: Clear sky
 
 :地形ステータス異常回復
-Terrain recovery bad status.
+Terrain Recovery Bad Status
 
 :使用中のクラス
 Class in use
