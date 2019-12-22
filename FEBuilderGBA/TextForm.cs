@@ -359,6 +359,10 @@ namespace FEBuilderGBA
             ,uint id)
         {
             uint write_pointer = baseaddress + (id * 4);
+            if (! U.isSafetyOffset(write_pointer))
+            {
+                return false;
+            }
             uint write_addr = Program.ROM.u32(write_pointer);
 
             return  (FETextEncode.IsUnHuffmanPatchPointer(write_addr));

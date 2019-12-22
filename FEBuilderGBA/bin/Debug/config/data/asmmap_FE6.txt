@@ -1346,7 +1346,7 @@
 08017748	GetItemCost
 0801753c	UnitHasItem
 08016d08	GetUnitItemSlot
-0809750C	売り値を求める関数 RET=売値 r0=個数 << 8 + アイテムID
+0809750C	売り値を求める関数	RET=売値 r0=個数 << 8 + アイテムID
 0805FEC8	NewSoundStepPlay6C
 08060748	MOVEUNIT6C_PlaySoundStepByClass
 08018224	GetUnitAidIconId
@@ -1365,3 +1365,25 @@
 08664866	:08664893	Move Sound: Peg
 08017358	GetROMItemStructPtr
 08000BC0	NextRN
+0806D0FC	HasItem
+0806D150	神将器をすべて所持しているかチェック
+0806DE00	Play SongID 0x269
+0806DE20	Play SongID 0x269
+0806C168	IsAliveUnit
+0806C1A4	UnitID 0x09 ボールズの生存
+0806C1C4	UnitID 0x11 エレンの生存
+0806C1E4	UnitID 0x05 スーの生存
+0806C1B4	UnitID 0x26 リリーナの生存
+0806C294	UnitID 0x0F クレインの生存
+0806C2A4	UnitID 0x2E ティトの生存
+0806C49C	20ターン以内にクリア
+0806C158	UnitID 0x1D パーシバルの生存
+0806C07C	IsJoinUnit
+0806C4B0	25ターン以内にクリア
+0806C224	UnitID 0x36 ソフィーヤの生存
+0806C5A8	ルート分岐 サカ編かイリア編か判別
+0806C234	UnitID 0x2C ユーノの生存
+0806C244	UnitID 0x3C ゼロットの生存
+0806C204	UnitID 0x37 ミレディの生存
+0806C214	UnitID 0x32 ツァイスの生存
+0806C4C4	30ターン以内にクリア

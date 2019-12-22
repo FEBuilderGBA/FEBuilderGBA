@@ -1378,3 +1378,25 @@
 08664866	:08664893	Move Sound: Peg
 08017358	GetROMItemStructPtr
 08000BC0	NextRN
+0806D0FC	HasItem
+0806D150	Check if you have all the Holy Weapons
+0806DE00	Play SongID 0x269
+0806DE20	Play SongID 0x269
+0806C168	IsAliveUnit
+0806C1A4	IsSurvival UnitID 0x09 Bors
+0806C1C4	IsSurvival UnitID 0x11 Ellen
+0806C1E4	IsSurvival UnitID 0x05 Sue
+0806C1B4	IsSurvival UnitID 0x26 Lilina
+0806C294	IsSurvival UnitID 0x0F Klein
+0806C2A4	IsSurvival UnitID 0x2E Tate
+0806C49C	Clear within 20 turns
+0806C158	IsSurvival UnitID 0x1D Percival
+0806C07C	IsJoinUnit
+0806C4B0	Clear within 25 turns
+0806C224	IsSurvival UnitID 0x36 Sophia
+0806C5A8	Route Split Discrimination between Saka and Iria
+0806C234	IsSurvival UnitID 0x2C Yuno
+0806C244	IsSurvival UnitID 0x3C Zealot
+0806C204	IsSurvival UnitID 0x37 Miledy
+0806C214	IsSurvival UnitID 0x32 Zeiss
+0806C4C4	Clear within 30 turns

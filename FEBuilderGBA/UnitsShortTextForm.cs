@@ -54,7 +54,7 @@ namespace FEBuilderGBA
         }
         public uint AllocIfNeed(NumericUpDown src)
         {
-            if (src.Value == 0)
+            if (src.Value == 0 || src.Value == U.NOT_FOUND)
             {
                 string alllocQMessage = R._("新規にデータを作成しますか？");
                 DialogResult dr = R.ShowYesNo(alllocQMessage);

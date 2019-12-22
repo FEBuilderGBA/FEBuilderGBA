@@ -18,7 +18,7 @@ namespace FEBuilderGBA
 
         public uint AllocIfNeed(NumericUpDown src)
         {
-            if (src.Value == 0)
+            if (src.Value == 0 || src.Value == U.NOT_FOUND)
             {
                 string alllocQMessage = R._("新規にメニューデータを作成しますか？");
                 DialogResult dr = R.ShowYesNo(alllocQMessage);
@@ -243,7 +243,7 @@ namespace FEBuilderGBA
             {
                 need = new byte[] { 0x00, 0xB5, 0x3C, 0x20, 0x08, 0x5C, 0x03, 0x4B, 0x9E, 0x46, 0x00, 0xF8, 0x17, 0x20, 0x02, 0xBC, 0x08, 0x47, 0x00, 0x00, 0xF8, 0xD1, 0x00, 0x08 };
             }
-            uint p = U.Grep(Program.ROM.Data, need, 0xE00000, 0, 4);
+            uint p = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
             if (p == U.NOT_FOUND)
             {
                 return U.NOT_FOUND;

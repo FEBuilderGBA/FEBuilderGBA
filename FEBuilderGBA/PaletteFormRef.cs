@@ -210,7 +210,7 @@ namespace FEBuilderGBA
                 else if (symbol == "G")
                 {
                     obj.BackColor = Color.FromArgb(0, v, 0);
-                    obj.ForeColor = Color.FromArgb(255, (v > 128 ? 0 : 255), 255);
+                    obj.ForeColor = Color.FromArgb(0, (v > 128 ? 0 : 255), 255);
                     Color color = Color.FromArgb(p.BackColor.R, v, p.BackColor.B);
                     p.BackColor = color;
                     onChangeColor(color, paletteno - 1);

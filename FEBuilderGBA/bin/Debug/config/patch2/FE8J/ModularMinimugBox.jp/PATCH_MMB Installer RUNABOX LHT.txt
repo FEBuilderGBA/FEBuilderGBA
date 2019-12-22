@@ -3,7 +3,7 @@ NAME=ModularMinimugBox: RUNABOX LHT Style (Installer)
 TYPE=EA
 TAG=#ENGINE
 
-PATCHED_IF:0xA0198C=0x4D 0x4D 0x42 0x32 0x30 0x31 0x38 0x00
+PATCHED_IF:0xA73A44=0x4D 0x4D 0x42 0x32 0x30 0x31 0x38 0x00
 EA=MMB Installer LHT.event
 
 AUTHOR=unuesu https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235/32 , ZaneAvernathy https://feuniverse.us/t/fe8-modular-minimug-box-2018-its-here/4235 (MIT License)

@@ -9,9 +9,8 @@ ADDRESS=0xC4928
 COMBO=SKIP|0x00 0x00|SKIP2|0xC0 0x46|Default|0x06 0xD0
 
 INFO=オープニングの字幕をスキップします。\r\n英雄グラドが・・・という字幕を表示しなくします。
-INFO.en=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\nSkipping the opening subtitles.\r\nSkip the display subtitles of Hero's Grado...
+INFO.en=Edit field to toggle whether to skip the New Game opening text.\r\nThe ROM is default set to not skip.\r\nSkipping the opening subtitles.\r\nSkip the display subtitles of Hero's Grado... In an age long past...
+HINT=Intro sequence
 
 AUTHOR=circleseverywhere https://feuniverse.us/t/fe7-8-skip-the-intro-cutscene/1225/13
-
-
 INFO.zh=跳过新的游戏文本
