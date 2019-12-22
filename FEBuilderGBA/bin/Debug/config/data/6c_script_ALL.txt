@@ -2,9 +2,9 @@
 00001000ZZZZZZZZ	End2 [ZZZZZZZZ::Unk1] (Deletes Self)[TERM]	{TERM}	{CLEAR}
 00080000ZZZZZZZZ	End3 [ZZZZZZZZ::Unk1] (Deletes Self)[TERM]	{TERM}	{CLEAR}
 01000000ZZZZZZZZ	Set Name Pointer [ZZZZZZZZ:POINTER_TEXT:NAME]	{GOLD}
-02000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:Function] (Argument: r0=Struct Ptr)	{JUMP}
-03000000ZZZZZZZZ	Set Loop routine [ZZZZZZZZ:POINTER_ASM:Function] And Yield	{JUMP}	{LOOP}
-04000000ZZZZZZZZ	Set Destructor [ZZZZZZZZ:POINTER_ASM:Function]
+02000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:ASM] (Argument: r0=Struct Ptr)	{JUMP}
+03000000ZZZZZZZZ	Set Loop routine [ZZZZZZZZ:POINTER_ASM:ASM] And Yield	{JUMP}	{LOOP}
+04000000ZZZZZZZZ	Set Destructor [ZZZZZZZZ:POINTER_ASM:ASM]
 05000000ZZZZZZZZ	Call new Child Procs [ZZZZZZZZ:POINTER_PROCS:Child Procs]	{JUMP}
 06000100ZZZZZZZZ	Call new Child Procs [ZZZZZZZZ:POINTER_PROCS:Child Procs] And Yield	{JUMP}
 07000000ZZZZZZZZ	Call new Global Procs [ZZZZZZZZ:POINTER_PROCS:Global Procs]	{JUMP}
@@ -20,9 +20,9 @@
 1100000000000000	Delete Self if at least one other struct of same type exists	{CLEAR}
 1200000000000000	Set bit 4 in Field 27
 1300000000000000	Continue (Does nothing)	{LOOP}
-14000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:Function]. If Routine returns 1, yield without forwarding, continue otherwise		{JUMP}
+14000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:ASM]. If Routine returns 1, yield without forwarding, continue otherwise		{JUMP}
 1500000000000000	Continue (Does nothing)	{LOOP}
-16000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:Function]. If Routine returns 0, yield, continue otherwise.	{JUMP}
+16000000ZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:ASM]. If Routine returns 0, yield, continue otherwise.	{JUMP}
 1700000000000000	Delete all other instances of same type	{CLEAR}
-1800YYYYZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:Function] with r0=sarg & r1=struct (as opposed to r0=struct)	{JUMP}
+1800YYYYZZZZZZZZ	Call Routine [ZZZZZZZZ:POINTER_ASM:ASM] with r0=sarg & r1=struct (as opposed to r0=struct)	{JUMP}
 1900000000000000	Same as 000B whithout being reckognized by 000C (joins 0013 and 0015 in the effectively useless)

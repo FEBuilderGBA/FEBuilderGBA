@@ -72,8 +72,8 @@
 4D000000XXXXXXXX	World_maps:_Tutorial[XXXX::Dunno]
 4E000000	World_maps:_4E
 59000000	World_maps:_59
-1F000000XXXXXXXXYYYYYYYY	Branch_is_ASM_routine_returns_nonzero[XXXX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAT)	{COND}
-20000000XXXX0000YYYYYYYY	Branch_if_ASM_routine_returns_ 0[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM_routine_pointer](GOTO_IFAF)	{COND}
+1F000000XXXXXXXXYYYYYYYY	Branch_is_ASM_routine_returns_nonzero[XXXX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM](GOTO_IFAT)	{COND}
+20000000XXXX0000YYYYYYYY	Branch_if_ASM_routine_returns_ 0[XX:IF_CONDITIONAL:Conditional ID][YYYY:POINTER_ASM:ASM](GOTO_IFAF)	{COND}
 1C000000XXXX0000	GOTO[XX:GOTO_CONDITIONAL:Conditional ID]	Jumps to the LABEL of the specified condition ID.	{JUMP}
 1B000000XXXX0000	LABEL[XX:LABEL_CONDITIONAL:Conditional ID]	Define a LABEL that can be moved by a conditional expression or GOTO.	{JUMP}
 03000000XXXX0000	Shows_background[XX:BG:Background_to_show]	{BG}
