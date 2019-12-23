@@ -23,12 +23,16 @@
 24=Ephraim Lock	Restricts item use to only those with the Ephraim Lock set.\r\nBy default, this is set for Reginleif and Siegmund.
 25=Lyn Lock	Restricts item use to only those with the Lyn Lock set.\r\nBy default, this is unused. Use for custom unique weapons.
 26=Athos Lock	Restricts item use to only those with the Athos Lock set.\r\nBy default, this is unused. Use for custom unique weapons.
-27=??	???
-28=??	???
+27=??
+28=??	{J}
+28=??	Reserve: PassiveBooster	{U}
 //特性4
-31=??	Can be patched with Shield Patch@original.
-32=??	Can be patched with Shield Patch@aera.
-33=??	Can be patched with Amulet Patch.
+31=??	Reserve: Shield Patch@original.	{J}
+31=??	{U}
+32=??	Reserve: Shield Patch@aera.	{J}
+32=??	{U}
+33=??	Reserve: Amulet Patch.	{J}
+33=??	{U}
 34=??
 35=??
 36=??

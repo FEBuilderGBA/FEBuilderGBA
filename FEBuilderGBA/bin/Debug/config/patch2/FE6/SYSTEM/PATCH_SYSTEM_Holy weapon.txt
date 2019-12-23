@@ -18,3 +18,5 @@ LISTNAME=$B0:ITEM
 
 //データを定義します
 B0:ITEM=Item
+NAME.en=Shin genki To get to the true ED when you get all.
+NAME.zh=Shin genki当您全力以赴时获得真正的ED。

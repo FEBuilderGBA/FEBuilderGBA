@@ -79,7 +79,7 @@ namespace FEBuilderGBA
                 Button b = Buttons[foundCount];
                 b.Text = patch.Name;
                 string info = U.at(patch.Param, "INFO");
-                tooltip.SetToolTipOverraide(b, U.nl2br(info));
+                tooltip.SetToolTip(b, U.nl2br(info));
                 b.Show();
 
                 foundCount++;

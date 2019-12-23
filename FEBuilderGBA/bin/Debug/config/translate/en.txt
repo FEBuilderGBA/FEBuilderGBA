@@ -7828,6 +7828,12 @@ Terrain Recovery Bad Status
 :使用中のクラス
 Class in use
 
+:移動コスト: 天気雨
+Movement Cost: Rain
+
+:移動コスト: 天気雪
+Movement Cost: Snow
+
 :クラス({0})の({1})の({2})のタイルの移動コスト({3})が正しくありません。\r\nこのタイルは必ず255に設定する必要があります。
 Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nThis tile must be set to 255.
 
@@ -7836,12 +7842,6 @@ Movement cost ({3}) of tile of ({2}) of ({1}) of class ({0}) is incorrect.\r\nTi
 
 :タイルの移動コストが正しくありません。\r\nこのタイルは必ず255に設定する必要があります。
 Tile movement cost incorrect.\r\nThis tile must be set to 255.
-
-:移動コスト: 天気雨
-Movement Cost: Rain
-
-:移動コスト: 天気雪
-Movement Cost: Snow
 
 :空き領域のポインタまたはサイズが正しくありません。\r\n0x0 - 0x100までの領域は危険なので移動できません
 0x0-The data from 0x0 to 0x100 is dangerous and can't be moved

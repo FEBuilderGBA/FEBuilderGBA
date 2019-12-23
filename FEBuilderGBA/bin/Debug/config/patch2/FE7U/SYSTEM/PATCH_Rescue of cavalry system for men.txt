@@ -1,0 +1,15 @@
+
+NAME=騎馬系の救出値 男性用
+NAME.en=Cavalry rescue value For men
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+HEX=FALSE
+
+INFO=騎兵がユニットを救出するときの基礎値を変更します。\r\nこの値は男性ユニットで利用される補正値を変更します。\r\n25-体格=救出値
+INFO.en=Change the base value for cavalry to rescue units.\r\nThis value changes the correction value used by male units.\r\n25-CON = rescue value\r\n
+
+ADDRESS=0x00018494
+NAME.zh=马术救援对男人的价值。
+INFO.zh=将骑兵的基本值更改为救援单位。\r\n该值改变男性单位使用的校正值。\r\n25体格\u003d救援值。

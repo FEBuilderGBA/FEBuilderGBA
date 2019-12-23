@@ -27,17 +27,19 @@ namespace FEBuilderGBA
         {
             Hint[control] = caption;
 
-            control.MouseMove += FireEventInner;
-            control.MouseLeave += HideEvent;
-        }
-        public void SetToolTipOverraide(Control control, string caption)
-        {
-            Hint[control] = caption;
-
             control.MouseMove -= FireEventInner;
             control.MouseLeave -= HideEvent;
             control.MouseMove += FireEventInner;
             control.MouseLeave += HideEvent;
+        }
+
+        public void SetToolTipIfNew(Control control, string caption)
+        {
+            if (Hint.ContainsKey(control))
+            {
+                return;
+            }
+            SetToolTip(control, caption);
         }
 
         void FireEventInner(object sender, EventArgs e)

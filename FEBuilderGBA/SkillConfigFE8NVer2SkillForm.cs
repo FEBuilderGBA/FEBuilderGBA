@@ -685,7 +685,7 @@ namespace FEBuilderGBA
 
                 buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i);
                 buttons[skillCount].Tag = (uint)i;
-                tooltip.SetToolTipOverraide(buttons[skillCount], TextForm.Direct(textid));
+                tooltip.SetToolTip(buttons[skillCount], TextForm.Direct(textid));
                 skillCount++;
                 if (skillCount >= buttons.Length)
                 {
@@ -748,7 +748,7 @@ namespace FEBuilderGBA
 
                     buttons[skillCount].BackgroundImage = DrawSkillIconLow((uint)i);
                     buttons[skillCount].Tag = (uint)i;
-                    tooltip.SetToolTipOverraide(buttons[skillCount], name);
+                    tooltip.SetToolTip(buttons[skillCount], name);
                     skillCount++;
                     if (skillCount >= buttons.Length)
                     {

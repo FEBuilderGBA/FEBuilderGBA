@@ -10207,7 +10207,7 @@ namespace FEBuilderGBA
                             }
                             else if (mtype.type == "HINT")
                             {
-                                tooltip.SetToolTipOverraide(c, U.nl2br(mtype.value));
+                                tooltip.SetToolTip(c, U.nl2br(mtype.value));
                             }
                             else if (mtype.type == "COMBOAPPEND")
                             {
@@ -11059,7 +11059,7 @@ namespace FEBuilderGBA
                 if (sp.Length > 1)
                 {
                     string hint = sp[1].Replace("\\r\\n", "\r\n");
-                    tooltip.SetToolTip(c, hint);
+                    tooltip.SetToolTipIfNew(c, hint);
                 }
             }
         }

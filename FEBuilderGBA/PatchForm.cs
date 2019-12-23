@@ -938,7 +938,7 @@ namespace FEBuilderGBA
                 label.Location = new Point(200, y);
                 label.Size = new Size(200, CONTROL_HEIGHT);
                 label.TextAlign = ContentAlignment.MiddleCenter;
-                this.ToolTip.SetToolTipOverraide(label, InputFormRef.GetExplain("@COMMENT"));
+                this.ToolTip.SetToolTip(label, InputFormRef.GetExplain("@COMMENT"));
                 PatchPage.Controls.Add(label);
 
                 TextBoxEx comment = new TextBoxEx();

@@ -502,7 +502,7 @@ namespace FEBuilderGBA
                 buttons[0].Tag = b0;
 
                 string skillCaption = SkillConfigSkillSystemForm.GetSkillText((uint)b0, text);
-                tooltip.SetToolTipOverraide(buttons[skillCount], skillCaption);
+                tooltip.SetToolTip(buttons[skillCount], skillCaption);
                 skillCount++;
             }
 
@@ -643,7 +643,7 @@ namespace FEBuilderGBA
                 {
                     skillCaption = skillCaption + "\r\n" + R._("(Lv{0}で習得)", level);
                 }
-                tooltip.SetToolTipOverraide(buttons[skillCount], skillCaption);
+                tooltip.SetToolTip(buttons[skillCount], skillCaption);
                 skillCount++;
                 if (skillCount >= buttons.Length)
                 {
