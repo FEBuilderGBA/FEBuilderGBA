@@ -30,6 +30,7 @@ namespace FEBuilderGBA
             g_Cache_FE8UItemSkill_enum = FE8UItemSkill_enum.NoCache;
             g_Cache_Raid_enum = Raid_enum.NoCache;
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
+            g_InstrumentSet = null;
         }
 
         public const uint NO_CACHE = 0xff;
@@ -455,7 +456,7 @@ namespace FEBuilderGBA
 
         public static bool SearchNIMAP()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), 100);
+            List<U.AddrResult> iset = PatchUtil.SearchInstrumentSet(100);
             for (int i = 0; i < iset.Count; i++)
             {
                 string name = iset[i].name;
@@ -1242,6 +1243,86 @@ namespace FEBuilderGBA
             found = Math.Min(found, new_found);
 
             return found;
+        }
+
+        static List<U.AddrResult> g_InstrumentSet = null;
+
+        public static List<U.AddrResult> SearchInstrumentSet(uint currentData)
+        {
+            if (g_InstrumentSet == null)
+            {
+                g_InstrumentSet = SearchInstrumentSetLow(U.ConfigDataFilename("song_instrumentset_"), currentData);
+            }
+            return g_InstrumentSet;
+        }
+
+        static List<U.AddrResult> SearchInstrumentSetLow(string filename, uint currentData)
+        {
+            List<U.AddrResult> iset = new List<U.AddrResult>();
+            iset.Add(new U.AddrResult(currentData, U.ToHexString(U.toPointer(currentData)) + "=Current"));
+
+            bool hasNimap2 = false;
+
+            string[] lines = File.ReadAllLines(filename);
+            string version = Program.ROM.RomInfo.VersionToFilename();
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (U.IsComment(lines[i]))
+                {
+                    continue;
+                }
+                string line = U.ClipComment(lines[i]);
+                string[] sp = line.Split('\t');
+                if (sp.Length < 3)
+                {
+                    continue;
+                }
+                if (sp[1] != version)
+                {
+                    if (sp[1] != "ALL")
+                    {
+                        continue;
+                    }
+                }
+                string[] hexStrings = sp[2].Split(' ');
+                byte[] need = new byte[hexStrings.Length];
+                for (int n = 0; n < hexStrings.Length; n++)
+                {
+                    need[n] = (byte)U.atoh(hexStrings[n]);
+                }
+
+                //Grepして調べる 結構重い.
+                uint v = U.Grep(Program.ROM.Data, need, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+                if (v == U.NOT_FOUND)
+                {
+                    continue;
+                }
+
+                if (sp[0] == "AllInstrument")
+                {//All Instrumentは、マルチトラックしかないので、データのポインタでサンプルを取ります。
+                    v = U.GrepPointer(Program.ROM.Data, v, Program.ROM.RomInfo.compress_image_borderline_address());
+                    if (v == U.NOT_FOUND)
+                    {
+                        continue;
+                    }
+                    v -= 8;
+                }
+                else if (sp[0] == "NatveInstrumentMap2")
+                {
+                    hasNimap2 = true;
+                }
+                else if (sp[0] == "NatveInstrumentMap")
+                {
+                    if (hasNimap2)
+                    {
+                        continue;
+                    }
+                }
+
+                v = U.toPointer(v);
+                iset.Add(new U.AddrResult(v, U.ToHexString(v) + "=" + sp[0]));
+            }
+            return iset;
         }
     }
 }

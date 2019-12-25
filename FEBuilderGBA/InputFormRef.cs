@@ -9500,6 +9500,17 @@ namespace FEBuilderGBA
 
             return aal;
         }
+        //APデータの長さを求める汎用ルーチン.
+        public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback_ap(uint addr)
+        {
+            addr = U.toOffset(addr);
+
+            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
+            aal.addr = addr;
+            aal.length = ImageUtilAP.CalcAPLength(addr);
+
+            return aal;
+        }
         public static void UpdateLZ77Padding(ref MoveToUnuseSpace.ADDR_AND_LENGTH aal)
         {
             if (U.isPadding4(aal.length))

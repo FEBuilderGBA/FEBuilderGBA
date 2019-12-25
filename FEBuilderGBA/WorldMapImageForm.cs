@@ -470,10 +470,24 @@ namespace FEBuilderGBA
                 return;
             }
 
-            //画像等データの書き込み
             Undo.UndoData undodata = Program.Undo.NewUndoData(this);
+
+            //画像の書き込み
             this.Border_InputFormRef.WriteImageData(this.BORDER_P0, image, true, undodata);
-            this.Border_InputFormRef.WriteImageData(this.BORDER_P4, oam, false, undodata);
+
+            //APの書き込み
+            uint newaddr = InputFormRef.WriteBinaryData(this
+                , (uint)this.BORDER_P4.Value
+                , oam
+                , InputFormRef.get_data_pos_callback_ap
+                , undodata
+            );
+            if (newaddr == U.NOT_FOUND)
+            {
+                Program.Undo.Rollback(undodata);
+                return;
+            }
+            this.BORDER_P4.Value = U.toPointer(newaddr);
             Program.Undo.Push(undodata);
 
             //ポインタの書き込み

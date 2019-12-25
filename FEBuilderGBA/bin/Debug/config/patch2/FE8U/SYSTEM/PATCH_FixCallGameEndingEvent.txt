@@ -1,0 +1,17 @@
+NAME=編分岐していない状態でもエイリークEDを表示する
+NAME.en=Show Eirika ED , when no branch edtions
+
+INFO=編を分岐せずに、チュートリアルのままでクリアした場合に、MNC4を発行しても、エンディングが呼び出されない問題を修正します。\r\nMNC4でエンディングが呼ばれた場合、エイリークEDを表示するように修正します。
+INFO.en=Fix the problem that the ending is not called even if MNC4 is issued when clearing the tutorial as it is without branching.\r\nIf ending is called by MNC4, fix to show Erika ED.
+
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x9EAE
+COMBO=default|0x0D 0xE0|Fix|0x01 0xE0
+
+AUTHOR=7743
+NAME.zh=即使不进行编织，也会显示Eliic ED。
+INFO.zh=解决了清除本教程时即使没有分支也不会发出MNC4结尾的问题。\r\n在MNC4中调用结束功能时，请修复以显示EliQ ED。

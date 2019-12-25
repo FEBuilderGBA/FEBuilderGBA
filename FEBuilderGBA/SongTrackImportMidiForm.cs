@@ -18,7 +18,7 @@ namespace FEBuilderGBA
         }
         void PickupInstrument()
         {
-            List<U.AddrResult> iset = SongUtil.SearchInstrumentSet(U.ConfigDataFilename("song_instrumentset_"), this.OrignalInstrumentAddr);
+            List<U.AddrResult> iset = PatchUtil.SearchInstrumentSet(this.OrignalInstrumentAddr);
             U.ConvertComboBox(iset, ref InstrumentSelectComboBox);
 
             if (iset.Count >= 1)

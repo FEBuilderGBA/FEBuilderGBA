@@ -3274,63 +3274,6 @@ namespace FEBuilderGBA
         }
 #endif
 
-        public static List<U.AddrResult> SearchInstrumentSet(string filename, uint currentData)
-        {
-            List<U.AddrResult> iset = new List<U.AddrResult>();
-            iset.Add(new U.AddrResult(currentData, U.ToHexString(U.toPointer(currentData)) + "=Current"));
-
-            string[] lines = File.ReadAllLines(filename);
-
-            string version = Program.ROM.RomInfo.VersionToFilename();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (U.IsComment(lines[i]))
-                {
-                    continue;
-                }
-                string line = U.ClipComment(lines[i]);
-                string[] sp = line.Split('\t');
-                if (sp.Length < 3)
-                {
-                    continue;
-                }
-                if (sp[1] != version)
-                {
-                    if (sp[1] != "ALL")
-                    {
-                        continue;
-                    }
-                }
-                string[] hexStrings = sp[2].Split(' ');
-                byte[] need = new byte[hexStrings.Length];
-                for (int n = 0; n < hexStrings.Length; n++)
-                {
-                    need[n] = (byte)U.atoh(hexStrings[n]);
-                }
-
-                //Grepして調べる 結構重い.
-                uint v = U.Grep(Program.ROM.Data, need, 0x400000, 0, 4);
-                if (v == U.NOT_FOUND)
-                {
-                    continue;
-                }
-
-                if (sp[0] == "AllInstrument")
-                {//All Instrumentは、マルチトラックしかないので、データのポインタでサンプルを取ります。
-                    v = U.GrepPointer(Program.ROM.Data, v, 0x400000);
-                    if (v == U.NOT_FOUND)
-                    {
-                        continue;
-                    }
-                    v -= 8;
-                }
-
-                v = U.toPointer(v);
-                iset.Add(new U.AddrResult(v, U.ToHexString(v) + "=" + sp[0]));
-            }
-            return iset;
-        }
-
         public static void ExportInstrument(string filename, uint instrument_addr)
         {
             SongInstrumentForm.ExportAllLow(filename, instrument_addr);

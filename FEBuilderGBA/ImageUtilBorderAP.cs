@@ -116,8 +116,8 @@ namespace FEBuilderGBA
             oam.MakeBorderAP(imagefilename);
             uint oam1st = oam.GetOAMByteCount();
             oam.MakeBorderAP(name_filename);
-            uint oam2nd = oam.GetOAMByteCount();
             oam.Term();
+            uint oam2nd = oam.GetOAMByteCount();
 
             List<ImageUtilOAM.image_data> images = oam.GetImages();
             if (images.Count >= 2)
@@ -131,10 +131,50 @@ namespace FEBuilderGBA
             {
                 return false;
             }
-            byte[] apOAM = BattleOAMToAPOAM(battleAOM);
+            byte[] apOAM = battleAOM;
+            List<byte> newOam = new List<byte>();
+            //ap_data header
+            U.append_u16(newOam, 4); //ap_data header SHORT (frame_list - ap_data)
+            U.append_u16(newOam, 8); //ap_data header SHORT (anim_list - ap_data)
+            //frame_list
+            uint addr_frame_list = (uint)newOam.Count;
+            U.append_u16(newOam, 0); //SHORT (frame_0 - frame_list)
+            U.append_u16(newOam, 0); //SHORT (frame_1 - frame_list)
+            //anim_list
+            uint addr_anim_list = (uint)newOam.Count;
+            U.append_u16(newOam, 0); //SHORT (anim_0 - anim_list)
+            U.append_u16(newOam, 0); //SHORT (anim_1 - anim_list)
+            //frame_0
+            uint addr_frame_0 = (uint)newOam.Count;
+            U.append_u16(newOam, oam1st / 12); // oam entries
+            for (uint i = 0; i < oam1st; i ++)
+            {
+                U.append_u8(newOam, apOAM[i] ); // oam entries
+            }
+            //frame_1
+            uint addr_frame_1 = (uint)newOam.Count;
+            U.append_u16(newOam, (oam2nd - oam1st) / 12); // oam entries
+            for (uint i = oam1st; i < oam2nd; i++)
+            {
+                U.append_u8(newOam, apOAM[i]); // oam entries
+            }
+            //anim_0:
+            uint addr_anim_0 = (uint)newOam.Count;
+            U.append_u16(newOam, 4); U.append_u16(newOam, 0);
+            U.append_u16(newOam, 0);  U.append_u16(newOam, 0xffff);// loop back to start
+            //anim_1:
+            uint addr_anim_1 = (uint)newOam.Count;
+            U.append_u16(newOam, 4); U.append_u16(newOam, 1);
+            U.append_u16(newOam, 0); U.append_u16(newOam, 0xffff);// loop back to start
 
-            out_image = images[0].data;
-            out_oam = apOAM;
+            out_oam = newOam.ToArray();
+            //フレームの位置を書き込む
+            U.write_u16(out_oam, 4, addr_frame_0 - addr_frame_list); //SHORT  (frame_0 - frame_list)
+            U.write_u16(out_oam, 6, addr_frame_1 - addr_frame_list); //SHORT  (frame_1 - frame_list)
+            U.write_u16(out_oam, 8, addr_anim_0 - addr_anim_list); //SHORT  (anim_0 - anim_list)
+            U.write_u16(out_oam, 10, addr_anim_1 - addr_anim_list); //SHORT (anim_1 - anim_list)
+
+            out_image = LZ77.decompress(images[0].data,0);
             return true;
         }
         //戦闘アニメの12バイトOAMデータを、APの12バイトOAMに変換します
@@ -152,31 +192,36 @@ namespace FEBuilderGBA
                 shiftY  = MaxRC.Height - 0x80;
             }
 
-            for (int i = 0; i < battle.Length - 1; i += 12)
+            for (uint i = 0; i < battle.Length - 1; i += 12)
             {
                 uint oam0 = 0;
                 uint oam1 = 0;
                 uint oam2 = 0;
 
                 ImageUtilAP.OAMParse ap = new ImageUtilAP.OAMParse();
-                int x = (short)U.u16(battle, (uint)i + 6);
-                int y = (short)U.u16(battle, (uint)i + 8);
+                int x = (short)U.u16(battle, i + 6);
+                int y = (short)U.u16(battle, i + 8);
                 sbyte image_x = (sbyte)(x - MaxRC.Left - shiftX);
                 sbyte image_y = (sbyte)(y - MaxRC.Top  - shiftY);
                 uint tile = battle[i + 4];
-                ap.tile = tile;
+                uint tile_x = tile & 0x1F;
+                uint tile_y = (tile & 0xE0) >> 5;
+                ap.tile = tile_x + (tile_y * 31);
 
-                oam0 |= (uint)((battle[1] & 0x3) << 14);
-                oam1 |= (uint)((battle[3] & 0x3) << 14);
+                oam0 |= (uint)(battle[i + 1] & 0xC0) ;
+                oam1 |= (uint)(battle[i + 3] & 0xC0) ;
 
                 oam1 |= (uint)(image_x & 0x1FF);
                 oam0 |= (uint)(image_y & 0x0FF);
 
-                oam2 |= (tile & 0x3FF);
+                oam2 |= (ap.tile & 0x3FF);
 
-                U.write_u32(ret, (uint)i, oam0);
-                U.write_u32(ret, (uint)i + 4, oam1);
-                U.write_u32(ret, (uint)i + 8, oam2);
+//                U.write_u32(ret, (uint)i, oam0);
+//                U.write_u32(ret, (uint)i + 4, oam1);
+//                U.write_u32(ret, (uint)i + 8, oam2);
+                U.write_u32(ret, (uint)i, U.u32(battle,i));
+                U.write_u32(ret, (uint)i+4, U.u32(battle,i+4));
+                U.write_u32(ret, (uint)i+8, U.u32(battle,i+8));
             }
             return ret;
         }
@@ -208,7 +253,7 @@ namespace FEBuilderGBA
                     yButtom = y;
                 }
             }
-            return new Rectangle(xTop, xTop, xButtom - xTop, yButtom - yTop);
+            return new Rectangle(xTop, yTop, xButtom - xTop, yButtom - yTop);
         }
     }
 }

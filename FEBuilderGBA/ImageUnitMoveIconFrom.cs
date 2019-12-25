@@ -366,17 +366,6 @@ namespace FEBuilderGBA
         }
 
 
-        //APの長さを求めるコールバック
-        public static MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback_ap(uint addr)
-        {
-            addr = U.toOffset(addr);
-
-            MoveToUnuseSpace.ADDR_AND_LENGTH aal = new MoveToUnuseSpace.ADDR_AND_LENGTH();
-            aal.addr = addr;
-            aal.length = ImageUtilAP.CalcAPLength(addr);
-            return aal;
-        }
-
         private void ImportAPButton_Click(object sender, EventArgs e)
         {
             string title = R._("読込むファイル名を選択してください");
@@ -416,7 +405,7 @@ namespace FEBuilderGBA
                 uint newaddr = InputFormRef.WriteBinaryData(this
                     , ap_address
                     , ap
-                    , get_data_pos_callback_ap
+                    , InputFormRef.get_data_pos_callback_ap
                     , undodata
                 );
                 if (newaddr == U.NOT_FOUND)
