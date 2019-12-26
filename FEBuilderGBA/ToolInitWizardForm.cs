@@ -275,9 +275,9 @@ namespace FEBuilderGBA
             else if (this.Step1 == Step1_Enum.DOWNLOAD_mGBA)
             {
                 string dir = Path.Combine(Program.BaseDirectory, "app", "mVBA");
-                string url = "https://github.com/mgba-emu/mgba/releases/latest";
-                string pattern = "<a href=\"(/mgba-emu/mgba/releases/download/.+-win32.7z)\"";
-                string r = DownloadProgram_Grep(url, dir, "mGBA.exe",pattern);
+                string url = "https://github.com/mgba-emu/mgba/releases/download/0.6.1/mGBA-0.6.1-win32.7z";
+//                string pattern = "<a href=\"(/mgba-emu/mgba/releases/download/.+-win32.7z)\"";
+                string r = DownloadProgram_Direct(url, dir, "mGBA.exe");
                 if (IsErrorResult(r))
                 {
                     R.ShowStopError(r);

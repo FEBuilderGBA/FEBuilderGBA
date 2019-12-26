@@ -8863,6 +8863,12 @@ Unknown Keyword: {0}
 :32MB(0x02000000)より大きな領域を割り当てることはできません。\r\n要求サイズ:{0}
 You can not allocate more than 32MB (0x02000000).\r\nRequested size: {0}.
 
+:アンインストールするための無改造ROMが見つかりません。
+Unmodified ROM to uninstall was not found.
+
+:アンインストールするアドレスの指定が正しくありません dest:{0}
+Invalid uninstall address specification dest: {0}.
+
 :コピー先アドレスの指定が正しくありません dest:{0}
 Copy destination address specification incorrectdest: {0}
 

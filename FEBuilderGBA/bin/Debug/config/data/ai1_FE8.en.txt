@@ -18,7 +18,7 @@
 0D=Attack if enemy is in the range of commander
 0E=Heal unit with HP is 50% or less
 0F=Heal with alternating AI of 0x0E and 0x03
-10=Stuff main
+10=Steal Main
 11=Do not move until door is open
 12=Do not attack [0x5D292C]	{J}
 12=Do not attack [0x5A8A24]	{U}

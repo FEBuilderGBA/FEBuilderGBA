@@ -3018,6 +3018,7 @@ namespace FEBuilderGBA
                ,"BINP"        //バイナリをそのまま埋め込む ポインタ
                ,"BINAP"       //バイナリをそのまま埋め込む ASMポインタ
                ,"BINF"        //バイナリをそのまま埋め込む 画像など
+               ,"UNINSTALL"   //バニラのデータで上書き
                ,"CLEAR"       //00クリア
                ,"COPY"        //データコピー
                ,"SLIDE"       //データのスライド移動
@@ -3051,6 +3052,7 @@ namespace FEBuilderGBA
                         && keyword != "COPY" 
                         && keyword != "SLIDE"
                         && keyword != "EXTENDS"
+                        && keyword != "UNINSTALL"
                         && keyword != "CLEAR")
                     {
                         string filename = Path.Combine(basedir, value);
@@ -3235,6 +3237,10 @@ namespace FEBuilderGBA
             {
                 BinClear(sp, filename, binBlocks, undodata);
             }
+            else if (keyword == "UNINSTALL")
+            {
+                BinUninstall(sp, filename, binBlocks, undodata);
+            }
             else
             {
                 throw new SyntaxException(R.Error("不明なキーワードです : {0}", keyword));
@@ -3268,6 +3274,46 @@ namespace FEBuilderGBA
             Program.ROM.write_range(addr, b, undodata);
 
             binBlocks.Add(new BinBlock(addr, filename));
+        }
+
+        byte[] g_Cache_OrignalROM;
+        byte[] ReadOrignalROMWithCache()
+        {
+            if (g_Cache_OrignalROM == null)
+            {
+                String dir = Path.GetDirectoryName(Program.ROM.Filename);
+                string orignalFilename = MainFormUtil.FindOrignalROM(dir);
+                if (orignalFilename == "")
+                {
+                    return null;
+                }
+                g_Cache_OrignalROM = MainFormUtil.OpenROMToByte(orignalFilename);
+            }
+            return g_Cache_OrignalROM;
+        }
+
+        void BinUninstall(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)
+        {
+            byte[] rom = ReadOrignalROMWithCache();
+            if (rom == null)
+            {
+                throw new PatchException(R.Error("アンインストールするための無改造ROMが見つかりません。"));
+            }
+
+            uint addr = U.atoi0x(U.at(sp, 1));
+            if (!U.isSafetyOffset(addr))
+            {
+                throw new PatchException(R.Error("アンインストールするアドレスの指定が正しくありません dest:{0}", sp[1]));
+            }
+            if (addr >= rom.Length)
+            {
+                throw new PatchException(R.Error("アンインストールするアドレスの指定が正しくありません dest:{0}", sp[1]));
+            }
+            
+            uint length = U.atoi0x(Path.GetFileName(filename));
+
+            byte[] s = U.getBinaryData(rom, addr , length);
+            WriteBB(addr, filename, s, binBlocks, undodata);
         }
 
         void BinClear(string[] sp, string filename, List<BinBlock> binBlocks, Undo.UndoData undodata)

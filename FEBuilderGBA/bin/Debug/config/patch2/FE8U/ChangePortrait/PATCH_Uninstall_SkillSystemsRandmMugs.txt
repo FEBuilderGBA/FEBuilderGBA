@@ -1,0 +1,43 @@
+NAME=UnInstall SkillSystems RandomMugs
+
+AUTHOR=7743
+TYPE=BIN
+
+IF:0x22BF6=0xC0 0x46 0x00 0x4B 0x18 0x47
+
+
+UNINSTALL:0x8C634=8
+UNINSTALL:0x88680=8
+//UNINSTALL:0x7898=20 // Removed for the mug loading calculation loop
+UNINSTALL:0x22BF6=10
+UNINSTALL:0x9A950=8
+UNINSTALL:0x99EE0=8
+UNINSTALL:0x99530=8
+UNINSTALL:0x73DBC=8
+UNINSTALL:0x8E2FC=8
+UNINSTALL:0x2D7D8=8
+UNINSTALL:0x2D7F0=8
+UNINSTALL:0x9B9A0=8
+UNINSTALL:0x9B9BA=10
+UNINSTALL:0x9AE8C=8
+UNINSTALL:0x98CC4=8
+UNINSTALL:0x8C5F4=8
+UNINSTALL:0x86E4C=8
+UNINSTALL:0x365EC=8
+UNINSTALL:0x9A5F0=8
+UNINSTALL:0x9A97C=8
+UNINSTALL:0x9954C=8
+UNINSTALL:0x9A1DC=8
+UNINSTALL:0x5203C=8
+UNINSTALL:0x923A8=8
+UNINSTALL:0x9ECCE=10
+UNINSTALL:0x8E240=8
+UNINSTALL:0x34984=8
+UNINSTALL:0x2D34C=8
+UNINSTALL:0x2D37C=8
+UNINSTALL:0x9B9F0=8
+UNINSTALL:0x9BA24=8
+
+INFO=SkillSystems RandomMugsを無効にします。\r\nSkillSystems RandomMugsと、Switch Portrait images by class, chapter, flag が競合しているため、Change Portraitを利用するには、このパッチでSkillSystems RandomMugsを無効にした後で、競合しているパッチをインストールしてください。
+INFO.en=Disable SkillSystems RandomMugs.\r\nSkillSystems RandomMugs conflicts with Switch Portrait images by class, chapter, flag. To use Change Portrait, disable SkillSystems RandomMugs with this patch and install the conflicting patch 
+INFO.zh=禁用SkillSystems RandomMugs。\r\nSkillSystems RandomMugs按类，章，标志与Switch Portrait图像发生冲突。要使用“更改肖像”，请禁用此补丁的SkillSystems RandomMugs并安装有冲突的补丁
