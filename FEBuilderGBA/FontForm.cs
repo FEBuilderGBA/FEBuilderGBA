@@ -268,7 +268,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                if (moji > 0xff && priorityCode == PatchUtil.PRIORITY_CODE.SJIS)
+                if (moji > 0xff || priorityCode == PatchUtil.PRIORITY_CODE.SJIS)
                 {
                     return FindFontDataSJIS(topaddress, moji, out prevaddr, rom);
                 }

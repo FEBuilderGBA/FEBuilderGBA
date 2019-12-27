@@ -5246,7 +5246,7 @@
 0802B258	RollForGreatShield	{J}
 0802B2FC	RollForLethality	{J}
 0802B328	NullifyBattleDamageIfUsingStone	{J}
-0802958C	GenerateCurrentRoundData	{J}
+0802B344	GenerateCurrentRoundData	{J}
 0802B4CC	UpdateBattleTriangleAttackData	{J}
 0802B554	CurrentRound_ComputeWeaponEffects	{J}
 0802B784	MakeNextBattleHitRound	{J}

@@ -120,7 +120,7 @@ namespace FEBuilderGBA
             }
 
             ToolTranslateROMFont trans = new ToolTranslateROMFont();
-            trans.ImportFont(this, this.FontROMTextBox.Text, FontAutoGenelateCheckBox.Checked, FontAutoGenelateCheckBox.Font);
+            trans.ImportFont(this, this.FontROMTextBox.Text, FontAutoGenelateCheckBox.Checked, UseFontNameTextEdit.Font);
         }
         private void FontROMTextBox_DoubleClick(object sender, EventArgs e)
         {
