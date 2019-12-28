@@ -123,6 +123,9 @@ namespace FEBuilderGBA
                     , t.v_flipped
                     , t.h_flipped
                 );
+                Log.Debug("_" + index + "_" + i + "  " + t.image_x + "," + t.image_y);
+
+//                ret.Save("_" + index + "_" + i + ".png");
             }
             return ret;
         }

@@ -126,12 +126,12 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            byte[] battleAOM = oam.GetRightToLeftOAM();
-            if (battleAOM.Length <= 1)
+            byte[] battleOAM = oam.GetRightToLeftOAM();
+            if (battleOAM.Length <= 1)
             {
                 return false;
             }
-            byte[] apOAM = battleAOM;
+            byte[] apOAM = battleOAM;
             List<byte> newOam = new List<byte>();
             //ap_data header
             U.append_u16(newOam, 4); //ap_data header SHORT (frame_list - ap_data)

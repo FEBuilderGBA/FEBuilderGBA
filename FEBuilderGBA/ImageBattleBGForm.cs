@@ -116,11 +116,18 @@ namespace FEBuilderGBA
             int width = 30 * 8;
             int height = 20 * 8;
             int palette_count = 8;
-            Bitmap bitmap = ImageUtil.LoadAndConvertDecolorUI(this, null, width, height, true, palette_count);
+            Bitmap bitmap = ImageUtil.LoadAndConvertDecolorUI(this, null, 0, height, true, palette_count);
             if (bitmap == null)
             {
                 return;
             }
+            if (bitmap.Width > width || bitmap.Height > height)
+            {//幅サイズが超えていたら削り落とす.
+                Bitmap newBitmap = ImageUtil.Blank(width, height , bitmap);
+                ImageUtil.BitBlt(newBitmap, 0, 0, width, height, bitmap, 0, 0);
+                bitmap = newBitmap;
+            }
+
 
             byte[] image; //画像
             byte[] tsa;   //TSA
