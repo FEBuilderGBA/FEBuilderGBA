@@ -458,13 +458,12 @@ namespace FEBuilderGBA
 
         private void BORDER_ImportButton_Click(object sender, EventArgs e)
         {
-#if !DEBUG
-            R.ShowStopError("現在作成中です");
-            return ;
-#else
             byte[] image ;
             byte[] oam ;
-            bool r = ImageUtilBorderAP.ImportBorder(this, out image , out oam);
+            bool r = ImageUtilBorderAP.ImportBorder(this,
+                (uint)BORDER_W8.Value,
+                (uint)BORDER_W10.Value,
+                out image , out oam);
             if (!r)
             {
                 return;
@@ -493,58 +492,6 @@ namespace FEBuilderGBA
             //ポインタの書き込み
             this.BORDER_WriteButton.PerformClick();
             return;
-#endif
-/*
-            int width = 8 * 32; //256
-            int height = 8 * 4; //32
-            int palette_count = 1;
-
-            if (BORDER_AddressList.SelectedIndex == 1)
-            {//グラドだけ //256x40
-                height = 8 * 5;
-            }
-
-            Bitmap bitmap = ImageUtil.LoadAndConvertDecolorUI(this, null, width, height, true, palette_count);
-            if (bitmap == null)
-            {
-                return;
-            }
-
-            byte[] image = ImageUtil.ImageToByte16Tile(bitmap, width, height);
-
-            //check palette
-            {
-                uint pal = Program.ROM.p32(Program.ROM.RomInfo.worldmap_county_border_palette_pointer());
-                string palette_error =
-                    ImageUtil.CheckPalette(bitmap.Palette
-                        , Program.ROM.Data
-                        , (pal)
-                        , U.NOT_FOUND
-                        );
-                if (palette_error != "")
-                {
-                    ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
-                    f.SetErrorMessage(palette_error);
-                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, pal));
-                    f.ShowForceButton();
-                    f.ShowDialog();
-
-                    bitmap = f.GetResultBitmap();
-                    if (bitmap == null)
-                    {
-                        return;
-                    }
-                }
-            }
-
-            //画像等データの書き込み
-            Undo.UndoData undodata = Program.Undo.NewUndoData(this);
-            this.Border_InputFormRef.WriteImageData(this.BORDER_P0, image, true, undodata);
-            Program.Undo.Push(undodata);
-
-            //ポインタの書き込み
-            this.BORDER_WriteButton.PerformClick();
-*/
         }
 
         private void BORDER_W8_ValueChanged(object sender, EventArgs e)

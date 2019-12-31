@@ -1675,7 +1675,7 @@
 @DrawFont@10	short	base value for text tiles (containing base tile index & palette mask)
 @DrawFont@12	short	current tile index (local/relative to root)
 @DrawFont@14	short	palette index
-@DrawFont@16	byte	idk	 (set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
+@DrawFont@16	byte	idk	 (set from byte at 02028E74(gLang), which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
 @DrawFont@17	byte	idk
 
 02028E58	@DrawFont	Default font struct	{U}
@@ -2667,8 +2667,8 @@
 08003a3c	FlushDBGToBG2	{U}
 08003b24	SetupDebugFontForOBJ	{U}
 08003bb0	PrintDebugStringAsOBJ	{U}
-08003c7c	GetSomeByte	{U}
-08003c88	SetSomeByte	{U}
+08003c7c	GetLang	{U}
+08003c88	SetLang	{U}
 08003c94	Font_InitForUIDefault	{U}
 08003cb8	Font_InitForUI	{U}
 08003cf4	SetFontGlyphSet	{U}
@@ -4484,8 +4484,6 @@
 08003988	FlushDBGToBG2	{J}
 08003A70	SetupDebugFontForOBJ	{J}
 08003AFC	PrintDebugStringAsOBJ	{J}
-08003BAC	GetSomeByte	{J}
-08003BB8	SetSomeByte	{J}
 08003BC4	Font_InitForUIDefault	{J}
 08003BE8	Font_InitForUI	{J}
 08003C24	SetFontGlyphSet	{J}
@@ -12692,3 +12690,4 @@
 0802F450	Use_PureWater	{U}
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
+08003B90	Another Print idk	{J}

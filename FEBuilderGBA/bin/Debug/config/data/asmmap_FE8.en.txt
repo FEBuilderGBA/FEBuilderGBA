@@ -2658,8 +2658,8 @@ r3=X tile position of menu of right	{U}
 08003a3c	FlushDBGToBG2	{U}
 08003b24	SetupDebugFontForOBJ	{U}
 08003bb0	PrintDebugStringAsOBJ	{U}
-08003c7c	GetSomeByte	{U}
-08003c88	SetSomeByte	{U}
+08003c7c	GetLang	{U}
+08003c88	SetLang	{U}
 08003c94	Font_InitForUIDefault	{U}
 08003cb8	Font_InitForUI	{U}
 08003cf4	SetFontGlyphSet	{U}
@@ -4475,8 +4475,6 @@ r3=X tile position of menu of right	{U}
 08003988	FlushDBGToBG2	{J}
 08003A70	SetupDebugFontForOBJ	{J}
 08003AFC	PrintDebugStringAsOBJ	{J}
-08003BAC	GetSomeByte	{J}
-08003BB8	SetSomeByte	{J}
 08003BC4	Font_InitForUIDefault	{J}
 08003BE8	Font_InitForUI	{J}
 08003C24	SetFontGlyphSet	{J}
@@ -12698,3 +12696,4 @@ r3=X tile position of menu of right	{U}
 0802F450	Use_PureWater	{U}
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
+08003B90	Another Print idk	{J}

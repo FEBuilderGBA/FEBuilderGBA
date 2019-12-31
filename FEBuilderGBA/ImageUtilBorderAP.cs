@@ -92,7 +92,7 @@ namespace FEBuilderGBA
 
             return Path.Combine(basedir , filename + "_NAME" + ext);
         }
-        public static bool ImportBorder(Form self, out byte[] out_image,out byte[] out_oam)
+        public static bool ImportBorder(Form self,uint origin_x,uint origin_y, out byte[] out_image,out byte[] out_oam)
         {
             out_image = null;
             out_oam = null;
@@ -110,14 +110,15 @@ namespace FEBuilderGBA
             }
             string basedir = Path.GetDirectoryName(imagefilename);
 
+            List<uint> battleOAMSplit = new List<uint>();
             ImageUtilOAM.ImportOAM oam = new ImageUtilOAM.ImportOAM();
             oam.SetIsBorderAPOAM(true);
             oam.SetBaseDir(basedir);
             oam.MakeBorderAP(imagefilename);
-            uint oam1st = oam.GetOAMByteCount();
+            battleOAMSplit.Add(oam.GetOAMByteCount());
             oam.MakeBorderAP(name_filename);
             oam.Term();
-            uint oam2nd = oam.GetOAMByteCount();
+            battleOAMSplit.Add(oam.GetOAMByteCount());
 
             List<ImageUtilOAM.image_data> images = oam.GetImages();
             if (images.Count >= 2)
@@ -127,11 +128,14 @@ namespace FEBuilderGBA
             }
 
             byte[] battleOAM = oam.GetRightToLeftOAM();
-            if (battleOAM.Length <= 1)
+
+            List<uint> apOAMSplit = new List<uint>();
+            byte[] apOAM = BattleOAMToAPOAM(battleOAM, battleOAMSplit,origin_x,origin_y, apOAMSplit);
+            if (apOAM == null)
             {
                 return false;
             }
-            byte[] apOAM = battleOAM;
+
             List<byte> newOam = new List<byte>();
             //ap_data header
             U.append_u16(newOam, 4); //ap_data header SHORT (frame_list - ap_data)
@@ -146,15 +150,15 @@ namespace FEBuilderGBA
             U.append_u16(newOam, 0); //SHORT (anim_1 - anim_list)
             //frame_0
             uint addr_frame_0 = (uint)newOam.Count;
-            U.append_u16(newOam, oam1st / 12); // oam entries
-            for (uint i = 0; i < oam1st; i ++)
+            U.append_u16(newOam, apOAMSplit[0] / 6); // oam entries
+            for (uint i = 0; i < apOAMSplit[0]; i++)
             {
                 U.append_u8(newOam, apOAM[i] ); // oam entries
             }
             //frame_1
             uint addr_frame_1 = (uint)newOam.Count;
-            U.append_u16(newOam, (oam2nd - oam1st) / 12); // oam entries
-            for (uint i = oam1st; i < oam2nd; i++)
+            U.append_u16(newOam, (apOAMSplit[1] - apOAMSplit[0]) / 6); // oam entries
+            for (uint i = apOAMSplit[0]; i < apOAMSplit[1]; i++)
             {
                 U.append_u8(newOam, apOAM[i]); // oam entries
             }
@@ -177,53 +181,68 @@ namespace FEBuilderGBA
             out_image = LZ77.decompress(images[0].data,0);
             return true;
         }
-        //戦闘アニメの12バイトOAMデータを、APの12バイトOAMに変換します
-        static byte[] BattleOAMToAPOAM(byte[] battle)
+        const int bitmap_addx = 0x94;
+        const int bitmap_addy = 0x58;
+        //戦闘アニメの12バイトOAMデータを、APの6バイトOAMに変換します
+        static byte[] BattleOAMToAPOAM(byte[] battleOAM, List<uint> battleOAMSplit,uint origin_x, uint origin_y,  List<uint> out_apOAMSplit)
         {
-            Debug.Assert(battle.Length % 12 == 0);   
-            byte[] ret = new byte[battle.Length];
+            Debug.Assert(battleOAM.Length % 12 == 0);
+            List<byte> ret = new List<byte>();
 
-            int shiftX = 0;
-            int shiftY = 0;
+            int shiftX = (int)origin_x;
+            int shiftY = (int)origin_y;
             //最大描画範囲を取得
-            Rectangle MaxRC = BattleOAMMaxRectngle(battle);
+            Rectangle MaxRC = BattleOAMMaxRectngle(battleOAM);
             if (MaxRC.Height >= 0x80)
             {//AP OAMには、Y軸を0x80までしか格納できないので、それ以降は原点をずらすしかない。
                 shiftY  = MaxRC.Height - 0x80;
             }
 
-            for (uint i = 0; i < battle.Length - 1; i += 12)
+            int n = 0;
+            for (uint i = 0; i < battleOAM.Length ; i += 12)
             {
+                if (battleOAM[0] == 1)
+                {
+                    break;
+                }
+                if (n < battleOAMSplit.Count && i >= battleOAMSplit[n])
+                {
+                    out_apOAMSplit.Add((uint)ret.Count);
+                    n++;
+                }
+
                 uint oam0 = 0;
                 uint oam1 = 0;
                 uint oam2 = 0;
 
                 ImageUtilAP.OAMParse ap = new ImageUtilAP.OAMParse();
-                int x = (short)U.u16(battle, i + 6);
-                int y = (short)U.u16(battle, i + 8);
+                int x = (short)U.u16(battleOAM, i + 6);
+                int y = (short)U.u16(battleOAM, i + 8);
+                x += bitmap_addx;
+                y += bitmap_addy;
+
                 sbyte image_x = (sbyte)(x - MaxRC.Left - shiftX);
                 sbyte image_y = (sbyte)(y - MaxRC.Top  - shiftY);
-                uint tile = battle[i + 4];
+                uint tile = battleOAM[i + 4];
                 uint tile_x = tile & 0x1F;
                 uint tile_y = (tile & 0xE0) >> 5;
-                ap.tile = tile_x + (tile_y * 31);
+                ap.tile = tile_x + (tile_y * 32);
 
-                oam0 |= (uint)(battle[i + 1] & 0xC0) ;
-                oam1 |= (uint)(battle[i + 3] & 0xC0) ;
+
+                oam0 |= (uint)((battleOAM[i + 1] & 0xC0 )<<8 );
+                oam1 |= (uint)((battleOAM[i + 3] & 0xC0 )<<8 );
 
                 oam1 |= (uint)(image_x & 0x1FF);
                 oam0 |= (uint)(image_y & 0x0FF);
 
                 oam2 |= (ap.tile & 0x3FF);
 
-//                U.write_u32(ret, (uint)i, oam0);
-//                U.write_u32(ret, (uint)i + 4, oam1);
-//                U.write_u32(ret, (uint)i + 8, oam2);
-                U.write_u32(ret, (uint)i, U.u32(battle,i));
-                U.write_u32(ret, (uint)i+4, U.u32(battle,i+4));
-                U.write_u32(ret, (uint)i+8, U.u32(battle,i+8));
+                U.append_u16(ret, oam0);
+                U.append_u16(ret, oam1);
+                U.append_u16(ret, oam2);
             }
-            return ret;
+            out_apOAMSplit.Add((uint)ret.Count);
+            return ret.ToArray();
         }
 
         static Rectangle BattleOAMMaxRectngle(byte[] battle)
@@ -234,7 +253,15 @@ namespace FEBuilderGBA
             int yButtom = 0;
             for (int i = 0; i < battle.Length; i += 12)
             {
-                int x = (short)U.u16(battle,(uint)i + 6);
+                if (battle[0] == 1)
+                {
+                    break;
+                }
+                int x = (short)U.u16(battle, (uint)i + 6);
+                int y = (short)U.u16(battle, (uint)i + 8);
+                x += bitmap_addx;
+                y += bitmap_addy;
+
                 if (x < xTop)
                 {
                     xTop = x;
@@ -243,7 +270,6 @@ namespace FEBuilderGBA
                 {
                     xButtom = x;
                 }
-                int y = (short)U.u16(battle, (uint)i + 8);
                 if (y < yTop)
                 {
                     yTop = y;
