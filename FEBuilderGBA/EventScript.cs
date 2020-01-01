@@ -221,7 +221,7 @@ namespace FEBuilderGBA
             {
                 //パッチに登録されているイベントのスキャン(少し重いです)
                 Dictionary<uint, string> flags = new Dictionary<uint,string>();
-                PatchForm.MakeEventScript(scripts, flags, Program.ExportFunction);
+                PatchForm.MakeEventScript(scripts, flags, Program.TextEscape, Program.ExportFunction);
                 Program.FlagCache.MargeFlags(flags);
             }
 

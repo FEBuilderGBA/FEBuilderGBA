@@ -22,6 +22,7 @@ namespace FEBuilderGBA
 
         public FETextEncode()
         {
+            MakeRepalceSPCode();
             RebuildHuffmanMap();
         }
         public void RebuildHuffmanMap()
@@ -444,46 +445,110 @@ namespace FEBuilderGBA
 
         public static string ConvertSPMoji(string str)
         {
-            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
-            str = str.Replace("\r\n", "@0001");
-            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
-            {
-                return str;
-            }
+            return U.table_replace(str, g_RepalceSPCode);
+        }
 
-            //日本語版は一部入りきらない文字を特殊フォント化しているので変換する.
-            if (Program.ROM.RomInfo.version() >= 8)
+        public static string RevConvertSPMoji(string str)
+        {
+            return U.table_replace_rev(str, g_RepalceSPCode);
+        }
+
+        //特殊文字の置換テーブル
+        static List<string> g_RepalceSPCode;
+        static void MakeRepalceSPCode()
+        {
+            g_RepalceSPCode = new List<string>();
+            g_RepalceSPCode.Add("\r\n"); g_RepalceSPCode.Add("@0001");
+            if (Program.ROM.RomInfo.is_multibyte())
             {
-                str = str.Replace("(ｻﾝﾀﾞｰｽﾄｰﾑ)", "нопр");///No Translate
-                str = str.Replace("(ﾌｫﾚｽﾄﾅｲﾄ)", "⊂⊃┌┐");///No Translate
-                str = str.Replace("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)", "абвг");///No Translate
-                str = str.Replace("(ﾜｲﾊﾞｰﾝﾅｲﾄ)", "шщъы");///No Translate
-                str = str.Replace("(ﾌｧﾙｺﾝﾅｲﾄ)", "жзий");///No Translate
-                str = str.Replace("(ﾓｰｻﾄﾞｩｰｸﾞ)", "∞┴∠∧");///No Translate
-                str = str.Replace("(ﾃﾞｽｶﾞｰｺﾞｲﾙ)", "∇∈∋├");///No Translate
-                str = str.Replace("(ﾄﾞﾗｺﾞﾝｿﾞﾝﾋﾞ)", "≠≡≦≧");///No Translate
-                str = str.Replace("(ｺﾞｰｺﾞﾝの卵)", "∪∫∬∴");///No Translate
-            }
-            else if (Program.ROM.RomInfo.version() >= 7)
-            {//FE7
-                str = str.Replace("(ｻﾝﾀﾞｰｽﾄｰﾑ)", "⑮⑯⑰⑱⑲⑳α");///No Translate
-                str = str.Replace("(ﾌｧﾙｺﾝﾅｲﾄ)", "⑧⑨⑩⑪⑫⑬⑭");///No Translate
-                str = str.Replace("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)", "①②③④⑤⑥⑦");///No Translate
-            }
-            else if (Program.ROM.RomInfo.version() >= 6)
-            {//FE6
-                str = str.Replace("(ｻﾝﾀﾞｰｽﾄｰﾑ)", "①②③④⑤⑥⑦");///No Translate
-                str = str.Replace("(ﾌｧﾙｺﾝﾅｲﾄ)", "ⅠⅡⅢⅣⅤⅥⅦ");///No Translate
-                str = str.Replace("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)", "⑪⑫⑬⑭⑮⑯⑰");///No Translate
-            }
-            //英語版FEにはUnicodeの1バイトだけ表記があるらしい.
-            {
-                for (int c = 0x82; c <= 0xff; c++)
+                if (Program.ROM.RomInfo.version() == 8)
                 {
-                    str = str.Replace(((char)c).ToString(), "@00" + c.ToString("X02"));
+                    g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("нопр");///No Translate
+                    g_RepalceSPCode.Add("(ﾌｫﾚｽﾄﾅｲﾄ)"); g_RepalceSPCode.Add("⊂⊃┌┐");///No Translate
+                    g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)"); g_RepalceSPCode.Add("абвг");///No Translate
+                    g_RepalceSPCode.Add("(ﾜｲﾊﾞｰﾝﾅｲﾄ)"); g_RepalceSPCode.Add("шщъы");///No Translate
+                    g_RepalceSPCode.Add("(ﾌｧﾙｺﾝﾅｲﾄ)"); g_RepalceSPCode.Add("жзий");///No Translate
+                    g_RepalceSPCode.Add("(ﾓｰｻﾄﾞｩｰｸﾞ)"); g_RepalceSPCode.Add("∞┴∠∧");///No Translate
+                    g_RepalceSPCode.Add("(ﾃﾞｽｶﾞｰｺﾞｲﾙ)"); g_RepalceSPCode.Add("∇∈∋├");///No Translate
+                    g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝｿﾞﾝﾋﾞ)"); g_RepalceSPCode.Add("≠≡≦≧");///No Translate
+                    g_RepalceSPCode.Add("(ｺﾞｰｺﾞﾝの卵)"); g_RepalceSPCode.Add("∪∫∬∴");///No Translate
+                }
+                else if (Program.ROM.RomInfo.version() == 7)
+                {
+                    g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("⑮⑯⑰⑱⑲⑳α");///No Translate
+                    g_RepalceSPCode.Add("(ﾌｧﾙｺﾝﾅｲﾄ)"); g_RepalceSPCode.Add("⑧⑨⑩⑪⑫⑬⑭");///No Translate
+                    g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)"); g_RepalceSPCode.Add("①②③④⑤⑥⑦");///No Translate
+                }
+                else if (Program.ROM.RomInfo.version() == 6)
+                {
+                    g_RepalceSPCode.Add("(ｻﾝﾀﾞｰｽﾄｰﾑ)"); g_RepalceSPCode.Add("①②③④⑤⑥⑦");///No Translate
+                    g_RepalceSPCode.Add("(ﾌｧﾙｺﾝﾅｲﾄ)"); g_RepalceSPCode.Add("ⅠⅡⅢⅣⅤⅥⅦ");///No Translate
+                    g_RepalceSPCode.Add("(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)"); g_RepalceSPCode.Add("⑪⑫⑬⑭⑮⑯⑰");///No Translate
                 }
             }
-            return str;
+            else
+            {
+                PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
+                if (priorityCode != PatchUtil.PRIORITY_CODE.UTF8)
+                {
+//                    g_RepalceSPCode.Add("\u0090"); g_RepalceSPCode.Add("@0090");///No Translate
+//                    g_RepalceSPCode.Add("\u0091"); g_RepalceSPCode.Add("@0091");///No Translate
+//                    g_RepalceSPCode.Add("\u0092"); g_RepalceSPCode.Add("@0092");///No Translate
+//                    g_RepalceSPCode.Add("\u0093"); g_RepalceSPCode.Add("@0093");///No Translate
+                    g_RepalceSPCode.Add("¡"); g_RepalceSPCode.Add("@00A1");///No Translate
+                    g_RepalceSPCode.Add("ª"); g_RepalceSPCode.Add("@00AA");///No Translate
+                    g_RepalceSPCode.Add("«"); g_RepalceSPCode.Add("@00AB");///No Translate
+                    g_RepalceSPCode.Add("»"); g_RepalceSPCode.Add("@00BB");///No Translate
+                    g_RepalceSPCode.Add("¿"); g_RepalceSPCode.Add("@00BF");///No Translate
+                    g_RepalceSPCode.Add("À"); g_RepalceSPCode.Add("@00C0");///No Translate
+                    g_RepalceSPCode.Add("Á"); g_RepalceSPCode.Add("@00C1");///No Translate
+                    g_RepalceSPCode.Add("Â"); g_RepalceSPCode.Add("@00C2");///No Translate
+                    g_RepalceSPCode.Add("Ä"); g_RepalceSPCode.Add("@00C4");///No Translate
+                    g_RepalceSPCode.Add("Ç"); g_RepalceSPCode.Add("@00C7");///No Translate
+                    g_RepalceSPCode.Add("È"); g_RepalceSPCode.Add("@00C8");///No Translate
+                    g_RepalceSPCode.Add("É"); g_RepalceSPCode.Add("@00C9");///No Translate
+                    g_RepalceSPCode.Add("Ê"); g_RepalceSPCode.Add("@00CA");///No Translate
+                    g_RepalceSPCode.Add("Ë"); g_RepalceSPCode.Add("@00CB");///No Translate
+                    g_RepalceSPCode.Add("Ì"); g_RepalceSPCode.Add("@00CC");///No Translate
+                    g_RepalceSPCode.Add("Í"); g_RepalceSPCode.Add("@00CD");///No Translate
+                    g_RepalceSPCode.Add("Î"); g_RepalceSPCode.Add("@00CE");///No Translate
+                    g_RepalceSPCode.Add("Ï"); g_RepalceSPCode.Add("@00CF");///No Translate
+                    g_RepalceSPCode.Add("Ñ"); g_RepalceSPCode.Add("@00D1");///No Translate
+                    g_RepalceSPCode.Add("Ò"); g_RepalceSPCode.Add("@00D2");///No Translate
+                    g_RepalceSPCode.Add("Ó"); g_RepalceSPCode.Add("@00D3");///No Translate
+                    g_RepalceSPCode.Add("Ô"); g_RepalceSPCode.Add("@00D4");///No Translate
+                    g_RepalceSPCode.Add("Ö"); g_RepalceSPCode.Add("@00D6");///No Translate
+                    g_RepalceSPCode.Add("Ù"); g_RepalceSPCode.Add("@00D9");///No Translate
+                    g_RepalceSPCode.Add("Ú"); g_RepalceSPCode.Add("@00DA");///No Translate
+                    g_RepalceSPCode.Add("Û"); g_RepalceSPCode.Add("@00DB");///No Translate
+                    g_RepalceSPCode.Add("Ü"); g_RepalceSPCode.Add("@00DC");///No Translate
+                    g_RepalceSPCode.Add("ß"); g_RepalceSPCode.Add("@00DF");///No Translate
+                    g_RepalceSPCode.Add("à"); g_RepalceSPCode.Add("@00E0");///No Translate
+                    g_RepalceSPCode.Add("á"); g_RepalceSPCode.Add("@00E1");///No Translate
+                    g_RepalceSPCode.Add("â"); g_RepalceSPCode.Add("@00E2");///No Translate
+                    g_RepalceSPCode.Add("ä"); g_RepalceSPCode.Add("@00E4");///No Translate
+                    g_RepalceSPCode.Add("ç"); g_RepalceSPCode.Add("@00E7");///No Translate
+                    g_RepalceSPCode.Add("è"); g_RepalceSPCode.Add("@00E8");///No Translate
+                    g_RepalceSPCode.Add("é"); g_RepalceSPCode.Add("@00E9");///No Translate
+                    g_RepalceSPCode.Add("ê"); g_RepalceSPCode.Add("@00EA");///No Translate
+                    g_RepalceSPCode.Add("ë"); g_RepalceSPCode.Add("@00EB");///No Translate
+                    g_RepalceSPCode.Add("ì"); g_RepalceSPCode.Add("@00EC");///No Translate
+                    g_RepalceSPCode.Add("í"); g_RepalceSPCode.Add("@00ED");///No Translate
+                    g_RepalceSPCode.Add("î"); g_RepalceSPCode.Add("@00ED");///No Translate
+                    g_RepalceSPCode.Add("ï"); g_RepalceSPCode.Add("@00EE");///No Translate
+                    g_RepalceSPCode.Add("ñ"); g_RepalceSPCode.Add("@00EF");///No Translate
+                    g_RepalceSPCode.Add("ò"); g_RepalceSPCode.Add("@00F1");///No Translate
+                    g_RepalceSPCode.Add("ó"); g_RepalceSPCode.Add("@00F2");///No Translate
+                    g_RepalceSPCode.Add("ô"); g_RepalceSPCode.Add("@00F3");///No Translate
+                    g_RepalceSPCode.Add("ö"); g_RepalceSPCode.Add("@00F6");///No Translate
+                    g_RepalceSPCode.Add("ù"); g_RepalceSPCode.Add("@00F9");///No Translate
+                    g_RepalceSPCode.Add("ú"); g_RepalceSPCode.Add("@00FA");///No Translate
+                    g_RepalceSPCode.Add("û"); g_RepalceSPCode.Add("@00FB");///No Translate
+                    g_RepalceSPCode.Add("ü"); g_RepalceSPCode.Add("@00FC");///No Translate
+                }
+                    
+            }
         }
+
     }
 }

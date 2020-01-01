@@ -35,13 +35,13 @@ namespace FEBuilderGBA
                     string str = Program.ROM.getString(addr, 2);
                     if (!Program.ROM.RomInfo.is_multibyte())
                     {
-                        if (c >= 0x82 && c <= 0xFF)
+                        if (c >= 0x81 && c <= 0xFF)
                         {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                             str = "@00" + c.ToString("X02");
                         }
                     }
 
-                    str = FETextDecode.ConvertSPMoji(Program.ROM, str);
+                    str = FETextEncode.RevConvertSPMoji(str);
                     return i.ToString("X04") + " " + c.ToString("X04") + " " + str;
                 }
                 );

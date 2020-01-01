@@ -1,0 +1,202 @@
+//ASCII / straight-lookup only (FE8U)
+//Don't use 0x00-0x1F slots, used for dialogue functions
+//[0x80] is also unusable (forced - character), might be more
+
+Mglyph_a:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x5 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "a.img.bin"
+
+Mglyph_b:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "b.img.bin"
+
+Mglyph_c:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "c.img.bin"
+
+Mglyph_d:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "d.img.bin"
+
+Mglyph_e:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "e.img.bin"
+
+Mglyph_f:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "f.img.bin"
+
+Mglyph_g:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "g.img.bin"
+
+Mglyph_h:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "h.img.bin"
+
+Mglyph_j:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x3 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "j.img.bin"
+
+Mglyph_k:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "k.img.bin"
+
+Mglyph_n:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "n.img.bin"
+
+Mglyph_o:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "o.img.bin"
+
+Mglyph_p:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "p.img.bin"
+
+Mglyph_q:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "q.img.bin"
+
+Mglyph_r:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x3 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "r.img.bin"
+
+Mglyph_s:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "s.img.bin"
+
+Mglyph_u:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "u.img.bin"
+
+Mglyph_v:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "v.img.bin"
+
+Mglyph_x:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "x.img.bin"
+
+Mglyph_y:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "y.img.bin"
+
+Mglyph_z:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "z.img.bin"
+
+Mglyph_shortspace:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x2 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "shortspace.img.bin"
+
+mGlyphEntry(0x81, Mglyph_a)
+mGlyphEntry(0x82, Mglyph_b)
+mGlyphEntry(0x83, Mglyph_c)
+mGlyphEntry(0x84, Mglyph_d)
+mGlyphEntry(0x85, Mglyph_e)
+mGlyphEntry(0x86, Mglyph_f)
+mGlyphEntry(0x87, Mglyph_g)
+mGlyphEntry(0x88, Mglyph_h)
+mGlyphEntry(0x89, Mglyph_j)
+mGlyphEntry(0x8A, Mglyph_k)
+mGlyphEntry(0x8B, Mglyph_n)
+mGlyphEntry(0x8C, Mglyph_o)
+mGlyphEntry(0x8D, Mglyph_p)
+mGlyphEntry(0x8E, Mglyph_q)
+mGlyphEntry(0x8F, Mglyph_r)
+mGlyphEntry(0x90, Mglyph_s)
+mGlyphEntry(0x96, Mglyph_u)
+mGlyphEntry(0x97, Mglyph_v)
+mGlyphEntry(0x98, Mglyph_x)
+mGlyphEntry(0x99, Mglyph_y)
+mGlyphEntry(0x9A, Mglyph_z)
+mGlyphEntry(0xBC, Mglyph_shortspace)

@@ -412,7 +412,6 @@ namespace FEBuilderGBA
             this.Modified = false;
             this.Data = data;
             this.Filename = name;
-            this.EnglishUTF8ReplaceTable = MakeEnglishUTF8ReplaceTable();
 
             this.RomInfo = new ROMFE7JP();
             if (data.Length >= U.toOffset(this.RomInfo.extends_address()) 
@@ -921,23 +920,6 @@ namespace FEBuilderGBA
             return true;
         }
 
-        public string[] EnglishUTF8ReplaceTable{ get; private set; }
-        string[] MakeEnglishUTF8ReplaceTable()
-        {
-            List<string> ret = new List<string>();
-            for (int c = 0x82; c < 0x90; c++)
-            {
-                ret.Add("@00" + c.ToString("X02"));
-                ret.Add(((char)c).ToString());
-            }
-            //0x90 , 0x91 = AutoNewLine
-            for (int c = 0x92; c <= 0xff; c++)
-            {
-                ret.Add("@00" + c.ToString("X02"));
-                ret.Add(((char)c).ToString());
-            }
-            return ret.ToArray();
-        }
     }
 
 }

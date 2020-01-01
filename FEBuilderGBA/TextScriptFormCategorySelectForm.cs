@@ -68,24 +68,8 @@ namespace FEBuilderGBA
                 this.EscapeList.Add(te);
             }
 
-            //自動改行
-            if (PatchUtil.SearchAutoNewLinePatch() == PatchUtil.AutoNewLine_enum.AutoNewLine)
-            {
-                {
-                    TextEscape te = new TextEscape();
-                    te.Code = "@0080@0090";
-                    te.Info = R._("AutoNewLine Conversation Text[ConversationText]");
-                    te.Category = "";
-                    this.EscapeList.Add(te);
-                }
-                {
-                    TextEscape te = new TextEscape();
-                    te.Code = "@0080@0091";
-                    te.Info = R._("AutoNewLine Battle Text[BattleText]");
-                    te.Category = "";
-                    this.EscapeList.Add(te);
-                }
-            }
+            //パッチで追加される新しいエスケープシーケンス
+            Program.TextEscape.MargeExstraEscapeList(this.EscapeList);
         }
 
         bool IsDetail;

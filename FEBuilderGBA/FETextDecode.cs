@@ -10,14 +10,12 @@ namespace FEBuilderGBA
         ROM ROM = null;
         SystemTextEncoder SystemTextEncoder = null;
         PatchUtil.PRIORITY_CODE PriorityCode;
-        PatchUtil.AutoNewLine_enum HasAutoNewLine;
 
         public FETextDecode()
         {
             this.ROM = Program.ROM;
             this.SystemTextEncoder = Program.SystemTextEncoder;
             this.PriorityCode = PatchUtil.SearchPriorityCode();
-            this.HasAutoNewLine = PatchUtil.SearchAutoNewLinePatch();
         }
         public FETextDecode(ROM rom,SystemTextEncoder encoder)
         {
@@ -129,11 +127,11 @@ namespace FEBuilderGBA
             byte[] srcdata = this.ROM.getBinaryData(addr, length);
             return UnHffmanPatchDecodeLow(srcdata);
         }
-        int AppendSJIS(List<byte> str,byte code,byte code2,PatchUtil.PRIORITY_CODE priorityCode)
+        int AppendSJIS(List<byte> str,byte code,byte code2)
         {
-            if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
+            if ( this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
             {//SJISと 1バイトUnicodeは範囲が重複するので、どちらかを優先しないといけない.
-                if (code >= 0x82)
+                if (U.IsEnglishSPCode(code))
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                     AppendAtmarkCode(str, code); //@000Fとかのコード
                     return 1;
@@ -155,14 +153,14 @@ namespace FEBuilderGBA
                 if (length > i + 1)
                 {
                     byte code2 = srcdata[i + 1];
-                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && U.isUTF8PreCode(code,code2))
                     {
                         i += U.AppendUTF8(str , srcdata , i);
                         continue;
                     }
                     else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
-                        i += AppendSJIS(str, code, code2, this.PriorityCode);
+                        i += AppendSJIS(str, code, code2);
                         continue;
                     }
 
@@ -208,18 +206,8 @@ namespace FEBuilderGBA
                     i += 1;
                     continue;
                 }
-//                //自動改行パッチ
-//                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
-//                {
-//                    if (code == 0x90 || code == 0x91)
-//                    {
-//                        AppendAtmarkCode(str, code);
-//                        i += 1;
-//                        continue;
-//                    }
-//                }
                 //特殊Unicode
-                if (code >= 0x82 && this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
+                if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1 && U.IsEnglishSPCode(code))
                 {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                     AppendAtmarkCode(str, code); //@000Fとかのコード
                     i += 1;
@@ -490,24 +478,14 @@ namespace FEBuilderGBA
                     }
                     else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
-                        len += AppendSJIS(str, code, code2, this.PriorityCode);
+                        len += AppendSJIS(str, code, code2);
                         continue;
                     }
                 }
-//                //自動改行パッチ
-//                if (this.HasAutoNewLine == PatchUtil.AutoNewLine_enum.AutoNewLine)
-//                {
-//                    if (code == 0x90 || code == 0x91)
-//                    {
-//                        AppendAtmarkCode(str, code);
-//                        len += 1;
-//                        continue;
-//                    }
-//                }
 
                 if (this.PriorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                 {//英語版FE
-                    if (code >= 0x82 || code == 0x1f)
+                    if (code >= 0x81 || code == 0x1f)
                     {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                         AppendAtmarkCode(str, code);
                         len += 1;
@@ -524,58 +502,12 @@ namespace FEBuilderGBA
         String listbyte_to_string_low(byte[] str, int len)
         {
             string r = this.SystemTextEncoder.Decode(str, 0, len);
-            return ConvertSPMoji(r);
+            return FETextEncode.RevConvertSPMoji(r);
         }
         String CString(uint p, out int out_DataSize)
         {
             string str = this.ROM.getString(p, out out_DataSize);
-            return ConvertSPMoji(str);
-        }
-
-        string ConvertSPMoji(string str)
-        {
-            return ConvertSPMoji(this.ROM, str);
-        }
-
-        public static string ConvertSPMoji(ROM rom,string str)
-        {
-            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
-            str = str.Replace("@0001", "\r\n");
-            if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
-            {
-                return str;
-            }
-
-            //日本語版は一部入りきらない文字を特殊フォント化しているので変換する.
-            if (rom.RomInfo.version() >= 8)
-            {
-                str = str.Replace("нопр", "(ｻﾝﾀﾞｰｽﾄｰﾑ)"); ///No Translate
-                str = str.Replace("⊂⊃┌┐", "(ﾌｫﾚｽﾄﾅｲﾄ)");  ///No Translate
-                str = str.Replace("абвг", "(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)");///No Translate
-                str = str.Replace("шщъы", "(ﾜｲﾊﾞｰﾝﾅｲﾄ)");///No Translate
-                str = str.Replace("жзий", "(ﾌｧﾙｺﾝﾅｲﾄ)");///No Translate
-                str = str.Replace("∞┴∠∧", "(ﾓｰｻﾄﾞｩｰｸﾞ)");///No Translate
-                str = str.Replace("∇∈∋├", "(ﾃﾞｽｶﾞｰｺﾞｲﾙ)");///No Translate
-                str = str.Replace("≠≡≦≧", "(ﾄﾞﾗｺﾞﾝｿﾞﾝﾋﾞ)");///No Translate
-                str = str.Replace("∪∫∬∴", "(ｺﾞｰｺﾞﾝの卵)");///No Translate
-            }
-            else if (rom.RomInfo.version() >= 7)
-            {//FE7
-                str = str.Replace("⑮⑯⑰⑱⑲⑳α", "(ｻﾝﾀﾞｰｽﾄｰﾑ)");///No Translate
-                str = str.Replace("⑧⑨⑩⑪⑫⑬⑭", "(ﾌｧﾙｺﾝﾅｲﾄ)");///No Translate
-                str = str.Replace("①②③④⑤⑥⑦", "(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)");///No Translate
-            }
-            else if (rom.RomInfo.version() >= 6)
-            {//FE6
-                str = str.Replace("①②③④⑤⑥⑦", "(ｻﾝﾀﾞｰｽﾄｰﾑ)");///No Translate
-                str = str.Replace("ⅠⅡⅢⅣⅤⅥⅦ", "(ﾌｧﾙｺﾝﾅｲﾄ)");///No Translate
-                str = str.Replace("⑪⑫⑬⑭⑮⑯⑰", "(ﾄﾞﾗｺﾞﾝﾏｽﾀｰ)");///No Translate
-            }
-            //英語版FEにはUnicodeの1バイトだけ表記があるらしい.
-            {
-                str = U.table_replace(str, rom.EnglishUTF8ReplaceTable);
-            }
-            return str;
+            return FETextEncode.RevConvertSPMoji(str);
         }
 
         public class FETextException : Exception

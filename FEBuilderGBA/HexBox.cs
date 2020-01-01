@@ -778,7 +778,7 @@ namespace FEBuilderGBA
                 {
                     if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                     {//SJISと 1バイトUnicodeは範囲が重複するので、どちらかを優先しないといけない.
-                        if (byte16[i] >= 0x82 && byte16[i] < 0xFE)
+                        if (byte16[i] >= 0x81 && byte16[i] < 0xFE)
                         {//英語版FEにはUnicodeの1バイトだけ表記があるらしい.
                             sb.Append((char)byte16[i]);
                             sb.Append((char)byte16[i + 1]);
@@ -796,7 +796,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                if (byte16[i] >= 0x82 && byte16[i] < 0xFE)
+                if (byte16[i] >= 0x81 && byte16[i] < 0xFE)
                 {//FE独自フォントの可能性.
                     if (priorityCode == PatchUtil.PRIORITY_CODE.LAT1)
                     {

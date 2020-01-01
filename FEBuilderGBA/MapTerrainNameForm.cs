@@ -15,6 +15,7 @@ namespace FEBuilderGBA
         {
             InitializeComponent();
             this.InputFormRef = Init(this);
+            this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
         public InputFormRef InputFormRef;

@@ -564,6 +564,7 @@ namespace FEBuilderGBA
             LintCache = new EtcCache("lint_");
             CommentCache = new EtcCache("comment_");
             ExportFunction = new ExportFunction();
+            TextEscape = new FEBuilderGBA.TextEscape();
 
             EventScript = new EventScript();
             EventScript.Load(EventScript.EventScriptType.Event);
@@ -650,6 +651,7 @@ namespace FEBuilderGBA
         public static ExportFunction ExportFunction{ get; private set; }
         public static AsmMapFileAsmCache AsmMapFileAsmCache { get; private set; }
         public static RAM RAM { get; private set; }
+        public static TextEscape TextEscape { get; private set; }
         public static bool IsCommandLine { get; private set; }
         public static bool DoReOpen = false;
         static int MainThreadID;

@@ -30,6 +30,7 @@ namespace FEBuilderGBA
             g_Cache_FE8UItemSkill_enum = FE8UItemSkill_enum.NoCache;
             g_Cache_Raid_enum = Raid_enum.NoCache;
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
+            g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
             g_InstrumentSet = null;
         }
 
@@ -258,7 +259,7 @@ namespace FEBuilderGBA
         {
             LAT1,
             SJIS,
-            UTF8
+            UTF8,
         };
         //文字コードエンコードがパディングしてしまったときの優先変換方法.
         public static PRIORITY_CODE SearchPriorityCode()
@@ -267,19 +268,17 @@ namespace FEBuilderGBA
             {
                 return PRIORITY_CODE.SJIS;
             }
-            else
+
+            draw_font_enum dfe = SearchDrawFontPatch();
+            if (dfe == draw_font_enum.DrawMultiByte)
             {
-                draw_font_enum dfe = SearchDrawFontPatch();
-                if (dfe == draw_font_enum.DrawMultiByte)
-                {
-                    return PRIORITY_CODE.SJIS;
-                }
-                if (dfe == draw_font_enum.DrawUTF8)
-                {
-                    return PRIORITY_CODE.UTF8;
-                }
-                return PRIORITY_CODE.LAT1;
+                return PRIORITY_CODE.SJIS;
             }
+            if (dfe == draw_font_enum.DrawUTF8)
+            {
+                return PRIORITY_CODE.UTF8;
+            }
+            return PRIORITY_CODE.LAT1;
         }
 
         public static PRIORITY_CODE SearchPriorityCode(ROM rom)
@@ -681,6 +680,37 @@ namespace FEBuilderGBA
                 }
             }
             return Escape_enum.NO;
+        }
+
+        //文字コードのルールを無視するフォント群
+        public enum IrregularFont_enum
+        {
+            NO,             //なし
+            NarrowFont,
+            NoCache,
+        };
+        static IrregularFont_enum g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
+        public static IrregularFont_enum SearchIrregularFontPatch()
+        {
+            if (g_Cache_IrregularFont_enum == IrregularFont_enum.NoCache)
+            {
+                g_Cache_IrregularFont_enum = SearchIrregularFontPatchLow();
+            }
+            return g_Cache_IrregularFont_enum;
+        }
+        static IrregularFont_enum SearchIrregularFontPatchLow()
+        {
+            {
+                GrepPatchTableSt[] table = new GrepPatchTableSt[] { 
+                    new GrepPatchTableSt{ name="NarrowFont",patch_dmp="NarrowFont/MenuLowercase/z.img.bin"},
+                };
+                GrepPatchTableSt p = GrepPatch(table);
+                if (p.name == "NarrowFont")
+                {
+                    return IrregularFont_enum.NarrowFont;
+                }
+            }
+            return IrregularFont_enum.NO;
         }
 
         public enum Raid_enum

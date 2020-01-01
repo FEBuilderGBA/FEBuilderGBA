@@ -1,0 +1,315 @@
+//ASCII / straight-lookup only (FE8U)
+//Don't use 0x00-0x1F slots, used for dialogue functions
+//[0x80] is also unusable (forced - character), might be more
+
+Sglyph_a:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "a.img.bin"
+
+Sglyph_b:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "b.img.bin"
+
+Sglyph_c:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "c.img.bin"
+
+Sglyph_d:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "d.img.bin"
+
+Sglyph_e:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "e.img.bin"
+
+Sglyph_f:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "f.img.bin"
+
+Sglyph_g:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x5 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "g.img.bin"
+
+Sglyph_h:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "h.img.bin"
+
+Sglyph_t:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "t.img.bin"
+
+Sglyph_k:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "k.img.bin"
+
+Sglyph_n:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "n.img.bin"
+
+Sglyph_o:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "o.img.bin"
+
+Sglyph_p:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "p.img.bin"
+
+Sglyph_q:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "q.img.bin"
+
+Sglyph_r:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "r.img.bin"
+
+Sglyph_s:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "s.img.bin"
+
+Sglyph_u:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "u.img.bin"
+
+Sglyph_v:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "v.img.bin"
+
+Sglyph_x:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "x.img.bin"
+
+Sglyph_y:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "y.img.bin"
+
+Sglyph_z:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "z.img.bin
+
+Sglyph_anima:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xC //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "anima.img.bin"
+
+Sglyph_armor:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xF //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "armor.img.bin"
+
+Sglyph_axe:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "axe.img.bin"
+
+Sglyph_bow:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "bow.img.bin"
+
+Sglyph_dark:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xC //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "dark.img.bin"
+
+Sglyph_flier:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x11 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "flier.img.bin"
+
+Sglyph_horse:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xE //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "horse.img.bin"
+
+Sglyph_dragon:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x11 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "dragon.img.bin"
+
+Sglyph_lance:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "lance.img.bin"
+
+Sglyph_light:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "light.img.bin"
+
+Sglyph_staff:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "staff.img.bin"
+
+Sglyph_sword:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0xD //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "sword.img.bin"
+
+Sglyph_shortspace:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x2 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "shortspace.img.bin"
+
+tGlyphEntry(0x7C, Sglyph_armor)
+tGlyphEntry(0x7B, Sglyph_horse)
+tGlyphEntry(0x7D, Sglyph_flier)
+tGlyphEntry(0x7F, Sglyph_dragon)
+tGlyphEntry(0x81, Sglyph_a)
+tGlyphEntry(0x82, Sglyph_b)
+tGlyphEntry(0x83, Sglyph_c)
+tGlyphEntry(0x84, Sglyph_d)
+tGlyphEntry(0x85, Sglyph_e)
+tGlyphEntry(0x86, Sglyph_f)
+tGlyphEntry(0x87, Sglyph_g)
+tGlyphEntry(0x88, Sglyph_h)
+tGlyphEntry(0x89, Sglyph_t)
+tGlyphEntry(0x8A, Sglyph_k)
+tGlyphEntry(0x8B, Sglyph_n)
+tGlyphEntry(0x8C, Sglyph_o)
+tGlyphEntry(0x8D, Sglyph_p)
+tGlyphEntry(0x8E, Sglyph_q)
+tGlyphEntry(0x8F, Sglyph_r)
+tGlyphEntry(0x90, Sglyph_s)
+tGlyphEntry(0x96, Sglyph_u)
+tGlyphEntry(0x97, Sglyph_v)
+tGlyphEntry(0x98, Sglyph_x)
+tGlyphEntry(0x99, Sglyph_y)
+tGlyphEntry(0x9A, Sglyph_z)
+tGlyphEntry(0xB3, Sglyph_sword)
+tGlyphEntry(0xB4, Sglyph_lance)
+tGlyphEntry(0xB5, Sglyph_axe)
+tGlyphEntry(0xB6, Sglyph_bow)
+tGlyphEntry(0xB7, Sglyph_light)
+tGlyphEntry(0xB8, Sglyph_anima)
+tGlyphEntry(0xB9, Sglyph_dark)
+tGlyphEntry(0xBA, Sglyph_staff)
+tGlyphEntry(0xBC, Sglyph_shortspace)
+
+
+
+
+

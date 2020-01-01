@@ -16,6 +16,7 @@ namespace FEBuilderGBA
             InitializeComponent();
             U.ConvertComboBox(InputFormRef.MakeTerrainSet(), ref FilterComboBox, true);
             this.InputFormRef = Init(this);
+            this.InputFormRef.MakeGeneralAddressListContextMenu(true);
         }
 
         public InputFormRef InputFormRef;

@@ -1,0 +1,28 @@
+
+#ifdef _FE8_
+
+	#include EAstdlib.event
+	#include "Extensions/Hack Installation.txt"
+
+	#ifndef menuGlyphTable //ASCII Pointer Table start point
+		#define menuGlyphTable 0x58C7EC
+	#endif
+	#ifndef tGlyphTable
+		#define tGlyphTable 0x58F6F4
+	#endif
+
+	ALIGN 4
+
+	#define mGlyphEntry(mGlyphEntry,mGlyphLoc) "PUSH; ORG menuGlyphTable+mGlyphEntry*0x04; POIN mGlyphLoc; POP"
+	#define tGlyphEntry(tGlyphEntry,tGlyphLoc) "PUSH; ORG tGlyphTable+tGlyphEntry*0x04; POIN tGlyphLoc; POP"
+
+	#include "SerifLowercase/LowercaseSerif.txt" // includes text bubble icons and short space
+	#include "SerifUppercase/UppercaseSerif.txt"
+	#include "MenuLowercase/LowercaseMenu.txt"
+	#include "MenuUppercase/UppercaseMenu.txt"	
+		
+		
+		
+#else
+	ERROR "Set EA to FE8 events!"
+#endif

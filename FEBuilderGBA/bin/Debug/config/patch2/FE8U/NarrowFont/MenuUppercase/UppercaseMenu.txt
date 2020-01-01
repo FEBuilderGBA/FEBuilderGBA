@@ -1,0 +1,193 @@
+//ASCII / straight-lookup only (FE8U)
+//Don't use 0x00-0x1F slots, used for dialogue functions
+//[0x80] is also unusable (forced - character), might be more
+
+UpMglyph_a:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upa.img.bin"
+
+UpMglyph_b:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upb.img.bin"
+
+UpMglyph_c:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upc.img.bin"
+
+UpMglyph_d:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upd.img.bin"
+
+UpMglyph_e:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upe.img.bin"
+
+UpMglyph_f:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upf.img.bin"
+
+UpMglyph_g:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upg.img.bin"
+
+UpMglyph_h:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "uph.img.bin"
+
+UpMglyph_j:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upj.img.bin"
+
+UpMglyph_k:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upk.img.bin"
+
+UpMglyph_l:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upl.img.bin"
+
+UpMglyph_o:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upo.img.bin"
+
+UpMglyph_p:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upp.img.bin"
+
+UpMglyph_q:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x5 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upq.img.bin"
+
+UpMglyph_r:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upr.img.bin"
+
+UpMglyph_s:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "ups.img.bin"
+
+UpMglyph_u:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upu.img.bin"
+
+UpMglyph_v:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upv.img.bin"
+
+UpMglyph_x:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upx.img.bin"
+
+UpMglyph_y:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upy.img.bin"
+
+UpMglyph_z:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x4 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "upz.img.bin"
+
+mGlyphEntry(0x9B, UpMglyph_a)
+mGlyphEntry(0x9C, UpMglyph_b)
+mGlyphEntry(0x9D, UpMglyph_c)
+mGlyphEntry(0x9E, UpMglyph_d)
+mGlyphEntry(0x9F, UpMglyph_e)
+mGlyphEntry(0xA0, UpMglyph_f)
+mGlyphEntry(0xA2, UpMglyph_g)
+mGlyphEntry(0xA3, UpMglyph_h)
+mGlyphEntry(0xA4, UpMglyph_j)
+mGlyphEntry(0xA5, UpMglyph_k)
+mGlyphEntry(0xA6, UpMglyph_l)
+mGlyphEntry(0xA7, UpMglyph_o)
+mGlyphEntry(0xA8, UpMglyph_p)
+mGlyphEntry(0xA9, UpMglyph_q)
+mGlyphEntry(0xAC, UpMglyph_r)
+mGlyphEntry(0xAD, UpMglyph_s)
+mGlyphEntry(0xAE, UpMglyph_u)
+mGlyphEntry(0xAF, UpMglyph_v)
+mGlyphEntry(0xB0, UpMglyph_x)
+mGlyphEntry(0xB1, UpMglyph_y)
+mGlyphEntry(0xB2, UpMglyph_z)

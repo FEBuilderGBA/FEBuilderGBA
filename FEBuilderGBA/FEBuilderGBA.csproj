@@ -89,6 +89,7 @@
       <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemTextEncoderArabianTBLEncode.cs" />
+    <Compile Include="TextEscape.cs" />
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

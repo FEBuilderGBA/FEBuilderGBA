@@ -2867,13 +2867,19 @@ namespace FEBuilderGBA
             }
             else
             {//フリーエリアを利用する.
+                bool isProgramArea = true;
+                bool alloc_dataonly_hint = U.stringbool(U.at(patch.Param, "ALLOC_DATAONLY_HINT"));
+                if (alloc_dataonly_hint)
+                {//プログラムコードではない、データパッチの割り当て。ROMの後ろに割り当ててよい。
+                    isProgramArea = false;
+                }
 
                 uint alloc_size_hint = U.atoi0x(U.at(patch.Param, "ALLOC_SIZE_HINT"));
                 if (alloc_size_hint <= 0)
                 {
                     alloc_size_hint = 1024 * 5;
                 }
-                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea: true); //とりあえず5kbの空きがあるところ.
+                freearea = InputFormRef.AllocBinaryData(alloc_size_hint, isProgramArea); //とりあえず5kbの空きがあるところ.
             }
             return freearea;
         }
@@ -6304,6 +6310,18 @@ namespace FEBuilderGBA
             scripts.Add(script);
         }
 
+        static void MakeEventScriptAddTextEscape(PatchSt st, string textescape
+            , TextEscape textEscape)
+        {
+            string[] sp = textescape.Split('\t');
+            if (sp.Length <= 2)
+            {
+                return;
+            }
+            textEscape.Add(sp[0],sp[1], U.at(sp,2));
+        }
+
+
         static void MakeEventScriptAddUseFlag(PatchSt st, string useflag
             , Dictionary<uint, string> flags)
         {
@@ -6352,6 +6370,7 @@ namespace FEBuilderGBA
 
         public static void MakeEventScript(List<EventScript.Script> scripts
             , Dictionary<uint, string> flags
+            , TextEscape textEscapes
             , ExportFunction exportFunctions
             )
         {
@@ -6378,6 +6397,10 @@ namespace FEBuilderGBA
                     else if (pair.Key.IndexOf("USEFLAG") == 0)
                     {
                         MakeEventScriptAddUseFlag(patch, pair.Value, flags);
+                    }
+                    else if (pair.Key.IndexOf("TEXTESCAPE") == 0)
+                    {
+                        MakeEventScriptAddTextEscape(patch, pair.Value, textEscapes);
                     }
                     else if (pair.Key.IndexOf("EXPORT") == 0)
                     {

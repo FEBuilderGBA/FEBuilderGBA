@@ -3600,7 +3600,19 @@ namespace FEBuilderGBA
             Control pc = c.Parent;
             return ControlRectToFormRect(pc, rc);
         }
+        //英語版FEにはUnicodeの1バイトだけ表記があるらしい
+        [MethodImpl(256)]
+        public static bool IsEnglishSPCode(byte code)
+        {
+            return (code >= 0x81 || code == 0x1f);
+        }
+        [MethodImpl(256)]
+        public static bool isUTF8PreCode(byte code, byte code2)
+        {
+            return code >= 0xC0 && code2 >= 0x80;
+        }
 
+        [MethodImpl(256)]
         public static bool isSJIS1stCode(byte c)
         {
             if (((0x81 <= c && c <= 0x9f) || (0xe0 <= c && c <= 0xfc)))
@@ -3609,6 +3621,7 @@ namespace FEBuilderGBA
             }
             return false;
         }
+        [MethodImpl(256)]
         public static bool isSJIS2ndCode(byte c)
         {
             if (((0x40 <= c && c <= 0x7e) || (0x80 <= c && c <= 0xfc)))
@@ -4331,6 +4344,43 @@ namespace FEBuilderGBA
         {
             string r = target;
             for (int i = 0; i < table.Length; i += 2)
+            {
+                r = RegexCache.Replace(r, table[i + i], table[i]);
+            }
+            return r;
+        }
+
+        public static string table_replace(string target, List<string> table)
+        {
+            string r = target;
+            for (int i = 0; i < table.Count; i += 2)
+            {
+                r = r.Replace(table[i], table[i + 1]);
+            }
+            return r;
+        }
+        public static string table_replace_rev(string target, List<string> table)
+        {
+            string r = target;
+            for (int i = 0; i < table.Count; i += 2)
+            {
+                r = r.Replace(table[i + 1], table[i]);
+            }
+            return r;
+        }
+        public static string table_replace_regex(string target, List<string> table)
+        {
+            string r = target;
+            for (int i = 0; i < table.Count; i += 2)
+            {
+                r = RegexCache.Replace(r, table[i], table[i + 1]);
+            }
+            return r;
+        }
+        public static string table_replace_regex_rev(string target, List<string> table)
+        {
+            string r = target;
+            for (int i = 0; i < table.Count; i += 2)
             {
                 r = RegexCache.Replace(r, table[i + i], table[i]);
             }

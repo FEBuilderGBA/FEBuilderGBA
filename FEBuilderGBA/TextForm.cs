@@ -2427,15 +2427,7 @@ namespace FEBuilderGBA
                     break;
                 }
                 string parts = text.Substring(i,end - i + 1);
-                bool found = false;
-                for(int n = 0 ; n < ConvertEscapeToFEditorTable.Length ; n += 2)
-                {
-                    if (parts == ConvertEscapeToFEditorTable[n+1] )
-                    {
-                        found = true;
-                        break;
-                    }
-                }
+                bool found = Program.TextEscape.Find(parts);
                 if (!found)
                 {
                     if (parts.Length >= 3 && parts[1] == '0' && parts[2] == 'x')
@@ -2537,72 +2529,11 @@ namespace FEBuilderGBA
         }
 
 
-        static string[] ConvertEscapeToFEditorTable = new string[]{
-                 "@0080@0004","[LoadOverworldFaces]"    ///No Translate
-                ,"@0080@0005","[G]"    ///No Translate
-                ,"@0080@000A","[MoveFarLeft]"    ///No Translate
-                ,"@0080@000B","[MoveMidLeft]"    ///No Translate
-                ,"@0080@000C","[MoveLeft]"    ///No Translate
-                ,"@0080@000D","[MoveRight]"    ///No Translate
-                ,"@0080@000E","[MoveMidRight]"    ///No Translate
-                ,"@0080@000F","[MoveFarRight]"    ///No Translate
-                ,"@0080@0010","[MoveFarFarLeft]"    ///No Translate
-                ,"@0080@0011","[MoveFarFarRight]"    ///No Translate
-                ,"@0080@0016","[EnableBlinking]"    ///No Translate
-                ,"@0080@0018","[DelayBlinking]"    ///No Translate
-                ,"@0080@0019","[PauseBlinking]"    ///No Translate
-                ,"@0080@001B","[DisableBlinking]"    ///No Translate
-                ,"@0080@001C","[OpenEyes]"    ///No Translate
-                ,"@0080@001D","[CloseEyes]"    ///No Translate
-                ,"@0080@001E","[HalfCloseEyes]"    ///No Translate
-                ,"@0080@001F","[Wink]"    ///No Translate
-                ,"@0080@0020","[Tact]"    ///No Translate
-                ,"@0080@0021","[ToggleRed]"    ///No Translate
-                ,"@0080@0022","[Item]"    ///No Translate
-                ,"@0080@0023","[SetName]"    ///No Translate
-                ,"@0080@0024","[Tact2]"    ///No Translate
-                ,"@0080@0025","[ToggleColorInvert]"    ///No Translate
-                ,"@0001","[NL]" ///No Translate
-		        ,"@0002","[Clear]"    ///No Translate
-		        ,"@0002","[2NL]"    ///No Translate
-		        ,"@0003","[A]"    ///No Translate
-		        ,"@0004","[....]"    ///No Translate
-		        ,"@0005","[.....]"    ///No Translate
-		        ,"@0006","[......]"    ///No Translate
-		        ,"@0007","[.......]"    ///No Translate
-		        ,"@0008","[OpenFarLeft]"    ///No Translate
-		        ,"@0009","[OpenMidLeft]"    ///No Translate
-		        ,"@000A","[OpenLeft]"    ///No Translate
-		        ,"@000B","[OpenRight]"    ///No Translate
-		        ,"@000C","[OpenMidRight]"    ///No Translate
-		        ,"@000D","[OpenFarRight]"    ///No Translate
-		        ,"@000E","[OpenFarFarLeft]"    ///No Translate
-		        ,"@000F","[OpenFarFarRight]"    ///No Translate
-		        ,"@0011","[ClearFace]"    ///No Translate
-		        ,"@0012","[NormalPrint]"    ///No Translate
-		        ,"@0013","[FastPrint]"    ///No Translate
-		        ,"@0014","[CloseSpeechFast]"    ///No Translate
-		        ,"@0015","[CloseSpeechSlow]"    ///No Translate
-		        ,"@0016","[ToggleMouthMove]"    ///No Translate
-		        ,"@0017","[ToggleSmile]"    ///No Translate
-		        ,"@0018","[Yes]"    ///No Translate
-		        ,"@0019","[No]"    ///No Translate
-		        ,"@001A","[Buy/Sell]"    ///No Translate
-		        ,"@001B","[ShopContinue]"    ///No Translate
-                ,"@001C","[SendToBack]"    ///No Translate
-                ,"@001D","[FastPrint2]"    ///No Translate
-                ,"@001F","[.]"    ///No Translate
-                ,"@0010","[LoadFace]"    ///No Translate  別処理をするがハイライトの都合でリストに追加します.
-                ,"@0040","[@]"    ///No Translate  @を出す
-                ,"@0080@0090","[ConversationText]"    ///No Translate    AutoNewline Patch
-                ,"@0080@0091","[BattleText]"    ///No Translate          AutoNewline Patch
-        };
-
         //@0003 -> [A] とFEditor表記に変換する
         public static string ConvertEscapeToFEditor(string str)
         {
             str = RegexCache.Replace(str, @"@0010@0([0-9A-F][0-9A-F][0-9A-F])", "[LoadFace][0x$1]");
-            str = U.table_replace(str, ConvertEscapeToFEditorTable);
+            str = Program.TextEscape.table_replace(str);
             str = RegexCache.Replace(str, @"@([0-9A-F][0-9A-F][0-9A-F][0-9A-F])", "[0x$1]");
             return str;
         }
@@ -2611,7 +2542,7 @@ namespace FEBuilderGBA
         {
             str = RegexCache.Replace(str, @"\[LoadFace\]\[0x00([0-9A-F][0-9A-F][0-9A-F])\]", "@0010@0$1");
             str = RegexCache.Replace(str, @"\[LoadFace\]\[0x([0-9A-F][0-9A-F][0-9A-F])\]", "@0010@0$1");
-            str = U.table_replace_rev(str, ConvertEscapeToFEditorTable);
+            str = Program.TextEscape.table_replace_rev(str);
             str = str.Replace("[N]", "");///No Translate
             str = str.Replace("[X]", "");///No Translate
             str = RegexCache.Replace(str, @"\[0x([0-9A-F])\]", "@000$1");
