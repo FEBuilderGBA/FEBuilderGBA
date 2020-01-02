@@ -1,0 +1,11 @@
+NAME=MUSIC_闘技場 BGM
+NAME.en=MUSIC_Arena BGM
+NAME.zh=音乐_Arena BGM
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x05C568
+ADDRESS_TYPE=SONG
+

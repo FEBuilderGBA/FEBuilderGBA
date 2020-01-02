@@ -1,0 +1,11 @@
+NAME=MUSIC_戦闘BGM Boss1(ボスBGM)
+NAME.en=MUSIC_Battle-BGM Boss1 (Boss BGM)
+NAME.zh=音乐_战斗_攻击_BGM Boss1 (Boss BGM)
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x05C65E
+ADDRESS_TYPE=SONG
+

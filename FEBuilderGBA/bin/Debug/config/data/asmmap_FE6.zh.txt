@@ -1189,3 +1189,4 @@
 0806C204	IsSurvival UnitID 0x37 Miledy
 0806C214	IsSurvival UnitID 0x32 Zeiss
 0806C4C4	Clear within 30 turns
+0805C660	Switch BGM2	r0=BGM:MUSIC

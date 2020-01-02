@@ -1,0 +1,11 @@
+NAME=MUSIC_CC BGM
+NAME.en=MUSIC_Promotion BGM
+NAME.zh=音乐_Promotion BGM
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x05C594
+ADDRESS_TYPE=SONG
+

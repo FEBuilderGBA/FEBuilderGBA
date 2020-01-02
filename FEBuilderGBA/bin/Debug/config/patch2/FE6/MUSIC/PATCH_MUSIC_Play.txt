@@ -1,0 +1,11 @@
+NAME=MUSIC_奏でる BGM
+NAME.en=MUSIC_Play BGM
+NAME.zh=音乐_Play BGM
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#SOUND
+
+ADDRESS=0x05C68A
+ADDRESS_TYPE=SONG
+
