@@ -1,0 +1,7 @@
+PlayerOrNPC=$14
+Enenmy=$10
+Join=$18
+SetHP1=$2A
+Fix=$2C
+CheckUnder=$26
+GoBack=$32

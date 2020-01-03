@@ -11995,9 +11995,6 @@ For Events
 :12分割画像
 12 Divided Images
 
-:現在作成中です
-Currently being created.
-
 :拠点アイコン
 World Map Node Icon
 

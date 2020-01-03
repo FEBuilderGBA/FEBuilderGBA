@@ -644,7 +644,7 @@
             this.J_62.Name = "J_62";
             this.J_62.Size = new System.Drawing.Size(210, 32);
             this.J_62.TabIndex = 323;
-            this.J_62.Text = "Chapter ID";
+            this.J_62.Text = "Chapter Number";
             this.J_62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // L_18_COMBO

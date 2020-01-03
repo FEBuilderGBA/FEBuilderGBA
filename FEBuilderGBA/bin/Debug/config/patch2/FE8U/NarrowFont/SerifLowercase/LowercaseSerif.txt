@@ -98,6 +98,14 @@ BYTE 0x00 //always zero
 BYTE 0x00
 #incbin "o.img.bin"
 
+Sglyph_j:
+WORD 0x00000000 //empty pointer (no Shift-JIS)
+BYTE 0x00 //empty code-page # (no Shift-JIS)
+BYTE 0x3 //character width
+BYTE 0x00 //always zero
+BYTE 0x00
+#incbin "j.img.bin"
+
 Sglyph_p:
 WORD 0x00000000 //empty pointer (no Shift-JIS)
 BYTE 0x00 //empty code-page # (no Shift-JIS)
@@ -286,7 +294,7 @@ tGlyphEntry(0x85, Sglyph_e)
 tGlyphEntry(0x86, Sglyph_f)
 tGlyphEntry(0x87, Sglyph_g)
 tGlyphEntry(0x88, Sglyph_h)
-tGlyphEntry(0x89, Sglyph_t)
+tGlyphEntry(0x89, Sglyph_j)
 tGlyphEntry(0x8A, Sglyph_k)
 tGlyphEntry(0x8B, Sglyph_n)
 tGlyphEntry(0x8C, Sglyph_o)
@@ -294,6 +302,7 @@ tGlyphEntry(0x8D, Sglyph_p)
 tGlyphEntry(0x8E, Sglyph_q)
 tGlyphEntry(0x8F, Sglyph_r)
 tGlyphEntry(0x90, Sglyph_s)
+tGlyphEntry(0x95, Sglyph_t)
 tGlyphEntry(0x96, Sglyph_u)
 tGlyphEntry(0x97, Sglyph_v)
 tGlyphEntry(0x98, Sglyph_x)

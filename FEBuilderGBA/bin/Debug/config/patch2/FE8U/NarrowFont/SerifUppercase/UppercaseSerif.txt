@@ -85,7 +85,7 @@ BYTE 0x00
 UpSglyph_l:
 WORD 0x00000000 //empty pointer (no Shift-JIS)
 BYTE 0x00 //empty code-page # (no Shift-JIS)
-BYTE 0x5 //character width
+BYTE 0x4 //character width
 BYTE 0x00 //always zero
 BYTE 0x00
 #incbin "upl.img.bin"

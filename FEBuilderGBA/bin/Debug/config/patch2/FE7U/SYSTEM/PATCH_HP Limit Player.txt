@@ -12,3 +12,4 @@ ADDRESS=0x00017C7C 0x00017C86 0x00029996 0x000299AC 0x00094C02 0x00094D94
 NAME.zh=自军HP上限
 
 INFO.en=Change value in decimal.\r\nHP exceeding 60 won't display properly without a patch.
+HINT=HP caps

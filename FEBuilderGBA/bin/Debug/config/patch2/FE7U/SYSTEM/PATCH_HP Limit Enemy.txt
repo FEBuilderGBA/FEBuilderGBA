@@ -11,3 +11,4 @@ HEX=FALSE
 NAME.zh=敌军HP上限
 
 INFO.en=Change value in decimal.
+HINT=HP caps

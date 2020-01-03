@@ -2344,7 +2344,7 @@
             this.J_128.Name = "J_128";
             this.J_128.Size = new System.Drawing.Size(311, 32);
             this.J_128.TabIndex = 116;
-            this.J_128.Text = "Chapter ID";
+            this.J_128.Text = "Chapter Number";
             this.J_128.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B117

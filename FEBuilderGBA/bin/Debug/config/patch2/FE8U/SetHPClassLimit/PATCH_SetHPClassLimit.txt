@@ -1,0 +1,14 @@
+NAME=HP上限をクラスで設定した上限を利用する用に変更する
+INFO=HP上限をクラスで設定しても無視される問題を修正します。\r\nプレイヤーとNPCのHPの上限をクラスで指定した値に設定します。\r\n敵のHPの上限は120になります。(敵HP上限変更パッチで変更できます。ただ、120より増やさないことを推奨します。)\r\nまた、HPを下げるドーピングアイテムを作った時に、HPがマイナス値になる問題も同時に修正します。
+
+AUTHOR=7743
+TYPE=BIN
+
+PATCHED_IF:0x0181CC=0x00 0x4A 0x97 0x46
+BIN:$FREEAREA=SetHPClassLimit.dmp
+JUMP:0x0181CC:$r2=SetHPClassLimit.dmp
+HINT=HP caps
+NAME.en=Change Max HP limit to use set in class editor
+INFO.en=Fixed an issue where HP caps would be ignored if set by class.\r\nSet the player and NPC HP limits to the value specified in the class.\r\nThe maximum enemy HP is 120.(Can be changed with the enemy HP upper limit change patch.However, It recommend that you do not increase it beyond 120).\r\nIn addition, when making a doping item that lowers HP, the problem that HP becomes negative value will be fixed at the same time.
+NAME.zh=更改HP限制以使用在类别中设置的限制
+INFO.zh=修复了按班级设置会忽略HP上限的问题。\r\n将播放器和NPC HP限制设置为类中指定的值。\r\n最大敌人HP为120。（可以使用敌方HP上限更改补丁进行更改。但是，我们建议您不要将其增加到120以上。）。\r\n还纠正了在制造降低HP的掺杂项目时HP可能变为负面的问题。

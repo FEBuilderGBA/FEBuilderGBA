@@ -298,7 +298,7 @@ namespace FEBuilderGBA
                 patch += "PATCHED_IF:" + U.To0xHexString(addr) + "=" + U.HexDumpLiner0x(jumpCode) + "\r\n";
 
                 patch += "BIN:$FREEAREA=" + Path.GetFileName(this.ComplieBinFilename);
-                patch += "JUMP:" + U.To0xHexString(addr) + ":r" + usereg + "=" + Path.GetFileName(this.ComplieBinFilename);
+                patch += "\r\nJUMP:" + U.To0xHexString(addr) + ":r" + usereg + "=" + Path.GetFileName(this.ComplieBinFilename);
             }
 
             return patch;

@@ -1,0 +1,8 @@
+PUSH
+ORG $181CC
+BYTE 0x00 0x4A 0x97 0x46
+POIN SetHPClassLimit+1
+POP
+
+SetHPClassLimit:
+#incbin "SetHPClassLimit.dmp"
