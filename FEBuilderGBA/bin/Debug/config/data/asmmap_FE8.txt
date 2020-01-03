@@ -12691,3 +12691,5 @@
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
 08003B90	Another Print idk	{J}
+08079c04	魔王を倒したときの演出	{J}
+080777E0	魔王を倒したときの演出	{U}

@@ -1401,3 +1401,6 @@
 0806C214	IsSurvival UnitID 0x32 Zeiss
 0806C4C4	Clear within 30 turns
 0805C660	Switch BGM2	r0=BGM:MUSIC
+0805AFEC	When Defeated idun	cry sound
+0805bca8	Play sound effect	Wrap function
+0805BD8C	Call m4aMPlayStop
