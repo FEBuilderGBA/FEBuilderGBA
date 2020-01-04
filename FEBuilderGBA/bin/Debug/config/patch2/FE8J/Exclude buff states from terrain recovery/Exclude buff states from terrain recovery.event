@@ -1,0 +1,8 @@
+PUSH
+ORG 0x02596A
+BYTE 0x00 0x00 0x00 0x4B 0x9F 0x46
+POIN ExcludeBuffStatesFromTerrainRevovery+1
+POP
+
+ExcludeBuffStatesFromTerrainRevovery:
+#inbin "Exclude buff states from terrain recovery.dmp"

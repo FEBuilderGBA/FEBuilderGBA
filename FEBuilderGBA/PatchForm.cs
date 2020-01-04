@@ -2634,6 +2634,14 @@ namespace FEBuilderGBA
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, skip, true);
             }
 
+            m = RegexCache.Match(value, @"^FGREP([0-9]+)ENDA\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
+            {
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                return U.GrepEnd(Program.ROM.Data, MakeGrepData(value, basedir), start_offset, 0, align, skip, false);
+            }
+
             m = RegexCache.Match(value, @"^GREP([0-9]+) ");
             if (m.Groups.Count >= 2)
             {

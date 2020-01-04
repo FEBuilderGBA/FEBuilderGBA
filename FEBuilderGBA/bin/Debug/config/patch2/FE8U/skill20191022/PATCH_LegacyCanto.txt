@@ -1,0 +1,13 @@
+NAME=LegacyCanto(SkillSystems)
+IF:$FGREP4 canto.dmp=0x00 0xB5 0xE0 0x7C
+
+//アドレスパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=$FGREP4ENDA+8 canto.dmp
+COMBO=Default: Skill Only|0x00 0x00 0x00 0x00|Change: Skill & Ability|0x01 0x00 0x00 0x00
+
+INFO=Cantoスキルの割り当てを変更します。\r\nディフォルトでは、Skillで指定した場合のみ有効になります。\r\n"Skill & Ability"に変更すると、スキル割り当ての他に、ユニットやクラスのAbilityでもCantoを有効にできます。
+INFO.en=Change the assignment of Canto skills.\r\nBy default, it is valid only when specified by Skill.\r\nBy changing to "Skill \u0026 Ability\
+INFO.zh=更改Canto技能的分配。\r\n默认情况下，仅在“技能”指定时有效。\r\n通过更改为“技能和能力”，除了技能分配外，您还可以激活Canto的单位和班级能力。

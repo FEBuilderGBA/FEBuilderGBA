@@ -12697,3 +12697,5 @@ r3=X tile position of menu of right	{U}
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
 08003B90	Another Print idk	{J}
+08079c04	Direction when defeating the demon king.	{J}
+080777E0	Direction when defeating the demon king.	{U}

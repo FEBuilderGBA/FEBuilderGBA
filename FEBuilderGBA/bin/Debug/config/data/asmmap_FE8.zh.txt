@@ -12650,3 +12650,5 @@ r3=X tile position of menu of the right	{U}
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
 08003B90	Another Print idk	{J}
+08079c04	击败恶魔王的方向。	{J}
+080777E0	击败恶魔王的方向。	{U}
