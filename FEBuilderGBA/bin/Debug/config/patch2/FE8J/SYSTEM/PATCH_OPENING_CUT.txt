@@ -6,7 +6,7 @@ NAME.zh=跳过标题logo
 TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 COMBO=カットしない|ONN|いきなりタイトルロゴ|OFF
-COMBO.en=no cut|ONN|cut|OFF
+COMBO.en=Don't Skip (Default)|ONN|Skip|OFF
 
 ONN:0x0CB660=0x09 0xD0
 ONN:0x0D0DC4=0x03 0xD0

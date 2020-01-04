@@ -1,0 +1,17 @@
+NAME=双方反撃不可のアイテムが強制遠隔アニメーションになることを抑制する
+NAME.en=Prevent uncounterable items from becoming forced range animations
+NAME.zh=Prevent uncounterable items from becoming forced range animations
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+COMBO=Force range (Default)|ONN|Fix|OFF
+COMBO.en=Force range (Default)|ONN|Fix|OFF
+COMBO.zh=Force range (Default)|ONN|Fix|OFF
+
+DETERMINATION_ADDRESS=0x0581E4
+ONN:0x0581E4=0x16 0xD0
+OFF:0x0581E4=0x16 0xE0
+
+INFO=For uncounterable items, a forced range animation is applied.\r\nThis patch fixes this.
+AUTHOR=vennou

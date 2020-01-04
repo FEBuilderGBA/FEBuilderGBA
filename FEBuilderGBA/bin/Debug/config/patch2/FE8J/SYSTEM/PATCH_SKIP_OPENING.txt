@@ -1,0 +1,20 @@
+NAME=FE8 OPデモカット
+NAME.en=Skip:Game Opening Demo
+NAME.zh=Skip:Game Opening Demo
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE #ESSENTIALFIXES
+COMBO=カットしない|ONN|OPデモをカットする|OFF
+COMBO.en=Don't Skip (Default)|ONN|Skip|OFF
+
+DETERMINATION_ADDRESS=0x0CB660
+ONN:0x0CB660=0x09 0xD0
+OFF:0x0CB660=0xC0 0x46
+
+COMBO.zh=跳过|ONN|不跳过|OFF
+INFO=Skips the Opening cutscene/OP before the title screen.\r\nDoes not affect splashes and H&S.
+INFO.en=Skips the Opening cutscene/OP before the title screen.\r\nDoes not affect splashes and H&S.
+INFO.zh=Skips the Opening cutscene/OP before the title screen.\r\nDoes not affect splashes and H&S.
+
+AUTHOR=Fati
