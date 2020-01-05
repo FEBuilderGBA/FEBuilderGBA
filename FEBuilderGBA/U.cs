@@ -2244,6 +2244,7 @@ namespace FEBuilderGBA
             MapTerrainFloorLookupTableForm.MakeAllDataLength(list);
             MapTerrainBGLookupTableForm.MakeAllDataLength(list);
             ArenaEnemyWeaponForm.MakeAllDataLength(list);
+            EventUnitForm.RecycleReserveUnits(ref list);
             if (InputFormRef.DoEvents(null, "MakeAllStructPointersList 4")) return list;
 
             if (Program.ROM.RomInfo.version() == 8)

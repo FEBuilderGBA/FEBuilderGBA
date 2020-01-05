@@ -1639,7 +1639,33 @@ namespace FEBuilderGBA
         {
             NewAllocData = new List<U.AddrResult>();
         }
+        public static bool IsEventUnitReserve(ref uint addr)
+        {
+            List<Address> recycle = new List<Address>();
+            RecycleReserveUnits(ref recycle);
 
+            foreach (Address a in recycle)
+            {
+                if (addr >= a.Addr && addr < a.Addr + a.Length)
+                {
+                    addr = a.Addr + a.Length;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //未記帳領域があれば利用しているリストに追記する
+        public static void RecycleReserveUnits(ref List<Address> recycle)
+        {
+            foreach (U.AddrResult ar in NewAllocData)
+            {
+                InputFormRef InputFormRef = Init(null);
+                InputFormRef.ReInit(ar.addr);
+
+                RecycleOldUnitsLow(ref recycle, "NEW", InputFormRef);
+            }
+        }
 
         public static void RecycleOldUnits(ref List<Address> recycle,string basename, uint script_pointer)
         {
@@ -1657,6 +1683,11 @@ namespace FEBuilderGBA
             InputFormRef InputFormRef = Init(null);
             InputFormRef.ReInitPointer(script_pointer);
 
+            RecycleOldUnitsLow(ref recycle, basename, InputFormRef);
+        }
+
+        static void RecycleOldUnitsLow(ref List<Address> recycle, string basename, InputFormRef InputFormRef)
+        {
             if (Program.ROM.RomInfo.version() <= 7)
             {
                 FEBuilderGBA.Address.AddAddress(recycle
@@ -2464,6 +2495,7 @@ namespace FEBuilderGBA
                 X_ITEMDROP.ForeColor = OptionForm.Color_Control_ForeColor();
             }
         }
+
     }
 
 }

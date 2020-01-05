@@ -443,6 +443,10 @@ namespace FEBuilderGBA
                 {
                     return SearchFreeSpaceOneLow(newSize, addr);
                 }
+                if (EventUnitForm.IsEventUnitReserve(ref addr))
+                {
+                    return SearchFreeSpaceOneLow(newSize, addr);
+                }
 
                 return addr + LTRIM_SPACE_SIZE;
             }
