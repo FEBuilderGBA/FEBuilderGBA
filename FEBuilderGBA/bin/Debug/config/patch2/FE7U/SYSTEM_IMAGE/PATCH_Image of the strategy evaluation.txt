@@ -1,0 +1,12 @@
+NAME=攻略評価の画像
+NAME.en=Image of the strategy evaluation
+
+TYPE=IMAGE
+TAG=#IMAGE
+
+WIDTH=256
+HEIGHT=112
+
+ZIMAGE_POINTER=0x0B9C20//0x5DE58C
+PALETTE_POINTER=0x0B9C28//0x5DFA70
+NAME.zh=攻略评价的图像

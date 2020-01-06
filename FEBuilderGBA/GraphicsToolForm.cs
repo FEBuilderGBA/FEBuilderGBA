@@ -69,7 +69,7 @@ namespace FEBuilderGBA
             uint length = (uint)Program.ROM.Data.Length - 4;
             for (uint addr = 0x100; addr < length; addr += 4)
             {
-                uint a = (uint)Program.ROM.Data[addr+3];
+                uint a = (uint)Program.ROM.Data[addr + 3];
                 if (a != 0x08 && a != 0x09)
                 {//ポインタ以外無視する.
                     continue;
@@ -111,14 +111,14 @@ namespace FEBuilderGBA
                 {//解凍したらデータ容量が違う
                     continue;
                 }
-                if (IsTSAData(image, 0, imageDataSize))
-                {
-                    continue;
-                }
-                if (IsHeaderTSAData(image, 0, imageDataSize))
-                {
-                    continue;
-                }
+//                if (IsTSAData(image, 0, imageDataSize))
+//                {
+//                    continue;
+//                }
+//                if (IsHeaderTSAData(image, 0, imageDataSize))
+//                {
+//                    continue;
+//                }
                 //たぶん画像だと判断する.
                 list.Add(new FoundImage(addr, a, imageDataSize));
             }
@@ -1061,11 +1061,12 @@ namespace FEBuilderGBA
                 {//解凍したらデータ容量が違う
                     continue;
                 }
-                uint getcompsize = LZ77.getCompressedSize(Program.ROM.Data, a);
-                if (getcompsize == 0)
-                {
-                    continue;
-                }
+                uint getcompsize = imageDataSize;
+//                uint getcompsize = LZ77.getCompressedSize(Program.ROM.Data, a);
+//                if (getcompsize == 0)
+//                {
+//                    continue;
+//                }
 
                 //たぶん画像だと判断する.
                 FEBuilderGBA.Address.AddAddress(list,a, getcompsize, addr, name + U.To0xHexString(a) , Address.DataTypeEnum.LZ77IMG);

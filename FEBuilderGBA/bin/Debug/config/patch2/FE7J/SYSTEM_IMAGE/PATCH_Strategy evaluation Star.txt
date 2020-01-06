@@ -1,0 +1,11 @@
+NAME=攻略評価のスター
+NAME.en=Strategy evaluation Star
+NAME.zh=Strategy evaluation Star
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x0009A0D8//0x0842B374
+PALETTE_POINTER=0x00099E14//0x0842B4BC

@@ -1,0 +1,15 @@
+NAME=クラス名の特殊フォント
+NAME.en=Class Name Special Font
+NAME.zh=Class Name Special Font
+
+INFO=OPとCCの時に表示されるクラス名の特殊フォント
+INFO.en=Special font with class name displayed in OP and Promotion
+INFO.zh=Special font with class name displayed in OP and Promotion
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=48
+
+ZIMAGE_POINTER=0x0B0128//0x41FA5C
+PALETTE_POINTER=0x0B0130//0x4205A8
