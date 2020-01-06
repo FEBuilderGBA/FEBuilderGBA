@@ -46,9 +46,18 @@
             this.CompressSRCFilename = new FEBuilderGBA.TextBoxEx();
             this.CompressSRCSelectButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ZeroClearButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ZeroClearFrom = new System.Windows.Forms.NumericUpDown();
+            this.ZeroClearTo = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.customColorGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -150,7 +159,6 @@
             this.DeCompressSRCFilename.Placeholder = "";
             this.DeCompressSRCFilename.Size = new System.Drawing.Size(346, 25);
             this.DeCompressSRCFilename.TabIndex = 87;
-            this.DeCompressSRCFilename.TextChanged += new System.EventHandler(this.DeCompressSRCFilename_TextChanged);
             this.DeCompressSRCFilename.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DeCompressSRCFilename_MouseDoubleClick);
             // 
             // DeCompressSRCSelectButton
@@ -174,7 +182,6 @@
             this.label9.TabIndex = 85;
             this.label9.Text = "SRC";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // groupBox2
             // 
@@ -272,12 +279,91 @@
             this.label2.Text = "SRC";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // customColorGroupBox1
+            // 
+            this.customColorGroupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox1.Controls.Add(this.ZeroClearTo);
+            this.customColorGroupBox1.Controls.Add(this.ZeroClearFrom);
+            this.customColorGroupBox1.Controls.Add(this.label5);
+            this.customColorGroupBox1.Controls.Add(this.ZeroClearButton);
+            this.customColorGroupBox1.Controls.Add(this.label6);
+            this.customColorGroupBox1.Location = new System.Drawing.Point(14, 369);
+            this.customColorGroupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.customColorGroupBox1.Name = "customColorGroupBox1";
+            this.customColorGroupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.customColorGroupBox1.Size = new System.Drawing.Size(670, 133);
+            this.customColorGroupBox1.TabIndex = 2;
+            this.customColorGroupBox1.TabStop = false;
+            this.customColorGroupBox1.Text = "消去";
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(7, 54);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 31);
+            this.label5.TabIndex = 92;
+            this.label5.Text = "TO";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ZeroClearButton
+            // 
+            this.ZeroClearButton.Location = new System.Drawing.Point(172, 92);
+            this.ZeroClearButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ZeroClearButton.Name = "ZeroClearButton";
+            this.ZeroClearButton.Size = new System.Drawing.Size(462, 31);
+            this.ZeroClearButton.TabIndex = 91;
+            this.ZeroClearButton.Text = "この領域をゼロクリア";
+            this.ZeroClearButton.UseVisualStyleBackColor = true;
+            this.ZeroClearButton.Click += new System.EventHandler(this.ZeroClearButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(7, 24);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 31);
+            this.label6.TabIndex = 88;
+            this.label6.Text = "FROM";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ZeroClearFrom
+            // 
+            this.ZeroClearFrom.Hexadecimal = true;
+            this.ZeroClearFrom.Location = new System.Drawing.Point(174, 28);
+            this.ZeroClearFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.ZeroClearFrom.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.ZeroClearFrom.Name = "ZeroClearFrom";
+            this.ZeroClearFrom.Size = new System.Drawing.Size(144, 25);
+            this.ZeroClearFrom.TabIndex = 95;
+            // 
+            // ZeroClearTo
+            // 
+            this.ZeroClearTo.Hexadecimal = true;
+            this.ZeroClearTo.Location = new System.Drawing.Point(174, 61);
+            this.ZeroClearTo.Margin = new System.Windows.Forms.Padding(4);
+            this.ZeroClearTo.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.ZeroClearTo.Name = "ZeroClearTo";
+            this.ZeroClearTo.Size = new System.Drawing.Size(144, 25);
+            this.ZeroClearTo.TabIndex = 96;
+            // 
             // ToolLZ77Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(698, 366);
+            this.ClientSize = new System.Drawing.Size(698, 512);
+            this.Controls.Add(this.customColorGroupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -289,6 +375,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeCompressAddress)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.customColorGroupBox1.ResumeLayout(false);
+            this.customColorGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ZeroClearTo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,6 +403,12 @@
         private System.Windows.Forms.Label label4;
         private CustomColorGroupBox groupBox1;
         private CustomColorGroupBox groupBox2;
+        private CustomColorGroupBox customColorGroupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ZeroClearButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown ZeroClearTo;
+        private System.Windows.Forms.NumericUpDown ZeroClearFrom;
 
     }
 }

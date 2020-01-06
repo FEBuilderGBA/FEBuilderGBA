@@ -2347,6 +2347,9 @@ Event Editor (Adv)
 :LOW命令を表示する
 Display LOW instruction
 
+:この領域は、システムが利用するイベント処理ルーチンとして予約されています。\r\nここを変更するとゲームシステムが不安定になる可能性が高いです。\r\n本当に変更してもよろしいですか？\r\n
+This area is reserved for event handling routines used by the system.\r\nChanging this will likely make the game system unstable.\r\nAre you sure you want to change it? \r\n
+
 :読み込むユニットを設定してください
 Please set the unit to be read
 
@@ -11086,6 +11089,9 @@ Way of development.\r\n\r\nAfter making any changes, press the F5 key to launch 
 :すべての設定が完了しました。
 All settings are complete.
 
+:{0}から{1}までの領域({2} bytes)をゼロクリアしてもよろしいですか？
+Are you sure you want to clear the area ({2} bytes) from {0} to {1} to zero? 
+
 :解凍する
 Decompress
 
@@ -11094,6 +11100,12 @@ Initial Address
 
 :圧縮する
 Compress
+
+:消去
+Erase.
+
+:この領域をゼロクリア
+Clear this area to zero.
 
 :スクリプト|*.txt|All files|*
 Scripts.txt|*.txt|All files |*

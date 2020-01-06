@@ -179,14 +179,34 @@ namespace FEBuilderGBA
             U.SelectFileByExplorer(CompressDESTFilename.Text);
         }
 
-        private void DeCompressSRCFilename_TextChanged(object sender, EventArgs e)
+        private void ZeroClearButton_Click(object sender, EventArgs e)
         {
+            uint from = U.toOffset( (uint)ZeroClearFrom.Value);
+            uint to = U.toOffset( (uint)ZeroClearTo.Value);
 
-        }
+            if (to < from)
+            {
+                U.Swap<uint>(ref from, ref to);
+            }
+            uint size = to - from;
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
+            if (!U.CheckZeroAddressWriteHigh(from))
+            {
+                return;
+            }
+            if (!U.CheckZeroAddressWriteHigh(to))
+            {
+                return;
+            }
+            DialogResult dr = R.ShowNoYes("{0}から{1}までの領域({2} bytes)をゼロクリアしてもよろしいですか？", U.To0xHexString(from) , U.To0xHexString(to) , size);
+            if (dr != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            Undo.UndoData undodata = Program.Undo.NewUndoData("ZeroClear");
+            Program.ROM.write_fill(from, size);
+            Program.Undo.Push(undodata);
+            InputFormRef.ShowWriteNotifyAnimation(this, 0);
         }
 
     }

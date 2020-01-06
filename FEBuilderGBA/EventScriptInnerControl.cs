@@ -237,6 +237,26 @@ namespace FEBuilderGBA
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
             this.AddressList.Focus();
         }
+        //システムが利用する関数を書き換える場合　警告を出す
+        bool CheckSystemFunctionalEvent(uint addr)
+        {
+            List<Address> list = new List<Address>();
+            EventScript.MakeEventASMMAPList(list, true, "", true);
+
+            foreach (Address a in list)
+            {
+                if (a.Addr == addr)
+                {
+                    DialogResult dr = R.ShowNoYes("この領域は、システムが利用するイベント処理ルーチンとして予約されています。\r\nここを変更するとゲームシステムが不安定になる可能性が高いです。\r\n本当に変更してもよろしいですか？\r\n");
+                    if (dr == DialogResult.Yes)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            return true;
+        }
 
         private void AllWriteButton_Click(object sender, EventArgs e)
         {
@@ -268,6 +288,10 @@ namespace FEBuilderGBA
                 return;
             }
             if (!U.CheckPaddingALIGN4(addr))
+            {
+                return;
+            }
+            if (! CheckSystemFunctionalEvent(addr))
             {
                 return;
             }
