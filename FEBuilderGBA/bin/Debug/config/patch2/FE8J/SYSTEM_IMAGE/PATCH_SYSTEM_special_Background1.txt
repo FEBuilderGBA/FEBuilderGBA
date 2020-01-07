@@ -15,3 +15,7 @@ PALETTE_POINTER=0x0B85E8//0xAB6768
 
 PALETTE=1
 NAME.zh=系统_特殊显示背景1
+
+INFO=この画像はOPのクラス紹介の背景にも使われています。
+INFO.en=This image is also used for OP Class Reel.
+
