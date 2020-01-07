@@ -661,7 +661,7 @@ namespace FEBuilderGBA
             }
 
             //パッチ内容を画面に表示
-            GraphicsToolPatchMakerForm f = new GraphicsToolPatchMakerForm();
+            GraphicsToolPatchMakerForm f = (GraphicsToolPatchMakerForm)InputFormRef.JumpFormLow<GraphicsToolPatchMakerForm>();
             f.Init(patch);
             f.ShowDialog();
         }
