@@ -46,6 +46,6 @@ mov  r2, #0x12
 strb r1, [r4, r2]    @Current MAX HP
 
 GoBack:
-ldr r1, =0x08017F20+1	@{J}
-@ldr r1, =0x0801820C+1	@{U}
+ldr r1, =0x08017F0C+1	@{J}
+@ldr r1, =0x080181F8+1	@{U}
 bx  r1

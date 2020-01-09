@@ -12636,13 +12636,13 @@ r3=X tile position of menu of the right	{U}
 08017d84	StoreUnitStats	{J}
 0807D074	GenerateSummonedCharacter	{J}
 0807AD1C	GenerateSummonedCharacter	{U}
-0203AB40    :0203AB44	技能动画显示用作技能动画显示{J}的工作存储器。
-0203AB48    :0203AD3C	扩展车队在补丁中使用以扩展车队250（250 * 2 \u003d 500字节）{J}。
+0203AB40    :0203AB44	技能动画显示用作技能动画显示{J}的工作存储器
+0203AB48    :0203AD3C	扩展车队在补丁中使用以扩展车队250(250 * 2)	{J}
 08074A4C	IsHealStaff	{J}
 08072570	IsHealStaff	{U}
 08014BF8	Fade out music at the beginning of the clear turn list	{J}
 08014BD0	Fade out music at the beginning of the clear turn list	{U}
-0203AB40    :0203AB43	（旧）技能动画显示用作技能动画显示{J}的工作存储器。
+0203AB40    :0203AB43	（旧）技能动画显示用作技能动画显示{J}的工作存储器
 08014328	SomeDrawNumber	{J}
 08014270	SomeDrawNumber	{U}
 0802F370	Use_PureWater	{J}
@@ -12650,7 +12650,7 @@ r3=X tile position of menu of the right	{U}
 0802F3AC	Use_TorchItem	{J}
 0802F48C	Use_TorchItem	{U}
 08003B90	Another Print idk	{J}
-08079c04	击败恶魔王的方向。	{J}
-080777E0	击败恶魔王的方向。	{U}
-0803F47C	从敌方AI执行对话事件。	{J}
-0803F4EC	从敌方AI执行对话事件。	{U}
+08079c04	击败恶魔王的方向	{J}
+080777E0	击败恶魔王的方向	{U}
+0803F47C	从敌方AI执行对话事件	{J}
+0803F4EC	从敌方AI执行对话事件	{U}

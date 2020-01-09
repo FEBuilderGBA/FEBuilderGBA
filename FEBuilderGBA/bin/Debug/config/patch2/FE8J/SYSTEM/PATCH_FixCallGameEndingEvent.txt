@@ -1,5 +1,5 @@
 NAME=編分岐していない状態でもエイリークEDを表示する
-NAME.en=Show Eirika ED , when no branch edtions
+NAME.en=Show Eirika Epilogue , when no branch edtions
 
 INFO=編を分岐せずに、チュートリアルのままでクリアした場合に、MNC4を発行しても、エンディングが呼び出されない問題を修正します。\r\nMNC4でエンディングが呼ばれた場合、エイリークEDを表示するように修正します。
 INFO.en=Fix the problem that the ending is not called even if MNC4 is issued when clearing the tutorial as it is without branching.\r\nIf ending is called by MNC4, fix to show Eirika epilogue.
