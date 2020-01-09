@@ -12652,3 +12652,5 @@ r3=X tile position of menu of the right	{U}
 08003B90	Another Print idk	{J}
 08079c04	击败恶魔王的方向。	{J}
 080777E0	击败恶魔王的方向。	{U}
+0803F47C	从敌方AI执行对话事件。	{J}
+0803F4EC	从敌方AI执行对话事件。	{U}

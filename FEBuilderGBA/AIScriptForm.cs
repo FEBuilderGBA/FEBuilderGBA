@@ -560,6 +560,17 @@ namespace FEBuilderGBA
                     text = AIASMUnit4Form.GetUnit4Preview(U.toOffset(value));
                 }
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                if (U.toOffset(value) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMCALLTALKForm.GetUnit2Preview(U.toOffset(value));
+                }
+            }
 
             ScriptEditSetTables[selectID].ParamValue.Text = text;
             ScriptEditSetTables[selectID].ParamValue.BackgroundImage = backgroundImage;
@@ -665,6 +676,15 @@ namespace FEBuilderGBA
                 f.ShowDialog();
                 U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                AIASMCALLTALKForm f = (AIASMCALLTALKForm)InputFormRef.JumpFormLow<AIASMCALLTALKForm>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
+            }
+            
         }
         //adresslist doubleclickで、呼び出し元の injecttionCallbackへ値を代入. フォームを閉じる
         void MakeInjectionCallback(Form f, ListBox addressList, NumericUpDown injectionCallback, bool isGetAddr)
@@ -1028,6 +1048,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(AIASMUnit4Form.GetUnit4Preview(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMCALLTALKForm.GetUnit2Preview(v));
                     }
                     sb.Append("]");
                     break;

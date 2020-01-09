@@ -4814,3 +4814,8 @@
 //This data is made with the aim of being readable by machine fast.
 0802AA9C	FinishUpItemBattle	Register motion when using items.	r1=ITEM ID	{J}
 0802A5EC	FinishUpItemBattle	Register motion when using items.	r1=ITEM ID	{U}
+//This data is made with the aim of being readable by machine fast.
+0803AA40	Execute a conversation event from enemy AI.	{J}
+0803A58C	Execute a conversation event from enemy AI.	{U}
+0803AA40	AiUpdateDecision	{J}
+0803A58C	AiUpdateDecision	{U}

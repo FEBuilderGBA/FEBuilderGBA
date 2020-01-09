@@ -1,14 +1,26 @@
-:新規に座標データを作成しますか？
-Do you want to create new coordinate data? 
+:新規にデータを作成しますか？
+Do you want to create new data? 
 
-:座標の領域が確保されていません。
-Coordinate area is not secured.
+:データの領域が確保されていません。
+Data area is not allocated.
+
+:FE7のファリナのように、敵AIから会話イベントを実行する設定を作ります。\r\n章に会話イベントが設定されていれば、敵AIは会話イベントを呼び出します。
+Create a setting to execute a conversation event from enemy AI like FE7's Farina.\r\nIf a conversation event is set in the chapter, the enemy AI calls the conversation event.
 
 :書き込み
 Write to ROM
 
 :先頭アドレス
 Hex Address
+
+:敵AIから会話イベントを実行する
+Execute a conversation event from enemy AI.
+
+:新規に座標データを作成しますか？
+Do you want to create new coordinate data? 
+
+:座標の領域が確保されていません。
+Coordinate area is not secured.
 
 :AIの座標指定
 Specify AI coordinates.
@@ -11871,9 +11883,6 @@ Base Class 1
 
 :FE8では、CC分岐があるため、複雑な指定になります。\r\nもし、ユニットが指定されていたクラスだった場合、上で割り当てたパレットが適応されます。\r\n指定したクラスではない場合、パレット指定が0だった場合には、ディフォルトの汎用パレットが利用されます。
 Due to the promotion branch in FE8, each character has a class-palette list.\r\nIf the unit has a palette for a given class, the palette will be used.\r\nIf a non-specified class is used or the palette is set to 0, the default class palette will be used.
-
-:新規にデータを作成しますか？
-Do you want to create new data? 
 
 :Webサイトにアクセスできません。 URL:{0} Message:{1}
 Can not access the website.URL: {0} Message: {1}.

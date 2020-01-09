@@ -160,6 +160,10 @@ namespace FEBuilderGBA
             {
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                isLabelJump = true;
+            }
             else if (arg.Type == EventScript.ArgType.POINTER_UNITSSHORTTEXT)
             {
                 isLabelJump = true;
@@ -516,6 +520,17 @@ namespace FEBuilderGBA
                                     {
                                         TraceList.Add(v);
                                         AIASMUnit4Form.RecycleOldData(ref RefList, v);
+                                    }
+                                }
+                                else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_AICALLTALK)
+                                {//敵AIから話しかける
+                                    uint v = EventScript.GetArgPointer(code, i, addr);
+                                    if (U.isSafetyOffset(v)         //安全で
+                                        && TraceList.IndexOf(v) < 0 //まだ読んだことがなければ
+                                        )
+                                    {
+                                        TraceList.Add(v);
+                                        AIASMCALLTALKForm.RecycleOldData(ref RefList, v);
                                     }
                                 }
                                 else if (code.Script.Args[i].Type == EventScript.ArgType.POINTER_ASM)
@@ -1443,6 +1458,11 @@ namespace FEBuilderGBA
                         {
                             isENumText = true;
                             text = " " + AIASMUnit4Form.GetUnit4Preview(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+                        {
+                            isENumText = true;
+                            text = " " + AIASMCALLTALKForm.GetUnit2Preview(v);
                         }
 
                         if (isENumText)

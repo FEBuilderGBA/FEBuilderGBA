@@ -5109,3 +5109,7 @@
 08074A28	MapAnimLevelUpProc_InitLevelUpBox	{U}
 0802AA9C	FinishUpItemBattle	アイテムを利用した時のモーションを登録	r1=ITEM ID	{J}
 0802A5EC	FinishUpItemBattle	アイテムを利用した時のモーションを登録	r1=ITEM ID	{U}
+0803AA40	敵AIから会話イベントを実行する	{J}
+0803A58C	敵AIから会話イベントを実行する	{U}
+0803AA40	AiUpdateDecision	{J}
+0803A58C	AiUpdateDecision	{U}

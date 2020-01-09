@@ -513,6 +513,10 @@ namespace FEBuilderGBA
                     SkillConfigSkillSystemForm.Export(sb);
                 }
             }
+            sb.AppendLine("#define AI1Table "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai1_pointer())));
+            sb.AppendLine("#define AI2Table "
+                + U.To0xHexString(Program.ROM.p32(Program.ROM.RomInfo.ai2_pointer())));
             
 
             UnitActionPointerForm.SupportActionRework(sb);

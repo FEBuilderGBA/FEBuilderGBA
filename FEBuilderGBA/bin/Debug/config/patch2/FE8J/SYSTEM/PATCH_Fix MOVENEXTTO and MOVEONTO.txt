@@ -1,0 +1,17 @@
+NAME=MOVENEXTTO と MOVEONTO イベントコマンドに、操作中のユニット(0xFFFF)を指定できるように修正する
+NAME.en=Fix MOVENEXTTO and MOVEONTO so that active unit (0xFFFF) can be specified
+NAME.zh=Fix MOVENEXTTO and MOVEONTO so that active unit (0xFFFF) can be specified
+
+TYPE=SWITCH
+COMBO=Default: Off|OFF|Fix|FIX
+
+DETERMINATION_ADDRESS=0xFF8E
+OFF:0x0FF8E=0x80 0x5E 0x00 0x28 0x00 0xDA 0x00 0x20
+FIX:0x0FF8E=0x80 0x5A 0x00 0x00 0x00 0x00 0x00 0x00
+
+AUTHOR=7743
+
+INFO=MOVENEXTTO と MOVEONTO イベントコマンドで、ターゲットユニットに、0xFFFF を指定すると、期待通り動作しない問題を修正します。
+INFO.en=Fix the problem that does not work as expected if 0xFFFF is specified for the target unit in the MOVENEXTTO and MOVEONTO event commands.
+INFO.zh=Fix the problem that does not work as expected if 0xFFFF is specified for the target unit in the MOVENEXTTO and MOVEONTO event commands.
+

@@ -448,6 +448,10 @@ namespace FEBuilderGBA
             {
                 text = R._("ユニットのセリフ");
             }
+            else if (dataType == FELint.Type.EVENT_FINAL_SERIF)
+            {
+                text = R._("終章セリフ");
+            }
             else
             {
                 text = R._("不明");
@@ -1002,6 +1006,11 @@ namespace FEBuilderGBA
             {
                 UnitsShortTextForm f = (UnitsShortTextForm)InputFormRef.JumpForm<UnitsShortTextForm>();
                 f.JumpTo(addr);
+                return;
+            }
+            else if (dataType == FELint.Type.EVENT_FINAL_SERIF)
+            {
+                EventFinalSerifFE7Form f = (EventFinalSerifFE7Form)InputFormRef.JumpForm<EventFinalSerifFE7Form>(tag);
                 return;
             }
             else if (dataType == FELint.Type.MAGIC_ANIME_EXTENDS)

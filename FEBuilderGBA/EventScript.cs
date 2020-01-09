@@ -33,6 +33,7 @@ namespace FEBuilderGBA
             , POINTER_MENUEXTENDS //分岐拡張
             , POINTER_AICOORDINATE //AIの座標
             , POINTER_AIUNIT4      //AIのユニット4人
+            , POINTER_AICALLTALK      //敵AIから会話イベントを実行する
             , POINTER_UNITSSHORTTEXT    //UNITと一致するshort型のテキスト
             , POINTER //その他ポインタ
             , MENUCOMMAND //チュートリアルで無効にするメニュー
@@ -512,6 +513,9 @@ namespace FEBuilderGBA
                  break;
              case "POINTER_AIUNIT4":
                  type = ArgType.POINTER_AIUNIT4;
+                 break;
+             case "POINTER_AICALLTALK":
+                 type = ArgType.POINTER_AICALLTALK;
                  break;
              case "POINTER_UNITSSHORTTEXT":
                  type = ArgType.POINTER_UNITSSHORTTEXT;
@@ -1425,6 +1429,7 @@ namespace FEBuilderGBA
                 || argtype == EventScript.ArgType.POINTER_AIUNIT
                 || argtype == EventScript.ArgType.POINTER_AITILE
                 || argtype == EventScript.ArgType.POINTER_AIUNIT4
+                || argtype == EventScript.ArgType.POINTER_AICALLTALK
                 || argtype == EventScript.ArgType.POINTER_UNITSSHORTTEXT
                 ;
         }

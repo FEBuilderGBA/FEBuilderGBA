@@ -30,30 +30,32 @@
         {
             this.ReloadListButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_4_TEXT = new FEBuilderGBA.TextBoxEx();
             this.D4 = new System.Windows.Forms.NumericUpDown();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.D0 = new System.Windows.Forms.NumericUpDown();
             this.J_0_UNIT = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
-            this.TALK_N03_L_8_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TALK_N03_L_8_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_4_TEXT = new FEBuilderGBA.TextBoxEx();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).BeginInit();
             this.panel5.SuspendLayout();
@@ -62,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).BeginInit();
             this.SuspendLayout();
             // 
             // ReloadListButton
@@ -77,8 +78,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.TALK_N03_L_8_UNITICON);
-            this.panel4.Controls.Add(this.TALK_N03_L_8_UNIT);
+            this.panel4.Controls.Add(this.L_0_UNITICON);
+            this.panel4.Controls.Add(this.L_0_UNIT);
             this.panel4.Controls.Add(this.L_4_TEXT);
             this.panel4.Controls.Add(this.D4);
             this.panel4.Controls.Add(this.J_4_TEXT);
@@ -89,6 +90,41 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(916, 679);
             this.panel4.TabIndex = 149;
+            // 
+            // L_0_UNITICON
+            // 
+            this.L_0_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_UNITICON.Location = new System.Drawing.Point(862, 9);
+            this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_UNITICON.Name = "L_0_UNITICON";
+            this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.L_0_UNITICON.TabIndex = 176;
+            this.L_0_UNITICON.TabStop = false;
+            // 
+            // L_0_UNIT
+            // 
+            this.L_0_UNIT.ErrorMessage = "";
+            this.L_0_UNIT.Location = new System.Drawing.Point(552, 13);
+            this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_0_UNIT.Name = "L_0_UNIT";
+            this.L_0_UNIT.Placeholder = "";
+            this.L_0_UNIT.ReadOnly = true;
+            this.L_0_UNIT.Size = new System.Drawing.Size(304, 25);
+            this.L_0_UNIT.TabIndex = 175;
+            // 
+            // L_4_TEXT
+            // 
+            this.L_4_TEXT.ErrorMessage = "";
+            this.L_4_TEXT.Location = new System.Drawing.Point(552, 50);
+            this.L_4_TEXT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.L_4_TEXT.Multiline = true;
+            this.L_4_TEXT.Name = "L_4_TEXT";
+            this.L_4_TEXT.Placeholder = "";
+            this.L_4_TEXT.ReadOnly = true;
+            this.L_4_TEXT.Size = new System.Drawing.Size(342, 135);
+            this.L_4_TEXT.TabIndex = 122;
             // 
             // D4
             // 
@@ -161,6 +197,17 @@
             this.panel5.Size = new System.Drawing.Size(917, 30);
             this.panel5.TabIndex = 147;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(326, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 63;
+            // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -170,6 +217,17 @@
             this.label11.TabIndex = 64;
             this.label11.Text = "Size:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 62;
             // 
             // label22
             // 
@@ -216,6 +274,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.AddressListExpandsButton);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.AddressList);
             this.panel6.Location = new System.Drawing.Point(12, 45);
@@ -233,6 +292,17 @@
             this.label30.TabIndex = 106;
             this.label30.Text = "名前";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(276, 654);
+            this.AddressList.TabIndex = 0;
             // 
             // ReadCount
             // 
@@ -283,73 +353,15 @@
             this.ReadStartAddress.Size = new System.Drawing.Size(130, 25);
             this.ReadStartAddress.TabIndex = 27;
             // 
-            // TALK_N03_L_8_UNITICON
+            // AddressListExpandsButton
             // 
-            this.TALK_N03_L_8_UNITICON.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TALK_N03_L_8_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.TALK_N03_L_8_UNITICON.Location = new System.Drawing.Point(862, 9);
-            this.TALK_N03_L_8_UNITICON.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.TALK_N03_L_8_UNITICON.Name = "TALK_N03_L_8_UNITICON";
-            this.TALK_N03_L_8_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.TALK_N03_L_8_UNITICON.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TALK_N03_L_8_UNITICON.TabIndex = 176;
-            this.TALK_N03_L_8_UNITICON.TabStop = false;
-            // 
-            // TALK_N03_L_8_UNIT
-            // 
-            this.TALK_N03_L_8_UNIT.ErrorMessage = "";
-            this.TALK_N03_L_8_UNIT.Location = new System.Drawing.Point(552, 13);
-            this.TALK_N03_L_8_UNIT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TALK_N03_L_8_UNIT.Name = "TALK_N03_L_8_UNIT";
-            this.TALK_N03_L_8_UNIT.Placeholder = "";
-            this.TALK_N03_L_8_UNIT.ReadOnly = true;
-            this.TALK_N03_L_8_UNIT.Size = new System.Drawing.Size(304, 25);
-            this.TALK_N03_L_8_UNIT.TabIndex = 175;
-            // 
-            // L_4_TEXT
-            // 
-            this.L_4_TEXT.ErrorMessage = "";
-            this.L_4_TEXT.Location = new System.Drawing.Point(552, 50);
-            this.L_4_TEXT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.L_4_TEXT.Multiline = true;
-            this.L_4_TEXT.Name = "L_4_TEXT";
-            this.L_4_TEXT.Placeholder = "";
-            this.L_4_TEXT.ReadOnly = true;
-            this.L_4_TEXT.Size = new System.Drawing.Size(342, 135);
-            this.L_4_TEXT.TabIndex = 122;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(326, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 63;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 62;
-            // 
-            // AddressList
-            // 
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(276, 680);
-            this.AddressList.TabIndex = 0;
+            this.AddressListExpandsButton.Location = new System.Drawing.Point(0, 676);
+            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
+            this.AddressListExpandsButton.Size = new System.Drawing.Size(276, 30);
+            this.AddressListExpandsButton.TabIndex = 145;
+            this.AddressListExpandsButton.Text = "リストの拡張";
+            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
             // 
             // EventFinalSerifFE7Form
             // 
@@ -366,6 +378,7 @@
             this.Load += new System.EventHandler(this.EventFinalSerifFE7Form_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.D0)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -375,7 +388,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TALK_N03_L_8_UNITICON)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,7 +417,8 @@
         private TextBoxEx L_4_TEXT;
         private System.Windows.Forms.NumericUpDown D4;
         private System.Windows.Forms.Label J_4_TEXT;
-        private InterpolatedPictureBox TALK_N03_L_8_UNITICON;
-        private TextBoxEx TALK_N03_L_8_UNIT;
+        private InterpolatedPictureBox L_0_UNITICON;
+        private TextBoxEx L_0_UNIT;
+        private System.Windows.Forms.Button AddressListExpandsButton;
     }
 }

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace FEBuilderGBA
 {
-    public partial class AIASMUnit4Form : Form
+    public partial class AIASMCALLTALKForm : Form
     {
-        public AIASMUnit4Form()
+        public AIASMCALLTALKForm()
         {
             InitializeComponent();
             List<Control> controls = InputFormRef.GetAllControls(this);
@@ -19,17 +19,13 @@ namespace FEBuilderGBA
             InputFormRef.makeLinkEventHandler("", controls, this.B0, this.L_0_UNITICON, 0, "UNITICON", new string[] { "" });
             InputFormRef.makeLinkEventHandler("", controls, this.B1, this.L_1_UNIT, 1, "UNIT", new string[] { "" });
             InputFormRef.makeLinkEventHandler("", controls, this.B1, this.L_1_UNITICON, 1, "UNITICON", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B2, this.L_2_UNIT, 2, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B2, this.L_2_UNITICON, 2, "UNITICON", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNIT, 3, "UNIT", new string[] { "" });
-            InputFormRef.makeLinkEventHandler("", controls, this.B3, this.L_3_UNITICON, 3, "UNITICON", new string[] { "" });
         }
 
         public uint AllocIfNeed(NumericUpDown src)
         {
             if (src.Value == 0 || src.Value == U.NOT_FOUND)
             {
-                string alllocQMessage = R._("新規に座標データを作成しますか？");
+                string alllocQMessage = R._("新規にデータを作成しますか？");
                 DialogResult dr = R.ShowYesNo(alllocQMessage);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
@@ -86,7 +82,7 @@ namespace FEBuilderGBA
             uint addr = (uint)this.ReadStartAddress.Value;
             if (!U.isSafetyOffset(addr + 3))
             {
-                R.ShowStopError("座標の領域が確保されていません。");
+                R.ShowStopError("データの領域が確保されていません。");
                 return;
             }
 
@@ -105,17 +101,17 @@ namespace FEBuilderGBA
         //全データの取得
         public static void RecycleOldData(ref List<Address> recycle, uint script_pointer)
         {
-            Address.AddPointer(recycle,script_pointer,4,"AI Unit4",Address.DataTypeEnum.BIN);
+            Address.AddPointer(recycle,script_pointer,4,"AI CallTalk",Address.DataTypeEnum.BIN);
         }
 
-        private void AICoordinateForm_Load(object sender, EventArgs e)
+        private void AIASMCALLTALKForm_Load(object sender, EventArgs e)
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             InputFormRef.RegistNotifyNumlicUpdate(this.AllWriteButton, controls);
             InputFormRef.WriteButtonToYellow(this.AllWriteButton, false);
         }
 
-        public static string GetUnit4Preview(uint v)
+        public static string GetUnit2Preview(uint v)
         {
             uint addr = U.toOffset(v);
             if (!U.isSafetyOffset(addr + 1))
@@ -123,18 +119,12 @@ namespace FEBuilderGBA
                 return "";
             }
 
-            StringBuilder sb = new StringBuilder();
-            for (uint i = 0; i < 4; i++)
-            {
-                uint uid = Program.ROM.u8(addr + i);
-                if (uid == 0)
-                {
-                    continue;
-                }
-                string str = U.ToHexString(uid) + ": " + UnitForm.GetUnitName(uid) + " ";
-                sb.Append(str);
-            }
-            return sb.ToString();
+            uint from = Program.ROM.u8(addr + 0);
+            uint to = Program.ROM.u8(addr + 1);
+
+            return U.ToHexString(from) + ": " + UnitForm.GetUnitName(from)
+                + " -> " + U.ToHexString(to) + ": " + UnitForm.GetUnitName(to);
         }
+
     }
 }

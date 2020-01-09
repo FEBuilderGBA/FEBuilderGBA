@@ -828,6 +828,17 @@ namespace FEBuilderGBA
                     text = AIASMUnit4Form.GetUnit4Preview(U.toOffset(v));
                 }
             }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                if (U.toOffset(v) == 0)
+                {
+                    text = R._("ラベルをクリックして領域を確保してください");
+                }
+                else
+                {
+                    text = AIASMCALLTALKForm.GetUnit2Preview(U.toOffset(v));
+                }
+            }
             else if ((arg.Type == EventScript.ArgType.PORTRAIT || arg.Type == EventScript.ArgType.REVPORTRAIT) && this.ActiveControl == sender)
             {
                 image = ImagePortraitForm.DrawPortraitAuto(v);
@@ -1079,6 +1090,10 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
             {
                 text = " " + AIASMUnit4Form.GetUnit4Preview(v);
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                text = " " + AIASMCALLTALKForm.GetUnit2Preview(v);
             }
             else if (arg.Type == EventScript.ArgType.None)
             {//10進数表記を書いてやる.
@@ -1384,6 +1399,14 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.POINTER_AIUNIT4)
             {
                 AIASMUnit4Form f = (AIASMUnit4Form)InputFormRef.JumpFormLow<AIASMUnit4Form>();
+                value = f.AllocIfNeed(src_object);
+                f.JumpToAddr(value);
+                f.ShowDialog();
+                U.ForceUpdate(src_object, U.toPointer(f.GetBaseAddress()));
+            }
+            else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+            {
+                AIASMCALLTALKForm f = (AIASMCALLTALKForm)InputFormRef.JumpFormLow<AIASMCALLTALKForm>();
                 value = f.AllocIfNeed(src_object);
                 f.JumpToAddr(value);
                 f.ShowDialog();
@@ -2821,6 +2844,11 @@ namespace FEBuilderGBA
                     {
                         sb.Append(" ");
                         sb.Append(AIASMUnit4Form.GetUnit4Preview(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.POINTER_AICALLTALK)
+                    {
+                        sb.Append(" ");
+                        sb.Append(AIASMCALLTALKForm.GetUnit2Preview(v));
                     }
 
                     sb.Append("]");

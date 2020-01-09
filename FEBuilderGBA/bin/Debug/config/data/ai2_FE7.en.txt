@@ -12,8 +12,8 @@
 08=ー
 09=Random move
 0A=ー
-0B=Move towards [0xC072B4] (Target)	{J}
-0B=Move towards [0xB97FE0] (Target)	{U}
+0B=Move towards [0xC072B4] (Talk)	{J}
+0B=Move towards [0xB97FE0] (Talk)	{U}
 0C=Move to exit point
 0D=Move towards [0xC07344] (Target)	{J}
 0D=Move towards [0xB98070] (Target)	{U}

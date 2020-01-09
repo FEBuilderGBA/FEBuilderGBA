@@ -1977,6 +1977,12 @@
     <Compile Include="VennouWeaponLockForm.Designer.cs">
       <DependentUpon>VennouWeaponLockForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIASMCALLTALKForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIASMCALLTALKForm.Designer.cs">
+      <DependentUpon>AIASMCALLTALKForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2924,6 +2930,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VennouWeaponLockForm.resx">
       <DependentUpon>VennouWeaponLockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIASMCALLTALKForm.resx">
+      <DependentUpon>AIASMCALLTALKForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

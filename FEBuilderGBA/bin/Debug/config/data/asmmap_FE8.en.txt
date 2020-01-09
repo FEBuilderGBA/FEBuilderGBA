@@ -12699,3 +12699,5 @@ r3=X tile position of menu of right	{U}
 08003B90	Another Print idk	{J}
 08079c04	Direction when defeating the demon king.	{J}
 080777E0	Direction when defeating the demon king.	{U}
+0803F47C	Execute a conversation event from enemy AI.	{J}
+0803F4EC	Execute a conversation event from enemy AI.	{U}
