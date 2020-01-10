@@ -4819,3 +4819,5 @@
 0803A58C	Execute a conversation event from enemy AI	{U}
 0803AA40	AiUpdateDecision	{J}
 0803A58C	AiUpdateDecision	{U}
+08005998	DrawTextInline	{J}
+08005ad4	DrawTextInline	{U}

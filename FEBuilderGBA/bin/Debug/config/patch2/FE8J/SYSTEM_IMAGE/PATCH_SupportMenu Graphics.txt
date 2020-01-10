@@ -1,0 +1,11 @@
+NAME=サポートメニューの画像
+NAME.en=SupportMenu Graphics
+NAME.zh=SupportMenu Graphics
+
+TYPE=IMAGE
+
+WIDTH=256
+HEIGHT=16
+
+ZIMAGE_POINTER=0x04E5BC//0xA9AC28
+PALETTE_POINTER=0x04E5C4//0xA9B004

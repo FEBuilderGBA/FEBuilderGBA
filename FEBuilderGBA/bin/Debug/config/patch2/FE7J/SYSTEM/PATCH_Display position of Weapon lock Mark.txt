@@ -1,0 +1,15 @@
+NAME=専用武器マークの表示位置
+NAME.en=Display position of Weapon lock Mark
+NAME.zh=Display position of Weapon lock Mark
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x80BD2
+HEX=false
+INFO=専用武器を示すマークの表示位置を調整します。\r\n日本語版では"★"、英語版では"Prf"になります。\r\n日本語版では4ドットの余白を利用してセンタリングして表示されます。
+INFO.en=Adjust the display position of the mark indicating the special weapon.
+\r\nIt is "★" in Japanese version and "Prf" in English version.\r\nIn the Japanese version, it is centered and displayed using a 4-dot margin.
+INFO.zh=Adjust the display position of the mark indicating the special weapon.
+\r\nIt is "★" in Japanese version and "Prf" in English version.\r\nIn the Japanese version, it is centered and displayed using a 4-dot margin.
+AUTHOR=Tequila

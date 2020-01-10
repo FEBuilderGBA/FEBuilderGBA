@@ -73,11 +73,11 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
 21070000	SAVETOQUEUE	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:MemorySlot]	{VAL}
-210FXXYY	COUNTER_SET[X:COUNTER:CounterID(bitshift)][Y::Counter_value]	{VAL}
-220FXXYY	COUNTER_ADD[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
-230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID(bitshift)][Y::Base_operand]	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter(bitshift)][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter (bitshift) and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
-210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID(bitshift)][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter (bitshift) 0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
+210FXXYY	COUNTER_SET[X:COUNTER:CounterID][Y::Counter_value]	{VAL}
+220FXXYY	COUNTER_ADD[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
+230FXXYY	COUNTER_SUBTRACT[X:COUNTER:CounterID][Y::Base_operand]	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	Reduce the Counter and turn on the flag when it gets to zero[X:COUNTER:Counter][Y::Base_operand][W:FLAG:Completion Flag][V:LABEL:Conditional ID]	Perform processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nLeave Counter  and Base_operand at 0 unless you change it in particular.\r\nFor Completion Flag, please write the same value as Completion Flag set for this event.\r\n\r\nPlease put "Conditional ID" in the other Conditional ID of this event and a unique value which does not apply.\r\nIf there is no other branch, leave 0 and there is no problem.	{VAL}	{FLAG}
+210FXXYY2102WWWW	Start an event using the Counter[X:COUNTER:CounterID][Y::Base_operand][W:FLAG:Flag]	Start processing using COUNTER such as 3 turn reinforcement after satisfying the prescribed conditions.\r\nPlease leave Counter  0 if there is no reason.\r\nIn Base_operand, set the number of turns to be operated.If it is 3 turns it will be 3.\r\nFor the flag, please set the Completion Flag of the event you want to operate.	{VAL}	{FLAG}
 
 242AXXXX	Epilogue Save[XXXX::Value 1](MNC4)	{ENDING}
 202AXXXX	Return to title screen[XXXX::Value 1](MNTS)	{ENDING}
@@ -411,7 +411,7 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 2F420000	Stop shaking the screen (earthquake FX)(EARTHQUAKE_END)	{MAPEFFECT}
 2045XXXX	GLOWING_CROSS[XXXX:UNIT:Character]	Makes a glowing cross effect appear underneath the character
 2F450000	END_GLOWING_CROSS
-200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID(bitshift)]	Return the value of the specified counter	@STOREC	{VAL}	{COND}
+200FXXXX	COUNTER_CHECK[X:COUNTER:CounterID]	Return the value of the specified counter	@STOREC	{VAL}	{COND}
 2734XXXX	_0x3427[XXXX:UNIT:Character]
 410BYYYYFFFFFFFF	Event call in memory slot 2[YYYY::param]
 410BYYYYXXXXXXXX	Unconditional jump1 to[XXXXXX:POINTER_EVENT:event][YYYY::param]
@@ -546,3 +546,6 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	Move units issued to move in WM
 
 40050B00UUUUVVVV492FXXXXFEFFZZZZ	Set move unit at coordinates[UUUU:MAPX:X][VVVV:MAPY:Y]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO)	{UNITMOVE}
 40050B00UUUUVVVV492FXXXXFEFFZZZZ20300000	Move unit at coordinates[UUUU:MAPX:X][VVVV:MAPY:Y]to[ZZ:UNIT:opponent unit]with[XXXX:FSEC:Speed](MOVENEXTTO+ENUN)	{UNITMOVE}
+
+402FFFFFYYYYZZWW	Set move [YY:UNIT:Unit] at coordinates[ZZ:MAPX:X][HH:MAPY:Y]with instantaneously(MOVE)	Silent Warp like FE7 REPO	{UNITMOVE}
+402FFFFFYYYYZZWW20300000	Move [YY:UNIT:Unit] at coordinates[ZZ:MAPX:X][HH:MAPY:Y]with warp instantaneously(MOVE+ENUN)Silent Warp like FE7 REPO	{UNITMOVE}

@@ -73,12 +73,12 @@
 2207XXXX	SLOTS_SETFROMQUEUE[XXXX:MEMORYSLOT:メモリスロット]	{VAL}
 21070000	キューに代入する(SAVETOQUEUE)	{VAL}
 2007XXXX	STQFROMSLOT[XXXX:MEMORYSLOT:メモリスロット]	{VAL}
-200FXXXX	カウンタの値を取得[X:COUNTER:CounterID(bitshift)](COUNTER_CHECK)	@STOREC	{VAL}	{COND}
-210FXXYY	カウンタの値を設定[X:COUNTER:CounterID(bitshift)][Y::Counter_value](COUNTER_SET)	{VAL}
-220FXXYY	カウンタの値を足す[X:COUNTER:CounterID(bitshift)][Y::Base_operand](COUNTER_ADD)	{VAL}
-230FXXYY	カウンタの値を減らす[X:COUNTER:CounterID(bitshift)][Y::Base_operand](COUNTER_SUBTRACT)	{VAL}
-230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	カウンタを減らして、ゼロになったらフラグをONにする[X::Counter(bitshift)][Y::Base_operand][W:FLAG:達成フラグ][V:LABEL:条件ID]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を行います。\r\nCounter(bitshift)とBase_operandは特に変更しないならば0のままにしてください。\r\n達成フラグには、このイベントに設定されている達成フラグと同じ値を書いてください。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{VAL}	{FLAG}
-210FXXYY2102WWWW	カウンタを利用したイベントを開始する[X::CounterID(bitshift)][Y::Base_operand][W:FLAG:フラグ]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を開始させます。\r\nCounter(bitshift)は理由がなければ0のままにしてください。\r\nBase_operandには動作させるターン数を設定します。3ターンならば3になります。\r\nフラグには、動作させたいイベントの達成フラグを設定してください。	{VAL}	{FLAG}
+200FXXXX	カウンタの値を取得[X:COUNTER:CounterID](COUNTER_CHECK)	@STOREC	{VAL}	{COND}
+210FXXYY	カウンタの値を設定[X:COUNTER:CounterID][Y::Counter_value](COUNTER_SET)	{VAL}
+220FXXYY	カウンタの値を足す[X:COUNTER:CounterID][Y::Base_operand](COUNTER_ADD)	{VAL}
+230FXXYY	カウンタの値を減らす[X:COUNTER:CounterID][Y::Base_operand](COUNTER_SUBTRACT)	{VAL}
+230FXXYY2102WWWW200FXX00410CVVVV0C0000002902WWWW2008VVVV	カウンタを減らして、ゼロになったらフラグをONにする[X::Counter][Y::Base_operand][W:FLAG:達成フラグ][V:LABEL:条件ID]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を行います。\r\nCounterとBase_operandは特に変更しないならば0のままにしてください。\r\n達成フラグには、このイベントに設定されている達成フラグと同じ値を書いてください。\r\n\r\n「条件ID」には、このイベントの他の条件IDと被らないユニークな値を入れてください。\r\n他に分岐がないならば0のままで問題ありません。	{VAL}	{FLAG}
+210FXXYY2102WWWW	カウンタを利用したイベントを開始する[X::CounterID][Y::Base_operand][W:FLAG:フラグ]	所定の条件を満たしてから3ターン増援する等のCOUNTERを利用した処理を開始させます。\r\nCounterは理由がなければ0のままにしてください。\r\nBase_operandには動作させるターン数を設定します。3ターンならば3になります。\r\nフラグには、動作させたいイベントの達成フラグを設定してください。	{VAL}	{FLAG}
 40A600000000ZZZZ212AXXXX	ワールドマップあり 拠点を指定して次のマップへ[ZZ:WMLOCATION:WM拠点][XXXX:MAPCHAPTER:次の章ID](WM_SETNEXTLOCATION+MNCH)	{MAP}
 212AXXXX	ワールドマップあり 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNCH)	@MNCHBUG	{MAP}
 222AXXXX	ワールドマップなし 次のマップへ[XXXX:MAPCHAPTER:次の章ID](MNC2)	章をクリアして、次の章へ進みます	@MNC2BUG	{MAP}
@@ -548,3 +548,5 @@ C0A80000YYYYZZZZWWWWVVVVUUUUTTTTSSSSRRRRQQQQ0000	WMAPに出したユニットの
 40050B00UUUUVVVV422FXXXXFEFFZZZZ	[XXXX:FSEC:速度]で[UUUU:MAPX:X][VVVV:MAPY:Y]のユニットを[ZZ:DIRECTION:Direction]で1マス移動設定(MOVE_1STEP)	{UNITMOVE}
 40050B00UUUUVVVV492FXXXXFEFFZZZZ	[XXXX:FSEC:速度]で[UUUU:MAPX:X][VVVV:MAPY:Y]のユニットを[ZZ:UNIT:相手ユニット]まで移動設定(MOVENEXTTO)	{UNITMOVE}
 40050B00UUUUVVVV492FXXXXFEFFZZZZ20300000	[XXXX:FSEC:速度]で[UUUU:MAPX:X][VVVV:MAPY:Y]のユニットを[ZZ:UNIT:相手ユニット]の隣まで移動設定した後即移動(MOVENEXTTO+ENUN)	{UNITMOVE}
+402FFFFFYYYYZZWW	[YY:UNIT:ユニット]を[ZZ:MAPX:X][WW:MAPY:Y]に瞬間移動設定(MOVE)	FE7のREPO命令のように瞬間移動	{UNITMOVE}
+402FFFFFYYYYZZWW20300000	[YY:UNIT:ユニット]を[ZZ:MAPX:X][WW:MAPY:Y]に瞬間移動設定した後即移動(MOVE+ENUN)		FE7のREPO命令のように瞬間移動	{UNITMOVE}

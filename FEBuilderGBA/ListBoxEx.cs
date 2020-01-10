@@ -79,12 +79,22 @@ namespace FEBuilderGBA
             {
                 return;
             }
-            
-            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            e.Graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.None;
 
-            DrawBackground(e.Index, e.Graphics, e.Bounds, e.State, true);
-            this.DrawFunc(this, e.Index, e.Graphics, e.Bounds, true);
+            try
+            {
+                e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+                e.Graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.None;
+
+                DrawBackground(e.Index, e.Graphics, e.Bounds, e.State, true);
+                this.DrawFunc(this, e.Index, e.Graphics, e.Bounds, true);
+            }
+            catch (Exception ee)
+            {
+                Log.Error(R.ExceptionToString(ee));
+#if DEBUG
+                throw;
+#endif
+            }
         }
         //ちらつきを防ぐため、背景を描画しない
         //http://www.atmarkit.co.jp/ait/articles/0408/19/news072.html

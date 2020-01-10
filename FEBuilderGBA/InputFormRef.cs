@@ -6570,6 +6570,10 @@ namespace FEBuilderGBA
         }
         public static string GetFSEC(uint num)
         {
+            if (num == 0xffff || num == 0xffffffff)
+            {
+                return R._("瞬間移動");
+            }
             double sec = Math.Round( ((double)num / 60.0f) , 4);
             return R._("フレーム秒({0}秒)", sec );
         }

@@ -1391,3 +1391,4 @@
 0805AFEC	イドゥン撃破時の処理	鳴き声等の再生
 0805bca8	効果音の再生	ラップ関数
 0805BD8C	Call m4aMPlayStop
+08006408	DrawTextInline
