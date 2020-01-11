@@ -6319,13 +6319,28 @@ namespace FEBuilderGBA
         }
 
         static void MakeEventScriptAddTextEscape(PatchSt st, string textescape
-            , TextEscape textEscape)
+            , TextEscape textEscape, PatchUtil.PRIORITY_CODE priorityCode)
         {
             string[] sp = textescape.Split('\t');
             if (sp.Length <= 2)
             {
                 return;
             }
+            if (textescape.IndexOf("{UTF-8}") >= 0)
+            {//UTF-8 Only
+                if (priorityCode != PatchUtil.PRIORITY_CODE.UTF8)
+                {
+                    return;
+                }
+            }
+            else if (textescape.IndexOf("{NON-UTF-8}") >= 0)
+            {//non UTF-8 Only
+                if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
+                {
+                    return;
+                }
+            }
+
             textEscape.Add(sp[0],sp[1], U.at(sp,2));
         }
 
@@ -6382,6 +6397,7 @@ namespace FEBuilderGBA
             , ExportFunction exportFunctions
             )
         {
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),true);
             for (int i = 0; i < patchs.Count; i++)
             {
@@ -6408,7 +6424,7 @@ namespace FEBuilderGBA
                     }
                     else if (pair.Key.IndexOf("TEXTESCAPE") == 0)
                     {
-                        MakeEventScriptAddTextEscape(patch, pair.Value, textEscapes);
+                        MakeEventScriptAddTextEscape(patch, pair.Value, textEscapes, priorityCode);
                     }
                     else if (pair.Key.IndexOf("EXPORT") == 0)
                     {

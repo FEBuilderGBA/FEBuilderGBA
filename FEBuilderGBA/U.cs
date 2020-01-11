@@ -1160,6 +1160,39 @@ namespace FEBuilderGBA
             return i - starti;
         }
 
+        public static bool IsUTF8_LAT1SpecialFont(byte code1, byte code2)
+        {
+            //see https://feuniverse.us/t/scraizas-crazy-asm/5624/2
+            if (code1 >= 0x7b && code1 <= 0x7d)
+            {
+                return true;
+            }
+            if (code1 == 0x7f)
+            {
+                return true;
+            }
+            if (code1 == 0xC2)
+            {//U+81 - 
+                if (code2 >= 0x81 && code2 <= 0x90)
+                {
+                    return true;
+                }
+                if (code2 >= 0x95 && code2 <= 0xA9)
+                {
+                    return true;
+                }
+                if (code2 >= 0xAC && code2 <= 0xB9)
+                {
+                    return true;
+                }
+                if (code2 >= 0xBC && code2 <= 0xBE)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         //一文字変換
         public static uint ConvertMojiCharToUnit(string one, PatchUtil.PRIORITY_CODE priorityCode)
         {
@@ -6460,6 +6493,16 @@ namespace FEBuilderGBA
             {
                 Log.Error(R.ExceptionToString(e));
             }
+        }
+
+        //U+XXX
+        public static string ToUnicode(uint code)
+        {
+            if (code == 0)
+            {
+                return "";
+            }
+            return ((char)code).ToString();
         }
     }
 }

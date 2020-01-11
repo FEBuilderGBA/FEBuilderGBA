@@ -174,12 +174,22 @@ namespace FEBuilderGBA
                 if (length > i + 1)
                 {
                     byte code2 = srcdata[i + 1];
-                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && U.isUTF8PreCode(code,code2))
+                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8)
                     {
-                        i += U.AppendUTF8(str , srcdata , i);
-                        continue;
+                        if (U.IsUTF8_LAT1SpecialFont(code, code2))
+                        {//LAT1の特殊コードのエリア
+                            AppendAtmarkCode(str, code); //@00C0
+                            AppendAtmarkCode(str, code2); //@0081
+                            i += 2;
+                            continue;
+                        }
+                        else if (U.isUTF8PreCode(code, code2))
+                        {
+                            i += U.AppendUTF8(str, srcdata, i);
+                            continue;
+                        }
                     }
-                    else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
+                    if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
                         i += AppendSJIS(str, code, code2);
                         continue;
@@ -499,12 +509,22 @@ namespace FEBuilderGBA
                 if (length > len + 1)
                 {
                     byte code2 = srcdata[len + 1];
-                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8 && code >= 0xC0 && code2 >= 0x80)
+                    if (this.PriorityCode == PatchUtil.PRIORITY_CODE.UTF8)
                     {
-                        len += U.AppendUTF8(str, srcdata, len);
-                        continue;
+                        if (U.IsUTF8_LAT1SpecialFont(code, code2))
+                        {//LAT1の特殊コードのエリア
+                            AppendAtmarkCode(str, code); //@00C0
+                            AppendAtmarkCode(str, code2); //@0081
+                            len += 2;
+                            continue;
+                        }
+                        else if (U.isUTF8PreCode(code, code2))
+                        {
+                            len += U.AppendUTF8(str, srcdata, len);
+                            continue;
+                        }
                     }
-                    else if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
+                    if (U.isSJIS1stCode(code) && U.isSJIS2ndCode(code2))
                     {//SJISコード 2バイト読み飛ばす.
                         len += AppendSJIS(str, code, code2);
                         continue;

@@ -2498,6 +2498,7 @@ namespace FEBuilderGBA
             {
                 text = AutoConvertSpaceByLang(text);
             }
+            //text = ConvertUnicodeDirect(text);
             if (OptionForm.text_escape() == OptionForm.text_escape_enum.FEditorAdv)
             {
                 return ConvertFEditorToEscape(text);
@@ -2526,6 +2527,11 @@ namespace FEBuilderGBA
             {//倍角スペースを半角スペースへ
                 return text.Replace('　', ' ');
             }
+        }
+        static string ConvertUnicodeDirect(string str)
+        {
+            str = RegexCache.Replace(str, @"\[U\+([0-9A-F]+)\]", (m) => { return U.ToUnicode(U.atoh(m.Groups[1].Value)); });
+            return str;
         }
 
 
