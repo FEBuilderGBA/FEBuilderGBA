@@ -142,6 +142,27 @@ namespace FEBuilderGBA
             return 2;
         }
 
+        bool IsStrangeSmallFontMapping(byte code, byte code2)
+        {
+            if (this.PriorityCode != PatchUtil.PRIORITY_CODE.SJIS)
+            {
+                return false;
+            }
+            if (code2 != 0x40)
+            {
+                return false;
+            }
+            if (code >= 0x81 && code <= 0x9f)
+            {//SJIS
+                return false;
+            }
+            if (code >= 0xe0 && code <= 0xef)
+            {//SJIS
+                return false;
+            }
+            return true;
+        }
+
         public String UnHffmanPatchDecodeLow(byte[] srcdata)
         {
             List<byte> str = new List<byte>();
@@ -163,6 +184,13 @@ namespace FEBuilderGBA
                         i += AppendSJIS(str, code, code2);
                         continue;
                     }
+//                    else if (IsStrangeSmallFontMapping(code, code2))
+//                    {//マルチバイトROMに対して、変な割り当てをされた短いフォント
+//                        AppendAtmarkCode(str, code);
+//                        AppendAtmarkCode(str, code2);
+//                        i += 2;
+//                        continue;
+//                    }
 
                     //unHuffman patchでは可変長デコードらしい.
                     //@0009 -> 0x09
@@ -174,7 +202,7 @@ namespace FEBuilderGBA
 
                     if (code == 0x80)
                     {
-                        code2 = srcdata[i + 1];
+                        //code2 = srcdata[i + 1];
                         AppendAtmarkCode(str, code); //@0080
                         AppendAtmarkCode(str, code2); //@000d
                         i+=2;

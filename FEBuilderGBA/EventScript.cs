@@ -1693,5 +1693,43 @@ namespace FEBuilderGBA
                 }
             }
         }
+
+        //ポインタの更新の通知
+        public static void NotifyChangePointer(List<EventScript.OneCode> list, uint oldaddr, uint newaddr)
+        {
+            Debug.Assert(U.isPointer(oldaddr));
+            Debug.Assert(U.isPointer(newaddr));
+            for (int i = 0; i < list.Count; i++)
+            {
+                EventScript.OneCode code = list[i];
+                EventScript.NotifyChangePointer(code, oldaddr, newaddr);
+            }
+        }
+        static void NotifyChangePointer(EventScript.OneCode code, uint oldaddr, uint newaddr)
+        {
+            Debug.Assert(U.isPointer(oldaddr));
+            Debug.Assert(U.isPointer(newaddr));
+
+            EventScript.Arg[] args = code.Script.Args;
+            for (int i = 0; i < args.Length; i++)
+            {
+                EventScript.Arg arg = args[i];
+                if (!EventScript.IsPointerArgs(arg.Type))
+                {
+                    continue;
+                }
+                if (arg.Size != 4)
+                {
+                    continue;
+                }
+                uint p = U.u32(code.ByteData, (uint)arg.Position);
+                if (p != oldaddr)
+                {
+                    continue;
+                }
+                U.write_u32(code.ByteData, (uint)arg.Position, newaddr);
+            }
+
+        }
     }
 }

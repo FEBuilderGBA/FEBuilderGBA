@@ -5728,7 +5728,7 @@ namespace FEBuilderGBA
                     }
                 }
 
-                UpdateChangePointer(eventarg.OldBaseAddress, eventarg.NewBaseAddress);
+                NotifyChangePointer(eventarg.OldBaseAddress, eventarg.NewBaseAddress);
                 return 0;
             }
             );
@@ -7593,7 +7593,7 @@ namespace FEBuilderGBA
 
         }
 
-        public static void UpdateChangePointer(uint oldaddr, uint newaddr)
+        static void NotifyChangePointer(uint oldaddr, uint newaddr)
         {
             oldaddr = U.toPointer(oldaddr);
             newaddr = U.toPointer(newaddr);
@@ -7603,6 +7603,22 @@ namespace FEBuilderGBA
                 Form f = pair.Value.Form;
                 if (f.IsDisposed)
                 {
+                    continue;
+                }
+
+                if (f is EventScriptForm)
+                {
+                    ((EventScriptForm)f).NotifyChangePointer(oldaddr, newaddr);
+                    continue;
+                }
+                if (f is ProcsScriptForm)
+                {
+                    ((ProcsScriptForm)f).NotifyChangePointer(oldaddr, newaddr);
+                    continue;
+                }
+                if (f is AIScriptForm)
+                {
+                    ((AIScriptForm)f).NotifyChangePointer(oldaddr, newaddr);
                     continue;
                 }
 
@@ -9192,6 +9208,8 @@ namespace FEBuilderGBA
 
             //データの書き込み
             Program.ROM.write_range(newFreeSapceAddr, dataByte);
+            //拡張されたことを通知する
+            InputFormRef.NotifyChangePointer(addr, newFreeSapceAddr);
 
             return newFreeSapceAddr;
         }

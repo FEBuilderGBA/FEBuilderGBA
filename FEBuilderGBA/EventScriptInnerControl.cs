@@ -379,11 +379,6 @@ namespace FEBuilderGBA
                 eventarg.NewDataCount = 0;
                 this.AddressListExpandsEvent(this.AddressList, eventarg);
             }
-
-            InputFormRef.UpdateChangePointer(addr,newaddr);
-
-            //asm mapキャッシュの更新.
-            Program.AsmMapFileAsmCache.ClearCache();
         }
 
         private MoveToUnuseSpace.ADDR_AND_LENGTH get_data_pos_callback(uint addr)
@@ -3410,6 +3405,13 @@ namespace FEBuilderGBA
                 }
             }
             return false;
+        }
+        //ポインタの更新の通知
+        public void NotifyChangePointer(uint oldaddr, uint newaddr)
+        {
+            Debug.Assert(U.isPointer(oldaddr));
+            Debug.Assert(U.isPointer(newaddr));
+            EventScript.NotifyChangePointer(this.EventAsm , oldaddr , newaddr);
         }
 
     }

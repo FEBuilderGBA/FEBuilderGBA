@@ -1658,7 +1658,8 @@ namespace FEBuilderGBA
             }
             catch (ExternalException e)
             {
-                R.ShowStopError("クリップボードにデータを保存できませんでした。" + "\r\n" + e.ToString());
+                string str = R._("クリップボードにデータを保存できませんでした。");
+                R.ShowStopError(str + "\r\n" + text + "\r\n" + e.ToString());
             }
         }
 

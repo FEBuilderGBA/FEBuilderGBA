@@ -1,0 +1,19 @@
+NAME=イドゥンを倒した時にBGMを停止しない
+NAME.en=Don't stop BGM when Defeat Idun
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+ADDRESS=0x5B008
+DETERMINATION_ADDRESS=0x5B008
+COMBO=Default|OFF|fix|FIX
+
+AUTHOR=7743
+
+OFF:0x5B008=0x00 0xF0 0xC0 0xFE
+FIX:0x5B008=0x00 0x00 0x00 0x00
+
+OFF:0x6B84C=0x19
+FIX:0x6B84C=0x00
+NAME.zh=当Idun被杀死时，不要停止BGM。

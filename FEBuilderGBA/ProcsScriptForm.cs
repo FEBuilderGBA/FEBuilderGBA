@@ -727,7 +727,23 @@ namespace FEBuilderGBA
                     }
                 }
             }
+        }
 
+        //ポインタの更新の通知
+        public void NotifyChangePointer(uint oldaddr, uint newaddr)
+        {
+            for (int i = 0; i < MainTab.TabCount; i++)
+            {
+                TabPage tab = MainTab.TabPages[i];
+                for (int n = 0; n < tab.Controls.Count; n++)
+                {
+                    Control c = tab.Controls[n];
+                    if (c is ProcsScriptInnerControl)
+                    {
+                        ((ProcsScriptInnerControl)c).NotifyChangePointer(oldaddr, newaddr);
+                    }
+                }
+            }
         }
     }
 }

@@ -4123,6 +4123,9 @@ Warning: Write to MemorySlot 0.
 :警告: MemorySlotD以降にアクセスしています。
 Warning: You are accessing MemorySlotD or later.
 
+:瞬間移動
+teleportation.
+
 :フレーム秒({0}秒)
 frame sec({0} sec)
 

@@ -534,12 +534,12 @@ namespace FEBuilderGBA
                     g_RepalceSPCode.Add("ë"); g_RepalceSPCode.Add("@00EB");///No Translate
                     g_RepalceSPCode.Add("ì"); g_RepalceSPCode.Add("@00EC");///No Translate
                     g_RepalceSPCode.Add("í"); g_RepalceSPCode.Add("@00ED");///No Translate
-                    g_RepalceSPCode.Add("î"); g_RepalceSPCode.Add("@00ED");///No Translate
-                    g_RepalceSPCode.Add("ï"); g_RepalceSPCode.Add("@00EE");///No Translate
-                    g_RepalceSPCode.Add("ñ"); g_RepalceSPCode.Add("@00EF");///No Translate
-                    g_RepalceSPCode.Add("ò"); g_RepalceSPCode.Add("@00F1");///No Translate
-                    g_RepalceSPCode.Add("ó"); g_RepalceSPCode.Add("@00F2");///No Translate
-                    g_RepalceSPCode.Add("ô"); g_RepalceSPCode.Add("@00F3");///No Translate
+                    g_RepalceSPCode.Add("î"); g_RepalceSPCode.Add("@00EE");///No Translate
+                    g_RepalceSPCode.Add("ï"); g_RepalceSPCode.Add("@00EF");///No Translate
+                    g_RepalceSPCode.Add("ñ"); g_RepalceSPCode.Add("@00F1");///No Translate
+                    g_RepalceSPCode.Add("ò"); g_RepalceSPCode.Add("@00F2");///No Translate
+                    g_RepalceSPCode.Add("ó"); g_RepalceSPCode.Add("@00F3");///No Translate
+                    g_RepalceSPCode.Add("ô"); g_RepalceSPCode.Add("@00F4");///No Translate
                     g_RepalceSPCode.Add("ö"); g_RepalceSPCode.Add("@00F6");///No Translate
                     g_RepalceSPCode.Add("ù"); g_RepalceSPCode.Add("@00F9");///No Translate
                     g_RepalceSPCode.Add("ú"); g_RepalceSPCode.Add("@00FA");///No Translate

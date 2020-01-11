@@ -1219,5 +1219,13 @@ namespace FEBuilderGBA
             }
         }
 
+        //ポインタの更新の通知
+        public void NotifyChangePointer(uint oldaddr, uint newaddr)
+        {
+            Debug.Assert(U.isPointer(oldaddr));
+            Debug.Assert(U.isPointer(newaddr));
+            EventScript.NotifyChangePointer(this.ProcsScript, oldaddr, newaddr);
+        }
+
     }
 }
