@@ -28,7 +28,7 @@
 12000000XXXXXXXX14000000	Load Units and Move[XXXX:POINTER_UNIT:Unit_pointer](LOU1+ENUN)	{LOADUNIT}
 13000000XXXXXXXX	Load Units, If Player Unit,Join your party[XXXX:POINTER_UNIT:Unit_pointer](LOU2)	{LOADUNIT}
 26000000XXXX0000	[XXXX:ITEM:Item]Get Item(ITGV)	{ITEM}
-28000000XXXX0000	[XXXX:DECIMAL:amount of money]Get Money(MONE)	{ITEM}	{GOLD}
+28000000XXXX0000	[XXXX:DECIMAL:amount]Get Money(MONE)	Give Gold	{ITEM}	{GOLD}
 29000000XX000000	[XX:MAPCHANGE:map]Map change processing (number specification)(MAC2)	{MAPCHANGE}
 2A000000XXYY0000	[XX:MAPX:X][YY:MAPY:Y]Map change processing (coordinate specification)(MACC)	{MAPCHANGE}
 2C000000XXXXYYYY	[XXXX:MAPX:X][YYYY:MAPY:Y]Highlight with cursor(CURF)	{WAKU}
