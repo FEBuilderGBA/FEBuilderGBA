@@ -681,6 +681,15 @@ namespace FEBuilderGBA
                     uint id = (uint)src_object.Value;
                     if (arg1 == "PLUS1")
                     {
+                        if (id == 0xFF || id < 0x80)
+                        {
+                            link_object.ErrorMessage = "";
+                        }
+                        else
+                        {
+                            link_object.ErrorMessage = R._("0x80以上のパレットを指定しても無視されます。");
+                        }
+
                         id = id + 1;
                     }
                     link_object.Text = ImageUnitPaletteForm.GetPaletteName(id);
@@ -10880,7 +10889,7 @@ namespace FEBuilderGBA
             }
             else if (str == "@OP_CLASSDEMO_BATTLEANIME_PALETTE")
             {
-                str = R._("指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。");
+                str = R._("指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。\r\n注意:0x80以上のパレットを指定すると無視されます。");
             }
             else if (str == "@OP_CLASSDEMO_BATTLEANIME")
             {

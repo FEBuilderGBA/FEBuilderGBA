@@ -84,7 +84,6 @@ namespace FEBuilderGBA
 
         private void ClassOPDemoForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void P8_ValueChanged(object sender, EventArgs e)

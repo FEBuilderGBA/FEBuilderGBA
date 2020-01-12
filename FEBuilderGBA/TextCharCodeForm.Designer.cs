@@ -44,7 +44,7 @@
             this.J_0_FONT_ITEM = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SEARCH_COUNT_BUTTON = new System.Windows.Forms.Button();
-            this.SEARCH_COUNT_LIST = new ListBoxEx();
+            this.SEARCH_COUNT_LIST = new FEBuilderGBA.ListBoxEx();
             this.label4 = new System.Windows.Forms.Label();
             this.SEARCH_COUNT = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,9 +59,8 @@
             this.W0 = new System.Windows.Forms.NumericUpDown();
             this.J_0 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.AddressList = new ListBoxEx();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
@@ -144,7 +143,6 @@
             // 
             // ReadCount
             // 
-
             this.ReadCount.Location = new System.Drawing.Point(367, 2);
             this.ReadCount.Margin = new System.Windows.Forms.Padding(2);
             this.ReadCount.Name = "ReadCount";
@@ -279,6 +277,7 @@
             // 
             this.SEARCH_COUNT_LIST.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SEARCH_COUNT_LIST.FormattingEnabled = true;
+            this.SEARCH_COUNT_LIST.IntegralHeight = false;
             this.SEARCH_COUNT_LIST.ItemHeight = 18;
             this.SEARCH_COUNT_LIST.Location = new System.Drawing.Point(2, 143);
             this.SEARCH_COUNT_LIST.Margin = new System.Windows.Forms.Padding(4);
@@ -299,7 +298,6 @@
             // 
             // SEARCH_COUNT
             // 
-
             this.SEARCH_COUNT.Location = new System.Drawing.Point(227, 68);
             this.SEARCH_COUNT.Margin = new System.Windows.Forms.Padding(2);
             this.SEARCH_COUNT.Name = "SEARCH_COUNT";
@@ -359,9 +357,11 @@
             // 
             // SEARCH_CHAR
             // 
+            this.SEARCH_CHAR.ErrorMessage = "";
             this.SEARCH_CHAR.Location = new System.Drawing.Point(308, 30);
             this.SEARCH_CHAR.Margin = new System.Windows.Forms.Padding(2);
             this.SEARCH_CHAR.Name = "SEARCH_CHAR";
+            this.SEARCH_CHAR.Placeholder = "";
             this.SEARCH_CHAR.Size = new System.Drawing.Size(47, 25);
             this.SEARCH_CHAR.TabIndex = 1;
             // 
@@ -377,9 +377,11 @@
             // 
             // L_0_WSPLITSTRING_0
             // 
+            this.L_0_WSPLITSTRING_0.ErrorMessage = "";
             this.L_0_WSPLITSTRING_0.Location = new System.Drawing.Point(203, 11);
             this.L_0_WSPLITSTRING_0.Margin = new System.Windows.Forms.Padding(2);
             this.L_0_WSPLITSTRING_0.Name = "L_0_WSPLITSTRING_0";
+            this.L_0_WSPLITSTRING_0.Placeholder = "";
             this.L_0_WSPLITSTRING_0.Size = new System.Drawing.Size(100, 25);
             this.L_0_WSPLITSTRING_0.TabIndex = 40;
             // 
@@ -448,18 +450,18 @@
             // 
             this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
             this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-2, 30);
+            this.AddressList.Location = new System.Drawing.Point(-2, 26);
             this.AddressList.Margin = new System.Windows.Forms.Padding(4);
             this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(191, 364);
+            this.AddressList.Size = new System.Drawing.Size(199, 395);
             this.AddressList.TabIndex = 108;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.AddressListExpandsButton);
             this.panel3.Controls.Add(this.AddressList);
             this.panel3.Controls.Add(this.LabelFilter);
             this.panel3.Location = new System.Drawing.Point(14, 43);
@@ -468,24 +470,14 @@
             this.panel3.Size = new System.Drawing.Size(199, 426);
             this.panel3.TabIndex = 86;
             // 
-            // AddressListExpandsButton
-            // 
-            this.AddressListExpandsButton.Location = new System.Drawing.Point(-2, 392);
-            this.AddressListExpandsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddressListExpandsButton.Name = "AddressListExpandsButton";
-            this.AddressListExpandsButton.Size = new System.Drawing.Size(193, 31);
-            this.AddressListExpandsButton.TabIndex = 145;
-            this.AddressListExpandsButton.Text = "リストの拡張";
-            this.AddressListExpandsButton.UseVisualStyleBackColor = true;
-            // 
             // LabelFilter
             // 
             this.LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelFilter.Location = new System.Drawing.Point(-1, 3);
+            this.LabelFilter.Location = new System.Drawing.Point(-1, -1);
             this.LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelFilter.Name = "LabelFilter";
-            this.LabelFilter.Size = new System.Drawing.Size(190, 28);
+            this.LabelFilter.Size = new System.Drawing.Size(198, 28);
             this.LabelFilter.TabIndex = 107;
             this.LabelFilter.Text = "名前";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,18 +495,22 @@
             // 
             // SelectAddress
             // 
+            this.SelectAddress.ErrorMessage = "";
             this.SelectAddress.Location = new System.Drawing.Point(566, 1);
             this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
             this.SelectAddress.ReadOnly = true;
             this.SelectAddress.Size = new System.Drawing.Size(137, 25);
             this.SelectAddress.TabIndex = 40;
             // 
             // BlockSize
             // 
+            this.BlockSize.ErrorMessage = "";
             this.BlockSize.Location = new System.Drawing.Point(352, 1);
             this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
             this.BlockSize.ReadOnly = true;
             this.BlockSize.Size = new System.Drawing.Size(82, 25);
             this.BlockSize.TabIndex = 52;
@@ -522,7 +518,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(270, 0);
+            this.label3.Location = new System.Drawing.Point(269, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 30);
@@ -612,7 +608,6 @@
         private System.Windows.Forms.Panel panel4;
         private FEBuilderGBA.TextBoxEx SEARCH_CHAR;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button AddressListExpandsButton;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
         private ListBoxEx SEARCH_COUNT_LIST;
