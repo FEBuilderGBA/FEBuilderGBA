@@ -11,9 +11,9 @@ PATCHED_IF:$GREP4 0xF0 0xB5 0xC0 0x46 0x18 0x48 0x05 0x68 0x32 0x24 0x28 0x5D 0x
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=wakaresaseya_run_divorce.bin
 
-INFO=操作キャラから支援をすべて消します. 被支援キャラからも自動的に消えます.
-INFO.zh=从操作角色的支援全部消除，从支援角色也会自动地消失.
-INFO.en=Patches the ROM with a callable event that erases all supports from a designated character.\r\n
+INFO=操作キャラから支援をすべて消します. 被支援キャラからも自動的に消えます.\r\nCommentary:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
+INFO.zh=从操作角色的支援全部消除，从支援角色也会自动地消失.\r\nCommentary:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
+INFO.en=Patches the ROM with a callable event that erases all supports from a designated character.\r\nCommentary:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
 
 AUTHOR=怪盗パッチ 7743
 AUTHOR.zh=Kaito补丁7743

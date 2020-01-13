@@ -104,6 +104,7 @@ namespace FEBuilderGBA
                 Debug.Assert(blockSize > 0);
             }
 #endif
+            Debug.Assert(this.Length != U.NOT_FOUND);
         }
 
         public void ResizeAddress(uint addr,uint length)
@@ -114,6 +115,8 @@ namespace FEBuilderGBA
 
             this.Addr = addr;
             this.Length = length;
+            Debug.Assert(this.Addr != U.NOT_FOUND);
+            Debug.Assert(this.Length != U.NOT_FOUND);
         }
 
         static public void AddPointer(List<Address> list, uint pointer, uint length, string info, DataTypeEnum type)
@@ -439,6 +442,10 @@ namespace FEBuilderGBA
             else
             {
                 length = ProcsScriptForm.CalcLengthAndCheck(addr);
+                if (length == U.NOT_FOUND)
+                {//procsではない.
+                    return;
+                }
             }
             list.Add(new Address(addr, length, pointer, info, DataTypeEnum.PROCS));
         }

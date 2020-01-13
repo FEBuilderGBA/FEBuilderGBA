@@ -36,3 +36,6 @@ AUTHOR.en=Program source: https://github.com/ngmansion/FE8/tree/master/RePrepara
 
 
 INFO.zh=允许您以章节为人物更改在攻击提升屏幕上播放的歌曲。
+EVENTSCRIPT:1=400D0000{$L1:c2p.bin}	進撃準備のBGMを再生する	{MUSIC}
+EVENTSCRIPT:1.en=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}
+EVENTSCRIPT:1.zh=400D0000{$L1:c2p.bin}	Play BGM in Preparation.	{MUSIC}

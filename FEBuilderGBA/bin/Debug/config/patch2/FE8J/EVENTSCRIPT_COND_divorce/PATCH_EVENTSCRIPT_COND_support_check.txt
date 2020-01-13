@@ -12,19 +12,19 @@ EVENTSCRIPT=400D0000{$L1:wakaresaseya_find_support_check.bin}	操作中のキャ
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=wakaresaseya_find_support_check.bin
 
-INFO=操作キャラが支援を持っているかという条件を作ります.
+INFO=操作キャラが支援を持っているかという条件を作ります.\r\n解説:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
 
 AUTHOR=怪盗パッチ 7743
 
 NAME.zh=事件命令_协助检查(Add Event)
 
-INFO.zh=制定操作角色有支援的条件。
+INFO.zh=制定操作角色有支援的条件。\r\nCommentary:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
 
 AUTHOR.zh=Kaito补丁7743
 
 NAME.en=Add Event Condition: Support Check
 
-INFO.en=Patches the game to set event conditions based on whether a character has support.\r\n
+INFO.en=Patches the game to set event conditions based on whether a character has support.\r\nCommentary:\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2519
 
 AUTHOR.en=Kaito patch7743
 
