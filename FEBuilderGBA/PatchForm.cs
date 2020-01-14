@@ -6307,6 +6307,8 @@ namespace FEBuilderGBA
                 //マクロを置換する.
                 eventscript = ReplaceL1Macro(eventscript, scriptbin, addr);
             }
+            eventscript += "\t" + R._("拡張命令:") + U.at(st.Param, "NAME");
+            
 
             EventScript.Script script = EventScript.ParseScriptLine(eventscript);
             if (script == null)

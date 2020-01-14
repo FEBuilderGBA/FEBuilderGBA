@@ -12157,3 +12157,5 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :ワールドマップ拠点
 世界地图据点
 
+:拡張命令:
+From Patch:

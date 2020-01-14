@@ -12158,3 +12158,5 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
+:拡張命令:
+From Patch:
