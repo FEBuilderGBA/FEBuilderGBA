@@ -8956,6 +8956,9 @@ IF解析错误，这个值没有空格\r\n{0} = {1}
 :パッチを適応しました
 我申请了补丁
 
+:拡張命令:
+From Patch:
+
 :BINかEA以外のパッチはアンインストールできません。
 无法卸载除BIN或EA之外的其他修补程序。
 
@@ -12157,5 +12160,3 @@ This is the destination which you will go to when ChapterID is completed.\r\nDif
 :ワールドマップ拠点
 世界地图据点
 
-:拡張命令:
-From Patch:

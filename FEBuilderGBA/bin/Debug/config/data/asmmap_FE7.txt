@@ -1,4 +1,4 @@
-	//This data is made with the aim of being readable by machine fast.
+//This data is made with the aim of being readable by machine fast.
 //
 //address	name	RET=return	r0=arg0	//Argument Return value is not yet used and should not trust so much.
 //address	@STRUCTNAME	name			//struct STRUCTNAME name;

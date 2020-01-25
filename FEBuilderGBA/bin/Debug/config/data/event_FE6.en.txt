@@ -11,7 +11,7 @@
 10000000XX000000YYYYYYYY	Move Setting[XX:UNIT:Character]to[YYYYYYYY:POINTER_EVENTMOVEDATA:moveData](MOVE)	{UNITMOVE}
 11000000XX000000YY000000	Move Setting[XX:UNIT:Character A]to[YY:UNIT:Character B](MOVENEXTTO)	{UNITMOVE}
 27000000XX000000YY000000	[XX:UNIT:Character][YY:ITEM:Item]Get Item(ITGC)	{ITEM}
-2B000000XX000000YY000000	[XX:UNIT:Character][YY:AFFILIATION:belonging]Change affiliation of unit(CUSI)	{UNITPERSOLNAL}
+2B000000XX000000YY000000	[XX:UNIT:Character][YY:AFFILIATION:Affliation]Change affiliation of unit(CUSI)	AFFILIATION 0x00 = Player(Blue) , 0x40 = NPC(Green) , 0x80 = Enemy(Red)	{UNITPERSOLNAL}
 32000000XX000000YYZZ0000	[XX:UNIT:Character][YY::AI][ZZ::AI]Modify AI(CHAI)	{UNITPERSOLNAL}
 1F000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:Conditional ID]Conditional branching by special condition (when content of specified destination is satisfied)(GOTO_IFAT)	{JUMP}
 20000000YY000000XXXXXXXX	[XXXXXXXX:POINTER_ASM:ASM][YY:GOTO_CONDITIONAL:Conditional ID]Conditional branching by special condition (when content of specified destination is not satisfied)(GOTO_IFAF)	{JUMP}

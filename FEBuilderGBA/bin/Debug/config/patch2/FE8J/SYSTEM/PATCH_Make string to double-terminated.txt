@@ -1,0 +1,18 @@
+NAME=文字列を必ずダブル終端するようにする
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=Tequila
+COMBO=Fix:Double Term|FIX|Default|DEF
+
+DEF:0x12F8A=0x08 0x78 0x18 0x70
+FIX:0x12F8A=0x1A 0x70 0x5A 0x70
+
+NAME.en=Make string to double-terminated
+NAME.zh=Make string to double-terminated
+
+INFO=マルチバイトとシングルバイトが混雑した環境だと、ダブル終端をするようにしないと、まれにフリーズすることがあるようです。\r\nこのパッチはその問題を修正します。\r\n終端文字列で必ずダブル終端文字を埋め込みます。\r\n翻訳でシングルバイトを利用する時に利用するパッチです。\r\n
+INFO.en=In a mixed environment of multi-byte and single-byte, it seems that in some rare cases it freezes unless double termination is used.\r\nThis patch fixes that problem.\r\nBe sure to embed the double terminator in the terminating string.\r\nThis patch is used when using single bytes for translation.\r\n
+INFO.zh=在多字节和单字节拥塞的环境中，似乎在极少数情况下，除非使用双终止，否则将发生冻结。\r\n此修补程序解决了该问题。\r\n确保将双终止符嵌入到终止字符串中。\r\n使用单个字节进行转换时使用此补丁。\r\n

@@ -69,6 +69,12 @@ namespace FEBuilderGBA
             Zoom.SelectedIndex = 1; //2倍拡大
             
             EraseSurplusPalette(); //余剰パレットの削除.
+            ShowTSAInfo();
+        }
+
+        void ShowTSAInfo()
+        {
+            this.Info.Text = String.Format("{0}x{1}", this.Width8 * 8, this.Height8 * 8);
         }
 
         int SearchMaxPalette()

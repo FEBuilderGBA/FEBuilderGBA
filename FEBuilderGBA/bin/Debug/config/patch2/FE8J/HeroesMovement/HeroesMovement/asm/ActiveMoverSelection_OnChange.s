@@ -76,4 +76,4 @@ ClearRangeMoveMap:
 .align
 
 EALiterals:
-	@ POIN prGetTargetPosition
+@POIN always_if_not_canto_and_selected+1

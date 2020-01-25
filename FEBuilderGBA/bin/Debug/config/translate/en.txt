@@ -4891,7 +4891,6 @@ You can change the item palette from the system icon.\r\nHowever, please note th
 :指定したID+1のカスタムパレットで描画されます。\r\nカスタムパレットを利用しない場合は、0xFFを指定してください。\r\n注意:0x80以上のパレットを指定すると無視されます。
 Drawn with the specified palette of ID +1.\r\nIf you do not use a custom palette, specify 0xFF.\r\nNote: If you specify a palette of 0x80 or more, it will be ignored.
 
-
 :指定したID+1の戦闘アニメで描画されます。
 Drawn with the specified battle animation of ID + 1.
 
@@ -8957,6 +8956,9 @@ It can not be used because one of the following conflicting patches is installed
 :パッチを適応しました
 Applied the patch.
 
+:拡張命令:
+From Patch:
+
 :BINかEA以外のパッチはアンインストールできません。
 Patches other than BIN or EA can not be uninstalled.
 
@@ -12158,5 +12160,3 @@ Placement Flag
 :ワールドマップ拠点
 World Map Nodes
 
-:拡張命令:
-From Patch:

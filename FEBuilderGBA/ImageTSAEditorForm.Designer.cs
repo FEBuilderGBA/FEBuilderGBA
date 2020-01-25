@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -133,7 +134,7 @@
             this.UndoButton = new System.Windows.Forms.Button();
             this.PaletteIndexComboBox = new System.Windows.Forms.ComboBox();
             this.Zoom = new System.Windows.Forms.ComboBox();
-            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
+            this.Info = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
@@ -236,6 +237,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1289, 847);
             this.panel2.TabIndex = 4;
+            // 
+            // TSAInfo
+            // 
+            this.TSAInfo.ErrorMessage = "";
+            this.TSAInfo.Location = new System.Drawing.Point(5, 597);
+            this.TSAInfo.Name = "TSAInfo";
+            this.TSAInfo.Placeholder = "";
+            this.TSAInfo.ReadOnly = true;
+            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
+            this.TSAInfo.TabIndex = 361;
             // 
             // panel3
             // 
@@ -1763,15 +1774,15 @@
             this.Zoom.TabIndex = 360;
             this.Zoom.SelectedIndexChanged += new System.EventHandler(this.Zoom_SelectedIndexChanged);
             // 
-            // TSAInfo
+            // Info
             // 
-            this.TSAInfo.ErrorMessage = "";
-            this.TSAInfo.Location = new System.Drawing.Point(5, 597);
-            this.TSAInfo.Name = "TSAInfo";
-            this.TSAInfo.Placeholder = "";
-            this.TSAInfo.ReadOnly = true;
-            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
-            this.TSAInfo.TabIndex = 361;
+            this.Info.ErrorMessage = "";
+            this.Info.Location = new System.Drawing.Point(426, 5);
+            this.Info.Name = "Info";
+            this.Info.Placeholder = "";
+            this.Info.ReadOnly = true;
+            this.Info.Size = new System.Drawing.Size(298, 25);
+            this.Info.TabIndex = 361;
             // 
             // ImageTSAEditorForm
             // 
@@ -1779,6 +1790,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1395, 886);
+            this.Controls.Add(this.Info);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Zoom);
             this.Controls.Add(this.PaletteIndexComboBox);
@@ -1855,6 +1867,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1966,5 +1979,6 @@
         private System.Windows.Forms.NumericUpDown PALETTE_R_10;
         private System.Windows.Forms.ComboBox Zoom;
         private TextBoxEx TSAInfo;
+        private TextBoxEx Info;
     }
 }

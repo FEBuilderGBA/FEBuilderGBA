@@ -1,0 +1,106 @@
+//SubMenu
+
+PUSH
+//サブメニューの幅 Submenu's width
+//ORG 0x5C5492	//{J}
+ORG 0x59CFB2	//{U}
+BYTE 0x8
+
+//ORG 0x5C5498	//{J}
+ORG 0x59CFB8	//{U}
+POIN SubMenuSample
+
+
+//On R Press
+//ORG 0x5C54AC	//{J}
+//WORD 0x8050295 //{J}
+ORG 0x59CFCC	//{U}
+WORD 0x804F521 //{U}
+
+//Hook
+//ORG 0x050110	//{J}
+ORG 0x04F39C	//{U}
+BYTE 0x00 0x4B 0x9F 0x46
+POIN flipmenu+1
+
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+	POIN	TxtData0xF17_sjis
+	SHORT	$0F17 $0F18
+	SHORT	$4F00 0
+	POIN	IsSubMenuShow+1
+	WORD	0
+	POIN	ShowSubMenu+1
+	WORD	0 
+	WORD	0
+	WORD	0
+
+POP
+
+
+ALIGN 4
+IsSubMenuShow:
+#incbin "IsSubMenuShow.dmp"
+
+ALIGN 4
+flipmenu:
+#incbin "flipmenu.dmp"
+POIN ShowMenu+1
+POIN IsSubMenuShow+1
+
+ALIGN 4
+ShowMenu:
+#incbin "ShowMenu.dmp"
+
+ShowSubMenu:
+#incbin "ShowSubMenu.dmp"
+POIN ShowMenu+1
+
+
+ALIGN 4
+TxtData0xF17_sjis:
+#incbin "0xF17.sjis.bin"
+
+ALIGN 4
+TxtData0xF17:
+#incbin "0xF17.bin"
+
+ALIGN 4
+TxtData0xF18:
+#incbin "0xF18.bin"
+
+#define setText_WithHuffman(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset); POP" //With Huffman
+
+setText_WithHuffman(0xF17,TxtData0xF17)
+setText_WithHuffman(0xF18,TxtData0xF18)
+
+ALIGN 4
+SubMenuSample:
+//{J}
+//BYTE 0xE4 0xCA 0xD 0x8 0x1E 0x6 0x55 0x6 0 0x67 0 0 0x81 0x32 0x2 0x8 0 0 0 0 0xB1 0x32 0x2 0x8 0 0 0 0 0 0 0 0 0 0 0 0	//持ち物 Item
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0xC5 0x1 0x5 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+//BYTE 0xC8 0xCA 0xD 0x8 0x22 0x6 0x40 0x6 0x0 0x6B 0x0 0x0 0xBD 0x1 0x5 0x8 0 0 0 0 0x1 0x27 0x2 0x8 0 0 0 0 0 0 0 0 0 0 0 0	//	待機 wait
+//BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0  //Term
+
+//{U}
+BYTE 0xB0 0x7D 0xD 0x8 0x8D 0x6 0xD3 0x6 0x0 0x67 0x0 0x0 0xB9 0x32 0x2 0x8 0 0 0 0 0xE9 0x32 0x2 0x8 0 0 0 0 0 0 0 0 0 0 0 0	//持ち物 Item
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0x51 0xF4 0x4 0x8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 //空白 blank
+BYTE 0x94 0x7D 0xD 0x8 0x95 0x6 0xBF 0x6 0x0 0x6B 0x0 0x0 0x49 0xF4 0x4 0x8 0 0 0 0 0x39 0x27 0x2 0x8 0 0 0 0 0 0 0 0 0 0 0 0	//	待機 wait
+BYTE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0  //Term

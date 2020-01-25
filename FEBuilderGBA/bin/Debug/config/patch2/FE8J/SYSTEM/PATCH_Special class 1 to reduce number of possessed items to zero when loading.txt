@@ -1,0 +1,15 @@
+NAME=Load時に所持アイテム数をゼロにする特殊クラス1
+NAME.en=Special class 1 to reduce number of possessed items to zero when loading
+
+INFO=バニラでは、ゴーゴンの卵は、所持アイテムをすべて0に設定されます。
+INFO.en=In Vanilla, Gorgon's Eggs have their inventory all set to 0.
+
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=0x17ABA
+ADDRESS_TYPE=CLASS
+
+AUTHOR=7743
+NAME.zh=特殊类，在装入物品时将拥有物品的数量减少到零。
+INFO.zh=在香草中，高更的鸡蛋的库存全部设为0。

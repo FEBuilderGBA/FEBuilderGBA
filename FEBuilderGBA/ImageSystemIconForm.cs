@@ -91,8 +91,11 @@ namespace FEBuilderGBA
                 systemmenu_old_badstatus_panel.Location = systemmenu_badstatus_panel.Location;
                 X_StatusBackgroundLink.Hide();
             }
+
             systemmenu_terrain = new ImageFormRef(this, "systemmenu_terrain", 256, 256, 4, Program.ROM.RomInfo.systemmenu_common_image_pointer(), Program.ROM.RomInfo.systemmenu_terrain_tsa_pointer(), Program.ROM.RomInfo.systemmenu_common_palette_pointer());
+
             systemmenu_name = new ImageFormRef(this, "systemmenu_name", 256, 256, 4, Program.ROM.RomInfo.systemmenu_name_image_pointer(), Program.ROM.RomInfo.systemmenu_name_tsa_pointer(), Program.ROM.RomInfo.systemmenu_name_palette_pointer());
+
             systemmenu_battlepreview = new ImageFormRef(this, "systemmenu_battlepreview", 256, 256, 4, Program.ROM.RomInfo.systemmenu_battlepreview_image_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_tsa_pointer(), Program.ROM.RomInfo.systemmenu_battlepreview_palette_pointer());
 
             systemarea_move_gradation_palette.Value = Program.ROM.p32(Program.ROM.RomInfo.systemarea_move_gradation_palette_pointer());

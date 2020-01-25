@@ -1676,5 +1676,32 @@ namespace FEBuilderGBA
             return filename;
         }
 
+        public static Size GetSizeToHeaderTSAByPointer(uint pointer)
+        {
+            if (!U.isSafetyOffset(pointer))
+            {
+                return new Size(256, 160);
+            }
+            uint addr = Program.ROM.p32(pointer);
+            if (!U.isSafetyOffset(addr))
+            {
+                return new Size(256, 160);
+            }
+
+            int master_headerx = (int)Program.ROM.u8(addr);
+            int master_headery = (int)Program.ROM.u8(addr + 1);
+            int width = (master_headerx+1) * 8;
+            int height = (master_headery+1) * 8;
+            if (width <= 0 || width > 256)
+            {
+                width = 256;
+            }
+            if (height <= 0 || height > 256)
+            {
+                height = 256;
+            }
+
+            return new Size(width, height);
+        }
     }
 }

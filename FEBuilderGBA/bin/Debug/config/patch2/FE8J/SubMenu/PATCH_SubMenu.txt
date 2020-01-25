@@ -1,0 +1,20 @@
+NAME=サブメニューの表示
+TYPE=EA
+TAG=#ENGINE
+
+EA=Installer.event
+
+INFO=サブメニューを表示します。\r\nデバッグ用の機能として使われているメニュー項目をサブメニューとして再利用します。\r\nユニットメニューに「補助」という項目を追加します。\r\nまた、ユニットメニューが表示されている状態で、左右キーでサブメニューにアクセスできるようにします。\r\nサブメニューにはディフォルトで、持ち物と待機しか入っていないので、好きな項目を追加してください。\r\nサブメニューに表示する項目がない場合は、表示されません。
+
+AUTHOR=7743
+
+EA_EXTENDS_UNITMENU:0x01=0x40
+EXTENDS:0x1100=TEXT
+
+PATCHED_IF:0x050110=0x00 0x4B 0x9F 0x46	//{J}
+//PATCHED_IF:0x04F39C=0x00 0x4B 0x9F 0x46	//{U}
+
+NAME.en=Display submenu.
+INFO.en=Displays a submenu.\r\nReuse menu items used as debugging functions as submenus.\r\nAdd an item called "Auxiliary" to the unit menu.\r\nAlso, while the unit menu is displayed, you can access the submenu with the left and right keys.\r\nBy default, the submenu contains only inventory and waiting items, so please add your favorite items.\r\nIf there are no items to display in the submenu, they will not be displayed.
+NAME.zh=显示子菜单。
+INFO.zh=显示子菜单。\r\n重用用作调试功能的菜单项作为子菜单。\r\n在单元菜单上添加一个名为“辅助”的项目。\r\n同样，当显示单位菜单时，可以使用左右键访问子菜单。\r\n默认情况下，该子菜单仅包含库存和等待项目，因此请添加您喜欢的项目。\r\n如果子菜单中没有要显示的项目，则不会显示它们。

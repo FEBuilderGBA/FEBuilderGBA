@@ -515,5 +515,84 @@ namespace FEBuilderGBA
             UseFlagID.AppendFlagIDFixedMapID(list, FELint.Type.MAPCHANGE, N_InputFormRef, 5, mapid);
         }
 
+        public static uint CheckDuplicateMapChangeID(uint mapid , int current_no)
+        {
+            List<ChangeSt> changeList = new List<ChangeSt>();
+            uint change_addr = MapSettingForm.GetMapChangeAddrWhereMapID(mapid);
+            if (change_addr == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            InputFormRef N_InputFormRef = N_Init(null);
+            N_InputFormRef.ReInit(change_addr);
+            if (current_no >= N_InputFormRef.DataCount)
+            {
+                return U.NOT_FOUND;
+            }
+
+            change_addr = change_addr + (uint)(current_no * N_InputFormRef.BlockSize);
+            if (!U.isSafetyOffset(change_addr))
+            {
+                return U.NOT_FOUND;
+            }
+
+            uint no = Program.ROM.u8(change_addr + 0);
+            if (CheckDuplicateMapChangeIDLow(mapid, N_InputFormRef, no, change_addr))
+            {
+                return MakeNewUniqeMapChangeID(mapid, N_InputFormRef, change_addr);
+            }
+
+            return U.NOT_FOUND;
+        }
+        static bool CheckDuplicateMapChangeIDLow(uint mapid
+            , InputFormRef N_InputFormRef , uint current_no , uint current_addr)
+        {
+            uint change_addr = N_InputFormRef.BaseAddress;
+            for (int i = 0; i < N_InputFormRef.DataCount; i++)
+            {
+                if (change_addr != current_addr)
+                {
+                    uint no = Program.ROM.u8(change_addr + 0);
+                    if (no == current_no)
+                    {
+                        return true;
+                    }
+                }
+
+                change_addr += N_InputFormRef.BlockSize;
+            }
+            return false;
+        }
+        static uint MakeNewUniqeMapChangeID(uint mapid, InputFormRef N_InputFormRef, uint current_addr)
+        {
+            for (uint findid = 0; findid < 0x7f; findid++)
+            {
+                bool isDup = false;
+                uint change_addr = N_InputFormRef.BaseAddress;
+                for (int i = 0; i < N_InputFormRef.DataCount; i++)
+                {
+                    if (change_addr == current_addr)
+                    {
+                        continue;
+                    }
+                    uint no = Program.ROM.u8(change_addr + 0);
+                    if (no == findid)
+                    {
+                        isDup = true;
+                        break;
+                    }
+
+                    change_addr += N_InputFormRef.BlockSize;
+                }
+
+                if (isDup == false)
+                {
+                    return findid;
+                }
+            }
+            //判別不能
+            return 0x0;
+        }
+
     }
 }

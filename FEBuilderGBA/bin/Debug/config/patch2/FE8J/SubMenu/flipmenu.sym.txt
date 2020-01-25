@@ -1,0 +1,9 @@
+prShowMenu=$64
+EALiterals=$64
+prIsSubMenuShow=$68
+FlipMenu=$14
+NormalExit=$4A
+ShowUnitMenu=$3A
+CheckSubMenu=$24
+ShowSubMenu=$30
+FlipMenuExit=$42

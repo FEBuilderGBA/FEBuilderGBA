@@ -1529,6 +1529,7 @@
     </Compile>
     <Compile Include="ImageTSAEditorForm.cs">
       <SubType>Form</SubType>
+      <Generator>text</Generator>
     </Compile>
     <Compile Include="ImageTSAEditorForm.Designer.cs">
       <DependentUpon>ImageTSAEditorForm.cs</DependentUpon>

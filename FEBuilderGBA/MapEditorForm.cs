@@ -1667,6 +1667,7 @@ this.MapObjImage);
             return "";
         }
 
+
         static bool CheckExistsMapChangePlist(uint mapid)
         {
             MapSettingForm.PLists plist = MapSettingForm.GetMapPListsWhereMapID(mapid);
@@ -2525,9 +2526,17 @@ this.MapObjImage);
 
             //マップ変化の本体データへの書き込み アドレス 幅高さ等が変わっている可能性があるので、必ず書き込む.
             changest.addr = newaddr;
-            changest.no = original.no;
             changest.self_change_addr = original.self_change_addr;
-            MapChangeForm.Write_OneData( changest, undodata);
+            changest.no = original.no;
+            if (changest.no != changeno)
+            {
+                uint new_mapchange_no = MapChangeForm.CheckDuplicateMapChangeID((uint)mapid, changeno);
+                if (new_mapchange_no != U.NOT_FOUND)
+                {
+                    changest.no = new_mapchange_no;
+                }
+            }
+            MapChangeForm.Write_OneData(changest, undodata);
 
             if (addr != newaddr)
             {//アドレスが異なる場合、拡張領域に書き込んでいる
