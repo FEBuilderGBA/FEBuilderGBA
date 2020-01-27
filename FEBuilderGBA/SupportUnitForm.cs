@@ -400,6 +400,15 @@ namespace FEBuilderGBA
                     )
                     , id));
             }
+            if (all_count > SUPPORT_LIMIT)
+            {
+                errors.Add(new FELint.ErrorSt(FELint.Type.SUPPORT_UNIT, support_addr
+                    , R._("支援で登録できる人数は7人までです。それを上回る({0})人を、データ({1})で、指定しています。"
+                    , all_count, U.ToHexString(support_addr)
+                    )
+                    , id));
+                return;
+            }
         }
         public static void MakeCheckError(List<FELint.ErrorSt> errors)
         {
@@ -446,6 +455,91 @@ namespace FEBuilderGBA
                 }
             }
             X_ERROR_DUPLICATE.Hide();
-        } 
+        }
+        private void SupportUnitForm_UnitsCheck_B0(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B0, L_0_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B1(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B1, L_1_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B2(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B2, L_2_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B3(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B3, L_3_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B4(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B4, L_4_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B5(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B5, L_5_UNIT);
+        }
+        private void SupportUnitForm_UnitsCheck_B6(object sender, EventArgs e)
+        {
+            SupportUnitForm_UnitsCheck(B6, L_6_UNIT);
+        }
+
+        private void SupportUnitForm_UnitsCheck(NumericUpDown nud, TextBoxEx textBox)
+        {
+            uint srcID = (uint)X_SRC_UNIT_VALUE.Value;
+            if (srcID > 0x45)
+            {
+                textBox.ErrorMessage = "";
+                return;
+            }
+            uint unitID = (uint)nud.Value;
+            if (unitID <= 0x45)
+            {
+                textBox.ErrorMessage = "";
+                return;
+            }
+            textBox.ErrorMessage = R._("仲間にできるユニットは 0x45までのユニットです。\r\nそれ以降は戦績データが記録されません。\r\n");
+        }
+
+        private void B21_ValueChanged(object sender, EventArgs e)
+        {
+            if (B21.Value >= 8)
+            {
+                SupportPartnersLabel.ErrorMessage = R._("支援を登録できるのは7人までです");
+            }
+            else
+            {
+                SupportPartnersLabel.ErrorMessage = "";
+            }
+        }
+        public static void MakeCheckErrorAddr(List<FELint.ErrorSt> errors,uint support_pointer, FELint.Type type , uint parentAddr, uint tag)
+        {
+            if (Program.ROM.RomInfo.version() == 6)
+            {
+                return;
+            }
+
+            FELint.CheckPointerOrNull(support_pointer, errors, type, parentAddr, tag);
+            if (!U.isSafetyPointer(support_pointer))
+            {
+                return;
+            }
+            uint addr = U.toOffset(support_pointer);
+            if (! U.isSafetyOffset(addr + 24))
+            {
+                errors.Add(new FELint.ErrorSt(type, parentAddr
+                    , R._("支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。",U.To0xHexString(support_pointer) ),tag));
+                return;
+            }
+
+            uint support_partners = Program.ROM.u8(addr + 21);
+            if (support_partners > SUPPORT_LIMIT)
+            {
+                errors.Add(new FELint.ErrorSt(type, parentAddr
+                    , R._("支援で登録できる人数は7人までです。それを上回る({0})人を、データ({1})で、指定しています。", support_partners, U.To0xHexString(support_pointer)), tag));
+                return;
+            }
+        }
     }
 }

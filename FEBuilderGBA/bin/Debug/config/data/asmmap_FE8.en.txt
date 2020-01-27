@@ -12701,3 +12701,9 @@ r3=X tile position of menu of right	{U}
 080777E0	Direction when defeating demon king	{U}
 0803F47C	Execute conversation event from enemy AI	{J}
 0803F4EC	Execute conversation event from enemy AI	{U}
+08079BB4	New_Procs_ekrDragonTunk	{J}
+08077790	New_Procs_ekrDragonTunk	{U}
+08088868	Level adjustment for units leaving the party.	{J}
+0808659C	Level adjustment for units leaving the party.	{U}
+080DCCC6	:080DCCDF	Menu TSA when exchanging items.	{J}
+080D7F92	:080D7FAB	Menu TSA when exchanging items.	{U}

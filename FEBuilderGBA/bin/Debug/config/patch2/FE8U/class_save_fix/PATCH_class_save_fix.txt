@@ -6,7 +6,7 @@ TYPE=EA
 PATCHED_IF:0x0A575C=0x1F 0xFE 0xFF 0xFF
 EA=EA.event
 
-INFO=セーブデータを改造して、127ではなく255までのクラスを許可します。\r\nこのパッチは古いパッチです。
+INFO=セーブデータを改造して、127ではなく255までのクラスを許可する。\r\nこのパッチは古いパッチです。
 INFO.en=Known bugs and has newer version. Listed for compatability, otherwise do not use.\r\nAllows for up to 255 classes instead of the default 127.\r\n
 INFO.zh=修改保存数据并允许最多255个类，而不是127个。
 

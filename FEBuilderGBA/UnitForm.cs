@@ -728,6 +728,8 @@ namespace FEBuilderGBA
                             , R._("武器レベルで、近接と魔法を混在させています。\r\n混在を可能にするパッチを当てていない状態で、近接と魔法を混在すると、戦闘アニメが正しく動作しません。"),i));
                     }
                 }
+                uint support_pointer = Program.ROM.u32(unit_addr + 44);
+                SupportUnitForm.MakeCheckErrorAddr(errors, support_pointer, FELint.Type.UNIT, unit_addr, i + 1);
             }
         }
 

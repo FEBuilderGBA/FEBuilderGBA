@@ -1048,6 +1048,10 @@ namespace FEBuilderGBA
             {//EVBIT
                 text = " " + InputFormRef.GetEVBIT(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.EVBIT_MODIFY)
+            {//EVBIT_MODIFY
+                text = " " + InputFormRef.GetEVBIT_MODIFY(v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.BADSTATUS)
             {//BADSTATUS
                 text = " " + InputFormRef.GetBADSTATUS(v);
@@ -2795,6 +2799,12 @@ namespace FEBuilderGBA
                         sb.Append(" ");
                         string dummy;
                         sb.Append(InputFormRef.GetEVBIT(v, out dummy));
+                    }
+                    else if (arg.Type == EventScript.ArgType.EVBIT_MODIFY)
+                    {//EVBIT_MODIFY
+                        sb.Append(" ");
+                        string dummy;
+                        sb.Append(InputFormRef.GetEVBIT_MODIFY(v, out dummy));
                     }
                     else if (arg.Type == EventScript.ArgType.BADSTATUS)
                     {//BADSTATUS

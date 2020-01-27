@@ -4258,6 +4258,21 @@ changing "game mode" (GAMECTRL field 0x29 was changed?)
 :グラフィックがイベントによってロック中(codes 0x23/0x24)
 set when the game graphics have been locked through events (codes 0x23/0x24)
 
+:シーンスキップ、ダイアログスキップ、ダイアログ早送りが可能です。
+Allows scene skipping, dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップ、ダイアログスキップ、ダイアログ早送りを禁止します。
+Disallows scene skipping, dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップとダイアログスキップを許可するが、ダイアログ早送りは許可しない。
+Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding.
+
+:シーンスキップを許可しないが、ダイアログスキップとダイアログ早送りを許可する。
+Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップとダイアログスキップを許可しないが、ダイアログ早送りは許可する。
+Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding.
+
 :霧無し
 No fog
 
@@ -10308,6 +10323,15 @@ Assistance to the unit ({0}), but support to the unit ({1}) seems to be support 
 
 :ユニット({0})の支援人数が正しくありません。支援人数が{1}人なのに、実際のデータには、{2}人の支援があります。
 The support amount of the unit ({0}) is incorrect.There are {2} people 's support in actual data, although the number of people to support is {1}.
+
+:支援で登録できる人数は7人までです。それを上回る({0})人を、データ({1})で、指定しています。
+You can register up to 7 people with support.More ({0}) people are specified by data ({1}).
+
+:支援を登録できるのは7人までです
+Up to 7 people can register for support.
+
+:支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。
+Structure size of support data is not enough.\r\nInvalid address ({0}) is specified.
 
 :既に別のアドレスで定義されています
 Already defined with a different address.

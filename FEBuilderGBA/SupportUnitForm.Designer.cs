@@ -61,7 +61,7 @@
             this.B22 = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.B21 = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
+            this.SupportPartnersLabel = new FEBuilderGBA.LabelEx();
             this.B20 = new System.Windows.Forms.NumericUpDown();
             this.B13 = new System.Windows.Forms.NumericUpDown();
             this.B19 = new System.Windows.Forms.NumericUpDown();
@@ -318,7 +318,7 @@
             this.BaseTable.Controls.Add(this.B22);
             this.BaseTable.Controls.Add(this.label15);
             this.BaseTable.Controls.Add(this.B21);
-            this.BaseTable.Controls.Add(this.label14);
+            this.BaseTable.Controls.Add(this.SupportPartnersLabel);
             this.BaseTable.Controls.Add(this.B20);
             this.BaseTable.Controls.Add(this.B13);
             this.BaseTable.Controls.Add(this.B19);
@@ -595,17 +595,19 @@
             this.B21.Name = "B21";
             this.B21.Size = new System.Drawing.Size(72, 25);
             this.B21.TabIndex = 53;
+            this.B21.ValueChanged += new System.EventHandler(this.B21_ValueChanged);
             // 
-            // label14
+            // SupportPartnersLabel
             // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(709, 92);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(150, 32);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "支援人数";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SupportPartnersLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SupportPartnersLabel.ErrorMessage = "";
+            this.SupportPartnersLabel.Location = new System.Drawing.Point(709, 92);
+            this.SupportPartnersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SupportPartnersLabel.Name = "SupportPartnersLabel";
+            this.SupportPartnersLabel.Size = new System.Drawing.Size(150, 32);
+            this.SupportPartnersLabel.TabIndex = 52;
+            this.SupportPartnersLabel.Text = "支援人数";
+            this.SupportPartnersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // B20
             // 
@@ -849,6 +851,7 @@
             this.B6.Name = "B6";
             this.B6.Size = new System.Drawing.Size(60, 25);
             this.B6.TabIndex = 34;
+            this.B6.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B6);
             // 
             // L_6_UNIT
             // 
@@ -886,6 +889,7 @@
             this.B5.Name = "B5";
             this.B5.Size = new System.Drawing.Size(60, 25);
             this.B5.TabIndex = 31;
+            this.B5.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B5);
             // 
             // L_5_UNIT
             // 
@@ -923,6 +927,7 @@
             this.B4.Name = "B4";
             this.B4.Size = new System.Drawing.Size(60, 25);
             this.B4.TabIndex = 28;
+            this.B4.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B4);
             // 
             // L_4_UNIT
             // 
@@ -960,6 +965,7 @@
             this.B3.Name = "B3";
             this.B3.Size = new System.Drawing.Size(60, 25);
             this.B3.TabIndex = 25;
+            this.B3.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B3);
             // 
             // L_3_UNIT
             // 
@@ -997,6 +1003,7 @@
             this.B2.Name = "B2";
             this.B2.Size = new System.Drawing.Size(60, 25);
             this.B2.TabIndex = 22;
+            this.B2.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B2);
             // 
             // L_2_UNIT
             // 
@@ -1034,6 +1041,7 @@
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(60, 25);
             this.B1.TabIndex = 19;
+            this.B1.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B1);
             // 
             // L_1_UNIT
             // 
@@ -1071,6 +1079,7 @@
             this.B0.Name = "B0";
             this.B0.Size = new System.Drawing.Size(60, 25);
             this.B0.TabIndex = 16;
+            this.B0.ValueChanged += new System.EventHandler(this.SupportUnitForm_UnitsCheck_B0);
             // 
             // L_0_UNIT
             // 
@@ -1277,7 +1286,7 @@
         private System.Windows.Forms.NumericUpDown B22;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown B21;
-        private System.Windows.Forms.Label label14;
+        private FEBuilderGBA.LabelEx SupportPartnersLabel;
         private InterpolatedPictureBox L_6_UNITICON;
         private InterpolatedPictureBox L_5_UNITICON;
         private InterpolatedPictureBox L_4_UNITICON;

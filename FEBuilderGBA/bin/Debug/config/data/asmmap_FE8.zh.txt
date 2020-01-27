@@ -12654,3 +12654,9 @@ r3=X tile position of menu of the right	{U}
 080777E0	击败恶魔王的方向	{U}
 0803F47C	从敌方AI执行对话事件	{J}
 0803F4EC	从敌方AI执行对话事件	{U}
+08079BB4	New_Procs_ekrDragonTunk	{J}
+08077790	New_Procs_ekrDragonTunk	{U}
+08088868	离队单位的水平调整。	{J}
+0808659C	离队单位的水平调整。	{U}
+080DCCC6	:080DCCDF	交换项目时使用菜单TSA。	{J}
+080D7F92	:080D7FAB	交换项目时使用菜单TSA。	{U}

@@ -86,6 +86,7 @@ namespace FEBuilderGBA
             , RAM_UNIT_STATE     //ユニットの状態変更 FE7->(01＝透明にする 02＝行動済みにする 03＝透明にした後行動済みにする)
             , WMAP_SPRITE_ID    //ワールドマップに表示するスプライト番号
             , EVBIT             //EVBIT FE8のみ
+            , EVBIT_MODIFY      //EVBIT_MODIFY FE8のみ
             , BADSTATUS         //状態異常 ターン <<8 | 状態
             , SKILL             //
             , MAPEMOTION        //マップ絵文字
@@ -657,6 +658,9 @@ namespace FEBuilderGBA
                  break;
              case "EVBIT":
                  type = ArgType.EVBIT;
+                 break;
+             case "EVBIT_MODIFY":
+                 type = ArgType.EVBIT_MODIFY;
                  break;
              case "BADSTATUS":
                  type = ArgType.BADSTATUS;

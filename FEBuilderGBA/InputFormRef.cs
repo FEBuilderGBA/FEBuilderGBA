@@ -6932,6 +6932,28 @@ namespace FEBuilderGBA
             return "";
         }
 
+        public static string GetEVBIT_MODIFY(uint num, out string out_errorMessage)
+        {
+            out_errorMessage = "";
+            switch (num)
+            {
+                case 0x00:
+                    return R._("シーンスキップ、ダイアログスキップ、ダイアログ早送りが可能です。");
+                case 0x01:
+                    return R._("シーンスキップ、ダイアログスキップ、ダイアログ早送りを禁止します。");
+                case 0x02:
+                    return R._("シーンスキップとダイアログスキップを許可するが、ダイアログ早送りは許可しない。");
+                case 0x03:
+                    return R._("シーンスキップを許可しないが、ダイアログスキップとダイアログ早送りを許可する。");
+                case 0x04:
+                    return R._("シーンスキップとダイアログスキップを許可しないが、ダイアログ早送りは許可する。");
+                case 0x05:
+                    return "?";///No Translate
+            }
+
+            return "";
+        }
+
 
         public static string GetDIRECTION(uint num)
         {

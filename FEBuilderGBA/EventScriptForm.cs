@@ -806,6 +806,10 @@ namespace FEBuilderGBA
             {//EVBIT
                 InputFormRef.GetEVBIT(v, out errormessage);
             }
+            else if (arg.Type == EventScript.ArgType.EVBIT_MODIFY)
+            {//EVBIT_MODIFY
+                InputFormRef.GetEVBIT_MODIFY(v, out errormessage);
+            }
             else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
                 if (code.Script.LowCode == "222AXXXX")
@@ -1356,6 +1360,12 @@ namespace FEBuilderGBA
                             string dummy;
                             text = " " + InputFormRef.GetEVBIT(v, out dummy);
                         }
+                        else if (arg.Type == EventScript.ArgType.EVBIT_MODIFY)
+                        {//EVBIT_MODIFY
+                            isENumText = true;
+                            string dummy;
+                            text = " " + InputFormRef.GetEVBIT_MODIFY(v, out dummy);
+                        }
                         else if (arg.Type == EventScript.ArgType.BADSTATUS)
                         {//BADSTATUS
                             isENumText = true;
@@ -1546,6 +1556,10 @@ namespace FEBuilderGBA
                 }
                 else if (code.Script.Category.IndexOf("{EVBIT}") >= 0)
                 {//EVBIT
+                    bitmap = ImageSystemIconForm.Stairs();
+                }
+                else if (code.Script.Category.IndexOf("{EVBIT_MODIFY}") >= 0)
+                {//EVBIT_MODIFY
                     bitmap = ImageSystemIconForm.Stairs();
                 }
 

@@ -5,7 +5,7 @@ TAG=#ENGINE
 PATCHED_IF:0x0a533c=0x78 0x47 0xC0 0x46 0x00 0xC0 0x9F 0xE5
 EA=Installer.event
 
-INFO=セーブデータを改造して、127ではなく255までのクラスを許可します。\r\nまた、ステータス上限の31を突破することが出来ます。\r\nSkillSystemsと同時に利用する場合は、このパッチを後からインストールしてください。先にSkillSystemsをインストールする必要があります。
+INFO=セーブデータを改造して、127ではなく255までのクラスを許可する。\r\nまた、ステータス上限の31を突破することが出来ます。\r\nSkillSystemsと同時に利用する場合は、このパッチを後からインストールしてください。先にSkillSystemsをインストールする必要があります。
 INFO.en=Patches the ROM to bypass the 127 class limit and allow for up to 255 total classes.\r\nMoreover, it is possible to exceed the 31 stat cap.\r\nThis patch MUST be installed after the Skill System Patch if both patches are desired.\r\nThe Skill System Patch must be installed first.\r\n
 INFO.zh=修改保存数据并允许最多255个类，而不是127个。\r\n此外，有可能超过状态上限的31％。\r\n如果您计划与SkillSystems同时使用，请在此后安装此修补程序。你需要先安装SkillSystems。
 

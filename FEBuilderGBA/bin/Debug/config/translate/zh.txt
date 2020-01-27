@@ -4258,6 +4258,21 @@ Unfade淡入
 :グラフィックがイベントによってロック中(codes 0x23/0x24)
 当游戏图形通过事件锁定时设置（代码0x23 / 0x24）
 
+:シーンスキップ、ダイアログスキップ、ダイアログ早送りが可能です。
+Allows scene skipping, dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップ、ダイアログスキップ、ダイアログ早送りを禁止します。
+Disallows scene skipping, dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップとダイアログスキップを許可するが、ダイアログ早送りは許可しない。
+Allows scene skipping and dialogue skipping, But disallows dialogue fast-forwarding.
+
+:シーンスキップを許可しないが、ダイアログスキップとダイアログ早送りを許可する。
+Disallows scene skipping, But allows dialogue skipping and dialogue fast-forwarding.
+
+:シーンスキップとダイアログスキップを許可しないが、ダイアログ早送りは許可する。
+Disallows scene skipping and dialogue skipping, But allows dialogue fast-forwarding.
+
 :霧無し
 没有雾
 
@@ -10308,6 +10323,15 @@ C    从51到B0\r\nB    乙B1到F0\r\n一A    F1或更高版本\r\n\r\n支持值
 
 :ユニット({0})の支援人数が正しくありません。支援人数が{1}人なのに、実際のデータには、{2}人の支援があります。
 人物（{0}）的支持金额不正确。虽然支持的人数为{1}，但实际数据中有{2}人的支持。
+
+:支援で登録できる人数は7人までです。それを上回る({0})人を、データ({1})で、指定しています。
+您最多可以在支持下注册7个人。数据（{1}）指定了更多（{0}）个人。
+
+:支援を登録できるのは7人までです
+最多可以注册7个人。
+
+:支援データの構造体サイズが足りません。\r\n不正なアドレス({0})を指定しています。
+支持数据的结构大小不足。\r\n指定了无效的地址（{0}）。
 
 :既に別のアドレスで定義されています
 已使用其他地址定义。
