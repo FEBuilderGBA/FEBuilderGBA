@@ -5521,6 +5521,12 @@ Tileset Palette
 :マップエディタ
 Map Editor
 
+:ゲームオプションの順番
+Order of Game Option
+
+:ゲームオプション
+Game Options
+
 :ユニットアクションポインタ
 Unit action pointer.
 
@@ -5596,11 +5602,8 @@ Simple Menu
 :地形設定
 Terrain Editor
 
-:ゲームオプションの順番
-Order of Game Option
-
-:ゲームオプション
-Game Options
+:作品支援
+Work support
 
 :詳細メニュー
 Advanced Editors
@@ -11683,8 +11686,8 @@ Open URL in Browser
 :全自動でアップデートします
 Automatic Update
 
-:UPSパッチ作成
-UPS Patch Creation
+:UPSを開く
+Open UPS.
 
 :UPSパッチを適応したROMを、UPSファイル名.gbaとして保存する
 The UPS file name which adapted the UPS patch. Save it as gba.
@@ -11713,6 +11716,78 @@ Also display flags common to all maps.
 :章で利用しているフラグ
 Flags used in the chapter.
 
+:現在のバージョンが最新です。version:{0}
+FEBuilderGBA is up to date. Version:{0}
+
+:仮想ROMなので更新できません
+It cannot be updated because it is a virtual ROM.
+
+:警告\r\n変更した内容をROMに保存していませんが、無視してアップデートしてもよろしいですか？
+Alert\r\nThe changed content is not saved in ROM. Are you sure you want to ignore and update? 
+
+:このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\nhttps://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4
+Updateinfo.txt has not been created for this project.\r\nPlease see the following URL for how to create.\r\nhttps://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4
+
+:UPDATE_URLの項目がありません
+There is no UPDATE_URL item.
+
+:UPDATE_REGEXの項目がありません
+There is no UPDATE_REGEX item.
+
+:UPDATE_REGEXでマッチしたデータがありませんでした。\r\n{0}
+No data matched by UPDATE_REGEX.\r\n{0}.
+
+:UPDATE_REGEXでマッチしたデータをパースできませんでした。\r\n{0}
+The data matched by UPDATE_REGEX could not be parsed.\r\n{0}.
+
+:アップデートが完了しました。\r\nROMを再読み込みします。\r\n
+Update completed.\r\nReload the ROM.\r\n
+
+:UPSファイルが見つかりませんでした
+The UPS file could not be found.
+
+:エラーにより自動アップデートできませんでした。\r\n{0}
+Automatic update failed due to an error.\r\n{0}.
+
+:CHECK_URLの項目がありません
+There is no CHECK_URL item.
+
+:CHECK_REGEXの項目がありません
+There is no CHECK_REGEX item.
+
+:CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}
+No data matched by CHECK_REGEX.\r\n{0}.
+
+:Last-Modifiedを検知できませんでした。\r\n仕方がないので、常に最新版に更新します。
+Last-Modified could not be detected.\r\nI can't help but always update to the latest version.
+
+:日付({0})をパースできませんでした。\r\n仕方がないので、常に最新版に更新します。
+Date ({0}) could not be parsed.\r\nI can't help but always update to the latest version.
+
+:ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
+Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
+
+:フィードバックを保存するファイル名を選択してください
+Choose a file name to save the feedback.
+
+:フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。
+A feedback report has been created.\r\nSend this file to the community.
+
+:最新バージョンに更新する
+Update to the latest version.
+
+:開発コミニティにアクセスする
+Access the development community.
+
+:フィードバックのレポート作成
+Reporting feedback.
+
+:著者
+Author.
+
+:コミニティ
+Community.
+
 :。
 。
 
@@ -11730,6 +11805,9 @@ Unable to read the required configuration file.\r\nThe setting file may be corru
 
 :ファイルに書き込めません。\r\n{0}\r\n{1}
 Unable to write to file.\r\n{0}.\r\n{1}.
+
+:Google DriveのIDが見つかりません
+Google Drive ID not found.
 
 :ファイルに書き込めません。\r\n再試行しますか？\r\nファイル:{0}\r\n\r\n{1}
 Unable to write to file.\r\nTry again?\r\nFile: {0}\r\n\r\n{1}
@@ -11922,9 +12000,6 @@ Can not access the website.URL: {0} Message: {1}.
 
 :サイトの結果が期待外でした。\r\n{0}
 The results of the site were unexpected.\r\n{0}
-
-:現在のバージョンが最新です。version:{0}
-FEBuilderGBA is up to date. Version:{0}
 
 :UPSファイルが壊れています。最低サイズ以下です。
 UPS file corrupted. It doesn't meet the minimum size requirement.

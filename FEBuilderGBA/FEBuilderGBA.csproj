@@ -1115,6 +1115,18 @@
     <Compile Include="WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolWorkSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWorkSupport.Designer.cs">
+      <DependentUpon>ToolWorkSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWorkSupport_SelectUPSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWorkSupport_SelectUPSForm.Designer.cs">
+      <DependentUpon>ToolWorkSupport_SelectUPSForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorldMapEventPointerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2630,6 +2642,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWorkSupport.resx">
+      <DependentUpon>ToolWorkSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWorkSupport_SelectUPSForm.resx">
+      <DependentUpon>ToolWorkSupport_SelectUPSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorldMapEventPointerFE6Form.resx">
       <DependentUpon>WorldMapEventPointerFE6Form.cs</DependentUpon>

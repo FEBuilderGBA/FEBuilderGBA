@@ -227,7 +227,7 @@ namespace FEBuilderGBA
             return MessageBox.Show(ClipIfVeryLong(message)
                 , ""
                 , MessageBoxButtons.YesNo
-                , MessageBoxIcon.Exclamation);
+                , MessageBoxIcon.Question);
         }
         public static DialogResult ShowNoYes(string str, params object[] args)
         {

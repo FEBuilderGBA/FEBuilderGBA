@@ -128,6 +128,8 @@
             this.DisassemblerButton = new System.Windows.Forms.Button();
             this.SystemIconButton = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.GameOptionOrderButton = new System.Windows.Forms.Button();
+            this.GameOptionButton = new System.Windows.Forms.Button();
             this.UnitActionPointerButton = new System.Windows.Forms.Button();
             this.ToolUseFlagButton = new System.Windows.Forms.Button();
             this.OPClassAlphaNameButton = new System.Windows.Forms.Button();
@@ -186,8 +188,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.GameOptionOrderButton = new System.Windows.Forms.Button();
-            this.GameOptionButton = new System.Windows.Forms.Button();
+            this.WorkSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -656,7 +658,9 @@
             this.RunAsProgram1ToolStripMenuItem,
             this.RunAsProgram2ToolStripMenuItem,
             this.RunAsProgram3ToolStripMenuItem,
-            this.RunAsToolStripMenuItem});
+            this.RunAsToolStripMenuItem,
+            this.toolStripSeparatorEx6,
+            this.WorkSupportToolStripMenuItem});
             this.ExecuteRunToolStripMenuItem.Name = "ExecuteRunToolStripMenuItem";
             this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
             this.ExecuteRunToolStripMenuItem.Text = "実行";
@@ -1208,6 +1212,28 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(1640, 756);
             this.ControlPanel.TabIndex = 0;
+            // 
+            // GameOptionOrderButton
+            // 
+            this.GameOptionOrderButton.Location = new System.Drawing.Point(1436, 357);
+            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
+            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionOrderButton.TabIndex = 141;
+            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
+            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
+            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            // 
+            // GameOptionButton
+            // 
+            this.GameOptionButton.Location = new System.Drawing.Point(1436, 317);
+            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.GameOptionButton.Name = "GameOptionButton";
+            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
+            this.GameOptionButton.TabIndex = 140;
+            this.GameOptionButton.Text = "ゲームオプション";
+            this.GameOptionButton.UseVisualStyleBackColor = true;
+            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
             // 
             // UnitActionPointerButton
             // 
@@ -1847,27 +1873,17 @@
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             this.Filter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Filter_MouseDoubleClick);
             // 
-            // GameOptionOrderButton
+            // WorkSupportToolStripMenuItem
             // 
-            this.GameOptionOrderButton.Location = new System.Drawing.Point(1436, 357);
-            this.GameOptionOrderButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionOrderButton.Name = "GameOptionOrderButton";
-            this.GameOptionOrderButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionOrderButton.TabIndex = 141;
-            this.GameOptionOrderButton.Text = "ゲームオプションの順番";
-            this.GameOptionOrderButton.UseVisualStyleBackColor = true;
-            this.GameOptionOrderButton.Click += new System.EventHandler(this.GameOptionOrderButton_Click);
+            this.WorkSupportToolStripMenuItem.Name = "WorkSupportToolStripMenuItem";
+            this.WorkSupportToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
+            this.WorkSupportToolStripMenuItem.Text = "作品支援";
+            this.WorkSupportToolStripMenuItem.Click += new System.EventHandler(this.WorkSupportToolStripMenuItem_Click);
             // 
-            // GameOptionButton
+            // toolStripSeparatorEx6
             // 
-            this.GameOptionButton.Location = new System.Drawing.Point(1436, 317);
-            this.GameOptionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.GameOptionButton.Name = "GameOptionButton";
-            this.GameOptionButton.Size = new System.Drawing.Size(200, 36);
-            this.GameOptionButton.TabIndex = 140;
-            this.GameOptionButton.Text = "ゲームオプション";
-            this.GameOptionButton.UseVisualStyleBackColor = true;
-            this.GameOptionButton.Click += new System.EventHandler(this.GameOptionButton_Click);
+            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
+            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
             // 
             // MainFE6Form
             // 
@@ -2057,5 +2073,7 @@
         private System.Windows.Forms.ToolStripMenuItem ChangeProjectNameToolStripMenuItem;
         private System.Windows.Forms.Button GameOptionOrderButton;
         private System.Windows.Forms.Button GameOptionButton;
+        private ToolStripSeparatorEx toolStripSeparatorEx6;
+        private System.Windows.Forms.ToolStripMenuItem WorkSupportToolStripMenuItem;
     }
 }

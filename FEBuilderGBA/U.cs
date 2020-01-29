@@ -4348,6 +4348,107 @@ namespace FEBuilderGBA
             return r;
         }
 
+        public static WebResponse HttpHead(string url, string referer = "", System.Net.CookieContainer cookie = null)
+        {
+            HttpWebRequest request = HttpMakeRequest(url, referer, cookie);
+            request.Method = "HEAD";
+            WebResponse resp = request.GetResponse();
+            resp.Close();
+
+            return resp;
+        }
+        static void DownloadFileByDirect(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            U.HttpDownload(save_filename, download_url, Path.GetDirectoryName(download_url), pleaseWait);
+        }
+        static void DownloadFileByDropbox(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            if (download_url.IndexOf("dl=1") >= 0)
+            {
+                DownloadFileByDirect(save_filename, download_url,pleaseWait);
+                return;
+            }
+            CookieContainer cookie = new CookieContainer();
+            HttpGet(download_url, Path.GetDirectoryName(download_url), cookie);
+
+            string url = download_url + "?dl=1";
+            U.HttpDownload(save_filename, url, download_url, pleaseWait, cookie);
+        }
+        static void DownloadFileByGoogleDrive(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            string id;
+            if (download_url.IndexOf("/file/d/") >= 0)
+            {
+                System.Text.RegularExpressions.Match m = RegexCache.Match(download_url, "/file/d/([^/]+)");
+                id = m.Groups[1].ToString();
+            }
+            else if (download_url.IndexOf("id=") >= 0)
+            {
+                System.Text.RegularExpressions.Match m = RegexCache.Match(download_url, "id=([^&]+)");
+                id = m.Groups[1].ToString();
+            }
+            else
+            {
+                throw new Exception(R._("Google DriveのIDが見つかりません"));
+            }
+            string url = "https://drive.google.com/uc?export=download&id=" + id;
+            U.HttpDownload(save_filename, url, "", pleaseWait);
+        }
+
+
+        static void DownloadFileByGetUploader(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            string url = download_url;
+            string contents = U.HttpGet(url);
+            Log.Debug("front page:{0}", contents);
+            contents = U.skip(contents, "name=\"token\"");
+            string token = U.cut(contents, "value=\"", "\"");
+            token = Uri.UnescapeDataString(token);
+            token = U.unhtmlspecialchars(token);
+            if (token.Length <= 8)
+            {
+                Log.Error("token NOT FOUND:", token);
+                return;
+            }
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args["token"] = token;
+            contents = U.HttpPost(download_url, args, download_url);
+            Log.Debug("download page:{0}", contents);
+            contents = U.skip(contents, "http-equiv=\"refresh\"");
+            string durl = U.cut(contents, "URL=", "\"");
+            durl = Uri.UnescapeDataString(durl);
+            durl = U.unhtmlspecialchars(durl);
+            if (durl == "" && durl.IndexOf("http") < 0)
+            {
+                Log.Error("download url NOT FOUND:{0}", durl);
+                return;
+            }
+
+            Log.Notify("download url:{0}", durl);
+            U.HttpDownload(save_filename, durl, download_url, pleaseWait);
+        }
+
+        public static void DownloadFile(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            if (download_url.IndexOf("getuploader") > 0)
+            {
+                U.DownloadFileByGetUploader(save_filename, download_url, pleaseWait);
+            }
+            else if (download_url.IndexOf("dropbox") > 0)
+            {
+                U.DownloadFileByDropbox(save_filename, download_url, pleaseWait);
+            }
+            else if (download_url.IndexOf("drive.google.com") > 0)
+            {
+                U.DownloadFileByGoogleDrive(save_filename, download_url, pleaseWait);
+            }
+            else
+            {
+                U.DownloadFileByDirect(save_filename, download_url, pleaseWait);
+            }
+        }
+
         public static string table_replace(string target, string[] table)
         {
             string r = target;
@@ -6503,6 +6604,68 @@ namespace FEBuilderGBA
                 return "";
             }
             return ((char)code).ToString();
+        }
+
+        public static bool isURL(string text)
+        {
+            return RegexCache.IsMatch(text, "^https?://");
+        }
+
+        //https://dobon.net/vb/dotnet/file/copyfolder.html
+        /// <summary>
+        /// ディレクトリをコピーする
+        /// </summary>
+        /// <param name="sourceDirName">コピーするディレクトリ</param>
+        /// <param name="destDirName">コピー先のディレクトリ</param>
+        public static void CopyDirectory(
+            string sourceDirName, string destDirName)
+        {
+            //コピー先のディレクトリがないときは作る
+            if (!System.IO.Directory.Exists(destDirName))
+            {
+                System.IO.Directory.CreateDirectory(destDirName);
+                //属性もコピー
+                System.IO.File.SetAttributes(destDirName,
+                    System.IO.File.GetAttributes(sourceDirName));
+
+                //日付をコピー
+                CopyTimeStamp(sourceDirName, destDirName);
+            }
+
+            //コピー先のディレクトリ名の末尾に"\"をつける
+            if (destDirName[destDirName.Length - 1] !=
+                    System.IO.Path.DirectorySeparatorChar)
+                destDirName = destDirName + System.IO.Path.DirectorySeparatorChar;
+
+            //コピー元のディレクトリにあるファイルをコピー
+            string[] files = System.IO.Directory.GetFiles(sourceDirName);
+            foreach (string file in files)
+            {
+                string destfilename = destDirName + System.IO.Path.GetFileName(file);
+                System.IO.File.Copy(file, destfilename, true);
+                //日付をコピー
+                CopyTimeStamp(file, destfilename);
+            }
+
+            //コピー元のディレクトリにあるディレクトリについて、再帰的に呼び出す
+            string[] dirs = System.IO.Directory.GetDirectories(sourceDirName);
+            foreach (string dir in dirs)
+            {
+                CopyDirectory(dir, destDirName + System.IO.Path.GetFileName(dir));
+            }
+        }
+        //圧縮ファイルを展開した時に、単一ディレクトリを作られるなら、その内部だけをコピー
+        public static void CopyDirectory1Trim(
+            string sourceDirName, string destDirName)
+        {
+            string[] files = System.IO.Directory.GetFiles(sourceDirName);
+            string[] dirs = System.IO.Directory.GetDirectories(sourceDirName);
+
+            if (files.Length <= 0 && dirs.Length == 1)
+            {//単一ディレクトリならば、その内部だけをコピーします.
+                sourceDirName = Path.Combine(sourceDirName, dirs[0]);
+            }
+            CopyDirectory(sourceDirName,destDirName);
         }
     }
 }

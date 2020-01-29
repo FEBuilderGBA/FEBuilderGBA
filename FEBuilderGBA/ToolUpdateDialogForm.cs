@@ -91,7 +91,7 @@ namespace FEBuilderGBA
                 //ダウンロード
                 try
                 {
-                    DownloadNewVersion(update7z, this.URL, this.Version, pleaseWait);
+                    U.DownloadFile(update7z, this.URL, pleaseWait);
                 }
                 catch (Exception ee)
                 {
@@ -195,57 +195,7 @@ namespace FEBuilderGBA
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
-        void DownloadNewVersion(string save_filename, string download_url, string version, InputFormRef.AutoPleaseWait pleaseWait)
-        {
-            if (download_url.IndexOf("getuploader") > 0)
-            {
-                DownloadNewVersionByGetUploader(save_filename, download_url, version, pleaseWait);
-            }
-            else
-            {
-                DownloadNewVersionByGithub(save_filename, download_url, version, pleaseWait);
-            }
-        }
 
-        void DownloadNewVersionByGithub(string save_filename, string download_url, string version, InputFormRef.AutoPleaseWait pleaseWait)
-        {
-            string durl = download_url;
-            Log.Notify("download url:{0}", durl);
-            U.HttpDownload(save_filename, durl, download_url, pleaseWait);
-        }
-
-        void DownloadNewVersionByGetUploader(string save_filename,string download_url,string version,InputFormRef.AutoPleaseWait pleaseWait)
-        {
-            string url = download_url;
-            string contents = U.HttpGet(url);
-            Log.Debug("front page:{0}", contents);
-            contents = U.skip(contents, "name=\"token\"");
-            string token = U.cut(contents, "value=\"", "\"");
-            token = Uri.UnescapeDataString(token);
-            token = U.unhtmlspecialchars(token);
-            if (token.Length <= 8)
-            {
-                Log.Error("token NOT FOUND:", token);
-                return;
-            }
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args["token"] = token;
-            contents = U.HttpPost(download_url, args, download_url);
-            Log.Debug("download page:{0}", contents);
-            contents = U.skip(contents, "http-equiv=\"refresh\"");
-            string durl = U.cut(contents, "URL=", "\"");
-            durl = Uri.UnescapeDataString(durl);
-            durl = U.unhtmlspecialchars(durl);
-            if (durl == "" && durl.IndexOf("http") < 0)
-            {
-                Log.Error("download url NOT FOUND:{0}", durl);
-                return;
-            }
-
-            Log.Notify("download url:{0}", durl);
-            U.HttpDownload(save_filename, durl, download_url, pleaseWait);
-        }
 
         void OpenBrower()
         {

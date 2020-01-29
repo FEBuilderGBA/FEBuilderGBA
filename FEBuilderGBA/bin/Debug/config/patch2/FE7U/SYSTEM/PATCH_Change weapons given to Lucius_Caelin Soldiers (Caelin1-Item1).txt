@@ -1,0 +1,9 @@
+NAME=ルセアとキラアン兵に武器を渡す(Caelin1-Item1)
+NAME.en=Change weapons given to Lucius & Caelin Soldiers(Caelin1-Item1)
+NAME.zh=Change weapons given to Lucius & Caelin Soldiers(Caelin1-Item1)
+TYPE=ADDR
+TAG=#ENGINE
+ADDRESS=0x7D0EE
+ADDRESS_TYPE=ITEM
+DEFAULT=0x16
+AUTHOR=Satel

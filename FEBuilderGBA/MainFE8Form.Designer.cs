@@ -46,6 +46,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.UPSSimpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeProjectNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolProblemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new FEBuilderGBA.ToolStripSeparatorEx();
             this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -222,7 +223,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.Filter = new FEBuilderGBA.TextBoxEx();
-            this.ChangeProjectNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparatorEx6 = new FEBuilderGBA.ToolStripSeparatorEx();
+            this.WorkSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -408,6 +410,13 @@
             this.UPSSimpleToolStripMenuItem.Text = "UPS差分で保存";
             this.UPSSimpleToolStripMenuItem.Click += new System.EventHandler(this.UPSSimpleToolStripMenuItem_Click);
             // 
+            // ChangeProjectNameToolStripMenuItem
+            // 
+            this.ChangeProjectNameToolStripMenuItem.Name = "ChangeProjectNameToolStripMenuItem";
+            this.ChangeProjectNameToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
+            this.ChangeProjectNameToolStripMenuItem.Text = "プロジェクト名の変更";
+            this.ChangeProjectNameToolStripMenuItem.Click += new System.EventHandler(this.ChangeProjectNameToolStripMenuItem_Click);
+            // 
             // ToolProblemReportToolStripMenuItem
             // 
             this.ToolProblemReportToolStripMenuItem.Name = "ToolProblemReportToolStripMenuItem";
@@ -442,7 +451,9 @@
             this.RunAsProgram1ToolStripMenuItem,
             this.RunAsProgram2ToolStripMenuItem,
             this.RunAsProgram3ToolStripMenuItem,
-            this.RunAsToolStripMenuItem});
+            this.RunAsToolStripMenuItem,
+            this.toolStripSeparatorEx6,
+            this.WorkSupportToolStripMenuItem});
             this.ExecuteRunToolStripMenuItem.Name = "ExecuteRunToolStripMenuItem";
             this.ExecuteRunToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
             this.ExecuteRunToolStripMenuItem.Text = "実行";
@@ -2313,12 +2324,17 @@
             this.Filter.DoubleClick += new System.EventHandler(this.Filter_DoubleClick);
             this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
-            // ChangeProjectNameToolStripMenuItem
+            // toolStripSeparatorEx6
             // 
-            this.ChangeProjectNameToolStripMenuItem.Name = "ChangeProjectNameToolStripMenuItem";
-            this.ChangeProjectNameToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
-            this.ChangeProjectNameToolStripMenuItem.Text = "プロジェクト名の変更";
-            this.ChangeProjectNameToolStripMenuItem.Click += new System.EventHandler(this.ChangeProjectNameToolStripMenuItem_Click);
+            this.toolStripSeparatorEx6.Name = "toolStripSeparatorEx6";
+            this.toolStripSeparatorEx6.Size = new System.Drawing.Size(370, 6);
+            // 
+            // WorkSupportToolStripMenuItem
+            // 
+            this.WorkSupportToolStripMenuItem.Name = "WorkSupportToolStripMenuItem";
+            this.WorkSupportToolStripMenuItem.Size = new System.Drawing.Size(373, 32);
+            this.WorkSupportToolStripMenuItem.Text = "作品支援";
+            this.WorkSupportToolStripMenuItem.Click += new System.EventHandler(this.WorkSupportToolStripMenuItem_Click);
             // 
             // MainFE8Form
             // 
@@ -2543,6 +2559,8 @@
         private ToolStripSeparatorEx toolStripSeparatorEx5;
         private System.Windows.Forms.Button FE8SpellMenuExtendsButton;
         private System.Windows.Forms.ToolStripMenuItem ChangeProjectNameToolStripMenuItem;
+        private ToolStripSeparatorEx toolStripSeparatorEx6;
+        private System.Windows.Forms.ToolStripMenuItem WorkSupportToolStripMenuItem;
     }
 }
 

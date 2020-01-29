@@ -1472,5 +1472,10 @@ namespace FEBuilderGBA
             }
             return 0;
         }
+
+        private void WorkSupportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolWorkSupport>();
+        }
     }
 }

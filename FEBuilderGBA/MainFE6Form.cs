@@ -787,5 +787,10 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<StatusOptionOrderForm>();
         }
 
+        private void WorkSupportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolWorkSupport>();
+        }
+
     }
 }

@@ -344,7 +344,7 @@ namespace FEBuilderGBA
         }
 
         //セーブデータの回収
-        void CollectSaveData(string tempdir)
+        public static void CollectSaveData(string tempdir)
         {
             bool r = CollectSaveDataInner(tempdir);
             if (r)
@@ -364,7 +364,7 @@ namespace FEBuilderGBA
             string savFilename = f.GetFilename();
             PickupOneFile(tempdir , savFilename);
         }
-        bool CollectSaveDataInner(string tempdir)
+        static bool CollectSaveDataInner(string tempdir)
         {
             bool foundSav = false;
             bool r = PickupSaveData(tempdir, ".sav");
@@ -404,7 +404,7 @@ namespace FEBuilderGBA
             return foundSav;
         }
 
-        bool PickupOneFile(string tempdir, string target)
+        static bool PickupOneFile(string tempdir, string target)
         {
             if (!File.Exists(target))
             {
@@ -415,7 +415,7 @@ namespace FEBuilderGBA
             return true;
         }
 
-        bool PickupSaveData(string tempdir, string needExt)
+        static bool PickupSaveData(string tempdir, string needExt)
         {
             string dir  = Path.GetDirectoryName(Program.ROM.Filename);
             string file = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
@@ -430,7 +430,7 @@ namespace FEBuilderGBA
             return true;
         }
         //no$gbaの場合は、BATTERYフォルダの下にある.
-        bool CollectNoDollSaveData(string tempdir, string needExt)
+        static bool CollectNoDollSaveData(string tempdir, string needExt)
         {
             string emudir = Program.Config.at("emulator");
             if (emudir == "")
@@ -452,7 +452,6 @@ namespace FEBuilderGBA
                 return false;
             }
             string destFilename = Path.Combine(tempdir, file + needExt);
-            InputFormRef.DoEvents(this, "=>" + Path.GetFileName(savFilename));
             File.Copy(savFilename, destFilename, true);
 
             return true;

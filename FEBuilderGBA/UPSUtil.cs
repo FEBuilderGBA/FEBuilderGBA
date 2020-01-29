@@ -200,5 +200,17 @@ namespace FEBuilderGBA
             U.WriteAllBytes(upsFilename, ups.ToArray());
         }
 
+        public static bool IsUPSFile(string filename)
+        {
+            byte[] bin = File.ReadAllBytes(filename);
+            if (bin.Length <= 4)
+            {
+                return false;
+            }
+            return bin[0] == 'U' &&
+                    bin[1] == 'P' &&
+                    bin[2] == 'S' &&
+                    bin[3] == '1';
+        }
     }
 }
