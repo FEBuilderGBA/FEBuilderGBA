@@ -1,7 +1,7 @@
 ﻿//特性1
-01=Weapon	Sets item as a weapon.
-02=Magic	Sets item as magic.\r\nBoth Weapon and Magic must be set for magic weapons like Tomes.\r\nAdjusts damage formula to:\r\nPower-Res:Damage
-03=Staff	Sets item as a staff.
+01=Equippable	Register as a weapon item that can be equipped.\r\nEnable to equip items.
+02=Attacks res	Register as an item to perform a magic attack.\r\nIf enabled, Str-Res will be Damage\r\nIf disabled, Str-Def will be Damage.
+03=Staff	Sets item as a staff.\r\nComplex settings are required to create the effect of using a staff.\r\n(Do not change)
 04=Unbreakable	Gives an item infinite uses.
 05=Unsellable	Prevents an item from being sold.
 06=Brave Effect	Attacks are followed up with a second attack.\r\nBy default, this is used by Brave Weapons.

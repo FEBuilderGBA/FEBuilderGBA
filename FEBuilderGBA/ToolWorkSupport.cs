@@ -72,6 +72,10 @@ namespace FEBuilderGBA
         private void CommunityButton_Click(object sender, EventArgs e)
         {
             string url = U.at(this.Lines, "COMMUNITY_URL");
+            if (url == "")
+            {
+                return;
+            }
             U.OpenURLOrFile(url);
         }
 
@@ -129,6 +133,22 @@ namespace FEBuilderGBA
             return filename;
         }
 
+        string ExplainUpdateInfo()
+        {
+            string lang = OptionForm.lang();
+
+            string url;
+            if (lang == "ja")
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4";
+            }
+            else
+            {
+                url = "https://dw.ngmansion.xyz/doku.php?id=en:guid:febuildergba:work_support";
+            }
+            return url;
+        }
+
         bool Open()
         {
             this.Filename = GetUpdateInfo();
@@ -136,7 +156,7 @@ namespace FEBuilderGBA
 
             if (! File.Exists(this.Filename))
             {
-                R.ShowStopError("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\nhttps://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4");
+                R.ShowStopError("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n" + ExplainUpdateInfo());
                 return false;
             }
 
@@ -615,6 +635,12 @@ namespace FEBuilderGBA
             }
 
             return sb.ToString();
+        }
+
+        private void DcoumentButton_Click(object sender, EventArgs e)
+        {
+            string url = ExplainUpdateInfo();
+            U.OpenURLOrFile(url);
         }
 
     }

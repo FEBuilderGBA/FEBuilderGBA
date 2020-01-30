@@ -11725,8 +11725,8 @@ It cannot be updated because it is a virtual ROM.
 :警告\r\n変更した内容をROMに保存していませんが、無視してアップデートしてもよろしいですか？
 Alert\r\nThe changed content is not saved in ROM. Are you sure you want to ignore and update? 
 
-:このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\nhttps://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4
-Updateinfo.txt has not been created for this project.\r\nPlease see the following URL for how to create.\r\nhttps://dw.ngmansion.xyz/doku.php?id=guide:febuildergba:%E4%BD%9C%E5%93%81%E6%94%AF%E6%8F%B4
+:このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n
+Updateinfo.txt has not been created for this project.\r\nPlease see the following URL for how to create.\r\n
 
 :UPDATE_URLの項目がありません
 There is no UPDATE_URL item.
@@ -11774,19 +11774,19 @@ Choose a file name to save the feedback.
 A feedback report has been created.\r\nSend this file to the community.
 
 :最新バージョンに更新する
-Update to the latest version.
+Update to latest version
 
 :開発コミニティにアクセスする
-Access the development community.
+Access development community
 
-:フィードバックのレポート作成
-Reporting feedback.
+:フィードバックのレポート作成する
+Create feedback reports
 
 :著者
-Author.
+Author
 
 :コミニティ
-Community.
+Community
 
 :。
 。
@@ -12258,4 +12258,7 @@ Placement Flag
 
 :ワールドマップ拠点
 World Map Nodes
+
+:ドキュメント
+Document
 

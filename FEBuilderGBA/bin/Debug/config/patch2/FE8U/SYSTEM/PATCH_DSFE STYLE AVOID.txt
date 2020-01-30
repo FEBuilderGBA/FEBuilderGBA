@@ -1,0 +1,18 @@
+NAME=DSFE STYLE AVOID 回避率計算に速さを2倍しない
+INFO=GBAFEは回避率計算に、速さを2倍したものを利用します。\r\nDSFEは、回避率計算に速さの値をそのまま利用します。\r\nこのパッチは、回避率計算をDSFEの仕様に変更します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+AUTHOR=GratedShtick https://feuniverse.us/t/the-shtickery/7063
+COMBO=Fix: DSFE STYLE|FIX|Default: GBAFE STYLE|DEF
+
+FIX:0x2ABEE=0x00 0x00
+DEF:0x2ABEE=0x40 0x00
+
+NAME.en=DSFE STYLE AVOID Do NOT double the speed for avoid rate calculation.
+NAME.zh=DSFE STYLE AVOID Do NOT double the speed for avoid rate calculation.
+INFO.en=GBAFE uses twice the speed to calculate the avoidance rate.\r\nDSFE uses the speed value as it is to calculate the avoidance rate.\r\nThis patch changes the avoidance rate calculation to the DSFE specification.
+INFO.zh=GBAFE uses twice the speed to calculate the avoidance rate.\r\nDSFE uses the speed value as it is to calculate the avoidance rate.\r\nThis patch changes the avoidance rate calculation to the DSFE specification.
+
