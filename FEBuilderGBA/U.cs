@@ -6623,28 +6623,44 @@ namespace FEBuilderGBA
             //コピー先のディレクトリがないときは作る
             if (!System.IO.Directory.Exists(destDirName))
             {
-                System.IO.Directory.CreateDirectory(destDirName);
-                //属性もコピー
-                System.IO.File.SetAttributes(destDirName,
-                    System.IO.File.GetAttributes(sourceDirName));
+                try
+                {
+                    System.IO.Directory.CreateDirectory(destDirName);
+                    //属性もコピー
+                    System.IO.File.SetAttributes(destDirName,
+                        System.IO.File.GetAttributes(sourceDirName));
 
-                //日付をコピー
-                CopyTimeStamp(sourceDirName, destDirName);
+                    //日付をコピー
+                    CopyTimeStamp(sourceDirName, destDirName);
+                }
+                catch (Exception e)
+                {
+                    Log.Error("ディレクトリを作成できませんでした。\r\n{0}\r\n\r\n{1}", destDirName, R.ExceptionToString(e));
+                }
             }
 
             //コピー先のディレクトリ名の末尾に"\"をつける
             if (destDirName[destDirName.Length - 1] !=
                     System.IO.Path.DirectorySeparatorChar)
+            {
                 destDirName = destDirName + System.IO.Path.DirectorySeparatorChar;
+            }
 
             //コピー元のディレクトリにあるファイルをコピー
             string[] files = System.IO.Directory.GetFiles(sourceDirName);
             foreach (string file in files)
             {
                 string destfilename = destDirName + System.IO.Path.GetFileName(file);
-                System.IO.File.Copy(file, destfilename, true);
-                //日付をコピー
-                CopyTimeStamp(file, destfilename);
+                try
+                {
+                    System.IO.File.Copy(file, destfilename, true);
+                    //日付をコピー
+                    CopyTimeStamp(file, destfilename);
+                }
+                catch (Exception e)
+                {
+                    Log.Error("ファイルをコピーできませんでした。\r\nSrc:{0}\r\nDest:{1}\r\n\r\n{2}", file, destfilename,R.ExceptionToString(e));
+                }
             }
 
             //コピー元のディレクトリにあるディレクトリについて、再帰的に呼び出す

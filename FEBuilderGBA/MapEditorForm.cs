@@ -2446,6 +2446,10 @@ this.MapObjImage);
                 R.ShowStopError(InputFormRef.GetBusyErrorExplain());
                 return;
             }
+            if (this.MAR == null)
+            {
+                return;
+            }
 
             string errormessage;
             if (MapChange.SelectedIndex == 0)

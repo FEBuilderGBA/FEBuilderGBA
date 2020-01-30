@@ -228,7 +228,11 @@ namespace FEBuilderGBA
 
             try
             {
-                return Image.FromFile(logofilename);
+                //ファイルがロックされないようにCloneしてから渡します
+                Bitmap bitmap = new Bitmap(logofilename);
+                Bitmap retimage = ImageUtil.CloneBitmap(bitmap);
+                bitmap.Dispose();
+                return retimage;
             }
             catch (Exception)
             {
