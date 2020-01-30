@@ -65,6 +65,10 @@ namespace FEBuilderGBA
 
         public static List<FoundImage> FindImage()
         {
+            //誤爆すると面倒なことになるフレームとOAMのデータ群
+            Dictionary<uint,bool> battleFrameDic = new Dictionary<uint,bool>();
+            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(battleFrameDic);
+
             List<FoundImage> list = new List<FoundImage>();
             uint length = (uint)Program.ROM.Data.Length - 4;
             for (uint addr = 0x100; addr < length; addr += 4)
@@ -83,6 +87,11 @@ namespace FEBuilderGBA
 
                 if (a < Program.ROM.RomInfo.compress_image_borderline_address())
                 {
+                    continue;
+                }
+
+                if (battleFrameDic.ContainsKey(a))
+                {//戦闘アニメのフレーム,OAM等のlz77で圧縮されているデータ
                     continue;
                 }
 
@@ -1023,6 +1032,10 @@ namespace FEBuilderGBA
 
         public static void MakeLZ77DataList(List<Address> list)
         {
+            //誤爆すると面倒なことになるフレームとOAMのデータ群
+            Dictionary<uint, bool> battleFrameDic = new Dictionary<uint, bool>();
+            ImageBattleAnimeForm.MakeBattleFrameAndOAMDictionary(battleFrameDic);
+
             string name = R._("圧縮データ");
             uint length = (uint)Program.ROM.Data.Length - 4;
             for (uint addr = 0x100; addr < length; addr += 4)
@@ -1039,6 +1052,11 @@ namespace FEBuilderGBA
                 }
                 if (a < Program.ROM.RomInfo.compress_image_borderline_address())
                 {
+                    continue;
+                }
+
+                if (battleFrameDic.ContainsKey(a))
+                {//戦闘アニメのフレーム,OAM等のlz77で圧縮されているデータ
                     continue;
                 }
 

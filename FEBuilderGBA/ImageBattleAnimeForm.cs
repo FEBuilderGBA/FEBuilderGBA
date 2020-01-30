@@ -811,6 +811,21 @@ namespace FEBuilderGBA
                , selfname, new uint[] { });
        }
 
+       //誤爆すると面倒なことになるフレームとOAMのデータ群
+       public static void MakeBattleFrameAndOAMDictionary(Dictionary<uint,bool> dic)
+       {
+           InputFormRef N_InputFormRef = N_Init(null);
+
+           uint addr = N_InputFormRef.BaseAddress;
+           for (uint i = 0; i < N_InputFormRef.DataCount; i++, addr += N_InputFormRef.BlockSize)
+           {
+               dic[ Program.ROM.p32(addr + 12) ] = true; //Section
+               dic[Program.ROM.p32(addr + 16)] = true; //frame
+               dic[Program.ROM.p32(addr + 20)] = true; //OAM1
+               dic[Program.ROM.p32(addr + 24)] = true; //OAM2
+               dic[Program.ROM.p32(addr + 28)] = true; //Palette
+           }
+       }
        //全データの取得
        public static void MakeAllDataLength(List<Address> list, bool isPointerOnly )
        {
