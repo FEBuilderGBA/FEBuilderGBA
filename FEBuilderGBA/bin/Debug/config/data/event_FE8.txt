@@ -182,10 +182,10 @@
 2433XXXX	[XXXX:UNIT:ユニット]を操作しているか判定する(CHECK_ACTIVEID)	操作している場合は1を、そうでなければ0を返します	@STOREC	{UNITCOND}
 2533XXXX	[XXXX:UNIT:ユニット]の所属を取得する(CHECK_ALLEGIANCE)	自軍=0 , 敵軍=2 , 友軍(緑/NPC)=1を返します	@STOREC	{UNITCOND}
 
-2117XXXX	画面をフェードインさせ真っ暗に[XXXX:FSEC:速さ](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
-2017XXXX	画面をフェードアウト(真っ暗からの復帰)[XXXX:FSEC:速さ](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
-2317XXXX	画面をホワイトインさせて真っ白に[XXXX:FSEC:速さ](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
-2217XXXX	画面をホワイトアウト(真っ白からの復帰)[XXXX:FSEC:速さ](FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
+2117XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XXXX:FSEC:速さ](FADI)	@FADESPEED	{FADE}	{MAPEFFECT}
+2017XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XXXX:FSEC:速さ](FADU)	@FADESPEED	{FADE}	{MAPEFFECT}
+2317XXXX	画面をホワイトインさせて真っ白に。通常->白 [XXXX:FSEC:速さ](FAWI)	@FADESPEED	{FADE}	{MAPEFFECT}
+2217XXXX	画面をホワイトアウト(真っ白からの復帰) 白->通常 [XXXX:FSEC:速さ](FAWU)	@FADESPEED	{FADE}	{MAPEFFECT}
 221B0000	会話終了(REMA)	会話イベントを終了させます
 211A0000	マップ要素を削除する(REMOVEPORTRAITS)	{BG}
 4021XXXX00000000	BACG[XXXX::Value1]Changes background to value in Slot_2(LOW)

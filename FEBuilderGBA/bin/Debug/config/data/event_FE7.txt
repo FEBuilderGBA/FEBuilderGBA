@@ -285,14 +285,14 @@
 9A000000CB000000XXXXXXXX	イベント呼び出し[XXXX:POINTER_EVENT:Event_pointer]	{JUMP}	{U}
 8C001000900000000500XX008D00100091000000	背景表示[XX:BG:BG](FADI)	{BG}	{J}
 8E001000920000000500XX008F00100093000000	背景表示[XX:BG:BG](FADI)	{BG}	{U}
-8C00XXXX	画面をフェードインさせ真っ暗に[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
-8E00XXXX	画面をフェードインさせ真っ暗に[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
-8D00XXXX	画面をフェードアウト(真っ暗からの復帰)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
-8F00XXXX	画面をフェードアウト(真っ暗からの復帰)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
-8E00XXXX	画面をホワイトインさせて真っ白に[XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{J}
-9000XXXX	画面をホワイトインさせて真っ白に[XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{U}
-8F00XXXX	画面をホワイトアウト(真っ白からの復帰)[XX:FSEC:速度](FAWU)	{FADE}	{MAPEFFECT}	{J}
-9100XXXX	画面をホワイトアウト(真っ白からの復帰)[XX:FSEC:速度](FAWU)	{FADE}	{MAPEFFECT}	{U}
+8C00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
+8E00XXXX	画面をフェードインさせ真っ暗に。通常->黒 [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
+8D00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
+8F00XXXX	画面をフェードアウト(真っ暗からの復帰) 黒->通常 [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
+8E00XXXX	画面をホワイトインさせて真っ白に。通常->白 [XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{J}
+9000XXXX	画面をホワイトインさせて真っ白に。通常->白 [XX:FSEC:速度](FAWI)	{FADE}	{MAPEFFECT}	{U}
+8F00XXXX	画面をホワイトアウト(真っ白からの復帰) 白->通常 [XX:FSEC:速度](FAWU)	{FADE}	{MAPEFFECT}	{J}
+9100XXXX	画面をホワイトアウト(真っ白からの復帰) 白->通常 [XX:FSEC:速度](FAWU)	{FADE}	{MAPEFFECT}	{U}
 90000000	マップとユニットを非表示(HIDEMAP)	{J}
 92000000	マップとユニットを非表示(HIDEMAP)	{U}
 91000000	マップとユニットを再表示(HIDEMAPの後に利用)(SHOWMAP)	{J}

@@ -4371,7 +4371,16 @@ namespace FEBuilderGBA
             CookieContainer cookie = new CookieContainer();
             HttpGet(download_url, Path.GetDirectoryName(download_url), cookie);
 
-            string url = download_url + "?dl=1";
+            //dl=0があれば削る
+            download_url = download_url.Replace("dl=0", "");
+            //?がないなら追加
+            if (download_url.IndexOf("?") < 0)
+            {
+                download_url = download_url + "?";
+            }
+            //dl=1をつけてダウンロードページへ
+            string url = download_url + "dl=1";
+            //ダウンロード開始
             U.HttpDownload(save_filename, url, download_url, pleaseWait, cookie);
         }
         static void DownloadFileByGoogleDrive(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
@@ -4391,8 +4400,9 @@ namespace FEBuilderGBA
             {
                 throw new Exception(R._("Google DriveのIDが見つかりません"));
             }
+
             string url = "https://drive.google.com/uc?export=download&id=" + id;
-            U.HttpDownload(save_filename, url, "", pleaseWait);
+            U.HttpDownload(save_filename, url, download_url, pleaseWait);
         }
 
 

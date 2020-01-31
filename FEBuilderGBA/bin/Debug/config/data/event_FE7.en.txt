@@ -561,14 +561,14 @@ DE000000XXYY0000	Switch from CG to map[XX:MAPX:X][YY:MAPY:Y](FROMCGTOMAP)	{J}
 84000000XX0000000000000000000000	[XX:MAPCHAPTER:chapter ID]Map change 2 (LOMA)	{MAP}	{U}
 CD000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Display the returning warp to this place (WARP)	{UNITMOVE}	{J}
 CC000000XXXXYYYY00000000	[XX:MAPX:X][YY:MAPY:Y]Display the returning warp to this place (WARP)	{UNITMOVE}	{U}
-8C00XXXX	Fade in the screen and make it dark[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
-8E00XXXX	Fade in the screen and make it dark[XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
-8D00XXXX	Fade out the screen (return from pitch dark)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
-8F00XXXX	Fade out the screen (return from pitch dark)[XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
-8E00XXXX	White-in the screen and pure white[XX:FSEC:Speed](FAWI)	{FADE}	{MAPEFFECT}	{J}
-9000XXXX	White-in the screen and pure white[XX:FSEC:Speed](FAWI)	{FADE}	{MAPEFFECT}	{U}
-8F00XXXX	White out the screen (return from pure white)[XX:FSEC:Speed](FAWU)	{FADE}	{MAPEFFECT}	{J}
-9100XXXX	White out the screen (return from pure white)[XX:FSEC:Speed](FAWU)	{FADE}	{MAPEFFECT}	{U}
+8C00XXXX	Fade in the screen and make it dark. Dark->Normal [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{J}
+8E00XXXX	Fade in the screen and make it dark. Dark->Normal [XX:DECIMAL:Fade_time](FADI)	{FADE}	{MAPEFFECT}		{U}
+8D00XXXX	Fade out the screen(return from pitch dark) Normal->Dark [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{J}
+8F00XXXX	Fade out the screen(return from pitch dark) Normal->Dark [XX:DECIMAL:Fade_time](FADU)	{FADE}	{MAPEFFECT}		{U}
+8E00XXXX	White-in the screen and pure white. Normal->White [XX:FSEC:Speed](FAWI)	{FADE}	{MAPEFFECT}	{J}
+9000XXXX	White-in the screen and pure white. Normal->White [XX:FSEC:Speed](FAWI)	{FADE}	{MAPEFFECT}	{U}
+8F00XXXX	White out the screen(return from pure white) Normal->White [XX:FSEC:Speed](FAWU)	{FADE}	{MAPEFFECT}	{J}
+9100XXXX	White out the screen(return from pure white) Normal->White [XX:FSEC:Speed](FAWU)	{FADE}	{MAPEFFECT}	{U}
 0200010001000000	_2&_1
 88000000	Do not make the screen dark when skipping	{J}
 8A000000	Do not make the screen dark when skipping	{U}
