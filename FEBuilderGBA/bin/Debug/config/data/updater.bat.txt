@@ -5,10 +5,11 @@ set TARGET_CHECK=.\FEBuilderGBA.exe
 set UPDATE=.\_update
 set UPDATE_CHECK=.\_update\FEBuilderGBA.exe
 
-IF "%PID%"=="" GOTO E1
 IF NOT EXIST %TARGET_CHECK% GOTO E2
 IF NOT EXIST %UPDATE% GOTO E3
 IF NOT EXIST %UPDATE_CHECK% GOTO E4
+
+IF "%PID%"=="" GOTO NO_ARGS
 
 echo Checking stop of FEBuilderGBA main process..
 ping 127.0.0.1 -n 1 > nul
@@ -20,15 +21,10 @@ echo "WAIT EXIT FOR MAIN PROGRAM"
 ping 127.0.0.1 -n 2 > nul 2>&1
 GOTO PID_LOOP
 
-ping 127.0.0.1 -n 1 > nul 2>&1
-
-:PID_LOOP
-tasklist /FI "PID eq %PID%" | find "exe" > nul 2>&1
-if ERRORLEVEL 1 GOTO NEXT_STEP
-echo "WAIT EXIT FOR MAIN PROGRAM"
-ping 127.0.0.1 -n 2 > nul
-GOTO PID_LOOP
-
+:NO_ARGS
+echo "Wait... 10sec"
+ping 127.0.0.1 -n 10 > nul 2>&1
+GOTO NEXT_STEP
 
 :NEXT_STEP
 rem STOP ALL FEBuilderGBA

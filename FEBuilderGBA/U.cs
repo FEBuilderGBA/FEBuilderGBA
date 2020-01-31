@@ -6626,12 +6626,15 @@ namespace FEBuilderGBA
                 try
                 {
                     System.IO.Directory.CreateDirectory(destDirName);
-                    //属性もコピー
-                    System.IO.File.SetAttributes(destDirName,
-                        System.IO.File.GetAttributes(sourceDirName));
+                    if (System.IO.Directory.Exists(sourceDirName))
+                    {
+                        //属性もコピー
+                        System.IO.File.SetAttributes(destDirName,
+                            System.IO.File.GetAttributes(sourceDirName));
 
-                    //日付をコピー
-                    CopyTimeStamp(sourceDirName, destDirName);
+                        //日付をコピー
+                        CopyTimeStamp(sourceDirName, destDirName);
+                    }
                 }
                 catch (Exception e)
                 {
