@@ -4,7 +4,8 @@ PUSH //HP Bars
 ORG $276b4
 jumpToHack(HPBars)
 ORG $15690 //Increase width of loaded image
-SHORT $2220
+//SHORT $2220
+SHORT $2218
 ORG $156ac //Repoint loaded image
 POIN HPBarGraphic
 ORG $35718 //Force Subtitle Help option

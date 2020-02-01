@@ -10634,10 +10634,10 @@ Please explain where it is referenced.
 Do you want to add a reference to this string? 
 
 :参照の更新
-Reference update.
+Reference update
 
 :文字列の参照を追加
-Add string reference.
+Add string reference
 
 :テキスト-エスケープコード選択
 Text - Escape code selection
@@ -11797,11 +11797,11 @@ Community
 :他の作品を表示する
 Display other works
 
-:現在のバージョンが最新です。version:{0}
-FEBuilderGBA is up to date. Version:{0}
+:現在のバージョンが最新です。更新する必要はありません。version:{0}
+The current version is up to date. No need to update. version: {0}.
 
 :強制アップデート
-Forced update.
+Forced update
 
 :現在のバージョンが最新です
 The current version is the latest.
@@ -12027,6 +12027,9 @@ Can not access the website.URL: {0} Message: {1}.
 
 :サイトの結果が期待外でした。\r\n{0}
 The results of the site were unexpected.\r\n{0}
+
+:現在のバージョンが最新です。version:{0}
+FEBuilderGBA is up to date. Version:{0}
 
 :UPSファイルが壊れています。最低サイズ以下です。
 UPS file corrupted. It doesn't meet the minimum size requirement.

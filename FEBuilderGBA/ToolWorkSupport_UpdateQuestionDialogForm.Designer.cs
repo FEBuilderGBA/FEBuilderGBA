@@ -52,9 +52,9 @@
             this.labelEx1.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelEx1.Location = new System.Drawing.Point(82, 9);
             this.labelEx1.Name = "labelEx1";
-            this.labelEx1.Size = new System.Drawing.Size(717, 58);
+            this.labelEx1.Size = new System.Drawing.Size(717, 87);
             this.labelEx1.TabIndex = 4;
-            this.labelEx1.Text = "現在のバージョンが最新です。version:{0}";
+            this.labelEx1.Text = "現在のバージョンが最新です。更新する必要はありません。version:{0}";
             // 
             // FormIcon
             // 
