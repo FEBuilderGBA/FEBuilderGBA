@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="SystemTextEncoderArabianTBLEncode.cs" />
     <Compile Include="TextEscape.cs" />
+    <Compile Include="ToolAllWorkSupportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolAllWorkSupportForm.Designer.cs">
+      <DependentUpon>ToolAllWorkSupportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolASMEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1115,11 +1121,11 @@
     <Compile Include="WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolWorkSupport.cs">
+    <Compile Include="ToolWorkSupportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolWorkSupport.Designer.cs">
-      <DependentUpon>ToolWorkSupport.cs</DependentUpon>
+    <Compile Include="ToolWorkSupportForm.Designer.cs">
+      <DependentUpon>ToolWorkSupportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolWorkSupport_SelectUPSForm.cs">
       <SubType>Form</SubType>
@@ -1996,6 +2002,12 @@
     <Compile Include="AIASMCALLTALKForm.Designer.cs">
       <DependentUpon>AIASMCALLTALKForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolWorkSupport_UpdateQuestionDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWorkSupport_UpdateQuestionDialogForm.Designer.cs">
+      <DependentUpon>ToolWorkSupport_UpdateQuestionDialogForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2038,6 +2050,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SongInstrumentDirectSoundForm.resx">
       <DependentUpon>SongInstrumentDirectSoundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolAllWorkSupportForm.resx">
+      <DependentUpon>ToolAllWorkSupportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolASMEditForm.resx">
       <DependentUpon>ToolASMEditForm.cs</DependentUpon>
@@ -2643,8 +2658,8 @@
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolWorkSupport.resx">
-      <DependentUpon>ToolWorkSupport.cs</DependentUpon>
+    <EmbeddedResource Include="ToolWorkSupportForm.resx">
+      <DependentUpon>ToolWorkSupportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolWorkSupport_SelectUPSForm.resx">
       <DependentUpon>ToolWorkSupport_SelectUPSForm.cs</DependentUpon>
@@ -2952,6 +2967,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIASMCALLTALKForm.resx">
       <DependentUpon>AIASMCALLTALKForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWorkSupport_UpdateQuestionDialogForm.resx">
+      <DependentUpon>ToolWorkSupport_UpdateQuestionDialogForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

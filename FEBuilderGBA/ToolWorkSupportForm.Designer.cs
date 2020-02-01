@@ -1,6 +1,6 @@
 ﻿namespace FEBuilderGBA
 {
-    partial class ToolWorkSupport
+    partial class ToolWorkSupportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CommunityTextBox = new System.Windows.Forms.TextBox();
             this.LOGO = new FEBuilderGBA.InterpolatedPictureBox();
+            this.SnowAllWorksButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +185,22 @@
             this.LOGO.TabIndex = 31;
             this.LOGO.TabStop = false;
             // 
-            // ToolWorkSupport
+            // SnowAllWorksButton
+            // 
+            this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 441);
+            this.SnowAllWorksButton.Name = "SnowAllWorksButton";
+            this.SnowAllWorksButton.Size = new System.Drawing.Size(570, 48);
+            this.SnowAllWorksButton.TabIndex = 34;
+            this.SnowAllWorksButton.Text = "他の作品を表示する";
+            this.SnowAllWorksButton.UseVisualStyleBackColor = true;
+            this.SnowAllWorksButton.Click += new System.EventHandler(this.SnowAllWorksButton_Click);
+            // 
+            // ToolWorkSupportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(867, 586);
+            this.Controls.Add(this.SnowAllWorksButton);
             this.Controls.Add(this.CommunityTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.LOGO);
@@ -204,7 +216,7 @@
             this.Controls.Add(this.MakeFeedBackReportButton);
             this.Controls.Add(this.CommunityButton);
             this.Controls.Add(this.UpdateButton);
-            this.Name = "ToolWorkSupport";
+            this.Name = "ToolWorkSupportForm";
             this.Text = "作品支援";
             this.Load += new System.EventHandler(this.WorkSupport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LOGO)).EndInit();
@@ -230,5 +242,6 @@
         private InterpolatedPictureBox LOGO;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox CommunityTextBox;
+        private System.Windows.Forms.Button SnowAllWorksButton;
     }
 }

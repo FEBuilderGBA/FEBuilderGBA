@@ -65,7 +65,12 @@ namespace FEBuilderGBA
                 {
                     ReOpenMainForm();
                 }
-                return Program.LoadROM(romfilename, forceversion);
+                bool r = Program.LoadROM(romfilename, forceversion);
+                if (r)
+                {
+                    ToolWorkSupportForm.CheckUpdateSlientByThread();
+                }
+                return r;
             }
         }
 

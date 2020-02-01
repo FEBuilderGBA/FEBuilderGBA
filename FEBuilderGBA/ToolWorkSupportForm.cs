@@ -13,9 +13,9 @@ using System.Net;
 
 namespace FEBuilderGBA
 {
-    public partial class ToolWorkSupport : Form
+    public partial class ToolWorkSupportForm : Form
     {
-        public ToolWorkSupport()
+        public ToolWorkSupportForm()
         {
             InitializeComponent();
         }
@@ -35,10 +35,23 @@ namespace FEBuilderGBA
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
                 //更新できますか？
-                if (!CheckUpdate(pleaseWait))
+                UPDATE_RESULT ur = CheckUpdate();
+                if (ur == UPDATE_RESULT.ERROR)
                 {
-                    R.ShowOK("現在のバージョンが最新です。version:{0}", GetUPSDateTimeString());
-                    return;
+                    return ;
+                }
+                if (ur == UPDATE_RESULT.LATEST)
+                {
+                    if (this.IsSlientMode) return;
+
+                    ToolWorkSupport_UpdateQuestionDialogForm f = (ToolWorkSupport_UpdateQuestionDialogForm)InputFormRef.JumpFormLow<ToolWorkSupport_UpdateQuestionDialogForm>();
+                    f.SetVersion(GetUPSDateTimeString());
+                    DialogResult dr = f.ShowDialog();
+                    if (dr != System.Windows.Forms.DialogResult.Retry)
+                    {
+                        return;
+                    }
+                    //強制アップデート!
                 }
                 //更新の実行
                 RunDownloadAndExtract(pleaseWait);
@@ -54,11 +67,15 @@ namespace FEBuilderGBA
             }
             if (Program.ROM.IsVirtualROM)
             {//仮想ROMは更新できない
-                R.ShowOK("仮想ROMなので更新できません");
+                if (!this.IsSlientMode) R.ShowOK("仮想ROMなので更新できません");
                 return false;
             }
             if (Program.ROM.Modified)
             {
+                if (this.IsSlientMode)
+                {
+                    return false;
+                }
                 DialogResult dr = R.ShowNoYes("警告\r\n変更した内容をROMに保存していませんが、無視してアップデートしてもよろしいですか？");
                 if (dr != System.Windows.Forms.DialogResult.Yes)
                 {
@@ -96,10 +113,11 @@ namespace FEBuilderGBA
 
         Dictionary<string, string> Lines = new Dictionary<string,string>();
         string Filename = "";
+        bool IsSlientMode = false;
 
-        string GetUpdateInfo()
+        static string GetUpdateInfo(string romfilename)
         {
-            string filename = U.ChangeExtFilename(Program.ROM.Filename, ".updateinfo.txt");
+            string filename = U.ChangeExtFilename(romfilename, ".updateinfo.txt");
             if (File.Exists(filename))
             {
                 return filename;
@@ -108,7 +126,7 @@ namespace FEBuilderGBA
             //余計なものを取り払った探索
             //BSFE_1.0.ups -> BSFE.updateinfo.txt
             //fe8kaitou.en.ups -> fe8kaitou.updateinfo.txt
-            filename = Path.GetFileNameWithoutExtension(Program.ROM.Filename);
+            filename = Path.GetFileNameWithoutExtension(romfilename);
             List<string> ver = new List<string>();
             for (int i = 0; i < filename.Length; i++)
             {
@@ -118,7 +136,7 @@ namespace FEBuilderGBA
                 }
             }
 
-            string basedir = Path.GetDirectoryName(Program.ROM.Filename);
+            string basedir = Path.GetDirectoryName(romfilename);
             for (int i = ver.Count - 1; i >= 0; i-- )
             {
                 filename = Path.Combine(basedir, ver[i] + ".updateinfo.txt");
@@ -129,7 +147,7 @@ namespace FEBuilderGBA
             }
 
             //not found
-            filename = U.ChangeExtFilename(Program.ROM.Filename, ".updateinfo.txt");
+            filename = U.ChangeExtFilename(romfilename, ".updateinfo.txt");
             return filename;
         }
 
@@ -149,18 +167,10 @@ namespace FEBuilderGBA
             return url;
         }
 
-        bool Open()
+        public static Dictionary<string, string>  LoadUpdateInfo(string filename)
         {
-            this.Filename = GetUpdateInfo();
-            this.Lines = new Dictionary<string, string>();
-
-            if (! File.Exists(this.Filename))
-            {
-                R.ShowStopError("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n" + ExplainUpdateInfo());
-                return false;
-            }
-
-            string[] lines = File.ReadAllLines(this.Filename);
+            Dictionary<string, string> ret = new Dictionary<string, string>();
+            string[] lines = File.ReadAllLines(filename);
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];
@@ -184,8 +194,25 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                Lines[key] = value;
+                ret[key] = value;
             }
+            return ret;
+        }
+        bool Open(string romfilename)
+        {
+            this.Filename = GetUpdateInfo(romfilename);
+
+            if (! File.Exists(this.Filename))
+            {
+                this.Lines = new Dictionary<string, string>();
+
+                if (!this.IsSlientMode)
+                {
+                    R.ShowStopError(R._("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n") + ExplainUpdateInfo());
+                }
+                return false;
+            }
+            this.Lines = LoadUpdateInfo(this.Filename);
             return true;
         }
 
@@ -196,7 +223,16 @@ namespace FEBuilderGBA
 
         void LoadInfo()
         {
-            Open();
+            this.IsSlientMode = false;
+            if (Program.ROM == null)
+            {
+                return ;
+            }
+            if (Program.ROM.IsVirtualROM)
+            {//仮想ROMは更新できない
+                return ;
+            }
+            Open(Program.ROM.Filename);
 
             this.NameTextBox.Text = GetName();
             this.AuthorTextBox.Text = U.at(this.Lines, "AUTHOR");
@@ -216,11 +252,17 @@ namespace FEBuilderGBA
             }
             return Path.GetFileNameWithoutExtension(Program.ROM.Filename);
         }
-
         Image MakeLogo()
         {
             string logofilename = U.at(this.Lines, "LOGO_FILENAME");
-            logofilename = Path.Combine( Path.GetDirectoryName(this.Filename) , logofilename);
+            string romfilename = Path.GetDirectoryName(this.Filename);
+
+            return MakeLogoLow(logofilename , romfilename);
+        }
+
+        public static Image MakeLogoLow(string logofilename, string romfilename)
+        {
+            logofilename = Path.Combine(romfilename, logofilename);
             if (!File.Exists(logofilename))
             {
                 return MakeLogoNoLogo();
@@ -239,13 +281,13 @@ namespace FEBuilderGBA
                 return MakeLogoNoLogo();
             }
         }
-        Image MakeLogoNoLogo()
+        static Image MakeLogoNoLogo()
         {
             Icon icon = Properties.Resources.Icon1;
             return icon.ToBitmap();
         }
 
-        DateTime GetCurrentDateTime()
+        static DateTime GetCurrentDateTime()
         {
             DateTime dt = U.GetFileDateLastWriteTime(Program.ROM.Filename);
             string filename = U.ChangeExtFilename(Program.ROM.Filename, ".ups");
@@ -439,28 +481,47 @@ namespace FEBuilderGBA
             return U.ChangeExtFilename(Program.ROM.Filename, "ups");
         }
 
-        bool CheckUpdate(InputFormRef.AutoPleaseWait pleaseWait)
+        public enum UPDATE_RESULT
         {
-            string url = U.at(this.Lines, "CHECK_URL");
+            ERROR
+            , LATEST
+            , UPDATEABLE
+        }
+        UPDATE_RESULT CheckUpdate()
+        {
+            return CheckUpdateLow(this.Lines, this.IsSlientMode);
+        }
+        public static UPDATE_RESULT CheckUpdateLow(Dictionary<string,string> lines, bool isSlientMode)
+        {
+            string url = U.at(lines, "CHECK_URL");
             if (url == "")
             {
-                R.ShowStopError("CHECK_URLの項目がありません");
-                return false;
+                if (!isSlientMode)
+                {
+                    R.ShowStopError("CHECK_URLの項目がありません");
+                }
+                return UPDATE_RESULT.ERROR;
             }
 
-            string regex = U.at(this.Lines, "CHECK_REGEX");
+            string regex = U.at(lines, "CHECK_REGEX");
             if (regex == "")
             {
-                R.ShowStopError("CHECK_REGEXの項目がありません");
-                return false;
+                if (!isSlientMode)
+                {
+                    R.ShowStopError("CHECK_REGEXの項目がありません");
+                }
+                return UPDATE_RESULT.ERROR;
             }
             string html = U.HttpGet(url);
 
             Match m = RegexCache.Match(html, regex);
             if (m.Groups.Count < 2)
             {
-                R.ShowStopError("CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}",html);
-                return false;
+                if (!isSlientMode)
+                {
+                    R.ShowStopError("CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}", html);
+                }
+                return UPDATE_RESULT.ERROR;
             }
             string dateString;
             string match = m.Groups[1].ToString();
@@ -470,7 +531,10 @@ namespace FEBuilderGBA
                 dateString = rsp.Headers["LastModified"];
                 if (dateString == null)
                 {
-                    R.ShowStopError("Last-Modifiedを検知できませんでした。\r\n仕方がないので、常に最新版に更新します。");
+                    if (!isSlientMode)
+                    {
+                        R.ShowStopError("Last-Modifiedを検知できませんでした。\r\n仕方がないので、常に最新版に更新します。");
+                    }
                     dateString = DateTime.Now.ToString();
                 }
             }
@@ -493,7 +557,10 @@ namespace FEBuilderGBA
             }
             catch(Exception )
             {
-                R.ShowStopError("日付({0})をパースできませんでした。\r\n仕方がないので、常に最新版に更新します。", dateString);
+                if (!isSlientMode)
+                {
+                    R.ShowStopError("日付({0})をパースできませんでした。\r\n仕方がないので、常に最新版に更新します。", dateString);
+                }
                 datetime = DateTime.Now;
             }
 
@@ -501,11 +568,126 @@ namespace FEBuilderGBA
             Log.Notify("romDatetime:{0} vs datetime:{1}", romDatetime.ToString(), datetime.ToString());
             if (romDatetime < datetime)
             {//更新する必要あり!
-                return true;
+                return UPDATE_RESULT.UPDATEABLE;
             }
             //更新する必要なし
-            return false;
+            return UPDATE_RESULT.LATEST;
         }
+
+
+        private void UpdateThreadCallBackEvent(object sender, EventArgs e)
+        {
+            this.IsSlientMode = false;
+            //ダイアログを表示して、更新ボタンを押す.
+            this.Show();
+            InputFormRef.DoEvents();
+
+            DialogResult dr = R.ShowYesNo("このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？");
+            if (dr != System.Windows.Forms.DialogResult.No)
+            {
+                this.UpdateButton.PerformClick();
+            }
+        }
+
+        static public void CheckUpdateSlientByThread()
+        {
+            if (Program.ROM == null)
+            {
+                return;
+            }
+            if (Program.ROM.IsVirtualROM)
+            {//仮想ROMは更新できない
+                return;
+            }
+
+            ToolWorkSupportForm f = (ToolWorkSupportForm)InputFormRef.JumpFormLow<ToolWorkSupportForm>();
+            f.IsSlientMode = true;
+            f.CheckUpdateSlientMain(Program.ROM.Filename);
+        }
+        void CheckUpdateSlientMain(string romfilename)
+        {
+            if (!Open(romfilename))
+            {
+                return ;
+            }
+            if (!CheckUpdateToday(romfilename))
+            {
+                return;
+            }
+
+            System.Threading.Thread s1 = new System.Threading.Thread(t =>
+            {
+                try
+                {
+                    if (this.IsDisposed)
+                    {
+                        return;
+                    }
+                    //更新できますか？
+                    UPDATE_RESULT ur = CheckUpdate();
+                    if (ur != UPDATE_RESULT.UPDATEABLE)
+                    {
+                        return;
+                    }
+                    //イベント通知
+                    if (this.IsDisposed)
+                    {
+                        return;
+                    }
+                    this.Show();
+                    EventHandler callback = UpdateThreadCallBackEvent;
+                    this.Invoke(callback, new object[] { this, null });
+                }
+                catch(Exception e)
+                {
+                    Log.Error(e.ToString());
+                    return;
+                }
+            });
+            s1.Start();
+        }
+        //更新チェックをしてもよいか?
+        bool CheckUpdateToday(string romfilename)
+        {
+            int func_auto_update = OptionForm.auto_update();
+            if (func_auto_update == 0)
+            {//自動アップデート確認をしない.
+                RegistWorkSupportIfNotRegist(romfilename);
+                return false;
+            }
+
+            DateTime dt = DateTime.Now.AddDays(-func_auto_update);
+            uint now = U.atoi(dt.ToString("yyyyMMdd"));
+
+            uint romDate = U.atoi(U.GetFileDateLastWriteTime(romfilename).ToString("yyyyMMdd"));
+
+            uint LastUpdateCheck = U.atoi(Program.WorkSupportCache.At(1));
+            if (romDate > LastUpdateCheck)
+            {//ROMの方が新しいなら上書き.
+                LastUpdateCheck = romDate;
+            }
+            if (now <= LastUpdateCheck)
+            {//まだアップデート確認する時間じゃない.
+                RegistWorkSupportIfNotRegist(romfilename);
+                return false;
+            }
+
+            //アップデートチェック時間の上書き
+            Program.WorkSupportCache.Update(0, romfilename);
+            Program.WorkSupportCache.Update(1, now.ToString());
+            Program.WorkSupportCache.Save(Path.GetFileNameWithoutExtension(romfilename));
+            return true;
+        }
+        void RegistWorkSupportIfNotRegist(string romfilename)
+        {
+            if (Program.WorkSupportCache.At(0) != romfilename)
+            {//WorkSupportCacheに登録がないならば作成します.
+                Program.WorkSupportCache.Update(0, romfilename);
+                Program.WorkSupportCache.Update(1, "0");
+                Program.WorkSupportCache.Save(Path.GetFileNameWithoutExtension(romfilename));
+            }
+        }
+
 #if DEBUG
         public static void TEST_Parse1()
         {
@@ -647,6 +829,11 @@ namespace FEBuilderGBA
         {
             string url = ExplainUpdateInfo();
             U.OpenURLOrFile(url);
+        }
+
+        private void SnowAllWorksButton_Click(object sender, EventArgs e)
+        {
+            InputFormRef.JumpForm<ToolAllWorkSupportForm>();
         }
 
     }

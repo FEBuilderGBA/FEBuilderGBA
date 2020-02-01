@@ -10663,6 +10663,12 @@ Speech Engine
 :読み上げ設定
 Speech Setting
 
+:更新チェック
+Check for updates
+
+:すべての作品
+All works
+
 :アニメーションエディタ
 Animation editor
 
@@ -11716,9 +11722,6 @@ Also display flags common to all maps.
 :章で利用しているフラグ
 Flags used in the chapter.
 
-:現在のバージョンが最新です。version:{0}
-FEBuilderGBA is up to date. Version:{0}
-
 :仮想ROMなので更新できません
 It cannot be updated because it is a virtual ROM.
 
@@ -11764,6 +11767,9 @@ Last-Modified could not be detected.\r\nI can't help but always update to the la
 :日付({0})をパースできませんでした。\r\n仕方がないので、常に最新版に更新します。
 Date ({0}) could not be parsed.\r\nI can't help but always update to the latest version.
 
+:このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？
+A new version of this game has been released.\r\nAutomatically update to the latest version? 
+
 :ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
 Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
 
@@ -11787,6 +11793,18 @@ Author
 
 :コミニティ
 Community
+
+:他の作品を表示する
+Display other works
+
+:現在のバージョンが最新です。version:{0}
+FEBuilderGBA is up to date. Version:{0}
+
+:強制アップデート
+Forced update.
+
+:現在のバージョンが最新です
+The current version is the latest.
 
 :。
 。
