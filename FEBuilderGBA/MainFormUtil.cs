@@ -75,6 +75,12 @@ namespace FEBuilderGBA
             Form f = Program.MainForm();
             f.Close();
         }
+        public static void ForceReopen()
+        {
+            Program.ROM.ClearModifiedFlag();
+            ReOpenMainForm();
+            Program.LoadROM(Program.ROM.Filename, "");
+        }
 
         public static void NeedSystemErrorCheck()
         {

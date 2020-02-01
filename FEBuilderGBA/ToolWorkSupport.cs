@@ -378,7 +378,7 @@ namespace FEBuilderGBA
                 }
             }
             File.Delete(update7z);
-            pleaseWait.DoEvents("UPS!");
+            pleaseWait.DoEvents("Select Vanilla ROM");
 
             string[] ups_files = U.Directory_GetFiles_Safe(romdir, "*.ups", SearchOption.AllDirectories);
             if (ups_files.Length <= 0)
@@ -394,6 +394,7 @@ namespace FEBuilderGBA
                 return;
             }
 
+            pleaseWait.DoEvents("UPS");
             string orignalROMFilename = f.GetOrignalFilename();
             if (orignalROMFilename == "")
             {
@@ -421,7 +422,8 @@ namespace FEBuilderGBA
                 rom.Save(savegba, true);
             }
 
-            pleaseWait.DoEvents("END");
+            pleaseWait.DoEvents("ReOpen...");
+            MainFormUtil.ForceReopen();
         }
         void BrokenDownload(string errormessage)
         {
