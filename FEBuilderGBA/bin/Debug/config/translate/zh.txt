@@ -11806,6 +11806,9 @@ ROMRebuild应用的ROM，文件名。将其保存为gba。
 :ファイルに書き込めません。\r\n{0}\r\n{1}
 无法写入文件。\r\n{0}。\r\n{1}。
 
+:MediafireのDOWNLOADボタンが見つかりませんでした。\r\n仕様が変更されたようです。FEBuilderGBAの開発者に連絡してください。\r\n
+找不到Mediafire下载按钮。\r\n规范似乎已更改。请与FEBuilderGBA开发人员联系。\r\n
+
 :Google DriveのIDが見つかりません
 找不到Google云端硬盘ID。
 
@@ -11823,6 +11826,12 @@ ROMRebuild应用的ROM，文件名。将其保存为gba。
 
 :を
 该
+
+:ディレクトリを作成できませんでした。\r\n{0}\r\n\r\n{1}
+无法创建目录。\r\n{0}。\r\n\r\n{1}。
+
+:ファイルをコピーできませんでした。\r\nSrc:{0}\r\nDest:{1}\r\n\r\n{2}
+无法复制该文件。\r\nSrc：{0}。\r\n目的地：{1}。\r\n\r\n{2}。
 
 :最新版
 最新版本

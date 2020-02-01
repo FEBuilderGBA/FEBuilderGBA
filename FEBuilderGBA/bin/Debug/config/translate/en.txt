@@ -11806,6 +11806,9 @@ Unable to read the required configuration file.\r\nThe setting file may be corru
 :ファイルに書き込めません。\r\n{0}\r\n{1}
 Unable to write to file.\r\n{0}.\r\n{1}.
 
+:MediafireのDOWNLOADボタンが見つかりませんでした。\r\n仕様が変更されたようです。FEBuilderGBAの開発者に連絡してください。\r\n
+Mediafire DOWNLOAD button not found.\r\nThe specification seems to have changed.Contact the FEBuilderGBA developer.\r\n
+
 :Google DriveのIDが見つかりません
 Google Drive ID not found.
 
@@ -11823,6 +11826,12 @@ Unable to read the required configuration file.\r\nThe setting file may be corru
 
 :を
 To
+
+:ディレクトリを作成できませんでした。\r\n{0}\r\n\r\n{1}
+The directory could not be created.\r\n{0}.\r\n\r\n{1}.
+
+:ファイルをコピーできませんでした。\r\nSrc:{0}\r\nDest:{1}\r\n\r\n{2}
+The file could not be copied.\r\nSrc: {0}.\r\nDest: {1}.\r\n\r\n{2}.
 
 :最新版
 Latest edition
@@ -12258,7 +12267,4 @@ Placement Flag
 
 :ワールドマップ拠点
 World Map Nodes
-
-:ドキュメント
-Document
 

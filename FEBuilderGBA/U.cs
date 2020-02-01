@@ -14,6 +14,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Text.RegularExpressions;
 
 namespace FEBuilderGBA
 {
@@ -4383,6 +4384,24 @@ namespace FEBuilderGBA
             //ダウンロード開始
             U.HttpDownload(save_filename, url, download_url, pleaseWait, cookie);
         }
+
+        static void DownloadFileByMediafire(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            CookieContainer cookie = new CookieContainer();
+            string html = HttpGet(download_url, Path.GetDirectoryName(download_url), cookie);
+
+            string html2 = U.skip(html, "aria-label=\"Download file\"");
+            string regex = "href=\"([^\"]+)\"";
+            Match m = RegexCache.Match(html2, regex);
+            if (m.Groups.Count < 2)
+            {
+                throw new Exception(R._("MediafireのDOWNLOADボタンが見つかりませんでした。\r\n仕様が変更されたようです。FEBuilderGBAの開発者に連絡してください。\r\n")+"\r\n" + html);
+            }
+            string url = m.Groups[1].ToString();
+            U.HttpDownload(save_filename, url, download_url, pleaseWait);
+        }
+        
+
         static void DownloadFileByGoogleDrive(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
         {
             string id;
@@ -4452,6 +4471,10 @@ namespace FEBuilderGBA
             else if (download_url.IndexOf("drive.google.com") > 0)
             {
                 U.DownloadFileByGoogleDrive(save_filename, download_url, pleaseWait);
+            }
+            else if (download_url.IndexOf("mediafire.com") > 0)
+            {
+                U.DownloadFileByMediafire(save_filename, download_url, pleaseWait);
             }
             else
             {
