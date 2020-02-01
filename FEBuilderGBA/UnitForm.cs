@@ -729,7 +729,7 @@ namespace FEBuilderGBA
                     }
                 }
                 uint support_pointer = Program.ROM.u32(unit_addr + 44);
-                SupportUnitForm.MakeCheckErrorAddr(errors, support_pointer, FELint.Type.UNIT, unit_addr, i + 1);
+                SupportUnitForm.MakeCheckErrorAddr(errors, support_pointer, FELint.Type.UNIT, unit_addr, i);
             }
         }
 

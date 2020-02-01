@@ -175,8 +175,15 @@ namespace FEBuilderGBA
         {
             foreach (Work work in WorkList)
             {
-                ToolWorkSupportForm.UPDATE_RESULT ur =ToolWorkSupportForm.CheckUpdateLow(work.UpdateinfoLines, true);
-                work.IsUpdateMark = (ur == ToolWorkSupportForm.UPDATE_RESULT.UPDATEABLE);
+                ToolWorkSupportForm.UPDATE_RESULT ur =ToolWorkSupportForm.CheckUpdateLow(work.UpdateinfoLines,work.ROMFilenme, isSlientMode: true);
+                if (ur == ToolWorkSupportForm.UPDATE_RESULT.UPDATEABLE)
+                {
+                    work.IsUpdateMark = true;
+                }
+                else
+                {
+                    work.IsUpdateMark = false;
+                }
             }
         }
     }

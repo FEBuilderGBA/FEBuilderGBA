@@ -287,10 +287,10 @@ namespace FEBuilderGBA
             return icon.ToBitmap();
         }
 
-        static DateTime GetCurrentDateTime()
+        static DateTime GetROMDateTime(string romfilename)
         {
-            DateTime dt = U.GetFileDateLastWriteTime(Program.ROM.Filename);
-            string filename = U.ChangeExtFilename(Program.ROM.Filename, ".ups");
+            DateTime dt = U.GetFileDateLastWriteTime(romfilename);
+            string filename = U.ChangeExtFilename(romfilename, ".ups");
             if (File.Exists(filename))
             {
                 DateTime ups_dt = U.GetFileDateLastWriteTime(filename);
@@ -489,9 +489,9 @@ namespace FEBuilderGBA
         }
         UPDATE_RESULT CheckUpdate()
         {
-            return CheckUpdateLow(this.Lines, this.IsSlientMode);
+            return CheckUpdateLow(this.Lines,Program.ROM.Filename, this.IsSlientMode);
         }
-        public static UPDATE_RESULT CheckUpdateLow(Dictionary<string,string> lines, bool isSlientMode)
+        public static UPDATE_RESULT CheckUpdateLow(Dictionary<string,string> lines,string romfilename, bool isSlientMode)
         {
             string url = U.at(lines, "CHECK_URL");
             if (url == "")
@@ -564,7 +564,7 @@ namespace FEBuilderGBA
                 datetime = DateTime.Now;
             }
 
-            DateTime romDatetime = GetCurrentDateTime();
+            DateTime romDatetime = GetROMDateTime(romfilename);
             Log.Notify("romDatetime:{0} vs datetime:{1}", romDatetime.ToString(), datetime.ToString());
             if (romDatetime < datetime)
             {//更新する必要あり!
@@ -630,13 +630,17 @@ namespace FEBuilderGBA
                         return;
                     }
                     //イベント通知
-                    if (this.IsDisposed)
+                    if (Application.OpenForms.Count <= 0)
+                    {//通知するべきフォームがない.
+                        return;
+                    }
+                    Form f = Application.OpenForms[0];
+                    if (f == null || f.IsDisposed)
                     {
                         return;
                     }
-                    this.Show();
                     EventHandler callback = UpdateThreadCallBackEvent;
-                    this.Invoke(callback, new object[] { this, null });
+                    f.Invoke(callback, new object[] { this, null });
                 }
                 catch(Exception e)
                 {

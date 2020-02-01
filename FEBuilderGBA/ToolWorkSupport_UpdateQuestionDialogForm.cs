@@ -37,7 +37,7 @@ namespace FEBuilderGBA
         string Version;
         private void ToolWorkSupport_UpdateQuestionDialogForm_Load(object sender, EventArgs e)
         {
-            this.labelEx1.Text = String.Format("現在のバージョンが最新です。version:{0}", this.Version);
+            this.labelEx1.Text = R._("現在のバージョンが最新です。version:{0}", this.Version);
         }
 
     }
