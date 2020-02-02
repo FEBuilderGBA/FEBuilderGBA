@@ -327,6 +327,32 @@ namespace FEBuilderGBA
 #endif
         }
 
+        //タイムスタンプのコピー
+        public static void SetTimeStamp(string filename, DateTime datetime)
+        {
+#if DEBUG
+#else
+            try
+            {
+#endif
+            // 作成日時
+            File.SetCreationTime(filename, datetime);
+
+            // 更新日時
+            File.SetLastWriteTime(filename, datetime);
+
+            // アクセス日時
+            File.SetLastAccessTime(filename, datetime);
+#if DEBUG
+#else
+            }
+            catch(Exception e)
+            {
+               Log.Error(e.ToString());
+            }
+#endif
+        }
+
         public static string MakeFilename(string addname,string override_ext=null)
         {
             String dir = Path.GetDirectoryName(Program.ROM.Filename);
@@ -4401,7 +4427,6 @@ namespace FEBuilderGBA
             U.HttpDownload(save_filename, url, download_url, pleaseWait);
         }
         
-
         static void DownloadFileByGoogleDrive(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
         {
             string id;
@@ -4409,6 +4434,11 @@ namespace FEBuilderGBA
             {
                 System.Text.RegularExpressions.Match m = RegexCache.Match(download_url, "/file/d/([^/]+)");
                 id = m.Groups[1].ToString();
+            }
+            else if (download_url.IndexOf("/drive/folders") >= 0)
+            {
+                DownloadFoldersByGoogleDrive(save_filename, download_url, pleaseWait);
+                return ;
             }
             else if (download_url.IndexOf("id=") >= 0)
             {
@@ -4423,7 +4453,80 @@ namespace FEBuilderGBA
             string url = "https://drive.google.com/uc?export=download&id=" + id;
             U.HttpDownload(save_filename, url, download_url, pleaseWait);
         }
+        static void DownloadFoldersByGoogleDrive(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
+        {
+            using (U.MakeTempDirectory dir = new MakeTempDirectory())
+            {
+                pleaseWait.DoEvents("download folders.");
+                string html = U.HttpGet(download_url);
+                html = U.skip(html, "window['_DRIVE_ivd'] = ");
+                string[] sp = html.Split(new string[] { "\\x5b\\x22" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 1; i + 1 < sp.Length; i += 2)
+                {
+                    string id = U.cut(sp[i], "\\x22");
+                    string filename = U.cut(sp[i + 1], ",\\x22", "\\x22,");
+                    string date = U.cut(sp[i + 1], ",0,0,0,", ",");
 
+                    filename = U.escape_filename(filename);
+                    filename = Path.Combine(dir.Dir, filename);
+
+
+                    string url = "https://drive.google.com/uc?export=download&id=" + id;
+                    U.HttpDownload(filename, url, download_url, pleaseWait);
+
+                    //日付を設定
+                    if (File.Exists(filename))
+                    {
+                        DateTime datetime;
+                        if (TryParseUnitTime(date, out datetime))
+                        {
+                            U.SetTimeStamp(filename, datetime);
+                        }
+                    }
+                }
+
+
+                pleaseWait.DoEvents("compress");
+                string save_filename_7z = save_filename + ".7z";
+                ArchSevenZip.Compress(save_filename_7z, dir.Dir, 0);
+                U.Move(save_filename_7z, save_filename);
+            }
+
+        }
+
+        public static void Move(string src, string dest)
+        {
+            File.Copy(src, dest,true);
+            File.Delete(src);
+        }
+
+        public static bool TryParseUnitTime(string date, out DateTime retDateTime)
+        {
+            date = date.Trim();
+            if (!U.isNumString(date))
+            {
+                retDateTime = DateTime.Now;
+                return false;
+            }
+            if (date.Length >= 10 + 6)
+            {//dropboxのミリ秒まで含めた時刻
+                date = date.Substring(0, date.Length - 6);
+            }
+            else if (date.Length >= 10 + 3)
+            {//googledriveの特殊な時刻
+                date = date.Substring(0, date.Length - 3);
+            }
+
+            uint dateuint = U.atoi(date);
+            if (dateuint < 1262271600)
+            {//2010/1/1 以前
+                retDateTime = DateTime.Now;
+                return false;
+            }
+            DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            retDateTime = UNIX_EPOCH.AddSeconds(dateuint).ToLocalTime();
+            return true;
+        }
 
         static void DownloadFileByGetUploader(string save_filename, string download_url, InputFormRef.AutoPleaseWait pleaseWait)
         {

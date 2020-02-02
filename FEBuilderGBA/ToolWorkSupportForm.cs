@@ -553,7 +553,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    if (TryParseUnitTime(dateString, out datetime))
+                    if (U.TryParseUnitTime(dateString, out datetime))
                     {//unittmie
                     }
                     else
@@ -579,29 +579,6 @@ namespace FEBuilderGBA
             }
             //更新する必要なし
             return UPDATE_RESULT.LATEST;
-        }
-        static bool TryParseUnitTime(string date,out DateTime retDateTime)
-        {
-            date = date.Trim();
-            if (!U.isNumString(date))
-            {
-                retDateTime = DateTime.Now;
-                return false;
-            }
-            if (date.Length >= 10 + 6)
-            {//ミリ秒まで含めた時刻
-                date = date.Substring(0, date.Length - 6);
-            }
-
-            uint dateuint = U.atoi(date);
-            if (dateuint < 1262271600)
-            {//2010/1/1 以前
-                retDateTime = DateTime.Now;
-                return false;
-            }
-            DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            retDateTime = UNIX_EPOCH.AddSeconds(dateuint).ToLocalTime();
-            return true;
         }
 
 
