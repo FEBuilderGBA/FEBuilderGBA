@@ -2008,6 +2008,12 @@
     <Compile Include="ToolWorkSupport_UpdateQuestionDialogForm.Designer.cs">
       <DependentUpon>ToolWorkSupport_UpdateQuestionDialogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UshortBitFlagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UshortBitFlagForm.Designer.cs">
+      <DependentUpon>UshortBitFlagForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="FEBuilderGBA_logo1.png" />
@@ -2970,6 +2976,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolWorkSupport_UpdateQuestionDialogForm.resx">
       <DependentUpon>ToolWorkSupport_UpdateQuestionDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UshortBitFlagForm.resx">
+      <DependentUpon>UshortBitFlagForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

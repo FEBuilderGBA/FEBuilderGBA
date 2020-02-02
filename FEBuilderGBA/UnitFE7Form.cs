@@ -66,7 +66,7 @@ namespace FEBuilderGBA
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<UnitFE7Form>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("unitclass_checkbox_"), controls, tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
+            InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
 
             //魔法分離パッチ
             MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();

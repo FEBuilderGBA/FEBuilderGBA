@@ -4917,10 +4917,7 @@ namespace FEBuilderGBA
             SkillConfigSkillSystemForm.ClearCache();
             FE8SpellMenuExtendsForm.ClearCache();
 
-            Cache_TerrainSet = null;
-            Cache_ramunit_state_checkbox = null;
-            Cache_ramunit_param_dic = null;
-            Cache_map_emotion = null;
+            Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
             PatchUtil.ClearCache();
         }
 
@@ -6520,42 +6517,69 @@ namespace FEBuilderGBA
         }
 
         //マップでの漫符
-        static Dictionary<uint, string> Cache_map_emotion;
         public static string GetMAPEMOTION(uint num)
         {
-            if (Cache_map_emotion == null)
-            {
-                string filename = (U.ConfigDataFilename("map_emotion_exetnds_well_known_list_"));
-                Cache_map_emotion = U.LoadDicResource(filename);
-            }
-            return U.at(Cache_map_emotion, num);
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("battleterrain_set_");
+            return U.at(dic, num);
         }
 
-        static Dictionary<uint, string> Cache_TerrainSet;
         public static Dictionary<uint,string> MakeTerrainSet()
         {
-            if (Cache_TerrainSet == null)
-            {
-                string filename = U.ConfigDataFilename("battleterrain_set_");
-                Cache_TerrainSet = U.LoadDicResource(filename);
-            }
-            return Cache_TerrainSet;
+            return ConfigDataDatanameCache("battleterrain_set_");
         }
 
 
         //ユニットの特殊状態
-        static Dictionary<uint, string> Cache_ramunit_state_checkbox;
-        public static string GetRAM_UNIT_STATE(uint num, out string errorMessae)
+        public static string GetRAM_UNIT_STATE(uint num)
         {
-            errorMessae = "";
-            StringBuilder sb = new StringBuilder();
-
-            if (Cache_ramunit_state_checkbox == null)
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("ramunit_state_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetDISABLEOPTIONS(uint num)
+        {
+            if (num == 0)
             {
-                string filename = U.ConfigDataFilename("ramunit_state_checkbox_");
-                Cache_ramunit_state_checkbox = U.LoadDicResource(filename);
+                return R._("すべてのメニューを許可");
             }
-            foreach (var pair in Cache_ramunit_state_checkbox)
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("DISABLEOPTIONS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetDISABLEWEAPONS(uint num)
+        {
+            if (num == 0)
+            {
+                return R._("すべてのメニューを許可");
+            }
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("DISABLEWEAPONS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+        public static string GetIGNORE_KEYS(uint num)
+        {
+            if (num == 0)
+            {
+                return R._("すべてのキーを許可");
+            }
+            Dictionary<uint, string> dic = ConfigDataDatanameCache("IGNORE_KEYS_checkbox_");
+            return GetInfoByBitFlag(num, dic);
+        }
+
+        static ConcurrentDictionary<string, Dictionary<uint, string>> Cache_Setting_checkbox = new ConcurrentDictionary<string, Dictionary<uint, string>>();
+        public static Dictionary<uint, string> ConfigDataDatanameCache(string type)
+        {
+            if (Cache_Setting_checkbox.ContainsKey(type))
+            {
+                return Cache_Setting_checkbox[type];
+            }
+
+            string filename = U.ConfigDataFilename(type);
+            Cache_Setting_checkbox[type] = U.LoadDicResource(filename);
+            return Cache_Setting_checkbox[type];
+        }
+
+        static string GetInfoByBitFlag(uint num, Dictionary<uint, string> dic)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var pair in dic)
             {
                 uint key = pair.Key;
                 int shift = (int)(key & 0xF);
@@ -6564,7 +6588,7 @@ namespace FEBuilderGBA
                     continue;
                 }
                 shift = shift - 1;
-                shift += (int)((key & 0xf0)>>4) * 8;
+                shift += (int)((key & 0xf0) >> 4) * 8;
 
                 int bit = 1 << shift;
                 if ((num & bit) == bit)
@@ -6588,23 +6612,25 @@ namespace FEBuilderGBA
         }
 
         //RAM UNIT PARAM
-        static Dictionary<uint, string> Cache_ramunit_param_dic;
         public static string GetRAM_UNIT_PARAM(uint num, out string errorMessae)
         {
             errorMessae = "";
             StringBuilder sb = new StringBuilder();
 
-            if (Cache_ramunit_param_dic == null)
+            Dictionary<uint, string> ramunit_param_dic;
+            if (Cache_Setting_checkbox.ContainsKey("ramunit_param_"))
             {
-                Cache_ramunit_param_dic = GetRAM_UNIT_PARAM_Low();
+                ramunit_param_dic = Cache_Setting_checkbox["ramunit_param_"];
             }
-            return U.at(Cache_ramunit_param_dic, num);
+            else
+            {
+                ramunit_param_dic = GetRAM_UNIT_PARAM_Low();
+            }
+            return U.at(ramunit_param_dic, num);
         }
         static Dictionary<uint, string> GetRAM_UNIT_PARAM_Low()
         {
-            Dictionary<uint, string> ramunit_param_dic = new Dictionary<uint,string>();
-            string filename = U.ConfigDataFilename("ramunit_param_");
-            ramunit_param_dic = U.LoadDicResource(filename);
+            Dictionary<uint, string>  ramunit_param_dic = InputFormRef.ConfigDataDatanameCache("ramunit_param_");
 
             MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
             if (magic_split == MagicSplitUtil.magic_split_enum.FE8NMAGIC)
@@ -6630,7 +6656,7 @@ namespace FEBuilderGBA
 
             if (prevValue == 0xC)
             {//状態
-                return GetRAM_UNIT_STATE(num, out errorMessae);
+                return GetRAM_UNIT_STATE(num);
             }
             else if (prevValue == 0x1E || prevValue == 0x20 || prevValue == 0x22 || prevValue == 0x24 || prevValue == 0x26)
             {//アイテム
@@ -11049,13 +11075,13 @@ namespace FEBuilderGBA
             return tooltip;
         }
 
-        public static void LoadCheckboxesResource(string filename
+        public static void LoadCheckboxesResource(string datename
             , List<Control> controls
             , ToolTipEx tooltip
             , string prefix
             , string target0, string target1, string target2, string target3)
         {
-            Dictionary<uint, string> dic = U.LoadDicResource(filename);
+            Dictionary<uint, string> dic = InputFormRef.ConfigDataDatanameCache(datename);
             foreach (var pair in dic)
             {
                 uint key = pair.Key;

@@ -101,6 +101,9 @@ namespace FEBuilderGBA
             , SUPPORT_LEVEL     //支援レベル
             , GAMEOPTION        //ゲームオプション
             , GAMEOPTION_VALUE  //ゲームオプションの値
+            , DISABLEOPTIONS    //メニューを無効にするビットフラグ FE8
+            , DISABLEWEAPONS    //アイテムメニューを無効にするビットフラグ FE8
+            , IGNORE_KEYS       //キー操作を無効にするビットフラグ FE8
         };
 
         public class Arg
@@ -691,6 +694,15 @@ namespace FEBuilderGBA
                  break;
              case "GAMEOPTION_VALUE":
                  type = ArgType.GAMEOPTION_VALUE;
+                 break;
+             case "DISABLEOPTIONS":
+                 type = ArgType.DISABLEOPTIONS;
+                 break;
+             case "DISABLEWEAPONS":
+                 type = ArgType.DISABLEWEAPONS;
+                 break;
+             case "IGNORE_KEYS":
+                 type = ArgType.IGNORE_KEYS;
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;

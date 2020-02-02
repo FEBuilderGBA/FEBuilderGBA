@@ -76,7 +76,7 @@ namespace FEBuilderGBA
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<ClassFE6Form>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("unitclass_checkbox_"), controls, tooltip, "", "L_36_BIT_", "L_37_BIT_", "L_38_BIT_", "L_39_BIT_");
+            InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, tooltip, "", "L_36_BIT_", "L_37_BIT_", "L_38_BIT_", "L_39_BIT_");
 
             if (ClassForm.IsShowClassExetdns(this.AddressList))
             {

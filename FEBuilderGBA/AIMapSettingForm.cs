@@ -46,7 +46,7 @@ namespace FEBuilderGBA
             List<Control> controls = InputFormRef.GetAllControls(this);
 
             X_Tooltip = InputFormRef.GetToolTip<AIMapSettingForm>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("ai_map_setting_checkbox_")
+            InputFormRef.LoadCheckboxesResource("ai_map_setting_checkbox_"
                 , controls, X_Tooltip, ""
                 , "L_0_BIT_", "L_1_BIT_", "L_2_BIT_", "L_3_BIT_");
         }

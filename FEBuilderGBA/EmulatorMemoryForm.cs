@@ -1996,8 +1996,7 @@ namespace FEBuilderGBA
             {//状態1,2,3,4
                 state = Program.RAM.u32(addr + 0x0C);
             }
-            string dummy;
-            string stateString = InputFormRef.GetRAM_UNIT_STATE(state, out dummy);
+            string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
             if (stateString != "")
             {
                 bounds.X += U.DrawText("[", g, this.BoldFont, this.ListBoxForeBrush, isWithDraw, bounds);
@@ -2081,8 +2080,7 @@ namespace FEBuilderGBA
             {//状態1,2,3,4
                 state = Program.RAM.u16(addr + 0x0C);
             }
-            string dummy;
-            string stateString = InputFormRef.GetRAM_UNIT_STATE(state, out dummy);
+            string stateString = InputFormRef.GetRAM_UNIT_STATE(state);
 
             uint aid = Program.RAM.u16(addr + 0x1B);
             string aidString = GetRAMUnitAIDToName(aid);

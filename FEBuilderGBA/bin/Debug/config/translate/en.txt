@@ -4126,6 +4126,12 @@ Warning: Write to MemorySlot 0.
 :警告: MemorySlotD以降にアクセスしています。
 Warning: You are accessing MemorySlotD or later.
 
+:すべてのメニューを許可
+Allow all menus.
+
+:すべてのキーを許可
+Allow all keys.
+
 :瞬間移動
 teleportation.
 
@@ -11740,9 +11746,6 @@ There is no UPDATE_REGEX item.
 :UPDATE_REGEXでマッチしたデータがありませんでした。\r\n{0}
 No data matched by UPDATE_REGEX.\r\n{0}.
 
-:UPDATE_REGEXでマッチしたデータをパースできませんでした。\r\n{0}
-The data matched by UPDATE_REGEX could not be parsed.\r\n{0}.
-
 :アップデートが完了しました。\r\nROMを再読み込みします。\r\n
 Update completed.\r\nReload the ROM.\r\n
 
@@ -12045,6 +12048,12 @@ Patch can't be applied to the open ROM. CRC do not match.
 
 :UPSを適応した結果が正しくありません。CRCが不一致です。
 The result of adapting the UPS is incorrect. CRC does not match.
+
+:チェックをつけたメニューを無効にします。
+Disables the checked menu.
+
+:チェックをつけたキーを無効にします。
+Disables the checked key.
 
 :通常の専用武器ロックと同じように動作する「ハード」ロックと、\r\n通常の武器レベルに関係なく、一致するユニットの武器レベルEで武器を使用できる「ソフト」ロックを設定できます。
 It can distinguish between 'hard' locks, which operate the same as the vanilla GBA locks, or 'soft' locks, \r\nwhich let the matching character use the weapon at Level E, no matter what its normal rank is.

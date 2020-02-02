@@ -41,7 +41,7 @@ namespace FEBuilderGBA
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             X_Tooltip = InputFormRef.GetToolTip<RAMUnitStateFlagForm>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("ramunit_state_checkbox_"), controls, X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
+            InputFormRef.LoadCheckboxesResource("ramunit_state_checkbox_", controls, X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
         }
     }
 }

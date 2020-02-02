@@ -70,7 +70,7 @@ namespace FEBuilderGBA
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             ToolTipEx tooltip = InputFormRef.GetToolTip<ItemForm>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("item_checkbox_"), controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
+            InputFormRef.LoadCheckboxesResource("item_checkbox_", controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
 
             FE8UItemSkill();
         }

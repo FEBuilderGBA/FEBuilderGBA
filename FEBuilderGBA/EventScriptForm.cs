@@ -208,6 +208,18 @@ namespace FEBuilderGBA
             {//RAM_UNIT_STATE
                 isLabelJump = true;
             }
+            else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS)
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.DISABLEWEAPONS)
+            {
+                isLabelJump = true;
+            }
+            else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
+            {
+                isLabelJump = true;
+            }
 
             if (isLabelJump)
             {
@@ -794,10 +806,6 @@ namespace FEBuilderGBA
             {//MemorySlotPacked
                 InputFormRef.GetPACKED_MEMORYSLOT(v, code.Script.Info[0], out errormessage);
             }
-            else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
-            {//RAM_UNIT_STATE
-                InputFormRef.GetRAM_UNIT_STATE(v, out errormessage);
-            }
             else if (arg.Type == EventScript.ArgType.WMAP_SPRITE_ID)
             {//WMAP_SPRITE_ID
                 InputFormRef.GetWMAP_SPRITE_ID(v, out errormessage);
@@ -1379,13 +1387,27 @@ namespace FEBuilderGBA
                         else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
                         {//RAM_UNIT_STATE
                             isENumText = true;
-                            string dummy;
-                            text = " " + InputFormRef.GetRAM_UNIT_STATE(v, out dummy);
+                            text = " " + InputFormRef.GetRAM_UNIT_STATE(v);
                         }
                         else if (arg.Type == EventScript.ArgType.MAPEMOTION)
                         {//MAPEMOTION
                             isENumText = true;
                             text = " " + InputFormRef.GetMAPEMOTION(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS)
+                        {//DISABLEOPTIONS
+                            isENumText = true;
+                            text = " " + InputFormRef.GetDISABLEOPTIONS(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.DISABLEWEAPONS)
+                        {//DISABLEWEAPONS
+                            isENumText = true;
+                            text = " " + InputFormRef.GetDISABLEWEAPONS(v);
+                        }
+                        else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
+                        {//IGNORE_KEYS
+                            isENumText = true;
+                            text = " " + InputFormRef.GetIGNORE_KEYS(v);
                         }
                         else if (arg.Type == EventScript.ArgType.COUNTER)
                         {//COUNTER

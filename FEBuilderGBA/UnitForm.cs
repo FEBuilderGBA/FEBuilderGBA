@@ -76,7 +76,7 @@ namespace FEBuilderGBA
         {
             List<Control> controls = InputFormRef.GetAllControls(this);
             X_Tooltip = InputFormRef.GetToolTip<UnitForm>();
-            InputFormRef.LoadCheckboxesResource(U.ConfigDataFilename("unitclass_checkbox_"), controls, X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
+            InputFormRef.LoadCheckboxesResource("unitclass_checkbox_", controls, X_Tooltip, "", "L_40_BIT_", "L_41_BIT_", "L_42_BIT_", "L_43_BIT_");
 
             if (Program.ROM.RomInfo.version() == 8)
             {//FE8の場合

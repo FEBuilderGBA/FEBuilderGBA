@@ -1006,11 +1006,23 @@ namespace FEBuilderGBA
             }
             else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
             {//RAM_UNIT_STATE
-                text = " " + InputFormRef.GetRAM_UNIT_STATE(v, out errormessage);
+                text = " " + InputFormRef.GetRAM_UNIT_STATE(v);
             }
             else if (arg.Type == EventScript.ArgType.MAPEMOTION)
             {//MAPEMOTION
                 text = " " + InputFormRef.GetMAPEMOTION(v);
+            }
+            else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS)
+            {//DISABLEOPTIONS
+                text = " " + InputFormRef.GetDISABLEOPTIONS(v);
+            }
+            else if (arg.Type == EventScript.ArgType.DISABLEWEAPONS)
+            {//DISABLEWEAPONS
+                text = " " + InputFormRef.GetDISABLEWEAPONS(v);
+            }
+            else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
+            {//IGNORE_KEYS
+                text = " " + InputFormRef.GetIGNORE_KEYS(v);
             }
             else if (arg.Type == EventScript.ArgType.COUNTER)
             {//COUNTER
@@ -1445,6 +1457,18 @@ namespace FEBuilderGBA
                     , (ListBox)InputFormRef.FindObjectByForm<ListBox>
                         (InputFormRef.GetAllControls(f), "AddressList")
                     , src_object, false);
+            }
+            else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS
+                  || arg.Type == EventScript.ArgType.DISABLEWEAPONS
+                  || arg.Type == EventScript.ArgType.IGNORE_KEYS
+                )
+            {
+                UshortBitFlagForm f = (UshortBitFlagForm)InputFormRef.JumpForm<UshortBitFlagForm>();
+                f.JumpTo(arg.Type,value);
+                MakeInjectionApplyButtonCallback(f
+                    , (Button)InputFormRef.FindObjectByForm<Button>
+                        (InputFormRef.GetAllControls(f), "ApplyButton")
+                    , src_object);
             }
         }
 
@@ -2744,13 +2768,27 @@ namespace FEBuilderGBA
                     else if (arg.Type == EventScript.ArgType.RAM_UNIT_STATE)
                     {//RAM_UNIT_STATE
                         sb.Append(" ");
-                        string dummy;
-                        sb.Append(InputFormRef.GetRAM_UNIT_STATE(v, out dummy));
+                        sb.Append(InputFormRef.GetRAM_UNIT_STATE(v));
                     }
                     else if (arg.Type == EventScript.ArgType.MAPEMOTION)
                     {//MAPEMOTION
                         sb.Append(" ");
                         sb.Append(InputFormRef.GetMAPEMOTION(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.DISABLEOPTIONS)
+                    {//DISABLEOPTIONS
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetDISABLEOPTIONS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.DISABLEWEAPONS)
+                    {//DISABLEWEAPONS
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetDISABLEWEAPONS(v));
+                    }
+                    else if (arg.Type == EventScript.ArgType.IGNORE_KEYS)
+                    {//IGNORE_KEYS
+                        sb.Append(" ");
+                        sb.Append(InputFormRef.GetIGNORE_KEYS(v));
                     }
                     else if (arg.Type == EventScript.ArgType.COUNTER)
                     {//COUNTER

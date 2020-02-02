@@ -331,26 +331,18 @@ namespace FEBuilderGBA
                 R.ShowStopError("UPDATE_REGEXの項目がありません");
                 return ;
             }
-            string html = U.HttpGet(url);
 
-            Match m = RegexCache.Match(html, regex);
-            if (m.Groups.Count < 2)
-            {
-                R.ShowStopError("UPDATE_REGEXでマッチしたデータがありませんでした。\r\n{0}", html);
-                return ;
-            }
-            string match = m.Groups[1].ToString();
-            if (U.isURL(match))
-            {//直URL
-                url = match;
+            if (regex == "@DIRECT_URL")
+            {//直リン
             }
             else
             {
-                m = RegexCache.Match(html, regex);
+                string html = U.HttpGet(url);
+                Match m = RegexCache.Match(html, regex);
                 if (m.Groups.Count < 2)
                 {
-                    R.ShowStopError("UPDATE_REGEXでマッチしたデータをパースできませんでした。\r\n{0}", html);
-                    return ;
+                    R.ShowStopError("UPDATE_REGEXでマッチしたデータがありませんでした。\r\n{0}", html);
+                    return;
                 }
                 url = m.Groups[1].ToString();
             }
@@ -512,19 +504,28 @@ namespace FEBuilderGBA
                 }
                 return UPDATE_RESULT.ERROR;
             }
-            string html = U.HttpGet(url);
 
-            Match m = RegexCache.Match(html, regex);
-            if (m.Groups.Count < 2)
-            {
-                if (!isSlientMode)
-                {
-                    R.ShowStopError("CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}", html);
-                }
-                return UPDATE_RESULT.ERROR;
-            }
             string dateString;
-            string match = m.Groups[1].ToString();
+            string match;
+            if (regex == "@DIRECT_URL")
+            {
+                match = url;
+            }
+            else
+            {
+                string html = U.HttpGet(url);
+                Match m = RegexCache.Match(html, regex);
+                if (m.Groups.Count < 2)
+                {
+                    if (!isSlientMode)
+                    {
+                        R.ShowStopError("CHECK_REGEXでマッチしたデータがありませんでした。\r\n{0}", html);
+                    }
+                    return UPDATE_RESULT.ERROR;
+                }
+                match = m.Groups[1].ToString();
+            }
+
             if (U.isURL(match))
             {//直URL
                 WebResponse rsp = U.HttpHead(url);
@@ -540,7 +541,7 @@ namespace FEBuilderGBA
             }
             else
             {
-                dateString = m.Groups[1].ToString();
+                dateString = match;
             }
 
             DateTime datetime;
@@ -552,7 +553,13 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    datetime = DateTime.Parse(dateString);
+                    if (TryParseUnitTime(dateString, out datetime))
+                    {//unittmie
+                    }
+                    else
+                    {//通常の日付
+                        datetime = DateTime.Parse(dateString);
+                    }
                 }
             }
             catch(Exception )
@@ -572,6 +579,29 @@ namespace FEBuilderGBA
             }
             //更新する必要なし
             return UPDATE_RESULT.LATEST;
+        }
+        static bool TryParseUnitTime(string date,out DateTime retDateTime)
+        {
+            date = date.Trim();
+            if (!U.isNumString(date))
+            {
+                retDateTime = DateTime.Now;
+                return false;
+            }
+            if (date.Length >= 10 + 6)
+            {//ミリ秒まで含めた時刻
+                date = date.Substring(0, date.Length - 6);
+            }
+
+            uint dateuint = U.atoi(date);
+            if (dateuint < 1262271600)
+            {//2010/1/1 以前
+                retDateTime = DateTime.Now;
+                return false;
+            }
+            DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            retDateTime = UNIX_EPOCH.AddSeconds(dateuint).ToLocalTime();
+            return true;
         }
 
 

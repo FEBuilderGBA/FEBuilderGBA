@@ -1,0 +1,18 @@
+//特性1
+01=A button
+02=B button
+03=select button
+04=start button
+05=right D-pad button
+06=left D-pad button
+07=up D-pad button
+08=down D-pad button
+//特性2
+11=R button
+12=L button
+13=??
+14=??
+15=??
+16=??
+17=??
+18=??
