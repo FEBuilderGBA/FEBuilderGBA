@@ -115,7 +115,7 @@ namespace FEBuilderGBA
         string Filename = "";
         bool IsSlientMode = false;
 
-        static string GetUpdateInfo(string romfilename)
+        public static string GetUpdateInfo(string romfilename)
         {
             string filename = U.ChangeExtFilename(romfilename, ".updateinfo.txt");
             if (File.Exists(filename))

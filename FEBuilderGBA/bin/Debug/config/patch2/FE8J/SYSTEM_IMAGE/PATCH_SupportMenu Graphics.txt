@@ -1,4 +1,4 @@
-NAME=ƒTƒ|[ƒgƒƒjƒ…[‚Ì‰æ‘œ
+NAME=ã‚µãƒãƒ¼ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç”»åƒ
 NAME.en=SupportMenu Graphics
 NAME.zh=SupportMenu Graphics
 

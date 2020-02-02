@@ -37,7 +37,7 @@ namespace FEBuilderGBA
                     continue;
                 }
 
-                string updateinfo_filename = U.ChangeExtFilename(romfilename, ".updateinfo.txt");
+                string updateinfo_filename = ToolWorkSupportForm.GetUpdateInfo(romfilename);
                 if (!File.Exists(updateinfo_filename))
                 {
                     continue;
