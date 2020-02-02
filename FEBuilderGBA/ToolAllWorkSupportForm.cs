@@ -101,7 +101,7 @@ namespace FEBuilderGBA
             int x = PADDING;
             foreach (Work work in WorkList)
             {
-                if (x + (CELL_WIDTH / 2) >= this.Width)
+                if (x + (BUTTON_WIDTH) >= this.Width)
                 {
                     x = PADDING;
                     y += CELL_HEIGHT;

@@ -6806,6 +6806,10 @@ namespace FEBuilderGBA
             string[] dirs = System.IO.Directory.GetDirectories(sourceDirName);
             foreach (string dir in dirs)
             {
+                if (IsEmptyDirectory(dir))
+                {
+                    continue;
+                }
                 CopyDirectory(dir, destDirName + System.IO.Path.GetFileName(dir));
             }
         }
@@ -6821,6 +6825,21 @@ namespace FEBuilderGBA
                 sourceDirName = Path.Combine(sourceDirName, dirs[0]);
             }
             CopyDirectory(sourceDirName,destDirName);
+        }
+
+        public static bool IsEmptyDirectory(string sourceDirName)
+        {
+            if (! Directory.Exists(sourceDirName))
+            {
+                return false;
+            }
+            string[] files = System.IO.Directory.GetFiles(sourceDirName);
+            string[] dirs = System.IO.Directory.GetDirectories(sourceDirName);
+            if (files.Length <= 0 && dirs.Length <= 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
