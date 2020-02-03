@@ -97,6 +97,8 @@ namespace FEBuilderGBA
             Bitmap icon = ImageSystemIconForm.MusicIcon(12);
             U.MakeTransparent(icon);
 
+            bool isFirst = true;
+
             int y = PADDING;
             int x = PADDING;
             foreach (Work work in WorkList)
@@ -136,6 +138,13 @@ namespace FEBuilderGBA
                 l.Tag = work;
                 l.DoubleClick += ToolAllWorkSupportForm_ClickTitle;
                 Ctrl.Controls.Add(l);
+
+                if (isFirst)
+                {
+                    isFirst = false;
+                    b.Focus();
+                }
+
 
                 x += CELL_WIDTH;
             }

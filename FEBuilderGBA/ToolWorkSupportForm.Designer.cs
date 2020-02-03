@@ -82,7 +82,7 @@
             this.OpenButton.Location = new System.Drawing.Point(750, 539);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(105, 35);
-            this.OpenButton.TabIndex = 4;
+            this.OpenButton.TabIndex = 3;
             this.OpenButton.Text = "Open";
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
@@ -92,7 +92,7 @@
             this.ReloadButton.Location = new System.Drawing.Point(750, 495);
             this.ReloadButton.Name = "ReloadButton";
             this.ReloadButton.Size = new System.Drawing.Size(105, 35);
-            this.ReloadButton.TabIndex = 5;
+            this.ReloadButton.TabIndex = 2;
             this.ReloadButton.Text = "Reload";
             this.ReloadButton.UseVisualStyleBackColor = true;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
@@ -190,7 +190,7 @@
             this.SnowAllWorksButton.Location = new System.Drawing.Point(285, 441);
             this.SnowAllWorksButton.Name = "SnowAllWorksButton";
             this.SnowAllWorksButton.Size = new System.Drawing.Size(570, 48);
-            this.SnowAllWorksButton.TabIndex = 34;
+            this.SnowAllWorksButton.TabIndex = 1;
             this.SnowAllWorksButton.Text = "他の作品を表示する";
             this.SnowAllWorksButton.UseVisualStyleBackColor = true;
             this.SnowAllWorksButton.Click += new System.EventHandler(this.SnowAllWorksButton_Click);

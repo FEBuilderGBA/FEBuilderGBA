@@ -1,0 +1,23 @@
+NAME=フリーマップの地名ではなく章IDを利用するようにする
+INFO=フリーマップが設定されている章で、章IDの代わりに地名が表示される現象を回避します。
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix: Show ChapterID|ONN
+
+ONN:0x897B2=0x0 0x0 0x0 0x0
+OFF:0x897B2=0x33 0xF0 0x13 0xFC
+
+//Fixes the game considering some chapters postgame.
+ONN:0x897C4=0x0E 0x20 0x20 0x56
+OFF:0x897C4=0x33 0xF0 0x26 0xFC
+
+ONN:0x206948=0x00
+OFF:0x206948=0x04
+
+NAME.en=Fixes the world map chapter ID being loaded instead of the actual chapter ID
+NAME.zh=Fixes the world map chapter ID being loaded instead of the actual chapter ID
+INFO.en=This patch avoids the phenomenon that place names are displayed instead of chapter IDs in chapters with Skirmish.
+INFO.zh=This patch avoids the phenomenon that place names are displayed instead of chapter IDs in chapters with Worldmap Skirmish.
