@@ -1264,6 +1264,19 @@ namespace FEBuilderGBA
         //一文字変換
         public static uint ConvertMojiCharToUnitFast(string one, PatchUtil.PRIORITY_CODE priorityCode)
         {
+            if (one.Length <= 0)
+            {
+                return 0;
+            }
+            if (one[0] == '@')
+            {
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(one);
+
+                int nowi;
+                uint code = FETextEncode.at_code_to_binary(data, 0, out nowi);
+                return code;
+            }
+
             //特殊文字はないことにして速度アップを図る.
             byte[] moji = Program.SystemTextEncoder.Encode(one);
             if (priorityCode == PatchUtil.PRIORITY_CODE.UTF8)
