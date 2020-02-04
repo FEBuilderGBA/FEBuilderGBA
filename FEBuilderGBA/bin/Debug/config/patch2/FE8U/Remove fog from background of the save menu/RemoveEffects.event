@@ -1,0 +1,16 @@
+ALIGN 4
+BlankFog:
+//#incext Png2Dmp "A26380.png" --lz77
+#incbin "A26380.png.dmp"
+
+PUSH
+ORG 0x38418
+POIN BlankFog
+ORG 0xA8EC4
+POIN BlankFog
+ORG 0xAA424
+POIN BlankFog
+ORG 0xB814C
+POIN BlankFog
+
+POP

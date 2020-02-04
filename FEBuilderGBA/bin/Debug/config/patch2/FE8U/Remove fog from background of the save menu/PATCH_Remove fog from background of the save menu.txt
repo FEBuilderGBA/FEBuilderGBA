@@ -1,0 +1,12 @@
+NAME=セーブメニューの背景から霧を削除する
+NAME.en=Remove fog from background of the save menu
+INFO=セーブメニューの背景から、白い霧のエフェクトを削除します。
+
+TYPE=EA
+EA=RemoveEffects.event
+
+AUTHOR=pikmin
+PATCHED_IF:$FGREP4 A26380.png.dmp=0x10 0x20 0x08 0x00 0x3F 0x00 0x00 0xF0
+INFO.en=Remove the white fog effect from the save menu background.
+NAME.zh=从保存菜单背景中消除雾气
+INFO.zh=从保存菜单背景中删除白雾效果

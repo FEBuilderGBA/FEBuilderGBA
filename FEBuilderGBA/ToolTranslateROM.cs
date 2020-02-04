@@ -133,11 +133,11 @@ namespace FEBuilderGBA
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string line = lines[i];
-                    if (U.IsComment(line) || U.OtherLangLine(line))
+                    if (U.IsCommentSlashOnly(line) || U.OtherLangLine(line))
                     {
                         continue;
                     }
-                    line = U.ClipComment(line);
+                    line = U.ClipComment(line, "\t{");
                     if (line.Length <= 0)
                     {
                         continue;

@@ -1268,7 +1268,7 @@ namespace FEBuilderGBA
             {
                 return 0;
             }
-            if (one[0] == '@')
+            if (one.Length >= 3 && one[0] == '@')
             {
                 byte[] data = System.Text.Encoding.ASCII.GetBytes(one);
 
@@ -2756,6 +2756,22 @@ namespace FEBuilderGBA
             return false;
         }
 
+        public static bool IsCommentSlashOnly(string line)
+        {
+            if (line.Length < 1)
+            {
+                return true;
+            }
+            if (line.Length >= 2)
+            {
+                if (line[0] == '/' && line[1] == '/')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         [MethodImpl(256)]
         public static bool OtherLangLine(string line)
         {
@@ -2833,7 +2849,7 @@ namespace FEBuilderGBA
             }
             return str;
         }
-        public static string ClipComment(string str,string comment_mark)
+        public static string ClipComment(string str, string comment_mark)
         {
             int term = str.IndexOf("\t{");
             if (term >= 0)

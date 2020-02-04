@@ -35,8 +35,8 @@
 @0013	文字列を早く表示する[FastPrint]	{SPEED}
 @0014	口パクを早くする[CloseSpeechFast]	{CHOOSE}
 @0015	口パクを遅くする。吹き出しを消す効果もあり[CloseSpeechSlow]	{CHOOSE}
-@0016	口の動きのオンフオ[ToggleMouthMove]	{TOGGLE}
-@0017	笑顔のオンフオ[ToggleSmile]	{TOGGLE}
+@0016	口の動きのオンオフ[ToggleMouthMove]	{TOGGLE}
+@0017	笑顔のオンオフ[ToggleSmile]	{TOGGLE}
 @0018	選択子Yes[Yes]	{CHOOSE}
 @0019	選択子No[No]	{CHOOSE}
 @001A	店で買う売るの選択子[Buy/Sell]	{CHOOSE}
