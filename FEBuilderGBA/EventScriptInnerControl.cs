@@ -954,9 +954,17 @@ namespace FEBuilderGBA
             else if (arg.Type == EventScript.ArgType.MAPCHAPTER)
             {
                 text = MapSettingForm.GetMapName(v);
-                if (this.ActiveControl == sender)
+                if (isOrderOfHuman)
                 {
                     PopupDialog_MAP((NumericUpDown)sender, v);
+                }
+            }
+            else if (arg.Type == EventScript.ArgType.MAP_CHANGE)
+            {
+                if (isOrderOfHuman)
+                {
+                    uint mapid = ScanMAPID();
+                    PopupDialog_MAPAndChange((NumericUpDown)sender, mapid , v);
                 }
             }
             else if (arg.Type == EventScript.ArgType.MAPX || arg.Type == EventScript.ArgType.MAPY
@@ -1612,6 +1620,11 @@ namespace FEBuilderGBA
             {
                 PopupDialog_MAP((NumericUpDown)sender, value);
             }
+            else if (arg.Type == EventScript.ArgType.MAP_CHANGE)
+            {
+                uint mapid = ScanMAPID();
+                PopupDialog_MAPAndChange((NumericUpDown)sender, mapid, value);
+            }
             else if (arg.Type == EventScript.ArgType.MUSIC || arg.Type == EventScript.ArgType.SOUND)
             {
                 PopupDialog_Music((NumericUpDown)sender, value);
@@ -2017,13 +2030,20 @@ namespace FEBuilderGBA
             AjustPopup(sender);
         }
 
+        void PopupDialog_MAPAndChange(NumericUpDown sender, uint value, uint changeid)
+        {
+            Popup.Visible = true; //デザイナーのバグがあり、コンストラクタで初期化できないので、 Load イベントで初期化するため、ここで表示する.
+            Popup.LoadMap(value);
+            Popup.MAP.SetMapChange(changeid);
+            AjustPopup(sender);
+        }
         void PopupDialog_MAP(NumericUpDown sender, uint value)
         {
             Popup.Visible = true; //デザイナーのバグがあり、コンストラクタで初期化できないので、 Load イベントで初期化するため、ここで表示する.
             Popup.LoadMap(value);
             AjustPopup(sender);
         }
-        void PopupDialog_MAP(NumericUpDown sender, uint value,int x,int y)
+        void PopupDialog_MAP(NumericUpDown sender, uint value, int x, int y)
         {
             Popup.Visible = true; //デザイナーのバグがあり、コンストラクタで初期化できないので、 Load イベントで初期化するため、ここで表示する.
             Popup.LoadMap(value);

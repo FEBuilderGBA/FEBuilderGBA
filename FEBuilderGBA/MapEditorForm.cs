@@ -195,7 +195,7 @@ namespace FEBuilderGBA
                 }
                 else
                 {
-                    name = R._("マップ変化ID:") + this.ChangeList[i].no;
+                    name = R._("マップ変化ID:") + U.To0xHexString( this.ChangeList[i].no);
                 }
                 MapChange.Items.Add(name);
             }

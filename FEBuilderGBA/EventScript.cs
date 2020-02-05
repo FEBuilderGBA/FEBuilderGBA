@@ -104,6 +104,7 @@ namespace FEBuilderGBA
             , DISABLEOPTIONS    //メニューを無効にするビットフラグ FE8
             , DISABLEWEAPONS    //アイテムメニューを無効にするビットフラグ FE8
             , IGNORE_KEYS       //キー操作を無効にするビットフラグ FE8
+            , MAP_CHANGE
         };
 
         public class Arg
@@ -703,6 +704,9 @@ namespace FEBuilderGBA
                  break;
              case "IGNORE_KEYS":
                  type = ArgType.IGNORE_KEYS;
+                 break;
+             case "MAP_CHANGE":
+                 type = ArgType.MAP_CHANGE;
                  break;
              case "RAM_UNIT_PARAM":
                  type = ArgType.RAM_UNIT_PARAM;

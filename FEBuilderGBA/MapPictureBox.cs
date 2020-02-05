@@ -126,6 +126,10 @@ namespace FEBuilderGBA
             //マップ変化を変える.
             U.ForceUpdate(this.ChangeComboBox, 0);
         }
+        public void SetMapChange(uint mapChangeID)
+        {
+            U.SelectedIndexSafety(ChangeComboBox, mapChangeID + 1);
+        }
 
         void ReloadMapchangeList(uint mapid)
         {

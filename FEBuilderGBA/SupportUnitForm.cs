@@ -429,6 +429,15 @@ namespace FEBuilderGBA
             string text = this.AddressList.Text;
             uint uid = U.atoh(text);
             X_SRC_UNIT_VALUE.Value = uid;
+
+            SupportUnitForm_UnitsCheck(B0, L_0_UNIT, B7, B14);
+            SupportUnitForm_UnitsCheck(B1, L_1_UNIT, B8, B15);
+            SupportUnitForm_UnitsCheck(B2, L_2_UNIT, B9, B16);
+            SupportUnitForm_UnitsCheck(B3, L_3_UNIT, B10, B17);
+            SupportUnitForm_UnitsCheck(B4, L_4_UNIT, B11, B18);
+            SupportUnitForm_UnitsCheck(B5, L_5_UNIT, B12, B19);
+            SupportUnitForm_UnitsCheck(B6, L_6_UNIT, B13, B20);
+        
         }
 
         private void X_SRC_UNIT_VALUE_ValueChanged(object sender, EventArgs e)
@@ -458,48 +467,94 @@ namespace FEBuilderGBA
         }
         private void SupportUnitForm_UnitsCheck_B0(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B0, L_0_UNIT);
+            SupportUnitForm_UnitsCheck(B0, L_0_UNIT, B7, B14);
         }
         private void SupportUnitForm_UnitsCheck_B1(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B1, L_1_UNIT);
+            SupportUnitForm_UnitsCheck(B1, L_1_UNIT, B8, B15);
         }
         private void SupportUnitForm_UnitsCheck_B2(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B2, L_2_UNIT);
+            SupportUnitForm_UnitsCheck(B2, L_2_UNIT, B9, B16);
         }
         private void SupportUnitForm_UnitsCheck_B3(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B3, L_3_UNIT);
+            SupportUnitForm_UnitsCheck(B3, L_3_UNIT, B10, B17);
         }
         private void SupportUnitForm_UnitsCheck_B4(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B4, L_4_UNIT);
+            SupportUnitForm_UnitsCheck(B4, L_4_UNIT, B11, B18);
         }
         private void SupportUnitForm_UnitsCheck_B5(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B5, L_5_UNIT);
+            SupportUnitForm_UnitsCheck(B5, L_5_UNIT, B12, B19);
         }
         private void SupportUnitForm_UnitsCheck_B6(object sender, EventArgs e)
         {
-            SupportUnitForm_UnitsCheck(B6, L_6_UNIT);
+            SupportUnitForm_UnitsCheck(B6, L_6_UNIT, B13, B20);
         }
 
-        private void SupportUnitForm_UnitsCheck(NumericUpDown nud, TextBoxEx textBox)
+        private void SupportUnitForm_UnitsCheck(NumericUpDown nud, TextBoxEx textBox, NumericUpDown init_nud, NumericUpDown add_nud)
+        {
+            if (this.InputFormRef != null && this.InputFormRef.IsUpdateLock)
+            {
+                return;
+            }
+
+            //0x45を超えるユニットは仲間にできない
+            if (!SupportUnitForm_UnitsCheck45(nud, textBox))
+            {
+                return;
+            }
+
+            //相手が自分への支援を持っているかどうか.
+            if (!SupportUnitForm_CheckBoth(nud, textBox,init_nud, add_nud))
+            {
+                return;
+            }
+
+            textBox.ErrorMessage = "";
+        }
+
+        private bool SupportUnitForm_UnitsCheck45(NumericUpDown nud, TextBoxEx textBox)
         {
             uint srcID = (uint)X_SRC_UNIT_VALUE.Value;
             if (srcID > 0x45)
             {
-                textBox.ErrorMessage = "";
-                return;
+                return true;
             }
             uint unitID = (uint)nud.Value;
             if (unitID <= 0x45)
             {
-                textBox.ErrorMessage = "";
-                return;
+                return true;
             }
             textBox.ErrorMessage = R._("仲間にできるユニットは 0x45までのユニットです。\r\nそれ以降は戦績データが記録されません。\r\n");
+
+            return false;
+        }
+        private bool SupportUnitForm_CheckBoth(NumericUpDown nud, TextBoxEx textBox, NumericUpDown init_nud, NumericUpDown add_nud)
+        {
+            uint target_uid = (uint)nud.Value;
+            if (target_uid == 0)
+            {
+                return true;
+            }
+
+            uint init_value = (uint)init_nud.Value;
+            uint add_value = (uint)add_nud.Value;
+
+            List<FELint.ErrorSt> errors = new List<FELint.ErrorSt>();
+            uint support_addr = (uint)Address.Value;
+            uint id = (uint)AddressList.SelectedIndex;
+            uint uid = (uint)X_SRC_UNIT_VALUE.Value;
+            MakeCheckError_SelfCheck(errors, support_addr, id, uid, target_uid, init_value, add_value);
+
+            if (errors.Count > 0)
+            {
+                textBox.ErrorMessage = errors[0].ErrorMessage;
+                return false;
+            }
+            return true;
         }
 
         private void B21_ValueChanged(object sender, EventArgs e)
