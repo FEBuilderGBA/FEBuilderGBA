@@ -118,7 +118,7 @@ namespace FEBuilderGBA
 
         private void ToolUseFlagButton_Click(object sender, EventArgs e)
         {
-            ToolUseFlagForm f = (ToolUseFlagForm)InputFormRef.JumpFormLow<ToolUseFlagForm>();
+            ToolUseFlagForm f = (ToolUseFlagForm)InputFormRef.JumpForm<ToolUseFlagForm>();
             f.JumpToMAPID(this.MapID);
         }
 
