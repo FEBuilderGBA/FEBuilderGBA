@@ -439,7 +439,7 @@ namespace FEBuilderGBA
             }
             bool checkOAM(byte[] oam, uint index, out string out_errorMessage)
             {
-                if (oam.Length < index + 12)
+                if (oam.Length < index || oam.Length < index + 12)
                 {//謎終端 データ不足 壊れているデータ?
                     out_errorMessage = R.Error("OAMが壊れています。データ長が範囲外を参照しています。 OAMサイズ:{0} 参照:{1}", oam.Length, index);
                     return false;

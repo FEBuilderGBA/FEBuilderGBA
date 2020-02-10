@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.L_3_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_3_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_2_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_1_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_1_UNIT = new FEBuilderGBA.TextBoxEx();
+            this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
+            this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
             this.B3 = new System.Windows.Forms.NumericUpDown();
             this.J_3_UNIT = new System.Windows.Forms.Label();
             this.B2 = new System.Windows.Forms.NumericUpDown();
@@ -43,25 +51,17 @@
             this.ReadStartAddress = new System.Windows.Forms.NumericUpDown();
             this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.L_0_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_0_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_1_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_1_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_3_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_3_UNIT = new FEBuilderGBA.TextBoxEx();
-            this.L_2_UNITICON = new FEBuilderGBA.InterpolatedPictureBox();
-            this.L_2_UNIT = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_UNITICON)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITICON)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +88,90 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(574, 173);
             this.panel1.TabIndex = 155;
+            // 
+            // L_3_UNITICON
+            // 
+            this.L_3_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_3_UNITICON.Location = new System.Drawing.Point(374, 95);
+            this.L_3_UNITICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_3_UNITICON.Name = "L_3_UNITICON";
+            this.L_3_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_3_UNITICON.TabIndex = 110;
+            this.L_3_UNITICON.TabStop = false;
+            // 
+            // L_3_UNIT
+            // 
+            this.L_3_UNIT.ErrorMessage = "";
+            this.L_3_UNIT.Location = new System.Drawing.Point(223, 100);
+            this.L_3_UNIT.Margin = new System.Windows.Forms.Padding(2);
+            this.L_3_UNIT.Name = "L_3_UNIT";
+            this.L_3_UNIT.Placeholder = "";
+            this.L_3_UNIT.ReadOnly = true;
+            this.L_3_UNIT.Size = new System.Drawing.Size(147, 25);
+            this.L_3_UNIT.TabIndex = 109;
+            // 
+            // L_2_UNITICON
+            // 
+            this.L_2_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_2_UNITICON.Location = new System.Drawing.Point(374, 37);
+            this.L_2_UNITICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_UNITICON.Name = "L_2_UNITICON";
+            this.L_2_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_2_UNITICON.TabIndex = 108;
+            this.L_2_UNITICON.TabStop = false;
+            // 
+            // L_2_UNIT
+            // 
+            this.L_2_UNIT.ErrorMessage = "";
+            this.L_2_UNIT.Location = new System.Drawing.Point(223, 42);
+            this.L_2_UNIT.Margin = new System.Windows.Forms.Padding(2);
+            this.L_2_UNIT.Name = "L_2_UNIT";
+            this.L_2_UNIT.Placeholder = "";
+            this.L_2_UNIT.ReadOnly = true;
+            this.L_2_UNIT.Size = new System.Drawing.Size(147, 25);
+            this.L_2_UNIT.TabIndex = 107;
+            // 
+            // L_1_UNITICON
+            // 
+            this.L_1_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_1_UNITICON.Location = new System.Drawing.Point(374, 66);
+            this.L_1_UNITICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_1_UNITICON.Name = "L_1_UNITICON";
+            this.L_1_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_1_UNITICON.TabIndex = 106;
+            this.L_1_UNITICON.TabStop = false;
+            // 
+            // L_1_UNIT
+            // 
+            this.L_1_UNIT.ErrorMessage = "";
+            this.L_1_UNIT.Location = new System.Drawing.Point(223, 71);
+            this.L_1_UNIT.Margin = new System.Windows.Forms.Padding(2);
+            this.L_1_UNIT.Name = "L_1_UNIT";
+            this.L_1_UNIT.Placeholder = "";
+            this.L_1_UNIT.ReadOnly = true;
+            this.L_1_UNIT.Size = new System.Drawing.Size(147, 25);
+            this.L_1_UNIT.TabIndex = 105;
+            // 
+            // L_0_UNITICON
+            // 
+            this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.L_0_UNITICON.Location = new System.Drawing.Point(374, 8);
+            this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_UNITICON.Name = "L_0_UNITICON";
+            this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
+            this.L_0_UNITICON.TabIndex = 104;
+            this.L_0_UNITICON.TabStop = false;
+            // 
+            // L_0_UNIT
+            // 
+            this.L_0_UNIT.ErrorMessage = "";
+            this.L_0_UNIT.Location = new System.Drawing.Point(223, 13);
+            this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(2);
+            this.L_0_UNIT.Name = "L_0_UNIT";
+            this.L_0_UNIT.Placeholder = "";
+            this.L_0_UNIT.ReadOnly = true;
+            this.L_0_UNIT.Size = new System.Drawing.Size(147, 25);
+            this.L_0_UNIT.TabIndex = 103;
             // 
             // B3
             // 
@@ -201,6 +285,7 @@
             this.AllWriteButton.TabIndex = 1;
             this.AllWriteButton.Text = "書き込み";
             this.AllWriteButton.UseVisualStyleBackColor = true;
+            this.AllWriteButton.Click += new System.EventHandler(this.AllWriteButton_Click);
             // 
             // label8
             // 
@@ -247,90 +332,6 @@
             this.SelectAddress.Size = new System.Drawing.Size(150, 25);
             this.SelectAddress.TabIndex = 57;
             // 
-            // L_0_UNITICON
-            // 
-            this.L_0_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_0_UNITICON.Location = new System.Drawing.Point(374, 8);
-            this.L_0_UNITICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_UNITICON.Name = "L_0_UNITICON";
-            this.L_0_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_0_UNITICON.TabIndex = 104;
-            this.L_0_UNITICON.TabStop = false;
-            // 
-            // L_0_UNIT
-            // 
-            this.L_0_UNIT.ErrorMessage = "";
-            this.L_0_UNIT.Location = new System.Drawing.Point(223, 13);
-            this.L_0_UNIT.Margin = new System.Windows.Forms.Padding(2);
-            this.L_0_UNIT.Name = "L_0_UNIT";
-            this.L_0_UNIT.Placeholder = "";
-            this.L_0_UNIT.ReadOnly = true;
-            this.L_0_UNIT.Size = new System.Drawing.Size(147, 25);
-            this.L_0_UNIT.TabIndex = 103;
-            // 
-            // L_1_UNITICON
-            // 
-            this.L_1_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_1_UNITICON.Location = new System.Drawing.Point(374, 66);
-            this.L_1_UNITICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_1_UNITICON.Name = "L_1_UNITICON";
-            this.L_1_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_1_UNITICON.TabIndex = 106;
-            this.L_1_UNITICON.TabStop = false;
-            // 
-            // L_1_UNIT
-            // 
-            this.L_1_UNIT.ErrorMessage = "";
-            this.L_1_UNIT.Location = new System.Drawing.Point(223, 71);
-            this.L_1_UNIT.Margin = new System.Windows.Forms.Padding(2);
-            this.L_1_UNIT.Name = "L_1_UNIT";
-            this.L_1_UNIT.Placeholder = "";
-            this.L_1_UNIT.ReadOnly = true;
-            this.L_1_UNIT.Size = new System.Drawing.Size(147, 25);
-            this.L_1_UNIT.TabIndex = 105;
-            // 
-            // L_3_UNITICON
-            // 
-            this.L_3_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_3_UNITICON.Location = new System.Drawing.Point(374, 95);
-            this.L_3_UNITICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_3_UNITICON.Name = "L_3_UNITICON";
-            this.L_3_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_3_UNITICON.TabIndex = 110;
-            this.L_3_UNITICON.TabStop = false;
-            // 
-            // L_3_UNIT
-            // 
-            this.L_3_UNIT.ErrorMessage = "";
-            this.L_3_UNIT.Location = new System.Drawing.Point(223, 100);
-            this.L_3_UNIT.Margin = new System.Windows.Forms.Padding(2);
-            this.L_3_UNIT.Name = "L_3_UNIT";
-            this.L_3_UNIT.Placeholder = "";
-            this.L_3_UNIT.ReadOnly = true;
-            this.L_3_UNIT.Size = new System.Drawing.Size(147, 25);
-            this.L_3_UNIT.TabIndex = 109;
-            // 
-            // L_2_UNITICON
-            // 
-            this.L_2_UNITICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.L_2_UNITICON.Location = new System.Drawing.Point(374, 37);
-            this.L_2_UNITICON.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_UNITICON.Name = "L_2_UNITICON";
-            this.L_2_UNITICON.Size = new System.Drawing.Size(32, 32);
-            this.L_2_UNITICON.TabIndex = 108;
-            this.L_2_UNITICON.TabStop = false;
-            // 
-            // L_2_UNIT
-            // 
-            this.L_2_UNIT.ErrorMessage = "";
-            this.L_2_UNIT.Location = new System.Drawing.Point(223, 42);
-            this.L_2_UNIT.Margin = new System.Windows.Forms.Padding(2);
-            this.L_2_UNIT.Name = "L_2_UNIT";
-            this.L_2_UNIT.Placeholder = "";
-            this.L_2_UNIT.ReadOnly = true;
-            this.L_2_UNIT.Size = new System.Drawing.Size(147, 25);
-            this.L_2_UNIT.TabIndex = 107;
-            // 
             // AIASMUnit4Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -344,16 +345,16 @@
             this.Load += new System.EventHandler(this.AICoordinateForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_1_UNITICON)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B0)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_0_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_1_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_3_UNITICON)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.L_2_UNITICON)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -140,6 +140,11 @@ namespace FEBuilderGBA
 
                 string orignal_romfile = MainFormUtil.FindOrignalROMByCRC32(dir, srcCRC32);
                 this.OrignalFilename.Text = orignal_romfile;
+
+            }
+            if (File.Exists(this.OrignalFilename.Text))
+            {
+                ApplyUPSPatchButton.PerformClick();
             }
         }
     }

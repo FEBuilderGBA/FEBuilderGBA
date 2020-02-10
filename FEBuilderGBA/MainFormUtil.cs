@@ -530,6 +530,8 @@ namespace FEBuilderGBA
                 {
                     Program.UpdateWatcher.RegistOtherProcess(p, tempfilename);
                     AutoConnectEmulator(run_name);
+
+                    Program.Undo.SetF5();
                 }
 
                 return p;

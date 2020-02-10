@@ -44,6 +44,8 @@ namespace FEBuilderGBA
             public String name { get; internal set; }
             public List<UndoPostion> list { get; internal set; }
             public uint filesize { get; internal set; }
+            public bool is_f5test { get; internal set; }
+
         };
         public List<UndoData> UndoBuffer { get; private set; }
         public int Postion { get; private set; } //UndoBufferの位置 通常 終端を指す.
@@ -75,7 +77,7 @@ namespace FEBuilderGBA
             ud.name = name;
             ud.list = new List<UndoPostion>();
             ud.filesize = (uint)Program.ROM.Data.Length;
-
+            ud.is_f5test = false;
             return ud;
         }
         void DumpLog(UndoData ud)
@@ -278,8 +280,16 @@ namespace FEBuilderGBA
             }
             else
             {
-                name = UndoBuffer[pos].time.ToString()
-                   + " " + UndoBuffer[pos].name;
+                UndoData ud = UndoBuffer[pos];
+                StringBuilder sb = new StringBuilder();
+                sb.Append(ud.time.ToString());
+                sb.Append(" ");
+                if (ud.is_f5test)
+                {
+                    sb.Append("[F5]");
+                }
+                sb.Append(ud.name);
+                name = sb.ToString();
             }
 
             if (showAllowMark)
@@ -300,6 +310,20 @@ namespace FEBuilderGBA
                 return new DateTime(1970,1,1);
             }
             return this.UndoBuffer[count - 1].time;
+        }
+
+        //現在の変更履歴でエミュレータテストが行われたことを記録する
+        public void SetF5()
+        {
+            if (this.Postion == 0)
+            {//何も変更していないので記録しない.
+                return;
+            }
+            if (this.UndoBuffer.Count < this.Postion - 1)
+            {//ロールバックしている状態なので記録しない.
+                return;
+            }
+            this.UndoBuffer[this.Postion - 1].is_f5test = true;
         }
     }
 }

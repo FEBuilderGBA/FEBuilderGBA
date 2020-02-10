@@ -13,12 +13,12 @@ AUTHOR=Leonarth
 INFO=直前戦闘で、相手を倒したユニットIDを取得し、SlotCに返します。\r\n例えば、Seth(UnitID:0x02)がO'Neill(UnitID:0x68)を倒した場合は、0x02が返されます。
 EVENTSCRIPT:1=400D0000{$L1:ASMC_GetKillerUnitID.dmp}	相手を倒したユニットIDの取得	@STOREC	{COND}
 
-NAME.en=Add Event: GetKillerunitID
+NAME.en=Add Event: GetKillerUnitID
 INFO.en=Obtains the unit ID that defeated the opponent in the last battle and returns it to SlotC.\r\nFor example, if Seth (UnitID: 0x02) defeats O'Neill (UnitID: 0x68), 0x02 will be returned.
 
 EVENTSCRIPT:1.en=400D0000{$L1:ASMC_GetKillerUnitID.dmp}	GetKillerUnitID	@STOREC	{COND}
 
-NAME.zh=Add Event: GetKillerunitID
+NAME.zh=Add Event: GetKillerUnitID
 INFO.zh=Obtains the unit ID that defeated the opponent in the last battle and returns it to SlotC.\r\nFor example, if Seth (UnitID: 0x02) defeats O'Neill (UnitID: 0x68), 0x02 will be returned.
 
 EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_GetKillerUnitID.dmp}	GetKillerUnitID	@STOREC	{COND}
