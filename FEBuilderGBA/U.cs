@@ -2001,6 +2001,17 @@ namespace FEBuilderGBA
         {
             return isPointer(a);
         }
+        public static uint ConvertPointer(uint addr , bool isASM)
+        {
+            if (isASM)
+            {
+                return addr | 1;
+            }
+            else
+            {
+                return DisassemblerTrumb.ProgramAddrToPlain(addr);
+            }
+        }
 
         [MethodImpl(256)]
         public static bool isPointerASM(uint a)

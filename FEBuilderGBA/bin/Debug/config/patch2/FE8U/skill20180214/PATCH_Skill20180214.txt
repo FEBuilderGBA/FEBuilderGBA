@@ -539,7 +539,7 @@ EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 EXPORT:1=skillGetter.dmp	Skill_Getter
 
 DEPRECATED=1
-UPDATE_PATCH=..\skill20191022\PATCH_Skill20191022.txt
+UPDATE_PATCH=..\skill20200211\PATCH_Skill20200211.txt
 UPDATE_METHOD=SKILLSYSTEM
 UPDATE_UNINSTALL:1=..\freerange\PATCH_freerange.txt
 UPDATE_UNINSTALL:2=..\freerange_RangeFix\PATCH_freerange.txt
@@ -547,8 +547,8 @@ UPDATE_UNINSTALL:3=..\FE8-Staff Range Fix\PATCH_Staff Range Fix.txt
 UPDATE_UNINSTALL:4=..\FE8-Capture\PATCH_FE8-Capture.txt
 UPDATE_UNINSTALL:5=..\autosave\PATCH_autosave.txt
 UPDATE_UNINSTALL:6=..\display-all-weapon-ranks-your-character-has\PATCH_display-all-weapon-ranks-your-character-has.txt
+UPDATE_UNINSTALL:7=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
 UPDATE_DEPENDS:1=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
-UPDATE_DEPENDS:2=..\ExpandedModularSave\PATCH_ExModularSave.txt
-UPDATE_DEPENDS:3=..\class_save_fix\PATCH_class_save_fix.txt
-UPDATE_DEPENDS:4=..\Class expansion\PATCH_class_save_fix.txt
-UPDATE_DEPENDS:5=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
+UPDATE_DEPENDS:2=..\class_save_fix\PATCH_class_save_fix.txt
+UPDATE_DEPENDS:3=..\Class expansion\PATCH_class_save_fix.txt
+

@@ -1,0 +1,15 @@
+NAME=Attribute Icon Coord Skillsystems Version
+NAME.en=Attribute Icon Coord Skillsystems Version
+NAME.zh=Attribute Icon Coord Skillsystems Version
+
+IF:$FGREP4 mss_leftstatscreen.dmp=0xF0 0xB5 0x47 0x46
+INFO=属性アイコンを、名前の左側に表示するか、逆に右側に表示するかを設定できます。
+INFO.en=You can set whether the attribute icon is displayed on the left side of the name or on the right side.
+INFO.zh=You can set whether the attribute icon is displayed on the left side of the name or on the right side.
+
+//STRUCTパッチとして実装します
+TYPE=ADDR
+TAG=#ENGINE
+
+ADDRESS=$FGREP4ENDA+4 mss_leftstatscreen.dmp
+COMBO=Left|0x80 0x02 0x00 0x00|Left+1|0x82 0x02 0x00 0x00|Right-1|0x92 0x02 0x00 0x00|Right|0x94 0x02 0x00 0x00

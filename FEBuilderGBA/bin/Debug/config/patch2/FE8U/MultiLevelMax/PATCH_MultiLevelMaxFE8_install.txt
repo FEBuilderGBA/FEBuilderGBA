@@ -1,6 +1,6 @@
-NAME=レベル上限値をクラスとユニット別に変更する(Install)
-NAME.en=Character/Class: Level Cap Editor Installer
-NAME.zh=将等级上限变更为职业和人物(Install)
+NAME=(OLD)レベル上限値をクラスとユニット別に変更する(Install)
+NAME.en=(OLD)Character/Class: Level Cap Editor Installer
+NAME.zh=(OLD)将等级上限变更为职业和人物(Install)
 
 TYPE=EA
 TAG=#ENGINE

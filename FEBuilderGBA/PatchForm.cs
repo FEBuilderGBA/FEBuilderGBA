@@ -3109,13 +3109,13 @@ namespace FEBuilderGBA
             {
                 writebutton.Enabled = false;
             }
-            if (isTextCommand)
-            {
-                if (!PatchUtil.SearchAntiHuffmanPatch())
-                {
-                    throw new PatchException(R.Error("このパッチは、テキストを変更するので、インストールする前に AntiHuffmanパッチが必要です。"));
-                }
-            }
+//            if (isTextCommand)
+//            {
+//                if (!PatchUtil.SearchAntiHuffmanPatch())
+//                {
+//                    throw new PatchException(R.Error("このパッチは、テキストを変更するので、インストールする前に AntiHuffmanパッチが必要です。"));
+//                }
+//            }
 
             writebutton.Click += (sender, e) =>
             {
@@ -4847,12 +4847,8 @@ namespace FEBuilderGBA
 
         string MakePatchedMessage(PatchSt patch)
         {
-            string mapping = "";
             List<BinMapping> map = TracePatchedMapping(patch);
-            for (int i = 0; i < map.Count; i++ )
-            {
-                mapping += map[i].key + "=" + map[i].filename + " -----> " + U.To0xHexString(map[i].addr) + "\r\n";
-            }
+            string basedir = Path.GetDirectoryName(patch.PatchFileName);
 
             string patched_message = "";
             foreach (var pair in patch.Param)
@@ -4869,6 +4865,44 @@ namespace FEBuilderGBA
             }
             patched_message = RepaceStringForBinMAP(patched_message, map);
 
+            string export = "";
+            foreach (var pair in patch.Param)
+            {
+                if (pair.Key.IndexOf("EXPORT") != 0)
+                {
+                    continue;
+                }
+                if (export.Length <= 0)
+                {
+                    export += "\r\n\r\n======== EXPORT ==============";
+                }
+
+                string exportLine = pair.Value;
+                string[] sp = exportLine.Split('\t');
+                if (sp.Length < 2)
+                {
+                    continue;
+                }
+
+                string scriptbin = sp[0];
+                string EAName = sp[1];
+                if (scriptbin == "")
+                {
+                    continue;
+                }
+
+                string filename = Path.Combine(basedir, scriptbin);
+                uint addr = GrepFileMapping(filename);
+
+                export += "\r\n" + exportLine + "=" + U.ToHexString8(addr);
+            }
+            patched_message += export;
+
+            string mapping = "";
+            for (int i = 0; i < map.Count; i++)
+            {
+                mapping += map[i].key + "=" + map[i].filename + " -----> " + U.To0xHexString(map[i].addr) + "\r\n";
+            }
             if (mapping.Length > 0)
             {//マッピングを取得できるのであれば表示 BINのみ
                 patched_message += "\r\n\r\n======== MAPPING ==============\r\n" + mapping;
@@ -6267,17 +6301,18 @@ namespace FEBuilderGBA
 
                     string scriptbin = sp[0];
                     string EAName = sp[1];
-                    if (scriptbin != "")
+                    if (scriptbin == "")
                     {
-                        string filename = Path.Combine(basedir, scriptbin);
-
-                        uint addr = GrepFileMapping(filename);
-                        if (addr == U.NOT_FOUND)
-                        {
-                            continue;
-                        }
-                        MappingConvert.AddList(mapping, "EXPORT_" + scriptbin, addr);
+                        continue;
                     }
+                    string filename = Path.Combine(basedir, scriptbin);
+
+                    uint addr = GrepFileMapping(filename);
+                    if (addr == U.NOT_FOUND)
+                    {
+                        continue;
+                    }
+                    MappingConvert.AddList(mapping, "EXPORT_" + EAName, addr);
                 }
             }
         }
@@ -7318,24 +7353,59 @@ namespace FEBuilderGBA
                 this.OldValueList = oldValueList;
                 this.IsASM = isASM;
             }
-            static bool CheckASM(string filename)
+            static bool CheckASMC(string filename)
             {
-                return filename.IndexOf("ASMC_") >= 0 || filename.IndexOf("ASM_") >= 0;
+                if (filename.IndexOf("ASM_") >= 0)
+                {
+                    return true;
+                }
+                if (filename.IndexOf("ASMC_") >= 0)
+                {
+                    return true;
+                }
+                return false;
             }
             public static void AddList(List<MappingConvert> list, string filename, uint oldaddr)
             {
-                bool isASM = CheckASM(filename);
-                if (isASM)
-                {
-                    oldaddr = oldaddr | 1;
+                if (Contains(list, filename))
+                {//既に知ってる
+                    return;
                 }
-                else
-                {
-                    oldaddr = DisassemblerTrumb.ProgramAddrToPlain(oldaddr);
+                List<uint> movepointerlist;
+                oldaddr = U.toOffset(oldaddr);
+                bool isASMC = CheckASMC(filename);
+                uint searchaddr = oldaddr;
+
+                if (isASMC)
+                {//ASMC呼び出しの場合は必ずASMポインタ
+                    searchaddr = U.ConvertPointer(searchaddr, isASM: true);
+                    movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
+                    list.Add(new MappingConvert(filename, searchaddr, true, movepointerlist));
+                    return;
                 }
 
-                List<uint> movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
-                list.Add(new MappingConvert(filename , U.toOffset(oldaddr),isASM , movepointerlist) );
+                bool isASM = U.IsValueOdd(searchaddr);
+                movepointerlist = MoveToFreeSapceForm.SearchPointer(searchaddr, isSilent: true);
+                if (movepointerlist.Count > 0)
+                {
+                    list.Add(new MappingConvert(filename, searchaddr, isASM, movepointerlist));
+                    return;
+                }
+
+                isASM = !isASM;
+                searchaddr = U.ConvertPointer(searchaddr, isASM);
+
+                movepointerlist = MoveToFreeSapceForm.SearchPointer(oldaddr, isSilent: true);
+                if (movepointerlist.Count > 0)
+                {
+                    list.Add(new MappingConvert(filename, oldaddr, isASM, movepointerlist));
+                    return;
+                }
+
+                //見つからない.
+                movepointerlist = new List<uint>();
+                isASM = U.IsValueOdd(searchaddr);
+                list.Add(new MappingConvert(filename, oldaddr, isASM, movepointerlist));
             }
             public static bool TryGet(List<MappingConvert> list,string filename , out MappingConvert out_map)
             {
@@ -7348,6 +7418,17 @@ namespace FEBuilderGBA
                     }
                 }
                 out_map = null;
+                return false;
+            }
+            static bool Contains(List<MappingConvert> list, string filename)
+            {
+                foreach (var p in list)
+                {
+                    if (p.Filename == filename)
+                    {
+                        return true;
+                    }
+                }
                 return false;
             }
         };
@@ -7429,15 +7510,20 @@ namespace FEBuilderGBA
                 List<MappingConvert> mappingDESTEmbedFunction = new List<MappingConvert>();
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
-                    foreach (var p in dependsList)
-                    {
-                        ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
-                    }
-
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
                         ImportPatchAll(p, tempdir.Dir);
+                        ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
+                    }
+
+                    foreach (var p in dependsList)
+                    {
+                        if (p == patch)
+                        {
+                            continue;
+                        }
+                        ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
                     }
                 }
 

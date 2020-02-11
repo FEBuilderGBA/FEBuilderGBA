@@ -2303,7 +2303,7 @@ Event movement
 The argument {0} ({1}) is a pointer, but a size of 4 bytes is not allocated.It is {2} bytes.\r\n{3}
 
 :この命令は低レイヤーの命令です。通常は利用しないでください。
-This command is a low layer command.Please do not use usually.
+This command is a low layer command.Do NOT use usually.
 
 :結果はメモリスロットCに格納されます。
 The result is stored in memory slot C.
@@ -8189,10 +8189,10 @@ In FEBuilderGBA, patches written in EA format are used for installation.\r\nPlea
 Displays a button to expand the chapter table.\r\nWhen expanding chapters, you should understand the structure of PLIST.
 
 :FE8のワールドマップ拠点にも拡張ボタンを表示します。\r\nFE8の拠点を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
-An extended button is also displayed at World Map Node of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 Nodes.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
+An extended button is also displayed at World Map Node of FE8.\r\nIt is said that the save data needs to be modified to increase the number of FE8 Nodes.\r\nDetails are still not well understood.\r\nDo NOT use it except for research.
 
 :FE8のワールドマップ道にも拡張ボタンを表示します。\r\nFE8の道を増やすにセーブデータの改造が必要だと言われています。\r\n詳細はまだよくわかっていません。\r\n研究のため以外には利用しないでください。
-An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nPlease do not use it except for research.
+An extended button is also displayed on the FE8 world map road.\r\nIt is said that the save data needs to be modified to increase the FE8 road.\r\nDetails are still not well understood.\r\nDo NOT use it except for research.
 
 :FE7とFE6のアイテムアイコンにも拡張ボタンを表示します。\r\nアイテムアイコンを拡張するには、パッチが必要です。\r\nFE8のパッチは存在しますが、FE7とFE6用には不安定なものしか存在しません。
 An extension button is also displayed on the item icons of FE7 and FE6.\r\nPatches are required to expand item icons.\r\nThere are FE8 patches, but there are only unstable ones for FE7 and FE6.
@@ -8822,13 +8822,13 @@ Apply filter
 The directory where FEBuilderGBA is installed is too deep.\r\nThe maximum number of file paths exceeded 260 characters.\r\nPatch search can not be executed.\r\n{0}.
 
 :このパッチを利用した時にフリーズする等のバグが報告されています。\r\n特別な理由がない限り、利用しないでください。\r\n
-Bugs such as freezing when using this patch are reported.\r\nPlease do not use unless there is a special reason.\r\n
+Bugs such as freezing when using this patch are reported.\r\nDo NOT use unless there is a special reason.\r\n
 
 :このパッチは、古いパッチです。\r\nこのパッチではなく、新しいパッチの利用を推奨します。\r\n
 This patch is an old patch.\r\nWe recommend using a new patch.\r\n
 
 :このパッチは、内部処理用に作られたものです。通常は利用しないでください。
-This patch was made for internal processing.Please do not use usually.
+This patch was made for internal processing. Do NOT use usually.
 
 :パッチ名:
 Patch name:
@@ -10409,7 +10409,7 @@ Script Notation(&N)
 There are some texts that are not written.\r\nAre you sure you want to switch the texts?
 
 :この領域は、システムを拡張するパッチ用の文字列領域として予約されています。\r\n利用しないでください。
-This area is reserved as a string area for patches that extend the system.\r\nPlease do not use.
+This area is reserved as a string area for patches that extend the system.\r\nDo NOT use.
 
 :以下のテキストにエラーがあります。\r\nエラーを修正して、「書き込み」ボタンを押してください。
 There is an error in the following text.\r\nCorrect the error and push "Write" button.

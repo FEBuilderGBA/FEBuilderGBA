@@ -8,4 +8,6 @@ AUTHOR=7743
 BIN:0x16574=Uninstall SkillSystems ShadowGift_16574.bin
 TYPE=BIN
 INFO.en=Disable SkillSystems ShadowGift,Lumina.\r\nSince WeaponLockEx is in conflict with SkillSystems ShadowGift, in order to use WeaponLockEx, disable SkillSystems ShadowGift with this patch and then install WeaponLockEx.
-INFO.zh=禁用SkillSystems ShadowGift,Lumina。\r\n由于WeaponLockEx与SkillSystems ShadowGift冲突，为了使用WeaponLockEx，请使用此补丁禁用SkillSystems ShadowGift，然后安装WeaponLockEx。
+INFO.zh=禁用SkillSystems ShadowGift,Lumina。\r\n由于WeaponLockEx与SkillSystems ShadowGift冲突，为了使用WeaponLockEx，请使用此补丁禁用SkillSystems ShadowGift，然后安装WeaponLockEx
+
+REPLACE_POINTER:0x809B10=ITEM

@@ -496,12 +496,14 @@ namespace FEBuilderGBA
             PatchTableSt[] table = new PatchTableSt[] { 
                 new PatchTableSt{ name="GIRLS",	ver = "FE8J", addr = 0x18752,data = new byte[]{0x18}},
                 new PatchTableSt{ name="FE8NMAGIC",	ver = "FE8J", addr = 0x2a542,data = new byte[]{0x30 ,0x1C}},
+                new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8U", addr = 0x18A58,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8J", addr = 0x1876C,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7J", addr = 0x188CC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE8U", addr = 0x18A58,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
-                //new PatchTableSt{ name="UnkMeleeAndMagicFix",	ver = "FE8U", addr = 0x87852,data = new byte[]{0x60 ,0xB4 ,0x00 ,0x26}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE7U", addr = 0x184DC,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
                 new PatchTableSt{ name="MeleeAndMagicFix",	ver = "FE6", addr = 0x18188,data = new byte[]{0x00 ,0xB5 ,0xFE ,0xF7}},
+                new PatchTableSt{ name="FE7UMAGIC",	ver = "FE7U", addr = 0x68DE0,data = new byte[]{0x38 ,0x18 ,0x01 ,0x78}}, //魔力分離パッチ FE7U
+                new PatchTableSt{ name="FE8UMAGIC",	ver = "FE8U", addr = 0x2BB44,data = new byte[]{0x01 ,0x4B ,0xA5 ,0xF0 ,0xC1 ,0xFE}}, //魔力分離パッチ FE8U
             };
             return SearchPatchBool(table);
         }

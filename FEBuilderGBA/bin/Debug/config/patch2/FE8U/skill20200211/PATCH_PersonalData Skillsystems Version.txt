@@ -1,0 +1,34 @@
+NAME=PersonalData SkillSystems Version
+NAME.en=PersonalData SkillSystems Version
+NAME.zh=PersonalData SkillSystems Version
+
+IF:$FGREP4 mss_page4_runa.dmp=0xF0 0xB5 0x47 0x46
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END mss_page4_runa.dmp
+
+//データサイズ(10進数)
+DATASIZE=12
+
+//データ個数 00 が出てくるまで
+DATACOUNT=256
+
+//リストに表示されるのはユニットIDです
+LISTNAME=UNIT
+
+//データを定義します
+W0:TEXT=First Like
+W2:TEXT=Second Like
+W4:TEXT=First Disike
+W6:TEXT=Second Dislike
+W8:TEXT=Age
+W10:TEXT=Height
+
+INFO=ステータス画面の4ページ目にユニットのPersonalDataを表示します。\r\nhttps://feuniverse.us/t/runa-does-an-asm/6853/7
+INFO.en=The unit's PersonalData is displayed on the fourth page of the status screen.\r\nhttps://feuniverse.us/t/runa-does-an-asm/6853/7
+INFO.zh=The unit's PersonalData is displayed on the fourth page of the status screen.\r\nhttps://feuniverse.us/t/runa-does-an-asm/6853/7
+AUTHOR=Runa

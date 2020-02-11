@@ -1,0 +1,2 @@
+Defiant Mag: When HP is 25%
+or lower, gain +4 Magic.

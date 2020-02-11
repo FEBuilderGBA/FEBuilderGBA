@@ -16,3 +16,6 @@ INFO.en=When a summoned monster defeats the enemy, the summoner gains experience
 NAME.zh=SummonEXP：一个被召唤的怪物让召唤者获得经验，如果他击败了敌人。
 INFO.zh=当被召唤的怪物击败敌人时，召唤者获得经验值。\r\n这是一个使召唤师更容易使用的补丁。
 
+CONFLICT_IF:0x0800=0x0 0xC0 0x9F 0xE5 0x1C 0xFF 0x2F 0xE1
+CONFLICT_MESSAGE=SkillSystems
+
