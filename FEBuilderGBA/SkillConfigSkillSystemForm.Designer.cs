@@ -66,6 +66,10 @@
             this.J_0_TEXT = new System.Windows.Forms.Label();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ExportAllButton = new System.Windows.Forms.Button();
+            this.ImportAllButton = new System.Windows.Forms.Button();
+            this.IconAddr = new System.Windows.Forms.NumericUpDown();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -79,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ANIMATION)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -164,7 +170,7 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(261, 41);
+            this.panel5.Location = new System.Drawing.Point(261, 40);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(905, 34);
@@ -216,7 +222,7 @@
             // 
             // WriteButton
             // 
-            this.WriteButton.Location = new System.Drawing.Point(716, -1);
+            this.WriteButton.Location = new System.Drawing.Point(716, 0);
             this.WriteButton.Margin = new System.Windows.Forms.Padding(2);
             this.WriteButton.Name = "WriteButton";
             this.WriteButton.Size = new System.Drawing.Size(168, 30);
@@ -300,6 +306,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.IconAddr);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.AnimationExportButton);
             this.panel1.Controls.Add(this.AnimationInportButton);
             this.panel1.Controls.Add(this.AnimationPanel);
@@ -312,7 +320,7 @@
             this.panel1.Controls.Add(this.J_0_TEXT);
             this.panel1.Controls.Add(this.SKILLICON);
             this.panel1.Controls.Add(this.panel10);
-            this.panel1.Location = new System.Drawing.Point(262, 76);
+            this.panel1.Location = new System.Drawing.Point(261, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(904, 762);
             this.panel1.TabIndex = 97;
@@ -543,6 +551,51 @@
             this.panel10.Text = "アイコン";
             this.panel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.ExportAllButton);
+            this.panel2.Controls.Add(this.ImportAllButton);
+            this.panel2.Location = new System.Drawing.Point(242, 721);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(658, 37);
+            this.panel2.TabIndex = 153;
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ExportAllButton.TabIndex = 117;
+            this.ExportAllButton.Text = "一括エクスポート";
+            this.ExportAllButton.UseVisualStyleBackColor = true;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
+            // 
+            // ImportAllButton
+            // 
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Name = "ImportAllButton";
+            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ImportAllButton.TabIndex = 116;
+            this.ImportAllButton.Text = "一括インポート";
+            this.ImportAllButton.UseVisualStyleBackColor = true;
+            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
+            // 
+            // IconAddr
+            // 
+            this.IconAddr.Hexadecimal = true;
+            this.IconAddr.Location = new System.Drawing.Point(234, 44);
+            this.IconAddr.Margin = new System.Windows.Forms.Padding(2);
+            this.IconAddr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.IconAddr.Name = "IconAddr";
+            this.IconAddr.ReadOnly = true;
+            this.IconAddr.Size = new System.Drawing.Size(167, 25);
+            this.IconAddr.TabIndex = 154;
+            // 
             // SkillConfigSkillSystemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -571,6 +624,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ANIMATION)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IconAddr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -615,5 +670,9 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.NumericUpDown ShowFrameUpDown;
         private System.Windows.Forms.Button X_N_JumpEditor;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button ExportAllButton;
+        private System.Windows.Forms.Button ImportAllButton;
+        private System.Windows.Forms.NumericUpDown IconAddr;
     }
 }

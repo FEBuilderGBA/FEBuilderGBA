@@ -5106,7 +5106,7 @@ namespace FEBuilderGBA
             return false;
         }
 
-        public bool ApplyPatch(string PatchName, string PatchName2 = "", string patchCombo = "" , bool isSlient = false)
+        public bool ApplyPatch(string PatchName, string PatchName2 = "", string patchCombo = "", bool isSlient = false, bool isAutoClose = true)
         {
             //フィルターをしていたらやめさせる.
             Filter.Text = "";
@@ -5151,9 +5151,15 @@ namespace FEBuilderGBA
 
             //書き込みボタンを押す.
             r = ApplyPatchWriteButton(isSlient);
-            //フォームを閉じる.
-            this.Close();
-            //
+
+            if (r == true)
+            {
+                if (isAutoClose)
+                {
+                    //フォームを閉じる.
+                    this.Close();
+                }
+            }
             return r;
         }
 
@@ -7467,6 +7473,7 @@ namespace FEBuilderGBA
                 {
                     foreach (var p in dependsList)
                     {
+                        pleaseWait.DoEvents(R._("ExportPatchSetting: {0}" , p.Name));
                         ExportPatchSetting(tempdir.Dir, mappingSRCEmbedFunction, p);
                     }
                 }
@@ -7499,7 +7506,7 @@ namespace FEBuilderGBA
                         newInstallPatchList.Add(new_patchSt);
                     }
 
-                    bool r = ApplyPatch(new_patchSt.Name, "", "", true);
+                    bool r = ApplyPatch(new_patchSt.Name, "", "", isSlient: true, isAutoClose: false);
                     if (!r)
                     {
                         return R.Error("新しいパッチをインストールできませんでした。") + new_patchSt.PatchFileName;
@@ -7513,7 +7520,10 @@ namespace FEBuilderGBA
                     //新しくインストールしたパッチの設定
                     foreach (var p in newInstallPatchList)
                     {
+                        pleaseWait.DoEvents(R._("ImportPatchAll: {0}", p.Name));
                         ImportPatchAll(p, tempdir.Dir);
+
+                        pleaseWait.DoEvents(R._("ImportPatchSetting: {0}", p.Name));
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
                     }
 
@@ -7523,6 +7533,7 @@ namespace FEBuilderGBA
                         {
                             continue;
                         }
+                        pleaseWait.DoEvents(R._("ImportPatchSetting: {0}", p.Name));
                         ImportPatchSetting(tempdir.Dir, mappingDESTEmbedFunction, p);
                     }
                 }
@@ -7530,6 +7541,7 @@ namespace FEBuilderGBA
                 //少し時間がかかるので、しばらくお待ちください表示.
                 using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
                 {
+                    pleaseWait.DoEvents(R._("UpdateEmbedFunction"));
                     UpdateEmbedFunction(mappingSRCEmbedFunction, mappingDESTEmbedFunction, pleaseWait);
                 }
             }
@@ -7561,6 +7573,8 @@ namespace FEBuilderGBA
             U.ReSelectList(this.PatchList);
 
             Program.ReLoadSetting();
+
+            R.ShowOK("完了");
         }
 
         void ImportPatchAll(PatchSt patch,string tempdir)

@@ -100,7 +100,6 @@
             this.X_StatusBackgroundLink = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.systemmenu_name_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_name_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_name_HEADERTSA = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_name_Picture = new FEBuilderGBA.InterpolatedPictureBox();
@@ -111,7 +110,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.systemmenu_terrain_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_terrain_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_terrain_HEADERTSA = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_terrain_Picture = new FEBuilderGBA.InterpolatedPictureBox();
@@ -122,7 +120,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.systemmenu_goal_panel = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.systemmenu_goal_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_goal_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_goal_HEADERTSA = new System.Windows.Forms.NumericUpDown();
             this.systemmenu_goal_Picture = new FEBuilderGBA.InterpolatedPictureBox();
@@ -141,7 +138,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.systemarea_move_gradation_palette = new System.Windows.Forms.NumericUpDown();
             this.label25 = new System.Windows.Forms.Label();
-            this.systemmenu_battlepreview_TSAEditor = new System.Windows.Forms.Button();
             this.systemmenu_battlepreview_HEADERTSA = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.systemmenu_battlepreview_PALETTE = new System.Windows.Forms.NumericUpDown();
@@ -1115,7 +1111,6 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.label16);
-            this.panel8.Controls.Add(this.systemmenu_name_TSAEditor);
             this.panel8.Controls.Add(this.systemmenu_name_ZIMAGE);
             this.panel8.Controls.Add(this.systemmenu_name_HEADERTSA);
             this.panel8.Controls.Add(this.systemmenu_name_Picture);
@@ -1139,16 +1134,6 @@
             this.label16.TabIndex = 140;
             this.label16.Text = "画像";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // systemmenu_name_TSAEditor
-            // 
-            this.systemmenu_name_TSAEditor.Location = new System.Drawing.Point(745, 84);
-            this.systemmenu_name_TSAEditor.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.systemmenu_name_TSAEditor.Name = "systemmenu_name_TSAEditor";
-            this.systemmenu_name_TSAEditor.Size = new System.Drawing.Size(160, 30);
-            this.systemmenu_name_TSAEditor.TabIndex = 149;
-            this.systemmenu_name_TSAEditor.Text = "TSA Editor";
-            this.systemmenu_name_TSAEditor.UseVisualStyleBackColor = true;
             // 
             // systemmenu_name_ZIMAGE
             // 
@@ -1247,7 +1232,6 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.systemmenu_terrain_TSAEditor);
             this.panel7.Controls.Add(this.systemmenu_terrain_ZIMAGE);
             this.panel7.Controls.Add(this.systemmenu_terrain_HEADERTSA);
             this.panel7.Controls.Add(this.systemmenu_terrain_Picture);
@@ -1271,16 +1255,6 @@
             this.label12.TabIndex = 140;
             this.label12.Text = "画像";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // systemmenu_terrain_TSAEditor
-            // 
-            this.systemmenu_terrain_TSAEditor.Location = new System.Drawing.Point(745, 84);
-            this.systemmenu_terrain_TSAEditor.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.systemmenu_terrain_TSAEditor.Name = "systemmenu_terrain_TSAEditor";
-            this.systemmenu_terrain_TSAEditor.Size = new System.Drawing.Size(160, 30);
-            this.systemmenu_terrain_TSAEditor.TabIndex = 149;
-            this.systemmenu_terrain_TSAEditor.Text = "TSA Editor";
-            this.systemmenu_terrain_TSAEditor.UseVisualStyleBackColor = true;
             // 
             // systemmenu_terrain_ZIMAGE
             // 
@@ -1379,7 +1353,6 @@
             // systemmenu_goal_panel
             // 
             this.systemmenu_goal_panel.Controls.Add(this.label21);
-            this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_TSAEditor);
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_ZIMAGE);
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_HEADERTSA);
             this.systemmenu_goal_panel.Controls.Add(this.systemmenu_goal_Picture);
@@ -1403,16 +1376,6 @@
             this.label21.TabIndex = 140;
             this.label21.Text = "画像";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // systemmenu_goal_TSAEditor
-            // 
-            this.systemmenu_goal_TSAEditor.Location = new System.Drawing.Point(745, 84);
-            this.systemmenu_goal_TSAEditor.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.systemmenu_goal_TSAEditor.Name = "systemmenu_goal_TSAEditor";
-            this.systemmenu_goal_TSAEditor.Size = new System.Drawing.Size(160, 30);
-            this.systemmenu_goal_TSAEditor.TabIndex = 149;
-            this.systemmenu_goal_TSAEditor.Text = "TSA Editor";
-            this.systemmenu_goal_TSAEditor.UseVisualStyleBackColor = true;
             // 
             // systemmenu_goal_ZIMAGE
             // 
@@ -1520,7 +1483,6 @@
             this.tabPage4.Controls.Add(this.label26);
             this.tabPage4.Controls.Add(this.systemarea_move_gradation_palette);
             this.tabPage4.Controls.Add(this.label25);
-            this.tabPage4.Controls.Add(this.systemmenu_battlepreview_TSAEditor);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_HEADERTSA);
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.systemmenu_battlepreview_PALETTE);
@@ -1644,16 +1606,6 @@
             this.label25.TabIndex = 140;
             this.label25.Text = "行動範囲タイルカラー";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // systemmenu_battlepreview_TSAEditor
-            // 
-            this.systemmenu_battlepreview_TSAEditor.Location = new System.Drawing.Point(743, 84);
-            this.systemmenu_battlepreview_TSAEditor.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.systemmenu_battlepreview_TSAEditor.Name = "systemmenu_battlepreview_TSAEditor";
-            this.systemmenu_battlepreview_TSAEditor.Size = new System.Drawing.Size(160, 30);
-            this.systemmenu_battlepreview_TSAEditor.TabIndex = 139;
-            this.systemmenu_battlepreview_TSAEditor.Text = "TSA Editor";
-            this.systemmenu_battlepreview_TSAEditor.UseVisualStyleBackColor = true;
             // 
             // systemmenu_battlepreview_HEADERTSA
             // 
@@ -2186,7 +2138,6 @@
         private InterpolatedPictureBox item_icon_Picture;
         private InterpolatedPictureBox unit_icon_npc_Picture;
         private InterpolatedPictureBox system_music_icon_icon_Picture;
-        private System.Windows.Forms.Button systemmenu_goal_TSAEditor;
         private System.Windows.Forms.NumericUpDown systemmenu_goal_HEADERTSA;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown systemmenu_goal_PALETTE;
@@ -2201,7 +2152,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.NumericUpDown systemarea_move_gradation_palette;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button systemmenu_battlepreview_TSAEditor;
         private System.Windows.Forms.NumericUpDown systemmenu_battlepreview_HEADERTSA;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown systemmenu_battlepreview_PALETTE;
@@ -2218,7 +2168,6 @@
         private System.Windows.Forms.Button systemmenu_battlepreview_Export;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button systemmenu_name_TSAEditor;
         private System.Windows.Forms.NumericUpDown systemmenu_name_ZIMAGE;
         private System.Windows.Forms.NumericUpDown systemmenu_name_HEADERTSA;
         private InterpolatedPictureBox systemmenu_name_Picture;
@@ -2229,7 +2178,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button systemmenu_terrain_TSAEditor;
         private System.Windows.Forms.NumericUpDown systemmenu_terrain_ZIMAGE;
         private System.Windows.Forms.NumericUpDown systemmenu_terrain_HEADERTSA;
         private InterpolatedPictureBox systemmenu_terrain_Picture;

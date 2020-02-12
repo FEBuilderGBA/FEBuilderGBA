@@ -230,9 +230,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.TSAInfo);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Location = new System.Drawing.Point(104, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1289, 847);

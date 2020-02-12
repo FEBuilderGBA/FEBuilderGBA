@@ -47,6 +47,8 @@ namespace FEBuilderGBA
             ShowZoomComboBox.SelectedIndex = 0;
             U.SetIcon(AnimationInportButton, Properties.Resources.icon_upload);
             U.SetIcon(AnimationExportButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ExportAllButton, Properties.Resources.icon_arrow);
+            U.SetIcon(ImportAllButton, Properties.Resources.icon_upload);
 
             U.AllowDropFilename(this, ImageFormRef.IMAGE_FILE_FILTER, (string filename) =>
             {
@@ -243,10 +245,15 @@ namespace FEBuilderGBA
         }
 
         const uint SkillPalettePointer = 0x22370; //オリジナルROMからあるパレット.
+        public static uint GetIconAddr(uint index, uint imageBaseAddress)
+        {
+            const uint size = 16 * 16 / 2;
+            uint imageOffset = imageBaseAddress + (size * index);
+            return imageOffset;
+        }
         public static Bitmap DrawIcon(uint index,uint imageBaseAddress)
         {
-            uint size = 16 * 16 / 2;
-            uint imageOffset = imageBaseAddress + (size * index);
+            uint imageOffset = GetIconAddr(index, imageBaseAddress);
             uint palette = Program.ROM.p32(SkillPalettePointer); //オリジナルROMからあるパレット.
             return 
                 ImageUtil.ByteToImage16Tile(16, 16, Program.ROM.Data, (int)imageOffset, Program.ROM.Data, (int)palette);
@@ -315,6 +322,7 @@ namespace FEBuilderGBA
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SKILLICON.Image = DrawIcon((uint)AddressList.SelectedIndex, this.IconBaseAddress);
+            this.IconAddr.Value = GetIconAddr((uint)AddressList.SelectedIndex, this.IconBaseAddress);
 
             uint anime = this.AnimeBaseAddress + (4 * (uint)AddressList.SelectedIndex);
             uint a = Program.ROM.p32(anime);
@@ -828,6 +836,60 @@ namespace FEBuilderGBA
             }
             uint iconBaseAddress = Program.ROM.p32(iconP);
             ExportFunction.One(sb, "SkillIcons", iconBaseAddress);
+        }
+
+        private void ExportAllButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("SkillConfig|*.SkillConfig.tsv|All files|*");
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            Program.LastSelectedFilename.Load(this, "", save, "");
+
+            DialogResult dr = save.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return;
+            }
+
+            using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
+            {
+                ExportAllData(save.FileName);
+            }
+        }
+
+        private void ImportAllButton_Click(object sender, EventArgs e)
+        {
+            string title = R._("読込むファイル名を選択してください");
+            string filter = R._("SkillConfig|*.SkillConfig.tsv|All files|*");
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = title;
+            open.Filter = filter;
+
+            DialogResult dr = open.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            if (open.FileNames.Length <= 0 || !U.CanReadFileRetry(open.FileNames[0]))
+            {
+                return;
+            }
+            string filename = open.FileNames[0];
+            Program.LastSelectedFilename.Save(this, "", open);
+
+            using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
+            {
+                ImportAllData(filename);
+            }
+            U.ReSelectList(this.AddressList);
         }
 
     }

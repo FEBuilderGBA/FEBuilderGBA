@@ -37,6 +37,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.ExportAllButton = new System.Windows.Forms.Button();
+            this.ImportAllButton = new System.Windows.Forms.Button();
             this.ZeroPointerPanel = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.IndependencePanel = new System.Windows.Forms.Panel();
@@ -88,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.ZeroPointerPanel.SuspendLayout();
             this.IndependencePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).BeginInit();
@@ -210,6 +214,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.ZeroPointerPanel);
             this.panel8.Controls.Add(this.IndependencePanel);
             this.panel8.Controls.Add(this.N1_SKILLNAME);
@@ -224,10 +229,40 @@
             this.panel8.Size = new System.Drawing.Size(657, 449);
             this.panel8.TabIndex = 118;
             // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.ExportAllButton);
+            this.panel10.Controls.Add(this.ImportAllButton);
+            this.panel10.Location = new System.Drawing.Point(-1, 409);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(658, 37);
+            this.panel10.TabIndex = 152;
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ExportAllButton.TabIndex = 117;
+            this.ExportAllButton.Text = "一括エクスポート";
+            this.ExportAllButton.UseVisualStyleBackColor = true;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
+            // 
+            // ImportAllButton
+            // 
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Name = "ImportAllButton";
+            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ImportAllButton.TabIndex = 116;
+            this.ImportAllButton.Text = "一括インポート";
+            this.ImportAllButton.UseVisualStyleBackColor = true;
+            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
+            // 
             // ZeroPointerPanel
             // 
             this.ZeroPointerPanel.Controls.Add(this.label12);
-            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 384);
+            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 344);
             this.ZeroPointerPanel.Name = "ZeroPointerPanel";
             this.ZeroPointerPanel.Size = new System.Drawing.Size(504, 61);
             this.ZeroPointerPanel.TabIndex = 144;
@@ -246,7 +281,7 @@
             // 
             this.IndependencePanel.Controls.Add(this.IndependenceButton);
             this.IndependencePanel.Controls.Add(this.label4);
-            this.IndependencePanel.Location = new System.Drawing.Point(6, 383);
+            this.IndependencePanel.Location = new System.Drawing.Point(6, 343);
             this.IndependencePanel.Name = "IndependencePanel";
             this.IndependencePanel.Size = new System.Drawing.Size(504, 62);
             this.IndependencePanel.TabIndex = 143;
@@ -778,6 +813,7 @@
             this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ZeroPointerPanel.ResumeLayout(false);
             this.IndependencePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.N1_B0)).EndInit();
@@ -857,5 +893,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel ZeroPointerPanel;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button ExportAllButton;
+        private System.Windows.Forms.Button ImportAllButton;
     }
 }

@@ -84,6 +84,9 @@
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.LabelFilter = new System.Windows.Forms.Label();
             this.AddressList = new FEBuilderGBA.ListBoxEx();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.ExportAllButton = new System.Windows.Forms.Button();
+            this.ImportAllButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
@@ -106,6 +109,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.panel6.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -190,7 +194,7 @@
             this.panel4.Controls.Add(this.SKILLICON);
             this.panel4.Controls.Add(this.B0);
             this.panel4.Controls.Add(this.J_0_SKILLASSIGNMENT);
-            this.panel4.Location = new System.Drawing.Point(258, 73);
+            this.panel4.Location = new System.Drawing.Point(258, 72);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(905, 771);
@@ -282,6 +286,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.ZeroPointerPanel);
             this.panel8.Controls.Add(this.IndependencePanel);
             this.panel8.Controls.Add(this.N1_SKILLNAME);
@@ -299,7 +304,7 @@
             // ZeroPointerPanel
             // 
             this.ZeroPointerPanel.Controls.Add(this.label12);
-            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 383);
+            this.ZeroPointerPanel.Location = new System.Drawing.Point(6, 347);
             this.ZeroPointerPanel.Name = "ZeroPointerPanel";
             this.ZeroPointerPanel.Size = new System.Drawing.Size(504, 61);
             this.ZeroPointerPanel.TabIndex = 144;
@@ -318,7 +323,7 @@
             // 
             this.IndependencePanel.Controls.Add(this.IndependenceButton);
             this.IndependencePanel.Controls.Add(this.label4);
-            this.IndependencePanel.Location = new System.Drawing.Point(6, 383);
+            this.IndependencePanel.Location = new System.Drawing.Point(6, 347);
             this.IndependencePanel.Name = "IndependencePanel";
             this.IndependencePanel.Size = new System.Drawing.Size(504, 62);
             this.IndependencePanel.TabIndex = 143;
@@ -634,7 +639,7 @@
             this.panel5.Controls.Add(this.WriteButton);
             this.panel5.Controls.Add(this.Address);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(258, 40);
+            this.panel5.Location = new System.Drawing.Point(258, 39);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(905, 34);
@@ -767,6 +772,36 @@
             this.AddressList.TabIndex = 0;
             this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.ExportAllButton);
+            this.panel10.Controls.Add(this.ImportAllButton);
+            this.panel10.Location = new System.Drawing.Point(-2, 409);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(658, 37);
+            this.panel10.TabIndex = 153;
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Location = new System.Drawing.Point(377, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ExportAllButton.TabIndex = 117;
+            this.ExportAllButton.Text = "一括エクスポート";
+            this.ExportAllButton.UseVisualStyleBackColor = true;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
+            // 
+            // ImportAllButton
+            // 
+            this.ImportAllButton.Location = new System.Drawing.Point(98, 3);
+            this.ImportAllButton.Name = "ImportAllButton";
+            this.ImportAllButton.Size = new System.Drawing.Size(274, 30);
+            this.ImportAllButton.TabIndex = 116;
+            this.ImportAllButton.Text = "一括インポート";
+            this.ImportAllButton.UseVisualStyleBackColor = true;
+            this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
+            // 
             // SkillAssignmentUnitSkillSystemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -806,6 +841,7 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -868,5 +904,8 @@
         private System.Windows.Forms.Button N1_WriteButton;
         private System.Windows.Forms.NumericUpDown N1_Address;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button ExportAllButton;
+        private System.Windows.Forms.Button ImportAllButton;
     }
 }

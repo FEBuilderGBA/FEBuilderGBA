@@ -33,8 +33,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SamplePaletteComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.ImportButton = new System.Windows.Forms.Button();
             this.ExportButton = new System.Windows.Forms.Button();
+            this.X_SAMPLE_BIG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
             this.P4 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.W2 = new System.Windows.Forms.NumericUpDown();
@@ -43,7 +45,9 @@
             this.J_0 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label11 = new System.Windows.Forms.Label();
+            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
@@ -51,6 +55,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddressListExpandsButton = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.ReadCount = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
@@ -59,13 +64,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ExportAllButton = new System.Windows.Forms.Button();
             this.ImportAllButton = new System.Windows.Forms.Button();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
-            this.X_SAMPLE_BIG_PIC = new FEBuilderGBA.InterpolatedPictureBox();
-            this.BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.SelectAddress = new FEBuilderGBA.TextBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.X_SAMPLE_BIG_PIC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).BeginInit();
@@ -76,7 +77,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_SAMPLE_BIG_PIC)).BeginInit();
             this.SuspendLayout();
             // 
             // ReloadListButton
@@ -142,6 +142,15 @@
             this.panel1.Size = new System.Drawing.Size(909, 408);
             this.panel1.TabIndex = 89;
             // 
+            // MapPictureBox
+            // 
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(2, 2);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(905, 403);
+            this.MapPictureBox.TabIndex = 152;
+            // 
             // ImportButton
             // 
             this.ImportButton.Location = new System.Drawing.Point(530, 267);
@@ -163,6 +172,17 @@
             this.ExportButton.Text = "画像取出";
             this.ExportButton.UseVisualStyleBackColor = true;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
+            // X_SAMPLE_BIG_PIC
+            // 
+            this.X_SAMPLE_BIG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.X_SAMPLE_BIG_PIC.Location = new System.Drawing.Point(5, 93);
+            this.X_SAMPLE_BIG_PIC.Margin = new System.Windows.Forms.Padding(5);
+            this.X_SAMPLE_BIG_PIC.Name = "X_SAMPLE_BIG_PIC";
+            this.X_SAMPLE_BIG_PIC.Size = new System.Drawing.Size(904, 167);
+            this.X_SAMPLE_BIG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.X_SAMPLE_BIG_PIC.TabIndex = 86;
+            this.X_SAMPLE_BIG_PIC.TabStop = false;
             // 
             // P4
             // 
@@ -256,6 +276,17 @@
             this.panel5.Size = new System.Drawing.Size(917, 30);
             this.panel5.TabIndex = 147;
             // 
+            // BlockSize
+            // 
+            this.BlockSize.ErrorMessage = "";
+            this.BlockSize.Location = new System.Drawing.Point(326, 1);
+            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.BlockSize.Name = "BlockSize";
+            this.BlockSize.Placeholder = "";
+            this.BlockSize.ReadOnly = true;
+            this.BlockSize.Size = new System.Drawing.Size(82, 25);
+            this.BlockSize.TabIndex = 63;
+            // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -265,6 +296,17 @@
             this.label11.TabIndex = 64;
             this.label11.Text = "Size:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SelectAddress
+            // 
+            this.SelectAddress.ErrorMessage = "";
+            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
+            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SelectAddress.Name = "SelectAddress";
+            this.SelectAddress.Placeholder = "";
+            this.SelectAddress.ReadOnly = true;
+            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
+            this.SelectAddress.TabIndex = 62;
             // 
             // label22
             // 
@@ -340,6 +382,19 @@
             this.label30.Text = "名前";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 25);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(277, 724);
+            this.AddressList.TabIndex = 0;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            // 
             // ReadCount
             // 
             this.ReadCount.Location = new System.Drawing.Point(372, 4);
@@ -402,6 +457,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.ExportAllButton);
             this.panel2.Controls.Add(this.ImportAllButton);
             this.panel2.Location = new System.Drawing.Point(295, 796);
@@ -429,60 +485,6 @@
             this.ImportAllButton.UseVisualStyleBackColor = true;
             this.ImportAllButton.Click += new System.EventHandler(this.ImportAllButton_Click);
             // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(2, 2);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(905, 403);
-            this.MapPictureBox.TabIndex = 152;
-            // 
-            // X_SAMPLE_BIG_PIC
-            // 
-            this.X_SAMPLE_BIG_PIC.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.X_SAMPLE_BIG_PIC.Location = new System.Drawing.Point(5, 93);
-            this.X_SAMPLE_BIG_PIC.Margin = new System.Windows.Forms.Padding(5);
-            this.X_SAMPLE_BIG_PIC.Name = "X_SAMPLE_BIG_PIC";
-            this.X_SAMPLE_BIG_PIC.Size = new System.Drawing.Size(904, 167);
-            this.X_SAMPLE_BIG_PIC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.X_SAMPLE_BIG_PIC.TabIndex = 86;
-            this.X_SAMPLE_BIG_PIC.TabStop = false;
-            // 
-            // BlockSize
-            // 
-            this.BlockSize.ErrorMessage = "";
-            this.BlockSize.Location = new System.Drawing.Point(326, 1);
-            this.BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.BlockSize.Name = "BlockSize";
-            this.BlockSize.Placeholder = "";
-            this.BlockSize.ReadOnly = true;
-            this.BlockSize.Size = new System.Drawing.Size(82, 25);
-            this.BlockSize.TabIndex = 63;
-            // 
-            // SelectAddress
-            // 
-            this.SelectAddress.ErrorMessage = "";
-            this.SelectAddress.Location = new System.Drawing.Point(540, 1);
-            this.SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SelectAddress.Name = "SelectAddress";
-            this.SelectAddress.Placeholder = "";
-            this.SelectAddress.ReadOnly = true;
-            this.SelectAddress.Size = new System.Drawing.Size(137, 25);
-            this.SelectAddress.TabIndex = 62;
-            // 
-            // AddressList
-            // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 25);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(277, 724);
-            this.AddressList.TabIndex = 0;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
-            // 
             // MapTileAnimation1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -500,6 +502,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.X_SAMPLE_BIG_PIC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W0)).EndInit();
@@ -511,7 +514,6 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.X_SAMPLE_BIG_PIC)).EndInit();
             this.ResumeLayout(false);
 
         }
