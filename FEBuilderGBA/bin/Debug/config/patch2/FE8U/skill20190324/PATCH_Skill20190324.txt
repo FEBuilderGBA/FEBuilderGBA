@@ -652,6 +652,10 @@ EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 
 EXPORT:1=GetSkills.dmp	Skill_Getter
 EXPORT:2=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
+EXPORT:6=portrait_0x01_face.dmp	portrait_0x01_face_Graphic
+EXPORT:7=portrait_0x01_mouth.dmp	portrait_0x01_mouth_Graphic
+EXPORT:8=portrait_0x01_pal.dmp	portrait_0x01_pal_Graphic
+EXPORT:9=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
 
 DEPRECATED=1
 UPDATE_PATCH=..\skill20200211\PATCH_Skill20200211.txt

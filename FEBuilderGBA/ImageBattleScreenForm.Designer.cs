@@ -30,7 +30,9 @@
         {
             this.AllWriteButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PALETTE_TO_CLIPBOARD_BUTTON = new System.Windows.Forms.Button();
@@ -123,11 +125,13 @@
             this.PALETTE_P_9 = new System.Windows.Forms.Label();
             this.PALETTE_R_10 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image1_Import = new System.Windows.Forms.Button();
             this.image1_Export = new System.Windows.Forms.Button();
             this.image1_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.image3_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image3_Import = new System.Windows.Forms.Button();
             this.image3_Export = new System.Windows.Forms.Button();
             this.image3_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -136,7 +140,9 @@
             this.image2_Export = new System.Windows.Forms.Button();
             this.image2_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.image2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.image5_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.image5_Import = new System.Windows.Forms.Button();
             this.image5_Export = new System.Windows.Forms.Button();
             this.image5_ZIMAGE = new System.Windows.Forms.NumericUpDown();
@@ -145,6 +151,7 @@
             this.image4_Export = new System.Windows.Forms.Button();
             this.image4_ZIMAGE = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.image4_Picture = new FEBuilderGBA.InterpolatedPictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.ImportButton = new System.Windows.Forms.Button();
@@ -154,14 +161,18 @@
             this.Zoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Battle = new FEBuilderGBA.InterpolatedPictureBox();
-            this.image1_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.image3_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.image2_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.image5_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.image4_Picture = new FEBuilderGBA.InterpolatedPictureBox();
-            this.CHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
-            this.TSAInfo = new FEBuilderGBA.TextBoxEx();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tile1_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile2_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile3_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile5_addr = new System.Windows.Forms.NumericUpDown();
+            this.tile4_addr = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -215,22 +226,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image3_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image2_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image5_ZIMAGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image4_ZIMAGE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).BeginInit();
             this.SuspendLayout();
             // 
             // AllWriteButton
@@ -252,6 +267,19 @@
             this.panel1.Size = new System.Drawing.Size(144, 871);
             this.panel1.TabIndex = 3;
             // 
+            // CHIPLIST
+            // 
+            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
+            this.CHIPLIST.Name = "CHIPLIST";
+            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CHIPLIST.TabIndex = 1;
+            this.CHIPLIST.TabStop = false;
+            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
+            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
+            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.TSAInfo);
@@ -260,6 +288,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1228, 845);
             this.panel2.TabIndex = 4;
+            // 
+            // TSAInfo
+            // 
+            this.TSAInfo.ErrorMessage = "";
+            this.TSAInfo.Location = new System.Drawing.Point(3, 598);
+            this.TSAInfo.Name = "TSAInfo";
+            this.TSAInfo.Placeholder = "";
+            this.TSAInfo.ReadOnly = true;
+            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
+            this.TSAInfo.TabIndex = 360;
             // 
             // tabControl1
             // 
@@ -1680,6 +1718,16 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.tile5_addr);
+            this.tabPage2.Controls.Add(this.tile4_addr);
+            this.tabPage2.Controls.Add(this.tile3_addr);
+            this.tabPage2.Controls.Add(this.tile2_addr);
+            this.tabPage2.Controls.Add(this.tile1_addr);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.image1_Picture);
             this.tabPage2.Controls.Add(this.image1_Import);
             this.tabPage2.Controls.Add(this.image1_Export);
@@ -1691,6 +1739,16 @@
             this.tabPage2.Size = new System.Drawing.Size(1213, 184);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "メイン画像";
+            // 
+            // image1_Picture
+            // 
+            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image1_Picture.Location = new System.Drawing.Point(328, 14);
+            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image1_Picture.Name = "image1_Picture";
+            this.image1_Picture.Size = new System.Drawing.Size(320, 131);
+            this.image1_Picture.TabIndex = 110;
+            this.image1_Picture.TabStop = false;
             // 
             // image1_Import
             // 
@@ -1755,6 +1813,17 @@
             this.tabPage3.Size = new System.Drawing.Size(1213, 184);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "左側";
+            // 
+            // image3_Picture
+            // 
+            this.image3_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image3_Picture.Location = new System.Drawing.Point(811, 41);
+            this.image3_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image3_Picture.Name = "image3_Picture";
+            this.image3_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image3_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image3_Picture.TabIndex = 120;
+            this.image3_Picture.TabStop = false;
             // 
             // image3_Import
             // 
@@ -1846,6 +1915,17 @@
             this.label2.Text = "名前";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // image2_Picture
+            // 
+            this.image2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image2_Picture.Location = new System.Drawing.Point(217, 43);
+            this.image2_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image2_Picture.Name = "image2_Picture";
+            this.image2_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image2_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image2_Picture.TabIndex = 115;
+            this.image2_Picture.TabStop = false;
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
@@ -1864,6 +1944,17 @@
             this.tabPage4.Size = new System.Drawing.Size(1213, 184);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "右側";
+            // 
+            // image5_Picture
+            // 
+            this.image5_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image5_Picture.Location = new System.Drawing.Point(774, 40);
+            this.image5_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image5_Picture.Name = "image5_Picture";
+            this.image5_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image5_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image5_Picture.TabIndex = 130;
+            this.image5_Picture.TabStop = false;
             // 
             // image5_Import
             // 
@@ -1954,6 +2045,17 @@
             this.label6.TabIndex = 121;
             this.label6.Text = "名前";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // image4_Picture
+            // 
+            this.image4_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.image4_Picture.Location = new System.Drawing.Point(194, 44);
+            this.image4_Picture.Margin = new System.Windows.Forms.Padding(2);
+            this.image4_Picture.Name = "image4_Picture";
+            this.image4_Picture.Size = new System.Drawing.Size(367, 83);
+            this.image4_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.image4_Picture.TabIndex = 125;
+            this.image4_Picture.TabStop = false;
             // 
             // tabPage5
             // 
@@ -2058,82 +2160,135 @@
             this.Battle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorldMap_MouseDown);
             this.Battle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Battle_MouseMove);
             // 
-            // image1_Picture
+            // label9
             // 
-            this.image1_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image1_Picture.Location = new System.Drawing.Point(328, 14);
-            this.image1_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image1_Picture.Name = "image1_Picture";
-            this.image1_Picture.Size = new System.Drawing.Size(320, 131);
-            this.image1_Picture.TabIndex = 110;
-            this.image1_Picture.TabStop = false;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(890, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(194, 31);
+            this.label9.TabIndex = 111;
+            this.label9.Text = "Tile1";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image3_Picture
+            // label10
             // 
-            this.image3_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image3_Picture.Location = new System.Drawing.Point(811, 41);
-            this.image3_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image3_Picture.Name = "image3_Picture";
-            this.image3_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image3_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image3_Picture.TabIndex = 120;
-            this.image3_Picture.TabStop = false;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Location = new System.Drawing.Point(890, 44);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(194, 31);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "Tile2";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image2_Picture
+            // label11
             // 
-            this.image2_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image2_Picture.Location = new System.Drawing.Point(217, 43);
-            this.image2_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image2_Picture.Name = "image2_Picture";
-            this.image2_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image2_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image2_Picture.TabIndex = 115;
-            this.image2_Picture.TabStop = false;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(890, 104);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(194, 31);
+            this.label11.TabIndex = 114;
+            this.label11.Text = "Tile4";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image5_Picture
+            // label13
             // 
-            this.image5_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image5_Picture.Location = new System.Drawing.Point(774, 40);
-            this.image5_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image5_Picture.Name = "image5_Picture";
-            this.image5_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image5_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image5_Picture.TabIndex = 130;
-            this.image5_Picture.TabStop = false;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Location = new System.Drawing.Point(890, 74);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(194, 31);
+            this.label13.TabIndex = 113;
+            this.label13.Text = "Tile3";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // image4_Picture
+            // label14
             // 
-            this.image4_Picture.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.image4_Picture.Location = new System.Drawing.Point(194, 44);
-            this.image4_Picture.Margin = new System.Windows.Forms.Padding(2);
-            this.image4_Picture.Name = "image4_Picture";
-            this.image4_Picture.Size = new System.Drawing.Size(367, 83);
-            this.image4_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.image4_Picture.TabIndex = 125;
-            this.image4_Picture.TabStop = false;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Location = new System.Drawing.Point(890, 134);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(194, 31);
+            this.label14.TabIndex = 115;
+            this.label14.Text = "Tile5";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CHIPLIST
+            // tile1_addr
             // 
-            this.CHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.CHIPLIST.Location = new System.Drawing.Point(3, 3);
-            this.CHIPLIST.Name = "CHIPLIST";
-            this.CHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.CHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CHIPLIST.TabIndex = 1;
-            this.CHIPLIST.TabStop = false;
-            this.CHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.PATHCHIPLIST_Paint);
-            this.CHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseDown);
-            this.CHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PATHCHIPLIST_MouseMove);
+            this.tile1_addr.Hexadecimal = true;
+            this.tile1_addr.Location = new System.Drawing.Point(1090, 14);
+            this.tile1_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile1_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile1_addr.Name = "tile1_addr";
+            this.tile1_addr.ReadOnly = true;
+            this.tile1_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile1_addr.TabIndex = 116;
             // 
-            // TSAInfo
+            // tile2_addr
             // 
-            this.TSAInfo.ErrorMessage = "";
-            this.TSAInfo.Location = new System.Drawing.Point(3, 598);
-            this.TSAInfo.Name = "TSAInfo";
-            this.TSAInfo.Placeholder = "";
-            this.TSAInfo.ReadOnly = true;
-            this.TSAInfo.Size = new System.Drawing.Size(1209, 25);
-            this.TSAInfo.TabIndex = 360;
+            this.tile2_addr.Hexadecimal = true;
+            this.tile2_addr.Location = new System.Drawing.Point(1090, 46);
+            this.tile2_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile2_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile2_addr.Name = "tile2_addr";
+            this.tile2_addr.ReadOnly = true;
+            this.tile2_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile2_addr.TabIndex = 117;
+            // 
+            // tile3_addr
+            // 
+            this.tile3_addr.Hexadecimal = true;
+            this.tile3_addr.Location = new System.Drawing.Point(1090, 75);
+            this.tile3_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile3_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile3_addr.Name = "tile3_addr";
+            this.tile3_addr.ReadOnly = true;
+            this.tile3_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile3_addr.TabIndex = 118;
+            // 
+            // tile5_addr
+            // 
+            this.tile5_addr.Hexadecimal = true;
+            this.tile5_addr.Location = new System.Drawing.Point(1090, 137);
+            this.tile5_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile5_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile5_addr.Name = "tile5_addr";
+            this.tile5_addr.ReadOnly = true;
+            this.tile5_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile5_addr.TabIndex = 120;
+            // 
+            // tile4_addr
+            // 
+            this.tile4_addr.Hexadecimal = true;
+            this.tile4_addr.Location = new System.Drawing.Point(1090, 106);
+            this.tile4_addr.Margin = new System.Windows.Forms.Padding(2);
+            this.tile4_addr.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.tile4_addr.Name = "tile4_addr";
+            this.tile4_addr.ReadOnly = true;
+            this.tile4_addr.Size = new System.Drawing.Size(120, 25);
+            this.tile4_addr.TabIndex = 119;
             // 
             // ImageBattleScreenForm
             // 
@@ -2155,6 +2310,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BattleScreenForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -2210,25 +2366,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_10)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1_ZIMAGE)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image3_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image2_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image5_ZIMAGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image4_ZIMAGE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Battle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image1_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image3_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image2_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image5_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image4_Picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CHIPLIST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile1_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile2_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile3_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile5_addr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tile4_addr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2368,5 +2528,15 @@
         private System.Windows.Forms.ComboBox Zoom;
         private System.Windows.Forms.Panel panel3;
         private TextBoxEx TSAInfo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown tile5_addr;
+        private System.Windows.Forms.NumericUpDown tile4_addr;
+        private System.Windows.Forms.NumericUpDown tile3_addr;
+        private System.Windows.Forms.NumericUpDown tile2_addr;
+        private System.Windows.Forms.NumericUpDown tile1_addr;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
     }
 }

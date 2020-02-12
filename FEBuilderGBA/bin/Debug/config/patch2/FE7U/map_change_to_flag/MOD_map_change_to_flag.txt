@@ -4,5 +4,8 @@ FORM=MapChangeForm
 N_J_5=設定するフラグ
 N_L_5:VISIBLE=true
 
-N_J_5.en=Flag to set
+N_J_5.en=Flag
 N_J_5.zh=标志设置
+N_J_5:HINT=このマップ変化が起きたときに、指定したフラグを設定します。
+N_J_5:HINT.en=Sets the specified flag when this tile change occurs.
+N_J_5:HINT.zh=Sets the specified flag when this tile change occurs.

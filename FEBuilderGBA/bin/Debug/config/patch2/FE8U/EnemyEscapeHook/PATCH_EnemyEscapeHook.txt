@@ -1,0 +1,15 @@
+NAME=敵が離脱した時にフラグを立てて、イベントでフック出来るようにする。
+NAME.en=Sets flag when enemy escaped, for hook in event.
+NAME.zh=Sets flag when enemy escaped, for hook in event.
+
+INFO=離脱ポイントにフラグを設定できるようにします。\r\n敵がその離脱ポイントを利用して逃げた時に、フラグを設定します。\r\nイベントスクリプトでそのフラグを監視することで、敵が逃げたときにイベントを発火させられるようにします。
+INFO.en=Allows Escape points to be flagged.\r\nSet a flag when an enemy escapes using their exit point.\r\nMonitoring that flag in the event script allows the event to be fired when an enemy escape.
+INFO.zh=Allows Escape points to be flagged.\r\nSet a flag when an enemy escapes using their exit point.\r\nMonitoring that flag in the event script allows the event to be fired when an enemy escape.
+
+TYPE=BIN
+PATCHED_IF:0x03E828=0x00 0x4A 0x97 0x46
+
+BIN:$FREEAREA=EnemyEscapeHook.dmp
+JUMP:0x03E828:$r2=EnemyEscapeHook.dmp
+
+AUTHOR=7743

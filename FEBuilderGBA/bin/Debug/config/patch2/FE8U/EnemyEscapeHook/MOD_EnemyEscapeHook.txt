@@ -1,0 +1,10 @@
+IF:0x03E828=0x00 0x4A 0x97 0x46
+
+FORM=MapExitPointForm
+N_J_3=設定するフラグ
+N_L_3:VISIBLE=true
+N_J_3.en=Flag
+N_J_3.zh=标志设置
+N_J_3:HINT=敵やNPCがこの離脱ポイントを利用した時に、このフラグをセットします。
+N_J_3:HINT.en=Set this flag when an enemy or NPC uses this escape point.
+N_J_3:HINT.zh=Set this flag when an enemy or NPC uses this escape point.

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Address = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.FilterComboBox = new System.Windows.Forms.ComboBox();
             this.ReloadListButton = new System.Windows.Forms.Button();
@@ -47,13 +48,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.N_L_0_MAPXY_1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
             this.label6 = new System.Windows.Forms.Label();
+            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
             this.label22 = new System.Windows.Forms.Label();
             this.N_WriteButton = new System.Windows.Forms.Button();
             this.N_Address = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.LabelFilter = new System.Windows.Forms.Label();
+            this.AddressList = new FEBuilderGBA.ListBoxEx();
             this.AddressPanel = new System.Windows.Forms.Panel();
             this.N_ReloadListButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -64,14 +68,12 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.N_AddressListExpandsButton = new System.Windows.Forms.Button();
             this.NewListAlloc = new System.Windows.Forms.Button();
-            this.N_LabelFilter = new System.Windows.Forms.Label();
-            this.Address = new System.Windows.Forms.NumericUpDown();
-            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
             this.N_AddressList = new FEBuilderGBA.ListBoxEx();
-            this.AddressList = new FEBuilderGBA.ListBoxEx();
-            this.N_BlockSize = new FEBuilderGBA.TextBoxEx();
-            this.N_SelectAddress = new FEBuilderGBA.TextBoxEx();
+            this.N_LabelFilter = new System.Windows.Forms.Label();
+            this.MapPictureBox = new FEBuilderGBA.MapPictureBox();
+            this.N_L_3_FLAG = new FEBuilderGBA.TextBoxEx();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).BeginInit();
@@ -85,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N_ReadCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).BeginInit();
             this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,6 +103,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1578, 30);
             this.panel1.TabIndex = 67;
+            // 
+            // Address
+            // 
+            this.Address.Hexadecimal = true;
+            this.Address.Location = new System.Drawing.Point(942, 1);
+            this.Address.Margin = new System.Windows.Forms.Padding(2);
+            this.Address.Maximum = new decimal(new int[] {
+            -559939585,
+            902409669,
+            54,
+            0});
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(130, 25);
+            this.Address.TabIndex = 159;
+            this.Address.Visible = false;
             // 
             // label3
             // 
@@ -166,6 +182,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.N_L_3_FLAG);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.N_B1);
@@ -323,6 +340,17 @@
             this.panel5.Size = new System.Drawing.Size(1150, 87);
             this.panel5.TabIndex = 177;
             // 
+            // N_BlockSize
+            // 
+            this.N_BlockSize.ErrorMessage = "";
+            this.N_BlockSize.Location = new System.Drawing.Point(91, 52);
+            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_BlockSize.Name = "N_BlockSize";
+            this.N_BlockSize.Placeholder = "";
+            this.N_BlockSize.ReadOnly = true;
+            this.N_BlockSize.Size = new System.Drawing.Size(54, 25);
+            this.N_BlockSize.TabIndex = 55;
+            // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -333,6 +361,17 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Size:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_SelectAddress
+            // 
+            this.N_SelectAddress.ErrorMessage = "";
+            this.N_SelectAddress.Location = new System.Drawing.Point(281, 52);
+            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.N_SelectAddress.Name = "N_SelectAddress";
+            this.N_SelectAddress.Placeholder = "";
+            this.N_SelectAddress.ReadOnly = true;
+            this.N_SelectAddress.Size = new System.Drawing.Size(129, 25);
+            this.N_SelectAddress.TabIndex = 54;
             // 
             // label22
             // 
@@ -402,6 +441,19 @@
             this.LabelFilter.TabIndex = 106;
             this.LabelFilter.Text = "マップ名";
             this.LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressList
+            // 
+            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AddressList.FormattingEnabled = true;
+            this.AddressList.IntegralHeight = false;
+            this.AddressList.ItemHeight = 18;
+            this.AddressList.Location = new System.Drawing.Point(-1, 24);
+            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
+            this.AddressList.Name = "AddressList";
+            this.AddressList.Size = new System.Drawing.Size(258, 634);
+            this.AddressList.TabIndex = 1;
+            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
             // 
             // AddressPanel
             // 
@@ -522,42 +574,6 @@
             this.NewListAlloc.Visible = false;
             this.NewListAlloc.Click += new System.EventHandler(this.NewListAlloc_Click);
             // 
-            // N_LabelFilter
-            // 
-            this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N_LabelFilter.Location = new System.Drawing.Point(0, -1);
-            this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.N_LabelFilter.Name = "N_LabelFilter";
-            this.N_LabelFilter.Size = new System.Drawing.Size(170, 26);
-            this.N_LabelFilter.TabIndex = 110;
-            this.N_LabelFilter.Text = "名前";
-            this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Address
-            // 
-            this.Address.Hexadecimal = true;
-            this.Address.Location = new System.Drawing.Point(942, 1);
-            this.Address.Margin = new System.Windows.Forms.Padding(2);
-            this.Address.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(130, 25);
-            this.Address.TabIndex = 159;
-            this.Address.Visible = false;
-            // 
-            // MapPictureBox
-            // 
-            this.MapPictureBox.AutoScroll = true;
-            this.MapPictureBox.Location = new System.Drawing.Point(851, 77);
-            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.MapPictureBox.Name = "MapPictureBox";
-            this.MapPictureBox.Size = new System.Drawing.Size(743, 649);
-            this.MapPictureBox.TabIndex = 224;
-            // 
             // N_AddressList
             // 
             this.N_AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -570,40 +586,38 @@
             this.N_AddressList.Size = new System.Drawing.Size(169, 580);
             this.N_AddressList.TabIndex = 109;
             // 
-            // AddressList
+            // N_LabelFilter
             // 
-            this.AddressList.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddressList.FormattingEnabled = true;
-            this.AddressList.IntegralHeight = false;
-            this.AddressList.ItemHeight = 18;
-            this.AddressList.Location = new System.Drawing.Point(-1, 24);
-            this.AddressList.Margin = new System.Windows.Forms.Padding(4);
-            this.AddressList.Name = "AddressList";
-            this.AddressList.Size = new System.Drawing.Size(258, 634);
-            this.AddressList.TabIndex = 1;
-            this.AddressList.SelectedIndexChanged += new System.EventHandler(this.AddressList_SelectedIndexChanged);
+            this.N_LabelFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.N_LabelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N_LabelFilter.Location = new System.Drawing.Point(0, -1);
+            this.N_LabelFilter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.N_LabelFilter.Name = "N_LabelFilter";
+            this.N_LabelFilter.Size = new System.Drawing.Size(170, 26);
+            this.N_LabelFilter.TabIndex = 110;
+            this.N_LabelFilter.Text = "名前";
+            this.N_LabelFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // N_BlockSize
+            // MapPictureBox
             // 
-            this.N_BlockSize.ErrorMessage = "";
-            this.N_BlockSize.Location = new System.Drawing.Point(91, 52);
-            this.N_BlockSize.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_BlockSize.Name = "N_BlockSize";
-            this.N_BlockSize.Placeholder = "";
-            this.N_BlockSize.ReadOnly = true;
-            this.N_BlockSize.Size = new System.Drawing.Size(54, 25);
-            this.N_BlockSize.TabIndex = 55;
+            this.MapPictureBox.AutoScroll = true;
+            this.MapPictureBox.Location = new System.Drawing.Point(851, 77);
+            this.MapPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MapPictureBox.Name = "MapPictureBox";
+            this.MapPictureBox.Size = new System.Drawing.Size(743, 649);
+            this.MapPictureBox.TabIndex = 224;
             // 
-            // N_SelectAddress
+            // N_L_3_FLAG
             // 
-            this.N_SelectAddress.ErrorMessage = "";
-            this.N_SelectAddress.Location = new System.Drawing.Point(281, 52);
-            this.N_SelectAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.N_SelectAddress.Name = "N_SelectAddress";
-            this.N_SelectAddress.Placeholder = "";
-            this.N_SelectAddress.ReadOnly = true;
-            this.N_SelectAddress.Size = new System.Drawing.Size(129, 25);
-            this.N_SelectAddress.TabIndex = 54;
+            this.N_L_3_FLAG.ErrorMessage = "";
+            this.N_L_3_FLAG.Location = new System.Drawing.Point(223, 85);
+            this.N_L_3_FLAG.Margin = new System.Windows.Forms.Padding(2);
+            this.N_L_3_FLAG.Name = "N_L_3_FLAG";
+            this.N_L_3_FLAG.Placeholder = "";
+            this.N_L_3_FLAG.ReadOnly = true;
+            this.N_L_3_FLAG.Size = new System.Drawing.Size(186, 25);
+            this.N_L_3_FLAG.TabIndex = 225;
+            this.N_L_3_FLAG.Visible = false;
             // 
             // MapExitPointForm
             // 
@@ -623,8 +637,10 @@
             this.Text = "離脱ポイント";
             this.Load += new System.EventHandler(this.MapExitPointForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReadStartAddress)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_B1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.N_B3)).EndInit();
@@ -637,7 +653,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.N_ReadCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0)).EndInit();
             this.panel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Address)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -687,5 +702,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown Address;
+        private TextBoxEx N_L_3_FLAG;
     }
 }

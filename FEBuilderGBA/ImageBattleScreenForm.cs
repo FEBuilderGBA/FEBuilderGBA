@@ -51,10 +51,28 @@ namespace FEBuilderGBA
             InitLoadChipsetInfo();
             LoadChipsetInfo();  //チップセット関係の読込
             LoadBattleScreen(); //ROM TSAをメモリに読み込んで
+            SetupTileAddr();
 //            MakeBattleScreen(); //TSA描画
             Zoom.SelectedIndex = 1; //2倍拡大
         }
 
+        void SetupTileAddr()
+        {
+            uint addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA1_pointer());
+            this.tile1_addr.Value = addr;
+
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA2_pointer());
+            this.tile2_addr.Value = addr;
+
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA3_pointer());
+            this.tile3_addr.Value = addr;
+
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA4_pointer());
+            this.tile4_addr.Value = addr;
+
+            addr = Program.ROM.p32(Program.ROM.RomInfo.battle_screen_TSA5_pointer());
+            this.tile5_addr.Value = addr;
+        }
 
         void InitLoadChipsetInfo()
         {
