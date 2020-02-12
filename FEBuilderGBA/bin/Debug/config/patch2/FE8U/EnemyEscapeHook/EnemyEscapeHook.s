@@ -25,10 +25,9 @@ mov r0,r2
 @blh 0x080860a8   @フラグを立てる関数 r0=立てるフラグ:FLAG {J}
 blh 0x08083D80   @フラグを立てる関数 r0=立てるフラグ:FLAG {U}
 
-@@離脱するの前にイベントを起動できるが、見た目はよくないし、副作用怖いので、やらない方がい
-@@ldr r0,[r6]      @current unit
-@@blh 0x08086784   @RunMoveEventsMaybe	{J}
-@@blh 0x080844B0   @RunMoveEventsMaybe	{U}
+ldr r0,[r6]      @current unit
+@blh 0x08086784   @RunMoveEventsMaybe	{J}
+blh 0x080844B0   @RunMoveEventsMaybe	{U}
 
 pop {r0,r1,r3}
 
