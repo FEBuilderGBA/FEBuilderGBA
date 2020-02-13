@@ -558,12 +558,12 @@ namespace FEBuilderGBA
             }
             File.WriteAllLines(filename, lines);
         }
-        public static void ImportAllData(string filename)
+        public static bool ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
             if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
-                return;
+                return false;
             }
 
             string basedir = Path.GetDirectoryName(filename);
@@ -575,15 +575,15 @@ namespace FEBuilderGBA
 
                 if (baseiconP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 if (basetextP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 if (baseanimeP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 InputFormRef = Init(null, basetextP);
                 uint textAddr = InputFormRef.BaseAddress;
@@ -625,6 +625,7 @@ namespace FEBuilderGBA
                     //それ以外の値の場合、ディフォルト設定だとして、最新の値を採用します.
                 }
             }
+            return true;
         }
 
         //テキストの取得
@@ -887,9 +888,15 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
-                ImportAllData(filename);
+                bool r = ImportAllData(filename);
+                if (!r)
+                {
+                    R.ShowStopError("インポートに失敗しました。");
+                    return;
+                }
             }
             U.ReSelectList(this.AddressList);
+            R.ShowOK("データのインポートが完了しました。");
         }
 
     }

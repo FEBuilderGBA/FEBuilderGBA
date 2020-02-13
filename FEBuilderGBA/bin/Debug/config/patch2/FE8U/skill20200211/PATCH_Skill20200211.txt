@@ -968,15 +968,16 @@ EVENTSCRIPT:5.zh=40050200XX00000040050100YY000000400D0000{$L1:ASMC_LearnSkill.bi
 EVENTSCRIPT:6.zh=212E00002006C20040050100YY000000400D0000{$L1:ASMC_LearnSkill.bin}	精益当前的运营人物获得技能
 	(LearnSkill)[YY:SKILL:SkillID]	{UNIT}
 
-EXPORT:1=GetSkills.dmp	Skill_Getter
-EXPORT:2=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
-EXPORT:3=rtextloop.dmp	RTextLoop
-EXPORT:4=skillDescGetter.dmp	SkillDescGetter
-EXPORT:5=nihilTester.dmp	SkillTester
-EXPORT:6=portrait_0x01_face.dmp	portrait_0x01_face_Graphic
-EXPORT:7=portrait_0x01_mouth.dmp	portrait_0x01_mouth_Graphic
-EXPORT:8=portrait_0x01_pal.dmp	portrait_0x01_pal_Graphic
-EXPORT:9=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
+EXPORT:01=GetSkills.dmp	Skill_Getter
+EXPORT:02=DragonVeinsIcon_Unit67Graphic.dmp	DragonVeinsIcon_Unit67Graphic
+EXPORT:03=rtextloop.dmp	RTextLoop
+EXPORT:04=skillDescGetter.dmp	SkillDescGetter
+EXPORT:05=nihilTester.dmp	SkillTester
+EXPORT:06=portrait_0x01_face.dmp	portrait_0x01_face_Graphic
+EXPORT:07=portrait_0x01_mouth.dmp	portrait_0x01_mouth_Graphic
+EXPORT:08=portrait_0x01_pal.dmp	portrait_0x01_pal_Graphic
+EXPORT:09=portrait_0x01_minimug.dmp	portrait_0x01_minimug_Graphic
+EXPORT:10=Icon_Unit68Graphic.dmp	Icon_Unit68Graphic
 
 EDIT_PATCH:1=../skill20191022/PATCH_AnimaTriangle_FireList SkillSystem Version.txt
 EDIT_PATCH:2=../skill20191022/PATCH_AnimaTriangle_ThunderList SkillSystem Version.txt
@@ -985,5 +986,7 @@ EDIT_PATCH:4=../skill20191022/PATCH_Escape_Quote_SkillSystems Version.txt
 EDIT_PATCH:5=../skill20191022/PATCH_Leadership Skillsystems Version.txt
 EDIT_PATCH:6=../ClassLevelMax/PATCH_ClassLevelMax.txt
 EDIT_PATCH:7=../skill20200211/PATCH_PersonalData Skillsystems Version.txt
+EDIT_PATCH:8=../skill20200211/PATCH_Mag Char Editor.txt
+EDIT_PATCH:9=../skill20200211/PATCH_Mag Class Editor.txt
 
 UPDATE_METHOD=SKILLSYSTEM

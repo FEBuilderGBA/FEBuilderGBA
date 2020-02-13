@@ -241,12 +241,12 @@ namespace FEBuilderGBA
             File.WriteAllLines(filename, lines);
         }
 
-        public static void ImportAllData(string filename)
+        public static bool ImportAllData(string filename)
         {
             InputFormRef InputFormRef;
             if (PatchUtil.SearchSkillSystem() != PatchUtil.skill_system_enum.SkillSystem)
             {
-                return;
+                return false;
             }
 
             string[] lines = File.ReadAllLines(filename);
@@ -258,19 +258,19 @@ namespace FEBuilderGBA
 
                 if (iconP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 if (textP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 if (assignUnitP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
                 if (assignLevelUpP == U.NOT_FOUND)
                 {
-                    return;
+                    return false;
                 }
 
                 InputFormRef = Init(null, assignUnitP);
@@ -325,6 +325,7 @@ namespace FEBuilderGBA
                     }
                 }
             }
+            return true;
         }
 
         public static int MakeUnitSkillButtons(uint uid, Button[] buttons, ToolTipEx tooltip)
@@ -587,9 +588,15 @@ namespace FEBuilderGBA
 
             using (InputFormRef.AutoPleaseWait wait = new InputFormRef.AutoPleaseWait(this))
             {
-                ImportAllData(filename);
+                bool r = ImportAllData(filename);
+                if (!r)
+                {
+                    R.ShowStopError("インポートに失敗しました。");
+                    return;
+                }
             }
             U.ReSelectList(this.AddressList);
+            R.ShowOK("データのインポートが完了しました。");
         }
     }
 }

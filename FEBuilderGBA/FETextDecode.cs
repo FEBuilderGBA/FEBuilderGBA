@@ -97,7 +97,7 @@ namespace FEBuilderGBA
         {
             if (!U.isSafetyOffset(addr, this.ROM))
             {
-                Log.Error(R._("UnHffmanPatchDecode string addr:{0} is not safety", addr.ToString("X")));
+                R.Error("UnHffmanPatchDecode string addr:{0} is not safety", addr.ToString("X"));
                 out_DataSize = 0;
                 return "";
             }
@@ -279,7 +279,7 @@ namespace FEBuilderGBA
 
             if (!U.isSafetyOffset(addr, this.ROM))
             {
-                Log.Error(R._("huffman_decode string addr:{0} is not safety", addr.ToString("X")));
+                R.Error("huffman_decode string addr:{0} is not safety", addr.ToString("X"));
                 out_DataSize = 0;
                 return "";
             }

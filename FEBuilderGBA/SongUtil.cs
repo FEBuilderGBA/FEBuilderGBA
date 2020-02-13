@@ -1138,12 +1138,12 @@ namespace FEBuilderGBA
                     uint velocity = midi[i++];
                     if (key > 127)
                     {
-                        Log.Error(R._("このmidiはkeyが127以上です. {0}",key)); Debug.Assert(false);
+                        R.Error("このmidiはkeyが127以上です. {0}",key); Debug.Assert(false);
                         key = 127;
                     }
                     if (velocity > 127)
                     {
-                        Log.Error(R._("このmidiはvelocityが127以上です. {0}", velocity)); Debug.Assert(false);
+                        R.Error("このmidiはvelocityが127以上です. {0}", velocity); Debug.Assert(false);
                         velocity = 127;
                     }
                     uint index = key * 0xf + tracknumber;

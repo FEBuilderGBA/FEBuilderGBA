@@ -6196,7 +6196,7 @@ namespace FEBuilderGBA
             this.AddressList.Items.Clear();
             if (addr + this.BlockSize > limitter)
             {//終端を超えるので探索不能
-                Log.Error("アドレス({0}+{1})は、終端(2)を超えるので表示できません。", U.To0xHexString(addr), U.To0xHexString(this.BlockSize), U.To0xHexString(limitter));
+                R.Error("アドレス({0}+{1})は、終端(2)を超えるので表示できません。", U.To0xHexString(addr), U.To0xHexString(this.BlockSize), U.To0xHexString(limitter));
             }
             else
             {//探索する
@@ -8991,12 +8991,12 @@ namespace FEBuilderGBA
                 );
             if (original_size >= 0x00200000)
             {//長すぎる.
-                Log.Error(R._("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません", U.To0xHexString(write_addr), original_size));
+                R.Error("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません", U.To0xHexString(write_addr), original_size);
                 original_size = 0;
             }
             else if (write_addr + original_size > Program.ROM.Data.Length)
             {//実データより長すぎる
-                Log.Error(R._("この領域({0})は、実データより長い({1} bytes)と判定された。実データのサイズに合わせる", U.To0xHexString(write_addr), original_size));
+                R.Error("この領域({0})は、実データより長い({1} bytes)と判定された。実データのサイズに合わせる", U.To0xHexString(write_addr), original_size);
                 original_size = (uint)Program.ROM.Data.Length - write_addr;
             }
 
@@ -9169,7 +9169,7 @@ namespace FEBuilderGBA
             original_size = aal.length;
             if (aal.length >= 0x00200000)
             {//長すぎる.
-                Log.Error(R._("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません",U.To0xHexString(aal.addr),aal.length));
+                R.Error("この領域({0})は、余りに長すぎます({1} bytes)。おそらくデータが壊れている。よって、再利用しません",U.To0xHexString(aal.addr),aal.length);
                 original_size = 0;
             }
             else if (aal.addr >= Program.ROM.Data.Length)
@@ -9179,7 +9179,7 @@ namespace FEBuilderGBA
             }
             else if (aal.addr + aal.length > Program.ROM.Data.Length)
             {//実データより長すぎる
-                Log.Error(R._("この領域({0})は、実データより長い({1} bytes)と判定された。実データのサイズに合わせる", U.To0xHexString(aal.addr), aal.length));
+                R.Error("この領域({0})は、実データより長い({1} bytes)と判定された。実データのサイズに合わせる", U.To0xHexString(aal.addr), aal.length);
                 original_size = (uint)Program.ROM.Data.Length - aal.addr;
             }
 
