@@ -171,6 +171,7 @@
             this.systemIconPictureBox1 = new FEBuilderGBA.SystemIconPictureBox();
             this.X_GraphicsTool = new System.Windows.Forms.Label();
             this.X_Jump_Patch = new System.Windows.Forms.Label();
+            this.X_SystemMenuPaletteLink = new System.Windows.Forms.Label();
             this.WMTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.system_music_icon_icon_PALETTE)).BeginInit();
@@ -1087,6 +1088,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.X_SystemMenuPaletteLink);
             this.tabPage3.Controls.Add(this.X_StatusBackgroundLink);
             this.tabPage3.Controls.Add(this.panel8);
             this.tabPage3.Controls.Add(this.panel7);
@@ -1101,11 +1103,11 @@
             // X_StatusBackgroundLink
             // 
             this.X_StatusBackgroundLink.AutoSize = true;
-            this.X_StatusBackgroundLink.Location = new System.Drawing.Point(9, 511);
+            this.X_StatusBackgroundLink.Location = new System.Drawing.Point(9, 432);
             this.X_StatusBackgroundLink.Name = "X_StatusBackgroundLink";
-            this.X_StatusBackgroundLink.Size = new System.Drawing.Size(344, 36);
+            this.X_StatusBackgroundLink.Size = new System.Drawing.Size(530, 18);
             this.X_StatusBackgroundLink.TabIndex = 153;
-            this.X_StatusBackgroundLink.Text = "ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。";
+            this.X_StatusBackgroundLink.Text = "ステータス画面の背景は、パッチの中にあります。こちらをクリックしてください。";
             this.X_StatusBackgroundLink.Click += new System.EventHandler(this.X_StatusBackgroundLink_Click);
             // 
             // panel8
@@ -1992,6 +1994,16 @@
     "ください。";
             this.X_Jump_Patch.Click += new System.EventHandler(this.X_Jump_Patch_Click);
             // 
+            // X_SystemMenuPaletteLink
+            // 
+            this.X_SystemMenuPaletteLink.AutoSize = true;
+            this.X_SystemMenuPaletteLink.Location = new System.Drawing.Point(9, 470);
+            this.X_SystemMenuPaletteLink.Name = "X_SystemMenuPaletteLink";
+            this.X_SystemMenuPaletteLink.Size = new System.Drawing.Size(477, 18);
+            this.X_SystemMenuPaletteLink.TabIndex = 154;
+            this.X_SystemMenuPaletteLink.Text = "パレットの変更は、パッチの中にあります。こちらをクリックしてください。";
+            this.X_SystemMenuPaletteLink.Click += new System.EventHandler(this.X_SystemMenuPaletteLink_Click);
+            // 
             // ImageSystemIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2224,5 +2236,6 @@
         private SystemIconPictureBox systemIconPictureBox1;
         private SystemIconPictureBox systemIconPictureBox3;
         private System.Windows.Forms.Label X_Internet;
+        private System.Windows.Forms.Label X_SystemMenuPaletteLink;
     }
 }

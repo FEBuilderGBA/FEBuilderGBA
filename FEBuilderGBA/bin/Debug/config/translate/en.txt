@@ -3613,8 +3613,8 @@ Fourth
 :システムメニュー
 System Menu
 
-:ステータス画面の背景は、パッチの中にあります。\r\nこちらをクリックしてください。
-The background of the status screen is in the patch.\r\nPlease click here.
+:ステータス画面の背景は、パッチの中にあります。こちらをクリックしてください。
+The background of the status screen is in the patch. Please click here.
 
 :戦闘前プレビュー
 Battle Preview
@@ -3642,6 +3642,9 @@ If there is no patch, it may be an undiscovered image.\r\nIn that case, please s
 
 :ここにない画像は、パッチに存在するかもしれません。\r\nここをクリックしてください。\r\n\r\nメニューから開く場合は、メニュー -> ツール -> パッチ、を選択してください。
 Images that are not here may be present in the patch.\r\nPlease click here.\r\n\r\nTo open from the menu, select Menu-> Tools-> Patch.
+
+:パレットの変更は、パッチの中にあります。こちらをクリックしてください。
+The palette change is in the patch. Please click here.
 
 :システムアイコン
 System Icon
@@ -9325,6 +9328,9 @@ Skill enhancement SkillSystem's level up skill can't be acquired.
 :(Lv{0}で習得)
 (Learned with Lv {0})
 
+:インポートに失敗しました。
+Import failed.
+
 :レベルアップで取得するスキルの先頭アドレス
 Leading address of skill to acquire in level up
 
@@ -11035,6 +11041,9 @@ No errors were automatically detected in this ROM.
 :以下のマップにエラーが存在します。
 There are errors in the following maps.
 
+:章内で利用しているフラグの確認
+Check the flags used in the chapter.
+
 :フラグに名前を設定すると、より理解しやすくなります。\r\nフラグの名前は、ROMごとに別ファイルに保存します。
 Use this tool to create personal names for Event Flags so that they are easier to understand for you.\r\nThe flags are saved in a separate file for each ROM.
 
@@ -11043,9 +11052,6 @@ Erase Custom Flag
 
 :フラグの名前
 Custom Flag Name
-
-:章内で利用しているフラグの確認
-Check the flags used in the chapter.
 
 :フラグに名前設定
 Event Flag Namer
