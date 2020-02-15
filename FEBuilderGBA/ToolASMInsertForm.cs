@@ -153,7 +153,7 @@ namespace FEBuilderGBA
             this.ComplieBinFilename = result;
             if (this.Method.SelectedIndex == 0)
             {
-                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), 0);
+                SymbolUtil.ProcessSymbolByComment(fullpath, symbol, GetPlanOfDebugSymbol(), 0);
 
                 //ROMに書き込まない場合、成果物を選択しよう.
                 U.SelectFileByExplorer(result,false);
@@ -204,7 +204,7 @@ namespace FEBuilderGBA
                 }
                 Program.ROM.write_range(addr, bin, undodata);
                 Program.CommentCache.RemoveRange(addr, addr + (uint)bin.Length);
-                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), addr);
+                SymbolUtil.ProcessSymbolByComment(fullpath, symbol, GetPlanOfDebugSymbol(), addr);
             }
             else
             {
@@ -230,7 +230,7 @@ namespace FEBuilderGBA
                 Program.ROM.write_range(addr, jumpCode, undodata);
 
                 Program.CommentCache.RemoveRange(freeaddr, freeaddr + (uint)bin.Length);
-                SymbolUtil.ProcessSymbol(fullpath, symbol, GetPlanOfDebugSymbol(), freeaddr);
+                SymbolUtil.ProcessSymbolByComment(fullpath, symbol, GetPlanOfDebugSymbol(), freeaddr);
             }
             Program.Undo.Push(undodata);
             InputFormRef.ShowWriteNotifyAnimation(this, addr);

@@ -29,7 +29,6 @@ namespace FEBuilderGBA
                 , isPatchInstallOnly: true
                 , isPatchPointerOnly: false
                 , isPatchStructOnly: false
-                , isPatchStoreSymbol: true
                 , isUseOtherGraphics: true
                 , isUseOAMSP: true
                 );

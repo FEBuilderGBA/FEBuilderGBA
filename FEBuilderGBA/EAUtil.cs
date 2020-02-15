@@ -17,6 +17,7 @@ namespace FEBuilderGBA
             ,ASM //incbinされたデータ ASM
             ,BIN //incbinされたデータ BIN
             ,LYN //lynによってインポートされるelfファイル
+            ,LYNHOOK //lynによるフック 16バイト
             ,POINTER_ARRAY
             ,PROCS
         }
@@ -332,9 +333,39 @@ namespace FEBuilderGBA
             DataEnum dataType ;
             dataType = DataEnum.LYN;
 
-            Elf elf = new Elf(fullbinname);
+            Elf elf = new Elf(fullbinname , useHookMode: false);
             Data data = new Data(filename, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
+
+            ParseLynSecondArgs(a);
+            return true;
+        }
+        bool ParseLynSecondArgs(string a )
+        {
+            //次の引数へ
+            a = U.skip(a, "\"");
+            a = U.skip(a, "\"");
+            string filename = U.cut(a, "\"", "\"");
+            string fullbinname = Path.Combine(this.Dir, filename);
+
+            if (!File.Exists(fullbinname))
+            {
+                return false;
+            }
+
+            Elf elf = new Elf(fullbinname, useHookMode: true);
+            foreach (Elf.Sym sym in elf.SymList)
+            {
+                if (! U.isPointer(sym.addr))
+                {
+                    continue;
+                }
+                uint addr = U.toOffset(sym.addr);
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Data data = new Data(addr, DataEnum.LYNHOOK);
+                this.DataList.Add(data);
+            }
+
             return true;
         }
         bool ParseString(string line, string orignalIine)

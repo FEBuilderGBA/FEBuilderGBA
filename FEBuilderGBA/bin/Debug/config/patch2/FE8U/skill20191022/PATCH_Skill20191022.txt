@@ -771,6 +771,8 @@ EDIT_PATCH:4=../skill20191022/PATCH_Escape_Quote_SkillSystems Version.txt
 EDIT_PATCH:5=../skill20191022/PATCH_Leadership Skillsystems Version.txt
 EDIT_PATCH:6=../ClassLevelMax/PATCH_ClassLevelMax.txt
 
+SYMBOL=symbol.sym
+
 DEPRECATED=1
 UPDATE_PATCH=..\skill20200211\PATCH_Skill20200211.txt
 UPDATE_METHOD=SKILLSYSTEM

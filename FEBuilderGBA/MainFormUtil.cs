@@ -760,7 +760,7 @@ namespace FEBuilderGBA
                 return false;
             }
 
-            Elf elf = new Elf(output_temp_filename);
+            Elf elf = new Elf(output_temp_filename , useHookMode: false);
             out_symbol = elf.ToEASymbol();
 
             //Extract raw assembly binary (text section) from elf

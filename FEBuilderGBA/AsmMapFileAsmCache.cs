@@ -133,7 +133,7 @@ namespace FEBuilderGBA
             try
             {
 #endif
-            PatchForm.MakePatchStructDataList(structlist,true,true,false,true); //パッチが知っている領域.
+            PatchForm.MakePatchStructDataList(structlist,true,true,false); //パッチが知っている領域.
             if (IsStopFlag) return map;
 #if !DEBUG 
             }

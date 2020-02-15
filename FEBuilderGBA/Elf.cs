@@ -8,10 +8,11 @@ namespace FEBuilderGBA
 {
     public class Elf
     {
-        public Elf(string filename)
+        public Elf(string filename,bool useHookMode)
         {
             this.SymList = new List<Sym>();
             this.ProgramBIN = new byte[0];
+            this.UseHookMode = useHookMode;
 
             byte[] bin = File.ReadAllBytes(filename);
             if (!CheckELF(bin))
@@ -38,6 +39,7 @@ namespace FEBuilderGBA
         }
         public List<Sym> SymList { get; private set; }
         public byte[] ProgramBIN { get; private set; }
+        bool UseHookMode;
 
 /*
 typedef struct elfhdr{
@@ -125,11 +127,21 @@ typedef struct {
                 }
                 if (st_value >= 0x02000000)
                 {
-                    continue;
+                    if (this.UseHookMode && 
+                        st_value >= 0x08000000 && st_value < 0x08200000)
+                    {//LynによるHook
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
                 if (st_shndx > 0x1)
                 {//fff1 externか何か?
-                    continue;
+                    if (! this.UseHookMode)
+                    {
+                        continue;
+                    }
                 }
 
                 uint nameaddr = shdr_linksecsion_sh_offset + st_name;
@@ -225,7 +237,7 @@ typedef struct {
 #if DEBUG
         public static void TEST_ELF()
         {
-            Elf elf = new Elf(Program.GetTestData("test.elf"));
+            Elf elf = new Elf(Program.GetTestData("test.elf"), useHookMode: false);
             Debug.Assert(elf.ProgramBIN.Length == 0x88);
             Debug.Assert(elf.ProgramBIN[0] == 0x10);
             Debug.Assert(elf.ProgramBIN[1] == 0xB4);

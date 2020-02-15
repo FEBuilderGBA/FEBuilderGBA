@@ -2986,7 +2986,6 @@ namespace FEBuilderGBA
                     throw; //再送
                 }
                 ReplacePointers(patch, undodata);
-                ProcessSYMBOL(patch);
 
                 ClearCheckIF();
                 Program.Undo.Push(undodata);
@@ -3042,7 +3041,6 @@ namespace FEBuilderGBA
                ,"JUMP"        //割り込みコード生成(必ず最後に書かないとダメ)
             };
 
-            bool isTextCommand = false;
             int yy = 0;
             int bincount = 0;
             foreach (var pair in patch.Param)
@@ -3075,10 +3073,6 @@ namespace FEBuilderGBA
                             throw new PatchException(keyword + "(" + filename + ") file can not found.\r\n" + pair.Key + "=" + pair.Value);
                         }
                     }
-                    if (keyword == "TEXT" || keyword == "TEXTADV")
-                    {
-                        isTextCommand = true;
-                    }
 
                     label = new Label();
                     label.Text = pair.Key;
@@ -3109,13 +3103,6 @@ namespace FEBuilderGBA
             {
                 writebutton.Enabled = false;
             }
-//            if (isTextCommand)
-//            {
-//                if (!PatchUtil.SearchAntiHuffmanPatch())
-//                {
-//                    throw new PatchException(R.Error("このパッチは、テキストを変更するので、インストールする前に AntiHuffmanパッチが必要です。"));
-//                }
-//            }
 
             writebutton.Click += (sender, e) =>
             {
@@ -3159,7 +3146,6 @@ namespace FEBuilderGBA
                     }
 
                     ReplacePointers(patch,undodata);
-                    ProcessSYMBOL(patch);
 
                     ClearCheckIF();
                     Program.Undo.Push(undodata);
@@ -4600,6 +4586,25 @@ namespace FEBuilderGBA
                         //最後に発見したアドレスを追加
                         lastMatchAddr = addr + length;
                     }
+                    else if (data.DataType == EAUtil.DataEnum.LYNHOOK)
+                    {
+                        uint addr = data.ORGAddr;
+                        uint length = (uint)20;
+
+                        BinMapping b = new BinMapping();
+                        b.key = "ORG";
+                        b.filename = "";
+                        b.addr = data.ORGAddr;
+                        b.length = length;
+                        b.bin = Program.ROM.getBinaryData(addr,length);
+                        b.mask = MakeMaskAddress(b.bin, addr);
+                        b.type = Address.DataTypeEnum.PATCH_ASM;
+
+                        binMappings.Add(b);
+
+                        //最後に発見したアドレスを追加
+                        lastMatchAddr = addr + length;
+                    }
                     else if (data.DataType == EAUtil.DataEnum.POINTER_ARRAY)
                     {
                         //最後に書き込んだ部分から、ポインタと思われる部分を連続して検出する.
@@ -5426,13 +5431,14 @@ namespace FEBuilderGBA
                 }
             }
         }
-        static void MakePatchStructDataListForEA(List<Address> list, bool isPointerOnly, PatchSt patch , bool isStoreSymbol)
+        static void MakePatchStructDataListForEA(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
             string use_asmamp = U.at(patch.Param, "ASMMAP", "true");
             if (U.stringbool(use_asmamp) == false)
             {//ASMMAPに含めない
                 return;
             }
+            ProcessSymbolByList(list, patch);
 
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             List<BinMapping> map = TracePatchedMapping(patch);
@@ -5477,19 +5483,20 @@ namespace FEBuilderGBA
                         , m.type);
                 }
 
-                if (isStoreSymbol && m.filename != "")
+                if (m.filename != "")
                 {
-                    SymbolUtil.ProcessSymbol(list, basedir, m.filename, m.addr);
+                    SymbolUtil.ProcessSymbolByList(list, basedir, m.filename, m.addr);
                 }
             }
         }
-        static void MakePatchStructDataListForBIN(List<Address> list, bool isPointerOnly, PatchSt patch, bool isStoreSymbol)
+        static void MakePatchStructDataListForBIN(List<Address> list, bool isPointerOnly, PatchSt patch)
         {
             string use_asmamp = U.at(patch.Param, "ASMMAP","true");
             if (U.stringbool(use_asmamp) == false)
             {//ASMMAPに含めない
                 return;
             }
+            ProcessSymbolByList(list, patch);
 
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
             List<BinMapping> map = TracePatchedMapping(patch);
@@ -5573,9 +5580,9 @@ namespace FEBuilderGBA
                         , m.type);
                 }
 
-                if (isStoreSymbol && m.filename != "")
+                if (m.filename != "")
                 {
-                    SymbolUtil.ProcessSymbol(list, basedir, m.filename, m.addr);
+                    SymbolUtil.ProcessSymbolByList(list, basedir, m.filename, m.addr);
                 }
             }
         }
@@ -6124,7 +6131,7 @@ namespace FEBuilderGBA
  
 
         //パッチが知っているアドレスをすべて取得します.
-        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly, bool isStoreSymbol)
+        public static void MakePatchStructDataList(List<Address> list, bool isPointerOnly, bool isInstallOnly, bool isStructOnly)
         {
             List<PatchSt> patchs = ScanPatchs(GetPatchDirectory(),false);
             for (int i = 0; i < patchs.Count; i++)
@@ -6149,11 +6156,11 @@ namespace FEBuilderGBA
                 }
                 else if (type == "EA")
                 {
-                    MakePatchStructDataListForEA(list, isPointerOnly, patch, isStoreSymbol);
+                    MakePatchStructDataListForEA(list, isPointerOnly, patch);
                 }
                 else if (type == "BIN")
                 {
-                    MakePatchStructDataListForBIN(list, isPointerOnly, patch, isStoreSymbol);
+                    MakePatchStructDataListForBIN(list, isPointerOnly, patch);
                 }
                 else if (type == "SWITCH")
                 {
@@ -8022,7 +8029,7 @@ namespace FEBuilderGBA
             return true;
 
         }
-        void ProcessSYMBOL(PatchSt patch)
+        static void ProcessSymbolByList(List<Address> list, PatchSt patch)
         {
             string symbol = U.at(patch.Param, "SYMBOL", "");
             if (symbol == "")
@@ -8030,12 +8037,13 @@ namespace FEBuilderGBA
                 return;
             }
             string basedir = Path.GetDirectoryName(patch.PatchFileName);
-            symbol = Path.Combine(basedir , symbol);
-            if (! File.Exists(symbol))
+            symbol = Path.Combine(basedir, symbol);
+            if (!File.Exists(symbol))
             {
-                return ;
+                return;
             }
-            SymbolUtil.ProcessSymbol(patch.Name, symbol, SymbolUtil.DebugSymbol.SaveComment, 0);
+            string symbolData = File.ReadAllText(symbol);
+            SymbolUtil.ProcessSymbolToList(list, patch.Name, symbolData, 0);
         }
 
 

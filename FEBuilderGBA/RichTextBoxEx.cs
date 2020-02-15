@@ -235,10 +235,10 @@ namespace FEBuilderGBA
                 this.SelectionLength = 0;
                 U.LockWindowUpdate(IntPtr.Zero);
             }
-            catch (ObjectDisposedException e)
+            catch (ObjectDisposedException)
             {
-                //どうやっても、ObjectDisposedExceptionが発生するときがあるらしいので、例外で逃げます.
-                Log.Error("UnLockWindowUpdate",e.ToString());
+                //どうやっても、ObjectDisposedExceptionが発生するときがあるらしいので、try-catchで逃げます.
+                //Log.Error("UnLockWindowUpdate",e.ToString());
             }
         }
 

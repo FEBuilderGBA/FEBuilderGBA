@@ -182,7 +182,7 @@ namespace FEBuilderGBA
             {
                 throw new PatchForm.PatchException(R.Notify("変更をユーザーが取り消しました"));
             }
-            SymbolUtil.ProcessSymbol(EA, symbol, storeSymbol , 0);
+            SymbolUtil.ProcessSymbolByComment(EA, symbol, storeSymbol , 0);
 
             //EAの結果作成したROMを消します. 残すとROMがPATCHディレクトリに残るのでいろいろよろしくない.
             File.Delete(output);

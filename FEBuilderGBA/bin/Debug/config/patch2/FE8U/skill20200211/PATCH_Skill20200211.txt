@@ -989,4 +989,5 @@ EDIT_PATCH:7=../skill20200211/PATCH_PersonalData Skillsystems Version.txt
 EDIT_PATCH:8=../skill20200211/PATCH_Mag Char Editor.txt
 EDIT_PATCH:9=../skill20200211/PATCH_Mag Class Editor.txt
 
+SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM

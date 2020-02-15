@@ -15,8 +15,35 @@ namespace FEBuilderGBA
             ,SaveComment = 2
             ,SaveBoth = 3
         };
+        static bool IsEAGBASymbol(string symbol)
+        {
+            return symbol.IndexOf("=$") > 0;
+        }
 
-        static void RegistSymbol(string basefilename, string symbol, uint baseaddr )
+
+        static void RegistSymbolToComment(string basefilename, string symbol, uint baseaddr )
+        {
+            List<Address> list = new List<Address>();
+            ProcessSymbolToList(list, basefilename, symbol, baseaddr);
+
+            foreach (Address a in list)
+            {
+                Program.CommentCache.Update(a.Addr, a.Info);
+            }
+        }
+        public static void ProcessSymbolToList(List<Address> list, string basefilename, string symbol, uint baseaddr)
+        {
+            if (IsEAGBASymbol(symbol))
+            {
+                RegistSymbolByEA(list, basefilename, symbol, baseaddr);
+            }
+            else
+            {
+                RegistSymbolByNoDoll(list, basefilename, symbol, baseaddr);
+            }
+        }
+
+        static void RegistSymbolByEA(List<Address> list, string basefilename, string symbol, uint baseaddr)
         {
             string basename = "@" + Path.GetFileName(basefilename);
 
@@ -26,7 +53,7 @@ namespace FEBuilderGBA
                 //EA形式
                 //MMBDrawInventoryObjs=$100109D
                 string[] sp = line.Split('=');
-                if (sp.Length < 2)
+                if (sp.Length != 2)
                 {
                     continue;
                 }
@@ -39,9 +66,37 @@ namespace FEBuilderGBA
                 }
 
                 addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                Program.CommentCache.Update(addr, name + basename);
+                Address.AddCommentData(list, addr, name + basename);
             }
         }
+        static void RegistSymbolByNoDoll(List<Address> list, string basefilename, string symbol, uint baseaddr)
+        {
+            string basename = "@" + Path.GetFileName(basefilename);
+
+            string[] lines = symbol.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string line in lines)
+            {
+                //no$gba形式
+                //100109C MMBDrawInventoryObjs
+                string[] sp = line.Split(' ');
+                if (sp.Length != 2)
+                {
+                    continue;
+                }
+                string name = sp[1];
+                uint addr = U.atoh(sp[0]);
+
+                addr += baseaddr;
+                if (name.Length <= 0 || addr <= 0x100)
+                {
+                    continue;
+                }
+
+                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
+                Address.AddCommentData(list, addr, name + basename);
+            }
+        }
+
 
         static string GetSymTxt(string basefilename)
         {
@@ -70,7 +125,7 @@ namespace FEBuilderGBA
             return true;
         }
 
-        public static void ProcessSymbol(string basefilename, string symbol, SymbolUtil.DebugSymbol storeSymbol , uint baseaddr)
+        public static void ProcessSymbolByComment(string basefilename, string symbol, SymbolUtil.DebugSymbol storeSymbol , uint baseaddr)
         {
             if (storeSymbol == SymbolUtil.DebugSymbol.None)
             {//シンボルを利用しない
@@ -81,30 +136,16 @@ namespace FEBuilderGBA
             }
             else if (storeSymbol == SymbolUtil.DebugSymbol.SaveComment)
             {//シンボルをコメントとして保存
-                SymbolUtil.RegistSymbol(basefilename, symbol, baseaddr);
+                SymbolUtil.RegistSymbolToComment(basefilename, symbol, baseaddr);
             }
             else if (storeSymbol == SymbolUtil.DebugSymbol.SaveBoth)
             {//両方
                 SymbolUtil.StoreSymbol(basefilename, symbol); //まずは保存.
-                SymbolUtil.RegistSymbol(basefilename, symbol, baseaddr);
+                SymbolUtil.RegistSymbolToComment(basefilename, symbol, baseaddr);
             }
         }
 
-        static void ProcessSymbol(List<Address> list , string basefilename)
-        {
-            foreach (Address a in list)
-            {
-                if (a.DataType != Address.DataTypeEnum.Comment)
-                {
-                    continue;
-                }
-                uint addr = a.Addr;
-                addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                Program.CommentCache.Update(addr, a.Info);
-            }
-        }
-
-        public static void ProcessSymbol(List<Address> list 
+        public static void ProcessSymbolByList(List<Address> list 
             ,string basedir, string binfilename, uint baseaddr)
         {
             string ext = U.GetFilenameExt(binfilename);
@@ -148,13 +189,13 @@ namespace FEBuilderGBA
                 }
 
                 addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                Program.CommentCache.Update(addr, name + basename);
+                Address.AddCommentData(list, addr, name + basename);
             }
         }
 
         static void ProcessSymbolElf(List<Address> list, string elffilename, uint baseaddr)
         {
-            Elf elf = new Elf(elffilename);
+            Elf elf = new Elf(elffilename , useHookMode: false);
             if (elf.ProgramBIN.Length < 0)
             {
                 return;
@@ -172,7 +213,7 @@ namespace FEBuilderGBA
                 }
 
                 addr = DisassemblerTrumb.ProgramAddrToPlain(addr);
-                Program.CommentCache.Update(addr, name + basename);
+                Address.AddCommentData(list, addr, name + basename);
             }
         }
     }
