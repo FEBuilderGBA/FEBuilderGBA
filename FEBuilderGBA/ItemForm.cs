@@ -187,7 +187,15 @@ namespace FEBuilderGBA
             X_SIM_RES.Value = (sbyte)bonuses[5]; //魔防
             X_SIM_LUCK.Value = (sbyte)bonuses[6]; //幸運
             X_SIM_MOVE.Value = (sbyte)bonuses[7]; //移動
-            X_SIM_BODY.Value = (sbyte)bonuses[8]; //体格
+            X_SIM_BODY.Value = (sbyte)bonuses[8]; //体力
+
+            
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC ||
+                magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                MagicExtUnitBase.Value = (sbyte)bonuses[9]; //魔力
+            }
         }
         private void P16_ValueChanged(object sender, EventArgs e)
         {
