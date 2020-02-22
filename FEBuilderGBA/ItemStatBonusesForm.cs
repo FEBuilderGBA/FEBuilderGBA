@@ -62,6 +62,13 @@ namespace FEBuilderGBA
 
         private void ITEMSTATBOOSTERForm_Load(object sender, EventArgs e)
         {
+            //英語版の魔法分離パッチ
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC ||
+                magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC)
+            {
+                J_9.Text = R._("魔力");
+            }
         }
 
         private void AddressList_SelectedIndexChanged(object sender, EventArgs e)

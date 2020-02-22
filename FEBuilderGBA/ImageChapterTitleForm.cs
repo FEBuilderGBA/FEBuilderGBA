@@ -173,6 +173,31 @@ namespace FEBuilderGBA
             }
 
 
+            //check palette
+            {
+                string palette_error =
+                    ImageUtil.CheckPalette(bitmap.Palette
+                        , Program.ROM.Data
+                        , Program.ROM.RomInfo.image_chapter_title_palette()
+                        , U.NOT_FOUND
+                        );
+                if (palette_error != "")
+                {
+                    ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
+                    f.SetErrorMessage(palette_error);
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
+                    f.ShowForceButton();
+                    f.ShowDialog();
+
+                    bitmap = f.GetResultBitmap();
+                    if (bitmap == null)
+                    {
+                        return;
+                    }
+                }
+            }
+
             byte[] image = ImageUtil.ImageToByte16Tile(bitmap, width, height);
 
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
@@ -205,6 +230,31 @@ namespace FEBuilderGBA
             {
                 R.ShowStopError("画像サイズが正しくありません。\r\nWidth:{2} Height:{3} でなければなりません。\r\n\r\n選択された画像のサイズ Width:{0} Height:{1}", bitmap.Width,bitmap.Height,width,height);
                 return;
+            }
+
+            //check palette
+            {
+                string palette_error =
+                    ImageUtil.CheckPalette(bitmap.Palette
+                        , Program.ROM.Data
+                        , Program.ROM.RomInfo.image_chapter_title_palette()
+                        , U.NOT_FOUND
+                        );
+                if (palette_error != "")
+                {
+                    ErrorPaletteShowForm f = (ErrorPaletteShowForm)InputFormRef.JumpFormLow<ErrorPaletteShowForm>();
+                    f.SetErrorMessage(palette_error);
+                    f.SetOrignalImage(ImageUtil.OverraidePalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
+                    f.SetReOrderImage1(ImageUtil.ReOrderPalette(bitmap, Program.ROM.Data, Program.ROM.RomInfo.image_chapter_title_palette()));
+                    f.ShowForceButton();
+                    f.ShowDialog();
+
+                    bitmap = f.GetResultBitmap();
+                    if (bitmap == null)
+                    {
+                        return;
+                    }
+                }
             }
 
             byte[] image = ImageUtil.ImageToByte16Tile(bitmap, width, height);

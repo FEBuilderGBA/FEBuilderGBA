@@ -1193,7 +1193,7 @@ namespace FEBuilderGBA
                 }
                 else if (type == 0x1)
                 {//01=常時条件
-                    uint jflag = Program.ROM.u16(addr + 8);
+                    uint jflag = Program.ROM.u32(addr + 8);
                     FELint.CheckFlag(jflag, errors, CONDTYPE.ALWAYS, addr);
                 }
                 else if (type == 0xE && Program.ROM.RomInfo.version() >= 7)

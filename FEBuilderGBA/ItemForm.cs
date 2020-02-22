@@ -73,6 +73,15 @@ namespace FEBuilderGBA
             InputFormRef.LoadCheckboxesResource("item_checkbox_", controls, tooltip, "", "L_8_BIT_", "L_9_BIT_", "L_10_BIT_", "L_11_BIT_");
 
             FE8UItemSkill();
+
+            //英語版の魔法分離パッチ
+            MagicSplitUtil.magic_split_enum magic_split = MagicSplitUtil.SearchMagicSplit();
+            if (magic_split == MagicSplitUtil.magic_split_enum.FE8UMAGIC ||
+                magic_split == MagicSplitUtil.magic_split_enum.FE7UMAGIC )
+            {
+                MagicExtUnitBaseLabel.Show();
+                MagicExtUnitBase.Show();
+            }
         }
 
         public static String GetItemName(uint item_id)
@@ -290,7 +299,7 @@ namespace FEBuilderGBA
                         }
                         else
                         {
-                            return R._("アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例: \" [.]\"");
+                            return R._("アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例:  [.]");
                         }
                     }
                 }

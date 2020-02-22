@@ -292,13 +292,10 @@
             this.ALWAYS_N0B_B8 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_UNIONTAB_N01 = new System.Windows.Forms.TabPage();
             this.ALWAYS_N01_L_4_NEWALLOC_EVENT6 = new System.Windows.Forms.Button();
-            this.ALWAYS_N01_B11 = new System.Windows.Forms.NumericUpDown();
-            this.ALWAYS_N01_J_10 = new System.Windows.Forms.Label();
-            this.ALWAYS_N01_B10 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_W2 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_J_2_FLAG = new System.Windows.Forms.Label();
             this.ALWAYS_N01_J_8_FLAG = new System.Windows.Forms.Label();
-            this.ALWAYS_N01_W8 = new System.Windows.Forms.NumericUpDown();
+            this.ALWAYS_N01_D8 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_P4 = new System.Windows.Forms.NumericUpDown();
             this.ALWAYS_N01_J_4_EVENT = new System.Windows.Forms.Label();
             this.ALWAYS_UNIONTAB_N0E = new System.Windows.Forms.TabPage();
@@ -717,10 +714,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N0B_B9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N0B_B8)).BeginInit();
             this.ALWAYS_UNIONTAB_N01.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_B11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_B10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_W2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_W8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_D8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_P4)).BeginInit();
             this.ALWAYS_UNIONTAB_N0E.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N0E_W2)).BeginInit();
@@ -4117,13 +4112,10 @@
             // 
             this.ALWAYS_UNIONTAB_N01.BackColor = System.Drawing.SystemColors.Control;
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_L_4_NEWALLOC_EVENT6);
-            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_B11);
-            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_J_10);
-            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_B10);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_W2);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_J_2_FLAG);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_J_8_FLAG);
-            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_W8);
+            this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_D8);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_P4);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_J_4_EVENT);
             this.ALWAYS_UNIONTAB_N01.Controls.Add(this.ALWAYS_N01_EXPLAIN);
@@ -4146,45 +4138,6 @@
             this.ALWAYS_N01_L_4_NEWALLOC_EVENT6.TabIndex = 225;
             this.ALWAYS_N01_L_4_NEWALLOC_EVENT6.Text = "新規イベント";
             this.ALWAYS_N01_L_4_NEWALLOC_EVENT6.UseVisualStyleBackColor = true;
-            // 
-            // ALWAYS_N01_B11
-            // 
-            this.ALWAYS_N01_B11.Hexadecimal = true;
-            this.ALWAYS_N01_B11.Location = new System.Drawing.Point(274, 119);
-            this.ALWAYS_N01_B11.Margin = new System.Windows.Forms.Padding(2);
-            this.ALWAYS_N01_B11.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.ALWAYS_N01_B11.Name = "ALWAYS_N01_B11";
-            this.ALWAYS_N01_B11.Size = new System.Drawing.Size(67, 25);
-            this.ALWAYS_N01_B11.TabIndex = 175;
-            // 
-            // ALWAYS_N01_J_10
-            // 
-            this.ALWAYS_N01_J_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ALWAYS_N01_J_10.Location = new System.Drawing.Point(2, 118);
-            this.ALWAYS_N01_J_10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ALWAYS_N01_J_10.Name = "ALWAYS_N01_J_10";
-            this.ALWAYS_N01_J_10.Size = new System.Drawing.Size(194, 32);
-            this.ALWAYS_N01_J_10.TabIndex = 173;
-            this.ALWAYS_N01_J_10.Text = "??";
-            this.ALWAYS_N01_J_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ALWAYS_N01_B10
-            // 
-            this.ALWAYS_N01_B10.Hexadecimal = true;
-            this.ALWAYS_N01_B10.Location = new System.Drawing.Point(199, 119);
-            this.ALWAYS_N01_B10.Margin = new System.Windows.Forms.Padding(2);
-            this.ALWAYS_N01_B10.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.ALWAYS_N01_B10.Name = "ALWAYS_N01_B10";
-            this.ALWAYS_N01_B10.Size = new System.Drawing.Size(67, 25);
-            this.ALWAYS_N01_B10.TabIndex = 174;
             // 
             // ALWAYS_N01_W2
             // 
@@ -4224,19 +4177,19 @@
             this.ALWAYS_N01_J_8_FLAG.Text = "判定フラグ";
             this.ALWAYS_N01_J_8_FLAG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ALWAYS_N01_W8
+            // ALWAYS_N01_D8
             // 
-            this.ALWAYS_N01_W8.Hexadecimal = true;
-            this.ALWAYS_N01_W8.Location = new System.Drawing.Point(199, 86);
-            this.ALWAYS_N01_W8.Margin = new System.Windows.Forms.Padding(2);
-            this.ALWAYS_N01_W8.Maximum = new decimal(new int[] {
+            this.ALWAYS_N01_D8.Hexadecimal = true;
+            this.ALWAYS_N01_D8.Location = new System.Drawing.Point(199, 86);
+            this.ALWAYS_N01_D8.Margin = new System.Windows.Forms.Padding(2);
+            this.ALWAYS_N01_D8.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.ALWAYS_N01_W8.Name = "ALWAYS_N01_W8";
-            this.ALWAYS_N01_W8.Size = new System.Drawing.Size(67, 25);
-            this.ALWAYS_N01_W8.TabIndex = 146;
+            this.ALWAYS_N01_D8.Name = "ALWAYS_N01_D8";
+            this.ALWAYS_N01_D8.Size = new System.Drawing.Size(140, 25);
+            this.ALWAYS_N01_D8.TabIndex = 146;
             // 
             // ALWAYS_N01_P4
             // 
@@ -7306,12 +7259,12 @@
             // ALWAYS_N01_L_8_FLAG
             // 
             this.ALWAYS_N01_L_8_FLAG.ErrorMessage = "";
-            this.ALWAYS_N01_L_8_FLAG.Location = new System.Drawing.Point(270, 85);
+            this.ALWAYS_N01_L_8_FLAG.Location = new System.Drawing.Point(345, 85);
             this.ALWAYS_N01_L_8_FLAG.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ALWAYS_N01_L_8_FLAG.Name = "ALWAYS_N01_L_8_FLAG";
             this.ALWAYS_N01_L_8_FLAG.Placeholder = "";
             this.ALWAYS_N01_L_8_FLAG.ReadOnly = true;
-            this.ALWAYS_N01_L_8_FLAG.Size = new System.Drawing.Size(312, 25);
+            this.ALWAYS_N01_L_8_FLAG.Size = new System.Drawing.Size(237, 25);
             this.ALWAYS_N01_L_8_FLAG.TabIndex = 228;
             // 
             // ALWAYS_N01_L_2_FLAG
@@ -7911,10 +7864,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N0B_B8)).EndInit();
             this.ALWAYS_UNIONTAB_N01.ResumeLayout(false);
             this.ALWAYS_UNIONTAB_N01.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_B11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_B10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_W2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_W8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_D8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALWAYS_N01_P4)).EndInit();
             this.ALWAYS_UNIONTAB_N0E.ResumeLayout(false);
             this.ALWAYS_UNIONTAB_N0E.PerformLayout();
@@ -8227,7 +8178,7 @@
         private System.Windows.Forms.Label ALWAYS_N01_J_8_FLAG;
         private System.Windows.Forms.Label ALWAYS_N01_J_4_EVENT;
         private System.Windows.Forms.NumericUpDown ALWAYS_N01_P4;
-        private System.Windows.Forms.NumericUpDown ALWAYS_N01_W8;
+        private System.Windows.Forms.NumericUpDown ALWAYS_N01_D8;
         private System.Windows.Forms.Label ALWAYS_N01_J_2_FLAG;
         private System.Windows.Forms.Panel Panel123;
         private ListBoxEx ALWAYS_AddressList;
@@ -8316,9 +8267,6 @@
         private System.Windows.Forms.NumericUpDown ALWAYS_N0E_P8;
         private System.Windows.Forms.NumericUpDown ALWAYS_N0E_P4;
         private System.Windows.Forms.Label ALWAYS_N0E_J_4_EVENT;
-        private System.Windows.Forms.NumericUpDown ALWAYS_N01_B11;
-        private System.Windows.Forms.Label ALWAYS_N01_J_10;
-        private System.Windows.Forms.NumericUpDown ALWAYS_N01_B10;
         private System.Windows.Forms.TabControl TALK_UNIONTAB;
         private System.Windows.Forms.TabPage TALK_UNIONTAB_N03;
         private System.Windows.Forms.TabPage TALK_UNIONTAB_N04;

@@ -2964,6 +2964,10 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
+                if (!CheckSkillSystemsOverraideUI(patch))
+                {
+                    return;
+                }
 
                 try
                 {
@@ -3112,6 +3116,10 @@ namespace FEBuilderGBA
                 }
 
                 if (! CheckDeprecatedUI(patch))
+                {
+                    return;
+                }
+                if (!CheckSkillSystemsOverraideUI(patch))
                 {
                     return;
                 }
@@ -8029,6 +8037,27 @@ namespace FEBuilderGBA
             return true;
 
         }
+        bool CheckSkillSystemsOverraideUI(PatchSt patch)
+        {
+            string updateMethod = U.at(patch.Param, "UPDATE_METHOD", "");
+            if (updateMethod == "SKILLSYSTEM")
+            {
+                PatchUtil.skill_system_enum X_SkillType = PatchUtil.SearchSkillSystem();
+                if (X_SkillType != PatchUtil.skill_system_enum.SkillSystem)
+                {
+                    return true;
+                }
+                DialogResult dr = R.ShowNoYes("このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？");
+                if (dr != DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
+
+
         static void ProcessSymbolByList(List<Address> list, PatchSt patch)
         {
             string symbol = U.at(patch.Param, "SYMBOL", "");

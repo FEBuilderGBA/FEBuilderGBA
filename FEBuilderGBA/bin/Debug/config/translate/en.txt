@@ -5158,8 +5158,8 @@ Use Screen
 :アイテムの説明欄が空です。\r\nFE8では、空にする場合は、倍角スペースを入れる必要があります。
 The description field of the item is empty.\r\nIn FE 8, when emptying, you need to insert double spaces.
 
-:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例: \" [.]\"
-The description field of the item is empty.\r\nIn FE 8, to empty it, you need to enter a blank space and [.].\r\nExample: \\ "[.] \\ ".
+:アイテムの説明欄が空です。\r\nFE8では、空にする場合は、空白スペースと[.]を入れる必要があります。\r\n例:  [.]
+Item description is empty.\r\nIn FE8, when emptying, it is necessary to insert a blank space and [.].\r\nExample: [.].
 
 :物理武器ですが、攻撃した時の「ダメージエフェクト」が「なし」に設定されています。
 This item is a physical weapon, but "Damage effect" when attacking is set to "None".
@@ -8902,9 +8902,6 @@ Area 0x {1} pointed to by pointer {0} can't be accessed
 :アドレス指定が正しくありません。 値:0x{0}
 Incorrect Address specification. Value:0x{0}
 
-:このパッチは、テキストを変更するので、インストールする前に AntiHuffmanパッチが必要です。
-This patch changes the text so you need the Anti-Huffman patch before installing it.
-
 :不明なキーワードです : {0}
 Unknown Keyword: {0}
 
@@ -9027,6 +9024,9 @@ Could not install new patch.
 
 :このパッチは古いパッチです。\r\n互換性のために残されています。\r\n通常は利用してはいけません。\r\n\r\n本当にインストールしてもよろしいですか？
 This patch is an old patch.\r\nIt is left for compatibility.\r\nDo not use normally.\r\n\r\nAre you sure you want to install it? 
+
+:このROMにはSkillSystemsが既にインストールされています。\r\nSkillSystemsの上書きインストールはとても危険です。\r\n正しい更新手順に従ってください。\r\n\r\n本当にインストールしてもよろしいですか？
+SkillSystems is already installed in this ROM.\r\nOverinstalling SkillSystems is very dangerous.\r\nPlease follow the correct update procedure.\r\n\r\nAre you sure you want to install it? 
 
 :パッチファイルを開く
 Open patch file
