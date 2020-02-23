@@ -313,6 +313,7 @@ namespace FEBuilderGBA
 
         bool ParseLynELF(string line , string orignalIine)
         {
+            bool inctevent_lyn = false;
             string a = Keyword(line, "#inctevent lyn");
             if (a == "")
             {
@@ -321,6 +322,10 @@ namespace FEBuilderGBA
                 {
                     return false;
                 }
+            }
+            else
+            {
+                inctevent_lyn = true;
             }
             string filename = U.cut(a, "\"", "\"");
             string fullbinname = Path.Combine( this.Dir, filename);
@@ -337,7 +342,10 @@ namespace FEBuilderGBA
             Data data = new Data(filename, elf.ProgramBIN, dataType);
             this.DataList.Add(data);
 
-            ParseLynSecondArgs(a);
+            if (inctevent_lyn == false)
+            {
+                ParseLynSecondArgs(a);
+            }
             return true;
         }
         bool ParseLynSecondArgs(string a )
