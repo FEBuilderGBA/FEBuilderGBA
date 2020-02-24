@@ -2192,6 +2192,18 @@ namespace FEBuilderGBA
                     return;
                 }
             }
+            if (linktype == "MSEC")
+            {//ミリ秒.
+                if (link_info is TextBoxEx)
+                {
+                    TextBoxEx link_object = ((TextBoxEx)link_info);
+                    src_object.ValueChanged += (sender, e) =>
+                    {
+                        link_object.Text = InputFormRef.GetFSEC((uint)src_object.Value);
+                    };
+                    return;
+                }
+            }
             if (linktype == "STATUSRMENU")
             {//ステータスパラメータ.
                 if (link_info is TextBoxEx)

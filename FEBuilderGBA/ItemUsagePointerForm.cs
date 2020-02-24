@@ -120,7 +120,14 @@ namespace FEBuilderGBA
                     configFilename = (U.ConfigDataFilename("item_staff2_array_"));
                     break;
                 case 6: //6=ドーピングアイテムを利用した時のメッセージを定義する
-                    configFilename = (U.ConfigDataFilename("item_statbooster1_array_"));
+                    if (PatchUtil.SearchStatboosterExtends() == PatchUtil.StatboosterExtends.SkillSystems_strmag_slipt)
+                    {
+                        configFilename = (U.ConfigDataFilename("item_statbooster1_skill_array_"));
+                    }
+                    else
+                    {
+                        configFilename = (U.ConfigDataFilename("item_statbooster1_array_"));
+                    }
                     StatBoosterItemExplain.Show();
                     break;
                 case 7: //7=ドーピングアイテムとCCアイテムかどうかを定義する

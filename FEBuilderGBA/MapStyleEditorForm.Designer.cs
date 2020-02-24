@@ -31,11 +31,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.MapStyle = new System.Windows.Forms.ComboBox();
             this.MAPCHIPLISTPanel = new System.Windows.Forms.Panel();
-            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
             this.MapPanel = new System.Windows.Forms.Panel();
             this.ChipsetConfigAddress = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.ConfigNo = new FEBuilderGBA.TextBoxEx();
             this.label30 = new System.Windows.Forms.Label();
             this.Config_L_6_TSA_Y = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,7 +59,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Config_L_0_TSA_PALETTE = new System.Windows.Forms.ComboBox();
             this.Config_L_0_TSA_FLIP = new System.Windows.Forms.ComboBox();
-            this.ConfigPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.ConfigTerrain = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Config_W6 = new System.Windows.Forms.NumericUpDown();
@@ -78,7 +75,6 @@
             this.ObjImportOption = new System.Windows.Forms.ComboBox();
             this.ObjAddress2 = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
-            this.MAP = new FEBuilderGBA.MapPictureBox();
             this.ObjImportButton = new System.Windows.Forms.Button();
             this.ObjExportButton = new System.Windows.Forms.Button();
             this.ObjAddress = new System.Windows.Forms.NumericUpDown();
@@ -187,8 +183,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.MapChipImportButton = new System.Windows.Forms.Button();
             this.MapChipExportButton = new System.Windows.Forms.Button();
+            this.MAP = new FEBuilderGBA.MapPictureBox();
+            this.MAPCHIPLIST = new FEBuilderGBA.InterpolatedPictureBox();
+            this.ConfigNo = new FEBuilderGBA.TextBoxEx();
+            this.ConfigPictureBox = new FEBuilderGBA.InterpolatedPictureBox();
             this.MAPCHIPLISTPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChipsetConfigAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_6_TSA_Y)).BeginInit();
@@ -199,7 +198,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_2_TSA_X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_Y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_X)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W2)).BeginInit();
@@ -259,6 +257,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -293,21 +293,6 @@
             this.MAPCHIPLISTPanel.Name = "MAPCHIPLISTPanel";
             this.MAPCHIPLISTPanel.Size = new System.Drawing.Size(678, 787);
             this.MAPCHIPLISTPanel.TabIndex = 1;
-            // 
-            // MAPCHIPLIST
-            // 
-            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
-            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
-            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
-            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
-            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.MAPCHIPLIST.TabIndex = 0;
-            this.MAPCHIPLIST.TabStop = false;
-            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
-            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
-            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
-            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
             // 
             // MapPanel
             // 
@@ -382,15 +367,6 @@
             this.label5.TabIndex = 388;
             this.label5.Text = "アドレス";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ConfigNo
-            // 
-            this.ConfigNo.Location = new System.Drawing.Point(124, 14);
-            this.ConfigNo.Margin = new System.Windows.Forms.Padding(2);
-            this.ConfigNo.Name = "ConfigNo";
-            this.ConfigNo.ReadOnly = true;
-            this.ConfigNo.Size = new System.Drawing.Size(100, 25);
-            this.ConfigNo.TabIndex = 65;
             // 
             // label30
             // 
@@ -723,17 +699,6 @@
             this.Config_L_0_TSA_FLIP.Size = new System.Drawing.Size(137, 26);
             this.Config_L_0_TSA_FLIP.TabIndex = 40;
             // 
-            // ConfigPictureBox
-            // 
-            this.ConfigPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-            this.ConfigPictureBox.Location = new System.Drawing.Point(838, 44);
-            this.ConfigPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.ConfigPictureBox.Name = "ConfigPictureBox";
-            this.ConfigPictureBox.Size = new System.Drawing.Size(152, 152);
-            this.ConfigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ConfigPictureBox.TabIndex = 39;
-            this.ConfigPictureBox.TabStop = false;
-            // 
             // ConfigTerrain
             // 
             this.ConfigTerrain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -936,15 +901,6 @@
             this.label32.Text = "オブジェクト";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MAP
-            // 
-            this.MAP.AutoScroll = true;
-            this.MAP.Location = new System.Drawing.Point(4, 2);
-            this.MAP.Margin = new System.Windows.Forms.Padding(2);
-            this.MAP.Name = "MAP";
-            this.MAP.Size = new System.Drawing.Size(508, 551);
-            this.MAP.TabIndex = 442;
-            // 
             // ObjImportButton
             // 
             this.ObjImportButton.Location = new System.Drawing.Point(7, 556);
@@ -1131,7 +1087,7 @@
             this.PALETTE_TO_CLIPBOARD_BUTTON.Location = new System.Drawing.Point(2, 584);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Margin = new System.Windows.Forms.Padding(2);
             this.PALETTE_TO_CLIPBOARD_BUTTON.Name = "PALETTE_TO_CLIPBOARD_BUTTON";
-            this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(158, 30);
+            this.PALETTE_TO_CLIPBOARD_BUTTON.Size = new System.Drawing.Size(148, 30);
             this.PALETTE_TO_CLIPBOARD_BUTTON.TabIndex = 441;
             this.PALETTE_TO_CLIPBOARD_BUTTON.Text = "クリップボード";
             this.PALETTE_TO_CLIPBOARD_BUTTON.UseVisualStyleBackColor = true;
@@ -1139,10 +1095,10 @@
             // 
             // PaletteImportButton
             // 
-            this.PaletteImportButton.Location = new System.Drawing.Point(168, 584);
+            this.PaletteImportButton.Location = new System.Drawing.Point(156, 584);
             this.PaletteImportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteImportButton.Name = "PaletteImportButton";
-            this.PaletteImportButton.Size = new System.Drawing.Size(158, 30);
+            this.PaletteImportButton.Size = new System.Drawing.Size(162, 30);
             this.PaletteImportButton.TabIndex = 440;
             this.PaletteImportButton.Text = "パレット読込";
             this.PaletteImportButton.UseVisualStyleBackColor = true;
@@ -1150,10 +1106,10 @@
             // 
             // PaletteExportButton
             // 
-            this.PaletteExportButton.Location = new System.Drawing.Point(329, 584);
+            this.PaletteExportButton.Location = new System.Drawing.Point(319, 584);
             this.PaletteExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.PaletteExportButton.Name = "PaletteExportButton";
-            this.PaletteExportButton.Size = new System.Drawing.Size(147, 30);
+            this.PaletteExportButton.Size = new System.Drawing.Size(157, 30);
             this.PaletteExportButton.TabIndex = 439;
             this.PaletteExportButton.Text = "パレット取出";
             this.PaletteExportButton.UseVisualStyleBackColor = true;
@@ -1274,7 +1230,6 @@
             // 
             // PALETTE_B_16
             // 
-
             this.PALETTE_B_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -1293,7 +1248,6 @@
             // 
             // PALETTE_G_16
             // 
-
             this.PALETTE_G_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -1312,7 +1266,6 @@
             // 
             // PALETTE_R_16
             // 
-
             this.PALETTE_R_16.Increment = new decimal(new int[] {
             8,
             0,
@@ -1352,7 +1305,6 @@
             // 
             // PALETTE_B_15
             // 
-
             this.PALETTE_B_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -1371,7 +1323,6 @@
             // 
             // PALETTE_G_15
             // 
-
             this.PALETTE_G_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -1390,7 +1341,6 @@
             // 
             // PALETTE_R_15
             // 
-
             this.PALETTE_R_15.Increment = new decimal(new int[] {
             8,
             0,
@@ -1430,7 +1380,6 @@
             // 
             // PALETTE_B_14
             // 
-
             this.PALETTE_B_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1449,7 +1398,6 @@
             // 
             // PALETTE_G_14
             // 
-
             this.PALETTE_G_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1468,7 +1416,6 @@
             // 
             // PALETTE_R_14
             // 
-
             this.PALETTE_R_14.Increment = new decimal(new int[] {
             8,
             0,
@@ -1508,7 +1455,6 @@
             // 
             // PALETTE_B_13
             // 
-
             this.PALETTE_B_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1527,7 +1473,6 @@
             // 
             // PALETTE_G_13
             // 
-
             this.PALETTE_G_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1546,7 +1491,6 @@
             // 
             // PALETTE_R_13
             // 
-
             this.PALETTE_R_13.Increment = new decimal(new int[] {
             8,
             0,
@@ -1586,7 +1530,6 @@
             // 
             // PALETTE_B_12
             // 
-
             this.PALETTE_B_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1605,7 +1548,6 @@
             // 
             // PALETTE_G_12
             // 
-
             this.PALETTE_G_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1624,7 +1566,6 @@
             // 
             // PALETTE_R_12
             // 
-
             this.PALETTE_R_12.Increment = new decimal(new int[] {
             8,
             0,
@@ -1664,7 +1605,6 @@
             // 
             // PALETTE_B_11
             // 
-
             this.PALETTE_B_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1683,7 +1623,6 @@
             // 
             // PALETTE_G_11
             // 
-
             this.PALETTE_G_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1702,7 +1641,6 @@
             // 
             // PALETTE_R_11
             // 
-
             this.PALETTE_R_11.Increment = new decimal(new int[] {
             8,
             0,
@@ -1742,7 +1680,6 @@
             // 
             // PALETTE_B_10
             // 
-
             this.PALETTE_B_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1761,7 +1698,6 @@
             // 
             // PALETTE_G_10
             // 
-
             this.PALETTE_G_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1780,7 +1716,6 @@
             // 
             // PALETTE_R_10
             // 
-
             this.PALETTE_R_10.Increment = new decimal(new int[] {
             8,
             0,
@@ -1810,7 +1745,6 @@
             // 
             // PALETTE_B_9
             // 
-
             this.PALETTE_B_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1829,7 +1763,6 @@
             // 
             // PALETTE_G_9
             // 
-
             this.PALETTE_G_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1848,7 +1781,6 @@
             // 
             // PALETTE_R_9
             // 
-
             this.PALETTE_R_9.Increment = new decimal(new int[] {
             8,
             0,
@@ -1971,7 +1903,6 @@
             // 
             // PALETTE_B_8
             // 
-
             this.PALETTE_B_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -1990,7 +1921,6 @@
             // 
             // PALETTE_G_8
             // 
-
             this.PALETTE_G_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -2009,7 +1939,6 @@
             // 
             // PALETTE_R_8
             // 
-
             this.PALETTE_R_8.Increment = new decimal(new int[] {
             8,
             0,
@@ -2049,7 +1978,6 @@
             // 
             // PALETTE_B_7
             // 
-
             this.PALETTE_B_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -2068,7 +1996,6 @@
             // 
             // PALETTE_G_7
             // 
-
             this.PALETTE_G_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -2087,7 +2014,6 @@
             // 
             // PALETTE_R_7
             // 
-
             this.PALETTE_R_7.Increment = new decimal(new int[] {
             8,
             0,
@@ -2127,7 +2053,6 @@
             // 
             // PALETTE_B_6
             // 
-
             this.PALETTE_B_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -2146,7 +2071,6 @@
             // 
             // PALETTE_G_6
             // 
-
             this.PALETTE_G_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -2165,7 +2089,6 @@
             // 
             // PALETTE_R_6
             // 
-
             this.PALETTE_R_6.Increment = new decimal(new int[] {
             8,
             0,
@@ -2205,7 +2128,6 @@
             // 
             // PALETTE_B_5
             // 
-
             this.PALETTE_B_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -2224,7 +2146,6 @@
             // 
             // PALETTE_G_5
             // 
-
             this.PALETTE_G_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -2243,7 +2164,6 @@
             // 
             // PALETTE_R_5
             // 
-
             this.PALETTE_R_5.Increment = new decimal(new int[] {
             8,
             0,
@@ -2283,7 +2203,6 @@
             // 
             // PALETTE_B_4
             // 
-
             this.PALETTE_B_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -2302,7 +2221,6 @@
             // 
             // PALETTE_G_4
             // 
-
             this.PALETTE_G_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -2321,7 +2239,6 @@
             // 
             // PALETTE_R_4
             // 
-
             this.PALETTE_R_4.Increment = new decimal(new int[] {
             8,
             0,
@@ -2361,7 +2278,6 @@
             // 
             // PALETTE_B_3
             // 
-
             this.PALETTE_B_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -2380,7 +2296,6 @@
             // 
             // PALETTE_G_3
             // 
-
             this.PALETTE_G_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -2399,7 +2314,6 @@
             // 
             // PALETTE_R_3
             // 
-
             this.PALETTE_R_3.Increment = new decimal(new int[] {
             8,
             0,
@@ -2439,7 +2353,6 @@
             // 
             // PALETTE_B_2
             // 
-
             this.PALETTE_B_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -2458,7 +2371,6 @@
             // 
             // PALETTE_G_2
             // 
-
             this.PALETTE_G_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -2477,7 +2389,6 @@
             // 
             // PALETTE_R_2
             // 
-
             this.PALETTE_R_2.Increment = new decimal(new int[] {
             8,
             0,
@@ -2517,7 +2428,6 @@
             // 
             // PALETTE_B_1
             // 
-
             this.PALETTE_B_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -2536,7 +2446,6 @@
             // 
             // PALETTE_G_1
             // 
-
             this.PALETTE_G_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -2555,7 +2464,6 @@
             // 
             // PALETTE_R_1
             // 
-
             this.PALETTE_R_1.Increment = new decimal(new int[] {
             8,
             0,
@@ -2605,6 +2513,52 @@
             this.MapChipExportButton.UseVisualStyleBackColor = true;
             this.MapChipExportButton.Click += new System.EventHandler(this.MapChipExportButton_Click);
             // 
+            // MAP
+            // 
+            this.MAP.AutoScroll = true;
+            this.MAP.Location = new System.Drawing.Point(4, 2);
+            this.MAP.Margin = new System.Windows.Forms.Padding(2);
+            this.MAP.Name = "MAP";
+            this.MAP.Size = new System.Drawing.Size(508, 551);
+            this.MAP.TabIndex = 442;
+            // 
+            // MAPCHIPLIST
+            // 
+            this.MAPCHIPLIST.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.MAPCHIPLIST.Location = new System.Drawing.Point(0, 0);
+            this.MAPCHIPLIST.Margin = new System.Windows.Forms.Padding(2);
+            this.MAPCHIPLIST.Name = "MAPCHIPLIST";
+            this.MAPCHIPLIST.Size = new System.Drawing.Size(32, 32);
+            this.MAPCHIPLIST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MAPCHIPLIST.TabIndex = 0;
+            this.MAPCHIPLIST.TabStop = false;
+            this.MAPCHIPLIST.Paint += new System.Windows.Forms.PaintEventHandler(this.MAPCHIPLIST_Paint);
+            this.MAPCHIPLIST.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseDown);
+            this.MAPCHIPLIST.MouseLeave += new System.EventHandler(this.MAPCHIPLIST_MouseLeave);
+            this.MAPCHIPLIST.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MAPCHIPLIST_MouseMove);
+            // 
+            // ConfigNo
+            // 
+            this.ConfigNo.ErrorMessage = "";
+            this.ConfigNo.Location = new System.Drawing.Point(124, 14);
+            this.ConfigNo.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfigNo.Name = "ConfigNo";
+            this.ConfigNo.Placeholder = "";
+            this.ConfigNo.ReadOnly = true;
+            this.ConfigNo.Size = new System.Drawing.Size(100, 25);
+            this.ConfigNo.TabIndex = 65;
+            // 
+            // ConfigPictureBox
+            // 
+            this.ConfigPictureBox.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+            this.ConfigPictureBox.Location = new System.Drawing.Point(838, 44);
+            this.ConfigPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfigPictureBox.Name = "ConfigPictureBox";
+            this.ConfigPictureBox.Size = new System.Drawing.Size(152, 152);
+            this.ConfigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ConfigPictureBox.TabIndex = 39;
+            this.ConfigPictureBox.TabStop = false;
+            // 
             // MapStyleEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -2623,7 +2577,6 @@
             this.Load += new System.EventHandler(this.MapStyleEditorForm_Load);
             this.MAPCHIPLISTPanel.ResumeLayout(false);
             this.MAPCHIPLISTPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
             this.MapPanel.ResumeLayout(false);
             this.MapPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChipsetConfigAddress)).EndInit();
@@ -2635,7 +2588,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_2_TSA_X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_Y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_L_0_TSA_X)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Config_W2)).EndInit();
@@ -2696,6 +2648,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_G_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PALETTE_R_1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MAPCHIPLIST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfigPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -56,6 +56,7 @@
             this.WriteButton = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
+            this.L_0_SONG = new FEBuilderGBA.TextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.D4)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.D8)).BeginInit();
@@ -70,10 +71,10 @@
             // 
             // L_0_SONGPLAY
             // 
-            this.L_0_SONGPLAY.Location = new System.Drawing.Point(588, 31);
+            this.L_0_SONGPLAY.Location = new System.Drawing.Point(704, 30);
             this.L_0_SONGPLAY.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.L_0_SONGPLAY.Name = "L_0_SONGPLAY";
-            this.L_0_SONGPLAY.Size = new System.Drawing.Size(32, 34);
+            this.L_0_SONGPLAY.Size = new System.Drawing.Size(60, 62);
             this.L_0_SONGPLAY.TabIndex = 181;
             this.L_0_SONGPLAY.Text = "♪";
             this.L_0_SONGPLAY.UseVisualStyleBackColor = true;
@@ -106,6 +107,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.L_0_SONG);
             this.panel6.Controls.Add(this.L_8_TEXT_SOUND1);
             this.panel6.Controls.Add(this.D8);
             this.panel6.Controls.Add(this.J_8_TEXT);
@@ -129,7 +131,7 @@
             this.L_8_TEXT_SOUND1.Name = "L_8_TEXT_SOUND1";
             this.L_8_TEXT_SOUND1.Placeholder = "";
             this.L_8_TEXT_SOUND1.ReadOnly = true;
-            this.L_8_TEXT_SOUND1.Size = new System.Drawing.Size(216, 25);
+            this.L_8_TEXT_SOUND1.Size = new System.Drawing.Size(337, 25);
             this.L_8_TEXT_SOUND1.TabIndex = 184;
             // 
             // D8
@@ -165,7 +167,7 @@
             this.L_4_TEXT_SOUND1.Name = "L_4_TEXT_SOUND1";
             this.L_4_TEXT_SOUND1.Placeholder = "";
             this.L_4_TEXT_SOUND1.ReadOnly = true;
-            this.L_4_TEXT_SOUND1.Size = new System.Drawing.Size(216, 25);
+            this.L_4_TEXT_SOUND1.Size = new System.Drawing.Size(337, 25);
             this.L_4_TEXT_SOUND1.TabIndex = 180;
             // 
             // D0
@@ -402,6 +404,17 @@
             this.label23.Text = "アドレス";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // L_0_SONG
+            // 
+            this.L_0_SONG.ErrorMessage = "";
+            this.L_0_SONG.Location = new System.Drawing.Point(361, 3);
+            this.L_0_SONG.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.L_0_SONG.Name = "L_0_SONG";
+            this.L_0_SONG.Placeholder = "";
+            this.L_0_SONG.ReadOnly = true;
+            this.L_0_SONG.Size = new System.Drawing.Size(337, 25);
+            this.L_0_SONG.TabIndex = 186;
+            // 
             // SoundRoomFE6Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -462,6 +475,7 @@
         private FEBuilderGBA.TextBoxEx L_8_TEXT_SOUND1;
         private System.Windows.Forms.NumericUpDown D8;
         private System.Windows.Forms.Label J_8_TEXT;
+        private TextBoxEx L_0_SONG;
 
     }
 }
