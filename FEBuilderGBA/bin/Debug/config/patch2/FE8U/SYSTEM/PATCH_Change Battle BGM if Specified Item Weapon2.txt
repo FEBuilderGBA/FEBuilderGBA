@@ -10,6 +10,6 @@ ADDRESS=0x58B16
 ADDRESS_TYPE=ITEM
 
 AUTHOR=7743
-INFO.en=Change BGM when attacking with a specific weapon.\r\nThe default is 0x92 Siegmund.
+INFO.en=Change BGM when attacking with a specific weapon.\r\nThe default is 0x92 Siegmund.\r\n(sacred weapon music)
 NAME.zh=当用这种武器攻击时改变BGM 2。
 INFO.zh=使用特定武器进行攻击时更改BGM。\r\n默认值为0x92 Siegmund。

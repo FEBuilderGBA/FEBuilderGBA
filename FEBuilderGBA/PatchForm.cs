@@ -7318,10 +7318,7 @@ namespace FEBuilderGBA
                 SkillAssignmentUnitSkillSystemForm.ExportAllData(SkillAssignmentUnitSkillSystem);
                 SkillConfigSkillSystemForm.ExportAllData(SkillConfigSkillSystem);
             }
-            else
-            {
-                ExportPatchAll(patch, tempdir);
-            }
+            ExportPatchAll(patch, tempdir);
         }
         void ImportPatchSetting(string tempdir
             , List<MappingConvert> mappingDESTEmbedFunction
@@ -7352,10 +7349,8 @@ namespace FEBuilderGBA
                 
                 SkillConfigSkillSystemForm.FixWeaponLockEx();
             }
-            else
-            {
-                ImportPatchAll(patch, tempdir);
-            }
+
+            ImportPatchAll(patch, tempdir);
 
             ExportEmbedFunction(patch, mappingDESTEmbedFunction);
         }
