@@ -6665,7 +6665,7 @@ namespace FEBuilderGBA
                             Debug.Assert(false);
                             return;
                         }
-                        if (datacount > struct_address)
+                        if (datacount >= struct_address)
                         {
                             datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                         }
@@ -7684,7 +7684,7 @@ namespace FEBuilderGBA
                 {
                     return ;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                 }
@@ -7716,6 +7716,12 @@ namespace FEBuilderGBA
             uint addr = struct_address;
             for (int i = 0; i < datacount; i++ , addr += datasize)
             {
+                if (i >= lines.Length)
+                {
+                    Program.ROM.write_fill(addr, datasize,0, undodata);
+                    continue;
+                }
+
                 string line = lines[i];
                 string[] lineSP = line.Split('\t');
                 int spIndex = 0;
@@ -7842,11 +7848,13 @@ namespace FEBuilderGBA
                 uint struct_pointer = convertBinAddressString(pointer_str, 8, struct_address, basedir);
                 if (!U.isSafetyOffset(struct_pointer))
                 {
+                    Log.Error("ExportPatchStruct: convertBinAddressString error", patch.Name , pointer_str, U.ToHexString8(struct_address));
                     return;
                 }
                 struct_address = Program.ROM.p32(struct_pointer);
                 if (!U.isSafetyOffset(struct_address))
                 {
+                    Log.Error("ExportPatchStruct: convertBinAddressString error2", patch.Name, pointer_str, U.ToHexString8(struct_address), U.ToHexString8(struct_pointer));
                     return;
                 }
             }
@@ -7860,6 +7868,7 @@ namespace FEBuilderGBA
                 struct_address = convertBinAddressString(address_str, 8, 0x100, basedir);
                 if (!U.isSafetyOffset(struct_address))
                 {
+                    Log.Error("ExportPatchStruct: convertBinAddressString error3", patch.Name, address_str, U.ToHexString8(struct_address));
                     return;
                 }
             }
@@ -7877,9 +7886,10 @@ namespace FEBuilderGBA
                 datacount = convertBinAddressString(datacount_str, 8, struct_address, basedir);
                 if (datacount == U.NOT_FOUND)
                 {
+                    Log.Error("ExportPatchStruct: convertBinAddressString error10", patch.Name, datacount_str, U.ToHexString8(struct_address));
                     return;
                 }
-                if (datacount > struct_address)
+                if (datacount >= struct_address)
                 {
                     datacount = (uint)Math.Ceiling((datacount - struct_address) / (double)datasize);
                 }
@@ -7894,6 +7904,17 @@ namespace FEBuilderGBA
                 {
                     return;
                 }
+            }
+            if (datacount >= 0x10000)
+            {
+                Log.Error("ExportPatchStruct: Too Many Count", patch.Name, datacount_str, U.ToHexString8(struct_address), U.ToHexString(datacount));
+                return;
+            }
+            uint end_addr = struct_address + (datacount * datasize);
+            if (! U.isSafetyOffset(end_addr))
+            {
+                Log.Error("ExportPatchStruct: Too Many Count 2", patch.Name, datacount_str, U.ToHexString8(struct_address), U.ToHexString(datacount), U.ToHexString8(end_addr));
+                return;
             }
 
             StringBuilder sb = new StringBuilder();
