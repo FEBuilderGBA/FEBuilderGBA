@@ -1,0 +1,7 @@
+NAME=Fix: Uninstall Garbage Item data for SkillSystems 20200223
+INFO=This patch fixes a bug in SkillSystems 20200211 that left an incomplete hook for magic booster instead of being uninstalled.\r\nThis bug causes an infinite loop when retrieving and using items.
+
+TYPE=EA
+IF:0x294E0=0x28 0x56 0x81 0x42 0x00 0xD0 0x01 0x22 0xF9 0xD0 0x71 0x56 0x1A 0x20 0x28 0x56
+
+EA=Uninstall Garbage data (SkillSystems 20200223).event
