@@ -112,8 +112,15 @@ namespace FEBuilderGBA
             string[] lines;
             lock (thisLock)
             {
-                string fullfilename = GetLogFilename();
-                lines = File.ReadAllLines(fullfilename);
+                try
+                {
+                    string fullfilename = GetLogFilename();
+                    lines = File.ReadAllLines(fullfilename);
+                }
+                catch (Exception)
+                {
+                    lines = new string[]{};
+                }
             }
             return lines;
         }

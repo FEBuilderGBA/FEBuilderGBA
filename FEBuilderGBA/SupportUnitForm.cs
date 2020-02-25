@@ -327,6 +327,10 @@ namespace FEBuilderGBA
                 uint target_limit = addr + SUPPORT_LIMIT;
                 for (; addr < target_limit; addr++)
                 {
+                    if (! U.isSafetyOffset(addr + SUPPORT_LIMIT + SUPPORT_LIMIT))
+                    {//危険なアドレス
+                        break;
+                    }
                     uint target_uid2 = Program.ROM.u8(addr);
                     if (uid != target_uid2)
                     {

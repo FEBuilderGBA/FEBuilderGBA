@@ -3006,6 +3006,8 @@ namespace FEBuilderGBA
                 U.ReSelectList(this.PatchList);
 
                 Program.ReLoadSetting();
+
+                AfterTryExecut(patch);
             };
         }
 
@@ -3172,6 +3174,8 @@ namespace FEBuilderGBA
                     //設定の読み直し
                     Program.ReLoadSetting();
                 }
+
+                AfterTryExecut(patch);
             };
         }
 
@@ -8046,6 +8050,39 @@ namespace FEBuilderGBA
             {
                 Program.ROM.write_u32(addr , newPointer , undodata);
             }
+        }
+
+        void AfterTryExecut(PatchSt patch)
+        {
+            foreach (var pair in patch.Param)
+            {
+                string[] sp = pair.Key.Split(':');
+                string key = sp[0];
+
+                if (key == "AFTER_TRY_EXECUTE" && pair.Value != "")
+                {
+                    AfterTryExecutInstall(patch , pair.Value);
+                }
+            }
+        }
+
+        void AfterTryExecutInstall(PatchSt parent_patch , string editpatch)
+        {
+            string basedir = Path.GetDirectoryName(parent_patch.PatchFileName);
+            editpatch = Path.Combine(basedir, editpatch);
+
+            if (!File.Exists(editpatch))
+            {
+                Debug.Assert(false);
+                return;
+            }
+            PatchSt editpatchSt = LoadPatch(editpatch, false);
+            if (editpatchSt == null)
+            {
+                Debug.Assert(false);
+                return;
+            }
+            ApplyPatch(editpatchSt.Name, "", "", isSlient: true, isAutoClose: false);
         }
 
         bool CheckDeprecatedUI(PatchSt patch)
