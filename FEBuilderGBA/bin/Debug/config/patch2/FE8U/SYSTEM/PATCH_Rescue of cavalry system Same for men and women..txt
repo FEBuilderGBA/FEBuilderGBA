@@ -8,9 +8,9 @@ TAG=#ENGINE
 
 ADDRESS=0x00189EA
 
-COMBO=男女不平等|0x09 0xD1|男女平等|0xC0 0x46
+COMBO=Default: 男女不平等|0x09 0xD1|男女平等|0xC0 0x46
 COMBO.en=Default: Unequal|0x09 0xD1|Patched: Equal|0xC0 0x46
-COMBO.zh=性别不平等|0x09 0xD1|两性平等|0xC0 0x46
+COMBO.zh=Default: 性别不平等|0x09 0xD1|两性平等|0xC0 0x46
 
 INFO=騎兵が救出を行うときに、男女で基礎値を変えているのを抑制します。\r\n男性キャラクター "25-体格=救出できる体格"\r\n女性キャラクター "20-体格=救出できる体格"\r\n女性の方が体格が小さいユニットが多いため、ゲームバランスを取るための処置だと思います。\r\nこのパッチは、これを抑制し、女性でも男性と同じ25の値を利用するようにします。\r\n女性の騎兵、ペガサスナイトなどがより便利になります。
 INFO.en=Toggles whether mounted females use the female Aid calculation (Default) or the male aid calculation (Patched)\r\nDefault mounted Aid calculation is: 25 (male) or 20 (female) - unit's CON\r\nThis patch removes the female aid penalty and treats all mounted aid calcs as 25 - CON.\r\nBecause of their default lower CON, this will likely make female mounted units better at rescuing.\r\n

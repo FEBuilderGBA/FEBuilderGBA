@@ -8,9 +8,9 @@ TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0xE836
 
-COMBO=修正しない|0x04 0xD1|修正する|0x04 0xE0
-COMBO.en=Default:|0x04 0xD1|Fix:|0x04 0xE0
-COMBO.zh=不要修改|0x04 0xD1|纠正|0x04 0xE0
+COMBO=Default: 修正しない|0x04 0xD1|修正する|0x04 0xE0
+COMBO.en=Default|0x04 0xD1|Fix:|0x04 0xE0
+COMBO.zh=Default: 不要修改|0x04 0xD1|纠正|0x04 0xE0
 
 INFO=GBAFEでは、背景テーブルの上限値を超えたところに番兵がセットされています。\r\nそのため、背景テーブルを拡張した時に、特定のIDの背景を表示しようとすると、必ずID:0x00の背景が表示されます。\r\nFE8Uでは0x37番、FE8Jでは0x51番の背景がそれに該当します。\r\nこのパッチはその制限を修正します。
 INFO.en=In GBAFE, a sentinel is set where the upper limit of the background table is exceeded.\r\nTherefore, when you extend the background table, if you try to display the background of a specific ID, the background with ID: 0x00 will always be displayed.

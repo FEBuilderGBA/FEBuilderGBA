@@ -40,6 +40,7 @@ namespace FEBuilderGBA
 
             this.InputFormRef = Init(this);
             this.InputFormRef.MakeGeneralAddressListContextMenu(true);
+            this.InputFormRef.CheckProtectionAddrHigh = false; //書き換える対象がswitchなので低い位地に書き換えるデータがあります。
 
             ReInit(this.InputFormRef);
         }

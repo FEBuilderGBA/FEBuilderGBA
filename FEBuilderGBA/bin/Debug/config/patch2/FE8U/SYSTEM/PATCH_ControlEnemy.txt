@@ -8,7 +8,7 @@ TAG=#ENGINE
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Control Enemy|ONN
+COMBO=Default|OFF|Control Enemy|ONN
 OFF:0x01545a=0x17 0xD0
 ONN:0x01545a=0x0A 0xE0
 

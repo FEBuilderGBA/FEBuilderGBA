@@ -5,7 +5,7 @@ NAME.en=Remove a check that prevents storage unit(Transport) from accessing own 
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix|ONN
+COMBO=Default|OFF|Fix|ONN
 OFF:0x022D6A=0x1F 0xD1
 ONN:0x022D6A=0x1D 0xD1
 

@@ -6,7 +6,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0xbc4ea
-COMBO=default|0x15|fix|0x7f
+COMBO=Default|0x15|fix|0x7f
 
 COMBO.zh=默认|0x15|修复|0x7f
 

@@ -6,10 +6,10 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x02ad98
-COMBO=HPの半分|0x40 0x10|HPを1にする|0x02 0x38
+COMBO=Default: HPの半分|0x40 0x10|HPを1にする|0x02 0x38
 
 AUTHOR=circleseverywhere https://feuniverse.us/t/fe6-eclipse-effect-in-fe8-answered/3602/2
-COMBO.en=Half of HP|0x40 0x10|Set HP to 1|0x02 0x38
+COMBO.en=Default: Half of HP|0x40 0x10|Set HP to 1|0x02 0x38
 NAME.zh=使用月食HP设置为1
-COMBO.zh=HP的一半|0x40 0x10|将HP设置为1|0x02 0x38
+COMBO.zh=Default: HP的一半|0x40 0x10|将HP设置为1|0x02 0x38
 INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or reduces HP to 1 like in FE6 (Patched)\r\n

@@ -5,9 +5,9 @@ NAME.en=Doubling the activation rate of Skill Sure Strike
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix 2倍|FIX
-COMBO.en=default|OFF|Fix 2x|FIX
-COMBO.zh=default|OFF|Fix 2x|FIX
+COMBO=Default|OFF|Fix 2倍|FIX
+COMBO.en=Default|OFF|Fix 2x|FIX
+COMBO.zh=Default|OFF|Fix 2x|FIX
 
 DETERMINATION_ADDRESS=0x02B246
 

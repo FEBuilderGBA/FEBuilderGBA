@@ -5,9 +5,9 @@ NAME.en=Change Show chapter purpose in map confirmation on preparation screen
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Show|FIX
-COMBO.en=default|OFF|Show|FIX
-COMBO.zh=default|OFF|Show|FIX
+COMBO=Default|OFF|Show|FIX
+COMBO.en=Default|OFF|Show|FIX
+COMBO.zh=Default|OFF|Show|FIX
 
 DETERMINATION_ADDRESS=0x08D09C
 

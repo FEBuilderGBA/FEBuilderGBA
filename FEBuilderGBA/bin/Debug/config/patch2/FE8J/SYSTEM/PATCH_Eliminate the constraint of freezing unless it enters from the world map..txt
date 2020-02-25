@@ -8,7 +8,7 @@ TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
 
-COMBO=default|OFF|fix|ONN
+COMBO=Default|OFF|fix|ONN
 
 COMBO.zh=默认|OFF|修复|ONN
 

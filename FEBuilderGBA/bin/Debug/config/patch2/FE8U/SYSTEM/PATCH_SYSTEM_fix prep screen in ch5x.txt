@@ -7,8 +7,8 @@ TAG=#ENGINE
 
 ADDRESS=0x03327B
 
-COMBO=非表示|0xD1|解禁|0xE0
-COMBO.en=Lock|0xD1|Unlock|0xE0
-COMBO.zh=Lock|0xD1|Unlock|0xE0
+COMBO=Default: 非表示|0xD1|解禁|0xE0
+COMBO.en=Default: Lock|0xD1|Unlock|0xE0
+COMBO.zh=Default: Lock|0xD1|Unlock|0xE0
 
 NAME.zh=显示攻击准备屏幕第5x章

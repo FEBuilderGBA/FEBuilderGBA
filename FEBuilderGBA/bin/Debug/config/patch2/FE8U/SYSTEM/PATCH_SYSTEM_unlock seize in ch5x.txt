@@ -7,9 +7,9 @@ TAG=#ENGINE
 
 ADDRESS=0x37B95
 
-COMBO=Lock|0xD1|Unlock|0xE0
-COMBO.en=Lock|0xD1|Unlock|0xE0
-COMBO.zh=Lock|0xD1|Unlock|0xE0
+COMBO=Default: Lock|0xD1|Unlock|0xE0
+COMBO.en=Default: Lock|0xD1|Unlock|0xE0
+COMBO.zh=Default: Lock|0xD1|Unlock|0xE0
 
 NAME.zh=启用艾瑞克的抑制功能第5x章
 

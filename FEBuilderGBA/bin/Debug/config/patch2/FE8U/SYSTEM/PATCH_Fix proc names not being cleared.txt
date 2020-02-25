@@ -6,7 +6,7 @@ NAME.zh=Fix proc names not being cleared
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix|ONN
+COMBO=Default|OFF|Fix|ONN
 
 DETERMINATION_ADDRESS=0x02C9E
 

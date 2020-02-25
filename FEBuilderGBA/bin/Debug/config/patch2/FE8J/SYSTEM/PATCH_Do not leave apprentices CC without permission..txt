@@ -8,8 +8,8 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0xd146c
-COMBO=勝手にCCさせない|0xC0 0x46|勝手にCCさせる|0x00 0xDA
-COMBO.zh=不要让人随意转职|0xC0 0x46|让人随意转职|0x00 0xDA
+COMBO=勝手にCCさせない|0xC0 0x46|Default: 勝手にCCさせる|0x00 0xDA
+COMBO.zh=不要让人随意转职|0xC0 0x46|Default: 让人随意转职|0x00 0xDA
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
@@ -18,7 +18,7 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
-COMBO.en=Do not let CC arbitrarily|0xC0 0x46|Let's do CC selfishly|0x00 0xDA
+COMBO.en=Do not let CC arbitrarily|0xC0 0x46|Default: Let's do CC selfishly|0x00 0xDA
 
 
 

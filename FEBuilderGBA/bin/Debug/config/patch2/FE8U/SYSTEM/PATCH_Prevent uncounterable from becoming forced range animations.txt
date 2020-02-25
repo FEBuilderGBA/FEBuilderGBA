@@ -5,9 +5,7 @@ NAME.zh=Prevent uncounterable items from becoming forced range animations
 //アドレスパッチとして実装します
 TYPE=SWITCH
 TAG=#ENGINE
-COMBO=Force range (Default)|ONN|Fix|OFF
-COMBO.en=Force range (Default)|ONN|Fix|OFF
-COMBO.zh=Force range (Default)|ONN|Fix|OFF
+COMBO=Default: Force range|ONN|Fix|OFF
 
 DETERMINATION_ADDRESS=0x057278
 ONN:0x057278=0x16 0xD0

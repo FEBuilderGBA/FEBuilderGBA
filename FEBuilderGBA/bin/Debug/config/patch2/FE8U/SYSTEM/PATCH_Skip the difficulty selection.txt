@@ -5,9 +5,9 @@ NAME.zh=跳过难度选择屏幕
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=スキップしない|OFF|簡単に固定する|ON0|普通に固定する|ON1|難しいに固定する|ON2
+COMBO=Default: スキップしない|OFF|簡単に固定する|ON0|普通に固定する|ON1|難しいに固定する|ON2
 COMBO.en=Default: Don't Skip|OFF|Skip And Set To Easy|ON0|Skip And Set To Normal|ON1|Skip And Set To Hard|ON2
-COMBO.zh=不要跳过|OFF|易于修复|ON0|正常修复|ON1|解决困难|ON2
+COMBO.zh=Default: 不要跳过|OFF|易于修复|ON0|正常修复|ON1|解决困难|ON2
 
 DETERMINATION_ADDRESS=0xAC3E0
 

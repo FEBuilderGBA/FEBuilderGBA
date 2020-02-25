@@ -5,9 +5,9 @@ NAME.en=Change Skill Pierce activation rate from LV to Skill
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix 技%|FIX
-COMBO.en=default|OFF|Fix Skill%|FIX
-COMBO.zh=default|OFF|Fix 技%|FIX
+COMBO=Default|OFF|Fix 技%|FIX
+COMBO.en=Default|OFF|Fix Skill%|FIX
+COMBO.zh=Default|OFF|Fix 技%|FIX
 
 DETERMINATION_ADDRESS=0x02B2B2
 

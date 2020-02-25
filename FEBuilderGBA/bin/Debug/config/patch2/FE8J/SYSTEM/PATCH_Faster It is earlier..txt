@@ -8,13 +8,13 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x007b928
-COMBO=はやい|0x40|もっとはやい|0x80
-COMBO.en=fast|0x40|more fast|0x80
+COMBO=Default: はやい|0x40|もっとはやい|0x80
+COMBO.en=Default: fast|0x40|more fast|0x80
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 NAME.zh=更快更早???
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
-COMBO.zh=快速|0x40|更快速|0x80
+COMBO.zh=Default: 快速|0x40|更快速|0x80
 
 

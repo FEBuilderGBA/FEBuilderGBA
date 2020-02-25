@@ -8,9 +8,9 @@ TAG=#ENGINE
 
 ADDRESS=0x0B5237
 
-COMBO=値下げ|0xE0|値下げしない|0xD0
+COMBO=値下げ|0xE0|Default: 値下げしない|0xD0
 COMBO.en=Patched: Standard Cost|0xE0|Default: 1.5x Standard Cost|0xD0
-COMBO.zh=降价|0xE0|不要价格|0xD0
+COMBO.zh=降价|0xE0|Default: 不要价格|0xD0
 
 INFO=進撃準備店は、他の店よりも1.5倍高い価格でアイテムを販売しています。\r\n割増手数料を取られます。\r\nこのパッチは、その値上げをやめさせます。\r\n
 INFO.en=Sets whether the preparations store sells items at 1.5x the normal price (Default) or at the normal price (Patched)\r\n

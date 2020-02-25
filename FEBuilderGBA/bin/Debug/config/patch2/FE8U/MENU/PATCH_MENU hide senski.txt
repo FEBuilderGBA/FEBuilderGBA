@@ -7,7 +7,7 @@ TYPE=ADDR
 ADDRESS=0x24C49
 
 ADDRESS=0x24C49
-COMBO=表示|0xD1|消す|0xE0
+COMBO=Default: 表示|0xD1|消す|0xE0
 
 AUTHOR=出典:aeraさんの書き込みより\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
@@ -17,9 +17,9 @@ AUTHOR.zh=从aera的写\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E
 
 AUTHOR.en=From aera's write\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-COMBO.en=display|0xD1|delete|0xE0
+COMBO.en=Default: display|0xD1|delete|0xE0
 
-COMBO.zh=显示|0xD1|删除|0xE0
+COMBO.zh=Default: 显示|0xD1|删除|0xE0
 
 
 

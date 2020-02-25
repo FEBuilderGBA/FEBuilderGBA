@@ -6,7 +6,7 @@ NAME.zh=阻止他们治疗最大hp人物（治疗者ai修复）
 TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
-COMBO=off|OFF|fix|ONN
+COMBO=Default: Off|OFF|fix|ONN
 COMBO.en=Default: Off|OFF|Patch|ONN
 
 ONN:0x3FC9D=0xD2

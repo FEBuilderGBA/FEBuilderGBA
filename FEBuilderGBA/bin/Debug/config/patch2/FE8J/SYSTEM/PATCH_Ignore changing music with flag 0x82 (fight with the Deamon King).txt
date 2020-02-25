@@ -5,9 +5,9 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x74c7c
-COMBO=ディフォルト|0x01|修正|0x02
+COMBO=Default|0x01|修正|0x02
 COMBO.en=Default|0x01|Fix|0x02
-COMBO.zh=默认|0x01|修正|0x02
+COMBO.zh=Default|0x01|修正|0x02
 
 AUTHOR=Venno https://feuniverse.us/t/vennos-small-asm-hacks-and-notes/269/66
 

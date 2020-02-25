@@ -10,9 +10,9 @@ INFO.zh=即使人物不相邻，我们也可以获得支持点。\r\n默认值�
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default 隣接のみ|OFF|2マス|ON2|3マス|ON3|4マス|ON4|5マス|ON5|無限|INF
-COMBO.en=default Adjacent only|OFF|2 squares|ON2|3 squares|ON3|4 squares|ON4|5 squares|ON5|Infinity|INF
-COMBO.zh=默认邻接|OFF|2|ON2|3|ON3|4|ON4|5|ON5|无穷|INF
+COMBO=Default: 隣接のみ|OFF|2マス|ON2|3マス|ON3|4マス|ON4|5マス|ON5|無限|INF
+COMBO.en=Default: Adjacent only|OFF|2 squares|ON2|3 squares|ON3|4 squares|ON4|5 squares|ON5|Infinity|INF
+COMBO.zh=Default: 邻接|OFF|2|ON2|3|ON3|4|ON4|5|ON5|无穷|INF
 
 
 DETERMINATION_ADDRESS=0x028478

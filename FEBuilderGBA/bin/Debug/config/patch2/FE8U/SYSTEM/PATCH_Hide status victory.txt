@@ -7,7 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x086FE7
-COMBO=表示|0xD0|消す|0xE0
+COMBO=Default: 表示|0xD0|消す|0xE0
 
 INFO=ステータスメニューに表示される勝利数、敗北数を消去します。
 INFO.en=Toggles whether the win/lose condition is displayed on the Status Screen.\r\n
@@ -18,5 +18,5 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 
-COMBO.en=display|0xD0|To erase|0xE0
-COMBO.zh=显示|0xD0|擦除|0xE0
+COMBO.en=Default: display|0xD0|To erase|0xE0
+COMBO.zh=Default: 显示|0xD0|擦除|0xE0

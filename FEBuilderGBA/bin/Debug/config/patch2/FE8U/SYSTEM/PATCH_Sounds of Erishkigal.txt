@@ -6,9 +6,9 @@ TYPE=SWITCH
 TAG=#ENGINE
 
 AUTHOR=7743
-COMBO=音を出す|FIX|音を出さない|DEF
-COMBO.en=make a sound|FIX|No sound|DEF
-COMBO.zh=发出声音|FIX|没有声音|DEF
+COMBO=音を出す|FIX|Default: 音を出さない|DEF
+COMBO.en=make a sound|FIX|Default: No sound|DEF
+COMBO.zh=发出声音|FIX|Default: 没有声音|DEF
 
 FIX:0x225C58=0x88 0x2A 0x58 0x08 0x07 0x00 0x07 0x00
 FIX:0x225C60=0xA4 0x2A 0x58 0x08 0x06 0x00 0x06 0x00

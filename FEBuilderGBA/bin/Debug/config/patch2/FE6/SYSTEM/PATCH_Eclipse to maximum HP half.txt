@@ -7,7 +7,7 @@ NAME.zh=月食最大hp减半
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=HPの半分|OFF|最大HPの半分|ONN
+COMBO=Default: HPの半分|OFF|最大HPの半分|ONN
 
 AUTHOR=FE6解析資料
 
@@ -16,9 +16,9 @@ ONN:0x024a62=0x40 0x10
 OFF:0x024a5e=0x11
 OFF:0x024a62=0x01 0x38
 AUTHOR.en=FE 6 analysis material
-COMBO.en=Half of HP|OFF|Half of maximum HP|ONN
+COMBO.en=Default: Half of HP|OFF|Half of maximum HP|ONN
 AUTHOR.zh=FE 6分析资料
-COMBO.zh=惠普的一半|OFF|最大HP的一半|ONN
+COMBO.zh=Default: 惠普的一半|OFF|最大HP的一半|ONN
 
 
 

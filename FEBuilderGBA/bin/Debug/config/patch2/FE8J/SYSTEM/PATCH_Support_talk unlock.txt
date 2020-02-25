@@ -6,9 +6,9 @@ TYPE=SWITCH
 TAG=#ENGINE
 
 
-COMBO=通常|OFF|全開|ONN
-COMBO.en=Normal|OFF|All open|ONN
-COMBO.zh=平时|OFF|完全打开|ONN
+COMBO=Default: 通常|OFF|全開|ONN
+COMBO.en=Default: Normal|OFF|All open|ONN
+COMBO.zh=Default: 平时|OFF|完全打开|ONN
 
 AUTHOR=7743
 INFO=エクストラのシステムメニューから、支援会話を表示した時、すべての支援会話を見れるように修正します。

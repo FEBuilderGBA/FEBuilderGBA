@@ -147,8 +147,7 @@ namespace FEBuilderGBA
                 for (int i = 0; i < this.Patchs.Count; i++)
                 {
                     PatchSt patch = this.Patchs[i];
-                    string iferror = CheckIF(patch);
-                    if (iferror.IndexOf("PATCHED_IF") < 0)
+                    if (IsInstalled(patch) == false)
                     {//インストールしていないので消す.
                         continue;
                     }
@@ -171,6 +170,16 @@ namespace FEBuilderGBA
 
 
             return patchs;
+        }
+        bool IsInstalled(PatchSt patch)
+        {
+            string iferror = CheckIF(patch);
+            if (iferror.IndexOf("PATCHED_IF") < 0)
+            {
+                //インストールしていないので消す.
+                return false;
+            }
+            return true;
         }
 
 

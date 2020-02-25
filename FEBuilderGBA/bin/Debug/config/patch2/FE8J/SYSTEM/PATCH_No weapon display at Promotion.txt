@@ -6,9 +6,9 @@ NAME.zh=系统_在转职时没有武器显示
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=武器なし|ONN|武器あり|OFF
-COMBO.en=no weapons|ONN|with weapons|OFF
-COMBO.zh=没有武器|ONN|有武器|OFF
+COMBO=武器なし|ONN|Default: 武器あり|OFF
+COMBO.en=no weapons|ONN|Default: with weapons|OFF
+COMBO.zh=没有武器|ONN|Default: 有武器|OFF
 
 ONN:0x0802F5C0=0x00 0x20 0x00 0x20
 ONN:0x080D1DE2=0x00 0x20 0x00 0x20

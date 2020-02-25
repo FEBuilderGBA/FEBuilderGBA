@@ -5,7 +5,7 @@ NAME.en=AI: Prevent Healer Mistarget
 TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
-COMBO=off|OFF|fix|ONN
+COMBO=Default: off|OFF|fix|ONN
 
 ONN:0x33E3B=0xD2
 OFF:0x33E3B=0xD8

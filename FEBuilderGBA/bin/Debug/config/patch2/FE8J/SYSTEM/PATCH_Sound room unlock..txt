@@ -7,8 +7,8 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x0B3A00
-COMBO=全開|0xC0 0x46|通常|0x0B 0xD0
-COMBO.en=all open|0xC0 0x46|normal|0x0B 0xD0
+COMBO=全開|0xC0 0x46|Default: 通常|0x0B 0xD0
+COMBO.en=all open|0xC0 0x46|Default: normal|0x0B 0xD0
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
@@ -18,6 +18,6 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-COMBO.zh=完全打开|0xC0 0x46|平时|0x0B 0xD0
+COMBO.zh=完全打开|0xC0 0x46|Default: 平时|0x0B 0xD0
 
 

@@ -5,6 +5,6 @@ TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0x2B0D8
-COMBO=Fix|0x00 0x00|Default|0x18 0xD0
+COMBO=Default: Fix|0x00 0x00|Default|0x18 0xD0
 
 NAME.zh=允许飞龙夜也三角攻击

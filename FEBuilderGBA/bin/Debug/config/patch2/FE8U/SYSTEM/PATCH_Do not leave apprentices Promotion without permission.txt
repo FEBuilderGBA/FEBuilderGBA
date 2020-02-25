@@ -7,7 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x0CC750
-COMBO=勝手にCCさせない|0xC0 0x46|勝手にCCさせる|0x00 0xDA
+COMBO=勝手にCCさせない|0xC0 0x46|Default: 勝手にCCさせる|0x00 0xDA
 
 INFO=このパッチは、見習い職がLv10で勝手にCCするのを禁止します。
 INFO.en=Toggle automatic promotion events for trainee classes upon reaching level 10.\r\n
@@ -17,5 +17,5 @@ AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=aera https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-COMBO.en=Auto-Promote Disabled|0xC0 0x46|Auto-Promote Enabled|0x00 0xDA
-COMBO.zh=不要随意让CC|0xC0 0x46|我们自私地做CC吧|0x00 0xDA
+COMBO.en=Auto-Promote Disabled|0xC0 0x46|Default: Auto-Promote Enabled|0x00 0xDA
+COMBO.zh=不要随意让CC|0xC0 0x46|Default: 我们自私地做CC吧|0x00 0xDA

@@ -8,15 +8,15 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x002b3e8
-COMBO=貫通を防御無視|0x00 0x24|貫通を防御半減|0x64 0x10
+COMBO=Default: 貫通を防御無視|0x00 0x24|貫通を防御半減|0x64 0x10
 
 AUTHOR=出典:aeraさんの資料より\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-COMBO.en=Ignore penetration defensively|0x00 0x24|Halves the penetration|0x64 0x10
+COMBO.en=Default: Ignore penetration defensively|0x00 0x24|Halves the penetration|0x64 0x10
 
-COMBO.zh=无视防守的渗透|0x00 0x24|减半渗透|0x64 0x10
+COMBO.zh=Default: 无视防守的渗透|0x00 0x24|减半渗透|0x64 0x10
 
 
 CONFLICT_IF:0x89268=0x00 0x4B 0x9F 0x46

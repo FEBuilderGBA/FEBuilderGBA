@@ -5,7 +5,7 @@ NAME.en=After rescuing a cavalry, you can drop immediately
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix|FIX
+COMBO=Default|OFF|Fix|FIX
 
 DETERMINATION_ADDRESS=0x02291E
 

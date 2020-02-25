@@ -7,7 +7,7 @@ NAME.zh=消除冻结的限制，除非从免费地图进入 (aera version)
 TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
-COMBO=default|OFF|fix|ONN
+COMBO=Default|OFF|fix|ONN
 COMBO.zh=默认|OFF|修复|ONN
 
 ONN:0xc1e74=0x00 0x20 0x70 0x47

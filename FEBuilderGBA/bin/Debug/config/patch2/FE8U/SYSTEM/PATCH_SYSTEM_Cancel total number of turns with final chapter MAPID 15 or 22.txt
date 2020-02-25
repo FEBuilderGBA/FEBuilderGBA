@@ -8,7 +8,7 @@ TAG=#ENGINE
 
 ADDRESS=0xB7A86
 
-COMBO=default|0x15|fix|0x7f
+COMBO=Default|0x15|fix|0x7f
 COMBO.en=Default:Inherit Turn Count|0x15|Patched:Individual Turn Count|0x7f
 
 INFO=FE8では、MAPID:0x15と0x22は特別な章です。\r\n魔王と戦うための章です。\r\nこの章では、前の章のターン数を継承します。\r\nMAPID 0x14と0x15、0x21と0x22のクリアターン数がそれぞれ合計されます。\r\n\r\n終章ターン=MAPID.0x14のターン数 + MAPID.0x15のターン数\r\nor\r\n終章ターン=MAPID.0x21のターン数 + MAPID.0x22のターン数\r\n\r\nこれは、別の章として0x15と0x22を使用したい場合、邪魔になります。\r\nこのパッチは、この合算するプロセスを消去します。\r\n

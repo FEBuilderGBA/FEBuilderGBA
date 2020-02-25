@@ -8,9 +8,9 @@ TAG=#ENGINE
 
 ADDRESS=0x02AE22
 
-COMBO=HPの半分|0x13|最大HPの半分|0x14
-COMBO.en=Halves Current HP|0x13|Deals Half of Maximum HP|0x14
-COMBO.zh=惠普的一半|0x13|最大HP的一半|0x14
+COMBO=Default: HPの半分|0x13|最大HPの半分|0x14
+COMBO.en=Default: Halves Current HP|0x13|Deals Half of Maximum HP|0x14
+COMBO.zh=Default: 惠普的一半|0x13|最大HP的一半|0x14
 
 INFO.en=Sets whether the Eclipse tome reduces HP by 1/2 (Default) or deals damage equal to 1/2 of max HP (Patched)\r\n
 

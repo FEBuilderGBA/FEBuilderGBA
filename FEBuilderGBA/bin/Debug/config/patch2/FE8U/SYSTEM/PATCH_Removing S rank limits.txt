@@ -5,9 +5,9 @@ NAME.zh=取消对S等级的限制，并为S等级制造多种武器
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=ディフォルト|OFF|Sランク制限の解除|ONN
+COMBO=Default: 1つだけ|OFF|Sランク制限の解除|ONN
 COMBO.en=Default: Limit of 1|OFF|No Limit|ONN
-COMBO.zh=默认|OFF|发布S等级限制|ONN
+COMBO.zh=Default: Limit of 1|OFF|发布S等级限制|ONN
 
 DETERMINATION_ADDRESS=0x2C150
 

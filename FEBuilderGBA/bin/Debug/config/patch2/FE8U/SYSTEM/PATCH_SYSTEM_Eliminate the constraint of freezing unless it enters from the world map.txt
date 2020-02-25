@@ -7,8 +7,7 @@ TYPE=SWITCH
 TAG=#ENGINE #ESSENTIALFIXES
 
 
-COMBO=default|OFF|fix|ONN
-COMBO.en=Default: Freezes on Skip|OFF|Fix: World Map Skippable|ONN
+COMBO=Default: Freezes on Skip|OFF|Fix: World Map Skippable|ONN
 
 //Allows MNC2 To jump to any chapter ID.
 ONN:0xBD070=0xB8 0xE0

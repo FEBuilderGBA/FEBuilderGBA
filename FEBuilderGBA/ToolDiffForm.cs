@@ -100,6 +100,11 @@ namespace FEBuilderGBA
             int RecoverMissMatch = (int)RecoverMissMatchNumericUpDown.Value;
             int checkpoint = -1;
 
+            //SkillSystemsのパッチを作るときのために、フリー領域はまとめてdiffを出力する.
+            uint beginFreeSpace;
+            uint endFreeSpace;
+            bool isCollectFreeSpace = DefineFreeSapce(out beginFreeSpace, out endFreeSpace);
+
             byte[] other = File.ReadAllBytes(OtherFilename.Text);
 
             int length = Math.Max(Program.ROM.Data.Length,other.Length);
@@ -116,7 +121,14 @@ namespace FEBuilderGBA
                 int missCount = 0;
                 for (; i < length; i++)
                 {
-                    if ( U.at(Program.ROM.Data,i) != U.at(other,i) )
+                    if (isCollectFreeSpace
+                        && i >= beginFreeSpace && i <= endFreeSpace)
+                    {//ミスを容認する
+                        missCount = 0;
+                        continue;
+                    }
+
+                    if (U.at(Program.ROM.Data, i) != U.at(other, i))
                     {
                         missCount = 0;
                         continue;
@@ -159,6 +171,30 @@ namespace FEBuilderGBA
 
             //エクスプローラで選択しよう
             U.SelectFileByExplorer(bin_patchfilename);
+        }
+        bool DefineFreeSapce(out uint beginFreeSpace,out uint endFreeSpace)
+        {
+            beginFreeSpace = U.NOT_FOUND;
+            endFreeSpace = U.NOT_FOUND;
+            if (! this.IsCollectFreeSpace.Checked)
+            {
+                return false;
+            }
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return false;
+            }
+            if (Program.ROM.RomInfo.is_multibyte())
+            {//FE8J
+                beginFreeSpace = 0xEFB2E0;
+                endFreeSpace   = 0xF90000;
+            }
+            else
+            {//FE8U
+                beginFreeSpace = 0xB2A610;
+                endFreeSpace =   0xC00000;
+            }
+            return true;
         }
 
         private void AFileSelectButton_Click(object sender, EventArgs e)

@@ -4,7 +4,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x97d7a
-COMBO=修正しない|0x8A|章名を表示|0x70
+COMBO=Default|0x8A|章名を表示|0x70
 COMBO.en=Defualt|0x8A|Display Chapter name|0x70
 COMBO.zh=Defualt|0x8A|Display Chapter name|0x70
 

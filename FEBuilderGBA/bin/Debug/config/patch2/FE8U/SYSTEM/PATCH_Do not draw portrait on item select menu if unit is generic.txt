@@ -8,7 +8,7 @@ INFO=This patch changes the Item Select Menu.\r\nOld code: Check if unit's class
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix|ONN
+COMBO=Default|OFF|Fix|ONN
 
 DETERMINATION_ADDRESS=0x022BE8
 

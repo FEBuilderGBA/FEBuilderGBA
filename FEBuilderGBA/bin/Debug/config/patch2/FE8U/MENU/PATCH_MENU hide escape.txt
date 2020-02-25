@@ -7,9 +7,9 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x0024CD5
-COMBO=表示|0xD0|消す|0xE0
+COMBO=Default: 表示|0xD0|消す|0xE0
 COMBO.en=Default: Displayed|0xD0|Patched: Hidden|0xE0
-COMBO.zh=显示|0xD0|删除|0xE0
+COMBO.zh=Default: 显示|0xD0|删除|0xE0
 
 INFO="退却"メニューを消去します。\r\n塔や遺跡の領域にマップを作りたい場合は、退却コマンドが表示されてしまい邪魔になります。\r\nこのパッチは、"退却"メニューを消去します。
 INFO.en=Patches the game to prevent using the "Retreat" option on the menu of Lagdou, Valni, and monster battles.\r\n

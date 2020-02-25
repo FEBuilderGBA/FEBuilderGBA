@@ -7,7 +7,7 @@ INFO=適応すると、武器が壊れたときにも経験値を取得できま
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=Apply|ONN|Default_None|OFF
+COMBO=Apply|ONN|Default: None|OFF
 
 DETERMINATION_ADDRESS=0x02C134
 

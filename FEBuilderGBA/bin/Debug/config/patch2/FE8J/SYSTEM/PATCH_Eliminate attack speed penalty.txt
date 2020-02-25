@@ -5,7 +5,7 @@ NAME.en=Eliminate attack speed penalty
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=default|OFF|Fix|FIX
+COMBO=Default|OFF|Fix|FIX
 
 DETERMINATION_ADDRESS=0x02ab02
 

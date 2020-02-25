@@ -47,6 +47,7 @@
             this.OtherFilename = new FEBuilderGBA.TextBoxEx();
             this.MakeBinPatchButton = new System.Windows.Forms.Button();
             this.OtherSelectButton = new System.Windows.Forms.Button();
+            this.IsCollectFreeSpace = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecoverMissMatchDiff3NumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -193,6 +194,7 @@
             // groupBox1
             // 
             this.groupBox1.BorderColor = System.Drawing.Color.Empty;
+            this.groupBox1.Controls.Add(this.IsCollectFreeSpace);
             this.groupBox1.Controls.Add(this.RecoverMissMatchNumericUpDown);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -274,6 +276,18 @@
             this.OtherSelectButton.UseVisualStyleBackColor = true;
             this.OtherSelectButton.Click += new System.EventHandler(this.OtherSelectButton_Click);
             // 
+            // IsCollectFreeSpace
+            // 
+            this.IsCollectFreeSpace.AutoSize = true;
+            this.IsCollectFreeSpace.Checked = true;
+            this.IsCollectFreeSpace.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.IsCollectFreeSpace.Location = new System.Drawing.Point(450, 67);
+            this.IsCollectFreeSpace.Name = "IsCollectFreeSpace";
+            this.IsCollectFreeSpace.Size = new System.Drawing.Size(199, 22);
+            this.IsCollectFreeSpace.TabIndex = 94;
+            this.IsCollectFreeSpace.Text = "フリースペースはまとめる";
+            this.IsCollectFreeSpace.UseVisualStyleBackColor = true;
+            // 
             // ToolDiffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -316,5 +330,6 @@
         private System.Windows.Forms.Label label6;
         private CustomColorGroupBox groupBox1;
         private CustomColorGroupBox groupBox2;
+        private System.Windows.Forms.CheckBox IsCollectFreeSpace;
     }
 }

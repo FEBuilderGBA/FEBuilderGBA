@@ -7,7 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x2ec77
-COMBO=default|0xD1|fix|0xe0
+COMBO=Default|0xD1|fix|0xe0
 
 AUTHOR=出典:FE6解析資料
 AUTHOR.en=Source: FE 6 analysis material

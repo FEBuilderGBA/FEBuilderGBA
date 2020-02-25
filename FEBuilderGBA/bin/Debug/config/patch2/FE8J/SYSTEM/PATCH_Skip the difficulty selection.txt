@@ -4,8 +4,8 @@ NAME.en=Toggle Difficulty Select Skip
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=スキップしない|OFF|簡単に固定する|ON0|普通に固定する|ON1|難しいに固定する|ON2
-COMBO.en=Do not skip|OFF|Fix to Easy|ON0|Fix to Normal|ON1|Fix to Hard|ON2
+COMBO=Default: スキップしない|OFF|簡単に固定する|ON0|普通に固定する|ON1|難しいに固定する|ON2
+COMBO.en=Default: Do not skip|OFF|Fix to Easy|ON0|Fix to Normal|ON1|Fix to Hard|ON2
 
 DETERMINATION_ADDRESS=0xB0E88
 
@@ -17,4 +17,4 @@ ON2:0xB0E88=0x02 0x22 0x00 0x23 0x2A 0x21 0x42 0x54 0x3D 0x21 0x43 0x54 0x70 0x4
 AUTHOR=StanH / Mod:7743 https://feuniverse.us/t/fe8-skip-the-difficulty-selection-defaulting-to-a-set-one/2927
 
 NAME.zh=跳过难度选择屏幕
-COMBO.zh=不要跳过|OFF|易于修复|ON0|正常修复|ON1|解决困难|ON2
+COMBO.zh=Default: 不要跳过|OFF|易于修复|ON0|正常修复|ON1|解决困难|ON2

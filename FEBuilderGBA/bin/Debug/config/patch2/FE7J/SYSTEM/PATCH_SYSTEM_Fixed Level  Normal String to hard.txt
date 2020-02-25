@@ -5,7 +5,7 @@ NAME.en=Fixed Level  Normal String to hard
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#ENGINE
-COMBO=default|0xC4|Change|0xD0
+COMBO=Default|0xC4|Change|0xD0
 
 ADDRESS=0xA867C
 AUTHOR=スレ5章/ZxdcXp9氏 https://www58.atwiki.jp/fekai2/pages/58.html

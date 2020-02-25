@@ -8,14 +8,14 @@ TYPE=ADDR
 TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0x00ea46
-COMBO=修正しない|0x04 0xD1|修正する|0x00 0x00
+COMBO=Default: 修正しない|0x04 0xD1|修正する|0x00 0x00
 
 AUTHOR=https://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
 NAME.zh=背景0x51号解放
 
 COMBO.en=Default|0x04 0xD1|Fix|0x00 0x00
-COMBO.zh=不要修正|0x04 0xD1|修正|0x00 0x00
+COMBO.zh=Default|0x04 0xD1|修正|0x00 0x00
 
 
 INFO=GBAFEでは、背景テーブルの上限値を超えたところに番兵がセットされています。\r\nそのため、背景テーブルを拡張した時に、特定のIDの背景を表示しようとすると、必ずID:0x00の背景が表示されます。\r\nFE8Uでは0x37番、FE8Jでは0x51番の背景がそれに該当します。\r\nこのパッチはその制限を修正します。

@@ -6,7 +6,7 @@ NAME.en=Fixed Level  Hard mode even if you select Normal
 //アドレスパッチとして実装します
 TYPE=ADDR
 TAG=#ENGINE
-COMBO=default|0x0D 0x1C|Change|0x01 0x25
+COMBO=Default|0x0D 0x1C|Change|0x01 0x25
 
 ADDRESS=0x0A5B24
 AUTHOR=スレ5章/ZxdcXp9氏 https://www58.atwiki.jp/fekai2/pages/58.html

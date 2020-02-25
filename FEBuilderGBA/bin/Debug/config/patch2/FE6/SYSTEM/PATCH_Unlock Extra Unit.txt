@@ -7,7 +7,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x00086a2a
-COMBO=Lock|0x44 0x1C|Unlock|0xFF 0x24
+COMBO=Default: Lock|0x44 0x1C|Unlock|0xFF 0x24
 
 AUTHOR=出典:FE6解析資料
 AUTHOR.en=Source: FE 6 analysis material

@@ -6,8 +6,8 @@ TYPE=SWITCH
 TAG=#ENGINE
 
 ADDRESS=0x009961 0x009987
-COMBO=カットしない|ONN|カットする|OFF
-COMBO.en=no cut|ONN|cut|OFF
+COMBO=Default: カットしない|ONN|カットする|OFF
+COMBO.en=Default: no cut|ONN|cut|OFF
 
 ONN:0x009961=0xD1
 ONN:0x009987=0xD0
@@ -30,6 +30,6 @@ AUTHOR.zh=来源:从aera的数据\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%
 
 AUTHOR.en=Source: From aera's data\r\nhttps://dw.ngmansion.xyz/doku.php?id=data:%E3%83%91%E3%83%83%E3%83%81
 
-COMBO.zh=不切割|ONN|切割|OFF
+COMBO.zh=Default: 不切割|ONN|切割|OFF
 
 

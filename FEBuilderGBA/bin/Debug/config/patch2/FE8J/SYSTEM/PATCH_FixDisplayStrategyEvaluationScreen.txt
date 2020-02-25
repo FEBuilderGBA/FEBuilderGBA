@@ -3,7 +3,7 @@ NAME.en=FixDisplayTacticsEvaluationScreen
 TYPE=SWITCH
 TAG=#ENGINE
 
-COMBO=修正しない|OFF|背景を消さない|NO_WIPE
+COMBO=Default: 修正しない|OFF|背景を消さない|NO_WIPE
 
 DETERMINATION_ADDRESS=0xAC0F18
 OFF:0xAC0F18=0x02 0x00 0x00 0x00 0xF5 0xC0 0x0B 0x08 0x02 0x00 0x00 0x00 0x75 0xCA 0x0B 0x08 0x02 0x00 0x00 0x00 0x91 0xCC 0x0B 0x08
@@ -13,7 +13,7 @@ NO_WIPE:0xAC0F18=0x02 0x00 0x00 0x00 0xB9 0xCB 0x07 0x08 0x02 0x00 0x00 0x00 0x7
 AUTHOR=7743
 INFO=攻略評価のバグ背景を修正します。\r\n「背景を消さない」直前に表示した背景をそのまま利用します。\r\n
 INFO.en=Correct the bug background of the strategy evaluation.\r\nUse the background displayed just before "Do not erase background" as it is.\r\n
-COMBO.en=Do not fix|OFF|Do not erase the background|NO_WIPE
+COMBO.en=Default: Do not fix|OFF|Do not erase the background|NO_WIPE
 NAME.zh=在捕获评估屏幕中更正错误背景
 INFO.zh=纠正策略评估的错误背景。\r\n使用“不要擦除背景"之前显示的背景。\r\n
-COMBO.zh=不要修改|OFF|不要删除背景|NO_WIPE
+COMBO.zh=Default: 不要修改|OFF|不要删除背景|NO_WIPE

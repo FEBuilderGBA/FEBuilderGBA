@@ -10,7 +10,7 @@ TYPE=ADDR
 TAG=#ENGINE
 
 ADDRESS=0x9EAE
-COMBO=default|0x0D 0xE0|Fix|0x01 0xE0
+COMBO=Default|0x0D 0xE0|Fix|0x01 0xE0
 
 AUTHOR=7743
 NAME.zh=即使不进行编织，也会显示Eliic ED。

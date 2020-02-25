@@ -5,7 +5,7 @@ TAG=#ENGINE #ESSENTIALFIXES
 
 ADDRESS=0xC97C4
 COMBO=Silence|0x00|Default|0x03
-COMBO.zh=沉默|0x00|默认|0x03
+COMBO.zh=沉默|0x00|Default|0x03
 
 AUTHOR=
 NAME.zh=沉默新游戏音乐

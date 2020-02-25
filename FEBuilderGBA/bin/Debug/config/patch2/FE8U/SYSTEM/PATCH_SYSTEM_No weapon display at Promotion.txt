@@ -7,9 +7,9 @@ TAG=#ENGINE
 
 ADDRESS=0x0802F5C0
 
-COMBO=武器なし|ONN|武器あり|OFF
+COMBO=武器なし|ONN|Default: 武器あり|OFF
 COMBO.en=Patch: Hide Weapons|ONN|Default: Promote With Weapons|OFF
-COMBO.zh=没有武器|ONN|有武器|OFF
+COMBO.zh=没有武器|ONN|Default: 有武器|OFF
 
 ONN:0x0802F6A0=0x00 0x20 0x00 0x20
 ONN:0x080CD0EC=0x00 0x20 0x00 0x20
