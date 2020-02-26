@@ -30,10 +30,10 @@ namespace FEBuilderGBA
             //自プロセスのパスから、ベースディレクトリを特定します.
             Program.BaseDirectory = MakeBaseDirectory();
  
-            if (!CheckConfigDirectory() || !Check7ZipDLL())
-            {//解凍に失敗しているので終了させる.
-                return;
-            }
+//            if (!CheckConfigDirectory() || !Check7ZipDLL())
+//            {//解凍に失敗しているので終了させる.
+//                return;
+//            }
             Log.TouchLogDirectory();
 
             //設定の読み込み
@@ -46,6 +46,12 @@ namespace FEBuilderGBA
 
             //多言語切り替え
             ReLoadTranslateResource();
+
+            //アップデートに失敗して、アップデーターの残骸があれば利用する
+            if (ToolUpdateDialogForm.CheckUpdateGarbage())
+            {
+                return;
+            }
 
             //外部プロセスからの書き換え監視等の開始
             UpdateWatcher = new ROMUpdateWatcher();

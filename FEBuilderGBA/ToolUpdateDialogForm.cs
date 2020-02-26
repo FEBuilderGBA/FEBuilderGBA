@@ -158,7 +158,10 @@ namespace FEBuilderGBA
                     p.StartInfo.FileName = updater;
                     p.StartInfo.Arguments = args;
                     p.StartInfo.UseShellExecute = false;
+                    p.StartInfo.WorkingDirectory = Program.BaseDirectory;
                     p.Start();
+
+                    pleaseWait.DoEvents("Executed!");
                 }
                 catch (Exception ee)
                 {
@@ -167,10 +170,37 @@ namespace FEBuilderGBA
                 }
             }
 
-            Application.Exit();
-
-            this.Close();
             this.DialogResult = System.Windows.Forms.DialogResult.Abort;
+            Application.Exit();
+            this.Close();
+        }
+        static public bool CheckUpdateGarbage()
+        {
+            string updater = Path.Combine(Program.BaseDirectory, "updater.bat");
+            string newexe = Path.Combine(Program.BaseDirectory, ".\\_update\\FEBuilderGBA.exe");
+
+            if (File.Exists(updater) && File.Exists(newexe))
+            {//アップデータがうまく実行されていない形跡がある.
+                int pid = Process.GetCurrentProcess().Id;
+                string args = pid.ToString();
+                try
+                {
+                    Process p = new Process();
+                    p.StartInfo.FileName = updater;
+                    p.StartInfo.Arguments = args;
+                    p.StartInfo.UseShellExecute = false;
+                    p.Start();
+
+                    System.Threading.Thread.Sleep(500);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            return false;
         }
 
         void BrokenDownload(Exception e)

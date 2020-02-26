@@ -19,3 +19,4 @@ COMBO.zh=Default: 显示|0xF7 0xF7 0xC8 0xFC|删除|0x00 0x00 0x00 0x20
 INFO.en=Sets whether the "Sound Room" option from the "Extras" menu is displayed or hidden.\r\nUseful to prevent player access to the Sound Room.
 
 AUTHOR=Aera
+INFO.zh=在附加菜单中删除声音室。\r\n如果您不想使用声音室，请使用此选项。

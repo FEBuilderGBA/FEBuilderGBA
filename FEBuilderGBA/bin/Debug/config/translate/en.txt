@@ -10981,6 +10981,9 @@ Binary difference
 :比較ファイル
 File for comparison
 
+:フリースペースはまとめる
+Collect free space.
+
 :最新版のEAでは拡張領域のデータがダンプできないことがあるので、その場合は、古いEA ver9を利用してください。
 In the latest version of EA, you may not be able to dump extended area data, so in that case please use the old EA ver9.
 
