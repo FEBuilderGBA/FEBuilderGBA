@@ -188,7 +188,7 @@ namespace FEBuilderGBA
                     {
                         errors.Add(new FELint.ErrorSt(FELint.Type.EVENTSCRIPT
                             , start_addr
-                            , R._("イベント「{0}」 存在しないラベル「{1}」へジャンプしています。", U.To0xHexString(start_addr), c.Label)
+                            , R._("イベント「{0}」 存在しないラベル「{1}」へジャンプしています。", U.To0xHexString(start_addr), U.To0xHexString(c.Label))
                             , c.Addr));
                     }
                 }

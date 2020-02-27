@@ -12701,3 +12701,6 @@
 0808659C	パーティを離れたユニットのレベル調整	{U}
 080DCCC6	:080DCCDF	アイテム交換時のメニューTSA	{J}
 080D7F92	:080D7FAB	アイテム交換時のメニューTSA	{U}
+0801F3D8	ShowBrokenWallEffect	{J}
+0801F780	ShowBrokenWallEffect	{U}
+

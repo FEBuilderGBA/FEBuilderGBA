@@ -4823,3 +4823,5 @@
 08005ad4	DrawTextInline	{U}
 0802D06C	ApplyUnitDefaultPromotion	{J}
 08029818	ApplyUnitDefaultPromotion	{U}
+0801F208	ShowBrokenWallEffect	{J}
+0801EE84	ShowBrokenWallEffect	{U}

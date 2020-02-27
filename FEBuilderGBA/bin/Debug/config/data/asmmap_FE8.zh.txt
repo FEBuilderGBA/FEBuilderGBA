@@ -12660,3 +12660,5 @@ r3=X tile position of menu of the right	{U}
 0808659C	离队单位的水平调整。	{U}
 080DCCC6	:080DCCDF	交换项目时使用菜单TSA。	{J}
 080D7F92	:080D7FAB	交换项目时使用菜单TSA。	{U}
+0801F3D8	ShowBrokenWallEffect	{J}
+0801F780	ShowBrokenWallEffect	{U}

@@ -1,0 +1,27 @@
+NAME=壊れる壁のアニメーションを表示(イベント命令)
+TYPE=BIN
+TAG=#EVENT
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 ASMC_Show_BrokenWall_Effect.dmp=0x00 0xB5 0x81 0xB0
+
+//本体をフリーエリアにいれる.
+BIN:$FREEAREA:1=ASMC_Show_BrokenWall_Effect.dmp
+
+AUTHOR=7743
+
+INFO=FE7の砂漠の地下の冒頭に天井が崩れて壁が作られパーティが分断されるイベントがあります。\r\nこのイベントで利用されている命令はFE8でも有効です。\r\nこのパッチは、その命令をイベントから呼び出せるようにしたものです。
+EVENTSCRIPT:1=400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	壊れる壁のアニメーションを表示(LOW)
+EVENTSCRIPT:2=40050100XX00000040050200YY00000040050300ZZ00000040050400WWWW0000400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	壊れる壁のアニメーションを表示[XX:MAPX:X][YY:MAPY:Y][ZZ:DIRECTION:方向][WW::個数]
+
+NAME.en=Add Event: Show BrokenWall Effect
+INFO.en=In FE7, there is an event where the ceiling collapses at the beginning of the basement of the desert and a wall is created, and the party is divided.\r\nThe instruction used in this event is valid for FE8.\r\nThis patch allows the instruction to be called from an event.
+
+EVENTSCRIPT:1.en=400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	Show BrokenWall Effect(LOW)
+EVENTSCRIPT:2.en=40050100XX00000040050200YY00000040050300ZZ00000040050400WWWW0000400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	Show BrokenWall Effect[XX:MAPX:X][YY:MAPY:Y][ZZ:DIRECTION:Direction][WW:DECIMAL:Count]
+
+NAME.zh=Add Event: Show BrokenWall Effect
+INFO.zh=In FE7, there is an event where the ceiling collapses at the beginning of the basement of the desert and a wall is created, and the party is divided.\r\nThe instruction used in this event is valid for FE8.\r\nThis patch allows the instruction to be called from an event.
+
+EVENTSCRIPT:1.zh=400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	Show BrokenWall Effect(LOW)
+EVENTSCRIPT:2.zh=40050100XX00000040050200YY00000040050300ZZ00000040050400WWWW0000400D0000{$L1:ASMC_Show_BrokenWall_Effect.dmp}	Show BrokenWall Effect[XX:MAPX:X][YY:MAPY:Y][ZZ:DIRECTION:Direction][WW:DECIMAL:Count]

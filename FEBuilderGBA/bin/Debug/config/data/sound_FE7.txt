@@ -65,7 +65,7 @@
 00B5=SE:Warp end
 00B6=SE:Pure Water
 00B7=SE:Poison sound
-00B8=SE:???
+00B8=SE:Ceiling collapses in under desert
 00B9=SE:Gold changing
 00BA=SE:Poison vent
 00BD=SE:Water tile going under

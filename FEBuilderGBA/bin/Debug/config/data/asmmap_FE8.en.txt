@@ -12707,3 +12707,5 @@ r3=X tile position of menu of right	{U}
 0808659C	Level adjustment for units leaving the party.	{U}
 080DCCC6	:080DCCDF	Menu TSA when exchanging items.	{J}
 080D7F92	:080D7FAB	Menu TSA when exchanging items.	{U}
+0801F3D8	ShowBrokenWallEffect	{J}
+0801F780	ShowBrokenWallEffect	{U}
