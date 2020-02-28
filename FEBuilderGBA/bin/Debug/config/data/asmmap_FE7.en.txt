@@ -4825,3 +4825,4 @@
 08029818	ApplyUnitDefaultPromotion	{U}
 0801F208	ShowBrokenWallEffect	{J}
 0801EE84	ShowBrokenWallEffect	{U}
+080B7980	Load 10 divided CG.	{J}

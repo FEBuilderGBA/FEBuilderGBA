@@ -669,6 +669,7 @@ UPDATE_UNINSTALL:5=..\autosave\PATCH_autosave.txt
 UPDATE_UNINSTALL:6=..\display-all-weapon-ranks-your-character-has\PATCH_display-all-weapon-ranks-your-character-has.txt
 UPDATE_UNINSTALL:7=..\Status 31 limit break_save_ver2\PATCH_Status 31 limit break_save_ver2 Install.txt
 UPDATE_UNINSTALL:8=..\SummonEXP\PATCH_SummonEXP.txt
+UPDATE_UNINSTALL:9=..\Use Item Might for Healing\PATCH_DSFE-Style Healing.txt
 UPDATE_DEPENDS:1=..\mss_page3_ranksonly\PATCH_mss_page3_ranksonly.txt
 UPDATE_DEPENDS:2=..\class_save_fix\PATCH_class_save_fix.txt
 UPDATE_DEPENDS:3=..\Class expansion\PATCH_class_save_fix.txt

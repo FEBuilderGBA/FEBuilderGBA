@@ -41,3 +41,5 @@ A3F08=MiniMapProc	{J}	//08DAD29C
 82A10=HelpTextBubble	{J}	//D8A610
 750C8=MapAnimLevelUp	{J}	//D65D94
 748CC=MapAnimLevelUp	{U}	//C9DE54
+AD1A0=Sound Room	{J}	//08DAECD0
+AD774=Sound Room CG	{J}	//08DAEEF0

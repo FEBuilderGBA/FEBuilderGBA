@@ -1,0 +1,17 @@
+PUSH
+	#include "Extensions\Hack Installation.txt"
+
+	ORG $29464
+	callHack_r3(Prep_Screen_Usability1)
+	
+	ORG $294E0
+	callHack_r3(Prep_Screen_Usability2)
+POP
+
+	ALIGN 4
+	Prep_Screen_Usability1:
+	#incbin "Prep Screen Usability1.dmp"
+	
+	ALIGN 4
+	Prep_Screen_Usability2:
+	#incbin "Prep Screen Usability2.dmp"

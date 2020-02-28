@@ -12703,4 +12703,5 @@
 080D7F92	:080D7FAB	アイテム交換時のメニューTSA	{U}
 0801F3D8	ShowBrokenWallEffect	{J}
 0801F780	ShowBrokenWallEffect	{U}
-
+080B4144	サウンドルームの画面描画_背景も含む	{J}
+080AF524	サウンドルームの画面描画_背景も含む	{U}

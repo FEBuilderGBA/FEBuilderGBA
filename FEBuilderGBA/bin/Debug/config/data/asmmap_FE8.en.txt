@@ -12709,3 +12709,5 @@ r3=X tile position of menu of right	{U}
 080D7F92	:080D7FAB	Menu TSA when exchanging items.	{U}
 0801F3D8	ShowBrokenWallEffect	{J}
 0801F780	ShowBrokenWallEffect	{U}
+080B4144	SoundRoom_DrawScreen_With_BackgoundImage	{J}
+080AF524	SoundRoom_DrawScreen_With_BackgoundImage	{U}

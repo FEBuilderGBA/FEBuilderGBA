@@ -758,3 +758,7 @@ A1980=SupportScreenMain	{U}	//08A1975C 支援画面
 000B6CA4=ED Characters	{U}	//08A3D35C
 00087ED8=Torch Staff Effect	{J}	//08A601C0
 00085C0C=Torch Staff Effect	{U}	//089EE088
+080B4B44=Sound Room	{J}	//08A9E2A0
+080AFF2C=Sound Room	{U}	//08A21338
+080B4410=Sound Room Sub Procs	{J}	//08A9E270
+080AFAB0=Sound Room Sub Procs	{U}	//08A21308

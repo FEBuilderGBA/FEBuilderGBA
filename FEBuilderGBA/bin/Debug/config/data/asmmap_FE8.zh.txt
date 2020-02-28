@@ -12662,3 +12662,5 @@ r3=X tile position of menu of the right	{U}
 080D7F92	:080D7FAB	交换项目时使用菜单TSA。	{U}
 0801F3D8	ShowBrokenWallEffect	{J}
 0801F780	ShowBrokenWallEffect	{U}
+080B4144	SoundRoom_DrawScreen_With_BackgoundImage	{J}
+080AF524	SoundRoom_DrawScreen_With_BackgoundImage	{U}
