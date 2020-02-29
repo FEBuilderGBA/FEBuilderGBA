@@ -14,6 +14,8 @@ push {r0}
 @blh 0x08089078	@{J}  Procs  GAMECTRL CallASM  DeleteEach6C BG3HSlide
 blh 0x08086DBC	@{U}  Procs  GAMECTRL CallASM  DeleteEach6C BG3HSlide
 
+bl ClearScreen
+
 bl CountTable
 @blh 0x08000c58	@{J} NextRN_N
 blh 0x08000C80	@{U} NextRN_N
@@ -116,6 +118,27 @@ blh 0x0800148C	@{U} BG_SetPosition
 ReloadScreen_Exit:
 pop {r0}
 bx r0
+
+@画面のちらつきを抑制する
+ClearScreen:
+push {lr}
+
+@画面のちらつきを抑制するため、画像がロードされるパレット領域を0クリアする.
+ldr r0, =0x05000100	@Palette BGP8
+mov r1, #0x0
+mov r2, #0xA0 @0x20 * 8palette
+@blh 0x080d6968	@{J} memset
+blh 0x080D1C6C	@{U} memset
+
+ldr r0, =0x020229A8	@Palette Buffer BGP8
+mov r1, #0x0
+mov r2, #0xA0 @0x20 * 8palette
+@blh 0x080d6968	@{J} memset
+blh 0x080D1C6C	@{U} memset
+
+pop {r0}
+bx r0
+
 
 
 .ltorg
