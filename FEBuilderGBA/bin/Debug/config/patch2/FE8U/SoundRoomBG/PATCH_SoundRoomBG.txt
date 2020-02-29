@@ -1,5 +1,6 @@
 NAME=サウンドルームの背景にCGを描画する(Editor)
 NAME.en=Draw CG on background of sound room(Editor)
+NAME.zh=Draw CG on background of sound room(Editor)
 
 IF:0xAF838=0x00 0x4B 0x18 0x47
 
@@ -22,3 +23,6 @@ DATACOUNT=$GREP2 0xFF 0xFF
 B0:BGICON=BG
 B1:CGICON=CG
 
+INFO=CGを表示するには、BGを0xffにして、CGに値を設定してください。\r\nCG:0以外を表示するには、"10分割CG表示"パッチ が必要です。\r\nCGの表示は少し不安定なので、もしかすると利用しない方がいいかもしれません。
+INFO.en=To display CG, set BG to 0xff and set a value to CG.\r\nTo display anything other than CG: 0, "Display 10-Divided CG" Patch is required.\r\nThe display of CG is a little unstable, so it may be better not to use it.
+INFO.zh=To display CG, set BG to 0xff and set a value to CG.\r\nTo display anything other than CG: 0, "Display 10-Divided CG" Patch is required.\r\nThe display of CG is a little unstable, so it may be better not to use it.
