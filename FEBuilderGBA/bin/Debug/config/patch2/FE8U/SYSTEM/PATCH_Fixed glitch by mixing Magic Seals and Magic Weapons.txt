@@ -1,0 +1,19 @@
+NAME=魔封じと魔法武器の混在による不具合の修正
+NAME.en=Fixed glitch by mixing Magic Seals and Magic Weapons
+NAME.zh=Fixed glitch by mixing Magic Seals and Magic Weapons
+
+//アドレスパッチとして実装します
+TYPE=SWITCH
+TAG=#ENGINE
+
+COMBO=Default|OFF|Fix Bug|FIX
+
+DETERMINATION_ADDRESS=0x022CC4
+
+OFF:0x022CC4=0xF3 0xF7 0x56 0xFC //bl CanUnitUseAsWeapon
+FIX:0x022CC4=0xf3 0xf7 0x44 0xfd //bl CanUnitUseWeapon
+
+AUTHOR=7743
+INFO=魔封じ空間で、魔法武器と通常武器を両方持っているときに、魔法武器で攻撃を選択できてしまう不具合を修正します。
+INFO.en=Fixed an issue where you could select an attack with a magic weapon if you have both a magic weapon and a regular weapon in the magic seal space.
+INFO.zh=Fixed an issue where you could select an attack with a magic weapon if you have both a magic weapon and a regular weapon in the magic seal space.
