@@ -2905,6 +2905,9 @@ Automatic creation
 :インポート/エクスポート
 Import / Export
 
+:追加フォントをすべて取出
+Extract all additional fonts.
+
 :フォント
 Font
 

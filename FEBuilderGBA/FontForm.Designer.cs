@@ -53,6 +53,7 @@
             this.customColorGroupBox1 = new FEBuilderGBA.CustomColorGroupBox();
             this.customColorGroupBox2 = new FEBuilderGBA.CustomColorGroupBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.ExportALLButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Address)).BeginInit();
@@ -281,10 +282,10 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Location = new System.Drawing.Point(229, 32);
+            this.ExportButton.Location = new System.Drawing.Point(219, 32);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(175, 30);
+            this.ExportButton.Size = new System.Drawing.Size(187, 30);
             this.ExportButton.TabIndex = 91;
             this.ExportButton.Text = "画像取出";
             this.ExportButton.UseVisualStyleBackColor = true;
@@ -342,21 +343,33 @@
             // customColorGroupBox2
             // 
             this.customColorGroupBox2.BorderColor = System.Drawing.Color.Empty;
+            this.customColorGroupBox2.Controls.Add(this.ExportALLButton);
             this.customColorGroupBox2.Controls.Add(this.ImportButton);
             this.customColorGroupBox2.Controls.Add(this.ExportButton);
             this.customColorGroupBox2.Location = new System.Drawing.Point(19, 556);
             this.customColorGroupBox2.Name = "customColorGroupBox2";
-            this.customColorGroupBox2.Size = new System.Drawing.Size(568, 80);
+            this.customColorGroupBox2.Size = new System.Drawing.Size(568, 107);
             this.customColorGroupBox2.TabIndex = 38;
             this.customColorGroupBox2.TabStop = false;
             this.customColorGroupBox2.Text = "インポート/エクスポート";
+            // 
+            // ExportALLButton
+            // 
+            this.ExportALLButton.Location = new System.Drawing.Point(219, 66);
+            this.ExportALLButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ExportALLButton.Name = "ExportALLButton";
+            this.ExportALLButton.Size = new System.Drawing.Size(338, 30);
+            this.ExportALLButton.TabIndex = 93;
+            this.ExportALLButton.Text = "追加フォントをすべて取出";
+            this.ExportALLButton.UseVisualStyleBackColor = true;
+            this.ExportALLButton.Click += new System.EventHandler(this.ExportALLButton_Click);
             // 
             // FontForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(604, 658);
+            this.ClientSize = new System.Drawing.Size(604, 680);
             this.Controls.Add(this.customColorGroupBox2);
             this.Controls.Add(this.customColorGroupBox1);
             this.Controls.Add(this.panel2);
@@ -406,5 +419,6 @@
         private CustomColorGroupBox customColorGroupBox1;
         private CustomColorGroupBox customColorGroupBox2;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button ExportALLButton;
     }
 }

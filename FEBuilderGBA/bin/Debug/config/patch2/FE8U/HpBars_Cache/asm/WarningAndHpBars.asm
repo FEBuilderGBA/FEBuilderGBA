@@ -267,7 +267,7 @@ b		GoBack					@opting to do the displaying on the second pass
 DisplayOtherIcons:
 ldr		r5,=WarningCache
 add		r5,#2
-ldrb	r0,[r4,#0xB]
+ldrb	r0,[r4,#0xB] @unit id
 ldrb	r5,[r5,r0]
 cmp		r5,#0
 beq		GoBack					@nothing to display

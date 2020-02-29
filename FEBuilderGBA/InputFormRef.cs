@@ -1855,7 +1855,6 @@ namespace FEBuilderGBA
                     link_object.Image = bitmap;
                 };
 
-
                 link_info.Cursor = Cursors.Hand;
                 link_info.Click += (sender, e) =>
                 {
@@ -4049,6 +4048,21 @@ namespace FEBuilderGBA
             {
                 SongInstrumentDirectSoundForm f = (SongInstrumentDirectSoundForm)InputFormRef.JumpForm<SongInstrumentDirectSoundForm>(U.NOT_FOUND);
                 f.JumpToAddr(value);
+            }
+            else if (linktype == "BG" || linktype == "BGICON")
+            {
+                ImageBGForm f = (ImageBGForm)InputFormRef.JumpForm<ImageBGForm>(value, "AddressList", src_object);
+            }
+            else if (linktype == "CG" || linktype == "CGICON")
+            {
+                if (Program.ROM.RomInfo.version() == 7 && Program.ROM.RomInfo.is_multibyte() == false)
+                {//FE7U
+                    ImageCGFE7UForm f = (ImageCGFE7UForm)InputFormRef.JumpForm<ImageCGFE7UForm>(value, "AddressList", src_object);
+                }
+                else
+                {
+                    ImageCGForm f = (ImageCGForm)InputFormRef.JumpForm<ImageCGForm>(value, "AddressList", src_object);
+                }
             }
         }
         static void PListJumptTo(NumericUpDown value, MapPointerForm.PLIST_TYPE type)

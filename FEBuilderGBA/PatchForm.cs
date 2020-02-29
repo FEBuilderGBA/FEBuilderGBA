@@ -849,6 +849,30 @@ namespace FEBuilderGBA
                     pic.Name = "L_" + datanum + "_" + "PORTRAIT";
                     PatchPage.Controls.Add(pic);
                 }
+                else if (type.IndexOf("BGICON") == 0)
+                {//BG.
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(500, y);
+                    pic.Size = new Size((int)(CONTROL_HEIGHT * 2 * 1.5), CONTROL_HEIGHT * 2);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pic.Name = "L_" + datanum + "_" + "BGICON";
+                    PatchPage.Controls.Add(pic);
+
+                    y += CONTROL_HEIGHT;
+                }
+                else if (type.IndexOf("CGICON") == 0)
+                {//CG.
+                    PictureBox pic = new PictureBox();
+                    pic.Location = new Point(500, y);
+                    pic.Size = new Size((int)(CONTROL_HEIGHT * 2 * 1.5), CONTROL_HEIGHT * 2);
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    pic.Name = "L_" + datanum + "_" + "CGICON";
+                    PatchPage.Controls.Add(pic);
+
+                    y += CONTROL_HEIGHT;
+                }
                 else if (type.IndexOf("BATTLEANIMESP") == 0)
                 {//戦闘アニメの特別指定2 面倒だが仕方ない.
                     ComboBox link = new ComboBox();
@@ -895,7 +919,7 @@ namespace FEBuilderGBA
 
                     if (type == "UNIT" 
                         || type == "ITEM" 
-                        || type == "CLASS" 
+                        || type == "CLASS"
                         || type == "BATTLEANIME" 
                         || type == "BATTLEANIMEPOINTER" 
                         || type == "CLASSTYPEICON"

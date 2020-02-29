@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FEBuilderGBA
 {
@@ -780,11 +781,9 @@ namespace FEBuilderGBA
         public static void MakeAllDataLength(List<Address> list)
         {
             //アイテム
-            uint fontlist_pointer = GetFontPointer(true);
-            MakeAllDataLengthInner(fontlist_pointer, ref list);
+            MakeAllDataLengthInner(true, ref list);
             //セリフ
-            fontlist_pointer = GetFontPointer(false);
-            MakeAllDataLengthInner(fontlist_pointer, ref list);
+            MakeAllDataLengthInner(false, ref list);
 
             //ステータスフォント
             MakeAllDataLengthStatusFont( 
@@ -793,9 +792,11 @@ namespace FEBuilderGBA
                 , ref list);
         }
 
-        static void MakeAllDataLengthInner(uint topaddress, ref List<Address> list)
+        static void MakeAllDataLengthInner(bool isItemFont, ref List<Address> list)
         {
-            string name = "Font";
+            string name = isItemFont ? "FontItem" : "FontText";
+            uint topaddress = GetFontPointer(isItemFont);
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
 
             if (Program.ROM.RomInfo.is_multibyte())
             {//日本語版
@@ -832,10 +833,11 @@ namespace FEBuilderGBA
                     //+64byte bitmap(4pp)
                     while (p > 0)
                     {
+                        uint moji2 = Program.ROM.u8(p + 4);
                         FEBuilderGBA.Address.AddAddress(list
                             ,p, 8 + 64
                             ,before_pointer
-                            ,name
+                            ,name + FontChar(moji2, moji1, priorityCode)
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
@@ -894,7 +896,7 @@ namespace FEBuilderGBA
                         FEBuilderGBA.Address.AddAddress(list,p
                             , 8 + 64
                             ,before_pointer
-                            ,name
+                            ,name + FontChar(0, moji2, priorityCode)
                             ,FEBuilderGBA.Address.DataTypeEnum.FONT);
 
 
@@ -945,6 +947,31 @@ namespace FEBuilderGBA
                     , name
                     , FEBuilderGBA.Address.DataTypeEnum.FONT);
             }
+        }
+        static string FontChar(uint moji1, uint moji2, PatchUtil.PRIORITY_CODE priorityCode)
+        {
+            SystemTextEncoder encoder = Program.SystemTextEncoder;
+            if (priorityCode == PatchUtil.PRIORITY_CODE.SJIS)
+            {
+                if (U.isSJIS1stCode((byte)moji1) && U.isSJIS2ndCode((byte)moji2))
+                {
+                    byte[] str = new byte[3];
+                    str[0] = (byte)moji1;
+                    str[1] = (byte)moji2;
+                    str[2] = 0;
+                    return encoder.Decode(str, 0, 2);
+                }
+            }
+
+            if (moji1 == 0)
+            {
+                byte[] str = new byte[2];
+                str[0] = (byte)moji2;
+                str[1] = 0;
+                return encoder.Decode(str, 0, 1);
+            }
+            //意味不明な文字
+            return U.ToCharOneHex((byte)moji1) + "_" + U.ToCharOneHex((byte)moji2);
         }
 
         private void AutoGenbutton_Click(object sender, EventArgs e)
@@ -1069,6 +1096,80 @@ namespace FEBuilderGBA
                 U.write_u8(newFontData, 6, moji3);
                 U.write_u8(newFontData, 7, moji4);
             }
+        }
+
+        private void ExportALLButton_Click(object sender, EventArgs e)
+        {
+            if (InputFormRef.IsPleaseWaitDialog(this))
+            {//2重割り込み禁止
+                return;
+            }
+
+            string title = R._("保存するファイル名を選択してください");
+            string filter = R._("TXT|*.fontall.txt|All files|*");
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = title;
+            save.Filter = filter;
+            save.AddExtension = true;
+            Program.LastSelectedFilename.Load(this, "", save, this.FontType.Text);
+
+            DialogResult dr = save.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return ;
+            }
+            if (save.FileNames.Length <= 0 || !U.CanWriteFileRetry(save.FileNames[0]))
+            {
+                return ;
+            }
+            string filename = save.FileNames[0];
+            //少し時間がかかるので、しばらくお待ちください表示.
+            using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
+            {
+                string basedir = Path.GetDirectoryName(filename);
+
+                StringBuilder sb = new StringBuilder();
+                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: true));
+                sb.Append(ExportALL(pleaseWait, basedir, isItemFont: false));
+
+                File.WriteAllText(filename, sb.ToString());
+            }
+            Program.LastSelectedFilename.Save(this, "", save);
+
+        }
+        StringBuilder ExportALL(InputFormRef.AutoPleaseWait pleaseWait, string basedir, bool isItemFont)
+        {
+            List<Address> list = new List<Address>();
+            MakeAllDataLengthInner(isItemFont, ref list);
+            PatchUtil.PRIORITY_CODE priorityCode = PatchUtil.SearchPriorityCode();
+            Color bgcolor = GetFontColor(isItemFont);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Address a in list)
+            {
+                if (a.DataType != FEBuilderGBA.Address.DataTypeEnum.FONT)
+                {
+                    continue;
+                }
+                if (a.Addr >= Program.ROM.RomInfo.font_default_begin()
+                    && a.Addr <= Program.ROM.RomInfo.font_default_end())
+                {//規定のフォント
+                    continue;
+                }
+
+                int out_width;
+                byte[] fontbyte = ReadFontData(a.Addr, out out_width);
+                Bitmap bitmap = ImageUtil.ByteToImage4(16, 16, fontbyte, 0, bgcolor);
+                ImageUtil.BlackOutUnnecessaryColors(bitmap, 1);
+                string font_filename = Path.Combine(basedir,a.Info + ".png");
+                U.BitmapSave(bitmap, font_filename);
+                bitmap.Dispose();
+
+                sb.AppendLine(a.Info + ".png");
+            }
+
+            return sb;
         }
 
     }

@@ -1,0 +1,12 @@
+CountTable=$22
+ShowTableData=$3A
+ReloadScreen=$68
+Exit=$1A
+SoundRoomBG_Table=$98
+CountTable_Loop=$26
+CountTable_Next=$32
+CountTable_Exit=$38
+ShowTableData_CG=$4E
+ShowTableData_BG=$4A
+ShowTableData_Exit=$5A
+ReloadScreen_Exit=$80

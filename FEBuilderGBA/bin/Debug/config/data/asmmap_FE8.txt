@@ -12705,3 +12705,4 @@
 0801F780	ShowBrokenWallEffect	{U}
 080B4144	サウンドルームの画面描画_背景も含む	{J}
 080AF524	サウンドルームの画面描画_背景も含む	{U}
+080B7398	Start ColFadeIn	{J}

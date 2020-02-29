@@ -1,0 +1,24 @@
+NAME=サウンドルームの背景にCGを描画する(Editor)
+NAME.en=Draw CG on background of sound room(Editor)
+
+IF:0xAF838=0x00 0x4B 0x18 0x47
+
+AUTHOR=7743
+
+//画像パッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END SoundRoomBG.dmp
+
+//データサイズ(10進数)
+DATASIZE=2
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP2 0xFF 0xFF
+
+//データを定義します
+B0:BGICON=BG
+B1:CGICON=CG
+
