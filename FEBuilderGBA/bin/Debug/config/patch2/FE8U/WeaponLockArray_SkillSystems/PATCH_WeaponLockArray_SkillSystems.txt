@@ -17,8 +17,9 @@ DATASIZE=4
 //データ個数
 DATACOUNT=255
 
-//リストに表示されるのはユニット名です
-LISTNAME=ITEM
-
 //データを定義します
 P0:VENNOUWEAPONLOCK=WeaponLock
+
+LISTNAME=VENNOUWEAPONLOCK_INDEX
+
+INFO=Please indicate which Lock data is used in the ability 4 of the item.

@@ -82,6 +82,27 @@ namespace FEBuilderGBA
                 MagicExtUnitBaseLabel.Show();
                 MagicExtUnitBase.Show();
             }
+            VennouWeaponLockArray(controls);
+        }
+        void VennouWeaponLockArray(List<Control> controls)
+        {
+            if (! PatchUtil.SearchVennouWeaponLockArray())
+            {
+                return;
+            }
+            L_11_BIT_01.Hide();
+            L_11_BIT_02.Hide();
+            L_11_BIT_04.Hide();
+            L_11_BIT_08.Hide();
+            L_11_BIT_10.Hide();
+            L_11_BIT_20.Hide();
+            L_11_BIT_40.Hide();
+            L_11_BIT_80.Hide();
+            VennouWeaponLockArray_Display.Enabled = true;
+            VennouWeaponLockArray_Display.Show();
+            J_11.Text = "WeaponLockArray";
+
+            InputFormRef.makeLinkEventHandler("", controls, B11, VennouWeaponLockArray_Display, 11, "VENNOUWEAPONLOCK_INDEX", new string[]{});
         }
 
         public static String GetItemName(uint item_id)

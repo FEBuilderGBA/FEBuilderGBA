@@ -100,6 +100,8 @@
             this.P16 = new System.Windows.Forms.NumericUpDown();
             this.J_16_ITEMCRTIICAL = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.MagicExtUnitBase = new System.Windows.Forms.NumericUpDown();
+            this.MagicExtUnitBaseLabel = new System.Windows.Forms.Label();
             this.L_12_NEWALLOC_ITEMSTATBOOSTER = new System.Windows.Forms.Button();
             this.X_SIM_BODY = new System.Windows.Forms.NumericUpDown();
             this.X_SIM_BODY_Label = new System.Windows.Forms.Label();
@@ -133,8 +135,6 @@
             this.J_2_TEXT = new System.Windows.Forms.Label();
             this.J_4_TEXT = new System.Windows.Forms.Label();
             this.W2 = new System.Windows.Forms.NumericUpDown();
-            this.MagicExtUnitBase = new System.Windows.Forms.NumericUpDown();
-            this.MagicExtUnitBaseLabel = new System.Windows.Forms.Label();
             this.SKILLICON = new FEBuilderGBA.InterpolatedPictureBox();
             this.SKILLNAME = new FEBuilderGBA.TextBoxEx();
             this.L_29_ITEMICONSRC = new FEBuilderGBA.InterpolatedPictureBox();
@@ -145,6 +145,7 @@
             this.L_4_TEXT_ITEM2 = new FEBuilderGBA.TextBoxEx();
             this.L_2_TEXT_ITEMX = new FEBuilderGBA.TextBoxEx();
             this.J_11 = new FEBuilderGBA.CustomColorGroupBox();
+            this.VennouWeaponLockArray_Display = new FEBuilderGBA.TextBoxEx();
             this.L_11_BIT_80 = new System.Windows.Forms.CheckBox();
             this.L_11_BIT_40 = new System.Windows.Forms.CheckBox();
             this.L_11_BIT_20 = new System.Windows.Forms.CheckBox();
@@ -220,6 +221,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P16)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MagicExtUnitBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_BODY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_MOVE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_LUCK)).BeginInit();
@@ -235,7 +237,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MagicExtUnitBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).BeginInit();
             this.L_6_ID.SuspendLayout();
@@ -1270,6 +1271,41 @@
             this.panel4.Size = new System.Drawing.Size(1120, 58);
             this.panel4.TabIndex = 68;
             // 
+            // MagicExtUnitBase
+            // 
+            this.MagicExtUnitBase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MagicExtUnitBase.Location = new System.Drawing.Point(890, 28);
+            this.MagicExtUnitBase.Margin = new System.Windows.Forms.Padding(2);
+            this.MagicExtUnitBase.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.MagicExtUnitBase.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.MagicExtUnitBase.Name = "MagicExtUnitBase";
+            this.MagicExtUnitBase.ReadOnly = true;
+            this.MagicExtUnitBase.Size = new System.Drawing.Size(65, 25);
+            this.MagicExtUnitBase.TabIndex = 53;
+            this.MagicExtUnitBase.Visible = false;
+            // 
+            // MagicExtUnitBaseLabel
+            // 
+            this.MagicExtUnitBaseLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MagicExtUnitBaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MagicExtUnitBaseLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(890, 0);
+            this.MagicExtUnitBaseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MagicExtUnitBaseLabel.Name = "MagicExtUnitBaseLabel";
+            this.MagicExtUnitBaseLabel.Size = new System.Drawing.Size(64, 25);
+            this.MagicExtUnitBaseLabel.TabIndex = 54;
+            this.MagicExtUnitBaseLabel.Text = "魔力";
+            this.MagicExtUnitBaseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MagicExtUnitBaseLabel.Visible = false;
+            // 
             // L_12_NEWALLOC_ITEMSTATBOOSTER
             // 
             this.L_12_NEWALLOC_ITEMSTATBOOSTER.Location = new System.Drawing.Point(968, -1);
@@ -1776,41 +1812,6 @@
             this.W2.Size = new System.Drawing.Size(73, 25);
             this.W2.TabIndex = 1;
             // 
-            // MagicExtUnitBase
-            // 
-            this.MagicExtUnitBase.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MagicExtUnitBase.Location = new System.Drawing.Point(890, 28);
-            this.MagicExtUnitBase.Margin = new System.Windows.Forms.Padding(2);
-            this.MagicExtUnitBase.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.MagicExtUnitBase.Minimum = new decimal(new int[] {
-            128,
-            0,
-            0,
-            -2147483648});
-            this.MagicExtUnitBase.Name = "MagicExtUnitBase";
-            this.MagicExtUnitBase.ReadOnly = true;
-            this.MagicExtUnitBase.Size = new System.Drawing.Size(65, 25);
-            this.MagicExtUnitBase.TabIndex = 53;
-            this.MagicExtUnitBase.Visible = false;
-            // 
-            // MagicExtUnitBaseLabel
-            // 
-            this.MagicExtUnitBaseLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MagicExtUnitBaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MagicExtUnitBaseLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MagicExtUnitBaseLabel.Location = new System.Drawing.Point(890, 0);
-            this.MagicExtUnitBaseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MagicExtUnitBaseLabel.Name = "MagicExtUnitBaseLabel";
-            this.MagicExtUnitBaseLabel.Size = new System.Drawing.Size(64, 25);
-            this.MagicExtUnitBaseLabel.TabIndex = 54;
-            this.MagicExtUnitBaseLabel.Text = "魔力";
-            this.MagicExtUnitBaseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MagicExtUnitBaseLabel.Visible = false;
-            // 
             // SKILLICON
             // 
             this.SKILLICON.Interpolation = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
@@ -1918,6 +1919,7 @@
             // J_11
             // 
             this.J_11.BorderColor = System.Drawing.Color.Empty;
+            this.J_11.Controls.Add(this.VennouWeaponLockArray_Display);
             this.J_11.Controls.Add(this.L_11_BIT_80);
             this.J_11.Controls.Add(this.L_11_BIT_40);
             this.J_11.Controls.Add(this.L_11_BIT_20);
@@ -1935,6 +1937,20 @@
             this.J_11.TabIndex = 66;
             this.J_11.TabStop = false;
             this.J_11.Text = "特性4";
+            // 
+            // VennouWeaponLockArray_Display
+            // 
+            this.VennouWeaponLockArray_Display.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VennouWeaponLockArray_Display.Enabled = false;
+            this.VennouWeaponLockArray_Display.ErrorMessage = "";
+            this.VennouWeaponLockArray_Display.Location = new System.Drawing.Point(81, 18);
+            this.VennouWeaponLockArray_Display.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.VennouWeaponLockArray_Display.Name = "VennouWeaponLockArray_Display";
+            this.VennouWeaponLockArray_Display.Placeholder = "";
+            this.VennouWeaponLockArray_Display.ReadOnly = true;
+            this.VennouWeaponLockArray_Display.Size = new System.Drawing.Size(210, 25);
+            this.VennouWeaponLockArray_Display.TabIndex = 39;
+            this.VennouWeaponLockArray_Display.Visible = false;
             // 
             // L_11_BIT_80
             // 
@@ -2492,6 +2508,7 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.P16)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MagicExtUnitBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_BODY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_MOVE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.X_SIM_LUCK)).EndInit();
@@ -2508,7 +2525,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.W2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MagicExtUnitBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SKILLICON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.L_29_ITEMICONSRC)).EndInit();
             this.L_6_ID.ResumeLayout(false);
@@ -2690,5 +2706,6 @@
         private InterpolatedPictureBox SKILLICON;
         private System.Windows.Forms.NumericUpDown MagicExtUnitBase;
         private System.Windows.Forms.Label MagicExtUnitBaseLabel;
+        private TextBoxEx VennouWeaponLockArray_Display;
     }
 }

@@ -156,7 +156,7 @@ gSuspendSaveChunks:
 	DeclSaveChunk($034C, $0460, $0A4264+1,            $0A421C+1)            // BWL Entries
 	DeclSaveChunk($07AC, $00C0, $0A4288+1,            $0A4248+1)            // Previous chapters turn count & time & stuff
 	DeclSaveChunk($086C, $0010, MSu_SaveMenuRelated,  MSu_LoadMenuRelated)  // "menu related list" related
-	DeclSaveChunk($087C, $0019, $0A3150+1,            $0A3198+1)            // Permanent eids
+	// Gap here of 9 bytes, this is because of a previous mistake in allocation
 	DeclSaveChunk($0885, $0005, $0A3130+1,            $0A3170+1)            // Temporary eids
 	DeclSaveChunk($088C, $0024, MSa_SaveWMStuff,      MSa_LoadWMStuff,      EMS_CHUNK_WMDATA)
 	DeclSaveChunk($08B0, $000C, MSu_SaveDungeonState, MSu_LoadDungeonState) // Valni/Lagdou active run data
@@ -188,7 +188,11 @@ gSuspendSaveChunks:
 	DeclSaveChunk($24A8, DebuffTableSize, SUD_SaveDebuffs,  SUD_LoadDebuffs)
 
 	// ends at $2DA8
-	// free up to $2E78 ($D0 free bytes)
+	// Permanent eids (moved here because of a mistake in the previous allocation)
+	DeclSaveChunk($2DA8, $0019, $0A3150+1, $0A3198+1)
+
+	// ends at $2DC1
+	// free up to $2E78 ($B7 free bytes)
 
 	DeclSaveChunk(0, 0, 0, MSu_LoadClaimFlagsFromParentSave) // Load Bonus Claim flags from parent save
 

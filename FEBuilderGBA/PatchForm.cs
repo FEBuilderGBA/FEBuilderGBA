@@ -1394,6 +1394,10 @@ namespace FEBuilderGBA
             {
                 appendname = U.ToHexString(i) + " " + TextForm.DirectAndStripAllCode((uint)i);
             }
+            else if (listname == "VENNOUWEAPONLOCK_INDEX")
+            {
+                appendname = VennouWeaponLockForm.GetNamesByIndexCap((uint)i);
+            }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {
                 appendname = U.ToHexString(i) + " " + U.at(listname_combo_dic, (uint)i);
@@ -4066,6 +4070,8 @@ namespace FEBuilderGBA
                 Debug.Assert(false);
                 return;
             }
+
+            basedir = Path.GetDirectoryName(editpatchSt.PatchFileName);
             string type = U.at(editpatchSt.Param, "TYPE");
             if (type == "STRUCT")
             {

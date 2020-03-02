@@ -1778,23 +1778,6 @@ namespace FEBuilderGBA
                 };
                 return;
             }
-            if (linktype == "VENNOUWEAPONLOCK")
-            {//専用武器 vennou
-                TextBoxEx link_object = ((TextBoxEx)link_info);
-
-                src_object.ValueChanged += (sender, e) =>
-                {
-                    uint addr = (uint)src_object.Value;
-                    link_object.Text = VennouWeaponLockForm.GetNames(addr);
-                };
-
-                link_info.Cursor = Cursors.Hand;
-                link_info.Click += (sender, e) =>
-                {
-                    JumpTo(src_object, link_info, "VENNOUWEAPONLOCK", new string[] { });
-                };
-                return;
-            }
             if (linktype == "WMICON")
             {//ワールドマップアイコン
                 PictureBox link_object = ((PictureBox)link_info);
@@ -2731,6 +2714,41 @@ namespace FEBuilderGBA
                 };
                 return;
             }
+            if (linktype == "VENNOUWEAPONLOCK")
+            {//専用武器 vennou
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint addr = (uint)src_object.Value;
+                    link_object.Text = VennouWeaponLockForm.GetNames(addr);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    JumpTo(src_object, link_info, "VENNOUWEAPONLOCK", new string[] { });
+                };
+                return;
+            }
+            if (linktype == "VENNOUWEAPONLOCK_INDEX")
+            {
+                TextBoxEx link_object = ((TextBoxEx)link_info);
+
+                src_object.ValueChanged += (sender, e) =>
+                {
+                    uint i = (uint)src_object.Value;
+                    link_object.Text = VennouWeaponLockForm.GetNamesByIndex(i);
+                };
+
+                link_info.Cursor = Cursors.Hand;
+                link_info.Click += (sender, e) =>
+                {
+                    PatchForm f = (PatchForm)InputFormRef.JumpForm<PatchForm>();
+                    f.JumpTo("WeaponLockArray SkillSystems", 1);
+                };
+                return;
+            }
             
             
 #if DEBUG            
@@ -2991,7 +3009,7 @@ namespace FEBuilderGBA
             {
                 alllocQMessage = R._("新規に、専用武器のデータを割り振りますか？");
                 alllocedMessage = R._("領域を割り振りました。専用武器を割り振ってください。");
-                alloc = new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x00 };
+                alloc = new byte[] { 0x01, 0x01, 0x02, 0x03, 0x04, 0x05, 0x00 };
             }
             else
             {//リンクミス.

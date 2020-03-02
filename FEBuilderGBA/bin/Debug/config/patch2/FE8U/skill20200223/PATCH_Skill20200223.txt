@@ -944,9 +944,11 @@ EDIT_PATCH:6=../ClassLevelMax/PATCH_ClassLevelMax.txt
 EDIT_PATCH:7=../skill20200211/PATCH_PersonalData Skillsystems Version.txt
 EDIT_PATCH:8=../skill20200211/PATCH_Mag Char Editor.txt
 EDIT_PATCH:9=../skill20200211/PATCH_Mag Class Editor.txt
+EDIT_PATCH:10=../WeaponLockArray_SkillSystems/PATCH_WeaponLockArray_SkillSystems.txt
 
 AFTER_TRY_EXECUTE:1=PATCH_Uninstall Garbage Item data By SkillSystems 20200211.txt
 AFTER_TRY_EXECUTE:2=fix_mag_statbooster/PATCH_Fix Bug Magic Statbooster for SkillSystems 20200223.txt
+AFTER_TRY_EXECUTE:3=PATCH_Fix ExSaveModule Glitch for SkillSystems 20200223.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM

@@ -105,6 +105,43 @@ namespace FEBuilderGBA
 
             return addr - start;
         }
+        public static string GetNamesByIndexCap(uint index)
+        {
+            if (index == 0)
+            {
+                return "-NULL-";
+            }
+            string name = GetNamesByIndex(index);
+            if (name == "")
+            {
+                return "-EMPTY-";
+            }
+            return name;
+        }
+        public static string GetNamesByIndex(uint index)
+        {
+            if (index == 0)
+            {
+                return "";
+            }
+
+            uint addr = PatchUtil.SearchVennouWeaponLockArrayAddr();
+            if (! U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            addr = addr + (index * 4);
+            if (!U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            addr = Program.ROM.p32(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return "";
+            }
+            return GetNames(addr);
+        }
         public static string GetNames(uint addr)
         {
             addr = U.toOffset(addr);

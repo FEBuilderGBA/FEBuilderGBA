@@ -32,6 +32,7 @@ namespace FEBuilderGBA
             g_Cache_MeleeAndMagicFix_enum = MeleeAndMagicFix_enum.NoCache;
             g_Cache_IrregularFont_enum = IrregularFont_enum.NoCache;
             g_Cache_StatboosterExtends = StatboosterExtends.NoCache;
+            g_WeaponLockArrayTableAddr = U.NOT_FOUND;
             g_InstrumentSet = null;
         }
 
@@ -1399,6 +1400,67 @@ namespace FEBuilderGBA
                 iset.Add(new U.AddrResult(v, U.ToHexString(v) + "=" + sp[0]));
             }
             return iset;
+        }
+
+        //VennouWeaponLockArray
+        public static uint g_WeaponLockArrayTableAddr = U.NOT_FOUND;
+        public static bool SearchVennouWeaponLockArray()
+        {
+            if (g_WeaponLockArrayTableAddr == U.NOT_FOUND)
+            {
+                g_WeaponLockArrayTableAddr = SearchVennouWeaponLockArrayAddrLow();
+            }
+            return U.isSafetyOffset(g_WeaponLockArrayTableAddr);
+        }
+        public static uint SearchVennouWeaponLockArrayAddr()
+        {
+            if (g_WeaponLockArrayTableAddr == U.NOT_FOUND)
+            {
+                g_WeaponLockArrayTableAddr = SearchVennouWeaponLockArrayAddrLow();
+            }
+            return g_WeaponLockArrayTableAddr;
+        }
+        static uint SearchVennouWeaponLockArrayAddrLow()
+        {
+            //FE8U Only
+            if (Program.ROM.RomInfo.version() != 8)
+            {
+                return 0;
+            }
+            if (Program.ROM.RomInfo.is_multibyte() != false)
+            {
+                return 0;
+            }
+            //パッチがインストールされているか?
+            uint data = Program.ROM.u32(0x16DD8);
+            if (data != 0xFF3D3C00)
+            {
+                return 0;
+            }
+
+            //本体を探す.
+            string program_dmp = Path.Combine(Program.BaseDirectory, "config", "patch2", "FE8U", "WeaponLockArray_SkillSystems", "AdvWeaponLocks.dmp");
+            if (!File.Exists(program_dmp))
+            {
+                return 0;
+            }
+            byte[] program_dmp_bin = File.ReadAllBytes(program_dmp);
+            uint addr = U.GrepEnd(Program.ROM.Data, program_dmp_bin, Program.ROM.RomInfo.compress_image_borderline_address(), 0, 4);
+            if (addr == U.NOT_FOUND)
+            {
+                return 0;
+            }
+            addr = addr + 4;
+            if (!U.isSafetyOffset(addr))
+            {
+                return 0;
+            }
+            addr = Program.ROM.p32(addr);
+            if (!U.isSafetyOffset(addr))
+            {
+                return 0;
+            }
+            return addr;
         }
     }
 }
