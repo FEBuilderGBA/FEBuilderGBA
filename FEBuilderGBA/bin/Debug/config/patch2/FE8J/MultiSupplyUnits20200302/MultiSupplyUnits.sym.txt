@@ -1,0 +1,10 @@
+Table=$74
+Loop=$0A
+FalseExit=$5A
+CheckMap=$12
+CheckEdition=$20
+CheckFlag=$2E
+Found=$3E
+CheckUnit=$3E
+TrueExit=$56
+Exit=$5C

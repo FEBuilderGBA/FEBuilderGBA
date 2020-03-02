@@ -1,0 +1,22 @@
+#ifdef _FE8_
+
+#include "EAstdlib.event"
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG $3316C		//FE8J
+jumpToHack(MultiHeroUnits)
+POP
+
+
+ALIGN 4
+MultiHeroUnits:
+#incbin "MultiHeroUnits.dmp"
+POIN MultiHeroUnits_Table
+
+//MultiHeroUnits_Table:
+#include "MultiHeroUnits_Table.event"
+
+#else
+    ERROR This version of Selection Quotes is for FE8!
+#endif

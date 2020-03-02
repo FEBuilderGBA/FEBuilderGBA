@@ -1,0 +1,14 @@
+NAME=ダメージを受けているユニットがいるとHPバーを表示 2
+NAME.en=When there is a unit receiving damage, HP bar is displayed 2.
+INFO=ダメージを受けているキャラがいると、HPバーを表示します。\r\nそのほか、危険位置を表示したり、エンジンをいろいろ修正するパッチ集です。\r\nこのパッチでは、会話アイコンや脅威となる敵にマークを出したりできます。\r\nHPBars,Danger
+
+PATCHED_IF:0x156AC=0x18 0x22
+EA_EXTENDS_GAMEMENU:0x01=0x20
+TYPE=EA
+TAG=#ENGINE
+
+EA=EA.txt
+AUTHOR=aera
+INFO.en=If there are characters that are damaged, we will display the HP bar.\r\nBesides that, it is a patch collection that displays dangerous positions and fixes various engines.\r\nThis patch lets you mark conversation icons and threatening enemies.\r\nHPBars,Danger
+NAME.zh=当设备损坏时会显示HP条
+INFO.zh=如果有字符损坏，我们将显示HP栏。\r\n除此之外，它是一个补丁集合，显示危险的位置和修复各种引擎。\r\nThis patch lets you mark conversation icons and threatening enemies.\r\nHPBars,Danger

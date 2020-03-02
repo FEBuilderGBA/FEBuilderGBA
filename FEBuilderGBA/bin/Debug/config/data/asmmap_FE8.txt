@@ -12706,3 +12706,6 @@
 080B4144	サウンドルームの画面描画_背景も含む	{J}
 080AF524	サウンドルームの画面描画_背景も含む	{U}
 080B7398	Start ColFadeIn	{J}
+080B2780	Start ColFadeIn	{U}
+080DC940	:080DC946	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{J}
+080D7C0C	:80D7C12	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{U}

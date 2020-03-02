@@ -1,0 +1,171 @@
+
+#define LITE_DANGER_MODE (1)
+
+PUSH
+
+//先頭指定
+ORG	FEBUILDER_EXTRA_ORG	//FEBuilderGBAで確保したメニュー領域に追加
+POIN	KikenString
+SHORT $0000 $0661 $7400 0
+WORD	$080501BD 0
+POIN	OutKiken|1
+WORD 0 0 0
+POP
+
+ALIGN 4
+OutKiken:
+ #incbin KikenOut_80.bin
+
+ALIGN 4
+KikenString:
+#incbin KikenString.bin
+ALIGN 4
+
+PUSH
+
+
+
+//危険バグ
+ORG		0x1CB69
+BYTE	$E0
+
+//魔法無しでも飛ばない
+ORG		0x1b52a
+	#incbin "Many_function.bin"
+
+///////HP Bar
+ORG		0x156AC
+SHORT $2218	//画像のサイズ指定
+
+ORG		0x156c8
+POIN	HPBarGraphic	//画像データ指定
+
+ORG		0x27658
+WORD	0x46874800
+POIN	Vcheck	//8E976DC
+
+ORG		0x5C6E08
+
+HPFrames:
+#incbin HPFrames.bin
+HPFramePointers:
+POIN HPFrames
+POIN HPFrames+8
+POIN HPFrames+16
+POIN HPFrames+24
+POIN HPFrames+32
+POIN HPFrames+40
+POIN HPFrames+48
+POIN HPFrames+56
+POIN HPFrames+64
+POIN HPFrames+72
+POIN HPFrames+80
+WS_FrameData:
+WORD	0x000f0001 //8x8 sprite
+WORD	0x087601ff //tile #0x76
+Talk_FrameData:
+WORD	0x400f0001 //16x8 sprite
+WORD	0x087001ee //tile #0x70
+
+POP
+
+PinFramePointers:
+WORD	$00030001
+WORD	$086F0004
+
+
+Vcheck:
+	#incbin "WarningAndHpBars.dmp"
+	WORD	LITE_DANGER_MODE
+	POIN	HPFramePointers
+	POIN	PinFramePointers
+	WORD	0x0203B000
+	POIN	WS_FrameData
+
+PUSH
+
+/////////危険スイッチ
+
+ORG		0x1B5C0
+WORD	0x46874800
+POIN	Kiken1234_80
+
+//危険ゼロリセ
+ORG		0x1c70a
+BYTE	$71
+ORG		0x1c71c
+WORD	0x46874800
+POIN	GreenReset
+
+ORG		0x1c9e2	//常に杖切り換え
+SHORT	$46C0
+
+ORG		0x1c95c
+SHORT $1c30 $4008 $2800 $d009 $2005 $f000 $fec9 $e008
+//	#incbin "0123GREEN.bin"
+
+///////////////修正(patched)
+
+ORG		0x1b560
+WORD	0x46874800
+POIN	Hamidashi_Kiken_Jogai
+
+//A B SELECT
+
+ORG		0x1c740
+WORD	$468F4900
+POIN	PushDanger
+SHORT	$d02a $8891 $2004 $4008
+
+ORG		0x1ca04
+WORD	0x46974A00
+POIN	WARS_CANCEL_ALT
+
+ORG		0x8f090
+SHORT	$1c07 $1c2c $3444 $8820
+//WORD	0x468F4900
+//POIN	Kiken80Select
+
+////Lで危険状態チェンジ
+
+ORG	0x1c994
+WORD	$46874800
+POIN	kiken_L
+
+POP
+kiken_L:
+#incbin "L_Switch.bin"
+ALIGN	4
+//////////////////////
+
+PushDanger:
+	#incbin "PushDanger.bin"
+ALIGN	4
+
+WARS_CANCEL_ALT:
+	#incbin "WARS_CANCEL_ALT.bin"
+ALIGN	4
+
+Hamidashi_Kiken_Jogai:
+	#incbin "Hamidashi_Kiken_Jogai.dmp"
+ALIGN	4
+
+Kiken1234_80:
+	#incbin "Kiken1234_80.bin"
+ALIGN	4
+
+GreenReset:
+	#incbin "GreenReset.bin"
+ALIGN	4
+
+
+HPBarGraphic:
+//#incbin "HPGraphic.png.dmp"	//HINT=BIN
+#incbin "HPGraphic.png.dmp"	//HINT=BIN
+
+	
+ALIGN	4
+
+//Kiken80Select:
+//	#incbin "Kiken80Select.bin"
+//ALIGN	4

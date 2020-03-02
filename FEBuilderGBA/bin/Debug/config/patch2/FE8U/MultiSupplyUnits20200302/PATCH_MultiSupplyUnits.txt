@@ -1,0 +1,36 @@
+NAME=輸送隊を呼べるユニットを複数持てるように変更する 20200302(Editor)
+INFO=輸送隊を呼べるユニットを複数設定できるように変更します。
+
+
+IF:0x23F70=0x00 0x4B
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END MultiSupplyUnits.dmp
+
+//データサイズ(10進数)
+DATASIZE=8
+
+//データ個数 00 が出てくるまで
+DATACOUNT=$GREP8 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+//リストに表示されるのはユニットIDです
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=UNIT(0xFF=ANY)
+B1:CLASS=CLASS(0xFF=ANY)
+B2:MAP_ANYFF=MAPID(0xFF=ANY)
+B3:CHAPTORMODE_ANYFF=Edtion(0xFF=ANY)
+W4:FLAG=Flag(0x00=ANY)
+W6=00
+
+HINT=輸送体
+HINT.en=convoy,supply,transporter,merlinus,wagon
+INFO.zh=提示：运输车。
+NAME.en=Change to have multiple units that can call supply 20200302(Editor)
+INFO.en=Change so that you can set multiple units that can call supply.
+NAME.zh=更改为具有多个可以呼叫护卫队的人物 20200302(Editor)

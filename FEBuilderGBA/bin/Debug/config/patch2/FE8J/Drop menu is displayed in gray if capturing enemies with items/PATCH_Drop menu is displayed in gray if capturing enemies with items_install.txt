@@ -1,0 +1,17 @@
+NAME=アイテムを持っている敵を捕らえていれば、降ろすメニューを灰色表示(Install)
+INFO=敵のアイテムを剥がすのを忘れて解放してしまうトラブルを抑止する機能です。\r\nこのパッチをインストールしたアドレスを、降ろすメニューの描画ルーチンポインタに記述してください。\r\nASMなので、アドレス+1する必要があります。\r\n
+
+
+TYPE=BIN
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 Drop menu is displayed in gray if capturing enemies with items.dmp=0x70 0xB5 0x06 0x1C
+
+BIN:$FREEAREA=Drop menu is displayed in gray if capturing enemies with items.dmp
+
+AUTHOR=7743
+
+NAME.en=Drop menu is displayed in Gray if capturing enemies with items(Install)
+INFO.en=This is a function to prevent troubles caused by forgetting to release enemy items and releasing them.\r\nWrite the address where the switch was installed in the drawing routine pointer of the menu to be unloaded.\r\nBecause it is ASM, you need to add address +1.
+

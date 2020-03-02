@@ -1,0 +1,16 @@
+NAME=オートカーソルで選択される主人公を複数持てるように変更する 20200302(Install)
+INFO=オートカーソルで選択される主人公を複数設定できるように変更します。
+
+TYPE=EA
+TAG=#ENGINE
+
+//既に適応されたかどうか
+PATCHED_IF:0x3325C=0x00 0x4B
+EDIT_PATCH=PATCH_MultiHeroUnits.txt
+EA=Installer.event
+
+AUTHOR=7743
+NAME.en=Change to have multiple main characters selected by auto cursor 20200302(Install)
+INFO.en=Change so that you can set multiple heroes selected by auto cursor.
+NAME.zh=更改为通过自动光标选择多个主要字符 20200302(Install)
+INFO.zh=进行更改，以便您可以设置由自动光标选择的多个英雄。

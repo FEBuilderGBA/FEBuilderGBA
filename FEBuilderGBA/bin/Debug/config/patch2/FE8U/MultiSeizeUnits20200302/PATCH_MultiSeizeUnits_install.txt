@@ -1,4 +1,4 @@
-NAME=(OLD)制圧できるユニットを複数持てるように変更する(Install)
+NAME=制圧できるユニットを複数持てるように変更する 20200302(Install)
 INFO=制圧できるユニットを複数設定できるように変更します。
 
 TYPE=EA
@@ -10,10 +10,7 @@ EDIT_PATCH=PATCH_MultiSeizeUnits.txt
 EA=Installer.event
 
 AUTHOR=7743
-NAME.en=(OLD)Change to have multiple units that can be seize.(Install)
+NAME.en=Change to have multiple units that can be seize 20200302(Install)
 INFO.en=Change so that multiple units can be seize.
-NAME.zh=(OLD)更改为具有多个可以抑制的人物。(Install)
+NAME.zh=更改为具有多个可以抑制的人物 20200302(Install)
 INFO.zh=进行更改，以便可以控制多个人物。
-
-DEPRECATED=1
-UPDATE_PATCH=..\MultiSeizeUnits20200302\PATCH_MultiSeizeUnits_install.txt
