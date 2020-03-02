@@ -1,0 +1,20 @@
+NAME=全預け+メニュー 20200302
+TYPE=EA
+TAG=#ENGINE
+
+INFO=装備できない武器と杖以外を、輸送隊に送ります。\r\n敵を捕獲していれば、その持ち物も送ります。
+
+NAME.en=GiveAll+ Menu 20200302
+INFO.en=Send anything other than not equipped weapons and staffs to Supply.\r\nIf captured enemy, also send him items.
+
+NAME.zh=GiveAll+ Menu 20200302
+INFO.zh=Send anything other than not equipped weapons and staffs to Supply.\r\nIf captured enemy, also send him items.
+
+
+//既に適応されたかどうか
+PATCHED_IF:$FGREP4 zenazuke_plus_Usability.dmp=0x00 0xB5 0x2D 0x4B
+EA_EXTENDS_UNITMENU:0x01=0x40
+EXTENDS:0x1100=TEXT
+
+EA=EA.event
+AUTHOR=7743

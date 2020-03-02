@@ -11,4 +11,9 @@ L_10_BIT_40:HINT=武器の3すくみを2倍にします。
 L_10_BIT_40:HINT.en=Doubles weapon weapon triangle
 L_10_BIT_40:HINT.zh=Doubles weapon weapon triangle
 
+L_11_BIT_01=WeaponLockArray
+L_11_BIT_01:HINT=WeaponLockArrayを有効にします。
+L_11_BIT_01:HINT.en=Enable WeaponLockArray.
+L_11_BIT_01:HINT.zh=Enable WeaponLockArray.
+
 

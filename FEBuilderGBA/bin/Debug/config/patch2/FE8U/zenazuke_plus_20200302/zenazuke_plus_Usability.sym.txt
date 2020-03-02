@@ -1,0 +1,16 @@
+Exit_False=$3C
+for_aid=$0C
+for_myself=$30
+HasItem=$46
+Exit_True=$40
+Exit=$42
+HasItem_Start=$54
+item_loop=$5E
+HasItem_exit_false=$7C
+is_target_item=$6A
+HasItem_exit_true=$78
+IsEnableWeaponOfStaff=$84
+HasItem_exit=$7E
+IsEnableItems_True=$AA
+IsEnableItems_Flase=$AE
+IsEnableItems_Exit=$B0
