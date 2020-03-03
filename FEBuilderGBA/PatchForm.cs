@@ -1396,7 +1396,7 @@ namespace FEBuilderGBA
             }
             else if (listname == "VENNOUWEAPONLOCK_INDEX")
             {
-                appendname = VennouWeaponLockForm.GetNamesByIndexCap((uint)i);
+                appendname = U.ToHexString(i) + " " + VennouWeaponLockForm.GetNamesByIndexCap((uint)i);
             }
             else if (U.substr(listname, 0, 5 + 1 + 1) == "$COMBO ")
             {

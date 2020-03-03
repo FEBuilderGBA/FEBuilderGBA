@@ -109,12 +109,12 @@ namespace FEBuilderGBA
         {
             if (index == 0)
             {
-                return "-NULL-";
+                return "-NULL-"; ///No Translate
             }
             string name = GetNamesByIndex(index);
             if (name == "")
             {
-                return "-EMPTY-";
+                return "-EMPTY-";///No Translate
             }
             return name;
         }
