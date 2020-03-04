@@ -4825,4 +4825,6 @@
 08029818	ApplyUnitDefaultPromotion	{U}
 0801F208	ShowBrokenWallEffect	{J}
 0801EE84	ShowBrokenWallEffect	{U}
-080B7980	Load 10 divided CG.	{J}
+080B7980	Load 10 divided CG	{J}
+0807DEC0	Judgment of desert treasure	{J}
+0807D2B0	Judgment of desert treasure	{U}

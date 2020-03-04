@@ -11785,14 +11785,20 @@ Date ({0}) could not be parsed.\r\nI can't help but always update to the latest 
 :このゲームの新しいバージョンが公開されています。\r\n最新版に自動アップデートしますか？
 A new version of this game has been released.\r\nAutomatically update to the latest version? 
 
-:ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
-Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
-
 :フィードバックを保存するファイル名を選択してください
 Choose a file name to save the feedback.
 
 :フィードバックレポートを作成しました。\r\nこのファイルをコミニティに送信してください。
 A feedback report has been created.\r\nSend this file to the community.
+
+:このゲームを最新版に更新します。
+Update this game to the latest version.
+
+:開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。
+Access the development community.\r\nSend feedback and feedback on the game and contribute to the project.
+
+:ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n
+Create a feedback report by compressing game save data.\r\nSaved data is very useful for checking the situation and checking the game balance.\r\n
 
 :最新バージョンに更新する
 Update to latest version

@@ -34,7 +34,7 @@
             this.OpenButton = new System.Windows.Forms.Button();
             this.ReloadButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.FilenameTextBox = new System.Windows.Forms.TextBox();
+            this.InfoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AuthorTextBox = new System.Windows.Forms.TextBox();
@@ -105,14 +105,14 @@
             this.NameTextBox.Size = new System.Drawing.Size(458, 25);
             this.NameTextBox.TabIndex = 6;
             // 
-            // FilenameTextBox
+            // InfoTextBox
             // 
-            this.FilenameTextBox.Location = new System.Drawing.Point(17, 495);
-            this.FilenameTextBox.Multiline = true;
-            this.FilenameTextBox.Name = "FilenameTextBox";
-            this.FilenameTextBox.ReadOnly = true;
-            this.FilenameTextBox.Size = new System.Drawing.Size(728, 79);
-            this.FilenameTextBox.TabIndex = 7;
+            this.InfoTextBox.Location = new System.Drawing.Point(17, 495);
+            this.InfoTextBox.Multiline = true;
+            this.InfoTextBox.Name = "InfoTextBox";
+            this.InfoTextBox.ReadOnly = true;
+            this.InfoTextBox.Size = new System.Drawing.Size(728, 79);
+            this.InfoTextBox.TabIndex = 7;
             // 
             // label1
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.AuthorTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FilenameTextBox);
+            this.Controls.Add(this.InfoTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.ReloadButton);
             this.Controls.Add(this.OpenButton);
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.Button ReloadButton;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.TextBox FilenameTextBox;
+        private System.Windows.Forms.TextBox InfoTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox AuthorTextBox;

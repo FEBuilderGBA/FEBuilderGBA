@@ -4806,4 +4806,6 @@
 08029818	ApplyUnitDefaultPromotion	{U}
 0801F208	ShowBrokenWallEffect	{J}
 0801EE84	ShowBrokenWallEffect	{U}
-080B7980	加载10个分割的CG。	{J}
+080B7980	加载10个分割的CG	{J}
+0807DEC0	沙漠宝藏的判断	{J}
+0807D2B0	沙漠宝藏的判断	{U}

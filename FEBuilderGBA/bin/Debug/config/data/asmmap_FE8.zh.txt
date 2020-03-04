@@ -12664,3 +12664,7 @@ r3=X tile position of menu of the right	{U}
 0801F780	ShowBrokenWallEffect	{U}
 080B4144	SoundRoom_DrawScreen_With_BackgoundImage	{J}
 080AF524	SoundRoom_DrawScreen_With_BackgoundImage	{U}
+080B7398	Start ColFadeIn	{J}
+080B2780	Start ColFadeIn	{U}
+080DC940	:080DC946	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{J}
+080D7C0C	:80D7C12	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{U}

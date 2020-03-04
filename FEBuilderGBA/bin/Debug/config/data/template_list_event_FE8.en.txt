@@ -1,24 +1,28 @@
-template_event_COND_UNITALIVE_FE8.txt	If the unit is alive
-template_event_COND_UNITALIVE_OR_ELSE_FE8.txt	If the unit is alive , ELSE dead
+template_event_COND_UNITALIVE_FE8.txt	If unit is alive
+template_event_COND_UNITALIVE_OR_ELSE_FE8.txt	If unit is alive , ELSE dead
 template_event_COND_YES_OR_NO.txt	Conversation branch selector Yes / No
 template_event_COND_TURN_ODD_FE8.txt	If odd number turn
 template_event_COND_TURN_EVEN_FE8.txt	If even number turn
-template_event_COND_TURN_3SCALE_FE8.txt	If the number of turns is a multiple of 3
+template_event_COND_TURN_3SCALE_FE8.txt	If number of turns is a multiple of 3
 template_event_COND_TURN_LESS_10.txt	If it is within 10 turns
 template_event_COND_GOLD_MORE_5000.txt	If you own 5000 gold or more
-template_event_COND_UNITALIVE_AND_STIL.txt	If the unit alive and not join
-template_event_COND_Gaiden.txt	Make a Big BranchIf you clear within 3 turns, it will be a Gaidai
+template_event_COND_GOLD_MORE_5000_ELSE.txt	If you own 5000 gold or more, ELSE
+template_event_COND_UNITALIVE_AND_STIL.txt	If unit alive and not join
 template_event_COND_FLAG_ON_FE8.txt	If flag XX is ON
 template_event_COND_FLAG_OFF_FE8.txt	If flag XX is OFF
 template_event_COND_FLAG_ON_ELSE_FE8.txt	If flag XX is ON, ELSE
 template_event_COND_HARDMODE_FE8.txt	If HardMode
 template_event_COND_HARDMODE_OR_ELSE_FE8.txt	If HardMode or else
+template_event_COND_TUTORIALMODE_FE8.txt	If Difficulty:EASY
+template_event_COND_ENEMIES_less3.txt	If there are 3 or fewer enemies
+template_event_COND_ENEMIES_more10.txt	If there are more than 10 enemies.
+template_event_COND_RANDOM50_100.txt	If hit random number of 50/100 or more.
 template_event_COND_DEPLOY_FE8.txt	If Unit is deployed
-template_event_COND_UNITINAREA_FE8.txt	If the unit is in the predetermined coordinate range
+template_event_COND_UNITINAREA_FE8.txt	If unit is in predetermined coordinate range
 template_event_COND_ACTIVEID_FE8.txt	If you are operating a specific unit
-template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show the frame on the unit to display the conversation
-template_event_MOVEPOS_AND_FRAME_FE8.txt	Move the camera to the coordinates, Show the frame in the coordinates to display the conversation
-template_event_TalkEventItem_FE8.txt	Talk and make items
+template_event_COND_Gaiden.txt	Make Gaiden Branch:If clear within 3 turns, goto Gaiden
+template_event_MOVEUNIT_AND_FRAME_FE8.txt	Show frame on unit to display conversation
+template_event_MOVEPOS_AND_FRAME_FE8.txt	Move camera to coordinates, Show frame in coordinates to display conversatiotemplate_event_TalkEventItem_FE8.txt	Talk and make items
 template_event_TALK_COND_CHANGE_MUSIC.txt	Execute events side-by-side during a conversation to change music
 template_event_BATTLE_Attack_Counter.txt	BattleEvent Attack->Defender
 template_event_BATTLE_Attack_Counter_Attack.txt	BattleEvent Attack->Defender->Attack
@@ -30,5 +34,6 @@ template_event_BATTLE_CRITICAL_KILL_ENEMY.txt	BattleEvent Attack->Attack-> No Co
 template_event_BATTLE_FromEnemy_Attack.txt	BattleEvent From Enemy Attack->No Counterattack
 template_event_WarpIN_FE8.txt	Make a unit appear in warp
 template_event_CALL_END_EVENT_FE8.txt	Clear the Chapter
-template_event_GAMEOVER_FE8.txt	Call the game over
-template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call the Preparation
+template_event_GAMEOVER_FE8.txt	Call game over
+template_event_PREPARATION_FE8.txt	Load player army and enemy army and Call Preparation
+template_event_TalkEventItem_FE8.txt	Talk and get items.

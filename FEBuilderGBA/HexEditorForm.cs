@@ -51,6 +51,10 @@ namespace FEBuilderGBA
             if (asmMap.TryGetValue(pointer, out p))
             {
                 hint = p.ToStringInfo();
+                if (p.Length > 0)
+                {
+                    hint += " Length:" + p.Length; 
+                }
             }
             else
             {
@@ -60,7 +64,7 @@ namespace FEBuilderGBA
                     if (pointer < near_pointer + p.Length)
                     {
                         uint offset = (pointer - near_pointer);
-                        hint = U.To0xHexString(U.toOffset(near_pointer)) + "+" + offset + "(" + U.To0xHexString(offset) + ") " + p.ToStringInfo();
+                        hint = U.To0xHexString(U.toOffset(near_pointer)) + "+" + offset + "(" + U.To0xHexString(offset) + ")/" + p.Length + p.ToStringInfo();
                     }
                 }
 

@@ -1405,3 +1405,4 @@
 0805bca8	Play sound effect	Wrap function
 0805BD8C	Call m4aMPlayStop
 08006408	DrawTextInline
+0806D028	Judgment of desert treasure.

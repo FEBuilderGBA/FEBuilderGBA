@@ -988,9 +988,9 @@ namespace FEBuilderGBA
         }
         public static bool IsBadImageSize(uint imageDataSize)
         {
-            return (imageDataSize < 8 * 8 / 2  //圧縮されていないか、小さすぎる
-                || imageDataSize >= 8 / 2* 32 * 8 * 32 //大きすぎる
-                || imageDataSize % 8 * 8 / 2 != 0 //32(8*8/2)で割り切れない
+            return (imageDataSize < (8 * 8 / 2)  //圧縮されていないか、小さすぎる
+                || imageDataSize >= (8 / 2 * 32 * 8 * 32) //大きすぎる
+                || imageDataSize % (8 * 8 / 2) != 0 //32(8*8/2)で割り切れない
                 );
         }
 
@@ -1080,14 +1080,14 @@ namespace FEBuilderGBA
                     continue;
                 }
                 uint getcompsize = imageDataSize;
-//                uint getcompsize = LZ77.getCompressedSize(Program.ROM.Data, a);
-//                if (getcompsize == 0)
+//                uint getcompsize2 = LZ77.getCompressedSize(Program.ROM.Data, a);
+//                if (getcompsize2 == 0)
 //                {
 //                    continue;
 //                }
 
                 //たぶん画像だと判断する.
-                FEBuilderGBA.Address.AddAddress(list,a, getcompsize, addr, name + U.To0xHexString(a) , Address.DataTypeEnum.LZ77IMG);
+                FEBuilderGBA.Address.AddAddress(list, a, getcompsize, addr, name + U.To0xHexString(a), Address.DataTypeEnum.LZ77IMG);
                 if (InputFormRef.DoEvents(null, "MakeLZ77DataList " + U.ToHexString(addr))) return;
             }
         }

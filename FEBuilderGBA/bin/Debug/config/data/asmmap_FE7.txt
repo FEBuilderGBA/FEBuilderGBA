@@ -5120,3 +5120,5 @@
 0801F208	ShowBrokenWallEffect	{J}
 0801EE84	ShowBrokenWallEffect	{U}
 080B7980	10分割されたCGをロード	{J}
+0807DEC0	砂漠の財宝の判定	{J}
+0807D2B0	砂漠の財宝の判定	{U}

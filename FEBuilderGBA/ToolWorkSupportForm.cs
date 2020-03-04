@@ -18,6 +18,7 @@ namespace FEBuilderGBA
         public ToolWorkSupportForm()
         {
             InitializeComponent();
+            Explain();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
@@ -98,7 +99,7 @@ namespace FEBuilderGBA
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            string filename = this.FilenameTextBox.Text;
+            string filename = this.Filename;
             if (!File.Exists(filename))
             {
                 return;
@@ -205,11 +206,6 @@ namespace FEBuilderGBA
             if (! File.Exists(this.Filename))
             {
                 this.Lines = new Dictionary<string, string>();
-
-                if (!this.IsSlientMode)
-                {
-                    R.ShowStopError(R._("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n") + ExplainUpdateInfo());
-                }
                 return false;
             }
             this.Lines = LoadUpdateInfo(this.Filename);
@@ -223,6 +219,7 @@ namespace FEBuilderGBA
 
         void LoadInfo()
         {
+            InfoTextBox.Text = "";
             this.IsSlientMode = false;
             if (Program.ROM == null)
             {
@@ -232,14 +229,18 @@ namespace FEBuilderGBA
             {//仮想ROMは更新できない
                 return ;
             }
-            Open(Program.ROM.Filename);
+            bool r = Open(Program.ROM.Filename);
+            if (!r)
+            {
+                InfoTextBox.Text += R._("このプロジェクトには、updateinfo.txtが作成されていません。\r\n作成する方法は、以下のURLをご覧ください。\r\n") + ExplainUpdateInfo() + "\r\n";
+            }
 
             this.NameTextBox.Text = GetName();
             this.AuthorTextBox.Text = U.at(this.Lines, "AUTHOR");
             this.CommunityTextBox.Text = U.at(this.Lines, "COMMUNITY_URL");
             this.VersionTextBox.Text = GetUPSDateTimeString();
 
-            FilenameTextBox.Text = this.Filename;
+            InfoTextBox.Text += this.Filename + "\r\n";
 
             LOGO.Image = MakeLogo();
         }
@@ -748,12 +749,6 @@ namespace FEBuilderGBA
                 return;
             }
 
-            DialogResult dr = R.ShowYesNo("ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n");
-            if (dr != DialogResult.Yes)
-            {
-                return;
-            }
-
             string title = R._("フィードバックを保存するファイル名を選択してください");
             string filter = R._("report.7z|*.report.7z|All files|*");
             SaveFileDialog save = new SaveFileDialog();
@@ -762,7 +757,7 @@ namespace FEBuilderGBA
             save.AddExtension = true;
             Program.LastSelectedFilename.Load(this, "", save, MakeFeedBackFilename());
 
-            dr = save.ShowDialog();
+            DialogResult dr = save.ShowDialog();
             if (dr != DialogResult.OK)
             {
                 return;
@@ -847,5 +842,11 @@ namespace FEBuilderGBA
             InputFormRef.JumpForm<ToolAllWorkSupportForm>();
         }
 
+        void Explain()
+        {
+            UpdateButton.AccessibleDescription = R._("このゲームを最新版に更新します。");
+            CommunityButton.AccessibleDescription = R._("開発コミニティにアクセスします。\r\nゲームへの感想やフィードバックレポートを送りプロジェクトに貢献しましょう。");
+            MakeFeedBackReportButton.AccessibleDescription = R._("ゲームのセーブデータを圧縮して、フィードバックレポートを作成します。\r\nセーブデータがあれば、状況の確認や、ゲームバランスの確認にとても役に立ちます。\r\n");
+        }
     }
 }

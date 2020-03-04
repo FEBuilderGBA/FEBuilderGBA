@@ -1,0 +1,9 @@
+27190000	//難易度簡単の判定(CHECK_TUTORIAL)	{J}
+400CXXXX0C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x9910][MemorySlot2:0x0 常に0(書き込み禁止)]	{J}
+201A0000201BB809201D0000221B0000	//[会話テキスト:0x9B8]	{J}
+2008XXXX	//LABEL[条件ID:0x9910]	{J}
+
+27190000	//難易度簡単の判定(CHECK_TUTORIAL)	{U}
+400CXXXX0C000000	//MemorySlotC BEQ(一致時、条件IDラベルにジャンプ)[条件ID:0x9910][MemorySlot2:0x0 常に0(書き込み禁止)]	{U}
+201A0000201BF709201D0000221B0000	//[会話テキスト:0x9F7]	{U}
+2008XXXX	//LABEL[条件ID:0x9910]	{U}
