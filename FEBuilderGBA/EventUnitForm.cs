@@ -2496,6 +2496,58 @@ namespace FEBuilderGBA
             }
         }
 
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            List<Address> recycle = new List<Address>();
+            uint eventunit_data_size = Program.ROM.RomInfo.eventunit_data_size();
+            uint mapmax = MapSettingForm.GetDataCount();
+            for (uint mapid = 0; mapid < mapmax; mapid++)
+            {
+                List<U.AddrResult> list = EventCondForm.MakeUnitPointer(mapid);
+                foreach (U.AddrResult ar in list)
+                {
+                    InputFormRef InputFormRef = Init(null);
+                    InputFormRef.ReInit(ar.addr);
+                    if (InputFormRef.DataCount <= 0)
+                    {
+                        continue;
+                    }
+                    uint length = InputFormRef.DataCount * eventunit_data_size;
+                    recycle.Add(new Address(ar.addr,
+                        length,
+                        U.NOT_FOUND,
+                        ar.name,
+                        FEBuilderGBA.Address.DataTypeEnum.BIN));
+                }
+            }
+            int maxlist = recycle.Count;
+            for (int i = 0; i < maxlist; i++)
+            {
+                uint istart = recycle[i].Addr;
+                uint iend = recycle[i].Addr + recycle[i].Length;
+
+                for (int n = 0; n < maxlist; n++)
+                {
+                    if (i == n)
+                    {
+                        continue;
+                    }
+
+                    uint nstart = recycle[n].Addr;
+                    if (nstart > istart && nstart < iend)
+                    {
+                        if ((nstart - istart) % eventunit_data_size == 0)
+                        {//部分を利用していているだけ
+                            continue;
+                        }
+
+                        errors.Add(new FELint.ErrorSt(FELint.Type.EVENTUNITS, nstart
+                            , R._("ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。", U.To0xHexString(istart), U.To0xHexString(nstart)), nstart));
+                    }
+                }
+            }
+        }
+
     }
 
 }

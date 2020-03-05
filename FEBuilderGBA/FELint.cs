@@ -21,6 +21,7 @@ namespace FEBuilderGBA
             ,EVENT_COND_START_EVENT
             ,EVENT_COND_END_EVENT
             ,EVENTSCRIPT
+            ,EVENTUNITS
             ,MAPSETTING
             ,MAPSETTING_PLIST_OBJECT
             ,MAPSETTING_PLIST_CONFIG
@@ -819,6 +820,9 @@ namespace FEBuilderGBA
 
             if (InputFormRef.DoEvents(null, "ScanSystem MenuDefinition")) return;
             MenuDefinitionForm.MakeCheckError(errors);
+
+            if (InputFormRef.DoEvents(null, "ScanSystem EventUnitForm")) return;
+            EventUnitForm.MakeCheckError(errors);
 
             if (Program.ROM.RomInfo.version() == 8)
             {

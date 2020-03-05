@@ -166,6 +166,10 @@ namespace FEBuilderGBA
             {
                 text = R._("敵配置");
             }
+            else if (dataType == FELint.Type.EVENTUNITS)
+            {
+                text = R._("ユニット配置");
+            }
             else if (dataType == FELint.Type.EVENTSCRIPT)
             {
                 text = R._("イベント");
@@ -528,6 +532,25 @@ namespace FEBuilderGBA
             {//イベント内で発生したエラー
                 EventScriptForm f = (EventScriptForm)InputFormRef.JumpForm<EventScriptForm>(U.NOT_FOUND);
                 f.JumpTo(addr, tag);
+                return;
+            }
+            else if (dataType == FELint.Type.EVENTUNITS)
+            {
+                if (Program.ROM.RomInfo.version() == 6)
+                {
+                    EventUnitFE6Form f = (EventUnitFE6Form)InputFormRef.JumpForm<EventUnitFE6Form>(U.NOT_FOUND);
+                    f.JumpTo(addr);
+                }
+                else if (Program.ROM.RomInfo.version() == 7)
+                {
+                    EventUnitFE7Form f = (EventUnitFE7Form)InputFormRef.JumpForm<EventUnitFE7Form>(U.NOT_FOUND);
+                    f.JumpTo(addr);
+                }
+                else
+                {
+                    EventUnitForm f = (EventUnitForm)InputFormRef.JumpForm<EventUnitForm>(U.NOT_FOUND);
+                    f.JumpTo(addr);
+                }
                 return;
             }
             else if (dataType == FELint.Type.PROCS)

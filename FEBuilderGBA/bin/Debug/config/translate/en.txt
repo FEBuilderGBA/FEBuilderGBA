@@ -2701,6 +2701,9 @@ It is not possible to erase all the coordinates of the unit.
 :ユニット配置で、自軍のユニットID({0})が重複して書かれています。\r\n進撃開始に利用する自軍配置以外で、このような書き方をするのは極めてまれです。\r\nユニットの所属を友軍か敵軍と間違えてませんか？\r\n自軍の場合、同一ユニットIDは、一つのユニットにまとめられます。
 Your unit's ID ({0}) is duplicated in unit arrangement.\r\nIt is extremely rare to do this kind of writing other than arranging your army to use for starting the attack.\r\nHave you mistaken the affiliation of the unit as a friendly or enemy army?\r\nIn the case of your army, the same unit ID is grouped into one unit.
 
+:ユニット配置で、「{0}」と「{1}」が重複しています。\r\nどちらかのデータをリポイントしてください。
+In UnitPlacer, "{0}" and "{1}" overlap data.\r\nPlease repoint either data.
+
 :/60秒
 /60sec
 

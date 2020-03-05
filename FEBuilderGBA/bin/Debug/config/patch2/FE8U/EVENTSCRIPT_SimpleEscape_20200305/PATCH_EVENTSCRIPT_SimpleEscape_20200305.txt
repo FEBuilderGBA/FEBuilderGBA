@@ -1,9 +1,9 @@
-NAME=(OLD)簡単に作れる簡易離脱イベント 20191023(イベント命令)
+NAME=簡単に作れる簡易離脱イベント 20200305(イベント命令)
 TYPE=BIN
 TAG=#EVENT
 
 //既に適応されたかどうか
-PATCHED_IF:$FGREP4 ASMC_SimpleEscape.dmp=0x10 0xB5 0x45 0x4C
+PATCHED_IF:$FGREP4 ASMC_SimpleEscape.dmp=0x10 0xB5 0x66 0x4C
 
 //本体をフリーエリアにいれる.
 BIN:$FREEAREA:1=ASMC_SimpleEscape.dmp
@@ -18,7 +18,7 @@ EVENTSCRIPT:3=400501000200000040050200XXXXXXXX40050300YY000000400D0000{$L1:ASMC_
 
 
 AUTHOR=7743 , aera
-NAME.en=(OLD)Add Event: Simple Escape event that can be easily created 20191023
+NAME.en=Add Event: Simple Escape event that can be easily created  20200305
 INFO.en=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
 
 EVENTSCRIPT:1.en=400501000000000040050200XXXXXXXX400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when everyone Escape[XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
@@ -28,7 +28,7 @@ EVENTSCRIPT:2.en=400501000100000040050200XXXXXXXX40050300YY00000040050400ZZZZ000
 EVENTSCRIPT:3.en=400501000200000040050200XXXXXXXX40050300YY000000400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when specific unit escape like FE9[YY:UNIT:Unit][XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
 
 
-NAME.zh=(OLD)Add Event: Simple Escape event that can be easily created 20191023
+NAME.zh=Add Event: Simple Escape event that can be easily created 20200305
 INFO.zh=Enables a single line script to implement a escape command(Withdrawal command) rather than a complex script.\r\nBy combining this patch with the "Display Escape menu" patch, you can create an exit command with a menu.\r\nCommentary and escape sample ups.\r\nhttps://feuniverse.us/t/fe-builder-gba/2845/2474
 
 EVENTSCRIPT:1.zh=400501000000000040050200XXXXXXXX400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when everyone Escape[XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
@@ -37,6 +37,3 @@ EVENTSCRIPT:2.zh=400501000100000040050200XXXXXXXX40050300YY00000040050400ZZZZ000
 
 EVENTSCRIPT:3.zh=400501000200000040050200XXXXXXXX40050300YY000000400D0000{$L1:ASMC_SimpleEscape.dmp}	Stage cleared when specific unit escape like FE9[YY:UNIT:Unit][XX:POINTER_UNITSSHORTTEXT:Units dialogue]	Simple Escape Command
 
-
-DEPRECATED=1
-UPDATE_PATCH=..\EVENTSCRIPT_SimpleEscape_20200305\PATCH_EVENTSCRIPT_SimpleEscape_20200305.txt
