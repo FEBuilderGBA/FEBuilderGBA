@@ -628,6 +628,8 @@ namespace FEBuilderGBA
         {
             using (InputFormRef.AutoPleaseWait pleaseWait = new InputFormRef.AutoPleaseWait(this))
             {
+                OptionForm.ClearCache();
+
                 this.SettingPleaseWait = pleaseWait;
                 OptionForm f = new OptionForm();
                 f.AutoClose(autocolor);
