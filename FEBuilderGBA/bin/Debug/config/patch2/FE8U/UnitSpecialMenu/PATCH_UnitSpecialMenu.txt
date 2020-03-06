@@ -1,0 +1,36 @@
+
+NAME=ユニットごとの特殊技能パッチ(Editor)
+NAME.en=Special Event for each unit(Editor)
+NAME.zh=Special Event for each unit(Editor)
+
+IF:$FGREP4 special_Effect.dmp=0x30 0xB5 0x1C 0x4D
+
+//STRUCTパッチとして実装します
+TYPE=STRUCT
+TAG=#ENGINE
+
+//データへのポインタ
+POINTER=$FGREP4END special_Effect.dmp
+
+//指南はイベントデータなので イベントポインタは4バイトです
+//データサイズ(10進数)
+DATASIZE=12
+
+DATACOUNT=$GREP4 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+
+//リストに表示されるのはマップ名です
+LISTNAME=$B0:UNIT
+
+//データを定義します
+B0:UNIT=UNIT(00=ANY)
+B1:CLASS=CLASS(00=ANY)
+W2:FLAG=Flag(00=ANY)
+B4:ITEM=HasItem(00=ANY)
+B5=00
+W6=00
+P8:EVENT=EventPointer
+
+INFO=ユニットごとの特殊技能を作成します。\r\n特殊技能はイベント命令として記述できます。\r\nイベントを0または1に設定すると、特殊技能を持っていないことになります。
+
+INFO.en=Create special skills for each unit.\r\nSpecial skills can be described as event instructions.\r\nIf you set the event to 0 or 1, you have no special skills.
+INFO.zh=为每个单元创建特殊技能。\r\n特殊技能可以描述为事件说明。\r\n如果将事件设置为0或1，则没有特殊技能。

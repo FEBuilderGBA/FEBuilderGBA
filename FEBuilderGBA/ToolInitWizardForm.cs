@@ -195,7 +195,7 @@ namespace FEBuilderGBA
             string r = OptionForm.EXESearch("SAPPY.EXE|sappy.exe|");
             if (r != "")
             {
-                this.EATextBox.Text = r;
+                this.SappyTextBox.Text = r;
             }
         }
 

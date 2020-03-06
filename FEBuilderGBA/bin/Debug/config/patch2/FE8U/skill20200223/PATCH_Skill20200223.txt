@@ -886,7 +886,8 @@ TEXTADV:0xf70=0xf70.txt
 TEXTADV:0xf71=0xf71.txt
 TEXTADV:0xf72=0xf72.txt
 TEXTADV:0xf73=0xf73.txt
-
+//0xf74
+//0xf75
 
 INFO=This is the most recent revision of the Custom Skill System and is recommended to use.\r\nPatches the ROM to allow characters/classes to equip/learn skill like modern FE games.\r\nAfter installation, edit with "Skill Config," "Assign Skill by Unit," and "Assign Skill by Class" in Advanced Editors.\r\nSkillSystem_FE8-1.0.0 https://feuniverse.us/t/fe8-skill-system-v1-0-129-skills-done-more-on-the-way/2312/\r\nDonate to Circles http://donorbox.org/donate-to-circles\r\n
 
