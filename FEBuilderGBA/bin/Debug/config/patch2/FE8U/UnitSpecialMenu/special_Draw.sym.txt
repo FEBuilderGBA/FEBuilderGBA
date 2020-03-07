@@ -1,0 +1,13 @@
+Skip2=$2C
+get_menu_name=$7A
+DrawString=$42
+special_table=$010C
+Loop=$84
+CheckUnit=$92
+Break=$E8
+CheckClass=$A0
+CheckFlags=$AE
+CheckItem=$BE
+Run=$D4
+ItemLoop=$C6
+Exit=$EA

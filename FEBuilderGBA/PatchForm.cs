@@ -2706,6 +2706,15 @@ namespace FEBuilderGBA
                 uint skip = U.atoi(m.Groups[2].Value);
                 return U.GrepEnd(Program.ROM.Data, MakeGrepData(value), start_offset, 0, align, skip, false);
             }
+            m = RegexCache.Match(value, @"^XGREP([0-9]+)ENDA\+([0-9]+) ");
+            if (m.Groups.Count >= 3)
+            {
+                uint align = U.atoi(m.Groups[1].Value);
+                uint skip = U.atoi(m.Groups[2].Value);
+                bool[] mask;
+                byte[] need = MakeXGrepData(value,out mask);
+                return U.GrepPatternMatchEnd(Program.ROM.Data, need, mask, start_offset, 0, align, skip, false);
+            }
 
             if (value.IndexOf("GREP4END+A ") == 0)
             {//下位互換のため
@@ -2792,6 +2801,28 @@ namespace FEBuilderGBA
             pp = U.toOffset(pp);
 
             return pp;
+        }
+
+        static byte[] MakeXGrepData(string value, out bool[] out_mask)
+        {
+            string[] sp = value.Split(' ');
+            List<byte> grepdata = new List<byte>();
+            List<bool> maskData = new List<bool>();
+            for (int i = 1; i < sp.Length; i++)
+            {
+                if (sp[i].Length > 0 && sp[i][0] == 'X')
+                {
+                    maskData.Add(true);
+                    grepdata.Add(0xFF);
+                }
+                else
+                {
+                    maskData.Add(false);
+                    grepdata.Add((byte)U.atoi0x(sp[i]));
+                }
+            }
+            out_mask = maskData.ToArray();
+            return grepdata.ToArray();
         }
 
         static byte[] MakeGrepData(string value)

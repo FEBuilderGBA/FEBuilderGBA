@@ -27,7 +27,7 @@ B1:CLASS=CLASS(00=ANY)
 W2:FLAG=Flag(00=ANY)
 B4:ITEM=HasItem(00=ANY)
 B5=00
-W6=00
+W6:TEXT=MenuName(00=Default)
 P8:EVENT=EventPointer
 
 INFO=ユニットごとの特殊技能を作成します。\r\n特殊技能はイベント命令として記述できます。\r\nイベントを0または1に設定すると、特殊技能を持っていないことになります。

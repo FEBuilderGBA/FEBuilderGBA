@@ -2649,6 +2649,34 @@ namespace FEBuilderGBA
             }
             return U.NOT_FOUND;
         }
+        public static uint GrepPatternMatchEnd(byte[] data, byte[] need, bool[] isSkip, uint start = 0x100, uint end = 0, uint blocksize = 1, uint plus = 0, bool needPointer = false)
+        {
+            uint grepresult = U.GrepPatternMatch(Program.ROM.Data, need,isSkip, start, end, blocksize);
+            if (grepresult == U.NOT_FOUND)
+            {
+                return U.NOT_FOUND;
+            }
+            uint resultAddr = grepresult + (uint)need.Length + plus;
+            if (resultAddr > data.Length)
+            {//データ終端を超えてしまった
+                return U.NOT_FOUND;
+            }
+
+            if (needPointer)
+            {//検索で見つけたものはポインタである必要がある.
+                if (U.isPointerOrNULL(U.u32(data, resultAddr)))
+                {
+                    return resultAddr;
+                }
+                //どうやらマッチした場所は違うらしい? 
+                //続きから再検索
+                return GrepPatternMatchEnd(data, need,isSkip, resultAddr, end, blocksize, plus, needPointer);
+            }
+            else
+            {
+                return resultAddr;
+            }
+        }
 
         public static uint MatchExistingStructure(uint addr , List<Address> existingStructure)
         {

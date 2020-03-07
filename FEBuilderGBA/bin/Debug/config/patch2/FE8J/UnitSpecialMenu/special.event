@@ -5,7 +5,7 @@ POIN	special_string
 SHORT	0xef3 0xef4		//右がヘルプ指定
 SHORT	$6300 0
 POIN	special_Usability + 1
-WORD	0
+POIN	special_Draw + 1
 POIN	special_Effect + 1
 WORD	0 0 0
 
@@ -20,6 +20,11 @@ POIN special_table
 ALIGN 4
 special_Effect:
 #incbin "special_Effect.dmp"
+POIN special_table
+
+ALIGN 4
+special_Draw:
+#incbin "special_Draw.dmp"
 POIN special_table
 
 ALIGN 4
