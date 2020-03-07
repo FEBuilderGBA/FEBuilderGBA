@@ -85,6 +85,12 @@ Search
 :イベント命令-命令選択
 Event Editor (Adv) - Instruction Selection
 
+:AI1のデータが極端に少ないです。破損している可能性があります。
+The data of AI1 is extremely small.It may be damaged.
+
+:AI2のデータが極端に少ないです。破損している可能性があります。
+The data of AI2 is extremely small.It may be damaged.
+
 :ラベルをクリックして領域を確保してください
 Please click on the label to reserve space
 

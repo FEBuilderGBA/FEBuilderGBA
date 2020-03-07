@@ -824,6 +824,9 @@ namespace FEBuilderGBA
             if (InputFormRef.DoEvents(null, "ScanSystem EventUnitForm")) return;
             EventUnitForm.MakeCheckError(errors);
 
+            if (InputFormRef.DoEvents(null, "ScanSystem AIScript")) return;
+            AIScriptForm.MakeCheckError(errors);
+
             if (Program.ROM.RomInfo.version() == 8)
             {
                 if (InputFormRef.DoEvents(null, "ScanSystem SoundFootStepsForm")) return;

@@ -72,6 +72,12 @@ namespace FEBuilderGBA
                 Program.ROM.write_u32(addr, 0, undodata);
                 addr += eearg.BlockSize;
             }
+            if (eearg.NewDataCount > eearg.OldDataCount)
+            {
+                //末尾のデータを0xffにする.
+                Program.ROM.write_u32(addr, U.NOT_FOUND, undodata);
+            }
+
             Program.Undo.Push(undodata);
 
             ReloadAISetting();
@@ -270,6 +276,29 @@ namespace FEBuilderGBA
                             , k + 12, name
                             , FEBuilderGBA.Address.DataTypeEnum.BIN);
                     }
+                }
+            }
+        }
+
+        //エラーチェック
+        public static void MakeCheckError(List<FELint.ErrorSt> errors)
+        {
+            {
+                InputFormRef InputFormRef = Init(null);
+                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai1_pointer());
+                if (InputFormRef.DataCount <= 5)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.AISCRIPT, U.NOT_FOUND
+                        , R._("AI1のデータが極端に少ないです。破損している可能性があります。")));
+                }
+            }
+            {
+                InputFormRef InputFormRef = Init(null);
+                InputFormRef.ReInitPointer(Program.ROM.RomInfo.ai2_pointer());
+                if (InputFormRef.DataCount <= 5)
+                {
+                    errors.Add(new FELint.ErrorSt(FELint.Type.AISCRIPT, U.NOT_FOUND
+                        , R._("AI2のデータが極端に少ないです。破損している可能性があります。")));
                 }
             }
         }
@@ -1603,5 +1632,6 @@ namespace FEBuilderGBA
             Debug.Assert(U.isPointer(newaddr));
             EventScript.NotifyChangePointer(this.AIAsm, oldaddr, newaddr);
         }
+
     }
 }
