@@ -1079,12 +1079,11 @@ namespace FEBuilderGBA
                 {//解凍したらデータ容量が違う
                     continue;
                 }
-                uint getcompsize = imageDataSize;
-//                uint getcompsize2 = LZ77.getCompressedSize(Program.ROM.Data, a);
-//                if (getcompsize2 == 0)
-//                {
-//                    continue;
-//                }
+                uint getcompsize = LZ77.getCompressedSize(Program.ROM.Data, a);
+                if (getcompsize == 0)
+                {
+                    continue;
+                }
 
                 //たぶん画像だと判断する.
                 FEBuilderGBA.Address.AddAddress(list, a, getcompsize, addr, name + U.To0xHexString(a), Address.DataTypeEnum.LZ77IMG);

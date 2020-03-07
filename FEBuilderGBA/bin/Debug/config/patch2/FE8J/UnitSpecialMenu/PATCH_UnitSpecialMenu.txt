@@ -30,6 +30,8 @@ B5=00
 W6:TEXT=MenuName(00=Default)
 P8:EVENT=EventPointer
 
+AUTHOR=7743
+
 INFO=ユニットごとの特殊技能を作成します。\r\n特殊技能はイベント命令として記述できます。\r\nイベントを0または1に設定すると、特殊技能を持っていないことになります。
 
 INFO.en=Create special skills for each unit.\r\nSpecial skills can be described as event instructions.\r\nIf you set the event to 0 or 1, you have no special skills.

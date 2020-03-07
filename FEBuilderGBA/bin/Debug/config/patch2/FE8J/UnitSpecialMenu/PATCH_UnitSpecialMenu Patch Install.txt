@@ -10,6 +10,7 @@ PATCHED_IF:$FGREP4 special_Effect.dmp=0x30 0xB5 0x1C 0x4D
 EDIT_PATCH=PATCH_UnitSpecialMenu.txt
 
 EA=Special.event
+AUTHOR=7743
 
 
 INFO=ユニットごとに利用できる特殊スキルを作ります。\r\nイベント命令を利用して、特殊技能を記述することができます。\r\n
