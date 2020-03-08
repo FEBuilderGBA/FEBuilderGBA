@@ -3097,6 +3097,7 @@ namespace FEBuilderGBA
             if (i < 0) return text;
             return text.Substring(0, i);
         }
+
         public static string skipLine(StreamReader reader, string need)
         {
             while (!reader.EndOfStream)

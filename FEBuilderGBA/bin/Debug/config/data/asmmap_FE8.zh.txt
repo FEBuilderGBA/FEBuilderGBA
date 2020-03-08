@@ -12668,3 +12668,7 @@ r3=X tile position of menu of the right	{U}
 080B2780	Start ColFadeIn	{U}
 080DC940	:080DC946	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{J}
 080D7C0C	:80D7C12	DATA UnitAdditionalBlinkingIcons	Blue,Red,Green	{U}
+08013174	DrawStatScreenBar_GenenicBuffer_To_VRAM	{J}
+08088cfc	DrawStatScreenBar_Make_GenenicBuffer	{J}
+080130BC	DrawStatScreenBar_GenenicBuffer_To_VRAM	{U}
+08086A40	DrawStatScreenBar_Make_GenenicBuffer	{U}

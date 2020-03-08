@@ -1142,19 +1142,7 @@ this.MapObjImage);
             }
             else if (ext == ".TMX")
             {
-                string message = R.Notify("マップ変化を含めてインポートしてもよろしいですか？\r\n「はい」の場合は、マップとマップ変化の両方をTMXで指定されたものにすべて置き換えてロードします。\r\n「いいえ」の場合は、メインマップだけをロードします。");
-                DialogResult dr = MessageBox.Show(message
-                    , "?"
-                    , MessageBoxButtons.YesNo
-                    , MessageBoxIcon.Question);
-                if (dr == System.Windows.Forms.DialogResult.Yes)
-                {
-                    errormessage = LoadAsTMXAllApply(mapfilename);
-                }
-                else
-                {
-                    errormessage = LoadAsTMX(mapfilename);
-                }
+                errormessage = LoadAsTMX(mapfilename);
             }
 
             if (errormessage != "")
@@ -1162,6 +1150,7 @@ this.MapObjImage);
                 R.ShowStopError(errormessage);
             }
         }
+
         string LoadAsMAR(string mapfilename)
         {
             byte[] data = File.ReadAllBytes(mapfilename);
@@ -1436,8 +1425,68 @@ this.MapObjImage);
             Debug.Assert(r == 0x0e000f10);
         }
 #endif
+        //streamのSeekがなぜかできないので、別処理で調べます。
+        //C#のstreamはクソなので使わない方がいい。
+        bool HasMainMapByTMX(string mapfilename)
+        {
+            using (StreamReader reader = new StreamReader(mapfilename))
+            {
+                string line = U.skipLine(reader, "name=\"Main\"");
+                if (line == "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        //何枚のLayerがあるか調べます
+        int HowManyLayerByTMX(string mapfilename)
+        {
+            int count = 0;
+            using (StreamReader reader = new StreamReader(mapfilename))
+            {
+                string line = U.skipLine(reader, "<layer ");
+                if (line == "")
+                {
+                    return count;
+                }
+                count++;
+            }
+            return count;
+        }
+
         //TMX形式の読み込み
         string LoadAsTMX(string mapfilename)
+        {
+            int layerCount = HowManyLayerByTMX(mapfilename);
+            if (layerCount >= 2)
+            {
+                string message = R.Notify("マップ変化を含めてインポートしてもよろしいですか？\r\n「はい」の場合は、マップとマップ変化の両方をTMXで指定されたものにすべて置き換えてロードします。\r\n「いいえ」の場合は、メインマップだけをロードします。");
+                DialogResult dr = MessageBox.Show(message
+                    , "?"
+                    , MessageBoxButtons.YesNo
+                    , MessageBoxIcon.Question);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    return LoadAsTMXAllApply(mapfilename);
+                }
+                else
+                {
+                    return LoadAsTMXMainMap(mapfilename);
+                }
+            }
+            else if (layerCount == 1)
+            {
+                return LoadAsTMXMainMap(mapfilename);
+            }
+            else
+            {
+                return R._("LAYERの指定がありません。");
+            }
+        }
+
+        //TMX形式の読み込み メインマップ
+        string LoadAsTMXMainMap(string mapfilename)
         {
             using (StreamReader reader = new StreamReader(mapfilename))
             {
@@ -1468,7 +1517,12 @@ this.MapObjImage);
                     return R._("マップファイルの幅または高さが正しくありません。\r\n\r\nマップファイル:{0}\r\n幅:{1} 高さ:{2}\r\n", mapfilename, width, height);
                 }
 
-                line = U.skipLine(reader, "name=\"Main\"");
+                if (HasMainMapByTMX(mapfilename))
+                {//streamのSeekがなぜかできないので、別処理で調べます。
+                 //C#のstreamはクソなので使わない方がいい。
+
+                    line = U.skipLine(reader, "name=\"Main\"");
+                }
 
                 //マップ本体データの読込
                 UInt16[] newMAR = ImportTMXData(reader, (uint)(width * height));
@@ -1615,7 +1669,7 @@ this.MapObjImage);
             //マップリストを再選択することで新規に確保した変化データを読み込み
             MAPCOMBO_SelectedIndexChanged(null, null);
 
-            string errormessage = LoadAsTMX(mapfilename);
+            string errormessage = LoadAsTMXMainMap(mapfilename);
             if (errormessage != "")
             {
                 return errormessage;

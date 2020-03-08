@@ -5,8 +5,8 @@ NAME.zh=设置全机的各种参数(Add Event)
 TYPE=BIN
 TAG=#EVENT
 
-INFO=条件にマッチする全ユニットの値を変更します。
-INFO.en=This event changes the value of all units that match the condition.
+INFO=条件にマッチする全ユニットの値を変更します。\r\nまとめて、一括で変更したい場合に利用してください。
+INFO.en=This event changes the value of all units that match the condition.\r\nUse them when you want to change them all at once.
 INFO.zh=此事件会更改与条件匹配的所有人物的值
 
 //既に適応されたかどうか

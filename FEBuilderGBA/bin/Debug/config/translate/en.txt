@@ -6499,6 +6499,12 @@ The file is corrupted.\r\nThere is no header.\r\nFile: {0}.
 :ファイルが壊れています。\r\nBODYがありません。\r\nFile:{0}
 The file is corrupted.\r\nThere is no BODY.\r\nFile: {0}.
 
+:LAYERの指定がありません。
+LAYER is not specified.
+
+:Mainとなるマップがありません。\r\nメインマップのレイヤーは、「Main」と名前を付ける必要があります。\r\n\r\nマップファイル:{0}
+There is no main map.\r\nThe layers of the main map must be named "Main".\r\n\r\nMap file: {0}.
+
 :マップデータの形式が正しくありません。\r\nTiledで保存するデータ形式をcsvか、tmxディフォルトのxml形式にしてください。
 The format of the map data is incorrect.\r\nPlease set the data format saved with Tiled to csv or tmx default xml format.
 
