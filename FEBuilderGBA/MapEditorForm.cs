@@ -1489,12 +1489,19 @@ this.MapObjImage);
             int count = 0;
             using (StreamReader reader = new StreamReader(mapfilename))
             {
-                string line = U.skipLine(reader, "<layer ");
-                if (line == "")
+                while (!reader.EndOfStream)
                 {
-                    return count;
+                    string line = U.skipLine(reader, "<layer ");
+                    if (line == "")
+                    {
+                        return count;
+                    }
+                    count++;
+                    if (count >= 255)
+                    {
+                        break;
+                    }
                 }
-                count++;
             }
             return count;
         }
