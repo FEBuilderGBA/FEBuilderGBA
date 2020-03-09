@@ -951,6 +951,7 @@ AFTER_TRY_EXECUTE:1=PATCH_Uninstall Garbage Item data By SkillSystems 20200211.t
 AFTER_TRY_EXECUTE:2=fix_mag_statbooster/PATCH_Fix Bug Magic Statbooster for SkillSystems 20200223.txt
 AFTER_TRY_EXECUTE:3=PATCH_Fix ExSaveModule Glitch for SkillSystems 20200223.txt
 AFTER_TRY_EXECUTE:4=PATCH_Fix Bug PersonalInfo Glitch for SkillSystems 20200223.txt
+AFTER_TRY_EXECUTE:5=PATCH_Fix Disable IndoorFighter,OutdoorFighter Glitch fot SkillSystems 20200223.txt
 
 SYMBOL=symbol.sym
 UPDATE_METHOD=SKILLSYSTEM
